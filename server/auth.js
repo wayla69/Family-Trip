@@ -55,15 +55,20 @@ function clearCookie(res) {
   res.setHeader('Set-Cookie', `${COOKIE}=; Path=/; Max-Age=0; HttpOnly; SameSite=Lax`);
 }
 
-// very small in-memory login throttle
+// in-memory login throttle. The family code may be a short numeric PIN, so besides 10 wrong tries per device (IP)
+// there is a family-wide cap: 30 wrong tries in 10 minutes from anywhere pauses new logins for everyone
+// (already signed-in phones keep their 400-day session). 6 digits / 30 per 10 min ≈ years to guess.
+const WINDOW = 10 * 60 * 1000, PER_IP = 10, GLOBAL = 30;
 const tries = new Map();
+let allFails = [];
 function throttled(ip) {
   const now = Date.now();
-  const a = (tries.get(ip) || []).filter((t) => now - t < 10 * 60 * 1000);
-  tries.set(ip, a);
-  return a.length >= 10;
+  const a = (tries.get(ip) || []).filter((t) => now - t < WINDOW);
+  if (a.length) tries.set(ip, a); else tries.delete(ip);
+  allFails = allFails.filter((t) => now - t < WINDOW);
+  return a.length >= PER_IP || allFails.length >= GLOBAL;
 }
-function noteFail(ip) { const a = tries.get(ip) || []; a.push(Date.now()); tries.set(ip, a); }
+function noteFail(ip) { const a = tries.get(ip) || []; a.push(Date.now()); tries.set(ip, a); allFails.push(Date.now()); }
 
 function attachUser(req, _res, next) {
   req.user = readToken(parseCookies(req.headers.cookie)[COOKIE]);

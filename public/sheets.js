@@ -36,6 +36,12 @@ async function addPhotos(t, day, files) {
 const A = {
   lang(b) { lang = b.dataset.v; ls('lang', lang); render(); },
   jump(b, e) { e.preventDefault(); const el = document.getElementById('d' + b.dataset.v); if (el) el.scrollIntoView({ behavior: 'smooth' }); },
+  pin(b) {
+    const f = $('#lcode'), k = b.dataset.v;
+    f.value = k === 'clear' ? '' : k === 'back' ? f.value.slice(0, -1) : (f.value + k).slice(0, 32);
+    $('#lerr').textContent = '';
+  },
+  'who-login'(b) { const n = $('#lname'); n.value = n.value === b.dataset.v ? '' : b.dataset.v; $$('[data-a="who-login"]').forEach((c) => c.setAttribute('aria-pressed', c.dataset.v === n.value)); },
   print() { window.print(); },
   pdf(b) { toast(L('กำลังสร้าง PDF พร้อมรูป… อาจใช้เวลาครึ่งนาที', 'Making the PDF with photos… may take half a minute')); location.href = b.getAttribute('href'); },
   async copytext() {
@@ -234,7 +240,8 @@ document.addEventListener('submit', async (e) => {
   const name = $('#lname').value.trim(); ls('name', name);
   const r = await fetch('/api/login', { method: 'POST', credentials: 'same-origin', headers: { 'x-mb': '1', 'content-type': 'application/json' }, body: JSON.stringify({ code: $('#lcode').value, name }) });
   if (r.ok) { await load(); render(); flush(); return; }
-  $('#lerr').textContent = r.status === 429 ? L('ลองผิดหลายครั้งเกินไป รอ 10 นาที', 'Too many tries — wait 10 minutes') : L('รหัสครอบครัวไม่ถูกต้อง', 'Wrong family code');
+  $('#lcode').value = '';
+  $('#lerr').textContent = r.status === 429 ? L('ใส่ผิดหลายครั้งเกินไป รอ 10 นาทีแล้วลองใหม่', 'Too many wrong tries — wait 10 minutes') : L('PIN ไม่ถูกต้อง', 'Wrong PIN');
 });
 
 /* ---------- boot ---------- */

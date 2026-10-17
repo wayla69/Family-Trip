@@ -118,6 +118,7 @@ app.use((err, _req, res, _next) => { console.error(err.message); if (!res.header
 const PORT = +process.env.PORT || 3000;
 if (require.main === module) {
   if (!A.FAMILY_CODE) console.warn('WARNING: FAMILY_CODE is not set — nobody can log in. Set it in Railway → Variables.');
+  else if (A.FAMILY_CODE.length < 6) console.warn('WARNING: FAMILY_CODE is shorter than 6 characters — use a PIN of at least 6 digits.');
   if (process.env.NODE_ENV === 'production' && MEDIA.kind !== 's3') console.warn('WARNING: BUCKET is not set — photos go to local disk and are lost on the next deploy unless /data is a Railway volume.');
   if (!PG) { console.error('DATABASE_URL is not set — add Railway Postgres and reference ${{Postgres.DATABASE_URL}} (locally: see CLAUDE.md)'); process.exit(1); }
   PGM.ready(PG)

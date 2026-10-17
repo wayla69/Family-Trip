@@ -42,8 +42,14 @@ const T = 'hk-macau-2026';
   await page.fill('#lcode', 'wrong'); await page.click('#lf button[type=submit]');
   await page.waitForFunction(() => document.querySelector('#lerr').textContent.length > 0);
   ok(true, 'wrong code shows an error');
-  await page.fill('#lcode', CODE); await page.fill('#lname', 'แม่'); await page.click('#lf button[type=submit]');
+  ok(await page.inputValue('#lcode') === '', 'wrong PIN clears the field');
+  for (const d of CODE) await page.click(`.pinpad button[data-v="${d}"]`);   // tap the PIN on the number pad
+  await page.click('.pinpad button[data-v="back"]'); await page.click(`.pinpad button[data-v="${CODE.at(-1)}"]`);
+  ok(await page.inputValue('#lcode') === CODE, 'number pad types the PIN (⌫ works)');
+  await page.click('button[data-a="who-login"][data-v="Mum"]');
+  await page.click('#lf button[type=submit]');
   await page.waitForSelector('.shelf');
+  ok(await page.evaluate(async () => (await (await fetch('/api/b/state')).json()).me.name) === 'Mum', 'who-is-this chip used as the name (optional)');
   ok(await page.locator('.spine:not(.add)').count() === 2 && await page.locator('.spine.add').count() === 1, 'shelf: 2 books + new book');
   ok((await page.locator('.spine').first().textContent()).includes('DOLPHIN'), 'HK spine shows the manual kicker');
   ok(await s.noHScroll(), 'shelf: no horizontal scroll at 390 px');
