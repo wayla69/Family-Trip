@@ -11,6 +11,7 @@ WORKDIR /app
 COPY --from=deps /app/node_modules node_modules
 COPY package.json ./
 COPY server server
+COPY migrations migrations
 COPY public public
 COPY --chmod=755 docker-entrypoint.sh /usr/local/bin/docker-entrypoint.sh
 EXPOSE 3000

@@ -10,6 +10,9 @@ npm ci
 npx playwright install chromium     # once
 npm run dev                         # http://localhost:3000  code hop2027 · read-only link /v/grandma
 npm test                            # test/run.mjs: temp DATA_DIR + free port + Playwright e2e (light, dark, offline queue, viewer, book)
+# Postgres + S3 tests (what CI runs): docker run -d -p 5432:5432 -e POSTGRES_PASSWORD=pg postgres:16-alpine ; npm run s3 &
+TEST_DATABASE_URL=postgres://postgres:pg@localhost:5432/postgres TEST_S3_ENDPOINT=http://localhost:4569 TEST_S3_KEY=S3RVER TEST_S3_SECRET=S3RVER npm test
+npm run check:migrations            # CI "migrations-journaled": migrations/NNNN_*.sql all listed in migrations/journal.json, no gaps
 docker build -t memory-book .       # same Dockerfile Railway uses (entrypoint chowns /data, then runs as `node`)
 BASE=https://<domain> CODE=<code> VIEW_TOKEN=<token> node test/verify-prod.mjs   # HANDOFF task 3 checks against a deploy (THROTTLE=1 locks your IP 10 min)
 ```

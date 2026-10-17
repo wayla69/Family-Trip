@@ -8,6 +8,9 @@ const A = require('./auth');
 const IMG = require('./images');
 const STORY = require('./story');
 const BK = require('./backup');
+const PGM = require('./pg');
+const PG = PGM.create();
+const MEDIA = require('./storage').create(process.env, DATA_DIR);
 
 const app = express();
 app.disable('x-powered-by');
@@ -36,7 +39,14 @@ app.use((req, res, next) => {
   next();
 });
 app.use(A.attachUser);
-app.get('/healthz', (_req, res) => res.type('text').send('ok'));
+// Railway healthcheck: only "ok" when Postgres (if configured) and photo storage answer
+app.get('/healthz', async (_req, res) => {
+  try {
+    if (PG) await PG.query('SELECT 1');
+    await MEDIA.ping();
+    res.type('text').send('ok');
+  } catch (e) { console.error('healthz', e.message); res.status(503).type('text').send('unhealthy'); }
+});
 
 const isSecure = (req) => req.secure || req.headers['x-forwarded-proto'] === 'https';
 
@@ -253,6 +263,9 @@ app.use((err, _req, res, _next) => { console.error(err.message); res.status(err.
 const PORT = +process.env.PORT || 3000;
 if (require.main === module) {
   if (!A.FAMILY_CODE) console.warn('WARNING: FAMILY_CODE is not set — nobody can log in. Set it in Railway → Variables.');
-  app.listen(PORT, () => console.log('Memory Book on :' + PORT + ' · data in ' + DATA_DIR));
+  if (!PG && process.env.NODE_ENV === 'production') { console.error('DATABASE_URL is not set — add Railway Postgres and reference ${{Postgres.DATABASE_URL}}'); process.exit(1); }
+  (PG ? PGM.ready(PG) : Promise.resolve(0))
+    .then((n) => app.listen(PORT, () => console.log(`Memory Book on :${PORT} · data in ${DATA_DIR} · postgres ${PG ? n + ' migrations' : 'off'} · photos ${MEDIA.kind}`)))
+    .catch((e) => { console.error(e.message); process.exit(1); });
 }
 module.exports = app;
