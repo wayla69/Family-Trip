@@ -1,6 +1,7 @@
 'use strict';
 // Postgres pool (Railway Postgres provides DATABASE_URL). Migrations run once at boot.
-const { Pool } = require('pg');
+const { Pool, types } = require('pg');
+types.setTypeParser(1082, (v) => v);   // `date` stays 'YYYY-MM-DD' (no local-midnight Date → timezone shifts in exports)
 const { migrate } = require('./migrate');
 
 function create(env = process.env) {

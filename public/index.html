@@ -3,20 +3,22 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
-<title>Memory Book</title>
-<meta name="theme-color" content="#E0529C">
+<meta name="robots" content="noindex,nofollow">
+<title>Memory Bookshelf</title>
+<meta name="theme-color" content="#1F3A5F">
 <meta name="apple-mobile-web-app-capable" content="yes">
-<meta name="apple-mobile-web-app-title" content="Memory Book">
+<meta name="apple-mobile-web-app-title" content="Bookshelf">
 <link rel="manifest" href="/manifest.webmanifest">
 <link rel="icon" href="/icon.svg" type="image/svg+xml">
 <link rel="apple-touch-icon" href="/icon-192.png">
-<link rel="stylesheet" href="/style.css">
+<link rel="stylesheet" href="/app.css">
 </head>
 <body>
 <div id="app"></div>
-<div id="sheet" class="sheet" hidden></div>
-<div id="lb" class="lb" hidden></div>
-<div id="toast" class="toast" hidden></div>
+<div id="scrim" class="scrim" hidden></div>
+<div id="sheet" class="sheet" hidden role="dialog"></div>
+<div id="lb" class="lb" hidden role="dialog"></div>
+<div id="toast" class="toast" hidden role="status"></div>
 <script src="/core.js" defer></script>
 <script src="/views.js" defer></script>
 <script src="/sheets.js" defer></script>

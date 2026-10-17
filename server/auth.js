@@ -1,18 +1,14 @@
 'use strict';
 const crypto = require('crypto');
-const fs = require('fs');
-const path = require('path');
-const { DATA_DIR } = require('./db');
 
-function loadSecret() {
-  if (process.env.SESSION_SECRET) return process.env.SESSION_SECRET;
-  const f = path.join(DATA_DIR, '.session-secret');
-  try { return fs.readFileSync(f, 'utf8'); } catch (_) {}
-  const s = crypto.randomBytes(32).toString('hex');
-  fs.writeFileSync(f, s, { mode: 0o600 });
-  return s;
+// Cookie signing secret: SESSION_SECRET, else generated once and kept in Postgres (no volume needed).
+let SECRET = process.env.SESSION_SECRET || '';
+async function init(pool) {
+  if (SECRET) return;
+  const fresh = crypto.randomBytes(32).toString('hex');
+  await pool.query("INSERT INTO settings (key, value) VALUES ('session_secret', $1) ON CONFLICT (key) DO NOTHING", [fresh]);
+  SECRET = (await pool.query("SELECT value FROM settings WHERE key='session_secret'")).rows[0].value;
 }
-const SECRET = loadSecret();
 const FAMILY_CODE = process.env.FAMILY_CODE || '';
 const VIEW_TOKEN = process.env.VIEW_TOKEN || '';
 const BACKUP_TOKEN = (process.env.BACKUP_TOKEN || '').length >= 24 ? process.env.BACKUP_TOKEN : '';   // too short → backup endpoint off
@@ -85,6 +81,6 @@ function requireEditor(req, res, next) {
 }
 
 module.exports = {
-  FAMILY_CODE, VIEW_TOKEN, BACKUP_TOKEN, makeToken, setCookie, clearCookie, safeEq, throttled, noteFail,
+  init, FAMILY_CODE, VIEW_TOKEN, BACKUP_TOKEN, makeToken, setCookie, clearCookie, safeEq, throttled, noteFail,
   attachUser, requireUser, requireEditor,
 };

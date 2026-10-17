@@ -72,13 +72,15 @@ jobs:
             -e DATABASE_URL=postgres://postgres:pg@db:5432/postgres -v "$RUNNER_TEMP/mbdata:/data" memory-book
           for i in $(seq 1 30); do curl -fsS localhost:3000/healthz && break; sleep 1; done
           curl -fsS localhost:3000/healthz || { docker logs mb; exit 1; }
-      - name: Runs as non-root, volume writable, migrations applied
+      - name: Runs as non-root, migrations applied, trips seeded, app shell served
         run: |
           uid=$(docker exec mb sh -c 'grep "^Uid:" /proc/1/status | cut -f2')
           echo "server uid: $uid"; test "$uid" != "0"
-          docker exec mb test -s /data/memory.db
-          docker logs mb | grep -q "data in /data"
           docker logs mb | grep -q "migration 0001_init.sql applied"
+          docker logs mb | grep -q "2 seeded trips"
+          docker exec mb test -w /data
+          curl -fsS localhost:3000/ | grep -q "Memory Bookshelf"
+          curl -fsS -o /dev/null localhost:3000/fonts/KIRA-UI-Regular.woff2
       - name: Refuses to boot in production without DATABASE_URL
         run: |
           if docker run --rm -e FAMILY_CODE=x memory-book; then echo "booted without DATABASE_URL"; exit 1; fi

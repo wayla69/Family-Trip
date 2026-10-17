@@ -1,43 +1,45 @@
-# CLAUDE.md — Memory Book
+# CLAUDE.md — Memory Bookshelf
 
-Family memory book for Mimi (มีมี่) and Mika (มีก้า) across many trips. Self-hosted on **Railway** (Node 22 + SQLite on a volume at `/data`). The owner (Oshinei) writes Thai and wants direct execution, concise replies. UI strings are bilingual (TH/EN) through `L(th, en)`.
+Family memory bookshelf for Mimi (มีมี่) and Mika (มีก้า): one book per trip. Self-hosted on **Railway**: Node 22 + **Postgres** + photos in a **Railway Storage Bucket**. The owner (Oshinei) writes Thai and wants direct execution, concise replies. UI strings are bilingual (TH/EN) through `L(th, en)`.
 
-Read `docs/HANDOFF.md` first for the task backlog and acceptance checklist. `README.md` is the user-facing deploy/usage doc (Thai + English).
+Read first: `docs/PRD.md` (scope, approved) · `docs/ADR.md` (stack decisions) · `docs/DESIGN.md` (look = the owner's Trip Operations Manuals) · `docs/handoff/ACCEPTANCE.md` (acceptance criteria). `README.md` is the Thai deploy/usage doc.
 
 ## Commands
 ```bash
-npm ci
-npx playwright install chromium     # once
-npm run dev                         # http://localhost:3000  code hop2027 · read-only link /v/grandma
-npm test                            # test/run.mjs: temp DATA_DIR + free port + Playwright e2e (light, dark, offline queue, viewer, book)
-# Postgres + S3 tests (what CI runs): docker run -d -p 5432:5432 -e POSTGRES_PASSWORD=pg postgres:16-alpine ; npm run s3 &
-TEST_DATABASE_URL=postgres://postgres:pg@localhost:5432/postgres TEST_S3_ENDPOINT=http://localhost:4569 TEST_S3_KEY=S3RVER TEST_S3_SECRET=S3RVER npm test
-npm run check:migrations            # CI "migrations-journaled": migrations/NNNN_*.sql all listed in migrations/journal.json, no gaps
-docker build -t memory-book .       # same Dockerfile Railway uses (entrypoint chowns /data, then runs as `node`)
-BASE=https://<domain> CODE=<code> VIEW_TOKEN=<token> node test/verify-prod.mjs   # HANDOFF task 3 checks against a deploy (THROTTLE=1 locks your IP 10 min)
+npm ci && npx playwright install chromium
+docker run -d --name pg -p 5432:5432 -e POSTGRES_PASSWORD=pg postgres:16-alpine   # local Postgres
+npm run s3 &                                                                        # optional S3 emulator on :4569
+TEST_DATABASE_URL=postgres://postgres:pg@localhost:5432/postgres npm test           # all suites (each group gets a temp DB)
+TEST_ONLY=ui TEST_DATABASE_URL=… npm test                                           # one group: infra | bookshelf | ui
+# + TEST_S3_ENDPOINT=http://localhost:4569 TEST_S3_KEY=S3RVER TEST_S3_SECRET=S3RVER to also test the bucket adapter (CI does)
+DATABASE_URL=postgres://postgres:pg@localhost:5432/mb FAMILY_CODE=hop2027 VIEW_TOKEN=grandma npm start   # http://localhost:3000
+npm run check:migrations            # CI "migrations-journaled"
+BASE=https://<domain> CODE=<code> VIEW_TOKEN=<token> node test/verify-prod.mjs   # smoke checks against a deploy (THROTTLE=1 locks your IP 10 min)
+docker build -t memory-bookshelf .  # same image Railway runs (entrypoint fixes /data ownership, then runs as `node`)
 ```
-Screenshots from the e2e test go to `$SHOTS` (default `/tmp/mb-shots`) — look at them after UI changes (light + dark, 390px phone and ≥1440px desktop).
+UI screenshots go to `$SHOTS` (default `/tmp/mb-shots`) — look at them after UI changes (390/320 px phone, 1440 px desktop, light + dark).
 
 ## Architecture (no build step, no framework)
-- `server/index.js` Express 4 REST API + static + SPA fallback. `server/db.js` better-sqlite3 (WAL) schema. `server/auth.js` family-code login → HMAC-signed cookie `mb` (role editor/viewer). `server/images.js` sharp: EXIF-rotate, strip all metadata/GPS, 2560px full + 520px thumb. `server/story.js` optional Anthropic call (only when `ANTHROPIC_API_KEY` is set).
-- `server/trips/*.json` = trips bundled with the app (`bighop2027`, `harbourhop2026`). Trips created in the app live in table `trips_extra`. `loadTrips()` returns all trips sorted by `start` (earliest first). Optional per-trip fields: `cover: [c1,c2]` (gradient), `art: false` (no day SVG art, use emoji), `custom: true` (app-created).
-- `public/` vanilla-JS PWA: classic `<script>`s sharing one global scope — `core.js` (state, `api()`, IndexedDB offline queue, helpers, router) → `views.js` (render functions return HTML strings) → `sheets.js` (bottom sheets, capture flow, `A` action map, global event delegation, boot). `sw.js` service worker (bump the cache name `mb-vN` when shipped shell files change). Hash routing: `#/`, `#/trip/<id>`, `#/stamps`, `#/kids`, `#/letters`, `#/book/<trip>/<kid>`, `#/cap?t=&d=&key=` (deep link from the trip-guide app that opens the capture sheet).
-- `GET /api/state` returns everything in one payload (cached in localStorage for offline). All writes need header `x-mb: 1` (CSRF) and role editor; writes are idempotent (client-generated ids) so the offline queue can retry safely.
-- Backup/restore in `server/backup.js`: `backup.json` = raw tables. `GET /api/backup.zip` (Bearer `BACKUP_TOKEN`) is complete; editor `export.zip` omits other authors' sealed letters. `POST /api/import` is editor-only and `INSERT OR IGNORE` (never overwrites); keep `TABLES` in FK order when adding tables. `.github/workflows/backup.yml` only runs on a private repo.
-- Letters are sealed **server-side**: text is withheld from everyone but the author until `open_at`.
+- `server/index.js` Express: login/viewer link, `/healthz` (Postgres + storage), bookshelf router, backup/import, static + SPA fallback. Refuses to boot without `DATABASE_URL`.
+- `server/bookshelf.js` the API (`/api/b/*`, `/media/:id(/t)`) + `syncSeeds()`. Everything is scoped by `family_id` (one family in MVP). Writes are idempotent upserts with client ids (offline queue retries safely). mood/fav/note use deterministic ids (`<trip>.mood.d<day>.<kid>`).
+- `server/seeds/*.json` trips bundled with the app, in `docs/handoff/trip.schema.json` format + `theme` (DESIGN.md tokens). Synced on every boot; "Done" marks and app-made trips are kept.
+- `server/migrate.js` + `migrations/NNNN_*.sql` + `migrations/journal.json`: run on boot under an advisory lock; an edited applied migration is refused.
+- `server/storage.js` bucket (`BUCKET`, `ACCESS_KEY_ID`, `SECRET_ACCESS_KEY`, `REGION`, `ENDPOINT`) or local disk. Objects `p/<trip>/<id>.jpg` + `t/…` are never public.
+- `server/images.js` sharp: EXIF-rotate, strip all metadata/GPS, 2560 px + 520 px thumb. `server/backup.js` complete zip + idempotent restore. `server/auth.js` family code → HMAC cookie `mb` (editor/viewer); secret from `SESSION_SECRET` or Postgres `settings`.
+- `public/` vanilla-JS PWA, classic scripts sharing one global scope: `core.js` (state, `api()`, IndexedDB op queue + optimistic `applyLocal`, helpers) → `views.js` (render functions return HTML) → `sheets.js` (actions `A`, photos, lightbox, sheets, boot). `app.css` = DESIGN.md tokens; each book sets its theme on `<html>`. `sw.js` (bump `mbs-vN` when shell files change).
+- Routes: `#/` shelf · `#/t/<trip>` book · `#/t/<trip>/log/<day>` record a day (editors) · `#/t/<trip>/firsts` · `#/cap?t=&d=&key=` deep link from the trip-guide app (accepts legacy ids like `hk2026`).
 
 ## Conventions and rules (from the owner — keep)
-- Use the Edit/Write tools for file changes; never shell heredocs / `Set-Content` for Thai text (mangles UTF-8). After writing, verify the edit landed (OneDrive swap races).
-- Flow for every change: implement → `npm test` → commit → open PR → wait for **green CI** → squash-merge → Railway auto-deploys from `main`. Never merge on red CI.
-- The font is **KIRA UI** (Regular/Medium/SemiBold/Bold, in `public/fonts/`) for all UI and printed output. Do not replace it.
-- UI sizing: verify on a wide desktop screen as well as a phone; use auto-fill grids rather than fixed columns. No horizontal overflow at 360/390px; no dropped or near-empty print pages in the A5 book view.
-- Child photos are sensitive: nothing public, no analytics/third-party scripts, no GPS/EXIF kept, no logging of cookies/codes/tokens.
-- DB changes: the schema in `db.js` uses `CREATE TABLE IF NOT EXISTS`. Any change to an existing table needs an additive, idempotent migration that runs on boot (existing production data lives on the volume and must never be lost). If you add numbered migration files, check the latest number on `main` first — parallel PRs collide — and resolve journal/triage files by union.
-- Stable keys: stop `key`s in trip JSON are the foreign key for check-in stamps. Never rename a key of a trip that has started; add new stops instead.
+- Use the Edit/Write tools for file changes; never shell heredocs / `Set-Content` for Thai text (mangles UTF-8). Verify the edit landed (OneDrive swap races).
+- Flow for every change: implement → `npm test` → commit → PR → wait for **green CI** (test, docker, migrations-journaled) → squash-merge → Deploy workflow runs `railway up`. Never merge on red CI.
+- New migration: check the latest number on `main` first (parallel PRs collide); on conflict keep both journal entries (union) and renumber yours. Never edit a migration that is on `main`.
+- Look: follow `docs/DESIGN.md` (the manuals). Fonts: **KIRA UI** for all UI/print; Cormorant Garamond only as the HK display face. Verify on a wide desktop and a phone; auto-fill grids, no horizontal overflow at 320/390 px.
+- Children's photos: nothing public, no analytics/third-party scripts, no GPS/EXIF kept, never sent to an AI, no logging of cookies/codes/tokens. No booking numbers / passports in seeds.
+- Never re-render over a focused field (`safeRender`) — a late render swaps the box and loses typed text (this bug happened; see `enqueue`).
+- Stable keys: planned-place `key`s in seeds are check-in keys; never rename one for a trip that has started — add a new stop instead.
 
 ## Gotchas
-- Don't run `pkill -f` patterns that can match your own shell; kill by PID.
-- Test server must not be started in the same process group you will kill.
-- `FAMILY_CODE` unset ⇒ nobody can log in (server only warns). `SESSION_SECRET` is auto-generated into `DATA_DIR/.session-secret` when not set — keep the volume.
-- Service worker caches `/img`, `/art`, `/fonts` cache-first; `/api` is never cached.
-- Test files may use sandbox-only browser paths; `CHROME=/path` overrides.
+- Don't `pkill -f`/grep-kill node servers in a shell that runs tests — kill by PID.
+- `FAMILY_CODE` unset ⇒ nobody can log in (server only warns).
+- Headless Chromium reports `en-US`, so tests see the English UI unless they toggle.
+- Docker Hub `minio/minio` is not pullable here; tests use `s3rver` (devDependency) as the S3 emulator.
