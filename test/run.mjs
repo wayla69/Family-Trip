@@ -16,7 +16,7 @@ const { Client } = createRequire(import.meta.url)('pg');
 const admin = new Client({ connectionString: process.env.TEST_DATABASE_URL });
 await admin.connect();
 
-const GROUPS = [['test/infra.mjs'], ['test/bookshelf.mjs'], ['test/ui.mjs', 'test/backup.mjs']]
+const GROUPS = [['test/infra.mjs'], ['test/bookshelf.mjs'], ['test/import.mjs'], ['test/ui.mjs', 'test/backup.mjs']]
   .filter((g) => !process.env.TEST_ONLY || g.some((f) => f.includes(process.env.TEST_ONLY)));   // e.g. TEST_ONLY=ui
 const freePort = () => new Promise((res) => { const s = net.createServer().listen(0, () => { const p = s.address().port; s.close(() => res(p)); }); });
 
