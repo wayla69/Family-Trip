@@ -1,0 +1,164 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "Artifact moments/{id} document (source format for import)",
+  "type": "object",
+  "required": [
+    "trip",
+    "k",
+    "at"
+  ],
+  "properties": {
+    "trip": {
+      "const": "hk2026"
+    },
+    "k": {
+      "enum": [
+        "photo",
+        "quote",
+        "mood",
+        "fav",
+        "note",
+        "first",
+        "story"
+      ]
+    },
+    "at": {
+      "type": "integer",
+      "description": "epoch ms"
+    },
+    "d": {
+      "type": "integer",
+      "minimum": -1,
+      "maximum": 5,
+      "description": "day index; -1 = whole trip (story_all)"
+    },
+    "who": {
+      "enum": [
+        "mimi",
+        "mika",
+        "both"
+      ]
+    },
+    "text": {
+      "type": "string"
+    },
+    "hi": {
+      "type": "boolean"
+    },
+    "img": {
+      "type": "string",
+      "pattern": "^[0-9a-f]{32}$",
+      "description": "Artifact asset id (photo only)"
+    },
+    "e": {
+      "type": "string",
+      "description": "mood emoji"
+    },
+    "key": {
+      "type": "string",
+      "description": "firsts_catalog key or 'custom'"
+    },
+    "lang": {
+      "enum": [
+        "th",
+        "en"
+      ]
+    }
+  },
+  "allOf": [
+    {
+      "if": {
+        "properties": {
+          "k": {
+            "const": "photo"
+          }
+        }
+      },
+      "then": {
+        "required": [
+          "d",
+          "img"
+        ]
+      }
+    },
+    {
+      "if": {
+        "properties": {
+          "k": {
+            "const": "quote"
+          }
+        }
+      },
+      "then": {
+        "required": [
+          "d",
+          "who",
+          "text"
+        ]
+      }
+    },
+    {
+      "if": {
+        "properties": {
+          "k": {
+            "const": "mood"
+          }
+        }
+      },
+      "then": {
+        "required": [
+          "d",
+          "who",
+          "e"
+        ]
+      }
+    },
+    {
+      "if": {
+        "properties": {
+          "k": {
+            "enum": [
+              "fav",
+              "note"
+            ]
+          }
+        }
+      },
+      "then": {
+        "required": [
+          "d",
+          "text"
+        ]
+      }
+    },
+    {
+      "if": {
+        "properties": {
+          "k": {
+            "const": "first"
+          }
+        }
+      },
+      "then": {
+        "required": [
+          "key",
+          "who"
+        ]
+      }
+    },
+    {
+      "if": {
+        "properties": {
+          "k": {
+            "const": "story"
+          }
+        }
+      },
+      "then": {
+        "required": [
+          "text"
+        ]
+      }
+    }
+  ]
+}

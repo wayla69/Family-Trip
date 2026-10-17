@@ -1,0 +1,20 @@
+/* ================= HOLIDAY THEME — bright, sunny, energetic ================= */
+:root{
+  --bg:#F5F7FF; --surface:#FFFFFF; --surface2:#EEF2FF; --ink:#141B3A; --muted:#5B6488; --line:#E1E6F5;
+  --navy:#2A3FB0; --pin:#FF4F3A; --jade:#0FB39A; --gold:#F5A000; --tile:#3B82F6;
+  --drv:#FF4F3A; --meal:#FFF4DA; --meal-ink:#9A5A00; --taxi-bg:#FFF1C7; --walk-bg:#DCFCEF; --here-bg:#E6EDFF; --park-bg:#FFE4F1;
+  --hc0:#FF4F3A;--hc1:#0FB39A;--hc2:#F5A000;--hc3:#3B82F6;--hc4:#D946EF;
+  --sunset:linear-gradient(135deg,#FF5F45 0%,#FF2E7E 52%,#8B3DFF 100%);
+  --pop:linear-gradient(135deg,#FF5F45,#FF2E7E);
+}
+@media (prefers-color-scheme: dark){:root:not([data-theme="light"]){
+  --bg:#0C0F24; --surface:#161B3A; --surface2:#1F2650; --ink:#F1F3FF; --muted:#A9B0D6; --line:#2A3266;
+  --navy:#A9B8FF; --pin:#FF7A5C; --jade:#3EE0C0; --gold:#FFC24A; --tile:#7FB0FF;
+  --meal:#2E2410; --meal-ink:#FFD27A; --taxi-bg:#3A2F0E; --walk-bg:#0F3A2E; --here-bg:#1E2A5E; --park-bg:#46163A;
+  --hc0:#FF7A5C;--hc1:#3EE0C0;--hc2:#FFC24A;--hc3:#7FB0FF;--hc4:#F08CFF }}
+:root[data-theme="dark"]{
+  --bg:#0C0F24; --surface:#161B3A; --surface2:#1F2650; --ink:#F1F3FF; --muted:#A9B0D6; --line:#2A3266;
+  --navy:#A9B8FF; --pin:#FF7A5C; --jade:#3EE0C0; --gold:#FFC24A; --tile:#7FB0FF;
+  --meal:#2E2410; --meal-ink:#FFD27A; --taxi-bg:#3A2F0E; --walk-bg:#0F3A2E; --here-bg:#1E2A5E; --park-bg:#46163A;
+  --hc0:#FF7A5C;--hc1:#3EE0C0;--hc2:#FFC24A;--hc3:#7FB0FF;--hc4:#F08CFF}
+

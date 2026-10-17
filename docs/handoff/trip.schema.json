@@ -1,0 +1,182 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "Bookshelf trip seed",
+  "type": "object",
+  "required": [
+    "slug",
+    "title",
+    "date_from",
+    "date_to",
+    "timezone",
+    "children",
+    "days"
+  ],
+  "properties": {
+    "slug": {
+      "type": "string",
+      "pattern": "^[a-z0-9-]+$"
+    },
+    "legacy_trip_id": {
+      "type": "string"
+    },
+    "status": {
+      "enum": [
+        "upcoming",
+        "in_progress",
+        "done"
+      ]
+    },
+    "title": {
+      "$ref": "#/$defs/i18n"
+    },
+    "date_from": {
+      "type": "string",
+      "format": "date"
+    },
+    "date_to": {
+      "type": "string",
+      "format": "date"
+    },
+    "timezone": {
+      "type": "string"
+    },
+    "destinations": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "children": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": [
+          "slug",
+          "name_th",
+          "name_en"
+        ],
+        "properties": {
+          "slug": {
+            "type": "string"
+          },
+          "name_th": {
+            "type": "string"
+          },
+          "name_en": {
+            "type": "string"
+          },
+          "emoji": {
+            "type": "string"
+          },
+          "age_at_trip": {
+            "$ref": "#/$defs/i18n"
+          }
+        }
+      }
+    },
+    "days": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": [
+          "index",
+          "date",
+          "title"
+        ],
+        "properties": {
+          "index": {
+            "type": "integer",
+            "minimum": 0
+          },
+          "date": {
+            "type": "string",
+            "format": "date"
+          },
+          "emoji": {
+            "type": "string"
+          },
+          "gradient": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            },
+            "minItems": 2,
+            "maxItems": 2
+          },
+          "title": {
+            "$ref": "#/$defs/i18n"
+          },
+          "sleep": {
+            "$ref": "#/$defs/i18n"
+          },
+          "planned_places": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "properties": {
+                "en": {
+                  "type": "string"
+                },
+                "th": {
+                  "type": "string"
+                },
+                "zh": {
+                  "type": "string"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "firsts_catalog": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": [
+          "key",
+          "label"
+        ],
+        "properties": {
+          "key": {
+            "type": "string"
+          },
+          "emoji": {
+            "type": "string"
+          },
+          "label": {
+            "$ref": "#/$defs/i18n"
+          }
+        }
+      }
+    },
+    "moods": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "stamp": {
+      "type": "object"
+    },
+    "cover": {
+      "type": "object"
+    },
+    "notes": {
+      "type": "string"
+    }
+  },
+  "$defs": {
+    "i18n": {
+      "type": "object",
+      "properties": {
+        "th": {
+          "type": "string"
+        },
+        "en": {
+          "type": "string"
+        }
+      }
+    }
+  }
+}
