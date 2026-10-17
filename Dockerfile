@@ -9,6 +9,9 @@ FROM node:22-bookworm-slim
 ENV NODE_ENV=production DATA_DIR=/data PORT=3000
 WORKDIR /app
 COPY --from=deps /app/node_modules node_modules
+# headless Chromium (shell only) for the server-side A4 PDF, same version as playwright-core
+ENV PLAYWRIGHT_BROWSERS_PATH=/ms-playwright
+RUN node node_modules/playwright-core/cli.js install --with-deps --only-shell chromium && rm -rf /var/lib/apt/lists/* /tmp/*
 COPY package.json ./
 COPY server server
 COPY migrations migrations

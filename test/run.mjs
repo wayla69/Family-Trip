@@ -16,7 +16,7 @@ const { Client } = createRequire(import.meta.url)('pg');
 const admin = new Client({ connectionString: process.env.TEST_DATABASE_URL });
 await admin.connect();
 
-const GROUPS = [['test/infra.mjs'], ['test/bookshelf.mjs'], ['test/import.mjs'], ['test/ui.mjs', 'test/backup.mjs']]
+const GROUPS = [['test/infra.mjs'], ['test/bookshelf.mjs'], ['test/import.mjs'], ['test/story.mjs'], ['test/ui.mjs', 'test/backup.mjs']]
   .filter((g) => !process.env.TEST_ONLY || g.some((f) => f.includes(process.env.TEST_ONLY)));   // e.g. TEST_ONLY=ui
 const freePort = () => new Promise((res) => { const s = net.createServer().listen(0, () => { const p = s.address().port; s.close(() => res(p)); }); });
 
@@ -28,6 +28,9 @@ async function group(suites) {
   const port = await freePort();
   const env = { ...process.env, PORT: String(port), DATA_DIR: data, DATABASE_URL: u.toString(), FAMILY_CODE: 'hop2027', VIEW_TOKEN: 'grandma', SESSION_SECRET: 'test-secret', BACKUP_TOKEN: 'test-backup-token-0123456789abcdef' };
   delete env.ANTHROPIC_API_KEY; delete env.BUCKET;
+  // server-side PDF: use Playwright's browser when installed, else the sandbox's preinstalled Chromium
+  const { chromium } = createRequire(import.meta.url)('playwright-core');
+  if (!env.CHROMIUM_PATH && !fs.existsSync(chromium.executablePath())) env.CHROMIUM_PATH = process.env.CHROME || '/opt/pw-browsers/chromium-1194/chrome-linux/chrome';
   const server = spawn(process.execPath, ['server/index.js'], { cwd: root, env, stdio: ['ignore', 'inherit', 'inherit'] });
   let exited = false; server.on('exit', () => { exited = true; });
   const base = `http://localhost:${port}`;

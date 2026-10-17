@@ -163,6 +163,14 @@ const T = 'hk-macau-2026';
   ok(m.h1 >= 56 && m.body >= 15, `wide: title ${m.h1}px, body ${m.body}px — readable`);
   ok(m.img > 120 && m.img < 420 && m.main <= 960, `wide: photos ${Math.round(m.img)}px in a ${Math.round(m.main)}px page — not stretched`);
   ok(m.cols === 2, 'wide: route strip beside the timeline (like the manual)');
+  // server-side A4 PDF with photos
+  const pr = await s.page.request.get(`${BASE}/api/b/pdf/hk-macau-2026`, { timeout: 120000 });
+  const pb = await pr.body();
+  fs.writeFileSync(path.join(OUT, 'server-book-hk.pdf'), pb);
+  const pdf = { status: pr.status(), type: pr.headers()['content-type'], head: pb.subarray(0, 5).toString('latin1'), size: pb.length,
+    pages: (pb.toString('latin1').match(/\/Type\s*\/Page[^s]/g) || []).length };
+  ok(pdf.status === 200 && pdf.type === 'application/pdf' && pdf.head === '%PDF-', `server PDF: ${Math.round(pdf.size / 1024)} KB, ${pdf.pages} A4 pages`);
+  ok(pdf.pages >= 3 && pdf.size > 40000, 'PDF has the cover + one page per recorded day, with photos');
   await s.shot('10-book-wide');
   await s.ctx.close();
   for (const w of [320, 375]) {
@@ -195,6 +203,7 @@ const T = 'hk-macau-2026';
   ok(true, 'viewer: record URL falls back to the book');
   const w = await page.evaluate(async () => (await fetch('/api/b/entries/q-hack-0001', { method: 'PUT', headers: { 'x-mb': '1', 'content-type': 'application/json' }, body: JSON.stringify({ trip: 'hk-macau-2026', day: 0, kind: 'quote', child: 'mimi', text: 'x' }) })).status);
   ok(w === 403, 'viewer write → 403');
+  ok(await page.evaluate(async () => (await fetch('/api/b/pdf/hk-macau-2026')).headers.get('content-type')) === 'application/pdf', 'viewer (relatives) can download the PDF');
   await s.shot('20-viewer');
   ok(s.errs.length === 0, 'viewer: no console errors ' + s.errs.join(' | '));
   await s.ctx.close();

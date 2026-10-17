@@ -26,6 +26,10 @@ UI screenshots go to `$SHOTS` (default `/tmp/mb-shots`) — look at them after U
 - `server/migrate.js` + `migrations/NNNN_*.sql` + `migrations/journal.json`: run on boot under an advisory lock; an edited applied migration is refused.
 - `server/storage.js` bucket (`BUCKET`, `ACCESS_KEY_ID`, `SECRET_ACCESS_KEY`, `REGION`, `ENDPOINT`) or local disk. Objects `p/<trip>/<id>.jpg` + `t/…` are never public.
 - `server/images.js` sharp: EXIF-rotate, strip all metadata/GPS, 2560 px + 520 px thumb. `server/backup.js` complete zip + idempotent restore. `server/auth.js` family code → HMAC cookie `mb` (editor/viewer); secret from `SESSION_SECRET` or Postgres `settings`.
+- `server/story.js` bedtime stories via `@anthropic-ai/sdk` (`STORY_MODEL`, default `claude-sonnet-5-5`; `fallbacks: "default"` opted in): only on button press, text facts only (never photos), streamed to the page as SSE by `POST /api/b/story`; disconnect = abort upstream, nothing saved. Tests use a local mock via `ANTHROPIC_BASE_URL`.
+- `server/pdf.js` A4 PDF: headless Chromium (Playwright shell installed in the image) prints the app's own book page with a read-only session; one render at a time. `GET /api/b/pdf/:trip`.
+- `server/importer.js` + `scripts/import-harbour-hop.mjs`: Harbour Hop app export → bookshelf (dry run by default, idempotent via `external_id`).
+- Graceful shutdown on SIGTERM (Railway redeploys): close server, Chromium, pool.
 - `public/` vanilla-JS PWA, classic scripts sharing one global scope: `core.js` (state, `api()`, IndexedDB op queue + optimistic `applyLocal`, helpers) → `views.js` (render functions return HTML) → `sheets.js` (actions `A`, photos, lightbox, sheets, boot). `app.css` = DESIGN.md tokens; each book sets its theme on `<html>`. `sw.js` (bump `mbs-vN` when shell files change).
 - Routes: `#/` shelf · `#/t/<trip>` book · `#/t/<trip>/log/<day>` record a day (editors) · `#/t/<trip>/firsts` · `#/cap?t=&d=&key=` deep link from the trip-guide app (accepts legacy ids like `hk2026`).
 
