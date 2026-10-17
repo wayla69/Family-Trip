@@ -1,13 +1,13 @@
 {
-  "name": "memory-book",
+  "name": "memory-bookshelf",
   "version": "1.0.0",
   "private": true,
-  "description": "Family memory book for the kids — photos, quotes, stamps and letters across many trips",
+  "description": "Memory Bookshelf — one book per family trip for Mimi and Mika (Postgres + Railway bucket PWA)",
   "type": "commonjs",
   "main": "server/index.js",
   "scripts": {
     "start": "node server/index.js",
-    "dev": "DATA_DIR=./data FAMILY_CODE=hop2027 VIEW_TOKEN=grandma node server/index.js",
+    "dev": "DATA_DIR=./data DATABASE_URL=${DATABASE_URL:-postgres://postgres:pg@localhost:5432/mb} FAMILY_CODE=hop2027 VIEW_TOKEN=grandma node server/index.js",
     "test": "node test/run.mjs",
     "check:migrations": "node scripts/check-migrations.js",
     "s3": "s3rver -d ./data/s3 -p 4569 --configure-bucket mb-test --silent"
@@ -18,7 +18,6 @@
   "dependencies": {
     "@aws-sdk/client-s3": "3.1144.0",
     "archiver": "^7.0.1",
-    "better-sqlite3": "^11.7.0",
     "express": "^4.21.2",
     "pg": "8.23.1",
     "sharp": "^0.33.5",
