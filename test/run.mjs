@@ -11,7 +11,7 @@ import { fileURLToPath } from 'node:url';
 const root = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '..');
 const port = await new Promise((res) => { const s = net.createServer().listen(0, () => { const p = s.address().port; s.close(() => res(p)); }); });
 const data = fs.mkdtempSync(path.join(os.tmpdir(), 'mb-test-'));
-const env = { ...process.env, PORT: String(port), DATA_DIR: data, FAMILY_CODE: 'hop2027', VIEW_TOKEN: 'grandma', SESSION_SECRET: 'test-secret' };
+const env = { ...process.env, PORT: String(port), DATA_DIR: data, FAMILY_CODE: 'hop2027', VIEW_TOKEN: 'grandma', SESSION_SECRET: 'test-secret', BACKUP_TOKEN: 'test-backup-token-0123456789abcdef' };
 delete env.ANTHROPIC_API_KEY;
 
 const server = spawn(process.execPath, ['server/index.js'], { cwd: root, env, stdio: ['ignore', 'inherit', 'inherit'] });
@@ -23,5 +23,7 @@ for (let i = 0; i < 60; i++) {
   await new Promise((r) => setTimeout(r, 250));
 }
 
-const t = spawn(process.execPath, ['test/smoke.mjs'], { cwd: root, env: { ...env, BASE: base, CODE: 'hop2027' }, stdio: 'inherit' });
-t.on('exit', (code) => { server.kill(); fs.rmSync(data, { recursive: true, force: true }); process.exit(code || 0); });
+const run = (f) => new Promise((res) => spawn(process.execPath, [f], { cwd: root, env: { ...env, BASE: base, CODE: 'hop2027' }, stdio: 'inherit' }).on('exit', (c) => res(c || 0)));
+let code = 0;
+for (const f of ['test/smoke.mjs', 'test/backup.mjs']) code = code || await run(f);
+server.kill(); fs.rmSync(data, { recursive: true, force: true }); process.exit(code);

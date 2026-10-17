@@ -15,6 +15,7 @@ function loadSecret() {
 const SECRET = loadSecret();
 const FAMILY_CODE = process.env.FAMILY_CODE || '';
 const VIEW_TOKEN = process.env.VIEW_TOKEN || '';
+const BACKUP_TOKEN = (process.env.BACKUP_TOKEN || '').length >= 24 ? process.env.BACKUP_TOKEN : '';   // too short → backup endpoint off
 const COOKIE = 'mb';
 const MAXAGE = 400 * 24 * 3600; // seconds (browser cap)
 
@@ -84,6 +85,6 @@ function requireEditor(req, res, next) {
 }
 
 module.exports = {
-  FAMILY_CODE, VIEW_TOKEN, makeToken, setCookie, clearCookie, safeEq, throttled, noteFail,
+  FAMILY_CODE, VIEW_TOKEN, BACKUP_TOKEN, makeToken, setCookie, clearCookie, safeEq, throttled, noteFail,
   attachUser, requireUser, requireEditor,
 };

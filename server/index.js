@@ -3,11 +3,11 @@ const express = require('express');
 const fs = require('fs');
 const path = require('path');
 const crypto = require('crypto');
-const archiver = require('archiver');
 const { db, DATA_DIR } = require('./db');
 const A = require('./auth');
 const IMG = require('./images');
 const STORY = require('./story');
+const BK = require('./backup');
 
 const app = express();
 app.disable('x-powered-by');
@@ -222,16 +222,24 @@ app.get('/api/export.json', A.requireUser, (req, res) => {
   res.json(buildState(req.user));
 });
 app.get('/api/export.zip', A.requireUser, (req, res) => {
-  res.setHeader('Content-Type', 'application/zip');
-  res.setHeader('Content-Disposition', 'attachment; filename="memory-book-backup.zip"');
-  const z = archiver('zip', { zlib: { level: 1 } });
-  z.on('error', () => res.end());
-  z.pipe(res);
-  z.append(JSON.stringify(buildState(req.user), null, 1), { name: 'memory-book.json' });
-  for (const p of db.prepare('SELECT id FROM photos').all()) {
-    const f = IMG.fileFull(p.id); if (fs.existsSync(f)) z.file(f, { name: 'photos/' + p.id + '.jpg' });
-  }
-  z.finalize();
+  BK.sendZip(res, req.user, { 'memory-book.json': JSON.stringify(buildState(req.user), null, 1) });
+});
+// machine backup for the scheduled off-site job: Authorization: Bearer <BACKUP_TOKEN>; complete (incl. sealed letters)
+app.get('/api/backup.zip', (req, res) => {
+  const m = /^Bearer (.+)$/.exec(req.headers.authorization || '');
+  if (!A.BACKUP_TOKEN || !m || !A.safeEq(m[1], A.BACKUP_TOKEN)) return res.status(401).json({ error: 'auth' });
+  BK.sendZip(res, null);
+});
+// restore from export.zip / backup.zip: editors only, idempotent (never overwrites existing rows or photos)
+app.post('/api/import', A.requireEditor, async (req, res, next) => {
+  let file;
+  try {
+    file = await BK.receive(req, 8e9);
+    res.json({ ok: true, ...(await BK.importZip(file)) });
+  } catch (e) {
+    if (e.status) return res.status(e.status).json({ error: e.message });
+    next(e);
+  } finally { if (file) fs.rm(file, { force: true }, () => {}); }
 });
 
 // ---------- static app ----------
