@@ -1,0 +1,48 @@
+name: CI
+on:
+  pull_request:
+  push:
+    branches: [main]
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version-file: .nvmrc
+          cache: npm
+      - run: npm ci
+      - run: npx playwright install --with-deps chromium
+      - name: End-to-end smoke test
+        run: npm test
+        env:
+          SHOTS: ${{ runner.temp }}/mb-shots
+      - name: Upload screenshots on failure
+        if: failure()
+        uses: actions/upload-artifact@v4
+        with:
+          name: mb-shots
+          path: ${{ runner.temp }}/mb-shots
+          if-no-files-found: ignore
+
+  docker:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@v4
+      - name: Build the production image (same Dockerfile Railway uses)
+        run: docker build -t memory-book .
+      - name: Boot it and hit /healthz
+        run: |
+          docker run -d --name mb -p 3000:3000 -e FAMILY_CODE=ci-passphrase -v "$RUNNER_TEMP/mbdata:/data" memory-book
+          for i in $(seq 1 30); do curl -fsS localhost:3000/healthz && break; sleep 1; done
+          curl -fsS localhost:3000/healthz || { docker logs mb; exit 1; }
+      - name: Runs as non-root and the root-owned volume is writable
+        run: |
+          uid=$(docker exec mb sh -c 'grep "^Uid:" /proc/1/status | cut -f2')
+          echo "server uid: $uid"; test "$uid" != "0"
+          docker exec mb test -s /data/memory.db
+          docker logs mb | grep -q "data in /data"
