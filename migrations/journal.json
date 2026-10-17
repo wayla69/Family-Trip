@@ -1,0 +1,6 @@
+{
+  "_comment": "Every file in migrations/ must be listed here, in order, numbered 0001.. without gaps. Before adding one, check the latest number on main; on a merge conflict keep both entries (union) and renumber yours.",
+  "migrations": [
+    { "id": "0001", "file": "0001_init.sql" }
+  ]
+}

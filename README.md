@@ -15,22 +15,34 @@
 | สำรองข้อมูล | `/api/export.zip` (ข้อมูล + รูปเต็ม) · backup อัตโนมัติรายสัปดาห์ · กู้คืนด้วย `POST /api/import` |
 | เรื่องเล่าโดย Claude (ไม่บังคับ) | ใส่ `ANTHROPIC_API_KEY` แล้วปุ่ม "ให้ Claude เล่า" จะขึ้นเอง |
 
-## Deploy บน Railway (ประมาณ 10 นาที)
-1. สร้าง repo ส่วนตัวบน GitHub แล้ว push โฟลเดอร์นี้ขึ้นไป
-   ```bash
-   git init && git add . && git commit -m "Memory Book" && git branch -M main
-   git remote add origin git@github.com:<you>/memory-book.git && git push -u origin main
-   ```
-2. Railway → **New Project → Deploy from GitHub repo** → เลือก repo (ตรวจเจอ `Dockerfile` และ `railway.json` เอง)
-3. ในเซอร์วิส → **Settings → Volumes → Add Volume** แล้ว **Mount path = `/data`** (สำคัญมาก ไม่มี volume รูปจะหายทุกครั้งที่ deploy)
-4. **Variables** ใส่:
-   - `FAMILY_CODE` = รหัสครอบครัวยาวๆ (ผู้ใหญ่ทั้ง 3 คนใช้เข้าและเพิ่มข้อมูลได้)
-   - `VIEW_TOKEN` = สตริงสุ่มยาวๆ (ไว้ทำลิงก์ลับให้ปู่ย่าตายาย ดูอย่างเดียว) → ลิงก์คือ `https://<โดเมน>/v/<VIEW_TOKEN>`
-   - `ANTHROPIC_API_KEY` (ถ้าอยากได้ปุ่ม Claude เล่าเรื่อง)
-5. **Settings → Networking → Generate Domain** แล้วเปิดลิงก์ ใส่ `FAMILY_CODE` กับชื่อเล่น (พ่อ/แม่/…)
-6. บนมือถือ: iPhone → Safari → Share → *Add to Home Screen* · Android → Chrome → *Install app*
+## Deploy บน Railway (ประมาณ 15 นาที · ไม่ต้องเชื่อม GitHub กับ Railway)
+GitHub ของเจ้าของ authorize แอป Railway ไม่ได้ → ใช้ **GitHub Actions สั่ง Railway CLI** แทน (merge เข้า `main` + CI เขียว = deploy อัตโนมัติ)
 
-ค่าใช้จ่ายโดยประมาณ: Railway Hobby ~$5/เดือน (รวมเครดิตใช้งาน) พื้นที่รูปราว 1–2 MB ต่อรูป
+**ใน Railway (ทำครั้งเดียว)**
+1. **New Project → Empty Project** → **+ Create → Empty Service** ตั้งชื่อ `web`
+2. **+ Create → Database → PostgreSQL**
+3. **+ Create → Bucket** (ที่เก็บรูป เลือก region ใกล้ไทย เช่น Singapore — เปลี่ยนทีหลังไม่ได้)
+4. เซอร์วิส `web` → **Variables** ใส่:
+   - `DATABASE_URL` = `${{Postgres.DATABASE_URL}}`
+   - `BUCKET`, `ACCESS_KEY_ID`, `SECRET_ACCESS_KEY`, `REGION`, `ENDPOINT` = อ้างอิงจาก Bucket (ปุ่ม *Add Reference* → เลือก Bucket) · ถ้าแท็บ Credentials ของ Bucket บอกว่า path-style ให้เพิ่ม `BUCKET_PATH_STYLE=1`
+   - `FAMILY_CODE` = รหัสครอบครัวยาวๆ (ผู้ใหญ่ใช้เข้าและเพิ่มข้อมูล)
+   - `VIEW_TOKEN` = สตริงสุ่ม (`openssl rand -hex 24`) → ลิงก์ญาติ `https://<โดเมน>/v/<VIEW_TOKEN>`
+   - `SESSION_SECRET` = สตริงสุ่ม (`openssl rand -hex 32`)
+   - `ANTHROPIC_API_KEY` (ถ้าต้องการปุ่มให้ Claude แต่งนิทาน)
+5. เซอร์วิส `web` → **Settings → Volumes → Add Volume** mount `/data` (ชั่วคราว จนกว่าการย้ายข้อมูลไป Postgres + Bucket เสร็จ)
+6. **Settings → Networking → Generate Domain**
+7. **Project Settings → Tokens → Create token** (environment `production`) — เป็น *Project token* ไม่ใช่ Account token
+
+**ใน GitHub (ทำครั้งเดียว)** → repo → Settings → Secrets and variables → Actions
+- Secret `RAILWAY_TOKEN` = token จากข้อ 7
+- Variables: `RAILWAY_SERVICE` = `web` · `MB_URL` = `https://<โดเมน>`
+- Actions → **Deploy** → *Run workflow* เพื่อ deploy ครั้งแรก แล้วเปิดลิงก์ ใส่ `FAMILY_CODE` กับชื่อเล่น
+
+deploy เองจากเครื่องก็ได้: `npm i -g @railway/cli@5.62.1 && railway login && railway link && railway up --service web`
+
+บนมือถือ: iPhone → Safari → Share → *Add to Home Screen* · Android → Chrome → *Install app*
+
+ค่าใช้จ่ายโดยประมาณ: Railway Hobby ~$5/เดือน (รวมเครดิตใช้งาน) + Postgres + Bucket รูป $0.015/GB/เดือน (รูปละ ~1–2 MB)
 
 ## ความปลอดภัยของรูปเด็ก
 - ทุกอย่างอยู่หลังรหัสครอบครัว (cookie แบบ HttpOnly/SameSite) · รูปเปิดดูได้เฉพาะคนที่ล็อกอินหรือมีลิงก์ลับ

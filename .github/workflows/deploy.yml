@@ -1,0 +1,44 @@
+name: Deploy
+# GitHub Actions → Railway CLI (docs/ADR.md ADR-8): Railway cannot be connected to this GitHub account,
+# so CI deploys with a Railway *project* token after CI is green on main.
+# Setup (once): Railway → project → Settings → Tokens → create a token for the production environment →
+#   GitHub → Settings → Secrets and variables → Actions: secret RAILWAY_TOKEN; variables RAILWAY_SERVICE (service name) and MB_URL (https://<domain>).
+on:
+  workflow_run:
+    workflows: [CI]
+    types: [completed]
+    branches: [main]
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+concurrency:
+  group: deploy-production
+  cancel-in-progress: false
+
+jobs:
+  deploy:
+    if: github.event_name == 'workflow_dispatch' || (github.event.workflow_run.conclusion == 'success' && github.event.workflow_run.event == 'push')
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    environment: production
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: ${{ github.event.workflow_run.head_sha || github.sha }}
+      - name: Deploy with the Railway CLI
+        env:
+          RAILWAY_TOKEN: ${{ secrets.RAILWAY_TOKEN }}
+          SERVICE: ${{ vars.RAILWAY_SERVICE }}
+        run: |
+          if [ -z "$RAILWAY_TOKEN" ]; then echo "::notice::RAILWAY_TOKEN not set — deploy skipped"; exit 0; fi
+          npx --yes @railway/cli@5.62.1 up --ci ${SERVICE:+--service "$SERVICE"}
+      - name: Smoke test the live URL
+        env:
+          RAILWAY_TOKEN: ${{ secrets.RAILWAY_TOKEN }}
+          MB_URL: ${{ vars.MB_URL }}
+        run: |
+          if [ -z "$RAILWAY_TOKEN" ] || [ -z "$MB_URL" ]; then echo "::notice::MB_URL not set — smoke test skipped"; exit 0; fi
+          for i in $(seq 1 30); do curl -fsS "${MB_URL%/}/healthz" && exit 0; sleep 10; done
+          echo "::error::${MB_URL}/healthz did not answer ok"; exit 1
