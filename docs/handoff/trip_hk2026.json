@@ -147,14 +147,14 @@
     {
       "index": 3,
       "date": "2026-12-08",
-      "emoji": "🏮",
+      "emoji": "✨",
       "gradient": [
         "#FF6A2B",
         "#FFA931"
       ],
       "title": {
-        "th": "เช้าสนามเด็กเล่น เย็น Senado ยามโพล้เพล้",
-        "en": "Playground morning, Senado at dusk"
+        "th": "เช้าสนามเด็กเล่น บ่ายห้องแห่งแสง",
+        "en": "Playground morning, rooms of light"
       },
       "sleep": {
         "th": "Studio City Hotel, Cotai",
@@ -162,19 +162,19 @@
       },
       "planned_places": [
         {
-          "en": "Senado Square",
-          "th": "Senado Square",
-          "zh": "議事亭前地"
-        },
-        {
-          "en": "Ruins of St Paul's",
-          "th": "ซากโบสถ์ St Paul",
-          "zh": "大三巴牌坊"
-        },
-        {
           "en": "Nickelodeon Town, Studio City",
           "th": "Nickelodeon Town, Studio City",
           "zh": "新濠影滙 Nickelodeon Town"
+        },
+        {
+          "en": "The Venetian",
+          "th": "The Venetian",
+          "zh": "澳門威尼斯人"
+        },
+        {
+          "en": "teamLab SuperNature Macao",
+          "th": "teamLab SuperNature Macao",
+          "zh": "teamLab 超自然空間"
         }
       ]
     },
@@ -187,8 +187,8 @@
         "#5CC860"
       ],
       "title": {
-        "th": "แพนด้า แล้วห้องแห่งแสงข้างบ้าน",
-        "en": "Pandas, then rooms of light next door"
+        "th": "เช้าดูแพนด้า เย็น Senado ยามโพล้เพล้",
+        "en": "Pandas in the morning, Senado at dusk"
       },
       "sleep": {
         "th": "Studio City Hotel, Cotai",
@@ -206,14 +206,14 @@
           "zh": "路環市區"
         },
         {
-          "en": "The Venetian",
-          "th": "The Venetian",
-          "zh": "澳門威尼斯人"
+          "en": "Senado Square",
+          "th": "Senado Square",
+          "zh": "議事亭前地"
         },
         {
-          "en": "teamLab SuperNature Macao",
-          "th": "teamLab SuperNature Macao",
-          "zh": "teamLab 超自然空間"
+          "en": "Ruins of St Paul's",
+          "th": "ซากโบสถ์ St Paul",
+          "zh": "大三巴牌坊"
         }
       ]
     },
