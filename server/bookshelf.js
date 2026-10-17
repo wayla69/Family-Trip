@@ -1,0 +1,262 @@
+'use strict';
+// Memory Bookshelf API on Postgres (docs/PRD.md, docs/ADR.md). Mounted at /api/b and /media.
+// Every query is scoped to one family; ids are client-generated so the offline queue can retry any write safely.
+const fs = require('fs');
+const path = require('path');
+const express = require('express');
+const IMG = require('./images');
+
+const FAMILY = process.env.FAMILY_ID || 'family';
+const ID_RE = /^[A-Za-z0-9_.:-]{4,80}$/;
+const SLUG_RE = /^[a-z0-9-]{2,60}$/;
+const KINDS = ['quote', 'mood', 'fav', 'note', 'first', 'story'];
+const clip = (s, n) => String(s == null ? '' : s).slice(0, n);
+const i18n = (o, n = 200) => (o && typeof o === 'object' ? { th: clip(o.th, n), en: clip(o.en, n), ...(o.zh ? { zh: clip(o.zh, n) } : {}) } : { th: clip(o, n), en: clip(o, n) });
+const at = (v) => new Date(Math.min(Number.isFinite(+v) && +v > 0 ? +v : Date.now(), Date.now() + 86400e3));
+const bad = (res, error, code = 400) => res.status(code).json({ error });
+
+// ---------- seeds: server/seeds/*.json (trip.schema.json + theme) → trips, trip_days, firsts_catalog, children ----------
+async function syncSeeds(pool, dir = path.join(__dirname, 'seeds')) {
+  const seeds = fs.readdirSync(dir).filter((f) => f.endsWith('.json')).sort().map((f) => JSON.parse(fs.readFileSync(path.join(dir, f), 'utf8')));
+  const c = await pool.connect();
+  try {
+    await c.query('BEGIN');
+    await c.query('INSERT INTO families (id, name) VALUES ($1, $2) ON CONFLICT (id) DO NOTHING', [FAMILY, 'Family']);
+    const kidColor = { mimi: '#FF4F8B', mika: '#2F8BFF' };
+    const kids = new Map();
+    for (const t of seeds) for (const k of t.children || []) kids.set(k.slug, k);
+    let pos = 0;
+    for (const k of kids.values()) {
+      await c.query(`INSERT INTO children (id, family_id, slug, name_th, name_en, emoji, color, pos) VALUES ($1,$2,$3,$4,$5,$6,$7,$8)
+        ON CONFLICT (family_id, slug) DO UPDATE SET name_th=EXCLUDED.name_th, name_en=EXCLUDED.name_en, emoji=EXCLUDED.emoji`,
+      [`${FAMILY}:${k.slug}`, FAMILY, k.slug, k.name_th, k.name_en, k.emoji || '', kidColor[k.slug] || '#8B3DFF', pos++]);
+    }
+    for (const t of seeds) {
+      const id = t.slug;
+      await c.query(`INSERT INTO trips (id, family_id, slug, legacy_id, title, sub, date_from, date_to, timezone, theme, cover, stamp, moods, source)
+        VALUES ($1,$2,$3,$4,$5,$6,$7,$8,$9,$10,$11,$12,$13,'seed')
+        ON CONFLICT (family_id, slug) DO UPDATE SET legacy_id=EXCLUDED.legacy_id, title=EXCLUDED.title, sub=EXCLUDED.sub, date_from=EXCLUDED.date_from,
+          date_to=EXCLUDED.date_to, timezone=EXCLUDED.timezone, theme=EXCLUDED.theme, cover=EXCLUDED.cover, stamp=EXCLUDED.stamp, moods=EXCLUDED.moods
+        WHERE trips.source = 'seed'`,
+      [id, FAMILY, t.slug, t.legacy_trip_id || null, t.title, t.sub || null, t.date_from, t.date_to, t.timezone || 'Asia/Bangkok',
+        { ...(t.theme || {}), children: (t.children || []).map((k) => ({ slug: k.slug, age: k.age_at_trip || null })) },
+        t.cover || {}, t.stamp || {}, JSON.stringify(t.moods || [])]);
+      for (const d of t.days) {
+        await c.query(`INSERT INTO trip_days (trip_id, day_index, date, title, sleep, emoji, gradient, planned, wx) VALUES ($1,$2,$3,$4,$5,$6,$7,$8,$9)
+          ON CONFLICT (trip_id, day_index) DO UPDATE SET date=EXCLUDED.date, title=EXCLUDED.title, sleep=EXCLUDED.sleep, emoji=EXCLUDED.emoji,
+            gradient=EXCLUDED.gradient, planned=EXCLUDED.planned, wx=EXCLUDED.wx`,
+        [id, d.index, d.date, d.title, d.sleep || null, d.emoji || '', JSON.stringify(d.gradient || null), JSON.stringify(d.planned || []), d.wx || null]);
+      }
+      let fp = 0;
+      for (const f of t.firsts_catalog || []) {
+        await c.query(`INSERT INTO firsts_catalog (trip_id, key, emoji, label, pos) VALUES ($1,$2,$3,$4,$5)
+          ON CONFLICT (trip_id, key) DO UPDATE SET emoji=EXCLUDED.emoji, label=EXCLUDED.label, pos=EXCLUDED.pos`, [id, f.key, f.emoji || '', f.label, fp++]);
+      }
+    }
+    await c.query('COMMIT');
+    return seeds.length;
+  } catch (e) { await c.query('ROLLBACK'); throw e; } finally { c.release(); }
+}
+
+function router({ pool, media, A, ai }) {
+  const r = express.Router();
+  const json = express.json({ limit: '200kb' });
+  const W = [A.requireEditor, json];
+  const q = (sql, args) => pool.query(sql, args).then((x) => x.rows);
+  const trip = async (id) => (await q('SELECT id, date_from, date_to, (SELECT count(*)::int FROM trip_days WHERE trip_id=t.id) AS days FROM trips t WHERE id=$1 AND family_id=$2', [id, FAMILY]))[0];
+  const dayOk = (t, d) => d === null || (Number.isInteger(d) && d >= 0 && d < t.days);
+  const dayArg = (v) => (v === null || v === undefined || v === '' ? null : Number(v));
+  const keyFull = (tid, id) => `p/${tid}/${id}.jpg`;
+  const keyThumb = (tid, id) => `t/${tid}/${id}.jpg`;
+
+  // ----- everything in one payload (cached by the app for offline use)
+  r.get('/api/b/state', A.requireUser, async (req, res, next) => {
+    try {
+      const [children, trips, days, firsts, entries, mediaRows, places] = await Promise.all([
+        q('SELECT slug, name_th, name_en, emoji, color, birth_ym FROM children WHERE family_id=$1 ORDER BY pos', [FAMILY]),
+        q("SELECT id, slug, legacy_id, title, sub, to_char(date_from,'YYYY-MM-DD') date_from, to_char(date_to,'YYYY-MM-DD') date_to, timezone, theme, cover, stamp, moods, source FROM trips WHERE family_id=$1 ORDER BY date_from", [FAMILY]),
+        q("SELECT d.trip_id, d.day_index, to_char(d.date,'YYYY-MM-DD') date, d.title, d.sleep, d.emoji, d.gradient, d.planned, d.wx, d.done_at FROM trip_days d JOIN trips t ON t.id=d.trip_id WHERE t.family_id=$1 ORDER BY d.trip_id, d.day_index", [FAMILY]),
+        q('SELECT f.trip_id, f.key, f.emoji, f.label FROM firsts_catalog f JOIN trips t ON t.id=f.trip_id WHERE t.family_id=$1 ORDER BY f.trip_id, f.pos, f.key', [FAMILY]),
+        q('SELECT id, trip_id, day_index, kind, child, text, mood, first_key, lang, highlight, occurred_at, created_by, created_uid FROM entries WHERE family_id=$1 ORDER BY occurred_at', [FAMILY]),
+        q('SELECT id, trip_id, day_index, width, height, caption, highlight, pos, taken_at, created_by FROM media WHERE family_id=$1 ORDER BY taken_at, pos', [FAMILY]),
+        q('SELECT id, trip_id, day_index, key, kind, name, visited_at, created_by FROM places WHERE family_id=$1 ORDER BY visited_at', [FAMILY]),
+      ]);
+      const ms = (d) => (d ? new Date(d).getTime() : null);
+      res.setHeader('Cache-Control', 'no-store');
+      res.json({
+        me: { role: req.user.role, name: req.user.name, uid: req.user.uid },
+        children,
+        trips: trips.map((t) => ({
+          ...t,
+          days: days.filter((d) => d.trip_id === t.id).map(({ trip_id, ...d }) => ({ ...d, done_at: ms(d.done_at) })),
+          firsts: firsts.filter((f) => f.trip_id === t.id).map(({ trip_id, ...f }) => f),
+        })),
+        entries: entries.map(({ trip_id, day_index, occurred_at, created_uid, ...e }) => ({ ...e, trip: trip_id, day: day_index, at: ms(occurred_at), mine: created_uid === req.user.uid })),
+        media: mediaRows.map(({ trip_id, day_index, taken_at, width, height, ...m }) => ({ ...m, trip: trip_id, day: day_index, w: width, h: height, at: ms(taken_at) })),
+        places: places.map(({ trip_id, day_index, visited_at, ...p }) => ({ ...p, trip: trip_id, day: day_index, at: ms(visited_at) })),
+        features: { story: !!(ai && ai.enabled()) },
+        serverNow: Date.now(),
+      });
+    } catch (e) { next(e); }
+  });
+
+  // ----- entries: quote | mood | fav | note | first | story (one row per item; mood/fav/note use deterministic ids → upsert)
+  r.put('/api/b/entries/:id', ...W, async (req, res, next) => {
+    try {
+      const id = req.params.id, b = req.body || {};
+      if (!ID_RE.test(id)) return bad(res, 'id');
+      if (!KINDS.includes(b.kind)) return bad(res, 'kind');
+      const t = await trip(String(b.trip || '')); if (!t) return bad(res, 'trip');
+      const day = dayArg(b.day); if (!dayOk(t, day)) return bad(res, 'day');
+      if (day === null && b.kind !== 'story') return bad(res, 'day');
+      const kids = (await q('SELECT slug FROM children WHERE family_id=$1', [FAMILY])).map((k) => k.slug);
+      const child = b.child == null || b.child === '' ? null : String(b.child);
+      if (child !== null && child !== 'both' && !kids.includes(child)) return bad(res, 'child');
+      if (b.kind === 'mood' && !child) return bad(res, 'child');
+      const row = [id, FAMILY, t.id, day, b.kind, child, clip(b.text, 4000), b.mood ? clip(b.mood, 16) : null, b.first_key ? clip(b.first_key, 40) : null,
+        ['th', 'en'].includes(b.lang) ? b.lang : null, !!b.highlight, at(b.at), clip(req.user.name, 40), req.user.uid];
+      const out = await q(`INSERT INTO entries (id, family_id, trip_id, day_index, kind, child, text, mood, first_key, lang, highlight, occurred_at, created_by, created_uid)
+        VALUES ($1,$2,$3,$4,$5,$6,$7,$8,$9,$10,$11,$12,$13,$14)
+        ON CONFLICT (id) DO UPDATE SET day_index=EXCLUDED.day_index, child=EXCLUDED.child, text=EXCLUDED.text, mood=EXCLUDED.mood,
+          first_key=EXCLUDED.first_key, lang=EXCLUDED.lang, highlight=EXCLUDED.highlight, updated_at=now()
+        WHERE entries.family_id = EXCLUDED.family_id AND entries.kind = EXCLUDED.kind AND entries.trip_id = EXCLUDED.trip_id
+        RETURNING id`, row);
+      if (!out.length) return bad(res, 'conflict', 409);   // id taken by another trip/kind/family
+      res.json({ ok: true });
+    } catch (e) { next(e); }
+  });
+  r.delete('/api/b/entries/:id', A.requireEditor, async (req, res, next) => {
+    try { await q('DELETE FROM entries WHERE id=$1 AND family_id=$2', [req.params.id, FAMILY]); res.json({ ok: true }); } catch (e) { next(e); }
+  });
+
+  // ----- photos: EXIF/GPS stripped, 2560 px + 520 px thumb, stored in the private bucket
+  r.put('/api/b/media/:id', A.requireEditor, express.raw({ type: () => true, limit: '40mb' }), async (req, res, next) => {
+    try {
+      const id = req.params.id;
+      if (!ID_RE.test(id)) return bad(res, 'id');
+      if (req.headers['x-mb'] !== '1') return bad(res, 'bad-request');
+      const ex = (await q('SELECT width w, height h, family_id FROM media WHERE id=$1', [id]))[0];
+      if (ex) return ex.family_id === FAMILY ? res.json({ ok: true, id, w: ex.w, h: ex.h, dup: true }) : bad(res, 'conflict', 409);
+      const t = await trip(String(req.query.trip || '')); if (!t) return bad(res, 'trip');
+      const day = dayArg(req.query.day); if (!dayOk(t, day)) return bad(res, 'day');
+      if (!Buffer.isBuffer(req.body) || req.body.length < 100) return bad(res, 'empty');
+      let img;
+      try { img = await IMG.processImage(req.body); } catch (e) { return bad(res, 'bad-image', 415); }
+      await media.put(keyFull(t.id, id), img.full);
+      await media.put(keyThumb(t.id, id), img.thumb);
+      const pos = (await q('SELECT count(*)::int n FROM media WHERE trip_id=$1 AND day_index IS NOT DISTINCT FROM $2', [t.id, day]))[0].n;
+      await q(`INSERT INTO media (id, family_id, trip_id, day_index, storage_key, bytes, width, height, caption, pos, taken_at, created_by, created_uid)
+        VALUES ($1,$2,$3,$4,$5,$6,$7,$8,$9,$10,$11,$12,$13) ON CONFLICT (id) DO NOTHING`,
+      [id, FAMILY, t.id, day, keyFull(t.id, id), img.full.length, img.w, img.h, clip(req.query.caption, 500), pos, at(req.query.at), clip(req.user.name, 40), req.user.uid]);
+      res.json({ ok: true, id, w: img.w, h: img.h });
+    } catch (e) { next(e); }
+  });
+  r.patch('/api/b/media/:id', ...W, async (req, res, next) => {
+    try {
+      const b = req.body || {}, sets = [], args = [req.params.id, FAMILY];
+      if ('caption' in b) { args.push(clip(b.caption, 500)); sets.push(`caption=$${args.length}`); }
+      if ('highlight' in b) { args.push(!!b.highlight); sets.push(`highlight=$${args.length}`); }
+      if (!sets.length) return bad(res, 'nothing');
+      const out = await q(`UPDATE media SET ${sets.join(', ')} WHERE id=$1 AND family_id=$2 RETURNING id`, args);
+      res.status(out.length ? 200 : 404).json({ ok: !!out.length });
+    } catch (e) { next(e); }
+  });
+  r.delete('/api/b/media/:id', A.requireEditor, async (req, res, next) => {
+    try {
+      const m = (await q('DELETE FROM media WHERE id=$1 AND family_id=$2 RETURNING trip_id', [req.params.id, FAMILY]))[0];
+      if (m) { await media.del(keyFull(m.trip_id, req.params.id)); await media.del(keyThumb(m.trip_id, req.params.id)); }   // really gone (PDPA)
+      res.json({ ok: true });
+    } catch (e) { next(e); }
+  });
+  // stream a photo to a signed-in user; never a public URL, never another family's photo (IDOR)
+  const send = (thumb) => async (req, res, next) => {
+    try {
+      const m = (await q('SELECT trip_id FROM media WHERE id=$1 AND family_id=$2', [req.params.id, FAMILY]))[0];
+      if (!m) return res.sendStatus(404);
+      const buf = await media.get(thumb ? keyThumb(m.trip_id, req.params.id) : keyFull(m.trip_id, req.params.id));
+      if (!buf) return res.sendStatus(404);
+      res.setHeader('Cache-Control', 'private, max-age=31536000, immutable');
+      res.type('image/jpeg').send(buf);
+    } catch (e) { next(e); }
+  };
+  r.get('/media/:id', A.requireUser, send(false));
+  r.get('/media/:id/t', A.requireUser, send(true));
+
+  // ----- check-ins at planned places / meals (stamps)
+  r.put('/api/b/places', ...W, async (req, res, next) => {
+    try {
+      const b = req.body || {};
+      const t = await trip(String(b.trip || '')); if (!t) return bad(res, 'trip');
+      const key = clip(b.key, 120).trim(); if (!key) return bad(res, 'key');
+      const day = dayArg(b.day); if (!dayOk(t, day)) return bad(res, 'day');
+      if (b.done === false) { await q('DELETE FROM places WHERE trip_id=$1 AND key=$2 AND family_id=$3', [t.id, key, FAMILY]); return res.json({ ok: true }); }
+      await q(`INSERT INTO places (id, family_id, trip_id, day_index, key, kind, name, visited_at, created_by) VALUES ($1,$2,$3,$4,$5,$6,$7,$8,$9)
+        ON CONFLICT (trip_id, key) DO NOTHING`,
+      [`${t.id}:${key}`.slice(0, 200), FAMILY, t.id, day, key, b.kind === 'food' ? 'food' : 'place', i18n(b.name || key, 120), at(b.at), clip(req.user.name, 40)]);
+      res.json({ ok: true });
+    } catch (e) { next(e); }
+  });
+
+  // ----- "Done" for a day (stamp rule: all days done OR trip over)
+  r.put('/api/b/days/:trip/:day', ...W, async (req, res, next) => {
+    try {
+      const t = await trip(req.params.trip); if (!t) return bad(res, 'trip');
+      const day = Number(req.params.day); if (!dayOk(t, day) || day === null) return bad(res, 'day');
+      await q('UPDATE trip_days SET done_at = CASE WHEN $3 THEN COALESCE(done_at, now()) ELSE NULL END WHERE trip_id=$1 AND day_index=$2', [t.id, day, !!(req.body || {}).done]);
+      res.json({ ok: true });
+    } catch (e) { next(e); }
+  });
+
+  // ----- per-trip "firsts" list: add a custom one
+  r.put('/api/b/firsts/:trip/:key', ...W, async (req, res, next) => {
+    try {
+      const t = await trip(req.params.trip); if (!t) return bad(res, 'trip');
+      if (!/^[a-z0-9_-]{2,40}$/.test(req.params.key)) return bad(res, 'key');
+      const b = req.body || {};
+      const pos = (await q('SELECT count(*)::int n FROM firsts_catalog WHERE trip_id=$1', [t.id]))[0].n;
+      await q(`INSERT INTO firsts_catalog (trip_id, key, emoji, label, pos) VALUES ($1,$2,$3,$4,$5)
+        ON CONFLICT (trip_id, key) DO UPDATE SET emoji=EXCLUDED.emoji, label=EXCLUDED.label`, [t.id, req.params.key, clip(b.emoji || '⭐', 8), i18n(b.label, 120), pos]);
+      res.json({ ok: true });
+    } catch (e) { next(e); }
+  });
+
+  // ----- a new trip (book) created in the app
+  r.post('/api/b/trips', ...W, async (req, res, next) => {
+    const c = await pool.connect();
+    try {
+      const b = req.body || {};
+      const slug = clip(b.slug, 60);
+      const from = new Date(b.date_from + 'T00:00:00Z'), to = new Date(b.date_to + 'T00:00:00Z');
+      if (!SLUG_RE.test(slug)) return bad(res, 'slug');
+      if (isNaN(from) || isNaN(to) || to < from || (to - from) / 864e5 > 60) return bad(res, 'dates');
+      if (!clip(b.title && (b.title.th || b.title.en || b.title), 120).trim()) return bad(res, 'title');
+      await c.query('BEGIN');
+      const ins = await c.query(`INSERT INTO trips (id, family_id, slug, title, sub, date_from, date_to, timezone, theme, cover, source)
+        VALUES ($1,$2,$1,$3,$4,$5,$6,$7,$8,$9,'manual') ON CONFLICT DO NOTHING RETURNING id`,
+      [slug, FAMILY, i18n(b.title, 120), b.sub ? i18n(b.sub, 120) : null, b.date_from, b.date_to, clip(b.timezone || 'Asia/Bangkok', 60),
+        { accent: /^#[0-9a-fA-F]{6}$/.test(b.accent) ? b.accent : '#1F3A5F', display: 'sans' }, { emoji: clip(b.emoji || '📖', 8) }]);
+      if (!ins.rows.length) { await c.query('ROLLBACK'); return bad(res, 'exists', 409); }
+      for (let i = 0, d = new Date(from); d <= to; i++, d = new Date(d.getTime() + 864e5)) {
+        await c.query('INSERT INTO trip_days (trip_id, day_index, date, title) VALUES ($1,$2,$3,$4)', [slug, i, d.toISOString().slice(0, 10), { th: `วันที่ ${i + 1}`, en: `Day ${i + 1}` }]);
+      }
+      await c.query('COMMIT');
+      res.json({ ok: true, id: slug });
+    } catch (e) { await c.query('ROLLBACK').catch(() => {}); next(e); } finally { c.release(); }
+  });
+
+  // ----- PDPA: everything we hold about the family, in one JSON (photos via /api/b/backup.zip later)
+  r.get('/api/b/export.json', A.requireEditor, async (_req, res, next) => {
+    try {
+      const out = {};
+      for (const t of ['children', 'trips', 'entries', 'media', 'places']) out[t] = await q(`SELECT * FROM ${t} WHERE family_id=$1`, [FAMILY]);
+      out.trip_days = await q('SELECT d.* FROM trip_days d JOIN trips t ON t.id=d.trip_id WHERE t.family_id=$1', [FAMILY]);
+      out.firsts_catalog = await q('SELECT f.* FROM firsts_catalog f JOIN trips t ON t.id=f.trip_id WHERE t.family_id=$1', [FAMILY]);
+      res.setHeader('Content-Disposition', 'attachment; filename="memory-bookshelf.json"');
+      res.json({ format: 'memory-bookshelf-export', version: 1, at: Date.now(), ...out });
+    } catch (e) { next(e); }
+  });
+
+  return r;
+}
+
+module.exports = { router, syncSeeds, FAMILY };

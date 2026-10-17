@@ -11,6 +11,7 @@ const BK = require('./backup');
 const PGM = require('./pg');
 const PG = PGM.create();
 const MEDIA = require('./storage').create(process.env, DATA_DIR);
+const BS = require('./bookshelf');
 
 const app = express();
 app.disable('x-powered-by');
@@ -252,6 +253,10 @@ app.post('/api/import', A.requireEditor, async (req, res, next) => {
   } finally { if (file) fs.rm(file, { force: true }, () => {}); }
 });
 
+// ---------- Memory Bookshelf API (Postgres + photo bucket) ----------
+if (PG) app.use(BS.router({ pool: PG, media: MEDIA, A, ai: STORY }));
+else app.use(['/api/b', '/media'], (_req, res) => res.status(503).json({ error: 'no-database' }));
+
 // ---------- static app ----------
 app.use('/trips-art', express.static(path.join(__dirname, '..', 'public', 'art'), { maxAge: '7d' }));
 const PUB = path.join(__dirname, '..', 'public');
@@ -264,7 +269,7 @@ const PORT = +process.env.PORT || 3000;
 if (require.main === module) {
   if (!A.FAMILY_CODE) console.warn('WARNING: FAMILY_CODE is not set — nobody can log in. Set it in Railway → Variables.');
   if (!PG && process.env.NODE_ENV === 'production') { console.error('DATABASE_URL is not set — add Railway Postgres and reference ${{Postgres.DATABASE_URL}}'); process.exit(1); }
-  (PG ? PGM.ready(PG) : Promise.resolve(0))
+  (PG ? PGM.ready(PG).then(async (n) => { await BS.syncSeeds(PG); return n; }) : Promise.resolve(0))
     .then((n) => app.listen(PORT, () => console.log(`Memory Book on :${PORT} · data in ${DATA_DIR} · postgres ${PG ? n + ' migrations' : 'off'} · photos ${MEDIA.kind}`)))
     .catch((e) => { console.error(e.message); process.exit(1); });
 }
