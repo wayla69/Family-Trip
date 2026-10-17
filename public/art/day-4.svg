@@ -1,0 +1,15 @@
+<svg viewBox="-4 -4 108 108" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><defs><clipPath id="dart4"><circle cx="50" cy="50" r="46"/></clipPath></defs><circle cx="50" cy="50" r="50" fill="#fff"/><circle cx="50" cy="50" r="46" fill="#E6F6FF"/><g clip-path="url(#dart4)">
+<path d="M2 80c20-12 44-12 60-4 14-8 26-8 36-2v24H2z" fill="#7CB342" stroke="#22213A" stroke-width="2.4" stroke-linejoin="round" stroke-linecap="round"/>
+<path d="M42 78C30 80 18 86 8 96" fill="none" stroke="#22213A" stroke-width="9" stroke-linecap="round"/>
+<path d="M42 78C30 80 18 86 8 96" fill="none" stroke="#C97F4A" stroke-width="4.4" stroke-linecap="round"/>
+<path d="M40 88h28c3 0 3 4 0 4H40z" fill="#C97F4A" stroke="#22213A" stroke-width="2.4" stroke-linejoin="round" stroke-linecap="round"/>
+<ellipse cx="46" cy="76" rx="13" ry="10" fill="#C97F4A" stroke="#22213A" stroke-width="2.4" stroke-linejoin="round" stroke-linecap="round"/>
+<ellipse cx="52" cy="58" rx="12" ry="19" transform="rotate(-14 52 58)" fill="#D9925B" stroke="#22213A" stroke-width="2.4" stroke-linejoin="round" stroke-linecap="round"/>
+<path d="M50 60c2 6 2 12 0 16" fill="none" stroke="#B5703E" stroke-width="2.2" stroke-linecap="round"/>
+<path d="M60 50l8 8M58 56l7 7" stroke="#22213A" stroke-width="4.6" stroke-linecap="round"/>
+<path d="M60 50l8 8M58 56l7 7" stroke="#D9925B" stroke-width="2" stroke-linecap="round"/>
+<path d="M54 30l-2-14 6 4 2 10z" fill="#D9925B" stroke="#22213A" stroke-width="2.4" stroke-linejoin="round" stroke-linecap="round"/>
+<path d="M60 30l2-14 5 6-1 10z" fill="#D9925B" stroke="#22213A" stroke-width="2.4" stroke-linejoin="round" stroke-linecap="round"/>
+<path d="M54 34c2-6 10-8 14-4l8 4c3 2 2 6-1 6h-8c-4 4-10 4-12 0z" fill="#E3A06A" stroke="#22213A" stroke-width="2.4" stroke-linejoin="round" stroke-linecap="round"/>
+<circle cx="64" cy="33" r="1.8" fill="#22213A"/><circle cx="75" cy="36" r="1.6" fill="#22213A"/>
+</g><circle cx="50" cy="50" r="46" fill="none" stroke="#22213A" stroke-width="2.4"/></svg>
