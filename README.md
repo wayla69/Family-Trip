@@ -12,7 +12,7 @@
 | เด็กๆ | วันเกิด อายุ ส่วนสูง ของโปรด ต่อทริป (กราฟส่วนสูงโตข้ามทริป) |
 | จดหมายถึงอนาคต | ปิดผนึกจริงที่เซิร์ฟเวอร์ ข้อความไม่ถูกส่งให้คนอื่นจนถึงวันเปิด |
 | หนังสือพิมพ์ | `#/book/<ทริป>/<เด็ก>` หน้า A5 → "พิมพ์ / PDF" |
-| สำรองข้อมูล | `/api/export.zip` (ข้อมูล + รูปเต็ม) |
+| สำรองข้อมูล | `/api/export.zip` (ข้อมูล + รูปเต็ม) · backup อัตโนมัติรายสัปดาห์ · กู้คืนด้วย `POST /api/import` |
 | เรื่องเล่าโดย Claude (ไม่บังคับ) | ใส่ `ANTHROPIC_API_KEY` แล้วปุ่ม "ให้ Claude เล่า" จะขึ้นเอง |
 
 ## Deploy บน Railway (ประมาณ 10 นาที)
@@ -37,7 +37,26 @@
 - ลิงก์ลับของญาติเป็น **ดูอย่างเดียว** เปลี่ยนค่า `VIEW_TOKEN` เมื่อไรลิงก์เก่าใช้ไม่ได้ทันที
 - เซิร์ฟเวอร์ลบข้อมูลตำแหน่ง GPS/EXIF ออกจากรูปทุกใบก่อนเก็บ
 - ล็อกอินผิดเกิน 10 ครั้ง/10 นาที ถูกบล็อกชั่วคราว
-- ทำ backup สม่ำเสมอ: เปิด `https://<โดเมน>/api/export.zip` ขณะล็อกอิน แล้วเก็บไว้ที่อื่น (Google Drive / ฮาร์ดดิสก์)
+- ทำ backup สม่ำเสมอ (ดูหัวข้อ "สำรองและกู้คืนข้อมูล" ด้านล่าง)
+
+## สำรองและกู้คืนข้อมูล
+**แบบอัตโนมัติ (แนะนำ)** — GitHub Action `Backup` ดึงสำเนาเต็มทุกวันจันทร์ 02:17 (เวลาไทย) เก็บเป็น artifact 90 วัน
+1. ตั้ง repo เป็น **Private** ก่อน (GitHub → Settings → General → Danger Zone → Change visibility) — ถ้า repo เป็น public งาน backup จะไม่ทำงานเลย เพราะ artifact ของ repo public ใครก็โหลดได้
+2. Railway → Variables เพิ่ม `BACKUP_TOKEN` = สตริงสุ่มยาว 24 ตัวขึ้นไป (`openssl rand -hex 24`)
+3. GitHub → Settings → Secrets and variables → Actions → New repository secret: `MB_URL` = `https://<โดเมน>` และ `MB_BACKUP_TOKEN` = ค่าเดียวกับข้อ 2
+4. Actions → Backup → *Run workflow* เพื่อทดสอบครั้งแรก แล้วดาวน์โหลดไฟล์จากหน้า run นั้น
+
+สำเนานี้ครบทุกอย่าง **รวมจดหมายที่ยังปิดผนึก** เก็บไฟล์ไว้ในที่ปลอดภัย
+
+**แบบทำเอง** — เปิด `https://<โดเมน>/api/export.zip` ขณะล็อกอิน แล้วเก็บไว้ที่อื่น (Google Drive / ฮาร์ดดิสก์) เดือนละครั้ง · ไฟล์นี้ไม่มีข้อความจดหมายปิดผนึกของคนอื่น
+
+**กู้คืน** (ผู้ใหญ่ที่ล็อกอินด้วยรหัสครอบครัว ไม่ใช่ลิงก์ดูอย่างเดียว) — ส่งไฟล์ zip เข้า `POST /api/import`:
+```bash
+# 1) ล็อกอินเอา cookie   2) อัปโหลด zip
+curl -c ck.txt -H 'x-mb: 1' -H 'content-type: application/json' -d '{"code":"<FAMILY_CODE>","name":"พ่อ"}' https://<โดเมน>/api/login
+curl -b ck.txt -H 'x-mb: 1' --data-binary @memory-book-backup.zip https://<โดเมน>/api/import
+```
+กู้ซ้ำกี่ครั้งก็ได้ ไม่ทับข้อมูลที่มีอยู่แล้ว (เพิ่มเฉพาะที่ขาด) รูปย่อสร้างใหม่ให้เอง
 
 ## ทริปใหม่
 - กดปุ่ม **ทริปใหม่** บนชั้นหนังสือ ใส่ชื่อและวันที่ ระบบสร้างวันต่างๆ ให้
@@ -62,4 +81,4 @@ public/           PWA: core.js (state/offline queue) · views.js · sheets.js ·
 ```
 
 ## English summary
-Self-hosted family memory book: photos, quotes, moods, stamps/medals, kid profiles and server-sealed letters across many trips. Node 22 + Express + better-sqlite3 + sharp, PWA with an offline upload queue. Deploy: push to GitHub → Railway "Deploy from GitHub" → add a **volume at `/data`** → set `FAMILY_CODE` (+ optional `VIEW_TOKEN` for a read-only grandparent link). Back up via `/api/export.zip`.
+Self-hosted family memory book: photos, quotes, moods, stamps/medals, kid profiles and server-sealed letters across many trips. Node 22 + Express + better-sqlite3 + sharp, PWA with an offline upload queue. Deploy: push to GitHub → Railway "Deploy from GitHub" → add a **volume at `/data`** → set `FAMILY_CODE` (+ optional `VIEW_TOKEN` for a read-only grandparent link). Back up via `/api/export.zip` (manual) or the weekly `Backup` workflow (`BACKUP_TOKEN` + private repo; complete incl. sealed letters); restore with `POST /api/import` (editor, idempotent).

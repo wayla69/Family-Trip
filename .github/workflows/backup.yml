@@ -1,0 +1,35 @@
+name: Backup
+# Weekly off-site copy of the whole memory book (data + full photos, incl. sealed letters) as a 90-day Actions artifact.
+# Opt-in: needs repo secrets MB_URL (https://<domain>) and MB_BACKUP_TOKEN (same value as Railway's BACKUP_TOKEN).
+# Refuses to run on a PUBLIC repo: artifacts of public repos are downloadable by any signed-in GitHub user (child photos!).
+on:
+  schedule:
+    - cron: '17 19 * * 0'   # Sunday 19:17 UTC = Monday 02:17 Bangkok
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  backup:
+    runs-on: ubuntu-latest
+    timeout-minutes: 60
+    if: github.event.repository.private == true
+    steps:
+      - name: Download backup.zip
+        env:
+          MB_URL: ${{ secrets.MB_URL }}
+          MB_BACKUP_TOKEN: ${{ secrets.MB_BACKUP_TOKEN }}
+        run: |
+          if [ -z "$MB_URL" ] || [ -z "$MB_BACKUP_TOKEN" ]; then echo "::notice::MB_URL / MB_BACKUP_TOKEN not set — backup skipped"; exit 0; fi
+          curl -fsS --retry 3 -H "Authorization: Bearer $MB_BACKUP_TOKEN" -o memory-book-backup.zip "${MB_URL%/}/api/backup.zip"
+          unzip -tq memory-book-backup.zip
+          unzip -p memory-book-backup.zip backup.json | python3 -c "import json,sys; b=json.load(sys.stdin); assert b['complete']; print({k: len(v) for k, v in b['tables'].items()})"
+          echo "photos: $(unzip -l memory-book-backup.zip | grep -c 'photos/')  size: $(du -h memory-book-backup.zip | cut -f1)"
+      - uses: actions/upload-artifact@v4
+        with:
+          name: memory-book-backup-${{ github.run_number }}
+          path: memory-book-backup.zip
+          retention-days: 90
+          if-no-files-found: ignore
+          compression-level: 0

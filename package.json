@@ -10,12 +10,15 @@
     "dev": "DATA_DIR=./data FAMILY_CODE=hop2027 VIEW_TOKEN=grandma node server/index.js",
     "test": "node test/run.mjs"
   },
-  "engines": { "node": ">=20" },
+  "engines": {
+    "node": ">=20"
+  },
   "dependencies": {
     "archiver": "^7.0.1",
     "better-sqlite3": "^11.7.0",
     "express": "^4.21.2",
-    "sharp": "^0.33.5"
+    "sharp": "^0.33.5",
+    "yauzl": "^3.4.0"
   },
   "devDependencies": {
     "playwright": "^1.49.0"
