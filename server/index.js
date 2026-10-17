@@ -9,6 +9,7 @@ const STORY = require('./story');
 const BK = require('./backup');
 const PGM = require('./pg');
 const BS = require('./bookshelf');
+const HH = require('./importer');
 
 const DATA_DIR = path.resolve(process.env.DATA_DIR || './data');
 const PG = PGM.create();
@@ -73,6 +74,18 @@ app.post('/api/import', A.requireEditor, async (req, res, next) => {
   try {
     file = await BK.receive(req, DATA_DIR, 8e9);
     res.json({ ok: true, ...(await BK.importZip(file, PG, MEDIA)) });
+  } catch (e) {
+    if (e.status) return res.status(e.status).json({ error: e.message });
+    next(e);
+  } finally { if (file) fs.rm(file, { force: true }, () => {}); }
+});
+
+// import from the Harbour Hop app (zip of moments/visits/days + assets); ?dry=1 reports without writing
+app.post('/api/b/import/harbour-hop', A.requireEditor, async (req, res, next) => {
+  let file;
+  try {
+    file = await BK.receive(req, DATA_DIR, 4e9);
+    res.json({ ok: true, ...(await HH.run(file, PG, MEDIA, { dry: req.query.dry === '1' })) });
   } catch (e) {
     if (e.status) return res.status(e.status).json({ error: e.message });
     next(e);
