@@ -20,8 +20,12 @@ const copy = () => { fs.rmSync(tmp, { recursive: true, force: true }); fs.cpSync
 copy(); ok(readJournal(tmp).length >= 1, 'journal valid');
 copy(); fs.writeFileSync(path.join(tmp, '0099_orphan.sql'), 'select 1;');
 ok(await throws(() => readJournal(tmp), /not in journal\.json: 0099_orphan\.sql/), 'unjournaled file rejected');
-copy(); { const j = JSON.parse(fs.readFileSync(path.join(tmp, 'journal.json'))); j.migrations.push({ id: '0003', file: '0003_gap.sql' }); fs.writeFileSync(path.join(tmp, 'journal.json'), JSON.stringify(j)); fs.writeFileSync(path.join(tmp, '0003_gap.sql'), 'select 1;'); }
-ok(await throws(() => readJournal(tmp), /expected 0002/), 'numbering gap rejected');
+copy(); {
+  const j = JSON.parse(fs.readFileSync(path.join(tmp, 'journal.json'))), n = j.migrations.length;
+  const gap = String(n + 2).padStart(4, '0');   // skips n+1
+  j.migrations.push({ id: gap, file: `${gap}_gap.sql` }); fs.writeFileSync(path.join(tmp, 'journal.json'), JSON.stringify(j)); fs.writeFileSync(path.join(tmp, `${gap}_gap.sql`), 'select 1;');
+  ok(await throws(() => readJournal(tmp), new RegExp(`expected ${String(n + 1).padStart(4, '0')}`)), 'numbering gap rejected');
+}
 copy(); fs.writeFileSync(path.join(tmp, '0002_Bad-Name.sql'), '');
 ok(await throws(() => readJournal(tmp), /bad file name/), 'bad file name rejected');
 fs.rmSync(tmp, { recursive: true, force: true });

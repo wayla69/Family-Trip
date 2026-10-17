@@ -18,7 +18,16 @@ async function saveImage(id, buf) {
   await fs.promises.writeFile(fileThumb(id), thumb);
   return { w: full.info.width, h: full.info.height };
 }
+// Same pipeline, returning buffers (bookshelf → storage bucket). Output has no EXIF/GPS/ICC metadata.
+async function processImage(buf) {
+  const base = sharp(buf, { failOn: 'none', limitInputPixels: 120e6 }).rotate();
+  const full = await base.clone().resize({ width: 2560, height: 2560, fit: 'inside', withoutEnlargement: true })
+    .jpeg({ quality: 84, mozjpeg: true }).toBuffer({ resolveWithObject: true });
+  const thumb = await base.clone().resize({ width: 520, height: 520, fit: 'inside', withoutEnlargement: true })
+    .jpeg({ quality: 74, mozjpeg: true }).toBuffer();
+  return { full: full.data, thumb, w: full.info.width, h: full.info.height };
+}
 function removeImage(id) {
   for (const f of [fileFull(id), fileThumb(id)]) { try { fs.unlinkSync(f); } catch (_) {} }
 }
-module.exports = { saveImage, removeImage, fileFull, fileThumb };
+module.exports = { saveImage, processImage, removeImage, fileFull, fileThumb };

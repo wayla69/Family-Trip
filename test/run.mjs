@@ -40,7 +40,7 @@ for (let i = 0; i < 60; i++) {
 
 const run = (f) => new Promise((res) => spawn(process.execPath, [f], { cwd: root, env: { ...env, BASE: base, CODE: 'hop2027' }, stdio: 'inherit' }).on('exit', (c) => res(c || 0)));
 const suites = ['test/smoke.mjs', 'test/backup.mjs'];
-if (env.DATABASE_URL) suites.unshift('test/infra.mjs');
+if (env.DATABASE_URL) suites.unshift('test/infra.mjs', 'test/bookshelf.mjs');
 let code = 0;
 for (const f of suites) code = code || await run(f);
 server.kill();
