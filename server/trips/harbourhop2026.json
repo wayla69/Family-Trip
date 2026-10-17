@@ -153,8 +153,8 @@
     "th": "อ. 8 ธ.ค."
    },
    "title": {
-    "en": "Nickelodeon Town and Senado Square",
-    "th": "Nickelodeon Town และลานเซนาโด"
+    "en": "Nickelodeon Town, then rooms of light",
+    "th": "Nickelodeon Town แล้วไปห้องแห่งแสง teamLab"
    },
    "wx": {
     "en": "",
@@ -177,10 +177,10 @@
      "th": "สนามเด็กเล่น Nickelodeon Town"
     },
     {
-     "key": "Senado Square",
+     "key": "teamLab SuperNature Macao",
      "kind": "place",
-     "en": "Senado Square",
-     "th": "ลานเซนาโด"
+     "en": "teamLab SuperNature Macao",
+     "th": "teamLab SuperNature Macao"
     }
    ]
   },
@@ -191,8 +191,8 @@
     "th": "พ. 9 ธ.ค."
    },
    "title": {
-    "en": "Kids' day: pandas, Coloane, teamLab",
-    "th": "วันของเด็กๆ: แพนด้า โคโลอาน teamLab"
+    "en": "Pandas in the morning, Senado at dusk",
+    "th": "เช้าดูแพนด้า เย็นลานเซนาโดยามโพล้เพล้"
    },
    "wx": {
     "en": "",
@@ -221,10 +221,10 @@
      "th": "โคโลอาน"
     },
     {
-     "key": "teamLab SuperNature Macao",
+     "key": "Senado Square",
      "kind": "place",
-     "en": "teamLab SuperNature Macao",
-     "th": "teamLab SuperNature Macao"
+     "en": "Senado Square",
+     "th": "ลานเซนาโด"
     }
    ]
   },

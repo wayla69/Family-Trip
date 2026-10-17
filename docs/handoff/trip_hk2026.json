@@ -1,0 +1,367 @@
+{
+  "$schema": "./trip.schema.json",
+  "slug": "hk-macau-2026",
+  "legacy_trip_id": "hk2026",
+  "status": "upcoming",
+  "title": {
+    "th": "The Harbour Hop · ฮ่องกง–มาเก๊า",
+    "en": "The Harbour Hop · Hong Kong & Macau"
+  },
+  "date_from": "2026-12-05",
+  "date_to": "2026-12-10",
+  "timezone": "Asia/Hong_Kong",
+  "destinations": [
+    "Hong Kong",
+    "Macau"
+  ],
+  "children": [
+    {
+      "slug": "mimi",
+      "name_th": "มีมี่",
+      "name_en": "Mimi",
+      "emoji": "👧",
+      "age_at_trip": {
+        "th": "3 ขวบ",
+        "en": "3"
+      }
+    },
+    {
+      "slug": "mika",
+      "name_th": "มีก้า",
+      "name_en": "Mika",
+      "emoji": "👶",
+      "age_at_trip": {
+        "th": "1 ขวบครึ่ง",
+        "en": "1½"
+      }
+    }
+  ],
+  "days": [
+    {
+      "index": 0,
+      "date": "2026-12-05",
+      "emoji": "✈️",
+      "gradient": [
+        "#1E88E5",
+        "#38BDF8"
+      ],
+      "title": {
+        "th": "กรุงเทพฯ สู่เกาะ Ma Wan",
+        "en": "Bangkok to Ma Wan island"
+      },
+      "sleep": {
+        "th": "Noah's Ark Hotel & Resort, Ma Wan",
+        "en": "Noah's Ark Hotel & Resort, Ma Wan"
+      },
+      "planned_places": [
+        {
+          "en": "Noah's Ark Hotel",
+          "th": "Noah's Ark Hotel",
+          "zh": "挪亞方舟度假酒店"
+        },
+        {
+          "en": "Ma Wan",
+          "th": "Ma Wan",
+          "zh": "馬灣"
+        }
+      ]
+    },
+    {
+      "index": 1,
+      "date": "2026-12-06",
+      "emoji": "🏰",
+      "gradient": [
+        "#E91E63",
+        "#FF6FA8"
+      ],
+      "title": {
+        "th": "Hong Kong Disneyland",
+        "en": "Hong Kong Disneyland"
+      },
+      "sleep": {
+        "th": "Noah's Ark Hotel & Resort, Ma Wan",
+        "en": "Noah's Ark Hotel & Resort, Ma Wan"
+      },
+      "planned_places": [
+        {
+          "en": "Hong Kong Disneyland",
+          "th": "Hong Kong Disneyland",
+          "zh": "香港迪士尼樂園"
+        },
+        {
+          "en": "Ma Wan",
+          "th": "Ma Wan",
+          "zh": "馬灣"
+        },
+        {
+          "en": "Hong Kong Disneyland rides and shows",
+          "th": "ดิสนีย์แลนด์: เครื่องเล่นและโชว์",
+          "zh": "香港迪士尼樂園"
+        }
+      ]
+    },
+    {
+      "index": 2,
+      "date": "2026-12-07",
+      "emoji": "🌊",
+      "gradient": [
+        "#00A98F",
+        "#2DD4BF"
+      ],
+      "title": {
+        "th": "ข้ามสะพานไปมาเก๊า · Studio City",
+        "en": "Over the bridge to Macau · Studio City"
+      },
+      "sleep": {
+        "th": "Studio City Hotel, Cotai",
+        "en": "Studio City Hotel, Cotai"
+      },
+      "planned_places": [
+        {
+          "en": "HZMB Hong Kong Port",
+          "th": "ท่า HZMB ฝั่งฮ่องกง",
+          "zh": "港珠澳大橋香港口岸"
+        },
+        {
+          "en": "The Londoner",
+          "th": "The Londoner",
+          "zh": "澳門倫敦人"
+        },
+        {
+          "en": "Studio City",
+          "th": "Studio City",
+          "zh": "新濠影滙"
+        },
+        {
+          "en": "Studio City Water Park",
+          "th": "สวนน้ำ Studio City",
+          "zh": "新濠影滙水上樂園"
+        },
+        {
+          "en": "Hong Kong–Zhuhai–Macao Bridge",
+          "th": "สะพานฮ่องกง–จูไห่–มาเก๊า",
+          "zh": "港珠澳大橋"
+        }
+      ]
+    },
+    {
+      "index": 3,
+      "date": "2026-12-08",
+      "emoji": "✨",
+      "gradient": [
+        "#FF6A2B",
+        "#FFA931"
+      ],
+      "title": {
+        "th": "เช้าสนามเด็กเล่น บ่ายห้องแห่งแสง",
+        "en": "Playground morning, rooms of light"
+      },
+      "sleep": {
+        "th": "Studio City Hotel, Cotai",
+        "en": "Studio City Hotel, Cotai"
+      },
+      "planned_places": [
+        {
+          "en": "Nickelodeon Town, Studio City",
+          "th": "Nickelodeon Town, Studio City",
+          "zh": "新濠影滙 Nickelodeon Town"
+        },
+        {
+          "en": "The Venetian",
+          "th": "The Venetian",
+          "zh": "澳門威尼斯人"
+        },
+        {
+          "en": "teamLab SuperNature Macao",
+          "th": "teamLab SuperNature Macao",
+          "zh": "teamLab 超自然空間"
+        }
+      ]
+    },
+    {
+      "index": 4,
+      "date": "2026-12-09",
+      "emoji": "🐼",
+      "gradient": [
+        "#1FA65A",
+        "#5CC860"
+      ],
+      "title": {
+        "th": "เช้าดูแพนด้า เย็น Senado ยามโพล้เพล้",
+        "en": "Pandas in the morning, Senado at dusk"
+      },
+      "sleep": {
+        "th": "Studio City Hotel, Cotai",
+        "en": "Studio City Hotel, Cotai"
+      },
+      "planned_places": [
+        {
+          "en": "Giant Panda Pavilion",
+          "th": "ศาลาแพนด้า",
+          "zh": "大熊貓館"
+        },
+        {
+          "en": "Coloane Village",
+          "th": "หมู่บ้าน Coloane",
+          "zh": "路環市區"
+        },
+        {
+          "en": "Senado Square",
+          "th": "Senado Square",
+          "zh": "議事亭前地"
+        },
+        {
+          "en": "Ruins of St Paul's",
+          "th": "ซากโบสถ์ St Paul",
+          "zh": "大三巴牌坊"
+        }
+      ]
+    },
+    {
+      "index": 5,
+      "date": "2026-12-10",
+      "emoji": "🧳",
+      "gradient": [
+        "#6C4CF1",
+        "#A78BFA"
+      ],
+      "title": {
+        "th": "เรือกลับ น้ำแข็งไส บินกลับบ้าน",
+        "en": "Ferry back, shaved ice, fly home"
+      },
+      "sleep": {
+        "th": "บ้าน",
+        "en": "Home"
+      },
+      "planned_places": [
+        {
+          "en": "Shun Tak Centre",
+          "th": "Shun Tak Centre",
+          "zh": "信德中心"
+        },
+        {
+          "en": "Haven Street, Causeway Bay",
+          "th": "Haven Street, Causeway Bay",
+          "zh": "銅鑼灣希雲街"
+        },
+        {
+          "en": "Cotai Water Jet to Hong Kong",
+          "th": "เรือ Cotai Water Jet กลับฮ่องกง",
+          "zh": "金光飛航 氹仔→上環"
+        },
+        {
+          "en": "Hong Kong International Airport",
+          "th": "สนามบินฮ่องกง",
+          "zh": "香港國際機場"
+        }
+      ]
+    }
+  ],
+  "firsts_catalog": [
+    {
+      "key": "plane",
+      "emoji": "✈️",
+      "label": {
+        "th": "นั่งเครื่องบินข้ามประเทศ",
+        "en": "A flight to another country"
+      }
+    },
+    {
+      "key": "bridge",
+      "emoji": "🌉",
+      "label": {
+        "th": "ข้ามสะพานทะเลยาว ฮ่องกง–มาเก๊า",
+        "en": "Crossing the long sea bridge"
+      }
+    },
+    {
+      "key": "ferry",
+      "emoji": "🚢",
+      "label": {
+        "th": "นั่งเรือข้ามทะเล",
+        "en": "A ferry across the sea"
+      }
+    },
+    {
+      "key": "train",
+      "emoji": "🚆",
+      "label": {
+        "th": "นั่ง Airport Express / MTR",
+        "en": "Airport Express / MTR"
+      }
+    },
+    {
+      "key": "mickey",
+      "emoji": "🐭",
+      "label": {
+        "th": "เจอมิกกี้เมาส์ตัวจริง",
+        "en": "Meeting Mickey Mouse"
+      }
+    },
+    {
+      "key": "sponge",
+      "emoji": "🧽",
+      "label": {
+        "th": "เจอสพันจ์บ็อบที่ Nickelodeon",
+        "en": "SpongeBob at Nickelodeon Town"
+      }
+    },
+    {
+      "key": "water",
+      "emoji": "🌊",
+      "label": {
+        "th": "เล่นสวนน้ำ",
+        "en": "The water park"
+      }
+    },
+    {
+      "key": "teamlab",
+      "emoji": "✨",
+      "label": {
+        "th": "ห้องศิลปะแสงสี teamLab",
+        "en": "The teamLab light art room"
+      }
+    },
+    {
+      "key": "dimsum",
+      "emoji": "🥟",
+      "label": {
+        "th": "กินติ่มซำ",
+        "en": "Dim sum"
+      }
+    },
+    {
+      "key": "lights",
+      "emoji": "🎄",
+      "label": {
+        "th": "ดูไฟประดับคริสต์มาส",
+        "en": "Christmas lights"
+      }
+    }
+  ],
+  "moods": [
+    "😄",
+    "🥰",
+    "🤩",
+    "😋",
+    "😴",
+    "😢"
+  ],
+  "stamp": {
+    "text": [
+      "HONG KONG",
+      "MACAU",
+      "5–10 DEC 2026"
+    ],
+    "awarded_when": "all days marked done OR trip end date passed"
+  },
+  "cover": {
+    "gradient": [
+      "#FF5F45",
+      "#FF2E7E",
+      "#8B3DFF"
+    ],
+    "emoji": "📖"
+  },
+  "notes": "Seed only: no booking numbers, passports or hotel confirmations are included on purpose (keep them out of the bookshelf)."
+}

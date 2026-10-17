@@ -1,0 +1,114 @@
+{
+  "fonts": {
+    "family": "KIRA UI",
+    "weights": {
+      "Regular": 400,
+      "Medium": 500,
+      "SemiBold": 600,
+      "Bold": 700
+    },
+    "files": "fonts/*.woff2 (licensed — do not commit to a public repo)",
+    "cjk_fallback": "Noto Sans TC / PingFang TC"
+  },
+  "light": {
+    "bg": "#F5F7FF",
+    "surface": "#FFFFFF",
+    "surface2": "#EEF2FF",
+    "ink": "#141B3A",
+    "muted": "#5B6488",
+    "line": "#E1E6F5",
+    "navy": "#2A3FB0",
+    "pin": "#FF4F3A",
+    "jade": "#0FB39A",
+    "gold": "#F5A000",
+    "tile": "#3B82F6"
+  },
+  "dark": {
+    "bg": "#0C0F24",
+    "surface": "#161B3A",
+    "surface2": "#1F2650",
+    "ink": "#F1F3FF",
+    "muted": "#A9B0D6",
+    "line": "#2A3266",
+    "navy": "#A9B8FF",
+    "pin": "#FF7A5C",
+    "jade": "#3EE0C0",
+    "gold": "#FFC24A",
+    "tile": "#7FB0FF"
+  },
+  "heading_colors": {
+    "light": [
+      "#FF4F3A",
+      "#0FB39A",
+      "#F5A000",
+      "#3B82F6",
+      "#D946EF"
+    ],
+    "dark": [
+      "#FF7A5C",
+      "#3EE0C0",
+      "#FFC24A",
+      "#7FB0FF",
+      "#F08CFF"
+    ]
+  },
+  "gradients": {
+    "sunset": "linear-gradient(135deg,#FF5F45 0%,#FF2E7E 52%,#8B3DFF 100%)",
+    "pop": "linear-gradient(135deg,#FF5F45,#FF2E7E)"
+  },
+  "day_gradients": [
+    {
+      "from": "#1E88E5",
+      "to": "#38BDF8",
+      "emoji": "✈️"
+    },
+    {
+      "from": "#E91E63",
+      "to": "#FF6FA8",
+      "emoji": "🏰"
+    },
+    {
+      "from": "#00A98F",
+      "to": "#2DD4BF",
+      "emoji": "🌊"
+    },
+    {
+      "from": "#FF6A2B",
+      "to": "#FFA931",
+      "emoji": "🏮"
+    },
+    {
+      "from": "#1FA65A",
+      "to": "#5CC860",
+      "emoji": "🐼"
+    },
+    {
+      "from": "#6C4CF1",
+      "to": "#A78BFA",
+      "emoji": "🧳"
+    }
+  ],
+  "kid_colors": {
+    "mimi": "#FF4F8B",
+    "mika": "#2F8BFF",
+    "both": "#8B3DFF"
+  },
+  "radius": {
+    "card": "18-24px",
+    "chip": "999px",
+    "photo": "16px"
+  },
+  "layout": {
+    "max_width_px": 640,
+    "min_supported_px": 320,
+    "bottom_tabs": 5,
+    "photo_grid_cols": {
+      "mobile": 3,
+      "wide": 4
+    },
+    "book_grid_cols": {
+      "mobile": 2,
+      "wide": 3
+    }
+  }
+}
