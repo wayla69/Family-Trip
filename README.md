@@ -32,7 +32,7 @@ GitHub ของเจ้าของ authorize แอป Railway ไม่ไ�
 4. เซอร์วิส `web` → **Variables** ใส่:
    - `DATABASE_URL` = `${{Postgres.DATABASE_URL}}`
    - `BUCKET`, `ACCESS_KEY_ID`, `SECRET_ACCESS_KEY`, `REGION`, `ENDPOINT` = อ้างอิงจาก Bucket (ปุ่ม *Add Reference* → เลือก Bucket) · ถ้าแท็บ Credentials ของ Bucket บอกว่า path-style ให้เพิ่ม `BUCKET_PATH_STYLE=1`
-   - `FAMILY_CODE` = รหัสครอบครัวยาวๆ (ผู้ใหญ่ใช้เข้าและบันทึก)
+   - `FAMILY_CODE` = **PIN ครอบครัว ตัวเลข 6 หลักขึ้นไป** (ผู้ใหญ่ใช้เข้าและบันทึก) — ใส่ครั้งเดียวต่อมือถือ เครื่องจำไว้ 400 วัน · ใส่ผิด 10 ครั้ง/เครื่อง หรือ 30 ครั้งรวมทุกเครื่องใน 10 นาที ระบบหยุดรับ PIN 10 นาที (เครื่องที่เข้าอยู่แล้วใช้ได้ตามปกติ) · หลีกเลี่ยงวันเกิดเด็กหรือเลขเรียงกัน
    - `VIEW_TOKEN` = สตริงสุ่ม (`openssl rand -hex 24`) → ลิงก์ญาติ `https://<โดเมน>/v/<VIEW_TOKEN>` (ดูอย่างเดียว)
    - `SESSION_SECRET` = สตริงสุ่ม (`openssl rand -hex 32`) — ถ้าไม่ใส่ ระบบสร้างและเก็บใน Postgres เอง
    - `BACKUP_TOKEN` = สตริงสุ่ม 24 ตัวขึ้นไป (สำหรับ backup อัตโนมัติ)
@@ -43,7 +43,7 @@ GitHub ของเจ้าของ authorize แอป Railway ไม่ไ�
 **ใน GitHub (ทำครั้งเดียว)** → repo → Settings → Secrets and variables → Actions
 - Secret `RAILWAY_TOKEN` = token จากข้อ 6
 - Variables: `RAILWAY_SERVICE` = `web` · `MB_URL` = `https://<โดเมน>`
-- Actions → **Deploy** → *Run workflow* เพื่อ deploy ครั้งแรก แล้วเปิดลิงก์ ใส่ `FAMILY_CODE` กับชื่อเล่น
+- Actions → **Deploy** → *Run workflow* เพื่อ deploy ครั้งแรก แล้วเปิดลิงก์ ใส่ PIN (เลือก พ่อ/แม่ ได้ ไม่บังคับ)
 
 deploy เองจากเครื่องก็ได้: `npm i -g @railway/cli@5.62.1 && railway login && railway link && railway up --service web`
 
@@ -52,7 +52,7 @@ deploy เองจากเครื่องก็ได้: `npm i -g @railwa
 ค่าใช้จ่ายโดยประมาณ: Railway Hobby ~$5/เดือน (รวมเครดิตใช้งาน) + Postgres + Bucket รูป $0.015/GB/เดือน (รูปละ ~0.5–1.5 MB)
 
 ## ความปลอดภัยของรูปเด็ก (PDPA)
-- ทุกอย่างอยู่หลังรหัสครอบครัว (cookie HttpOnly/SameSite/Secure) · รูปไม่มี URL สาธารณะ — ส่งผ่านเซิร์ฟเวอร์ให้เฉพาะคนที่ล็อกอินหรือมีลิงก์ญาติ · `noindex` ทุกหน้า
+- ทุกอย่างอยู่หลัง PIN ครอบครัว (cookie HttpOnly/SameSite/Secure) · รูปไม่มี URL สาธารณะ — ส่งผ่านเซิร์ฟเวอร์ให้เฉพาะคนที่ล็อกอินหรือมีลิงก์ญาติ · `noindex` ทุกหน้า
 - ลิงก์ญาติเป็น **ดูอย่างเดียว** เปลี่ยนค่า `VIEW_TOKEN` เมื่อไรลิงก์เก่าใช้ไม่ได้ทันที
 - เซิร์ฟเวอร์ลบตำแหน่ง GPS/EXIF ออกจากรูปทุกใบก่อนเก็บ · ไม่ส่งรูปให้ AI ใดๆ
 - ล็อกอินผิดเกิน 10 ครั้ง/10 นาที ถูกบล็อกชั่วคราว
@@ -68,9 +68,9 @@ deploy เองจากเครื่องก็ได้: `npm i -g @railwa
 
 **ทำเอง** — เปิด `https://<โดเมน>/api/export.zip` ขณะล็อกอิน เก็บไว้ที่ Google Drive / ฮาร์ดดิสก์ เดือนละครั้ง
 
-**กู้คืน** (ผู้ใหญ่ที่ล็อกอินด้วยรหัสครอบครัว):
+**กู้คืน** (ผู้ใหญ่ที่เข้าด้วย PIN):
 ```bash
-curl -c ck.txt -H 'x-mb: 1' -H 'content-type: application/json' -d '{"code":"<FAMILY_CODE>","name":"พ่อ"}' https://<โดเมน>/api/login
+curl -c ck.txt -H 'x-mb: 1' -H 'content-type: application/json' -d '{"code":"<PIN>","name":"พ่อ"}' https://<โดเมน>/api/login
 curl -b ck.txt -H 'x-mb: 1' --data-binary @memory-bookshelf-YYYY-MM-DD.zip https://<โดเมน>/api/import
 ```
 กู้ซ้ำกี่ครั้งก็ได้ ไม่ทับข้อมูลที่มีอยู่ (เพิ่มเฉพาะที่ขาด) รูปย่อสร้างใหม่ให้เอง

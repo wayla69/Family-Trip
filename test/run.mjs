@@ -16,7 +16,7 @@ const { Client } = createRequire(import.meta.url)('pg');
 const admin = new Client({ connectionString: process.env.TEST_DATABASE_URL });
 await admin.connect();
 
-const GROUPS = [['test/infra.mjs'], ['test/bookshelf.mjs'], ['test/import.mjs'], ['test/story.mjs'], ['test/ui.mjs', 'test/backup.mjs']]
+const GROUPS = [['test/infra.mjs'], ['test/bookshelf.mjs'], ['test/import.mjs'], ['test/story.mjs'], ['test/auth.mjs'], ['test/ui.mjs', 'test/backup.mjs']]
   .filter((g) => !process.env.TEST_ONLY || g.some((f) => f.includes(process.env.TEST_ONLY)));   // e.g. TEST_ONLY=ui
 const freePort = () => new Promise((res) => { const s = net.createServer().listen(0, () => { const p = s.address().port; s.close(() => res(p)); }); });
 
@@ -26,7 +26,7 @@ async function group(suites) {
   const u = new URL(process.env.TEST_DATABASE_URL); u.pathname = '/' + dbName;
   const data = fs.mkdtempSync(path.join(os.tmpdir(), 'mb-test-'));
   const port = await freePort();
-  const env = { ...process.env, PORT: String(port), DATA_DIR: data, DATABASE_URL: u.toString(), FAMILY_CODE: 'hop2027', VIEW_TOKEN: 'grandma', SESSION_SECRET: 'test-secret', BACKUP_TOKEN: 'test-backup-token-0123456789abcdef' };
+  const env = { ...process.env, PORT: String(port), DATA_DIR: data, DATABASE_URL: u.toString(), FAMILY_CODE: '271205', VIEW_TOKEN: 'grandma', SESSION_SECRET: 'test-secret', BACKUP_TOKEN: 'test-backup-token-0123456789abcdef' };
   delete env.ANTHROPIC_API_KEY; delete env.BUCKET;
   // server-side PDF: use Playwright's browser when installed, else the sandbox's preinstalled Chromium
   const { chromium } = createRequire(import.meta.url)('playwright-core');
@@ -42,7 +42,7 @@ async function group(suites) {
       await new Promise((r) => setTimeout(r, 250));
     }
     for (const f of suites) {
-      code = await new Promise((res) => spawn(process.execPath, [f], { cwd: root, env: { ...env, BASE: base, CODE: 'hop2027' }, stdio: 'inherit' }).on('exit', (c) => res(c || 0)));
+      code = await new Promise((res) => spawn(process.execPath, [f], { cwd: root, env: { ...env, BASE: base, CODE: '271205' }, stdio: 'inherit' }).on('exit', (c) => res(c || 0)));
       if (code) break;
     }
   } catch (e) { console.error(e.message); code = 1; }

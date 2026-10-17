@@ -225,6 +225,10 @@ nav.bar a[aria-current=page]{color:var(--accent)}
 .login form::before{content:"";position:absolute;left:0;top:0;bottom:0;width:8px;background:var(--accent);border-radius:2px}
 .login h1{font-family:var(--serif);font-size:44px;line-height:1;font-weight:600;margin:10px 0 4px}
 .login label{display:block;font-size:13px;color:var(--muted);margin:14px 0 4px}
+.login .pin{font-size:28px;letter-spacing:.4em;text-align:center;font-variant-numeric:tabular-nums}
+.pinpad{display:grid;grid-template-columns:repeat(3,1fr);gap:8px;margin-top:10px}
+.pinpad button{height:56px;border:1px solid var(--rule);border-radius:12px;background:var(--paper);font-size:24px;font-weight:600;font-variant-numeric:lining-nums}
+.pinpad button:active{background:var(--panel)}
 .login .err{color:var(--accent2);min-height:22px;margin-top:8px;font-size:14px}
 
 .empty{padding:22px 0;color:var(--muted)}

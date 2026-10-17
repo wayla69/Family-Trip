@@ -60,15 +60,23 @@ function renderProgress() {
 }
 
 /* ---------- login ---------- */
+// PIN login: one field + a big number pad; "who's this?" is optional and remembered on the device
 function loginView() {
+  const who = ls('name') || '';
+  const chips = [['พ่อ', 'Dad'], ['แม่', 'Mum']].map(([th, en]) => { const v = L(th, en); return `<button type="button" class="chip" data-a="who-login" data-v="${esc(v)}" aria-pressed="${who === v}">${esc(v)}</button>`; }).join('');
+  const keys = ['1', '2', '3', '4', '5', '6', '7', '8', '9', 'clear', '0', 'back'];
   return `<div class="login"><form id="lf" autocomplete="on">
 <div class="kicker">${L('สมุดครอบครัว · ส่วนตัว', 'Private family book')}</div>
 <h1>Memory<br>Bookshelf</h1><p class="muted">${L('ความทรงจำของมีมี่และมีก้า ทุกทริป', "Mimi & Mika's memories, every trip")}</p>
-<label for="lcode">${L('รหัสครอบครัว', 'Family code')}</label><input id="lcode" class="field" type="password" autocomplete="current-password" required>
-<label for="lname">${L('ชื่อเล่นของคุณ', 'Your name')}</label><input id="lname" class="field" value="${esc(ls('name') || '')}" placeholder="${L('พ่อ / แม่', 'Dad / Mum')}" maxlength="24">
-<div class="row" style="margin-top:16px"><button class="btn" type="submit">${L('เปิดชั้นหนังสือ', 'Open the shelf')}</button>
+<label for="lcode">${L('PIN ครอบครัว', 'Family PIN')}</label>
+<input id="lcode" class="field pin" type="password" inputmode="numeric" autocomplete="current-password" required aria-describedby="lerr">
+<div class="pinpad" role="group" aria-label="${L('แป้นตัวเลข', 'Number pad')}">${keys.map((k) => `<button type="button" data-a="pin" data-v="${k}"${k === 'clear' ? ` aria-label="${L('ล้าง', 'Clear')}"` : k === 'back' ? ` aria-label="${L('ลบ', 'Delete')}"` : ''}>${k === 'clear' ? 'C' : k === 'back' ? '⌫' : k}</button>`).join('')}</div>
+<label>${L('ใครใช้เครื่องนี้ (ไม่บังคับ)', 'Who is this? (optional)')}</label>
+<div class="row">${chips}<input id="lname" class="field" style="flex:1;min-width:110px" value="${esc(who)}" placeholder="${L('ชื่ออื่น', 'Other name')}" maxlength="24"></div>
+<div class="row" style="margin-top:16px"><button class="btn" type="submit">${L('เข้าสมุด', 'Open the shelf')}</button>
 <span class="seg"><button type="button" data-a="lang" data-v="th" aria-pressed="${lang === 'th'}">ไทย</button><button type="button" data-a="lang" data-v="en" aria-pressed="${lang === 'en'}">EN</button></span></div>
-<div class="err" id="lerr" role="alert"></div></form></div>`;
+<div class="err" id="lerr" role="alert"></div>
+<p class="label" style="margin-top:6px">${L('ใส่ PIN ครั้งเดียว เครื่องนี้จะจำไว้', 'Enter the PIN once — this phone remembers it')}</p></form></div>`;
 }
 
 /* ---------- shelf ---------- */
