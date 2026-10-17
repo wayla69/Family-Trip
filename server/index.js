@@ -10,6 +10,7 @@ const BK = require('./backup');
 const PGM = require('./pg');
 const BS = require('./bookshelf');
 const HH = require('./importer');
+const PDF = require('./pdf');
 
 const DATA_DIR = path.resolve(process.env.DATA_DIR || './data');
 const PG = PGM.create();
@@ -80,6 +81,20 @@ app.post('/api/import', A.requireEditor, async (req, res, next) => {
   } finally { if (file) fs.rm(file, { force: true }, () => {}); }
 });
 
+// A4 PDF of a book, rendered by the server (relatives may download it too)
+app.get('/api/b/pdf/:trip', A.requireUser, async (req, res, next) => {
+  try {
+    const t = (await PG.query('SELECT slug, title FROM trips WHERE id=$1 AND family_id=$2', [req.params.trip, BS.FAMILY])).rows[0];
+    if (!t) return res.status(404).json({ error: 'trip' });
+    const cookie = A.makeToken('viewer', 'PDF', crypto.randomBytes(6).toString('hex'));   // read-only session for the renderer
+    const pdf = await PDF.render({ base: `http://127.0.0.1:${PORT}`, cookie, trip: t.slug, footer: `${t.title.en || t.title.th} · ${new Date().toISOString().slice(0, 10)}` });
+    res.setHeader('Content-Type', 'application/pdf');
+    res.setHeader('Content-Disposition', `attachment; filename="${t.slug}.pdf"`);
+    res.setHeader('Cache-Control', 'no-store');
+    res.end(pdf);
+  } catch (e) { console.error('pdf', e.message); res.status(503).json({ error: 'pdf-unavailable' }); }
+});
+
 // import from the Harbour Hop app (zip of moments/visits/days + assets); ?dry=1 reports without writing
 app.post('/api/b/import/harbour-hop', A.requireEditor, async (req, res, next) => {
   let file;
@@ -107,7 +122,16 @@ if (require.main === module) {
   if (!PG) { console.error('DATABASE_URL is not set — add Railway Postgres and reference ${{Postgres.DATABASE_URL}} (locally: see CLAUDE.md)'); process.exit(1); }
   PGM.ready(PG)
     .then(async (n) => { await A.init(PG); const seeds = await BS.syncSeeds(PG); return [n, seeds]; })
-    .then(([n, seeds]) => app.listen(PORT, () => console.log(`Memory Bookshelf on :${PORT} · postgres ${n} migrations · ${seeds} seeded trips · photos ${MEDIA.kind}`)))
+    .then(([n, seeds]) => {
+      const server = app.listen(PORT, () => console.log(`Memory Bookshelf on :${PORT} · postgres ${n} migrations · ${seeds} seeded trips · photos ${MEDIA.kind}`));
+      // Railway sends SIGTERM on every redeploy: stop taking requests, close Chromium + the pool, exit
+      const stop = () => {
+        setTimeout(() => process.exit(0), 8000).unref();
+        server.close();
+        Promise.all([PDF.close(), PG.end().catch(() => {})]).then(() => process.exit(0));
+      };
+      process.once('SIGTERM', stop); process.once('SIGINT', stop);
+    })
     .catch((e) => { console.error(e.message); process.exit(1); });
 }
 module.exports = app;

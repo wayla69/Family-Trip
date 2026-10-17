@@ -81,6 +81,17 @@ jobs:
           docker exec mb test -w /data
           curl -fsS localhost:3000/ | grep -q "Memory Bookshelf"
           curl -fsS -o /dev/null localhost:3000/fonts/KIRA-UI-Regular.woff2
+      - name: Server-side PDF works inside the production image (Chromium installed, runs as non-root)
+        run: |
+          ck=$(curl -s -D - -o /dev/null -H 'x-mb: 1' -H 'content-type: application/json' \
+            -d '{"code":"ci-passphrase","name":"ci"}' localhost:3000/api/login | grep -i '^set-cookie' | sed 's/^[^:]*: //;s/;.*//')
+          curl -fsS --max-time 120 -H "cookie: $ck" -o book.pdf localhost:3000/api/b/pdf/hk-macau-2026 || { docker logs mb; exit 1; }
+          head -c 5 book.pdf | grep -q '%PDF-'
+          echo "PDF $(wc -c < book.pdf) bytes"
+      - name: Graceful shutdown on SIGTERM (Railway redeploys)
+        run: |
+          docker stop -t 15 mb
+          test "$(docker inspect -f '{{.State.ExitCode}}' mb)" = "0" || { docker logs mb; exit 1; }
       - name: Refuses to boot in production without DATABASE_URL
         run: |
           if docker run --rm -e FAMILY_CODE=x memory-book; then echo "booted without DATABASE_URL"; exit 1; fi

@@ -244,6 +244,59 @@ function router({ pool, media, A, ai }) {
     } catch (e) { await c.query('ROLLBACK').catch(() => {}); next(e); } finally { c.release(); }
   });
 
+  // ----- bedtime story (Claude): only when pressed, text facts only, streamed as SSE; disconnect = stop, nothing saved
+  async function storyFacts(t, day, lang) {
+    const days = await q("SELECT day_index, to_char(date,'YYYY-MM-DD') date, title FROM trip_days WHERE trip_id=$1 ORDER BY day_index", [t.id]);
+    const kids = Object.fromEntries((await q('SELECT slug, name_th, name_en FROM children WHERE family_id=$1', [FAMILY])).map((k) => [k.slug, lang === 'en' ? k.name_en : k.name_th]));
+    const who = (s) => (s === 'both' ? (lang === 'en' ? 'Mimi and Mika' : 'มีมี่และมีก้า') : kids[s] || s);
+    const firsts = Object.fromEntries((await q('SELECT key, label FROM firsts_catalog WHERE trip_id=$1', [t.id])).map((f) => [f.key, f.label[lang] || f.label.en]));
+    const lines = [];
+    for (const d of days.filter((x) => day === null || x.day_index === day)) {
+      const es = await q("SELECT kind, child, text, mood, first_key FROM entries WHERE trip_id=$1 AND day_index=$2 AND kind<>'story' ORDER BY occurred_at", [t.id, d.day_index]);
+      const pl = await q('SELECT name FROM places WHERE trip_id=$1 AND day_index=$2 ORDER BY visited_at', [t.id, d.day_index]);
+      const caps = (await q("SELECT caption FROM media WHERE trip_id=$1 AND day_index=$2 AND caption<>'' ORDER BY taken_at", [t.id, d.day_index])).map((m) => m.caption);
+      const part = [];
+      if (pl.length) part.push(`${lang === 'en' ? 'Places' : 'ที่ไป'}: ${pl.map((p) => p.name[lang] || p.name.en).join(', ')}`);
+      es.filter((e) => e.kind === 'mood' && e.mood).forEach((e) => part.push(`${lang === 'en' ? 'Mood' : 'อารมณ์'} ${who(e.child)}: ${e.mood}`));
+      es.filter((e) => e.kind === 'quote').forEach((e) => part.push(`${who(e.child)} ${lang === 'en' ? 'said' : 'พูดว่า'}: "${e.text}"`));
+      caps.forEach((c) => part.push(`${lang === 'en' ? 'Photo' : 'รูป'}: ${c}`));
+      es.filter((e) => e.kind === 'fav').forEach((e) => part.push(`${lang === 'en' ? 'Favourite today' : 'ของโปรดวันนี้'}: ${e.text}`));
+      es.filter((e) => e.kind === 'note').forEach((e) => part.push(`${lang === 'en' ? 'Parents’ note' : 'บันทึกพ่อแม่'}: ${e.text}`));
+      es.filter((e) => e.kind === 'first').forEach((e) => part.push(`${lang === 'en' ? 'First time' : 'ครั้งแรก'} (${who(e.child)}): ${e.first_key === 'custom' ? e.text : firsts[e.first_key] || e.first_key}`));
+      if (part.length) lines.push(`${lang === 'en' ? 'Day' : 'วันที่'} ${d.day_index + 1} (${d.date}) — ${d.title[lang] || d.title.en}\n- ${part.join('\n- ')}`);
+    }
+    return lines.join('\n\n');
+  }
+  r.post('/api/b/story', ...W, async (req, res, next) => {
+    try {
+      if (!ai || !ai.enabled()) return bad(res, 'no-key', 501);
+      const b = req.body || {}, lang = b.lang === 'en' ? 'en' : 'th';
+      const t = await trip(String(b.trip || '')); if (!t) return bad(res, 'trip');
+      const day = dayArg(b.day); if (!dayOk(t, day)) return bad(res, 'day');
+      const facts = await storyFacts(t, day, lang);
+      if (!facts) return bad(res, 'empty', 422);   // nothing written down → don't call the model
+      const ctl = new AbortController();
+      let done = false;
+      res.on('close', () => { if (!done) ctl.abort(); });
+      res.writeHead(200, { 'Content-Type': 'text/event-stream; charset=utf-8', 'Cache-Control': 'no-store', 'X-Accel-Buffering': 'no' });
+      const send = (ev, data) => res.write(`${ev ? `event: ${ev}\n` : ''}data: ${JSON.stringify(data)}\n\n`);
+      try {
+        const text = await ai.writeStory({ lang, whole: day === null, facts, signal: ctl.signal, onText: (x) => send(null, { t: x }) });
+        const id = day === null ? `${t.id}.story.all` : `${t.id}.story.d${day}`;
+        await q(`INSERT INTO entries (id, family_id, trip_id, day_index, kind, text, lang, created_by, created_uid) VALUES ($1,$2,$3,$4,'story',$5,$6,$7,$8)
+          ON CONFLICT (id) DO UPDATE SET text=EXCLUDED.text, lang=EXCLUDED.lang, updated_at=now()`, [id, FAMILY, t.id, day, text, lang, 'Claude', req.user.uid]);
+        done = true;
+        send('done', { id, text });
+      } catch (e) {
+        done = true;
+        if (ctl.signal.aborted) return res.end();   // stopped by the user: nothing saved
+        console.error('story', e.code || e.status || e.message);
+        send('error', { error: e.code === 'refusal' ? 'refusal' : 'failed' });
+      }
+      res.end();
+    } catch (e) { next(e); }
+  });
+
   // ----- PDPA: everything we hold about the family, in one JSON (photos via /api/b/backup.zip later)
   r.get('/api/b/export.json', A.requireEditor, async (_req, res, next) => {
     try {

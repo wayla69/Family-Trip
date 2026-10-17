@@ -37,6 +37,7 @@ const A = {
   lang(b) { lang = b.dataset.v; ls('lang', lang); render(); },
   jump(b, e) { e.preventDefault(); const el = document.getElementById('d' + b.dataset.v); if (el) el.scrollIntoView({ behavior: 'smooth' }); },
   print() { window.print(); },
+  pdf(b) { toast(L('กำลังสร้าง PDF พร้อมรูป… อาจใช้เวลาครึ่งนาที', 'Making the PDF with photos… may take half a minute')); location.href = b.getAttribute('href'); },
   async copytext() {
     const t = trip(route().parts[1]); if (!t) return;
     const lines = [T(t.title), fmtRange(t), ''];
@@ -92,6 +93,44 @@ const A = {
     day.done_at = done ? Date.now() : null;   // optimistic; not re-applied after reload, the server copy wins
     enqueue({ method: 'PUT', url: `/api/b/days/${encodeURIComponent(t.id)}/${d}`, body: { done } });
   },
+  async story(b) {
+    if (storyCtl) return;
+    const t = trip(b.dataset.t), day = b.dataset.d === '' ? null : +b.dataset.d;
+    if (!navigator.onLine) { toast(L('ต้องต่อเน็ตเพื่อแต่งนิทาน', 'Writing a story needs a connection')); return; }
+    const box = $('#storytext'); box.hidden = false; box.textContent = ''; box.classList.add('writing');
+    $('#storygo').disabled = true; $('#storystop').hidden = false;
+    storyCtl = new AbortController();
+    let text = '';
+    try {
+      const r = await fetch('/api/b/story', { method: 'POST', credentials: 'same-origin', signal: storyCtl.signal,
+        headers: { 'x-mb': '1', 'content-type': 'application/json' }, body: JSON.stringify({ trip: t.id, day, lang }) });
+      if (r.status === 422) { box.textContent = L('ยังไม่มีบันทึกของวันนี้ — เพิ่มคำพูด คำอธิบายรูป หรือเช็คอินก่อน', 'Nothing written down yet — add a quote, a photo caption or a check-in first'); return; }
+      if (!r.ok) throw new Error('http ' + r.status);
+      const rd = r.body.getReader(), dec = new TextDecoder();
+      let buf = '', ev = null;
+      for (;;) {
+        const { done, value } = await rd.read(); if (done) break;
+        buf += dec.decode(value, { stream: true });
+        let i;
+        while ((i = buf.indexOf('\n\n')) >= 0) {   // one SSE event per blank line
+          const chunk = buf.slice(0, i); buf = buf.slice(i + 2); ev = null;
+          let data = '';
+          chunk.split('\n').forEach((l) => { if (l.startsWith('event: ')) ev = l.slice(7); else if (l.startsWith('data: ')) data += l.slice(6); });
+          const d = JSON.parse(data || '{}');
+          if (!ev) { text += d.t; box.textContent = text; }
+          else if (ev === 'done') { await load(); render(); toast(L('เก็บนิทานไว้ในสมุดแล้ว', 'Story saved in the book')); }
+          else if (ev === 'error') box.textContent = d.error === 'refusal' ? L('Claude แต่งนิทานนี้ไม่ได้ ลองเพิ่มบันทึกแล้วลองใหม่', 'Claude could not write this one — try again later') : L('แต่งไม่สำเร็จ ลองใหม่อีกครั้ง', 'That didn’t work — try again');
+        }
+      }
+    } catch (e) {
+      if (e.name === 'AbortError') toast(L('หยุดแล้ว — ไม่ได้บันทึก', 'Stopped — nothing saved'));
+      else box.textContent = L('แต่งไม่สำเร็จ ลองใหม่อีกครั้ง', 'That didn’t work — try again');
+    } finally {
+      storyCtl = null; box.classList.remove('writing');
+      const go = $('#storygo'), stop = $('#storystop'); if (go) go.disabled = false; if (stop) stop.hidden = true;
+    }
+  },
+  storystop() { if (storyCtl) storyCtl.abort(); },
   lb(b) { openLb(b.dataset.t, b.dataset.v); },
   newtrip() { openSheet(newTripSheet()); },
   async createtrip(b, e) {
@@ -115,6 +154,8 @@ async function saveBlur(el) {
   if (!text) { if (cur) await delEntry(id); return; }
   if (!cur || cur.text !== text) await putEntry(t, { day: d, kind, text }, id);
 }
+
+let storyCtl = null;   // AbortController while a story streams
 
 /* ---------- lightbox ---------- */
 let lbState = null;

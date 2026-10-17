@@ -185,4 +185,5 @@ function route() {
 }
 function nav(hash) { if (location.hash === hash) render(); else location.hash = hash; }
 // never wipe what someone is typing: re-render only when no field has focus
-function safeRender() { const a = document.activeElement; if (a && /^(INPUT|TEXTAREA|SELECT)$/.test(a.tagName) && a.closest('#app')) return; render(); }
+function safeRender() { if (typeof storyCtl !== 'undefined' && storyCtl) return;   // a story is streaming into the page
+  const a = document.activeElement; if (a && /^(INPUT|TEXTAREA|SELECT)$/.test(a.tagName) && a.closest('#app')) return; render(); }
