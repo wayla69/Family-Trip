@@ -383,7 +383,12 @@ function trophies(t, kid) {
   const wildN = (info.wild || []).filter((_, n) => ticked(t, `wild.${n}`, kid)).length;
   const firsts = entriesOf(t.id).filter((e) => e.kind === 'first' && e.child === kid).length;
   const doorsAll = ((pp.countdown || {}).doors || []).length, doors = ((pp.countdown || {}).doors || []).filter((_, n) => ticked(t, `cd.${n + 1}`, kid)).length;
+  const packAll = (((pp.countdown || {}).pack || {}).items || []), packed = packAll.filter((x) => ticked(t, `pack.${x.k}`, kid)).length;
+  // the first three can be earned before we leave (surprise doors, packing) so the shelf is never all locks
   return [
+    doorsAll ? ['door1', '🚪', L('เปิดประตูแรก', 'First door opened'), doors >= 1] : null,
+    packAll.length ? ['packed', '🧳', L('ช่วยจัดกระเป๋า', 'Packing helper'), packed >= Math.min(5, packAll.length)] : null,
+    doorsAll > 1 ? ['doorhalf', '🗓️', L('นับถอยหลังครึ่งทาง', 'Halfway there'), doors >= Math.ceil(doorsAll / 2)] : null,
     ['stamp1', '🛂', L('ตราแรก', 'First stamp'), stamps >= 1],
     ['stamp3', '🏅', L('นักสะสมตรา', 'Stamp collector'), stamps >= 3],
     ['stampall', '👑', L('ครบทุกวัน!', 'Every day stamped!'), days > 0 && stamps >= days],
