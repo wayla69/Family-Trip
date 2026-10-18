@@ -711,6 +711,8 @@ body.btopen{overflow:hidden}
 
 /* ---------- travel notebook ---------- */
 .nbcard{display:flex;align-items:center;gap:12px;margin:10px 0 18px;padding:12px 14px;border:1px solid var(--rule);border-radius:14px;text-decoration:none;color:inherit;background:var(--panel)}
+button.nbcard{width:100%;font:inherit;text-align:left;cursor:pointer}
+.nbcard.backup.warn{border-color:var(--accent2,#C8402B);background:var(--warn,#FBF0E4)}.nbcard.backup.warn small:first-of-type{color:var(--accent2,#C8402B);font-weight:600}
 .nbcard .emb{font-size:28px}.nbcard b{display:block;font-size:15px}.nbcard small{color:var(--muted);font-size:12px;line-height:1.35;display:block}.nbcard .arrow{margin-left:auto;color:var(--muted);font-size:22px}
 .revs{display:grid;gap:8px;margin-top:8px}
 .rev{border:1px solid var(--rule);border-radius:12px;padding:0 12px;background:var(--paper)}

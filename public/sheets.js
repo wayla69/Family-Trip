@@ -163,6 +163,15 @@ const A = {
   storystop() { if (storyCtl) storyCtl.abort(); },
   lb(b) { openLb(b.dataset.t, b.dataset.v); },
   newtrip() { openSheet(newTripSheet()); },
+  // full backup zip (editors only on the server too); the browser downloads it in place, the page stays
+  backup() {
+    if (!navigator.onLine) { toast(L('ต้องต่อเน็ตก่อนจึงสำรองได้', 'Connect to the internet to back up')); return; }
+    if (queue.length) toast(L('ยังมีบันทึกรอส่ง — ไฟล์นี้จะยังไม่มีรายการเหล่านั้น', 'Some records are still waiting to send — this file will not have them yet'));
+    else toast(L('กำลังเตรียมไฟล์สำรอง… รูปเยอะอาจใช้เวลาสักครู่', 'Preparing the backup… many photos can take a minute'));
+    ls('last_backup', Date.now());
+    const a = document.createElement('a'); a.href = '/api/export.zip'; a.download = ''; document.body.appendChild(a); a.click(); a.remove();
+    render();
+  },
   async createtrip(b, e) {
     e.preventDefault();
     const f = $('#ntf'), title = f.title.value.trim(), from = f.from.value, to = f.to.value;
