@@ -1472,6 +1472,20 @@
      { "k": "passport", "e": "🛂", "th": "พาสปอร์ตนักผจญภัย", "en": "My adventure passport" }
     ]
    }
+  },
+  "map": {
+   "title": { "th": "แผนที่การผจญภัย", "en": "Our adventure map" },
+   "sea": { "th": "ทะเลจีนใต้", "en": "South China Sea" },
+   "stops": [
+    { "k": "airport", "e": "✈️", "th": "สนามบินฮ่องกง", "en": "Hong Kong airport", "x": 64, "y": 38 },
+    { "k": "mawan", "e": "🌉", "th": "เกาะมาวาน", "en": "Ma Wan island", "x": 82, "y": 18 },
+    { "k": "disney", "e": "🏰", "th": "ดิสนีย์แลนด์", "en": "Disneyland", "x": 88, "y": 52 },
+    { "k": "studio", "e": "🎬", "th": "สตูดิโอซิตี้", "en": "Studio City", "x": 26, "y": 66 },
+    { "k": "senado", "e": "🏮", "th": "ลานเซนาโด", "en": "Senado Square", "x": 12, "y": 30 },
+    { "k": "taipa", "e": "🎠", "th": "หมู่บ้านไทปา", "en": "Taipa Village", "x": 44, "y": 80 },
+    { "k": "ferry", "e": "🚢", "th": "ท่าเรือเฟอร์รี่", "en": "Ferry pier", "x": 46, "y": 50 }
+   ],
+   "days": [["airport", "mawan"], ["disney", "mawan"], ["studio"], ["senado", "studio"], ["taipa", "studio"], ["ferry", "airport"]]
   }
  }
 }
