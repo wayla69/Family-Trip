@@ -36,7 +36,7 @@ UI screenshots go to `$SHOTS` (default `/tmp/mb-shots`) — look at them after U
 
 ## Conventions and rules (from the owner — keep)
 - Use the Edit/Write tools for file changes; never shell heredocs / `Set-Content` for Thai text (mangles UTF-8). Verify the edit landed (OneDrive swap races).
-- Flow for every change: implement → `npm test` → commit → PR → wait for **green CI** (test, docker, migrations-journaled) → squash-merge → Deploy workflow runs `railway up`. Never merge on red CI.
+- Flow for every change: implement → `npm test` → commit → PR → wait for **green CI** (test, docker, migrations-journaled) → squash-merge → Railway (connected to this repo) deploys `main` by itself; check `/sw.js` shows the new `mbs-vN`. Never merge on red CI. (The GitHub "Deploy" workflow is a manual fallback only.)
 - New migration: check the latest number on `main` first (parallel PRs collide); on conflict keep both journal entries (union) and renumber yours. Never edit a migration that is on `main`.
 - Look: follow `docs/DESIGN.md` (the manuals). Fonts: **KIRA UI** for all UI/print; Cormorant Garamond only as the HK display face. Verify on a wide desktop and a phone; auto-fill grids, no horizontal overflow at 320/390 px.
 - Children's photos: nothing public, no analytics/third-party scripts, no GPS/EXIF kept, never sent to an AI, no logging of cookies/codes/tokens. No booking numbers / passports in seeds.

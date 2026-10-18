@@ -38,6 +38,7 @@
 - pin เวอร์ชัน `@railway/cli` (มีรายงาน v5.3.0 ล็อกอินด้วย project token ไม่ได้ใน CI)
 - environments: `production` (main) · `dev` = เครื่อง local + CI (Postgres/MinIO ใน docker) · ทางเลือก: Railway environment `staging` ภายหลัง
 - smoke test หลัง deploy: `test/verify-prod.mjs` ยิง URL จริง
+- **อัปเดต 18 ต.ค. 2026:** เจ้าของต่อ Railway กับ repo ได้แล้ว → Railway deploy `main` เอง · workflow `deploy` เปลี่ยนเป็นกดเอง (`workflow_dispatch`) เป็นทางสำรอง ไม่รันหลัง CI อีก (เดิมขึ้นแดงทุกครั้งเพราะไม่มี token)
 
 ## ADR-9 Backup
 - Postgres: scheduled backup ของ Railway (daily 6 วัน / weekly 1 เดือน / monthly 3 เดือน) · restore ได้ใน project+environment เดียวกันเท่านั้น
