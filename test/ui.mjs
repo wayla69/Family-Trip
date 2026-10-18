@@ -659,6 +659,7 @@ const T = 'hk-macau-2026';
   ok(hrefs.length > 300 && hrefs.every((h) => { const u = new URL(h), q = u.searchParams.get('query') || u.searchParams.get('destination'); return q && q.length > 3 && !/undefined|null/.test(q); }), `every Google Maps link has a full query (${hrefs.length})`);
   await page.goto(`${BASE}/#/t/big-hop-2027/sos`); await page.waitForSelector('#pocket');
   ok(await page.locator('#pocket details.pg').count() >= 3 && await page.locator('table.ift').count() === 2 && await s.noHScroll(), 'emergency page: numbers, tonight\'s address, if-then + mishaps; fits the phone');
+  ok(await page.locator('#pocket .ecard .emerg li.main a[href="tel:000"]').count() === 1 && await page.locator('#pocket .ecard .enights li').count() === 8 && await page.locator('#pocket .ecard .elost').count() === 1, 'emergency card like the manual: 000 first, every night\'s address (8 stays), the lost-child line');
   await page.goto(`${BASE}/#/t/big-hop-2027/prep`); await page.waitForSelector('#pocket');
   ok(await page.locator('#pocket details.pg').count() >= 6 && (await page.textContent('#pocket')).includes('Biosecurity'), 'get-ready page: packing, prices, visa, biosecurity, the van, drive legs, crowds, book-ahead');
   // HK: the manual's other chapters (info.more) land on the page they name, tables scroll inside their box
