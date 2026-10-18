@@ -260,8 +260,9 @@ function mapHtml(t, day, kids, at) {
 <text class="sealbl" x="${MAP_W - 14}" y="${MAP_H - 12}">${esc(T(mm.m.sea))}</text>
 <g class="compass" transform="translate(30,40)"><circle r="15"/><path d="M0,-12 L4,0 L0,12 L-4,0Z"/><text y="-18">N</text></g>
 ${mm.hops.map((h, j) => `<path class="hop${j < pos ? ' done' : ''}" id="hop${j}" d="${h.d}"/>`).join('')}
-${mm.m.stops.filter((s) => mm.seq.some((v) => v.k === s.k)).map((s) => `<g class="pin${been.has(s.k) ? ' on' : ''}${s.k === here ? ' here' : ''}" data-a="mappin" data-t="${esc(t.id)}" data-v="${esc(s.k)}" data-say="${esc(T(s))}" transform="translate(${s.x * MAP_W / 100},${s.y * MAP_H / 100})" role="button" aria-label="${esc(T(s))}"><circle r="17"/><text class="e" y="6">${esc(s.e)}</text><text class="lbl" y="31">${esc(T(s))}</text></g>`).join('')}
+${mm.m.stops.filter((s) => mm.seq.some((v) => v.k === s.k)).map((s) => `<g class="pin${been.has(s.k) ? ' on' : ''}${s.k === here ? ' here' : ''}" data-a="mappin" data-t="${esc(t.id)}" data-v="${esc(s.k)}" data-say="${esc(T(s))}" transform="translate(${s.x * MAP_W / 100},${s.y * MAP_H / 100})" role="button" aria-label="${esc(T(s))}"><circle r="17"/><text class="e" y="6">${esc(s.e)}</text></g>`).join('')}
 </svg>
+<svg class="lbls" viewBox="0 0 ${MAP_W} ${MAP_H}" aria-hidden="true">${mm.m.stops.filter((s) => mm.seq.some((v) => v.k === s.k)).map((s) => `<text class="lbl" x="${s.x * MAP_W / 100}" y="${s.y * MAP_H / 100 + 31}">${esc(T(s))}</text>`).join('')}</svg>
 <div class="walkers" style="left:${s0.x}%;top:${s0.y}%" aria-hidden="true">${kids.filter((k) => kidArt(k)).map((k) => `<img class="${esc(k)}" src="${kidArt(k, true)}" alt="">`).join('')}</div></div>`;
 }
 // walk the kids from mapFrom to the stop of this map (one hop after another, along the drawn paths)
