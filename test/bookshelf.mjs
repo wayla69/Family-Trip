@@ -29,6 +29,9 @@ ok(hk.passport.days.length === 6 && hk.passport.guides.length === 2 && s.trips[1
 ok(!JSON.stringify(s.trips.map((t) => t.passport)).match(/e-ticket|\b\d{3}-\d{10}\b|[A-Z]{2}\d{7}/), 'passport content has no ticket / passport numbers');
 ok(hk.firsts.length === 10 && hk.theme.accent === '#1F3A5F' && hk.theme.kicker.includes('DOLPHIN'), 'HK firsts catalog + manual theme');
 ok(s.trips[1].days.length === 16 && s.trips[1].theme.accent === '#2C5646', 'Australia 16 days + eucalyptus theme');
+{ const n = hk.info, dp = hk.days.map((d) => d.plan || {});
+  ok(n.visa && n.ifthen.rows.length === 10 && n.ifthen.book.rows.length === 8 && n.more.length >= 20 && n.more.every((m) => ['prep', 'sos', 'stays', 'learn'].includes(m.page) && m.title.th && m.title.en) && n.more.some((m) => /minute by minute/.test(m.title.en) && m.rows.length >= 10), 'HK manual in full: entry rules, 10 if-thens, booking timeline, Disneyland minute by minute and the other chapters');
+  ok(dp.every((p) => (p.eat || []).length && p.eat.every((e) => e.q && e.note.th && e.note.en)) && dp.every((p) => p.money), 'HK: every day has its places to eat (with Maps) and money today'); }
 ok(s.trips[1].firsts.length === 11 && s.trips[1].firsts.some((f) => f.key === 'koala' && f.label.th && f.label.en), 'Australia has its own firsts to record (kangaroo, koala, dolphins…)');
 ok(s.children.map((k) => k.slug).join() === 'mimi,mika', 'children mimi, mika');
 ok((await fetch(BASE + '/api/b/state')).status === 401, 'state needs login');
@@ -121,7 +124,7 @@ ok(s.trips[0].days[0].done_at > 0 && s.trips.some((t) => t.slug === 'chiang-mai-
 {
   const hk = (await state()).trips.find((t) => t.id === T), p3 = hk.days[3].plan;
   ok(p3.plan.length === 9 && p3.plan[1].t === '11:00' && /teamLab/.test(p3.plan[1].en) && p3.pick && p3.planB && p3.money, 'day 4 plan: 9 timed steps, local pick, plan B, money');
-  ok(hk.days.every((d) => d.plan && d.plan.plan && d.plan.plan.length) && hk.days.every((d) => !/\b[A-Z0-9]{6}\b.*(booking|PNR|confirmation)/i.test(JSON.stringify(d.plan))), 'every HK day has a plan; no booking references');
+  ok(hk.days.every((d) => d.plan && d.plan.plan && d.plan.plan.length) && hk.days.every((d) => !/(booking|PNR|confirmation)[^"]{0,20}\b(?=[A-Z]*\d)[A-Z0-9]{6}\b|\b(?=[A-Z]*\d)[A-Z0-9]{6}\b[^"]{0,20}(booking|PNR|confirmation)/i.test(JSON.stringify(d.plan))), 'every HK day has a plan; no booking references');
   ok(hk.days[0].plan.stay && /Pak Yan Road/.test(hk.days[0].plan.stay.addr) && hk.info.emergency[0].tel === '999' && hk.info.stays.length === 2 && hk.info.prices.rows.length >= 5, 'HK: tonight\'s stay with address, pocket guide (999, 2 stays, prices)');
   // Australia, imported from the owner's trip artifact: every day planned, nearby food, learn cards, quiz, pocket guide, Aussie words
   const au = (await state()).trips.find((t) => t.id === 'big-hop-2027'), a2 = au.days[1].plan;

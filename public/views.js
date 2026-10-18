@@ -341,7 +341,7 @@ function infoBlocks(t) {
   const n = t.info || {}, B = { stays: [], sos: [], prep: [], learn: [], drive: '' };
   const pg = (k, title, inner, id) => B[k].push(`<details class="pg" open${id ? ` id="${id}"` : ''}><summary>${title}</summary>${inner}</details>`);
   const tel = (x) => `<a href="tel:${esc(String(x).split('·')[0].replace(/[^+\d]/g, ''))}">${esc(x)}</a>`;   // "number · address" → dial the number only
-  const tbl = (cols, rows, cls) => `<div class="tblwrap"><table class="prices ${cls || ''}">${cols ? `<thead><tr>${cols.map((c) => `<th>${esc(T(c))}</th>`).join('')}</tr></thead>` : ''}<tbody>${rows.map((r) => `<tr>${r.map((c, k) => `<td${k === 0 ? ' class="nm"' : ''}>${esc(typeof c === 'object' ? T(c) : String(c))}</td>`).join('')}</tr>`).join('')}</tbody></table></div>`;
+  const tbl = (cols, rows, cls) => `<div class="tblwrap"><table class="prices ${cls || ''}">${cols ? `<thead><tr>${cols.map((c) => `<th>${esc(T(c))}</th>`).join('')}</tr></thead>` : ''}<tbody>${rows.map((r) => `<tr>${r.map((c, k) => `<td${k === 0 ? ' class="nm"' : cols && cols[k] ? ` data-h="${esc(T(cols[k]))}"` : ''}>${esc(typeof c === 'object' ? T(c) : String(c))}</td>`).join('')}</tr>`).join('')}</tbody></table></div>`;   // phones stack each row into a card, every value labelled by its column (app.css)
   const lede = (x) => (x && T(x) ? `<p class="lede">${esc(T(x))}</p>` : '');
   const list = (items) => `<ul class="tips">${items.map((x) => `<li>${esc(T(x))}</li>`).join('')}</ul>`;
   const dl = (rows) => `<dl class="gl">${rows.map((r) => `<div><dt>${esc(T(r.t))}</dt><dd>${esc(T(r.x))}</dd></div>`).join('')}</dl>`;
@@ -380,7 +380,8 @@ function infoBlocks(t) {
     pg(m.page, `${esc(m.emo || '📄')} ${esc(T(m.title))}`, `${lede(m.lede)}${m.table ? tbl(m.table.cols, m.table.rows) : ''}${(m.rows || []).length ? dl(m.rows) : ''}${(m.groups || []).map((g) => `${g.title && T(g.title) ? `<h5>${esc(T(g.title))}</h5>` : ''}${list(g.items || [])}`).join('')}${m.note && T(m.note) ? `<div class="call info">${esc(T(m.note))}</div>` : ''}`); });
   return B;
 }
-const topicPage = (k, blocks, lede) => `<h1 class="h2">${secTitle(k)}</h1>${lede ? `<p class="lede">${lede}</p>` : ''}${blocks.length ? `<section class="pocket" id="pocket">${blocks.join('')}</section>` : `<div class="empty">${L('เล่มนี้ยังไม่มีข้อมูลส่วนนี้', 'This book has nothing here yet')}</div>`}`;
+// a long page (a full manual has 20+ chapters) opens as a list of headings: only the first section starts open
+const topicPage = (k, blocks, lede) => `<h1 class="h2">${secTitle(k)}</h1>${lede ? `<p class="lede">${lede}</p>` : ''}${blocks.length ? `<section class="pocket" id="pocket">${(blocks.length > 6 ? blocks.map((b, i) => (i ? b.replace('<details class="pg" open', '<details class="pg"') : b)) : blocks).join('')}</section>` : `<div class="empty">${L('เล่มนี้ยังไม่มีข้อมูลส่วนนี้', 'This book has nothing here yet')}</div>`}`;
 const viewStays = (t) => topicPage('stays', infoBlocks(t).stays, L('ทุกที่พักของทริป พร้อมแผนที่และการ์ดที่อยู่ให้คนขับดู', 'Every stay of the trip, with its map and an address card for the driver'));
 const viewSos = (t) => topicPage('sos', infoBlocks(t).sos, L('แตะเบอร์เพื่อโทร · ใช้ได้ตอนไม่มีเน็ต', 'Tap a number to call · works offline'));
 const viewPrep = (t) => topicPage('prep', infoBlocks(t).prep, L('ก่อนออกเดินทางและระหว่างทาง', 'Before we leave and on the way'));
