@@ -179,8 +179,9 @@ const T = 'hk-macau-2026';
   // every meal has a pick and a backup (manual EN-2); the park map is drawn
   await page.goto(`${BASE}/#/t/${T}/today/1`); await page.waitForSelector('.dsheet');
   ok(await page.locator('.dsheet .meal').count() === 4 && /Hoi Lin Tea House/.test(await page.textContent('.cgrid')) && /Plaza Inn/.test(await page.locator('.dsheet .meal').nth(3).textContent()) && await page.locator('.dsheet a[href="/art/hk/disney-map.svg"]').count() === 1, 'HK today, Disney day: four meals each with a pick and a backup, and the park map');
-  await page.goto(`${BASE}/#/t/${T}/eat`); await page.waitForSelector('.mealplan');
-  ok(await page.locator('.mealplan .mday').count() === 6 && await page.locator('.mealplan .mlcard').count() === 22, 'eat page: every meal of every day, pick and backup, before the full guide');
+  await page.goto(`${BASE}/#/t/${T}/eat/d/1`); await page.waitForSelector('.eatday');
+  ok(await page.locator('.daytabs a').count() === 6 && await page.locator('.daytabs a[aria-current=page]').textContent().then((x) => x.includes('2')) && await page.locator('.emeal').count() === 4 && /Hoi Lin Tea House/.test(await page.locator('.emeal').first().textContent()) && await page.locator('.emeal .erow.bk').count() === 3, 'eat page, day by day: a tab per day, one box per meal with the pick and the backup');
+  ok(await page.locator('.enear').count() > 0 && await page.locator('.eatday a.btn.wide[href$="/eat/all"]').count() === 1, 'eat page, day by day: places near the day, then a button to every place');
   await page.goto(`${BASE}/#/t/${T}/prep/full`); await page.waitForSelector('#pocket');
   ok(await page.locator('#pocket .mapimg img[src="/art/hk/disney-map.svg"]').count() === 1, 'get-ready page: the drawn Disneyland map');
   // the kids' adventure passports
@@ -726,7 +727,7 @@ const T = 'hk-macau-2026';
   ok((await apiState(page)).entries.some((e) => e.id === 'big-hop-2027.tick.wild.0.mimi'), 'animals: "spotted" is a tick, saved');
   // all places to eat: the manual's "Where to eat", searchable, every card opens Maps
   await page.evaluate(() => localStorage.removeItem('mbs_kidmode'));   // a grown-up leaves kid mode
-  await page.goto(`${BASE}/#/t/big-hop-2027/eat`); await page.waitForSelector('.eatc');
+  await page.goto(`${BASE}/#/t/big-hop-2027/eat/all`); await page.waitForSelector('.eatc');
   ok(await page.locator('.eatc').count() === 294 && await page.locator('nav.bar a[aria-current=page][href$="/eat"] i svg.ic').count() === 1, 'eat page: 294 places from the manual, tab highlighted');
   ok(await page.locator('.eatc a[href*="google.com/maps/search"]').count() === 588 && await page.locator('.eatc a[href*="maps/dir/"]').count() === 294, 'eat page: every place has a map link (name + button) and directions');
   await page.fill('#eatq', 'pie');
@@ -737,9 +738,14 @@ const T = 'hk-macau-2026';
   await page.click('[data-a="eatk"][data-v="-1"]'); await page.click('[data-a="eatpick"]');
   ok(await page.locator('.eatc:visible').count() === 61 && (await page.textContent('#eatn')).includes('61'), 'eat page: picks in the plan');
   ok(await s.noHScroll(), 'eat page fits the phone');
-  ok(await page.locator('.mealplan .mday').count() === 16 && /Adina kitchen/.test(await page.locator('.mealplan .mday').first().textContent()), 'AU eat page: every day has its meals, Day 1 dinner is the Adina kitchen or delivery');
   await s.shot('04-eat', false);
-  await page.goto(`${BASE}/#/t/hk-macau-2026/eat`); await page.waitForSelector('.eatc');
+  await page.goto(`${BASE}/#/t/big-hop-2027/eat/d/0`); await page.waitForSelector('.eatday');
+  ok(await page.locator('.daytabs a').count() === 16 && await page.locator('.emeal').count() === 1 && /Adina kitchen/.test(await page.locator('.emeal').first().textContent()), 'AU eat page: Day 1 dinner is the Adina kitchen or delivery');
+  await page.goto(`${BASE}/#/t/big-hop-2027/eat/d/2`); await page.waitForSelector('.eatday .emeal');
+  ok(await page.locator('.emeal').count() === 4 && await page.locator('.emeal .ealso .erow').count() > 3 && /Jervis Bay/.test(await page.locator('.enears').textContent()), 'AU eat page, Day 3: four meals, more places that fit each meal, and what is near Jervis Bay');
+  ok(await s.noHScroll(), 'eat day page fits the phone');
+  await s.shot('04-eat-day', false);
+  await page.goto(`${BASE}/#/t/hk-macau-2026/eat/all`); await page.waitForSelector('.eatc');
   ok(await page.locator('.eatc:visible').count() === 223 && await page.locator('[data-a="eatpick"][aria-pressed="false"]').count() === 1 && await page.locator('.eatc .zh').count() > 150, 'eat page (HK): 223 places from the manual with Chinese names; filters reset for another book');
   ok(s.errs.length === 0, 'AU: no console errors ' + s.errs.join(' | '));
   await s.ctx.close();

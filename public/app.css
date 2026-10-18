@@ -1401,3 +1401,54 @@ button.tile.kid{border:1px solid var(--line);text-align:left;justify-items:start
 .eatc .ef .go .ic{width:15px;height:15px}
 .eatpage .eatg>h3{position:sticky;top:60px;z-index:2;background:var(--paper);padding:10px 0 6px;font-size:15px}
 .eatl{columns:auto;column-rule:none}
+/* eat, day by day: day tabs, then one coloured box per meal (pick, backup, also-good), then what else is near; "all places" is a button */
+.eatday .daytabs{display:flex;gap:6px;overflow-x:auto;padding:4px 0 10px;margin:4px 0 6px;scrollbar-width:none;-webkit-overflow-scrolling:touch}
+.eatday .daytabs::-webkit-scrollbar{display:none}
+.daytabs a{flex:none;display:flex;flex-direction:column;align-items:center;justify-content:center;min-width:48px;height:52px;border-radius:12px;border:1px solid var(--line);background:var(--paper);color:var(--ink);text-decoration:none;font-weight:700;font-size:17px;line-height:1.1}
+.daytabs a small{font-size:10.5px;font-weight:600;color:var(--muted);text-transform:uppercase;letter-spacing:.04em}
+.daytabs a.now{border-color:var(--accent)}
+.daytabs a[aria-current=page]{background:var(--accent);border-color:var(--accent);color:#fff}.daytabs a[aria-current=page] small{color:rgba(255,255,255,.8)}
+.edhead{display:flex;gap:12px;align-items:center;margin:2px 0 12px}
+.edhead .mart{width:56px;height:56px;flex:none}
+.edhead>div{min-width:0;display:flex;flex-direction:column;gap:2px}
+.edhead .h2{margin:0;font-size:21px;line-height:1.25}
+.edhead .label{display:flex;align-items:center;gap:5px;font-size:13px}.edhead .label .ic{width:15px;height:15px;flex:none}
+.emeals{display:grid;grid-template-columns:repeat(auto-fill,minmax(min(100%,340px),1fr));gap:12px;align-items:start}
+.emeal{border-radius:16px;border:1px solid color-mix(in srgb,var(--mk) 35%,var(--line));background:color-mix(in srgb,var(--mk) 5%,var(--paper));overflow:hidden;min-width:0}
+.emeal .eh3{display:flex;align-items:center;gap:8px;margin:0;padding:10px 14px;background:color-mix(in srgb,var(--mk) 13%,var(--paper));font-size:15px}
+.emeal .mtag{font-size:13.5px;padding:3px 12px}
+.emeal .epick{margin:12px 12px 4px;padding:12px 14px;border-radius:12px;background:var(--paper);border:1px solid var(--line);display:flex;flex-direction:column;gap:6px}
+.emeal .elbl{font-size:11px;font-weight:700;letter-spacing:.05em;text-transform:uppercase;color:var(--mk)}
+.emeal .et{display:flex;align-items:flex-start;gap:10px;justify-content:space-between}
+.emeal .en{font-size:17px;line-height:1.3;min-width:0;overflow-wrap:anywhere}.emeal .en a{color:var(--ink);text-decoration:none}
+.emeal .epick p{margin:0;font-size:14px;line-height:1.45;color:var(--ink)}
+.eatday .echips{display:flex;flex-wrap:wrap;gap:4px;margin-top:2px}
+.eatday .echips span{font-size:12px;padding:2px 8px;border-radius:999px;background:color-mix(in srgb,var(--ink) 6%,var(--paper));color:var(--ink)}
+.eatday .echips .pr{background:color-mix(in srgb,var(--leaf) 13%,var(--paper));color:color-mix(in srgb,var(--leaf) 70%,var(--ink));font-weight:700}
+.eatday a.go{flex:none;display:inline-flex;align-items:center;gap:4px;font-size:13px;font-weight:700;color:#fff;background:var(--accent);border-radius:999px;padding:6px 12px;text-decoration:none;white-space:nowrap}
+.eatday a.go .ic{width:15px;height:15px}
+.eatday a.go.sq{padding:7px;color:var(--accent);background:color-mix(in srgb,var(--accent) 10%,var(--paper))}
+.erows{list-style:none;margin:0;padding:0}
+.erow{display:flex;align-items:center;gap:10px;padding:9px 0;border-top:1px solid var(--line);min-width:0}
+.erow>div{min-width:0;flex:1;display:flex;flex-direction:column;gap:2px;overflow-wrap:anywhere}
+.erow b{font-size:14.5px;line-height:1.35}.erow b a{color:var(--ink);text-decoration:none}
+.erow small{font-size:12.5px;color:var(--muted);line-height:1.4}
+.erow .etag{font-size:11px;font-weight:600;padding:1px 7px;border-radius:999px;background:color-mix(in srgb,var(--ink) 6%,var(--paper));color:var(--muted);vertical-align:2px}
+.emeal>.erows,.emeal .ealso{margin:0 14px}
+.emeal>.erows .erow:first-child{border-top:0}
+.emeal .ealso{padding:6px 0 4px;border-top:1px dashed color-mix(in srgb,var(--mk) 35%,var(--line))}
+.emeal .ealso .erow:first-of-type{border-top:0}
+.emeal>:last-child{margin-bottom:10px}
+.enears{display:grid;grid-template-columns:repeat(auto-fill,minmax(min(100%,340px),1fr));gap:10px;align-items:start}
+.enear{border:1px solid var(--line);border-radius:14px;background:var(--paper);padding:0 14px;min-width:0}
+.enear>summary{display:flex;align-items:center;gap:10px;padding:12px 0;cursor:pointer;list-style:none}
+.enear>summary::-webkit-details-marker{display:none}
+.enear>summary b{font-size:14.5px;line-height:1.35;min-width:0}
+.enear>summary .n{margin-left:auto;flex:none;font-size:12px;font-weight:700;color:var(--accent);background:color-mix(in srgb,var(--accent) 10%,var(--paper));border-radius:999px;padding:1px 9px}
+.enear>summary>.ic{width:18px;height:18px;color:var(--muted);flex:none;transition:transform .2s}
+.enear[open]>summary>.ic{transform:rotate(90deg)}
+.enear .erows{padding-bottom:6px}
+.eatday .eatall{justify-content:space-between;margin:18px 0 10px}
+.eatday .btn.wide{display:flex;justify-content:center;width:100%;padding:14px 16px;font-size:15.5px;margin:4px 0 18px;box-sizing:border-box}
+.eatpage .mini.back{display:inline-block;margin:2px 0 8px;text-decoration:none;font-weight:600}
+.erow .etag{align-self:flex-start;vertical-align:baseline}
