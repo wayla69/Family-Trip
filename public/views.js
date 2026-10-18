@@ -25,7 +25,7 @@ function render() {
     document.documentElement.style.cssText = themeStyle(kt); document.documentElement.lang = lang;
     const key = p.slice(0, 3).join('/'), enter = key !== lastView; lastView = key; kidEnter = enter;
     app.innerHTML = `<main class="kidmain${enter ? ' enter' : ''}">${viewKid(p)}</main>`;
-    hydrateColours(app); hydrateDraw(app); hydrateMap(app);
+    hydrateColours(app); hydrateDraw(app); hydrateMap(app); hydratePager(app);
     return;
   }
   if (p[0] === 'print' && (t = trip(p[1]))) {   // the memory book: A4 pages for the PDF (and a preview on screen)
