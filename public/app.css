@@ -842,3 +842,4 @@ a.maplink:hover{color:var(--accent)}
 .eatc .tag.pk{background:var(--pick);color:var(--ink)}
 .eatc .row{margin-top:8px;gap:6px}
 .dayplan h5.ph{display:flex;align-items:center;gap:8px}.dayplan h5.ph .mini{margin-left:auto;font-weight:600}
+.eatc .zh{color:var(--muted);font-size:13px}.eatc p.why{font-size:13px;color:var(--ink);opacity:.85}.eatg .gnote{margin:-2px 0 8px}
