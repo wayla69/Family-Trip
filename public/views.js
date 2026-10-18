@@ -247,22 +247,43 @@ const placeA = (t, p, html) => mapA(placeQ(t, p), html || esc(T(p)));
 const legsHtml = (legs) => `<ol class="legs">${legs.map((g) => `<li><span class="lg"><b>${esc(g.from)}</b> → <b>${esc(g.to)}</b></span><span class="by">${esc(T(g.by))}</span>${g.url ? extA(g.url, L('นำทาง', 'Directions') + ' ↗', 'mini nav') : ''}</li>`).join('')}</ol>`;
 const pickHtml = (p) => `<li class="pk"><div class="eh"><span class="badge">★ ${esc(T(p.meal))}</span> <b>${p.q ? mapA(p.q, esc(p.name)) : esc(p.name)}</b> ${p.q ? extA(mapsUrl(p.q), `<span class="mpin" aria-hidden="true"></span><span class="vh">${L('แผนที่', 'Map')}</span>`, 'pinlink') : ''}</div><p>${esc(T(p.what))}</p><div class="emeta">${p.pr ? `<span class="pr">${esc(p.pr)}</span>` : ''}${p.alt ? `<span class="alt">${L('สำรอง', 'Backup')}: ${p.alt.q ? mapA(p.alt.q, esc(p.alt.name) + ' ↗') : esc(p.alt.name)}${p.alt.pr ? ` · ${esc(p.alt.pr)}` : ''}${T(p.alt.what) ? ` — ${esc(T(p.alt.what))}` : ''}</span>` : ''}</div></li>`;
 const foodHtml = (it) => `<li><b>${mapA(it.q, esc(it.name) + ' ↗')}</b>${it.pick ? ' <span class="tag">★</span>' : ''} <span class="label">${esc(T(it.tag))}${it.pr ? ` · ${esc(it.pr)}` : ''}</span>${T(it.what) ? `<br>${esc(T(it.what))}` : ''}${T(it.note) ? `<br><small>${esc(T(it.note))}</small>` : ''}</li>`;
-const TIPK = { warn: 1, tip: 1, info: 1 };   // a tip's kind sets its marker colour (app.css .tips li.tk-*)
+const TIPK = { warn: 1, tip: 1, info: 1 };
+/* the manual's long sentences, made skimmable: points() cuts a paragraph at top-level ". ", "; " and " · " (never inside brackets),
+   then any piece still long at " — " or ": " (Thai paragraphs rarely have full stops). pts() shows one point as a line and several as a list. */
+const points = (s) => {
+  let d = 0; const SEP = { '.': '\u0001', ';': '\u0002', '·': '\u0003', '—': '\u0004', ':': '\u0005' };
+  const t = String(s || '').replace(/[().;·—:]/g, (c) => { if (c === '(') { d++; return c; } if (c === ')') { d = Math.max(0, d - 1); return c; } return d ? SEP[c] : c; });
+  let parts = t.split(/(?<=[.;])\s+(?=\S)|\s+·\s+/);
+  parts = parts.flatMap((x) => (x.length > 110 ? x.split(/\s+—\s+|:\s+(?=\S)/) : [x]));   // still long: cut at a dash or a colon too
+  return parts.map((x) => x.replace(/[\u0001-\u0005]/g, (c) => '.;·—:'[c.charCodeAt(0) - 1]).replace(/[;.]\s*$/, '').replace(/^[—–-]\s*/, '').trim()).filter(Boolean);
+};
+const pt = (x) => { const m = x.match(/^(.*?)\s*\(([^()]{45,})\)\s*(.*)$/); return m ? `${esc(m[1] + (m[3] ? ' ' + m[3] : ''))}<small>${esc(m[2])}</small>` : esc(x); };   // a long bracket drops to a small line
+const pts = (s, cls) => { const p = points(s); return p.length > 1 ? `<ul class="pts${cls ? ' ' + cls : ''}">${p.map((x) => `<li>${pt(x)}</li>`).join('')}</ul>` : `<p class="pt1">${pt(p[0] || '')}</p>`; };
+// money as a small bill: one line per item with its amount on the right, the day's total last, footnotes small
+const moneyHtml = (s) => {
+  const rows = String(s || '').split(/\s+·\s+/), cur = /(≈\s*)?(HK\$|MOP|A\$|AU\$|\$|฿)\s?[\d,]/;
+  return `<dl class="bill">${rows.map((r) => { const m = r.match(cur);
+    if (!m) return `<div class="bn"><dd>${esc(r)}</dd></div>`;
+    const lab = r.slice(0, m.index).trim(), amt = r.slice(m.index).trim(), tot = /^(today|วันนี้)\b/i.test(lab);
+    return `<div${tot ? ' class="tot"' : ''}><dt>${esc(lab || '—')}</dt><dd>${esc(amt)}</dd></div>`; }).join('')}</dl>`;
+};
+// a timeline row: the first part is the line, the rest (after " · ") sit underneath, smaller
+const tlRow = (r) => { const [a, ...b] = T(r).split(' · '); return `<span class="tm">${esc(a)}</span>${b.length ? `<span class="tsub">${b.map(esc).join('<br>')}</span>` : ''}`; };   // a tip's kind sets its marker colour (app.css .tips li.tk-*)
 function planHtml(t, i, open, wx) {
   const pl = t.days[i].plan || {}, rows = pl.plan || [], dwx = wx && t.days[i].wx;
   if (!rows.length && !pl.moving && !pl.pick && !pl.planB) return '';
   return `<details class="dayplan"${open ? ' open' : ''}><summary>${L('แผนวันนี้', 'Plan for the day')}${rows.length ? ` <span class="label">· ${rows.length} ${L('ช่วง', 'steps')}</span>` : ''}</summary>
 <div class="pgrid">${pl.moving || (pl.legs || []).length || pl.route || dwx ? `<aside class="strip"><div class="kicker">${L('การเดินทาง', 'Getting around')}</div>
-${pl.moving ? `<p class="moving"><b>${L('เดินทาง', 'Moving')}</b> ${esc(T(pl.moving))}</p>` : ''}
+${pl.moving ? `<div class="moving"><b>${L('เดินทาง', 'Moving')}</b>${pts(T(pl.moving))}</div>` : ''}
 ${(pl.legs || []).length ? legsHtml(pl.legs) : ''}
 ${pl.route ? `<p class="row">${extA(pl.route, ic('route') + ' ' + L('เส้นทางทั้งวันใน Google Maps', "The whole day's route in Google Maps"), 'btn ghost small')}</p>` : ''}
 ${dwx ? `<div class="wxbox"><div class="kicker">${L('อากาศ', 'Weather')}</div>${esc(T(dwx))}</div>` : ''}</aside>` : ''}<div class="pmain">
-${rows.length ? `<ol class="tl plan">${rows.map((r) => `<li><time>${esc(r.t || '')}</time><div>${esc(T(r))}${r.note ? `<small>${esc(T(r.note))}</small>` : ''}</div></li>`).join('')}</ol>` : ''}
+${rows.length ? `<ol class="tl plan">${rows.map((r) => `<li><time>${esc(r.t || '')}</time><div>${tlRow(r)}${r.note ? `<small>${esc(T(r.note))}</small>` : ''}</div></li>`).join('')}</ol>` : ''}
 ${pl.stay ? `<p class="stay"><b>${L('ที่พักคืนนี้', 'Tonight')}</b> ${esc(pl.stay.name)}<br><span class="addr">${esc(pl.stay.addr)}</span> ${extA(mapsUrl(pl.stay.q || pl.stay.addr), L('แผนที่', 'Map') + ' ↗')}</p>` : ''}
-${pl.pick ? `<div class="call pick"><span class="lbl">${L('ร้านเด็ดของคนท้องถิ่น', 'Local pick')}</span>${esc(T(pl.pick))}</div>` : ''}
-${pl.planB ? `<div class="call warn"><span class="lbl">${L('แผนสำรอง', 'Plan B')}</span>${esc(T(pl.planB))}</div>` : ''}
-${pl.money ? `<p class="money"><b>${L('เงินวันนี้', 'Money today')}</b> ${esc(T(pl.money))}</p>` : ''}
-${(pl.tips || []).length ? `<ul class="tips">${pl.tips.map((x) => `<li${TIPK[x.kind] ? ` class="tk-${x.kind}"` : ''}>${esc(T(x))}</li>`).join('')}</ul>` : ''}
+${pl.pick ? `<div class="call pick"><span class="lbl">${L('ร้านเด็ดของคนท้องถิ่น', 'Local pick')}</span>${pts(T(pl.pick))}</div>` : ''}
+${pl.planB ? `<div class="call warn"><span class="lbl">${L('แผนสำรอง', 'Plan B')}</span>${pts(T(pl.planB))}</div>` : ''}
+${pl.money ? `<div class="money"><b>${L('เงินวันนี้', 'Money today')}</b>${moneyHtml(T(pl.money))}</div>` : ''}
+${(pl.tips || []).length ? `<ul class="tips">${pl.tips.map((x) => `<li${TIPK[x.kind] ? ` class="tk-${x.kind}"` : ''}>${((p) => `${pt(p[0] || '')}${p.slice(1).map((y) => `<small class="tsub">${pt(y)}</small>`).join('')}`)(points(T(x)))}</li>`).join('')}</ul>` : ''}
 ${(pl.picks || []).length ? `<h5 class="ph">${L('ร้านแนะนำวันนี้ · เน้นร้านคนท้องถิ่น', "Today's picks · locals' places first")} <a class="mini" href="#/t/${esc(t.id)}/eat">${L('ร้านทั้งหมด', 'All places')} ›</a></h5><ul class="picks">${pl.picks.map(pickHtml).join('')}</ul>` : ''}
 ${(pl.food || []).length ? `<details class="sub"><summary>${L('กินตามเส้นทางวันนี้', "Eat along today's route")} <span class="label">· ${pl.food.reduce((n, f) => n + f.items.length, 0)}</span></summary><p class="label">${L('เรียงตามจุดที่ผ่าน · ★ = ร้านแนะนำ · กดชื่อเพื่อเปิด Google Maps', 'In the order you pass them · ★ = a pick · tap a name for Google Maps')}</p>${pl.food.map((f) => `<h5>${esc(T(f.stop))}</h5><ul class="eats">${f.items.map(foodHtml).join('')}</ul>`).join('')}</details>` : ''}
 ${eatMore(pl).length ? `<details class="sub"><summary>${L('ร้านอื่นใกล้ๆ', 'More places to eat nearby')} <span class="label">· ${eatMore(pl).length}</span></summary><ul class="eats">${eatMore(pl).map((e) => `<li><b>${e.q ? mapA(e.q, esc(e.name) + ' ↗') : esc(e.name)}</b>${e.pr ? ` <span class="label">${esc(e.pr)}</span>` : ''}${T(e.note) ? `<br><small>${esc(T(e.note))}</small>` : ''}</li>`).join('')}</ul></details>` : ''}
@@ -372,7 +393,7 @@ function infoBlocks(t) {
   const sh = (x, len) => esc(brief(T(x), len));
   const tel = (x) => `<a href="tel:${esc(String(x).split('·')[0].replace(/[^+\d]/g, ''))}">${esc(x)}</a>`;   // "number · address" → dial the number only
   const tbl = (cols, rows, cls) => `<div class="tblwrap"><table class="prices ${cls || ''}">${cols ? `<thead><tr>${cols.map((c) => `<th>${esc(T(c))}</th>`).join('')}</tr></thead>` : ''}<tbody>${rows.map((r) => `<tr>${r.map((c, k) => `<td${k === 0 ? ' class="nm"' : cols && cols[k] ? ` data-h="${esc(T(cols[k]))}"` : ''}>${esc(typeof c === 'object' ? T(c) : String(c))}</td>`).join('')}</tr>`).join('')}</tbody></table></div>`;   // phones stack each row into a card, every value labelled by its column (app.css)
-  const lede = (x) => (x && T(x) ? `<p class="lede">${esc(T(x))}</p>` : '');
+  const lede = (x) => (x && T(x) ? (T(x).length > 150 ? pts(T(x), 'lede') : `<p class="lede">${esc(T(x))}</p>`) : '');
   const list = (items) => `<ul class="tips">${items.map((x) => `<li>${esc(T(x))}</li>`).join('')}</ul>`;
   // tickable checklist, like the manual's boxes — ticks are a per-phone convenience (localStorage), nothing is sent
   const ckDone = ls('ck') || {};
@@ -737,7 +758,14 @@ function mealPlan(t) {
   const days = t.days.map((d, i) => ({ d, i, ps: (d.plan || {}).picks || [] })).filter((x) => x.ps.length);
   if (!days.length) return '';
   const now = todayIdx(t);
-  return `<section class="mealplan"><h3 class="gh">${L('ทุกมื้อ: ร้านแนะนำและร้านสำรอง', 'Every meal: pick and backup')}</h3>${days.map(({ d, i, ps }) => `<details class="mday"${i === now ? ' open' : ''}><summary><b>${L('วันที่', 'Day')} ${i + 1}</b> · ${esc(T(d.title))}</summary><dl class="dsheet">${ps.map((p) => `<div class="meal"><dt>${esc(T(p.meal))}</dt><dd>${mealDd(p)}${T(p.what) ? `<small>${esc(T(p.what))}</small>` : ''}</dd></div>`).join('')}</dl></details>`).join('')}</section>`;
+  const kind = (p) => { const m = ((p.meal || {}).en || '').toLowerCase(); return /breakfast/.test(m) ? 'bf' : /lunch/.test(m) ? 'lu' : /dinner/.test(m) ? 'di' : 'sn'; };
+  const KN = { bf: L('เช้า', 'Breakfast'), lu: L('กลางวัน', 'Lunch'), di: L('เย็น', 'Dinner'), sn: L('ของว่าง', 'Snack') };
+  const split = (p) => { const [a, ...b] = T(p.meal).split(' · '); return [a, b.join(' · ')]; };
+  const link = (x) => (x.q ? mapA(x.q, esc(x.name)) : esc(x.name));
+  const card = (p) => { const k = kind(p), [lbl, when] = split(p);
+    return `<div class="mlcard mk-${k}"><div class="mtop"><span class="mtag">${esc(lbl)}</span>${when ? `<span class="mtime">${esc(when)}</span>` : ''}</div>
+<b class="mname">${link(p)}</b>${T(p.what) ? `<p>${esc(T(p.what))}</p>` : ''}${p.alt ? `<div class="malt"><span>${L('สำรอง', 'Backup')}</span><div>${link(p.alt)}${T(p.alt.what) ? `<small>${esc(T(p.alt.what))}</small>` : ''}</div></div>` : ''}</div>`; };
+  return `<section class="mealplan"><h3 class="gh">${L('ทุกมื้อ: ร้านแนะนำและร้านสำรอง', 'Every meal: pick and backup')}</h3>${days.map(({ d, i, ps }) => `<details class="mday"${i === now ? ' open' : ''}><summary>${artImg(t, i, 'mart')}<span class="mdh"><span class="mdn">${L('วันที่', 'Day')} ${i + 1}${i === dayNow(t) ? ` <span class="tag">${L('วันนี้', 'Today')}</span>` : ''}</span><b>${esc(T(d.title))}</b><span class="mchips">${ps.map((p) => `<i class="mk-${kind(p)}">${KN[kind(p)]}</i>`).join('')}</span></span>${ic('chev')}</summary><div class="mcards">${ps.map(card).join('')}</div></details>`).join('')}</section>`;
 }
 function viewEat(t) {
   if (eatTrip !== t.id) { eatTrip = t.id; eatQ = ''; eatKind = -1; eatPick = false; }   // filters belong to one book

@@ -180,7 +180,7 @@ const T = 'hk-macau-2026';
   await page.goto(`${BASE}/#/t/${T}/today/1`); await page.waitForSelector('.dsheet');
   ok(await page.locator('.dsheet .meal').count() === 4 && /Hoi Lin Tea House/.test(await page.textContent('.dsheet')) && /Plaza Inn/.test(await page.locator('.dsheet .meal').nth(3).textContent()) && await page.locator('.dsheet a[href="/art/hk/disney-map.svg"]').count() === 1, 'HK today, Disney day: four meals each with a pick and a backup, and the park map');
   await page.goto(`${BASE}/#/t/${T}/eat`); await page.waitForSelector('.mealplan');
-  ok(await page.locator('.mealplan .mday').count() === 6 && await page.locator('.mealplan .meal').count() === 22, 'eat page: every meal of every day, pick and backup, before the full guide');
+  ok(await page.locator('.mealplan .mday').count() === 6 && await page.locator('.mealplan .mlcard').count() === 22, 'eat page: every meal of every day, pick and backup, before the full guide');
   await page.goto(`${BASE}/#/t/${T}/prep/full`); await page.waitForSelector('#pocket');
   ok(await page.locator('#pocket .mapimg img[src="/art/hk/disney-map.svg"]').count() === 1, 'get-ready page: the drawn Disneyland map');
   // the kids' adventure passports
