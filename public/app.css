@@ -1346,3 +1346,37 @@ button.tile.kid{border:1px solid var(--line);text-align:left;justify-items:start
 .bill>div.bn{border-bottom:0}.bill>div.bn dd{white-space:normal;font-weight:400;font-size:12.5px;color:var(--muted)}
 .tl .tm{display:block}.tl .tsub{display:block;font-size:13px;color:var(--muted);margin-top:2px;line-height:1.45}
 .tips small.tsub{display:block;font-size:13px;color:var(--muted);margin-top:2px}
+/* ===== colour + sections (owner 18 Oct 2026: "ปรับเพิ่มสี และจัดให้เป็นสัดส่วน") — each part in its own box, its colour on the header ===== */
+.cbox{--cb:var(--accent);margin:12px 0;border-radius:16px;background:color-mix(in srgb,var(--cb) 5%,var(--paper));border:1px solid color-mix(in srgb,var(--cb) 24%,transparent);padding:0 14px 8px;overflow:hidden}
+.cbox>.ch{display:flex;align-items:center;gap:8px;margin:0 -14px 6px;padding:10px 14px;background:color-mix(in srgb,var(--cb) 15%,var(--paper));color:color-mix(in srgb,var(--cb) 72%,var(--ink));font-size:14.5px;font-weight:700}
+.cbox>.ch .ic{width:18px;height:18px}
+.c-sky{--cb:var(--sky)}.c-ind{--cb:#4F63C9}.c-sun{--cb:var(--sun)}.c-hot{--cb:var(--hot)}.c-leaf{--cb:var(--leaf)}.c-rose{--cb:var(--rose)}.c-teal{--cb:var(--tealc)}
+.cbox .dsheet,.cbox .tl.plan,.cbox .bill{border-top:0}.cbox .dsheet>div:last-child,.cbox .tl>li:last-child,.cbox .bill>div:last-child{border-bottom:0}
+.cbox .dsheet>div,.cbox .tl>li,.cbox .bill>div{border-bottom-color:color-mix(in srgb,var(--cb) 16%,transparent)}
+.cbox .tl time{color:color-mix(in srgb,var(--cb) 75%,var(--ink))}
+.cgrid{display:grid;grid-template-columns:repeat(auto-fill,minmax(min(100%,340px),1fr));gap:0 14px;align-items:start}
+.cbox .dsheet .mtag{display:inline-block;font-size:11.5px;font-weight:700;color:#fff;background:var(--mk);padding:1px 9px;border-radius:999px;letter-spacing:0;text-transform:none}
+.cbox .dsheet .mt{display:block;font-size:12px;color:var(--muted);margin-top:3px;letter-spacing:0;text-transform:none;font-variant-numeric:tabular-nums}
+.cbox.c-hot .pts{--pc:var(--hot);margin:4px 0 6px}.cbox.c-sun .tips{margin:2px 0 4px}
+.money.cbox{margin:12px 0}.money.cbox .bill>div.tot{border-top:2px solid color-mix(in srgb,var(--cb) 60%,var(--ink))}
+.cbox .bill dd{color:color-mix(in srgb,var(--cb) 60%,var(--ink))}
+/* report sections: each a box, colours taking turns */
+.pocket{display:grid;gap:12px}
+.pocket details.pg{--cb:var(--sky);border:1px solid color-mix(in srgb,var(--cb) 24%,transparent);border-top:1px solid color-mix(in srgb,var(--cb) 24%,transparent);border-radius:16px;padding:0 14px 8px;background:color-mix(in srgb,var(--cb) 4%,var(--paper))}
+.pocket details.pg>summary{margin:0 -14px;padding:12px 14px;border-radius:15px;background:color-mix(in srgb,var(--cb) 13%,var(--paper));color:color-mix(in srgb,var(--cb) 72%,var(--ink))}
+.pocket details.pg[open]>summary{border-radius:15px 15px 0 0;margin-bottom:10px}
+.pocket details.pg:not([open]){padding-bottom:0}
+.pocket details.pg:nth-of-type(6n+1){--cb:var(--sky)}.pocket details.pg:nth-of-type(6n+2){--cb:var(--leaf)}.pocket details.pg:nth-of-type(6n+3){--cb:var(--sun)}
+.pocket details.pg:nth-of-type(6n+4){--cb:#4F63C9}.pocket details.pg:nth-of-type(6n+5){--cb:var(--rose)}.pocket details.pg:nth-of-type(6n){--cb:var(--tealc)}
+.tp-sos .pocket details.pg:first-of-type{--cb:var(--hot)}
+.pocket details.pg .pts>li::before{background:var(--cb)}
+/* glance index: a colour mark per section, the same turn order as the report */
+.glc{--gd:var(--sky)}.glg>.glc:nth-child(6n+2){--gd:var(--leaf)}.glg>.glc:nth-child(6n+3){--gd:var(--sun)}.glg>.glc:nth-child(6n+4){--gd:#4F63C9}.glg>.glc:nth-child(6n+5){--gd:var(--rose)}.glg>.glc:nth-child(6n){--gd:var(--tealc)}
+.glc .gt>b::before{content:"";display:inline-block;width:10px;height:10px;border-radius:3px;margin-right:8px;background:var(--gd);vertical-align:1px}
+.tp-learn .gcard{border-top:3px solid var(--sky)}.tp-learn .gcard:nth-child(6n+2){border-top-color:var(--leaf)}.tp-learn .gcard:nth-child(6n+3){border-top-color:var(--sun)}.tp-learn .gcard:nth-child(6n+4){border-top-color:#4F63C9}.tp-learn .gcard:nth-child(6n+5){border-top-color:var(--rose)}.tp-learn .gcard:nth-child(6n){border-top-color:var(--tealc)}
+.pocket{grid-template-columns:minmax(0,1fr)}.pocket>*{min-width:0}
+.bill dd{white-space:normal;text-align:right;max-width:62%;overflow-wrap:anywhere}.bill dt{min-width:0}.itin .grow{min-width:0}
+.pgrid>*{min-width:0}.dayplan .pmain{min-width:0}.qa summary,.qa p{overflow-wrap:anywhere}
+.quiz{grid-template-columns:minmax(0,1fr)}.quiz>.qa{min-width:0}
+.itin>li{min-width:0}
+.badge{white-space:normal;max-width:100%}
