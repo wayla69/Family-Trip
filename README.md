@@ -31,7 +31,9 @@
 3. นำเข้าจริง: เติม `--apply` · รันซ้ำได้ ไม่เกิดรายการซ้ำ · **อย่าลบข้อมูลในแอปเดิมจนกว่าตัวเลขตรงกัน**
 
 ## Deploy บน Railway (ประมาณ 15 นาที · ไม่ต้องเชื่อม GitHub กับ Railway)
-GitHub ของเจ้าของ authorize แอป Railway ไม่ได้ → ใช้ **GitHub Actions สั่ง Railway CLI** แทน (merge เข้า `main` + CI เขียว = deploy อัตโนมัติ)
+**ตอนนี้ (ตั้งแต่ 18 ต.ค. 2026):** เซอร์วิสบน Railway ต่อกับ repo นี้แล้ว (Settings → Source → `wayla69/Family-Trip` branch `main`) → merge เข้า `main` = Railway deploy เอง · workflow **Deploy** ใน GitHub เหลือไว้กดเองเป็นทางสำรอง (ต้องตั้ง `RAILWAY_TOKEN` ก่อน) ไม่รันอัตโนมัติแล้ว
+
+เดิม: GitHub ของเจ้าของ authorize แอป Railway ไม่ได้ → ใช้ GitHub Actions สั่ง Railway CLI (ขั้นตอนด้านล่างเก็บไว้เผื่อต้องกลับไปใช้)
 
 **ใน Railway (ทำครั้งเดียว)**
 1. **New Project → Empty Project** → **+ Create → Empty Service** ตั้งชื่อ `web`
@@ -90,4 +92,4 @@ curl -b ck.txt -H 'x-mb: 1' --data-binary @memory-bookshelf-YYYY-MM-DD.zip https
 ดู `CLAUDE.md` (คำสั่ง Postgres ในเครื่อง, `npm test`, โครงสร้างโค้ด)
 
 ## English summary
-Memory Bookshelf: one book per family trip, styled like the owner's Trip Operations Manuals. Node 22 + Express + Postgres + Railway Storage Bucket, vanilla-JS PWA with an offline write queue. Deploy: GitHub Actions → `railway up` with a project token (Railway can't connect to this GitHub account). Photos are EXIF/GPS-stripped and only streamed to signed-in users. Weekly off-site backup (private repo only) and idempotent restore via `POST /api/import`.
+Memory Bookshelf: one book per family trip, styled like the owner's Trip Operations Manuals. Node 22 + Express + Postgres + Railway Storage Bucket, vanilla-JS PWA with an offline write queue. Deploy: Railway's GitHub connection deploys `main` (the GitHub Actions `railway up` workflow is a manual fallback). Photos are EXIF/GPS-stripped and only streamed to signed-in users. Weekly off-site backup (private repo only) and idempotent restore via `POST /api/import`.

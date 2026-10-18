@@ -1,13 +1,8 @@
 name: Deploy
-# GitHub Actions → Railway CLI (docs/ADR.md ADR-8): Railway cannot be connected to this GitHub account,
-# so CI deploys with a Railway *project* token after CI is green on main.
-# Setup (once): Railway → project → Settings → Tokens → create a token for the production environment →
+# Manual fallback only (docs/ADR.md ADR-8): since 18 Oct 2026 Railway is connected to this repo and deploys `main` itself.
+# Run it from Actions → Deploy → Run workflow only if that connection is ever removed; it needs a Railway *project* token:
 #   GitHub → Settings → Secrets and variables → Actions: secret RAILWAY_TOKEN; variables RAILWAY_SERVICE (service name) and MB_URL (https://<domain>).
 on:
-  workflow_run:
-    workflows: [CI]
-    types: [completed]
-    branches: [main]
   workflow_dispatch:
 
 permissions:
@@ -19,14 +14,13 @@ concurrency:
 
 jobs:
   deploy:
-    if: github.event_name == 'workflow_dispatch' || (github.event.workflow_run.conclusion == 'success' && github.event.workflow_run.event == 'push')
     runs-on: ubuntu-latest
     timeout-minutes: 30
     environment: production
     steps:
       - uses: actions/checkout@v4
         with:
-          ref: ${{ github.event.workflow_run.head_sha || github.sha }}
+          ref: ${{ github.sha }}
       - name: Deploy with the Railway CLI
         env:
           RAILWAY_TOKEN: ${{ secrets.RAILWAY_TOKEN }}
