@@ -21,14 +21,14 @@ function render() {
   if (km && p[0] !== 'kid') { location.replace('#/kid' + (km !== 'pick' ? '/' + km : '')); return; }
   document.body.classList.toggle('kidmode', !!(p[0] === 'kid' && isEditor()));
   if (p[0] === 'kid' && isEditor()) {
-    const kt = kidTrip(p[1]) || curTrip();
+    const kt = kidTrip(p[1]) || curTrip(); artTrip = kt;
     document.documentElement.style.cssText = themeStyle(kt); document.documentElement.lang = lang;
     const key = p.slice(0, 3).join('/'), enter = key !== lastView; lastView = key; kidEnter = enter;
     app.innerHTML = `<main class="kidmain${enter ? ' enter' : ''}">${viewKid(p)}</main>`;
     hydrateColours(app); hydrateDraw(app); hydrateMap(app); hydratePager(app);
     return;
   }
-  if (p[0] === 'print' && (t = trip(p[1]))) {   // the memory book: A4 pages for the PDF (and a preview on screen)
+  if (p[0] === 'print' && (t = trip(p[1]))) { artTrip = t;   // the memory book: A4 pages for the PDF (and a preview on screen)
     document.documentElement.style.cssText = themeStyle(t); document.documentElement.lang = lang;
     document.body.classList.toggle('serif', t.theme.display === 'serif'); document.body.classList.add('printbook');
     document.title = `${T(t.title)} · ${L('สมุดความทรงจำ', 'Memory book')}`;
@@ -42,7 +42,9 @@ function render() {
     history.replaceState(null, '', `#/t/${encodeURIComponent(tid)}/log/${d}`);
     return render();
   }
+  artTrip = (p[0] === 'passport' && trip(p[2])) || curTrip();   // the shelf and the passports dress the kids for the coming trip (or the passport's)
   if (p[0] === 't' && (t = trip(p[1]))) {
+    artTrip = t;
     const sec = p[2] || 'hub';
     if (sec === 'log') html = isEditor() ? viewLog(t, Math.min(t.days.length - 1, Math.max(0, +p[3] || 0))) : viewBook(t);
     else if (sec === 'book') html = viewBook(t);
