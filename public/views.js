@@ -67,6 +67,8 @@ function render() {
   const key = p.slice(0, 3).join('/'), enter = key !== lastView; lastView = key;   // animate only when the page changes, not on every save
   app.innerHTML = topBar(t, p) + `<main class="wrap${enter ? ' enter' : ''}">${offline ? `<div class="notice">${L('ออฟไลน์ — แสดงข้อมูลล่าสุดที่เก็บไว้ บันทึกได้ตามปกติ ระบบจะส่งขึ้นเองเมื่อมีสัญญาณ', 'Offline — showing the last saved copy. You can keep recording; it uploads when you are back online.')}${S.syncedAt ? ` <small>· ${L('ข้อมูลล่าสุดเมื่อ', 'last synced')} ${esc(new Date(S.syncedAt).toLocaleString(LOC(), { day: 'numeric', month: 'short', hour: '2-digit', minute: '2-digit' }))}</small>` : ''}</div>` : ''}${html}</main>` + tabBar(t, p);
   renderProgress();
+  // the photo picker is one input outside #app, so a render while the picker is open cannot replace it and drop the chosen photos
+  const fp = document.getElementById('fpick'), host = app.querySelector('[data-fpick]'); if (fp && host) { fp.dataset.t = host.dataset.t; fp.dataset.d = host.dataset.d; }
   if (typeof hydrateColours === 'function') hydrateColours(app);   // kid.js loads after this file
   if (enter && p[2] === 'book' && p[3] === 'd') { const el = document.getElementById('d' + p[4]); if (el) el.scrollIntoView(); }   // #/t/<trip>/book/d/<i> opens on that day
 }
@@ -278,10 +280,10 @@ const secTitle = (k) => (HUB[k] ? `${HUB[k][0]} ${L(HUB[k][1], HUB[k][2])}` : ''
 // the day a book opens on: today during the trip, day 1 before it, the last day after
 function todayIdx(t) { const n = dayNow(t); return n >= 0 ? n : tripOver(t) ? t.days.length - 1 : 0; }
 const hasInfo = (t) => {
-  const n = t.info || {};
-  return { stays: !!(n.stays || []).length, sos: !!((n.emergency || []).length || n.lost || n.ifthen),
-    prep: !!((n.pack || []).length || n.visa || n.bio || n.car || n.drive || (n.prices && (n.prices.rows || []).length) || (n.ifthen && (n.ifthen.book || n.ifthen.crowd))),
-    learn: !!((n.guide || []).length || (n.general || []).length || (n.wild || []).length || n.eatRules || t.days.some((d) => ((d.plan || {}).learn || []).length || ((d.plan || {}).quiz || []).length)) };
+  const n = t.info || {}, more = (k) => (n.more || []).some((m) => m.page === k);
+  return { stays: !!(n.stays || []).length || more('stays'), sos: !!((n.emergency || []).length || n.lost || n.ifthen) || more('sos'),
+    prep: !!((n.pack || []).length || n.visa || n.bio || n.car || n.drive || (n.prices && (n.prices.rows || []).length) || (n.ifthen && (n.ifthen.book || n.ifthen.crowd))) || more('prep'),
+    learn: !!((n.guide || []).length || (n.general || []).length || (n.wild || []).length || n.eatRules || t.days.some((d) => ((d.plan || {}).learn || []).length || ((d.plan || {}).quiz || []).length)) || more('learn') };
 };
 function viewHub(t) {
   const n = t.info || {}, st = stats(t), i = todayIdx(t), dn = dayNow(t), until = daysUntil(t), ed = isEditor(), d = t.days[i], has = hasInfo(t);
@@ -341,7 +343,7 @@ function infoBlocks(t) {
   const n = t.info || {}, B = { stays: [], sos: [], prep: [], learn: [], drive: '' };
   const pg = (k, title, inner, id) => B[k].push(`<details class="pg" open${id ? ` id="${id}"` : ''}><summary>${title}</summary>${inner}</details>`);
   const tel = (x) => `<a href="tel:${esc(String(x).split('·')[0].replace(/[^+\d]/g, ''))}">${esc(x)}</a>`;   // "number · address" → dial the number only
-  const tbl = (cols, rows, cls) => `<div class="tblwrap"><table class="prices ${cls || ''}">${cols ? `<thead><tr>${cols.map((c) => `<th>${esc(T(c))}</th>`).join('')}</tr></thead>` : ''}<tbody>${rows.map((r) => `<tr>${r.map((c, k) => `<td${k === 0 ? ' class="nm"' : ''}>${esc(typeof c === 'object' ? T(c) : String(c))}</td>`).join('')}</tr>`).join('')}</tbody></table></div>`;
+  const tbl = (cols, rows, cls) => `<div class="tblwrap"><table class="prices ${cls || ''}">${cols ? `<thead><tr>${cols.map((c) => `<th>${esc(T(c))}</th>`).join('')}</tr></thead>` : ''}<tbody>${rows.map((r) => `<tr>${r.map((c, k) => `<td${k === 0 ? ' class="nm"' : cols && cols[k] ? ` data-h="${esc(T(cols[k]))}"` : ''}>${esc(typeof c === 'object' ? T(c) : String(c))}</td>`).join('')}</tr>`).join('')}</tbody></table></div>`;   // phones stack each row into a card, every value labelled by its column (app.css)
   const lede = (x) => (x && T(x) ? `<p class="lede">${esc(T(x))}</p>` : '');
   const list = (items) => `<ul class="tips">${items.map((x) => `<li>${esc(T(x))}</li>`).join('')}</ul>`;
   const dl = (rows) => `<dl class="gl">${rows.map((r) => `<div><dt>${esc(T(r.t))}</dt><dd>${esc(T(r.x))}</dd></div>`).join('')}</dl>`;
@@ -375,9 +377,13 @@ function infoBlocks(t) {
   if ((n.general || []).length) pg('learn', `🗣️ ${L('เรียนรู้ระหว่างนั่งรถ', 'Learn in the car')} <span class="label">· ${n.general.reduce((s, g) => s + g.items.length, 0)}</span>`, n.general.map((g) => `<h5>${esc(g.emo || '')} ${esc(T(g.theme))}</h5><dl class="gl">${g.items.map((x) => `<div><dt>${esc(T(x.t))}</dt><dd>${esc(T(x.x))}</dd></div>`).join('')}</dl>`).join(''));
   if ((n.wild || []).length) pg('learn', `🦘 ${L('สัตว์ที่จะเจอ', 'Animals we may meet')} <span class="label">· ${n.wild.length}</span>`, `<dl class="gl">${n.wild.map((w) => `<div><dt>${esc(w.emo || '')} ${esc(T(w.name))}</dt><dd>${esc(T(w.text))}</dd></div>`).join('')}</dl>`);
   if (n.eatRules) pg('learn', `🍽️ ${esc(T(n.eatRules.title))}`, `${lede(n.eatRules.lede)}${list(n.eatRules.rules)}<h5>${esc(T(n.eatRules.cookTitle))}</h5>${list(n.eatRules.cook)}`);
+  // any other chapter of a manual (getting around, customs, a park touring plan…): one generic block, placed on the page it names
+  (n.more || []).forEach((m) => { if (!B[m.page] || m.page === 'drive') return;
+    pg(m.page, `${esc(m.emo || '📄')} ${esc(T(m.title))}`, `${lede(m.lede)}${m.table ? tbl(m.table.cols, m.table.rows) : ''}${(m.rows || []).length ? dl(m.rows) : ''}${(m.groups || []).map((g) => `${g.title && T(g.title) ? `<h5>${esc(T(g.title))}</h5>` : ''}${list(g.items || [])}`).join('')}${m.note && T(m.note) ? `<div class="call info">${esc(T(m.note))}</div>` : ''}`); });
   return B;
 }
-const topicPage = (k, blocks, lede) => `<h1 class="h2">${secTitle(k)}</h1>${lede ? `<p class="lede">${lede}</p>` : ''}${blocks.length ? `<section class="pocket" id="pocket">${blocks.join('')}</section>` : `<div class="empty">${L('เล่มนี้ยังไม่มีข้อมูลส่วนนี้', 'This book has nothing here yet')}</div>`}`;
+// a long page (a full manual has 20+ chapters) opens as a list of headings: only the first section starts open
+const topicPage = (k, blocks, lede) => `<h1 class="h2">${secTitle(k)}</h1>${lede ? `<p class="lede">${lede}</p>` : ''}${blocks.length ? `<section class="pocket" id="pocket">${(blocks.length > 6 ? blocks.map((b, i) => (i ? b.replace('<details class="pg" open', '<details class="pg"') : b)) : blocks).join('')}</section>` : `<div class="empty">${L('เล่มนี้ยังไม่มีข้อมูลส่วนนี้', 'This book has nothing here yet')}</div>`}`;
 const viewStays = (t) => topicPage('stays', infoBlocks(t).stays, L('ทุกที่พักของทริป พร้อมแผนที่และการ์ดที่อยู่ให้คนขับดู', 'Every stay of the trip, with its map and an address card for the driver'));
 const viewSos = (t) => topicPage('sos', infoBlocks(t).sos, L('แตะเบอร์เพื่อโทร · ใช้ได้ตอนไม่มีเน็ต', 'Tap a number to call · works offline'));
 const viewPrep = (t) => topicPage('prep', infoBlocks(t).prep, L('ก่อนออกเดินทางและระหว่างทาง', 'Before we leave and on the way'));
@@ -863,7 +869,7 @@ function viewLog(t, i) {
 ${planHtml(t, i, i === now) ? `<section class="blk planblk">${planHtml(t, i, i === now)}</section>` : ''}
 
 <section class="blk"><h3>📷 ${L('รูป', 'Photos')} <span class="label">${ph.length}</span></h3>
-<div class="row"><label class="btn"><input id="fpick" type="file" accept="image/*" multiple hidden data-t="${esc(t.id)}" data-d="${i}">＋ ${L('เพิ่มรูป', 'Add photos')}</label><span class="progress" id="prog2"></span></div>
+<div class="row"><button class="btn" type="button" data-a="pickphotos" data-fpick data-t="${esc(t.id)}" data-d="${i}">＋ ${L('เพิ่มรูป', 'Add photos')}</button><span class="progress" id="prog2"></span></div>
 ${ph.length ? `<div class="mosaic" style="margin-top:10px">${ph.map((m) => photoBtn(t, m)).join('')}</div>` : ''}</section>
 
 <section class="blk"><h3>💬 ${L('คำพูดน่ารัก', 'Things they said')}</h3>

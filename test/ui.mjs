@@ -569,8 +569,10 @@ const T = 'hk-macau-2026';
   for (let k = 1; k < 5; k++) { await page.locator('.kidspots button').nth(k).click(); await page.waitForSelector(`.kidspots button:nth-child(${k + 1}).on`); }
   // trophies before the trip: first door + packing helper earned, halfway not yet
   await page.click('.kidbar button[data-v$="/trophies"]'); await page.waitForSelector('.tro');
+  // the five packing ticks are queued writes; give the page a moment to show them before reading the badges
+  await page.waitForFunction(() => { const t = [...document.querySelectorAll('.tro')].slice(0, 2); return t.length === 2 && t.every((b) => b.classList.contains('got')); }, null, { timeout: 8000 }).catch(() => {});
   const pre = await page.locator('.tro').evaluateAll((bs) => bs.slice(0, 3).map((b) => b.classList.contains('got')));
-  ok(pre.join() === 'true,true,false', 'trophies before the trip: first door and packing helper earned, halfway still locked');
+  ok(pre.join() === 'true,true,false', 'trophies before the trip: first door and packing helper earned, halfway still locked' + (pre.join() === 'true,true,false' ? '' : ` — saw ${pre.join()}, ticks ${await page.evaluate(() => S.entries.filter((e) => e.kind === 'tick' && e.child === 'mimi').map((e) => e.first_key).join(' '))}`));
   ok(await s.noHScroll(), 'trophies page fits the phone');
   await s.shot('02b-kid-pretrip-trophies', false);
   await page.click('.kidbar button[data-v="#/kid/mimi"]'); await page.waitForSelector('.kidtiles'); await page.click('.kidtiles button[data-v$="/pack"]'); await page.waitForSelector('.kidspots button');
@@ -608,7 +610,7 @@ const T = 'hk-macau-2026';
   await page.goto(`${BASE}/#/t/${T}/plan`); await page.waitForSelector('.itin');
   // the day's plan from the manual: collapsed in the itinerary, open for today on the record page
   ok(await page.locator('.itin .dayplan').count() === 6 && await page.locator('.itin .dayplan[open]').count() === 0, 'itinerary: every HK day has a collapsed plan (not on the trip yet)');
-  await page.locator('.itin > li').nth(3).locator('summary').click();
+  await page.locator('.itin > li').nth(3).locator('.dayplan > summary').first().click();
   const p4 = await page.locator('.itin > li').nth(3).locator('.dayplan').textContent();
   ok(/11:00/.test(p4) && /teamLab/.test(p4) && /Plan B/.test(p4) && /Money today/.test(p4) && /Local pick/.test(p4), 'itinerary: day 4 plan shows the timeline, local pick, plan B and money');
   await page.locator('.itin > li').nth(3).screenshot({ path: path.join(OUT, 'countdown-05-dayplan.png') });
@@ -659,6 +661,12 @@ const T = 'hk-macau-2026';
   ok(await page.locator('#pocket details.pg').count() >= 3 && await page.locator('table.ift').count() === 2 && await s.noHScroll(), 'emergency page: numbers, tonight\'s address, if-then + mishaps; fits the phone');
   await page.goto(`${BASE}/#/t/big-hop-2027/prep`); await page.waitForSelector('#pocket');
   ok(await page.locator('#pocket details.pg').count() >= 6 && (await page.textContent('#pocket')).includes('Biosecurity'), 'get-ready page: packing, prices, visa, biosecurity, the van, drive legs, crowds, book-ahead');
+  // HK: the manual's other chapters (info.more) land on the page they name, tables scroll inside their box
+  await page.goto(`${BASE}/#/t/hk-macau-2026/prep`); await page.waitForSelector('#pocket');
+  ok(await page.locator('#pocket details.pg').count() >= 18 && /Disneyland minute by minute/.test(await page.textContent('#pocket')) && await page.locator('#pocket table.prices').count() >= 4 && await s.noHScroll(), 'HK get-ready page: the manual\'s chapters (getting around, customs, Disneyland plan) render and fit the phone');
+  await s.shot('02c-hk-prep', false);
+  await page.goto(`${BASE}/#/t/hk-macau-2026/sos`); await page.waitForSelector('#pocket');
+  ok(/Taxi card/.test(await page.textContent('#pocket')) && await page.locator('#pocket table.ift').count() === 1 && await s.noHScroll(), 'HK emergency page: if-then table and the Chinese taxi card');
   await page.goto(`${BASE}/#/t/big-hop-2027/learn`); await page.waitForSelector('#pocket');
   ok(await page.locator('#pocket details.sub').count() === 16 && await page.locator('#pocket .qa').count() === 48, 'learn page: a fold per day with its cards and quiz questions');
   await s.shot('02b-learn', false);
