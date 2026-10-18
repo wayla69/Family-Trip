@@ -161,7 +161,7 @@ function toSeed(p, notes) {
   if (!map || !Array.isArray(map.stops) || !map.stops.length) {
     const stops = [];
     const keyOf = new Map();
-    for (const d of days) if (!D.isHome(d.sleep) && !keyOf.has(d.sleep.en)) { const k = D.kebab(d.sleep.en) || `stop${stops.length + 1}`; keyOf.set(d.sleep.en, k); stops.push({ k, e: '🛏️', th: d.sleep.th, en: d.sleep.en, x: 50, y: 50 }); }
+    for (const d of days) if (!D.isHome(d.sleep) && !keyOf.has(d.sleep.en)) { const k = D.kebab(d.sleep.en) || `stop${stops.length + 1}`; keyOf.set(d.sleep.en, k); stops.push({ k, e: '🛏️', th: d.sleep.th, en: d.sleep.en, x: 50, y: 50, q: (d.stay && (d.stay.q || d.stay.addr)) || d.sleep.en }); }
     stops.forEach((s, j) => { s.x = stops.length === 1 ? 50 : Math.round(15 + (70 * j) / (stops.length - 1)); s.y = j % 2 ? 62 : 38; });
     map = { title: i18n('แผนที่การผจญภัย', 'Our adventure map'), sea: (pp.map && pp.map.sea) || TODO('sea / ocean name on the map'), stops, days: days.map((d) => (D.isHome(d.sleep) ? [] : [keyOf.get(d.sleep.en)])) };
     note(`passport.map: ${stops.length} stops from where we sleep, spread evenly — hand-place x,y (percent) to match the drawing`);

@@ -265,6 +265,14 @@ ${mm.m.stops.filter((s) => mm.seq.some((v) => v.k === s.k)).map((s) => `<g class
 <svg class="lbls" viewBox="0 0 ${MAP_W} ${MAP_H}" aria-hidden="true">${mm.m.stops.filter((s) => mm.seq.some((v) => v.k === s.k)).map((s) => `<text class="lbl" x="${s.x * MAP_W / 100}" y="${s.y * MAP_H / 100 + 31}">${esc(T(s))}</text>`).join('')}</svg>
 <div class="walkers" style="left:${s0.x}%;top:${s0.y}%" aria-hidden="true">${kids.filter((k) => kidArt(k)).map((k) => `<img class="${esc(k)}" src="${kidArt(k, true)}" alt="">`).join('')}</div></div>`;
 }
+// a pin on the passport map, for the grown-ups: which days we are there, the real place in Google Maps, directions, the day pages
+function pinSheet(t, s) {
+  const days = ((t.passport.map || {}).days || []).map((ks, d) => (ks.includes(s.k) ? d : -1)).filter((d) => d >= 0), q = s.q || T(s);
+  return `<h3>${esc(s.e || '📍')} ${esc(T(s))}</h3>${days.length ? `<p class="label">${L('วันที่', days.length > 1 ? 'Days' : 'Day')} ${days.map((d) => d + 1).join(', ')}</p>` : ''}
+<div class="pinacts">${extA(mapsUrl(q), ic('pin') + ' ' + L('เปิดใน Google Maps', 'Open in Google Maps'), 'btn')}${extA(`https://www.google.com/maps/dir/?api=1&destination=${encodeURIComponent(q)}`, ic('route') + ' ' + L('นำทางไปที่นี่', 'Directions'), 'btn ghost')}</div>
+${days.length ? `<div class="pindays">${days.map((d) => `<a class="chip" href="#/t/${esc(t.id)}/today/${d}">${L('แผนวันที่', 'Plan · Day')} ${d + 1}</a>`).join('')}</div>` : ''}
+<div class="row end"><button class="btn ghost small" data-a="closesheet">${L('ปิด', 'Close')}</button></div>`;
+}
 // walk the kids from mapFrom to the stop of this map (one hop after another, along the drawn paths)
 function hydrateMap(root) {
   const box = $('.tmap', root || document); if (!box) return;
@@ -272,7 +280,7 @@ function hydrateMap(root) {
   const w = $('.walkers', box), mm = mapModel(trip(box.dataset.t));
   if (!w || !mm || from === null || from === to || from >= mm.seq.length || matchMedia('(prefers-reduced-motion: reduce)').matches) return;
   const put = (x, y) => { w.style.left = `${(x / MAP_W) * 100}%`; w.style.top = `${(y / MAP_H) * 100}%`; };
-  const steps = [], dir = to > from ? 1 : -1;
+  const steps = [], dir = to > from ? 1 : -1;   // each hop 0.9 s, a long jump across days at most ~2.4 s in all
   for (let j = from; j !== to; j += dir) steps.push(dir > 0 ? j : j - 1);   // hop j goes from seq[j] to seq[j+1]
   const s0 = mm.at[mm.seq[from].k]; put(s0.x * MAP_W / 100, s0.y * MAP_H / 100);
   w.classList.add('walking');
@@ -281,7 +289,7 @@ function hydrateMap(root) {
     if (!w.isConnected) return;
     const path = $(`#hop${steps[n]}`, box); if (!path) { w.classList.remove('walking'); return; }
     t0 = t0 || now;
-    const k = Math.min(1, (now - t0) / 900), len = path.getTotalLength(), pt = path.getPointAtLength(len * (dir > 0 ? k : 1 - k));
+    const k = Math.min(1, (now - t0) / Math.min(900, 2400 / steps.length)), len = path.getTotalLength(), pt = path.getPointAtLength(len * (dir > 0 ? k : 1 - k));
     put(pt.x, pt.y);
     if (k < 1) return requestAnimationFrame(tick);
     n++; t0 = 0;
@@ -638,10 +646,14 @@ Object.assign(A, {
   mappin(b) {
     const t = trip(b.dataset.t), mm = mapModel(t); if (!mm) return;
     beep('pop'); sayUi(b.dataset.say);
-    if (!document.body.classList.contains('kidmode')) return;   // the passport map only says the name
+    if (!document.body.classList.contains('kidmode')) { const s = mm.at[b.dataset.v]; if (s) openSheet(pinSheet(t, s)); return; }   // grown-ups: the real place
     const box = $('.tmap'), cur = box ? +box.dataset.pos : mapPos(mm, kidDayOf(t)), j = mm.seq.reduce((best, v, n) => (v.k === b.dataset.v && (best < 0 || Math.abs(n - cur) < Math.abs(best - cur)) ? n : best), -1);   // the visit nearest to where we stand
     if (j < 0 || j === cur) return;
     mapFrom = cur; mapAt = j; kidDay = mm.seq[j].day; render();
+  },
+  ppmapday(b) {   // passport map: walk the kids to the picked day
+    const box = $('.tmap'); mapFrom = box ? +box.dataset.pos : null;
+    ppMapDay = { t: b.dataset.t, d: +b.dataset.v }; beep('tap'); render();
   },
   kidquiz(b) {
     const on = b.getAttribute('aria-pressed') === 'true', ans = b.querySelector('.ans');

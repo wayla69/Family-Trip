@@ -202,6 +202,11 @@ const T = 'hk-macau-2026';
   ok(await page.evaluate(() => Array.from(document.querySelectorAll('img[src^="/art/"]')).every((i) => i.complete && i.naturalWidth > 0)), 'character, guide and stamp drawings load');
   ok(await page.locator('.pp-page.visa').count() === 1 && await page.locator('.dstamp').count() === 6, 'passport: HK visa page, a stamp slot per day');
   ok(await page.locator('.dstamp.on').count() === 1 && await page.locator('.dstamp.new').count() === 1, 'passport: recorded day is stamped (with the stamp animation the first time)');
+  { await page.click('.mapdays [data-v="3"]'); await page.waitForFunction(() => document.querySelector('.mapsec .kicker').textContent.includes('4'));
+    await page.click('.tmap .pin[data-v="senado"]', { force: true }); await page.waitForSelector('#sheet:not([hidden]) .pinacts');
+    const hrefs = await page.$$eval('#sheet a', (as) => as.map((a) => a.getAttribute('href')));
+    ok(hrefs.some((h) => /maps\/search\/.*Senado%20Square%2C%20Macau/.test(h)) && hrefs.some((h) => /maps\/dir\//.test(h)) && hrefs.includes('#/t/hk-macau-2026/today/3') && await page.locator('.sleep ol a.maplink').count() === 6, 'passport map: day buttons move the kids; a pin opens the real place (Maps + directions + that day’s plan); the list names open Maps');
+    await page.click('#sheet [data-a="closesheet"]'); }
   ok(await page.locator('.guides .bubble img.guide').count() === 2 && await page.locator('.mission').count() === 6, 'passport: two guides + a mission per day');
   ok(await page.locator('.sleep li').count() === 6, 'passport: where we go — 6 pins as printed');
   ok(await page.locator('.bdg').count() === 1 && (await page.textContent('.bdg')).includes('Mickey'), 'passport: Mimi’s first is a badge');

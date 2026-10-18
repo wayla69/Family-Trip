@@ -1490,3 +1490,11 @@ p,li,.bubble p{text-wrap:pretty}
 .stamp.s>div{font-size:0}
 .visa h3 .vflags{display:block;line-height:1;margin-bottom:4px}
 @media (max-width:520px){.bio dt{font-size:9.5px;letter-spacing:.03em;white-space:nowrap}}
+/* passport map: day buttons under it; a pin opens a card with the real place */
+.mapdays{display:flex;align-items:center;gap:6px;overflow-x:auto;padding:10px 0 2px;scrollbar-width:none}.mapdays::-webkit-scrollbar{display:none}
+.mapdays .label{flex:none;margin-right:2px}
+.mapdays .chip{flex:none;min-width:36px;justify-content:center;padding:6px 8px;font-weight:700}
+.tmap .pin{cursor:pointer}
+.pinacts{display:flex;flex-wrap:wrap;gap:8px;margin:12px 0}
+.pindays{display:flex;flex-wrap:wrap;gap:6px;margin-bottom:12px}
+.sleep ol .t b a{color:inherit;text-decoration:underline;text-decoration-color:color-mix(in srgb,var(--pp,var(--accent)) 45%,transparent);text-underline-offset:3px}

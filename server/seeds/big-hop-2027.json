@@ -3975,13 +3975,13 @@
    "title": { "th": "แผนที่การผจญภัย", "en": "Our adventure map" },
    "sea": { "th": "มหาสมุทรแปซิฟิก", "en": "Pacific Ocean" },
    "stops": [
-    { "k": "sydney", "e": "🌉", "th": "ซิดนีย์", "en": "Sydney", "x": 62, "y": 58 },
-    { "k": "jervis", "e": "🐚", "th": "เจอร์วิสเบย์", "en": "Jervis Bay", "x": 56, "y": 82 },
-    { "k": "bowral", "e": "📚", "th": "โบว์รัล", "en": "Bowral", "x": 34, "y": 72 },
-    { "k": "mountains", "e": "⛰️", "th": "บลูเมาน์เทนส์", "en": "Blue Mountains", "x": 18, "y": 44 },
-    { "k": "hunter", "e": "🐴", "th": "ฮันเตอร์แวลลีย์", "en": "Hunter Valley", "x": 36, "y": 14 },
-    { "k": "stephens", "e": "🐬", "th": "พอร์ตสตีเฟนส์", "en": "Port Stephens", "x": 80, "y": 12 },
-    { "k": "entrance", "e": "🦀", "th": "ดิเอนทรานซ์", "en": "The Entrance", "x": 86, "y": 28 }
+    { "k": "sydney", "e": "🌉", "th": "ซิดนีย์", "en": "Sydney", "x": 62, "y": 58, "q": "Sydney NSW" },
+    { "k": "jervis", "e": "🐚", "th": "เจอร์วิสเบย์", "en": "Jervis Bay", "x": 56, "y": 82, "q": "Jervis Bay NSW" },
+    { "k": "bowral", "e": "📚", "th": "โบว์รัล", "en": "Bowral", "x": 34, "y": 72, "q": "Bowral NSW" },
+    { "k": "mountains", "e": "⛰️", "th": "บลูเมาน์เทนส์", "en": "Blue Mountains", "x": 18, "y": 44, "q": "Katoomba NSW" },
+    { "k": "hunter", "e": "🐴", "th": "ฮันเตอร์แวลลีย์", "en": "Hunter Valley", "x": 36, "y": 14, "q": "Pokolbin NSW" },
+    { "k": "stephens", "e": "🐬", "th": "พอร์ตสตีเฟนส์", "en": "Port Stephens", "x": 80, "y": 12, "q": "Port Stephens NSW" },
+    { "k": "entrance", "e": "🦀", "th": "ดิเอนทรานซ์", "en": "The Entrance", "x": 86, "y": 28, "q": "The Entrance NSW" }
    ],
    "days": [["sydney"], ["jervis"], ["jervis"], ["bowral"], ["mountains"], ["mountains"], ["hunter"], ["stephens"], ["stephens"], ["entrance"], ["sydney"], ["sydney"], ["sydney"], ["sydney"], ["sydney"], ["sydney"]]
   }
