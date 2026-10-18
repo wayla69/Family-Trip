@@ -842,3 +842,16 @@ a.maplink:hover{color:var(--accent)}
 .eatc .tag.pk{background:var(--pick);color:var(--ink)}
 .eatc .row{margin-top:8px;gap:6px}
 .dayplan h5.ph{display:flex;align-items:center;gap:8px}.dayplan h5.ph .mini{margin-left:auto;font-weight:600}
+.eatc .zh{color:var(--muted);font-size:13px}.eatc p.why{font-size:13px;color:var(--ink);opacity:.85}.eatg .gnote{margin:-2px 0 8px}
+/* parent mode: the kid-mode switch sits in the bar like a tab */
+nav.bar button{display:grid;justify-items:center;gap:1px;padding:8px 0 7px;border:0;background:none;font:inherit;font-size:11px;font-weight:600;color:var(--muted)}
+nav.bar button i{font-style:normal;font-size:19px;line-height:1.2}
+.booklinks{gap:8px;margin:10px 0}
+/* kid mode: its own big-button bar; the grown-ups' lock moves to the top corner */
+.kidbar{position:fixed;left:0;right:0;bottom:0;z-index:4;display:grid;grid-auto-flow:column;grid-auto-columns:1fr;gap:4px;max-width:760px;margin:0 auto;padding:8px 10px calc(8px + env(safe-area-inset-bottom,0px));background:rgba(255,255,255,.94);border-radius:22px 22px 0 0;box-shadow:0 -6px 18px -12px rgba(0,0,0,.35)}
+.kidbar button{border:0;background:none;display:grid;justify-items:center;gap:2px;padding:6px 0;border-radius:16px;font:inherit;color:#1F2A3A;min-height:60px}
+.kidbar button span{font-size:30px;line-height:1}.kidbar button b{font-size:13px}
+.kidbar button[aria-current=page]{background:color-mix(in srgb,var(--accent) 16%,#fff);color:var(--accent)}
+.kidbar button:active{transform:scale(.92)}
+.kidwrap{padding-bottom:calc(110px + env(safe-area-inset-bottom,0px))}
+.kidexit{left:auto;right:14px;bottom:auto;top:calc(12px + env(safe-area-inset-top,0px));width:44px;height:44px;font-size:18px}

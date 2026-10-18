@@ -138,7 +138,7 @@ ok(s.trips[0].days[0].done_at > 0 && s.trips.some((t) => t.slug === 'chiang-mai-
   ok(!/AUD 1,375|AUD 2,102/.test(JSON.stringify(n.car)), 'AU van: the rental price stays out');
   const rs = n.restaurants, rItems = rs.groups.flatMap((g) => g.items);
   ok(rs.groups.length === 26 && rItems.length === 294 && rs.kinds.length === 3 && rItems.every((x) => x.q && x.name && x.what.th && x.what.en) && rItems.filter((x) => x.pick).length === 61, 'AU "Where to eat": 26 areas, 294 places (3 kinds), each with Thai + English and a maps query; 61 picks');
-  ok(hk.info.restaurants.groups.flatMap((g) => g.items).length === 13 && hk.info.restaurants.groups.flatMap((g) => g.items).every((x) => x.q), 'HK: 13 places to eat from the plan, each with a maps query');
+  ok(hk.info.restaurants.groups.length === 21 && hk.info.restaurants.groups.flatMap((g) => g.items).length === 223 && hk.info.restaurants.groups.flatMap((g) => g.items).every((x) => x.q && x.what.th && x.what.en && [0, 1, 2].includes(x.kind)), 'HK manual Part 12 "Restaurant guide": 21 sections, 223 places, Thai + English, a maps query each');
   ok(au.info.emergency.some((e) => e.tel === '000' && e.main) && au.info.stays.length === 8 && au.info.pack.length === 4 && au.info.general.length === 4 && au.info.wild.length === 10 && au.info.prices.rows.length === 8, 'AU pocket guide: 000, 8 stays, packing, learn-in-the-car, animals, prices');
   ok(au.passport.lists[0].key === 'words' && au.passport.lists[0].said && au.passport.lists[0].groups[0].items.length === 8 && au.passport.lists[0].groups[0].items[0].speak.lang === 'en-AU', 'AU passport: "Say It Like an Aussie" words list (en-AU)');
   const all = JSON.stringify(await state());

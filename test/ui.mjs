@@ -137,7 +137,7 @@ const T = 'hk-macau-2026';
   await stay.locator('.rkid.again button[data-v="1"]').click(); await stay.locator('.rkid.again button[data-v="1"][aria-pressed="true"]').waitFor();
   await stay.locator('.rnote').fill('ห้องมุม วิวสะพาน เด็กหลับสนิท'); await page.locator('#qtext').focus();
   await page.waitForFunction(() => queue.length === 0, null, { timeout: 15000 });
-  st = await apiState(page);
+  for (let k = 0; k < 40; k++) { st = await apiState(page); const r = st.reviews.find((x) => x.kind === 'stay'); if (r && r.note && r.again !== null && r.again !== undefined) break; await page.waitForTimeout(250); }   // the last PUT may still be in flight when the queue empties
   const rvw = st.reviews.find((r) => r.kind === 'stay');
   ok(rvw && rvw.rating === 4 && rvw.tags.includes('kidsleep') && rvw.kids.mimi === 'love' && rvw.again === true && rvw.note.includes('วิวสะพาน'), 'server: stay review — 4★, tag, Mimi 😍, again, note (one row, upserted)');
   ok(await stay.locator('summary .st').textContent() === '★★★★☆' && await stay.locator('.stars button[aria-pressed=true]').count() === 1, 'review card shows the stars in its summary');
@@ -163,7 +163,9 @@ const T = 'hk-macau-2026';
   ok((await page.textContent('.itin')).includes('teamLab') && (await page.textContent('.itin')).includes('Taipa'), 'itinerary shows the planned stops (revised HK plan)');
 
   // the kids' adventure passports
-  await page.click('nav.bar a[href="#/passport"]'); await page.waitForSelector('.pp .advc');
+  // parent mode: the bar holds the grown-ups' tools; firsts and passports are links in the book
+  ok(await page.locator('nav.bar .in > *').count() === 5 && await page.locator('nav.bar a[href$="/eat"]').count() === 1 && await page.locator('nav.bar button[data-a="kidmode"]').count() === 1 && await page.locator('nav.bar a[href="#/passport"]').count() === 0, 'parent bar: shelf, book, record, eat, kid mode');
+  await page.click('.booklinks a[href="#/passport"]'); await page.waitForSelector('.pp .advc');
   ok(await page.locator('.ppkids a[role=tab]').count() === 2 && await page.locator('.ppkids a:not([role=tab])').count() === 2, 'passport: one per child, a page set per trip');
   ok(await page.locator('.advc .xbox img[src="/art/kids/mimi.svg"]').count() === 1 && await page.locator('.bio .photo img[src="/art/kids/mimi.svg"]').count() === 1, 'passport: Mimi drawn as her character on the cover and photo page');
   ok(await page.locator('.advc img.crest[src="/art/crest/hk.svg"]').count() === 1 && (await page.textContent('.advc')).includes('DOLPHIN-2026-MIMI'), 'passport cover as printed: crest, title, passport no. per child');
@@ -211,6 +213,7 @@ const T = 'hk-macau-2026';
   await page.goto(`${BASE}/#/passport/mimi/${T}`); await page.waitForSelector('.kidgo');
   await page.click('.kidgo'); await page.waitForSelector('.kidwrap .kidtiles');
   ok(await page.locator('.kidtiles button').count() === 7 && await page.locator('nav.bar').count() === 0, 'kid mode on the trip: 7 big tiles (colour, draw, find, stamp, say, stickers, map), no tab bar');
+  ok(await page.locator('.kidbar button').count() === 5 && await page.locator('.kidbar button[aria-current=page] span').textContent() === '🏠', "kid mode has its own bar: home, map, passport, stickers, hearts");
   await page.goto(`${BASE}/#/t/${T}`); await page.waitForSelector('.kidwrap');
   ok(page.url().includes('#/kid/mimi'), 'kid mode is locked: other pages lead back to it');
   await page.click('.kiddays button[data-v="1"]');
@@ -606,7 +609,7 @@ const T = 'hk-macau-2026';
   ok(await s.noHScroll(), 'eat page fits the phone');
   await s.shot('04-eat', false);
   await page.goto(`${BASE}/#/t/hk-macau-2026/eat`); await page.waitForSelector('.eatc');
-  ok(await page.locator('.eatc:visible').count() === 13 && await page.locator('[data-a="eatpick"][aria-pressed="false"]').count() === 1, 'eat page (HK): 13 places from the plan; filters reset for another book');
+  ok(await page.locator('.eatc:visible').count() === 223 && await page.locator('[data-a="eatpick"][aria-pressed="false"]').count() === 1 && await page.locator('.eatc .zh').count() > 150, 'eat page (HK): 223 places from the manual with Chinese names; filters reset for another book');
   ok(s.errs.length === 0, 'AU: no console errors ' + s.errs.join(' | '));
   await s.ctx.close();
 }
