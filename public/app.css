@@ -1305,3 +1305,44 @@ button.tile.kid{border:1px solid var(--line);text-align:left;justify-items:start
 .mday .dsheet{margin-top:6px}
 .mapimg{display:block;margin:6px 0 10px;border-radius:var(--r);overflow:hidden;border:1px solid var(--line)}.mapimg img{width:100%;height:auto;display:block}
 .pocket details.pg{scroll-margin-top:68px}
+/* every meal: a day row with its stamp and meal chips, then one card per meal (colour = which meal) */
+.mk-bf{--mk:#D98A12}.mk-lu{--mk:#2B9A62}.mk-di{--mk:#4F63C9}.mk-sn{--mk:#D8457B}
+@media (prefers-color-scheme:dark){:root:not([data-theme=light]) .mealplan{--mkl:22%}}
+.mday{border-top:1px solid var(--line);padding:0}
+.mday>summary{display:flex;align-items:center;gap:12px;padding:12px 2px;cursor:pointer;list-style:none}
+.mday>summary::-webkit-details-marker{display:none}
+.mday>summary>.ic{color:var(--muted);width:18px;height:18px;margin-left:auto;transition:transform .2s;flex:none}
+.mday[open]>summary>.ic{transform:rotate(90deg)}
+.mday .mart{width:46px;height:46px;flex:none}
+.mdh{display:flex;flex-direction:column;gap:2px;min-width:0}
+.mdn{font-size:12px;font-weight:700;letter-spacing:.06em;text-transform:uppercase;color:var(--accent)}
+.mdh>b{font-size:15.5px;line-height:1.3}
+.mchips{display:flex;flex-wrap:wrap;gap:4px;margin-top:2px}
+.mchips i{font-style:normal;font-size:11px;font-weight:600;padding:1px 8px;border-radius:999px;color:var(--mk);background:color-mix(in srgb,var(--mk) 12%,var(--paper))}
+.mcards{display:grid;grid-template-columns:repeat(auto-fill,minmax(min(100%,260px),1fr));gap:10px;padding:2px 0 16px}
+.mlcard{display:flex;flex-direction:column;gap:6px;padding:12px 14px;border-radius:var(--r);background:var(--paper);border:1px solid var(--line);box-shadow:0 1px 2px rgba(0,0,0,.04)}
+.mtop{display:flex;align-items:center;justify-content:space-between;gap:8px}
+.mtag{font-size:12px;font-weight:700;padding:2px 10px;border-radius:999px;color:#fff;background:var(--mk)}
+.mtime{font-size:13px;font-weight:700;color:var(--mk);font-variant-numeric:tabular-nums}
+.mname{font-size:16px;line-height:1.3}.mname a{color:var(--ink);text-decoration-color:color-mix(in srgb,var(--mk) 60%,transparent);text-underline-offset:3px}
+.mlcard p{margin:0;font-size:13.5px;line-height:1.45;color:var(--muted)}
+.malt{display:flex;gap:8px;align-items:flex-start;margin-top:2px;padding-top:8px;border-top:1px solid var(--line);font-size:13.5px}
+.malt>span{flex:none;font-size:11px;font-weight:700;letter-spacing:.04em;padding:1px 7px;border-radius:6px;background:color-mix(in srgb,var(--ink) 7%,var(--paper));color:var(--muted)}
+.malt small{display:block;color:var(--muted);font-size:12.5px;margin-top:1px}
+/* skimmable day plan: points instead of paragraphs, money as a small bill, timeline rows with sub-lines */
+.pts{list-style:none;margin:4px 0 0;padding:0;display:grid;gap:6px}
+.pts>li{position:relative;padding-left:16px;line-height:1.45}
+.pts>li::before{content:"";position:absolute;left:2px;top:.62em;width:6px;height:6px;border-radius:50%;background:var(--pc,var(--accent))}
+.pts small,.pt1 small{display:block;font-size:12.5px;color:var(--muted);margin-top:2px}
+.pt1{margin:2px 0 0}
+.call.warn{--pc:var(--hot)}.call.pick{--pc:var(--sun)}
+.pts.lede{color:var(--muted);max-width:68ch;margin:4px 0 10px}
+.moving{margin:0 0 8px}.moving>b{display:block;font-size:12px;letter-spacing:.06em;text-transform:uppercase;color:var(--muted)}
+.money{margin:14px 0}.money>b{display:block;font-size:12px;letter-spacing:.06em;text-transform:uppercase;color:var(--muted);margin-bottom:4px}
+.bill{margin:0;border-top:1px solid var(--line)}
+.bill>div{display:flex;justify-content:space-between;gap:12px;padding:7px 0;border-bottom:1px solid var(--line);font-size:14.5px}
+.bill dd{margin:0;font-variant-numeric:tabular-nums;font-weight:600;white-space:nowrap}
+.bill>div.tot{border-bottom:0;border-top:2px solid var(--ink);font-weight:700}.bill>div.tot dd{font-size:16px}
+.bill>div.bn{border-bottom:0}.bill>div.bn dd{white-space:normal;font-weight:400;font-size:12.5px;color:var(--muted)}
+.tl .tm{display:block}.tl .tsub{display:block;font-size:13px;color:var(--muted);margin-top:2px;line-height:1.45}
+.tips small.tsub{display:block;font-size:13px;color:var(--muted);margin-top:2px}
