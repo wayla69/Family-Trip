@@ -793,7 +793,7 @@ ${p.alt ? `<ul class="erows"><li class="erow bk"><div><span class="elbl">${L('�
 ${also.length ? `<div class="ealso"><span class="elbl">${L('กินมื้อนี้ได้อีก', 'Also good for this meal')}</span><ul class="erows">${also.map((x2) => row(x2)).join('')}</ul></div>` : ''}</section>`;
   };
   const seen = new Set(ps.flatMap((p) => [p.name, p.alt && p.alt.name]).filter(Boolean));
-  const nearHtml = near.map((g) => { const xs = g.items.filter((x) => ![...seen].some((n) => eatSame(n, x.name))); return xs.length ? `<details class="enear"><summary><b>${esc(T(g.area))}</b><span class="n">${xs.length}</span>${ic('chev')}</summary><ul class="erows">${xs.map((x) => row(x)).join('')}</ul></details>` : ''; }).join('');
+  const nearHtml = near.map((g) => { const xs = g.items.filter((x) => ![...seen].some((n) => eatSame(n, x.name))); return xs.length ? `<details class="enear"><summary><span class="ea"><b>${esc(T(g.area))}</b>${g.kind !== undefined && (r.kinds || [])[g.kind] ? `<small class="ek">${esc(T(r.kinds[g.kind]))}</small>` : ''}</span><span class="n">${xs.length}</span>${ic('chev')}</summary><ul class="erows">${xs.map((x) => row(x)).join('')}</ul></details>` : ''; }).join('');
   const allBtn = (cls) => `<a class="btn ${cls}" href="#/t/${esc(t.id)}/eat/all">${ic('eat')} ${L(`ร้านทั้งหมด ${all} ร้าน · ค้นหา`, `All ${all} places · search`)} ›</a>`;
   return `<section class="eatpage eatday"><div class="part">${L('กินที่ไหนดี · ทีละวัน', 'Where to eat · day by day')}</div>
 <nav class="daytabs" aria-label="${L('เลือกวัน', 'Pick a day')}">${t.days.map((_, n) => `<a href="#/t/${esc(t.id)}/eat/d/${n}"${n === i ? ' aria-current="page"' : ''}${n === now ? ' class="now"' : ''}><small>${L('วัน', 'Day')}</small>${n + 1}</a>`).join('')}</nav>
