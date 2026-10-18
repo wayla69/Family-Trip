@@ -2371,6 +2371,39 @@
     }
    ]
   },
-  "colour": "/art/day-{n}.svg"
+  "colour": "/art/day-{n}.svg",
+  "countdown": {
+   "doors": [
+    { "e": "🦘", "th": "G'day {name}! ฉันคือเรนเจอร์รู อีก 14 วันเราจะไปออสเตรเลียด้วยกัน!", "en": "G'day {name}! I'm Ranger Roo. In 14 sleeps we hop off to Australia!" },
+    { "e": "✈️", "art": 0, "th": "เราจะนั่งเครื่องบินนานมาก เกือบทั้งคืน! เตรียมหมอนกับการ์ตูนเรื่องโปรดไว้นะ", "en": "Our plane ride is very long — almost all night! Bring a pillow and your favourite cartoon." },
+    { "e": "🐨", "th": "โคอาล่านอนวันละเกือบทั้งวันเลย! ง่วงกว่าหนูอีก", "en": "Koalas sleep for almost the whole day — even sleepier than you!" },
+    { "e": "👋", "th": "คนออสเตรเลียทักกันว่า กู๊ดได เมท! แปลว่า สวัสดีเพื่อน ลองพูดตามนะ", "en": "Aussies say G'day mate! — it means hello friend. Can you say it?", "speak": { "text": "G'day mate!", "lang": "en-AU"  } },
+    { "e": "🏖️", "art": 2, "th": "เราจะไปหาดทรายที่ขาวมากๆ ขาวเหมือนแป้งเลย!", "en": "We're going to a beach with sand as white as flour!" },
+    { "e": "🍂", "th": "เดือนเมษายนที่ออสเตรเลียเป็นฤดูใบไม้ร่วง ใบไม้เปลี่ยนเป็นสีส้มกับสีแดง", "en": "April in Australia is autumn — the leaves turn orange and red." },
+    { "e": "🐬", "art": 8, "th": "เราจะนั่งเรือไปดูโลมาตัวจริงในทะเล! หนูว่าจะเจอกี่ตัว?", "en": "We'll take a boat to see real dolphins in the sea! How many will we spot?" },
+    { "e": "🧸", "th": "ภารกิจวันนี้: เลือกตุ๊กตาหนึ่งตัวไปเที่ยวด้วยกัน มันจะได้ไปออสเตรเลียด้วย!", "en": "Today's mission: choose one cuddly toy to come along. It's going to Australia too!" },
+    { "e": "⛰️", "art": 4, "th": "มีหินสามก้อนบนภูเขาชื่อว่า สามพี่น้อง ไปนับให้ครบนะ!", "en": "Up in the mountains are three big rocks called the Three Sisters. Can you count them?" },
+    { "e": "🐴", "art": 6, "th": "เราจะไปนอนที่ฟาร์มม้าจริงๆ ด้วย! ม้าร้องว่าอะไรนะ?", "en": "We'll stay on a real horse farm! What noise does a horse make?" },
+    { "e": "🙏", "th": "คนออสเตรเลียบอกขอบคุณสั้นๆ ว่า ทา! ลองพูดตามนะ", "en": "Aussies sometimes just say Ta! for thank you. Can you say it?", "speak": { "text": "Ta!", "lang": "en-AU"  } },
+    { "e": "⛴️", "art": 13, "th": "เราจะนั่งเรือข้ามอ่าวไปสวนสัตว์! มียีราฟมองเห็นสะพานใหญ่ด้วย", "en": "We'll ride a ferry across the harbour to the zoo — the giraffes can see the big bridge!" },
+    { "e": "🎡", "art": 12, "th": "มีสวนสนุกที่ประตูเป็นหน้ายิ้มยักษ์! หนูต้องเดินเข้าปากเลย", "en": "There's a fun park whose gate is a giant smiling face — you walk in through its mouth!" },
+    { "e": "🎉", "th": "พรุ่งนี้เราออกเดินทางแล้ว! นอนหลับฝันดีนะ {name} เจอกันที่ออสเตรเลีย!", "en": "Tomorrow we go! Sweet dreams, {name} — see you in Australia!" }
+   ],
+   "pack": {
+    "title": { "th": "ช่วยจัดกระเป๋าหน่อย! ใส่อะไรแล้วแตะเลย", "en": "Help me pack! Tap each thing you put in" },
+    "items": [
+     { "k": "toy", "e": "🧸", "th": "ตุ๊กตาตัวโปรด", "en": "My cuddly toy" },
+     { "k": "toothbrush", "e": "🪥", "th": "แปรงสีฟัน", "en": "Toothbrush" },
+     { "k": "pyjamas", "e": "🌙", "th": "ชุดนอน", "en": "Pyjamas" },
+     { "k": "jumper", "e": "🧥", "th": "เสื้อกันหนาว", "en": "Jumper" },
+     { "k": "swimsuit", "e": "🩱", "th": "ชุดว่ายน้ำ", "en": "Swimsuit" },
+     { "k": "hat", "e": "👒", "th": "หมวกกันแดด", "en": "Sun hat" },
+     { "k": "shoes", "e": "👟", "th": "รองเท้าเดินสบาย", "en": "Comfy shoes" },
+     { "k": "pillow", "e": "😴", "th": "หมอนเล็กสำหรับเครื่องบิน", "en": "A little plane pillow" },
+     { "k": "crayons", "e": "🖍️", "th": "สีเทียน", "en": "Crayons" },
+     { "k": "passport", "e": "🛂", "th": "พาสปอร์ตนักผจญภัย", "en": "My adventure passport" }
+    ]
+   }
+  }
  }
 }

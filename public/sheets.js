@@ -161,6 +161,20 @@ const A = {
     } catch (err) { $('#nterr').textContent = err.code === 409 ? L('มีเล่มชื่อนี้แล้ว', 'A book with this id exists') : L('ตรวจวันที่อีกครั้ง (ไม่เกิน 60 วัน)', 'Check the dates (60 days max)'); }
   },
   closesheet() { closeSheet(); },
+  // hearts from the family
+  heartto(b) { heartTo = b.dataset.v; $$('[data-a="heartto"]').forEach((x) => x.setAttribute('aria-pressed', x.dataset.v === heartTo)); },
+  heartemo(b) { heartEmoji = b.dataset.v; $$('[data-a="heartemo"]').forEach((x) => x.setAttribute('aria-pressed', x.dataset.v === heartEmoji)); const s = $('[data-a="sendheart"]'); if (s) s.textContent = `${L('ส่ง', 'Send')} ${heartEmoji}`; },
+  sendheart(b) {
+    const t = trip(b.dataset.t), f = $('#hfrom'), m = $('#htext'), from = f.value.trim(), text = m.value.trim();
+    if (!from) { f.focus(); toast(L('ใส่ชื่อผู้ส่งก่อนนะ เด็กๆ จะได้รู้ว่าใครส่ง', 'Add your name so the kids know who it is from')); return; }
+    ls('heartfrom', from); delete drafts.hfrom; delete drafts.htext; m.value = '';
+    const id = uid('h'), dn = dayNow(t), day = dn >= 0 ? dn : null, at = Date.now();
+    burst(b, [heartEmoji, '💕', '✨']);
+    toast(L(`ส่ง ${heartEmoji} ถึง${kidName(heartTo)}แล้ว`, `${heartEmoji} sent to ${kidName(heartTo)}`));
+    enqueue({ method: 'PUT', url: '/api/b/hearts/' + id, limit: true, body: { trip: t.id, day, child: heartTo, emoji: heartEmoji, text, from },
+      local: { coll: 'hearts', id, row: { trip: t.id, day, child: heartTo, emoji: heartEmoji, text, from, at, mine: true } } });
+  },
+  delheart(b) { if (armed(b)) enqueue({ method: 'DELETE', url: '/api/b/hearts/' + encodeURIComponent(b.dataset.v), local: { coll: 'hearts', id: b.dataset.v, del: true } }); },
 };
 
 /* ---------- fav/note save when leaving the field; empty = delete ---------- */
