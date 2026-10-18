@@ -15,8 +15,11 @@
 1. `npm run new-book -- --slug=japan-2028 --from=2028-03-10 --to=2028-03-20 --tz=Asia/Tokyo --title-th="…" --title-en="…" --kicker="THE … HOP · EXPEDITION …" --accent=#1F3A5F --flag=🇯🇵 --place-th=ญี่ปุ่น --place-en=Japan`
    → สร้าง `server/seeds/<slug>.json` โครงครบทุกส่วน (ค่าว่างมีเครื่องหมาย `TODO`) และพิมพ์ checklist
 2. เติมจากคู่มือ ทีละส่วน (ดูตัวอย่างจริงใน `hk-macau-2026.json` / `big-hop-2027.json`):
-   - `days[]`: `title`, `sleep`, `planned[]` (`key` คงที่ตลอดกาล — เป็นกุญแจเช็กอิน), `wx`, และ **แผนวันนี้** `moving / plan[{t,th,en,note?}] / pick / planB / money / tips[] / stay{name,addr,q} / route / eat[] / learn[] / quiz[]`
-   - `info`: `stays[]` (ชื่อ+ที่อยู่สาธารณะ) · `emergency[]` · `lost` · `prices` · `guide[]` · `pack[]` · `general[]` · `wild[]`
+   - `days[]`: `title`, `sleep`, `planned[]` (`key` คงที่ตลอดกาล — เป็นกุญแจเช็กอิน · **`q` = คำค้น Google Maps เต็ม** ชื่อ+ถนน+เมือง ทุกจุด), `wx`, และ **แผนวันนี้** `moving / legs[{from,to,by,min,url}] / plan[{t,th,en,note?}] / pick / planB / money / tips[] / stay{name,addr,q} / route / picks[] / food[] / eat[] / learn[] / quiz[]`
+     - `legs` ทุกช่วงเดินทาง พร้อมลิงก์นำทาง (`maps/dir/?api=1&origin=…&destination=…&travelmode=driving|transit|walking`) — ช่วงบินไม่ต้องมีลิงก์
+     - `picks` ร้านแนะนำต่อมื้อ (`meal, name, what, pr, q, alt{name,pr,q}`) · `food` ร้านตามจุดที่ผ่าน (`stop, items[{name,tag,what,note,pr,q,pick?}]`) · `eat` ร้านอื่นใกล้ๆ (ซ้ำกับสองอันแรกได้ แอปตัดซ้ำให้)
+     - **ห้ามย่อ**: ใส่ข้อความจากคู่มือเต็มๆ ทุกบรรทัด ทั้งไทยและอังกฤษ
+   - `info`: `stays[]` (ชื่อ+ที่อยู่สาธารณะ — ที่อยู่ภาษาท้องถิ่นต่อท้ายด้วย ` · ` ให้คนขับอ่าน) · `emergency[]` · `lost` · `prices` · `guide[]` · `pack[]` · `general[]` · `wild[]` · ถ้าคู่มือมี: `drive` (ตารางช่วงขับ) · `car` (รถเช่า ไม่ใส่ราคา) · `kit` (ครัว/ซักผ้าแต่ละที่พัก) · `ifthen` (ถ้า…ก็… + `mishap` `carry` `crowd` `book`) · `visa` · `bio` (ด่านกักกันโรค) · `eatRules`
    - `passport`: `code` · `guides[2]` (ตัวการ์ตูนไกด์ 2 ตัว) · `style` (สีจากเล่มพิมพ์) · `greeting` · `days[]` (`title stamp facts spot[4] acc tint`) · `lists[]` (`said` คำศัพท์พร้อม `speak{text,lang}` · อาหาร `yum` หรือ `stars` · `master` + `certificate`) · `pins` · `declaration` (ถ้ามี) · `certificate` · `colour` · `countdown{doors[14],pack}` · `map{stops,days}`
    - `theme`: token ตาม `docs/DESIGN.md` + `art` + `places`
    - `firsts_catalog`, `moods`, `stamp`, `cover`
@@ -35,5 +38,6 @@
 |---|---|---|
 | 1 | ต.ค. 2026 | days/planned/sleep/wx · theme · passport (guides, days, lists, certificate, style, pins, declaration, colour) · countdown · map |
 | 2 | 18 ต.ค. 2026 | + แผนวันนี้ต่อวัน (`trip_days.plan`) · `info` คู่มือพกพา (`trips.info`) · `format` ใน seed |
+| 2 (เพิ่ม) | 18 ต.ค. 2026 | + `planned[].q` · `legs` · `picks` · `food` · `info.drive/car/kit/ifthen/visa/bio/eatRules` — ฟิลด์ทางเลือกทั้งหมด เล่มที่ไม่มียังแสดงเหมือนเดิม (ไม่มี `q` → ค้นจากชื่อ+ประเทศ) |
 
 เล่มที่ไม่มี `format` ถือเป็น format 1 ส่วนที่เพิ่มในภายหลังต้องเป็นฟิลด์ทางเลือกและไม่เปลี่ยนความหมายของฟิลด์เดิม

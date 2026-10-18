@@ -4,6 +4,7 @@
 const fs = require('fs');
 const path = require('path');
 const express = require('express');
+const zlib = require('zlib');
 const IMG = require('./images');
 
 const FAMILY = process.env.FAMILY_ID || 'family';
@@ -18,6 +19,13 @@ const clip = (s, n) => String(s == null ? '' : s).slice(0, n);
 const i18n = (o, n = 200) => (o && typeof o === 'object' ? { th: clip(o.th, n), en: clip(o.en, n), ...(o.zh ? { zh: clip(o.zh, n) } : {}) } : { th: clip(o, n), en: clip(o, n) });
 const at = (v) => new Date(Math.min(Number.isFinite(+v) && +v > 0 ? +v : Date.now(), Date.now() + 86400e3));
 const bad = (res, error, code = 400) => res.status(code).json({ error });
+// the state carries every book's plan (~1 MB of text for a 16-day road trip): gzip it, a phone on hotel wifi feels the difference
+function sendJson(req, res, obj) {
+  const body = Buffer.from(JSON.stringify(obj));
+  res.setHeader('Content-Type', 'application/json; charset=utf-8'); res.setHeader('Vary', 'Accept-Encoding');
+  if (body.length > 1024 && /\bgzip\b/.test(req.headers['accept-encoding'] || '')) { res.setHeader('Content-Encoding', 'gzip'); return res.end(zlib.gzipSync(body, { level: 6 })); }
+  res.end(body);
+}
 
 // ---------- seeds: server/seeds/*.json (trip.schema.json + theme) → trips, trip_days, firsts_catalog, children ----------
 async function syncSeeds(pool, dir = path.join(__dirname, 'seeds')) {
@@ -47,8 +55,8 @@ async function syncSeeds(pool, dir = path.join(__dirname, 'seeds')) {
         { ...(t.theme || {}), children: (t.children || []).map((k) => ({ slug: k.slug, age: k.age_at_trip || null })) },
         t.cover || {}, t.stamp || {}, JSON.stringify(t.moods || []), t.passport || {}, t.info || {}]);
       for (const d of t.days) {
-        const plan = {};   // the day card's plan block (seed keys: timeline, how we move, local pick, plan B, money, tips, tonight's stay, maps route, nearby food, learn cards, quiz)
-        for (const k of ['moving', 'pick', 'planB', 'money', 'plan', 'tips', 'stay', 'route', 'eat', 'learn', 'quiz']) if (d[k]) plan[k] = d[k];
+        const plan = {};   // the day card's plan block (seed keys: timeline, how we move, local pick, plan B, money, tips, tonight's stay, maps route, nearby food, learn cards, quiz, legs with directions, meal picks, food by stop)
+        for (const k of ['moving', 'pick', 'planB', 'money', 'plan', 'tips', 'stay', 'route', 'eat', 'learn', 'quiz', 'legs', 'picks', 'food']) if (d[k]) plan[k] = d[k];
         await c.query(`INSERT INTO trip_days (trip_id, day_index, date, title, sleep, emoji, gradient, planned, wx, plan) VALUES ($1,$2,$3,$4,$5,$6,$7,$8,$9,$10)
           ON CONFLICT (trip_id, day_index) DO UPDATE SET date=EXCLUDED.date, title=EXCLUDED.title, sleep=EXCLUDED.sleep, emoji=EXCLUDED.emoji,
             gradient=EXCLUDED.gradient, planned=EXCLUDED.planned, wx=EXCLUDED.wx, plan=EXCLUDED.plan`,
@@ -92,7 +100,7 @@ function router({ pool, media, A, ai }) {
       ]);
       const ms = (d) => (d ? new Date(d).getTime() : null);
       res.setHeader('Cache-Control', 'no-store');
-      res.json({
+      sendJson(req, res, {
         me: { role: req.user.role, name: req.user.name, uid: req.user.uid },
         children,
         trips: trips.map((t) => ({

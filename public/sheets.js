@@ -43,7 +43,20 @@ const A = {
   },
   'who-login'(b) { const n = $('#lname'); n.value = n.value === b.dataset.v ? '' : b.dataset.v; $$('[data-a="who-login"]').forEach((c) => c.setAttribute('aria-pressed', c.dataset.v === n.value)); },
   print() { window.print(); },
-  pdf(b) { toast(L('กำลังสร้าง PDF พร้อมรูป… อาจใช้เวลาครึ่งนาที', 'Making the PDF with photos… may take half a minute')); location.href = b.getAttribute('href'); },
+  async pdf(b) {   // fetch, then save: a failed render shows a message instead of replacing the app with an error page
+    if (b.getAttribute('aria-busy') === 'true') return;
+    if (!navigator.onLine) { toast(L('ต้องมีสัญญาณตอนสร้าง PDF', 'Making the PDF needs a connection')); return; }
+    b.setAttribute('aria-busy', 'true'); toast(L('กำลังสร้าง PDF พร้อมรูป… อาจใช้เวลาครึ่งนาที', 'Making the PDF with photos… may take half a minute'));
+    try {
+      const r = await fetch(b.getAttribute('href'), { credentials: 'same-origin' });
+      if (!r.ok || !/pdf/.test(r.headers.get('content-type') || '')) throw new Error(String(r.status));
+      const url = URL.createObjectURL(await r.blob()), a = document.createElement('a');
+      a.href = url; a.download = (b.getAttribute('href').split('/').pop() || 'memory-book') + '.pdf'; document.body.append(a); a.click();
+      setTimeout(() => { URL.revokeObjectURL(url); a.remove(); }, 10000);
+      toast(L('ได้ไฟล์ PDF แล้ว ✓', 'PDF ready ✓'));
+    } catch (_) { toast(L('สร้าง PDF ไม่สำเร็จ ลองอีกครั้งในอีกสักครู่', 'Could not make the PDF — try again in a moment')); }
+    finally { b.removeAttribute('aria-busy'); }
+  },
   async copytext() {
     const t = trip(route().parts[1]); if (!t) return;
     const lines = [T(t.title), fmtRange(t), ''];
@@ -161,6 +174,12 @@ const A = {
     } catch (err) { $('#nterr').textContent = err.code === 409 ? L('มีเล่มชื่อนี้แล้ว', 'A book with this id exists') : L('ตรวจวันที่อีกครั้ง (ไม่เกิน 60 วัน)', 'Check the dates (60 days max)'); }
   },
   closesheet() { closeSheet(); },
+  driver(b) {   // big-print address card to hand a taxi driver (works offline: it's in the book's state)
+    const st = ((trip(b.dataset.t) || {}).info || {}).stays || [], x = st[+b.dataset.v]; if (!x) return;
+    const parts = String(x.addr).split(' · ');
+    openSheet(`<div class="drivercard"><div class="kicker">${L('กรุณาพาไปที่', 'Please take us to')}${parts.length > 1 ? ' · 請送我們到' : ''}</div><b>${esc(T(x.prop))}</b>${parts.map((a) => `<p>${esc(a)}</p>`).join('')}</div>
+<div class="row end">${extA(mapsUrl(x.q || x.addr), '🗺️ ' + L('เปิดแผนที่', 'Open in Maps'), 'btn ghost small')}<button class="btn small" data-a="closesheet">${L('ปิด', 'Close')}</button></div>`);
+  },
   offline(b) { if (!navigator.onLine) { toast(L('ต้องมีสัญญาณตอนเก็บ', 'Needs a connection to store the book')); return; } packOffline(trip(b.dataset.t), b.dataset.v === 'all'); },
   // hearts from the family
   heartto(b) { heartTo = b.dataset.v; $$('[data-a="heartto"]').forEach((x) => x.setAttribute('aria-pressed', x.dataset.v === heartTo)); },

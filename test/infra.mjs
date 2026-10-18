@@ -41,6 +41,15 @@ fs.rmSync(tmp, { recursive: true, force: true });
   ok(/const V = 'mbs-v\d+'/.test(sw), 'sw.js has a cache version');
 }
 
+// every button the pages draw has an action behind it (data-a="x" → A.x in sheets.js / kid.js)
+{
+  const src = ['core', 'views', 'sheets', 'kid'].map((f) => fs.readFileSync(path.resolve(`public/${f}.js`), 'utf8')).join('\n') + fs.readFileSync(path.resolve('public/index.html'), 'utf8');
+  const acts = new Set([...src.matchAll(/data-a="([a-z-]+)"/g)].map((m) => m[1]));
+  const defined = (a) => new RegExp(`^\\s+(?:async\\s+)?(?:'${a}'|${a.replace(/-/g, '_')})\\s*\\(`, 'm').test(src) || new RegExp(`['"]${a}['"]\\s*[:(]`).test(src);
+  const missing = [...acts].filter((a) => !defined(a));
+  ok(acts.size > 40 && !missing.length, `every data-a has a handler (${acts.size})` + (missing.length ? ` — missing: ${missing.join(', ')}` : ''));
+}
+
 // the new-book scaffold (docs/NEW-BOOK.md) writes a complete format-2 seed that the seed loader accepts
 {
   const { execFileSync } = await import('node:child_process');

@@ -808,3 +808,25 @@ body.printbook{background:#E9E6E0;padding:0}
   .mosaic button,.call,.route,.first,.fact,.kf{break-inside:avoid}
   .wrap{max-width:none;padding:0}
 }
+/* maps everywhere: names that open Google Maps, travel legs with directions, meal picks, the driver card */
+a.maplink{color:inherit;text-decoration:underline;text-decoration-color:color-mix(in srgb,var(--accent) 45%,transparent);text-underline-offset:3px}
+a.maplink:hover{color:var(--accent)}
+.legs{list-style:none;margin:6px 0 8px;padding:0;font-size:13px}
+.legs li{display:flex;flex-wrap:wrap;align-items:center;gap:4px 10px;padding:7px 0;border-bottom:1px dashed var(--rule)}
+.legs .lg{flex:1 1 220px;min-width:0;overflow-wrap:anywhere}.legs .by{color:var(--muted);flex:1 1 160px;min-width:0}
+.mini.nav{white-space:nowrap;min-height:32px;display:inline-flex;align-items:center}
+.check .mini.nav{flex:none}
+.dayplan h5.ph{margin:10px 0 4px;font-size:13px;color:var(--accent)}
+.picks{list-style:none;margin:0 0 8px;padding:0;display:grid;gap:8px;grid-template-columns:repeat(auto-fill,minmax(min(100%,240px),1fr))}
+.picks .pk{background:var(--pick);border-radius:10px;padding:10px 12px;font-size:13px}.picks .pk b{display:block;font-size:15px;margin:2px 0}.picks .pk p{margin:2px 0 4px}.picks .pk small{color:var(--muted)}
+.dayplan details.sub h5{margin:10px 0 2px;font-size:13px}
+.pocket .lede{color:var(--muted);font-size:13px;margin:6px 0}
+.pocket table.ift td.nm{width:32%}
+.pocket table.legs td{white-space:nowrap}.pocket table.legs td:nth-child(2){white-space:normal}
+.drivercard{background:var(--panel);border:2px solid var(--accent);border-radius:14px;padding:18px;margin-bottom:12px}
+.drivercard b{display:block;font-size:26px;line-height:1.2;margin:6px 0}.drivercard p{font-size:24px;line-height:1.35;margin:6px 0;font-weight:600;overflow-wrap:anywhere}
+
+.dayplan .tips li.ic{list-style:none;margin-left:-18px}
+.btn[aria-busy=true]{opacity:.6;pointer-events:none}
+.stars{flex-wrap:wrap}.stars button.mini{width:auto;height:auto;font-size:12px;color:var(--muted);margin-left:auto;padding:4px 10px;transform:none}
+@media (max-width:360px){#firsttext{flex-basis:100%}}
