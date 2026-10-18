@@ -32,13 +32,13 @@ jobs:
           RAILWAY_TOKEN: ${{ secrets.RAILWAY_TOKEN }}
           SERVICE: ${{ vars.RAILWAY_SERVICE }}
         run: |
-          if [ -z "$RAILWAY_TOKEN" ]; then echo "::notice::RAILWAY_TOKEN not set — deploy skipped"; exit 0; fi
+          if [ -z "$RAILWAY_TOKEN" ]; then echo "::error::secret RAILWAY_TOKEN is not set — nothing was deployed"; exit 1; fi
           npx --yes @railway/cli@5.62.1 up --ci ${SERVICE:+--service "$SERVICE"}
       - name: Smoke test the live URL
         env:
           RAILWAY_TOKEN: ${{ secrets.RAILWAY_TOKEN }}
           MB_URL: ${{ vars.MB_URL }}
         run: |
-          if [ -z "$RAILWAY_TOKEN" ] || [ -z "$MB_URL" ]; then echo "::notice::MB_URL not set — smoke test skipped"; exit 0; fi
+          if [ -z "$MB_URL" ]; then echo "::error::variable MB_URL is not set — cannot check the live site"; exit 1; fi
           for i in $(seq 1 30); do curl -fsS "${MB_URL%/}/healthz" && exit 0; sleep 10; done
           echo "::error::${MB_URL}/healthz did not answer ok"; exit 1

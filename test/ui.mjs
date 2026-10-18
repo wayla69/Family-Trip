@@ -13,6 +13,10 @@ const ok = (c, m) => { if (!c) { failures++; console.log('  FAIL', m); } else co
 console.log('ui');
 
 const jpg = (i, w = 1800, h = 1200) => sharp({ create: { width: w, height: h, channels: 3, background: ['#1F3A5F', '#C8402B', '#14C2A3', '#F5A000'][i % 4] } }).jpeg().toBuffer();
+{
+  const csp = (await fetch(BASE + '/')).headers.get('content-security-policy') || '';
+  ok(/script-src 'self';/.test(csp) && /frame-ancestors 'none'/.test(csp), 'Content-Security-Policy: own scripts only, no framing');
+}
 const browser = await chromium.launch({ executablePath: exe, args: ['--no-sandbox'] });
 async function session(name, { width = 390, height = 844, scheme = 'light' } = {}) {
   const ctx = await browser.newContext({ viewport: { width, height }, deviceScaleFactor: 2, colorScheme: scheme, reducedMotion: 'reduce' });   // stable screenshots
