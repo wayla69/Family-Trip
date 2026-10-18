@@ -4,8 +4,8 @@ export const i18n = (th, en) => ({ th, en });
 export const TODO = (what) => i18n(`TODO ${what}`, `TODO ${what}`);
 
 export const KID = {
-  mimi: { name_th: 'มีมี่', name_en: 'Mimi', emoji: '👧', birth: '2023-05' },
-  mika: { name_th: 'มีก้า', name_en: 'Mika', emoji: '👶', birth: '2025-03' },
+  mimi: { name_th: 'มีมี่', name_en: 'Mimi', emoji: '👧', birth: '2023-11' },
+  mika: { name_th: 'มีก้า', name_en: 'Mika', emoji: '👶', birth: '2025-05' },
 };
 
 // ---- dates (all UTC midnight; the trip's own timezone only matters at run time)
