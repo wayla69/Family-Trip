@@ -118,7 +118,7 @@ function loginView() {
 <div class="row" style="margin-top:16px"><button class="btn" type="submit">${L('เข้าสมุด', 'Open the shelf')}</button>
 <span class="seg"><button type="button" data-a="lang" data-v="th" aria-pressed="${lang === 'th'}">ไทย</button><button type="button" data-a="lang" data-v="en" aria-pressed="${lang === 'en'}">EN</button></span></div>
 <div class="err" id="lerr" role="alert"></div>
-<p class="label" style="margin-top:6px">${L('ใส่ PIN ครั้งเดียว เครื่องนี้จะจำไว้', 'Enter the PIN once — this phone remembers it')}</p></form></div>`;
+<p class="label" style="margin-top:6px">${L('ใส่ PIN ครั้งเดียว เครื่องนี้จะจำไว้ · ญาติใช้ PIN ดูอย่างเดียวที่พ่อแม่ให้ แล้วพิมพ์ชื่อตัวเองในช่อง "ชื่ออื่น"', "Enter the PIN once — this phone remembers it · Relatives use the view-only PIN from Mum or Dad and type their name under “Other name”")}</p></form></div>`;
 }
 
 /* ---------- shelf ---------- */
