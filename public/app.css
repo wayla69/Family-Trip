@@ -351,9 +351,9 @@ nav.bar a[aria-current=page] i{transform:translateY(-2px) scale(1.12);display:in
 
 /* ---------- itinerary (book): every planned day, like the manual's day list ---------- */
 .itin{list-style:none;margin:10px 0 0;padding:0;display:grid;grid-template-columns:repeat(auto-fill,minmax(min(100%,420px),1fr));gap:0 24px}
-.itin li{display:flex;gap:12px;align-items:flex-start;padding:12px 0;border-bottom:1px solid var(--rule)}
-.itin li .art{width:46px;height:46px;filter:grayscale(1);opacity:.55}
-.itin li.has .art,.itin li.now .art{filter:none;opacity:1}
+.itin>li{display:flex;gap:12px;align-items:flex-start;padding:12px 0;border-bottom:1px solid var(--rule)}
+.itin>li .art{width:46px;height:46px;filter:grayscale(1);opacity:.55}
+.itin>li.has .art,.itin>li.now .art{filter:none;opacity:1}
 .itin .grow{flex:1;min-width:0}
 .itin .dl{font-size:12px;color:var(--muted)}.itin .dl b{font-family:var(--display);font-size:16px;color:var(--accent);margin-right:4px;font-variant-numeric:lining-nums}
 .itin h4{font-family:var(--display);font-size:18px;font-weight:600;line-height:1.2;margin:1px 0 2px}
@@ -374,7 +374,7 @@ nav.bar a[aria-current=page] i{transform:translateY(-2px) scale(1.12);display:in
 .dayplan .call{font-size:13px;padding:8px 12px;margin:6px 0}
 .dayplan .tips{margin:4px 0;padding-left:18px;font-size:13px}
 .planblk .dayplan{font-size:15px}
-.itin li .dayplan{display:block}
+.itin>li .dayplan{display:block}
 .dayplan .stay{margin:8px 0;font-size:13px}.dayplan .stay b{color:var(--accent)}.dayplan .addr,.stayc .addr{font-size:15px;font-weight:600;color:var(--ink)}
 .dayplan .tl.plan small{display:block;color:var(--muted);font-size:12px;margin-top:2px}
 .dayplan details.sub{margin:6px 0;font-size:13px}.dayplan details.sub summary{cursor:pointer;font-weight:600;color:var(--accent)}
@@ -402,7 +402,7 @@ nav.bar a[aria-current=page] i{transform:translateY(-2px) scale(1.12);display:in
 .qcard[aria-pressed=true]{box-shadow:0 0 0 4px var(--accent),0 8px 18px -12px rgba(0,0,0,.4)}
 .kidtiles button:nth-child(9){background:#F3E8FF}
 @media print{.dayplan{display:none}}
-.itin li.now{background:color-mix(in srgb,var(--accent) 6%,transparent);border-radius:10px;padding-left:8px;padding-right:8px}
+.itin>li.now{background:color-mix(in srgb,var(--accent) 6%,transparent);border-radius:10px;padding-left:8px;padding-right:8px}
 
 /* ---------- passport: adventure pages ---------- */
 .ppkids .sep{width:1px;height:24px;background:var(--rule);margin:0 4px}
@@ -830,3 +830,4 @@ a.maplink:hover{color:var(--accent)}
 .btn[aria-busy=true]{opacity:.6;pointer-events:none}
 .stars{flex-wrap:wrap}.stars button.mini{width:auto;height:auto;font-size:12px;color:var(--muted);margin-left:auto;padding:4px 10px;transform:none}
 @media (max-width:360px){#firsttext{flex-basis:100%}}
+.itin .dl .mini{float:right;margin-left:8px}.itin>li .grow{min-width:0;flex:1}
