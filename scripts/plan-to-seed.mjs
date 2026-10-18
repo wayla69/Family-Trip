@@ -239,6 +239,7 @@ function sanity(seed) {
     if (seed.passport && Array.isArray(seed.passport.days) && seed.passport.days.length !== seed.days.length) warns.push(`passport has ${seed.passport.days.length} missions for ${seed.days.length} days`);
   }
   if (!seed.theme || !seed.theme.art) errs.push('theme.art missing');
+  if (!Array.isArray(seed.firsts_catalog) || !seed.firsts_catalog.length) errs.push('firsts_catalog is empty — the 🌟 firsts page and the kids\' firsts trophy need it');
   if (!seed.info || !seed.info.emergency) warns.push('info.emergency missing');
   return { errs, warns };
 }
