@@ -61,7 +61,18 @@ const T = 'hk-macau-2026';
   ok(await s.noHScroll(), 'shelf: no horizontal scroll at 390 px');
   await s.shot('02-shelf');
 
-  await page.click(`.spine[href="#/t/${T}"]`); await page.waitForSelector('.cover');
+  await page.click(`.spine[href="#/t/${T}"]`); await page.waitForSelector('.hubgrid');
+  // the book opens on its menu: a tile per topic, today first, the detail one tap away
+  ok(await page.locator('.hubgrid .tile').count() >= 14 && await page.locator('.hubgrid .tile.today').count() === 1 && /อีก|to go/.test(await page.textContent('.tile.today')), 'book menu: topic tiles, today on top with the countdown');
+  ok(await page.locator('.tile[href$="/eat"]').count() === 1 && await page.locator('.tile[href$="/sos"]').count() === 1 && await page.locator('.tile[href$="/stays"]').count() === 1 && await page.locator('.tile.kid[data-a="kidmode"]').count() === 1, 'book menu: eat, emergency, stays, kid mode tiles');
+  ok(await page.locator('nav.bar .in > *').count() === 5 && await page.locator('nav.bar a[aria-current=page] i').textContent() === '🏠' && (await page.locator('nav.bar .in > *').first().boundingBox()).height >= 60, 'quick bar: five big stops, menu highlighted');
+  await page.click('.tile[href$="/today"]'); await page.waitForSelector('.day.today');
+  ok(await page.locator('.daystrip a').count() === 6 && await page.locator('.call.info').count() === 1 && await page.locator('.dayplan[open]').count() === 1 && await page.locator('.top .ttl small', { hasText: /วันนี้|Today/ }).count() === 1, "today page: day strip, countdown banner, day 1's plan open, topic named in the top bar");
+  await page.click('.daystrip a[href$="/today/3"]'); await page.waitForSelector('.daystrip a[aria-current=true][href$="/today/3"]');
+  ok((await page.textContent('.day.today h3')).includes('Senado') || (await page.textContent('.day.today h3')).includes('แสง'), 'today page: the strip switches days');
+  await page.click('.top .ibtn'); await page.waitForSelector('.hubgrid');
+  ok(true, 'back arrow inside a topic returns to the menu');
+  await page.click('.tile[href$="/book"]'); await page.waitForSelector('.cover');
   ok(await page.locator('.cover .stamp.pending').count() === 1, 'stamp is dashed until earned');
   ok(await page.locator('.fact').count() === 4, 'cover: 4 stats (photos, quotes, firsts, places)');
   ok(await page.evaluate(() => getComputedStyle(document.documentElement).getPropertyValue('--accent').trim().toUpperCase()) === '#1F3A5F', 'book uses the HK navy theme');
@@ -145,7 +156,7 @@ const T = 'hk-macau-2026';
   await s.shot('03-record-day2');
 
   // the book now has a day 2 page in the manual layout
-  await page.goto(`${BASE}/#/t/${T}`); await page.waitForSelector('#d1');
+  await page.goto(`${BASE}/#/t/${T}/book`); await page.waitForSelector('#d1');
   ok(await page.locator('.day').count() === 1, 'only days with content become pages');
   ok((await page.textContent('#d1 .no')).trim() === '02', 'day page numbered 02');
   ok(await page.locator('#d1 .route li.done').count() >= 1, 'route strip marks Disneyland visited');
@@ -159,13 +170,15 @@ const T = 'hk-macau-2026';
   ok(await page.locator('#d1 .hdart').count() === 1, 'day page shows its illustrated stamp');
   await s.shot('04-book');
 
-  ok(await page.locator('.itin > li').count() === 6 && await page.locator('.itin > li.has').count() === 1, 'book: itinerary lists all 6 planned days, the recorded one marked');
+  await page.goto(`${BASE}/#/t/${T}/plan`); await page.waitForSelector('.itin');
+  ok(await page.locator('.itin > li').count() === 6 && await page.locator('.itin > li.has').count() === 1, 'whole-trip page: itinerary lists all 6 planned days, the recorded one marked');
   ok((await page.textContent('.itin')).includes('teamLab') && (await page.textContent('.itin')).includes('Taipa'), 'itinerary shows the planned stops (revised HK plan)');
 
   // the kids' adventure passports
-  // parent mode: the bar holds the grown-ups' tools; firsts and passports are links in the book
-  ok(await page.locator('nav.bar .in > *').count() === 5 && await page.locator('nav.bar a[href$="/eat"]').count() === 1 && await page.locator('nav.bar button[data-a="kidmode"]').count() === 1 && await page.locator('nav.bar a[href="#/passport"]').count() === 0, 'parent bar: shelf, book, record, eat, kid mode');
-  await page.click('.booklinks a[href="#/passport"]'); await page.waitForSelector('.pp .advc');
+  // parent mode: the bar holds the grown-ups' tools; firsts and passports are tiles on the menu
+  ok(await page.locator('nav.bar .in > *').count() === 5 && await page.locator('nav.bar a[href$="/eat"]').count() === 1 && await page.locator('nav.bar button[data-a="kidmode"]').count() === 1 && await page.locator('nav.bar a[href="#/passport"]').count() === 0, 'parent bar: menu, today, record, eat, kid mode');
+  await page.goto(`${BASE}/#/t/${T}`); await page.waitForSelector('.hubgrid');
+  await page.click('.tile[href="#/passport"]'); await page.waitForSelector('.pp .advc');
   ok(await page.locator('.ppkids a[role=tab]').count() === 2 && await page.locator('.ppkids a:not([role=tab])').count() === 2, 'passport: one per child, a page set per trip');
   ok(await page.locator('.advc .xbox img[src="/art/kids/mimi.svg"]').count() === 1 && await page.locator('.bio .photo img[src="/art/kids/mimi.svg"]').count() === 1, 'passport: Mimi drawn as her character on the cover and photo page');
   ok(await page.locator('.advc img.crest[src="/art/crest/hk.svg"]').count() === 1 && (await page.textContent('.advc')).includes('DOLPHIN-2026-MIMI'), 'passport cover as printed: crest, title, passport no. per child');
@@ -292,7 +305,7 @@ const T = 'hk-macau-2026';
   ok(await page.evaluate(() => (heroHtml() !== '') === !!document.querySelector('.hero')), 'shelf: next-adventure hero while a trip is ahead or on');
   ok(await s.noHScroll(), 'shelf: no horizontal scroll with hero + passports');
   await s.shot('07-shelf-after');
-  await page.goto(`${BASE}/#/t/${T}`); await page.waitForSelector('#d1');
+  await page.goto(`${BASE}/#/t/${T}/book`); await page.waitForSelector('#d1');
   await page.click('button[data-a="lang"][data-v="en"]');
   await page.waitForSelector('text=Favourite moments');
   ok(true, 'language toggle to English');
@@ -320,7 +333,7 @@ const T = 'hk-macau-2026';
   // keep the book on the phone: the service worker cache must then hold the shell, all art, every thumbnail and the favourites;
   // the page keeps the server state in IndexedDB. (Playwright's offline switch does not reach the service worker, so the
   // cache is checked directly and the no-network paths are exercised on the page: cached state, notice, photo fallback.)
-  await page.goto(`${BASE}/#/t/${T}`); await page.waitForSelector('#offl');
+  await page.goto(`${BASE}/#/t/${T}/offline`); await page.waitForSelector('#offl');
   await page.waitForFunction(() => navigator.serviceWorker && navigator.serviceWorker.controller, null, { timeout: 15000 });
   await page.click('#offl [data-a="offline"]');
   await page.waitForFunction((tid) => !!ls('offline_' + tid), T, { timeout: 30000 });
@@ -337,7 +350,7 @@ const T = 'hk-macau-2026';
   ok((await cached([`/media/${plain.id}`]))[`/media/${plain.id}`], '"with all full-size photos" stores the rest too');
   // no network: the state comes from IndexedDB with a notice; a photo that is not on the phone falls back to its thumbnail, then to a placeholder
   await s.ctx.setOffline(true);
-  await page.reload(); await page.waitForSelector('.cover', { timeout: 20000 });
+  await page.goto(`${BASE}/#/t/${T}/book`); await page.reload(); await page.waitForSelector('.cover', { timeout: 20000 });
   ok(await page.locator('.notice').count() === 1 && (await page.textContent('.notice')).includes('ข้อมูลล่าสุดเมื่อ'), 'no network: cached state renders the book, notice shows the last sync time');
   const fb = await page.evaluate(() => new Promise((res) => { const i = document.createElement('img'); i.src = '/media/ph-not-on-this-phone'; document.body.appendChild(i); const t = setInterval(() => { if (i.classList.contains('nophoto')) { clearInterval(t); res(i.getAttribute('src')); } }, 50); setTimeout(() => { clearInterval(t); res('timeout:' + i.getAttribute('src')); }, 8000); }));
   ok(fb === null, 'a photo that cannot be loaded tries its thumbnail, then shows a placeholder (no broken image)');
@@ -365,7 +378,10 @@ const T = 'hk-macau-2026';
 {
   const s = await session('wide', { width: 1440, height: 900 });
   await login(s.page);
-  await s.page.goto(`${BASE}/#/t/${T}`); await s.page.waitForSelector('#d1');
+  await s.page.goto(`${BASE}/#/t/${T}`); await s.page.waitForSelector('.hubgrid');
+  ok((await s.page.locator('.hubgrid').evaluate((g) => getComputedStyle(g).gridTemplateColumns.split(' ').length)) >= 5, 'wide: the menu spreads into 5+ columns');
+  await s.shot('10a-menu-wide', false);
+  await s.page.goto(`${BASE}/#/t/${T}/book`); await s.page.waitForSelector('#d1');
   const m = await s.page.evaluate(() => ({
     h1: parseFloat(getComputedStyle(document.querySelector('.cover h1')).fontSize),
     body: parseFloat(getComputedStyle(document.body).fontSize),
@@ -403,7 +419,10 @@ const T = 'hk-macau-2026';
   for (const w of [320, 375]) {
     const p = await session('w' + w, { width: w, scheme: 'dark' });
     await login(p.page);
-    await p.page.goto(`${BASE}/#/t/${T}`); await p.page.waitForSelector('#d1');
+    await p.page.goto(`${BASE}/#/t/${T}`); await p.page.waitForSelector('.hubgrid');
+    ok(await p.noHScroll(), `${w}px dark: menu fits`);
+    await p.shot('menu-dark');
+    await p.page.goto(`${BASE}/#/t/${T}/book`); await p.page.waitForSelector('#d1');
     ok(await p.noHScroll(), `${w}px dark: no horizontal scroll`);
     ok(await p.page.evaluate(() => getComputedStyle(document.body).backgroundColor) === 'rgb(18, 22, 28)', `${w}px: dark paper`);
     await p.shot('book-dark');
@@ -428,10 +447,12 @@ const T = 'hk-macau-2026';
   await page.goto(BASE + '/v/grandma'); await page.waitForSelector('.shelf');
   ok(await page.locator('.spine.add').count() === 0, 'viewer: no "new book"');
   ok(await page.locator('nav.bar a[href*="/log/"]').count() === 0, 'viewer: no Record tab');
-  ok(await page.locator('nav.bar a[href="#/passport"]').count() === 1, 'viewer: relatives can open the passports');
+  ok(await page.locator('nav.bar a[href="#/passport"]').count() === 1 && await page.locator('nav.bar a[href$="/today"]').count() === 1, 'viewer: relatives get menu, today, book, firsts, passports');
   await page.goto(`${BASE}/#/passport/mimi`); await page.waitForSelector('.mission');
   ok(await page.locator('button[data-a="tick"]:not([disabled])').count() === 0 && await page.locator('.ppf').count() === 0 && await page.locator('.mission .tick.on').count() >= 1, 'viewer: sees the passport ticks read-only');
-  await page.goto(`${BASE}/#/t/${T}`); await page.waitForSelector('#d1');
+  await page.goto(`${BASE}/#/t/${T}`); await page.waitForSelector('.hubgrid');
+  ok(await page.locator('.tile[href*="/log/"], .tile[href$="/offline"], .tile.kid').count() === 0 && await page.locator('.tile[href$="/sos"]').count() === 1, 'viewer menu: no record, offline or kid-mode tiles; emergency numbers stay');
+  await page.goto(`${BASE}/#/t/${T}/book`); await page.waitForSelector('#d1');
   ok(await page.locator('a[href*="/log/"]').count() === 0, 'viewer: no edit links in the book');
   await page.locator('#d1 .mosaic button').first().click(); await page.waitForSelector('#lb:not([hidden]) img');
   ok(await page.locator('#lb [data-lb="del"]').count() === 0 && await page.locator('#lbcap').count() === 0, 'viewer: lightbox without delete/caption edit');
@@ -439,7 +460,7 @@ const T = 'hk-macau-2026';
   ok(true, 'viewer: record URL falls back to the book');
   const w = await page.evaluate(async () => (await fetch('/api/b/entries/q-hack-0001', { method: 'PUT', headers: { 'x-mb': '1', 'content-type': 'application/json' }, body: JSON.stringify({ trip: 'hk-macau-2026', day: 0, kind: 'quote', child: 'mimi', text: 'x' }) })).status);
   ok(w === 403, 'viewer write → 403');
-  await page.goto(`${BASE}/#/t/${T}`); await page.waitForSelector('a[data-a="pdf"]');
+  await page.goto(`${BASE}/#/t/${T}/book`); await page.waitForSelector('a[data-a="pdf"]');
   const [dl] = await Promise.all([page.waitForEvent('download', { timeout: 120000 }), page.click('a[data-a="pdf"]')]);
   ok(dl.suggestedFilename() === 'hk-macau-2026.pdf' && fs.readFileSync(await dl.path()).subarray(0, 5).toString('latin1') === '%PDF-', 'viewer (relatives): the memory book button saves the PDF');
   await page.route('**/api/b/pdf/**', (r) => r.fulfill({ status: 503, contentType: 'application/json', body: '{"error":"pdf-unavailable"}' }));
@@ -450,7 +471,7 @@ const T = 'hk-macau-2026';
   ok(await page.locator('.pg').count() >= 7 && await s.noHScroll(), 'viewer: memory book preview renders on a phone without horizontal scroll');
   await s.shot('20-viewer');
   // grandma sends Mimi a heart from the book
-  await page.goto(`${BASE}/#/t/${T}`); await page.waitForSelector('#hearts .hform');
+  await page.goto(`${BASE}/#/t/${T}/hearts`); await page.waitForSelector('#hearts .hform');
   await page.click('[data-a="heartto"][data-v="mimi"]'); await page.click('[data-a="heartemo"][data-v="🤗"]');
   await page.click('[data-a="sendheart"]');
   ok(await page.locator('.hlist li').count() === 0 && await page.evaluate(() => document.activeElement.id) === 'hfrom', 'heart: a sender name is asked for first');
@@ -531,8 +552,9 @@ const T = 'hk-macau-2026';
   await page.mouse.move(lock.x + lock.width / 2, lock.y + lock.height / 2); await page.mouse.down(); await page.waitForTimeout(1500); await page.mouse.up();
   await page.waitForSelector('.pp .advc');
   await page.evaluate(async () => { await fetch('/api/b/entries/hk-macau-2026.story.all', { method: 'PUT', headers: { 'x-mb': '1', 'content-type': 'application/json' }, body: JSON.stringify({ trip: 'hk-macau-2026', day: null, kind: 'story', text: 'Once upon a time Mimi and Mika flew to Hong Kong. The plane went whoosh!\n\nThey met Captain Pinky by the sea. Then they slept in a castle of lights.\n\nThe end.', lang: 'en' }) }); await load(); });
-  await page.goto(`${BASE}/#/t/${T}`); await page.waitForSelector('.cover');
+  await page.goto(`${BASE}/#/t/${T}/book`); await page.waitForSelector('.cover');
   ok(await page.locator('.mosaic.drawings img').count() === 1, "book: the kids' drawings section");
+  await page.goto(`${BASE}/#/t/${T}/plan`); await page.waitForSelector('.itin');
   // the day's plan from the manual: collapsed in the itinerary, open for today on the record page
   ok(await page.locator('.itin .dayplan').count() === 6 && await page.locator('.itin .dayplan[open]').count() === 0, 'itinerary: every HK day has a collapsed plan (not on the trip yet)');
   await page.locator('.itin > li').nth(3).locator('summary').click();
@@ -541,7 +563,7 @@ const T = 'hk-macau-2026';
   await page.locator('.itin > li').nth(3).screenshot({ path: path.join(OUT, 'countdown-05-dayplan.png') });
   await page.goto(`${BASE}/#/t/${T}/log/3`); await page.waitForSelector('.planblk');
   ok(await page.locator('.planblk .dayplan').count() === 1 && (await page.textContent('.planblk')).includes('Wong Chi Kei'), 'record page: the plan sits at the top of the day');
-  await page.goto(`${BASE}/#/t/${T}`); await page.waitForSelector('.bedbtn');
+  await page.goto(`${BASE}/#/t/${T}/book`); await page.waitForSelector('.bedbtn');
   await page.locator('.bedbtn').first().click(); await page.waitForSelector('#bedtime .bttext');
   ok(await page.locator('#bedtime .btdots i').count() === 3, 'bedtime: one page per paragraph');
   await s.shot('04-bedtime', false);
@@ -562,21 +584,34 @@ const T = 'hk-macau-2026';
     speak(u) { window.__said.push(`${u.text}|${u.lang}`); }, cancel() {}, onvoiceschanged: null, getVoices: () => ['th-TH', 'en-GB', 'en-AU'].map((l) => ({ lang: l, name: l })) } }); });
   await login(page);
   await page.click('button[data-a="lang"][data-v="en"]');
-  await page.goto(`${BASE}/#/t/big-hop-2027`); await page.waitForSelector('#pocket');
+  await page.goto(`${BASE}/#/t/big-hop-2027`); await page.waitForSelector('.hubgrid');
+  ok(await page.locator('.tile.today.hi').count() === 1 && (await page.textContent('.tile.today')).includes('Day 2 of 16') && (await page.textContent('.tile[href$="/stays"]')).includes('By the Bay'), 'menu on the trip: today tile highlighted with the day, stays tile names tonight');
+  await page.goto(`${BASE}/#/t/big-hop-2027/today`); await page.waitForSelector('.day.today');
+  ok((await page.textContent('.day.today h3')).includes('Grand Pacific') && await page.locator('.quick a[href*="/log/1"]').count() === 1 && await page.locator('.quick a[href*="maps/dir"]').count() === 1 && await page.locator('.dayplan[open] .picks .pk').count() === 3, "today page on the trip: day 2, record + route buttons, the plan open with its picks");
+  await page.goto(`${BASE}/#/t/big-hop-2027/plan`); await page.waitForSelector('.itin > li.now');
   ok(await page.locator('.itin > li.now .dayplan[open]').count() === 1 && (await page.textContent('.itin > li.now .dayplan')).includes('Bald Hill') && (await page.textContent('.itin > li.now .dayplan')).includes('Waldegrave'), "AU itinerary: today's plan is open, with the stay address");
   await page.locator('.itin > li.now .dayplan').screenshot({ path: path.join(OUT, 'au-01-dayplan.png') });
-  await page.locator('#pocket details.pg').first().click();
+  await page.goto(`${BASE}/#/t/big-hop-2027/stays`); await page.waitForSelector('#pocket');
+  ok(await page.locator('.nights li').count() === 15 && await page.locator('.nights a.maplink').count() === 15, 'stays page: night by night (the flight home is no night), each stay opens Maps');
   ok(await page.locator('#pocket .stayc').count() === 8 && await page.locator('#pocket .stayc a[href^="https://www.google.com/maps/search/"]').count() === 8 && await page.locator('#pocket .stayc a[href^="https://www.google.com/maps/dir/"]').count() === 8, 'pocket guide: 8 stays with addresses, map and directions links');
   await page.locator('#pocket [data-a="driver"]').nth(1).click(); await page.waitForSelector('.drivercard');
   ok((await page.textContent('.drivercard')).includes('24 Waldegrave Crescent, Vincentia NSW 2540'), 'show the driver: the full address in big print');
   await page.click('.sheet [data-a="closesheet"]'); await page.waitForSelector('#sheet', { state: 'hidden' });
+  await page.goto(`${BASE}/#/t/big-hop-2027/plan`); await page.waitForSelector('.itin > li.now');
   const now = page.locator('.itin > li.now');
   ok(await now.locator('.stops a.maplink[target=_blank]').count() === 5 && await now.locator('.legs a[href*="/maps/dir/"]').count() === 3 && await now.locator('.picks .pk').count() === 3, "AU today: every stop opens Maps, 3 legs with directions, 3 meal picks");
   const pk = await now.locator('.picks .pk').first().evaluate((e) => ({ w: e.getBoundingClientRect().width, flex: getComputedStyle(e).display }));
   ok(pk.w > 250 && pk.flex !== 'flex', `itinerary: a meal pick card is full width on the phone (${Math.round(pk.w)} px), not squeezed into columns`);
   const hrefs = await page.$$eval('a[href*="google.com/maps"]', (as) => as.map((a) => a.href));
   ok(hrefs.length > 300 && hrefs.every((h) => { const u = new URL(h), q = u.searchParams.get('query') || u.searchParams.get('destination'); return q && q.length > 3 && !/undefined|null/.test(q); }), `every Google Maps link has a full query (${hrefs.length})`);
-  await page.locator('#pocket details.pg').nth(1).click();
+  await page.goto(`${BASE}/#/t/big-hop-2027/sos`); await page.waitForSelector('#pocket');
+  ok(await page.locator('#pocket details.pg').count() >= 3 && await page.locator('table.ift').count() === 2 && await s.noHScroll(), 'emergency page: numbers, tonight\'s address, if-then + mishaps; fits the phone');
+  await page.goto(`${BASE}/#/t/big-hop-2027/prep`); await page.waitForSelector('#pocket');
+  ok(await page.locator('#pocket details.pg').count() >= 6 && (await page.textContent('#pocket')).includes('Biosecurity'), 'get-ready page: packing, prices, visa, biosecurity, the van, drive legs, crowds, book-ahead');
+  await page.goto(`${BASE}/#/t/big-hop-2027/learn`); await page.waitForSelector('#pocket');
+  ok(await page.locator('#pocket details.sub').count() === 16 && await page.locator('#pocket .qa').count() === 48, 'learn page: a fold per day with its cards and quiz questions');
+  await s.shot('02b-learn', false);
+  await page.goto(`${BASE}/#/t/big-hop-2027/sos`); await page.waitForSelector('#pocket');
   ok((await page.textContent('#pocket .emerg li.main')).includes('000') && await page.locator('#pocket .emerg a[href="tel:000"]').count() === 1, 'pocket guide: 000 is a tap-to-call link');
   await page.locator('#pocket').screenshot({ path: path.join(OUT, 'au-02-pocket.png') });
   ok(await s.noHScroll(), 'AU book with the pocket guide fits the phone');

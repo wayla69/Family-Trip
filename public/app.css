@@ -28,7 +28,7 @@
 
 *{box-sizing:border-box}
 html{-webkit-text-size-adjust:100%}
-body{margin:0;background:var(--paper);color:var(--ink);font:16px/1.5 var(--ui);padding-bottom:calc(84px + env(safe-area-inset-bottom,0px));overflow-x:hidden}
+body{margin:0;background:var(--paper);color:var(--ink);font:16px/1.5 var(--ui);padding-bottom:calc(96px + env(safe-area-inset-bottom,0px));overflow-x:hidden}
 button,input,select,textarea{font:inherit;color:inherit}
 button{cursor:pointer}
 a{color:inherit}
@@ -200,9 +200,10 @@ img.nophoto{background:repeating-linear-gradient(45deg,var(--panel) 0 8px,var(--
 
 /* ---------- tab bar ---------- */
 nav.bar{position:fixed;left:0;right:0;bottom:0;z-index:30;background:color-mix(in srgb,var(--paper) 94%,transparent);backdrop-filter:blur(8px);border-top:1px solid var(--rule);padding-bottom:env(safe-area-inset-bottom,0px)}
-nav.bar .in{max-width:560px;margin:0 auto;display:grid;grid-auto-flow:column;grid-auto-columns:1fr}
-nav.bar a{display:grid;justify-items:center;gap:1px;padding:8px 0 7px;text-decoration:none;font-size:11px;font-weight:600;color:var(--muted)}
-nav.bar a i{font-style:normal;font-size:19px;line-height:1.2}
+nav.bar .in{max-width:640px;margin:0 auto;display:grid;grid-auto-flow:column;grid-auto-columns:1fr;gap:2px;padding:0 4px}
+nav.bar a{display:grid;justify-items:center;gap:2px;padding:9px 0 8px;text-decoration:none;font-size:12px;font-weight:600;color:var(--muted);border-radius:14px;min-height:66px;align-content:center}
+nav.bar a i{font-style:normal;font-size:27px;line-height:1.1}
+nav.bar a[aria-current=page]{background:color-mix(in srgb,var(--accent) 10%,transparent)}
 nav.bar a[aria-current=page]{color:var(--accent)}
 
 /* ---------- sheet, lightbox, toast ---------- */
@@ -844,8 +845,9 @@ a.maplink:hover{color:var(--accent)}
 .dayplan h5.ph{display:flex;align-items:center;gap:8px}.dayplan h5.ph .mini{margin-left:auto;font-weight:600}
 .eatc .zh{color:var(--muted);font-size:13px}.eatc p.why{font-size:13px;color:var(--ink);opacity:.85}.eatg .gnote{margin:-2px 0 8px}
 /* parent mode: the kid-mode switch sits in the bar like a tab */
-nav.bar button{display:grid;justify-items:center;gap:1px;padding:8px 0 7px;border:0;background:none;font:inherit;font-size:11px;font-weight:600;color:var(--muted)}
-nav.bar button i{font-style:normal;font-size:19px;line-height:1.2}
+nav.bar button{display:grid;justify-items:center;gap:2px;padding:9px 0 8px;border:0;background:none;font:inherit;font-size:12px;font-weight:600;color:var(--muted);border-radius:14px;min-height:66px;align-content:center}
+nav.bar button i{font-style:normal;font-size:27px;line-height:1.1}
+@media (max-width:340px){nav.bar a,nav.bar button{font-size:11px}nav.bar a i,nav.bar button i{font-size:24px}}
 .booklinks{gap:8px;margin:10px 0}
 /* kid mode: its own big-button bar; the grown-ups' lock moves to the top corner */
 .kidbar{position:fixed;left:0;right:0;bottom:0;z-index:4;display:grid;grid-auto-flow:column;grid-auto-columns:1fr;gap:4px;max-width:760px;margin:0 auto;padding:8px 10px calc(8px + env(safe-area-inset-bottom,0px));background:rgba(255,255,255,.94);border-radius:22px 22px 0 0;box-shadow:0 -6px 18px -12px rgba(0,0,0,.35)}
@@ -855,3 +857,24 @@ nav.bar button i{font-style:normal;font-size:19px;line-height:1.2}
 .kidbar button:active{transform:scale(.92)}
 .kidwrap{padding-bottom:calc(110px + env(safe-area-inset-bottom,0px))}
 .kidexit{left:auto;right:14px;bottom:auto;top:calc(12px + env(safe-area-inset-top,0px));width:44px;height:44px;font-size:18px}
+/* the book's menu (#/t/<trip>): topic tiles, the detail one tap away */
+.hubhead{display:flex;align-items:center;gap:14px;margin-top:18px}
+.hubhead .stamp.s{flex:none}.hubhead h1{font-family:var(--display);font-size:clamp(26px,6vw,36px);line-height:1.05;font-weight:600;margin:2px 0}.hubhead .line{color:var(--muted);font-size:14px;margin:0}
+.hubgrid{display:grid;grid-template-columns:repeat(auto-fill,minmax(min(100%,136px),1fr));gap:10px;margin:16px 0 8px}
+.tile{position:relative;display:grid;align-content:start;gap:4px;text-decoration:none;color:var(--ink);background:var(--panel);border:1px solid transparent;border-radius:16px;padding:14px 14px 12px;min-height:124px;font:inherit;text-align:left;cursor:pointer;overflow:hidden}
+.tile .e{font-size:30px;line-height:1}.tile b{font-size:16px;line-height:1.2;margin-top:2px}.tile small{color:var(--muted);font-size:12px;line-height:1.3;overflow-wrap:anywhere}
+.tile:active{transform:scale(.97)}
+.tile.today{grid-column:1/-1;grid-template-columns:1fr auto;min-height:0;padding:16px 18px}
+.tile.today .e{grid-row:1}.tile.today b{grid-column:1;font-family:var(--display);font-size:24px}.tile.today small{grid-column:1;font-size:14px}
+.tile.today .tart{grid-column:2;grid-row:1/4;width:72px;height:72px;align-self:center;transform:rotate(-6deg)}
+.tile.today.hi{background:var(--accent);color:#fff}.tile.today.hi small{color:#fff;opacity:.9}
+.tile.log{background:var(--pick)}.tile.sos{background:var(--warn)}.tile.warn{border-color:var(--accent2)}.tile.kid{background:#FFF3E0;color:#1F2A3A}.tile.kid small{color:#6D7480}.tile.shelf{background:transparent;border-color:var(--rule)}
+:root[data-theme=dark] .tile.kid{background:#2A2418;color:var(--ink)}
+.quick{margin:12px 0 4px}
+.nights{list-style:none;margin:6px 0;padding:0}.nights li{display:grid;grid-template-columns:auto 1fr;gap:2px 12px;padding:8px 0;border-bottom:1px solid var(--rule);font-size:14px}.nights li b{color:var(--accent)}.nights li small{grid-column:1;color:var(--muted)}.nights li div{grid-column:2;grid-row:1/3}
+.pocket details.pg[open]>summary{margin-bottom:6px}
+.pocket details.sub summary .art{width:30px;height:30px;vertical-align:middle;margin-right:4px}
+.day.today .hd .tag{font-size:11px}
+
+button.tile{width:100%;appearance:none;-webkit-appearance:none}
+.emerg li{flex-wrap:wrap}.emerg b{min-width:0;text-align:right;margin-left:auto}.emerg b a{white-space:normal;overflow-wrap:anywhere;text-align:right;display:inline-block}
