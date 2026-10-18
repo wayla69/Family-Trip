@@ -708,6 +708,35 @@ body.btopen{overflow:hidden}
 .kidtiles button:nth-child(7){background:#FFEFD9}.kidtiles button:nth-child(8){background:#E3F6F1}
 @media (prefers-reduced-motion:reduce){.tmap .walkers.walking img,.stkboard .stk.wig{animation:none}}
 
+/* ---------- travel notebook ---------- */
+.nbcard{display:flex;align-items:center;gap:12px;margin:10px 0 18px;padding:12px 14px;border:1px solid var(--rule);border-radius:14px;text-decoration:none;color:inherit;background:var(--panel)}
+.nbcard .emb{font-size:28px}.nbcard b{display:block;font-size:15px}.nbcard small{color:var(--muted);font-size:12px;line-height:1.35;display:block}.nbcard .arrow{margin-left:auto;color:var(--muted);font-size:22px}
+.revs{display:grid;gap:8px;margin-top:8px}
+.rev{border:1px solid var(--rule);border-radius:12px;padding:0 12px;background:var(--paper)}
+.rev.has{border-color:color-mix(in srgb,var(--accent) 40%,var(--rule))}
+.rev summary{list-style:none;cursor:pointer;display:flex;align-items:center;gap:8px;padding:10px 0;font-size:14px;flex-wrap:wrap}
+.rev summary::-webkit-details-marker{display:none}
+.rev summary .k{font-size:16px}.rev summary b{flex:1;min-width:120px}.rev summary .st{color:#E0A800;letter-spacing:1px;font-size:13px}
+.kv{display:inline-flex;align-items:center;gap:1px;font-size:14px}.kv .face{width:18px;height:18px}
+.rbody{padding:4px 0 12px;border-top:1px dashed var(--rule)}
+.stars{display:flex;gap:4px;align-items:center;margin:8px 0}
+.stars button{width:38px;height:38px;border:0;background:none;font-size:28px;line-height:1;color:#E0A800;padding:0}
+.stars button[aria-pressed=true]{transform:scale(1.15)}
+.rtags{gap:6px;margin:6px 0}.rtags .chip{font-size:12px;padding:4px 10px}.rtags .chip[aria-pressed=true]{background:var(--accent);color:#fff;border-color:var(--accent)}
+.rkids{display:flex;flex-wrap:wrap;gap:8px 18px;margin:8px 0}
+.rkid{display:flex;align-items:center;gap:8px}.rkid .opts{display:flex;gap:4px}
+.rkid .opts button{border:1px solid var(--rule);background:var(--paper);border-radius:999px;min-width:36px;height:32px;font-size:16px;padding:0 8px}
+.rkid .opts button[aria-pressed=true]{border-color:var(--accent);background:color-mix(in srgb,var(--accent) 14%,var(--paper))}
+.rkid.again .opts button{font-size:13px;font-weight:600}
+.rnote{min-height:56px;margin-top:6px;font-size:14px}.rnotetxt{margin:6px 0 0;font-size:14px;white-space:pre-line}
+.tag.ok{background:var(--calm);color:var(--accent)}
+.nbsum{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,280px),1fr));gap:12px;margin:14px 0}
+.nbsum>div{background:var(--panel);border-radius:12px;padding:12px 14px}.nbsum h4{margin:0 0 8px;font-size:14px}.nbsum .chip small{color:var(--muted)}
+.nblist{list-style:none;margin:8px 0 0;padding:0}
+.nbrow{padding:10px 0;border-bottom:1px solid var(--rule);position:relative}
+.nbhead{display:flex;align-items:center;gap:8px;flex-wrap:wrap}.nbhead .st{color:#E0A800;letter-spacing:1px;font-size:13px;white-space:nowrap}.nbhead b{font-size:15px}
+.nbrow p{margin:4px 0 0;font-size:14px;white-space:pre-line}.nbhead .mini{margin-left:auto;text-decoration:none}
+
 /* ---------- login art ---------- */
 .loginart{display:flex;align-items:flex-end;margin:0 0 14px;min-height:96px}
 .loginart .art{width:44px;height:44px;margin-right:-6px;box-shadow:0 0 0 3px var(--paper);animation:bob 4s ease-in-out infinite;align-self:flex-start}

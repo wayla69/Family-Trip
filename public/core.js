@@ -67,7 +67,7 @@ async function load() {
     if (!c) return 'fail';
     S = c; offline = true;
   }
-  S.hearts = S.hearts || [];   // a copy cached before hearts existed
+  S.hearts = S.hearts || []; S.reviews = S.reviews || [];   // a copy cached before these existed
   queue.forEach(applyLocal);   // pending writes stay visible on top of server data
   return offline ? 'cached' : 'ok';
 }

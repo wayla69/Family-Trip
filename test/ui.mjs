@@ -121,6 +121,23 @@ const T = 'hk-macau-2026';
   st = await apiState(page);
   ok(st.media.length === 2 && st.media.some((m) => m.caption === 'ที่ท่าเรือ' && m.highlight), 'second tap deleted; caption + ⭐ saved');
   ok(await s.noHScroll(), 'record page: no horizontal scroll');
+  // travel notebook on the record page: rate the stay, tag it, the kids' verdicts, a note
+  await page.waitForSelector('#notebook .rev');
+  ok(await page.locator('#notebook .rev').count() === 4 && await page.locator('#notebook .rev[data-kind="stay"]').count() === 1, 'notebook: tonight\'s stay + the day\'s 3 planned stops are reviewable');
+  const stay = page.locator('#notebook .rev[data-kind="stay"]');
+  await stay.locator('summary').click();
+  await stay.locator('.stars button[data-v="4"]').click();
+  await page.waitForSelector('#notebook .rev[data-kind="stay"].has');
+  await stay.locator('.rtags .chip[data-v="kidsleep"]').click();
+  await stay.locator('.rkid .opts button[data-k="mimi"][data-v="love"]').click();
+  await stay.locator('.rkid.again button[data-v="1"]').click();
+  await stay.locator('.rnote').fill('ห้องมุม วิวสะพาน เด็กหลับสนิท'); await page.locator('#qtext').focus();
+  await page.waitForFunction(() => queue.length === 0, null, { timeout: 15000 });
+  st = await apiState(page);
+  const rvw = st.reviews.find((r) => r.kind === 'stay');
+  ok(rvw && rvw.rating === 4 && rvw.tags.includes('kidsleep') && rvw.kids.mimi === 'love' && rvw.again === true && rvw.note.includes('วิวสะพาน'), 'server: stay review — 4★, tag, Mimi 😍, again, note (one row, upserted)');
+  ok(await stay.locator('summary .st').textContent() === '★★★★☆' && await stay.locator('.stars button[aria-pressed=true]').count() === 1, 'review card shows the stars in its summary');
+  await page.locator('#notebook').screenshot({ path: path.join(OUT, 'phone-03b-notebook.png') });
   await s.shot('03-record-day2');
 
   // the book now has a day 2 page in the manual layout
@@ -257,6 +274,12 @@ const T = 'hk-macau-2026';
   ok(await page.locator('.mapsec .tmap .pin').count() === 7 && await page.locator('.stkpage #stkboard .stk.on').count() === 1 && await page.locator('.stkpage #stktray').count() === 0, 'passport: the map, and the sticker page (read-only) Mimi made');
   await page.goto(BASE + '/'); await page.waitForSelector('.shelf');
   ok(await page.locator('.ppmini .ppc').count() === 2, 'shelf: passport covers for both kids');
+  ok(/1 (รีวิว|review)/.test(await page.textContent('.nbcard')), 'shelf: travel notebook card counts the review');
+  await page.click('.nbcard'); await page.waitForSelector('.nblist');
+  ok(await page.locator('.nbrow').count() === 1 && (await page.textContent('.nbrow')).includes('★★★★☆') && /เด็กนอนดี|kids slept well/.test(await page.textContent('.nbsum')), 'notebook page: the stay with its stars; "what worked" lists the tag');
+  ok(await s.noHScroll(), 'notebook page fits the phone');
+  await s.shot('13-notebook');
+  await page.goto(BASE + '/'); await page.waitForSelector('.shelf');
   ok(!(await page.evaluate(() => heroHtml() !== '')) || await page.locator('.hero .cast .who').count() === 2, 'shelf: Mimi and Mika stand in the hero as characters');
   ok(await page.locator(`.spine[href="#/t/${T}"] .polas img`).count() >= 1 && await page.locator('.spine .arts .art').count() >= 1, 'shelf: book with photos shows them, the other shows its day art');
   ok(await page.evaluate(() => (heroHtml() !== '') === !!document.querySelector('.hero')), 'shelf: next-adventure hero while a trip is ahead or on');
