@@ -1,6 +1,7 @@
 'use strict';
 /* ===== Memory Bookshelf · kid mode: big buttons for Mimi (3) and Mika (1½) =====
-   #/kid → pick a child · #/kid/<kid> home · /colour · /draw · /spot · /stamp · /words · /count · /pack · /hearts
+   #/kid → pick a child · #/kid/<kid> home (pages of four huge tiles, swipe or arrows) · /colour · /draw · /spot · /stamp · /words
+   · /count (surprise doors) · /pack · /map · /quiz · /stickers · /hearts · /photos · /match · /mood · /animals · /numbers · /trophies
    Locked: while kid mode is on, every route comes back here; a grown-up exits by pressing and holding the lock (1.2 s).
    Sounds are synthesised (Web Audio), words and bedtime stories are read by the phone's own voices (speechSynthesis) —
    nothing leaves the phone. Drawings are uploaded like photos (private, never public). */
@@ -351,6 +352,63 @@ document.addEventListener('pointermove', (e) => {
 }));
 const stkBusy = () => !!stk;
 
+/* ---------- the new games: photos, pairs, mood, animals, counting, trophies ---------- */
+const kidPhotos = (t, i) => { const all = mediaOf(t.id).filter((m) => !isDrawing(m)), today = all.filter((m) => m.day === i); return today.concat(all.filter((m) => m.day !== i)); };
+let kidPhoto = 0, kidPage = 0;
+const shuffle = (a) => { a = a.slice(); for (let i = a.length - 1; i > 0; i--) { const j = Math.floor(Math.random() * (i + 1)); [a[i], a[j]] = [a[j], a[i]]; } return a; };
+let mg = null;   // pairs game: {t, kid, cards:[{k, img|e}], up:[card indexes face up], done:Set(k), moves, won}
+function matchDeck(t) {
+  const faces = []; t.days.forEach((_, i) => { const a = dayArt(t, i); if (a) faces.push({ k: 'd' + i, img: a }); });
+  ((t.passport || {}).days || []).forEach((pd, i) => (pd.spot || []).forEach((s) => faces.push({ k: `s${i}.${s.k}`, e: s.e })));
+  if (faces.length < 6) ['🐨', '🦘', '🐬', '🐼', '🚢', '✈️'].forEach((e, i) => faces.push({ k: 'x' + i, e }));
+  const pick = shuffle(faces).slice(0, 6); return shuffle(pick.concat(pick));
+}
+const newMatch = (t, kid) => { mg = { t: t.id, kid, cards: matchDeck(t), up: [], done: new Set(), moves: 0, won: false }; };
+let cnt = null;   // counting game: {n, e, hit:[card indexes in the order tapped]}
+const NUMW = { th: ['หนึ่ง', 'สอง', 'สาม', 'สี่', 'ห้า', 'หก', 'เจ็ด', 'แปด', 'เก้า', 'สิบ'], en: ['one', 'two', 'three', 'four', 'five', 'six', 'seven', 'eight', 'nine', 'ten'] };
+function newCount(t) {
+  const wild = ((t.info || {}).wild || []), pool = wild.length ? wild.map((w) => w.emo) : t.days.map((d) => d.emoji).filter(Boolean);
+  cnt = { n: 3 + Math.floor(Math.random() * 8), e: pool[Math.floor(Math.random() * pool.length)] || '⭐', hit: [] };
+}
+const MOODW = { '😄': ['ดีใจ', 'happy'], '🥰': ['มีความสุขมาก', 'loved'], '🤩': ['ตื่นเต้น', 'excited'], '😋': ['อร่อย', 'yummy'], '😴': ['ง่วง', 'sleepy'], '😢': ['เศร้า', 'sad'] };
+// trophies are read off what the child already did — nothing new is stored except which ones were seen
+function trophies(t, kid) {
+  const pp = t.passport || {}, info = t.info || {}, days = t.days.length;
+  const stamps = t.days.filter((_, j) => ticked(t, `stamp.d${j}`, kid)).length;
+  const colours = S.entries.filter((e) => e.trip === t.id && e.kind === 'field' && e.child === kid && /^colour\./.test(e.first_key)).length;
+  const draws = mediaOf(t.id).filter((m) => m.id.startsWith(`dr-${kid}-`)).length;
+  const said = (pp.lists || []).filter((l) => l.said).reduce((n, l) => n + listGot(t, l, kid).length, 0);
+  const spotsAll = (pp.days || []).some((pd, j) => (pd.spot || []).length && pd.spot.every((x) => ticked(t, `spot.d${j}.${x.k}`, kid)));
+  const stk = stickersPlaced(t, kid).length, hearts = heartsFor(kid).length, wins = ls('match_' + kid) || 0;
+  const wildN = (info.wild || []).filter((_, n) => ticked(t, `wild.${n}`, kid)).length;
+  const firsts = entriesOf(t.id).filter((e) => e.kind === 'first' && e.child === kid).length;
+  const doorsAll = ((pp.countdown || {}).doors || []).length, doors = ((pp.countdown || {}).doors || []).filter((_, n) => ticked(t, `cd.${n + 1}`, kid)).length;
+  return [
+    ['stamp1', '🛂', L('ตราแรก', 'First stamp'), stamps >= 1],
+    ['stamp3', '🏅', L('นักสะสมตรา', 'Stamp collector'), stamps >= 3],
+    ['stampall', '👑', L('ครบทุกวัน!', 'Every day stamped!'), days > 0 && stamps >= days],
+    ['colour', '🎨', L('จิตรกรน้อย', 'Little painter'), colours >= 1],
+    ['draw', '🖍️', L('นักวาด', 'Artist'), draws >= 1],
+    ['words', '🗣️', L('พูดได้ 5 คำ', '5 words said'), said >= 5],
+    ['spot', '🔍', L('ตาไว', 'Eagle eyes'), spotsAll],
+    ['stickers', '⭐', L('สติกเกอร์ 10 ชิ้น', '10 stickers'), stk >= 10],
+    ['hearts', '💗', L('ที่รักของทุกคน', 'Everyone’s darling'), hearts >= 5],
+    ['match', '🧩', L('นักจับคู่', 'Pair finder'), wins >= 1],
+    (info.wild || []).length ? ['wild', '🦘', L('นักดูสัตว์', 'Animal spotter'), wildN >= 3] : null,
+    ['firsts', '🌟', L('ครั้งแรก 3 อย่าง', '3 firsts'), firsts >= 3],
+    doorsAll ? ['doors', '🎁', L('เปิดครบทุกประตู', 'All doors opened'), doors >= doorsAll] : null,
+    ['explorer', '🧭', L('นักสำรวจตัวจริง', 'Master Explorer'), certEarned(t, kid)],
+  ].filter(Boolean);
+}
+// the home pager: keep the page across re-renders, move the dots and arrows with the scroll
+function hydratePager(root) {
+  const pg = $('#kidpager', root || document); if (!pg) return;
+  const n = pg.children.length, w = () => pg.clientWidth || 1;
+  const show = () => { const k = Math.min(n - 1, Math.max(0, Math.round(pg.scrollLeft / w()))); kidPage = k; $$('#kdots i').forEach((d, j) => d.classList.toggle('on', j === k)); const pv = $('.kparrow.prev'), nx = $('.kparrow.next'); if (pv) pv.hidden = k === 0; if (nx) nx.hidden = k >= n - 1; };
+  if (kidPage) pg.scrollLeft = kidPage * w();
+  pg.addEventListener('scroll', () => { clearTimeout(pg._t); pg._t = setTimeout(show, 60); }, { passive: true }); show();
+}
+
 /* ---------- kid mode views ---------- */
 let kidDay = null;
 function kidTrip(kid) { const mine = kidTrips(kid); const c = curTrip(); return mine.includes(c) ? c : mine[0]; }
@@ -367,7 +425,7 @@ function viewKid(p) {
   }
   const t = kidTrip(kid); if (!t) return `<div class="empty">${L('ยังไม่มีทริป', 'No trips yet')}</div>`;
   const pp = t.passport || {}, i = kidDayOf(t), d = t.days[i], pd = (pp.days || [])[i] || {}, g = pp.guides || [];
-  const view = p[2] || 'home', name = kidName(kid), pre = preTrip(t), cd = pp.countdown;
+  const view = p[2] || 'home', name = kidName(kid), pre = preTrip(t), cd = pp.countdown, wild = ((t.info || {}).wild || []);
   const fill = (x) => String(x || '').replace(/\{name\}/g, name);
   const style = `--accent:${esc(pd.acc || t.theme.accent || '#1F3A5F')};--tint:${esc(pd.tint || '#F3F6FA')}`;
   const back = `<button class="kidback" data-a="kidnav" data-v="#/kid/${esc(kid)}" aria-label="${L('กลับ', 'Back')}">‹</button>`;
@@ -382,14 +440,21 @@ function viewKid(p) {
     const tiles = (pre
       ? [cd && ['count', '🎁', L('เซอร์ไพรส์', 'Surprise')], cd && cd.pack && ['pack', '🧳', L('จัดกระเป๋า', 'Pack')], ['colour', '🎨', L('ระบายสี', 'Colour')], ['draw', '🖍️', L('วาดรูป', 'Draw')]]
       : [['colour', '🎨', L('ระบายสี', 'Colour')], ['draw', '🖍️', L('วาดรูป', 'Draw')], ['spot', '🔍', L('หาของ', 'Find it')], ['stamp', '🛂', L('ปั๊มตรา', 'Stamp')]])
-      .concat(words ? [['words', '🗣️', L('พูดตาม', 'Say it')]] : [], [['stickers', '⭐', L('สติกเกอร์', 'Stickers')]], pp.map ? [['map', '🗺️', L('แผนที่', 'Map')]] : [], ((d.plan || {}).quiz || []).length ? [['quiz', '❓', L('ทายซิ', 'Quiz')]] : []).filter(Boolean);
+      .concat(words ? [['words', '🗣️', L('พูดตาม', 'Say it')]] : [], [['stickers', '⭐', L('สติกเกอร์', 'Stickers')]], pp.map ? [['map', '🗺️', L('แผนที่', 'Map')]] : [], ((d.plan || {}).quiz || []).length ? [['quiz', '❓', L('ทายซิ', 'Quiz')]] : [],
+        kidPhotos(t, i).length ? [['photos', '📸', L('ดูรูป', 'Photos')]] : [], [['match', '🧩', L('จับคู่', 'Match')]], pre ? [] : [['mood', '😊', L('วันนี้รู้สึก', 'My mood')]],
+        wild.length ? [['animals', '🦘', L('สัตว์', 'Animals')]] : [], [['numbers', '🔢', L('นับเลข', 'Count')]], [['trophies', '🏆', L('รางวัล', 'Trophies')]]).filter(Boolean);
     const until = daysUntil(t);
+    const btns = tiles.map(([v, e, lbl]) => `<button data-a="kidnav" data-v="#/kid/${esc(kid)}/${v}" data-say="${esc(lbl)}"><span>${e}</span><b>${lbl}</b></button>`)
+      .concat(story ? [`<button class="night" data-a="bedtime" data-v="${esc(story.id)}"><span>🌙</span><b>${L('นิทาน', 'Story')}</b></button>`] : [],
+        heartsFor(kid).length && !fresh.length ? [`<button class="love" data-a="kidnav" data-v="#/kid/${esc(kid)}/hearts" data-say="${esc(L('หัวใจจากครอบครัว', 'Hearts from the family'))}"><span>💗</span><b>${heartsFor(kid).length}</b></button>`] : []);
+    const pages = []; for (let k = 0; k < btns.length; k += 4) pages.push(btns.slice(k, k + 4));
     body = `${fresh.length ? `<button class="kidhearts" data-a="kidnav" data-v="#/kid/${esc(kid)}/hearts" data-say="${esc(heartLine(fresh[0], kid))}"><span class="float" aria-hidden="true">💗</span><span class="e">${esc(fresh[0].emoji)}</span><b>${esc(L(`${fresh[0].from} ส่งหัวใจให้หนู!`, `${fresh[0].from} sent you a heart!`))}</b>${fresh.length > 1 ? `<small>+${fresh.length - 1}</small>` : ''}</button>` : ''}
-<div class="kidhello">${kidArt(kid) ? `<img src="${kidArt(kid, true)}" alt="">` : ''}<p>${pre ? L(`อีก <b>${until}</b> วันไป${esc(T(t.title).split(' · ')[0])}!`, `<b>${until}</b> ${until === 1 ? 'sleep' : 'sleeps'} to ${esc(T(t.title).split(' · ')[0])}!`) : L(`สวัสดี ${esc(name)}!`, `Hi ${esc(name)}!`)}</p></div>
+<div class="kidhello">${kidArt(kid) ? `<img src="${kidArt(kid, true)}" alt="">` : ''}<p>${pre ? L(`อีก <b>${until}</b> วันไป${esc(T(t.title).split(' · ')[0])}!`, `<b>${until}</b> ${until === 1 ? 'sleep' : 'sleeps'} to ${esc(T(t.title).split(' · ')[0])}!`) : L(`สวัสดี ${esc(name)}! วันนี้เล่นอะไรดี?`, `Hello ${esc(name)}! What shall we play?`)}</p></div>
 <nav class="kiddays">${t.days.map((x, j) => `<button data-a="kidday" data-v="${j}" aria-pressed="${j === i}" aria-label="${L('วันที่', 'Day')} ${j + 1}">${artImg(t, j)}</button>`).join('')}</nav>
-<div class="kidtiles">${tiles.map(([v, e, lbl]) => `<button data-a="kidnav" data-v="#/kid/${esc(kid)}/${v}" data-say="${esc(lbl)}"><span>${e}</span><b>${lbl}</b></button>`).join('')}
-${story ? `<button class="night" data-a="bedtime" data-v="${esc(story.id)}"><span>🌙</span><b>${L('นิทาน', 'Story')}</b></button>` : ''}
-${heartsFor(kid).length && !fresh.length ? `<button class="love" data-a="kidnav" data-v="#/kid/${esc(kid)}/hearts" data-say="${esc(L('หัวใจจากครอบครัว', 'Hearts from the family'))}"><span>💗</span><b>${heartsFor(kid).length}</b></button>` : ''}</div>`;
+<div class="kidpagerwrap"><button class="kparrow prev" data-a="kidpage" data-v="-1" aria-label="${L('หน้าก่อน', 'Previous page')}" hidden>‹</button>
+<div class="kidpager" id="kidpager">${pages.map((pg, n) => `<div class="kpage kidtiles" data-n="${n}">${pg.join('')}</div>`).join('')}</div>
+<button class="kparrow next" data-a="kidpage" data-v="1" aria-label="${L('หน้าถัดไป', 'Next page')}"${pages.length > 1 ? '' : ' hidden'}>›</button></div>
+${pages.length > 1 ? `<div class="kdots" id="kdots">${pages.map((_, n) => `<i${n === 0 ? ' class="on"' : ''}></i>`).join('')}</div>` : ''}`;
   } else if (view === 'colour') {
     body = `<div class="colourpad colsvg" data-src="${esc(colourUrl(t, i))}" data-fill="${esc(colourFill(t, i, kid))}" data-t="${esc(t.id)}" data-d="${i}" data-k="${esc(kid)}"></div>
 <div class="palette">${COLOURS.map((c) => `<button data-a="kidcolor" data-v="${c}" style="--c:${c}" aria-pressed="${c === kidColour}" aria-label="${c}"></button>`).join('')}</div>
@@ -439,13 +504,43 @@ ${mapHtml(t, i, [kid].concat((t.theme.children || []).map((c) => c.slug).filter(
 <div class="kidquiz">${d.plan.quiz.map((q, n) => `<button class="qcard" data-a="kidquiz" data-v="${n}" data-q="${esc(T(q.q))}" data-ans="${esc(T(q.a))}" aria-pressed="false"><small>${L('คำถาม', 'Question')} ${n + 1}</small><b>${esc(T(q.q))}</b><span class="ans" hidden>${esc(T(q.a))}</span></button>`).join('')}</div>`;
   } else if (view === 'stickers') {
     body = `<div class="kidguide">${guideImg(1)}<p>${L('ลากสติกเกอร์ไปแปะได้เลย!', 'Drag your stickers onto the page!')}</p></div>${stickerBoard(t, kid, true)}`;
+  } else if (view === 'photos') {
+    const ph = kidPhotos(t, i); if (kidPhoto >= ph.length) kidPhoto = 0; const m = ph[kidPhoto];
+    body = m ? `<div class="kidguide">${guideImg(0)}<p>${m.caption ? esc(m.caption) : L(`รูปวันที่ ${m.day + 1}`, `A photo from day ${m.day + 1}`)}</p></div>
+<button class="kidphoto" data-a="kidphoto" data-v="1" aria-label="${L('รูปถัดไป', 'Next photo')}"><img src="/media/${esc(m.id)}" alt=""></button>
+<div class="kpnav"><button class="kidbig ghost" data-a="kidphoto" data-v="-1" aria-label="${L('รูปก่อนหน้า', 'Previous')}">‹</button><span class="kpn">${kidPhoto + 1} / ${ph.length}</span><button class="kidbig ghost" data-a="kidphoto" data-v="1" aria-label="${L('รูปถัดไป', 'Next')}">›</button></div>`
+      : `<div class="kidguide">${guideImg(0)}<p>${L('ยังไม่มีรูปเลย', 'No photos yet')}</p></div>`;
+  } else if (view === 'match') {
+    if (!mg || mg.t !== t.id || mg.kid !== kid) newMatch(t, kid);
+    body = `<div class="kidguide">${guideImg(1)}<p>${mg.won ? L(`เก่งมาก! จับคู่ครบใน ${mg.moves} ครั้ง 🎉`, `Brilliant! All the pairs in ${mg.moves} goes 🎉`) : L('แตะเปิดการ์ดสองใบ หาคู่ที่เหมือนกัน!', 'Tap two cards — find the pairs!')}</p></div>
+<div class="mgrid">${mg.cards.map((c, n) => `<button class="mcard${mg.up.includes(n) || mg.done.has(c.k) ? ' open' : ''}${mg.done.has(c.k) ? ' done' : ''}" data-a="kidflip" data-v="${n}" aria-label="${L('การ์ด', 'Card')} ${n + 1}"><span class="back">?</span><span class="face">${c.img ? `<img src="${esc(c.img)}" alt="">` : esc(c.e)}</span></button>`).join('')}</div>
+<button class="kidbig ghost" data-a="kidnewmatch">🔁 ${L('เล่นใหม่', 'Play again')}</button>`;
+  } else if (view === 'mood' && !pre) {
+    const moods = t.moods.length ? t.moods : Object.keys(MOODW), cur = (S.entries.find((e) => e.id === `${t.id}.mood.d${i}.${kid}`) || {}).mood;
+    body = `<div class="kidguide">${guideImg(1)}<p>${cur ? L(`วันนี้${esc(name)}รู้สึก ${cur}`, `Today ${esc(name)} feels ${cur}`) : L(`${esc(name)} วันนี้รู้สึกยังไง?`, `${esc(name)}, how do you feel today?`)}</p></div>
+<div class="moodgrid">${moods.map((m) => `<button data-a="kidmood" data-t="${esc(t.id)}" data-d="${i}" data-k="${esc(kid)}" data-v="${esc(m)}" aria-pressed="${cur === m}"><span>${esc(m)}</span><b>${esc(MOODW[m] ? L(MOODW[m][0], MOODW[m][1]) : '')}</b></button>`).join('')}</div>`;
+  } else if (view === 'animals' && wild.length) {
+    body = `<div class="kidguide">${guideImg(0)}<p>${L('แตะสัตว์เพื่อฟังชื่อ · เจอตัวจริงแล้วแตะ 👀', 'Tap an animal to hear its name · tap 👀 when you spot one')}</p></div>
+<div class="animals">${wild.map((w, n) => { const key = `wild.${n}`, on = ticked(t, key, kid); return `<div class="an${on ? ' on' : ''}"><button class="hear" data-a="sayfacts" data-v="${esc(T(w.name))}. ${esc(T(w.text))}"><span>${esc(w.emo || '🐾')}</span><b>${esc(T(w.name))}</b></button><button class="seen" data-a="kidspot" data-t="${esc(t.id)}" data-d="" data-k="${esc(kid)}" data-v="${key}" data-say="${esc(L(`เจอ${T(w.name)}แล้ว!`, `Spotted a ${T(w.name)}!`))}" aria-pressed="${!!on}" aria-label="${L('เจอแล้ว', 'Spotted')}">${on ? '✓' : '👀'}</button></div>`; }).join('')}</div>`;
+  } else if (view === 'numbers') {
+    if (!cnt) newCount(t);
+    const done = cnt.hit.length >= cnt.n;
+    body = `<div class="kidguide">${guideImg(1)}<p>${done ? L(`ทั้งหมด ${cnt.n} ตัว! เก่งมาก 🎉`, `${cnt.n} altogether! Brilliant 🎉`) : L('แตะนับทีละตัว — มีกี่ตัวนะ?', 'Tap them one by one — how many?')}</p></div>
+<div class="countfield">${Array.from({ length: cnt.n }, (_, k) => `<button class="cnt${cnt.hit.includes(k) ? ' hit' : ''}" data-a="kidcount" data-v="${k}" aria-label="${k + 1}"><span>${esc(cnt.e)}</span><i>${cnt.hit.includes(k) ? cnt.hit.indexOf(k) + 1 : ''}</i></button>`).join('')}</div>
+<div class="bignum" id="bignum">${cnt.hit.length || ''}</div>
+<button class="kidbig ghost" data-a="kidnewcount">🔁 ${L('นับใหม่', 'Count again')}</button>`;
+  } else if (view === 'trophies') {
+    const all = trophies(t, kid), got = all.filter((x) => x[3]), seen = new Set(ls('tseen_' + kid) || []), fresh = got.filter((x) => !seen.has(x[0]));
+    if (fresh.length) ls('tseen_' + kid, got.map((x) => x[0]));
+    body = `<div class="kidguide${fresh.length ? ' pop' : ''}">${guideImg(0)}<p>${fresh.length ? L(`เย้! รางวัลใหม่: ${fresh.map((x) => x[2]).join(', ')} 🎉`, `Yay! New: ${fresh.map((x) => x[2]).join(', ')} 🎉`) : L(`${esc(name)} มี ${got.length} จาก ${all.length} รางวัล`, `${esc(name)} has ${got.length} of ${all.length} trophies`)}</p></div>
+<div class="trophies">${all.map((x) => `<button class="tro${x[3] ? ' got' : ''}${fresh.some((f) => f[0] === x[0]) ? ' new' : ''}" data-a="sayfacts" data-v="${esc(x[3] ? x[2] : L(`${x[2]} — ยังไม่ได้ ลองดูนะ`, `${x[2]} — not yet, keep going`))}"><span>${x[3] ? x[1] : '🔒'}</span><b>${esc(x[2])}</b></button>`).join('')}</div>`;
   } else if (view === 'hearts') {
     const hs = heartsFor(kid), seen = ls('hseen_' + kid) || 0;
     if (hs.length) ls('hseen_' + kid, Math.max(seen, hs[0].at));
     body = `<div class="kidhearts-list">${hs.map((h) => `<button class="${h.at > seen ? 'new' : ''}" data-a="kidheart" data-v="${esc(heartLine(h, kid))}"><span class="e">${esc(h.emoji)}</span><b>${esc(h.from)}</b>${h.text ? `<p>${esc(h.text)}</p>` : ''}<i>🔊</i></button>`).join('') || `<p class="kidguide"><span>${L('ยังไม่มีหัวใจ', 'No hearts yet')}</span></p>`}</div>`;
   } else body = `<button class="kidbig" data-a="kidnav" data-v="#/kid/${esc(kid)}">🏠</button>`;
   // kid mode's own bar: big pictures, read aloud on tap (data-say), no grown-up pages
-  const kb = [['', '🏠', L('บ้าน', 'Home')], pp.map && ['map', '🗺️', L('แผนที่', 'Map')], [pre ? 'colour' : 'stamp', pre ? '🎨' : '🛂', pre ? L('ระบายสี', 'Colour') : L('พาสปอร์ต', 'Passport')], ['stickers', '⭐', L('สติกเกอร์', 'Stickers')], ['hearts', '💗', L('หัวใจ', 'Hearts')]].filter(Boolean);
+  const kb = [['', '🏠', L('บ้าน', 'Home')], pp.map && ['map', '🗺️', L('แผนที่', 'Map')], [pre ? 'colour' : 'stamp', pre ? '🎨' : '🛂', pre ? L('ระบายสี', 'Colour') : L('พาสปอร์ต', 'Passport')], ['stickers', '⭐', L('สติกเกอร์', 'Stickers')], ['trophies', '🏆', L('รางวัล', 'Trophies')]].filter(Boolean);
   const bar = `<nav class="kidbar">${kb.map(([v, e, lbl]) => `<button data-a="kidnav" data-v="#/kid/${esc(kid)}${v ? '/' + v : ''}" data-say="${esc(lbl)}"${(v || 'home') === view ? ' aria-current="page"' : ''}><span>${e}</span><b>${lbl}</b></button>`).join('')}</nav>`;
   return `<div class="kidwrap" style="${style}">${head}${body}${lock}${bar}</div>`;
 }
@@ -456,7 +551,29 @@ Object.assign(A, {
   kidmode(b) { ls('kidmode', b.dataset.v || 'pick'); nav(b.dataset.v ? `#/kid/${b.dataset.v}` : '#/kid'); },
   kidpick(b) { beep('pop'); ls('kidmode', b.dataset.v); kidDay = null; nav(`#/kid/${b.dataset.v}`); },
   kidnav(b) { beep('tap'); kidDoor = null; nav(b.dataset.v); if (b.dataset.say) sayUi(b.dataset.say); },
-  kidday(b) { beep('pop'); kidDay = +b.dataset.v; mapAt = null; render(); },
+  kidday(b) { beep('pop'); kidDay = +b.dataset.v; mapAt = null; kidPhoto = 0; render(); },
+  kidpage(b) { beep('tap'); const pg = $('#kidpager'); if (pg) pg.scrollBy({ left: +b.dataset.v * pg.clientWidth, behavior: reduced() ? 'auto' : 'smooth' }); },
+  kidphoto(b) { beep('tap'); const t = trip(route().parts[1] && kidTrip(route().parts[1]).id), n = kidPhotos(t, kidDayOf(t)).length; if (!n) return; kidPhoto = (kidPhoto + +b.dataset.v + n) % n; render(); },
+  kidflip(b) {
+    const n = +b.dataset.v; if (!mg) return; const c = mg.cards[n];
+    if (mg.up.includes(n) || mg.done.has(c.k) || mg.up.length >= 2) return;
+    beep('tap'); mg.up.push(n); b.classList.add('open');
+    if (mg.up.length < 2) return;
+    mg.moves++; const [x, y] = mg.up.map((k) => mg.cards[k]);
+    if (x.k === y.k) {
+      mg.done.add(x.k); mg.up = []; beep('chime'); burst(b, ['⭐', '✨']);
+      if (mg.done.size * 2 === mg.cards.length) { mg.won = true; ls('match_' + mg.kid, (ls('match_' + mg.kid) || 0) + 1); setTimeout(() => { render(); sayUi(L('เก่งมาก!', 'Brilliant!')); }, 350); }
+    } else setTimeout(() => { mg.up = []; $$('.mcard').forEach((el, k) => { if (!mg.done.has(mg.cards[k].k)) el.classList.remove('open'); }); beep('thud'); }, 800);
+  },
+  kidnewmatch() { beep('pop'); const t = trip(mg.t); newMatch(t, mg.kid); render(); },
+  kidmood(b) { beep('pop'); const was = b.getAttribute('aria-pressed') === 'true'; A.mood(b); if (!was) { const w = MOODW[b.dataset.v]; sayUi(L(`วันนี้${kidName(b.dataset.k)}รู้สึก${w ? w[0] : ''}`, `Today ${kidName(b.dataset.k)} feels ${w ? w[1] : ''}`)); } render(); },
+  kidcount(b) {
+    const k = +b.dataset.v; if (!cnt || cnt.hit.includes(k)) return;
+    cnt.hit.push(k); const n = cnt.hit.length; beep('pop'); burst(b, [cnt.e, '✨']);
+    say(NUMW[lang === 'th' ? 'th' : 'en'][n - 1] || String(n), lang === 'th' ? 'th-TH' : 'en-GB');
+    if (n >= cnt.n) setTimeout(() => { beep('chime'); render(); sayUi(L(`ทั้งหมด ${n} ตัว!`, `${n} altogether!`)); }, 500); else render();
+  },
+  kidnewcount() { beep('pop'); const t = kidTrip(route().parts[1]); newCount(t); render(); },
   kidcolor(b) { beep('tap'); kidColour = b.dataset.v; $$('.palette button').forEach((x) => x.setAttribute('aria-pressed', x.dataset.v === kidColour)); },
   kidcolourdone(b) { beep('chime'); burst(b, ['🎨', '✨', '⭐']); setTimeout(() => nav(b.dataset.v), 600); },
   kidspot(b) {
