@@ -88,6 +88,7 @@ curl -b ck.txt -H 'x-mb: 1' --data-binary @memory-bookshelf-YYYY-MM-DD.zip https
 
 ## ทริปที่มากับแอป
 `server/seeds/*.json` (รูปแบบ `docs/handoff/trip.schema.json` + `theme` สีประจำเล่มตาม `docs/DESIGN.md`) — แก้แล้ว deploy ใหม่ ระบบอัปเดตชื่อวัน/ที่ไปให้ โดยไม่แตะบันทึกเดิม · **ห้ามเปลี่ยน `key` ของที่ไปในทริปที่เริ่มแล้ว** (เป็นตัวผูกเช็คอิน) ให้เพิ่มรายการใหม่แทน
+เล่มใหม่: วางแผนใน session ไหนก็ได้ → ส่งลิงก์ Artifact ให้ Claude Code → `plan.json` → `npm run plan-to-seed -- plan.json` (เติมค่าเริ่มต้นครบ + ปฏิเสธเลขจอง/ค่าใช้จ่าย/อีเมล) — ดู `docs/PLAN-TO-BOOK.md`
 
 ## พัฒนาในเครื่อง
 ดู `CLAUDE.md` (คำสั่ง Postgres ในเครื่อง, `npm test`, โครงสร้างโค้ด)
