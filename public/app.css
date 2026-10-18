@@ -1030,3 +1030,30 @@ p.money b{color:color-mix(in srgb,var(--leaf) 70%,var(--ink))}
 .elost{margin:12px 0 0;color:var(--hot);font-weight:700;font-size:14px}
 .stayc.tonight{border-top-color:var(--hot)}.stayc.tonight h4{font-size:22px}
 .tile.kid b{color:#B4570F}.tile.kid .e{background:#FFE0B8}
+
+/* learn page like the manual's "Key facts": ruled fact cards, day folds with the day's art, bright quiz, animal cards */
+.tp-learn .gcards{gap:4px 28px;grid-template-columns:repeat(auto-fill,minmax(min(100%,300px),1fr))}
+.tp-learn .gcard{background:none;border-radius:0;border-top:3px solid var(--tc);padding:8px 0 12px}
+.tp-learn .gcard .kicker{color:color-mix(in srgb,var(--tc) 70%,var(--ink));letter-spacing:.06em}
+.tp-learn .gcard b{font-family:var(--display);font-size:19px;line-height:1.25;color:var(--ink)}
+.tp-learn .gcard p{font-size:14px;margin:4px 0 0}
+.tp-learn details.sub{border-bottom:1px solid var(--rule);padding:8px 0}
+.tp-learn details.sub>summary{cursor:pointer;font-size:15px;font-weight:600;list-style:none;display:flex;align-items:center;gap:6px}
+.tp-learn details.sub>summary::-webkit-details-marker{display:none}
+.tp-learn details.sub>summary b{color:color-mix(in srgb,var(--tc) 75%,var(--ink))}
+.tp-learn details.sub[open]>summary{margin-bottom:6px}
+.tp-learn .learn{background:color-mix(in srgb,var(--tc) 8%,var(--paper));border-left:4px solid var(--tc);border-radius:0 8px 8px 0;padding:10px 14px;margin:10px 0}
+.tp-learn .learn>b{font-family:var(--display);font-size:17px}
+.tp-learn .learn>.label{display:inline-block;margin-left:6px;font-size:11px;font-weight:600;border-radius:999px;padding:1px 8px;background:color-mix(in srgb,var(--tc) 16%,var(--paper));color:color-mix(in srgb,var(--tc) 80%,var(--ink))}
+.tp-learn .learn ul{font-size:14px;line-height:1.5}
+.tp-learn .learn .kidline{background:color-mix(in srgb,var(--sun) 18%,var(--paper));border-radius:8px;padding:6px 10px;color:var(--ink);font-weight:600;margin-top:6px}
+.qa{background:color-mix(in srgb,var(--grape) 9%,var(--paper));border-left:4px solid var(--grape);border-radius:0 10px 10px 0}
+.qa summary{font-size:14px}.qa[open]{background:color-mix(in srgb,var(--leaf) 11%,var(--paper));border-left-color:var(--leaf)}
+.qa p{font-weight:700;color:color-mix(in srgb,var(--leaf) 70%,var(--ink))}
+.words{margin:4px 0;display:grid;gap:0}.words div{display:grid;grid-template-columns:minmax(110px,40%) 1fr;gap:10px;padding:7px 0;border-bottom:1px solid var(--rule);font-size:14px}
+.words dt{font-weight:700;color:color-mix(in srgb,var(--tc) 75%,var(--ink))}.words dd{margin:0}
+@media (max-width:380px){.words div{grid-template-columns:1fr;gap:2px}}
+.wildg{display:grid;grid-template-columns:repeat(auto-fill,minmax(min(100%,280px),1fr));gap:10px;margin-top:8px}
+.wc{display:flex;gap:12px;align-items:flex-start;padding:12px;border-radius:12px;background:color-mix(in srgb,var(--tc) 8%,var(--paper));border:1px solid color-mix(in srgb,var(--tc) 20%,transparent)}
+.wc .we{flex:none;display:grid;place-items:center;width:52px;height:52px;border-radius:50%;background:color-mix(in srgb,var(--sun) 22%,var(--paper));font-size:30px}
+.wc b{font-size:15px}.wc p{margin:2px 0 0;font-size:13.5px;line-height:1.45}
