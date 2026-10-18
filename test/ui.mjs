@@ -737,6 +737,7 @@ const T = 'hk-macau-2026';
   await page.click('[data-a="eatk"][data-v="-1"]'); await page.click('[data-a="eatpick"]');
   ok(await page.locator('.eatc:visible').count() === 61 && (await page.textContent('#eatn')).includes('61'), 'eat page: picks in the plan');
   ok(await s.noHScroll(), 'eat page fits the phone');
+  ok(await page.locator('.mealplan .mday').count() === 16 && /Adina kitchen/.test(await page.locator('.mealplan .mday').first().textContent()), 'AU eat page: every day has its meals, Day 1 dinner is the Adina kitchen or delivery');
   await s.shot('04-eat', false);
   await page.goto(`${BASE}/#/t/hk-macau-2026/eat`); await page.waitForSelector('.eatc');
   ok(await page.locator('.eatc:visible').count() === 223 && await page.locator('[data-a="eatpick"][aria-pressed="false"]').count() === 1 && await page.locator('.eatc .zh').count() > 150, 'eat page (HK): 223 places from the manual with Chinese names; filters reset for another book');
