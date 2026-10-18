@@ -326,6 +326,7 @@ const T = 'hk-macau-2026';
   await s.ctx.setOffline(false);
   await page.evaluate(() => { offline = false; return flush(); });
   await page.waitForFunction(() => queue.length === 0 && !offline, null, { timeout: 20000 });
+  await page.waitForSelector('.notice', { state: 'detached', timeout: 10000 }).catch(() => {});   // the re-render after load() is a tick later
   ok(await page.locator('.notice').count() === 0, 'back online: queued colouring sent, notice gone');
   await s.ctx.close();
 }
