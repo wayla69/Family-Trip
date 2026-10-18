@@ -94,6 +94,9 @@ const T = 'hk-macau-2026';
   await page.waitForFunction(() => queue.length === 0);
   ok(!(await apiState(page)).entries.some((e) => e.kind === 'fav'), 'emptying the favourite deletes it');
   await page.fill('#favtext', 'ไอติมมิกกี้'); await page.locator('#favtext').blur();
+  // let that save re-render the page first — a render landing mid-setInputFiles replaces the file input and drops the change
+  await page.waitForFunction(() => queue.length === 0 && document.activeElement && document.activeElement.id !== 'favtext');
+  await page.waitForTimeout(50);
 
   // photos: several at once, progress, lightbox
   await page.setInputFiles('#fpick', await Promise.all([0, 1, 2].map(async (i) => ({ name: `p${i}.jpg`, mimeType: 'image/jpeg', buffer: await jpg(i) }))));
