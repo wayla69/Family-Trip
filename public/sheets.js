@@ -163,6 +163,7 @@ const A = {
   storystop() { if (storyCtl) storyCtl.abort(); },
   lb(b) { openLb(b.dataset.t, b.dataset.v); },
   newtrip() { openSheet(newTripSheet()); },
+  pickphotos(b) { const fp = $('#fpick'); fp.dataset.t = b.dataset.t; fp.dataset.d = b.dataset.d; fp.click(); },
   // full backup zip (editors only on the server too); the browser downloads it in place, the page stays
   backup() {
     if (!navigator.onLine) { toast(L('ต้องต่อเน็ตก่อนจึงสำรองได้', 'Connect to the internet to back up')); return; }

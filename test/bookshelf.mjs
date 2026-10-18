@@ -123,7 +123,7 @@ ok(s.trips[0].days[0].done_at > 0 && s.trips.some((t) => t.slug === 'chiang-mai-
 // ---- the day's plan from the seed (manual's day card) is in the state, never bookings
 {
   const hk = (await state()).trips.find((t) => t.id === T), p3 = hk.days[3].plan;
-  ok(p3.plan.length === 9 && p3.plan[1].t === '11:00' && /teamLab/.test(p3.plan[1].en) && p3.pick && p3.planB && p3.money, 'day 4 plan: 9 timed steps, local pick, plan B, money');
+  ok(p3.plan.length === 10 && p3.plan[2].t === '11:00' && /teamLab/.test(p3.plan[2].en) && p3.pick && p3.planB && /MOP 784/.test(p3.money.en), 'day 4 plan (manual card): 10 timed steps, teamLab at 11:00, local pick, plan B, money');
   ok(hk.days.every((d) => d.plan && d.plan.plan && d.plan.plan.length) && hk.days.every((d) => !/(booking|PNR|confirmation)[^"]{0,20}\b(?=[A-Z]*\d)[A-Z0-9]{6}\b|\b(?=[A-Z]*\d)[A-Z0-9]{6}\b[^"]{0,20}(booking|PNR|confirmation)/i.test(JSON.stringify(d.plan))), 'every HK day has a plan; no booking references');
   ok(hk.days[0].plan.stay && /Pak Yan Road/.test(hk.days[0].plan.stay.addr) && hk.info.emergency[0].tel === '999' && hk.info.stays.length === 2 && hk.info.prices.rows.length >= 5, 'HK: tonight\'s stay with address, pocket guide (999, 2 stays, prices)');
   // Australia, imported from the owner's trip artifact: every day planned, nearby food, learn cards, quiz, pocket guide, Aussie words
@@ -135,7 +135,7 @@ ok(s.trips[0].days[0].done_at > 0 && s.trips.some((t) => t.slug === 'chiang-mai-
   ok(a2.picks.length === 3 && a2.picks[0].name === 'Fish Vibes' && /barramundi/.test(a2.picks[0].what.en) && a2.picks[0].alt.q.includes('Kiama') && a2.food.length === 6 && a2.food.every((f) => f.items.every((x) => x.q && x.what.en)), 'AU day 2: 3 meal picks (what + backup) and food by stop, every place with a maps query');
   ok(au.days.slice(1, 15).every((d) => d.plan.picks.length >= 3 && d.plan.food.length >= 2) && au.days.every((d) => d.plan.legs.length && d.plan.legs.every((g) => g.url || /TG /.test(g.by.en))), 'AU: picks + food every touring day; every non-flight leg has directions');
   ok([...au.days, ...hk.days].every((d) => d.planned.every((p) => p.q && p.q.length > 6)), 'every planned stop and meal in both books has a full Google Maps query');
-  ok(hk.days.every((d) => d.plan.legs.length && d.plan.legs.every((g) => /maps\/dir\//.test(g.url))) && /香港馬灣/.test(hk.info.stays[0].addr), 'HK: every day has legs with directions; stays carry the Chinese address for drivers');
+  ok(hk.days.every((d) => d.plan.legs.length && d.plan.legs.every((g) => /maps\/dir\//.test(g.url) || (!g.url && /TG 63[89]/.test(JSON.stringify(g.by))))) && /香港馬灣/.test(hk.info.stays[0].addr) && /挪亞方舟度假酒店/.test(hk.info.stays[0].addr), 'HK: every leg has directions (flights excepted); stays carry the Chinese name and address for drivers');
   const n = au.info;
   ok(n.drive.legs.length === 28 && n.car.rows.length >= 8 && n.kit.rows.length === 8 && n.ifthen.rows.length === 11 && n.ifthen.mishap.rows.length === 9 && n.ifthen.carry.rows.length === 10 && n.ifthen.crowd.rows.length === 11 && n.ifthen.book.rows.length === 13 && n.visa.groups.length === 4 && n.bio.groups.length === 2 && n.eatRules.rules.length === 4,
     'AU pocket guide complete: 28 drive legs, the van, kitchens, if-then + mishaps + who carries what + crowds + book-ahead, visa, biosecurity, eating rules');
