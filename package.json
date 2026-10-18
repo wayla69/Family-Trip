@@ -10,6 +10,7 @@
     "dev": "DATA_DIR=./data DATABASE_URL=${DATABASE_URL:-postgres://postgres:pg@localhost:5432/mb} FAMILY_CODE=hop2027 VIEW_TOKEN=grandma node server/index.js",
     "test": "node test/run.mjs",
     "check:migrations": "node scripts/check-migrations.js",
+    "new-book": "node scripts/new-book.mjs",
     "s3": "s3rver -d ./data/s3 -p 4569 --configure-bucket mb-test --silent"
   },
   "engines": {

@@ -41,6 +41,19 @@ fs.rmSync(tmp, { recursive: true, force: true });
   ok(/const V = 'mbs-v\d+'/.test(sw), 'sw.js has a cache version');
 }
 
+// the new-book scaffold (docs/NEW-BOOK.md) writes a complete format-2 seed that the seed loader accepts
+{
+  const { execFileSync } = await import('node:child_process');
+  const seedPath = path.resolve('server/seeds/zz-scaffold-test.json');
+  try {
+    const log = execFileSync(process.execPath, ['scripts/new-book.mjs', '--slug=zz-scaffold-test', '--from=2028-03-10', '--to=2028-03-14', '--tz=Asia/Tokyo', '--title-th=ทดสอบ', '--title-en=Test', '--flag=🇯🇵'], { encoding: 'utf8' });
+    const seed = JSON.parse(fs.readFileSync(seedPath, 'utf8'));
+    ok(seed.format === 2 && seed.days.length === 5 && seed.days[4].date === '2028-03-14' && seed.days[0].plan && seed.info.stays && seed.passport.countdown.doors.length === 14 && seed.passport.map && /checklist/.test(log), 'new-book scaffold: format 2, 5 dated days, plan/info/passport/countdown/map sections');
+    ok(seed.children.find((c) => c.slug === 'mimi').age_at_trip.en.startsWith('4'), 'new-book scaffold: ages at the trip computed from birth months');
+  } finally { fs.rmSync(seedPath, { force: true }); }
+  for (const f of fs.readdirSync(path.resolve('server/seeds'))) { const s = JSON.parse(fs.readFileSync(path.resolve('server/seeds', f), 'utf8')); ok(s.format === 2, `${f} declares format 2`); }
+}
+
 // migrations against the real database
 const pool = new Pool({ connectionString: process.env.DATABASE_URL });
 const logs = [];

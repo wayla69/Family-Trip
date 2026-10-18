@@ -28,6 +28,15 @@ function render() {
     hydrateColours(app); hydrateDraw(app); hydrateMap(app);
     return;
   }
+  if (p[0] === 'print' && (t = trip(p[1]))) {   // the memory book: A4 pages for the PDF (and a preview on screen)
+    document.documentElement.style.cssText = themeStyle(t); document.documentElement.lang = lang;
+    document.body.classList.toggle('serif', t.theme.display === 'serif'); document.body.classList.add('printbook');
+    document.title = `${T(t.title)} · ${L('สมุดความทรงจำ', 'Memory book')}`;
+    app.innerHTML = viewPrint(t);
+    if (typeof hydrateColours === 'function') hydrateColours(app);
+    return;
+  }
+  document.body.classList.remove('printbook');
   if (p[0] === 'cap') {   // deep link from the trip guide: #/cap?t=<trip>&d=<day>&key=<stop>
     const tid = mapLegacy(r.q.get('t')) || (curTrip() || {}).id, d = Math.max(0, (+r.q.get('d') || 0));
     history.replaceState(null, '', `#/t/${encodeURIComponent(tid)}/log/${d}`);
@@ -186,7 +195,7 @@ ${isEditor() && S.features.story && days.length ? storyBlock(t, null)
     : story ? `<div class="part">${L('นิทานของทั้งทริป', 'The story of the trip')}</div><div class="call calm" style="white-space:pre-line">${bedBtn(story)}${esc(story.text)}</div>` : ''}
 ${days.map((i) => dayPage(t, i)).join('') || `<div class="empty">${castHtml((t.theme.children || []).map((k) => k.slug))}${L('ยังไม่มีบันทึก — ', 'Nothing recorded yet — ')}${edit ? `<a href="#/t/${esc(t.id)}/log/${Math.max(0, dayNow(t))}">${L('เริ่มบันทึกวันแรก', 'start with a day')}</a>` : L('รอพ่อแม่บันทึกระหว่างทริป', 'the grown-ups will fill it in during the trip')}</div>`}
 ${offlineHtml(t)}
-<div class="row noprint" style="margin:28px 0 8px"><a class="btn small" href="/api/b/pdf/${esc(t.id)}" download data-a="pdf">⬇ ${L('ดาวน์โหลด PDF (A4)', 'Download PDF (A4)')}</a><button class="btn ghost small" data-a="print">🖨️ ${L('พิมพ์', 'Print')}</button><button class="btn ghost small" data-a="copytext">📋 ${L('คัดลอกเป็นข้อความ', 'Copy as text')}</button></div>`;
+<div class="row noprint" style="margin:28px 0 8px"><a class="btn small" href="/api/b/pdf/${esc(t.id)}" download data-a="pdf">📕 ${L('สมุดความทรงจำ (PDF A4)', 'Memory book (PDF A4)')}</a><a class="btn ghost small" href="#/print/${esc(t.id)}">👀 ${L('ดูตัวอย่างเล่ม', 'Preview the book')}</a><button class="btn ghost small" data-a="print">🖨️ ${L('พิมพ์หน้านี้', 'Print this page')}</button><button class="btn ghost small" data-a="copytext">📋 ${L('คัดลอกเป็นข้อความ', 'Copy as text')}</button></div>`;
 }
 // the whole plan, day by day, like the manual's day list: every day (recorded or not), where we sleep, the planned stops
 function itinerary(t) {
@@ -320,6 +329,74 @@ function drawingsHtml(t) {
   return ds.length ? `<div class="part">${L('ภาพวาดของเด็กๆ', "The kids' drawings")} 🖍️</div><div class="mosaic drawings">${ds.map((m) => photoBtn(t, m)).join('')}</div>` : '';
 }
 const bedBtn = (e) => `<button class="btn ghost small noprint bedbtn" data-a="bedtime" data-v="${esc(e.id)}">🌙 ${L('อ่านให้ฟังก่อนนอน', 'Read it at bedtime')}</button>`;
+
+/* ---------- the memory book (#/print/<trip> → /api/b/pdf/<trip>): the trip as a printed book after it ends ----------
+   A4 pages in the manual's language: cover · the trip in numbers + map + where we slept · contents · a page per recorded day
+   · firsts · in their own words · a passport spread per child (stamps, badges, Explorer ID, colourings, drawings, stickers,
+   certificate) · hearts from the family · the story of the trip · notes for the next trip · back cover. Nothing private
+   beyond what the book already holds (no bookings, no passport data). */
+function viewPrint(t) {
+  const kids = (t.theme.children || []).map((k) => k.slug).filter((k) => children().some((c) => c.slug === k));
+  const st = stats(t), days = t.days.map((_, i) => i).filter((i) => dayHasContent(t, i));
+  const hearts = heartsOf(t.id), drawings = mediaOf(t.id).filter(isDrawing), story = entriesOf(t.id).find((e) => e.kind === 'story' && e.day === null);
+  const quotes = entriesOf(t.id).filter((e) => e.kind === 'quote').sort((a, b) => (b.highlight ? 1 : 0) - (a.highlight ? 1 : 0) || a.at - b.at);
+  const firsts = entriesOf(t.id).filter((e) => e.kind === 'first').sort((a, b) => a.day - b.day);
+  const faves = mediaOf(t.id).filter((m) => m.highlight && !isDrawing(m)).slice(0, 3);
+  const short = T(t.title).split(' · ')[0], ages = kids.map((k) => { const a = (t.theme.children || []).find((c) => c.slug === k); return `${kidName(k)}${a && a.age ? ' ' + T(a.age) : ''}`; }).join(' · ');
+  const printed = new Date().toLocaleDateString(LOC(), { day: 'numeric', month: 'long', year: 'numeric' });
+  const stays = (t.info && t.info.stays) || [];
+  const pg = (cls, inner) => `<section class="pg ${cls}">${inner}</section>`;
+  const head = (kicker, title) => `<header class="pghd"><div class="kicker">${kicker}</div><h2>${title}</h2></header>`;
+  // 1 · cover
+  const cover = pg('cover', `<div class="cv"><div class="kicker">${esc(t.theme.kicker || '')}</div>
+<h1>${esc(short)}</h1><div class="sub-it">${esc(T(t.sub))}</div>
+<p class="line">${esc(fmtRange(t))}${ages ? ' · ' + esc(ages) : ''}</p>
+<div class="cvart">${t.days.slice(0, 8).map((_, i) => artImg(t, i)).join('')}</div>
+${faves.length ? `<div class="cvph">${faves.map((m) => `<img src="${esc(imgT(m))}" alt="">`).join('')}</div>` : ''}
+${castHtml(kids)}${stampHtml(t)}
+<p class="cvfoot">${L('สมุดความทรงจำ', 'Memory book')} · Memory Bookshelf · ${esc(printed)}</p></div>`);
+  // 2 · the trip in numbers, the map, where we slept
+  const facts = [[L('วัน', 'Days'), `${days.length}<small>/${t.days.length}</small>`], [L('รูป', 'Photos'), st.photos], [L('คำพูด', 'Quotes'), st.quotes], [L('ครั้งแรก', 'Firsts'), st.firsts], [L('ที่ไป', 'Places'), st.places]]
+    .concat(hearts.length ? [[L('หัวใจจากญาติ', 'Hearts'), hearts.length]] : [], drawings.length ? [[L('ภาพวาด', 'Drawings'), drawings.length]] : []);
+  const numbers = pg('numbers', `${head(L('ทริปนี้ในตัวเลข', 'The trip in numbers'), esc(short))}
+<div class="facts">${facts.map(([l, v]) => `<div class="fact"><span class="label">${l}</span><b>${v}</b></div>`).join('')}</div>
+<nav class="journey">${t.days.map((d, i) => `<span class="${dayStamped(t, i) ? 'on' : ''}">${artImg(t, i)}<b>${String(i + 1).padStart(2, '0')}</b><small>${esc(fmtDay(d.date, { day: 'numeric', month: 'short' }))}</small></span>`).join('')}</nav>
+${(t.passport || {}).map && typeof mapHtml === 'function' ? `<div class="pmap">${mapHtml(t, t.days.length - 1, kids)}</div>` : ''}
+${stays.length ? `<h4>🛏️ ${L('เรานอนที่ไหนบ้าง', 'Where we slept')}</h4><ol class="pstays">${stays.map((s) => `<li><b>${esc(T(s.prop))}</b> <span class="label">${esc(T(s.base))} · ${esc(T(s.ci))} → ${esc(T(s.co))}</span></li>`).join('')}</ol>`
+    : sleepStops(t).length ? `<h4>🛏️ ${L('เรานอนที่ไหนบ้าง', 'Where we slept')}</h4><ol class="pstays">${sleepStops(t).map((s) => `<li><b>${esc(s.name)}</b> <span class="label">${L('คืนที่', 'Nights')} ${esc(s.label)}</span></li>`).join('')}</ol>` : ''}`);
+  // 3 · contents
+  const contents = pg('contents', `${head(L('สารบัญ', 'Contents'), L('วันของเรา', 'Our days'))}<ol class="toc">${t.days.map((d, i) => `<li class="${dayHasContent(t, i) ? 'has' : ''}">${artImg(t, i)}<b>${String(i + 1).padStart(2, '0')}</b><span>${esc(T(d.title))}<small>${esc(fmtDay(d.date))}${dayHasContent(t, i) ? '' : ' · ' + L('ไม่มีบันทึก', 'nothing recorded')}</small></span></li>`).join('')}</ol>`);
+  // 4 · a page per recorded day (the book's own day page)
+  const dayPages = days.map((i) => pg('dayp', dayPage(t, i))).join('');
+  // 5 · firsts + 6 · in their own words
+  const firstsPg = firsts.length ? pg('firstsp', `${head(L('เหรียญตรา', 'Badges'), L('ครั้งแรกของทริปนี้', 'Firsts on this trip'))}<div class="badges">${firsts.map((e) => { const f = firstLabel(t, e.first_key); return `<div class="bdg"><span>${esc(e.first_key === 'custom' ? '⭐' : f.e)}</span><b>${esc(e.first_key === 'custom' ? e.text : f.t)}</b><small>${esc(kidName(e.child))} · ${L('วันที่', 'Day')} ${e.day + 1}</small></div>`; }).join('')}</div>`) : '';
+  const wordsPg = quotes.length ? pg('wordsp', `${head(L('คำพูดของเด็กๆ', 'In their own words'), L('สิ่งที่หนูพูด', 'Things they said'))}<div class="qgrid">${quotes.map((e) => `<div class="call ${e.highlight ? 'pick' : 'info'}"><div class="who">${kidBadge(e.child)}${esc(kidName(e.child))} · ${L('วันที่', 'Day')} ${e.day + 1}</div><q>${esc(e.text)}</q></div>`).join('')}</div>`) : '';
+  // 7 · a passport spread per child
+  const ppPages = kids.map((kid) => {
+    const name = kidName(kid), pp = t.passport || {}, myFirsts = firsts.filter((e) => e.child === kid), mine = drawingsOf(t, kid), cert = pp.certificate, cl = (pp.lists || []).find((l) => l.certificate);
+    const colours = t.days.map((_, i) => i).filter((i) => fieldVal(t, `colour.d${i}`, kid));
+    const idRows = [['fav_animal', L('สัตว์ที่ชอบที่สุด', 'Favourite animal')], ['superpower', L('พลังพิเศษ', 'Superpower')], ['height_first', L('ส่วนสูงวันแรก', 'Height on day 1')], ['height_last', L('ส่วนสูงวันสุดท้าย', 'Height on the last day')]].filter(([k]) => fieldVal(t, k, kid));
+    return pg('ppp kid-' + kid, `${head(L('พาสปอร์ตนักผจญภัย', 'Adventure passport'), `${kidFace(kid)} ${esc(name)}`)}
+<div class="ppcols"><div>
+<div class="dstamps">${t.days.map((d, i) => `<div class="dstamp${dayStamped(t, i) ? ' on' : ''}" style="--r:${((i * 37 + t.id.length * 11) % 17) - 8}deg">${artImg(t, i)}<small>${esc(((pp.days || [])[i] || {}).stamp || fmtDay(d.date, { day: 'numeric', month: 'short' }))}</small></div>`).join('')}</div>
+${idRows.length ? `<dl class="pid">${idRows.map(([k, l]) => `<div><dt>${l}</dt><dd>${esc(fieldVal(t, k, kid))}</dd></div>`).join('')}</dl>` : ''}
+${myFirsts.length ? `<div class="badges sm">${myFirsts.map((e) => { const f = firstLabel(t, e.first_key); return `<div class="bdg"><span>${esc(e.first_key === 'custom' ? '⭐' : f.e)}</span><b>${esc(e.first_key === 'custom' ? e.text : f.t)}</b><small>${L('วันที่', 'Day')} ${e.day + 1}</small></div>`; }).join('')}</div>` : ''}
+</div><div>
+${colours.length ? `<div class="pcolours">${colours.slice(0, 6).map((i) => `<div class="colsvg sm" data-src="${esc(colourUrl(t, i))}" data-fill="${esc(colourFill(t, i, kid))}"></div>`).join('')}</div>` : ''}
+${mine.length ? `<div class="pdraw">${mine.slice(0, 4).map((m) => `<img src="${esc(imgT(m))}" alt="">`).join('')}</div>` : ''}
+${typeof stickerBoard === 'function' && stickersPlaced(t, kid).length ? `<div class="pstk">${stickerBoard(t, kid, false)}</div>` : ''}
+${cert && cl && certEarned(t, kid) ? `<div class="pcert"><div class="kicker">${L('ใบประกาศเกียรติคุณ', 'Certificate')}</div><b>${esc(T(cert.title))}</b><p>${esc(T(cert.text))}</p></div>` : ''}
+</div></div>`);
+  }).join('');
+  // 8 · hearts · 9 · the story · 10 · for the next trip · 11 · back cover
+  const heartsPg = hearts.length ? pg('heartsp', `${head(L('จากครอบครัว', 'From the family'), L('หัวใจถึงเด็กๆ', 'Hearts for the kids'))}<ul class="hlist">${hearts.map((h) => `<li><span class="he">${esc(h.emoji)}</span><div class="grow"><b>${esc(h.from)}</b> → ${esc(kidName(h.child))}${h.text ? `<p>${esc(h.text)}</p>` : ''}<small class="label">${esc(new Date(h.at).toLocaleDateString(LOC(), { day: 'numeric', month: 'short' }))}</small></div></li>`).join('')}</ul>`) : '';
+  const storyPg = story ? pg('storyp', `${head(L('นิทานของทั้งทริป', 'The story of the trip'), esc(short))}<div class="call calm storytxt">${esc(story.text)}</div>`) : '';
+  const rs = S.reviews.filter((r) => r.trip === t.id && (r.rating || r.note));
+  const notesPg = rs.length ? pg('notesp', `${head(L('บันทึกของพ่อแม่', "Parents' notes"), L('สำหรับทริปหน้า', 'For the next trip'))}<ul class="nblist">${rs.sort((a, b) => (b.rating || 0) - (a.rating || 0)).map((r) => `<li class="nbrow"><div class="nbhead"><span class="st">${r.rating ? starsTxt(r.rating) : '—'}</span><b>${RKIND[r.kind][0]} ${esc(T(r.name))}</b>${kidFaces(r.kids)}</div><div class="label">${(r.tags || []).map((k) => esc(rtagLabel(r.kind, k))).join(' · ')}</div>${r.note ? `<p>${esc(r.note)}</p>` : ''}</li>`).join('')}</ul>`) : '';
+  const back = pg('back', `<div class="bk">${castHtml(kids)}<h2>${L('จบเล่ม', 'The end')}</h2><p>${esc(short)} · ${esc(fmtRange(t))}</p><p class="label">${L(`${st.photos} รูป · ${st.quotes} คำพูด · ${st.firsts} ครั้งแรก · บันทึก ${days.length} วัน`, `${st.photos} photos · ${st.quotes} quotes · ${st.firsts} firsts · ${days.length} days recorded`)}</p><p class="label">Memory Bookshelf · ${esc(printed)}</p></div>`);
+  return `<div class="pbook noprint-bar"><a class="btn small" href="/api/b/pdf/${esc(t.id)}" download data-a="pdf">⬇ ${L('ดาวน์โหลด PDF', 'Download PDF')}</a><a class="btn ghost small" href="#/t/${esc(t.id)}">‹ ${L('กลับไปสมุด', 'Back to the book')}</a><span class="label">${L('ตัวอย่างสมุดความทรงจำ — หน้า A4 ตามที่จะพิมพ์', 'Memory book preview — A4 pages as they will print')}</span></div>
+${cover}${numbers}${contents}${dayPages}${firstsPg}${wordsPg}${ppPages}${heartsPg}${storyPg}${notesPg}${back}`;
+}
 
 /* ---------- bedtime story by Claude (editors, only when pressed) ---------- */
 function storyBlock(t, day) {

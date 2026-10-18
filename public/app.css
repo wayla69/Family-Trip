@@ -757,6 +757,49 @@ img.face+img.face{margin-left:-.45em}
 
 /* ---------- print (A4, like the manual) ---------- */
 @page{size:A4;margin:16mm 14mm}
+/* ---------- the memory book (#/print): A4 pages on screen and in the PDF ---------- */
+body.printbook{background:#E9E6E0;padding:0}
+.pbook{max-width:794px;margin:0 auto;padding:12px 16px;display:flex;gap:10px;align-items:center;flex-wrap:wrap}
+.pg{position:relative;width:min(100%,794px);min-height:1123px;margin:0 auto 18px;background:#fff;color:#1F2A3A;padding:16mm 14mm;box-shadow:0 10px 30px -18px rgba(0,0,0,.5);break-after:page;overflow:hidden}
+.pg .day{break-before:auto;border-top:0;margin-top:0;padding-top:0}
+.pghd{margin-bottom:14px;padding-bottom:8px;border-bottom:1px solid var(--rule)}
+.pghd h2{font-family:var(--display);font-size:30px;line-height:1.1;font-weight:600;margin-top:2px}
+.pg.cover{display:flex}.cv{position:relative;flex:1;padding:8px 0 0 22px;display:flex;flex-direction:column}
+.cv::before{content:"";position:absolute;left:0;top:0;bottom:0;width:10px;background:var(--accent);border-radius:2px}
+.cv h1{font-family:var(--display);font-size:60px;line-height:1;font-weight:600;margin-top:14px;max-width:80%}
+.cv .sub-it{font-size:30px;color:var(--accent);margin-top:4px}
+.cv .line{color:var(--muted);margin-top:8px}
+.cv .stamp{position:absolute;right:0;top:0}
+.cvart{display:flex;gap:6px;margin-top:28px;flex-wrap:wrap}.cvart .art{width:64px;height:64px}
+.cvph{display:grid;grid-template-columns:repeat(3,1fr);gap:10px;margin-top:22px}.cvph img{width:100%;aspect-ratio:4/3;object-fit:cover;border-radius:6px;box-shadow:0 4px 12px -8px rgba(0,0,0,.5);background:#fff;padding:6px 6px 22px;border:1px solid var(--rule)}
+.cv .cast{margin-top:auto;align-self:flex-end;margin-bottom:30px}.cv .cast .who{height:170px}.cv .cast .who.mika{height:125px}
+.cvfoot{font-size:12px;color:var(--muted);letter-spacing:.06em;text-transform:uppercase}
+.pg .facts{margin:6px 0 16px}
+.pg .journey{margin:0 0 14px}
+.pmap{max-width:560px;margin:0 auto 14px}.pmap .walkers img{height:60px}.pmap .walkers img.mika{height:46px}
+.pg h4{font-size:14px;color:var(--accent);margin:10px 0 6px}
+.pstays{margin:0;padding-left:20px;font-size:14px}.pstays li{padding:3px 0}
+.toc{list-style:none;margin:0;padding:0}.toc li{display:flex;align-items:center;gap:12px;padding:8px 0;border-bottom:1px solid var(--rule);font-size:15px;opacity:.55}.toc li.has{opacity:1}
+.toc .art{width:40px;height:40px}.toc b{font-family:var(--display);font-size:22px;color:var(--accent);min-width:38px}.toc small{display:block;color:var(--muted);font-size:12px}
+.qgrid{columns:2;column-gap:14px}.qgrid .call{break-inside:avoid;margin:0 0 10px}
+.badges.sm .bdg{font-size:12px}
+.ppcols{display:grid;grid-template-columns:1fr 1fr;gap:18px}
+.pg .dstamps{display:grid;grid-template-columns:repeat(3,1fr);gap:10px 6px}
+.pid{margin:14px 0 0;display:grid;gap:4px}.pid div{display:flex;justify-content:space-between;gap:8px;font-size:13px;border-bottom:1px solid var(--rule);padding:4px 0}.pid dt{color:var(--muted)}.pid dd{margin:0;font-weight:600}
+.pcolours{display:grid;grid-template-columns:repeat(2,1fr);gap:8px;margin-bottom:10px}.pcolours .colsvg.sm{width:100%;height:auto;aspect-ratio:1;margin:0}
+.pdraw{display:grid;grid-template-columns:repeat(2,1fr);gap:8px;margin-bottom:10px}.pdraw img{width:100%;aspect-ratio:4/3;object-fit:cover;border-radius:8px;border:1px solid var(--rule)}
+.pstk .stkboard{max-height:none}.pstk .stkhd{display:none}
+.pcert{margin-top:12px;border:2px solid var(--accent);border-radius:12px;padding:12px 14px;text-align:center}.pcert b{display:block;font-family:var(--display);font-size:20px;margin:4px 0}.pcert p{margin:0;font-size:13px}
+.storytxt{white-space:pre-line;font-size:16px;line-height:1.7}
+.pg.back{display:grid;place-items:center;text-align:center}.bk h2{font-family:var(--display);font-size:40px;margin:14px 0 6px}.bk .cast{justify-content:center}.bk .cast .who{height:150px}.bk .cast .who.mika{height:110px}
+@media (max-width:600px){.pg{min-height:0;padding:20px 16px}.ppcols,.qgrid{display:block;columns:1}.cv h1{font-size:40px;max-width:none}}
+@media print{
+  body.printbook{background:#fff}
+  .pbook{display:none}
+  .pg{width:auto;min-height:0;margin:0;box-shadow:none;padding:0;break-after:page;overflow:visible}
+  .pg:last-child{break-after:auto}
+  @page{size:A4;margin:14mm 12mm}
+}
 @media print{
   body{padding:0;background:#fff;color:#1F2A3A}
   .top,nav.bar,.noprint,.toast{display:none!important}
