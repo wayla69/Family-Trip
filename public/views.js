@@ -775,10 +775,13 @@ function viewEat(t) {
   if (eatTrip !== t.id) { eatTrip = t.id; eatQ = ''; eatKind = -1; eatPick = false; }   // filters belong to one book
   const r = eatData(t), all = eatCount(t), kinds = r.kinds || [];
   // one entry, laid out like the manual's "Where to eat" page: name · pin · address · type tag, a line, then price + when
+  // one place as a small card: name + type on top, where it is, a line about it, then price / when + directions at the foot
   const card = (g, x) => `<li class="eatc${(x.pick || []).length ? ' pk' : ''}" data-s="${esc(eatText(g, x))}" data-k="${eatKindOf(g, x)}" data-p="${(x.pick || []).length ? 1 : 0}"${eatShow(g, x) ? '' : ' hidden'}>
-<div class="eh">${(x.pick || []).map((k) => `<span class="badge">★ ${esc(T(k))}</span> `).join('')}<b>${mapA(x.q || x.name, esc(x.name))}</b>${x.zh ? ` <span class="zh">${esc(x.zh)}</span>` : ''} ${extA(mapsUrl(x.q || x.name), `<span class="mpin" aria-hidden="true"></span><span class="vh">${L('แผนที่', 'Map')}</span>`, 'pinlink')}${x.where ? `<span class="addr">· ${esc(x.where)}</span>` : ''}${T(x.tag) ? ` <span class="etag t-${esc(x.tk || 'x')}">${esc(T(x.tag))}</span>` : ''}${x.tour ? ` <span class="etag tour">${L('สายนักท่องเที่ยว', 'Tourist spot')}</span>` : ''}</div>
-${T(x.what) ? `<p>${esc(T(x.what))}</p>` : ''}${T(x.why) ? `<p class="why"><b>${L('เหมาะกับเด็ก', 'For the kids')}</b> ${esc(T(x.why))}</p>` : ''}
-<div class="emeta">${T(x.pr) ? `<span class="pr">${esc(T(x.pr))}</span>` : ''}${T(x.note) ? `<span class="nt">${esc(T(x.note))}</span>` : ''}${T(x.hours) ? `<span class="hr">${esc(T(x.hours))}</span>` : ''}${extA(`https://www.google.com/maps/dir/?api=1&destination=${encodeURIComponent(x.q || x.name)}`, L('นำทาง', 'Directions') + ' ↗', 'go')}</div></li>`;
+${(x.pick || []).length ? `<div class="epk">${x.pick.map((k) => `<span>★ ${esc(T(k))}</span>`).join('')}</div>` : ''}
+<div class="et"><b class="en">${mapA(x.q || x.name, esc(x.name))}</b>${extA(mapsUrl(x.q || x.name), `<span class="mpin" aria-hidden="true"></span><span class="vh">${L('แผนที่', 'Map')}</span>`, 'pinlink')}${T(x.tag) ? `<span class="etag t-${esc(x.tk || 'x')}">${esc(T(x.tag))}</span>` : ''}${x.tour ? `<span class="etag tour">${L('สายนักท่องเที่ยว', 'Tourist spot')}</span>` : ''}</div>
+${x.zh || x.where ? `<div class="ew">${x.zh ? `<span class="zh">${esc(x.zh)}</span>` : ''}${x.where ? `<span>${esc(x.where)}</span>` : ''}</div>` : ''}
+${T(x.what) ? `<p class="ed">${esc(T(x.what))}</p>` : ''}${T(x.why) ? `<p class="why"><b>${L('เหมาะกับเด็ก', 'For the kids')}</b> ${esc(T(x.why))}</p>` : ''}
+<div class="ef"><span class="echips">${T(x.pr) ? `<span class="pr">${esc(T(x.pr))}</span>` : ''}${T(x.note) ? `<span class="nt">${esc(T(x.note))}</span>` : ''}${T(x.hours) ? `<span class="hr">${esc(T(x.hours))}</span>` : ''}</span>${extA(`https://www.google.com/maps/dir/?api=1&destination=${encodeURIComponent(x.q || x.name)}`, ic('route') + ' ' + L('นำทาง', 'Go'), 'go')}</div></li>`;
   const shown = r.groups.reduce((n, g) => n + g.items.filter((x) => eatShow(g, x)).length, 0);
   return `<section class="eatpage"><div class="part">${L('ร้านอาหารทั้งหมด', 'All places to eat')} <span class="label">· ${esc(T(t.title))}</span></div>
 ${r.lede ? `<p class="lede">${esc(T(r.lede))}</p>` : ''}

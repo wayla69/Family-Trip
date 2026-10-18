@@ -89,12 +89,18 @@ async function api(method, url, body, blob) {
   if (!r.ok) throw Object.assign(new Error('http ' + r.status), { code: r.status });
   return r.json();
 }
-async function load() {
+// a write that lands while the state is being fetched would be lost: the older answer would replace it locally and the next
+// tap would send a row without it (a review lost Mimi's 😍 this way) — so a fetch that overlapped a finished write is redone
+let written = 0;
+async function load(tries = 0) {
   try {
+    const w0 = written;
     const r = await fetch('/api/b/state', { credentials: 'same-origin', cache: 'no-store' });
     if (r.status === 401) { S = null; return 'auth'; }
     if (!r.ok) throw new Error('http ' + r.status);
-    S = await r.json(); offline = false; S.syncedAt = Date.now();
+    const fresh = await r.json();
+    if (written !== w0 && tries < 5) return load(tries + 1);
+    S = fresh; offline = false; S.syncedAt = Date.now();
     idb.set('state', S); ls('state', null);   // the offline copy lives in IndexedDB (an old localStorage copy is dropped)
   } catch (_) {
     const c = (await idb.get('state')) || ls('state');
@@ -152,7 +158,7 @@ async function flush() {
         else if (e.code === 415) toast(L('ไฟล์นี้ไม่ใช่รูปที่อ่านได้ — ข้ามรูปนี้', 'Not a readable photo — skipped'));
         else toast(L('บันทึกไม่สำเร็จ 1 รายการ', 'One change could not be saved') + ` (${e.code})`);
       }
-      queue.shift(); await idb.del(op.qid);
+      queue.shift(); written++; await idb.del(op.qid);
       if (op.blob && progress) progress.done++;
       renderProgress();
     }
