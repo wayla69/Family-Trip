@@ -183,9 +183,10 @@ const T = 'hk-macau-2026';
   await page.evaluate(() => { window.__said = []; Object.defineProperty(window, 'speechSynthesis', { configurable: true, value: {
     speak(u) { window.__said.push(`${u.text}|${u.lang}`); }, cancel() {}, onvoiceschanged: null,
     getVoices: () => ['zh-HK', 'th-TH', 'en-GB', 'pt-PT'].map((l) => ({ lang: l, name: l })) } }); });
+  await page.clock.setFixedTime(new Date('2026-12-06T12:00:00+08:00'));   // day 2 of the Hong Kong trip (timers keep running)
   await page.goto(`${BASE}/#/passport/mimi/${T}`); await page.waitForSelector('.kidgo');
   await page.click('.kidgo'); await page.waitForSelector('.kidwrap .kidtiles');
-  ok(await page.locator('.kidtiles button').count() === 4 && await page.locator('nav.bar').count() === 0, 'kid mode: 4 big tiles (colour, find, stamp, say), no tab bar');
+  ok(await page.locator('.kidtiles button').count() === 5 && await page.locator('nav.bar').count() === 0, 'kid mode on the trip: 5 big tiles (colour, draw, find, stamp, say), no tab bar');
   await page.goto(`${BASE}/#/t/${T}`); await page.waitForSelector('.kidwrap');
   ok(page.url().includes('#/kid/mimi'), 'kid mode is locked: other pages lead back to it');
   await page.click('.kiddays button[data-v="1"]');
@@ -327,7 +328,116 @@ const T = 'hk-macau-2026';
   ok(w === 403, 'viewer write → 403');
   ok(await page.evaluate(async () => (await fetch('/api/b/pdf/hk-macau-2026')).headers.get('content-type')) === 'application/pdf', 'viewer (relatives) can download the PDF');
   await s.shot('20-viewer');
+  // grandma sends Mimi a heart from the book
+  await page.goto(`${BASE}/#/t/${T}`); await page.waitForSelector('#hearts .hform');
+  await page.click('[data-a="heartto"][data-v="mimi"]'); await page.click('[data-a="heartemo"][data-v="🤗"]');
+  await page.click('[data-a="sendheart"]');
+  ok(await page.locator('.hlist li').count() === 0 && await page.evaluate(() => document.activeElement.id) === 'hfrom', 'heart: a sender name is asked for first');
+  await page.fill('#hfrom', 'Grandma'); await page.fill('#htext', 'Big hug from Grandma!');
+  await page.click('[data-a="sendheart"]');
+  await page.waitForFunction(() => queue.length === 0 && S.hearts.some((h) => h.from === 'Grandma' && !h.pending), null, { timeout: 10000 });
+  ok(await page.locator('.hlist li').count() === 1 && (await page.textContent('.hlist li')).includes('Big hug') && await page.locator('.hlist [data-a="delheart"]').count() === 1, 'heart: sent, listed in the book, grandma may take back her own');
+  ok(await page.evaluate(() => ls('heartfrom')) === 'Grandma' && await page.inputValue('#hfrom') === 'Grandma' && await page.inputValue('#htext') === '', 'heart: name remembered on this phone, note cleared');
+  await s.shot('21-viewer-heart');
   ok(s.errs.length === 0, 'viewer: no console errors ' + s.errs.join(' | '));
+  await s.ctx.close();
+}
+
+// ---------- before the trip: countdown doors, packing, finger drawing, hearts, bedtime story ----------
+{
+  const s = await session('countdown');
+  const { page } = s;
+  await page.clock.setFixedTime(new Date('2026-11-28T09:00:00+08:00'));   // 7 days before Hong Kong
+  await page.addInitScript(() => { window.__said = []; Object.defineProperty(window, 'speechSynthesis', { configurable: true, value: {
+    speak(u) { window.__said.push(`${u.text}|${u.lang}`); if (u.onend) setTimeout(() => u.onend({}), 5); }, cancel() {}, onvoiceschanged: null,
+    getVoices: () => ['zh-HK', 'th-TH', 'en-GB', 'pt-PT', 'en-AU'].map((l) => ({ lang: l, name: l })) } }); });
+  await login(page);
+  await page.click('button[data-a="lang"][data-v="en"]');
+  ok(await page.locator('.hero [data-a="kidmode"]').count() === 1, "shelf: before the trip grown-ups get a “today's surprise” button");
+  await page.click('.hero [data-a="kidmode"]'); await page.waitForSelector('.kidpick');
+  await page.click('.kidpick button[data-v="mimi"]'); await page.waitForSelector('.kidtiles');
+  const tiles = await page.locator('.kidtiles button').evaluateAll((bs) => bs.map((b) => b.dataset.v || b.dataset.a));
+  ok(tiles.some((v) => v.endsWith('/count')) && tiles.some((v) => v.endsWith('/pack')) && !tiles.some((v) => /\/(stamp|spot)$/.test(v)), 'kid mode before the trip: surprise + pack tiles, no stamp/find yet');
+  ok((await page.textContent('.kidhello p')).includes('7'), 'kid home counts down: 7 sleeps');
+  ok(await page.locator('.kidhearts').count() === 1 && (await page.textContent('.kidhearts')).includes('Grandma'), "hearts: grandma's heart waits on Mimi's home screen");
+  await s.shot('01-kid-countdown-home');
+  await page.click('.kidhearts'); await page.waitForSelector('.kidhearts-list button');
+  await page.locator('.kidhearts-list button').first().click();
+  ok((await page.evaluate(() => window.__said)).some((x) => x.includes('Grandma') && x.includes('Big hug')), 'hearts: tapping reads the note aloud');
+  await page.click('.kidback'); await page.waitForSelector('.kidtiles');
+  ok(await page.locator('.kidhearts').count() === 0 && await page.locator('.kidtiles .love').count() === 1, 'hearts: once seen the banner becomes a quiet 💗 tile');
+
+  // surprise doors: 8 of 14 open a week before (one a day), the rest locked
+  await page.click('.kidtiles button[data-v$="/count"]'); await page.waitForSelector('.doors .door');
+  ok(await page.locator('.door').count() === 14 && await page.locator('.door.ready').count() === 8 && await page.locator('.door.locked').count() === 6, 'countdown: 14 doors, 8 ready, 6 locked');
+  await page.locator('.door.locked').first().click();
+  ok((await page.evaluate(() => window.__said)).some((x) => /opens in 1 day/.test(x)), 'countdown: a locked door says when it opens');
+  await page.locator('.door[data-v="3"]').click(); await page.waitForSelector('#doorcard');
+  ok((await page.textContent('#doorcard')).includes('M̀h gōi') && await page.locator('#doorcard [data-a="kidword"][data-lang="zh-HK"]').count() === 1, 'countdown: door 4 teaches “M̀h gōi” with a Cantonese 🔊');
+  await s.shot('02-kid-door', false);
+  await page.click('[data-a="kiddoorclose"]'); await page.waitForSelector('.door.opened');
+  ok(await page.locator('.door.opened').count() === 1, 'countdown: the opened door stays open');
+  // help pack
+  await page.click('.kidback'); await page.click('.kidtiles button[data-v$="/pack"]'); await page.waitForSelector('.kidspots button');
+  await page.locator('.kidspots button').first().click(); await page.waitForSelector('.kidspots button.on');
+  ok(await page.locator('.kidspots button').count() === 10, 'pack: 10 big picture cards, tap = packed');
+  // finger drawing → a private picture (no day before the trip)
+  await page.click('.kidback'); await page.click('.kidtiles button[data-v$="/draw"]'); await page.waitForSelector('#kidcanvas');
+  await page.click('[data-a="kiddrawdone"]');
+  ok((await page.evaluate(() => window.__said)).some((x) => /Draw something first/.test(x)) && page.url().endsWith('/draw'), 'draw: an empty board is not saved');
+  const box = await page.locator('#kidcanvas').boundingBox();
+  await page.click('.palette button[data-v="#EF5350"]');
+  await page.mouse.move(box.x + 40, box.y + 40); await page.mouse.down();
+  for (let k = 1; k <= 12; k++) await page.mouse.move(box.x + 40 + k * 20, box.y + 40 + Math.sin(k) * 30);
+  await page.mouse.up();
+  await page.click('.palette button[data-v="#42A5F5"]'); await page.click('[data-a="kidpen"][data-v="48"]');
+  await page.mouse.move(box.x + 100, box.y + 150); await page.mouse.down(); await page.mouse.move(box.x + 250, box.y + 200); await page.mouse.up();
+  const red = await page.evaluate(() => { const d = document.querySelector('#kidcanvas').getContext('2d').getImageData(0, 0, 1200, 900).data; let n = 0; for (let k = 0; k < d.length; k += 4) if (d[k] > 200 && d[k + 1] < 120 && d[k + 2] < 120) n++; return n; });
+  ok(red > 500, `draw: the finger paints on the canvas (${red} red pixels)`);
+  ok(await s.noHScroll(), 'draw page fits the phone');
+  await s.shot('03-kid-draw', false);
+  await page.click('[data-a="kidundo"]');
+  await page.click('[data-a="kiddrawdone"]'); await page.waitForSelector('.kidtiles');
+  await page.waitForFunction(() => queue.length === 0, null, { timeout: 15000 });
+  let st = await apiState(page);
+  const dr = st.media.find((m) => m.id.startsWith('dr-mimi-'));
+  ok(dr && dr.day === null && dr.w === 1200 && dr.caption.includes('Mimi'), 'draw: saved as a private picture of the trip (no day before we go)');
+  ok(st.entries.some((e) => e.id === `${T}.tick.cd.4.mimi`) && st.entries.some((e) => e.id === `${T}.tick.pack.toy.mimi`), 'server: door 4 opened + toy packed, for Mimi only');
+  ok((await page.evaluate(async (id) => (await fetch('/media/' + id)).headers.get('content-type'), dr.id)) === 'image/jpeg', 'draw: the drawing is served like a photo (signed-in only)');
+
+  // leave kid mode; the drawing is in the book, then a bedtime story read aloud with turning pages
+  const lock = await page.locator('#kidexit').boundingBox();
+  await page.mouse.move(lock.x + lock.width / 2, lock.y + lock.height / 2); await page.mouse.down(); await page.waitForTimeout(1500); await page.mouse.up();
+  await page.waitForSelector('.pp .advc');
+  await page.evaluate(async () => { await fetch('/api/b/entries/hk-macau-2026.story.all', { method: 'PUT', headers: { 'x-mb': '1', 'content-type': 'application/json' }, body: JSON.stringify({ trip: 'hk-macau-2026', day: null, kind: 'story', text: 'Once upon a time Mimi and Mika flew to Hong Kong. The plane went whoosh!\n\nThey met Captain Pinky by the sea. Then they slept in a castle of lights.\n\nThe end.', lang: 'en' }) }); await load(); });
+  await page.goto(`${BASE}/#/t/${T}`); await page.waitForSelector('.cover');
+  ok(await page.locator('.mosaic.drawings img').count() === 1, "book: the kids' drawings section");
+  await page.locator('.bedbtn').first().click(); await page.waitForSelector('#bedtime .bttext');
+  ok(await page.locator('#bedtime .btdots i').count() === 3, 'bedtime: one page per paragraph');
+  await s.shot('04-bedtime', false);
+  await page.waitForSelector('#bedtime .bttext.end', { timeout: 15000 });
+  const said = await page.evaluate(() => window.__said);
+  ok(said.includes('Once upon a time Mimi and Mika flew to Hong Kong. |en-GB') && said.some((x) => x.startsWith('They met Captain Pinky')), 'bedtime: read aloud sentence by sentence, pages turn by themselves to “The end”');
+  await page.click('[data-a="btprev"]'); await page.click('[data-a="btclose"]');
+  ok(await page.locator('#bedtime').count() === 0, 'bedtime: closes');
+  ok(s.errs.length === 0, 'countdown: no console errors ' + s.errs.join(' | '));
+  await s.ctx.close();
+}
+// kid mode + bedtime player on a desktop, dark
+{
+  const s = await session('kid-wide', { width: 1440, height: 900, scheme: 'dark' });
+  const { page } = s;
+  await page.clock.setFixedTime(new Date('2026-12-07T19:30:00+08:00'));
+  await login(page);
+  await page.goto(`${BASE}/#/kid/mika`); await page.waitForSelector('.kidtiles');
+  ok(await s.noHScroll(), 'kid mode on a wide screen: no horizontal scroll');
+  await s.shot('01-kid-home', false);
+  await page.click('.kidtiles .night'); await page.waitForSelector('#bedtime .bttext');
+  await s.shot('02-bedtime', false);
+  await page.keyboard.press('Escape');
+  await page.click('.kidtiles button[data-v$="/draw"]'); await page.waitForSelector('#kidcanvas');
+  await s.shot('03-draw', false);
+  ok(s.errs.length === 0, 'kid wide: no console errors ' + s.errs.join(' | '));
   await s.ctx.close();
 }
 await browser.close();

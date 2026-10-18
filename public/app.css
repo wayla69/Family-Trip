@@ -531,6 +531,92 @@ body.kidmode{padding-bottom:0;background:var(--tint,#F3F6FA)}
 .sayrow{display:flex;gap:6px;align-items:center}.sayrow .tick{flex:1}
 .colsvg.sm{width:120px;height:120px;margin:10px 0 0 auto;background:#fff;border-radius:16px;padding:4px;box-shadow:0 4px 12px -8px rgba(0,0,0,.4)}
 .colsvg.sm svg{width:100%;height:100%}
+.kidtiles button:nth-child(5){background:#E8F0FF}.kidtiles button:nth-child(6){background:#FFF8D6}
+.kidtiles button.night{background:#1E2A4A!important}.kidtiles button.night b{color:#FFE9A8}
+.kidtiles button.love{background:#FFE4EE!important}.kidtiles button.love b{color:#C2185B}
+.kidhello p b{font-size:1.25em}
+/* hearts from the family, in kid mode */
+.kidhearts{position:relative;border:0;border-radius:28px;background:linear-gradient(135deg,#FFD1E1,#FFE9F1);display:flex;align-items:center;gap:12px;padding:14px 18px;text-align:left;box-shadow:0 10px 22px -14px #C2185B;overflow:hidden}
+.kidhearts .e{font-size:46px;line-height:1;animation:beat 1.2s ease-in-out infinite}
+.kidhearts b{font-size:22px;color:#AD1457;flex:1}
+.kidhearts small{font-size:18px;font-weight:700;color:#AD1457;background:#fff;border-radius:999px;padding:2px 10px}
+.kidhearts .float{position:absolute;right:16px;bottom:-10px;font-size:28px;opacity:0;animation:floatup 2.4s ease-in infinite}
+@keyframes beat{0%,100%{transform:scale(1)}15%{transform:scale(1.18)}30%{transform:scale(1)}45%{transform:scale(1.12)}}
+@keyframes floatup{0%{opacity:0;transform:translateY(0)}20%{opacity:.9}100%{opacity:0;transform:translateY(-90px) rotate(15deg)}}
+.kidhearts-list{display:grid;gap:12px}
+.kidhearts-list button{border:0;border-radius:24px;background:#fff;display:grid;grid-template-columns:auto 1fr auto;align-items:center;gap:4px 14px;padding:14px 18px;text-align:left;box-shadow:0 8px 18px -12px rgba(0,0,0,.4)}
+.kidhearts-list button.new{box-shadow:0 0 0 4px #F48FB1,0 8px 18px -12px rgba(0,0,0,.4)}
+.kidhearts-list .e{font-size:48px;grid-row:span 2}.kidhearts-list b{font-size:24px;color:#AD1457}
+.kidhearts-list p{grid-column:2;margin:0;font-size:18px}.kidhearts-list i{grid-row:1/3;grid-column:3;font-style:normal;font-size:28px}
+/* finger drawing */
+.drawpad{background:#fff;border-radius:24px;padding:6px;box-shadow:0 10px 22px -14px rgba(0,0,0,.4)}
+.drawpad canvas{display:block;width:100%;height:auto;aspect-ratio:4/3;max-height:52vh;object-fit:contain;border-radius:18px;touch-action:none;cursor:crosshair;background:#fff}
+.drawtools{display:flex;gap:10px;justify-content:center;flex-wrap:wrap}
+.drawtools button{width:60px;height:60px;border-radius:50%;border:0;background:#fff;font-size:28px;display:grid;place-items:center;box-shadow:0 4px 10px -6px rgba(0,0,0,.5)}
+.drawtools button i{display:block;border-radius:50%;background:#1F2A3A}
+.drawtools button[aria-pressed=true]{box-shadow:0 0 0 4px var(--accent)}
+.drawtools button.armed{background:#FFE0E0;box-shadow:0 0 0 4px #EF5350}
+.drawn{display:flex;gap:10px;overflow-x:auto;padding:4px 2px}
+.drawn img{width:96px;height:72px;object-fit:cover;border-radius:12px;background:#fff;box-shadow:0 4px 10px -6px rgba(0,0,0,.4);flex:none}
+.mdraw{display:flex;gap:8px;justify-content:flex-end;flex-wrap:wrap;margin:10px 0 0}
+.mdraw button{border:0;padding:0;background:#fff;border-radius:12px;overflow:hidden;box-shadow:0 4px 12px -8px rgba(0,0,0,.4)}
+.mdraw img{display:block;width:120px;height:90px;object-fit:cover}
+/* countdown doors */
+.doors{display:grid;grid-template-columns:repeat(auto-fill,minmax(88px,1fr));gap:10px}
+.door{position:relative;aspect-ratio:3/4;border:0;border-radius:18px 18px 10px 10px;background:#fff;display:grid;place-items:center;align-content:center;gap:2px;box-shadow:inset 0 0 0 3px color-mix(in srgb,var(--accent) 30%,#fff),0 8px 16px -12px rgba(0,0,0,.45)}
+.door b{position:absolute;left:10px;top:6px;font-size:18px;color:var(--accent)}
+.door span{font-size:40px;line-height:1}
+.door.ready{background:color-mix(in srgb,var(--accent) 14%,#fff);animation:wiggle 1.8s ease-in-out infinite}
+.door.locked{opacity:.55}.door.locked span{font-size:26px}
+.door.opened{background:color-mix(in srgb,var(--accent) 8%,#fff);box-shadow:inset 0 0 0 3px var(--accent)}
+@keyframes wiggle{0%,80%,100%{transform:rotate(0)}85%{transform:rotate(-4deg)}90%{transform:rotate(4deg)}95%{transform:rotate(-2deg)}}
+.doorcard{position:fixed;inset:0;z-index:30;background:rgba(20,28,40,.55);display:grid;place-items:center;padding:16px}
+.doorcard .in{width:min(100%,520px);background:var(--tint,#fff);border-radius:30px;padding:20px;display:grid;gap:14px;justify-items:center;text-align:center;animation:dooropen .5s cubic-bezier(.2,.8,.3,1.2) both;transform-origin:left center}
+.doorcard .art.big{width:min(56vw,220px);height:min(56vw,220px)}
+.doorcard .big{font-size:110px;line-height:1}
+.doorcard .kidguide{justify-content:center}.doorcard .kidguide p{font-size:21px;text-align:left}
+.doorcard .row{display:flex;gap:10px;flex-wrap:wrap;justify-content:center}
+.kidbig.ghost{background:#fff;color:var(--accent)!important;box-shadow:inset 0 0 0 3px var(--accent)}
+@keyframes dooropen{from{opacity:0;transform:perspective(800px) rotateY(-70deg)}to{opacity:1;transform:none}}
+/* bedtime story player */
+body.btopen{overflow:hidden}
+.bedtime{position:fixed;inset:0;z-index:60;background:radial-gradient(ellipse at 50% 0%,#2C3E6B 0%,#151D36 60%,#0B1022 100%);color:#F4EEDC;display:grid;grid-template-rows:1fr auto auto;padding:calc(56px + env(safe-area-inset-top,0px)) 16px calc(20px + env(safe-area-inset-bottom,0px));font-family:var(--ui);overflow:hidden}
+.bedtime .sky{position:absolute;inset:0;pointer-events:none}
+.bedtime .sky i{position:absolute;font-style:normal;font-size:12px;color:#FFF3C4;opacity:.7;animation:twinkle 3s ease-in-out infinite;animation-delay:var(--d)}
+.bedtime .moon{position:absolute;right:22px;top:calc(14px + env(safe-area-inset-top,0px));font-size:40px;filter:drop-shadow(0 0 18px rgba(255,236,160,.6))}
+@keyframes twinkle{0%,100%{opacity:.25}50%{opacity:.9}}
+.btclose{position:absolute;left:14px;top:calc(12px + env(safe-area-inset-top,0px));width:46px;height:46px;border-radius:50%;border:0;background:rgba(255,255,255,.12);color:#fff;font-size:20px;z-index:2}
+.btpage{position:relative;max-width:720px;width:100%;margin:0 auto;display:grid;align-content:center;justify-items:center;gap:18px;overflow-y:auto}
+.btpage.turn{animation:pageturn .6s ease both}
+@keyframes pageturn{from{opacity:0;transform:translateX(30px)}to{opacity:1;transform:none}}
+.btart{display:flex;align-items:flex-end;gap:10px}
+.btart .art{width:min(44vw,190px);height:min(44vw,190px);box-shadow:0 0 0 6px rgba(255,255,255,.08),0 0 40px rgba(255,236,160,.25)}
+.btart .cast .who{height:120px}.btart .cast .who.mika{height:88px}
+.bttext{font-size:clamp(20px,5.2vw,28px);line-height:1.6;text-align:center;margin:0;max-width:34ch}
+.bttext span{transition:color .3s,background .3s;border-radius:6px;padding:0 2px;color:rgba(244,238,220,.75)}
+.bttext span.on{color:#FFE9A8;background:rgba(255,233,168,.12)}
+.bttext.end{font-size:30px;color:#FFE9A8}
+.btctl{display:flex;justify-content:center;gap:18px;margin-top:14px}
+.btctl button{width:64px;height:64px;border-radius:50%;border:0;background:rgba(255,255,255,.14);color:#fff;font-size:20px}
+.btctl button.play{width:84px;height:84px;background:#FFE9A8;color:#151D36;font-size:28px}
+.btctl button:disabled{opacity:.3}
+.btdots{display:flex;justify-content:center;align-items:center;gap:6px;margin-top:12px;font-size:13px;color:rgba(244,238,220,.6)}
+.btdots i{width:8px;height:8px;border-radius:50%;background:rgba(255,255,255,.25)}.btdots i.on{background:#FFE9A8}
+.btdots span{margin-left:6px}
+.bedbtn{margin:0 0 8px}
+.call .bedbtn{float:right;margin:0 0 6px 8px}
+/* hearts in the book */
+.hearts .hform{display:grid;gap:10px;margin:6px 0 12px}
+.hearts .emo button{width:46px;height:46px;border-radius:50%;border:1px solid var(--rule);background:var(--paper);font-size:22px}
+.hearts .emo button[aria-pressed=true]{border-color:var(--accent);box-shadow:0 0 0 3px color-mix(in srgb,var(--accent) 30%,transparent);transform:scale(1.08)}
+.hlist{list-style:none;padding:0;margin:0;display:grid;gap:8px}
+.hlist li{display:flex;gap:10px;align-items:flex-start;padding:10px 12px;border-radius:14px;background:var(--panel)}
+.hlist .he{font-size:28px;line-height:1}
+.hlist p{margin:2px 0 0}
+.hlist .face{width:20px;height:20px;vertical-align:-4px}
+.pill.heart{background:#FFE4EE;color:#AD1457}
+.mosaic.drawings img{background:#fff}
+@media (prefers-reduced-motion:reduce){.kidhearts .e,.kidhearts .float,.door.ready,.doorcard .in,.bedtime .sky i,.btpage.turn{animation:none}.kidhearts .float{display:none}}
 @media (max-width:360px){.kidtiles button,.kidspots button{min-height:128px}.kidtiles span{font-size:52px}.kidhello img{height:120px}}
 
 /* ---------- login art ---------- */

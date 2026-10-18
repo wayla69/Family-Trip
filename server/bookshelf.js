@@ -11,6 +11,8 @@ const ID_RE = /^[A-Za-z0-9_.:-]{4,80}$/;
 const SLUG_RE = /^[a-z0-9-]{2,60}$/;
 const KINDS = ['quote', 'mood', 'fav', 'note', 'first', 'story', 'tick', 'field'];
 const TRIP_WIDE = ['story', 'tick', 'field'];   // kinds that may have no day (whole-trip story, passport checklists, Explorer ID)
+const HEART_EMOJI = ['💗', '🤗', '😘', '⭐', '👏', '🎈'];
+const HEARTS_PER_DAY = { sender: 40, family: 400 };   // the view link is shared: cap what one phone, and everyone together, can send
 const clip = (s, n) => String(s == null ? '' : s).slice(0, n);
 const i18n = (o, n = 200) => (o && typeof o === 'object' ? { th: clip(o.th, n), en: clip(o.en, n), ...(o.zh ? { zh: clip(o.zh, n) } : {}) } : { th: clip(o, n), en: clip(o, n) });
 const at = (v) => new Date(Math.min(Number.isFinite(+v) && +v > 0 ? +v : Date.now(), Date.now() + 86400e3));
@@ -74,7 +76,7 @@ function router({ pool, media, A, ai }) {
   // ----- everything in one payload (cached by the app for offline use)
   r.get('/api/b/state', A.requireUser, async (req, res, next) => {
     try {
-      const [children, trips, days, firsts, entries, mediaRows, places] = await Promise.all([
+      const [children, trips, days, firsts, entries, mediaRows, places, hearts] = await Promise.all([
         q('SELECT slug, name_th, name_en, emoji, color, birth_ym FROM children WHERE family_id=$1 ORDER BY pos', [FAMILY]),
         q("SELECT id, slug, legacy_id, title, sub, to_char(date_from,'YYYY-MM-DD') date_from, to_char(date_to,'YYYY-MM-DD') date_to, timezone, theme, cover, stamp, moods, passport, source FROM trips WHERE family_id=$1 ORDER BY date_from", [FAMILY]),
         q("SELECT d.trip_id, d.day_index, to_char(d.date,'YYYY-MM-DD') date, d.title, d.sleep, d.emoji, d.gradient, d.planned, d.wx, d.done_at FROM trip_days d JOIN trips t ON t.id=d.trip_id WHERE t.family_id=$1 ORDER BY d.trip_id, d.day_index", [FAMILY]),
@@ -82,6 +84,7 @@ function router({ pool, media, A, ai }) {
         q('SELECT id, trip_id, day_index, kind, child, text, mood, first_key, lang, highlight, occurred_at, created_by, created_uid FROM entries WHERE family_id=$1 ORDER BY occurred_at', [FAMILY]),
         q('SELECT id, trip_id, day_index, width, height, caption, highlight, pos, taken_at, created_by FROM media WHERE family_id=$1 ORDER BY taken_at, pos', [FAMILY]),
         q('SELECT id, trip_id, day_index, key, kind, name, visited_at, created_by FROM places WHERE family_id=$1 ORDER BY visited_at', [FAMILY]),
+        q('SELECT id, trip_id, day_index, child, emoji, text, from_name, created_uid, created_at FROM hearts WHERE family_id=$1 ORDER BY created_at', [FAMILY]),
       ]);
       const ms = (d) => (d ? new Date(d).getTime() : null);
       res.setHeader('Cache-Control', 'no-store');
@@ -96,6 +99,7 @@ function router({ pool, media, A, ai }) {
         entries: entries.map(({ trip_id, day_index, occurred_at, created_uid, ...e }) => ({ ...e, trip: trip_id, day: day_index, at: ms(occurred_at), mine: created_uid === req.user.uid })),
         media: mediaRows.map(({ trip_id, day_index, taken_at, width, height, ...m }) => ({ ...m, trip: trip_id, day: day_index, w: width, h: height, at: ms(taken_at) })),
         places: places.map(({ trip_id, day_index, visited_at, ...p }) => ({ ...p, trip: trip_id, day: day_index, at: ms(visited_at) })),
+        hearts: hearts.map(({ trip_id, day_index, created_uid, created_at, from_name, ...h }) => ({ ...h, trip: trip_id, day: day_index, from: from_name, at: ms(created_at), mine: created_uid === req.user.uid })),
         features: { story: !!(ai && ai.enabled()) },
         serverNow: Date.now(),
       });
@@ -185,6 +189,36 @@ function router({ pool, media, A, ai }) {
   };
   r.get('/media/:id', A.requireUser, send(false));
   r.get('/media/:id/t', A.requireUser, send(true));
+
+  // ----- hearts from the family: anyone signed in (relatives on the view link too) may send one; text only
+  const sameSite = (req, res, next) => (req.headers['x-mb'] === '1' ? next() : bad(res, 'bad-request'));
+  r.put('/api/b/hearts/:id', A.requireUser, sameSite, json, async (req, res, next) => {
+    try {
+      const id = req.params.id, b = req.body || {};
+      if (!ID_RE.test(id)) return bad(res, 'id');
+      const t = await trip(String(b.trip || '')); if (!t) return bad(res, 'trip');
+      const day = dayArg(b.day); if (!dayOk(t, day)) return bad(res, 'day');
+      const kids = (await q('SELECT slug FROM children WHERE family_id=$1', [FAMILY])).map((k) => k.slug);
+      const child = String(b.child || ''); if (child !== 'both' && !kids.includes(child)) return bad(res, 'child');
+      if (!HEART_EMOJI.includes(b.emoji)) return bad(res, 'emoji');
+      const from = clip(b.from, 24).trim(); if (!from) return bad(res, 'from');
+      const text = clip(b.text, 140).trim();
+      const ex = (await q('SELECT family_id FROM hearts WHERE id=$1', [id]))[0];
+      if (ex) return ex.family_id === FAMILY ? res.json({ ok: true, dup: true }) : bad(res, 'conflict', 409);
+      const [n] = await q("SELECT count(*) FILTER (WHERE created_uid=$2)::int mine, count(*)::int alls FROM hearts WHERE family_id=$1 AND created_at > now() - interval '1 day'", [FAMILY, req.user.uid]);
+      if (n.mine >= HEARTS_PER_DAY.sender || n.alls >= HEARTS_PER_DAY.family) return bad(res, 'too-many', 429);
+      await q(`INSERT INTO hearts (id, family_id, trip_id, day_index, child, emoji, text, from_name, created_uid) VALUES ($1,$2,$3,$4,$5,$6,$7,$8,$9)
+        ON CONFLICT (id) DO NOTHING`, [id, FAMILY, t.id, day, child, b.emoji, text, from, req.user.uid]);
+      res.json({ ok: true });
+    } catch (e) { next(e); }
+  });
+  // grown-ups may remove any heart; a sender may take back their own
+  r.delete('/api/b/hearts/:id', A.requireUser, sameSite, async (req, res, next) => {
+    try {
+      const out = await q('DELETE FROM hearts WHERE id=$1 AND family_id=$2 AND ($3 OR created_uid=$4) RETURNING id', [req.params.id, FAMILY, req.user.role === 'editor', req.user.uid]);
+      res.status(out.length ? 200 : 404).json({ ok: !!out.length });
+    } catch (e) { next(e); }
+  });
 
   // ----- check-ins at planned places / meals (stamps)
   r.put('/api/b/places', ...W, async (req, res, next) => {
@@ -308,7 +342,7 @@ function router({ pool, media, A, ai }) {
   r.get('/api/b/export.json', A.requireEditor, async (_req, res, next) => {
     try {
       const out = {};
-      for (const t of ['children', 'trips', 'entries', 'media', 'places']) out[t] = await q(`SELECT * FROM ${t} WHERE family_id=$1`, [FAMILY]);
+      for (const t of ['children', 'trips', 'entries', 'media', 'places', 'hearts']) out[t] = await q(`SELECT * FROM ${t} WHERE family_id=$1`, [FAMILY]);
       out.trip_days = await q('SELECT d.* FROM trip_days d JOIN trips t ON t.id=d.trip_id WHERE t.family_id=$1', [FAMILY]);
       out.firsts_catalog = await q('SELECT f.* FROM firsts_catalog f JOIN trips t ON t.id=f.trip_id WHERE t.family_id=$1', [FAMILY]);
       res.setHeader('Content-Disposition', 'attachment; filename="memory-bookshelf.json"');

@@ -60,6 +60,7 @@ async function load() {
     if (!c) return 'fail';
     S = c; offline = true;
   }
+  S.hearts = S.hearts || [];   // a copy cached before hearts existed
   queue.forEach(applyLocal);   // pending writes stay visible on top of server data
   return offline ? 'cached' : 'ok';
 }
@@ -100,12 +101,13 @@ async function flush() {
         await api(op.method, op.url, op.body, op.blob);
       } catch (e) {
         if (e.code === 401) break;
-        if (!e.code || e.code === 408 || e.code === 429 || e.code >= 500) {   // offline / server busy: keep it, try later
+        if (e.code === 429 && op.limit) toast(L('วันนี้ส่งหัวใจครบแล้ว พรุ่งนี้ส่งใหม่ได้นะ', 'That’s all the hearts for today — send more tomorrow'));   // a daily cap: retrying won't help
+        else if (!e.code || e.code === 408 || e.code === 429 || e.code >= 500) {   // offline / server busy: keep it, try later
           offline = !e.code; if (e.code === 429) toast(L('อัปโหลดถี่เกินไป จะลองใหม่อีกครั้ง', 'Too many uploads — will retry'));
           break;
         }
         // 4xx: drop this one, keep the rest
-        if (e.code === 413) toast(L('รูปใหญ่เกินไป (เกิน 40 MB) — ข้ามรูปนี้', 'Photo too large (over 40 MB) — skipped'));
+        else if (e.code === 413) toast(L('รูปใหญ่เกินไป (เกิน 40 MB) — ข้ามรูปนี้', 'Photo too large (over 40 MB) — skipped'));
         else if (e.code === 415) toast(L('ไฟล์นี้ไม่ใช่รูปที่อ่านได้ — ข้ามรูปนี้', 'Not a readable photo — skipped'));
         else toast(L('บันทึกไม่สำเร็จ 1 รายการ', 'One change could not be saved') + ` (${e.code})`);
       }
@@ -210,4 +212,5 @@ function route() {
 function nav(hash) { if (location.hash === hash) render(); else location.hash = hash; }
 // never wipe what someone is typing: re-render only when no field has focus
 function safeRender() { if (typeof storyCtl !== 'undefined' && storyCtl) return;   // a story is streaming into the page
+  if (typeof drawBusy === 'function' && drawBusy()) return;   // a finger is drawing on the canvas
   const a = document.activeElement; if (a && /^(INPUT|TEXTAREA|SELECT)$/.test(a.tagName) && a.closest('#app')) return; render(); }

@@ -3,6 +3,7 @@
   "migrations": [
     { "id": "0001", "file": "0001_init.sql" },
     { "id": "0002", "file": "0002_trip_day_weather.sql" },
-    { "id": "0003", "file": "0003_passport.sql" }
+    { "id": "0003", "file": "0003_passport.sql" },
+    { "id": "0004", "file": "0004_hearts.sql" }
   ]
 }

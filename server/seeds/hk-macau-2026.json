@@ -1439,6 +1439,39 @@
     }
    ]
   },
-  "colour": "/art/colour/hk/day-{n}.svg"
+  "colour": "/art/colour/hk/day-{n}.svg",
+  "countdown": {
+   "doors": [
+    { "e": "🐬", "th": "สวัสดี {name}! ฉันคือกัปตันพิงกี้ อีก 14 วันเราจะไปฮ่องกงด้วยกันนะ!", "en": "Hi {name}! I'm Captain Pinky. In 14 sleeps we fly to Hong Kong together!" },
+    { "e": "✈️", "art": 0, "th": "เราจะนั่งเครื่องบินลำใหญ่ขึ้นไปเหนือก้อนเมฆ ลองทำเสียงเครื่องบินกัน: วี้ววว!", "en": "We'll ride a big plane above the clouds. Can you make a plane noise? Wheeee!" },
+    { "e": "🏰", "art": 1, "th": "นี่คือปราสาทที่เราจะไป! หนูอยากเจอใครในปราสาทที่สุด?", "en": "This is the castle we're going to! Who would you most like to meet there?" },
+    { "e": "🗣️", "th": "คำนี้คือ M̀h gōi (อึ่มกอย) แปลว่า ขอบคุณ ลองพูดตามนะ!", "en": "This word is M̀h gōi — it means thank you. Can you say it?", "speak": { "text": "唔該", "lang": "zh-HK"  } },
+    { "e": "🧸", "th": "ภารกิจวันนี้: เลือกตุ๊กตาหนึ่งตัวไปเที่ยวด้วยกัน มันจะได้ไปฮ่องกงด้วย!", "en": "Today's mission: choose one cuddly toy to come on the trip. It's going to Hong Kong too!" },
+    { "e": "🐼", "th": "ฉันชื่อเปา มาจากมาเก๊า ที่มาเก๊ามีแพนด้าตัวจริงอยู่ด้วยนะ!", "en": "I'm Bao and I'm from Macau. There are real pandas living in Macau!" },
+    { "e": "🌉", "art": 2, "th": "เราจะนั่งรถข้ามสะพานยาวมากๆ ข้ามทะเลไปมาเก๊า ยาวกว่าที่หนูเคยเห็นอีก!", "en": "We'll drive over a super long bridge across the sea to Macau — longer than any bridge you've seen!" },
+    { "e": "🌞", "th": "ตอนเช้าที่ฮ่องกงเขาทักกันว่า Jóu sàhn (โจ๋วซัน) แปลว่า สวัสดีตอนเช้า ลองพูดตามนะ!", "en": "In the morning people in Hong Kong say Jóu sàhn — good morning! Can you say it?", "speak": { "text": "早晨", "lang": "zh-HK"  } },
+    { "e": "🌈", "art": 3, "th": "มีห้องที่เต็มไปด้วยแสงไฟหลากสี เหมือนเดินอยู่ในสายรุ้งเลย!", "en": "There's a room full of coloured lights — like walking inside a rainbow!" },
+    { "e": "🥟", "th": "ติ่มซำมีขนมจีบ ฮะเก๋า ซาลาเปา ตัวเล็กๆ น่ากิน หนูอยากชิมอันไหนก่อน?", "en": "Dim sum is little dumplings and fluffy buns. Which one will you try first?" },
+    { "e": "🧥", "th": "เดือนธันวาคมที่ฮ่องกงอากาศเย็นกว่าบ้านเรา อย่าลืมเอาเสื้อแจ็กเก็ตไปนะ!", "en": "December in Hong Kong is cooler than at home. Don't forget your jacket!" },
+    { "e": "🛝", "art": 4, "th": "มีวันที่เราเล่นสนามเด็กเล่นกันทั้งเช้าเลย! หนูชอบสไลเดอร์หรือชิงช้า?", "en": "One morning is all playground! Do you like the slide or the swings best?" },
+    { "e": "👋", "th": "ที่มาเก๊ามีคนพูดภาษาโปรตุเกสด้วย เขาทักกันว่า โอลา! แปลว่า สวัสดี", "en": "Some people in Macau speak Portuguese. They say Olá! — it means hello.", "speak": { "text": "Olá!", "lang": "pt-PT"  } },
+    { "e": "🎉", "th": "พรุ่งนี้เราออกเดินทางแล้ว! นอนหลับฝันดีนะ {name} เจอกันที่ฮ่องกง!", "en": "Tomorrow we go! Sweet dreams, {name} — see you in Hong Kong!" }
+   ],
+   "pack": {
+    "title": { "th": "ช่วยจัดกระเป๋าหน่อย! ใส่อะไรแล้วแตะเลย", "en": "Help me pack! Tap each thing you put in" },
+    "items": [
+     { "k": "toy", "e": "🧸", "th": "ตุ๊กตาตัวโปรด", "en": "My cuddly toy" },
+     { "k": "toothbrush", "e": "🪥", "th": "แปรงสีฟัน", "en": "Toothbrush" },
+     { "k": "pyjamas", "e": "🌙", "th": "ชุดนอน", "en": "Pyjamas" },
+     { "k": "jacket", "e": "🧥", "th": "เสื้อแจ็กเก็ต", "en": "Jacket" },
+     { "k": "socks", "e": "🧦", "th": "ถุงเท้า", "en": "Socks" },
+     { "k": "shoes", "e": "👟", "th": "รองเท้าเดินสบาย", "en": "Comfy shoes" },
+     { "k": "hat", "e": "🧢", "th": "หมวก", "en": "Hat" },
+     { "k": "crayons", "e": "🖍️", "th": "สีเทียน", "en": "Crayons" },
+     { "k": "book", "e": "📖", "th": "นิทานหนึ่งเล่ม", "en": "A story book" },
+     { "k": "passport", "e": "🛂", "th": "พาสปอร์ตนักผจญภัย", "en": "My adventure passport" }
+    ]
+   }
+  }
  }
 }

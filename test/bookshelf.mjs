@@ -116,8 +116,29 @@ await BS.syncSeeds(pool);
 s = await state();
 ok(s.trips[0].days[0].done_at > 0 && s.trips.some((t) => t.slug === 'chiang-mai-2027'), 'seed re-sync keeps Done and app-made trips');
 
+// ---- hearts from the family: relatives on the view link may send one (text only), not edit anything else
+const VH = { 'x-mb': '1', cookie: vck, 'content-type': 'application/json' };
+const heart = { trip: T, day: null, child: 'mimi', emoji: '💗', text: 'คิดถึงนะ', from: 'ยาย' };
+ok((await put('/api/b/hearts/h-test-0001', heart, VH)).ok, 'viewer (grandma) sends Mimi a heart');
+ok((await put('/api/b/hearts/h-test-0001', heart, VH)).ok && (await state(vck)).hearts.length === 1, 'sending the same heart again is a no-op (offline retry)');
+const hs = (await state(vck)).hearts[0];
+ok(hs.from === 'ยาย' && hs.child === 'mimi' && hs.mine === true && hs.at > 0 && !('created_uid' in hs), 'heart in the state, marked as mine, no sender id leaked');
+ok((await put('/api/b/hearts/h-test-0002', { ...heart, emoji: '<script>' }, VH)).status === 400, 'only the six heart emoji');
+ok((await put('/api/b/hearts/h-test-0002', { ...heart, from: '  ' }, VH)).status === 400, 'a sender name is required');
+ok((await put('/api/b/hearts/h-test-0002', { ...heart, child: 'nobody' }, VH)).status === 400, 'unknown child → 400');
+ok((await put('/api/b/hearts/h-test-0002', heart, { ...VH, 'x-mb': '' })).status === 400, 'heart without the x-mb header → 400 (CSRF)');
+ok((await put('/api/b/hearts/h-test-0003', { ...heart, child: 'both', text: 'x'.repeat(500) }, VH)).ok && (await state()).hearts.find((h) => h.id === 'h-test-0003').text.length === 140, 'long notes are cut to 140 characters');
+ok((await put('/api/b/entries/v-try-0001', { trip: T, day: 0, kind: 'quote', child: 'mimi', text: 'x' }, VH)).status === 403, 'viewers still cannot write anything else');
+ok((await fetch(BASE + '/api/b/hearts/h-test-0003', { method: 'DELETE', headers: H })).ok, 'grown-ups may remove any heart');
+const vck2 = (await fetch(BASE + '/v/grandma', { redirect: 'manual' })).headers.get('set-cookie').split(';')[0];
+ok((await fetch(BASE + '/api/b/hearts/h-test-0001', { method: 'DELETE', headers: { ...VH, cookie: vck2 } })).status === 404, "another relative's phone cannot remove grandma's heart");
+let capped = 0;
+for (let n = 0; n < 41 && !capped; n++) { const r = await put(`/api/b/hearts/h-cap-${String(n).padStart(4, '0')}`, heart, { ...VH, cookie: vck2 }); if (r.status === 429) capped = n; }
+ok(capped === 40, 'one phone can send 40 hearts a day, then 429');
+
 // ---- PDPA export + real delete
 const ex = await (await fetch(BASE + '/api/b/export.json', { headers: { cookie: ck } })).json();
+ok(ex.hearts.length >= 41, 'export includes the hearts');
 ok(ex.entries.length >= 3 && ex.media.length === 1 && !ex.media.some((m) => m.family_id === 'other'), 'export has only this family\'s data');
 ok((await fetch(BASE + '/api/b/export.json', { headers: { cookie: vck } })).status === 403, 'viewer cannot export');
 const stored = path.join(DATA_DIR, 'media', 'p', T, 'ph-test-0001.jpg');

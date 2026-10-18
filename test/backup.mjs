@@ -14,7 +14,7 @@ let failures = 0;
 const ok = (c, m) => { if (!c) { failures++; console.log('  FAIL', m); } else console.log('  ok  ', m); };
 const login = async (base) => (await fetch(base + '/api/login', { method: 'POST', headers: { 'x-mb': '1', 'content-type': 'application/json' }, body: JSON.stringify({ code: CODE, name: 'พ่อ' }) })).headers.get('set-cookie').split(';')[0];
 const state = async (base, ck) => (await fetch(base + '/api/b/state', { headers: { cookie: ck } })).json();
-const counts = (s) => [s.entries.length, s.media.length, s.places.length, s.trips.length, s.trips.flatMap((t) => t.days).filter((d) => d.done_at).length].join('/');
+const counts = (s) => [s.entries.length, s.media.length, s.places.length, s.hearts.length, s.trips.length, s.trips.flatMap((t) => t.days).filter((d) => d.done_at).length].join('/');
 const zipList = (buf) => new Promise((res, rej) => yauzl.fromBuffer(buf, { lazyEntries: true }, (e, z) => {
   if (e) return rej(e);
   const names = []; let json = null;
@@ -56,7 +56,7 @@ try {
   const r1 = await (await fetch(B2 + '/api/import', { method: 'POST', headers: { 'x-mb': '1', cookie: ck2, 'content-type': 'application/zip' }, body: zip })).json();
   ok(r1.ok && r1.photos === src.media.length, `restore: ${r1.photos} photos, rows ${JSON.stringify(r1.rows)}`);
   const dst = await state(B2, ck2);
-  ok(counts(dst) === counts(src), `restored counts match: entries/photos/places/trips/done = ${counts(dst)}`);
+  ok(counts(dst) === counts(src), `restored counts match: entries/photos/places/hearts/trips/done = ${counts(dst)}`);
   ok(JSON.stringify(dst.entries.map((e) => [e.id, e.text, e.highlight]).sort()) === JSON.stringify(src.entries.map((e) => [e.id, e.text, e.highlight]).sort()), 'restored entries identical (text, ⭐)');
   const pid = dst.media[0].id;
   const [f, t] = await Promise.all([fetch(`${B2}/media/${pid}`, { headers: { cookie: ck2 } }), fetch(`${B2}/media/${pid}/t`, { headers: { cookie: ck2 } })]);
