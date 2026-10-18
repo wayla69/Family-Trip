@@ -1293,3 +1293,15 @@ button.tile.kid{border:1px solid var(--line);text-align:left;justify-items:start
 .dsheet>div{grid-template-columns:minmax(92px,180px) 1fr}
 .dayplan>summary{color:var(--accent)}
 .spine .badge{background:none;padding:0;border-radius:0;margin:0;line-height:0}   /* the book emblem, not the eat page's ★ label */
+/* meals: pick + backup per meal (today sheet, eat page) */
+.dsheet .meal dd b{font-weight:600}
+.dsheet .meal dd small{display:block;color:var(--muted);font-size:13px;margin-top:2px}
+.dsheet .meal dd small.bk{color:var(--ink);opacity:.75}
+.mealplan{margin:6px 0 18px}
+.mday{border-top:1px solid var(--line);padding:8px 0}
+.mday>summary{cursor:pointer;list-style:none;font-size:15px;padding:4px 0}
+.mday>summary::-webkit-details-marker{display:none}
+.mday>summary b{color:var(--accent)}
+.mday .dsheet{margin-top:6px}
+.mapimg{display:block;margin:6px 0 10px;border-radius:var(--r);overflow:hidden;border:1px solid var(--line)}.mapimg img{width:100%;height:auto;display:block}
+.pocket details.pg{scroll-margin-top:68px}
