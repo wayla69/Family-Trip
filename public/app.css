@@ -1498,3 +1498,11 @@ p,li,.bubble p{text-wrap:pretty}
 .pinacts{display:flex;flex-wrap:wrap;gap:8px;margin:12px 0}
 .pindays{display:flex;flex-wrap:wrap;gap:6px;margin-bottom:12px}
 .sleep ol .t b a{color:inherit;text-decoration:underline;text-decoration-color:color-mix(in srgb,var(--pp,var(--accent)) 45%,transparent);text-underline-offset:3px}
+.mapdays{flex-wrap:wrap;overflow:visible}
+.mapsec .tmap .walkers img{height:44px}.mapsec .tmap .walkers img.mika{height:34px}
+.pinstays{display:flex;flex-direction:column;gap:6px;margin:0 0 12px}
+.pinstay{display:flex;align-items:center;gap:10px;justify-content:space-between;padding:8px 10px;border:1px solid var(--line);border-radius:12px}
+.pinstay>span{display:flex;flex-direction:column;min-width:0;padding-left:26px;position:relative}
+.pinstay>span>.ic{position:absolute;left:0;top:2px;width:18px;height:18px;color:var(--muted)}
+.pinstay small{color:var(--muted);font-size:12.5px}
+.pinstay .btn{flex:none}

@@ -268,9 +268,11 @@ ${mm.m.stops.filter((s) => mm.seq.some((v) => v.k === s.k)).map((s) => `<g class
 // a pin on the passport map, for the grown-ups: which days we are there, the real place in Google Maps, directions, the day pages
 function pinSheet(t, s) {
   const days = ((t.passport.map || {}).days || []).map((ks, d) => (ks.includes(s.k) ? d : -1)).filter((d) => d >= 0), q = s.q || T(s);
+  const stays = days.map((d) => (t.days[d].plan || {}).stay).filter((x, n, a) => x && x.name && a.findIndex((y) => y && y.name === x.name) === n);   // the nights' addresses, for the driver
   return `<h3>${esc(s.e || '📍')} ${esc(T(s))}</h3>${days.length ? `<p class="label">${L('วันที่', days.length > 1 ? 'Days' : 'Day')} ${days.map((d) => d + 1).join(', ')}</p>` : ''}
 <div class="pinacts">${extA(mapsUrl(q), ic('pin') + ' ' + L('เปิดใน Google Maps', 'Open in Google Maps'), 'btn')}${extA(`https://www.google.com/maps/dir/?api=1&destination=${encodeURIComponent(q)}`, ic('route') + ' ' + L('นำทางไปที่นี่', 'Directions'), 'btn ghost')}</div>
 ${days.length ? `<div class="pindays">${days.map((d) => `<a class="chip" href="#/t/${esc(t.id)}/today/${d}">${L('แผนวันที่', 'Plan · Day')} ${d + 1}</a>`).join('')}</div>` : ''}
+${stays.length ? `<div class="pinstays"><span class="label">${L('ที่พักแถวนี้', 'Where we sleep here')}</span>${stays.map((x) => `<div class="pinstay"><span>${ic('stays')}<b>${esc(x.name)}</b>${x.addr ? `<small>${esc(x.addr)}</small>` : ''}</span>${extA(`https://www.google.com/maps/dir/?api=1&destination=${encodeURIComponent(x.q || x.addr || x.name)}`, ic('route') + ' ' + L('นำทาง', 'Go'), 'btn small ghost')}</div>`).join('')}</div>` : ''}
 <div class="row end"><button class="btn ghost small" data-a="closesheet">${L('ปิด', 'Close')}</button></div>`;
 }
 // walk the kids from mapFrom to the stop of this map (one hop after another, along the drawn paths)
