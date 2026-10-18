@@ -174,6 +174,8 @@ const A = {
     } catch (err) { $('#nterr').textContent = err.code === 409 ? L('มีเล่มชื่อนี้แล้ว', 'A book with this id exists') : L('ตรวจวันที่อีกครั้ง (ไม่เกิน 60 วัน)', 'Check the dates (60 days max)'); }
   },
   closesheet() { closeSheet(); },
+  eatk(b) { eatKind = +b.dataset.v; $$('[data-a="eatk"]').forEach((c) => c.setAttribute('aria-pressed', c.dataset.v === b.dataset.v)); eatFilter(); },
+  eatpick(b) { eatPick = !eatPick; b.setAttribute('aria-pressed', eatPick); eatFilter(); },
   driver(b) {   // big-print address card to hand a taxi driver (works offline: it's in the book's state)
     const st = ((trip(b.dataset.t) || {}).info || {}).stays || [], x = st[+b.dataset.v]; if (!x) return;
     const parts = String(x.addr).split(' · ');
@@ -298,7 +300,7 @@ document.addEventListener('click', (e) => {
   if (b && A[b.dataset.a]) { if (b.tagName === 'A' || b.type === 'submit') e.preventDefault(); A[b.dataset.a](b, e); return; }
   if (e.target.id === 'scrim') closeSheet();
 });
-document.addEventListener('input', (e) => { const el = e.target; if (el.dataset && el.dataset.draft) drafts[el.dataset.draft] = el.value; });
+document.addEventListener('input', (e) => { const el = e.target; if (el.dataset && el.dataset.draft) drafts[el.dataset.draft] = el.value; if (el.id === 'eatq') { eatQ = el.value.trim(); eatFilter(); } });
 document.addEventListener('focusout', (e) => { const el = e.target; if (el.dataset && el.dataset.aBlur) saveBlur(el); if (el.id === 'lbcap') saveCaption(el); });
 document.addEventListener('change', (e) => {
   if (e.target.id === 'fpick') { const el = e.target; addPhotos(trip(el.dataset.t), +el.dataset.d, el.files); el.value = ''; }

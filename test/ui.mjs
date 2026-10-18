@@ -132,9 +132,9 @@ const T = 'hk-macau-2026';
   await stay.locator('summary').click();
   await stay.locator('.stars button[data-v="4"]').click();
   await page.waitForSelector('#notebook .rev[data-kind="stay"].has');
-  await stay.locator('.rtags .chip[data-v="kidsleep"]').click();
-  await stay.locator('.rkid .opts button[data-k="mimi"][data-v="love"]').click();
-  await stay.locator('.rkid.again button[data-v="1"]').click();
+  await stay.locator('.rtags .chip[data-v="kidsleep"]').click(); await stay.locator('.rtags .chip[data-v="kidsleep"][aria-pressed="true"]').waitFor();   // each tap lands before the next (cards re-render)
+  await stay.locator('.rkid .opts button[data-k="mimi"][data-v="love"]').click(); await stay.locator('.rkid .opts button[data-k="mimi"][data-v="love"][aria-pressed="true"]').waitFor();
+  await stay.locator('.rkid.again button[data-v="1"]').click(); await stay.locator('.rkid.again button[data-v="1"][aria-pressed="true"]').waitFor();
   await stay.locator('.rnote').fill('ห้องมุม วิวสะพาน เด็กหลับสนิท'); await page.locator('#qtext').focus();
   await page.waitForFunction(() => queue.length === 0, null, { timeout: 15000 });
   st = await apiState(page);
@@ -591,6 +591,22 @@ const T = 'hk-macau-2026';
   await page.click('.kidback'); await page.click('.kidtiles button[data-v$="/words"]'); await page.waitForSelector('.kw .hear');
   await page.locator('.kw .hear').first().click();
   ok((await page.evaluate(() => window.__said)).includes("G'day|en-AU"), 'say it (AU): "G\'day" read with an Australian voice');
+  // all places to eat: the manual's "Where to eat", searchable, every card opens Maps
+  await page.evaluate(() => localStorage.removeItem('mbs_kidmode'));   // a grown-up leaves kid mode
+  await page.goto(`${BASE}/#/t/big-hop-2027/eat`); await page.waitForSelector('.eatc');
+  ok(await page.locator('.eatc').count() === 294 && await page.locator('nav.bar a[aria-current=page] i').textContent() === '🍽️', 'eat page: 294 places from the manual, tab highlighted');
+  ok(await page.locator('.eatc a[href*="google.com/maps/search"]').count() === 588 && await page.locator('.eatc a[href*="maps/dir/"]').count() === 294, 'eat page: every place has a map link (name + button) and directions');
+  await page.fill('#eatq', 'pie');
+  const pies = await page.$$eval('.eatc', (els) => els.filter((e) => e.dataset.s.includes('pie')).length), shownPies = await page.locator('.eatc:visible').count();
+  ok(shownPies === pies && pies > 10 && pies < 294 && await page.evaluate(() => document.activeElement.id) === 'eatq', `eat page: search filters in place and keeps the keyboard (${shownPies} pies)`);
+  await page.fill('#eatq', ''); await page.click('[data-a="eatk"][data-v="2"]');
+  ok(await page.locator('.eatc:visible').count() === 30, 'eat page: "cook it yourself" chip');
+  await page.click('[data-a="eatk"][data-v="-1"]'); await page.click('[data-a="eatpick"]');
+  ok(await page.locator('.eatc:visible').count() === 61 && (await page.textContent('#eatn')).includes('61'), 'eat page: picks in the plan');
+  ok(await s.noHScroll(), 'eat page fits the phone');
+  await s.shot('04-eat', false);
+  await page.goto(`${BASE}/#/t/hk-macau-2026/eat`); await page.waitForSelector('.eatc');
+  ok(await page.locator('.eatc:visible').count() === 13 && await page.locator('[data-a="eatpick"][aria-pressed="false"]').count() === 1, 'eat page (HK): 13 places from the plan; filters reset for another book');
   ok(s.errs.length === 0, 'AU: no console errors ' + s.errs.join(' | '));
   await s.ctx.close();
 }
