@@ -743,6 +743,7 @@ const T = 'hk-macau-2026';
   ok(await page.locator('.daytabs a').count() === 16 && await page.locator('.emeal').count() === 1 && /Adina kitchen/.test(await page.locator('.emeal').first().textContent()), 'AU eat page: Day 1 dinner is the Adina kitchen or delivery');
   await page.goto(`${BASE}/#/t/big-hop-2027/eat/d/2`); await page.waitForSelector('.eatday .emeal');
   ok(await page.locator('.emeal').count() === 4 && await page.locator('.emeal .ealso .erow').count() > 3 && /Jervis Bay/.test(await page.locator('.enears').textContent()), 'AU eat page, Day 3: four meals, more places that fit each meal, and what is near Jervis Bay');
+  ok(await page.locator('.enear .ek').count() === await page.locator('.enear').count() && /Cook it yourself/.test(await page.locator('.enears').textContent()), 'AU eat page: each nearby area says what kind of places it holds (same town, cafés vs cooking)');
   ok(await s.noHScroll(), 'eat day page fits the phone');
   await s.shot('04-eat-day', false);
   await page.goto(`${BASE}/#/t/hk-macau-2026/eat/all`); await page.waitForSelector('.eatc');
