@@ -1461,3 +1461,11 @@ button.tile.kid{border:1px solid var(--line);text-align:left;justify-items:start
 .cgrid.packed{display:flex;gap:14px;align-items:flex-start;columns:auto}
 .cgrid.packed>.ccol{flex:1 1 0;min-width:0;display:flex;flex-direction:column;gap:14px}
 .cgrid.packed .cbox{margin:0;width:auto}
+/* trip reminders switch (today page, grown-ups) */
+.remind{display:flex;align-items:center;gap:12px;flex-wrap:wrap;margin:10px 0;padding:10px 14px;border-radius:14px;border:1px solid var(--line);background:var(--paper)}
+.remind>.ic{width:22px;height:22px;flex:none;color:var(--muted)}
+.remind>span:first-of-type{flex:1 1 220px;min-width:0;display:flex;flex-direction:column;gap:2px}
+.remind b{font-size:14.5px;line-height:1.35}.remind small{font-size:12.5px;color:var(--muted);line-height:1.4}
+.remind .rb{display:flex;gap:8px;flex:none;margin-left:auto}
+.remind.on{border-color:color-mix(in srgb,var(--leaf) 40%,var(--line));background:color-mix(in srgb,var(--leaf) 6%,var(--paper))}
+.remind.on>.ic{color:var(--leaf)}
