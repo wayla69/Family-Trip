@@ -327,8 +327,16 @@ const T = 'hk-macau-2026';
   ok(await page.locator('.mapsec .tmap .pin').count() === 7 && await page.locator('.stkpage #stkboard .stk.on').count() === 1 && await page.locator('.stkpage #stktray').count() === 0, 'passport: the map, and the sticker page (read-only) Mimi made');
   await page.goto(BASE + '/'); await page.waitForSelector('.shelf');
   ok(await page.locator('.ppmini .ppc').count() === 2, 'shelf: passport covers for both kids');
-  ok(/1 (รีวิว|review)/.test(await page.textContent('.nbcard')), 'shelf: travel notebook card counts the review');
-  await page.click('.nbcard'); await page.waitForSelector('.nblist');
+  ok(/1 (รีวิว|review)/.test(await page.textContent('a.nbcard')), 'shelf: travel notebook card counts the review');
+  // backup: never done on this phone → the card nags; one tap downloads the full zip, then it reads up to date
+  ok(await page.locator('.nbcard.backup.warn').count() === 1 && /ยังไม่เคย|Never backed up/.test(await page.textContent('.nbcard.backup')), 'shelf: backup card warns that this phone never backed up');
+  const [dl] = await Promise.all([page.waitForEvent('download'), page.click('.nbcard.backup')]);
+  const dlPath = await dl.path();
+  ok(/^memory-bookshelf-\d{4}-\d{2}-\d{2}\.zip$/.test(dl.suggestedFilename()) && fs.readFileSync(dlPath).subarray(0, 2).toString() === 'PK', 'backup: one tap downloads the full zip');
+  await page.waitForSelector('.nbcard.backup:not(.warn)');
+  ok(/ครบแล้ว|up to date/.test(await page.textContent('.nbcard.backup')) && await page.locator('.shelf').count() === 1, 'backup: the card reads up to date and the shelf stays open');
+  await s.shot('15b-shelf-backup', false);
+  await page.click('a.nbcard'); await page.waitForSelector('.nblist');
   ok(await page.locator('.nbrow').count() === 1 && (await page.textContent('.nbrow')).includes('★★★★☆') && /เด็กนอนดี|kids slept well/.test(await page.textContent('.nbsum')), 'notebook page: the stay with its stars; "what worked" lists the tag');
   ok(await s.noHScroll(), 'notebook page fits the phone');
   await s.shot('13-notebook');

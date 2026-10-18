@@ -143,7 +143,22 @@ ${visual}
 <div class="shelf">${books}${add}</div>
 <div class="part">${L('พาสปอร์ตของเด็กๆ', 'The kids’ passports')} 🛂</div>
 <a class="nbcard" href="#/notebook"><span class="emb">📓</span><div><b>${L('สมุดโน้ตนักเดินทาง', 'Travel notebook')}</b><small>${S.reviews.length ? L(`${S.reviews.length} รีวิว · ที่พัก ร้านอาหาร สถานที่ — ไว้วางแผนทริปหน้า`, `${S.reviews.length} reviews · stays, food, places — for planning the next trip`) : L('ให้ดาว ติดแท็ก จดว่าอะไรเวิร์กกับครอบครัวเรา — ไว้วางแผนทริปหน้า', 'Stars, tags and notes on what worked for our family — for planning the next trip')}</small></div><span class="arrow">›</span></a>
-<div class="ppmini">${children().map((k) => { const n = passportStamps(k.slug); return `<a class="ppc s kid-${esc(k.slug)}" href="#/passport/${esc(k.slug)}"><span class="emb">${kidArt(k.slug) ? `<img src="${kidArt(k.slug)}" alt="">` : '🌏'}</span><b>${L('พาสปอร์ตความทรงจำ', 'Memory Passport')}</b><span class="nm">${esc(kidName(k.slug))}</span><small>${n} ${L('ตราประทับ', n === 1 ? 'stamp' : 'stamps')}</small></a>`; }).join('')}</div>`;
+<div class="ppmini">${children().map((k) => { const n = passportStamps(k.slug); return `<a class="ppc s kid-${esc(k.slug)}" href="#/passport/${esc(k.slug)}"><span class="emb">${kidArt(k.slug) ? `<img src="${kidArt(k.slug)}" alt="">` : '🌏'}</span><b>${L('พาสปอร์ตความทรงจำ', 'Memory Passport')}</b><span class="nm">${esc(kidName(k.slug))}</span><small>${n} ${L('ตราประทับ', n === 1 ? 'stamp' : 'stamps')}</small></a>`; }).join('')}</div>
+${isEditor() ? backupCard() : ''}`;
+}
+// off-site copy kept by the family: one tap downloads everything (data + full photos) as a zip; nags when there is something new since the last one on this phone
+function backupCard() {
+  const last = ls('last_backup') || 0;
+  const items = [...S.entries, ...S.media, ...S.hearts, ...S.reviews];
+  const fresh = items.filter((x) => (x.at || 0) > last).length;
+  const when = last ? new Date(last).toLocaleDateString(lang === 'th' ? 'th-TH' : 'en-GB', { day: 'numeric', month: 'short', year: 'numeric' }) : '';
+  const line = !items.length ? L('ยังไม่มีบันทึก — เริ่มสำรองเมื่อมีรูปหรือคำพูดแรก', 'Nothing recorded yet — back up once the first photo or quote is in')
+    : !last ? L(`ยังไม่เคยสำรองจากเครื่องนี้ · มี ${items.length} รายการ`, `Never backed up from this phone · ${items.length} items`)
+      : fresh ? L(`สำรองล่าสุด ${when} · มีของใหม่ ${fresh} รายการ`, `Last backup ${when} · ${fresh} new since`)
+        : L(`สำรองล่าสุด ${when} · ครบแล้ว`, `Last backup ${when} · up to date`);
+  const warn = items.length && (!last || fresh);
+  return `<div class="part">${L('สำรองข้อมูล', 'Backup')} 💾</div>
+<button class="nbcard backup${warn ? ' warn' : ''}" data-a="backup"><span class="emb">💾</span><div><b>${L('ดาวน์โหลดสำรองทั้งหมด', 'Download a full backup')}</b><small>${esc(line)}</small><small>${L('ไฟล์ .zip รวมบันทึกและรูปเต็ม เก็บไว้ในคอมหรือไดรฟ์ส่วนตัว อย่าแชร์ลิงก์สาธารณะ', 'A .zip of every record and full-size photo — keep it on a computer or private drive, never a public link')}</small></div><span class="arrow">⬇</span></button>`;
 }
 const artImg = (t, i, cls) => { const a = dayArt(t, i); return a ? `<img class="art${cls ? ' ' + cls : ''}" src="${esc(a)}" alt="" loading="lazy">` : `<span class="art emo${cls ? ' ' + cls : ''}">${esc(t.days[i].emoji || '📍')}</span>`; };
 // the kids standing together, as drawn characters (Mimi pulls her wagon, as in the photo)
