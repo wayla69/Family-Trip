@@ -234,7 +234,7 @@ function itinerary(t) {
 <div class="dl"><b>${String(i + 1).padStart(2, '0')}</b> ${esc(fmtDay(d.date))}${i === now ? ` <span class="tag">${L('วันนี้', 'Today')}</span>` : ''}${has ? ' ✓' : ''}${go}</div>
 <h4>${esc(T(d.title))}</h4>
 ${stops.length ? `<p class="stops">${stops.map((p) => placeA(t, p)).join(' · ')}</p>` : ''}
-<p class="label">${d.sleep ? `🛏️ ${d.plan && d.plan.stay ? mapA(d.plan.stay.q || d.plan.stay.addr, esc(T(d.sleep))) : esc(T(d.sleep))}` : ''}${food.length ? ` · 🍽️ ${food.map((p) => placeA(t, p)).join(' · ')}` : ''}</p>${planHtml(t, i, i === now)}</div></li>`;
+<p class="label">${d.sleep ? `🛏️ ${d.plan && d.plan.stay ? mapA(d.plan.stay.q || d.plan.stay.addr, esc(T(d.sleep))) : esc(T(d.sleep))}` : ''}${food.length ? ` · 🍽️ ${food.map((p) => placeA(t, p)).join(' · ')}` : ''}</p>${planHtml(t, i, i === now, true)}</div></li>`;
   }).join('')}</ol>`;
 }
 // the day's plan from the manual (seed → trip_days.plan): timeline, how we move, local pick, plan B, money, tips
@@ -248,13 +248,15 @@ const legsHtml = (legs) => `<ol class="legs">${legs.map((g) => `<li><span class=
 const pickHtml = (p) => `<li class="pk"><div class="eh"><span class="badge">★ ${esc(T(p.meal))}</span> <b>${mapA(p.q, esc(p.name))}</b> ${extA(mapsUrl(p.q), `<span class="mpin" aria-hidden="true"></span><span class="vh">${L('แผนที่', 'Map')}</span>`, 'pinlink')}</div><p>${esc(T(p.what))}</p><div class="emeta">${p.pr ? `<span class="pr">${esc(p.pr)}</span>` : ''}${p.alt ? `<span class="alt">${L('สำรอง', 'Backup')}: ${mapA(p.alt.q, esc(p.alt.name) + ' ↗')}${p.alt.pr ? ` · ${esc(p.alt.pr)}` : ''}</span>` : ''}</div></li>`;
 const foodHtml = (it) => `<li><b>${mapA(it.q, esc(it.name) + ' ↗')}</b>${it.pick ? ' <span class="tag">★</span>' : ''} <span class="label">${esc(T(it.tag))}${it.pr ? ` · ${esc(it.pr)}` : ''}</span>${T(it.what) ? `<br>${esc(T(it.what))}` : ''}${T(it.note) ? `<br><small>${esc(T(it.note))}</small>` : ''}</li>`;
 const TIPK = { warn: '⚠️', tip: '💡', info: 'ℹ️' };
-function planHtml(t, i, open) {
-  const pl = t.days[i].plan || {}, rows = pl.plan || [];
+function planHtml(t, i, open, wx) {
+  const pl = t.days[i].plan || {}, rows = pl.plan || [], dwx = wx && t.days[i].wx;
   if (!rows.length && !pl.moving && !pl.pick && !pl.planB) return '';
   return `<details class="dayplan"${open ? ' open' : ''}><summary>🗓️ ${L('แผนวันนี้', 'Plan for the day')}${rows.length ? ` <span class="label">· ${rows.length} ${L('ช่วง', 'steps')}</span>` : ''}</summary>
+<div class="pgrid">${pl.moving || (pl.legs || []).length || pl.route || dwx ? `<aside class="strip"><div class="kicker">${L('การเดินทาง', 'Getting around')}</div>
 ${pl.moving ? `<p class="moving">🚶 <b>${L('เดินทาง', 'Moving')}</b> ${esc(T(pl.moving))}</p>` : ''}
 ${(pl.legs || []).length ? legsHtml(pl.legs) : ''}
 ${pl.route ? `<p class="row">${extA(pl.route, '🗺️ ' + L('เส้นทางทั้งวันใน Google Maps', "The whole day's route in Google Maps"), 'btn ghost small')}</p>` : ''}
+${dwx ? `<div class="wxbox"><div class="kicker">${L('อากาศ', 'Weather')}</div>${esc(T(dwx))}</div>` : ''}</aside>` : ''}<div class="pmain">
 ${rows.length ? `<ol class="tl plan">${rows.map((r) => `<li><time>${esc(r.t || '')}</time><div>${esc(T(r))}${r.note ? `<small>${esc(T(r.note))}</small>` : ''}</div></li>`).join('')}</ol>` : ''}
 ${pl.stay ? `<p class="stay">🛏️ <b>${L('ที่พักคืนนี้', 'Tonight')}</b> ${esc(pl.stay.name)}<br><span class="addr">${esc(pl.stay.addr)}</span> ${extA(mapsUrl(pl.stay.q || pl.stay.addr), L('แผนที่', 'Map') + ' ↗')}</p>` : ''}
 ${pl.pick ? `<div class="call pick"><span class="lbl">Local pick</span>${esc(T(pl.pick))}</div>` : ''}
@@ -266,7 +268,7 @@ ${(pl.food || []).length ? `<details class="sub"><summary>🥧 ${L('กินต
 ${eatMore(pl).length ? `<details class="sub"><summary>🍽️ ${L('ร้านอื่นใกล้ๆ', 'More places to eat nearby')} <span class="label">· ${eatMore(pl).length}</span></summary><ul class="eats">${eatMore(pl).map((e) => `<li><b>${e.q ? mapA(e.q, esc(e.name) + ' ↗') : esc(e.name)}</b>${e.pr ? ` <span class="label">${esc(e.pr)}</span>` : ''}${T(e.note) ? `<br><small>${esc(T(e.note))}</small>` : ''}</li>`).join('')}</ul></details>` : ''}
 ${(pl.learn || []).length ? `<details class="sub"><summary>📚 ${L('เรียนรู้ระหว่างทาง', 'Learn on the way')} <span class="label">· ${pl.learn.length}</span></summary>${pl.learn.map((x) => `<div class="learn"><b>${esc(T(x.name))}</b> <span class="label">${esc(T(x.country))}</span><ul>${(x.facts || []).map((f) => `<li>${esc(T(f))}</li>`).join('')}</ul>${x.kid ? `<p class="kidline">🧒 ${esc(T(x.kid))}</p>` : ''}</div>`).join('')}</details>` : ''}
 ${(pl.quiz || []).length ? `<details class="sub"><summary>❓ ${L('ถามหนูในรถ', 'Quiz in the car')} <span class="label">· ${pl.quiz.length}</span></summary>${quizHtml(pl.quiz)}</details>` : ''}
-<p class="label">${L('จากเล่มคู่มือ · ราคาและเวลาเปิดตรวจซ้ำก่อนเดินทาง · เลขจองอยู่ในแอปคู่มือ ไม่ได้เก็บที่นี่', 'From the manual · re-check prices and hours before travelling · booking numbers live in the guide app, not here')}</p></details>`;
+<p class="label">${L('จากเล่มคู่มือ · ราคาและเวลาเปิดตรวจซ้ำก่อนเดินทาง · เลขจองอยู่ในแอปคู่มือ ไม่ได้เก็บที่นี่', 'From the manual · re-check prices and hours before travelling · booking numbers live in the guide app, not here')}</p></div></div></details>`;
 }
 // "more nearby" leaves out what the picks and the by-stop list already show
 const eatMore = (pl) => { const seen = new Set([...(pl.picks || []).flatMap((p) => [p.name, p.alt && p.alt.name]), ...(pl.food || []).flatMap((f) => f.items.map((x) => x.name))]); return (pl.eat || []).filter((e) => !seen.has(e.name)); };
@@ -336,7 +338,7 @@ ${mission && (mission.facts || []).length ? `<div class="part">${L('ภารก
 }
 function viewPlan(t) {
   const n = t.info || {};
-  return `<h1 class="h2">${secTitle('plan')}</h1><p class="lede">${L('ทุกวันของทริป — แตะ "แผนวันนี้" เพื่อดูรายละเอียด · ชื่อสถานที่กดเปิดแผนที่ได้', 'Every day of the trip — open "Plan for the day" for the detail · tap a place for its map')}</p>${itinerary(t)}${n.drive ? `<section class="pocket">${infoBlocks(t).drive}</section>` : ''}`;
+  return `<div class="tp tp-plan"><h1 class="h2">${secTitle('plan')}</h1><p class="lede">${L('ทุกวันของทริป — แตะ "แผนวันนี้" เพื่อดูรายละเอียด · ชื่อสถานที่กดเปิดแผนที่ได้', 'Every day of the trip — open "Plan for the day" for the detail · tap a place for its map')}</p>${itinerary(t)}${n.drive ? `<section class="pocket">${infoBlocks(t).drive}</section>` : ''}</div>`;
 }
 // the pocket guide, split by topic (seed info → trips.info); each block is an open <details> so a long page still folds
 function infoBlocks(t) {
