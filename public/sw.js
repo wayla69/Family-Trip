@@ -1,13 +1,13 @@
 // Memory Bookshelf service worker: app shell + all drawn art offline from the first visit; photos cached as you view them
 // (or all at once with "Keep this book offline"). Data (/api) is cached by the app itself (IndexedDB) and written through its queue.
-const V = 'mbs-v35';
+const V = 'mbs-v36';
 const SHELL = ['/', '/app.css', '/core.js', '/views.js', '/sheets.js', '/kid.js', '/manifest.webmanifest', '/icon.svg',
   '/fonts/KIRA-UI-Regular.woff2', '/fonts/KIRA-UI-Medium.woff2', '/fonts/KIRA-UI-SemiBold.woff2', '/fonts/KIRA-UI-Bold.woff2',
   '/fonts/CormorantGaramond-SemiBold.woff2', '/fonts/CormorantGaramond-MediumItalic.woff2'];
 // every file under public/art (test/infra.mjs checks this list is complete): day stamps, colouring pages, guides, crests, the kids
 const ART = ['/art/day-1.svg', '/art/day-2.svg', '/art/day-3.svg', '/art/day-4.svg', '/art/day-5.svg', '/art/day-6.svg', '/art/day-7.svg', '/art/day-8.svg',
   '/art/day-9.svg', '/art/day-10.svg', '/art/day-11.svg', '/art/day-12.svg', '/art/day-13.svg', '/art/day-14.svg', '/art/day-15.svg', '/art/day-16.svg',
-  '/art/hk/day-1.svg', '/art/hk/day-2.svg', '/art/hk/day-3.svg', '/art/hk/day-4.svg', '/art/hk/day-5.svg', '/art/hk/day-6.svg',
+  '/art/hk/disney-map.svg', '/art/hk/day-1.svg', '/art/hk/day-2.svg', '/art/hk/day-3.svg', '/art/hk/day-4.svg', '/art/hk/day-5.svg', '/art/hk/day-6.svg',
   '/art/colour/hk/day-1.svg', '/art/colour/hk/day-2.svg', '/art/colour/hk/day-3.svg', '/art/colour/hk/day-4.svg', '/art/colour/hk/day-5.svg', '/art/colour/hk/day-6.svg',
   '/art/guides/pinky.svg', '/art/guides/bao.svg', '/art/guides/roo.svg', '/art/guides/kiki.svg', '/art/crest/hk.svg', '/art/crest/au.svg',
   '/art/kids/mimi.svg', '/art/kids/mimi-full.svg', '/art/kids/mika.svg', '/art/kids/mika-full.svg',

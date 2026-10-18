@@ -1,0 +1,81 @@
+<svg viewBox="0 0 700 620" xmlns="http://www.w3.org/2000/svg" font-family="KIRA UI, system-ui, sans-serif" role="img" aria-label="Hong Kong Disneyland map — our route">
+<rect width="700" height="620" rx="18" fill="#F4F1EA"/>
+<ellipse cx="350" cy="320" rx="330" ry="272" fill="#EEF2E4" stroke="#fff" stroke-width="4"/>
+<path d="M348 372L150 255" stroke="#D8CDBB" stroke-width="16" stroke-linecap="round"/>
+<path d="M348 372L228 140" stroke="#D8CDBB" stroke-width="16" stroke-linecap="round"/>
+<path d="M348 372L350 112" stroke="#D8CDBB" stroke-width="16" stroke-linecap="round"/>
+<path d="M348 372L560 152" stroke="#D8CDBB" stroke-width="16" stroke-linecap="round"/>
+<path d="M348 372L545 362" stroke="#D8CDBB" stroke-width="16" stroke-linecap="round"/>
+<path d="M348 372L178 425" stroke="#D8CDBB" stroke-width="16" stroke-linecap="round"/>
+<path d="M348 372L348 560" stroke="#D8CDBB" stroke-width="16" stroke-linecap="round"/>
+<ellipse cx="150" cy="255" rx="88" ry="62" fill="#F3E9D8" stroke="#fff" stroke-width="3"/>
+<ellipse cx="228" cy="140" rx="78" ry="52" fill="#EDE6F6" stroke="#fff" stroke-width="3"/>
+<ellipse cx="350" cy="112" rx="82" ry="56" fill="#FFF4CF" stroke="#fff" stroke-width="3"/>
+<ellipse cx="560" cy="152" rx="92" ry="66" fill="#E1F0F3" stroke="#fff" stroke-width="3"/>
+<ellipse cx="345" cy="245" rx="122" ry="86" fill="#E3ECF8" stroke="#fff" stroke-width="3"/>
+<ellipse cx="545" cy="362" rx="102" ry="70" fill="#E7E9F8" stroke="#fff" stroke-width="3"/>
+<ellipse cx="178" cy="425" rx="118" ry="82" fill="#E3EFE0" stroke="#fff" stroke-width="3"/>
+<ellipse cx="348" cy="478" rx="62" ry="98" fill="#FBE7E2" stroke="#fff" stroke-width="3"/>
+<ellipse cx="172" cy="440" rx="66" ry="34" fill="#BCDCEE" stroke="#fff" stroke-width="3"/><ellipse cx="172" cy="440" rx="30" ry="14" fill="#DCEAD2"/>
+<path d="M348 372L249 314" stroke="#D8CDBB" stroke-width="16" stroke-linecap="round"/>
+<path d="M348 372L288 256" stroke="#D8CDBB" stroke-width="16" stroke-linecap="round"/>
+<path d="M348 372L349 242" stroke="#D8CDBB" stroke-width="16" stroke-linecap="round"/>
+<path d="M348 372L454 262" stroke="#D8CDBB" stroke-width="16" stroke-linecap="round"/>
+<path d="M348 372L446 367" stroke="#D8CDBB" stroke-width="16" stroke-linecap="round"/>
+<path d="M348 372L263 398" stroke="#D8CDBB" stroke-width="16" stroke-linecap="round"/>
+<path d="M348 372L348 466" stroke="#D8CDBB" stroke-width="16" stroke-linecap="round"/>
+<circle cx="348" cy="372" r="34" fill="#D8CDBB" stroke="#fff" stroke-width="3"/>
+<path d="M330 312v-18l6-8 6 8v-6l6-10 6 10v6l6-8 6 8v18z" fill="#22406B"/>
+<text x="150" y="222" font-size="13" font-weight="700" text-anchor="middle" fill="#8A6420" stroke="#fff" stroke-width="3" paint-order="stroke" stroke-linejoin="round">Grizzly Gulch</text>
+<text x="238" y="118" font-size="13" font-weight="700" text-anchor="middle" fill="#6A4BA8" stroke="#fff" stroke-width="3" paint-order="stroke" stroke-linejoin="round">Mystic Point</text>
+<text x="350" y="80" font-size="13" font-weight="700" text-anchor="middle" fill="#9A6B00" stroke="#fff" stroke-width="3" paint-order="stroke" stroke-linejoin="round">Toy Story Land</text>
+<text x="560" y="104" font-size="13" font-weight="700" text-anchor="middle" fill="#1E7A86" stroke="#fff" stroke-width="3" paint-order="stroke" stroke-linejoin="round">World of Frozen</text>
+<text x="318" y="214" font-size="13" font-weight="700" text-anchor="middle" fill="#2C4F86" stroke="#fff" stroke-width="3" paint-order="stroke" stroke-linejoin="round">Fantasyland</text>
+<text x="528" y="330" font-size="13" font-weight="700" text-anchor="middle" fill="#3B3F9E" stroke="#fff" stroke-width="3" paint-order="stroke" stroke-linejoin="round">Tomorrowland</text>
+<text x="172" y="368" font-size="13" font-weight="700" text-anchor="middle" fill="#2F6B35" stroke="#fff" stroke-width="3" paint-order="stroke" stroke-linejoin="round">Adventureland</text>
+<text x="348" y="424" font-size="13" font-weight="700" text-anchor="middle" fill="#B03A2E" stroke="#fff" stroke-width="3" paint-order="stroke" stroke-linejoin="round">Main Street, U.S.A.</text>
+<circle cx="302" cy="145" r="6" fill="#fff" stroke="#22406B" stroke-width="2.5"/>
+<text x="291" y="149" font-size="11" font-weight="500" text-anchor="end" fill="#22213A" stroke="#fff" stroke-width="3" paint-order="stroke" stroke-linejoin="round">Parachute Drop (95 cm)</text>
+<circle cx="238" cy="176" r="6" fill="#fff" stroke="#22406B" stroke-width="2.5"/>
+<text x="227" y="180" font-size="11" font-weight="500" text-anchor="end" fill="#22213A" stroke="#fff" stroke-width="3" paint-order="stroke" stroke-linejoin="round">Mystic Manor</text>
+<rect x="233" y="193" width="14" height="14" rx="3" fill="#C9A227"/><text x="240" y="204" font-size="10" font-weight="700" text-anchor="middle" fill="#fff">E</text>
+<text x="251" y="204" font-size="11" font-weight="500" text-anchor="start" fill="#22213A" stroke="#fff" stroke-width="3" paint-order="stroke" stroke-linejoin="round">Explorer&#39;s Club</text>
+<circle cx="408" cy="190" r="6" fill="#fff" stroke="#22406B" stroke-width="2.5"/>
+<text x="419" y="194" font-size="11" font-weight="500" text-anchor="start" fill="#22213A" stroke="#fff" stroke-width="3" paint-order="stroke" stroke-linejoin="round">Tea Cups</text>
+<circle cx="596" cy="224" r="6" fill="#fff" stroke="#22406B" stroke-width="2.5"/>
+<text x="585" y="228" font-size="11" font-weight="500" text-anchor="end" fill="#22213A" stroke="#fff" stroke-width="3" paint-order="stroke" stroke-linejoin="round">Oaken&#39;s Sleighs (102 cm)</text>
+<circle cx="152" cy="280" r="6" fill="#fff" stroke="#22406B" stroke-width="2.5"/>
+<text x="163" y="284" font-size="11" font-weight="500" text-anchor="start" fill="#22213A" stroke="#fff" stroke-width="3" paint-order="stroke" stroke-linejoin="round">Big Grizzly Mtn (120 cm)</text>
+<circle cx="565" cy="352" r="6" fill="#fff" stroke="#22406B" stroke-width="2.5"/>
+<text x="554" y="356" font-size="11" font-weight="500" text-anchor="end" fill="#22213A" stroke="#fff" stroke-width="3" paint-order="stroke" stroke-linejoin="round">Hyperspace Mtn (102 cm)</text>
+<circle cx="528" cy="378" r="6" fill="#fff" stroke="#22406B" stroke-width="2.5"/>
+<text x="517" y="382" font-size="11" font-weight="500" text-anchor="end" fill="#22213A" stroke="#fff" stroke-width="3" paint-order="stroke" stroke-linejoin="round">Orbitron</text>
+<circle cx="214" cy="468" r="6" fill="#fff" stroke="#22406B" stroke-width="2.5"/>
+<text x="225" y="472" font-size="11" font-weight="500" text-anchor="start" fill="#22213A" stroke="#fff" stroke-width="3" paint-order="stroke" stroke-linejoin="round">Jungle River Cruise</text>
+<rect x="369" y="397" width="14" height="14" rx="3" fill="#2E8C7E"/><text x="376" y="408" font-size="10" font-weight="700" text-anchor="middle" fill="#fff">B</text>
+<text x="387" y="408" font-size="11" font-weight="500" text-anchor="start" fill="#22213A" stroke="#fff" stroke-width="3" paint-order="stroke" stroke-linejoin="round">Baby Care Center</text>
+<rect x="373" y="459" width="14" height="14" rx="3" fill="#C9A227"/><text x="380" y="470" font-size="10" font-weight="700" text-anchor="middle" fill="#fff">E</text>
+<text x="391" y="470" font-size="11" font-weight="500" text-anchor="start" fill="#22213A" stroke="#fff" stroke-width="3" paint-order="stroke" stroke-linejoin="round">Plaza Inn (dinner)</text>
+<circle cx="348" cy="528" r="11" fill="#C8402B" stroke="#fff" stroke-width="2"/><text x="348" y="532" font-size="12" font-weight="700" text-anchor="middle" fill="#fff">1</text>
+<text x="364" y="532" font-size="12" font-weight="600" text-anchor="start" fill="#22213A" stroke="#fff" stroke-width="3" paint-order="stroke" stroke-linejoin="round">Main Street · parade route</text>
+<circle cx="458" cy="230" r="11" fill="#C8402B" stroke="#fff" stroke-width="2"/><text x="458" y="234" font-size="12" font-weight="700" text-anchor="middle" fill="#fff">2</text>
+<text x="474" y="234" font-size="12" font-weight="600" text-anchor="start" fill="#22213A" stroke="#fff" stroke-width="3" paint-order="stroke" stroke-linejoin="round">Winnie the Pooh</text>
+<circle cx="428" cy="264" r="11" fill="#C8402B" stroke="#fff" stroke-width="2"/><text x="428" y="268" font-size="12" font-weight="700" text-anchor="middle" fill="#fff">3</text>
+<text x="444" y="268" font-size="12" font-weight="600" text-anchor="start" fill="#22213A" stroke="#fff" stroke-width="3" paint-order="stroke" stroke-linejoin="round">Dumbo</text>
+<circle cx="365" cy="284" r="11" fill="#C8402B" stroke="#fff" stroke-width="2"/><text x="365" y="288" font-size="12" font-weight="700" text-anchor="middle" fill="#fff">4</text>
+<text x="349" y="288" font-size="12" font-weight="600" text-anchor="end" fill="#22213A" stroke="#fff" stroke-width="3" paint-order="stroke" stroke-linejoin="round">Carousel</text>
+<circle cx="350" cy="178" r="11" fill="#C8402B" stroke="#fff" stroke-width="2"/><text x="350" y="182" font-size="12" font-weight="700" text-anchor="middle" fill="#fff">5</text>
+<text x="366" y="182" font-size="12" font-weight="600" text-anchor="start" fill="#22213A" stroke="#fff" stroke-width="3" paint-order="stroke" stroke-linejoin="round">it&#39;s a small world</text>
+<circle cx="300" cy="240" r="11" fill="#C8402B" stroke="#fff" stroke-width="2"/><text x="300" y="244" font-size="12" font-weight="700" text-anchor="middle" fill="#fff">6</text>
+<text x="284" y="244" font-size="12" font-weight="600" text-anchor="end" fill="#22213A" stroke="#fff" stroke-width="3" paint-order="stroke" stroke-linejoin="round">Royal Banquet Hall · lunch</text>
+<circle cx="418" cy="306" r="11" fill="#C8402B" stroke="#fff" stroke-width="2"/><text x="418" y="310" font-size="12" font-weight="700" text-anchor="middle" fill="#fff">7</text>
+<text x="434" y="310" font-size="12" font-weight="600" text-anchor="start" fill="#22213A" stroke="#fff" stroke-width="3" paint-order="stroke" stroke-linejoin="round">PhilharMagic + nap</text>
+<circle cx="566" cy="168" r="11" fill="#C8402B" stroke="#fff" stroke-width="2"/><text x="566" y="172" font-size="12" font-weight="700" text-anchor="middle" fill="#fff">8</text>
+<text x="582" y="172" font-size="12" font-weight="600" text-anchor="start" fill="#22213A" stroke="#fff" stroke-width="3" paint-order="stroke" stroke-linejoin="round">Frozen Ever After</text>
+<circle cx="345" cy="120" r="11" fill="#C8402B" stroke="#fff" stroke-width="2"/><text x="345" y="124" font-size="12" font-weight="700" text-anchor="middle" fill="#fff">9</text>
+<text x="361" y="124" font-size="12" font-weight="600" text-anchor="start" fill="#22213A" stroke="#fff" stroke-width="3" paint-order="stroke" stroke-linejoin="round">Slinky Dog Spin</text>
+<path d="M338 578l10-14 10 14z" fill="#22406B"/><text x="366" y="578" font-size="12" font-weight="600" text-anchor="start" fill="#22213A" stroke="#fff" stroke-width="3" paint-order="stroke" stroke-linejoin="round">Entrance gate · bag check</text>
+<circle cx="246" cy="598" r="6" fill="#fff" stroke="#22406B" stroke-width="2.5"/><text x="234" y="602" font-size="11" font-weight="500" text-anchor="end" fill="#22213A" stroke="#fff" stroke-width="3" paint-order="stroke" stroke-linejoin="round">Taxi stand</text>
+<circle cx="470" cy="598" r="6" fill="#fff" stroke="#22406B" stroke-width="2.5"/><text x="482" y="602" font-size="11" font-weight="500" text-anchor="start" fill="#22213A" stroke="#fff" stroke-width="3" paint-order="stroke" stroke-linejoin="round">MTR station</text>
+<text x="684" y="26" font-size="12" font-weight="600" text-anchor="end" fill="#6D7480" stroke="#fff" stroke-width="3" paint-order="stroke" stroke-linejoin="round">N ▲</text>
+</svg>
