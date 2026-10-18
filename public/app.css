@@ -389,8 +389,24 @@ nav.bar a[aria-current=page] i{transform:translateY(-2px) scale(1.12);display:in
 .pocket details.pg>summary{cursor:pointer;font-weight:600;font-size:16px;list-style:none;display:flex;align-items:center;gap:6px}
 .pocket details.pg>summary::-webkit-details-marker{display:none}.pocket details.pg>summary::after{content:"›";margin-left:auto;transition:transform .2s;color:var(--muted)}.pocket details.pg[open]>summary::after{transform:rotate(90deg)}
 .pocket h5{margin:12px 0 4px;font-size:14px;color:var(--accent)}
-.stays{display:grid;grid-template-columns:repeat(auto-fill,minmax(min(100%,300px),1fr));gap:10px;margin-top:8px}
-.stayc{background:var(--panel);border-radius:12px;padding:12px 14px;font-size:13px}.stayc b{display:block;font-size:16px;margin:2px 0}.stayc small{display:block;color:var(--muted);margin:4px 0}.stayc .row{margin-top:8px}
+.stays{display:grid;grid-template-columns:repeat(auto-fill,minmax(min(100%,320px),1fr));gap:14px;margin-top:10px}
+/* stays read like the manual's "Where we sleep": a colour per stay on the strip and the card's top rule */
+.stayc{--c:var(--accent);background:var(--paper);border:1px solid var(--rule);border-top:4px solid var(--c);border-radius:6px;padding:10px 14px 12px;font-size:13px;line-height:1.45;display:flex;flex-direction:column;min-width:0;overflow-wrap:anywhere}
+.stayc .sh{display:flex;justify-content:space-between;gap:8px;font-size:12px;color:var(--muted)}.stayc .sh .nn{font-weight:700;color:var(--c)}
+.stayc h4{font-family:var(--display-font);font-size:clamp(21px,2.6vw,25px);line-height:1.15;margin:2px 0 4px;color:var(--ink)}
+.stayc .prop{font-size:13px;color:var(--muted)}.stayc .prop b{color:var(--ink)}
+.stayc p{margin:4px 0;font-size:13.5px}.stayc p.chk{color:#8A6512}.stayc p.chk b{font-weight:700}
+.stayc .addr{margin:6px 0 0;font-size:13px;font-weight:600;color:var(--ink)}
+.stayc .sf{margin-top:auto;padding-top:8px;border-top:1px solid var(--rule);display:flex;flex-wrap:wrap;align-items:center;gap:6px 12px}
+.stayc .sf .st{font-size:11px;font-weight:700;color:var(--accent);background:color-mix(in srgb,var(--accent) 10%,var(--paper));border-radius:999px;padding:2px 9px}
+.stayc .acts{display:flex;flex-wrap:wrap;gap:4px 12px;margin-left:auto}
+.stayc .go{font:inherit;font-size:12px;font-weight:600;color:var(--muted);background:none;border:0;padding:4px 0;cursor:pointer;text-decoration:none;white-space:nowrap}.stayc .go:hover{color:var(--accent);text-decoration:underline}
+.nstripw{overflow-x:auto;margin:8px 0 4px;padding-bottom:4px}
+.nstrip{display:grid;grid-template-columns:repeat(var(--n),minmax(38px,1fr));row-gap:6px;min-width:calc(var(--n) * 38px)}
+.nstrip .nd{grid-row:1;text-align:center;line-height:1.1}.nstrip .nd b{display:block;font-size:13px}.nstrip .nd small{font-size:10px;color:var(--muted)}
+.nstrip .nb{grid-row:2;background:var(--c);color:#fff;font-size:11px;font-weight:700;text-align:center;border-radius:4px;padding:4px 4px;margin:0 1px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.nights li{border-left:3px solid var(--c,var(--rule));padding-left:10px}
+@media (prefers-color-scheme:dark){:root:not([data-theme=light]) .stayc p.chk{color:#E2B95A}}:root[data-theme=dark] .stayc p.chk{color:#E2B95A}
 .emerg{list-style:none;margin:8px 0;padding:0}.emerg li{display:flex;justify-content:space-between;gap:10px;align-items:center;padding:8px 0;border-bottom:1px solid var(--rule);font-size:14px}.emerg li.main b a{font-size:22px;color:var(--accent2)}.emerg b a{text-decoration:none;color:var(--accent);white-space:nowrap}
 .tblwrap{overflow-x:auto;margin-top:8px}.prices{border-collapse:collapse;width:100%;font-size:13px;min-width:480px}.prices th,.prices td{text-align:left;padding:6px 8px;border-bottom:1px solid var(--rule);vertical-align:top}.prices th{font-size:12px;color:var(--muted)}.prices td.nm{font-weight:600}
 @media (max-width:560px){.prices{min-width:0}.prices thead{display:none}.prices tr{display:block;padding:8px 0;border-bottom:1px solid var(--rule)}.prices td{display:block;border:0;padding:2px 8px}.prices td.nm{font-size:14px;padding-bottom:4px}.prices td[data-h]::before{content:attr(data-h);display:block;font-size:11px;color:var(--muted);letter-spacing:.02em}}
