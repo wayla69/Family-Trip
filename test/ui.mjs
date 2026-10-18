@@ -148,9 +148,11 @@ const T = 'hk-macau-2026';
   await stay.locator('.rkid.again button[data-v="1"]').click(); await stay.locator('.rkid.again button[data-v="1"][aria-pressed="true"]').waitFor();
   await stay.locator('.rnote').fill('ห้องมุม วิวสะพาน เด็กหลับสนิท'); await page.locator('#qtext').focus();
   await page.waitForFunction(() => queue.length === 0, null, { timeout: 15000 });
-  for (let k = 0; k < 40; k++) { st = await apiState(page); const r = st.reviews.find((x) => x.kind === 'stay'); if (r && r.note && r.again !== null && r.again !== undefined) break; await page.waitForTimeout(250); }   // the last PUT may still be in flight when the queue empties
-  const rvw = st.reviews.find((r) => r.kind === 'stay');
-  ok(rvw && rvw.rating === 4 && rvw.tags.includes('kidsleep') && rvw.kids.mimi === 'love' && rvw.again === true && rvw.note.includes('วิวสะพาน'), 'server: stay review — 4★, tag, Mimi 😍, again, note (one row, upserted)');
+  // poll the server for the whole row (not just the last fields): under full-suite load the last PUT can land seconds after the queue empties
+  const fullReview = (r) => r && r.rating === 4 && r.tags.includes('kidsleep') && r.kids.mimi === 'love' && r.again === true && (r.note || '').includes('วิวสะพาน');
+  let rvw;
+  for (let k = 0; k < 120; k++) { st = await apiState(page); rvw = st.reviews.find((x) => x.kind === 'stay'); if (fullReview(rvw)) break; await page.waitForTimeout(250); }
+  ok(fullReview(rvw) && st.reviews.filter((r) => r.kind === 'stay').length === 1, 'server: stay review — 4★, tag, Mimi 😍, again, note (one row, upserted)' + (fullReview(rvw) ? '' : ` — server has ${JSON.stringify(rvw)}, queue ${await page.evaluate(() => queue.length)}, toast "${await page.textContent('#toast')}"`));
   ok(await stay.locator('summary .st').textContent() === '★★★★☆' && await stay.locator('.stars button[aria-pressed=true]').count() === 1, 'review card shows the stars in its summary');
   await page.locator('#notebook').screenshot({ path: path.join(OUT, 'phone-03b-notebook.png') });
   await s.shot('03-record-day2');

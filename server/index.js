@@ -60,9 +60,11 @@ app.post('/api/login', express.json({ limit: '10kb' }), (req, res) => {
   if (A.throttled(ip)) return res.status(429).json({ error: 'too-many' });
   const code = String((req.body && req.body.code) || '');
   const name = clip((req.body && req.body.name) || '', 24).trim() || 'Family';
-  if (!A.FAMILY_CODE || !A.safeEq(code, A.FAMILY_CODE)) { A.noteFail(ip); return res.status(401).json({ error: 'wrong-code' }); }
-  A.setCookie(res, A.makeToken('editor', name, crypto.randomBytes(6).toString('hex')), isSecure(req));
-  res.json({ ok: true });
+  // the family PIN writes; the relatives' PIN (VIEW_PIN) only reads — both share the throttle
+  const role = A.FAMILY_CODE && A.safeEq(code, A.FAMILY_CODE) ? 'editor' : A.VIEW_PIN && A.safeEq(code, A.VIEW_PIN) ? 'viewer' : null;
+  if (!role) { A.noteFail(ip); return res.status(401).json({ error: 'wrong-code' }); }
+  A.setCookie(res, A.makeToken(role, role === 'viewer' && name === 'Family' ? 'Guest' : name, crypto.randomBytes(6).toString('hex')), isSecure(req));
+  res.json({ ok: true, role });
 });
 app.post('/api/logout', (req, res) => { A.clearCookie(res); res.json({ ok: true }); });
 
@@ -125,6 +127,8 @@ const PORT = +process.env.PORT || 3000;
 if (require.main === module) {
   if (!A.FAMILY_CODE) console.warn('WARNING: FAMILY_CODE is not set — nobody can log in. Set it in Railway → Variables.');
   else if (A.FAMILY_CODE.length < 6) console.warn('WARNING: FAMILY_CODE is shorter than 6 characters — use a PIN of at least 6 digits.');
+  if (process.env.VIEW_PIN && !A.VIEW_PIN) console.warn('WARNING: VIEW_PIN equals FAMILY_CODE — ignored (relatives would get the family write access). Pick a different PIN.');
+  else if (A.VIEW_PIN && A.VIEW_PIN.length < 6) console.warn('WARNING: VIEW_PIN is shorter than 6 characters — use at least 6 digits.');
   if (process.env.NODE_ENV === 'production' && MEDIA.kind !== 's3') console.warn('WARNING: BUCKET is not set — photos go to local disk and are lost on the next deploy unless /data is a Railway volume.');
   if (!PG) { console.error('DATABASE_URL is not set — add Railway Postgres and reference ${{Postgres.DATABASE_URL}} (locally: see CLAUDE.md)'); process.exit(1); }
   PGM.ready(PG)

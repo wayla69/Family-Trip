@@ -12,6 +12,13 @@ const me = await (await fetch(BASE + '/api/b/state', { headers: { cookie: r0.hea
 ok(me.me.name === 'Family' && me.me.role === 'editor', 'name defaults to "Family"');
 ok(/Max-Age=34560000/.test(r0.headers.get('set-cookie')), 'session lasts 400 days — the PIN is rarely asked again');
 
+// relatives' read-only PIN (VIEW_PIN): same pad, viewer session with their own name; writes refused
+const rv = await login('835911', '10.0.0.9', 'คุณยาย');
+const vck = rv.headers.get('set-cookie').split(';')[0], vme = await (await fetch(BASE + '/api/b/state', { headers: { cookie: vck } })).json();
+ok(rv.status === 200 && (await rv.json()).role === 'viewer' && vme.me.role === 'viewer' && vme.me.name === 'คุณยาย', 'view-only PIN signs a relative in as viewer, with their name');
+ok((await fetch(BASE + '/api/b/entries/v-pin-0001', { method: 'PUT', headers: { 'x-mb': '1', cookie: vck, 'content-type': 'application/json' }, body: JSON.stringify({ trip: 'hk-macau-2026', day: 0, kind: 'quote', child: 'mimi', text: 'x' }) })).status === 403, 'a view-only PIN session cannot write');
+ok((await (await fetch(BASE + '/api/b/state', { headers: { cookie: (await login('835911', '10.0.0.10')).headers.get('set-cookie').split(';')[0] } })).json()).me.name === 'Guest', 'a relative who types no name shows as Guest');
+
 let s = 0; for (let i = 0; i < 10; i++) s = (await login('000000', '10.0.0.2')).status;
 ok(s === 401, '10 wrong PINs from one device → 401 each');
 ok((await login(CODE, '10.0.0.2')).status === 429, '11th try from that device is blocked, even with the right PIN');
