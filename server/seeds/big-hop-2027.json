@@ -62,6 +62,8 @@
  "days": [
   {
    "index": 0,
+   "pick": { "th": "Mascot คือย่านของสนามบินเอง Adina อยู่ห่างสถานี Mascot แค่เดิน 4 นาที — คืนนี้ร้านแนะนำคือครัวในห้องพัก: ของว่างเบาๆ แล้วเข้านอน มื้อซิดนีย์จริงรอพรุ่งนี้บนถนนเลียบทะเล", "en": "Mascot is the airport's own suburb and the Adina is a 4-minute walk from the station — tonight's local pick is the apartment kitchen: a light snack and bed; the first real Sydney meal waits on tomorrow's coast road." },
+   "money": { "th": "รถไฟ T8 ผู้ใหญ่ 3 คน รวมค่าสถานีสนามบิน ≈ A$70 · ของว่างดึก ≈ A$20 · วันนี้ ≈ A$90 (+ โรงแรมสนามบินกรุงเทพฯ คืนก่อน A$60–120) · ประมาณการจากงบและราคาในคู่มือ ไม่รวมที่พัก รถตู้ ตั๋วเครื่องบิน", "en": "T8 train, 3 adults incl. the airport station fee ≈ A$70 · Late snack ≈ A$20 · Today ≈ A$90 (+ the Bangkok airport hotel the night before, A$60–120) · estimate from the manual's budget and prices; stays, van and flights not included" },
    "planB": { "th": "ถ้าเหนื่อย ตัดอันนี้ก่อน: ไม่มี — เข้านอนทันที", "en": "If tired, cut first: Nothing — straight to bed" },
    "date": "2027-04-02",
    "emoji": "✈️",
@@ -116,6 +118,7 @@
   },
   {
    "index": 1,
+   "money": { "th": "น้ำมัน ≈ A$80 · ฟิชแอนด์ชิปส์ที่ Kiama ≈ A$60 · ซูเปอร์มาร์เก็ตเข้าบ้านพัก ≈ A$150 · วันนี้ ≈ A$290 · ประมาณการจากงบและราคาในคู่มือ ไม่รวมที่พัก รถตู้ ตั๋วเครื่องบิน", "en": "Fuel ≈ A$80 · Fish and chips in Kiama ≈ A$60 · Supermarket shop for the shack ≈ A$150 · Today ≈ A$290 · estimate from the manual's budget and prices; stays, van and flights not included" },
    "date": "2027-04-03",
    "emoji": "🌉",
    "gradient": [
@@ -271,6 +274,7 @@
   },
   {
    "index": 2,
+   "money": { "th": "น้ำมัน ≈ A$50 · มื้อกลางวันที่ Milton ≈ A$80 · ขนมอบ ไอศกรีม ≈ A$30 · มื้อเย็นทำเอง ≈ A$40 · วันนี้ ≈ A$200 · ประมาณการจากงบและราคาในคู่มือ ไม่รวมที่พัก รถตู้ ตั๋วเครื่องบิน", "en": "Fuel ≈ A$50 · Lunch in Milton ≈ A$80 · Bakery and gelato ≈ A$30 · Dinner in ≈ A$40 · Today ≈ A$200 · estimate from the manual's budget and prices; stays, van and flights not included" },
    "date": "2027-04-04",
    "emoji": "🏖️",
    "gradient": [
@@ -410,6 +414,7 @@
   },
   {
    "index": 3,
+   "money": { "th": "น้ำมัน ≈ A$60 · ที่จอด Fitzroy Falls ≈ A$8 · พายมื้อกลางวัน ≈ A$40 · ชายามบ่าย Bendooley ≈ A$50 · มื้อเย็นที่ Bowral A$60 (ทำเอง) – A$120 (ร้าน) · วันนี้ ≈ A$220–280 · ประมาณการจากงบและราคาในคู่มือ ไม่รวมที่พัก รถตู้ ตั๋วเครื่องบิน", "en": "Fuel ≈ A$60 · Fitzroy Falls parking ≈ A$8 · Pies for lunch ≈ A$40 · Afternoon tea at Bendooley ≈ A$50 · Dinner in Bowral A$60 (cook) – A$120 (out) · Today ≈ A$220–280 · estimate from the manual's budget and prices; stays, van and flights not included" },
    "date": "2027-04-05",
    "emoji": "🦘",
    "gradient": [
@@ -575,6 +580,7 @@
   },
   {
    "index": 4,
+   "money": { "th": "น้ำมัน ≈ A$65 · สวนพฤกษศาสตร์ Mount Annan เข้าฟรี · ปิกนิก ≈ A$40 · ขนมที่ Leura ≈ A$30 · ที่จอด Echo Point ≈ A$10 · มื้อเย็นที่ Katoomba ≈ A$120 · วันนี้ ≈ A$265 · ประมาณการจากงบและราคาในคู่มือ ไม่รวมที่พัก รถตู้ ตั๋วเครื่องบิน", "en": "Fuel ≈ A$65 · Mount Annan botanic garden free · Picnic ≈ A$40 · Treats in Leura ≈ A$30 · Echo Point parking ≈ A$10 · Dinner in Katoomba ≈ A$120 · Today ≈ A$265 · estimate from the manual's budget and prices; stays, van and flights not included" },
    "date": "2027-04-06",
    "emoji": "⛰️",
    "gradient": [
@@ -721,6 +727,7 @@
   },
   {
    "index": 5,
+   "money": { "th": "Scenic World A$180–192 · Zig Zag Railway A$162.50 · น้ำมัน ≈ A$50 · มื้อกลางวันที่ Blackheath ≈ A$80 · มื้อเย็น ≈ A$120 · วันนี้ ≈ A$590–605 — วันที่แพงที่สุดช่วงขับรถ · ประมาณการจากงบและราคาในคู่มือ ไม่รวมที่พัก รถตู้ ตั๋วเครื่องบิน", "en": "Scenic World A$180–192 · Zig Zag Railway A$162.50 · Fuel ≈ A$50 · Lunch in Blackheath ≈ A$80 · Dinner ≈ A$120 · Today ≈ A$590–605 — the dearest driving day · estimate from the manual's budget and prices; stays, van and flights not included" },
    "date": "2027-04-07",
    "emoji": "🚂",
    "gradient": [
@@ -856,6 +863,7 @@
   },
   {
    "index": 6,
+   "money": { "th": "น้ำมัน ≈ A$100 · ค่าทางด่วน M7/M2 ≈ A$25 (เก็บผ่านแท็กของเจ้าของรถ) · มื้อกลางวันที่ Saddles ≈ A$120 · ของบาร์บีคิวที่ Rutherford ≈ A$100 · Reptile Park ถ้าแวะ — ไม่รวมในยอด · วันนี้ ≈ A$345 · ประมาณการจากงบและราคาในคู่มือ ไม่รวมที่พัก รถตู้ ตั๋วเครื่องบิน", "en": "Fuel ≈ A$100 · M7/M2 tolls ≈ A$25 (on the host's tag) · Lunch at Saddles ≈ A$120 · Barbecue shop in Rutherford ≈ A$100 · Reptile Park if you stop — not in the total · Today ≈ A$345 · estimate from the manual's budget and prices; stays, van and flights not included" },
    "date": "2027-04-08",
    "emoji": "🐴",
    "gradient": [
@@ -1013,6 +1021,7 @@
   },
   {
    "index": 7,
+   "money": { "th": "Hunter Valley Gardens A$126 · น้ำมัน ≈ A$45 · มื้อกลางวันใน Gardens Village ≈ A$90 · ซื้อของใหญ่ที่ Salamander Bay ≈ A$180 · วันนี้ ≈ A$440 · ประมาณการจากงบและราคาในคู่มือ ไม่รวมที่พัก รถตู้ ตั๋วเครื่องบิน", "en": "Hunter Valley Gardens A$126 · Fuel ≈ A$45 · Lunch at the Gardens Village ≈ A$90 · Big shop at Salamander Bay ≈ A$180 · Today ≈ A$440 · estimate from the manual's budget and prices; stays, van and flights not included" },
    "date": "2027-04-09",
    "emoji": "🌷",
    "gradient": [
@@ -1151,6 +1160,7 @@
   },
   {
    "index": 8,
+   "money": { "th": "ล่องเรือดูโลมา ≈ A$180 · น้ำมัน ≈ A$25 · ฟิชแอนด์ชิปส์ ≈ A$60 · มื้อเย็นที่ Shoal Bay Country Club ≈ A$130 · วันนี้ ≈ A$395 · ประมาณการจากงบและราคาในคู่มือ ไม่รวมที่พัก รถตู้ ตั๋วเครื่องบิน", "en": "Dolphin Watch cruise ≈ A$180 · Fuel ≈ A$25 · Fish and chips ≈ A$60 · Dinner at the Shoal Bay Country Club ≈ A$130 · Today ≈ A$395 · estimate from the manual's budget and prices; stays, van and flights not included" },
    "date": "2027-04-10",
    "emoji": "🐬",
    "gradient": [
@@ -1273,6 +1283,7 @@
   },
   {
    "index": 9,
+   "money": { "th": "น้ำมัน ≈ A$65 · พาย Heatherbrae ≈ A$40 · ซีฟู้ดที่ Avoca ≈ A$70 · ให้อาหารนกกระทุง ฟรี · ฟิชแอนด์ชิปส์มื้อเย็น ≈ A$70 · วันนี้ ≈ A$245 · ประมาณการจากงบและราคาในคู่มือ ไม่รวมที่พัก รถตู้ ตั๋วเครื่องบิน", "en": "Fuel ≈ A$65 · Heatherbrae pies ≈ A$40 · Avoca seafood lunch ≈ A$70 · Pelican feeding free · Fish and chips dinner ≈ A$70 · Today ≈ A$245 · estimate from the manual's budget and prices; stays, van and flights not included" },
    "date": "2027-04-11",
    "emoji": "🌊",
    "gradient": [
@@ -1413,6 +1424,8 @@
   },
   {
    "index": 10,
+   "pick": { "th": "คน The Entrance เริ่มวันที่ Albie's Coffee Bar บน Tuggerah Parade (ทุกวัน 06:00–12:00) — กาแฟกับมื้อเช้าก่อนขับช่วงยาวช่วงสุดท้าย ส่วนพายอยู่ที่ Flour and Co ที่ Toowoon Bay ห่างไป 2 นาที", "en": "The Entrance's locals start the day at Albie's Coffee Bar on Tuggerah Parade (daily 06:00–12:00) — coffee and breakfast before the last long drive; Flour and Co in Toowoon Bay, 2 minutes away, does the pies." },
+   "money": { "th": "Featherdale A$176 · น้ำมันรวมเติมเต็มถังก่อนคืนรถ ≈ A$120 · ค่าทางด่วน ≈ A$15 · มื้อกลางวัน ≈ A$70 · รถไฟ Mascot → Central ≈ A$10 · มื้อเย็น ≈ A$100 · วันนี้ ≈ A$490 · ประมาณการจากงบและราคาในคู่มือ ไม่รวมที่พัก รถตู้ ตั๋วเครื่องบิน", "en": "Featherdale A$176 · Fuel incl. the full tank before the return ≈ A$120 · Tolls ≈ A$15 · Lunch ≈ A$70 · Train Mascot → Central ≈ A$10 · Dinner ≈ A$100 · Today ≈ A$490 · estimate from the manual's budget and prices; stays, van and flights not included" },
    "date": "2027-04-12",
    "emoji": "🐨",
    "gradient": [
@@ -1531,6 +1544,7 @@
   },
   {
    "index": 11,
+   "money": { "th": "Light Rail ≈ A$20 · มื้อซีฟู้ดใหญ่ที่ Fish Market ≈ A$200 · SEA LIFE A$141–164 · มื้อเย็นที่ Darling Harbour ≈ A$130 · วันนี้ ≈ A$490–515 · ประมาณการจากงบและราคาในคู่มือ ไม่รวมที่พัก รถตู้ ตั๋วเครื่องบิน", "en": "Light Rail ≈ A$20 · The big seafood lunch at the Fish Market ≈ A$200 · SEA LIFE A$141–164 · Dinner at Darling Harbour ≈ A$130 · Today ≈ A$490–515 · estimate from the manual's budget and prices; stays, van and flights not included" },
    "date": "2027-04-13",
    "emoji": "🦈",
    "gradient": [
@@ -1659,6 +1673,8 @@
   },
   {
    "index": 12,
+   "pick": { "th": "The Rocks คือจุดเริ่มต้นของซิดนีย์ และผับเก่าที่นี่คือที่ที่คนซิดนีย์พาแขกมา — The Glenmore บน Cumberland Street เป็นร้านโปรดของคนท้องถิ่น ส่วน Pancakes on the Rocks เปิดถึงดึก เป็นของหวานของเด็กๆ", "en": "The Rocks is where Sydney began, and its old pubs are where Sydneysiders bring visitors — The Glenmore on Cumberland Street is the local favourite; Pancakes on the Rocks, open late, is the kids' dessert stop." },
+   "money": { "th": "เรือเฟอร์รี่ไปกลับ ≈ A$30 · ปิกนิก ≈ A$40 · เครื่องเล่น Luna Park A$60–80 · มื้อเย็นที่ The Rocks ≈ A$150 · วันนี้ ≈ A$280–300 · ประมาณการจากงบและราคาในคู่มือ ไม่รวมที่พัก รถตู้ ตั๋วเครื่องบิน", "en": "Ferries there and back ≈ A$30 · Picnic ≈ A$40 · Luna Park rides A$60–80 · Dinner in The Rocks ≈ A$150 · Today ≈ A$280–300 · estimate from the manual's budget and prices; stays, van and flights not included" },
    "date": "2027-04-14",
    "emoji": "🎡",
    "gradient": [
@@ -1788,6 +1804,7 @@
   },
   {
    "index": 13,
+   "money": { "th": "Taronga Zoo Express (เรือ + ค่าเข้า) A$195–210 · มื้อกลางวัน ≈ A$80 · รถไฟ ≈ A$10 · มื้อเย็น ≈ A$100 · แท็กซี่ไป Balmoral ถ้าไป — ไม่รวมในยอด · วันนี้ ≈ A$385–400 · ประมาณการจากงบและราคาในคู่มือ ไม่รวมที่พัก รถตู้ ตั๋วเครื่องบิน", "en": "Taronga Zoo Express (ferry + entry) A$195–210 · Lunch ≈ A$80 · Train ≈ A$10 · Dinner ≈ A$100 · Taxi to Balmoral if you go — not in the total · Today ≈ A$385–400 · estimate from the manual's budget and prices; stays, van and flights not included" },
    "date": "2027-04-15",
    "emoji": "🦒",
    "gradient": [
@@ -1897,6 +1914,7 @@
   },
   {
    "index": 14,
+   "money": { "th": "เรือ Manly ไปกลับ ≈ A$50 · มื้อกลางวันที่ Manly ≈ A$90 · มื้อเย็นอำลา ≈ A$150 · วันนี้ ≈ A$290 · ประมาณการจากงบและราคาในคู่มือ ไม่รวมที่พัก รถตู้ ตั๋วเครื่องบิน", "en": "Manly ferry there and back ≈ A$50 · Lunch in Manly ≈ A$90 · Farewell dinner ≈ A$150 · Today ≈ A$290 · estimate from the manual's budget and prices; stays, van and flights not included" },
    "date": "2027-04-16",
    "emoji": "⛴️",
    "gradient": [
@@ -2032,6 +2050,8 @@
   },
   {
    "index": 15,
+   "pick": { "th": "เช้าวันเสาร์ของคนซิดนีย์คือตลาดเกษตรกร Carriageworks (08:00–13:00) — ถ้าตลาดคนแน่นไป Boon Cafe ในร้านของชำไทย Jarern Chai เดินจากโรงแรม 5 นาทีคือแผนสำรอง", "en": "A Sydney Saturday morning means the Carriageworks Farmers Market (08:00–13:00) — if it is too busy, Boon Cafe inside the Jarern Chai Thai grocery, 5 minutes' walk from the hotel, is the backup." },
+   "money": { "th": "มื้อเช้าที่ตลาด Carriageworks ≈ A$60 · รถไฟ T8 ไปสนามบิน รวมค่าสถานี ≈ A$70 · มื้อกลางวันในสนามบิน ≈ A$80 · วันนี้ ≈ A$210 · ประมาณการจากงบและราคาในคู่มือ ไม่รวมที่พัก รถตู้ ตั๋วเครื่องบิน", "en": "Breakfast at the Carriageworks market ≈ A$60 · T8 train to the airport incl. the station fee ≈ A$70 · Lunch at the airport ≈ A$80 · Today ≈ A$210 · estimate from the manual's budget and prices; stays, van and flights not included" },
    "date": "2027-04-17",
    "emoji": "🧳",
    "gradient": [
@@ -2635,6 +2655,7 @@
   ]
  },
  "passport": {
+  "declaration": { "title": { "th": "ใบแจ้งศุลกากร", "en": "Customs Declaration" }, "sub": { "th": "กรอกก่อนบินกลับบ้าน", "en": "Official form · fill in before we fly home" }, "intro": { "th": "ฉัน นักสำรวจในพาสปอร์ตเล่มนี้ ขอแจ้งเรื่อง Big Hop ของฉันดังนี้", "en": "I, the explorer named in this passport, declare the following about my Big Hop:" }, "counts": [{ "k": "roos", "e": "🦘", "pre": { "th": "ฉันเห็น", "en": "I saw" }, "post": { "th": "จิงโจ้", "en": "kangaroos" } }, { "k": "koalas", "e": "🐨", "pre": { "th": "ฉันเห็น", "en": "I saw" }, "post": { "th": "โคอาล่า", "en": "koalas" } }, { "k": "pies", "e": "🥧", "pre": { "th": "ฉันกิน", "en": "I ate" }, "post": { "th": "พาย", "en": "pies" } }, { "k": "beaches", "e": "🏖️", "pre": { "th": "ฉันเล่นทราย", "en": "I played on" }, "post": { "th": "ชายหาด", "en": "beaches" } }, { "k": "ferries", "e": "⛴️", "pre": { "th": "ฉันนั่งเรือเฟอร์รี่", "en": "I rode" }, "post": { "th": "ครั้ง", "en": "ferries" } }, { "k": "friends", "e": "🤝", "pre": { "th": "ฉันได้", "en": "I made" }, "post": { "th": "เพื่อนใหม่", "en": "new friends" } }], "texts": [{ "k": "funniest", "label": { "th": "เรื่องที่ตลกที่สุดคือ…", "en": "The funniest thing that happened was…" } }, { "k": "bestday", "label": { "th": "วันที่ดีที่สุดของทริปคือ…", "en": "The BEST day of the whole trip was…" } }] },
   "code": "KOALA-2027",
   "guides": [
    {
