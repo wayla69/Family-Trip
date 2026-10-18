@@ -399,7 +399,7 @@ function trophies(t, kid) {
     ['stickers', '⭐', L('สติกเกอร์ 10 ชิ้น', '10 stickers'), stk >= 10],
     ['hearts', '💗', L('ที่รักของทุกคน', 'Everyone’s darling'), hearts >= 5],
     ['match', '🧩', L('นักจับคู่', 'Pair finder'), wins >= 1],
-    (info.wild || []).length ? ['wild', '🦘', L('นักดูสัตว์', 'Animal spotter'), wildN >= 3] : null,
+    (info.wild || []).length ? ['wild', (info.wildLabel || {}).emo || '🦘', info.wildLabel ? L('นักตามหา', 'Spotter') : L('นักดูสัตว์', 'Animal spotter'), wildN >= 3] : null,
     ['firsts', '🌟', L('ครั้งแรก 3 อย่าง', '3 firsts'), firsts >= 3],
     doorsAll ? ['doors', '🎁', L('เปิดครบทุกประตู', 'All doors opened'), doors >= doorsAll] : null,
     ['explorer', '🧭', L('นักสำรวจตัวจริง', 'Master Explorer'), certEarned(t, kid)],
@@ -447,7 +447,7 @@ function viewKid(p) {
       : [['colour', '🎨', L('ระบายสี', 'Colour')], ['draw', '🖍️', L('วาดรูป', 'Draw')], ['spot', '🔍', L('หาของ', 'Find it')], ['stamp', '🛂', L('ปั๊มตรา', 'Stamp')]])
       .concat(words ? [['words', '🗣️', L('พูดตาม', 'Say it')]] : [], [['stickers', '⭐', L('สติกเกอร์', 'Stickers')]], pp.map ? [['map', '🗺️', L('แผนที่', 'Map')]] : [], ((d.plan || {}).quiz || []).length ? [['quiz', '❓', L('ทายซิ', 'Quiz')]] : [],
         kidPhotos(t, i).length ? [['photos', '📸', L('ดูรูป', 'Photos')]] : [], [['match', '🧩', L('จับคู่', 'Match')]], pre ? [] : [['mood', '😊', L('วันนี้รู้สึก', 'My mood')]],
-        wild.length ? [['animals', '🦘', L('สัตว์', 'Animals')]] : [], [['numbers', '🔢', L('นับเลข', 'Count')]], [['trophies', '🏆', L('รางวัล', 'Trophies')]]).filter(Boolean);
+        wild.length ? [['animals', (t.info.wildLabel || {}).emo || '🦘', t.info.wildLabel ? esc(T(t.info.wildLabel.short)) : L('สัตว์', 'Animals')]] : [], [['numbers', '🔢', L('นับเลข', 'Count')]], [['trophies', '🏆', L('รางวัล', 'Trophies')]]).filter(Boolean);
     const until = daysUntil(t);
     const btns = tiles.map(([v, e, lbl]) => `<button data-a="kidnav" data-v="#/kid/${esc(kid)}/${v}" data-say="${esc(lbl)}"><span>${e}</span><b>${lbl}</b></button>`)
       .concat(story ? [`<button class="night" data-a="bedtime" data-v="${esc(story.id)}"><span>🌙</span><b>${L('นิทาน', 'Story')}</b></button>`] : [],
@@ -525,7 +525,7 @@ ${mapHtml(t, i, [kid].concat((t.theme.children || []).map((c) => c.slug).filter(
     body = `<div class="kidguide">${guideImg(1)}<p>${cur ? L(`วันนี้${esc(name)}รู้สึก ${cur}`, `Today ${esc(name)} feels ${cur}`) : L(`${esc(name)} วันนี้รู้สึกยังไง?`, `${esc(name)}, how do you feel today?`)}</p></div>
 <div class="moodgrid">${moods.map((m) => `<button data-a="kidmood" data-t="${esc(t.id)}" data-d="${i}" data-k="${esc(kid)}" data-v="${esc(m)}" aria-pressed="${cur === m}"><span>${esc(m)}</span><b>${esc(MOODW[m] ? L(MOODW[m][0], MOODW[m][1]) : '')}</b></button>`).join('')}</div>`;
   } else if (view === 'animals' && wild.length) {
-    body = `<div class="kidguide">${guideImg(0)}<p>${L('แตะสัตว์เพื่อฟังชื่อ · เจอตัวจริงแล้วแตะ 👀', 'Tap an animal to hear its name · tap 👀 when you spot one')}</p></div>
+    body = `<div class="kidguide">${guideImg(0)}<p>${(t.info.wildLabel ? L('แตะเพื่อฟังชื่อ · เจอตัวจริงแล้วแตะ 👀', 'Tap to hear the name · tap 👀 when you spot one') : L('แตะสัตว์เพื่อฟังชื่อ · เจอตัวจริงแล้วแตะ 👀', 'Tap an animal to hear its name · tap 👀 when you spot one'))}</p></div>
 <div class="animals">${wild.map((w, n) => { const key = `wild.${n}`, on = ticked(t, key, kid); return `<div class="an${on ? ' on' : ''}"><button class="hear" data-a="sayfacts" data-v="${esc(T(w.name))}. ${esc(T(w.text))}"><span>${esc(w.emo || '🐾')}</span><b>${esc(T(w.name))}</b></button><button class="seen" data-a="kidspot" data-t="${esc(t.id)}" data-d="" data-k="${esc(kid)}" data-v="${key}" data-say="${esc(L(`เจอ${T(w.name)}แล้ว!`, `Spotted a ${T(w.name)}!`))}" aria-pressed="${!!on}" aria-label="${L('เจอแล้ว', 'Spotted')}">${on ? '✓' : '👀'}</button></div>`; }).join('')}</div>`;
   } else if (view === 'numbers') {
     if (!cnt) newCount(t);
