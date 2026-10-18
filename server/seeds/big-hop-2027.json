@@ -62,7 +62,7 @@
  "days": [
   {
    "index": 0,
-   "pick": { "th": "Mascot คือย่านของสนามบินเอง Adina อยู่ห่างสถานี Mascot แค่เดิน 4 นาที — คืนนี้ร้านแนะนำคือครัวในห้องพัก: ของว่างเบาๆ แล้วเข้านอน มื้อซิดนีย์จริงรอพรุ่งนี้บนถนนเลียบทะเล", "en": "Mascot is the airport's own suburb and the Adina is a 4-minute walk from the station — tonight's local pick is the apartment kitchen: a light snack and bed; the first real Sydney meal waits on tomorrow's coast road." },
+   "pick": { "th": "T1 ปิด 23:00 ทางที่คนท้องถิ่นทำคือใช้ครัวที่ Adina หรือสั่งแอปเดลิเวอรี (Uber Eats, DoorDash, Menulog) มาที่ 11 Bourke Rd — ไม่ต้องตระเวนหาร้านหลังบิน 9 ชั่วโมง", "en": "T1 closes at 23:00, so the local move is the Adina kitchen or a delivery app (Uber Eats, DoorDash, Menulog) to 11 Bourke Rd — no restaurant hunt after a 9-hour flight." },
    "money": { "th": "รถไฟ T8 ผู้ใหญ่ 3 คน รวมค่าสถานีสนามบิน ≈ A$70 · ของว่างดึก ≈ A$20 · วันนี้ ≈ A$90 (+ โรงแรมสนามบินกรุงเทพฯ คืนก่อน A$60–120) · ประมาณการจากงบและราคาในคู่มือ ไม่รวมที่พัก รถตู้ ตั๋วเครื่องบิน", "en": "T8 train, 3 adults incl. the airport station fee ≈ A$70 · Late snack ≈ A$20 · Today ≈ A$90 (+ the Bangkok airport hotel the night before, A$60–120) · estimate from the manual's budget and prices; stays, van and flights not included" },
    "planB": { "th": "ถ้าเหนื่อย ตัดอันนี้ก่อน: ไม่มี — เข้านอนทันที", "en": "If tired, cut first: Nothing — straight to bed" },
    "date": "2027-04-02",
@@ -1424,7 +1424,7 @@
   },
   {
    "index": 10,
-   "pick": { "th": "คน The Entrance เริ่มวันที่ Albie's Coffee Bar บน Tuggerah Parade (ทุกวัน 06:00–12:00) — กาแฟกับมื้อเช้าก่อนขับช่วงยาวช่วงสุดท้าย ส่วนพายอยู่ที่ Flour and Co ที่ Toowoon Bay ห่างไป 2 นาที", "en": "The Entrance's locals start the day at Albie's Coffee Bar on Tuggerah Parade (daily 06:00–12:00) — coffee and breakfast before the last long drive; Flour and Co in Toowoon Bay, 2 minutes away, does the pies." },
+   "pick": { "th": "Ho Jiak Haymarket เดินจากโรงแรม 5 นาที ทำอาหารสูตรครอบครัวปีนัง — ผัดก๋วยเตี๋ยวแบบปีนัง ข้าวมันไก่ไหหลำ ลักซา เปิดทุกวัน 11:00–22:00 เหมาะกับมื้อเย็นเร็ว", "en": "Ho Jiak Haymarket, five minutes' walk from the hotel, cooks Penang family recipes — char kway teow, Hainan chicken rice, laksa — open daily 11:00–22:00, ideal for an early dinner." },
    "money": { "th": "Featherdale A$176 · น้ำมันรวมเติมเต็มถังก่อนคืนรถ ≈ A$120 · ค่าทางด่วน ≈ A$15 · มื้อกลางวัน ≈ A$70 · รถไฟ Mascot → Central ≈ A$10 · มื้อเย็น ≈ A$100 · วันนี้ ≈ A$490 · ประมาณการจากงบและราคาในคู่มือ ไม่รวมที่พัก รถตู้ ตั๋วเครื่องบิน", "en": "Featherdale A$176 · Fuel incl. the full tank before the return ≈ A$120 · Tolls ≈ A$15 · Lunch ≈ A$70 · Train Mascot → Central ≈ A$10 · Dinner ≈ A$100 · Today ≈ A$490 · estimate from the manual's budget and prices; stays, van and flights not included" },
    "date": "2027-04-12",
    "emoji": "🐨",
@@ -1673,7 +1673,7 @@
   },
   {
    "index": 12,
-   "pick": { "th": "The Rocks คือจุดเริ่มต้นของซิดนีย์ และผับเก่าที่นี่คือที่ที่คนซิดนีย์พาแขกมา — The Glenmore บน Cumberland Street เป็นร้านโปรดของคนท้องถิ่น ส่วน Pancakes on the Rocks เปิดถึงดึก เป็นของหวานของเด็กๆ", "en": "The Rocks is where Sydney began, and its old pubs are where Sydneysiders bring visitors — The Glenmore on Cumberland Street is the local favourite; Pancakes on the Rocks, open late, is the kids' dessert stop." },
+   "pick": { "th": "Harry's Café de Wheels รถขายพายเก่าแก่ที่ Woolloomooloo เดินจากสวนพฤกษศาสตร์ 10 นาที — พาย Tiger กับมันบด ถั่ว และเกรวี คือปิกนิกที่ Farm Cove", "en": "Harry's Café de Wheels, the Woolloomooloo pie cart ten minutes' walk from the Botanic Garden — a Tiger pie with mash, peas and gravy is the Farm Cove picnic." },
    "money": { "th": "เรือเฟอร์รี่ไปกลับ ≈ A$30 · ปิกนิก ≈ A$40 · เครื่องเล่น Luna Park A$60–80 · มื้อเย็นที่ The Rocks ≈ A$150 · วันนี้ ≈ A$280–300 · ประมาณการจากงบและราคาในคู่มือ ไม่รวมที่พัก รถตู้ ตั๋วเครื่องบิน", "en": "Ferries there and back ≈ A$30 · Picnic ≈ A$40 · Luna Park rides A$60–80 · Dinner in The Rocks ≈ A$150 · Today ≈ A$280–300 · estimate from the manual's budget and prices; stays, van and flights not included" },
    "date": "2027-04-14",
    "emoji": "🎡",
@@ -2050,7 +2050,7 @@
   },
   {
    "index": 15,
-   "pick": { "th": "เช้าวันเสาร์ของคนซิดนีย์คือตลาดเกษตรกร Carriageworks (08:00–13:00) — ถ้าตลาดคนแน่นไป Boon Cafe ในร้านของชำไทย Jarern Chai เดินจากโรงแรม 5 นาทีคือแผนสำรอง", "en": "A Sydney Saturday morning means the Carriageworks Farmers Market (08:00–13:00) — if it is too busy, Boon Cafe inside the Jarern Chai Thai grocery, 5 minutes' walk from the hotel, is the backup." },
+   "pick": { "th": "ตลาดเกษตรกร Carriageworks เสาร์ 08:00–13:00 ห่าง Central 10 นาที คือที่ที่คนซิดนีย์กินมื้อเช้า — เบคอนโรล ขนมอบ กาแฟ และดนตรีสดใต้หลังคา", "en": "Carriageworks Farmers Market, Saturday 08:00–13:00 and ten minutes from Central, is where Sydney does breakfast — bacon rolls, pastries, coffee and live music under cover." },
    "money": { "th": "มื้อเช้าที่ตลาด Carriageworks ≈ A$60 · รถไฟ T8 ไปสนามบิน รวมค่าสถานี ≈ A$70 · มื้อกลางวันในสนามบิน ≈ A$80 · วันนี้ ≈ A$210 · ประมาณการจากงบและราคาในคู่มือ ไม่รวมที่พัก รถตู้ ตั๋วเครื่องบิน", "en": "Breakfast at the Carriageworks market ≈ A$60 · T8 train to the airport incl. the station fee ≈ A$70 · Lunch at the airport ≈ A$80 · Today ≈ A$210 · estimate from the manual's budget and prices; stays, van and flights not included" },
    "date": "2027-04-17",
    "emoji": "🧳",
