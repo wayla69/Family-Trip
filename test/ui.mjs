@@ -199,6 +199,7 @@ const T = 'hk-macau-2026';
   await page.goto(`${BASE}/#/t/${T}/log/2`); await page.waitForSelector('#qtext');
   await s.ctx.setOffline(true);
   await page.fill('#qtext', 'ออฟไลน์บนสะพาน'); await page.click('button[data-a="savequote"]');
+  await page.waitForSelector('.items .tag'); await page.waitForTimeout(50);   // the save's re-render first (it replaces the file input)
   await page.setInputFiles('#fpick', [{ name: 'off.jpg', mimeType: 'image/jpeg', buffer: await jpg(3) }]);
   await page.waitForFunction(() => document.querySelectorAll('.mosaic button').length === 1);
   ok(await page.locator('.items .tag').count() === 1, 'offline quote shown with ⏳');
