@@ -822,7 +822,7 @@ a.maplink:hover{color:var(--accent)}
 .check .mini.nav{flex:none}
 .dayplan h5.ph{margin:10px 0 4px;font-size:13px;color:var(--accent)}
 .picks{list-style:none;margin:0 0 8px;padding:0;display:grid;gap:8px;grid-template-columns:repeat(auto-fill,minmax(min(100%,240px),1fr))}
-.picks .pk{background:var(--pick);border-radius:10px;padding:10px 12px;font-size:13px}.picks .pk b{display:block;font-size:15px;margin:2px 0}.picks .pk p{margin:2px 0 4px}.picks .pk small{color:var(--muted)}
+.picks .pk{font-size:13px;list-style:none}
 .dayplan details.sub h5{margin:10px 0 2px;font-size:13px}
 .pocket .lede{color:var(--muted);font-size:13px;margin:6px 0}
 .pocket table.ift td.nm{width:32%}
@@ -839,14 +839,30 @@ a.maplink:hover{color:var(--accent)}
 .eatpage .lede{color:var(--muted);font-size:14px;margin:4px 0 10px}
 .eatbar{position:sticky;top:56px;z-index:5;background:var(--paper);padding:8px 0 4px;border-bottom:1px solid var(--rule)}
 .eatbar .chips{margin-top:8px;gap:6px;flex-wrap:wrap}
-.eatg h3{font-size:16px;margin:18px 0 6px}
-.eatl{list-style:none;margin:0;padding:0;display:grid;gap:10px;grid-template-columns:repeat(auto-fill,minmax(min(100%,300px),1fr))}
-.eatc{background:var(--panel);border-radius:12px;padding:12px 14px;font-size:13px;min-width:0;overflow-wrap:anywhere}
-.eatc .eh b{font-size:16px}.eatc p{margin:6px 0 4px;font-size:14px}.eatc small{display:block;color:var(--muted)}
-.eatc .tag.pk{background:var(--pick);color:var(--ink)}
-.eatc .row{margin-top:8px;gap:6px}
+.eatg h3{font-family:var(--display-font);font-size:clamp(19px,2.4vw,23px);color:var(--accent);margin:26px 0 4px;padding-bottom:6px;border-bottom:1px solid var(--rule)}
+/* entries read like the manual's "Where to eat" pages: thin rules, type tags, a price chip and the day's ★ badge */
+.eatl{list-style:none;margin:0;padding:0;columns:340px 2;column-gap:36px;column-rule:1px solid var(--rule)}
+.eatl>li{break-inside:avoid}
+.eatc{padding:10px 2px 11px;border-bottom:1px solid var(--rule);font-size:13px;min-width:0;overflow-wrap:anywhere;line-height:1.45}
+.eatc.pk,.picks .pk{background:linear-gradient(90deg,var(--pick),color-mix(in srgb,var(--pick) 35%,transparent));border-radius:8px;padding:10px 12px;border-bottom:0;margin:6px 0;box-shadow:0 1px 0 var(--rule)}
+.eatc .eh,.picks .eh{line-height:1.5}
+.eatc .eh b,.picks .eh b{font-size:15px}.eatc .eh b a,.picks .eh b a{color:var(--ink);text-decoration:none}.eatc .eh b a:hover,.picks .eh b a:hover{text-decoration:underline}
+.eatc .addr{color:var(--muted)}
+.pinlink{display:inline-block;vertical-align:-2px;margin:0 2px 0 1px;line-height:0}
+.mpin{display:inline-block;width:11px;height:11px;background:#C9472F;border-radius:50% 50% 50% 0;transform:rotate(-45deg);box-shadow:inset 0 0 0 3px #C9472F,inset 0 0 0 5.5px var(--paper)}
+.vh{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap}
+.badge{display:inline-block;font-size:11px;font-weight:700;letter-spacing:.02em;color:#fff;background:#B5532E;border-radius:4px;padding:1px 7px;margin-right:2px;vertical-align:1px;white-space:nowrap}
+.etag{display:inline-block;font-size:11px;font-weight:600;border-radius:999px;padding:0 8px;margin-left:2px;vertical-align:1px;white-space:nowrap;--h:#6D7480;background:color-mix(in srgb,var(--h) 15%,var(--paper));color:color-mix(in srgb,var(--h) 85%,var(--ink))}
+.etag.t-sea,.etag.t-fish{--h:#3B7BA8}.etag.t-take,.etag.t-cafe{--h:#3E7A5E}.etag.t-meat,.etag.t-bbq{--h:#B9483A}.etag.t-pub{--h:#A87C1A}
+.etag.t-sweet,.etag.t-bake,.etag.t-pie{--h:#B04A78}.etag.t-shop,.etag.t-mkt,.etag.t-farm,.etag.t-cook{--h:#8A7148}
+.etag.tour{background:none;border:1px solid var(--rule);color:var(--muted)}
+.eatc p,.picks .pk p{margin:3px 0 4px;font-size:14px;color:var(--ink)}
+.emeta{display:flex;flex-wrap:wrap;align-items:baseline;gap:4px 10px;font-size:12px}
+.emeta .pr{font-weight:700;color:var(--accent);background:color-mix(in srgb,var(--accent) 9%,var(--paper));border-radius:4px;padding:0 6px}
+.emeta .nt{font-weight:600;color:var(--accent)}.emeta .hr,.emeta .alt{color:var(--muted)}
+.emeta .go{margin-left:auto;color:var(--muted);font-weight:600;text-decoration:none;white-space:nowrap}.emeta .go:hover{color:var(--accent);text-decoration:underline}
 .dayplan h5.ph{display:flex;align-items:center;gap:8px}.dayplan h5.ph .mini{margin-left:auto;font-weight:600}
-.eatc .zh{color:var(--muted);font-size:13px}.eatc p.why{font-size:13px;color:var(--ink);opacity:.85}.eatg .gnote{margin:-2px 0 8px}
+.eatc .zh{color:var(--muted);font-size:13px}.eatc p.why{font-size:13px;color:var(--muted)}.eatg .gnote{margin:-2px 0 8px}
 /* parent mode: the kid-mode switch sits in the bar like a tab */
 nav.bar button{display:grid;justify-items:center;gap:2px;padding:9px 0 8px;border:0;background:none;font:inherit;font-size:12px;font-weight:600;color:var(--muted);border-radius:14px;min-height:66px;align-content:center}
 nav.bar button i{font-style:normal;font-size:27px;line-height:1.1}

@@ -1,6 +1,6 @@
 // Memory Bookshelf service worker: app shell + all drawn art offline from the first visit; photos cached as you view them
 // (or all at once with "Keep this book offline"). Data (/api) is cached by the app itself (IndexedDB) and written through its queue.
-const V = 'mbs-v23';
+const V = 'mbs-v24';
 const SHELL = ['/', '/app.css', '/core.js', '/views.js', '/sheets.js', '/kid.js', '/manifest.webmanifest', '/icon.svg',
   '/fonts/KIRA-UI-Regular.woff2', '/fonts/KIRA-UI-Medium.woff2', '/fonts/KIRA-UI-SemiBold.woff2', '/fonts/KIRA-UI-Bold.woff2',
   '/fonts/CormorantGaramond-SemiBold.woff2', '/fonts/CormorantGaramond-MediumItalic.woff2'];
