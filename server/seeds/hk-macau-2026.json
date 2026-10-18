@@ -179,21 +179,14 @@
     "#FFA931"
    ],
    "title": {
-    "th": "เช้าสนามเด็กเล่น บ่ายห้องแห่งแสง",
-    "en": "Playground morning, rooms of light"
+    "th": "เช้าห้องแห่งแสง เย็น Senado ยามโพล้เพล้",
+    "en": "Rooms of light, Senado at dusk"
    },
    "sleep": {
     "th": "Studio City Hotel, Cotai",
     "en": "Studio City Hotel, Cotai"
    },
    "planned": [
-    {
-     "key": "Nickelodeon Town, Studio City",
-     "kind": "place",
-     "en": "Nickelodeon Town, Studio City",
-     "th": "Nickelodeon Town, Studio City",
-     "zh": "新濠影滙 Nickelodeon Town"
-    },
     {
      "key": "The Venetian",
      "kind": "place",
@@ -207,39 +200,6 @@
      "en": "teamLab SuperNature Macao",
      "th": "teamLab SuperNature Macao",
      "zh": "teamLab 超自然空間"
-    }
-   ]
-  },
-  {
-   "index": 4,
-   "date": "2026-12-09",
-   "emoji": "🐼",
-   "gradient": [
-    "#1FA65A",
-    "#5CC860"
-   ],
-   "title": {
-    "th": "เช้าดูแพนด้า เย็น Senado ยามโพล้เพล้",
-    "en": "Pandas in the morning, Senado at dusk"
-   },
-   "sleep": {
-    "th": "Studio City Hotel, Cotai",
-    "en": "Studio City Hotel, Cotai"
-   },
-   "planned": [
-    {
-     "key": "Giant Panda Pavilion",
-     "kind": "place",
-     "en": "Giant Panda Pavilion",
-     "th": "ศาลาแพนด้า",
-     "zh": "大熊貓館"
-    },
-    {
-     "key": "Coloane Village",
-     "kind": "place",
-     "en": "Coloane Village",
-     "th": "หมู่บ้าน Coloane",
-     "zh": "路環市區"
     },
     {
      "key": "Senado Square",
@@ -254,6 +214,47 @@
      "en": "Ruins of St Paul's",
      "th": "ซากโบสถ์ St Paul",
      "zh": "大三巴牌坊"
+    },
+    {
+     "key": "Wong Chi Kei, Senado Square",
+     "kind": "food",
+     "en": "Wong Chi Kei, Senado Square",
+     "th": "Wong Chi Kei ที่ลาน Senado",
+     "zh": "黃枝記",
+     "meal": "Dinner"
+    }
+   ]
+  },
+  {
+   "index": 4,
+   "date": "2026-12-09",
+   "emoji": "🧸",
+   "gradient": [
+    "#1FA65A",
+    "#5CC860"
+   ],
+   "title": {
+    "th": "เช้าสนามเด็กเล่น แล้วบ่ายช้าๆ",
+    "en": "Playground morning, a slow day"
+   },
+   "sleep": {
+    "th": "Studio City Hotel, Cotai",
+    "en": "Studio City Hotel, Cotai"
+   },
+   "planned": [
+    {
+     "key": "Nickelodeon Town, Studio City",
+     "kind": "place",
+     "en": "Nickelodeon Town, Studio City",
+     "th": "Nickelodeon Town, Studio City",
+     "zh": "新濠影滙 Nickelodeon Town"
+    },
+    {
+     "key": "Taipa Village",
+     "kind": "place",
+     "en": "Taipa Village (optional)",
+     "th": "หมู่บ้าน Taipa (ถ้าเด็กๆ ยังไหว)",
+     "zh": "氹仔舊城區"
     }
    ]
   },
@@ -443,5 +444,95 @@
    { "flag": "🇭🇰", "th": "ฮ่องกง", "en": "Hong Kong" },
    { "flag": "🇲🇴", "th": "มาเก๊า", "en": "Macau" }
   ]
+ },
+ "passport": {
+  "code": "DOLPHIN-2026",
+  "guides": [
+   { "key": "pinky", "art": "/art/guides/pinky.svg", "name": { "th": "พิงกี้", "en": "Pinky" },
+     "hello": { "th": "สวัสดี ฉันชื่อพิงกี้ โลมาสีชมพูตัวจริงจากทะเลฮ่องกง! ฉันกับเปาแพนด้าจะไปกับหนู 6 วัน มีปราสาท สะพานยักษ์กลางทะเล ห้องที่เต็มไปด้วยแสง และทาร์ตไข่อุ่นๆ", "en": "Hi, I'm Pinky, a real pink dolphin from Hong Kong's sea! Bao the panda and I will hop with you for 6 days — a castle, a giant sea bridge, rooms full of light and a warm egg tart." } },
+   { "key": "bao", "art": "/art/guides/bao.svg", "name": { "th": "เปา", "en": "Bao" },
+     "hello": { "th": "ทุกวันฉันจะให้ภารกิจ มองไปรอบๆ แล้วติ๊กสิ่งที่เจอนะ!", "en": "Every day I'll give you a mission. Look around and tick what you spot!" } }
+  ],
+  "days": [
+   { "title": { "th": "ขึ้นฟ้ากันเลย!", "en": "Up, Up and Away!" }, "stamp": "BKK → HKG",
+     "facts": [ { "th": "เครื่องบินบิน 2 ชั่วโมง 45 นาที ยาวประมาณการ์ตูนสามเรื่อง", "en": "Our plane flies for 2 hours and 45 minutes — about three cartoons long." },
+                { "th": "นาฬิกาที่ฮ่องกงเร็วกว่ากรุงเทพฯ 1 ชั่วโมง กระโดดไปข้างหน้าเลย!", "en": "Hong Kong clocks are one hour ahead of Bangkok. Jump forward!" },
+                { "th": "คืนนี้เรานอนบนเกาะเล็กๆ ใต้สะพานยักษ์ เสาสะพานสูงกว่าตึก 60 ชั้นอีก!", "en": "Tonight we sleep on a little island right under a giant bridge — its towers are taller than a 60-storey building!" } ],
+     "spot": [ { "k": "cloud", "e": "☁️", "th": "ก้อนเมฆฟูๆ", "en": "A fluffy cloud" }, { "k": "seatbelt", "e": "💺", "th": "ไฟรัดเข็มขัด", "en": "The seatbelt sign" },
+               { "k": "bridge", "e": "🌉", "th": "สะพานยักษ์", "en": "A huge bridge" }, { "k": "boat", "e": "⛵", "th": "เรือในทะเล", "en": "A boat in the sea" } ] },
+   { "title": { "th": "วันดิสนีย์แลนด์!", "en": "Disneyland Day!" }, "stamp": "DISNEYLAND",
+     "facts": [ { "th": "ปราสาทที่มีหอคอยสูงตั้งอยู่สุดถนน Main Street", "en": "A castle with tall towers stands at the end of Main Street." },
+                { "th": "ช่วงคริสต์มาสมีหิมะตกบน Main Street ทั้งที่อากาศอุ่นๆ!", "en": "At Christmas, snow falls on Main Street — even though it is warm!" },
+                { "th": "นั่งเรือลำเล็กผ่านตุ๊กตาร้องเพลงเป็นร้อยตัว", "en": "On the little boats you sail past hundreds of singing dolls." } ],
+     "spot": [ { "k": "tower", "e": "🏰", "th": "หอคอยปราสาท", "en": "A castle tower" }, { "k": "parade", "e": "🎉", "th": "รถขบวนพาเหรด", "en": "A parade float" },
+               { "k": "snow", "e": "❄️", "th": "หิมะปลอม", "en": "Pretend snow" }, { "k": "tree", "e": "🎄", "th": "ต้นคริสต์มาสยักษ์", "en": "A giant Christmas tree" } ] },
+   { "title": { "th": "ข้ามทะเลไปมาเก๊า!", "en": "Over the Sea to Macau!" }, "stamp": "MACAU",
+     "facts": [ { "th": "รถบัสของเราข้ามสะพานข้ามทะเลที่ยาวที่สุดในโลก ยาว 55 กิโลเมตร!", "en": "Our bus crosses the longest sea bridge in the world — 55 kilometres!" },
+                { "th": "ตรงกลางทาง ถนนมุดลงอุโมงค์ใต้ทะเล กลั้นหายใจไว้!", "en": "In the middle, the road dives into a tunnel UNDER the sea. Hold your breath!" },
+                { "th": "สวนน้ำอยู่ในร่มและอุ่นเหมือนน้ำอาบ 30 องศา!", "en": "The water park is indoors and warm as a bath — 30 degrees!" } ],
+     "spot": [ { "k": "bridge", "e": "🌉", "th": "สะพานที่ยาวไม่รู้จบ", "en": "A bridge that never ends" }, { "k": "tunnel", "e": "🚇", "th": "ปากอุโมงค์", "en": "The tunnel mouth" },
+               { "k": "ship", "e": "🚢", "th": "เรือใหญ่", "en": "A big ship" }, { "k": "slide", "e": "🛝", "th": "สไลเดอร์น้ำ", "en": "A water slide" } ] },
+   { "title": { "th": "ห้องแห่งแสงกับมาเก๊าเมืองเก่า!", "en": "Rooms of Light & Old Macau!" }, "stamp": "SENADO",
+     "facts": [ { "th": "ที่ teamLab ดอกไม้จะงอกตรงที่หนูยืนนิ่งๆ และปลิวหายเมื่อหนูวิ่ง", "en": "At teamLab, flowers grow wherever you stand still — and fly away when you run." },
+                { "th": "พื้นลานเมืองเก่าเป็นลายคลื่นเหมือนทะเล", "en": "The old square's pavement is painted in waves, like the sea." },
+                { "th": "โบสถ์เก่าเหลือแค่กำแพงด้านหน้า อายุเกือบ 400 ปีแล้ว!", "en": "The old church has only its front wall left — it is almost 400 years old!" } ],
+     "spot": [ { "k": "flower", "e": "🌸", "th": "ดอกไม้เรืองแสง", "en": "A glowing flower" }, { "k": "waves", "e": "🌊", "th": "พื้นลายคลื่น", "en": "Wavy pavement" },
+               { "k": "church", "e": "⛪", "th": "โบสถ์ไม่มีหลังคา", "en": "A church with no roof" }, { "k": "lights", "e": "✨", "th": "ไฟคริสต์มาส", "en": "Christmas lights" } ] },
+   { "title": { "th": "สนามเด็กเล่นกับไทปา!", "en": "Playground & Taipa!" }, "stamp": "PLAYTIME",
+     "facts": [ { "th": "PAW Patrol กับสพันจ์บ็อบรออยู่ที่สนามเด็กเล่น ใส่ถุงเท้ากันลื่นด้วยนะ!", "en": "PAW Patrol and SpongeBob are waiting in the playground — put on your grippy socks!" },
+                { "th": "เปาแพนด้าอยู่ในสมุดเล่มนี้ หาหน้าเขาเจอไหม?", "en": "Bao the panda lives in this book — can you spot his face?" },
+                { "th": "หมู่บ้านไทปาเป็นถนนเก่าเล็กๆ ที่มีทาร์ตไข่อุ่นๆ ออกจากเตา", "en": "Taipa Village is a little old street where the egg tarts come out warm." } ],
+     "spot": [ { "k": "pup", "e": "🐶", "th": "ลูกหมา PAW Patrol", "en": "A PAW Patrol pup" }, { "k": "socks", "e": "🧦", "th": "ถุงเท้ากันลื่น", "en": "A grippy sock" },
+               { "k": "tart", "e": "🥧", "th": "ทาร์ตไข่", "en": "An egg tart" }, { "k": "bao", "e": "🐼", "th": "เปาแพนด้า", "en": "Bao the panda" } ] },
+   { "title": { "th": "น้ำแข็งไสแล้วกลับบ้าน!", "en": "Shaved Ice & Home!" }, "stamp": "HKG → BKK",
+     "facts": [ { "th": "คาคิโกริคือน้ำแข็งไสบางมาก เหมือนหิมะบนลิ้น", "en": "Kakigori is ice shaved so thin it feels like snow on your tongue." },
+                { "th": "แท็กซี่ฮ่องกงสีแดง และรถรางเก่าดัง 'ติ๊ง ติ๊ง'!", "en": "Hong Kong taxis are red, and the old trams go 'ding ding'!" },
+                { "th": "หนูข้ามทะเลทั้งด้วยรถบัสและเรือเจ็ต เก่งจริงๆ นักสำรวจ!", "en": "You crossed the sea by bus AND by jet ferry. What an explorer!" } ],
+     "spot": [ { "k": "ice", "e": "🍧", "th": "น้ำแข็งไสหนึ่งชาม", "en": "A bowl of shaved ice" }, { "k": "taxi", "e": "🚕", "th": "แท็กซี่สีแดง", "en": "A red taxi" },
+               { "k": "tram", "e": "🚋", "th": "รถรางติ๊งติ๊ง", "en": "A ding-ding tram" }, { "k": "pass", "e": "🎫", "th": "บอร์ดดิ้งพาสของหนู", "en": "Your boarding pass" } ] }
+  ],
+  "lists": [
+   { "key": "animals", "e": "🐾", "title": { "th": "เพื่อนสัตว์ของหนู", "en": "My Animal Friends" }, "sub": { "th": "ติ๊กเมื่อได้เจอ", "en": "Tick each one when you meet it" },
+     "groups": [ { "items": [
+       { "k": "dolphin", "e": "🐬", "th": "โลมาสีชมพู", "en": "Pink dolphin" }, { "k": "fish", "e": "🐟", "th": "ปลา", "en": "Fish" },
+       { "k": "bird", "e": "🐦", "th": "นก", "en": "Bird" }, { "k": "cat", "e": "🐱", "th": "แมว", "en": "Cat" },
+       { "k": "dog", "e": "🐶", "th": "หมา", "en": "Dog" }, { "k": "mickey", "e": "🐭", "th": "มิกกี้เมาส์", "en": "Mickey Mouse" },
+       { "k": "duck", "e": "🦆", "th": "โดนัลด์ดั๊ก", "en": "Donald Duck" }, { "k": "panda", "e": "🐼", "th": "แพนด้า (ตุ๊กตาก็ได้!)", "en": "A panda (a toy one counts!)" } ] } ] },
+   { "key": "tucker", "e": "🥢", "yum": true, "goal": 6, "title": { "th": "ของอร่อยฮ่องกงมาเก๊า", "en": "Hong Kong & Macau Eats" },
+     "sub": { "th": "ลองแล้วเป็นไง อร่อย 😋 หรือ ไม่ชอบ 😖", "en": "Tick what you tried — YUM 😋 or YUCK 😖" },
+     "goalText": { "th": "ลองครบ 6 อย่าง พิงกี้บอกว่าหนูเป็นนักชิมตัวจริง!", "en": "Try six and Pinky says you are an official food explorer!" },
+     "groups": [ { "items": [
+       { "k": "dimsum", "e": "🥟", "th": "ติ่มซำ", "en": "Dim sum", "note": { "th": "ฮะเก๋า ขนมจีบ", "en": "har gow & siu mai" } },
+       { "k": "xlb", "e": "🥟", "th": "เสี่ยวหลงเปา", "en": "Xiao long bao", "note": { "th": "เกี๊ยวน้ำซุป", "en": "soup dumplings" } },
+       { "k": "eggtart", "e": "🥧", "th": "ทาร์ตไข่", "en": "Egg tart", "note": { "th": "อุ่นๆ จากเตา", "en": "warm from the oven" } },
+       { "k": "wonton", "e": "🍜", "th": "บะหมี่เกี๊ยว", "en": "Wonton noodles", "note": { "th": "ที่ Wong Chi Kei", "en": "at Wong Chi Kei" } },
+       { "k": "congee", "e": "🥣", "th": "โจ๊ก", "en": "Congee" },
+       { "k": "kakigori", "e": "🍧", "th": "คาคิโกริ", "en": "Kakigori", "note": { "th": "ที่ Shari Shari", "en": "at Shari Shari" } },
+       { "k": "pineapplebun", "e": "🍞", "th": "ขนมปังสับปะรด", "en": "Pineapple bun", "note": { "th": "ไม่มีสับปะรดข้างใน!", "en": "no pineapple inside!" } },
+       { "k": "gelato", "e": "🍨", "th": "เจลาโต", "en": "Gelato" } ] } ] },
+   { "key": "master", "e": "✅", "goal": 12, "certificate": true, "title": { "th": "นักสำรวจตัวจริง", "en": "Master Explorer" },
+     "sub": { "th": "ติ๊กให้ได้มากที่สุด!", "en": "Tick every box you can!" },
+     "goalText": { "th": "ติ๊กครบ 12 ช่องขึ้นไป ได้ใบประกาศนักผจญภัยตัวจริง!", "en": "Tick 12 or more and you've earned the Master Harbour Hopper certificate!" },
+     "groups": [
+      { "e": "🏰", "title": { "th": "ที่เที่ยว", "en": "Sights" }, "items": [
+        { "k": "ark", "th": "ไปเรือโนอาห์", "en": "Visited Noah's Ark" }, { "k": "castle", "th": "เห็นปราสาท", "en": "Saw the castle" },
+        { "k": "snow", "th": "เห็นหิมะปลอม", "en": "Saw pretend snow" }, { "k": "light", "th": "เดินในห้องแห่งแสง", "en": "Walked in the rooms of light" },
+        { "k": "square", "th": "วิ่งบนลานลายคลื่น", "en": "Ran on the wavy square" }, { "k": "ruins", "th": "เห็นกำแพงโบสถ์เก่า", "en": "Saw the old church wall" },
+        { "k": "xmas", "th": "เห็นไฟคริสต์มาส", "en": "Saw the Christmas lights" } ] },
+      { "e": "🚌", "title": { "th": "นั่งอะไรมาบ้าง", "en": "Rides" }, "items": [
+        { "k": "plane", "th": "นั่งเครื่องบิน", "en": "Flew on a plane" }, { "k": "bus", "th": "นั่งรถบัสข้ามสะพาน", "en": "Rode the bridge bus" },
+        { "k": "tunnel", "th": "ลอดใต้ทะเล", "en": "Went under the sea" }, { "k": "ferry", "th": "นั่งเรือเจ็ต", "en": "Rode the jet ferry" },
+        { "k": "taxi", "th": "นั่งแท็กซี่สีแดง", "en": "Rode a red taxi" }, { "k": "train", "th": "นั่งรถไฟ Airport Express", "en": "Rode the Airport Express" },
+        { "k": "boat", "th": "นั่งเรือลำเล็กในดิสนีย์", "en": "Sailed the little boats" }, { "k": "slide", "th": "เล่นสไลเดอร์น้ำ", "en": "Went down a water slide" } ] },
+      { "e": "🥟", "title": { "th": "ของอร่อย", "en": "Yummy" }, "items": [
+        { "k": "dimsum", "th": "กินติ่มซำ", "en": "Ate dim sum" }, { "k": "eggtart", "th": "กินทาร์ตไข่", "en": "Ate an egg tart" },
+        { "k": "noodles", "th": "กินบะหมี่", "en": "Ate noodles" }, { "k": "ice", "th": "กินน้ำแข็งไส", "en": "Ate shaved ice" },
+        { "k": "newfood", "th": "อาหารใหม่ที่ไม่เคยกิน", "en": "A brand-new food" } ] } ] }
+  ],
+  "certificate": {
+   "title": { "th": "นักผจญภัยฮาร์เบอร์ฮ็อปตัวจริง", "en": "Master Harbour Hopper" },
+   "text": { "th": "เที่ยวจบทริป The Harbour Hop — เกาะมาวานใต้สะพานยักษ์ ฮ่องกงดิสนีย์แลนด์ สะพานข้ามทะเลที่ยาวที่สุดในโลก สตูดิโอซิตี้ ห้องแห่งแสงของ teamLab และมาเก๊าเมืองเก่า — ได้เจอมิกกี้ นั่งรถบัสลอดใต้ทะเล และกินทาร์ตไข่อุ่นๆ จากเตา", "en": "completed The Harbour Hop — Ma Wan under the giant bridge, Hong Kong Disneyland, the longest sea bridge in the world, Studio City, teamLab's rooms of light and old Macau — meeting Mickey, diving under the sea by bus and eating egg tarts still warm from the oven." },
+   "bye": { "th": "เจอกันฮ็อปหน้านะ!", "en": "See you on the next hop!" }
+  }
  }
 }

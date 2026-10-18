@@ -9,7 +9,8 @@ const IMG = require('./images');
 const FAMILY = process.env.FAMILY_ID || 'family';
 const ID_RE = /^[A-Za-z0-9_.:-]{4,80}$/;
 const SLUG_RE = /^[a-z0-9-]{2,60}$/;
-const KINDS = ['quote', 'mood', 'fav', 'note', 'first', 'story'];
+const KINDS = ['quote', 'mood', 'fav', 'note', 'first', 'story', 'tick', 'field'];
+const TRIP_WIDE = ['story', 'tick', 'field'];   // kinds that may have no day (whole-trip story, passport checklists, Explorer ID)
 const clip = (s, n) => String(s == null ? '' : s).slice(0, n);
 const i18n = (o, n = 200) => (o && typeof o === 'object' ? { th: clip(o.th, n), en: clip(o.en, n), ...(o.zh ? { zh: clip(o.zh, n) } : {}) } : { th: clip(o, n), en: clip(o, n) });
 const at = (v) => new Date(Math.min(Number.isFinite(+v) && +v > 0 ? +v : Date.now(), Date.now() + 86400e3));
@@ -33,14 +34,15 @@ async function syncSeeds(pool, dir = path.join(__dirname, 'seeds')) {
     }
     for (const t of seeds) {
       const id = t.slug;
-      await c.query(`INSERT INTO trips (id, family_id, slug, legacy_id, title, sub, date_from, date_to, timezone, theme, cover, stamp, moods, source)
-        VALUES ($1,$2,$3,$4,$5,$6,$7,$8,$9,$10,$11,$12,$13,'seed')
+      await c.query(`INSERT INTO trips (id, family_id, slug, legacy_id, title, sub, date_from, date_to, timezone, theme, cover, stamp, moods, passport, source)
+        VALUES ($1,$2,$3,$4,$5,$6,$7,$8,$9,$10,$11,$12,$13,$14,'seed')
         ON CONFLICT (family_id, slug) DO UPDATE SET legacy_id=EXCLUDED.legacy_id, title=EXCLUDED.title, sub=EXCLUDED.sub, date_from=EXCLUDED.date_from,
-          date_to=EXCLUDED.date_to, timezone=EXCLUDED.timezone, theme=EXCLUDED.theme, cover=EXCLUDED.cover, stamp=EXCLUDED.stamp, moods=EXCLUDED.moods
+          date_to=EXCLUDED.date_to, timezone=EXCLUDED.timezone, theme=EXCLUDED.theme, cover=EXCLUDED.cover, stamp=EXCLUDED.stamp, moods=EXCLUDED.moods,
+          passport=EXCLUDED.passport
         WHERE trips.source = 'seed'`,
       [id, FAMILY, t.slug, t.legacy_trip_id || null, t.title, t.sub || null, t.date_from, t.date_to, t.timezone || 'Asia/Bangkok',
         { ...(t.theme || {}), children: (t.children || []).map((k) => ({ slug: k.slug, age: k.age_at_trip || null })) },
-        t.cover || {}, t.stamp || {}, JSON.stringify(t.moods || [])]);
+        t.cover || {}, t.stamp || {}, JSON.stringify(t.moods || []), t.passport || {}]);
       for (const d of t.days) {
         await c.query(`INSERT INTO trip_days (trip_id, day_index, date, title, sleep, emoji, gradient, planned, wx) VALUES ($1,$2,$3,$4,$5,$6,$7,$8,$9)
           ON CONFLICT (trip_id, day_index) DO UPDATE SET date=EXCLUDED.date, title=EXCLUDED.title, sleep=EXCLUDED.sleep, emoji=EXCLUDED.emoji,
@@ -74,7 +76,7 @@ function router({ pool, media, A, ai }) {
     try {
       const [children, trips, days, firsts, entries, mediaRows, places] = await Promise.all([
         q('SELECT slug, name_th, name_en, emoji, color, birth_ym FROM children WHERE family_id=$1 ORDER BY pos', [FAMILY]),
-        q("SELECT id, slug, legacy_id, title, sub, to_char(date_from,'YYYY-MM-DD') date_from, to_char(date_to,'YYYY-MM-DD') date_to, timezone, theme, cover, stamp, moods, source FROM trips WHERE family_id=$1 ORDER BY date_from", [FAMILY]),
+        q("SELECT id, slug, legacy_id, title, sub, to_char(date_from,'YYYY-MM-DD') date_from, to_char(date_to,'YYYY-MM-DD') date_to, timezone, theme, cover, stamp, moods, passport, source FROM trips WHERE family_id=$1 ORDER BY date_from", [FAMILY]),
         q("SELECT d.trip_id, d.day_index, to_char(d.date,'YYYY-MM-DD') date, d.title, d.sleep, d.emoji, d.gradient, d.planned, d.wx, d.done_at FROM trip_days d JOIN trips t ON t.id=d.trip_id WHERE t.family_id=$1 ORDER BY d.trip_id, d.day_index", [FAMILY]),
         q('SELECT f.trip_id, f.key, f.emoji, f.label FROM firsts_catalog f JOIN trips t ON t.id=f.trip_id WHERE t.family_id=$1 ORDER BY f.trip_id, f.pos, f.key', [FAMILY]),
         q('SELECT id, trip_id, day_index, kind, child, text, mood, first_key, lang, highlight, occurred_at, created_by, created_uid FROM entries WHERE family_id=$1 ORDER BY occurred_at', [FAMILY]),
@@ -100,7 +102,7 @@ function router({ pool, media, A, ai }) {
     } catch (e) { next(e); }
   });
 
-  // ----- entries: quote | mood | fav | note | first | story (one row per item; mood/fav/note use deterministic ids → upsert)
+  // ----- entries: quote | mood | fav | note | first | story | tick | field (one row per item; mood/fav/note/tick/field use deterministic ids → upsert)
   r.put('/api/b/entries/:id', ...W, async (req, res, next) => {
     try {
       const id = req.params.id, b = req.body || {};
@@ -108,11 +110,13 @@ function router({ pool, media, A, ai }) {
       if (!KINDS.includes(b.kind)) return bad(res, 'kind');
       const t = await trip(String(b.trip || '')); if (!t) return bad(res, 'trip');
       const day = dayArg(b.day); if (!dayOk(t, day)) return bad(res, 'day');
-      if (day === null && b.kind !== 'story') return bad(res, 'day');
+      if (day === null && !TRIP_WIDE.includes(b.kind)) return bad(res, 'day');
       const kids = (await q('SELECT slug FROM children WHERE family_id=$1', [FAMILY])).map((k) => k.slug);
       const child = b.child == null || b.child === '' ? null : String(b.child);
       if (child !== null && child !== 'both' && !kids.includes(child)) return bad(res, 'child');
-      if (b.kind === 'mood' && !child) return bad(res, 'child');
+      if (['mood', 'tick', 'field'].includes(b.kind) && (!child || child === 'both')) return bad(res, 'child');
+      if (['tick', 'field'].includes(b.kind) && !b.first_key) return bad(res, 'key');
+      if (b.kind === 'tick' && !['', 'yum', 'yuck'].includes(String(b.text || ''))) return bad(res, 'text');
       const row = [id, FAMILY, t.id, day, b.kind, child, clip(b.text, 4000), b.mood ? clip(b.mood, 16) : null, b.first_key ? clip(b.first_key, 40) : null,
         ['th', 'en'].includes(b.lang) ? b.lang : null, !!b.highlight, at(b.at), clip(req.user.name, 40), req.user.uid];
       const out = await q(`INSERT INTO entries (id, family_id, trip_id, day_index, kind, child, text, mood, first_key, lang, highlight, occurred_at, created_by, created_uid)
@@ -250,6 +254,8 @@ function router({ pool, media, A, ai }) {
     const kids = Object.fromEntries((await q('SELECT slug, name_th, name_en FROM children WHERE family_id=$1', [FAMILY])).map((k) => [k.slug, lang === 'en' ? k.name_en : k.name_th]));
     const who = (s) => (s === 'both' ? (lang === 'en' ? 'Mimi and Mika' : 'มีมี่และมีก้า') : kids[s] || s);
     const firsts = Object.fromEntries((await q('SELECT key, label FROM firsts_catalog WHERE trip_id=$1', [t.id])).map((f) => [f.key, f.label[lang] || f.label.en]));
+    const pp = ((await q('SELECT passport FROM trips WHERE id=$1', [t.id]))[0] || {}).passport || {};
+    const spot = (di, k) => { const it = (((pp.days || [])[di] || {}).spot || []).find((x) => `spot.d${di}.${x.k}` === k); return it ? it[lang] || it.en : null; };
     const lines = [];
     for (const d of days.filter((x) => day === null || x.day_index === day)) {
       const es = await q("SELECT kind, child, text, mood, first_key FROM entries WHERE trip_id=$1 AND day_index=$2 AND kind<>'story' ORDER BY occurred_at", [t.id, d.day_index]);
@@ -263,6 +269,7 @@ function router({ pool, media, A, ai }) {
       es.filter((e) => e.kind === 'fav').forEach((e) => part.push(`${lang === 'en' ? 'Favourite today' : 'ของโปรดวันนี้'}: ${e.text}`));
       es.filter((e) => e.kind === 'note').forEach((e) => part.push(`${lang === 'en' ? 'Parents’ note' : 'บันทึกพ่อแม่'}: ${e.text}`));
       es.filter((e) => e.kind === 'first').forEach((e) => part.push(`${lang === 'en' ? 'First time' : 'ครั้งแรก'} (${who(e.child)}): ${e.first_key === 'custom' ? e.text : firsts[e.first_key] || e.first_key}`));
+      es.filter((e) => e.kind === 'tick' && spot(d.day_index, e.first_key)).forEach((e) => part.push(`${lang === 'en' ? 'Spotted' : 'เจอแล้ว'} (${who(e.child)}): ${spot(d.day_index, e.first_key)}`));
       if (part.length) lines.push(`${lang === 'en' ? 'Day' : 'วันที่'} ${d.day_index + 1} (${d.date}) — ${d.title[lang] || d.title.en}\n- ${part.join('\n- ')}`);
     }
     return lines.join('\n\n');
