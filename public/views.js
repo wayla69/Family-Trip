@@ -278,10 +278,10 @@ const secTitle = (k) => (HUB[k] ? `${HUB[k][0]} ${L(HUB[k][1], HUB[k][2])}` : ''
 // the day a book opens on: today during the trip, day 1 before it, the last day after
 function todayIdx(t) { const n = dayNow(t); return n >= 0 ? n : tripOver(t) ? t.days.length - 1 : 0; }
 const hasInfo = (t) => {
-  const n = t.info || {};
-  return { stays: !!(n.stays || []).length, sos: !!((n.emergency || []).length || n.lost || n.ifthen),
-    prep: !!((n.pack || []).length || n.visa || n.bio || n.car || n.drive || (n.prices && (n.prices.rows || []).length) || (n.ifthen && (n.ifthen.book || n.ifthen.crowd))),
-    learn: !!((n.guide || []).length || (n.general || []).length || (n.wild || []).length || n.eatRules || t.days.some((d) => ((d.plan || {}).learn || []).length || ((d.plan || {}).quiz || []).length)) };
+  const n = t.info || {}, more = (k) => (n.more || []).some((m) => m.page === k);
+  return { stays: !!(n.stays || []).length || more('stays'), sos: !!((n.emergency || []).length || n.lost || n.ifthen) || more('sos'),
+    prep: !!((n.pack || []).length || n.visa || n.bio || n.car || n.drive || (n.prices && (n.prices.rows || []).length) || (n.ifthen && (n.ifthen.book || n.ifthen.crowd))) || more('prep'),
+    learn: !!((n.guide || []).length || (n.general || []).length || (n.wild || []).length || n.eatRules || t.days.some((d) => ((d.plan || {}).learn || []).length || ((d.plan || {}).quiz || []).length)) || more('learn') };
 };
 function viewHub(t) {
   const n = t.info || {}, st = stats(t), i = todayIdx(t), dn = dayNow(t), until = daysUntil(t), ed = isEditor(), d = t.days[i], has = hasInfo(t);
@@ -375,6 +375,9 @@ function infoBlocks(t) {
   if ((n.general || []).length) pg('learn', `🗣️ ${L('เรียนรู้ระหว่างนั่งรถ', 'Learn in the car')} <span class="label">· ${n.general.reduce((s, g) => s + g.items.length, 0)}</span>`, n.general.map((g) => `<h5>${esc(g.emo || '')} ${esc(T(g.theme))}</h5><dl class="gl">${g.items.map((x) => `<div><dt>${esc(T(x.t))}</dt><dd>${esc(T(x.x))}</dd></div>`).join('')}</dl>`).join(''));
   if ((n.wild || []).length) pg('learn', `🦘 ${L('สัตว์ที่จะเจอ', 'Animals we may meet')} <span class="label">· ${n.wild.length}</span>`, `<dl class="gl">${n.wild.map((w) => `<div><dt>${esc(w.emo || '')} ${esc(T(w.name))}</dt><dd>${esc(T(w.text))}</dd></div>`).join('')}</dl>`);
   if (n.eatRules) pg('learn', `🍽️ ${esc(T(n.eatRules.title))}`, `${lede(n.eatRules.lede)}${list(n.eatRules.rules)}<h5>${esc(T(n.eatRules.cookTitle))}</h5>${list(n.eatRules.cook)}`);
+  // any other chapter of a manual (getting around, customs, a park touring plan…): one generic block, placed on the page it names
+  (n.more || []).forEach((m) => { if (!B[m.page] || m.page === 'drive') return;
+    pg(m.page, `${esc(m.emo || '📄')} ${esc(T(m.title))}`, `${lede(m.lede)}${m.table ? tbl(m.table.cols, m.table.rows) : ''}${(m.rows || []).length ? dl(m.rows) : ''}${(m.groups || []).map((g) => `${g.title && T(g.title) ? `<h5>${esc(T(g.title))}</h5>` : ''}${list(g.items || [])}`).join('')}${m.note && T(m.note) ? `<div class="call info">${esc(T(m.note))}</div>` : ''}`); });
   return B;
 }
 const topicPage = (k, blocks, lede) => `<h1 class="h2">${secTitle(k)}</h1>${lede ? `<p class="lede">${lede}</p>` : ''}${blocks.length ? `<section class="pocket" id="pocket">${blocks.join('')}</section>` : `<div class="empty">${L('เล่มนี้ยังไม่มีข้อมูลส่วนนี้', 'This book has nothing here yet')}</div>`}`;
