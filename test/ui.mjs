@@ -178,7 +178,7 @@ const T = 'hk-macau-2026';
 
   // every meal has a pick and a backup (manual EN-2); the park map is drawn
   await page.goto(`${BASE}/#/t/${T}/today/1`); await page.waitForSelector('.dsheet');
-  ok(await page.locator('.dsheet .meal').count() === 4 && /Hoi Lin Tea House/.test(await page.textContent('.dsheet')) && /Plaza Inn/.test(await page.locator('.dsheet .meal').nth(3).textContent()) && await page.locator('.dsheet a[href="/art/hk/disney-map.svg"]').count() === 1, 'HK today, Disney day: four meals each with a pick and a backup, and the park map');
+  ok(await page.locator('.dsheet .meal').count() === 4 && /Hoi Lin Tea House/.test(await page.textContent('.cgrid')) && /Plaza Inn/.test(await page.locator('.dsheet .meal').nth(3).textContent()) && await page.locator('.dsheet a[href="/art/hk/disney-map.svg"]').count() === 1, 'HK today, Disney day: four meals each with a pick and a backup, and the park map');
   await page.goto(`${BASE}/#/t/${T}/eat`); await page.waitForSelector('.mealplan');
   ok(await page.locator('.mealplan .mday').count() === 6 && await page.locator('.mealplan .mlcard').count() === 22, 'eat page: every meal of every day, pick and backup, before the full guide');
   await page.goto(`${BASE}/#/t/${T}/prep/full`); await page.waitForSelector('#pocket');
@@ -652,7 +652,7 @@ const T = 'hk-macau-2026';
   ok(await page.locator('img[src="/art/kids/mimi-adventure-full.svg"]').count() >= 1 && await page.locator('img[src="/art/kids/mimi-full.svg"]').count() === 0, 'Australia book: the kids wear their adventure outfits');
   // glance first: each topic opens as a few answer cards; the manual-style report is one tap away
   await page.goto(`${BASE}/#/t/big-hop-2027/today`); await page.waitForSelector('.dsheet');
-  ok(/Money today/.test(await page.textContent('.dsheet')) && /≈ A\$\d/.test(await page.textContent('.dsheet .num')) && await page.locator('.dayplan').count() === 0 && await s.noHScroll(), 'today glance: answer cards (money shows the day total), no full plan until tapped');
+  ok(/Money today/.test(await page.textContent('.cgrid')) && /≈ A\$\d/.test(await page.textContent('.dsheet .num')) && await page.locator('.dayplan').count() === 0 && await s.noHScroll(), 'today glance: answer cards (money shows the day total), no full plan until tapped');
   await page.goto(`${BASE}/#/t/big-hop-2027/plan`); await page.waitForSelector('.drows');
   ok(await page.locator('.drows li').count() === 16 && await page.locator('.drows li.now a[href$="/today/1"]').count() === 1 && await s.noHScroll(), 'whole-trip glance: one tappable line per day, today marked, fits the phone');
   await page.goto(`${BASE}/#/t/big-hop-2027/stays`); await page.waitForSelector('.slist');
