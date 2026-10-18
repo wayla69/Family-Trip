@@ -1457,9 +1457,7 @@ button.tile.kid{border:1px solid var(--line);text-align:left;justify-items:start
 /* boxes of uneven height pack like a masonry wall on wide screens (columns, not grid rows), so no gap opens under a short box */
 .cgrid,.emeals{display:block;columns:2 340px;column-gap:14px;margin-top:12px}
 .cgrid>*,.emeals>*{break-inside:avoid;display:block;width:100%;box-sizing:border-box;margin:0 0 14px}
-/* today's glance, wide: the tall meals box takes the right column on its own; the other boxes stack on the left (no hole under a short box) */
-@media (min-width:760px){
-  .cgrid:has(>.c-sun){display:grid;columns:auto;grid-template-columns:minmax(0,1fr) minmax(0,1fr);grid-template-rows:min-content min-content 1fr;gap:14px;grid-template-areas:"go meal" "pb meal" "mo meal";align-items:start}
-  .cgrid:has(>.c-sun)>*{margin:0}
-  .cgrid>.c-ind{grid-area:go}.cgrid>.c-sun{grid-area:meal}.cgrid>.c-hot{grid-area:pb}.cgrid>.c-leaf{grid-area:mo}
-}
+/* today's glance, wide: packBoxes() moves the boxes into two .ccol columns by their measured heights */
+.cgrid.packed{display:flex;gap:14px;align-items:flex-start;columns:auto}
+.cgrid.packed>.ccol{flex:1 1 0;min-width:0;display:flex;flex-direction:column;gap:14px}
+.cgrid.packed .cbox{margin:0;width:auto}

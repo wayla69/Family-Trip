@@ -65,13 +65,32 @@ function render() {
   document.title = t ? `${T(t.title)} · Memory Bookshelf` : 'Memory Bookshelf';
   const key = p.slice(0, 3).join('/') + (p.includes('full') ? '/full/' + (p[4] || '') : ''), enter = key !== lastView; lastView = key;   // animate only when the page changes, not on every save
   app.innerHTML = topBar(t, p) + `<main class="wrap${enter ? ' enter' : ''}">${offline ? `<div class="notice">${L('ออฟไลน์ — แสดงข้อมูลล่าสุดที่เก็บไว้ บันทึกได้ตามปกติ ระบบจะส่งขึ้นเองเมื่อมีสัญญาณ', 'Offline — showing the last saved copy. You can keep recording; it uploads when you are back online.')}${S.syncedAt ? ` <small>· ${L('ข้อมูลล่าสุดเมื่อ', 'last synced')} ${esc(new Date(S.syncedAt).toLocaleString(LOC(), { day: 'numeric', month: 'short', hour: '2-digit', minute: '2-digit' }))}</small>` : ''}</div>` : ''}${html}</main>` + tabBar(t, p);
-  renderProgress();
+  renderProgress(); packBoxes(app);
   // the photo picker is one input outside #app, so a render while the picker is open cannot replace it and drop the chosen photos
   const fp = document.getElementById('fpick'), host = app.querySelector('[data-fpick]'); if (fp && host) { fp.dataset.t = host.dataset.t; fp.dataset.d = host.dataset.d; }
   if (typeof hydrateColours === 'function') hydrateColours(app);   // kid.js loads after this file
   if (enter && p[3] === 'full' && p[4] !== undefined) setTimeout(() => { const el = document.getElementById(`pg-${p[2]}-${p[4]}`); if (el) el.scrollIntoView(); }, 0);   // after the router's scroll-to-top   // a glance card opens the report on its section
   if (enter && p[2] === 'book' && p[3] === 'd') { const el = document.getElementById('d' + p[4]); if (el) el.scrollIntoView(); }   // #/t/<trip>/book/d/<i> opens on that day
 }
+// wide screens: today's boxes go into two columns chosen by their real heights (any language, any day), so neither column ends far short of the other
+function packBoxes(root) {
+  root.querySelectorAll('.cgrid').forEach((g) => {
+    const boxes = [...g.querySelectorAll(':scope > .cbox, :scope > .ccol > .cbox')];
+    g.querySelectorAll(':scope > .ccol').forEach((c) => c.remove()); g.classList.remove('packed'); boxes.forEach((b) => g.append(b));
+    if (innerWidth < 760 || boxes.length < 2) return;
+    const h = boxes.map((b) => b.offsetHeight); let best = null;
+    for (let m = 0; m < 1 << boxes.length; m++) {
+      if (m & 1) continue;   // the first box stays on the left
+      const r = h.reduce((n, x, i) => n + (m >> i & 1 ? x : 0), 0), l = h.reduce((n, x) => n + x, 0) - r, cost = Math.max(l, r);
+      if (!best || cost < best.cost) best = { m, cost };
+    }
+    const cols = [0, 1].map(() => { const c = document.createElement('div'); c.className = 'ccol'; return c; });
+    boxes.forEach((b, i) => cols[best.m >> i & 1].append(b));
+    g.append(...cols); g.classList.add('packed');
+  });
+}
+let packT; addEventListener('resize', () => { clearTimeout(packT); packT = setTimeout(() => packBoxes(document), 150); });
+if (document.fonts) document.fonts.ready.then(() => packBoxes(document));
 const mapLegacy = (id) => { const t = trips().find((x) => x.id === id || x.legacy_id === id); return t && t.id; };
 
 function topBar(t, p) {
