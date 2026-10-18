@@ -22,8 +22,9 @@ async function render({ base, cookie, trip, footer }) {
       const u = new URL(base);
       await ctx.addCookies([{ name: 'mb', value: cookie, domain: u.hostname, path: '/', httpOnly: true }]);
       const page = await ctx.newPage();
-      await page.goto(`${base}/#/t/${encodeURIComponent(trip)}`, { waitUntil: 'networkidle', timeout: 60000 });
-      await page.waitForSelector('.cover', { timeout: 30000 });
+      await page.goto(`${base}/#/print/${encodeURIComponent(trip)}`, { waitUntil: 'networkidle', timeout: 60000 });   // the memory book's A4 pages
+      await page.waitForSelector('.pg.cover', { timeout: 30000 });
+      await page.waitForFunction(() => document.querySelectorAll('.colsvg').length === document.querySelectorAll('.colsvg svg').length, null, { timeout: 15000 }).catch(() => {});   // colouring pages load async
       await page.evaluate(() => document.querySelectorAll('img[loading]').forEach((i) => { i.loading = 'eager'; }));
       await page.waitForFunction(() => Array.from(document.images).every((i) => i.complete), null, { timeout: 60000 });
       await page.evaluate(() => document.fonts.ready);

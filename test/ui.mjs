@@ -376,7 +376,15 @@ const T = 'hk-macau-2026';
   const pdf = { status: pr.status(), type: pr.headers()['content-type'], head: pb.subarray(0, 5).toString('latin1'), size: pb.length,
     pages: (pb.toString('latin1').match(/\/Type\s*\/Page[^s]/g) || []).length };
   ok(pdf.status === 200 && pdf.type === 'application/pdf' && pdf.head === '%PDF-', `server PDF: ${Math.round(pdf.size / 1024)} KB, ${pdf.pages} A4 pages`);
-  ok(pdf.pages >= 3 && pdf.size > 40000, 'PDF has the cover + one page per recorded day, with photos');
+  ok(pdf.pages >= 7 && pdf.size > 40000, 'memory book PDF: cover, numbers, contents, day pages, firsts, words, a passport spread per child, back cover');
+  // the memory book preview on screen (what the PDF prints)
+  await s.page.goto(`${BASE}/#/print/hk-macau-2026`); await s.page.waitForSelector('.pg.cover');
+  const pgs = await s.page.locator('.pg').evaluateAll((els) => els.map((e) => e.className.replace('pg ', '').split(' ')[0]));
+  ok(pgs[0] === 'cover' && pgs.includes('numbers') && pgs.includes('contents') && pgs.filter((c) => c === 'dayp').length >= 1 && pgs.filter((c) => c === 'ppp').length === 2 && pgs.includes('wordsp') && pgs.includes('firstsp') && pgs[pgs.length - 1] === 'back', `memory book pages: ${pgs.join(' · ')}`);
+  ok(await s.page.locator('.pg.cover .cast .who').count() === 2 && await s.page.locator('.pg.cover .cvart .art').count() === 6 && await s.page.locator('.pg.numbers .pmap .pin').count() === 7, 'memory book cover: the kids, the six day stamps; numbers page: the route map');
+  ok(await s.page.locator('.pg.ppp .dstamp').count() === 12 && await s.page.locator('.pg.ppp .colsvg svg, .pg.ppp .colsvg').count() >= 1, 'passport spreads: 6 stamp slots per child, Mimi\'s colouring');
+  ok(await s.page.locator('nav.bar, .top').count() === 0, 'memory book preview has no app chrome');
+  await s.page.screenshot({ path: path.join(OUT, 'wide-13-memory-book.png'), fullPage: true });
   await s.shot('10-book-wide');
   await s.page.goto(`${BASE}/#/passport/mimi`); await s.page.waitForSelector('.pp .dstamp');
   const pw = await s.page.evaluate(() => ({ cols: getComputedStyle(document.querySelector('.pp')).gridTemplateColumns.split(' ').length, st: document.querySelector('.dstamp .art').getBoundingClientRect().width }));
@@ -424,7 +432,9 @@ const T = 'hk-macau-2026';
   ok(true, 'viewer: record URL falls back to the book');
   const w = await page.evaluate(async () => (await fetch('/api/b/entries/q-hack-0001', { method: 'PUT', headers: { 'x-mb': '1', 'content-type': 'application/json' }, body: JSON.stringify({ trip: 'hk-macau-2026', day: 0, kind: 'quote', child: 'mimi', text: 'x' }) })).status);
   ok(w === 403, 'viewer write → 403');
-  ok(await page.evaluate(async () => (await fetch('/api/b/pdf/hk-macau-2026')).headers.get('content-type')) === 'application/pdf', 'viewer (relatives) can download the PDF');
+  ok(await page.evaluate(async () => (await fetch('/api/b/pdf/hk-macau-2026')).headers.get('content-type')) === 'application/pdf', 'viewer (relatives) can download the memory book PDF');
+  await page.goto(`${BASE}/#/print/${T}`); await page.waitForSelector('.pg.back');
+  ok(await page.locator('.pg').count() >= 7 && await s.noHScroll(), 'viewer: memory book preview renders on a phone without horizontal scroll');
   await s.shot('20-viewer');
   // grandma sends Mimi a heart from the book
   await page.goto(`${BASE}/#/t/${T}`); await page.waitForSelector('#hearts .hform');
