@@ -87,6 +87,15 @@ const A = {
     delete drafts[inp.dataset.draft]; inp.value = '';
     putEntry(trip(b.dataset.t), { day: +b.dataset.d, kind: 'first', child: b.dataset.k, first_key: 'custom', text }, uid('fc'));
   },
+  // passport: a mission spot / animal / explorer box (tap again to untick); food has YUM / YUCK
+  tick(b) {
+    const t = trip(b.dataset.t), k = b.dataset.k, key = b.dataset.v, yum = b.dataset.yum || '', id = `${t.id}.tick.${key}.${k}`;
+    const cur = S.entries.find((e) => e.id === id), before = certEarned(t, k);
+    if (cur && cur.text === yum) { delEntry(id); return; }
+    burst(b, yum === 'yuck' ? ['😖', '💦'] : yum ? ['😋', '✨'] : ['⭐', '✨', '🎉']);
+    putEntry(t, { day: b.dataset.d === '' ? null : +b.dataset.d, kind: 'tick', child: k, first_key: key, text: yum }, id);
+    if (!before && certEarned(t, k)) toast(L(`🎉 ${kidName(k)} ได้ใบประกาศนักสำรวจแล้ว!`, `🎉 ${kidName(k)} earned the explorer certificate!`));
+  },
   place(b) {
     const t = trip(b.dataset.t), d = +b.dataset.d, key = b.dataset.v;
     const p = (t.days[d].planned || []).find((x) => x.key === key) || { en: key, th: key };
@@ -156,11 +165,13 @@ const A = {
 
 /* ---------- fav/note save when leaving the field; empty = delete ---------- */
 async function saveBlur(el) {
-  const t = trip(el.dataset.t), d = +el.dataset.d, kind = el.dataset.aBlur, text = el.value.trim();
-  const id = `${t.id}.${kind}.d${d}`, cur = S.entries.find((e) => e.id === id);
+  const t = trip(el.dataset.t), kind = el.dataset.aBlur, text = el.value.trim();
+  // passport Explorer ID answers are per child, not per day
+  const field = kind === 'field', d = field ? null : +el.dataset.d;
+  const id = field ? `${t.id}.field.${el.dataset.v}.${el.dataset.k}` : `${t.id}.${kind}.d${d}`, cur = S.entries.find((e) => e.id === id);
   delete drafts[el.dataset.draft];
   if (!text) { if (cur) await delEntry(id); return; }
-  if (!cur || cur.text !== text) await putEntry(t, { day: d, kind, text }, id);
+  if (!cur || cur.text !== text) await putEntry(t, field ? { day: null, kind, child: el.dataset.k, first_key: el.dataset.v, text } : { day: d, kind, text }, id);
 }
 
 let storyCtl = null;   // AbortController while a story streams

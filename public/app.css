@@ -103,7 +103,7 @@ hr.rule{border:0;border-top:1px solid var(--rule);margin:22px 0}
 @media (max-width:640px){.cover .stamp{--s:64px;top:8px;font-size:6.5px;letter-spacing:.04em}.cover>.kicker,.cover h1{margin-right:72px}}
 .spine .kicker{margin-right:64px}
 /* Cormorant's default old-style figures make 1 look like I — use lining figures for numbers */
-.fact b,.day .no,.daystrip b,.stamp,.tl time,.journey b{font-variant-numeric:lining-nums tabular-nums;font-feature-settings:"lnum" 1,"tnum" 1}
+.fact b,.day .no,.daystrip b,.stamp,.tl time,.journey b,.itin .dl b{font-variant-numeric:lining-nums tabular-nums;font-feature-settings:"lnum" 1,"tnum" 1}
 .facts{display:grid;grid-template-columns:repeat(auto-fill,minmax(130px,1fr));gap:0 18px;margin-top:22px}
 .fact{border-top:2px solid var(--accent);padding:8px 0 12px}
 .fact b{display:block;font-family:var(--display);font-size:28px;font-weight:600;line-height:1.1}
@@ -344,6 +344,79 @@ nav.bar a[aria-current=page] i{transform:translateY(-2px) scale(1.12);display:in
 .bdg span{width:58px;height:58px;border-radius:50%;display:grid;place-items:center;font-size:30px;background:radial-gradient(circle at 35% 30%,#FFF6D8,#F2C94C);box-shadow:inset 0 0 0 3px #fff,0 0 0 2px #D9A93A,0 6px 12px -6px rgba(0,0,0,.4)}
 .bdg b{font-size:13px;font-weight:600;line-height:1.25}
 .bdg small{font-size:11px;color:var(--muted)}
+
+/* ---------- itinerary (book): every planned day, like the manual's day list ---------- */
+.itin{list-style:none;margin:10px 0 0;padding:0;display:grid;grid-template-columns:repeat(auto-fill,minmax(min(100%,420px),1fr));gap:0 24px}
+.itin li{display:flex;gap:12px;align-items:flex-start;padding:12px 0;border-bottom:1px solid var(--rule)}
+.itin li .art{width:46px;height:46px;filter:grayscale(1);opacity:.55}
+.itin li.has .art,.itin li.now .art{filter:none;opacity:1}
+.itin .grow{flex:1;min-width:0}
+.itin .dl{font-size:12px;color:var(--muted)}.itin .dl b{font-family:var(--display);font-size:16px;color:var(--accent);margin-right:4px;font-variant-numeric:lining-nums}
+.itin h4{font-family:var(--display);font-size:18px;font-weight:600;line-height:1.2;margin:1px 0 2px}
+.itin .stops{font-size:13px;color:var(--ink);margin:0 0 2px}
+.itin .label{margin:0}
+.itin .mini{flex:none;text-decoration:none;color:var(--accent);align-self:center}
+.itin li.now{background:color-mix(in srgb,var(--accent) 6%,transparent);border-radius:10px;padding-left:8px;padding-right:8px}
+
+/* ---------- passport: adventure pages ---------- */
+.ppkids .sep{width:1px;height:24px;background:var(--rule);margin:0 4px}
+.ppc .explorer{font-size:11px;font-weight:700;letter-spacing:.22em;margin-top:8px}
+.ppc .nm{margin-top:2px}
+img.guide{width:54px;height:54px;flex:none}
+.guides .bubble{display:flex;gap:12px;align-items:flex-start;margin-top:10px}
+.guides .bubble.r{flex-direction:row-reverse}
+.guides .bubble>div{background:var(--pick);border-radius:14px;padding:10px 14px;font-size:15px;flex:1}
+.guides .bubble.r>div{background:var(--calm)}
+.guides .bubble b{display:block;font-size:13px;color:var(--accent2)}
+.guides .bubble p{margin:2px 0 0}
+.bio .ppf{padding:5px 8px;font-family:var(--ui);font-size:15px;font-weight:500}
+.sleep ol{list-style:none;margin:0;padding:0}
+.sleep li{display:flex;gap:10px;align-items:center;padding:7px 0;border-bottom:1px solid var(--rule)}
+.sleep li:last-child{border-bottom:0}
+.sleep .n{width:26px;height:26px;border-radius:50%;display:grid;place-items:center;background:var(--accent);color:#fff;font-size:13px;font-weight:700;flex:none}
+.sleep .t{flex:1;min-width:0}.sleep .t b{display:block;font-weight:600;font-size:14px}.sleep .t small{color:var(--muted);font-size:12px}
+.sleep .art{width:36px;height:36px}
+.missions{display:grid;grid-template-columns:repeat(auto-fill,minmax(min(100%,340px),1fr));gap:14px;margin-top:12px}
+.mission{border:1px solid var(--rule);border-radius:16px;padding:14px;background:var(--paper);box-shadow:0 10px 24px -22px rgba(0,0,0,.45)}
+.mission header{display:flex;gap:10px;align-items:center;margin-bottom:10px}
+.mission header .art{width:48px;height:48px;filter:grayscale(.9);opacity:.7}
+.mission.stamped header .art{filter:none;opacity:1;transform:rotate(-6deg)}
+.mission h4{font-family:var(--display);font-size:19px;font-weight:600;line-height:1.15}
+.mission .says{display:flex;gap:8px;align-items:flex-start;background:var(--panel);border-radius:12px;padding:8px 10px;font-size:14px}
+.mission .says img.guide{width:38px;height:38px}
+.mission .says b{font-size:12px;color:var(--accent2)}
+.mission .says ul{margin:2px 0 0;padding-left:16px}
+.mission .felt{display:flex;align-items:center;gap:6px;flex-wrap:wrap;margin:10px 0}
+.mission .felt .label{flex-basis:100%}
+.mission .felt button{border:1px solid var(--rule);background:var(--paper);border-radius:12px;padding:4px 10px;display:inline-flex;align-items:center;gap:6px}
+.mission .felt button span{font-size:22px;line-height:1}.mission .felt button small{font-size:12px;color:var(--muted)}
+.mission .felt button[aria-pressed=true]{border-color:var(--accent);background:color-mix(in srgb,var(--accent) 10%,var(--paper));box-shadow:inset 0 0 0 1px var(--accent)}
+.mission .spothd{display:flex;align-items:center;gap:8px;margin-bottom:6px}
+.mission .spothd img.guide{width:34px;height:34px}.mission .spothd b{flex:1;font-size:14px}
+.ticks{display:grid;grid-template-columns:repeat(auto-fill,minmax(min(100%,148px),1fr));gap:6px}
+.ticks.food{grid-template-columns:repeat(auto-fill,minmax(min(100%,230px),1fr))}
+.tick{display:flex;align-items:center;gap:7px;border:1px solid var(--rule);background:var(--paper);border-radius:999px;padding:6px 10px 6px 6px;text-align:left;min-height:42px;font-size:13px;line-height:1.2}
+.tick i{width:24px;height:24px;border-radius:50%;border:2px solid var(--accent);display:grid;place-items:center;font-style:normal;font-weight:700;color:#fff;flex:none;font-size:13px}
+.tick .e{font-size:20px;flex:none}.tick .t{flex:1;min-width:0}.tick .t small{display:block;color:var(--muted);font-size:11px}
+.tick.on{border-color:var(--accent);background:color-mix(in srgb,var(--accent) 8%,var(--paper))}
+.tick.on i{background:var(--accent)}
+.tick:disabled{cursor:default;color:inherit;opacity:1}
+.ticks.food .tick{border-radius:14px}
+.yum{display:flex;gap:4px;flex:none}
+.yum button{width:36px;height:36px;border-radius:50%;border:1px solid var(--rule);background:var(--paper);font-size:18px;opacity:.5}
+.yum button[aria-pressed=true]{opacity:1;border-color:var(--accent);box-shadow:inset 0 0 0 2px var(--accent)}
+.plist.wide{grid-column:1/-1}
+.plist h5{font-size:14px;font-weight:700;margin:12px 0 6px}
+.plist .count{font-family:var(--display);font-size:30px;font-weight:700;color:var(--accent);line-height:1;font-variant-numeric:lining-nums}.plist .count small{font-size:15px;color:var(--muted)}
+.goal{margin:-4px 0 10px}.goal .bar{height:8px;border-radius:8px;background:var(--rule);overflow:hidden;margin-bottom:4px}
+.goal .bar i{display:block;height:100%;border-radius:8px;background:linear-gradient(90deg,#F2C94C,var(--accent2))}
+.cert{text-align:center;display:grid;justify-items:center;gap:6px;border:3px double #D9A93A;background:linear-gradient(#FFFBEF,var(--paper))}
+.cert:not(.earned){filter:grayscale(.85);opacity:.75}
+.cert h3{font-family:var(--display);font-size:26px;font-weight:700;color:var(--accent)}
+.cert .cname{font-family:var(--display);font-size:32px;font-weight:700;border-bottom:2px solid #D9A93A;padding:0 18px 4px}
+.cert p{max-width:52ch;margin:0;font-size:14px}.cert .bye{color:var(--accent2);font-weight:600}
+.cert .stamp{--s:84px}
+@media (prefers-color-scheme:dark){:root:not([data-theme=light]) .cert{background:var(--paper)}}
 
 /* ---------- login art ---------- */
 .loginart{display:flex;align-items:flex-end;margin:0 0 14px;min-height:96px}
