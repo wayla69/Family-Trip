@@ -21,7 +21,13 @@ const app = express();
 app.disable('x-powered-by');
 app.set('trust proxy', 1);
 
+// CSP: only our own origin. No inline scripts exist; style 'unsafe-inline' is for the style="" attributes the views render;
+// blob:/data: images are queued photos and drawings shown before upload. Maps open as plain links (no frames).
+const CSP = "default-src 'self'; script-src 'self'; style-src 'self' 'unsafe-inline'; img-src 'self' data: blob:; media-src 'self' data: blob:; " +
+  "font-src 'self'; connect-src 'self'; worker-src 'self'; manifest-src 'self'; object-src 'none'; base-uri 'none'; form-action 'self'; frame-ancestors 'none'";
 app.use((req, res, next) => {
+  res.setHeader('Content-Security-Policy', CSP);
+  if (req.secure) res.setHeader('Strict-Transport-Security', 'max-age=31536000');
   res.setHeader('X-Content-Type-Options', 'nosniff');
   res.setHeader('Referrer-Policy', 'same-origin');
   res.setHeader('X-Frame-Options', 'DENY');
