@@ -382,7 +382,7 @@ function viewKid(p) {
     const tiles = (pre
       ? [cd && ['count', '🎁', L('เซอร์ไพรส์', 'Surprise')], cd && cd.pack && ['pack', '🧳', L('จัดกระเป๋า', 'Pack')], ['colour', '🎨', L('ระบายสี', 'Colour')], ['draw', '🖍️', L('วาดรูป', 'Draw')]]
       : [['colour', '🎨', L('ระบายสี', 'Colour')], ['draw', '🖍️', L('วาดรูป', 'Draw')], ['spot', '🔍', L('หาของ', 'Find it')], ['stamp', '🛂', L('ปั๊มตรา', 'Stamp')]])
-      .concat(words ? [['words', '🗣️', L('พูดตาม', 'Say it')]] : [], [['stickers', '⭐', L('สติกเกอร์', 'Stickers')]], pp.map ? [['map', '🗺️', L('แผนที่', 'Map')]] : []).filter(Boolean);
+      .concat(words ? [['words', '🗣️', L('พูดตาม', 'Say it')]] : [], [['stickers', '⭐', L('สติกเกอร์', 'Stickers')]], pp.map ? [['map', '🗺️', L('แผนที่', 'Map')]] : [], ((d.plan || {}).quiz || []).length ? [['quiz', '❓', L('ทายซิ', 'Quiz')]] : []).filter(Boolean);
     const until = daysUntil(t);
     body = `${fresh.length ? `<button class="kidhearts" data-a="kidnav" data-v="#/kid/${esc(kid)}/hearts" data-say="${esc(heartLine(fresh[0], kid))}"><span class="float" aria-hidden="true">💗</span><span class="e">${esc(fresh[0].emoji)}</span><b>${esc(L(`${fresh[0].from} ส่งหัวใจให้หนู!`, `${fresh[0].from} sent you a heart!`))}</b>${fresh.length > 1 ? `<small>+${fresh.length - 1}</small>` : ''}</button>` : ''}
 <div class="kidhello">${kidArt(kid) ? `<img src="${kidArt(kid, true)}" alt="">` : ''}<p>${pre ? L(`อีก <b>${until}</b> วันไป${esc(T(t.title).split(' · ')[0])}!`, `<b>${until}</b> ${until === 1 ? 'sleep' : 'sleeps'} to ${esc(T(t.title).split(' · ')[0])}!`) : L(`สวัสดี ${esc(name)}!`, `Hi ${esc(name)}!`)}</p></div>
@@ -434,6 +434,9 @@ ${door.art !== undefined ? artImg(t, Math.min(door.art, t.days.length - 1), 'big
     if (mapFrom === null && kidEnter && !pre && i > 0) mapFrom = mapPos(mapModel(t), Math.max(0, i - 1));   // walk in from yesterday's stop
     body = `<div class="kidguide">${guideImg(0)}<p>${L('แตะหมุด แล้วเราจะเดินไปด้วยกัน!', "Tap a pin and we'll walk there!")}</p></div>
 ${mapHtml(t, i, [kid].concat((t.theme.children || []).map((c) => c.slug).filter((s) => s !== kid)), mapAt !== null ? mapAt : pre ? 0 : null)}`;
+  } else if (view === 'quiz' && ((d.plan || {}).quiz || []).length) {
+    body = `<div class="kidguide">${guideImg(1)}<p>${L('แตะการ์ดเพื่อดูคำตอบ!', 'Tap a card to see the answer!')}</p></div>
+<div class="kidquiz">${d.plan.quiz.map((q, n) => `<button class="qcard" data-a="kidquiz" data-v="${n}" data-q="${esc(T(q.q))}" data-ans="${esc(T(q.a))}" aria-pressed="false"><small>${L('คำถาม', 'Question')} ${n + 1}</small><b>${esc(T(q.q))}</b><span class="ans" hidden>${esc(T(q.a))}</span></button>`).join('')}</div>`;
   } else if (view === 'stickers') {
     body = `<div class="kidguide">${guideImg(1)}<p>${L('ลากสติกเกอร์ไปแปะได้เลย!', 'Drag your stickers onto the page!')}</p></div>${stickerBoard(t, kid, true)}`;
   } else if (view === 'hearts') {
@@ -513,6 +516,11 @@ Object.assign(A, {
     const box = $('.tmap'), cur = box ? +box.dataset.pos : mapPos(mm, kidDayOf(t)), j = mm.seq.reduce((best, v, n) => (v.k === b.dataset.v && (best < 0 || Math.abs(n - cur) < Math.abs(best - cur)) ? n : best), -1);   // the visit nearest to where we stand
     if (j < 0 || j === cur) return;
     mapFrom = cur; mapAt = j; kidDay = mm.seq[j].day; render();
+  },
+  kidquiz(b) {
+    const on = b.getAttribute('aria-pressed') === 'true', ans = b.querySelector('.ans');
+    b.setAttribute('aria-pressed', String(!on)); if (ans) ans.hidden = on;
+    if (!on) { beep('chime'); burst(b, ['⭐', '✨', '🎉']); sayUi(b.dataset.ans); } else { beep('tap'); sayUi(b.dataset.q); }
   },
   kidheart(b) { beep('pop'); burst(b, ['💗', '💕', '✨']); sayUi(b.dataset.v); },
   // bedtime story player (kid mode and the book)

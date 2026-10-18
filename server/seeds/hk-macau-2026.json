@@ -74,6 +74,17 @@
      "th": "มื้อเย็นใกล้โรงแรม",
      "meal": "Dinner"
     }
+   ],
+   "moving": { "th": "บิน 2 ชม. 45 นาที · limo ฟรีจากบัตรเครดิตไป Ma Wan", "en": "Fly 2 h 45 min · free credit-card limo to Ma Wan" },
+   "planB": { "th": "ถ้า limo ไม่มา: รถ NR334 Park Island Airport Flyer จาก Coach Station (Bay 19, Carpark 1) HK$32.5 ชั่วโมงละ 1–2 เที่ยว ลง Park Island แล้วเดิน ~5 นาที", "en": "No limo: bus NR334 Park Island Airport Flyer from the Coach Station (Bay 19, Carpark 1) HK$32.5, 1–2 an hour, then a 5-minute walk from Park Island" },
+   "stay": { "name": "Noah's Ark Hotel & Resort", "addr": "33 Pak Yan Road, Ma Wan, Hong Kong · 香港馬灣珀欣路33號", "q": "Noah's Ark Hotel & Resort, 33 Pak Yan Road, Ma Wan, Hong Kong" },
+   "plan": [
+    { "t": "14:00", "th": "TG 638 ออกจากกรุงเทพฯ → ถึงฮ่องกง 17:45 (นาฬิกาฮ่องกงเร็วกว่า 1 ชม.)", "en": "TG 638 leaves Bangkok → Hong Kong 17:45 (clocks one hour ahead)" },
+    { "t": "18:30", "th": "limo ฟรีจากบัตรเครดิตไป Noah's Ark Hotel, Ma Wan (ตามเล่มคู่มือ) · รถส่วนตัวเข้า Ma Wan ไม่ได้ ใช้รถของเกาะ", "en": "Free credit-card limo to Noah's Ark Hotel, Ma Wan (per the manual) · private cars cannot enter Ma Wan" },
+    { "t": "19:30", "th": "มื้อเย็นใกล้โรงแรม: Harvest (บุฟเฟต์ในโรงแรม) หรือร้านใน Park Island — ตรวจว่ายังเปิด", "en": "Dinner near the hotel: Harvest (hotel buffet) or a Park Island cafe — check they are still open" }
+   ],
+   "tips": [
+    { "th": "ก่อนขึ้นเครื่อง: กด “เก็บเล่มนี้ไว้ในเครื่อง” ในสมุด แล้วให้เด็กๆ เปิดประตูเซอร์ไพรส์บานสุดท้าย", "en": "Before boarding: tap “Keep this book on the phone” in the book, and let the kids open the last surprise door" }
    ]
   },
   {
@@ -114,6 +125,16 @@
      "th": "ดิสนีย์แลนด์: เครื่องเล่นและโชว์",
      "zh": "香港迪士尼樂園"
     }
+   ],
+   "moving": { "th": "NR330 → Tsing Yi (MTR) → Tung Chung Line → Sunny Bay → Disneyland Resort Line · กลับทางเดิม", "en": "NR330 → Tsing Yi (MTR) → Tung Chung Line → Sunny Bay → Disneyland Resort Line · same way back" },
+   "pick": { "th": "ชั่วโมงแรกหลังเปิดคนน้อยสุด — ไปเครื่องเล่นของมีมี่ก่อน แล้วค่อยเดินเล่น", "en": "The first hour after opening is the quietest — do Mimi's rides first, then wander" },
+   "stay": { "name": "Noah's Ark Hotel & Resort", "addr": "33 Pak Yan Road, Ma Wan, Hong Kong · 香港馬灣珀欣路33號", "q": "Noah's Ark Hotel & Resort, 33 Pak Yan Road, Ma Wan, Hong Kong" },
+   "plan": [
+    { "t": "09:00", "th": "ออกจาก Ma Wan ด้วย NR330 ไป Tsing Yi แล้วต่อ MTR (Tung Chung Line → Sunny Bay → รถไฟดิสนีย์)", "en": "Leave Ma Wan on NR330 to Tsing Yi, then MTR (Tung Chung Line → Sunny Bay → Disneyland Resort Line)" },
+    { "t": "10:30", "th": "ดิสนีย์แลนด์เปิด (เวลาเดือน ธ.ค. 2026 ยังไม่ประกาศ — ตรวจซ้ำ) · จองวันเข้าล่วงหน้าแล้ว · ช่วง World of Frozen 22 พ.ย.–6 ม.ค.", "en": "Park opens (Dec 2026 hours not published yet — re-check) · date already reserved · World of Frozen season 22 Nov–6 Jan" },
+    { "t": "12:00", "th": "มื้อกลางวัน Royal Banquet Hall (Fantasyland)", "en": "Lunch at Royal Banquet Hall (Fantasyland)" },
+    { "t": "13:00", "th": "พักที่ Baby Care Centre, Main Street U.S.A. (ให้นม เปลี่ยนผ้าอ้อม ไมโครเวฟ น้ำร้อน)", "en": "Rest at the Baby Care Centre on Main Street U.S.A. (nursing, changing, microwave, hot water)" },
+    { "t": "17:30", "th": "กลับ Ma Wan ทางเดิม ก่อนเด็กๆ หมดแรง", "en": "Head back to Ma Wan the same way, before the kids run out of steam" }
    ]
   },
   {
@@ -168,6 +189,19 @@
      "th": "สะพานฮ่องกง–จูไห่–มาเก๊า",
      "zh": "港珠澳大橋"
     }
+   ],
+   "moving": { "th": "taxi/NR334 ไปท่า HZMB → Golden Bus ข้ามสะพาน ~35–45 นาที + ตม. 2 ฝั่ง → รถรับส่งฟรีเข้า Cotai", "en": "Taxi/NR334 to HZMB port → Golden Bus over the bridge 35–45 min + immigration both ends → free shuttle into Cotai" },
+   "money": { "th": "Golden Bus HK$65 ×2 ผู้ใหญ่ · สวนน้ำ winter MOP 398 ผู้ใหญ่ / MOP 258 เด็กสูง 1.00–1.19 ม. (ไม่ฟรีกับห้องพักปกติ)", "en": "Golden Bus HK$65 ×2 adults · water park winter MOP 398 adult / MOP 258 child 1.00–1.19 m (not free with a standard room)" },
+   "stay": { "name": "Studio City Hotel", "addr": "Estrada do Istmo, Cotai, Macau · 澳門路氹連貫公路 新濠影滙", "q": "Studio City Hotel, Estrada do Istmo, Cotai, Macau" },
+   "plan": [
+    { "t": "09:00", "th": "เช็กเอาต์ · taxi (ตามเล่มคู่มือ) หรือ NR334 เที่ยว :00 ไป HZMB Hong Kong Port", "en": "Check out · taxi (per the manual) or NR334 on the hour to HZMB Hong Kong Port" },
+    { "t": "10:00", "th": "Golden Bus ข้ามสะพาน HK$65/คน ทุก 5–10 นาที · ใต้ 3 ขวบหรือต่ำกว่า 95 ซม. นั่งตักฟรี · บนสะพาน ~35–45 นาที", "en": "Golden Bus over the bridge HK$65 each, every 5–10 min · under 3 or under 95 cm free on a lap · 35–45 min on the bridge" },
+    { "t": "11:30", "th": "ถึง HZMB Macau Port → รถรับส่งฟรี Londoner/Sands (ตรวจเวลา) · Londoner → Studio City ~0.8 กม. มีสะพานคนเดิน · Studio City มีรถรับส่งเองด้วย", "en": "HZMB Macau Port → free Londoner/Sands shuttle (check times) · Londoner → Studio City ~0.8 km by footbridge · Studio City also runs its own shuttle" },
+    { "t": "13:00", "th": "เช็กอิน Studio City Hotel · มื้อกลางวันในรีสอร์ต · งีบ", "en": "Check in at Studio City Hotel · lunch in the resort · nap" },
+    { "t": "15:30", "th": "สวนน้ำ Studio City (12:00–20:00 · ฤดูหนาวเฉพาะโซนในร่ม · ต่ำกว่า 1 ม. ฟรี) — ตรวจปฏิทินว่าเปิดวันจันทร์ที่ 7", "en": "Studio City Water Park (12:00–20:00 · indoor zones only in winter · under 1 m free) — check the calendar for Monday 7th" }
+   ],
+   "tips": [
+    { "th": "กฎผ้าอ้อมว่ายน้ำของสวนน้ำยังไม่ทราบ — เตรียมไปเผื่อ", "en": "Swim-nappy rules at the water park are unknown — bring some" }
    ]
   },
   {
@@ -223,6 +257,22 @@
      "zh": "黃枝記",
      "meal": "Dinner"
     }
+   ],
+   "moving": { "th": "เดิน/shuttle ไป Venetian · taxi ไป Senado 20 นาที ×2 (MOP 70–90 เที่ยว)", "en": "Walk/shuttle to the Venetian · taxi to Senado 20 min each way (MOP 70–90)" },
+   "pick": { "th": "วันหยุดคนเต็มเมือง — เราไป teamLab รอบเปิดและไป Senado ตอนโพล้เพล้ ช่วงที่คนเริ่มกลับ", "en": "Holiday crowds — we take teamLab at opening and Senado at dusk, when the crowds thin out" },
+   "planB": { "th": "ถ้าไม่ได้งีบ: ตัด Senado ไปสระว่ายน้ำโรงแรม · ถ้า teamLab เต็ม: gondola ใน Venetian ชั้น 3 (11:30–19:30, มีก้าต้องมีตั๋วเด็ก)", "en": "No nap: drop Senado for the hotel pool · teamLab sold out: gondola ride in the Venetian, level 3 (11:30–19:30, Mika needs a child ticket)" },
+   "money": { "th": "teamLab ×3 ≈ MOP 724 (ราคาวันหยุดยังไม่ทราบ) · taxi Senado ไป-กลับ ≈ MOP 160 · มื้อกลางวัน + เย็น + gelato ≈ MOP 750", "en": "teamLab ×3 ≈ MOP 724 (holiday price unknown) · taxis to Senado and back ≈ MOP 160 · lunch + dinner + gelato ≈ MOP 750" },
+   "stay": { "name": "Studio City Hotel", "addr": "Estrada do Istmo, Cotai, Macau · 澳門路氹連貫公路 新濠影滙", "q": "Studio City Hotel, Estrada do Istmo, Cotai, Macau" },
+   "plan": [
+    { "t": "08:30", "th": "อาหารเช้าสบายๆ · วันนี้วันหยุดราชการมาเก๊า คนจะเยอะ", "en": "Easy breakfast · Macau public holiday today, expect crowds" },
+    { "t": "11:00", "th": "teamLab SuperNature (The Venetian) รอบเปิด · 90 นาที · มีก้าฟรี (ใต้ 3 ขวบ) · ข้ามห้อง EN TEA HOUSE · จองล่วงหน้า 3–5 วัน", "en": "teamLab SuperNature (The Venetian) at opening · 90 min · Mika free (under 3) · skip EN TEA HOUSE · book 3–5 days ahead" },
+    { "t": "12:45", "th": "มื้อกลางวัน Venetian food court ชั้น 3 · gelato ที่ Venchi ระหว่างทาง", "en": "Lunch at the Venetian food court, level 3 · Venchi gelato on the way" },
+    { "t": "13:30", "th": "งีบเต็ม 2 ชั่วโมง", "en": "Full 2-hour nap" },
+    { "t": "15:30", "th": "Taxi ไป Senado Square (20 นาที MOP 70–90) · มีก้าอยู่ในเป้อุ้ม พับรถเข็น", "en": "Taxi to Senado Square (20 min, MOP 70–90) · Mika in the carrier, stroller folded" },
+    { "t": "16:00", "th": "เดินวนรอบเดียว 90 นาที: Senado → St Dominic's → Rua de S. Paulo → บันได Ruins of St Paul's · Kika gelato", "en": "One 90-minute loop: Senado → St Dominic's → Rua de S. Paulo → the steps of the Ruins of St Paul's · Kika gelato" },
+    { "t": "17:15", "th": "แสงสุดท้ายบนพื้นลายคลื่น แล้วไฟคริสต์มาสติด — รูปที่ดีที่สุดของทริป", "en": "Last light on the wave-pattern paving, then the Christmas lights come on — the best photo of the trip" },
+    { "t": "17:30", "th": "มื้อเย็น Wong Chi Kei (17 Largo do Senado) บะหมี่เกี๊ยว โจ๊ก ~15 นาที", "en": "Dinner at Wong Chi Kei (17 Largo do Senado): wonton noodles, congee, about 15 minutes" },
+    { "t": "18:30", "th": "Taxi กลับ · ปั๊มตราพาสปอร์ต · เข้านอน 20:00", "en": "Taxi back · passport stamp · bed by 20:00" }
    ]
   },
   {
@@ -256,6 +306,20 @@
      "th": "หมู่บ้าน Taipa (ถ้าเด็กๆ ยังไหว)",
      "zh": "氹仔舊城區"
     }
+   ],
+   "moving": { "th": "อยู่ในรีสอร์ตเกือบทั้งวัน · Taipa Village ถ้าไป: taxi 10 นาที หรือเดินข้ามสะพานคนเดิน", "en": "In the resort most of the day · Taipa Village if we go: 10-minute taxi or the footbridge" },
+   "pick": { "th": "ตัดแพนด้าและ Coloane ออกแล้ว — วันนี้เป็นวันช้าๆ ก่อนวันเดินทางกลับ", "en": "Pandas and Coloane are cut — today is the slow day before we travel home" },
+   "planB": { "th": "ถ้าไม่ไป Taipa: สระว่ายน้ำโรงแรม แล้วจัดกระเป๋าตามเดิม", "en": "Skipping Taipa: hotel pool, then pack as planned" },
+   "money": { "th": "Nickelodeon บัตร 2 ชม. MOP 268 + เด็กเพิ่ม MOP 88 · มื้อกลางวัน + เย็น ≈ MOP 600 · ทาร์ตไข่ ≈ MOP 60", "en": "Nickelodeon 2-hour ticket MOP 268 + extra child MOP 88 · lunch + dinner ≈ MOP 600 · egg tarts ≈ MOP 60" },
+   "stay": { "name": "Studio City Hotel", "addr": "Estrada do Istmo, Cotai, Macau · 澳門路氹連貫公路 新濠影滙", "q": "Studio City Hotel, Estrada do Istmo, Cotai, Macau" },
+   "plan": [
+    { "t": "08:30", "th": "อาหารเช้า · กระเป๋าวัน", "en": "Breakfast · day bag" },
+    { "t": "10:20", "th": "ไปรอหน้า Nickelodeon Town ชั้น 2 ตอนเปิด 10:30 (ชั่วโมงแรกคนน้อยสุด) · PAW Patrol ของมีมี่ · Bikini Bottom ของมีก้า", "en": "Be at Nickelodeon Town (level 2) for the 10:30 opening — the quietest hour · PAW Patrol for Mimi · Bikini Bottom for Mika" },
+    { "t": "10:30", "th": "บัตร 2 ชม. ราคาวันธรรมดา (MOP 268 รวมเด็ก 1 + ผู้ใหญ่ 1 + ถุงเท้ากันลื่น · เด็กเพิ่ม MOP 88 — ตรวจซ้ำ) · ไม่ขายบัตรวันเดียวกัน → จองล่วงหน้า", "en": "2-hour ticket, weekday price (MOP 268 for 1 child + 1 adult + grip socks · extra child MOP 88 — re-check) · no same-day sales → book ahead" },
+    { "t": "12:30", "th": "มื้อกลางวันในรีสอร์ต (Bi Ying หรือ food court)", "en": "Lunch in the resort (Bi Ying or the food court)" },
+    { "t": "13:15", "th": "งีบยาว · จัดกระเป๋าใบใหญ่ตอนเด็กหลับ (พรุ่งนี้เรือเช้า)", "en": "Long nap · pack the big bags while the kids sleep (early ferry tomorrow)" },
+    { "t": "15:30", "th": "Taipa Village ถ้าเด็กๆ ยังไหว · ทาร์ตไข่ที่ Lord Stow's (Margaret's ปิดวันพุธ)", "en": "Taipa Village if the kids are up to it · egg tarts at Lord Stow's (Margaret's is closed on Wednesdays)" },
+    { "t": "18:00", "th": "มื้อเย็นเบาๆ · ปั๊มตรา · เข้านอน 20:00", "en": "Light dinner · passport stamp · bed by 20:00" }
    ]
   },
   {
@@ -310,6 +374,20 @@
      "th": "Shari Shari, Causeway Bay",
      "meal": "Treat"
     }
+   ],
+   "moving": { "th": "Taxi ไปท่าเรือ Taipa · Cotai Water Jet ~1 ชม. → Sheung Wan · MTR 10 นาที → Causeway Bay · Airport Express 24 นาที", "en": "Taxi to the Taipa ferry terminal · Cotai Water Jet ~1 h → Sheung Wan · MTR 10 min → Causeway Bay · Airport Express 24 min" },
+   "money": { "th": "เรือ HK$194 ×2 + ตั๋วเด็ก ×2 · ฝากกระเป๋า ~HK$50 · MTR/Airport Express · น้ำแข็งไส + มื้อกลางวัน", "en": "Ferry HK$194 ×2 + 2 child tickets · bag storage ~HK$50 · MTR/Airport Express · shaved ice + lunch" },
+   "plan": [
+    { "t": "08:30", "th": "เช็กเอาต์ · taxi ไปท่าเรือ Taipa", "en": "Check out · taxi to the Taipa ferry terminal" },
+    { "t": "09:30", "th": "Cotai Water Jet Taipa → Sheung Wan (Shun Tak) ~1 ชม. · HK$194/ผู้ใหญ่ วันธรรมดา (ตรวจซ้ำ) · มีก้าต้องมีตั๋วเด็ก (ตั้งแต่ 1 ขวบ)", "en": "Cotai Water Jet Taipa → Sheung Wan (Shun Tak) ~1 h · HK$194 adult weekday (re-check) · Mika needs a child ticket (from age 1)" },
+    { "t": "11:00", "th": "ฝากกระเป๋าที่ Shun Tak: TurboJET Service Centre ร้าน 103 ชั้น 1 (~HK$50 ต่อ 1–5 ชม. — ตรวจซ้ำ) · การบินไทยไม่มี in-town check-in", "en": "Leave the bags at Shun Tak: TurboJET Service Centre, shop 103, level 1 (~HK$50 for 1–5 h — re-check) · THAI has no in-town check-in" },
+    { "t": "11:30", "th": "MTR Sheung Wan → Causeway Bay ~10 นาที · เดินเล่น มื้อกลางวัน", "en": "MTR Sheung Wan → Causeway Bay ~10 min · wander, lunch" },
+    { "t": "13:00", "th": "Shari Shari Kakigori House น้ำแข็งไส (14 Haven St · เปิด ~13:00 · อาจรับเงินสดเท่านั้น)", "en": "Shari Shari Kakigori House shaved ice (14 Haven St · opens ~13:00 · may be cash only)" },
+    { "t": "15:00", "th": "ออกจาก Causeway Bay → Shun Tak รับกระเป๋า → limo หรือ Airport Express จาก Hong Kong Station ไปสนามบิน 24 นาที", "en": "Leave Causeway Bay → collect the bags at Shun Tak → limo or Airport Express from Hong Kong Station, 24 min to the airport" },
+    { "t": "18:55", "th": "TG 639 บินกลับกรุงเทพฯ", "en": "TG 639 home to Bangkok" }
+   ],
+   "tips": [
+    { "th": "ออกจาก Causeway Bay ไม่เกิน 15:00 ถึงจะทันเช็กอินสบายๆ", "en": "Leave Causeway Bay by 15:00 to check in without rushing" }
    ]
   }
  ],
@@ -443,6 +521,32 @@
   "places": [
    { "flag": "🇭🇰", "th": "ฮ่องกง", "en": "Hong Kong" },
    { "flag": "🇲🇴", "th": "มาเก๊า", "en": "Macau" }
+  ]
+ },
+ "info": {
+  "emergency": [
+   { "label": { "th": "เหตุฉุกเฉินทุกกรณี ฮ่องกงและมาเก๊า — ตำรวจ รถพยาบาล ดับเพลิง", "en": "All emergencies in Hong Kong and Macau — police, ambulance, fire" }, "tel": "999", "main": true},
+   { "label": { "th": "สายด่วนนักท่องเที่ยวฮ่องกง (HKTB)", "en": "Hong Kong Tourism Board visitor hotline" }, "tel": "+852 2508 1234", "main": false},
+   { "label": { "th": "สายด่วนนักท่องเที่ยวมาเก๊า (MGTO)", "en": "Macao Government Tourism Office hotline" }, "tel": "+853 2833 3000", "main": false},
+   { "label": { "th": "สถานกงสุลใหญ่ไทย ฮ่องกง · ชั้น 8 Fairmont House, 8 Cotton Tree Drive, Central (ตรวจเบอร์ซ้ำก่อนเดินทาง)", "en": "Royal Thai Consulate-General, Hong Kong · 8/F Fairmont House, 8 Cotton Tree Drive, Central (re-check the number before travelling)" }, "tel": "+852 2521 6481", "main": false}
+  ],
+  "lost": { "th": "ถ้าเด็กหลง: อยู่ตรงนั้น โทร 999 ยื่นบัตรนี้ให้ดู สอนมีมี่ว่า: จับมือไว้ — ถ้าหลงให้ยืนนิ่งๆ แล้วหาคุณแม่คนไหนก็ได้ที่มีลูก", "en": "If a child is lost: stay put, call 999, show this card. Teach Mimi: hold hands — if lost, stand still and find any mum with children" },
+  "stays": [
+   { "base": { "th": "เกาะมาวาน", "en": "Ma Wan island" }, "prop": { "th": "Noah's Ark Hotel & Resort", "en": "Noah's Ark Hotel & Resort" }, "ci": { "th": "ส. 5 ธ.ค.", "en": "Sat 5 Dec" }, "co": { "th": "จ. 7 ธ.ค.", "en": "Mon 7 Dec" }, "n": 2, "why": { "th": "เกาะเงียบใต้สะพานยักษ์ ใกล้สนามบินและดิสนีย์แลนด์ มีสนามเด็กเล่นและเรือโนอาห์ให้เดินดู", "en": "A quiet island under the giant bridge, close to the airport and Disneyland, with playgrounds and the Ark to explore" }, "addr": "33 Pak Yan Road, Ma Wan, Hong Kong · 香港馬灣珀欣路33號", "q": "Noah's Ark Hotel & Resort, 33 Pak Yan Road, Ma Wan, Hong Kong" },
+   { "base": { "th": "โคไท มาเก๊า", "en": "Cotai, Macau" }, "prop": { "th": "Studio City Hotel", "en": "Studio City Hotel" }, "ci": { "th": "จ. 7 ธ.ค.", "en": "Mon 7 Dec" }, "co": { "th": "พฤ. 10 ธ.ค.", "en": "Thu 10 Dec" }, "n": 3, "why": { "th": "Nickelodeon Town และสวนน้ำอยู่ในตึกเดียวกัน เดินถึง Venetian และ teamLab ได้ ไม่ต้องนั่งรถทุกวัน", "en": "Nickelodeon Town and the water park are in the same building; the Venetian and teamLab are a walk away, so no taxis most days" }, "addr": "Estrada do Istmo, Cotai, Macau · 澳門路氹連貫公路 新濠影滙", "q": "Studio City Hotel, Estrada do Istmo, Cotai, Macau" }
+  ],
+  "guide": [
+   { "title": { "th": "นาฬิกาเร็วกว่า 1 ชั่วโมง", "en": "Clocks one hour ahead" }, "sub": { "th": "ฮ่องกง–มาเก๊า UTC+8", "en": "Hong Kong and Macau are UTC+8" }, "text": { "th": "เวลางีบและเวลานอนของเด็กๆ เลื่อนตามไปเลย 1 ชั่วโมง ไม่ต้องปรับ", "en": "Keep the kids' nap and bedtime on Bangkok time plus one hour — no adjustment needed" }},
+   { "title": { "th": "สองเมือง สองสกุลเงิน", "en": "Two cities, two currencies" }, "sub": { "th": "HK$ ใช้ได้ในมาเก๊า แต่ MOP ใช้ในฮ่องกงไม่ได้", "en": "HK$ is accepted in Macau, MOP is not accepted in Hong Kong" }, "text": { "th": "กดเงิน HK$ ที่เดียวพอ ร้านในมาเก๊ารับ 1:1 เงินทอนอาจเป็น MOP ใช้ให้หมดก่อนกลับฮ่องกง · Octopus ใช้ได้เฉพาะฮ่องกง", "en": "Withdraw HK$ only; Macau shops take it 1:1 but may give MOP change — spend it before the ferry back · Octopus works in Hong Kong only" }},
+   { "title": { "th": "วันหยุดมาเก๊า", "en": "Macau public holiday" }, "sub": { "th": "อ. 8 ธ.ค. · Immaculate Conception", "en": "Tue 8 Dec · Immaculate Conception" }, "text": { "th": "ลาน Senado และ Nickelodeon คนเยอะ ราคาวันหยุด — เราไป teamLab รอบเปิด และ Senado ตอนโพล้เพล้", "en": "Senado and Nickelodeon are busier and charge holiday prices — we take teamLab at opening and Senado at dusk" }},
+   { "title": { "th": "teamLab ปิดวันพุธ", "en": "teamLab closes on Wednesdays" }, "sub": { "th": "เปิด 11:00–19:00 · เข้าได้ถึง 18:15", "en": "Open 11:00–19:00 · last entry 18:15" }, "text": { "th": "จึงจัดไว้วันอังคาร จองล่วงหน้า 3–5 วัน · ใต้ 3 ขวบฟรี", "en": "So it sits on Tuesday; book 3–5 days ahead · under 3 free" }},
+   { "title": { "th": "การบินไทยไม่มี in-town check-in", "en": "THAI has no in-town check-in" }, "sub": { "th": "วันสุดท้ายกระเป๋าไปกับเรา", "en": "Bags travel with us on the last day" }, "text": { "th": "ฝากที่ Shun Tak (TurboJET Service Centre ร้าน 103) ระหว่างเที่ยว Causeway Bay แล้วรับก่อนไปสนามบิน", "en": "Leave them at Shun Tak (TurboJET Service Centre, shop 103) while we visit Causeway Bay, collect before the airport" }},
+   { "title": { "th": "อากาศต้นธันวาคม", "en": "Early-December weather" }, "sub": { "th": "ฮ่องกง 17–21°C · มาเก๊า 14–20°C", "en": "Hong Kong 17–21°C · Macau 14–20°C" }, "text": { "th": "ฝนน้อยที่สุดของปี พระอาทิตย์ตก ~17:40 — เสื้อแจ็กเก็ตบางคนละตัว", "en": "The driest month, sunset about 17:40 — a light jacket each" }}
+  ],
+  "prices": { "head": { "th": "ค่าเข้าและค่าเดินทาง (ตรวจซ้ำก่อนเดินทาง)", "en": "Entry and transport prices (re-check before travelling)" }, "cols": [{ "th": "รายการ", "en": "Item" }, { "th": "ผู้ใหญ่", "en": "Adult" }, { "th": "เด็ก", "en": "Children" }, { "th": "เกณฑ์ฟรี", "en": "Free cut-off" }, { "th": "หมายเหตุ", "en": "Note" }], "rows": [[{ "th": "Golden Bus ข้ามสะพาน HZMB", "en": "Golden Bus over the HZMB" }, { "th": "HK$65", "en": "HK$65" }, { "th": "ครึ่งราคา <12 ปี และ <1.2 ม.", "en": "half price under 12 and under 1.2 m" }, { "th": "ใต้ 3 ขวบ / <95 ซม. นั่งตัก", "en": "under 3 / under 95 cm on a lap" }, { "th": "ทุก 5–10 นาที", "en": "every 5–10 min" }], [{ "th": "สวนน้ำ Studio City (ฤดูหนาว)", "en": "Studio City Water Park (winter)" }, { "th": "MOP 398", "en": "MOP 398" }, { "th": "MOP 258 สูง 1.00–1.19 ม.", "en": "MOP 258 at 1.00–1.19 m" }, { "th": "ต่ำกว่า 1 ม.", "en": "under 1 m" }, { "th": "ไม่ฟรีกับห้องปกติ · โซนในร่ม", "en": "not free with a standard room · indoor zones" }], [{ "th": "teamLab SuperNature", "en": "teamLab SuperNature" }, { "th": "≈ MOP 724 / 3 คน", "en": "≈ MOP 724 for 3" }, { "th": "มีมี่มีตั๋ว", "en": "Mimi needs a ticket" }, { "th": "ใต้ 3 ขวบ", "en": "under 3" }, { "th": "ราคาวันหยุดยังไม่ทราบ", "en": "holiday price unknown" }], [{ "th": "Nickelodeon Town บัตร 2 ชม.", "en": "Nickelodeon Town 2-hour pass" }, { "th": "MOP 268 วันธรรมดา / 328 วันหยุด (เด็ก 1 + ผู้ใหญ่ 1)", "en": "MOP 268 weekday / 328 holiday (1 child + 1 adult)" }, { "th": "เด็กเพิ่ม MOP 88", "en": "extra child MOP 88" }, { "th": "—", "en": "—" }, { "th": "ไม่ขายบัตรวันเดียวกัน", "en": "no same-day tickets" }], [{ "th": "Cotai Water Jet Taipa → Sheung Wan", "en": "Cotai Water Jet Taipa → Sheung Wan" }, { "th": "HK$194 วันธรรมดา", "en": "HK$194 weekday" }, { "th": "ตั๋วเด็กตั้งแต่ 1 ขวบ", "en": "child ticket from age 1" }, { "th": "ต่ำกว่า 1 ขวบ", "en": "under 1" }, { "th": "~1 ชม.", "en": "about 1 h" }], [{ "th": "Airport Express Hong Kong Station → สนามบิน", "en": "Airport Express Hong Kong Station → airport" }, { "th": "ตามอัตรา MTR", "en": "MTR fare" }, { "th": "เด็กใต้ 3 ขวบ — ตรวจซ้ำ", "en": "under 3 — re-check" }, { "th": "—", "en": "—" }, { "th": "24 นาที", "en": "24 min" }]]},
+  "pack": [
+   { "group": { "th": "ของมีมี่และมีก้า", "en": "Mimi and Mika" }, "items": [{ "th": "เป้อุ้มสำหรับ Senado และเรือ · รถเข็นพับง่าย", "en": "Carrier for Senado and the ferry · an easy-fold stroller" }, { "th": "เสื้อแจ็กเก็ตบางคนละตัว (เย็น 14–17°C ตอนค่ำ)", "en": "A light jacket each (14–17°C in the evenings)" }, { "th": "ชุดว่ายน้ำ + ผ้าอ้อมว่ายน้ำสำหรับสวนน้ำ", "en": "Swimsuits + swim nappies for the water park" }, { "th": "ถุงเท้ากันลื่นสำหรับ Nickelodeon Town (แถมในบัตร แต่เอาไปเผื่อ)", "en": "Grip socks for Nickelodeon Town (included, bring spares)" }, { "th": "ขนม ขวดน้ำ ผ้าอ้อม ทิชชู่เปียก เสื้อสำรองคนละ 2 ชุดในเป้", "en": "Snacks, water bottles, nappies, wipes, two spare outfits each in the day bag" }, { "th": "ยาลดไข้ ปรอท ยาประจำตัว (กระเป๋าถือ)", "en": "Fever medicine, thermometer, regular medicines (hand luggage)" }, { "th": "สีเทียน สติกเกอร์ — สำหรับ Adventure Passport", "en": "Crayons and stickers for the Adventure Passport" }]},
+   { "group": { "th": "เอกสารและของใช้ร่วม", "en": "Documents and shared kit" }, "items": [{ "th": "พาสปอร์ตทุกคน (เก็บไว้ในแอปคู่มือ ไม่ใช่ที่นี่)", "en": "Everyone's passports (kept in the guide app, not here)" }, { "th": "บัตรเครดิตที่ให้ limo ฟรี + เงินสด HK$", "en": "The credit card with the free limo + HK$ cash" }, { "th": "Octopus สำหรับ MTR และรถเมล์ (ฮ่องกงเท่านั้น)", "en": "Octopus cards for MTR and buses (Hong Kong only)" }, { "th": "ปลั๊กแปลงแบบ G (สามขาแบน) · พาวเวอร์แบงก์", "en": "Type G plug adapters · power bank" }]}
   ]
  },
  "passport": {

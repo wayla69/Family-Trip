@@ -36,20 +36,22 @@ async function syncSeeds(pool, dir = path.join(__dirname, 'seeds')) {
     }
     for (const t of seeds) {
       const id = t.slug;
-      await c.query(`INSERT INTO trips (id, family_id, slug, legacy_id, title, sub, date_from, date_to, timezone, theme, cover, stamp, moods, passport, source)
-        VALUES ($1,$2,$3,$4,$5,$6,$7,$8,$9,$10,$11,$12,$13,$14,'seed')
+      await c.query(`INSERT INTO trips (id, family_id, slug, legacy_id, title, sub, date_from, date_to, timezone, theme, cover, stamp, moods, passport, info, source)
+        VALUES ($1,$2,$3,$4,$5,$6,$7,$8,$9,$10,$11,$12,$13,$14,$15,'seed')
         ON CONFLICT (family_id, slug) DO UPDATE SET legacy_id=EXCLUDED.legacy_id, title=EXCLUDED.title, sub=EXCLUDED.sub, date_from=EXCLUDED.date_from,
           date_to=EXCLUDED.date_to, timezone=EXCLUDED.timezone, theme=EXCLUDED.theme, cover=EXCLUDED.cover, stamp=EXCLUDED.stamp, moods=EXCLUDED.moods,
-          passport=EXCLUDED.passport
+          passport=EXCLUDED.passport, info=EXCLUDED.info
         WHERE trips.source = 'seed'`,
       [id, FAMILY, t.slug, t.legacy_trip_id || null, t.title, t.sub || null, t.date_from, t.date_to, t.timezone || 'Asia/Bangkok',
         { ...(t.theme || {}), children: (t.children || []).map((k) => ({ slug: k.slug, age: k.age_at_trip || null })) },
-        t.cover || {}, t.stamp || {}, JSON.stringify(t.moods || []), t.passport || {}]);
+        t.cover || {}, t.stamp || {}, JSON.stringify(t.moods || []), t.passport || {}, t.info || {}]);
       for (const d of t.days) {
-        await c.query(`INSERT INTO trip_days (trip_id, day_index, date, title, sleep, emoji, gradient, planned, wx) VALUES ($1,$2,$3,$4,$5,$6,$7,$8,$9)
+        const plan = {};   // the day card's plan block (seed keys: timeline, how we move, local pick, plan B, money, tips, tonight's stay, maps route, nearby food, learn cards, quiz)
+        for (const k of ['moving', 'pick', 'planB', 'money', 'plan', 'tips', 'stay', 'route', 'eat', 'learn', 'quiz']) if (d[k]) plan[k] = d[k];
+        await c.query(`INSERT INTO trip_days (trip_id, day_index, date, title, sleep, emoji, gradient, planned, wx, plan) VALUES ($1,$2,$3,$4,$5,$6,$7,$8,$9,$10)
           ON CONFLICT (trip_id, day_index) DO UPDATE SET date=EXCLUDED.date, title=EXCLUDED.title, sleep=EXCLUDED.sleep, emoji=EXCLUDED.emoji,
-            gradient=EXCLUDED.gradient, planned=EXCLUDED.planned, wx=EXCLUDED.wx`,
-        [id, d.index, d.date, d.title, d.sleep || null, d.emoji || '', JSON.stringify(d.gradient || null), JSON.stringify(d.planned || []), d.wx || null]);
+            gradient=EXCLUDED.gradient, planned=EXCLUDED.planned, wx=EXCLUDED.wx, plan=EXCLUDED.plan`,
+        [id, d.index, d.date, d.title, d.sleep || null, d.emoji || '', JSON.stringify(d.gradient || null), JSON.stringify(d.planned || []), d.wx || null, plan]);
       }
       let fp = 0;
       for (const f of t.firsts_catalog || []) {
@@ -78,8 +80,8 @@ function router({ pool, media, A, ai }) {
     try {
       const [children, trips, days, firsts, entries, mediaRows, places, hearts] = await Promise.all([
         q('SELECT slug, name_th, name_en, emoji, color, birth_ym FROM children WHERE family_id=$1 ORDER BY pos', [FAMILY]),
-        q("SELECT id, slug, legacy_id, title, sub, to_char(date_from,'YYYY-MM-DD') date_from, to_char(date_to,'YYYY-MM-DD') date_to, timezone, theme, cover, stamp, moods, passport, source FROM trips WHERE family_id=$1 ORDER BY date_from", [FAMILY]),
-        q("SELECT d.trip_id, d.day_index, to_char(d.date,'YYYY-MM-DD') date, d.title, d.sleep, d.emoji, d.gradient, d.planned, d.wx, d.done_at FROM trip_days d JOIN trips t ON t.id=d.trip_id WHERE t.family_id=$1 ORDER BY d.trip_id, d.day_index", [FAMILY]),
+        q("SELECT id, slug, legacy_id, title, sub, to_char(date_from,'YYYY-MM-DD') date_from, to_char(date_to,'YYYY-MM-DD') date_to, timezone, theme, cover, stamp, moods, passport, info, source FROM trips WHERE family_id=$1 ORDER BY date_from", [FAMILY]),
+        q("SELECT d.trip_id, d.day_index, to_char(d.date,'YYYY-MM-DD') date, d.title, d.sleep, d.emoji, d.gradient, d.planned, d.wx, d.plan, d.done_at FROM trip_days d JOIN trips t ON t.id=d.trip_id WHERE t.family_id=$1 ORDER BY d.trip_id, d.day_index", [FAMILY]),
         q('SELECT f.trip_id, f.key, f.emoji, f.label FROM firsts_catalog f JOIN trips t ON t.id=f.trip_id WHERE t.family_id=$1 ORDER BY f.trip_id, f.pos, f.key', [FAMILY]),
         q('SELECT id, trip_id, day_index, kind, child, text, mood, first_key, lang, highlight, occurred_at, created_by, created_uid FROM entries WHERE family_id=$1 ORDER BY occurred_at', [FAMILY]),
         q('SELECT id, trip_id, day_index, width, height, caption, highlight, pos, taken_at, created_by FROM media WHERE family_id=$1 ORDER BY taken_at, pos', [FAMILY]),

@@ -138,7 +138,7 @@ const T = 'hk-macau-2026';
   ok(await page.locator('#d1 .hdart').count() === 1, 'day page shows its illustrated stamp');
   await s.shot('04-book');
 
-  ok(await page.locator('.itin li').count() === 6 && await page.locator('.itin li.has').count() === 1, 'book: itinerary lists all 6 planned days, the recorded one marked');
+  ok(await page.locator('.itin > li').count() === 6 && await page.locator('.itin > li.has').count() === 1, 'book: itinerary lists all 6 planned days, the recorded one marked');
   ok((await page.textContent('.itin')).includes('teamLab') && (await page.textContent('.itin')).includes('Taipa'), 'itinerary shows the planned stops (revised HK plan)');
 
   // the kids' adventure passports
@@ -487,6 +487,15 @@ const T = 'hk-macau-2026';
   await page.evaluate(async () => { await fetch('/api/b/entries/hk-macau-2026.story.all', { method: 'PUT', headers: { 'x-mb': '1', 'content-type': 'application/json' }, body: JSON.stringify({ trip: 'hk-macau-2026', day: null, kind: 'story', text: 'Once upon a time Mimi and Mika flew to Hong Kong. The plane went whoosh!\n\nThey met Captain Pinky by the sea. Then they slept in a castle of lights.\n\nThe end.', lang: 'en' }) }); await load(); });
   await page.goto(`${BASE}/#/t/${T}`); await page.waitForSelector('.cover');
   ok(await page.locator('.mosaic.drawings img').count() === 1, "book: the kids' drawings section");
+  // the day's plan from the manual: collapsed in the itinerary, open for today on the record page
+  ok(await page.locator('.itin .dayplan').count() === 6 && await page.locator('.itin .dayplan[open]').count() === 0, 'itinerary: every HK day has a collapsed plan (not on the trip yet)');
+  await page.locator('.itin > li').nth(3).locator('summary').click();
+  const p4 = await page.locator('.itin > li').nth(3).locator('.dayplan').textContent();
+  ok(/11:00/.test(p4) && /teamLab/.test(p4) && /Plan B/.test(p4) && /Money today/.test(p4) && /Local pick/.test(p4), 'itinerary: day 4 plan shows the timeline, local pick, plan B and money');
+  await page.locator('.itin > li').nth(3).screenshot({ path: path.join(OUT, 'countdown-05-dayplan.png') });
+  await page.goto(`${BASE}/#/t/${T}/log/3`); await page.waitForSelector('.planblk');
+  ok(await page.locator('.planblk .dayplan').count() === 1 && (await page.textContent('.planblk')).includes('Wong Chi Kei'), 'record page: the plan sits at the top of the day');
+  await page.goto(`${BASE}/#/t/${T}`); await page.waitForSelector('.bedbtn');
   await page.locator('.bedbtn').first().click(); await page.waitForSelector('#bedtime .bttext');
   ok(await page.locator('#bedtime .btdots i').count() === 3, 'bedtime: one page per paragraph');
   await s.shot('04-bedtime', false);
@@ -498,6 +507,42 @@ const T = 'hk-macau-2026';
   ok(s.errs.length === 0, 'countdown: no console errors ' + s.errs.join(' | '));
   await s.ctx.close();
 }
+// ---------- Australia on the trip (clock in April 2027): pocket guide, day plan, quiz, Aussie words ----------
+{
+  const s = await session('au');
+  const { page } = s;
+  await page.clock.setFixedTime(new Date('2027-04-03T10:00:00+11:00'));   // day 2, Grand Pacific Drive
+  await page.addInitScript(() => { window.__said = []; Object.defineProperty(window, 'speechSynthesis', { configurable: true, value: {
+    speak(u) { window.__said.push(`${u.text}|${u.lang}`); }, cancel() {}, onvoiceschanged: null, getVoices: () => ['th-TH', 'en-GB', 'en-AU'].map((l) => ({ lang: l, name: l })) } }); });
+  await login(page);
+  await page.click('button[data-a="lang"][data-v="en"]');
+  await page.goto(`${BASE}/#/t/big-hop-2027`); await page.waitForSelector('#pocket');
+  ok(await page.locator('.itin > li.now .dayplan[open]').count() === 1 && (await page.textContent('.itin > li.now .dayplan')).includes('Bald Hill') && (await page.textContent('.itin > li.now .dayplan')).includes('Waldegrave'), "AU itinerary: today's plan is open, with the stay address");
+  await page.locator('.itin > li.now .dayplan').screenshot({ path: path.join(OUT, 'au-01-dayplan.png') });
+  await page.locator('#pocket details.pg').first().click();
+  ok(await page.locator('#pocket .stayc').count() === 8 && await page.locator('#pocket .stayc a[href^="https://www.google.com/maps"]').count() === 8, 'pocket guide: 8 stays with addresses and map links');
+  await page.locator('#pocket details.pg').nth(1).click();
+  ok((await page.textContent('#pocket .emerg li.main')).includes('000') && await page.locator('#pocket .emerg a[href="tel:000"]').count() === 1, 'pocket guide: 000 is a tap-to-call link');
+  await page.locator('#pocket').screenshot({ path: path.join(OUT, 'au-02-pocket.png') });
+  ok(await s.noHScroll(), 'AU book with the pocket guide fits the phone');
+  await page.goto(`${BASE}/#/passport/mimi/big-hop-2027`); await page.waitForSelector('#m1');
+  ok(await page.locator('#m1 .says li').count() >= 4 && await page.locator('#m1 .mquiz .qa').count() === 3, 'passport mission: the guide tells the facts + one line per stop; Kiki asks 3 quiz questions');
+  await page.locator('#m1 .qa summary').first().click();
+  ok(await page.locator('#m1 .qa[open] p').count() === 1, 'passport quiz: tap reveals the answer');
+  ok(await page.locator('#pl-words .sayrow .hearbtn[data-lang="en-AU"]').count() === 8, 'passport: 8 Aussie words with an en-AU 🔊');
+  await page.click('.kidgo'); await page.waitForSelector('.kidtiles');
+  ok(await page.locator('.kidtiles button[data-v$="/quiz"]').count() === 1 && await page.locator('.kidtiles button[data-v$="/words"]').count() === 1, 'kid mode (AU): quiz + say-it tiles');
+  await page.click('.kidtiles button[data-v$="/quiz"]'); await page.waitForSelector('.qcard');
+  await page.locator('.qcard').first().click();
+  ok(await page.locator('.qcard[aria-pressed=true] .ans:not([hidden])').count() === 1 && (await page.evaluate(() => window.__said)).some((x) => /kites/i.test(x)), 'kid quiz: tapping a card shows and says the answer');
+  await s.shot('03-kid-quiz', false);
+  await page.click('.kidback'); await page.click('.kidtiles button[data-v$="/words"]'); await page.waitForSelector('.kw .hear');
+  await page.locator('.kw .hear').first().click();
+  ok((await page.evaluate(() => window.__said)).includes("G'day|en-AU"), 'say it (AU): "G\'day" read with an Australian voice');
+  ok(s.errs.length === 0, 'AU: no console errors ' + s.errs.join(' | '));
+  await s.ctx.close();
+}
+
 // kid mode + bedtime player on a desktop, dark
 {
   const s = await session('kid-wide', { width: 1440, height: 900, scheme: 'dark' });

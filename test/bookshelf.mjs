@@ -116,6 +116,22 @@ await BS.syncSeeds(pool);
 s = await state();
 ok(s.trips[0].days[0].done_at > 0 && s.trips.some((t) => t.slug === 'chiang-mai-2027'), 'seed re-sync keeps Done and app-made trips');
 
+// ---- the day's plan from the seed (manual's day card) is in the state, never bookings
+{
+  const hk = (await state()).trips.find((t) => t.id === T), p3 = hk.days[3].plan;
+  ok(p3.plan.length === 9 && p3.plan[1].t === '11:00' && /teamLab/.test(p3.plan[1].en) && p3.pick && p3.planB && p3.money, 'day 4 plan: 9 timed steps, local pick, plan B, money');
+  ok(hk.days.every((d) => d.plan && d.plan.plan && d.plan.plan.length) && hk.days.every((d) => !/\b[A-Z0-9]{6}\b.*(booking|PNR|confirmation)/i.test(JSON.stringify(d.plan))), 'every HK day has a plan; no booking references');
+  ok(hk.days[0].plan.stay && /Pak Yan Road/.test(hk.days[0].plan.stay.addr) && hk.info.emergency[0].tel === '999' && hk.info.stays.length === 2 && hk.info.prices.rows.length >= 5, 'HK: tonight\'s stay with address, pocket guide (999, 2 stays, prices)');
+  // Australia, imported from the owner's trip artifact: every day planned, nearby food, learn cards, quiz, pocket guide, Aussie words
+  const au = (await state()).trips.find((t) => t.id === 'big-hop-2027'), a2 = au.days[1].plan;
+  ok(au.days.every((d) => d.plan.plan.length >= 4) && a2.plan.length === 8 && a2.plan[3].t === '11:20' && /Bald Hill/.test(a2.plan[3].en) && a2.plan[3].note, 'AU: 16 timed days; day 2 has 8 steps with notes');
+  ok(/Waldegrave/.test(a2.stay.addr) && /google\.com\/maps/.test(a2.route) && a2.eat.length === 26 && a2.learn.length >= 3 && a2.quiz.length === 3 && a2.moving.en.includes('→'), 'AU day 2: stay + address, maps route, 26 places to eat, learn cards, 3 quiz questions, moving chain');
+  ok(au.info.emergency.some((e) => e.tel === '000' && e.main) && au.info.stays.length === 8 && au.info.pack.length === 4 && au.info.general.length === 4 && au.info.wild.length === 10 && au.info.prices.rows.length === 8, 'AU pocket guide: 000, 8 stays, packing, learn-in-the-car, animals, prices');
+  ok(au.passport.lists[0].key === 'words' && au.passport.lists[0].said && au.passport.lists[0].groups[0].items.length === 8 && au.passport.lists[0].groups[0].items[0].speak.lang === 'en-AU', 'AU passport: "Say It Like an Aussie" words list (en-AU)');
+  const all = JSON.stringify(await state());
+  ok(!/F5ARVC|1653717262744684|5651795979|"conf"|booking ref|฿/.test(all) && !/______/.test(all), 'privacy: no booking refs, confirmation numbers, costs or blank passport fields anywhere in the state');
+}
+
 // ---- hearts from the family: relatives on the view link may send one (text only), not edit anything else
 const VH = { 'x-mb': '1', cookie: vck, 'content-type': 'application/json' };
 const heart = { trip: T, day: null, child: 'mimi', emoji: '💗', text: 'คิดถึงนะ', from: 'ยาย' };

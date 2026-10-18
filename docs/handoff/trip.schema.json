@@ -109,6 +109,21 @@
           "sleep": {
             "$ref": "#/$defs/i18n"
           },
+          "moving": { "$ref": "#/$defs/i18n", "description": "how we get around that day (manual's Moving line)" },
+          "pick": { "$ref": "#/$defs/i18n", "description": "Local pick" },
+          "planB": { "$ref": "#/$defs/i18n" },
+          "money": { "$ref": "#/$defs/i18n", "description": "Money today — prices only, never bookings" },
+          "plan": {
+            "type": "array",
+            "description": "the day's timeline; stored in trip_days.plan with the four lines above and tips",
+            "items": { "type": "object", "required": ["th", "en"], "properties": { "t": { "type": "string", "pattern": "^[0-2][0-9]:[0-5][0-9]$" }, "th": { "type": "string" }, "en": { "type": "string" } } }
+          },
+          "tips": { "type": "array", "items": { "$ref": "#/$defs/i18n" } },
+          "stay": { "type": "object", "description": "tonight's stay for the driver: name, addr (public address), q (Maps query)" },
+          "route": { "type": "string", "format": "uri", "description": "the day's route in Google Maps" },
+          "eat": { "type": "array", "description": "more places to eat nearby: [{name, note i18n, pr, q}]" },
+          "learn": { "type": "array", "description": "learn-on-the-way cards: [{name, country, facts[], kid}] (i18n); kid lines also feed the passport mission" },
+          "quiz": { "type": "array", "description": "[{q, a}] (i18n) — passport mission + kid mode" },
           "planned_places": {
             "type": "array",
             "items": {
@@ -164,6 +179,10 @@
     },
     "notes": {
       "type": "string"
+    },
+    "info": {
+      "type": "object",
+      "description": "pocket guide (trips.info): emergency [{label, tel, main}], lost, stays [{base, prop, ci, co, n, why, addr, q}], guide [{title, sub, text}], prices {head, cols, rows}, pack [{group, items}], general [{theme, emo, items[{t, x}]}], wild [{name, emo, text}] — never bookings"
     }
   },
   "$defs": {

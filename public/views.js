@@ -176,6 +176,7 @@ ${heartsHtml(t)}
     return href ? `<a class="${on ? 'on' : ''}" href="${href}"${href[0] === '#' && href[1] === 'd' ? ` data-a="jump" data-v="${i}"` : ''}>${inner}</a>` : `<span class="${on ? 'on' : ''}">${inner}</span>`;
   }).join('')}</nav>
 ${itinerary(t)}
+${infoHtml(t)}
 ${favs ? `<div class="part">${L('ช่วงเวลาที่ชอบที่สุด', 'Favourite moments')} ⭐</div>${favs}` : ''}
 ${firsts.length ? `<div class="part">${L('ครั้งแรกของหนู', 'Firsts')}</div><div class="firsts">${firsts.map((e) => { const f = firstLabel(t, e.first_key); return `<div class="first got"><span class="e">${esc(f.e)}</span><span class="t">${esc(e.first_key === 'custom' ? e.text : f.t)}<br><small class="muted">${L('วันที่', 'Day')} ${e.day + 1}</small></span><span class="kids">${kidBadge(e.child)}</span></div>`; }).join('')}</div>` : ''}
 ${drawingsHtml(t)}
@@ -195,8 +196,44 @@ function itinerary(t) {
 <div class="dl"><b>${String(i + 1).padStart(2, '0')}</b> ${esc(fmtDay(d.date))}${i === now ? ` <span class="tag">${L('วันนี้', 'Today')}</span>` : ''}${has ? ' ✓' : ''}</div>
 <h4>${esc(T(d.title))}</h4>
 ${stops.length ? `<p class="stops">${stops.map((p) => esc(T(p))).join(' · ')}</p>` : ''}
-<p class="label">${d.sleep ? `🛏️ ${esc(T(d.sleep))}` : ''}${food.length ? ` · 🍽️ ${food.map((p) => esc(T(p))).join(' · ')}` : ''}</p></div>${go}</li>`;
+<p class="label">${d.sleep ? `🛏️ ${esc(T(d.sleep))}` : ''}${food.length ? ` · 🍽️ ${food.map((p) => esc(T(p))).join(' · ')}` : ''}</p>${planHtml(t, i, i === now)}</div>${go}</li>`;
   }).join('')}</ol>`;
+}
+// the day's plan from the manual (seed → trip_days.plan): timeline, how we move, local pick, plan B, money, tips
+const mapsUrl = (q) => `https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(q)}`;
+const extA = (href, label, cls) => `<a class="${cls || 'mini'}" href="${esc(href)}" target="_blank" rel="noopener">${label}</a>`;
+const TIPK = { warn: '⚠️', tip: '💡', info: 'ℹ️' };
+function planHtml(t, i, open) {
+  const pl = t.days[i].plan || {}, rows = pl.plan || [];
+  if (!rows.length && !pl.moving && !pl.pick && !pl.planB) return '';
+  return `<details class="dayplan"${open ? ' open' : ''}><summary>🗓️ ${L('แผนวันนี้', 'Plan for the day')}${rows.length ? ` <span class="label">· ${rows.length} ${L('ช่วง', 'steps')}</span>` : ''}</summary>
+${pl.moving ? `<p class="moving">🚶 <b>${L('เดินทาง', 'Moving')}</b> ${esc(T(pl.moving))}${pl.route ? ` · ${extA(pl.route, L('เส้นทางใน Google Maps', 'Route in Google Maps') + ' ↗')}` : ''}</p>` : ''}
+${rows.length ? `<ol class="tl plan">${rows.map((r) => `<li><time>${esc(r.t || '')}</time><div>${esc(T(r))}${r.note ? `<small>${esc(T(r.note))}</small>` : ''}</div></li>`).join('')}</ol>` : ''}
+${pl.stay ? `<p class="stay">🛏️ <b>${L('ที่พักคืนนี้', 'Tonight')}</b> ${esc(pl.stay.name)}<br><span class="addr">${esc(pl.stay.addr)}</span> ${extA(mapsUrl(pl.stay.q || pl.stay.addr), L('แผนที่', 'Map') + ' ↗')}</p>` : ''}
+${pl.pick ? `<div class="call pick"><span class="lbl">Local pick</span>${esc(T(pl.pick))}</div>` : ''}
+${pl.planB ? `<div class="call warn"><span class="lbl">Plan B</span>${esc(T(pl.planB))}</div>` : ''}
+${pl.money ? `<p class="money">💰 <b>${L('เงินวันนี้', 'Money today')}</b> ${esc(T(pl.money))}</p>` : ''}
+${(pl.tips || []).length ? `<ul class="tips">${pl.tips.map((x) => `<li>${TIPK[x.kind] || '•'} ${esc(T(x))}</li>`).join('')}</ul>` : ''}
+${(pl.eat || []).length ? `<details class="sub"><summary>🍽️ ${L('ร้านอื่นใกล้ๆ', 'More places to eat nearby')} <span class="label">· ${pl.eat.length}</span></summary><ul class="eats">${pl.eat.map((e) => `<li><b>${esc(e.name)}</b>${e.pr ? ` <span class="label">${esc(e.pr)}</span>` : ''}${T(e.note) ? `<br><small>${esc(T(e.note))}</small>` : ''} ${e.q ? extA(mapsUrl(e.q), '↗') : ''}</li>`).join('')}</ul></details>` : ''}
+${(pl.learn || []).length ? `<details class="sub"><summary>📚 ${L('เรียนรู้ระหว่างทาง', 'Learn on the way')} <span class="label">· ${pl.learn.length}</span></summary>${pl.learn.map((x) => `<div class="learn"><b>${esc(T(x.name))}</b> <span class="label">${esc(T(x.country))}</span><ul>${(x.facts || []).map((f) => `<li>${esc(T(f))}</li>`).join('')}</ul>${x.kid ? `<p class="kidline">🧒 ${esc(T(x.kid))}</p>` : ''}</div>`).join('')}</details>` : ''}
+${(pl.quiz || []).length ? `<details class="sub"><summary>❓ ${L('ถามหนูในรถ', 'Quiz in the car')} <span class="label">· ${pl.quiz.length}</span></summary>${quizHtml(pl.quiz)}</details>` : ''}
+<p class="label">${L('จากเล่มคู่มือ · ราคาและเวลาเปิดตรวจซ้ำก่อนเดินทาง · เลขจองอยู่ในแอปคู่มือ ไม่ได้เก็บที่นี่', 'From the manual · re-check prices and hours before travelling · booking numbers live in the guide app, not here')}</p></details>`;
+}
+const quizHtml = (qs) => `<div class="quiz">${qs.map((q) => `<details class="qa"><summary>${esc(T(q.q))}</summary><p>${esc(T(q.a))}</p></details>`).join('')}</div>`;
+// the pocket guide from the seed (trips.info): stays with addresses, emergency numbers, prices, key facts, packing, things to learn
+function infoHtml(t) {
+  const n = t.info || {}; if (!Object.keys(n).length) return '';
+  const tel = (x) => `<a href="tel:${esc(String(x).split('·')[0].replace(/[^+\d]/g, ''))}">${esc(x)}</a>`;   // "number · address" → dial the number only
+  const blocks = [];
+  if ((n.stays || []).length) blocks.push(`<details class="pg"><summary>🛏️ ${L('ที่พัก', 'Where we stay')} <span class="label">· ${n.stays.length}</span></summary><div class="stays">${n.stays.map((s, k) => `<div class="stayc"><div class="kicker">${k + 1} · ${esc(T(s.base))} · ${esc(T(s.ci))} → ${esc(T(s.co))} · ${s.n} ${L('คืน', s.n > 1 ? 'nights' : 'night')}</div><b>${esc(T(s.prop))}</b><div class="addr">${esc(s.addr)}</div>${T(s.why) ? `<small>${esc(T(s.why))}</small>` : ''}<div class="row">${extA(mapsUrl(s.q || s.addr), '🗺️ ' + L('เปิดแผนที่', 'Open in Maps'), 'btn ghost small')}</div></div>`).join('')}</div>
+<p class="label">${L('ให้คนขับดูที่อยู่ได้เลย · เลขจองและใบยืนยันอยู่ในแอปคู่มือ', 'Show the driver the address · bookings and confirmations live in the guide app')}</p></details>`);
+  if ((n.emergency || []).length) blocks.push(`<details class="pg"><summary>🆘 ${L('เบอร์ฉุกเฉิน', 'Emergency numbers')}</summary><ul class="emerg">${n.emergency.map((e) => `<li class="${e.main ? 'main' : ''}"><span>${esc(T(e.label))}</span><b>${tel(e.tel)}</b></li>`).join('')}</ul>${n.lost ? `<div class="call warn"><span class="lbl">${L('ถ้าเด็กหลง', 'If a child is lost')}</span>${esc(T(n.lost))}</div>` : ''}</details>`);
+  if (n.prices && (n.prices.rows || []).length) blocks.push(`<details class="pg"><summary>🎟️ ${esc(T(n.prices.head))}</summary><div class="tblwrap"><table class="prices"><thead><tr>${n.prices.cols.map((c) => `<th>${esc(T(c))}</th>`).join('')}</tr></thead><tbody>${n.prices.rows.map((r) => `<tr>${r.map((c, k) => `<td${k === 0 ? ' class="nm"' : ''}>${esc(T(c))}</td>`).join('')}</tr>`).join('')}</tbody></table></div></details>`);
+  if ((n.guide || []).length) blocks.push(`<details class="pg"><summary>🧭 ${L('เรื่องที่กำหนดแผนทั้งทริป', 'What shapes this trip')} <span class="label">· ${n.guide.length}</span></summary><div class="gcards">${n.guide.map((g) => `<div class="gcard"><div class="kicker">${esc(T(g.sub))}</div><b>${esc(T(g.title))}</b><p>${esc(T(g.text))}</p></div>`).join('')}</div></details>`);
+  if ((n.pack || []).length) blocks.push(`<details class="pg"><summary>🧳 ${L('จัดกระเป๋า', 'Packing')}</summary>${n.pack.map((g) => `<h5>${esc(T(g.group))}</h5><ul class="tips">${g.items.map((x) => `<li>${esc(T(x))}</li>`).join('')}</ul>`).join('')}</details>`);
+  if ((n.general || []).length) blocks.push(`<details class="pg"><summary>🗣️ ${L('เรียนรู้ระหว่างนั่งรถ', 'Learn in the car')} <span class="label">· ${n.general.reduce((s, g) => s + g.items.length, 0)}</span></summary>${n.general.map((g) => `<h5>${esc(g.emo || '')} ${esc(T(g.theme))}</h5><dl class="gl">${g.items.map((x) => `<div><dt>${esc(T(x.t))}</dt><dd>${esc(T(x.x))}</dd></div>`).join('')}</dl>`).join('')}</details>`);
+  if ((n.wild || []).length) blocks.push(`<details class="pg"><summary>🦘 ${L('สัตว์ที่จะเจอ', 'Animals we may meet')} <span class="label">· ${n.wild.length}</span></summary><dl class="gl">${n.wild.map((w) => `<div><dt>${esc(w.emo || '')} ${esc(T(w.name))}</dt><dd>${esc(T(w.text))}</dd></div>`).join('')}</dl></details>`);
+  return blocks.length ? `<section class="pocket noprint" id="pocket"><div class="part">${L('คู่มือพกพา', 'Pocket guide')} <span class="label">· ${L('ใช้ได้ออฟไลน์', 'works offline')}</span></div>${blocks.join('')}</section>` : '';
 }
 function favouritesHtml(t) {
   const ph = mediaOf(t.id).filter((m) => m.highlight), qs = entriesOf(t.id).filter((e) => e.kind === 'quote' && e.highlight);
@@ -379,9 +416,11 @@ function viewPassport(slug, tid) {
   const missions = (pp.days || []).map((pd, i) => {
     const d = t.days[i]; if (!d) return '';
     const spots = pd.spot || [], n = spots.filter((s) => ticked(t, `spot.d${i}.${s.k}`, kid)).length;
+    const pl = d.plan || {}, facts = (pd.facts || []).concat((pl.learn || []).map((x) => x.kid).filter(Boolean));   // the guide's facts + one line per stop from the manual
     return `<article class="mission${dayStamped(t, i) ? ' stamped' : ''}" id="m${i}"${pd.acc ? ` style="--accent:${esc(pd.acc)};--tint:${esc(pd.tint || '')}"` : ''}>
 <header>${artImg(t, i)}<div><div class="kicker">${L('วันที่', 'Day')} ${i + 1} · ${esc(fmtDay(d.date))}</div><h4>${esc(T(pd.title) || T(d.title))}</h4></div>${pd.stamp ? `<span class="mstamp${dayStamped(t, i) ? ' on' : ''}">${esc(pd.stamp)}</span>` : ''}</header>
-${(pd.facts || []).length ? `<div class="says">${guide(0)}<div><b>${esc(T((g[0] || {}).name))} ${L('เล่าว่า…', 'says…')}</b><ul>${pd.facts.map((f) => `<li>${esc(T(f))}</li>`).join('')}</ul><button class="mini hearbtn" data-a="sayfacts" data-v="${esc(pd.facts.map((f) => T(f)).join(' '))}">🔊 ${L('อ่านให้ฟัง', 'Read aloud')}</button></div></div>` : ''}
+${facts.length ? `<div class="says">${guide(0)}<div><b>${esc(T((g[0] || {}).name))} ${L('เล่าว่า…', 'says…')}</b><ul>${facts.map((f) => `<li>${esc(T(f))}</li>`).join('')}</ul><button class="mini hearbtn" data-a="sayfacts" data-v="${esc(facts.map((f) => T(f)).join(' '))}">🔊 ${L('อ่านให้ฟัง', 'Read aloud')}</button></div></div>` : ''}
+${(pl.quiz || []).length ? `<div class="mquiz"><b>❓ ${L(`${T((g[1] || {}).name)} ถาม…`, `${T((g[1] || {}).name)} asks…`)}</b>${quizHtml(pl.quiz)}</div>` : ''}
 ${fieldVal(t, `colour.d${i}`, kid) ? `<div class="colsvg sm" data-src="${esc(colourUrl(t, i))}" data-fill="${esc(colourFill(t, i, kid))}" title="${L('ภาพที่หนูระบาย', 'My colouring')}"></div>` : ''}
 ${drawingsOf(t, kid, i).length ? `<div class="mdraw">${drawingsOf(t, kid, i).map((m) => `<button data-a="lb" data-v="${esc(m.id)}" data-t="${esc(t.id)}" aria-label="${L('ภาพที่หนูวาด', 'My drawing')}"><img src="${esc(imgT(m))}" alt="" loading="lazy"></button>`).join('')}</div>` : ''}
 <div class="felt"><span class="label">${L(`วันนี้${name}รู้สึก…`, 'Today I felt…')}</span>${feel.map(([e, lbl]) => `<button data-a="mood" data-t="${esc(t.id)}" data-d="${i}" data-k="${esc(kid)}" data-v="${e}" aria-pressed="${mood(i) === e}"${ed ? '' : ' disabled'}><span>${e}</span><small>${lbl}</small></button>`).join('')}</div>
@@ -486,6 +525,7 @@ function viewLog(t, i) {
 <div class="day" style="border:0;margin-top:0;padding-top:6px"><div class="hd"><div class="no">${String(i + 1).padStart(2, '0')}</div>
 <div class="dl">${L('วันที่', 'Day')} ${i + 1} · ${esc(fmtDay(d.date))}</div><div></div>
 <h3>${esc(T(d.title))}</h3>${artImg(t, i, 'hdart' + (dayStamped(t, i) ? '' : ' off'))}</div></div>
+${planHtml(t, i, i === now) ? `<section class="blk planblk">${planHtml(t, i, i === now)}</section>` : ''}
 
 <section class="blk"><h3>📷 ${L('รูป', 'Photos')} <span class="label">${ph.length}</span></h3>
 <div class="row"><label class="btn"><input id="fpick" type="file" accept="image/*" multiple hidden data-t="${esc(t.id)}" data-d="${i}">＋ ${L('เพิ่มรูป', 'Add photos')}</label><span class="progress" id="prog2"></span></div>
