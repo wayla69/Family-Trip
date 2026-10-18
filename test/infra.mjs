@@ -73,6 +73,38 @@ await migrate(pool, (m) => logs.push('again ' + m));
 ok(!logs.some((l) => l.startsWith('again')), 'second boot applies nothing (idempotent)');
 const tables = (await pool.query("SELECT table_name FROM information_schema.tables WHERE table_schema='public'")).rows.map((r) => r.table_name);
 ok(['families', 'children', 'trips', 'trip_days', 'firsts_catalog', 'entries', 'media', 'places'].every((t) => tables.includes(t)), 'bookshelf tables exist');
+
+// plan → book (docs/PLAN-TO-BOOK.md): the sample plan becomes a format-2 seed the loader accepts; private data is refused; every shipped seed passes --check
+{
+  const { execFileSync, spawnSync } = await import('node:child_process');
+  const { syncSeeds } = require('../server/bookshelf.js');
+  const dir = fs.mkdtempSync(path.join(os.tmpdir(), 'mb-plan-')), out = path.join(dir, 'sakura-hop-2028.json');
+  try {
+    const log = execFileSync(process.execPath, ['scripts/plan-to-seed.mjs', 'docs/handoff/plan.sample.json', `--out=${out}`], { encoding: 'utf8' });
+    const seed = JSON.parse(fs.readFileSync(out, 'utf8'));
+    const d0 = seed.days[0], keys = seed.days.flatMap((d) => d.planned.map((s) => s.key));
+    ok(seed.format === 2 && seed.days.length === 3 && seed.days[2].date === '2028-03-12' && d0.index === 0 && d0.planned[1].key === 'ueno-park' && d0.planned[1].q === 'Ueno Park, Tokyo' && d0.planned[0].key === 'hnd' && new Set(keys).size === keys.length, 'plan → seed: dated days, stop keys derived and unique, default Maps query');
+    ok(seed.theme.accent === '#B8456B' && seed.theme.art === '/art/sakura-hop-2028/day-{n}.svg' && seed.children.length === 2 && seed.children[0].age_at_trip.en === '4½' && seed.days[2].sleep.en === 'Home' && seed.days[1].stay && seed.info.stays.length === 1 && seed.info.stays[0].n === 2 && seed.info.restaurants.groups.length === 1, 'plan → seed: theme tokens, ages, Home day, stays built from the stay cards, restaurants');
+    const pp = seed.passport;
+    ok(pp.days.length === 3 && pp.days[0].spot.length === 4 && pp.days[0].stamp === 'BKK → HND' && pp.countdown.doors.length === 14 && pp.countdown.doors[0].e === '🌸' && pp.countdown.doors[13].e === '🚀' && pp.lists.map((l) => l.key).join() === 'words,food,master' && pp.lists[2].groups[0].items.length === 7 && pp.map.stops.length === 3 && pp.pins.items.length === 3 && /privacy: clean/.test(log) && /TODO left/.test(log), 'plan → seed: missions, 14 doors (plan\'s first, generic rest), words/food/master lists, map, pins, report');
+    await syncSeeds(pool, dir);
+    const rows = (await pool.query("SELECT (SELECT count(*)::int FROM trip_days WHERE trip_id='sakura-hop-2028') AS days, (SELECT info->'restaurants'->'groups'->0->'items'->0->>'name' FROM trips WHERE id='sakura-hop-2028') AS r, (SELECT plan->'legs'->0->>'to' FROM trip_days WHERE trip_id='sakura-hop-2028' AND day_index=0) AS leg")).rows[0];
+    ok(rows.days === 3 && /Ramen/.test(rows.r) && rows.leg === 'Ueno', 'the seed loader accepts the converted book (days, restaurants, legs in trip_days.plan)');
+    const bad = JSON.parse(fs.readFileSync(path.resolve('docs/handoff/plan.sample.json'), 'utf8'));
+    bad.days[0].tips.push({ th: 'เลขจอง F5ARVC', en: 'Booking ref F5ARVC' }); bad.info.lost = { th: 'โทรแม่ 081-234-5678', en: 'Call mum on 081-234-5678' };
+    fs.writeFileSync(path.join(dir, 'bad.json'), JSON.stringify(bad));
+    const r = spawnSync(process.execPath, ['scripts/plan-to-seed.mjs', path.join(dir, 'bad.json'), `--out=${path.join(dir, 'bad-seed.json')}`], { encoding: 'utf8' });
+    ok(r.status === 2 && /PRIVACY: \d+ hit/.test(r.stdout) && /booking reference/.test(r.stdout) && /Thai mobile/.test(r.stdout) && !fs.existsSync(path.join(dir, 'bad-seed.json')), 'a plan with a booking reference or a personal mobile is refused, nothing written');
+    const sample = JSON.parse(fs.readFileSync(path.resolve('docs/handoff/plan.sample.json'), 'utf8'));
+    fs.writeFileSync(path.join(dir, 'short.json'), JSON.stringify({ ...sample, days: sample.days.slice(0, 2) }));
+    const r2 = spawnSync(process.execPath, ['scripts/plan-to-seed.mjs', path.join(dir, 'short.json'), `--out=${path.join(dir, 'short-seed.json')}`], { encoding: 'utf8' });
+    ok(r2.status === 1 && /days: 2 given, 3 dates/.test(r2.stdout), 'a plan with fewer days than dates is not valid');
+    for (const f of fs.readdirSync(path.resolve('server/seeds'))) {
+      const c = spawnSync(process.execPath, ['scripts/plan-to-seed.mjs', '--check', path.resolve('server/seeds', f)], { encoding: 'utf8' });
+      ok(c.status === 0 && /privacy: clean/.test(c.stdout) && !/ERROR/.test(c.stdout), `${f} passes plan-to-seed --check (privacy, unique stop keys)` + (c.status ? ` — ${c.stdout.split('\n').filter((l) => /ERROR|PRIVACY|    /.test(l)).join(' | ')}` : ''));
+    }
+  } finally { fs.rmSync(dir, { recursive: true, force: true }); }
+}
 await pool.query("UPDATE schema_migrations SET sum='tampered' WHERE id='0001'");
 ok(await throws(() => migrate(pool, () => {}), /was edited after it ran/), 'edited applied migration refused');
 await pool.query('UPDATE schema_migrations SET sum=$1 WHERE id=$2', [readJournal()[0].sum, '0001']);

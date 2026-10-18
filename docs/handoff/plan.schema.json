@@ -1,0 +1,138 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://github.com/wayla69/Family-Trip/blob/main/docs/handoff/plan.schema.json",
+  "title": "Memory Bookshelf trip plan (plan.json)",
+  "description": "What a planning session hands to Claude Code to make a new book. scripts/plan-to-seed.mjs turns it into a format-2 seed, filling every default (dates, children and ages, theme tokens, stop keys and Maps queries, tonight's stay, passport scaffold, countdown doors, map). Every text is bilingual {th, en}. Nothing private: no booking references, confirmation numbers, e-tickets, passport numbers, real costs, e-mails or personal phone numbers — the converter refuses them. Example: plan.sample.json. Guide: docs/PLAN-TO-BOOK.md.",
+  "type": "object",
+  "required": ["slug", "title", "from", "to", "tz", "place", "days"],
+  "additionalProperties": true,
+  "properties": {
+    "slug": { "type": "string", "pattern": "^[a-z0-9-]{2,60}$", "description": "book id, e.g. sakura-hop-2028 (also the seed file name and the art folder)" },
+    "title": { "$ref": "#/$defs/i18n", "description": "e.g. The Sakura Hop · โตเกียว / The Sakura Hop · Tokyo" },
+    "sub": { "$ref": "#/$defs/i18n", "description": "one line under the title; default '<n> days · <place>'" },
+    "from": { "type": "string", "format": "date", "description": "first day, YYYY-MM-DD" },
+    "to": { "type": "string", "format": "date", "description": "last day; at most 60 days after from" },
+    "tz": { "type": "string", "description": "IANA zone of the destination, e.g. Asia/Tokyo" },
+    "place": { "type": "object", "required": ["th", "en"], "properties": { "th": { "type": "string" }, "en": { "type": "string" }, "flag": { "type": "string" } }, "description": "the destination as the shelf shows it" },
+    "places": { "type": "array", "items": { "type": "object", "properties": { "flag": { "type": "string" }, "th": { "type": "string" }, "en": { "type": "string" } } }, "description": "several destinations (HK + Macau); default [place]" },
+    "destinations": { "type": "array", "items": { "type": "string" } },
+    "kicker": { "type": "string", "description": "cover kicker, e.g. THE SAKURA HOP · EXPEDITION TOKYO; default the English title in capitals" },
+    "accent": { "type": "string", "pattern": "^#[0-9a-fA-F]{6}$", "description": "the book's colour (docs/DESIGN.md); default #1F3A5F" },
+    "accent2": { "type": "string", "pattern": "^#[0-9a-fA-F]{6}$" },
+    "display": { "enum": ["sans", "serif"], "description": "serif = Cormorant Garamond display face (HK); default sans" },
+    "badge": { "type": "string", "description": "emoji on the shelf badge" },
+    "emoji": { "type": "string", "description": "cover emoji; default the flag" },
+    "coverGradient": { "type": "array", "items": { "type": "string" }, "minItems": 2, "maxItems": 2 },
+    "stamp": { "type": "array", "items": { "type": "string" }, "description": "lines on the end-of-trip stamp; default [PLACE, '5–10 DEC 2026']" },
+    "kids": { "type": "array", "items": { "oneOf": [{ "type": "string", "enum": ["mimi", "mika"] }, { "type": "object", "required": ["slug", "name_th", "name_en"], "properties": { "slug": { "type": "string" }, "name_th": { "type": "string" }, "name_en": { "type": "string" }, "emoji": { "type": "string" }, "birth": { "type": "string", "pattern": "^\\d{4}-\\d{2}$", "description": "YYYY-MM, only to compute the age at the trip" } } }] }, "description": "default [mimi, mika]; ages at the trip are computed" },
+    "legacy_trip_id": { "type": "string", "description": "id in the trip-guide app, for #/cap deep links" },
+    "firsts": { "type": "array", "items": { "type": "object", "required": ["key", "label"], "properties": { "key": { "type": "string" }, "emoji": { "type": "string" }, "label": { "$ref": "#/$defs/i18n" } } }, "description": "the trip's firsts catalogue; default 10 generic firsts" },
+    "moods": { "type": "array", "items": { "type": "string" } },
+    "days": {
+      "type": "array",
+      "minItems": 1,
+      "description": "exactly one per date from `from` to `to`, in order",
+      "items": {
+        "type": "object",
+        "required": ["title"],
+        "properties": {
+          "title": { "$ref": "#/$defs/i18n" },
+          "sleep": { "$ref": "#/$defs/i18n", "description": "where we sleep tonight (area or property); leave out for Home" },
+          "wx": { "$ref": "#/$defs/i18n", "description": "weather line" },
+          "emoji": { "type": "string" },
+          "planned": {
+            "type": "array",
+            "description": "the day's stops in order — each becomes a check-in and a Maps button",
+            "items": {
+              "type": "object",
+              "required": ["th", "en"],
+              "properties": {
+                "key": { "type": "string", "pattern": "^[a-z0-9][a-z0-9._-]{0,59}$", "description": "stable check-in key, unique in the book; default derived from `en`. Never rename after the trip starts" },
+                "kind": { "type": "string", "description": "place · food · airport · stay · transport …; default place" },
+                "th": { "type": "string" },
+                "en": { "type": "string" },
+                "zh": { "type": "string", "description": "local-script name for drivers" },
+                "q": { "type": "string", "description": "FULL Google Maps query: name, street, town; default '<en>, <place.en>'" },
+                "meal": { "type": "string", "description": "Breakfast · Lunch · Dinner for food stops" }
+              }
+            }
+          },
+          "moving": { "$ref": "#/$defs/i18n", "description": "how we get around today" },
+          "pick": { "$ref": "#/$defs/i18n", "description": "local pick" },
+          "planB": { "$ref": "#/$defs/i18n" },
+          "money": { "$ref": "#/$defs/i18n", "description": "money today — prices only, never what we paid" },
+          "plan": { "type": "array", "description": "the timeline", "items": { "type": "object", "required": ["th", "en"], "properties": { "t": { "type": "string", "pattern": "^[0-2][0-9]:[0-5][0-9]$" }, "th": { "type": "string" }, "en": { "type": "string" }, "note": { "$ref": "#/$defs/i18n" } } } },
+          "tips": { "type": "array", "items": { "$ref": "#/$defs/i18n" } },
+          "legs": { "type": "array", "description": "every move of the day with a directions link (none for flights)", "items": { "type": "object", "required": ["from", "to"], "properties": { "from": { "type": "string" }, "to": { "type": "string" }, "by": { "$ref": "#/$defs/i18n" }, "min": { "type": "integer" }, "url": { "type": "string", "format": "uri", "description": "https://www.google.com/maps/dir/?api=1&origin=…&destination=…&travelmode=driving|transit|walking" } } } },
+          "picks": { "type": "array", "description": "a recommended place per meal", "items": { "type": "object", "required": ["name"], "properties": { "meal": { "$ref": "#/$defs/i18n" }, "name": { "type": "string" }, "what": { "$ref": "#/$defs/i18n" }, "pr": { "type": "string", "description": "price band in local currency" }, "q": { "type": "string" }, "alt": { "type": "object", "properties": { "name": { "type": "string" }, "pr": { "type": "string" }, "q": { "type": "string" } } } } } },
+          "food": { "type": "array", "description": "places to eat by stop", "items": { "type": "object", "properties": { "stop": { "$ref": "#/$defs/i18n" }, "items": { "type": "array", "items": { "type": "object", "properties": { "name": { "type": "string" }, "tag": { "$ref": "#/$defs/i18n" }, "what": { "$ref": "#/$defs/i18n" }, "note": { "$ref": "#/$defs/i18n" }, "pr": { "type": "string" }, "q": { "type": "string" }, "pick": { "type": "boolean" } } } } } } },
+          "eat": { "type": "array", "description": "more places nearby", "items": { "type": "object", "properties": { "name": { "type": "string" }, "note": { "$ref": "#/$defs/i18n" }, "pr": { "type": "string" }, "q": { "type": "string" } } } },
+          "stay": { "type": "object", "description": "tonight's stay for the driver; default from info.stays", "properties": { "name": { "type": "string" }, "addr": { "type": "string", "description": "public address, local script after ' · '" }, "q": { "type": "string" } } },
+          "route": { "type": "string", "format": "uri", "description": "the whole day in Google Maps" },
+          "learn": { "type": "array", "description": "learn-on-the-way cards", "items": { "type": "object", "properties": { "name": { "$ref": "#/$defs/i18n" }, "country": { "type": "string" }, "facts": { "type": "array", "items": { "$ref": "#/$defs/i18n" } }, "kid": { "$ref": "#/$defs/i18n" } } } },
+          "quiz": { "type": "array", "items": { "type": "object", "properties": { "q": { "$ref": "#/$defs/i18n" }, "a": { "$ref": "#/$defs/i18n" } } } },
+          "mission": {
+            "type": "object",
+            "description": "the kids' passport page for this day",
+            "properties": {
+              "title": { "$ref": "#/$defs/i18n" },
+              "stamp": { "type": "string", "description": "text in the day's stamp, e.g. BKK → HND" },
+              "facts": { "type": "array", "items": { "$ref": "#/$defs/i18n" }, "description": "2–3 facts a 3-year-old enjoys" },
+              "spot": { "type": "array", "minItems": 4, "maxItems": 4, "items": { "type": "object", "required": ["k", "e", "th", "en"], "properties": { "k": { "type": "string" }, "e": { "type": "string" }, "th": { "type": "string" }, "en": { "type": "string" } } }, "description": "4 things to spot today" },
+              "acc": { "type": "string" },
+              "tint": { "type": "string" }
+            }
+          }
+        }
+      }
+    },
+    "info": {
+      "type": "object",
+      "description": "the pocket guide (trips.info) — the manual's chapters. Each key is optional; the app hides what is missing",
+      "properties": {
+        "emergency": { "type": "array", "items": { "type": "object", "required": ["label", "tel"], "properties": { "label": { "$ref": "#/$defs/i18n" }, "tel": { "type": "string" }, "main": { "type": "boolean" } } } },
+        "lost": { "$ref": "#/$defs/i18n", "description": "if a child is lost" },
+        "stays": { "type": "array", "items": { "type": "object", "properties": { "base": { "$ref": "#/$defs/i18n" }, "prop": { "$ref": "#/$defs/i18n" }, "ci": { "$ref": "#/$defs/i18n" }, "co": { "$ref": "#/$defs/i18n" }, "n": { "type": "integer" }, "why": { "$ref": "#/$defs/i18n" }, "addr": { "type": "string" }, "q": { "type": "string" } } }, "description": "default built from the days' stay cards" },
+        "guide": { "type": "array", "items": { "type": "object", "properties": { "title": { "$ref": "#/$defs/i18n" }, "sub": { "$ref": "#/$defs/i18n" }, "text": { "$ref": "#/$defs/i18n" } } }, "description": "what shapes the trip" },
+        "prices": { "type": "object", "properties": { "head": { "$ref": "#/$defs/i18n" }, "cols": { "type": "array", "items": { "$ref": "#/$defs/i18n" } }, "rows": { "type": "array", "items": { "type": "array", "items": { "$ref": "#/$defs/i18n" } } } }, "description": "entry prices in local currency — never what we paid" },
+        "pack": { "type": "array", "items": { "type": "object", "properties": { "group": { "$ref": "#/$defs/i18n" }, "items": { "type": "array", "items": { "$ref": "#/$defs/i18n" } } } } },
+        "general": { "type": "array", "items": { "type": "object", "properties": { "theme": { "$ref": "#/$defs/i18n" }, "emo": { "type": "string" }, "items": { "type": "array", "items": { "type": "object", "properties": { "t": { "$ref": "#/$defs/i18n" }, "x": { "$ref": "#/$defs/i18n" } } } } } } },
+        "wild": { "type": "array", "items": { "type": "object", "properties": { "name": { "$ref": "#/$defs/i18n" }, "emo": { "type": "string" }, "text": { "$ref": "#/$defs/i18n" } } }, "description": "animals to spot (also the kids' 🦘 Animals page)" },
+        "drive": { "description": "drive-legs table" }, "car": { "description": "the rental van, no prices" }, "kit": { "description": "kitchen / laundry per stay" },
+        "ifthen": { "description": "if … then …, mishaps, who carries what, crowds, book-ahead" }, "visa": {}, "bio": { "description": "biosecurity / quarantine rules" }, "eatRules": {}
+      }
+    },
+    "restaurants": {
+      "type": "object",
+      "description": "the manual's Where-to-eat chapter → the 🍽️ page; without it the app gathers places from the days",
+      "properties": {
+        "lede": { "$ref": "#/$defs/i18n" },
+        "kinds": { "type": "array", "minItems": 3, "maxItems": 3, "items": { "$ref": "#/$defs/i18n" }, "description": "restaurants · cafés and sweets · self-catering" },
+        "groups": { "type": "array", "items": { "type": "object", "properties": { "area": { "$ref": "#/$defs/i18n" }, "kind": { "type": "integer", "minimum": 0, "maximum": 2 }, "note": { "$ref": "#/$defs/i18n" }, "items": { "type": "array", "items": { "type": "object", "required": ["name"], "properties": { "name": { "type": "string" }, "zh": { "type": "string" }, "kind": { "type": "integer" }, "tag": { "$ref": "#/$defs/i18n" }, "what": { "$ref": "#/$defs/i18n" }, "why": { "$ref": "#/$defs/i18n" }, "where": { "$ref": "#/$defs/i18n" }, "pr": { "type": "string" }, "hours": { "type": "string" }, "note": { "$ref": "#/$defs/i18n" }, "q": { "type": "string" }, "pick": { "type": "array", "items": { "type": "string" }, "description": "'<day> · <meal>' labels" }, "tour": { "type": "boolean" } } } } } } }
+      }
+    },
+    "passport": {
+      "type": "object",
+      "description": "the kids' adventure passport beyond the daily missions — every key optional",
+      "properties": {
+        "code": { "type": "string", "description": "e.g. SAKURA-2028-{KID}" },
+        "guides": { "type": "array", "minItems": 2, "maxItems": 2, "items": { "type": "object", "properties": { "key": { "type": "string" }, "art": { "type": "string" }, "name": { "$ref": "#/$defs/i18n" }, "hello": { "$ref": "#/$defs/i18n" } } }, "description": "two cartoon guides" },
+        "greeting": { "$ref": "#/$defs/i18n" },
+        "words": { "type": "array", "items": { "type": "object", "required": ["k", "th", "en"], "properties": { "k": { "type": "string" }, "e": { "type": "string" }, "th": { "type": "string" }, "en": { "type": "string" }, "note": { "$ref": "#/$defs/i18n" }, "say": { "type": "string" }, "speak": { "type": "object", "properties": { "text": { "type": "string" }, "lang": { "type": "string" } } } } }, "description": "say-it-like-a-local words (read aloud with speak.lang)" },
+        "wordsSub": { "$ref": "#/$defs/i18n" },
+        "food": { "type": "array", "items": { "type": "object", "required": ["k", "th", "en"], "properties": { "k": { "type": "string" }, "e": { "type": "string" }, "th": { "type": "string" }, "en": { "type": "string" }, "note": { "$ref": "#/$defs/i18n" } } }, "description": "tasting card (YUM / YUCK)" },
+        "lists": { "type": "array", "description": "full control: extra passport lists in seed form" },
+        "certificate": { "type": "object", "properties": { "title": { "$ref": "#/$defs/i18n" }, "text": { "$ref": "#/$defs/i18n" }, "bye": { "$ref": "#/$defs/i18n" } } },
+        "style": { "type": "object" },
+        "pins": { "type": "object" },
+        "declaration": {},
+        "colour": { "type": "string" },
+        "countdown": { "type": "object", "properties": { "doors": { "type": "array", "maxItems": 14, "items": { "type": "object", "properties": { "e": { "type": "string" }, "th": { "type": "string" }, "en": { "type": "string" }, "art": { "type": "integer" } } }, "description": "door 1 first; missing doors are filled with generic ones" }, "pack": { "type": "object" } } },
+        "map": { "type": "object", "properties": { "title": { "$ref": "#/$defs/i18n" }, "sea": { "$ref": "#/$defs/i18n" }, "stops": { "type": "array", "items": { "type": "object", "required": ["k", "th", "en", "x", "y"], "properties": { "k": { "type": "string" }, "e": { "type": "string" }, "th": { "type": "string" }, "en": { "type": "string" }, "x": { "type": "number" }, "y": { "type": "number" } } } }, "days": { "type": "array", "items": { "type": "array", "items": { "type": "string" } }, "description": "stop keys visited each day" } }, "description": "living map; default: one stop per place we sleep, spread evenly" }
+      }
+    }
+  },
+  "$defs": {
+    "i18n": { "type": "object", "required": ["th", "en"], "properties": { "th": { "type": "string" }, "en": { "type": "string" } } }
+  }
+}

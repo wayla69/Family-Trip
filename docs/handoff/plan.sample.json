@@ -1,0 +1,130 @@
+{
+  "$comment": "A complete small plan (docs/handoff/plan.schema.json) — fictional 3-day trip, no real bookings. npm run plan-to-seed -- docs/handoff/plan.sample.json --out=/tmp/x.json",
+  "slug": "sakura-hop-2028",
+  "title": { "th": "The Sakura Hop · โตเกียว", "en": "The Sakura Hop · Tokyo" },
+  "sub": { "th": "3 วัน ดอกไม้บาน รถไฟ และราเมง", "en": "Three days of blossom, trains and ramen" },
+  "from": "2028-03-10",
+  "to": "2028-03-12",
+  "tz": "Asia/Tokyo",
+  "place": { "th": "โตเกียว", "en": "Tokyo", "flag": "🇯🇵" },
+  "kicker": "THE SAKURA HOP · EXPEDITION TOKYO",
+  "accent": "#B8456B",
+  "accent2": "#2F4858",
+  "emoji": "🌸",
+  "kids": ["mimi", "mika"],
+  "days": [
+    {
+      "title": { "th": "บินไปหาดอกซากุระ", "en": "Flying to the blossom" },
+      "sleep": { "th": "อุเอโนะ", "en": "Ueno" },
+      "wx": { "th": "8–15°C แดดอ่อน", "en": "8–15°C, soft sun" },
+      "planned": [
+        { "key": "hnd", "kind": "airport", "th": "สนามบินฮาเนดะ", "en": "Haneda airport", "q": "Haneda Airport Terminal 3, Ota City, Tokyo" },
+        { "kind": "place", "th": "สวนอุเอโนะ", "en": "Ueno Park" },
+        { "kind": "food", "meal": "Dinner", "th": "ราเมงร้านเล็กใกล้ที่พัก", "en": "Ramen near the hotel" }
+      ],
+      "moving": { "th": "โมโนเรลจากฮาเนดะ แล้วต่อรถไฟสายยามาโนเตะ", "en": "Monorail from Haneda, then the Yamanote line" },
+      "legs": [
+        { "from": "Haneda T3", "to": "Ueno", "by": { "th": "โมโนเรล + JR 45 นาที", "en": "Monorail + JR, 45 min" }, "min": 45, "url": "https://www.google.com/maps/dir/?api=1&origin=Haneda+Airport+Terminal+3&destination=Ueno+Station&travelmode=transit" }
+      ],
+      "plan": [
+        { "t": "10:30", "th": "ถึงฮาเนดะ รับกระเป๋า ซื้อบัตร Suica", "en": "Land at Haneda, bags, Suica cards" },
+        { "t": "13:00", "th": "เช็กอิน พักสักครู่", "en": "Check in, a short rest" },
+        { "t": "15:30", "th": "เดินเล่นสวนอุเอโนะ สนามเด็กเล่นใกล้สระชิโนบาซุ", "en": "Ueno Park, the playground by Shinobazu pond" },
+        { "t": "18:00", "th": "ราเมงมื้อเย็น เข้านอนเร็ว", "en": "Ramen, early night" }
+      ],
+      "tips": [{ "th": "มีก้าง่วงหลังบิน — เอาเป้อุ้มติดตัว", "en": "Mika will be sleepy after the flight — bring the carrier" }],
+      "stay": { "name": "Ueno Family Inn (example)", "addr": "Ueno 2-chome, Taito City, Tokyo (example address)", "q": "Ueno Station, Taito City, Tokyo" },
+      "picks": [{ "meal": { "th": "มื้อเย็น", "en": "Dinner" }, "name": "Ramen street stall (example)", "what": { "th": "โชยุราเมงเส้นนุ่ม เด็กกินได้", "en": "Soft-noodle shoyu ramen, kid-friendly" }, "pr": "¥900–1,200", "q": "ramen Ueno Station" }],
+      "learn": [{ "name": { "th": "ซากุระ", "en": "Cherry blossom" }, "facts": [{ "th": "บานแค่ประมาณหนึ่งสัปดาห์", "en": "The flowers last only about a week" }], "kid": { "th": "กลีบดอกเหมือนหิมะสีชมพู!", "en": "The petals fall like pink snow!" } }],
+      "quiz": [{ "q": { "th": "ซากุระสีอะไร?", "en": "What colour is the blossom?" }, "a": { "th": "ชมพู", "en": "Pink" } }],
+      "mission": {
+        "title": { "th": "บินไปหาดอกไม้!", "en": "Fly to the flowers!" },
+        "stamp": "BKK → HND",
+        "facts": [{ "th": "โตเกียวเร็วกว่ากรุงเทพฯ 2 ชั่วโมง", "en": "Tokyo clocks are two hours ahead of Bangkok" }],
+        "spot": [
+          { "k": "cloud", "e": "☁️", "th": "ก้อนเมฆ", "en": "A cloud" },
+          { "k": "train", "e": "🚆", "th": "รถไฟสีเขียว", "en": "A green train" },
+          { "k": "blossom", "e": "🌸", "th": "ดอกซากุระ", "en": "A blossom" },
+          { "k": "pond", "e": "🦆", "th": "เป็ดในสระ", "en": "A duck on the pond" }
+        ]
+      }
+    },
+    {
+      "title": { "th": "วันปลา วันรถไฟ", "en": "Fish and trains" },
+      "sleep": { "th": "อุเอโนะ", "en": "Ueno" },
+      "planned": [
+        { "kind": "place", "th": "อควาเรียมซุมิดะ", "en": "Sumida Aquarium", "q": "Sumida Aquarium, Tokyo Skytree Town, Sumida City" },
+        { "kind": "food", "meal": "Lunch", "th": "ฟู้ดคอร์ตโซลามาจิ", "en": "Solamachi food court" }
+      ],
+      "moving": { "th": "รถไฟใต้ดินสายกินซ่า 2 ป้าย", "en": "Ginza line, two stops" },
+      "plan": [
+        { "t": "09:30", "th": "อควาเรียม — เพนกวินให้อาหาร 11:00", "en": "Aquarium — penguin feeding at 11:00" },
+        { "t": "12:30", "th": "ข้าวกลางวันโซลามาจิ", "en": "Lunch at Solamachi" },
+        { "t": "15:00", "th": "กลับไปงีบ", "en": "Back for a nap" }
+      ],
+      "stay": { "name": "Ueno Family Inn (example)", "addr": "Ueno 2-chome, Taito City, Tokyo (example address)", "q": "Ueno Station, Taito City, Tokyo" },
+      "mission": {
+        "title": { "th": "เพนกวินกี่ตัว?", "en": "How many penguins?" },
+        "stamp": "SUMIDA",
+        "facts": [{ "th": "เพนกวินว่ายน้ำได้เร็วกว่าที่เดิน", "en": "Penguins swim faster than they waddle" }],
+        "spot": [
+          { "k": "penguin", "e": "🐧", "th": "เพนกวิน", "en": "A penguin" },
+          { "k": "jelly", "e": "🪼", "th": "แมงกะพรุน", "en": "A jellyfish" },
+          { "k": "tower", "e": "🗼", "th": "หอคอยสูง", "en": "The tall tower" },
+          { "k": "bento", "e": "🍱", "th": "กล่องเบนโตะ", "en": "A bento box" }
+        ]
+      }
+    },
+    {
+      "title": { "th": "เช้าสบาย แล้วบินกลับ", "en": "A slow morning, then home" },
+      "planned": [
+        { "kind": "place", "th": "ตลาดอาเมโยโกะ", "en": "Ameyoko market" },
+        { "key": "hnd-home", "kind": "airport", "th": "สนามบินฮาเนดะ", "en": "Haneda airport", "q": "Haneda Airport Terminal 3, Ota City, Tokyo" }
+      ],
+      "plan": [
+        { "t": "09:00", "th": "ตลาดอาเมโยโกะ ซื้อขนมฝาก", "en": "Ameyoko market, snacks for home" },
+        { "t": "13:00", "th": "ออกไปสนามบิน", "en": "Leave for the airport" }
+      ],
+      "mission": {
+        "title": { "th": "บ๊ายบายโตเกียว", "en": "Bye bye, Tokyo" },
+        "stamp": "HND → BKK",
+        "facts": [{ "th": "เครื่องบินกลับบ้านใช้เวลา 6 ชั่วโมง", "en": "The flight home takes six hours" }],
+        "spot": [
+          { "k": "fruit", "e": "🍓", "th": "สตรอว์เบอร์รี", "en": "A strawberry" },
+          { "k": "lantern", "e": "🏮", "th": "โคมแดง", "en": "A red lantern" },
+          { "k": "plane", "e": "✈️", "th": "เครื่องบินของเรา", "en": "Our plane" },
+          { "k": "moon", "e": "🌙", "th": "พระจันทร์", "en": "The moon" }
+        ]
+      }
+    }
+  ],
+  "info": {
+    "emergency": [
+      { "label": { "th": "ตำรวจ", "en": "Police" }, "tel": "110", "main": true },
+      { "label": { "th": "รถพยาบาล · ดับเพลิง", "en": "Ambulance · fire" }, "tel": "119" }
+    ],
+    "lost": { "th": "ถ้าเด็กหลง: ยืนนิ่งๆ หาพนักงานในเครื่องแบบ โทร 110", "en": "If a child is lost: stand still, find staff in uniform, call 110" },
+    "guide": [{ "title": { "th": "นาฬิกาเร็วกว่า 2 ชั่วโมง", "en": "Clocks two hours ahead" }, "sub": { "th": "ญี่ปุ่น UTC+9", "en": "Japan is UTC+9" }, "text": { "th": "เวลางีบเลื่อนตาม 2 ชั่วโมง", "en": "Naps shift by two hours" } }],
+    "prices": { "head": { "th": "ค่าเข้า (ตรวจซ้ำก่อนเดินทาง)", "en": "Entry prices (re-check before travelling)" }, "cols": [{ "th": "รายการ", "en": "Item" }, { "th": "ผู้ใหญ่", "en": "Adult" }, { "th": "เด็ก", "en": "Children" }, { "th": "เกณฑ์ฟรี", "en": "Free cut-off" }, { "th": "หมายเหตุ", "en": "Note" }], "rows": [[{ "th": "อควาเรียมซุมิดะ", "en": "Sumida Aquarium" }, { "th": "¥2,500", "en": "¥2,500" }, { "th": "¥800 (3+)", "en": "¥800 (3+)" }, { "th": "ต่ำกว่า 3 ขวบฟรี", "en": "under 3 free" }, { "th": "ซื้อออนไลน์ข้ามคิว", "en": "buy online, skip the queue" }]] },
+    "pack": [{ "group": { "th": "ของมีมี่และมีก้า", "en": "Mimi and Mika" }, "items": [{ "th": "เสื้อกันหนาวบาง", "en": "A light warm layer" }, { "th": "เป้อุ้ม", "en": "Carrier" }] }],
+    "wild": [{ "name": { "th": "นกกระเรียน", "en": "Crane" }, "emo": "🦢", "text": { "th": "นกตัวสูงคอยาว ในสวนตอนเช้า", "en": "A tall long-necked bird, in the park at dawn" } }]
+  },
+  "restaurants": {
+    "lede": { "th": "ร้านรอบอุเอโนะและซุมิดะ", "en": "Around Ueno and Sumida" },
+    "kinds": [{ "th": "ร้านอาหาร", "en": "Restaurants" }, { "th": "คาเฟ่และของหวาน", "en": "Cafés and sweets" }, { "th": "ทำกินเอง", "en": "Self-catering" }],
+    "groups": [{ "area": { "th": "อุเอโนะ", "en": "Ueno" }, "kind": 0, "items": [{ "name": "Ramen street stall (example)", "tag": { "th": "ราเมง", "en": "Ramen" }, "what": { "th": "โชยุราเมง", "en": "Shoyu ramen" }, "where": { "th": "ใกล้สถานี", "en": "By the station" }, "pr": "¥900–1,200", "q": "ramen Ueno Station", "pick": ["1 · Dinner"] }] }]
+  },
+  "passport": {
+    "words": [
+      { "k": "konnichiwa", "e": "👋", "th": "คนนิจิวะ", "en": "Konnichiwa", "note": { "th": "สวัสดี", "en": "Hello" }, "speak": { "text": "こんにちは", "lang": "ja-JP" } },
+      { "k": "arigato", "e": "🙏", "th": "อาริงาโตะ", "en": "Arigatō", "note": { "th": "ขอบคุณ", "en": "Thank you" }, "speak": { "text": "ありがとう", "lang": "ja-JP" } }
+    ],
+    "food": [
+      { "k": "ramen", "e": "🍜", "th": "ราเมง", "en": "Ramen" },
+      { "k": "onigiri", "e": "🍙", "th": "โอนิกิริ", "en": "Onigiri" },
+      { "k": "mochi", "e": "🍡", "th": "โมจิ", "en": "Mochi" }
+    ],
+    "countdown": { "doors": [{ "e": "🌸", "th": "สวัสดี {name}! อีก 14 วันเราจะไปดูดอกซากุระกัน!", "en": "Hi {name}! In 14 sleeps we go to see the blossom!" }] },
+    "map": { "sea": { "th": "อ่าวโตเกียว", "en": "Tokyo Bay" }, "stops": [{ "k": "hnd", "e": "✈️", "th": "ฮาเนดะ", "en": "Haneda", "x": 70, "y": 70 }, { "k": "ueno", "e": "🛏️", "th": "อุเอโนะ", "en": "Ueno", "x": 45, "y": 30 }, { "k": "sumida", "e": "🐧", "th": "ซุมิดะ", "en": "Sumida", "x": 62, "y": 36 }], "days": [["hnd", "ueno"], ["sumida", "ueno"], ["hnd"]] }
+  }
+}
