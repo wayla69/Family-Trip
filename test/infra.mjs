@@ -30,6 +30,17 @@ copy(); fs.writeFileSync(path.join(tmp, '0002_Bad-Name.sql'), '');
 ok(await throws(() => readJournal(tmp), /bad file name/), 'bad file name rejected');
 fs.rmSync(tmp, { recursive: true, force: true });
 
+// the service worker precaches every drawing, so kid mode and the passports open offline from the first visit
+{
+  const sw = fs.readFileSync(path.resolve('public/sw.js'), 'utf8');
+  const listed = new Set([...sw.matchAll(/'(\/art\/[^']+)'/g)].map((m) => m[1]));
+  const walk = (d) => fs.readdirSync(d, { withFileTypes: true }).flatMap((e) => (e.isDirectory() ? walk(path.join(d, e.name)) : [path.join(d, e.name)]));
+  const files = walk(path.resolve('public/art')).map((f) => '/' + path.relative(path.resolve('public'), f).split(path.sep).join('/'));
+  const missing = files.filter((f) => !listed.has(f)), gone = [...listed].filter((f) => !files.includes(f));
+  ok(!missing.length && !gone.length, `sw.js precaches all ${files.length} art files` + (missing.length ? ` — missing: ${missing.join(', ')}` : '') + (gone.length ? ` — not on disk: ${gone.join(', ')}` : ''));
+  ok(/const V = 'mbs-v\d+'/.test(sw), 'sw.js has a cache version');
+}
+
 // migrations against the real database
 const pool = new Pool({ connectionString: process.env.DATABASE_URL });
 const logs = [];

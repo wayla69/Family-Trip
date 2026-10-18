@@ -161,6 +161,7 @@ const A = {
     } catch (err) { $('#nterr').textContent = err.code === 409 ? L('มีเล่มชื่อนี้แล้ว', 'A book with this id exists') : L('ตรวจวันที่อีกครั้ง (ไม่เกิน 60 วัน)', 'Check the dates (60 days max)'); }
   },
   closesheet() { closeSheet(); },
+  offline(b) { if (!navigator.onLine) { toast(L('ต้องมีสัญญาณตอนเก็บ', 'Needs a connection to store the book')); return; } packOffline(trip(b.dataset.t), b.dataset.v === 'all'); },
   // hearts from the family
   heartto(b) { heartTo = b.dataset.v; $$('[data-a="heartto"]').forEach((x) => x.setAttribute('aria-pressed', x.dataset.v === heartTo)); },
   heartemo(b) { heartEmoji = b.dataset.v; $$('[data-a="heartemo"]').forEach((x) => x.setAttribute('aria-pressed', x.dataset.v === heartEmoji)); const s = $('[data-a="sendheart"]'); if (s) s.textContent = `${L('ส่ง', 'Send')} ${heartEmoji}`; },
