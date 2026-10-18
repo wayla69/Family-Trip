@@ -1469,3 +1469,4 @@ button.tile.kid{border:1px solid var(--line);text-align:left;justify-items:start
 .remind .rb{display:flex;gap:8px;flex:none;margin-left:auto}
 .remind.on{border-color:color-mix(in srgb,var(--leaf) 40%,var(--line));background:color-mix(in srgb,var(--leaf) 6%,var(--paper))}
 .remind.on>.ic{color:var(--leaf)}
+.unitd{display:flex;align-items:center;gap:6px}.unitd .ppf{flex:1;min-width:0}.unitd .unit{flex:none;font-size:13px;color:var(--muted)}

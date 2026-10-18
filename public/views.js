@@ -929,7 +929,8 @@ function viewPassport(slug, tid) {
   const short = T(t.title).split(' · ')[0], year = t.date_from.slice(0, 4);
   const mrz = esc(`P<${(pp.code || 'MB').split('-')[0]}<<${(k.name_en || kid).toUpperCase().replace(/[^A-Z]/g, '')}<<EXPLORER<<${year}`.padEnd(40, '<'));   // decorative only
   const guide = (i) => g[i] ? `<img class="guide" src="${esc(g[i].art)}" alt="${esc(T(g[i].name))}">` : '';
-  const field = (key, label, ph) => `<div><dt>${label}</dt><dd>${ed ? `<input class="field ppf" data-a-blur="field" data-t="${esc(t.id)}" data-k="${esc(kid)}" data-v="${key}" data-draft="pf:${esc(t.id)}:${kid}:${key}" value="${esc(drafts[`pf:${t.id}:${kid}:${key}`] ?? fieldVal(t, key, kid))}" placeholder="${esc(ph || '')}" maxlength="60">` : esc(fieldVal(t, key, kid)) || '—'}</dd></div>`;
+  // blank boxes like the printed passport (no "e.g." hints); a height box shows its unit beside it
+  const field = (key, label, unit) => `<div><dt>${label}</dt><dd${unit ? ' class="unitd"' : ''}>${ed ? `<input class="field ppf" data-a-blur="field" data-t="${esc(t.id)}" data-k="${esc(kid)}" data-v="${key}" data-draft="pf:${esc(t.id)}:${kid}:${key}" value="${esc(drafts[`pf:${t.id}:${kid}:${key}`] ?? fieldVal(t, key, kid))}" maxlength="60"${unit ? ' inputmode="decimal"' : ''}>${unit ? `<span class="unit">${unit}</span>` : ''}` : esc(fieldVal(t, key, kid)) ? esc(fieldVal(t, key, kid)) + (unit ? ' ' + unit : '') : '—'}</dd></div>`;
 
   // visa: a stamp per day of this trip (inked once the day has anything recorded or is Done)
   const ds = t.days.map((d, i) => {
@@ -1006,8 +1007,8 @@ ${st ? `<section class="advc" style="--ink:${esc(st.ink)};--hi:${esc(st.hi)};--b
 <dl>
 <div><dt>${L('ชื่อนักสำรวจ', 'Explorer name')}</dt><dd>${esc(name)}</dd></div>
 <div><dt>${L('อายุ', 'Age')}</dt><dd>${age ? esc(T(age)) : '—'}</dd></div>
-${field('fav_animal', L('สัตว์ที่ชอบที่สุด', 'My favourite animal'), L('เช่น โลมา', 'e.g. dolphin'))}
-${field('superpower', L('พลังพิเศษของหนูคือ…', 'My superpower is…'), L('เช่น วิ่งเร็วมาก', 'e.g. running super fast'))}
+${field('fav_animal', L('สัตว์ที่ชอบที่สุด', 'My favourite animal'))}
+${field('superpower', L('พลังพิเศษของหนูคือ…', 'My superpower is…'))}
 ${field('height_first', L('ส่วนสูง วันแรก', 'My height · Day 1'), 'cm')}
 ${field('height_last', L(`ส่วนสูง วันที่ ${t.days.length}`, `My height · Day ${t.days.length}`), 'cm')}
 </dl>
