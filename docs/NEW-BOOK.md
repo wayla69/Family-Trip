@@ -25,6 +25,7 @@
    - `info.restaurants` = บท "Where to eat" ของคู่มือ ครบทุกร้าน: `{ lede, kinds[3]: ร้านอาหาร/คาเฟ่และของหวาน/ทำกินเอง, groups[{ area, kind, items[{ name, where, tag, what, note, pr, q, pick?[วัน·มื้อ], tour? }] }] }` → หน้า **🍽️ ร้านอาหาร** (`#/t/<slug>/eat` ค้นหา/กรองได้) · ถ้าไม่มี แอปรวมร้านจาก `picks/food/eat/planned` ของแต่ละวันให้เอง
    - `passport`: `code` · `guides[2]` (ตัวการ์ตูนไกด์ 2 ตัว) · `style` (สีจากเล่มพิมพ์) · `greeting` · `days[]` (`title stamp facts spot[4] acc tint`) · `lists[]` (`said` คำศัพท์พร้อม `speak{text,lang}` · อาหาร `yum` หรือ `stars` · `master` + `certificate`) · `pins` · `declaration` (ถ้ามี) · `certificate` · `colour` · `countdown{doors[14],pack}` · `map{stops,days}`
    - `theme`: token ตาม `docs/DESIGN.md` + `art` + `places`
+   - `theme.outfit` (ไม่บังคับ): ชุดของเด็กๆ ในเล่มนี้ เช่น `"adventure"` → ใช้ `public/art/kids/<kid>-adventure[-full].svg` ทุกหน้าของเล่ม (ไม่มี = ชุดปกติ) · ชุดใหม่ต้องวาดทั้ง 4 ไฟล์ เพิ่มชื่อใน `KID_OUTFITS` (core.js) และ `ART` (sw.js)
    - `firsts_catalog`, `moods`, `stamp`, `cover`
 3. ภาพ: ตราวัน `public/art/<slug>/day-{n}.svg` (วงกลมเส้นหนา สไตล์เดิม) · หน้าระบายสี (ถ้าใช้ภาพจาก Artifact) · ไกด์ `public/art/guides/*.svg` · ตรา `public/art/crest/*.svg`
    → **เพิ่มทุกไฟล์ใน `ART` ของ `public/sw.js`** (เทสต์ infra ล้มถ้าขาด) และ bump `mbs-vN`

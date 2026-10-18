@@ -226,7 +226,7 @@ const offlineUrls = (t) => {
   t.days.forEach((_, i) => { if (dayArt(t, i)) urls.add(dayArt(t, i)); const c = (t.passport || {}).colour; if (c) urls.add(c.replace('{n}', i + 1)); });
   ((t.passport || {}).guides || []).forEach((g) => g.art && urls.add(g.art));
   if ((t.passport || {}).style && t.passport.style.crest) urls.add(t.passport.style.crest);
-  KID_ART.forEach((k) => { urls.add(kidArt(k)); urls.add(kidArt(k, true)); });
+  KID_ART.forEach((k) => { urls.add(kidArt(k)); urls.add(kidArt(k, true)); urls.add(kidArt(k, false, t)); urls.add(kidArt(k, true, t)); });
   mediaOf(t.id).forEach((m) => { if (!m.local) { urls.add(`/media/${encodeURIComponent(m.id)}/t`); if (m.highlight || isDrawingId(m.id)) urls.add(`/media/${encodeURIComponent(m.id)}`); } });
   return [...urls];
 };
@@ -262,7 +262,11 @@ function burst(el, chars) {
 }
 // the kids as drawn characters (public/art/kids, drawn from photos the owner shared — the photos themselves are not in the repo)
 const KID_ART = ['mimi', 'mika'];
-const kidArt = (slug, full) => (KID_ART.includes(slug) ? `/art/kids/${slug}${full ? '-full' : ''}.svg` : '');
+// the kids dress for the trip: a book's theme.outfit (e.g. "adventure" for Australia) picks /art/kids/<kid>-<outfit>[-full].svg;
+// artTrip is the book on screen (set by render), so every drawing of the kids on that page wears the same clothes
+const KID_OUTFITS = ['adventure'];
+let artTrip = null;
+const kidArt = (slug, full, t) => { if (!KID_ART.includes(slug)) return ''; const o = (((t || artTrip) || {}).theme || {}).outfit; return `/art/kids/${slug}${KID_OUTFITS.includes(o) ? '-' + o : ''}${full ? '-full' : ''}.svg`; };
 const kidFace = (slug) => (slug === 'both' ? KID_ART.map((k) => `<img class="face" src="${kidArt(k)}" alt="">`).join('')
   : kidArt(slug) ? `<img class="face" src="${kidArt(slug)}" alt="">` : esc(kidEmoji(slug)));
 function kidBadge(slug, off) {
