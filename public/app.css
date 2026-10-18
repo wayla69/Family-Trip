@@ -1292,3 +1292,4 @@ button.tile.kid{border:1px solid var(--line);text-align:left;justify-items:start
 .call,.call.mission{box-shadow:none}
 .dsheet>div{grid-template-columns:minmax(92px,180px) 1fr}
 .dayplan>summary{color:var(--accent)}
+.spine .badge{background:none;padding:0;border-radius:0;margin:0;line-height:0}   /* the book emblem, not the eat page's ★ label */
