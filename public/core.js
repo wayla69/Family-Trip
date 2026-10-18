@@ -155,7 +155,12 @@ function stats(t) {
     places: placesOf(t.id).length,
   };
 }
-const dayHasContent = (t, i) => entriesOf(t.id, i).some((e) => e.kind !== 'mood' || e.mood) || mediaOf(t.id, i).length || placesOf(t.id, i).length;
+// illustrated stamp per day (theme.art = "/art/hk/day-{n}.svg"); app-made trips have none and use the day emoji
+const dayArt = (t, i) => (t.theme && t.theme.art ? t.theme.art.replace('{n}', i + 1) : '');
+// passport: a day's stamp is inked once the day is Done or has anything recorded in it
+const dayStamped = (t, i) => !!t.days[i].done_at || !!dayHasContent(t, i);
+const daysUntil = (t) => Math.round((Date.parse(t.date_from + 'T00:00:00Z') - Date.parse(todayIn(t.timezone) + 'T00:00:00Z')) / 864e5);
+const dayHasContent = (t, i) =>entriesOf(t.id, i).some((e) => e.kind !== 'mood' || e.mood) || mediaOf(t.id, i).length || placesOf(t.id, i).length;
 function themeStyle(t) {
   const th = (t && t.theme) || {};
   const keys = { accent: '--accent', accent2: '--accent2', ink: '--ink', muted: '--muted', panel: '--panel', rule: '--rule', pick: '--pick', info: '--info', calm: '--calm', warn: '--warn' };
@@ -168,6 +173,17 @@ const firstLabel = (t, key) => { const f = t.firsts.find((x) => x.key === key); 
 /* ---------- ui helpers ---------- */
 let toastT = 0;
 function toast(msg) { const t = $('#toast'); t.textContent = msg; t.hidden = false; clearTimeout(toastT); toastT = setTimeout(() => { t.hidden = true; }, 2800); }
+// a little burst of sparkles from a button that was just tapped (ticks, moods, check-ins)
+function burst(el, chars) {
+  if (!el || matchMedia('(prefers-reduced-motion: reduce)').matches) return;
+  const r = el.getBoundingClientRect(), cs = chars || ['✨', '⭐', '💫'];
+  for (let i = 0; i < 8; i++) {
+    const s = document.createElement('span'), a = (i / 8) * Math.PI * 2;
+    s.className = 'spark'; s.textContent = cs[i % cs.length];
+    s.style.cssText = `left:${r.left + r.width / 2}px;top:${r.top + r.height / 2}px;--dx:${Math.cos(a) * 46}px;--dy:${Math.sin(a) * 46}px`;
+    document.body.appendChild(s); setTimeout(() => s.remove(), 750);
+  }
+}
 function kidBadge(slug, off) { return `<span class="kid ${esc(slug)}${off ? ' off' : ''}" title="${esc(kidName(slug))}">${kidEmoji(slug)}</span>`; }
 // two taps to delete (no confirm()): first tap arms for 3 s
 function armed(btn) {

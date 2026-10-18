@@ -1,5 +1,5 @@
 // Memory Bookshelf service worker: app shell offline, photos cached as you view them. Data (/api) is cached by the app itself.
-const V = 'mbs-v1';
+const V = 'mbs-v2';
 const SHELL = ['/', '/app.css', '/core.js', '/views.js', '/sheets.js', '/manifest.webmanifest', '/icon.svg',
   '/fonts/KIRA-UI-Regular.woff2', '/fonts/KIRA-UI-Medium.woff2', '/fonts/KIRA-UI-SemiBold.woff2', '/fonts/KIRA-UI-Bold.woff2',
   '/fonts/CormorantGaramond-SemiBold.woff2', '/fonts/CormorantGaramond-MediumItalic.woff2'];

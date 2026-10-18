@@ -52,7 +52,11 @@
   "calm": "#EEF3EF",
   "warn": "#F8ECEA",
   "accentDark": "#7FBF9F",
-  "display": "sans"
+  "display": "sans",
+  "art": "/art/day-{n}.svg",
+  "places": [
+   { "flag": "🇦🇺", "th": "ออสเตรเลีย", "en": "Australia" }
+  ]
  },
  "days": [
   {
