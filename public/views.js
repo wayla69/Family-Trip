@@ -204,10 +204,10 @@ function itinerary(t) {
     const has = dayHasContent(t, i), stops = (d.planned || []).filter((p) => p.kind !== 'food'), food = (d.planned || []).filter((p) => p.kind === 'food');
     const go = has ? `<a class="mini" href="#d${i}" data-a="jump" data-v="${i}">${L('อ่านบันทึก', 'Read')} ›</a>` : edit ? `<a class="mini" href="#/t/${esc(t.id)}/log/${i}">✏️ ${L('บันทึก', 'Record')}</a>` : '';
     return `<li class="${has ? 'has' : ''}${i === now ? ' now' : ''}">${artImg(t, i)}<div class="grow">
-<div class="dl"><b>${String(i + 1).padStart(2, '0')}</b> ${esc(fmtDay(d.date))}${i === now ? ` <span class="tag">${L('วันนี้', 'Today')}</span>` : ''}${has ? ' ✓' : ''}</div>
+<div class="dl"><b>${String(i + 1).padStart(2, '0')}</b> ${esc(fmtDay(d.date))}${i === now ? ` <span class="tag">${L('วันนี้', 'Today')}</span>` : ''}${has ? ' ✓' : ''}${go}</div>
 <h4>${esc(T(d.title))}</h4>
 ${stops.length ? `<p class="stops">${stops.map((p) => placeA(t, p)).join(' · ')}</p>` : ''}
-<p class="label">${d.sleep ? `🛏️ ${d.plan && d.plan.stay ? mapA(d.plan.stay.q || d.plan.stay.addr, esc(T(d.sleep))) : esc(T(d.sleep))}` : ''}${food.length ? ` · 🍽️ ${food.map((p) => placeA(t, p)).join(' · ')}` : ''}</p>${planHtml(t, i, i === now)}</div>${go}</li>`;
+<p class="label">${d.sleep ? `🛏️ ${d.plan && d.plan.stay ? mapA(d.plan.stay.q || d.plan.stay.addr, esc(T(d.sleep))) : esc(T(d.sleep))}` : ''}${food.length ? ` · 🍽️ ${food.map((p) => placeA(t, p)).join(' · ')}` : ''}</p>${planHtml(t, i, i === now)}</div></li>`;
   }).join('')}</ol>`;
 }
 // the day's plan from the manual (seed → trip_days.plan): timeline, how we move, local pick, plan B, money, tips
