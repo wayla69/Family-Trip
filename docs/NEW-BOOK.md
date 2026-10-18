@@ -20,6 +20,7 @@
      - `picks` ร้านแนะนำต่อมื้อ (`meal, name, what, pr, q, alt{name,pr,q}`) · `food` ร้านตามจุดที่ผ่าน (`stop, items[{name,tag,what,note,pr,q,pick?}]`) · `eat` ร้านอื่นใกล้ๆ (ซ้ำกับสองอันแรกได้ แอปตัดซ้ำให้)
      - **ห้ามย่อ**: ใส่ข้อความจากคู่มือเต็มๆ ทุกบรรทัด ทั้งไทยและอังกฤษ
    - `info`: `stays[]` (ชื่อ+ที่อยู่สาธารณะ — ที่อยู่ภาษาท้องถิ่นต่อท้ายด้วย ` · ` ให้คนขับอ่าน) · `emergency[]` · `lost` · `prices` · `guide[]` · `pack[]` · `general[]` · `wild[]` · ถ้าคู่มือมี: `drive` (ตารางช่วงขับ) · `car` (รถเช่า ไม่ใส่ราคา) · `kit` (ครัว/ซักผ้าแต่ละที่พัก) · `ifthen` (ถ้า…ก็… + `mishap` `carry` `crowd` `book`) · `visa` · `bio` (ด่านกักกันโรค) · `eatRules`
+   - `info.restaurants` = บท "Where to eat" ของคู่มือ ครบทุกร้าน: `{ lede, kinds[3]: ร้านอาหาร/คาเฟ่และของหวาน/ทำกินเอง, groups[{ area, kind, items[{ name, where, tag, what, note, pr, q, pick?[วัน·มื้อ], tour? }] }] }` → หน้า **🍽️ ร้านอาหาร** (`#/t/<slug>/eat` ค้นหา/กรองได้) · ถ้าไม่มี แอปรวมร้านจาก `picks/food/eat/planned` ของแต่ละวันให้เอง
    - `passport`: `code` · `guides[2]` (ตัวการ์ตูนไกด์ 2 ตัว) · `style` (สีจากเล่มพิมพ์) · `greeting` · `days[]` (`title stamp facts spot[4] acc tint`) · `lists[]` (`said` คำศัพท์พร้อม `speak{text,lang}` · อาหาร `yum` หรือ `stars` · `master` + `certificate`) · `pins` · `declaration` (ถ้ามี) · `certificate` · `colour` · `countdown{doors[14],pack}` · `map{stops,days}`
    - `theme`: token ตาม `docs/DESIGN.md` + `art` + `places`
    - `firsts_catalog`, `moods`, `stamp`, `cover`
@@ -39,5 +40,6 @@
 | 1 | ต.ค. 2026 | days/planned/sleep/wx · theme · passport (guides, days, lists, certificate, style, pins, declaration, colour) · countdown · map |
 | 2 | 18 ต.ค. 2026 | + แผนวันนี้ต่อวัน (`trip_days.plan`) · `info` คู่มือพกพา (`trips.info`) · `format` ใน seed |
 | 2 (เพิ่ม) | 18 ต.ค. 2026 | + `planned[].q` · `legs` · `picks` · `food` · `info.drive/car/kit/ifthen/visa/bio/eatRules` — ฟิลด์ทางเลือกทั้งหมด เล่มที่ไม่มียังแสดงเหมือนเดิม (ไม่มี `q` → ค้นจากชื่อ+ประเทศ) |
+| 2 (เพิ่ม) | 18 ต.ค. 2026 | + `info.restaurants` (หน้าร้านอาหารทั้งหมด) — ทางเลือก ไม่มีก็รวมจากแผนรายวัน |
 
 เล่มที่ไม่มี `format` ถือเป็น format 1 ส่วนที่เพิ่มในภายหลังต้องเป็นฟิลด์ทางเลือกและไม่เปลี่ยนความหมายของฟิลด์เดิม
