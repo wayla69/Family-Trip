@@ -418,6 +418,51 @@ img.guide{width:54px;height:54px;flex:none}
 .cert .stamp{--s:84px}
 @media (prefers-color-scheme:dark){:root:not([data-theme=light]) .cert{background:var(--paper)}}
 
+/* ---------- passport cover + colours as in the printed Kids Adventure Passport ---------- */
+.advc{border-radius:18px;padding:16px;background:linear-gradient(135deg,var(--bgA) 0 50%,var(--bgB) 50%);box-shadow:0 18px 34px -24px rgba(0,0,0,.45)}
+.advc .card{background:#fff;color:#1F2A3A;border:6px solid var(--gold);border-radius:22px;padding:20px 16px 14px;display:grid;justify-items:center;text-align:center;gap:6px}
+.advc .crest{width:96px;height:96px}
+.advc .kick{font-size:11px;font-weight:700;letter-spacing:.24em;text-transform:uppercase;color:#8A9AB2}
+.advc h2{font-family:var(--ui);font-weight:700;font-size:clamp(28px,6vw,36px);line-height:1.05;color:var(--ink)}
+.advc h2 em{font-style:normal;color:var(--hi)}
+.advc .sub{font-weight:600;color:#4B5563;font-size:15px;margin:0}
+.advc .guides2{display:flex;gap:14px;margin:6px 0}.advc .guides2 img.guide{width:76px;height:76px}
+.advc .places{font-size:13px;color:#6D7480;margin:0;max-width:36ch}
+.advc .xbox{border:3px solid var(--gold);border-radius:14px;padding:6px 22px 8px;margin-top:6px;display:grid;justify-items:center;box-shadow:0 4px 0 color-mix(in srgb,var(--gold) 50%,transparent)}
+.advc .xbox span{font-size:10px;font-weight:700;letter-spacing:.2em;text-transform:uppercase;color:#B08A3E}
+.advc .xbox b{font-size:30px;font-weight:700;color:var(--ink);display:flex;align-items:center;gap:8px}
+.advc .foot{display:flex;justify-content:space-between;gap:10px;flex-wrap:wrap;width:100%;border-top:2px dashed color-mix(in srgb,var(--gold) 70%,transparent);padding-top:8px;margin-top:6px;font-size:12px;color:#6D7480}
+.advc .foot b{color:var(--ink)}
+.mission{--tint:var(--panel)}
+.mission header{background:var(--tint);margin:-14px -14px 12px;padding:12px 14px;border-radius:16px 16px 0 0}
+.mission h4,.mission .kicker{color:var(--accent)}
+.mission .says{background:var(--tint)}
+.mission .says b{color:var(--accent)}
+.mission .mstamp{margin-left:auto;flex:none;font-size:8.5px;font-weight:700;letter-spacing:0;overflow:hidden;word-break:break-word;color:var(--accent);border:2px dashed var(--accent);border-radius:50%;width:64px;height:64px;display:grid;place-items:center;text-align:center;line-height:1.1;padding:4px;opacity:.55;background:#fff}
+.mission .mstamp.on{border-style:solid;opacity:1;transform:rotate(-8deg);box-shadow:inset 0 0 0 3px #fff,inset 0 0 0 4px var(--accent)}
+.mission .tick i{border-color:var(--accent)}
+.mission .tick.on{border-color:var(--accent);background:var(--tint)}
+.mission .tick.on i{background:var(--accent)}
+.stars{display:flex;gap:2px;flex:none}
+.stars button{border:0;background:none;font-size:22px;line-height:1;color:#D5DAE1;padding:2px}
+.stars button[aria-pressed=true]{color:#F2B705;text-shadow:0 1px 0 #C98F00}
+.tick small.say{font-style:italic;color:var(--accent2)}
+.decl .dline{display:flex;align-items:center;gap:8px;flex-wrap:wrap;background:var(--panel);border-radius:999px;padding:8px 14px;margin:8px 0;font-weight:600}
+.decl .dline .e{font-size:20px}
+.decl .num{width:64px;text-align:center;font-weight:700}
+.decl .dtext{border:2px dashed var(--rule);border-radius:14px;padding:8px 12px;margin:8px 0}.decl .dtext .label{display:block;font-weight:600;color:var(--accent2);margin-bottom:4px}
+.decl{position:relative}
+.decl .declared{position:absolute;right:14px;bottom:14px;width:84px;height:84px;border-radius:50%;border:3px double #C2185B;color:#C2185B;font-size:10px;font-weight:700;display:grid;place-items:center;text-align:center;line-height:1.25;transform:rotate(-12deg);opacity:.85;background:color-mix(in srgb,#fff 80%,transparent)}
+.decl .dtext:last-of-type{margin-right:96px}
+.cert img.crest{width:110px;height:110px}
+.sleep .pe{font-size:24px;flex:none}
+.plist.wide .grp{background:var(--tint,transparent);border-radius:16px;padding:2px 10px 10px;margin-top:10px}
+.plist.wide .grp h5{color:var(--accent)}
+.plist.wide .grp .tick{background:#fff;color:#1F2A3A}
+.plist.wide .grp .tick i{border-color:var(--accent)}.plist.wide .grp .tick.on i{background:var(--accent)}.plist.wide .grp .tick.on{border-color:var(--accent)}
+.decl .dline:nth-of-type(1){background:#E6F6EA;color:#2E7D32}.decl .dline:nth-of-type(2){background:#FFF6D6;color:#A16207}.decl .dline:nth-of-type(3){background:#E3F2FD;color:#1565C0}
+.decl .dline:nth-of-type(4){background:#FDE8E6;color:#B42318}.decl .dline:nth-of-type(5){background:#EFE9FB;color:#6D28D9}
+
 /* ---------- login art ---------- */
 .loginart{display:flex;align-items:flex-end;margin:0 0 14px;min-height:96px}
 .loginart .art{width:44px;height:44px;margin-right:-6px;box-shadow:0 0 0 3px var(--paper);animation:bob 4s ease-in-out infinite;align-self:flex-start}

@@ -48,10 +48,12 @@ ok((await put(`/api/b/entries/${T}.tick.spot.d1.tower.mimi`, { trip: T, day: 1, 
 ok((await put(`/api/b/entries/${T}.tick.tucker.eggtart.mika`, { trip: T, day: null, kind: 'tick', child: 'mika', first_key: 'tucker.eggtart', text: 'yum' })).ok, 'tick: food list item, no day, YUM');
 ok((await put(`/api/b/entries/${T}.field.superpower.mimi`, { trip: T, day: null, kind: 'field', child: 'mimi', first_key: 'superpower', text: 'วิ่งเร็วมาก' })).ok, 'field: Explorer ID answer saved');
 ok((await put('/api/b/entries/tick-bad-0001', { trip: T, day: null, kind: 'tick', child: 'both', first_key: 'animals.cat' })).status === 400, 'tick needs one child (not "both")');
+ok((await put(`/api/b/entries/${T}.tick.dimsum.hargau.mimi`, { trip: T, day: null, kind: 'tick', child: 'mimi', first_key: 'dimsum.hargau', text: '3' })).ok, 'tick: 3 stars on the dim sum card');
+ok((await put('/api/b/entries/tick-bad-0004', { trip: T, day: null, kind: 'tick', child: 'mimi', first_key: 'dimsum.hargau', text: '4' })).status === 400, 'no 4th star');
 ok((await put('/api/b/entries/tick-bad-0002', { trip: T, day: null, kind: 'tick', child: 'mimi', first_key: 'animals.cat', text: 'maybe' })).status === 400, 'tick text is only "", yum or yuck');
 ok((await put('/api/b/entries/tick-bad-0003', { trip: T, day: null, kind: 'quote', child: 'mimi', text: 'x' })).status === 400, 'quotes still need a day');
 s = await state();
-ok(s.entries.filter((e) => e.kind === 'tick').length === 2 && s.entries.find((e) => e.kind === 'field').text === 'วิ่งเร็วมาก', 'state returns ticks + fields');
+ok(s.entries.filter((e) => e.kind === 'tick').length === 3 && s.entries.find((e) => e.kind === 'field').text === 'วิ่งเร็วมาก', 'state returns ticks + fields');
 ok((await put('/api/b/entries/first-mickey-mimi',{ trip: T, day: 1, kind: 'first', child: 'mimi', first_key: 'mickey' })).ok, 'first: Mimi met Mickey');
 ok((await put('/api/b/entries/bad-kind-01', { trip: T, day: 1, kind: 'photo' })).status === 400, 'unknown kind → 400');
 ok((await put('/api/b/entries/bad-kid-01', { trip: T, day: 1, kind: 'quote', child: 'bob', text: 'x' })).status === 400, 'unknown child → 400');
