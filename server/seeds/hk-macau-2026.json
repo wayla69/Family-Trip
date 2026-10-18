@@ -57,6 +57,7 @@
     {
      "key": "Noah's Ark Hotel",
      "kind": "place",
+     "q": "Noah's Ark Hotel & Resort, 33 Pak Yan Road, Ma Wan, Hong Kong",
      "en": "Noah's Ark Hotel",
      "th": "Noah's Ark Hotel",
      "zh": "挪亞方舟度假酒店"
@@ -64,6 +65,7 @@
     {
      "key": "Ma Wan",
      "kind": "place",
+     "q": "Ma Wan Park, Ma Wan, Hong Kong",
      "en": "Ma Wan",
      "th": "Ma Wan",
      "zh": "馬灣"
@@ -71,10 +73,14 @@
     {
      "key": "Dinner near the hotel",
      "kind": "food",
+     "q": "restaurants near Park Island, Ma Wan, Hong Kong",
      "en": "Dinner near the hotel",
      "th": "มื้อเย็นใกล้โรงแรม",
      "meal": "Dinner"
     }
+   ],
+   "legs": [
+    { "from": "Hong Kong International Airport Terminal 1", "to": "Noah's Ark Hotel & Resort", "by": { "th": "limo ฟรีจากบัตรเครดิต", "en": "Free credit-card limo" }, "min": 30, "url": "https://www.google.com/maps/dir/?api=1&origin=Hong+Kong+International+Airport+Terminal+1&destination=Noah's+Ark+Hotel+&+Resort,+33+Pak+Yan+Road,+Ma+Wan,+Hong+Kong&travelmode=driving" }
    ],
    "moving": { "th": "บิน 2 ชม. 45 นาที · limo ฟรีจากบัตรเครดิตไป Ma Wan", "en": "Fly 2 h 45 min · free credit-card limo to Ma Wan" },
    "planB": { "th": "ถ้า limo ไม่มา: รถ NR334 Park Island Airport Flyer จาก Coach Station (Bay 19, Carpark 1) HK$32.5 ชั่วโมงละ 1–2 เที่ยว ลง Park Island แล้วเดิน ~5 นาที", "en": "No limo: bus NR334 Park Island Airport Flyer from the Coach Station (Bay 19, Carpark 1) HK$32.5, 1–2 an hour, then a 5-minute walk from Park Island" },
@@ -108,6 +114,7 @@
     {
      "key": "Hong Kong Disneyland",
      "kind": "place",
+     "q": "Hong Kong Disneyland, Lantau Island, Hong Kong",
      "en": "Hong Kong Disneyland",
      "th": "Hong Kong Disneyland",
      "zh": "香港迪士尼樂園"
@@ -115,6 +122,7 @@
     {
      "key": "Ma Wan",
      "kind": "place",
+     "q": "Ma Wan Park, Ma Wan, Hong Kong",
      "en": "Ma Wan",
      "th": "Ma Wan",
      "zh": "馬灣"
@@ -122,10 +130,15 @@
     {
      "key": "Hong Kong Disneyland rides and shows",
      "kind": "place",
+     "q": "Hong Kong Disneyland, Lantau Island, Hong Kong",
      "en": "Hong Kong Disneyland rides and shows",
      "th": "ดิสนีย์แลนด์: เครื่องเล่นและโชว์",
      "zh": "香港迪士尼樂園"
     }
+   ],
+   "legs": [
+    { "from": "Noah's Ark Hotel & Resort", "to": "Hong Kong Disneyland", "by": { "th": "NR330 → MTR Tsing Yi → Sunny Bay → รถไฟดิสนีย์", "en": "NR330 → MTR Tsing Yi → Sunny Bay → Disneyland Resort Line" }, "url": "https://www.google.com/maps/dir/?api=1&origin=Noah's+Ark+Hotel+&+Resort,+33+Pak+Yan+Road,+Ma+Wan,+Hong+Kong&destination=Hong+Kong+Disneyland,+Lantau+Island,+Hong+Kong&travelmode=transit" },
+    { "from": "Hong Kong Disneyland", "to": "Noah's Ark Hotel & Resort", "by": { "th": "กลับทางเดิม", "en": "Same way back" }, "url": "https://www.google.com/maps/dir/?api=1&origin=Hong+Kong+Disneyland,+Lantau+Island,+Hong+Kong&destination=Noah's+Ark+Hotel+&+Resort,+33+Pak+Yan+Road,+Ma+Wan,+Hong+Kong&travelmode=transit" }
    ],
    "moving": { "th": "NR330 → Tsing Yi (MTR) → Tung Chung Line → Sunny Bay → Disneyland Resort Line · กลับทางเดิม", "en": "NR330 → Tsing Yi (MTR) → Tung Chung Line → Sunny Bay → Disneyland Resort Line · same way back" },
    "pick": { "th": "ชั่วโมงแรกหลังเปิดคนน้อยสุด — ไปเครื่องเล่นของมีมี่ก่อน แล้วค่อยเดินเล่น", "en": "The first hour after opening is the quietest — do Mimi's rides first, then wander" },
@@ -158,6 +171,7 @@
     {
      "key": "HZMB Hong Kong Port",
      "kind": "place",
+     "q": "Hong Kong Port, Hong Kong-Zhuhai-Macao Bridge, Lantau, Hong Kong",
      "en": "HZMB Hong Kong Port",
      "th": "ท่า HZMB ฝั่งฮ่องกง",
      "zh": "港珠澳大橋香港口岸"
@@ -165,6 +179,7 @@
     {
      "key": "The Londoner",
      "kind": "place",
+     "q": "The Londoner Macao, Cotai, Macau",
      "en": "The Londoner",
      "th": "The Londoner",
      "zh": "澳門倫敦人"
@@ -172,6 +187,7 @@
     {
      "key": "Studio City",
      "kind": "place",
+     "q": "Studio City Hotel, Estrada do Istmo, Cotai, Macau",
      "en": "Studio City",
      "th": "Studio City",
      "zh": "新濠影滙"
@@ -179,6 +195,7 @@
     {
      "key": "Studio City Water Park",
      "kind": "place",
+     "q": "Studio City Water Park, Cotai, Macau",
      "en": "Studio City Water Park",
      "th": "สวนน้ำ Studio City",
      "zh": "新濠影滙水上樂園"
@@ -186,10 +203,16 @@
     {
      "key": "Hong Kong–Zhuhai–Macao Bridge",
      "kind": "place",
+     "q": "Hong Kong-Zhuhai-Macao Bridge",
      "en": "Hong Kong–Zhuhai–Macao Bridge",
      "th": "สะพานฮ่องกง–จูไห่–มาเก๊า",
      "zh": "港珠澳大橋"
     }
+   ],
+   "legs": [
+    { "from": "Noah's Ark Hotel & Resort", "to": "Hong Kong Port", "by": { "th": "taxi หรือ NR334", "en": "Taxi or NR334" }, "min": 25, "url": "https://www.google.com/maps/dir/?api=1&origin=Noah's+Ark+Hotel+&+Resort,+33+Pak+Yan+Road,+Ma+Wan,+Hong+Kong&destination=Hong+Kong+Port,+Hong+Kong-Zhuhai-Macao+Bridge,+Lantau,+Hong+Kong&travelmode=driving" },
+    { "from": "Hong Kong Port", "to": "Macao Port", "by": { "th": "Golden Bus ข้ามสะพาน + ตม. 2 ฝั่ง", "en": "Golden Bus over the bridge + immigration both ends" }, "min": 45, "url": "https://www.google.com/maps/dir/?api=1&origin=Hong+Kong+Port,+Hong+Kong-Zhuhai-Macao+Bridge,+Lantau,+Hong+Kong&destination=Macao+Port,+Hong+Kong-Zhuhai-Macao+Bridge,+Macau&travelmode=transit" },
+    { "from": "Macao Port", "to": "Studio City Hotel", "by": { "th": "รถรับส่งฟรีเข้า Cotai", "en": "Free shuttle into Cotai" }, "min": 20, "url": "https://www.google.com/maps/dir/?api=1&origin=Macao+Port,+Hong+Kong-Zhuhai-Macao+Bridge,+Macau&destination=Studio+City+Hotel,+Estrada+do+Istmo,+Cotai,+Macau&travelmode=driving" }
    ],
    "moving": { "th": "taxi/NR334 ไปท่า HZMB → Golden Bus ข้ามสะพาน ~35–45 นาที + ตม. 2 ฝั่ง → รถรับส่งฟรีเข้า Cotai", "en": "Taxi/NR334 to HZMB port → Golden Bus over the bridge 35–45 min + immigration both ends → free shuttle into Cotai" },
    "money": { "th": "Golden Bus HK$65 ×2 ผู้ใหญ่ · สวนน้ำ winter MOP 398 ผู้ใหญ่ / MOP 258 เด็กสูง 1.00–1.19 ม. (ไม่ฟรีกับห้องพักปกติ)", "en": "Golden Bus HK$65 ×2 adults · water park winter MOP 398 adult / MOP 258 child 1.00–1.19 m (not free with a standard room)" },
@@ -225,6 +248,7 @@
     {
      "key": "The Venetian",
      "kind": "place",
+     "q": "The Venetian Macao, Estrada da Baía de N. Senhora da Esperança, Cotai, Macau",
      "en": "The Venetian",
      "th": "The Venetian",
      "zh": "澳門威尼斯人"
@@ -232,6 +256,7 @@
     {
      "key": "teamLab SuperNature Macao",
      "kind": "place",
+     "q": "teamLab SuperNature Macao, The Venetian Macao, Cotai",
      "en": "teamLab SuperNature Macao",
      "th": "teamLab SuperNature Macao",
      "zh": "teamLab 超自然空間"
@@ -239,6 +264,7 @@
     {
      "key": "Senado Square",
      "kind": "place",
+     "q": "Senado Square, Macau",
      "en": "Senado Square",
      "th": "Senado Square",
      "zh": "議事亭前地"
@@ -246,6 +272,7 @@
     {
      "key": "Ruins of St Paul's",
      "kind": "place",
+     "q": "Ruins of St. Paul's, Macau",
      "en": "Ruins of St Paul's",
      "th": "ซากโบสถ์ St Paul",
      "zh": "大三巴牌坊"
@@ -253,11 +280,17 @@
     {
      "key": "Wong Chi Kei, Senado Square",
      "kind": "food",
+     "q": "Wong Chi Kei, 17 Largo do Senado, Macau",
      "en": "Wong Chi Kei, Senado Square",
      "th": "Wong Chi Kei ที่ลาน Senado",
      "zh": "黃枝記",
      "meal": "Dinner"
     }
+   ],
+   "legs": [
+    { "from": "Studio City Hotel", "to": "The Venetian Macao", "by": { "th": "เดิน/shuttle", "en": "Walk or shuttle" }, "url": "https://www.google.com/maps/dir/?api=1&origin=Studio+City+Hotel,+Estrada+do+Istmo,+Cotai,+Macau&destination=The+Venetian+Macao,+Estrada+da+Baía+de+N.+Senhora+da+Esperança,+Cotai,+Macau&travelmode=walking" },
+    { "from": "The Venetian Macao", "to": "Senado Square", "by": { "th": "taxi 20 นาที (MOP 70–90)", "en": "Taxi 20 min (MOP 70–90)" }, "min": 20, "url": "https://www.google.com/maps/dir/?api=1&origin=The+Venetian+Macao,+Estrada+da+Baía+de+N.+Senhora+da+Esperança,+Cotai,+Macau&destination=Senado+Square,+Macau&travelmode=driving" },
+    { "from": "Senado Square", "to": "Studio City Hotel", "by": { "th": "taxi กลับ 20 นาที", "en": "Taxi back 20 min" }, "min": 20, "url": "https://www.google.com/maps/dir/?api=1&origin=Senado+Square,+Macau&destination=Studio+City+Hotel,+Estrada+do+Istmo,+Cotai,+Macau&travelmode=driving" }
    ],
    "moving": { "th": "เดิน/shuttle ไป Venetian · taxi ไป Senado 20 นาที ×2 (MOP 70–90 เที่ยว)", "en": "Walk/shuttle to the Venetian · taxi to Senado 20 min each way (MOP 70–90)" },
    "pick": { "th": "วันหยุดคนเต็มเมือง — เราไป teamLab รอบเปิดและไป Senado ตอนโพล้เพล้ ช่วงที่คนเริ่มกลับ", "en": "Holiday crowds — we take teamLab at opening and Senado at dusk, when the crowds thin out" },
@@ -296,6 +329,7 @@
     {
      "key": "Nickelodeon Town, Studio City",
      "kind": "place",
+     "q": "Nickelodeon Town, Studio City, Cotai, Macau",
      "en": "Nickelodeon Town, Studio City",
      "th": "Nickelodeon Town, Studio City",
      "zh": "新濠影滙 Nickelodeon Town"
@@ -303,10 +337,14 @@
     {
      "key": "Taipa Village",
      "kind": "place",
+     "q": "Taipa Village, Rua do Cunha, Taipa, Macau",
      "en": "Taipa Village (optional)",
      "th": "หมู่บ้าน Taipa (ถ้าเด็กๆ ยังไหว)",
      "zh": "氹仔舊城區"
     }
+   ],
+   "legs": [
+    { "from": "Studio City Hotel", "to": "Taipa Village", "by": { "th": "taxi 10 นาที หรือเดินข้ามสะพานคนเดิน", "en": "10-minute taxi or the footbridge" }, "min": 10, "url": "https://www.google.com/maps/dir/?api=1&origin=Studio+City+Hotel,+Estrada+do+Istmo,+Cotai,+Macau&destination=Taipa+Village,+Rua+do+Cunha,+Taipa,+Macau&travelmode=walking" }
    ],
    "moving": { "th": "อยู่ในรีสอร์ตเกือบทั้งวัน · Taipa Village ถ้าไป: taxi 10 นาที หรือเดินข้ามสะพานคนเดิน", "en": "In the resort most of the day · Taipa Village if we go: 10-minute taxi or the footbridge" },
    "pick": { "th": "ตัดแพนด้าและ Coloane ออกแล้ว — วันนี้เป็นวันช้าๆ ก่อนวันเดินทางกลับ", "en": "Pandas and Coloane are cut — today is the slow day before we travel home" },
@@ -343,6 +381,7 @@
     {
      "key": "Shun Tak Centre",
      "kind": "place",
+     "q": "Shun Tak Centre, 200 Connaught Road Central, Sheung Wan, Hong Kong",
      "en": "Shun Tak Centre",
      "th": "Shun Tak Centre",
      "zh": "信德中心"
@@ -350,6 +389,7 @@
     {
      "key": "Haven Street, Causeway Bay",
      "kind": "place",
+     "q": "Haven Street, Causeway Bay, Hong Kong",
      "en": "Haven Street, Causeway Bay",
      "th": "Haven Street, Causeway Bay",
      "zh": "銅鑼灣希雲街"
@@ -357,6 +397,7 @@
     {
      "key": "Cotai Water Jet to Hong Kong",
      "kind": "place",
+     "q": "Taipa Ferry Terminal, Macau",
      "en": "Cotai Water Jet to Hong Kong",
      "th": "เรือ Cotai Water Jet กลับฮ่องกง",
      "zh": "金光飛航 氹仔→上環"
@@ -364,6 +405,7 @@
     {
      "key": "Hong Kong International Airport",
      "kind": "place",
+     "q": "Hong Kong International Airport Terminal 1",
      "en": "Hong Kong International Airport",
      "th": "สนามบินฮ่องกง",
      "zh": "香港國際機場"
@@ -371,10 +413,17 @@
     {
      "key": "Shari Shari, Causeway Bay",
      "kind": "food",
+     "q": "Shari Shari Kakigori House, 14 Haven Street, Causeway Bay, Hong Kong",
      "en": "Shari Shari, Causeway Bay",
      "th": "Shari Shari, Causeway Bay",
      "meal": "Treat"
     }
+   ],
+   "legs": [
+    { "from": "Studio City Hotel", "to": "Taipa Ferry Terminal", "by": { "th": "taxi", "en": "Taxi" }, "min": 10, "url": "https://www.google.com/maps/dir/?api=1&origin=Studio+City+Hotel,+Estrada+do+Istmo,+Cotai,+Macau&destination=Taipa+Ferry+Terminal,+Macau&travelmode=driving" },
+    { "from": "Taipa Ferry Terminal", "to": "Shun Tak Centre", "by": { "th": "Cotai Water Jet ~1 ชม.", "en": "Cotai Water Jet ~1 h" }, "min": 60, "url": "https://www.google.com/maps/dir/?api=1&origin=Taipa+Ferry+Terminal,+Macau&destination=Shun+Tak+Centre,+200+Connaught+Road+Central,+Sheung+Wan,+Hong+Kong&travelmode=transit" },
+    { "from": "Shun Tak Centre", "to": "Shari Shari Kakigori House", "by": { "th": "MTR Sheung Wan → Causeway Bay", "en": "MTR Sheung Wan → Causeway Bay" }, "min": 10, "url": "https://www.google.com/maps/dir/?api=1&origin=Shun+Tak+Centre,+200+Connaught+Road+Central,+Sheung+Wan,+Hong+Kong&destination=Shari+Shari+Kakigori+House,+14+Haven+Street,+Causeway+Bay,+Hong+Kong&travelmode=transit" },
+    { "from": "Hong Kong Station", "to": "Hong Kong International Airport Terminal 1", "by": { "th": "Airport Express 24 นาที", "en": "Airport Express 24 min" }, "min": 24, "url": "https://www.google.com/maps/dir/?api=1&origin=Hong+Kong+Station,+Airport+Express,+Central,+Hong+Kong&destination=Hong+Kong+International+Airport+Terminal+1&travelmode=transit" }
    ],
    "moving": { "th": "Taxi ไปท่าเรือ Taipa · Cotai Water Jet ~1 ชม. → Sheung Wan · MTR 10 นาที → Causeway Bay · Airport Express 24 นาที", "en": "Taxi to the Taipa ferry terminal · Cotai Water Jet ~1 h → Sheung Wan · MTR 10 min → Causeway Bay · Airport Express 24 min" },
    "money": { "th": "เรือ HK$194 ×2 + ตั๋วเด็ก ×2 · ฝากกระเป๋า ~HK$50 · MTR/Airport Express · น้ำแข็งไส + มื้อกลางวัน", "en": "Ferry HK$194 ×2 + 2 child tickets · bag storage ~HK$50 · MTR/Airport Express · shaved ice + lunch" },

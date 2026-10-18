@@ -125,7 +125,17 @@ ok(s.trips[0].days[0].done_at > 0 && s.trips.some((t) => t.slug === 'chiang-mai-
   // Australia, imported from the owner's trip artifact: every day planned, nearby food, learn cards, quiz, pocket guide, Aussie words
   const au = (await state()).trips.find((t) => t.id === 'big-hop-2027'), a2 = au.days[1].plan;
   ok(au.days.every((d) => d.plan.plan.length >= 4) && a2.plan.length === 8 && a2.plan[3].t === '11:20' && /Bald Hill/.test(a2.plan[3].en) && a2.plan[3].note, 'AU: 16 timed days; day 2 has 8 steps with notes');
-  ok(/Waldegrave/.test(a2.stay.addr) && /google\.com\/maps/.test(a2.route) && a2.eat.length === 26 && a2.learn.length >= 3 && a2.quiz.length === 3 && a2.moving.en.includes('→'), 'AU day 2: stay + address, maps route, 26 places to eat, learn cards, 3 quiz questions, moving chain');
+  ok(/Waldegrave/.test(a2.stay.addr) && /google\.com\/maps/.test(a2.route) && a2.eat.length === 26 && a2.learn.length >= 3 && a2.quiz.length === 3 && a2.moving.en === '2 h 55 in 3 legs', 'AU day 2: stay + address, maps route, 26 places to eat, learn cards, 3 quiz questions, moving summary');
+  // nothing abbreviated: every leg with its directions link, the meal picks with what to order + a backup, the food along the route by stop
+  ok(a2.legs.length === 3 && a2.legs[0].from === 'Sydney Airport' && a2.legs[0].to === 'Bald Hill Lookout' && a2.legs[0].min === 50 && /maps\/dir\/.*travelmode=driving/.test(a2.legs[0].url), 'AU day 2: 3 drive legs, each with Google Maps directions');
+  ok(a2.picks.length === 3 && a2.picks[0].name === 'Fish Vibes' && /barramundi/.test(a2.picks[0].what.en) && a2.picks[0].alt.q.includes('Kiama') && a2.food.length === 6 && a2.food.every((f) => f.items.every((x) => x.q && x.what.en)), 'AU day 2: 3 meal picks (what + backup) and food by stop, every place with a maps query');
+  ok(au.days.slice(1, 15).every((d) => d.plan.picks.length >= 3 && d.plan.food.length >= 2) && au.days.every((d) => d.plan.legs.length && d.plan.legs.every((g) => g.url || /TG /.test(g.by.en))), 'AU: picks + food every touring day; every non-flight leg has directions');
+  ok([...au.days, ...hk.days].every((d) => d.planned.every((p) => p.q && p.q.length > 6)), 'every planned stop and meal in both books has a full Google Maps query');
+  ok(hk.days.every((d) => d.plan.legs.length && d.plan.legs.every((g) => /maps\/dir\//.test(g.url))) && /香港馬灣/.test(hk.info.stays[0].addr), 'HK: every day has legs with directions; stays carry the Chinese address for drivers');
+  const n = au.info;
+  ok(n.drive.legs.length === 28 && n.car.rows.length >= 8 && n.kit.rows.length === 8 && n.ifthen.rows.length === 11 && n.ifthen.mishap.rows.length === 9 && n.ifthen.carry.rows.length === 10 && n.ifthen.crowd.rows.length === 11 && n.ifthen.book.rows.length === 13 && n.visa.groups.length === 4 && n.bio.groups.length === 2 && n.eatRules.rules.length === 4,
+    'AU pocket guide complete: 28 drive legs, the van, kitchens, if-then + mishaps + who carries what + crowds + book-ahead, visa, biosecurity, eating rules');
+  ok(!/AUD 1,375|AUD 2,102/.test(JSON.stringify(n.car)), 'AU van: the rental price stays out');
   ok(au.info.emergency.some((e) => e.tel === '000' && e.main) && au.info.stays.length === 8 && au.info.pack.length === 4 && au.info.general.length === 4 && au.info.wild.length === 10 && au.info.prices.rows.length === 8, 'AU pocket guide: 000, 8 stays, packing, learn-in-the-car, animals, prices');
   ok(au.passport.lists[0].key === 'words' && au.passport.lists[0].said && au.passport.lists[0].groups[0].items.length === 8 && au.passport.lists[0].groups[0].items[0].speak.lang === 'en-AU', 'AU passport: "Say It Like an Aussie" words list (en-AU)');
   const all = JSON.stringify(await state());

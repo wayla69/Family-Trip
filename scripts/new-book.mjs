@@ -28,10 +28,12 @@ for (let i = 0, d = new Date(d0); d <= d1; i++, d = new Date(d.getTime() + 864e5
   days.push({
     index: i, date: d.toISOString().slice(0, 10), emoji: '📍', gradient: [args.accent || '#1F3A5F', '#D9E2EC'],
     title: TODO(`day ${i + 1} title`), sleep: TODO('where we sleep (or Home)'),
-    planned: [{ key: `TODO-stop-${i + 1}`, kind: 'place', en: 'TODO stop', th: 'TODO จุดแวะ' }, { key: `TODO-meal-${i + 1}`, kind: 'food', en: 'TODO meal', th: 'TODO มื้ออาหาร', meal: 'Lunch' }],
+    planned: [{ key: `TODO-stop-${i + 1}`, kind: 'place', q: 'TODO full maps query: name, street, town', en: 'TODO stop', th: 'TODO จุดแวะ' }, { key: `TODO-meal-${i + 1}`, kind: 'food', q: 'TODO full maps query', en: 'TODO meal', th: 'TODO มื้ออาหาร', meal: 'Lunch' }],
     wx: TODO('weather line'),
     moving: TODO('how we move today'), pick: TODO('local pick'), planB: TODO('plan B'), money: TODO('money today — prices only'),
     plan: [{ t: '09:00', th: 'TODO', en: 'TODO' }], tips: [],
+    legs: [{ from: 'TODO', to: 'TODO', by: TODO('how (taxi 20 min, MTR…)'), min: 0, url: 'https://www.google.com/maps/dir/?api=1&origin=TODO&destination=TODO&travelmode=transit' }],
+    picks: [], food: [],   // picks: [{meal{th,en}, name, what{th,en}, pr, q, alt{name,pr,q}}] · food: [{stop{th,en}, items[{name, tag, what, note, pr, q, pick?}]}]
     stay: { name: 'TODO stay', addr: 'TODO public address', q: 'TODO maps query' }, route: '', eat: [], learn: [], quiz: [],
   });
 }
