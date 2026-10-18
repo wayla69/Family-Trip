@@ -30,6 +30,8 @@ async function login(page) {
   await page.fill('#lcode', CODE); await page.fill('#lname', 'แม่'); await page.click('#lf button[type=submit]');
   await page.waitForSelector('.shelf');
 }
+// the page re-renders after each sync; measure again if the element was just swapped
+const boxOf = async (page, sel) => { for (let k = 0; k < 30; k++) { const b = await page.locator(sel).first().boundingBox().catch(() => null); if (b) return b; await page.waitForTimeout(100); } throw new Error('no box: ' + sel); };
 const apiState = (page) => page.evaluate(async () => (await fetch('/api/b/state')).json());
 const T = 'hk-macau-2026';
 
@@ -179,6 +181,7 @@ const T = 'hk-macau-2026';
   ok(await page.locator('.bdg').count() === 0 && await page.locator('.pp .call:not(.calm)').count() === 1 && await page.locator('.mission .tick.on').count() === 0, 'passport: Mika has her own ticks (none yet) and her own words');
   await page.click('.ppkids a[href="#/passport/mika/big-hop-2027"]'); await page.waitForSelector('#m15');
   ok(await page.locator('.mission').count() === 16 && (await page.textContent('.guides')).includes('Ranger Roo'), 'passport: Australia — Ranger Roo, Kiki and 16 missions');
+  await page.locator('.mapsec').screenshot({ path: path.join(OUT, 'phone-06b-map-au.png') });
   // kid mode: big buttons, locked until a grown-up holds the lock
   await page.evaluate(() => { window.__said = []; Object.defineProperty(window, 'speechSynthesis', { configurable: true, value: {
     speak(u) { window.__said.push(`${u.text}|${u.lang}`); }, cancel() {}, onvoiceschanged: null,
@@ -186,7 +189,7 @@ const T = 'hk-macau-2026';
   await page.clock.setFixedTime(new Date('2026-12-06T12:00:00+08:00'));   // day 2 of the Hong Kong trip (timers keep running)
   await page.goto(`${BASE}/#/passport/mimi/${T}`); await page.waitForSelector('.kidgo');
   await page.click('.kidgo'); await page.waitForSelector('.kidwrap .kidtiles');
-  ok(await page.locator('.kidtiles button').count() === 5 && await page.locator('nav.bar').count() === 0, 'kid mode on the trip: 5 big tiles (colour, draw, find, stamp, say), no tab bar');
+  ok(await page.locator('.kidtiles button').count() === 7 && await page.locator('nav.bar').count() === 0, 'kid mode on the trip: 7 big tiles (colour, draw, find, stamp, say, stickers, map), no tab bar');
   await page.goto(`${BASE}/#/t/${T}`); await page.waitForSelector('.kidwrap');
   ok(page.url().includes('#/kid/mimi'), 'kid mode is locked: other pages lead back to it');
   await page.click('.kiddays button[data-v="1"]');
@@ -214,6 +217,35 @@ const T = 'hk-macau-2026';
   ok(st.trips.find((x) => x.id === T).days[1].done_at && st.entries.some((e) => e.id === `${T}.tick.stamp.d1.mimi`), 'stamp ceremony: day 2 done + Mimi stamped it herself');
   ok(st.entries.some((e) => e.id === `${T}.field.colour.d1.mimi`) && st.entries.some((e) => e.id === `${T}.tick.words.dojeh.mimi`), 'server: colouring + word said saved');
   ok(await s.noHScroll(), 'kid mode fits the phone');
+  // stickers: earned from missions, tapped or dragged onto the sticker page, dragged off to peel back
+  await page.click('.kidback'); await page.click('.kidtiles button[data-v$="/stickers"]'); await page.waitForSelector('#stkboard');
+  const tray0 = await page.locator('#stktray .stk').count();
+  ok(tray0 >= 4 && await page.locator('#stktray .stk.img').count() >= 1, `stickers: ${tray0} earned (stamps, spotted things, words)`);
+  await page.locator('#stktray .stk').first().click();
+  await page.waitForSelector('#stkboard .stk.on');
+  await page.waitForFunction(() => queue.length === 0, null, { timeout: 10000 });
+  const bb = await boxOf(page, '#stkboard'), src = await boxOf(page, '#stktray .stk');
+  await page.mouse.move(src.x + src.width / 2, src.y + src.height / 2); await page.mouse.down();
+  await page.mouse.move(bb.x + bb.width * 0.3, bb.y + bb.height * 0.5, { steps: 6 }); await page.mouse.move(bb.x + bb.width * 0.25, bb.y + bb.height * 0.5, { steps: 2 }); await page.mouse.up();
+  await page.waitForFunction(() => document.querySelectorAll('#stkboard .stk.on').length === 2 && queue.length === 0, null, { timeout: 10000 });
+  const placed = await page.evaluate(() => JSON.parse(fieldVal(trip('hk-macau-2026'), 'stickers', 'mimi')));
+  ok(placed.length === 2 && Math.abs(placed[1][1] - 25) <= 2 && Math.abs(placed[1][2] - 50) <= 2 && await page.locator('#stktray .stk').count() === tray0 - 2, 'stickers: tap puts one on the page, drag drops one where the finger lets go');
+  await s.shot('11-kid-stickers', false);
+  const on = await boxOf(page, '#stkboard .stk.on');
+  await page.mouse.move(on.x + on.width / 2, on.y + on.height / 2); await page.mouse.down();
+  await page.mouse.move(src.x + 20, src.y + 20, { steps: 8 }); await page.mouse.up();
+  await page.waitForFunction(() => document.querySelectorAll('#stkboard .stk.on').length === 1);
+  ok(await page.locator('#stktray .stk').count() === tray0 - 1, 'stickers: dragging one off the page peels it back into the tray');
+  // living map: the kids stand on today's stop; tapping a pin walks them there
+  await page.click('.kidback'); await page.click('.kidtiles button[data-v$="/map"]'); await page.waitForSelector('.tmap .walkers img');
+  ok(await page.locator('.tmap .pin').count() === 7 && await page.locator('.tmap .pin.here[data-v="mawan"]').count() === 1 && await page.locator('.tmap .walkers img').count() === 2, 'map: 7 pins, Mimi and Mika at Ma Wan on day 2');
+  ok(await page.locator('.tmap .hop.done').count() === 3, 'map: the path walked so far is solid (airport → Ma Wan → Disneyland → Ma Wan)');
+  await page.click('.tmap .pin[data-v="taipa"]'); await page.waitForSelector('.tmap .pin.here[data-v="taipa"]');
+  ok((await page.textContent('.kidday small')).includes('5') && (await page.evaluate(() => window.__said)).some((x) => x.startsWith('Taipa Village')), 'map: tapping Taipa walks there (day 5) and says its name');
+  const wl = await boxOf(page, '.tmap .walkers'), pin = await boxOf(page, '.tmap .pin[data-v="taipa"]');
+  ok(Math.abs(wl.x + wl.width / 2 - (pin.x + pin.width / 2)) < 12, 'map: the walkers stand on the pin');
+  ok(await s.noHScroll(), 'map + stickers fit the phone');
+  await s.shot('12-kid-map', false);
   await page.click('.kidback'); await page.waitForSelector('.kidtiles');
   await s.shot('10-kid-home');
   const lock = await page.locator('#kidexit').boundingBox();
@@ -222,6 +254,7 @@ const T = 'hk-macau-2026';
   await page.mouse.down(); await page.waitForTimeout(1500); await page.mouse.up();
   await page.waitForSelector('.pp .advc');
   ok(page.url().includes('#/passport/mimi') && await page.locator('#m1 .colsvg.sm svg').count() === 1, 'holding the lock leaves kid mode; the passport shows the colouring');
+  ok(await page.locator('.mapsec .tmap .pin').count() === 7 && await page.locator('.stkpage #stkboard .stk.on').count() === 1 && await page.locator('.stkpage #stktray').count() === 0, 'passport: the map, and the sticker page (read-only) Mimi made');
   await page.goto(BASE + '/'); await page.waitForSelector('.shelf');
   ok(await page.locator('.ppmini .ppc').count() === 2, 'shelf: passport covers for both kids');
   ok(!(await page.evaluate(() => heroHtml() !== '')) || await page.locator('.hero .cast .who').count() === 2, 'shelf: Mimi and Mika stand in the hero as characters');
@@ -437,6 +470,9 @@ const T = 'hk-macau-2026';
   await page.keyboard.press('Escape');
   await page.click('.kidtiles button[data-v$="/draw"]'); await page.waitForSelector('#kidcanvas');
   await s.shot('03-draw', false);
+  await page.click('.kidback'); await page.click('.kidtiles button[data-v$="/map"]'); await page.waitForSelector('.tmap .walkers');
+  ok(await s.noHScroll(), 'map on a wide screen: no horizontal scroll');
+  await s.shot('04-map', false);
   ok(s.errs.length === 0, 'kid wide: no console errors ' + s.errs.join(' | '));
   await s.ctx.close();
 }

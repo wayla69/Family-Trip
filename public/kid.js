@@ -95,7 +95,7 @@ let pen = PEN[1];
 const pad = { key: '', strokes: [], cur: null };   // kept while the page re-renders; cleared once saved
 const isDrawing = (m) => /^dr-/.test(m.id);
 const drawingsOf = (t, kid, day) => mediaOf(t.id, day).filter((m) => m.id.startsWith(`dr-${kid}-`));
-const drawBusy = () => !!pad.cur;   // safeRender waits while a finger is on the canvas
+const drawBusy = () => !!pad.cur || (typeof stk !== 'undefined' && !!stk);   // safeRender waits while a finger is drawing or dragging a sticker
 function paint(ctx, st, from) {
   ctx.strokeStyle = st.c; ctx.fillStyle = st.c; ctx.lineWidth = st.w; ctx.lineCap = 'round'; ctx.lineJoin = 'round';
   const p = st.pts;
@@ -226,6 +226,131 @@ const doorOpen = (t, n, N) => dayNow(t) >= 0 || daysUntil(t) <= N - n;
 const doorIn = (t, n, N) => daysUntil(t) - (N - n);
 let kidDoor = null;
 
+/* ---------- living map: Mimi and Mika walk the route, day by day (seed passport.map, hand-placed pins) ---------- */
+const MAP_W = 400, MAP_H = 300;
+let mapFrom = null;   // where the walkers start on the next draw (they walk to the day's stop)
+let kidEnter = false;
+let mapAt = null;   // the stop a kid tapped (several stops can share a day)   // this render opens a new kid page (set by render())
+function mapModel(t) {
+  const m = (t.passport || {}).map; if (!m || !m.stops) return null;
+  const at = Object.fromEntries(m.stops.map((s) => [s.k, s]));
+  const seq = [];   // the stops in the order we reach them; staying put is one stop
+  (m.days || []).forEach((ks, d) => ks.forEach((k) => { if (at[k] && (!seq.length || seq[seq.length - 1].k !== k)) seq.push({ k, day: d }); }));
+  const P = (k) => [at[k].x * MAP_W / 100, at[k].y * MAP_H / 100];
+  const hops = seq.slice(1).map((v, j) => {   // gentle arcs, alternating sides, so out-and-back trips show two paths
+    const a = P(seq[j].k), b = P(v.k), bend = (j % 2 ? 1 : -1) * 0.22;
+    const cx = (a[0] + b[0]) / 2 - (b[1] - a[1]) * bend, cy = (a[1] + b[1]) / 2 + (b[0] - a[0]) * bend;
+    return { day: v.day, d: `M${a[0]},${a[1]} Q${cx.toFixed(1)},${cy.toFixed(1)} ${b[0]},${b[1]}` };
+  });
+  return { m, at, seq, hops };
+}
+// index into seq where the kids are at the end of day i
+const mapPos = (mm, i) => { let p = 0; mm.seq.forEach((v, j) => { if (v.day <= i) p = j; }); return p; };
+// the day shown on a passport map: today on the trip, the last day after it, the first before it
+const mapDayOf = (t) => { const n = dayNow(t); return n >= 0 ? n : tripOver(t) ? t.days.length - 1 : 0; };
+function mapHtml(t, day, kids, at) {
+  const mm = mapModel(t); if (!mm) return '';
+  const pos = at !== undefined && at !== null && mm.seq[at] && mm.seq[at].day === day ? at : mapPos(mm, day), here = mm.seq[pos].k, been = new Set(mm.seq.slice(0, pos + 1).map((v) => v.k));
+  const s0 = mm.at[here];
+  const waves = Array.from({ length: 14 }, (_, j) => `<text class="wave" x="${(j * 83) % 380 + 10}" y="${(j * 47) % 270 + 20}">〰</text>`).join('');
+  return `<div class="tmap" data-t="${esc(t.id)}" data-pos="${pos}">
+<svg viewBox="0 0 ${MAP_W} ${MAP_H}" role="img" aria-label="${esc(T(mm.m.title))}">
+<rect class="sea" x="2" y="2" width="${MAP_W - 4}" height="${MAP_H - 4}" rx="18"/>${waves}
+<text class="sealbl" x="${MAP_W - 14}" y="${MAP_H - 12}">${esc(T(mm.m.sea))}</text>
+<g class="compass" transform="translate(30,40)"><circle r="15"/><path d="M0,-12 L4,0 L0,12 L-4,0Z"/><text y="-18">N</text></g>
+${mm.hops.map((h, j) => `<path class="hop${j < pos ? ' done' : ''}" id="hop${j}" d="${h.d}"/>`).join('')}
+${mm.m.stops.filter((s) => mm.seq.some((v) => v.k === s.k)).map((s) => `<g class="pin${been.has(s.k) ? ' on' : ''}${s.k === here ? ' here' : ''}" data-a="mappin" data-t="${esc(t.id)}" data-v="${esc(s.k)}" data-say="${esc(T(s))}" transform="translate(${s.x * MAP_W / 100},${s.y * MAP_H / 100})" role="button" aria-label="${esc(T(s))}"><circle r="17"/><text class="e" y="6">${esc(s.e)}</text><text class="lbl" y="31">${esc(T(s))}</text></g>`).join('')}
+</svg>
+<div class="walkers" style="left:${s0.x}%;top:${s0.y}%" aria-hidden="true">${kids.filter((k) => kidArt(k)).map((k) => `<img class="${esc(k)}" src="${kidArt(k, true)}" alt="">`).join('')}</div></div>`;
+}
+// walk the kids from mapFrom to the stop of this map (one hop after another, along the drawn paths)
+function hydrateMap(root) {
+  const box = $('.tmap', root || document); if (!box) return;
+  const to = +box.dataset.pos, from = mapFrom; mapFrom = null;
+  const w = $('.walkers', box), mm = mapModel(trip(box.dataset.t));
+  if (!w || !mm || from === null || from === to || from >= mm.seq.length || matchMedia('(prefers-reduced-motion: reduce)').matches) return;
+  const put = (x, y) => { w.style.left = `${(x / MAP_W) * 100}%`; w.style.top = `${(y / MAP_H) * 100}%`; };
+  const steps = [], dir = to > from ? 1 : -1;
+  for (let j = from; j !== to; j += dir) steps.push(dir > 0 ? j : j - 1);   // hop j goes from seq[j] to seq[j+1]
+  const s0 = mm.at[mm.seq[from].k]; put(s0.x * MAP_W / 100, s0.y * MAP_H / 100);
+  w.classList.add('walking');
+  let n = 0, t0 = 0;
+  const tick = (now) => {
+    if (!w.isConnected) return;
+    const path = $(`#hop${steps[n]}`, box); if (!path) { w.classList.remove('walking'); return; }
+    t0 = t0 || now;
+    const k = Math.min(1, (now - t0) / 900), len = path.getTotalLength(), pt = path.getPointAtLength(len * (dir > 0 ? k : 1 - k));
+    put(pt.x, pt.y);
+    if (k < 1) return requestAnimationFrame(tick);
+    n++; t0 = 0;
+    if (n < steps.length) requestAnimationFrame(tick); else { w.classList.remove('walking'); beep('pop'); }
+  };
+  requestAnimationFrame(tick);
+}
+
+/* ---------- stickers: every mission ticked earns one; drag them onto your sticker page ---------- */
+function stickerSet(t, kid) {
+  const pp = t.passport || {}, out = [], seen = new Set();
+  const add = (k, e, img, got) => { if (seen.has(k) || (!e && !img)) return; seen.add(k); out.push({ k, e, img, got: !!got }); };
+  t.days.forEach((_, i) => add(`stamp.d${i}`, '', dayArt(t, i), dayStamped(t, i)));
+  (pp.days || []).forEach((pd, i) => (pd.spot || []).forEach((s) => add(`spot.d${i}.${s.k}`, s.e, '', ticked(t, `spot.d${i}.${s.k}`, kid))));
+  (pp.lists || []).forEach((l) => listItems(l).forEach((it) => { const x = ticked(t, `${l.key}.${it.k}`, kid); add(`${l.key}.${it.k}`, it.e, '', x && x.text !== 'yuck'); }));
+  ((pp.countdown || {}).doors || []).forEach((d, n) => add(`cd.${n + 1}`, d.e, '', ticked(t, `cd.${n + 1}`, kid)));
+  entriesOf(t.id).filter((e) => e.kind === 'first' && e.child === kid && e.first_key !== 'custom').forEach((e) => add(`first.${e.first_key}`, firstLabel(t, e.first_key).e, '', true));
+  return out;
+}
+const STK_MAX = 120;
+const stickersPlaced = (t, kid) => { try { const a = JSON.parse(fieldVal(t, 'stickers', kid) || '[]'); return Array.isArray(a) ? a : []; } catch (_) { return []; } };
+const stkFace = (s) => (s.img ? `<img src="${esc(s.img)}" alt="" draggable="false">` : esc(s.e));
+function stickerBoard(t, kid, edit) {
+  const set = stickerSet(t, kid), by = Object.fromEntries(set.map((s) => [s.k, s]));
+  const placed = stickersPlaced(t, kid).filter((p) => by[p[0]] && by[p[0]].got), used = new Set(placed.map((p) => p[0]));
+  const tray = set.filter((s) => s.got && !used.has(s.k)), got = set.filter((s) => s.got).length;
+  const st = (t.passport || {}).style || {};
+  return `<div class="stkboard${edit ? ' edit' : ''}" id="stkboard" data-t="${esc(t.id)}" data-k="${esc(kid)}" style="--bgA:${esc(st.bgA || '#FFF6E5')};--bgB:${esc(st.bgB || '#E8F4FF')}">
+<span class="stkhd">⭐ ${esc(kidName(kid))} · ${got}/${set.length}</span>
+${placed.map((p, i) => `<span class="stk on${by[p[0]].img ? ' img' : ''}" data-i="${i}" style="left:${+p[1]}%;top:${+p[2]}%;--r:${+p[3] || 0}deg">${stkFace(by[p[0]])}</span>`).join('')}
+${!placed.length ? `<p class="stkempty">${edit ? L('ลากสติกเกอร์มาแปะตรงนี้!', 'Drag your stickers here!') : L('ยังไม่ได้แปะสติกเกอร์', 'No stickers yet')}</p>` : ''}</div>
+${edit ? `<div class="stktray" id="stktray">${tray.map((s) => `<button class="stk${s.img ? ' img' : ''}" data-k="${esc(s.k)}" aria-label="${L('สติกเกอร์', 'Sticker')}">${stkFace(s)}</button>`).join('')
+    || `<p class="label">${got ? L('แปะครบทุกอันแล้ว! 🎉', 'All your stickers are on the page! 🎉') : L('ทำภารกิจ ติ๊กของที่เจอ แล้วจะได้สติกเกอร์', 'Do missions and tick what you spot to earn stickers')}</p>`}</div>` : ''}`;
+}
+function saveStickers(t, kid, arr) {
+  putEntry(t, { day: null, kind: 'field', child: kid, first_key: 'stickers', text: JSON.stringify(arr.slice(-STK_MAX)) }, `${t.id}.field.stickers.${kid}`);
+}
+let stk = null;   // a sticker being dragged
+document.addEventListener('pointerdown', (e) => {
+  const el = e.target.closest && e.target.closest('.stktray .stk, .stkboard.edit .stk'); if (!el || !isEditor()) return;
+  e.preventDefault();
+  stk = { el, x0: e.clientX, y0: e.clientY, ghost: null, id: e.pointerId };
+});
+document.addEventListener('pointermove', (e) => {
+  if (!stk || e.pointerId !== stk.id) return;
+  if (!stk.ghost && Math.hypot(e.clientX - stk.x0, e.clientY - stk.y0) < 8) return;
+  if (!stk.ghost) { stk.ghost = document.createElement('div'); stk.ghost.className = 'stkghost' + (stk.el.classList.contains('img') ? ' img' : ''); stk.ghost.innerHTML = stk.el.innerHTML; document.body.appendChild(stk.ghost); stk.el.classList.add('lifted'); beep('tap'); }
+  stk.ghost.style.left = e.clientX + 'px'; stk.ghost.style.top = e.clientY + 'px';
+});
+['pointerup', 'pointercancel'].forEach((ev) => document.addEventListener(ev, (e) => {
+  if (!stk || e.pointerId !== stk.id) return;
+  const s = stk; stk = null;
+  if (s.ghost) s.ghost.remove();
+  s.el.classList.remove('lifted');
+  const board = $('#stkboard'); if (!board || ev === 'pointercancel') return;
+  const t = trip(board.dataset.t), kid = board.dataset.k, arr = stickersPlaced(t, kid), r = board.getBoundingClientRect();
+  const inside = e.clientX >= r.left && e.clientX <= r.right && e.clientY >= r.top && e.clientY <= r.bottom;
+  const x = Math.round(Math.min(94, Math.max(6, ((e.clientX - r.left) / r.width) * 100))), y = Math.round(Math.min(92, Math.max(10, ((e.clientY - r.top) / r.height) * 100)));
+  const rot = Math.round(Math.random() * 24 - 12);
+  if (s.el.dataset.k) {   // from the tray: drop it on the page, or a tap puts it somewhere
+    if (s.ghost && !inside) return;
+    arr.push(s.ghost ? [s.el.dataset.k, x, y, rot] : [s.el.dataset.k, Math.round(10 + Math.random() * 80), Math.round(16 + Math.random() * 72), rot]);
+    beep('pop'); burst(s.ghost ? { getBoundingClientRect: () => ({ left: e.clientX, top: e.clientY, width: 0, height: 0 }) } : s.el, ['⭐', '✨']);
+  } else {   // on the page: move it, or drag it off to peel it back into the tray
+    const i = +s.el.dataset.i; if (!arr[i] || !s.ghost) { s.el.classList.remove('wig'); void s.el.offsetWidth; s.el.classList.add('wig'); beep('tap'); return; }
+    if (inside) { arr[i][1] = x; arr[i][2] = y; beep('pop'); } else { arr.splice(i, 1); beep('tap'); }
+  }
+  saveStickers(t, kid, arr);
+}));
+const stkBusy = () => !!stk;
+
 /* ---------- kid mode views ---------- */
 let kidDay = null;
 function kidTrip(kid) { const mine = kidTrips(kid); const c = curTrip(); return mine.includes(c) ? c : mine[0]; }
@@ -257,7 +382,7 @@ function viewKid(p) {
     const tiles = (pre
       ? [cd && ['count', '🎁', L('เซอร์ไพรส์', 'Surprise')], cd && cd.pack && ['pack', '🧳', L('จัดกระเป๋า', 'Pack')], ['colour', '🎨', L('ระบายสี', 'Colour')], ['draw', '🖍️', L('วาดรูป', 'Draw')]]
       : [['colour', '🎨', L('ระบายสี', 'Colour')], ['draw', '🖍️', L('วาดรูป', 'Draw')], ['spot', '🔍', L('หาของ', 'Find it')], ['stamp', '🛂', L('ปั๊มตรา', 'Stamp')]])
-      .concat(words ? [['words', '🗣️', L('พูดตาม', 'Say it')]] : []).filter(Boolean);
+      .concat(words ? [['words', '🗣️', L('พูดตาม', 'Say it')]] : [], [['stickers', '⭐', L('สติกเกอร์', 'Stickers')]], pp.map ? [['map', '🗺️', L('แผนที่', 'Map')]] : []).filter(Boolean);
     const until = daysUntil(t);
     body = `${fresh.length ? `<button class="kidhearts" data-a="kidnav" data-v="#/kid/${esc(kid)}/hearts" data-say="${esc(heartLine(fresh[0], kid))}"><span class="float" aria-hidden="true">💗</span><span class="e">${esc(fresh[0].emoji)}</span><b>${esc(L(`${fresh[0].from} ส่งหัวใจให้หนู!`, `${fresh[0].from} sent you a heart!`))}</b>${fresh.length > 1 ? `<small>+${fresh.length - 1}</small>` : ''}</button>` : ''}
 <div class="kidhello">${kidArt(kid) ? `<img src="${kidArt(kid, true)}" alt="">` : ''}<p>${pre ? L(`อีก <b>${until}</b> วันไป${esc(T(t.title).split(' · ')[0])}!`, `<b>${until}</b> ${until === 1 ? 'sleep' : 'sleeps'} to ${esc(T(t.title).split(' · ')[0])}!`) : L(`สวัสดี ${esc(name)}!`, `Hi ${esc(name)}!`)}</p></div>
@@ -305,6 +430,12 @@ ${door.art !== undefined ? artImg(t, Math.min(door.art, t.days.length - 1), 'big
     const items = cd.pack.items, n = items.filter((x) => ticked(t, `pack.${x.k}`, kid)).length;
     body = `<div class="kidguide">${guideImg(1)}<p>${n >= items.length ? L('กระเป๋าพร้อมแล้ว! เก่งมาก 🎉', 'Bag packed! Brilliant 🎉') : esc(fill(T(cd.pack.title)))}</p></div>
 <div class="kidspots">${items.map((s) => { const on = ticked(t, `pack.${s.k}`, kid); return `<button class="${on ? 'on' : ''}" data-a="kidspot" data-t="${esc(t.id)}" data-d="" data-k="${esc(kid)}" data-v="pack.${esc(s.k)}" data-say="${esc(T(s))}" aria-pressed="${!!on}"><span>${esc(s.e)}</span><b>${esc(T(s))}</b>${on ? '<i>✓</i>' : ''}</button>`; }).join('')}</div>`;
+  } else if (view === 'map' && pp.map) {
+    if (mapFrom === null && kidEnter && !pre && i > 0) mapFrom = mapPos(mapModel(t), Math.max(0, i - 1));   // walk in from yesterday's stop
+    body = `<div class="kidguide">${guideImg(0)}<p>${L('แตะหมุด แล้วเราจะเดินไปด้วยกัน!', "Tap a pin and we'll walk there!")}</p></div>
+${mapHtml(t, i, [kid].concat((t.theme.children || []).map((c) => c.slug).filter((s) => s !== kid)), mapAt !== null ? mapAt : pre ? 0 : null)}`;
+  } else if (view === 'stickers') {
+    body = `<div class="kidguide">${guideImg(1)}<p>${L('ลากสติกเกอร์ไปแปะได้เลย!', 'Drag your stickers onto the page!')}</p></div>${stickerBoard(t, kid, true)}`;
   } else if (view === 'hearts') {
     const hs = heartsFor(kid), seen = ls('hseen_' + kid) || 0;
     if (hs.length) ls('hseen_' + kid, Math.max(seen, hs[0].at));
@@ -319,7 +450,7 @@ Object.assign(A, {
   kidmode(b) { ls('kidmode', b.dataset.v || 'pick'); nav(b.dataset.v ? `#/kid/${b.dataset.v}` : '#/kid'); },
   kidpick(b) { beep('pop'); ls('kidmode', b.dataset.v); kidDay = null; nav(`#/kid/${b.dataset.v}`); },
   kidnav(b) { beep('tap'); kidDoor = null; nav(b.dataset.v); if (b.dataset.say) sayUi(b.dataset.say); },
-  kidday(b) { beep('pop'); kidDay = +b.dataset.v; render(); },
+  kidday(b) { beep('pop'); kidDay = +b.dataset.v; mapAt = null; render(); },
   kidcolor(b) { beep('tap'); kidColour = b.dataset.v; $$('.palette button').forEach((x) => x.setAttribute('aria-pressed', x.dataset.v === kidColour)); },
   kidcolourdone(b) { beep('chime'); burst(b, ['🎨', '✨', '⭐']); setTimeout(() => nav(b.dataset.v), 600); },
   kidspot(b) {
@@ -375,6 +506,14 @@ Object.assign(A, {
     sayUi(String(T(cd.doors[n])).replace(/\{name\}/g, kidName(kid)));
   },
   kiddoorclose() { beep('pop'); kidDoor = null; render(); },
+  mappin(b) {
+    const t = trip(b.dataset.t), mm = mapModel(t); if (!mm) return;
+    beep('pop'); sayUi(b.dataset.say);
+    if (!document.body.classList.contains('kidmode')) return;   // the passport map only says the name
+    const box = $('.tmap'), cur = box ? +box.dataset.pos : mapPos(mm, kidDayOf(t)), j = mm.seq.reduce((best, v, n) => (v.k === b.dataset.v && (best < 0 || Math.abs(n - cur) < Math.abs(best - cur)) ? n : best), -1);   // the visit nearest to where we stand
+    if (j < 0 || j === cur) return;
+    mapFrom = cur; mapAt = j; kidDay = mm.seq[j].day; render();
+  },
   kidheart(b) { beep('pop'); burst(b, ['💗', '💕', '✨']); sayUi(b.dataset.v); },
   // bedtime story player (kid mode and the book)
   bedtime(b) { const e = S.entries.find((x) => x.id === b.dataset.v); if (e) openBedtime(trip(e.trip), e); },
