@@ -652,7 +652,7 @@ const T = 'hk-macau-2026';
   await page.click('.sheet [data-a="closesheet"]'); await page.waitForSelector('#sheet', { state: 'hidden' });
   await page.goto(`${BASE}/#/t/big-hop-2027/plan`); await page.waitForSelector('.itin > li.now');
   const now = page.locator('.itin > li.now');
-  ok(await now.locator('.stops a.maplink[target=_blank]').count() === 5 && await now.locator('.legs a[href*="/maps/dir/"]').count() === 3 && await now.locator('.picks .pk').count() === 3, "AU today: every stop opens Maps, 3 legs with directions, 3 meal picks");
+  ok(await now.locator('.stops a.maplink[target=_blank]').count() === 6 && await now.locator('.legs a[href*="/maps/dir/"]').count() === 3 && await now.locator('.picks .pk').count() === 3, "AU today: every stop opens Maps, 3 legs with directions, 3 meal picks");
   const pk = await now.locator('.picks .pk').first().evaluate((e) => ({ w: e.getBoundingClientRect().width, flex: getComputedStyle(e).display }));
   ok(pk.w > 250 && pk.flex !== 'flex', `itinerary: a meal pick card is full width on the phone (${Math.round(pk.w)} px), not squeezed into columns`);
   const hrefs = await page.$$eval('a[href*="google.com/maps"]', (as) => as.map((a) => a.href));

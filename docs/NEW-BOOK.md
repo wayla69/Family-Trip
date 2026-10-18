@@ -9,7 +9,8 @@
 - รูปเด็กใหม่ถ้าอายุเปลี่ยนมาก (วาดเป็นตัวการ์ตูนใหม่ รูปจริงไม่เข้า repo)
 
 ## สิ่งที่ห้ามเข้าแอป (repo สาธารณะ)
-เลขจอง/PNR/เลขยืนยันที่พัก · เลขพาสปอร์ต วันเกิด ชื่อเต็ม · ค่าใช้จ่ายจริง · เบอร์มือถือส่วนตัว · รูปถ่ายจริง
+เลขจอง/PNR/เลขยืนยันที่พัก · เลขพาสปอร์ต วันเกิด ชื่อเต็ม · **เงินบาททุกจำนวน** (รวมส่วนแบ่งต่อคน) · เบอร์มือถือส่วนตัว · รูปถ่ายจริง
+→ เงินสกุลท้องถิ่น (AUD/HKD/MOP) ใส่ได้ทั้งงบประมาณการและยอดที่จ่ายแล้ว — เจ้าของตัดสิน 18 ต.ค. 2026 (บทงบ → `info.more` หน้า prep เป็นตาราง)
 → เทสต์ `test/bookshelf.mjs` ("privacy: no booking refs…") ต้องเพิ่ม pattern ของเล่มใหม่ (เช่น ref ตั๋วใหม่) ทุกครั้ง
 
 ## ขั้นตอน
@@ -20,7 +21,7 @@
      - `legs` ทุกช่วงเดินทาง พร้อมลิงก์นำทาง (`maps/dir/?api=1&origin=…&destination=…&travelmode=driving|transit|walking`) — ช่วงบินไม่ต้องมีลิงก์
      - `picks` ร้านแนะนำต่อมื้อ (`meal, name, what, pr, q, alt{name,pr,q}`) · `food` ร้านตามจุดที่ผ่าน (`stop, items[{name,tag,what,note,pr,q,pick?}]`) · `eat` ร้านอื่นใกล้ๆ (ซ้ำกับสองอันแรกได้ แอปตัดซ้ำให้)
      - **ห้ามย่อ**: ใส่ข้อความจากคู่มือเต็มๆ ทุกบรรทัด ทั้งไทยและอังกฤษ
-   - `info`: `stays[]` (ชื่อ+ที่อยู่สาธารณะ — ที่อยู่ภาษาท้องถิ่นต่อท้ายด้วย ` · ` ให้คนขับอ่าน) · `emergency[]` · `lost` · `prices` · `guide[]` · `pack[]` · `general[]` · `wild[]` · บทที่ไม่เข้าช่องไหน → `more[]` (ดูตาราง format) · ถ้าคู่มือมี: `drive` (ตารางช่วงขับ) · `car` (รถเช่า ไม่ใส่ราคา) · `kit` (ครัว/ซักผ้าแต่ละที่พัก) · `ifthen` (ถ้า…ก็… + `mishap` `carry` `crowd` `book`) · `visa` · `bio` (ด่านกักกันโรค) · `eatRules`
+   - `info`: `stays[]` (ชื่อ+ที่อยู่สาธารณะ — ที่อยู่ภาษาท้องถิ่นต่อท้ายด้วย ` · ` ให้คนขับอ่าน) · `emergency[]` · `lost` · `prices` · `guide[]` · `pack[]` · `general[]` · `wild[]` · บทที่ไม่เข้าช่องไหน → `more[]` (ดูตาราง format) · ถ้าคู่มือมี: `drive` (ตารางช่วงขับ) · `car` (รถเช่า ราคาเป็นสกุลท้องถิ่นได้ ไม่ใส่เงินบาท) · `kit` (ครัว/ซักผ้าแต่ละที่พัก) · `ifthen` (ถ้า…ก็… + `mishap` `carry` `crowd` `book`) · `visa` · `bio` (ด่านกักกันโรค) · `eatRules`
    - `info.restaurants` = บท "Where to eat" ของคู่มือ ครบทุกร้าน: `{ lede, kinds[3]: ร้านอาหาร/คาเฟ่และของหวาน/ทำกินเอง, groups[{ area, kind, items[{ name, where, tag, what, note, pr, q, pick?[วัน·มื้อ], tour? }] }] }` → หน้า **🍽️ ร้านอาหาร** (`#/t/<slug>/eat` ค้นหา/กรองได้) · ถ้าไม่มี แอปรวมร้านจาก `picks/food/eat/planned` ของแต่ละวันให้เอง
    - `passport`: `code` · `guides[2]` (ตัวการ์ตูนไกด์ 2 ตัว) · `style` (สีจากเล่มพิมพ์) · `greeting` · `days[]` (`title stamp facts spot[4] acc tint`) · `lists[]` (`said` คำศัพท์พร้อม `speak{text,lang}` · อาหาร `yum` หรือ `stars` · `master` + `certificate`) · `pins` · `declaration` (ถ้ามี) · `certificate` · `colour` · `countdown{doors[14],pack}` · `map{stops,days}`
    - `theme`: token ตาม `docs/DESIGN.md` + `art` + `places`
