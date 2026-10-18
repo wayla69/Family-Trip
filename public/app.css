@@ -982,3 +982,50 @@ button.tile{width:100%;appearance:none;-webkit-appearance:none}
 .pocket .call{border-left:3px solid #C9A24A;border-radius:0 6px 6px 0;font-size:14px}
 .pocket .prices th{text-transform:uppercase;letter-spacing:.05em;font-size:11px;font-weight:600}
 .pocket .tips li{margin:4px 0;font-size:14px}
+
+/* ===== brighter (18 Oct 2026, owner): every topic has its own colour; what matters most is the loudest thing on the page ===== */
+:root{--hot:#D6362A;--sun:#E59A1C;--sky:#2B86D1;--leaf:#2B9A62;--grape:#7C4DDB;--rose:#E0457B;--tealc:#0F9C9A;--slate:#5B6B7C}
+@media (prefers-color-scheme:dark){:root:not([data-theme=light]){--hot:#FF6B5E;--sun:#F5B84A;--sky:#5AAEF0;--leaf:#4CC58A;--grape:#A585F0;--rose:#F57BA4;--tealc:#3CC9C6;--slate:#9AA8B8}}
+:root[data-theme=dark]{--hot:#FF6B5E;--sun:#F5B84A;--sky:#5AAEF0;--leaf:#4CC58A;--grape:#A585F0;--rose:#F57BA4;--tealc:#3CC9C6;--slate:#9AA8B8}
+/* menu tiles: a tint and a coloured cap per topic, the emoji on a colour disc */
+.tile{--tc:var(--accent);background:color-mix(in srgb,var(--tc) 11%,var(--paper));border:1px solid color-mix(in srgb,var(--tc) 22%,transparent);border-top:4px solid var(--tc)}
+.tile .e{display:grid;place-items:center;width:46px;height:46px;border-radius:50%;background:color-mix(in srgb,var(--tc) 22%,var(--paper));font-size:26px}
+.tile b{color:color-mix(in srgb,var(--tc) 55%,var(--ink))}
+.tile.t-log{--tc:var(--sun)}.tile.t-book{--tc:var(--grape)}.tile.t-eat{--tc:#E8702A}.tile.t-plan{--tc:var(--sky)}.tile.t-stays{--tc:#4F63C9}
+.tile.t-sos{--tc:var(--hot)}.tile.t-prep{--tc:var(--leaf)}.tile.t-learn{--tc:var(--tealc)}.tile.t-firsts{--tc:var(--sun)}.tile.t-hearts{--tc:var(--rose)}.tile.t-offline{--tc:var(--slate)}
+.tile[href="#/passport"]{--tc:#8E2453}.tile[href="#/notebook"]{--tc:#A0662A}.tile.kid{--tc:#F08A24}.tile.shelf{--tc:var(--slate);background:transparent}
+.tile.today{--tc:var(--accent)}.tile.today.hi{background:var(--accent);border-color:var(--accent)}.tile.today.hi .e{background:rgba(255,255,255,.18)}.tile.today.hi b{color:#fff}
+.tile.t-sos small{color:var(--hot);font-weight:700}
+/* topic pages: the page's colour on its title, section bars and sub-heads */
+.tp{--tc:var(--accent)}.tp-stays{--tc:#4F63C9}.tp-sos{--tc:var(--hot)}.tp-prep{--tc:var(--leaf)}.tp-learn{--tc:var(--tealc)}.eatpage{--tc:#E8702A}
+.tp>h1.h2{color:color-mix(in srgb,var(--tc) 70%,var(--ink));padding-bottom:6px;border-bottom:3px solid var(--tc);display:inline-block}
+.tp .pocket details.pg>summary{border-left:5px solid var(--tc);padding-left:10px}
+.tp .pocket h5{color:color-mix(in srgb,var(--tc) 80%,var(--ink))}
+.eatpage .eatg h3{color:color-mix(in srgb,var(--tc) 75%,var(--ink));border-bottom:2px solid color-mix(in srgb,var(--tc) 45%,transparent)}
+/* callouts: a strong left rule in their colour, a clearer tint */
+.call{border-left:4px solid var(--cc,var(--rule))}
+.call.pick{--cc:var(--sun);background:color-mix(in srgb,var(--sun) 15%,var(--paper))}
+.call.warn{--cc:var(--hot);background:color-mix(in srgb,var(--hot) 10%,var(--paper))}
+.call.info{--cc:var(--sky);background:color-mix(in srgb,var(--sky) 11%,var(--paper))}
+.call.calm{--cc:var(--leaf);background:color-mix(in srgb,var(--leaf) 11%,var(--paper))}
+.call.pick .lbl{color:color-mix(in srgb,var(--sun) 75%,var(--ink))}.call.warn .lbl{color:var(--hot)}
+.pocket .call{border-left-width:4px}
+/* the day: money and the stay stand out */
+p.money{background:color-mix(in srgb,var(--leaf) 12%,var(--paper));border-radius:8px;padding:8px 12px;border-left:4px solid var(--leaf)}
+p.money b{color:color-mix(in srgb,var(--leaf) 70%,var(--ink))}
+.dayplan .stay b{color:#4F63C9}
+.badge{background:var(--hot)}
+.emeta .pr{color:color-mix(in srgb,var(--leaf) 70%,var(--ink));background:color-mix(in srgb,var(--leaf) 13%,var(--paper))}
+/* emergency card (manual Part 12): dashed card, the main number huge and red, every night's address, the lost-child line */
+.ecard{border:2px dashed color-mix(in srgb,var(--hot) 55%,var(--rule));border-radius:12px;padding:14px 16px 12px;background:color-mix(in srgb,var(--hot) 4%,var(--paper))}
+.ecard h4{font-family:var(--display);font-size:clamp(17px,2.2vw,21px);margin:0 0 6px;color:var(--ink)}
+.ecard .emerg li span{color:var(--muted)}
+.ecard .emerg li.main{background:color-mix(in srgb,var(--hot) 12%,var(--paper));border-radius:8px;padding:10px 12px;border-bottom:0;margin-bottom:4px}
+.ecard .emerg li.main span{color:var(--hot);font-weight:700}.ecard .emerg li.main b a{font-size:30px;font-weight:800;color:var(--hot)}
+.ecard h5{margin:14px 0 4px}
+.enights{list-style:none;margin:0;padding:0;display:grid;grid-template-columns:repeat(auto-fill,minmax(min(100%,300px),1fr));column-gap:28px}
+.enights li{display:grid;grid-template-columns:86px 1fr;gap:8px;padding:7px 0;border-bottom:1px solid var(--rule);font-size:13px}
+.enights li b{color:color-mix(in srgb,var(--tc,var(--accent)) 75%,var(--ink));font-size:12px}
+.enights li.now{background:color-mix(in srgb,var(--sun) 16%,var(--paper));border-radius:6px;padding:7px 8px}
+.elost{margin:12px 0 0;color:var(--hot);font-weight:700;font-size:14px}
+.stayc.tonight{border-top-color:var(--hot)}.stayc.tonight h4{font-size:22px}
