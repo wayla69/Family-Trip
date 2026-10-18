@@ -286,6 +286,47 @@ const T = 'hk-macau-2026';
   await page.evaluate(() => flush());   // a second flush must not duplicate
   st = await apiState(page);
   ok(st.entries.filter((e) => e.text === 'ออฟไลน์บนสะพาน').length === 1 && st.media.filter((m) => m.day === 2).length === 1, 'reconnect: queue drained once, no duplicates');
+
+  // keep the book on the phone: the service worker cache must then hold the shell, all art, every thumbnail and the favourites;
+  // the page keeps the server state in IndexedDB. (Playwright's offline switch does not reach the service worker, so the
+  // cache is checked directly and the no-network paths are exercised on the page: cached state, notice, photo fallback.)
+  await page.goto(`${BASE}/#/t/${T}`); await page.waitForSelector('#offl');
+  await page.waitForFunction(() => navigator.serviceWorker && navigator.serviceWorker.controller, null, { timeout: 15000 });
+  await page.click('#offl [data-a="offline"]');
+  await page.waitForFunction((tid) => !!ls('offline_' + tid), T, { timeout: 30000 });
+  ok((await page.textContent('#offl')).includes('อยู่ในเครื่องแล้ว') && await page.evaluate(() => idb.get('state').then((s) => !!(s && s.trips.length && s.syncedAt))), 'offline pack stored; server state kept in IndexedDB with a sync time');
+  const cached = async (urls) => page.evaluate(async (us) => { const ks = await caches.keys(); const c = await caches.open(ks.find((k) => k.startsWith('mbs-'))); const out = {}; for (const u of us) out[u] = !!(await c.match(u)); return out; }, urls);
+  const fave = st.media.find((m) => m.trip === T && m.highlight), plain = st.media.find((m) => m.trip === T && m.day === 2);
+  const want = ['/', '/app.css', '/core.js', '/views.js', '/sheets.js', '/kid.js', '/art/guides/pinky.svg', '/art/crest/hk.svg', '/art/kids/mika-full.svg', '/art/colour/hk/day-3.svg', '/art/hk/day-6.svg',
+    ...st.media.filter((m) => m.trip === T).map((m) => `/media/${m.id}/t`), `/media/${fave.id}`];
+  const have = await cached(want.concat(`/media/${plain.id}`));
+  ok(want.every((u) => have[u]), 'service worker cache holds the shell, all art (precached at install), every thumbnail of the book and the full-size favourite' + want.filter((u) => !have[u]).map((u) => ' MISSING ' + u).join(''));
+  ok(!have[`/media/${plain.id}`], 'a plain photo is kept as a thumbnail only (full size stays on the server until opened or "with all photos")');
+  await page.click('#offl [data-a="offline"][data-v="all"]');
+  await page.waitForFunction((tid) => (ls('offline_' + tid) || {}).all === true, T, { timeout: 30000 });
+  ok((await cached([`/media/${plain.id}`]))[`/media/${plain.id}`], '"with all full-size photos" stores the rest too');
+  // no network: the state comes from IndexedDB with a notice; a photo that is not on the phone falls back to its thumbnail, then to a placeholder
+  await s.ctx.setOffline(true);
+  await page.reload(); await page.waitForSelector('.cover', { timeout: 20000 });
+  ok(await page.locator('.notice').count() === 1 && (await page.textContent('.notice')).includes('ข้อมูลล่าสุดเมื่อ'), 'no network: cached state renders the book, notice shows the last sync time');
+  const fb = await page.evaluate(() => new Promise((res) => { const i = document.createElement('img'); i.src = '/media/ph-not-on-this-phone'; document.body.appendChild(i); const t = setInterval(() => { if (i.classList.contains('nophoto')) { clearInterval(t); res(i.getAttribute('src')); } }, 50); setTimeout(() => { clearInterval(t); res('timeout:' + i.getAttribute('src')); }, 8000); }));
+  ok(fb === null, 'a photo that cannot be loaded tries its thumbnail, then shows a placeholder (no broken image)');
+  await page.locator(`[data-a="lb"][data-v="${plain.id}"]`).first().click(); await page.waitForSelector('#lb:not([hidden]) img');
+  await page.waitForFunction(() => { const i = document.querySelector('#lb .stage img'); return i && i.complete && i.naturalWidth > 0; }, null, { timeout: 10000 });
+  ok(true, 'no network: a stored photo opens full size');
+  await page.keyboard.press('Escape');
+  await page.goto(`${BASE}/#/passport/mimi/${T}`); await page.waitForSelector('.pp .advc img.crest');
+  await page.click('.kidgo'); await page.waitForSelector('.kidtiles');
+  await page.click('.kidtiles button[data-v$="/colour"]'); await page.waitForSelector('.colourpad svg [data-c]', { timeout: 10000 });
+  await page.locator('.colourpad [data-c]').nth(0).click({ force: true });
+  await page.waitForFunction(() => queue.length >= 1, null, { timeout: 5000 });
+  const lock2 = await boxOf(page, '#kidexit');
+  await page.mouse.move(lock2.x + lock2.width / 2, lock2.y + lock2.height / 2); await page.mouse.down(); await page.waitForTimeout(1500); await page.mouse.up();
+  await page.waitForSelector('.pp .advc');
+  await s.ctx.setOffline(false);
+  await page.evaluate(() => { offline = false; return flush(); });
+  await page.waitForFunction(() => queue.length === 0 && !offline, null, { timeout: 20000 });
+  ok(await page.locator('.notice').count() === 0, 'back online: queued colouring sent, notice gone');
   await s.ctx.close();
 }
 

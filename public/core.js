@@ -26,8 +26,12 @@ const idb = {
     if (!this._p) {
       this._p = new Promise((res, rej) => {
         if (!window.indexedDB) return rej(new Error('no idb'));
-        const r = indexedDB.open('mbs', 1);
-        r.onupgradeneeded = () => r.result.createObjectStore('q', { keyPath: 'qid' });
+        const r = indexedDB.open('mbs', 2);
+        r.onupgradeneeded = () => {   // v1: the write queue · v2: + 'kv' (the last server state — localStorage is too small once a trip has many photos)
+          const d = r.result;
+          if (!d.objectStoreNames.contains('q')) d.createObjectStore('q', { keyPath: 'qid' });
+          if (!d.objectStoreNames.contains('kv')) d.createObjectStore('kv');
+        };
         r.onsuccess = () => res(r.result);
         r.onerror = () => rej(r.error);
       });
@@ -37,6 +41,8 @@ const idb = {
   async all() { try { const d = await this.open(); return await new Promise((res, rej) => { const q = d.transaction('q').objectStore('q').getAll(); q.onsuccess = () => res(q.result.sort((a, b) => a.seq - b.seq)); q.onerror = () => rej(q.error); }); } catch (_) { return []; } },
   async put(v) { try { const d = await this.open(); await new Promise((res, rej) => { const t = d.transaction('q', 'readwrite'); t.objectStore('q').put(v); t.oncomplete = res; t.onerror = () => rej(t.error); }); } catch (_) {} },
   async del(qid) { try { const d = await this.open(); await new Promise((res, rej) => { const t = d.transaction('q', 'readwrite'); t.objectStore('q').delete(qid); t.oncomplete = res; t.onerror = () => rej(t.error); }); } catch (_) {} },
+  async get(k) { try { const d = await this.open(); return await new Promise((res, rej) => { const q = d.transaction('kv').objectStore('kv').get(k); q.onsuccess = () => res(q.result); q.onerror = () => rej(q.error); }); } catch (_) { return undefined; } },
+  async set(k, v) { try { const d = await this.open(); await new Promise((res, rej) => { const t = d.transaction('kv', 'readwrite'); t.objectStore('kv').put(v, k); t.oncomplete = res; t.onerror = () => rej(t.error); }); } catch (_) {} },
 };
 
 /* ---------- api ---------- */
@@ -54,9 +60,10 @@ async function load() {
     const r = await fetch('/api/b/state', { credentials: 'same-origin', cache: 'no-store' });
     if (r.status === 401) { S = null; return 'auth'; }
     if (!r.ok) throw new Error('http ' + r.status);
-    S = await r.json(); offline = false; ls('state', S);
+    S = await r.json(); offline = false; S.syncedAt = Date.now();
+    idb.set('state', S); ls('state', null);   // the offline copy lives in IndexedDB (an old localStorage copy is dropped)
   } catch (_) {
-    const c = ls('state');
+    const c = (await idb.get('state')) || ls('state');
     if (!c) return 'fail';
     S = c; offline = true;
   }
@@ -171,6 +178,39 @@ function themeStyle(t) {
     .map(([k, v]) => `${v}:${k === 'accent' && dark && th.accentDark ? th.accentDark : th[k]}`).join(';');
 }
 const firstLabel = (t, key) => { const f = t.firsts.find((x) => x.key === key); return f ? { e: f.emoji, t: T(f.label) } : { e: '⭐', t: key }; };
+
+// a photo that is not on this phone yet (offline): fall back to its thumbnail, then to a placeholder
+document.addEventListener('error', (e) => {
+  const img = e.target; if (!img || img.tagName !== 'IMG' || !/^\/media\//.test(img.getAttribute('src') || '')) return;
+  if (!img.src.endsWith('/t')) img.src = img.getAttribute('src') + '/t';
+  else { img.classList.add('nophoto'); img.removeAttribute('src'); img.alt = L('รูปนี้ยังไม่ได้เก็บไว้ในเครื่อง', 'Not stored on this phone yet'); }
+}, true);
+
+/* ---------- offline pack: fetch a book's photos + art once so the whole book opens without signal ---------- */
+const offlineUrls = (t) => {
+  const urls = new Set(['/', '/app.css', '/core.js', '/views.js', '/sheets.js', '/kid.js']);
+  t.days.forEach((_, i) => { if (dayArt(t, i)) urls.add(dayArt(t, i)); const c = (t.passport || {}).colour; if (c) urls.add(c.replace('{n}', i + 1)); });
+  ((t.passport || {}).guides || []).forEach((g) => g.art && urls.add(g.art));
+  if ((t.passport || {}).style && t.passport.style.crest) urls.add(t.passport.style.crest);
+  KID_ART.forEach((k) => { urls.add(kidArt(k)); urls.add(kidArt(k, true)); });
+  mediaOf(t.id).forEach((m) => { if (!m.local) { urls.add(`/media/${encodeURIComponent(m.id)}/t`); if (m.highlight || isDrawingId(m.id)) urls.add(`/media/${encodeURIComponent(m.id)}`); } });
+  return [...urls];
+};
+const isDrawingId = (id) => /^dr-/.test(id);
+let packing = null;   // {done, total} while a book is being stored
+async function packOffline(t, all) {
+  if (packing) return;
+  let urls = offlineUrls(t);
+  if (all) urls = urls.concat(mediaOf(t.id).filter((m) => !m.local).map((m) => `/media/${encodeURIComponent(m.id)}`));
+  urls = [...new Set(urls)];
+  packing = { done: 0, total: urls.length }; let failed = 0;
+  renderProgress();
+  const worker = async () => { for (;;) { const u = urls.shift(); if (!u) return; try { const r = await fetch(u, { credentials: 'same-origin' }); if (!r.ok) failed++; } catch (_) { failed++; } packing.done++; renderProgress(); } };
+  await Promise.all([worker(), worker(), worker()]);
+  packing = null; renderProgress();
+  if (failed) toast(L(`เก็บไม่ครบ ${failed} ไฟล์ ลองอีกครั้งเมื่อสัญญาณดี`, `${failed} files could not be stored — try again with better signal`));
+  else { ls('offline_' + t.id, { at: Date.now(), n: mediaOf(t.id).length, all: !!all }); toast(L('เก็บเล่มนี้ไว้ในเครื่องแล้ว เปิดได้แม้ไม่มีเน็ต', 'This book is stored on the phone — it opens without signal')); safeRender(); }
+}
 
 /* ---------- ui helpers ---------- */
 let toastT = 0;
