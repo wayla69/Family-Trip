@@ -794,7 +794,11 @@
          "th": "สวัสดีตอนเช้า",
          "en": "Good morning"
         },
-        "say": "Jou san, Captain Pinky!"
+        "say": "Jou san, Captain Pinky!",
+        "speak": {
+         "text": "早晨",
+         "lang": "zh-HK"
+        }
        },
        {
         "k": "mhgoi",
@@ -805,7 +809,11 @@
          "th": "ขอบคุณ · ขอโทษ",
          "en": "Thank you · excuse me"
         },
-        "say": "M goi, taxi driver!"
+        "say": "M goi, taxi driver!",
+        "speak": {
+         "text": "唔該",
+         "lang": "zh-HK"
+        }
        },
        {
         "k": "dojeh",
@@ -816,7 +824,11 @@
          "th": "ขอบคุณที่ให้ของขวัญ",
          "en": "Thanks for a present"
         },
-        "say": "Do jeh for the sticker!"
+        "say": "Do jeh for the sticker!",
+        "speak": {
+         "text": "多謝",
+         "lang": "zh-HK"
+        }
        },
        {
         "k": "housihk",
@@ -827,7 +839,11 @@
          "th": "อร่อย!",
          "en": "Yummy!"
         },
-        "say": "Dim sum is hou sihk!"
+        "say": "Dim sum is hou sihk!",
+        "speak": {
+         "text": "好食",
+         "lang": "zh-HK"
+        }
        },
        {
         "k": "dimsam",
@@ -838,7 +854,11 @@
          "th": "ของว่างในเข่งไม้ไผ่",
          "en": "Little snacks in baskets"
         },
-        "say": "More dim sum, please!"
+        "say": "More dim sum, please!",
+        "speak": {
+         "text": "點心",
+         "lang": "zh-HK"
+        }
        },
        {
         "k": "dingding",
@@ -849,7 +869,11 @@
          "th": "รถราง",
          "en": "The tram"
         },
-        "say": "There goes the ding ding!"
+        "say": "There goes the ding ding!",
+        "speak": {
+         "text": "叮叮",
+         "lang": "zh-HK"
+        }
        },
        {
         "k": "daahntaat",
@@ -860,7 +884,11 @@
          "th": "ทาร์ตไข่",
          "en": "Egg tart"
         },
-        "say": "One daahn taat each!"
+        "say": "One daahn taat each!",
+        "speak": {
+         "text": "蛋撻",
+         "lang": "zh-HK"
+        }
        },
        {
         "k": "joigin",
@@ -871,7 +899,11 @@
          "th": "ลาก่อน",
          "en": "Goodbye"
         },
-        "say": "Joi gin, Hong Kong!"
+        "say": "Joi gin, Hong Kong!",
+        "speak": {
+         "text": "再見",
+         "lang": "zh-HK"
+        }
        },
        {
         "k": "ola",
@@ -882,7 +914,11 @@
          "th": "สวัสดี (ภาษาโปรตุเกสของมาเก๊า)",
          "en": "Hello — in Macau's Portuguese"
         },
-        "say": "Olá, Bao!"
+        "say": "Olá, Bao!",
+        "speak": {
+         "text": "Olá",
+         "lang": "pt-PT"
+        }
        },
        {
         "k": "obrigado",
@@ -893,7 +929,11 @@
          "th": "ขอบคุณ (ภาษาโปรตุเกส)",
          "en": "Thank you — Portuguese"
         },
-        "say": "Obrigado for the egg tart!"
+        "say": "Obrigado for the egg tart!",
+        "speak": {
+         "text": "Obrigado",
+         "lang": "pt-PT"
+        }
        }
       ]
      }
@@ -1398,6 +1438,7 @@
      }
     }
    ]
-  }
+  },
+  "colour": "/art/colour/hk/day-{n}.svg"
  }
 }
