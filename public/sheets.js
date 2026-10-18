@@ -313,6 +313,7 @@ document.addEventListener('click', (e) => {
 document.addEventListener('input', (e) => { const el = e.target; if (el.dataset && el.dataset.draft) drafts[el.dataset.draft] = el.value; if (el.id === 'eatq') { eatQ = el.value.trim(); eatFilter(); } });
 document.addEventListener('focusout', (e) => { const el = e.target; if (el.dataset && el.dataset.aBlur) saveBlur(el); if (el.id === 'lbcap') saveCaption(el); });
 document.addEventListener('change', (e) => {
+  if (e.target.dataset && e.target.dataset.ck) { const m = ls('ck') || {}; if (e.target.checked) m[e.target.dataset.ck] = 1; else delete m[e.target.dataset.ck]; ls('ck', m); return; }
   if (e.target.id === 'fpick') { const el = e.target; addPhotos(trip(el.dataset.t), +el.dataset.d, el.files); el.value = ''; }
 });
 document.addEventListener('keydown', (e) => {

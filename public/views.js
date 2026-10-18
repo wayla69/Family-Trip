@@ -346,6 +346,10 @@ function infoBlocks(t) {
   const tbl = (cols, rows, cls) => `<div class="tblwrap"><table class="prices ${cls || ''}">${cols ? `<thead><tr>${cols.map((c) => `<th>${esc(T(c))}</th>`).join('')}</tr></thead>` : ''}<tbody>${rows.map((r) => `<tr>${r.map((c, k) => `<td${k === 0 ? ' class="nm"' : cols && cols[k] ? ` data-h="${esc(T(cols[k]))}"` : ''}>${esc(typeof c === 'object' ? T(c) : String(c))}</td>`).join('')}</tr>`).join('')}</tbody></table></div>`;   // phones stack each row into a card, every value labelled by its column (app.css)
   const lede = (x) => (x && T(x) ? `<p class="lede">${esc(T(x))}</p>` : '');
   const list = (items) => `<ul class="tips">${items.map((x) => `<li>${esc(T(x))}</li>`).join('')}</ul>`;
+  // tickable checklist, like the manual's boxes — ticks are a per-phone convenience (localStorage), nothing is sent
+  const ckDone = ls('ck') || {};
+  const chk = (items, key) => `<ul class="chk">${items.map((x, i) => { const k = `${t.id}.${key}.${i}`; return `<li><label><input type="checkbox" data-ck="${esc(k)}"${ckDone[k] ? ' checked' : ''}><span>${esc(T(x))}</span></label></li>`; }).join('')}</ul>`;
+  const cols = (blocks) => `<div class="cols2">${blocks.join('')}</div>`;
   const dl = (rows) => `<dl class="gl">${rows.map((r) => `<div><dt>${esc(T(r.t))}</dt><dd>${esc(T(r.x))}</dd></div>`).join('')}</dl>`;
   // stays — laid out like the manual's "Where we sleep": a night-by-night strip in each stay's colour, then one card per stay
   const SC = ['#6C7A80', '#3E7EA6', '#B98535', '#5E6FA8', '#5B8A6A', '#2E8C8C', '#C9704F', '#2F4E6E', '#8A5A9E', '#A0623A'];
@@ -372,11 +376,11 @@ ${runs.map((r, k) => { const st = (n.stays || [])[k], a = nights.indexOf(r.n[0])
     if (f.crowd) pg('prep', `👥 ${esc(T(f.crowd.head))}`, `${lede(f.crowd.lede)}${tbl(f.crowd.cols, f.crowd.rows)}`);
     if (f.book) pg('prep', `📅 ${esc(T(f.book.head))}`, `${lede(f.book.lede)}${tbl(f.book.cols, f.book.rows)}`); }
   // get ready
-  if ((n.pack || []).length) pg('prep', `🧳 ${L('จัดกระเป๋า', 'Packing')}`, n.pack.map((g) => `<h5>${esc(T(g.group))}</h5>${list(g.items)}`).join(''));
+  if ((n.pack || []).length) pg('prep', `🧳 ${L('จัดกระเป๋า', 'Packing')}`, `${cols(n.pack.map((g, gi) => `<div><h5>${esc(T(g.group))}</h5>${chk(g.items, `pack${gi}`)}</div>`))}<p class="label">${L('ติ๊กไว้ในเครื่องนี้เท่านั้น', 'Ticks stay on this phone')}</p>`);
   if (n.prices && (n.prices.rows || []).length) pg('prep', `🎟️ ${esc(T(n.prices.head))}`, tbl(n.prices.cols, n.prices.rows));
-  if (n.visa) pg('prep', `🛂 ${L('วีซ่า', 'Visa')}`, `${lede(n.visa.lede)}${n.visa.groups.map((g) => `<h5>${esc(T(g.title))}</h5>${list(g.items)}`).join('')}<h5>${esc(T(n.visa.flow.title))}</h5><ol class="tips">${n.visa.flow.items.map((x) => `<li>${esc(T(x))}</li>`).join('')}</ol>${n.visa.note ? `<div class="call warn">${esc(T(n.visa.note))}</div>` : ''}`);
-  if (n.bio) pg('prep', `🧳 ${L('ด่านกักกันโรค (biosecurity)', 'Biosecurity at the airport')}`, `${lede(n.bio.lede)}${n.bio.groups.map((g) => `<div class="call ${g.kind === 'never' ? 'warn' : 'info'}"><span class="lbl">${esc(T(g.title))}</span>${list(g.items)}</div>`).join('')}`);
-  if (n.car) pg('prep', `🚙 ${L('รถเช่า', 'The van')} · ${esc(T(n.car.title))}`, `${lede(n.car.lede)}${dl(n.car.rows)}${n.car.lists.map((g) => `<h5>${esc(T(g.title))}</h5>${list(g.items)}`).join('')}${n.car.fallback ? `<h5>${L('สำรอง', 'Fallback')} · ${esc(T(n.car.fallback.title))}</h5>${dl(n.car.fallback.rows)}` : ''}`);
+  if (n.visa) pg('prep', `🛂 ${L('วีซ่า', 'Visa')}`, `${lede(n.visa.lede)}${cols(n.visa.groups.map((g, gi) => `<div><h5>${esc(T(g.title))}</h5>${chk(g.items, `visa${gi}`)}</div>`))}<h5>${esc(T(n.visa.flow.title))}</h5><ol class="tips">${n.visa.flow.items.map((x) => `<li>${esc(T(x))}</li>`).join('')}</ol>${n.visa.note ? `<div class="call warn">${esc(T(n.visa.note))}</div>` : ''}`);
+  if (n.bio) pg('prep', `🧳 ${L('ด่านกักกันโรค (biosecurity)', 'Biosecurity at the airport')}`, `${lede(n.bio.lede)}${cols(n.bio.groups.map((g) => `<div class="biog ${g.kind === 'never' ? 'no' : 'yes'}"><h5>${esc(T(g.title))}</h5>${list(g.items)}</div>`))}`);
+  if (n.car) pg('prep', `🚙 ${L('รถเช่า', 'The van')} · ${esc(T(n.car.title))}`, `${lede(n.car.lede)}${dl(n.car.rows)}${cols(n.car.lists.map((g) => `<div><h5>${esc(T(g.title))}</h5>${list(g.items)}</div>`))}${n.car.fallback ? `<h5>${L('สำรอง', 'Fallback')} · ${esc(T(n.car.fallback.title))}</h5>${dl(n.car.fallback.rows)}` : ''}`);
   if (n.drive) { const dv = n.drive, km = dv.legs.reduce((a, g) => a + g[2], 0);
     B.drive = `<details class="pg" open><summary>🚐 ${esc(T(dv.title))} <span class="label">· ${dv.legs.length} ${L('ช่วง', 'legs')} · ${km.toLocaleString()} ${L('กม.', 'km')}</span></summary>${lede(dv.lede)}${tbl(dv.cols, dv.legs.map((g) => [L('วันที่ ', 'Day ') + g[0], g[1], g[2], g[3] >= 60 ? `${Math.floor(g[3] / 60)} ${L('ชม.', 'h')} ${String(g[3] % 60).padStart(2, '0')}` : `${g[3]} ${L('นาที', 'min')}`]), 'legs')}${(dv.notes || []).map((x) => `<div class="call info">${x.title ? `<span class="lbl">${esc(T(x.title))}</span>` : ''}${esc(T(x))}</div>`).join('')}</details>`;
     B.prep.push(B.drive); }
@@ -389,7 +393,7 @@ ${runs.map((r, k) => { const st = (n.stays || [])[k], a = nights.indexOf(r.n[0])
   if (n.eatRules) pg('learn', `🍽️ ${esc(T(n.eatRules.title))}`, `${lede(n.eatRules.lede)}${list(n.eatRules.rules)}<h5>${esc(T(n.eatRules.cookTitle))}</h5>${list(n.eatRules.cook)}`);
   // any other chapter of a manual (getting around, customs, a park touring plan…): one generic block, placed on the page it names
   (n.more || []).forEach((m) => { if (!B[m.page] || m.page === 'drive') return;
-    pg(m.page, `${esc(m.emo || '📄')} ${esc(T(m.title))}`, `${lede(m.lede)}${m.table ? tbl(m.table.cols, m.table.rows) : ''}${(m.rows || []).length ? dl(m.rows) : ''}${(m.groups || []).map((g) => `${g.title && T(g.title) ? `<h5>${esc(T(g.title))}</h5>` : ''}${list(g.items || [])}`).join('')}${m.note && T(m.note) ? `<div class="call info">${esc(T(m.note))}</div>` : ''}`); });
+    pg(m.page, `${esc(m.emo || '📄')} ${esc(T(m.title))}`, `${lede(m.lede)}${m.table ? tbl(m.table.cols, m.table.rows) : ''}${(m.rows || []).length ? dl(m.rows) : ''}${((gs) => (gs.length > 1 ? cols(gs.map((x) => `<div>${x}</div>`)) : gs.join('')))((m.groups || []).map((g) => `${g.title && T(g.title) ? `<h5>${esc(T(g.title))}</h5>` : ''}${list(g.items || [])}`))}${m.note && T(m.note) ? `<div class="call info">${esc(T(m.note))}</div>` : ''}`); });
   return B;
 }
 // a long page (a full manual has 20+ chapters) opens as a list of headings: only the first section starts open
