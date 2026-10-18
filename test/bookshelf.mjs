@@ -132,6 +132,18 @@ ok(s.trips[0].days[0].done_at > 0 && s.trips.some((t) => t.slug === 'chiang-mai-
   ok(!/F5ARVC|1653717262744684|5651795979|"conf"|booking ref|฿/.test(all) && !/______/.test(all), 'privacy: no booking refs, confirmation numbers, costs or blank passport fields anywhere in the state');
 }
 
+// ---- travel notebook: one review per stay / restaurant / place per trip
+const rev = { trip: T, day: 3, kind: 'food', key: 'Wong Chi Kei, Senado Square', name: { th: 'Wong Chi Kei', en: 'Wong Chi Kei' }, rating: 5, tags: ['kidsate', 'fast', 'bogus tag!'], kids: { mimi: 'love', mika: 'ok' }, again: true, note: 'บะหมี่เกี๊ยว เด็กกินหมดชาม' };
+ok((await put('/api/b/reviews/hk-macau-2026.rev.food.wong-chi-kei', rev)).ok, 'review saved (food, 5 stars, tags, kids, again, note)');
+let rv = (await state()).reviews.find((r) => r.id === 'hk-macau-2026.rev.food.wong-chi-kei');
+ok(rv && rv.rating === 5 && rv.tags.join() === 'kidsate,fast' && rv.kids.mimi === 'love' && rv.again === true && rv.day === 3 && rv.at > 0, 'review in the state; a malformed tag is dropped');
+ok((await put('/api/b/reviews/hk-macau-2026.rev.food.wong-chi-kei', { ...rev, rating: 2, again: false, note: 'คิวยาว' })).ok && (await state()).reviews.filter((r) => r.key === rev.key).length === 1 && (await state()).reviews.find((r) => r.key === rev.key).rating === 2, 'same id again = update, not a second row');
+ok((await put('/api/b/reviews/hk-macau-2026.rev.food.other-id', rev)).status === 409, 'same trip + kind + key under another id → 409');
+ok((await put('/api/b/reviews/hk-macau-2026.rev.food.bad', { ...rev, key: 'x', rating: 7 })).status === 400 && (await put('/api/b/reviews/hk-macau-2026.rev.food.bad2', { ...rev, key: 'y', kind: 'hotel' })).status === 400 && (await put('/api/b/reviews/hk-macau-2026.rev.food.bad3', { ...rev, key: 'z', kids: { nobody: 'love' } })).status === 400, 'rating 1–5, kind stay/food/place, kids must exist');
+ok((await put('/api/b/reviews/hk-macau-2026.rev.stay.x', { ...rev, kind: 'stay', key: 'Studio City Hotel', rating: null, tags: [], kids: {}, again: null, note: '' })).ok, 'a review may hold just a name (rating null) — filled in later');
+ok((await put('/api/b/reviews/v-rev-0001', rev, { 'x-mb': '1', cookie: vck, 'content-type': 'application/json' })).status === 403, 'viewers cannot review');
+ok((await fetch(BASE + '/api/b/reviews/hk-macau-2026.rev.stay.x', { method: 'DELETE', headers: H })).ok && !(await state()).reviews.some((r) => r.id === 'hk-macau-2026.rev.stay.x'), 'review deleted');
+
 // ---- hearts from the family: relatives on the view link may send one (text only), not edit anything else
 const VH = { 'x-mb': '1', cookie: vck, 'content-type': 'application/json' };
 const heart = { trip: T, day: null, child: 'mimi', emoji: '💗', text: 'คิดถึงนะ', from: 'ยาย' };
@@ -154,7 +166,7 @@ ok(capped === 40, 'one phone can send 40 hearts a day, then 429');
 
 // ---- PDPA export + real delete
 const ex = await (await fetch(BASE + '/api/b/export.json', { headers: { cookie: ck } })).json();
-ok(ex.hearts.length >= 41, 'export includes the hearts');
+ok(ex.hearts.length >= 41 && ex.reviews.length === 1, 'export includes the hearts and the reviews');
 ok(ex.entries.length >= 3 && ex.media.length === 1 && !ex.media.some((m) => m.family_id === 'other'), 'export has only this family\'s data');
 ok((await fetch(BASE + '/api/b/export.json', { headers: { cookie: vck } })).status === 403, 'viewer cannot export');
 const stored = path.join(DATA_DIR, 'media', 'p', T, 'ph-test-0001.jpg');

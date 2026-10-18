@@ -180,7 +180,12 @@ const A = {
 
 /* ---------- fav/note save when leaving the field; empty = delete ---------- */
 async function saveBlur(el) {
-  const t = trip(el.dataset.t), kind = el.dataset.aBlur, text = el.value.trim();
+  const kind = el.dataset.aBlur, text = el.value.trim();
+  if (kind === 'rnote') {   // travel-notebook note: the card holds the context
+    delete drafts[el.dataset.draft];
+    const card = el.closest('.rev'), cur = reviewFrom(card); if ((cur.note || '') !== text) putReview(card, { note: text }); return;
+  }
+  const t = trip(el.dataset.t);
   // passport Explorer ID answers are per child, not per day
   const field = kind === 'field', d = field ? null : +el.dataset.d;
   const id = field ? `${t.id}.field.${el.dataset.v}.${el.dataset.k}` : `${t.id}.${kind}.d${d}`, cur = S.entries.find((e) => e.id === id);
@@ -188,6 +193,31 @@ async function saveBlur(el) {
   if (!text) { if (cur) await delEntry(id); return; }
   if (!cur || cur.text !== text) await putEntry(t, field ? { day: null, kind, child: el.dataset.k, first_key: el.dataset.v, text } : { day: d, kind, text }, id);
 }
+
+// travel notebook: a review card (details.rev) carries its context; every tap upserts the whole row
+const reviewFrom = (card) => { const t = trip(card.dataset.t); return reviewOf(t, card.dataset.kind, card.dataset.key) || { trip: t.id, day: +card.dataset.d, kind: card.dataset.kind, key: card.dataset.key, name: { th: card.dataset.nth, en: card.dataset.nen }, rating: null, tags: [], kids: {}, again: null, note: '' }; };
+function putReview(card, patch) {
+  const t = trip(card.dataset.t), cur = reviewFrom(card), id = revId(t, cur.kind, cur.key);
+  const body = { trip: t.id, day: cur.day, kind: cur.kind, key: cur.key, name: cur.name, rating: cur.rating, tags: cur.tags || [], kids: cur.kids || {}, again: cur.again, note: cur.note || '', ...patch };
+  return enqueue({ method: 'PUT', url: '/api/b/reviews/' + encodeURIComponent(id), body, local: { coll: 'reviews', id, row: { ...body, at: Date.now(), created_by: S.me.name } } });
+}
+Object.assign(A, {
+  rate(b) { const card = b.closest('.rev'), n = +b.dataset.v, cur = reviewFrom(card); if (n && n >= 4) burst(b, ['⭐', '✨']); putReview(card, { rating: n === 0 || cur.rating === n ? null : n }); },
+  rtag(b) { const card = b.closest('.rev'), cur = reviewFrom(card), k = b.dataset.v, tags = (cur.tags || []).includes(k) ? cur.tags.filter((x) => x !== k) : [...(cur.tags || []), k]; putReview(card, { tags }); },
+  rkid(b) { const card = b.closest('.rev'), cur = reviewFrom(card), kids = { ...(cur.kids || {}) }; if (kids[b.dataset.k] === b.dataset.v) delete kids[b.dataset.k]; else kids[b.dataset.k] = b.dataset.v; if (b.dataset.v === 'love') burst(b, ['😍', '💕']); putReview(card, { kids }); },
+  ragain(b) { const card = b.closest('.rev'), cur = reviewFrom(card), v = b.dataset.v === '1'; putReview(card, { again: cur.again === v ? null : v }); },
+  rdel(b) { if (!armed(b)) return; const card = b.closest('.rev'), cur = reviewFrom(card), id = revId(trip(card.dataset.t), cur.kind, cur.key); enqueue({ method: 'DELETE', url: '/api/b/reviews/' + encodeURIComponent(id), local: { coll: 'reviews', id, del: true } }); },
+  async copynotebook() {
+    const lines = [L('สมุดโน้ตนักเดินทาง — อะไรเวิร์กกับครอบครัวเรา', 'Travel notebook — what works for our family'), ''];
+    for (const kind of ['stay', 'food', 'place']) {
+      const list = S.reviews.filter((r) => r.kind === kind).sort((a, b) => (b.rating || 0) - (a.rating || 0)); if (!list.length) continue;
+      lines.push(`${RKIND[kind][0]} ${L(RKIND[kind][1], RKIND[kind][2])}`);
+      list.forEach((r) => { const t = trip(r.trip); lines.push(`  ${r.rating ? '★'.repeat(r.rating) : '—'} ${T(r.name)} (${t ? T(t.title).split(' · ')[0] : r.trip}${r.day !== null && r.day !== undefined ? ` ${L('วันที่', 'day')} ${r.day + 1}` : ''})${(r.tags || []).length ? ' · ' + r.tags.map((k) => rtagLabel(r.kind, k)).join(', ') : ''}${Object.entries(r.kids || {}).map(([k, v]) => ` · ${kidName(k)} ${VERDICT[v]}`).join('')}${r.again === false ? ` · ${L('ไม่ไปอีก', 'not again')}` : r.again ? ` · ${L('ไปอีก', 'again')}` : ''}${r.note ? ` — ${r.note}` : ''}`); });
+      lines.push('');
+    }
+    try { await navigator.clipboard.writeText(lines.join('\n')); toast(L('คัดลอกแล้ว', 'Copied')); } catch (_) { toast(L('คัดลอกไม่ได้ในเบราว์เซอร์นี้', 'Copy not available here')); }
+  },
+});
 
 let storyCtl = null;   // AbortController while a story streams
 

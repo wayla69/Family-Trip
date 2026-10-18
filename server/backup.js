@@ -10,7 +10,7 @@ const IMG = require('./images');
 const { FAMILY } = require('./bookshelf');
 
 // restore order follows foreign keys
-const TABLES = ['children', 'trips', 'trip_days', 'firsts_catalog', 'entries', 'media', 'places', 'hearts'];
+const TABLES = ['children', 'trips', 'trip_days', 'firsts_catalog', 'entries', 'media', 'places', 'hearts', 'reviews'];
 const ID_RE = /^[A-Za-z0-9_.:-]{4,80}$/;
 const SLUG_RE = /^[a-z0-9-]{2,60}$/;
 const thumbKey = (k) => k.replace(/^p\//, 't/');

@@ -12,6 +12,7 @@ const SLUG_RE = /^[a-z0-9-]{2,60}$/;
 const KINDS = ['quote', 'mood', 'fav', 'note', 'first', 'story', 'tick', 'field'];
 const TRIP_WIDE = ['story', 'tick', 'field'];   // kinds that may have no day (whole-trip story, passport checklists, Explorer ID)
 const HEART_EMOJI = ['💗', '🤗', '😘', '⭐', '👏', '🎈'];
+const REVIEW_KINDS = ['stay', 'food', 'place'], KID_VERDICT = ['love', 'ok', 'no'];
 const HEARTS_PER_DAY = { sender: 40, family: 400 };   // the view link is shared: cap what one phone, and everyone together, can send
 const clip = (s, n) => String(s == null ? '' : s).slice(0, n);
 const i18n = (o, n = 200) => (o && typeof o === 'object' ? { th: clip(o.th, n), en: clip(o.en, n), ...(o.zh ? { zh: clip(o.zh, n) } : {}) } : { th: clip(o, n), en: clip(o, n) });
@@ -78,7 +79,7 @@ function router({ pool, media, A, ai }) {
   // ----- everything in one payload (cached by the app for offline use)
   r.get('/api/b/state', A.requireUser, async (req, res, next) => {
     try {
-      const [children, trips, days, firsts, entries, mediaRows, places, hearts] = await Promise.all([
+      const [children, trips, days, firsts, entries, mediaRows, places, hearts, reviews] = await Promise.all([
         q('SELECT slug, name_th, name_en, emoji, color, birth_ym FROM children WHERE family_id=$1 ORDER BY pos', [FAMILY]),
         q("SELECT id, slug, legacy_id, title, sub, to_char(date_from,'YYYY-MM-DD') date_from, to_char(date_to,'YYYY-MM-DD') date_to, timezone, theme, cover, stamp, moods, passport, info, source FROM trips WHERE family_id=$1 ORDER BY date_from", [FAMILY]),
         q("SELECT d.trip_id, d.day_index, to_char(d.date,'YYYY-MM-DD') date, d.title, d.sleep, d.emoji, d.gradient, d.planned, d.wx, d.plan, d.done_at FROM trip_days d JOIN trips t ON t.id=d.trip_id WHERE t.family_id=$1 ORDER BY d.trip_id, d.day_index", [FAMILY]),
@@ -87,6 +88,7 @@ function router({ pool, media, A, ai }) {
         q('SELECT id, trip_id, day_index, width, height, caption, highlight, pos, taken_at, created_by FROM media WHERE family_id=$1 ORDER BY taken_at, pos', [FAMILY]),
         q('SELECT id, trip_id, day_index, key, kind, name, visited_at, created_by FROM places WHERE family_id=$1 ORDER BY visited_at', [FAMILY]),
         q('SELECT id, trip_id, day_index, child, emoji, text, from_name, created_uid, created_at FROM hearts WHERE family_id=$1 ORDER BY created_at', [FAMILY]),
+        q('SELECT id, trip_id, day_index, kind, key, name, rating, tags, kids, again, note, created_by, updated_at FROM reviews WHERE family_id=$1 ORDER BY updated_at', [FAMILY]),
       ]);
       const ms = (d) => (d ? new Date(d).getTime() : null);
       res.setHeader('Cache-Control', 'no-store');
@@ -102,6 +104,7 @@ function router({ pool, media, A, ai }) {
         media: mediaRows.map(({ trip_id, day_index, taken_at, width, height, ...m }) => ({ ...m, trip: trip_id, day: day_index, w: width, h: height, at: ms(taken_at) })),
         places: places.map(({ trip_id, day_index, visited_at, ...p }) => ({ ...p, trip: trip_id, day: day_index, at: ms(visited_at) })),
         hearts: hearts.map(({ trip_id, day_index, created_uid, created_at, from_name, ...h }) => ({ ...h, trip: trip_id, day: day_index, from: from_name, at: ms(created_at), mine: created_uid === req.user.uid })),
+        reviews: reviews.map(({ trip_id, day_index, updated_at, ...r }) => ({ ...r, trip: trip_id, day: day_index, at: ms(updated_at) })),
         features: { story: !!(ai && ai.enabled()) },
         serverNow: Date.now(),
       });
@@ -191,6 +194,35 @@ function router({ pool, media, A, ai }) {
   };
   r.get('/media/:id', A.requireUser, send(false));
   r.get('/media/:id/t', A.requireUser, send(true));
+
+  // ----- travel notebook: how a stay / restaurant / place worked for us (editors; one row per thing per trip)
+  r.put('/api/b/reviews/:id', ...W, async (req, res, next) => {
+    try {
+      const id = req.params.id, b = req.body || {};
+      if (!ID_RE.test(id)) return bad(res, 'id');
+      const t = await trip(String(b.trip || '')); if (!t) return bad(res, 'trip');
+      const day = dayArg(b.day); if (!dayOk(t, day)) return bad(res, 'day');
+      if (!REVIEW_KINDS.includes(b.kind)) return bad(res, 'kind');
+      const key = clip(b.key, 120).trim(); if (!key) return bad(res, 'key');
+      const rating = b.rating == null || b.rating === '' ? null : Number(b.rating);
+      if (rating !== null && !(Number.isInteger(rating) && rating >= 1 && rating <= 5)) return bad(res, 'rating');
+      const tags = Array.isArray(b.tags) ? [...new Set(b.tags.map((x) => clip(x, 24)).filter((x) => /^[a-z0-9_-]+$/.test(x)))].slice(0, 12) : [];
+      const kidSlugs = (await q('SELECT slug FROM children WHERE family_id=$1', [FAMILY])).map((k) => k.slug), kids = {};
+      for (const [k, v] of Object.entries(b.kids && typeof b.kids === 'object' ? b.kids : {})) { if (!kidSlugs.includes(k)) return bad(res, 'child'); if (KID_VERDICT.includes(v)) kids[k] = v; }
+      const again = typeof b.again === 'boolean' ? b.again : null;
+      const out = await q(`INSERT INTO reviews (id, family_id, trip_id, day_index, kind, key, name, rating, tags, kids, again, note, created_by, created_uid)
+        VALUES ($1,$2,$3,$4,$5,$6,$7,$8,$9,$10,$11,$12,$13,$14)
+        ON CONFLICT (id) DO UPDATE SET day_index=EXCLUDED.day_index, name=EXCLUDED.name, rating=EXCLUDED.rating, tags=EXCLUDED.tags, kids=EXCLUDED.kids,
+          again=EXCLUDED.again, note=EXCLUDED.note, updated_at=now()
+        WHERE reviews.family_id = EXCLUDED.family_id AND reviews.trip_id = EXCLUDED.trip_id AND reviews.kind = EXCLUDED.kind AND reviews.key = EXCLUDED.key
+        RETURNING id`, [id, FAMILY, t.id, day, b.kind, key, i18n(b.name || key, 120), rating, JSON.stringify(tags), kids, again, clip(b.note, 500), clip(req.user.name, 40), req.user.uid]);
+      if (!out.length) return bad(res, 'conflict', 409);
+      res.json({ ok: true });
+    } catch (e) { if (e.code === '23505') return bad(res, 'conflict', 409); next(e); }   // same trip+kind+key under another id
+  });
+  r.delete('/api/b/reviews/:id', A.requireEditor, async (req, res, next) => {
+    try { await q('DELETE FROM reviews WHERE id=$1 AND family_id=$2', [req.params.id, FAMILY]); res.json({ ok: true }); } catch (e) { next(e); }
+  });
 
   // ----- hearts from the family: anyone signed in (relatives on the view link too) may send one; text only
   const sameSite = (req, res, next) => (req.headers['x-mb'] === '1' ? next() : bad(res, 'bad-request'));
@@ -306,6 +338,8 @@ function router({ pool, media, A, ai }) {
       es.filter((e) => e.kind === 'note').forEach((e) => part.push(`${lang === 'en' ? 'Parents’ note' : 'บันทึกพ่อแม่'}: ${e.text}`));
       es.filter((e) => e.kind === 'first').forEach((e) => part.push(`${lang === 'en' ? 'First time' : 'ครั้งแรก'} (${who(e.child)}): ${e.first_key === 'custom' ? e.text : firsts[e.first_key] || e.first_key}`));
       es.filter((e) => e.kind === 'tick' && spot(d.day_index, e.first_key)).forEach((e) => part.push(`${lang === 'en' ? 'Spotted' : 'เจอแล้ว'} (${who(e.child)}): ${spot(d.day_index, e.first_key)}`));
+      (await q('SELECT kind, name, rating, kids, note FROM reviews WHERE trip_id=$1 AND day_index=$2 AND (rating IS NOT NULL OR note<>\'\') ORDER BY updated_at', [t.id, d.day_index]))
+        .forEach((r) => part.push(`${{ stay: lang === 'en' ? 'Stay' : 'ที่พัก', food: lang === 'en' ? 'Food' : 'ร้านอาหาร', place: lang === 'en' ? 'Place' : 'สถานที่' }[r.kind]}: ${r.name[lang] || r.name.en}${r.rating ? ` ${'★'.repeat(r.rating)}` : ''}${Object.entries(r.kids || {}).map(([k, v]) => ` · ${who(k)} ${{ love: '😍', ok: '🙂', no: '😖' }[v]}`).join('')}${r.note ? ` — ${r.note}` : ''}`));
       if (part.length) lines.push(`${lang === 'en' ? 'Day' : 'วันที่'} ${d.day_index + 1} (${d.date}) — ${d.title[lang] || d.title.en}\n- ${part.join('\n- ')}`);
     }
     return lines.join('\n\n');
@@ -344,7 +378,7 @@ function router({ pool, media, A, ai }) {
   r.get('/api/b/export.json', A.requireEditor, async (_req, res, next) => {
     try {
       const out = {};
-      for (const t of ['children', 'trips', 'entries', 'media', 'places', 'hearts']) out[t] = await q(`SELECT * FROM ${t} WHERE family_id=$1`, [FAMILY]);
+      for (const t of ['children', 'trips', 'entries', 'media', 'places', 'hearts', 'reviews']) out[t] = await q(`SELECT * FROM ${t} WHERE family_id=$1`, [FAMILY]);
       out.trip_days = await q('SELECT d.* FROM trip_days d JOIN trips t ON t.id=d.trip_id WHERE t.family_id=$1', [FAMILY]);
       out.firsts_catalog = await q('SELECT f.* FROM firsts_catalog f JOIN trips t ON t.id=f.trip_id WHERE t.family_id=$1', [FAMILY]);
       res.setHeader('Content-Disposition', 'attachment; filename="memory-bookshelf.json"');
