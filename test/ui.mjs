@@ -202,6 +202,13 @@ const T = 'hk-macau-2026';
   ok(await page.evaluate(() => Array.from(document.querySelectorAll('img[src^="/art/"]')).every((i) => i.complete && i.naturalWidth > 0)), 'character, guide and stamp drawings load');
   ok(await page.locator('.pp-page.visa').count() === 1 && await page.locator('.dstamp').count() === 6, 'passport: HK visa page, a stamp slot per day');
   ok(await page.locator('.dstamp.on').count() === 1 && await page.locator('.dstamp.new').count() === 1, 'passport: recorded day is stamped (with the stamp animation the first time)');
+  { await page.click('.mapdays [data-v="3"]'); await page.waitForFunction(() => document.querySelector('.mapsec .kicker').textContent.includes('4'));
+    await page.locator('.tmap .pin[data-v="senado"]').dispatchEvent('click'); await page.waitForSelector('#sheet:not([hidden]) .pinacts');
+    const hrefs = await page.$$eval('#sheet a', (as) => as.map((a) => a.getAttribute('href')));
+    ok(hrefs.some((h) => /maps\/search\/.*Senado%20Square%2C%20Macau/.test(h)) && hrefs.some((h) => /maps\/dir\//.test(h)) && hrefs.includes('#/t/hk-macau-2026/today/3') && await page.locator('.sleep ol a.maplink').count() === 6, 'passport map: day buttons move the kids; a pin opens the real place (Maps + directions + that day’s plan); the list names open Maps');
+    { await page.locator('.tmap .pin[data-v="mawan"]').dispatchEvent('click'); await page.waitForSelector('#sheet:not([hidden]) .pinstay');
+      ok(/Noah's Ark/.test(await page.textContent('#sheet .pinstays')) && await page.locator('#sheet .pinstay a[href*="maps/dir/"]').count() === 1, 'passport map: a pin lists the night’s stay with directions'); await page.click('#sheet [data-a="closesheet"]'); }
+  }
   ok(await page.locator('.guides .bubble img.guide').count() === 2 && await page.locator('.mission').count() === 6, 'passport: two guides + a mission per day');
   ok(await page.locator('.sleep li').count() === 6, 'passport: where we go — 6 pins as printed');
   ok(await page.locator('.bdg').count() === 1 && (await page.textContent('.bdg')).includes('Mickey'), 'passport: Mimi’s first is a badge');
@@ -467,7 +474,9 @@ const T = 'hk-macau-2026';
   await s.page.screenshot({ path: path.join(OUT, 'wide-13-memory-book.png'), fullPage: true });
   await s.shot('10-book-wide');
   await s.page.goto(`${BASE}/#/passport/mimi`); await s.page.waitForSelector('.pp .dstamp');
-  const pw = await s.page.evaluate(() => ({ cols: getComputedStyle(document.querySelector('.pp')).gridTemplateColumns.split(' ').length, st: document.querySelector('.dstamp .art').getBoundingClientRect().width }));
+  await s.page.waitForSelector('.pp.packed');
+  const pw = await s.page.evaluate(() => { const c = [...document.querySelectorAll('.pp.packed > .ccol')].map((x) => x.offsetHeight); return { cols: c.length, gap: Math.abs(c[0] - c[1]), st: document.querySelector('.dstamp .art').getBoundingClientRect().width }; });
+  ok(pw.gap < 520, `wide passport: the two columns end close together (${pw.gap}px apart), no big hole beside the cover`);
   ok(pw.cols >= 2 && pw.st >= 56 && pw.st <= 90, `wide: passport pages side by side (${pw.cols} cols), stamps ${Math.round(pw.st)}px`);
   await s.shot('11-passport-wide');
   await s.page.goto(BASE + '/'); await s.page.waitForSelector('.shelf');

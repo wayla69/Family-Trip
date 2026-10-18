@@ -1470,3 +1470,39 @@ button.tile.kid{border:1px solid var(--line);text-align:left;justify-items:start
 .remind.on{border-color:color-mix(in srgb,var(--leaf) 40%,var(--line));background:color-mix(in srgb,var(--leaf) 6%,var(--paper))}
 .remind.on>.ic{color:var(--leaf)}
 .unitd{display:flex;align-items:center;gap:6px}.unitd .ppf{flex:1;min-width:0}.unitd .unit{flex:none;font-size:13px;color:var(--muted)}
+/* passport, wide: packBoxes() puts its pages into two columns of near-equal height */
+.pp.packed{display:flex;gap:18px;align-items:flex-start}
+.pp.packed>.ccol{flex:1 1 0;min-width:0;display:flex;flex-direction:column;gap:18px}
+.pp .ppc{min-height:380px}
+/* no orphan words: headings, kickers and short lines balance their lines; paragraphs avoid a lone last word */
+h1,h2,h3,h4,h5,.kicker,.pp .sub,.pp .places,.advc .sub,.advc .places,.mission h4{text-wrap:balance}
+p,li,.bubble p{text-wrap:pretty}
+/* the ID page: labels on one line */
+.bio dt{letter-spacing:.06em}
+/* stamps: text sized to fit the circle (--n = longest line / word), never broken mid-word */
+.stamp>div{font-size:min(9px,calc(var(--s) * 1.05 / var(--n, 9)));letter-spacing:.04em;max-width:calc(var(--s) * .82)}
+.mission .mstamp{font-size:min(9px,calc(68px / var(--n, 8)));word-break:normal;overflow-wrap:normal;hyphens:none}
+/* map: the place names sit on their own layer above the walking kids */
+.tmap svg.lbls{position:absolute;inset:0;pointer-events:none;z-index:2}
+.kidwrap .tmap svg.lbls{inset:6px}
+.tmap .walkers{z-index:1}
+.tmap .lbls .lbl{font-size:10.5px;font-weight:700;text-anchor:middle;fill:#3A4A5C;paint-order:stroke;stroke:#DDEFFB;stroke-width:4px}
+.stamp.s>div{font-size:0}
+.visa h3 .vflags{display:block;line-height:1;margin-bottom:4px}
+@media (max-width:520px){.bio dt{font-size:9.5px;letter-spacing:.03em;white-space:nowrap}}
+/* passport map: day buttons under it; a pin opens a card with the real place */
+.mapdays{display:flex;align-items:center;gap:6px;overflow-x:auto;padding:10px 0 2px;scrollbar-width:none}.mapdays::-webkit-scrollbar{display:none}
+.mapdays .label{flex:none;margin-right:2px}
+.mapdays .chip{flex:none;min-width:36px;justify-content:center;padding:6px 8px;font-weight:700}
+.tmap .pin{cursor:pointer}
+.pinacts{display:flex;flex-wrap:wrap;gap:8px;margin:12px 0}
+.pindays{display:flex;flex-wrap:wrap;gap:6px;margin-bottom:12px}
+.sleep ol .t b a{color:inherit;text-decoration:underline;text-decoration-color:color-mix(in srgb,var(--pp,var(--accent)) 45%,transparent);text-underline-offset:3px}
+.mapdays{flex-wrap:wrap;overflow:visible}
+.mapsec .tmap .walkers img{height:44px}.mapsec .tmap .walkers img.mika{height:34px}
+.pinstays{display:flex;flex-direction:column;gap:6px;margin:0 0 12px}
+.pinstay{display:flex;align-items:center;gap:10px;justify-content:space-between;padding:8px 10px;border:1px solid var(--line);border-radius:12px}
+.pinstay>span{display:flex;flex-direction:column;min-width:0;padding-left:26px;position:relative}
+.pinstay>span>.ic{position:absolute;left:0;top:2px;width:18px;height:18px;color:var(--muted)}
+.pinstay small{color:var(--muted);font-size:12.5px}
+.pinstay .btn{flex:none}
