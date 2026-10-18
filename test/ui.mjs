@@ -65,9 +65,9 @@ const T = 'hk-macau-2026';
   // the book opens on its menu: a tile per topic, today first, the detail one tap away
   ok(await page.locator('.hubgrid .tile').count() >= 14 && await page.locator('.hubgrid .tile.today').count() === 1 && /อีก|to go/.test(await page.textContent('.tile.today')), 'book menu: topic tiles, today on top with the countdown');
   ok(await page.locator('.tile[href$="/eat"]').count() === 1 && await page.locator('.tile[href$="/sos"]').count() === 1 && await page.locator('.tile[href$="/stays"]').count() === 1 && await page.locator('.tile.kid[data-a="kidmode"]').count() === 1, 'book menu: eat, emergency, stays, kid mode tiles');
-  ok(await page.locator('nav.bar .in > *').count() === 5 && await page.locator('nav.bar a[aria-current=page] i').textContent() === '🏠' && (await page.locator('nav.bar .in > *').first().boundingBox()).height >= 60, 'quick bar: five big stops, menu highlighted');
+  ok(await page.locator('nav.bar .in > *').count() === 5 && await page.locator('nav.bar a[aria-current=page][href$="/hk-macau-2026"] i svg.ic').count() === 1 && (await page.locator('nav.bar .in > *').first().boundingBox()).height >= 60, 'quick bar: five big stops, menu highlighted');
   await page.click('.tile[href$="/today"]'); await page.waitForSelector('.day.today');
-  ok(await page.locator('.daystrip a').count() === 6 && await page.locator('.call.info').count() === 1 && await page.locator('.glg .glc').count() >= 4 && await page.locator('.tl.plan.brief li').count() >= 4 && await page.locator('.reportbtn[href$="/today/0/full"]').count() === 1 && await page.locator('.top .ttl small', { hasText: /วันนี้|Today/ }).count() === 1, "today page: day strip, countdown banner, day 1 at a glance (short timeline + answer cards, full report one tap away), topic named in the top bar");
+  ok(await page.locator('.daystrip a').count() === 6 && await page.locator('.call.info').count() === 1 && await page.locator('.dsheet > div').count() >= 4 && await page.locator('.tl.plan.brief li').count() >= 4 && await page.locator('.reportbtn[href$="/today/0/full"]').count() === 1 && await page.locator('.top .ttl small', { hasText: /วันนี้|Today/ }).count() === 1, "today page: day strip, countdown banner, day 1 at a glance (short timeline + answer cards, full report one tap away), topic named in the top bar");
   await page.click('.daystrip a[href$="/today/3"]'); await page.waitForSelector('.daystrip a[aria-current=true][href$="/today/3"]');
   ok((await page.textContent('.day.today h3')).includes('Senado') || (await page.textContent('.day.today h3')).includes('แสง'), 'today page: the strip switches days');
   await page.click('.top .ibtn'); await page.waitForSelector('.hubgrid');
@@ -642,8 +642,8 @@ const T = 'hk-macau-2026';
   await page.goto(`${BASE}/#/t/big-hop-2027/today/full`); await page.waitForSelector('.day.today');
   ok((await page.textContent('.day.today h3')).includes('Grand Pacific') && await page.locator('.quick a[href*="/log/1"]').count() === 1 && await page.locator('.quick a[href*="maps/dir"]').count() === 1 && await page.locator('.dayplan[open] .picks .pk').count() === 3, "today page on the trip: day 2, record + route buttons, the plan open with its picks");
   // glance first: each topic opens as a few answer cards; the manual-style report is one tap away
-  await page.goto(`${BASE}/#/t/big-hop-2027/today`); await page.waitForSelector('.glg');
-  ok(/Money today/.test(await page.textContent('.glg')) && /Today ≈ A\$/.test(await page.textContent('.glg')) && await page.locator('.dayplan').count() === 0 && await s.noHScroll(), 'today glance: answer cards (money shows the day total), no full plan until tapped');
+  await page.goto(`${BASE}/#/t/big-hop-2027/today`); await page.waitForSelector('.dsheet');
+  ok(/Money today/.test(await page.textContent('.dsheet')) && /≈ A\$\d/.test(await page.textContent('.dsheet .num')) && await page.locator('.dayplan').count() === 0 && await s.noHScroll(), 'today glance: answer cards (money shows the day total), no full plan until tapped');
   await page.goto(`${BASE}/#/t/big-hop-2027/plan`); await page.waitForSelector('.drows');
   ok(await page.locator('.drows li').count() === 16 && await page.locator('.drows li.now a[href$="/today/1"]').count() === 1 && await s.noHScroll(), 'whole-trip glance: one tappable line per day, today marked, fits the phone');
   await page.goto(`${BASE}/#/t/big-hop-2027/stays`); await page.waitForSelector('.slist');
@@ -718,7 +718,7 @@ const T = 'hk-macau-2026';
   // all places to eat: the manual's "Where to eat", searchable, every card opens Maps
   await page.evaluate(() => localStorage.removeItem('mbs_kidmode'));   // a grown-up leaves kid mode
   await page.goto(`${BASE}/#/t/big-hop-2027/eat`); await page.waitForSelector('.eatc');
-  ok(await page.locator('.eatc').count() === 294 && await page.locator('nav.bar a[aria-current=page] i').textContent() === '🍽️', 'eat page: 294 places from the manual, tab highlighted');
+  ok(await page.locator('.eatc').count() === 294 && await page.locator('nav.bar a[aria-current=page][href$="/eat"] i svg.ic').count() === 1, 'eat page: 294 places from the manual, tab highlighted');
   ok(await page.locator('.eatc a[href*="google.com/maps/search"]').count() === 588 && await page.locator('.eatc a[href*="maps/dir/"]').count() === 294, 'eat page: every place has a map link (name + button) and directions');
   await page.fill('#eatq', 'pie');
   const pies = await page.$$eval('.eatc', (els) => els.filter((e) => e.dataset.s.includes('pie')).length), shownPies = await page.locator('.eatc:visible').count();

@@ -1171,3 +1171,124 @@ p.money b{color:color-mix(in srgb,var(--leaf) 70%,var(--ink))}
 .callb.main{background:var(--hot);border-color:var(--hot);color:#fff}.callb.main .ce{background:rgba(255,255,255,.2)}.callb.main small{color:#fff;font-size:22px}
 .lostc{margin-top:12px}
 .sline .tag{align-self:flex-start;margin:2px 0}
+
+/* ===== quiet & professional (owner 18 Oct 2026: "สวยงาม มืออาชีพ ไม่ใช่ AI format") — overrides the brighter layer above =====
+   one line-icon set (core.js ICONS) instead of emoji · one accent per book (red only for emergencies, amber only for "today")
+   · hairline lists instead of stacks of tinted cards · one radius · a four-step type scale · no dashed boxes, no coloured side stripes */
+:root{--r:12px;--line:color-mix(in srgb,var(--ink) 11%,transparent);--soft:color-mix(in srgb,var(--accent) 7%,var(--paper));--fs-1:clamp(26px,3.6vw,34px);--fs-2:18px;--fs-3:15.5px;--fs-4:12.5px}
+.ic{width:20px;height:20px;flex:none;vertical-align:-4px}
+.ibtn .ic{width:20px;height:20px}
+/* bars: icons in the ink colour, the current stop in the accent */
+nav.bar a i,nav.bar button i{font-size:0;line-height:0;height:26px;display:grid;place-items:center}
+nav.bar a i .ic,nav.bar button i .ic{width:24px;height:24px}
+nav.bar a[aria-current=page] i{transform:none}
+nav.bar a[aria-current=page]{background:none;color:var(--accent)}
+nav.bar a[aria-current=page] i::after{content:"";display:block}
+nav.bar a,nav.bar button{font-weight:500;font-size:11.5px;letter-spacing:.01em}
+/* type */
+.h2,.tp>h1.h2{font-size:var(--fs-1);letter-spacing:-.01em;color:var(--ink);border:0;padding:0;display:block}
+.lede{font-size:var(--fs-3)}
+.part{font-size:var(--fs-4);font-weight:600;letter-spacing:.1em;text-transform:uppercase;color:var(--muted)}
+.gh{font-size:var(--fs-4);font-weight:600;letter-spacing:.1em;text-transform:uppercase;color:var(--muted);margin:22px 0 6px}
+/* menu tiles: white, hairline, the icon in a soft accent square */
+.tile,.tile[class*="t-"],.tile[href="#/passport"],.tile[href="#/notebook"],.tile.kid,.tile.shelf,.tile.log,.tile.sos{--tc:var(--accent);background:var(--paper);color:var(--ink);border:1px solid var(--line);border-top:1px solid var(--line);border-radius:var(--r);min-height:112px}
+.tile .e{display:grid;place-items:center;width:40px;height:40px;border-radius:10px;background:var(--soft);color:var(--accent);font-size:0}
+.tile .e .ic{width:22px;height:22px}
+.tile b,.tile.kid b{color:var(--ink);font-weight:600;font-size:15.5px}
+.tile small,.tile.kid small,.tile.t-sos small{color:var(--muted);font-weight:400}
+.tile.kid .e{background:var(--soft)}
+.tile.t-sos .e{background:color-mix(in srgb,var(--hot) 10%,var(--paper));color:var(--hot)}
+.tile.warn{border-color:color-mix(in srgb,var(--accent2) 45%,var(--line))}
+.tile.shelf{background:transparent}
+.tile.today{background:var(--paper)}
+.tile.today.hi{background:var(--accent);border-color:var(--accent);color:#fff}.tile.today.hi .e{background:rgba(255,255,255,.16);color:#fff}.tile.today.hi b{color:#fff}
+.tile.today b{font-size:22px}
+/* topic pages: no per-topic colour, emergencies keep red */
+.tp,.tp-stays,.tp-prep,.tp-learn,.tp-plan,.eatpage{--tc:var(--accent)}.tp-sos{--tc:var(--hot)}
+.tp .pocket details.pg>summary{border-left:0;padding-left:0}
+.tp .pocket h5,.eatpage .eatg h3{color:var(--ink)}
+.eatpage .eatg h3{border-bottom:1px solid var(--line)}
+/* callouts: a quiet tint, no side stripe; only warnings are red */
+.call,.pocket .call{border-left:0;border-radius:var(--r);font-size:var(--fs-3)}
+.call.pick{background:var(--soft)}.call.info{background:color-mix(in srgb,var(--ink) 4%,var(--paper))}.call.calm{background:color-mix(in srgb,var(--ink) 4%,var(--paper))}
+.call.warn{background:color-mix(in srgb,var(--hot) 7%,var(--paper))}
+.call .lbl,.call.pick .lbl{font-family:var(--ui);font-style:normal;font-size:var(--fs-4);font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:var(--accent);display:block;margin:0 0 2px}
+.call.warn .lbl{color:var(--hot)}
+p.money{background:none;border:0;padding:0}p.money b{color:var(--ink)}
+.dayplan .stay b{color:var(--ink)}
+.tips li.tk-warn::marker{color:var(--hot)}.tips li.tk-tip::marker{color:var(--sun)}.tips li.tk-info::marker{color:var(--accent)}
+.kidline b{font-size:var(--fs-4);letter-spacing:.06em;text-transform:uppercase;margin-right:4px}
+/* quick actions: one solid button, the rest quiet links */
+.row.quick{align-items:center;gap:6px 18px}
+.qlink{display:inline-flex;align-items:center;gap:6px;color:var(--accent);font-weight:600;text-decoration:none;padding:8px 0}
+.btn .ic{width:18px;height:18px}
+/* today: the day as a sheet — label column, answer column, hairlines */
+.dsheet{margin:0;border-top:1px solid var(--line)}
+.dsheet>div{display:grid;grid-template-columns:minmax(92px,28%) 1fr;gap:12px;padding:11px 0;border-bottom:1px solid var(--line)}
+.dsheet dt{font-size:var(--fs-4);font-weight:600;letter-spacing:.06em;text-transform:uppercase;color:var(--muted);padding-top:2px}
+.dsheet dd{margin:0;font-size:var(--fs-3);line-height:1.45}
+.dsheet dd a{color:var(--accent)}
+.dsheet .warn dt{color:var(--hot)}
+.dsheet .num{font-variant-numeric:tabular-nums;font-weight:700;font-size:17px}
+.tl.plan.brief{border-top:1px solid var(--line)}.tl.plan.brief>li{border-bottom:1px solid var(--line)}
+.tl.plan.brief time{color:var(--ink);font-variant-numeric:tabular-nums}
+.call.mission{background:var(--soft)}
+/* glance lists: an index of the report's sections, one hairline row each */
+.glg{display:block;margin:14px 0;border-top:1px solid var(--line)}
+.glc,.glc.warn,.glc.stay{display:flex;align-items:center;gap:12px;min-height:0;padding:13px 2px;border:0;border-bottom:1px solid var(--line);border-radius:0;background:none;color:var(--ink)}
+.glc::after{content:none}
+.glc .gt{flex:1;min-width:0;display:flex;flex-direction:column;gap:2px}
+.glc b{font-size:var(--fs-3);font-weight:600;color:var(--ink)}
+.glc b .label{font-weight:400}
+.glc small{font-size:13.5px;color:var(--muted);opacity:1}
+.glc>.ic{color:var(--muted);width:18px;height:18px}
+@media (min-width:760px){.glg{display:grid;grid-template-columns:1fr 1fr;column-gap:32px}}
+.reportbtn{display:flex;align-items:center;gap:10px;margin:18px 0 8px;padding:13px 16px;border:1px solid var(--line);border-radius:var(--r);background:var(--paper);color:var(--accent);font-weight:600;text-decoration:none}
+.reportbtn b{flex:1;font-size:var(--fs-3)}
+.backsum{display:inline-flex;align-items:center;gap:4px;background:none;padding:6px 0;color:var(--accent)}
+.backsum .ic{width:16px;height:16px}
+/* whole trip: plain rows */
+.drows{gap:0;border-top:1px solid var(--line)}
+.drows a{border:0;border-bottom:1px solid var(--line);border-radius:0;background:none;padding:10px 2px}
+.drows .dl b{color:var(--accent);font-variant-numeric:tabular-nums}
+.drows>li>a>.ic{color:var(--muted);width:18px;height:18px;margin-left:auto}
+.drows li.now a{background:color-mix(in srgb,var(--sun) 12%,var(--paper));border-radius:var(--r)}
+.done{font-size:11px;font-weight:600;color:var(--accent);margin-left:4px}
+@media (min-width:760px){.drows{column-gap:32px}}
+/* stays: rows with the stay's colour as a small dot, icon buttons */
+.slist{gap:0 32px;border-top:1px solid var(--line)}
+.sline{border-left:0;border-radius:0;background:none;border-bottom:1px solid var(--line);padding:12px 2px}
+.sline .nn{color:var(--muted);font-weight:600;display:flex;align-items:center;gap:6px}
+.sline .nn::before{content:"";width:8px;height:8px;border-radius:50%;background:var(--c)}
+.sline.now{box-shadow:none;background:color-mix(in srgb,var(--sun) 12%,var(--paper));border-radius:var(--r);padding:12px 10px}
+.sline .go{width:42px;height:42px;border:1px solid var(--line);color:var(--accent)}
+.stayc .go .ic{width:16px;height:16px;vertical-align:-3px}
+/* emergency: the main number stays loud, the rest are quiet rows */
+.calls{gap:0 24px}
+.callb{background:none;border:0;border-bottom:1px solid var(--line);border-radius:0;padding:12px 2px}
+.callb .ce{width:40px;height:40px;background:color-mix(in srgb,var(--hot) 9%,var(--paper));color:var(--hot)}
+.callb small{color:var(--ink);font-variant-numeric:tabular-nums}
+.callb.main{background:var(--hot);border-radius:var(--r);padding:14px 16px;margin-bottom:6px;color:#fff}
+.callb.main .ce{background:rgba(255,255,255,.18);color:#fff}
+.ecard{border:1px solid color-mix(in srgb,var(--hot) 35%,var(--line));background:var(--paper)}
+/* learn: quiet cards */
+.qa,.qa[open]{background:none;border:0;border-bottom:1px solid var(--line);border-radius:0}
+.qa p{color:var(--ink)}
+.tp-learn .learn{background:none;border-left:0;border-top:1px solid var(--line);border-radius:0;padding:10px 0}
+.tp-learn .learn>.label{background:var(--soft);color:var(--accent)}
+.tp-learn .learn .kidline{background:var(--soft)}
+.tp-learn .gcard{border-top:1px solid var(--line)}.tp-learn .gcard .kicker{color:var(--accent)}
+.words dt{color:var(--ink)}
+.wc{background:var(--paper);border:1px solid var(--line)}.wc .we{background:var(--soft)}
+/* eat: one red badge colour is enough */
+.badge{background:var(--accent)}
+.emeta .pr{background:var(--soft);color:var(--accent)}
+.why b{font-size:var(--fs-4);letter-spacing:.06em;text-transform:uppercase;color:var(--muted);margin-right:4px}
+.glc,.glc.warn,.glc.stay{flex-direction:row;text-align:left;position:static}
+button.tile.kid{border:1px solid var(--line);text-align:left;justify-items:start;box-shadow:none;outline:0}
+:root[data-theme=dark] .tile.kid{background:var(--paper)}@media (prefers-color-scheme:dark){:root:not([data-theme=light]) .tile.kid{background:var(--paper)}}
+.eatc.pk,.picks .pk{background:var(--paper);border:1px solid var(--line);border-radius:var(--r);box-shadow:none}
+.strip{background:color-mix(in srgb,var(--ink) 3.5%,var(--paper));border-radius:var(--r)}
+.call,.call.mission{box-shadow:none}
+.dsheet>div{grid-template-columns:minmax(92px,180px) 1fr}
+.dayplan>summary{color:var(--accent)}
