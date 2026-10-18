@@ -556,6 +556,14 @@ const T = 'hk-macau-2026';
   await page.click('.kidback'); await page.click('.kidtiles button[data-v$="/pack"]'); await page.waitForSelector('.kidspots button');
   await page.locator('.kidspots button').first().click(); await page.waitForSelector('.kidspots button.on');
   ok(await page.locator('.kidspots button').count() === 10, 'pack: 10 big picture cards, tap = packed');
+  for (let k = 1; k < 5; k++) { await page.locator('.kidspots button').nth(k).click(); await page.waitForSelector(`.kidspots button:nth-child(${k + 1}).on`); }
+  // trophies before the trip: first door + packing helper earned, halfway not yet
+  await page.click('.kidbar button[data-v$="/trophies"]'); await page.waitForSelector('.tro');
+  const pre = await page.locator('.tro').evaluateAll((bs) => bs.slice(0, 3).map((b) => b.classList.contains('got')));
+  ok(pre.join() === 'true,true,false', 'trophies before the trip: first door and packing helper earned, halfway still locked');
+  ok(await s.noHScroll(), 'trophies page fits the phone');
+  await s.shot('02b-kid-pretrip-trophies', false);
+  await page.click('.kidbar button[data-v="#/kid/mimi"]'); await page.waitForSelector('.kidtiles'); await page.click('.kidtiles button[data-v$="/pack"]'); await page.waitForSelector('.kidspots button');
   // finger drawing → a private picture (no day before the trip)
   await page.click('.kidback'); await page.click('.kidtiles button[data-v$="/draw"]'); await page.waitForSelector('#kidcanvas');
   await page.click('[data-a="kiddrawdone"]');
