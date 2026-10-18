@@ -184,7 +184,15 @@ function burst(el, chars) {
     document.body.appendChild(s); setTimeout(() => s.remove(), 750);
   }
 }
-function kidBadge(slug, off) { return `<span class="kid ${esc(slug)}${off ? ' off' : ''}" title="${esc(kidName(slug))}">${kidEmoji(slug)}</span>`; }
+// the kids as drawn characters (public/art/kids, drawn from photos the owner shared — the photos themselves are not in the repo)
+const KID_ART = ['mimi', 'mika'];
+const kidArt = (slug, full) => (KID_ART.includes(slug) ? `/art/kids/${slug}${full ? '-full' : ''}.svg` : '');
+const kidFace = (slug) => (slug === 'both' ? KID_ART.map((k) => `<img class="face" src="${kidArt(k)}" alt="">`).join('')
+  : kidArt(slug) ? `<img class="face" src="${kidArt(slug)}" alt="">` : esc(kidEmoji(slug)));
+function kidBadge(slug, off) {
+  const art = slug === 'both' ? `<img src="${kidArt('mimi')}" alt=""><img src="${kidArt('mika')}" alt="">` : kidArt(slug) ? `<img src="${kidArt(slug)}" alt="">` : kidEmoji(slug);
+  return `<span class="kid ${esc(slug)}${off ? ' off' : ''}${kidArt(slug) || slug === 'both' ? ' drawn' : ''}" title="${esc(kidName(slug))}">${art}</span>`;
+}
 // two taps to delete (no confirm()): first tap arms for 3 s
 function armed(btn) {
   if (btn.dataset.armed) return true;

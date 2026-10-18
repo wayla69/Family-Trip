@@ -70,7 +70,7 @@ function loginView() {
   const chips = [['พ่อ', 'Dad'], ['แม่', 'Mum']].map(([th, en]) => { const v = L(th, en); return `<button type="button" class="chip" data-a="who-login" data-v="${esc(v)}" aria-pressed="${who === v}">${esc(v)}</button>`; }).join('');
   const keys = ['1', '2', '3', '4', '5', '6', '7', '8', '9', 'clear', '0', 'back'];
   return `<div class="login"><form id="lf" autocomplete="on">
-<div class="loginart" aria-hidden="true">${['/art/hk/day-2.svg', '/art/hk/day-5.svg', '/art/day-4.svg', '/art/day-11.svg', '/art/day-13.svg'].map((a, i) => `<img class="art f${i}" src="${a}" alt="">`).join('')}</div>
+<div class="loginart" aria-hidden="true">${['/art/hk/day-2.svg', '/art/day-4.svg', '/art/day-13.svg'].map((a, i) => `<img class="art f${i}" src="${a}" alt="">`).join('')}${castHtml(KID_ART)}</div>
 <div class="kicker">${L('สมุดครอบครัว · ส่วนตัว', 'Private family book')}</div>
 <h1>Memory<br>Bookshelf</h1><p class="muted">${L('ความทรงจำของมีมี่และมีก้า ทุกทริป', "Mimi & Mika's memories, every trip")}</p>
 <label for="lcode">${L('PIN ครอบครัว', 'Family PIN')}</label>
@@ -105,16 +105,18 @@ ${visual}
 <p class="lede">${L('แต่ละทริปคือหนึ่งเล่ม เปิดอ่านได้ทั้งตอนเที่ยวและอีกหลายปีข้างหน้า', 'Each trip is a book — to fill in on the road and reread for years.')}</p>
 <div class="shelf">${books}${add}</div>
 <div class="part">${L('พาสปอร์ตของเด็กๆ', 'The kids’ passports')} 🛂</div>
-<div class="ppmini">${children().map((k) => { const n = passportStamps(k.slug); return `<a class="ppc s kid-${esc(k.slug)}" href="#/passport/${esc(k.slug)}"><span class="emb">🌏</span><b>${L('พาสปอร์ตความทรงจำ', 'Memory Passport')}</b><span class="nm">${esc(kidName(k.slug))}</span><small>${n} ${L('ตราประทับ', n === 1 ? 'stamp' : 'stamps')}</small></a>`; }).join('')}</div>`;
+<div class="ppmini">${children().map((k) => { const n = passportStamps(k.slug); return `<a class="ppc s kid-${esc(k.slug)}" href="#/passport/${esc(k.slug)}"><span class="emb">${kidArt(k.slug) ? `<img src="${kidArt(k.slug)}" alt="">` : '🌏'}</span><b>${L('พาสปอร์ตความทรงจำ', 'Memory Passport')}</b><span class="nm">${esc(kidName(k.slug))}</span><small>${n} ${L('ตราประทับ', n === 1 ? 'stamp' : 'stamps')}</small></a>`; }).join('')}</div>`;
 }
 const artImg = (t, i, cls) => { const a = dayArt(t, i); return a ? `<img class="art${cls ? ' ' + cls : ''}" src="${esc(a)}" alt="" loading="lazy">` : `<span class="art emo${cls ? ' ' + cls : ''}">${esc(t.days[i].emoji || '📍')}</span>`; };
+// the kids standing together, as drawn characters (Mimi pulls her wagon, as in the photo)
+const castHtml = (slugs) => { const ks = slugs.filter((k) => kidArt(k)); return ks.length ? `<div class="cast" aria-hidden="true">${ks.map((k) => `<img class="who ${esc(k)}" src="${kidArt(k, true)}" alt="">`).join('')}</div>` : ''; };
 const flagsOf = (t) => ((t.theme && t.theme.places) || []).map((p) => p.flag).join('');
 // "next adventure": a countdown before the trip, today's day during it; nothing once it is over
 function heroHtml() {
   const t = curTrip(); if (!t) return '';
   const dn = dayNow(t), until = daysUntil(t);
   if (dn < 0 && until <= 0) return '';
-  const kids = (t.theme.children || []).map((k) => `${kidEmoji(k.slug)} ${esc(kidName(k.slug))}${k.age ? ' ' + esc(T(k.age)) : ''}`).join(' · ');
+  const kids = (t.theme.children || []).map((k) => `${kidFace(k.slug)} ${esc(kidName(k.slug))}${k.age ? ' ' + esc(T(k.age)) : ''}`).join(' · ');
   const big = dn >= 0 ? `<b>${dn + 1}</b><small>/ ${t.days.length}</small>` : `<b>${until}</b>`;
   const lbl = dn >= 0 ? L('วันที่ของทริป', 'day of the trip') : L(until === 1 ? 'พรุ่งนี้ออกเดินทาง!' : 'วันก่อนออกเดินทาง', until === 1 ? 'day to go — tomorrow!' : 'days to go');
   const go = dn >= 0 && isEditor() ? `<a class="btn" href="#/t/${esc(t.id)}/log/${dn}">✏️ ${L('บันทึกวันนี้', 'Record today')}</a>` : `<a class="btn" href="#/t/${esc(t.id)}">📖 ${L('เปิดเล่มนี้', 'Open the book')}</a>`;
@@ -124,7 +126,7 @@ function heroHtml() {
 <h2>${esc(dn >= 0 ? `${t.days[dn].emoji || ''} ${T(t.days[dn].title)}` : T(t.title).split(' · ')[0])}</h2>
 <div class="count">${big}<span>${lbl}</span></div>
 ${kids ? `<p class="kids">${kids}</p>` : ''}${go}</div>
-<div class="float">${art.map((i, j) => artImg(t, i, 'f' + j)).join('')}</div></section>`;
+<div class="float">${art.slice(0, 3).map((i, j) => artImg(t, i, 'f' + j)).join('')}${castHtml((t.theme.children || []).map((k) => k.slug))}</div></section>`;
 }
 function stampHtml(t, small) {
   const earned = stampEarned(t), txt = (t.stamp && t.stamp.text) || [T(t.title)];
@@ -163,7 +165,7 @@ ${favs ? `<div class="part">${L('ช่วงเวลาที่ชอบท�
 ${firsts.length ? `<div class="part">${L('ครั้งแรกของหนู', 'Firsts')}</div><div class="firsts">${firsts.map((e) => { const f = firstLabel(t, e.first_key); return `<div class="first got"><span class="e">${esc(f.e)}</span><span class="t">${esc(e.first_key === 'custom' ? e.text : f.t)}<br><small class="muted">${L('วันที่', 'Day')} ${e.day + 1}</small></span><span class="kids">${kidBadge(e.child)}</span></div>`; }).join('')}</div>` : ''}
 ${isEditor() && S.features.story && days.length ? storyBlock(t, null)
     : story ? `<div class="part">${L('นิทานของทั้งทริป', 'The story of the trip')}</div><div class="call calm" style="white-space:pre-line">${esc(story.text)}</div>` : ''}
-${days.map((i) => dayPage(t, i)).join('') || `<div class="empty">${L('ยังไม่มีบันทึก — ', 'Nothing recorded yet — ')}${edit ? `<a href="#/t/${esc(t.id)}/log/${Math.max(0, dayNow(t))}">${L('เริ่มบันทึกวันแรก', 'start with a day')}</a>` : L('รอพ่อแม่บันทึกระหว่างทริป', 'the grown-ups will fill it in during the trip')}</div>`}
+${days.map((i) => dayPage(t, i)).join('') || `<div class="empty">${castHtml((t.theme.children || []).map((k) => k.slug))}${L('ยังไม่มีบันทึก — ', 'Nothing recorded yet — ')}${edit ? `<a href="#/t/${esc(t.id)}/log/${Math.max(0, dayNow(t))}">${L('เริ่มบันทึกวันแรก', 'start with a day')}</a>` : L('รอพ่อแม่บันทึกระหว่างทริป', 'the grown-ups will fill it in during the trip')}</div>`}
 <div class="row noprint" style="margin:28px 0 8px"><a class="btn small" href="/api/b/pdf/${esc(t.id)}" download data-a="pdf">⬇ ${L('ดาวน์โหลด PDF (A4)', 'Download PDF (A4)')}</a><button class="btn ghost small" data-a="print">🖨️ ${L('พิมพ์', 'Print')}</button><button class="btn ghost small" data-a="copytext">📋 ${L('คัดลอกเป็นข้อความ', 'Copy as text')}</button></div>`;
 }
 function favouritesHtml(t) {
@@ -194,7 +196,7 @@ function dayPage(t, i) {
   return `<article class="day" id="d${i}">
 <div class="hd"><div class="no">${String(i + 1).padStart(2, '0')}</div>
 <div class="dl">${L('วันที่', 'Day')} ${i + 1} · ${esc(fmtDay(d.date))}</div>
-<div class="moods">${moods.map((m) => `<span class="pill">${kidEmoji(m.child)} ${esc(m.mood)}</span>`).join('')}</div>
+<div class="moods">${moods.map((m) => `<span class="pill">${kidFace(m.child)} ${esc(m.mood)}</span>`).join('')}</div>
 <h3>${esc(T(d.title))}</h3>${artImg(t, i, 'hdart')}
 <div class="meta" style="grid-column:2/3">${d.sleep ? `<b>${L('นอนที่', 'Sleep')}</b> ${esc(T(d.sleep))}` : ''}${d.wx ? ` · ${esc(T(d.wx))}` : ''}</div></div>
 <div class="body">
@@ -273,11 +275,11 @@ function viewPassport(slug) {
 <div class="dstamps">${ds}</div></section>`;
   }).join('');
   if (fresh.length) ls('seen', [...seen, ...fresh]);
-  return `<div class="row ppkids" role="tablist">${ks.map((c) => `<a class="chip" role="tab" href="#/passport/${esc(c.slug)}" aria-selected="${c.slug === k.slug}" aria-pressed="${c.slug === k.slug}">${esc(c.emoji)} ${esc(kidName(c.slug))}</a>`).join('')}</div>
+  return `<div class="row ppkids" role="tablist">${ks.map((c) => `<a class="chip" role="tab" href="#/passport/${esc(c.slug)}" aria-selected="${c.slug === k.slug}" aria-pressed="${c.slug === k.slug}">${kidFace(c.slug)} ${esc(kidName(c.slug))}</a>`).join('')}</div>
 <div class="pp kid-${esc(k.slug)}">
-<section class="ppc"><span class="emb">🌏</span><b>${L('พาสปอร์ตความทรงจำ', 'Memory Passport')}</b><span class="sub">${L('MEMORY PASSPORT', 'พาสปอร์ตความทรงจำ')}</span><span class="nm">${esc(kidName(k.slug))}</span><small>${L('ชั้นหนังสือของมีมี่และมีก้า', 'Mimi & Mika’s bookshelf')}</small></section>
+<section class="ppc"><span class="emb">${kidArt(k.slug) ? `<img src="${kidArt(k.slug)}" alt="">` : '🌏'}</span><b>${L('พาสปอร์ตความทรงจำ', 'Memory Passport')}</b><span class="sub">${L('MEMORY PASSPORT', 'พาสปอร์ตความทรงจำ')}</span><span class="nm">${esc(kidName(k.slug))}</span><small>${L('ชั้นหนังสือของมีมี่และมีก้า', 'Mimi & Mika’s bookshelf')}</small></section>
 <section class="pp-page bio">
-<div class="photo"><span>${esc(k.emoji || '🙂')}</span></div>
+<div class="photo">${kidArt(k.slug) ? `<img src="${kidArt(k.slug)}" alt="">` : `<span>${esc(k.emoji || '🙂')}</span>`}</div>
 <dl>
 <div><dt>${L('ชื่อ', 'Name')}</dt><dd>${esc(kidName(k.slug))}${name ? ` <small>${esc(name)}</small>` : ''}</dd></div>
 <div><dt>${L('นักเดินทางตั้งแต่', 'Explorer since')}</dt><dd>${first ? esc(new Date(first.date_from + 'T00:00:00').toLocaleDateString(LOC(), { month: 'long', year: 'numeric' })) : '—'}</dd></div>
@@ -319,7 +321,7 @@ function viewLog(t, i) {
 ${ph.length ? `<div class="mosaic" style="margin-top:10px">${ph.map((m) => photoBtn(t, m)).join('')}</div>` : ''}</section>
 
 <section class="blk"><h3>💬 ${L('คำพูดน่ารัก', 'Things they said')}</h3>
-<div class="row" role="group">${kids.concat('both').map((k) => `<button class="chip" data-a="who" data-v="${k}" aria-pressed="${quoteWho === k}">${kidEmoji(k)} ${esc(kidName(k))}</button>`).join('')}</div>
+<div class="row" role="group">${kids.concat('both').map((k) => `<button class="chip" data-a="who" data-v="${k}" aria-pressed="${quoteWho === k}">${kidFace(k)} ${esc(kidName(k))}</button>`).join('')}</div>
 <textarea id="qtext" class="field" data-draft="q:${esc(dk)}" placeholder="${L('“หนูอยากเป็นปลา…”', '“I want to be a fish…”')}" style="margin-top:8px">${esc(drafts['q:' + dk] || '')}</textarea>
 <div class="row end" style="margin-top:6px"><button class="btn small" data-a="savequote" data-t="${esc(t.id)}" data-d="${i}">${L('บันทึกคำพูด', 'Save quote')}</button></div>
 ${quotes.length ? `<ul class="items">${quotes.map((e) => `<li><div class="grow">${quoteCall(e, false)}</div><button class="mini${e.highlight ? ' on' : ''}" data-a="hiq" data-v="${esc(e.id)}" aria-pressed="${!!e.highlight}" title="⭐">${e.highlight ? '⭐' : '☆'}</button><button class="mini" data-a="delentry" data-v="${esc(e.id)}">${L('ลบ', 'Delete')}</button></li>`).join('')}</ul>` : ''}</section>
@@ -337,7 +339,7 @@ ${kids.map((k) => `<div class="moodrow">${kidBadge(k)}<div class="opts">${(t.moo
 <div class="firsts">${t.firsts.map((f) => `<div class="first"><span class="e">${esc(f.emoji)}</span><span class="t">${esc(T(f.label))}</span><span class="kids">${kids.map((k) => `<button data-a="first" data-v="${esc(f.key)}" data-k="${k}" data-t="${esc(t.id)}" data-d="${i}" aria-pressed="${gotFirst(f.key, k)}" aria-label="${esc(kidName(k))}: ${esc(T(f.label))}">${kidBadge(k, !gotFirst(f.key, k))}</button>`).join('')}</span></div>`).join('')}</div>
 ${es.filter((e) => e.kind === 'first' && e.first_key === 'custom').map((e) => `<div class="first got" style="margin-top:8px"><span class="e">⭐</span><span class="t">${esc(e.text)}</span>${kidBadge(e.child)}<button class="mini" data-a="delentry" data-v="${esc(e.id)}">${L('ลบ', 'Delete')}</button></div>`).join('')}
 <div class="row" style="margin-top:8px"><input id="firsttext" class="field" style="flex:1;min-width:160px" data-draft="c:${esc(dk)}" value="${esc(drafts['c:' + dk] || '')}" placeholder="${L('ครั้งแรกอื่นๆ เช่น ใส่รองเท้าเอง', 'Another first, e.g. shoes on by herself')}">
-${kids.map((k) => `<button class="btn ghost small" data-a="customfirst" data-k="${k}" data-t="${esc(t.id)}" data-d="${i}">＋ ${kidEmoji(k)}</button>`).join('')}</div></section>
+${kids.map((k) => `<button class="btn ghost small" data-a="customfirst" data-k="${k}" data-t="${esc(t.id)}" data-d="${i}">＋ ${kidFace(k)}</button>`).join('')}</div></section>
 
 ${(d.planned || []).length ? `<section class="blk"><h3>📍 ${L('เช็คอินที่ไป & มื้ออาหาร', 'Check in: places & meals')}</h3>
 ${d.planned.map((p) => `<div class="check"><button data-a="place" data-v="${esc(p.key)}" data-k="${esc(p.kind || 'place')}" data-t="${esc(t.id)}" data-d="${i}" aria-pressed="${visited.has(p.key)}" aria-label="${esc(T(p))}">${visited.has(p.key) ? '✓' : ''}</button><span class="grow">${p.kind === 'food' ? '🍽️ ' : ''}${esc(T(p))}${p.meal ? ` <small>· ${esc(p.meal)}</small>` : ''}</span></div>`).join('')}</section>` : ''}
