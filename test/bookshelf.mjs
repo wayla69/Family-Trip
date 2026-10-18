@@ -29,6 +29,7 @@ ok(hk.passport.days.length === 6 && hk.passport.guides.length === 2 && s.trips[1
 ok(!JSON.stringify(s.trips.map((t) => t.passport)).match(/e-ticket|\b\d{3}-\d{10}\b|[A-Z]{2}\d{7}/), 'passport content has no ticket / passport numbers');
 ok(hk.firsts.length === 10 && hk.theme.accent === '#1F3A5F' && hk.theme.kicker.includes('DOLPHIN'), 'HK firsts catalog + manual theme');
 ok(s.trips[1].days.length === 16 && s.trips[1].theme.accent === '#2C5646', 'Australia 16 days + eucalyptus theme');
+ok(s.trips[1].firsts.length === 11 && s.trips[1].firsts.some((f) => f.key === 'koala' && f.label.th && f.label.en), 'Australia has its own firsts to record (kangaroo, koala, dolphins…)');
 ok(s.children.map((k) => k.slug).join() === 'mimi,mika', 'children mimi, mika');
 ok((await fetch(BASE + '/api/b/state')).status === 401, 'state needs login');
 

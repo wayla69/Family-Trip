@@ -2128,7 +2128,96 @@
    }
   }
  ],
- "firsts_catalog": [],
+ "firsts_catalog": [
+  {
+   "key": "plane",
+   "emoji": "✈️",
+   "label": {
+    "th": "นั่งเครื่องบินไปออสเตรเลีย",
+    "en": "The flight to Australia"
+   }
+  },
+  {
+   "key": "kangaroo",
+   "emoji": "🦘",
+   "label": {
+    "th": "เจอจิงโจ้ตัวจริง",
+    "en": "Meeting a real kangaroo"
+   }
+  },
+  {
+   "key": "koala",
+   "emoji": "🐨",
+   "label": {
+    "th": "เจอโคอาล่าตัวจริง",
+    "en": "Meeting a real koala"
+   }
+  },
+  {
+   "key": "dolphin",
+   "emoji": "🐬",
+   "label": {
+    "th": "เห็นโลมาในทะเล",
+    "en": "Dolphins in the sea"
+   }
+  },
+  {
+   "key": "dunes",
+   "emoji": "🏜️",
+   "label": {
+    "th": "ปีนเนินทรายยักษ์",
+    "en": "Climbing the giant sand dunes"
+   }
+  },
+  {
+   "key": "horse",
+   "emoji": "🐴",
+   "label": {
+    "th": "นอนที่ฟาร์มม้า",
+    "en": "A night on a horse farm"
+   }
+  },
+  {
+   "key": "train",
+   "emoji": "🚂",
+   "label": {
+    "th": "นั่งรถไฟโบราณ Zig Zag",
+    "en": "The old Zig Zag train"
+   }
+  },
+  {
+   "key": "rockpool",
+   "emoji": "🌊",
+   "label": {
+    "th": "เล่นน้ำในสระหินริมทะเล",
+    "en": "A sea rock pool"
+   }
+  },
+  {
+   "key": "ferry",
+   "emoji": "⛴️",
+   "label": {
+    "th": "นั่งเรือเฟอร์รี่ข้ามอ่าวซิดนีย์",
+    "en": "A ferry across Sydney Harbour"
+   }
+  },
+  {
+   "key": "opera",
+   "emoji": "🎭",
+   "label": {
+    "th": "เห็นโอเปร่าเฮาส์",
+    "en": "Seeing the Opera House"
+   }
+  },
+  {
+   "key": "pie",
+   "emoji": "🥧",
+   "label": {
+    "th": "กินพายเนื้อแบบออสซี่",
+    "en": "An Aussie meat pie"
+   }
+  }
+ ],
  "moods": [
   "😄",
   "🥰",
