@@ -1,6 +1,6 @@
 // Memory Bookshelf service worker: app shell offline, photos cached as you view them. Data (/api) is cached by the app itself.
-const V = 'mbs-v5';
-const SHELL = ['/', '/app.css', '/core.js', '/views.js', '/sheets.js', '/manifest.webmanifest', '/icon.svg',
+const V = 'mbs-v6';
+const SHELL = ['/', '/app.css', '/core.js', '/views.js', '/sheets.js', '/kid.js', '/manifest.webmanifest', '/icon.svg',
   '/fonts/KIRA-UI-Regular.woff2', '/fonts/KIRA-UI-Medium.woff2', '/fonts/KIRA-UI-SemiBold.woff2', '/fonts/KIRA-UI-Bold.woff2',
   '/fonts/CormorantGaramond-SemiBold.woff2', '/fonts/CormorantGaramond-MediumItalic.woff2'];
 self.addEventListener('install', (e) => { e.waitUntil(caches.open(V).then((c) => c.addAll(SHELL)).then(() => self.skipWaiting())); });

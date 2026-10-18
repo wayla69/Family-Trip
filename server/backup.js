@@ -101,7 +101,11 @@ async function importZip(file, pool, media) {
           const vals = ks.map((k) => (jsonb.has(k) && r[k] !== null ? JSON.stringify(r[k]) : r[k]));
           await c.query('SAVEPOINT r');
           try {
-            n += (await c.query(`INSERT INTO ${t} (${ks.join(',')}) VALUES (${ks.map((_, i) => '$' + (i + 1)).join(',')}) ON CONFLICT DO NOTHING`, vals)).rowCount;
+            // days already exist from the seeds on a fresh server: still bring back their Done marks
+            const onConflict = t === 'trip_days' && ks.includes('done_at')
+              ? 'ON CONFLICT (trip_id, day_index) DO UPDATE SET done_at = EXCLUDED.done_at WHERE trip_days.done_at IS NULL AND EXCLUDED.done_at IS NOT NULL'
+              : 'ON CONFLICT DO NOTHING';
+            n += (await c.query(`INSERT INTO ${t} (${ks.join(',')}) VALUES (${ks.map((_, i) => '$' + (i + 1)).join(',')}) ${onConflict}`, vals)).rowCount;
             await c.query('RELEASE SAVEPOINT r');
           } catch (e) { await c.query('ROLLBACK TO SAVEPOINT r'); }   // a broken row (e.g. missing trip) is skipped, not fatal
         }

@@ -179,6 +179,48 @@ const T = 'hk-macau-2026';
   ok(await page.locator('.bdg').count() === 0 && await page.locator('.pp .call:not(.calm)').count() === 1 && await page.locator('.mission .tick.on').count() === 0, 'passport: Mika has her own ticks (none yet) and her own words');
   await page.click('.ppkids a[href="#/passport/mika/big-hop-2027"]'); await page.waitForSelector('#m15');
   ok(await page.locator('.mission').count() === 16 && (await page.textContent('.guides')).includes('Ranger Roo'), 'passport: Australia — Ranger Roo, Kiki and 16 missions');
+  // kid mode: big buttons, locked until a grown-up holds the lock
+  await page.evaluate(() => { window.__said = []; Object.defineProperty(window, 'speechSynthesis', { configurable: true, value: {
+    speak(u) { window.__said.push(`${u.text}|${u.lang}`); }, cancel() {}, onvoiceschanged: null,
+    getVoices: () => ['zh-HK', 'th-TH', 'en-GB', 'pt-PT'].map((l) => ({ lang: l, name: l })) } }); });
+  await page.goto(`${BASE}/#/passport/mimi/${T}`); await page.waitForSelector('.kidgo');
+  await page.click('.kidgo'); await page.waitForSelector('.kidwrap .kidtiles');
+  ok(await page.locator('.kidtiles button').count() === 4 && await page.locator('nav.bar').count() === 0, 'kid mode: 4 big tiles (colour, find, stamp, say), no tab bar');
+  await page.goto(`${BASE}/#/t/${T}`); await page.waitForSelector('.kidwrap');
+  ok(page.url().includes('#/kid/mimi'), 'kid mode is locked: other pages lead back to it');
+  await page.click('.kiddays button[data-v="1"]');
+  await page.click('.kidtiles button[data-v$="/colour"]'); await page.waitForSelector('.colourpad svg [data-c]');
+  const shapes = await page.locator('.colourpad [data-c]').count();
+  await page.click('.palette button[data-v="#42A5F5"]');
+  await page.locator('.colourpad [data-c]').nth(Math.min(2, shapes - 1)).click({ force: true });
+  await page.waitForFunction(() => S.entries.some((e) => e.id === 'hk-macau-2026.field.colour.d1.mimi'), null, { timeout: 5000 });
+  ok(shapes >= 3 && (await page.locator('.colourpad [fill="#42A5F5"]').count()) === 1, `colouring: ${shapes} tappable shapes, tapped one turns blue`);
+  ok(await s.noHScroll(), 'kid colouring page fits the phone');
+  await s.shot('08-kid-colour');
+  await page.click('.kidback'); await page.click('.kidtiles button[data-v$="/spot"]'); await page.waitForSelector('.kidspots button');
+  await page.locator('.kidspots button').nth(1).click();
+  await page.waitForSelector('.kidspots button.on');
+  ok((await page.evaluate(() => window.__said)).some((x) => /parade|พาเหรด/.test(x)), 'find it: the card is read aloud and ticked');
+  await page.click('.kidback'); await page.click('.kidtiles button[data-v$="/stamp"]'); await page.waitForSelector('.stampbtn');
+  await page.click('.stampbtn'); await page.waitForSelector('.kidstamp.done'); await page.waitForSelector('#kidcheer:not([hidden])');
+  await s.shot('09-kid-stamp', false);
+  await page.click('.kidback'); await page.click('.kidtiles button[data-v$="/words"]'); await page.waitForSelector('.kw .hear');
+  await page.locator('.kw .hear').nth(1).click();
+  ok((await page.evaluate(() => window.__said)).includes('唔該|zh-HK'), 'say it: Cantonese word read with a Cantonese voice');
+  await page.locator('.kw .said').nth(2).click();   // Dō jeh (M̀h gōi was ticked on the passport page already)
+  await page.waitForFunction(() => queue.length === 0, null, { timeout: 15000 });
+  st = await apiState(page);
+  ok(st.trips.find((x) => x.id === T).days[1].done_at && st.entries.some((e) => e.id === `${T}.tick.stamp.d1.mimi`), 'stamp ceremony: day 2 done + Mimi stamped it herself');
+  ok(st.entries.some((e) => e.id === `${T}.field.colour.d1.mimi`) && st.entries.some((e) => e.id === `${T}.tick.words.dojeh.mimi`), 'server: colouring + word said saved');
+  ok(await s.noHScroll(), 'kid mode fits the phone');
+  await page.click('.kidback'); await page.waitForSelector('.kidtiles');
+  await s.shot('10-kid-home');
+  const lock = await page.locator('#kidexit').boundingBox();
+  await page.mouse.move(lock.x + lock.width / 2, lock.y + lock.height / 2); await page.mouse.down(); await page.waitForTimeout(300); await page.mouse.up();
+  ok(page.url().includes('#/kid'), 'a quick tap on the lock does nothing (toddler-proof)');
+  await page.mouse.down(); await page.waitForTimeout(1500); await page.mouse.up();
+  await page.waitForSelector('.pp .advc');
+  ok(page.url().includes('#/passport/mimi') && await page.locator('#m1 .colsvg.sm svg').count() === 1, 'holding the lock leaves kid mode; the passport shows the colouring');
   await page.goto(BASE + '/'); await page.waitForSelector('.shelf');
   ok(await page.locator('.ppmini .ppc').count() === 2, 'shelf: passport covers for both kids');
   ok(!(await page.evaluate(() => heroHtml() !== '')) || await page.locator('.hero .cast .who').count() === 2, 'shelf: Mimi and Mika stand in the hero as characters');

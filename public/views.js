@@ -16,6 +16,18 @@ function render() {
   if (!S) { app.innerHTML = loginView(); document.documentElement.style.cssText = ''; return; }
   const r = route(), p = r.parts;
   let t = null, html;
+  // kid mode is "locked": while it is on, every route leads back to it (a grown-up holds the lock to leave)
+  const km = isEditor() && ls('kidmode');
+  if (km && p[0] !== 'kid') { location.replace('#/kid' + (km !== 'pick' ? '/' + km : '')); return; }
+  document.body.classList.toggle('kidmode', !!(p[0] === 'kid' && isEditor()));
+  if (p[0] === 'kid' && isEditor()) {
+    const kt = kidTrip(p[1]) || curTrip();
+    document.documentElement.style.cssText = themeStyle(kt); document.documentElement.lang = lang;
+    const key = p.slice(0, 3).join('/'), enter = key !== lastView; lastView = key;
+    app.innerHTML = `<main class="kidmain${enter ? ' enter' : ''}">${viewKid(p)}</main>`;
+    hydrateColours(app);
+    return;
+  }
   if (p[0] === 'cap') {   // deep link from the trip guide: #/cap?t=<trip>&d=<day>&key=<stop>
     const tid = mapLegacy(r.q.get('t')) || (curTrip() || {}).id, d = Math.max(0, (+r.q.get('d') || 0));
     history.replaceState(null, '', `#/t/${encodeURIComponent(tid)}/log/${d}`);
@@ -34,6 +46,7 @@ function render() {
   const key = p.slice(0, 3).join('/'), enter = key !== lastView; lastView = key;   // animate only when the page changes, not on every save
   app.innerHTML = topBar(t, p) + `<main class="wrap${enter ? ' enter' : ''}">${offline ? `<div class="notice">${L('ออฟไลน์ — แสดงข้อมูลล่าสุดที่เก็บไว้ บันทึกได้ตามปกติ ระบบจะส่งขึ้นเองเมื่อมีสัญญาณ', 'Offline — showing the last saved copy. You can keep recording; it uploads when you are back online.')}</div>` : ''}${html}</main>` + tabBar(t, p);
   renderProgress();
+  if (typeof hydrateColours === 'function') hydrateColours(app);   // kid.js loads after this file
 }
 const mapLegacy = (id) => { const t = trips().find((x) => x.id === id || x.legacy_id === id); return t && t.id; };
 
@@ -328,7 +341,8 @@ function viewPassport(slug, tid) {
     const spots = pd.spot || [], n = spots.filter((s) => ticked(t, `spot.d${i}.${s.k}`, kid)).length;
     return `<article class="mission${dayStamped(t, i) ? ' stamped' : ''}" id="m${i}"${pd.acc ? ` style="--accent:${esc(pd.acc)};--tint:${esc(pd.tint || '')}"` : ''}>
 <header>${artImg(t, i)}<div><div class="kicker">${L('วันที่', 'Day')} ${i + 1} · ${esc(fmtDay(d.date))}</div><h4>${esc(T(pd.title) || T(d.title))}</h4></div>${pd.stamp ? `<span class="mstamp${dayStamped(t, i) ? ' on' : ''}">${esc(pd.stamp)}</span>` : ''}</header>
-${(pd.facts || []).length ? `<div class="says">${guide(0)}<div><b>${esc(T((g[0] || {}).name))} ${L('เล่าว่า…', 'says…')}</b><ul>${pd.facts.map((f) => `<li>${esc(T(f))}</li>`).join('')}</ul></div></div>` : ''}
+${(pd.facts || []).length ? `<div class="says">${guide(0)}<div><b>${esc(T((g[0] || {}).name))} ${L('เล่าว่า…', 'says…')}</b><ul>${pd.facts.map((f) => `<li>${esc(T(f))}</li>`).join('')}</ul><button class="mini hearbtn" data-a="sayfacts" data-v="${esc(pd.facts.map((f) => T(f)).join(' '))}">🔊 ${L('อ่านให้ฟัง', 'Read aloud')}</button></div></div>` : ''}
+${fieldVal(t, `colour.d${i}`, kid) ? `<div class="colsvg sm" data-src="${esc(colourUrl(t, i))}" data-fill="${esc(colourFill(t, i, kid))}" title="${L('ภาพที่หนูระบาย', 'My colouring')}"></div>` : ''}
 <div class="felt"><span class="label">${L(`วันนี้${name}รู้สึก…`, 'Today I felt…')}</span>${feel.map(([e, lbl]) => `<button data-a="mood" data-t="${esc(t.id)}" data-d="${i}" data-k="${esc(kid)}" data-v="${e}" aria-pressed="${mood(i) === e}"${ed ? '' : ' disabled'}><span>${e}</span><small>${lbl}</small></button>`).join('')}</div>
 ${spots.length ? `<div class="spot"><div class="spothd">${guide(1)}<b>${L(`ภารกิจของ${T((g[1] || {}).name)}: หาให้เจอ!`, `${T((g[1] || {}).name)}'s mission: spot these!`)}</b><span class="label">${n}/${spots.length}</span></div>
 <div class="ticks">${spots.map((s) => tickBtn(t, kid, `spot.d${i}.${s.k}`, i, T(s), s.e)).join('')}</div></div>` : ''}
@@ -342,6 +356,7 @@ ${spots.length ? `<div class="spot"><div class="spothd">${guide(1)}<b>${L(`ภ�
     const GC = [['#2E7D32', '#E6F6EA'], ['#1565C0', '#E3F2FD'], ['#A16207', '#FFF6D6']];   // Spotted / Rides / Yummy columns, as printed
     const body = l.groups.map((gr, gi) => `<div class="grp"${l.groups.length > 1 ? ` style="--accent:${GC[gi % 3][0]};--tint:${GC[gi % 3][1]}"` : ''}>${gr.title ? `<h5>${esc(gr.e || '')} ${esc(T(gr.title))}</h5>` : ''}<div class="ticks${rated || l.said ? ' food' : ''}">${gr.items.map((it) => rated
       ? `<div class="tick${ticked(t, `${l.key}.${it.k}`, kid) ? ' on' : ''}"><span class="e">${esc(it.e || '')}</span><span class="t">${esc(T(it))}${note(it)}</span>${l.stars ? starBtns(t, kid, `${l.key}.${it.k}`) : yumBtns(t, kid, `${l.key}.${it.k}`)}</div>`
+      : l.said && it.speak ? `<div class="sayrow">${tickBtn(t, kid, `${l.key}.${it.k}`, null, T(it), it.e, note(it))}<button class="hearbtn round" data-a="hear" data-v="${esc(it.speak.text)}" data-lang="${esc(it.speak.lang)}" aria-label="🔊 ${esc(it.en)}">🔊</button></div>`
       : tickBtn(t, kid, `${l.key}.${it.k}`, null, T(it), it.e, note(it))).join('')}</div></div>`).join('');
     return `<section class="pp-page plist${l.groups.length > 1 ? ' wide' : ''}" id="pl-${esc(l.key)}"><header><div><div class="kicker">${esc(l.e || '')} ${esc(T(l.sub))}</div><h3>${esc(T(l.title))}</h3></div><span class="count">${n}<small>/${items.length}</small></span></header>
 ${goal ? `<div class="goal"><div class="bar"><i style="width:${Math.min(100, Math.round((n / goal) * 100))}%"></i></div><span class="label">${n >= goal ? '🎉 ' : ''}${esc(T(l.goalText))}</span></div>` : ''}${body}
@@ -362,6 +377,7 @@ ${st && st.crest ? `<img class="crest" src="${esc(st.crest)}" alt="">` : stampHt
 ${earned ? `<p class="bye">${esc(T(cert.bye))}</p>` : ''}</section>` : '';
 
   return `<div class="row ppkids" role="tablist">${ks.map((c) => `<a class="chip" role="tab" href="#/passport/${esc(c.slug)}/${esc(t.id)}" aria-selected="${c.slug === kid}" aria-pressed="${c.slug === kid}">${kidFace(c.slug)} ${esc(kidName(c.slug))}</a>`).join('')}
+${ed ? `<button class="chip kidgo" data-a="kidmode" data-v="${esc(kid)}">🧒 ${L('โหมดเด็ก', 'Kid mode')}</button>` : ''}
 <span class="sep"></span>${mine.map((x) => `<a class="chip" href="#/passport/${esc(kid)}/${esc(x.id)}" aria-pressed="${x.id === t.id}">${flagsOf(x)} ${esc(T(x.title).split(' · ')[0])}</a>`).join('')}</div>
 <div class="pp kid-${esc(kid)}${t.theme.display === 'serif' ? ' serif' : ''}" style="${themeStyle(t)}">
 ${st ? `<section class="advc" style="--ink:${esc(st.ink)};--hi:${esc(st.hi)};--bgA:${esc(st.bgA)};--bgB:${esc(st.bgB)};--gold:${esc(st.gold)}"><div class="card">
