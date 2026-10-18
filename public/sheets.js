@@ -75,12 +75,12 @@ const A = {
     const t = trip(b.dataset.t), d = +b.dataset.d, k = b.dataset.k, id = `${t.id}.mood.d${d}.${k}`;
     const cur = S.entries.find((e) => e.id === id);
     if (cur && cur.mood === b.dataset.v) delEntry(id);   // tap again = clear
-    else putEntry(t, { day: d, kind: 'mood', child: k, mood: b.dataset.v }, id);
+    else { burst(b, [b.dataset.v, '✨']); putEntry(t, { day: d, kind: 'mood', child: k, mood: b.dataset.v }, id); }
   },
   first(b) {
     const t = trip(b.dataset.t), d = +b.dataset.d, key = b.dataset.v, k = b.dataset.k;
     const ex = S.entries.find((e) => e.trip === t.id && e.kind === 'first' && e.first_key === key && e.child === k);
-    if (ex) delEntry(ex.id); else putEntry(t, { day: d, kind: 'first', child: k, first_key: key }, `${t.id}.first.${key}.${k}`);
+    if (ex) delEntry(ex.id); else { burst(b, ['🌟', '✨', '🎉']); putEntry(t, { day: d, kind: 'first', child: k, first_key: key }, `${t.id}.first.${key}.${k}`); }
   },
   customfirst(b) {
     const inp = $('#firsttext'), text = inp.value.trim(); if (!text) { inp.focus(); return; }
@@ -91,12 +91,14 @@ const A = {
     const t = trip(b.dataset.t), d = +b.dataset.d, key = b.dataset.v;
     const p = (t.days[d].planned || []).find((x) => x.key === key) || { en: key, th: key };
     const id = `${t.id}:${key}`, done = !S.places.some((x) => x.trip === t.id && x.key === key);
+    if (done) burst(b, ['📍', '✨']);
     enqueue({ method: 'PUT', url: '/api/b/places', body: { trip: t.id, key, day: d, kind: b.dataset.k, name: { en: p.en, th: p.th, zh: p.zh }, done, at: Date.now() },
       local: done ? { coll: 'places', id, row: { trip: t.id, key, day: d, kind: b.dataset.k, name: { en: p.en, th: p.th }, at: Date.now() } } : { coll: 'places', id, del: true } });
   },
   done(b) {
     const t = trip(b.dataset.t), d = +b.dataset.d, day = t.days[d], done = !day.done_at;
     day.done_at = done ? Date.now() : null;   // optimistic; not re-applied after reload, the server copy wins
+    if (done) { burst(b, ['🎉', '✨', '⭐']); toast(L('ได้ตราประทับของวันนี้ในพาสปอร์ตแล้ว 🛂', 'Today’s stamp is in the passports 🛂')); }
     enqueue({ method: 'PUT', url: `/api/b/days/${encodeURIComponent(t.id)}/${d}`, body: { done } });
   },
   async story(b) {

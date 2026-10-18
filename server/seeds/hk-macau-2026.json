@@ -437,6 +437,11 @@
   "calm": "#E8F4F0",
   "warn": "#FBF0E4",
   "accentDark": "#8FB0E0",
-  "display": "serif"
+  "display": "serif",
+  "art": "/art/hk/day-{n}.svg",
+  "places": [
+   { "flag": "🇭🇰", "th": "ฮ่องกง", "en": "Hong Kong" },
+   { "flag": "🇲🇴", "th": "มาเก๊า", "en": "Macau" }
+  ]
  }
 }

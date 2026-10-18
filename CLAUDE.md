@@ -31,7 +31,7 @@ UI screenshots go to `$SHOTS` (default `/tmp/mb-shots`) — look at them after U
 - `server/importer.js` + `scripts/import-harbour-hop.mjs`: Harbour Hop app export → bookshelf (dry run by default, idempotent via `external_id`).
 - Graceful shutdown on SIGTERM (Railway redeploys): close server, Chromium, pool.
 - `public/` vanilla-JS PWA, classic scripts sharing one global scope: `core.js` (state, `api()`, IndexedDB op queue + optimistic `applyLocal`, helpers) → `views.js` (render functions return HTML) → `sheets.js` (actions `A`, photos, lightbox, sheets, boot). `app.css` = DESIGN.md tokens; each book sets its theme on `<html>`. `sw.js` (bump `mbs-vN` when shell files change).
-- Routes: `#/` shelf · `#/t/<trip>` book · `#/t/<trip>/log/<day>` record a day (editors) · `#/t/<trip>/firsts` · `#/cap?t=&d=&key=` deep link from the trip-guide app (accepts legacy ids like `hk2026`).
+- Routes: `#/` shelf · `#/t/<trip>` book · `#/t/<trip>/log/<day>` record a day (editors) · `#/t/<trip>/firsts` · `#/passport/<kid>` kids' passports (derived from the books: a stamp per recorded/Done day, firsts as badges; no real passport data) · `#/cap?t=&d=&key=` deep link from the trip-guide app (accepts legacy ids like `hk2026`).
 
 ## Conventions and rules (from the owner — keep)
 - Use the Edit/Write tools for file changes; never shell heredocs / `Set-Content` for Thai text (mangles UTF-8). Verify the edit landed (OneDrive swap races).
