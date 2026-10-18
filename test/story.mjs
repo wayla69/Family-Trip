@@ -105,7 +105,7 @@ try {
   await page.waitForFunction(() => document.querySelector('#storytext') && document.querySelector('#storytext').textContent.includes('ฝันดี'));
   await page.waitForFunction(() => !document.querySelector('#storystop') || document.querySelector('#storystop').hidden);
   ok(true, 'browser: story streamed into the record page');
-  await page.goto(`${BASE}/#/t/${T}`); await page.waitForSelector('#d1');
+  await page.goto(`${BASE}/#/t/${T}/book`); await page.waitForSelector('#d1');
   ok(await page.locator('#d1 .call.pick', { hasText: 'ฝันดี' }).count() === 1, 'book: bedtime story on the day page');
   ok(errs.length === 0, 'no page errors ' + errs.join(' | '));
   await browser.close();
