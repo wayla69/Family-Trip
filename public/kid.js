@@ -444,7 +444,10 @@ ${mapHtml(t, i, [kid].concat((t.theme.children || []).map((c) => c.slug).filter(
     if (hs.length) ls('hseen_' + kid, Math.max(seen, hs[0].at));
     body = `<div class="kidhearts-list">${hs.map((h) => `<button class="${h.at > seen ? 'new' : ''}" data-a="kidheart" data-v="${esc(heartLine(h, kid))}"><span class="e">${esc(h.emoji)}</span><b>${esc(h.from)}</b>${h.text ? `<p>${esc(h.text)}</p>` : ''}<i>🔊</i></button>`).join('') || `<p class="kidguide"><span>${L('ยังไม่มีหัวใจ', 'No hearts yet')}</span></p>`}</div>`;
   } else body = `<button class="kidbig" data-a="kidnav" data-v="#/kid/${esc(kid)}">🏠</button>`;
-  return `<div class="kidwrap" style="${style}">${head}${body}${lock}</div>`;
+  // kid mode's own bar: big pictures, read aloud on tap (data-say), no grown-up pages
+  const kb = [['', '🏠', L('บ้าน', 'Home')], pp.map && ['map', '🗺️', L('แผนที่', 'Map')], [pre ? 'colour' : 'stamp', pre ? '🎨' : '🛂', pre ? L('ระบายสี', 'Colour') : L('พาสปอร์ต', 'Passport')], ['stickers', '⭐', L('สติกเกอร์', 'Stickers')], ['hearts', '💗', L('หัวใจ', 'Hearts')]].filter(Boolean);
+  const bar = `<nav class="kidbar">${kb.map(([v, e, lbl]) => `<button data-a="kidnav" data-v="#/kid/${esc(kid)}${v ? '/' + v : ''}" data-say="${esc(lbl)}"${(v || 'home') === view ? ' aria-current="page"' : ''}><span>${e}</span><b>${lbl}</b></button>`).join('')}</nav>`;
+  return `<div class="kidwrap" style="${style}">${head}${body}${lock}${bar}</div>`;
 }
 
 /* ---------- kid mode actions ---------- */

@@ -72,11 +72,17 @@ function tabBar(t, p) {
   const c = t || curTrip(); if (!c) return '';
   const dn = Math.max(0, dayNow(c));
   const cur = (k) => ((k === 'shelf' && !t && p[0] !== 'passport') || (k === 'book' && t && !p[2]) || (k === 'log' && p[2] === 'log') || (k === 'firsts' && p[2] === 'firsts') || (k === 'eat' && p[2] === 'eat') || (k === 'passport' && p[0] === 'passport') ? ' aria-current="page"' : '');
+  // parent mode (editors): the tools for running the trip · kid mode has its own bar (kid.js) · relatives (view link): the keepsakes
+  if (isEditor()) return `<nav class="bar"><div class="in">
+<a href="#/"${cur('shelf')}><i>📚</i>${L('ชั้นหนังสือ', 'Shelf')}</a>
+<a href="#/t/${esc(c.id)}"${cur('book')}><i>📖</i>${L('สมุด', 'Book')}</a>
+<a href="#/t/${esc(c.id)}/log/${dn}"${cur('log')}><i>✏️</i>${L('บันทึก', 'Record')}</a>
+<a href="#/t/${esc(c.id)}/eat"${cur('eat')}><i>🍽️</i>${L('ร้านอาหาร', 'Eat')}</a>
+<button type="button" data-a="kidmode"><i>🧒</i>${L('โหมดเด็ก', 'Kid mode')}</button>
+</div></nav>`;
   return `<nav class="bar"><div class="in">
 <a href="#/"${cur('shelf')}><i>📚</i>${L('ชั้นหนังสือ', 'Shelf')}</a>
 <a href="#/t/${esc(c.id)}"${cur('book')}><i>📖</i>${L('สมุด', 'Book')}</a>
-${isEditor() ? `<a href="#/t/${esc(c.id)}/log/${dn}"${cur('log')}><i>✏️</i>${L('บันทึก', 'Record')}</a>` : ''}
-<a href="#/t/${esc(c.id)}/eat"${cur('eat')}><i>🍽️</i>${L('ร้านอาหาร', 'Eat')}</a>
 <a href="#/t/${esc(c.id)}/firsts"${cur('firsts')}><i>🌟</i>${L('ครั้งแรก', 'Firsts')}</a>
 <a href="#/passport"${cur('passport')}><i>🛂</i>${L('พาสปอร์ต', 'Passport')}</a>
 </div></nav>`;
@@ -188,7 +194,7 @@ ${heartsHtml(t)}
     const inner = `${artImg(t, i)}<b>${String(i + 1).padStart(2, '0')}</b><small>${esc(fmtDay(d.date, { day: 'numeric', month: 'short' }))}</small>`;
     return href ? `<a class="${on ? 'on' : ''}" href="${href}"${href[0] === '#' && href[1] === 'd' ? ` data-a="jump" data-v="${i}"` : ''}>${inner}</a>` : `<span class="${on ? 'on' : ''}">${inner}</span>`;
   }).join('')}</nav>
-${eatCount(t) ? `<p class="row noprint"><a class="btn ghost small" href="#/t/${esc(t.id)}/eat">🍽️ ${L('ร้านอาหารทั้งหมด', 'All places to eat')} · ${eatCount(t)}</a></p>` : ''}
+<p class="row noprint booklinks">${eatCount(t) ? `<a class="btn ghost small" href="#/t/${esc(t.id)}/eat">🍽️ ${L('ร้านอาหารทั้งหมด', 'All places to eat')} · ${eatCount(t)}</a>` : ''}<a class="btn ghost small" href="#/t/${esc(t.id)}/firsts">🌟 ${L('ครั้งแรกของหนู', 'Firsts')}</a><a class="btn ghost small" href="#/passport">🛂 ${L('พาสปอร์ตเด็กๆ', "The kids' passports")}</a></p>
 ${itinerary(t)}
 ${infoHtml(t)}
 ${favs ? `<div class="part">${L('ช่วงเวลาที่ชอบที่สุด', 'Favourite moments')} ⭐</div>${favs}` : ''}
