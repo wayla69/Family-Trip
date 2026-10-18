@@ -35,6 +35,7 @@ const ICONS = {
   back: '<path d="M15 6l-6 6 6 6"/>',
   ext: '<path d="M7 17L17 7M9 7h8v8"/>',
   clock: '<circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/>',
+  bell: '<path d="M6 16V11a6 6 0 0 1 12 0v5l2 2H4z"/><path d="M10 20a2 2 0 0 0 4 0"/>',
 };
 const ic = (k, cls) => `<svg class="ic${cls ? ' ' + cls : ''}" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">${ICONS[k] || ''}</svg>`;
 function ls(k, v) {
@@ -254,6 +255,10 @@ async function packOffline(t, all) {
 
 /* ---------- ui helpers ---------- */
 let toastT = 0;
+// reminders (Web Push): this phone subscribes once; the server sends "08:00 · in 30 min" before each timed step of the day
+const pushOk = () => 'serviceWorker' in navigator && 'PushManager' in window && 'Notification' in window;
+const pushSub = async () => (pushOk() ? (await navigator.serviceWorker.ready).pushManager.getSubscription() : null);
+const b64u = (s) => { const b = atob((s + '='.repeat((4 - s.length % 4) % 4)).replace(/-/g, '+').replace(/_/g, '/')); return Uint8Array.from(b, (c) => c.charCodeAt(0)); };
 function toast(msg) { const t = $('#toast'); t.textContent = msg; t.hidden = false; clearTimeout(toastT); toastT = setTimeout(() => { t.hidden = true; }, 2800); }
 // a little burst of sparkles from a button that was just tapped (ticks, moods, check-ins)
 function burst(el, chars) {

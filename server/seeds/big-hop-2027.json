@@ -92,8 +92,8 @@
    ],
    "moving": { "th": "ไม่ขับรถ", "en": "No driving" },
    "plan": [
-    { "t": "05:30", "th": "เช็คอิน TG 475 ที่สุวรรณภูมิ — นอนโรงแรมสนามบินคืนก่อน", "en": "Check in TG 475 at Suvarnabhumi — airport hotel the night before" },
-    { "t": "08:30", "th": "TG 475 ออกเดินทาง · บินตรง 9 ชม.", "en": "TG 475 departs · 9 h nonstop" },
+    { "t": "05:30", "tz": "Asia/Bangkok", "th": "เช็คอิน TG 475 ที่สุวรรณภูมิ — นอนโรงแรมสนามบินคืนก่อน", "en": "Check in TG 475 at Suvarnabhumi — airport hotel the night before" },
+    { "t": "08:30", "tz": "Asia/Bangkok", "th": "TG 475 ออกเดินทาง · บินตรง 9 ชม.", "en": "TG 475 departs · 9 h nonstop" },
     { "t": "21:30", "th": "ถึง SYD T1 · ผ่าน ตม. และ biosecurity ออกมาได้ราว 22:30", "en": "Land SYD T1 · immigration and biosecurity; out around 22:30" },
     { "t": "22:45", "th": "รถไฟสาย T8 จากสถานี International Airport หนึ่งสถานีถึง Mascot (5 นาที มีลิฟต์ทั้งสองสถานี) · เดิน 4 นาทีถึง Adina · กินของว่าง · เข้านอนทันที", "en": "T8 train from the International Airport station, one stop to Mascot (5 min, lifts both ends) · 4-minute walk to Adina · late snack · straight to bed" }
    ],

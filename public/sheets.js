@@ -34,7 +34,32 @@ async function addPhotos(t, day, files) {
 
 /* ---------- actions ---------- */
 const A = {
-  lang(b) { lang = b.dataset.v; ls('lang', lang); render(); },
+  lang(b) { lang = b.dataset.v; ls('lang', lang); render(); if (ls('remind')) pushSub().then((s) => s && api('POST', '/api/b/push/sub', { ...s.toJSON(), lang })).catch(() => {}); },   // reminders follow the language
+  async remind() {
+    if (ls('remind')) {
+      const s = await pushSub().catch(() => null);
+      if (s) { await api('POST', '/api/b/push/unsub', { endpoint: s.endpoint }).catch(() => {}); await s.unsubscribe().catch(() => {}); }
+      ls('remind', null); render(); toast(L('ปิดการเตือนบนเครื่องนี้แล้ว', 'Reminders off on this phone')); return;
+    }
+    if (!pushOk()) {
+      const ios = /iP(hone|ad|od)/.test(navigator.userAgent) && !matchMedia('(display-mode: standalone)').matches;
+      toast(ios ? L('บน iPhone: กดปุ่มแชร์ → "เพิ่มไปยังหน้าจอโฮม" แล้วเปิดแอปจากไอคอน จึงจะเปิดการเตือนได้', 'On iPhone: Share → "Add to Home Screen", open the app from its icon, then turn reminders on')
+        : L('เบราว์เซอร์นี้ยังไม่รองรับการแจ้งเตือน', 'This browser cannot show reminders')); return;
+    }
+    if (await Notification.requestPermission() !== 'granted') { toast(L('ต้องกด "อนุญาต" การแจ้งเตือนก่อน', 'Allow notifications first')); return; }
+    try {
+      const { key } = await api('GET', '/api/b/push/key'), reg = await navigator.serviceWorker.ready;
+      const s = (await reg.pushManager.getSubscription()) || (await reg.pushManager.subscribe({ userVisibleOnly: true, applicationServerKey: b64u(key) }));
+      await api('POST', '/api/b/push/sub', { ...s.toJSON(), lang });
+      ls('remind', 1); render(); toast(L('เปิดการเตือนแล้ว ✓ จะเด้งก่อนทุกกิจกรรม 30 นาที', 'Reminders on ✓ — 30 min before each step'));
+    } catch (_) { toast(L('เปิดการเตือนไม่สำเร็จ ลองอีกครั้ง', 'Could not turn reminders on — try again')); }
+  },
+  async remindtest() {
+    const s = await pushSub().catch(() => null);
+    if (!s) { ls('remind', null); render(); toast(L('เครื่องนี้ยังไม่ได้เปิดการเตือน', 'Reminders are not on for this phone')); return; }
+    try { await api('POST', '/api/b/push/test', { endpoint: s.endpoint }); toast(L('ส่งแล้ว — ดูแจ้งเตือนบนเครื่องนี้', 'Sent — look for it on this phone')); }
+    catch (_) { toast(L('ส่งทดสอบไม่สำเร็จ', 'The test did not go through')); }
+  },
   jump(b, e) { e.preventDefault(); const el = document.getElementById('d' + b.dataset.v); if (el) el.scrollIntoView({ behavior: 'smooth' }); },
   pin(b) {
     const f = $('#lcode'), k = b.dataset.v;
@@ -346,6 +371,7 @@ async function refresh() {
   seq = Math.max(seq, ...queue.map((o) => o.seq || 0));
   await load();
   render();
+  if (ls('remind')) pushSub().then((s) => { if (!s) { ls('remind', null); render(); } }).catch(() => {});   // the phone dropped the subscription
   window.addEventListener('hashchange', () => { closeSheet(); lbState = null; drawLb(); render(); window.scrollTo(0, 0); });
   window.addEventListener('online', () => { offline = false; flush(); });
   document.addEventListener('visibilitychange', () => { if (!document.hidden) { flush(); refresh(); } });

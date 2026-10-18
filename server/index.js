@@ -11,6 +11,7 @@ const PGM = require('./pg');
 const BS = require('./bookshelf');
 const HH = require('./importer');
 const PDF = require('./pdf');
+const PUSH = require('./push');
 
 const DATA_DIR = path.resolve(process.env.DATA_DIR || './data');
 const PG = PGM.create();
@@ -70,6 +71,10 @@ app.post('/api/logout', (req, res) => { A.clearCookie(res); res.json({ ok: true 
 
 // bookshelf API (+ /media photo proxy)
 app.use(BS.router({ pool: PG, media: MEDIA, A, ai: STORY }));
+
+// reminders on the trip: phones that switched them on get a push 30 min before each timed step of the day
+const REMIND = PUSH.create({ pool: PG, family: BS.FAMILY, A });
+app.use(REMIND.router);
 
 // backup / restore (photos included): editors download, the scheduled job uses Bearer BACKUP_TOKEN
 app.get('/api/export.zip', A.requireEditor, (req, res, next) => BK.sendZip(res, PG, MEDIA).catch(next));
@@ -132,13 +137,14 @@ if (require.main === module) {
   if (process.env.NODE_ENV === 'production' && MEDIA.kind !== 's3') console.warn('WARNING: BUCKET is not set — photos go to local disk and are lost on the next deploy unless /data is a Railway volume.');
   if (!PG) { console.error('DATABASE_URL is not set — add Railway Postgres and reference ${{Postgres.DATABASE_URL}} (locally: see CLAUDE.md)'); process.exit(1); }
   PGM.ready(PG)
-    .then(async (n) => { await A.init(PG); const seeds = await BS.syncSeeds(PG); return [n, seeds]; })
+    .then(async (n) => { await A.init(PG); await PUSH.init(PG); const seeds = await BS.syncSeeds(PG); return [n, seeds]; })
     .then(([n, seeds]) => {
+      REMIND.start();
       const server = app.listen(PORT, () => console.log(`Memory Bookshelf on :${PORT} · postgres ${n} migrations · ${seeds} seeded trips · photos ${MEDIA.kind}`));
       // Railway sends SIGTERM on every redeploy: stop taking requests, close Chromium + the pool, exit
       const stop = () => {
         setTimeout(() => process.exit(0), 8000).unref();
-        server.close();
+        server.close(); REMIND.stop();
         Promise.all([PDF.close(), PG.end().catch(() => {})]).then(() => process.exit(0));
       };
       process.once('SIGTERM', stop); process.once('SIGINT', stop);
