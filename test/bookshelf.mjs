@@ -29,6 +29,9 @@ ok(hk.passport.days.length === 6 && hk.passport.guides.length === 2 && s.trips[1
 ok(!JSON.stringify(s.trips.map((t) => t.passport)).match(/e-ticket|\b\d{3}-\d{10}\b|[A-Z]{2}\d{7}/), 'passport content has no ticket / passport numbers');
 ok(hk.firsts.length === 10 && hk.theme.accent === '#1F3A5F' && hk.theme.kicker.includes('DOLPHIN'), 'HK firsts catalog + manual theme');
 ok(s.trips[1].days.length === 16 && s.trips[1].theme.accent === '#2C5646', 'Australia 16 days + eucalyptus theme');
+{ const age = (t, k) => t.theme.children.find((c) => c.slug === k).age;   // Mimi born Nov 2023, Mika May 2025 (only the month is kept)
+  ok(age(hk, 'mimi').th === '3 ขวบ' && age(hk, 'mika').en === '1½' && age(s.trips[1], 'mimi').th === '3 ขวบ 4 เดือน' && age(s.trips[1], 'mika').en === '1 y 10 m', 'ages at each trip: HK Mimi 3 · Mika 1½; Australia Mimi 3 y 4 m · Mika 1 y 10 m');
+  ok(!/Mimi \(3\.5\)|Mika \(1\.8\)|3\.5-year-old/.test(JSON.stringify(s.trips[1])), 'no stale ages left in the Australia book'); }
 { const n = hk.info, dp = hk.days.map((d) => d.plan || {});
   ok(n.visa && n.ifthen.rows.length === 10 && n.ifthen.book.rows.length === 8 && n.more.length >= 20 && n.more.every((m) => ['prep', 'sos', 'stays', 'learn'].includes(m.page) && m.title.th && m.title.en) && n.more.some((m) => /minute by minute/.test(m.title.en) && m.rows.length >= 10), 'HK manual in full: entry rules, 10 if-thens, booking timeline, Disneyland minute by minute and the other chapters');
   ok(dp.every((p) => (p.eat || []).length && p.eat.every((e) => e.q && e.note.th && e.note.en)) && dp.every((p) => p.money), 'HK: every day has its places to eat (with Maps) and money today'); }
