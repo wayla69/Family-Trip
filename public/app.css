@@ -1029,3 +1029,4 @@ p.money b{color:color-mix(in srgb,var(--leaf) 70%,var(--ink))}
 .enights li.now{background:color-mix(in srgb,var(--sun) 16%,var(--paper));border-radius:6px;padding:7px 8px}
 .elost{margin:12px 0 0;color:var(--hot);font-weight:700;font-size:14px}
 .stayc.tonight{border-top-color:var(--hot)}.stayc.tonight h4{font-size:22px}
+.tile.kid b{color:#B4570F}.tile.kid .e{background:#FFE0B8}
