@@ -1,0 +1,16 @@
+<svg aria-hidden="true" viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
+<circle cx="100" cy="100" r="97" fill="#FBF3DC" stroke="#C9A227" stroke-width="4"/>
+<circle cx="188.0" cy="100.0" r="2.6" fill="#C9A227"/><circle cx="182.7" cy="130.1" r="2.6" fill="#C9A227"/><circle cx="167.4" cy="156.6" r="2.6" fill="#C9A227"/><circle cx="144.0" cy="176.2" r="2.6" fill="#C9A227"/><circle cx="115.3" cy="186.7" r="2.6" fill="#C9A227"/><circle cx="84.7" cy="186.7" r="2.6" fill="#C9A227"/><circle cx="56.0" cy="176.2" r="2.6" fill="#C9A227"/><circle cx="32.6" cy="156.6" r="2.6" fill="#C9A227"/><circle cx="17.3" cy="130.1" r="2.6" fill="#C9A227"/><circle cx="12.0" cy="100.0" r="2.6" fill="#C9A227"/><circle cx="17.3" cy="69.9" r="2.6" fill="#C9A227"/><circle cx="32.6" cy="43.4" r="2.6" fill="#C9A227"/><circle cx="56.0" cy="23.8" r="2.6" fill="#C9A227"/><circle cx="84.7" cy="13.3" r="2.6" fill="#C9A227"/><circle cx="115.3" cy="13.3" r="2.6" fill="#C9A227"/><circle cx="144.0" cy="23.8" r="2.6" fill="#C9A227"/><circle cx="167.4" cy="43.4" r="2.6" fill="#C9A227"/><circle cx="182.7" cy="69.9" r="2.6" fill="#C9A227"/>
+<circle cx="100" cy="100" r="78" fill="#E3EEF9" stroke="#7F93B0" stroke-width="2.5"/>
+<path d="M 36 128 Q 60 110 84 128 Q 108 146 132 128 Q 150 116 166 128" fill="none" stroke="#7F93B0" stroke-width="4" stroke-linecap="round"/>
+<path d="M 40 142 Q 64 126 88 142 Q 112 158 136 142 Q 152 132 164 142" fill="none" stroke="#7F93B0" stroke-width="3" stroke-linecap="round" opacity=".7"/>
+<g fill="#C8412B" stroke="#C8412B" stroke-linejoin="round" stroke-linecap="round" stroke-width="2" transform="translate(100 92) scale(.86) translate(-100 -92)">
+<path d="M 60 126 C 48 100, 70 62, 110 56 C 134 52, 150 62, 156 76 L 170 84 L 150 92 C 138 108, 114 116, 94 112 C 78 110, 68 118, 60 126 Z"/>
+<path d="M 102 58 C 106 44, 118 38, 128 46 L 118 60 Z"/>
+<path d="M 118 110 C 112 122, 122 130, 134 124 L 126 110 Z"/>
+<path d="M 60 126 L 40 112 L 50 128 L 36 144 Z"/>
+</g>
+<circle cx="139.5" cy="76.5" r="2.8" fill="#E3EEF9"/>
+<text x="100" y="158" text-anchor="middle" font-family="KIRA UI, Arial, sans-serif" font-weight="700" font-size="12" fill="#1F3A5F" letter-spacing=".4">THE HARBOUR HOP</text>
+<text x="100" y="169" text-anchor="middle" font-family="KIRA UI, Arial, sans-serif" font-weight="600" font-size="6.5" fill="#7F93B0" letter-spacing=".8">HK · MACAU · DEC 2026</text>
+</svg>

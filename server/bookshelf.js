@@ -116,7 +116,7 @@ function router({ pool, media, A, ai }) {
       if (child !== null && child !== 'both' && !kids.includes(child)) return bad(res, 'child');
       if (['mood', 'tick', 'field'].includes(b.kind) && (!child || child === 'both')) return bad(res, 'child');
       if (['tick', 'field'].includes(b.kind) && !b.first_key) return bad(res, 'key');
-      if (b.kind === 'tick' && !['', 'yum', 'yuck'].includes(String(b.text || ''))) return bad(res, 'text');
+      if (b.kind === 'tick' && !['', 'yum', 'yuck', '1', '2', '3'].includes(String(b.text || ''))) return bad(res, 'text');   // plain tick, food yum/yuck, 1–3 stars
       const row = [id, FAMILY, t.id, day, b.kind, child, clip(b.text, 4000), b.mood ? clip(b.mood, 16) : null, b.first_key ? clip(b.first_key, 40) : null,
         ['th', 'en'].includes(b.lang) ? b.lang : null, !!b.highlight, at(b.at), clip(req.user.name, 40), req.user.uid];
       const out = await q(`INSERT INTO entries (id, family_id, trip_id, day_index, kind, child, text, mood, first_key, lang, highlight, occurred_at, created_by, created_uid)
