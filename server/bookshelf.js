@@ -55,8 +55,8 @@ async function syncSeeds(pool, dir = path.join(__dirname, 'seeds')) {
         { ...(t.theme || {}), children: (t.children || []).map((k) => ({ slug: k.slug, age: k.age_at_trip || null })) },
         t.cover || {}, t.stamp || {}, JSON.stringify(t.moods || []), t.passport || {}, t.info || {}]);
       for (const d of t.days) {
-        const plan = {};   // the day card's plan block (seed keys: timeline, how we move, local pick, plan B, money, tips, tonight's stay, maps route, nearby food, learn cards, quiz, legs with directions, meal picks, food by stop)
-        for (const k of ['moving', 'pick', 'planB', 'money', 'plan', 'tips', 'stay', 'route', 'eat', 'learn', 'quiz', 'legs', 'picks', 'food']) if (d[k]) plan[k] = d[k];
+        const plan = {};   // the day card's plan block (seed keys: timeline, how we move, local pick, plan B, money, tips, tonight's stay, maps route, nearby food, learn cards, quiz, the guide's story, legs with directions, meal picks, food by stop)
+        for (const k of ['moving', 'pick', 'planB', 'money', 'plan', 'tips', 'stay', 'route', 'eat', 'learn', 'quiz', 'tale', 'legs', 'picks', 'food']) if (d[k]) plan[k] = d[k];
         await c.query(`INSERT INTO trip_days (trip_id, day_index, date, title, sleep, emoji, gradient, planned, wx, plan) VALUES ($1,$2,$3,$4,$5,$6,$7,$8,$9,$10)
           ON CONFLICT (trip_id, day_index) DO UPDATE SET date=EXCLUDED.date, title=EXCLUDED.title, sleep=EXCLUDED.sleep, emoji=EXCLUDED.emoji,
             gradient=EXCLUDED.gradient, planned=EXCLUDED.planned, wx=EXCLUDED.wx, plan=EXCLUDED.plan`,

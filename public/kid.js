@@ -52,6 +52,12 @@ function speak(text, langTag, opt) {
 }
 const say = (text, langTag) => speak(text, langTag);
 const sayUi = (text) => say(text, lang === 'th' ? 'th-TH' : 'en-GB');
+// a long story in chunks of a sentence or two (Chrome stops one long utterance after about 15 s)
+function sayLong(text) {
+  const out = [];
+  for (const w of String(text || '').split(/\s+/)) { const c = out.length ? out[out.length - 1] : ''; if (c && c.length + w.length < 180 && !/[.!?]$/.test(c)) out[out.length - 1] = c + ' ' + w; else out.push(w); }
+  out.forEach((p, n) => speak(p, lang === 'th' ? 'th-TH' : 'en-GB', { keep: n > 0 }));
+}
 if (window.speechSynthesis) speechSynthesis.onvoiceschanged = () => {};   // iOS/Chrome load voices lazily
 
 /* ---------- colouring pages (tap a shape to fill it) ---------- */
@@ -614,6 +620,7 @@ Object.assign(A, {
   },
   hear(b) { say(b.dataset.v, b.dataset.lang); },
   sayfacts(b) { sayUi(b.dataset.v); },
+  saytale(b) { sayLong(b.dataset.v); },
   // drawing
   kidpen(b) { beep('tap'); pen = +b.dataset.v; $$('.drawtools [data-a="kidpen"]').forEach((x) => x.setAttribute('aria-pressed', +x.dataset.v === pen)); },
   kidundo() { beep('tap'); pad.strokes.pop(); const cv = $('#kidcanvas'); if (cv) redraw(cv); },
