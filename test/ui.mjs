@@ -716,6 +716,7 @@ const T = 'hk-macau-2026';
   const on = await page.evaluate(() => { const b = document.querySelector('#pocket .talebtn'); return b.classList.contains('on') && !!b.closest('.tale').querySelector('.scenes li.now'); });
   await page.locator('#pocket details.tale .talebtn').first().click();
   ok(on && await page.evaluate(() => !document.querySelector('.talebtn.on, .scenes li.now')), 'the guide’s story: Listen lights up the scene being read; a second tap stops');
+  ok(await page.evaluate(() => !/&#\d|&amp;/.test(document.querySelector('#pocket').textContent) && /Cook's/.test(document.querySelector('#pocket').textContent)), 'the guide’s story: apostrophes read as apostrophes (numbers are highlighted before escaping)');
   await s.shot('02b-learn', false);
   await page.goto(`${BASE}/#/t/hk-macau-2026/learn/full`); await page.waitForSelector('#pocket');
   ok(await page.locator('#pocket details.sub').count() === 6 && await page.locator('#pocket .qa').count() === 18 && /Animals and characters we may meet/.test(await page.textContent('#pocket')) && /Mickey Mouse/.test(await page.textContent('#pocket')) && await s.noHScroll(), 'HK learn page: six days of cards + quiz, animals and Disney characters');
