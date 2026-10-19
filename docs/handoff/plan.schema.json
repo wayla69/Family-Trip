@@ -71,7 +71,7 @@
           "route": { "type": "string", "format": "uri", "description": "the whole day in Google Maps" },
           "learn": { "type": "array", "description": "learn-on-the-way cards", "items": { "type": "object", "properties": { "name": { "$ref": "#/$defs/i18n" }, "country": { "type": "string" }, "facts": { "type": "array", "items": { "$ref": "#/$defs/i18n" } }, "kid": { "$ref": "#/$defs/i18n" } } } },
           "quiz": { "type": "array", "items": { "type": "object", "properties": { "q": { "$ref": "#/$defs/i18n" }, "a": { "$ref": "#/$defs/i18n" } } } },
-          "tale": { "$ref": "#/$defs/i18n", "description": "the guide's story for the day (the manual's 'The guide's stories'): read aloud in the car or at bedtime" },
+          "tale": { "type": "object", "description": "the guide's story for the day (the manual's 'The guide's stories'): th/en = the whole story; scenes = the same words cut into 3–5 picture-book scenes, each with an emoji e and a short heading h", "properties": { "th": { "type": "string" }, "en": { "type": "string" }, "scenes": { "type": "array", "items": { "type": "object", "properties": { "e": { "type": "string" }, "h": { "$ref": "#/$defs/i18n" }, "th": { "type": "string" }, "en": { "type": "string" } } } } } },
           "mission": {
             "type": "object",
             "description": "the kids' passport page for this day",
