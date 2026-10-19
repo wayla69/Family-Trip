@@ -49,3 +49,17 @@ UI screenshots go to `$SHOTS` (default `/tmp/mb-shots`) — look at them after U
 - `FAMILY_CODE` unset ⇒ nobody can log in (server only warns).
 - Headless Chromium reports `en-US`, so tests see the English UI unless they toggle.
 - Docker Hub `minio/minio` is not pullable here; tests use `s3rver` (devDependency) as the S3 emulator.
+- Seeds use a mixed hand layout (pretty objects, one-line rows): edit them surgically (replace only the changed lines/keys, then `assert json.loads(new) == expected`) — `json.dump` of the whole file rewrites ~30k lines.
+- Escape first, decorate never: a regex run over `esc()` output matches inside entities (`Cook's` → `&#39;` → "39" got highlighted). Match the raw text, escape each piece.
+- `.pocket h5` (and other page-level rules) set `--display`, which is serif in HK — a component's own heading rule needs enough specificity (`.tale .scenes h5`).
+- Kid mode opens the next trip (HK before AU): to check another book's colouring pages, render `lineArt()` on its SVGs directly.
+- Tests: closed `<details>` hide their text from `innerText` — use `textContent`. Headless `speechSynthesis` exists but has no voices; assert the UI state, not the sound.
+- A test that needs content not yet written: `git stash` it rather than pushing a red commit.
+
+## Debug mantra
+1. **Reproduce before you fix** — see the bug on the real screen (screenshot 390 px + 1440 px, TH + EN), not just in a test.
+2. **Read the data, then the code** — most "UI bugs" here were seed data (old manual, wrong key, format drift).
+3. **Trust the manual, prove the fact** — every seed fact traces to the manual or the seed; grep before you ship a new one.
+4. **One cause, one fix, one test** — write the test that would have caught it (it must fail on the old code).
+5. **Look at both books** — HK and AU differ in theme, fonts and guides; a fix for one is checked on the other.
+6. **Green CI or it didn't happen** — then check `/sw.js` on the live site and look at the live page.
