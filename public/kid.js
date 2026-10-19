@@ -52,11 +52,28 @@ function speak(text, langTag, opt) {
 }
 const say = (text, langTag) => speak(text, langTag);
 const sayUi = (text) => say(text, lang === 'th' ? 'th-TH' : 'en-GB');
-// a long story in chunks of a sentence or two (Chrome stops one long utterance after about 15 s)
-function sayLong(text) {
+// a long text in chunks of a sentence or two (Chrome stops one long utterance after about 15 s)
+function chunks(text) {
   const out = [];
-  for (const w of String(text || '').split(/\s+/)) { const c = out.length ? out[out.length - 1] : ''; if (c && c.length + w.length < 180 && !/[.!?]$/.test(c)) out[out.length - 1] = c + ' ' + w; else out.push(w); }
-  out.forEach((p, n) => speak(p, lang === 'th' ? 'th-TH' : 'en-GB', { keep: n > 0 }));
+  for (const w of String(text || '').split(/\s+/).filter(Boolean)) { const c = out.length ? out[out.length - 1] : ''; if (c && c.length + w.length < 180 && !/[.!?]$/.test(c)) out[out.length - 1] = c + ' ' + w; else out.push(w); }
+  return out;
+}
+// the guide's story: scene by scene, the scene being read lights up; tap again to stop
+let taleRun = 0;
+function sayTale(b) {
+  const box = b.closest('.tale'), was = b.classList.contains('on'), run = ++taleRun;
+  try { if (window.speechSynthesis) speechSynthesis.cancel(); } catch (_) {}
+  $$('.tale .now, .talebtn.on').forEach((x) => x.classList.remove('now', 'on'));
+  if (was || !box) return;
+  const q = $$('[data-say]', box).flatMap((el) => chunks(el.dataset.say).map((c) => [el, c]));
+  const next = (n) => {
+    if (run !== taleRun) return;
+    if (n >= q.length) { b.classList.remove('on'); q.forEach(([el]) => el.classList.remove('now')); return; }
+    const [el, c] = q[n];
+    if (!el.classList.contains('now')) { $$('.now', box).forEach((x) => x.classList.remove('now')); el.classList.add('now'); el.scrollIntoView({ block: 'nearest', behavior: 'smooth' }); }
+    if (!speak(c, lang === 'th' ? 'th-TH' : 'en-GB', { keep: true, onend: () => next(n + 1) })) { b.classList.remove('on'); el.classList.remove('now'); }
+  };
+  b.classList.add('on'); next(0);
 }
 if (window.speechSynthesis) speechSynthesis.onvoiceschanged = () => {};   // iOS/Chrome load voices lazily
 
@@ -620,7 +637,7 @@ Object.assign(A, {
   },
   hear(b) { say(b.dataset.v, b.dataset.lang); },
   sayfacts(b) { sayUi(b.dataset.v); },
-  saytale(b) { sayLong(b.dataset.v); },
+  saytale(b) { sayTale(b); },
   // drawing
   kidpen(b) { beep('tap'); pen = +b.dataset.v; $$('.drawtools [data-a="kidpen"]').forEach((x) => x.setAttribute('aria-pressed', +x.dataset.v === pen)); },
   kidundo() { beep('tap'); pad.strokes.pop(); const cv = $('#kidcanvas'); if (cv) redraw(cv); },
