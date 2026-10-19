@@ -1530,6 +1530,15 @@ p,li,.bubble p{text-wrap:pretty}
 .pinstay>span>.ic{position:absolute;left:0;top:2px;width:18px;height:18px;color:var(--muted)}
 .pinstay small{color:var(--muted);font-size:12.5px}
 .pinstay .btn{flex:none}
-/* the kid-mode tile on the book's menu: the one bright button, easy to find for a grown-up handing over the phone */
-.hubgrid .tile.kid{background:linear-gradient(135deg,#FF8A3D,#FF4F8B);border:1px solid transparent;color:#fff;box-shadow:0 6px 18px -8px rgba(255,79,139,.7)}
-.hubgrid .tile.kid b{color:#fff;font-weight:700}.hubgrid .tile.kid small{color:rgba(255,255,255,.94)}.hubgrid .tile.kid .e{background:rgba(255,255,255,.24);color:#fff}
+/* the book's menu: every tile in its own colour (owner's ask) — white text on a two-tone fill, light and dark alike */
+.hubgrid .tile{--g1:#334155;--g2:#64748B;background:linear-gradient(135deg,var(--g1),var(--g2));border:1px solid transparent;color:#fff;box-shadow:0 6px 16px -10px var(--g1)}
+.hubgrid .tile b,.hubgrid .tile.t-sos small{color:#fff;font-weight:700}.hubgrid .tile small{color:rgba(255,255,255,.93);font-weight:400}
+.hubgrid .tile .e{background:rgba(255,255,255,.22);color:#fff}
+.hubgrid .tile.today{--g1:#1E40AF;--g2:#2563EB;background:linear-gradient(135deg,var(--g1),var(--g2));border-color:transparent}.hubgrid .tile.today small{color:rgba(255,255,255,.93)}
+.hubgrid .t-book{--g1:#5B21B6;--g2:#7C3AED}.hubgrid .t-log{--g1:#854D0E;--g2:#A16207}.hubgrid .t-plan{--g1:#0C4A6E;--g2:#0369A1}
+.hubgrid .t-eat{--g1:#9A3412;--g2:#C2410C}.hubgrid .t-stays{--g1:#4338CA;--g2:#6366F1}.hubgrid .t-sos{--g1:#B91C1C;--g2:#E11D48}
+.hubgrid .t-prep{--g1:#365314;--g2:#4D7C0F}.hubgrid .t-learn{--g1:#065F46;--g2:#047857}.hubgrid .t-firsts{--g1:#92400E;--g2:#B45309}
+.hubgrid .tile[href="#/passport"]{--g1:#155E75;--g2:#0E7490}.hubgrid .t-hearts{--g1:#9D174D;--g2:#DB2777}.hubgrid .tile[href="#/notebook"]{--g1:#44403C;--g2:#78716C}
+.hubgrid .t-offline{--g1:#334155;--g2:#64748B}.hubgrid .tile.shelf{--g1:#1F2937;--g2:#4B5563}
+.hubgrid .tile.kid{--g1:#C2410C;--g2:#DB2777}
+.hubgrid .tile.warn{box-shadow:inset 0 0 0 3px rgba(255,255,255,.75),0 6px 16px -10px var(--g1)}   /* still to do (e.g. not stored offline yet) */
