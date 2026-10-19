@@ -20,7 +20,7 @@
 | 🛏️ ที่พัก | `days[].sleep` + `stay{name,addr,q}` · `info.stays` (ไม่มีก็สร้างจาก stay ให้) · `info.kit` |
 | 🆘 ฉุกเฉิน | `info.emergency` · `info.lost` · `info.ifthen` |
 | 🧳 เตรียมตัว | `info.pack` · `info.prices` · `info.visa` · `info.bio` · `info.car` · `info.drive` |
-| 📚 เรียนรู้ | `info.guide` · `days[].learn` · `quiz` · `info.general` · `info.wild` · `info.eatRules` |
+| 📚 เรียนรู้ | `info.guide` · `days[].learn` · `quiz` · `tale` (เรื่องเล่าของไกด์ประจำวัน — กดฟังได้) · `info.general` · `info.wild` · `info.eatRules` |
 | 🛂 พาสปอร์ตเด็ก | `days[].mission{title,stamp,facts,spot[4]}` · `passport.words` · `passport.food` · `passport.guides` · `certificate` |
 | 🧒 โหมดเด็ก (ประตูนับถอยหลัง, จัดกระเป๋า, แผนที่มีชีวิต, สัตว์, ตัวเลข, จับคู่) | `passport.countdown.doors` (ขาดเติมให้ครบ 14) · `countdown.pack` · `passport.map{stops x,y %, days}` · `info.wild` · จับคู่/นับใช้ `planned` + `picks` อัตโนมัติ |
 | 🌟 ครั้งแรก | `firsts[]` (ไม่มีใช้ชุดมาตรฐาน 10 อย่าง) |

@@ -1,0 +1,18 @@
+<svg aria-hidden="true" viewBox="0 0 400 390" xmlns="http://www.w3.org/2000/svg">
+<circle cx="340" cy="60" r="32" fill="#fde68a" stroke="#1e293b" stroke-width="6"/>
+<path d="M 30 70 Q 30 48 54 50 Q 64 32 88 40 Q 112 36 110 60 Q 122 74 100 78 L 40 78 Q 26 78 30 70 Z" fill="#f1f5f9" stroke="#1e293b" stroke-width="5" stroke-linejoin="round"/>
+<path d="M 10 175 Q 60 140 110 160 Q 170 130 230 155 Q 300 125 390 165 L 390 230 L 10 230 Z" fill="#d9f99d" stroke="#1e293b" stroke-width="6" stroke-linejoin="round"/>
+<path d="M 10 230 Q 70 200 130 225 Q 200 200 270 225 Q 330 205 390 225 L 390 300 L 10 300 Z" fill="#bbf7d0" stroke="#1e293b" stroke-width="6" stroke-linejoin="round"/>
+<path d="M 72 290 L 78 140 Q 80 96 112 94 Q 142 96 144 140 L 146 290 Z" fill="#fed7aa" stroke="#1e293b" stroke-width="7" stroke-linejoin="round"/>
+<path d="M 158 290 L 162 160 Q 164 120 194 118 Q 222 120 224 160 L 228 290 Z" fill="#fecaca" stroke="#1e293b" stroke-width="7" stroke-linejoin="round"/>
+<path d="M 240 290 L 244 186 Q 246 152 272 150 Q 298 152 300 186 L 304 290 Z" fill="#fed7aa" stroke="#1e293b" stroke-width="7" stroke-linejoin="round"/>
+<path d="M 92 170 Q 110 162 128 170 M 178 200 Q 194 192 210 200 M 256 220 Q 272 212 288 220" fill="none" stroke="#1e293b" stroke-width="5" stroke-linecap="round"/>
+<path d="M 18 290 Q 14 262 36 258 Q 46 238 64 252 L 64 290 Z" fill="#bbf7d0" stroke="#1e293b" stroke-width="5" stroke-linejoin="round"/>
+<path d="M 318 290 Q 314 256 340 252 Q 352 232 374 246 Q 392 262 384 290 Z" fill="#d9f99d" stroke="#1e293b" stroke-width="5" stroke-linejoin="round"/>
+<rect x="10" y="290" width="380" height="16" rx="6" fill="#fde68a" stroke="#1e293b" stroke-width="6"/>
+<rect x="10" y="334" width="380" height="14" rx="6" fill="#fde68a" stroke="#1e293b" stroke-width="5"/>
+<rect x="24" y="300" width="22" height="76" rx="5" fill="#fed7aa" stroke="#1e293b" stroke-width="6"/>
+<rect x="138" y="300" width="22" height="76" rx="5" fill="#fed7aa" stroke="#1e293b" stroke-width="6"/>
+<rect x="246" y="300" width="22" height="76" rx="5" fill="#fed7aa" stroke="#1e293b" stroke-width="6"/>
+<rect x="356" y="300" width="22" height="76" rx="5" fill="#fed7aa" stroke="#1e293b" stroke-width="6"/>
+</svg>

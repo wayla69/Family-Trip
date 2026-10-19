@@ -710,7 +710,7 @@ const T = 'hk-macau-2026';
   await page.goto(`${BASE}/#/t/hk-macau-2026/sos/full`); await page.waitForSelector('#pocket');
   ok(/Taxi card/.test(await page.textContent('#pocket')) && await page.locator('#pocket table.ift').count() === 1 && await s.noHScroll(), 'HK emergency page: if-then table and the Chinese taxi card');
   await page.goto(`${BASE}/#/t/big-hop-2027/learn/full`); await page.waitForSelector('#pocket');
-  ok(await page.locator('#pocket details.sub').count() === 16 && await page.locator('#pocket .qa').count() === 48, 'learn page: a fold per day with its cards and quiz questions');
+  ok(await page.locator('#pocket details.sub:not(.tale)').count() === 16 && await page.locator('#pocket .qa').count() === 48 && await page.locator('#pocket details.tale .hearbtn[data-a="saytale"]').count() === 16, 'learn page: a fold per day with its cards, quiz questions and the guide’s story (read aloud)');
   await s.shot('02b-learn', false);
   await page.goto(`${BASE}/#/t/hk-macau-2026/learn/full`); await page.waitForSelector('#pocket');
   ok(await page.locator('#pocket details.sub').count() === 6 && await page.locator('#pocket .qa').count() === 18 && /Animals and characters we may meet/.test(await page.textContent('#pocket')) && /Mickey Mouse/.test(await page.textContent('#pocket')) && await s.noHScroll(), 'HK learn page: six days of cards + quiz, animals and Disney characters');

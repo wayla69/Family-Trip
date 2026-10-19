@@ -1,0 +1,30 @@
+<svg aria-hidden="true" viewBox="0 0 400 390" xmlns="http://www.w3.org/2000/svg">
+<path d="M 12 312 Q 120 290 220 304 Q 310 316 388 300 L 388 378 L 12 378 Z" fill="#bbf7d0" stroke="#1e293b" stroke-width="6" stroke-linejoin="round"/>
+<g stroke="#1e293b" stroke-width="6" stroke-linejoin="round">
+<path d="M 152 118 Q 110 70 46 58 L 50 36 Q 120 46 160 90 Z" fill="#fed7aa"/>
+<path d="M 198 104 Q 232 62 292 48 L 298 70 Q 246 84 204 128 Z" fill="#fed7aa"/>
+<ellipse cx="46" cy="88" rx="15" ry="30" transform="rotate(10 46 88)" fill="#d9f99d"/>
+<ellipse cx="82" cy="94" rx="15" ry="30" transform="rotate(-5 82 94)" fill="#bbf7d0"/>
+<ellipse cx="306" cy="98" rx="15" ry="30" transform="rotate(-10 306 98)" fill="#d9f99d"/>
+<ellipse cx="270" cy="106" rx="15" ry="30" transform="rotate(5 270 106)" fill="#bbf7d0"/>
+<path d="M 145 20 L 205 20 L 218 330 L 132 330 Z" fill="#fed7aa"/>
+<circle cx="128" cy="118" r="26" fill="#fbcfe8"/>
+<circle cx="222" cy="118" r="26" fill="#fbcfe8"/>
+<ellipse cx="175" cy="228" rx="52" ry="62" fill="#e2e8f0"/>
+<ellipse cx="175" cy="238" rx="30" ry="40" fill="#f8fafc" stroke-width="5"/>
+<ellipse cx="140" cy="290" rx="24" ry="16" fill="#e2e8f0"/>
+<ellipse cx="210" cy="290" rx="24" ry="16" fill="#e2e8f0"/>
+<circle cx="175" cy="150" r="46" fill="#e2e8f0"/>
+<ellipse cx="134" cy="210" rx="16" ry="36" transform="rotate(-25 134 210)" fill="#e2e8f0"/>
+<ellipse cx="216" cy="210" rx="16" ry="36" transform="rotate(25 216 210)" fill="#e2e8f0"/>
+<path d="M 330 318 Q 368 330 378 362 Q 350 360 320 338 Z" fill="#fed7aa"/>
+<ellipse cx="298" cy="352" rx="36" ry="12" fill="#fdba74" stroke-width="5"/>
+<path d="M 302 240 Q 300 206 314 198 Q 322 222 314 244 Z M 288 238 Q 282 206 294 198 Q 304 220 300 240 Z" fill="#fed7aa" stroke-width="5"/>
+<ellipse cx="312" cy="302" rx="34" ry="46" transform="rotate(-10 312 302)" fill="#fed7aa"/>
+<ellipse cx="330" cy="322" rx="20" ry="26" fill="#fdba74" stroke-width="5"/>
+<ellipse cx="286" cy="253" rx="31" ry="17" transform="rotate(12 286 253)" fill="#fed7aa"/>
+</g>
+<ellipse cx="175" cy="160" rx="13" ry="17" fill="#1e293b"/>
+<circle cx="156" cy="140" r="5" fill="#1e293b"/><circle cx="194" cy="140" r="5" fill="#1e293b"/>
+<circle cx="284" cy="246" r="4" fill="#1e293b"/><circle cx="263" cy="252" r="4.5" fill="#1e293b"/>
+</svg>

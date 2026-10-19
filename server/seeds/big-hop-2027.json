@@ -94,18 +94,20 @@
    "plan": [
     { "t": "05:30", "tz": "Asia/Bangkok", "th": "เช็คอิน TG 475 ที่สุวรรณภูมิ — นอนโรงแรมสนามบินคืนก่อน", "en": "Check in TG 475 at Suvarnabhumi — airport hotel the night before" },
     { "t": "08:30", "tz": "Asia/Bangkok", "th": "TG 475 ออกเดินทาง · บินตรง 9 ชม.", "en": "TG 475 departs · 9 h nonstop" },
-    { "t": "21:30", "th": "ถึง SYD T1 · ผ่าน ตม. และ biosecurity ออกมาได้ราว 22:30", "en": "Land SYD T1 · immigration and biosecurity; out around 22:30" },
-    { "t": "22:45", "th": "รถไฟสาย T8 จากสถานี International Airport หนึ่งสถานีถึง Mascot (5 นาที มีลิฟต์ทั้งสองสถานี) · เดิน 4 นาทีถึง Adina · กินของว่าง · เข้านอนทันที", "en": "T8 train from the International Airport station, one stop to Mascot (5 min, lifts both ends) · 4-minute walk to Adina · late snack · straight to bed" }
+    { "t": "21:30", "th": "ถึง SYD T1 · ผ่าน ตม. และ biosecurity ออกมาได้ราว 22:30", "en": "Land SYD T1 · immigration and biosecurity; out around 22:30", "note": { "th": "คืนนี้ซิดนีย์เร็วกว่ากรุงเทพฯ 4 ชม. (เหลือ 3 ชม. เมื่อเปลี่ยนเวลาวันอาทิตย์ 4 เม.ย.) · มองออกนอกหน้าต่างหาอ่าว Botany — กัปตันคุกขึ้นฝั่งด้านใต้ของอ่าวเมื่อ 29 เม.ย. 1770", "en": "Sydney is 4 h ahead of Bangkok tonight (3 h once the clocks go back on Sunday 4 April) · look out of the window for Botany Bay — Captain Cook landed on its south shore on 29 April 1770" } },
+    { "t": "22:45", "th": "รถไฟสาย T8 จากสถานี International Airport สองสถานีถึง Mascot ผ่าน Domestic Airport (ราว 5–6 นาที มีลิฟต์ทั้งสองฝั่ง) · เดิน 4 นาทีถึง Adina · กินของว่าง · เข้านอนทันที", "en": "T8 train from the International Airport station, two stops to Mascot via Domestic Airport (about 5–6 min, lifts at both ends) · 4-minute walk to Adina · late snack · straight to bed", "note": { "th": "สถานีสนามบินบวกค่าผ่านสถานีเข้าไปในค่าโดยสาร: ผู้ใหญ่ $18.61 (Opal หรือบัตร contactless) เด็ก 4–15 ปี $16.64 ต่ำกว่า 4 ขวบฟรี · รถไฟวิ่ง 5:00 ถึงเที่ยงคืน · Mascot เป็นสถานีที่สอง (International → Domestic → Mascot)", "en": "Airport stations add an access fee to the fare: adult $18.61 (Opal or contactless), child 4–15 $16.64, under 4 free · trains run 5:00 to midnight · Mascot is the second stop (International → Domestic → Mascot)" } },
+    { "t": "23:15", "th": "เช็คอินที่ Adina, 11 Bourke Rd — อาบน้ำ เข้านอน · ตั้งนาฬิกาปลุก 07:30: เจ้าของรถ Turo มา 08:00", "en": "Check in at Adina, 11 Bourke Rd — showers, beds · set an alarm for 07:30: the Turo host arrives at 08:00" }
    ],
    "tips": [
     { "th": "ช่วงนอน: บนเครื่องหลังมื้อกลางวัน — บิน 9 ชม. ช่วงกลางวัน", "en": "Nap: On the plane after lunch — the 9 h flight is in daytime" },
     { "kind": "info", "th": "หิวตอนถึง? มื้อเย็นคือบนเครื่อง — สั่งอาหารเด็กล่วงหน้า 24 ชม. กินหรือทิ้งอาหารสดก่อนเครื่องลง (biosecurity) T1 ปิด 23:00 ที่ Adina ใช้ครัวในห้อง หรือสั่ง Uber Eats, DoorDash, Menulog มาที่ 11 Bourke Rd ตั้งแต่เครื่องลง", "en": "Hungry on arrival? Dinner is on the plane — pre-order child meals 24 h ahead. Eat or bin fresh food before landing (biosecurity). T1 closes at 23:00; at Adina use the kitchen or order Uber Eats, DoorDash or Menulog to 11 Bourke Rd as you land." },
-    { "kind": "warn", "th": "วันศุกร์ประเสริฐ: เช็ค Trip Planner สัปดาห์ก่อนว่ามีงานซ่อมรางไหม ถ้ามีรถบัสวิ่งแทน ให้นั่งแท็กซี่หน้าโถงขาเข้า คืนนี้ไม่ขับรถ รถมาส่งที่ Adina 08:00 แยกกระเป๋าถือใบเดียวใส่ชุดนอน นม ผ้าอ้อม", "en": "Good Friday: check the Trip Planner the week before for trackwork — if buses replace trains, take a taxi from the rank. No driving tonight; the van comes to Adina at 08:00. One carry-on with pyjamas, milk and nappies." }
+    { "kind": "warn", "th": "คืนวันศุกร์: เช็ค Trip Planner สัปดาห์ก่อนว่ามีงานซ่อมรางไหม ถ้ามีรถบัสวิ่งแทน ให้นั่งแท็กซี่หน้าโถงขาเข้า คืนนี้ไม่ขับรถ รถมาส่งที่ Adina 08:00 แยกกระเป๋าถือใบเดียวใส่ชุดนอน นม ผ้าอ้อม", "en": "Friday night: check the Trip Planner the week before for trackwork — if buses replace trains, take a taxi from the rank. No driving tonight; the van comes to Adina at 08:00. One carry-on with pyjamas, milk and nappies." }
    ],
    "stay": { "name": "Adina Apartment Hotel Sydney Airport", "addr": "Adina Apartment Hotel, 11 Bourke Rd, Mascot NSW 2020", "q": "Adina Apartment Hotel Sydney Airport, Adina Apartment Hotel, 11 Bourke Rd, Mascot NSW 2020" },
    "route": "https://www.google.com/maps/dir/?api=1&origin=Sydney+International+Airport+Terminal+1&destination=Adina+Apartment+Hotel+Sydney+Airport&travelmode=driving",
    "learn": [
-    { "name": { "th": "สนามบินซิดนีย์", "en": "Sydney Airport" }, "country": { "th": "ผืนดินของชาว Gadigal และ Bidjigal ริมอ่าว Botany", "en": "Gadigal and Bidjigal Country, by Botany Bay" }, "facts": [{ "th": "สนามบินตั้งชื่อตาม Charles Kingsford Smith นักบินที่บินข้ามมหาสมุทรแปซิฟิกจากอเมริกามาออสเตรเลียได้เป็นคนแรกในปี 1928", "en": "The airport is named after Charles Kingsford Smith, who flew the first trans-Pacific flight from the USA to Australia in 1928." }, { "th": "ที่นี่เริ่มมีเครื่องบินขึ้นลงตั้งแต่ปี 1920 เป็นหนึ่งในสนามบินพาณิชย์ที่เปิดใช้ต่อเนื่องเก่าแก่ที่สุดในโลก", "en": "Flying started here in 1920, making it one of the oldest continuously operating commercial airports in the world." }, { "th": "เดือนเมษายนที่ออสเตรเลียคือฤดูใบไม้ร่วง ฤดูกลับด้านกับซีกโลกเหนือ หน้าร้อนของที่นี่คือ ธ.ค.–ก.พ.", "en": "April is autumn in Australia — the seasons are flipped from the northern hemisphere, and summer is December–February." }], "kid": { "th": "เราบินมา 9 ชั่วโมง ข้ามเส้นศูนย์สูตรมาอยู่ซีกโลกใต้แล้ว ที่นี่ตอนนี้เป็นฤดูใบไม้ร่วงนะ", "en": "We flew for 9 hours and crossed the equator — now we're 'down under', where it's autumn right now!" }}
+    { "name": { "th": "สนามบินซิดนีย์", "en": "Sydney Airport" }, "country": { "th": "ผืนดินของชาว Gadigal และ Bidjigal ริมอ่าว Botany", "en": "Gadigal and Bidjigal Country, by Botany Bay" }, "facts": [{ "th": "สนามบินตั้งชื่อตาม Charles Kingsford Smith นักบินที่บินข้ามมหาสมุทรแปซิฟิกจากอเมริกามาออสเตรเลียได้เป็นคนแรกในปี 1928", "en": "The airport is named after Charles Kingsford Smith, who flew the first trans-Pacific flight from the USA to Australia in 1928." }, { "th": "ที่นี่เริ่มมีเครื่องบินขึ้นลงตั้งแต่ปี 1920 เป็นหนึ่งในสนามบินพาณิชย์ที่เปิดใช้ต่อเนื่องเก่าแก่ที่สุดในโลก", "en": "Flying started here in 1920, making it one of the oldest continuously operating commercial airports in the world." }, { "th": "เดือนเมษายนที่ออสเตรเลียคือฤดูใบไม้ร่วง ฤดูกลับด้านกับซีกโลกเหนือ หน้าร้อนของที่นี่คือ ธ.ค.–ก.พ.", "en": "April is autumn in Australia — the seasons are flipped from the northern hemisphere, and summer is December–February." }], "kid": { "th": "เราบินมา 9 ชั่วโมง ข้ามเส้นศูนย์สูตรมาอยู่ซีกโลกใต้แล้ว ที่นี่ตอนนี้เป็นฤดูใบไม้ร่วงนะ", "en": "We flew for 9 hours and crossed the equator — now we're 'down under', where it's autumn right now!" } },
+    { "name": { "en": "Botany Bay (Kamay)", "th": "อ่าว Botany (Kamay)" }, "country": { "en": "Dharawal Country", "th": "ดินแดนของชาว Dharawal" }, "facts": [{ "en": "In 1770 Captain Cook first called it Stingrays Harbour, then renamed it Botany Bay after the plants Joseph Banks and Daniel Solander collected on its shore.", "th": "ปี 1770 กัปตัน Cook ตั้งชื่อตอนแรกว่า Stingrays Harbour แล้วเปลี่ยนเป็น Botany Bay ตามต้นไม้ที่ Joseph Banks กับ Daniel Solander เก็บได้บนชายฝั่ง" }, { "en": "The Dharawal people call the bay Kamay, and Aboriginal families have lived on its shores for thousands of years.", "th": "ชาว Dharawal เรียกอ่าวนี้ว่า Kamay และครอบครัวชาวอะบอริจินอาศัยอยู่ริมอ่าวนี้มาหลายพันปีแล้ว" }], "kid": { "en": "Can you spot the runways poking out into the bay from the plane window?", "th": "หนูมองเห็นรันเวย์ที่ยื่นออกไปในทะเลจากหน้าต่างเครื่องบินไหมจ๊ะ?" } }
    ],
    "quiz": [
     { "q": { "th": "เราบินมากี่ชั่วโมง?", "en": "How many hours did we fly?" }, "a": { "th": "ประมาณ 9 ชั่วโมง!", "en": "About 9 hours!" }},
@@ -116,7 +118,8 @@
    "wx": {
     "en": "Sydney about 15–23°C · arrive after dark · sunset 18:49",
     "th": "ซิดนีย์ราว 15–23°C · ถึงหลังมืด · พระอาทิตย์ตก 18:49"
-   }
+   },
+   "tale": { "th": "คืนนี้เราจะลงจอดที่ปลายฟ้าอีกฝั่งหนึ่ง เมื่อ 9 ชั่วโมงก่อนที่กรุงเทพฯ ยังเป็นตอนเช้าอยู่เลย แต่ตอนนี้ที่ Sydney เป็นกลางคืนแล้ว และนาฬิกาที่นี่เดินเร็วกว่าบ้านเรา 4 ชั่วโมง ตอนเครื่องบินกำลังจะลง ลองมองออกไปนอกหน้าต่างนะ รันเวย์ยื่นออกไปในอ่าว Botany เลย เมื่อปี 1770 เรือของกัปตัน Cook แล่นเข้ามาในอ่าวนี้ ลูกเรือจับปลากระเบนได้เยอะมาก เขาเลยตั้งชื่อตอนแรกว่า \"ท่าเรือปลากระเบน\" (Stingrays Harbour) ต่อมาเขาเปลี่ยนชื่อเป็น Botany Bay ตามต้นไม้ที่นักวิทยาศาสตร์สองคน คือ Joseph Banks กับ Daniel Solander เก็บได้บนชายฝั่ง แต่ก่อนจะมีเรือลำไหนมา ก็มีคนอยู่ที่นี่มานานแล้ว ชาว Dharawal เรียกอ่าวนี้ว่า Kamay และครอบครัวชาวอะบอริจินอาศัยอยู่ริมอ่าวนี้มาหลายพันปี คืนนี้เหลืองานสั้น ๆ แค่อย่างเดียว คือนั่งรถไฟเล็ก ๆ จากสนามบินไป Mascot เดินอีก 4 นาที แล้วก็เข้านอน พรุ่งนี้การเดินทางด้วยรถจะเริ่มต้นขึ้น ที่นี่เป็นฤดูใบไม้ร่วงจ้ะ ฝันดีนะ นักเดินทางตัวน้อย", "en": "Tonight we land at the other end of the sky. Nine hours ago it was morning in Bangkok; now it is night in Sydney, and the clocks here run four hours ahead. Look out of the window as we come in: the runways poke right out into Botany Bay. In 1770 Captain Cook's ship came to this bay, and his crew caught so many stingrays that he first called it Stingrays Harbour. Later he renamed it Botany Bay, after the plants two scientists, Joseph Banks and Daniel Solander, collected on its shore. But people were here long before any ship. The Dharawal people call this bay Kamay, and Aboriginal families have lived on its shores for thousands of years. Tonight there is only one short job left: a little train from the airport to Mascot, a four-minute walk, and bed. Tomorrow the road trip begins. It is autumn here — sleep well, travellers." }
   },
   {
    "index": 1,
@@ -204,14 +207,16 @@
     { "t": "08:30", "th": "นอนต่อ — นาฬิกาในตัวยังเป็นเวลาไทย (07:30 ที่นี่คือตี 3:30 ที่บ้าน) · อาหารเช้าในห้อง", "en": "Sleep in — body clocks are still on Bangkok time (07:30 here is 03:30 there) · breakfast in the apartment" },
     { "t": "09:30", "th": "เจ้าของรถ Turo ส่งมอบ Odyssey ที่ Adina — ถ่ายวิดีโอรอบคัน ถ่ายรูปเช็คอิน เช็คคาร์ซีททั้งสองตัว", "en": "Turo host hands over the Odyssey at Adina — walk-around video, check-in photos, both child seats checked" },
     { "t": "10:30", "th": "เช็คเอาท์ · ขนของขึ้นรถแล้วออกเดินทาง", "en": "Check out · load the van and go" },
-    { "t": "11:20", "th": "ไปตาม Lawrence Hargrave Drive ถึง Bald Hill Lookout — ร่มร่อนและวิวทะเลกว้างครั้งแรก", "en": "Lawrence Hargrave Drive to Bald Hill Lookout — hang-gliders and the first big ocean view", "note": { "th": "30 นาที · ที่จอดฟรี — วันเสาร์อีสเตอร์เต็มเร็ว · ห้องน้ำข้างที่จอด · มีซุ้มขายของ", "en": "30 min · free car park — fills early on Easter Saturday · public toilets by the car park · kiosk" }},
-    { "t": "12:00", "th": "ข้ามสะพาน Sea Cliff Bridge ผ่าน Wollongong ไป Kiama ราว 1 ชม.", "en": "Over Sea Cliff Bridge and through Wollongong to Kiama, about 1 h" },
-    { "t": "13:00", "th": "Kiama — ฟิชแอนด์ชิปส์ริมท่าเรือ · Blowhole", "en": "Kiama — fish and chips by the harbour · the Blowhole", "note": { "th": "45–60 นาที · ฟรี · ห้องน้ำสาธารณะ · ทางปูเรียบ จุดชมมีรั้ว — จับมือเด็กไว้ คลื่นซัดขึ้นหินได้", "en": "45–60 min · free · public toilets · paved paths and fenced viewing platforms — hold hands, waves wash over the rocks" }},
+    { "t": "11:20", "th": "ไปตาม Lawrence Hargrave Drive ถึง Bald Hill Lookout — ร่มร่อนและวิวทะเลกว้างครั้งแรก", "en": "Lawrence Hargrave Drive to Bald Hill Lookout — hang-gliders and the first big ocean view", "note": { "th": "30 นาที · ที่จอดฟรี — วันเสาร์แดดดีเต็มเร็ว · ห้องน้ำข้างที่จอด · มีซุ้มขายของ · ชื่อถนน Hargrave มาจาก Lawrence Hargrave ที่ปี 1894 ยกตัวเองลอยจากหาดข้างล่างด้วยว่าวกล่อง 4 ตัว", "en": "30 min · free car park — fills early on a sunny Saturday · public toilets by the car park · kiosk · Hargrave is the name on the road: in 1894 Lawrence Hargrave lifted himself off the beach below with four box kites" } },
+    { "t": "12:00", "th": "ข้ามสะพาน Sea Cliff Bridge ผ่าน Wollongong ไป Kiama ราว 1 ชม.", "en": "Over Sea Cliff Bridge and through Wollongong to Kiama, about 1 h", "note": { "th": "ดูถนนที่โค้งออกไปเหนือทะเล: สะพานยาว 455.6 ม. มีสะพาน 210 ม. อยู่ข้างๆ สร้างแทนถนนเลียบหน้าผาที่ปิดเพราะหินถล่มปี 2003 · เปิดใช้ 11 ธ.ค. 2005", "en": "Look for the road curving out over the sea: the bridge is 455.6 m long with a 210 m bridge beside it, replacing the road closed by rock falls in 2003; opened 11 December 2005" } },
+    { "t": "13:00", "th": "Kiama — ฟิชแอนด์ชิปส์ริมท่าเรือ · Blowhole", "en": "Kiama — fish and chips by the harbour · the Blowhole", "note": { "th": "45–60 นาที · ฟรี · ห้องน้ำสาธารณะ · ทางปูเรียบ จุดชมมีรั้ว — จับมือเด็กไว้ คลื่นซัดขึ้นหินได้ · ประภาคาร Kiama ตั้งอยู่ข้าง Blowhole (สูง 16 ม. จุดไฟครั้งแรกปี 1887) · ละอองน้ำพุ่งสูงได้ถึง 25 ม. ส่วน Little Blowhole ที่เล็กกว่าอยู่ทางใต้ราว 2 กม.", "en": "45–60 min · free · public toilets · paved paths and fenced viewing platforms — hold hands, waves wash over the rocks · Kiama Light stands beside the Blowhole (16 m tower, lit in 1887) · the spray can reach 25 m; the smaller Little Blowhole is about 2 km south" } },
     { "t": "14:15", "th": "ขับตรงไป Vincentia ราว 1 ชม. 10 นาที — เด็กนอนในรถ · แวะซูเปอร์มาร์เก็ตก่อนเข้าที่พัก", "en": "Straight on to Vincentia, about 1 h 10 — nap in the van · supermarket on the way in" },
-    { "t": "15:30", "th": "เช็คอิน · หาด Collingwood · ทำอาหารเย็น · ตลาดเย็นที่ Huskisson ไปเฉพาะถ้าทุกคนยังไหว", "en": "Check in · Collingwood Beach · cook dinner · the Huskisson twilight market only if everyone is fresh", "note": { "th": "ทางเดิน Round the Bay ริมหาดเข็นรถเข็นได้ · สนามเด็กเล่นที่ White Sands Park ฝั่ง Huskisson", "en": "The Round the Bay path past the beach is pram-friendly · playground at White Sands Park, Huskisson end" }}
+    { "t": "15:30", "th": "เช็คอิน · หาด Collingwood · ทำอาหารเย็น · ตลาดเย็นที่ Huskisson ไปเฉพาะถ้าทุกคนยังไหว", "en": "Check in · Collingwood Beach · cook dinner · the Huskisson twilight market only if everyone is fresh", "note": { "th": "ทางเดิน Round the Bay ริมหาดเข็นรถเข็นได้ · สนามเด็กเล่นที่ White Sands Park ฝั่ง Huskisson", "en": "The Round the Bay path past the beach is pram-friendly · playground at White Sands Park, Huskisson end" } },
+    { "t": "18:30", "th": "อาบน้ำ เล่านิทาน เข้านอน — คืนนี้ตี 3 นาฬิกาถอยหลัง", "en": "Baths, a story, bed — the clocks go back at 3 am tonight" }
    ],
    "tips": [
-    { "th": "ช่วงนอน: ในรถ ช่วง Kiama → Vincentia 14:15–15:25", "en": "Nap: In the van, Kiama → Vincentia, 14:15–15:25" }
+    { "th": "ช่วงนอน: ในรถ ช่วง Kiama → Vincentia 14:15–15:25", "en": "Nap: In the van, Kiama → Vincentia, 14:15–15:25" },
+    { "kind": "warn", "th": "ละอองน้ำของ Blowhole พุ่งสูงได้ถึง 25 ม. — อยู่หลังรั้ว และจับมือเด็กไว้ทั้งสองคน", "en": "The Blowhole's spray can reach 25 m — stay behind the fence and keep a hand on both children." }
    ],
    "stay": { "name": "By the Bay Beach Shack", "addr": "24 Waldegrave Crescent, Vincentia NSW 2540", "q": "By the Bay Beach Shack, 24 Waldegrave Crescent, Vincentia NSW 2540" },
    "route": "https://www.google.com/maps/dir/?api=1&origin=Adina+Apartment+Hotel+Sydney+Airport&destination=24+Waldegrave+Crescent,+Vincentia+NSW&waypoints=Bald+Hill+Lookout,+Stanwell+Tops+NSW|Kiama+Blowhole,+Kiama+NSW&travelmode=driving",
@@ -272,7 +277,8 @@
    "wx": {
     "en": "Jervis Bay about 15–22°C · sea about 22°C · sunset 18:49 — last evening of daylight saving",
     "th": "Jervis Bay ราว 15–22°C · น้ำทะเลราว 22°C · พระอาทิตย์ตก 18:49 — คืนสุดท้ายของเวลาออมแสง"
-   }
+   },
+   "tale": { "th": "วันนี้เราขับรถลงใต้เลียบทะเลกัน จุดแรกคือ Bald Hill ที่นี่เมื่อปี 1894 มีผู้ชายคนหนึ่งชื่อ Lawrence Hargrave ใช้ว่าวกล่อง 4 ตัวยกตัวเองลอยขึ้นจากชายหาดข้างล่าง เขาไม่เคยจดสิทธิบัตรความคิดของตัวเองเลย เขาแบ่งให้คนอื่นใช้ฟรี ๆ และแบบว่าวกล่องของเขาก็ถูกใช้กับเครื่องบินลำแรก ๆ ในยุโรป จากนั้นเราจะข้ามสะพาน Sea Cliff Bridge ที่โค้งยื่นออกไปข้างมหาสมุทร ปี 2003 มีหินร่วงลงมาจนถนนเลียบหน้าผาเส้นเก่าต้องปิด วิศวกรก็เลยสร้างสะพานขึ้นมาแทน และเปิดใช้เมื่อเดือนธันวาคม 2005 พอถึง Kiama ตั้งใจฟังเสียง Blowhole นะ น้ำทะเลจะไหลเข้าไปเต็มโพรงใต้หิน แรงดันก็ค่อย ๆ เพิ่มขึ้น พอคลื่นถอยกลับ ฟู่ววว! น้ำก็พุ่งขึ้นฟ้า วันที่ทะเลมีคลื่นใหญ่สูงได้ถึง 25 เมตรเลย ชาวอะบอริจินในท้องถิ่นเรียกที่นี่ว่า Khanterinte มานานก่อนที่นักสำรวจ George Bass จะเขียนถึงมันในปี 1797 พอเราไปถึง Jervis Bay คอยมองน้ำไว้ให้ดีนะ โลมาปากขวดที่อยู่ที่นั่นตลอดทั้งปีอาจจะออกมาทักทายเราก็ได้", "en": "Today we drive south beside the sea. First stop is Bald Hill, where in 1894 a man named Lawrence Hargrave lifted himself off the beach below using four box kites. He never patented his ideas — he gave them away, and his box-kite design was used by the first aeroplanes in Europe. Then we cross the Sea Cliff Bridge, which curves out beside the ocean. Falling rocks closed the old cliff road in 2003, so engineers built a bridge, and it opened in December 2005. At Kiama, listen for the Blowhole. Water fills a chamber under the rock and the pressure builds; when a wave pulls back — whoosh! — up it shoots, in a big sea as high as 25 metres. Local Aboriginal people called it Khanterinte long before the explorer George Bass wrote about it in 1797. By the time we reach Jervis Bay, keep your eyes on the water: the bottlenose dolphins that live there all year might be saying hello." }
   },
   {
    "index": 2,
@@ -352,12 +358,15 @@
    "planB": { "th": "ถ้าเหนื่อย ตัดอันนี้ก่อน: รอบ Milton–Mollymook — อยู่ Hyams กับริมหาดแทน", "en": "If tired, cut first: The Milton–Mollymook loop — stay at Hyams and the foreshore" },
    "plan": [
     { "t": "ตี 3", "th": "นาฬิกาถอยหลัง 1 ชั่วโมง — ทุกคนได้นอนเพิ่ม", "en": "Clocks go back an hour — everyone gains a sleep-in" },
-    { "t": "08:30", "th": "Hyams Beach ตอนคนยังน้อย — ทรายขาวที่สุด น้ำตื้นนิ่ง · ไปถึงก่อน 09:30 จะหาที่จอดง่าย", "en": "Hyams Beach while it is quiet — the whitest sand, calm shallow water · arrive before 09:30 for parking", "note": { "th": "1.5–2 ชม. · ที่จอดในหมู่บ้านน้อยมาก — จอดที่ Greenfield Beach แล้วเดินทาง White Sands Walk · มีห้องน้ำ · ไม่มีไลฟ์การ์ด", "en": "1.5–2 h · village parking is very limited — park at Greenfield Beach and walk the White Sands Walk · toilet · no lifeguards" }},
+    { "t": "07:45", "th": "อาหารเช้าที่บ้าน · ครีมกันแดด หมวก ผ้าเช็ดตัว และชุดสำรองใส่กระเป๋า", "en": "Breakfast at the house · sunscreen, hats, towels and spare clothes in the bag" },
+    { "t": "08:30", "th": "Hyams Beach ตอนคนยังน้อย — ทรายขาวที่สุด น้ำตื้นนิ่ง · ไปถึงก่อน 09:30 จะหาที่จอดง่าย", "en": "Hyams Beach while it is quiet — the whitest sand, calm shallow water · arrive before 09:30 for parking", "note": { "th": "1.5–2 ชม. · ที่จอดในหมู่บ้านน้อยมาก — จอดที่ Greenfield Beach แล้วเดินทาง White Sands Walk · มีห้องน้ำ · ไม่มีไลฟ์การ์ด · ชื่อหาดมาจาก Michael Hyam ที่ได้รับที่ดิน 41 เอเคอร์ตรงนี้ในปี 1859 · ทรายมีเสียงเอี๊ยดใต้เท้า", "en": "1.5–2 h · village parking is very limited — park at Greenfield Beach and walk the White Sands Walk · toilet · no lifeguards · The beach is named after Michael Hyam, who was granted 41 acres here in 1859 · the sand squeaks underfoot" } },
     { "t": "11:15", "th": "ขับไป Milton ราว 45 นาที — เด็กงีบในรถ", "en": "Drive to Milton, about 45 min — nap window" },
-    { "t": "12:00", "th": "มื้อกลางวันบนถนนเก่าของ Milton — เบเกอรี่และคาเฟ่ที่คนซิดนีย์ขับลงมากิน", "en": "Lunch on Milton's heritage main street — the bakeries and cafés Sydney weekenders drive down for" },
-    { "t": "13:30", "th": "Mollymook Beach — ฝั่งใต้ข้างสโมสรไลฟ์การ์ด สระหิน Bogey Hole สนามหญ้าปิกนิก", "en": "Mollymook Beach — the south end by the surf club, Bogey Hole rock pool, picnic lawns", "note": { "th": "1.5 ชม. · ใช้ฝั่งใต้ — สโมสรไลฟ์การ์ดและสระหิน Bogey Hole ฝั่งเหนือคลื่นแรง · มีห้องน้ำ สนามหญ้าปิกนิก", "en": "1.5 h · use the south end — the surf club and the Bogey Hole rock pool; the north end is open surf · toilets, picnic lawn" }},
+    { "t": "12:00", "th": "มื้อกลางวันบนถนนเก่าของ Milton — เบเกอรี่และคาเฟ่ที่คนซิดนีย์ขับลงมากิน", "en": "Lunch on Milton's heritage main street — the bakeries and cafés Sydney weekenders drive down for", "note": { "th": "มองหา Star Hotel (1860) และโรงละคร Milton Theatre — เดิมเป็น School of Arts ปี 1927 บูรณะแล้วเปิดใหม่ปี 1998", "en": "Look for the Star Hotel (1860) and the Milton Theatre — a School of Arts in 1927, restored and reopened in 1998" } },
+    { "t": "13:30", "th": "Mollymook Beach — ฝั่งใต้ข้างสโมสรไลฟ์การ์ด สระหิน Bogey Hole สนามหญ้าปิกนิก", "en": "Mollymook Beach — the south end by the surf club, Bogey Hole rock pool, picnic lawns", "note": { "th": "1.5 ชม. · ใช้ฝั่งใต้ — สโมสรไลฟ์การ์ดและสระหิน Bogey Hole ฝั่งเหนือคลื่นแรง · มีห้องน้ำ สนามหญ้าปิกนิก", "en": "1.5 h · use the south end — the surf club and the Bogey Hole rock pool; the north end is open surf · toilets, picnic lawn" } },
+    { "t": "14:45", "th": "ทางเลือก ถ้าทุกคนยังสดชื่น: ท่าเรือ Ulladulla ทางใต้ของ Mollymook — ดูเรือประมงและกินฟิชแอนด์ชิปส์เป็นของว่าง", "en": "Optional, only if everyone is fresh: Ulladulla Harbour, just south of Mollymook — the fishing fleet and a fish-and-chip snack" },
     { "t": "15:30", "th": "กลับ Vincentia ราว 50 นาที (งีบรอบสอง)", "en": "Back to Vincentia, about 50 min (second nap)" },
-    { "t": "17:00", "th": "ดูพระอาทิตย์ตกริมชายฝั่ง · มื้อเย็นง่ายๆ", "en": "Sunset on the foreshore · simple dinner" }
+    { "t": "17:00", "th": "ดูพระอาทิตย์ตกริมชายฝั่ง · มื้อเย็นง่ายๆ", "en": "Sunset on the foreshore · simple dinner", "note": { "th": "เมื่อคืนนาฬิกาถอยหลังแล้ว ตอนนี้ฟ้าเริ่มมืดราว 17:45 — เริ่มเดินริมชายฝั่งก่อน 17:00", "en": "The clocks went back last night, so dusk now falls from about 17:45 — start the foreshore walk by 17:00" } },
+    { "t": "18:30", "th": "อาบน้ำ เข้านอนเร็ว", "en": "Baths and an early night" }
    ],
    "tips": [
     { "th": "ช่วงนอน: ในรถไป Milton 11:15–12:00 และขากลับ 15:30", "en": "Nap: In the van to Milton 11:15–12:00, again on the way back 15:30" },
@@ -412,7 +421,8 @@
    "wx": {
     "en": "About 15–22°C · sea about 22°C · clocks go back 1 h at 3 am · sunset 17:48",
     "th": "ราว 15–22°C · น้ำทะเลราว 22°C · ตี 3 ปรับนาฬิกาถอยหลัง 1 ชม. · พระอาทิตย์ตก 17:48"
-   }
+   },
+   "tale": { "th": "เช้านี้ทุกคนได้เวลาเพิ่มมา 1 ชั่วโมง เพราะเมื่อคืนนาฬิกาถูกปรับถอยหลัง ทุกคนเลยได้นอนตื่นสายกันหมด จุดแรกของเราคือ Hyams Beach ที่นี่ทรายจะส่งเสียงเอี๊ยด ๆ ใต้เท้าเรา เพราะทรายเกือบทั้งหมดเป็นผลึกควอตซ์ คนชอบเรียกว่าทรายที่ขาวที่สุดในโลก ความคิดนี้เริ่มมาจากป้ายโฆษณาที่ร้านค้าในหมู่บ้าน และจริง ๆ แล้วมีบางหาดใน Western Australia ที่ขาวกว่าอีก แต่ที่นี่ก็ยังขาวสวยมาก ๆ และน้ำก็นิ่งและตื้น ชื่อหาดนี้ตั้งตาม Michael Hyam ที่ได้รับที่ดิน 41 เอเคอร์ที่นี่เมื่อปี 1859 ที่ Milton ลองหาโรงละครเก่าบนถนนสายหลักดูนะ มันเริ่มต้นเมื่อปี 1927 เป็นโรงเรียนศิลปะ (School of Arts) ฉายภาพยนตร์มาจนถึงปี 1993 แล้วได้รับการบูรณะในปี 1998 ลงไปที่ท่าเรือ Ulladulla ซึ่งมีกองเรือประมงใหญ่ที่สุดของชายฝั่งทางใต้ (South Coast) แล้วมองขึ้นไปที่ภูเขายอดกลม ๆ ด้านหลังเมือง กัปตัน Cook ตั้งชื่อว่า Pigeon House เมื่อปี 1770 เพราะมันดูเหมือนบ้านนกพิราบ นับเรือกันนะ แล้วเก็บทรายไว้ในรองเท้านิดหนึ่งเป็นที่ระลึก", "en": "This morning everybody gained an hour: in the night the clocks went back, so it was a sleep-in for all. Our first stop is Hyams Beach, where the sand squeaks under your feet because it is almost pure quartz. People call it the whitest sand in the world — the idea began with a billboard at the village shop, and some beaches in Western Australia are even whiter — but it is still wonderfully white, and the water is calm and shallow. The beach is named after Michael Hyam, who was given 41 acres here in 1859. In Milton, find the old theatre on the main street. It began in 1927 as a School of Arts, showed films until 1993, and was restored in 1998. Down at Ulladulla harbour, home to the biggest fishing fleet on the South Coast, look up at the dome-topped mountain behind the town. Captain Cook named it Pigeon House in 1770 because it looked like a dove-house. Count the boats, and keep a little sand in your shoes." }
   },
   {
    "index": 3,
@@ -502,12 +512,13 @@
    "plan": [
     { "t": "08:30", "th": "เช็คเอาท์ · ขนของขึ้นรถให้ครบ", "en": "Check out · pack the van completely" },
     { "t": "09:00", "th": "ผ่าน Nowra และเขา Cambewarra ไป Kangaroo Valley ราว 50 นาที — ทางคดเคี้ยว", "en": "Via Nowra and Cambewarra Mountain to Kangaroo Valley, about 50 min — winding" },
-    { "t": "10:00", "th": "สะพาน Hampden Bridge (1898 หอคอยหินทราย) · ดูโพรงวอมแบตที่ Bendeela · กาแฟในหมู่บ้าน", "en": "Hampden Bridge (1898, sandstone towers) · wombat burrows at Bendeela · village coffee", "note": { "th": "1 ชม. · ห้องน้ำและโต๊ะปิกนิกที่ลานจอด Hampden Bridge · Bendeela ฟรี เปิด 24 ชม. — อยู่ห่างวอมแบท 5 ม. ห้ามจับ", "en": "1 h · toilets and picnic tables at the Hampden Bridge car park · Bendeela is free, open 24 h — stay 5 m from the wombats, don't touch" }},
-    { "t": "11:30", "th": "ขึ้นเขา Barrengarry ไป Fitzroy Falls — ทางเดินไม้เรียบ ศูนย์บริการ ห้องน้ำ", "en": "Up Barrengarry Mountain to Fitzroy Falls — flat boardwalk, visitor centre, toilets", "note": { "th": "45–60 นาที · ค่ารถ $4 ที่ตู้จ่าย (รับบัตร) · ทางไม้ไม่มีขั้น 150 ม. ถึงจุดชม · มีห้องเปลี่ยนผ้าอ้อม · ศูนย์เปิด 9:00–16:00", "en": "45–60 min · $4 per car at the pay machine (card ok) · step-free boardwalk, 150 m to the lookout · parents' change room · centre 9:00–16:00" }},
+    { "t": "10:00", "th": "สะพาน Hampden Bridge (1898 หอคอยหินทราย) · ดูโพรงวอมแบตที่ Bendeela · กาแฟในหมู่บ้าน", "en": "Hampden Bridge (1898, sandstone towers) · wombat burrows at Bendeela · village coffee", "note": { "th": "1 ชม. · ห้องน้ำและโต๊ะปิกนิกที่ลานจอด Hampden Bridge · Bendeela ฟรี เปิด 24 ชม. — อยู่ห่างวอมแบท 5 ม. ห้ามจับ · ออกแบบโดย Ernest de Burgh หอคอยหินทรายใช้หินที่ขุดตรงนั้นเลย · เปิดให้รถวิ่ง 2 ก.พ. 1898", "en": "1 h · toilets and picnic tables at the Hampden Bridge car park · Bendeela is free, open 24 h — stay 5 m from the wombats, don't touch · Designed by Ernest de Burgh; its sandstone towers were quarried on site · opened to traffic on 2 February 1898" } },
+    { "t": "11:30", "th": "ขึ้นเขา Barrengarry ไป Fitzroy Falls — ทางเดินไม้เรียบ ศูนย์บริการ ห้องน้ำ", "en": "Up Barrengarry Mountain to Fitzroy Falls — flat boardwalk, visitor centre, toilets", "note": { "th": "45–60 นาที · ค่ารถ $4 ที่ตู้จ่าย (รับบัตร) · ทางไม้ไม่มีขั้น 150 ม. ถึงจุดชม · มีห้องเปลี่ยนผ้าอ้อม · ศูนย์เปิด 9:00–16:00 · น้ำตกสูงราว 81 ม. · ในป่ามีนกไลเออร์เบิร์ด — ตัวผู้เลียนเสียงได้แทบทุกเสียงที่ได้ยิน", "en": "45–60 min · $4 per car at the pay machine (card ok) · step-free boardwalk, 150 m to the lookout · parents' change room · centre 9:00–16:00 · The falls drop about 81 m · lyrebirds live in the forest here — the males copy almost any sound they hear" } },
     { "t": "12:15", "th": "มื้อกลางวันที่ Fitzroy Falls — ซื้อพายจาก Kangaroo Valley Bakehouse ติดมา คาเฟ่ในอุทยานปิดวันจันทร์", "en": "Lunch at Fitzroy Falls — bring pies from Kangaroo Valley Bakehouse; the park café is closed on Mondays" },
     { "t": "13:15", "th": "ผ่าน Moss Vale ไป Berrima ราว 40 นาที", "en": "Via Moss Vale to Berrima, about 40 min" },
-    { "t": "14:00", "th": "เดินเล่นหมู่บ้าน Berrima · แวะร้านหนังสือ Book Barn ที่ Bendooley และน้ำชายามบ่าย · เด็กวิ่งเล่นบนสนามหญ้า", "en": "Berrima village walk · Bendooley Book Barn browse and afternoon tea · kids on the lawn", "note": { "th": "1 ชม. · ห้องน้ำและสนามเด็กเล่น (เรือ ปราสาท) ที่ Berrima Market Place · Book Barn 9:00–17:00 — วันจันทร์อีสเตอร์โทรเช็ค 02 4868 8788", "en": "1 h · toilets and a toddler playground (play ship, castle) at Berrima Market Place · Book Barn 9:00–17:00 — Easter Monday: call 02 4868 8788" }},
+    { "t": "14:00", "th": "เดินเล่นหมู่บ้าน Berrima · แวะร้านหนังสือ Book Barn ที่ Bendooley และน้ำชายามบ่าย · เด็กวิ่งเล่นบนสนามหญ้า", "en": "Berrima village walk · Bendooley Book Barn browse and afternoon tea · kids on the lawn", "note": { "th": "1 ชม. · ห้องน้ำและสนามเด็กเล่น (เรือ ปราสาท) ที่ Berrima Market Place · Book Barn 9:00–17:00 — วันจันทร์เวลาเปิดอาจต่างไป โทรเช็ค 02 4868 8788 · มองหาคุก Berrima Gaol (เปิดปี 1839) ศาล (เสร็จปี 1838) และ Surveyor General Inn (1834) · ทางหลวง Hume เลี่ยงหมู่บ้านตั้งแต่ มี.ค. 1989", "en": "1 h · toilets and a toddler playground (play ship, castle) at Berrima Market Place · Book Barn 9:00–17:00 — Monday hours can differ: call 02 4868 8788 · Look for Berrima Gaol (opened 1839), the court house (finished 1838) and the Surveyor General Inn (1834) · the Hume Highway has bypassed the village since March 1989" } },
     { "t": "15:45", "th": "ต่อไป Bowral 12 นาที · เข้า Honey Fig Cottage ได้ตั้งแต่ 15:00 เช็คอินเองด้วย lockbox", "en": "On to Bowral, 12 min · Honey Fig Cottage from 15:00, lockbox check-in" },
+    { "t": "16:30", "th": "เข้าบ้านพัก — อาบน้ำ พักเงียบๆ หนึ่งชั่วโมงก่อนมื้อเย็น", "en": "Settle in at the cottage — baths and a quiet hour before dinner" },
     { "t": "17:30", "th": "มื้อเย็นที่ถนน Bong Bong, Bowral — หรือทำกินในครัวของบ้าน ซื้อเนื้อที่ Simon's Gourmet Butchery", "en": "Dinner on Bong Bong Street, Bowral — or cook in the cottage kitchen with meat from Simon's Gourmet Butchery" }
    ],
    "tips": [
@@ -578,7 +589,8 @@
    "wx": {
     "en": "Southern Highlands about 8–19°C — cold morning, jackets on · sunset 17:48",
     "th": "ที่ราบสูงตอนใต้ราว 8–19°C — เช้าหนาว ใส่แจ็คเก็ต · พระอาทิตย์ตก 17:48"
-   }
+   },
+   "tale": { "th": "วันนี้ถนนจะพาเราขึ้นไปบนเนินเขา ที่ Kangaroo Valley เราจะขับรถลอดผ่านสิ่งที่ดูเหมือนประตูปราสาท นั่นคือสะพาน Hampden Bridge เปิดใช้เมื่อปี 1898 เป็นสะพานแขวนสมัยอาณานิคมแห่งเดียวที่ยังตั้งอยู่ใน New South Wales และหอคอยหินทรายของมันก็ตัดมาจากหินที่ขุดตรงนั้นเลย พอใกล้ Bendeela พูดเบา ๆ กันนะ เพราะวอมแบตป่าจะออกมากินหญ้าตอนเช้าตรู่กับตอนเย็น ต่อไปคือ Fitzroy Falls น้ำตกที่น้ำตกลงมาสูง 81 เมตร พอ ๆ กับตึก 25 ชั้นเลย ในป่าลองตั้งใจฟังเสียงนกไลร์เบิร์ดนะ นกตัวผู้เลียนเสียงได้แทบทุกเสียงที่มันได้ยิน Berrima เป็นหมู่บ้านที่วางผังไว้ตั้งแต่ปี 1830 คุกของที่นี่เปิดเมื่อปี 1839 และในปี 1989 ถนน Hume Highway ถูกย้ายให้อ้อมหมู่บ้านไป ถนนเก่า ๆ ก็เลยยังเงียบสงบ โรงเตี๊ยม Surveyor General Inn บอกว่าเป็นโรงเตี๊ยมที่เปิดกิจการต่อเนื่องเก่าแก่ที่สุดในออสเตรเลีย ตกเย็นเราจะถึง Bowral ที่นี่เคยมีเด็กผู้ชายชื่อ Donald Bradman ฝึกเอาไม้คริกเก็ตตีลูกกอล์ฟใส่ถังเก็บน้ำ แล้วเขาก็โตขึ้นเป็นนักตีคริกเก็ตที่เก่งที่สุดตลอดกาล", "en": "Today the road climbs into the hills. In Kangaroo Valley you drive through what looks like a castle gate: Hampden Bridge, opened in 1898, is the only colonial-era suspension bridge still standing in New South Wales, and its sandstone towers were cut from stone quarried on the spot. Keep your voices low near Bendeela, where wild wombats come out to graze early and late. Then Fitzroy Falls, where the water drops 81 metres, about as tall as a 25-storey building. Listen in the forest for a lyrebird — the males copy almost any sound they hear. Berrima is a village planned in 1830. Its gaol opened in 1839, and the Hume Highway was moved around it in 1989, so the old streets stayed quiet. The Surveyor General Inn claims to be Australia's oldest continuously licensed inn. By evening we reach Bowral, where a boy named Donald Bradman once practised hitting a golf ball against a water tank with a cricket stump — and grew up to be the greatest batsman of all." }
   },
   {
    "index": 4,
@@ -658,14 +670,15 @@
    "planB": { "th": "ถ้าเหนื่อย ตัดอันนี้ก่อน: Leura — Echo Point อย่างเดียวใช้ 20 นาที", "en": "If tired, cut first: Leura — Echo Point alone takes 20 min" },
    "plan": [
     { "t": "08:30", "th": "อาหารเช้าในบ้าน · เช็คเอาท์", "en": "Breakfast in the cottage · check out" },
-    { "t": "09:00", "th": "Bowral — สวน Corbett Gardens กาแฟ และเดินดูร้านบนถนน Bong Bong", "en": "Bowral — Corbett Gardens, coffee and a browse along Bong Bong Street", "note": { "th": "30–45 นาที · เมษายนเข้าฟรี (เก็บเงินเฉพาะช่วงเทศกาลทิวลิป) · มีห้องน้ำ", "en": "30–45 min · free in April (fees only at Tulip Time) · toilets" }},
+    { "t": "09:00", "th": "Bowral — สวน Corbett Gardens กาแฟ และเดินดูร้านบนถนน Bong Bong", "en": "Bowral — Corbett Gardens, coffee and a browse along Bong Bong Street", "note": { "th": "30–45 นาที · เมษายนเข้าฟรี (เก็บเงินเฉพาะช่วงเทศกาลทิวลิป) · มีห้องน้ำ", "en": "30–45 min · free in April (fees only at Tulip Time) · toilets" } },
     { "t": "10:00", "th": "ขึ้นเหนือทาง Hume ไป Australian Botanic Garden, Mount Annan ราว 50 นาที", "en": "North on the Hume to the Australian Botanic Garden, Mount Annan, about 50 min" },
-    { "t": "10:50", "th": "ปิกนิกมื้อกลางวันและให้เด็กวิ่งเต็มที่", "en": "Picnic lunch and a proper run-around", "note": { "th": "เข้าฟรี จอดฟรี — P3 เดิน 3 นาทีถึง Lakeside Lawn · สนามเด็กเล่นและห้องน้ำข้าง The Gardens Café", "en": "Free entry and parking — P3 is 3 min from Lakeside Lawn · playground and toilets beside The Gardens Café" }},
+    { "t": "10:50", "th": "ปิกนิกมื้อกลางวันและให้เด็กวิ่งเต็มที่", "en": "Picnic lunch and a proper run-around", "note": { "th": "เข้าฟรี จอดฟรี — P3 เดิน 3 นาทีถึง Lakeside Lawn · สนามเด็กเล่นและห้องน้ำข้าง The Gardens Café · มองหาห้องสมุดเมล็ดพันธุ์ PlantBank (เปิดปี 2013) และทางเดิน Wollemi Walk of Discovery ที่มีต้นสน Wollemi โคลน 60 ต้น — ต้นไม้ที่เคยรู้จักจากฟอสซิลเท่านั้น", "en": "Free entry and parking — P3 is 3 min from Lakeside Lawn · playground and toilets beside The Gardens Café · Look for the PlantBank seed library (opened 2013) and the Wollemi Walk of Discovery with sixty cloned Wollemi pines — a tree once known only from fossils" } },
     { "t": "12:30", "th": "ขับต่อไป Katoomba ราว 1 ชม. 20 นาที ทาง M4 — เด็กนอนในรถ", "en": "On to Katoomba, about 1 h 20 via the M4 — nap in the van" },
     { "t": "14:00", "th": "เช็คอิน Palais Royale · พักในห้อง", "en": "Check in at Palais Royale · rest in the room" },
-    { "t": "16:00", "th": "Leura Mall ขับ 5 นาที — ถนนหมู่บ้านร่มรื่น ร้านของเล่น ร้านขนม คาเฟ่", "en": "Leura Mall, 5 min — tree-lined village street, toy shop, sweet shop, cafés", "note": { "th": "ที่จอดในเมืองเสียเงิน · สนามเด็กเล่น Bloome Park เดินลงจากถนนไม่ไกล", "en": "Paid council parking in town · Bloome Park playground is a short walk down from the Mall" }},
-    { "t": "17:15", "th": "Echo Point ชม Three Sisters ในแสงสุดท้าย", "en": "Echo Point for the Three Sisters in the last light", "note": { "th": "20 นาที · ลานชมด้านบนกว้าง ไม่มีขั้น · มีห้องน้ำ · ที่จอดอุทยานเสียเงิน", "en": "20 min · wide, step-free top platform · toilets · paid national-park parking" }},
-    { "t": "18:00", "th": "มื้อเย็นเร็วใน Katoomba", "en": "Early dinner in Katoomba" }
+    { "t": "16:00", "th": "Leura Mall ขับ 5 นาที — ถนนหมู่บ้านร่มรื่น ร้านของเล่น ร้านขนม คาเฟ่", "en": "Leura Mall, 5 min — tree-lined village street, toy shop, sweet shop, cafés", "note": { "th": "ที่จอดในเมืองเสียเงิน · สนามเด็กเล่น Bloome Park เดินลงจากถนนไม่ไกล · ดูต้นซากุระที่ปลูกเรียงกลางถนน · ถ้ามีเวลา Everglades Gardens (5 เฮกตาร์ ของ National Trust)", "en": "Paid council parking in town · Bloome Park playground is a short walk down from the Mall · Look for the flowering cherry trees down the middle of the Mall · Everglades Gardens (5 ha, National Trust) if there is time" } },
+    { "t": "17:15", "th": "Echo Point ชม Three Sisters ในแสงสุดท้าย", "en": "Echo Point for the Three Sisters in the last light", "note": { "th": "20 นาที · ลานชมด้านบนกว้าง ไม่มีขั้น · มีห้องน้ำ · ที่จอดอุทยานเสียเงิน · หมอกสีฟ้าคือละอองน้ำมันจิ๋วจากป่ายูคาลิปตัสที่กระจายแสงสีฟ้า · พี่สาวคนสูงสุด Meehni สูง 922 ม. จากระดับน้ำทะเล", "en": "20 min · wide, step-free top platform · toilets · paid national-park parking · The blue haze is tiny oil droplets from the eucalyptus forests scattering blue light · the tallest sister, Meehni, is 922 m above sea level" } },
+    { "t": "18:00", "th": "มื้อเย็นเร็วใน Katoomba", "en": "Early dinner in Katoomba" },
+    { "t": "19:00", "th": "อาบน้ำ เข้านอน — ใส่แจ็กเก็ตเดินกลับจากมื้อเย็น", "en": "Baths and bed — jackets stay on for the walk back from dinner" }
    ],
    "tips": [
     { "th": "ช่วงนอน: ในรถไป Katoomba 12:30–13:50 แล้วพักในห้องถึง 16:00", "en": "Nap: In the van to Katoomba 12:30–13:50, then rest in the room until 16:00" },
@@ -725,7 +738,8 @@
    "wx": {
     "en": "Katoomba about 9–17°C — warm layers for the evening · sunset 17:47",
     "th": "Katoomba ราว 9–17°C — เตรียมเสื้อกันหนาวตอนเย็น · พระอาทิตย์ตก 17:47"
-   }
+   },
+   "tale": { "th": "เช้านี้เราออกจาก Bowral ที่อากาศเย็นกว่าเพราะอยู่สูงจากระดับน้ำทะเลประมาณ 690 เมตร แล้วขับรถขึ้นเหนือไปสวนพฤกษศาสตร์ที่ใหญ่ที่สุดในออสเตรเลีย Mount Annan มีพื้นที่ 416 เฮกตาร์เต็มไปด้วยพืชของออสเตรเลีย และใน PlantBank มีห้องสมุดเมล็ดพันธุ์ที่เก็บเมล็ดของพืชพื้นเมืองหลายพันชนิดไว้อย่างปลอดภัย เผื่อวันหนึ่งพืชชนิดไหนตกอยู่ในอันตราย ลองเดินเส้นทาง Wollemi Walk of Discovery เพื่อดูต้นไม้ที่ครั้งหนึ่งนักวิทยาศาสตร์รู้จักแค่จากฟอสซิล ตอนบ่ายเราจะขึ้นไปที่ Blue Mountains ที่ Leura เดินเล่นไปตาม Mall ใต้ต้นซากุระที่ออกดอก แล้วเลือกขนมคนละหนึ่งอย่าง จากนั้นตอนแสงสุดท้ายของวัน เราไปที่ Echo Point กับ Three Sisters มีตำนานที่คนเล่ากันมากบอกว่า สามพี่น้องชื่อ Meehni, Wimlah และ Gunnedoo ถูกเปลี่ยนเป็นหิน แต่ชาว Gundungurra ก็มีเรื่องเล่าของตัวเองที่ต่างออกไป ซึ่งเป็นเรื่องที่พวกเขาเป็นคนเล่าเอง ลองมองหมอกสีฟ้าเหนือหุบเขาดูนะ มันเกิดจากหยดน้ำมันเล็ก ๆ ที่ป่ายูคาลิปตัสปล่อยออกมา ซึ่งกระจายแสงสีฟ้าไปทั่วทั้งหุบเขา", "en": "This morning we leave Bowral, where the air is cooler because we are about 690 metres above the sea, and drive north to the biggest botanic garden in Australia. Mount Annan is 416 hectares of Australian plants, and in its PlantBank a seed library keeps the seeds of thousands of native species safe in case one is ever in danger. Walk the Wollemi Walk of Discovery to see a tree scientists once knew only from fossils. In the afternoon we climb to the Blue Mountains. In Leura, stroll along the Mall under flowering cherry trees and choose one treat each. Then, in the last light, Echo Point and the Three Sisters. A popular legend says three sisters named Meehni, Wimlah and Gunnedoo were turned to stone, though the Gundungurra people have their own, different story, which is theirs to tell. Look at the blue haze over the valley: it comes from tiny drops of oil released by the eucalyptus forests, which scatter blue light across the whole valley." }
   },
   {
    "index": 5,
@@ -804,16 +818,16 @@
    "planB": { "th": "ถ้าเหนื่อย ตัดอันนี้ก่อน: ทางเดินไม้ใน Scenic World — นั่งแค่ 3 เครื่อง", "en": "If tired, cut first: The Scenic World boardwalk — ride the three cars only" },
    "plan": [
     { "t": "09:00", "th": "อาหารเช้า · กระเป๋าไว้ที่โรงแรม", "en": "Breakfast · bags stay at the hotel" },
-    { "t": "09:45", "th": "Scenic World ขับ 5 นาที — ไปให้ทันเปิด 10:00 (วันธรรมดา): Railway ลง เดินทางเดินไม้ Cableway ขึ้น Skyway ข้ามหุบเขา", "en": "Scenic World, 5 min — be there for the 10:00 weekday opening: Railway down, boardwalk, Cableway up, Skyway across", "note": { "th": "2–3 ชม. · วันธรรมดา 10:00–16:00 รอบสุดท้ายราว 15:40 · ผู้ใหญ่ $35 เด็กต่ำกว่า 4 ขวบฟรี · จอดฟรี สูงไม่เกิน 2 ม. (Odyssey เข้าได้) · Railway ใช้ได้แค่รถเข็นพับเล็กวางตัก Cableway กับ Skyway เข็นขึ้นได้", "en": "2–3 h · weekdays 10:00–16:00, last rides about 15:40 · adult $35, under-4s free · free parking, 2 m clearance (the Odyssey fits) · Railway takes only a lap-size folding stroller; Cableway and Skyway take prams" }},
+    { "t": "09:45", "th": "Scenic World ขับ 5 นาที — ไปให้ทันเปิด 10:00 (วันธรรมดา): Railway ลง เดินทางเดินไม้ Cableway ขึ้น Skyway ข้ามหุบเขา", "en": "Scenic World, 5 min — be there for the 10:00 weekday opening: Railway down, boardwalk, Cableway up, Skyway across", "note": { "th": "2–3 ชม. · วันธรรมดา 10:00–16:00 รอบสุดท้ายราว 15:40 · ผู้ใหญ่ $35 เด็กต่ำกว่า 4 ขวบฟรี · จอดฟรี สูงไม่เกิน 2 ม. (Odyssey เข้าได้) · Railway ใช้ได้แค่รถเข็นพับเล็กวางตัก Cableway กับ Skyway เข็นขึ้นได้ · มองหา Scenic Railway ชัน 52° (สร้างช่วงทศวรรษ 1880 ไว้ขนถ่านหินและหินน้ำมัน) Skyway สูง 270 ม. เหนือหุบเขา และทางเดินไม้ยกระดับ 2.4 กม.", "en": "2–3 h · weekdays 10:00–16:00, last rides about 15:40 · adult $35, under-4s free · free parking, 2 m clearance (the Odyssey fits) · Railway takes only a lap-size folding stroller; Cableway and Skyway take prams · Look for the 52° Scenic Railway (built in the 1880s for coal and oil shale), the Skyway 270 m above the valley and the 2.4 km elevated boardwalk" } },
     { "t": "12:00", "th": "มื้อกลางวัน: This Little Piggy Deli ที่ Blackheath — อยู่ระหว่างทางไป Clarence", "en": "Lunch: This Little Piggy Deli, Blackheath — on the way to Clarence" },
-    { "t": "12:45", "th": "ขับต่อไป Zig Zag Railway ที่ Clarence ราว 35 นาที — เด็กนอนในรถ", "en": "On to the Zig Zag Railway at Clarence, about 35 min — nap in the van" },
-    { "t": "14:00", "th": "รถไฟไอน้ำ — ทริปสั้น 45 นาที (ยืนยันรอบบ่ายตอนจอง)", "en": "Steam train — the 45-min short trip (confirm the afternoon departure when booking)", "note": { "th": "ไปถึงก่อน 45 นาที · ผู้ใหญ่ $46.50 มีมี่ $30 มีก้านั่งตักฟรี (ราคาปี 2025) · มีห้องน้ำที่ Clarence · บนรถไฟไม่มีขายอาหาร — มี Container Café ที่สถานี", "en": "Arrive 45 min early · adult $46.50, Mimi $30, Mika free on a lap (2025 prices) · accessible toilets at Clarence · no food on the train — Container Café at the station" }},
-    { "t": "15:15", "th": "กลับ Katoomba ราว 45 นาที", "en": "Back to Katoomba, about 45 min" },
+    { "t": "12:35", "th": "ขับต่อไป Zig Zag Railway ที่ Clarence ราว 35 นาที — เด็กนอนในรถ · ไปถึงภายใน 13:15 ก่อนรถไฟออก 45 นาที", "en": "On to the Zig Zag Railway at Clarence, about 35 min — nap in the van; arrive by 13:15, 45 min before the train" },
+    { "t": "14:00", "th": "รถไฟไอน้ำ — ไป-กลับ Clarence ถึง Bottom Points 90 นาที (จองหลังตารางยืนยันว่ามีรอบวันพุธ 7 เม.ย. เท่านั้น)", "en": "Steam train — the 90-min Clarence to Bottom Points return (book only after the timetable confirms a run on Wed 7 Apr)", "note": { "th": "ไป-กลับ 90 นาที · ไปถึงก่อน 45 นาที · ผู้ใหญ่ $46.50 มีมี่ $30 มีก้านั่งตักฟรี (ราคาปี 2025) · มีห้องน้ำที่ Clarence · บนรถไฟไม่มีขายอาหาร — มี Container Café ที่สถานี · ทางรถไฟสร้างปี 1869–1910 และกลับมาเปิดเป็นรถไฟท่องเที่ยวหลังบูรณะเสร็จปี 2023", "en": "90-min return · arrive 45 min early · adult $46.50, Mimi $30, Mika free on a lap (2025 prices) · accessible toilets at Clarence · no food on the train — Container Café at the station · the line was built 1869–1910 and reopened as a tourist railway after a 2023 restoration" } },
+    { "t": "15:45", "th": "กลับ Katoomba ราว 45 นาที — ถึงที่พัก 16:30", "en": "Back to Katoomba, about 45 min — home for 16:30" },
     { "t": "17:00", "th": "มื้อเย็นเร็วใน Katoomba · จัดของขึ้นรถสำหรับพรุ่งนี้", "en": "Early dinner in Katoomba · pack the van for tomorrow" }
    ],
    "tips": [
-    { "th": "ช่วงนอน: ในรถไป Clarence 12:45–13:20 — ต่อบนรถไฟได้", "en": "Nap: In the van to Clarence 12:45–13:20 — the train rocks the rest" },
-    { "kind": "tip", "th": "Zig Zag ไม่ขายตั๋วหน้างาน — จองทริป 45 นาทีรอบบ่ายออนไลน์ ถ้า 7 เม.ย. ไม่มีรอบบ่าย ให้นั่งรอบ 10:30 แล้วไป Scenic World หลังมื้อกลางวันแทน (รอบสุดท้ายราว 15:40)", "en": "Zig Zag sells no tickets on the day — book the afternoon 45-min trip online. If there is no afternoon run on 7 Apr, ride at 10:30 instead and do Scenic World after lunch (last rides about 15:40)." },
+    { "th": "ช่วงนอน: ในรถไป Clarence 12:35–13:10 — ต่อบนรถไฟได้", "en": "Nap: In the van to Clarence 12:35–13:10 — the train rocks the rest" },
+    { "kind": "warn", "en": "Check the Zig Zag timetable before booking: the published trip is the 90-min Clarence to Bottom Points return, and the railway runs on Fridays, Saturdays and Sundays in alternate weeks — 7 Apr is a Wednesday, so a run is unlikely. Plan B, decided at booking and never on the day: Jenolan Caves, or a slow Scenic World morning with the Govetts Leap lookout at Blackheath (a drop of about 180 m into the Grose Valley). If you swap days, Zig Zag sells no tickets on the day — book online.", "th": "เช็คตาราง Zig Zag ก่อนจอง: ทริปที่ประกาศไว้คือไป-กลับ Clarence ถึง Bottom Points 90 นาที และรถไฟวิ่งวันศุกร์ เสาร์ อาทิตย์ สลับสัปดาห์ — 7 เม.ย. เป็นวันพุธ จึงไม่น่ามีรอบ แผน B ตัดสินตอนจองเท่านั้น ไม่ใช่วันจริง: ถ้ำ Jenolan Caves หรือเที่ยว Scenic World สบายๆ ช่วงเช้าแล้วไปจุดชม Govetts Leap ที่ Blackheath (หน้าผาสูงราว 180 ม. ลงสู่หุบเขา Grose) ถ้าสลับวัน Zig Zag ไม่ขายตั๋วหน้างาน — จองออนไลน์" },
     { "kind": "info", "th": "เช็ค livetraffic.com คืนก่อน: ทางหลวงเลย Mount Victoria มีงานซ่อม ไป Clarence ทาง Darling Causeway ได้เช่นกัน", "en": "Check livetraffic.com the night before: the highway beyond Mount Victoria has had works. Clarence is also reached via Darling Causeway." }
    ],
    "stay": { "name": "Palais Royale", "addr": "230 Katoomba Street, Katoomba NSW 2780", "q": "Palais Royale, 230 Katoomba Street, Katoomba NSW 2780" },
@@ -861,7 +875,8 @@
    "wx": {
     "en": "Katoomba about 9–17°C · Clarence sits higher and colder · sunset 17:46",
     "th": "Katoomba ราว 9–17°C · Clarence สูงกว่าและหนาวกว่า · พระอาทิตย์ตก 17:46"
-   }
+   },
+   "tale": { "th": "วันนี้เป็นวันของรถไฟกับกระเช้า Scenic World เริ่มต้นจากเหมืองถ่านหินและหินน้ำมันในช่วงทศวรรษ 1880 และรถไฟ Scenic Railway ก็เคยลากถ่านหินขึ้นหน้าผา พอเหมืองปิดในปี 1945 รถไฟก็เปลี่ยนมาพานักท่องเที่ยวแทน ด้วยความชัน 52 องศา เขาโฆษณาว่าเป็นรถไฟโดยสารที่ชันที่สุดในโลก จับให้แน่น ๆ นะ รู้สึกเหมือนเล่นสไลเดอร์เลย! พอลงไปถึงข้างล่าง เราจะเดินบนทางไม้ผ่านป่าฝนโบราณ แล้วนั่งกระเช้า Cableway กลับขึ้นมา ส่วนกระเช้า Skyway จะลอยข้ามหุบเหวสูงจากพื้นหุบเขา 270 เมตร ตอนบ่าย ถ้ารถไฟไอน้ำวิ่ง เราจะไปที่ Zig Zag Railway เมื่อปี 1869 รถไฟที่ข้ามภูเขาพวกนี้ต้องวิ่งซิกแซก ไปข้างหน้า แล้วถอยหลัง แล้วไปข้างหน้าอีก เพื่อขึ้นทางลาดชัน จนกระทั่งปี 1910 มีเส้นทางใหม่ที่มีอุโมงค์มาแทน รถไฟมรดกสายนี้เริ่มวิ่งในปี 1975 หยุดไปในปี 2012 และหลังจากไฟป่าและการซ่อมแซมอยู่หลายปี ก็กลับมามีชีวิตอีกครั้งในเดือนพฤษภาคม 2023 ตั้งใจฟังเสียงหวูดรถไฟนะ", "en": "Today is a day of trains and cables. Scenic World began as a coal and oil-shale mine in the 1880s, and the Scenic Railway hauled the coal up the cliff. After the mine closed in 1945 it carried visitors instead, and with its 52-degree slope it is promoted as the steepest passenger railway in the world — hold on tight, it feels like a slide! At the bottom you walk through ancient rainforest on a boardwalk, then ride the Cableway back up, while the Skyway crosses the gorge 270 metres above the valley floor. In the afternoon, if the steam train is running, we visit the Zig Zag Railway. In 1869 trains crossing these mountains had to zig-zag — forwards, then backwards, then forwards again — to get up the steep slope, until a new route with tunnels replaced it in 1910. The heritage railway started in 1975, stopped in 2012, and after fires and years of repair came back to life in May 2023. Listen for the whistle." }
   },
   {
    "index": 6,
@@ -947,12 +962,14 @@
    "planB": { "th": "ถ้าเหนื่อย ตัดอันนี้ก่อน: Reptile Park (เป็นทางเลือกอยู่แล้ว) — Tench Reserve แวะแค่ห้องน้ำ", "en": "If tired, cut first: The Reptile Park (optional anyway) — Tench Reserve becomes a toilet stop" },
    "plan": [
     { "t": "08:30", "th": "เช็คเอาท์ · ขนของขึ้นรถ", "en": "Check out · load the van" },
-    { "t": "09:00", "th": "ลงเขาไป Penrith ราว 55 นาที", "en": "Down the mountains to Penrith, about 55 min" },
-    { "t": "10:00", "th": "Tench Reserve ริมแม่น้ำ Nepean — สนามเด็กเล่นริมน้ำ ห้องน้ำ กาแฟ", "en": "Tench Reserve on the Nepean River — riverside playground, toilets, coffee", "note": { "th": "45 นาที · ฟรี · มีเล่นน้ำ แทรมโพลีนฝังพื้น ชิงช้าเด็กเล็ก — เตรียมชุดสำรอง · ห้องน้ำข้างที่ปิกนิก · ในสวนไม่มีคาเฟ่ กาแฟอยู่ฝั่ง East Bank", "en": "45 min · free · water play, in-ground trampolines, toddler swing — spare clothes · toilets by the picnic area · no café in the reserve; coffee across the river at East Bank" }},
+    { "t": "09:00", "th": "ลงเขาไป Penrith ราว 55 นาที", "en": "Down the mountains to Penrith, about 55 min", "note": { "th": "ขาลงเขา มองหาป้าย Lawson และ Blaxland — ชื่อของสองในสามคนที่ข้ามเทือกเขาได้ในปี 1813 (คนที่สาม Wentworth เป็นที่มาของชื่อ Wentworth Falls)", "en": "On the way down, look for the signs to Lawson and Blaxland — named after two of the three men who crossed the mountains in 1813 (the third, Wentworth, gave his name to Wentworth Falls)" } },
+    { "t": "10:00", "th": "Tench Reserve ริมแม่น้ำ Nepean — สนามเด็กเล่นริมน้ำ ห้องน้ำ กาแฟ", "en": "Tench Reserve on the Nepean River — riverside playground, toilets, coffee", "note": { "th": "45 นาที · ฟรี · มีเล่นน้ำ แทรมโพลีนฝังพื้น ชิงช้าเด็กเล็ก — เตรียมชุดสำรอง · ห้องน้ำข้างที่ปิกนิก · ในสวนไม่มีคาเฟ่ กาแฟอยู่ฝั่ง East Bank · แม่น้ำ Nepean เปลี่ยนชื่อเป็น Hawkesbury ทางปลายน้ำและออกทะเลที่ Broken Bay — เราข้ามมันอีกครั้งบน M1", "en": "45 min · free · water play, in-ground trampolines, toddler swing — spare clothes · toilets by the picnic area · no café in the reserve; coffee across the river at East Bank · The Nepean becomes the Hawkesbury downstream and reaches the sea at Broken Bay — you cross it again on the M1" } },
     { "t": "10:45", "th": "M4 → M7 → M2 → M1 ไป Somersby ราว 1 ชม. 15 นาที (มีค่าทางด่วน tag ของรถจ่ายให้ เจ้าของรถเรียกเก็บทีหลัง)", "en": "M4 → M7 → M2 → M1 to Somersby, about 1 h 15 (tolled; the host's tag covers it, recharged later)" },
-    { "t": "12:00", "th": "มื้อกลางวันที่ Saddles, Mount White (ออกจาก M1 5 นาที ควรจอง) · ทางเลือก: Australian Reptile Park ตรงทางออก Somersby", "en": "Lunch at Saddles, Mount White (5 min off the M1, book) · optional: Australian Reptile Park at the Somersby exit", "note": { "th": "วันพฤหัส 8:00–17:00 · จองที่ saddlesmtwhite.com.au หรือ (02) 4370 1152 · มีระเบียงริมทะเลสาบ", "en": "Thursday 8:00–17:00 · book at saddlesmtwhite.com.au or (02) 4370 1152 · lakeside deck" }},
+    { "t": "12:00", "th": "มื้อกลางวันที่ Saddles, Mount White (ออกจาก M1 5 นาที ควรจอง) · ทางเลือก: Australian Reptile Park ตรงทางออก Somersby", "en": "Lunch at Saddles, Mount White (5 min off the M1, book) · optional: Australian Reptile Park at the Somersby exit", "note": { "th": "วันพฤหัส 8:00–17:00 · จองที่ saddlesmtwhite.com.au หรือ (02) 4370 1152 · มีระเบียงริมทะเลสาบ · ที่ Reptile Park: จระเข้น้ำเค็ม Elvis ยาว 4.5 ม. และสัตว์กว่า 2,000 ตัว มากกว่า 400 ชนิด", "en": "Thursday 8:00–17:00 · book at saddlesmtwhite.com.au or (02) 4370 1152 · lakeside deck · At the Reptile Park: Elvis, a 4.5 m saltwater crocodile, and more than 2,000 animals of over 400 species" } },
     { "t": "13:30", "th": "M1 และ Hunter Expressway ไป Harpers Hill ราว 1 ชม. 10 นาที · แวะซื้อของบาร์บีคิวที่ Rutherford ก่อนถึงที่พัก 15 นาที", "en": "M1 and Hunter Expressway to Harpers Hill, about 1 h 10 · shop for the cabin barbecue in Rutherford, 15 min before the cabin" },
-    { "t": "15:00", "th": "เช็คอินด้วยรหัส · กระท่อมอีโคในฟาร์มม้า 100 เอเคอร์ — ทักทายม้า ย่างบาร์บีคิวบนระเบียง ดูดาวข้างกองไฟ", "en": "Keypad check-in · eco cabin on a 100-acre horse property — meet the horses, barbecue on the deck, stars by the fire pit" }
+    { "t": "15:00", "th": "เช็คอินด้วยรหัส · กระท่อมอีโคในฟาร์มม้า 100 เอเคอร์ — ทักทายม้า ย่างบาร์บีคิวบนระเบียง ดูดาวข้างกองไฟ", "en": "Keypad check-in · eco cabin on a 100-acre horse property — meet the horses, barbecue on the deck, stars by the fire pit" },
+    { "t": "17:30", "th": "บาร์บีคิวบนระเบียงด้วยของที่ซื้อจาก Rutherford · บอกราตรีสวัสดิ์ม้า", "en": "Barbecue on the deck with the groceries from Rutherford · say goodnight to the horses" },
+    { "t": "19:00", "th": "ดูดาวข้างกองไฟ แล้วเข้านอน", "en": "Stars by the fire pit, then bed" }
    ],
    "tips": [
     { "th": "ช่วงนอน: ในรถ Penrith → Somersby 10:45–12:00 และไปที่พัก 13:30–14:40", "en": "Nap: In the van, Penrith → Somersby 10:45–12:00 and to the cabin 13:30–14:40" },
@@ -1019,7 +1036,8 @@
    "wx": {
     "en": "Hunter about 12–25°C · clear, cool night at the fire pit · sunset 17:41",
     "th": "Hunter ราว 12–25°C · กลางคืนเย็นสบายข้างกองไฟ · พระอาทิตย์ตก 17:41"
-   }
+   },
+   "tale": { "th": "เราขับรถลงจากภูเขาตามทางที่นักสำรวจเคยปีนขึ้นมา ปี 1813 Blaxland, Lawson และ Wentworth หาทางข้ามภูเขาได้สำเร็จ และเมือง Blaxland, Lawson กับ Wentworth Falls ก็ตั้งชื่อตามพวกเขา น้ำตก Wentworth Falls ตกลงมาเป็นชั้น ๆ สูง 187 เมตร และเมื่อเดือนมกราคม 1836 มีผู้มาเยือนชื่อ Charles Darwin เคยเดินมาที่นี่ด้วย ลงมาถึง Penrith ก็จะเจอแม่น้ำ Nepean ถ้าตามแม่น้ำลงไปเรื่อย ๆ มันจะเปลี่ยนชื่อเป็นแม่น้ำ Hawkesbury แล้วไหลออกทะเลที่ Broken Bay ถ้าเราแวะ Reptile Park ใกล้ Somersby หนูจะได้เจอ Elvis จระเข้น้ำเค็มยาว 4 เมตรครึ่ง และได้รู้ว่าสวนสัตว์ส่งพิษแมงมุม funnel-web ไปทำเป็นยาได้ยังไง จากนั้นถนน M1 จะพาเราขึ้นเหนือไปที่ Hunter Valley ที่ปลูกองุ่นมาตั้งแต่ทศวรรษ 1820 ตกบ่ายถนนก็พาเรามาถึงฟาร์มม้า มีบาร์บีคิวบนระเบียงและกองไฟใต้แสงดาว อย่าลืมบอกสวัสดีตอนเย็นกับม้า ๆ ด้วยนะ", "en": "We drive down the mountains the way explorers once climbed up them. In 1813 Blaxland, Lawson and Wentworth found a way across, and the towns of Blaxland, Lawson and Wentworth Falls carry their names. Wentworth Falls drops 187 metres in stages, and in January 1836 a visitor named Charles Darwin walked here. Down at Penrith the Nepean River takes over; follow it downstream and it changes name to the Hawkesbury and runs out to sea at Broken Bay. If we visit the Reptile Park near Somersby, you can meet Elvis, a saltwater crocodile four and a half metres long, and learn how the park supplies funnel-web spider venom that is made into medicine. Then the M1 carries us north into the Hunter Valley, where grapes have grown since the 1820s. By afternoon the road ends at a horse farm, with a barbecue on the deck and a fire pit under the stars. Don't forget to say good evening to the horses." }
   },
   {
    "index": 7,
@@ -1099,13 +1117,17 @@
    "plan": [
     { "t": "08:00", "th": "เช้าในฟาร์มม้า — มื้อเช้าบนระเบียง", "en": "Horse-farm morning — breakfast on the deck" },
     { "t": "09:30", "th": "เช็คเอาท์ · ไป Hunter Valley Gardens ที่ Pokolbin ราว 25 นาที", "en": "Check out · to Hunter Valley Gardens, Pokolbin, about 25 min" },
-    { "t": "10:15", "th": "เข้า Storybook Garden ก่อน แล้วค่อยชมสวนอื่น", "en": "Storybook Garden first, then the display gardens", "note": { "th": "2 ชม. · 9:00–17:00 เข้าได้ถึง 16:00 · ผู้ใหญ่ $39 เด็ก (4–15) $31 ต่ำกว่า 3 ขวบฟรี — ถามว่ามีมี่ (3 ขวบ) ต้องจ่ายไหม · ห้องน้ำและห้องพ่อแม่", "en": "2 h · 9:00–17:00, last entry 16:00 · adult $39, child (4–15) $31, under-3s free — ask whether Mimi (3 y 4 m) pays · toilets and a parents' room" }},
+    { "t": "10:15", "th": "เข้า Storybook Garden ก่อน แล้วค่อยชมสวนอื่น", "en": "Storybook Garden first, then the display gardens", "note": { "th": "2 ชม. · 9:00–17:00 เข้าได้ถึง 16:00 · ผู้ใหญ่ $39 เด็ก (4–15) $31 ต่ำกว่า 3 ขวบฟรี — ถามว่ามีมี่ (3 ขวบ 4 เดือน) ต้องจ่ายไหม · ห้องน้ำและห้องพ่อแม่ · ใน Storybook Garden มองหา Humpty Dumpty, Jack and Jill, Little Bo Peep และ Alice in Wonderland", "en": "2 h · 9:00–17:00, last entry 16:00 · adult $39, child (4–15) $31, under-3s free — ask whether Mimi (3 y 4 m) pays · toilets and a parents' room · Look for Humpty Dumpty, Jack and Jill, Little Bo Peep and Alice in Wonderland in the Storybook Garden" } },
     { "t": "12:30", "th": "มื้อกลางวันที่ Gardens Village", "en": "Lunch at the Gardens Village" },
     { "t": "13:30", "th": "ขับต่อไป Anna Bay ราว 1 ชม. 05 นาที · ซื้อของชุดใหญ่ที่ Salamander Bay", "en": "On to Anna Bay, about 1 h 05 · big shop at Salamander Bay" },
-    { "t": "15:00", "th": "เช็คอิน (เข้าได้ตั้งแต่ 12:00) · เนินทราย Birubi Point และชายหาด · มื้อเย็นทำเอง ซื้อเนื้อที่ Anna Bay Wholesale Meats", "en": "Check in (from 12:00) · Birubi Point dunes and beach · dinner in, with meat from Anna Bay Wholesale Meats", "note": { "th": "ฟรี · ห้องน้ำและฝักบัวที่ Birubi Beach Reserve · ทางปูเรียบถึงจุดชม · ห้ามลงเล่นน้ำ (ไม่มีไลฟ์การ์ด กระแสน้ำย้อน) · ทรายปลิว: ใส่รองเท้ากับแว่นกันแดด", "en": "Free · toilets and showers at Birubi Beach Reserve · step-free paved path to the lookout · no swimming here (unpatrolled, rips) · wind-blown sand: shoes and sunglasses" }}
+    { "t": "15:00", "th": "เช็คอิน (เข้าได้ตั้งแต่ 12:00) · เนินทราย Birubi Point และชายหาด · มื้อเย็นทำเอง ซื้อเนื้อที่ Anna Bay Wholesale Meats", "en": "Check in (from 12:00) · Birubi Point dunes and beach · dinner in, with meat from Anna Bay Wholesale Meats", "note": { "th": "ฟรี · ห้องน้ำและฝักบัวที่ Birubi Beach Reserve · ทางปูเรียบถึงจุดชม · ห้ามลงเล่นน้ำ (ไม่มีไลฟ์การ์ด กระแสน้ำย้อน) · ทรายปลิว: ใส่รองเท้ากับแว่นกันแดด · Stockton Bight คือผืนทรายเคลื่อนที่ริมทะเลที่ใหญ่ที่สุดในซีกโลกใต้ — เนินทรายยาวราว 32 กม. สูงกว่า 30 ม. ลาดชันถึง 60°", "en": "Free · toilets and showers at Birubi Beach Reserve · step-free paved path to the lookout · no swimming here (unpatrolled, rips) · wind-blown sand: shoes and sunglasses · Stockton Bight holds the largest moving coastal sand mass in the Southern Hemisphere — about 32 km of dunes more than 30 m high, slopes up to 60°" } },
+    { "t": "17:30", "th": "กลับบ้านอาบน้ำ · มื้อเย็นบาร์บีคิวที่บ้าน", "en": "Home for baths · barbecue dinner in" },
+    { "t": "19:00", "th": "เข้านอนเร็ว — พรุ่งนี้ล่องเรือดูโลมา", "en": "Early bed — tomorrow is the dolphin cruise" }
    ],
    "tips": [
-    { "th": "ช่วงนอน: ในรถ ช่วง Gardens → Anna Bay 13:30–14:35", "en": "Nap: In the van, Gardens → Anna Bay 13:30–14:35" }
+    { "th": "ช่วงนอน: ในรถ ช่วง Gardens → Anna Bay 13:30–14:35", "en": "Nap: In the van, Gardens → Anna Bay 13:30–14:35" },
+    { "kind": "info", "th": "งาน Christmas Lights Spectacular ที่ Hunter Valley Gardens (ไฟกว่า 2 ล้านดวง) จัดต้นพฤศจิกายนถึงปลายมกราคม — เดือนเมษายนไม่มี", "en": "The Christmas Lights Spectacular at Hunter Valley Gardens (over two million lights) runs from early November to the end of January — it is not on in April." },
+    { "kind": "tip", "th": "เนินทราย Birubi เป็นส่วนหนึ่งของ Worimi Conservation Lands (4,200 เฮกตาร์ ชาวอะบอริจินเป็นเจ้าของ): บางครั้งลมเปิดให้เห็นแคมป์เก่าและกองเปลือกหอยโบราณ ดูได้แต่ห้ามเก็บเปลือกหอย", "en": "The Birubi dunes are part of the Worimi Conservation Lands (4,200 ha, Aboriginal-owned): old campsites and shell middens are sometimes uncovered, so look but do not take shells." }
    ],
    "stay": { "name": "Robyn's Nest Hideaway", "addr": "26 Clonmeen Circuit, Anna Bay NSW 2316", "q": "Robyn's Nest Hideaway, 26 Clonmeen Circuit, Anna Bay NSW 2316" },
    "route": "https://www.google.com/maps/dir/?api=1&origin=1461+New+England+Highway,+Harpers+Hill+NSW&destination=26+Clonmeen+Circuit,+Anna+Bay+NSW&waypoints=Hunter+Valley+Gardens,+Pokolbin+NSW&travelmode=driving",
@@ -1158,7 +1180,8 @@
    "wx": {
     "en": "Hunter and Port Stephens about 12–25°C · sunset 17:37",
     "th": "Hunter และ Port Stephens ราว 12–25°C · พระอาทิตย์ตก 17:37"
-   }
+   },
+   "tale": { "th": "เช้าแห่งเทพนิยาย Hunter Valley Gardens เปิดเมื่อปี 2003 มีสวนตามธีมถึง 10 สวน แต่สวนที่เหมาะกับหนูที่สุดคือ Storybook Garden ลองตามหา Humpty Dumpty ที่นั่งอยู่บนกำแพง Jack กับ Jill, Little Bo Peep และ Alice in Wonderland ดูนะ หน้าร้อนสวนนี้จะเปิดไฟคริสต์มาสมากกว่า 2 ล้านดวง แต่นั่นเป็นอีกฤดูหนึ่ง จากนั้นเราขับรถไป Port Stephens กัปตัน Cook ตั้งชื่อที่นี่เมื่อวันที่ 11 พฤษภาคม 1770 ตามชื่อเพื่อนของเขา Sir Philip Stephens ที่ทำงานให้กองทัพเรือและเป็นคนแนะนำให้เขาได้ออกเดินทางครั้งนี้ อ่าวนี้เป็นหุบเขาแม่น้ำที่จมอยู่ใต้ทะเล และใหญ่กว่าอ่าว Sydney Harbour อีก ตอนบ่ายมีเซอร์ไพรส์ ที่ Birubi Point เนินทราย Stockton ทอดยาวไปประมาณ 32 กิโลเมตร เป็นผืนทรายชายฝั่งที่เคลื่อนที่ได้ใหญ่ที่สุดในซีกโลกใต้ เนินทรายค่อย ๆ คืบเข้าไปในแผ่นดิน ฝังต้นไม้ไปทีละนิด และบางครั้งก็เผยให้เห็นที่ตั้งแคมป์เก่าแก่ของชาว Worimi ซึ่งเป็นเจ้าของ Conservation Lands ที่นี่ ถอดรองเท้าได้เลย แต่ใส่แว่นกันแดดไว้นะ", "en": "A fairy-tale morning: Hunter Valley Gardens opened in 2003 and has ten themed gardens, but the Storybook Garden is the one for you. Hunt for Humpty Dumpty on his wall, Jack and Jill, Little Bo Peep and Alice in Wonderland. In summer the gardens glow with more than two million Christmas lights, but that is another season. Then we drive to Port Stephens. Captain Cook named it on 11 May 1770 after his friend Sir Philip Stephens, who worked for the Navy and had recommended him for the voyage. The bay is a drowned river valley, bigger than Sydney Harbour. In the afternoon comes the surprise: at Birubi Point the Stockton sand dunes roll away for about 32 kilometres, the biggest moving coastal sand mass in the Southern Hemisphere. The dunes creep inland, slowly burying trees, and sometimes they uncover old campsites of the Worimi people, who own the Conservation Lands here. Take your shoes off, but keep your sunglasses on." }
   },
   {
    "index": 8,
@@ -1231,12 +1254,15 @@
    "pick": { "th": "Little Beach อ่าวเล็กกำบังลม มีสนามหญ้าและเตาบาร์บีคิว ห่างมารีน่า 5 นาที คือที่ที่คน Nelson Bay พาลูกไปเล่น", "en": "Little Beach, a sheltered cove with a lawn and barbecues five minutes from the marina, is where Nelson Bay locals take their kids." },
    "planB": { "th": "ถ้าเหนื่อย ตัดอันนี้ก่อน: บ่ายที่ Shoal Bay — อยู่บ้านพัก · เรือยกเลิกเพราะลม? ผู้ให้บริการคืนเงินหรือเลื่อนเป็นรอบบ่าย → เส้นทางเดินล่างของ Tomaree Head, Oakvale Wildlife Park หรือ Toboggan Hill Park", "en": "If tired, cut first: The Shoal Bay afternoon — stay at the house · Cruise cancelled for wind? Operators refund or move you to the afternoon → Tomaree Head lower track, Oakvale Wildlife Park, or Toboggan Hill Park." },
    "plan": [
-    { "t": "09:15", "th": "ขับไป d'Albora Marina 15 นาที — ไปจอดแต่เช้า เพราะเป็นวันเสาร์ปิดเทอม", "en": "Drive to d'Albora Marina, 15 min — park early, it is the holiday Saturday", "note": { "th": "ที่จอดหยอดเหรียญข้างท่า $5/ชม. สูงสุด 4 ชม. — หรือจอดฟรีปลายถนน Teramby ริมเขื่อน หรือที่จอด Woolworths (ฟรี 3 ชม.)", "en": "Metered parking by the docks $5/h, 4 h max — or free at the end of Teramby Rd by the breakwall, or the Woolworths car park (3 h free)" }},
-    { "t": "10:00", "th": "ล่องเรือ Dolphin Watch ราว 1 ชม. 30 นาที · เลือกเรือที่มีดาดฟ้าชมวิวและห้องน้ำ", "en": "Dolphin Watch cruise, about 1 h 30 · pick a boat with a viewing deck and a toilet", "note": { "th": "เลือก Imagine (ท่า C): เข็นรถเข็นขึ้นได้ มีห้องโดยสาร ห้องน้ำ 2 ห้อง · ผู้ใหญ่ $50 เด็ก (4–14) $30 เด็กเล็ก (0–3) $10 · Moonshadow ห้ามรถเข็น · ขึ้นเรือก่อน 15 นาที", "en": "Pick Imagine (Dock C): prams allowed, inside cabin, two toilets · adult $50, child (4–14) $30, infant (0–3) $10 · Moonshadow allows no prams · board 15 min early" }},
+    { "t": "08:15", "th": "อาหารเช้าที่บ้าน · เตรียมขวดน้ำ หมวก แจ็กเก็ต และขนมไว้บนเรือ", "en": "Breakfast at the house · water bottles, hats, jackets and snacks packed for the boat" },
+    { "t": "09:15", "th": "ขับไป d'Albora Marina 15 นาที — ไปจอดแต่เช้า เพราะเป็นวันเสาร์ปิดเทอม", "en": "Drive to d'Albora Marina, 15 min — park early, it is the holiday Saturday", "note": { "th": "ที่จอดหยอดเหรียญข้างท่า $5/ชม. สูงสุด 4 ชม. — หรือจอดฟรีปลายถนน Teramby ริมเขื่อน หรือที่จอด Woolworths (ฟรี 3 ชม.)", "en": "Metered parking by the docks $5/h, 4 h max — or free at the end of Teramby Rd by the breakwall, or the Woolworths car park (3 h free)" } },
+    { "t": "10:00", "th": "ล่องเรือ Dolphin Watch ราว 1 ชม. 30 นาที · เลือกเรือที่มีดาดฟ้าชมวิวและห้องน้ำ", "en": "Dolphin Watch cruise, about 1 h 30 · pick a boat with a viewing deck and a toilet", "note": { "th": "เลือก Imagine (ท่า C): เข็นรถเข็นขึ้นได้ มีห้องโดยสาร ห้องน้ำ 2 ห้อง · ผู้ใหญ่ $50 เด็ก (4–14) $30 เด็กเล็ก (0–3) $10 · Moonshadow ห้ามรถเข็น · ขึ้นเรือก่อน 15 นาที · แหลม Tomaree ที่ปากอ่าวเป็นหินภูเขาไฟ สูง 161 ม. · กัปตันคุกตั้งชื่อ Port Stephens เมื่อ 11 พ.ค. 1770", "en": "Pick Imagine (Dock C): prams allowed, inside cabin, two toilets · adult $50, child (4–14) $30, infant (0–3) $10 · Moonshadow allows no prams · board 15 min early · Tomaree Head at the mouth of the bay is volcanic and 161 m high · Captain Cook named Port Stephens on 11 May 1770" } },
     { "t": "12:00", "th": "ฟิชแอนด์ชิปส์ริมอ่าว", "en": "Fish and chips by the bay" },
     { "t": "13:30", "th": "เวลางีบที่ห้ามรบกวน — วันนี้ตั้งใจให้เบา", "en": "Protected nap time — today is deliberately light" },
-    { "t": "15:30", "th": "Shoal Bay หรือ Fingal Bay — น้ำนิ่ง ตื้น เหมาะกับเด็กเล็ก", "en": "Shoal Bay or Fingal Bay — calm, shallow, perfect for toddlers", "note": { "th": "Shoal Bay: สนามเด็กเล่นมีรั้วและร่มไม้ที่ Bernie Thompson Park มีห้องน้ำ · Fingal Bay: มีไลฟ์การ์ด 9:00–16:00 ถึงปลายเมษา สนามเด็กเล่นข้างสโมสร — ว่ายระหว่างธง", "en": "Shoal Bay: fenced, shaded playground at Bernie Thompson Park, toilets · Fingal Bay: lifeguards 9:00–16:00 to the end of April, playground by the surf club — swim between the flags" }},
-    { "t": "17:00", "th": "เดินดูพระอาทิตย์ตก · มื้อเย็นที่ Shoal Bay Country Club", "en": "Sunset walk · dinner at the Shoal Bay Country Club" }
+    { "t": "14:45", "th": "ตื่นช้าๆ จากงีบ · กินของว่าง แล้วไปหาด", "en": "Wake slowly from the nap · snack, then to the beach" },
+    { "t": "15:30", "th": "Shoal Bay หรือ Fingal Bay — น้ำนิ่ง ตื้น เหมาะกับเด็กเล็ก", "en": "Shoal Bay or Fingal Bay — calm, shallow, perfect for toddlers", "note": { "th": "Shoal Bay: สนามเด็กเล่นมีรั้วและร่มไม้ที่ Bernie Thompson Park มีห้องน้ำ · Fingal Bay: มีไลฟ์การ์ด 9:00–16:00 ถึงปลายเมษา สนามเด็กเล่นข้างสโมสร — ว่ายระหว่างธง", "en": "Shoal Bay: fenced, shaded playground at Bernie Thompson Park, toilets · Fingal Bay: lifeguards 9:00–16:00 to the end of April, playground by the surf club — swim between the flags" } },
+    { "t": "17:00", "th": "เดินดูพระอาทิตย์ตก · มื้อเย็นที่ Shoal Bay Country Club", "en": "Sunset walk · dinner at the Shoal Bay Country Club" },
+    { "t": "19:00", "th": "กลับบ้านอาบน้ำ · นอนเร็วก่อนวันเดินทาง", "en": "Home for baths · early night before the travel day" }
    ],
    "tips": [{ "th": "ช่วงนอน: ที่บ้านพัก 13:30–15:30 — ห้ามเลื่อน", "en": "Nap: At the house 13:30–15:30 — protected" }],
    "stay": { "name": "Robyn's Nest Hideaway", "addr": "26 Clonmeen Circuit, Anna Bay NSW 2316", "q": "Robyn's Nest Hideaway, 26 Clonmeen Circuit, Anna Bay NSW 2316" },
@@ -1253,8 +1279,9 @@
     { "name": "Hodges Butchery", "note": { "th": "สำรอง · วันที่ 8–10", "en": "Backup · Days 8–10" }, "pr": "$$ · ซี่โครงแกะ A$40–50 /กก.", "q": "Hodges Butchery, Salamander Bay Square, NSW" }
    ],
    "learn": [
-    { "name": { "th": "โลมาแห่ง Port Stephens", "en": "Port Stephens dolphins" }, "country": { "th": "ผืนดินของชาว Worimi", "en": "Worimi Country" }, "facts": [{ "th": "มีโลมาปากขวดอาศัยอยู่ใน Port Stephens ราว 90–120 ตัวตลอดปี เมืองนี้เรียกตัวเองว่าเมืองหลวงโลมาของออสเตรเลีย", "en": "Around 90–120 bottlenose dolphins live in Port Stephens all year, and the town calls itself the dolphin capital of Australia." }, { "th": "อ่าวนี้เกิดจากหุบเขาแม่น้ำที่จมน้ำทะเล มีพื้นที่น้ำกว้างกว่าอ่าวซิดนีย์", "en": "The bay itself is a drowned river valley — the water is larger in area than Sydney Harbour." }], "kid": { "th": "โลมาหายใจเหมือนเรา ผ่านรูบนหัว ตั้งใจฟังเสียง 'ฟู่' นะ", "en": "Dolphins breathe air like us through a hole on their head — listen for the 'pfff'!" }},
-    { "name": { "th": "Tomaree Head และ Shoal Bay", "en": "Tomaree Head and Shoal Bay" }, "country": { "th": "ผืนดินของชาว Worimi", "en": "Worimi Country" }, "facts": [{ "th": "Tomaree Head เฝ้าปากอ่าว บนเขายังมีฐานปืนใหญ่สมัยสงครามโลกครั้งที่สอง", "en": "Tomaree Head guards the entrance to the bay; gun emplacements from World War II still sit on the hill." }, { "th": "แถว Port Stephens มีโคอาล่าป่า และมีศูนย์ Port Stephens Koala Sanctuary ดูแลตัวที่บาดเจ็บ", "en": "Koalas live wild around Port Stephens; the Port Stephens Koala Sanctuary cares for injured ones." }, { "th": "ทางเดินขึ้นยอด Tomaree Head สูงราว 160 เมตร เห็นวิวทั้งอ่าวและหมู่เกาะ", "en": "The Tomaree Head summit walk climbs about 160 metres for a view over the whole bay and the islands." }], "kid": { "th": "น้ำที่ Shoal Bay สงบเหมือนสระใหญ่ เล่นน้ำสาดกันได้สบาย", "en": "Shoal Bay's water is calm like a big swimming pool — perfect for splashing." }}
+    { "name": { "th": "โลมาแห่ง Port Stephens", "en": "Port Stephens dolphins" }, "country": { "th": "ผืนดินของชาว Worimi", "en": "Worimi Country" }, "facts": [{ "th": "มีโลมาปากขวดอาศัยอยู่ใน Port Stephens ราว 90–120 ตัวตลอดปี เมืองนี้เรียกตัวเองว่าเมืองหลวงโลมาของออสเตรเลีย", "en": "Around 90–120 bottlenose dolphins live in Port Stephens all year, and the town calls itself the dolphin capital of Australia." }, { "th": "อ่าวนี้เกิดจากหุบเขาแม่น้ำที่จมน้ำทะเล มีพื้นที่น้ำกว้างกว่าอ่าวซิดนีย์", "en": "The bay itself is a drowned river valley — the water is larger in area than Sydney Harbour." }], "kid": { "th": "โลมาหายใจเหมือนเรา ผ่านรูบนหัว ตั้งใจฟังเสียง 'ฟู่' นะ", "en": "Dolphins breathe air like us through a hole on their head — listen for the 'pfff'!" } },
+    { "name": { "th": "Tomaree Head และ Shoal Bay", "en": "Tomaree Head and Shoal Bay" }, "country": { "th": "ผืนดินของชาว Worimi", "en": "Worimi Country" }, "facts": [{ "th": "Tomaree Head เฝ้าปากอ่าว บนเขายังมีฐานปืนใหญ่สมัยสงครามโลกครั้งที่สอง", "en": "Tomaree Head guards the entrance to the bay; gun emplacements from World War II still sit on the hill." }, { "th": "แถว Port Stephens มีโคอาล่าป่า และมีศูนย์ Port Stephens Koala Sanctuary ดูแลตัวที่บาดเจ็บ", "en": "Koalas live wild around Port Stephens; the Port Stephens Koala Sanctuary cares for injured ones." }, { "th": "ทางเดินขึ้นยอด Tomaree Head สูงราว 160 เมตร เห็นวิวทั้งอ่าวและหมู่เกาะ", "en": "The Tomaree Head summit walk climbs about 160 metres for a view over the whole bay and the islands." }], "kid": { "th": "น้ำที่ Shoal Bay สงบเหมือนสระใหญ่ เล่นน้ำสาดกันได้สบาย", "en": "Shoal Bay's water is calm like a big swimming pool — perfect for splashing." } },
+    { "name": { "en": "Nelson Bay lighthouse", "th": "ประภาคาร Nelson Bay" }, "country": { "en": "Port Stephens", "th": "Port Stephens" }, "facts": [{ "en": "The little lighthouse at Nelson Bay was built in 1875 and has an unusual shape.", "th": "ประภาคารเล็ก ๆ ที่ Nelson Bay สร้างเมื่อปี 1875 และมีรูปร่างแปลกตา" }, { "en": "Each dolphin in Port Stephens has its own signature whistle, a bit like a name, so the others can call it.", "th": "โลมาแต่ละตัวใน Port Stephens มีเสียงผิวปากประจำตัว คล้าย ๆ ชื่อ เพื่อน ๆ จะได้เรียกมันได้" }], "kid": { "en": "If you had a whistle name like a dolphin, what would it sound like?", "th": "ถ้าหนูมีชื่อเป็นเสียงผิวปากแบบโลมา ชื่อของหนูจะออกเสียงยังไงจ๊ะ?" } }
    ],
    "quiz": [
     { "q": { "th": "โลมาหายใจยังไง?", "en": "How does a dolphin breathe?" }, "a": { "th": "ผ่านรูบนหัว", "en": "Through a hole on top of its head." }},
@@ -1281,7 +1308,8 @@
    "wx": {
     "en": "Port Stephens about 15–24°C · sea about 23°C · sunset 17:36",
     "th": "Port Stephens ราว 15–24°C · น้ำทะเลราว 23°C · พระอาทิตย์ตก 17:36"
-   }
+   },
+   "tale": { "th": "วันนี้เป็นวันของโลมา เราขึ้นเรือล่องชมที่ d'Albora Marina และที่ไหนสักแห่งใน Port Stephens มีโลมาปากขวดที่อยู่ที่นี่ตลอดทั้งปี เมืองนี้เลยเรียกตัวเองว่าเมืองหลวงแห่งโลมาของออสเตรเลีย โลมาหายใจเอาอากาศเหมือนหนูเลย โดยหายใจผ่านรูบนหัว ตอนมันโผล่ขึ้นมาลองฟังเสียง \"ฟึ่บ\" เบา ๆ ดูนะ โลมาแต่ละตัวมีเสียงผิวปากประจำตัว คล้าย ๆ ชื่อ เพื่อน ๆ จะได้เรียกมันได้ ลองหันกลับไปมองที่ Tomaree Head มันเป็นหินภูเขาไฟเก่าแก่ สูง 161 เมตร และในช่วงสงครามโลกครั้งที่สอง ทหารเอาปืนใหญ่ขึ้นไปตั้งบนเนินเพื่อเฝ้าดูทะเล ที่ Nelson Bay ลองหาประภาคารเล็ก ๆ ที่สร้างเมื่อปี 1875 รูปร่างแปลกตาดูนะ หลังอาหารกลางวันเป็นเวลางีบที่ห้ามใครรบกวน แล้วค่อยไป Shoal Bay ที่น้ำนิ่งมากเหมือนสระว่ายน้ำยักษ์ คอยมองหาโคอาล่าด้วยนะ เพราะมีโคอาล่าป่าอาศัยอยู่แถว Port Stephens วันนี้เป็นวันสบาย ๆ หนูสมควรได้พักแล้วจ้ะ", "en": "This is the day of the dolphins. At d'Albora Marina we board the cruise, and somewhere out in Port Stephens live bottlenose dolphins that stay all year round; the town calls itself the dolphin capital of Australia. A dolphin breathes air just like you, through a hole on top of its head, so listen for a soft 'pfff' as it comes up. Each dolphin has its own signature whistle, a bit like a name, so the others can call it. Look back towards Tomaree Head: it is made of old volcanic rock and rises 161 metres, and during World War II soldiers put big guns on the hill to watch the sea. At Nelson Bay, find the little lighthouse built in 1875 with its unusual shape. After lunch it is protected nap time, and then Shoal Bay, where the water is so calm it is like a giant swimming pool. Keep an eye out for koalas too: wild ones live around Port Stephens. A gentle day — you've earned it." }
   },
   {
    "index": 9,
@@ -1352,18 +1380,21 @@
    "pick": { "th": "Avoca Beach Picture Theatre ฉายหนังมาตั้งแต่ปี 1948 ส่วนที่ The Entrance โชว์ให้อาหารนกกระทุงช่วงบ่ายเป็นธรรมเนียมของเมืองมาหลายสิบปี", "en": "Avoca Beach Picture Theatre has screened films since 1948; at The Entrance the afternoon pelican feed is a decades-old local ritual." },
    "planB": { "th": "ถ้าเหนื่อย ตัดอันนี้ก่อน: ม้าหมุน — ดูให้อาหารนกกระทุงอย่างเดียว 20 นาที", "en": "If tired, cut first: The carousel — the pelican feed alone is 20 min" },
    "plan": [
+    { "t": "08:15", "th": "อาหารเช้า · ขนของขึ้นรถ — ออก 09:00", "en": "Breakfast · pack the van — leave by 09:00" },
     { "t": "09:00", "th": "เช็คเอาท์ · ขนของขึ้นรถ", "en": "Check out · load the van" },
-    { "t": "09:35", "th": "Heatherbrae's Pies บน Pacific Highway ราว 25 นาที — จุดแวะพายคลาสสิกของคนขับรถเที่ยว", "en": "Heatherbrae's Pies on the Pacific Highway, about 25 min — the classic road-trip pie stop", "note": { "th": "30 นาที · มีเก้าอี้เด็ก · เวลาเปิดวันอาทิตย์แต่ละแหล่งไม่ตรงกัน — โทรเช็ค 02 4987 5561 วันก่อน", "en": "30 min · highchairs · Sunday hours differ between listings — call 02 4987 5561 the day before" }},
+    { "t": "09:35", "th": "Heatherbrae's Pies บน Pacific Highway ราว 25 นาที — จุดแวะพายคลาสสิกของคนขับรถเที่ยว", "en": "Heatherbrae's Pies on the Pacific Highway, about 25 min — the classic road-trip pie stop", "note": { "th": "30 นาที · มีเก้าอี้เด็ก · เวลาเปิดวันอาทิตย์แต่ละแหล่งไม่ตรงกัน — โทรเช็ค 02 4987 5561 วันก่อน · เช็ควันก่อนว่าทางด่วน M1 ส่วนต่อขยายที่ Raymond Terrace เปิดแล้วหรือยัง (กำหนดปลายปี 2026): จะเลี่ยง Heatherbrae — ดูว่าแผนที่ในรถยังพาไปร้านพายอยู่", "en": "30 min · highchairs · Sunday hours differ between listings — call 02 4987 5561 the day before · Check the day before whether the M1 Pacific Motorway extension at Raymond Terrace has opened (due late 2026): it bypasses Heatherbrae, so confirm your sat-nav still sends you to the pie shop" } },
     { "t": "10:15", "th": "M1 ลงใต้ไป Avoca Beach ราว 1 ชม. 20 นาที — เด็กงีบในรถ", "en": "M1 south to Avoca Beach, about 1 h 20 — nap window" },
-    { "t": "11:35", "th": "สระหินริมทะเล Avoca ทางใต้สุดของหาด — ตื้นและนิ่งตอนน้ำลงถึงน้ำขึ้นครึ่งหนึ่ง แล้วไปสนามเด็กเล่นหลังสโมสรไลฟ์การ์ด", "en": "Avoca rock pool at the south end — shallow and calm at low to mid tide — then the playground behind the surf club", "note": { "th": "1.5 ชม. · ที่จอดฟรีเต็มเร็ว · มีห้องน้ำ · สนามเด็กเล่นมีรั้วฝั่งใต้ · มีไลฟ์การ์ดอาสาวันหยุด", "en": "1.5 h · free parking fills fast · toilets · fenced playground at the south end · volunteer lifeguards on weekends" }},
+    { "t": "11:35", "th": "สระหินริมทะเล Avoca ทางใต้สุดของหาด — ตื้นและนิ่งตอนน้ำลงถึงน้ำขึ้นครึ่งหนึ่ง แล้วไปสนามเด็กเล่นหลังสโมสรไลฟ์การ์ด", "en": "Avoca rock pool at the south end — shallow and calm at low to mid tide — then the playground behind the surf club", "note": { "th": "1.5 ชม. · ที่จอดฟรีเต็มเร็ว · มีห้องน้ำ · สนามเด็กเล่นมีรั้วฝั่งใต้ · มีไลฟ์การ์ดอาสาวันหยุด · ฝั่งตรงข้ามถนน โรงหนัง Avoca Beach Theatre ฉายหนังกลางแจ้งมาตั้งแต่ปี 1948", "en": "1.5 h · free parking fills fast · toilets · fenced playground at the south end · volunteer lifeguards on weekends · Across the road, the Avoca Beach Theatre has shown films outdoors since 1948" } },
     { "t": "12:45", "th": "Avoca Beach Seafoods ตรงข้ามสระหิน นั่งกินบนสนามหญ้า", "en": "Avoca Beach Seafoods across from the rock pool, eaten on the grass" },
     { "t": "13:45", "th": "ขับต่อไป The Entrance ราว 25 นาที · เช็คอิน Nesuto (อพาร์ตเมนต์ 2 ห้องนอน วิวทะเล)", "en": "On to The Entrance, about 25 min · check in at Nesuto (2-bed apartment, sea view)" },
-    { "t": "15:30", "th": "ดูโชว์ให้อาหารนกกระทุงที่ Memorial Park · ม้าหมุนโบราณ · สนามเด็กเล่นริมน้ำ — เดินถึงทั้งหมด", "en": "Pelican feeding at Memorial Park · historic carousel · waterfront playground — all a short walk", "note": { "th": "ให้อาหารนกกระทุงฟรี 15:30 — ไปถึงริมน้ำก่อน 15:15 · สนามเด็กเล่น 2 แห่งใน Memorial Park · ห้องน้ำข้างสวน · ที่จอดอาคารในเมืองฟรี", "en": "Pelican feed is free at 15:30 — be at the waterfront by 15:15 · two playgrounds in Memorial Park · toilets by the park · free multi-storey car park in town" }},
-    { "t": "17:30", "th": "ฟิชแอนด์ชิปส์ริมคลอง · จัดของขึ้นรถคืนนี้เพื่อคืนรถพรุ่งนี้", "en": "Fish and chips by the channel · pack the van tonight for tomorrow's return" }
+    { "t": "15:30", "th": "ดูโชว์ให้อาหารนกกระทุงที่ Memorial Park · ม้าหมุนโบราณ · สนามเด็กเล่นริมน้ำ — เดินถึงทั้งหมด", "en": "Pelican feeding at Memorial Park · historic carousel · waterfront playground — all a short walk", "note": { "th": "ให้อาหารนกกระทุงฟรี 15:30 — ไปถึงริมน้ำก่อน 15:15 · สนามเด็กเล่น 2 แห่งใน Memorial Park · ห้องน้ำข้างสวน · ที่จอดอาคารในเมืองฟรี · หญ้าทะเลในน้ำตื้นของ Tuggerah Lakes ดึงดูดนกน้ำ รวมถึงหงส์ดำ · การให้อาหารเริ่มกว่า 20 ปีก่อนตอนร้านปลาโยนเศษปลาให้นกกระทุง เทศบาลสร้าง Pelican Plaza ปี 1996 — เช็ควันนั้นว่ายังมีการให้อาหารอยู่", "en": "Pelican feed is free at 15:30 — be at the waterfront by 15:15 · two playgrounds in Memorial Park · toilets by the park · free multi-storey car park in town · Seagrass in Tuggerah Lakes' shallows attracts waterbirds, including black swans · the feed began over 20 years ago when a fish shop tossed scraps to the pelicans; the council built Pelican Plaza in 1996 — check on the day that the feed is running" } },
+    { "t": "17:30", "th": "ฟิชแอนด์ชิปส์ริมคลอง · จัดของขึ้นรถคืนนี้เพื่อคืนรถพรุ่งนี้", "en": "Fish and chips by the channel · pack the van tonight for tomorrow's return" },
+    { "t": "19:00", "th": "วางกระเป๋าไว้ที่ประตูสำหรับออกเช้าพรุ่งนี้ · อาบน้ำ เข้านอน", "en": "Bags by the door for tomorrow's early start · baths, bed" }
    ],
    "tips": [
     { "th": "ช่วงนอน: ในรถบน M1 ไป Avoca 10:15–11:35", "en": "Nap: In the van on the M1 to Avoca 10:15–11:35" },
-    { "kind": "tip", "th": "เช็คตารางน้ำขึ้นลงของ Avoca ก่อนเดินทาง 1 สัปดาห์ ถ้าน้ำขึ้นสูงคลื่นจะซัดเข้าสระ ให้เล่นที่ชายหาดและสนามเด็กเล่นแทน", "en": "Check the Avoca tide table the week before. At high tide waves wash into the pool — play on the beach and at the playground instead." }
+    { "kind": "tip", "th": "เช็คตารางน้ำขึ้นลงของ Avoca ก่อนเดินทาง 1 สัปดาห์ ถ้าน้ำขึ้นสูงคลื่นจะซัดเข้าสระ ให้เล่นที่ชายหาดและสนามเด็กเล่นแทน", "en": "Check the Avoca tide table the week before. At high tide waves wash into the pool — play on the beach and at the playground instead." },
+    { "kind": "warn", "th": "หน้าเว็บให้อาหารนกกระทุงยังมีประกาศสมัยโควิดว่างดให้อาหาร — เช็ควันนั้นว่ามีจริงก่อนวางแผนช่วงบ่ายรอบมัน", "en": "The pelican-feed page still carried a COVID-era notice that the feed was not taking place — confirm on the day that it is running before planning the afternoon around it." }
    ],
    "stay": { "name": "Nesuto The Entrance", "addr": "18 Coral Street, The Entrance NSW 2261", "q": "Nesuto The Entrance, 18 Coral Street, The Entrance NSW 2261" },
    "route": "https://www.google.com/maps/dir/?api=1&origin=26+Clonmeen+Circuit,+Anna+Bay+NSW&destination=Nesuto+The+Entrance,+18+Coral+Street,+The+Entrance+NSW&waypoints=Heatherbrae's+Pies,+Heatherbrae+NSW|Avoca+Beach+Rock+Pool+NSW&travelmode=driving",
@@ -1393,8 +1424,9 @@
     { "name": "Central Coast Farmers Market", "note": { "th": "วันที่ 10 · อา. ~11:00 · เช็กก่อน 1 วัน", "en": "Day 10 · Sun ~11:00 · check the day before" }, "pr": "$ · ซื้อของทั้งครอบครัว A$20–40", "q": "Central Coast Farmers Market, Gosford Showground, Showground Rd, West Gosford, NSW" }
    ],
    "learn": [
-    { "name": { "th": "สระหิน Avoca Beach", "en": "Avoca Beach rock pool" }, "country": { "th": "ผืนดินของชาว Darkinjung", "en": "Darkinjung Country" }, "facts": [{ "th": "รัฐ NSW มีสระว่ายน้ำในหินริมทะเลราว 100 แห่ง มากกว่าที่ไหนในโลก สร้างไว้ให้ว่ายน้ำปลอดภัยข้างคลื่นแรง", "en": "NSW has around 100 ocean pools — more than anywhere else in the world — built so people could swim safely beside the surf." }, { "th": "โรงหนัง Avoca Beach Picture Theatre เปิดปี 1951 เป็นโรงหนังจอเดียวที่ครอบครัวเดิมซึ่งเริ่มฉายหนังกลางแปลงที่นี่ตั้งแต่ปี 1948 ยังดูแลอยู่", "en": "Avoca Beach Picture Theatre, opened in 1951, is a single-screen cinema still run by the family that started outdoor screenings here in 1948." }], "kid": { "th": "น้ำทะเลเติมสระนี้ให้เราทุกครั้งที่น้ำขึ้น!", "en": "The sea fills this pool for us every high tide!" }},
-    { "name": { "th": "นกกระทุงแห่ง The Entrance", "en": "The Entrance pelicans" }, "country": { "th": "ผืนดินของชาว Darkinjung", "en": "Darkinjung Country" }, "facts": [{ "th": "ทุกบ่ายราวสามโมงครึ่งอาสาสมัครให้อาหารนกกระทุงป่าที่ Memorial Park เป็นประเพณีตั้งแต่ทศวรรษ 1980", "en": "Every afternoon, around 3:30, volunteers feed the wild pelicans at Memorial Park — a tradition since the 1980s." }, { "th": "นกกระทุงออสเตรเลียมีปากยาวที่สุดในบรรดานกทั้งโลก ยาวได้ราว 50 ซม.", "en": "The Australian pelican has the longest bill of any bird in the world — up to about 50 cm." }], "kid": { "th": "ปากนกกระทุงยาวเท่าแขนหนูเลย แถมมีถุงไว้เก็บปลาด้วย!", "en": "A pelican's beak is as long as your arm and holds a fish-shaped bag!" }}
+    { "name": { "th": "สระหิน Avoca Beach", "en": "Avoca Beach rock pool" }, "country": { "th": "ผืนดินของชาว Darkinjung", "en": "Darkinjung Country" }, "facts": [{ "th": "รัฐ NSW มีสระว่ายน้ำในหินริมทะเลราว 100 แห่ง มากกว่าที่ไหนในโลก สร้างไว้ให้ว่ายน้ำปลอดภัยข้างคลื่นแรง", "en": "NSW has around 100 ocean pools — more than anywhere else in the world — built so people could swim safely beside the surf." }, { "th": "โรงหนัง Avoca Beach Picture Theatre เปิดปี 1951 เป็นโรงหนังจอเดียวที่ครอบครัวเดิมซึ่งเริ่มฉายหนังกลางแปลงที่นี่ตั้งแต่ปี 1948 ยังดูแลอยู่", "en": "Avoca Beach Picture Theatre, opened in 1951, is a single-screen cinema still run by the family that started outdoor screenings here in 1948." }], "kid": { "th": "น้ำทะเลเติมสระนี้ให้เราทุกครั้งที่น้ำขึ้น!", "en": "The sea fills this pool for us every high tide!" } },
+    { "name": { "th": "นกกระทุงแห่ง The Entrance", "en": "The Entrance pelicans" }, "country": { "th": "ผืนดินของชาว Darkinjung", "en": "Darkinjung Country" }, "facts": [{ "th": "ทุกบ่ายราวสามโมงครึ่งอาสาสมัครให้อาหารนกกระทุงป่าที่ Memorial Park เป็นประเพณีตั้งแต่ทศวรรษ 1980", "en": "Every afternoon, around 3:30, volunteers feed the wild pelicans at Memorial Park — a tradition since the 1980s." }, { "th": "นกกระทุงออสเตรเลียมีปากยาวที่สุดในบรรดานกทั้งโลก ยาวได้ราว 50 ซม.", "en": "The Australian pelican has the longest bill of any bird in the world — up to about 50 cm." }], "kid": { "th": "ปากนกกระทุงยาวเท่าแขนหนูเลย แถมมีถุงไว้เก็บปลาด้วย!", "en": "A pelican's beak is as long as your arm and holds a fish-shaped bag!" } },
+    { "name": { "en": "NSW ocean pools and the Avoca Beach Theatre", "th": "สระน้ำทะเลของ NSW และโรงหนัง Avoca Beach" }, "country": { "en": "Avoca Beach, New South Wales", "th": "Avoca Beach, New South Wales" }, "facts": [{ "en": "New South Wales has about 100 ocean pools — more than anywhere else in the world. At Avoca the sea fills the rock pool every high tide.", "th": "New South Wales มีสระน้ำทะเลประมาณ 100 สระ มากกว่าที่ไหนในโลก ที่ Avoca ทะเลจะเติมน้ำให้สระหินทุกครั้งที่น้ำขึ้น" }, { "en": "The Avoca cinema began in 1948 with films shown outdoors and opened properly in December 1951; the BBC once listed it among the ten most beautiful cinemas in the world.", "th": "โรงหนังที่ Avoca เริ่มฉายหนังกลางแจ้งเมื่อปี 1948 และเปิดเป็นโรงจริงในเดือนธันวาคม 1951 BBC เคยจัดให้เป็นหนึ่งในสิบโรงหนังที่สวยที่สุดในโลก" }], "kid": { "en": "Can you show me how a big wave splashes into the rock pool?", "th": "หนูทำท่าให้ดูหน่อยได้ไหม ว่าคลื่นใหญ่สาดเข้าสระหินยังไง?" } }
    ],
    "quiz": [
     { "q": { "th": "ใครเติมน้ำในสระหินที่ Avoca?", "en": "Who fills the rock pool at Avoca?" }, "a": { "th": "ทะเล ตอนน้ำขึ้น", "en": "The sea, at high tide." }},
@@ -1422,7 +1454,8 @@
    "wx": {
     "en": "Central Coast about 15–24°C · sea about 23°C · sunset 17:37",
     "th": "Central Coast ราว 15–24°C · น้ำทะเลราว 23°C · พระอาทิตย์ตก 17:37"
-   }
+   },
+   "tale": { "th": "วันนี้เริ่มต้นด้วยพาย Heatherbrae อยู่บนถนน Pacific Highway สายเก่า และร้านพายของที่นี่ก็เป็นจุดแวะคลาสสิกของคนขับรถเที่ยว แต่ตอนนี้กำลังสร้างทางด่วนใหม่อ้อมเมือง เลยต้องเช็กเส้นทางตั้งแต่คืนก่อน กินพายเสร็จ ถนน M1 จะพาเราลงใต้ไป Avoca Beach ที่ทะเลเติมน้ำให้สระหินทุกครั้งที่น้ำขึ้น New South Wales มีสระน้ำทะเลประมาณ 100 สระ มากกว่าที่ไหน ๆ ในโลก ใกล้ ๆ กันมีโรงหนังที่เริ่มต้นเมื่อปี 1948 ด้วยการฉายหนังกลางแจ้ง แล้วเปิดเป็นโรงหนังจริง ๆ ในเดือนธันวาคม 1951 BBC เคยจัดให้เป็นหนึ่งในสิบโรงหนังที่สวยที่สุดในโลก จากนั้นไปที่ The Entrance เมืองที่ตั้งชื่อตามช่องน้ำแคบ ๆ ที่เชื่อมทะเลสาบ Tuggerah กับมหาสมุทร ตอนบ่ายสามโมงครึ่ง นกกระทุงหลายร้อยตัวจะมารวมกันที่ Memorial Park เพื่อรอกินปลา เรื่องนี้เริ่มมาตั้งแต่กว่า 20 ปีก่อน ตอนที่พนักงานร้านขายปลาโยนเศษปลาให้พวกมัน ปากของนกกระทุงยาวที่สุดในบรรดานกทั้งหมด ยาวได้ถึงประมาณ 50 เซนติเมตร ลองยื่นแขนออกมาดูสิ เกือบยาวเท่านั้นเลย!", "en": "Today begins with a pie. Heatherbrae sits on the old Pacific Highway, and its pie shop is the classic road-trip stop — though a new motorway is being built around the town, so check the road the night before. After the pie, the M1 carries us south to Avoca Beach, where the sea fills the rock pool every high tide. New South Wales has about a hundred ocean pools, more than anywhere else in the world. Nearby is a cinema that began in 1948 with films shown outdoors and opened properly in December 1951; the BBC once listed it among the ten most beautiful cinemas in the world. Then The Entrance, a town named for the narrow channel linking Tuggerah Lake to the ocean. At half past three, hundreds of pelicans gather at Memorial Park for their fish. It all began over twenty years ago, when workers at a fish shop tossed them scraps. A pelican's bill is the longest of any bird — up to about 50 centimetres. Hold your arm out: nearly that long!" }
   },
   {
    "index": 10,
@@ -1489,12 +1522,13 @@
    "plan": [
     { "t": "08:00", "th": "อาหารเช้า · จัดของให้เสร็จภายใน 08:45 — ขนของขึ้นรถเต็มคันครั้งสุดท้าย", "en": "Breakfast · finish packing by 08:45 — the last full load of the car" },
     { "t": "08:45", "th": "M1 → M2 → M7 ไป Featherdale ที่ Doonside ราว 1 ชม. 20 นาที", "en": "M1 → M2 → M7 to Featherdale, Doonside, about 1 h 20" },
-    { "t": "10:05", "th": "Featherdale Wildlife Park — พื้นเรียบ ให้อาหารจิงโจ้ ดูโคอาล่า · ราว 1 ชม. 45 นาที", "en": "Featherdale Wildlife Park — flat, kangaroo feeding, koalas · about 1 h 45", "note": { "th": "เปิด 8:00–17:00 · ผู้ใหญ่ $49 มีมี่ $29 มีก้าฟรี · จอดฟรี · ทางเรียบมีร่ม · ที่เปลี่ยนผ้าอ้อมทุกห้องน้ำ · อาหารจิงโจ้ถ้วยละ $5 · วันแรกของปิดเทอม คนเยอะ", "en": "Open 8:00–17:00 · adult $49, Mimi $29, Mika free · free parking · flat, shaded paths · baby change in every bathroom · kangaroo food $5 a cup · first day of school holidays — busy" }},
+    { "t": "10:05", "th": "Featherdale Wildlife Park — พื้นเรียบ ให้อาหารจิงโจ้ ดูโคอาล่า · ราว 1 ชม. 45 นาที", "en": "Featherdale Wildlife Park — flat, kangaroo feeding, koalas · about 1 h 45", "note": { "th": "เปิด 8:00–17:00 · ผู้ใหญ่ $49 มีมี่ $29 มีก้าฟรี · จอดฟรี · ทางเรียบมีร่ม · ที่เปลี่ยนผ้าอ้อมทุกห้องน้ำ · อาหารจิงโจ้ถ้วยละ $5 · วันแรกของปิดเทอม คนเยอะ · โคอาล่านอนได้ถึง 20 ชม. ต่อวัน — ใบยูคาลิปตัสให้พลังงานน้อยและย่อยช้า", "en": "Open 8:00–17:00 · adult $49, Mimi $29, Mika free · free parking · flat, shaded paths · baby change in every bathroom · kangaroo food $5 a cup · first day of school holidays — busy · Koalas sleep up to 20 hours a day — eucalyptus leaves are low in energy and slow to digest" } },
     { "t": "11:50", "th": "มื้อกลางวันที่คาเฟ่ในสวน", "en": "Lunch at the park café" },
     { "t": "12:15", "th": "เข้าเมืองราว 45 นาที — เด็กนอนในรถ", "en": "Into the city, about 45 min — nap in the van" },
     { "t": "13:00", "th": "YHA Sydney Central: ขนกระเป๋าลงทั้งหมด (ฝากห้องเก็บกระเป๋าถ้าห้องยังไม่พร้อม) · ผู้ใหญ่สองคนพาเด็กเข้านอน", "en": "YHA Sydney Central: unload every bag (luggage room if the room isn't ready) · two adults take the kids in to nap" },
     { "t": "13:30", "th": "คนขับกับผู้ใหญ่อีกคน: เติมน้ำมันใกล้ Mascot (เก็บใบเสร็จ) · คืน Odyssey ให้เจ้าของ — เหลือเวลาก่อนกำหนด 17:00 หลายชั่วโมง", "en": "Driver and one adult: fill the tank near Mascot (keep the receipt) · hand the Odyssey back to the host — hours before the 17:00 deadline" },
-    { "t": "15:00", "th": "นั่งรถไฟจาก Mascot กลับ Central ราว 8 นาที · มื้อเย็นเร็ว นอนเร็ว", "en": "Train from Mascot to Central, about 8 min · early dinner, early night" }
+    { "t": "15:00", "th": "นั่งรถไฟจาก Mascot กลับ Central ราว 8 นาที · มื้อเย็นเร็ว นอนเร็ว", "en": "Train from Mascot to Central, about 8 min · early dinner, early night", "note": { "th": "หอนาฬิกาของ Central สูง 85.6 ม. (เปิดปี 1921) ตัวสถานีปัจจุบันเปิด ส.ค. 1906", "en": "Central's clock tower is 85.6 m high (opened 1921); the present station opened in August 1906" } },
+    { "t": "17:30", "th": "มื้อเย็นที่ Ho Jiak Haymarket เดิน 5 นาที (92 Hay St เปิดทุกวัน 11:00–22:00) · นอนเร็ว", "en": "Dinner at Ho Jiak Haymarket, five minutes' walk (92 Hay St, open daily 11:00–22:00) · early night" }
    ],
    "tips": [
     { "th": "ช่วงนอน: ในรถเข้าเมือง 12:15–13:00 แล้วต่อในห้อง", "en": "Nap: In the van to the city 12:15–13:00, then in the room" },
@@ -1516,7 +1550,8 @@
     { "name": "Memorial Park", "note": { "th": "วันที่ 10 หรือ 11", "en": "Day 10 or 11" }, "pr": "ฟรี · บาร์บีคิวฟรี", "q": "Memorial Park, The Entrance foreshore, NSW" }
    ],
    "learn": [
-    { "name": { "th": "สวนสัตว์ Featherdale", "en": "Featherdale Wildlife Park" }, "country": { "th": "ผืนดินของชาว Dharug", "en": "Dharug Country" }, "facts": [{ "th": "โคอาล่านอนวันละถึง 20 ชั่วโมง เพราะใบยูคาลิปตัสให้พลังงานน้อยและย่อยช้า", "en": "Koalas sleep up to 20 hours a day — eucalyptus leaves are low in energy and slow to digest." }, { "th": "วอมแบตเป็นสัตว์ชนิดเดียวที่รู้จักว่าอึเป็นก้อนสี่เหลี่ยมลูกเต๋า", "en": "Wombats are the only animals known to make cube-shaped poo." }, { "th": "จิงโจ้ใช้หางหนาๆ เหมือนขาที่ห้าเวลาเดินช้าๆ", "en": "A kangaroo uses its thick tail like a fifth leg when moving slowly." }], "kid": { "th": "วอมแบตอึเป็นสี่เหลี่ยม ส่วนโคอาล่านอนเกือบทั้งวัน เหมือนมีก้าหลังกินข้าวเลย!", "en": "Wombats do square poo, and koalas sleep almost all day — just like Mika after lunch!" }}
+    { "name": { "th": "สวนสัตว์ Featherdale", "en": "Featherdale Wildlife Park" }, "country": { "th": "ผืนดินของชาว Dharug", "en": "Dharug Country" }, "facts": [{ "th": "โคอาล่านอนวันละถึง 20 ชั่วโมง เพราะใบยูคาลิปตัสให้พลังงานน้อยและย่อยช้า", "en": "Koalas sleep up to 20 hours a day — eucalyptus leaves are low in energy and slow to digest." }, { "th": "วอมแบตเป็นสัตว์ชนิดเดียวที่รู้จักว่าอึเป็นก้อนสี่เหลี่ยมลูกเต๋า", "en": "Wombats are the only animals known to make cube-shaped poo." }, { "th": "จิงโจ้ใช้หางหนาๆ เหมือนขาที่ห้าเวลาเดินช้าๆ", "en": "A kangaroo uses its thick tail like a fifth leg when moving slowly." }], "kid": { "th": "วอมแบตอึเป็นสี่เหลี่ยม ส่วนโคอาล่านอนเกือบทั้งวัน เหมือนมีก้าหลังกินข้าวเลย!", "en": "Wombats do square poo, and koalas sleep almost all day — just like Mika after lunch!" } },
+    { "name": { "en": "Central Station", "th": "สถานี Central" }, "country": { "en": "Sydney (Haymarket)", "th": "Sydney (Haymarket)" }, "facts": [{ "en": "Central officially opened in August 1906; its clock tower, added in 1921, is 85.6 metres tall — about as high as a 25-storey building.", "th": "สถานี Central เปิดอย่างเป็นทางการเมื่อเดือนสิงหาคม 1906 หอนาฬิกาที่สร้างเพิ่มในปี 1921 สูง 85.6 เมตร พอ ๆ กับตึก 25 ชั้น" }, { "en": "More than 250,000 people use the station every day.", "th": "มีคนใช้สถานีนี้มากกว่า 250,000 คนทุกวัน" }], "kid": { "en": "Look up! Can you find the clock on the tall tower?", "th": "มองขึ้นไปสิ! หนูหานาฬิกาบนหอสูงเจอไหมจ๊ะ?" } }
    ],
    "quiz": [
     { "q": { "th": "สัตว์อะไรนอนเกือบทั้งวัน?", "en": "Which animal sleeps almost all day?" }, "a": { "th": "โคอาล่า นอนถึง 20 ชั่วโมง!", "en": "The koala — up to 20 hours!" }},
@@ -1542,7 +1577,8 @@
    "wx": {
     "en": "Sydney about 14–23°C · school holidays start today · sunset 17:36",
     "th": "ซิดนีย์ราว 14–23°C · ปิดเทอมเริ่มวันนี้ · พระอาทิตย์ตก 17:36"
-   }
+   },
+   "tale": { "th": "วันนี้เราจะบอกลารถตู้กัน จุดแรกคือ Featherdale Wildlife Park ที่นี่โคอาล่านอนได้ถึงวันละ 20 ชั่วโมง เพราะใบยูคาลิปตัสที่มันกินให้พลังงานน้อยมาก วอมแบตทำสิ่งที่ยังไม่รู้ว่ามีสัตว์ตัวไหนทำได้อีก คืออึเป็นก้อนสี่เหลี่ยมลูกเต๋า! ส่วนจิงโจ้ใช้หางหนา ๆ ของมันเหมือนเป็นขาที่ห้าเวลาเดินช้า ๆ สวนสัตว์นี้เริ่มต้นเมื่อปี 1972 บนที่ดินที่เคยเป็นฟาร์มไก่ จากนั้นเราขับรถเข้าเมือง คืนรถ แล้วนั่งรถไฟไป Central สถานีใหญ่ที่เปิดอย่างเป็นทางการเมื่อเดือนสิงหาคม 1906 หอนาฬิกาที่สร้างเพิ่มในปี 1921 สูง 85.6 เมตร พอ ๆ กับตึก 25 ชั้น และทุกวันนี้ยังมีคนใช้สถานีนี้มากกว่า 250,000 คนต่อวัน คืนนี้เรานอนที่ Haymarket ติดกับ Chinatown ที่หนูอาจได้ยินคนพูดภาษาไทยบนถนนด้วย ต่อจากนี้ไม่ต้องขับรถแล้ว วันต่อ ๆ ไปเราจะเดินทางด้วยเท้า รถไฟ รถรางไฟฟ้า และเรือเฟอร์รี่", "en": "Today we say goodbye to the van. First, Featherdale Wildlife Park, where koalas sleep up to 20 hours a day because the eucalyptus leaves they eat give them very little energy. Wombats do something no other animal is known to do: they make cube-shaped poo! And kangaroos use their thick tail like a fifth leg when they walk slowly. The park began in 1972 on land that used to be a chicken farm. Then we drive into the city and return the car, and take the train to Central, the big station that officially opened in August 1906. Its clock tower, added in 1921, is 85.6 metres tall — about as high as a 25-storey building — and the station is still used by more than 250,000 people a day. Tonight we sleep in Haymarket, right next to Chinatown, where you may even hear Thai in the street. No more driving from now on: for the next days we travel by foot, train, light rail and ferry." }
   },
   {
    "index": 11,
@@ -1617,16 +1653,19 @@
    "pick": { "th": "Pyrmont Bay Park ตอนพระอาทิตย์ตก — สนามหญ้าริมอ่าวที่คนแถวนั้นใช้ เดินจาก SEA LIFE ไม่ไกล ก่อนนั่ง Light Rail กลับ", "en": "Pyrmont Bay Park at sunset — the harbour lawn locals use, a short walk from SEA LIFE before the Light Rail home." },
    "planB": { "th": "ถ้าเหนื่อย ตัดอันนี้ก่อน: เล่นน้ำที่ Darling Quarter", "en": "If tired, cut first: Darling Quarter water play" },
    "plan": [
-    { "t": "10:00", "th": "L1 Light Rail จาก Central ไป Sydney Fish Market แห่งใหม่ที่ Blackwattle Bay", "en": "L1 Light Rail from Central to the new Sydney Fish Market at Blackwattle Bay", "note": { "th": "ลงป้าย Wentworth Park (ป้ายที่เปลี่ยนชื่อใหม่) เดิน 400 ม. มีทางขึ้นเนินสั้นๆ · ตลาดเปิด 7:00–22:00 เข้าฟรี", "en": "Get off at Wentworth Park (the renamed stop), then 400 m with a short uphill · market open 7:00–22:00, free entry" }},
-    { "t": "10:30", "th": "เดินดูร้าน · จองโต๊ะก่อน 11:30", "en": "Browse the retailers · claim a table before 11:30" },
-    { "t": "11:30", "th": "มื้อซีฟู้ดใหญ่ของทริป — จานรวมที่ตลาด หรือล็อบสเตอร์กับกุ้งย่างบนเตาฟรีที่ Pirrama Park เดิน 10 นาที", "en": "The big seafood lunch of the trip — platters at the market, or lobster and prawns on the free barbecues at Pirrama Park, 10 min walk", "note": { "th": "Pirrama Park: เตาบาร์บีคิว สนามเด็กเล่นมีที่เล่นน้ำ ห้องน้ำ", "en": "Pirrama Park: barbecues, a playground with water play, toilets" }},
+    { "t": "09:00", "th": "อาหารเช้าที่โรงแรม · ชุดว่ายน้ำ ผ้าเช็ดตัว และชุดสำรองสำหรับเล่นน้ำ", "en": "Breakfast at the hotel · swim things, a towel and spare clothes for the water play" },
+    { "t": "10:00", "th": "L1 Light Rail จาก Central ไป Sydney Fish Market แห่งใหม่ที่ Blackwattle Bay", "en": "L1 Light Rail from Central to the new Sydney Fish Market at Blackwattle Bay", "note": { "th": "ลงป้าย Wentworth Park (ป้ายที่เปลี่ยนชื่อใหม่) เดิน 400 ม. มีทางขึ้นเนินสั้นๆ · ตลาดเปิด 7:00–22:00 เข้าฟรี", "en": "Get off at Wentworth Park (the renamed stop), then 400 m with a short uphill · market open 7:00–22:00, free entry" } },
+    { "t": "10:30", "th": "เดินดูร้าน · จองโต๊ะก่อน 11:30", "en": "Browse the retailers · claim a table before 11:30", "note": { "th": "ดูหลังคาลอนคลื่นกว้างราว 200 ม. มีแผงโซลาร์มากกว่า 400 แผง · ร้านค้ากว่า 40 ร้าน รองรับคนกว่า 6 ล้านคนต่อปี", "en": "Look for the wave-like roof, about 200 m across with more than 400 solar-panel cassettes · more than 40 retailers, built for over six million visitors a year" } },
+    { "t": "11:30", "th": "มื้อซีฟู้ดใหญ่ของทริป — จานรวมที่ตลาด หรือล็อบสเตอร์กับกุ้งย่างบนเตาฟรีที่ Pirrama Park เดิน 10 นาที", "en": "The big seafood lunch of the trip — platters at the market, or lobster and prawns on the free barbecues at Pirrama Park, 10 min walk", "note": { "th": "Pirrama Park: เตาบาร์บีคิว สนามเด็กเล่นมีที่เล่นน้ำ ห้องน้ำ", "en": "Pirrama Park: barbecues, a playground with water play, toilets" } },
     { "t": "13:00", "th": "นั่ง Light Rail กลับโรงแรม — นอนกลางวัน", "en": "Light Rail back to the hotel — nap" },
-    { "t": "15:00", "th": "SEA LIFE Sydney Aquarium — ตั๋วระบุเวลา อยู่ในร่มทั้งหมด", "en": "SEA LIFE Sydney Aquarium — timed ticket, fully indoors", "note": { "th": "1.5–2 ชม. · ช่วงปิดเทอมเปิด 9:00–17:00 เข้าได้ถึง 16:00 · ผู้ใหญ่ออนไลน์เริ่ม $39 มีมี่จ่ายราคาเด็ก มีก้า (ต่ำกว่า 2 ขวบ) ฟรี · เข็นรถเข็นได้ทั้งหมด มีที่เปลี่ยนผ้าอ้อม", "en": "1.5–2 h · school-holiday hours 9:00–17:00, last entry 16:00 · adult from $39 online, Mimi pays the child price, Mika (under 2) free · pram-friendly, baby change" }},
-    { "t": "16:30", "th": "สนามเด็กเล่น Darling Quarter — เล่นน้ำเฉพาะถ้าอากาศอุ่น", "en": "Darling Quarter playground — water play only if it is warm", "note": { "th": "ฟรี เปิด 24 ชม. · ห้องน้ำมีที่เปลี่ยนผ้าอ้อมหลังซุ้มขายของ · โซนน้ำไม่มีร่มและไม่มีรั้ว", "en": "Free, open 24 h · toilet with baby change behind the kiosk · the water area has no shade and no fence" }},
-    { "t": "17:30", "th": "มื้อเย็นที่ Darling Harbour", "en": "Dinner at Darling Harbour" }
+    { "t": "15:00", "th": "SEA LIFE Sydney Aquarium — ตั๋วระบุเวลา อยู่ในร่มทั้งหมด", "en": "SEA LIFE Sydney Aquarium — timed ticket, fully indoors", "note": { "th": "1.5–2 ชม. · ช่วงปิดเทอมเปิด 9:00–17:00 เข้าได้ถึง 16:00 · ผู้ใหญ่ออนไลน์เริ่ม $39 มีมี่จ่ายราคาเด็ก มีก้า (ต่ำกว่า 2 ขวบ) ฟรี · เข็นรถเข็นได้ทั้งหมด มีที่เปลี่ยนผ้าอ้อม · มองหาพะยูน Pig ในอุโมงค์ Dugong Island โซน Great Barrier Reef (เปิด ต.ค. 1998) และ Shark Valley ที่ฉลามบางตัวยาวกว่า 3 ม.", "en": "1.5–2 h · school-holiday hours 9:00–17:00, last entry 16:00 · adult from $39 online, Mimi pays the child price, Mika (under 2) free · pram-friendly, baby change · Look for Pig the dugong in Dugong Island's viewing tunnel, the Great Barrier Reef display (opened October 1998) and Shark Valley, where some sharks are over 3 m long" } },
+    { "t": "16:30", "th": "สนามเด็กเล่น Darling Quarter — เล่นน้ำเฉพาะถ้าอากาศอุ่น", "en": "Darling Quarter playground — water play only if it is warm", "note": { "th": "ฟรี เปิด 24 ชม. · ห้องน้ำมีที่เปลี่ยนผ้าอ้อมหลังซุ้มขายของ · โซนน้ำไม่มีร่มและไม่มีรั้ว", "en": "Free, open 24 h · toilet with baby change behind the kiosk · the water area has no shade and no fence" } },
+    { "t": "17:30", "th": "มื้อเย็นที่ Darling Harbour", "en": "Dinner at Darling Harbour", "note": { "th": "สวนจีน Chinese Garden of Friendship ข้างๆ เป็นของขวัญจากมณฑลกวางตุ้งในวาระครบ 200 ปีปี 1988", "en": "The Chinese Garden of Friendship next door was Guangdong's gift for the 1988 Bicentenary" } },
+    { "t": "19:00", "th": "อาบน้ำ เข้านอนเร็ว", "en": "Baths and an early bed" }
    ],
    "tips": [
-    { "th": "ช่วงนอน: ที่โรงแรม 13:00–14:45 (Light Rail 15 นาที)", "en": "Nap: At the hotel 13:00–14:45 (Light Rail 15 min)" }
+    { "th": "ช่วงนอน: ที่โรงแรม 13:00–14:45 (Light Rail 15 นาที)", "en": "Nap: At the hotel 13:00–14:45 (Light Rail 15 min)" },
+    { "kind": "tip", "th": "ล็อบสเตอร์จาก Fish Market: ให้ร้านผ่าครึ่งและล้างให้ แล้ววางด้านเนื้อลงบนเตา 6 นาทีกับเนยกระเทียม — 1 กิโลพอสำหรับผู้ใหญ่ 2 คน", "en": "Fish Market lobster: ask the stall to split and clean it, then six minutes cut-side down on the hotplate with garlic butter — one kilo feeds two adults." }
    ],
    "stay": { "name": "YHA Sydney Central", "addr": "11 Rawson Place, Haymarket NSW 2000", "q": "YHA Sydney Central, 11 Rawson Place, Haymarket NSW 2000" },
    "route": "https://www.google.com/maps/dir/?api=1&origin=YHA+Sydney+Central,+11+Rawson+Place,+Haymarket+NSW&destination=Darling+Quarter+Playground,+Sydney+NSW&waypoints=Sydney+Fish+Market,+Blackwattle+Bay+NSW|SEA+LIFE+Sydney+Aquarium",
@@ -1648,8 +1687,9 @@
     { "name": "Pirrama Park", "note": { "th": "มื้อเที่ยงวันที่ 12", "en": "Day 12 lunch" }, "pr": "ฟรี · บาร์บีคิวฟรี", "q": "Pirrama Park, Pyrmont, 10 min walk from the Fish Market, NSW" }
    ],
    "learn": [
-    { "name": { "th": "ตลาดปลาซิดนีย์", "en": "Sydney Fish Market" }, "country": { "th": "ผืนดินของชาว Gadigal", "en": "Gadigal Country" }, "facts": [{ "th": "อาคารตลาดใหม่ที่ Blackwattle Bay เปิดเดือนมกราคม 2026 เป็นตลาดปลาที่ใหญ่ที่สุดในซีกโลกใต้", "en": "The new market building at Blackwattle Bay opened in January 2026; it is the largest fish market in the Southern Hemisphere." }, { "th": "หลังคาไม้ลอนคลื่นขนาดใหญ่มีแผงลายเหมือนเกล็ดปลา", "en": "Its huge wavy timber roof has panels patterned to look like fish scales." }], "kid": { "th": "ปลาเยอะมาก! หาปู ล็อบสเตอร์ และปลาหมึกยักษ์ให้เจอ", "en": "So many fish! Can you find a crab, a lobster and an octopus?" }},
-    { "name": { "th": "Darling Harbour", "en": "Darling Harbour" }, "country": { "th": "ผืนดินของชาว Gadigal — ชื่อในภาษาท้องถิ่นคือ Tumbalong", "en": "Gadigal Country — the Gadigal name is Tumbalong" }, "facts": [{ "th": "ตั้งชื่อตามผู้ว่าการ Ralph Darling เคยเป็นลานสินค้าและท่าเรือขนส่งร้อยปี ก่อนกลายเป็นย่านพักผ่อนในปี 1988", "en": "Named after Governor Ralph Darling; for a century it was a busy goods yard and wharves before becoming a leisure precinct in 1988." }, { "th": "สวนจีน Chinese Garden of Friendship ข้างๆ ออกแบบโดยเมืองพี่เมืองน้องกว่างโจวเพื่อฉลอง 200 ปีออสเตรเลียในปี 1988 ประตูและงานศิลป์เป็นของขวัญจากมณฑลกวางตุ้ง", "en": "The Chinese Garden of Friendship next door was designed by Sydney's sister city Guangzhou for the 1988 Bicentenary; its gate and artworks were gifts from Guangdong." }], "kid": { "th": "สนามเด็กเล่นใหญ่ตรงนี้เคยเป็นที่จอดรถไฟและเรือ!", "en": "The big playground here used to be a place for trains and ships!" }}
+    { "name": { "th": "ตลาดปลาซิดนีย์", "en": "Sydney Fish Market" }, "country": { "th": "ผืนดินของชาว Gadigal", "en": "Gadigal Country" }, "facts": [{ "th": "อาคารตลาดใหม่ที่ Blackwattle Bay เปิดเดือนมกราคม 2026 เป็นตลาดปลาที่ใหญ่ที่สุดในซีกโลกใต้", "en": "The new market building at Blackwattle Bay opened in January 2026; it is the largest fish market in the Southern Hemisphere." }, { "th": "หลังคาไม้ลอนคลื่นขนาดใหญ่มีแผงลายเหมือนเกล็ดปลา", "en": "Its huge wavy timber roof has panels patterned to look like fish scales." }], "kid": { "th": "ปลาเยอะมาก! หาปู ล็อบสเตอร์ และปลาหมึกยักษ์ให้เจอ", "en": "So many fish! Can you find a crab, a lobster and an octopus?" } },
+    { "name": { "th": "Darling Harbour", "en": "Darling Harbour" }, "country": { "th": "ผืนดินของชาว Gadigal — ชื่อในภาษาท้องถิ่นคือ Tumbalong", "en": "Gadigal Country — the Gadigal name is Tumbalong" }, "facts": [{ "th": "ตั้งชื่อตามผู้ว่าการ Ralph Darling เคยเป็นลานสินค้าและท่าเรือขนส่งร้อยปี ก่อนกลายเป็นย่านพักผ่อนในปี 1988", "en": "Named after Governor Ralph Darling; for a century it was a busy goods yard and wharves before becoming a leisure precinct in 1988." }, { "th": "สวนจีน Chinese Garden of Friendship ข้างๆ ออกแบบโดยเมืองพี่เมืองน้องกว่างโจวเพื่อฉลอง 200 ปีออสเตรเลียในปี 1988 ประตูและงานศิลป์เป็นของขวัญจากมณฑลกวางตุ้ง", "en": "The Chinese Garden of Friendship next door was designed by Sydney's sister city Guangzhou for the 1988 Bicentenary; its gate and artworks were gifts from Guangdong." }], "kid": { "th": "สนามเด็กเล่นใหญ่ตรงนี้เคยเป็นที่จอดรถไฟและเรือ!", "en": "The big playground here used to be a place for trains and ships!" } },
+    { "name": { "en": "SEA LIFE Sydney Aquarium", "th": "SEA LIFE Sydney Aquarium" }, "country": { "en": "Darling Harbour", "th": "Darling Harbour" }, "facts": [{ "en": "It opened in 1988 and has about 13,000 animals of some 700 species.", "th": "เปิดเมื่อปี 1988 มีสัตว์ประมาณ 13,000 ตัว จากราว 700 ชนิด" }, { "en": "Its Great Barrier Reef display, opened in 1998, is described as the largest in the world — and one of its stars is Pig the dugong.", "th": "ส่วนจัดแสดง Great Barrier Reef ที่เปิดในปี 1998 ได้ชื่อว่าใหญ่ที่สุดในโลก และหนึ่งในดาวเด่นคือ Pig พะยูน" }], "kid": { "en": "Can you find Pig the dugong? What is Pig eating?", "th": "หนูหา Pig พะยูนเจอไหม? Pig กำลังกินอะไรอยู่จ๊ะ?" } }
    ],
    "quiz": [
     { "q": { "th": "หลังคาตลาดปลาลายเหมือนอะไร?", "en": "What is the roof of the Fish Market patterned like?" }, "a": { "th": "เกล็ดปลา", "en": "Fish scales." }},
@@ -1671,7 +1711,8 @@
    "wx": {
     "en": "Sydney about 14–23°C · sunset 17:35",
     "th": "ซิดนีย์ราว 14–23°C · พระอาทิตย์ตก 17:35"
-   }
+   },
+   "tale": { "th": "วันนี้เป็นวันของทะเลทั้งวัน ตลาดปลา Sydney Fish Market แห่งใหม่ที่ Blackwattle Bay มีหลังคารูปคลื่นกว้างประมาณ 200 เมตร มีแผงโซลาร์เซลล์มากกว่า 400 แผง และสร้างไว้รองรับผู้มาเยือนปีละ 6 ล้านคน ลองหาปู กุ้งล็อบสเตอร์ กับปลาหมึกยักษ์ แล้วเลือกอาหารกลางวันกัน ตอนบ่ายไปที่ SEA LIFE Sydney Aquarium เปิดเมื่อปี 1988 มีสัตว์ประมาณ 13,000 ตัว จากราว 700 ชนิด ส่วนจัดแสดง Great Barrier Reef ที่เปิดในปี 1998 ได้ชื่อว่าใหญ่ที่สุดในโลก และหนึ่งในดาวเด่นคือ Pig พะยูนตัวหนึ่ง บางทีคนเรียกพะยูนว่าวัวทะเล เพราะมันชอบเคี้ยวหญ้าทะเล ใน Shark Valley ฉลามว่ายผ่านไปมา บางตัวยาวกว่า 3 เมตร หลังจากนั้นเดินเล่นรอบ ๆ Darling Harbour เกือบร้อยปีที่ที่นี่เคยเป็นลานรถไฟขนสินค้าและท่าเรือ จนในปี 1988 ก็กลายเป็นที่เที่ยวเล่น สวน Chinese Garden of Friendship ข้าง ๆ เป็นของขวัญในงานฉลองครบรอบ 200 ปีเมื่อปี 1988 ออกแบบและสร้างด้วยวัสดุจากมณฑล Guangdong", "en": "Today is all about the sea. The new Sydney Fish Market at Blackwattle Bay has a wave-shaped roof about 200 metres wide, with more than 400 solar panels on it, and it was built for six million visitors a year. Find the crab, the lobster and the octopus, then choose lunch. In the afternoon, SEA LIFE Sydney Aquarium: it opened in 1988 and has about 13,000 animals of some 700 species. Its Great Barrier Reef display, opened in 1998, is described as the largest in the world, and one of its stars is Pig, a dugong — people sometimes call dugongs sea cows because they munch seagrass. Sharks glide past in Shark Valley, some longer than three metres. Afterwards, wander around Darling Harbour. For about a century it was a yard of goods trains and wharves; in 1988 it became a place to play. The Chinese Garden of Friendship next door was a gift for the 1988 Bicentenary, designed and built with materials from Guangdong province." }
   },
   {
    "index": 12,
@@ -1751,13 +1792,15 @@
    "moving": { "th": "ไม่ขับรถ", "en": "No driving" },
    "planB": { "th": "ถ้าเหนื่อย ตัดอันนี้ก่อน: เครื่องเล่น Luna Park — ดูจากทางเดินริมน้ำ · วันฝนตก: Australian Museum (ฟรี ในร่ม)", "en": "If tired, cut first: Luna Park rides — watch from the boardwalk · Wet-weather swap: the Australian Museum (free, indoor)." },
    "plan": [
-    { "t": "09:30", "th": "ริมน้ำ Circular Quay · Opera House และ Harbour Bridge ในเฟรมเดียว", "en": "Circular Quay foreshore · Opera House and Harbour Bridge in one frame" },
-    { "t": "11:00", "th": "Royal Botanic Garden — เรียบ ร่ม มีสนามหญ้าให้เด็ก", "en": "Royal Botanic Garden — flat, shady, lawns for the kids", "note": { "th": "ฟรี 7:00–18:00 · ห้องน้ำที่ Visitor Centre, Mare and Foal Lawn และ The Calyx · ทางส่วนใหญ่เข็นรถเข็นได้ · มันฝรั่งทอดกับไอศกรีมที่ Farm Cove Eatery", "en": "Free, 7:00–18:00 · toilets at the Visitor Centre, Mare and Foal Lawn and The Calyx · most paths pram-friendly · chips and ice cream at Farm Cove Eatery" }},
-    { "t": "12:15", "th": "ปิกนิกกลางวันริมกำแพงทะเล Farm Cove", "en": "Picnic lunch by the Farm Cove seawall" },
+    { "t": "08:45", "th": "อาหารเช้า · ครีมกันแดด หมวก น้ำ · เตรียมบัตร contactless สำหรับรถไฟและเรือ", "en": "Breakfast · sunscreen, hats, water · contactless cards ready for the train and ferry" },
+    { "t": "09:30", "th": "ริมน้ำ Circular Quay · Opera House และ Harbour Bridge ในเฟรมเดียว", "en": "Circular Quay foreshore · Opera House and Harbour Bridge in one frame", "note": { "th": "กองเรือ First Fleet ขึ้นฝั่งที่ Sydney Cove เมื่อ 26 ม.ค. 1788 · ท่าเรือสร้างปี 1837–1844 มีท่าเรือเฟอร์รี่ 5 ท่า · Opera House เปิด 20 ต.ค. 1973 จุดสูงสุดของ Harbour Bridge สูง 134 ม. จากระดับน้ำทะเล", "en": "The First Fleet landed in Sydney Cove on 26 January 1788 · the quay was built in 1837–1844 and has five ferry wharves · the Opera House opened on 20 October 1973; the Harbour Bridge's highest point is 134 m above sea level" } },
+    { "t": "11:00", "th": "Royal Botanic Garden — เรียบ ร่ม มีสนามหญ้าให้เด็ก", "en": "Royal Botanic Garden — flat, shady, lawns for the kids", "note": { "th": "ฟรี 7:00–18:00 · ห้องน้ำที่ Visitor Centre, Mare and Foal Lawn และ The Calyx · ทางส่วนใหญ่เข็นรถเข็นได้ · มันฝรั่งทอดกับไอศกรีมที่ Farm Cove Eatery", "en": "Free, 7:00–18:00 · toilets at the Visitor Centre, Mare and Foal Lawn and The Calyx · most paths pram-friendly · chips and ice cream at Farm Cove Eatery" } },
+    { "t": "12:15", "th": "ปิกนิกกลางวันริมกำแพงทะเล Farm Cove", "en": "Picnic lunch by the Farm Cove seawall", "note": { "th": "Farm Cove คือที่ผู้ว่าการ Phillip ตั้งฟาร์มแห่งแรกปี 1788 — ปลูกไม่สำเร็จ แต่ที่ดินนี้ถูกเพาะปลูกมาตลอด สวนก่อตั้งปี 1816", "en": "Farm Cove is where Governor Phillip set up the first farm in 1788 — it failed, but the land has been cultivated ever since; the garden was founded in 1816" } },
     { "t": "12:45", "th": "เข็นรถเข็นเดินช้าๆ รอบสวน — ช่วงนอนกลางวัน", "en": "Slow stroller loop through the garden — nap time" },
     { "t": "14:30", "th": "นั่งเรือไป Milsons Point ราว 10 นาที", "en": "Ferry to Milsons Point, about 10 min" },
-    { "t": "15:00", "th": "Luna Park — เข้าฟรี ซื้อตั๋วเครื่องเล่นตามความสูง", "en": "Luna Park — free to enter; single ride tickets by height", "note": { "th": "เข้าฟรี เครื่องเล่นต้องซื้อบัตร · แถบสีแดง (85–106 ซม.) ต้องมีผู้ใหญ่ที่ซื้อบัตรนั่งด้วย · มี Mini Pass สำหรับต่ำกว่า 110 ซม. · มีที่เปลี่ยนผ้าอ้อมและล็อกเกอร์ · วัดส่วนสูงมีมี่ก่อน", "en": "Free entry, rides need a pass · red band (85–106 cm) rides with a paying adult · Mini Pass for under 110 cm · baby change and lockers · measure Mimi first" }},
-    { "t": "17:00", "th": "นั่งเรือกลับก่อนมืด · มื้อเย็นที่ The Rocks", "en": "Ferry back before dark · dinner in The Rocks" }
+    { "t": "15:00", "th": "Luna Park — เข้าฟรี ซื้อตั๋วเครื่องเล่นตามความสูง", "en": "Luna Park — free to enter; single ride tickets by height", "note": { "th": "เข้าฟรี เครื่องเล่นต้องซื้อบัตร · แถบสีแดง (85–106 ซม.) ต้องมีผู้ใหญ่ที่ซื้อบัตรนั่งด้วย · มี Mini Pass สำหรับต่ำกว่า 110 ซม. · มีที่เปลี่ยนผ้าอ้อมและล็อกเกอร์ · วัดส่วนสูงมีมี่ก่อน · Luna Park เปิด 4 ต.ค. 1935 · มองหาหน้ายิ้มยักษ์ที่ทางเข้า (แบบแรกมาจาก Man in the Moon) และบ้านผี Coney Island ปี 1935", "en": "Free entry, rides need a pass · red band (85–106 cm) rides with a paying adult · Mini Pass for under 110 cm · baby change and lockers · measure Mimi first · Luna Park opened on 4 October 1935 · look for the smiling Face at the entrance (first modelled on the Man in the Moon) and Coney Island, the 1935 funhouse" } },
+    { "t": "17:00", "th": "นั่งเรือกลับก่อนมืด · มื้อเย็นที่ The Rocks", "en": "Ferry back before dark · dinner in The Rocks" },
+    { "t": "18:45", "th": "กลับโรงแรม · อาบน้ำ เข้านอน", "en": "Back to the hotel · baths, bed" }
    ],
    "tips": [
     { "th": "ช่วงนอน: นอนในรถเข็นที่ Botanic Garden 12:45–14:15", "en": "Nap: Stroller nap in the Botanic Garden 12:45–14:15" },
@@ -1802,7 +1845,8 @@
    "wx": {
     "en": "Sydney about 14–23°C · sunset 17:33 — ferry back before dark",
     "th": "ซิดนีย์ราว 14–23°C · พระอาทิตย์ตก 17:33 — นั่งเรือกลับก่อนมืด"
-   }
+   },
+   "tale": { "th": "วันนี้เราจะได้เจอภาพที่มีชื่อเสียงที่สุดสามภาพของ Sydney เราเริ่มที่ Circular Quay ที่กองเรือ First Fleet มาขึ้นฝั่งที่อ่าว Sydney Cove เมื่อวันที่ 26 มกราคม 1788 ท่าเรือนี้สร้างระหว่างปี 1837 ถึง 1844 ตอนแรกเรียกว่า Semi-Circular Quay เพราะรูปร่างเป็นครึ่งวงกลม หันหลังไปก็จะเจอ Opera House สมเด็จพระราชินี Elizabeth ที่ 2 ทรงเปิดเมื่อวันที่ 20 ตุลาคม 1973 ตอนแรกตั้งใจจะสร้างให้เสร็จใน 4 ปี ใช้เงิน 7 ล้านดอลลาร์ แต่สุดท้ายใช้เวลา 14 ปี และใช้เงิน 102 ล้าน กระเบื้องจากสวีเดนมากกว่า 1 ล้านแผ่นปูอยู่บนหลังคารูปใบเรือ อีกฝั่งหนึ่งคือ Harbour Bridge เปิดเมื่อปี 1932 มีชื่อเล่นว่า \"ไม้แขวนเสื้อ\" (Coathanger) ยึดไว้ด้วยหมุดย้ำที่ตอกด้วยมือประมาณ 6 ล้านตัว จากนั้นเราไปปิกนิกที่ Royal Botanic Garden ที่ก่อตั้งเมื่อปี 1816 เป็นสถาบันวิทยาศาสตร์ที่เก่าแก่ที่สุดในออสเตรเลีย งีบเสร็จแล้วเรานั่งเรือเฟอร์รี่ไป Luna Park ที่เปิดเมื่อปี 1935 เดินเข้าไปทางหน้ายักษ์ที่ยิ้มกว้าง ชื่อว่า Mr Moon แล้วโบกมือให้ Sydney Harbour จากอีกฝั่งหนึ่งกัน", "en": "Today we meet the three most famous pictures of Sydney. We begin at Circular Quay, where the First Fleet landed at Sydney Cove on 26 January 1788; the quay was built between 1837 and 1844 and was first called Semi-Circular Quay because of its shape. Turn around and there is the Opera House. Queen Elizabeth II opened it on 20 October 1973. It was meant to take four years and cost seven million dollars; it took fourteen years and a hundred and two million. More than a million tiles from Sweden cover its sails. On the other side, the Harbour Bridge, opened in 1932 and nicknamed the Coathanger, is held together by about six million hand-driven rivets. Then we picnic in the Royal Botanic Garden, founded in 1816, the oldest scientific institution in Australia. After a nap we ride the ferry to Luna Park, which opened in 1935. Walk in through the giant smiling face — it is called Mr Moon — and wave to Sydney Harbour from the other side." }
   },
   {
    "index": 13,
@@ -1868,12 +1912,14 @@
    "pick": { "th": "Balmoral คือหาดครอบครัวของฝั่ง North Shore: ศาลาอาบน้ำยุคเอ็ดเวิร์ด เวทีดนตรี ทางเดินเรียบ ซิดนีย์แบบผู้ดีเก่าในมุมที่ผ่อนคลายที่สุด", "en": "Balmoral is the North Shore's family beach: Edwardian bathing pavilion, bandstand, flat promenade. Old-money Sydney at its most relaxed." },
    "planB": { "th": "ถ้าเหนื่อย ตัดอันนี้ก่อน: Clifton Gardens / Balmoral (เป็นทางเลือกอยู่แล้ว)", "en": "If tired, cut first: Clifton Gardens / Balmoral (already optional)" },
    "plan": [
-    { "t": "09:00", "th": "Circular Quay ท่า 4 (ดูป้ายอีกครั้ง) · ใช้ Zoo Express ที่ซื้อไว้ (เรือ + ค่าเข้า)", "en": "Circular Quay Wharf 4 (check the sign) · pre-bought Zoo Express (ferry + entry)", "note": { "th": "เรือทุก 30 นาที · สวนสัตว์ 9:30–17:00 · ผู้ใหญ่ออนไลน์เริ่ม $51.30 · เด็กทั้งสองฟรี (ต่ำกว่า 4 ขวบ)", "en": "Ferry every 30 min · zoo 9:30–17:00 · adult from $51.30 online · both kids free (under 4)" }},
-    { "t": "09:30", "th": "นั่งเรือราว 12 นาที — วิวอ่าวซิดนีย์ที่ดีที่สุดของทริป", "en": "Ferry, about 12 min — the best harbour views of the trip" },
-    { "t": "10:00", "th": "รถ shuttle ขึ้นประตูบน แล้วเดินชมลงเนินอย่างเดียว", "en": "Shuttle bus to the top gate, then explore downhill only", "note": { "th": "รถ shuttle ฟรีช่วงปิดเทอมจากท่าเรือขึ้นประตูบน · ห้องพ่อแม่ดูในแผนที่ · มีรถเข็นให้เช่า · Sky Safari ปิดถึงปลายปี 2027", "en": "Free school-holiday shuttle from the wharf to the top entrance · parents' rooms on the map · pram hire on site · Sky Safari closed until late 2027" }},
-    { "t": "12:00", "th": "มื้อกลางวัน · โคอาล่า Australian Walkabout โชว์แมวน้ำ", "en": "Lunch · koalas, Australian Walkabout, seal show" },
+    { "t": "08:15", "th": "อาหารเช้า · ตั๋วในโทรศัพท์ · หมวกและน้ำสำหรับสวนสัตว์", "en": "Breakfast · tickets on the phone · hats and water for the zoo" },
+    { "t": "09:00", "th": "Circular Quay ท่า 4 (ดูป้ายอีกครั้ง) · ใช้ Zoo Express ที่ซื้อไว้ (เรือ + ค่าเข้า)", "en": "Circular Quay Wharf 4 (check the sign) · pre-bought Zoo Express (ferry + entry)", "note": { "th": "เรือทุก 30 นาที · สวนสัตว์ 9:30–17:00 · ผู้ใหญ่ออนไลน์เริ่ม $51.30 · เด็กทั้งสองฟรี (ต่ำกว่า 4 ขวบ)", "en": "Ferry every 30 min · zoo 9:30–17:00 · adult from $51.30 online · both kids free (under 4)" } },
+    { "t": "09:30", "th": "นั่งเรือราว 12 นาที — วิวอ่าวซิดนีย์ที่ดีที่สุดของทริป", "en": "Ferry, about 12 min — the best harbour views of the trip", "note": { "th": "Port Jackson คือหุบเขาแม่น้ำที่จมน้ำ ยาว 19 กม. ชายฝั่งยาว 317 กม. · ระหว่างทางมองหา Fort Denison และ Goat Island", "en": "Port Jackson is a drowned river valley, 19 km long with 317 km of shoreline · look for Fort Denison and Goat Island on the way" } },
+    { "t": "10:00", "th": "รถ shuttle ขึ้นประตูบน แล้วเดินชมลงเนินอย่างเดียว", "en": "Shuttle bus to the top gate, then explore downhill only", "note": { "th": "รถ shuttle ฟรีช่วงปิดเทอมจากท่าเรือขึ้นประตูบน · ห้องพ่อแม่ดูในแผนที่ · มีรถเข็นให้เช่า · Sky Safari ปิดถึงปลายปี 2027", "en": "Free school-holiday shuttle from the wharf to the top entrance · parents' rooms on the map · pram hire on site · Sky Safari closed until late 2027" } },
+    { "t": "12:00", "th": "มื้อกลางวัน · โคอาล่า Australian Walkabout โชว์แมวน้ำ", "en": "Lunch · koalas, Australian Walkabout, seal show", "note": { "th": "สวนสัตว์กว้าง 28 เฮกตาร์ มีสัตว์กว่า 5,000 ตัว ราว 350 ชนิด · เปิดที่นี่ 7 ต.ค. 1916", "en": "The zoo covers 28 ha with more than 5,000 animals of about 350 species · it opened here on 7 October 1916" } },
     { "t": "13:00", "th": "นั่งเรือกลับ Circular Quay ต่อรถไฟไป Central — นอนกลางวันที่โรงแรม", "en": "Ferry back to Circular Quay, train to Central — nap at the hotel" },
-    { "t": "15:30", "th": "ทางเลือก ถ้าทุกคนยังไหว: แท็กซี่ไป Clifton Gardens หรือ Balmoral ช่วงบ่ายแก่", "en": "Optional, only if everyone is fresh: taxi to Clifton Gardens or Balmoral for the late afternoon", "note": { "th": "Clifton Gardens: สระมีตาข่าย สนามเด็กเล่น เตาบาร์บีคิว · Balmoral: โซนว่ายน้ำมีตาข่ายและสนามเด็กเล่น · มีห้องน้ำทั้งสองที่ · รถบัส 238 วิ่ง Balmoral ถึงท่าเรือสวนสัตว์", "en": "Clifton Gardens: netted baths, playground, barbecues · Balmoral: netted swim area and playground · toilets at both · bus 238 links Balmoral and the zoo wharf" }}
+    { "t": "15:30", "th": "ทางเลือก ถ้าทุกคนยังไหว: แท็กซี่ไป Clifton Gardens หรือ Balmoral ช่วงบ่ายแก่", "en": "Optional, only if everyone is fresh: taxi to Clifton Gardens or Balmoral for the late afternoon", "note": { "th": "Clifton Gardens: สระมีตาข่าย สนามเด็กเล่น เตาบาร์บีคิว · Balmoral: โซนว่ายน้ำมีตาข่ายและสนามเด็กเล่น · มีห้องน้ำทั้งสองที่ · รถบัส 238 วิ่ง Balmoral ถึงท่าเรือสวนสัตว์ · Balmoral มีโซนว่ายน้ำล้อมตาข่าย (Balmoral Baths) และมีแหลม Rocky Point คั่นกับ Edwards Beach", "en": "Clifton Gardens: netted baths, playground, barbecues · Balmoral: netted swim area and playground · toilets at both · bus 238 links Balmoral and the zoo wharf · Balmoral has a netted swimming area (Balmoral Baths), and Rocky Point separates it from Edwards Beach" } },
+    { "t": "17:30", "th": "มื้อเย็นใน Haymarket · อาบน้ำ เข้านอน", "en": "Dinner in Haymarket · baths, bed" }
    ],
    "tips": [
     { "th": "ช่วงนอน: นั่งเรือกลับ 13:00 ถึงโรงแรมราว 13:45", "en": "Nap: Ferry back 13:00, at the hotel from about 13:45" },
@@ -1891,7 +1937,8 @@
     { "name": "Clifton Gardens Reserve", "note": { "th": "วันที่ 14 12:30", "en": "Day 14 12:30" }, "pr": "ฟรี · บาร์บีคิวฟรี", "q": "Clifton Gardens Reserve, Morella Rd, Mosman, NSW" }
    ],
    "learn": [
-    { "name": { "th": "สวนสัตว์ Taronga", "en": "Taronga Zoo" }, "country": { "th": "ผืนดินของชาว Cammeraygal", "en": "Cammeraygal Country" }, "facts": [{ "th": "เปิดที่ริมอ่าวนี้ปี 1916 ชื่อ 'Taronga' ว่ากันว่ามาจากคำภาษาอะบอริจินแปลว่า 'วิวทะเล'", "en": "Opened on this harbour-side site in 1916; 'Taronga' is said to come from an Aboriginal word meaning 'sea view'." }, { "th": "ตอนย้ายสวนสัตว์มาจาก Moore Park สัตว์หลายตัวมาทางเรือเฟอร์รี่ รวมถึงช้างด้วย", "en": "Many animals arrived by ferry when the zoo moved here from Moore Park — including an elephant." }], "kid": { "th": "เคยมีช้างนั่งเรือเฟอร์รี่มาสวนสัตว์นี้ เหมือนพวกเราเลย!", "en": "An elephant once came to this zoo on a ferry boat — like we did!" }}
+    { "name": { "th": "สวนสัตว์ Taronga", "en": "Taronga Zoo" }, "country": { "th": "ผืนดินของชาว Cammeraygal", "en": "Cammeraygal Country" }, "facts": [{ "th": "เปิดที่ริมอ่าวนี้ปี 1916 ชื่อ 'Taronga' ว่ากันว่ามาจากคำภาษาอะบอริจินแปลว่า 'วิวทะเล'", "en": "Opened on this harbour-side site in 1916; 'Taronga' is said to come from an Aboriginal word meaning 'sea view'." }, { "th": "ตอนย้ายสวนสัตว์มาจาก Moore Park สัตว์หลายตัวมาทางเรือเฟอร์รี่ รวมถึงช้างด้วย", "en": "Many animals arrived by ferry when the zoo moved here from Moore Park — including an elephant." }], "kid": { "th": "เคยมีช้างนั่งเรือเฟอร์รี่มาสวนสัตว์นี้ เหมือนพวกเราเลย!", "en": "An elephant once came to this zoo on a ferry boat — like we did!" } },
+    { "name": { "en": "Sydney Harbour (Port Jackson)", "th": "อ่าว Sydney Harbour (Port Jackson)" }, "country": { "en": "Sydney Harbour", "th": "Sydney Harbour" }, "facts": [{ "en": "It is a drowned river valley: long ago the sea rose and flooded an old river valley, leaving about 55 square kilometres of water with 317 kilometres of shoreline.", "th": "เป็นหุบเขาแม่น้ำที่จมอยู่ใต้ทะเล นานมาแล้วน้ำทะเลสูงขึ้นจนท่วมหุบเขาแม่น้ำเก่า เหลือเป็นผืนน้ำประมาณ 55 ตารางกิโลเมตร ชายฝั่งยาว 317 กิโลเมตร" }, { "en": "Captain Cook named it in 1770 after Sir George Jackson; islands such as Fort Denison, Goat Island and Cockatoo Island sit in the harbour.", "th": "กัปตัน Cook ตั้งชื่อเมื่อปี 1770 ตามชื่อ Sir George Jackson ในอ่าวมีเกาะต่าง ๆ เช่น Fort Denison, Goat Island และ Cockatoo Island" }], "kid": { "en": "How many islands can you count from the ferry?", "th": "จากบนเรือเฟอร์รี่ หนูนับเกาะได้กี่เกาะจ๊ะ?" } }
    ],
    "quiz": [
     { "q": { "th": "ช้างมาสวนสัตว์ Taronga ยังไง?", "en": "How did an elephant get to Taronga Zoo?" }, "a": { "th": "นั่งเรือเฟอร์รี่!", "en": "On a ferry boat!" }},
@@ -1912,7 +1959,8 @@
    "wx": {
     "en": "Sydney about 14–23°C · harbour water about 22°C · sunset 17:32",
     "th": "ซิดนีย์ราว 14–23°C · น้ำในอ่าวราว 22°C · พระอาทิตย์ตก 17:32"
-   }
+   },
+   "tale": { "th": "วันนี้เรานั่งเรือไปสวนสัตว์กัน เรือเฟอร์รี่จาก Circular Quay ใช้เวลาประมาณ 12 นาที ข้าม Sydney Harbour ที่นักวิทยาศาสตร์เรียกว่า Port Jackson อ่าวนี้เป็นหุบเขาแม่น้ำที่จมอยู่ใต้ทะเล นานมาแล้วน้ำทะเลสูงขึ้นจนท่วมหุบเขาแม่น้ำเก่า เหลือเป็นผืนน้ำประมาณ 55 ตารางกิโลเมตร มีชายฝั่งยาว 317 กิโลเมตร กัปตัน Cook ตั้งชื่อเมื่อปี 1770 ตามชื่อ Sir George Jackson แห่งกองทัพเรือ (Admiralty) ระหว่างที่ข้ามไป ลองนับเกาะดูนะ มี Fort Denison, Goat Island และ Cockatoo Island อยู่ด้วย สวนสัตว์ Taronga Zoo เปิดที่นี่เมื่อวันที่ 7 ตุลาคม 1916 ก่อนหน้านั้นสวนสัตว์ของ Sydney อยู่ที่ Moore Park มาตั้งแต่ปี 1884 คำว่า \"Taronga\" เป็นคำของชาวอะบอริจิน แปลว่า \"วิวที่สวยงาม\" ทุกวันนี้มีสัตว์มากกว่า 5,000 ตัว จากประมาณ 350 ชนิดอาศัยอยู่ที่นี่ กระเช้า Sky Safari ปิดอย่างน้อยจนถึงปี 2027 เราเลยนั่งรถรับส่งฟรีขึ้นไปประตูด้านบน แล้วเดินลงเขามา ตอนท้ายวันถ้ายังมีแรงเหลือ ก็มีที่ว่ายน้ำที่มีตาข่ายกั้นและลมสงบที่ Balmoral แล้วก็ไปกินข้าวเย็นกัน", "en": "Today we go to the zoo by boat. The ferry from Circular Quay takes about twelve minutes across Sydney Harbour, known to scientists as Port Jackson. It is a drowned river valley: long ago the sea rose and flooded an old river valley, leaving about 55 square kilometres of water with 317 kilometres of shoreline. Captain Cook named it in 1770 after Sir George Jackson of the Admiralty. As you cross, count the islands — Fort Denison, Goat Island and Cockatoo Island are among them. Taronga Zoo opened here on 7 October 1916; before that Sydney's zoo had been at Moore Park since 1884. 'Taronga' is an Aboriginal word that means 'beautiful view', and today more than 5,000 animals of about 350 species live here. The Sky Safari cable car is closed until at least 2027, so we take the free shuttle bus to the top gate and walk downhill. At the end of the day, if you still have energy, there is the sheltered netted swimming area at Balmoral — and dinner." }
   },
   {
    "index": 14,
@@ -1985,16 +2033,20 @@
    "pick": { "th": "ตึกแถววิกตอเรียนและย่าน Five Ways ของ Paddington คือย่านช้อปปิ้งแบบผู้ดีเก่าของซิดนีย์ — เป็นเนิน ใช้เป้อุ้มเด็กดีกว่ารถเข็น", "en": "Paddington's Victorian terraces and Five Ways are Sydney's old-money shopping village — hilly, so take the carrier rather than the stroller." },
    "planB": { "th": "ถ้าเหนื่อย ตัดอันนี้ก่อน: ช้อปปิ้งช่วงบ่าย", "en": "If tired, cut first: The shopping afternoon" },
    "plan": [
-    { "t": "09:30", "th": "เรือไป Manly ราว 25 นาที — นั่งด้านนอกท้ายเรือ", "en": "Manly ferry, about 25 min — sit outside at the stern" },
+    { "t": "08:45", "th": "อาหารเช้า · ชุดว่ายน้ำ หมวก ครีมกันแดด · เตรียมบัตร contactless สำหรับเรือ", "en": "Breakfast · swimmers, hats and sunscreen · contactless cards ready for the ferry" },
+    { "t": "09:30", "th": "เรือไป Manly ราว 25 นาที — นั่งด้านนอกท้ายเรือ", "en": "Manly ferry, about 25 min — sit outside at the stern", "note": { "th": "ปี 1788 ผู้ว่าการ Phillip ตั้งชื่อ Manly Cove ตาม \"ความมั่นใจและท่าทีองอาจ\" ของชาย Kay-ye-my ที่เขาพบที่นั่น", "en": "In 1788 Governor Phillip named Manly Cove for the 'confidence and manly behaviour' of the Kay-ye-my men he met there" } },
     { "t": "10:15", "th": "เดินถนน The Corso ไป Manly Beach · น้ำนิ่งที่ Shelly Beach สำหรับเด็กเล็ก", "en": "The Corso to Manly Beach · calm water at Shelly Beach for toddlers" },
-    { "t": "12:00", "th": "มื้อกลางวัน: เตาฟรีที่ Shelly Beach หรือ Manly Ocean Foods บนหาด", "en": "Lunch: free barbecues at Shelly Beach, or Manly Ocean Foods on the sand", "note": { "th": "Shelly Beach เดินอ้อมแหลมราว 1 กม. — มีทรายและขั้นบันไดถ้าเข็นรถเข็น · เตาไฟฟ้าฟรี 2 เตา · ห้องน้ำและฝักบัว · เขตอนุรักษ์ทะเล น้ำนิ่ง", "en": "Shelly Beach is about 1 km round the headland — sand and steps with the pram · two free electric barbecues · toilets and showers · sheltered marine reserve" }},
+    { "t": "11:00", "th": "เดินรอบอ่าว Cabbage Tree Bay ไป Shelly Beach — ดูได้แต่ไม่เก็บ: ในเขตอนุรักษ์ห้ามตกปลาและห้ามเก็บของ", "en": "Walk round Cabbage Tree Bay to Shelly Beach — look, don't collect: fishing and collecting are banned in the reserve" },
+    { "t": "12:00", "th": "มื้อกลางวัน: เตาฟรีที่ Shelly Beach หรือ Manly Ocean Foods บนหาด", "en": "Lunch: free barbecues at Shelly Beach, or Manly Ocean Foods on the sand", "note": { "th": "Shelly Beach เดินอ้อมแหลมราว 1 กม. — มีทรายและขั้นบันไดถ้าเข็นรถเข็น · เตาไฟฟ้าฟรี 2 เตา · ห้องน้ำและฝักบัว · เขตอนุรักษ์ทะเล น้ำนิ่ง · เขตอนุรักษ์ Cabbage Tree Bay (ราว 20 เฮกตาร์) มีปลา blue groper ปลาหมึกกระดองยักษ์ ฉลาม wobbegong และเต่าตนุที่อยู่ประจำ", "en": "Shelly Beach is about 1 km round the headland — sand and steps with the pram · two free electric barbecues · toilets and showers · sheltered marine reserve · Cabbage Tree Bay Aquatic Reserve (about 20 ha) shelters blue groper, giant cuttlefish, wobbegong sharks and a resident green turtle" } },
     { "t": "13:15", "th": "นั่งเรือกลับเข้าเมือง — เด็กหลับบนเรือ", "en": "Ferry back to the city — nap on board" },
     { "t": "14:15", "th": "นอนต่อที่โรงแรม", "en": "Nap at the hotel" },
-    { "t": "16:00", "th": "ทางเลือก ช้อปปิ้งรอบสุดท้าย: Queen Victoria Building (ในร่ม มีลิฟต์) — หรือถนน William Street ใน Paddington", "en": "Optional last shopping: Queen Victoria Building (indoor, lifts) — or Paddington's William Street" },
-    { "t": "17:30", "th": "จัดกระเป๋าคืนนี้ · มื้อเย็นอำลาใกล้โรงแรม", "en": "Pack tonight · farewell dinner near the hotel" }
+    { "t": "16:00", "th": "ทางเลือก ช้อปปิ้งรอบสุดท้าย: Queen Victoria Building (ในร่ม มีลิฟต์) — หรือถนน William Street ใน Paddington", "en": "Optional last shopping: Queen Victoria Building (indoor, lifts) — or Paddington's William Street", "note": { "th": "Paddington มีบ้านแถวราว 3,800 หลังสร้างช่วงปี 1860–1890 ระเบียงราวเหล็กหล่อ · ใจกลางคือค่ายทหาร Victoria Barracks (เริ่มสร้างปี 1841) · ตลาดวันเสาร์อยู่ที่ 395 Oxford St", "en": "About 3,800 terrace houses were built in Paddington between 1860 and 1890, with cast-iron balcony railings · Victoria Barracks (begun 1841) is at its heart · the Saturday markets are at 395 Oxford St" } },
+    { "t": "17:30", "th": "จัดกระเป๋าคืนนี้ · มื้อเย็นอำลาใกล้โรงแรม", "en": "Pack tonight · farewell dinner near the hotel" },
+    { "t": "19:30", "th": "วางกระเป๋าไว้ที่ประตู — เช็คเอาท์ก่อน 10:00 พรุ่งนี้ · นอนเร็ว", "en": "Bags by the door — check-out is by 10:00 tomorrow · early bed" }
    ],
    "tips": [
-    { "th": "ช่วงนอน: บนเรือขากลับ 13:15 แล้วต่อที่โรงแรม 14:15", "en": "Nap: On the ferry back 13:15, then the hotel from 14:15" }
+    { "th": "ช่วงนอน: บนเรือขากลับ 13:15 แล้วต่อที่โรงแรม 14:15", "en": "Nap: On the ferry back 13:15, then the hotel from 14:15" },
+    { "kind": "warn", "th": "เช็คเอาท์ก่อน 10:00 พรุ่งนี้: จัดกระเป๋าคืนนี้ เก็บพาสปอร์ต บอร์ดดิ้งพาส และบัตรรถไฟสนามบินไว้ช่องเดียวในกระเป๋าถือ", "en": "Check out by 10:00 tomorrow: pack tonight and keep passports, boarding passes and the airport-train cards in one pocket of the carry-on." }
    ],
    "stay": { "name": "YHA Sydney Central", "addr": "11 Rawson Place, Haymarket NSW 2000", "q": "YHA Sydney Central, 11 Rawson Place, Haymarket NSW 2000" },
    "route": "https://www.google.com/maps/dir/?api=1&origin=Circular+Quay,+Sydney+NSW&destination=Five+Ways,+Paddington+NSW&waypoints=Manly+Wharf,+Manly+NSW|Circular+Quay,+Sydney+NSW",
@@ -2025,8 +2077,9 @@
     { "name": "Victor Churchill", "note": { "th": "บ่ายวันที่ 15", "en": "Day 15 afternoon" }, "pr": "$$$ · สเต๊กดรายเอจ A$80–150 /กก.", "q": "Victor Churchill, 132 Queen St, Woollahra, NSW" }
    ],
    "learn": [
-    { "name": { "th": "Manly", "en": "Manly" }, "country": { "th": "ผืนดินของชาว Gayamaygal", "en": "Gayamaygal Country" }, "facts": [{ "th": "ผู้ว่าการ Arthur Phillip ตั้งชื่ออ่าวนี้ปี 1788 ตามท่าทางสง่างามองอาจของชายชาวอะบอริจินในท้องถิ่น", "en": "Governor Arthur Phillip named the cove in 1788 after the confident, 'manly' bearing of the local Aboriginal men." }, { "th": "อ่าว Cabbage Tree ที่ Shelly Beach เป็นเขตอนุรักษ์ห้ามจับสัตว์น้ำ ลองมองหาปลาบลูโกรเปอร์ตัวใหญ่ที่ไม่กลัวคน", "en": "Cabbage Tree Bay at Shelly Beach is a no-take aquatic reserve — look for the big, friendly blue gropers." }], "kid": { "th": "ที่ Shelly Beach มีปลาสีฟ้าตัวโตว่ายมาใกล้ฝั่งเลย!", "en": "At Shelly Beach friendly blue fish swim right up to the shore!" }},
-    { "name": { "th": "Paddington", "en": "Paddington" }, "country": { "th": "ผืนดินของชาว Gadigal", "en": "Gadigal Country" }, "facts": [{ "th": "บ้านแถวสไตล์วิกตอเรียนระเบียงเหล็กดัดลายลูกไม้ส่วนใหญ่สร้างปลายทศวรรษ 1800 ให้คนงานและช่างฝีมืออยู่", "en": "Its rows of Victorian terrace houses with iron lace balconies were built mostly in the late 1800s for workers and tradespeople." }, { "th": "ตลาด Paddington Markets จัดในบริเวณโบสถ์ Uniting Church บนถนน Oxford ทุกวันเสาร์ตั้งแต่ปี 1973", "en": "Paddington Markets have run in the Uniting Church grounds on Oxford Street every Saturday since 1973." }], "kid": { "th": "ดูระเบียงเหล็กลายลูกไม้สิ เหมือนบ้านตุ๊กตาเลย!", "en": "Look at the lacy iron balconies — like doll houses!" }}
+    { "name": { "th": "Manly", "en": "Manly" }, "country": { "th": "ผืนดินของชาว Gayamaygal", "en": "Gayamaygal Country" }, "facts": [{ "th": "ผู้ว่าการ Arthur Phillip ตั้งชื่ออ่าวนี้ปี 1788 ตามท่าทางสง่างามองอาจของชายชาวอะบอริจินในท้องถิ่น", "en": "Governor Arthur Phillip named the cove in 1788 after the confident, 'manly' bearing of the local Aboriginal men." }, { "th": "อ่าว Cabbage Tree ที่ Shelly Beach เป็นเขตอนุรักษ์ห้ามจับสัตว์น้ำ ลองมองหาปลาบลูโกรเปอร์ตัวใหญ่ที่ไม่กลัวคน", "en": "Cabbage Tree Bay at Shelly Beach is a no-take aquatic reserve — look for the big, friendly blue gropers." }], "kid": { "th": "ที่ Shelly Beach มีปลาสีฟ้าตัวโตว่ายมาใกล้ฝั่งเลย!", "en": "At Shelly Beach friendly blue fish swim right up to the shore!" } },
+    { "name": { "th": "Paddington", "en": "Paddington" }, "country": { "th": "ผืนดินของชาว Gadigal", "en": "Gadigal Country" }, "facts": [{ "th": "บ้านแถวสไตล์วิกตอเรียนระเบียงเหล็กดัดลายลูกไม้ส่วนใหญ่สร้างปลายทศวรรษ 1800 ให้คนงานและช่างฝีมืออยู่", "en": "Its rows of Victorian terrace houses with iron lace balconies were built mostly in the late 1800s for workers and tradespeople." }, { "th": "ตลาด Paddington Markets จัดในบริเวณโบสถ์ Uniting Church บนถนน Oxford ทุกวันเสาร์ตั้งแต่ปี 1973", "en": "Paddington Markets have run in the Uniting Church grounds on Oxford Street every Saturday since 1973." }], "kid": { "th": "ดูระเบียงเหล็กลายลูกไม้สิ เหมือนบ้านตุ๊กตาเลย!", "en": "Look at the lacy iron balconies — like doll houses!" } },
+    { "name": { "en": "Swimming at Manly Beach", "th": "การว่ายน้ำที่หาด Manly" }, "country": { "en": "Manly", "th": "Manly" }, "facts": [{ "en": "In 1902 William Gocher swam in the middle of the day to challenge the ban on daytime sea-bathing; by 1903 all-day swimming was allowed — in a costume from neck to knee!", "th": "ปี 1902 William Gocher ว่ายน้ำตอนกลางวันเพื่อท้าทายกฎห้ามเล่นน้ำทะเลตอนกลางวัน พอปี 1903 ก็ว่ายได้ทั้งวัน แต่ต้องใส่ชุดคลุมตั้งแต่คอถึงเข่า!" }, { "en": "A surf club formed here in 1904, and Manly Life Saving Club is thought to be one of the first in the world.", "th": "ปี 1904 มีการตั้งชมรมโต้คลื่นขึ้นที่นี่ และเชื่อกันว่า Manly Life Saving Club เป็นหนึ่งในชมรมแรก ๆ ของโลก" }], "kid": { "en": "Long ago swimmers had to cover up from the neck to the… where? Point to it!", "th": "สมัยก่อนคนว่ายน้ำต้องใส่ชุดคลุมตั้งแต่คอไปจนถึง… ตรงไหนนะ? ชี้ให้ดูหน่อย!" } }
    ],
    "quiz": [
     { "q": { "th": "ปลาใจดีที่ Shelly Beach สีอะไร?", "en": "What colour are the friendly fish at Shelly Beach?" }, "a": { "th": "สีฟ้า ปลาบลูโกรเปอร์", "en": "Blue — blue gropers." }},
@@ -2048,7 +2101,8 @@
    "wx": {
     "en": "Sydney about 14–23°C · sea about 22°C — short swims only · sunset 17:31",
     "th": "ซิดนีย์ราว 14–23°C · น้ำทะเลราว 22°C — เล่นน้ำสั้นๆ · พระอาทิตย์ตก 17:31"
-   }
+   },
+   "tale": { "th": "วันนี้เรานั่งเรือเฟอร์รี่อีกแล้ว คราวนี้ไป Manly เมื่อปี 1788 ผู้ว่าการ Arthur Phillip ขึ้นฝั่งที่อ่าวนี้ และเขียนไว้ว่า \"ความมั่นใจและท่าทางสมชายชาตรี\" ของผู้ชายชาวอะบอริจินที่เขาได้พบ ทำให้เขาตั้งชื่อว่า Manly Cove เดินไปตามถนน The Corso จากท่าเรือไปจนถึงหาดริมมหาสมุทร ที่นี่เมื่อปี 1902 ผู้ชายชื่อ William Gocher ลงว่ายน้ำตอนกลางวันแสก ๆ เพื่อท้าทายกฎที่ห้ามลงเล่นน้ำทะเลตอนกลางวัน แล้วพอถึงปี 1903 สภาเมืองก็อนุญาตให้ว่ายน้ำได้ทั้งวัน ขอแค่ใส่ชุดว่ายน้ำที่คลุมตั้งแต่คอถึงเข่า! ปี 1904 มีการตั้งชมรมโต้คลื่นขึ้นที่นี่ และเชื่อกันว่า Manly Life Saving Club เป็นหนึ่งในชมรมกู้ภัยทางน้ำแห่งแรก ๆ ของโลก จากนั้นเดินไป Shelly Beach ที่อยู่ในเขตอนุรักษ์ Cabbage Tree Bay Aquatic Reserve ที่ห้ามใครตกปลา ปลาบลูโกรเปอร์ตัวใหญ่เลยไม่ต้องกลัวอะไรเลย ตอนบ่ายเป็นที่เที่ยวสุดท้ายของเรา คือ Paddington มีบ้านแถวประมาณ 3,800 หลัง ที่มีระเบียงเหล็กลายลูกไม้ สร้างระหว่างปี 1860 ถึง 1890 และตั้งชื่อตามย่านหนึ่งในลอนดอน", "en": "Today we ride another ferry, this time to Manly. In 1788 Governor Arthur Phillip came ashore in this cove and wrote that the 'confidence and manly behaviour' of the Aboriginal men he met made him call it Manly Cove. Walk The Corso from the wharf to the ocean beach. Here in 1902 a man named William Gocher swam in the middle of the day to challenge the rule that banned daytime sea-bathing, and by 1903 the council allowed all-day swimming — as long as you wore a costume from neck to knee! A surf club formed here in 1904, and Manly Life Saving Club is thought to be one of the first in the world. Then walk to Shelly Beach, inside Cabbage Tree Bay Aquatic Reserve, where no one may fish and the big blue gropers have nothing to fear. In the afternoon, for our last sightseeing, Paddington: about 3,800 terrace houses with iron-lace balconies, built between 1860 and 1890, and named after a part of London." }
   },
   {
    "index": 15,
@@ -2096,14 +2150,18 @@
    "moving": { "th": "ไม่ขับรถ", "en": "No driving" },
    "planB": { "th": "ถ้าเหนื่อย ตัดอันนี้ก่อน: ตลาด Carriageworks — กินเช้าที่โรงแรม", "en": "If tired, cut first: Carriageworks market — breakfast at the hotel" },
    "plan": [
-    { "t": "08:00", "th": "มื้อเช้าที่ตลาด Carriageworks Farmers Market (เสาร์ 08:00–13:00 ห่าง 10 นาที) — หรือกินสบายๆ ที่โรงแรม", "en": "Breakfast at Carriageworks Farmers Market (Saturday 08:00–13:00, 10 min away) — or unhurried at the hotel", "note": { "th": "ทุกวันเสาร์ 8:00–13:00 มีหลังคา · ทางเข้ามีทางลาด · 243 Wilson St, Darlington", "en": "Saturdays 8:00–13:00, undercover · ramp at the entrance · 243 Wilson St, Darlington" }},
+    { "t": "07:00", "th": "จัดกระเป๋ารอบสุดท้าย · พาสปอร์ต บอร์ดดิ้งพาสในโทรศัพท์ ขนมและผ้าอ้อมในกระเป๋าถือ", "en": "Last pack · passports, boarding passes on the phone, snacks and nappies in the carry-on" },
+    { "t": "08:00", "th": "มื้อเช้าที่ตลาด Carriageworks Farmers Market (เสาร์ 08:00–13:00 ห่าง 10 นาที) — หรือกินสบายๆ ที่โรงแรม", "en": "Breakfast at Carriageworks Farmers Market (Saturday 08:00–13:00, 10 min away) — or unhurried at the hotel", "note": { "th": "ทุกวันเสาร์ 8:00–13:00 มีหลังคา · ทางเข้ามีทางลาด · 243 Wilson St, Darlington · Carriageworks อยู่ในโรงซ่อมรถไฟ Eveleigh ยุค 1880 · ตลาดเปิดมาตั้งแต่ปี 2009", "en": "Saturdays 8:00–13:00, undercover · ramp at the entrance · 243 Wilson St, Darlington · Carriageworks is in the 1880s Eveleigh railway workshops · the market has run since 2009" } },
     { "t": "09:30", "th": "เช็คเอาท์ (ก่อน 10:00) · พักกระเป๋าที่ล็อบบี้", "en": "Check out (by 10:00) · bags in the lobby" },
-    { "t": "10:30", "th": "เดินเข้าสถานี Central · รถไฟสาย T8 ตรงถึงสถานี International Airport ราว 15 นาที", "en": "Walk into Central · T8 train direct to the International Airport station, about 15 min", "note": { "th": "13–15 นาที · ค่าผ่านสถานีสนามบินราว A$19 ต่อผู้ใหญ่ เด็กต่ำกว่า 4 ขวบฟรี · รถไฟวิ่ง 5:00 ถึงเที่ยงคืน", "en": "13–15 min · airport station fee about A$19 per adult, under-4s free · trains run 5:00 to midnight" }},
+    { "t": "10:30", "th": "เดินเข้าสถานี Central · รถไฟสาย T8 ตรงถึงสถานี International Airport ราว 15 นาที", "en": "Walk into Central · T8 train direct to the International Airport station, about 15 min", "note": { "th": "13–15 นาที · ค่าผ่านสถานีสนามบิน A$18.61 ต่อผู้ใหญ่ (Opal หรือบัตร contactless) เด็ก 4–15 ปี A$16.64 ต่ำกว่า 4 ขวบฟรี · รถไฟวิ่ง 5:00 ถึงเที่ยงคืน", "en": "13–15 min · airport station fee A$18.61 per adult (Opal or contactless), child 4–15 A$16.64, under-4s free · trains run 5:00 to midnight" } },
     { "t": "11:15", "th": "เช็คอิน TG 472 · ขอคืนภาษี TRS ถ้าเข้าเกณฑ์ (เผื่อ 45 นาที กรอกแอปไว้ก่อน)", "en": "Check in TG 472 · TRS tax refund if eligible (add 45 min; pre-fill the app)" },
+    { "t": "12:30", "th": "ผ่านจุดตรวจและ ตม. · เข้าห้องน้ำรอบสุดท้าย เติมน้ำ", "en": "Security and passport control · last toilets, water refill" },
+    { "t": "13:45", "th": "ไปรอที่ประตูขึ้นเครื่อง TG 472 (ออก 14:35)", "en": "At the gate for TG 472 (departs 14:35)" },
     { "t": "14:35", "th": "TG 472 ออกเดินทาง · ถึง BKK 20:55", "en": "TG 472 departs · lands BKK 20:55" }
    ],
    "tips": [
-    { "th": "ช่วงนอน: บนเครื่องหลังขึ้นบิน", "en": "Nap: On the plane after take-off" }
+    { "th": "ช่วงนอน: บนเครื่องหลังขึ้นบิน", "en": "Nap: On the plane after take-off" },
+    { "kind": "info", "th": "หลังเปลี่ยนเวลาแล้ว ซิดนีย์เร็วกว่ากรุงเทพฯ 3 ชม.: TG 472 ออก 14:35 เวลาซิดนีย์ ถึง 20:55 เวลากรุงเทพฯ", "en": "Sydney is 3 h ahead of Bangkok once the clocks have gone back: TG 472 leaves at 14:35 Sydney time and lands at 20:55 Bangkok time." }
    ],
    "route": "https://www.google.com/maps/dir/?api=1&origin=YHA+Sydney+Central,+11+Rawson+Place,+Haymarket+NSW&destination=Sydney+International+Airport+Terminal+1&travelmode=driving",
    "eat": [
@@ -2138,7 +2196,8 @@
    "wx": {
     "en": "Sydney about 14–23°C · flight 14:35",
     "th": "ซิดนีย์ราว 14–23°C · เครื่องออก 14:35"
-   }
+   },
+   "tale": { "th": "ถึงเวลาบินกลับบ้านแล้ว อาหารเช้าวันนี้อยู่ที่ Carriageworks ห่างไปแค่ 10 นาที โรงอิฐหลังใหญ่ ๆ ของที่นี่เคยเป็นส่วนหนึ่งของโรงซ่อมรถไฟ Eveleigh ที่สร้างระหว่างปี 1880 ถึง 1889 เป็นที่สร้างและซ่อมตู้รถไฟของ Sydney โรงซ่อมปิดไปในช่วงทศวรรษ 1980 แล้วอาคารก็กลายเป็นศูนย์ศิลปะในปี 2007 ทุกวันเสาร์ โรงตีเหล็กเก่าจะเต็มไปด้วยร้านในตลาดเกษตรกร ใกล้ ๆ กันคือ Redfern ที่เมื่อปี 1973 บริษัท Aboriginal Housing Company เริ่มซื้อบ้านในย่าน The Block จากนั้นเราเดินไป Central แล้วนั่งรถไฟไปสนามบินเป็นครั้งสุดท้าย ผ่านหอนาฬิกาใหญ่ ลองนึกถึงที่ที่เราได้ไปมาสิ โลมา โคอาล่า สะพานริมทะเล ประตูปราสาท และหลังคาที่เหมือนใบเรือ หนูเดินทางข้ามทะเลและภูเขา และได้รู้ว่าทุกที่มีชื่อที่เก่าแก่กว่าเดิมอยู่ด้วย เครื่องบินรอเราอยู่ที่อ่าว Botany แล้ว แล้วเจอกันใหม่นะ ออสเตรเลีย!", "en": "It is time to fly home. Breakfast is at Carriageworks, ten minutes away. Its huge brick sheds were part of the Eveleigh railway workshops, built between 1880 and 1889, where Sydney's railway carriages were built and mended. The workshops closed in the 1980s, and the buildings became an arts centre in 2007. On Saturdays the old blacksmith's workshop is full of farmers market stalls. Nearby is Redfern, where in 1973 the Aboriginal Housing Company began buying the houses on The Block. Then we walk to Central and take the airport train for the last time, past the great clock tower. Think of the places you have seen: dolphins, koalas, a bridge beside the sea, a castle gate, and a roof like sails. You travelled across seas and mountains, and you learned that every place has an older name. The aeroplane is waiting at Botany Bay. See you again, Australia!" }
   }
  ],
  "firsts_catalog": [
@@ -2700,6 +2759,10 @@
      {
       "th": "ออสเตรเลียอยู่ซีกโลกใต้ เดือนเมษายนที่นั่นเลยเป็นฤดูใบไม้ร่วง",
       "en": "Australia is in the bottom half of the world, so April there is autumn."
+     },
+     {
+      "th": "กัปตัน Cook เคยตั้งชื่ออ่าว Botany ว่า \"ท่าเรือปลากระเบน\" เพราะลูกเรือจับปลากระเบนได้เยอะมาก!",
+      "en": "Captain Cook first called Botany Bay 'Stingrays Harbour' because his crew caught so many stingrays!"
      }
     ],
     "spot": [
@@ -2745,6 +2808,10 @@
      {
       "th": "สะพาน Sea Cliff โค้งออกไปเหนือทะเลเหมือนริบบิ้น",
       "en": "The Sea Cliff Bridge curves out over the ocean like a ribbon."
+     },
+     {
+      "th": "วันที่คลื่นใหญ่ Blowhole ที่ Kiama พ่นน้ำขึ้นไปได้สูงถึง 25 เมตร ฟู่ววว!",
+      "en": "In a big sea, the Kiama Blowhole can shoot water up to 25 metres high — whoosh!"
      }
     ],
     "spot": [
@@ -2790,6 +2857,10 @@
      {
       "th": "ทรายละเอียดมากจนเดินแล้วมีเสียงเอี๊ยดๆ ลองดูสิ!",
       "en": "The sand is so fine it squeaks when you walk on it — try it!"
+     },
+     {
+      "th": "กัปตัน Cook ตั้งชื่อภูเขา Pigeon House เพราะยอดกลม ๆ ของมันดูเหมือนบ้านนกพิราบ!",
+      "en": "Captain Cook named Pigeon House Mountain because its dome top looked like a dove-house!"
      }
     ],
     "spot": [
@@ -2835,6 +2906,10 @@
      {
       "th": "น้ำตกฟิตซ์รอยสูง 81 เมตร เท่ากับยีราฟต่อตัวกัน 15 ตัว!",
       "en": "Fitzroy Falls drops 81 metres — as tall as 15 giraffes stacked up!"
+     },
+     {
+      "th": "นกไลร์เบิร์ดตัวผู้เลียนเสียงได้แทบทุกเสียงที่มันได้ยิน ลองฟังในป่าดูนะ!",
+      "en": "Male lyrebirds can copy almost any sound they hear — listen in the forest!"
      }
     ],
     "spot": [
@@ -2880,6 +2955,10 @@
      {
       "th": "ที่เมืองลูรามีร้านขนมที่มีโหลลูกอมยักษ์เต็มร้าน!",
       "en": "Leura has a sweet shop full of giant lolly jars!"
+     },
+     {
+      "th": "Blue Mountains ดูเป็นสีฟ้า เพราะต้นยูคาลิปตัสปล่อยหยดน้ำมันเล็ก ๆ ออกมาในอากาศ!",
+      "en": "The Blue Mountains look blue because eucalyptus trees release tiny drops of oil into the air!"
      }
     ],
     "spot": [
@@ -2925,6 +3004,10 @@
      {
       "th": "รถไฟวิ่งซิกแซกขึ้นภูเขาแทนที่จะขึ้นตรงๆ",
       "en": "The train zig-zags up the mountain instead of going straight."
+     },
+     {
+      "th": "รถไฟ Scenic Railway ชันถึง 52 องศา นั่งแล้วรู้สึกเหมือนไถลลงสไลเดอร์เลย!",
+      "en": "The Scenic Railway is so steep — 52 degrees — it feels like riding down a slide!"
      }
     ],
     "spot": [
@@ -2970,6 +3053,10 @@
      {
       "th": "ม้านอนหลับได้ทั้งที่ยืนอยู่ และนอนลงงีบสั้นๆ",
       "en": "Horses can sleep standing up — and lie down for short naps."
+     },
+     {
+      "th": "Elvis จระเข้น้ำเค็มที่ Reptile Park ยาวถึง 4 เมตรครึ่งเลย!",
+      "en": "Elvis the saltwater crocodile at the Reptile Park is four and a half metres long!"
      }
     ],
     "spot": [
@@ -3015,6 +3102,10 @@
      {
       "th": "มองหาฮัมป์ตี้ดัมป์ตี้กับงานเลี้ยงน้ำชาของแมดแฮตเตอร์!",
       "en": "Look for Humpty Dumpty and the Mad Hatter's tea party!"
+     },
+     {
+      "th": "เนินทราย Stockton ยาวประมาณ 32 กิโลเมตร และมันค่อย ๆ เคลื่อนเข้าไปในแผ่นดินด้วย!",
+      "en": "The Stockton sand dunes stretch for about 32 kilometres — and they slowly move inland!"
      }
     ],
     "spot": [
@@ -3060,6 +3151,10 @@
      {
       "th": "โลมาหายใจผ่านรูบนหัว",
       "en": "Dolphins breathe air through a blowhole on top of their head."
+     },
+     {
+      "th": "Tomaree Head เป็นเนินใหญ่ที่เกิดจากหินภูเขาไฟเก่าแก่ สูงถึง 161 เมตร!",
+      "en": "Tomaree Head is a big hill made of old volcanic rock — 161 metres tall!"
      }
     ],
     "spot": [
@@ -3105,6 +3200,10 @@
      {
       "th": "ปูตัวเล็กซ่อนอยู่ใต้ก้อนหิน ดูได้แต่อย่าจับนะ!",
       "en": "Little crabs hide under rocks. Watch them, but don't touch!"
+     },
+     {
+      "th": "ปากนกกระทุงยาวได้ประมาณ 50 เซนติเมตร ยาวที่สุดในบรรดานกทั้งหมด!",
+      "en": "A pelican's bill can be about 50 centimetres long — the longest of any bird!"
      }
     ],
     "spot": [
@@ -3150,6 +3249,10 @@
      {
       "th": "ที่เฟเธอร์เดลป้อนอาหารจิงโจ้จากมือได้",
       "en": "At Featherdale you can feed kangaroos from your hand."
+     },
+     {
+      "th": "วอมแบตอึเป็นก้อนสี่เหลี่ยมลูกเต๋า ยังไม่รู้ว่ามีสัตว์ตัวไหนทำได้แบบนี้อีก!",
+      "en": "Wombats make cube-shaped poo — no other animal is known to do that!"
      }
     ],
     "spot": [
@@ -3195,6 +3298,10 @@
      {
       "th": "ที่ SEA LIFE เราเดินในอุโมงค์ที่มีฉลามว่ายอยู่เหนือหัว!",
       "en": "At SEA LIFE you walk through a tunnel with sharks swimming overhead!"
+     },
+     {
+      "th": "บางทีคนเรียกพะยูนว่า \"วัวทะเล\" เพราะมันชอบเคี้ยวหญ้าทะเล!",
+      "en": "Dugongs are sometimes called sea cows because they munch seagrass!"
      }
     ],
     "spot": [
@@ -3240,6 +3347,10 @@
      {
       "th": "หน้ายิ้มยักษ์ของลูน่าพาร์คต้อนรับผู้คนมาตั้งแต่ปี 1935",
       "en": "Luna Park's huge smiling face has welcomed visitors since 1935."
+     },
+     {
+      "th": "Harbour Bridge มีชื่อเล่นว่า \"ไม้แขวนเสื้อ\" และมีหมุดย้ำประมาณ 6 ล้านตัว!",
+      "en": "The Harbour Bridge is nicknamed the Coathanger and has about six million rivets!"
      }
     ],
     "spot": [
@@ -3285,6 +3396,10 @@
      {
       "th": "เรานั่งขึ้นเนินก่อน แล้วค่อยเดินลงเที่ยวสวนสัตว์",
       "en": "We ride up the hill first, then walk DOWN through the zoo."
+     },
+     {
+      "th": "\"Taronga\" เป็นคำของชาวอะบอริจิน แปลว่า \"วิวที่สวยงาม\"!",
+      "en": "'Taronga' is an Aboriginal word that means 'beautiful view'!"
      }
     ],
     "spot": [
@@ -3330,6 +3445,10 @@
      {
       "th": "แมนลีมีสองหาด หาดฝั่งอ่าวน้ำนิ่ง กับหาดที่คลื่นใหญ่",
       "en": "Manly has two beaches: a calm harbour one and one with big waves."
+     },
+     {
+      "th": "ที่ Shelly Beach ห้ามตกปลา ปลาบลูโกรเปอร์ตัวใหญ่เลยว่ายน้ำได้อย่างสบายใจ!",
+      "en": "No one may fish at Shelly Beach, so the big blue gropers swim there without fear!"
      }
     ],
     "spot": [
@@ -3375,6 +3494,10 @@
      {
       "th": "นับตราในพาสปอร์ตดูสิ ได้กี่ดวง?",
       "en": "Count the stamps in your passport — how many did you get?"
+     },
+     {
+      "th": "โรงอิฐหลังใหญ่ของ Carriageworks เคยเป็นที่สร้างและซ่อมตู้รถไฟของ Sydney!",
+      "en": "Carriageworks' huge brick sheds were once where Sydney's railway carriages were built and mended!"
      }
     ],
     "spot": [
@@ -3937,7 +4060,7 @@
     }
    ]
   },
-  "colour": "/art/day-{n}.svg",
+  "colour": "/art/colour/au/day-{n}.svg",
   "countdown": {
    "doors": [
     { "e": "🦘", "th": "G'day {name}! ฉันคือเรนเจอร์รู อีก 14 วันเราจะไปออสเตรเลียด้วยกัน!", "en": "G'day {name}! I'm Ranger Roo. In 14 sleeps we hop off to Australia!" },

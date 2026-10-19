@@ -76,7 +76,7 @@ function validate(p) {
     (d.legs || []).forEach((l, j) => must(l && l.from && l.to, `${at}.legs[${j}]: needs from and to`));
     (d.picks || []).forEach((x, j) => must(x && x.name, `${at}.picks[${j}]: needs name`));
     if (d.mission) { if (!Array.isArray(d.mission.facts) || !d.mission.facts.length) warns.push(`${at}.mission has no facts`); if (!Array.isArray(d.mission.spot) || d.mission.spot.length !== 4) warns.push(`${at}.mission.spot: 4 things to spot work best (${(d.mission.spot || []).length} given)`); }
-    const known = new Set(['title', 'sleep', 'wx', 'emoji', 'planned', 'moving', 'pick', 'planB', 'money', 'plan', 'tips', 'stay', 'route', 'eat', 'learn', 'quiz', 'legs', 'picks', 'food', 'mission']);
+    const known = new Set(['title', 'sleep', 'wx', 'emoji', 'planned', 'moving', 'pick', 'planB', 'money', 'plan', 'tips', 'stay', 'route', 'eat', 'learn', 'quiz', 'tale', 'legs', 'picks', 'food', 'mission']);
     const extra = Object.keys(d).filter((k) => !known.has(k)); if (extra.length) warns.push(`${at}: unknown keys ignored: ${extra.join(', ')}`);
   });
   return { errs, warns };
@@ -104,7 +104,7 @@ function toSeed(p, notes) {
     });
     const out = { ...D.dayBase(i, date, accent), ...(d.emoji ? { emoji: d.emoji } : {}), title: d.title, sleep: d.sleep || i18n('บ้าน', 'Home'), planned };
     if (d.wx) out.wx = d.wx;
-    for (const k of ['moving', 'pick', 'planB', 'money', 'plan', 'tips', 'stay', 'route', 'eat', 'learn', 'quiz', 'legs', 'picks', 'food']) if (d[k] !== undefined && d[k] !== null) out[k] = d[k];
+    for (const k of ['moving', 'pick', 'planB', 'money', 'plan', 'tips', 'stay', 'route', 'eat', 'learn', 'quiz', 'tale', 'legs', 'picks', 'food']) if (d[k] !== undefined && d[k] !== null) out[k] = d[k];
     if (!out.stay && !D.isHome(out.sleep) && p.info && Array.isArray(p.info.stays)) {
       const st = p.info.stays.find((s) => s.prop && [s.prop.en, s.prop.th].some((n) => n && (out.sleep.en.includes(n) || n.includes(out.sleep.en))));
       if (st) { out.stay = { name: st.prop.en, addr: st.addr || '', q: st.q || `${st.prop.en}, ${placeEn}` }; note(`day ${i + 1}: tonight's stay card taken from info.stays (${st.prop.en})`); }
