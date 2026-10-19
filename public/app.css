@@ -1530,6 +1530,16 @@ p,li,.bubble p{text-wrap:pretty}
 .pinstay>span>.ic{position:absolute;left:0;top:2px;width:18px;height:18px;color:var(--muted)}
 .pinstay small{color:var(--muted);font-size:12.5px}
 .pinstay .btn{flex:none}
-/* the kid-mode tile on the book's menu: the one bright button, easy to find for a grown-up handing over the phone */
-.hubgrid .tile.kid{background:linear-gradient(135deg,#FF8A3D,#FF4F8B);border:1px solid transparent;color:#fff;box-shadow:0 6px 18px -8px rgba(255,79,139,.7)}
-.hubgrid .tile.kid b{color:#fff;font-weight:700}.hubgrid .tile.kid small{color:rgba(255,255,255,.94)}.hubgrid .tile.kid .e{background:rgba(255,255,255,.24);color:#fff}
+/* the book's menu: every tile in its own bright holiday colour (owner: "สดใส" — not dark and dull) — white bold text with a soft shadow */
+.hubgrid .tile{--g1:#94A3B8;--g2:#64748B;background:linear-gradient(135deg,var(--g1),var(--g2));border:1px solid transparent;color:#fff;box-shadow:0 8px 18px -10px var(--g2)}
+.hubgrid .tile b,.hubgrid .tile small,.hubgrid .tile.t-sos small{color:#fff;text-shadow:0 1px 2px rgba(0,0,0,.28)}
+.hubgrid .tile b{font-weight:700}.hubgrid .tile small{font-weight:500}
+.hubgrid .tile .e{background:rgba(255,255,255,.28);color:#fff}
+.hubgrid .tile.today{--g1:#4F8BFF;--g2:#2F6BFF;background:linear-gradient(135deg,var(--g1),var(--g2));border-color:transparent}
+.hubgrid .t-book{--g1:#B57BFF;--g2:#8B5CF6}.hubgrid .t-log{--g1:#FFC233;--g2:#F59E0B}.hubgrid .t-plan{--g1:#38BDF8;--g2:#0EA5E9}
+.hubgrid .t-eat{--g1:#FF8A4C;--g2:#FF5A36}.hubgrid .t-stays{--g1:#8B93FF;--g2:#6366F1}.hubgrid .t-sos{--g1:#FF5C7A;--g2:#F43F5E}
+.hubgrid .t-prep{--g1:#8BD43C;--g2:#4CBF3C}.hubgrid .t-learn{--g1:#2DD4BF;--g2:#14B8A6}.hubgrid .t-firsts{--g1:#FFB347;--g2:#FF8C1A}
+.hubgrid .tile[href="#/passport"]{--g1:#22D3EE;--g2:#06B6D4}.hubgrid .t-hearts{--g1:#FF7EB6;--g2:#EC4899}.hubgrid .tile[href="#/notebook"]{--g1:#E0A96D;--g2:#C98A4B}
+.hubgrid .t-offline{--g1:#4FC3F7;--g2:#039BE5}.hubgrid .tile.shelf{--g1:#B39DDB;--g2:#7E57C2}
+.hubgrid .tile.kid{--g1:#FF8A3D;--g2:#FF4F8B}
+.hubgrid .tile.warn{box-shadow:inset 0 0 0 3px rgba(255,255,255,.8),0 8px 18px -10px var(--g2)}   /* still to do (e.g. not stored offline yet) */
