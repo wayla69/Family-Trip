@@ -319,7 +319,7 @@ ${pl.tale ? taleHtml(t, i, pl.tale) : ''}
 const eatMore = (pl) => { const seen = new Set([...(pl.picks || []).flatMap((p) => [p.name, p.alt && p.alt.name]), ...(pl.food || []).flatMap((f) => f.items.map((x) => x.name))]); return (pl.eat || []).filter((e) => !seen.has(e.name)); };
 // the guide's story of the day — a little picture book: scenes with an emoji and a heading, numbers stand out;
 // "Listen" reads it scene by scene and lights up the scene being read (kid.js sayTale)
-const taleNum = (s) => esc(s).replace(/\d+(?:[.,]\d+)*(?:\s?(?:kilometres|metres|hectares|hours|km|ha|m)(?![A-Za-z])|\s?(?:กิโลเมตร|เมตร|เฮกตาร์|ชั่วโมง))?/g, (m) => `<b class="tnum">${m}</b>`);
+const taleNum = (s) => String(s || '').split(/(\d+(?:[.,]\d+)*(?:\s?(?:kilometres|metres|hectares|hours|km|ha|m)(?![A-Za-z])|\s?(?:กิโลเมตร|เมตร|เฮกตาร์|ชั่วโมง))?)/).map((x, n) => (n % 2 ? `<b class="tnum">${esc(x)}</b>` : esc(x))).join('');   // match the raw text, then escape: never inside an entity like &#39;
 function taleHtml(t, i, x) {
   const g = ((t.passport || {}).guides || [])[0], sc = (x.scenes || []).length ? x.scenes : [{ e: '📖', th: x.th, en: x.en }];
   const mins = Math.max(1, Math.round(String(x.en || '').split(/\s+/).length / 130));

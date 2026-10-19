@@ -132,6 +132,8 @@ ok(s.trips[0].days[0].done_at > 0 && s.trips.some((t) => t.slug === 'chiang-mai-
   // Australia, imported from the owner's trip artifact: every day planned, nearby food, learn cards, quiz, pocket guide, Aussie words
   const au = (await state()).trips.find((t) => t.id === 'big-hop-2027'), a2 = au.days[1].plan;
   ok(au.days.every((d) => d.plan.plan.length >= 4) && a2.plan.length === 9 && a2.plan[3].t === '11:20' && /Bald Hill/.test(a2.plan[3].en) && a2.plan[3].note, 'AU: 16 timed days; day 2 has 9 steps with notes');
+  { const whole = (t) => t.days.every((d) => { const x = d.plan.tale; return x && x.scenes.length >= 3 && x.scenes.every((s) => s.e && s.h.th && s.h.en) && x.scenes.map((s) => s.en).join(' ') === x.en && x.scenes.map((s) => s.th).join(' ').replace(/\s+/g, ' ') === x.th.replace(/\s+/g, ' '); });
+    ok(whole(au) && whole(hk), 'both books: a guide’s story every day, cut into scenes (emoji + heading) that keep the story’s own words'); }
   ok(/Waldegrave/.test(a2.stay.addr) && /google\.com\/maps/.test(a2.route) && a2.eat.length === 26 && a2.learn.length >= 3 && a2.quiz.length === 3 && a2.moving.en === '2 h 55 in 3 legs', 'AU day 2: stay + address, maps route, 26 places to eat, learn cards, 3 quiz questions, moving summary');
   // nothing abbreviated: every leg with its directions link, the meal picks with what to order + a backup, the food along the route by stop
   ok(a2.legs.length === 3 && a2.legs[0].from === 'Sydney Airport' && a2.legs[0].to === 'Bald Hill Lookout' && a2.legs[0].min === 50 && /maps\/dir\/.*travelmode=driving/.test(a2.legs[0].url), 'AU day 2: 3 drive legs, each with Google Maps directions');
