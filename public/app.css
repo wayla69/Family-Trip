@@ -1530,16 +1530,28 @@ p,li,.bubble p{text-wrap:pretty}
 .pinstay>span>.ic{position:absolute;left:0;top:2px;width:18px;height:18px;color:var(--muted)}
 .pinstay small{color:var(--muted);font-size:12.5px}
 .pinstay .btn{flex:none}
-/* the book's menu: every tile in its own bright holiday colour (owner: "สดใส" — not dark and dull) — white bold text with a soft shadow */
-.hubgrid .tile{--g1:#94A3B8;--g2:#64748B;background:linear-gradient(135deg,var(--g1),var(--g2));border:1px solid transparent;color:#fff;box-shadow:0 8px 18px -10px var(--g2)}
-.hubgrid .tile b,.hubgrid .tile small,.hubgrid .tile.t-sos small{color:#fff;text-shadow:0 1px 2px rgba(0,0,0,.28)}
-.hubgrid .tile b{font-weight:700}.hubgrid .tile small{font-weight:500}
-.hubgrid .tile .e{background:rgba(255,255,255,.28);color:#fff}
-.hubgrid .tile.today{--g1:#4F8BFF;--g2:#2F6BFF;background:linear-gradient(135deg,var(--g1),var(--g2));border-color:transparent}
-.hubgrid .t-book{--g1:#B57BFF;--g2:#8B5CF6}.hubgrid .t-log{--g1:#FFC233;--g2:#F59E0B}.hubgrid .t-plan{--g1:#38BDF8;--g2:#0EA5E9}
-.hubgrid .t-eat{--g1:#FF8A4C;--g2:#FF5A36}.hubgrid .t-stays{--g1:#8B93FF;--g2:#6366F1}.hubgrid .t-sos{--g1:#FF5C7A;--g2:#F43F5E}
-.hubgrid .t-prep{--g1:#8BD43C;--g2:#4CBF3C}.hubgrid .t-learn{--g1:#2DD4BF;--g2:#14B8A6}.hubgrid .t-firsts{--g1:#FFB347;--g2:#FF8C1A}
-.hubgrid .tile[href="#/passport"]{--g1:#22D3EE;--g2:#06B6D4}.hubgrid .t-hearts{--g1:#FF7EB6;--g2:#EC4899}.hubgrid .tile[href="#/notebook"]{--g1:#E0A96D;--g2:#C98A4B}
-.hubgrid .t-offline{--g1:#4FC3F7;--g2:#039BE5}.hubgrid .tile.shelf{--g1:#B39DDB;--g2:#7E57C2}
-.hubgrid .tile.kid{--g1:#FF8A3D;--g2:#FF4F8B}
-.hubgrid .tile.warn{box-shadow:inset 0 0 0 3px rgba(255,255,255,.8),0 8px 18px -10px var(--g2)}   /* still to do (e.g. not stored offline yet) */
+/* the book's menu: every tile in its own pastel (owner: "ผสมขาว พาสเทลจริงๆ") — the tile's colour mixed with white, dark text in a deep shade of the same colour; the same in dark mode */
+.hubgrid .tile{--g1:#5B6573;--g2:#2B323C;background:linear-gradient(135deg,color-mix(in srgb,var(--g1) 20%,#fff),color-mix(in srgb,var(--g1) 38%,#fff));border:1px solid color-mix(in srgb,var(--g1) 30%,#fff);color:#1F2A3A;box-shadow:0 6px 14px -10px color-mix(in srgb,var(--g2) 60%,transparent)}
+.hubgrid .tile b{color:color-mix(in srgb,var(--g2) 62%,#101820);font-weight:700;text-shadow:none}
+.hubgrid .tile small,.hubgrid .tile.t-sos small{color:#3A4350;font-weight:500;text-shadow:none}
+.hubgrid .tile .e{background:rgba(255,255,255,.75);color:color-mix(in srgb,var(--g2) 80%,#101820)}
+.hubgrid .tile.today{background:linear-gradient(135deg,color-mix(in srgb,var(--g1) 20%,#fff),color-mix(in srgb,var(--g1) 38%,#fff));border-color:color-mix(in srgb,var(--g1) 30%,#fff)}
+.hubgrid .tile.today small{color:#3A4350}
+/* 16 colours with 16 different names (owner: no two alike) — red, orange, gold, brown, lime, green, teal, cyan, sky, blue, indigo, violet, purple, magenta, pink, charcoal; placed so look-alikes never touch on the phone or the desktop grid */
+.hubgrid .tile.today{--g1:#4F7BFF;--g2:#2F55E8}   /* blue */
+.hubgrid .t-log{--g1:#9BD82A;--g2:#5E9E00}   /* lime */
+.hubgrid .t-book{--g1:#C850F0;--g2:#9C27B0}   /* purple */
+.hubgrid .t-eat{--g1:#FF9A3C;--g2:#F06A00}   /* orange */
+.hubgrid .t-plan{--g1:#22D3EE;--g2:#0896B8}   /* cyan */
+.hubgrid .t-stays{--g1:#7B6CFF;--g2:#4B3FE0}   /* indigo */
+.hubgrid .t-sos{--g1:#FF5A5A;--g2:#E02424}   /* red */
+.hubgrid .t-prep{--g1:#1CC9A4;--g2:#0B8F75}   /* teal */
+.hubgrid .t-learn{--g1:#F2B90C;--g2:#C99200}   /* gold */
+.hubgrid .t-firsts{--g1:#C68A5A;--g2:#965426}   /* brown */
+.hubgrid .tile[href="#/passport"]{--g1:#9F7BFF;--g2:#6D3BEF}   /* violet */
+.hubgrid .t-hearts{--g1:#FF6FA8;--g2:#E8457E}   /* pink */
+.hubgrid .tile[href="#/notebook"]{--g1:#3DD47A;--g2:#18A04F}   /* green */
+.hubgrid .t-offline{--g1:#5CB8FF;--g2:#1E88E5}   /* sky */
+.hubgrid .tile.kid{--g1:#FF4FD8;--g2:#C824A6}   /* magenta */
+.hubgrid .tile.shelf{--g1:#5B6573;--g2:#2B323C}   /* charcoal */
+.hubgrid .tile.warn{box-shadow:inset 0 0 0 2px color-mix(in srgb,var(--g2) 70%,#fff),0 6px 14px -10px var(--g2)}   /* still to do (e.g. not stored offline yet) */
