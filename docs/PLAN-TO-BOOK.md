@@ -4,11 +4,12 @@
 ใช้คู่กับ `docs/NEW-BOOK.md` (รายละเอียดฟิลด์ของ seed format 2) — เอกสารนี้ว่าด้วย **ทางเข้า**: แผน → `plan.json` → `npm run plan-to-seed`
 
 ## 1. ส่งอะไรมา
+**ฝั่ง session วางแผน:** ทำตาม `docs/handoff/PLANNER-BRIEF.md` (บทในคู่มือ + ความหนาต่อวัน + เรื่องเล่าของไกด์ + ภาพ) — คัดลอกไปใส่ skill `family-trip-kit` ได้เลย
 ข้อความเดียวพอ: **ลิงก์ Artifact** + `slug` ที่อยากได้ (เช่น `sakura-hop-2028`) + ถ้ามี: สี (`#rrggbb`), ธง, kicker
 - แผนจะเป็นหน้าเว็บ/เอกสาร/สไลด์ก็ได้ Claude Code อ่านด้วยเครื่องมือ Artifact แล้ว **ถอดเป็น `plan.json`** เอง
 - **ดีที่สุด**: ให้ session ที่วางแผนฝัง `plan.json` ไว้ในหน้า Artifact เลย (`<script type="application/json" id="plan">…</script>` หรือบล็อกโค้ด ```json) ตาม `docs/handoff/plan.schema.json` → ถอดได้ครบ ไม่ตกหล่น ไม่ต้องตีความ
   prompt ปิดท้าย session วางแผน (คัดลอกได้):
-  > Export this plan as `plan.json` following https://github.com/wayla69/Family-Trip/blob/main/docs/handoff/plan.schema.json (example: plan.sample.json next to it). Bilingual th/en everywhere, one `days[]` entry per date, every stop with a full Google Maps query `q`, a `mission` per day for the kids (4 things to spot), `restaurants` for the whole trip, `passport.words` and `passport.food`. No booking references, confirmation numbers, e-tickets, passport numbers, costs we paid, e-mails or personal phone numbers.
+  > Export this plan as `plan.json` following https://github.com/wayla69/Family-Trip/blob/main/docs/handoff/plan.schema.json (example: plan.sample.json next to it). Bilingual th/en everywhere, one `days[]` entry per date, every stop with a full Google Maps query `q`, a `mission` per day for the kids (4 things to spot), `restaurants` for the whole trip, `passport.words` and `passport.food`, a `tale` per day (the guide's story in 4–5 scenes) — see docs/handoff/PLANNER-BRIEF.md for the density per day. No booking references, confirmation numbers, e-tickets, passport numbers, costs we paid, e-mails or personal phone numbers.
 - PDF คู่มือ (Trip Operations Manual) ยังส่งได้เหมือนเดิม — Claude Code ถอดเป็น `plan.json` เช่นกัน แล้วเข้าทางเดียวกัน
 
 ## 2. สิ่งที่แผนควรมี (เพื่อให้ทุกหน้าในแอปมีของ)
