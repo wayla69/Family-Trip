@@ -3,6 +3,9 @@
 @font-face{font-family:"KIRA UI";src:url(/fonts/KIRA-UI-Medium.woff2) format("woff2");font-weight:500;font-display:swap}
 @font-face{font-family:"KIRA UI";src:url(/fonts/KIRA-UI-SemiBold.woff2) format("woff2");font-weight:600;font-display:swap}
 @font-face{font-family:"KIRA UI";src:url(/fonts/KIRA-UI-Bold.woff2) format("woff2");font-weight:700;font-display:swap}
+/* Thai pages of a serif book: digits and punctuation come from KIRA UI so "วันที่ 2 (3 ขวบ)" reads as one face; Latin words keep the serif */
+@font-face{font-family:"KIRA Digits";src:url(/fonts/KIRA-UI-SemiBold.woff2) format("woff2");font-weight:600;font-display:swap;unicode-range:U+0021-0040,U+00B7,U+2013-2014}
+@font-face{font-family:"KIRA Digits";src:url(/fonts/KIRA-UI-Bold.woff2) format("woff2");font-weight:700;font-display:swap;unicode-range:U+0021-0040,U+00B7,U+2013-2014}
 @font-face{font-family:"Cormorant Garamond";src:url(/fonts/CormorantGaramond-SemiBold.woff2) format("woff2");font-weight:600;font-display:swap}
 @font-face{font-family:"Cormorant Garamond";src:url(/fonts/CormorantGaramond-Bold.woff2) format("woff2");font-weight:700;font-display:swap}
 @font-face{font-family:"Cormorant Garamond";src:url(/fonts/CormorantGaramond-MediumItalic.woff2) format("woff2");font-weight:500;font-style:italic;font-display:swap}
@@ -19,6 +22,7 @@
   --max:960px;--gut:16px;
   color-scheme:light;
 }
+:root:lang(th){--serif:"KIRA Digits","Cormorant Garamond","KIRA UI",Georgia,serif}
 @media (prefers-color-scheme:dark){:root:not([data-theme=light]){
   --paper:#12161C;--ink:#E9EDF2;--muted:#9AA3AF;--rule:#262D36;--panel:#1B2129;
   --pick:color-mix(in srgb,var(--accent2) 18%,#12161C);--info:#17222F;--calm:#16241F;--warn:#262019;
