@@ -189,6 +189,8 @@ const T = 'hk-macau-2026';
   ok(seedPick.length > 110 && pickDd.includes(seedPick), "today page: the local pick is shown whole (it was cut at 110 characters)");
   const seedWx = await page.evaluate(() => T(S.trips.find((x) => x.id === 'hk-macau-2026').days[1].wx));
   ok(seedWx.length > 110 && pickDd.includes(seedWx), 'today page: the weather is shown whole (it was cut to its first clause)');
+  const seedMv = await page.evaluate(() => T(S.trips.find((x) => x.id === 'hk-macau-2026').days[1].plan.moving));
+  ok(seedMv.length > 110 && pickDd.includes(seedMv), 'today page: getting around is shown whole');
   await page.evaluate(() => { ls('remind', 1); render(); });
   ok(await page.locator('.remind').count() === 0, 'today page: once reminders are on, the reminder box goes away');
   await page.goto(`${BASE}/#/t/${T}/offline`); await page.waitForSelector('.remind.on');
@@ -264,6 +266,11 @@ const T = 'hk-macau-2026';
     speak(u) { window.__said.push(`${u.text}|${u.lang}`); }, cancel() {}, onvoiceschanged: null,
     getVoices: () => ['zh-HK', 'th-TH', 'en-GB', 'pt-PT'].map((l) => ({ lang: l, name: l })) } }); });
   await page.clock.setFixedTime(new Date('2026-12-06T12:00:00+08:00'));   // day 2 of the Hong Kong trip (timers keep running)
+  await page.goto(`${BASE}/#/t/${T}/today`); await page.waitForSelector('.day.today');
+  ok(/Disneyland/.test(await page.textContent('.day.today h3')) && await page.locator('.daystrip a[aria-current="true"] .today').count() === 1 && await page.locator('.daystrip a').nth(1).getAttribute('aria-current') === 'true'
+    && await page.locator('.day.today .tag').count() === 1 && await page.locator('.call.info').count() === 0 && await page.locator('.quick a[href$="/log/1"]').count() === 1, 'HK on day 2: Today opens Disneyland day by itself, marked “Today” in the strip, no countdown banner, Record goes to day 2');
+  await page.goto(`${BASE}/#/t/${T}`); await page.waitForSelector('.hubgrid');
+  ok(/(Day 2 of 6|วันที่ 2)/.test(await page.textContent('.tile.today')), 'HK on day 2: the menu’s Today tile names day 2');
   await page.goto(`${BASE}/#/passport/mimi/${T}`); await page.waitForSelector('.kidgo');
   await page.click('.kidgo'); await page.waitForSelector('.kidwrap .kidtiles');
   ok(await page.locator('.kidtiles button').count() === 14 && await page.locator('.kidtiles button[data-v$="/animals"]').count() === 1 && await page.locator('.kidtiles button[data-v$="/quiz"]').count() === 1 && await page.locator('nav.bar').count() === 0, 'kid mode on the trip: 14 big tiles (colour, draw, find, stamp, say, stickers, map, quiz, photos, match, mood, animals & friends, count, trophies), no tab bar');
