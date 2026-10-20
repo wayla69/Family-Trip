@@ -51,7 +51,7 @@ const A = {
       const { key } = await api('GET', '/api/b/push/key'), reg = await navigator.serviceWorker.ready;
       const s = (await reg.pushManager.getSubscription()) || (await reg.pushManager.subscribe({ userVisibleOnly: true, applicationServerKey: b64u(key) }));
       await api('POST', '/api/b/push/sub', { ...s.toJSON(), lang });
-      ls('remind', 1); render(); toast(L('เปิดการเตือนแล้ว ✓ จะเด้งก่อนทุกกิจกรรม 30 นาที', 'Reminders on ✓ — 30 min before each step'));
+      ls('remind', 1); render(); toast(L('เปิดการเตือนแล้ว ✓ จะเด้งก่อนทุกกิจกรรม 30 นาที · ทดสอบหรือปิดได้ที่หน้าใช้ออฟไลน์', 'Reminders on ✓ — 30 min before each step · test or turn off on the Offline page'));
     } catch (_) { toast(L('เปิดการเตือนไม่สำเร็จ ลองอีกครั้ง', 'Could not turn reminders on — try again')); }
   },
   async remindtest() {

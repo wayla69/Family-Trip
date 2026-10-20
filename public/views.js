@@ -399,7 +399,8 @@ function dayGlance(t, i) {
 <div class="cgrid">${box('ind', 'route', L('เดินทางและที่พัก', 'Getting around & tonight'), go)}${box('sun', 'eat', L('มื้ออาหาร', 'Meals'), food)}${pl.planB ? `<section class="cbox c-hot"><h3 class="ch">${ic('shuffle')}${L('แผนสำรอง', 'Plan B')}</h3>${pts(T(pl.planB))}</section>` : ''}${box('leaf', 'money', L('เงิน อากาศ และเรื่องเล่า', 'Money, weather, stories'), more)}</div>
 ${reportBtn(full, L('อ่านแผนเต็มของวันนี้', "Read today's full plan"))}`;
 }
-// grown-ups switch the trip reminders on per phone (the server pushes 30 min before each timed step of the day)
+// grown-ups switch the trip reminders on per phone (the server pushes 30 min before each timed step of the day);
+// once on, the box leaves the Today page and lives on the Offline page (test / turn off)
 function remindBar() {
   const on = !!ls('remind');
   return `<div class="remind${on ? ' on' : ''}">${ic('bell')}<span><b>${on ? L('เตือนก่อนทุกกิจกรรม 30 นาที · เปิดอยู่', 'Reminders 30 min before each step · on') : L('ให้แอปเตือนก่อนทุกกิจกรรม 30 นาที', 'Remind me 30 min before each step')}</b>
@@ -416,7 +417,7 @@ function viewToday(t, j, full) {
 <article class="day today" style="border:0;margin-top:0;padding-top:6px"><div class="hd"><div class="no">${String(i + 1).padStart(2, '0')}</div><div class="dl">${L('วันที่', 'Day')} ${i + 1} · ${esc(fmtDay(d.date))}${i === dn ? ` <span class="tag">${L('วันนี้', 'Today')}</span>` : ''}</div><div></div><h3>${esc(T(d.title))}</h3>${artImg(t, i, 'hdart')}
 <div class="meta" style="grid-column:2/3">${d.sleep ? `<b>${L('นอนที่', 'Sleep')}</b> ${esc(T(d.sleep))}` : ''}${d.wx ? ` · ${esc(T(d.wx))}` : ''}</div></div></article>
 ${banner}
-${isEditor() && (dn >= 0 || until > 0) ? remindBar() : ''}
+${isEditor() && !ls('remind') && (dn >= 0 || until > 0) ? remindBar() : ''}
 <div class="row quick">${isEditor() ? `<a class="btn" href="#/t/${esc(t.id)}/log/${i}">${ic('log')} ${L('บันทึกวันนี้', 'Record today')}</a>` : ''}${pl.route ? extA(pl.route, ic('route') + ' ' + L('เส้นทางวันนี้', "Today's route"), 'qlink') : ''}${pl.stay ? extA(mapsUrl(pl.stay.q || pl.stay.addr), ic('stays') + ' ' + L('ไปที่พัก', 'To the stay'), 'qlink') : ''}${eatCount(t) ? `<a class="qlink" href="#/t/${esc(t.id)}/eat/d/${i}">${ic('eat')} ${L('ร้านอาหาร', 'Eat')}</a>` : ''}</div>
 ${(full ? planHtml(t, i, true) : dayGlance(t, i)) || `<div class="empty">${L('วันนี้ไม่มีแผนในคู่มือ', 'No plan in the manual for this day')}</div>`}
 ${mission && (mission.facts || []).length ? `<div class="part kidm">${L('ภารกิจของเด็กๆ วันนี้', "The kids' mission today")}</div><div class="call pick mission"><b>${esc(T(mission.title))}</b><ul class="tips">${mission.facts.map((f) => `<li>${esc(T(f))}</li>`).join('')}</ul></div>` : ''}`;
@@ -541,7 +542,7 @@ function viewLearn(t, full, open) {
   return glancePage(t, 'learn', B, lede, '', []);
 }
 const viewHearts = (t) => `<h1 class="h2">${secTitle('hearts')}</h1>${heartsHtml(t)}`;
-const viewOffline = (t) => `<h1 class="h2">${secTitle('offline')}</h1><p class="lede">${L('เก็บเล่มนี้ไว้ในเครื่องก่อนขึ้นเครื่องบินหรือลงเรือ แล้วเปิดสมุด แผน ร้านอาหาร พาสปอร์ต และโหมดเด็กได้โดยไม่ต้องมีสัญญาณ', 'Store this book on the phone before the flight or the ferry, then the book, the plans, places to eat, the passports and kid mode all open without signal')}</p>${offlineHtml(t)}
+const viewOffline = (t) => `<h1 class="h2">${secTitle('offline')}</h1><p class="lede">${L('เก็บเล่มนี้ไว้ในเครื่องก่อนขึ้นเครื่องบินหรือลงเรือ แล้วเปิดสมุด แผน ร้านอาหาร พาสปอร์ต และโหมดเด็กได้โดยไม่ต้องมีสัญญาณ', 'Store this book on the phone before the flight or the ferry, then the book, the plans, places to eat, the passports and kid mode all open without signal')}</p>${offlineHtml(t)}${pushOk() || ls('remind') ? remindBar() : ''}
 <div class="part">${L('สมุดเล่มพิมพ์', 'The printed book')}</div><div class="row noprint" style="margin:8px 0"><a class="btn small" href="/api/b/pdf/${esc(t.id)}" download data-a="pdf">${L('สมุดความทรงจำ (PDF A4)', 'Memory book (PDF A4)')}</a><a class="btn ghost small" href="#/print/${esc(t.id)}">${L('ดูตัวอย่างเล่ม', 'Preview the book')}</a></div>`;
 function favouritesHtml(t) {
   const ph = mediaOf(t.id).filter((m) => m.highlight), qs = entriesOf(t.id).filter((e) => e.kind === 'quote' && e.highlight);

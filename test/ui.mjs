@@ -182,6 +182,14 @@ const T = 'hk-macau-2026';
   // every meal has a pick and a backup (manual EN-2); the park map is drawn
   await page.goto(`${BASE}/#/t/${T}/today/1`); await page.waitForSelector('.dsheet');
   ok(await page.locator('.remind [data-a="remind"]').count() === 1 && /30/.test(await page.textContent('.remind')), 'today page: grown-ups can switch on reminders 30 min before each step');
+  await page.evaluate(() => { ls('remind', 1); render(); });
+  ok(await page.locator('.remind').count() === 0, 'today page: once reminders are on, the reminder box goes away');
+  await page.goto(`${BASE}/#/t/${T}/offline`); await page.waitForSelector('.remind.on');
+  ok(await page.locator('.remind [data-a="remindtest"]').count() === 1 && await page.locator('.remind [data-a="remind"]').count() === 1, 'offline page: reminders that are on can be tested or turned off there');
+  await page.evaluate(() => { ls('remind', null); });
+  const badge = await page.evaluate(async () => { const r = await fetch('/badge-96.png'); const sw = await (await fetch('/sw.js')).text(); return r.ok && /badge: '\/badge-96\.png'/.test(sw); });
+  ok(badge, 'notifications use a transparent one-colour badge (Android shows an opaque icon as a white square)');
+  await page.goto(`${BASE}/#/t/${T}/today/1`); await page.waitForSelector('.dsheet');
   ok(await page.locator('.dsheet .meal').count() === 4 && /Hoi Lin Tea House/.test(await page.textContent('.cgrid')) && /Plaza Inn/.test(await page.locator('.dsheet .meal').nth(3).textContent()) && await page.locator('.dsheet a[href="/art/hk/disney-map.svg"]').count() === 1, 'HK today, Disney day: four meals each with a pick and a backup, and the park map');
   const vp0 = page.viewportSize(); await page.setViewportSize({ width: 1440, height: 900 }); await page.waitForSelector('.cgrid.packed');
   const colH = await page.$$eval('.cgrid.packed > .ccol', (cs) => cs.map((c) => c.offsetHeight));

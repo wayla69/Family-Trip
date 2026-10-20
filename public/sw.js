@@ -1,6 +1,6 @@
 // Memory Bookshelf service worker: app shell + all drawn art offline from the first visit; photos cached as you view them
 // (or all at once with "Keep this book offline"). Data (/api) is cached by the app itself (IndexedDB) and written through its queue.
-const V = 'mbs-v56';
+const V = 'mbs-v57';
 const SHELL = ['/', '/app.css', '/core.js', '/views.js', '/sheets.js', '/kid.js', '/manifest.webmanifest', '/icon.svg',
   '/fonts/KIRA-UI-Regular.woff2', '/fonts/KIRA-UI-Medium.woff2', '/fonts/KIRA-UI-SemiBold.woff2', '/fonts/KIRA-UI-Bold.woff2',
   '/fonts/CormorantGaramond-SemiBold.woff2', '/fonts/CormorantGaramond-MediumItalic.woff2'];
@@ -26,7 +26,7 @@ self.addEventListener('activate', (e) => { e.waitUntil(caches.keys().then((ks) =
 // trip reminders from the server (Web Push): show them, and a tap opens that day's page
 self.addEventListener('push', (e) => {
   let d = {}; try { d = e.data ? e.data.json() : {}; } catch (_) { d = { body: e.data && e.data.text() }; }
-  e.waitUntil(self.registration.showNotification(d.title || 'Memory Bookshelf', { body: d.body || '', tag: d.tag || 'mb', renotify: true, icon: '/icon-192.png', badge: '/icon-192.png', data: { url: d.url || '/' } }));
+  e.waitUntil(self.registration.showNotification(d.title || 'Memory Bookshelf', { body: d.body || '', tag: d.tag || 'mb', renotify: true, icon: '/icon-192.png', badge: '/badge-96.png', data: { url: d.url || '/' } }));
 });
 self.addEventListener('notificationclick', (e) => {
   e.notification.close();
