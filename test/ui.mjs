@@ -202,6 +202,10 @@ const T = 'hk-macau-2026';
   await page.goto(`${BASE}/#/t/${T}/prep/full`); await page.waitForSelector('.steps');
   ok(await page.locator('.steps > li').count() === 8 && await page.locator('.steps > li.ok').count() === 1 && await page.locator('.steps > li').nth(1).locator('.when').textContent() === 'This week · early Oct' && await page.locator('.steps > li').nth(0).locator('.pts > li').count() === 6,
     'prep: the booking timeline is a list of steps — date chip, task, short points (the done one ticked)');
+  { const vp = page.viewportSize(); await page.setViewportSize({ width: 1440, height: 900 }); await page.waitForTimeout(200);
+    const xs = await page.$$eval('.steps > li', (ls) => [...new Set(ls.map((l) => Math.round(l.getBoundingClientRect().left)))]);
+    await page.setViewportSize(vp);
+    ok(xs.length === 2, `prep, wide screen: the booking steps read in two columns (${xs.join(' / ')})`); }
   ok(!/no booking|book Nov/.test(await page.locator('.steps').evaluate((e) => e.closest('details').querySelector('.lede').textContent)), 'prep: the booking timeline opens with its date line only (no shredded status list)');
   await page.goto(`${BASE}/#/t/${T}/learn/full`); await page.waitForSelector('.gcards');
   const gl = await page.$$eval('.gcard .pts > li', (els) => els.map((e) => e.textContent.trim()));
