@@ -198,6 +198,15 @@ const T = 'hk-macau-2026';
   await page.evaluate(() => { ls('remind', null); });
   const badge = await page.evaluate(async () => { const r = await fetch('/badge-96.png'); const sw = await (await fetch('/sw.js')).text(); return r.ok && /badge: '\/badge-96\.png'/.test(sw); });
   ok(badge, 'notifications use a transparent one-colour badge (Android shows an opaque icon as a white square)');
+  // the owner: "make it easier to read, not long" — booking timeline as step cards, guide cards with short points
+  await page.goto(`${BASE}/#/t/${T}/prep/full`); await page.waitForSelector('.steps');
+  ok(await page.locator('.steps > li').count() === 8 && await page.locator('.steps > li.ok').count() === 1 && await page.locator('.steps > li').nth(1).locator('.when').textContent() === 'This week · early Oct' && await page.locator('.steps > li').nth(0).locator('.pts > li').count() === 6,
+    'prep: the booking timeline is a list of steps — date chip, task, short points (the done one ticked)');
+  ok(!/no booking|book Nov/.test(await page.locator('.steps').evaluate((e) => e.closest('details').querySelector('.lede').textContent)), 'prep: the booking timeline opens with its date line only (no shredded status list)');
+  await page.goto(`${BASE}/#/t/${T}/learn/full`); await page.waitForSelector('.gcards');
+  const gl = await page.$$eval('.gcard .pts > li', (els) => els.map((e) => e.textContent.trim()));
+  ok(gl.length > 10 && gl.every((x) => !/^[a-z][a-z]/.test(x)) && await page.locator('.gcard > b + .gsub').count() === 13, 'learn: guide cards put the headline first and no point starts mid-sentence ("book 3–5 days ahead" → "Book …")');
+  ok(await page.evaluate(() => points('TG 638 ขาไป 5 ธ.ค. · Noah\'s Ark 5–7 ธ.ค.').join('|')) === 'TG 638 ขาไป 5 ธ.ค.|Noah\'s Ark 5–7 ธ.ค.', 'points keep the dot of a Thai month (ธ.ค.)');
   await page.goto(`${BASE}/#/t/${T}/today/1`); await page.waitForSelector('.dsheet');
   ok(await page.locator('.dsheet .meal').count() === 4 && /Hoi Lin Tea House/.test(await page.textContent('.cgrid')) && /Plaza Inn/.test(await page.locator('.dsheet .meal').nth(3).textContent()) && await page.locator('.dsheet a[href="/art/hk/disney-map.svg"]').count() === 1, 'HK today, Disney day: four meals each with a pick and a backup, and the park map');
   const vp0 = page.viewportSize(); await page.setViewportSize({ width: 1440, height: 900 }); await page.waitForSelector('.cgrid.packed');

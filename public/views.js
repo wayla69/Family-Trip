@@ -277,11 +277,12 @@ const points = (s) => {
   const t = String(s || '').replace(/[().;·—:]/g, (c) => { if (c === '(') { d++; return c; } if (c === ')') { d = Math.max(0, d - 1); return c; } return d ? SEP[c] : c; });
   let parts = t.split(/(?<=[A-Za-z0-9)"'’][.;]|;)\s+(?=\S)|\s+·\s+/);   // a full stop counts only after a Latin letter, digit or bracket (Thai dates like มี.ค. never split)
   parts = parts.flatMap((x) => (x.length > 110 ? x.split(/\s+—\s+|:\s+(?=\S)/) : [x]));   // still long: cut at a dash or a colon too
-  return parts.map((x) => x.replace(/[\u0001-\u0005]/g, (c) => '.;·—:'[c.charCodeAt(0) - 1]).replace(/[;.]\s*$/, '').replace(/^[—–-]\s*/, '').trim()).filter(Boolean);
+  return parts.map((x) => x.replace(/[\u0001-\u0005]/g, (c) => '.;·—:'[c.charCodeAt(0) - 1]).replace(/;\s*$|(?<![ก-๙]\.[ก-๙]{1,2})\.\s*$/, '').replace(/^[—–-]\s*/, '').trim()).filter(Boolean);
 };
 const pt = (x) => { const m = x.match(/^(.*?)\s*\(([^()]{45,})\)\s*(.*)$/); return m ? `${esc(m[1] + (m[3] ? ' ' + m[3] : ''))}<small>${esc(m[2])}</small>` : esc(x); };   // a long bracket drops to a small line
 const lead = (s) => ((p) => `${pt(p[0] || '')}${p.slice(1).map((y) => `<small class="tsub">${pt(y)}</small>`).join('')}`)(points(s));
-const pts = (s, cls) => { const p = points(s); return p.length > 1 ? `<ul class="pts${cls ? ' ' + cls : ''}">${p.map((x) => `<li>${pt(x)}</li>`).join('')}</ul>` : `<p class="pt1">${pt(p[0] || '')}</p>`; };
+const cap1 = (x) => x.replace(/^[a-z](?=[a-z])/, (c) => c.toUpperCase());   // "book Nov" → "Book Nov"; eSIM and iPhone stay
+const pts = (s, cls) => { const p = points(s).map(cap1); return p.length > 1 ? `<ul class="pts${cls ? ' ' + cls : ''}">${p.map((x) => `<li>${pt(x)}</li>`).join('')}</ul>` : `<p class="pt1">${pt(p[0] || '')}</p>`; };
 // money as a small bill: one line per item with its amount on the right, the day's total last, footnotes small
 const moneyHtml = (s) => {
   const rows = String(s || '').split(/\s+·\s+/), cur = /(≈\s*)?(HK\$|MOP|A\$|AU\$|\$|฿)\s?[\d,]/;
@@ -438,6 +439,11 @@ function infoBlocks(t) {
   const sh = (x, len) => esc(brief(T(x), len));
   const tel = (x) => `<a href="tel:${esc(String(x).split('·')[0].replace(/[^+\d]/g, ''))}">${esc(x)}</a>`;   // "number · address" → dial the number only
   const tbl = (cols, rows, cls) => `<div class="tblwrap"><table class="prices ${cls || ''}">${cols ? `<thead><tr>${cols.map((c) => `<th>${esc(T(c))}</th>`).join('')}</tr></thead>` : ''}<tbody>${rows.map((r) => `<tr>${r.map((c, k) => `<td${k === 0 ? ' class="nm"' : cols && cols[k] ? ` data-h="${esc(T(cols[k]))}"` : ''}>${esc(typeof c === 'object' ? T(c) : String(c))}</td>`).join('')}</tr>`).join('')}</tbody></table></div>`;   // phones stack each row into a card, every value labelled by its column (app.css)
+  // a to-do table (when · task · action, or what · for · when/how) as cards: the date as a chip, the task bold, the action as short points
+  const steps = (cols, rows) => { const c = (cols || []).map((x) => (x.en || T(x)).toLowerCase()), w = c[0] === 'when' ? [0, 1, 2] : [1, 0, 2];
+    if ((cols || []).length !== 3) return tbl(cols, rows);
+    return `<ol class="steps">${rows.map((r) => { const v = r.map((x) => (typeof x === 'object' ? T(x) : String(x))), done = /^(done|เสร็จ)/i.test(v[w[0]]);
+      return `<li${done ? ' class="ok"' : ''}><span class="when">${done ? '✓ ' : ''}${esc(v[w[0]])}</span><b>${esc(v[w[1]])}</b>${pts(v[w[2]], 'tight')}</li>`; }).join('')}</ol>`; };
   const lede = (x) => (x && T(x) ? (T(x).length > 150 ? pts(T(x), 'lede') : `<p class="lede">${esc(T(x))}</p>`) : '');
   const list = (items) => `<ul class="tips">${items.map((x) => `<li>${lead(T(x))}</li>`).join('')}</ul>`;
   // tickable checklist, like the manual's boxes — ticks are a per-phone convenience (localStorage), nothing is sent
@@ -474,7 +480,7 @@ ${n.lost ? `<p class="elost">${esc(T(n.lost))}</p>` : ''}</div>`);
   if (n.ifthen) { const f = n.ifthen, sub = (x) => (x ? `<h5>${esc(T(x.head))}</h5>${lede(x.lede)}${tbl(x.cols, x.rows)}` : '');
     pg('sos', sh(f.rows[0] && f.rows[0][0]) + ' …', '', `🔀 ${L('ถ้า… ก็…', 'If… then…')} <span class="label">· ${f.rows.length + ((f.mishap || {}).rows || []).length}</span>`, `${tbl(f.cols, f.rows, 'ift')}${f.mishap ? `<h5>${esc(T(f.mishap.head))}</h5>${lede(f.mishap.lede)}${tbl(f.cols, f.mishap.rows, 'ift')}` : ''}${sub(f.carry)}`);
     if (f.crowd) pg('prep', sh(f.crowd.lede), '', `👥 ${esc(T(f.crowd.head))}`, `${lede(f.crowd.lede)}${tbl(f.crowd.cols, f.crowd.rows)}`);
-    if (f.book) pg('prep', sh(f.book.lede), '', `📅 ${esc(T(f.book.head))}`, `${lede(f.book.lede)}${tbl(f.book.cols, f.book.rows)}`); }
+    if (f.book) pg('prep', sh(f.book.lede), '', `📅 ${esc(T(f.book.head))}`, `${f.book.lede && T(f.book.lede) ? `<p class="lede">${esc(points(T(f.book.lede))[0])}</p>` : ''}${steps(f.book.cols, f.book.rows)}`); }
   // get ready
   if ((n.pack || []).length) pg('prep', packSub(), 'pack', `🧳 ${L('จัดกระเป๋า', 'Packing')}`, `${cols(n.pack.map((g, gi) => `<div><h5>${esc(T(g.group))}</h5>${chk(g.items, `pack${gi}`)}</div>`))}<p class="label">${L('ติ๊กไว้ในเครื่องนี้เท่านั้น', 'Ticks stay on this phone')}</p>`);
   if (n.prices && (n.prices.rows || []).length) pg('prep', esc(L(`${n.prices.rows.length} รายการ`, `${n.prices.rows.length} items`)), '', `🎟️ ${esc(T(n.prices.head))}`, tbl(n.prices.cols, n.prices.rows));
@@ -487,7 +493,7 @@ ${n.lost ? `<p class="elost">${esc(T(n.lost))}</p>` : ''}</div>`);
     B.drive = `<details class="pg" open id="pg-prep-${B.prep.length}"><summary>${dvt}</summary>${lede(dv.lede)}${tbl(dv.cols, dv.legs.map((g) => [L('วันที่ ', 'Day ') + g[0], g[1], g[2], g[3] >= 60 ? `${Math.floor(g[3] / 60)} ${L('ชม.', 'h')} ${String(g[3] % 60).padStart(2, '0')}` : `${g[3]} ${L('นาที', 'min')}`]), 'legs')}${(dv.notes || []).map((x) => `<div class="call info">${x.title ? `<span class="lbl">${esc(T(x.title))}</span>` : ''}${pts(T(x))}</div>`).join('')}</details>`;
     B.prep.push(B.drive); }
   // learn
-  if ((n.guide || []).length) pg('learn', esc(n.guide.slice(0, 3).map((g) => T(g.title)).join(' · ')), '', `🧭 ${L('เรื่องที่กำหนดแผนทั้งทริป', 'What shapes this trip')} <span class="label">· ${n.guide.length}</span>`, `<div class="gcards">${n.guide.map((g) => `<div class="gcard"><div class="kicker">${esc(T(g.sub))}</div><b>${esc(T(g.title))}</b>${pts(T(g.text))}</div>`).join('')}</div>`);
+  if ((n.guide || []).length) pg('learn', esc(n.guide.slice(0, 3).map((g) => T(g.title)).join(' · ')), '', `🧭 ${L('เรื่องที่กำหนดแผนทั้งทริป', 'What shapes this trip')} <span class="label">· ${n.guide.length}</span>`, `<div class="gcards">${n.guide.map((g) => `<div class="gcard"><b>${esc(T(g.title))}</b><div class="gsub">${esc(T(g.sub))}</div>${pts(T(g.text), 'tight')}</div>`).join('')}</div>`);
   const learnDays = t.days.map((d, i) => ({ i, d, pl: d.plan || {} })).filter((x) => (x.pl.learn || []).length || (x.pl.quiz || []).length);
   if (learnDays.length) pg('learn', esc(L(`${learnDays.reduce((a, x) => a + (x.pl.learn || []).length, 0)} เรื่อง · ${learnDays.reduce((a, x) => a + (x.pl.quiz || []).length, 0)} คำถาม`, `${learnDays.reduce((a, x) => a + (x.pl.learn || []).length, 0)} cards · ${learnDays.reduce((a, x) => a + (x.pl.quiz || []).length, 0)} questions`)), 'days', `📚 ${L('เรียนรู้ระหว่างทาง · วันต่อวัน', 'Learn on the way · day by day')} <span class="label">· ${learnDays.length} ${L('วัน', 'days')}</span>`, learnDays.map(({ i, d, pl }) => `<details class="sub"><summary>${artImg(t, i)} <b>${L('วันที่', 'Day')} ${i + 1}</b> · ${esc(T(d.title))}</summary>${(pl.learn || []).map((x) => `<div class="learn"><b>${esc(T(x.name))}</b> <span class="label">${esc(T(x.country))}</span><ul>${(x.facts || []).map((f) => `<li>${lead(T(f))}</li>`).join('')}</ul>${x.kid ? `<p class="kidline"><b>${L('เล่าให้เด็กฟัง', 'For the kids')}</b> ${esc(T(x.kid))}</p>` : ''}</div>`).join('')}${(pl.quiz || []).length ? `<h5>${L('ถามหนูในรถ', 'Quiz in the car')}</h5>${quizHtml(pl.quiz)}` : ''}${pl.tale ? taleHtml(t, i, pl.tale) : ''}</details>`).join(''));
   if ((n.general || []).length) pg('learn', esc(n.general.map((g) => T(g.theme)).join(' · ')), '', `🗣️ ${L('เรียนรู้ระหว่างนั่งรถ', 'Learn in the car')} <span class="label">· ${n.general.reduce((s, g) => s + g.items.length, 0)}</span>`, `<div class="cols2">${n.general.map((g) => `<div><h5>${esc(T(g.theme))}</h5><dl class="words">${g.items.map((x) => `<div><dt>${esc(T(x.t))}</dt><dd>${esc(T(x.x))}</dd></div>`).join('')}</dl></div>`).join('')}</div>`);
