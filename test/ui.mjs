@@ -187,6 +187,8 @@ const T = 'hk-macau-2026';
   const pickDd = await page.$$eval('.dsheet > div:not(.meal) > dd', (els) => els.map((e) => e.textContent));
   const seedPick = await page.evaluate(() => T(S.trips.find((x) => x.id === 'hk-macau-2026').days[1].plan.pick));
   ok(seedPick.length > 110 && pickDd.includes(seedPick), "today page: the local pick is shown whole (it was cut at 110 characters)");
+  const seedWx = await page.evaluate(() => T(S.trips.find((x) => x.id === 'hk-macau-2026').days[1].wx));
+  ok(seedWx.length > 110 && pickDd.includes(seedWx), 'today page: the weather is shown whole (it was cut to its first clause)');
   await page.evaluate(() => { ls('remind', 1); render(); });
   ok(await page.locator('.remind').count() === 0, 'today page: once reminders are on, the reminder box goes away');
   await page.goto(`${BASE}/#/t/${T}/offline`); await page.waitForSelector('.remind.on');
