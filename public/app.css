@@ -928,7 +928,7 @@ nav.bar button i{font-style:normal;font-size:27px;line-height:1.1}
 .tile.today .e{grid-row:1}.tile.today b{grid-column:1;font-family:var(--display);font-size:24px}.tile.today small{grid-column:1;font-size:14px}
 .tile.today .tart{grid-column:2;grid-row:1/4;width:72px;height:72px;align-self:center;transform:rotate(-6deg)}
 .tile.today.hi{background:var(--accent);color:#fff}.tile.today.hi small{color:#fff;opacity:.9}
-.tile.log{background:var(--pick)}.tile.sos{background:var(--warn)}.tile.warn{border-color:var(--accent2)}.tile.kid{background:#FFF3E0;color:#1F2A3A}.tile.kid small{color:#6D7480}.tile.shelf{background:transparent;border-color:var(--rule)}
+.tile.log{background:var(--pick)}.tile.sos{background:var(--warn)}.tile.warn{border-color:var(--accent2)}.tile.kid{background:#FFF3E0;color:#1F2A3A}.tile.kid small{color:#6D7480}.tile.shelfgo{background:transparent;border-color:var(--rule)}
 .quick{margin:12px 0 4px}
 .nights{list-style:none;margin:6px 0;padding:0}.nights li{display:grid;grid-template-columns:auto 1fr;gap:2px 12px;padding:8px 0;border-bottom:1px solid var(--rule);font-size:14px}.nights li b{color:var(--accent)}.nights li small{grid-column:1;color:var(--muted)}.nights li div{grid-column:2;grid-row:1/3}
 .pocket details.pg[open]>summary{margin-bottom:6px}
@@ -1017,7 +1017,7 @@ button.tile{width:100%;height:auto;appearance:none;-webkit-appearance:none}   /*
 .tile b{color:color-mix(in srgb,var(--tc) 55%,var(--ink))}
 .tile.t-log{--tc:var(--sun)}.tile.t-book{--tc:var(--grape)}.tile.t-eat{--tc:#E8702A}.tile.t-plan{--tc:var(--sky)}.tile.t-stays{--tc:#4F63C9}
 .tile.t-sos{--tc:var(--hot)}.tile.t-prep{--tc:var(--leaf)}.tile.t-learn{--tc:var(--tealc)}.tile.t-firsts{--tc:var(--sun)}.tile.t-hearts{--tc:var(--rose)}.tile.t-offline{--tc:var(--slate)}
-.tile[href="#/passport"]{--tc:#8E2453}.tile[href="#/notebook"]{--tc:#A0662A}.tile.kid{--tc:#F08A24}.tile.shelf{--tc:var(--slate);background:transparent}
+.tile[href="#/passport"]{--tc:#8E2453}.tile[href="#/notebook"]{--tc:#A0662A}.tile.kid{--tc:#F08A24}.tile.shelfgo{--tc:var(--slate);background:transparent}
 .tile.today{--tc:var(--accent)}.tile.today.hi{background:var(--accent);border-color:var(--accent)}.tile.today.hi .e{background:rgba(255,255,255,.18)}.tile.today.hi b{color:#fff}
 .tile.t-sos small{color:var(--hot);font-weight:700}
 /* topic pages: the page's colour on its title, section bars and sub-heads */
@@ -1215,7 +1215,7 @@ nav.bar a,nav.bar button{font-weight:500;font-size:11.5px;letter-spacing:.01em}
 .part{font-size:var(--fs-4);font-weight:600;letter-spacing:.1em;text-transform:uppercase;color:var(--muted)}
 .gh{font-size:var(--fs-4);font-weight:600;letter-spacing:.1em;text-transform:uppercase;color:var(--muted);margin:22px 0 6px}
 /* menu tiles: white, hairline, the icon in a soft accent square */
-.tile,.tile[class*="t-"],.tile[href="#/passport"],.tile[href="#/notebook"],.tile.kid,.tile.shelf,.tile.log,.tile.sos{--tc:var(--accent);background:var(--paper);color:var(--ink);border:1px solid var(--line);border-top:1px solid var(--line);border-radius:var(--r);min-height:112px}
+.tile,.tile[class*="t-"],.tile[href="#/passport"],.tile[href="#/notebook"],.tile.kid,.tile.shelfgo,.tile.log,.tile.sos{--tc:var(--accent);background:var(--paper);color:var(--ink);border:1px solid var(--line);border-top:1px solid var(--line);border-radius:var(--r);min-height:112px}
 .tile .e{display:grid;place-items:center;width:40px;height:40px;border-radius:10px;background:var(--soft);color:var(--accent);font-size:0}
 .tile .e .ic{width:22px;height:22px}
 .tile b,.tile.kid b{color:var(--ink);font-weight:600;font-size:15.5px}
@@ -1223,7 +1223,7 @@ nav.bar a,nav.bar button{font-weight:500;font-size:11.5px;letter-spacing:.01em}
 .tile.kid .e{background:var(--soft)}
 .tile.t-sos .e{background:color-mix(in srgb,var(--hot) 10%,var(--paper));color:var(--hot)}
 .tile.warn{border-color:color-mix(in srgb,var(--accent2) 45%,var(--line))}
-.tile.shelf{background:transparent}
+.tile.shelfgo{background:transparent}
 .tile.today{background:var(--paper)}
 .tile.today.hi{background:var(--accent);border-color:var(--accent);color:#fff}.tile.today.hi .e{background:rgba(255,255,255,.16);color:#fff}.tile.today.hi b{color:#fff}
 .tile.today b{font-size:22px}
@@ -1553,5 +1553,5 @@ p,li,.bubble p{text-wrap:pretty}
 .hubgrid .tile[href="#/notebook"]{--g1:#3DD47A;--g2:#18A04F}   /* green */
 .hubgrid .t-offline{--g1:#5CB8FF;--g2:#1E88E5}   /* sky */
 .hubgrid .tile.kid{--g1:#FF4FD8;--g2:#C824A6}   /* magenta */
-.hubgrid .tile.shelf{--g1:#5B6573;--g2:#2B323C}   /* charcoal */
+.hubgrid .tile.shelfgo{--g1:#5B6573;--g2:#2B323C}   /* charcoal */
 .hubgrid .tile.warn{box-shadow:inset 0 0 0 2px color-mix(in srgb,var(--g2) 70%,#fff),0 6px 14px -10px var(--g2)}   /* still to do (e.g. not stored offline yet) */
