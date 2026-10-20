@@ -182,6 +182,8 @@ const T = 'hk-macau-2026';
   // every meal has a pick and a backup (manual EN-2); the park map is drawn
   await page.goto(`${BASE}/#/t/${T}/today/1`); await page.waitForSelector('.dsheet');
   ok(await page.locator('.remind [data-a="remind"]').count() === 1 && /30/.test(await page.textContent('.remind')), 'today page: grown-ups can switch on reminders 30 min before each step');
+  const tlRows = await page.$$eval('.tl.plan.brief li div', (els) => els.map((e) => e.textContent));
+  ok(tlRows.length > 0 && tlRows.every((x) => !x.endsWith('…')), 'today page: every timeline step is shown whole, never cut with …');
   await page.evaluate(() => { ls('remind', 1); render(); });
   ok(await page.locator('.remind').count() === 0, 'today page: once reminders are on, the reminder box goes away');
   await page.goto(`${BASE}/#/t/${T}/offline`); await page.waitForSelector('.remind.on');
