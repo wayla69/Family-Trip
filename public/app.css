@@ -1370,6 +1370,12 @@ button.tile.kid{border:1px solid var(--line);text-align:left;justify-items:start
 .steps .when{display:inline-block;font-size:12px;font-weight:700;letter-spacing:.02em;color:var(--tc,var(--accent));background:color-mix(in srgb,var(--tc,var(--accent)) 12%,transparent);border-radius:999px;padding:2px 10px}
 .steps b{display:block;font-size:16px;margin:4px 0 2px}
 .steps>li.ok b,.steps>li.ok .pts{color:var(--muted)}
+/* a wide screen reads the steps in two columns (down the first, then the second); each step carries its own piece of the line */
+@media (min-width:900px){
+  .steps{display:block;columns:2;column-gap:44px;border-left:0;padding-left:0}
+  .steps>li{break-inside:avoid;border-left:2px solid var(--rule);padding:0 0 16px 18px}
+  .steps>li::before{left:-7px}
+}
 .pt1{margin:2px 0 0}
 .call.warn{--pc:var(--hot)}.call.pick{--pc:var(--sun)}
 .pts.lede{color:var(--muted);max-width:68ch;margin:4px 0 10px}
