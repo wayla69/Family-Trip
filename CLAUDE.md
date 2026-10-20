@@ -45,6 +45,7 @@ UI screenshots go to `$SHOTS` (default `/tmp/mb-shots`) — look at them after U
 - Stable keys: planned-place `key`s in seeds are check-in keys; never rename one for a trip that has started — add a new stop instead.
 
 ## Gotchas
+- Cloud sessions: `.claude/hooks/session-start.sh` runs **async** (npm install, Postgres :5432, s3rver :4569, `TEST_*` env). Before the first `npm test`, wait for it: `until [ -f /tmp/mb-session-ready ]; do sleep 1; done`.
 - Don't `pkill -f`/grep-kill node servers in a shell that runs tests — kill by PID.
 - `FAMILY_CODE` unset ⇒ nobody can log in (server only warns).
 - Headless Chromium reports `en-US`, so tests see the English UI unless they toggle.
