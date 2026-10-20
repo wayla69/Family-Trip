@@ -28,7 +28,7 @@
 
 *{box-sizing:border-box}
 html{-webkit-text-size-adjust:100%}
-body{margin:0;background:var(--paper);color:var(--ink);font:16px/1.5 var(--ui);padding-bottom:calc(96px + env(safe-area-inset-bottom,0px));overflow-x:hidden}
+body{margin:0;background:var(--paper);color:var(--ink);font:16px/1.5 var(--ui);font-variant-numeric:lining-nums;padding-bottom:calc(96px + env(safe-area-inset-bottom,0px));overflow-x:hidden}
 button,input,select,textarea{font:inherit;color:inherit}
 button{cursor:pointer}
 a{color:inherit}
@@ -1061,6 +1061,7 @@ p.money b{color:color-mix(in srgb,var(--leaf) 70%,var(--ink))}
 .tp-learn .gcard .kicker{color:color-mix(in srgb,var(--tc) 70%,var(--ink));letter-spacing:.06em}
 .tp-learn .gcard b{font-family:var(--display);font-size:19px;line-height:1.25;color:var(--ink)}
 .tp-learn .gcard p{font-size:14px;margin:4px 0 0}
+.gcard .gsub{font-size:13px;font-weight:600;color:color-mix(in srgb,var(--tc,var(--accent)) 75%,var(--ink));margin:0 0 6px}
 .tp-learn details.sub{border-bottom:1px solid var(--rule);padding:8px 0}
 .tp-learn details.sub>summary{cursor:pointer;font-size:15px;font-weight:600;list-style:none;display:flex;align-items:center;gap:6px}
 .tp-learn details.sub>summary::-webkit-details-marker{display:none}
@@ -1358,6 +1359,17 @@ button.tile.kid{border:1px solid var(--line);text-align:left;justify-items:start
 .pts>li{position:relative;padding-left:16px;line-height:1.45}
 .pts>li::before{content:"";position:absolute;left:2px;top:.62em;width:6px;height:6px;border-radius:50%;background:var(--pc,var(--accent))}
 .pts small,.pt1 small{display:block;font-size:12.5px;color:var(--muted);margin-top:2px}
+.pts.nums{counter-reset:n}.pts.nums>li{counter-increment:n;padding-left:28px}
+.pts.nums>li::before{content:counter(n);width:20px;height:20px;top:.1em;left:0;border-radius:50%;background:var(--pc,var(--cb,var(--accent)));color:#fff;font-size:12px;font-weight:700;line-height:20px;text-align:center}
+.pts.tight{gap:3px}.pts.tight>li{font-size:14px;line-height:1.4}
+/* a to-do table as a timeline of steps: date chip · task · short points (prep → booking timeline) */
+.steps{list-style:none;margin:10px 0 0 10px;padding:0 0 0 18px;border-left:2px solid var(--rule);display:grid;gap:14px}
+.steps>li{position:relative}
+.steps>li::before{content:"";position:absolute;left:-25px;top:4px;width:12px;height:12px;border-radius:50%;background:var(--paper);border:2px solid var(--tc,var(--accent))}
+.steps>li.ok::before{background:var(--tc,var(--accent))}
+.steps .when{display:inline-block;font-size:12px;font-weight:700;letter-spacing:.02em;color:var(--tc,var(--accent));background:color-mix(in srgb,var(--tc,var(--accent)) 12%,transparent);border-radius:999px;padding:2px 10px}
+.steps b{display:block;font-size:16px;margin:4px 0 2px}
+.steps>li.ok b,.steps>li.ok .pts{color:var(--muted)}
 .pt1{margin:2px 0 0}
 .call.warn{--pc:var(--hot)}.call.pick{--pc:var(--sun)}
 .pts.lede{color:var(--muted);max-width:68ch;margin:4px 0 10px}
@@ -1386,9 +1398,10 @@ button.tile.kid{border:1px solid var(--line);text-align:left;justify-items:start
 .cbox .bill dd{color:color-mix(in srgb,var(--cb) 60%,var(--ink))}
 /* report sections: each a box, colours taking turns */
 .pocket{display:grid;gap:12px}
-.pocket details.pg{--cb:var(--sky);border:1px solid color-mix(in srgb,var(--cb) 24%,transparent);border-top:1px solid color-mix(in srgb,var(--cb) 24%,transparent);border-radius:16px;padding:0 14px 8px;background:color-mix(in srgb,var(--cb) 4%,var(--paper))}
-.pocket details.pg>summary{margin:0 -14px;padding:12px 14px;border-radius:15px;background:color-mix(in srgb,var(--cb) 13%,var(--paper));color:color-mix(in srgb,var(--cb) 72%,var(--ink))}
+.pocket details.pg{--cb:var(--sky);border:1px solid color-mix(in srgb,var(--cb) 24%,transparent);border-top:1px solid color-mix(in srgb,var(--cb) 24%,transparent);border-radius:16px;padding:0 18px 12px;background:color-mix(in srgb,var(--cb) 4%,var(--paper))}
+.pocket details.pg>summary{margin:0 -18px;padding:12px 18px;border-radius:15px;background:color-mix(in srgb,var(--cb) 13%,var(--paper));color:color-mix(in srgb,var(--cb) 72%,var(--ink))}
 .pocket details.pg[open]>summary{border-radius:15px 15px 0 0;margin-bottom:10px}
+.tp .pocket details.pg>summary{padding:12px 18px}   /* the topic pages' earlier padding-left:0 put the heading on the frame's edge */
 .pocket details.pg:not([open]){padding-bottom:0}
 .pocket details.pg:nth-of-type(6n+1){--cb:var(--sky)}.pocket details.pg:nth-of-type(6n+2){--cb:var(--leaf)}.pocket details.pg:nth-of-type(6n+3){--cb:var(--sun)}
 .pocket details.pg:nth-of-type(6n+4){--cb:#4F63C9}.pocket details.pg:nth-of-type(6n+5){--cb:var(--rose)}.pocket details.pg:nth-of-type(6n){--cb:var(--tealc)}
