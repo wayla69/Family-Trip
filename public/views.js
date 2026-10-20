@@ -281,7 +281,7 @@ const points = (s) => {
 };
 const pt = (x) => { const m = x.match(/^(.*?)\s*\(([^()]{45,})\)\s*(.*)$/); return m ? `${esc(m[1] + (m[3] ? ' ' + m[3] : ''))}<small>${esc(m[2])}</small>` : esc(x); };   // a long bracket drops to a small line
 const lead = (s) => ((p) => `${pt(p[0] || '')}${p.slice(1).map((y) => `<small class="tsub">${pt(y)}</small>`).join('')}`)(points(s));
-const cap1 = (x) => x.replace(/^[a-z](?=[a-z])/, (c) => c.toUpperCase());   // "book Nov" → "Book Nov"; eSIM and iPhone stay
+const cap1 = (x) => x.replace(/^[a-z](?=[a-z]*(?:[\s,:;!?)]|$))/, (c) => c.toUpperCase());   // "book Nov" → "Book Nov"; eSIM and iPhone stay
 const pts = (s, cls) => { const p = points(s).map(cap1); return p.length > 1 ? `<ul class="pts${cls ? ' ' + cls : ''}">${p.map((x) => `<li>${pt(x)}</li>`).join('')}</ul>` : `<p class="pt1">${pt(p[0] || '')}</p>`; };
 // money as a small bill: one line per item with its amount on the right, the day's total last, footnotes small
 const moneyHtml = (s) => {
