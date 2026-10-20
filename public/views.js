@@ -395,7 +395,7 @@ function dayGlance(t, i) {
   const more = [money && row(L('เงินวันนี้', 'Money today'), `<span class="num">${esc(mm ? mm[0].replace(/^(?:วันนี้|Today)\s*/, '').trim() : brief(money))}</span>`),
     d.wx && row(L('อากาศ', 'Weather'), esc(brief(T(d.wx)))),
     (nl || nq) && row(L('เรียนรู้', 'Learn'), esc(L(`${nl} เรื่อง · ${nq} คำถามในรถ`, `${nl} cards · ${nq} car questions`)))].filter(Boolean).join('');
-  return `${rows.length ? `<section class="cbox c-sky"><h3 class="ch">${ic('clock')}${L('ไทม์ไลน์', 'Timeline')}</h3><ol class="tl plan brief">${rows.map((r) => `<li><time>${esc(r.t || '')}</time><div>${esc(brief(T(r), 70))}</div></li>`).join('')}</ol></section>` : ''}
+  return `${rows.length ? `<section class="cbox c-sky"><h3 class="ch">${ic('clock')}${L('ไทม์ไลน์', 'Timeline')}</h3><ol class="tl plan brief">${rows.map((r) => `<li><time>${esc(r.t || '')}</time><div>${esc(T(r))}</div></li>`).join('')}</ol></section>` : ''}
 <div class="cgrid">${box('ind', 'route', L('เดินทางและที่พัก', 'Getting around & tonight'), go)}${box('sun', 'eat', L('มื้ออาหาร', 'Meals'), food)}${pl.planB ? `<section class="cbox c-hot"><h3 class="ch">${ic('shuffle')}${L('แผนสำรอง', 'Plan B')}</h3>${pts(T(pl.planB))}</section>` : ''}${box('leaf', 'money', L('เงิน อากาศ และเรื่องเล่า', 'Money, weather, stories'), more)}</div>
 ${reportBtn(full, L('อ่านแผนเต็มของวันนี้', "Read today's full plan"))}`;
 }
