@@ -22,6 +22,15 @@ const dep = { trip: 'hk-macau-2026', tz: 'Asia/Hong_Kong', day_index: 0, date: '
 ok(PUSH.due([dep], Z('2026-12-05T04:00:00Z')).length === 1 && PUSH.due([dep], Z('2026-12-05T03:00:00Z')).length === 0, 'departure day: the Bangkok check-in uses Bangkok time (its own tz)');
 ok(new Date(PUSH.zoned('2027-04-04', '08:30', 'Australia/Sydney')).toISOString() === '2027-04-03T22:30:00.000Z' && new Date(PUSH.zoned('2027-04-03', '08:30', 'Australia/Sydney')).toISOString() === '2027-04-02T21:30:00.000Z', 'Sydney: daylight saving ends on 4 Apr 2027 — both sides of the change land right');
 
+// ---- extras(): store-the-book two evenings before, a countdown door each morning, record-the-day each evening
+{ const hk = { trip: 'hk-macau-2026', title: { th: 'ฮ่องกง', en: 'Hong Kong' }, tz: 'Asia/Hong_Kong', from: '2026-12-05', to: '2026-12-10', doors: 14 };
+  const at = (d, t) => PUSH.zoned(d, t, 'Asia/Hong_Kong'), keys = (now) => PUSH.extras([hk], now).map((x) => x.key).join();
+  ok(keys(at('2026-12-03', '19:00')) === 'hk-macau-2026.x.pack' && PUSH.extras([hk], at('2026-12-03', '19:00'))[0].url === '/#/t/hk-macau-2026/offline' && keys(at('2026-12-03', '18:59')) === '' && keys(at('2026-12-03', '19:16')) === '', 'two evenings before the flight, 19:00 Hong Kong: "keep this book on the phone" (opens the Offline page)');
+  ok(keys(at('2026-11-21', '08:00')) === 'hk-macau-2026.x.door1' && keys(at('2026-12-04', '08:05')) === 'hk-macau-2026.x.door14' && keys(at('2026-11-20', '08:00')) === '' && keys(at('2026-12-05', '08:00')) === '', 'countdown doors: door 1 the morning 14 sleeps before, door 14 the last morning — none before or on the day');
+  { const x = PUSH.extras([hk], at('2026-11-30', '08:00'))[0]; ok(x.key === 'hk-macau-2026.x.door10' && /5 sleeps to Hong Kong/.test(x.en.body) && /อีก 5 วันไปฮ่องกง/.test(x.th.body), 'door 10 says 5 sleeps to go, in both languages'); }
+  ok(keys(at('2026-12-05', '21:30')) === 'hk-macau-2026.x.log.d0' && keys(at('2026-12-10', '21:30')) === 'hk-macau-2026.x.log.d5' && keys(at('2026-12-11', '21:30')) === '' && PUSH.extras([hk], at('2026-12-06', '21:31'))[0].url === '/#/t/hk-macau-2026/log/1', 'every trip evening, 21:30: "record day N" (opens that day’s record page)');
+  ok(PUSH.extras([{ ...hk, doors: 0 }], at('2026-11-21', '08:00')).length === 0, 'a book without countdown doors sends no door mornings'); }
+
 // ---- the seeds: departure-day rows before landing carry Bangkok time
 { const hk = require('../server/seeds/hk-macau-2026.json'), au = require('../server/seeds/big-hop-2027.json');
   ok(hk.days[0].plan.filter((r) => r.tz === 'Asia/Bangkok').map((r) => r.t).join() === '11:30,14:00' && au.days[0].plan.filter((r) => r.tz === 'Asia/Bangkok').map((r) => r.t).join() === '05:30,08:30', 'seeds: the Bangkok check-in and take-off rows are marked Asia/Bangkok'); }
@@ -51,6 +60,16 @@ const at = PUSH.zoned('2026-12-06', '08:00', 'Asia/Hong_Kong') - 30 * 60000;   /
 ok(await R.tick(at) === 1 && sent.length === 1 && sent[0].p.title === '08:00 · อีก 30 นาที' && /Hoi Lin/.test(sent[0].p.body) && sent[0].p.url === '/#/t/hk-macau-2026/today/1' && sent[0].s.endpoint === sub.endpoint, 'tick at 07:30 Hong Kong: “08:00 · อีก 30 นาที — Hoi Lin…”, opens Disneyland day');
 ok(await R.tick(at + 60000) === 0 && sent.length === 1, 'the next tick does not send it again');
 ok(sent[0].p.body.length <= 140 && !/booking|PNR|passport no/i.test(sent[0].p.body), 'a short lock-screen line, the plan’s own words');
+{ const n0 = sent.length;
+  ok(await R.tick(PUSH.zoned('2026-12-03', '19:00', 'Asia/Hong_Kong')) === 1 && sent[n0].p.url === '/#/t/hk-macau-2026/offline' && /เก็บเล่มนี้ไว้ในเครื่อง/.test(sent[n0].p.body) && sent[n0].p.tag === 'hk-macau-2026.x.pack', 'scheduler: the store-the-book nudge goes out two evenings before, in the phone’s language');
+  ok(await R.tick(PUSH.zoned('2026-12-03', '19:01', 'Asia/Hong_Kong')) === 0, '…once');
+  ok(await R.tick(PUSH.zoned('2026-11-21', '08:00', 'Asia/Hong_Kong')) === 1 && /ประตูที่ 1/.test(sent[sent.length - 1].p.title), 'scheduler: door 1 the morning 14 sleeps before');
+  const rec = async (i) => (await pool.query(`SELECT 1 FROM entries WHERE trip_id='hk-macau-2026' AND day_index=$1 AND kind IN ('quote','mood','fav','note','first') UNION ALL SELECT 1 FROM media WHERE trip_id='hk-macau-2026' AND day_index=$1`, [i])).rowCount > 0;
+  const days = [0, 1, 2, 3, 4, 5], recorded = []; for (const i of days) if (await rec(i)) recorded.push(i);
+  const empty = days.find((i) => !recorded.includes(i)), done = recorded[0];
+  if (empty !== undefined) ok(await R.tick(PUSH.zoned(`2026-12-${String(5 + empty).padStart(2, '0')}`, '21:30', 'Asia/Hong_Kong')) === 1 && sent[sent.length - 1].p.url === `/#/t/hk-macau-2026/log/${empty}`, `scheduler: day ${empty + 1} has nothing recorded yet — “record day ${empty + 1}” at 21:30`);
+  if (done !== undefined) ok(await R.tick(PUSH.zoned(`2026-12-${String(5 + done).padStart(2, '0')}`, '21:30', 'Asia/Hong_Kong')) === 0, `scheduler: day ${done + 1} already has memories — no record nudge`);
+  ok(empty !== undefined || done !== undefined, 'the record nudge was checked'); }
 gone = true;
 await R.tick(PUSH.zoned('2026-12-06', '09:00', 'Asia/Hong_Kong') - 30 * 60000);
 ok((await pool.query("SELECT count(*)::int n FROM push_subs")).rows[0].n === 0, 'a phone the push service reports gone (410) is removed');

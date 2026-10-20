@@ -387,7 +387,7 @@ function dayGlance(t, i) {
   const money = T(pl.money), mm = money.match(/(?:วันนี้|Today)\s*≈\s*[^·(]+/), nl = (pl.learn || []).length, nq = (pl.quiz || []).length;
   const row = (dt, dd, cls) => `<div${cls ? ` class="${cls}"` : ''}><dt>${dt}</dt><dd>${dd}</dd></div>`;
   const box = (c, icon, title, rowsHtml) => (rowsHtml ? `<section class="cbox c-${c}"><h3 class="ch">${ic(icon)}${title}</h3><dl class="dsheet">${rowsHtml}</dl></section>` : '');
-  const go = [pl.moving && row(L('เดินทาง', 'Getting around'), esc(brief(T(pl.moving)))),
+  const go = [pl.moving && row(L('เดินทาง', 'Getting around'), esc(T(pl.moving))),
     pl.stay && row(L('คืนนี้', 'Tonight'), mapA(pl.stay.q || pl.stay.addr, esc(pl.stay.name))),
     ...((t.info || {}).more || []).filter((m) => m.img && new RegExp(`^Day ${i + 1}\\b`).test((m.title || {}).en || '')).map((m) => row(L('แผนที่', 'Map'), `<a href="${esc(m.img)}" target="_blank" rel="noopener">${esc(T(m.title).replace(/^[^·]*·\s*/, ''))} ↗</a>`))].filter(Boolean).join('');
   const food = [pl.pick && row(L('ร้านเด็ด', 'Local pick'), esc(T(pl.pick))),
@@ -404,7 +404,7 @@ ${reportBtn(full, L('อ่านแผนเต็มของวันนี�
 function remindBar() {
   const on = !!ls('remind');
   return `<div class="remind${on ? ' on' : ''}">${ic('bell')}<span><b>${on ? L('เตือนก่อนทุกกิจกรรม 30 นาที · เปิดอยู่', 'Reminders 30 min before each step · on') : L('ให้แอปเตือนก่อนทุกกิจกรรม 30 นาที', 'Remind me 30 min before each step')}</b>
-<small>${L('เด้งบนเครื่องนี้แม้ล็อกจอ · ตามเวลาในแผนของวันนั้น', 'Pops up on this phone even when locked · from the times in the day’s plan')}</small></span>
+<small>${L('เด้งบนเครื่องนี้แม้ล็อกจอ · ตามเวลาในแผนของวันนั้น · และเตือนเก็บเล่มก่อนบิน 2 วัน · ประตูเซอร์ไพรส์ทุกเช้า 08:00 · บันทึกวันทุกคืน 21:30', 'Pops up on this phone even when locked · from the times in the day’s plan · plus: store the book 2 days before the flight · a surprise door each morning at 08:00 · record the day each evening at 21:30')}</small></span>
 <span class="rb">${on ? `<button class="btn small ghost" data-a="remindtest">${L('ทดสอบ', 'Test')}</button>` : ''}<button class="btn small${on ? ' ghost' : ''}" data-a="remind">${on ? L('ปิด', 'Turn off') : L('เปิดการเตือน', 'Turn on')}</button></span></div>`;
 }
 function viewToday(t, j, full) {

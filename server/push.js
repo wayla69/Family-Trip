@@ -53,6 +53,37 @@ const message = (r, lang, now = Date.now()) => {
   });
 };
 
+// the trip's own nudges, at a fixed local time rather than before a plan row — pure, for the tests.
+// trips: [{trip, title:{th,en}, tz, from, to, doors}] · each nudge: {key, at, url, th:{title, body}, en:{title, body}, day?}
+const PACK_AT = '19:00', DOOR_AT = '08:00', LOG_AT = '21:30';
+const addDays = (date, n) => new Date(Date.parse(date + 'T00:00:00Z') + n * 864e5).toISOString().slice(0, 10);
+function extras(trips, now) {
+  const out = [], live = (at) => now >= at && now < at + LATE;
+  for (const x of trips) {
+    const name = x.title || {}, nTh = name.th || name.en || '', nEn = name.en || name.th || '';
+    // two evenings before the flight: store the book on the phone (the shelf can't see which phones already did)
+    const pack = zoned(addDays(x.from, -2), PACK_AT, x.tz);
+    if (live(pack)) out.push({ key: `${x.trip}.x.pack`, at: pack, url: `/#/t/${x.trip}/offline`,
+      th: { title: `อีก 2 วันออกเดินทาง · ${nTh}`, body: 'กด "เก็บเล่มนี้ไว้ในเครื่อง" ก่อนขึ้นเครื่อง ถ้ายังไม่ได้เก็บ — เปิดได้แม้ไม่มีสัญญาณ' },
+      en: { title: `2 days to go · ${nEn}`, body: 'Tap "Keep this book on the phone" before the flight, if you haven’t yet — it opens without signal' } });
+    // the countdown doors: door k opens when N-k+1 sleeps are left (kid.js doorOpen), one morning each
+    for (let left = x.doors || 0; left >= 1; left--) {
+      const k = (x.doors || 0) - left + 1, at = zoned(addDays(x.from, -left), DOOR_AT, x.tz);
+      if (live(at)) out.push({ key: `${x.trip}.x.door${k}`, at, url: '/#/',
+        th: { title: `🎁 ประตูที่ ${k} เปิดได้แล้ว`, body: `อีก ${left} วันไป${nTh} — ให้มีมี่กับมีก้าเปิดเซอร์ไพรส์ของวันนี้` },
+        en: { title: `🎁 Door ${k} is ready`, body: `${left} ${left === 1 ? 'sleep' : 'sleeps'} to ${nEn} — today's surprise for Mimi and Mika` } });
+    }
+    // every evening of the trip: record the day (tick() skips a day that already has something in it)
+    for (let i = 0, d = x.from; d <= x.to; i++, d = addDays(d, 1)) {
+      const at = zoned(d, LOG_AT, x.tz);
+      if (live(at)) out.push({ key: `${x.trip}.x.log.d${i}`, at, trip: x.trip, day: i, url: `/#/t/${x.trip}/log/${i}`,
+        th: { title: `บันทึกวันที่ ${i + 1} · ${nTh}`, body: 'รูป อารมณ์ คำพูดเด็ก ครั้งแรกของวันนี้ — ใช้เวลา 2 นาทีก่อนนอน' },
+        en: { title: `Record day ${i + 1} · ${nEn}`, body: 'Photos, moods, what the kids said, today’s firsts — two minutes before bed' } });
+    }
+  }
+  return out;
+}
+
 function create({ pool, family, A, sender = (sub, payload, opt) => webpush.sendNotification(sub, payload, opt) }) {   // sender: the tests pass a fake
   const send = async (sub, payload) => {
     try {
@@ -68,13 +99,22 @@ function create({ pool, family, A, sender = (sub, payload, opt) => webpush.sendN
   async function tick(now = Date.now()) {
     const days = (await pool.query(`SELECT t.id trip, t.timezone tz, d.day_index, to_char(d.date,'YYYY-MM-DD') date, d.plan->'plan' rows
       FROM trip_days d JOIN trips t ON t.id=d.trip_id WHERE t.family_id=$1 AND d.date BETWEEN $2::date - 1 AND $2::date + 1`, [family, new Date(now).toISOString().slice(0, 10)])).rows;
-    const list = due(days, now); if (!list.length) return 0;
+    const trips = (await pool.query(`SELECT id trip, title, timezone tz, to_char(date_from,'YYYY-MM-DD') "from", to_char(date_to,'YYYY-MM-DD') "to",
+        coalesce(jsonb_array_length(passport->'countdown'->'doors'), 0) doors
+      FROM trips WHERE family_id=$1 AND $2::date BETWEEN date_from - 16 AND date_to + 1`, [family, new Date(now).toISOString().slice(0, 10)])).rows;
+    const list = due(days, now).map((r) => ({ ...r, msg: (lang) => message(r, lang, now) }));
+    for (const x of extras(trips, now)) {
+      if (x.day !== undefined && (await pool.query(`SELECT 1 FROM entries WHERE trip_id=$1 AND day_index=$2 AND kind IN ('quote','mood','fav','note','first')
+          UNION ALL SELECT 1 FROM media WHERE trip_id=$1 AND day_index=$2 LIMIT 1`, [x.trip, x.day])).rowCount) continue;   // the day is already recorded
+      list.push({ key: x.key, msg: (lang) => JSON.stringify({ ...(lang === 'en' ? x.en : x.th), tag: x.key, url: x.url }) });
+    }
+    if (!list.length) return 0;
     const subs = (await pool.query('SELECT * FROM push_subs WHERE family_id=$1', [family])).rows;
     let n = 0;
     for (const r of list) {
       const claimed = (await pool.query('INSERT INTO push_sent (key) VALUES ($1) ON CONFLICT DO NOTHING RETURNING key', [r.key])).rowCount;
       if (!claimed) continue;
-      for (const s of subs) if (await send(s, message(r, s.lang, now))) n++;
+      for (const s of subs) if (await send(s, r.msg(s.lang))) n++;
     }
     return n;
   }
@@ -110,4 +150,4 @@ function create({ pool, family, A, sender = (sub, payload, opt) => webpush.sendN
   return { router: r, tick, start, stop };
 }
 
-module.exports = { init, create, due, zoned, short, LEAD };
+module.exports = { init, create, due, extras, zoned, short, LEAD };
