@@ -28,7 +28,7 @@
 
 *{box-sizing:border-box}
 html{-webkit-text-size-adjust:100%}
-body{margin:0;background:var(--paper);color:var(--ink);font:16px/1.5 var(--ui);padding-bottom:calc(96px + env(safe-area-inset-bottom,0px));overflow-x:hidden}
+body{margin:0;background:var(--paper);color:var(--ink);font:16px/1.5 var(--ui);font-variant-numeric:lining-nums;padding-bottom:calc(96px + env(safe-area-inset-bottom,0px));overflow-x:hidden}
 button,input,select,textarea{font:inherit;color:inherit}
 button{cursor:pointer}
 a{color:inherit}
@@ -1061,7 +1061,6 @@ p.money b{color:color-mix(in srgb,var(--leaf) 70%,var(--ink))}
 .tp-learn .gcard .kicker{color:color-mix(in srgb,var(--tc) 70%,var(--ink));letter-spacing:.06em}
 .tp-learn .gcard b{font-family:var(--display);font-size:19px;line-height:1.25;color:var(--ink)}
 .tp-learn .gcard p{font-size:14px;margin:4px 0 0}
-.tp-learn .gcard b{font-variant-numeric:lining-nums}   /* Cormorant's old-style "1" looked like a small capital I next to Thai */
 .gcard .gsub{font-size:13px;font-weight:600;color:color-mix(in srgb,var(--tc,var(--accent)) 75%,var(--ink));margin:0 0 6px}
 .tp-learn details.sub{border-bottom:1px solid var(--rule);padding:8px 0}
 .tp-learn details.sub>summary{cursor:pointer;font-size:15px;font-weight:600;list-style:none;display:flex;align-items:center;gap:6px}
@@ -1360,6 +1359,8 @@ button.tile.kid{border:1px solid var(--line);text-align:left;justify-items:start
 .pts>li{position:relative;padding-left:16px;line-height:1.45}
 .pts>li::before{content:"";position:absolute;left:2px;top:.62em;width:6px;height:6px;border-radius:50%;background:var(--pc,var(--accent))}
 .pts small,.pt1 small{display:block;font-size:12.5px;color:var(--muted);margin-top:2px}
+.pts.nums{counter-reset:n}.pts.nums>li{counter-increment:n;padding-left:28px}
+.pts.nums>li::before{content:counter(n);width:20px;height:20px;top:.1em;left:0;border-radius:50%;background:var(--pc,var(--cb,var(--accent)));color:#fff;font-size:12px;font-weight:700;line-height:20px;text-align:center}
 .pts.tight{gap:3px}.pts.tight>li{font-size:14px;line-height:1.4}
 /* a to-do table as a timeline of steps: date chip · task · short points (prep → booking timeline) */
 .steps{list-style:none;margin:10px 0 0 10px;padding:0 0 0 18px;border-left:2px solid var(--rule);display:grid;gap:14px}
