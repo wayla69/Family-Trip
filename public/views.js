@@ -393,7 +393,7 @@ function dayGlance(t, i) {
   const food = [pl.pick && row(L('ร้านเด็ด', 'Local pick'), esc(T(pl.pick))),
     ...(pl.picks || []).map((p) => row(`<span class="mtag mk-${mealKind(p)}">${esc(T(p.meal).split(' · ')[0])}</span>${T(p.meal).includes(' · ') ? `<span class="mt">${esc(T(p.meal).split(' · ').slice(1).join(' · '))}</span>` : ''}`, mealDd(p), 'meal'))].filter(Boolean).join('');
   const more = [money && row(L('เงินวันนี้', 'Money today'), `<span class="num">${esc(mm ? mm[0].replace(/^(?:วันนี้|Today)\s*/, '').trim() : brief(money))}</span>`),
-    d.wx && row(L('อากาศ', 'Weather'), esc(brief(T(d.wx)))),
+    d.wx && row(L('อากาศ', 'Weather'), esc(T(d.wx))),
     (nl || nq) && row(L('เรียนรู้', 'Learn'), esc(L(`${nl} เรื่อง · ${nq} คำถามในรถ`, `${nl} cards · ${nq} car questions`)))].filter(Boolean).join('');
   return `${rows.length ? `<section class="cbox c-sky"><h3 class="ch">${ic('clock')}${L('ไทม์ไลน์', 'Timeline')}</h3><ol class="tl plan brief">${rows.map((r) => `<li><time>${esc(r.t || '')}</time><div>${esc(T(r))}</div></li>`).join('')}</ol></section>` : ''}
 <div class="cgrid">${box('ind', 'route', L('เดินทางและที่พัก', 'Getting around & tonight'), go)}${box('sun', 'eat', L('มื้ออาหาร', 'Meals'), food)}${pl.planB ? `<section class="cbox c-hot"><h3 class="ch">${ic('shuffle')}${L('แผนสำรอง', 'Plan B')}</h3>${pts(T(pl.planB))}</section>` : ''}${box('leaf', 'money', L('เงิน อากาศ และเรื่องเล่า', 'Money, weather, stories'), more)}</div>
