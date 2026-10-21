@@ -384,7 +384,7 @@ function viewHub(t) {
     `<a class="tile shelfgo" href="#/"><span class="e">${ic('shelf')}</span><b>${L('ชั้นหนังสือ', 'Bookshelf')}</b><small>${L('เปลี่ยนเล่ม', 'Other books')}</small></a>`,
   ].filter(Boolean).join('');
   return `<section class="hubhead">${stampHtml(t, true)}<div class="grow"><div class="kicker">${esc(t.theme.kicker || '')}</div><h1>${esc(T(t.title).split(' · ')[0])}</h1><p class="line">${esc(fmtRange(t))}${ages ? ' · ' + esc(ages) : ''}</p></div></section>
-<a class="hubsearch" href="#/t/${esc(t.id)}/search">${ic('search')}<span><b>${L('ค้นหาทั้งเล่ม', 'Search the whole book')}</b><small>${L('หมอ · ยา · แท็กซี่ · ห้องน้ำ · ดิสนีย์แลนด์', 'doctor · pharmacy · taxi · toilet · Disneyland')}</small></span></a>
+<div class="hubtop"><a class="hubsearch" href="#/t/${esc(t.id)}/search">${ic('search')}<span><b>${L('ค้นหาทั้งเล่ม', 'Search the whole book')}</b><small>${L('หมอ · ยา · แท็กซี่ · ห้องน้ำ · เด็กหลง', 'doctor · pharmacy · taxi · toilet · lost child')}</small></span></a>${((e) => (e ? `<a class="hubsos" href="tel:${esc(String(e.tel).split('·')[0].replace(/[^+\d]/g, ''))}" aria-label="${esc(L('โทรฉุกเฉิน', 'Call emergency') + ' ' + e.tel)}">${ic('phone')}<span><b>${esc(e.tel)}</b><small>${L('ฉุกเฉิน', 'Emergency')}</small></span></a>` : ''))(((t.info || {}).emergency || []).find((x) => x.main))}</div>
 <div class="hubgrid">${tiles}</div>`;
 }
 /* ---------- search the whole book ----------
@@ -415,6 +415,12 @@ function searchIndex(t) {
   const add = (topic, href, title, text, extra) => out.push({ topic, href, title, text, tl: { th: title.th.toLowerCase(), en: title.en.toLowerCase() }, lc: { th: text.th.toLowerCase(), en: text.en.toLowerCase() }, i: out.length, ...extra });
   ['sos', 'stays', 'prep', 'learn'].forEach((k) => (B.th.meta[k] || []).forEach((m, j) => {
     const me = (B.en.meta[k] || [])[j] || m;
+    if (m.key === 'ifthen') {   // "If… then…" is a list of situations: each row is its own hit, titled by the situation (ลูกไม่สบาย, เด็กหลง…)
+      const f = (t.info || {}).ifthen, href = `#/t/${t.id}/${k}/full/${j}`, row = (r) => ({ th: r.map((c) => flatText(c, 'th')).join(' · '), en: r.map((c) => flatText(c, 'en')).join(' · ') });
+      [...f.rows, ...((f.mishap || {}).rows || [])].forEach((r) => add(k, href, { th: flatText(r[0], 'th'), en: flatText(r[0], 'en') }, row(r)));
+      if (f.carry) add(k, href, { th: flatText(f.carry.head, 'th'), en: flatText(f.carry.head, 'en') }, { th: flatText([f.carry.lede, f.carry.rows], 'th'), en: flatText([f.carry.lede, f.carry.rows], 'en') });
+      return;
+    }
     add(k, `#/t/${t.id}/${k}/full/${j}`, { th: plain(m.title), en: plain(me.title) }, { th: plain(B.th[k][j]), en: plain((B.en[k] || [])[j]) });
   }));
   t.days.forEach((d, i) => {
@@ -453,9 +459,10 @@ function bookFind(t, q) {
 function snippet(e, alts) {
   const hit = (tx) => { const lw = (tx || '').toLowerCase(); let k0 = -1; for (const w of alts) { const k = WGUARD[w] ? lw.search(wre(w)) : lw.indexOf(w); if (k >= 0 && (k0 < 0 || k < k0)) k0 = k; } return k0; };
   const l = lang, o = l === 'th' ? 'en' : 'th';
-  let text = e.text[l] || e.text.en, at = hit(text);
-  if (at < 0 && hit(e.text[o]) >= 0) { text = e.text[o]; at = hit(text); }   // the hit is in the other language: show that line, marked, not an unmarked opening
-  if (at < 0) return esc((e.text[l] || e.text[o] || '').slice(0, 110));
+  // always the reader's language (a Thai word can find an English line through a synonym — the snippet stays English then);
+  // the other language only when this one has no text at all
+  const text = e.text[l] || e.text[o] || '', at = hit(text);
+  if (at < 0) return esc(text.slice(0, 110)) + (text.length > 110 ? ' …' : '');
   let from = Math.max(0, at - 36), to = Math.min(text.length, at + 110);
   if (from) { const k = text.indexOf(' ', from); if (k >= 0 && k < at) from = k + 1; }   // start and end on a space, not inside a word
   if (to < text.length) { const k = text.lastIndexOf(' ', to); if (k > at + 20) to = k; }
@@ -464,6 +471,8 @@ function snippet(e, alts) {
   return seg.split(re).map((part, k) => (k % 2 ? `<mark>${esc(part)}</mark>` : esc(part))).join('');
 }
 let bookQ = '', bookTrip = '';
+// the last three searches that led somewhere, on this phone only
+const rememberQ = () => { const q = bookQ.trim(); if (!q) return; ls('recentq', [q, ...(ls('recentq') || []).filter((x) => x.toLowerCase() !== q.toLowerCase())].slice(0, 3)); };
 const topicName = (k) => (k === 'today' ? L('แผนรายวัน', 'Day plan') : secTitle(k));
 function bookResults(t) {
   const q = bookQ.trim();
@@ -480,6 +489,7 @@ function viewSearch(t) {
   return `<section class="tp tp-search"><h1 class="h2">${L('ค้นหาทั้งเล่ม', 'Search the whole book')}</h1>
 <p class="lede">${L('ฉุกเฉิน ที่พัก เตรียมตัว แผนรายวัน และร้านอาหาร — พิมพ์ครั้งเดียว ไม่ต้องไล่เปิดทีละหน้า', 'Emergency, stays, get ready, the day plans and places to eat — one box, no page hunting')}</p>
 <div class="bookbar"><input id="bookq" class="field" type="search" enterkeyhint="search" autocomplete="off" value="${esc(bookQ)}" placeholder="${L('เช่น หมอ แท็กซี่ ห้องน้ำ ตั๋ว…', 'e.g. doctor, taxi, toilet, tickets…')}" aria-label="${L('ค้นหาทั้งเล่ม', 'Search the whole book')}"></div>
+${((r) => (r.length ? `<div class="row chips recent" role="group"><span class="label">${L('ค้นล่าสุด', 'Recent')}</span>${r.map((q) => `<button class="chip" data-a="sq" data-v="${esc(q)}">${ic('search')} ${esc(q)}</button>`).join('')}</div>` : ''))(ls('recentq') || [])}
 <div class="row chips" role="group">${SUGGEST.map(([th, en]) => `<button class="chip" data-a="sq" data-v="${esc(L(th, en))}">${esc(L(th, en))}</button>`).join('')}</div>
 <div id="bookres">${bookResults(t)}</div></section>`;
 }
@@ -491,6 +501,12 @@ const mealDd = (p) => `<b>${p.q ? mapA(p.q, esc(p.name)) : esc(p.name)}</b>${p.a
 function dayGlance(t, i) {
   const d = t.days[i], pl = d.plan || {}, rows = pl.plan || [], full = `#/t/${esc(t.id)}/today/${i}/full`;
   if (!rows.length && !pl.moving && !pl.pick && !pl.planB) return '';
+  // on the day itself: steps whose time has passed fade, the next one is marked (each row in its own time zone — Bangkok rows on day 1)
+  const st = [];
+  if (dayNow(t) === i) { let found = false;
+    rows.forEach((r, k) => { const m = String(r.t || '').match(/(\d{1,2}):(\d{2})/); if (!m) return;
+      const at = m[1].padStart(2, '0') + ':' + m[2], now = fmtTime(Date.now(), r.tz || t.timezone);
+      if (at <= now) st[k] = 'past'; else if (!found) { st[k] = 'next'; found = true; } }); }
   const money = T(pl.money), mm = money.match(/(?:วันนี้|Today)\s*≈\s*[^·(]+/), nl = (pl.learn || []).length, nq = (pl.quiz || []).length;
   const row = (dt, dd, cls) => `<div${cls ? ` class="${cls}"` : ''}><dt>${dt}</dt><dd>${dd}</dd></div>`;
   const box = (c, icon, title, rowsHtml) => (rowsHtml ? `<section class="cbox c-${c}"><h3 class="ch">${ic(icon)}${title}</h3><dl class="dsheet">${rowsHtml}</dl></section>` : '');
@@ -502,7 +518,7 @@ function dayGlance(t, i) {
   const more = [money && row(L('เงินวันนี้', 'Money today'), `<span class="num">${esc(mm ? mm[0].replace(/^(?:วันนี้|Today)\s*/, '').trim() : brief(money))}</span>`),
     d.wx && row(L('อากาศ', 'Weather'), esc(T(d.wx))),
     (nl || nq) && row(L('เรียนรู้', 'Learn'), esc(L(`${nl} เรื่อง · ${nq} คำถามในรถ`, `${nl} cards · ${nq} car questions`)))].filter(Boolean).join('');
-  return `${rows.length ? `<section class="cbox c-sky"><h3 class="ch">${ic('clock')}${L('ไทม์ไลน์', 'Timeline')}</h3><ol class="tl plan brief">${rows.map((r) => `<li><time>${esc(r.t || '')}</time><div>${esc(T(r))}</div></li>`).join('')}</ol></section>` : ''}
+  return `${rows.length ? `<section class="cbox c-sky"><h3 class="ch">${ic('clock')}${L('ไทม์ไลน์', 'Timeline')}</h3><ol class="tl plan brief">${rows.map((r, k) => `<li${st[k] ? ` class="${st[k]}"` : ''}><time>${esc(r.t || '')}</time><div>${st[k] === 'next' ? `<span class="nexttag">${L('ถัดไป', 'Next')}</span> ` : ''}${esc(T(r))}</div></li>`).join('')}</ol></section>` : ''}
 <div class="cgrid">${box('ind', 'route', L('เดินทางและที่พัก', 'Getting around & tonight'), go)}${box('sun', 'eat', L('มื้ออาหาร', 'Meals'), food)}${pl.planB ? `<section class="cbox c-hot"><h3 class="ch">${ic('shuffle')}${L('แผนสำรอง', 'Plan B')}</h3>${pts(T(pl.planB))}</section>` : ''}${box('leaf', 'money', L('เงิน อากาศ และเรื่องเล่า', 'Money, weather, stories'), more)}</div>
 ${reportBtn(full, L('อ่านแผนเต็มของวันนี้', "Read today's full plan"))}`;
 }
@@ -584,7 +600,7 @@ ${runs.length ? `<h5>${L('ที่พักแต่ละคืน — ให�
 ${n.lost ? `<p class="elost">${esc(T(n.lost))}</p>` : ''}</div>`);
   if (tonight) pg('sos', esc(tonight.name), 'tonight', `🛏️ ${L('ที่พักคืนนี้', 'Tonight’s address')}`, B.tonight = `<div class="stayc tonight"><h4>${esc(tonight.name)}</h4><div class="addr">${esc(tonight.addr || '')}</div><div class="sf"><span class="acts">${extA(mapsUrl(tonight.q || tonight.addr), L('แผนที่', 'Map') + ' ↗', 'go')}${extA(`https://www.google.com/maps/dir/?api=1&destination=${encodeURIComponent(tonight.q || tonight.addr)}`, L('นำทาง', 'Directions') + ' ↗', 'go')}${tk >= 0 ? `<button class="go" data-a="driver" data-t="${esc(t.id)}" data-v="${tk}">${ic('car')} ${L('ให้คนขับดู', 'Show the driver')}</button>` : ''}</span></div></div>`);
   if (n.ifthen) { const f = n.ifthen, sub = (x) => (x ? `<h5>${esc(T(x.head))}</h5>${lede(x.lede)}${tbl(x.cols, x.rows)}` : '');
-    pg('sos', esc(f.rows.slice(0, 3).map((r) => T(r[0])).join(' · ')), '', `🔀 ${L('ถ้า… ก็…', 'If… then…')} <span class="label">· ${f.rows.length + ((f.mishap || {}).rows || []).length}</span>`, `${tbl(f.cols, f.rows, 'ift')}${f.mishap ? `<h5>${esc(T(f.mishap.head))}</h5>${lede(f.mishap.lede)}${tbl(f.cols, f.mishap.rows, 'ift')}` : ''}${sub(f.carry)}`);
+    pg('sos', esc(f.rows.slice(0, 3).map((r) => T(r[0])).join(' · ')), 'ifthen', `🔀 ${L('ถ้า… ก็…', 'If… then…')} <span class="label">· ${f.rows.length + ((f.mishap || {}).rows || []).length}</span>`, `${tbl(f.cols, f.rows, 'ift')}${f.mishap ? `<h5>${esc(T(f.mishap.head))}</h5>${lede(f.mishap.lede)}${tbl(f.cols, f.mishap.rows, 'ift')}` : ''}${sub(f.carry)}`);
     if (f.crowd) pg('prep', sh(f.crowd.lede), '', `👥 ${esc(T(f.crowd.head))}`, `${lede(f.crowd.lede)}${tbl(f.crowd.cols, f.crowd.rows)}`);
     if (f.book) pg('prep', sh(f.book.lede), '', `📅 ${esc(T(f.book.head))}`, `${f.book.lede && T(f.book.lede) ? `<p class="lede">${esc(points(T(f.book.lede))[0])}</p>` : ''}${steps(f.book.cols, f.book.rows)}`); }
   // get ready

@@ -250,6 +250,20 @@ const T = 'hk-macau-2026';
   ok(/hoi lin/i.test(await page.inputValue('#eatq')) && page.url().endsWith(`#/t/${T}/eat/all`), 'a place found by the search opens the eat list already filtered to it');
   await page.goto(`${BASE}/#/t/${T}/search`); await page.waitForSelector('#bookq'); await page.fill('#bookq', 'zzzzqq');
   ok(await page.locator('.sres li').count() === 0 && await page.locator('#bookres .empty').count() === 1, 'a word that is nowhere says so');
+  // English reader, Thai word: the snippets stay English; an "If… then…" hit is titled by its situation, not the section name
+  await page.fill('#bookq', 'หมอ'); await page.waitForTimeout(150);
+  ok(await page.evaluate(() => [...document.querySelectorAll('.sres .ssnip')].every((x) => !/[\u0E00-\u0E7F]/.test(x.textContent))), 'English reader: every snippet is English even when a Thai word found it');
+  await page.fill('#bookq', 'lost'); await page.waitForTimeout(150);
+  ok(await page.evaluate(() => { const b = [...document.querySelectorAll('.sres li.k-sos b')].map((x) => x.textContent); return b.length > 0 && !b.some((x) => /^If… then…/.test(x)) && b.some((x) => /lost/i.test(x)); }), 'an “If… then…” hit is titled by its situation (a lost child…), not the section name');
+  // Enter opens the best hit, and that search comes back as a “recent” chip
+  await page.fill('#bookq', 'taxi'); await page.waitForTimeout(150);
+  const first = await page.getAttribute('.sres a', 'href'); await page.press('#bookq', 'Enter'); await page.waitForTimeout(300);
+  ok(page.url().endsWith(first), `Enter in the search box opens the first hit (${first})`);
+  await page.goto(`${BASE}/#/t/${T}/search`); await page.waitForSelector('#bookq');
+  ok(await page.locator('.chips.recent .chip[data-v="taxi"]').count() === 1, 'the search that led somewhere is offered again as a recent chip');
+  // the menu dials the emergency number in one tap
+  await page.goto(`${BASE}/#/t/${T}`); await page.waitForSelector('.hubgrid');
+  ok(await page.getAttribute('.hubsos', 'href') === 'tel:999' && /999/.test(await page.textContent('.hubsos')) && await s.noHScroll(), 'book menu: a red tap-to-call 999 beside the search bar (no overflow at 390 px)');
   // text size: Aa cycles 100 → 110 → 120 → 130 %, is remembered, and nothing overflows at the largest
   await page.goto(`${BASE}/#/t/${T}/today`); await page.waitForSelector('.dsheet');
   const z = async () => page.evaluate(() => getComputedStyle(document.querySelector('main.wrap')).zoom);
@@ -762,6 +776,20 @@ const T = 'hk-macau-2026';
   ok(await page.locator('.tile.today.hi').count() === 1 && (await page.textContent('.tile.today')).includes('Day 2 of 16') && (await page.textContent('.tile[href$="/stays"]')).includes('By the Bay'), 'menu on the trip: today tile highlighted with the day, stays tile names tonight');
   await page.goto(`${BASE}/#/t/big-hop-2027/today/full`); await page.waitForSelector('.day.today');
   ok((await page.textContent('.day.today h3')).includes('Grand Pacific') && await page.locator('.quick a[href*="/log/1"]').count() === 1 && await page.locator('.quick a[href*="maps/dir"]').count() === 1 && await page.locator('.dayplan[open] .picks .pk').count() === 3, "today page on the trip: day 2, record + route buttons, the plan open with its picks");
+  { // the Australia memory book prints too: every section, a passport spread per child with all 16 stamp slots, and a real PDF
+    await page.goto(`${BASE}/#/print/big-hop-2027`); await page.waitForSelector('.pg.back');
+    const pgs = await page.locator('.pg').evaluateAll((els) => els.map((e) => e.className.replace('pg ', '').split(' ')[0]));
+    ok(pgs[0] === 'cover' && pgs.includes('numbers') && pgs.includes('contents') && pgs.filter((c) => c === 'ppp').length === 2 && pgs[pgs.length - 1] === 'back'
+      && await page.locator('.pg.ppp .dstamp').count() === 32 && await page.locator('.pg.cover .cvart .art').count() >= 6 && !s.errs.length, `Australia memory book: ${pgs.join(' · ')}`);
+    const pr = await page.request.get(`${BASE}/api/b/pdf/big-hop-2027`, { timeout: 180000 }), pb = await pr.body();
+    const pages = (pb.toString('latin1').match(/\/Type\s*\/Page[^s]/g) || []).length;
+    ok(pr.status() === 200 && pb.subarray(0, 5).toString('latin1') === '%PDF-' && pages >= pgs.length, `Australia server PDF: ${Math.round(pb.length / 1024)} KB, ${pages} A4 pages for ${pgs.length} book pages`);
+  }
+  await page.goto(`${BASE}/#/t/big-hop-2027/today`); await page.waitForSelector('.tl.plan');
+  { const r = await page.evaluate(() => [...document.querySelectorAll('.tl.plan li')].map((li) => [li.className, li.querySelector('time').textContent]));
+    const nx = r.findIndex(([c]) => c === 'next'), tm = (x) => (x.match(/\d{1,2}:\d{2}/) || [''])[0].padStart(5, '0');
+    ok(nx > 0 && r.filter(([c]) => c === 'next').length === 1 && tm(r[nx][1]) > '10:00' && r.slice(0, nx).every(([c, x]) => c === 'past' || !tm(x)) && (await page.textContent('.tl.plan li.next')).includes('Next'),
+      `today at 10:00 on day 2: earlier steps fade, the next one is marked (${r.map(([c, x]) => `${x}${c ? ':' + c : ''}`).join(' ')})`); }
   await page.goto(`${BASE}/#/t/big-hop-2027/book`); await page.waitForSelector('.cover');
   ok(await page.locator('img[src="/art/kids/mimi-adventure-full.svg"]').count() >= 1 && await page.locator('img[src="/art/kids/mimi-full.svg"]').count() === 0, 'Australia book: the kids wear their adventure outfits');
   // glance first: each topic opens as a few answer cards; the manual-style report is one tap away
