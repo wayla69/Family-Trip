@@ -451,9 +451,11 @@ function bookFind(t, q) {
 }
 // the words around the first hit, the hit marked (escape first, decorate never: each piece is escaped on its own)
 function snippet(e, alts) {
-  const l = lang, text = e.text[l] || e.text.en, low = text.toLowerCase();
-  let at = -1; for (const w of alts) { const k = WGUARD[w] ? low.search(wre(w)) : low.indexOf(w); if (k >= 0 && (at < 0 || k < at)) at = k; }
-  if (at < 0) { const o = l === 'th' ? 'en' : 'th'; return esc((e.text[o] || '').slice(0, 110)); }
+  const hit = (tx) => { const lw = (tx || '').toLowerCase(); let k0 = -1; for (const w of alts) { const k = WGUARD[w] ? lw.search(wre(w)) : lw.indexOf(w); if (k >= 0 && (k0 < 0 || k < k0)) k0 = k; } return k0; };
+  const l = lang, o = l === 'th' ? 'en' : 'th';
+  let text = e.text[l] || e.text.en, at = hit(text);
+  if (at < 0 && hit(e.text[o]) >= 0) { text = e.text[o]; at = hit(text); }   // the hit is in the other language: show that line, marked, not an unmarked opening
+  if (at < 0) return esc((e.text[l] || e.text[o] || '').slice(0, 110));
   let from = Math.max(0, at - 36), to = Math.min(text.length, at + 110);
   if (from) { const k = text.indexOf(' ', from); if (k >= 0 && k < at) from = k + 1; }   // start and end on a space, not inside a word
   if (to < text.length) { const k = text.lastIndexOf(' ', to); if (k > at + 20) to = k; }
@@ -470,7 +472,7 @@ function bookResults(t) {
   if (!list.length) return `<p class="empty">${L(`ไม่พบ “${esc(q)}” ลองคำสั้นลงหรือคำอื่น`, `Nothing for “${esc(q)}” — try a shorter or different word`)}</p>`;
   const shown = list.slice(0, 30);
   return `<p class="label" id="bookn">${L(`พบ ${list.length} รายการ`, `${list.length} found`)}${list.length > shown.length ? L(` · แสดง ${shown.length} อันดับแรก พิมพ์ให้เจาะจงขึ้นเพื่อกรอง`, ` · the top ${shown.length} — type more to narrow`) : ''}</p>
-<ul class="sres">${shown.map(({ e }) => `<li class="k-${e.topic}"><a href="${esc(e.href)}"${e.place ? ` data-a="eatgo" data-t="${esc(t.id)}" data-v="${esc(e.place)}"` : ''}><span class="stopic">${esc(topicName(e.topic))}</span><b>${esc(e.title[lang] || e.title.en)}</b>${e.place ? `<span class="label">${esc(T(e.area))}</span>` : ''}<span class="ssnip">${snippet(e, alts)}</span></a></li>`).join('')}</ul>`;
+<ul class="sres">${shown.map(({ e }) => `<li class="k-${e.topic}"><a href="${esc(e.href)}"${e.place ? ` data-a="eatgo" data-t="${esc(t.id)}" data-v="${esc(e.place)}"` : ''}><span class="stopic">${esc(topicName(e.topic))}</span><b>${esc((e.title[lang] || e.title.en).replace(/\s+·\s+\d+$/, ''))}</b>${e.place ? `<span class="label">${esc(T(e.area))}</span>` : ''}<span class="ssnip">${snippet(e, alts)}</span></a></li>`).join('')}</ul>`;
 }
 function viewSearch(t) {
   if (bookTrip !== t.id) { bookTrip = t.id; bookQ = ''; }

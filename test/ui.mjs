@@ -227,6 +227,7 @@ const T = 'hk-macau-2026';
   await page.fill('#bookq', 'doctor'); await page.waitForSelector('.sres li');
   ok(/hospital/i.test(await page.textContent('.sres')) && await page.locator('.sres li.k-sos').count() >= 1 && await page.locator('.sres mark').count() >= 1, 'search “doctor”: the emergency section with the hospital line, the hit marked');
   ok(await page.evaluate(() => [...document.querySelectorAll('.sres mark')].every((m) => !/^sick$/i.test(m.textContent))), 'search “doctor” does not drag in the word “sick” (sick bags ≠ a doctor)');
+  ok(await page.evaluate(() => { const li = [...document.querySelectorAll('.sres li')]; return li.length > 0 && li.every((x) => x.querySelector('mark') && !/\s·\s\d+$/.test(x.querySelector('b').textContent)); }), 'search results: every card marks its hit, and no title ends in a bare count (“· 10”)');
   await page.fill('#bookq', 'หมอ'); await page.waitForTimeout(150);
   ok(/hospital/i.test(await page.textContent('.sres')), 'a Thai word finds the English text (หมอ → hospital): both languages are searched');
   ok(await page.evaluate(() => { const r = [...document.querySelectorAll('.sres li')].map((x) => x.textContent); return r.every((x) => !/undefined|\[object/.test(x)); }), 'search results carry no raw data');
