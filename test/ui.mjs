@@ -226,6 +226,7 @@ const T = 'hk-macau-2026';
   await page.click(`.top a[href="#/t/${T}/search"]`); await page.waitForSelector('#bookq');
   await page.fill('#bookq', 'doctor'); await page.waitForSelector('.sres li');
   ok(/hospital/i.test(await page.textContent('.sres')) && await page.locator('.sres li.k-sos').count() >= 1 && await page.locator('.sres mark').count() >= 1, 'search “doctor”: the emergency section with the hospital line, the hit marked');
+  ok(await page.evaluate(() => [...document.querySelectorAll('.sres mark')].every((m) => !/^sick$/i.test(m.textContent))), 'search “doctor” does not drag in the word “sick” (sick bags ≠ a doctor)');
   await page.fill('#bookq', 'หมอ'); await page.waitForTimeout(150);
   ok(/hospital/i.test(await page.textContent('.sres')), 'a Thai word finds the English text (หมอ → hospital): both languages are searched');
   ok(await page.evaluate(() => { const r = [...document.querySelectorAll('.sres li')].map((x) => x.textContent); return r.every((x) => !/undefined|\[object/.test(x)); }), 'search results carry no raw data');
