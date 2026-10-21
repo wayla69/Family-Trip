@@ -5,6 +5,7 @@ const fs = require('fs');
 const path = require('path');
 const express = require('express');
 const zlib = require('zlib');
+const crypto = require('crypto');
 const IMG = require('./images');
 
 const FAMILY = process.env.FAMILY_ID || 'family';
@@ -20,8 +21,15 @@ const i18n = (o, n = 200) => (o && typeof o === 'object' ? { th: clip(o.th, n), 
 const at = (v) => new Date(Math.min(Number.isFinite(+v) && +v > 0 ? +v : Date.now(), Date.now() + 86400e3));
 const bad = (res, error, code = 400) => res.status(code).json({ error });
 // the state carries every book's plan (~1 MB of text for a 16-day road trip): gzip it, a phone on hotel wifi feels the difference
-function sendJson(req, res, obj) {
+const sha = (s) => crypto.createHash('sha1').update(s).digest('base64url').slice(0, 20);
+// etag: answer 304 (no body) when the phone already holds exactly this — the app asks every 30 s and on every return
+function sendJson(req, res, obj, etag) {
   const body = Buffer.from(JSON.stringify(obj));
+  if (etag) {
+    const tag = `"${etag === true ? sha(body) : etag}"`;
+    res.setHeader('ETag', tag);
+    if ((req.headers['if-none-match'] || '').split(/\s*,\s*/).includes(tag)) return res.status(304).end();
+  }
   res.setHeader('Content-Type', 'application/json; charset=utf-8'); res.setHeader('Vary', 'Accept-Encoding');
   if (body.length > 1024 && /\bgzip\b/.test(req.headers['accept-encoding'] || '')) { res.setHeader('Content-Encoding', 'gzip'); return res.end(zlib.gzipSync(body, { level: 6 })); }
   res.end(body);
@@ -99,23 +107,40 @@ function router({ pool, media, A, ai }) {
         q('SELECT id, trip_id, day_index, kind, key, name, rating, tags, kids, again, note, created_by, updated_at FROM reviews WHERE family_id=$1 ORDER BY updated_at', [FAMILY]),
       ]);
       const ms = (d) => (d ? new Date(d).getTime() : null);
+      // ?lite=1 (the app): each book's guide text (info, passport, day plans — ~95% of the bytes, changes only with a new seed)
+      // is left out and named by a hash; the app keeps the copy it has or fetches /api/b/seed/<trip>/<hash> once
+      const lite = req.query.lite === '1';
       res.setHeader('Cache-Control', 'no-store');
       sendJson(req, res, {
         me: { role: req.user.role, name: req.user.name, uid: req.user.uid },
         children,
-        trips: trips.map((t) => ({
-          ...t,
-          days: days.filter((d) => d.trip_id === t.id).map(({ trip_id, ...d }) => ({ ...d, done_at: ms(d.done_at) })),
-          firsts: firsts.filter((f) => f.trip_id === t.id).map(({ trip_id, ...f }) => f),
-        })),
+        trips: trips.map((t) => {
+          const td = days.filter((d) => d.trip_id === t.id).map(({ trip_id, ...d }) => ({ ...d, done_at: ms(d.done_at) }));
+          const out = { ...t, days: td, firsts: firsts.filter((f) => f.trip_id === t.id).map(({ trip_id, ...f }) => f) };
+          if (!lite) return out;
+          const g = seedOf(t, td);
+          return { ...out, info: undefined, passport: undefined, days: td.map(({ plan, ...d }) => d), seed: g.hash };
+        }),
         entries: entries.map(({ trip_id, day_index, occurred_at, created_uid, ...e }) => ({ ...e, trip: trip_id, day: day_index, at: ms(occurred_at), mine: created_uid === req.user.uid })),
         media: mediaRows.map(({ trip_id, day_index, taken_at, width, height, ...m }) => ({ ...m, trip: trip_id, day: day_index, w: width, h: height, at: ms(taken_at) })),
         places: places.map(({ trip_id, day_index, visited_at, ...p }) => ({ ...p, trip: trip_id, day: day_index, at: ms(visited_at) })),
         hearts: hearts.map(({ trip_id, day_index, created_uid, created_at, from_name, ...h }) => ({ ...h, trip: trip_id, day: day_index, from: from_name, at: ms(created_at), mine: created_uid === req.user.uid })),
         reviews: reviews.map(({ trip_id, day_index, updated_at, ...r }) => ({ ...r, trip: trip_id, day: day_index, at: ms(updated_at) })),
         features: { story: !!(ai && ai.enabled()) },
-        serverNow: Date.now(),
-      });
+      }, true);
+    } catch (e) { next(e); }
+  });
+  // one book's guide text by its hash: never changes for that hash, so the phone (and its HTTP cache) keeps it
+  const seedOf = (t, td) => { const body = JSON.stringify({ info: t.info, passport: t.passport, plans: td.map((d) => d.plan) }); return { body, hash: sha(body) }; };
+  r.get('/api/b/seed/:trip/:hash', A.requireUser, async (req, res, next) => {
+    try {
+      const t = (await q('SELECT id, passport, info FROM trips WHERE id=$1 AND family_id=$2', [req.params.trip, FAMILY]))[0];
+      if (!t) return bad(res, 'trip', 404);
+      const td = await q('SELECT plan FROM trip_days WHERE trip_id=$1 ORDER BY day_index', [t.id]);
+      const g = seedOf(t, td);
+      if (g.hash !== req.params.hash) return bad(res, 'stale', 409);   // the seed moved on (new deploy): the app reloads the state
+      res.setHeader('Cache-Control', 'private, max-age=31536000, immutable');
+      sendJson(req, res, JSON.parse(g.body), g.hash);
     } catch (e) { next(e); }
   });
 

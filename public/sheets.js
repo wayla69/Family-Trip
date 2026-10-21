@@ -376,8 +376,13 @@ async function refresh() {
   if ('serviceWorker' in navigator) navigator.serviceWorker.register('/sw.js').catch(() => {});
   queue = await idb.all();
   seq = Math.max(seq, ...queue.map((o) => o.seq || 0));
-  await load();
-  render();
+  // open from the phone's own copy at once, then ask the server (a 304 when nothing changed) and redraw only if something did
+  const c = await idb.get('state');
+  if (c && c.etag) {
+    S = c; S.hearts = S.hearts || []; S.reviews = S.reviews || []; queue.forEach(applyLocal);
+    render();
+    load().then((r) => { if (r === 'ok' || r === 'auth') safeRender(); else if (r !== 'same') { offline = true; safeRender(); } });
+  } else { await load(); render(); }
   if (ls('remind')) pushSub().then((s) => { if (!s) { ls('remind', null); render(); } }).catch(() => {});   // the phone dropped the subscription
   window.addEventListener('hashchange', () => { closeSheet(); lbState = null; drawLb(); render(); window.scrollTo(0, 0); });
   window.addEventListener('online', () => { offline = false; flush(); });

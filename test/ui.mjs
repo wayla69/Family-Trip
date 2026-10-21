@@ -60,6 +60,14 @@ const T = 'hk-macau-2026';
   ok((await page.locator('.spine').first().textContent()).includes('DOLPHIN'), 'HK spine shows the manual kicker');
   ok(await s.noHScroll(), 'shelf: no horizontal scroll at 390 px');
   await s.shot('02-shelf');
+  { // the app asks for the lite state; on the next open it shows its own copy at once and the server answers 304, no guide text again
+    const seen = []; const on = (r) => { const u = r.url(); if (/\/api\/b\/(state|seed)/.test(u)) seen.push(`${r.status()} ${u.replace(BASE, '')}`); };
+    page.on('response', on);
+    await page.reload(); await page.waitForSelector('.shelf'); await page.waitForTimeout(400);
+    page.off('response', on);
+    ok(seen.some((x) => /^304 \/api\/b\/state\?lite=1$/.test(x)) && !seen.some((x) => /seed/.test(x)), `reopen: the state comes back 304 and no seed is fetched again (${seen.join(' · ')})`);
+    ok(await page.evaluate(() => S.trips.every((t) => t.info && t.passport && t.days.every((d) => 'plan' in d))), 'the app holds every book’s guide text (merged from its seeds)');
+  }
 
   await page.click(`.spine[href="#/t/${T}"]`); await page.waitForSelector('.hubgrid');
   // the book opens on its menu: a tile per topic, today first, the detail one tap away

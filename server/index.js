@@ -122,6 +122,19 @@ app.post('/api/b/import/harbour-hop', A.requireEditor, async (req, res, next) =>
 
 // static PWA
 const PUB = path.join(__dirname, '..', 'public');
+// the service worker serves the app shell from its cache first (instant open, even on hotel wifi), so a changed file must
+// change sw.js too: its cache name carries a hash of every file under public/, a forgotten mbs-vN bump can't strand a phone
+const SW = (() => {
+  const h = require('crypto').createHash('sha1');
+  const walk = (d) => fs.readdirSync(d, { withFileTypes: true }).sort((a, b) => (a.name < b.name ? -1 : 1)).forEach((e) => {
+    const f = path.join(d, e.name);
+    if (e.isDirectory()) walk(f); else if (e.name !== 'sw.js') h.update(e.name).update(fs.readFileSync(f));
+  });
+  walk(PUB);
+  const tag = h.digest('hex').slice(0, 10);
+  return fs.readFileSync(path.join(PUB, 'sw.js'), 'utf8').replace(/const V = '(mbs-v\d+)'/, `const V = '$1-${tag}'`);
+})();
+app.get('/sw.js', (_req, res) => { res.setHeader('Content-Type', 'text/javascript; charset=utf-8'); res.setHeader('Cache-Control', 'no-cache'); res.end(SW); });
 app.use(express.static(PUB, { maxAge: 0, etag: true, setHeaders: (res, f) => { if (/\.(woff2|svg|png)$/.test(f)) res.setHeader('Cache-Control', 'public, max-age=604800'); } }));
 app.get(/^\/(?!api\/|media\/).*/, (req, res) => res.sendFile(path.join(PUB, 'index.html')));
 app.use('/api', (_req, res) => res.status(404).json({ error: 'not-found' }));
