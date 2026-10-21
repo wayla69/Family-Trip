@@ -338,6 +338,7 @@ function newTripSheet() {
 /* ---------- events ---------- */
 document.addEventListener('click', (e) => {
   const lb = e.target.closest('[data-lb]'); if (lb) { lbAct(lb.dataset.lb, lb); return; }
+  if (e.target.closest('.sres a')) rememberQ();   // a search that found what was needed comes back as a chip next time
   const b = e.target.closest('[data-a]');
   if (b && A[b.dataset.a]) { if (b.tagName === 'A' || b.type === 'submit') e.preventDefault(); A[b.dataset.a](b, e); return; }
   if (e.target.id === 'scrim') closeSheet();
@@ -351,6 +352,7 @@ document.addEventListener('change', (e) => {
 document.addEventListener('keydown', (e) => {
   if (lbState) { if (e.key === 'Escape') lbAct('close'); if (e.key === 'ArrowRight') lbAct('next'); if (e.key === 'ArrowLeft') lbAct('prev'); return; }
   if (e.key === 'Escape') closeSheet();
+  if (e.key === 'Enter' && e.target.id === 'bookq') { e.preventDefault(); const a = $('.sres a'); if (a) a.click(); }   // Enter = open the best hit
 });
 let sx = null;
 document.addEventListener('touchstart', (e) => { if (lbState && e.target.closest('.stage')) sx = e.touches[0].clientX; }, { passive: true });
