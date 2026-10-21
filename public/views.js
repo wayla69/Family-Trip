@@ -428,6 +428,10 @@ function searchIndex(t) {
   bookIdx.set(t.id, out);
   return out;
 }
+// short Thai words that sit inside longer ones: หมอ ≠ หมอก/หมอน, ยา ≠ ยาก/ยาว — the next letter must not continue the word
+const WGUARD = { 'หมอ': '(?![กนง])', 'ยา': '(?![กวนง])' };
+const wre = (w, g = 'i') => new RegExp(w.replace(/[.*+?^${}()|[\]\\]/g, '\\$&') + (WGUARD[w] || ''), g);
+const wHas = (text, w) => (WGUARD[w] ? wre(w).test(text) : text.includes(w));
 const termAlts = (w) => { const set = new Set([w]); SYN.forEach((g) => { if (g.some((x) => x === w || (w.length >= 3 && x.includes(w)))) g.forEach((x) => set.add(x)); }); return [...set]; };
 function bookFind(t, q) {
   const terms = q.toLowerCase().split(/\s+/).filter(Boolean); if (!terms.length) return { list: [], alts: [] };
@@ -436,7 +440,7 @@ function bookFind(t, q) {
     let score = 0;
     for (const a of alts) {
       let best = 0;
-      a.forEach((w, n) => { const exact = n === 0; if (e.tl.th.includes(w) || e.tl.en.includes(w)) best = Math.max(best, exact ? 6 : 4); else if (e.lc.th.includes(w) || e.lc.en.includes(w)) best = Math.max(best, exact ? 2 : 1); });
+      a.forEach((w, n) => { const exact = n === 0; if (wHas(e.tl.th, w) || wHas(e.tl.en, w)) best = Math.max(best, exact ? 6 : 4); else if (wHas(e.lc.th, w) || wHas(e.lc.en, w)) best = Math.max(best, exact ? 2 : 1); });
       if (!best) { score = 0; break; }
       score += best;
     }
@@ -448,13 +452,13 @@ function bookFind(t, q) {
 // the words around the first hit, the hit marked (escape first, decorate never: each piece is escaped on its own)
 function snippet(e, alts) {
   const l = lang, text = e.text[l] || e.text.en, low = text.toLowerCase();
-  let at = -1; for (const w of alts) { const k = low.indexOf(w); if (k >= 0 && (at < 0 || k < at)) at = k; }
+  let at = -1; for (const w of alts) { const k = WGUARD[w] ? low.search(wre(w)) : low.indexOf(w); if (k >= 0 && (at < 0 || k < at)) at = k; }
   if (at < 0) { const o = l === 'th' ? 'en' : 'th'; return esc((e.text[o] || '').slice(0, 110)); }
   let from = Math.max(0, at - 36), to = Math.min(text.length, at + 110);
   if (from) { const k = text.indexOf(' ', from); if (k >= 0 && k < at) from = k + 1; }   // start and end on a space, not inside a word
   if (to < text.length) { const k = text.lastIndexOf(' ', to); if (k > at + 20) to = k; }
   const seg = (from ? '… ' : '') + text.slice(from, to) + (to < text.length ? ' …' : '');
-  const re = new RegExp(`(${[...alts].sort((a, b) => b.length - a.length).map((w) => w.replace(/[.*+?^${}()|[\]\\]/g, '\\$&')).join('|')})`, 'gi');
+  const re = new RegExp(`(${[...alts].sort((a, b) => b.length - a.length).map((w) => wre(w).source).join('|')})`, 'gi');
   return seg.split(re).map((part, k) => (k % 2 ? `<mark>${esc(part)}</mark>` : esc(part))).join('');
 }
 let bookQ = '', bookTrip = '';
