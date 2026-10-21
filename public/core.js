@@ -95,16 +95,35 @@ async function api(method, url, body, blob) {
 // a write that lands while the state is being fetched would be lost: the older answer would replace it locally and the next
 // tap would send a row without it (a review lost Mimi's 😍 this way) — so a fetch that overlapped a finished write is redone
 let written = 0;
+// the state comes without each book's guide text (?lite=1, ~20 KB instead of ~370 KB): a book whose seed hash is unchanged
+// keeps the text the phone already has, a new one is fetched once from /api/b/seed (cached for good under its hash)
+async function withSeeds(fresh, old) {
+  for (const t of fresh.trips) {
+    if (!t.seed) continue;
+    const o = old && (old.trips || []).find((x) => x.id === t.id && x.seed === t.seed && x.info !== undefined);
+    let g = o && { info: o.info, passport: o.passport, plans: o.days.map((d) => d.plan) };
+    if (!g) {
+      const r = await fetch(`/api/b/seed/${encodeURIComponent(t.id)}/${t.seed}`, { credentials: 'same-origin' });
+      if (!r.ok) throw Object.assign(new Error('seed ' + r.status), { code: r.status });
+      g = await r.json();
+    }
+    t.info = g.info; t.passport = g.passport; t.days.forEach((d, i) => { d.plan = g.plans[i] === undefined ? null : g.plans[i]; });
+  }
+}
+// 'ok' new data · 'same' the server answered 304 (nothing changed since this phone's copy) · 'cached' offline copy · 'auth' · 'fail'
 async function load(tries = 0) {
   try {
-    const w0 = written;
-    const r = await fetch('/api/b/state', { credentials: 'same-origin', cache: 'no-store' });
+    const w0 = written, prev = S;
+    const r = await fetch('/api/b/state?lite=1', { credentials: 'same-origin', cache: 'no-store', headers: prev && prev.etag ? { 'If-None-Match': prev.etag } : {} });
     if (r.status === 401) { S = null; return 'auth'; }
+    if (r.status === 304 && prev) { offline = false; prev.syncedAt = Date.now(); return 'same'; }
     if (!r.ok) throw new Error('http ' + r.status);
     const fresh = await r.json();
+    fresh.etag = r.headers.get('ETag');
+    try { await withSeeds(fresh, prev || (await idb.get('state'))); } catch (e) { if (e.code === 409 && tries < 5) return load(tries + 1); throw e; }
     if (written !== w0 && tries < 5) return load(tries + 1);
     S = fresh; offline = false; S.syncedAt = Date.now();
-    idb.set('state', S); ls('state', null);   // the offline copy lives in IndexedDB (an old localStorage copy is dropped)
+    idb.set('state', structuredClone(S)); ls('state', null);   // the offline copy lives in IndexedDB, as the server sent it (before pending writes are laid on top)
   } catch (_) {
     const c = (await idb.get('state')) || ls('state');
     if (!c) return 'fail';

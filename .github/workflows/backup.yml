@@ -1,7 +1,9 @@
 name: Backup
 # Weekly off-site copy of the whole memory book (data + full photos, incl. sealed letters) as a 90-day Actions artifact.
-# Opt-in: needs repo secrets MB_URL (https://<domain>) and MB_BACKUP_TOKEN (same value as Railway's BACKUP_TOKEN).
-# Refuses to run on a PUBLIC repo: artifacts of public repos are downloadable by any signed-in GitHub user (child photos!).
+# Opt-in: needs repo secrets MB_URL (https://<domain>), MB_BACKUP_TOKEN (same value as Railway's BACKUP_TOKEN) and
+# MB_BACKUP_PASSPHRASE (a long random passphrase kept outside GitHub too — without it the backup cannot be opened).
+# The zip is encrypted (gpg, AES-256) before it leaves the runner: artifacts of a PUBLIC repo are downloadable by any
+# signed-in GitHub user, so only ciphertext is ever uploaded. Restore: gpg -d memory-book-backup.zip.gpg > backup.zip
 on:
   schedule:
     - cron: '17 19 * * 0'   # Sunday 19:17 UTC = Monday 02:17 Bangkok
@@ -14,22 +16,32 @@ jobs:
   backup:
     runs-on: ubuntu-latest
     timeout-minutes: 60
-    if: github.event.repository.private == true
     steps:
-      - name: Download backup.zip
+      - name: Download, check and encrypt backup.zip
         env:
           MB_URL: ${{ secrets.MB_URL }}
           MB_BACKUP_TOKEN: ${{ secrets.MB_BACKUP_TOKEN }}
+          MB_BACKUP_PASSPHRASE: ${{ secrets.MB_BACKUP_PASSPHRASE }}
         run: |
-          if [ -z "$MB_URL" ] || [ -z "$MB_BACKUP_TOKEN" ]; then echo "::notice::MB_URL / MB_BACKUP_TOKEN not set — backup skipped"; exit 0; fi
+          if [ -z "$MB_URL" ] || [ -z "$MB_BACKUP_TOKEN" ] || [ -z "$MB_BACKUP_PASSPHRASE" ]; then
+            echo "::error::secrets MB_URL / MB_BACKUP_TOKEN / MB_BACKUP_PASSPHRASE are not all set — nothing was backed up"; exit 1
+          fi
+          umask 077
           curl -fsS --retry 3 -H "Authorization: Bearer $MB_BACKUP_TOKEN" -o memory-book-backup.zip "${MB_URL%/}/api/backup.zip"
           unzip -tq memory-book-backup.zip
           unzip -p memory-book-backup.zip backup.json | python3 -c "import json,sys; b=json.load(sys.stdin); assert b['complete']; print({k: len(v) for k, v in b['tables'].items()})"
           echo "photos: $(unzip -l memory-book-backup.zip | grep -c 'photos/')  size: $(du -h memory-book-backup.zip | cut -f1)"
+          printf '%s' "$MB_BACKUP_PASSPHRASE" | gpg --batch --yes --quiet --pinentry-mode loopback --passphrase-fd 0 \
+            --symmetric --cipher-algo AES256 --compress-algo none -o memory-book-backup.zip.gpg memory-book-backup.zip
+          shred -u memory-book-backup.zip
+          # prove the passphrase opens it before uploading
+          printf '%s' "$MB_BACKUP_PASSPHRASE" | gpg --batch --yes --quiet --pinentry-mode loopback --passphrase-fd 0 -d -o check.zip memory-book-backup.zip.gpg
+          unzip -tq check.zip && shred -u check.zip
+          echo "encrypted: $(du -h memory-book-backup.zip.gpg | cut -f1)"
       - uses: actions/upload-artifact@v4
         with:
           name: memory-book-backup-${{ github.run_number }}
-          path: memory-book-backup.zip
+          path: memory-book-backup.zip.gpg
           retention-days: 90
-          if-no-files-found: ignore
+          if-no-files-found: error
           compression-level: 0

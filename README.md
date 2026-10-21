@@ -78,9 +78,11 @@ deploy เองจากเครื่องก็ได้: `npm i -g @railwa
 
 ## สำรองและกู้คืนข้อมูล
 **อัตโนมัติ (แนะนำ)** — GitHub Action `Backup` ดึงสำเนาเต็ม (ข้อมูล + รูปเต็ม) ทุกวันจันทร์ 02:17 เวลาไทย เก็บเป็น artifact 90 วัน
-1. ตั้ง repo เป็น **Private** ก่อน (GitHub → Settings → General → Change visibility) — ถ้า repo เป็น public งานนี้จะไม่ทำงาน เพราะ artifact ของ repo public ใครก็โหลดได้
-2. GitHub → Settings → Secrets and variables → Actions → secrets `MB_URL` = `https://<โดเมน>` และ `MB_BACKUP_TOKEN` = ค่าเดียวกับ `BACKUP_TOKEN` ใน Railway
+1. Railway → service → Variables: ตั้ง `BACKUP_TOKEN` เป็นค่าสุ่มยาวๆ (ถ้ายังไม่มี)
+2. GitHub → Settings → Secrets and variables → Actions → secrets `MB_URL` = `https://<โดเมน>`, `MB_BACKUP_TOKEN` = ค่าเดียวกับ `BACKUP_TOKEN` ใน Railway และ `MB_BACKUP_PASSPHRASE` = รหัสผ่านยาวๆ สำหรับเข้ารหัสไฟล์สำรอง **จดเก็บไว้นอก GitHub ด้วย** (ไม่มีรหัสนี้ เปิดไฟล์สำรองไม่ได้)
 3. Actions → Backup → *Run workflow* เพื่อทดสอบครั้งแรก
+
+ไฟล์สำรองถูกเข้ารหัส (gpg AES-256) ก่อนอัปโหลด จึงใช้ได้แม้ repo เป็น public (artifact ของ repo public ใครที่ล็อกอิน GitHub ก็โหลดได้ แต่จะได้แค่ไฟล์ที่เปิดไม่ออก) · เปิดไฟล์: `gpg -d memory-book-backup.zip.gpg > backup.zip` แล้วกู้คืนตามด้านล่าง · ถ้า secrets ไม่ครบ งานจะขึ้นสีแดง (ไม่ข้ามเงียบๆ)
 
 นอกจากนี้ Railway Postgres มี backup ของตัวเอง (ตั้งใน Postgres → Backups)
 

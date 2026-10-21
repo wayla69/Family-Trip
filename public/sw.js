@@ -1,6 +1,6 @@
 // Memory Bookshelf service worker: app shell + all drawn art offline from the first visit; photos cached as you view them
 // (or all at once with "Keep this book offline"). Data (/api) is cached by the app itself (IndexedDB) and written through its queue.
-const V = 'mbs-v68';
+const V = 'mbs-v69';
 const SHELL = ['/', '/app.css', '/core.js', '/views.js', '/sheets.js', '/kid.js', '/manifest.webmanifest', '/icon.svg',
   '/fonts/KIRA-UI-Regular.woff2', '/fonts/KIRA-UI-Medium.woff2', '/fonts/KIRA-UI-SemiBold.woff2', '/fonts/KIRA-UI-Bold.woff2',
   '/fonts/CormorantGaramond-SemiBold.woff2', '/fonts/CormorantGaramond-MediumItalic.woff2'];
@@ -49,8 +49,11 @@ self.addEventListener('fetch', (e) => {
     }));
     return;
   }
-  // app shell: network first (with a timeout), cache fallback
+  // app shell: from this version's cache first — it was filled as one consistent set at install, and any change to a shell file
+  // ships a new sw.js (the server stamps V with a hash of public/), so the next open after a deploy installs the new set;
+  // a file not in the cache yet: network (with a timeout), then cache fallback
   const key = r.mode === 'navigate' ? '/' : r;
-  e.respondWith(withTimeout(fetch(r), SHELL_TIMEOUT).then((res) => { if (res.ok) { const cp = res.clone(); caches.open(V).then((c) => c.put(key, cp)); } return res; })
-    .catch(() => caches.match(key).then((hit) => hit || fetch(r))));
+  e.respondWith(caches.open(V).then((c) => c.match(key)).then((hit) => hit || withTimeout(fetch(r), SHELL_TIMEOUT)
+    .then((res) => { if (res.ok) { const cp = res.clone(); caches.open(V).then((c) => c.put(key, cp)); } return res; })
+    .catch(() => caches.match(key).then((h) => h || fetch(r)))));
 });

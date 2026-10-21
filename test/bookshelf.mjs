@@ -38,6 +38,26 @@ ok(s.trips[1].days.length === 16 && s.trips[1].theme.accent === '#2C5646', 'Aust
 ok(s.trips[1].firsts.length === 11 && s.trips[1].firsts.some((f) => f.key === 'koala' && f.label.th && f.label.en), 'Australia has its own firsts to record (kangaroo, koala, dolphins…)');
 ok(s.children.map((k) => k.slug).join() === 'mimi,mika', 'children mimi, mika');
 ok((await fetch(BASE + '/api/b/state')).status === 401, 'state needs login');
+{ // the app's lite state: guide text left out and named by a hash, fetched once from /api/b/seed; 304 when nothing changed
+  const r = await fetch(BASE + '/api/b/state?lite=1', { headers: { cookie: ck, 'accept-encoding': 'identity' } });
+  const lite = await r.json(), tag = r.headers.get('etag'), full = JSON.stringify(s).length, small = JSON.stringify(lite).length;
+  ok(lite.trips.every((t) => t.seed && t.info === undefined && t.passport === undefined && t.days.every((d) => !('plan' in d))) && small * 5 < full,
+    `lite state leaves out each book's guide text (${Math.round(small / 1024)} KB vs ${Math.round(full / 1024)} KB)`);
+  const g = await (await fetch(`${BASE}/api/b/seed/${T}/${lite.trips[0].seed}`, { headers: { cookie: ck } })).json();
+  ok(JSON.stringify(g.info) === JSON.stringify(hk.info) && JSON.stringify(g.passport) === JSON.stringify(hk.passport) && JSON.stringify(g.plans) === JSON.stringify(hk.days.map((d) => d.plan)),
+    'the seed by its hash is exactly the guide text the full state carries');
+  const sr = await fetch(`${BASE}/api/b/seed/${T}/${lite.trips[0].seed}`, { headers: { cookie: ck } });
+  ok(/immutable/.test(sr.headers.get('cache-control')) && /private/.test(sr.headers.get('cache-control')), 'a seed is cached for good, privately');
+  ok((await fetch(`${BASE}/api/b/seed/${T}/nothash`, { headers: { cookie: ck } })).status === 409 && (await fetch(`${BASE}/api/b/seed/${T}/${lite.trips[0].seed}`)).status === 401
+    && (await fetch(`${BASE}/api/b/seed/nope/${lite.trips[0].seed}`, { headers: { cookie: ck } })).status === 404, 'seed: stale hash 409, needs login, unknown trip 404');
+  ok(tag && (await fetch(BASE + '/api/b/state?lite=1', { headers: { cookie: ck, 'if-none-match': tag } })).status === 304, 'same state again → 304 with no body');
+  await put(`/api/b/days/${T}/5`, { done: true });
+  const r2 = await fetch(BASE + '/api/b/state?lite=1', { headers: { cookie: ck, 'if-none-match': tag } });
+  ok(r2.status === 200 && r2.headers.get('etag') !== tag, 'any change → a new etag and the full answer');
+  await put(`/api/b/days/${T}/5`, { done: false });
+}
+{ const r = await fetch(BASE + '/sw.js'), t = await r.text();
+  ok(/const V = 'mbs-v\d+-[0-9a-f]{10}'/.test(t) && /no-cache/.test(r.headers.get('cache-control')), 'sw.js cache name carries a hash of public/ (a changed shell file always ships a new service worker)'); }
 
 // ---- entries
 ok((await put('/api/b/entries/q-test-0001', { trip: T, day: 1, kind: 'quote', child: 'mika', text: 'ปลาอยู่ในน้ำเหมือนหนูเลย', at: Date.now() })).ok, 'quote saved');
