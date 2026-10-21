@@ -35,6 +35,13 @@ async function addPhotos(t, day, files) {
 /* ---------- actions ---------- */
 const A = {
   lang(b) { lang = b.dataset.v; ls('lang', lang); render(); if (ls('remind')) pushSub().then((s) => s && api('POST', '/api/b/push/sub', { ...s.toJSON(), lang })).catch(() => {}); },   // reminders follow the language
+  fs() {   // text size: normal → large → larger → largest (the page content zooms; the bars stay put)
+    const n = ((+ls('fs') || 0) + 1) % 4; ls('fs', n); document.documentElement.dataset.fs = String(n);
+    $$('.fsb').forEach((b) => { b.dataset.l = n; });
+    toast(L(`ขนาดตัวอักษร: ${['ปกติ', 'ใหญ่', 'ใหญ่มาก', 'ใหญ่สุด'][n]}`, `Text size: ${['normal', 'large', 'larger', 'largest'][n]}`));
+  },
+  sq(b) { bookQ = b.dataset.v; const i = $('#bookq'), r = $('#bookres'), t = trip(route().parts[1]); if (i) i.value = bookQ; if (r && t) r.innerHTML = bookResults(t); },   // a suggestion chip
+  eatgo(b) { eatTrip = b.dataset.t; eatQ = b.dataset.v; eatKind = -1; eatPick = false; location.hash = `#/t/${encodeURIComponent(b.dataset.t)}/eat/all`; },   // a place found by the search: open the list filtered to it
   async remind() {
     if (ls('remind')) {
       const s = await pushSub().catch(() => null);
@@ -335,7 +342,7 @@ document.addEventListener('click', (e) => {
   if (b && A[b.dataset.a]) { if (b.tagName === 'A' || b.type === 'submit') e.preventDefault(); A[b.dataset.a](b, e); return; }
   if (e.target.id === 'scrim') closeSheet();
 });
-document.addEventListener('input', (e) => { const el = e.target; if (el.dataset && el.dataset.draft) drafts[el.dataset.draft] = el.value; if (el.id === 'eatq') { eatQ = el.value.trim(); eatFilter(); } });
+document.addEventListener('input', (e) => { const el = e.target; if (el.dataset && el.dataset.draft) drafts[el.dataset.draft] = el.value; if (el.id === 'eatq') { eatQ = el.value.trim(); eatFilter(); } if (el.id === 'bookq') { bookQ = el.value; const r = $('#bookres'), t = trip(route().parts[1]); if (r && t) r.innerHTML = bookResults(t); } });
 document.addEventListener('focusout', (e) => { const el = e.target; if (el.dataset && el.dataset.aBlur) saveBlur(el); if (el.id === 'lbcap') saveCaption(el); });
 document.addEventListener('change', (e) => {
   if (e.target.dataset && e.target.dataset.ck) { const m = ls('ck') || {}; if (e.target.checked) m[e.target.dataset.ck] = 1; else delete m[e.target.dataset.ck]; ls('ck', m); return; }
