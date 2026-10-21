@@ -5,6 +5,7 @@ const $$ = (s, r = document) => Array.from(r.querySelectorAll(s));
 const esc = (s) => String(s == null ? '' : s).replace(/[&<>"']/g, (c) => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' }[c]));
 // one line-icon set for the grown-ups' pages (kid mode keeps its emoji): 24-unit grid, 1.75 stroke, drawn in currentColor
 const ICONS = {
+  search: '<circle cx="11" cy="11" r="7"/><path d="M20 20l-4-4"/>',
   home: '<path d="M3 11l9-7 9 7"/><path d="M5 10v10h14V10"/><path d="M10 20v-6h4v6"/>',
   today: '<rect x="3" y="5" width="18" height="16" rx="2"/><path d="M3 10h18M8 3v4M16 3v4"/><path d="M8 14h3v3H8z"/>',
   log: '<path d="M4 20l4-1 11-11-3-3L5 16z"/><path d="M14 6l3 3"/>',
@@ -45,6 +46,7 @@ function ls(k, v) {
   } catch (_) {}
   return null;
 }
+document.documentElement.dataset.fs = String(ls('fs') || 0);   // reading size 0–3, set from the top bar (app.css zooms the page content)
 let lang = ls('lang') || ((navigator.language || '').startsWith('en') ? 'en' : 'th');
 const L = (th, en) => (lang === 'th' ? th : en);
 const T = (o) => (o == null ? '' : typeof o === 'string' ? o : o[lang] || o.en || o.th || '');

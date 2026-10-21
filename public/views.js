@@ -52,6 +52,7 @@ function render() {
     else if (sec === 'plan') html = viewPlan(t, p[3] === 'full');
     else if (sec === 'eat') html = p[3] === 'all' ? viewEat(t) : viewEatDay(t, p[3] === 'd' ? Math.min(t.days.length - 1, Math.max(0, +p[4] || 0)) : todayIdx(t));   // day by day; /all = every place
     else if (sec === 'stays' || sec === 'sos' || sec === 'prep' || sec === 'learn') html = { stays: viewStays, sos: viewSos, prep: viewPrep, learn: viewLearn }[sec](t, p[3] === 'full', p[3] === 'full' && p[4] !== undefined ? +p[4] : undefined);   // glance; /full[/<k>] the report
+    else if (sec === 'search') html = viewSearch(t);
     else if (sec === 'hearts') html = viewHearts(t);
     else if (sec === 'offline') html = isEditor() ? viewOffline(t) : viewHub(t);
     else if (sec === 'firsts') html = viewFirsts(t);
@@ -65,6 +66,7 @@ function render() {
   document.title = t ? `${T(t.title)} · Memory Bookshelf` : 'Memory Bookshelf';
   const key = p.slice(0, 3).join('/') + (p.includes('full') ? '/full/' + (p[4] || '') : ''), enter = key !== lastView; lastView = key;   // animate only when the page changes, not on every save
   app.innerHTML = topBar(t, p) + `<main class="wrap${enter ? ' enter' : ''}">${offline ? `<div class="notice">${L('ออฟไลน์ — แสดงข้อมูลล่าสุดที่เก็บไว้ บันทึกได้ตามปกติ ระบบจะส่งขึ้นเองเมื่อมีสัญญาณ', 'Offline — showing the last saved copy. You can keep recording; it uploads when you are back online.')}${S.syncedAt ? ` <small>· ${L('ข้อมูลล่าสุดเมื่อ', 'last synced')} ${esc(new Date(S.syncedAt).toLocaleString(LOC(), { day: 'numeric', month: 'short', hour: '2-digit', minute: '2-digit' }))}</small>` : ''}</div>` : ''}${html}</main>` + tabBar(t, p);
+  if (p[0] === 't' && p[2] === 'search' && enter) setTimeout(() => { const q = $('#bookq'); if (q) q.focus(); }, 60);   // a search page opens ready to type
   renderProgress(); packBoxes(app); if (typeof hydrateMap === 'function') hydrateMap(app);   // the passport map walks the kids to a tapped day
   // the photo picker is one input outside #app, so a render while the picker is open cannot replace it and drop the chosen photos
   const fp = document.getElementById('fpick'), host = app.querySelector('[data-fpick]'); if (fp && host) { fp.dataset.t = host.dataset.t; fp.dataset.d = host.dataset.d; }
@@ -100,7 +102,7 @@ function topBar(t, p) {
   const secName = sub ? (p[2] === 'log' ? L('บันทึก', 'Record') : secTitle(p[2]) || esc(t.theme.kicker || '')) : '';
   const ttl = t ? `<small>${sub ? secName : esc(t.theme.kicker || '')}</small>${esc(T(t.title))}` : `<small>${L('ของมีมี่และมีก้า', 'Mimi & Mika')}</small>Memory Bookshelf`;
   return `<header class="top"><div class="in">${back}<div class="ttl">${ttl}</div>
-<span class="progress" id="prog"></span>
+<span class="progress" id="prog"></span>${t && sub && p[2] !== 'search' ? `<a class="ibtn" href="#/t/${esc(t.id)}/search" aria-label="${L('ค้นหาทั้งเล่ม', 'Search the whole book')}">${ic('search')}</a>` : ''}<button class="ibtn fsb" data-a="fs" data-l="${+ls('fs') || 0}" aria-label="${L('ขนาดตัวอักษร', 'Text size')}">Aa</button>
 <div class="seg" role="group" aria-label="language"><button data-a="lang" data-v="th" aria-pressed="${lang === 'th'}">ไทย</button><button data-a="lang" data-v="en" aria-pressed="${lang === 'en'}">EN</button></div></div></header>`;
 }
 function tabBar(t, p) {
@@ -339,7 +341,7 @@ const quizHtml = (qs) => `<div class="quiz">${qs.map((q) => `<details class="qa"
    Every topic is its own page under #/t/<trip>/<topic>; the quick bar (tabBar) holds the five most used. */
 const HUB = { book: ['book', 'สมุดความทรงจำ', 'Memory book'], today: ['today', 'วันนี้', 'Today'], plan: ['plan', 'แผนทั้งทริป', 'Whole trip'], eat: ['eat', 'ร้านอาหาร', 'Places to eat'],
   stays: ['stays', 'ที่พัก', 'Where we stay'], sos: ['sos', 'ฉุกเฉิน', 'Emergency'], prep: ['prep', 'เตรียมตัว', 'Get ready'], learn: ['learn', 'เรียนรู้', 'Learn'],
-  firsts: ['firsts', 'ครั้งแรก', 'Firsts'], hearts: ['hearts', 'หัวใจ', 'Hearts'], offline: ['offline', 'ใช้ออฟไลน์', 'Offline'], log: ['log', 'บันทึกวันนี้', 'Record today'] };
+  firsts: ['firsts', 'ครั้งแรก', 'Firsts'], hearts: ['hearts', 'หัวใจ', 'Hearts'], offline: ['offline', 'ใช้ออฟไลน์', 'Offline'], log: ['log', 'บันทึกวันนี้', 'Record today'], search: ['search', 'ค้นหา', 'Search'] };
 const secTitle = (k) => (HUB[k] ? L(HUB[k][1], HUB[k][2]) : '');
 // the day a book opens on: today during the trip, day 1 before it, the last day after
 function todayIdx(t) { const n = dayNow(t); return n >= 0 ? n : tripOver(t) ? t.days.length - 1 : 0; }
@@ -353,7 +355,7 @@ function viewHub(t) {
   const n = t.info || {}, st = stats(t), i = todayIdx(t), dn = dayNow(t), until = daysUntil(t), ed = isEditor(), d = t.days[i], has = hasInfo(t);
   const kids = children().filter((k) => !(t.theme.children || []).length || (t.theme.children || []).some((c) => c.slug === k.slug));
   const ages = (t.theme.children || []).map((k) => `${kidName(k.slug)} ${k.age ? T(k.age) : ''}`.trim()).join(' · ');
-  const got = t.days.filter((_, j) => dayStamped(t, j)).length, hs = heartsOf(t.id), off = ls('offline_' + t.id);
+  const got = t.days.filter((_, j) => dayStamped(t, j)).length, hs = heartsOf(t.id), off = offState(t);
   const tile = (k, href, status, cls, extra) => `<a class="tile t-${k} ${cls || ''}" href="${href}"><span class="e">${ic(HUB[k][0])}</span><b>${L(HUB[k][1], HUB[k][2])}</b>${status ? `<small>${status}</small>` : ''}${extra || ''}</a>`;
   const todayStatus = dn >= 0 ? L(`วันที่ ${i + 1} จาก ${t.days.length} · ${T(d.title)}`, `Day ${i + 1} of ${t.days.length} · ${T(d.title)}`)
     : until > 0 ? L(`อีก ${until} วัน · เริ่มที่ ${T(d.title)}`, `${until} days to go · starts with ${T(d.title)}`) : L(`จบทริปแล้ว · วันสุดท้าย: ${T(d.title)}`, `Trip over · last day: ${T(d.title)}`);
@@ -376,12 +378,104 @@ function viewHub(t) {
     `<a class="tile" href="#/passport"><span class="e">${ic('passport')}</span><b>${L('พาสปอร์ตเด็กๆ', "Kids' passports")}</b><small>${esc(kids.map((k) => `${kidName(k.slug)} ${t.days.filter((_, j) => dayStamped(t, j) || ticked(t, 'stamp.d' + j, k.slug)).length}`).join(' · '))} ${L('ตรา', 'stamps')}</small></a>`,
     tile('hearts', `#/t/${esc(t.id)}/hearts`, esc(hs.length ? L(`${hs.length} ดวงถึงเด็กๆ`, `${hs.length} for the kids`) : L('ส่งหัวใจถึงเด็กๆ', 'Send the kids a heart'))),
     `<a class="tile" href="#/notebook"><span class="e">${ic('notebook')}</span><b>${L('สมุดโน้ตนักเดินทาง', 'Travel notebook')}</b><small>${esc(L(`${S.reviews.filter((r) => r.trip === t.id).length} รีวิวในเล่มนี้`, `${S.reviews.filter((r) => r.trip === t.id).length} reviews in this book`))}</small></a>`,
-    ed ? tile('offline', `#/t/${esc(t.id)}/offline`, esc(off ? L('เก็บไว้ในเครื่องแล้ว', 'Stored on this phone') : L('ยังไม่ได้เก็บ — กดก่อนขึ้นเครื่อง', 'Not stored yet — tap before the flight')), off ? '' : 'warn') : '',
+    ed ? tile('offline', `#/t/${esc(t.id)}/offline`, esc(!off.got ? L('ยังไม่ได้เก็บ — กดก่อนขึ้นเครื่อง', 'Not stored yet — tap before the flight')
+      : off.stale ? L(`เก็บเมื่อ ${off.when} · มีรูปใหม่ ${off.fresh} รูป กดเก็บเพิ่ม`, `Stored ${off.when} · ${off.fresh} new photo${off.fresh > 1 ? 's' : ''}, tap to top up`) : L(`เก็บไว้ในเครื่องแล้ว · ${off.when}`, `Stored on this phone · ${off.when}`)), off.got && !off.stale ? '' : 'warn') : '',
     ed ? `<button class="tile kid" data-a="kidmode"><span class="e">${ic('kid')}</span><b>${L('โหมดเด็ก', 'Kid mode')}</b><small>${L('ระบายสี วาดรูป ปั๊มตรา และแผนที่', 'Colour, draw, stamps and the map')}</small></button>` : '',
     `<a class="tile shelfgo" href="#/"><span class="e">${ic('shelf')}</span><b>${L('ชั้นหนังสือ', 'Bookshelf')}</b><small>${L('เปลี่ยนเล่ม', 'Other books')}</small></a>`,
   ].filter(Boolean).join('');
   return `<section class="hubhead">${stampHtml(t, true)}<div class="grow"><div class="kicker">${esc(t.theme.kicker || '')}</div><h1>${esc(T(t.title).split(' · ')[0])}</h1><p class="line">${esc(fmtRange(t))}${ages ? ' · ' + esc(ages) : ''}</p></div></section>
+<a class="hubsearch" href="#/t/${esc(t.id)}/search">${ic('search')}<span><b>${L('ค้นหาทั้งเล่ม', 'Search the whole book')}</b><small>${L('หมอ · ยา · แท็กซี่ · ห้องน้ำ · ดิสนีย์แลนด์', 'doctor · pharmacy · taxi · toilet · Disneyland')}</small></span></a>
 <div class="hubgrid">${tiles}</div>`;
+}
+/* ---------- search the whole book ----------
+   One index per book, both languages (a Thai phone finds "taxi", an English one finds "แท็กซี่"): the pocket-guide sections (stays, emergency,
+   get ready, learn), each day's plan, and every place to eat. Words people reach for in a hurry also find their synonyms (หมอ → hospital). */
+const SYN = [['หมอ', 'แพทย์', 'โรงพยาบาล', 'คลินิก', 'doctor', 'hospital', 'clinic', 'ป่วย', 'ไม่สบาย', 'sick'], ['ยา', 'ร้านขายยา', 'pharmacy', 'medicine', 'chemist', 'watsons', 'mannings'],
+  ['แท็กซี่', 'taxi', 'uber', 'ให้คนขับดู'], ['ห้องน้ำ', 'toilet', 'restroom', 'bathroom'], ['ฉุกเฉิน', 'emergency', 'ตำรวจ', 'police', 'ambulance', 'รถพยาบาล', '999', '000'],
+  ['พาสปอร์ต', 'หนังสือเดินทาง', 'passport', 'กงสุล', 'consulate'], ['เด็กหลง', 'เด็กหาย', 'หลงทาง', 'lost', 'missing'], ['เงิน', 'money', 'cash', 'atm', 'octopus', 'บัตรเครดิต', 'hk$', 'mop', 'a$'],
+  ['ฝน', 'rain', 'พายุ', 'typhoon', 'อากาศ', 'weather'], ['ที่พัก', 'โรงแรม', 'hotel', 'stay', 'airbnb', 'เช็กอิน', 'check-in'], ['ตั๋ว', 'ticket', 'จอง', 'booking', 'book'],
+  ['เรือ', 'ferry', 'boat'], ['รถไฟ', 'train', 'mtr'], ['สนามบิน', 'airport'], ['ซิม', 'sim', 'esim', 'wifi', 'อินเทอร์เน็ต', 'internet']];
+const SUGGEST = [['หมอ', 'Doctor'], ['ยา', 'Pharmacy'], ['แท็กซี่', 'Taxi'], ['ห้องน้ำ', 'Toilet'], ['ฉุกเฉิน', 'Emergency'], ['พาสปอร์ต', 'Passport'], ['เด็กหลง', 'Lost child'], ['เงิน', 'Money'], ['ฝน', 'Rain'], ['ซิม', 'SIM']];
+const TOPIC_RANK = { sos: 0, stays: 1, prep: 2, today: 3, learn: 4, eat: 5 };
+const bookIdx = new Map();
+const flatText = (o, l) => {   // every word of a seed object in one language ("{th,en}" leaves pick l; links and ids are left out)
+  if (o == null) return '';
+  if (typeof o === 'string') return /^https?:/.test(o) ? '' : o;
+  if (typeof o === 'number') return String(o);
+  if (Array.isArray(o)) return o.map((x) => flatText(x, l)).join(' ');
+  return Object.entries(o).map(([k, v]) => (k === 'th' || k === 'en' ? (k === l || (o[l] === undefined && k === 'en') || (o[l] === undefined && o.en === undefined) ? flatText(v, l) : '')
+    : /^(tz|key|kind|e|emo|art|img|route|href|url|t|k|n|id)$/.test(k) ? '' : flatText(v, l))).join(' ');
+};
+function searchIndex(t) {
+  if (bookIdx.has(t.id)) return bookIdx.get(t.id);
+  const out = [], keep = lang, box = document.createElement('div'), B = {};
+  const plain = (h) => { box.innerHTML = (h || '').replace(/<\/(td|th|li|p|h[1-6]|div|tr|dd|dt|summary|section|ul|ol|small)>/gi, '$& ');   // cells and list items must not run together
+     return box.textContent.replace(/\s+/g, ' ').trim(); };
+  try { for (const l of ['th', 'en']) { lang = l; B[l] = infoBlocks(t); } } finally { lang = keep; }
+  const add = (topic, href, title, text, extra) => out.push({ topic, href, title, text, tl: { th: title.th.toLowerCase(), en: title.en.toLowerCase() }, lc: { th: text.th.toLowerCase(), en: text.en.toLowerCase() }, i: out.length, ...extra });
+  ['sos', 'stays', 'prep', 'learn'].forEach((k) => (B.th.meta[k] || []).forEach((m, j) => {
+    const me = (B.en.meta[k] || [])[j] || m;
+    add(k, `#/t/${t.id}/${k}/full/${j}`, { th: plain(m.title), en: plain(me.title) }, { th: plain(B.th[k][j]), en: plain((B.en[k] || [])[j]) });
+  }));
+  t.days.forEach((d, i) => {
+    const pl = d.plan || {}, part = (l) => [d.title, d.sleep, d.wx, pl.plan, pl.moving, pl.pick, pl.picks, pl.planB, pl.tips, pl.money, pl.stay, pl.legs, pl.food, pl.eat, d.planned].map((x) => flatText(x, l)).join(' · ');
+    add('today', `#/t/${t.id}/today/${i}/full`, { th: `วันที่ ${i + 1} · ${flatText(d.title, 'th')}`, en: `Day ${i + 1} · ${flatText(d.title, 'en')}` }, { th: part('th'), en: part('en') });
+  });
+  eatData(t).groups.forEach((g) => g.items.forEach((x) => {
+    const part = (l) => flatText([x.name, x.zh, x.where, x.tag, x.what, x.why, x.note, g.area], l);
+    add('eat', `#/t/${t.id}/eat/all`, { th: x.name, en: x.name }, { th: part('th'), en: part('en') }, { place: x.name, area: g.area });
+  }));
+  bookIdx.set(t.id, out);
+  return out;
+}
+const termAlts = (w) => { const set = new Set([w]); SYN.forEach((g) => { if (g.some((x) => x === w || (w.length >= 3 && x.includes(w)))) g.forEach((x) => set.add(x)); }); return [...set]; };
+function bookFind(t, q) {
+  const terms = q.toLowerCase().split(/\s+/).filter(Boolean); if (!terms.length) return { list: [], alts: [] };
+  const alts = terms.map(termAlts), list = [];
+  for (const e of searchIndex(t)) {
+    let score = 0;
+    for (const a of alts) {
+      let best = 0;
+      a.forEach((w, n) => { const exact = n === 0; if (e.tl.th.includes(w) || e.tl.en.includes(w)) best = Math.max(best, exact ? 6 : 4); else if (e.lc.th.includes(w) || e.lc.en.includes(w)) best = Math.max(best, exact ? 2 : 1); });
+      if (!best) { score = 0; break; }
+      score += best;
+    }
+    if (score) list.push({ e, score });
+  }
+  list.sort((a, b) => b.score - a.score || TOPIC_RANK[a.e.topic] - TOPIC_RANK[b.e.topic] || a.e.i - b.e.i);
+  return { list, alts: [...new Set(alts.flat())] };
+}
+// the words around the first hit, the hit marked (escape first, decorate never: each piece is escaped on its own)
+function snippet(e, alts) {
+  const l = lang, text = e.text[l] || e.text.en, low = text.toLowerCase();
+  let at = -1; for (const w of alts) { const k = low.indexOf(w); if (k >= 0 && (at < 0 || k < at)) at = k; }
+  if (at < 0) { const o = l === 'th' ? 'en' : 'th'; return esc((e.text[o] || '').slice(0, 110)); }
+  let from = Math.max(0, at - 36), to = Math.min(text.length, at + 110);
+  if (from) { const k = text.indexOf(' ', from); if (k >= 0 && k < at) from = k + 1; }   // start and end on a space, not inside a word
+  if (to < text.length) { const k = text.lastIndexOf(' ', to); if (k > at + 20) to = k; }
+  const seg = (from ? '… ' : '') + text.slice(from, to) + (to < text.length ? ' …' : '');
+  const re = new RegExp(`(${[...alts].sort((a, b) => b.length - a.length).map((w) => w.replace(/[.*+?^${}()|[\]\\]/g, '\\$&')).join('|')})`, 'gi');
+  return seg.split(re).map((part, k) => (k % 2 ? `<mark>${esc(part)}</mark>` : esc(part))).join('');
+}
+let bookQ = '', bookTrip = '';
+const topicName = (k) => (k === 'today' ? L('แผนรายวัน', 'Day plan') : secTitle(k));
+function bookResults(t) {
+  const q = bookQ.trim();
+  if (!q) return `<p class="empty">${L('พิมพ์สิ่งที่ต้องการ เช่น หมอ แท็กซี่ ห้องน้ำ ดิสนีย์แลนด์ — ค้นได้ทั้งภาษาไทยและอังกฤษ', 'Type what you need — doctor, taxi, toilet, Disneyland. Thai and English both work')}</p>`;
+  const { list, alts } = bookFind(t, q);
+  if (!list.length) return `<p class="empty">${L(`ไม่พบ “${esc(q)}” ลองคำสั้นลงหรือคำอื่น`, `Nothing for “${esc(q)}” — try a shorter or different word`)}</p>`;
+  const shown = list.slice(0, 30);
+  return `<p class="label" id="bookn">${L(`พบ ${list.length} รายการ`, `${list.length} found`)}${list.length > shown.length ? L(` · แสดง ${shown.length} อันดับแรก พิมพ์ให้เจาะจงขึ้นเพื่อกรอง`, ` · the top ${shown.length} — type more to narrow`) : ''}</p>
+<ul class="sres">${shown.map(({ e }) => `<li class="k-${e.topic}"><a href="${esc(e.href)}"${e.place ? ` data-a="eatgo" data-t="${esc(t.id)}" data-v="${esc(e.place)}"` : ''}><span class="stopic">${esc(topicName(e.topic))}</span><b>${esc(e.title[lang] || e.title.en)}</b>${e.place ? `<span class="label">${esc(T(e.area))}</span>` : ''}<span class="ssnip">${snippet(e, alts)}</span></a></li>`).join('')}</ul>`;
+}
+function viewSearch(t) {
+  if (bookTrip !== t.id) { bookTrip = t.id; bookQ = ''; }
+  searchIndex(t);   // built once, before the first letter
+  return `<section class="tp tp-search"><h1 class="h2">${L('ค้นหาทั้งเล่ม', 'Search the whole book')}</h1>
+<p class="lede">${L('ฉุกเฉิน ที่พัก เตรียมตัว แผนรายวัน และร้านอาหาร — พิมพ์ครั้งเดียว ไม่ต้องไล่เปิดทีละหน้า', 'Emergency, stays, get ready, the day plans and places to eat — one box, no page hunting')}</p>
+<div class="bookbar"><input id="bookq" class="field" type="search" enterkeyhint="search" autocomplete="off" value="${esc(bookQ)}" placeholder="${L('เช่น หมอ แท็กซี่ ห้องน้ำ ตั๋ว…', 'e.g. doctor, taxi, toilet, tickets…')}" aria-label="${L('ค้นหาทั้งเล่ม', 'Search the whole book')}"></div>
+<div class="row chips" role="group">${SUGGEST.map(([th, en]) => `<button class="chip" data-a="sq" data-v="${esc(L(th, en))}">${esc(L(th, en))}</button>`).join('')}</div>
+<div id="bookres">${bookResults(t)}</div></section>`;
 }
 // which meal a pick is (its colour everywhere): breakfast · lunch · dinner · snack
 const mealKind = (p) => { const m = ((p.meal || {}).en || '').toLowerCase(); return /breakfast/.test(m) ? 'bf' : /lunch/.test(m) ? 'lu' : /dinner/.test(m) ? 'di' : 'sn'; };
@@ -484,7 +578,7 @@ ${runs.length ? `<h5>${L('ที่พักแต่ละคืน — ให�
 ${n.lost ? `<p class="elost">${esc(T(n.lost))}</p>` : ''}</div>`);
   if (tonight) pg('sos', esc(tonight.name), 'tonight', `🛏️ ${L('ที่พักคืนนี้', 'Tonight’s address')}`, B.tonight = `<div class="stayc tonight"><h4>${esc(tonight.name)}</h4><div class="addr">${esc(tonight.addr || '')}</div><div class="sf"><span class="acts">${extA(mapsUrl(tonight.q || tonight.addr), L('แผนที่', 'Map') + ' ↗', 'go')}${extA(`https://www.google.com/maps/dir/?api=1&destination=${encodeURIComponent(tonight.q || tonight.addr)}`, L('นำทาง', 'Directions') + ' ↗', 'go')}${tk >= 0 ? `<button class="go" data-a="driver" data-t="${esc(t.id)}" data-v="${tk}">${ic('car')} ${L('ให้คนขับดู', 'Show the driver')}</button>` : ''}</span></div></div>`);
   if (n.ifthen) { const f = n.ifthen, sub = (x) => (x ? `<h5>${esc(T(x.head))}</h5>${lede(x.lede)}${tbl(x.cols, x.rows)}` : '');
-    pg('sos', sh(f.rows[0] && f.rows[0][0]) + ' …', '', `🔀 ${L('ถ้า… ก็…', 'If… then…')} <span class="label">· ${f.rows.length + ((f.mishap || {}).rows || []).length}</span>`, `${tbl(f.cols, f.rows, 'ift')}${f.mishap ? `<h5>${esc(T(f.mishap.head))}</h5>${lede(f.mishap.lede)}${tbl(f.cols, f.mishap.rows, 'ift')}` : ''}${sub(f.carry)}`);
+    pg('sos', esc(f.rows.slice(0, 3).map((r) => T(r[0])).join(' · ')), '', `🔀 ${L('ถ้า… ก็…', 'If… then…')} <span class="label">· ${f.rows.length + ((f.mishap || {}).rows || []).length}</span>`, `${tbl(f.cols, f.rows, 'ift')}${f.mishap ? `<h5>${esc(T(f.mishap.head))}</h5>${lede(f.mishap.lede)}${tbl(f.cols, f.mishap.rows, 'ift')}` : ''}${sub(f.carry)}`);
     if (f.crowd) pg('prep', sh(f.crowd.lede), '', `👥 ${esc(T(f.crowd.head))}`, `${lede(f.crowd.lede)}${tbl(f.crowd.cols, f.crowd.rows)}`);
     if (f.book) pg('prep', sh(f.book.lede), '', `📅 ${esc(T(f.book.head))}`, `${f.book.lede && T(f.book.lede) ? `<p class="lede">${esc(points(T(f.book.lede))[0])}</p>` : ''}${steps(f.book.cols, f.book.rows)}`); }
   // get ready
@@ -503,7 +597,7 @@ ${n.lost ? `<p class="elost">${esc(T(n.lost))}</p>` : ''}</div>`);
   const learnDays = t.days.map((d, i) => ({ i, d, pl: d.plan || {} })).filter((x) => (x.pl.learn || []).length || (x.pl.quiz || []).length);
   if (learnDays.length) pg('learn', esc(L(`${learnDays.reduce((a, x) => a + (x.pl.learn || []).length, 0)} เรื่อง · ${learnDays.reduce((a, x) => a + (x.pl.quiz || []).length, 0)} คำถาม`, `${learnDays.reduce((a, x) => a + (x.pl.learn || []).length, 0)} cards · ${learnDays.reduce((a, x) => a + (x.pl.quiz || []).length, 0)} questions`)), 'days', `📚 ${L('เรียนรู้ระหว่างทาง · วันต่อวัน', 'Learn on the way · day by day')} <span class="label">· ${learnDays.length} ${L('วัน', 'days')}</span>`, learnDays.map(({ i, d, pl }) => `<details class="sub"><summary>${artImg(t, i)} <span class="st"><b>${L('วันที่', 'Day')}&nbsp;${i + 1}</b> · ${esc(T(d.title))}</span></summary>${(pl.learn || []).map((x) => `<div class="learn"><b>${esc(T(x.name))}</b> <span class="label">${esc(T(x.country))}</span><ul>${(x.facts || []).map((f) => `<li>${lead(T(f))}</li>`).join('')}</ul>${x.kid ? `<p class="kidline"><b>${L('เล่าให้เด็กฟัง', 'For the kids')}</b> ${esc(T(x.kid))}</p>` : ''}</div>`).join('')}${(pl.quiz || []).length ? `<h5>${L('ถามหนูในรถ', 'Quiz in the car')}</h5>${quizHtml(pl.quiz)}` : ''}${pl.tale ? taleHtml(t, i, pl.tale) : ''}</details>`).join(''));
   if ((n.general || []).length) pg('learn', esc(n.general.map((g) => T(g.theme)).join(' · ')), '', `🗣️ ${L('เรียนรู้ระหว่างนั่งรถ', 'Learn in the car')} <span class="label">· ${n.general.reduce((s, g) => s + g.items.length, 0)}</span>`, `<div class="cols2">${n.general.map((g) => `<div><h5>${esc(T(g.theme))}</h5><dl class="words">${g.items.map((x) => `<div><dt>${esc(T(x.t))}</dt><dd>${esc(T(x.x))}</dd></div>`).join('')}</dl></div>`).join('')}</div>`);
-  if ((n.wild || []).length) pg('learn', esc(n.wild.slice(0, 4).map((w) => T(w.name)).join(' · ')) + (n.wild.length > 4 ? ' …' : ''), 'wild', `${n.wildLabel ? `${esc(n.wildLabel.emo || '🐾')} ${esc(T(n.wildLabel.title))}` : `🦘 ${L('สัตว์ที่จะเจอ', 'Animals we may meet')}`} <span class="label">· ${n.wild.length}</span>`, `<div class="wildg">${n.wild.map((w) => `<div class="wc"><span class="we">${esc(w.emo || '🐾')}</span><div><b>${esc(T(w.name))}</b>${pts(T(w.text))}</div></div>`).join('')}</div>`);
+  if ((n.wild || []).length) pg('learn', esc(n.wild.slice(0, 4).map((w) => T(w.name)).join(' · ')) + (n.wild.length > 4 ? ` · +${n.wild.length - 4}` : ''), 'wild', `${n.wildLabel ? `${esc(n.wildLabel.emo || '🐾')} ${esc(T(n.wildLabel.title))}` : `🦘 ${L('สัตว์ที่จะเจอ', 'Animals we may meet')}`} <span class="label">· ${n.wild.length}</span>`, `<div class="wildg">${n.wild.map((w) => `<div class="wc"><span class="we">${esc(w.emo || '🐾')}</span><div><b>${esc(T(w.name))}</b>${pts(T(w.text))}</div></div>`).join('')}</div>`);
   if (n.eatRules) pg('learn', sh(n.eatRules.lede), '', `🍽️ ${esc(T(n.eatRules.title))}`, `${lede(n.eatRules.lede)}${list(n.eatRules.rules)}<h5>${esc(T(n.eatRules.cookTitle))}</h5>${list(n.eatRules.cook)}`);
   // any other chapter of a manual (getting around, customs, a park touring plan…): one generic block, placed on the page it names
   (n.more || []).forEach((m) => { if (!B[m.page] || m.page === 'drive') return;
@@ -515,7 +609,16 @@ ${n.lost ? `<p class="elost">${esc(T(n.lost))}</p>` : ''}</div>`);
    manual-style page; a card opens it with its own section k open and scrolled to. */
 const noEmo = (s) => String(s).replace(/^(?:[\p{Extended_Pictographic}\u{1F1E6}-\u{1F1FF}\uFE0F\u200D]|\s)+/u, '');   // section titles carry no emoji (the manual has none)
 // the first whole point of a paragraph (a short heading takes the next one along), capped
-const brief = (s, n = 110) => { const p = points(s), x = (p[0] && p[0].length < 30 && p[1] ? `${p[0]}: ${p[1]}` : p[0] || '').trim(); return x.length > n ? x.slice(0, n - 1).replace(/[\s(,–-]+$/, '') + '…' : x; };
+const brief = (s, n = 110) => {   // a teaser that ends on a whole phrase: the first point; if long, up to its last clause break (bracket closed, dash, comma, ·), and only then a "…"
+  const p = points(s), x = (p[0] && p[0].length < 30 && p[1] ? `${p[0]}: ${p[1]}` : p[0] || '').trim();
+  if (x.length <= n * 1.45) return x;
+  const open = (z) => (z.match(/\(/g) || []).length > (z.match(/\)/g) || []).length, tidy = (z) => z.replace(/[\s,;:—–·(-]+$/, '');
+  const cuts = [...x.slice(0, n * 1.3).matchAll(/\)(?=\s)|(?=\s[—–]\s)|(?=[,;]\s)|(?=\s·\s)/g)].map((m) => m.index + (m[0] === ')' ? 1 : 0)).filter((k) => k >= n * 0.4 && !open(x.slice(0, k)));
+  if (cuts.length) return tidy(x.slice(0, cuts[cuts.length - 1]));
+  if (x.length <= n * 2) return x;   // one long clause with no break: show it whole rather than cut a word
+  const sp = [...x.slice(0, n).matchAll(/\s/g)].map((m) => m.index).filter((k) => k >= n * 0.5 && !open(x.slice(0, k)));
+  return `${tidy(x.slice(0, sp.length ? sp[sp.length - 1] : n - 1))}…`;
+};
 const fullHref = (t, k, j) => `#/t/${esc(t.id)}/${k}/full${j !== undefined ? '/' + j : ''}`;
 const reportBtn = (href, label) => `<a class="reportbtn" href="${href}">${ic('doc')}<b>${label || L('อ่านแบบรายงานเต็ม', 'Read the full report')}</b>${ic('chev')}</a>`;
 const glc = (href, title, sub, cls) => `<a class="glc${cls ? ' ' + cls : ''}" href="${href}"><span class="gt"><b>${title}</b>${sub ? `<small>${sub}</small>` : ''}</span>${ic('chev')}</a>`;
@@ -605,12 +708,16 @@ ${isEditor() ? `<p class="noprint" style="margin-top:10px"><a class="btn ghost s
 }
 
 /* ---------- keep a book on the phone (before the flight, before the ferry…) ---------- */
+// what this phone holds of a book: nothing · all of it (and when) · all of it up to N photos taken since
+function offState(t) {
+  const got = ls('offline_' + t.id), n = mediaOf(t.id).length, fresh = got ? Math.max(0, n - (got.n || 0)) : 0;
+  return { got, n, fresh, stale: !!got && fresh > 0, when: got ? new Date(got.at).toLocaleString(LOC(), { day: 'numeric', month: 'short', hour: '2-digit', minute: '2-digit' }) : '' };
+}
 function offlineHtml(t) {
-  const got = ls('offline_' + t.id), n = mediaOf(t.id).length, stale = got && got.n !== n;
-  const when = got ? new Date(got.at).toLocaleString(LOC(), { day: 'numeric', month: 'short', hour: '2-digit', minute: '2-digit' }) : '';
+  const { got, n, stale, fresh, when } = offState(t);
   return `<section class="blk offl noprint" id="offl"><h3>${L('ใช้ตอนไม่มีเน็ต', 'Use without signal')}</h3>
 <p class="label">${got && !stale ? L(`เล่มนี้อยู่ในเครื่องแล้ว (${when}) — เปิดสมุด พาสปอร์ต โหมดเด็ก และรูปย่อทุกรูปได้โดยไม่ต้องมีสัญญาณ บันทึกใหม่จะส่งขึ้นเองเมื่อกลับมาออนไลน์`, `Stored on this phone (${when}) — the book, passports, kid mode and every thumbnail open without signal; new notes upload when you are back online`)
-    : got ? L(`เก็บไว้เมื่อ ${when} แต่มีรูปใหม่ตั้งแต่นั้น กดอีกครั้งเพื่อเก็บให้ครบ`, `Stored ${when}, but there are new photos since — tap again to top up`)
+    : got ? L(`เก็บไว้เมื่อ ${when} แต่มีรูปใหม่ ${fresh} รูปตั้งแต่นั้น กดอีกครั้งเพื่อเก็บให้ครบ`, `Stored ${when}, but ${fresh} new photo${fresh > 1 ? 's' : ''} since — tap again to top up`)
       : L('กดก่อนขึ้นเครื่องหรือก่อนลงเรือ: แอปจะดึงรูปย่อทุกรูป รูปโปรดขนาดเต็ม และภาพวาดทั้งหมดของเล่มนี้มาเก็บไว้ในเครื่อง', 'Tap before the flight or the ferry: the app stores every thumbnail, the full-size favourites and all the drawings of this book on this phone')}</p>
 <div class="row"><button class="btn small" data-a="offline" data-t="${esc(t.id)}"${packing ? ' disabled' : ''}>${got && !stale ? '✓ ' : ''}${L('เก็บเล่มนี้ไว้ในเครื่อง', 'Keep this book on the phone')}</button>
 ${n > 0 ? `<button class="btn ghost small" data-a="offline" data-t="${esc(t.id)}" data-v="all"${packing ? ' disabled' : ''}>${L(`รวมรูปเต็มทั้ง ${n} รูป`, `With all ${n} full-size photos`)}</button>` : ''}</div></section>`;

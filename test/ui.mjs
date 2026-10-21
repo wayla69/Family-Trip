@@ -218,6 +218,48 @@ const T = 'hk-macau-2026';
   ok(await page.evaluate(() => cap1('teamLab at 11:00') + '|' + cap1('book Nov')) === 'teamLab at 11:00|Book Nov', 'a brand that starts lowercase (teamLab, eSIM) is left as it is');
   { const gap = await page.$$eval('.pocket details.pg > summary', (ss) => ss.map((s) => { const r = document.createRange(); r.selectNodeContents(s); return r.getClientRects()[0].left - s.closest('details').getBoundingClientRect().left; }));
     ok(gap.length >= 2 && gap.every((x) => x >= 12), `topic pages: every coloured section heading sits inside its frame, not on the edge (${Math.min(...gap).toFixed(0)} px)`); }
+  // ---- search the whole book · text size · what is stored on the phone · teasers that end whole
+  await page.goto(`${BASE}/#/t/${T}`); await page.waitForSelector('.hubgrid');
+  ok(await page.locator(`.hubsearch[href="#/t/${T}/search"]`).count() === 1 && await page.locator('.top .fsb').count() === 1 && await page.locator('.top a[href$="/search"]').count() === 0, 'menu: a big “Search the whole book” bar; the top bar has the text-size button but no second search icon');
+  await page.goto(`${BASE}/#/t/${T}/sos`); await page.waitForSelector('.tp-sos');
+  ok(await page.locator(`.top a[href="#/t/${T}/search"]`).count() === 1, 'inside a topic page the top bar carries a search icon');
+  await page.click(`.top a[href="#/t/${T}/search"]`); await page.waitForSelector('#bookq');
+  await page.fill('#bookq', 'doctor'); await page.waitForSelector('.sres li');
+  ok(/hospital/i.test(await page.textContent('.sres')) && await page.locator('.sres li.k-sos').count() >= 1 && await page.locator('.sres mark').count() >= 1, 'search “doctor”: the emergency section with the hospital line, the hit marked');
+  await page.fill('#bookq', 'หมอ'); await page.waitForTimeout(150);
+  ok(/hospital/i.test(await page.textContent('.sres')), 'a Thai word finds the English text (หมอ → hospital): both languages are searched');
+  ok(await page.evaluate(() => { const r = [...document.querySelectorAll('.sres li')].map((x) => x.textContent); return r.every((x) => !/undefined|\[object/.test(x)); }), 'search results carry no raw data');
+  for (const [tid, name] of [[T, 'HK'], ['big-hop-2027', 'AU']]) {
+    await page.goto(`${BASE}/#/t/${tid}/search`); await page.waitForSelector('#bookq');
+    const counts = await page.evaluate(() => [...document.querySelectorAll('.chip[data-a=sq]')].map((c) => { c.click(); return [c.dataset.v, document.querySelectorAll('.sres li').length]; }));
+    ok(counts.length === 10 && counts.every(([, n]) => n > 0), `${name}: every suggestion (doctor, taxi, toilet…) finds something — ${counts.map(([v, n]) => v + ' ' + n).join(', ')}`);
+  }
+  await page.goto(`${BASE}/#/t/${T}/search`); await page.waitForSelector('#bookq'); await page.fill('#bookq', 'Hoi Lin'); await page.waitForSelector('.sres a[data-a="eatgo"]');
+  await page.click('.sres a[data-a="eatgo"]'); await page.waitForSelector('#eatq');
+  ok(/hoi lin/i.test(await page.inputValue('#eatq')) && page.url().endsWith(`#/t/${T}/eat/all`), 'a place found by the search opens the eat list already filtered to it');
+  await page.goto(`${BASE}/#/t/${T}/search`); await page.waitForSelector('#bookq'); await page.fill('#bookq', 'zzzzqq');
+  ok(await page.locator('.sres li').count() === 0 && await page.locator('#bookres .empty').count() === 1, 'a word that is nowhere says so');
+  // text size: Aa cycles 100 → 110 → 120 → 130 %, is remembered, and nothing overflows at the largest
+  await page.goto(`${BASE}/#/t/${T}/today`); await page.waitForSelector('.dsheet');
+  const z = async () => page.evaluate(() => getComputedStyle(document.querySelector('main.wrap')).zoom);
+  const z0 = await z(); await page.click('.fsb'); const z1 = await z(); await page.click('.fsb'); await page.click('.fsb'); const z3 = await z();
+  ok(z0 === '1' && z1 === '1.1' && z3 === '1.3' && await page.evaluate(() => document.documentElement.dataset.fs === '3' && localStorage.getItem('mbs_fs') === '3'), `text size: Aa cycles normal → 110 % → … → 130 % and is remembered (${z0} / ${z1} / ${z3})`);
+  ok(await s.noHScroll(), 'text size 130 %: today does not overflow the phone');
+  await page.goto(`${BASE}/#/t/${T}/prep/full`); await page.waitForSelector('.steps');
+  ok(await s.noHScroll(), 'text size 130 %: the booking steps do not overflow');
+  await page.click('.fsb'); ok(await z() === '1', 'a fourth tap returns to normal');
+  // what this phone holds of the book: when, and how many new photos since
+  await page.goto(`${BASE}/#/t/${T}`); await page.waitForSelector('.hubgrid');
+  await page.evaluate((id) => { ls('offline_' + id, { at: Date.now(), n: mediaOf(id).length, all: false }); render(); }, T);
+  ok(/Stored on this phone · /.test(await page.textContent('.t-offline')) && await page.locator('.t-offline.warn').count() === 0, 'menu: the offline tile says when the book was stored');
+  await page.evaluate((id) => { ls('offline_' + id, { at: Date.now(), n: mediaOf(id).length - 2, all: false }); render(); }, T);
+  ok(/2 new photos/.test(await page.textContent('.t-offline')) && await page.locator('.t-offline.warn').count() === 1, 'menu: photos taken since the book was stored are counted and the tile asks for a top-up');
+  await page.goto(`${BASE}/#/t/${T}/offline`); await page.waitForSelector('#offl');
+  ok(/2 new photos since/.test(await page.textContent('#offl')), 'offline page: the same count, in words');
+  await page.evaluate((id) => { ls('offline_' + id, null); render(); }, T);
+  // teasers end on a whole phrase
+  { const cut = []; for (const r of ['prep', 'learn', 'sos', 'stays']) { await page.goto(`${BASE}/#/t/${T}/${r}`); await page.waitForSelector('.glg'); cut.push(...await page.$$eval('.glc small', (els) => els.map((e) => e.textContent.trim()).filter((x) => /…$/.test(x)))); }
+    ok(cut.length === 0, `HK glance cards: no subtitle ends with “…” ${cut.slice(0, 2).join(' | ')}`); }
   await page.goto(`${BASE}/#/t/${T}/today/1`); await page.waitForSelector('.dsheet');
   ok(await page.locator('.dsheet .meal').count() === 4 && /Hoi Lin Tea House/.test(await page.textContent('.cgrid')) && /Plaza Inn/.test(await page.locator('.dsheet .meal').nth(3).textContent()) && await page.locator('.dsheet a[href="/art/hk/disney-map.svg"]').count() === 1, 'HK today, Disney day: four meals each with a pick and a backup, and the park map');
   const vp0 = page.viewportSize(); await page.setViewportSize({ width: 1440, height: 900 }); await page.waitForSelector('.cgrid.packed');
@@ -714,6 +756,8 @@ const T = 'hk-macau-2026';
   // glance first: each topic opens as a few answer cards; the manual-style report is one tap away
   await page.goto(`${BASE}/#/t/big-hop-2027/today`); await page.waitForSelector('.dsheet');
   ok(/Money today/.test(await page.textContent('.cgrid')) && /≈ A\$\d/.test(await page.textContent('.dsheet .num')) && await page.locator('.dayplan').count() === 0 && await s.noHScroll(), 'today glance: answer cards (money shows the day total), no full plan until tapped');
+  { const cut = []; for (const r of ['prep', 'learn', 'sos', 'stays']) { await page.goto(`${BASE}/#/t/big-hop-2027/${r}`); await page.waitForSelector('.glg'); cut.push(...await page.$$eval('.glc small', (els) => els.map((e) => e.textContent.trim()).filter((x) => /…$/.test(x)))); }
+    ok(cut.length === 0, `AU glance cards: no subtitle ends with “…” ${cut.slice(0, 2).join(' | ')}`); }
   await page.goto(`${BASE}/#/t/big-hop-2027/plan`); await page.waitForSelector('.drows');
   ok(await page.locator('.drows li').count() === 16 && await page.locator('.drows li.now a[href$="/today/1"]').count() === 1 && await s.noHScroll(), 'whole-trip glance: one tappable line per day, today marked, fits the phone');
   await page.goto(`${BASE}/#/t/big-hop-2027/stays`); await page.waitForSelector('.slist');
