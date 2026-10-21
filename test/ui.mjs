@@ -261,9 +261,6 @@ const T = 'hk-macau-2026';
   ok(page.url().endsWith(first), `Enter in the search box opens the first hit (${first})`);
   await page.goto(`${BASE}/#/t/${T}/search`); await page.waitForSelector('#bookq');
   ok(await page.locator('.chips.recent .chip[data-v="taxi"]').count() === 1, 'the search that led somewhere is offered again as a recent chip');
-  // the menu dials the emergency number in one tap
-  await page.goto(`${BASE}/#/t/${T}`); await page.waitForSelector('.hubgrid');
-  ok(await page.getAttribute('.hubsos', 'href') === 'tel:999' && /999/.test(await page.textContent('.hubsos')) && await s.noHScroll(), 'book menu: a red tap-to-call 999 beside the search bar (no overflow at 390 px)');
   // text size: Aa cycles 100 → 110 → 120 → 130 %, is remembered, and nothing overflows at the largest
   await page.goto(`${BASE}/#/t/${T}/today`); await page.waitForSelector('.dsheet');
   const z = async () => page.evaluate(() => getComputedStyle(document.querySelector('main.wrap')).zoom);

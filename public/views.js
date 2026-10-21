@@ -384,7 +384,7 @@ function viewHub(t) {
     `<a class="tile shelfgo" href="#/"><span class="e">${ic('shelf')}</span><b>${L('ชั้นหนังสือ', 'Bookshelf')}</b><small>${L('เปลี่ยนเล่ม', 'Other books')}</small></a>`,
   ].filter(Boolean).join('');
   return `<section class="hubhead">${stampHtml(t, true)}<div class="grow"><div class="kicker">${esc(t.theme.kicker || '')}</div><h1>${esc(T(t.title).split(' · ')[0])}</h1><p class="line">${esc(fmtRange(t))}${ages ? ' · ' + esc(ages) : ''}</p></div></section>
-<div class="hubtop"><a class="hubsearch" href="#/t/${esc(t.id)}/search">${ic('search')}<span><b>${L('ค้นหาทั้งเล่ม', 'Search the whole book')}</b><small>${L('หมอ · ยา · แท็กซี่ · ห้องน้ำ · เด็กหลง', 'doctor · pharmacy · taxi · toilet · lost child')}</small></span></a>${((e) => (e ? `<a class="hubsos" href="tel:${esc(String(e.tel).split('·')[0].replace(/[^+\d]/g, ''))}" aria-label="${esc(L('โทรฉุกเฉิน', 'Call emergency') + ' ' + e.tel)}">${ic('phone')}<span><b>${esc(e.tel)}</b><small>${L('ฉุกเฉิน', 'Emergency')}</small></span></a>` : ''))(((t.info || {}).emergency || []).find((x) => x.main))}</div>
+<a class="hubsearch" href="#/t/${esc(t.id)}/search">${ic('search')}<span><b>${L('ค้นหาทั้งเล่ม', 'Search the whole book')}</b><small>${L('หมอ · ยา · แท็กซี่ · ห้องน้ำ · เด็กหลง', 'doctor · pharmacy · taxi · toilet · lost child')}</small></span></a>
 <div class="hubgrid">${tiles}</div>`;
 }
 /* ---------- search the whole book ----------
