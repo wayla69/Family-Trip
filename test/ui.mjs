@@ -229,6 +229,7 @@ const T = 'hk-macau-2026';
   await page.fill('#bookq', 'หมอ'); await page.waitForTimeout(150);
   ok(/hospital/i.test(await page.textContent('.sres')), 'a Thai word finds the English text (หมอ → hospital): both languages are searched');
   ok(await page.evaluate(() => { const r = [...document.querySelectorAll('.sres li')].map((x) => x.textContent); return r.every((x) => !/undefined|\[object/.test(x)); }), 'search results carry no raw data');
+  ok(await page.evaluate(() => { const re = /หมอ(?![กนง])/; return [...document.querySelectorAll('.sres li')].every((li) => (re.test(li.textContent) || /hospital|doctor|clinic|แพทย์|โรงพยาบาล|คลินิก|ป่วย|ไม่สบาย|sick/i.test(li.textContent))); }), 'search “หมอ” never lands on หมอก (fog) or หมอน (pillow) alone');
   for (const [tid, name] of [[T, 'HK'], ['big-hop-2027', 'AU']]) {
     await page.goto(`${BASE}/#/t/${tid}/search`); await page.waitForSelector('#bookq');
     const counts = await page.evaluate(() => [...document.querySelectorAll('.chip[data-a=sq]')].map((c) => { c.click(); return [c.dataset.v, document.querySelectorAll('.sres li').length]; }));
