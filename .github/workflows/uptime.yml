@@ -1,5 +1,5 @@
 name: Uptime
-# Every 15 minutes: is the live site up (Postgres + photo storage via /healthz), is the app shell served, does the login wall hold?
+# Every 15 minutes: is the live site up (Postgres + photo storage via /healthz?full=1 — plain /healthz is Railway's deploy check, Postgres only), is the app shell served, does the login wall hold?
 # A failure opens one GitHub issue "🔴 Site down" (GitHub notifies the owner by e-mail/app); recovery comments and closes it.
 # Needs the repo secret MB_URL (https://<domain>) — kept secret on purpose: the repo is public and the domain stays out of it.
 # Nothing is added to the app itself (no third-party scripts, nothing sent anywhere but GitHub).
@@ -36,7 +36,7 @@ jobs:
           B="${MB_URL%/}"; bad=""
           # 3 tries 40 s apart per check, so a Railway redeploy (about a minute) does not raise an alarm
           probe() { want=$1; url=$2; for n in 1 2 3; do code=$(curl -s -o /dev/null -w '%{http_code}' --max-time 20 "$url" || true); [ "$code" = "$want" ] && break; [ $n -lt 3 ] && sleep 40; done; echo "${code:-000}"; }
-          h=$(probe 200 "$B/healthz");               [ "$h" = 200 ] || bad="$bad health=$h"
+          h=$(probe 200 "$B/healthz?full=1");               [ "$h" = 200 ] || bad="$bad health=$h"
           s=$(probe 200 "$B/sw.js");                 [ "$s" = 200 ] || bad="$bad app=$s"
           a=$(probe 401 "$B/api/b/state");           [ "$a" = 401 ] || bad="$bad login-wall=$a"
           echo "healthz=$h app=$s login-wall=$a"
