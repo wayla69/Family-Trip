@@ -7,6 +7,7 @@ const crypto = require('crypto');
 const A = require('./auth');
 const STORY = require('./story');
 const BK = require('./backup');
+const { health } = require('./health');
 const PGM = require('./pg');
 const BS = require('./bookshelf');
 const HH = require('./importer');
@@ -38,12 +39,10 @@ app.use((req, res, next) => {
 app.use(A.attachUser);
 
 // Railway healthcheck: "ok" only when Postgres and photo storage answer
-app.get('/healthz', async (_req, res) => {
-  try {
-    await PG.query('SELECT 1');
-    await MEDIA.ping();
-    res.type('text').send('ok');
-  } catch (e) { console.error('healthz', e.message); res.status(503).type('text').send('unhealthy'); }
+app.get('/healthz', async (req, res) => {
+  const h = await health(PG, MEDIA, req.query.full === '1');
+  if (h.ok) return res.type('text').send('ok');
+  console.error('healthz', h.why); res.status(503).type('text').send('unhealthy');
 });
 app.get('/robots.txt', (_req, res) => res.type('text').send('User-agent: *\nDisallow: /\n'));
 

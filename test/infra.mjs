@@ -128,8 +128,17 @@ if (process.env.TEST_S3_ENDPOINT) {
     ACCESS_KEY_ID: process.env.TEST_S3_KEY || 'minioadmin', SECRET_ACCESS_KEY: process.env.TEST_S3_SECRET || 'minioadmin' }), 's3');
 } else console.log('  skip  s3 adapter (TEST_S3_ENDPOINT not set)');
 
-// running server: /healthz says ok with Postgres attached
-if (process.env.BASE) ok((await (await fetch(process.env.BASE + '/healthz')).text()) === 'ok', '/healthz ok with Postgres + storage');
+// running server: /healthz says ok with Postgres attached; ?full=1 also checks photo storage
+if (process.env.BASE) {
+  ok((await (await fetch(process.env.BASE + '/healthz')).text()) === 'ok', '/healthz ok with Postgres');
+  ok((await (await fetch(process.env.BASE + '/healthz?full=1')).text()) === 'ok', '/healthz?full=1 ok with Postgres + storage');
+}
+// a storage outage must not fail Railway's deploy check (/healthz), only the full check the uptime alert reads
+{ const { health } = require('../server/health.js');
+  const pgUp = { query: async () => ({ rows: [] }) }, pgDown = { query: async () => { throw new Error('ECONNREFUSED'); } };
+  const stUp = { ping: async () => {} }, stDown = { ping: async () => { throw new Error('NoSuchBucket'); } };
+  const a = await health(pgUp, stDown, false), b = await health(pgUp, stDown, true), c = await health(pgDown, stUp, false), d = await health(pgUp, stUp, true);
+  ok(a.ok && !b.ok && /storage/.test(b.why) && !c.ok && /postgres/.test(c.why) && d.ok, 'health: storage down → deploy check ok, full check fails; Postgres down → both fail'); }
 
 console.log(failures ? `\n${failures} FAILED` : '\nALL PASSED');
 process.exit(failures ? 1 : 0);
