@@ -146,6 +146,10 @@ if (require.main === module) {
   else if (A.FAMILY_CODE.length < 6) console.warn('WARNING: FAMILY_CODE is shorter than 6 characters — use a PIN of at least 6 digits.');
   if (process.env.VIEW_PIN && !A.VIEW_PIN) console.warn('WARNING: VIEW_PIN equals FAMILY_CODE — ignored (relatives would get the family write access). Pick a different PIN.');
   else if (A.VIEW_PIN && A.VIEW_PIN.length < 6) console.warn('WARNING: VIEW_PIN is shorter than 6 characters — use at least 6 digits.');
+  const bt = (process.env.BACKUP_TOKEN || '').trim();   // never print the token itself, only whether it can work
+  if (!bt) console.warn('NOTE: BACKUP_TOKEN is not set — the weekly off-site backup (GitHub Action) cannot download anything.');
+  else if (!A.BACKUP_TOKEN) console.warn(`WARNING: BACKUP_TOKEN is only ${bt.length} characters — it needs 24 or more, so /api/backup.zip stays off.`);
+  else console.log('backup endpoint on (BACKUP_TOKEN set)');
   if (process.env.NODE_ENV === 'production' && MEDIA.kind !== 's3') console.warn('WARNING: BUCKET is not set — photos go to local disk and are lost on the next deploy unless /data is a Railway volume.');
   if (!PG) { console.error('DATABASE_URL is not set — add Railway Postgres and reference ${{Postgres.DATABASE_URL}} (locally: see CLAUDE.md)'); process.exit(1); }
   PGM.ready(PG)

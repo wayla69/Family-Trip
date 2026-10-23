@@ -26,7 +26,7 @@ async function group(suites) {
   const u = new URL(process.env.TEST_DATABASE_URL); u.pathname = '/' + dbName;
   const data = fs.mkdtempSync(path.join(os.tmpdir(), 'mb-test-'));
   const port = await freePort();
-  const env = { ...process.env, PORT: String(port), DATA_DIR: data, DATABASE_URL: u.toString(), FAMILY_CODE: '271205', VIEW_TOKEN: 'grandma', VIEW_PIN: '835911', SESSION_SECRET: 'test-secret', BACKUP_TOKEN: 'test-backup-token-0123456789abcdef' };
+  const env = { ...process.env, PORT: String(port), DATA_DIR: data, DATABASE_URL: u.toString(), FAMILY_CODE: '271205', VIEW_TOKEN: 'grandma', VIEW_PIN: '835911', SESSION_SECRET: 'test-secret', BACKUP_TOKEN: 'test-backup-token-0123456789abcdef\n ' };
   delete env.ANTHROPIC_API_KEY; delete env.BUCKET;
   // server-side PDF: use Playwright's browser when installed, else the sandbox's preinstalled Chromium
   const { chromium } = createRequire(import.meta.url)('playwright-core');
