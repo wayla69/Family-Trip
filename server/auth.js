@@ -12,7 +12,7 @@ async function init(pool) {
 const FAMILY_CODE = process.env.FAMILY_CODE || '';
 const VIEW_TOKEN = process.env.VIEW_TOKEN || '';
 const VIEW_PIN = process.env.VIEW_PIN && process.env.VIEW_PIN !== FAMILY_CODE ? process.env.VIEW_PIN : '';   // relatives' read-only PIN (same pad as the family's)
-const BACKUP_TOKEN = (process.env.BACKUP_TOKEN || '').length >= 24 ? process.env.BACKUP_TOKEN : '';   // too short → backup endpoint off
+const BACKUP_TOKEN = (process.env.BACKUP_TOKEN || '').trim().length >= 24 ? process.env.BACKUP_TOKEN.trim() : '';   // too short → backup endpoint off (a pasted trailing space/newline is not part of it)
 const COOKIE = 'mb';
 const MAXAGE = 400 * 24 * 3600; // seconds (browser cap)
 

@@ -29,7 +29,9 @@ const zipList = (buf) => new Promise((res, rej) => yauzl.fromBuffer(buf, { lazyE
 console.log('backup / restore');
 ok((await fetch(BASE + '/api/backup.zip')).status === 401, 'backup.zip without token → 401');
 ok((await fetch(BASE + '/api/backup.zip', { headers: { authorization: 'Bearer wrong-token-wrong-token-wrong' } })).status === 401, 'backup.zip wrong token → 401');
-const zip = Buffer.from(await (await fetch(BASE + '/api/backup.zip', { headers: { authorization: 'Bearer ' + BACKUP_TOKEN } })).arrayBuffer());
+const zr = await fetch(BASE + '/api/backup.zip', { headers: { authorization: 'Bearer ' + BACKUP_TOKEN.trim() } });
+ok(zr.status === 200, 'backup.zip with the token → 200, even when the server variable was pasted with a trailing newline/space');
+const zip = Buffer.from(await zr.arrayBuffer());
 const ck = await login(BASE), src = await state(BASE, ck);
 const { names, json } = await zipList(zip);
 ok(json.complete && json.tables.entries.length === src.entries.length, `backup.zip: all ${src.entries.length} entries`);

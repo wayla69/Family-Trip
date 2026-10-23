@@ -27,6 +27,8 @@ jobs:
             echo "::error::secrets MB_URL / MB_BACKUP_TOKEN / MB_BACKUP_PASSPHRASE are not all set — nothing was backed up"; exit 1
           fi
           umask 077
+          MB_BACKUP_TOKEN=$(printf '%s' "$MB_BACKUP_TOKEN" | tr -d '\r\n' | sed 's/^[[:space:]]*//;s/[[:space:]]*$//')   # a pasted trailing newline/space is not part of the token
+          echo "token: ${#MB_BACKUP_TOKEN} characters (the server needs 24+ and the same value in Railway's BACKUP_TOKEN)"
           curl -fsS --retry 3 -H "Authorization: Bearer $MB_BACKUP_TOKEN" -o memory-book-backup.zip "${MB_URL%/}/api/backup.zip"
           unzip -tq memory-book-backup.zip
           unzip -p memory-book-backup.zip backup.json | python3 -c "import json,sys; b=json.load(sys.stdin); assert b['complete']; print({k: len(v) for k, v in b['tables'].items()})"
