@@ -407,7 +407,8 @@ const flatText = (o, l) => {   // every word of a seed object in one language ("
     : /^(tz|key|kind|e|emo|art|img|route|href|url|t|k|n|id)$/.test(k) ? '' : flatText(v, l))).join(' ');
 };
 function searchIndex(t) {
-  if (bookIdx.has(t.id)) return bookIdx.get(t.id);
+  const key = `${t.id}:${t.seed || ''}`;   // a new seed (a deploy with a revised manual) builds the index again
+  if (bookIdx.has(key)) return bookIdx.get(key);
   const out = [], keep = lang, box = document.createElement('div'), B = {};
   const plain = (h) => { box.innerHTML = (h || '').replace(/<\/(td|th|li|p|h[1-6]|div|tr|dd|dt|summary|section|ul|ol|small)>/gi, '$& ');   // cells and list items must not run together
      return box.textContent.replace(/\s+/g, ' ').trim(); };
@@ -431,12 +432,13 @@ function searchIndex(t) {
     const part = (l) => flatText([x.name, x.zh, x.where, x.tag, x.what, x.why, x.note, g.area], l);
     add('eat', `#/t/${t.id}/eat/all`, { th: x.name, en: x.name }, { th: part('th'), en: part('en') }, { place: x.name, area: g.area });
   }));
-  bookIdx.set(t.id, out);
+  bookIdx.set(key, out);
   return out;
 }
 // short Thai words that sit inside longer ones: หมอ ≠ หมอก/หมอน, ยา ≠ ยาก/ยาว — the next letter must not continue the word
 const WGUARD = { 'หมอ': '(?![กนง])', 'ยา': '(?![กวนง])' };
-const wre = (w, g = 'i') => new RegExp(w.replace(/[.*+?^${}()|[\]\\]/g, '\\$&') + (WGUARD[w] || ''), g);
+const wreMemo = new Map();   // the search runs these over every entry on each key press: build each one once
+const wre = (w) => { if (!wreMemo.has(w)) wreMemo.set(w, new RegExp(w.replace(/[.*+?^${}()|[\]\\]/g, '\\$&') + (WGUARD[w] || ''), 'i')); return wreMemo.get(w); };
 const wHas = (text, w) => (WGUARD[w] ? wre(w).test(text) : text.includes(w));
 const termAlts = (w) => { const set = new Set([w]); SYN.forEach((g) => { if (g.some((x) => x === w || (w.length >= 3 && x.includes(w)))) g.forEach((x) => set.add(x)); }); return [...set]; };
 function bookFind(t, q) {
@@ -476,7 +478,7 @@ const rememberQ = () => { const q = bookQ.trim(); if (!q) return; ls('recentq', 
 const topicName = (k) => (k === 'today' ? L('แผนรายวัน', 'Day plan') : secTitle(k));
 function bookResults(t) {
   const q = bookQ.trim();
-  if (!q) return `<p class="empty">${L('พิมพ์สิ่งที่ต้องการ เช่น หมอ แท็กซี่ ห้องน้ำ ดิสนีย์แลนด์ — ค้นได้ทั้งภาษาไทยและอังกฤษ', 'Type what you need — doctor, taxi, toilet, Disneyland. Thai and English both work')}</p>`;
+  if (!q) return `<p class="empty">${L('พิมพ์สิ่งที่ต้องการ เช่น หมอ แท็กซี่ ห้องน้ำ เด็กหลง — ค้นได้ทั้งภาษาไทยและอังกฤษ', 'Type what you need — doctor, taxi, toilet, lost child. Thai and English both work')}</p>`;
   const { list, alts } = bookFind(t, q);
   if (!list.length) return `<p class="empty">${L(`ไม่พบ “${esc(q)}” ลองคำสั้นลงหรือคำอื่น`, `Nothing for “${esc(q)}” — try a shorter or different word`)}</p>`;
   const shown = list.slice(0, 30);
