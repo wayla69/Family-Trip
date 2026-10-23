@@ -129,10 +129,11 @@ async function load(tries = 0) {
     if (!c) return 'fail';
     S = c; offline = true;
   }
-  S.hearts = S.hearts || []; S.reviews = S.reviews || [];   // a copy cached before these existed
-  queue.forEach(applyLocal);   // pending writes stay visible on top of server data
+  overlay();
   return offline ? 'cached' : 'ok';
 }
+// a copy of the state, ready to draw: lists a copy cached before they existed, and the pending writes laid on top
+function overlay() { S.hearts = S.hearts || []; S.reviews = S.reviews || []; queue.forEach(applyLocal); }
 const isEditor = () => !!(S && S.me.role === 'editor');
 
 /* ---------- offline queue: every write goes through here ----------

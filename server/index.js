@@ -38,7 +38,7 @@ app.use((req, res, next) => {
 });
 app.use(A.attachUser);
 
-// Railway healthcheck: "ok" only when Postgres and photo storage answer
+// Railway's deploy health check (Postgres); ?full=1 adds photo storage for the uptime alert — see server/health.js
 app.get('/healthz', async (req, res) => {
   const h = await health(PG, MEDIA, req.query.full === '1');
   if (h.ok) return res.type('text').send('ok');
@@ -124,7 +124,7 @@ const PUB = path.join(__dirname, '..', 'public');
 // the service worker serves the app shell from its cache first (instant open, even on hotel wifi), so a changed file must
 // change sw.js too: its cache name carries a hash of every file under public/, a forgotten mbs-vN bump can't strand a phone
 const SW = (() => {
-  const h = require('crypto').createHash('sha1');
+  const h = crypto.createHash('sha1');
   const walk = (d) => fs.readdirSync(d, { withFileTypes: true }).sort((a, b) => (a.name < b.name ? -1 : 1)).forEach((e) => {
     const f = path.join(d, e.name);
     if (e.isDirectory()) walk(f); else if (e.name !== 'sw.js') h.update(e.name).update(fs.readFileSync(f));

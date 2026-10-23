@@ -381,9 +381,9 @@ async function refresh() {
   // open from the phone's own copy at once, then ask the server (a 304 when nothing changed) and redraw only if something did
   const c = await idb.get('state');
   if (c && c.etag) {
-    S = c; S.hearts = S.hearts || []; S.reviews = S.reviews || []; queue.forEach(applyLocal);
+    S = c; overlay();
     render();
-    load().then((r) => { if (r === 'ok' || r === 'auth') safeRender(); else if (r !== 'same') { offline = true; safeRender(); } });
+    load().then((r) => { if (r !== 'same') safeRender(); });   // new data, signed out, or offline (load sets the banner)
   } else { await load(); render(); }
   if (ls('remind')) pushSub().then((s) => { if (!s) { ls('remind', null); render(); } }).catch(() => {});   // the phone dropped the subscription
   window.addEventListener('hashchange', () => { closeSheet(); lbState = null; drawLb(); render(); window.scrollTo(0, 0); });

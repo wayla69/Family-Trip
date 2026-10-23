@@ -24,7 +24,7 @@ const bad = (res, error, code = 400) => res.status(code).json({ error });
 const sha = (s) => crypto.createHash('sha1').update(s).digest('base64url').slice(0, 20);
 // etag: answer 304 (no body) when the phone already holds exactly this — the app asks every 30 s and on every return
 function sendJson(req, res, obj, etag) {
-  const body = Buffer.from(JSON.stringify(obj));
+  const body = Buffer.from(typeof obj === 'string' ? obj : JSON.stringify(obj));   // a string is already JSON
   if (etag) {
     const tag = `"${etag === true ? sha(body) : etag}"`;
     res.setHeader('ETag', tag);
@@ -140,7 +140,7 @@ function router({ pool, media, A, ai }) {
       const g = seedOf(t, td);
       if (g.hash !== req.params.hash) return bad(res, 'stale', 409);   // the seed moved on (new deploy): the app reloads the state
       res.setHeader('Cache-Control', 'private, max-age=31536000, immutable');
-      sendJson(req, res, JSON.parse(g.body), g.hash);
+      sendJson(req, res, g.body, g.hash);
     } catch (e) { next(e); }
   });
 
