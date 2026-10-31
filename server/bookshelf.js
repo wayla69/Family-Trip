@@ -377,6 +377,8 @@ function router({ pool, media, A, ai }) {
     }
     return lines.join('\n\n');
   }
+  const STORY_DAILY = Math.max(1, parseInt(process.env.STORY_DAILY, 10) || 30);   // model calls per family per UTC day — a cap on the API bill, not a quota anyone should meet
+  const storyUse = { day: '', n: 0 };
   r.post('/api/b/story', ...W, async (req, res, next) => {
     try {
       if (!ai || !ai.enabled()) return bad(res, 'no-key', 501);
@@ -385,6 +387,10 @@ function router({ pool, media, A, ai }) {
       const day = dayArg(b.day); if (!dayOk(t, day)) return bad(res, 'day');
       const facts = await storyFacts(t, day, lang);
       if (!facts) return bad(res, 'empty', 422);   // nothing written down → don't call the model
+      const today = new Date().toISOString().slice(0, 10);
+      if (storyUse.day !== today) Object.assign(storyUse, { day: today, n: 0 });
+      if (storyUse.n >= STORY_DAILY) return bad(res, 'limit', 429);
+      storyUse.n++;
       const ctl = new AbortController();
       let done = false;
       res.on('close', () => { if (!done) ctl.abort(); });

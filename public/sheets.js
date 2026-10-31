@@ -167,6 +167,7 @@ const A = {
       const r = await fetch('/api/b/story', { method: 'POST', credentials: 'same-origin', signal: storyCtl.signal,
         headers: { 'x-mb': '1', 'content-type': 'application/json' }, body: JSON.stringify({ trip: t.id, day, lang }) });
       if (r.status === 422) { box.textContent = L('ยังไม่มีบันทึกของวันนี้ — เพิ่มคำพูด คำอธิบายรูป หรือเช็คอินก่อน', 'Nothing written down yet — add a quote, a photo caption or a check-in first'); return; }
+      if (r.status === 429) { box.textContent = L('วันนี้แต่งนิทานครบจำนวนแล้ว — พรุ่งนี้แต่งต่อได้', 'That’s all the stories for today — more tomorrow'); return; }
       if (!r.ok) throw new Error('http ' + r.status);
       const rd = r.body.getReader(), dec = new TextDecoder();
       let buf = '', ev = null;
