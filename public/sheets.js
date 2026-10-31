@@ -7,6 +7,18 @@ function putEntry(t, row, id) {
   return enqueue({ method: 'PUT', url: '/api/b/entries/' + encodeURIComponent(id), body, local: { coll: 'entries', id, row: { ...body, created_by: S.me.name, mine: true } } });
 }
 const delEntry = (id) => enqueue({ method: 'DELETE', url: '/api/b/entries/' + encodeURIComponent(id), local: { coll: 'entries', id, del: true } });
+let spendCat = 'food', spendCur = '';   // the spend box remembers the last category / money while recording
+
+// the day as a message for LINE or Messages: title and date, what they said, the favourite, the firsts — the photos travel
+// along as files from this phone (never a link: nothing in the book has a public URL)
+function shareText(t, i) {
+  const d = t.days[i], es = entriesOf(t.id, i);
+  const lines = [`${T(d.title)} · ${fmtDay(d.date)}`];
+  es.filter((e) => e.kind === 'quote').forEach((e) => lines.push(`${kidName(e.child)}: “${e.text}”`));
+  const fav = es.find((e) => e.kind === 'fav'); if (fav && fav.text) lines.push(`${L('ของโปรดวันนี้', 'Favourite today')}: ${fav.text}`);
+  es.filter((e) => e.kind === 'first').forEach((e) => { const f = t.firsts.find((x) => x.key === e.first_key); lines.push(`🌟 ${kidName(e.child)} — ${e.first_key === 'custom' ? e.text : f ? T(f.label) : e.first_key}`); });
+  return lines.join('\n');
+}
 
 // shrink on the phone before upload (saves mobile data); EXIF is stripped again on the server anyway
 async function shrink(file) {
@@ -115,6 +127,38 @@ const A = {
     toast(L('บันทึกคำพูดแล้ว', 'Quote saved'));
   },
   hiq(b) { const e = S.entries.find((x) => x.id === b.dataset.v); if (e) putEntry(trip(e.trip), { ...e, highlight: !e.highlight }, e.id); },
+  spendcat(b) { spendCat = b.dataset.v; $$('[data-a="spendcat"]').forEach((x) => x.setAttribute('aria-pressed', x.dataset.v === spendCat)); },
+  spendcur(b) { spendCur = b.dataset.v; $$('[data-a="spendcur"]').forEach((x) => x.setAttribute('aria-pressed', x.dataset.v === spendCur)); },
+  async addspend(b) {
+    const t = trip(b.dataset.t), d = +b.dataset.d, amt = $('#spendamt'), note = $('#spendnote');
+    const n = Number(String(amt.value).replace(/[^\d.]/g, ''));
+    if (!(n >= 0) || !amt.value.trim()) { amt.focus(); return; }
+    const curs = tripCurs(t), cur = curs.includes(spendCur) ? spendCur : curs[0], id = uid('sp');
+    const body = { trip: t.id, day: d, amount: n, cur, cat: spendCat, note: note.value.trim() };
+    delete drafts[amt.dataset.draft]; delete drafts[note.dataset.draft]; amt.value = ''; note.value = '';
+    await enqueue({ method: 'PUT', url: '/api/b/spend/' + encodeURIComponent(id), body, local: { coll: 'spend', id, row: { ...body, at: Date.now(), created_by: S.me.name } } });
+    toast(L('จดแล้ว', 'Noted'));
+  },
+  delspend(b) { if (armed(b)) enqueue({ method: 'DELETE', url: '/api/b/spend/' + encodeURIComponent(b.dataset.v), local: { coll: 'spend', id: b.dataset.v, del: true } }); },
+  // the day's words and up to three photos go to whatever the phone can share with (LINE, Messages…); the photos are fetched
+  // from our own server with the session cookie and handed over as files, so no public link is ever made
+  async share(b) {
+    const t = trip(b.dataset.t), i = +b.dataset.d, text = shareText(t, i), files = [];
+    if (navigator.onLine) {
+      const ph = mediaOf(t.id, i), pick = ph.filter((m) => m.highlight).concat(ph.filter((m) => !m.highlight)).filter((m) => !m.pending).slice(0, 3);
+      for (const m of pick) { try { const r = await fetch(`/media/${encodeURIComponent(m.id)}`, { credentials: 'same-origin' }); if (r.ok) files.push(new File([await r.blob()], `${m.id}.jpg`, { type: 'image/jpeg' })); } catch (_) {} }
+    }
+    const withFiles = files.length && navigator.canShare && navigator.canShare({ files });
+    try { await navigator.share(withFiles ? { text, files } : { text }); } catch (e) { if (e.name !== 'AbortError') toast(L('แชร์ไม่สำเร็จ', 'Could not share')); }
+  },
+  // sign out: the cookie goes on the server, the offline copy of the book goes from this phone (a lent phone keeps nothing)
+  async logout(b) {
+    if (queue.length) { toast(L('ยังมีบันทึกรอส่ง — ต่อเน็ตให้ส่งเสร็จก่อนออกจากระบบ', 'Some records are still waiting to upload — connect first')); return; }
+    if (!armed(b, L('แตะอีกครั้งเพื่อออกจากระบบ', 'Tap again to sign out'))) return;
+    try { await api('POST', '/api/logout'); } catch (_) {}
+    await idb.set('state', null); ls('state', null);
+    S = null; location.hash = '#/'; render();
+  },
   delentry(b) { if (armed(b)) delEntry(b.dataset.v); },
   mood(b) {
     const t = trip(b.dataset.t), d = +b.dataset.d, k = b.dataset.k, id = `${t.id}.mood.d${d}.${k}`;

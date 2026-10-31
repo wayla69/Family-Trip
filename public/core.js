@@ -133,7 +133,7 @@ async function load(tries = 0) {
   return offline ? 'cached' : 'ok';
 }
 // a copy of the state, ready to draw: lists a copy cached before they existed, and the pending writes laid on top
-function overlay() { S.hearts = S.hearts || []; S.reviews = S.reviews || []; queue.forEach(applyLocal); }
+function overlay() { S.hearts = S.hearts || []; S.reviews = S.reviews || []; S.spend = S.spend || []; queue.forEach(applyLocal); }
 const isEditor = () => !!(S && S.me.role === 'editor');
 
 /* ---------- offline queue: every write goes through here ----------
@@ -197,6 +197,13 @@ async function flush() {
 const trips = () => (S ? S.trips : []);
 const trip = (id) => trips().find((t) => t.id === id);
 const children = () => (S ? S.children : []);
+// what we actually spent: rows of a book, or of one day of it
+const spendOf = (tid, day) => (S && S.spend ? S.spend : []).filter((s) => s.trip === tid && (day === undefined || s.day === day));
+// the money of a book, by its timezone: the first is the default when typing in a spend; THB is always there for things paid from home
+const CURS = [[/^Australia\//, ['AUD']], [/Hong_Kong|Macau/, ['HKD', 'MOP']], [/Tokyo/, ['JPY']], [/Singapore/, ['SGD']], [/Seoul/, ['KRW']], [/Taipei/, ['TWD']], [/Kuala_Lumpur/, ['MYR']], [/Europe\/London/, ['GBP']], [/^Europe\//, ['EUR']], [/^America\//, ['USD']]];
+const tripCurs = (t) => { const m = CURS.find(([re]) => re.test(t.timezone || '')); return m ? [...m[1], 'THB'] : ['THB']; };
+const fmtMoney = (n, cur) => { try { return new Intl.NumberFormat(lang === 'th' ? 'th-TH' : 'en-GB', { style: 'currency', currency: cur, maximumFractionDigits: n % 1 ? 2 : 0 }).format(n); } catch (_) { return `${cur} ${n}`; } };
+const sumMoney = (rows) => { const m = {}; rows.forEach((s) => { m[s.cur] = (m[s.cur] || 0) + s.amount; }); return Object.entries(m).map(([c, n]) => fmtMoney(n, c)).join(' + '); };
 const kidName = (slug) => { if (slug === 'both') return L('ทั้งคู่', 'Both'); const k = children().find((c) => c.slug === slug); return k ? (lang === 'th' ? k.name_th : k.name_en) : ''; };
 const kidEmoji = (slug) => (slug === 'both' ? '👧👶' : (children().find((c) => c.slug === slug) || {}).emoji || '');
 const entriesOf = (tid, day) => S.entries.filter((e) => e.trip === tid && (day === undefined || e.day === day));
@@ -307,9 +314,9 @@ function kidBadge(slug, off) {
   return `<span class="kid ${esc(slug)}${off ? ' off' : ''}${kidArt(slug) || slug === 'both' ? ' drawn' : ''}" title="${esc(kidName(slug))}">${art}</span>`;
 }
 // two taps to delete (no confirm()): first tap arms for 3 s
-function armed(btn) {
+function armed(btn, label) {
   if (btn.dataset.armed) return true;
-  btn.dataset.armed = '1'; const old = btn.textContent; btn.textContent = L('แตะอีกครั้งเพื่อลบ', 'Tap again to delete');
+  btn.dataset.armed = '1'; const old = btn.textContent; btn.textContent = label || L('แตะอีกครั้งเพื่อลบ', 'Tap again to delete');
   setTimeout(() => { if (btn.isConnected) { delete btn.dataset.armed; btn.textContent = old; } }, 3000);
   return false;
 }
