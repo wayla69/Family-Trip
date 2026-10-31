@@ -1292,10 +1292,24 @@ ${storyBlock(t, i)}
 // what we actually spent today: amount + category + a word → a row; the day's total in the heading, the trip's so far underneath.
 // A grown-up's number, so it stays on this page (and in our database) — never in the printed memory book or a seed.
 const SPEND_CATS = [['food', '🍜', 'กิน', 'Food'], ['transport', '🚕', 'เดินทาง', 'Transport'], ['tickets', '🎟️', 'ค่าเข้า', 'Tickets'], ['stay', '🛏️', 'ที่พัก', 'Stay'], ['shop', '🛍️', 'ซื้อของ', 'Shopping'], ['other', '🧾', 'อื่นๆ', 'Other']];
+// the day's places to eat, for the spend box's dropdown: the plan's picks and backups first, then what is on the route, near the
+// bed, and the rest of the day's areas — a meal can be at several of them, or at none of them ("other, type it in")
+function spendPlaces(t, i) {
+  const { near, hot, bed } = eatForDay(t, i), ps = ((t.days[i].plan || {}).picks || []), seen = new Set(), out = [];
+  const grp = (label, names) => { const xs = names.filter((n) => n && !seen.has(n)); xs.forEach((n) => seen.add(n)); if (xs.length) out.push([label, xs]); };
+  grp(L('ร้านในแผนวันนี้', 'In today’s plan'), ps.flatMap((p) => [p.name, p.alt && p.alt.name]));
+  const items = near.flatMap((g) => g.items);
+  grp(L('ตรงเส้นทางวันนี้', 'On today’s route'), items.filter((x) => hot.has(x)).map((x) => x.name));
+  grp(L('ใกล้ที่พัก', 'Near the bed'), items.filter((x) => bed.has(x)).map((x) => x.name));
+  grp(L('ร้านอื่นในโซนวันนี้', 'Elsewhere in today’s areas'), items.map((x) => x.name));
+  return out;
+}
 function spendBlock(t, i, dk) {
   const rows = spendOf(t.id, i), all = spendOf(t.id), curs = tripCurs(t), cur = curs.includes(spendCur) ? spendCur : curs[0];
+  const places = spendPlaces(t, i);
   return `<section class="blk spend"><h3>💸 ${L('จ่ายจริงวันนี้', 'Spent today')} ${rows.length ? `<span class="label">${esc(sumMoney(rows))}</span>` : ''}</h3>
 <div class="row" role="group">${SPEND_CATS.map(([k, e, th, en]) => `<button class="chip" data-a="spendcat" data-v="${k}" aria-pressed="${spendCat === k}">${e} ${L(th, en)}</button>`).join('')}</div>
+${places.length ? `<div class="row spendfood" style="margin-top:8px"${spendCat === 'food' ? '' : ' hidden'}><select id="spendplace" class="field" aria-label="${L('ร้าน', 'Place')}"><option value="">${L('ร้านไหน? (เลือก หรือพิมพ์เองด้านล่าง)', 'Which place? (pick, or type below)')}</option>${places.map(([label, xs]) => `<optgroup label="${esc(label)}">${xs.map((n) => `<option value="${esc(n)}">${esc(n)}</option>`).join('')}</optgroup>`).join('')}<option value="">${L('อื่นๆ — ไม่อยู่ในลิสต์ พิมพ์เอง', 'Other — not on the list, type it')}</option></select></div>` : ''}
 <div class="row" style="margin-top:8px"><input id="spendamt" class="field" style="flex:1;min-width:110px" inputmode="decimal" placeholder="0" aria-label="${L('จำนวนเงิน', 'Amount')}" data-draft="s:${esc(dk)}" value="${esc(drafts['s:' + dk] || '')}">
 ${curs.length > 1 ? curs.map((c) => `<button class="chip" data-a="spendcur" data-v="${c}" aria-pressed="${cur === c}">${c}</button>`).join('') : `<span class="label">${cur}</span>`}
 <input id="spendnote" class="field" style="flex:2;min-width:150px" maxlength="200" placeholder="${L('เช่น ติ่มซำมื้อเที่ยง', 'e.g. dim sum lunch')}" data-draft="sn:${esc(dk)}" value="${esc(drafts['sn:' + dk] || '')}">
