@@ -255,6 +255,9 @@ const T = 'hk-macau-2026';
   ok(await page.evaluate(() => [...document.querySelectorAll('.sres .ssnip')].every((x) => !/[\u0E00-\u0E7F]/.test(x.textContent))), 'English reader: every snippet is English even when a Thai word found it');
   await page.fill('#bookq', 'lost'); await page.waitForTimeout(150);
   ok(await page.evaluate(() => { const b = [...document.querySelectorAll('.sres li.k-sos b')].map((x) => x.textContent); return b.length > 0 && !b.some((x) => /^If… then…/.test(x)) && b.some((x) => /lost/i.test(x)); }), 'an “If… then…” hit is titled by its situation (a lost child…), not the section name');
+  // a lost child is not a lost passport: "เด็กหลง" never surfaces the passport row first (bare "lost" above still does find it)
+  await page.fill('#bookq', 'เด็กหลง'); await page.waitForTimeout(150);
+  ok(await page.evaluate(() => { const b = document.querySelector('.sres li b'); return !!b && !/passport|พาสปอร์ต/i.test(b.textContent); }), 'search “เด็กหลง”: first hit is the lost-child page, not the lost passport');
   // Enter opens the best hit, and that search comes back as a “recent” chip
   await page.fill('#bookq', 'taxi'); await page.waitForTimeout(150);
   const first = await page.getAttribute('.sres a', 'href'); await page.press('#bookq', 'Enter'); await page.waitForTimeout(300);
