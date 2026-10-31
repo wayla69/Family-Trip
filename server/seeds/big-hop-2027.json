@@ -103,7 +103,7 @@
     { "kind": "info", "th": "หิวตอนถึง? มื้อเย็นคือบนเครื่อง — สั่งอาหารเด็กล่วงหน้า 24 ชม. กินหรือทิ้งอาหารสดก่อนเครื่องลง (biosecurity) T1 ปิด 23:00 ที่ Adina ใช้ครัวในห้อง หรือสั่ง Uber Eats, DoorDash, Menulog มาที่ 11 Bourke Rd ตั้งแต่เครื่องลง", "en": "Hungry on arrival? Dinner is on the plane — pre-order child meals 24 h ahead. Eat or bin fresh food before landing (biosecurity). T1 closes at 23:00; at Adina use the kitchen or order Uber Eats, DoorDash or Menulog to 11 Bourke Rd as you land." },
     { "kind": "warn", "th": "คืนวันศุกร์: เช็ค Trip Planner สัปดาห์ก่อนว่ามีงานซ่อมรางไหม ถ้ามีรถบัสวิ่งแทน ให้นั่งแท็กซี่หน้าโถงขาเข้า คืนนี้ไม่ขับรถ รถมาส่งที่ Adina 08:00 แยกกระเป๋าถือใบเดียวใส่ชุดนอน นม ผ้าอ้อม", "en": "Friday night: check the Trip Planner the week before for trackwork — if buses replace trains, take a taxi from the rank. No driving tonight; the van comes to Adina at 08:00. One carry-on with pyjamas, milk and nappies." }
    ],
-   "stay": { "name": "Adina Apartment Hotel Sydney Airport", "addr": "Adina Apartment Hotel, 11 Bourke Rd, Mascot NSW 2020", "q": "Adina Apartment Hotel Sydney Airport, Adina Apartment Hotel, 11 Bourke Rd, Mascot NSW 2020" },
+   "stay": { "name": "Adina Apartment Hotel Sydney Airport", "addr": "Adina Apartment Hotel, 11 Bourke Rd, Mascot NSW 2020", "q": "Adina Apartment Hotel Sydney Airport, Adina Apartment Hotel, 11 Bourke Rd, Mascot NSW 2020", "ll": [-33.929, 151.188] },
    "route": "https://www.google.com/maps/dir/?api=1&origin=Sydney+International+Airport+Terminal+1&destination=Adina+Apartment+Hotel+Sydney+Airport&travelmode=driving",
    "learn": [
     { "name": { "th": "สนามบินซิดนีย์", "en": "Sydney Airport" }, "country": { "th": "ผืนดินของชาว Gadigal และ Bidjigal ริมอ่าว Botany", "en": "Gadigal and Bidjigal Country, by Botany Bay" }, "facts": [{ "th": "สนามบินตั้งชื่อตาม Charles Kingsford Smith นักบินที่บินข้ามมหาสมุทรแปซิฟิกจากอเมริกามาออสเตรเลียได้เป็นคนแรกในปี 1928", "en": "The airport is named after Charles Kingsford Smith, who flew the first trans-Pacific flight from the USA to Australia in 1928." }, { "th": "ที่นี่เริ่มมีเครื่องบินขึ้นลงตั้งแต่ปี 1920 เป็นหนึ่งในสนามบินพาณิชย์ที่เปิดใช้ต่อเนื่องเก่าแก่ที่สุดในโลก", "en": "Flying started here in 1920, making it one of the oldest continuously operating commercial airports in the world." }, { "th": "เดือนเมษายนที่ออสเตรเลียคือฤดูใบไม้ร่วง ฤดูกลับด้านกับซีกโลกเหนือ หน้าร้อนของที่นี่คือ ธ.ค.–ก.พ.", "en": "April is autumn in Australia — the seasons are flipped from the northern hemisphere, and summer is December–February." }], "kid": { "th": "เราบินมา 9 ชั่วโมง ข้ามเส้นศูนย์สูตรมาอยู่ซีกโลกใต้แล้ว ที่นี่ตอนนี้เป็นฤดูใบไม้ร่วงนะ", "en": "We flew for 9 hours and crossed the equator — now we're 'down under', where it's autumn right now!" } },
@@ -218,7 +218,7 @@
     { "th": "ช่วงนอน: ในรถ ช่วง Kiama → Vincentia 14:15–15:25", "en": "Nap: In the van, Kiama → Vincentia, 14:15–15:25" },
     { "kind": "warn", "th": "ละอองน้ำของ Blowhole พุ่งสูงได้ถึง 25 ม. — อยู่หลังรั้ว และจับมือเด็กไว้ทั้งสองคน", "en": "The Blowhole's spray can reach 25 m — stay behind the fence and keep a hand on both children." }
    ],
-   "stay": { "name": "By the Bay Beach Shack", "addr": "24 Waldegrave Crescent, Vincentia NSW 2540", "q": "By the Bay Beach Shack, 24 Waldegrave Crescent, Vincentia NSW 2540" },
+   "stay": { "name": "By the Bay Beach Shack", "addr": "24 Waldegrave Crescent, Vincentia NSW 2540", "q": "By the Bay Beach Shack, 24 Waldegrave Crescent, Vincentia NSW 2540", "ll": [-35.064, 150.676] },
    "route": "https://www.google.com/maps/dir/?api=1&origin=Adina+Apartment+Hotel+Sydney+Airport&destination=24+Waldegrave+Crescent,+Vincentia+NSW&waypoints=Bald+Hill+Lookout,+Stanwell+Tops+NSW|Kiama+Blowhole,+Kiama+NSW&travelmode=driving",
    "eat": [
     { "name": "The Berry Hotel · Coach House", "note": { "th": "วันที่ 2 และ 4", "en": "Days 2 and 4" }, "pr": "$$ · จานหลัก A$28–40", "q": "The Berry Hotel · Coach House, Berry, NSW" },
@@ -372,7 +372,7 @@
     { "th": "ช่วงนอน: ในรถไป Milton 11:15–12:00 และขากลับ 15:30", "en": "Nap: In the van to Milton 11:15–12:00, again on the way back 15:30" },
     { "kind": "tip", "th": "ถ้าเด็กเหนื่อยหลัง Hyams ให้ตัดวง Milton ออก — เป็นสิ่งแรกที่ตัดได้ในวันที่เหนื่อย", "en": "If the kids are finished after Hyams, drop the Milton loop — it is the first thing to cut on any tired day." }
    ],
-   "stay": { "name": "By the Bay Beach Shack", "addr": "24 Waldegrave Crescent, Vincentia NSW 2540", "q": "By the Bay Beach Shack, 24 Waldegrave Crescent, Vincentia NSW 2540" },
+   "stay": { "name": "By the Bay Beach Shack", "addr": "24 Waldegrave Crescent, Vincentia NSW 2540", "q": "By the Bay Beach Shack, 24 Waldegrave Crescent, Vincentia NSW 2540", "ll": [-35.064, 150.676] },
    "route": "https://www.google.com/maps/dir/?api=1&origin=24+Waldegrave+Crescent,+Vincentia+NSW&destination=24+Waldegrave+Crescent,+Vincentia+NSW&waypoints=Hyams+Beach+NSW|Milton+NSW|Mollymook+Beach+NSW&travelmode=driving",
    "eat": [
     { "name": "Jervis Bay Brewing Co", "note": { "th": "วันที่ 3 หลังเล่นหาด", "en": "Day 3 after the beach" }, "pr": "$$ · ฟู้ดทรัก ราว A$20", "q": "Jervis Bay Brewing Co, Huskisson, NSW" },
@@ -525,7 +525,7 @@
     { "th": "ช่วงนอน: ในรถ ช่วง Fitzroy Falls → Berrima 13:15–13:55", "en": "Nap: In the van, Fitzroy Falls → Berrima 13:15–13:55" },
     { "kind": "warn", "th": "เขา Cambewarra และ Barrengarry ชันและโค้งแคบ: เตรียมถุงอาเจียน ทิชชู่เปียก เสื้อสำรองเด็กคนละตัว", "en": "Cambewarra and Barrengarry mountains are steep and tight: sick bags, wipes and a spare shirt per child." }
    ],
-   "stay": { "name": "Honey Fig Cottage", "addr": "48a Derby Street, Bowral NSW 2576", "q": "Honey Fig Cottage, 48a Derby Street, Bowral NSW 2576" },
+   "stay": { "name": "Honey Fig Cottage", "addr": "48a Derby Street, Bowral NSW 2576", "q": "Honey Fig Cottage, 48a Derby Street, Bowral NSW 2576", "ll": [-34.478, 150.418] },
    "route": "https://www.google.com/maps/dir/?api=1&origin=24+Waldegrave+Crescent,+Vincentia+NSW&destination=48a+Derby+Street,+Bowral+NSW&waypoints=Hampden+Bridge,+Kangaroo+Valley+NSW|Fitzroy+Falls+Visitor+Centre+NSW|Berrima+NSW&travelmode=driving",
    "eat": [
     { "name": "The Berry Hotel · Coach House", "note": { "th": "วันที่ 2 และ 4", "en": "Days 2 and 4" }, "pr": "$$ · จานหลัก A$28–40", "q": "The Berry Hotel · Coach House, Berry, NSW" },
@@ -684,7 +684,7 @@
     { "th": "ช่วงนอน: ในรถไป Katoomba 12:30–13:50 แล้วพักในห้องถึง 16:00", "en": "Nap: In the van to Katoomba 12:30–13:50, then rest in the room until 16:00" },
     { "kind": "tip", "th": "ย้าย Scenic World ไปเช้าพรุ่งนี้: วันธรรมดาเปิดแค่ 10:00–16:00 ถ้าไปบ่ายวันนี้จะเล่นได้ไม่ครบ", "en": "Scenic World moved to tomorrow morning: on weekdays it opens only 10:00–16:00, so an afternoon visit today would be cut short." }
    ],
-   "stay": { "name": "Hotel Blue & Cottages", "addr": "88 Lurline Street, Katoomba NSW 2780", "q": "Hotel Blue & Cottages, 88 Lurline Street, Katoomba NSW 2780" },
+   "stay": { "name": "Hotel Blue & Cottages", "addr": "88 Lurline Street, Katoomba NSW 2780", "q": "Hotel Blue & Cottages, 88 Lurline Street, Katoomba NSW 2780", "ll": [-33.714, 150.312] },
    "route": "https://www.google.com/maps/dir/?api=1&origin=48a+Derby+Street,+Bowral+NSW&destination=Hotel+Blue+%26+Cottages,+88+Lurline+Street,+Katoomba+NSW&waypoints=Australian+Botanic+Garden+Mount+Annan&travelmode=driving",
    "eat": [
     { "name": "Gumnut Patisserie", "note": { "th": "เช้าวันที่ 5", "en": "Morning Day 5" }, "pr": "$ · พาย A$8–10", "q": "Gumnut Patisserie, Bowral, NSW" },
@@ -830,7 +830,7 @@
     { "kind": "warn", "en": "Check the Zig Zag timetable before booking: the published trip is the 90-min Clarence to Bottom Points return, and the railway runs on Fridays, Saturdays and Sundays in alternate weeks — 7 Apr is a Wednesday, so a run is unlikely. Plan B, decided at booking and never on the day: Jenolan Caves, or a slow Scenic World morning with the Govetts Leap lookout at Blackheath (a drop of about 180 m into the Grose Valley). If you swap days, Zig Zag sells no tickets on the day — book online.", "th": "เช็คตาราง Zig Zag ก่อนจอง: ทริปที่ประกาศไว้คือไป-กลับ Clarence ถึง Bottom Points 90 นาที และรถไฟวิ่งวันศุกร์ เสาร์ อาทิตย์ สลับสัปดาห์ — 7 เม.ย. เป็นวันพุธ จึงไม่น่ามีรอบ แผน B ตัดสินตอนจองเท่านั้น ไม่ใช่วันจริง: ถ้ำ Jenolan Caves หรือเที่ยว Scenic World สบายๆ ช่วงเช้าแล้วไปจุดชม Govetts Leap ที่ Blackheath (หน้าผาสูงราว 180 ม. ลงสู่หุบเขา Grose) ถ้าสลับวัน Zig Zag ไม่ขายตั๋วหน้างาน — จองออนไลน์" },
     { "kind": "info", "th": "เช็ค livetraffic.com คืนก่อน: ทางหลวงเลย Mount Victoria มีงานซ่อม ไป Clarence ทาง Darling Causeway ได้เช่นกัน", "en": "Check livetraffic.com the night before: the highway beyond Mount Victoria has had works. Clarence is also reached via Darling Causeway." }
    ],
-   "stay": { "name": "Hotel Blue & Cottages", "addr": "88 Lurline Street, Katoomba NSW 2780", "q": "Hotel Blue & Cottages, 88 Lurline Street, Katoomba NSW 2780" },
+   "stay": { "name": "Hotel Blue & Cottages", "addr": "88 Lurline Street, Katoomba NSW 2780", "q": "Hotel Blue & Cottages, 88 Lurline Street, Katoomba NSW 2780", "ll": [-33.714, 150.312] },
    "route": "https://www.google.com/maps/dir/?api=1&origin=Hotel+Blue+%26+Cottages,+88+Lurline+Street,+Katoomba+NSW&destination=Hotel+Blue+%26+Cottages,+88+Lurline+Street,+Katoomba+NSW&waypoints=Scenic+World,+NSW,+Australia|Blackheath,+NSW,+Australia|Zig+Zag+Railway,+Clarence+NSW&travelmode=driving",
    "eat": [
     { "name": "Pho Moi", "note": { "th": "ร้านคนท้องถิ่น · มื้อเย็นวันที่ 6 · ปิดวันอังคาร", "en": "Local favourite · Day 6 dinner · closed Tue" }, "pr": "$ · A$15–25 /ผู้ใหญ่", "q": "Pho Moi, Shop 1/39 Waratah St, Katoomba, NSW" },
@@ -975,7 +975,7 @@
     { "th": "ช่วงนอน: ในรถ Penrith → Somersby 10:45–12:00 และไปที่พัก 13:30–14:40", "en": "Nap: In the van, Penrith → Somersby 10:45–12:00 and to the cabin 13:30–14:40" },
     { "kind": "info", "th": "ทำไมไม่ใช้ Putty Road? ทางโค้งแคบสองชั่วโมง มีคาเฟ่ Grey Gum แห่งเดียวและปิดวันพฤหัส เส้นทางด่วนแวะพักได้ทุกชั่วโมง", "en": "Why not Putty Road? Two hours of narrow bends with a single café, Grey Gum, which is closed on Thursdays. The motorway route breaks cleanly every hour." }
    ],
-   "stay": { "name": "Hunter Valley OffGrid Eco Studio", "addr": "1461 New England Highway, Harpers Hill NSW 2321", "q": "Hunter Valley OffGrid Eco Studio, 1461 New England Highway, Harpers Hill NSW 2321" },
+   "stay": { "name": "Hunter Valley OffGrid Eco Studio", "addr": "1461 New England Highway, Harpers Hill NSW 2321", "q": "Hunter Valley OffGrid Eco Studio, 1461 New England Highway, Harpers Hill NSW 2321", "ll": [-32.7, 151.34] },
    "route": "https://www.google.com/maps/dir/?api=1&origin=Hotel+Blue+%26+Cottages,+88+Lurline+Street,+Katoomba+NSW&destination=1461+New+England+Highway,+Harpers+Hill+NSW&waypoints=Tench+Reserve,+Penrith+NSW|Saddles,+Mount+White+NSW&travelmode=driving",
    "eat": [
     { "name": "Con's Continental Deli", "note": { "th": "ร้านลับ · วันที่ 7 ขาลงเขา · จ.–ศ. 07:30–17:00", "en": "Hidden gem · Day 7 on the way down · Mon–Fri 07:30–17:00" }, "pr": "$ · A$12–20 /ผู้ใหญ่", "q": "Con's Continental Deli, 31 Park St, Glenbrook, NSW" },
@@ -1129,7 +1129,7 @@
     { "kind": "info", "th": "งาน Christmas Lights Spectacular ที่ Hunter Valley Gardens (ไฟกว่า 2 ล้านดวง) จัดต้นพฤศจิกายนถึงปลายมกราคม — เดือนเมษายนไม่มี", "en": "The Christmas Lights Spectacular at Hunter Valley Gardens (over two million lights) runs from early November to the end of January — it is not on in April." },
     { "kind": "tip", "th": "เนินทราย Birubi เป็นส่วนหนึ่งของ Worimi Conservation Lands (4,200 เฮกตาร์ ชาวอะบอริจินเป็นเจ้าของ): บางครั้งลมเปิดให้เห็นแคมป์เก่าและกองเปลือกหอยโบราณ ดูได้แต่ห้ามเก็บเปลือกหอย", "en": "The Birubi dunes are part of the Worimi Conservation Lands (4,200 ha, Aboriginal-owned): old campsites and shell middens are sometimes uncovered, so look but do not take shells." }
    ],
-   "stay": { "name": "Robyn's Nest Hideaway", "addr": "26 Clonmeen Circuit, Anna Bay NSW 2316", "q": "Robyn's Nest Hideaway, 26 Clonmeen Circuit, Anna Bay NSW 2316" },
+   "stay": { "name": "Robyn's Nest Hideaway", "addr": "26 Clonmeen Circuit, Anna Bay NSW 2316", "q": "Robyn's Nest Hideaway, 26 Clonmeen Circuit, Anna Bay NSW 2316", "ll": [-32.78, 152.085] },
    "route": "https://www.google.com/maps/dir/?api=1&origin=1461+New+England+Highway,+Harpers+Hill+NSW&destination=26+Clonmeen+Circuit,+Anna+Bay+NSW&waypoints=Hunter+Valley+Gardens,+Pokolbin+NSW&travelmode=driving",
    "eat": [
     { "name": "Oishii Japanese Thai", "note": { "th": "ทางเลือกมื้อกลางวันวันที่ 8 · เปิดทุกวัน", "en": "Day 8 lunch alternative · 7 days" }, "pr": "$$ · A$25–40 /ผู้ใหญ่", "q": "Oishii Japanese Thai, Roche Estate, Broke Rd & McDonalds Rd, Pokolbin, NSW" },
@@ -1265,7 +1265,7 @@
     { "t": "19:00", "th": "กลับบ้านอาบน้ำ · นอนเร็วก่อนวันเดินทาง", "en": "Home for baths · early night before the travel day" }
    ],
    "tips": [{ "th": "ช่วงนอน: ที่บ้านพัก 13:30–15:30 — ห้ามเลื่อน", "en": "Nap: At the house 13:30–15:30 — protected" }],
-   "stay": { "name": "Robyn's Nest Hideaway", "addr": "26 Clonmeen Circuit, Anna Bay NSW 2316", "q": "Robyn's Nest Hideaway, 26 Clonmeen Circuit, Anna Bay NSW 2316" },
+   "stay": { "name": "Robyn's Nest Hideaway", "addr": "26 Clonmeen Circuit, Anna Bay NSW 2316", "q": "Robyn's Nest Hideaway, 26 Clonmeen Circuit, Anna Bay NSW 2316", "ll": [-32.78, 152.085] },
    "route": "https://www.google.com/maps/dir/?api=1&origin=26+Clonmeen+Circuit,+Anna+Bay+NSW&destination=26+Clonmeen+Circuit,+Anna+Bay+NSW&waypoints=d'Albora+Marina,+Nelson+Bay+NSW|Shoal+Bay+Beach+NSW&travelmode=driving",
    "eat": [
     { "name": "Holberts Oyster Farm", "note": { "th": "มื้อเที่ยงวันที่ 9 · เปิดเฉพาะกลางวัน", "en": "Lunch Day 9 · daytime only" }, "pr": "$$ · หอยนางรม A$25–32 /โหล", "q": "Holberts Oyster Farm, Lot 52 Diemars Rd, Salamander Bay, NSW" },
@@ -1396,7 +1396,7 @@
     { "kind": "tip", "th": "เช็คตารางน้ำขึ้นลงของ Avoca ก่อนเดินทาง 1 สัปดาห์ ถ้าน้ำขึ้นสูงคลื่นจะซัดเข้าสระ ให้เล่นที่ชายหาดและสนามเด็กเล่นแทน", "en": "Check the Avoca tide table the week before. At high tide waves wash into the pool — play on the beach and at the playground instead." },
     { "kind": "warn", "th": "หน้าเว็บให้อาหารนกกระทุงยังมีประกาศสมัยโควิดว่างดให้อาหาร — เช็ควันนั้นว่ามีจริงก่อนวางแผนช่วงบ่ายรอบมัน", "en": "The pelican-feed page still carried a COVID-era notice that the feed was not taking place — confirm on the day that it is running before planning the afternoon around it." }
    ],
-   "stay": { "name": "Nesuto The Entrance", "addr": "18 Coral Street, The Entrance NSW 2261", "q": "Nesuto The Entrance, 18 Coral Street, The Entrance NSW 2261" },
+   "stay": { "name": "Nesuto The Entrance", "addr": "18 Coral Street, The Entrance NSW 2261", "q": "Nesuto The Entrance, 18 Coral Street, The Entrance NSW 2261", "ll": [-33.339, 151.5] },
    "route": "https://www.google.com/maps/dir/?api=1&origin=26+Clonmeen+Circuit,+Anna+Bay+NSW&destination=Nesuto+The+Entrance,+18+Coral+Street,+The+Entrance+NSW&waypoints=Heatherbrae's+Pies,+Heatherbrae+NSW|Avoca+Beach+Rock+Pool+NSW&travelmode=driving",
    "eat": [
     { "name": "Cookabarra Restaurant & Fish Farm", "note": { "th": "ร้านลับ · วันที่ 8 ตอนมาถึง หรือวันที่ 10 · 10:30–15:30 · ปิดวันอังคาร", "en": "Hidden gem · Day 8 arrival or Day 10 · 10:30–15:30 · closed Tue" }, "pr": "$$ · A$35–45 /ผู้ใหญ่", "q": "Cookabarra Restaurant & Fish Farm, 476 Marsh Rd, Bobs Farm, NSW" },
@@ -1534,7 +1534,7 @@
     { "th": "ช่วงนอน: ในรถเข้าเมือง 12:15–13:00 แล้วต่อในห้อง", "en": "Nap: In the van to the city 12:15–13:00, then in the room" },
     { "kind": "warn", "th": "จุดพลาดบ่อย: เวลานัดคืนรถกับเจ้าของ · ถ่ายรูปเช็คเอาท์ในแอป Turo ทั้งน้ำมัน เลขไมล์ และรอบคัน · เก็บใบเสร็จน้ำมัน วันนี้เป็นวันแรกของปิดเทอม NSW", "en": "Common failure points: host handover time · Turo check-out photos of fuel, odometer and all sides · keep the fuel receipt. NSW school holidays start today." }
    ],
-   "stay": { "name": "YHA Sydney Central", "addr": "11 Rawson Place, Haymarket NSW 2000", "q": "YHA Sydney Central, 11 Rawson Place, Haymarket NSW 2000" },
+   "stay": { "name": "YHA Sydney Central", "addr": "11 Rawson Place, Haymarket NSW 2000", "q": "YHA Sydney Central, 11 Rawson Place, Haymarket NSW 2000", "ll": [-33.883, 151.205] },
    "route": "https://www.google.com/maps/dir/?api=1&origin=Nesuto+The+Entrance,+18+Coral+Street,+The+Entrance+NSW&destination=Mascot+Station,+Mascot+NSW&waypoints=Featherdale+Sydney+Wildlife+Park,+Doonside+NSW|YHA+Sydney+Central,+11+Rawson+Place,+Haymarket+NSW&travelmode=driving",
    "eat": [
     { "name": "Diggers @ The Entrance · Outside-In Café", "note": { "th": "สำรองวันฝนตก · วันที่ 10 หรือเช้าวันที่ 11", "en": "Rainy-day backup · Day 10 or 11 morning" }, "pr": "$$ · A$20–28 /ผู้ใหญ่", "q": "Diggers @ The Entrance · Outside-In Café, 315 The Entrance Rd, Long Jetty, NSW" },
@@ -1667,7 +1667,7 @@
     { "th": "ช่วงนอน: ที่โรงแรม 13:00–14:45 (Light Rail 15 นาที)", "en": "Nap: At the hotel 13:00–14:45 (Light Rail 15 min)" },
     { "kind": "tip", "th": "ล็อบสเตอร์จาก Fish Market: ให้ร้านผ่าครึ่งและล้างให้ แล้ววางด้านเนื้อลงบนเตา 6 นาทีกับเนยกระเทียม — 1 กิโลพอสำหรับผู้ใหญ่ 2 คน", "en": "Fish Market lobster: ask the stall to split and clean it, then six minutes cut-side down on the hotplate with garlic butter — one kilo feeds two adults." }
    ],
-   "stay": { "name": "YHA Sydney Central", "addr": "11 Rawson Place, Haymarket NSW 2000", "q": "YHA Sydney Central, 11 Rawson Place, Haymarket NSW 2000" },
+   "stay": { "name": "YHA Sydney Central", "addr": "11 Rawson Place, Haymarket NSW 2000", "q": "YHA Sydney Central, 11 Rawson Place, Haymarket NSW 2000", "ll": [-33.883, 151.205] },
    "route": "https://www.google.com/maps/dir/?api=1&origin=YHA+Sydney+Central,+11+Rawson+Place,+Haymarket+NSW&destination=Darling+Quarter+Playground,+Sydney+NSW&waypoints=Sydney+Fish+Market,+Blackwattle+Bay+NSW|SEA+LIFE+Sydney+Aquarium",
    "eat": [
     { "name": "Royal Palace Seafood Restaurant", "note": { "th": "มื้อกลางวันวันที่ 12 หรือ 15 · walk-in · เช็คเวลาเปิด", "en": "Day 12 or 15 lunch · walk-in · confirm hours" }, "pr": "$$$ · ติ่มซำ A$40–50 /ผู้ใหญ่", "q": "Royal Palace Seafood Restaurant, 393–399 Sussex St, Haymarket, NSW" },
@@ -1806,7 +1806,7 @@
     { "th": "ช่วงนอน: นอนในรถเข็นที่ Botanic Garden 12:45–14:15", "en": "Nap: Stroller nap in the Botanic Garden 12:45–14:15" },
     { "kind": "info", "th": "แตะบัตร contactless ขึ้นขนส่งสาธารณะได้ทุกอย่าง มีเพดานค่าโดยสารรายวัน เด็กต่ำกว่า 4 ขวบฟรี วันฝนตก: Australian Museum (ฟรี ในร่ม)", "en": "Tap a contactless card on all public transport — daily caps apply and under-4s ride free. Wet-weather swap: the Australian Museum (free, indoor)." }
    ],
-   "stay": { "name": "YHA Sydney Central", "addr": "11 Rawson Place, Haymarket NSW 2000", "q": "YHA Sydney Central, 11 Rawson Place, Haymarket NSW 2000" },
+   "stay": { "name": "YHA Sydney Central", "addr": "11 Rawson Place, Haymarket NSW 2000", "q": "YHA Sydney Central, 11 Rawson Place, Haymarket NSW 2000", "ll": [-33.883, 151.205] },
    "route": "https://www.google.com/maps/dir/?api=1&origin=YHA+Sydney+Central,+11+Rawson+Place,+Haymarket+NSW&destination=Luna+Park+Sydney&waypoints=Circular+Quay,+Sydney+NSW|Royal+Botanic+Garden+Sydney",
    "eat": [
     { "name": "The Australian Heritage Hotel", "note": { "th": "มื้อเย็นวันที่ 13 · จองก่อน", "en": "Day 13 dinner · book" }, "pr": "$$ · พิซซ่า + เครื่องดื่ม A$28–35", "q": "The Australian Heritage Hotel, 100 Cumberland St, The Rocks, NSW" },
@@ -1925,7 +1925,7 @@
     { "th": "ช่วงนอน: นั่งเรือกลับ 13:00 ถึงโรงแรมราว 13:45", "en": "Nap: Ferry back 13:00, at the hotel from about 13:45" },
     { "kind": "info", "th": "กระเช้า Sky Safari กำลังสร้างใหม่ — ใช้รถ shuttle ฟรีจากท่าเรือ ช่วงปิดเทอม: จองออนไลน์และนั่งเรือรอบเช้า", "en": "The Sky Safari cable car is being rebuilt — use the free shuttle from the wharf. School holidays: book online and take the morning ferry." }
    ],
-   "stay": { "name": "YHA Sydney Central", "addr": "11 Rawson Place, Haymarket NSW 2000", "q": "YHA Sydney Central, 11 Rawson Place, Haymarket NSW 2000" },
+   "stay": { "name": "YHA Sydney Central", "addr": "11 Rawson Place, Haymarket NSW 2000", "q": "YHA Sydney Central, 11 Rawson Place, Haymarket NSW 2000", "ll": [-33.883, 151.205] },
    "route": "https://www.google.com/maps/dir/?api=1&origin=Circular+Quay,+Sydney+NSW&destination=YHA+Sydney+Central,+11+Rawson+Place,+Haymarket+NSW&waypoints=Taronga+Zoo+Sydney|Circular+Quay,+Sydney+NSW",
    "eat": [
     { "name": "The Boathouse Balmoral", "note": { "th": "ทางเลือกวันที่ 14 · จอง", "en": "Alternative Day 14 · book" }, "pr": "$$ · บรันช์ A$20–30", "q": "The Boathouse Balmoral, 2 The Esplanade, Balmoral, NSW" },
@@ -2048,7 +2048,7 @@
     { "th": "ช่วงนอน: บนเรือขากลับ 13:15 แล้วต่อที่โรงแรม 14:15", "en": "Nap: On the ferry back 13:15, then the hotel from 14:15" },
     { "kind": "warn", "th": "เช็คเอาท์ก่อน 10:00 พรุ่งนี้: จัดกระเป๋าคืนนี้ เก็บพาสปอร์ต บอร์ดดิ้งพาส และบัตรรถไฟสนามบินไว้ช่องเดียวในกระเป๋าถือ", "en": "Check out by 10:00 tomorrow: pack tonight and keep passports, boarding passes and the airport-train cards in one pocket of the carry-on." }
    ],
-   "stay": { "name": "YHA Sydney Central", "addr": "11 Rawson Place, Haymarket NSW 2000", "q": "YHA Sydney Central, 11 Rawson Place, Haymarket NSW 2000" },
+   "stay": { "name": "YHA Sydney Central", "addr": "11 Rawson Place, Haymarket NSW 2000", "q": "YHA Sydney Central, 11 Rawson Place, Haymarket NSW 2000", "ll": [-33.883, 151.205] },
    "route": "https://www.google.com/maps/dir/?api=1&origin=Circular+Quay,+Sydney+NSW&destination=Five+Ways,+Paddington+NSW&waypoints=Manly+Wharf,+Manly+NSW|Circular+Quay,+Sydney+NSW",
    "eat": [
     { "name": "Royal Palace Seafood Restaurant", "note": { "th": "มื้อกลางวันวันที่ 12 หรือ 15 · walk-in · เช็คเวลาเปิด", "en": "Day 12 or 15 lunch · walk-in · confirm hours" }, "pr": "$$$ · ติ่มซำ A$40–50 /ผู้ใหญ่", "q": "Royal Palace Seafood Restaurant, 393–399 Sussex St, Haymarket, NSW" },

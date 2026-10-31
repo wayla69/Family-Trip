@@ -136,6 +136,30 @@ async function load(tries = 0) {
 function overlay() { S.hearts = S.hearts || []; S.reviews = S.reviews || []; S.spend = S.spend || []; queue.forEach(applyLocal); }
 const isEditor = () => !!(S && S.me.role === 'editor');
 
+/* ---------- live forecast for the Today page: one request per book per hour, the answer kept in localStorage so the line
+   survives a reload offline; nothing of the family leaves the phone (the server asks Open-Meteo with the stay's town only) */
+const WX = {};
+function ensureWx(t) {
+  const k = 'wx:' + t.id, c = WX[t.id] || ls(k);
+  if (c && !c.pending && Date.now() - c.at < 3600e3) { WX[t.id] = c; return; }
+  if (WX[t.id] && WX[t.id].pending) return;
+  if (!navigator.onLine) { if (c) WX[t.id] = c; return; }
+  WX[t.id] = { ...(c || { at: 0, days: [] }), pending: true };
+  fetch(`/api/b/wx/${encodeURIComponent(t.id)}`, { credentials: 'same-origin' }).then((r) => (r.ok ? r.json() : null)).then((j) => {
+    WX[t.id] = j ? { at: Date.now(), days: j.days || [] } : { ...(c || { days: [] }), at: Date.now() - 3600e3 + 600e3, pending: false };   // no answer: ask again in ten minutes
+    if (j) { ls(k, WX[t.id]); if (j.days.some(Boolean)) safeRender(); }
+  }).catch(() => { WX[t.id] = { ...(c || { days: [] }), at: Date.now() - 3600e3 + 600e3, pending: false }; });
+}
+// WMO weather codes → a glyph and a word (the first row whose ceiling the code fits under)
+const WX_CODES = [[0, '☀️', 'แดดจัด', 'clear'], [2, '🌤️', 'มีเมฆบ้าง', 'partly cloudy'], [3, '☁️', 'เมฆมาก', 'overcast'], [48, '🌫️', 'หมอก', 'fog'], [57, '🌦️', 'ฝนปรอย', 'drizzle'],
+  [67, '🌧️', 'ฝน', 'rain'], [77, '❄️', 'หิมะ', 'snow'], [82, '🌦️', 'ฝนซู่', 'showers'], [86, '🌨️', 'หิมะซู่', 'snow showers'], [99, '⛈️', 'พายุฝน', 'thunderstorms']];
+// "🌤️ พยากรณ์ 15–22°C · มีเมฆบ้าง · ฝน 40%", or '' when there is none yet (too far ahead, offline, or the service did not answer)
+function wxLine(t, i) {
+  const f = WX[t.id] && WX[t.id].days && WX[t.id].days[i]; if (!f || f.tmin == null) return '';
+  const c = WX_CODES.find(([max]) => f.code != null && f.code <= max) || WX_CODES[1];
+  return `${c[1]} ${L('พยากรณ์', 'Forecast')} ${Math.round(f.tmin)}–${Math.round(f.tmax)}°C · ${L(c[2], c[3])}${f.pop != null ? ` · ${L('โอกาสฝน', 'rain')} ${f.pop}%` : ''}`;
+}
+
 /* ---------- offline queue: every write goes through here ----------
    op: {qid, seq, method, url, body?, blob?, local} — `local` describes the optimistic change so it can be re-applied after reload */
 let seq = Date.now();

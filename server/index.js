@@ -13,6 +13,7 @@ const BS = require('./bookshelf');
 const HH = require('./importer');
 const PDF = require('./pdf');
 const PUSH = require('./push');
+const WX = require('./weather');
 
 const DATA_DIR = path.resolve(process.env.DATA_DIR || './data');
 const PG = PGM.create();
@@ -105,6 +106,17 @@ app.get('/api/b/pdf/:trip', A.requireUser, async (req, res, next) => {
     res.setHeader('Cache-Control', 'no-store');
     res.end(pdf);
   } catch (e) { console.error('pdf', e.message); res.status(503).json({ error: 'pdf-unavailable' }); }
+});
+
+// live forecast for each day of a book (Today page): Open-Meteo asked with the stays' town-level coordinates only — server/weather.js
+app.get('/api/b/wx/:trip', A.requireUser, async (req, res, next) => {
+  try {
+    const t = (await PG.query('SELECT id, timezone FROM trips WHERE id=$1 AND family_id=$2', [req.params.trip, BS.FAMILY])).rows[0];
+    if (!t) return res.status(404).json({ error: 'trip' });
+    const days = (await PG.query("SELECT to_char(date,'YYYY-MM-DD') date, plan->'stay'->'ll' ll FROM trip_days WHERE trip_id=$1 ORDER BY day_index", [t.id])).rows;
+    res.setHeader('Cache-Control', 'private, max-age=1800');
+    res.json({ trip: t.id, at: Date.now(), days: await WX.forecast(days, t.timezone) });
+  } catch (e) { next(e); }
 });
 
 // import from the Harbour Hop app (zip of moments/visits/days + assets); ?dry=1 reports without writing

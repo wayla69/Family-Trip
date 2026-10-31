@@ -1619,3 +1619,6 @@ html[data-fs="1"] main.wrap{zoom:1.1}html[data-fs="2"] main.wrap{zoom:1.2}html[d
 .enearfar[open]>summary svg{transform:rotate(180deg)}
 .enearfar>.enears{padding-bottom:12px}
 .emoren{display:block;color:var(--muted);font-size:12.5px;margin-top:4px}
+
+/* Today: the live forecast line under the manual's climate note */
+.meta.wxlive,.wxlive{color:var(--accent);font-weight:600}
