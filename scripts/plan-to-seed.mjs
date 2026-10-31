@@ -9,6 +9,7 @@
 // Exit codes: 0 written · 1 the plan is not valid · 2 private data found (nothing written).
 import fs from 'node:fs';
 import path from 'node:path';
+import crypto from 'node:crypto';
 import { fileURLToPath } from 'node:url';
 import * as D from './lib/book-defaults.mjs';
 
@@ -21,7 +22,10 @@ const rel = (f) => { const r = path.relative(root, f); return r.startsWith('..')
 
 // ---------- privacy: what may never reach the bookshelf (the repo is public)
 const EXEMPT = new Set(['tel', 'url', 'route', 'href', 'q', 'speak']);   // phone numbers, Maps links/queries and speech text are allowed to hold digits
-const KNOWN = /F5ARVC|1653717262744684|5651795979/;                        // references already excluded from the first two books — must never come back
+// references already excluded from the first two books — must never come back; kept as SHA-256 prefixes so the values themselves never sit in this public repo
+const KNOWN_HASH = new Set(['434fc7c1d7b2fc33', '331e521aaaa8230a', '003c189251bbdfec']);
+const h16 = (s) => crypto.createHash('sha256').update(s).digest('hex').slice(0, 16);
+const KNOWN = { exec: (v) => { for (const m of v.match(/\b[A-Z0-9]{6,16}\b/g) || []) if (KNOWN_HASH.has(h16(m))) return [m]; return null; } };
 const RULES = [
   ['known booking reference', KNOWN],
   ['booking reference', /(?:\b(?:PNR|booking|reservation|confirmation|conf\.?|e-?ticket|ticket|itinerary|locator)\b(?:\s*(?:ref(?:erence)?|no\.?|number|code|#))?|\bref(?:erence)?\b|เลขจอง|รหัสจอง|หมายเลขการจอง|เลขที่จอง|เลขยืนยัน|รหัสยืนยัน|รหัสอ้างอิง)[\s:#.\-–]*((?=[A-Z]*\d)[A-Z0-9]{5,8})\b/],
