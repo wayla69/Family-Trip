@@ -962,32 +962,64 @@ function eatForDay(t, i) {
     const area = (g.area || {}).en || T(g.area), ds = eatDays(area), key = area.split(' — ')[0].toLowerCase();
     if (ds.size ? ds.has(i) : hit || (sleep && key.length > 3 && sleep.includes(key))) near.push(g);
   });
-  return { r, meals, near };
+  // the day's real radius: an area tied to "Days 11–16" holds sixty places, but the day passes a handful of them — the ones whose
+  // address or name is in the day's own words (planned stops, drive legs, the bed, the timeline) are "hot"; the rest fold away
+  // "hot" = on the day's route (its stops, drive legs and meal picks); the bed's own neighbourhood counts as reachable but folds
+  // away, so a resort with thirty in-house restaurants does not open on every night slept there
+  const bedTxt = dayText(t, i, true), hot = new Set(), bed = new Set();
+  const txt = placeWords(bedTxt).reduce((s, w) => s.split(w).join(' '), dayText(t, i));   // the first leg leaves the hotel every day: its words belong to the bed tier, not the route
+  near.forEach((g) => {
+    const gw = placeWords(((g.area || {}).en || T(g.area) || '').split(' — ')[0].split(' · ')[0]);
+    const gIn = (s) => gw.length > 0 && gw.every((w) => s.includes(w));
+    g.items.forEach((x) => {
+      const lw = placeWords(`${x.where || ''} ${String(x.q || '').replace(x.name || '', '')}`);   // the place's own location words (address, mall, suburb)
+      const inTxt = (s) => (lw.length ? lw.some((w) => s.includes(w)) : gIn(s));   // no address of its own (a shop inside the resort) → it is where its area is
+      if (inTxt(txt)) hot.add(x); else if (inTxt(bedTxt)) bed.add(x);
+    });
+  });
+  return { r, meals, near, hot, bed };
+}
+const PLACE_STOP = new Set(['sydney', 'hong', 'kong', 'macau', 'macao', 'cotai', 'taipa', 'central', 'hotel', 'resort', 'street', 'road', 'station', 'market', 'beach', 'park', 'house', 'restaurant', 'kitchen', 'cafe', 'café', 'shop', 'shops', 'food', 'court', 'level', 'floor', 'ground', 'lobby', 'wing', 'north', 'south', 'east', 'west', 'town', 'city', 'village', 'the', 'and', 'near', 'walk', 'taxi', 'ferry', 'train', 'light', 'rail', 'from', 'into', 'back', 'home', 'with', 'wharf', 'point', 'tower', 'plaza', 'mall', 'centre', 'center', 'square', 'garden', 'gardens', 'island', 'harbour', 'bakery', 'noodles', 'noodle', 'dumplings', 'roast', 'tea', 'australia']);
+const placeWords = (s) => String(s || '').toLowerCase().split(/[^a-z0-9'’]+/).filter((w) => w.length >= 4 && !PLACE_STOP.has(w));
+// the points the day actually touches: planned stops (with their map addresses), drive legs, the meal picks and the bed —
+// not the title or the timeline prose, which name whole regions and would pull every place in them back in
+function dayText(t, i, bedOnly) {
+  const d = t.days[i], pl = d.plan || {}, s = (x) => (x == null ? '' : typeof x === 'string' ? x : [x.en, x.name, x.key, x.q, x.from, x.to, x.addr].filter((v) => typeof v === 'string').join(' '));
+  return (bedOnly ? [d.sleep, pl.stay] : [...(d.planned || []), ...(pl.legs || []), ...(pl.picks || [])]).map(s).join(' ').toLowerCase();
 }
 const eatSame = (a, b) => { a = (a || '').toLowerCase(); b = (b || '').toLowerCase(); return !!a && !!b && (a === b || a.startsWith(b) || b.startsWith(a)); };
 const goA = (q, label) => extA(`https://www.google.com/maps/dir/?api=1&destination=${encodeURIComponent(q)}`, ic('route') + (label ? ' ' + label : `<span class="vh">${L('นำทาง', 'Go')}</span>`), label ? 'go' : 'go sq');
 function viewEatDay(t, i) {
-  const d = t.days[i], ps = (d.plan || {}).picks || [], { r, meals, near } = eatForDay(t, i), all = eatCount(t), now = dayNow(t);
+  const d = t.days[i], ps = (d.plan || {}).picks || [], { r, meals, near, hot, bed } = eatForDay(t, i), all = eatCount(t), now = dayNow(t);
   const KN = { bf: L('มื้อเช้า', 'Breakfast'), lu: L('มื้อกลางวัน', 'Lunch'), di: L('มื้อเย็น', 'Dinner'), sn: L('ของว่าง', 'Snack') };
   const info = (name) => { for (const g of r.groups) for (const x of g.items) if (eatSame(x.name, name)) return x; return null; };
   const facts = (x) => (x ? [T(x.pr) && `<span class="pr">${esc(T(x.pr))}</span>`, T(x.hours) && `<span class="hr">${esc(T(x.hours))}</span>`].filter(Boolean).join('') : '');
   const row = (x, cls) => `<li class="erow${cls ? ' ' + cls : ''}"><div><b>${mapA(x.q || x.name, esc(x.name))}</b>${T(x.tag) ? ` <span class="etag">${esc(T(x.tag))}</span>` : ''}${T(x.what) ? `<small>${esc(T(x.what))}</small>` : ''}${facts(x) ? `<span class="echips">${facts(x)}</span>` : ''}</div>${goA(x.q || x.name)}</li>`;
   const meal = (p) => {
     const k = mealKind(p), [lbl, ...w] = T(p.meal).split(' · '), x = info(p.name), bx = p.alt && info(p.alt.name);
-    const also = (meals[k] || []).map((m) => m.x).filter((x2, n, arr) => arr.indexOf(x2) === n && !eatSame(x2.name, p.name) && !(p.alt && eatSame(x2.name, p.alt.name)));
+    const alsoAll = (meals[k] || []).map((m) => m.x).filter((x2, n, arr) => arr.indexOf(x2) === n && !eatSame(x2.name, p.name) && !(p.alt && eatSame(x2.name, p.alt.name)));
+    const alsoHot = alsoAll.filter((x2) => hot.has(x2)), also = alsoHot.length ? alsoHot : alsoAll.slice(0, 4), alsoMore = alsoAll.length - also.length;   // on the day's route first; the rest sit in the areas below
     return `<section class="emeal mk-${k}"><h3 class="eh3"><span class="mtag">${esc(lbl)}</span>${w.length ? `<span class="mtime">${esc(w.join(' · '))}</span>` : ''}</h3>
 <div class="epick"><span class="elbl">★ ${L('ร้านแนะนำ', 'Our pick')}</span><div class="et"><b class="en">${mapA(p.q || p.name, esc(p.name))}</b>${goA(p.q || p.name, L('นำทาง', 'Go'))}</div>${T(p.what) ? `<p>${esc(T(p.what))}</p>` : x && T(x.what) ? `<p>${esc(T(x.what))}</p>` : ''}${facts(x) || T(p.pr) ? `<span class="echips">${facts(x) || `<span class="pr">${esc(T(p.pr))}</span>`}</span>` : ''}</div>
 ${p.alt ? `<ul class="erows"><li class="erow bk"><div><span class="elbl">${L('ร้านสำรอง', 'Backup')}</span><b>${p.alt.q || bx ? mapA(p.alt.q || p.alt.name, esc(p.alt.name)) : esc(p.alt.name)}</b>${T(p.alt.what) ? `<small>${esc(T(p.alt.what))}</small>` : bx && T(bx.what) ? `<small>${esc(T(bx.what))}</small>` : ''}${facts(bx) ? `<span class="echips">${facts(bx)}</span>` : ''}</div>${p.alt.q || bx ? goA(p.alt.q || p.alt.name) : ''}</li></ul>` : ''}
-${also.length ? `<div class="ealso"><span class="elbl">${L('กินมื้อนี้ได้อีก', 'Also good for this meal')}</span><ul class="erows">${also.map((x2) => row(x2)).join('')}</ul></div>` : ''}</section>`;
+${also.length ? `<div class="ealso"><span class="elbl">${L('กินมื้อนี้ได้อีก', 'Also good for this meal')}</span><ul class="erows">${also.map((x2) => row(x2)).join('')}</ul>${alsoMore > 0 ? `<small class="emoren">${L(`อีก ${alsoMore} ร้านอยู่ในย่านด้านล่าง`, `${alsoMore} more under the areas below`)}</small>` : ''}</div>` : ''}</section>`;
   };
   const seen = new Set(ps.flatMap((p) => [p.name, p.alt && p.alt.name]).filter(Boolean));
-  const nearHtml = near.map((g) => { const xs = g.items.filter((x) => ![...seen].some((n) => eatSame(n, x.name))); return xs.length ? `<details class="enear"><summary><span class="ea"><b>${esc(T(g.area))}</b>${g.kind !== undefined && (r.kinds || [])[g.kind] ? `<small class="ek">${esc(T(r.kinds[g.kind]))}</small>` : ''}</span><span class="n">${xs.length}</span>${ic('chev')}</summary><ul class="erows">${xs.map((x) => row(x)).join('')}</ul></details>` : ''; }).join('');
+  // areas within reach: the places on today's route open first; an area's other places fold under "N more"; areas with nothing on
+  // the route sit together under one line at the end — so a Sydney day shows the handful it passes, not all sixty
+  const kindTag = (g) => (g.kind !== undefined && (r.kinds || [])[g.kind] ? `<small class="ek">${esc(T(r.kinds[g.kind]))}</small>` : '');
+  const grp = (g, xs, inner, tag) => `<details class="enear"><summary><span class="ea"><b>${esc(T(g.area))}</b>${tag ? `<small class="ek bedtag">🛏 ${L('ที่พักคืนนี้', 'tonight’s bed')}</small>` : ''}${kindTag(g)}</span><span class="n">${xs.length}</span>${ic('chev')}</summary><ul class="erows">${xs.map((x) => row(x)).join('')}</ul>${inner || ''}</details>`;
+  const parts = near.map((g) => { const xs = g.items.filter((x) => ![...seen].some((n) => eatSame(n, x.name))), hotXs = xs.filter((x) => hot.has(x)), bedXs = hotXs.length ? [] : xs.filter((x) => bed.has(x)); const top = hotXs.length ? hotXs : bedXs; return { g, xs, top, isBed: !hotXs.length && bedXs.length > 0, rest: xs.filter((x) => !top.includes(x)) }; }).filter((p) => p.xs.length);
+  const onHtml = parts.filter((p) => p.top.length).map((p) => grp(p.g, p.top, p.rest.length ? `<details class="emore"><summary>${L(`อีก ${p.rest.length} ร้านในย่านนี้`, `${p.rest.length} more in this area`)}</summary><ul class="erows">${p.rest.map((x) => row(x)).join('')}</ul></details>` : '', p.isBed)).join('');
+  const far = parts.filter((p) => !p.top.length), farN = far.reduce((a, p) => a + p.xs.length, 0);
+  const farHtml = far.length ? `<details class="enearfar"><summary>${L(`ย่านอื่นที่ไปถึงได้วันนี้ · ${farN} ร้าน`, `Other areas within today’s reach · ${farN} places`)}${ic('chev')}</summary><div class="enears">${far.map((p) => grp(p.g, p.xs)).join('')}</div></details>` : '';
+  const nearHtml = onHtml || farHtml ? `${onHtml ? `<h3 class="gh">${L('ร้านตรงเส้นทางและที่พักวันนี้', 'On today’s route and by the bed')}</h3><div class="enears">${onHtml}</div>` : `<h3 class="gh">${L('ร้านใกล้เส้นทางและที่พักวันนี้', 'More near today’s route and bed')}</h3>`}${farHtml}` : '';
   const allBtn = (cls) => `<a class="btn ${cls}" href="#/t/${esc(t.id)}/eat/all">${ic('eat')} ${L(`ร้านทั้งหมด ${all} ร้าน · ค้นหา`, `All ${all} places · search`)} ›</a>`;
   return `<section class="eatpage eatday"><div class="part">${L('กินที่ไหนดี · ทีละวัน', 'Where to eat · day by day')}</div>
 <nav class="daytabs" aria-label="${L('เลือกวัน', 'Pick a day')}">${t.days.map((_, n) => `<a href="#/t/${esc(t.id)}/eat/d/${n}"${n === i ? ' aria-current="page"' : ''}${n === now ? ' class="now"' : ''}><small>${L('วัน', 'Day')}</small>${n + 1}</a>`).join('')}</nav>
 <header class="edhead">${artImg(t, i, 'mart')}<div><span class="mdn">${L('วันที่', 'Day')} ${i + 1}${i === now ? ` · ${L('วันนี้', 'Today')}` : ''}${d.date ? ` · ${esc(fmtDay(d.date))}` : ''}</span><h1 class="h2">${esc(T(d.title))}</h1>${T(d.sleep) && !isHome(d.sleep) ? `<span class="label">${ic('stays')} ${esc(T(d.sleep))}</span>` : ''}</div></header>
 ${ps.length ? `<div class="emeals">${ps.map(meal).join('')}</div>` : `<p class="empty">${L('วันนี้ยังไม่มีร้านแนะนำในแผน', 'No meal picks in the plan for this day')}</p>`}
-${nearHtml ? `<h3 class="gh">${L('ร้านใกล้เส้นทางและที่พักวันนี้', 'More near today’s route and bed')}</h3><div class="enears">${nearHtml}</div>` : ''}
+${nearHtml}
 <div class="row eatall">${i > 0 ? `<a class="btn ghost" href="#/t/${esc(t.id)}/eat/d/${i - 1}">‹ ${L('วันก่อน', 'Day')} ${i}</a>` : ''}${i < t.days.length - 1 ? `<a class="btn ghost" href="#/t/${esc(t.id)}/eat/d/${i + 1}">${L('วันถัดไป', 'Day')} ${i + 2} ›</a>` : ''}</div>
 ${allBtn('wide')}</section>`;
 }
