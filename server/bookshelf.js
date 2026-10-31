@@ -95,7 +95,7 @@ function router({ pool, media, A, ai }) {
   // ----- everything in one payload (cached by the app for offline use)
   r.get('/api/b/state', A.requireUser, async (req, res, next) => {
     try {
-      const [children, trips, days, firsts, entries, mediaRows, places, hearts, reviews] = await Promise.all([
+      const [children, trips, days, firsts, entries, mediaRows, places, hearts, reviews, spendRows] = await Promise.all([
         q('SELECT slug, name_th, name_en, emoji, color, birth_ym FROM children WHERE family_id=$1 ORDER BY pos', [FAMILY]),
         q("SELECT id, slug, legacy_id, title, sub, to_char(date_from,'YYYY-MM-DD') date_from, to_char(date_to,'YYYY-MM-DD') date_to, timezone, theme, cover, stamp, moods, passport, info, source FROM trips WHERE family_id=$1 ORDER BY date_from", [FAMILY]),
         q("SELECT d.trip_id, d.day_index, to_char(d.date,'YYYY-MM-DD') date, d.title, d.sleep, d.emoji, d.gradient, d.planned, d.wx, d.plan, d.done_at FROM trip_days d JOIN trips t ON t.id=d.trip_id WHERE t.family_id=$1 ORDER BY d.trip_id, d.day_index", [FAMILY]),
@@ -105,6 +105,7 @@ function router({ pool, media, A, ai }) {
         q('SELECT id, trip_id, day_index, key, kind, name, visited_at, created_by FROM places WHERE family_id=$1 ORDER BY visited_at', [FAMILY]),
         q('SELECT id, trip_id, day_index, child, emoji, text, from_name, created_uid, created_at FROM hearts WHERE family_id=$1 ORDER BY created_at', [FAMILY]),
         q('SELECT id, trip_id, day_index, kind, key, name, rating, tags, kids, again, note, created_by, updated_at FROM reviews WHERE family_id=$1 ORDER BY updated_at', [FAMILY]),
+        q('SELECT id, trip_id, day_index, amount, cur, cat, note, created_by, updated_at FROM spend WHERE family_id=$1 ORDER BY updated_at', [FAMILY]),
       ]);
       const ms = (d) => (d ? new Date(d).getTime() : null);
       // ?lite=1 (the app): each book's guide text (info, passport, day plans — ~95% of the bytes, changes only with a new seed)
@@ -126,6 +127,7 @@ function router({ pool, media, A, ai }) {
         places: places.map(({ trip_id, day_index, visited_at, ...p }) => ({ ...p, trip: trip_id, day: day_index, at: ms(visited_at) })),
         hearts: hearts.map(({ trip_id, day_index, created_uid, created_at, from_name, ...h }) => ({ ...h, trip: trip_id, day: day_index, from: from_name, at: ms(created_at), mine: created_uid === req.user.uid })),
         reviews: reviews.map(({ trip_id, day_index, updated_at, ...r }) => ({ ...r, trip: trip_id, day: day_index, at: ms(updated_at) })),
+        spend: spendRows.map(({ trip_id, day_index, updated_at, amount, ...s }) => ({ ...s, trip: trip_id, day: day_index, amount: Number(amount), at: ms(updated_at) })),
         features: { story: !!(ai && ai.enabled()) },
       }, true);
     } catch (e) { next(e); }
@@ -312,17 +314,27 @@ function router({ pool, media, A, ai }) {
     } catch (e) { next(e); }
   });
 
-  // ----- per-trip "firsts" list: add a custom one
-  r.put('/api/b/firsts/:trip/:key', ...W, async (req, res, next) => {
+  // ----- what we actually spent (the manual's budget is an estimate; this is the real number, per day — editors only;
+  // stays in this family's database, never in a seed or the printed book)
+  const SPEND_CATS = ['food', 'transport', 'tickets', 'stay', 'shop', 'other'];
+  r.put('/api/b/spend/:id', ...W, async (req, res, next) => {
     try {
-      const t = await trip(req.params.trip); if (!t) return bad(res, 'trip');
-      if (!/^[a-z0-9_-]{2,40}$/.test(req.params.key)) return bad(res, 'key');
-      const b = req.body || {};
-      const pos = (await q('SELECT count(*)::int n FROM firsts_catalog WHERE trip_id=$1', [t.id]))[0].n;
-      await q(`INSERT INTO firsts_catalog (trip_id, key, emoji, label, pos) VALUES ($1,$2,$3,$4,$5)
-        ON CONFLICT (trip_id, key) DO UPDATE SET emoji=EXCLUDED.emoji, label=EXCLUDED.label`, [t.id, req.params.key, clip(b.emoji || '⭐', 8), i18n(b.label, 120), pos]);
+      const id = req.params.id, b = req.body || {};
+      if (!ID_RE.test(id)) return bad(res, 'id');
+      const t = await trip(String(b.trip || '')); if (!t) return bad(res, 'trip');
+      const day = dayArg(b.day); if (!dayOk(t, day)) return bad(res, 'day');
+      const amount = Number(b.amount);
+      if (!Number.isFinite(amount) || amount < 0 || amount > 1e7) return bad(res, 'amount');
+      const cur = String(b.cur || '').toUpperCase(); if (!/^[A-Z]{3}$/.test(cur)) return bad(res, 'cur');
+      if (!SPEND_CATS.includes(b.cat)) return bad(res, 'cat');
+      await q(`INSERT INTO spend (id, family_id, trip_id, day_index, amount, cur, cat, note, created_by, created_uid) VALUES ($1,$2,$3,$4,$5,$6,$7,$8,$9,$10)
+        ON CONFLICT (id) DO UPDATE SET day_index=EXCLUDED.day_index, amount=EXCLUDED.amount, cur=EXCLUDED.cur, cat=EXCLUDED.cat, note=EXCLUDED.note, updated_at=now()
+        WHERE spend.family_id = EXCLUDED.family_id`, [id, FAMILY, t.id, day, amount.toFixed(2), cur, b.cat, clip(b.note, 200), clip(req.user.name, 40), req.user.uid]);
       res.json({ ok: true });
     } catch (e) { next(e); }
+  });
+  r.delete('/api/b/spend/:id', A.requireEditor, async (req, res, next) => {
+    try { await q('DELETE FROM spend WHERE id=$1 AND family_id=$2', [req.params.id, FAMILY]); res.json({ ok: true }); } catch (e) { next(e); }
   });
 
   // ----- a new trip (book) created in the app

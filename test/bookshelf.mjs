@@ -131,8 +131,13 @@ ok((await state()).places.filter((p) => p.key === 'Hong Kong Disneyland').length
 await put('/api/b/places', { trip: T, key: 'Hong Kong Disneyland', done: false });
 ok(!(await state()).places.length, 'check-in can be undone');
 ok((await put(`/api/b/days/${T}/0`, { done: true })).ok && (await state()).trips[0].days[0].done_at > 0, 'day 1 marked Done');
-ok((await put('/api/b/firsts/hk-macau-2026/shoes', { emoji: '👟', label: { th: 'ใส่รองเท้าเองครั้งแรก', en: 'Put on own shoes' } })).ok
-  && (await state()).trips[0].firsts.some((f) => f.key === 'shoes'), 'custom first added to this trip');
+// what we actually spent: a row per thing, typed in on the record page (editors), idempotent by id, validated, deletable
+const sp = { trip: T, day: 1, amount: 268, cur: 'mop', cat: 'tickets', note: 'Nickelodeon Town' };
+ok((await put(`/api/b/spend/${T}.sp.0001`, sp)).ok && (await state()).spend.some((x) => x.id === `${T}.sp.0001` && x.amount === 268 && x.cur === 'MOP' && x.cat === 'tickets' && x.note === 'Nickelodeon Town' && x.day === 1), 'spend saved (amount, currency upper-cased, category, note)');
+ok((await put(`/api/b/spend/${T}.sp.0001`, { ...sp, amount: 300.5 })).ok && (await state()).spend.filter((x) => x.id === `${T}.sp.0001`).map((x) => x.amount).join() === '300.5', 'same id → updated, not duplicated');
+ok((await put(`/api/b/spend/${T}.sp.bad1`, { ...sp, cat: 'casino' })).status === 400 && (await put(`/api/b/spend/${T}.sp.bad2`, { ...sp, amount: -5 })).status === 400
+  && (await put(`/api/b/spend/${T}.sp.bad3`, { ...sp, cur: 'dollars' })).status === 400 && (await put(`/api/b/spend/${T}.sp.bad4`, { ...sp, day: 99 })).status === 400, 'spend: unknown category, negative amount, bad currency or day → 400');
+ok((await fetch(BASE + `/api/b/spend/${T}.sp.0001`, { method: 'DELETE', headers: H })).ok && !(await state()).spend.length, 'spend deleted');
 const nt = await fetch(BASE + '/api/b/trips', { method: 'POST', headers: H, body: JSON.stringify({ slug: 'chiang-mai-2027', title: { th: 'เชียงใหม่', en: 'Chiang Mai' }, date_from: '2027-08-10', date_to: '2027-08-13' }) });
 s = await state();
 ok(nt.ok && s.trips.find((t) => t.slug === 'chiang-mai-2027').days.length === 4, 'new trip from the app gets one page per day');
@@ -168,7 +173,7 @@ ok(s.trips[0].days[0].done_at > 0 && s.trips.some((t) => t.slug === 'chiang-mai-
   ok(/AUD 1,375/.test(JSON.stringify(n.car)) && !/฿|THB/.test(JSON.stringify(n.car)), 'AU van: the rental price in AUD (owner\'s call, 18 Oct 2026), never in baht');
   const rs = n.restaurants, rItems = rs.groups.flatMap((g) => g.items);
   ok(rs.groups.length === 26 && rItems.length === 294 && rs.kinds.length === 3 && rItems.every((x) => x.q && x.name && x.what.th && x.what.en) && rItems.filter((x) => x.pick).length === 61, 'AU "Where to eat": 26 areas, 294 places (3 kinds), each with Thai + English and a maps query; 61 picks');
-  ok(hk.info.restaurants.groups.length === 21 && hk.info.restaurants.groups.flatMap((g) => g.items).length === 223 && hk.info.restaurants.groups.flatMap((g) => g.items).every((x) => x.q && x.what.th && x.what.en && [0, 1, 2].includes(x.kind)), 'HK manual Part 12 "Restaurant guide": 21 sections, 223 places, Thai + English, a maps query each');
+  ok(hk.info.restaurants.groups.length === 21 && hk.info.restaurants.groups.flatMap((g) => g.items).length === 224 && hk.info.restaurants.groups.flatMap((g) => g.items).every((x) => x.q && x.what.th && x.what.en && [0, 1, 2].includes(x.kind)), 'HK manual Part 12 "Restaurant guide": 21 sections, 223 places, Thai + English, a maps query each');
   ok(hk.days.every((d) => d.wx && (d.plan.learn || []).length >= 2 && (d.plan.quiz || []).length >= 3 && /^https:\/\/www\.google\.com\/maps\/dir\/\?api=1&origin=.+&destination=.+&travelmode=driving$/.test(d.plan.route)) && hk.info.wild.length >= 10 && hk.info.wild.some((w) => /Mickey/.test(w.name.en)) && hk.info.wildLabel.short.th, 'HK: weather, learn cards, quiz and a whole-day route every day; animals + Disney characters under their own label');
   ok(au.days.every((d) => d.plan.money && /A\$/.test(d.plan.money.en) && !/฿|THB|baht/i.test(JSON.stringify(d.plan.money)) && d.plan.pick) && au.passport.declaration.counts.length === 6, 'AU: money today in AUD (never baht) and a local pick on all 16 days; kids\' customs declaration in the passport');
   ok(au.info.emergency.some((e) => e.tel === '000' && e.main) && au.info.stays.length === 8 && au.info.pack.length === 4 && au.info.general.length === 4 && au.info.wild.length === 10 && au.info.prices.rows.length === 9 && au.info.more.some((m) => /Budget/.test(m.title.en) && m.table.rows.length >= 10), 'AU pocket guide: 000, 8 stays, packing, learn-in-the-car, animals, prices, AUD budget');

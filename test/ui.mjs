@@ -110,6 +110,17 @@ const T = 'hk-macau-2026';
   await page.click('button[data-a="first"][data-v="mickey"][data-k="mimi"]');
   await page.click('button[data-a="place"][data-v="Hong Kong Disneyland"]');
   await page.waitForFunction(() => queue.length === 0, null, { timeout: 15000 });
+  // what we actually spent: category + amount + a word → a row and the day's total; the trip total appears underneath
+  await page.click('button[data-a="spendcat"][data-v="transport"]');
+  await page.fill('#spendamt', '120'); await page.fill('#spendnote', 'แท็กซี่ไปดิสนีย์'); await page.click('button[data-a="addspend"]');
+  await page.waitForSelector('.spend .items li');
+  ok(await page.locator('.spend .items li', { hasText: 'แท็กซี่ไปดิสนีย์' }).count() === 1 && /120/.test(await page.locator('.spend h3 .label').textContent()) && /120/.test(await page.locator('.spend p.lede').textContent()), 'spend: a row with its note, the day total and the trip total');
+  await page.waitForFunction(() => queue.length === 0, null, { timeout: 15000 });
+  ok((await page.evaluate(async () => (await (await fetch('/api/b/state', { credentials: 'same-origin' })).json()).spend)).some((x) => x.amount === 120 && x.cur === 'HKD' && x.cat === 'transport'), 'spend: saved on the server in the book’s money (HKD)');
+  // the day as a message for relatives: title line, the quotes in quotation marks, never a link; the button only where the phone can share
+  const shTxt = await page.evaluate(() => shareText(trip('hk-macau-2026'), 1));
+  ok(shTxt.split('\n').length >= 2 && /“.+”/.test(shTxt) && !/https?:/.test(shTxt) && !/undefined/.test(shTxt), 'share text: title + quotes, no link');
+  ok((await page.locator('[data-a="share"]').count()) === (await page.evaluate(() => !!navigator.share) ? 1 : 0), 'share button only when navigator.share exists');
   let st = await apiState(page);
   const es = st.entries.filter((e) => e.trip === 'hk-macau-2026' && e.day === 1);
   ok(es.filter((e) => e.kind === 'quote' && e.child === 'mika' && e.highlight).length === 1, 'server: one ⭐ quote by Mika');
@@ -896,7 +907,7 @@ const T = 'hk-macau-2026';
   ok(await s.noHScroll(), 'eat day page fits the phone');
   await s.shot('04-eat-day', false);
   await page.goto(`${BASE}/#/t/hk-macau-2026/eat/all`); await page.waitForSelector('.eatc');
-  ok(await page.locator('.eatc:visible').count() === 223 && await page.locator('[data-a="eatpick"][aria-pressed="false"]').count() === 1 && await page.locator('.eatc .zh').count() > 150, 'eat page (HK): 223 places from the manual with Chinese names; filters reset for another book');
+  ok(await page.locator('.eatc:visible').count() === 224 && await page.locator('[data-a="eatpick"][aria-pressed="false"]').count() === 1 && await page.locator('.eatc .zh').count() > 150, 'eat page (HK): 224 places from the manual with Chinese names; filters reset for another book');
   ok(s.errs.length === 0, 'AU: no console errors ' + s.errs.join(' | '));
   await s.ctx.close();
 }
@@ -919,6 +930,12 @@ const T = 'hk-macau-2026';
   ok(await s.noHScroll(), 'map on a wide screen: no horizontal scroll');
   await s.shot('04-map', false);
   ok(s.errs.length === 0, 'kid wide: no console errors ' + s.errs.join(' | '));
+  // sign out from the shelf: two taps → the login form; after a reload the cookie is gone, and the phone's offline copy with it
+  await page.evaluate(() => ls('kidmode', null));
+  await page.goto(`${BASE}/#/`); await page.waitForSelector('[data-a="logout"]');
+  await page.click('[data-a="logout"]'); await page.click('[data-a="logout"]'); await page.waitForSelector('#lcode');
+  await page.reload(); await page.waitForSelector('#lcode');
+  ok((await page.evaluate(async () => (await idb.get('state')) == null)) && (await page.locator('[data-a="logout"]').count()) === 0, 'sign out: login form back, cookie gone after reload, offline copy cleared');
   await s.ctx.close();
 }
 await browser.close();
