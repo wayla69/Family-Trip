@@ -127,7 +127,7 @@ const A = {
     toast(L('บันทึกคำพูดแล้ว', 'Quote saved'));
   },
   hiq(b) { const e = S.entries.find((x) => x.id === b.dataset.v); if (e) putEntry(trip(e.trip), { ...e, highlight: !e.highlight }, e.id); },
-  spendcat(b) { spendCat = b.dataset.v; $$('[data-a="spendcat"]').forEach((x) => x.setAttribute('aria-pressed', x.dataset.v === spendCat)); },
+  spendcat(b) { spendCat = b.dataset.v; $$('[data-a="spendcat"]').forEach((x) => x.setAttribute('aria-pressed', x.dataset.v === spendCat)); const f = $('.spendfood'); if (f) f.hidden = spendCat !== 'food'; },
   spendcur(b) { spendCur = b.dataset.v; $$('[data-a="spendcur"]').forEach((x) => x.setAttribute('aria-pressed', x.dataset.v === spendCur)); },
   async addspend(b) {
     const t = trip(b.dataset.t), d = +b.dataset.d, amt = $('#spendamt'), note = $('#spendnote');
@@ -393,6 +393,7 @@ document.addEventListener('focusout', (e) => { const el = e.target; if (el.datas
 document.addEventListener('change', (e) => {
   if (e.target.dataset && e.target.dataset.ck) { const m = ls('ck') || {}; if (e.target.checked) m[e.target.dataset.ck] = 1; else delete m[e.target.dataset.ck]; ls('ck', m); return; }
   if (e.target.id === 'fpick') { const el = e.target; addPhotos(trip(el.dataset.t), +el.dataset.d, el.files); el.value = ''; }
+  if (e.target.id === 'spendplace') { const n = $('#spendnote'); if (n) { if (e.target.value) { n.value = e.target.value; drafts[n.dataset.draft] = n.value; $('#spendamt').focus(); } else n.focus(); } }   // a picked place becomes the note; "other" → type it
 });
 document.addEventListener('keydown', (e) => {
   if (lbState) { if (e.key === 'Escape') lbAct('close'); if (e.key === 'ArrowRight') lbAct('next'); if (e.key === 'ArrowLeft') lbAct('prev'); return; }

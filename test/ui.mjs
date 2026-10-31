@@ -117,6 +117,16 @@ const T = 'hk-macau-2026';
   ok(await page.locator('.spend .items li', { hasText: 'แท็กซี่ไปดิสนีย์' }).count() === 1 && /120/.test(await page.locator('.spend h3 .label').textContent()) && /120/.test(await page.locator('.spend p.lede').textContent()), 'spend: a row with its note, the day total and the trip total');
   await page.waitForFunction(() => queue.length === 0, null, { timeout: 15000 });
   ok((await page.evaluate(async () => (await (await fetch('/api/b/state', { credentials: 'same-origin' })).json()).spend)).some((x) => x.amount === 120 && x.cur === 'HKD' && x.cat === 'transport'), 'spend: saved on the server in the book’s money (HKD)');
+  // food: the day's places in a dropdown (plan picks first, then the route, the bed, the rest) — picking one writes the note; "other" leaves it free
+  ok(await page.locator('.spendfood').isHidden(), 'spend: the place dropdown hides while the category is not food');
+  await page.click('button[data-a="spendcat"][data-v="food"]');
+  const grpLabels = await page.locator('#spendplace optgroup').evaluateAll((gs) => gs.map((g) => g.label));
+  const firstPick = await page.locator('#spendplace optgroup:first-of-type option').first().getAttribute('value');
+  await page.selectOption('#spendplace', firstPick);
+  ok(await page.locator('.spendfood').isVisible() && grpLabels.length >= 2 && /plan/i.test(grpLabels[0]) && firstPick.length > 2 && (await page.inputValue('#spendnote')) === firstPick, `spend: food shows the day's places (${grpLabels.length} groups), picking "${firstPick}" fills the note`);
+  await page.fill('#spendamt', '268'); await page.click('button[data-a="addspend"]'); await page.waitForTimeout(300);
+  ok(await page.locator('.spend .items li', { hasText: firstPick }).count() === 1, 'spend: a second row for the meal at that place (several places a day are fine)');
+  await page.waitForFunction(() => queue.length === 0, null, { timeout: 15000 });
   // the day as a message for relatives: title line, the quotes in quotation marks, never a link; the button only where the phone can share
   const shTxt = await page.evaluate(() => shareText(trip('hk-macau-2026'), 1));
   ok(shTxt.split('\n').length >= 2 && /“.+”/.test(shTxt) && !/https?:/.test(shTxt) && !/undefined/.test(shTxt), 'share text: title + quotes, no link');
@@ -613,7 +623,7 @@ const T = 'hk-macau-2026';
     await p.shot('menu-dark');
     await p.page.goto(`${BASE}/#/t/${T}/book`); await p.page.waitForSelector('#d1');
     ok(await p.noHScroll(), `${w}px dark: no horizontal scroll`);
-    ok(await p.page.evaluate(() => getComputedStyle(document.body).backgroundColor) === 'rgb(18, 22, 28)', `${w}px: dark paper`);
+    ok(await p.page.evaluate(() => getComputedStyle(document.body).backgroundColor) === 'rgb(27, 34, 48)', `${w}px: dark paper`);
     await p.shot('book-dark');
     await p.page.goto(`${BASE}/#/t/${T}/log/1`); await p.page.waitForSelector('.daystrip');
     ok(await p.noHScroll(), `${w}px dark: record page fits`);
