@@ -7,7 +7,7 @@ const archiver = require('archiver');
 const yauzl = require('yauzl');
 const sharp = require('sharp');
 const IMG = require('./images');
-const { FAMILY } = require('./bookshelf');
+const { FAMILY, AUDIO_EXT } = require('./bookshelf');
 
 // restore order follows foreign keys
 const TABLES = ['children', 'trips', 'trip_days', 'firsts_catalog', 'entries', 'media', 'places', 'hearts', 'reviews', 'spend'];
@@ -33,9 +33,9 @@ async function sendZip(res, pool, media) {
   z.on('error', () => res.end());
   z.pipe(res);
   z.append(JSON.stringify(b), { name: 'backup.json' });
-  for (const m of b.tables.media) {   // one photo in memory at a time
+  for (const m of b.tables.media) {   // one photo (or voice memo) in memory at a time
     const buf = await media.get(m.storage_key);
-    if (buf) z.append(buf, { name: `photos/${m.id}.jpg` });
+    if (buf) z.append(buf, { name: String(m.mime || '').startsWith('audio/') ? `audio/${m.id}.${AUDIO_EXT[m.mime] || 'webm'}` : `photos/${m.id}.jpg` });
   }
   await z.finalize();
 }
@@ -65,10 +65,18 @@ async function importZip(file, pool, media) {
     if (!out['backup.json']) throw Object.assign(new Error('backup.json missing'), { status: 400 });
     const b = JSON.parse((await readEntry(z, out['backup.json'], 200e6)).toString('utf8'));
     if (b.format !== 'memory-bookshelf-backup' || !b.tables) throw Object.assign(new Error('not a Memory Bookshelf backup'), { status: 400 });
-    const res = { rows: {}, photos: 0, photosSkipped: 0 };
-    // photos first (async, outside the transaction)
-    const mediaRows = (b.tables.media || []).filter((m) => ID_RE.test(String(m.id)) && SLUG_RE.test(String(m.trip_id)) && out[`photos/${m.id}.jpg`]);
+    const res = { rows: {}, photos: 0, photosSkipped: 0, audio: 0 };
+    // photos and voice memos first (async, outside the transaction)
+    const isAudio = (m) => String(m.mime || '').startsWith('audio/') && !!AUDIO_EXT[m.mime];
+    const entryOf = (m) => (isAudio(m) ? `audio/${m.id}.${AUDIO_EXT[m.mime]}` : `photos/${m.id}.jpg`);
+    const mediaRows = (b.tables.media || []).filter((m) => ID_RE.test(String(m.id)) && SLUG_RE.test(String(m.trip_id)) && out[entryOf(m)]);
     for (const m of mediaRows) {
+      if (isAudio(m)) {   // kept as recorded; the key is rebuilt, never read from the file
+        m.storage_key = `a/${m.trip_id}/${m.id}.${AUDIO_EXT[m.mime]}`;
+        if (await media.get(m.storage_key)) { res.photosSkipped++; continue; }
+        await media.put(m.storage_key, await readEntry(z, out[entryOf(m)], 10e6), m.mime);
+        res.audio++; continue;
+      }
       m.storage_key = `p/${m.trip_id}/${m.id}.jpg`;   // never trust a key from the file
       if (await media.get(m.storage_key)) { res.photosSkipped++; continue; }
       const buf = await readEntry(z, out[`photos/${m.id}.jpg`], 60e6);

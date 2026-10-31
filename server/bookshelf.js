@@ -10,6 +10,8 @@ const IMG = require('./images');
 
 const FAMILY = process.env.FAMILY_ID || 'family';
 const ID_RE = /^[A-Za-z0-9_.:-]{4,80}$/;
+// voice memos arrive as the phone's recorder made them: Chrome/Android webm-opus, iPhone mp4-aac; stored under a/<trip>/<id>.<ext>
+const AUDIO_EXT = { 'audio/webm': 'webm', 'audio/mp4': 'm4a', 'audio/x-m4a': 'm4a', 'audio/aac': 'aac', 'audio/mpeg': 'mp3', 'audio/ogg': 'ogg' };
 const SLUG_RE = /^[a-z0-9-]{2,60}$/;
 const KINDS = ['quote', 'mood', 'fav', 'note', 'first', 'story', 'tick', 'field'];
 const TRIP_WIDE = ['story', 'tick', 'field'];   // kinds that may have no day (whole-trip story, passport checklists, Explorer ID)
@@ -91,6 +93,7 @@ function router({ pool, media, A, ai }) {
   const dayArg = (v) => (v === null || v === undefined || v === '' ? null : Number(v));
   const keyFull = (tid, id) => `p/${tid}/${id}.jpg`;
   const keyThumb = (tid, id) => `t/${tid}/${id}.jpg`;
+  const keyAudio = (tid, id, ext) => `a/${tid}/${id}.${ext}`;   // voice memos: stored as the phone recorded them
 
   // ----- everything in one payload (cached by the app for offline use)
   r.get('/api/b/state', A.requireUser, async (req, res, next) => {
@@ -101,7 +104,7 @@ function router({ pool, media, A, ai }) {
         q("SELECT d.trip_id, d.day_index, to_char(d.date,'YYYY-MM-DD') date, d.title, d.sleep, d.emoji, d.gradient, d.planned, d.wx, d.plan, d.done_at FROM trip_days d JOIN trips t ON t.id=d.trip_id WHERE t.family_id=$1 ORDER BY d.trip_id, d.day_index", [FAMILY]),
         q('SELECT f.trip_id, f.key, f.emoji, f.label FROM firsts_catalog f JOIN trips t ON t.id=f.trip_id WHERE t.family_id=$1 ORDER BY f.trip_id, f.pos, f.key', [FAMILY]),
         q('SELECT id, trip_id, day_index, kind, child, text, mood, first_key, lang, highlight, occurred_at, created_by, created_uid FROM entries WHERE family_id=$1 ORDER BY occurred_at', [FAMILY]),
-        q('SELECT id, trip_id, day_index, width, height, caption, highlight, pos, taken_at, created_by FROM media WHERE family_id=$1 ORDER BY taken_at, pos', [FAMILY]),
+        q('SELECT id, trip_id, day_index, width, height, caption, highlight, pos, taken_at, created_by, mime FROM media WHERE family_id=$1 ORDER BY taken_at, pos', [FAMILY]),
         q('SELECT id, trip_id, day_index, key, kind, name, visited_at, created_by FROM places WHERE family_id=$1 ORDER BY visited_at', [FAMILY]),
         q('SELECT id, trip_id, day_index, child, emoji, text, from_name, created_uid, created_at FROM hearts WHERE family_id=$1 ORDER BY created_at', [FAMILY]),
         q('SELECT id, trip_id, day_index, kind, key, name, rating, tags, kids, again, note, created_by, updated_at FROM reviews WHERE family_id=$1 ORDER BY updated_at', [FAMILY]),
@@ -188,6 +191,19 @@ function router({ pool, media, A, ai }) {
       const t = await trip(String(req.query.trip || '')); if (!t) return bad(res, 'trip');
       const day = dayArg(req.query.day); if (!dayOk(t, day)) return bad(res, 'day');
       if (!Buffer.isBuffer(req.body) || req.body.length < 100) return bad(res, 'empty');
+      if (req.query.kind === 'audio') {   // a voice memo: kept as recorded (no transcoding), no thumbnail, its mime kept for playback
+        const mime = String(req.headers['content-type'] || '').split(';')[0].trim().toLowerCase(), ext = AUDIO_EXT[mime];
+        if (!ext) return bad(res, 'bad-audio', 415);
+        if (req.body.length < 1000) return bad(res, 'empty');
+        if (req.body.length > 8e6) return bad(res, 'too-big', 413);
+        const key = keyAudio(t.id, id, ext);
+        await media.put(key, req.body, mime);
+        const pos = (await q('SELECT count(*)::int n FROM media WHERE trip_id=$1 AND day_index IS NOT DISTINCT FROM $2', [t.id, day]))[0].n;
+        await q(`INSERT INTO media (id, family_id, trip_id, day_index, storage_key, mime, bytes, width, height, caption, pos, taken_at, created_by, created_uid)
+          VALUES ($1,$2,$3,$4,$5,$6,$7,0,0,$8,$9,$10,$11,$12) ON CONFLICT (id) DO NOTHING`,
+        [id, FAMILY, t.id, day, key, mime, req.body.length, clip(req.query.caption, 500), pos, at(req.query.at), clip(req.user.name, 40), req.user.uid]);
+        return res.json({ ok: true, id, w: 0, h: 0, mime });
+      }
       let img;
       try { img = await IMG.processImage(req.body); } catch (e) { return bad(res, 'bad-image', 415); }
       await media.put(keyFull(t.id, id), img.full);
@@ -211,20 +227,30 @@ function router({ pool, media, A, ai }) {
   });
   r.delete('/api/b/media/:id', A.requireEditor, async (req, res, next) => {
     try {
-      const m = (await q('DELETE FROM media WHERE id=$1 AND family_id=$2 RETURNING trip_id', [req.params.id, FAMILY]))[0];
-      if (m) { await media.del(keyFull(m.trip_id, req.params.id)); await media.del(keyThumb(m.trip_id, req.params.id)); }   // really gone (PDPA)
+      const m = (await q('DELETE FROM media WHERE id=$1 AND family_id=$2 RETURNING trip_id, storage_key, mime', [req.params.id, FAMILY]))[0];
+      if (m && String(m.mime || '').startsWith('audio/')) await media.del(m.storage_key);   // really gone (PDPA)
+      else if (m) { await media.del(keyFull(m.trip_id, req.params.id)); await media.del(keyThumb(m.trip_id, req.params.id)); }
       res.json({ ok: true });
     } catch (e) { next(e); }
   });
   // stream a photo to a signed-in user; never a public URL, never another family's photo (IDOR)
   const send = (thumb) => async (req, res, next) => {
     try {
-      const m = (await q('SELECT trip_id FROM media WHERE id=$1 AND family_id=$2', [req.params.id, FAMILY]))[0];
+      const m = (await q('SELECT trip_id, storage_key, mime FROM media WHERE id=$1 AND family_id=$2', [req.params.id, FAMILY]))[0];
       if (!m) return res.sendStatus(404);
-      const buf = await media.get(thumb ? keyThumb(m.trip_id, req.params.id) : keyFull(m.trip_id, req.params.id));
+      const audio = String(m.mime || '').startsWith('audio/');
+      if (audio && thumb) return res.sendStatus(404);   // a voice memo has no thumbnail
+      const buf = await media.get(audio ? m.storage_key : thumb ? keyThumb(m.trip_id, req.params.id) : keyFull(m.trip_id, req.params.id));
       if (!buf) return res.sendStatus(404);
       res.setHeader('Cache-Control', 'private, max-age=31536000, immutable');
-      res.type('image/jpeg').send(buf);
+      if (!audio) return res.type('image/jpeg').send(buf);
+      // a voice memo: Safari's <audio> asks for byte ranges and only plays a 206 answer
+      res.setHeader('Accept-Ranges', 'bytes'); res.type(m.mime);
+      const r = /^bytes=(\d*)-(\d*)$/.exec(req.headers.range || '');
+      if (!r || (r[1] === '' && r[2] === '')) return res.send(buf);
+      const a = r[1] === '' ? Math.max(0, buf.length - Number(r[2])) : Number(r[1]), b = r[1] !== '' && r[2] !== '' ? Math.min(Number(r[2]), buf.length - 1) : buf.length - 1;
+      if (!(a <= b) || a >= buf.length) { res.setHeader('Content-Range', `bytes */${buf.length}`); return res.sendStatus(416); }
+      res.status(206); res.setHeader('Content-Range', `bytes ${a}-${b}/${buf.length}`); res.send(buf.subarray(a, b + 1));
     } catch (e) { next(e); }
   };
   r.get('/media/:id', A.requireUser, send(false));
@@ -440,4 +466,4 @@ function router({ pool, media, A, ai }) {
   return r;
 }
 
-module.exports = { router, syncSeeds, FAMILY };
+module.exports = { router, syncSeeds, FAMILY, AUDIO_EXT };

@@ -112,6 +112,15 @@ ok((await fetch(BASE + '/media/ph-nope-0001', { headers: { cookie: ck } })).stat
 ok((await fetch(BASE + '/api/b/media/ph-test-0001', { method: 'PATCH', headers: H, body: JSON.stringify({ caption: 'ที่ท่าเรือ', highlight: true }) })).ok, 'caption + ⭐');
 s = await state();
 ok(s.media.length === 1 && s.media[0].highlight && s.media[0].caption === 'ที่ท่าเรือ' && s.media[0].day === 1, 'photo listed with caption, ⭐ and day');
+// voice memos: kept as recorded, served with byte ranges (Safari), no thumbnail, their mime in the state
+const clipBuf = Buffer.alloc(4096, 7);
+const upA = (id, type = 'audio/webm', h = { 'x-mb': '1', cookie: ck }) => fetch(`${BASE}/api/b/media/${id}?trip=${T}&day=1&kind=audio`, { method: 'PUT', headers: { ...h, 'content-type': type }, body: clipBuf });
+ok((await (await upA('vc-test-0001')).json()).ok && (await state()).media.some((m) => m.id === 'vc-test-0001' && m.mime === 'audio/webm' && m.w === 0 && m.day === 1), 'voice memo uploaded (audio/webm), listed with its mime');
+const ar = await fetch(BASE + '/media/vc-test-0001', { headers: { cookie: ck, range: 'bytes=0-1023' } });
+ok(ar.status === 206 && (ar.headers.get('content-type') || '').startsWith('audio/webm') && ar.headers.get('content-range') === 'bytes 0-1023/4096' && (await ar.arrayBuffer()).byteLength === 1024, 'voice memo streams with byte ranges (206 + Content-Range)');
+ok((await fetch(BASE + '/media/vc-test-0001', { headers: { cookie: ck } })).status === 200 && (await fetch(BASE + '/media/vc-test-0001/t', { headers: { cookie: ck } })).status === 404, 'whole clip → 200; a clip has no thumbnail');
+ok((await upA('vc-bad-00001', 'text/plain')).status === 415 && (await upA('vc-view-0001', 'audio/webm', { 'x-mb': '1', cookie: vck })).status === 403, 'not an audio type → 415; viewer cannot record');
+ok((await fetch(BASE + '/api/b/media/vc-test-0001', { method: 'DELETE', headers: H })).ok && !(await state()).media.some((m) => m.id === 'vc-test-0001') && (await fetch(BASE + '/media/vc-test-0001', { headers: { cookie: ck } })).status === 404, 'voice memo deleted, file gone');
 
 // IDOR: a photo row of another family is never served
 const pool = new Pool({ connectionString: process.env.DATABASE_URL });

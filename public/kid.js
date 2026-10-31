@@ -387,6 +387,8 @@ document.addEventListener('pointermove', (e) => {
 const stkBusy = () => !!stk;
 
 /* ---------- the new games: photos, pairs, mood, animals, counting, trophies ---------- */
+// the kids' own voices (this day's first, then the rest of the book): one big button each, played in place
+const kidAudio = (t, i) => { const all = audioOf(t.id), cs = all.filter((m) => m.day === i).concat(all.filter((m) => m.day !== i)).slice(0, 6); return cs.length ? `<div class="kidclips">${cs.map((m) => `<button class="kidbig" data-a="kidplay" data-v="${esc(m.id)}">🎙️ ${esc(m.caption || L(`เสียงวันที่ ${m.day + 1}`, `Voice from day ${m.day + 1}`))}</button>`).join('')}</div>` : ''; };
 const kidPhotos = (t, i) => { const all = mediaOf(t.id).filter((m) => !isDrawing(m)), today = all.filter((m) => m.day === i); return today.concat(all.filter((m) => m.day !== i)); };
 let kidPhoto = 0, kidPage = 0;
 const shuffle = (a) => { a = a.slice(); for (let i = a.length - 1; i > 0; i--) { const j = Math.floor(Math.random() * (i + 1)); [a[i], a[j]] = [a[j], a[i]]; } return a; };
@@ -549,6 +551,7 @@ ${mapHtml(t, i, [kid].concat((t.theme.children || []).map((c) => c.slug).filter(
 <button class="kidphoto" data-a="kidphoto" data-v="1" aria-label="${L('รูปถัดไป', 'Next photo')}"><img src="/media/${esc(m.id)}" alt=""></button>
 <div class="kpnav"><button class="kidbig ghost" data-a="kidphoto" data-v="-1" aria-label="${L('รูปก่อนหน้า', 'Previous')}">‹</button><span class="kpn">${kidPhoto + 1} / ${ph.length}</span><button class="kidbig ghost" data-a="kidphoto" data-v="1" aria-label="${L('รูปถัดไป', 'Next')}">›</button></div>`
       : `<div class="kidguide">${guideImg(0)}<p>${L('ยังไม่มีรูปเลย', 'No photos yet')}</p></div>`;
+    body += kidAudio(t, i);
   } else if (view === 'match') {
     if (!mg || mg.t !== t.id || mg.kid !== kid) newMatch(t, kid);
     body = `<div class="kidguide">${guideImg(1)}<p>${mg.won ? L(`เก่งมาก! จับคู่ครบใน ${mg.moves} ครั้ง 🎉`, `Brilliant! All the pairs in ${mg.moves} goes 🎉`) : L('แตะเปิดการ์ดสองใบ หาคู่ที่เหมือนกัน!', 'Tap two cards — find the pairs!')}</p></div>
