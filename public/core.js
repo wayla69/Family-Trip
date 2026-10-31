@@ -231,7 +231,10 @@ const sumMoney = (rows) => { const m = {}; rows.forEach((s) => { m[s.cur] = (m[s
 const kidName = (slug) => { if (slug === 'both') return L('ทั้งคู่', 'Both'); const k = children().find((c) => c.slug === slug); return k ? (lang === 'th' ? k.name_th : k.name_en) : ''; };
 const kidEmoji = (slug) => (slug === 'both' ? '👧👶' : (children().find((c) => c.slug === slug) || {}).emoji || '');
 const entriesOf = (tid, day) => S.entries.filter((e) => e.trip === tid && (day === undefined || e.day === day));
-const mediaOf = (tid, day) => S.media.filter((m) => m.trip === tid && (day === undefined || m.day === day)).sort((a, b) => a.at - b.at);
+// photos and voice memos share the media table; mediaOf() is the photos (everything that draws a picture), audioOf() the kids' voices
+const isAudio = (m) => !!m && String(m.mime || '').startsWith('audio/');
+const mediaOf = (tid, day) => S.media.filter((m) => !isAudio(m) && m.trip === tid && (day === undefined || m.day === day)).sort((a, b) => a.at - b.at);
+const audioOf = (tid, day) => S.media.filter((m) => isAudio(m) && m.trip === tid && (day === undefined || m.day === day)).sort((a, b) => a.at - b.at);
 const placesOf = (tid, day) => S.places.filter((p) => p.trip === tid && (day === undefined || p.day === day));
 const imgT = (m) => m.local || `/media/${encodeURIComponent(m.id)}/t`;
 const imgF = (m) => m.local || `/media/${encodeURIComponent(m.id)}`;
@@ -263,7 +266,7 @@ const dayArt = (t, i) => (t.theme && t.theme.art ? t.theme.art.replace('{n}', i 
 // passport: a day's stamp is inked once the day is Done or has anything recorded in it
 const dayStamped = (t, i) => !!t.days[i].done_at || !!dayHasContent(t, i);
 const daysUntil = (t) => Math.round((Date.parse(t.date_from + 'T00:00:00Z') - Date.parse(todayIn(t.timezone) + 'T00:00:00Z')) / 864e5);
-const dayHasContent = (t, i) =>entriesOf(t.id, i).some((e) => e.kind !== 'mood' || e.mood) || mediaOf(t.id, i).length || placesOf(t.id, i).length;
+const dayHasContent = (t, i) => entriesOf(t.id, i).some((e) => e.kind !== 'mood' || e.mood) || mediaOf(t.id, i).length || audioOf(t.id, i).length || placesOf(t.id, i).length;
 function themeStyle(t) {
   const th = (t && t.theme) || {};
   const keys = { accent: '--accent', accent2: '--accent2', ink: '--ink', muted: '--muted', panel: '--panel', rule: '--rule', pick: '--pick', info: '--info', calm: '--calm', warn: '--warn' };
@@ -295,7 +298,7 @@ let packing = null;   // {done, total} while a book is being stored
 async function packOffline(t, all) {
   if (packing) return;
   let urls = offlineUrls(t);
-  if (all) urls = urls.concat(mediaOf(t.id).filter((m) => !m.local).map((m) => `/media/${encodeURIComponent(m.id)}`));
+  if (all) urls = urls.concat(mediaOf(t.id).concat(audioOf(t.id)).filter((m) => !m.local).map((m) => `/media/${encodeURIComponent(m.id)}`));
   urls = [...new Set(urls)];
   packing = { done: 0, total: urls.length }; let failed = 0;
   renderProgress();

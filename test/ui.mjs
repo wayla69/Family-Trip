@@ -131,6 +131,18 @@ const T = 'hk-macau-2026';
   const shTxt = await page.evaluate(() => shareText(trip('hk-macau-2026'), 1));
   ok(shTxt.split('\n').length >= 2 && /“.+”/.test(shTxt) && !/https?:/.test(shTxt) && !/undefined/.test(shTxt), 'share text: title + quotes, no link');
   ok((await page.locator('[data-a="share"]').count()) === (await page.evaluate(() => !!navigator.share) ? 1 : 0), 'share button only when navigator.share exists');
+  // the kids' voices: a clip queued like a photo (a stand-in blob — headless has no microphone), uploaded, played on the record page and in the book, kept out of the photo count
+  ok(await page.locator('[data-a="rec"]').count() === 1, 'record button on the record page');
+  const photosBefore = await page.evaluate(() => stats(trip('hk-macau-2026')).photos);
+  await page.evaluate(async () => { await addClip(trip('hk-macau-2026'), 1, new Blob([new Uint8Array(6000).fill(1)], { type: 'audio/webm' }), 4); });
+  await page.waitForFunction(() => queue.length === 0, null, { timeout: 15000 });
+  await page.waitForSelector('.clips audio');
+  const srvClip = (await page.evaluate(async () => (await (await fetch('/api/b/state', { credentials: 'same-origin' })).json()).media)).find((m) => (m.mime || '').startsWith('audio/'));
+  ok(!!srvClip && srvClip.day === 1 && (await page.evaluate(() => stats(trip('hk-macau-2026')).photos)) === photosBefore, 'voice memo uploaded (audio/webm) and not counted as a photo');
+  await page.fill('.clipcap', 'มีมี่ร้องเพลง'); await page.locator('.clipcap').blur(); await page.waitForFunction(() => queue.length === 0, null, { timeout: 15000 });
+  await page.goto(`${BASE}/#/t/${T}/book`); await page.waitForSelector('#d1');
+  ok(await page.locator('#d1 .clips audio').count() === 1 && /มีมี่ร้องเพลง/.test(await page.locator('#d1 .clips').textContent()) && await page.locator('#d1 .mosaic img').count() === await page.evaluate(() => mediaOf('hk-macau-2026', 1).length), 'book: the clip plays from the day page with its caption; the photo mosaic is photos only');
+  await page.goto(`${BASE}/#/t/${T}/log/1`); await page.waitForSelector('.clips audio');
   let st = await apiState(page);
   const es = st.entries.filter((e) => e.trip === 'hk-macau-2026' && e.day === 1);
   ok(es.filter((e) => e.kind === 'quote' && e.child === 'mika' && e.highlight).length === 1, 'server: one ⭐ quote by Mika');
@@ -151,7 +163,7 @@ const T = 'hk-macau-2026';
   await page.setInputFiles('#fpick', await Promise.all([0, 1, 2].map(async (i) => ({ name: `p${i}.jpg`, mimeType: 'image/jpeg', buffer: await jpg(i) }))));
   await page.waitForFunction(() => document.querySelectorAll('.mosaic button').length === 3);
   await page.waitForFunction(() => queue.length === 0, null, { timeout: 30000 });
-  ok((await apiState(page)).media.length === 3, '3 photos uploaded');
+  ok((await apiState(page)).media.filter((m) => !(m.mime || '').startsWith('audio/')).length === 3, '3 photos uploaded (the voice memo is not a photo)');
   await page.locator('.mosaic button').first().click(); await page.waitForSelector('#lb:not([hidden]) .stage img');
   ok((await page.textContent('#lb .grow')).trim() === '1 / 3', 'lightbox counter 1 / 3');
   await page.click('#lb [data-lb="next"]');
@@ -166,7 +178,7 @@ const T = 'hk-macau-2026';
   await page.click('#lb [data-lb="close"]');
   await page.waitForFunction(() => queue.length === 0, null, { timeout: 15000 });
   st = await apiState(page);
-  ok(st.media.length === 2 && st.media.some((m) => m.caption === 'ที่ท่าเรือ' && m.highlight), 'second tap deleted; caption + ⭐ saved');
+  ok(st.media.filter((m) => !(m.mime || '').startsWith('audio/')).length === 2 && st.media.some((m) => m.caption === 'ที่ท่าเรือ' && m.highlight), 'second tap deleted; caption + ⭐ saved');
   ok(await s.noHScroll(), 'record page: no horizontal scroll');
   // travel notebook on the record page: rate the stay, tag it, the kids' verdicts, a note
   await page.waitForSelector('#notebook .rev');
@@ -538,7 +550,7 @@ const T = 'hk-macau-2026';
   const cached = async (urls) => page.evaluate(async (us) => { const ks = await caches.keys(); const c = await caches.open(ks.find((k) => k.startsWith('mbs-'))); const out = {}; for (const u of us) out[u] = !!(await c.match(u)); return out; }, urls);
   const fave = st.media.find((m) => m.trip === T && m.highlight), plain = st.media.find((m) => m.trip === T && m.day === 2);
   const want = ['/', '/app.css', '/core.js', '/views.js', '/sheets.js', '/kid.js', '/art/guides/pinky.svg', '/art/crest/hk.svg', '/art/kids/mika-full.svg', '/art/colour/hk/day-3.svg', '/art/hk/day-6.svg',
-    ...st.media.filter((m) => m.trip === T).map((m) => `/media/${m.id}/t`), `/media/${fave.id}`];
+    ...st.media.filter((m) => m.trip === T && !(m.mime || '').startsWith('audio/')).map((m) => `/media/${m.id}/t`), `/media/${fave.id}`];   // a voice memo has no thumbnail
   const have = await cached(want.concat(`/media/${plain.id}`));
   ok(want.every((u) => have[u]), 'service worker cache holds the shell, all art (precached at install), every thumbnail of the book and the full-size favourite' + want.filter((u) => !have[u]).map((u) => ' MISSING ' + u).join(''));
   ok(!have[`/media/${plain.id}`], 'a plain photo is kept as a thumbnail only (full size stays on the server until opened or "with all photos")');

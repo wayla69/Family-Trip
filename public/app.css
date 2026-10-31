@@ -1622,3 +1622,13 @@ html[data-fs="1"] main.wrap{zoom:1.1}html[data-fs="2"] main.wrap{zoom:1.2}html[d
 
 /* Today: the live forecast line under the manual's climate note */
 .meta.wxlive,.wxlive{color:var(--accent);font-weight:600}
+
+/* voice memos: the recorder on the record page, the clips in the book and in kid mode */
+.clips audio{display:block;width:100%;max-width:440px;height:36px;margin-bottom:6px}
+.clips .field.small{padding:6px 10px;font-size:14px}
+.btn.rec{background:var(--accent2);border-color:var(--accent2);color:#fff;animation:recpulse 1s ease-in-out infinite}
+@keyframes recpulse{50%{opacity:.7}}
+.day .clips{display:grid;gap:8px;margin:10px 0}
+.day .clip span{display:block;font-size:13px;color:var(--muted);margin-bottom:2px}
+.kidclips{display:grid;gap:10px;margin:14px 0}
+

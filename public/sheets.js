@@ -44,6 +44,34 @@ async function addPhotos(t, day, files) {
   }
 }
 
+/* ---------- voice memos: a few seconds of the kids' own voices, recorded on the phone (MediaRecorder) and queued exactly like a
+   photo (blob upload, retried offline). 30 s cap. The clip stays in our bucket; it never goes to Claude or anywhere else. */
+let recState = null, kidAudioEl = null;
+async function startRec(t, day) {
+  let stream;
+  try { stream = await navigator.mediaDevices.getUserMedia({ audio: true }); } catch (_) { toast(L('ไม่ได้รับอนุญาตให้ใช้ไมค์', 'Microphone not allowed')); return; }
+  const mime = ['audio/webm;codecs=opus', 'audio/webm', 'audio/mp4'].find((m) => MediaRecorder.isTypeSupported(m)) || '';
+  const rec = new MediaRecorder(stream, mime ? { mimeType: mime } : undefined), chunks = [];
+  rec.ondataavailable = (e) => { if (e.data && e.data.size) chunks.push(e.data); };
+  rec.onstop = async () => {
+    stream.getTracks().forEach((x) => x.stop());
+    const st = recState; recState = null; clearInterval(st.timer);
+    const secs = Math.round((Date.now() - st.started) / 1000), type = (rec.mimeType || mime || 'audio/webm').split(';')[0];
+    const blob = new Blob(chunks, { type });
+    if (blob.size < 1000 || secs < 1) { toast(L('สั้นเกินไป ลองอัดใหม่', 'Too short — try again')); render(); return; }
+    await addClip(t, day, blob, secs); render();
+  };
+  recState = { rec, stream, started: Date.now(), timer: setInterval(() => { const el = $('#rectime'), sec = Math.round((Date.now() - recState.started) / 1000); if (el) el.textContent = `0:${String(sec).padStart(2, '0')}`; if (sec >= 30) stopRec(); }, 250) };
+  rec.start(); render();
+}
+function stopRec() { if (recState && recState.rec.state !== 'inactive') recState.rec.stop(); }
+async function addClip(t, day, blob, secs) {
+  const id = uid('vc'), at = Date.now(), type = blob.type || 'audio/webm';
+  await enqueue({ method: 'PUT', url: `/api/b/media/${id}?trip=${encodeURIComponent(t.id)}&day=${day}&at=${at}&kind=audio`, blob,
+    local: { coll: 'media', id, row: { trip: t.id, day, caption: '', highlight: false, at, w: 0, h: 0, mime: type } } });
+  toast(L(`เก็บเสียง ${secs} วินาทีแล้ว`, `${secs} s of voice saved`));
+}
+
 /* ---------- actions ---------- */
 const A = {
   lang(b) { lang = b.dataset.v; ls('lang', lang); render(); if (ls('remind')) pushSub().then((s) => s && api('POST', '/api/b/push/sub', { ...s.toJSON(), lang })).catch(() => {}); },   // reminders follow the language
@@ -140,6 +168,9 @@ const A = {
     toast(L('จดแล้ว', 'Noted'));
   },
   delspend(b) { if (armed(b)) enqueue({ method: 'DELETE', url: '/api/b/spend/' + encodeURIComponent(b.dataset.v), local: { coll: 'spend', id: b.dataset.v, del: true } }); },
+  rec(b) { if (recState) stopRec(); else startRec(trip(b.dataset.t), +b.dataset.d); },
+  delclip(b) { if (armed(b)) enqueue({ method: 'DELETE', url: '/api/b/media/' + encodeURIComponent(b.dataset.v), local: { coll: 'media', id: b.dataset.v, del: true } }); },
+  kidplay(b) { kidAudioEl = kidAudioEl || new Audio(); kidAudioEl.src = `/media/${encodeURIComponent(b.dataset.v)}`; kidAudioEl.play().catch(() => {}); },
   // the day's words and up to three photos go to whatever the phone can share with (LINE, Messages…); the photos are fetched
   // from our own server with the session cookie and handed over as files, so no public link is ever made
   async share(b) {
@@ -390,6 +421,11 @@ document.addEventListener('click', (e) => {
 });
 document.addEventListener('input', (e) => { const el = e.target; if (el.dataset && el.dataset.draft) drafts[el.dataset.draft] = el.value; if (el.id === 'eatq') { eatQ = el.value.trim(); eatFilter(); } if (el.id === 'bookq') { bookQ = el.value; const r = $('#bookres'), t = trip(route().parts[1]); if (r && t) r.innerHTML = bookResults(t); } });
 document.addEventListener('focusout', (e) => { const el = e.target; if (el.dataset && el.dataset.aBlur) saveBlur(el); if (el.id === 'lbcap') saveCaption(el); });
+document.addEventListener('focusout', (e) => {   // a voice memo's caption ("who said what") saves when the box is left, like a photo caption
+  const el = e.target; if (!el.classList || !el.classList.contains('clipcap')) return;
+  const id = el.dataset.v, m = S && S.media.find((x) => x.id === id), cap = el.value.trim();
+  if (m && (m.caption || '') !== cap) enqueue({ method: 'PATCH', url: '/api/b/media/' + encodeURIComponent(id), body: { caption: cap }, local: { coll: 'media', id, row: { caption: cap } } });
+});
 document.addEventListener('change', (e) => {
   if (e.target.dataset && e.target.dataset.ck) { const m = ls('ck') || {}; if (e.target.checked) m[e.target.dataset.ck] = 1; else delete m[e.target.dataset.ck]; ls('ck', m); return; }
   if (e.target.id === 'fpick') { const el = e.target; addPhotos(trip(el.dataset.t), +el.dataset.d, el.files); el.value = ''; }

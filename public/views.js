@@ -722,6 +722,7 @@ function dayPage(t, i) {
 ${route.length ? `<aside class="route"><span class="label">${L('ที่ไปวันนี้', 'Getting around')}</span><ol>${route.map((p) => `<li class="${visited.has(p.key) ? 'done' : ''}"><b>${placeA(t, p)}</b>${visited.has(p.key) ? `<small>${L('ไปแล้ว', 'visited')} ✓</small>` : ''}</li>`).join('')}</ol></aside>` : '<div></div>'}
 <div>
 ${ph.length ? `<div class="mosaic">${ph.map((m) => photoBtn(t, m)).join('')}</div>` : ''}
+${audioOf(t.id, i).length ? `<div class="clips noprint">${audioOf(t.id, i).map((m) => `<div class="clip"><span>🎙️ ${esc(m.caption || L('เสียงจากวันนี้', 'A voice from today'))}</span>${clipPlayer(m)}</div>`).join('')}</div>` : ''}
 ${timeline.length ? `<ol class="tl">${timeline.map((x) => `<li><time>${esc(fmtTime(x.at, t.timezone))}</time><div>${x.h}</div></li>`).join('')}</ol>` : ''}
 ${note ? `<div class="call calm"><span class="lbl">${L('บันทึกพ่อแม่', "Parents' note")}</span>${esc(note.text)}</div>` : ''}
 ${story ? `<div class="call pick" style="white-space:pre-line"><span class="lbl">${L('นิทานก่อนนอน', 'Bedtime story')}</span>${bedBtn(story)}${esc(story.text)}</div>` : ''}
@@ -1259,6 +1260,7 @@ ${planHtml(t, i, i === now) ? `<section class="blk planblk">${planHtml(t, i, i =
 <section class="blk"><h3>📷 ${L('รูป', 'Photos')} <span class="label">${ph.length}</span></h3>
 <div class="row"><button class="btn" type="button" data-a="pickphotos" data-fpick data-t="${esc(t.id)}" data-d="${i}">＋ ${L('เพิ่มรูป', 'Add photos')}</button><span class="progress" id="prog2"></span></div>
 ${ph.length ? `<div class="mosaic" style="margin-top:10px">${ph.map((m) => photoBtn(t, m)).join('')}</div>` : ''}</section>
+${clipsBlock(t, i)}
 
 <section class="blk"><h3>💬 ${L('คำพูดน่ารัก', 'Things they said')}</h3>
 <div class="row" role="group">${kids.concat('both').map((k) => `<button class="chip" data-a="who" data-v="${k}" aria-pressed="${quoteWho === k}">${kidFace(k)} ${esc(kidName(k))}</button>`).join('')}</div>
@@ -1305,6 +1307,15 @@ function spendPlaces(t, i) {
   grp(L('ใกล้ที่พัก', 'Near the bed'), items.filter((x) => bed.has(x)).map((x) => x.name));
   grp(L('ร้านอื่นในโซนวันนี้', 'Elsewhere in today’s areas'), items.map((x) => x.name));
   return out;
+}
+// the kids' voices: a few seconds each, recorded on the phone, kept with the day. Played here, in the book and in kid mode —
+// never in the printed book (paper cannot play them) and never sent anywhere else.
+const clipPlayer = (m) => `<audio controls preload="none" src="${esc(m.local || `/media/${encodeURIComponent(m.id)}`)}"></audio>`;
+function clipsBlock(t, i) {
+  const cs = audioOf(t.id, i), can = typeof MediaRecorder !== 'undefined' && navigator.mediaDevices && navigator.mediaDevices.getUserMedia;
+  return `<section class="blk clips"><h3>🎙️ ${L('เสียงของเด็กๆ', 'Their voices')} ${cs.length ? `<span class="label">${cs.length}</span>` : ''}</h3>
+<div class="row"><button class="btn${recState ? ' rec' : ''}" type="button" data-a="rec" data-t="${esc(t.id)}" data-d="${i}"${can ? '' : ' disabled'}>${recState ? `■ ${L('หยุด', 'Stop')} <span id="rectime">0:00</span>` : `● ${L('อัดเสียง', 'Record')}`}</button><span class="label">${can ? L('ไม่เกิน 30 วินาที · แตะหยุดเมื่อพอ', 'Up to 30 s · tap Stop when done') : L('เครื่องนี้อัดเสียงไม่ได้', 'This device cannot record')}</span></div>
+${cs.length ? `<ul class="items">${cs.map((m) => `<li><div class="grow">${clipPlayer(m)}<input class="field small clipcap" data-v="${esc(m.id)}" value="${esc(m.caption || '')}" placeholder="${L('ใครพูดอะไร เช่น มีมี่ร้องเพลง', 'Who said what, e.g. Mimi singing')}" maxlength="120"></div><button class="mini" data-a="delclip" data-v="${esc(m.id)}" aria-label="${L('ลบ', 'Delete')}">✕</button></li>`).join('')}</ul>` : ''}</section>`;
 }
 function spendBlock(t, i, dk) {
   const rows = spendOf(t.id, i), all = spendOf(t.id), curs = tripCurs(t), cur = curs.includes(spendCur) ? spendCur : curs[0];
