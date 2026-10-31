@@ -521,6 +521,7 @@ function dayGlance(t, i) {
     ...(pl.picks || []).map((p) => row(`<span class="mtag mk-${mealKind(p)}">${esc(T(p.meal).split(' · ')[0])}</span>${T(p.meal).includes(' · ') ? `<span class="mt">${esc(T(p.meal).split(' · ').slice(1).join(' · '))}</span>` : ''}`, mealDd(p), 'meal'))].filter(Boolean).join('');
   const more = [money && row(L('เงินวันนี้', 'Money today'), `<span class="num">${esc(mm ? mm[0].replace(/^(?:วันนี้|Today)\s*/, '').trim() : brief(money))}</span>`),
     d.wx && row(L('อากาศ', 'Weather'), esc(T(d.wx))),
+    wxLine(t, i) && row(L('พยากรณ์วันนี้', 'Live forecast'), `<span class="wxlive">${esc(wxLine(t, i))}</span>`),
     (nl || nq) && row(L('เรียนรู้', 'Learn'), esc(L(`${nl} เรื่อง · ${nq} คำถามในรถ`, `${nl} cards · ${nq} car questions`)))].filter(Boolean).join('');
   return `${rows.length ? `<section class="cbox c-sky"><h3 class="ch">${ic('clock')}${L('ไทม์ไลน์', 'Timeline')}</h3><ol class="tl plan brief">${rows.map((r, k) => `<li${st[k] ? ` class="${st[k]}"` : ''}><time>${esc(r.t || '')}</time><div>${st[k] === 'next' ? `<span class="nexttag">${L('ถัดไป', 'Next')}</span> ` : ''}${esc(T(r))}</div></li>`).join('')}</ol></section>` : ''}
 <div class="cgrid">${box('ind', 'route', L('เดินทางและที่พัก', 'Getting around & tonight'), go)}${box('sun', 'eat', L('มื้ออาหาร', 'Meals'), food)}${pl.planB ? `<section class="cbox c-hot"><h3 class="ch">${ic('shuffle')}${L('แผนสำรอง', 'Plan B')}</h3>${pts(T(pl.planB))}</section>` : ''}${box('leaf', 'money', L('เงิน อากาศ และเรื่องเล่า', 'Money, weather, stories'), more)}</div>
@@ -535,6 +536,7 @@ function remindBar() {
 <span class="rb">${on ? `<button class="btn small ghost" data-a="remindtest">${L('ทดสอบ', 'Test')}</button>` : ''}<button class="btn small${on ? ' ghost' : ''}" data-a="remind">${on ? L('ปิด', 'Turn off') : L('เปิดการเตือน', 'Turn on')}</button></span></div>`;
 }
 function viewToday(t, j, full) {
+  ensureWx(t);   // the live forecast arrives in the background and re-renders once (see core.js)
   const i = j !== undefined && j >= 0 && j < t.days.length ? j : todayIdx(t), d = t.days[i], dn = dayNow(t), until = daysUntil(t), pl = d.plan || {};
   const strip = t.days.map((x, k) => `<a href="#/t/${esc(t.id)}/today/${k}${full ? '/full' : ''}" aria-current="${k === i}">${k === dn ? `<span class="today">${L('วันนี้', 'Today')}</span>` : ''}<b>${String(k + 1).padStart(2, '0')}</b><small>${esc(fmtDay(x.date, { day: 'numeric', month: 'short' }))}</small></a>`).join('');
   const banner = dn < 0 && until > 0 ? `<div class="call info">${L(`อีก ${until} วันออกเดินทาง — นี่คือแผนวันที่ ${i + 1}`, `${until} days to go — this is the plan for day ${i + 1}`)}</div>`
@@ -715,7 +717,7 @@ function dayPage(t, i) {
 <div class="dl">${L('วันที่', 'Day')} ${i + 1} · ${esc(fmtDay(d.date))}</div>
 <div class="moods">${moods.map((m) => `<span class="pill">${kidFace(m.child)} ${esc(m.mood)}</span>`).join('')}${hs.map((h) => `<span class="pill heart" title="${esc(h.text)}">${esc(h.emoji)} ${esc(h.from)}</span>`).join('')}</div>
 <h3>${esc(T(d.title))}</h3>${artImg(t, i, 'hdart')}
-<div class="meta" style="grid-column:2/3">${d.sleep ? `<b>${L('นอนที่', 'Sleep')}</b> ${esc(T(d.sleep))}` : ''}${d.wx ? ` · ${esc(T(d.wx))}` : ''}</div></div>
+<div class="meta" style="grid-column:2/3">${d.sleep ? `<b>${L('นอนที่', 'Sleep')}</b> ${esc(T(d.sleep))}` : ''}${d.wx ? ` · ${esc(T(d.wx))}` : ''}</div>${wxLine(t, i) ? `<div class="meta wxlive" style="grid-column:2/3">${esc(wxLine(t, i))}</div>` : ''}</div>
 <div class="body">
 ${route.length ? `<aside class="route"><span class="label">${L('ที่ไปวันนี้', 'Getting around')}</span><ol>${route.map((p) => `<li class="${visited.has(p.key) ? 'done' : ''}"><b>${placeA(t, p)}</b>${visited.has(p.key) ? `<small>${L('ไปแล้ว', 'visited')} ✓</small>` : ''}</li>`).join('')}</ol></aside>` : '<div></div>'}
 <div>
