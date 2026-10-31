@@ -103,4 +103,4 @@ curl -b ck.txt -H 'x-mb: 1' --data-binary @memory-bookshelf-YYYY-MM-DD.zip https
 ดู `CLAUDE.md` (คำสั่ง Postgres ในเครื่อง, `npm test`, โครงสร้างโค้ด)
 
 ## English summary
-Memory Bookshelf: one book per family trip, styled like the owner's Trip Operations Manuals. Node 22 + Express + Postgres + Railway Storage Bucket, vanilla-JS PWA with an offline write queue. Deploy: Railway's GitHub connection deploys `main` (the GitHub Actions `railway up` workflow is a manual fallback). Photos are EXIF/GPS-stripped and only streamed to signed-in users. Weekly off-site backup (private repo only) and idempotent restore via `POST /api/import`.
+Memory Bookshelf: one book per family trip, styled like the owner's Trip Operations Manuals. Node 22 + Express + Postgres + Railway Storage Bucket, vanilla-JS PWA with an offline write queue. Deploy: Railway's GitHub connection deploys `main` (the GitHub Actions `railway up` workflow is a manual fallback). Photos are EXIF/GPS-stripped and only streamed to signed-in users. Weekly off-site backup (GPG-encrypted before upload, so a public repo is fine) and idempotent restore via `POST /api/import`.

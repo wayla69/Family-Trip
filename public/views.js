@@ -392,7 +392,8 @@ function viewHub(t) {
    get ready, learn), each day's plan, and every place to eat. Words people reach for in a hurry also find their synonyms (หมอ → hospital). */
 const SYN = [['หมอ', 'แพทย์', 'โรงพยาบาล', 'คลินิก', 'doctor', 'hospital', 'clinic', 'ป่วย', 'ไม่สบาย'], ['ยา', 'ร้านขายยา', 'pharmacy', 'medicine', 'chemist', 'watsons', 'mannings'],
   ['แท็กซี่', 'taxi', 'uber', 'ให้คนขับดู'], ['ห้องน้ำ', 'toilet', 'restroom', 'bathroom'], ['ฉุกเฉิน', 'emergency', 'ตำรวจ', 'police', 'ambulance', 'รถพยาบาล', '999', '000'],
-  ['พาสปอร์ต', 'หนังสือเดินทาง', 'passport', 'กงสุล', 'consulate'], ['เด็กหลง', 'เด็กหาย', 'หลงทาง', 'lost', 'missing'], ['เงิน', 'money', 'cash', 'atm', 'octopus', 'บัตรเครดิต', 'hk$', 'mop', 'a$'],
+  ['พาสปอร์ต', 'หนังสือเดินทาง', 'passport', 'กงสุล', 'consulate'], ['เด็กหลง', 'เด็กหาย', 'เด็กพลัดหลง', 'หลงทาง', 'lost child', 'missing child'],   // a lost child is not a lost passport: bare "lost" stays out of this group
+  ['ของหาย', 'ทำหาย', 'lost', 'missing', 'stolen', 'ถูกขโมย'], ['เงิน', 'money', 'cash', 'atm', 'octopus', 'บัตรเครดิต', 'hk$', 'mop', 'a$'],
   ['ฝน', 'rain', 'พายุ', 'typhoon', 'อากาศ', 'weather'], ['ที่พัก', 'โรงแรม', 'hotel', 'stay', 'airbnb', 'เช็กอิน', 'check-in'], ['ตั๋ว', 'ticket', 'จอง', 'booking', 'book'],
   ['เรือ', 'ferry', 'boat'], ['รถไฟ', 'train', 'mtr'], ['สนามบิน', 'airport'], ['ซิม', 'sim', 'esim', 'wifi', 'อินเทอร์เน็ต', 'internet']];
 const SUGGEST = [['หมอ', 'Doctor'], ['ยา', 'Pharmacy'], ['แท็กซี่', 'Taxi'], ['ห้องน้ำ', 'Toilet'], ['ฉุกเฉิน', 'Emergency'], ['พาสปอร์ต', 'Passport'], ['เด็กหลง', 'Lost child'], ['เงิน', 'Money'], ['ฝน', 'Rain'], ['ซิม', 'SIM']];
