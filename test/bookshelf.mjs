@@ -2,6 +2,7 @@
 import sharp from 'sharp';
 import fs from 'node:fs';
 import path from 'node:path';
+import crypto from 'node:crypto';
 import { createRequire } from 'node:module';
 const require = createRequire(import.meta.url);
 const { Pool } = require('pg');
@@ -173,7 +174,9 @@ ok(s.trips[0].days[0].done_at > 0 && s.trips.some((t) => t.slug === 'chiang-mai-
   ok(au.info.emergency.some((e) => e.tel === '000' && e.main) && au.info.stays.length === 8 && au.info.pack.length === 4 && au.info.general.length === 4 && au.info.wild.length === 10 && au.info.prices.rows.length === 9 && au.info.more.some((m) => /Budget/.test(m.title.en) && m.table.rows.length >= 10), 'AU pocket guide: 000, 8 stays, packing, learn-in-the-car, animals, prices, AUD budget');
   ok(au.passport.lists[0].key === 'words' && au.passport.lists[0].said && au.passport.lists[0].groups[0].items.length === 8 && au.passport.lists[0].groups[0].items[0].speak.lang === 'en-AU', 'AU passport: "Say It Like an Aussie" words list (en-AU)');
   const all = JSON.stringify(await state());
-  ok(!/F5ARVC|1653717262744684|5651795979|"conf"|booking ref|฿/.test(all) && !/______/.test(all), 'privacy: no booking refs, confirmation numbers, costs or blank passport fields anywhere in the state');
+  const KNOWN = new Set(['434fc7c1d7b2fc33', '331e521aaaa8230a', '003c189251bbdfec']);   // SHA-256 prefixes of the real references (same list as scripts/plan-to-seed.mjs) — the values never sit in this public repo
+  const h16 = (s) => crypto.createHash('sha256').update(s).digest('hex').slice(0, 16);
+  ok(!(all.match(/\b[A-Z0-9]{6,16}\b/g) || []).some((m) => KNOWN.has(h16(m))) && !/"conf"|booking ref|฿/.test(all) && !/______/.test(all), 'privacy: no booking refs, confirmation numbers, costs or blank passport fields anywhere in the state');
 }
 
 // ---- travel notebook: one review per stay / restaurant / place per trip

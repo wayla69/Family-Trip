@@ -91,7 +91,7 @@ ok(['families', 'children', 'trips', 'trip_days', 'firsts_catalog', 'entries', '
     const rows = (await pool.query("SELECT (SELECT count(*)::int FROM trip_days WHERE trip_id='sakura-hop-2028') AS days, (SELECT info->'restaurants'->'groups'->0->'items'->0->>'name' FROM trips WHERE id='sakura-hop-2028') AS r, (SELECT plan->'legs'->0->>'to' FROM trip_days WHERE trip_id='sakura-hop-2028' AND day_index=0) AS leg")).rows[0];
     ok(rows.days === 3 && /Ramen/.test(rows.r) && rows.leg === 'Ueno', 'the seed loader accepts the converted book (days, restaurants, legs in trip_days.plan)');
     const bad = JSON.parse(fs.readFileSync(path.resolve('docs/handoff/plan.sample.json'), 'utf8'));
-    bad.days[0].tips.push({ th: 'เลขจอง F5ARVC', en: 'Booking ref F5ARVC' }); bad.info.lost = { th: 'โทรแม่ 081-234-5678', en: 'Call mum on 081-234-5678' };
+    bad.days[0].tips.push({ th: 'เลขจอง QX7P2K', en: 'Booking ref QX7P2K' }); bad.info.lost = { th: 'โทรแม่ 081-234-5678', en: 'Call mum on 081-234-5678' };
     fs.writeFileSync(path.join(dir, 'bad.json'), JSON.stringify(bad));
     const r = spawnSync(process.execPath, ['scripts/plan-to-seed.mjs', path.join(dir, 'bad.json'), `--out=${path.join(dir, 'bad-seed.json')}`], { encoding: 'utf8' });
     ok(r.status === 2 && /PRIVACY: \d+ hit/.test(r.stdout) && /booking reference/.test(r.stdout) && /Thai mobile/.test(r.stdout) && !fs.existsSync(path.join(dir, 'bad-seed.json')), 'a plan with a booking reference or a personal mobile is refused, nothing written');
