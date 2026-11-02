@@ -170,9 +170,27 @@ ${visual}
 <a class="nbcard" href="#/notebook"><span class="emb">📓</span><div><b>${L('สมุดโน้ตนักเดินทาง', 'Travel notebook')}</b><small>${S.reviews.length ? L(`${S.reviews.length} รีวิว · ที่พัก ร้านอาหาร สถานที่ — ไว้วางแผนทริปหน้า`, `${S.reviews.length} reviews · stays, food, places — for planning the next trip`) : L('ให้ดาว ติดแท็ก จดว่าอะไรเวิร์กกับครอบครัวเรา — ไว้วางแผนทริปหน้า', 'Stars, tags and notes on what worked for our family — for planning the next trip')}</small></div><span class="arrow">›</span></a>
 <div class="ppmini">${children().map((k) => { const n = passportStamps(k.slug); return `<a class="ppc s kid-${esc(k.slug)}" href="#/passport/${esc(k.slug)}"><span class="emb">${kidArt(k.slug) ? `<img src="${kidArt(k.slug)}" alt="">` : '🌏'}</span><b>${L('พาสปอร์ตความทรงจำ', 'Memory Passport')}</b><span class="nm">${esc(kidName(k.slug))}</span><small>${n} ${L('ตราประทับ', n === 1 ? 'stamp' : 'stamps')}</small></a>`; }).join('')}</div>
 ${isEditor() ? backupCard() : ''}
+${aiCard()}
 <div class="row end" style="margin-top:18px">${isEditor() ? `<a class="btn ghost small" href="#/viewers">👪 ${L('ญาติที่ดูได้', 'Who can see the books')}</a>` : ''}<button class="btn ghost small" data-a="logout">⎋ ${L('ออกจากระบบ', 'Sign out')}</button></div>`;
 }
 // off-site copy kept by the family: one tap downloads everything (data + full photos) as a zip; nags when there is something new since the last one on this phone
+// Claude usage (editors): today's calls against the daily cap + the last 30 days; fetched from /api/b/ai at most once a minute,
+// and again right after a Claude button finished (aiUseAt = 0)
+let aiUse = null, aiUseAt = 0;
+function aiUsage() {
+  if (!isEditor() || !S.features.story || !navigator.onLine) return aiUse;
+  if (Date.now() - aiUseAt > 60000) { aiUseAt = Date.now(); api('GET', '/api/b/ai').then((r) => { aiUse = r; safeRender(); }, () => {}); }
+  return aiUse;
+}
+const aiToday = () => { const u = aiUsage(); return u ? L(`ใช้ Claude วันนี้ ${u.today.calls}/${u.limit}`, `Claude today ${u.today.calls}/${u.limit}`) : ''; };
+const tok = (n) => (n >= 1e6 ? (n / 1e6).toFixed(1) + 'M' : n >= 1e3 ? Math.round(n / 1e3) + 'k' : String(Math.round(n)));
+function aiCard() {
+  const u = aiUsage(); if (!u) return '';
+  const d = u.days30;
+  return `<div class="aicard"><b>✨ Claude</b><span>${L('วันนี้', 'Today')} <b>${u.today.calls}/${u.limit}</b> ${L('ครั้ง', 'calls')}</span>
+<span>${L('30 วัน', '30 days')}: ${d.calls} ${L('ครั้ง', 'calls')} · ${tok(d.tin + d.tcache)} ${L('โทเค็นเข้า', 'tokens in')}${d.tcache ? ` (${L('จากแคช', 'cached')} ${tok(d.tcache)})` : ''} · ${tok(d.tout)} ${L('ออก', 'out')}${u.usd30 != null ? ` · ≈ $${u.usd30.toFixed(2)}` : ''}</span>
+<small>${L('ยอดเงินจริงดูที่ console.anthropic.com → Usage', 'Exact cost: console.anthropic.com → Usage')}</small></div>`;
+}
 function backupCard() {
   const last = ls('last_backup') || 0;
   const items = [...S.entries, ...S.media, ...S.hearts, ...S.reviews];
@@ -918,7 +936,7 @@ ${can ? `<div class="row noprint" style="margin-top:8px">
 <button class="btn small" data-a="story" data-t="${esc(t.id)}" data-d="${dv}" id="storygo">✨ ${st ? L('แต่งใหม่', 'Write again') : L('ให้ Claude แต่งนิทาน', 'Ask Claude for a story')}</button>
 <button class="btn ghost small" data-a="storystop" id="storystop" hidden>■ ${L('หยุด', 'Stop')}</button>
 ${st ? `<button class="mini" data-a="delentry" data-v="${esc(st.id)}">${L('ลบนิทาน', 'Delete story')}</button>` : ''}
-<span class="label">${L('ส่งเฉพาะข้อความที่บันทึกไว้ ไม่ส่งรูป', 'Sends only the written notes — never photos')}</span></div>` : ''}</section>`;
+<span class="label">${L('ส่งเฉพาะข้อความที่บันทึกไว้ ไม่ส่งรูป', 'Sends only the written notes — never photos')}${aiToday() ? ' · ' + esc(aiToday()) : ''}</span></div>` : ''}</section>`;
 }
 
 /* ---------- travel notebook: how a stay / restaurant / place worked for us (editors write, everyone reads) ----------

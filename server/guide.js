@@ -43,22 +43,30 @@ function chunks(info, days, lang) {
 // character pairs, lower-cased, without spaces or punctuation: "where to eat" and "กินที่ไหน" both work
 const pairs = (s) => { const t = String(s).toLowerCase().replace(/[\s\p{P}\p{S}]+/gu, ''), set = new Set(); for (let i = 0; i < t.length - 1; i++) set.add(t.slice(i, i + 2)); return set; };
 
-// the overview (days, where we sleep) + the chosen day's plan + the best-matching chunks, within a character budget
+// { stable, rest }: stable = the overview (days, where we sleep) + the asking day's own plan (≤ 8k chars) — identical for
+// every question asked from that day, so it can be cached; rest = the best-matching chunks from the whole manual, in the
+// manual's order, within what is left of the budget
+const DAY_BUDGET = 8000;
 function excerpt({ info, days, lang, q, day, budget = 16000 }) {
   const over = days.map((d) => `${lang === 'en' ? 'Day' : 'วันที่'} ${d.day_index + 1} (${d.date}): ${textOf(d.title, lang).join(' ')}${d.sleep ? ` — ${lang === 'en' ? 'sleep' : 'นอนที่'} ${textOf(d.sleep, lang).join(' ')}` : ''}`).join('\n');
   const all = chunks(info, days, lang), qp = pairs(q);
   const dayTag = day == null ? null : `${lang === 'en' ? 'Day' : 'วันที่'} ${day + 1} (`;
+  const line = (c) => `[${c.tag}] ${c.text}`;
+  const own = [], used = new Set();
+  let dayLeft = DAY_BUDGET;
+  if (dayTag) all.forEach((c, i) => { if (!c.tag.startsWith(dayTag)) return; const len = c.tag.length + c.text.length + 4; if (len > dayLeft) return; own.push(line(c)); used.add(i); dayLeft -= len; });
+  const stable = `${over}${own.length ? `\n\n${own.join('\n')}` : ''}`;
   const scored = all.map((c, i) => {
+    if (used.has(i)) return null;
     const cp = pairs(c.tag + ' ' + c.text); let hit = 0;
     for (const p of qp) if (cp.has(p)) hit++;
-    const today = dayTag && c.tag.startsWith(dayTag) ? 2 : 0;   // the day the question is asked from gets a nudge
-    return { i, c, score: hit / Math.sqrt(qp.size || 1) + today };
-  }).filter((x) => x.score > 0).sort((a, b) => b.score - a.score || a.c.text.length - b.c.text.length);
-  let left = budget - over.length;
+    return { i, c, score: hit / Math.sqrt(qp.size || 1) };
+  }).filter((x) => x && x.score > 0).sort((a, b) => b.score - a.score || a.c.text.length - b.c.text.length);
+  let left = budget - stable.length;
   const keep = [];
   for (const x of scored) { const len = x.c.tag.length + x.c.text.length + 4; if (len > left) continue; keep.push(x); left -= len; if (left < 200) break; }
   keep.sort((a, b) => a.i - b.i);   // in the manual's own order
-  return `${over}\n\n${keep.map((x) => `[${x.c.tag}] ${x.c.text}`).join('\n')}`;
+  return { stable, rest: keep.map((x) => line(x.c)).join('\n') };
 }
 
 module.exports = { excerpt, chunks, textOf, pairs };

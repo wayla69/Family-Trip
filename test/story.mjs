@@ -21,7 +21,7 @@ const mock = http.createServer((req, res) => {
   let body = ''; req.on('data', (d) => { body += d; });
   req.on('end', async () => {
     const b = JSON.parse(body); calls.push({ url: req.url, headers: req.headers, body: b });
-    const facts = b.messages[0].content;
+    const mc = b.messages[0].content, facts = typeof mc === 'string' ? mc : mc.map((x) => x.text).join('\n');   // ask-the-guide sends blocks
     res.writeHead(200, { 'content-type': 'text/event-stream' });
     const ev = (type, data) => res.write(`event: ${type}\ndata: ${JSON.stringify({ type, ...data })}\n\n`);
     ev('message_start', { message: { id: 'msg_1', type: 'message', role: 'assistant', model: b.model, content: [], stop_reason: null, stop_sequence: null, usage: { input_tokens: 10, output_tokens: 0 } } });
@@ -119,14 +119,15 @@ try {
   const nE2 = (await state()).entries.length, ba = calls.length;
   const ask = (b) => fetch(BASE + '/api/b/ask', { method: 'POST', headers: H, body: JSON.stringify(b) });
   const ra = events(await (await ask({ trip: T, day: 0, lang: 'th', q: 'ถ้าเด็กหลงทำยังไง' })).text());
-  const ca = calls.at(-1), content = ca.body.messages[0].content;
+  const ca = calls.at(-1), blocks = ca.body.messages[0].content, content = blocks.map((x) => x.text).join('\n');
+  ok(Array.isArray(blocks) && blocks[0].cache_control && blocks[0].cache_control.type === 'ephemeral' && !blocks[1].cache_control && blocks[1].text.includes('ถ้าเด็กหลงทำยังไง'), 'ask the guide: the day\'s manual goes first, marked for the prompt cache; the question last');
   ok(calls.length === ba + 1 && ra.at(-1).ev === 'done' && ra.at(-1).data.text, 'ask the guide: streamed answer, then done');
   ok(content.includes('คำถาม: ถ้าเด็กหลงทำยังไง') && content.includes('999') && ca.body.system.includes('ใช้เฉพาะข้อความจากคู่มือ'), 'ask the guide: the manual\'s lost-child text is in the excerpt; manual-only prompt');
   ok(content.length < 20000 && !content.includes('ปลาอยู่ในน้ำเหมือนหนูเลย') && !content.includes('ไอติมมิกกี้') && !content.includes('"image"'), 'ask the guide: a bounded excerpt, no family records, no photos');
   ok((await state()).entries.length === nE2, 'ask the guide: nothing saved');
   ok((await ask({ trip: T, day: 0, lang: 'en', q: '  ' })).status === 400 && calls.length === ba + 1, 'ask the guide: an empty question → 400, model not called');
   const re = events(await (await ask({ trip: T, day: 1, lang: 'en', q: 'Where can we eat dim sum?' })).text());
-  ok(re.at(-1).ev === 'done' && calls.at(-1).body.messages[0].content.toLowerCase().includes('dim sum') && calls.at(-1).body.system.includes('ONLY the excerpts'), 'ask the guide (en): dim sum places from the manual');
+  ok(re.at(-1).ev === 'done' && calls.at(-1).body.messages[0].content.map((x) => x.text).join(' ').toLowerCase().includes('dim sum') && calls.at(-1).body.system.includes('ONLY the excerpts'), 'ask the guide (en): dim sum places from the manual');
 
   // both languages: the day's words go to Claude once, each translation is saved on its entry and dropped when the text changes
   const tl = (b) => fetch(BASE + '/api/b/translate', { method: 'POST', headers: H, body: JSON.stringify(b) });
@@ -204,6 +205,11 @@ try {
   const capped = await story({ trip: T, day: 1, lang: 'th' });
   ok(capped.status === 429 && (await capped.json()).error === 'limit' && calls.length === 15, 'daily cap: 16th call refused with 429, model not called');
   ok((await story({ trip: T, day: 0, lang: 'th' })).status === 422, 'daily cap: an empty day still answers 422 (nothing counted)');
+  // Claude usage card: today's calls (counted in Postgres) and the tokens the finished calls used
+  const use = await (await fetch(BASE + '/api/b/ai', { headers: { cookie: ck } })).json();
+  ok(use.limit === 15 && use.today.calls === 15 && use.days30.calls === 15, `usage: today ${use.today.calls}/${use.limit} calls counted`);
+  ok(use.today.tout > 0 && use.today.tin > 0 && use.usd30 === null, 'usage: tokens added from each finished call; no price guessed when none is set');
+  ok(!vck || (await fetch(BASE + '/api/b/ai', { headers: { cookie: vck.split(';')[0] } })).status === 403, 'usage: relatives cannot see it');
   await browser.close();
 } finally {
   srv.kill(); await new Promise((r) => srv.on('exit', r)); mock.close();
