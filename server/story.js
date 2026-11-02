@@ -35,26 +35,43 @@ function msgPrompt(lang) {
 function talkPrompt(lang) {
   if (lang === 'en') {
     return 'Write 3 bedtime questions to ask Mimi (3) and Mika (1½) about today, so they can talk about their day. '
-      + 'Use only the facts given — do not invent places, events or words anyone said. Very short, easy to answer for a toddler (who, what, which animal, what colour, did you like…). '
+      + 'Use only the facts given — do not invent places, events or words anyone said. Very short, easy to answer for a toddler (who, what, which animal, what colour, did you like…), '
+      + 'in little-kid words and full of excitement (“Wow! What colour was the big bus?”). '
       + 'One question per line, each starting with one emoji; no numbers, no markdown. Reply with the 3 lines only.';
   }
   return 'ตั้งคำถามชวนคุยก่อนนอน 3 ข้อ ถามมีมี่ (3 ขวบ) และมีก้า (1 ขวบครึ่ง) เรื่องวันนี้ ให้เด็กได้เล่าเรื่องของวัน — '
     + 'ใช้เฉพาะข้อมูลที่ให้ ห้ามแต่งสถานที่/เหตุการณ์/คำพูดเพิ่ม คำถามสั้นมาก เด็กเล็กตอบได้ง่าย (ใคร อะไร สัตว์อะไร สีอะไร ชอบไหม) '
+    + 'ใช้ภาษาเด็ก น้ำเสียงตื่นเต้น ชวนลุ้น (เช่น "ว้าว! รถบัสคันใหญ่สีอะไรน้า?") '
     + 'ข้อละบรรทัด ขึ้นต้นด้วยอีโมจิ 1 ตัว ไม่มีเลขข้อ ไม่มี markdown ตอบเฉพาะคำถาม 3 บรรทัด';
 }
 
-function prompt({ lang, whole, mode }) {
+// every text Claude writes for the family must sound like the parents themselves, not like an AI
+const NATURAL = {
+  th: ' — เขียนให้เหมือนพ่อแม่คนไทยพูดเองจริงๆ ใช้ภาษาพูดที่เป็นธรรมชาติ ใช้คำลงท้ายได้ (นะ จ้ะ น้า ค่ะ ครับ) '
+    + 'ห้ามใช้สำนวนแบบ AI หรือภาษาหนังสือเกินไป เช่น "วันแสนวิเศษ" "การผจญภัยอันน่าตื่นตาตื่นใจ" "ความทรงจำอันล้ำค่า" "เต็มไปด้วยรอยยิ้มและเสียงหัวเราะ" "ช่างเป็นวันที่…" "ไม่รู้ลืม" '
+    + 'ไม่สอนข้อคิด ไม่สรุปว่าวันนี้พิเศษแค่ไหน ไม่ซ้อนคำคุณศัพท์ ไม่ใช้เครื่องหมาย — เล่าสิ่งที่เกิดขึ้นจริงตรงๆ',
+  en: ' Write like a real parent talking: plain, natural, everyday words. Avoid AI-sounding phrases such as "magical day", "unforgettable adventure", '
+    + '"precious memories", "filled with laughter and joy", "what a day it was", "a day to remember", "truly", "delightful". '
+    + 'No morals, no summing up how special the day was, no stacked adjectives, no em dashes. Just tell what happened.',
+};
+
+function prompt({ lang, whole, mode }) { return basePrompt({ lang, whole, mode }) + NATURAL[lang === 'en' ? 'en' : 'th']; }
+function basePrompt({ lang, whole, mode }) {
   if (mode === 'sum') return sumPrompt(lang);
   if (mode === 'talk') return talkPrompt(lang);
   if (mode === 'msg') return msgPrompt(lang);
   if (lang === 'en') {
     return `Write an English bedtime story of ${whole ? '250–350' : '120–180'} words starring "Mimi" (3) and "Mika" (1½). `
       + 'Use only the facts given — do not invent places, events or words anyone said. If there is little to go on, make the story shorter. '
-      + 'Simple words, short sentences, warm. Put the children’s own words into the story. End with a good-night line. Reply with the story only — no title, no markdown.';
+      + 'Talk like a children’s picture book for a 3-year-old: tiny words, very short sentences, and make it EXCITING — sound words (Whoosh! Splash! Wow!), '
+      + 'a little “guess what happened next?”, a happy repeating line the kids can say along. Put the children’s own words into the story. '
+      + 'Then slow down at the end: calm and cosy, and finish with a good-night line. Reply with the story only — no title, no markdown.';
   }
   return `เขียนนิทานก่อนนอนภาษาไทย ${whole ? '250–350' : '120–180'} คำ ตัวเอก "มีมี่" (3 ขวบ) และ "มีก้า" (1 ขวบครึ่ง) — `
-    + 'ใช้เฉพาะข้อมูลที่ให้ ห้ามแต่งสถานที่/เหตุการณ์/คำพูดเพิ่ม ถ้าข้อมูลน้อยให้เล่าสั้นลง คำง่าย ประโยคสั้น อบอุ่น ใส่คำพูดของเด็กในเรื่อง '
-    + 'ปิดด้วยประโยคฝันดี ตอบเฉพาะตัวนิทาน ไม่มีหัวข้อ/markdown';
+    + 'ใช้เฉพาะข้อมูลที่ให้ ห้ามแต่งสถานที่/เหตุการณ์/คำพูดเพิ่ม ถ้าข้อมูลน้อยให้เล่าสั้นลง '
+    + 'ใช้ภาษาเด็กแบบนิทานภาพสำหรับเด็ก 3 ขวบ คำง่ายมาก ประโยคสั้นมาก เล่าให้ตื่นเต้นสนุก มีเสียงประกอบ (ว้าว! ฟิ้ว~ ตูม! จ๋อม!) '
+    + 'มีชวนลุ้น (แล้วรู้ไหมว่าเจออะไร?) มีประโยคซ้ำๆ ให้เด็กพูดตามได้ ใส่คำพูดของเด็กในเรื่อง '
+    + 'ตอนท้ายค่อยๆ ช้าลง สงบ อบอุ่น แล้วปิดด้วยประโยคฝันดี ตอบเฉพาะตัวนิทาน ไม่มีหัวข้อ/markdown';
 }
 
 const clean = (s) => s.replace(/^#+\s*/gm, '').replace(/\*\*|__|`/g, '').replace(/^\s*[-*]\s+/gm, '').replace(/\n{3,}/g, '\n\n').trim();
@@ -122,6 +139,7 @@ async function translate({ items, signal }) {
     output_config: { effort: 'low' },
     system: 'Translate each item of a family travel diary into the language in its "to" field ("en" = English, "th" = Thai). '
       + 'Mimi (มีมี่) and Mika (มีก้า) are small children: keep their quotes childlike and simple, do not polish them; keep names, places and numbers as they are. '
+      + 'Use natural everyday language, the way a parent would say it, not a stiff word-for-word or bookish translation. '
       + 'Reply with JSON only: an array of {"id": ..., "tr": ...} with the same ids — no markdown, no commentary.',
     messages: [{ role: 'user', content: JSON.stringify(items) }],
   }, { signal });

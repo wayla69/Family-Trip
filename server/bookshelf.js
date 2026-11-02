@@ -417,7 +417,7 @@ function router({ pool, media, A, ai }) {
     }
     return lines.join('\n\n');
   }
-  const STORY_DAILY = Math.max(1, parseInt(process.env.STORY_DAILY, 10) || 30);   // model calls per family per UTC day — a cap on the API bill, not a quota anyone should meet
+  const STORY_DAILY = Math.max(1, parseInt(process.env.STORY_DAILY, 10) || 60);   // model calls per family per UTC day — a cap on the API bill, not a quota anyone should meet
   const storyUse = { day: '', n: 0 };
   r.post('/api/b/story', ...W, async (req, res, next) => {
     try {
