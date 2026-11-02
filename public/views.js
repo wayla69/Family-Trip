@@ -1290,8 +1290,8 @@ ${spendBlock(t, i, dk)}
 ${notebookBlock(t, i)}
 ${storyBlock(t, i)}
 
-<section class="blk"><div class="row"><button class="btn${d.done_at ? ' ghost' : ''}" data-a="done" data-t="${esc(t.id)}" data-d="${i}">${d.done_at ? '✓ ' + L('วันนี้เสร็จแล้ว (แตะเพื่อยกเลิก)', 'Day done (tap to undo)') : L('จบวันนี้ ✓', 'Mark day done ✓')}</button>
-<a class="btn ghost" href="#/t/${esc(t.id)}">📖 ${L('ดูในสมุด', 'See it in the book')}</a>${navigator.share ? `<button class="btn ghost" data-a="share" data-t="${esc(t.id)}" data-d="${i}">📤 ${L('ส่งให้ญาติ', 'Share with family')}</button>` : ''}</div></section>`;
+<section class="blk"><button class="btn dayend${d.done_at ? ' is-done' : ''}" data-a="done" data-t="${esc(t.id)}" data-d="${i}">${d.done_at ? '✓ ' + L('วันนี้เสร็จแล้ว (แตะเพื่อยกเลิก)', 'Day done (tap to undo)') : '🏁 ' + L('จบวันนี้', 'Mark day done')}</button>
+<div class="row"><a class="btn ghost" href="#/t/${esc(t.id)}">📖 ${L('ดูในสมุด', 'See it in the book')}</a>${navigator.share ? `<button class="btn ghost" data-a="share" data-t="${esc(t.id)}" data-d="${i}">📤 ${L('ส่งให้ญาติ', 'Share with family')}</button>` : ''}</div></section>`;
 }
 // what we actually spent today: amount + category + a word → a row; the day's total in the heading, the trip's so far underneath.
 // A grown-up's number, so it stays on this page (and in our database) — never in the printed memory book or a seed.

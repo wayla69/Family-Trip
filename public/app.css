@@ -69,6 +69,11 @@ hr.rule{border:0;border-top:1px solid var(--rule);margin:22px 0}
 .btn.small{padding:6px 11px;font-size:13px}
 .btn.danger,.btn.confirm{background:var(--accent2);color:#fff}
 .btn:disabled{opacity:.5}
+/* closing the day: its own colour (green = finished), full width, set apart from the ordinary navy buttons */
+.btn.dayend{--done:#1E7A4F;display:flex;justify-content:center;width:100%;box-sizing:border-box;padding:16px;font-size:17px;background:var(--done);color:#fff;margin-bottom:14px;box-shadow:0 2px 0 color-mix(in srgb,var(--done) 60%,#000)}
+.btn.dayend.is-done{background:color-mix(in srgb,var(--done) 12%,var(--paper));color:var(--done);border:1.5px solid var(--done);box-shadow:none}
+:root[data-theme=dark] .btn.dayend.is-done{color:#6FD3A0;border-color:#4FB582}
+@media (prefers-color-scheme:dark){:root:not([data-theme=light]) .btn.dayend.is-done{color:#6FD3A0;border-color:#4FB582}}
 .pill{display:inline-flex;align-items:center;gap:5px;border-radius:999px;padding:3px 10px;font-size:12px;font-weight:600;background:var(--panel);color:var(--accent)}
 .chips{display:flex;gap:8px;flex-wrap:wrap}
 .chip{border:1px solid var(--rule);background:var(--paper);border-radius:999px;padding:6px 12px;font-size:14px;font-weight:500;display:inline-flex;align-items:center;gap:6px}
