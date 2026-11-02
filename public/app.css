@@ -69,6 +69,17 @@ hr.rule{border:0;border-top:1px solid var(--rule);margin:22px 0}
 .btn.small{padding:6px 11px;font-size:13px}
 .btn.danger,.btn.confirm{background:var(--accent2);color:#fff}
 .btn:disabled{opacity:.5}
+/* relatives' groups (#/viewers) */
+.vglist{display:grid;grid-template-columns:repeat(auto-fill,minmax(280px,1fr));gap:12px;margin:14px 0}
+.vgcard{border:1px solid var(--rule);border-radius:14px;padding:14px;background:var(--paper);display:grid;gap:10px}
+.vghd{display:flex;flex-wrap:wrap;gap:6px 10px;align-items:baseline;justify-content:space-between}
+.vgtrips{display:flex;flex-wrap:wrap;gap:6px}
+.vgform .vgl{display:grid;gap:6px;margin:10px 0;font-weight:600;font-size:14px}
+.vgchecks{display:flex;flex-wrap:wrap;gap:8px 16px;font-weight:400}
+.vgck{display:inline-flex;align-items:center;gap:8px;font-weight:400;font-size:15px;margin:6px 0}
+.vgck input{width:20px;height:20px}
+.vgjust{display:grid;gap:4px;margin:12px 0}.vgjust small{color:var(--muted)}
+.vgpin{font-size:24px;font-weight:800;letter-spacing:.12em}
 /* bedtime questions block (record page) */
 .talkblk h3 .label{display:block;margin-top:2px}
 /* the other language under a text (two-language book) */

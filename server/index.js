@@ -49,22 +49,35 @@ app.get('/robots.txt', (_req, res) => res.type('text').send('User-agent: *\nDisa
 
 const isSecure = (req) => req.secure || req.headers['x-forwarded-proto'] === 'https';
 
-// relatives' link: /v/<VIEW_TOKEN> → read-only session
-app.get('/v/:token', (req, res) => {
-  if (!A.VIEW_TOKEN || !A.safeEq(req.params.token, A.VIEW_TOKEN)) return res.status(404).send('Not found');
-  A.setCookie(res, A.makeToken('viewer', 'Guest', crypto.randomBytes(6).toString('hex')), isSecure(req));
-  res.redirect('/');
+// relatives' link: /v/<VIEW_TOKEN> (sees every book) or a group's own link (sees the group's books) → read-only session
+app.get('/v/:token', async (req, res, next) => {
+  try {
+    const tok = String(req.params.token);
+    if (A.VIEW_TOKEN && A.safeEq(tok, A.VIEW_TOKEN)) {
+      A.setCookie(res, A.makeToken('viewer', 'Guest', crypto.randomBytes(6).toString('hex')), isSecure(req));
+      return res.redirect('/');
+    }
+    const g = /^[A-Za-z0-9_-]{24,64}$/.test(tok) && (await PG.query('SELECT id, name FROM viewer_groups WHERE link_token=$1 AND family_id=$2', [tok, BS.FAMILY])).rows[0];
+    if (!g) return res.status(404).send('Not found');
+    A.setCookie(res, A.makeToken('viewer', g.name.slice(0, 24), crypto.randomBytes(6).toString('hex'), g.id), isSecure(req));
+    res.redirect('/');
+  } catch (e) { next(e); }
 });
-app.post('/api/login', express.json({ limit: '10kb' }), (req, res) => {
+app.post('/api/login', express.json({ limit: '10kb' }), async (req, res, next) => {
   if (req.headers['x-mb'] !== '1') return res.status(400).json({ error: 'bad-request' });
   const ip = req.ip;
   if (A.throttled(ip)) return res.status(429).json({ error: 'too-many' });
   const code = String((req.body && req.body.code) || '');
   const name = clip((req.body && req.body.name) || '', 24).trim() || 'Family';
-  // the family PIN writes; the relatives' PIN (VIEW_PIN) only reads — both share the throttle
-  const role = A.FAMILY_CODE && A.safeEq(code, A.FAMILY_CODE) ? 'editor' : A.VIEW_PIN && A.safeEq(code, A.VIEW_PIN) ? 'viewer' : null;
+  // the family PIN writes; the relatives' PIN (VIEW_PIN) and each group's own PIN only read — all share the throttle
+  let role = A.FAMILY_CODE && A.safeEq(code, A.FAMILY_CODE) ? 'editor' : A.VIEW_PIN && A.safeEq(code, A.VIEW_PIN) ? 'viewer' : null, group = null;
+  if (!role && /^\d{6,12}$/.test(code)) {
+    try { group = (await PG.query('SELECT id, name FROM viewer_groups WHERE pin_hash=$1 AND family_id=$2', [A.pinHash(code), BS.FAMILY])).rows[0] || null; } catch (e) { return next(e); }
+    if (group) role = 'viewer';
+  }
   if (!role) { A.noteFail(ip); return res.status(401).json({ error: 'wrong-code' }); }
-  A.setCookie(res, A.makeToken(role, role === 'viewer' && name === 'Family' ? 'Guest' : name, crypto.randomBytes(6).toString('hex')), isSecure(req));
+  const who = role === 'viewer' && name === 'Family' ? (group ? group.name.slice(0, 24) : 'Guest') : name;
+  A.setCookie(res, A.makeToken(role, who, crypto.randomBytes(6).toString('hex'), group && group.id), isSecure(req));
   res.json({ ok: true, role });
 });
 app.post('/api/logout', (req, res) => { A.clearCookie(res); res.json({ ok: true }); });
@@ -97,6 +110,7 @@ app.post('/api/import', A.requireEditor, async (req, res, next) => {
 // A4 PDF of a book, rendered by the server (relatives may download it too)
 app.get('/api/b/pdf/:trip', A.requireUser, async (req, res, next) => {
   try {
+    if (!A.canSee(req.user, req.params.trip)) return res.status(404).json({ error: 'trip' });
     const t = (await PG.query('SELECT slug, title FROM trips WHERE id=$1 AND family_id=$2', [req.params.trip, BS.FAMILY])).rows[0];
     if (!t) return res.status(404).json({ error: 'trip' });
     const cookie = A.makeToken('viewer', 'PDF', crypto.randomBytes(6).toString('hex'));   // read-only session for the renderer
@@ -111,6 +125,7 @@ app.get('/api/b/pdf/:trip', A.requireUser, async (req, res, next) => {
 // live forecast for each day of a book (Today page): Open-Meteo asked with the stays' town-level coordinates only — server/weather.js
 app.get('/api/b/wx/:trip', A.requireUser, async (req, res, next) => {
   try {
+    if (!A.canSee(req.user, req.params.trip)) return res.status(404).json({ error: 'trip' });
     const t = (await PG.query('SELECT id, timezone FROM trips WHERE id=$1 AND family_id=$2', [req.params.trip, BS.FAMILY])).rows[0];
     if (!t) return res.status(404).json({ error: 'trip' });
     const days = (await PG.query("SELECT to_char(date,'YYYY-MM-DD') date, plan->'stay'->'ll' ll FROM trip_days WHERE trip_id=$1 ORDER BY day_index", [t.id])).rows;
