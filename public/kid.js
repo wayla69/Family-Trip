@@ -22,8 +22,22 @@ function beep(kind) {
     else if (kind === 'chime') [523, 659, 784, 1047].forEach((f, i) => tone(f, i * 0.09, 0.4, 'sine', 0.18));
     else if (kind === 'pop') tone(880, 0, 0.12, 'sine', 0.2);
     else if (kind === 'creak') { tone(220, 0, 0.25, 'sawtooth', 0.05); tone(330, 0.12, 0.3, 'triangle', 0.12); }
+    else if (kind === 'whoosh') sweep(c, t0, 260, 1400, 0.45, 'sine', 0.14);
+    else if (kind === 'boom') { sweep(c, t0, 160, 40, 0.6, 'sine', 0.55); tone(90, 0.02, 0.5, 'triangle', 0.3); }
+    else if (kind === 'splash') [1100, 1500, 900, 1800, 1250].forEach((f, i) => tone(f + Math.random() * 200, i * 0.05, 0.12, 'sine', 0.12));
+    else if (kind === 'sparkle') [1047, 1319, 1568, 2093].forEach((f, i) => tone(f, i * 0.06, 0.35, 'sine', 0.12));
+    else if (kind === 'yay') [523, 659, 784, 1047, 1319].forEach((f, i) => tone(f, i * 0.07, 0.25, 'triangle', 0.14));
+    else if (kind === 'boing') sweep(c, t0, 180, 520, 0.3, 'triangle', 0.2);
     else tone(600, 0, 0.08, 'triangle', 0.12);
   } catch (_) { /* no audio — fine */ }
+}
+
+// a tone that slides from one pitch to another (whoosh up, boom down, boing)
+function sweep(c, t0, f1, f2, dur, type, vol) {
+  const o = c.createOscillator(), g = c.createGain();
+  o.type = type; o.frequency.setValueAtTime(f1, t0); o.frequency.exponentialRampToValueAtTime(f2, t0 + dur);
+  g.gain.setValueAtTime(vol, t0); g.gain.exponentialRampToValueAtTime(0.001, t0 + dur);
+  o.connect(g); g.connect(c.destination); o.start(t0); o.stop(t0 + dur);
 }
 
 /* ---------- the phone reads aloud ---------- */
@@ -194,7 +208,7 @@ function drawBt() {
 <div class="btpage${reduced() ? '' : ' turn'}" id="btpage">
 ${end ? `<div class="btart">${castHtml(kids)}</div><p class="bttext end">${L('จบแล้ว… ฝันดีนะ 💤', 'The end… sweet dreams 💤')}</p>`
     : `<div class="btart">${artImg(t, Math.min(pg.art, t.days.length - 1))}${p === 0 ? castHtml(kids) : ''}</div>
-<p class="bttext" lang="${esc(bt.e.lang || lang)}">${pg.chunks.map((c, k) => `<span class="${k === bt.c && bt.playing ? 'on' : ''}">${esc(c)}</span>`).join('')}</p>`}
+<p class="bttext" lang="${esc(bt.e.lang || lang)}">${pg.chunks.map((c, k) => `<span class="${k === bt.c && bt.playing ? 'on' : ''}">${sfxHtml(c, p === pages.length - 1)}</span>`).join('')}</p>`}
 </div>
 <div class="btctl">
 <button data-a="btprev" aria-label="${L('หน้าก่อน', 'Previous page')}"${p === 0 ? ' disabled' : ''}>◀</button>
@@ -202,6 +216,21 @@ ${end ? `<div class="btart">${castHtml(kids)}</div><p class="bttext end">${L('�
 <button data-a="btnext" aria-label="${L('หน้าถัดไป', 'Next page')}"${end ? ' disabled' : ''}>▶▶</button></div>
 <div class="btdots">${pages.map((_, j) => `<i class="${j === p ? 'on' : ''}"></i>`).join('')}<span>${Math.min(p + 1, pages.length)}/${pages.length}</span></div>`;
 }
+// sound words in a story (the story prompt asks for them): when the reader reaches one, a little synthesised sound plays and
+// sparkles fly from the line; the word itself is drawn big. Never on the last page — the end of a bedtime story stays quiet.
+const SFX = [
+  // English words whole (\b: "Bangkok" is not a bang); Thai only distinct sound words (no ปัง — it hides in ขนมปัง)
+  [/ว้าว+|\bwo+w\b/i, 'sparkle', ['✨', '⭐', '🌟']],
+  [/ฟิ้ว+|ฟุ่บ|วู้+ว?|\b(?:whoo+sh|zoo+m|swoo+sh)\b/i, 'whoosh', ['💨', '✨']],
+  [/ตู้*ม!|โครม|\b(?:boo+m|bang|crash)\b/i, 'boom', ['💥', '⭐']],
+  [/จ๋อม|จ๋อง|ซ่า+~|\b(?:spla+sh|sploo+sh|plop)\b/i, 'splash', ['💧', '🫧', '💦']],
+  [/เย้+|ไชโย|\b(?:ye+y|ya+y|hoo+ray)\b/i, 'yay', ['🎉', '🎈', '⭐']],
+  [/ดึ๋ง|\b(?:boi+ng)\b/i, 'boing', ['⭐', '💫']],
+];
+const SFX_ANY = new RegExp(SFX.map(([re]) => re.source).join('|'), 'gi');
+const sfxOf = (txt) => { const x = SFX.find(([re]) => re.test(txt)); return x ? { snd: x[1], fx: x[2] } : null; };
+// escape first, decorate never: split the raw text on the sound words, escape each piece, wrap only the matches
+const sfxHtml = (txt, quiet) => (quiet ? esc(txt) : txt.split(new RegExp(`(${SFX_ANY.source})`, 'gi')).map((x, k) => (k % 2 ? `<b class="sfxw">${esc(x)}</b>` : esc(x))).join(''));
 function btHighlight() { $$('#btpage .bttext span').forEach((s, k) => s.classList.toggle('on', !!bt && bt.playing && k === bt.c)); }
 function btStep() {
   if (!bt || !bt.playing) return;
@@ -214,8 +243,18 @@ function btStep() {
   }
   btHighlight();
   const next = () => { if (!bt || bt.tok !== tok) return; bt.c++; setTimeout(() => { if (bt && bt.tok === tok) btStep(); }, 250); };
-  const spoke = speak(pg.chunks[bt.c], bt.e.lang === 'en' ? 'en-GB' : 'th-TH', { rate: 0.8, pitch: 1.05, keep: true, onend: next });
-  if (!spoke) setTimeout(next, Math.max(2500, pg.chunks[bt.c].length * 90));   // no voice on this phone: just turn the pages slowly
+  const read = () => {
+    if (!bt || bt.tok !== tok) return;
+    const spoke = speak(pg.chunks[bt.c], bt.e.lang === 'en' ? 'en-GB' : 'th-TH', { rate: 0.8, pitch: 1.05, keep: true, onend: next });
+    if (!spoke) setTimeout(next, Math.max(2500, pg.chunks[bt.c].length * 90));   // no voice on this phone: just turn the pages slowly
+  };
+  const fx = bt.p < bt.pages.length - 1 && sfxOf(pg.chunks[bt.c]);   // a sound word in this line (not on the quiet last page)
+  if (!fx) { read(); return; }
+  bt.sfx = (bt.sfx || 0) + 1;
+  beep(fx.snd);
+  const line = $$('#btpage .bttext span')[bt.c], w = line && line.querySelector('.sfxw');
+  burst(w || line, fx.fx); if (w) { w.classList.remove('pop'); void w.offsetWidth; w.classList.add('pop'); }
+  setTimeout(read, 450);   // the sound first, then the voice
 }
 function btPlay(on) {
   if (!bt) return;

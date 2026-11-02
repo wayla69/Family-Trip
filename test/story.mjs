@@ -182,6 +182,17 @@ try {
   await page.locator('.ask .chip').first().click();
   await page.waitForFunction(() => { const a = document.querySelector('#askans'); return a && !a.hidden && a.textContent.includes('ฝันดี') && document.querySelector('#askstop').hidden; });
   ok(await page.inputValue('#askq') !== '', 'browser: a suggestion chip asks the guide and the answer shows on the Today page');
+  // sound words in a bedtime story: drawn big, a sound + sparkles when the reader gets there; the last page stays quiet
+  await put(`/api/b/entries/${T}.story.d2`, { trip: T, day: 2, kind: 'story', text: 'ว้าว! เครื่องบินบิน ฟิ้ว~ ไปเลย\nเราไปจากกรุงเทพฯ กินขนมปัง\nแล้วก็ ตูม! ฝันดีนะ' });
+  await page.goto(`${BASE}/#/t/${T}/book`); await page.reload(); await page.waitForSelector('#d2');
+  await page.locator(`#d2 [data-a="bedtime"]`).first().click(); await page.waitForSelector('#bedtime .bttext');
+  await page.waitForFunction(() => typeof bt !== 'undefined' && bt && bt.sfx >= 1, null, { timeout: 8000 });
+  ok(await page.locator('#bedtime .sfxw').count() === 2 && (await page.locator('#bedtime .sfxw').allTextContents()).join(',') === 'ว้าว,ฟิ้ว', 'bedtime: sound words drawn big and played on page 1');
+  await page.click('[data-a="btnext"]'); await page.click('[data-a="btnext"]');
+  ok(await page.locator('#bedtime .sfxw').count() === 0 && (await page.textContent('#bedtime .bttext')).includes('ตูม'), 'bedtime: the last page stays quiet (no effect on ตูม)');
+  await page.click('[data-a="btprev"]');
+  ok(await page.locator('#bedtime .sfxw').count() === 0, 'bedtime: "ขนมปัง" and "กรุงเทพฯ" are not sound words');
+  await page.click('[data-a="btclose"]');
   await page.goto(`${BASE}/#/t/${T}/book`); await page.waitForSelector('#d1');
   ok(await page.locator('#d1 .call.pick', { hasText: 'ฝันดี' }).count() === 1, 'book: bedtime story on the day page');
   ok(await page.locator('#d1 .daysum').count() === 1, 'book: the day summary leads the day page');

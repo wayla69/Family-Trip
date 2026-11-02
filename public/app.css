@@ -706,6 +706,11 @@ body.btopen{overflow:hidden}
 .bttext span{transition:color .3s,background .3s;border-radius:6px;padding:0 2px;color:rgba(244,238,220,.75)}
 .bttext span.on{color:#FFE9A8;background:rgba(255,233,168,.12)}
 .bttext.end{font-size:30px;color:#FFE9A8}
+/* sound words in a bedtime story: drawn big, they jump when the reader reaches them */
+.bttext .sfxw{display:inline-block;font-size:1.25em;color:#FFD46B;font-weight:800;letter-spacing:.02em}
+.bttext .sfxw.pop{animation:sfxpop .6s ease-out}
+@keyframes sfxpop{0%{transform:scale(1)}35%{transform:scale(1.45) rotate(-6deg)}70%{transform:scale(.95) rotate(3deg)}100%{transform:scale(1)}}
+@media (prefers-reduced-motion:reduce){.bttext .sfxw.pop{animation:none}}
 .btctl{display:flex;justify-content:center;gap:18px;margin-top:14px}
 .btctl button{width:64px;height:64px;border-radius:50%;border:0;background:rgba(255,255,255,.14);color:#fff;font-size:20px}
 .btctl button.play{width:84px;height:84px;background:#FFE9A8;color:#151D36;font-size:28px}
