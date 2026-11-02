@@ -230,19 +230,25 @@ const A = {
     if (done) { burst(b, ['🎉', '✨', '⭐']); toast(L('ได้ตราประทับของวันนี้ในพาสปอร์ตแล้ว 🛂', 'Today’s stamp is in the passports 🛂')); }
     enqueue({ method: 'PUT', url: `/api/b/days/${encodeURIComponent(t.id)}/${d}`, body: { done } });
   },
+  // Claude, only when pressed: data-m "story" (bedtime story, #story…) or "sum" (the day in a few lines into the #sumtext box, #sum…);
+  // the server saves the result, so the page reloads the state; a summary lands in its textarea and stays editable (blur saves)
   async story(b) {
     if (storyCtl) return;
+    const mode = b.dataset.m === 'sum' ? 'sum' : 'story', sum = mode === 'sum';
     const t = trip(b.dataset.t), day = b.dataset.d === '' ? null : +b.dataset.d;
-    if (!navigator.onLine) { toast(L('ต้องต่อเน็ตเพื่อแต่งนิทาน', 'Writing a story needs a connection')); return; }
-    const box = $('#storytext'); box.hidden = false; box.textContent = ''; box.classList.add('writing');
-    $('#storygo').disabled = true; $('#storystop').hidden = false;
+    if (!navigator.onLine) { toast(sum ? L('ต้องต่อเน็ตเพื่อให้ Claude สรุป', 'Summarising needs a connection') : L('ต้องต่อเน็ตเพื่อแต่งนิทาน', 'Writing a story needs a connection')); return; }
+    const box = $(`#${mode}text`), msg = sum ? $('#summsg') : box, before = sum ? box.value : '';
+    const say = (x) => { if (sum) { box.value = before; msg.textContent = x; } else box.textContent = x; };
+    const show = (x) => { if (sum) box.value = x; else box.textContent = x; };
+    box.hidden = false; show(''); box.classList.add('writing'); if (sum) box.readOnly = true;
+    $(`#${mode}go`).disabled = true; $(`#${mode}stop`).hidden = false;
     storyCtl = new AbortController();
     let text = '';
     try {
       const r = await fetch('/api/b/story', { method: 'POST', credentials: 'same-origin', signal: storyCtl.signal,
-        headers: { 'x-mb': '1', 'content-type': 'application/json' }, body: JSON.stringify({ trip: t.id, day, lang }) });
-      if (r.status === 422) { box.textContent = L('ยังไม่มีบันทึกของวันนี้ — เพิ่มคำพูด คำอธิบายรูป หรือเช็คอินก่อน', 'Nothing written down yet — add a quote, a photo caption or a check-in first'); return; }
-      if (r.status === 429) { box.textContent = L('วันนี้แต่งนิทานครบจำนวนแล้ว — พรุ่งนี้แต่งต่อได้', 'That’s all the stories for today — more tomorrow'); return; }
+        headers: { 'x-mb': '1', 'content-type': 'application/json' }, body: JSON.stringify({ trip: t.id, day, lang, mode }) });
+      if (r.status === 422) { say(L('ยังไม่มีบันทึกของวันนี้ — เพิ่มคำพูด คำอธิบายรูป หรือเช็คอินก่อน', 'Nothing written down yet — add a quote, a photo caption or a check-in first')); return; }
+      if (r.status === 429) { say(L('วันนี้ใช้ Claude ครบจำนวนแล้ว — พรุ่งนี้ใช้ต่อได้', 'That’s all the Claude writing for today — more tomorrow')); return; }
       if (!r.ok) throw new Error('http ' + r.status);
       const rd = r.body.getReader(), dec = new TextDecoder();
       let buf = '', ev = null;
@@ -255,17 +261,21 @@ const A = {
           let data = '';
           chunk.split('\n').forEach((l) => { if (l.startsWith('event: ')) ev = l.slice(7); else if (l.startsWith('data: ')) data += l.slice(6); });
           const d = JSON.parse(data || '{}');
-          if (!ev) { text += d.t; box.textContent = text; }
-          else if (ev === 'done') { await load(); render(); toast(L('เก็บนิทานไว้ในสมุดแล้ว', 'Story saved in the book')); }
-          else if (ev === 'error') box.textContent = d.error === 'refusal' ? L('Claude แต่งนิทานนี้ไม่ได้ ลองเพิ่มบันทึกแล้วลองใหม่', 'Claude could not write this one — try again later') : L('แต่งไม่สำเร็จ ลองใหม่อีกครั้ง', 'That didn’t work — try again');
+          if (!ev) { text += d.t; show(text); }
+          else if (ev === 'done') {
+            if (sum) delete drafts[box.dataset.draft];   // the saved summary wins over a half-typed draft
+            storyCtl = null; await load(); render();
+            toast(sum ? L('เก็บสรุปไว้ในสมุดแล้ว — แก้ในช่องได้', 'Summary saved in the book — edit it in the box') : L('เก็บนิทานไว้ในสมุดแล้ว', 'Story saved in the book'));
+          } else if (ev === 'error') say(d.error === 'refusal' ? L('Claude เขียนอันนี้ไม่ได้ ลองเพิ่มบันทึกแล้วลองใหม่', 'Claude could not write this one — try again later') : L('ไม่สำเร็จ ลองใหม่อีกครั้ง', 'That didn’t work — try again'));
         }
       }
     } catch (e) {
-      if (e.name === 'AbortError') toast(L('หยุดแล้ว — ไม่ได้บันทึก', 'Stopped — nothing saved'));
-      else box.textContent = L('แต่งไม่สำเร็จ ลองใหม่อีกครั้ง', 'That didn’t work — try again');
+      if (e.name === 'AbortError') { if (sum) box.value = before; toast(L('หยุดแล้ว — ไม่ได้บันทึก', 'Stopped — nothing saved')); }
+      else say(L('ไม่สำเร็จ ลองใหม่อีกครั้ง', 'That didn’t work — try again'));
     } finally {
-      storyCtl = null; box.classList.remove('writing');
-      const go = $('#storygo'), stop = $('#storystop'); if (go) go.disabled = false; if (stop) stop.hidden = true;
+      storyCtl = null;
+      const bx = $(`#${mode}text`); if (bx) { bx.classList.remove('writing'); bx.readOnly = false; }
+      const go = $(`#${mode}go`), stop = $(`#${mode}stop`); if (go) go.disabled = false; if (stop) stop.hidden = true;
     }
   },
   storystop() { if (storyCtl) storyCtl.abort(); },

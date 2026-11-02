@@ -50,7 +50,7 @@ const dbName = 'mb_story_' + Date.now().toString(36); await admin.query(`CREATE 
 const u = new URL(process.env.TEST_DATABASE_URL); u.pathname = '/' + dbName;
 const port = await freePort(), data = fs.mkdtempSync(path.join(os.tmpdir(), 'mb-story-'));
 const srv = spawn(process.execPath, ['server/index.js'], { cwd: process.cwd(), stdio: ['ignore', 'ignore', 'inherit'],
-  env: { ...process.env, PORT: String(port), DATA_DIR: data, DATABASE_URL: u.toString(), ANTHROPIC_API_KEY: 'test-key', ANTHROPIC_BASE_URL: `http://localhost:${mockPort}`, STORY_DAILY: '5' } });
+  env: { ...process.env, PORT: String(port), DATA_DIR: data, DATABASE_URL: u.toString(), ANTHROPIC_API_KEY: 'test-key', ANTHROPIC_BASE_URL: `http://localhost:${mockPort}`, STORY_DAILY: '7' } });
 const BASE = `http://localhost:${port}`;
 try {
   for (let i = 0; i < 80; i++) { try { if ((await fetch(BASE + '/healthz')).ok) break; } catch (_) {} await new Promise((r) => setTimeout(r, 250)); }
@@ -91,6 +91,18 @@ try {
   await new Promise((r2) => setTimeout(r2, 1500));
   ok(upstreamClosedEarly && !(await state()).entries.some((e) => e.id === `${T}.story.d3`), 'Stop: request to Claude aborted, nothing saved');
 
+  // the day in a few lines (mode 'sum'): same facts, its own prompt, saved as the day's 'sum' entry; edits upsert the same id
+  const before = calls.length;
+  const rsum = events(await (await story({ trip: T, day: 1, lang: 'en', mode: 'sum' })).text());
+  const cs = calls.at(-1);
+  ok(calls.length === before + 1 && rsum.at(-1).ev === 'done' && rsum.at(-1).data.id === `${T}.sum.d1`, 'summary: streamed, then done with the day\'s sum id');
+  ok(cs.body.system.includes('2–3 sentences') && cs.body.system.includes('only the facts') && cs.body.max_tokens === 1000 && cs.body.messages[0].content.includes('Hong Kong Disneyland'), 'summary: own prompt, same facts (en)');
+  const sumRow = (await state()).entries.find((e) => e.id === `${T}.sum.d1`);
+  ok(sumRow && sumRow.kind === 'sum' && sumRow.day === 1 && !sumRow.text.includes('**'), 'summary saved as kind sum on the day');
+  ok((await put(`/api/b/entries/${T}.sum.d1`, { trip: T, day: 1, kind: 'sum', text: 'We went to Disneyland.' })).ok
+    && (await state()).entries.find((e) => e.id === `${T}.sum.d1`).text === 'We went to Disneyland.', 'summary: a hand edit upserts the same row');
+  ok((await story({ trip: T, day: null, lang: 'th', mode: 'sum' })).status === 400 && calls.length === before + 1, 'summary needs a day (whole trip → 400, model not called)');
+
   const vck = (await fetch(BASE + '/v/grandma', { redirect: 'manual' })).headers.get('set-cookie');
   ok(!vck || (await fetch(BASE + '/api/b/story', { method: 'POST', headers: { ...H, cookie: vck.split(';')[0] }, body: '{}' })).status === 403, 'viewer cannot ask for stories');
 
@@ -105,14 +117,19 @@ try {
   await page.waitForFunction(() => document.querySelector('#storytext') && document.querySelector('#storytext').textContent.includes('ฝันดี'));
   await page.waitForFunction(() => !document.querySelector('#storystop') || document.querySelector('#storystop').hidden);
   ok(true, 'browser: story streamed into the record page');
+  await page.click('#sumgo');
+  await page.waitForFunction(() => !document.querySelector('#sumstop') || document.querySelector('#sumstop').hidden);
+  await page.waitForFunction(() => document.querySelector('#sumtext') && document.querySelector('#sumtext').value.includes('ฝันดี'));
+  ok(await page.locator('#sumgo').isEnabled(), 'browser: Claude\'s summary lands in the editable box');
   await page.goto(`${BASE}/#/t/${T}/book`); await page.waitForSelector('#d1');
   ok(await page.locator('#d1 .call.pick', { hasText: 'ฝันดี' }).count() === 1, 'book: bedtime story on the day page');
+  ok(await page.locator('#d1 .daysum').count() === 1, 'book: the day summary leads the day page');
   ok(errs.length === 0, 'no page errors ' + errs.join(' | '));
 
-  // daily cap (STORY_DAILY=5 here): the 5th model call goes through, the 6th is refused before Claude is called
-  ok(calls.length === 4 && events(await (await story({ trip: T, day: 1, lang: 'th' })).text()).at(-1).ev === 'done', 'daily cap: 5th story of the day still written');
+  // daily cap (STORY_DAILY=7 here, stories and summaries together): the 7th model call goes through, the 8th is refused before Claude is called
+  ok(calls.length === 6 && events(await (await story({ trip: T, day: 1, lang: 'th' })).text()).at(-1).ev === 'done', 'daily cap: 7th call of the day still written');
   const capped = await story({ trip: T, day: 1, lang: 'th' });
-  ok(capped.status === 429 && (await capped.json()).error === 'limit' && calls.length === 5, 'daily cap: 6th story refused with 429, model not called');
+  ok(capped.status === 429 && (await capped.json()).error === 'limit' && calls.length === 7, 'daily cap: 8th call refused with 429, model not called');
   ok((await story({ trip: T, day: 0, lang: 'th' })).status === 422, 'daily cap: an empty day still answers 422 (nothing counted)');
   await browser.close();
 } finally {

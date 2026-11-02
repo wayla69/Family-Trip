@@ -69,6 +69,9 @@ hr.rule{border:0;border-top:1px solid var(--rule);margin:22px 0}
 .btn.small{padding:6px 11px;font-size:13px}
 .btn.danger,.btn.confirm{background:var(--accent2);color:#fff}
 .btn:disabled{opacity:.5}
+/* the day in a few lines: leads the day page of the book (and the PDF) */
+.daysum{font-size:16px;line-height:1.65;margin:0 0 14px;padding-left:12px;border-left:3px solid var(--accent);white-space:pre-line}
+.sumblk textarea.writing{opacity:.85}
 /* closing the day: its own colour (green = finished), full width, set apart from the ordinary navy buttons */
 .btn.dayend{--done:#1E7A4F;display:flex;justify-content:center;width:100%;box-sizing:border-box;padding:16px;font-size:17px;background:var(--done);color:#fff;margin-bottom:14px;box-shadow:0 2px 0 color-mix(in srgb,var(--done) 60%,#000)}
 .btn.dayend.is-done{background:color-mix(in srgb,var(--done) 12%,var(--paper));color:var(--done);border:1.5px solid var(--done);box-shadow:none}
