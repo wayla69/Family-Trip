@@ -110,6 +110,13 @@ const T = 'hk-macau-2026';
   await page.click('button[data-a="first"][data-v="mickey"][data-k="mimi"]');
   await page.click('button[data-a="place"][data-v="Hong Kong Disneyland"]');
   await page.waitForFunction(() => queue.length === 0, null, { timeout: 15000 });
+  // a first belongs to its own day: day 3's page shows Mimi met Mickey on day 2 (not ticked there), and a tap there keeps it
+  await page.goto(`${BASE}/#/t/${T}/log/2`); await page.waitForSelector('button[data-a="first"][data-v="mickey"][data-k="mimi"]');
+  const fbtn = page.locator('button[data-a="first"][data-v="mickey"][data-k="mimi"]');
+  ok(await fbtn.getAttribute('aria-pressed') === 'false' && /2/.test(await fbtn.locator('.fday').textContent()), 'firsts: another day shows the day it happened, not a tick');
+  await fbtn.click(); await page.waitForTimeout(300);
+  ok(await page.evaluate(() => S.entries.some((e) => e.kind === 'first' && e.first_key === 'mickey' && e.child === 'mimi' && e.day === 1)), 'firsts: a tap on another day never removes it from its own day');
+  await page.goto(`${BASE}/#/t/${T}/log/1`); await page.waitForSelector('button[data-a="first"][data-v="mickey"][data-k="mimi"][aria-pressed="true"]');
   // what we actually spent: category + amount + a word → a row and the day's total; the trip total appears underneath
   await page.click('button[data-a="spendcat"][data-v="transport"]');
   await page.fill('#spendamt', '120'); await page.fill('#spendnote', 'แท็กซี่ไปดิสนีย์'); await page.click('button[data-a="addspend"]');

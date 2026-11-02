@@ -206,6 +206,7 @@ const A = {
   first(b) {
     const t = trip(b.dataset.t), d = +b.dataset.d, key = b.dataset.v, k = b.dataset.k;
     const ex = S.entries.find((e) => e.trip === t.id && e.kind === 'first' && e.first_key === key && e.child === k);
+    if (ex && ex.day !== d) { toast(L(`${kidName(k)} ได้ "ครั้งแรก" นี้ไปแล้วในวันที่ ${ex.day + 1} — แก้ได้ที่หน้าวันนั้น`, `${kidName(k)} already had this first on day ${ex.day + 1} — change it on that day`)); return; }   // never untick another day's first from here
     if (ex) delEntry(ex.id); else { burst(b, ['🌟', '✨', '🎉']); putEntry(t, { day: d, kind: 'first', child: k, first_key: key }, `${t.id}.first.${key}.${k}`); }
   },
   customfirst(b) {
