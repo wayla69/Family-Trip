@@ -290,6 +290,7 @@ const A = {
     }
   },
   storystop() { if (storyCtl) storyCtl.abort(); },
+  jump(b) { const el = $(b.dataset.v); if (el) { el.scrollIntoView({ behavior: matchMedia('(prefers-reduced-motion: reduce)').matches ? 'auto' : 'smooth', block: 'start' }); el.classList.remove('flash'); void el.offsetWidth; el.classList.add('flash'); } },
   // relatives' groups (#/viewers): the form lives in vgForm (views.js) so a background render keeps the ticks
   vgtrip(b) { const s2 = new Set(vgForm.trips); if (b.checked) s2.add(b.dataset.v); else s2.delete(b.dataset.v); vgForm.trips = [...s2]; },
   vglink(b) { vgForm.link = b.checked; },
@@ -349,19 +350,21 @@ const A = {
     if (b.dataset.v && inp) { inp.value = b.dataset.v; drafts[inp.dataset.draft] = inp.value; }
     const q = inp ? inp.value.trim() : '';
     if (!q) { if (inp) inp.focus(); return; }
-    if (!navigator.onLine) { toast(L('ต้องต่อเน็ตเพื่อถามไกด์ — ดูในหน้าต่างๆ ของคู่มือได้เลย', 'Asking the guide needs a connection — the manual pages work offline')); return; }
-    const box = $('#askans'); box.hidden = false; box.textContent = ''; box.classList.add('writing');
+    const box = $('#askans');
+    if (!navigator.onLine) { askOffline(t, q, box); return; }   // no signal: answer from the manual on the phone, without Claude
+    box.hidden = false; box.textContent = ''; box.classList.add('writing');
     $('#askgo').disabled = true; $('#askstop').hidden = false;
     askAns = { t: t.id, q, text: '' };
     storyCtl = new AbortController();
     const say = (x) => { box.textContent = x; askAns.text = x; };
+    let text = '';
     try {
       const r = await fetch('/api/b/ask', { method: 'POST', credentials: 'same-origin', signal: storyCtl.signal,
         headers: { 'x-mb': '1', 'content-type': 'application/json' }, body: JSON.stringify({ trip: t.id, day, lang, q }) });
       if (r.status === 429) { say(L('วันนี้ใช้ Claude ครบจำนวนแล้ว — พรุ่งนี้ใช้ต่อได้', 'That’s all the Claude writing for today — more tomorrow')); return; }
       if (!r.ok) throw new Error('http ' + r.status);
       const rd = r.body.getReader(), dec = new TextDecoder();
-      let buf = '', text = '';
+      let buf = '';
       for (;;) {
         const { done, value } = await rd.read(); if (done) break;
         buf += dec.decode(value, { stream: true });
@@ -378,6 +381,7 @@ const A = {
       }
     } catch (e) {
       if (e.name === 'AbortError') { say(''); box.hidden = true; askAns = null; }
+      else if (!text) { storyCtl = null; askOffline(t, q, box); }   // the network dropped (roaming, a ferry): fall back to the manual on the phone
       else say(L('ไม่สำเร็จ ลองใหม่อีกครั้ง', 'That didn’t work — try again'));
     } finally {
       storyCtl = null; aiUseAt = 0; box.classList.remove('writing');
@@ -473,6 +477,26 @@ Object.assign(A, {
   },
 });
 
+// ask the guide without a connection: the question's key words (filler like "ถ้า… ทำยังไง", "where can we…" dropped) go through
+// the book's own search on the phone; the best few sections are shown as links. No Claude, nothing sent.
+const ASK_FILL_TH = /ทำยังไงดี|ทำยังไง|ทำอย่างไร|ยังไงดี|ยังไง|อย่างไร|ที่ไหนดี|ที่ไหน|ตรงไหน|อะไรดี|อะไร|ได้ไหม|ได้มั้ย|หรือเปล่า|ไหม|มั้ย|บ้าง|วันนี้|คืนนี้|พรุ่งนี้|ควรจะ|ควร|ถ้า|เรา|จะ|ดีไหม|นะ|คะ|ค่ะ|ครับ|จ้ะ|หน่อย/g;
+const ASK_FILL_EN = /\b(what|where|when|which|how|who|do|does|did|we|i|is|are|was|the|a|an|to|if|can|could|should|would|today|tonight|tomorrow|for|of|in|on|at|our|us|it|there|any|some|near|good|best|please)\b/gi;
+function askOffline(t, q, box) {
+  const core = q.replace(ASK_FILL_TH, ' ').replace(ASK_FILL_EN, ' ').replace(/[?？!.,]/g, ' ').replace(/\s+/g, ' ').trim();
+  let hits = core ? bookFind(t, core).list : [];
+  if (!hits.length && core) {   // no section has every word: take the best per word
+    const seen = new Map();
+    core.split(' ').filter((w) => w.length > 1).forEach((w) => bookFind(t, w).list.slice(0, 8).forEach((x) => { const c = seen.get(x.e); if (!c || c.score < x.score) seen.set(x.e, x); }));
+    hits = [...seen.values()].sort((a, b) => b.score - a.score);
+  }
+  const alts = core ? core.split(' ') : [];
+  const html = `<p class="label">📴 ${L('ออฟไลน์ — ส่วนในคู่มือที่ตรงกับคำถาม (ไม่ได้ใช้ Claude)', 'Offline — the parts of the manual that match (no Claude)')}</p>`
+    + (hits.length ? `<ul class="sres">${hits.slice(0, 5).map(({ e }) => `<li class="k-${e.topic}"><a href="${esc(e.href)}"><span class="stopic">${esc(topicName(e.topic))}</span><b>${esc((e.title[lang] || e.title.en).replace(/\s+·\s+\d+$/, ''))}</b><span class="ssnip">${snippet(e, alts)}</span></a></li>`).join('')}</ul>`
+      : `<p>${L('ไม่พบในคู่มือ ลองคำสั้นๆ เช่น หมอ แท็กซี่ ห้องน้ำ', 'Nothing in the manual — try one word: doctor, taxi, toilet')}</p>`)
+    + `<p><a href="#/t/${esc(t.id)}/search">${L('ค้นทั้งเล่ม ›', 'Search the whole book ›')}</a></p>`;
+  askAns = { t: t.id, q, html };
+  box.hidden = false; box.innerHTML = html;
+}
 let storyCtl = null;   // AbortController while a story (or a guide answer) streams
 let askAns = null;     // the last guide answer on the Today page {t, q, text} — kept across re-renders, never stored
 

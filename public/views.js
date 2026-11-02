@@ -46,7 +46,7 @@ function render() {
   if (p[0] === 't' && (t = trip(p[1]))) {
     artTrip = t;
     const sec = p[2] || 'hub';
-    if (sec === 'log') html = isEditor() ? viewLog(t, Math.min(t.days.length - 1, Math.max(0, +p[3] || 0))) : viewBook(t);
+    if (sec === 'log') html = isEditor() ? viewLog(t, Math.min(t.days.length - 1, Math.max(0, +p[3] || 0)), p[4] === 'ai') : viewBook(t);
     else if (sec === 'book') html = viewBook(t);
     else if (sec === 'today') html = viewToday(t, p[3] === undefined || p[3] === 'full' ? undefined : +p[3], p.includes('full'));
     else if (sec === 'plan') html = viewPlan(t, p[3] === 'full');
@@ -56,6 +56,7 @@ function render() {
     else if (sec === 'hearts') html = viewHearts(t);
     else if (sec === 'offline') html = isEditor() ? viewOffline(t) : viewHub(t);
     else if (sec === 'firsts') html = viewFirsts(t);
+    else if (sec === 'spend') html = isEditor() ? viewSpend(t) : viewHub(t);
     else html = viewHub(t);
   } else if (p[0] === 'passport') html = viewPassport(p[1], p[2]);
   else if (p[0] === 'notebook') html = viewNotebook();
@@ -397,6 +398,7 @@ function viewHub(t) {
     tile('firsts', `#/t/${esc(t.id)}/firsts`, esc(L(`${st.firsts} ครั้งแรก`, `${st.firsts} firsts`))),
     `<a class="tile" href="#/passport"><span class="e">${ic('passport')}</span><b>${L('พาสปอร์ตเด็กๆ', "Kids' passports")}</b><small>${esc(kids.map((k) => `${kidName(k.slug)} ${t.days.filter((_, j) => dayStamped(t, j) || ticked(t, 'stamp.d' + j, k.slug)).length}`).join(' · '))} ${L('ตรา', 'stamps')}</small></a>`,
     tile('hearts', `#/t/${esc(t.id)}/hearts`, esc(hs.length ? L(`${hs.length} ดวงถึงเด็กๆ`, `${hs.length} for the kids`) : L('ส่งหัวใจถึงเด็กๆ', 'Send the kids a heart'))),
+    ed && spendOf(t.id).length ? `<a class="tile t-spend" href="#/t/${esc(t.id)}/spend"><span class="e">💸</span><b>${L('ค่าใช้จ่าย', 'Spending')}</b><small>${esc(sumMoney(spendOf(t.id)))}</small></a>` : '',
     `<a class="tile" href="#/notebook"><span class="e">${ic('notebook')}</span><b>${L('สมุดโน้ตนักเดินทาง', 'Travel notebook')}</b><small>${esc(L(`${S.reviews.filter((r) => r.trip === t.id).length} รีวิวในเล่มนี้`, `${S.reviews.filter((r) => r.trip === t.id).length} reviews in this book`))}</small></a>`,
     ed ? tile('offline', `#/t/${esc(t.id)}/offline`, esc(!off.got ? L('ยังไม่ได้เก็บ — กดก่อนขึ้นเครื่อง', 'Not stored yet — tap before the flight')
       : off.stale ? L(`เก็บเมื่อ ${off.when} · มีรูปใหม่ ${off.fresh} รูป กดเก็บเพิ่ม`, `Stored ${off.when} · ${off.fresh} new photo${off.fresh > 1 ? 's' : ''}, tap to top up`) : L(`เก็บไว้ในเครื่องแล้ว · ${off.when}`, `Stored on this phone · ${off.when}`)), off.got && !off.stale ? '' : 'warn') : '',
@@ -563,7 +565,7 @@ function askBlock(t, i) {
 <div class="row askrow"><input id="askq" class="field" type="search" enterkeyhint="send" maxlength="300" data-draft="ask:${esc(t.id)}" value="${esc(drafts['ask:' + t.id] ?? (a ? a.q : ''))}" placeholder="${L('เช่น วันนี้กินข้าวเที่ยงที่ไหน', 'e.g. where do we have lunch today?')}">
 <button class="btn" data-a="ask" ${dv} id="askgo">${L('ถาม', 'Ask')}</button><button class="btn ghost" data-a="storystop" id="askstop" hidden>■</button></div>
 <div class="chips">${ex.map((x) => `<button class="chip" data-a="ask" ${dv} data-v="${esc(x)}">${esc(x)}</button>`).join('')}</div>
-<div class="call calm askans" id="askans"${a && a.text ? '' : ' hidden'}>${a ? esc(a.text) : ''}</div></section>`;
+<div class="call calm askans" id="askans"${a && (a.text || a.html) ? '' : ' hidden'}>${a ? a.html || esc(a.text) : ''}</div></section>`;
 }
 function viewToday(t, j, full) {
   ensureWx(t);   // the live forecast arrives in the background and re-renders once (see core.js)
@@ -1344,7 +1346,7 @@ ${words.length ? `<section class="pp-page"><header><div><div class="kicker">${L(
 }
 
 /* ---------- record a day (editors) ---------- */
-function viewLog(t, i) {
+function viewLog(t, i, evening) {
   const d = t.days[i], es = entriesOf(t.id, i), ph = mediaOf(t.id, i), now = dayNow(t);
   const dk = `${t.id}:${i}`;
   const strip = t.days.map((x, j) => {
@@ -1357,7 +1359,10 @@ function viewLog(t, i) {
   const visited = new Set(placesOf(t.id, i).map((p) => p.key));
   const gotFirst = (key, k) => es.some((e) => e.kind === 'first' && e.first_key === key && e.child === k) || entriesOf(t.id).some((e) => e.kind === 'first' && e.first_key === key && e.child === k);
   const kids = children().map((c) => c.slug);
-  return `<div class="daystrip" role="tablist">${strip}</div>
+  // opened from the 21:30 reminder (/log/<i>/ai): the evening's three Claude buttons, one tap away at the top
+  const eve = evening && S.features.story ? `<div class="call pick evening"><b>🌙 ${L('ก่อนนอนคืนนี้', 'Before bed tonight')}</b><span class="label">${L('บันทึกรูป อารมณ์ คำพูดเด็กก่อน แล้วกดให้ Claude ช่วย', 'Record photos, moods and what they said first — then let Claude help')}</span>
+<div class="row"><button class="btn small" data-a="jump" data-v=".sumblk">📖 ${L('สรุปวันนี้', 'Today in brief')}</button><button class="btn small" data-a="jump" data-v="#storyblk">✨ ${L('นิทาน', 'Bedtime story')}</button><button class="btn small" data-a="jump" data-v=".talkblk">💬 ${L('คำถามก่อนนอน', 'Bedtime questions')}</button></div></div>` : '';
+  return `<div class="daystrip" role="tablist">${strip}</div>${eve}
 <div class="day" style="border:0;margin-top:0;padding-top:6px"><div class="hd"><div class="no">${String(i + 1).padStart(2, '0')}</div>
 <div class="dl">${L('วันที่', 'Day')} ${i + 1} · ${esc(fmtDay(d.date))}</div><div></div>
 <h3>${esc(T(d.title))}</h3>${artImg(t, i, 'hdart' + (dayStamped(t, i) ? '' : ' off'))}</div></div>
@@ -1438,5 +1443,25 @@ ${curs.length > 1 ? curs.map((c) => `<button class="chip" data-a="spendcur" data
 <input id="spendnote" class="field" style="flex:2;min-width:150px" maxlength="200" placeholder="${L('เช่น ติ่มซำมื้อเที่ยง', 'e.g. dim sum lunch')}" data-draft="sn:${esc(dk)}" value="${esc(drafts['sn:' + dk] || '')}">
 <button class="btn small" data-a="addspend" data-t="${esc(t.id)}" data-d="${i}">＋ ${L('เพิ่ม', 'Add')}</button></div>
 ${rows.length ? `<ul class="items">${rows.map((s) => { const c = SPEND_CATS.find((x) => x[0] === s.cat) || SPEND_CATS[5]; return `<li><div class="grow">${c[1]} <b>${esc(fmtMoney(s.amount, s.cur))}</b>${s.note ? ` · ${esc(s.note)}` : ''}</div><button class="mini" data-a="delspend" data-v="${esc(s.id)}" aria-label="${L('ลบ', 'Delete')}">✕</button></li>`; }).join('')}</ul>` : ''}
-${all.length ? `<p class="lede" style="margin:8px 0 0;font-size:14px">${L('ทั้งทริปจนถึงตอนนี้', 'Whole trip so far')}: <b>${esc(sumMoney(all))}</b> · ${L('อยู่ในสมุดของเราเท่านั้น ไม่เข้าเล่มพิมพ์', 'stays in our book, not in the printed one')}</p>` : ''}</section>`;
+${all.length ? `<p class="lede" style="margin:8px 0 0;font-size:14px">${L('ทั้งทริปจนถึงตอนนี้', 'Whole trip so far')}: <b>${esc(sumMoney(all))}</b> · <a href="#/t/${esc(t.id)}/spend">${L('ดูสรุป ›', 'See the summary ›')}</a> · ${L('อยู่ในสมุดของเราเท่านั้น ไม่เข้าเล่มพิมพ์', 'stays in our book, not in the printed one')}</p>` : ''}</section>`;
+}
+// the trip's spending (editors): totals per currency (no exchange rates — each currency stays its own), by category with bars,
+// day by day, and the biggest items; from what was typed on the record pages; never in the printed book
+function viewSpend(t) {
+  const all = spendOf(t.id);
+  if (!all.length) return `<h1 class="h2">💸 ${L('ค่าใช้จ่าย', 'Spending')}</h1><div class="empty">${L('ยังไม่มีรายการ — บันทึกได้ที่หน้าบันทึกของแต่ละวัน', 'Nothing yet — add spending on each day’s record page')}</div>`;
+  const curs = [...new Set(all.map((s) => s.cur))];
+  const byCur = curs.map((c) => {
+    const rows = all.filter((s) => s.cur === c), total = rows.reduce((a, s) => a + s.amount, 0);
+    const cats = SPEND_CATS.map(([k, e, th, en]) => ({ k, e, name: L(th, en), n: rows.filter((s) => (s.cat || 'other') === k).reduce((a, s) => a + s.amount, 0) })).filter((x) => x.n > 0).sort((a, b) => b.n - a.n);
+    const max = Math.max(...cats.map((x) => x.n));
+    return `<section class="blk spsum"><h3>${esc(c)} · ${esc(fmtMoney(total, c))}</h3><ul class="spbars">${cats.map((x) => `<li><span class="spl">${x.e} ${esc(x.name)}</span><span class="spbar"><i style="width:${Math.max(3, Math.round((x.n / max) * 100))}%"></i></span><b>${esc(fmtMoney(x.n, c))}</b><small>${Math.round((x.n / total) * 100)}%</small></li>`).join('')}</ul></section>`;
+  }).join('');
+  const days = t.days.map((d, i) => ({ d, i, rows: spendOf(t.id, i) })).filter((x) => x.rows.length);
+  const top = [...all].sort((a, b) => b.amount - a.amount).slice(0, 5);
+  return `<div class="part">${L('ค่าใช้จ่ายจริง', 'What we actually spent')}</div><h1 class="h2">💸 ${L('สรุปค่าใช้จ่ายทริป', 'Trip spending')}</h1>
+<p class="lede">${L(`ทั้งหมด ${all.length} รายการ · ${esc(sumMoney(all))} · แยกตามสกุลเงิน ไม่แปลงค่าเงิน · อยู่ในสมุดของเราเท่านั้น ไม่เข้าเล่มพิมพ์`, `${all.length} items · ${esc(sumMoney(all))} · each currency on its own, nothing converted · stays in our book, not in the printed one`)}</p>
+<div class="spgrid">${byCur}</div>
+<section class="blk"><h3>📅 ${L('รายวัน', 'Day by day')}</h3><ul class="items spdays">${days.map(({ d, i, rows }) => `<li><a class="grow" href="#/t/${esc(t.id)}/log/${i}"><b>${L('วันที่', 'Day')} ${i + 1}</b> · ${esc(fmtDay(d.date, { day: 'numeric', month: 'short' }))} · ${esc(T(d.title))}</a><b>${esc(sumMoney(rows))}</b></li>`).join('')}</ul></section>
+<section class="blk"><h3>🔝 ${L('รายการใหญ่สุด', 'The biggest items')}</h3><ul class="items">${top.map((s) => { const c = SPEND_CATS.find((x) => x[0] === s.cat) || SPEND_CATS[5]; return `<li><div class="grow">${c[1]} ${s.note ? esc(s.note) : esc(L(c[2], c[3]))} <small class="label">· ${L('วันที่', 'Day')} ${s.day + 1}</small></div><b>${esc(fmtMoney(s.amount, s.cur))}</b></li>`; }).join('')}</ul></section>`;
 }
