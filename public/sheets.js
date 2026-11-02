@@ -4,7 +4,8 @@
 /* ---------- writes (all through the offline queue) ---------- */
 function putEntry(t, row, id) {
   const body = { trip: t.id, day: row.day, kind: row.kind, child: row.child || null, text: row.text || '', mood: row.mood || null, first_key: row.first_key || null, lang: row.lang || null, highlight: !!row.highlight, at: row.at || Date.now() };
-  return enqueue({ method: 'PUT', url: '/api/b/entries/' + encodeURIComponent(id), body, local: { coll: 'entries', id, row: { ...body, created_by: S.me.name, mine: true } } });
+  const cur = S.entries.find((e) => e.id === id), tr = cur && cur.text === body.text ? cur.tr || null : null;   // an edited text drops its translation (the server does the same)
+  return enqueue({ method: 'PUT', url: '/api/b/entries/' + encodeURIComponent(id), body, local: { coll: 'entries', id, row: { ...body, tr, created_by: S.me.name, mine: true } } });
 }
 const delEntry = (id) => enqueue({ method: 'DELETE', url: '/api/b/entries/' + encodeURIComponent(id), local: { coll: 'entries', id, del: true } });
 let spendCat = 'food', spendCur = '';   // the spend box remembers the last category / money while recording
@@ -289,6 +290,20 @@ const A = {
     }
   },
   storystop() { if (storyCtl) storyCtl.abort(); },
+  // both languages: the server sends the day's untranslated words to Claude and saves each translation; then the state reloads
+  async translate(b) {
+    if (!navigator.onLine) { toast(L('ต้องต่อเน็ตเพื่อแปล', 'Translating needs a connection')); return; }
+    if (queue.length) { toast(L('รอให้บันทึกส่งเสร็จก่อน แล้วค่อยแปล', 'Wait for the records to upload, then translate')); return; }
+    b.disabled = true; b.setAttribute('aria-busy', 'true');
+    try {
+      const r = await api('POST', '/api/b/translate', { trip: b.dataset.t, day: +b.dataset.d });
+      await load(); safeRender();
+      toast(L(`แปลแล้ว ${r.n} ข้อความ`, `${r.n} translated`));
+    } catch (e) {
+      b.disabled = false; b.removeAttribute('aria-busy');
+      toast(e.code === 422 ? L('ไม่มีข้อความใหม่ให้แปล', 'Nothing new to translate') : e.code === 429 ? L('วันนี้ใช้ Claude ครบจำนวนแล้ว — พรุ่งนี้ใช้ต่อได้', 'That’s all the Claude writing for today — more tomorrow') : L('แปลไม่สำเร็จ ลองใหม่อีกครั้ง', 'That didn’t work — try again'));
+    }
+  },
   // ask the guide: the question goes with excerpts of this book's manual (picked on the server), the answer streams back; never saved —
   // the last answer stays on this page (askAns) until another question; a chip (data-v) asks its own question
   async ask(b) {

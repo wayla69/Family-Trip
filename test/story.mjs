@@ -27,7 +27,9 @@ const mock = http.createServer((req, res) => {
     ev('message_start', { message: { id: 'msg_1', type: 'message', role: 'assistant', model: b.model, content: [], stop_reason: null, stop_sequence: null, usage: { input_tokens: 10, output_tokens: 0 } } });
     ev('content_block_start', { index: 0, content_block: { type: 'text', text: '' } });
     const refuse = facts.includes('REFUSE'), slow = facts.includes('SLOW');
-    const parts = refuse ? ['ขอโทษ'] : ['# นิทาน\n', '**กาลครั้งหนึ่ง** มีมี่บอกว่า ', '“ปลาอยู่ในน้ำเหมือนหนูเลย” ', 'ฝันดีนะ'];
+    const trans = String(b.system).startsWith('Translate');   // translate: answer JSON [{id, tr}] for the items it was given
+    const parts = trans ? [JSON.stringify(JSON.parse(facts).map((x) => ({ id: x.id, tr: `${x.to}:${x.text}` })))]
+      : refuse ? ['ขอโทษ'] : ['# นิทาน\n', '**กาลครั้งหนึ่ง** มีมี่บอกว่า ', '“ปลาอยู่ในน้ำเหมือนหนูเลย” ', 'ฝันดีนะ'];
     // (IncomingMessage 'close' fires once the body is read, so only the response side tells us the client went away)
     let closed = false; res.on('close', () => { if (!res.writableEnded) { closed = true; upstreamClosedEarly = true; } });
     for (const p of parts) {
@@ -50,7 +52,7 @@ const dbName = 'mb_story_' + Date.now().toString(36); await admin.query(`CREATE 
 const u = new URL(process.env.TEST_DATABASE_URL); u.pathname = '/' + dbName;
 const port = await freePort(), data = fs.mkdtempSync(path.join(os.tmpdir(), 'mb-story-'));
 const srv = spawn(process.execPath, ['server/index.js'], { cwd: process.cwd(), stdio: ['ignore', 'ignore', 'inherit'],
-  env: { ...process.env, PORT: String(port), DATA_DIR: data, DATABASE_URL: u.toString(), ANTHROPIC_API_KEY: 'test-key', ANTHROPIC_BASE_URL: `http://localhost:${mockPort}`, STORY_DAILY: '12' } });
+  env: { ...process.env, PORT: String(port), DATA_DIR: data, DATABASE_URL: u.toString(), ANTHROPIC_API_KEY: 'test-key', ANTHROPIC_BASE_URL: `http://localhost:${mockPort}`, STORY_DAILY: '13' } });
 const BASE = `http://localhost:${port}`;
 try {
   for (let i = 0; i < 80; i++) { try { if ((await fetch(BASE + '/healthz')).ok) break; } catch (_) {} await new Promise((r) => setTimeout(r, 250)); }
@@ -124,6 +126,19 @@ try {
   const re = events(await (await ask({ trip: T, day: 1, lang: 'en', q: 'Where can we eat dim sum?' })).text());
   ok(re.at(-1).ev === 'done' && calls.at(-1).body.messages[0].content.toLowerCase().includes('dim sum') && calls.at(-1).body.system.includes('ONLY the excerpts'), 'ask the guide (en): dim sum places from the manual');
 
+  // both languages: the day's words go to Claude once, each translation is saved on its entry and dropped when the text changes
+  const tl = (b) => fetch(BASE + '/api/b/translate', { method: 'POST', headers: H, body: JSON.stringify(b) });
+  const bt = calls.length, rt = await tl({ trip: T, day: 1 });
+  const ent = async (id) => (await state()).entries.find((e) => e.id === id);
+  ok(rt.ok && (await rt.json()).n === 3 && calls.length === bt + 1, 'translate: quote, favourite and summary of day 1 in one call');
+  const items = JSON.parse(calls.at(-1).body.messages[0].content);
+  ok(items.find((x) => x.text === 'ปลาอยู่ในน้ำเหมือนหนูเลย').to === 'en' && items.find((x) => x.text === 'We went to Disneyland.').to === 'th' && !JSON.stringify(calls.at(-1).body).includes('base64'), 'translate: Thai → English, English → Thai, words only');
+  ok((await ent('q-story-0001')).tr === 'en:ปลาอยู่ในน้ำเหมือนหนูเลย' && (await ent(`${T}.sum.d1`)).tr === 'th:We went to Disneyland.', 'translate: saved on each entry');
+  ok((await tl({ trip: T, day: 1 })).status === 422 && calls.length === bt + 1, 'translate: nothing new → 422, model not called');
+  await put('/api/b/entries/q-story-0001', { trip: T, day: 1, kind: 'quote', child: 'mika', text: 'ปลาอยู่ในน้ำเหมือนหนูเลย', highlight: true });
+  await put(`/api/b/entries/${T}.fav.d1`, { trip: T, day: 1, kind: 'fav', text: 'ไอติมช็อกโกแลต' });
+  ok((await ent('q-story-0001')).tr && !(await ent(`${T}.fav.d1`)).tr, 'translate: kept when only the star changes, dropped when the text changes');
+
   const vck = (await fetch(BASE + '/v/grandma', { redirect: 'manual' })).headers.get('set-cookie');
   ok(!vck || (await fetch(BASE + '/api/b/story', { method: 'POST', headers: { ...H, cookie: vck.split(';')[0] }, body: '{}' })).status === 403, 'viewer cannot ask for stories');
 
@@ -152,12 +167,13 @@ try {
   await page.goto(`${BASE}/#/t/${T}/book`); await page.waitForSelector('#d1');
   ok(await page.locator('#d1 .call.pick', { hasText: 'ฝันดี' }).count() === 1, 'book: bedtime story on the day page');
   ok(await page.locator('#d1 .daysum').count() === 1, 'book: the day summary leads the day page');
+  ok(await page.locator('#d1 .tr', { hasText: 'en:ปลาอยู่ในน้ำเหมือนหนูเลย' }).count() >= 1 && await page.locator('#d1 .daysum .tr').count() === 0, 'book: the translation under the quote; the re-written summary lost its old one');
   ok(errs.length === 0, 'no page errors ' + errs.join(' | '));
 
-  // daily cap (STORY_DAILY=12 here, stories, summaries, notes and guide answers together): the 12th model call goes through, the 13th is refused before Claude is called
-  ok(calls.length === 11 && events(await (await story({ trip: T, day: 1, lang: 'th' })).text()).at(-1).ev === 'done', 'daily cap: 12th call of the day still written');
+  // daily cap (STORY_DAILY=13 here, stories, summaries, notes, guide answers and translations together): the 13th model call goes through, the 14th is refused before Claude is called
+  ok(calls.length === 12 && events(await (await story({ trip: T, day: 1, lang: 'th' })).text()).at(-1).ev === 'done', 'daily cap: 13th call of the day still written');
   const capped = await story({ trip: T, day: 1, lang: 'th' });
-  ok(capped.status === 429 && (await capped.json()).error === 'limit' && calls.length === 12, 'daily cap: 13th call refused with 429, model not called');
+  ok(capped.status === 429 && (await capped.json()).error === 'limit' && calls.length === 13, 'daily cap: 14th call refused with 429, model not called');
   ok((await story({ trip: T, day: 0, lang: 'th' })).status === 422, 'daily cap: an empty day still answers 422 (nothing counted)');
   await browser.close();
 } finally {

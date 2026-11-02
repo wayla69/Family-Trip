@@ -707,8 +707,10 @@ function favouritesHtml(t) {
 function photoBtn(t, m) {
   return `<button data-a="lb" data-v="${esc(m.id)}" data-t="${esc(t.id)}" aria-label="${esc(m.caption || L('รูป', 'Photo'))}"><img loading="lazy" src="${esc(imgT(m))}" alt="">${m.highlight ? '<span class="star">⭐</span>' : ''}${m.caption ? `<span class="cap">${esc(m.caption)}</span>` : ''}${m.pending ? '<span class="cap">⏳</span>' : ''}</button>`;
 }
+// the other language under a text (Thai ↔ English), when "translate this day" has run — the book reads in both
+const trLine = (e) => (e && e.tr ? `<span class="tr" lang="${/[\u0E00-\u0E7F]/.test(e.tr) ? 'th' : 'en'}">${esc(e.tr)}</span>` : '');
 function quoteCall(e, pick) {
-  return `<div class="call ${pick ? 'pick' : 'info'}"><div class="who">${kidBadge(e.child)}${esc(kidName(e.child))}${e.pending ? ' <span class="tag">⏳</span>' : ''}</div>${pick ? `<span class="lbl">${L('คำพูดที่ชอบ', 'Favourite words')}</span>` : ''}<q>${esc(e.text)}</q></div>`;
+  return `<div class="call ${pick ? 'pick' : 'info'}"><div class="who">${kidBadge(e.child)}${esc(kidName(e.child))}${e.pending ? ' <span class="tag">⏳</span>' : ''}</div>${pick ? `<span class="lbl">${L('คำพูดที่ชอบ', 'Favourite words')}</span>` : ''}<q>${esc(e.text)}</q>${trLine(e)}</div>`;
 }
 function dayPage(t, i) {
   const d = t.days[i], es = entriesOf(t.id, i), ph = mediaOf(t.id, i), pl = placesOf(t.id, i);
@@ -733,17 +735,17 @@ function dayPage(t, i) {
 <div class="body">
 ${route.length ? `<aside class="route"><span class="label">${L('ที่ไปวันนี้', 'Getting around')}</span><ol>${route.map((p) => `<li class="${visited.has(p.key) ? 'done' : ''}"><b>${placeA(t, p)}</b>${visited.has(p.key) ? `<small>${L('ไปแล้ว', 'visited')} ✓</small>` : ''}</li>`).join('')}</ol></aside>` : '<div></div>'}
 <div>
-${sum ? `<p class="daysum">${esc(sum.text)}</p>` : ''}
+${sum ? `<p class="daysum">${esc(sum.text)}${trLine(sum)}</p>` : ''}
 ${ph.length ? `<div class="mosaic">${ph.map((m) => photoBtn(t, m)).join('')}</div>` : ''}
 ${audioOf(t.id, i).length ? `<div class="clips noprint">${audioOf(t.id, i).map((m) => `<div class="clip"><span>🎙️ ${esc(m.caption || L('เสียงจากวันนี้', 'A voice from today'))}</span>${clipPlayer(m)}</div>`).join('')}</div>` : ''}
 ${timeline.length ? `<ol class="tl">${timeline.map((x) => `<li><time>${esc(fmtTime(x.at, t.timezone))}</time><div>${x.h}</div></li>`).join('')}</ol>` : ''}
-${note ? `<div class="call calm"><span class="lbl">${L('บันทึกพ่อแม่', "Parents' note")}</span>${esc(note.text)}</div>` : ''}
+${note ? `<div class="call calm"><span class="lbl">${L('บันทึกพ่อแม่', "Parents' note")}</span>${esc(note.text)}${trLine(note)}</div>` : ''}
 ${story ? `<div class="call pick" style="white-space:pre-line"><span class="lbl">${L('นิทานก่อนนอน', 'Bedtime story')}</span>${bedBtn(story)}${esc(story.text)}</div>` : ''}
 </div></div>
 ${food.length || fav || firsts.length ? `<div class="foot3">
 ${food.length ? `<div><h4>${L('กินอะไร', 'Where we ate')}</h4><ul>${food.map((p) => `<li>${esc(T(p.name))}</li>`).join('')}</ul></div>` : ''}
-${fav ? `<div><h4>${L('ของโปรดวันนี้', 'Favourite today')}</h4><p>${esc(fav.text)}</p></div>` : ''}
-${firsts.length ? `<div><h4>${L('ครั้งแรกวันนี้', 'First today')}</h4><ul>${firsts.map((e) => { const f = firstLabel(t, e.first_key); return `<li>${esc(f.e)} ${esc(e.first_key === 'custom' ? e.text : f.t)} — ${esc(kidName(e.child))}</li>`; }).join('')}</ul></div>` : ''}
+${fav ? `<div><h4>${L('ของโปรดวันนี้', 'Favourite today')}</h4><p>${esc(fav.text)}${trLine(fav)}</p></div>` : ''}
+${firsts.length ? `<div><h4>${L('ครั้งแรกวันนี้', 'First today')}</h4><ul>${firsts.map((e) => { const f = firstLabel(t, e.first_key); return `<li>${esc(f.e)} ${esc(e.first_key === 'custom' ? e.text : f.t)} — ${esc(kidName(e.child))}${e.first_key === 'custom' ? trLine(e) : ''}</li>`; }).join('')}</ul></div>` : ''}
 </div>` : ''}
 ${isEditor() ? `<p class="noprint" style="margin-top:10px"><a class="btn ghost small" href="#/t/${esc(t.id)}/log/${i}">✏️ ${L('แก้ไขวันนี้', 'Edit this day')}</a></p>` : ''}
 </article>`;
@@ -829,7 +831,7 @@ ${stays.length ? `<h4>🛏️ ${L('เรานอนที่ไหนบ้า
   const dayPages = days.map((i) => pg('dayp', dayPage(t, i))).join('');
   // 5 · firsts + 6 · in their own words
   const firstsPg = firsts.length ? pg('firstsp', `${head(L('เหรียญตรา', 'Badges'), L('ครั้งแรกของทริปนี้', 'Firsts on this trip'))}<div class="badges">${firsts.map((e) => { const f = firstLabel(t, e.first_key); return `<div class="bdg"><span>${esc(e.first_key === 'custom' ? '⭐' : f.e)}</span><b>${esc(e.first_key === 'custom' ? e.text : f.t)}</b><small>${esc(kidName(e.child))} · ${L('วันที่', 'Day')} ${e.day + 1}</small></div>`; }).join('')}</div>`) : '';
-  const wordsPg = quotes.length ? pg('wordsp', `${head(L('คำพูดของเด็กๆ', 'In their own words'), L('สิ่งที่หนูพูด', 'Things they said'))}<div class="qgrid">${quotes.map((e) => `<div class="call ${e.highlight ? 'pick' : 'info'}"><div class="who">${kidBadge(e.child)}${esc(kidName(e.child))} · ${L('วันที่', 'Day')} ${e.day + 1}</div><q>${esc(e.text)}</q></div>`).join('')}</div>`) : '';
+  const wordsPg = quotes.length ? pg('wordsp', `${head(L('คำพูดของเด็กๆ', 'In their own words'), L('สิ่งที่หนูพูด', 'Things they said'))}<div class="qgrid">${quotes.map((e) => `<div class="call ${e.highlight ? 'pick' : 'info'}"><div class="who">${kidBadge(e.child)}${esc(kidName(e.child))} · ${L('วันที่', 'Day')} ${e.day + 1}</div><q>${esc(e.text)}</q>${trLine(e)}</div>`).join('')}</div>`) : '';
   // 7 · a passport spread per child
   const ppPages = kids.map((kid) => {
     const name = kidName(kid), pp = t.passport || {}, myFirsts = firsts.filter((e) => e.child === kid), mine = drawingsOf(t, kid), cert = pp.certificate, cl = (pp.lists || []).find((l) => l.certificate);
@@ -879,6 +881,16 @@ function msgBlock(t, i, dk) {
 <button class="btn ghost small" data-a="storystop" id="msgstop" hidden>■ ${L('หยุด', 'Stop')}</button>
 <button class="btn small" data-a="share" data-src="msg" data-t="${esc(t.id)}" data-d="${i}" id="msgsend"${dr ? '' : ' hidden'}>${navigator.share ? `📤 ${L('ส่ง', 'Send')}` : `📋 ${L('คัดลอก', 'Copy')}`}</button>
 <span class="label" id="msgmsg"></span></div></section>`;
+}
+
+/* ---------- both languages (record page): Claude translates the day's words Thai ↔ English; shown under each text in the book ---------- */
+function trBlock(t, i) {
+  if (!S.features.story) return '';
+  const es = entriesOf(t.id, i).filter((e) => ['quote', 'note', 'fav', 'sum', 'first'].includes(e.kind) && e.text && (e.kind !== 'first' || e.first_key === 'custom'));
+  const todo = es.filter((e) => !e.tr).length;
+  return `<section class="blk trblk"><h3>🌐 ${L('สองภาษา', 'Both languages')} <span class="label">${L(`แปลแล้ว ${es.length - todo}/${es.length}`, `${es.length - todo}/${es.length} translated`)}</span></h3>
+<p class="label">${L('ให้ Claude แปลคำพูด บันทึก ของโปรด และสรุปของวันนี้ ไทย↔อังกฤษ ให้สมุดอ่านได้ทั้งสองภาษา · ส่งเฉพาะข้อความ ไม่ส่งรูป', 'Claude translates today’s quotes, note, favourite and summary Thai ↔ English so the book reads in both · only the words go, never photos')}</p>
+<div class="row" style="margin-top:6px"><button class="btn small" data-a="translate" data-t="${esc(t.id)}" data-d="${i}"${todo ? '' : ' disabled'}>🌐 ${todo ? L(`แปลวันนี้ (${todo})`, `Translate today (${todo})`) : L('แปลครบแล้ว', 'All translated')}</button></div></section>`;
 }
 
 /* ---------- bedtime story by Claude (editors, only when pressed) ---------- */
@@ -1314,6 +1326,7 @@ ${kids.map((k) => `<div class="moodrow">${kidBadge(k)}<div class="opts">${(t.moo
 <section class="blk"><h3>📝 ${L('บันทึกพ่อแม่', "Parents' note")}</h3>
 <textarea id="notetext" class="field" data-a-blur="note" data-t="${esc(t.id)}" data-d="${i}" data-draft="n:${esc(dk)}" placeholder="${L('บันทึกเมื่อแตะออกจากช่อง · เว้นว่าง = ลบ', 'Saved when you leave the box · empty = delete')}">${esc(drafts['n:' + dk] ?? (note ? note.text : ''))}</textarea></section>
 ${sumBlock(t, i, dk)}
+${trBlock(t, i)}
 
 <section class="blk"><h3>🌟 ${L('ครั้งแรก', 'Firsts')} <span class="label">${L('แตะรูปเด็กเพื่อติ๊ก', 'tap a child to tick')}</span></h3>
 <div class="firsts">${t.firsts.map((f) => `<div class="first"><span class="e">${esc(f.emoji)}</span><span class="t">${esc(T(f.label))}</span><span class="kids">${kids.map((k) => `<button data-a="first" data-v="${esc(f.key)}" data-k="${k}" data-t="${esc(t.id)}" data-d="${i}" aria-pressed="${gotFirst(f.key, k)}" aria-label="${esc(kidName(k))}: ${esc(T(f.label))}">${kidBadge(k, !gotFirst(f.key, k))}</button>`).join('')}</span></div>`).join('')}</div>
