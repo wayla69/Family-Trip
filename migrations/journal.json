@@ -13,6 +13,7 @@
     { "id": "0010", "file": "0010_entry_translation.sql" },
     { "id": "0011", "file": "0011_bedtime_talk.sql" },
     { "id": "0012", "file": "0012_viewer_groups.sql" },
-    { "id": "0013", "file": "0013_ai_usage.sql" }
+    { "id": "0013", "file": "0013_ai_usage.sql" },
+    { "id": "0014", "file": "0014_letter.sql" }
   ]
 }

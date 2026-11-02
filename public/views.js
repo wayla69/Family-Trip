@@ -266,6 +266,7 @@ ${firsts.length ? `<div class="part">${L('ครั้งแรกของห�
 ${drawingsHtml(t)}
 ${isEditor() && S.features.story && days.length ? storyBlock(t, null)
     : story ? `<div class="part">${L('นิทานของทั้งทริป', 'The story of the trip')}</div><div class="call calm" style="white-space:pre-line">${bedBtn(story)}${esc(story.text)}</div>` : ''}
+${letterBlock(t, days.length)}
 ${days.map((i) => dayPage(t, i)).join('') || `<div class="empty">${castHtml((t.theme.children || []).map((k) => k.slug))}${L('ยังไม่มีบันทึก — ', 'Nothing recorded yet — ')}${edit ? `<a href="#/t/${esc(t.id)}/log/${Math.max(0, dayNow(t))}">${L('เริ่มบันทึกวันแรก', 'start with a day')}</a>` : L('รอพ่อแม่บันทึกระหว่างทริป', 'the grown-ups will fill it in during the trip')}</div>`}
 <div class="row noprint" style="margin:28px 0 8px"><a class="btn small" href="/api/b/pdf/${esc(t.id)}" download data-a="pdf">📕 ${L('สมุดความทรงจำ (PDF A4)', 'Memory book (PDF A4)')}</a><a class="btn ghost small" href="#/print/${esc(t.id)}">👀 ${L('ดูตัวอย่างเล่ม', 'Preview the book')}</a><button class="btn ghost small" data-a="print">🖨️ ${L('พิมพ์หน้านี้', 'Print this page')}</button><button class="btn ghost small" data-a="copytext">📋 ${L('คัดลอกเป็นข้อความ', 'Copy as text')}</button></div></div>`;
 }
@@ -875,9 +876,11 @@ ${cert && cl && certEarned(t, kid) ? `<div class="pcert"><div class="kicker">${L
   const storyPg = story ? pg('storyp', `${head(L('นิทานของทั้งทริป', 'The story of the trip'), esc(short))}<div class="call calm storytxt">${esc(story.text)}</div>`) : '';
   const rs = S.reviews.filter((r) => r.trip === t.id && (r.rating || r.note));
   const notesPg = rs.length ? pg('notesp', `${head(L('บันทึกของพ่อแม่', "Parents' notes"), L('สำหรับทริปหน้า', 'For the next trip'))}<ul class="nblist">${rs.sort((a, b) => (b.rating || 0) - (a.rating || 0)).map((r) => `<li class="nbrow"><div class="nbhead"><span class="st">${r.rating ? starsTxt(r.rating) : '—'}</span><b>${RKIND[r.kind][0]} ${esc(T(r.name))}</b>${kidFaces(r.kids)}</div><div class="label">${(r.tags || []).map((k) => esc(rtagLabel(r.kind, k))).join(' · ')}</div>${r.note ? `<p>${esc(r.note)}</p>` : ''}</li>`).join('')}</ul>`) : '';
+  const letter = entriesOf(t.id).find((e) => e.kind === 'letter' && e.text);   // the letter to the kids: the last page before the back cover
+  const letterPg = letter ? pg('letterp', `${head(L('จดหมายถึงลูก', 'A letter to you'), L('ไว้อ่านตอนโต', 'For when you are older'))}<div class="letter">${esc(letter.text)}</div>`) : '';
   const back = pg('back', `<div class="bk">${castHtml(kids)}<h2>${L('จบเล่ม', 'The end')}</h2><p>${esc(short)} · ${esc(fmtRange(t))}</p><p class="label">${L(`${st.photos} รูป · ${st.quotes} คำพูด · ${st.firsts} ครั้งแรก · บันทึก ${days.length} วัน`, `${st.photos} photos · ${st.quotes} quotes · ${st.firsts} firsts · ${days.length} days recorded`)}</p><p class="label">Memory Bookshelf · ${esc(printed)}</p></div>`);
   return `<div class="pbook noprint-bar"><a class="btn small" href="/api/b/pdf/${esc(t.id)}" download data-a="pdf">⬇ ${L('ดาวน์โหลด PDF', 'Download PDF')}</a><a class="btn ghost small" href="#/t/${esc(t.id)}">‹ ${L('กลับไปสมุด', 'Back to the book')}</a><span class="label">${L('ตัวอย่างสมุดความทรงจำ — หน้า A4 ตามที่จะพิมพ์', 'Memory book preview — A4 pages as they will print')}</span></div>
-${cover}${numbers}${contents}${dayPages}${firstsPg}${wordsPg}${ppPages}${heartsPg}${storyPg}${notesPg}${back}`;
+${cover}${numbers}${contents}${dayPages}${firstsPg}${wordsPg}${ppPages}${heartsPg}${storyPg}${notesPg}${letterPg}${back}`;
 }
 
 /* ---------- the day in a few lines (record page): typed, or written by Claude from the day's notes; shown on the book's day page ---------- */
@@ -924,6 +927,31 @@ ${S.features.story ? `<div class="row" style="margin-top:6px"><button class="btn
 <button class="btn ghost small" data-a="storystop" id="talkstop" hidden>■ ${L('หยุด', 'Stop')}</button>
 ${e ? `<button class="mini" data-a="delentry" data-v="${esc(e.id)}">${L('ลบ', 'Delete')}</button>` : ''}
 <span class="label">${L('ส่งเฉพาะข้อความที่บันทึกไว้ ไม่ส่งรูป', 'Sends only the written notes — never photos')}</span></div>` : ''}</section>`;
+}
+
+/* ---------- a letter to the kids for when they are older (book page; the last page of the PDF): typed, or drafted by Claude
+   from the whole trip's notes, then edited by hand (blur saves). Relatives read it; only the family writes it. ---------- */
+function letterBlock(t, nDays) {
+  const e = entriesOf(t.id).find((x) => x.kind === 'letter'), ed = isEditor();
+  if (!ed) return e && e.text ? `<div class="part">💌 ${L('จดหมายถึงลูก', 'A letter to you')}</div><div class="call calm letter">${esc(e.text)}</div>` : '';
+  const ai = S.features.story && nDays;
+  return `<section class="blk letterblk"><h3>💌 ${L('จดหมายถึงมีมี่และมีก้า', 'A letter to Mimi and Mika')} <span class="label">${L('ไว้อ่านตอนโต · หน้าสุดท้ายของ PDF', 'for when they are older · the last page of the PDF')}</span></h3>
+<textarea id="lettertext" class="field" rows="8" data-a-blur="letter" data-t="${esc(t.id)}" data-d="" data-draft="l:${esc(t.id)}" maxlength="4000" placeholder="${L('ถึงมีมี่และมีก้า… · บันทึกเมื่อแตะออกจากช่อง', 'Dear Mimi and Mika… · saved when you leave the box')}">${esc(drafts['l:' + t.id] ?? (e ? e.text : ''))}</textarea>
+${ai ? `<div class="row noprint" style="margin-top:6px"><button class="btn small" data-a="story" data-m="letter" data-t="${esc(t.id)}" data-d="" id="lettergo">✨ ${e ? L('ให้ Claude ร่างใหม่', 'Draft again') : L('ให้ Claude ร่างจดหมาย', 'Ask Claude for a first draft')}</button>
+<button class="btn ghost small" data-a="storystop" id="letterstop" hidden>■ ${L('หยุด', 'Stop')}</button>
+<span class="label" id="lettermsg">${L('จากบันทึกทั้งทริป ไม่ส่งรูป · แก้ในช่องให้เป็นคำของเราเอง', 'From the whole trip’s notes, never photos · make it your own words in the box')}</span></div>` : ''}</section>`;
+}
+/* ---------- what our family likes (travel notebook, editors): Claude reads the notebook of every trip ---------- */
+let likes = undefined;   // undefined = not asked yet · null = none saved · {text, lang, at, n}
+function likesBlock(n) {
+  if (!isEditor()) return '';
+  if (likes === undefined && navigator.onLine) { likes = null; api('GET', '/api/b/likes').then((r) => { likes = r; safeRender(); }, () => {}); }
+  const ai = S.features.story && n;
+  if (!ai && !(likes && likes.text)) return '';
+  return `<section class="blk likesblk"><h3>✨ ${L('ครอบครัวเราชอบอะไร', 'What our family likes')}${likes && likes.at ? ` <span class="label">${esc(new Date(likes.at).toLocaleDateString(LOC(), { day: 'numeric', month: 'short', year: 'numeric' }))}</span>` : ''}</h3>
+<div class="call calm" id="likestext" style="white-space:pre-line"${likes && likes.text ? '' : ' hidden'}>${likes && likes.text ? esc(likes.text) : ''}</div>
+${ai ? `<div class="row" style="margin-top:6px"><button class="btn small" data-a="likes" id="likesgo">✨ ${likes && likes.text ? L('สรุปใหม่', 'Sum up again') : L('ให้ Claude สรุปจากสมุดทุกทริป', 'Ask Claude to sum up every trip')}</button>
+<span class="label">${L('ส่งเฉพาะข้อความในสมุดโน้ต ไม่ส่งรูป', 'Sends only the notebook’s words — never photos')}</span></div>` : ''}</section>`;
 }
 
 /* ---------- bedtime story by Claude (editors, only when pressed) ---------- */
@@ -1026,6 +1054,7 @@ function viewNotebook() {
   const live = curTrip();
   return `<div class="part">${L('สมุดโน้ตนักเดินทาง', 'Travel notebook')}</div><h1 class="h2">${L('อะไรเวิร์กกับครอบครัวเรา', 'What works for our family')}</h1>
 <p class="lede">${L('รีวิวที่พัก ร้านอาหาร และสถานที่จากทุกทริป — ให้ดาวในหน้า "บันทึก" ของแต่ละวัน แล้วใช้หน้านี้วางแผนทริปหน้า', 'Stays, food and places from every trip — rate them on each day’s Record page, then plan the next trip from here')}</p>
+${likesBlock(rs.length)}
 ${rs.length ? `<div class="nbsum"><div><h4>👍 ${L('สิ่งที่เวิร์ก', 'What worked')}</h4><div class="row">${good.map(chip).join('') || `<span class="label">${L('ยังไม่มี', 'nothing yet')}</span>`}</div></div>
 <div><h4>👎 ${L('ครั้งหน้าเลี่ยง', 'Avoid next time')}</h4><div class="row">${bad.map(chip).join('') || `<span class="label">${L('ยังไม่มี', 'nothing yet')}</span>`}</div></div></div>
 ${sections}

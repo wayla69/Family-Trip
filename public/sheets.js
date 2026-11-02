@@ -241,7 +241,7 @@ const A = {
   // story/sum are saved by the server, so the page reloads the state; a summary lands in its textarea and stays editable (blur saves)
   async story(b) {
     if (storyCtl) return;
-    const mode = ['sum', 'msg', 'talk'].includes(b.dataset.m) ? b.dataset.m : 'story', sum = mode === 'sum' || mode === 'msg';   // sum/msg write into a textarea; story/talk into a box
+    const mode = ['sum', 'msg', 'talk', 'letter'].includes(b.dataset.m) ? b.dataset.m : 'story', sum = ['sum', 'msg', 'letter'].includes(mode);   // sum/msg write into a textarea; story/talk into a box
     const t = trip(b.dataset.t), day = b.dataset.d === '' ? null : +b.dataset.d;
     if (!navigator.onLine) { toast(L('ต้องต่อเน็ตเพื่อใช้ Claude', 'Claude needs a connection')); return; }
     const box = $(`#${mode}text`), msg = sum ? $(`#${mode}msg`) : box, before = sum ? box.value : '';
@@ -276,7 +276,7 @@ const A = {
           } else if (ev === 'done') {
             if (sum) delete drafts[box.dataset.draft];   // the saved summary wins over a half-typed draft
             storyCtl = null; await load(); render();
-            toast(sum ? L('เก็บสรุปไว้ในสมุดแล้ว — แก้ในช่องได้', 'Summary saved in the book — edit it in the box') : mode === 'talk' ? L('คำถามอยู่ในโหมดเด็กแล้ว — แตะ 💬 คุยกัน', 'The questions are in kid mode — tap 💬 Let’s talk') : L('เก็บนิทานไว้ในสมุดแล้ว', 'Story saved in the book'));
+            toast(mode === 'letter' ? L('เก็บร่างจดหมายแล้ว — แก้ในช่องให้เป็นคำของเราเอง', 'Draft saved — make it your own words in the box') : sum ? L('เก็บสรุปไว้ในสมุดแล้ว — แก้ในช่องได้', 'Summary saved in the book — edit it in the box') : mode === 'talk' ? L('คำถามอยู่ในโหมดเด็กแล้ว — แตะ 💬 คุยกัน', 'The questions are in kid mode — tap 💬 Let’s talk') : L('เก็บนิทานไว้ในสมุดแล้ว', 'Story saved in the book'));
           } else if (ev === 'error') say(d.error === 'refusal' ? L('Claude เขียนอันนี้ไม่ได้ ลองเพิ่มบันทึกแล้วลองใหม่', 'Claude could not write this one — try again later') : L('ไม่สำเร็จ ลองใหม่อีกครั้ง', 'That didn’t work — try again'));
         }
       }
@@ -290,6 +290,38 @@ const A = {
     }
   },
   storystop() { if (storyCtl) storyCtl.abort(); },
+  // what our family likes: the notebook of every trip → Claude → saved for both parents (settings), streamed into #likestext
+  async likes(b) {
+    if (storyCtl) return;
+    if (!navigator.onLine) { toast(L('ต้องต่อเน็ตเพื่อใช้ Claude', 'Claude needs a connection')); return; }
+    const box = $('#likestext'), before = box.textContent; box.hidden = false; box.textContent = ''; b.disabled = true;
+    storyCtl = new AbortController();
+    let text = '';
+    try {
+      const r = await fetch('/api/b/likes', { method: 'POST', credentials: 'same-origin', signal: storyCtl.signal, headers: { 'x-mb': '1', 'content-type': 'application/json' }, body: JSON.stringify({ lang }) });
+      if (r.status === 422) { box.textContent = L('ยังไม่มีรีวิวในสมุดโน้ต — ให้ดาวที่พัก ร้าน สถานที่ ในหน้าบันทึกก่อน', 'No reviews yet — rate stays, food and places on the record pages first'); return; }
+      if (r.status === 429) { box.textContent = L('วันนี้ใช้ Claude ครบจำนวนแล้ว — พรุ่งนี้ใช้ต่อได้', 'That’s all the Claude writing for today — more tomorrow'); return; }
+      if (!r.ok) throw new Error('http ' + r.status);
+      const rd = r.body.getReader(), dec = new TextDecoder();
+      let buf = '';
+      for (;;) {
+        const { done, value } = await rd.read(); if (done) break;
+        buf += dec.decode(value, { stream: true });
+        let i;
+        while ((i = buf.indexOf('\n\n')) >= 0) {
+          const chunk = buf.slice(0, i); buf = buf.slice(i + 2);
+          let ev = null, data = '';
+          chunk.split('\n').forEach((l) => { if (l.startsWith('event: ')) ev = l.slice(7); else if (l.startsWith('data: ')) data += l.slice(6); });
+          const d = JSON.parse(data || '{}');
+          if (!ev) { text += d.t; box.textContent = text; }
+          else if (ev === 'done') { likes = d; storyCtl = null; render(); toast(L('เก็บสรุปไว้แล้ว', 'Saved')); }
+          else if (ev === 'error') box.textContent = L('ไม่สำเร็จ ลองใหม่อีกครั้ง', 'That didn’t work — try again');
+        }
+      }
+    } catch (e) {
+      box.textContent = e.name === 'AbortError' ? before : L('ไม่สำเร็จ ลองใหม่อีกครั้ง', 'That didn’t work — try again');
+    } finally { storyCtl = null; aiUseAt = 0; const g = $('#likesgo'); if (g) g.disabled = false; }
+  },
   jump(b) { const el = $(b.dataset.v); if (el) { el.scrollIntoView({ behavior: matchMedia('(prefers-reduced-motion: reduce)').matches ? 'auto' : 'smooth', block: 'start' }); el.classList.remove('flash'); void el.offsetWidth; el.classList.add('flash'); } },
   // relatives' groups (#/viewers): the form lives in vgForm (views.js) so a background render keeps the ticks
   vgtrip(b) { const s2 = new Set(vgForm.trips); if (b.checked) s2.add(b.dataset.v); else s2.delete(b.dataset.v); vgForm.trips = [...s2]; },
@@ -445,8 +477,8 @@ async function saveBlur(el) {
   }
   const t = trip(el.dataset.t);
   // passport Explorer ID answers are per child, not per day
-  const field = kind === 'field', d = field ? null : +el.dataset.d;
-  const id = field ? `${t.id}.field.${el.dataset.v}.${el.dataset.k}` : `${t.id}.${kind}.d${d}`, cur = S.entries.find((e) => e.id === id);
+  const field = kind === 'field', whole = kind === 'letter', d = field || whole ? null : +el.dataset.d;   // the letter belongs to the whole trip
+  const id = field ? `${t.id}.field.${el.dataset.v}.${el.dataset.k}` : whole ? `${t.id}.letter.all` : `${t.id}.${kind}.d${d}`, cur = S.entries.find((e) => e.id === id);
   delete drafts[el.dataset.draft];
   if (!text) { if (cur) await delEntry(id); return; }
   if (!cur || cur.text !== text) await putEntry(t, field ? { day: null, kind, child: el.dataset.k, first_key: el.dataset.v, text } : { day: d, kind, text }, id);
