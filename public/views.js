@@ -59,6 +59,7 @@ function render() {
     else html = viewHub(t);
   } else if (p[0] === 'passport') html = viewPassport(p[1], p[2]);
   else if (p[0] === 'notebook') html = viewNotebook();
+  else if (p[0] === 'viewers' && isEditor()) html = viewViewers();
   else html = viewShelf();
   document.documentElement.style.cssText = t ? themeStyle(t) : themeStyle(curTrip());
   document.body.classList.toggle('serif', !!(t ? t.theme.display === 'serif' : false));
@@ -169,7 +170,7 @@ ${visual}
 <a class="nbcard" href="#/notebook"><span class="emb">📓</span><div><b>${L('สมุดโน้ตนักเดินทาง', 'Travel notebook')}</b><small>${S.reviews.length ? L(`${S.reviews.length} รีวิว · ที่พัก ร้านอาหาร สถานที่ — ไว้วางแผนทริปหน้า`, `${S.reviews.length} reviews · stays, food, places — for planning the next trip`) : L('ให้ดาว ติดแท็ก จดว่าอะไรเวิร์กกับครอบครัวเรา — ไว้วางแผนทริปหน้า', 'Stars, tags and notes on what worked for our family — for planning the next trip')}</small></div><span class="arrow">›</span></a>
 <div class="ppmini">${children().map((k) => { const n = passportStamps(k.slug); return `<a class="ppc s kid-${esc(k.slug)}" href="#/passport/${esc(k.slug)}"><span class="emb">${kidArt(k.slug) ? `<img src="${kidArt(k.slug)}" alt="">` : '🌏'}</span><b>${L('พาสปอร์ตความทรงจำ', 'Memory Passport')}</b><span class="nm">${esc(kidName(k.slug))}</span><small>${n} ${L('ตราประทับ', n === 1 ? 'stamp' : 'stamps')}</small></a>`; }).join('')}</div>
 ${isEditor() ? backupCard() : ''}
-<div class="row end" style="margin-top:18px"><button class="btn ghost small" data-a="logout">⎋ ${L('ออกจากระบบ', 'Sign out')}</button></div>`;
+<div class="row end" style="margin-top:18px">${isEditor() ? `<a class="btn ghost small" href="#/viewers">👪 ${L('ญาติที่ดูได้', 'Who can see the books')}</a>` : ''}<button class="btn ghost small" data-a="logout">⎋ ${L('ออกจากระบบ', 'Sign out')}</button></div>`;
 }
 // off-site copy kept by the family: one tap downloads everything (data + full photos) as a zip; nags when there is something new since the last one on this phone
 function backupCard() {
@@ -965,6 +966,32 @@ function notebookBlock(t, i) {
 <p class="label">${L('ที่พัก ร้าน สถานที่ของวันนี้ เป็นอย่างไรสำหรับครอบครัวเรา? ให้ดาว ติดแท็ก บอกว่าเด็กๆ ชอบไหม', 'How did today’s stay, meals and places work for us? Stars, tags, and the kids’ verdicts')}</p>
 <div class="revs">${items.map((it) => reviewCard(t, i, it, ed)).join('')}</div></section>`;
 }
+/* ---------- relatives in groups (editors): each group its own view-only PIN and/or link, and the books it may see ----------
+   The list comes from /api/b/viewers (not part of the offline state); a PIN is shown once, right after it is set, never again. */
+let vg = null, vgForm = null, vgJust = null;   // the groups · the form being filled {id, name, trips, link} · {name, pin} just saved
+function viewViewers() {
+  if (vg === null) { vg = 'loading'; api('GET', '/api/b/viewers').then((r) => { vg = r.groups; safeRender(); }, () => { vg = []; safeRender(); }); }
+  const trips = S.trips, list = Array.isArray(vg) ? vg : [];
+  const f = vgForm || (vgForm = { id: '', name: '', trips: trips.map((t) => t.id), link: true });
+  const tname = (id) => { const t = trips.find((x) => x.id === id); return t ? T(t.title).split(' · ')[0] : id; };
+  const card = (g) => `<div class="vgcard"><div class="vghd"><b>👪 ${esc(g.name)}</b><span class="label">${g.pin ? `🔢 ${L('มี PIN', 'PIN set')}` : ''}${g.pin && g.link ? ' · ' : ''}${g.link ? `🔗 ${L('มีลิงก์', 'link')}` : ''}</span></div>
+<div class="vgtrips">${g.trips.length ? g.trips.map((x) => `<span class="pill">📖 ${esc(tname(x))}</span>`).join('') : `<span class="label">${L('ยังไม่เห็นเล่มไหนเลย', 'No books yet')}</span>`}</div>
+<div class="row">${g.link ? `<button class="btn small" data-a="vgshare" data-v="${esc(g.link)}" data-n="${esc(g.name)}">${navigator.share ? '📤 ' + L('ส่งลิงก์', 'Send the link') : '📋 ' + L('คัดลอกลิงก์', 'Copy the link')}</button>` : ''}
+<button class="btn ghost small" data-a="vgedit" data-v="${esc(g.id)}">✏️ ${L('แก้ไข', 'Edit')}</button>
+<button class="mini" data-a="vgdel" data-v="${esc(g.id)}">${L('ลบกลุ่ม', 'Delete group')}</button></div></div>`;
+  return `<div class="part">${L('ญาติที่ดูได้', 'Who can see the books')}</div><h1 class="h2">👪 ${L('กลุ่มญาติ', 'Family groups')}</h1>
+<p class="lede">${L('แต่ละกลุ่มมี PIN หรือลิงก์ของตัวเอง และเห็นเฉพาะสมุดที่ติ๊กไว้ ดูได้อย่างเดียว ส่งหัวใจได้ · ลบกลุ่มแล้วคนในกลุ่มจะออกจากระบบทันที', 'Each group gets its own PIN or link and sees only the books ticked for it — read-only, hearts allowed · delete a group and its phones are signed out')}</p>
+${vgJust ? `<div class="call pick vgjust"><span>🔢 ${L('PIN ของกลุ่ม', 'PIN for')} <b>${esc(vgJust.name)}</b></span><span class="vgpin">${esc(vgJust.pin)}</span><small>${L('จดไว้ส่งให้ญาติตอนนี้ — แอปจะไม่แสดง PIN นี้อีก', 'Note it down and send it now — the app will not show it again')}</small></div>` : ''}
+${vg === 'loading' ? `<div class="empty">${L('กำลังโหลด…', 'Loading…')}</div>` : list.length ? `<div class="vglist">${list.map(card).join('')}</div>` : `<div class="empty">${L('ยังไม่มีกลุ่ม — สร้างกลุ่มแรกด้านล่าง', 'No groups yet — make the first one below')}</div>`}
+<section class="blk vgform"><h3>${f.id ? `✏️ ${L('แก้ไขกลุ่ม', 'Edit group')}` : `＋ ${L('สร้างกลุ่มใหม่', 'New group')}`}</h3>
+<label class="vgl">${L('ชื่อกลุ่ม', 'Group name')}<input id="vgname" class="field" maxlength="40" data-draft="vg:name" value="${esc(drafts['vg:name'] ?? f.name)}" placeholder="${L('เช่น ฝั่งคุณยาย', 'e.g. Grandma’s side')}"></label>
+<label class="vgl">${f.id ? L('PIN ใหม่ (เว้นว่าง = ใช้ PIN เดิม)', 'New PIN (leave empty to keep it)') : L('PIN 6–12 หลัก (เว้นว่าง = ใช้ลิงก์อย่างเดียว)', 'PIN, 6–12 digits (empty = link only)')}<input id="vgpin" class="field" inputmode="numeric" maxlength="12" autocomplete="off" data-draft="vg:pin" value="${esc(drafts['vg:pin'] || '')}"></label>
+<div class="vgl">${L('เห็นสมุดเล่มไหน', 'Books this group sees')}<div class="vgchecks">${trips.map((t) => `<label class="vgck"><input type="checkbox" data-a="vgtrip" data-v="${esc(t.id)}"${f.trips.includes(t.id) ? ' checked' : ''}> ${esc(T(t.title).split(' · ')[0])}</label>`).join('')}</div></div>
+<label class="vgck"><input type="checkbox" data-a="vglink"${f.link ? ' checked' : ''}> 🔗 ${L('มีลิงก์ให้กดเข้าได้เลย (ไม่ต้องพิมพ์ PIN)', 'A link that opens without typing a PIN')}</label>
+${f.id && f.hasLink ? `<label class="vgck"><input type="checkbox" data-a="vgnewlink"${f.newLink ? ' checked' : ''}> ♻️ ${L('เปลี่ยนเป็นลิงก์ใหม่ (ลิงก์เดิมจะใช้ไม่ได้)', 'Make a new link (the old one stops working)')}</label>` : ''}
+<div class="row" style="margin-top:10px"><button class="btn" data-a="vgsave">${f.id ? L('บันทึก', 'Save') : L('สร้างกลุ่ม', 'Make the group')}</button>${f.id ? `<button class="btn ghost" data-a="vgcancel">${L('ยกเลิก', 'Cancel')}</button>` : ''}<span class="label" id="vgmsg"></span></div></section>`;
+}
+
 function viewNotebook() {
   const rs = S.reviews.slice(), byTrip = (r) => trip(r.trip);
   const where = (r) => { const t = byTrip(r); return t ? `${flagsOf(t)} ${esc(T(t.title).split(' · ')[0])}${r.day !== null && r.day !== undefined ? ` · ${L('วันที่', 'Day')} ${r.day + 1}` : ''}` : ''; };

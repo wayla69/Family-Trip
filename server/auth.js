@@ -3,11 +3,12 @@ const crypto = require('crypto');
 
 // Cookie signing secret: SESSION_SECRET, else generated once and kept in Postgres (no volume needed).
 let SECRET = process.env.SESSION_SECRET || '';
-async function init(pool) {
+async function init(p) {
+  pool = p;
   if (SECRET) return;
   const fresh = crypto.randomBytes(32).toString('hex');
-  await pool.query("INSERT INTO settings (key, value) VALUES ('session_secret', $1) ON CONFLICT (key) DO NOTHING", [fresh]);
-  SECRET = (await pool.query("SELECT value FROM settings WHERE key='session_secret'")).rows[0].value;
+  await p.query("INSERT INTO settings (key, value) VALUES ('session_secret', $1) ON CONFLICT (key) DO NOTHING", [fresh]);
+  SECRET = (await p.query("SELECT value FROM settings WHERE key='session_secret'")).rows[0].value;
 }
 const FAMILY_CODE = process.env.FAMILY_CODE || '';
 const VIEW_TOKEN = process.env.VIEW_TOKEN || '';
@@ -24,23 +25,27 @@ const safeEq = (a, b) => {
   return x.length === y.length && crypto.timingSafeEqual(x, y);
 };
 
-function makeToken(role, name, uid) {
+// a relatives' group session carries the group id as a 6th part; older 5-part cookies (family, VIEW_PIN, VIEW_TOKEN) still read
+function makeToken(role, name, uid, group) {
   const exp = Math.floor(Date.now() / 1000) + MAXAGE;
-  const p = [role, b64(name), uid, exp].join('.');
+  const p = [role, b64(name), uid, exp].concat(group ? [group] : []).join('.');
   return p + '.' + sign(p);
 }
 function readToken(t) {
   if (!t) return null;
   const parts = t.split('.');
-  if (parts.length !== 5) return null;
+  if (parts.length !== 5 && parts.length !== 6) return null;
   const sig = parts.pop();
   const p = parts.join('.');
   if (!safeEq(sig, sign(p))) return null;
-  const [role, n, uid, exp] = parts;
+  const [role, n, uid, exp, group] = parts;
   if (+exp < Date.now() / 1000) return null;
   if (role !== 'editor' && role !== 'viewer') return null;
-  return { role, name: unb64(n), uid };
+  if (group && role !== 'viewer') return null;
+  return { role, name: unb64(n), uid, group: group || null };
 }
+// a group's PIN is kept only as a keyed hash (the session secret is the key), so the database alone never reveals a PIN
+const pinHash = (pin) => crypto.createHmac('sha256', SECRET).update('viewer-pin:' + String(pin)).digest('hex');
 function parseCookies(h) {
   const o = {};
   (h || '').split(';').forEach((kv) => {
@@ -71,10 +76,29 @@ function throttled(ip) {
 }
 function noteFail(ip) { const a = tries.get(ip) || []; a.push(Date.now()); tries.set(ip, a); allFails.push(Date.now()); }
 
-function attachUser(req, _res, next) {
-  req.user = readToken(parseCookies(req.headers.cookie)[COOKIE]);
-  next();
+// relatives' groups (viewer_groups): looked up on every request through a short cache, so deleting a group or changing its
+// books takes effect within seconds; editors' changes clear the cache at once (groupsChanged)
+let pool = null, groups = null, groupsAt = 0;
+const GROUP_TTL = 15000;
+async function groupById(id) {
+  if (!pool) return null;
+  if (!groups || Date.now() - groupsAt > GROUP_TTL) {
+    const rows = (await pool.query('SELECT id, name, trips FROM viewer_groups')).rows;
+    groups = new Map(rows.map((g) => [g.id, g])); groupsAt = Date.now();
+  }
+  return groups.get(id) || null;
 }
+const groupsChanged = () => { groups = null; };
+function attachUser(req, _res, next) {
+  const u = readToken(parseCookies(req.headers.cookie)[COOKIE]);
+  if (!u || !u.group) { req.user = u; return next(); }
+  groupById(u.group).then((g) => {
+    req.user = g ? { ...u, trips: g.trips, groupName: g.name } : null;   // a deleted group = signed out
+    next();
+  }, next);
+}
+// may this session see this book? the family and the old shared PIN/link see all; a group only its ticked books
+const canSee = (user, trip) => !!user && (!user.group || (user.trips || []).includes(trip));
 function requireUser(req, res, next) {
   if (!req.user) return res.status(401).json({ error: 'auth' });
   next();
@@ -88,5 +112,5 @@ function requireEditor(req, res, next) {
 
 module.exports = {
   init, FAMILY_CODE, VIEW_TOKEN, VIEW_PIN, BACKUP_TOKEN, makeToken, setCookie, clearCookie, safeEq, throttled, noteFail,
-  attachUser, requireUser, requireEditor,
+  attachUser, requireUser, requireEditor, pinHash, canSee, groupsChanged,
 };

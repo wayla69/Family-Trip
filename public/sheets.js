@@ -290,6 +290,43 @@ const A = {
     }
   },
   storystop() { if (storyCtl) storyCtl.abort(); },
+  // relatives' groups (#/viewers): the form lives in vgForm (views.js) so a background render keeps the ticks
+  vgtrip(b) { const s2 = new Set(vgForm.trips); if (b.checked) s2.add(b.dataset.v); else s2.delete(b.dataset.v); vgForm.trips = [...s2]; },
+  vglink(b) { vgForm.link = b.checked; },
+  vgnewlink(b) { vgForm.newLink = b.checked; },
+  vgedit(b) {
+    const g = (Array.isArray(vg) ? vg : []).find((x) => x.id === b.dataset.v); if (!g) return;
+    vgForm = { id: g.id, name: g.name, trips: [...g.trips], link: !!g.link, hasLink: !!g.link, newLink: false }; vgJust = null;
+    delete drafts['vg:name']; delete drafts['vg:pin']; render();
+    setTimeout(() => { const n = $('#vgname'); if (n) n.scrollIntoView({ block: 'center' }); }, 30);
+  },
+  vgcancel() { vgForm = null; delete drafts['vg:name']; delete drafts['vg:pin']; render(); },
+  async vgsave(b) {
+    const name = $('#vgname').value.trim(), pin = $('#vgpin').value.trim(), msg = $('#vgmsg'), f = vgForm;
+    if (!name) { msg.textContent = L('ใส่ชื่อกลุ่มก่อน', 'Give the group a name'); $('#vgname').focus(); return; }
+    if (pin && !/^\d{6,12}$/.test(pin)) { msg.textContent = L('PIN ต้องเป็นตัวเลข 6–12 หลัก', 'The PIN must be 6–12 digits'); $('#vgpin').focus(); return; }
+    if (!f.id && !pin && !f.link) { msg.textContent = L('ต้องมี PIN หรือลิงก์อย่างน้อยหนึ่งอย่าง', 'Give it a PIN or a link'); return; }
+    const id = f.id || 'vg-' + Math.random().toString(36).slice(2, 10);
+    b.disabled = true;
+    try {
+      await api('PUT', '/api/b/viewers/' + id, { name, trips: f.trips, ...(pin ? { pin } : {}), link: f.newLink ? 'new' : f.link });
+      vgJust = pin ? { name, pin } : null; vgForm = null; vg = null; delete drafts['vg:name']; delete drafts['vg:pin'];
+      toast(L('บันทึกกลุ่มแล้ว', 'Group saved')); render(); scrollTo(0, 0);
+    } catch (e) {
+      b.disabled = false;
+      msg.textContent = e.code === 409 ? L('PIN นี้ใช้แล้ว (ซ้ำกับกลุ่มอื่นหรือ PIN ของครอบครัว) — ลองตัวอื่น', 'That PIN is taken (another group or the family PIN) — try another')
+        : e.code === 400 ? L('ต้องมี PIN หรือลิงก์อย่างน้อยหนึ่งอย่าง', 'Give it a PIN or a link') : L('บันทึกไม่สำเร็จ ลองใหม่', 'Could not save — try again');
+    }
+  },
+  async vgdel(b) {
+    if (!armed(b, L('แตะอีกครั้ง — คนในกลุ่มจะออกจากระบบ', 'Tap again — its phones get signed out'))) return;
+    try { await api('DELETE', '/api/b/viewers/' + encodeURIComponent(b.dataset.v)); vg = null; vgJust = null; toast(L('ลบกลุ่มแล้ว', 'Group deleted')); render(); } catch (_) { toast(L('ลบไม่สำเร็จ', 'Could not delete')); }
+  },
+  async vgshare(b) {
+    const url = location.origin + b.dataset.v, text = L(`สมุดความทรงจำของมีมี่และมีก้า (${b.dataset.n})`, `Mimi & Mika's memory books (${b.dataset.n})`);
+    if (navigator.share) { try { await navigator.share({ text, url }); } catch (e) { if (e.name !== 'AbortError') toast(L('แชร์ไม่สำเร็จ', 'Could not share')); } return; }
+    try { await navigator.clipboard.writeText(url); toast(L('คัดลอกลิงก์แล้ว', 'Link copied')); } catch (_) { toast(url); }
+  },
   // both languages: the server sends the day's untranslated words to Claude and saves each translation; then the state reloads
   async translate(b) {
     if (!navigator.onLine) { toast(L('ต้องต่อเน็ตเพื่อแปล', 'Translating needs a connection')); return; }

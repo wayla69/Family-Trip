@@ -112,12 +112,15 @@ function router({ pool, media, A, ai }) {
         q('SELECT id, trip_id, day_index, amount, cur, cat, note, created_by, updated_at FROM spend WHERE family_id=$1 ORDER BY updated_at', [FAMILY]),
       ]);
       const ms = (d) => (d ? new Date(d).getTime() : null);
+      // a relatives' group sees only its ticked books — everything tied to another book is left out here, at the source
+      const see = (x) => A.canSee(req.user, x.trip_id === undefined ? x.id : x.trip_id);
+      if (req.user.group) for (const list of [trips, days, firsts, entries, mediaRows, places, hearts, reviews, spendRows]) list.splice(0, list.length, ...list.filter(see));
       // ?lite=1 (the app): each book's guide text (info, passport, day plans — ~95% of the bytes, changes only with a new seed)
       // is left out and named by a hash; the app keeps the copy it has or fetches /api/b/seed/<trip>/<hash> once
       const lite = req.query.lite === '1';
       res.setHeader('Cache-Control', 'no-store');
       sendJson(req, res, {
-        me: { role: req.user.role, name: req.user.name, uid: req.user.uid },
+        me: { role: req.user.role, name: req.user.name, uid: req.user.uid, group: req.user.groupName || null },
         children,
         trips: trips.map((t) => {
           const td = days.filter((d) => d.trip_id === t.id).map(({ trip_id, ...d }) => ({ ...d, done_at: ms(d.done_at) }));
@@ -140,6 +143,7 @@ function router({ pool, media, A, ai }) {
   const seedOf = (t, td) => { const body = JSON.stringify({ info: t.info, passport: t.passport, plans: td.map((d) => d.plan) }); return { body, hash: sha(body) }; };
   r.get('/api/b/seed/:trip/:hash', A.requireUser, async (req, res, next) => {
     try {
+      if (!A.canSee(req.user, req.params.trip)) return bad(res, 'trip', 404);
       const t = (await q('SELECT id, passport, info FROM trips WHERE id=$1 AND family_id=$2', [req.params.trip, FAMILY]))[0];
       if (!t) return bad(res, 'trip', 404);
       const td = await q('SELECT plan FROM trip_days WHERE trip_id=$1 ORDER BY day_index', [t.id]);
@@ -239,7 +243,7 @@ function router({ pool, media, A, ai }) {
   const send = (thumb) => async (req, res, next) => {
     try {
       const m = (await q('SELECT trip_id, storage_key, mime FROM media WHERE id=$1 AND family_id=$2', [req.params.id, FAMILY]))[0];
-      if (!m) return res.sendStatus(404);
+      if (!m || !A.canSee(req.user, m.trip_id)) return res.sendStatus(404);   // a group never sees another book's photos
       const audio = String(m.mime || '').startsWith('audio/');
       if (audio && thumb) return res.sendStatus(404);   // a voice memo has no thumbnail
       const buf = await media.get(audio ? m.storage_key : thumb ? keyThumb(m.trip_id, req.params.id) : keyFull(m.trip_id, req.params.id));
@@ -293,7 +297,7 @@ function router({ pool, media, A, ai }) {
     try {
       const id = req.params.id, b = req.body || {};
       if (!ID_RE.test(id)) return bad(res, 'id');
-      const t = await trip(String(b.trip || '')); if (!t) return bad(res, 'trip');
+      const t = await trip(String(b.trip || '')); if (!t || !A.canSee(req.user, t.id)) return bad(res, 'trip');
       const day = dayArg(b.day); if (!dayOk(t, day)) return bad(res, 'day');
       const kids = (await q('SELECT slug FROM children WHERE family_id=$1', [FAMILY])).map((k) => k.slug);
       const child = String(b.child || ''); if (child !== 'both' && !kids.includes(child)) return bad(res, 'child');
@@ -514,6 +518,43 @@ function router({ pool, media, A, ai }) {
       for (const e of rows) if (tr[e.id]) n += (await pool.query('UPDATE entries SET tr=$1 WHERE id=$2 AND trip_id=$3 AND text=$4', [tr[e.id], e.id, t.id, e.text])).rowCount;
       res.json({ ok: true, n });
     } catch (e) { next(e); }
+  });
+
+  // ----- relatives' groups (editors): each group its own view-only PIN and/or link, and the books it may see.
+  // The PIN is stored only as A.pinHash (keyed hash); a link token is random. Deleting a group signs its phones out.
+  const groupOut = (g) => ({ id: g.id, name: g.name, trips: g.trips, pin: !!g.pin_hash, link: g.link_token ? `/v/${g.link_token}` : null, at: new Date(g.updated_at).getTime() });
+  r.get('/api/b/viewers', A.requireEditor, async (_req, res, next) => {
+    try { res.json({ groups: (await q('SELECT * FROM viewer_groups WHERE family_id=$1 ORDER BY created_at', [FAMILY])).map(groupOut) }); } catch (e) { next(e); }
+  });
+  r.put('/api/b/viewers/:id', ...W, async (req, res, next) => {
+    try {
+      const id = req.params.id, b = req.body || {};
+      if (!/^[a-z0-9-]{6,40}$/.test(id)) return bad(res, 'id');
+      const name = clip(b.name, 40).trim(); if (!name) return bad(res, 'name');
+      const all = (await q('SELECT id FROM trips WHERE family_id=$1', [FAMILY])).map((t) => t.id);
+      const trips = [...new Set((Array.isArray(b.trips) ? b.trips : []).map(String))].filter((x) => all.includes(x));
+      const cur = (await q('SELECT * FROM viewer_groups WHERE id=$1', [id]))[0];
+      if (cur && cur.family_id !== FAMILY) return bad(res, 'conflict', 409);
+      let pin = cur ? cur.pin_hash : null, link = cur ? cur.link_token : null;
+      if (b.pin === null) pin = null;   // remove the PIN (link only)
+      else if (b.pin !== undefined && String(b.pin) !== '') {
+        const code = String(b.pin);
+        if (!/^\d{6,12}$/.test(code)) return bad(res, 'pin');   // the login pad is digits; at least 6 so a group PIN is not guessable in the throttle window
+        if ((A.FAMILY_CODE && A.safeEq(code, A.FAMILY_CODE)) || (A.VIEW_PIN && A.safeEq(code, A.VIEW_PIN))) return bad(res, 'pin-taken', 409);
+        pin = A.pinHash(code);
+        if ((await q('SELECT 1 FROM viewer_groups WHERE pin_hash=$1 AND id<>$2', [pin, id])).length) return bad(res, 'pin-taken', 409);
+      }
+      if (b.link === false) link = null;
+      else if (b.link === 'new' || (b.link === true && !link)) link = crypto.randomBytes(24).toString('base64url');   // a fresh link stops the old one
+      if (!pin && !link) return bad(res, 'no-way-in');
+      await q(`INSERT INTO viewer_groups (id, family_id, name, pin_hash, link_token, trips) VALUES ($1,$2,$3,$4,$5,$6)
+        ON CONFLICT (id) DO UPDATE SET name=EXCLUDED.name, pin_hash=EXCLUDED.pin_hash, link_token=EXCLUDED.link_token, trips=EXCLUDED.trips, updated_at=now()`, [id, FAMILY, name, pin, link, trips]);
+      A.groupsChanged();
+      res.json({ ok: true, group: groupOut((await q('SELECT * FROM viewer_groups WHERE id=$1', [id]))[0]) });
+    } catch (e) { if (e.code === '23505') return bad(res, 'pin-taken', 409); next(e); }
+  });
+  r.delete('/api/b/viewers/:id', A.requireEditor, async (req, res, next) => {
+    try { await q('DELETE FROM viewer_groups WHERE id=$1 AND family_id=$2', [req.params.id, FAMILY]); A.groupsChanged(); res.json({ ok: true }); } catch (e) { next(e); }
   });
 
   // ----- PDPA: everything we hold about the family, in one JSON (photos via /api/b/backup.zip later)
