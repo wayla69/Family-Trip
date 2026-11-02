@@ -33,7 +33,7 @@ async function render({ base, cookie, trip, footer }) {
       return await page.pdf({
         format: 'A4', printBackground: true, preferCSSPageSize: true, displayHeaderFooter: true,
         headerTemplate: '<span></span>',
-        footerTemplate: `<div style="width:100%;font:8px sans-serif;color:#6D7480;padding:0 14mm;display:flex;justify-content:space-between"><span>${esc(footer)}</span><span>Memory Bookshelf · <span class="pageNumber"></span></span></div>`,
+        footerTemplate: `<div style="width:100%;font:8px sans-serif;color:#6D7480;padding:0 14mm;display:flex;justify-content:space-between"><span>${esc(footer)}</span><span>MM Memory · <span class="pageNumber"></span></span></div>`,
       });
     } finally { await ctx.close(); }
   });
