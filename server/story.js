@@ -20,8 +20,20 @@ function sumPrompt(lang) {
     + 'ใช้เฉพาะข้อมูลที่ให้ ห้ามแต่งสถานที่/เหตุการณ์/คำพูดเพิ่ม ตอบเฉพาะข้อความสรุป ไม่มีหัวข้อ/markdown/อีโมจิ';
 }
 
+// mode 'msg': a short note from the parents to the grandparents for LINE; never saved, the parents edit and send it themselves
+function msgPrompt(lang) {
+  if (lang === 'en') {
+    return 'Write a short, warm message (3–5 sentences, at most 80 words) from the parents to the grandparents about today, to send on LINE. '
+      + 'The children are Mimi (3) and Mika (1½); use the children’s own words if there are any. Use only the facts given — do not invent places, events or words anyone said. '
+      + 'No addresses, no hotel or room details. One or two emoji are fine. Reply with the message only — no greeting line like "Subject", no markdown.';
+  }
+  return 'เขียนข้อความสั้นๆ อบอุ่น 3–5 ประโยค (ไม่เกิน 80 คำ) จากพ่อแม่ถึงคุณตาคุณยาย เล่าเรื่องวันนี้ สำหรับส่งทาง LINE ลูกชื่อ มีมี่ (3 ขวบ) และ มีก้า (1 ขวบครึ่ง) ถ้ามีคำพูดของเด็กให้ใส่ด้วย — '
+    + 'ใช้เฉพาะข้อมูลที่ให้ ห้ามแต่งสถานที่/เหตุการณ์/คำพูดเพิ่ม ไม่ใส่ที่อยู่หรือรายละเอียดที่พัก ใส่อีโมจิได้ 1–2 ตัว ตอบเฉพาะตัวข้อความ ไม่มี markdown';
+}
+
 function prompt({ lang, whole, mode }) {
   if (mode === 'sum') return sumPrompt(lang);
+  if (mode === 'msg') return msgPrompt(lang);
   if (lang === 'en') {
     return `Write an English bedtime story of ${whole ? '250–350' : '120–180'} words starring "Mimi" (3) and "Mika" (1½). `
       + 'Use only the facts given — do not invent places, events or words anyone said. If there is little to go on, make the story shorter. '
@@ -38,7 +50,7 @@ const clean = (s) => s.replace(/^#+\s*/gm, '').replace(/\*\*|__|`/g, '').replace
 async function writeStory({ lang, whole, mode, facts, onText, signal }) {
   const stream = api().beta.messages.stream({
     model: MODEL(),
-    max_tokens: mode === 'sum' ? 1000 : 4000,
+    max_tokens: mode === 'sum' || mode === 'msg' ? 1000 : 4000,
     betas: ['server-side-fallback-2026-07-01'],
     fallbacks: 'default',                  // a policy decline is re-run server-side on Anthropic's recommended fallback
     output_config: { effort: 'low' },      // a short story from given facts needs little reasoning

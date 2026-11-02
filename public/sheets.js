@@ -174,7 +174,12 @@ const A = {
   // the day's words and up to three photos go to whatever the phone can share with (LINE, Messages…); the photos are fetched
   // from our own server with the session cookie and handed over as files, so no public link is ever made
   async share(b) {
-    const t = trip(b.dataset.t), i = +b.dataset.d, text = shareText(t, i), files = [];
+    const t = trip(b.dataset.t), i = +b.dataset.d, files = [];
+    const own = b.dataset.src === 'msg' && $('#msgtext') ? $('#msgtext').value.trim() : '', text = own || shareText(t, i);   // Claude's note (edited) or the plain day
+    if (!navigator.share) {   // a desktop browser: copy the words instead
+      try { await navigator.clipboard.writeText(text); toast(L('คัดลอกข้อความแล้ว — วางใน LINE ได้เลย', 'Copied — paste it into LINE')); } catch (_) { toast(L('คัดลอกไม่สำเร็จ', 'Could not copy')); }
+      return;
+    }
     if (navigator.onLine) {
       const ph = mediaOf(t.id, i), pick = ph.filter((m) => m.highlight).concat(ph.filter((m) => !m.highlight)).filter((m) => !m.pending).slice(0, 3);
       for (const m of pick) { try { const r = await fetch(`/media/${encodeURIComponent(m.id)}`, { credentials: 'same-origin' }); if (r.ok) files.push(new File([await r.blob()], `${m.id}.jpg`, { type: 'image/jpeg' })); } catch (_) {} }
@@ -230,14 +235,15 @@ const A = {
     if (done) { burst(b, ['🎉', '✨', '⭐']); toast(L('ได้ตราประทับของวันนี้ในพาสปอร์ตแล้ว 🛂', 'Today’s stamp is in the passports 🛂')); }
     enqueue({ method: 'PUT', url: `/api/b/days/${encodeURIComponent(t.id)}/${d}`, body: { done } });
   },
-  // Claude, only when pressed: data-m "story" (bedtime story, #story…) or "sum" (the day in a few lines into the #sumtext box, #sum…);
-  // the server saves the result, so the page reloads the state; a summary lands in its textarea and stays editable (blur saves)
+  // Claude, only when pressed: data-m "story" (bedtime story, #story…), "sum" (the day in a few lines into the #sumtext box, #sum…)
+  // or "msg" (a note for the relatives into #msgtext — never saved, kept as a draft until it is shared);
+  // story/sum are saved by the server, so the page reloads the state; a summary lands in its textarea and stays editable (blur saves)
   async story(b) {
     if (storyCtl) return;
-    const mode = b.dataset.m === 'sum' ? 'sum' : 'story', sum = mode === 'sum';
+    const mode = ['sum', 'msg'].includes(b.dataset.m) ? b.dataset.m : 'story', sum = mode !== 'story';   // sum/msg write into a textarea
     const t = trip(b.dataset.t), day = b.dataset.d === '' ? null : +b.dataset.d;
-    if (!navigator.onLine) { toast(sum ? L('ต้องต่อเน็ตเพื่อให้ Claude สรุป', 'Summarising needs a connection') : L('ต้องต่อเน็ตเพื่อแต่งนิทาน', 'Writing a story needs a connection')); return; }
-    const box = $(`#${mode}text`), msg = sum ? $('#summsg') : box, before = sum ? box.value : '';
+    if (!navigator.onLine) { toast(L('ต้องต่อเน็ตเพื่อใช้ Claude', 'Claude needs a connection')); return; }
+    const box = $(`#${mode}text`), msg = sum ? $(`#${mode}msg`) : box, before = sum ? box.value : '';
     const say = (x) => { if (sum) { box.value = before; msg.textContent = x; } else box.textContent = x; };
     const show = (x) => { if (sum) box.value = x; else box.textContent = x; };
     box.hidden = false; show(''); box.classList.add('writing'); if (sum) box.readOnly = true;
@@ -262,7 +268,11 @@ const A = {
           chunk.split('\n').forEach((l) => { if (l.startsWith('event: ')) ev = l.slice(7); else if (l.startsWith('data: ')) data += l.slice(6); });
           const d = JSON.parse(data || '{}');
           if (!ev) { text += d.t; show(text); }
-          else if (ev === 'done') {
+          else if (ev === 'done' && mode === 'msg') {   // nothing saved: keep it as the box's draft so a re-render can't lose it
+            drafts[box.dataset.draft] = box.value = d.text || text; msg.textContent = '';
+            const send = $('#msgsend'); if (send) send.hidden = false;
+            toast(L('แก้ข้อความได้ แล้วกดส่ง', 'Edit it if you like, then send'));
+          } else if (ev === 'done') {
             if (sum) delete drafts[box.dataset.draft];   // the saved summary wins over a half-typed draft
             storyCtl = null; await load(); render();
             toast(sum ? L('เก็บสรุปไว้ในสมุดแล้ว — แก้ในช่องได้', 'Summary saved in the book — edit it in the box') : L('เก็บนิทานไว้ในสมุดแล้ว', 'Story saved in the book'));
