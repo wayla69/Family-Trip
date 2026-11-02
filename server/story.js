@@ -98,4 +98,29 @@ async function askGuide({ lang, guide, q, onText, signal }) {
   return clean(msg.content.filter((b) => b.type === 'text').map((b) => b.text).join(''));
 }
 
-module.exports = { enabled, writeStory, askGuide, clean, SDK };
+// Translate a day's words (Thai ↔ English) for the two-language book: items [{id, text, to}] → {id: translation}.
+// Children's words stay a child's words — simple, not polished. Returns only ids it was given.
+async function translate({ items, signal }) {
+  const stream = api().beta.messages.stream({
+    model: MODEL(),
+    max_tokens: 4000,
+    betas: ['server-side-fallback-2026-07-01'],
+    fallbacks: 'default',
+    output_config: { effort: 'low' },
+    system: 'Translate each item of a family travel diary into the language in its "to" field ("en" = English, "th" = Thai). '
+      + 'Mimi (มีมี่) and Mika (มีก้า) are small children: keep their quotes childlike and simple, do not polish them; keep names, places and numbers as they are. '
+      + 'Reply with JSON only: an array of {"id": ..., "tr": ...} with the same ids — no markdown, no commentary.',
+    messages: [{ role: 'user', content: JSON.stringify(items) }],
+  }, { signal });
+  const msg = await stream.finalMessage();
+  if (msg.stop_reason === 'refusal') throw Object.assign(new Error('refusal'), { code: 'refusal' });
+  const raw = msg.content.filter((b) => b.type === 'text').map((b) => b.text).join('');
+  const a = raw.indexOf('['), z = raw.lastIndexOf(']');
+  let arr = [];
+  try { arr = JSON.parse(raw.slice(a, z + 1)); } catch (_) { throw Object.assign(new Error('bad json'), { code: 'failed' }); }
+  const ids = new Set(items.map((x) => x.id)), out = {};
+  for (const x of Array.isArray(arr) ? arr : []) if (x && ids.has(x.id) && typeof x.tr === 'string' && x.tr.trim()) out[x.id] = x.tr.trim().slice(0, 4000);
+  return out;
+}
+
+module.exports = { enabled, writeStory, askGuide, translate, clean, SDK };

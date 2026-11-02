@@ -104,7 +104,7 @@ function router({ pool, media, A, ai }) {
         q("SELECT id, slug, legacy_id, title, sub, to_char(date_from,'YYYY-MM-DD') date_from, to_char(date_to,'YYYY-MM-DD') date_to, timezone, theme, cover, stamp, moods, passport, info, source FROM trips WHERE family_id=$1 ORDER BY date_from", [FAMILY]),
         q("SELECT d.trip_id, d.day_index, to_char(d.date,'YYYY-MM-DD') date, d.title, d.sleep, d.emoji, d.gradient, d.planned, d.wx, d.plan, d.done_at FROM trip_days d JOIN trips t ON t.id=d.trip_id WHERE t.family_id=$1 ORDER BY d.trip_id, d.day_index", [FAMILY]),
         q('SELECT f.trip_id, f.key, f.emoji, f.label FROM firsts_catalog f JOIN trips t ON t.id=f.trip_id WHERE t.family_id=$1 ORDER BY f.trip_id, f.pos, f.key', [FAMILY]),
-        q('SELECT id, trip_id, day_index, kind, child, text, mood, first_key, lang, highlight, occurred_at, created_by, created_uid FROM entries WHERE family_id=$1 ORDER BY occurred_at', [FAMILY]),
+        q('SELECT id, trip_id, day_index, kind, child, text, tr, mood, first_key, lang, highlight, occurred_at, created_by, created_uid FROM entries WHERE family_id=$1 ORDER BY occurred_at', [FAMILY]),
         q('SELECT id, trip_id, day_index, width, height, caption, highlight, pos, taken_at, created_by, mime FROM media WHERE family_id=$1 ORDER BY taken_at, pos', [FAMILY]),
         q('SELECT id, trip_id, day_index, key, kind, name, visited_at, created_by FROM places WHERE family_id=$1 ORDER BY visited_at', [FAMILY]),
         q('SELECT id, trip_id, day_index, child, emoji, text, from_name, created_uid, created_at FROM hearts WHERE family_id=$1 ORDER BY created_at', [FAMILY]),
@@ -170,7 +170,8 @@ function router({ pool, media, A, ai }) {
       const out = await q(`INSERT INTO entries (id, family_id, trip_id, day_index, kind, child, text, mood, first_key, lang, highlight, occurred_at, created_by, created_uid)
         VALUES ($1,$2,$3,$4,$5,$6,$7,$8,$9,$10,$11,$12,$13,$14)
         ON CONFLICT (id) DO UPDATE SET day_index=EXCLUDED.day_index, child=EXCLUDED.child, text=EXCLUDED.text, mood=EXCLUDED.mood,
-          first_key=EXCLUDED.first_key, lang=EXCLUDED.lang, highlight=EXCLUDED.highlight, updated_at=now()
+          first_key=EXCLUDED.first_key, lang=EXCLUDED.lang, highlight=EXCLUDED.highlight, updated_at=now(),
+          tr=CASE WHEN entries.text = EXCLUDED.text THEN entries.tr ELSE NULL END   -- an edited text drops its old translation
         WHERE entries.family_id = EXCLUDED.family_id AND entries.kind = EXCLUDED.kind AND entries.trip_id = EXCLUDED.trip_id
         RETURNING id`, row);
       if (!out.length) return bad(res, 'conflict', 409);   // id taken by another trip/kind/family
@@ -441,7 +442,7 @@ function router({ pool, media, A, ai }) {
         if (mode === 'msg') { done = true; send('done', { text }); return res.end(); }   // the note for the relatives lives only on the phone
         const id = day === null ? `${t.id}.story.all` : `${t.id}.${mode}.d${day}`;   // sum id = the record page's blur-save id, so edits upsert the same row
         await q(`INSERT INTO entries (id, family_id, trip_id, day_index, kind, text, lang, created_by, created_uid) VALUES ($1,$2,$3,$4,$5,$6,$7,$8,$9)
-          ON CONFLICT (id) DO UPDATE SET text=EXCLUDED.text, lang=EXCLUDED.lang, updated_at=now()`, [id, FAMILY, t.id, day, mode, text, lang, 'Claude', req.user.uid]);
+          ON CONFLICT (id) DO UPDATE SET text=EXCLUDED.text, lang=EXCLUDED.lang, updated_at=now(), tr=NULL`, [id, FAMILY, t.id, day, mode, text, lang, 'Claude', req.user.uid]);
         done = true;
         send('done', { id, text });
       } catch (e) {
@@ -486,6 +487,31 @@ function router({ pool, media, A, ai }) {
         send('error', { error: e.code === 'refusal' ? 'refusal' : 'failed' });
       }
       res.end();
+    } catch (e) { next(e); }
+  });
+
+  // ----- translate a day (Claude): the day's quotes, note, favourite, summary and own "firsts" into the other language (Thai ↔ English),
+  // so the book reads in both; only those words travel (never photos); saved per entry (tr), only while its text is unchanged
+  const TR_KINDS = ['quote', 'note', 'fav', 'sum', 'first'];
+  r.post('/api/b/translate', ...W, async (req, res, next) => {
+    try {
+      if (!ai || !ai.enabled()) return bad(res, 'no-key', 501);
+      const b = req.body || {};
+      const t = await trip(String(b.trip || '')); if (!t) return bad(res, 'trip');
+      const day = dayArg(b.day); if (day === null || !dayOk(t, day)) return bad(res, 'day');
+      const rows = (await q("SELECT id, kind, text, first_key FROM entries WHERE trip_id=$1 AND day_index=$2 AND kind = ANY($3) AND text<>'' AND tr IS NULL ORDER BY occurred_at", [t.id, day, TR_KINDS]))
+        .filter((e) => e.kind !== 'first' || e.first_key === 'custom').slice(0, 60);
+      if (!rows.length) return bad(res, 'empty', 422);   // nothing new to translate → don't call the model
+      const today = new Date().toISOString().slice(0, 10);
+      if (storyUse.day !== today) Object.assign(storyUse, { day: today, n: 0 });
+      if (storyUse.n >= STORY_DAILY) return bad(res, 'limit', 429);
+      storyUse.n++;
+      const items = rows.map((e) => ({ id: e.id, to: /[\u0E00-\u0E7F]/.test(e.text) ? 'en' : 'th', text: e.text }));
+      let tr;
+      try { tr = await ai.translate({ items }); } catch (e) { console.error('translate', e.code || e.status || e.message); return bad(res, e.code === 'refusal' ? 'refusal' : 'failed', 502); }
+      let n = 0;
+      for (const e of rows) if (tr[e.id]) n += (await pool.query('UPDATE entries SET tr=$1 WHERE id=$2 AND trip_id=$3 AND text=$4', [tr[e.id], e.id, t.id, e.text])).rowCount;
+      res.json({ ok: true, n });
     } catch (e) { next(e); }
   });
 

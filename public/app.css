@@ -69,6 +69,9 @@ hr.rule{border:0;border-top:1px solid var(--rule);margin:22px 0}
 .btn.small{padding:6px 11px;font-size:13px}
 .btn.danger,.btn.confirm{background:var(--accent2);color:#fff}
 .btn:disabled{opacity:.5}
+/* the other language under a text (two-language book) */
+.tr{display:block;margin-top:4px;font-size:.88em;color:var(--muted);font-style:normal;quotes:none}
+.daysum .tr{margin-top:6px}
 /* ask the guide (Today page) */
 .ask{margin:14px 0 6px}.ask h3{margin:0 0 8px}.ask h3 .label{display:block;font-weight:400;margin-top:2px}.askrow{flex-wrap:nowrap}.askrow .field{flex:1;min-width:0}
 .ask .chips{display:flex;flex-wrap:wrap;gap:6px;margin-top:8px}.askans{white-space:pre-line;margin-top:10px}
