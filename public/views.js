@@ -855,6 +855,20 @@ ${ai ? `<div class="row" style="margin-top:6px"><button class="btn small" data-a
 <span class="label" id="summsg">${L('ส่งเฉพาะข้อความที่บันทึกไว้ ไม่ส่งรูป · แก้ในช่องได้', 'Sends only the written notes — never photos · edit it in the box')}</span></div>` : ''}</section>`;
 }
 
+/* ---------- a note for the relatives (record page): Claude writes it from the day's notes, the parents edit it and send it themselves.
+   Never saved anywhere: it lives in the box's draft until it is shared (with up to three photos from this phone, as the plain share does) ---------- */
+function msgBlock(t, i, dk) {
+  if (!isEditor() || !S.features.story) return '';
+  const dr = drafts['m:' + dk] || '';
+  return `<section class="blk noprint msgblk"><h3>💌 ${L('ส่งข่าวให้ญาติ', 'News for the family')}</h3>
+<p class="label">${L('Claude เขียนข้อความสั้นๆ จากบันทึกวันนี้ แก้ได้ แล้วส่งทาง LINE เอง · ส่งให้ Claude เฉพาะข้อความ ไม่ส่งรูป', 'Claude writes a short note from today’s records — edit it, then send it on LINE yourself · only the words go to Claude, never photos')}</p>
+<textarea id="msgtext" class="field" rows="5" data-draft="m:${esc(dk)}" maxlength="1500"${dr ? '' : ' hidden'}>${esc(dr)}</textarea>
+<div class="row" style="margin-top:6px"><button class="btn small" data-a="story" data-m="msg" data-t="${esc(t.id)}" data-d="${i}" id="msggo">✨ ${dr ? L('เขียนใหม่', 'Write again') : L('ให้ Claude เขียนข่าว', 'Ask Claude to write it')}</button>
+<button class="btn ghost small" data-a="storystop" id="msgstop" hidden>■ ${L('หยุด', 'Stop')}</button>
+<button class="btn small" data-a="share" data-src="msg" data-t="${esc(t.id)}" data-d="${i}" id="msgsend"${dr ? '' : ' hidden'}>${navigator.share ? `📤 ${L('ส่ง', 'Send')}` : `📋 ${L('คัดลอก', 'Copy')}`}</button>
+<span class="label" id="msgmsg"></span></div></section>`;
+}
+
 /* ---------- bedtime story by Claude (editors, only when pressed) ---------- */
 function storyBlock(t, day) {
   const st = entriesOf(t.id).find((e) => e.kind === 'story' && e.day === day);
@@ -1301,6 +1315,7 @@ ${d.planned.map((p) => `<div class="check"><button data-a="place" data-v="${esc(
 ${spendBlock(t, i, dk)}
 ${notebookBlock(t, i)}
 ${storyBlock(t, i)}
+${msgBlock(t, i, dk)}
 
 <section class="blk"><button class="btn dayend${d.done_at ? ' is-done' : ''}" data-a="done" data-t="${esc(t.id)}" data-d="${i}">${d.done_at ? '✓ ' + L('วันนี้เสร็จแล้ว (แตะเพื่อยกเลิก)', 'Day done (tap to undo)') : '🏁 ' + L('จบวันนี้', 'Mark day done')}</button>
 <div class="row"><a class="btn ghost" href="#/t/${esc(t.id)}">📖 ${L('ดูในสมุด', 'See it in the book')}</a>${navigator.share ? `<button class="btn ghost" data-a="share" data-t="${esc(t.id)}" data-d="${i}">📤 ${L('ส่งให้ญาติ', 'Share with family')}</button>` : ''}</div></section>`;

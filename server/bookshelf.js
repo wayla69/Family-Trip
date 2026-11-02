@@ -420,10 +420,10 @@ function router({ pool, media, A, ai }) {
   r.post('/api/b/story', ...W, async (req, res, next) => {
     try {
       if (!ai || !ai.enabled()) return bad(res, 'no-key', 501);
-      const b = req.body || {}, lang = b.lang === 'en' ? 'en' : 'th', mode = b.mode === 'sum' ? 'sum' : 'story';   // sum = the day summary for the book
+      const b = req.body || {}, lang = b.lang === 'en' ? 'en' : 'th', mode = ['sum', 'msg'].includes(b.mode) ? b.mode : 'story';   // sum = the day summary for the book · msg = a note for the relatives (not saved)
       const t = await trip(String(b.trip || '')); if (!t) return bad(res, 'trip');
       const day = dayArg(b.day); if (!dayOk(t, day)) return bad(res, 'day');
-      if (mode === 'sum' && day === null) return bad(res, 'day');
+      if (mode !== 'story' && day === null) return bad(res, 'day');
       const facts = await storyFacts(t, day, lang);
       if (!facts) return bad(res, 'empty', 422);   // nothing written down → don't call the model
       const today = new Date().toISOString().slice(0, 10);
@@ -437,6 +437,7 @@ function router({ pool, media, A, ai }) {
       const send = (ev, data) => res.write(`${ev ? `event: ${ev}\n` : ''}data: ${JSON.stringify(data)}\n\n`);
       try {
         const text = await ai.writeStory({ lang, whole: day === null, mode, facts, signal: ctl.signal, onText: (x) => send(null, { t: x }) });
+        if (mode === 'msg') { done = true; send('done', { text }); return res.end(); }   // the note for the relatives lives only on the phone
         const id = day === null ? `${t.id}.story.all` : `${t.id}.${mode}.d${day}`;   // sum id = the record page's blur-save id, so edits upsert the same row
         await q(`INSERT INTO entries (id, family_id, trip_id, day_index, kind, text, lang, created_by, created_uid) VALUES ($1,$2,$3,$4,$5,$6,$7,$8,$9)
           ON CONFLICT (id) DO UPDATE SET text=EXCLUDED.text, lang=EXCLUDED.lang, updated_at=now()`, [id, FAMILY, t.id, day, mode, text, lang, 'Claude', req.user.uid]);
