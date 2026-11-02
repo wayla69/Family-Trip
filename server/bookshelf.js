@@ -422,7 +422,25 @@ function router({ pool, media, A, ai }) {
     return lines.join('\n\n');
   }
   const STORY_DAILY = Math.max(1, parseInt(process.env.STORY_DAILY, 10) || 60);   // model calls per family per UTC day — a cap on the API bill, not a quota anyone should meet
-  const storyUse = { day: '', n: 0 };
+  // the daily cap is counted in Postgres (ai_usage), atomically: a redeploy doesn't reset it, two phones can't both pass the last call
+  const aiTake = async () => (await q(`INSERT INTO ai_usage (family_id, day, calls) VALUES ($1, (now() AT TIME ZONE 'UTC')::date, 1)
+    ON CONFLICT (family_id, day) DO UPDATE SET calls = ai_usage.calls + 1 WHERE ai_usage.calls < $2 RETURNING calls`, [FAMILY, STORY_DAILY])).length > 0;
+  if (ai && ai.onUsage) ai.onUsage((u) => q(`UPDATE ai_usage SET tokens_in = tokens_in + $2, tokens_cached = tokens_cached + $3, tokens_out = tokens_out + $4
+    WHERE family_id=$1 AND day=(now() AT TIME ZONE 'UTC')::date`, [FAMILY, (u.input_tokens || 0) + (u.cache_creation_input_tokens || 0), u.cache_read_input_tokens || 0, u.output_tokens || 0]).catch((e) => console.error('ai usage', e.message)));
+  // "Claude today" for the grown-ups: today's calls against the cap, and the last 30 days' calls and tokens
+  // (an optional USD estimate when AI_USD_PER_MTOK_IN / _OUT are set — prices are not hard-coded here)
+  r.get('/api/b/ai', A.requireEditor, async (_req, res, next) => {
+    try {
+      const rows = await q(`SELECT to_char(day,'YYYY-MM-DD') AS day, calls, tokens_in::float8 tin, tokens_cached::float8 tcache, tokens_out::float8 tout FROM ai_usage
+        WHERE family_id=$1 AND day > (now() AT TIME ZONE 'UTC')::date - 30 ORDER BY day DESC`, [FAMILY]);
+      const today = new Date().toISOString().slice(0, 10), t0 = rows.find((x) => x.day === today) || { calls: 0, tin: 0, tcache: 0, tout: 0 };
+      const pin = Number(process.env.AI_USD_PER_MTOK_IN) || 0, pout = Number(process.env.AI_USD_PER_MTOK_OUT) || 0;
+      const sum = rows.reduce((a, x) => ({ calls: a.calls + x.calls, tin: a.tin + x.tin, tcache: a.tcache + x.tcache, tout: a.tout + x.tout }), { calls: 0, tin: 0, tcache: 0, tout: 0 });
+      const usd = pin && pout ? Math.round(((sum.tin + sum.tcache * 0.1) * pin + sum.tout * pout) / 1e4) / 100 : null;   // cache reads ≈ a tenth of the input rate
+      res.setHeader('Cache-Control', 'no-store');
+      res.json({ limit: STORY_DAILY, on: !!(ai && ai.enabled()), today: t0, days30: sum, usd30: usd, days: rows });
+    } catch (e) { next(e); }
+  });
   r.post('/api/b/story', ...W, async (req, res, next) => {
     try {
       if (!ai || !ai.enabled()) return bad(res, 'no-key', 501);
@@ -432,10 +450,7 @@ function router({ pool, media, A, ai }) {
       if (mode !== 'story' && day === null) return bad(res, 'day');
       const facts = await storyFacts(t, day, lang);
       if (!facts) return bad(res, 'empty', 422);   // nothing written down → don't call the model
-      const today = new Date().toISOString().slice(0, 10);
-      if (storyUse.day !== today) Object.assign(storyUse, { day: today, n: 0 });
-      if (storyUse.n >= STORY_DAILY) return bad(res, 'limit', 429);
-      storyUse.n++;
+      if (!(await aiTake())) return bad(res, 'limit', 429);
       const ctl = new AbortController();
       let done = false;
       res.on('close', () => { if (!done) ctl.abort(); });
@@ -472,10 +487,7 @@ function router({ pool, media, A, ai }) {
       const info = ((await q('SELECT info FROM trips WHERE id=$1', [t.id]))[0] || {}).info || {};
       const days = await q("SELECT day_index, to_char(date,'YYYY-MM-DD') date, title, sleep, plan FROM trip_days WHERE trip_id=$1 ORDER BY day_index", [t.id]);
       const guide = GUIDE.excerpt({ info, days, lang, q: qtext, day });
-      const today = new Date().toISOString().slice(0, 10);
-      if (storyUse.day !== today) Object.assign(storyUse, { day: today, n: 0 });
-      if (storyUse.n >= STORY_DAILY) return bad(res, 'limit', 429);
-      storyUse.n++;
+      if (!(await aiTake())) return bad(res, 'limit', 429);
       const ctl = new AbortController();
       let done = false;
       res.on('close', () => { if (!done) ctl.abort(); });
@@ -507,10 +519,7 @@ function router({ pool, media, A, ai }) {
       const rows = (await q("SELECT id, kind, text, first_key FROM entries WHERE trip_id=$1 AND day_index=$2 AND kind = ANY($3) AND text<>'' AND tr IS NULL ORDER BY occurred_at", [t.id, day, TR_KINDS]))
         .filter((e) => e.kind !== 'first' || e.first_key === 'custom').slice(0, 60);
       if (!rows.length) return bad(res, 'empty', 422);   // nothing new to translate → don't call the model
-      const today = new Date().toISOString().slice(0, 10);
-      if (storyUse.day !== today) Object.assign(storyUse, { day: today, n: 0 });
-      if (storyUse.n >= STORY_DAILY) return bad(res, 'limit', 429);
-      storyUse.n++;
+      if (!(await aiTake())) return bad(res, 'limit', 429);
       const items = rows.map((e) => ({ id: e.id, to: /[\u0E00-\u0E7F]/.test(e.text) ? 'en' : 'th', text: e.text }));
       let tr;
       try { tr = await ai.translate({ items }); } catch (e) { console.error('translate', e.code || e.status || e.message); return bad(res, e.code === 'refusal' ? 'refusal' : 'failed', 502); }

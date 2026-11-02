@@ -8,6 +8,10 @@ const enabled = () => !!process.env.ANTHROPIC_API_KEY;
 const MODEL = () => process.env.STORY_MODEL || 'claude-sonnet-5-5';
 let client = null;
 const api = () => (client = client || new SDK());   // reads ANTHROPIC_API_KEY / ANTHROPIC_BASE_URL
+// the bookshelf adds each finished call's token usage to today's row (ai_usage) — set by router()
+let usageHook = null;
+const onUsage = (fn) => { usageHook = fn; };
+const noteUsage = (msg) => { try { if (usageHook && msg && msg.usage) usageHook(msg.usage); } catch (_) { /* counting never breaks a story */ } };
 
 // mode 'sum': two or three lines for the day page of the book (parents' voice), the same facts, the same rules
 function sumPrompt(lang) {
@@ -91,6 +95,7 @@ async function writeStory({ lang, whole, mode, facts, onText, signal }) {
     if (ev.type === 'content_block_delta' && ev.delta.type === 'text_delta') onText(ev.delta.text);
   }
   const msg = await stream.finalMessage();
+  noteUsage(msg);
   if (msg.stop_reason === 'refusal') throw Object.assign(new Error('refusal'), { code: 'refusal' });
   return clean(msg.content.filter((b) => b.type === 'text').map((b) => b.text).join(''));
 }
@@ -110,6 +115,9 @@ function askPrompt(lang) {
     + 'ห้ามแต่งเวลาเปิดปิด ราคา เบอร์โทร หรือที่อยู่ ถ้าเป็นเหตุฉุกเฉิน ให้บอกโทรเบอร์ฉุกเฉินก่อน';
 }
 
+// guide = { stable, rest } from server/guide.js: the stable part (trip overview + the day's plan) is the same for every
+// question asked from that day, so it goes first and is marked for the prompt cache — a second question within a few
+// minutes reads it from the cache (cheaper, faster); the excerpts that match this question and the question follow.
 async function askGuide({ lang, guide, q, onText, signal }) {
   const stream = api().beta.messages.stream({
     model: MODEL(),
@@ -118,12 +126,16 @@ async function askGuide({ lang, guide, q, onText, signal }) {
     fallbacks: 'default',
     output_config: { effort: 'low' },
     system: askPrompt(lang),
-    messages: [{ role: 'user', content: `${lang === 'en' ? 'TRIP MANUAL (excerpts)' : 'คู่มือทริป (บางส่วน)'}:\n${guide}\n\n${lang === 'en' ? 'QUESTION' : 'คำถาม'}: ${q}` }],
+    messages: [{ role: 'user', content: [
+      { type: 'text', text: `${lang === 'en' ? 'TRIP MANUAL (excerpts)' : 'คู่มือทริป (บางส่วน)'}:\n${guide.stable}`, cache_control: { type: 'ephemeral' } },
+      { type: 'text', text: `${guide.rest}\n\n${lang === 'en' ? 'QUESTION' : 'คำถาม'}: ${q}` },
+    ] }],
   }, { signal });
   for await (const ev of stream) {
     if (ev.type === 'content_block_delta' && ev.delta.type === 'text_delta') onText(ev.delta.text);
   }
   const msg = await stream.finalMessage();
+  noteUsage(msg);
   if (msg.stop_reason === 'refusal') throw Object.assign(new Error('refusal'), { code: 'refusal' });
   return clean(msg.content.filter((b) => b.type === 'text').map((b) => b.text).join(''));
 }
@@ -144,6 +156,7 @@ async function translate({ items, signal }) {
     messages: [{ role: 'user', content: JSON.stringify(items) }],
   }, { signal });
   const msg = await stream.finalMessage();
+  noteUsage(msg);
   if (msg.stop_reason === 'refusal') throw Object.assign(new Error('refusal'), { code: 'refusal' });
   const raw = msg.content.filter((b) => b.type === 'text').map((b) => b.text).join('');
   const a = raw.indexOf('['), z = raw.lastIndexOf(']');
@@ -154,4 +167,4 @@ async function translate({ items, signal }) {
   return out;
 }
 
-module.exports = { enabled, writeStory, askGuide, translate, clean, SDK };
+module.exports = { enabled, writeStory, askGuide, translate, clean, onUsage, SDK };

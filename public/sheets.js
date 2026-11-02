@@ -284,7 +284,7 @@ const A = {
       if (e.name === 'AbortError') { if (sum) box.value = before; toast(L('หยุดแล้ว — ไม่ได้บันทึก', 'Stopped — nothing saved')); }
       else say(L('ไม่สำเร็จ ลองใหม่อีกครั้ง', 'That didn’t work — try again'));
     } finally {
-      storyCtl = null;
+      storyCtl = null; aiUseAt = 0;
       const bx = $(`#${mode}text`); if (bx) { bx.classList.remove('writing'); bx.readOnly = false; }
       const go = $(`#${mode}go`), stop = $(`#${mode}stop`); if (go) go.disabled = false; if (stop) stop.hidden = true;
     }
@@ -333,7 +333,7 @@ const A = {
     if (queue.length) { toast(L('รอให้บันทึกส่งเสร็จก่อน แล้วค่อยแปล', 'Wait for the records to upload, then translate')); return; }
     b.disabled = true; b.setAttribute('aria-busy', 'true');
     try {
-      const r = await api('POST', '/api/b/translate', { trip: b.dataset.t, day: +b.dataset.d });
+      const r = await api('POST', '/api/b/translate', { trip: b.dataset.t, day: +b.dataset.d }); aiUseAt = 0;
       await load(); safeRender();
       toast(L(`แปลแล้ว ${r.n} ข้อความ`, `${r.n} translated`));
     } catch (e) {
@@ -380,7 +380,7 @@ const A = {
       if (e.name === 'AbortError') { say(''); box.hidden = true; askAns = null; }
       else say(L('ไม่สำเร็จ ลองใหม่อีกครั้ง', 'That didn’t work — try again'));
     } finally {
-      storyCtl = null; box.classList.remove('writing');
+      storyCtl = null; aiUseAt = 0; box.classList.remove('writing');
       const go = $('#askgo'), stop = $('#askstop'); if (go) go.disabled = false; if (stop) stop.hidden = true;
     }
   },
