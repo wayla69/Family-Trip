@@ -289,6 +289,49 @@ const A = {
     }
   },
   storystop() { if (storyCtl) storyCtl.abort(); },
+  // ask the guide: the question goes with excerpts of this book's manual (picked on the server), the answer streams back; never saved —
+  // the last answer stays on this page (askAns) until another question; a chip (data-v) asks its own question
+  async ask(b) {
+    if (storyCtl) return;
+    const t = trip(b.dataset.t), day = b.dataset.d === '' ? null : +b.dataset.d, inp = $('#askq');
+    if (b.dataset.v && inp) { inp.value = b.dataset.v; drafts[inp.dataset.draft] = inp.value; }
+    const q = inp ? inp.value.trim() : '';
+    if (!q) { if (inp) inp.focus(); return; }
+    if (!navigator.onLine) { toast(L('ต้องต่อเน็ตเพื่อถามไกด์ — ดูในหน้าต่างๆ ของคู่มือได้เลย', 'Asking the guide needs a connection — the manual pages work offline')); return; }
+    const box = $('#askans'); box.hidden = false; box.textContent = ''; box.classList.add('writing');
+    $('#askgo').disabled = true; $('#askstop').hidden = false;
+    askAns = { t: t.id, q, text: '' };
+    storyCtl = new AbortController();
+    const say = (x) => { box.textContent = x; askAns.text = x; };
+    try {
+      const r = await fetch('/api/b/ask', { method: 'POST', credentials: 'same-origin', signal: storyCtl.signal,
+        headers: { 'x-mb': '1', 'content-type': 'application/json' }, body: JSON.stringify({ trip: t.id, day, lang, q }) });
+      if (r.status === 429) { say(L('วันนี้ใช้ Claude ครบจำนวนแล้ว — พรุ่งนี้ใช้ต่อได้', 'That’s all the Claude writing for today — more tomorrow')); return; }
+      if (!r.ok) throw new Error('http ' + r.status);
+      const rd = r.body.getReader(), dec = new TextDecoder();
+      let buf = '', text = '';
+      for (;;) {
+        const { done, value } = await rd.read(); if (done) break;
+        buf += dec.decode(value, { stream: true });
+        let i;
+        while ((i = buf.indexOf('\n\n')) >= 0) {
+          const chunk = buf.slice(0, i); buf = buf.slice(i + 2);
+          let ev = null, data = '';
+          chunk.split('\n').forEach((l) => { if (l.startsWith('event: ')) ev = l.slice(7); else if (l.startsWith('data: ')) data += l.slice(6); });
+          const d = JSON.parse(data || '{}');
+          if (!ev) { text += d.t; say(text); }
+          else if (ev === 'done') say(d.text || text);
+          else if (ev === 'error') say(d.error === 'refusal' ? L('Claude ตอบข้อนี้ไม่ได้ ลองถามแบบอื่น', 'Claude could not answer that one — try asking another way') : L('ไม่สำเร็จ ลองใหม่อีกครั้ง', 'That didn’t work — try again'));
+        }
+      }
+    } catch (e) {
+      if (e.name === 'AbortError') { say(''); box.hidden = true; askAns = null; }
+      else say(L('ไม่สำเร็จ ลองใหม่อีกครั้ง', 'That didn’t work — try again'));
+    } finally {
+      storyCtl = null; box.classList.remove('writing');
+      const go = $('#askgo'), stop = $('#askstop'); if (go) go.disabled = false; if (stop) stop.hidden = true;
+    }
+  },
   lb(b) { openLb(b.dataset.t, b.dataset.v); },
   newtrip() { openSheet(newTripSheet()); },
   pickphotos(b) { const fp = $('#fpick'); fp.dataset.t = b.dataset.t; fp.dataset.d = b.dataset.d; fp.click(); },
@@ -378,7 +421,8 @@ Object.assign(A, {
   },
 });
 
-let storyCtl = null;   // AbortController while a story streams
+let storyCtl = null;   // AbortController while a story (or a guide answer) streams
+let askAns = null;     // the last guide answer on the Today page {t, q, text} — kept across re-renders, never stored
 
 /* ---------- lightbox ---------- */
 let lbState = null;
@@ -454,6 +498,7 @@ document.addEventListener('change', (e) => {
 document.addEventListener('keydown', (e) => {
   if (lbState) { if (e.key === 'Escape') lbAct('close'); if (e.key === 'ArrowRight') lbAct('next'); if (e.key === 'ArrowLeft') lbAct('prev'); return; }
   if (e.key === 'Escape') closeSheet();
+  if (e.key === 'Enter' && e.target.id === 'askq') { e.preventDefault(); const b = $('#askgo'); if (b && !b.disabled) A.ask(b); }   // Enter = ask the guide
   if (e.key === 'Enter' && e.target.id === 'bookq') { e.preventDefault(); const a = $('.sres a'); if (a) a.click(); }   // Enter = open the best hit
 });
 let sx = null;

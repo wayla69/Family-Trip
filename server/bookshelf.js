@@ -7,6 +7,7 @@ const express = require('express');
 const zlib = require('zlib');
 const crypto = require('crypto');
 const IMG = require('./images');
+const GUIDE = require('./guide');
 
 const FAMILY = process.env.FAMILY_ID || 'family';
 const ID_RE = /^[A-Za-z0-9_.:-]{4,80}$/;
@@ -447,6 +448,41 @@ function router({ pool, media, A, ai }) {
         done = true;
         if (ctl.signal.aborted) return res.end();   // stopped by the user: nothing saved
         console.error('story', e.code || e.status || e.message);
+        send('error', { error: e.code === 'refusal' ? 'refusal' : 'failed' });
+      }
+      res.end();
+    } catch (e) { next(e); }
+  });
+
+  // ----- ask the guide (Claude): a parent's question answered from the book's own manual (excerpts picked by server/guide.js).
+  // Editors only, only when asked, guide text only (no records, no photos), streamed as SSE, never saved; shares the daily cap.
+  r.post('/api/b/ask', ...W, async (req, res, next) => {
+    try {
+      if (!ai || !ai.enabled()) return bad(res, 'no-key', 501);
+      const b = req.body || {}, lang = b.lang === 'en' ? 'en' : 'th', qtext = String(b.q || '').trim().slice(0, 300);
+      const t = await trip(String(b.trip || '')); if (!t) return bad(res, 'trip');
+      if (!qtext) return bad(res, 'q');
+      const day = dayArg(b.day); if (!dayOk(t, day)) return bad(res, 'day');
+      const info = ((await q('SELECT info FROM trips WHERE id=$1', [t.id]))[0] || {}).info || {};
+      const days = await q("SELECT day_index, to_char(date,'YYYY-MM-DD') date, title, sleep, plan FROM trip_days WHERE trip_id=$1 ORDER BY day_index", [t.id]);
+      const guide = GUIDE.excerpt({ info, days, lang, q: qtext, day });
+      const today = new Date().toISOString().slice(0, 10);
+      if (storyUse.day !== today) Object.assign(storyUse, { day: today, n: 0 });
+      if (storyUse.n >= STORY_DAILY) return bad(res, 'limit', 429);
+      storyUse.n++;
+      const ctl = new AbortController();
+      let done = false;
+      res.on('close', () => { if (!done) ctl.abort(); });
+      res.writeHead(200, { 'Content-Type': 'text/event-stream; charset=utf-8', 'Cache-Control': 'no-store', 'X-Accel-Buffering': 'no' });
+      const send = (ev, data) => res.write(`${ev ? `event: ${ev}\n` : ''}data: ${JSON.stringify(data)}\n\n`);
+      try {
+        const text = await ai.askGuide({ lang, guide, q: qtext, signal: ctl.signal, onText: (x) => send(null, { t: x }) });
+        done = true;
+        send('done', { text });
+      } catch (e) {
+        done = true;
+        if (ctl.signal.aborted) return res.end();
+        console.error('ask', e.code || e.status || e.message);
         send('error', { error: e.code === 'refusal' ? 'refusal' : 'failed' });
       }
       res.end();

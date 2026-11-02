@@ -535,6 +535,17 @@ function remindBar() {
 <small>${L('เด้งบนเครื่องนี้แม้ล็อกจอ · ตามเวลาในแผนของวันนั้น · และเตือนเก็บเล่มก่อนบิน 2 วัน · ประตูเซอร์ไพรส์ทุกเช้า 08:00 · บันทึกวันทุกคืน 21:30', 'Pops up on this phone even when locked · from the times in the day’s plan · plus: store the book 2 days before the flight · a surprise door each morning at 08:00 · record the day each evening at 21:30')}</small></span>
 <span class="rb">${on ? `<button class="btn small ghost" data-a="remindtest">${L('ทดสอบ', 'Test')}</button>` : ''}<button class="btn small${on ? ' ghost' : ''}" data-a="remind">${on ? L('ปิด', 'Turn off') : L('เปิดการเตือน', 'Turn on')}</button></span></div>`;
 }
+// ask the guide (editors, when Claude is on): a question answered from this book's manual only; the answer is not stored
+function askBlock(t, i) {
+  if (!isEditor() || !S.features.story) return '';
+  const a = askAns && askAns.t === t.id ? askAns : null, dv = `data-t="${esc(t.id)}" data-d="${i}"`;
+  const ex = [L('ถ้าฝนตกวันนี้ทำอะไรแทน', 'What do we do if it rains today?'), L('ร้านกินง่ายใกล้ที่พักคืนนี้', 'An easy dinner near tonight’s stay?'), L('ถ้าเด็กหลงทำยังไง', 'What if a child gets lost?')];
+  return `<section class="ask noprint"><h3>🧭 ${L('ถามไกด์', 'Ask the guide')} <span class="label">${L('Claude ตอบจากคู่มือของเล่มนี้เท่านั้น', 'Claude answers from this book’s manual only')}</span></h3>
+<div class="row askrow"><input id="askq" class="field" type="search" enterkeyhint="send" maxlength="300" data-draft="ask:${esc(t.id)}" value="${esc(drafts['ask:' + t.id] ?? (a ? a.q : ''))}" placeholder="${L('เช่น วันนี้กินข้าวเที่ยงที่ไหน', 'e.g. where do we have lunch today?')}">
+<button class="btn" data-a="ask" ${dv} id="askgo">${L('ถาม', 'Ask')}</button><button class="btn ghost" data-a="storystop" id="askstop" hidden>■</button></div>
+<div class="chips">${ex.map((x) => `<button class="chip" data-a="ask" ${dv} data-v="${esc(x)}">${esc(x)}</button>`).join('')}</div>
+<div class="call calm askans" id="askans"${a && a.text ? '' : ' hidden'}>${a ? esc(a.text) : ''}</div></section>`;
+}
 function viewToday(t, j, full) {
   ensureWx(t);   // the live forecast arrives in the background and re-renders once (see core.js)
   const i = j !== undefined && j >= 0 && j < t.days.length ? j : todayIdx(t), d = t.days[i], dn = dayNow(t), until = daysUntil(t), pl = d.plan || {};
@@ -548,6 +559,7 @@ function viewToday(t, j, full) {
 ${banner}
 ${isEditor() && !ls('remind') && (dn >= 0 || until > 0) ? remindBar() : ''}
 <div class="row quick">${isEditor() ? `<a class="btn" href="#/t/${esc(t.id)}/log/${i}">${ic('log')} ${L('บันทึกวันนี้', 'Record today')}</a>` : ''}${pl.route ? extA(pl.route, ic('route') + ' ' + L('เส้นทางวันนี้', "Today's route"), 'qlink') : ''}${pl.stay ? extA(mapsUrl(pl.stay.q || pl.stay.addr), ic('stays') + ' ' + L('ไปที่พัก', 'To the stay'), 'qlink') : ''}${eatCount(t) ? `<a class="qlink" href="#/t/${esc(t.id)}/eat/d/${i}">${ic('eat')} ${L('ร้านอาหาร', 'Eat')}</a>` : ''}</div>
+${full ? '' : askBlock(t, i)}
 ${(full ? planHtml(t, i, true) : dayGlance(t, i)) || `<div class="empty">${L('วันนี้ไม่มีแผนในคู่มือ', 'No plan in the manual for this day')}</div>`}
 ${mission && (mission.facts || []).length ? `<div class="part kidm">${L('ภารกิจของเด็กๆ วันนี้', "The kids' mission today")}</div><div class="call pick mission"><b>${esc(T(mission.title))}</b><ul class="tips">${mission.facts.map((f) => `<li>${esc(T(f))}</li>`).join('')}</ul></div>` : ''}`;
 }
