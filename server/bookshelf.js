@@ -14,8 +14,8 @@ const ID_RE = /^[A-Za-z0-9_.:-]{4,80}$/;
 // voice memos arrive as the phone's recorder made them: Chrome/Android webm-opus, iPhone mp4-aac; stored under a/<trip>/<id>.<ext>
 const AUDIO_EXT = { 'audio/webm': 'webm', 'audio/mp4': 'm4a', 'audio/x-m4a': 'm4a', 'audio/aac': 'aac', 'audio/mpeg': 'mp3', 'audio/ogg': 'ogg' };
 const SLUG_RE = /^[a-z0-9-]{2,60}$/;
-const KINDS = ['quote', 'mood', 'fav', 'note', 'first', 'story', 'tick', 'field', 'sum', 'talk'];   // sum = the day in a few lines (book + PDF) · talk = bedtime questions (kid mode)
-const TRIP_WIDE = ['story', 'tick', 'field'];   // kinds that may have no day (whole-trip story, passport checklists, Explorer ID)
+const KINDS = ['quote', 'mood', 'fav', 'note', 'first', 'story', 'tick', 'field', 'sum', 'talk', 'letter'];   // sum = the day in a few lines (book + PDF) · talk = bedtime questions (kid mode)
+const TRIP_WIDE = ['story', 'tick', 'field', 'letter'];   // kinds that may have no day (whole-trip story, passport checklists, Explorer ID, the letter to the kids)
 const HEART_EMOJI = ['💗', '🤗', '😘', '⭐', '👏', '🎈'];
 const REVIEW_KINDS = ['stay', 'food', 'place'], KID_VERDICT = ['love', 'ok', 'no'];
 const HEARTS_PER_DAY = { sender: 40, family: 400 };   // the view link is shared: cap what one phone, and everyone together, can send
@@ -444,10 +444,10 @@ function router({ pool, media, A, ai }) {
   r.post('/api/b/story', ...W, async (req, res, next) => {
     try {
       if (!ai || !ai.enabled()) return bad(res, 'no-key', 501);
-      const b = req.body || {}, lang = b.lang === 'en' ? 'en' : 'th', mode = ['sum', 'msg', 'talk'].includes(b.mode) ? b.mode : 'story';   // sum = the day summary for the book · msg = a note for the relatives (not saved) · talk = bedtime questions
+      const b = req.body || {}, lang = b.lang === 'en' ? 'en' : 'th', mode = ['sum', 'msg', 'talk', 'letter'].includes(b.mode) ? b.mode : 'story';   // sum = the day summary for the book · msg = a note for the relatives (not saved) · talk = bedtime questions
       const t = await trip(String(b.trip || '')); if (!t) return bad(res, 'trip');
       const day = dayArg(b.day); if (!dayOk(t, day)) return bad(res, 'day');
-      if (mode !== 'story' && day === null) return bad(res, 'day');
+      if (mode === 'letter' ? day !== null : mode !== 'story' && day === null) return bad(res, 'day');   // the letter is for the whole trip; the rest need a day
       const facts = await storyFacts(t, day, lang);
       if (!facts) return bad(res, 'empty', 422);   // nothing written down → don't call the model
       if (!(await aiTake())) return bad(res, 'limit', 429);
@@ -460,7 +460,7 @@ function router({ pool, media, A, ai }) {
         let text = await ai.writeStory({ lang, whole: day === null, mode, facts, signal: ctl.signal, onText: (x) => send(null, { t: x }) });
         if (mode === 'talk') text = text.split('\n').map((l) => l.replace(/^\s*\d+[.)]\s*/, '').trim()).filter(Boolean).slice(0, 5).join('\n');   // one question per line, no numbering
         if (mode === 'msg') { done = true; send('done', { text }); return res.end(); }   // the note for the relatives lives only on the phone
-        const id = day === null ? `${t.id}.story.all` : `${t.id}.${mode}.d${day}`;   // sum id = the record page's blur-save id, so edits upsert the same row
+        const id = day === null ? `${t.id}.${mode}.all` : `${t.id}.${mode}.d${day}`;   // sum id = the record page's blur-save id, so edits upsert the same row
         await q(`INSERT INTO entries (id, family_id, trip_id, day_index, kind, text, lang, created_by, created_uid) VALUES ($1,$2,$3,$4,$5,$6,$7,$8,$9)
           ON CONFLICT (id) DO UPDATE SET text=EXCLUDED.text, lang=EXCLUDED.lang, updated_at=now(), tr=NULL`, [id, FAMILY, t.id, day, mode, text, lang, 'Claude', req.user.uid]);
         done = true;
@@ -526,6 +526,44 @@ function router({ pool, media, A, ai }) {
       let n = 0;
       for (const e of rows) if (tr[e.id]) n += (await pool.query('UPDATE entries SET tr=$1 WHERE id=$2 AND trip_id=$3 AND text=$4', [tr[e.id], e.id, t.id, e.text])).rowCount;
       res.json({ ok: true, n });
+    } catch (e) { next(e); }
+  });
+
+  // ----- what our family likes (Claude, editors): the travel notebook across every trip → what works for us, for the next trip.
+  // Only the notebook's words go (names, stars, tags, the kids' verdicts, notes); saved in settings (family_likes) for both parents.
+  const VERDICT = { love: 'loved it', ok: 'okay', no: 'did not like it' };
+  r.get('/api/b/likes', A.requireEditor, async (_req, res, next) => {
+    try { const v = (await q("SELECT value FROM settings WHERE key='family_likes'"))[0]; res.setHeader('Cache-Control', 'no-store'); res.json(v ? JSON.parse(v.value) : null); } catch (e) { next(e); }
+  });
+  r.post('/api/b/likes', ...W, async (req, res, next) => {
+    try {
+      if (!ai || !ai.enabled()) return bad(res, 'no-key', 501);
+      const lang = (req.body || {}).lang === 'en' ? 'en' : 'th';
+      const rows = await q(`SELECT r.kind, r.name, r.rating, r.tags, r.kids, r.again, r.note, t.title FROM reviews r JOIN trips t ON t.id=r.trip_id
+        WHERE r.family_id=$1 ORDER BY t.date_from, r.updated_at`, [FAMILY]);
+      if (!rows.length) return bad(res, 'empty', 422);
+      const kids = Object.fromEntries((await q('SELECT slug, name_th, name_en FROM children WHERE family_id=$1', [FAMILY])).map((k) => [k.slug, lang === 'en' ? k.name_en : k.name_th]));
+      const facts = rows.map((r) => `${r.title[lang] || r.title.en} · ${r.kind}: ${r.name[lang] || r.name.en}${r.rating ? ` · ${r.rating}/5` : ''}${(r.tags || []).length ? ` · tags: ${r.tags.join(', ')}` : ''}`
+        + `${Object.entries(r.kids || {}).map(([k, v]) => ` · ${kids[k] || k}: ${VERDICT[v] || v}`).join('')}${r.again === true ? ' · would go again' : r.again === false ? ' · would not go again' : ''}${r.note ? ` · note: ${r.note}` : ''}`).join('\n');
+      if (!(await aiTake())) return bad(res, 'limit', 429);
+      const ctl = new AbortController();
+      let done = false;
+      res.on('close', () => { if (!done) ctl.abort(); });
+      res.writeHead(200, { 'Content-Type': 'text/event-stream; charset=utf-8', 'Cache-Control': 'no-store', 'X-Accel-Buffering': 'no' });
+      const send = (ev, data) => res.write(`${ev ? `event: ${ev}\n` : ''}data: ${JSON.stringify(data)}\n\n`);
+      try {
+        const text = await ai.writeStory({ lang, whole: true, mode: 'likes', facts, signal: ctl.signal, onText: (x) => send(null, { t: x }) });
+        const v = { text, lang, at: Date.now(), n: rows.length };
+        await q("INSERT INTO settings (key, value) VALUES ('family_likes', $1) ON CONFLICT (key) DO UPDATE SET value=EXCLUDED.value", [JSON.stringify(v)]);
+        done = true;
+        send('done', v);
+      } catch (e) {
+        done = true;
+        if (ctl.signal.aborted) return res.end();
+        console.error('likes', e.code || e.status || e.message);
+        send('error', { error: e.code === 'refusal' ? 'refusal' : 'failed' });
+      }
+      res.end();
     } catch (e) { next(e); }
   });
 
