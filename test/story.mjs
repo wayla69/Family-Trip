@@ -81,6 +81,7 @@ try {
   ok(typeof c.body.messages[0].content === 'string' && !JSON.stringify(c.body).includes('"image"') && !JSON.stringify(c.body).includes('base64'), 'text only — no photos sent');
   ok(c.body.messages[0].content.includes('ปลาอยู่ในน้ำเหมือนหนูเลย') && c.body.messages[0].content.includes('ฮ่องกงดิสนีย์แลนด์') && c.body.messages[0].content.includes('ไอติมมิกกี้'), 'facts: quote, place, favourite');
   ok(c.body.system.includes('ห้ามแต่ง') && c.body.system.includes('ฝันดี'), 'prompt: no invented events, ends with good night (Handoff §6)');
+  ok(c.body.system.includes('ภาษาเด็ก') && c.body.system.includes('ตื่นเต้น') && c.body.system.includes('สงบ'), 'prompt: little-kid words, exciting, calm at the end');
 
   await put('/api/b/entries/q-story-0002', { trip: T, day: 2, kind: 'quote', child: 'mimi', text: 'REFUSE' });
   const rr = events(await (await story({ trip: T, day: 2, lang: 'th' })).text());
@@ -142,7 +143,7 @@ try {
   // bedtime questions (mode 'talk'): own prompt, saved as the day's talk entry, one question per line
   const btk = calls.length, rtk = events(await (await story({ trip: T, day: 1, lang: 'th', mode: 'talk' })).text());
   const talk = (await state()).entries.find((e) => e.id === `${T}.talk.d1`);
-  ok(calls.length === btk + 1 && rtk.at(-1).ev === 'done' && calls.at(-1).body.system.includes('คำถามชวนคุยก่อนนอน 3 ข้อ'), 'bedtime questions: own prompt, streamed, done');
+  ok(calls.length === btk + 1 && rtk.at(-1).ev === 'done' && calls.at(-1).body.system.includes('คำถามชวนคุยก่อนนอน 3 ข้อ') && calls.at(-1).body.system.includes('ตื่นเต้น'), 'bedtime questions: own prompt (kid words, exciting), streamed, done');
   ok(talk && talk.kind === 'talk' && talk.text.split('\n').length >= 2 && !talk.text.includes('**'), 'bedtime questions: saved on the day, one per line');
 
   const vck = (await fetch(BASE + '/v/grandma', { redirect: 'manual' })).headers.get('set-cookie');
