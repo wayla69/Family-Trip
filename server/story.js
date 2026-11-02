@@ -65,4 +65,37 @@ async function writeStory({ lang, whole, mode, facts, onText, signal }) {
   return clean(msg.content.filter((b) => b.type === 'text').map((b) => b.text).join(''));
 }
 
-module.exports = { enabled, writeStory, clean, SDK };
+// "Ask the guide": answer a grown-up's question from excerpts of the book's own manual (server/guide.js), never from memory.
+// Not saved. Streams like a story; resolves with the cleaned answer.
+function askPrompt(lang) {
+  if (lang === 'en') {
+    return 'You are the pocket guide for a family trip (two small children, Mimi 3 and Mika 1½). Answer the parent’s question using ONLY the excerpts from the trip manual below. '
+      + 'If the excerpts do not answer it, say so in one line and name the page of the app to check (Today, Plan, Eat, Stays, SOS, Prep, Learn). '
+      + 'Be short and practical: at most 120 words; plain text; short lines starting with "• " are fine; keep times, names and numbers exactly as written. '
+      + 'Never invent opening hours, prices, phone numbers or addresses. In an emergency, tell them to call the local emergency number first.';
+  }
+  return 'คุณคือไกด์ประจำทริปของครอบครัวที่มีลูกเล็กสองคน (มีมี่ 3 ขวบ มีก้า 1 ขวบครึ่ง) ตอบคำถามของพ่อแม่ โดยใช้เฉพาะข้อความจากคู่มือทริปที่ให้มาเท่านั้น '
+    + 'ถ้าคู่มือไม่ได้ตอบเรื่องนี้ ให้บอกสั้นๆ ว่าไม่มีในคู่มือ แล้วบอกหน้าในแอปที่ควรดู (วันนี้ แผน ร้านอาหาร ที่พัก ฉุกเฉิน เตรียมตัว เรียนรู้) '
+    + 'ตอบสั้นและใช้ได้จริง ไม่เกิน 120 คำ เป็นข้อความธรรมดา ขึ้นบรรทัดด้วย "• " ได้ เวลา ชื่อ และตัวเลขให้คงตามคู่มือ '
+    + 'ห้ามแต่งเวลาเปิดปิด ราคา เบอร์โทร หรือที่อยู่ ถ้าเป็นเหตุฉุกเฉิน ให้บอกโทรเบอร์ฉุกเฉินก่อน';
+}
+
+async function askGuide({ lang, guide, q, onText, signal }) {
+  const stream = api().beta.messages.stream({
+    model: MODEL(),
+    max_tokens: 1500,
+    betas: ['server-side-fallback-2026-07-01'],
+    fallbacks: 'default',
+    output_config: { effort: 'low' },
+    system: askPrompt(lang),
+    messages: [{ role: 'user', content: `${lang === 'en' ? 'TRIP MANUAL (excerpts)' : 'คู่มือทริป (บางส่วน)'}:\n${guide}\n\n${lang === 'en' ? 'QUESTION' : 'คำถาม'}: ${q}` }],
+  }, { signal });
+  for await (const ev of stream) {
+    if (ev.type === 'content_block_delta' && ev.delta.type === 'text_delta') onText(ev.delta.text);
+  }
+  const msg = await stream.finalMessage();
+  if (msg.stop_reason === 'refusal') throw Object.assign(new Error('refusal'), { code: 'refusal' });
+  return clean(msg.content.filter((b) => b.type === 'text').map((b) => b.text).join(''));
+}
+
+module.exports = { enabled, writeStory, askGuide, clean, SDK };
