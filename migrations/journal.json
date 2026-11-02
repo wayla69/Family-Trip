@@ -10,6 +10,7 @@
     { "id": "0007", "file": "0007_push.sql" },
     { "id": "0008", "file": "0008_spend.sql" },
     { "id": "0009", "file": "0009_day_summary.sql" },
-    { "id": "0010", "file": "0010_entry_translation.sql" }
+    { "id": "0010", "file": "0010_entry_translation.sql" },
+    { "id": "0011", "file": "0011_bedtime_talk.sql" }
   ]
 }

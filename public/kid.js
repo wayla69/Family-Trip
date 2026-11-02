@@ -237,6 +237,8 @@ function btGo(d) {
 }
 window.addEventListener('hashchange', closeBedtime);
 document.addEventListener('keydown', (e) => { if (bt && e.key === 'Escape') closeBedtime(); });
+// the bedtime questions of a day (entry kind talk), if a grown-up asked Claude for them
+const kidTalk = (t, i) => S.entries.find((e) => e.trip === t.id && e.kind === 'talk' && e.day === i && e.text);
 // the story the kids can listen to on a day: that day's, else the whole trip's
 const kidStory = (t, i) => S.entries.find((e) => e.trip === t.id && e.kind === 'story' && e.day === i) || S.entries.find((e) => e.trip === t.id && e.kind === 'story' && e.day === null);
 
@@ -482,7 +484,7 @@ function viewKid(p) {
       ? [cd && ['count', '🎁', L('เซอร์ไพรส์', 'Surprise')], cd && cd.pack && ['pack', '🧳', L('จัดกระเป๋า', 'Pack')], ['colour', '🎨', L('ระบายสี', 'Colour')], ['draw', '🖍️', L('วาดรูป', 'Draw')]]
       : [['colour', '🎨', L('ระบายสี', 'Colour')], ['draw', '🖍️', L('วาดรูป', 'Draw')], ['spot', '🔍', L('หาของ', 'Find it')], ['stamp', '🛂', L('ปั๊มตรา', 'Stamp')]])
       .concat(words ? [['words', '🗣️', L('พูดตาม', 'Say it')]] : [], [['stickers', '⭐', L('สติกเกอร์', 'Stickers')]], pp.map ? [['map', '🗺️', L('แผนที่', 'Map')]] : [], ((d.plan || {}).quiz || []).length ? [['quiz', '❓', L('ทายซิ', 'Quiz')]] : [],
-        kidPhotos(t, i).length ? [['photos', '📸', L('ดูรูป', 'Photos')]] : [], [['match', '🧩', L('จับคู่', 'Match')]], pre ? [] : [['mood', '😊', L('วันนี้รู้สึก', 'My mood')]],
+        kidTalk(t, i) ? [['talk', '💬', L('คุยกัน', 'Let’s talk')]] : [], kidPhotos(t, i).length ? [['photos', '📸', L('ดูรูป', 'Photos')]] : [], [['match', '🧩', L('จับคู่', 'Match')]], pre ? [] : [['mood', '😊', L('วันนี้รู้สึก', 'My mood')]],
         wild.length ? [['animals', (t.info.wildLabel || {}).emo || '🦘', t.info.wildLabel ? esc(T(t.info.wildLabel.short)) : L('สัตว์', 'Animals')]] : [], [['numbers', '🔢', L('นับเลข', 'Count')]], [['trophies', '🏆', L('รางวัล', 'Trophies')]]).filter(Boolean);
     const until = daysUntil(t);
     const btns = tiles.map(([v, e, lbl]) => `<button data-a="kidnav" data-v="#/kid/${esc(kid)}/${v}" data-say="${esc(lbl)}"><span>${e}</span><b>${lbl}</b></button>`)
@@ -543,6 +545,10 @@ ${mapHtml(t, i, [kid].concat((t.theme.children || []).map((c) => c.slug).filter(
   } else if (view === 'quiz' && ((d.plan || {}).quiz || []).length) {
     body = `<div class="kidguide">${guideImg(1)}<p>${L('แตะการ์ดเพื่อดูคำตอบ!', 'Tap a card to see the answer!')}</p></div>
 <div class="kidquiz">${d.plan.quiz.map((q, n) => `<button class="qcard" data-a="kidquiz" data-v="${n}" data-q="${esc(T(q.q))}" data-ans="${esc(T(q.a))}" aria-pressed="false"><small>${L('คำถาม', 'Question')} ${n + 1}</small><b>${esc(T(q.q))}</b><span class="ans" hidden>${esc(T(q.a))}</span></button>`).join('')}</div>`;
+  } else if (view === 'talk' && kidTalk(t, i)) {   // bedtime questions: tap a card, the phone reads it; the child answers out loud (nothing stored)
+    const qs = kidTalk(t, i).text.split('\n').filter((x) => x.trim());
+    body = `<div class="kidguide">${guideImg(0)}<p>${L('แตะการ์ดแล้วตอบดังๆ นะ!', 'Tap a card and say your answer!')}</p></div>
+<div class="kidquiz kidtalk">${qs.map((q, n) => `<button class="qcard" data-a="kidtalk" data-q="${esc(q)}" aria-pressed="false"><small>💬 ${n + 1}</small><b>${esc(q)}</b></button>`).join('')}</div>`;
   } else if (view === 'stickers') {
     body = `<div class="kidguide">${guideImg(1)}<p>${L('ลากสติกเกอร์ไปแปะได้เลย!', 'Drag your stickers onto the page!')}</p></div>${stickerBoard(t, kid, true)}`;
   } else if (view === 'photos') {
@@ -689,6 +695,7 @@ Object.assign(A, {
     b.setAttribute('aria-pressed', String(!on)); if (ans) ans.hidden = on;
     if (!on) { beep('chime'); burst(b, ['⭐', '✨', '🎉']); sayUi(b.dataset.ans); } else { beep('tap'); sayUi(b.dataset.q); }
   },
+  kidtalk(b) { const q = b.dataset.q.replace(/[\p{Extended_Pictographic}\uFE0F]/gu, '').trim(); b.setAttribute('aria-pressed', 'true'); beep('chime'); burst(b, ['💬', '✨', '⭐']); say(q, /[\u0E00-\u0E7F]/.test(q) ? 'th-TH' : 'en-GB'); },   // in the question's own language, without the emoji
   kidheart(b) { beep('pop'); burst(b, ['💗', '💕', '✨']); sayUi(b.dataset.v); },
   // bedtime story player (kid mode and the book)
   bedtime(b) { const e = S.entries.find((x) => x.id === b.dataset.v); if (e) openBedtime(trip(e.trip), e); },
