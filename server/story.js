@@ -45,7 +45,18 @@ function talkPrompt(lang) {
     + 'ข้อละบรรทัด ขึ้นต้นด้วยอีโมจิ 1 ตัว ไม่มีเลขข้อ ไม่มี markdown ตอบเฉพาะคำถาม 3 บรรทัด';
 }
 
-function prompt({ lang, whole, mode }) {
+// every text Claude writes for the family must sound like the parents themselves, not like an AI
+const NATURAL = {
+  th: ' — เขียนให้เหมือนพ่อแม่คนไทยพูดเองจริงๆ ใช้ภาษาพูดที่เป็นธรรมชาติ ใช้คำลงท้ายได้ (นะ จ้ะ น้า ค่ะ ครับ) '
+    + 'ห้ามใช้สำนวนแบบ AI หรือภาษาหนังสือเกินไป เช่น "วันแสนวิเศษ" "การผจญภัยอันน่าตื่นตาตื่นใจ" "ความทรงจำอันล้ำค่า" "เต็มไปด้วยรอยยิ้มและเสียงหัวเราะ" "ช่างเป็นวันที่…" "ไม่รู้ลืม" '
+    + 'ไม่สอนข้อคิด ไม่สรุปว่าวันนี้พิเศษแค่ไหน ไม่ซ้อนคำคุณศัพท์ ไม่ใช้เครื่องหมาย — เล่าสิ่งที่เกิดขึ้นจริงตรงๆ',
+  en: ' Write like a real parent talking: plain, natural, everyday words. Avoid AI-sounding phrases such as "magical day", "unforgettable adventure", '
+    + '"precious memories", "filled with laughter and joy", "what a day it was", "a day to remember", "truly", "delightful". '
+    + 'No morals, no summing up how special the day was, no stacked adjectives, no em dashes. Just tell what happened.',
+};
+
+function prompt({ lang, whole, mode }) { return basePrompt({ lang, whole, mode }) + NATURAL[lang === 'en' ? 'en' : 'th']; }
+function basePrompt({ lang, whole, mode }) {
   if (mode === 'sum') return sumPrompt(lang);
   if (mode === 'talk') return talkPrompt(lang);
   if (mode === 'msg') return msgPrompt(lang);
@@ -128,6 +139,7 @@ async function translate({ items, signal }) {
     output_config: { effort: 'low' },
     system: 'Translate each item of a family travel diary into the language in its "to" field ("en" = English, "th" = Thai). '
       + 'Mimi (มีมี่) and Mika (มีก้า) are small children: keep their quotes childlike and simple, do not polish them; keep names, places and numbers as they are. '
+      + 'Use natural everyday language, the way a parent would say it, not a stiff word-for-word or bookish translation. '
       + 'Reply with JSON only: an array of {"id": ..., "tr": ...} with the same ids — no markdown, no commentary.',
     messages: [{ role: 'user', content: JSON.stringify(items) }],
   }, { signal });

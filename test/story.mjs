@@ -82,6 +82,7 @@ try {
   ok(c.body.messages[0].content.includes('ปลาอยู่ในน้ำเหมือนหนูเลย') && c.body.messages[0].content.includes('ฮ่องกงดิสนีย์แลนด์') && c.body.messages[0].content.includes('ไอติมมิกกี้'), 'facts: quote, place, favourite');
   ok(c.body.system.includes('ห้ามแต่ง') && c.body.system.includes('ฝันดี'), 'prompt: no invented events, ends with good night (Handoff §6)');
   ok(c.body.system.includes('ภาษาเด็ก') && c.body.system.includes('ตื่นเต้น') && c.body.system.includes('สงบ'), 'prompt: little-kid words, exciting, calm at the end');
+  ok(c.body.system.includes('ห้ามใช้สำนวนแบบ AI') && c.body.system.includes('วันแสนวิเศษ'), 'prompt: sounds like the parents, no AI clichés');
 
   await put('/api/b/entries/q-story-0002', { trip: T, day: 2, kind: 'quote', child: 'mimi', text: 'REFUSE' });
   const rr = events(await (await story({ trip: T, day: 2, lang: 'th' })).text());
@@ -99,7 +100,7 @@ try {
   const rsum = events(await (await story({ trip: T, day: 1, lang: 'en', mode: 'sum' })).text());
   const cs = calls.at(-1);
   ok(calls.length === before + 1 && rsum.at(-1).ev === 'done' && rsum.at(-1).data.id === `${T}.sum.d1`, 'summary: streamed, then done with the day\'s sum id');
-  ok(cs.body.system.includes('2–3 sentences') && cs.body.system.includes('only the facts') && cs.body.max_tokens === 1000 && cs.body.messages[0].content.includes('Hong Kong Disneyland'), 'summary: own prompt, same facts (en)');
+  ok(cs.body.system.includes('2–3 sentences') && cs.body.system.includes('only the facts') && cs.body.system.includes('AI-sounding') && cs.body.max_tokens === 1000 && cs.body.messages[0].content.includes('Hong Kong Disneyland'), 'summary: own prompt, same facts (en)');
   const sumRow = (await state()).entries.find((e) => e.id === `${T}.sum.d1`);
   ok(sumRow && sumRow.kind === 'sum' && sumRow.day === 1 && !sumRow.text.includes('**'), 'summary saved as kind sum on the day');
   ok((await put(`/api/b/entries/${T}.sum.d1`, { trip: T, day: 1, kind: 'sum', text: 'We went to Disneyland.' })).ok
