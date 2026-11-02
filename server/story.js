@@ -9,7 +9,19 @@ const MODEL = () => process.env.STORY_MODEL || 'claude-sonnet-5-5';
 let client = null;
 const api = () => (client = client || new SDK());   // reads ANTHROPIC_API_KEY / ANTHROPIC_BASE_URL
 
-function prompt({ lang, whole }) {
+// mode 'sum': two or three lines for the day page of the book (parents' voice), the same facts, the same rules
+function sumPrompt(lang) {
+  if (lang === 'en') {
+    return 'Summarise this family day in 2–3 sentences (at most 60 words) for a printed memory book, in the parents’ voice ("we"), past tense. '
+      + 'The children are Mimi (3) and Mika (1½). Use only the facts given — do not invent places, events or words anyone said. '
+      + 'Reply with the summary only — no title, no markdown, no emoji.';
+  }
+  return 'สรุปวันนี้ของครอบครัว 2–3 ประโยค (ไม่เกิน 60 คำ) สำหรับสมุดความทรงจำ เล่าแบบพ่อแม่ ใช้ "เรา" ลูกชื่อ มีมี่ (3 ขวบ) และ มีก้า (1 ขวบครึ่ง) — '
+    + 'ใช้เฉพาะข้อมูลที่ให้ ห้ามแต่งสถานที่/เหตุการณ์/คำพูดเพิ่ม ตอบเฉพาะข้อความสรุป ไม่มีหัวข้อ/markdown/อีโมจิ';
+}
+
+function prompt({ lang, whole, mode }) {
+  if (mode === 'sum') return sumPrompt(lang);
   if (lang === 'en') {
     return `Write an English bedtime story of ${whole ? '250–350' : '120–180'} words starring "Mimi" (3) and "Mika" (1½). `
       + 'Use only the facts given — do not invent places, events or words anyone said. If there is little to go on, make the story shorter. '
@@ -22,15 +34,15 @@ function prompt({ lang, whole }) {
 
 const clean = (s) => s.replace(/^#+\s*/gm, '').replace(/\*\*|__|`/g, '').replace(/^\s*[-*]\s+/gm, '').replace(/\n{3,}/g, '\n\n').trim();
 
-// Streams text chunks through onText; resolves with the cleaned story. Throws {code:'refusal'} if declined.
-async function writeStory({ lang, whole, facts, onText, signal }) {
+// Streams text chunks through onText; resolves with the cleaned story (or day summary). Throws {code:'refusal'} if declined.
+async function writeStory({ lang, whole, mode, facts, onText, signal }) {
   const stream = api().beta.messages.stream({
     model: MODEL(),
-    max_tokens: 4000,
+    max_tokens: mode === 'sum' ? 1000 : 4000,
     betas: ['server-side-fallback-2026-07-01'],
     fallbacks: 'default',                  // a policy decline is re-run server-side on Anthropic's recommended fallback
     output_config: { effort: 'low' },      // a short story from given facts needs little reasoning
-    system: prompt({ lang, whole }),
+    system: prompt({ lang, whole, mode }),
     messages: [{ role: 'user', content: facts }],
   }, { signal });
   for await (const ev of stream) {
