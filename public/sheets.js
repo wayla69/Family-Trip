@@ -241,7 +241,7 @@ const A = {
   // story/sum are saved by the server, so the page reloads the state; a summary lands in its textarea and stays editable (blur saves)
   async story(b) {
     if (storyCtl) return;
-    const mode = ['sum', 'msg'].includes(b.dataset.m) ? b.dataset.m : 'story', sum = mode !== 'story';   // sum/msg write into a textarea
+    const mode = ['sum', 'msg', 'talk'].includes(b.dataset.m) ? b.dataset.m : 'story', sum = mode === 'sum' || mode === 'msg';   // sum/msg write into a textarea; story/talk into a box
     const t = trip(b.dataset.t), day = b.dataset.d === '' ? null : +b.dataset.d;
     if (!navigator.onLine) { toast(L('ต้องต่อเน็ตเพื่อใช้ Claude', 'Claude needs a connection')); return; }
     const box = $(`#${mode}text`), msg = sum ? $(`#${mode}msg`) : box, before = sum ? box.value : '';
@@ -276,7 +276,7 @@ const A = {
           } else if (ev === 'done') {
             if (sum) delete drafts[box.dataset.draft];   // the saved summary wins over a half-typed draft
             storyCtl = null; await load(); render();
-            toast(sum ? L('เก็บสรุปไว้ในสมุดแล้ว — แก้ในช่องได้', 'Summary saved in the book — edit it in the box') : L('เก็บนิทานไว้ในสมุดแล้ว', 'Story saved in the book'));
+            toast(sum ? L('เก็บสรุปไว้ในสมุดแล้ว — แก้ในช่องได้', 'Summary saved in the book — edit it in the box') : mode === 'talk' ? L('คำถามอยู่ในโหมดเด็กแล้ว — แตะ 💬 คุยกัน', 'The questions are in kid mode — tap 💬 Let’s talk') : L('เก็บนิทานไว้ในสมุดแล้ว', 'Story saved in the book'));
           } else if (ev === 'error') say(d.error === 'refusal' ? L('Claude เขียนอันนี้ไม่ได้ ลองเพิ่มบันทึกแล้วลองใหม่', 'Claude could not write this one — try again later') : L('ไม่สำเร็จ ลองใหม่อีกครั้ง', 'That didn’t work — try again'));
         }
       }

@@ -52,7 +52,7 @@ const dbName = 'mb_story_' + Date.now().toString(36); await admin.query(`CREATE 
 const u = new URL(process.env.TEST_DATABASE_URL); u.pathname = '/' + dbName;
 const port = await freePort(), data = fs.mkdtempSync(path.join(os.tmpdir(), 'mb-story-'));
 const srv = spawn(process.execPath, ['server/index.js'], { cwd: process.cwd(), stdio: ['ignore', 'ignore', 'inherit'],
-  env: { ...process.env, PORT: String(port), DATA_DIR: data, DATABASE_URL: u.toString(), ANTHROPIC_API_KEY: 'test-key', ANTHROPIC_BASE_URL: `http://localhost:${mockPort}`, STORY_DAILY: '13' } });
+  env: { ...process.env, PORT: String(port), DATA_DIR: data, DATABASE_URL: u.toString(), ANTHROPIC_API_KEY: 'test-key', ANTHROPIC_BASE_URL: `http://localhost:${mockPort}`, STORY_DAILY: '15' } });
 const BASE = `http://localhost:${port}`;
 try {
   for (let i = 0; i < 80; i++) { try { if ((await fetch(BASE + '/healthz')).ok) break; } catch (_) {} await new Promise((r) => setTimeout(r, 250)); }
@@ -139,6 +139,12 @@ try {
   await put(`/api/b/entries/${T}.fav.d1`, { trip: T, day: 1, kind: 'fav', text: 'ไอติมช็อกโกแลต' });
   ok((await ent('q-story-0001')).tr && !(await ent(`${T}.fav.d1`)).tr, 'translate: kept when only the star changes, dropped when the text changes');
 
+  // bedtime questions (mode 'talk'): own prompt, saved as the day's talk entry, one question per line
+  const btk = calls.length, rtk = events(await (await story({ trip: T, day: 1, lang: 'th', mode: 'talk' })).text());
+  const talk = (await state()).entries.find((e) => e.id === `${T}.talk.d1`);
+  ok(calls.length === btk + 1 && rtk.at(-1).ev === 'done' && calls.at(-1).body.system.includes('คำถามชวนคุยก่อนนอน 3 ข้อ'), 'bedtime questions: own prompt, streamed, done');
+  ok(talk && talk.kind === 'talk' && talk.text.split('\n').length >= 2 && !talk.text.includes('**'), 'bedtime questions: saved on the day, one per line');
+
   const vck = (await fetch(BASE + '/v/grandma', { redirect: 'manual' })).headers.get('set-cookie');
   ok(!vck || (await fetch(BASE + '/api/b/story', { method: 'POST', headers: { ...H, cookie: vck.split(';')[0] }, body: '{}' })).status === 403, 'viewer cannot ask for stories');
 
@@ -160,6 +166,16 @@ try {
   await page.click('#msggo');
   await page.waitForFunction(() => { const b = document.querySelector('#msgsend'); return b && !b.hidden && document.querySelector('#msgtext').value.includes('ฝันดี'); });
   ok(true, 'browser: the note for the family lands in its box with a send button');
+  await page.click('#talkgo');
+  await page.waitForFunction(() => !document.querySelector('#talkstop') || document.querySelector('#talkstop').hidden);
+  await page.waitForFunction(() => { const x = document.querySelector('#talktext'); return x && !x.hidden && x.textContent.includes('ฝันดี'); });
+  ok(true, 'browser: bedtime questions written on the record page');
+  await page.goto(`${BASE}/#/kid/mimi`); await page.waitForSelector('.kiddays');
+  await page.click('.kiddays button[data-v="1"]');
+  await page.waitForSelector('[data-v="#/kid/mimi/talk"]', { state: 'attached' });
+  await page.goto(`${BASE}/#/kid/mimi/talk`); await page.waitForSelector('.kidtalk .qcard');
+  await page.locator('.kidtalk .qcard').first().click();
+  ok(await page.locator('.kidtalk .qcard').count() >= 2 && await page.locator('.kidtalk .qcard[aria-pressed="true"]').count() === 1, 'kid mode: 💬 Let\'s talk shows the questions as cards; a tap reads one');
   await page.goto(`${BASE}/#/t/${T}/today/1`); await page.waitForSelector('#askq');
   await page.locator('.ask .chip').first().click();
   await page.waitForFunction(() => { const a = document.querySelector('#askans'); return a && !a.hidden && a.textContent.includes('ฝันดี') && document.querySelector('#askstop').hidden; });
@@ -170,10 +186,10 @@ try {
   ok(await page.locator('#d1 .tr', { hasText: 'en:ปลาอยู่ในน้ำเหมือนหนูเลย' }).count() >= 1 && await page.locator('#d1 .daysum .tr').count() === 0, 'book: the translation under the quote; the re-written summary lost its old one');
   ok(errs.length === 0, 'no page errors ' + errs.join(' | '));
 
-  // daily cap (STORY_DAILY=13 here, stories, summaries, notes, guide answers and translations together): the 13th model call goes through, the 14th is refused before Claude is called
-  ok(calls.length === 12 && events(await (await story({ trip: T, day: 1, lang: 'th' })).text()).at(-1).ev === 'done', 'daily cap: 13th call of the day still written');
+  // daily cap (STORY_DAILY=15 here, stories, summaries, notes, guide answers, translations and bedtime questions together): the 15th model call goes through, the 16th is refused before Claude is called
+  ok(calls.length === 14 && events(await (await story({ trip: T, day: 1, lang: 'th' })).text()).at(-1).ev === 'done', 'daily cap: 15th call of the day still written');
   const capped = await story({ trip: T, day: 1, lang: 'th' });
-  ok(capped.status === 429 && (await capped.json()).error === 'limit' && calls.length === 13, 'daily cap: 14th call refused with 429, model not called');
+  ok(capped.status === 429 && (await capped.json()).error === 'limit' && calls.length === 15, 'daily cap: 16th call refused with 429, model not called');
   ok((await story({ trip: T, day: 0, lang: 'th' })).status === 422, 'daily cap: an empty day still answers 422 (nothing counted)');
   await browser.close();
 } finally {

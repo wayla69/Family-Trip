@@ -893,6 +893,18 @@ function trBlock(t, i) {
 <div class="row" style="margin-top:6px"><button class="btn small" data-a="translate" data-t="${esc(t.id)}" data-d="${i}"${todo ? '' : ' disabled'}>🌐 ${todo ? L(`แปลวันนี้ (${todo})`, `Translate today (${todo})`) : L('แปลครบแล้ว', 'All translated')}</button></div></section>`;
 }
 
+/* ---------- bedtime questions (record page): Claude asks the kids three tiny questions about today; they hear them in kid mode ---------- */
+function talkBlock(t, i) {
+  const e = entriesOf(t.id, i).find((x) => x.kind === 'talk');
+  if (!S.features.story && !e) return '';
+  return `<section class="blk noprint talkblk"><h3>💬 ${L('คำถามชวนคุยก่อนนอน', 'Bedtime questions')} <span class="label">${L('เด็กๆ ฟังในโหมดเด็ก', 'the kids hear them in kid mode')}</span></h3>
+<div class="call calm" id="talktext" style="white-space:pre-line"${e ? '' : ' hidden'}>${e ? esc(e.text) : ''}</div>
+${S.features.story ? `<div class="row" style="margin-top:6px"><button class="btn small" data-a="story" data-m="talk" data-t="${esc(t.id)}" data-d="${i}" id="talkgo">✨ ${e ? L('ตั้งคำถามใหม่', 'New questions') : L('ให้ Claude ตั้งคำถาม', 'Ask Claude for questions')}</button>
+<button class="btn ghost small" data-a="storystop" id="talkstop" hidden>■ ${L('หยุด', 'Stop')}</button>
+${e ? `<button class="mini" data-a="delentry" data-v="${esc(e.id)}">${L('ลบ', 'Delete')}</button>` : ''}
+<span class="label">${L('ส่งเฉพาะข้อความที่บันทึกไว้ ไม่ส่งรูป', 'Sends only the written notes — never photos')}</span></div>` : ''}</section>`;
+}
+
 /* ---------- bedtime story by Claude (editors, only when pressed) ---------- */
 function storyBlock(t, day) {
   const st = entriesOf(t.id).find((e) => e.kind === 'story' && e.day === day);
@@ -1340,6 +1352,7 @@ ${d.planned.map((p) => `<div class="check"><button data-a="place" data-v="${esc(
 ${spendBlock(t, i, dk)}
 ${notebookBlock(t, i)}
 ${storyBlock(t, i)}
+${talkBlock(t, i)}
 ${msgBlock(t, i, dk)}
 
 <section class="blk"><button class="btn dayend${d.done_at ? ' is-done' : ''}" data-a="done" data-t="${esc(t.id)}" data-d="${i}">${d.done_at ? '✓ ' + L('วันนี้เสร็จแล้ว (แตะเพื่อยกเลิก)', 'Day done (tap to undo)') : '🏁 ' + L('จบวันนี้', 'Mark day done')}</button>

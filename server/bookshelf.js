@@ -14,7 +14,7 @@ const ID_RE = /^[A-Za-z0-9_.:-]{4,80}$/;
 // voice memos arrive as the phone's recorder made them: Chrome/Android webm-opus, iPhone mp4-aac; stored under a/<trip>/<id>.<ext>
 const AUDIO_EXT = { 'audio/webm': 'webm', 'audio/mp4': 'm4a', 'audio/x-m4a': 'm4a', 'audio/aac': 'aac', 'audio/mpeg': 'mp3', 'audio/ogg': 'ogg' };
 const SLUG_RE = /^[a-z0-9-]{2,60}$/;
-const KINDS = ['quote', 'mood', 'fav', 'note', 'first', 'story', 'tick', 'field', 'sum'];   // sum = the day in a few lines (book + PDF)
+const KINDS = ['quote', 'mood', 'fav', 'note', 'first', 'story', 'tick', 'field', 'sum', 'talk'];   // sum = the day in a few lines (book + PDF) · talk = bedtime questions (kid mode)
 const TRIP_WIDE = ['story', 'tick', 'field'];   // kinds that may have no day (whole-trip story, passport checklists, Explorer ID)
 const HEART_EMOJI = ['💗', '🤗', '😘', '⭐', '👏', '🎈'];
 const REVIEW_KINDS = ['stay', 'food', 'place'], KID_VERDICT = ['love', 'ok', 'no'];
@@ -422,7 +422,7 @@ function router({ pool, media, A, ai }) {
   r.post('/api/b/story', ...W, async (req, res, next) => {
     try {
       if (!ai || !ai.enabled()) return bad(res, 'no-key', 501);
-      const b = req.body || {}, lang = b.lang === 'en' ? 'en' : 'th', mode = ['sum', 'msg'].includes(b.mode) ? b.mode : 'story';   // sum = the day summary for the book · msg = a note for the relatives (not saved)
+      const b = req.body || {}, lang = b.lang === 'en' ? 'en' : 'th', mode = ['sum', 'msg', 'talk'].includes(b.mode) ? b.mode : 'story';   // sum = the day summary for the book · msg = a note for the relatives (not saved) · talk = bedtime questions
       const t = await trip(String(b.trip || '')); if (!t) return bad(res, 'trip');
       const day = dayArg(b.day); if (!dayOk(t, day)) return bad(res, 'day');
       if (mode !== 'story' && day === null) return bad(res, 'day');
@@ -438,7 +438,8 @@ function router({ pool, media, A, ai }) {
       res.writeHead(200, { 'Content-Type': 'text/event-stream; charset=utf-8', 'Cache-Control': 'no-store', 'X-Accel-Buffering': 'no' });
       const send = (ev, data) => res.write(`${ev ? `event: ${ev}\n` : ''}data: ${JSON.stringify(data)}\n\n`);
       try {
-        const text = await ai.writeStory({ lang, whole: day === null, mode, facts, signal: ctl.signal, onText: (x) => send(null, { t: x }) });
+        let text = await ai.writeStory({ lang, whole: day === null, mode, facts, signal: ctl.signal, onText: (x) => send(null, { t: x }) });
+        if (mode === 'talk') text = text.split('\n').map((l) => l.replace(/^\s*\d+[.)]\s*/, '').trim()).filter(Boolean).slice(0, 5).join('\n');   // one question per line, no numbering
         if (mode === 'msg') { done = true; send('done', { text }); return res.end(); }   // the note for the relatives lives only on the phone
         const id = day === null ? `${t.id}.story.all` : `${t.id}.${mode}.d${day}`;   // sum id = the record page's blur-save id, so edits upsert the same row
         await q(`INSERT INTO entries (id, family_id, trip_id, day_index, kind, text, lang, created_by, created_uid) VALUES ($1,$2,$3,$4,$5,$6,$7,$8,$9)

@@ -69,6 +69,8 @@ hr.rule{border:0;border-top:1px solid var(--rule);margin:22px 0}
 .btn.small{padding:6px 11px;font-size:13px}
 .btn.danger,.btn.confirm{background:var(--accent2);color:#fff}
 .btn:disabled{opacity:.5}
+/* bedtime questions block (record page) */
+.talkblk h3 .label{display:block;margin-top:2px}
 /* the other language under a text (two-language book) */
 .tr{display:block;margin-top:4px;font-size:.88em;color:var(--muted);font-style:normal;quotes:none}
 .daysum .tr{margin-top:6px}

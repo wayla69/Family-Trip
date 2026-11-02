@@ -31,8 +31,21 @@ function msgPrompt(lang) {
     + 'ใช้เฉพาะข้อมูลที่ให้ ห้ามแต่งสถานที่/เหตุการณ์/คำพูดเพิ่ม ไม่ใส่ที่อยู่หรือรายละเอียดที่พัก ใส่อีโมจิได้ 1–2 ตัว ตอบเฉพาะตัวข้อความ ไม่มี markdown';
 }
 
+// mode 'talk': three tiny bedtime questions about today for the children, read aloud to them in kid mode
+function talkPrompt(lang) {
+  if (lang === 'en') {
+    return 'Write 3 bedtime questions to ask Mimi (3) and Mika (1½) about today, so they can talk about their day. '
+      + 'Use only the facts given — do not invent places, events or words anyone said. Very short, easy to answer for a toddler (who, what, which animal, what colour, did you like…). '
+      + 'One question per line, each starting with one emoji; no numbers, no markdown. Reply with the 3 lines only.';
+  }
+  return 'ตั้งคำถามชวนคุยก่อนนอน 3 ข้อ ถามมีมี่ (3 ขวบ) และมีก้า (1 ขวบครึ่ง) เรื่องวันนี้ ให้เด็กได้เล่าเรื่องของวัน — '
+    + 'ใช้เฉพาะข้อมูลที่ให้ ห้ามแต่งสถานที่/เหตุการณ์/คำพูดเพิ่ม คำถามสั้นมาก เด็กเล็กตอบได้ง่าย (ใคร อะไร สัตว์อะไร สีอะไร ชอบไหม) '
+    + 'ข้อละบรรทัด ขึ้นต้นด้วยอีโมจิ 1 ตัว ไม่มีเลขข้อ ไม่มี markdown ตอบเฉพาะคำถาม 3 บรรทัด';
+}
+
 function prompt({ lang, whole, mode }) {
   if (mode === 'sum') return sumPrompt(lang);
+  if (mode === 'talk') return talkPrompt(lang);
   if (mode === 'msg') return msgPrompt(lang);
   if (lang === 'en') {
     return `Write an English bedtime story of ${whole ? '250–350' : '120–180'} words starring "Mimi" (3) and "Mika" (1½). `
@@ -50,7 +63,7 @@ const clean = (s) => s.replace(/^#+\s*/gm, '').replace(/\*\*|__|`/g, '').replace
 async function writeStory({ lang, whole, mode, facts, onText, signal }) {
   const stream = api().beta.messages.stream({
     model: MODEL(),
-    max_tokens: mode === 'sum' || mode === 'msg' ? 1000 : 4000,
+    max_tokens: mode && mode !== 'story' ? 1000 : 4000,
     betas: ['server-side-fallback-2026-07-01'],
     fallbacks: 'default',                  // a policy decline is re-run server-side on Anthropic's recommended fallback
     output_config: { effort: 'low' },      // a short story from given facts needs little reasoning
