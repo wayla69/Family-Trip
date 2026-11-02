@@ -79,7 +79,7 @@ jobs:
           docker logs mb | grep -q "migration 0001_init.sql applied"
           docker logs mb | grep -q "2 seeded trips"
           docker exec mb test -w /data
-          curl -fsS localhost:3000/ | grep -q "Memory Bookshelf"
+          curl -fsS localhost:3000/ | grep -q "MM Memory"
           curl -fsS -o /dev/null localhost:3000/fonts/KIRA-UI-Regular.woff2
       - name: Server-side PDF works inside the production image (Chromium installed, runs as non-root)
         run: |

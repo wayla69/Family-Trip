@@ -1,5 +1,7 @@
 # CLAUDE.md — Memory Bookshelf
 
+Shown to users as **MM Memory** (tab title, home-screen name, login page, top bar, push fallback title, PDF footer and back cover); the code, docs and backup format keep the project name Memory Bookshelf (`memory-bookshelf-backup` must not change — old backups must still restore).
+
 Family memory bookshelf for Mimi (มีมี่) and Mika (มีก้า): one book per trip. Self-hosted on **Railway**: Node 22 + **Postgres** + photos in a **Railway Storage Bucket**. The owner (Oshinei) writes Thai and wants direct execution, concise replies. UI strings are bilingual (TH/EN) through `L(th, en)`.
 
 Read first: `docs/PRD.md` (scope, approved) · `docs/ADR.md` (stack decisions) · `docs/DESIGN.md` (look = the owner's Trip Operations Manuals) · `docs/handoff/ACCEPTANCE.md` (acceptance criteria). `README.md` is the Thai deploy/usage doc.
