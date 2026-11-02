@@ -76,9 +76,10 @@ function extras(trips, now) {
     // every evening of the trip: record the day (tick() skips a day that already has something in it)
     for (let i = 0, d = x.from; d <= x.to; i++, d = addDays(d, 1)) {
       const at = zoned(d, LOG_AT, x.tz);
-      if (live(at)) out.push({ key: `${x.trip}.x.log.d${i}`, at, trip: x.trip, day: i, url: `/#/t/${x.trip}/log/${i}`,
-        th: { title: `บันทึกวันที่ ${i + 1} · ${nTh}`, body: 'รูป อารมณ์ คำพูดเด็ก ครั้งแรกของวันนี้ — ใช้เวลา 2 นาทีก่อนนอน' },
-        en: { title: `Record day ${i + 1} · ${nEn}`, body: 'Photos, moods, what the kids said, today’s firsts — two minutes before bed' } });
+      // opens the record page at the evening buttons (/ai): today in brief, the bedtime story, the bedtime questions
+      if (live(at)) out.push({ key: `${x.trip}.x.log.d${i}`, at, trip: x.trip, day: i, url: `/#/t/${x.trip}/log/${i}/ai`,
+        th: { title: `บันทึกวันที่ ${i + 1} · ${nTh}`, body: 'รูป อารมณ์ คำพูดเด็ก — แล้วกดให้ Claude สรุปวันนี้ แต่งนิทาน และตั้งคำถามก่อนนอน' },
+        en: { title: `Record day ${i + 1} · ${nEn}`, body: 'Photos, moods, what the kids said — then let Claude sum up the day, write the story and the bedtime questions' } });
     }
   }
   return out;

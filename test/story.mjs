@@ -183,6 +183,25 @@ try {
   await page.locator('.ask .chip').first().click();
   await page.waitForFunction(() => { const a = document.querySelector('#askans'); return a && !a.hidden && a.textContent.includes('ฝันดี') && document.querySelector('#askstop').hidden; });
   ok(await page.inputValue('#askq') !== '', 'browser: a suggestion chip asks the guide and the answer shows on the Today page');
+  // no signal: the same box answers from the manual on the phone (the book's own search), without Claude
+  const nCalls = calls.length;
+  await page.context().setOffline(true);
+  await page.fill('#askq', 'ถ้าเด็กหลงทำยังไง'); await page.press('#askq', 'Enter');
+  await page.waitForFunction(() => { const a = document.querySelector('#askans'); return a && a.textContent.includes('📴') && a.querySelector('.sres a'); });
+  ok(calls.length === nCalls && (await page.textContent('#askans .sres')).includes('999'), 'offline: the lost-child section of the manual is offered (no Claude call)');
+  await page.context().setOffline(false);
+  // the trip's spending: per currency (never converted), by category with bars, day by day, biggest items
+  for (const [id, day, amount, cur, cat, note] of [['sp-t-01', 0, 120, 'HKD', 'food', 'dim sum'], ['sp-t-02', 0, 60, 'HKD', 'transport', 'taxi'], ['sp-t-03', 1, 800, 'HKD', 'tickets', 'Disneyland'], ['sp-t-04', 1, 300, 'THB', 'food', 'airport']])
+    await put('/api/b/spend/' + id, { trip: T, day, amount, cur, cat, note });
+  await page.goto(`${BASE}/#/t/${T}`); await page.reload(); await page.waitForSelector('.tile.t-spend');
+  await page.click('.tile.t-spend'); await page.waitForSelector('.spsum');
+  const sp = await page.textContent('main');
+  ok(await page.locator('.spsum').count() === 2 && await page.locator('.spsum').first().locator('.spbars li').count() === 3 && await page.locator('.spdays li').count() === 2, 'spending: one block per currency, a bar per category, a row per day');
+  ok(/Disneyland/.test(await page.textContent('.blk:last-child .items li:first-child')) && !/THB\s*1,?28/.test(sp), 'spending: biggest item first; currencies never added together');
+  // the 21:30 reminder opens the record page at the evening Claude buttons
+  await page.goto(`${BASE}/#/t/${T}/log/1/ai`); await page.waitForSelector('.evening');
+  await page.click('.evening [data-v=".talkblk"]');
+  ok(await page.locator('.evening button').count() === 3 && await page.locator('.talkblk.flash').count() === 1, 'evening link: three Claude buttons on top; a tap jumps to its block');
   // sound words in a bedtime story: drawn big, a sound + sparkles when the reader gets there; the last page stays quiet
   await put(`/api/b/entries/${T}.story.d2`, { trip: T, day: 2, kind: 'story', text: 'ว้าว! เครื่องบินบิน ฟิ้ว~ ไปเลย\nเราไปจากกรุงเทพฯ กินขนมปัง\nแล้วก็ ตูม! ฝันดีนะ' });
   await page.goto(`${BASE}/#/t/${T}/book`); await page.reload(); await page.waitForSelector('#d2');
