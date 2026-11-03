@@ -253,6 +253,15 @@ const CURS = [[/^Australia\//, ['AUD']], [/Hong_Kong|Macau/, ['HKD', 'MOP']], [/
 const tripCurs = (t) => { const m = CURS.find(([re]) => re.test(t.timezone || '')); return m ? [...m[1], 'THB'] : ['THB']; };
 const fmtMoney = (n, cur) => { try { return new Intl.NumberFormat(lang === 'th' ? 'th-TH' : 'en-GB', { style: 'currency', currency: cur, maximumFractionDigits: n % 1 ? 2 : 0 }).format(n); } catch (_) { return `${cur} ${n}`; } };
 const sumMoney = (rows) => { const m = {}; rows.forEach((s) => { m[s.cur] = (m[s.cur] || 0) + s.amount; }); return Object.entries(m).map(([c, n]) => fmtMoney(n, c)).join(' + '); };
+// baht at a rate the parents type in on the spending page (kept on this phone, ls('fx') = {HKD: 4.4, …}); never fetched from anywhere.
+// toThb(rows) → {thb, missing: [currencies without a rate]}; THB rows count as they are
+const fxRates = () => ls('fx') || {};
+function toThb(rows) {
+  const fx = fxRates(), miss = new Set(); let thb = 0;
+  rows.forEach((s) => { if (s.cur === 'THB') thb += s.amount; else if (+fx[s.cur] > 0) thb += s.amount * fx[s.cur]; else miss.add(s.cur); });
+  return { thb, missing: [...miss] };
+}
+const thbLine = (rows) => { const r = toThb(rows); return !r.missing.length && rows.some((s) => s.cur !== 'THB') ? `≈ ${fmtMoney(Math.round(r.thb), 'THB')}` : ''; };
 const kidName = (slug) => { if (slug === 'both') return L('ทั้งคู่', 'Both'); const k = children().find((c) => c.slug === slug); return k ? (lang === 'th' ? k.name_th : k.name_en) : ''; };
 const kidEmoji = (slug) => (slug === 'both' ? '👧👶' : (children().find((c) => c.slug === slug) || {}).emoji || '');
 const entriesOf = (tid, day) => S.entries.filter((e) => e.trip === tid && (day === undefined || e.day === day));

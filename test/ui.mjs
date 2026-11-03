@@ -134,6 +134,23 @@ const T = 'hk-macau-2026';
   await page.fill('#spendamt', '268'); await page.click('button[data-a="addspend"]'); await page.waitForTimeout(300);
   ok(await page.locator('.spend .items li', { hasText: firstPick }).count() === 1, 'spend: a second row for the meal at that place (several places a day are fine)');
   await page.waitForFunction(() => queue.length === 0, null, { timeout: 15000 });
+  // roughly in baht: the rate is typed on the spending page (kept on the phone); the total updates while typing, the record page shows it too
+  await page.goto(`${BASE}/#/t/${T}/spend`); await page.waitForSelector('.fxbox');
+  ok(/HKD/.test(await page.textContent('#fxres')) && !/≈/.test(await page.textContent('#fxres')), 'baht: without a rate the page asks for one (no made-up rate)');
+  await page.fill('.fxbox input[data-fx="HKD"]', '4.5');
+  const fxTxt = await page.textContent('#fxres');
+  ok(/≈/.test(fxTxt) && fxTxt.replace(/[^\d]/g, '').includes(String(Math.round((120 + 268) * 4.5))) && await page.evaluate(() => document.activeElement && document.activeElement.dataset.fx === 'HKD'), `baht: typing the rate shows the whole trip ≈ ฿${Math.round(388 * 4.5)} at once, the field keeps the cursor`);
+  await page.goto(`${BASE}/#/t/${T}/log/1`); await page.waitForSelector('.spend p.lede');
+  ok(/≈/.test(await page.textContent('.spend p.lede')) && await page.evaluate(() => (ls('fx') || {}).HKD) === 4.5, 'baht: the record page shows the trip total in baht too; the rate lives on this phone');
+  // the home-screen icon shortcuts open today's record page with the box in view
+  await page.goto(`${BASE}/#/go/quote`); await page.waitForSelector('#qtext');
+  await page.waitForFunction(() => document.activeElement && document.activeElement.id === 'qtext', null, { timeout: 3000 }).catch(() => {});
+  ok(/\/log\/\d+$/.test(await page.evaluate(() => location.hash)) && await page.evaluate(() => document.activeElement && document.activeElement.id === 'qtext'), 'shortcut "quote": today\'s record page, the cursor in the quote box');
+  await page.goto(`${BASE}/#/go/photo`); await page.waitForSelector('.golit [data-a="pickphotos"]', { timeout: 3000 }).catch(() => {});
+  ok(await page.locator('.golit [data-a="pickphotos"]').count() === 1, 'shortcut "photo": the photo box is lit up and in view');
+  const man = await (await page.request.get(`${BASE}/manifest.webmanifest`)).json();
+  ok(man.shortcuts.length === 4 && man.shortcuts.every((s) => s.url.startsWith('/#/go/') && s.name && s.short_name), 'manifest: four icon shortcuts to #/go/…');
+  await page.goto(`${BASE}/#/t/${T}/log/1`); await page.waitForSelector('#qtext');
   // the day as a message for relatives: title line, the quotes in quotation marks, never a link; the button only where the phone can share
   const shTxt = await page.evaluate(() => shareText(trip('hk-macau-2026'), 1));
   ok(shTxt.split('\n').length >= 2 && /“.+”/.test(shTxt) && !/https?:/.test(shTxt) && !/undefined/.test(shTxt), 'share text: title + quotes, no link');

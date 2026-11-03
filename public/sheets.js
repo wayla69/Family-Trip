@@ -737,7 +737,7 @@ document.addEventListener('click', (e) => {
   if (b && A[b.dataset.a]) { if (b.tagName === 'A' || b.type === 'submit') e.preventDefault(); A[b.dataset.a](b, e); return; }
   if (e.target.id === 'scrim') closeSheet();
 });
-document.addEventListener('input', (e) => { const el = e.target; if (el.dataset && el.dataset.lc) { const v = ls('lostTel') || ['', '']; v[+el.dataset.lc] = el.value.slice(0, 40); ls('lostTel', v); } if (el.dataset && el.dataset.draft) drafts[el.dataset.draft] = el.value; if (el.id === 'eatq') { eatQ = el.value.trim(); eatFilter(); } if (el.id === 'bookq') { bookQ = el.value; const r = $('#bookres'), t = trip(route().parts[1]); if (r && t) r.innerHTML = bookResults(t); } });
+document.addEventListener('input', (e) => { const el = e.target; if (el.dataset && el.dataset.fx) { const fx = ls('fx') || {}, v = parseFloat(String(el.value).replace(',', '.')); if (v > 0 && v < 100000) fx[el.dataset.fx] = v; else delete fx[el.dataset.fx]; ls('fx', fx); const t = trip(route().parts[1]), r = $('#fxres'); if (t && r) r.innerHTML = fxResult(t); document.querySelectorAll('.fxa').forEach((x) => { const rows = spendOf(t.id).filter((s2) => s2.cur === x.dataset.fxc); x.textContent = thbLine(rows); }); } if (el.dataset && el.dataset.lc) { const v = ls('lostTel') || ['', '']; v[+el.dataset.lc] = el.value.slice(0, 40); ls('lostTel', v); } if (el.dataset && el.dataset.draft) drafts[el.dataset.draft] = el.value; if (el.id === 'eatq') { eatQ = el.value.trim(); eatFilter(); } if (el.id === 'bookq') { bookQ = el.value; const r = $('#bookres'), t = trip(route().parts[1]); if (r && t) r.innerHTML = bookResults(t); } });
 document.addEventListener('focusout', (e) => { const el = e.target; if (el.dataset && el.dataset.aBlur) saveBlur(el); if (el.id === 'lbcap') saveCaption(el); });
 document.addEventListener('focusout', (e) => {   // a voice memo's caption ("who said what") saves when the box is left, like a photo caption
   const el = e.target; if (!el.classList || !el.classList.contains('clipcap')) return;
@@ -746,6 +746,7 @@ document.addEventListener('focusout', (e) => {   // a voice memo's caption ("who
 });
 document.addEventListener('change', (e) => {
   if (e.target.dataset && e.target.dataset.ck) { const m = ls('ck') || {}; if (e.target.checked) m[e.target.dataset.ck] = 1; else delete m[e.target.dataset.ck]; ls('ck', m); return; }
+  if (e.target.dataset && e.target.dataset.fx) { safeRender(); return; }   // leaving a rate field: redraw (the field has lost focus)
   if (e.target.id === 'lcfile') { const f = e.target.files && e.target.files[0]; if (f) { if (lostPhoto) URL.revokeObjectURL(lostPhoto); lostPhoto = URL.createObjectURL(f); render(); } return; }   // this morning's photo: in memory only
   if (e.target.id === 'fpick') { const el = e.target; addPhotos(trip(el.dataset.t), +el.dataset.d, el.files); el.value = ''; }
   if (e.target.id === 'spendplace') { const n = $('#spendnote'); if (n) { if (e.target.value) { n.value = e.target.value; drafts[n.dataset.draft] = n.value; $('#spendamt').focus(); } else n.focus(); } }   // a picked place becomes the note; "other" → type it
