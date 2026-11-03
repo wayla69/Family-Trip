@@ -558,6 +558,42 @@ function remindBar() {
 <span class="rb">${on ? `<button class="btn small ghost" data-a="remindtest">${L('ทดสอบ', 'Test')}</button>` : ''}<button class="btn small${on ? ' ghost' : ''}" data-a="remind">${on ? L('ปิด', 'Turn off') : L('เปิดการเตือน', 'Turn on')}</button></span></div>`;
 }
 // ask the guide (editors, when Claude is on): a question answered from this book's manual only; the answer is not stored
+// today's bag: what the day's own plan says to carry — read from the manual's timeline rows and the climate note (English text,
+// matched by rule), each item with the step that asks for it; plus a short everyday line. Ticks stay on this phone (ls 'ck').
+const BAG = [
+  ['passports', '📕', 'พาสปอร์ตทุกคน', 'Everyone’s passports', /\bpassports\b|immigration|passport control|border/i],
+  ['kidpp', '🛂', 'พาสปอร์ตผจญภัยของเด็กๆ', 'The kids’ adventure Passport', /\bthe Passport\b|Passport stamps/],
+  ['swim', '🩱', 'ชุดว่ายน้ำ ผ้าเช็ดตัว', 'Swimmers and a towel', /\bswim|water ?park|water play|netted baths/i],
+  ['sun', '🧴', 'ครีมกันแดด หมวก', 'Sunscreen and hats', /sunscreen|\bhats?\b|strong sun/i],
+  ['warm', '🧥', 'เสื้อแขนยาว / แจ็กเก็ต', 'A long-sleeve layer / jackets', /jacket|long-sleeve|\blayer\b|cool(s)? (down|quickly)|\bcold\b/i],
+  ['carrier', '🎒', 'เป้อุ้มมีก้า', 'Mika’s carrier', /\bcarrier\b/i],
+  ['pram', '🛒', 'รถเข็น', 'The stroller', /stroller|\bpram\b/i],
+  ['cash', '💵', 'เงินสด', 'Cash', /\bcash\b/i],
+  ['octopus', '💳', 'บัตร Octopus', 'Octopus cards', /Octopus/],
+  ['contactless', '💳', 'บัตร contactless (รถไฟ เรือ)', 'Contactless cards (train, ferry)', /contactless|\bOpal\b/i],
+  ['tickets', '🎟️', 'ตั๋ว / บอร์ดดิ้งพาสในโทรศัพท์', 'Tickets / boarding passes on the phone', /boarding pass|timed ticket|tickets? on the phone/i],
+  ['spare', '👕', 'เสื้อผ้าสำรอง', 'Spare clothes', /spare clothes/i],
+  ['snacks', '🍎', 'ขนม ขวดน้ำ', 'Snacks and water bottles', /snacks?|water bottles?/i],
+  ['nappies', '🧷', 'ผ้าอ้อม ทิชชู่เปียก', 'Nappies and wipes', /nappies|nappy|diaper/i],
+  ['move', '🧳', 'วันย้ายที่พัก: เช็กของในห้องก่อนออก', 'Moving day: check the room before you go', /check ?-?out|pack the van|big bags|last pack/i],
+];
+const BAG_ALWAYS = ['snacks', 'nappies', 'spare'];   // a 1½-year-old and a 3-year-old: these go every day
+function dayBag(t, i) {
+  const d = t.days[i], rows = ((d.plan || {}).plan || []).map((r) => ({ when: r.t || '', en: r.en || '', th: r.th || '' })).concat(d.wx ? [{ when: '', en: d.wx.en || '', th: d.wx.th || '' }] : []);
+  return BAG.map(([k, e, th, en, re]) => {
+    const r = rows.find((x) => re.test(x.en));
+    if (!r && !BAG_ALWAYS.includes(k)) return null;
+    const why = r ? `${r.when ? r.when + ' · ' : ''}${brief(L(r.th, r.en) || r.en, 70)}` : L('ทุกวัน', 'every day');
+    return { k, e, th, en, why, fromPlan: !!r };
+  }).filter(Boolean).sort((a, b) => b.fromPlan - a.fromPlan);
+}
+function bagBlock(t, i) {
+  if (!isEditor()) return '';
+  const items = dayBag(t, i), ck = ls('ck') || {}, key = (k) => `${t.id}.bag.d${i}.${k}`, got = items.filter((x) => ck[key(x.k)]).length;
+  return `<details class="bag noprint"${got < items.length ? ' open' : ''}><summary>🎒 ${L('กระเป๋าวันนี้', 'Today’s bag')} <span class="label">${L(`จัดแล้ว ${got}/${items.length}`, `${got}/${items.length} packed`)}</span></summary>
+<ul class="chk bagl">${items.map((x) => `<li><label><input type="checkbox" data-ck="${esc(key(x.k))}"${ck[key(x.k)] ? ' checked' : ''}><span>${x.e} ${esc(L(x.th, x.en))}<small>${esc(x.why)}</small></span></label></li>`).join('')}</ul>
+<p class="label">${L('จากแผนของวันนี้ในคู่มือ · ติ๊กเก็บไว้ในเครื่องนี้', 'From today’s plan in the manual · ticks stay on this phone')}</p></details>`;
+}
 function askBlock(t, i) {
   if (!isEditor() || !S.features.story) return '';
   const a = askAns && askAns.t === t.id ? askAns : null, dv = `data-t="${esc(t.id)}" data-d="${i}"`;
@@ -581,6 +617,7 @@ function viewToday(t, j, full) {
 ${banner}
 ${isEditor() && !ls('remind') && (dn >= 0 || until > 0) ? remindBar() : ''}
 <div class="row quick">${isEditor() ? `<a class="btn" href="#/t/${esc(t.id)}/log/${i}">${ic('log')} ${L('บันทึกวันนี้', 'Record today')}</a>` : ''}${pl.route ? extA(pl.route, ic('route') + ' ' + L('เส้นทางวันนี้', "Today's route"), 'qlink') : ''}${pl.stay ? extA(mapsUrl(pl.stay.q || pl.stay.addr), ic('stays') + ' ' + L('ไปที่พัก', 'To the stay'), 'qlink') : ''}${eatCount(t) ? `<a class="qlink" href="#/t/${esc(t.id)}/eat/d/${i}">${ic('eat')} ${L('ร้านอาหาร', 'Eat')}</a>` : ''}</div>
+${full ? '' : bagBlock(t, i)}
 ${full ? '' : askBlock(t, i)}
 ${(full ? planHtml(t, i, true) : dayGlance(t, i)) || `<div class="empty">${L('วันนี้ไม่มีแผนในคู่มือ', 'No plan in the manual for this day')}</div>`}
 ${mission && (mission.facts || []).length ? `<div class="part kidm">${L('ภารกิจของเด็กๆ วันนี้', "The kids' mission today")}</div><div class="call pick mission"><b>${esc(T(mission.title))}</b><ul class="tips">${mission.facts.map((f) => `<li>${esc(T(f))}</li>`).join('')}</ul></div>` : ''}`;
