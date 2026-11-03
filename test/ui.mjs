@@ -422,7 +422,21 @@ const T = 'hk-macau-2026';
   await s.shot('06-passport');
   await page.click('.ppkids a[role=tab][href^="#/passport/mika"]'); await page.waitForSelector('.pp.kid-mika');
   ok(await page.locator('.dstamp.new').count() === 0, 'passport: stamp animation plays once, not on every visit');
-  ok(await page.locator('.bdg').count() === 0 && await page.locator('.pp .call:not(.calm)').count() === 1 && await page.locator('.mission .tick.on').count() === 0, 'passport: Mika has her own ticks (none yet) and her own words');
+  ok(await page.locator('.bdg').count() === 0 && await page.locator('#lwords .lwl li').count() === 1 && await page.locator('.mission .tick.on').count() === 0, 'passport: Mika has her own ticks (none yet) and her own words');
+  // the little one's edition (seed passport.little): point / touch / sound missions, no words-to-say or explorer list, a new-words page
+  ok(await page.locator('#m1 .spot.little button[data-v="little.d1.castle"]').count() === 1 && await page.locator('#m1 .mquiz').count() === 0 && await page.locator('#pl-words, #pl-master, #decl').count() === 0 && await page.locator('#pl-dimsum').count() === 1,
+    'little edition: Mika points at the castle; no quiz, no Cantonese words, no explorer list or customs form (the dim sum card stays)');
+  ok(/bye-bye/.test(await page.getAttribute('#lw-mika', 'placeholder')), 'little edition: the word box shows its whole example (quotes do not cut it)');
+  await page.fill('#lw-mika', 'บ๊ายบาย'); await page.click('[data-a="littleword"][data-k="mika"]');
+  await page.waitForFunction(() => [...document.querySelectorAll('#lwords .lwl li')].some((li) => li.textContent.includes('บ๊ายบาย')), null, { timeout: 5000 });
+  await page.waitForFunction(() => queue.length === 0, null, { timeout: 15000 });
+  ok((await apiState(page)).entries.some((e) => e.kind === 'quote' && e.child === 'mika' && e.text === 'บ๊ายบาย'), 'little edition: a new word is saved as Mika’s quote (book, PDF and story see it)');
+  for (const k of ['plane', 'wheee', 'boat', 'castle', 'wave']) await page.click(`button[data-a="tick"][data-v="little.d${k === 'castle' || k === 'wave' ? 1 : 0}.${k}"]`);
+  await page.waitForFunction(() => document.querySelectorAll('.mission .tick.on').length === 5);
+  ok(!(await page.locator('#cert').getAttribute('class')).includes('earned') && /1/.test(await page.textContent('#cert')), 'little edition: 5 of 6 missions — the certificate asks for one more');
+  await page.click('button[data-a="tick"][data-v="little.d2.splash"]'); await page.waitForSelector('#cert.earned');
+  ok((await page.textContent('#cert')).includes('pointed, touched'), 'little edition: a mission per day of the trip (in total) earns Mika her own certificate text');
+  await page.waitForFunction(() => queue.length === 0, null, { timeout: 15000 });
   await page.click('.ppkids a[href="#/passport/mika/big-hop-2027"]'); await page.waitForSelector('#m15');
   ok(await page.locator('.mission').count() === 16 && (await page.textContent('.guides')).includes('Ranger Roo'), 'passport: Australia — Ranger Roo, Kiki and 16 missions');
   await page.locator('.mapsec').screenshot({ path: path.join(OUT, 'phone-06b-map-au.png') });
@@ -1008,6 +1022,32 @@ const T = 'hk-macau-2026';
   await page.click('[data-a="logout"]'); await page.click('[data-a="logout"]'); await page.waitForSelector('#lcode');
   await page.reload(); await page.waitForSelector('#lcode');
   ok((await page.evaluate(async () => (await idb.get('state')) == null)) && (await page.locator('[data-a="logout"]').count()) === 0, 'sign out: login form back, cookie gone after reload, offline copy cleared');
+  await s.ctx.close();
+}
+
+// ---------- during the trip (the clock set to day 3 in Macau): the passport folds the other days; Mika's kid mode points ----------
+{
+  const s = await session('tripday');
+  await s.page.clock.setFixedTime(new Date('2026-12-07T03:00:00Z'));   // 11:00 in Hong Kong / Macau, day 3 of the HK book
+  await login(s.page);
+  const page = s.page;
+  await page.goto(`${BASE}/#/passport/mimi/${T}`); await page.waitForSelector('#m2');
+  ok(await page.evaluate(() => ['#m0', '#m1', '#m2', '#m3'].map((id) => document.querySelector(`${id} details.mfold`).open).join()) === 'false,false,true,false' && await page.locator('#m2.today').count() === 1,
+    'passport during the trip: only today’s mission is open, the other days fold away');
+  await page.click('#m4 summary'); await page.waitForFunction(() => document.querySelector('#m4 details.mfold').open);
+  ok(await page.locator('#m4 .spot button[data-a="tick"]').first().isVisible(), 'passport during the trip: a tap opens another day');
+  await page.goto(`${BASE}/#/kid/mika/spot`); await page.waitForSelector('.kidspots');
+  ok(await page.locator('.kidspots.little button[data-v^="little.d2."]').count() === 3, 'kid mode: Mika’s "point it" page has her three missions of today');
+  await page.evaluate(() => ls('kidmode', null));
+  await s.ctx.close();
+}
+{   // before the trip, in Thai: the countdown line keeps a space between "ไป" and the book's name
+  const s = await session('pretrip');
+  await login(s.page);
+  await s.page.evaluate(() => { lang = 'th'; ls('lang', 'th'); });
+  await s.page.goto(`${BASE}/#/kid/mimi`); await s.page.waitForSelector('.kidhello');
+  ok(/วันไป \S/.test(await s.page.textContent('.kidhello')), `kid mode countdown: "…วันไป The Harbour Hop" with a space (${(await s.page.textContent('.kidhello')).trim().slice(0, 40)})`);
+  await s.page.evaluate(() => { ls('kidmode', null); ls('lang', null); });
   await s.ctx.close();
 }
 await browser.close();

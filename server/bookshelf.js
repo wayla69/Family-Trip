@@ -401,7 +401,7 @@ function router({ pool, media, A, ai, hooks = {} }) {   // hooks.heart(h): set b
     const who = (s) => (s === 'both' ? (lang === 'en' ? 'Mimi and Mika' : 'มีมี่และมีก้า') : kids[s] || s);
     const firsts = Object.fromEntries((await q('SELECT key, label FROM firsts_catalog WHERE trip_id=$1', [t.id])).map((f) => [f.key, f.label[lang] || f.label.en]));
     const pp = ((await q('SELECT passport FROM trips WHERE id=$1', [t.id]))[0] || {}).passport || {};
-    const spot = (di, k) => { const it = (((pp.days || [])[di] || {}).spot || []).find((x) => `spot.d${di}.${x.k}` === k); return it ? it[lang] || it.en : null; };
+    const spot = (di, k) => { const it = (((pp.days || [])[di] || {}).spot || []).find((x) => `spot.d${di}.${x.k}` === k) || ((((pp.little || {}).days || [])[di]) || []).find((x) => `little.d${di}.${x.k}` === k); return it ? it[lang] || it.en : null; };
     const lines = [];
     for (const d of days.filter((x) => day === null || x.day_index === day)) {
       const es = await q("SELECT kind, child, text, mood, first_key FROM entries WHERE trip_id=$1 AND day_index=$2 AND kind<>'story' ORDER BY occurred_at", [t.id, d.day_index]);
