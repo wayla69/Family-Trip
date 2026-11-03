@@ -81,6 +81,8 @@ jobs:
           docker exec mb test -w /data
           curl -fsS localhost:3000/ | grep -q "MM Memory"
           curl -fsS -o /dev/null localhost:3000/fonts/KIRA-UI-Regular.woff2
+          # archiver 8 is ESM-only and server/backup.js require()s it: the image's Node must load it and build a zip
+          docker exec mb node -e "const {ZipArchive}=require('archiver');const z=new ZipArchive();let n=0;z.on('data',(d)=>{n+=d.length});z.on('end',()=>{console.log(process.version,'zip',n);if(!n)process.exit(1)});z.append('x',{name:'a.txt'});z.finalize()"
       - name: Server-side PDF works inside the production image (Chromium installed, runs as non-root)
         run: |
           ck=$(curl -s -D - -o /dev/null -H 'x-mb: 1' -H 'content-type: application/json' \

@@ -3,7 +3,7 @@
 const fs = require('fs');
 const path = require('path');
 const crypto = require('crypto');
-const archiver = require('archiver');
+const { ZipArchive } = require('archiver');   // archiver 8: ESM-only, one class per format (Node 22 loads it with require)
 const yauzl = require('yauzl');
 const sharp = require('sharp');
 const IMG = require('./images');
@@ -29,7 +29,7 @@ async function sendZip(res, pool, media) {
   res.setHeader('Content-Type', 'application/zip');
   res.setHeader('Content-Disposition', `attachment; filename="memory-bookshelf-${new Date().toISOString().slice(0, 10)}.zip"`);
   res.setHeader('Cache-Control', 'no-store');
-  const z = archiver('zip', { zlib: { level: 1 } });
+  const z = new ZipArchive({ zlib: { level: 1 } });
   z.on('error', () => res.end());
   z.pipe(res);
   z.append(JSON.stringify(b), { name: 'backup.json' });
