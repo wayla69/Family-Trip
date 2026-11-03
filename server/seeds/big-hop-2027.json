@@ -4060,6 +4060,30 @@
     }
    ]
   },
+  "little": {
+   "kids": ["mika"],
+   "note": { "th": "ฉบับเด็กเล็ก: ภารกิจแบบชี้ แตะ ทำเสียง — พ่อแม่อ่านให้ฟังแล้วทำด้วยกัน ติ๊กให้เมื่อทำแล้ว", "en": "The little one's edition: point, touch and make the sound — read it out, do it together, tick it when done" },
+   "days": [
+    [ { "k": "plane", "e": "✈️", "th": "ชี้เครื่องบิน", "en": "Point at the plane" }, { "k": "wheee", "e": "🔊", "th": "ทำเสียงเครื่องบิน วี้ววว!", "en": "Make the plane noise: wheee!" }, { "k": "cloud", "e": "☁️", "th": "โบกมือให้ก้อนเมฆ", "en": "Wave to the clouds" } ],
+    [ { "k": "van", "e": "🚐", "th": "ชี้รถตู้ของเรา", "en": "Point at our van" }, { "k": "glider", "e": "🪂", "th": "โบกมือให้เครื่องร่อน", "en": "Wave to a hang-glider" }, { "k": "whoosh", "e": "💦", "th": "ทำเสียงน้ำพุ่ง ฟู่ววว!", "en": "Make the blowhole noise: whoosh!" } ],
+    [ { "k": "squeak", "e": "🏖️", "th": "เหยียบทรายให้ดังเอี๊ยด", "en": "Squeak the sand with your feet" }, { "k": "shell", "e": "🐚", "th": "หยิบเปลือกหอยเล็กๆ", "en": "Pick up a tiny shell" }, { "k": "castle", "e": "🏰", "th": "ตบทรายทำปราสาท", "en": "Pat a sandcastle" } ],
+    [ { "k": "roo", "e": "🦘", "th": "ชี้จิงโจ้", "en": "Point at a kangaroo" }, { "k": "hop", "e": "🦘", "th": "กระโดดเหมือนจิงโจ้ ดึ๋ง ดึ๋ง", "en": "Hop like a kangaroo: boing boing" }, { "k": "bridge", "e": "🏰", "th": "ชี้สะพานปราสาท", "en": "Point at the castle bridge" } ],
+    [ { "k": "peaks", "e": "⛰️", "th": "ชี้ภูเขาสามยอด", "en": "Point at the three peaks" }, { "k": "lolly", "e": "🍬", "th": "ชี้โหลลูกอมยักษ์", "en": "Point at a giant lolly jar" }, { "k": "picnic", "e": "🧺", "th": "นั่งปิกนิกบนเสื่อ", "en": "Sit on the picnic rug" } ],
+    [ { "k": "choo", "e": "🚂", "th": "ทำเสียงรถไฟ ปู๊น ปู๊น", "en": "Toot like the train: choo choo" }, { "k": "puff", "e": "💨", "th": "เป่าลมเหมือนไอน้ำ ฟู่", "en": "Puff like the steam" }, { "k": "tunnel", "e": "🚇", "th": "พูดว่า ว้าว ในอุโมงค์มืด", "en": "Say wow in the dark tunnel" } ],
+    [ { "k": "horse", "e": "🐴", "th": "ชี้ม้า", "en": "Point at a horse" }, { "k": "neigh", "e": "🐴", "th": "ทำเสียงม้า ฮี้ ฮี้", "en": "Neigh like a horse" }, { "k": "tree", "e": "🌳", "th": "แตะต้นไม้ใหญ่", "en": "Touch a big gum tree" } ],
+    [ { "k": "flower", "e": "🌷", "th": "ดมดอกไม้", "en": "Smell a flower" }, { "k": "quack", "e": "🦆", "th": "ทำเสียงเป็ด ก้าบ ก้าบ", "en": "Quack like a duck" }, { "k": "friend", "e": "🧚", "th": "โบกมือให้เพื่อนในนิทาน", "en": "Wave to a fairy-tale friend" } ],
+    [ { "k": "dolphin", "e": "🐬", "th": "ชี้โลมา", "en": "Point at a dolphin" }, { "k": "boat", "e": "⛵", "th": "ชี้เรือใบ", "en": "Point at a sailboat" }, { "k": "bucket", "e": "🪣", "th": "ตักทรายใส่ถัง", "en": "Scoop sand into the bucket" } ],
+    [ { "k": "crab", "e": "🦀", "th": "ชี้ปูตัวเล็ก (ดูเฉยๆ ไม่จับนะ)", "en": "Point at a little crab (look, don't touch)" }, { "k": "pelican", "e": "🐦", "th": "ชี้นกกระทุง", "en": "Point at a pelican" }, { "k": "paddle", "e": "💦", "th": "ย่ำน้ำในสระหิน", "en": "Paddle in the rock pool" } ],
+    [ { "k": "koala", "e": "🐨", "th": "ชี้โคอาล่าหลับ", "en": "Point at a sleepy koala" }, { "k": "feed", "e": "🦘", "th": "ป้อนอาหารจิงโจ้ (กับพ่อแม่)", "en": "Feed a kangaroo (with a grown-up)" }, { "k": "snore", "e": "😴", "th": "แกล้งหลับเหมือนโคอาล่า ครอก ฟี้", "en": "Pretend to sleep like a koala: zzz" } ],
+    [ { "k": "fish", "e": "🐟", "th": "ชี้ปลา", "en": "Point at a fish" }, { "k": "shark", "e": "🦈", "th": "ชี้ฉลามบนหัว", "en": "Point at the shark overhead" }, { "k": "turtle", "e": "🐢", "th": "โบกมือให้เต่า", "en": "Wave to a turtle" } ],
+    [ { "k": "roof", "e": "🎭", "th": "ชี้หลังคาเหมือนเปลือกหอย", "en": "Point at the shell roof" }, { "k": "smile", "e": "😁", "th": "ยิ้มกว้างๆ เหมือนหน้ายักษ์", "en": "Smile big like the giant face" }, { "k": "toot", "e": "⛴️", "th": "ทำเสียงเรือ ปู๊น", "en": "Toot like the ferry" } ],
+    [ { "k": "roar", "e": "🦁", "th": "ร้องเหมือนสิงโต โฮก!", "en": "Roar like a lion" }, { "k": "giraffe", "e": "🦒", "th": "ชี้ยีราฟตัวสูง", "en": "Point at the tall giraffe" }, { "k": "clap", "e": "🦭", "th": "ตบมือเหมือนแมวน้ำ", "en": "Clap like a seal" } ],
+    [ { "k": "ferry", "e": "⛴️", "th": "โบกมือให้เรือแมนลี่", "en": "Wave to the Manly ferry" }, { "k": "wave", "e": "🌊", "th": "ชี้คลื่นใหญ่", "en": "Point at a big wave" }, { "k": "icecream", "e": "🍦", "th": "ชิมไอศกรีม", "en": "Taste an ice cream" } ],
+    [ { "k": "stamps", "e": "🛂", "th": "ชี้ตราในพาสปอร์ต", "en": "Point at the passport stamps" }, { "k": "grin", "e": "😄", "th": "ยิ้มกว้างที่สุด", "en": "Your biggest smile" }, { "k": "bye", "e": "👋", "th": "โบกมือบ๊ายบายออสเตรเลีย", "en": "Wave bye-bye to Australia" } ]
+   ],
+   "words": { "title": { "th": "คำใหม่ของ{name}", "en": "{name}'s new words" }, "sub": { "th": "เด็กวัยนี้กำลังหัดพูด — จดคำที่{name}พูดได้ระหว่างทริป แม้แต่คำเดียวก็นับ", "en": "Words are coming fast at this age — jot down every word {name} says on the trip, even just one" } },
+   "cert": { "th": "ทำภารกิจชี้ แตะ ทำเสียง ครบทริป The Big Hop — กระโดดเหมือนจิงโจ้ ร้องปู๊นๆ กับรถไฟไอน้ำ ชี้โลมา และแกล้งหลับเหมือนโคอาล่า", "en": "pointed, touched and made the sounds all through The Big Hop — hopped like a kangaroo, tooted with the steam train, spotted dolphins and slept like a koala" }
+  },
   "colour": "/art/colour/au/day-{n}.svg",
   "countdown": {
    "doors": [
