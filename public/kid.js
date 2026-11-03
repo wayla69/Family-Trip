@@ -443,8 +443,9 @@ function matchDeck(t) {
 const newMatch = (t, kid) => { mg = { t: t.id, kid, cards: matchDeck(t), up: [], done: new Set(), moves: 0, won: false }; };
 let cnt = null;   // counting game: {n, e, hit:[card indexes in the order tapped]}
 const NUMW = { th: ['หนึ่ง', 'สอง', 'สาม', 'สี่', 'ห้า', 'หก', 'เจ็ด', 'แปด', 'เก้า', 'สิบ'], en: ['one', 'two', 'three', 'four', 'five', 'six', 'seven', 'eight', 'nine', 'ten'] };
-function newCount(t) {
-  const wild = ((t.info || {}).wild || []), pool = wild.length ? wild.map((w) => w.emo) : t.days.map((d) => d.emoji).filter(Boolean);
+function newCount(t, kid) {   // count today's things (the day's missions), now and then the trip's animals and friends
+  const wild = ((t.info || {}).wild || []).map((w) => w.emo), today = daySpots(t, kidDayOf(t), kid || (route().parts[1] || '')).map((x) => x.e).filter((e) => e && e !== '🔊');
+  const pool = today.length ? today.concat(today, wild.slice(0, 3)) : wild.length ? wild : t.days.map((d) => d.emoji).filter(Boolean);
   cnt = { n: 3 + Math.floor(Math.random() * 8), e: pool[Math.floor(Math.random() * pool.length)] || '⭐', hit: [] };
 }
 const MOODW = { '😄': ['ดีใจ', 'happy'], '🥰': ['มีความสุขมาก', 'loved'], '🤩': ['ตื่นเต้น', 'excited'], '😋': ['อร่อย', 'yummy'], '😴': ['ง่วง', 'sleepy'], '😢': ['เศร้า', 'sad'] };
@@ -522,9 +523,9 @@ function viewKid(p) {
     const tiles = (pre
       ? [cd && ['count', '🎁', L('เซอร์ไพรส์', 'Surprise')], cd && cd.pack && ['pack', '🧳', L('จัดกระเป๋า', 'Pack')], ['colour', '🎨', L('ระบายสี', 'Colour')], ['draw', '🖍️', L('วาดรูป', 'Draw')]]
       : [['colour', '🎨', L('ระบายสี', 'Colour')], ['draw', '🖍️', L('วาดรูป', 'Draw')], ['spot', littleOf(t, kid) ? '👉' : '🔍', littleOf(t, kid) ? L('ชี้ แตะ', 'Point it') : L('หาของ', 'Find it')], ['stamp', '🛂', L('ปั๊มตรา', 'Stamp')]])
-      .concat(words ? [['words', '🗣️', L('พูดตาม', 'Say it')]] : [], [['stickers', '⭐', L('สติกเกอร์', 'Stickers')]], pp.map ? [['map', '🗺️', L('แผนที่', 'Map')]] : [], ((d.plan || {}).quiz || []).length && !lit ? [['quiz', '❓', L('ทายซิ', 'Quiz')]] : [],
+      .concat(words ? [['words', '🗣️', L('พูดตาม', 'Say it')]] : [], ((d.plan || {}).quiz || []).length && !lit ? [['quiz', '❓', L('ทายซิ', 'Quiz')]] : [],
         kidTalk(t, i) ? [['talk', '💬', L('คุยกัน', 'Let’s talk')]] : [], kidPhotos(t, i).length ? [['photos', '📸', L('ดูรูป', 'Photos')]] : [], [['match', '🧩', L('จับคู่', 'Match')]], pre ? [] : [['mood', '😊', L('วันนี้รู้สึก', 'My mood')]],
-        wild.length ? [['animals', (t.info.wildLabel || {}).emo || '🦘', t.info.wildLabel ? esc(T(t.info.wildLabel.short)) : L('สัตว์', 'Animals')]] : [], [['numbers', '🔢', L('นับเลข', 'Count')]], [['trophies', '🏆', L('รางวัล', 'Trophies')]]).filter(Boolean);
+        wild.length ? [['animals', (t.info.wildLabel || {}).emo || '🦘', t.info.wildLabel ? esc(T(t.info.wildLabel.short)) : L('สัตว์', 'Animals')]] : [], [['numbers', '🔢', L('นับเลข', 'Count')]]).filter(Boolean);   // map, stickers and trophies live on the kid bar below — not twice
     const until = daysUntil(t);
     const btns = tiles.map(([v, e, lbl]) => `<button data-a="kidnav" data-v="#/kid/${esc(kid)}/${v}" data-say="${esc(lbl)}"><span>${e}</span><b>${lbl}</b></button>`)
       .concat(story ? [`<button class="night" data-a="bedtime" data-v="${esc(story.id)}"><span>🌙</span><b>${L('นิทาน', 'Story')}</b></button>`] : [],
@@ -610,7 +611,7 @@ ${mapHtml(t, i, [kid].concat((t.theme.children || []).map((c) => c.slug).filter(
     body = `<div class="kidguide">${guideImg(0)}<p>${(t.info.wildLabel ? L('แตะเพื่อฟังชื่อ · เจอตัวจริงแล้วแตะ 👀', 'Tap to hear the name · tap 👀 when you spot one') : L('แตะสัตว์เพื่อฟังชื่อ · เจอตัวจริงแล้วแตะ 👀', 'Tap an animal to hear its name · tap 👀 when you spot one'))}</p></div>
 <div class="animals">${wild.map((w, n) => { const key = `wild.${n}`, on = ticked(t, key, kid); return `<div class="an${on ? ' on' : ''}"><button class="hear" data-a="sayfacts" data-v="${esc(T(w.name))}. ${esc(T(w.text))}"><span>${esc(w.emo || '🐾')}</span><b>${esc(T(w.name))}</b></button><button class="seen" data-a="kidspot" data-t="${esc(t.id)}" data-d="" data-k="${esc(kid)}" data-v="${key}" data-say="${esc(L(`เจอ${T(w.name)}แล้ว!`, `Spotted a ${T(w.name)}!`))}" aria-pressed="${!!on}" aria-label="${L('เจอแล้ว', 'Spotted')}">${on ? '✓' : '👀'}</button></div>`; }).join('')}</div>`;
   } else if (view === 'numbers') {
-    if (!cnt) newCount(t);
+    if (!cnt) newCount(t, kid);
     const done = cnt.hit.length >= cnt.n;
     body = `<div class="kidguide">${guideImg(1)}<p>${done ? L(`ทั้งหมด ${cnt.n} ตัว! เก่งมาก 🎉`, `${cnt.n} altogether! Brilliant 🎉`) : L('แตะนับทีละตัว — มีกี่ตัวนะ?', 'Tap them one by one — how many?')}</p></div>
 <div class="countfield">${Array.from({ length: cnt.n }, (_, k) => `<button class="cnt${cnt.hit.includes(k) ? ' hit' : ''}" data-a="kidcount" data-v="${k}" aria-label="${k + 1}"><span>${esc(cnt.e)}</span><i>${cnt.hit.includes(k) ? cnt.hit.indexOf(k) + 1 : ''}</i></button>`).join('')}</div>
@@ -624,7 +625,7 @@ ${mapHtml(t, i, [kid].concat((t.theme.children || []).map((c) => c.slug).filter(
   } else if (view === 'hearts') {
     const hs = heartsFor(kid), seen = ls('hseen_' + kid) || 0;
     if (hs.length) ls('hseen_' + kid, Math.max(seen, hs[0].at));
-    body = `<div class="kidhearts-list">${hs.map((h) => `<button class="${h.at > seen ? 'new' : ''}" data-a="kidheart" data-v="${esc(heartLine(h, kid))}"><span class="e">${esc(h.emoji)}</span><b>${esc(h.from)}</b>${h.text ? `<p>${esc(h.text)}</p>` : ''}<i>🔊</i></button>`).join('') || `<p class="kidguide"><span>${L('ยังไม่มีหัวใจ', 'No hearts yet')}</span></p>`}</div>`;
+    body = `<div class="kidhearts-list">${hs.map((h) => `<button class="${h.at > seen ? 'new' : ''}" data-a="kidheart" data-v="${esc(heartLine(h, kid))}"><span class="e">${esc(h.emoji)}</span><b>${esc(h.from)}</b>${h.text ? `<p>${esc(h.text)}</p>` : ''}<i>🔊</i></button>`).join('') || `<div class="kidguide">${guideImg(0)}<p>${L(`ยังไม่มีหัวใจเลย — เดี๋ยวคุณตาคุณยายส่งมาให้${esc(name)}นะ 💗`, `No hearts yet — the family will send ${esc(name)} some soon 💗`)}</p></div>`}</div>`;
   } else body = `<button class="kidbig" data-a="kidnav" data-v="#/kid/${esc(kid)}">🏠</button>`;
   // kid mode's own bar: big pictures, read aloud on tap (data-say), no grown-up pages
   const kb = [['', '🏠', L('บ้าน', 'Home')], pp.map && ['map', '🗺️', L('แผนที่', 'Map')], [pre ? 'colour' : 'stamp', pre ? '🎨' : '🛂', pre ? L('ระบายสี', 'Colour') : L('พาสปอร์ต', 'Passport')], ['stickers', '⭐', L('สติกเกอร์', 'Stickers')], ['trophies', '🏆', L('รางวัล', 'Trophies')]].filter(Boolean);
