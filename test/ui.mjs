@@ -1055,6 +1055,18 @@ const T = 'hk-macau-2026';
   await page.waitForFunction(() => queue.length === 0, null, { timeout: 15000 });
   await page.click('.kidbar button[data-v="#/kid/mimi"]'); await page.waitForSelector('.kidtiles');
   ok(await page.locator('.kidnight').count() === 0, 'evening banner: gone once today is stamped');
+  // the morning memory game: yesterday's questions (kind mquiz, written by Claude on the record page) as a 🧠 tile; no score
+  await page.evaluate(async () => { await fetch('/api/b/entries/hk-macau-2026.mquiz.d1', { method: 'PUT', headers: { 'content-type': 'application/json', 'x-mb': '1' },
+    body: JSON.stringify({ trip: 'hk-macau-2026', day: 1, kind: 'mquiz', text: JSON.stringify([{ q: 'Where does the fish live?', a: [{ e: '🌳', t: 'In a tree' }, { e: '💧', t: 'In the water' }, { e: '🚌', t: 'On a bus' }], ok: 1 }, { q: 'Where did we go?', a: [{ e: '🏰', t: 'Disneyland' }, { e: '🏖️', t: 'The beach' }], ok: 0 }]) }) }); });
+  await page.reload(); await page.waitForSelector('.kidtiles button[data-v$="/memory"]', { state: 'attached' });
+  await page.goto(`${BASE}/#/kid/mimi/memory`); await page.waitForSelector('.memq');
+  await page.click('.mema button[data-ok="0"] >> nth=0'); await page.waitForTimeout(200);
+  ok(await page.locator('.mema button.right').count() === 0 && await page.locator('[data-a="memnext"]').count() === 0, 'memory game: a wrong tap just says "try again" — no score, no lock');
+  await page.click('.mema button[data-ok="1"]'); await page.waitForSelector('[data-a="memnext"]');
+  ok(await page.locator('.mema button.right').count() === 1, 'memory game: the right picture lights up, then "next"');
+  await page.click('[data-a="memnext"]'); await page.waitForFunction(() => document.querySelector('.memq b').textContent === 'Where did we go?');
+  await page.click('.mema button[data-ok="1"]'); await page.click('[data-a="memnext"]'); await page.waitForSelector('[data-a="memagain"]');
+  ok(true, 'memory game: two questions, then a well-done and "play again"');
   await page.evaluate(() => ls('kidmode', null));
   await page.clock.setFixedTime(new Date('2026-12-10T03:00:00Z'));   // the last day: the certificate comes by itself, for both
   for (const k of ['mimi', 'mika']) { await page.goto(`${BASE}/#/passport/${k}/${T}`); await page.reload(); await page.waitForSelector('#cert'); }

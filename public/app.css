@@ -689,6 +689,9 @@ body.kidmode{padding-bottom:0;background:var(--tint,#F3F6FA)}
 .kidtiles button.love{background:#FFE4EE!important}.kidtiles button.love b{color:#C2185B}
 .kidhello p b{font-size:1.25em}
 /* hearts from the family, in kid mode */
+.memq{display:flex;align-items:center;gap:10px;width:100%;border:0;border-radius:24px;background:#fff;padding:16px 18px;margin:10px 0 14px;font:inherit;text-align:left;box-shadow:0 8px 20px -14px rgba(0,0,0,.4)}.memq b{font-size:24px;flex:1;line-height:1.3}.memq i{font-style:normal;font-size:26px}
+.mema{display:grid;grid-template-columns:repeat(auto-fit,minmax(96px,1fr));gap:12px;margin-bottom:16px}.mema button{border:0;border-radius:24px;background:#fff;padding:14px 8px;font:inherit;display:flex;flex-direction:column;align-items:center;gap:6px;box-shadow:0 8px 20px -14px rgba(0,0,0,.4)}
+.mema button span{font-size:54px;line-height:1}.mema button b{font-size:18px}.mema button.right{background:#DCF5E3;outline:4px solid #2E7D32}.mema button.nope{animation:nope .4s}@keyframes nope{25%{transform:translateX(-6px)}75%{transform:translateX(6px)}}
 .kidgift,.kidnight{width:100%;border:0;border-radius:28px;display:flex;align-items:center;gap:12px;padding:14px 18px;text-align:left;margin-bottom:10px;font:inherit;color:#1F2A3A}
 .kidgift{background:linear-gradient(135deg,#FFE7A3,#FFD1E1);box-shadow:0 10px 22px -14px #B45309}.kidnight{background:linear-gradient(135deg,#1F2A5A,#3B4A8A);color:#fff;box-shadow:0 10px 22px -14px #1F2A5A}
 .kidgift b,.kidnight b{font-size:22px;flex:1}button.kidnight b,button.kidnight small{color:#fff}.kidgift small,.kidnight small{font-size:15px;opacity:.8}.kidgift .box,.kidnight .moon{font-size:46px;line-height:1}

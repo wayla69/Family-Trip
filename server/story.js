@@ -81,13 +81,52 @@ function likesPrompt(lang) {
     + 'แบ่งหัวข้อสั้นๆ บรรทัดละหัวข้อ: ที่พัก · อาหาร · สถานที่ · สิ่งที่ควรเลี่ยง · ไอเดียทริปหน้า ใต้หัวข้อขึ้นบรรทัดด้วย "• " '
     + 'ยกชื่อที่จริงจากสมุดเป็นตัวอย่าง ใช้เฉพาะที่สมุดบอก ห้ามแต่งเพิ่ม ไม่เกิน 220 คำ ไม่ใช้ markdown นอกจาก "• "';
 }
-function prompt({ lang, whole, mode }) { return basePrompt({ lang, whole, mode }) + NATURAL[lang === 'en' ? 'en' : 'th']; }
+// 'next': tomorrow in five lines, for the parents the evening before — from tomorrow's plan, the forecast and how today went; never saved
+function nextPrompt(lang) {
+  if (lang === 'en') {
+    return 'From tomorrow\'s plan, the weather and how today went, write tomorrow in 5 short lines for the parents to get ready tonight: '
+      + 'when to leave / the first fixed time · what to pack in the day bag · the weather and which backup plan to use if it rains · when the children rest or nap · anything to book or watch out for. '
+      + 'If today\'s notes say the children were tired or upset, suggest making tomorrow lighter, using the plan\'s own options. '
+      + 'Use only the facts given — never invent times, places or prices. One line each, each starting with one emoji; no title, no markdown.';
+  }
+  return 'จากแผนพรุ่งนี้ พยากรณ์อากาศ และบันทึกของวันนี้ เขียนสรุปพรุ่งนี้ 5 บรรทัดสั้นๆ ให้พ่อแม่เตรียมตัวคืนนี้: '
+    + 'ออกจากที่พักกี่โมง/นัดแรก · ของที่ต้องใส่กระเป๋า · อากาศและแผนสำรองถ้าฝนตก · ช่วงพักหรืองีบของเด็ก · สิ่งที่ต้องจองหรือระวัง '
+    + 'ถ้าบันทึกวันนี้บอกว่าเด็กเหนื่อยหรืองอแง ให้แนะนำปรับพรุ่งนี้ให้เบาลงโดยใช้ตัวเลือกที่มีในแผน '
+    + 'ใช้เฉพาะข้อมูลที่ให้ ห้ามแต่งเวลา สถานที่ หรือราคาเพิ่ม บรรทัดละข้อ ขึ้นต้นด้วยอีโมจิ 1 ตัว ไม่มีหัวข้อ ไม่มี markdown';
+}
+// 'mquiz': the morning memory game — three picture questions about the day for Mimi, answered in kid mode next morning (JSON)
+function mquizPrompt(lang) {
+  const shape = '[{"q":"…","a":[{"e":"🐟","t":"…"},{"e":"🦁","t":"…"},{"e":"🚌","t":"…"}],"ok":0}]';
+  if (lang === 'en') {
+    return 'From the facts of this day, write 3 very easy memory questions for Mimi (3) to answer the next morning ("Yesterday, what did we…?", "What did Mika say…?"). '
+      + 'Each has 3 short answers (1–3 words, each with one emoji): exactly one is true from the facts, the other two are plausible but not in the facts. '
+      + 'Use only the facts given. Little-kid words, excited and friendly. Reply with JSON only — no prose, no code fence: ' + shape + ' where "ok" is the index of the true answer.';
+  }
+  return 'จากข้อมูลของวันนี้ ตั้งคำถามความจำง่ายมาก 3 ข้อ ให้มีมี่ (3 ขวบ) ตอบตอนเช้าพรุ่งนี้ (เช่น "เมื่อวานเราไปเจออะไร" "มีก้าพูดว่าอะไร") '
+    + 'แต่ละข้อมีคำตอบสั้น 3 ตัวเลือก (1–3 คำ มีอีโมจิ 1 ตัว) ถูกจริงตามข้อมูลหนึ่งข้อ อีกสองข้อฟังดูเป็นไปได้แต่ไม่มีในข้อมูล '
+    + 'ใช้เฉพาะข้อมูลที่ให้ ภาษาเด็ก น้ำเสียงตื่นเต้นเป็นมิตร ตอบเป็น JSON เท่านั้น ไม่มีคำอธิบาย ไม่มี code fence: ' + shape + ' โดย "ok" คือลำดับของคำตอบที่ถูก';
+}
+// 'fore': the foreword of the printed memory book — the whole trip on one page, in the parents' voice
+function forePrompt(lang) {
+  if (lang === 'en') {
+    return 'Write the foreword of this family\'s printed memory book about the trip: 120–180 words in the parents\' voice ("we"), past tense — '
+      + 'where we went, who came (Mimi, 3, and Mika, 1½), and the few moments that stood out, so the family enjoys reading it again in years. '
+      + 'Use only the facts given — do not invent places, events or words anyone said. Plain text, no title, no markdown.';
+  }
+  return 'เขียนคำนำของสมุดความทรงจำเล่มนี้ ทั้งทริป 120–180 คำ เล่าแบบพ่อแม่ ใช้ "เรา" — ไปที่ไหน ไปกับใคร (มีมี่ 3 ขวบ มีก้า 1 ขวบครึ่ง) '
+    + 'และช่วงไม่กี่ช่วงที่จำได้ที่สุด ให้ครอบครัวกลับมาอ่านแล้วยิ้มได้อีกหลายปี ใช้เฉพาะข้อมูลที่ให้ ห้ามแต่งสถานที่/เหตุการณ์/คำพูดเพิ่ม ข้อความธรรมดา ไม่มีหัวข้อ ไม่มี markdown';
+}
+// the memory game is JSON for the app, not words for the family: it skips the "sound like the parents" tail
+function prompt({ lang, whole, mode }) { return basePrompt({ lang, whole, mode }) + (mode === 'mquiz' ? '' : NATURAL[lang === 'en' ? 'en' : 'th']); }
 function basePrompt({ lang, whole, mode }) {
   if (mode === 'sum') return sumPrompt(lang);
   if (mode === 'talk') return talkPrompt(lang);
   if (mode === 'letter') return letterPrompt(lang);
   if (mode === 'likes') return likesPrompt(lang);
   if (mode === 'msg') return msgPrompt(lang);
+  if (mode === 'next') return nextPrompt(lang);
+  if (mode === 'mquiz') return mquizPrompt(lang);
+  if (mode === 'fore') return forePrompt(lang);
   if (lang === 'en') {
     return `Write an English bedtime story of ${whole ? '250–350' : '120–180'} words starring "Mimi" (3) and "Mika" (1½). `
       + 'Use only the facts given — do not invent places, events or words anyone said. If there is little to go on, make the story shorter. '
@@ -102,13 +141,31 @@ function basePrompt({ lang, whole, mode }) {
     + 'ตอนท้ายค่อยๆ ช้าลง สงบ อบอุ่น แล้วปิดด้วยประโยคฝันดี ตอบเฉพาะตัวนิทาน ไม่มีหัวข้อ/markdown';
 }
 
+// the memory game's JSON → at most 5 questions of 2–4 picture answers, answers shuffled (so "the first one" is never the trick), or null
+function parseQuiz(text) {
+  const a0 = text.indexOf('['), a1 = text.lastIndexOf(']');
+  if (a0 < 0 || a1 < a0) return null;
+  let arr; try { arr = JSON.parse(text.slice(a0, a1 + 1)); } catch (_) { return null; }
+  if (!Array.isArray(arr)) return null;
+  const out = [];
+  for (const x of arr.slice(0, 5)) {
+    if (!x || typeof x.q !== 'string' || !x.q.trim() || !Array.isArray(x.a)) continue;
+    const ch = x.a.filter((c) => c && typeof c.t === 'string' && c.t.trim()).slice(0, 4).map((c) => ({ e: String(c.e || '').slice(0, 8), t: c.t.trim().slice(0, 40) }));
+    const ok = Number(x.ok);
+    if (ch.length < 2 || !Number.isInteger(ok) || ok < 0 || ok >= ch.length) continue;
+    const right = ch[ok], mixed = ch.map((c) => [Math.random(), c]).sort((p, q) => p[0] - q[0]).map((p) => p[1]);
+    out.push({ q: x.q.trim().slice(0, 160), a: mixed, ok: mixed.indexOf(right) });
+  }
+  return out.length ? out : null;
+}
+
 const clean = (s) => s.replace(/^#+\s*/gm, '').replace(/\*\*|__|`/g, '').replace(/^\s*[-*]\s+/gm, '').replace(/\n{3,}/g, '\n\n').trim();
 
 // Streams text chunks through onText; resolves with the cleaned story (or day summary). Throws {code:'refusal'} if declined.
 async function writeStory({ lang, whole, mode, facts, onText, signal }) {
   const stream = api().beta.messages.stream({
     model: MODEL(),
-    max_tokens: !mode || mode === 'story' || mode === 'letter' ? 4000 : mode === 'likes' ? 2000 : 1000,
+    max_tokens: !mode || mode === 'story' || mode === 'letter' ? 4000 : mode === 'likes' || mode === 'fore' ? 2000 : 1000,
     betas: ['server-side-fallback-2026-07-01'],
     fallbacks: 'default',                  // a policy decline is re-run server-side on Anthropic's recommended fallback
     output_config: { effort: 'low' },      // a short story from given facts needs little reasoning
@@ -191,4 +248,4 @@ async function translate({ items, signal }) {
   return out;
 }
 
-module.exports = { enabled, writeStory, askGuide, translate, clean, onUsage, SDK };
+module.exports = { parseQuiz, enabled, writeStory, askGuide, translate, clean, onUsage, SDK };

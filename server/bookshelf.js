@@ -14,8 +14,8 @@ const ID_RE = /^[A-Za-z0-9_.:-]{4,80}$/;
 // voice memos arrive as the phone's recorder made them: Chrome/Android webm-opus, iPhone mp4-aac; stored under a/<trip>/<id>.<ext>
 const AUDIO_EXT = { 'audio/webm': 'webm', 'audio/mp4': 'm4a', 'audio/x-m4a': 'm4a', 'audio/aac': 'aac', 'audio/mpeg': 'mp3', 'audio/ogg': 'ogg' };
 const SLUG_RE = /^[a-z0-9-]{2,60}$/;
-const KINDS = ['quote', 'mood', 'fav', 'note', 'first', 'story', 'tick', 'field', 'sum', 'talk', 'letter'];   // sum = the day in a few lines (book + PDF) · talk = bedtime questions (kid mode)
-const TRIP_WIDE = ['story', 'tick', 'field', 'letter'];   // kinds that may have no day (whole-trip story, passport checklists, Explorer ID, the letter to the kids)
+const KINDS = ['quote', 'mood', 'fav', 'note', 'first', 'story', 'tick', 'field', 'sum', 'talk', 'letter', 'mquiz', 'fore'];   // mquiz = the morning memory game (kid mode) · fore = the book's foreword   // sum = the day in a few lines (book + PDF) · talk = bedtime questions (kid mode)
+const TRIP_WIDE = ['story', 'tick', 'field', 'letter', 'fore'];   // kinds that may have no day (whole-trip story, passport checklists, Explorer ID, the letter to the kids)
 const HEART_EMOJI = ['💗', '🤗', '😘', '⭐', '👏', '🎈'];
 const REVIEW_KINDS = ['stay', 'food', 'place'], KID_VERDICT = ['love', 'ok', 'no'];
 const HEARTS_PER_DAY = { sender: 40, family: 400 };   // the view link is shared: cap what one phone, and everyone together, can send
@@ -422,6 +422,25 @@ function router({ pool, media, A, ai, hooks = {} }) {   // hooks.heart(h): set b
     }
     return lines.join('\n\n');
   }
+  // tomorrow in five lines (mode 'next'): tomorrow's plan from the seed (timeline, stay, backup plan, money/tips, the climate note),
+  // the live forecast when the trip is near (weather.js, town-level), then today's notes — so a tired day can lighten tomorrow
+  async function nextFacts(t, day, lang) {
+    const d = (await q("SELECT day_index, to_char(date,'YYYY-MM-DD') date, title, wx, plan FROM trip_days WHERE trip_id=$1 AND day_index=$2", [t.id, day + 1]))[0];
+    if (!d) return '';
+    const G = require('./guide'), tx = (v, n = 600) => G.textOf(v, lang).join(' · ').slice(0, n), pl = d.plan || {}, en = lang === 'en';
+    const out = [`${en ? 'Tomorrow' : 'พรุ่งนี้'}: ${en ? 'Day' : 'วันที่'} ${d.day_index + 1} (${d.date}) — ${tx(d.title, 200)}`];
+    (pl.plan || []).forEach((r) => out.push(`${r.t ? r.t + ' ' : ''}${tx(r, 300)}`));
+    if (pl.stay) out.push(`${en ? 'Sleep at' : 'นอนที่'}: ${tx(pl.stay.name || pl.stay, 200)}`);
+    for (const [k, th, enl] of [['planB', 'แผนสำรอง', 'Backup plan'], ['moving', 'การเดินทาง', 'Getting around'], ['money', 'เงิน', 'Money'], ['tips', 'ทิป', 'Tips']]) if (pl[k]) out.push(`${en ? enl : th}: ${tx(pl[k])}`);
+    if (d.wx) out.push(`${en ? 'Climate' : 'อากาศ'}: ${tx(d.wx, 300)}`);
+    try {
+      const [f] = await require('./weather').forecast([{ date: d.date, ll: pl.stay && pl.stay.ll }], t.timezone);
+      if (f) out.push(`${en ? 'Forecast' : 'พยากรณ์'}: ${Math.round(f.tmin)}–${Math.round(f.tmax)}°C${f.pop != null ? `, ${en ? 'rain' : 'โอกาสฝน'} ${f.pop}%` : ''}`);
+    } catch (_) { /* the forecast is a nice-to-have */ }
+    const today = await storyFacts(t, day, lang);
+    if (today) out.push(`\n${en ? 'How today went' : 'วันนี้เป็นยังไง'}:\n${today}`);
+    return out.join('\n');
+  }
   const STORY_DAILY = Math.max(1, parseInt(process.env.STORY_DAILY, 10) || 60);   // model calls per family per UTC day — a cap on the API bill, not a quota anyone should meet
   // the daily cap is counted in Postgres (ai_usage), atomically: a redeploy doesn't reset it, two phones can't both pass the last call
   const aiTake = async () => (await q(`INSERT INTO ai_usage (family_id, day, calls) VALUES ($1, (now() AT TIME ZONE 'UTC')::date, 1)
@@ -445,11 +464,13 @@ function router({ pool, media, A, ai, hooks = {} }) {   // hooks.heart(h): set b
   r.post('/api/b/story', ...W, async (req, res, next) => {
     try {
       if (!ai || !ai.enabled()) return bad(res, 'no-key', 501);
-      const b = req.body || {}, lang = b.lang === 'en' ? 'en' : 'th', mode = ['sum', 'msg', 'talk', 'letter'].includes(b.mode) ? b.mode : 'story';   // sum = the day summary for the book · msg = a note for the relatives (not saved) · talk = bedtime questions
+      const b = req.body || {}, lang = b.lang === 'en' ? 'en' : 'th', mode = ['sum', 'msg', 'talk', 'letter', 'next', 'mquiz', 'fore'].includes(b.mode) ? b.mode : 'story';   // sum = the day summary for the book · msg = a note for the relatives (not saved) · talk = bedtime questions
       const t = await trip(String(b.trip || '')); if (!t) return bad(res, 'trip');
       const day = dayArg(b.day); if (!dayOk(t, day)) return bad(res, 'day');
-      if (mode === 'letter' ? day !== null : mode !== 'story' && day === null) return bad(res, 'day');   // the letter is for the whole trip; the rest need a day
-      const facts = await storyFacts(t, day, lang);
+      const whole = mode === 'letter' || mode === 'fore';   // the letter and the foreword are for the whole trip; the rest need a day
+      if (whole ? day !== null : mode !== 'story' && day === null) return bad(res, 'day');
+      if (mode === 'next' && day + 1 >= t.days) return bad(res, 'day');   // no tomorrow after the last day
+      const facts = mode === 'next' ? await nextFacts(t, day, lang) : await storyFacts(t, day, lang);
       if (!facts) return bad(res, 'empty', 422);   // nothing written down → don't call the model
       if (!(await aiTake())) return bad(res, 'limit', 429);
       const ctl = new AbortController();
@@ -460,7 +481,12 @@ function router({ pool, media, A, ai, hooks = {} }) {   // hooks.heart(h): set b
       try {
         let text = await ai.writeStory({ lang, whole: day === null, mode, facts, signal: ctl.signal, onText: (x) => send(null, { t: x }) });
         if (mode === 'talk') text = text.split('\n').map((l) => l.replace(/^\s*\d+[.)]\s*/, '').trim()).filter(Boolean).slice(0, 5).join('\n');   // one question per line, no numbering
-        if (mode === 'msg') { done = true; send('done', { text }); return res.end(); }   // the note for the relatives lives only on the phone
+        if (mode === 'msg' || mode === 'next') { done = true; send('done', { text }); return res.end(); }   // the note for the relatives and tomorrow's lines live only on the phone
+        if (mode === 'mquiz') {   // the memory game: only a valid set of picture questions is kept
+          const quiz = ai.parseQuiz ? ai.parseQuiz(text) : null;
+          if (!quiz) { done = true; send('error', { error: 'failed' }); return res.end(); }
+          text = JSON.stringify(quiz);
+        }
         const id = day === null ? `${t.id}.${mode}.all` : `${t.id}.${mode}.d${day}`;   // sum id = the record page's blur-save id, so edits upsert the same row
         await q(`INSERT INTO entries (id, family_id, trip_id, day_index, kind, text, lang, created_by, created_uid) VALUES ($1,$2,$3,$4,$5,$6,$7,$8,$9)
           ON CONFLICT (id) DO UPDATE SET text=EXCLUDED.text, lang=EXCLUDED.lang, updated_at=now(), tr=NULL`, [id, FAMILY, t.id, day, mode, text, lang, 'Claude', req.user.uid]);

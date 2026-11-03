@@ -27,8 +27,11 @@ const mock = http.createServer((req, res) => {
     ev('message_start', { message: { id: 'msg_1', type: 'message', role: 'assistant', model: b.model, content: [], stop_reason: null, stop_sequence: null, usage: { input_tokens: 10, output_tokens: 0 } } });
     ev('content_block_start', { index: 0, content_block: { type: 'text', text: '' } });
     const refuse = facts.includes('REFUSE'), slow = facts.includes('SLOW');
-    const trans = String(b.system).startsWith('Translate');   // translate: answer JSON [{id, tr}] for the items it was given
-    const parts = trans ? [JSON.stringify(JSON.parse(facts).map((x) => ({ id: x.id, tr: `${x.to}:${x.text}` })))]
+    const trans = String(b.system).startsWith('Translate');
+    const quiz = String(b.system).includes('"ok":');   // the memory game answers JSON (once with a bad item, which must be dropped)   // translate: answer JSON [{id, tr}] for the items it was given
+    const parts = quiz ? ['```json\n[{"q":"เมื่อวานมีมี่บอกว่าปลาอยู่ที่ไหน","a":[{"e":"💧","t":"ในน้ำ"},{"e":"🌳","t":"บนต้นไม้"},{"e":"🚌","t":"บนรถบัส"}],"ok":0},',
+      '{"q":"ไปไหนมา","a":[{"e":"🏰","t":"ดิสนีย์"},{"e":"🏖️","t":"ทะเล"},{"e":"🏔️","t":"ภูเขา"}],"ok":0},{"q":"bad","a":[{"t":"x"}],"ok":3}]\n```']
+      : trans ? [JSON.stringify(JSON.parse(facts).map((x) => ({ id: x.id, tr: `${x.to}:${x.text}` })))]
       : refuse ? ['ขอโทษ'] : ['# นิทาน\n', '**กาลครั้งหนึ่ง** มีมี่บอกว่า ', '“ปลาอยู่ในน้ำเหมือนหนูเลย” ', 'ฝันดีนะ'];
     // (IncomingMessage 'close' fires once the body is read, so only the response side tells us the client went away)
     let closed = false; res.on('close', () => { if (!res.writableEnded) { closed = true; upstreamClosedEarly = true; } });
@@ -252,6 +255,37 @@ try {
   ok(use.limit === 17 && use.today.calls === 17 && use.days30.calls === 17, `usage: today ${use.today.calls}/${use.limit} calls counted`);
   ok(use.today.tout > 0 && use.today.tin > 0 && use.usd30 === null, 'usage: tokens added from each finished call; no price guessed when none is set');
   ok(!vck || (await fetch(BASE + '/api/b/ai', { headers: { cookie: vck.split(';')[0] } })).status === 403, 'usage: relatives cannot see it');
+
+  // ---- tomorrow in five lines · the morning memory game · the book's foreword (a fresh day's cap for these)
+  { const db = new Client({ connectionString: u.toString() }); await db.connect(); await db.query('UPDATE ai_usage SET calls=0'); await db.end(); }
+  const bn = calls.length;
+  ok((await story({ trip: T, day: 5, lang: 'th', mode: 'next' })).status === 400 && calls.length === bn, 'tomorrow: no tomorrow after the last day (400, model not called)');
+  const rn = events(await (await story({ trip: T, day: 1, lang: 'th', mode: 'next' })).text());
+  const nc = calls.at(-1).body.messages[0].content;
+  ok(rn.at(-1).ev === 'done' && rn.at(-1).data.text && !rn.at(-1).data.id && !(await state()).entries.some((e) => e.kind === 'next'), 'tomorrow: streamed, never saved');
+  ok(nc.includes('พรุ่งนี้: วันที่ 3') && /\d\d:\d\d /.test(nc) && nc.includes('วันนี้เป็นยังไง') && nc.includes('ปลาอยู่ในน้ำเหมือนหนูเลย') && calls.at(-1).body.system.includes('แผนสำรอง') && calls.at(-1).body.system.includes('ห้ามแต่งเวลา'), 'tomorrow: tomorrow\'s timeline + how today went go to Claude; the prompt asks for times, bag, rain plan, naps — nothing invented');
+  const rq = events(await (await story({ trip: T, day: 1, lang: 'th', mode: 'mquiz' })).text());
+  const mq = (await state()).entries.find((e) => e.id === `${T}.mquiz.d1`), qs = mq ? JSON.parse(mq.text) : [];
+  ok(rq.at(-1).ev === 'done' && mq && mq.kind === 'mquiz' && qs.length === 2 && qs.every((x) => x.a.length === 3 && x.a[x.ok] && ['ในน้ำ', 'ดิสนีย์'].includes(x.a[x.ok].t)), 'memory game: saved on the day as picture questions; a broken item is dropped; the right answer is kept after shuffling');
+  ok(!calls.at(-1).body.system.includes('ห้ามใช้สำนวนแบบ AI') && calls.at(-1).body.system.includes('JSON'), 'memory game: a JSON prompt (no "sound like the parents" tail)');
+  ok((await story({ trip: T, day: 1, lang: 'th', mode: 'fore' })).status === 400, 'foreword: whole trip only');
+  const rf = events(await (await story({ trip: T, day: null, lang: 'th', mode: 'fore' })).text());
+  const fw = (await state()).entries.find((e) => e.id === `${T}.fore.all`);
+  ok(rf.at(-1).ev === 'done' && fw && fw.kind === 'fore' && fw.day === null && calls.at(-1).body.system.includes('คำนำ') && calls.at(-1).body.max_tokens === 2000, 'foreword: drafted from the whole trip, saved for the book');
+  ok((await put(`/api/b/entries/${T}.fore.all`, { trip: T, day: null, kind: 'fore', text: 'ทริปนี้เราไปฮ่องกง — พ่อแม่เขียนเอง' })).ok, 'foreword: a hand edit saves (no day needed)');
+  { const P = createRequire(import.meta.url)('../server/story.js').parseQuiz;
+    ok(P('no json here') === null && P('[{"q":"x","a":[{"t":"a"}],"ok":0}]') === null && P('[{"q":"x","a":[{"t":"a"},{"t":"b"}],"ok":1}]')[0].a.length === 2, 'memory game parser: no JSON or too few answers → nothing kept'); }
+  { const b2 = await chromium.launch({ executablePath: exe, args: ['--no-sandbox'] }); const pg2 = await (await b2.newContext({ viewport: { width: 390, height: 844 } })).newPage();
+    await pg2.goto(BASE + '/'); await pg2.fill('#lcode', CODE); await pg2.click('#lf button[type=submit]'); await pg2.waitForSelector('.shelf');
+    await pg2.goto(`${BASE}/#/t/${T}/book`); await pg2.waitForSelector('#foretext');
+    ok(await pg2.inputValue('#foretext') === 'ทริปนี้เราไปฮ่องกง — พ่อแม่เขียนเอง' && await pg2.locator('#forego').count() === 1, 'book: the foreword box holds the saved foreword, with a Claude draft button');
+    await pg2.goto(`${BASE}/#/print/${T}`); await pg2.waitForSelector('.forep');
+    ok(await pg2.evaluate(() => { const p = [...document.querySelectorAll('section.pg')].map((x) => x.className); const c = p.findIndex((x) => /\bcover\b/.test(x)), f = p.findIndex((x) => /\bforep\b/.test(x)); return c >= 0 && f === c + 1; }), 'PDF route: the foreword is the first page after the cover');
+    await pg2.goto(`${BASE}/#/t/${T}/today/1`); await pg2.waitForSelector('#nextgo');
+    ok(await pg2.locator('.nextblk').count() === 1, 'today page: the "ready for tomorrow" button for grown-ups');
+    await pg2.goto(`${BASE}/#/t/${T}/log/1`); await pg2.waitForSelector('#mquiztext:not([hidden])');
+    ok((await pg2.textContent('#mquiztext')).includes('✓'), 'record page: the memory game is listed with its right answers for the grown-ups');
+    await b2.close(); }
   await browser.close();
 } finally {
   srv.kill(); await new Promise((r) => srv.on('exit', r)); mock.close();

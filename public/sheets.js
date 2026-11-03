@@ -250,7 +250,8 @@ const A = {
   // story/sum are saved by the server, so the page reloads the state; a summary lands in its textarea and stays editable (blur saves)
   async story(b) {
     if (storyCtl) return;
-    const mode = ['sum', 'msg', 'talk', 'letter'].includes(b.dataset.m) ? b.dataset.m : 'story', sum = ['sum', 'msg', 'letter'].includes(mode);   // sum/msg write into a textarea; story/talk into a box
+    const mode = ['sum', 'msg', 'talk', 'letter', 'next', 'mquiz', 'fore'].includes(b.dataset.m) ? b.dataset.m : 'story', sum = ['sum', 'msg', 'letter', 'fore'].includes(mode);   // sum/msg/letter/fore write into a textarea; story/talk/next/mquiz into a box
+    const quiet = mode === 'mquiz';   // the memory game streams JSON: show a line, not the raw text
     const t = trip(b.dataset.t), day = b.dataset.d === '' ? null : +b.dataset.d;
     if (!navigator.onLine) { toast(L('ต้องต่อเน็ตเพื่อใช้ Claude', 'Claude needs a connection')); return; }
     const box = $(`#${mode}text`), msg = sum ? $(`#${mode}msg`) : box, before = sum ? box.value : '';
@@ -277,7 +278,11 @@ const A = {
           let data = '';
           chunk.split('\n').forEach((l) => { if (l.startsWith('event: ')) ev = l.slice(7); else if (l.startsWith('data: ')) data += l.slice(6); });
           const d = JSON.parse(data || '{}');
-          if (!ev) { text += d.t; show(text); }
+          if (!ev) { text += d.t; show(quiet ? L('กำลังคิดคำถาม… 🧠', 'Thinking up the questions… 🧠') : text); }
+          else if (ev === 'done' && mode === 'next') {   // nothing saved: kept for this page only
+            nextAns = { t: t.id, i: day, text: d.text || text }; show(nextAns.text);
+            toast(L('พรุ่งนี้พร้อมแล้ว — ไม่ได้บันทึกไว้', 'Tomorrow is ready — not saved'));
+          }
           else if (ev === 'done' && mode === 'msg') {   // nothing saved: keep it as the box's draft so a re-render can't lose it
             drafts[box.dataset.draft] = box.value = d.text || text; msg.textContent = '';
             const send = $('#msgsend'); if (send) send.hidden = false;
@@ -285,7 +290,7 @@ const A = {
           } else if (ev === 'done') {
             if (sum) delete drafts[box.dataset.draft];   // the saved summary wins over a half-typed draft
             storyCtl = null; await load(); render();
-            toast(mode === 'letter' ? L('เก็บร่างจดหมายแล้ว — แก้ในช่องให้เป็นคำของเราเอง', 'Draft saved — make it your own words in the box') : sum ? L('เก็บสรุปไว้ในสมุดแล้ว — แก้ในช่องได้', 'Summary saved in the book — edit it in the box') : mode === 'talk' ? L('คำถามอยู่ในโหมดเด็กแล้ว — แตะ 💬 คุยกัน', 'The questions are in kid mode — tap 💬 Let’s talk') : L('เก็บนิทานไว้ในสมุดแล้ว', 'Story saved in the book'));
+            toast(mode === 'mquiz' ? L('เกมพร้อมแล้ว — พรุ่งนี้เช้าเปิดโหมดเด็ก แตะ 🧠', 'The game is ready — tomorrow morning, kid mode, tap 🧠') : mode === 'fore' ? L('เก็บคำนำแล้ว — แก้ในช่องได้', 'Foreword saved — edit it in the box') : mode === 'letter' ? L('เก็บร่างจดหมายแล้ว — แก้ในช่องให้เป็นคำของเราเอง', 'Draft saved — make it your own words in the box') : sum ? L('เก็บสรุปไว้ในสมุดแล้ว — แก้ในช่องได้', 'Summary saved in the book — edit it in the box') : mode === 'talk' ? L('คำถามอยู่ในโหมดเด็กแล้ว — แตะ 💬 คุยกัน', 'The questions are in kid mode — tap 💬 Let’s talk') : L('เก็บนิทานไว้ในสมุดแล้ว', 'Story saved in the book'));
           } else if (ev === 'error') say(d.error === 'refusal' ? L('Claude เขียนอันนี้ไม่ได้ ลองเพิ่มบันทึกแล้วลองใหม่', 'Claude could not write this one — try again later') : L('ไม่สำเร็จ ลองใหม่อีกครั้ง', 'That didn’t work — try again'));
         }
       }
@@ -514,8 +519,8 @@ async function saveBlur(el) {
   }
   const t = trip(el.dataset.t);
   // passport Explorer ID answers are per child, not per day
-  const field = kind === 'field', whole = kind === 'letter', d = field || whole ? null : +el.dataset.d;   // the letter belongs to the whole trip
-  const id = field ? `${t.id}.field.${el.dataset.v}.${el.dataset.k}` : whole ? `${t.id}.letter.all` : `${t.id}.${kind}.d${d}`, cur = S.entries.find((e) => e.id === id);
+  const field = kind === 'field', whole = kind === 'letter' || kind === 'fore', d = field || whole ? null : +el.dataset.d;   // the letter and the foreword belong to the whole trip
+  const id = field ? `${t.id}.field.${el.dataset.v}.${el.dataset.k}` : whole ? `${t.id}.${kind}.all` : `${t.id}.${kind}.d${d}`, cur = S.entries.find((e) => e.id === id);
   delete drafts[el.dataset.draft];
   if (!text) { if (cur) await delEntry(id); return; }
   if (!cur || cur.text !== text) await putEntry(t, field ? { day: null, kind, child: el.dataset.k, first_key: el.dataset.v, text } : { day: d, kind, text }, id);

@@ -59,6 +59,8 @@ const PACK_AT = '19:00', DOOR_AT = '08:00', LOG_AT = '21:30';
 // before the trip the family is still at home: the store-the-book evening and the countdown-door mornings use home time
 // (HOME_TZ, default Bangkok — the owner's ask: 08:00 Thai time), the trip's own evenings use the trip's timezone
 const HOME_TZ = process.env.HOME_TZ || 'Asia/Bangkok';
+const ANN_AT = '09:00', ANN_YEARS = 20;
+const addYears = (date, n) => { const y = +date.slice(0, 4) + n, s = `${y}${date.slice(4)}`; return s.slice(5) === '02-29' && !(y % 4 === 0 && (y % 100 !== 0 || y % 400 === 0)) ? null : s; };   // 29 Feb only in leap years
 const addDays = (date, n) => new Date(Date.parse(date + 'T00:00:00Z') + n * 864e5).toISOString().slice(0, 10);
 function extras(trips, now) {
   const out = [], live = (at) => now >= at && now < at + LATE;
@@ -85,6 +87,19 @@ function extras(trips, now) {
         th: { title: `บันทึกวันที่ ${i + 1} · ${nTh}`, body: 'รูป อารมณ์ คำพูดเด็ก — แล้วกดให้ Claude สรุปวันนี้ แต่งนิทาน และตั้งคำถามก่อนนอน' },
         en: { title: `Record day ${i + 1} · ${nEn}`, body: 'Photos, moods, what the kids said — then let Claude sum up the day, write the story and the bedtime questions' } });
     }
+    // on this day, years later: 09:00 home time on each trip day's anniversary, opening that day of the book
+    // (tick() sends it only when that day has something in it — a photo, a quote, a mood…; words only, never a photo)
+    if (x.to < new Date(now).toISOString().slice(0, 10)) {
+      for (let i = 0, d = x.from; d <= x.to; i++, d = addDays(d, 1)) {
+        for (let n = 1; n <= ANN_YEARS; n++) {
+          const ad = addYears(d, n); if (!ad) continue;
+          const at = zoned(ad, ANN_AT, home);
+          if (live(at)) out.push({ key: `${x.trip}.x.ann${n}.d${i}`, at, trip: x.trip, day: i, need: true, url: `/#/t/${x.trip}/book/d/${i}`,
+            th: { title: `📅 วันนี้เมื่อ ${n} ปีก่อน`, body: `${nTh} · วันที่ ${i + 1} — เปิดดูรูปและคำพูดของเด็กๆ วันนั้น` },
+            en: { title: `📅 On this day, ${n} year${n > 1 ? 's' : ''} ago`, body: `${nEn} · day ${i + 1} — the photos and the kids' words from that day` } });
+        }
+      }
+    }
   }
   return out;
 }
@@ -106,11 +121,14 @@ function create({ pool, family, A, sender = (sub, payload, opt) => webpush.sendN
       FROM trip_days d JOIN trips t ON t.id=d.trip_id WHERE t.family_id=$1 AND d.date BETWEEN $2::date - 1 AND $2::date + 1`, [family, new Date(now).toISOString().slice(0, 10)])).rows;
     const trips = (await pool.query(`SELECT id trip, title, timezone tz, to_char(date_from,'YYYY-MM-DD') "from", to_char(date_to,'YYYY-MM-DD') "to",
         coalesce(jsonb_array_length(passport->'countdown'->'doors'), 0) doors
-      FROM trips WHERE family_id=$1 AND $2::date BETWEEN date_from - 16 AND date_to + 1`, [family, new Date(now).toISOString().slice(0, 10)])).rows;
+      FROM trips WHERE family_id=$1 AND ($2::date BETWEEN date_from - 16 AND date_to + 1 OR date_to < $2::date)`, [family, new Date(now).toISOString().slice(0, 10)])).rows;   // past trips too: their days come back on the anniversary
     const list = due(days, now).map((r) => ({ ...r, msg: (lang) => message(r, lang, now) }));
     for (const x of extras(trips, now)) {
-      if (x.day !== undefined && (await pool.query(`SELECT 1 FROM entries WHERE trip_id=$1 AND day_index=$2 AND kind IN ('quote','mood','fav','note','first')
-          UNION ALL SELECT 1 FROM media WHERE trip_id=$1 AND day_index=$2 LIMIT 1`, [x.trip, x.day])).rowCount) continue;   // the day is already recorded
+      if (x.day !== undefined) {
+        const has = (await pool.query(`SELECT 1 FROM entries WHERE trip_id=$1 AND day_index=$2 AND kind IN ('quote','mood','fav','note','first')
+          UNION ALL SELECT 1 FROM media WHERE trip_id=$1 AND day_index=$2 LIMIT 1`, [x.trip, x.day])).rowCount > 0;
+        if (x.need ? !has : has) continue;   // record-the-day: only an empty day · on-this-day: only a day with memories
+      }
       list.push({ key: x.key, msg: (lang) => JSON.stringify({ ...(lang === 'en' ? x.en : x.th), tag: x.key, url: x.url }) });
     }
     if (!list.length) return 0;
