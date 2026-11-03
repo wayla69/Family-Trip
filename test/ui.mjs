@@ -1032,6 +1032,25 @@ const T = 'hk-macau-2026';
   ok(await page.locator('#m4 .spot button[data-a="tick"]').first().isVisible(), 'passport during the trip: a tap opens another day');
   await page.goto(`${BASE}/#/kid/mika/spot`); await page.waitForSelector('.kidspots');
   ok(await page.locator('.kidspots.little button[data-v^="little.d2."]').count() === 3, 'kid mode: Mika’s "point it" page has her three missions of today');
+  // the morning surprise box: on a trip day kid mode greets with a box; opening it gives a sticker and shows today's missions; once
+  await page.goto(`${BASE}/#/kid/mimi`); await page.waitForSelector('.kidtiles');
+  ok(await page.locator('.kidgift').count() === 1 && await page.locator('.kidnight').count() === 0, 'kid mode on a trip morning: a surprise box waits on the home page');
+  await page.click('.kidgift'); await page.waitForSelector('.giftbox');
+  await page.click('.giftbox'); await page.waitForSelector('.giftopen .gstk', { timeout: 5000 });
+  ok(await page.locator('.gmiss span').count() === 4 && await page.locator('.giftopen [data-v$="/spot"]').count() === 1, 'surprise box: a new sticker, today’s four things to find, and a button to go and find them');
+  await page.waitForFunction(() => queue.length === 0, null, { timeout: 15000 });
+  ok((await apiState(page)).entries.some((e) => e.first_key === 'gift.d2' && e.child === 'mimi') && await page.evaluate(() => stickerSet(trip('hk-macau-2026'), 'mimi').some((x) => x.k === 'gift.d2' && x.got)), 'surprise box: opened once (saved), its sticker is in Mimi’s sticker tray');
+  await page.click('.kidbar button[data-v="#/kid/mimi"]'); await page.waitForSelector('.kidtiles');
+  ok(await page.locator('.kidgift').count() === 0, 'surprise box: gone from home once opened');
+  // the evening: a "stamp today before bed" banner until the stamp is done
+  await page.clock.setFixedTime(new Date('2026-12-07T11:00:00Z'));   // 19:00 in Macau
+  await page.reload(); await page.waitForSelector('.kidtiles');
+  ok(await page.locator('.kidnight').count() === 1, 'kid mode in the evening: "stamp today before bed!"');
+  await page.click('.kidnight'); await page.waitForSelector('.stampbtn'); await page.click('.stampbtn');
+  await page.waitForFunction(() => queue.length === 0, null, { timeout: 15000 });
+  await page.click('.kidbar button[data-v="#/kid/mimi"]'); await page.waitForSelector('.kidtiles');
+  ok(await page.locator('.kidnight').count() === 0, 'evening banner: gone once today is stamped');
+  await page.evaluate(() => ls('kidmode', null));
   await page.clock.setFixedTime(new Date('2026-12-10T03:00:00Z'));   // the last day: the certificate comes by itself, for both
   for (const k of ['mimi', 'mika']) { await page.goto(`${BASE}/#/passport/${k}/${T}`); await page.reload(); await page.waitForSelector('#cert'); }
   ok(await page.locator('#cert.earned').count() === 1 && (await page.textContent('#cert')).includes('pointed, touched'), 'on the last day the certificate is there without any ticking (Mika gets her own words)');

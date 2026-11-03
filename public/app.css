@@ -689,6 +689,14 @@ body.kidmode{padding-bottom:0;background:var(--tint,#F3F6FA)}
 .kidtiles button.love{background:#FFE4EE!important}.kidtiles button.love b{color:#C2185B}
 .kidhello p b{font-size:1.25em}
 /* hearts from the family, in kid mode */
+.kidgift,.kidnight{width:100%;border:0;border-radius:28px;display:flex;align-items:center;gap:12px;padding:14px 18px;text-align:left;margin-bottom:10px;font:inherit;color:#1F2A3A}
+.kidgift{background:linear-gradient(135deg,#FFE7A3,#FFD1E1);box-shadow:0 10px 22px -14px #B45309}.kidnight{background:linear-gradient(135deg,#1F2A5A,#3B4A8A);color:#fff;box-shadow:0 10px 22px -14px #1F2A5A}
+.kidgift b,.kidnight b{font-size:22px;flex:1}button.kidnight b,button.kidnight small{color:#fff}.kidgift small,.kidnight small{font-size:15px;opacity:.8}.kidgift .box,.kidnight .moon{font-size:46px;line-height:1}
+.kidgift .box{animation:wiggle 1.4s ease-in-out infinite}@keyframes wiggle{0%,60%,100%{transform:rotate(0)}70%{transform:rotate(-12deg)}80%{transform:rotate(10deg)}90%{transform:rotate(-6deg)}}
+.giftbox{display:block;margin:30px auto;border:0;background:none;font-size:170px;line-height:1;cursor:pointer;animation:wiggle 1.4s ease-in-out infinite}.giftbox.pop{animation:gpop .6s ease forwards}@keyframes gpop{40%{transform:scale(1.25) rotate(8deg)}100%{transform:scale(0);opacity:0}}
+.giftopen{text-align:center}.gstk{font-size:150px;line-height:1.1;animation:gin .7s cubic-bezier(.2,1.6,.4,1)}@keyframes gin{0%{transform:scale(0) rotate(-30deg)}100%{transform:scale(1)}}
+.gnew{font-size:26px;font-weight:800;margin:6px 0 12px}.gmiss{background:#fff;border-radius:24px;padding:12px 16px;margin:12px 0}.gmiss b{display:block;margin-bottom:6px}.gmiss div{font-size:46px;display:flex;justify-content:center;gap:14px;flex-wrap:wrap}
+@media (prefers-reduced-motion:reduce){.kidgift .box,.giftbox,.gstk{animation:none}}
 .kidhearts{position:relative;border:0;border-radius:28px;background:linear-gradient(135deg,#FFD1E1,#FFE9F1);display:flex;align-items:center;gap:12px;padding:14px 18px;text-align:left;box-shadow:0 10px 22px -14px #C2185B;overflow:hidden}
 .kidhearts .e{font-size:46px;line-height:1;animation:beat 1.2s ease-in-out infinite}
 .kidhearts b{font-size:22px;color:#AD1457;flex:1}
