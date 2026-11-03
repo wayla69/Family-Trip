@@ -70,6 +70,12 @@ ok(sent[0].p.body.length <= 140 && !/booking|PNR|passport no/i.test(sent[0].p.bo
   if (empty !== undefined) ok(await R.tick(PUSH.zoned(`2026-12-${String(5 + empty).padStart(2, '0')}`, '21:30', 'Asia/Hong_Kong')) === 1 && sent[sent.length - 1].p.url === `/#/t/hk-macau-2026/log/${empty}/ai`, `scheduler: day ${empty + 1} has nothing recorded yet — “record day ${empty + 1}” at 21:30`);
   if (done !== undefined) ok(await R.tick(PUSH.zoned(`2026-12-${String(5 + done).padStart(2, '0')}`, '21:30', 'Asia/Hong_Kong')) === 0, `scheduler: day ${done + 1} already has memories — no record nudge`);
   ok(empty !== undefined || done !== undefined, 'the record nudge was checked'); }
+// a relative's heart: one nudge to the grown-ups' phones per 10 minutes, no names or heart text, opens the hearts page
+ok((await pool.query("SELECT count(*)::int n FROM push_sent WHERE key LIKE 'heart.%'")).rows[0].n >= 1, 'heart: a relative\'s heart on the live server (bookshelf suite) reached the push scheduler');
+{ const n0 = sent.length, t0 = Date.UTC(2026, 11, 6, 12, 0);
+  ok(await R.heart({ trip: 'hk-macau-2026' }, t0) === 1 && sent[n0].p.url === '/#/t/hk-macau-2026/hearts' && sent[n0].p.tag === 'heart', 'heart: the parents\' phone hears a heart arrived (opens the hearts page)');
+  ok(!/มีมี่ได้|คุณยาย|from|💗.*:/.test(sent[n0].p.body) && sent[n0].p.body.length <= 140, 'heart: no sender name or heart text on the lock screen');
+  ok(await R.heart({ trip: 'hk-macau-2026' }, t0 + 5 * 60000) === 0 && await R.heart({ trip: 'hk-macau-2026' }, t0 + 11 * 60000) === 1, 'heart: a burst within 10 minutes is one nudge'); }
 gone = true;
 await R.tick(PUSH.zoned('2026-12-06', '09:00', 'Asia/Hong_Kong') - 30 * 60000);
 ok((await pool.query("SELECT count(*)::int n FROM push_subs")).rows[0].n === 0, 'a phone the push service reports gone (410) is removed');

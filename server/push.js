@@ -119,6 +119,20 @@ function create({ pool, family, A, sender = (sub, payload, opt) => webpush.sendN
     }
     return n;
   }
+  // a relative sent a heart: the grown-ups' phones hear about it (at most one push per 10 minutes, so a burst of hearts is one
+  // nudge). Like every push here it carries no names and no heart text — only that one arrived — and opens the book's hearts page.
+  const HEART_GAP = 10 * 60000;
+  async function heart({ trip }, now = Date.now()) {
+    const key = `heart.${Math.floor(now / HEART_GAP)}`;
+    if (!(await pool.query('INSERT INTO push_sent (key) VALUES ($1) ON CONFLICT DO NOTHING RETURNING key', [key])).rowCount) return 0;
+    const subs = (await pool.query('SELECT * FROM push_subs WHERE family_id=$1', [family])).rows;
+    const msg = (lang) => JSON.stringify(lang === 'en'
+      ? { title: 'A heart for the kids 💗', body: 'Someone in the family sent one — open it with Mimi and Mika at bedtime', tag: 'heart', url: `/#/t/${trip}/hearts` }
+      : { title: 'ญาติส่งหัวใจมาให้เด็กๆ 💗', body: 'เปิดดูด้วยกันกับมีมี่และมีก้าก่อนนอนนะ', tag: 'heart', url: `/#/t/${trip}/hearts` });
+    let n = 0;
+    for (const s of subs) if (await send(s, msg(s.lang))) n++;
+    return n;
+  }
   let timer = null;
   const start = () => { const run = () => tick().catch((e) => console.error('push tick', e.message)); timer = setInterval(run, 60000); timer.unref(); setTimeout(run, 5000).unref(); };
   const stop = () => clearInterval(timer);
@@ -148,7 +162,7 @@ function create({ pool, family, A, sender = (sub, payload, opt) => webpush.sendN
     const ok = await send(s, JSON.stringify({ title: th ? 'ทดสอบการเตือน' : 'Test reminder', body: th ? `ใช้ได้แล้ว — จะเตือนก่อนทุกกิจกรรม ${LEAD / 60000} นาที` : `Working — you will hear ${LEAD / 60000} min before each step`, tag: 'test', url: '/' }));
     res.status(ok ? 200 : 502).json({ ok });
   });
-  return { router: r, tick, start, stop };
+  return { router: r, tick, heart, start, stop };
 }
 
 module.exports = { init, create, due, extras, zoned, short, LEAD };

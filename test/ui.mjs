@@ -216,6 +216,11 @@ const T = 'hk-macau-2026';
   ok(await page.locator('#d1 .tl li').count() >= 2, 'timeline lists the quote and check-in');
   ok(await page.locator('.part', { hasText: '⭐' }).count() === 1 && await page.locator('.mosaic .star').count() >= 1 && await page.locator('.call.pick').count() >= 1, 'favourite moments ⭐ section (starred photo + quote)');
   ok(await page.locator('.first.got').count() === 1, 'firsts section');
+  // the day card: a 1080×1350 picture drawn on the phone from the day's photo, title, words — then shared or downloaded
+  await page.locator('#d1 [data-a="daycard"]').click();
+  await page.waitForFunction(() => typeof lastCard !== 'undefined' && lastCard, null, { timeout: 15000 });
+  const card = await page.evaluate(async () => { const bm = await createImageBitmap(lastCard); return { w: bm.width, h: bm.height, size: lastCard.size, type: lastCard.type }; });
+  ok(card.w === 1080 && card.h === 1350 && card.type === 'image/png' && card.size > 20000, `day card: 1080×1350 PNG drawn on the phone (${card.size} bytes)`);
   ok(await page.locator('.first.got .kid.drawn img[src="/art/kids/mimi.svg"]').count() === 1 && await page.locator('#d1 .pill img.face').count() >= 1, 'kid badges and mood pills use the drawn characters');
   ok(await page.locator('#d1 .foot3 h4').count() >= 2, 'day footer: favourite + firsts');
   ok(await s.noHScroll(), 'book: no horizontal scroll at 390 px');
