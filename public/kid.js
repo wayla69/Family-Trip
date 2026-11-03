@@ -366,6 +366,7 @@ function hydrateMap(root) {
 
 /* ---------- stickers: every mission ticked earns one; drag them onto your sticker page ---------- */
 // the morning surprise box: one per trip day, opened by the child in kid mode (tick gift.d<i>) — a sticker of its own and today's missions
+let memState = null;   // the memory game's place: {key: trip.day.kid, n: question, got: answered right}
 const GIFT_E = ['🦄', '🐉', '🎈', '🍭', '🌈', '🚀', '🦋', '🍦', '🐳', '🪁', '🎠', '🧸', '🌟', '🦕', '🎪', '🍩'];
 const giftE = (i) => GIFT_E[i % GIFT_E.length];
 function stickerSet(t, kid) {
@@ -528,7 +529,7 @@ function viewKid(p) {
       ? [cd && ['count', '🎁', L('เซอร์ไพรส์', 'Surprise')], cd && cd.pack && ['pack', '🧳', L('จัดกระเป๋า', 'Pack')], ['colour', '🎨', L('ระบายสี', 'Colour')], ['draw', '🖍️', L('วาดรูป', 'Draw')]]
       : [['colour', '🎨', L('ระบายสี', 'Colour')], ['draw', '🖍️', L('วาดรูป', 'Draw')], ['spot', littleOf(t, kid) ? '👉' : '🔍', littleOf(t, kid) ? L('ชี้ แตะ', 'Point it') : L('หาของ', 'Find it')], ['stamp', '🛂', L('ปั๊มตรา', 'Stamp')]])
       .concat(words ? [['words', '🗣️', L('พูดตาม', 'Say it')]] : [], ((d.plan || {}).quiz || []).length && !lit ? [['quiz', '❓', L('ทายซิ', 'Quiz')]] : [],
-        kidTalk(t, i) ? [['talk', '💬', L('คุยกัน', 'Let’s talk')]] : [], kidPhotos(t, i).length ? [['photos', '📸', L('ดูรูป', 'Photos')]] : [], [['match', '🧩', L('จับคู่', 'Match')]], pre ? [] : [['mood', '😊', L('วันนี้รู้สึก', 'My mood')]],
+        kidTalk(t, i) ? [['talk', '💬', L('คุยกัน', 'Let’s talk')]] : [], !pre && i > 0 && memQuiz(t, i - 1) ? [['memory', '🧠', L('จำได้ไหม', 'Remember?')]] : [], kidPhotos(t, i).length ? [['photos', '📸', L('ดูรูป', 'Photos')]] : [], [['match', '🧩', L('จับคู่', 'Match')]], pre ? [] : [['mood', '😊', L('วันนี้รู้สึก', 'My mood')]],
         wild.length ? [['animals', (t.info.wildLabel || {}).emo || '🦘', t.info.wildLabel ? esc(T(t.info.wildLabel.short)) : L('สัตว์', 'Animals')]] : [], [['numbers', '🔢', L('นับเลข', 'Count')]]).filter(Boolean);   // map, stickers and trophies live on the kid bar below — not twice
     const until = daysUntil(t);
     const btns = tiles.map(([v, e, lbl]) => `<button data-a="kidnav" data-v="#/kid/${esc(kid)}/${v}" data-say="${esc(lbl)}"><span>${e}</span><b>${lbl}</b></button>`)
@@ -569,6 +570,18 @@ ${sp.length ? `<div class="gmiss"><b>${lit ? L('วันนี้ชี้ใ�
 <button class="kidbig" data-a="kidnav" data-v="#/kid/${esc(kid)}/spot">${lit ? '👉 ' + L('ไปชี้กัน!', 'Let’s point!') : '🔍 ' + L('ไปหากัน!', 'Let’s find them!')}</button></div>`
       : `<div class="kidguide">${guideImg(0)}<p>${L(`${esc(name)} แตะกล่องเลย!`, `${esc(name)}, tap the box!`)}</p></div>
 <button class="giftbox" data-a="kidgift" data-t="${esc(t.id)}" data-d="${i}" data-k="${esc(kid)}" aria-label="${L('เปิดกล่อง', 'Open the box')}"><span>🎁</span></button>`;
+  } else if (view === 'memory' && i > 0 && memQuiz(t, i - 1)) {   // yesterday's memory game: one question at a time, no score — a wrong tap just says "try again"
+    const qs = memQuiz(t, i - 1), key = `${t.id}.${i - 1}.${kid}`;
+    if (!memState || memState.key !== key) memState = { key, n: 0, got: false };
+    if (memState.n >= qs.length) body = `<div class="kidguide pop">${guideImg(0)}<p>${L(`เก่งมาก ${esc(name)}! จำเมื่อวานได้เยอะเลย 🎉`, `Brilliant, ${esc(name)}! You remember so much 🎉`)}</p></div>
+<button class="kidbig" data-a="memagain">🔁 ${L('เล่นอีกรอบ', 'Play again')}</button>`;
+    else {
+      const x = qs[memState.n], voice = /[\u0E00-\u0E7F]/.test(x.q) ? 'th-TH' : 'en-GB';
+      body = `<div class="kidguide">${guideImg(1)}<p>${L('เมื่อวานนะ… จำได้ไหม?', 'Yesterday… do you remember?')}</p></div>
+<button class="memq" data-a="kidword" data-v="${esc(x.q)}" data-lang="${voice}"><b>${esc(x.q)}</b><i>🔊</i></button>
+<div class="mema">${x.a.map((c, n) => `<button data-a="memans" data-ok="${n === x.ok ? 1 : 0}" data-say="${esc(c.t)}"${memState.got && n === x.ok ? ' class="right"' : ''}><span>${esc(c.e)}</span><b>${esc(c.t)}</b></button>`).join('')}</div>
+${memState.got ? `<button class="kidbig" data-a="memnext">${memState.n + 1 < qs.length ? L('ข้อต่อไป ›', 'Next ›') : L('เสร็จแล้ว! 🎉', 'All done! 🎉')}</button>` : ''}`;
+    }
   } else if (view === 'stamp') {
     const mine = ticked(t, `stamp.d${i}`, kid);
     body = `<div class="kidstamp${mine ? ' done' : ''}" id="kidstamp"><div class="ring"><span class="lbl">${esc(pd.stamp || fmtDay(d.date, { day: 'numeric', month: 'short' }))}</span>${artImg(t, i, 'inked')}</div></div>
@@ -684,6 +697,13 @@ Object.assign(A, {
     A.tick(b);
   },
   kidword(b) { beep('tap'); say(b.dataset.v, b.dataset.lang); },
+  memans(b) {
+    if (memState && memState.got) return;
+    if (b.dataset.ok === '1') { beep('chime'); burst(b, ['⭐', '🎉', '✨']); sayUi(L(`ใช่แล้ว! ${b.dataset.say} เก่งมาก!`, `Yes! ${b.dataset.say} — well done!`)); memState.got = true; setTimeout(render, 700); }
+    else { beep('tap'); b.classList.remove('nope'); void b.offsetWidth; b.classList.add('nope'); sayUi(L('อืม… ลองอีกทีนะ', 'Hmm… try again!')); }
+  },
+  memnext() { beep('pop'); memState.n++; memState.got = false; render(); },
+  memagain() { beep('pop'); memState.n = 0; memState.got = false; render(); },
   kidgift(b) {
     const t = trip(b.dataset.t), i = +b.dataset.d, kid = b.dataset.k, id = `${t.id}.tick.gift.d${i}.${kid}`;
     b.classList.add('pop'); beep('pop'); setTimeout(() => beep('chime'), 250);

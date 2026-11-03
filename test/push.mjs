@@ -30,7 +30,8 @@ ok(new Date(PUSH.zoned('2027-04-04', '08:30', 'Australia/Sydney')).toISOString()
   ok(keys(atHK('2026-11-21', '08:00')) === '', 'a door is not sent at 08:00 Hong Kong time (07:00 at home)');
   { const x = PUSH.extras([hk], at('2026-11-30', '08:00'))[0]; ok(x.key === 'hk-macau-2026.x.door10' && /5 sleeps to Hong Kong/.test(x.en.body) && /อีก 5 วันไปฮ่องกง/.test(x.th.body), 'door 10 says 5 sleeps to go, in both languages'); }
   ok(keys(atHK('2026-12-05', '21:30')) === 'hk-macau-2026.x.log.d0' && keys(atHK('2026-12-10', '21:30')) === 'hk-macau-2026.x.log.d5' && keys(atHK('2026-12-11', '21:30')) === '' && PUSH.extras([hk], atHK('2026-12-06', '21:31'))[0].url === '/#/t/hk-macau-2026/log/1/ai', 'every trip evening, 21:30 trip time: "record day N" (opens that day’s record page at the evening Claude buttons)');
-  ok(PUSH.extras([{ ...hk, doors: 0 }], at('2026-11-21', '08:00')).length === 0, 'a book without countdown doors sends no door mornings'); }
+  ok(PUSH.extras([{ ...hk, doors: 0 }], at('2026-11-21', '08:00')).length === 0, 'a book without countdown doors sends no door mornings');
+  ok(keys(at('2027-12-06', '09:00')) === 'hk-macau-2026.x.ann1.d1' && keys(at('2028-12-10', '09:00')) === 'hk-macau-2026.x.ann2.d5' && keys(at('2026-12-06', '09:00')) === '' && PUSH.extras([hk], at('2027-12-06', '09:00'))[0].url === '/#/t/hk-macau-2026/book/d/1', 'on this day: each trip day\'s anniversary at 09:00 home time, years later — never during the trip'); }
 
 // ---- the seeds: departure-day rows before landing carry Bangkok time
 { const hk = require('../server/seeds/hk-macau-2026.json'), au = require('../server/seeds/big-hop-2027.json');
@@ -70,6 +71,10 @@ ok(sent[0].p.body.length <= 140 && !/booking|PNR|passport no/i.test(sent[0].p.bo
   const empty = days.find((i) => !recorded.includes(i)), done = recorded[0];
   if (empty !== undefined) ok(await R.tick(PUSH.zoned(`2026-12-${String(5 + empty).padStart(2, '0')}`, '21:30', 'Asia/Hong_Kong')) === 1 && sent[sent.length - 1].p.url === `/#/t/hk-macau-2026/log/${empty}/ai`, `scheduler: day ${empty + 1} has nothing recorded yet — “record day ${empty + 1}” at 21:30`);
   if (done !== undefined) ok(await R.tick(PUSH.zoned(`2026-12-${String(5 + done).padStart(2, '0')}`, '21:30', 'Asia/Hong_Kong')) === 0, `scheduler: day ${done + 1} already has memories — no record nudge`);
+  // on this day, a year later: 09:00 home time, only for a day that has memories, opening that day of the book
+  if (done !== undefined) { const n1 = sent.length;
+    ok(await R.tick(PUSH.zoned(`2027-12-${String(5 + done).padStart(2, '0')}`, '09:00', 'Asia/Bangkok')) === 1 && /1 ปีก่อน/.test(sent[n1].p.title) && sent[n1].p.url === `/#/t/hk-macau-2026/book/d/${done}`, `on this day: a year later, day ${done + 1} (with memories) comes back at 09:00 Thai time`); }
+  if (empty !== undefined) ok(await R.tick(PUSH.zoned(`2027-12-${String(5 + empty).padStart(2, '0')}`, '09:00', 'Asia/Bangkok')) === 0, `on this day: day ${empty + 1} had nothing recorded — no nudge`);
   ok(empty !== undefined || done !== undefined, 'the record nudge was checked'); }
 // a relative's heart: one nudge to the grown-ups' phones per 10 minutes, no names or heart text, opens the hearts page
 ok((await pool.query("SELECT count(*)::int n FROM push_sent WHERE key LIKE 'heart.%'")).rows[0].n >= 1, 'heart: a relative\'s heart on the live server (bookshelf suite) reached the push scheduler');
