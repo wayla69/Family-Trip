@@ -183,14 +183,38 @@ function applyLocal(op) {
   if (i >= 0) list[i] = row; else list.push(row);
 }
 let progress = null;   // {done, total} while photos upload
+// "Photos on Wi-Fi only" (roaming data): photos, voice clips and drawings wait in the queue while the phone is on mobile data;
+// words still go at once. Android Chrome tells us the network (navigator.connection.type); iPhone doesn't, so there they wait
+// until a grown-up taps "send now" (upNow, this visit only). Ops on a waiting photo (star, caption, delete) wait with it.
+let upNow = false, allHeld = false;   // allHeld: everything left in the queue is waiting for Wi-Fi (so keep refreshing the state)
+const netType = () => { const c = navigator.connection; return c && c.type ? c.type : ''; };
+const wifiOnly = () => !!ls('wifionly');
+function holdMedia() {
+  if (!wifiOnly() || upNow) return false;
+  const n = netType();
+  return n ? n === 'cellular' : true;
+}
+const mediaIdOf = (op) => { const m = /^\/api\/b\/media\/([^/?]+)/.exec(op.url || ''); return m ? decodeURIComponent(m[1]) : null; };
+// how many queued writes are waiting for Wi-Fi: the photos/clips and anything done to them since (a ⭐, a caption, a delete)
+function heldCount() {
+  if (!holdMedia()) return 0;
+  const held = new Set(); let n = 0;
+  queue.forEach((o) => { const mid = mediaIdOf(o); if (o.blob || (mid && held.has(mid))) { if (mid) held.add(mid); n++; } });
+  return n;
+}
+if (navigator.connection && navigator.connection.addEventListener) navigator.connection.addEventListener('change', () => { flush(); renderProgress(); });
 async function flush() {
   if (flushing || !queue.length || !S) return;
   flushing = true;
-  const photos = queue.filter((o) => o.blob).length;
+  const hold = holdMedia();
+  const photos = hold ? 0 : queue.filter((o) => o.blob).length;
   if (photos) progress = { done: 0, total: photos };
+  const held = new Set(), w0 = written;
   try {
-    while (queue.length) {
-      const op = queue[0];
+    let at = 0;
+    while (at < queue.length) {
+      const op = queue[at], mid = mediaIdOf(op);
+      if (hold && (op.blob || (mid && held.has(mid)))) { if (mid) held.add(mid); at++; continue; }   // keep it (and its order) for Wi-Fi
       try {
         await api(op.method, op.url, op.body, op.blob);
       } catch (e) {
@@ -205,15 +229,16 @@ async function flush() {
         else if (e.code === 415) toast(L('ไฟล์นี้ไม่ใช่รูปที่อ่านได้ — ข้ามรูปนี้', 'Not a readable photo — skipped'));
         else toast(L('บันทึกไม่สำเร็จ 1 รายการ', 'One change could not be saved') + ` (${e.code})`);
       }
-      queue.shift(); written++; await idb.del(op.qid);
+      queue.splice(at, 1); written++; await idb.del(op.qid);
       if (op.blob && progress) progress.done++;
       renderProgress();
     }
   } finally {
     flushing = false;
-    if (!queue.some((o) => o.blob)) progress = null;
+    if (!queue.some((o) => o.blob)) { progress = null; upNow = false; }
+    allHeld = hold && queue.length > 0 && queue.every((o) => o.blob || held.has(mediaIdOf(o)));
     renderProgress();
-    if (!queue.length) { await load(); safeRender(); }
+    if (!queue.length || (allHeld && written !== w0)) { await load(); safeRender(); }
   }
 }
 
