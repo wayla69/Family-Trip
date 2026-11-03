@@ -1308,18 +1308,15 @@ const listItems = (l) => (l ? l.groups.flatMap((g) => g.items) : []);
 const listGot = (t, l, kid) => listItems(l).filter((it) => ticked(t, `${l.key}.${it.k}`, kid)).length;
 // the little one's edition (seed passport.little, for the kids it names — a toddler): point / touch / make-the-sound missions
 // instead of the spot list, no words-to-say or Master Explorer checklist, a "new words" page instead of the customs form,
-// and the certificate once there is a mission ticked for every day of the trip (in total)
+// (the certificate is the same for everyone: it comes by itself on the last day — the passport is play, not homework)
 const littleOf = (t, kid) => { const l = (t.passport || {}).little; return l && (l.kids || []).includes(kid) ? l : null; };
 function daySpots(t, i, kid) {
   if (littleOf(t, kid)) return ((littleOf(t, kid).days || [])[i] || []).map((s) => ({ ...s, key: `little.d${i}.${s.k}` }));
   return ((((t.passport || {}).days || [])[i] || {}).spot || []).map((s) => ({ ...s, key: `spot.d${i}.${s.k}` }));
 }
 const kidLists = (t, kid) => ((t.passport || {}).lists || []).filter((l) => !littleOf(t, kid) || !(l.said || l.certificate));
-const littleGot = (t, kid) => t.days.reduce((n, _, i) => n + daySpots(t, i, kid).filter((s) => ticked(t, s.key, kid)).length, 0);
-const certEarned = (t, kid) => {
-  if (littleOf(t, kid)) return !!(t.passport || {}).certificate && littleGot(t, kid) >= t.days.length;
-  const l = (t.passport && t.passport.lists || []).find((x) => x.certificate); return !!l && listGot(t, l, kid) >= l.goal;
-};
+// the certificate comes by itself on the last day of the trip (and stays after) — nothing to tick, no goal to reach
+const certEarned = (t, kid) => !!(t.passport || {}).certificate && (tripOver(t) || dayNow(t) === t.days.length - 1);
 const certText = (t, kid) => { const l = littleOf(t, kid); return l && l.cert ? T(l.cert) : T((t.passport || {}).certificate.text); };
 // "where we sleep": consecutive nights in the same place, from the days' Sleep line
 function sleepStops(t) {
@@ -1390,7 +1387,7 @@ ${(pl.quiz || []).length && !lit ? `<div class="mquiz"><b>❓ ${L(`${T((g[1] || 
 ${fieldVal(t, `colour.d${i}`, kid) ? `<div class="colsvg sm" data-src="${esc(colourUrl(t, i))}" data-fill="${esc(colourFill(t, i, kid))}" title="${L('ภาพที่หนูระบาย', 'My colouring')}"></div>` : ''}
 ${drawingsOf(t, kid, i).length ? `<div class="mdraw">${drawingsOf(t, kid, i).map((m) => `<button data-a="lb" data-v="${esc(m.id)}" data-t="${esc(t.id)}" aria-label="${L('ภาพที่หนูวาด', 'My drawing')}"><img src="${esc(imgT(m))}" alt="" loading="lazy"></button>`).join('')}</div>` : ''}
 <div class="felt"><span class="label">${L(`วันนี้${name}รู้สึก…`, 'Today I felt…')}</span>${feel.map(([e, lbl]) => `<button data-a="mood" data-t="${esc(t.id)}" data-d="${i}" data-k="${esc(kid)}" data-v="${e}" aria-pressed="${mood(i) === e}"${ed ? '' : ' disabled'}><span>${e}</span><small>${lbl}</small></button>`).join('')}</div>
-${spots.length ? `<div class="spot${lit ? ' little' : ''}"><div class="spothd">${guide(1)}<b>${lit ? L(`ภารกิจของ${name}: ชี้ แตะ ทำเสียง!`, `${name}'s mission: point, touch, make the sound!`) : L(`ภารกิจของ${T((g[1] || {}).name)}: หาให้เจอ!`, `${T((g[1] || {}).name)}'s mission: spot these!`)}</b><span class="label">${n}/${spots.length}</span></div>
+${spots.length ? `<div class="spot${lit ? ' little' : ''}"><div class="spothd">${guide(1)}<b>${lit ? L(`ภารกิจของ${name}: ชี้ แตะ ทำเสียง!`, `${name}'s mission: point, touch, make the sound!`) : L(`ภารกิจของ${T((g[1] || {}).name)}: หาให้เจอ!`, `${T((g[1] || {}).name)}'s mission: spot these!`)}</b>${n ? `<span class="label got">⭐ ${n}</span>` : ''}</div>
 <div class="ticks">${spots.map((s) => tickBtn(t, kid, s.key, i, T(s), s.e)).join('')}</div></div>` : ''}
 </details></article>`;
   }).join('');
@@ -1404,8 +1401,8 @@ ${spots.length ? `<div class="spot${lit ? ' little' : ''}"><div class="spothd">$
       ? `<div class="tick${ticked(t, `${l.key}.${it.k}`, kid) ? ' on' : ''}"><span class="e">${esc(it.e || '')}</span><span class="t">${esc(T(it))}${note(it)}</span>${l.stars ? starBtns(t, kid, `${l.key}.${it.k}`) : yumBtns(t, kid, `${l.key}.${it.k}`)}</div>`
       : l.said && it.speak ? `<div class="sayrow">${tickBtn(t, kid, `${l.key}.${it.k}`, null, T(it), it.e, note(it))}<button class="hearbtn round" data-a="hear" data-v="${esc(it.speak.text)}" data-lang="${esc(it.speak.lang)}" aria-label="🔊 ${esc(it.en)}">🔊</button></div>`
       : tickBtn(t, kid, `${l.key}.${it.k}`, null, T(it), it.e, note(it))).join('')}</div></div>`).join('');
-    return `<section class="pp-page plist${l.groups.length > 1 ? ' wide' : ''}" id="pl-${esc(l.key)}"><header><div><div class="kicker">${esc(l.e || '')} ${esc(T(l.sub))}</div><h3>${esc(T(l.title))}</h3></div><span class="count">${n}<small>/${items.length}</small></span></header>
-${goal ? `<div class="goal"><div class="bar"><i style="width:${Math.min(100, Math.round((n / goal) * 100))}%"></i></div><span class="label">${n >= goal ? '🎉 ' : ''}${esc(T(l.goalText))}</span></div>` : ''}${body}
+    return `<section class="pp-page plist${l.groups.length > 1 ? ' wide' : ''}" id="pl-${esc(l.key)}"><header><div><div class="kicker">${esc(l.e || '')} ${esc(T(l.sub))}</div><h3>${esc(T(l.title))}</h3></div>${n ? `<span class="count">⭐${n}</span>` : ''}</header>
+${body}
 ${!goal && l.goalText ? `<p class="call calm" style="margin-top:12px">${esc(T(l.goalText))}</p>` : ''}${l.said ? `<p class="label" style="margin-top:8px">${L('ติ๊กเมื่อหนูพูดคำนั้นได้แล้ว', 'Tick it when you have said it!')}</p>` : ''}</section>`;
   }).join('');
   const lit = littleOf(t, kid), dc = lit ? null : pp.declaration;
@@ -1419,12 +1416,12 @@ ${myWords.length ? `<ul class="lwl">${myWords.map((e) => `<li><b>“${esc(e.text
 ${dc.counts.map((c) => `<div class="dline"><span class="e">${esc(c.e)}</span><span>${esc(T(c.pre))}</span>${ed ? `<input class="field ppf num" inputmode="numeric" data-a-blur="field" data-t="${esc(t.id)}" data-k="${esc(kid)}" data-v="decl.${esc(c.k)}" data-draft="pf:${esc(t.id)}:${kid}:decl.${esc(c.k)}" value="${esc(drafts[`pf:${t.id}:${kid}:decl.${c.k}`] ?? fieldVal(t, `decl.${c.k}`, kid))}" maxlength="6">` : `<b class="num">${esc(fieldVal(t, `decl.${c.k}`, kid)) || '__'}</b>`}<span>${esc(T(c.post))}</span></div>`).join('')}
 ${dc.texts.map((x) => `<div class="dtext"><span class="label">${esc(T(x.label))}</span>${ed ? `<input class="field ppf" data-a-blur="field" data-t="${esc(t.id)}" data-k="${esc(kid)}" data-v="decl.${esc(x.k)}" data-draft="pf:${esc(t.id)}:${kid}:decl.${esc(x.k)}" value="${esc(drafts[`pf:${t.id}:${kid}:decl.${x.k}`] ?? fieldVal(t, `decl.${x.k}`, kid))}" maxlength="60">` : `<p>${esc(fieldVal(t, `decl.${x.k}`, kid)) || '—'}</p>`}</div>`).join('')}
 <div class="declared">${L('แจ้งแล้ว<br>ถูกต้อง', 'DECLARED<br>&amp; TRUE')}<br>★ ${t.date_from.slice(0, 4)} ★</div></section>` : '';
-  const cl = (pp.lists || []).find((l) => l.certificate), cert = pp.certificate;
+  const cert = pp.certificate;
   const earned = certEarned(t, kid);
-  const certHtml = cert && (cl || lit) ? `<section class="pp-page cert${earned ? ' earned' : ''}" id="cert">
+  const certHtml = cert ? `<section class="pp-page cert${earned ? ' earned' : ''}" id="cert">
 <div class="kicker">${L('ใบประกาศเกียรติคุณ', 'Certificate of achievement')}</div><h3>${esc(T(cert.title))}</h3>
 ${st && st.crest ? `<img class="crest" src="${esc(st.crest)}" alt="">` : stampHtml(t)}<p class="label">${L('ขอมอบให้', 'This certifies that')}</p><div class="cname">${kidFace(kid)} ${esc(name)}</div>
-<p>${earned ? esc(certText(t, kid)) : lit ? L(`ทำภารกิจชี้ แตะ ทำเสียง อีก ${t.days.length - littleGot(t, kid)} อย่าง ใบประกาศนี้จะเป็นของ${name}`, `${t.days.length - littleGot(t, kid)} more point-touch-sound missions and this certificate is ${name}'s`) : L(`ติ๊ก "${T(cl.title)}" อีก ${cl.goal - listGot(t, cl, kid)} ช่อง ใบประกาศนี้จะเป็นของ${name}`, `Tick ${cl.goal - listGot(t, cl, kid)} more in “${T(cl.title)}” and this certificate is ${name}'s`)}</p>
+<p>${earned ? esc(certText(t, kid)) : L(`ใบประกาศนี้จะเป็นของ${name}ในวันสุดท้ายของทริป 🎉 — ไม่ต้องติ๊กให้ครบ แค่เที่ยวให้สนุก`, `This certificate is ${name}'s on the last day of the trip 🎉 — nothing to complete, just have fun`)}</p>
 ${earned ? `<p class="bye">${esc(T(cert.bye))}</p>` : ''}</section>` : '';
 
   return `<div class="row ppkids" role="tablist">${ks.map((c) => `<a class="chip" role="tab" href="#/passport/${esc(c.slug)}/${esc(t.id)}" aria-selected="${c.slug === kid}" aria-pressed="${c.slug === kid}">${kidFace(c.slug)} ${esc(kidName(c.slug))}</a>`).join('')}
