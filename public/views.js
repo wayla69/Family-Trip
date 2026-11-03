@@ -952,7 +952,7 @@ ${myFirsts.length ? `<div class="badges sm">${myFirsts.map((e) => { const f = fi
 ${colours.length ? `<div class="pcolours">${colours.slice(0, 6).map((i) => `<div class="colsvg sm" data-src="${esc(colourUrl(t, i))}" data-fill="${esc(colourFill(t, i, kid))}"></div>`).join('')}</div>` : ''}
 ${mine.length ? `<div class="pdraw">${mine.slice(0, 4).map((m) => `<img src="${esc(imgT(m))}" alt="">`).join('')}</div>` : ''}
 ${typeof stickerBoard === 'function' && stickersPlaced(t, kid).length ? `<div class="pstk">${stickerBoard(t, kid, false)}</div>` : ''}
-${cert && cl && certEarned(t, kid) ? `<div class="pcert"><div class="kicker">${L('ใบประกาศเกียรติคุณ', 'Certificate')}</div><b>${esc(T(cert.title))}</b><p>${esc(T(cert.text))}</p></div>` : ''}
+${cert && certEarned(t, kid) ? `<div class="pcert"><div class="kicker">${L('ใบประกาศเกียรติคุณ', 'Certificate')}</div><b>${esc(T(cert.title))}</b><p>${esc(certText(t, kid))}</p></div>` : ''}
 </div></div>`);
   }).join('');
   // 8 · hearts · 9 · the story · 10 · for the next trip · 11 · back cover
@@ -1306,7 +1306,18 @@ const fieldVal = (t, key, kid) => { const e = S.entries.find((x) => x.id === `${
 const ppList = (pp, key) => (pp.lists || []).find((l) => l.key === key);
 const listItems = (l) => (l ? l.groups.flatMap((g) => g.items) : []);
 const listGot = (t, l, kid) => listItems(l).filter((it) => ticked(t, `${l.key}.${it.k}`, kid)).length;
-const certEarned = (t, kid) => { const l = (t.passport && t.passport.lists || []).find((x) => x.certificate); return !!l && listGot(t, l, kid) >= l.goal; };
+// the little one's edition (seed passport.little, for the kids it names — a toddler): point / touch / make-the-sound missions
+// instead of the spot list, no words-to-say or Master Explorer checklist, a "new words" page instead of the customs form,
+// (the certificate is the same for everyone: it comes by itself on the last day — the passport is play, not homework)
+const littleOf = (t, kid) => { const l = (t.passport || {}).little; return l && (l.kids || []).includes(kid) ? l : null; };
+function daySpots(t, i, kid) {
+  if (littleOf(t, kid)) return ((littleOf(t, kid).days || [])[i] || []).map((s) => ({ ...s, key: `little.d${i}.${s.k}` }));
+  return ((((t.passport || {}).days || [])[i] || {}).spot || []).map((s) => ({ ...s, key: `spot.d${i}.${s.k}` }));
+}
+const kidLists = (t, kid) => ((t.passport || {}).lists || []).filter((l) => !littleOf(t, kid) || !(l.said || l.certificate));
+// the certificate comes by itself on the last day of the trip (and stays after) — nothing to tick, no goal to reach
+const certEarned = (t, kid) => !!(t.passport || {}).certificate && (tripOver(t) || dayNow(t) === t.days.length - 1);
+const certText = (t, kid) => { const l = littleOf(t, kid); return l && l.cert ? T(l.cert) : T((t.passport || {}).certificate.text); };
 // "where we sleep": consecutive nights in the same place, from the days' Sleep line
 function sleepStops(t) {
   const out = [];
@@ -1362,25 +1373,27 @@ function viewPassport(slug, tid) {
   // daily missions
   const feel = [['🤩', L('สุดยอด', 'Super')], ['😄', L('มีความสุข', 'Happy')], ['😴', L('ง่วงนอน', 'Sleepy')]];
   const mood = (i) => (S.entries.find((e) => e.id === `${t.id}.mood.d${i}.${kid}`) || {}).mood;
+  const liveDay = dayNow(t);   // -1 before and after the trip: then every mission stays open
   const missions = (pp.days || []).map((pd, i) => {
     const d = t.days[i]; if (!d) return '';
-    const spots = pd.spot || [], n = spots.filter((s) => ticked(t, `spot.d${i}.${s.k}`, kid)).length;
+    const lit = littleOf(t, kid), spots = daySpots(t, i, kid), n = spots.filter((s) => ticked(t, s.key, kid)).length;
     const pl = d.plan || {}, facts = (pd.facts || []).concat((pl.learn || []).map((x) => x.kid).filter(Boolean));   // the guide's facts + one line per stop from the manual
-    return `<article class="mission${dayStamped(t, i) ? ' stamped' : ''}" id="m${i}"${pd.acc ? ` style="--accent:${esc(pd.acc)};--tint:${esc(pd.tint || '')}"` : ''}>
-<header>${artImg(t, i)}<div><div class="kicker">${L('วันที่', 'Day')} ${i + 1} · ${esc(fmtDay(d.date))}</div><h4>${esc(T(pd.title) || T(d.title))}</h4></div>${pd.stamp ? `<span class="mstamp${dayStamped(t, i) ? ' on' : ''}" style="--n:${longWord(pd.stamp)}">${esc(pd.stamp)}</span>` : ''}</header>
+    const open = liveDay < 0 || i === liveDay;   // during the trip only today's mission is open (the rest fold away, a tap opens one)
+    return `<article class="mission${dayStamped(t, i) ? ' stamped' : ''}${i === liveDay ? ' today' : ''}" id="m${i}"${pd.acc ? ` style="--accent:${esc(pd.acc)};--tint:${esc(pd.tint || '')}"` : ''}><details class="mfold"${open ? ' open' : ''}><summary>
+<header>${artImg(t, i)}<div><div class="kicker">${L('วันที่', 'Day')} ${i + 1} · ${esc(fmtDay(d.date))}${i === liveDay ? ` · <b>${L('วันนี้', 'today')}</b>` : ''}</div><h4>${esc(T(pd.title) || T(d.title))}</h4></div>${pd.stamp ? `<span class="mstamp${dayStamped(t, i) ? ' on' : ''}" style="--n:${longWord(pd.stamp)}">${esc(pd.stamp)}</span>` : ''}</header></summary>
 ${facts.length ? `<div class="says">${guide(0)}<div><b>${esc(T((g[0] || {}).name))} ${L('เล่าว่า…', 'says…')}</b><ul>${facts.map((f) => `<li>${esc(T(f))}</li>`).join('')}</ul><button class="mini hearbtn" data-a="sayfacts" data-v="${esc(facts.map((f) => T(f)).join(' '))}">🔊 ${L('อ่านให้ฟัง', 'Read aloud')}</button></div></div>` : ''}
 ${pl.tale ? taleHtml(t, i, pl.tale) : ''}
-${(pl.quiz || []).length ? `<div class="mquiz"><b>❓ ${L(`${T((g[1] || {}).name)} ถาม…`, `${T((g[1] || {}).name)} asks…`)}</b>${quizHtml(pl.quiz)}</div>` : ''}
+${(pl.quiz || []).length && !lit ? `<div class="mquiz"><b>❓ ${L(`${T((g[1] || {}).name)} ถาม…`, `${T((g[1] || {}).name)} asks…`)}</b>${quizHtml(pl.quiz)}</div>` : ''}
 ${fieldVal(t, `colour.d${i}`, kid) ? `<div class="colsvg sm" data-src="${esc(colourUrl(t, i))}" data-fill="${esc(colourFill(t, i, kid))}" title="${L('ภาพที่หนูระบาย', 'My colouring')}"></div>` : ''}
 ${drawingsOf(t, kid, i).length ? `<div class="mdraw">${drawingsOf(t, kid, i).map((m) => `<button data-a="lb" data-v="${esc(m.id)}" data-t="${esc(t.id)}" aria-label="${L('ภาพที่หนูวาด', 'My drawing')}"><img src="${esc(imgT(m))}" alt="" loading="lazy"></button>`).join('')}</div>` : ''}
 <div class="felt"><span class="label">${L(`วันนี้${name}รู้สึก…`, 'Today I felt…')}</span>${feel.map(([e, lbl]) => `<button data-a="mood" data-t="${esc(t.id)}" data-d="${i}" data-k="${esc(kid)}" data-v="${e}" aria-pressed="${mood(i) === e}"${ed ? '' : ' disabled'}><span>${e}</span><small>${lbl}</small></button>`).join('')}</div>
-${spots.length ? `<div class="spot"><div class="spothd">${guide(1)}<b>${L(`ภารกิจของ${T((g[1] || {}).name)}: หาให้เจอ!`, `${T((g[1] || {}).name)}'s mission: spot these!`)}</b><span class="label">${n}/${spots.length}</span></div>
-<div class="ticks">${spots.map((s) => tickBtn(t, kid, `spot.d${i}.${s.k}`, i, T(s), s.e)).join('')}</div></div>` : ''}
-</article>`;
+${spots.length ? `<div class="spot${lit ? ' little' : ''}"><div class="spothd">${guide(1)}<b>${lit ? L(`ภารกิจของ${name}: ชี้ แตะ ทำเสียง!`, `${name}'s mission: point, touch, make the sound!`) : L(`ภารกิจของ${T((g[1] || {}).name)}: หาให้เจอ!`, `${T((g[1] || {}).name)}'s mission: spot these!`)}</b>${n ? `<span class="label got">⭐ ${n}</span>` : ''}</div>
+<div class="ticks">${spots.map((s) => tickBtn(t, kid, s.key, i, T(s), s.e)).join('')}</div></div>` : ''}
+</details></article>`;
   }).join('');
 
   // checklists: animals, food (yum / yuck), Master Explorer → certificate
-  const lists = (pp.lists || []).map((l) => {
+  const lists = kidLists(t, kid).map((l) => {
     const items = listItems(l), n = listGot(t, l, kid), goal = l.goal || 0;
     const rated = l.yum || l.stars, note = (it) => `${it.note ? `<small>${esc(T(it.note))}</small>` : ''}${it.say ? `<small class="say">“${esc(it.say)}”</small>` : ''}`;
     const GC = [['#2E7D32', '#E6F6EA'], ['#1565C0', '#E3F2FD'], ['#A16207', '#FFF6D6']];   // Spotted / Rides / Yummy columns, as printed
@@ -1388,22 +1401,27 @@ ${spots.length ? `<div class="spot"><div class="spothd">${guide(1)}<b>${L(`ภ�
       ? `<div class="tick${ticked(t, `${l.key}.${it.k}`, kid) ? ' on' : ''}"><span class="e">${esc(it.e || '')}</span><span class="t">${esc(T(it))}${note(it)}</span>${l.stars ? starBtns(t, kid, `${l.key}.${it.k}`) : yumBtns(t, kid, `${l.key}.${it.k}`)}</div>`
       : l.said && it.speak ? `<div class="sayrow">${tickBtn(t, kid, `${l.key}.${it.k}`, null, T(it), it.e, note(it))}<button class="hearbtn round" data-a="hear" data-v="${esc(it.speak.text)}" data-lang="${esc(it.speak.lang)}" aria-label="🔊 ${esc(it.en)}">🔊</button></div>`
       : tickBtn(t, kid, `${l.key}.${it.k}`, null, T(it), it.e, note(it))).join('')}</div></div>`).join('');
-    return `<section class="pp-page plist${l.groups.length > 1 ? ' wide' : ''}" id="pl-${esc(l.key)}"><header><div><div class="kicker">${esc(l.e || '')} ${esc(T(l.sub))}</div><h3>${esc(T(l.title))}</h3></div><span class="count">${n}<small>/${items.length}</small></span></header>
-${goal ? `<div class="goal"><div class="bar"><i style="width:${Math.min(100, Math.round((n / goal) * 100))}%"></i></div><span class="label">${n >= goal ? '🎉 ' : ''}${esc(T(l.goalText))}</span></div>` : ''}${body}
+    return `<section class="pp-page plist${l.groups.length > 1 ? ' wide' : ''}" id="pl-${esc(l.key)}"><header><div><div class="kicker">${esc(l.e || '')} ${esc(T(l.sub))}</div><h3>${esc(T(l.title))}</h3></div>${n ? `<span class="count">⭐${n}</span>` : ''}</header>
+${body}
 ${!goal && l.goalText ? `<p class="call calm" style="margin-top:12px">${esc(T(l.goalText))}</p>` : ''}${l.said ? `<p class="label" style="margin-top:8px">${L('ติ๊กเมื่อหนูพูดคำนั้นได้แล้ว', 'Tick it when you have said it!')}</p>` : ''}</section>`;
   }).join('');
-  const dc = pp.declaration;
+  const lit = littleOf(t, kid), dc = lit ? null : pp.declaration;
+  // the little one: the words they say on the trip (quotes for this child), with a box to add one — instead of the customs form
+  const myWords = words.filter((e) => e.child === kid);
+  const littleHtml = lit ? `<section class="pp-page lwords" id="lwords"><header><div><div class="kicker">🗣️ ${esc(fill(T((lit.words || {}).sub)))}</div><h3>${esc(fill(T((lit.words || {}).title) || L('คำใหม่', 'New words')))}</h3></div><span class="count">${myWords.length}</span></header>
+${ed ? `<div class="row lwrow"><input class="field" id="lw-${esc(kid)}" maxlength="120" placeholder="${esc(L('เช่น “ปา” “บ๊ายบาย” “น้ำ”', 'e.g. “dada”, “bye-bye”, “water”'))}" data-draft="lw:${esc(t.id)}:${esc(kid)}" value="${esc(drafts[`lw:${t.id}:${kid}`] || '')}"><button class="btn small" data-a="littleword" data-t="${esc(t.id)}" data-k="${esc(kid)}">＋ ${L('จดคำนี้', 'Add the word')}</button></div>` : ''}
+${myWords.length ? `<ul class="lwl">${myWords.map((e) => `<li><b>“${esc(e.text)}”</b><small class="label">${L('วันที่', 'Day')} ${e.day + 1}</small></li>`).join('')}</ul>` : `<p class="empty">${L(`ยังไม่มีคำ — คำแรกที่${name}พูดในทริปจดไว้ตรงนี้`, `No words yet — the first word ${name} says on the trip goes here`)}</p>`}</section>` : '';
   const declHtml = dc ? `<section class="pp-page decl" id="decl"><header><div><div class="kicker">🛃 ${esc(T(dc.sub))}</div><h3>${esc(T(dc.title))}</h3></div></header>
 <p class="label">${esc(T(dc.intro))}</p>
 ${dc.counts.map((c) => `<div class="dline"><span class="e">${esc(c.e)}</span><span>${esc(T(c.pre))}</span>${ed ? `<input class="field ppf num" inputmode="numeric" data-a-blur="field" data-t="${esc(t.id)}" data-k="${esc(kid)}" data-v="decl.${esc(c.k)}" data-draft="pf:${esc(t.id)}:${kid}:decl.${esc(c.k)}" value="${esc(drafts[`pf:${t.id}:${kid}:decl.${c.k}`] ?? fieldVal(t, `decl.${c.k}`, kid))}" maxlength="6">` : `<b class="num">${esc(fieldVal(t, `decl.${c.k}`, kid)) || '__'}</b>`}<span>${esc(T(c.post))}</span></div>`).join('')}
 ${dc.texts.map((x) => `<div class="dtext"><span class="label">${esc(T(x.label))}</span>${ed ? `<input class="field ppf" data-a-blur="field" data-t="${esc(t.id)}" data-k="${esc(kid)}" data-v="decl.${esc(x.k)}" data-draft="pf:${esc(t.id)}:${kid}:decl.${esc(x.k)}" value="${esc(drafts[`pf:${t.id}:${kid}:decl.${x.k}`] ?? fieldVal(t, `decl.${x.k}`, kid))}" maxlength="60">` : `<p>${esc(fieldVal(t, `decl.${x.k}`, kid)) || '—'}</p>`}</div>`).join('')}
 <div class="declared">${L('แจ้งแล้ว<br>ถูกต้อง', 'DECLARED<br>&amp; TRUE')}<br>★ ${t.date_from.slice(0, 4)} ★</div></section>` : '';
-  const cl = (pp.lists || []).find((l) => l.certificate), cert = pp.certificate;
+  const cert = pp.certificate;
   const earned = certEarned(t, kid);
-  const certHtml = cert && cl ? `<section class="pp-page cert${earned ? ' earned' : ''}" id="cert">
+  const certHtml = cert ? `<section class="pp-page cert${earned ? ' earned' : ''}" id="cert">
 <div class="kicker">${L('ใบประกาศเกียรติคุณ', 'Certificate of achievement')}</div><h3>${esc(T(cert.title))}</h3>
 ${st && st.crest ? `<img class="crest" src="${esc(st.crest)}" alt="">` : stampHtml(t)}<p class="label">${L('ขอมอบให้', 'This certifies that')}</p><div class="cname">${kidFace(kid)} ${esc(name)}</div>
-<p>${earned ? esc(T(cert.text)) : L(`ติ๊ก "${T(cl.title)}" อีก ${cl.goal - listGot(t, cl, kid)} ช่อง ใบประกาศนี้จะเป็นของ${name}`, `Tick ${cl.goal - listGot(t, cl, kid)} more in “${T(cl.title)}” and this certificate is ${name}'s`)}</p>
+<p>${earned ? esc(certText(t, kid)) : L(`ใบประกาศนี้จะเป็นของ${name}ในวันสุดท้ายของทริป 🎉 — ไม่ต้องติ๊กให้ครบ แค่เที่ยวให้สนุก`, `This certificate is ${name}'s on the last day of the trip 🎉 — nothing to complete, just have fun`)}</p>
 ${earned ? `<p class="bye">${esc(T(cert.bye))}</p>` : ''}</section>` : '';
 
   return `<div class="row ppkids" role="tablist">${ks.map((c) => `<a class="chip" role="tab" href="#/passport/${esc(c.slug)}/${esc(t.id)}" aria-selected="${c.slug === kid}" aria-pressed="${c.slug === kid}">${kidFace(c.slug)} ${esc(kidName(c.slug))}</a>`).join('')}
@@ -1448,13 +1466,13 @@ ${pp.map ? `<section class="pp-page mapsec"><header><div><div class="kicker">${L
 <p class="label" style="margin-top:8px">${L('เส้นทึบ = ไปมาแล้ว · แตะวันให้เด็กๆ เดินตาม · แตะหมุดเพื่อเปิดแผนที่จริงและนำทาง', 'Solid line = been there · tap a day to walk the kids there · tap a pin for the real map and directions')}</p></section>` : ''}
 </div>
 ${missions ? `<div class="part">${L('ภารกิจรายวัน', 'Daily missions')} · ${esc(name)}</div><div class="missions" style="${themeStyle(t)}">${missions}</div>` : ''}
-<div class="pp kid-${esc(kid)}" style="${themeStyle(t)}">${lists}${declHtml}${certHtml}
+<div class="pp kid-${esc(kid)}" style="${themeStyle(t)}">${lit && lit.note ? `<p class="call calm lnote">👶 ${esc(T(lit.note))}</p>` : ''}${lists}${littleHtml}${declHtml}${certHtml}
 <section class="pp-page stkpage"><header><div><div class="kicker">${L('หน้าสติกเกอร์', 'Sticker page')}</div><h3>⭐ ${L(`สติกเกอร์ของ${name}`, `${name}’s stickers`)}</h3></div></header>${stickerBoard(t, kid, false)}
 <p class="label" style="margin-top:8px">${L('ได้สติกเกอร์จากภารกิจ เช็กลิสต์ ตราประทับ และประตูเซอร์ไพรส์ · เด็กๆ แปะเองในโหมดเด็ก', 'Stickers come from missions, checklists, stamps and surprise doors · the kids stick them on in kid mode')}</p></section>
 <section class="pp-page"><header><div><div class="kicker">${L('เหรียญตรา', 'Badges')}</div><h3>🌟 ${L(`ครั้งแรกของ${name}`, `${name}’s firsts`)}</h3></div></header>
 ${firsts.length ? `<div class="badges">${firsts.map((e) => { const f = firstLabel(t, e.first_key); return `<div class="bdg"><span>${esc(e.first_key === 'custom' ? '⭐' : f.e)}</span><b>${esc(e.first_key === 'custom' ? e.text : f.t)}</b><small>${L('วันที่', 'Day')} ${e.day + 1}</small></div>`; }).join('')}</div>`
     : `<p class="empty">${L('เหรียญจะมาเมื่อพ่อแม่ติ๊ก "ครั้งแรก" ระหว่างทริป', 'Badges appear when the grown-ups tick a “first” on the trip')}</p>`}</section>
-${words.length ? `<section class="pp-page"><header><div><div class="kicker">${L('คำพูดของหนู', 'In my own words')}</div><h3>💬 ${L('สิ่งที่หนูพูด', 'Things I said')}</h3></div></header>${words.slice(0, 6).map((e) => quoteCall(e, e.highlight)).join('')}</section>` : ''}
+${words.length && !lit ? `<section class="pp-page"><header><div><div class="kicker">${L('คำพูดของหนู', 'In my own words')}</div><h3>💬 ${L('สิ่งที่หนูพูด', 'Things I said')}</h3></div></header>${words.slice(0, 6).map((e) => quoteCall(e, e.highlight)).join('')}</section>` : ''}
 </div>`;
 }
 

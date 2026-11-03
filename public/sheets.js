@@ -214,6 +214,14 @@ const A = {
     delete drafts[inp.dataset.draft]; inp.value = '';
     putEntry(trip(b.dataset.t), { day: +b.dataset.d, kind: 'first', child: b.dataset.k, first_key: 'custom', text }, uid('fc'));
   },
+  // the little one's new words (passport page): a quote for that child on today's day of the trip
+  littleword(b) {
+    const t = trip(b.dataset.t), kid = b.dataset.k, inp = $(`#lw-${kid}`), text = inp ? inp.value.trim() : '';
+    if (!text) { if (inp) inp.focus(); return; }
+    delete drafts[inp.dataset.draft]; inp.value = '';
+    putEntry(t, { day: todayIdx(t), kind: 'quote', child: kid, text }, uid('q'));
+    burst(b, ['🗣️', '✨', '💛']);
+  },
   // passport: a mission spot / animal / explorer box (tap again to untick); food has YUM / YUCK
   tick(b) {
     const t = trip(b.dataset.t), k = b.dataset.k, key = b.dataset.v, yum = b.dataset.yum || '', id = `${t.id}.tick.${key}.${k}`;

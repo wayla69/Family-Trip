@@ -1925,6 +1925,20 @@
     }
    ]
   },
+  "little": {
+   "kids": ["mika"],
+   "note": { "th": "ฉบับเด็กเล็ก: ภารกิจแบบชี้ แตะ ทำเสียง — พ่อแม่อ่านให้ฟังแล้วทำด้วยกัน ติ๊กให้เมื่อทำแล้ว", "en": "The little one's edition: point, touch and make the sound — read it out, do it together, tick it when done" },
+   "days": [
+    [ { "k": "plane", "e": "✈️", "th": "ชี้เครื่องบิน", "en": "Point at a plane" }, { "k": "wheee", "e": "🔊", "th": "ทำเสียงเครื่องบิน วี้ววว!", "en": "Make the plane noise: wheee!" }, { "k": "boat", "e": "⛵", "th": "ชี้เรือในทะเล", "en": "Point at a boat in the sea" } ],
+    [ { "k": "castle", "e": "🏰", "th": "ชี้ปราสาท", "en": "Point at the castle" }, { "k": "wave", "e": "👋", "th": "โบกมือให้มิกกี้", "en": "Wave to Mickey" }, { "k": "snow", "e": "❄️", "th": "จับหิมะปลอม", "en": "Catch the pretend snow" } ],
+    [ { "k": "bridge", "e": "🌉", "th": "ชี้สะพานยาว", "en": "Point at the long bridge" }, { "k": "brrm", "e": "🚌", "th": "ทำเสียงรถบัส บรื้น บรื้น", "en": "Make the bus noise: brrm brrm" }, { "k": "splash", "e": "💦", "th": "ตีน้ำให้กระจาย", "en": "Splash the water" } ],
+    [ { "k": "still", "e": "🌸", "th": "ยืนนิ่งๆ ให้ดอกไม้งอก", "en": "Stand still and let the flowers grow" }, { "k": "lights", "e": "✨", "th": "ชี้ไฟคริสต์มาส", "en": "Point at the Christmas lights" }, { "k": "waves", "e": "🌊", "th": "เดินบนพื้นลายคลื่น", "en": "Walk on the wavy pavement" } ],
+    [ { "k": "pup", "e": "🐶", "th": "ชี้ลูกหมา PAW Patrol", "en": "Point at a PAW Patrol pup" }, { "k": "slide", "e": "🛝", "th": "ลื่นสไลเดอร์ ปื๊ด!", "en": "Whoosh down a slide" }, { "k": "tart", "e": "🥧", "th": "ชิมทาร์ตไข่ เป่าก่อนนะ", "en": "Taste an egg tart — blow on it first" } ],
+    [ { "k": "ice", "e": "🍧", "th": "ชิมน้ำแข็งใส เย็นจัง!", "en": "Taste the shaved ice — so cold!" }, { "k": "ding", "e": "🚋", "th": "ทำเสียงรถราง ติ๊ง ติ๊ง", "en": "Make the tram noise: ding ding" }, { "k": "bye", "e": "⛴️", "th": "โบกมือบ๊ายบายเรือ", "en": "Wave bye-bye to the boat" } ]
+   ],
+   "words": { "title": { "th": "คำใหม่ของ{name}", "en": "{name}'s new words" }, "sub": { "th": "เด็กวัยนี้กำลังหัดพูด — จดคำที่{name}พูดได้ระหว่างทริป แม้แต่คำเดียวก็นับ", "en": "Words are coming fast at this age — jot down every word {name} says on the trip, even just one" } },
+   "cert": { "th": "ทำภารกิจชี้ แตะ ทำเสียง ครบทริป The Harbour Hop — ชี้ปราสาท ตีน้ำ ยืนให้ดอกไม้งอก และชิมน้ำแข็งใส", "en": "pointed, touched and made the sounds all through The Harbour Hop — a castle, a splash, flowers that grew, and shaved ice" }
+  },
   "colour": "/art/colour/hk/day-{n}.svg",
   "countdown": {
    "doors": [
