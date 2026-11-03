@@ -433,6 +433,11 @@ const T = 'hk-macau-2026';
   await page.waitForFunction(() => queue.length === 0, null, { timeout: 15000 });
   await page.click('.ppkids a[href="#/passport/mika/big-hop-2027"]'); await page.waitForSelector('#m15');
   ok(await page.locator('.mission').count() === 16 && (await page.textContent('.guides')).includes('Ranger Roo'), 'passport: Australia — Ranger Roo, Kiki and 16 missions');
+  ok(await page.locator('#m3 .spot.little button[data-v="little.d3.hop"]').count() === 1 && await page.locator('.mission .spot.little').count() === 16 && await page.locator('#pl-words, #pl-master, #decl').count() === 0 && await page.locator('#lwords').count() === 1,
+    'Australia, little edition too: Mika hops like a kangaroo on day 4 — a point/touch/sound mission every day, her new-words page, no words-to-say, explorer list or customs form');
+  await page.click('.ppkids a[role=tab][href="#/passport/mimi/big-hop-2027"]'); await page.waitForSelector('.pp.kid-mimi #pl-master');
+  ok(await page.locator('.mission .spot.little').count() === 0 && await page.locator('#m3 button[data-v^="spot.d3."]').count() === 4, 'Australia: Mimi keeps her own find-these missions');
+  await page.click('.ppkids a[role=tab][href="#/passport/mika/big-hop-2027"]'); await page.waitForSelector('.pp.kid-mika #lwords'); await page.waitForSelector('#m15 .spot.little');   // Mika's page itself (#m15 alone also matches Mimi's page still on screen)
   await page.locator('.mapsec').screenshot({ path: path.join(OUT, 'phone-06b-map-au.png') });
   // kid mode: big buttons, locked until a grown-up holds the lock
   await page.evaluate(() => { window.__said = []; Object.defineProperty(window, 'speechSynthesis', { configurable: true, value: {
