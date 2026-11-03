@@ -56,19 +56,23 @@ const message = (r, lang, now = Date.now()) => {
 // the trip's own nudges, at a fixed local time rather than before a plan row — pure, for the tests.
 // trips: [{trip, title:{th,en}, tz, from, to, doors}] · each nudge: {key, at, url, th:{title, body}, en:{title, body}, day?}
 const PACK_AT = '19:00', DOOR_AT = '08:00', LOG_AT = '21:30';
+// before the trip the family is still at home: the store-the-book evening and the countdown-door mornings use home time
+// (HOME_TZ, default Bangkok — the owner's ask: 08:00 Thai time), the trip's own evenings use the trip's timezone
+const HOME_TZ = process.env.HOME_TZ || 'Asia/Bangkok';
 const addDays = (date, n) => new Date(Date.parse(date + 'T00:00:00Z') + n * 864e5).toISOString().slice(0, 10);
 function extras(trips, now) {
   const out = [], live = (at) => now >= at && now < at + LATE;
   for (const x of trips) {
     const name = x.title || {}, nTh = name.th || name.en || '', nEn = name.en || name.th || '';
     // two evenings before the flight: store the book on the phone (the shelf can't see which phones already did)
-    const pack = zoned(addDays(x.from, -2), PACK_AT, x.tz);
+    const home = x.home || HOME_TZ;
+    const pack = zoned(addDays(x.from, -2), PACK_AT, home);
     if (live(pack)) out.push({ key: `${x.trip}.x.pack`, at: pack, url: `/#/t/${x.trip}/offline`,
       th: { title: `อีก 2 วันออกเดินทาง · ${nTh}`, body: 'กด "เก็บเล่มนี้ไว้ในเครื่อง" ก่อนขึ้นเครื่อง ถ้ายังไม่ได้เก็บ — เปิดได้แม้ไม่มีสัญญาณ' },
       en: { title: `2 days to go · ${nEn}`, body: 'Tap "Keep this book on the phone" before the flight, if you haven’t yet — it opens without signal' } });
     // the countdown doors: door k opens when N-k+1 sleeps are left (kid.js doorOpen), one morning each
     for (let left = x.doors || 0; left >= 1; left--) {
-      const k = (x.doors || 0) - left + 1, at = zoned(addDays(x.from, -left), DOOR_AT, x.tz);
+      const k = (x.doors || 0) - left + 1, at = zoned(addDays(x.from, -left), DOOR_AT, home);
       if (live(at)) out.push({ key: `${x.trip}.x.door${k}`, at, url: '/#/',
         th: { title: `🎁 ประตูที่ ${k} เปิดได้แล้ว`, body: `อีก ${left} วันไป${nTh} — ให้มีมี่กับมีก้าเปิดเซอร์ไพรส์ของวันนี้` },
         en: { title: `🎁 Door ${k} is ready`, body: `${left} ${left === 1 ? 'sleep' : 'sleeps'} to ${nEn} — today's surprise for Mimi and Mika` } });
