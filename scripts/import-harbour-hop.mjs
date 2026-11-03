@@ -3,7 +3,7 @@
 // <folder> holds moments.json (or .jsonl), visits.json, days.json and assets/<32-hex>.jpg (as saved by ArtifactData / Artifact read).
 // Without --apply it is a dry run: counts per type, before/after book stats, invalid rows — nothing is written.
 // The family code is read from $FAMILY_CODE (or asked for), never from the command line.
-import archiver from 'archiver';
+import { ZipArchive } from 'archiver';
 import fs from 'node:fs';
 import path from 'node:path';
 import readline from 'node:readline/promises';
@@ -17,7 +17,7 @@ let code = process.env.FAMILY_CODE;
 if (!code) { const rl = readline.createInterface({ input: process.stdin, output: process.stdout }); code = await rl.question('Family code: '); rl.close(); }
 
 const zip = await new Promise((res, rej) => {
-  const a = archiver('zip', { zlib: { level: 1 } }); const parts = [];
+  const a = new ZipArchive({ zlib: { level: 1 } }); const parts = [];
   a.on('data', (d) => parts.push(d)); a.on('end', () => res(Buffer.concat(parts))); a.on('error', rej);
   for (const f of ['moments.json', 'moments.jsonl', 'visits.json', 'days.json']) if (fs.existsSync(path.join(dir, f))) a.file(path.join(dir, f), { name: f });
   if (fs.existsSync(path.join(dir, 'assets'))) a.directory(path.join(dir, 'assets'), 'assets');

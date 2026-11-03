@@ -1,6 +1,6 @@
 // Harbour Hop importer (ACCEPTANCE F) using docs/handoff/moments.sample.jsonl + a GPS-tagged asset + bad rows.
 import sharp from 'sharp';
-import archiver from 'archiver';
+import { ZipArchive } from 'archiver';
 import fs from 'node:fs';
 
 const { BASE, CODE } = process.env;
@@ -24,7 +24,7 @@ const days = [{ id: 'd0', done: true, at: 1796500000000 }, { id: 'd1', done: fal
 const gps = await sharp({ create: { width: 1600, height: 1200, channels: 3, background: '#FF5F45' } })
   .withExif({ IFD0: { Make: 'iPhone' }, IFD3: { GPSLatitudeRef: 'N', GPSLatitude: '22/1 18/1 0/1', GPSLongitudeRef: 'E', GPSLongitude: '114/1 2/1 0/1' } }).jpeg().toBuffer();
 const zip = await new Promise((res, rej) => {
-  const a = archiver('zip'); const p = []; a.on('data', (d) => p.push(d)); a.on('end', () => res(Buffer.concat(p))); a.on('error', rej);
+  const a = new ZipArchive(); const p = []; a.on('data', (d) => p.push(d)); a.on('end', () => res(Buffer.concat(p))); a.on('error', rej);
   a.append(moments.map((m) => JSON.stringify(m)).join('\n'), { name: 'moments.jsonl' });
   a.append(JSON.stringify(visits), { name: 'visits.json' });
   a.append(JSON.stringify(days.map((d) => ({ id: d.id, data: d }))), { name: 'days.json' });
