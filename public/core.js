@@ -281,6 +281,7 @@ function fmtRange(t) {
 }
 function fmtTime(ms, tz) { try { return new Date(ms).toLocaleTimeString('en-GB', { hour: '2-digit', minute: '2-digit', timeZone: tz }); } catch (_) { return new Date(ms).toLocaleTimeString('en-GB', { hour: '2-digit', minute: '2-digit' }); } }
 // today's date in the trip's own time zone → day index or -1
+function hourIn(tz) { try { return +new Intl.DateTimeFormat('en-GB', { hour: 'numeric', hourCycle: 'h23', timeZone: tz }).format(new Date()); } catch (_) { return new Date().getHours(); } }
 function todayIn(tz) { try { return new Date().toLocaleDateString('en-CA', { timeZone: tz }); } catch (_) { return new Date().toISOString().slice(0, 10); } }
 function dayNow(t) { const i = t.days.findIndex((d) => d.date === todayIn(t.timezone)); return i; }
 // stamp: every day Done, or the trip is over

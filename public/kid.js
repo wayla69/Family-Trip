@@ -365,11 +365,15 @@ function hydrateMap(root) {
 }
 
 /* ---------- stickers: every mission ticked earns one; drag them onto your sticker page ---------- */
+// the morning surprise box: one per trip day, opened by the child in kid mode (tick gift.d<i>) — a sticker of its own and today's missions
+const GIFT_E = ['🦄', '🐉', '🎈', '🍭', '🌈', '🚀', '🦋', '🍦', '🐳', '🪁', '🎠', '🧸', '🌟', '🦕', '🎪', '🍩'];
+const giftE = (i) => GIFT_E[i % GIFT_E.length];
 function stickerSet(t, kid) {
   const pp = t.passport || {}, out = [], seen = new Set();
   const add = (k, e, img, got) => { if (seen.has(k) || (!e && !img)) return; seen.add(k); out.push({ k, e, img, got: !!got }); };
   t.days.forEach((_, i) => add(`stamp.d${i}`, '', dayArt(t, i), dayStamped(t, i)));
   t.days.forEach((_, i) => daySpots(t, i, kid).forEach((s) => add(s.key, s.e, '', ticked(t, s.key, kid))));
+  t.days.forEach((_, i) => add(`gift.d${i}`, giftE(i), '', ticked(t, `gift.d${i}`, kid)));   // the morning surprise box's sticker
   kidLists(t, kid).forEach((l) => listItems(l).forEach((it) => { const x = ticked(t, `${l.key}.${it.k}`, kid); add(`${l.key}.${it.k}`, it.e, '', x && x.text !== 'yuck'); }));
   ((pp.countdown || {}).doors || []).forEach((d, n) => add(`cd.${n + 1}`, d.e, '', ticked(t, `cd.${n + 1}`, kid)));
   entriesOf(t.id).filter((e) => e.kind === 'first' && e.child === kid && e.first_key !== 'custom').forEach((e) => add(`first.${e.first_key}`, firstLabel(t, e.first_key).e, '', true));
@@ -518,7 +522,7 @@ function viewKid(p) {
 <div class="kidday">${artImg(t, i)}<div><small>${L('วันที่', 'Day')} ${i + 1}</small><b>${esc(T(pd.title) || T(d.title))}</b></div></div></header>`;
   let body = '';
   if (view === 'home') {
-    const lit = littleOf(t, kid), words = lit ? null : (pp.lists || []).find((l) => l.said), story = kidStory(t, i);   // the little one: no words-to-say, no quiz
+    const lit = littleOf(t, kid), words = lit ? null : (pp.lists || []).find((l) => l.said), story = kidStory(t, i), live = dayNow(t);   // the little one: no words-to-say, no quiz
     const fresh = heartsFor(kid).filter((h) => h.at > (ls('hseen_' + kid) || 0));
     const tiles = (pre
       ? [cd && ['count', '🎁', L('เซอร์ไพรส์', 'Surprise')], cd && cd.pack && ['pack', '🧳', L('จัดกระเป๋า', 'Pack')], ['colour', '🎨', L('ระบายสี', 'Colour')], ['draw', '🖍️', L('วาดรูป', 'Draw')]]
@@ -532,6 +536,8 @@ function viewKid(p) {
         heartsFor(kid).length && !fresh.length ? [`<button class="love" data-a="kidnav" data-v="#/kid/${esc(kid)}/hearts" data-say="${esc(L('หัวใจจากครอบครัว', 'Hearts from the family'))}"><span>💗</span><b>${heartsFor(kid).length}</b></button>`] : []);
     const pages = []; for (let k = 0; k < btns.length; k += 4) pages.push(btns.slice(k, k + 4));
     body = `${fresh.length ? `<button class="kidhearts" data-a="kidnav" data-v="#/kid/${esc(kid)}/hearts" data-say="${esc(heartLine(fresh[0], kid))}"><span class="float" aria-hidden="true">💗</span><span class="e">${esc(fresh[0].emoji)}</span><b>${esc(L(`${fresh[0].from} ส่งหัวใจให้หนู!`, `${fresh[0].from} sent you a heart!`))}</b>${fresh.length > 1 ? `<small>+${fresh.length - 1}</small>` : ''}</button>` : ''}
+${live === i && !ticked(t, `gift.d${i}`, kid) ? `<button class="kidgift" data-a="kidnav" data-v="#/kid/${esc(kid)}/gift" data-say="${esc(L('มีกล่องเซอร์ไพรส์มาให้! แตะเปิดเลย', 'A surprise box for you! Tap to open it'))}"><span class="box" aria-hidden="true">🎁</span><b>${L('กล่องเซอร์ไพรส์วันนี้!', 'Today’s surprise box!')}</b><small>${L('แตะเปิดเลย', 'Tap to open')}</small></button>`
+  : live === i && hourIn(t.timezone) >= 17 && !ticked(t, `stamp.d${i}`, kid) ? `<button class="kidnight" data-a="kidnav" data-v="#/kid/${esc(kid)}/stamp" data-say="${esc(L('ก่อนนอน มาปั๊มตราวันนี้กัน!', 'Before bed — let’s stamp today!'))}"><span class="moon" aria-hidden="true">🌙</span><b>${L('ปั๊มตราวันนี้ก่อนนอน!', 'Stamp today before bed!')}</b><small>🛂 ${L('ปั๊ก!', 'Thump!')}</small></button>` : ''}
 <div class="kidhello">${kidArt(kid) ? `<img src="${kidArt(kid, true)}" alt="">` : ''}<p>${pre ? L(`อีก <b>${until}</b> วันไป ${esc(T(t.title).split(' · ')[0])}!`, `<b>${until}</b> ${until === 1 ? 'sleep' : 'sleeps'} to ${esc(T(t.title).split(' · ')[0])}!`) : L(`สวัสดี ${esc(name)}! วันนี้เล่นอะไรดี?`, `Hello ${esc(name)}! What shall we play?`)}</p></div>
 <nav class="kiddays">${t.days.map((x, j) => `<button data-a="kidday" data-v="${j}" aria-pressed="${j === i}" aria-label="${L('วันที่', 'Day')} ${j + 1}">${artImg(t, j)}</button>`).join('')}</nav>
 <div class="kidpagerwrap"><button class="kparrow prev" data-a="kidpage" data-v="-1" aria-label="${L('หน้าก่อน', 'Previous page')}" hidden>‹</button>
@@ -555,6 +561,14 @@ ${mine.length ? `<div class="drawn">${mine.map((m) => `<img src="${esc(imgT(m))}
     const spots = daySpots(t, i, kid), lit = littleOf(t, kid);
     body = `<div class="kidguide">${guideImg(1)}<p>${lit ? L(`${name} ชี้ให้ดูหน่อย!`, `${name}, can you point to it?`) : L(`${T((g[1] || {}).name)}: หาให้เจอนะ!`, `${T((g[1] || {}).name)}: can you find them?`)}</p></div>
 <div class="kidspots${lit ? ' little' : ''}">${spots.map((s) => { const on = ticked(t, s.key, kid); return `<button class="${on ? 'on' : ''}" data-a="kidspot" data-t="${esc(t.id)}" data-d="${i}" data-k="${esc(kid)}" data-v="${esc(s.key)}" data-say="${esc(T(s))}" aria-pressed="${!!on}"><span>${esc(s.e)}</span><b>${esc(T(s))}</b>${on ? '<i>✓</i>' : ''}</button>`; }).join('')}</div>`;
+  } else if (view === 'gift' && !pre) {
+    const got = ticked(t, `gift.d${i}`, kid), sp = daySpots(t, i, kid), fact = (pd.facts || [])[0], lit = littleOf(t, kid);
+    body = got ? `<div class="giftopen"><div class="gstk">${giftE(i)}</div><p class="gnew">${L('ได้สติกเกอร์ใหม่!', 'A new sticker!')} ⭐</p>
+<div class="kidguide">${guideImg(0)}<p>${esc(T(pd.title) || T(d.title))}${fact ? ` — ${esc(T(fact))}` : ''}</p></div>
+${sp.length ? `<div class="gmiss"><b>${lit ? L('วันนี้ชี้ให้ดูนะ', 'Point to these today') : L('วันนี้หาให้เจอนะ', 'Find these today')}</b><div>${sp.map((x) => `<span title="${esc(T(x))}">${esc(x.e)}</span>`).join('')}</div></div>` : ''}
+<button class="kidbig" data-a="kidnav" data-v="#/kid/${esc(kid)}/spot">${lit ? '👉 ' + L('ไปชี้กัน!', 'Let’s point!') : '🔍 ' + L('ไปหากัน!', 'Let’s find them!')}</button></div>`
+      : `<div class="kidguide">${guideImg(0)}<p>${L(`${esc(name)} แตะกล่องเลย!`, `${esc(name)}, tap the box!`)}</p></div>
+<button class="giftbox" data-a="kidgift" data-t="${esc(t.id)}" data-d="${i}" data-k="${esc(kid)}" aria-label="${L('เปิดกล่อง', 'Open the box')}"><span>🎁</span></button>`;
   } else if (view === 'stamp') {
     const mine = ticked(t, `stamp.d${i}`, kid);
     body = `<div class="kidstamp${mine ? ' done' : ''}" id="kidstamp"><div class="ring"><span class="lbl">${esc(pd.stamp || fmtDay(d.date, { day: 'numeric', month: 'short' }))}</span>${artImg(t, i, 'inked')}</div></div>
@@ -670,13 +684,20 @@ Object.assign(A, {
     A.tick(b);
   },
   kidword(b) { beep('tap'); say(b.dataset.v, b.dataset.lang); },
+  kidgift(b) {
+    const t = trip(b.dataset.t), i = +b.dataset.d, kid = b.dataset.k, id = `${t.id}.tick.gift.d${i}.${kid}`;
+    b.classList.add('pop'); beep('pop'); setTimeout(() => beep('chime'), 250);
+    burst(b, ['🎉', '✨', '⭐', '🎊', giftE(i)]);
+    sayUi(L('เย้! ได้สติกเกอร์ใหม่!', 'Yay! A new sticker!'));
+    setTimeout(() => { if (!S.entries.some((e) => e.id === id)) putEntry(t, { day: i, kind: 'tick', child: kid, first_key: `gift.d${i}`, text: '' }, id); }, 650);
+  },
   async kidstamp(b) {
     const t = trip(b.dataset.t), i = +b.dataset.d, kid = b.dataset.k, box = $('#kidstamp');
     box.classList.remove('done'); void box.offsetWidth; box.classList.add('done', 'slam');
     beep('thud'); setTimeout(() => beep('chime'), 350);
     burst(box, ['⭐', '✨', '🎉', '💫']);
     const cheer = $('#kidcheer'); if (cheer) cheer.hidden = false;
-    sayUi(L(`เก่งมาก ${kidName(kid)}!`, `Well done, ${kidName(kid)}!`));
+    sayUi(L(`ปั๊ก! เก่งมาก ${kidName(kid)}!`, `Thump! Well done, ${kidName(kid)}!`));
     const id = `${t.id}.tick.stamp.d${i}.${kid}`;
     if (!S.entries.some((e) => e.id === id)) putEntry(t, { day: i, kind: 'tick', child: kid, first_key: `stamp.d${i}`, text: '' }, id);
     if (!t.days[i].done_at) {   // the stamp ceremony finishes the day (same as "Mark day done")
