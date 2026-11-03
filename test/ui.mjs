@@ -279,6 +279,18 @@ const T = 'hk-macau-2026';
   await page.goto(`${BASE}/#/t/${T}`); await page.waitForSelector('.hubgrid');
   ok(await page.locator(`.hubsearch[href="#/t/${T}/search"]`).count() === 1 && await page.locator('.top .fsb').count() === 1 && await page.locator('.top a[href$="/search"]').count() === 0, 'menu: a big “Search the whole book” bar; the top bar has the text-size button but no second search icon');
   await page.goto(`${BASE}/#/t/${T}/sos`); await page.waitForSelector('.tp-sos');
+  // the lost-child card: numbers kept on the phone, this morning's photo never uploaded, a 1080×1920 picture drawn here
+  const reqs = []; page.on('request', (r) => { if (['PUT', 'POST', 'PATCH'].includes(r.method())) reqs.push(r.url()); });
+  await page.fill('#lctel0', '+66 81 234 5678');
+  await page.click('.lostcard [data-a="lckid"][data-v="mika"]'); await page.waitForSelector('.lostcard [data-a="lckid"][data-v="mika"][aria-pressed="true"]');
+  ok(await page.inputValue('#lctel0') === '+66 81 234 5678', 'lost card: the typed number survives a redraw (kept on the phone)');
+  await page.setInputFiles('#lcfile', [{ name: 'today.jpg', mimeType: 'image/jpeg', buffer: await jpg(1, 900, 1200) }]); await page.waitForSelector('.lcthumb');
+  await page.evaluate(() => { lastCard = null; });
+  await page.click('.lostcard [data-a="lostcard"]');
+  await page.waitForFunction(() => lastCard, null, { timeout: 15000 }); await page.waitForSelector('#lcprev:not([hidden])');
+  const lc = await page.evaluate(async () => { const bm = await createImageBitmap(lastCard); return { w: bm.width, h: bm.height, type: lastCard.type }; });
+  ok(lc.w === 1080 && lc.h === 1920 && lc.type === 'image/png' && reqs.length === 0, `lost card: a 1080×1920 lock-screen PNG made on the phone, nothing sent (${reqs.length} uploads)`);
+  ok(await page.evaluate(() => (ls('lostTel') || [])[0]) === '+66 81 234 5678' && /stay on this phone/.test(await page.textContent('.lostcard')), 'lost card: the numbers are stored only on this phone, and it says so');
   ok(await page.locator(`.top a[href="#/t/${T}/search"]`).count() === 1, 'inside a topic page the top bar carries a search icon');
   await page.click(`.top a[href="#/t/${T}/search"]`); await page.waitForSelector('#bookq');
   await page.fill('#bookq', 'doctor'); await page.waitForSelector('.sres li');
