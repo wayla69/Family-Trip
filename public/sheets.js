@@ -193,7 +193,7 @@ const A = {
     if (queue.length) { toast(L('ยังมีบันทึกรอส่ง — ต่อเน็ตให้ส่งเสร็จก่อนออกจากระบบ', 'Some records are still waiting to upload — connect first')); return; }
     if (!armed(b, L('แตะอีกครั้งเพื่อออกจากระบบ', 'Tap again to sign out'))) return;
     try { await api('POST', '/api/logout'); } catch (_) {}
-    await idb.set('state', null); ls('state', null);
+    await idb.set('state', null); ls('state', null); ls('lostTel', null);   // the parents' numbers for the lost-child card go too
     S = null; location.hash = '#/'; render();
   },
   delentry(b) { if (armed(b)) delEntry(b.dataset.v); },
@@ -291,6 +291,20 @@ const A = {
     }
   },
   storystop() { if (storyCtl) storyCtl.abort(); },
+  lckid(b) { lostKid = b.dataset.v; render(); },
+  async lostcard(b) {
+    const t = trip(b.dataset.t), kid = b.dataset.v;
+    b.disabled = true; b.setAttribute('aria-busy', 'true');
+    try {
+      const blob = await drawLostCard(t, kid, lostPhoto, ls('lostTel') || []);
+      lastCard = blob;
+      const prev = $('#lcprev'); if (prev) { if (prev.src.startsWith('blob:')) URL.revokeObjectURL(prev.src); prev.src = URL.createObjectURL(blob); prev.hidden = false; }
+      const file = new File([blob], `lost-card-${kid}.png`, { type: 'image/png' });
+      if (navigator.canShare && navigator.canShare({ files: [file] })) { try { await navigator.share({ files: [file] }); } catch (e) { if (e.name !== 'AbortError') throw e; } }
+      else { const a = document.createElement('a'); a.href = URL.createObjectURL(blob); a.download = file.name; document.body.appendChild(a); a.click(); a.remove(); setTimeout(() => URL.revokeObjectURL(a.href), 4000); toast(L('บันทึกรูปการ์ดแล้ว', 'Card saved')); }
+    } catch (_) { toast(L('ทำการ์ดไม่สำเร็จ', 'Could not make the card')); }
+    finally { b.disabled = false; b.removeAttribute('aria-busy'); }
+  },
   // the day card: drawn here, then the phone's share sheet (LINE…), or a download on a computer
   async daycard(b) {
     const t = trip(b.dataset.t), i = +b.dataset.d;
@@ -601,6 +615,65 @@ async function drawDayCard(t, i) {
   g.fillText(`MM Memory · ${T(t.title).split(' · ')[0]}`, M, CARD_H - 56);
   return new Promise((ok) => c.toBlob(ok, 'image/png'));
 }
+// the lost-child card: 1080×1920 (a phone's lock screen; the top is left calm for the clock). English first (staff anywhere read it),
+// the local language where the book's timezone has one (Hong Kong / Macau: Traditional Chinese), Thai for the child
+const LOST_LOCAL = [[/Hong_Kong|Macau/, { head: '我走失了', call: '請致電我的父母', stay: '我們住在', sos: '緊急求助' }]];
+async function drawLostCard(t, kid, photoUrl, tels) {
+  await (document.fonts ? document.fonts.ready : Promise.resolve());
+  const W0 = 1080, H0 = 1920, th = t.theme || {}, accent = th.accent || '#1F3A5F', ink = th.ink || '#1F2A3A', muted = th.muted || '#6D7480';   // the book's light colours, also in dark mode
+  const c = document.createElement('canvas'); c.width = W0; c.height = H0;
+  const g = c.getContext('2d'), F = (w, px) => `${w} ${px}px "KIRA UI", system-ui, "PingFang HK", "Noto Sans CJK TC", sans-serif`, M = 80, W = W0 - M * 2;
+  const rr = (x, y, w, h, r) => { g.beginPath(); if (g.roundRect) g.roundRect(x, y, w, h, r); else g.rect(x, y, w, h); };
+  const center = (txt, y) => { g.fillText(txt, (W0 - g.measureText(txt).width) / 2, y); };
+  const loc = (LOST_LOCAL.find(([re]) => re.test(t.timezone || '')) || [])[1];
+  const d = t.days[todayIdx(t)], stay = (d.plan || {}).stay, sos = ((t.info || {}).emergency || []).find((e) => e.main);
+  const ch = children().find((x) => x.slug === kid) || { name_en: kid, name_th: '' };
+  const ageRaw = (((th.children || []).find((x) => x.slug === kid) || {}).age);
+  const ageS = String(ageRaw == null ? '' : typeof ageRaw === 'object' ? ageRaw.en || ageRaw.th || '' : ageRaw).trim(), age = /^\d+$/.test(ageS) ? `${ageS} years old` : ageS;
+  const nums = (tels || []).map((x) => String(x || '').trim()).filter(Boolean).slice(0, 2);
+  g.fillStyle = '#FFFDF8'; g.fillRect(0, 0, W0, H0);
+  g.fillStyle = th.calm || th.panel || '#EEF3EF'; g.fillRect(0, 0, W0, 340);   // calm area under the lock-screen clock
+  // bottom up: the footer, the emergency bar, tonight's address, the call box — the photo takes what is left
+  g.fillStyle = muted; g.font = F(600, 30);
+  center(`${new Date(d.date + 'T00:00:00').toLocaleDateString('en-GB', { weekday: 'short', day: 'numeric', month: 'short', year: 'numeric' })} · MM Memory`, H0 - 44);
+  let bottom = H0 - 96;
+  if (sos) {
+    const sh = 100; bottom -= sh;
+    g.fillStyle = '#B42318'; rr(M, bottom, W, sh, 50); g.fill();
+    g.fillStyle = '#fff'; g.font = F(800, 52); center(`Emergency${loc ? ' · ' + loc.sos : ''}  ${String(sos.tel).split('·')[0].trim()}`, bottom + 68);
+    bottom -= 44;
+  }
+  if (stay) {
+    g.font = F(800, 46); const nl = wrapLines(g, stay.name, W, 2);
+    g.font = F(500, 34); const al = wrapLines(g, stay.addr || '', W, 3);
+    let y = bottom - (al.length * 44 + nl.length * 56 + 52) + 34;
+    bottom = y - 34 - 40;
+    g.fillStyle = muted; g.font = F(700, 34); center(`We are staying at${loc ? ' · ' + loc.stay : ''}`, y);
+    y += 56; g.fillStyle = ink; g.font = F(800, 46); for (const ln of nl) { center(ln, y); y += 56; }
+    g.fillStyle = '#3A4350'; g.font = F(500, 34); for (const ln of al) { center(ln, y - 8); y += 44; }
+  }
+  const callH = 110 + Math.max(1, nums.length) * 88, cy = bottom - callH;
+  g.fillStyle = accent; rr(M, cy, W, callH, 32); g.fill();
+  g.fillStyle = '#fff'; g.font = F(700, 42); center(`Please call my parents${loc ? ' · ' + loc.call : ''}`, cy + 62);
+  let yy = cy + 72;
+  if (nums.length) { g.font = F(800, 72); nums.forEach((n) => { yy += 88; center(`📞 ${n}`, yy); }); }
+  else { yy += 80; g.font = F(600, 44); center('(ใส่เบอร์ในหน้า SOS ก่อน)', yy); }
+  // the top: who this is
+  let y = 440;
+  g.fillStyle = '#B42318'; g.font = F(800, 92); center(`I'M LOST${loc ? ' · ' + loc.head : ''}`, y);
+  y += 66; g.fillStyle = '#B42318'; g.font = F(700, 50); center('หนูพลัดหลงกับพ่อแม่', y);
+  const nameY = cy - 50 - (age ? 52 : 0);
+  g.fillStyle = ink; g.font = F(800, 78); center(`${String(ch.name_en || '').toUpperCase()}${ch.name_th ? '  ' + ch.name_th : ''}`, nameY);
+  if (age) { g.fillStyle = muted; g.font = F(600, 40); center(age, nameY + 52); }
+  const top = y + 36, bh = Math.max(240, Math.min(600, nameY - 90 - top)), bw = Math.min(560, Math.round(bh * 0.88)), bx = (W0 - bw) / 2;
+  const img = (photoUrl && (await loadImg(photoUrl))) || (await loadImg(kidArt(kid, true, t)));
+  g.save(); rr(bx, top, bw, bh, 40); g.clip();
+  g.fillStyle = th.panel || '#F7F2EA'; g.fillRect(bx, top, bw, bh);
+  if (img) { const sc = photoUrl ? Math.max(bw / img.width, bh / img.height) : Math.min(bw / img.width, bh / img.height) * 0.92, w = img.width * sc, h = img.height * sc; g.drawImage(img, bx + (bw - w) / 2, top + (bh - h) / 2, w, h); }
+  g.restore();
+  g.strokeStyle = accent; g.lineWidth = 8; rr(bx, top, bw, bh, 40); g.stroke();
+  return new Promise((ok) => c.toBlob(ok, 'image/png'));
+}
 let lastCard = null;   // the last day card drawn (kept for the tests)
 let storyCtl = null;   // AbortController while a story (or a guide answer) streams
 let askAns = null;     // the last guide answer on the Today page {t, q, text} — kept across re-renders, never stored
@@ -664,7 +737,7 @@ document.addEventListener('click', (e) => {
   if (b && A[b.dataset.a]) { if (b.tagName === 'A' || b.type === 'submit') e.preventDefault(); A[b.dataset.a](b, e); return; }
   if (e.target.id === 'scrim') closeSheet();
 });
-document.addEventListener('input', (e) => { const el = e.target; if (el.dataset && el.dataset.draft) drafts[el.dataset.draft] = el.value; if (el.id === 'eatq') { eatQ = el.value.trim(); eatFilter(); } if (el.id === 'bookq') { bookQ = el.value; const r = $('#bookres'), t = trip(route().parts[1]); if (r && t) r.innerHTML = bookResults(t); } });
+document.addEventListener('input', (e) => { const el = e.target; if (el.dataset && el.dataset.lc) { const v = ls('lostTel') || ['', '']; v[+el.dataset.lc] = el.value.slice(0, 40); ls('lostTel', v); } if (el.dataset && el.dataset.draft) drafts[el.dataset.draft] = el.value; if (el.id === 'eatq') { eatQ = el.value.trim(); eatFilter(); } if (el.id === 'bookq') { bookQ = el.value; const r = $('#bookres'), t = trip(route().parts[1]); if (r && t) r.innerHTML = bookResults(t); } });
 document.addEventListener('focusout', (e) => { const el = e.target; if (el.dataset && el.dataset.aBlur) saveBlur(el); if (el.id === 'lbcap') saveCaption(el); });
 document.addEventListener('focusout', (e) => {   // a voice memo's caption ("who said what") saves when the box is left, like a photo caption
   const el = e.target; if (!el.classList || !el.classList.contains('clipcap')) return;
@@ -673,6 +746,7 @@ document.addEventListener('focusout', (e) => {   // a voice memo's caption ("who
 });
 document.addEventListener('change', (e) => {
   if (e.target.dataset && e.target.dataset.ck) { const m = ls('ck') || {}; if (e.target.checked) m[e.target.dataset.ck] = 1; else delete m[e.target.dataset.ck]; ls('ck', m); return; }
+  if (e.target.id === 'lcfile') { const f = e.target.files && e.target.files[0]; if (f) { if (lostPhoto) URL.revokeObjectURL(lostPhoto); lostPhoto = URL.createObjectURL(f); render(); } return; }   // this morning's photo: in memory only
   if (e.target.id === 'fpick') { const el = e.target; addPhotos(trip(el.dataset.t), +el.dataset.d, el.files); el.value = ''; }
   if (e.target.id === 'spendplace') { const n = $('#spendnote'); if (n) { if (e.target.value) { n.value = e.target.value; drafts[n.dataset.draft] = n.value; $('#spendamt').focus(); } else n.focus(); } }   // a picked place becomes the note; "other" → type it
 });

@@ -743,8 +743,26 @@ function viewSos(t, full, open) {
   if (full) return topicPage(t, 'sos', B.sos, lede, open);
   const dial = (x) => String(x).split('·')[0].replace(/[^+\d]/g, '');
   const top = `${(n.emergency || []).length ? `<div class="calls">${n.emergency.map((e) => `<a class="callb${e.main ? ' main' : ''}" href="tel:${esc(dial(e.tel))}"><span class="ce">${ic('phone')}</span><span class="ct"><b>${esc(T(e.label))}</b><small>${esc(e.tel)}</small></span></a>`).join('')}</div>` : ''}
-${B.tonight ? `<h3 class="gh">${L('คืนนี้นอนที่', 'Tonight we sleep at')}</h3>${B.tonight}` : ''}${n.lost ? `<div class="call warn lostc">${esc(T(n.lost))}</div>` : ''}`;
+${B.tonight ? `<h3 class="gh">${L('คืนนี้นอนที่', 'Tonight we sleep at')}</h3>${B.tonight}` : ''}${n.lost ? `<div class="call warn lostc">${esc(T(n.lost))}</div>` : ''}${lostBlock(t)}`;
   return glancePage(t, 'sos', B, lede, top, ['tonight']);
+}
+/* ---------- lost-child card (SOS page, editors): drawn on the phone (sheets.js drawLostCard) as a lock-screen picture — the child,
+   "I'm lost, please call my parents" in English / Thai / the local language, the parents' numbers, tonight's address, the
+   emergency number. This morning's photo and the numbers stay on the phone: the photo only in memory, the numbers in localStorage. */
+let lostKid = null, lostPhoto = null;   // lostPhoto: an object URL of this morning's photo, never uploaded or stored
+function lostBlock(t) {
+  if (!isEditor()) return '';
+  const kids = children().map((c) => c.slug), k = kids.includes(lostKid) ? lostKid : kids[0], tel = ls('lostTel') || ['', ''];
+  return `<section class="blk lostcard noprint"><h3>🪪 ${L('การ์ดเด็กหลง', 'Lost-child card')}</h3>
+<p class="label">${L('ทำทุกเช้า: ถ่ายรูปเด็กกับชุดวันนี้ ได้รูปการ์ดไว้ตั้งเป็นหน้าจอล็อก หรือให้เจ้าหน้าที่ดู — มีชื่อ เบอร์พ่อแม่ ที่พักคืนนี้ และเบอร์ฉุกเฉิน', 'Each morning: a photo of the child in today’s clothes → a card for the lock screen or to show staff — name, the parents’ numbers, tonight’s address and the emergency number')}</p>
+<div class="row" role="group">${kids.map((x) => `<button class="chip" data-a="lckid" data-v="${esc(x)}" aria-pressed="${x === k}">${kidFace(x)} ${esc(kidName(x))}</button>`).join('')}</div>
+<div class="row lcrow"><input class="field" id="lctel0" type="tel" inputmode="tel" autocomplete="tel" placeholder="${L('เบอร์พ่อ/แม่ เช่น +66 81 234 5678', 'A parent’s number, e.g. +66 81 234 5678')}" value="${esc(tel[0] || '')}" data-lc="0">
+<input class="field" id="lctel1" type="tel" inputmode="tel" placeholder="${L('เบอร์ที่ 2 (ถ้ามี)', 'A second number (optional)')}" value="${esc(tel[1] || '')}" data-lc="1"></div>
+<div class="row lcrow"><label class="btn ghost small">📷 ${lostPhoto ? L('เปลี่ยนรูป', 'Change photo') : L('รูปเช้านี้', 'This morning’s photo')}<input type="file" id="lcfile" accept="image/*" hidden></label>
+${lostPhoto ? `<img class="lcthumb" src="${esc(lostPhoto)}" alt="">` : `<span class="label">${L('ไม่เลือกก็ได้ จะใช้รูปการ์ตูนแทน', 'Optional — the drawing is used instead')}</span>`}
+<button class="btn small" data-a="lostcard" data-t="${esc(t.id)}" data-v="${esc(k)}">🪪 ${L('ทำการ์ด', 'Make the card')}</button></div>
+<p class="label">🔒 ${L('รูปและเบอร์อยู่ในเครื่องนี้เท่านั้น ไม่อัปโหลด', 'The photo and numbers stay on this phone — nothing is uploaded')}</p>
+<img class="lcprev" id="lcprev" alt="" hidden></section>`;
 }
 function viewPrep(t, full, open) {
   const B = infoBlocks(t), lede = L('ก่อนออกเดินทางและระหว่างทาง', 'Before we leave and on the way');
