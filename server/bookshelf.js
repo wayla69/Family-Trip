@@ -84,7 +84,7 @@ async function syncSeeds(pool, dir = path.join(__dirname, 'seeds')) {
   } catch (e) { await c.query('ROLLBACK'); throw e; } finally { c.release(); }
 }
 
-function router({ pool, media, A, ai }) {
+function router({ pool, media, A, ai, hooks = {} }) {   // hooks.heart(h): set by index.js once the push scheduler exists
   const r = express.Router();
   const json = express.json({ limit: '200kb' });
   const W = [A.requireEditor, json];
@@ -310,6 +310,7 @@ function router({ pool, media, A, ai }) {
       if (n.mine >= HEARTS_PER_DAY.sender || n.alls >= HEARTS_PER_DAY.family) return bad(res, 'too-many', 429);
       await q(`INSERT INTO hearts (id, family_id, trip_id, day_index, child, emoji, text, from_name, created_uid) VALUES ($1,$2,$3,$4,$5,$6,$7,$8,$9)
         ON CONFLICT (id) DO NOTHING`, [id, FAMILY, t.id, day, child, b.emoji, text, from, req.user.uid]);
+      if (req.user.role === 'viewer' && hooks.heart) Promise.resolve(hooks.heart({ trip: t.id })).catch((e) => console.error('heart push', e.message));   // a relative's heart → the parents' phones
       res.json({ ok: true });
     } catch (e) { next(e); }
   });

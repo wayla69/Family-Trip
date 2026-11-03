@@ -291,6 +291,18 @@ const A = {
     }
   },
   storystop() { if (storyCtl) storyCtl.abort(); },
+  // the day card: drawn here, then the phone's share sheet (LINE…), or a download on a computer
+  async daycard(b) {
+    const t = trip(b.dataset.t), i = +b.dataset.d;
+    b.disabled = true; b.setAttribute('aria-busy', 'true');
+    try {
+      const blob = await drawDayCard(t, i), file = new File([blob], `${t.id}-day${i + 1}.png`, { type: 'image/png' });
+      lastCard = blob;
+      if (navigator.canShare && navigator.canShare({ files: [file] })) { try { await navigator.share({ files: [file] }); } catch (e) { if (e.name !== 'AbortError') throw e; } }
+      else { const a = document.createElement('a'); a.href = URL.createObjectURL(blob); a.download = file.name; document.body.appendChild(a); a.click(); a.remove(); setTimeout(() => URL.revokeObjectURL(a.href), 4000); toast(L('บันทึกรูปการ์ดแล้ว', 'Card saved')); }
+    } catch (_) { toast(L('ทำการ์ดไม่สำเร็จ', 'Could not make the card')); }
+    finally { b.disabled = false; b.removeAttribute('aria-busy'); }
+  },
   // what our family likes: the notebook of every trip → Claude → saved for both parents (settings), streamed into #likestext
   async likes(b) {
     if (storyCtl) return;
@@ -530,6 +542,64 @@ function askOffline(t, q, box) {
   askAns = { t: t.id, q, html };
   box.hidden = false; box.innerHTML = html;
 }
+/* ---------- the day as one picture (4:5, for LINE): drawn on this phone from what the book already holds — the day's ⭐ photo
+   (or its art), the date and title, today in brief (or the favourite words), one quote, the app's name. Nothing is uploaded or
+   sent to an AI; it goes only where the grown-up shares it. ---------- */
+const CARD_W = 1080, CARD_H = 1350;
+const loadImg = (src) => new Promise((ok) => { const im = new Image(); im.onload = () => ok(im); im.onerror = () => ok(null); im.src = src; });
+// lines that fit maxW: Thai has no spaces, so break between words found by Intl.Segmenter (or between characters without it)
+function wrapLines(ctx, text, maxW, maxLines) {
+  const seg = typeof Intl !== 'undefined' && Intl.Segmenter ? [...new Intl.Segmenter(lang === 'en' ? 'en' : 'th', { granularity: 'word' }).segment(text)].map((x) => x.segment) : [...text];
+  const lines = []; let cur = '';
+  for (const w of seg) {
+    if (w === '\n') { lines.push(cur.trim()); cur = ''; continue; }
+    if (ctx.measureText(cur + w).width > maxW && cur.trim()) { lines.push(cur.trim()); cur = w.trimStart(); } else cur += w;
+  }
+  if (cur.trim()) lines.push(cur.trim());
+  if (lines.length > maxLines) { lines.length = maxLines; lines[maxLines - 1] = lines[maxLines - 1].replace(/.{0,2}$/, '…'); }
+  return lines;
+}
+async function drawDayCard(t, i) {
+  await (document.fonts ? document.fonts.ready : Promise.resolve());
+  const css = getComputedStyle(document.documentElement), accent = css.getPropertyValue('--accent').trim() || '#1F3A5F';
+  const c = document.createElement('canvas'); c.width = CARD_W; c.height = CARD_H;
+  const g = c.getContext('2d'), F = (w, px) => `${w} ${px}px "KIRA UI", system-ui, sans-serif`, M = 72, W = CARD_W - M * 2;
+  g.fillStyle = '#FFFDF8'; g.fillRect(0, 0, CARD_W, CARD_H);
+  g.fillStyle = accent; g.fillRect(0, 0, CARD_W, 18);
+  const d = t.days[i], es = entriesOf(t.id, i), ph = mediaOf(t.id, i).filter((m) => !m.pending);
+  const pick = ph.find((m) => m.highlight) || ph[0];
+  let y = 96;
+  g.fillStyle = accent; g.font = F(700, 30); g.fillText(`${L('วันที่', 'DAY')} ${i + 1} · ${fmtDay(d.date)}`.toUpperCase(), M, y);
+  g.fillStyle = '#1F2A3A'; g.font = F(700, 60);
+  for (const ln of wrapLines(g, T(d.title), W, 2)) { y += 74; g.fillText(ln, M, y); }
+  y += 36;
+  const photo = pick && (await loadImg(`/media/${encodeURIComponent(pick.id)}`));
+  const art = dayArt(t, i) && (await loadImg(dayArt(t, i)));
+  const boxH = 600;
+  g.save(); g.beginPath(); g.roundRect ? g.roundRect(M, y, W, boxH, 36) : g.rect(M, y, W, boxH); g.clip();
+  if (photo) { const s = Math.max(W / photo.width, boxH / photo.height), w = photo.width * s, h = photo.height * s; g.drawImage(photo, M + (W - w) / 2, y + (boxH - h) / 2, w, h); }
+  else { g.fillStyle = css.getPropertyValue('--panel').trim() || '#F7F2EA'; g.fillRect(M, y, W, boxH); if (art) g.drawImage(art, M + (W - 440) / 2, y + 80, 440, 440); }
+  g.restore();
+  if (photo && art) { g.save(); g.beginPath(); g.arc(M + W - 90, y + boxH - 90, 76, 0, Math.PI * 2); g.fillStyle = '#fff'; g.fill(); g.clip(); g.drawImage(art, M + W - 160, y + boxH - 160, 140, 140); g.restore(); }
+  y += boxH + 64;
+  const sum = es.find((e) => e.kind === 'sum' && e.text), fav = es.find((e) => e.kind === 'fav' && e.text);
+  const quote = es.filter((e) => e.kind === 'quote').sort((a, b) => (b.highlight ? 1 : 0) - (a.highlight ? 1 : 0))[0];
+  g.fillStyle = '#1F2A3A'; g.font = F(500, 38);
+  const lead = sum ? sum.text : fav ? `${L('ของโปรดวันนี้', 'Favourite today')}: ${fav.text}` : '';
+  for (const ln of wrapLines(g, lead, W, quote ? 3 : 6)) { g.fillText(ln, M, y); y += 54; }
+  if (quote) {
+    y += lead ? 24 : 0;
+    g.fillStyle = accent; g.font = F(600, 40);
+    const ql = wrapLines(g, `“${quote.text}”`, W - 40, 3);
+    g.fillRect(M, y - 38, 8, ql.length * 56 + 44);
+    g.fillStyle = '#1F2A3A'; for (const ln of ql) { g.fillText(ln, M + 32, y); y += 56; }
+    g.fillStyle = '#6D7480'; g.font = F(500, 30); g.fillText(`— ${kidName(quote.child)}`, M + 32, y); y += 40;
+  }
+  g.fillStyle = '#6D7480'; g.font = F(600, 28);
+  g.fillText(`MM Memory · ${T(t.title).split(' · ')[0]}`, M, CARD_H - 56);
+  return new Promise((ok) => c.toBlob(ok, 'image/png'));
+}
+let lastCard = null;   // the last day card drawn (kept for the tests)
 let storyCtl = null;   // AbortController while a story (or a guide answer) streams
 let askAns = null;     // the last guide answer on the Today page {t, q, text} — kept across re-renders, never stored
 

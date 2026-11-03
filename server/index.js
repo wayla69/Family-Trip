@@ -83,10 +83,12 @@ app.post('/api/login', express.json({ limit: '10kb' }), async (req, res, next) =
 app.post('/api/logout', (req, res) => { A.clearCookie(res); res.json({ ok: true }); });
 
 // bookshelf API (+ /media photo proxy)
-app.use(BS.router({ pool: PG, media: MEDIA, A, ai: STORY }));
+const HOOKS = {};   // filled below once the push scheduler exists
+app.use(BS.router({ pool: PG, media: MEDIA, A, ai: STORY, hooks: HOOKS }));
 
 // reminders on the trip: phones that switched them on get a push 30 min before each timed step of the day
 const REMIND = PUSH.create({ pool: PG, family: BS.FAMILY, A });
+HOOKS.heart = (h) => REMIND.heart(h);   // a relative's heart nudges the parents' phones
 app.use(REMIND.router);
 
 // backup / restore (photos included): editors download, the scheduled job uses Bearer BACKUP_TOKEN

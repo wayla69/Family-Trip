@@ -769,7 +769,7 @@ ${food.length ? `<div><h4>${L('กินอะไร', 'Where we ate')}</h4><ul>
 ${fav ? `<div><h4>${L('ของโปรดวันนี้', 'Favourite today')}</h4><p>${esc(fav.text)}${trLine(fav)}</p></div>` : ''}
 ${firsts.length ? `<div><h4>${L('ครั้งแรกวันนี้', 'First today')}</h4><ul>${firsts.map((e) => { const f = firstLabel(t, e.first_key); return `<li>${esc(f.e)} ${esc(e.first_key === 'custom' ? e.text : f.t)} — ${esc(kidName(e.child))}${e.first_key === 'custom' ? trLine(e) : ''}</li>`; }).join('')}</ul></div>` : ''}
 </div>` : ''}
-${isEditor() ? `<p class="noprint" style="margin-top:10px"><a class="btn ghost small" href="#/t/${esc(t.id)}/log/${i}">✏️ ${L('แก้ไขวันนี้', 'Edit this day')}</a></p>` : ''}
+<p class="noprint" style="margin-top:10px">${isEditor() ? `<a class="btn ghost small" href="#/t/${esc(t.id)}/log/${i}">✏️ ${L('แก้ไขวันนี้', 'Edit this day')}</a> ` : ''}<button class="btn ghost small" data-a="daycard" data-t="${esc(t.id)}" data-d="${i}">🖼️ ${L('การ์ดวันนี้', 'Day card')}</button></p>
 </article>`;
 }
 
@@ -1440,7 +1440,7 @@ ${talkBlock(t, i)}
 ${msgBlock(t, i, dk)}
 
 <section class="blk"><button class="btn dayend${d.done_at ? ' is-done' : ''}" data-a="done" data-t="${esc(t.id)}" data-d="${i}">${d.done_at ? '✓ ' + L('วันนี้เสร็จแล้ว (แตะเพื่อยกเลิก)', 'Day done (tap to undo)') : '🏁 ' + L('จบวันนี้', 'Mark day done')}</button>
-<div class="row"><a class="btn ghost" href="#/t/${esc(t.id)}">📖 ${L('ดูในสมุด', 'See it in the book')}</a>${navigator.share ? `<button class="btn ghost" data-a="share" data-t="${esc(t.id)}" data-d="${i}">📤 ${L('ส่งให้ญาติ', 'Share with family')}</button>` : ''}</div></section>`;
+<div class="row"><a class="btn ghost" href="#/t/${esc(t.id)}">📖 ${L('ดูในสมุด', 'See it in the book')}</a>${navigator.share ? `<button class="btn ghost" data-a="share" data-t="${esc(t.id)}" data-d="${i}">📤 ${L('ส่งให้ญาติ', 'Share with family')}</button>` : ''}<button class="btn ghost" data-a="daycard" data-t="${esc(t.id)}" data-d="${i}">🖼️ ${L('การ์ดวันนี้', 'Day card')}</button></div></section>`;
 }
 // what we actually spent today: amount + category + a word → a row; the day's total in the heading, the trip's so far underneath.
 // A grown-up's number, so it stays on this page (and in our database) — never in the printed memory book or a seed.
