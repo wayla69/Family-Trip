@@ -28,6 +28,16 @@ const zipList = (buf) => new Promise((res, rej) => yauzl.fromBuffer(buf, { lazyE
 
 console.log('backup / restore');
 ok((await fetch(BASE + '/api/backup.zip')).status === 401, 'backup.zip without token → 401');
+// the nightly job's question: a trip on (day before → two days after)? the answer matches the books' dates
+ok((await fetch(BASE + '/api/backup/due')).status === 401, 'backup/due without token → 401');
+{
+  const ck0 = await login(BASE), s0 = await state(BASE, ck0);
+  const d = (x, n) => { const t = new Date(x + 'T00:00:00Z'); t.setUTCDate(t.getUTCDate() + n); return t.toISOString().slice(0, 10); };
+  const today = new Date().toISOString().slice(0, 10);
+  const want = s0.trips.some((t) => d(t.date_from, -1) <= today && today <= d(t.date_to, 2));
+  const due = await (await fetch(BASE + '/api/backup/due', { headers: { authorization: 'Bearer ' + BACKUP_TOKEN.trim() } })).json();
+  ok(due.due === want && Object.keys(due).join() === 'due', `backup/due answers only yes/no, and right (${want})`);
+}
 ok((await fetch(BASE + '/api/backup.zip', { headers: { authorization: 'Bearer wrong-token-wrong-token-wrong' } })).status === 401, 'backup.zip wrong token → 401');
 const zr = await fetch(BASE + '/api/backup.zip', { headers: { authorization: 'Bearer ' + BACKUP_TOKEN.trim() } });
 ok(zr.status === 200, 'backup.zip with the token → 200, even when the server variable was pasted with a trailing newline/space');

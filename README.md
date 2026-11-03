@@ -84,7 +84,7 @@ deploy เองจากเครื่องก็ได้: `npm i -g @railwa
 - ลบรูป = ลบไฟล์ใน Bucket จริง · ส่งออกข้อมูลทั้งหมด: `/api/b/export.json` (ข้อมูล) หรือ `/api/export.zip` (ข้อมูล + รูป)
 
 ## สำรองและกู้คืนข้อมูล
-**อัตโนมัติ (แนะนำ)** — GitHub Action `Backup` ดึงสำเนาเต็ม (ข้อมูล + รูปเต็ม) ทุกวันจันทร์ 02:17 เวลาไทย เก็บเป็น artifact 90 วัน
+**อัตโนมัติ (แนะนำ)** — GitHub Action `Backup` ดึงสำเนาเต็ม (ข้อมูล + รูปเต็ม) ทุกวันจันทร์ 02:17 เวลาไทย เก็บเป็น artifact 90 วัน · **ช่วงเที่ยว** (ตั้งแต่วันก่อนออกเดินทางถึง 2 วันหลังกลับ ตามวันที่ของแต่ละเล่ม) ทำเพิ่มทุกคืน 23:23 เวลาไทย (00:23 ฮ่องกง) เก็บ 30 วัน — เซิร์ฟเวอร์บอกเองผ่าน `/api/backup/due` ไม่ต้องตั้งอะไรเพิ่ม
 1. Railway → service → Variables: ตั้ง `BACKUP_TOKEN` เป็นค่าสุ่มยาวๆ (ถ้ายังไม่มี)
 2. GitHub → Settings → Secrets and variables → Actions → secrets `MB_URL` = `https://<โดเมน>`, `MB_BACKUP_TOKEN` = ค่าเดียวกับ `BACKUP_TOKEN` ใน Railway และ `MB_BACKUP_PASSPHRASE` = รหัสผ่านยาวๆ สำหรับเข้ารหัสไฟล์สำรอง **จดเก็บไว้นอก GitHub ด้วย** (ไม่มีรหัสนี้ เปิดไฟล์สำรองไม่ได้)
 3. Actions → Backup → *Run workflow* เพื่อทดสอบครั้งแรก
@@ -110,4 +110,4 @@ curl -b ck.txt -H 'x-mb: 1' --data-binary @memory-bookshelf-YYYY-MM-DD.zip https
 ดู `CLAUDE.md` (คำสั่ง Postgres ในเครื่อง, `npm test`, โครงสร้างโค้ด)
 
 ## English summary
-Memory Bookshelf: one book per family trip, styled like the owner's Trip Operations Manuals. Node 22 + Express + Postgres + Railway Storage Bucket, vanilla-JS PWA with an offline write queue. Deploy: Railway's GitHub connection deploys `main` (the GitHub Actions `railway up` workflow is a manual fallback). Photos are EXIF/GPS-stripped and only streamed to signed-in users. Weekly off-site backup (GPG-encrypted before upload, so a public repo is fine) and idempotent restore via `POST /api/import`.
+Memory Bookshelf: one book per family trip, styled like the owner's Trip Operations Manuals. Node 22 + Express + Postgres + Railway Storage Bucket, vanilla-JS PWA with an offline write queue. Deploy: Railway's GitHub connection deploys `main` (the GitHub Actions `railway up` workflow is a manual fallback). Photos are EXIF/GPS-stripped and only streamed to signed-in users. Weekly off-site backup, nightly while a trip is on (GPG-encrypted before upload, so a public repo is fine) and idempotent restore via `POST /api/import`.

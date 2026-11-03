@@ -337,6 +337,8 @@ const A = {
   },
   jump(b) { const el = $(b.dataset.v); if (el) { el.scrollIntoView({ behavior: matchMedia('(prefers-reduced-motion: reduce)').matches ? 'auto' : 'smooth', block: 'start' }); el.classList.remove('flash'); void el.offsetWidth; el.classList.add('flash'); } },
   // relatives' groups (#/viewers): the form lives in vgForm (views.js) so a background render keeps the ticks
+  wifionly(b) { ls('wifionly', b.checked ? 1 : null); upNow = false; renderProgress(); flush(); },
+  upnow() { upNow = true; toast(L('กำลังส่งรูปที่รออยู่…', 'Sending the waiting photos…')); renderProgress(); flush(); },
   vgtrip(b) { const s2 = new Set(vgForm.trips); if (b.checked) s2.add(b.dataset.v); else s2.delete(b.dataset.v); vgForm.trips = [...s2]; },
   vglink(b) { vgForm.link = b.checked; },
   vgnewlink(b) { vgForm.newLink = b.checked; },
@@ -696,7 +698,7 @@ document.addEventListener('submit', async (e) => {
 
 /* ---------- boot ---------- */
 async function refresh() {
-  if (document.hidden || sheetOpen() || flushing || queue.length) return;
+  if (document.hidden || sheetOpen() || flushing || (queue.length && !(allHeld && holdMedia()))) return;
   const before = JSON.stringify([S && S.entries.length, S && S.media.length, S && S.places.length]);
   if ((await load()) === 'ok' && JSON.stringify([S.entries.length, S.media.length, S.places.length]) !== before) safeRender();
 }
@@ -716,6 +718,6 @@ async function refresh() {
   window.addEventListener('online', () => { offline = false; flush(); });
   document.addEventListener('visibilitychange', () => { if (!document.hidden) { flush(); refresh(); } });
   matchMedia('(prefers-color-scheme: dark)').addEventListener('change', () => render());
-  setInterval(() => { if (queue.length) flush(); else refresh(); }, 30000);
+  setInterval(() => { if (queue.length && !(allHeld && holdMedia())) flush(); else refresh(); }, 30000);
   if (S) flush();
 })();

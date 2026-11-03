@@ -120,9 +120,11 @@ function tabBar(t, p) {
   return `<nav class="bar"><div class="in">${items.join('')}</div></nav>`;
 }
 function renderProgress() {
+  document.querySelectorAll('.upw').forEach((u) => { const h = upBlock(); if (u.outerHTML !== h) u.outerHTML = h; });   // the Wi-Fi box only — never a re-render over typed text
   const el = $('#prog'); if (!el) return;
   const pend = queue.length;
   el.textContent = packing ? L(`เก็บไว้ในเครื่อง ${packing.done}/${packing.total}`, `Storing ${packing.done}/${packing.total}`) : progress ? L(`กำลังอัปโหลด ${Math.min(progress.done + 1, progress.total)}/${progress.total}`, `Uploading ${Math.min(progress.done + 1, progress.total)}/${progress.total}`)
+    : heldCount() && heldCount() === pend ? L(`📶 รอ Wi-Fi ${pend}`, `📶 ${pend} for Wi-Fi`)
     : pend ? L(`รอส่ง ${pend}`, `${pend} waiting`) : '';
 }
 
@@ -756,7 +758,7 @@ function viewLearn(t, full, open) {
   return glancePage(t, 'learn', B, lede, '', []);
 }
 const viewHearts = (t) => `<h1 class="h2">${secTitle('hearts')}</h1>${heartsHtml(t)}`;
-const viewOffline = (t) => `<h1 class="h2">${secTitle('offline')}</h1><p class="lede">${L('เก็บเล่มนี้ไว้ในเครื่องก่อนขึ้นเครื่องบินหรือลงเรือ แล้วเปิดสมุด แผน ร้านอาหาร พาสปอร์ต และโหมดเด็กได้โดยไม่ต้องมีสัญญาณ', 'Store this book on the phone before the flight or the ferry, then the book, the plans, places to eat, the passports and kid mode all open without signal')}</p>${offlineHtml(t)}${pushOk() || ls('remind') ? remindBar() : ''}
+const viewOffline = (t) => `<h1 class="h2">${secTitle('offline')}</h1><p class="lede">${L('เก็บเล่มนี้ไว้ในเครื่องก่อนขึ้นเครื่องบินหรือลงเรือ แล้วเปิดสมุด แผน ร้านอาหาร พาสปอร์ต และโหมดเด็กได้โดยไม่ต้องมีสัญญาณ', 'Store this book on the phone before the flight or the ferry, then the book, the plans, places to eat, the passports and kid mode all open without signal')}</p>${offlineHtml(t)}<section class="blk noprint"><h3>📶 ${L('ประหยัดเน็ตโรมมิ่ง', 'Save roaming data')}</h3>${upBlock()}</section>${pushOk() || ls('remind') ? remindBar() : ''}
 <div class="part">${L('สมุดเล่มพิมพ์', 'The printed book')}</div><div class="row noprint" style="margin:8px 0"><a class="btn small" href="/api/b/pdf/${esc(t.id)}" download data-a="pdf">${L('สมุดความทรงจำ (PDF A4)', 'Memory book (PDF A4)')}</a><a class="btn ghost small" href="#/print/${esc(t.id)}">${L('ดูตัวอย่างเล่ม', 'Preview the book')}</a></div>`;
 function favouritesHtml(t) {
   const ph = mediaOf(t.id).filter((m) => m.highlight), qs = entriesOf(t.id).filter((e) => e.kind === 'quote' && e.highlight);
@@ -815,6 +817,15 @@ ${firsts.length ? `<div><h4>${L('ครั้งแรกวันนี้', 'F
 function offState(t) {
   const got = ls('offline_' + t.id), n = mediaOf(t.id).length, fresh = got ? Math.max(0, n - (got.n || 0)) : 0;
   return { got, n, fresh, stale: !!got && fresh > 0, when: got ? new Date(got.at).toLocaleString(LOC(), { day: 'numeric', month: 'short', hour: '2-digit', minute: '2-digit' }) : '' };
+}
+/* ---------- photos on Wi-Fi only (roaming): the switch, what is waiting, and "send now" — record page and the offline page ---------- */
+function upBlock() {
+  const on = wifiOnly(), n = queue.filter((o) => o.blob).length, held = heldCount(), known = !!netType();
+  return `<div class="upw"><label class="vgck"><input type="checkbox" data-a="wifionly"${on ? ' checked' : ''}> 📶 ${L('ส่งรูปและเสียงเฉพาะตอนต่อ Wi-Fi', 'Send photos and voice clips on Wi-Fi only')}</label>
+<p class="label">${on ? (known ? L('ตอนใช้เน็ตมือถือ รูปจะรอในเครื่อง แล้วส่งเองเมื่อต่อ Wi-Fi · ข้อความส่งทันทีเสมอ', 'On mobile data photos wait on the phone and go by themselves on Wi-Fi · words always go at once')
+    : L('โทรศัพท์นี้ (เช่น iPhone) ไม่บอกแอปว่าต่อ Wi-Fi อยู่ไหม — รูปจะรอในเครื่องจนกดส่ง ต่อ Wi-Fi โรงแรมแล้วกดปุ่มข้างล่าง · ข้อความส่งทันทีเสมอ', 'This phone (e.g. iPhone) doesn’t tell the app when it is on Wi-Fi — photos wait on the phone until you tap send: join the hotel Wi-Fi, then tap the button below · words always go at once'))
+    : L('เปิดไว้ตอนโรมมิ่ง จะได้ไม่เปลืองเน็ต (รูปละ 3–5 MB)', 'Turn on while roaming to save data (3–5 MB a photo)')}</p>
+${held ? `<div class="row"><button class="btn small" data-a="upnow">⬆️ ${L(`ส่งที่รออยู่ ${held} รายการตอนนี้`, `Send the ${held} waiting now`)}</button></div>` : n && on ? `<p class="label">${L(`กำลังส่ง ${n} รายการ`, `Sending ${n}`)}</p>` : ''}</div>`;
 }
 function offlineHtml(t) {
   const { got, n, stale, fresh, when } = offState(t);
@@ -1439,7 +1450,7 @@ ${planHtml(t, i, i === now) ? `<section class="blk planblk">${planHtml(t, i, i =
 
 <section class="blk"><h3>📷 ${L('รูป', 'Photos')} <span class="label">${ph.length}</span></h3>
 <div class="row"><button class="btn" type="button" data-a="pickphotos" data-fpick data-t="${esc(t.id)}" data-d="${i}">＋ ${L('เพิ่มรูป', 'Add photos')}</button><span class="progress" id="prog2"></span></div>
-${ph.length ? `<div class="mosaic" style="margin-top:10px">${ph.map((m) => photoBtn(t, m)).join('')}</div>` : ''}</section>
+${ph.length ? `<div class="mosaic" style="margin-top:10px">${ph.map((m) => photoBtn(t, m)).join('')}</div>` : ''}${upBlock()}</section>
 ${clipsBlock(t, i)}
 
 <section class="blk"><h3>💬 ${L('คำพูดน่ารัก', 'Things they said')}</h3>

@@ -98,6 +98,16 @@ app.get('/api/backup.zip', (req, res, next) => {
   if (!A.BACKUP_TOKEN || !m || !A.safeEq(m[1], A.BACKUP_TOKEN)) return res.status(401).json({ error: 'auth' });
   BK.sendZip(res, PG, MEDIA).catch(next);
 });
+// the nightly backup job asks first: is a trip on (from the day before it starts to two days after it ends)? Only then a nightly
+// copy is worth taking; otherwise the weekly one is enough. Same Bearer token; answers only yes/no.
+app.get('/api/backup/due', async (req, res, next) => {
+  const m = /^Bearer (.+)$/.exec(req.headers.authorization || '');
+  if (!A.BACKUP_TOKEN || !m || !A.safeEq(m[1], A.BACKUP_TOKEN)) return res.status(401).json({ error: 'auth' });
+  try {
+    const { rows } = await PG.query('SELECT EXISTS (SELECT 1 FROM trips WHERE current_date BETWEEN date_from - 1 AND date_to + 2) AS due');
+    res.json({ due: rows[0].due });
+  } catch (e) { next(e); }
+});
 app.post('/api/import', A.requireEditor, async (req, res, next) => {
   let file;
   try {
