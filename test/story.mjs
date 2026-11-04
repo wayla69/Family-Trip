@@ -222,10 +222,14 @@ try {
   const sp = await page.textContent('main');
   ok(await page.locator('.spsum').count() === 2 && await page.locator('.spsum').first().locator('.spbars li').count() === 3 && await page.locator('.spdays li').count() === 2, 'spending: one block per currency, a bar per category, a row per day');
   ok(/Disneyland/.test(await page.textContent('.blk:last-child .items li:first-child')) && !/THB\s*1,?28/.test(sp), 'spending: biggest item first; currencies never added together');
-  // the 21:30 reminder opens the record page at the evening Claude buttons
-  await page.goto(`${BASE}/#/t/${T}/log/1/ai`); await page.waitForSelector('.evening');
-  await page.click('.evening [data-v=".talkblk"]');
-  ok(await page.locator('.evening button').count() === 3 && await page.locator('.talkblk.flash').count() === 1, 'evening link: three Claude buttons on top; a tap jumps to its block');
+  // the 21:30 reminder opens the record page at tonight's Claude panel: every Claude button of the day in one place, after the recording
+  await page.goto(`${BASE}/#/t/${T}/log/1/ai`); await page.waitForSelector('#aipanel.flash');
+  const order = await page.evaluate(() => { const y = (q) => document.querySelector(q).getBoundingClientRect().top; return y('#qtext') < y('#aipanel') && y('#aipanel') < y('.sumblk') && y('.sumblk') < y('#storyblk') && y('#storyblk') < y('.talkblk') && y('.talkblk') < y('.msgblk'); });
+  ok(order && await page.locator('.aijump').count() === 1, 'record page: the recording first, then tonight\'s Claude panel and its boxes in the order they are used');
+  ok(await page.locator('#aipanel .aistep').count() === 6 && await page.locator('#aiall').isDisabled() && (await page.textContent('#aiall')).includes('All done'), 'panel: six steps (no photos today), summary/story/questions already done → nothing for "do it all"');
+  ok(!(await page.textContent('.talkblk')).includes('never photos') && (await page.locator('#aipanel .ainote').count()) === 1, 'panel: the privacy note lives once, behind ⓘ');
+  await page.click('#aipanel [data-k="talk"]');
+  ok(await page.locator('.talkblk.flash').count() === 1, 'evening link: three Claude buttons on top; a tap jumps to its block');
   // sound words in a bedtime story: drawn big, a sound + sparkles when the reader gets there; the last page stays quiet
   await put(`/api/b/entries/${T}.story.d2`, { trip: T, day: 2, kind: 'story', text: 'ว้าว! เครื่องบินบิน ฟิ้ว~ ไปเลย\nเราไปจากกรุงเทพฯ กินขนมปัง\nแล้วก็ ตูม! ฝันดีนะ' });
   await page.goto(`${BASE}/#/t/${T}/book`); await page.reload(); await page.waitForSelector('#d2');
@@ -326,9 +330,21 @@ try {
     await pg2.click('#phaigo');
     await pg2.waitForFunction(() => document.querySelector('.phaiblk h3') && document.querySelector('.phaiblk h3').textContent.includes('3/3'));
     ok(true, 'record page: a press sends the new photo and the block shows 3/3 seen');
-    await pg2.goto(`${BASE}/#/t/${T}/log/1/ai`); await pg2.waitForSelector('.evening');
-    await pg2.click('.evening [data-v=".phaiblk"]');
-    ok(await pg2.locator('.evening button').count() === 4 && (await pg2.locator('.evening button').first().textContent()).includes('👀') && await pg2.locator('.phaiblk.flash').count() === 1, 'evening panel: "photos first" leads the Claude buttons on a day with photos and jumps to the block');
+    await pg2.goto(`${BASE}/#/t/${T}/log/1/ai`); await pg2.waitForSelector('#aipanel.flash');
+    await pg2.click('#aipanel .aistep >> nth=0');
+    ok(await pg2.locator('#aipanel .aistep').count() === 7 && (await pg2.locator('#aipanel .aistep').first().textContent()).includes('👀') && (await pg2.locator('#aipanel .aistep').first().textContent()).includes('3/3') && await pg2.locator('.phaiblk.flash').count() === 1, 'panel: on a day with photos, "Photos" is the first step (3/3 seen) and jumps to its box');
+    // "do it all" on a fresh day: photos → summary → story → questions, one Claude call each, each saved where its own button saves it
+    await put('/api/b/entries/q-allday-0001', { trip: T, day: 4, kind: 'quote', child: 'mimi', text: 'ม้าหมุนสีชมพู' });
+    await fetch(`${BASE}/api/b/media/ph-all-0001?trip=${T}&day=4`, { method: 'PUT', headers: { 'x-mb': '1', cookie: ck, 'content-type': 'image/jpeg' }, body: await createRequire(import.meta.url)('sharp')({ create: { width: 900, height: 600, channels: 3, background: '#f59e0b' } }).jpeg().toBuffer() });
+    await pg2.goto(`${BASE}/#/t/${T}/log/4`); await pg2.reload(); await pg2.waitForSelector('#aiall:not([disabled])');
+    ok((await pg2.textContent('#aiall')).includes('4'), 'do it all: the button says it will use 4 Claude calls');
+    const c0 = calls.length;
+    await pg2.click('#aiall');
+    await pg2.waitForFunction(() => { const b = document.querySelector('#aiall'); return b && b.disabled && !b.getAttribute('aria-busy') && /All done/.test(b.textContent); }, null, { timeout: 30000 });
+    const st4 = await state(), e4 = (k) => st4.entries.some((e) => e.kind === k && e.day === 4);
+    ok(calls.length === c0 + 4 && st4.media.find((m) => m.id === 'ph-all-0001').ai && e4('sum') && e4('story') && e4('talk'), `do it all: four calls in turn — photos seen, summary, story and questions saved (${calls.length - c0} calls)`);
+    ok(calls.slice(c0).map((c) => (c.body.messages[0].content.some ? (c.body.messages[0].content.some((x) => x.type === 'image') ? 'photo' : 'text') : 'text')).join(',') === 'photo,text,text,text', 'do it all: the photos go first, so their captions feed the rest');
+    ok(/(Photo|รูป): /.test(calls.at(-2).body.messages[0].content), 'do it all: the story is written with the photo captions among its facts');
     await pg2.goto(`${BASE}/#/t/${T}/book`); await pg2.waitForSelector('#d1 .phgrp');
     ok(await pg2.locator('#d1 .phgrp').count() === 2 && (await pg2.locator('#d1 .phgrp .label').first().textContent()).includes('Hong Kong Disneyland'), 'book: the day\'s photos grouped by stop, the placed ones first');
     await pg2.goto(`${BASE}/#/t/${T}`); await pg2.waitForSelector('.tile.t-photos');

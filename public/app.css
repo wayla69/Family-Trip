@@ -91,7 +91,18 @@ hr.rule{border:0;border-top:1px solid var(--rule);margin:22px 0}
 .spbars small{color:var(--muted);text-align:right}
 .spdays a{color:inherit;text-decoration:none}
 /* the evening panel (record page from the 21:30 reminder) and the block it jumps to */
-.evening{display:grid;gap:8px;margin:10px 0}.evening .row{flex-wrap:wrap}
+/* tonight, Claude helps: the jump under the day strip, the panel's step grid, one-line notes with details behind ⓘ */
+.aijump{display:flex;align-items:center;gap:8px;width:100%;margin:10px 0 0;padding:10px 14px;border:1px solid var(--rule);border-radius:12px;background:var(--soft);color:var(--ink);font-weight:600;font-size:15px;text-align:left}
+.aijump small{margin-left:auto;font-weight:500;color:var(--muted);font-size:12px}
+.aipanel{border-top:2px solid var(--accent)}
+main .blk{scroll-margin-top:76px}   /* a jump (panel, steps, shortcuts) lands below the sticky top bar */
+.aisteps{list-style:none;display:grid;grid-template-columns:repeat(auto-fill,minmax(150px,1fr));gap:6px;margin:10px 0 0;padding:0}
+.aistep{width:100%;display:flex;align-items:center;gap:8px;border:1px solid var(--rule);background:var(--paper);border-radius:10px;padding:9px 10px;text-align:left;color:var(--ink);min-height:44px}
+.aistep .e{font-size:18px;line-height:1}.aistep b{flex:1;font-weight:600;font-size:14px;line-height:1.2}.aistep small{color:var(--muted);font-size:12px;font-variant-numeric:tabular-nums}
+.aistep.done{border-color:color-mix(in srgb,var(--leaf) 55%,var(--rule))}.aistep.done small{color:var(--leaf);font-weight:700}
+.ainote{margin-top:2px}.ainote summary{cursor:pointer;list-style:none;font-size:12px;color:var(--muted)}.ainote summary::-webkit-details-marker{display:none}
+.ainote .i{display:inline-grid;place-items:center;width:18px;height:18px;border-radius:50%;border:1px solid var(--rule);font-size:11px;line-height:1}
+.ainote[open] .i{background:var(--soft)}.ainote p{font-size:12px;color:var(--muted);margin:6px 0 0;line-height:1.5}
 .flash{animation:flash 1.2s ease-out}@keyframes flash{0%{box-shadow:0 0 0 3px var(--accent2)}100%{box-shadow:0 0 0 0 transparent}}
 @media (prefers-reduced-motion:reduce){.flash{animation:none}}
 .askans .sres{margin:6px 0}

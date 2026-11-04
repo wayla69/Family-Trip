@@ -260,7 +260,7 @@ const A = {
     box.hidden = false; show(''); box.classList.add('writing'); if (sum) box.readOnly = true;
     $(`#${mode}go`).disabled = true; $(`#${mode}stop`).hidden = false;
     storyCtl = new AbortController();
-    let text = '';
+    let text = '', ok = false;   // ok: Claude finished (what "do it all" waits for)
     try {
       const r = await fetch('/api/b/story', { method: 'POST', credentials: 'same-origin', signal: storyCtl.signal,
         headers: { 'x-mb': '1', 'content-type': 'application/json' }, body: JSON.stringify({ trip: t.id, day, lang, mode }) });
@@ -279,7 +279,7 @@ const A = {
           chunk.split('\n').forEach((l) => { if (l.startsWith('event: ')) ev = l.slice(7); else if (l.startsWith('data: ')) data += l.slice(6); });
           const d = JSON.parse(data || '{}');
           if (!ev) { text += d.t; show(quiet ? L('กำลังคิดคำถาม… 🧠', 'Thinking up the questions… 🧠') : text); }
-          else if (ev === 'done' && mode === 'next') {   // nothing saved: kept for this page only
+          else if (ev === 'done' && (ok = true) && mode === 'next') {   // nothing saved: kept for this page only
             nextAns = { t: t.id, i: day, text: d.text || text }; show(nextAns.text);
             toast(L('พรุ่งนี้พร้อมแล้ว — ไม่ได้บันทึกไว้', 'Tomorrow is ready — not saved'));
           }
@@ -302,7 +302,38 @@ const A = {
       const bx = $(`#${mode}text`); if (bx) { bx.classList.remove('writing'); bx.readOnly = false; }
       const go = $(`#${mode}go`), stop = $(`#${mode}stop`); if (go) go.disabled = false; if (stop) stop.hidden = true;
     }
+    return ok;
   },
+  // tonight, Claude helps → "do it all": photos → summary → story → questions, one Claude call each, skipping what is done;
+  // each step scrolls to its box and streams there as if pressed; the first failure (or Stop) ends the run
+  async aiall(b) {
+    if (aiRun || storyCtl) return;
+    if (!navigator.onLine) { toast(L('ต้องต่อเน็ตเพื่อใช้ Claude', 'Claude needs a connection')); return; }
+    if (queue.length) { toast(L('รอให้บันทึกและรูปส่งเสร็จก่อน แล้วค่อยกด', 'Wait for the records and photos to upload first')); return; }
+    const t = trip(b.dataset.t), i = +b.dataset.d, dk = `${t.id}:${i}`, steps = aiTodo(t, i, dk);
+    if (!steps.length) return;
+    aiRun = { n: 0, of: steps.length, stop: false };
+    let done = 0;
+    try {
+      for (const k of steps) {
+        if (aiRun.stop) break;
+        aiRun.n++; render();
+        const sel = { photo: '.phaiblk', sum: '.sumblk', story: '#storyblk', talk: '.talkblk' }[k], box = $(sel);
+        if (box) box.scrollIntoView({ block: 'start', behavior: 'auto' });
+        const ok = k === 'photo' ? await A.photoai($('#phaigo') || { dataset: { t: t.id, d: String(i) }, setAttribute() {}, removeAttribute() {} })
+          : await A.story({ dataset: { m: k === 'story' ? '' : k, t: t.id, d: String(i) } });
+        if (!ok) break;
+        done++;
+      }
+    } finally {
+      const stopped = aiRun && aiRun.stop; aiRun = null; render();
+      const p = $('#aipanel'); if (p) p.scrollIntoView({ block: 'start' });
+      toast(done === steps.length ? L('คืนนี้ครบแล้ว — นิทานกับคำถามอยู่ในโหมดเด็ก', 'All set for tonight — the story and the questions are in kid mode')
+        : stopped ? L(`หยุดแล้ว — ทำไป ${done} จาก ${steps.length}`, `Stopped — ${done} of ${steps.length} done`)
+          : L(`ทำได้ ${done} จาก ${steps.length} — ดูข้อความในกล่องที่ค้าง`, `${done} of ${steps.length} done — see the message in the box that stopped`));
+    }
+  },
+  aistop() { if (aiRun) aiRun.stop = true; if (storyCtl) storyCtl.abort(); },
   storystop() { if (storyCtl) storyCtl.abort(); },
   lckid(b) { lostKid = b.dataset.v; render(); },
   async lostcard(b) {
@@ -404,18 +435,21 @@ const A = {
   },
   // look at today's photos: the server sends the day's unseen thumbnails to Claude and saves caption/tags/place; then the state reloads
   async photoai(b) {
+    let ok = false;   // returned: "do it all" goes on only after the photos were seen
     if (!navigator.onLine) { toast(L('ต้องต่อเน็ตเพื่อให้ Claude ดูรูป', 'Claude needs a connection to look')); return; }
     if (queue.length) { toast(L('รอให้รูปส่งเสร็จก่อน แล้วค่อยให้ดู', 'Wait for the photos to upload first')); return; }
     const btns = $$('.phaiblk button'); btns.forEach((x) => { x.disabled = true; }); b.setAttribute('aria-busy', 'true');
     try {
       const r = await api('POST', '/api/b/photos/ai', { trip: b.dataset.t, day: +b.dataset.d, lang, all: !!b.dataset.all }); aiUseAt = 0;
       await load(); safeRender();
+      ok = true;
       const star = r.starred ? L(` · ติดดาว ⭐ ให้ ${r.starred} รูปเด่น (แตะรูปเพื่อเปลี่ยน)`, ` · ⭐ on ${r.starred} best photo${r.starred > 1 ? 's' : ''} (tap a photo to change)`) : '';
       toast((r.left ? L(`ดูแล้ว ${r.n} รูป · เหลืออีก ${r.left} กดอีกครั้ง`, `${r.n} photos seen · ${r.left} more, press again`) : L(`ดูแล้ว ${r.n} รูป`, `${r.n} photos seen`)) + star);
     } catch (e) {
       btns.forEach((x) => { x.disabled = false; }); b.removeAttribute('aria-busy');
       toast(e.code === 422 ? L('ไม่มีรูปใหม่ให้ดู', 'Nothing new to look at') : e.code === 429 ? L('วันนี้ใช้ Claude ครบจำนวนแล้ว — พรุ่งนี้ใช้ต่อได้', 'That’s all the Claude calls for today — more tomorrow') : e.code === 501 ? L('ยังไม่ได้เปิดใช้ (PHOTO_AI)', 'Not switched on (PHOTO_AI)') : L('ดูไม่สำเร็จ ลองใหม่อีกครั้ง', 'That didn’t work — try again'));
     }
+    return ok;
   },
   // photos by tag: the chip filters the page in place (hides the photos, groups and days that don't carry the tag) — never a re-render
   phtag(b) {
