@@ -20,6 +20,8 @@ const HEART_EMOJI = ['💗', '🤗', '😘', '⭐', '👏', '🎈'];
 const REVIEW_KINDS = ['stay', 'food', 'place'], KID_VERDICT = ['love', 'ok', 'no'];
 const HEARTS_PER_DAY = { sender: 40, family: 400 };   // the view link is shared: cap what one phone, and everyone together, can send
 const clip = (s, n) => String(s == null ? '' : s).slice(0, n);
+// photo tags: up to 10 short words (the fixed keys from Claude, or the parents' own); null when the shape is wrong
+const tagList = (v) => (Array.isArray(v) && v.length <= 10 && v.every((x) => typeof x === 'string') ? [...new Set(v.map((x) => x.trim().toLowerCase().slice(0, 24)).filter(Boolean))] : null);
 const i18n = (o, n = 200) => (o && typeof o === 'object' ? { th: clip(o.th, n), en: clip(o.en, n), ...(o.zh ? { zh: clip(o.zh, n) } : {}) } : { th: clip(o, n), en: clip(o, n) });
 const at = (v) => new Date(Math.min(Number.isFinite(+v) && +v > 0 ? +v : Date.now(), Date.now() + 86400e3));
 const bad = (res, error, code = 400) => res.status(code).json({ error });
@@ -105,7 +107,7 @@ function router({ pool, media, A, ai, hooks = {} }) {   // hooks.heart(h): set b
         q("SELECT d.trip_id, d.day_index, to_char(d.date,'YYYY-MM-DD') date, d.title, d.sleep, d.emoji, d.gradient, d.planned, d.wx, d.plan, d.done_at FROM trip_days d JOIN trips t ON t.id=d.trip_id WHERE t.family_id=$1 ORDER BY d.trip_id, d.day_index", [FAMILY]),
         q('SELECT f.trip_id, f.key, f.emoji, f.label FROM firsts_catalog f JOIN trips t ON t.id=f.trip_id WHERE t.family_id=$1 ORDER BY f.trip_id, f.pos, f.key', [FAMILY]),
         q('SELECT id, trip_id, day_index, kind, child, text, tr, mood, first_key, lang, highlight, occurred_at, created_by, created_uid FROM entries WHERE family_id=$1 ORDER BY occurred_at', [FAMILY]),
-        q('SELECT id, trip_id, day_index, width, height, caption, highlight, pos, taken_at, created_by, mime FROM media WHERE family_id=$1 ORDER BY taken_at, pos', [FAMILY]),
+        q('SELECT id, trip_id, day_index, width, height, caption, highlight, pos, taken_at, created_by, mime, tags, place, ai_at FROM media WHERE family_id=$1 ORDER BY taken_at, pos', [FAMILY]),
         q('SELECT id, trip_id, day_index, key, kind, name, visited_at, created_by FROM places WHERE family_id=$1 ORDER BY visited_at', [FAMILY]),
         q('SELECT id, trip_id, day_index, child, emoji, text, from_name, created_uid, created_at FROM hearts WHERE family_id=$1 ORDER BY created_at', [FAMILY]),
         q('SELECT id, trip_id, day_index, kind, key, name, rating, tags, kids, again, note, created_by, updated_at FROM reviews WHERE family_id=$1 ORDER BY updated_at', [FAMILY]),
@@ -130,12 +132,12 @@ function router({ pool, media, A, ai, hooks = {} }) {   // hooks.heart(h): set b
           return { ...out, info: undefined, passport: undefined, days: td.map(({ plan, ...d }) => d), seed: g.hash };
         }),
         entries: entries.map(({ trip_id, day_index, occurred_at, created_uid, ...e }) => ({ ...e, trip: trip_id, day: day_index, at: ms(occurred_at), mine: created_uid === req.user.uid })),
-        media: mediaRows.map(({ trip_id, day_index, taken_at, width, height, ...m }) => ({ ...m, trip: trip_id, day: day_index, w: width, h: height, at: ms(taken_at) })),
+        media: mediaRows.map(({ trip_id, day_index, taken_at, width, height, ai_at, ...m }) => ({ ...m, trip: trip_id, day: day_index, w: width, h: height, at: ms(taken_at), ai: !!ai_at })),
         places: places.map(({ trip_id, day_index, visited_at, ...p }) => ({ ...p, trip: trip_id, day: day_index, at: ms(visited_at) })),
         hearts: hearts.map(({ trip_id, day_index, created_uid, created_at, from_name, ...h }) => ({ ...h, trip: trip_id, day: day_index, from: from_name, at: ms(created_at), mine: created_uid === req.user.uid })),
         reviews: reviews.map(({ trip_id, day_index, updated_at, ...r }) => ({ ...r, trip: trip_id, day: day_index, at: ms(updated_at) })),
         spend: spendRows.map(({ trip_id, day_index, updated_at, amount, ...s }) => ({ ...s, trip: trip_id, day: day_index, amount: Number(amount), at: ms(updated_at) })),
-        features: { story: !!(ai && ai.enabled()) },
+        features: { story: !!(ai && ai.enabled()), photoAi: !!(ai && ai.photoEnabled && ai.photoEnabled()) },   // photoAi: the owner's PHOTO_AI switch (captions/tags from the pictures)
       }, true);
     } catch (e) { next(e); }
   });
@@ -226,6 +228,8 @@ function router({ pool, media, A, ai, hooks = {} }) {   // hooks.heart(h): set b
       const b = req.body || {}, sets = [], args = [req.params.id, FAMILY];
       if ('caption' in b) { args.push(clip(b.caption, 500)); sets.push(`caption=$${args.length}`); }
       if ('highlight' in b) { args.push(!!b.highlight); sets.push(`highlight=$${args.length}`); }
+      if ('tags' in b) { const tags = tagList(b.tags); if (!tags) return bad(res, 'tags'); args.push(tags); sets.push(`tags=$${args.length}`); }
+      if ('place' in b) { args.push(clip(b.place, 120).trim()); sets.push(`place=$${args.length}`); }
       if (!sets.length) return bad(res, 'nothing');
       const out = await q(`UPDATE media SET ${sets.join(', ')} WHERE id=$1 AND family_id=$2 RETURNING id`, args);
       res.status(out.length ? 200 : 404).json({ ok: !!out.length });
@@ -531,6 +535,40 @@ function router({ pool, media, A, ai, hooks = {} }) {   // hooks.heart(h): set b
         send('error', { error: e.code === 'refusal' ? 'refusal' : 'failed' });
       }
       res.end();
+    } catch (e) { next(e); }
+  });
+
+  // ----- look at today's photos (Claude, editors, only with PHOTO_AI=1): the day's 520 px thumbnails Claude has not seen yet (≤ 12 a call)
+  // go with the day's title and stop names; back come a caption (kept only where the parents wrote none), tags from the fixed list and the
+  // stop the photo belongs to. One model call per press; {all: true} sends the day's photos again. Nothing else about the family travels.
+  const PHOTOS_PER_CALL = 12;
+  r.post('/api/b/photos/ai', ...W, async (req, res, next) => {
+    try {
+      if (!ai || !ai.photoEnabled || !ai.photoEnabled()) return bad(res, 'no-key', 501);
+      const b = req.body || {}, lang = b.lang === 'en' ? 'en' : 'th';
+      const t = await trip(String(b.trip || '')); if (!t) return bad(res, 'trip');
+      const day = dayArg(b.day); if (day === null || !dayOk(t, day)) return bad(res, 'day');
+      const rows = await q(`SELECT id, caption FROM media WHERE trip_id=$1 AND day_index=$2 AND mime NOT LIKE 'audio/%' ${b.all ? '' : 'AND ai_at IS NULL'} ORDER BY taken_at, pos LIMIT $3`, [t.id, day, PHOTOS_PER_CALL]);
+      if (!rows.length) return bad(res, 'empty', 422);   // nothing new to look at → don't call the model
+      const d = (await q('SELECT title, planned, plan FROM trip_days WHERE trip_id=$1 AND day_index=$2', [t.id, day]))[0] || {};
+      const nm = (x) => (x && typeof x === 'object' ? x[lang] || x.en || x.th : x);
+      const stops = [...new Set([...(d.planned || []).map(nm), ...(await q('SELECT name FROM places WHERE trip_id=$1 AND day_index=$2 ORDER BY visited_at', [t.id, day])).map((p) => nm(p.name)),
+        (d.plan && d.plan.stay && nm(d.plan.stay.name || d.plan.stay))].map((x) => clip(x, 120).trim()).filter(Boolean))].slice(0, 30);
+      const photos = [];
+      for (const m of rows) { const jpeg = await media.get(keyThumb(t.id, m.id)); if (jpeg) photos.push({ id: m.id, jpeg }); }
+      if (!photos.length) return bad(res, 'empty', 422);
+      if (!(await aiTake())) return bad(res, 'limit', 429);
+      let seen;
+      try { seen = await ai.describePhotos({ lang, photos, context: { title: nm(d.title) || '', stops } }); }
+      catch (e) { console.error('photos', e.code || e.status || e.message); return bad(res, e.code === 'refusal' ? 'refusal' : 'failed', 502); }
+      let n = 0;
+      for (const m of rows) {
+        const x = seen[m.id]; if (!x) continue;
+        await q(`UPDATE media SET caption = CASE WHEN caption = '' THEN $3 ELSE caption END, tags=$4, place=$5, ai_at=now() WHERE id=$1 AND trip_id=$2`, [m.id, t.id, clip(x.cap, 500), x.tags, x.place]);
+        n++;
+      }
+      const left = (await q("SELECT count(*)::int n FROM media WHERE trip_id=$1 AND day_index=$2 AND mime NOT LIKE 'audio/%' AND ai_at IS NULL", [t.id, day]))[0].n;
+      res.json({ ok: true, n, left });
     } catch (e) { next(e); }
   });
 
