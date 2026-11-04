@@ -410,7 +410,8 @@ const A = {
     try {
       const r = await api('POST', '/api/b/photos/ai', { trip: b.dataset.t, day: +b.dataset.d, lang, all: !!b.dataset.all }); aiUseAt = 0;
       await load(); safeRender();
-      toast(r.left ? L(`ดูแล้ว ${r.n} รูป · เหลืออีก ${r.left} กดอีกครั้ง`, `${r.n} photos seen · ${r.left} more, press again`) : L(`ดูแล้ว ${r.n} รูป`, `${r.n} photos seen`));
+      const star = r.starred ? L(` · ติดดาว ⭐ ให้ ${r.starred} รูปเด่น (แตะรูปเพื่อเปลี่ยน)`, ` · ⭐ on ${r.starred} best photo${r.starred > 1 ? 's' : ''} (tap a photo to change)`) : '';
+      toast((r.left ? L(`ดูแล้ว ${r.n} รูป · เหลืออีก ${r.left} กดอีกครั้ง`, `${r.n} photos seen · ${r.left} more, press again`) : L(`ดูแล้ว ${r.n} รูป`, `${r.n} photos seen`)) + star);
     } catch (e) {
       btns.forEach((x) => { x.disabled = false; }); b.removeAttribute('aria-busy');
       toast(e.code === 422 ? L('ไม่มีรูปใหม่ให้ดู', 'Nothing new to look at') : e.code === 429 ? L('วันนี้ใช้ Claude ครบจำนวนแล้ว — พรุ่งนี้ใช้ต่อได้', 'That’s all the Claude calls for today — more tomorrow') : e.code === 501 ? L('ยังไม่ได้เปิดใช้ (PHOTO_AI)', 'Not switched on (PHOTO_AI)') : L('ดูไม่สำเร็จ ลองใหม่อีกครั้ง', 'That didn’t work — try again'));

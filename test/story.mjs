@@ -31,7 +31,7 @@ const mock = http.createServer((req, res) => {
     const photo = String(b.system).includes('"cap"');   // look at today's photos: JSON per id; a stop from the STOPS line, plus junk that must be dropped
     const pids = [...facts.matchAll(/^id: (\S+)$/gm)].map((m) => m[1]), stop0 = (/STOPS: "([^"]*)"/.exec(facts) || [])[1] || '';
     const quiz = String(b.system).includes('"ok":');   // the memory game answers JSON (once with a bad item, which must be dropped)   // translate: answer JSON [{id, tr}] for the items it was given
-    const parts = photo ? [JSON.stringify(pids.map((id, k) => (k === 0 ? { id, cap: '## เด็กๆ **ยิ้ม** หน้าปราสาท', tags: ['kids', 'Character', 'bogus', 'kids'], place: stop0 } : { id, cap: 'เรากินติ่มซำ', tags: ['food'], place: 'Narnia' })))]
+    const parts = photo ? [JSON.stringify(pids.map((id, k) => (k === 0 ? { id, cap: '## เด็กๆ **ยิ้ม** หน้าปราสาท', tags: ['kids', 'Character', 'bogus', 'kids'], place: stop0, best: true } : { id, cap: 'เรากินติ่มซำ', tags: ['food'], place: 'Narnia', best: 'yes' })))]
       : quiz ? ['```json\n[{"q":"เมื่อวานมีมี่บอกว่าปลาอยู่ที่ไหน","a":[{"e":"💧","t":"ในน้ำ"},{"e":"🌳","t":"บนต้นไม้"},{"e":"🚌","t":"บนรถบัส"}],"ok":0},',
       '{"q":"ไปไหนมา","a":[{"e":"🏰","t":"ดิสนีย์"},{"e":"🏖️","t":"ทะเล"},{"e":"🏔️","t":"ภูเขา"}],"ok":0},{"q":"bad","a":[{"t":"x"}],"ok":3}]\n```']
       : trans ? [JSON.stringify(JSON.parse(facts).map((x) => ({ id: x.id, tr: `${x.to}:${x.text}` })))]
@@ -293,8 +293,14 @@ try {
     const m1 = await med('ph-ai-0001'), m2 = await med('ph-ai-0002');
     ok(m1.caption === 'เด็กๆ ยิ้ม หน้าปราสาท' && m1.ai === true && m1.tags.join(',') === 'kids,character' && m1.place === 'Hong Kong Disneyland', `photos: caption cleaned, tags only from the list, place from the stops (${JSON.stringify([m1.caption, m1.tags, m1.place])})`);
     ok(m2.caption === 'แม่เขียนเอง' && m2.tags.join(',') === 'food' && m2.place === '' && m2.ai === true, 'photos: the parents\' caption is kept; a place not in the list is dropped');
+    ok(jp.starred === 1 && m1.highlight === true && m2.highlight === false, `photos: Claude's best pick gets the ⭐ on a day without one (only a real true counts; starred=${jp.starred})`);
+    ok(pc.system.includes('"best"') && pc.system.includes('รูปเด่น'), 'photos: the prompt asks for the day\'s best photos');
     ok((await look({ trip: T, day: 1, lang: 'th' })).status === 422 && calls.length === bp + 1, 'photos: nothing unseen → 422, model not called');
-    ok((await look({ trip: T, day: 1, lang: 'en', all: true })).ok && calls.length === bp + 2 && calls.at(-1).body.messages[0].content.filter((x) => x.type === 'image').length === 2, 'photos: "look again" sends the whole day once more');
+    await fetch(BASE + '/api/b/media/ph-ai-0001', { method: 'PATCH', headers: H, body: JSON.stringify({ highlight: false }) });
+    await fetch(BASE + '/api/b/media/ph-ai-0002', { method: 'PATCH', headers: H, body: JSON.stringify({ highlight: true }) });
+    const again = await look({ trip: T, day: 1, lang: 'en', all: true }), ja = await again.clone().json();
+    ok(ja.starred === 0 && (await med('ph-ai-0001')).highlight === false && (await med('ph-ai-0002')).highlight === true, 'photos: the parents\' own ⭐ wins — Claude stars nothing on a day that has one');
+    ok(again.ok && calls.length === bp + 2 && calls.at(-1).body.messages[0].content.filter((x) => x.type === 'image').length === 2, 'photos: "look again" sends the whole day once more');
     ok((await look({ trip: T, day: null, lang: 'th' })).status === 400 && (await look({ trip: T, day: 0, lang: 'th' })).status === 422, 'photos: needs a day; a day without photos → 422');
     const patch = (id, b) => fetch(BASE + '/api/b/media/' + id, { method: 'PATCH', headers: H, body: JSON.stringify(b) });
     ok((await patch('ph-ai-0002', { tags: ['Food', ' ride ', 'our own', 'food'], place: 'ไทม์สแควร์' })).ok && (await med('ph-ai-0002')).tags.join(',') === 'food,ride,our own' && (await med('ph-ai-0002')).place === 'ไทม์สแควร์', 'photos: the parents edit tags and place by hand');
@@ -320,6 +326,9 @@ try {
     await pg2.click('#phaigo');
     await pg2.waitForFunction(() => document.querySelector('.phaiblk h3') && document.querySelector('.phaiblk h3').textContent.includes('3/3'));
     ok(true, 'record page: a press sends the new photo and the block shows 3/3 seen');
+    await pg2.goto(`${BASE}/#/t/${T}/log/1/ai`); await pg2.waitForSelector('.evening');
+    await pg2.click('.evening [data-v=".phaiblk"]');
+    ok(await pg2.locator('.evening button').count() === 4 && (await pg2.locator('.evening button').first().textContent()).includes('👀') && await pg2.locator('.phaiblk.flash').count() === 1, 'evening panel: "photos first" leads the Claude buttons on a day with photos and jumps to the block');
     await pg2.goto(`${BASE}/#/t/${T}/book`); await pg2.waitForSelector('#d1 .phgrp');
     ok(await pg2.locator('#d1 .phgrp').count() === 2 && (await pg2.locator('#d1 .phgrp .label').first().textContent()).includes('Hong Kong Disneyland'), 'book: the day\'s photos grouped by stop, the placed ones first');
     await pg2.goto(`${BASE}/#/t/${T}`); await pg2.waitForSelector('.tile.t-photos');

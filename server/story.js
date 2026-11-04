@@ -255,18 +255,20 @@ async function translate({ items, signal }) {
 const TAGS = ['kids', 'family', 'food', 'dessert', 'animals', 'nature', 'beach', 'water', 'playground', 'ride', 'transport', 'plane', 'city', 'view',
   'museum', 'art', 'shop', 'stay', 'sleep', 'play', 'walk', 'night', 'rain', 'funny', 'selfie', 'sign', 'character'];
 function photoPrompt(lang) {
-  const shape = '[{"id":"…","cap":"…","tags":["food","kids"],"place":"…"}]';
+  const shape = '[{"id":"…","cap":"…","tags":["food","kids"],"place":"…","best":false}]';
   const base = lang === 'en'
     ? 'Look at each photo from one day of a family trip (two small children) and write, for the family\'s own memory book: '
       + '"cap" = a caption of at most 12 words in the parents\' voice ("we", past tense), saying what is in the picture; '
       + '"tags" = 1 to 4 tags chosen ONLY from this list: ' + TAGS.join(', ') + '; '
-      + '"place" = which of the day\'s stops the photo belongs to, copied exactly from the STOPS list, or "" when unsure. '
+      + '"place" = which of the day\'s stops the photo belongs to, copied exactly from the STOPS list, or "" when unsure; '
+      + '"best" = true for the one or two photos that would make the best cover of the day (sharp, the children doing something, a moment the family will want to see again), false for all the others. '
       + 'Never name or guess who a person is: say "the kids", "big sister", "little brother", "Mum", "Dad". Never guess a place that is not in the list. '
       + 'Do not describe faces, bodies or clothing in detail; say what they were doing. Reply with JSON only — no prose, no code fence: ' + shape
     : 'ดูรูปแต่ละรูปจากหนึ่งวันของทริปครอบครัว (ลูกเล็กสองคน) แล้วเขียนสำหรับสมุดความทรงจำของครอบครัวเอง: '
       + '"cap" = คำบรรยายรูปไม่เกิน 15 คำ เล่าแบบพ่อแม่ ใช้ "เรา" ว่าในรูปมีอะไร เกิดอะไรขึ้น; '
       + '"tags" = แท็ก 1–4 คำ เลือกได้เฉพาะจากรายการนี้: ' + TAGS.join(', ') + '; '
-      + '"place" = รูปนี้อยู่ที่จุดแวะไหนของวัน ให้คัดลอกชื่อจากรายการ STOPS ตรงๆ หรือ "" ถ้าไม่แน่ใจ '
+      + '"place" = รูปนี้อยู่ที่จุดแวะไหนของวัน ให้คัดลอกชื่อจากรายการ STOPS ตรงๆ หรือ "" ถ้าไม่แน่ใจ; '
+      + '"best" = true เฉพาะ 1–2 รูปที่เหมาะเป็นรูปเด่นของวันที่สุด (ชัด เด็กๆ กำลังทำอะไรอยู่ เป็นช่วงที่ครอบครัวอยากกลับมาดู) รูปอื่นเป็น false '
       + 'ห้ามเรียกชื่อหรือเดาว่าใครเป็นใคร ให้ใช้ "เด็กๆ" "พี่" "น้อง" "แม่" "พ่อ" ห้ามเดาสถานที่ที่ไม่อยู่ในรายการ '
       + 'ไม่บรรยายหน้าตา รูปร่าง หรือเสื้อผ้าโดยละเอียด เล่าว่ากำลังทำอะไร ตอบเป็น JSON เท่านั้น ไม่มีคำอธิบาย ไม่มี code fence: ' + shape;
   return base + NATURAL[lang === 'en' ? 'en' : 'th'];
@@ -304,7 +306,7 @@ STOPS: ${stops.length ? stops.map((s) => `"${s}"`).join(', ') : '(none)'}`;
     if (!x || !ids.has(x.id)) continue;
     const tags = [...new Set((Array.isArray(x.tags) ? x.tags : []).map((t) => String(t).trim().toLowerCase()).filter((t) => TAGS.includes(t)))].slice(0, 4);
     const place = typeof x.place === 'string' && stopSet.has(x.place.trim()) ? x.place.trim() : '';
-    out[x.id] = { cap: clean(String(x.cap || '')).replace(/\s+/g, ' ').slice(0, 160), tags, place };
+    out[x.id] = { cap: clean(String(x.cap || '')).replace(/\s+/g, ' ').slice(0, 160), tags, place, best: x.best === true };
   }
   return out;
 }

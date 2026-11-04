@@ -567,8 +567,15 @@ function router({ pool, media, A, ai, hooks = {} }) {   // hooks.heart(h): set b
         await q(`UPDATE media SET caption = CASE WHEN caption = '' THEN $3 ELSE caption END, tags=$4, place=$5, ai_at=now() WHERE id=$1 AND trip_id=$2`, [m.id, t.id, clip(x.cap, 500), x.tags, x.place]);
         n++;
       }
+      // the day's best photos: Claude's picks get the ⭐ only while the day has none yet (the parents' own stars always win;
+      // a drawing is never picked); at most two, and the parents change them in the photo viewer like any star
+      let starred = 0;
+      const picks = rows.filter((m) => seen[m.id] && seen[m.id].best && !m.id.startsWith('dr-')).slice(0, 2).map((m) => m.id);
+      if (picks.length && !(await q("SELECT 1 FROM media WHERE trip_id=$1 AND day_index=$2 AND highlight AND mime NOT LIKE 'audio/%' AND id NOT LIKE 'dr-%' LIMIT 1", [t.id, day])).length) {
+        starred = (await pool.query('UPDATE media SET highlight=true WHERE trip_id=$1 AND id = ANY($2)', [t.id, picks])).rowCount;
+      }
       const left = (await q("SELECT count(*)::int n FROM media WHERE trip_id=$1 AND day_index=$2 AND mime NOT LIKE 'audio/%' AND ai_at IS NULL", [t.id, day]))[0].n;
-      res.json({ ok: true, n, left });
+      res.json({ ok: true, n, left, starred });
     } catch (e) { next(e); }
   });
 
