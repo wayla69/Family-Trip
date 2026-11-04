@@ -6,6 +6,7 @@ const esc = (s) => String(s == null ? '' : s).replace(/[&<>"']/g, (c) => ({ '&':
 // one line-icon set for the grown-ups' pages (kid mode keeps its emoji): 24-unit grid, 1.75 stroke, drawn in currentColor
 const ICONS = {
   search: '<circle cx="11" cy="11" r="7"/><path d="M20 20l-4-4"/>',
+  camera: '<path d="M4 8h3l2-3h6l2 3h3v11H4z"/><circle cx="12" cy="13" r="3.5"/>',
   home: '<path d="M3 11l9-7 9 7"/><path d="M5 10v10h14V10"/><path d="M10 20v-6h4v6"/>',
   today: '<rect x="3" y="5" width="18" height="16" rx="2"/><path d="M3 10h18M8 3v4M16 3v4"/><path d="M8 14h3v3H8z"/>',
   log: '<path d="M4 20l4-1 11-11-3-3L5 16z"/><path d="M14 6l3 3"/>',
@@ -270,6 +271,15 @@ const isAudio = (m) => !!m && String(m.mime || '').startsWith('audio/');
 const mediaOf = (tid, day) => S.media.filter((m) => !isAudio(m) && m.trip === tid && (day === undefined || m.day === day)).sort((a, b) => a.at - b.at);
 const audioOf = (tid, day) => S.media.filter((m) => isAudio(m) && m.trip === tid && (day === undefined || m.day === day)).sort((a, b) => a.at - b.at);
 const placesOf = (tid, day) => S.places.filter((p) => p.trip === tid && (day === undefined || p.day === day));
+// photo tags Claude may pick (server/story.js TAGS — the same keys, in the same order) + how the app shows each; a parent's own tag shows as typed
+const PHOTO_TAGS = [['kids', '🧒', 'เด็กๆ', 'Kids'], ['family', '👨‍👩‍👧‍👦', 'ครอบครัว', 'Family'], ['food', '🍜', 'อาหาร', 'Food'], ['dessert', '🍦', 'ของหวาน', 'Sweets'],
+  ['animals', '🐨', 'สัตว์', 'Animals'], ['nature', '🌳', 'ธรรมชาติ', 'Nature'], ['beach', '🏖️', 'ชายหาด', 'Beach'], ['water', '💦', 'เล่นน้ำ', 'Water'],
+  ['playground', '🛝', 'สนามเด็กเล่น', 'Playground'], ['ride', '🎢', 'เครื่องเล่น', 'Rides'], ['transport', '🚌', 'รถ เรือ รถไฟ', 'Transport'], ['plane', '✈️', 'เครื่องบิน', 'Plane'],
+  ['city', '🏙️', 'ในเมือง', 'City'], ['view', '🌄', 'วิว', 'View'], ['museum', '🏛️', 'พิพิธภัณฑ์', 'Museum'], ['art', '🎨', 'ศิลปะ', 'Art'], ['shop', '🛍️', 'ช้อปปิ้ง', 'Shopping'],
+  ['stay', '🛏️', 'ที่พัก', 'Stay'], ['sleep', '😴', 'หลับ', 'Sleeping'], ['play', '🧸', 'เล่น', 'Playing'], ['walk', '🚶', 'เดินเล่น', 'Walking'], ['night', '🌙', 'กลางคืน', 'Night'],
+  ['rain', '🌧️', 'ฝน', 'Rain'], ['funny', '😂', 'ขำๆ', 'Funny'], ['selfie', '🤳', 'เซลฟี่', 'Selfie'], ['sign', '🪧', 'ป้าย', 'Signs'], ['character', '🐭', 'ตัวการ์ตูน', 'Characters']];
+const tagLabel = (k) => { const x = PHOTO_TAGS.find((t) => t[0] === k); return x ? `${x[1]} ${L(x[2], x[3])}` : `#${k}`; };
+const tagsOf = (m) => (Array.isArray(m && m.tags) ? m.tags : []);
 const imgT = (m) => m.local || `/media/${encodeURIComponent(m.id)}/t`;
 const imgF = (m) => m.local || `/media/${encodeURIComponent(m.id)}`;
 const LOC = () => (lang === 'th' ? 'th-TH' : 'en-GB');

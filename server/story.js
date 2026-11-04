@@ -5,6 +5,8 @@ const Anthropic = require('@anthropic-ai/sdk');
 const SDK = Anthropic.default || Anthropic;
 
 const enabled = () => !!process.env.ANTHROPIC_API_KEY;
+// Photos go to Claude only with the owner's explicit switch (PHOTO_AI=1 on Railway) on top of the key — the PRD's default is "no photos to an AI"
+const photoEnabled = () => enabled() && /^(1|true|yes|on)$/i.test(String(process.env.PHOTO_AI || ''));
 const MODEL = () => process.env.STORY_MODEL || 'claude-sonnet-5-5';
 let client = null;
 const api = () => (client = client || new SDK());   // reads ANTHROPIC_API_KEY / ANTHROPIC_BASE_URL
@@ -248,4 +250,63 @@ async function translate({ items, signal }) {
   return out;
 }
 
-module.exports = { parseQuiz, enabled, writeStory, askGuide, translate, clean, onUsage, SDK };
+// ----- look at today's photos: a caption, a few tags and the stop each photo belongs to (JSON back, one call per day)
+// The fixed tag list — the same keys as public/core.js PHOTO_TAGS (the app shows them in Thai/English); Claude may only pick from it.
+const TAGS = ['kids', 'family', 'food', 'dessert', 'animals', 'nature', 'beach', 'water', 'playground', 'ride', 'transport', 'plane', 'city', 'view',
+  'museum', 'art', 'shop', 'stay', 'sleep', 'play', 'walk', 'night', 'rain', 'funny', 'selfie', 'sign', 'character'];
+function photoPrompt(lang) {
+  const shape = '[{"id":"…","cap":"…","tags":["food","kids"],"place":"…"}]';
+  const base = lang === 'en'
+    ? 'Look at each photo from one day of a family trip (two small children) and write, for the family\'s own memory book: '
+      + '"cap" = a caption of at most 12 words in the parents\' voice ("we", past tense), saying what is in the picture; '
+      + '"tags" = 1 to 4 tags chosen ONLY from this list: ' + TAGS.join(', ') + '; '
+      + '"place" = which of the day\'s stops the photo belongs to, copied exactly from the STOPS list, or "" when unsure. '
+      + 'Never name or guess who a person is: say "the kids", "big sister", "little brother", "Mum", "Dad". Never guess a place that is not in the list. '
+      + 'Do not describe faces, bodies or clothing in detail; say what they were doing. Reply with JSON only — no prose, no code fence: ' + shape
+    : 'ดูรูปแต่ละรูปจากหนึ่งวันของทริปครอบครัว (ลูกเล็กสองคน) แล้วเขียนสำหรับสมุดความทรงจำของครอบครัวเอง: '
+      + '"cap" = คำบรรยายรูปไม่เกิน 15 คำ เล่าแบบพ่อแม่ ใช้ "เรา" ว่าในรูปมีอะไร เกิดอะไรขึ้น; '
+      + '"tags" = แท็ก 1–4 คำ เลือกได้เฉพาะจากรายการนี้: ' + TAGS.join(', ') + '; '
+      + '"place" = รูปนี้อยู่ที่จุดแวะไหนของวัน ให้คัดลอกชื่อจากรายการ STOPS ตรงๆ หรือ "" ถ้าไม่แน่ใจ '
+      + 'ห้ามเรียกชื่อหรือเดาว่าใครเป็นใคร ให้ใช้ "เด็กๆ" "พี่" "น้อง" "แม่" "พ่อ" ห้ามเดาสถานที่ที่ไม่อยู่ในรายการ '
+      + 'ไม่บรรยายหน้าตา รูปร่าง หรือเสื้อผ้าโดยละเอียด เล่าว่ากำลังทำอะไร ตอบเป็น JSON เท่านั้น ไม่มีคำอธิบาย ไม่มี code fence: ' + shape;
+  return base + NATURAL[lang === 'en' ? 'en' : 'th'];
+}
+// photos = [{id, jpeg: Buffer}] (the 520 px thumbnails, never the full picture), context = the day's title and stop names.
+// Resolves {id: {cap, tags, place}} for the ids it was given; tags outside TAGS and places outside the list are dropped.
+async function describePhotos({ lang, photos, context, signal }) {
+  const en = lang === 'en';
+  const stops = (context.stops || []).filter(Boolean);
+  const head = `${en ? 'DAY' : 'วัน'}: ${context.title || ''}
+STOPS: ${stops.length ? stops.map((s) => `"${s}"`).join(', ') : '(none)'}`;
+  const content = [{ type: 'text', text: head }];
+  for (const p of photos) {
+    content.push({ type: 'text', text: `id: ${p.id}` });
+    content.push({ type: 'image', source: { type: 'base64', media_type: 'image/jpeg', data: p.jpeg.toString('base64') } });
+  }
+  const stream = api().beta.messages.stream({
+    model: MODEL(),
+    max_tokens: 2000,
+    betas: ['server-side-fallback-2026-07-01'],
+    fallbacks: 'default',
+    output_config: { effort: 'low' },
+    system: photoPrompt(lang),
+    messages: [{ role: 'user', content }],
+  }, { signal });
+  const msg = await stream.finalMessage();
+  noteUsage(msg);
+  if (msg.stop_reason === 'refusal') throw Object.assign(new Error('refusal'), { code: 'refusal' });
+  const raw = msg.content.filter((b) => b.type === 'text').map((b) => b.text).join('');
+  const a = raw.indexOf('['), z = raw.lastIndexOf(']');
+  let arr = [];
+  try { arr = JSON.parse(raw.slice(a, z + 1)); } catch (_) { throw Object.assign(new Error('bad json'), { code: 'failed' }); }
+  const ids = new Set(photos.map((p) => p.id)), stopSet = new Set(stops), out = {};
+  for (const x of Array.isArray(arr) ? arr : []) {
+    if (!x || !ids.has(x.id)) continue;
+    const tags = [...new Set((Array.isArray(x.tags) ? x.tags : []).map((t) => String(t).trim().toLowerCase()).filter((t) => TAGS.includes(t)))].slice(0, 4);
+    const place = typeof x.place === 'string' && stopSet.has(x.place.trim()) ? x.place.trim() : '';
+    out[x.id] = { cap: clean(String(x.cap || '')).replace(/\s+/g, ' ').slice(0, 160), tags, place };
+  }
+  return out;
+}
+
+module.exports = { parseQuiz, enabled, photoEnabled, writeStory, askGuide, translate, describePhotos, TAGS, clean, onUsage, SDK };

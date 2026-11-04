@@ -94,6 +94,7 @@ ok((await put('/api/b/entries/q-view-0001', { trip: T, day: 1, kind: 'quote', ch
 ok((await state(vck)).trips.length === 2, 'viewer can read the shelf');
 
 // ---- photos
+ok((await state()).features.photoAi === false && (await fetch(BASE + '/api/b/photos/ai', { method: 'POST', headers: H, body: JSON.stringify({ trip: T, day: 1 }) })).status === 501, 'photos never go to Claude unless PHOTO_AI is switched on (501)');
 const raw = await sharp({ create: { width: 3200, height: 2400, channels: 3, background: '#3b82f6' } })
   .withExif({ IFD0: { Make: 'GPSCam' }, IFD3: { GPSLatitudeRef: 'N', GPSLatitude: '22/1 21/1 0/1', GPSLongitudeRef: 'E', GPSLongitude: '114/1 4/1 0/1' } }).jpeg().toBuffer();
 const up = (id, q = `trip=${T}&day=1`, h = { 'x-mb': '1', cookie: ck }) => fetch(`${BASE}/api/b/media/${id}?${q}`, { method: 'PUT', headers: { ...h, 'content-type': 'image/jpeg' }, body: raw });

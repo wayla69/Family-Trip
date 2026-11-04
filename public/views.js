@@ -75,6 +75,7 @@ function render() {
     else if (sec === 'offline') html = isEditor() ? viewOffline(t) : viewHub(t);
     else if (sec === 'firsts') html = viewFirsts(t);
     else if (sec === 'spend') html = isEditor() ? viewSpend(t) : viewHub(t);
+    else if (sec === 'photos') html = viewPhotos(t);
     else html = viewHub(t);
   } else if (p[0] === 'passport') html = viewPassport(p[1], p[2]);
   else if (p[0] === 'notebook') html = viewNotebook();
@@ -418,9 +419,10 @@ function viewHub(t) {
     has.prep ? tile('prep', `#/t/${esc(t.id)}/prep`, esc([(n.pack || []).length && L('จัดกระเป๋า', 'Packing'), n.visa && L('วีซ่า', 'Visa'), n.bio && L('ด่านกักกัน', 'Biosecurity'), n.car && L('รถเช่า', 'The van'), n.ifthen && n.ifthen.book && L('จองล่วงหน้า', 'Book ahead'), n.prices && L('ค่าเข้า', 'Prices')].filter(Boolean).join(' · '))) : '',
     has.learn ? tile('learn', `#/t/${esc(t.id)}/learn`, esc([learnN && L(`${learnN} เรื่อง`, `${learnN} cards`), (n.wild || []).length && (n.wildLabel ? `${T(n.wildLabel.short)} ${n.wild.length}` : L(`สัตว์ ${n.wild.length} ชนิด`, `${n.wild.length} animals`)), quizN && L(`คำถาม ${quizN} ข้อ`, `${quizN} questions`), (n.general || []).length && L('คำศัพท์', 'Words')].filter(Boolean).join(' · '))) : '',
     tile('firsts', `#/t/${esc(t.id)}/firsts`, esc(L(`${st.firsts} ครั้งแรก`, `${st.firsts} firsts`))),
+    st.photos ? `<a class="tile t-photos" href="#/t/${esc(t.id)}/photos"><span class="e">${ic('camera')}</span><b>${L('รูปตามแท็ก', 'Photos by tag')}</b><small>${esc(((n) => (n ? L(`${st.photos} รูป · ${n} แท็ก`, `${st.photos} photos · ${n} tags`) : L(`${st.photos} รูป · ยังไม่มีแท็ก`, `${st.photos} photos · no tags yet`)))(new Set(mediaOf(t.id).flatMap(tagsOf)).size))}</small></a>` : '',
     `<a class="tile" href="#/passport"><span class="e">${ic('passport')}</span><b>${L('พาสปอร์ตเด็กๆ', "Kids' passports")}</b><small>${esc(kids.map((k) => `${kidName(k.slug)} ${t.days.filter((_, j) => dayStamped(t, j) || ticked(t, 'stamp.d' + j, k.slug)).length}`).join(' · '))} ${L('ตรา', 'stamps')}</small></a>`,
     tile('hearts', `#/t/${esc(t.id)}/hearts`, esc(hs.length ? L(`${hs.length} ดวงถึงเด็กๆ`, `${hs.length} for the kids`) : L('ส่งหัวใจถึงเด็กๆ', 'Send the kids a heart'))),
-    ed && spendOf(t.id).length ? `<a class="tile t-spend" href="#/t/${esc(t.id)}/spend"><span class="e">💸</span><b>${L('ค่าใช้จ่าย', 'Spending')}</b><small>${esc(sumMoney(spendOf(t.id)))}</small></a>` : '',
+    ed && spendOf(t.id).length ? `<a class="tile t-spend" href="#/t/${esc(t.id)}/spend"><span class="e">${ic('money')}</span><b>${L('ค่าใช้จ่าย', 'Spending')}</b><small>${esc(sumMoney(spendOf(t.id)))}</small></a>` : '',
     `<a class="tile" href="#/notebook"><span class="e">${ic('notebook')}</span><b>${L('สมุดโน้ตนักเดินทาง', 'Travel notebook')}</b><small>${esc(L(`${S.reviews.filter((r) => r.trip === t.id).length} รีวิวในเล่มนี้`, `${S.reviews.filter((r) => r.trip === t.id).length} reviews in this book`))}</small></a>`,
     ed ? tile('offline', `#/t/${esc(t.id)}/offline`, esc(!off.got ? L('ยังไม่ได้เก็บ — กดก่อนขึ้นเครื่อง', 'Not stored yet — tap before the flight')
       : off.stale ? L(`เก็บเมื่อ ${off.when} · มีรูปใหม่ ${off.fresh} รูป กดเก็บเพิ่ม`, `Stored ${off.when} · ${off.fresh} new photo${off.fresh > 1 ? 's' : ''}, tap to top up`) : L(`เก็บไว้ในเครื่องแล้ว · ${off.when}`, `Stored on this phone · ${off.when}`)), off.got && !off.stale ? '' : 'warn') : '',
@@ -806,6 +808,16 @@ function favouritesHtml(t) {
 function photoBtn(t, m) {
   return `<button data-a="lb" data-v="${esc(m.id)}" data-t="${esc(t.id)}" aria-label="${esc(m.caption || L('รูป', 'Photo'))}"><img loading="lazy" src="${esc(imgT(m))}" alt="">${m.highlight ? '<span class="star">⭐</span>' : ''}${m.caption ? `<span class="cap">${esc(m.caption)}</span>` : ''}${m.pending ? '<span class="cap">⏳</span>' : ''}</button>`;
 }
+// the day's photos by stop (media.place, from "look at today's photos" or the lightbox): one mosaic per place in the order the stops were
+// first photographed, the photos with no place last and unlabelled; a day with no places at all is one plain mosaic
+function mosaicByPlace(t, ph) {
+  if (!ph.length) return '';
+  const groups = [], at = {};
+  for (const m of ph) { const k = (m.place || '').trim(); if (!(k in at)) { at[k] = groups.length; groups.push({ place: k, ph: [] }); } groups[at[k]].ph.push(m); }
+  if (groups.length === 1 && !groups[0].place) return `<div class="mosaic">${ph.map((m) => photoBtn(t, m)).join('')}</div>`;
+  groups.sort((a, b) => (a.place ? 0 : 1) - (b.place ? 0 : 1));
+  return groups.map((g) => `<div class="phgrp">${g.place ? `<div class="label">📍 ${esc(g.place)}</div>` : ''}<div class="mosaic">${g.ph.map((m) => photoBtn(t, m)).join('')}</div></div>`).join('');
+}
 // the other language under a text (Thai ↔ English), when "translate this day" has run — the book reads in both
 const trLine = (e) => (e && e.tr ? `<span class="tr" lang="${/[\u0E00-\u0E7F]/.test(e.tr) ? 'th' : 'en'}">${esc(e.tr)}</span>` : '');
 function quoteCall(e, pick) {
@@ -835,7 +847,7 @@ function dayPage(t, i) {
 ${route.length ? `<aside class="route"><span class="label">${L('ที่ไปวันนี้', 'Getting around')}</span><ol>${route.map((p) => `<li class="${visited.has(p.key) ? 'done' : ''}"><b>${placeA(t, p)}</b>${visited.has(p.key) ? `<small>${L('ไปแล้ว', 'visited')} ✓</small>` : ''}</li>`).join('')}</ol></aside>` : '<div></div>'}
 <div>
 ${sum ? `<p class="daysum">${esc(sum.text)}${trLine(sum)}</p>` : ''}
-${ph.length ? `<div class="mosaic">${ph.map((m) => photoBtn(t, m)).join('')}</div>` : ''}
+${mosaicByPlace(t, ph)}
 ${audioOf(t.id, i).length ? `<div class="clips noprint">${audioOf(t.id, i).map((m) => `<div class="clip"><span>🎙️ ${esc(m.caption || L('เสียงจากวันนี้', 'A voice from today'))}</span>${clipPlayer(m)}</div>`).join('')}</div>` : ''}
 ${timeline.length ? `<ol class="tl">${timeline.map((x) => `<li><time>${esc(fmtTime(x.at, t.timezone))}</time><div>${x.h}</div></li>`).join('')}</ol>` : ''}
 ${note ? `<div class="call calm"><span class="lbl">${L('บันทึกพ่อแม่', "Parents' note")}</span>${esc(note.text)}${trLine(note)}</div>` : ''}
@@ -993,6 +1005,17 @@ function msgBlock(t, i, dk) {
 <button class="btn ghost small" data-a="storystop" id="msgstop" hidden>■ ${L('หยุด', 'Stop')}</button>
 <button class="btn small" data-a="share" data-src="msg" data-t="${esc(t.id)}" data-d="${i}" id="msgsend"${dr ? '' : ' hidden'}>${navigator.share ? `📤 ${L('ส่ง', 'Send')}` : `📋 ${L('คัดลอก', 'Copy')}`}</button>
 <span class="label" id="msgmsg"></span></div></section>`;
+}
+
+/* ---------- look at today's photos (record page, editors, only with the owner's PHOTO_AI switch): Claude sees the day's small
+   thumbnails once, on a press, and writes a caption where there is none, a few tags from PHOTO_TAGS and the stop each photo belongs to ---------- */
+function photoAiBlock(t, i) {
+  if (!isEditor() || !S.features.photoAi) return '';
+  const ph = mediaOf(t.id, i), todo = ph.filter((m) => !m.ai && !m.pending).length, seen = ph.length - todo;
+  if (!ph.length) return '';
+  return `<section class="blk phaiblk"><h3>👀 ${L('ให้ Claude ดูรูปวันนี้', 'Claude looks at today’s photos')} <span class="label">${L(`ดูแล้ว ${seen}/${ph.length}`, `${seen}/${ph.length} seen`)}</span></h3>
+<p class="label">${L('ส่งรูปย่อของวันนี้ (ไม่ใช่ไฟล์เต็ม ไม่มี GPS) ไปให้ Claude ครั้งละไม่เกิน 12 รูป พร้อมชื่อจุดแวะของวัน · ได้คำบรรยายรูป (เฉพาะรูปที่ยังไม่มี) แท็ก และจัดกลุ่มตามสถานที่ · กดเองทุกครั้ง ไม่ส่งอัตโนมัติ', 'Sends today’s small thumbnails (never the full file, no GPS) to Claude, up to 12 a press, with the day’s stop names · back come a caption (only where there is none), tags and the stop each photo belongs to · only when you press, never by itself')}</p>
+<div class="row" style="margin-top:6px"><button class="btn small" data-a="photoai" data-t="${esc(t.id)}" data-d="${i}" id="phaigo"${todo ? '' : ' disabled'}>👀 ${todo ? L(`ดูรูปที่ยังไม่ได้ดู (${Math.min(todo, 12)})`, `Look at the new ones (${Math.min(todo, 12)})`) : L('ดูครบแล้ว', 'All seen')}</button>${seen ? `<button class="btn ghost small" data-a="photoai" data-all="1" data-t="${esc(t.id)}" data-d="${i}">${L('ดูใหม่ทั้งวัน', 'Look again at the whole day')}</button>` : ''}<a class="btn ghost small" href="#/t/${esc(t.id)}/photos">🏷️ ${L('รูปตามแท็ก', 'Photos by tag')}</a></div></section>`;
 }
 
 /* ---------- both languages (record page): Claude translates the day's words Thai ↔ English; shown under each text in the book ---------- */
@@ -1546,6 +1569,7 @@ ${planHtml(t, i, i === now) ? `<section class="blk planblk">${planHtml(t, i, i =
 <section class="blk"><h3>📷 ${L('รูป', 'Photos')} <span class="label">${ph.length}</span></h3>
 <div class="row"><button class="btn" type="button" data-a="pickphotos" data-fpick data-t="${esc(t.id)}" data-d="${i}">＋ ${L('เพิ่มรูป', 'Add photos')}</button><span class="progress" id="prog2"></span></div>
 ${ph.length ? `<div class="mosaic" style="margin-top:10px">${ph.map((m) => photoBtn(t, m)).join('')}</div>` : ''}${upBlock()}</section>
+${photoAiBlock(t, i)}
 ${clipsBlock(t, i)}
 
 <section class="blk"><h3>💬 ${L('คำพูดน่ารัก', 'Things they said')}</h3>
@@ -1640,6 +1664,23 @@ function fxResult(t) {
   const r = toThb(spendOf(t.id));
   return r.missing.length ? L(`ใส่เรต ${r.missing.join(', ')} เพื่อดูยอดรวมเป็นบาท`, `Add a rate for ${r.missing.join(', ')} to see the total in baht`)
     : `${L('ทั้งทริป', 'Whole trip')} <b>≈ ${esc(fmtMoney(Math.round(r.thb), 'THB'))}</b>`;
+}
+/* ---------- every photo of the book, by tag: chips filter in place (no re-render), photos grouped by day → stop ---------- */
+let photoTag = '';   // the tag chip pressed on the photos page (this visit)
+function viewPhotos(t) {
+  const ph = mediaOf(t.id), counts = {};
+  ph.forEach((m) => tagsOf(m).forEach((k) => { counts[k] = (counts[k] || 0) + 1; }));
+  const keys = Object.keys(counts).sort((a, b) => counts[b] - counts[a] || a.localeCompare(b));
+  if (!keys.includes(photoTag)) photoTag = '';
+  const days = t.days.map((d, i) => ({ i, d, ph: ph.filter((m) => m.day === i) })).filter((x) => x.ph.length);
+  const loose = ph.filter((m) => m.day === null || m.day === undefined);
+  const grp = (list) => mosaicByPlace(t, list);
+  return `<h1 class="h2">📷 ${L('รูปทั้งเล่ม', 'Every photo')} <span class="label">${ph.length}</span></h1>
+<p class="lede">${keys.length ? L('แตะแท็กเพื่อกรอง · แท็กมาจากปุ่ม “ให้ Claude ดูรูปวันนี้” หรือพิมพ์เองในหน้าต่างรูป', 'Tap a tag to filter · tags come from “Claude looks at today’s photos” or are typed in the photo viewer')
+    : L('ยังไม่มีแท็ก — ในหน้าบันทึกวัน กด “ให้ Claude ดูรูปวันนี้” หรือพิมพ์แท็กเองในหน้าต่างรูป', 'No tags yet — on a day’s record page press “Claude looks at today’s photos”, or type tags in the photo viewer')}</p>
+${keys.length ? `<div class="chips" id="phtags"><button class="chip" data-a="phtag" data-v="" aria-pressed="${!photoTag}">${L('ทั้งหมด', 'All')} ${ph.length}</button>${keys.map((k) => `<button class="chip" data-a="phtag" data-v="${esc(k)}" aria-pressed="${photoTag === k}">${esc(tagLabel(k))} ${counts[k]}</button>`).join('')}</div>` : ''}
+<div id="phlist">${days.map((x) => `<section class="blk phday" data-day="${x.i}"><h3>${L('วันที่', 'Day')} ${x.i + 1} <span class="label">${esc(fmtDay(x.d.date, { day: 'numeric', month: 'short' }))} · ${esc(T(x.d.title))}</span></h3>${grp(x.ph)}</section>`).join('')}
+${loose.length ? `<section class="blk phday"><h3>${L('ไม่ระบุวัน', 'No day')}</h3>${grp(loose)}</section>` : ''}</div>`;
 }
 function viewSpend(t) {
   const all = spendOf(t.id);

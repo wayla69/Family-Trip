@@ -402,6 +402,29 @@ const A = {
     if (navigator.share) { try { await navigator.share({ text, url }); } catch (e) { if (e.name !== 'AbortError') toast(L('แชร์ไม่สำเร็จ', 'Could not share')); } return; }
     try { await navigator.clipboard.writeText(url); toast(L('คัดลอกลิงก์แล้ว', 'Link copied')); } catch (_) { toast(url); }
   },
+  // look at today's photos: the server sends the day's unseen thumbnails to Claude and saves caption/tags/place; then the state reloads
+  async photoai(b) {
+    if (!navigator.onLine) { toast(L('ต้องต่อเน็ตเพื่อให้ Claude ดูรูป', 'Claude needs a connection to look')); return; }
+    if (queue.length) { toast(L('รอให้รูปส่งเสร็จก่อน แล้วค่อยให้ดู', 'Wait for the photos to upload first')); return; }
+    const btns = $$('.phaiblk button'); btns.forEach((x) => { x.disabled = true; }); b.setAttribute('aria-busy', 'true');
+    try {
+      const r = await api('POST', '/api/b/photos/ai', { trip: b.dataset.t, day: +b.dataset.d, lang, all: !!b.dataset.all }); aiUseAt = 0;
+      await load(); safeRender();
+      toast(r.left ? L(`ดูแล้ว ${r.n} รูป · เหลืออีก ${r.left} กดอีกครั้ง`, `${r.n} photos seen · ${r.left} more, press again`) : L(`ดูแล้ว ${r.n} รูป`, `${r.n} photos seen`));
+    } catch (e) {
+      btns.forEach((x) => { x.disabled = false; }); b.removeAttribute('aria-busy');
+      toast(e.code === 422 ? L('ไม่มีรูปใหม่ให้ดู', 'Nothing new to look at') : e.code === 429 ? L('วันนี้ใช้ Claude ครบจำนวนแล้ว — พรุ่งนี้ใช้ต่อได้', 'That’s all the Claude calls for today — more tomorrow') : e.code === 501 ? L('ยังไม่ได้เปิดใช้ (PHOTO_AI)', 'Not switched on (PHOTO_AI)') : L('ดูไม่สำเร็จ ลองใหม่อีกครั้ง', 'That didn’t work — try again'));
+    }
+  },
+  // photos by tag: the chip filters the page in place (hides the photos, groups and days that don't carry the tag) — never a re-render
+  phtag(b) {
+    photoTag = b.dataset.v; $$('[data-a="phtag"]').forEach((c) => c.setAttribute('aria-pressed', c.dataset.v === photoTag));
+    const t = trip(route().parts[1]); if (!t) return;
+    $$('#phlist .mosaic button[data-v]').forEach((el) => { const m = S.media.find((x) => x.id === el.dataset.v); el.hidden = !!photoTag && !tagsOf(m).includes(photoTag); });
+    $$('#phlist .phgrp').forEach((g) => { g.hidden = ![...g.querySelectorAll('.mosaic button')].some((x) => !x.hidden); });
+    $$('#phlist .mosaic').forEach((g) => { g.hidden = ![...g.querySelectorAll('button')].some((x) => !x.hidden); });
+    $$('#phlist .phday').forEach((d) => { d.hidden = ![...d.querySelectorAll('.mosaic button')].some((x) => !x.hidden); });
+  },
   // both languages: the server sends the day's untranslated words to Claude and saves each translation; then the state reloads
   async translate(b) {
     if (!navigator.onLine) { toast(L('ต้องต่อเน็ตเพื่อแปล', 'Translating needs a connection')); return; }
@@ -707,7 +730,9 @@ function drawLb() {
   lb.innerHTML = `<div class="bar"><button data-lb="close" aria-label="${L('ปิด', 'Close')}">✕</button><span class="grow">${i + 1} / ${list.length}</span>
 ${ed ? `<button data-lb="star" aria-pressed="${!!m.highlight}">${m.highlight ? '⭐' : '☆'} ${L('ชอบ', 'Fave')}</button><button data-lb="del">${L('ลบ', 'Delete')}</button>` : ''}</div>
 <div class="stage"><img src="${esc(imgF(m))}" alt="${esc(m.caption)}">${list.length > 1 ? `<button class="nav prev" data-lb="prev" aria-label="prev">‹</button><button class="nav next" data-lb="next" aria-label="next">›</button>` : ''}</div>
-<div class="capbox">${ed ? `<input id="lbcap" value="${esc(m.caption || '')}" placeholder="${L('คำอธิบายรูป', 'Caption')}" maxlength="500">` : m.caption ? `<p>${esc(m.caption)}</p>` : ''}</div>`;
+<div class="capbox">${ed ? `<input id="lbcap" value="${esc(m.caption || '')}" placeholder="${L('คำอธิบายรูป', 'Caption')}" maxlength="500">` : m.caption ? `<p>${esc(m.caption)}</p>` : ''}
+${ed ? `<div class="tagrow"><input id="lbtags" value="${esc(tagsOf(m).join(', '))}" placeholder="${L('แท็ก คั่นด้วยจุลภาค เช่น food, kids', 'Tags, comma-separated, e.g. food, kids')}" maxlength="200"><input id="lbplace" value="${esc(m.place || '')}" placeholder="${L('ที่ไหน (จุดแวะ)', 'Where (the stop)')}" maxlength="120"></div>` : ''}
+${tagsOf(m).length || m.place ? `<div class="tags">${m.place ? `<span class="tagc">📍 ${esc(m.place)}</span>` : ''}${tagsOf(m).map((k) => `<span class="tagc">${esc(tagLabel(k))}</span>`).join('')}</div>` : ''}</div>`;
   lb.hidden = false;
 }
 function lbAct(k, btn) {
@@ -726,6 +751,14 @@ function saveCaption(inp) {
   const m = lbState && lbState.list[lbState.i]; if (!m || m.caption === inp.value) return;
   m.caption = inp.value;
   enqueue({ method: 'PATCH', url: '/api/b/media/' + encodeURIComponent(m.id), body: { caption: inp.value }, local: { coll: 'media', id: m.id, row: { caption: inp.value } } });
+}
+// the lightbox's tags ("food, kids" → ['food','kids'], at most 10) and place: saved like a caption when the box is left
+function saveTags(inp) {
+  const m = lbState && lbState.list[lbState.i]; if (!m) return;
+  const body = inp.id === 'lbplace' ? { place: inp.value.trim().slice(0, 120) } : { tags: [...new Set(inp.value.split(/[,，]/).map((x) => x.trim().toLowerCase().slice(0, 24)).filter(Boolean))].slice(0, 10) };
+  if (JSON.stringify(body[inp.id === 'lbplace' ? 'place' : 'tags']) === JSON.stringify(inp.id === 'lbplace' ? m.place || '' : tagsOf(m))) return;
+  Object.assign(m, body);
+  enqueue({ method: 'PATCH', url: '/api/b/media/' + encodeURIComponent(m.id), body, local: { coll: 'media', id: m.id, row: body } });
 }
 
 /* ---------- sheet ---------- */
@@ -751,7 +784,7 @@ document.addEventListener('click', (e) => {
   if (e.target.id === 'scrim') closeSheet();
 });
 document.addEventListener('input', (e) => { const el = e.target; if (el.dataset && el.dataset.fx) { const fx = ls('fx') || {}, v = parseFloat(String(el.value).replace(',', '.')); if (v > 0 && v < 100000) fx[el.dataset.fx] = v; else delete fx[el.dataset.fx]; ls('fx', fx); const t = trip(route().parts[1]), r = $('#fxres'); if (t && r) r.innerHTML = fxResult(t); document.querySelectorAll('.fxa').forEach((x) => { const rows = spendOf(t.id).filter((s2) => s2.cur === x.dataset.fxc); x.textContent = thbLine(rows); }); } if (el.dataset && el.dataset.lc) { const v = ls('lostTel') || ['', '']; v[+el.dataset.lc] = el.value.slice(0, 40); ls('lostTel', v); } if (el.dataset && el.dataset.draft) drafts[el.dataset.draft] = el.value; if (el.id === 'eatq') { eatQ = el.value.trim(); eatFilter(); } if (el.id === 'bookq') { bookQ = el.value; const r = $('#bookres'), t = trip(route().parts[1]); if (r && t) r.innerHTML = bookResults(t); } });
-document.addEventListener('focusout', (e) => { const el = e.target; if (el.dataset && el.dataset.aBlur) saveBlur(el); if (el.id === 'lbcap') saveCaption(el); });
+document.addEventListener('focusout', (e) => { const el = e.target; if (el.dataset && el.dataset.aBlur) saveBlur(el); if (el.id === 'lbcap') saveCaption(el); if (el.id === 'lbtags' || el.id === 'lbplace') saveTags(el); });
 document.addEventListener('focusout', (e) => {   // a voice memo's caption ("who said what") saves when the box is left, like a photo caption
   const el = e.target; if (!el.classList || !el.classList.contains('clipcap')) return;
   const id = el.dataset.v, m = S && S.media.find((x) => x.id === id), cap = el.value.trim();

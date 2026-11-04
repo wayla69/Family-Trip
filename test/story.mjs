@@ -21,15 +21,18 @@ const mock = http.createServer((req, res) => {
   let body = ''; req.on('data', (d) => { body += d; });
   req.on('end', async () => {
     const b = JSON.parse(body); calls.push({ url: req.url, headers: req.headers, body: b });
-    const mc = b.messages[0].content, facts = typeof mc === 'string' ? mc : mc.map((x) => x.text).join('\n');   // ask-the-guide sends blocks
+    const mc = b.messages[0].content, facts = typeof mc === 'string' ? mc : mc.map((x) => x.text || '').join('\n');   // ask-the-guide sends blocks; photos send image blocks too
     res.writeHead(200, { 'content-type': 'text/event-stream' });
     const ev = (type, data) => res.write(`event: ${type}\ndata: ${JSON.stringify({ type, ...data })}\n\n`);
     ev('message_start', { message: { id: 'msg_1', type: 'message', role: 'assistant', model: b.model, content: [], stop_reason: null, stop_sequence: null, usage: { input_tokens: 10, output_tokens: 0 } } });
     ev('content_block_start', { index: 0, content_block: { type: 'text', text: '' } });
     const refuse = facts.includes('REFUSE'), slow = facts.includes('SLOW');
     const trans = String(b.system).startsWith('Translate');
+    const photo = String(b.system).includes('"cap"');   // look at today's photos: JSON per id; a stop from the STOPS line, plus junk that must be dropped
+    const pids = [...facts.matchAll(/^id: (\S+)$/gm)].map((m) => m[1]), stop0 = (/STOPS: "([^"]*)"/.exec(facts) || [])[1] || '';
     const quiz = String(b.system).includes('"ok":');   // the memory game answers JSON (once with a bad item, which must be dropped)   // translate: answer JSON [{id, tr}] for the items it was given
-    const parts = quiz ? ['```json\n[{"q":"เมื่อวานมีมี่บอกว่าปลาอยู่ที่ไหน","a":[{"e":"💧","t":"ในน้ำ"},{"e":"🌳","t":"บนต้นไม้"},{"e":"🚌","t":"บนรถบัส"}],"ok":0},',
+    const parts = photo ? [JSON.stringify(pids.map((id, k) => (k === 0 ? { id, cap: '## เด็กๆ **ยิ้ม** หน้าปราสาท', tags: ['kids', 'Character', 'bogus', 'kids'], place: stop0 } : { id, cap: 'เรากินติ่มซำ', tags: ['food'], place: 'Narnia' })))]
+      : quiz ? ['```json\n[{"q":"เมื่อวานมีมี่บอกว่าปลาอยู่ที่ไหน","a":[{"e":"💧","t":"ในน้ำ"},{"e":"🌳","t":"บนต้นไม้"},{"e":"🚌","t":"บนรถบัส"}],"ok":0},',
       '{"q":"ไปไหนมา","a":[{"e":"🏰","t":"ดิสนีย์"},{"e":"🏖️","t":"ทะเล"},{"e":"🏔️","t":"ภูเขา"}],"ok":0},{"q":"bad","a":[{"t":"x"}],"ok":3}]\n```']
       : trans ? [JSON.stringify(JSON.parse(facts).map((x) => ({ id: x.id, tr: `${x.to}:${x.text}` })))]
       : refuse ? ['ขอโทษ'] : ['# นิทาน\n', '**กาลครั้งหนึ่ง** มีมี่บอกว่า ', '“ปลาอยู่ในน้ำเหมือนหนูเลย” ', 'ฝันดีนะ'];
@@ -55,7 +58,7 @@ const dbName = 'mb_story_' + Date.now().toString(36); await admin.query(`CREATE 
 const u = new URL(process.env.TEST_DATABASE_URL); u.pathname = '/' + dbName;
 const port = await freePort(), data = fs.mkdtempSync(path.join(os.tmpdir(), 'mb-story-'));
 const srv = spawn(process.execPath, ['server/index.js'], { cwd: process.cwd(), stdio: ['ignore', 'ignore', 'inherit'],
-  env: { ...process.env, PORT: String(port), DATA_DIR: data, DATABASE_URL: u.toString(), ANTHROPIC_API_KEY: 'test-key', ANTHROPIC_BASE_URL: `http://localhost:${mockPort}`, STORY_DAILY: '17' } });
+  env: { ...process.env, PORT: String(port), DATA_DIR: data, DATABASE_URL: u.toString(), ANTHROPIC_API_KEY: 'test-key', ANTHROPIC_BASE_URL: `http://localhost:${mockPort}`, STORY_DAILY: '17', PHOTO_AI: '1' } });
 const BASE = `http://localhost:${port}`;
 try {
   for (let i = 0; i < 80; i++) { try { if ((await fetch(BASE + '/healthz')).ok) break; } catch (_) {} await new Promise((r) => setTimeout(r, 250)); }
@@ -273,6 +276,31 @@ try {
   const fw = (await state()).entries.find((e) => e.id === `${T}.fore.all`);
   ok(rf.at(-1).ev === 'done' && fw && fw.kind === 'fore' && fw.day === null && calls.at(-1).body.system.includes('คำนำ') && calls.at(-1).body.max_tokens === 2000, 'foreword: drafted from the whole trip, saved for the book');
   ok((await put(`/api/b/entries/${T}.fore.all`, { trip: T, day: null, kind: 'fore', text: 'ทริปนี้เราไปฮ่องกง — พ่อแม่เขียนเอง' })).ok, 'foreword: a hand edit saves (no day needed)');
+  // ---- look at today's photos (PHOTO_AI=1 here): the day's unseen thumbnails go once, with the day's stop names; caption/tags/place come back
+  { const sharp = createRequire(import.meta.url)('sharp');
+    const jpg = async (c) => sharp({ create: { width: 1600, height: 1200, channels: 3, background: c } }).jpeg().toBuffer();
+    const up = async (id, color, extra = '') => (await fetch(`${BASE}/api/b/media/${id}?trip=${T}&day=1${extra}`, { method: 'PUT', headers: { 'x-mb': '1', cookie: ck, 'content-type': 'image/jpeg' }, body: await jpg(color) })).ok;
+    ok(await up('ph-ai-0001', '#3b82f6') && await up('ph-ai-0002', '#ef4444', '&caption=' + encodeURIComponent('แม่เขียนเอง')), 'photos: two uploaded on day 1, one with the parents\' caption');
+    const look = (b) => fetch(BASE + '/api/b/photos/ai', { method: 'POST', headers: H, body: JSON.stringify(b) });
+    ok((await state()).features.photoAi === true, 'photos: the feature is on with PHOTO_AI=1');
+    const bp = calls.length, rp = await look({ trip: T, day: 1, lang: 'th' }), jp = await rp.json();
+    ok(rp.ok && jp.n === 2 && jp.left === 0 && calls.length === bp + 1, `photos: one call for the two photos (n=${jp.n}, left=${jp.left})`);
+    const pc = calls.at(-1).body, blocks = pc.messages[0].content, imgs = blocks.filter((x) => x.type === 'image'), txt = blocks.filter((x) => x.type === 'text').map((x) => x.text).join('\n');
+    ok(imgs.length === 2 && imgs.every((x) => x.source.type === 'base64' && x.source.media_type === 'image/jpeg' && x.source.data.length < 120000), 'photos: two small JPEG thumbnails travel (never the full file)');
+    ok(txt.includes('STOPS:') && txt.includes('ฮ่องกงดิสนีย์แลนด์') && txt.includes('id: ph-ai-0001') && !txt.includes('ปลาอยู่ในน้ำเหมือนหนูเลย') && !txt.includes('ไอติม'), 'photos: the day\'s stop names go along, the family\'s words do not');
+    ok(pc.system.includes('"cap"') && pc.system.includes('เด็กๆ') && pc.system.includes('ห้ามเรียกชื่อ') && pc.system.includes('ห้ามใช้สำนวนแบบ AI'), 'photos: prompt — no names, no guessing, sounds like the parents');
+    const med = async (id) => (await state()).media.find((m) => m.id === id);
+    const m1 = await med('ph-ai-0001'), m2 = await med('ph-ai-0002');
+    ok(m1.caption === 'เด็กๆ ยิ้ม หน้าปราสาท' && m1.ai === true && m1.tags.join(',') === 'kids,character' && m1.place === 'Hong Kong Disneyland', `photos: caption cleaned, tags only from the list, place from the stops (${JSON.stringify([m1.caption, m1.tags, m1.place])})`);
+    ok(m2.caption === 'แม่เขียนเอง' && m2.tags.join(',') === 'food' && m2.place === '' && m2.ai === true, 'photos: the parents\' caption is kept; a place not in the list is dropped');
+    ok((await look({ trip: T, day: 1, lang: 'th' })).status === 422 && calls.length === bp + 1, 'photos: nothing unseen → 422, model not called');
+    ok((await look({ trip: T, day: 1, lang: 'en', all: true })).ok && calls.length === bp + 2 && calls.at(-1).body.messages[0].content.filter((x) => x.type === 'image').length === 2, 'photos: "look again" sends the whole day once more');
+    ok((await look({ trip: T, day: null, lang: 'th' })).status === 400 && (await look({ trip: T, day: 0, lang: 'th' })).status === 422, 'photos: needs a day; a day without photos → 422');
+    const patch = (id, b) => fetch(BASE + '/api/b/media/' + id, { method: 'PATCH', headers: H, body: JSON.stringify(b) });
+    ok((await patch('ph-ai-0002', { tags: ['Food', ' ride ', 'our own', 'food'], place: 'ไทม์สแควร์' })).ok && (await med('ph-ai-0002')).tags.join(',') === 'food,ride,our own' && (await med('ph-ai-0002')).place === 'ไทม์สแควร์', 'photos: the parents edit tags and place by hand');
+    ok((await patch('ph-ai-0002', { tags: 'food' })).status === 400 && (await patch('ph-ai-0002', { tags: Array(11).fill('x') })).status === 400, 'photos: tags must be a short list');
+    ok(!vck || (await fetch(BASE + '/api/b/photos/ai', { method: 'POST', headers: { ...H, cookie: vck.split(';')[0] }, body: '{}' })).status === 403, 'photos: relatives cannot send photos to Claude');
+    ok(!vck || (await (await fetch(BASE + '/api/b/state', { headers: { cookie: vck.split(';')[0] } })).json()).media.find((m) => m.id === 'ph-ai-0001').tags.includes('kids'), 'photos: relatives see the tags in the book'); }
   { const P = createRequire(import.meta.url)('../server/story.js').parseQuiz;
     ok(P('no json here') === null && P('[{"q":"x","a":[{"t":"a"}],"ok":0}]') === null && P('[{"q":"x","a":[{"t":"a"},{"t":"b"}],"ok":1}]')[0].a.length === 2, 'memory game parser: no JSON or too few answers → nothing kept'); }
   { const b2 = await chromium.launch({ executablePath: exe, args: ['--no-sandbox'] }); const pg2 = await (await b2.newContext({ viewport: { width: 390, height: 844 } })).newPage();
@@ -285,6 +313,21 @@ try {
     ok(await pg2.locator('.nextblk').count() === 1, 'today page: the "ready for tomorrow" button for grown-ups');
     await pg2.goto(`${BASE}/#/t/${T}/log/1`); await pg2.waitForSelector('#mquiztext:not([hidden])');
     ok((await pg2.textContent('#mquiztext')).includes('✓'), 'record page: the memory game is listed with its right answers for the grown-ups');
+    // look at today's photos: the block counts what Claude has seen; a third photo makes the button live, a press sends it and the page redraws
+    ok(await pg2.locator('.phaiblk').count() === 1 && (await pg2.textContent('.phaiblk h3')).includes('2/2') && await pg2.locator('#phaigo').isDisabled(), 'record page: "Claude looks at today\'s photos" shows 2/2 seen, nothing new to send');
+    await fetch(`${BASE}/api/b/media/ph-ai-0003?trip=${T}&day=1`, { method: 'PUT', headers: { 'x-mb': '1', cookie: ck, 'content-type': 'image/jpeg' }, body: await createRequire(import.meta.url)('sharp')({ create: { width: 800, height: 600, channels: 3, background: '#22c55e' } }).jpeg().toBuffer() });
+    await pg2.reload(); await pg2.waitForSelector('#phaigo:not([disabled])');
+    await pg2.click('#phaigo');
+    await pg2.waitForFunction(() => document.querySelector('.phaiblk h3') && document.querySelector('.phaiblk h3').textContent.includes('3/3'));
+    ok(true, 'record page: a press sends the new photo and the block shows 3/3 seen');
+    await pg2.goto(`${BASE}/#/t/${T}/book`); await pg2.waitForSelector('#d1 .phgrp');
+    ok(await pg2.locator('#d1 .phgrp').count() === 2 && (await pg2.locator('#d1 .phgrp .label').first().textContent()).includes('Hong Kong Disneyland'), 'book: the day\'s photos grouped by stop, the placed ones first');
+    await pg2.goto(`${BASE}/#/t/${T}`); await pg2.waitForSelector('.tile.t-photos');
+    await pg2.click('.tile.t-photos'); await pg2.waitForSelector('#phtags');
+    await pg2.click('#phtags [data-v="food"]');
+    ok(await pg2.locator('#phlist .mosaic button:visible').count() === 1 && await pg2.locator('#phtags [data-v="food"][aria-pressed="true"]').count() === 1, 'photos by tag: the food chip leaves one photo showing, in place');
+    await pg2.locator('#phlist .mosaic button:visible').first().click(); await pg2.waitForSelector('#lbtags');
+    ok((await pg2.inputValue('#lbtags')).includes('food') && (await pg2.textContent('#lb .tags')).includes('🍜'), 'lightbox: tags and place shown and editable');
     await b2.close(); }
   await browser.close();
 } finally {
