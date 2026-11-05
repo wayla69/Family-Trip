@@ -320,8 +320,13 @@ const A = {
         aiRun.n++; render();
         const sel = { photo: '.phaiblk', sum: '.sumblk', story: '#storyblk', talk: '.talkblk' }[k], box = $(sel);
         if (box) box.scrollIntoView({ block: 'start', behavior: 'auto' });
-        const ok = k === 'photo' ? await A.photoai($('#phaigo') || { dataset: { t: t.id, d: String(i) }, setAttribute() {}, removeAttribute() {} })
-          : await A.story({ dataset: { m: k === 'story' ? '' : k, t: t.id, d: String(i) } });
+        let ok;
+        if (k === 'photo') {   // 12 photos a call: go round until every photo of the day is seen (or Stop, or a failure)
+          for (let round = 0; round < 10 && !aiRun.stop; round++) {
+            ok = await A.photoai($('#phaigo') || { dataset: { t: t.id, d: String(i) }, setAttribute() {}, removeAttribute() {} });
+            if (!ok || !ok.left) break;
+          }
+        } else ok = await A.story({ dataset: { m: k === 'story' ? '' : k, t: t.id, d: String(i) } });
         if (!ok) break;
         done++;
       }
@@ -442,7 +447,7 @@ const A = {
     try {
       const r = await api('POST', '/api/b/photos/ai', { trip: b.dataset.t, day: +b.dataset.d, lang, all: !!b.dataset.all }); aiUseAt = 0;
       await load(); safeRender();
-      ok = true;
+      ok = r;   // truthy: the answer itself, so "do it all" knows how many are left
       const star = r.starred ? L(` · ติดดาว ⭐ ให้ ${r.starred} รูปเด่น (แตะรูปเพื่อเปลี่ยน)`, ` · ⭐ on ${r.starred} best photo${r.starred > 1 ? 's' : ''} (tap a photo to change)`) : '';
       toast((r.left ? L(`ดูแล้ว ${r.n} รูป · เหลืออีก ${r.left} กดอีกครั้ง`, `${r.n} photos seen · ${r.left} more, press again`) : L(`ดูแล้ว ${r.n} รูป`, `${r.n} photos seen`)) + star);
     } catch (e) {
