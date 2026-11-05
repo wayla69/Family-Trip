@@ -50,7 +50,7 @@ jobs:
           TEST_S3_SECRET: S3RVER
       - name: Upload screenshots on failure
         if: failure()
-        uses: actions/upload-artifact@v5
+        uses: actions/upload-artifact@v6
         with:
           name: mb-shots
           path: ${{ runner.temp }}/mb-shots
