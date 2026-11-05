@@ -520,6 +520,16 @@ function snippet(e, alts) {
   const re = new RegExp(`(${[...alts].sort((a, b) => b.length - a.length).map((w) => wre(w).source).join('|')})`, 'gi');
   return seg.split(re).map((part, k) => (k % 2 ? `<mark>${esc(part)}</mark>` : esc(part))).join('');
 }
+// photos that match every word (or its synonyms) in their caption, place or tags — a tag matches by its key and its Thai and English names
+function photoFind(t, q) {
+  const terms = q.toLowerCase().split(/\s+/).filter(Boolean); if (!terms.length) return [];
+  const alts = terms.map(termAlts);
+  return mediaOf(t.id).filter((m) => {
+    const tags = tagsOf(m).flatMap((k) => { const x = PHOTO_TAGS.find((p) => p[0] === k); return x ? [k, x[2], x[3]] : [k]; });
+    const hay = [m.caption, m.place, ...tags].join(' ').toLowerCase();
+    return alts.every((a) => a.some((w) => wHas(hay, w)));
+  });
+}
 let bookQ = '', bookTrip = '';
 // the last three searches that led somewhere, on this phone only
 const rememberQ = () => { const q = bookQ.trim(); if (!q) return; ls('recentq', [q, ...(ls('recentq') || []).filter((x) => x.toLowerCase() !== q.toLowerCase())].slice(0, 3)); };
@@ -527,17 +537,19 @@ const topicName = (k) => (k === 'today' ? L('แผนรายวัน', 'Day 
 function bookResults(t) {
   const q = bookQ.trim();
   if (!q) return `<p class="empty">${L('พิมพ์สิ่งที่ต้องการ เช่น หมอ แท็กซี่ ห้องน้ำ เด็กหลง — ค้นได้ทั้งภาษาไทยและอังกฤษ', 'Type what you need — doctor, taxi, toilet, lost child. Thai and English both work')}</p>`;
-  const { list, alts } = bookFind(t, q);
+  const { list, alts } = bookFind(t, q), ph = photoFind(t, q);
+  const phHtml = ph.length ? `<div class="sphotos"><p class="label">📷 ${L(`รูป ${ph.length} รูป`, `${ph.length} photo${ph.length > 1 ? 's' : ''}`)}${ph.length > 12 ? L(' · 12 รูปแรก', ' · the first 12') : ''}</p><div class="mosaic">${ph.slice(0, 12).map((m) => photoBtn(t, m)).join('')}</div></div>` : '';
+  if (!list.length && ph.length) return phHtml;
   if (!list.length) return `<p class="empty">${L(`ไม่พบ “${esc(q)}” ลองคำสั้นลงหรือคำอื่น`, `Nothing for “${esc(q)}” — try a shorter or different word`)}</p>`;
   const shown = list.slice(0, 30);
-  return `<p class="label" id="bookn">${L(`พบ ${list.length} รายการ`, `${list.length} found`)}${list.length > shown.length ? L(` · แสดง ${shown.length} อันดับแรก พิมพ์ให้เจาะจงขึ้นเพื่อกรอง`, ` · the top ${shown.length} — type more to narrow`) : ''}</p>
+  return `${phHtml}<p class="label" id="bookn">${L(`พบ ${list.length} รายการ`, `${list.length} found`)}${list.length > shown.length ? L(` · แสดง ${shown.length} อันดับแรก พิมพ์ให้เจาะจงขึ้นเพื่อกรอง`, ` · the top ${shown.length} — type more to narrow`) : ''}</p>
 <ul class="sres">${shown.map(({ e }) => `<li class="k-${e.topic}"><a href="${esc(e.href)}"${e.place ? ` data-a="eatgo" data-t="${esc(t.id)}" data-v="${esc(e.place)}"` : ''}><span class="stopic">${esc(topicName(e.topic))}</span><b>${esc((e.title[lang] || e.title.en).replace(/\s+·\s+\d+$/, ''))}</b>${e.place ? `<span class="label">${esc(T(e.area))}</span>` : ''}<span class="ssnip">${snippet(e, alts)}</span></a></li>`).join('')}</ul>`;
 }
 function viewSearch(t) {
   if (bookTrip !== t.id) { bookTrip = t.id; bookQ = ''; }
   searchIndex(t);   // built once, before the first letter
   return `<section class="tp tp-search"><h1 class="h2">${L('ค้นหาทั้งเล่ม', 'Search the whole book')}</h1>
-<p class="lede">${L('ฉุกเฉิน ที่พัก เตรียมตัว แผนรายวัน และร้านอาหาร — พิมพ์ครั้งเดียว ไม่ต้องไล่เปิดทีละหน้า', 'Emergency, stays, get ready, the day plans and places to eat — one box, no page hunting')}</p>
+<p class="lede">${L('ฉุกเฉิน ที่พัก เตรียมตัว แผนรายวัน ร้านอาหาร และรูป (คำบรรยาย แท็ก สถานที่) — พิมพ์ครั้งเดียว ไม่ต้องไล่เปิดทีละหน้า', 'Emergency, stays, get ready, the day plans, places to eat and photos (captions, tags, places) — one box, no page hunting')}</p>
 <div class="bookbar"><input id="bookq" class="field" type="search" enterkeyhint="search" autocomplete="off" value="${esc(bookQ)}" placeholder="${L('เช่น หมอ แท็กซี่ ห้องน้ำ ตั๋ว…', 'e.g. doctor, taxi, toilet, tickets…')}" aria-label="${L('ค้นหาทั้งเล่ม', 'Search the whole book')}"></div>
 ${((r) => (r.length ? `<div class="row chips recent" role="group"><span class="label">${L('ค้นล่าสุด', 'Recent')}</span>${r.map((q) => `<button class="chip" data-a="sq" data-v="${esc(q)}">${ic('search')} ${esc(q)}</button>`).join('')}</div>` : ''))(ls('recentq') || [])}
 <div class="row chips" role="group">${SUGGEST.map(([th, en]) => `<button class="chip" data-a="sq" data-v="${esc(L(th, en))}">${esc(L(th, en))}</button>`).join('')}</div>
@@ -1044,11 +1056,13 @@ function aiSteps(t, i, dk) {
 }
 // what "do it all" will run, in order: the four that make the evening (photos, summary, story, questions), skipping what is done
 const aiTodo = (t, i, dk) => aiSteps(t, i, dk).filter((s) => ['photo', 'sum', 'story', 'talk'].includes(s.k) && !s.done).map((s) => s.k);
+// Claude calls "do it all" will make: one per step, the photos one per 12 not yet seen
+const aiCalls = (t, i, dk) => aiTodo(t, i, dk).reduce((n, k) => n + (k === 'photo' ? Math.max(1, Math.ceil(mediaOf(t.id, i).filter((m) => !m.ai && !m.pending).length / 12)) : 1), 0);
 function aiPanel(t, i, dk) {
   if (!isEditor() || !S.features.story) return '';
-  const steps = aiSteps(t, i, dk), todo = aiTodo(t, i, dk);
+  const steps = aiSteps(t, i, dk), todo = aiTodo(t, i, dk), calls = aiCalls(t, i, dk);
   const all = aiRun ? `<button class="btn small" id="aiall" disabled aria-busy="true">⏳ ${L(`กำลังทำ ${aiRun.n}/${aiRun.of}…`, `Working ${aiRun.n} of ${aiRun.of}…`)}</button><button class="btn ghost small" data-a="aistop" id="aistop">■ ${L('หยุด', 'Stop')}</button>`
-    : `<button class="btn small" data-a="aiall" data-t="${esc(t.id)}" data-d="${i}" id="aiall"${todo.length ? '' : ' disabled'}>${todo.length ? `✨ ${L(`ทำทั้งหมดในครั้งเดียว (ใช้ Claude ${todo.length} ครั้ง)`, `Do it all (${todo.length} Claude call${todo.length > 1 ? 's' : ''})`)}` : `✓ ${L('ทำครบแล้ว', 'All done')}`}</button>`;
+    : `<button class="btn small" data-a="aiall" data-t="${esc(t.id)}" data-d="${i}" id="aiall"${todo.length ? '' : ' disabled'}>${todo.length ? `✨ ${L(`ทำทั้งหมดในครั้งเดียว (ใช้ Claude ${calls} ครั้ง)`, `Do it all (${calls} Claude call${calls > 1 ? 's' : ''})`)}` : `✓ ${L('ทำครบแล้ว', 'All done')}`}</button>`;
   return `<section class="blk noprint aipanel" id="aipanel"><h3>✨ ${L('คืนนี้ให้ Claude ช่วย', 'Tonight, Claude helps')} <span class="label">${esc(aiToday())}</span></h3>
 ${aiNote(L('บันทึกรูป คำพูด อารมณ์ก่อน แล้วไล่จากบนลงล่าง', 'Record photos, words and moods first, then go from the top'), L('ทุกปุ่มส่งให้ Claude เฉพาะข้อความที่บันทึกไว้ ไม่ส่งรูป ยกเว้น "ดูรูป" ที่ส่งรูปย่อของวันนี้ (ไม่ใช่ไฟล์เต็ม ไม่มี GPS) เฉพาะตอนกด · แต่ละปุ่มใช้ Claude 1 ครั้งจากโควตารายวัน · ดูรูปก่อน คำบรรยายรูปจะช่วยให้สรุปและนิทานครบขึ้น · "ทำทั้งหมด" ทำ ดูรูป → สรุป → นิทาน → คำถาม ต่อกัน ข้ามข้อที่ทำแล้ว กดหยุดได้', 'Every button sends Claude only the written notes, never photos — except "Photos", which sends today’s small thumbnails (never the full file, no GPS) when you press it · each button is one Claude call from the daily allowance · do the photos first: their captions make the summary and the story fuller · "Do it all" runs photos → summary → story → questions in turn, skipping what is done; Stop works any time'))}
 <div class="row" style="margin-top:8px">${all}</div>

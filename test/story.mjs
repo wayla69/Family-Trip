@@ -345,12 +345,34 @@ try {
     ok(calls.length === c0 + 4 && st4.media.find((m) => m.id === 'ph-all-0001').ai && e4('sum') && e4('story') && e4('talk'), `do it all: four calls in turn — photos seen, summary, story and questions saved (${calls.length - c0} calls)`);
     ok(calls.slice(c0).map((c) => (c.body.messages[0].content.some ? (c.body.messages[0].content.some((x) => x.type === 'image') ? 'photo' : 'text') : 'text')).join(',') === 'photo,text,text,text', 'do it all: the photos go first, so their captions feed the rest');
     ok(/(Photo|รูป): /.test(calls.at(-2).body.messages[0].content), 'do it all: the story is written with the photo captions among its facts');
+    // a day of 13 photos: "do it all" sees them in two rounds of up to 12 (the button counts both), then the three text calls
+    const sharp2 = createRequire(import.meta.url)('sharp');
+    for (let k = 0; k < 13; k++) await fetch(`${BASE}/api/b/media/ph-many-${String(k).padStart(4, '0')}?trip=${T}&day=3&at=${Date.now() - (13 - k) * 60000}`, { method: 'PUT', headers: { 'x-mb': '1', cookie: ck, 'content-type': 'image/jpeg' }, body: await sharp2({ create: { width: 640, height: 480, channels: 3, background: `hsl(${k * 27},70%,55%)` } }).jpeg().toBuffer() });
+    await pg2.goto(`${BASE}/#/t/${T}/log/3`); await pg2.reload(); await pg2.waitForSelector('#aiall:not([disabled])');
+    ok((await pg2.textContent('#aiall')).includes('5'), `do it all: 13 unseen photos count as two calls, five in all (${(await pg2.textContent('#aiall')).trim()})`);
+    const c1 = calls.length;
+    await pg2.click('#aiall');
+    await pg2.waitForFunction(() => { const b = document.querySelector('#aiall'); return b && b.disabled && !b.getAttribute('aria-busy') && /All done/.test(b.textContent); }, null, { timeout: 40000 });
+    const imgs3 = calls.slice(c1).map((c) => (Array.isArray(c.body.messages[0].content) ? c.body.messages[0].content.filter((x) => x.type === 'image').length : 0));
+    ok(calls.length === c1 + 5 && imgs3.join(',') === '12,1,0,0,0' && (await state()).media.filter((m) => m.day === 3 && m.ai).length === 13, `do it all: photos in rounds of 12 + 1, then summary, story, questions (${imgs3.join(',')})`);
+    // the book's search finds photos by tag (its key, its Thai or English name), by caption and by place
+    await pg2.goto(`${BASE}/#/t/${T}/search`); await pg2.waitForSelector('#bookq');
+    await pg2.fill('#bookq', 'food'); await pg2.waitForSelector('.sphotos .mosaic button');
+    ok(await pg2.locator('.sphotos [data-v="ph-ai-0002"]').count() === 1 && await pg2.locator('.sphotos [data-v="ph-ai-0001"]').count() === 0, 'search: a tag finds its photos (food → the dim sum photo only)');
+    await pg2.fill('#bookq', 'อาหาร'); await pg2.waitForTimeout(200);
+    ok(await pg2.locator('.sphotos [data-v="ph-ai-0002"]').count() === 1, 'search: the tag\'s Thai name finds it too');
+    await pg2.fill('#bookq', 'ปราสาท'); await pg2.waitForTimeout(200);
+    ok(await pg2.locator('.sphotos [data-v="ph-ai-0001"]').count() === 1, 'search: a word of the caption finds the photo');
+    await pg2.locator('.sphotos [data-v="ph-ai-0001"]').click(); await pg2.waitForSelector('#lb:not([hidden]) .stage img');
+    ok(true, 'search: a found photo opens in the photo viewer');
+    await pg2.click('[data-lb="close"]');
     await pg2.goto(`${BASE}/#/t/${T}/book`); await pg2.waitForSelector('#d1 .phgrp');
     ok(await pg2.locator('#d1 .phgrp').count() === 2 && (await pg2.locator('#d1 .phgrp .label').first().textContent()).includes('Hong Kong Disneyland'), 'book: the day\'s photos grouped by stop, the placed ones first');
     await pg2.goto(`${BASE}/#/t/${T}`); await pg2.waitForSelector('.tile.t-photos');
     await pg2.click('.tile.t-photos'); await pg2.waitForSelector('#phtags');
     await pg2.click('#phtags [data-v="food"]');
-    ok(await pg2.locator('#phlist .mosaic button:visible').count() === 1 && await pg2.locator('#phtags [data-v="food"][aria-pressed="true"]').count() === 1, 'photos by tag: the food chip leaves one photo showing, in place');
+    const nFood = (await state()).media.filter((m) => (m.tags || []).includes('food')).length;
+    ok(nFood >= 1 && await pg2.locator('#phlist .mosaic button:visible').count() === nFood && await pg2.locator('#phlist [data-v="ph-ai-0001"]:visible').count() === 0 && await pg2.locator('#phtags [data-v="food"][aria-pressed="true"]').count() === 1, `photos by tag: the food chip shows exactly the ${nFood} food photos, in place`);
     await pg2.locator('#phlist .mosaic button:visible').first().click(); await pg2.waitForSelector('#lbtags');
     ok((await pg2.inputValue('#lbtags')).includes('food') && (await pg2.textContent('#lb .tags')).includes('🍜'), 'lightbox: tags and place shown and editable');
     await b2.close(); }
