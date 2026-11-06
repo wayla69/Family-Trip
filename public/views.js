@@ -1235,7 +1235,16 @@ let vg = null, vgForm = null, vgJust = null;   // the groups · the form being f
    The PDF goes to the server once; the server extracts the text, removes private lines and values, asks Claude for the plan and
    the kids' pages, and keeps the result as a draft. The parents read the draft's summary here and press "save as a book".
    imp (sheets.js) holds the page's state: the chosen file, the slug, the running job (polled every 3 s) and the drafts. */
-const IMP_STEPS = [['text', /^text /, 'อ่านคู่มือ', 'Reading the manual'], ['structure', /^structure:/, 'แผนรายวัน', 'Day plans'], ['info', /^info:/, 'คู่มือพกพา', 'Pocket guide'], ['restaurants', /^restaurants:/, 'ร้านอาหาร', 'Restaurants'], ['kids', /^kids:/, 'หน้าของเด็กๆ', "Kids' pages"], ['thai', /^thai /, 'แปลไทย', 'Thai'], ['seed', /^seed:/, 'ประกอบเล่ม', 'Binding the book']];
+const IMP_STEPS = [['text', /^text /, 'อ่านคู่มือ', 'Reading the manual', 'อ่านคู่มือและตัดบรรทัดที่เป็นข้อมูลส่วนตัวออก', 'Reading the manual and dropping the private lines'],
+  ['structure', /^structure:/, 'แผนรายวัน', 'Day plans', 'วางแผนรายวัน จุดแวะ และเส้นทาง', 'Laying out each day, its stops and the legs between them'],
+  ['info', /^info:/, 'คู่มือพกพา', 'Pocket guide', 'เบอร์ฉุกเฉิน ที่พัก ราคา ของที่ต้องเตรียม', 'Emergency numbers, stays, prices, what to pack'],
+  ['restaurants', /^restaurants:/, 'ร้านอาหาร', 'Places to eat', 'จดร้านอาหารทุกร้านในคู่มือ ทีละย่าน', 'Every place to eat in the manual, area by area'],
+  ['kids', /^kids:/, 'หน้าของเด็กๆ', "Kids' pages", 'ภารกิจ เรื่องน่ารู้ และคำถามของแต่ละวัน', "Missions, facts and quizzes for every day"],
+  ['extras', /^extras:/, 'สัตว์ คำ และครั้งแรก', 'Animals, words & firsts', 'สัตว์ที่จะได้เจอ คำท้องถิ่น ของอร่อย ครั้งแรกของทริป และแผนที่', 'The animals, local words, tastes, firsts and the map of this trip'],
+  ['thai', /^thai /, 'แปลไทย', 'Thai', 'แปลทั้งเล่มเป็นภาษาไทย', 'Translating the whole book into Thai'],
+  ['seed', /^seed:/, 'ประกอบเล่ม', 'Binding the book', 'ประกอบเล่มและตรวจข้อมูลส่วนตัวอีกครั้ง', 'Binding the book and scanning it for private data once more']];
+const impStepName = (step) => { const k = String(step).split(/[: ]/)[0]; const row = IMP_STEPS.find(([key]) => key === k); return row ? L(row[2], row[3]) : step; };
+const impMins = (ms) => { const m = Math.round(ms / 60000); return m < 1 ? L('ไม่ถึงนาที', 'under a minute') : L(`${m} นาที`, `${m} min`); };
 function viewImport() {
   if (imp.list === null) { imp.list = 'loading'; impRefresh(); }
   const j = imp.job || { status: 'idle' }, running = j.status === 'running', on = !!S.features.story;
@@ -1243,32 +1252,53 @@ function viewImport() {
   const done = new Set(); IMP_STEPS.forEach(([k, re]) => { if (j.status === 'done' || log.some((l) => re.test(l))) done.add(k); });   // a finished job ticks every step
   const at = IMP_STEPS.findIndex(([k]) => !done.has(k));   // the step in progress
   const usd = (c) => (c && typeof c.usd === 'number' ? `≈ $${c.usd.toFixed(2)} (≈ ฿${Math.round(c.usd * 35)})` : L('ยังไม่ทราบราคา', 'cost unknown'));
-  const num = (line, key) => { const m = new RegExp(`${key} (\\d+)`).exec(line || ''); return m ? +m[1] : null; };
+  const took = (c) => ((c && c.calls) || []).reduce((a, r) => a + (r.s || 0), 0) * 1000;
+  const elapsed = running && j.started ? impMins(Date.now() - j.started) : '';
+  const logBox = `<details class="impwarn"><summary>${L('รายละเอียดทางเทคนิค', 'Technical details')}</summary><pre class="implog">${log.map(esc).join('\n')}</pre></details>`;
+  // the job card: while running it leads the page with a progress bar and the step in hand; done and error are a short banner
+  let jobCard = '';
+  if (running) {
+    const pct = Math.round((done.size / IMP_STEPS.length) * 100);
+    jobCard = `<section class="impjob running"><div class="impjobhd"><span class="e">✨</span><div><b>${L('Claude กำลังเขียนเล่ม', 'Claude is writing')} <i>${esc(j.slug || '')}</i></b>
+<small>${elapsed ? L(`ผ่านไป ${elapsed}`, `${elapsed} so far`) + ' · ' : ''}${L('ปกติใช้ 5–10 นาที · ปิดหน้านี้ได้ Claude ทำต่อเอง', 'Usually 5–10 min · you can leave this page, Claude carries on')}</small></div></div>
+<div class="impbar" role="progressbar" aria-valuenow="${pct}" aria-valuemin="0" aria-valuemax="100"><i style="width:${Math.max(4, pct)}%"></i></div>
+<ol class="impsteps">${IMP_STEPS.map(([k, , th, en, dth, den], i) => `<li class="${done.has(k) ? 'done' : i === at ? 'now' : ''}"><span>${done.has(k) ? '✓' : i === at ? '…' : i + 1}</span><div>${L(th, en)}${i === at ? `<small>${L(dth, den)}</small>` : ''}</div></li>`).join('')}</ol>${logBox}</section>`;
+  } else if (j.status === 'done') {
+    jobCard = `<section class="impjob done"><div class="impjobhd"><span class="e">🎉</span><div><b>${L('เล่มพร้อมให้ตรวจแล้ว', 'The draft is ready')} <i>${esc(j.slug || '')}</i></b><small>${L('เลื่อนลงไปดูว่ามีอะไรในเล่ม แล้วค่อยวางบนชั้น', 'Scroll down to see what is inside, then put it on the shelf')}</small></div></div>${logBox}</section>`;
+  } else if (j.status === 'error') {
+    jobCard = `<section class="impjob error"><div class="impjobhd"><span class="e">😔</span><div><b>${L('ครั้งนี้ไม่สำเร็จ', 'That did not work')} <i>${esc(j.slug || '')}</i></b><small>${esc(impErr(j.error || ''))} · ${L('ส่งใหม่ได้เลย', 'you can send it again')}</small></div></div>${logBox}</section>`;
+  }
+  const tile = (v, e, th, en) => (v ? `<div class="imptile"><span>${e}</span><b>${v}</b><small>${L(th, en)}</small></div>` : '');
   const draftCard = (d) => {
-    const l0 = (d.report && d.report.lines || [])[0] || '', l1 = (d.report && d.report.lines || [])[1] || '', l2 = (d.report && d.report.lines || [])[2] || '';
-    const stops = num(l0, 'stops'), rest = num(l1, 'restaurants'), miss = num(l2, 'missions'), tl = num(l0, 'timeline');
-    const stat = (v, e, th, en) => (v === null ? '' : `<span class="pill">${e} ${v} ${L(th, en)}</span>`);
-    return `<div class="impdraft"><div class="impcover"><span class="e">${esc((d.seed && d.seed.cover && d.seed.cover.emoji) || '📖')}</span><b>${esc(T(d.title) || d.slug)}</b><small>${d.days} ${L('วัน', 'days')} · ${esc(d.slug)}</small></div>
-<div class="impbody"><div class="row">${stat(stops, '📍', 'จุดแวะ', 'stops')}${stat(tl, '🕒', 'ช่วงเวลา', 'timeline rows')}${stat(rest, '🍽️', 'ร้าน', 'places to eat')}${stat(miss, '🛂', 'ภารกิจเด็ก', "kids' missions")}</div>
-<p class="label">${L('ค่า Claude สำหรับเล่มนี้', 'Claude cost for this book')}: ${usd(d.cost)}${d.report && d.report.todo ? ` · ${L(`มี ${d.report.todo} จุดที่ยังเขียนว่า TODO`, `${d.report.todo} spots still marked TODO`)}` : ''}</p>
-${d.report && d.report.warns && d.report.warns.length ? `<details class="impwarn"><summary>⚠️ ${d.report.warns.length} ${L('ข้อควรดูก่อนบันทึก', 'things to look at')}</summary>${d.report.warns.map((w) => `<div>${esc(w)}</div>`).join('')}</details>` : ''}
-<div class="row"><button class="btn" data-a="impsave" data-v="${esc(d.id)}">📚 ${L('วางเล่มนี้บนชั้น', 'Put it on the shelf')}</button><button class="btn ghost small" data-a="impdel" data-v="${esc(d.id)}">${L('ทิ้งร่างนี้', 'Discard')}</button></div></div></div>`;
+    const pk = d.peek || {}, c = d.cover || {}, g = Array.isArray(c.gradient) && c.gradient.length >= 2 ? `style="background:linear-gradient(135deg,${c.gradient.map(esc).join(',')})"` : '';
+    const when = d.date_from && d.date_to ? ` · ${fmtDay(d.date_from, { day: 'numeric', month: 'short' })} – ${fmtDay(d.date_to, { day: 'numeric', month: 'short', year: 'numeric' })}` : '';
+    const calls = (d.cost && d.cost.calls) || [], byStep = new Map();
+    for (const r of calls) { const k = impStepName(r.step); const row = byStep.get(k) || { usd: 0, s: 0, n: 0, model: r.model }; row.usd += r.usd || 0; row.s += r.s || 0; row.n++; byStep.set(k, row); }
+    const costRows = [...byStep].map(([k, r]) => `<tr><td>${esc(k)}${r.n > 1 ? ` <small>×${r.n}</small>` : ''}</td><td>${esc(String(r.model || '').replace(/^claude-/, '').replace(/-\d+-\d+$/, ''))}</td><td class="n">$${r.usd.toFixed(3)}</td><td class="n">${r.s} s</td></tr>`).join('');
+    const warns = (d.report && d.report.warns) || [], todo = (d.report && d.report.todo) || 0;
+    return `<article class="impdraft"><div class="impcover" ${g}><span class="e">${esc(c.emoji || '📖')}</span><b>${esc(T(d.title) || d.slug)}</b><small>${d.days} ${L('วัน', 'days')}${when}</small><code>${esc(d.slug)}</code></div>
+<div class="impbody">
+<div class="impstats">${tile(d.days, '📅', 'วัน', 'days')}${tile(pk.stops, '📍', 'จุดแวะ', 'stops')}${tile(pk.restaurants, '🍽️', 'ร้านอาหาร', 'places to eat')}${tile(pk.stays, '🛏️', 'ที่พัก', 'stays')}${tile(pk.missions, '🛂', 'ภารกิจเด็ก', "kids' missions")}${tile(pk.wild, '🐾', 'สัตว์และเพื่อน', 'animals & friends')}${tile(pk.firsts, '🌟', 'ครั้งแรก', 'firsts')}${tile(pk.words, '💬', 'คำท้องถิ่น', 'local words')}${tile(pk.food, '😋', 'ของอร่อยให้ชิม', 'tastes to try')}${tile(pk.map, '🗺️', 'จุดบนแผนที่', 'map stops')}</div>
+${Array.isArray(d.toc) && d.toc.length ? `<details class="imptoc" open><summary>📖 ${L('สารบัญ', 'Contents')}</summary><ol>${d.toc.slice(0, 20).map((x, i) => `<li><em>${L(`วันที่ ${i + 1}`, `Day ${i + 1}`)}</em><span>${esc(x.e || '')}</span>${esc(T(x.t) || '')}</li>`).join('')}${d.toc.length > 20 ? `<li>… ${d.toc.length - 20} ${L('วันถัดไป', 'more days')}</li>` : ''}</ol></details>` : ''}
+<details class="impcost"><summary>💸 ${L('ค่า Claude สำหรับเล่มนี้', 'Claude cost for this book')} ${usd(d.cost)}${calls.length ? ` · ${impMins(took(d.cost))}` : ''}</summary>${costRows ? `<table><thead><tr><th>${L('ขั้นตอน', 'Step')}</th><th>${L('โมเดล', 'Model')}</th><th class="n">USD</th><th class="n">${L('เวลา', 'Time')}</th></tr></thead><tbody>${costRows}</tbody></table>` : ''}</details>
+${warns.length || todo ? `<details class="impwarn"><summary>⚠️ ${L('ข้อควรดูก่อนวางบนชั้น', 'Worth a look before shelving')} <span class="pill">${warns.length + (todo ? 1 : 0)}</span></summary><ul>${todo ? `<li>${L(`มี ${todo} จุดที่ Claude ไม่พบในคู่มือ จึงเขียนว่า TODO ไว้ แก้ได้ในแอปทีหลัง`, `${todo} spots were not in the manual and are marked TODO — edit them in the app later`)}</li>` : ''}${warns.map((w) => `<li>${esc(w)}</li>`).join('')}</ul></details>` : `<p class="label">✅ ${L('ไม่มีข้อควรระวัง พร้อมวางบนชั้น', 'Nothing to flag — ready for the shelf')}</p>`}
+<div class="row impacts"><button class="btn" data-a="impsave" data-v="${esc(d.id)}">📚 ${L('วางเล่มนี้บนชั้น', 'Put it on the shelf')}</button><button class="btn ghost small" data-a="impdel" data-v="${esc(d.id)}">${L('ทิ้งร่างนี้', 'Discard')}</button></div></div></article>`;
   };
   const list = Array.isArray(imp.list) ? imp.list : [];
-  const steps = `<ol class="impsteps">${IMP_STEPS.map(([k, , th, en], i) => `<li class="${done.has(k) ? 'done' : i === at && running ? 'now' : ''}"><span>${done.has(k) ? '✓' : i === at && running ? '…' : i + 1}</span>${L(th, en)}</li>`).join('')}</ol>`;
-  return `<div class="part">${L('เล่มใหม่', 'New book')}</div>
-<section class="hero imphero"><div><div class="kicker">${L('จากคู่มือทริป สู่สมุดความทรงจำ', 'From the trip manual to a memory book')}</div><h2>${L('ทำเล่มใหม่จาก PDF', 'A new book from a PDF')}</h2>
-<p class="kids">${L('ส่งคู่มือทริปมา แล้ว Claude จะเขียนเล่มให้ครบ: แผนรายวัน คู่มือพกพา ร้านอาหาร และหน้าของมีมี่กับมีก้า สองภาษา', "Send the trip manual and Claude writes the whole book: day plans, pocket guide, places to eat, and Mimi and Mika's pages in both languages.")}</p></div>${castHtml(KID_ART)}</section>
-<div class="imphow"><div><span>1</span><b>${L('เลือกไฟล์ PDF', 'Pick the PDF')}</b><small>${L('คู่มือทริปที่วางแผนไว้', 'The Trip Operations Manual')}</small></div><div><span>2</span><b>${L('Claude เขียนเล่ม', 'Claude writes')}</b><small>${L('ราว 5–10 นาที หน้านี้อัปเดตเอง', 'About 5–10 min, this page updates itself')}</small></div><div><span>3</span><b>${L('ตรวจแล้ววางบนชั้น', 'Check and shelve')}</b><small>${L('ได้ร่างให้ดูก่อน ค่อยบันทึก', 'A draft to look at before you keep it')}</small></div></div>
-${!on ? `<div class="notice">${L('ต้องตั้งค่า ANTHROPIC_API_KEY บนเซิร์ฟเวอร์ก่อน จึงจะใช้หน้านี้ได้', 'Set ANTHROPIC_API_KEY on the server to use this page')}</div>` : ''}
-<div class="impcard">
-<label class="impdrop ${imp.file ? 'has' : ''} ${running || !on ? 'off' : ''}"><input id="impfile" type="file" accept="application/pdf,.pdf" ${running || !on ? 'disabled' : ''}>
+  const how = `<div class="imphow"><div><span>1</span><b>${L('เลือกไฟล์ PDF', 'Pick the PDF')}</b><small>${L('คู่มือทริปที่วางแผนไว้', 'The Trip Operations Manual')}</small></div><div><span>2</span><b>${L('Claude เขียนเล่ม', 'Claude writes')}</b><small>${L('ราว 5–10 นาที หน้านี้อัปเดตเอง', 'About 5–10 min, this page updates itself')}</small></div><div><span>3</span><b>${L('ตรวจแล้ววางบนชั้น', 'Check and shelve')}</b><small>${L('ได้ร่างให้ดูก่อน ค่อยบันทึก', 'A draft to look at before you keep it')}</small></div></div>`;
+  const form = running ? '' : `<div class="impcard">
+<label class="impdrop ${imp.file ? 'has' : ''} ${!on ? 'off' : ''}"><input id="impfile" type="file" accept="application/pdf,.pdf" ${!on ? 'disabled' : ''}>
 <span class="e">${imp.file ? '📘' : '📄'}</span><b>${imp.file ? esc(imp.file.name) : L('แตะเพื่อเลือกไฟล์ PDF', 'Tap to choose the PDF')}</b><small>${imp.file ? `${(imp.file.size / 1048576).toFixed(1)} MB · ${L('แตะอีกครั้งเพื่อเปลี่ยน', 'tap again to change')}` : L('ไม่เกิน 25 MB', 'Up to 25 MB')}</small></label>
-<label class="label impslug">${L('รหัสเล่ม', 'Book id')} <small>(a-z 0-9 -)</small><input id="impslug" class="field" maxlength="60" value="${esc(imp.slug || '')}" placeholder="tokyo-2027" ${running ? 'disabled' : ''}></label>
-<button class="btn impgo" data-a="impstart" ${running || !on ? 'disabled' : ''}>${running ? '⏳ ' + L('Claude กำลังเขียน…', 'Claude is writing…') : '✨ ' + L('ให้ Claude เขียนเล่ม', 'Ask Claude to write the book')}</button>
+<label class="label impslug">${L('รหัสเล่ม', 'Book id')} <small>(a-z 0-9 -)</small><input id="impslug" class="field" maxlength="60" value="${esc(imp.slug || '')}" placeholder="tokyo-2027"></label>
+<button class="btn impgo" data-a="impstart" ${!on ? 'disabled' : ''}>✨ ${L('ให้ Claude เขียนเล่ม', 'Ask Claude to write the book')}</button>
 ${imp.err ? `<div class="err" style="color:var(--accent2)">${esc(imp.err)}</div>` : ''}
-</div>
-${j.status !== 'idle' ? `<div class="impjob ${j.status}"><div class="vghd"><b>${j.status === 'running' ? '✨ ' + L('กำลังเขียนเล่ม', 'Writing the book') : j.status === 'done' ? '🎉 ' + L('เล่มพร้อมให้ตรวจแล้ว', 'The draft is ready') : '😔 ' + L('ครั้งนี้ไม่สำเร็จ', 'That did not work')} <span class="label">${esc(j.slug || '')}</span></b>${j.status === 'error' && j.error ? `<span class="label">${esc(impErr(j.error))}</span>` : ''}</div>${steps}<details class="impwarn"><summary>${L('รายละเอียด', 'Details')}</summary><pre class="implog">${log.map(esc).join('\n')}</pre></details></div>` : ''}
+</div>`;
+  return `<div class="part">${L('เล่มใหม่', 'New book')}</div>
+${running ? jobCard : `<section class="hero imphero"><div><div class="kicker">${L('จากคู่มือทริป สู่สมุดความทรงจำ', 'From the trip manual to a memory book')}</div><h2>${L('ทำเล่มใหม่จาก PDF', 'A new book from a PDF')}</h2>
+<p class="kids">${L('ส่งคู่มือทริปมา แล้ว Claude จะเขียนเล่มให้ครบ: แผนรายวัน คู่มือพกพา ร้านอาหาร และหน้าของมีมี่กับมีก้า สองภาษา', "Send the trip manual and Claude writes the whole book: day plans, pocket guide, places to eat, and Mimi and Mika's pages in both languages.")}</p></div>${castHtml(KID_ART)}</section>`}
+${!on ? `<div class="notice">${L('ต้องตั้งค่า ANTHROPIC_API_KEY บนเซิร์ฟเวอร์ก่อน จึงจะใช้หน้านี้ได้', 'Set ANTHROPIC_API_KEY on the server to use this page')}</div>` : ''}
+${running ? `<p class="impnote">${L('ส่งได้ทีละเล่ม รอเล่มนี้เสร็จก่อนนะ', 'One book at a time — wait for this one to finish')}</p>` : `<div class="impmain">${form}${how}</div>`}
+${!running ? jobCard : ''}
 ${list.length ? `<h2 class="h3 imph3">${L('ร่างที่รอขึ้นชั้น', 'Drafts waiting for the shelf')}</h2>${list.map(draftCard).join('')}` : ''}
 <p class="impnote">🔒 ${L('ไฟล์ PDF ถูกอ่านแล้วลบทันทีบนเซิร์ฟเวอร์ · บรรทัดที่มีเลขจอง e-ticket พาสปอร์ต วันเกิด หรือยอดเงินบาท ถูกตัดออกก่อนถึง Claude · รูปใน PDF ไม่ถูกส่ง · เล่มถูกตรวจอีกครั้งก่อนเก็บ', 'The PDF is read and deleted on the server at once · lines with booking numbers, e-tickets, passports, birthdays or baht amounts are removed before anything reaches Claude · images are never sent · the book is scanned again before it is kept')}<br>${L('เล่มที่นำเข้ายังไม่มีภาพวาดประจำวัน ใช้สีของเล่มและไกด์กีกี้กับรูไปก่อน', 'An imported book has no drawings of its own yet: its colours and the guides Kiki and Roo stand in.')}</p>`;
 }
