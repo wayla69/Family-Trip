@@ -123,7 +123,7 @@ async function run({ buf, slug, client, take, onUsage, log = () => {}, dir, kids
     max: 48000,
   });
   // restaurants in two passes, so a long guide (200+ places) comes through complete: first every name by area (cheap), then the
-  // rows for 40 names at a time; names still missing after that are asked for once more
+  // rows for 25 names at a time (halved again when an answer runs too long); names still missing after that are asked for once more
   const restSchema = JSON.stringify(S.properties.restaurants);
   const index = await ask('restaurants: list', EXTRACT(), {
     system: sys,
@@ -135,15 +135,22 @@ async function run({ buf, slug, client, take, onUsage, log = () => {}, dir, kids
   log(`restaurants: ${wanted.length} names in ${areas.length} areas`);
   const rows = new Map();
   const norm = (n) => String(n || '').toLowerCase().replace(/[^a-z0-9฀-๿一-鿿]+/g, '');
+  // an answer that outgrows the output window (a 290-place guide did, at 40 rows a call) is asked again in halves, never given up on
   const fetchRows = async (names, step) => {
-    const got = await ask(step, EXTRACT(), {
-      system: sys,
-      user: `For each of these places, in this order, write its row from the manual: {"items":[{"name", "zh" (local name), "what" ({en}: food · famous for), "why" ({en}: why for us), "where" ({en}), "pr" (budget), "hours", "q" (full Google Maps query), "pick" (["<Day n> · <Meal>" labels when the manual ties it to a day's meal)}]}. Item schema: ${JSON.stringify(S.properties.restaurants.properties.groups.items.properties.items.items)}\nPlaces: ${JSON.stringify(names)}\n${EN_ONLY}`,
-      max: 24000,
-    });
+    let got;
+    try { got = await askRows(names, step); } catch (e) {
+      if (e.code !== 'long' || names.length < 6) throw e;
+      const h = Math.ceil(names.length / 2); log(`${step}: answer too long, asking in two halves`);
+      await fetchRows(names.slice(0, h), `${step}a`); await fetchRows(names.slice(h), `${step}b`); return;
+    }
     for (const it of (got && Array.isArray(got.items) ? got.items : [])) if (it && it.name) rows.set(norm(it.name), it);
   };
-  const BATCH_R = 40;
+  const askRows = (names, step) => ask(step, EXTRACT(), {
+      system: sys,
+      user: `For each of these places, in this order, write its row from the manual: {"items":[{"name", "zh" (local name), "what" ({en}: food · famous for), "why" ({en}: why for us), "where" ({en}), "pr" (budget), "hours", "q" (full Google Maps query), "pick" (["<Day n> · <Meal>" labels when the manual ties it to a day's meal)}]}. Item schema: ${JSON.stringify(S.properties.restaurants.properties.groups.items.properties.items.items)}\nPlaces: ${JSON.stringify(names)}\n${EN_ONLY}`,
+      max: 32000,
+    });
+  const BATCH_R = 25;
   for (let i = 0; i < wanted.length; i += BATCH_R) await fetchRows(wanted.slice(i, i + BATCH_R), `restaurants ${Math.floor(i / BATCH_R) + 1}/${Math.ceil(wanted.length / BATCH_R)}`);
   const missing = wanted.filter((n) => !rows.has(norm(n)));
   if (missing.length) { log(`restaurants: ${missing.length} rows missing, asking once more`); await fetchRows(missing.slice(0, BATCH_R), 'restaurants: retry'); }
