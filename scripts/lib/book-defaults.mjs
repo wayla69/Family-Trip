@@ -88,6 +88,11 @@ export const doors = (placeTh = 'ที่นั่น', placeEn = 'there') => [
   { e: '🌙', th: 'พรุ่งนี้แล้ว! คืนนี้นอนเร็วหน่อยนะนักผจญภัย', en: 'Tomorrow! Early to bed tonight, little explorer.' },
   { e: '🚀', th: 'วันนี้แล้ว! ไปกันเลย {name}!', en: "Today's the day! Let's go, {name}!" },
 ];
+// a book imported inside the app has no drawings of its own: two generic guides keep the passport's shape
+export const GENERIC_GUIDES = [
+  { key: 'kiki', art: '/art/guides/kiki.svg', name: i18n('กีกี้', 'Kiki'), hello: i18n('สวัสดี {name}! วันนี้กีกี้พาเที่ยวเอง', 'Hi {name}! Kiki is your guide today') },
+  { key: 'roo', art: '/art/guides/roo.svg', name: i18n('รู', 'Roo'), hello: i18n('รูอยู่ตรงนี้นะ มีของให้หาเยอะเลย', 'Roo is here — so much to find!') },
+];
 export const NOTES = 'Seed only: no booking numbers, passports, confirmations or real costs (keep them out of the bookshelf).';
 export const isHome = (s) => !s || /^(บ้าน|home)$/i.test(((s.en || s.th || s) + '').trim());
 export const kebab = (s) => String(s || '').normalize('NFKD').toLowerCase().replace(/[^a-z0-9]+/g, '-').replace(/^-+|-+$/g, '').slice(0, 40);

@@ -73,6 +73,15 @@ async function addClip(t, day, blob, secs) {
   toast(L(`เก็บเสียง ${secs} วินาทีแล้ว`, `${secs} s of voice saved`));
 }
 
+/* ---------- a book from a PDF (#/import): page state, polling, upload ---------- */
+let imp = { list: null, job: null, slug: '', err: '', file: null, timer: null };
+async function impRefresh() {
+  try { const r = await api('GET', '/api/b/import'); imp.list = r.drafts; imp.job = r.job; }
+  catch (_) { imp.list = []; }
+  if (imp.job && imp.job.status === 'running') { if (!imp.timer) imp.timer = setInterval(() => { if (route().parts[0] === 'import') impRefresh(); else { clearInterval(imp.timer); imp.timer = null; } }, 3000); }
+  else if (imp.timer) { clearInterval(imp.timer); imp.timer = null; }
+  if (route().parts[0] === 'import') safeRender();
+}
 /* ---------- actions ---------- */
 const A = {
   lang(b) { lang = b.dataset.v; ls('lang', lang); render(); if (ls('remind')) pushSub().then((s) => s && api('POST', '/api/b/push/sub', { ...s.toJSON(), lang })).catch(() => {}); },   // reminders follow the language
@@ -527,6 +536,26 @@ const A = {
   },
   lb(b) { openLb(b.dataset.t, b.dataset.v); },
   newtrip() { openSheet(newTripSheet()); },
+  async impstart() {
+    const f = imp.file, slug = ($('#impslug') || {}).value || imp.slug;
+    imp.slug = (slug || '').trim().toLowerCase(); imp.err = '';
+    if (!f) { imp.err = L('เลือกไฟล์ PDF ก่อน', 'Choose a PDF first'); render(); return; }
+    if (!/^[a-z0-9-]{2,60}$/.test(imp.slug)) { imp.err = L('รหัสเล่ม: a-z 0-9 - เท่านั้น (2–60 ตัว)', 'Book id: a-z 0-9 - only (2–60 chars)'); render(); return; }
+    if (S.trips.some((t) => t.slug === imp.slug || t.id === imp.slug)) { imp.err = L('มีเล่มรหัสนี้แล้ว', 'A book with this id exists'); render(); return; }
+    try {
+      imp.job = { status: 'running', slug: imp.slug, log: [] }; render();
+      await api('POST', `/api/b/import?slug=${encodeURIComponent(imp.slug)}`, undefined, new Blob([await f.arrayBuffer()], { type: 'application/pdf' }));
+      imp.file = null; await impRefresh();
+    } catch (e) { imp.job = null; imp.err = { 409: L('มีงานกำลังทำ หรือมีเล่มรหัสนี้แล้ว', 'Busy, or the id exists'), 503: L('Claude ยังไม่ได้เปิดบนเซิร์ฟเวอร์', 'Claude is not set up on the server'), 400: L('ไฟล์ไม่ใช่ PDF หรือรหัสเล่มไม่ถูกต้อง', 'Not a PDF, or a bad id'), 413: L('ไฟล์ใหญ่เกิน 25 MB', 'Over 25 MB') }[e.code] || L('ส่งไม่สำเร็จ', 'Could not send'); render(); }
+  },
+  async impsave(b) {
+    try { const r = await api('POST', `/api/b/import/${encodeURIComponent(b.dataset.v)}/save`, {}); toast(L('บันทึกเล่มแล้ว', 'Book saved')); imp.list = null; imp.job = null; await load(); location.hash = `#/t/${encodeURIComponent(r.id)}`; }
+    catch (e) { toast(e.code === 409 ? L('มีเล่มรหัสนี้แล้ว', 'A book with this id exists') : L('บันทึกไม่สำเร็จ', 'Could not save')); }
+  },
+  async impdel(b) {
+    if (!armed(b, L('แตะอีกครั้งเพื่อทิ้ง', 'Tap again to discard'))) return;
+    try { await api('DELETE', `/api/b/import/${encodeURIComponent(b.dataset.v)}`); imp.list = null; if (imp.job && imp.job.draft && imp.job.draft.id === b.dataset.v) imp.job = null; impRefresh(); } catch (_) { toast(L('ลบไม่สำเร็จ', 'Could not delete')); }
+  },
   pickphotos(b) { const fp = $('#fpick'); fp.dataset.t = b.dataset.t; fp.dataset.d = b.dataset.d; fp.click(); },
   // full backup zip (editors only on the server too); the browser downloads it in place, the page stays
   backup() {
@@ -834,6 +863,8 @@ document.addEventListener('change', (e) => {
   if (e.target.dataset && e.target.dataset.ck) { const m = ls('ck') || {}; if (e.target.checked) m[e.target.dataset.ck] = 1; else delete m[e.target.dataset.ck]; ls('ck', m); return; }
   if (e.target.dataset && e.target.dataset.fx) { safeRender(); return; }   // leaving a rate field: redraw (the field has lost focus)
   if (e.target.id === 'lcfile') { const f = e.target.files && e.target.files[0]; if (f) { if (lostPhoto) URL.revokeObjectURL(lostPhoto); lostPhoto = URL.createObjectURL(f); render(); } return; }   // this morning's photo: in memory only
+  if (e.target.id === 'impfile') { imp.file = (e.target.files || [])[0] || null; const sl = $('#impslug'); if (imp.file && sl && !sl.value) { sl.value = imp.file.name.replace(/\.pdf$/i, '').normalize('NFKD').toLowerCase().replace(/[^a-z0-9]+/g, '-').replace(/^-+|-+$/g, '').slice(0, 40); } return; }
+  if (e.target.id === 'impslug') { imp.slug = e.target.value; return; }
   if (e.target.id === 'fpick') { const el = e.target; addPhotos(trip(el.dataset.t), +el.dataset.d, el.files); el.value = ''; }
   if (e.target.id === 'spendplace') { const n = $('#spendnote'); if (n) { if (e.target.value) { n.value = e.target.value; drafts[n.dataset.draft] = n.value; $('#spendamt').focus(); } else n.focus(); } }   // a picked place becomes the note; "other" → type it
 });

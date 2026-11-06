@@ -80,6 +80,7 @@ function render() {
   } else if (p[0] === 'passport') html = viewPassport(p[1], p[2]);
   else if (p[0] === 'notebook') html = viewNotebook();
   else if (p[0] === 'viewers' && isEditor()) html = viewViewers();
+  else if (p[0] === 'import' && isEditor()) html = viewImport();
   else html = viewShelf();
   document.documentElement.style.cssText = t ? themeStyle(t) : themeStyle(curTrip());
   document.body.classList.toggle('serif', !!(t ? t.theme.display === 'serif' : false));
@@ -194,7 +195,7 @@ ${visual}
 <div class="ppmini">${children().map((k) => { const n = passportStamps(k.slug); return `<a class="ppc s kid-${esc(k.slug)}" href="#/passport/${esc(k.slug)}"><span class="emb">${kidArt(k.slug) ? `<img src="${kidArt(k.slug)}" alt="">` : '🌏'}</span><b>${L('พาสปอร์ตความทรงจำ', 'Memory Passport')}</b><span class="nm">${esc(kidName(k.slug))}</span><small>${n} ${L('ตราประทับ', n === 1 ? 'stamp' : 'stamps')}</small></a>`; }).join('')}</div>
 ${isEditor() ? backupCard() : ''}
 ${aiCard()}
-<div class="row end" style="margin-top:18px">${isEditor() ? `<a class="btn ghost small" href="#/viewers">👪 ${L('ญาติที่ดูได้', 'Who can see the books')}</a>` : ''}<button class="btn ghost small" data-a="logout">⎋ ${L('ออกจากระบบ', 'Sign out')}</button></div>`;
+<div class="row end" style="margin-top:18px">${isEditor() ? `<a class="btn ghost small" href="#/viewers">👪 ${L('ญาติที่ดูได้', 'Who can see the books')}</a>` : ''}${isEditor() && S.features.story ? `<a class="btn ghost small" href="#/import">📄 ${L('นำเข้าเล่มจาก PDF', 'Book from a PDF')}</a>` : ''}<button class="btn ghost small" data-a="logout">⎋ ${L('ออกจากระบบ', 'Sign out')}</button></div>`;
 }
 // off-site copy kept by the family: one tap downloads everything (data + full photos) as a zip; nags when there is something new since the last one on this phone
 // Claude usage (editors): today's calls against the daily cap + the last 30 days; fetched from /api/b/ai at most once a minute,
@@ -1230,6 +1231,35 @@ function notebookBlock(t, i) {
 /* ---------- relatives in groups (editors): each group its own view-only PIN and/or link, and the books it may see ----------
    The list comes from /api/b/viewers (not part of the offline state); a PIN is shown once, right after it is set, never again. */
 let vg = null, vgForm = null, vgJust = null;   // the groups · the form being filled {id, name, trips, link} · {name, pin} just saved
+/* ---------- a book from a Trip Operations Manual PDF (#/import, editors) ----------
+   The PDF goes to the server once; the server extracts the text, removes private lines and values, asks Claude for the plan and
+   the kids' pages, and keeps the result as a draft. The parents read the draft's summary here and press "save as a book".
+   imp (sheets.js) holds the page's state: the chosen file, the slug, the running job (polled every 3 s) and the drafts. */
+function viewImport() {
+  if (imp.list === null) { imp.list = 'loading'; impRefresh(); }
+  const j = imp.job || { status: 'idle' }, running = j.status === 'running';
+  const usd = (c) => (c && typeof c.usd === 'number' ? `≈ $${c.usd.toFixed(2)}` : L('ยังไม่ทราบราคา', 'cost unknown'));
+  const draftCard = (d) => `<div class="vgcard impdraft"><div class="vghd"><b>📖 ${esc(T(d.title) || d.slug)}</b><span class="label">${d.days} ${L('วัน', 'days')} · ${esc(d.slug)} · ${usd(d.cost)}</span></div>
+${d.report && d.report.lines ? `<div class="implines">${d.report.lines.map((l) => `<div>${esc(l)}</div>`).join('')}</div>` : ''}
+${d.report && d.report.todo ? `<div class="notice">${L(`มี ${d.report.todo} จุดที่เขียนว่า TODO — แก้ได้หลังบันทึกเล่ม (หน้าแก้ไขจะตามมา)`, `${d.report.todo} TODO spots — fix after saving (an editor page is coming)`)}</div>` : ''}
+${d.report && d.report.warns && d.report.warns.length ? `<details class="impwarn"><summary>⚠️ ${d.report.warns.length} ${L('ข้อควรดู', 'things to check')}</summary>${d.report.warns.map((w) => `<div>${esc(w)}</div>`).join('')}</details>` : ''}
+<div class="row"><button class="btn" data-a="impsave" data-v="${esc(d.id)}">💾 ${L('บันทึกเป็นเล่มในชั้น', 'Save as a book')}</button><button class="mini" data-a="impdel" data-v="${esc(d.id)}">${L('ทิ้งร่างนี้', 'Discard')}</button></div></div>`;
+  const list = Array.isArray(imp.list) ? imp.list : [];
+  return `<div class="part">${L('เล่มใหม่', 'New book')}</div><h1 class="h2">📄 ${L('นำเข้าเล่มจาก PDF', 'A book from a PDF')}</h1>
+<p class="lede">${L('ส่งคู่มือทริป (Trip Operations Manual) เป็น PDF แล้ว Claude จะอ่านและเขียนเล่มให้: แผนรายวัน คู่มือพกพา ร้านอาหาร และหน้าของเด็กๆ ทั้งสองภาษา ใช้เวลาราว 5–10 นาที', 'Send the Trip Operations Manual as a PDF and Claude writes the book: the day plans, the pocket guide, the restaurants and the kids\' pages in both languages. About 5–10 minutes.')}</p>
+<div class="call info"><b>🔒 ${L('ความเป็นส่วนตัว', 'Privacy')}</b> ${L('เซิร์ฟเวอร์ดึงข้อความออกจาก PDF แล้วลบไฟล์ทันที บรรทัดที่มีเลขจอง e-ticket พาสปอร์ต วันเกิด หรือยอดเงินบาท ถูกตัดออกก่อนส่งให้ Claude และตัวเล่มผ่านการตรวจอีกครั้งก่อนบันทึก รูปใน PDF ไม่ถูกส่ง', 'The server takes the text out of the PDF and deletes the file at once. Lines with booking numbers, e-tickets, passports, birthdays or baht amounts are removed before anything reaches Claude, and the finished book is scanned again before it is kept. Images in the PDF are never sent.')}</div>
+${!S.features.story ? `<div class="notice">${L('ต้องตั้งค่า ANTHROPIC_API_KEY บนเซิร์ฟเวอร์ก่อน', 'ANTHROPIC_API_KEY must be set on the server first')}</div>` : ''}
+<div class="vgcard">
+<label class="label">${L('ไฟล์ PDF', 'PDF file')}<input id="impfile" type="file" accept="application/pdf,.pdf" class="field" ${running ? 'disabled' : ''}></label>
+<label class="label">${L('รหัสเล่ม (a-z 0-9 -)', 'Book id (a-z 0-9 -)')}<input id="impslug" class="field" maxlength="60" value="${esc(imp.slug || '')}" placeholder="tokyo-2027" ${running ? 'disabled' : ''}></label>
+<div class="row end"><button class="btn" data-a="impstart" ${running || !S.features.story ? 'disabled' : ''}>${running ? '⏳ ' + L('กำลังอ่าน…', 'Reading…') : '✨ ' + L('ให้ Claude เขียนเล่ม', 'Ask Claude to write the book')}</button></div>
+${imp.err ? `<div class="err" style="color:var(--accent2)">${esc(imp.err)}</div>` : ''}
+</div>
+${j.status !== 'idle' ? `<div class="vgcard"><div class="vghd"><b>${j.status === 'running' ? '⏳' : j.status === 'done' ? '✅' : '❌'} ${esc(j.slug || '')}</b><span class="label">${j.status === 'running' ? L('กำลังทำงาน… หน้านี้อัปเดตเอง', 'Working… this page updates itself') : j.status === 'done' ? L('เสร็จแล้ว', 'Done') : L('ไม่สำเร็จ', 'Failed') + (j.error ? ` · ${esc(impErr(j.error))}` : '')}</span></div><pre class="implog">${(j.log || []).map(esc).join('\n')}</pre></div>` : ''}
+${list.length ? `<h2 class="h3">${L('ร่างที่รอบันทึก', 'Drafts waiting')}</h2>${list.map(draftCard).join('')}` : imp.list === 'loading' ? '' : `<p class="label">${L('ยังไม่มีร่าง', 'No drafts yet')}</p>`}
+<p class="label" style="margin-top:14px">${L('เล่มที่นำเข้ายังไม่มีภาพวาดประจำวัน ใช้สีและไกด์ทั่วไปไปก่อน · ราคาที่แสดงเป็นค่าประมาณจาก token ที่ใช้จริง', 'An imported book has no drawings of its own yet: colours and the generic guides stand in. The cost shown is an estimate from the tokens really used.')}</p>`;
+}
+const impErr = (e) => ({ limit: L('ครบโควตา Claude ของวันนี้แล้ว ลองพรุ่งนี้', "Today's Claude limit is used up — try tomorrow"), privacy: L('พบข้อมูลส่วนตัวในเล่ม จึงไม่บันทึก', 'Private data found in the book — not kept'), text: L('อ่านข้อความจาก PDF ไม่ได้ (สแกนเป็นรูป?)', 'No text in the PDF (a scanned image?)'), pdftotext: L('เซิร์ฟเวอร์ยังไม่มี pdftotext', 'pdftotext is missing on the server'), refusal: L('Claude ปฏิเสธ', 'Claude declined'), json: L('คำตอบอ่านไม่ได้ ลองอีกครั้ง', 'Unreadable answer — try again') }[e] || e);
 function viewViewers() {
   if (vg === null) { vg = 'loading'; api('GET', '/api/b/viewers').then((r) => { vg = r.groups; safeRender(); }, () => { vg = []; safeRender(); }); }
   const trips = S.trips, list = Array.isArray(vg) ? vg : [];

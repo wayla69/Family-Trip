@@ -8,6 +8,7 @@ const zlib = require('zlib');
 const crypto = require('crypto');
 const IMG = require('./images');
 const GUIDE = require('./guide');
+const IMPORT = require('./bookimport');
 
 const FAMILY = process.env.FAMILY_ID || 'family';
 const ID_RE = /^[A-Za-z0-9_.:-]{4,80}$/;
@@ -41,6 +42,36 @@ function sendJson(req, res, obj, etag) {
 }
 
 // ---------- seeds: server/seeds/*.json (trip.schema.json + theme) → trips, trip_days, firsts_catalog, children ----------
+// one book (seed format 2) into trips / trip_days / firsts_catalog. source 'seed' = bundled with the app (re-synced on every boot,
+// only over an earlier seed); 'manual' = made or imported in the app (inserted once, never touched by a later sync). Throws {code:'exists'}
+// when the slug is taken by a book of the other kind.
+async function putSeed(c, t, source) {
+  const id = t.slug;
+  const ins = await c.query(`INSERT INTO trips (id, family_id, slug, legacy_id, title, sub, date_from, date_to, timezone, theme, cover, stamp, moods, passport, info, source)
+    VALUES ($1,$2,$3,$4,$5,$6,$7,$8,$9,$10,$11,$12,$13,$14,$15,$16)
+    ON CONFLICT (family_id, slug) DO UPDATE SET legacy_id=EXCLUDED.legacy_id, title=EXCLUDED.title, sub=EXCLUDED.sub, date_from=EXCLUDED.date_from,
+      date_to=EXCLUDED.date_to, timezone=EXCLUDED.timezone, theme=EXCLUDED.theme, cover=EXCLUDED.cover, stamp=EXCLUDED.stamp, moods=EXCLUDED.moods,
+      passport=EXCLUDED.passport, info=EXCLUDED.info
+    WHERE trips.source = 'seed' AND EXCLUDED.source = 'seed' RETURNING id`,
+  [id, FAMILY, t.slug, t.legacy_trip_id || null, t.title, t.sub || null, t.date_from, t.date_to, t.timezone || 'Asia/Bangkok',
+    { ...(t.theme || {}), children: (t.children || []).map((k) => ({ slug: k.slug, age: k.age_at_trip || null })) },
+    t.cover || {}, t.stamp || {}, JSON.stringify(t.moods || []), t.passport || {}, t.info || {}, source]);
+  if (!ins.rows.length) throw Object.assign(new Error('exists'), { code: 'exists' });
+  for (const d of t.days) {
+    const plan = {};   // the day card's plan block (seed keys: timeline, how we move, local pick, plan B, money, tips, tonight's stay, maps route, nearby food, learn cards, quiz, the guide's story, legs with directions, meal picks, food by stop)
+    for (const k of ['moving', 'pick', 'planB', 'money', 'plan', 'tips', 'stay', 'route', 'eat', 'learn', 'quiz', 'tale', 'legs', 'picks', 'food']) if (d[k]) plan[k] = d[k];
+    await c.query(`INSERT INTO trip_days (trip_id, day_index, date, title, sleep, emoji, gradient, planned, wx, plan) VALUES ($1,$2,$3,$4,$5,$6,$7,$8,$9,$10)
+      ON CONFLICT (trip_id, day_index) DO UPDATE SET date=EXCLUDED.date, title=EXCLUDED.title, sleep=EXCLUDED.sleep, emoji=EXCLUDED.emoji,
+        gradient=EXCLUDED.gradient, planned=EXCLUDED.planned, wx=EXCLUDED.wx, plan=EXCLUDED.plan`,
+    [id, d.index, d.date, d.title, d.sleep || null, d.emoji || '', JSON.stringify(d.gradient || null), JSON.stringify(d.planned || []), d.wx || null, plan]);
+  }
+  let fp = 0;
+  for (const f of t.firsts_catalog || []) {
+    await c.query(`INSERT INTO firsts_catalog (trip_id, key, emoji, label, pos) VALUES ($1,$2,$3,$4,$5)
+      ON CONFLICT (trip_id, key) DO UPDATE SET emoji=EXCLUDED.emoji, label=EXCLUDED.label, pos=EXCLUDED.pos`, [id, f.key, f.emoji || '', f.label, fp++]);
+  }
+}
+
 async function syncSeeds(pool, dir = path.join(__dirname, 'seeds')) {
   const seeds = fs.readdirSync(dir).filter((f) => f.endsWith('.json')).sort().map((f) => JSON.parse(fs.readFileSync(path.join(dir, f), 'utf8')));
   const c = await pool.connect();
@@ -57,29 +88,9 @@ async function syncSeeds(pool, dir = path.join(__dirname, 'seeds')) {
       [`${FAMILY}:${k.slug}`, FAMILY, k.slug, k.name_th, k.name_en, k.emoji || '', kidColor[k.slug] || '#8B3DFF', pos++]);
     }
     for (const t of seeds) {
-      const id = t.slug;
-      await c.query(`INSERT INTO trips (id, family_id, slug, legacy_id, title, sub, date_from, date_to, timezone, theme, cover, stamp, moods, passport, info, source)
-        VALUES ($1,$2,$3,$4,$5,$6,$7,$8,$9,$10,$11,$12,$13,$14,$15,'seed')
-        ON CONFLICT (family_id, slug) DO UPDATE SET legacy_id=EXCLUDED.legacy_id, title=EXCLUDED.title, sub=EXCLUDED.sub, date_from=EXCLUDED.date_from,
-          date_to=EXCLUDED.date_to, timezone=EXCLUDED.timezone, theme=EXCLUDED.theme, cover=EXCLUDED.cover, stamp=EXCLUDED.stamp, moods=EXCLUDED.moods,
-          passport=EXCLUDED.passport, info=EXCLUDED.info
-        WHERE trips.source = 'seed'`,
-      [id, FAMILY, t.slug, t.legacy_trip_id || null, t.title, t.sub || null, t.date_from, t.date_to, t.timezone || 'Asia/Bangkok',
-        { ...(t.theme || {}), children: (t.children || []).map((k) => ({ slug: k.slug, age: k.age_at_trip || null })) },
-        t.cover || {}, t.stamp || {}, JSON.stringify(t.moods || []), t.passport || {}, t.info || {}]);
-      for (const d of t.days) {
-        const plan = {};   // the day card's plan block (seed keys: timeline, how we move, local pick, plan B, money, tips, tonight's stay, maps route, nearby food, learn cards, quiz, the guide's story, legs with directions, meal picks, food by stop)
-        for (const k of ['moving', 'pick', 'planB', 'money', 'plan', 'tips', 'stay', 'route', 'eat', 'learn', 'quiz', 'tale', 'legs', 'picks', 'food']) if (d[k]) plan[k] = d[k];
-        await c.query(`INSERT INTO trip_days (trip_id, day_index, date, title, sleep, emoji, gradient, planned, wx, plan) VALUES ($1,$2,$3,$4,$5,$6,$7,$8,$9,$10)
-          ON CONFLICT (trip_id, day_index) DO UPDATE SET date=EXCLUDED.date, title=EXCLUDED.title, sleep=EXCLUDED.sleep, emoji=EXCLUDED.emoji,
-            gradient=EXCLUDED.gradient, planned=EXCLUDED.planned, wx=EXCLUDED.wx, plan=EXCLUDED.plan`,
-        [id, d.index, d.date, d.title, d.sleep || null, d.emoji || '', JSON.stringify(d.gradient || null), JSON.stringify(d.planned || []), d.wx || null, plan]);
-      }
-      let fp = 0;
-      for (const f of t.firsts_catalog || []) {
-        await c.query(`INSERT INTO firsts_catalog (trip_id, key, emoji, label, pos) VALUES ($1,$2,$3,$4,$5)
-          ON CONFLICT (trip_id, key) DO UPDATE SET emoji=EXCLUDED.emoji, label=EXCLUDED.label, pos=EXCLUDED.pos`, [id, f.key, f.emoji || '', f.label, fp++]);
-      }
+      // a seed never overwrites a book made or imported in the app under the same slug (putSeed refuses); the boot goes on
+      await c.query('SAVEPOINT seed');
+      try { await putSeed(c, t, 'seed'); await c.query('RELEASE SAVEPOINT seed'); } catch (e) { if (e.code !== 'exists') throw e; await c.query('ROLLBACK TO SAVEPOINT seed'); }
     }
     await c.query('COMMIT');
     return seeds.length;
@@ -449,10 +460,69 @@ function router({ pool, media, A, ai, hooks = {} }) {   // hooks.heart(h): set b
   // the daily cap is counted in Postgres (ai_usage), atomically: a redeploy doesn't reset it, two phones can't both pass the last call
   const aiTake = async () => (await q(`INSERT INTO ai_usage (family_id, day, calls) VALUES ($1, (now() AT TIME ZONE 'UTC')::date, 1)
     ON CONFLICT (family_id, day) DO UPDATE SET calls = ai_usage.calls + 1 WHERE ai_usage.calls < $2 RETURNING calls`, [FAMILY, STORY_DAILY])).length > 0;
-  if (ai && ai.onUsage) ai.onUsage((u) => q(`UPDATE ai_usage SET tokens_in = tokens_in + $2, tokens_cached = tokens_cached + $3, tokens_out = tokens_out + $4
-    WHERE family_id=$1 AND day=(now() AT TIME ZONE 'UTC')::date`, [FAMILY, (u.input_tokens || 0) + (u.cache_creation_input_tokens || 0), u.cache_read_input_tokens || 0, u.output_tokens || 0]).catch((e) => console.error('ai usage', e.message)));
+  const addUsage = (u) => q(`UPDATE ai_usage SET tokens_in = tokens_in + $2, tokens_cached = tokens_cached + $3, tokens_out = tokens_out + $4
+    WHERE family_id=$1 AND day=(now() AT TIME ZONE 'UTC')::date`, [FAMILY, (u.input_tokens || 0) + (u.cache_creation_input_tokens || 0), u.cache_read_input_tokens || 0, u.output_tokens || 0]).catch((e) => console.error('ai usage', e.message));
+  if (ai && ai.onUsage) ai.onUsage(addUsage);
   // "Claude today" for the grown-ups: today's calls against the cap, and the last 30 days' calls and tokens
   // (an optional USD estimate when AI_USD_PER_MTOK_IN / _OUT are set — prices are not hard-coded here)
+  // ----- a book from a Trip Operations Manual PDF (server/bookimport.js): one job at a time, the result waits as a draft until saved
+  const DATA_TMP = path.join(path.resolve(process.env.DATA_DIR || './data'), 'tmp');
+  let job = null;   // { id, slug, status: running|done|error, log, draft, error, started }
+  const jobView = () => (job ? { id: job.id, slug: job.slug, status: job.status, log: job.log, draft: job.draft || null, error: job.error || null, started: job.started } : { status: 'idle' });
+  r.post('/api/b/import', A.requireEditor, express.raw({ type: () => true, limit: '25mb' }), async (req, res, next) => {
+    try {
+      if (!(ai && ai.enabled())) return bad(res, 'ai', 503);
+      if (job && job.status === 'running') return bad(res, 'busy', 409);
+      const slug = clip(req.query.slug, 60);
+      if (!SLUG_RE.test(slug)) return bad(res, 'slug');
+      if (!Buffer.isBuffer(req.body) || req.body.length < 2000 || req.body.subarray(0, 5).toString() !== '%PDF-') return bad(res, 'pdf');
+      if ((await q('SELECT 1 FROM trips WHERE family_id=$1 AND slug=$2', [FAMILY, slug])).length) return bad(res, 'exists', 409);
+      const id = crypto.randomBytes(8).toString('hex'), who = req.user.name || '', buf = req.body;
+      job = { id, slug, status: 'running', log: [], started: Date.now() };
+      const log = (line) => { job.log.push(`${new Date().toISOString().slice(11, 19)} ${line}`); if (job.log.length > 60) job.log.shift(); };
+      res.status(202).json({ job: id });
+      try {
+        const kids = await q('SELECT name_en, birth_ym FROM children WHERE family_id=$1 ORDER BY pos', [FAMILY]);
+        const out = await IMPORT.run({ buf, slug, client: new ai.SDK(), take: aiTake, onUsage: addUsage, log, dir: DATA_TMP,
+          kids: kids.map((k) => ({ name_en: k.name_en, age: k.birth_ym ? Math.max(0, Math.floor((Date.now() - new Date(k.birth_ym + '-01')) / 31557600000)) : '' })) });
+        await q('INSERT INTO book_drafts (id, family_id, slug, seed, report, cost, created_by) VALUES ($1,$2,$3,$4,$5,$6,$7)', [id, FAMILY, slug, out.seed, out.report, out.cost, who]);
+        job.draft = { id, slug, title: out.seed.title, days: out.seed.days.length, report: out.report, cost: out.cost };
+        job.status = 'done'; log('done — review the draft, then save it as a book');
+      } catch (e) {
+        job.status = 'error'; job.error = e.code || 'failed'; log(`failed: ${e.message}`); console.error('import', e.message);
+      }
+    } catch (e) { next(e); }
+  });
+  r.get('/api/b/import', A.requireEditor, async (_req, res, next) => {
+    try {
+      const drafts = await q("SELECT id, slug, seed->'title' AS title, jsonb_array_length(seed->'days') AS days, report, cost, created_by, created_at FROM book_drafts WHERE family_id=$1 ORDER BY created_at DESC", [FAMILY]);
+      res.setHeader('Cache-Control', 'no-store');
+      res.json({ job: jobView(), drafts: drafts.map((d) => ({ ...d, created_at: new Date(d.created_at).getTime() })), on: !!(ai && ai.enabled()) });
+    } catch (e) { next(e); }
+  });
+  r.get('/api/b/import/:id', A.requireEditor, async (req, res, next) => {
+    try {
+      const d = (await q('SELECT id, slug, seed, report, cost FROM book_drafts WHERE id=$1 AND family_id=$2', [req.params.id, FAMILY]))[0];
+      if (!d) return bad(res, 'draft', 404);
+      res.setHeader('Cache-Control', 'no-store'); res.json(d);
+    } catch (e) { next(e); }
+  });
+  r.post('/api/b/import/:id/save', ...W, async (req, res, next) => {
+    const c = await pool.connect();
+    try {
+      const d = (await c.query('SELECT seed FROM book_drafts WHERE id=$1 AND family_id=$2', [req.params.id, FAMILY])).rows[0];
+      if (!d) return bad(res, 'draft', 404);
+      await c.query('BEGIN');
+      try { await putSeed(c, d.seed, 'manual'); } catch (e) { await c.query('ROLLBACK'); if (e.code === 'exists') return bad(res, 'exists', 409); throw e; }
+      await c.query('DELETE FROM book_drafts WHERE id=$1', [req.params.id]);
+      await c.query('COMMIT');
+      res.json({ ok: true, id: d.seed.slug });
+    } catch (e) { await c.query('ROLLBACK').catch(() => {}); next(e); } finally { c.release(); }
+  });
+  r.delete('/api/b/import/:id', A.requireEditor, async (req, res, next) => {
+    try { await q('DELETE FROM book_drafts WHERE id=$1 AND family_id=$2', [req.params.id, FAMILY]); res.json({ ok: true }); } catch (e) { next(e); }
+  });
+
   r.get('/api/b/ai', A.requireEditor, async (_req, res, next) => {
     try {
       const rows = await q(`SELECT to_char(day,'YYYY-MM-DD') AS day, calls, tokens_in::float8 tin, tokens_cached::float8 tcache, tokens_out::float8 tout FROM ai_usage

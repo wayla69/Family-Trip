@@ -1726,4 +1726,7 @@ html[data-fs="1"] main.wrap{zoom:1.1}html[data-fs="2"] main.wrap{zoom:1.2}html[d
 .day .clips{display:grid;gap:8px;margin:10px 0}
 .day .clip span{display:block;font-size:13px;color:var(--muted);margin-bottom:2px}
 .kidclips{display:grid;gap:10px;margin:14px 0}
-
+/* a book from a PDF (#/import) */
+.implog{font:12px/1.5 ui-monospace,SFMono-Regular,Menlo,monospace;white-space:pre-wrap;word-break:break-word;background:var(--panel);border-radius:10px;padding:10px 12px;max-height:40vh;overflow:auto;margin:0}
+.implines{font-size:13px;color:var(--muted);display:grid;gap:2px}
+.impwarn{font-size:13px;color:var(--muted)}.impwarn summary{cursor:pointer;color:var(--ink)}
