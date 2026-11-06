@@ -11,11 +11,15 @@ WORKDIR /app
 COPY --from=deps /app/node_modules node_modules
 # headless Chromium (shell only) for the server-side A4 PDF, same version as playwright-core
 ENV PLAYWRIGHT_BROWSERS_PATH=/ms-playwright
-RUN node node_modules/playwright-core/cli.js install --with-deps --only-shell chromium && rm -rf /var/lib/apt/lists/* /tmp/*
+# + pdftotext (poppler-utils) for "a book from a PDF" (server/bookimport.js)
+RUN node node_modules/playwright-core/cli.js install --with-deps --only-shell chromium && apt-get install -y --no-install-recommends poppler-utils && rm -rf /var/lib/apt/lists/* /tmp/*
 COPY package.json ./
 COPY server server
 COPY migrations migrations
 COPY public public
+# the plan→seed core and the plan schema/sample the PDF import prompts with (scripts/lib is ESM, required by the server)
+COPY scripts/lib scripts/lib
+COPY docs/handoff/plan.schema.json docs/handoff/plan.sample.json docs/handoff/
 COPY --chmod=755 docker-entrypoint.sh /usr/local/bin/docker-entrypoint.sh
 EXPOSE 3000
 ENTRYPOINT ["docker-entrypoint.sh"]

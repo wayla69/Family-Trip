@@ -2,3 +2,6 @@ node_modules
 data
 .env
 *.log
+families.json
+families.*.json
+backups

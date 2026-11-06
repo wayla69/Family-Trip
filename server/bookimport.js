@@ -1,0 +1,178 @@
+'use strict';
+// A book from a Trip Operations Manual PDF, inside the app (editors only; needs ANTHROPIC_API_KEY):
+//   1. pdftotext on the server (poppler-utils in the image) — the PDF is deleted the moment its text is out;
+//   2. redaction HERE, before anything leaves: lines with e-tickets, PNR/booking numbers, passport/birth/policy details are dropped,
+//      long numbers, e-mails, baht amounts and blank form fields are masked;
+//   3. the extract model (IMPORT_EXTRACT_MODEL, default claude-haiku-5-5) writes the plan's structure in English — days, pocket guide,
+//      restaurants — with the redacted manual as one cached system block shared by its three calls;
+//   4. the write model (IMPORT_WRITE_MODEL, default STORY_MODEL / claude-sonnet-5-5) writes the kids' pages bilingually and
+//      translates every English string to Thai (only the Thai comes back, in batches);
+//   5. scripts/lib/plan-to-seed-core.mjs builds the seed (every default filled, no drawn art) and runs the privacy scan.
+// Text only: the PDF file and its images are never sent. The result is a draft (table book_drafts) the parents review and save.
+// Also the engine of scripts/import-pdf.mjs. Each model call goes through the family's daily cap (take) and usage hook.
+const fs = require('node:fs');
+const path = require('node:path');
+const crypto = require('node:crypto');
+const { execFile } = require('node:child_process');
+const core = require('../scripts/lib/plan-to-seed-core.mjs');   // ESM via require (Node ≥ 22.12), like archiver 8
+const ROOT = path.resolve(__dirname, '..');
+
+const EXTRACT = () => process.env.IMPORT_EXTRACT_MODEL || 'claude-haiku-5-5';
+const WRITE = () => process.env.IMPORT_WRITE_MODEL || process.env.STORY_MODEL || 'claude-sonnet-5-5';
+
+// ---------- 1. text out of the PDF (pdftotext keeps the column layout; the file is removed right after)
+function pdfText(buf, dir) {
+  return new Promise((resolve, reject) => {
+    fs.mkdirSync(dir, { recursive: true });
+    const f = path.join(dir, `import-${crypto.randomBytes(6).toString('hex')}.pdf`);
+    fs.writeFileSync(f, buf);
+    execFile('pdftotext', ['-layout', f, '-'], { maxBuffer: 64 << 20 }, (err, out) => {
+      fs.rm(f, { force: true }, () => {});
+      if (err) return reject(Object.assign(new Error(err.code === 'ENOENT' ? 'pdftotext' : 'pdf'), { code: err.code === 'ENOENT' ? 'pdftotext' : 'pdf' }));
+      resolve(out.toString('utf8'));
+    });
+  });
+}
+
+// ---------- 2. redact before anything leaves this machine
+const DROP_LINE = /\b(e-?tickets?|PNR|booking no|confirmation no|booking record|policy|passport no|born|allergies)\b|\bbooking\s+\d|Trip\.com\s+\d|เลขจอง|เลขยืนยัน|เลขที่จอง|หมายเลขการจอง/i;
+const SUB = [
+  [/\b\d{3}-\d{10}\b/g, '[e-ticket]'],
+  [/\b\d{9,}\b/g, '[number]'],
+  [/\b[A-Z]{1,2}\d{7}\b/g, '[passport]'],
+  [/[\w.+-]+@[\w-]+\.[a-z]{2,}/gi, '[e-mail]'],
+  [/฿\s?[\d,]+(?:\.\d+)?|\bTHB\s?[\d,]+/g, '[baht]'],
+  [/\b\d[\d,]*(?:\.\d+)?\s?(?:baht|บาท)/gi, '[baht]'],
+  [/_{4,}/g, ''],
+];
+function redact(raw) {
+  let dropped = 0, masked = 0;
+  const text = raw.split('\n').filter((l) => { if (DROP_LINE.test(l)) { dropped++; return false; } return true; }).map((l) => {
+    let s = l; for (const [re, rep] of SUB) s = s.replace(re, () => { masked++; return rep; }); return s.replace(/[ \t]{2,}/g, '  ').trimEnd();
+  }).join('\n').replace(/\n{3,}/g, '\n\n');
+  return { text, dropped, masked };
+}
+
+// ---------- prices (USD per million tokens) only to show an estimate on the draft — never used for anything else
+const PRICE = {
+  'claude-haiku-5-5': (p) => (p <= 100000 ? [0.10, 0.50] : [0.50, 2.50]),
+  'claude-sonnet-5-5': () => [2, 10], 'claude-sonnet-5': () => [2, 10],
+  'claude-opus-5-5': () => [4, 20], 'claude-opus-5': () => [5, 25],
+  'claude-fable-5-1': () => [10, 50],
+};
+const READ = { 'claude-opus-5-5': 0.05, 'claude-fable-5-1': 0.025 };
+function usd(model, u) {
+  const p = PRICE[model]; if (!p) return null;
+  const prompt = (u.input_tokens || 0) + (u.cache_read_input_tokens || 0) + (u.cache_creation_input_tokens || 0);
+  const [pin, pout] = p(prompt);
+  return ((u.input_tokens || 0) * pin + (u.cache_creation_input_tokens || 0) * pin * 1.25 + (u.cache_read_input_tokens || 0) * pin * (READ[model] || 0.1) + (u.output_tokens || 0) * pout) / 1e6;
+}
+
+const parseJSON = (s) => {
+  const t = s.replace(/^```(?:json)?\s*/m, '').replace(/```\s*$/m, '').trim();
+  const a = Math.min(...['{', '['].map((c) => { const i = t.indexOf(c); return i < 0 ? Infinity : i; }));
+  if (!isFinite(a)) throw Object.assign(new Error('no JSON in the answer'), { code: 'json' });
+  return JSON.parse(t.slice(a));
+};
+let schema = null;
+const SCHEMA = () => (schema = schema || JSON.parse(fs.readFileSync(path.join(ROOT, 'docs/handoff/plan.schema.json'), 'utf8')));
+const SAMPLE = () => fs.readFileSync(path.join(ROOT, 'docs/handoff/plan.sample.json'), 'utf8');
+const RULES = 'Copy times, names, prices, hours, phone numbers and addresses exactly as the manual writes them; never invent one. '
+  + 'Leave out anything private: booking references, confirmation numbers, e-tickets, passport numbers, what the family paid in baht, e-mails, personal phone numbers, travellers\' full names. '
+  + 'Masked values like [number] were removed on purpose — never guess them. Answer with JSON only, no prose, no code fence.';
+const EN_ONLY = 'Wherever the schema asks for an {th, en} object, write {"en": "…"} only — the Thai is added later.';
+
+// ---------- 3–5. the import itself. client = an Anthropic SDK instance; take() = the daily cap (false → stop); log(line) = progress
+async function run({ buf, slug, client, take, onUsage, log = () => {}, dir, kids }) {
+  const raw = await pdfText(buf, dir);
+  if (raw.replace(/\s+/g, '').length < 2000) throw Object.assign(new Error('too little text (a scanned PDF?)'), { code: 'text' });
+  const { text, dropped, masked } = redact(raw);
+  log(`text ${raw.length} chars → ${text.length} after redaction (${dropped} lines dropped, ${masked} values masked)`);
+  const ledger = [];
+  const manualBlock = { type: 'text', text: `<manual>\n${text}\n</manual>`, cache_control: { type: 'ephemeral' } };
+  async function ask(step, model, { system, user, max = 32000, effort = 'low', manual = true }) {
+    if (take && !(await take())) throw Object.assign(new Error('limit'), { code: 'limit' });
+    const t0 = Date.now();
+    const stream = client.messages.stream({
+      model, max_tokens: max, output_config: { effort },
+      system: manual ? [{ type: 'text', text: system }, manualBlock] : system,
+      messages: [{ role: 'user', content: user }],
+    });
+    const msg = await stream.finalMessage();
+    const u = msg.usage || {};
+    if (onUsage) { try { onUsage(u); } catch (_) { /* counting never breaks an import */ } }
+    const c = usd(model, u);
+    ledger.push({ step, model, in: u.input_tokens || 0, cw: u.cache_creation_input_tokens || 0, cr: u.cache_read_input_tokens || 0, out: u.output_tokens || 0, usd: c, s: Math.round((Date.now() - t0) / 1000) });
+    log(`${step}: ${model} · in ${u.input_tokens || 0} · cache ${u.cache_creation_input_tokens || 0}/${u.cache_read_input_tokens || 0} · out ${u.output_tokens || 0}${c === null ? '' : ` · $${c.toFixed(3)}`} · ${Math.round((Date.now() - t0) / 1000)} s`);
+    if (msg.stop_reason === 'refusal') throw Object.assign(new Error(`${step}: refused`), { code: 'refusal' });
+    if (msg.stop_reason === 'max_tokens') throw Object.assign(new Error(`${step}: answer too long`), { code: 'long' });
+    return parseJSON(msg.content.filter((b) => b.type === 'text').map((b) => b.text).join(''));
+  }
+  const S = SCHEMA();
+  const sys = `You turn a family's Trip Operations Manual into the plan.json of a memory-book app. ${RULES}`;
+  const top = await ask('structure', EXTRACT(), {
+    system: sys,
+    user: `Write the plan's top level and its days from the manual: {slug, title, sub, from, to, tz, place, places, kicker, display, emoji, days}. `
+      + `slug = "${slug}". One day per date from the first to the last day. For each day fill title, sleep, wx, planned (every stop, with a FULL Google Maps query q and a local-script name zh when the manual gives one), moving, pick, planB, money (prices only), plan (the timeline: t = HH:MM), tips (include the "show the driver" names), legs (every move with from/to/by/min), picks (each meal: the pick, with alt = the backup), stay {name, addr, q}. `
+      + `Day item schema: ${JSON.stringify(S.properties.days.items)}\nExample of a whole plan (format only): ${SAMPLE()}\n${EN_ONLY}`,
+    max: 48000,
+  });
+  const info = await ask('info', EXTRACT(), {
+    system: sys,
+    user: `Write the pocket guide "info" from the manual's chapters (key facts → guide; where we sleep → stays; emergency card → emergency + lost; prices/attractions → prices; packing → pack; entry & documents → visa as {lede, groups:[{title, items}]}; contingency plans → ifthen as {plans:{head, cols, rows}}; anything else worth keeping, e.g. getting around, customs, a park touring plan → more). Schema: ${JSON.stringify(S.properties.info)}\n${EN_ONLY}`,
+    max: 48000,
+  });
+  const rest = await ask('restaurants', EXTRACT(), {
+    system: sys,
+    user: `Write "restaurants" from the manual's restaurant guide: every restaurant, grouped by the manual's areas, kinds 0 restaurants · 1 food courts and quick bites · 2 cafés and sweets. Per place: name, zh (local name), what (food · famous for), why (why for us), where, pr (budget), hours, q (full Maps query). Schema: ${JSON.stringify(S.properties.restaurants)}\n${EN_ONLY}`,
+    max: 64000,
+  });
+  if (!top || !Array.isArray(top.days) || !top.days.length) throw Object.assign(new Error('no days found'), { code: 'days' });
+  top.slug = slug;
+  const who = kids && kids.length ? kids.map((k) => `${k.name_en} (${k.age})`).join(' and ') : 'Mimi (3, a girl) and Mika (1½, a boy)';
+  const brief = top.days.map((d, i) => ({ i, title: d.title, plan: d.plan, planned: (d.planned || []).map((p) => p.en || p.name), pick: d.pick }));
+  const kidsOut = await ask('kids', WRITE(), {
+    system: `You write the children's pages of a family memory book. The children: ${who}. Write warm, simple, true sentences a small child enjoys hearing; every text bilingual {"th": "…", "en": "…"} with natural Thai for a Thai family (not a word-for-word translation). Only facts that are true and that the day really includes. Answer with JSON only, no code fence.`,
+    user: `For each day below write: learn (2–3 cards: name, facts[2], kid), quiz (3: q, a), mission {title, stamp (short CAPITALS), facts[3], spot[4] {k, e (emoji), th, en}}, tale {th, en, scenes:[4–5 × {e, h:{th,en}, th, en}]} — the guide's story of the day, the scenes cut from the same words. Return {"days":[{learn, quiz, mission, tale}, …]} in day order.\nDays: ${JSON.stringify(brief)}`,
+    max: 48000, effort: 'medium', manual: false,
+  });
+
+  // every English string → Thai (only the Thai comes back: cheaper than re-writing the JSON)
+  const plan = { ...top, info: info || {}, ...(rest && rest.groups ? { restaurants: rest } : {}) };
+  const holes = [];
+  (function walk(v) {
+    if (Array.isArray(v)) v.forEach(walk);
+    else if (v && typeof v === 'object') {
+      if (typeof v.en === 'string' && v.th === undefined) holes.push(v);
+      for (const x of Object.values(v)) if (x && typeof x === 'object') walk(x);
+    }
+  })(plan);
+  const BATCH = 350;
+  for (let b = 0; b < holes.length; b += BATCH) {
+    const part = holes.slice(b, b + BATCH);
+    const th = await ask(`thai ${b / BATCH + 1}/${Math.ceil(holes.length / BATCH)}`, WRITE(), {
+      system: 'You translate a family trip guide from English into natural Thai for Thai parents. Keep proper names, place names, times, prices and numbers as written (Latin script for names is fine). Short and clear. Answer with a JSON array of strings only — the same length and order as the input.',
+      user: JSON.stringify(part.map((h) => h.en)),
+      max: 32000, manual: false,
+    });
+    if (!Array.isArray(th) || th.length !== part.length) throw Object.assign(new Error(`translation: ${th && th.length} strings for ${part.length}`), { code: 'thai' });
+    part.forEach((h, i) => { h.th = String(th[i]); });
+  }
+  plan.days.forEach((d, i) => Object.assign(d, ((kidsOut && kidsOut.days) || [])[i] || {}));
+
+  // plan → seed (no drawn art: an imported book keeps its colours and the generic guides) + the privacy scan
+  const v = core.validate(plan);
+  if (v.errs.length) throw Object.assign(new Error(`plan: ${v.errs.slice(0, 3).join('; ')}`), { code: 'plan', errs: v.errs });
+  const notes = [];
+  const seed = core.toSeed(plan, notes, { art: false });
+  const { hits, warns: soft } = core.scan(seed);
+  if (hits.length) throw Object.assign(new Error(`privacy: ${hits.map((h) => `${h.rule} at ${h.at}`).slice(0, 5).join('; ')}`), { code: 'privacy' });
+  const { errs, warns } = core.sanity(seed, { art: false });
+  if (errs.length) throw Object.assign(new Error(`seed: ${errs.join('; ')}`), { code: 'seed', errs });
+  const cost = ledger.reduce((a, r) => a + (r.usd || 0), 0);
+  const report = { lines: core.report(seed).split('\n').map((l) => l.trim()), warns: [...v.warns, ...warns, ...soft.map((w) => `${w.rule} at ${w.at}`)], notes, todo: core.todos(seed), dropped, masked };
+  log(`seed: ${report.lines[0]}`);
+  return { seed, plan, report, cost: { usd: ledger.some((r) => r.usd === null) ? null : cost, calls: ledger } };
+}
+
+module.exports = { run, redact, pdfText, EXTRACT, WRITE };

@@ -80,6 +80,7 @@ function render() {
   } else if (p[0] === 'passport') html = viewPassport(p[1], p[2]);
   else if (p[0] === 'notebook') html = viewNotebook();
   else if (p[0] === 'viewers' && isEditor()) html = viewViewers();
+  else if (p[0] === 'import' && isEditor()) html = viewImport();
   else html = viewShelf();
   document.documentElement.style.cssText = t ? themeStyle(t) : themeStyle(curTrip());
   document.body.classList.toggle('serif', !!(t ? t.theme.display === 'serif' : false));
@@ -194,7 +195,7 @@ ${visual}
 <div class="ppmini">${children().map((k) => { const n = passportStamps(k.slug); return `<a class="ppc s kid-${esc(k.slug)}" href="#/passport/${esc(k.slug)}"><span class="emb">${kidArt(k.slug) ? `<img src="${kidArt(k.slug)}" alt="">` : '🌏'}</span><b>${L('พาสปอร์ตความทรงจำ', 'Memory Passport')}</b><span class="nm">${esc(kidName(k.slug))}</span><small>${n} ${L('ตราประทับ', n === 1 ? 'stamp' : 'stamps')}</small></a>`; }).join('')}</div>
 ${isEditor() ? backupCard() : ''}
 ${aiCard()}
-<div class="row end" style="margin-top:18px">${isEditor() ? `<a class="btn ghost small" href="#/viewers">👪 ${L('ญาติที่ดูได้', 'Who can see the books')}</a>` : ''}<button class="btn ghost small" data-a="logout">⎋ ${L('ออกจากระบบ', 'Sign out')}</button></div>`;
+<div class="row end" style="margin-top:18px">${isEditor() ? `<a class="btn ghost small" href="#/viewers">👪 ${L('ญาติที่ดูได้', 'Who can see the books')}</a>` : ''}${isEditor() && S.features.story ? `<a class="btn ghost small" href="#/import">📄 ${L('นำเข้าเล่มจาก PDF', 'Book from a PDF')}</a>` : ''}<button class="btn ghost small" data-a="logout">⎋ ${L('ออกจากระบบ', 'Sign out')}</button></div>`;
 }
 // off-site copy kept by the family: one tap downloads everything (data + full photos) as a zip; nags when there is something new since the last one on this phone
 // Claude usage (editors): today's calls against the daily cap + the last 30 days; fetched from /api/b/ai at most once a minute,
@@ -1230,6 +1231,48 @@ function notebookBlock(t, i) {
 /* ---------- relatives in groups (editors): each group its own view-only PIN and/or link, and the books it may see ----------
    The list comes from /api/b/viewers (not part of the offline state); a PIN is shown once, right after it is set, never again. */
 let vg = null, vgForm = null, vgJust = null;   // the groups · the form being filled {id, name, trips, link} · {name, pin} just saved
+/* ---------- a book from a Trip Operations Manual PDF (#/import, editors) ----------
+   The PDF goes to the server once; the server extracts the text, removes private lines and values, asks Claude for the plan and
+   the kids' pages, and keeps the result as a draft. The parents read the draft's summary here and press "save as a book".
+   imp (sheets.js) holds the page's state: the chosen file, the slug, the running job (polled every 3 s) and the drafts. */
+const IMP_STEPS = [['text', /^text /, 'อ่านคู่มือ', 'Reading the manual'], ['structure', /^structure:/, 'แผนรายวัน', 'Day plans'], ['info', /^info:/, 'คู่มือพกพา', 'Pocket guide'], ['restaurants', /^restaurants:/, 'ร้านอาหาร', 'Restaurants'], ['kids', /^kids:/, 'หน้าของเด็กๆ', "Kids' pages"], ['thai', /^thai /, 'แปลไทย', 'Thai'], ['seed', /^seed:/, 'ประกอบเล่ม', 'Binding the book']];
+function viewImport() {
+  if (imp.list === null) { imp.list = 'loading'; impRefresh(); }
+  const j = imp.job || { status: 'idle' }, running = j.status === 'running', on = !!S.features.story;
+  const log = (j.log || []).map((l) => l.replace(/^\d\d:\d\d:\d\d /, ''));
+  const done = new Set(); IMP_STEPS.forEach(([k, re]) => { if (j.status === 'done' || log.some((l) => re.test(l))) done.add(k); });   // a finished job ticks every step
+  const at = IMP_STEPS.findIndex(([k]) => !done.has(k));   // the step in progress
+  const usd = (c) => (c && typeof c.usd === 'number' ? `≈ $${c.usd.toFixed(2)} (≈ ฿${Math.round(c.usd * 35)})` : L('ยังไม่ทราบราคา', 'cost unknown'));
+  const num = (line, key) => { const m = new RegExp(`${key} (\\d+)`).exec(line || ''); return m ? +m[1] : null; };
+  const draftCard = (d) => {
+    const l0 = (d.report && d.report.lines || [])[0] || '', l1 = (d.report && d.report.lines || [])[1] || '', l2 = (d.report && d.report.lines || [])[2] || '';
+    const stops = num(l0, 'stops'), rest = num(l1, 'restaurants'), miss = num(l2, 'missions'), tl = num(l0, 'timeline');
+    const stat = (v, e, th, en) => (v === null ? '' : `<span class="pill">${e} ${v} ${L(th, en)}</span>`);
+    return `<div class="impdraft"><div class="impcover"><span class="e">${esc((d.seed && d.seed.cover && d.seed.cover.emoji) || '📖')}</span><b>${esc(T(d.title) || d.slug)}</b><small>${d.days} ${L('วัน', 'days')} · ${esc(d.slug)}</small></div>
+<div class="impbody"><div class="row">${stat(stops, '📍', 'จุดแวะ', 'stops')}${stat(tl, '🕒', 'ช่วงเวลา', 'timeline rows')}${stat(rest, '🍽️', 'ร้าน', 'places to eat')}${stat(miss, '🛂', 'ภารกิจเด็ก', "kids' missions")}</div>
+<p class="label">${L('ค่า Claude สำหรับเล่มนี้', 'Claude cost for this book')}: ${usd(d.cost)}${d.report && d.report.todo ? ` · ${L(`มี ${d.report.todo} จุดที่ยังเขียนว่า TODO`, `${d.report.todo} spots still marked TODO`)}` : ''}</p>
+${d.report && d.report.warns && d.report.warns.length ? `<details class="impwarn"><summary>⚠️ ${d.report.warns.length} ${L('ข้อควรดูก่อนบันทึก', 'things to look at')}</summary>${d.report.warns.map((w) => `<div>${esc(w)}</div>`).join('')}</details>` : ''}
+<div class="row"><button class="btn" data-a="impsave" data-v="${esc(d.id)}">📚 ${L('วางเล่มนี้บนชั้น', 'Put it on the shelf')}</button><button class="btn ghost small" data-a="impdel" data-v="${esc(d.id)}">${L('ทิ้งร่างนี้', 'Discard')}</button></div></div></div>`;
+  };
+  const list = Array.isArray(imp.list) ? imp.list : [];
+  const steps = `<ol class="impsteps">${IMP_STEPS.map(([k, , th, en], i) => `<li class="${done.has(k) ? 'done' : i === at && running ? 'now' : ''}"><span>${done.has(k) ? '✓' : i === at && running ? '…' : i + 1}</span>${L(th, en)}</li>`).join('')}</ol>`;
+  return `<div class="part">${L('เล่มใหม่', 'New book')}</div>
+<section class="hero imphero"><div><div class="kicker">${L('จากคู่มือทริป สู่สมุดความทรงจำ', 'From the trip manual to a memory book')}</div><h2>${L('ทำเล่มใหม่จาก PDF', 'A new book from a PDF')}</h2>
+<p class="kids">${L('ส่งคู่มือทริปมา แล้ว Claude จะเขียนเล่มให้ครบ: แผนรายวัน คู่มือพกพา ร้านอาหาร และหน้าของมีมี่กับมีก้า สองภาษา', "Send the trip manual and Claude writes the whole book: day plans, pocket guide, places to eat, and Mimi and Mika's pages in both languages.")}</p></div>${castHtml(KID_ART)}</section>
+<div class="imphow"><div><span>1</span><b>${L('เลือกไฟล์ PDF', 'Pick the PDF')}</b><small>${L('คู่มือทริปที่วางแผนไว้', 'The Trip Operations Manual')}</small></div><div><span>2</span><b>${L('Claude เขียนเล่ม', 'Claude writes')}</b><small>${L('ราว 5–10 นาที หน้านี้อัปเดตเอง', 'About 5–10 min, this page updates itself')}</small></div><div><span>3</span><b>${L('ตรวจแล้ววางบนชั้น', 'Check and shelve')}</b><small>${L('ได้ร่างให้ดูก่อน ค่อยบันทึก', 'A draft to look at before you keep it')}</small></div></div>
+${!on ? `<div class="notice">${L('ต้องตั้งค่า ANTHROPIC_API_KEY บนเซิร์ฟเวอร์ก่อน จึงจะใช้หน้านี้ได้', 'Set ANTHROPIC_API_KEY on the server to use this page')}</div>` : ''}
+<div class="impcard">
+<label class="impdrop ${imp.file ? 'has' : ''} ${running || !on ? 'off' : ''}"><input id="impfile" type="file" accept="application/pdf,.pdf" ${running || !on ? 'disabled' : ''}>
+<span class="e">${imp.file ? '📘' : '📄'}</span><b>${imp.file ? esc(imp.file.name) : L('แตะเพื่อเลือกไฟล์ PDF', 'Tap to choose the PDF')}</b><small>${imp.file ? `${(imp.file.size / 1048576).toFixed(1)} MB · ${L('แตะอีกครั้งเพื่อเปลี่ยน', 'tap again to change')}` : L('ไม่เกิน 25 MB', 'Up to 25 MB')}</small></label>
+<label class="label impslug">${L('รหัสเล่ม', 'Book id')} <small>(a-z 0-9 -)</small><input id="impslug" class="field" maxlength="60" value="${esc(imp.slug || '')}" placeholder="tokyo-2027" ${running ? 'disabled' : ''}></label>
+<button class="btn impgo" data-a="impstart" ${running || !on ? 'disabled' : ''}>${running ? '⏳ ' + L('Claude กำลังเขียน…', 'Claude is writing…') : '✨ ' + L('ให้ Claude เขียนเล่ม', 'Ask Claude to write the book')}</button>
+${imp.err ? `<div class="err" style="color:var(--accent2)">${esc(imp.err)}</div>` : ''}
+</div>
+${j.status !== 'idle' ? `<div class="impjob ${j.status}"><div class="vghd"><b>${j.status === 'running' ? '✨ ' + L('กำลังเขียนเล่ม', 'Writing the book') : j.status === 'done' ? '🎉 ' + L('เล่มพร้อมให้ตรวจแล้ว', 'The draft is ready') : '😔 ' + L('ครั้งนี้ไม่สำเร็จ', 'That did not work')} <span class="label">${esc(j.slug || '')}</span></b>${j.status === 'error' && j.error ? `<span class="label">${esc(impErr(j.error))}</span>` : ''}</div>${steps}<details class="impwarn"><summary>${L('รายละเอียด', 'Details')}</summary><pre class="implog">${log.map(esc).join('\n')}</pre></details></div>` : ''}
+${list.length ? `<h2 class="h3 imph3">${L('ร่างที่รอขึ้นชั้น', 'Drafts waiting for the shelf')}</h2>${list.map(draftCard).join('')}` : ''}
+<p class="impnote">🔒 ${L('ไฟล์ PDF ถูกอ่านแล้วลบทันทีบนเซิร์ฟเวอร์ · บรรทัดที่มีเลขจอง e-ticket พาสปอร์ต วันเกิด หรือยอดเงินบาท ถูกตัดออกก่อนถึง Claude · รูปใน PDF ไม่ถูกส่ง · เล่มถูกตรวจอีกครั้งก่อนเก็บ', 'The PDF is read and deleted on the server at once · lines with booking numbers, e-tickets, passports, birthdays or baht amounts are removed before anything reaches Claude · images are never sent · the book is scanned again before it is kept')}<br>${L('เล่มที่นำเข้ายังไม่มีภาพวาดประจำวัน ใช้สีของเล่มและไกด์กีกี้กับรูไปก่อน', 'An imported book has no drawings of its own yet: its colours and the guides Kiki and Roo stand in.')}</p>`;
+}
+const impErr = (e) => ({ limit: L('ครบโควตา Claude ของวันนี้แล้ว ลองพรุ่งนี้', "Today's Claude limit is used up — try tomorrow"), privacy: L('พบข้อมูลส่วนตัวในเล่ม จึงไม่บันทึก', 'Private data found in the book — not kept'), text: L('อ่านข้อความจาก PDF ไม่ได้ (สแกนเป็นรูป?)', 'No text in the PDF (a scanned image?)'), pdftotext: L('เซิร์ฟเวอร์ยังไม่มี pdftotext', 'pdftotext is missing on the server'), refusal: L('Claude ปฏิเสธ', 'Claude declined'), json: L('คำตอบอ่านไม่ได้ ลองอีกครั้ง', 'Unreadable answer — try again') }[e] || e);
 function viewViewers() {
   if (vg === null) { vg = 'loading'; api('GET', '/api/b/viewers').then((r) => { vg = r.groups; safeRender(); }, () => { vg = []; safeRender(); }); }
   const trips = S.trips, list = Array.isArray(vg) ? vg : [];

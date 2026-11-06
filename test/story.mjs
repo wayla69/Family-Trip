@@ -15,7 +15,7 @@ console.log('stories');
 const freePort = () => new Promise((res) => { const s = net.createServer().listen(0, () => { const p = s.address().port; s.close(() => res(p)); }); });
 
 // ---- mock Messages API (SSE)
-const calls = [];
+const calls = [], importCalls = [];
 let upstreamClosedEarly = false;
 const mock = http.createServer((req, res) => {
   let body = ''; req.on('data', (d) => { body += d; });
@@ -31,7 +31,23 @@ const mock = http.createServer((req, res) => {
     const photo = String(b.system).includes('"cap"');   // look at today's photos: JSON per id; a stop from the STOPS line, plus junk that must be dropped
     const pids = [...facts.matchAll(/^id: (\S+)$/gm)].map((m) => m[1]), stop0 = (/STOPS: "([^"]*)"/.exec(facts) || [])[1] || '';
     const quiz = String(b.system).includes('"ok":');   // the memory game answers JSON (once with a bad item, which must be dropped)   // translate: answer JSON [{id, tr}] for the items it was given
-    const parts = photo ? [JSON.stringify(pids.map((id, k) => (k === 0 ? { id, cap: '## เด็กๆ **ยิ้ม** หน้าปราสาท', tags: ['kids', 'Character', 'bogus', 'kids'], place: stop0, best: true } : { id, cap: 'เรากินติ่มซำ', tags: ['food'], place: 'Narnia', best: 'yes' })))]
+    const sysText = JSON.stringify(b.system);   // the import sends system as blocks (the redacted manual cached in the second one)
+    const imp = sysText.includes('Trip Operations Manual') ? (facts.includes('top level and its days') ? 'top' : facts.includes('pocket guide') ? 'info' : 'rest')
+      : sysText.includes("children's pages") ? 'kids' : sysText.includes('You translate a family trip guide') ? 'thai' : null;
+    if (imp) importCalls.push({ step: imp, system: sysText, user: facts });
+    const en = (x) => ({ en: x }), L2 = (th, e) => ({ th, en: e });
+    const IMP = {
+      top: () => JSON.stringify({ slug: 'wrong-slug', title: en('The Test Hop · Testland'), from: '2027-03-10', to: '2027-03-11', tz: 'Asia/Tokyo', place: { en: 'Testland', flag: '🏳️' },
+        days: [0, 1].map((i) => ({ title: en(`Day ${i + 1} of the test`), sleep: en('Test Inn'), planned: [{ en: 'Test Square', zh: '測試', q: 'Test Square, Testland' }], moving: en('Walk 5 min'),
+          plan: [{ t: '09:00', en: 'Breakfast' }, { t: '11:00', en: 'Super Fun Zone opens' }], tips: [en('Show the driver: 測試')], stay: { name: 'Test Inn', addr: '1 Test St', q: 'Test Inn, Testland' } })) }),
+      info: () => JSON.stringify({ emergency: [{ label: en('All emergencies'), tel: '999', main: true }], lost: en('Stand still'), guide: [{ title: en('Clocks'), text: en('One hour ahead') }] }),
+      rest: () => JSON.stringify({ lede: en('Near the inn'), kinds: [en('Restaurants'), en('Food courts'), en('Cafés')], groups: [{ area: en('Test town'), kind: 0, items: [{ name: 'Test Noodles', what: en('Noodles'), pr: 'MOP 50', q: 'Test Noodles, Testland' }] }] }),
+      kids: () => JSON.stringify({ days: [0, 1].map((i) => ({ learn: [{ name: L2('จัตุรัส', 'The square'), facts: [L2('กว้าง', 'Wide'), L2('เก่า', 'Old')], kid: L2('นับเสา', 'Count the posts') }], quiz: [{ q: L2('สีอะไร', 'What colour?'), a: L2('แดง', 'Red') }],
+        mission: { title: L2('ไปกัน!', "Let's go!"), stamp: `TEST ${i + 1}`, facts: [L2('สนุก', 'Fun')], spot: [{ k: 'ball', e: '🟡', th: 'ลูกบอล', en: 'A ball' }] },
+        tale: { th: 'วันนี้สนุก', en: 'Today was fun', scenes: [{ e: '🌉', h: L2('สะพาน', 'The bridge'), th: 'วันนี้สนุก', en: 'Today was fun' }] } })) }),
+      thai: () => JSON.stringify(JSON.parse(facts).map((x) => `ไทย: ${x}`)),
+    };
+    const parts = imp ? [IMP[imp]()] : photo ? [JSON.stringify(pids.map((id, k) => (k === 0 ? { id, cap: '## เด็กๆ **ยิ้ม** หน้าปราสาท', tags: ['kids', 'Character', 'bogus', 'kids'], place: stop0, best: true } : { id, cap: 'เรากินติ่มซำ', tags: ['food'], place: 'Narnia', best: 'yes' })))]
       : quiz ? ['```json\n[{"q":"เมื่อวานมีมี่บอกว่าปลาอยู่ที่ไหน","a":[{"e":"💧","t":"ในน้ำ"},{"e":"🌳","t":"บนต้นไม้"},{"e":"🚌","t":"บนรถบัส"}],"ok":0},',
       '{"q":"ไปไหนมา","a":[{"e":"🏰","t":"ดิสนีย์"},{"e":"🏖️","t":"ทะเล"},{"e":"🏔️","t":"ภูเขา"}],"ok":0},{"q":"bad","a":[{"t":"x"}],"ok":3}]\n```']
       : trans ? [JSON.stringify(JSON.parse(facts).map((x) => ({ id: x.id, tr: `${x.to}:${x.text}` })))]
@@ -376,6 +392,51 @@ try {
     await pg2.locator('#phlist .mosaic button:visible').first().click(); await pg2.waitForSelector('#lbtags');
     ok((await pg2.inputValue('#lbtags')).includes('food') && (await pg2.textContent('#lb .tags')).includes('🍜'), 'lightbox: tags and place shown and editable');
     await b2.close(); }
+  // ---- a book from a PDF (#/import): a tiny PDF whose made-up "manual" has private-looking lines that must never reach the mock
+  { const db = new Client({ connectionString: u.toString() }); await db.connect(); await db.query('UPDATE ai_usage SET calls=0'); await db.end(); }
+  const pdfOf = (lines) => {   // the smallest PDF that pdftotext reads: one page, Helvetica, one line per Tj
+    const content = `BT /F1 11 Tf 40 780 Td 13 TL ${lines.map((l) => `(${l.replace(/[()\\]/g, '\\$&')}) Tj T*`).join(' ')} ET`;
+    const objs = ['<< /Type /Catalog /Pages 2 0 R >>', '<< /Type /Pages /Kids [3 0 R] /Count 1 >>', '<< /Type /Page /Parent 2 0 R /MediaBox [0 0 595 842] /Contents 4 0 R /Resources << /Font << /F1 5 0 R >> >> >>',
+      `<< /Length ${Buffer.byteLength(content)} >>\nstream\n${content}\nendstream`, '<< /Type /Font /Subtype /Type1 /BaseFont /Helvetica >>'];
+    let out = '%PDF-1.4\n'; const offs = [];
+    objs.forEach((o, i) => { offs.push(Buffer.byteLength(out)); out += `${i + 1} 0 obj\n${o}\nendobj\n`; });
+    const xref = Buffer.byteLength(out);
+    out += `xref\n0 ${objs.length + 1}\n0000000000 65535 f \n${offs.map((o) => String(o).padStart(10, '0') + ' 00000 n \n').join('')}trailer\n<< /Size ${objs.length + 1} /Root 1 0 R >>\nstartxref\n${xref}\n%%EOF\n`;
+    return Buffer.from(out, 'latin1');
+  };
+  const FAKE = { pnr: 'ZZ9ZZ9', tripcom: '1111222233334444', eticket: '999-0000000001', hotel: '5555666677778888', baht: '12,345' };   // invented values, not any real booking
+  const manualLines = ['THE TEST HOP - Trip Operations Manual', 'Day 1 - Wed 10 Mar 2027 - Test Square, breakfast 09:00', 'Day 2 - Thu 11 Mar 2027 - Super Fun Zone opens 11:00',
+    `Flights TG 123 - PNR ${FAKE.pnr} - Trip.com ${FAKE.tripcom} - e-tickets ${FAKE.eticket}`, `Hotel booking ${FAKE.hotel} - paid ${FAKE.baht} baht`, 'Children: born 2023-06 - allergies none', 'Emergency 999 - Test Inn, 1 Test St - restaurants: Test Noodles MOP 50',
+    ...Array.from({ length: 40 }, (_, i) => `Line ${i} of filler text so the manual is long enough to count as a real document with many words in it.`)];
+  const pdf = pdfOf(manualLines);
+  const IH = { 'x-mb': '1', cookie: ck, 'content-type': 'application/pdf' };
+  ok((await fetch(BASE + '/api/b/import?slug=test-hop', { method: 'POST', headers: { ...IH, cookie: vck.split(';')[0] }, body: pdf })).status === 403, 'import: relatives cannot start one');
+  ok((await fetch(BASE + '/api/b/import?slug=Bad Slug', { method: 'POST', headers: IH, body: pdf })).status === 400, 'import: a bad book id is refused');
+  ok((await fetch(BASE + '/api/b/import?slug=hk-macau-2026', { method: 'POST', headers: IH, body: pdf })).status === 409, 'import: an existing book id is refused');
+  ok((await fetch(BASE + '/api/b/import?slug=test-hop', { method: 'POST', headers: IH, body: Buffer.from('not a pdf at all '.repeat(200)) })).status === 400, 'import: not a PDF → 400');
+  const st = await fetch(BASE + '/api/b/import?slug=test-hop', { method: 'POST', headers: IH, body: pdf });
+  ok(st.status === 202 && (await st.json()).job, 'import: a PDF starts a job (202)');
+  ok((await fetch(BASE + '/api/b/import?slug=test-hop-2', { method: 'POST', headers: IH, body: pdf })).status === 409, 'import: one job at a time (409 busy)');
+  let imp;
+  for (let i = 0; i < 120; i++) { imp = await (await fetch(BASE + '/api/b/import', { headers: { cookie: ck } })).json(); if (imp.job.status !== 'running') break; await new Promise((r) => setTimeout(r, 250)); }
+  ok(imp.job.status === 'done' && imp.job.draft && imp.job.draft.slug === 'test-hop' && imp.job.draft.days === 2, `import: job done → a draft (${imp.job.status}: ${(imp.job.log || []).at(-1)})`);
+  ok(importCalls.length === 5 && importCalls.map((c) => c.step).join(',') === 'top,info,rest,kids,thai', `import: 5 model calls in order (${importCalls.map((c) => c.step).join(',')})`);
+  const sent = importCalls.map((c) => c.system + c.user).join('\n');
+  ok(sent.includes('Test Square') && sent.includes('Super Fun Zone') && sent.includes('Test Noodles'), 'import: the manual\'s text reached the model');
+  ok(!Object.values(FAKE).some((v) => sent.includes(v)) && !/born 2023|allergies/.test(sent), 'import: PNR, booking numbers, e-tickets, the baht amount, birth and allergy lines never reached the model');
+  ok(importCalls[1].system.includes('cache_control') && JSON.parse(importCalls[0].system)[1].text.startsWith('<manual>'), 'import: the manual rides as one cached system block');
+  ok(imp.drafts.length === 1 && imp.drafts[0].slug === 'test-hop' && imp.drafts[0].days === 2 && typeof imp.drafts[0].cost.usd === 'number', 'import: the draft is listed with its size and cost');
+  const dr = await (await fetch(BASE + '/api/b/import/' + imp.drafts[0].id, { headers: { cookie: ck } })).json();
+  ok(dr.seed && dr.seed.slug === 'test-hop' && dr.seed.days.length === 2 && dr.seed.days[1].plan[1].t === '11:00' && dr.seed.days[0].title.th === 'ไทย: Day 1 of the test' && dr.seed.days[0].tale.scenes.length === 1 && dr.seed.theme.art === '' && dr.seed.passport.guides[0].art === '/art/guides/kiki.svg', 'import: the seed has the days, the Thai, the kids\' pages, no drawn art and the generic guides');
+  ok(dr.seed.info.restaurants.groups[0].items[0].name === 'Test Noodles' && dr.seed.info.emergency[0].tel === '999', 'import: pocket guide and restaurants in the seed');
+  const sv = await fetch(BASE + '/api/b/import/' + imp.drafts[0].id + '/save', { method: 'POST', headers: H, body: '{}' });
+  ok(sv.status === 200 && (await sv.json()).id === 'test-hop', 'import: saved as a book');
+  const stt = await state(), nt = stt.trips.find((t) => t.id === 'test-hop');
+  ok(nt && nt.source === 'manual' && nt.days.length === 2 && nt.days[1].plan.plan[1].en === 'Super Fun Zone opens' && nt.firsts.length === 10 && nt.passport.days.length === 2, 'import: the new book is in the state with its days, plans, firsts and passport');
+  ok((await (await fetch(BASE + '/api/b/import', { headers: { cookie: ck } })).json()).drafts.length === 0, 'import: the draft is gone once saved');
+  ok((await fetch(BASE + '/api/b/import?slug=test-hop', { method: 'POST', headers: IH, body: pdf })).status === 409, 'import: the saved book\'s id is now taken');
+  const lite = (await (await fetch(BASE + '/api/b/state?lite=1', { headers: { cookie: ck } })).json()).trips.find((t) => t.id === 'test-hop');
+  ok(lite && lite.seed && (await fetch(BASE + '/api/b/seed/test-hop/' + lite.seed, { headers: { cookie: ck } })).status === 200, 'import: the book\'s guide text is served by its hash');
   await browser.close();
 } finally {
   srv.kill(); await new Promise((r) => srv.on('exit', r)); mock.close();

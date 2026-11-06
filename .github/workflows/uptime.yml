@@ -1,7 +1,8 @@
 name: Uptime
 # Every 15 minutes: is the live site up (Postgres + photo storage via /healthz?full=1 — plain /healthz is Railway's deploy check, Postgres only), is the app shell served, does the login wall hold?
 # A failure opens one GitHub issue "🔴 Site down" (GitHub notifies the owner by e-mail/app); recovery comments and closes it.
-# Needs the repo secret MB_URL (https://<domain>) — kept secret on purpose: the repo is public and the domain stays out of it.
+# Needs the repo secret MB_URL (https://<domain>) — or MB_URLS, one "name=https://<domain>" per line when several families each have their own
+# service (scripts/provision.mjs) — kept secret on purpose: the repo is public and the domains stay out of it.
 # Nothing is added to the app itself (no third-party scripts, nothing sent anywhere but GitHub).
 # Also opens "🟠 Deploy stuck" when main's mbs-vN is not live 45 min after it changed, and "🟡 … pause soon" after 45 days without a
 # commit (GitHub pauses scheduled workflows in a public repo after 60) — re-enable it under Actions if that happens.
@@ -31,21 +32,30 @@ jobs:
         id: probe
         env:
           MB_URL: ${{ secrets.MB_URL }}
+          MB_URLS: ${{ secrets.MB_URLS }}
         run: |
-          if [ -z "$MB_URL" ]; then echo "::notice::MB_URL is not set — uptime check skipped"; echo "skip=1" >> "$GITHUB_OUTPUT"; exit 0; fi
-          B="${MB_URL%/}"; bad=""
+          # one site (MB_URL) or many families (MB_URLS: one "name=https://…" per line) — every site is probed, one alert names the ones down
+          LIST="$MB_URLS"; [ -z "$LIST" ] && [ -n "$MB_URL" ] && LIST="site=$MB_URL"
+          if [ -z "$LIST" ]; then echo "::notice::MB_URL / MB_URLS not set — uptime check skipped"; echo "skip=1" >> "$GITHUB_OUTPUT"; exit 0; fi
+          bad=""; stuckwhy=""
+          want=$(grep -o "mbs-v[0-9]*" public/sw.js | head -1)
+          since=$(( $(date +%s) - $(git log -1 --format=%ct -- public/sw.js) ))
           # 3 tries 40 s apart per check, so a Railway redeploy (about a minute) does not raise an alarm
           probe() { want=$1; url=$2; for n in 1 2 3; do code=$(curl -s -o /dev/null -w '%{http_code}' --max-time 20 "$url" || true); [ "$code" = "$want" ] && break; [ $n -lt 3 ] && sleep 40; done; echo "${code:-000}"; }
-          h=$(probe 200 "$B/healthz?full=1");               [ "$h" = 200 ] || bad="$bad health=$h"
-          s=$(probe 200 "$B/sw.js");                 [ "$s" = 200 ] || bad="$bad app=$s"
-          a=$(probe 401 "$B/api/b/state");           [ "$a" = 401 ] || bad="$bad login-wall=$a"
-          echo "healthz=$h app=$s login-wall=$a"
+          while IFS= read -r line; do
+            [ -z "$line" ] && continue
+            name="${line%%=*}"; B="${line#*=}"; B="${B%/}"; fam=""
+            h=$(probe 200 "$B/healthz?full=1");        [ "$h" = 200 ] || fam="$fam health=$h"
+            s=$(probe 200 "$B/sw.js");                 [ "$s" = 200 ] || fam="$fam app=$s"
+            a=$(probe 401 "$B/api/b/state");           [ "$a" = 401 ] || fam="$fam login-wall=$a"
+            [ -n "$fam" ] && bad="$bad [$name]$fam"
+            # deploy stuck: main ships a newer mbs-vN than the live site for more than 45 minutes (Railway build paused or failed)
+            live=$(curl -s --max-time 20 "$B/sw.js" | grep -o "mbs-v[0-9]*" | head -1 || true)
+            echo "$name: healthz=$h app=$s login-wall=$a · main=$want live=${live:-?} (sw.js changed ${since}s ago)"
+            if [ -n "$live" ] && [ "$live" != "$want" ] && [ "$since" -gt 2700 ]; then stuckwhy="$stuckwhy [$name] live $live, main $want"; fi
+          done <<< "$LIST"
           if [ -n "$bad" ]; then echo "down=1" >> "$GITHUB_OUTPUT"; echo "why=$bad" >> "$GITHUB_OUTPUT"; else echo "down=0" >> "$GITHUB_OUTPUT"; fi
-          # deploy stuck: main ships a newer mbs-vN than the live site for more than 45 minutes (Railway build paused or failed)
-          want=$(grep -o "mbs-v[0-9]*" public/sw.js | head -1); live=$(curl -s --max-time 20 "$B/sw.js" | grep -o "mbs-v[0-9]*" | head -1 || true)
-          since=$(( $(date +%s) - $(git log -1 --format=%ct -- public/sw.js) ))
-          echo "main=$want live=${live:-?} (sw.js changed ${since}s ago)"
-          if [ -n "$live" ] && [ "$live" != "$want" ] && [ "$since" -gt 2700 ]; then echo "stuck=1" >> "$GITHUB_OUTPUT"; echo "stuckwhy=live $live, main $want" >> "$GITHUB_OUTPUT"; else echo "stuck=0" >> "$GITHUB_OUTPUT"; fi
+          if [ -n "$stuckwhy" ]; then echo "stuck=1" >> "$GITHUB_OUTPUT"; echo "stuckwhy=$stuckwhy" >> "$GITHUB_OUTPUT"; else echo "stuck=0" >> "$GITHUB_OUTPUT"; fi
           # GitHub pauses scheduled workflows in a public repo after 60 days without commits: warn from day 45
           echo "idle=$(( ($(date +%s) - $(git log -1 --format=%ct)) / 86400 ))" >> "$GITHUB_OUTPUT"
 
