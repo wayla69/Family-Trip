@@ -122,11 +122,38 @@ async function run({ buf, slug, client, take, onUsage, log = () => {}, dir, kids
     user: `Write the pocket guide "info" from the manual's chapters (key facts → guide; where we sleep → stays; emergency card → emergency + lost; prices/attractions → prices; packing → pack; entry & documents → visa as {lede, groups:[{title, items}]}; contingency plans → ifthen as {plans:{head, cols, rows}}; anything else worth keeping, e.g. getting around, customs, a park touring plan → more). Schema: ${JSON.stringify(S.properties.info)}\n${EN_ONLY}`,
     max: 48000,
   });
-  const rest = await ask('restaurants', EXTRACT(), {
+  // restaurants in two passes, so a long guide (200+ places) comes through complete: first every name by area (cheap), then the
+  // rows for 40 names at a time; names still missing after that are asked for once more
+  const restSchema = JSON.stringify(S.properties.restaurants);
+  const index = await ask('restaurants: list', EXTRACT(), {
     system: sys,
-    user: `Write "restaurants" from the manual's restaurant guide: every restaurant, grouped by the manual's areas, kinds 0 restaurants · 1 food courts and quick bites · 2 cafés and sweets. Per place: name, zh (local name), what (food · famous for), why (why for us), where, pr (budget), hours, q (full Maps query). Schema: ${JSON.stringify(S.properties.restaurants)}\n${EN_ONLY}`,
-    max: 64000,
+    user: 'List EVERY restaurant, café, food court, bakery, dessert shop and snack stall in the manual\'s restaurant guide (and its "where to eat" pages), grouped by the manual\'s own area headings in order. Return {"areas":[{"area":{"en":"…"},"kind":0|1|2,"names":["…", …]}]} — kind 0 restaurants · 1 food courts and quick bites · 2 cafés and sweets. Names exactly as the manual writes them, one entry per place, none left out, no details yet.',
+    max: 16000,
   });
+  const areas = (index && Array.isArray(index.areas) ? index.areas : []).filter((a) => a && Array.isArray(a.names) && a.names.length);
+  const wanted = areas.flatMap((a) => a.names.map((n) => String(n).trim()).filter(Boolean));
+  log(`restaurants: ${wanted.length} names in ${areas.length} areas`);
+  const rows = new Map();
+  const norm = (n) => String(n || '').toLowerCase().replace(/[^a-z0-9฀-๿一-鿿]+/g, '');
+  const fetchRows = async (names, step) => {
+    const got = await ask(step, EXTRACT(), {
+      system: sys,
+      user: `For each of these places, in this order, write its row from the manual: {"items":[{"name", "zh" (local name), "what" ({en}: food · famous for), "why" ({en}: why for us), "where" ({en}), "pr" (budget), "hours", "q" (full Google Maps query), "pick" (["<Day n> · <Meal>" labels when the manual ties it to a day's meal)}]}. Item schema: ${JSON.stringify(S.properties.restaurants.properties.groups.items.properties.items.items)}\nPlaces: ${JSON.stringify(names)}\n${EN_ONLY}`,
+      max: 24000,
+    });
+    for (const it of (got && Array.isArray(got.items) ? got.items : [])) if (it && it.name) rows.set(norm(it.name), it);
+  };
+  const BATCH_R = 40;
+  for (let i = 0; i < wanted.length; i += BATCH_R) await fetchRows(wanted.slice(i, i + BATCH_R), `restaurants ${Math.floor(i / BATCH_R) + 1}/${Math.ceil(wanted.length / BATCH_R)}`);
+  const missing = wanted.filter((n) => !rows.has(norm(n)));
+  if (missing.length) { log(`restaurants: ${missing.length} rows missing, asking once more`); await fetchRows(missing.slice(0, BATCH_R), 'restaurants: retry'); }
+  const rest = wanted.length ? {
+    lede: { en: 'Everything within an easy ride of where we sleep. Budget = a typical meal per adult, service included; the children share or eat for less. Hours change — check the day before.' },
+    kinds: [{ en: 'Restaurants' }, { en: 'Food courts & quick bites' }, { en: 'Cafés & sweets' }],
+    groups: areas.map((a) => ({ area: { en: String((a.area && (a.area.en || a.area)) || 'Places to eat') }, kind: [0, 1, 2].includes(a.kind) ? a.kind : 0,
+      items: a.names.map((n) => rows.get(norm(n)) || { name: String(n) }).map((it) => ({ ...it, name: String(it.name).slice(0, 120) })) })),
+  } : null;
+  log(`restaurants: ${rows.size} of ${wanted.length} rows written`);
   if (!top || !Array.isArray(top.days) || !top.days.length) throw Object.assign(new Error('no days found'), { code: 'days' });
   top.slug = slug;
   const who = kids && kids.length ? kids.map((k) => `${k.name_en} (${k.age})`).join(' and ') : 'Mimi (3, a girl) and Mika (1½, a boy)';
@@ -138,7 +165,47 @@ async function run({ buf, slug, client, take, onUsage, log = () => {}, dir, kids
   });
 
   // every English string → Thai (only the Thai comes back: cheaper than re-writing the JSON)
+  // the trip's own extras in one call: animals & friends to spot, the trip's firsts, local words (read aloud), a tasting card,
+  // the living map and why we chose each stay — the parts a hand-made book has and a plain extraction does not
+  const stayNames = [...new Set(top.days.map((d) => d.stay && d.stay.name).filter(Boolean))];
+  const placeEn = (top.place && top.place.en) || '';
+  const extras = await ask('extras', WRITE(), {
+    system: `You add the playful pages of a family memory book for a trip to ${placeEn}. The children: ${who}. Every text bilingual {"th": "…", "en": "…"} in natural Thai. Only things that are true of this trip and this place; keep them simple and concrete. Answer with JSON only, no code fence.`,
+    user: `From this trip brief write:
+"wild": 6–10 animals, birds, sea creatures or famous characters the children may really meet on this trip (each {name:{th,en}, emo, text:{th,en} — two or three friendly sentences and where to look}); "wildLabel": {emo, title:{th,en}, short:{th,en}} (e.g. "Animals and friends we may meet");
+"firsts": 8–12 real possible "firsts" of this trip for a small child ({key (a-z), emoji, label:{th,en}} — e.g. a ferry, a tram, snow, a temple), ordered by the days;
+"words": 6–10 say-it-like-a-local words of the place's language ({k (a-z), e, th, en = how to say it in Latin letters, note:{th,en} = meaning, say = a playful English line using it, speak:{text = in the local script, lang = BCP-47 like zh-HK / ja-JP}});
+"food": 6–10 local foods the children can try ({k, e, th, en, note:{th,en}});
+"map": the living map: {sea:{th,en} = the sea/ocean's name, stops: 5–8 of the trip's main places ({k (a-z), e, th, en, q = Google Maps query, x, y = percent positions 8–92 laid out roughly like the real geography}), days: for each day the stop keys visited that day};
+"stays": [{name, why:{th,en} — one warm sentence on why this stay suits the family}] for: ${JSON.stringify(stayNames)}.
+Trip: ${JSON.stringify({ title: top.title, place: top.place, from: top.from, to: top.to, days: brief })}`,
+    max: 24000, effort: 'medium', manual: false,
+  });
   const plan = { ...top, info: info || {}, ...(rest && rest.groups ? { restaurants: rest } : {}) };
+  const asI18n = (x) => (x && typeof x === 'object' && typeof x.en === 'string' ? { th: typeof x.th === 'string' ? x.th : x.en, en: x.en } : null);
+  const keyOf = (k, i) => (String(k || '').toLowerCase().replace(/[^a-z0-9]+/g, '-').replace(/^-+|-+$/g, '') || `x${i + 1}`);
+  if (extras && typeof extras === 'object') {
+    const E = extras;
+    const wild = (Array.isArray(E.wild) ? E.wild : []).map((w) => (w && asI18n(w.name) && asI18n(w.text) ? { name: asI18n(w.name), emo: String(w.emo || '🐾').slice(0, 8), text: asI18n(w.text) } : null)).filter(Boolean).slice(0, 12);
+    if (wild.length) { plan.info.wild = wild; if (E.wildLabel && asI18n(E.wildLabel.title)) plan.info.wildLabel = { emo: String(E.wildLabel.emo || '🐾').slice(0, 8), title: asI18n(E.wildLabel.title), short: asI18n(E.wildLabel.short) || asI18n(E.wildLabel.title) }; }
+    const seen = new Set();
+    const firsts = (Array.isArray(E.firsts) ? E.firsts : []).map((f, i) => (f && asI18n(f.label) ? { key: keyOf(f.key, i), emoji: String(f.emoji || '⭐').slice(0, 8), label: asI18n(f.label) } : null)).filter((f) => f && !seen.has(f.key) && seen.add(f.key)).slice(0, 14);
+    if (firsts.length >= 3) plan.firsts = firsts;
+    const pp = plan.passport = plan.passport || {};
+    const words = (Array.isArray(E.words) ? E.words : []).map((w, i) => (w && w.en && w.th ? { k: keyOf(w.k, i), e: String(w.e || '💬').slice(0, 8), th: String(w.th), en: String(w.en), ...(asI18n(w.note) ? { note: asI18n(w.note) } : {}), ...(w.say ? { say: String(w.say) } : {}), ...(w.speak && w.speak.text ? { speak: { text: String(w.speak.text), lang: String(w.speak.lang || 'en') } } : {}) } : null)).filter(Boolean).slice(0, 12);
+    if (words.length >= 3) pp.words = words;
+    const food = (Array.isArray(E.food) ? E.food : []).map((f, i) => (f && f.en && f.th ? { k: keyOf(f.k, i), e: String(f.e || '🍽️').slice(0, 8), th: String(f.th), en: String(f.en), ...(asI18n(f.note) ? { note: asI18n(f.note) } : {}) } : null)).filter(Boolean).slice(0, 12);
+    if (food.length >= 3) pp.food = food;
+    const M = E.map || {};
+    const stops = (Array.isArray(M.stops) ? M.stops : []).map((st, i) => (st && st.en && st.th ? { k: keyOf(st.k, i), e: String(st.e || '📍').slice(0, 8), th: String(st.th), en: String(st.en), x: Math.min(92, Math.max(8, Number(st.x) || 50)), y: Math.min(92, Math.max(8, Number(st.y) || 50)), q: String(st.q || st.en) } : null)).filter(Boolean).slice(0, 10);
+    if (stops.length >= 2 && asI18n(M.sea)) {
+      const keys = new Set(stops.map((st) => st.k));
+      pp.map = { sea: asI18n(M.sea), stops, days: top.days.map((_, i) => ((Array.isArray(M.days) && Array.isArray(M.days[i]) ? M.days[i] : []).map((k, j) => keyOf(k, j)).filter((k) => keys.has(k)))) };
+    }
+    const whys = new Map((Array.isArray(E.stays) ? E.stays : []).filter((s2) => s2 && s2.name && asI18n(s2.why)).map((s2) => [norm(s2.name), asI18n(s2.why)]));
+    if (whys.size) { plan.info.stays = (Array.isArray(plan.info.stays) ? plan.info.stays : []); for (const st of plan.info.stays) { const w = st.prop && whys.get(norm(st.prop.en || st.prop)); if (w && (!st.why || !st.why.en)) st.why = w; } plan.staysWhy = (Array.isArray(E.stays) ? E.stays : []).filter((s2) => s2 && s2.name && asI18n(s2.why)).map((s2) => ({ name: String(s2.name), why: asI18n(s2.why) })); }
+    log(`extras: ${wild.length} animals & friends · ${firsts.length} firsts · ${words.length} words · ${food.length} foods · map ${stops.length} stops · ${whys.size} stays' why`);
+  }
   const holes = [];
   (function walk(v) {
     if (Array.isArray(v)) v.forEach(walk);
