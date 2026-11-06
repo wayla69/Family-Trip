@@ -40,6 +40,14 @@
 - smoke test หลัง deploy: `test/verify-prod.mjs` ยิง URL จริง
 - **อัปเดต 18 ต.ค. 2026:** เจ้าของต่อ Railway กับ repo ได้แล้ว → Railway deploy `main` เอง · workflow `deploy` เปลี่ยนเป็นกดเอง (`workflow_dispatch`) เป็นทางสำรอง ไม่รันหลัง CI อีก (เดิมขึ้นแดงทุกครั้งเพราะไม่มี token)
 
+## ADR-11 หลายครอบครัว = หนึ่งครอบครัวต่อหนึ่ง Railway project (6 พ.ย. 2026)
+- **ตัดสินใจ:** แต่ละครอบครัวได้ project ของตัวเอง (App service จาก repo นี้ + Postgres + Bucket + โดเมน + รหัสของตัวเอง) ไม่รวมหลายครอบครัวในฐานข้อมูลเดียว → ข้อมูลไม่มีทางปนกันโดยโครงสร้าง ไม่ต้องเขียนโค้ดแยกสิทธิ์เพิ่ม และเครื่องหนึ่งล่มกระทบครอบครัวเดียว
+- `scripts/provision.mjs <family>` เปิดเล่มใหม่ด้วย Railway Public API (projectCreate → Postgres image + volume → App from repo → variables (DATABASE_URL อ้างอิง `${{Postgres.…}}`, รหัสสุ่มใหม่ทุกตัว) → healthcheck → domain → deploy แรก) แล้วพิมพ์รหัสครั้งเดียว · Bucket ยังสร้างผ่าน API ไม่ได้ (docs ยืนยัน) ต้องกดในแดชบอร์ดแล้วใส่ variable references เอง
+- ทะเบียนครอบครัว `families.json` อยู่บนเครื่องเจ้าของเท่านั้น (ชื่อ, URL, backup token — ไม่มีรหัสครอบครัว) ใช้กับ `scripts/fleet.mjs check|backup` · Uptime workflow รับ `MB_URLS` หลายบรรทัด
+- ทุกครอบครัวได้โค้ดเดียวกัน: Railway deploy `main` ให้ทุก project ที่ต่อ repo นี้เอง · เล่มของแต่ละครอบครัวเข้าทาง `#/import` (ADR-10 + ไม่ใช่ seed ในโค้ด)
+- ยังไม่ทำ: รับเงิน/ต่ออายุ, ปิดเครื่องเมื่อหมดอายุ (ส่ง backup zip ให้ก่อน), นโยบาย PDPA สำหรับลูกค้า, repo ต้องเป็น private ก่อนขาย
+- ถ้าลูกค้าเกินหลักสิบ ค่าเครื่องต่อหัวและการไล่ดูแลจะหนัก ค่อยพิจารณารวมหลายครอบครัวในเครื่องเดียวโดยแยกฐานข้อมูลต่อครอบครัว (ทุกตารางมี `family_id` อยู่แล้ว)
+
 ## ADR-9 Backup
 - Postgres: scheduled backup ของ Railway (daily 6 วัน / weekly 1 เดือน / monthly 3 เดือน) · restore ได้ใน project+environment เดียวกันเท่านั้น
 - Off-site: `GET /api/backup.zip` (Bearer `BACKUP_TOKEN`) = dump ตาราง + รูปจาก Bucket → GitHub Action รายสัปดาห์ (ทำงานเฉพาะ repo private) + `POST /api/import` กู้คืนแบบ idempotent · ทดสอบกู้คืนจริงหนึ่งครั้งก่อน go-live
