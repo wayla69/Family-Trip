@@ -884,6 +884,17 @@ document.addEventListener('change', (e) => {
   if (e.target.id === 'lcfile') { const f = e.target.files && e.target.files[0]; if (f) { if (lostPhoto) URL.revokeObjectURL(lostPhoto); lostPhoto = URL.createObjectURL(f); render(); } return; }   // this morning's photo: in memory only
   if (e.target.id === 'impfile') { imp.file = (e.target.files || [])[0] || null; const sl = $('#impslug'); if (imp.file && sl && !sl.value) { sl.value = imp.file.name.replace(/\.pdf$/i, '').normalize('NFKD').toLowerCase().replace(/[^a-z0-9]+/g, '-').replace(/^-+|-+$/g, '').slice(0, 40); } return; }
   if (e.target.id === 'impslug') { imp.slug = e.target.value; return; }
+  if (e.target.dataset && e.target.dataset.famphoto !== undefined && fam) {   // a photo of the child → Claude picks the drawn look
+    const f = (e.target.files || [])[0], who = e.target.dataset.famphoto; if (!f) return;
+    fam.busyKid = who === 'new' ? 'new' : +who; fam.err = ''; render();
+    api('POST', '/api/b/family/look', undefined, new Blob([f], { type: f.type || 'image/jpeg' })).then((r) => {
+      if (who === 'new') fam.kids.push({ slug: '', name_th: '', name_en: '', emoji: r.look.base === 'boy' ? '👶' : '🧒', birth_ym: '', look: r.look });
+      else if (fam.kids[+who]) fam.kids[+who].look = r.look;
+      toast(L('Claude เลือกให้แล้ว ปรับต่อได้เลย', 'Claude picked — adjust as you like'));
+    }, (err) => { fam.err = { 429: L('ครบโควตา Claude ของวันนี้แล้ว', "Today's Claude limit is used up"), 501: L('Claude ยังไม่ได้เปิดบนเซิร์ฟเวอร์', 'Claude is not set up on the server'), 400: L('อ่านรูปไม่ได้', 'Could not read the photo') }[err.code] || L('ครั้งนี้ไม่สำเร็จ ลองใหม่', 'That did not work — try again'); })
+      .finally(() => { fam.busyKid = null; render(); });
+    return;
+  }
   if (e.target.id === 'fpick') { const el = e.target; addPhotos(trip(el.dataset.t), +el.dataset.d, el.files); el.value = ''; }
   if (e.target.id === 'spendplace') { const n = $('#spendnote'); if (n) { if (e.target.value) { n.value = e.target.value; drafts[n.dataset.draft] = n.value; $('#spendamt').focus(); } else n.focus(); } }   // a picked place becomes the note; "other" → type it
 });

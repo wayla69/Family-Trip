@@ -10,6 +10,7 @@ const IMG = require('./images');
 const GUIDE = require('./guide');
 const IMPORT = require('./bookimport');
 const FAM = require('./family');
+const sharp = require('sharp');
 
 const FAMILY = process.env.FAMILY_ID || 'family';
 const ID_RE = /^[A-Za-z0-9_.:-]{4,80}$/;
@@ -143,6 +144,20 @@ function router({ pool, media, A, ai, hooks = {} }) {   // hooks.heart(h): set b
       } catch (e) { await c.query('ROLLBACK'); throw e; } finally { c.release(); }
       const rows = await kidRows();
       res.json({ ok: true, family: FAM.profile(prof, rows), children: rows.map((k) => ({ ...k, v: FAM.lookVersion(k.look) })) });
+    } catch (e) { next(e); }
+  });
+  // a look from a photo of the child (the parents' own tap; the photo is shrunk to 512 px, sent once to Claude, never stored)
+  r.post('/api/b/family/look', A.requireEditor, express.raw({ type: () => true, limit: '12mb' }), async (req, res, next) => {
+    try {
+      if (!(ai && ai.enabled())) return bad(res, 'no-key', 501);
+      if (!Buffer.isBuffer(req.body) || req.body.length < 100) return bad(res, 'photo');
+      let jpeg;
+      try { jpeg = await sharp(req.body, { failOn: 'none', limitInputPixels: 120e6 }).rotate().resize({ width: 512, height: 512, fit: 'inside', withoutEnlargement: true }).jpeg({ quality: 82 }).toBuffer(); } catch (_) { return bad(res, 'photo'); }
+      if (!(await aiTake())) return bad(res, 'limit', 429);
+      let look;
+      try { look = FAM.cleanLook(await ai.lookFromPhoto({ jpeg })); } catch (e) { console.error('look', e.code || e.status || e.message); return bad(res, e.code === 'refusal' ? 'refusal' : 'failed', 502); }
+      res.setHeader('Cache-Control', 'no-store');
+      res.json({ look });
     } catch (e) { next(e); }
   });
   // a child's drawing: /art/kids/<slug>[-<outfit>][-full].svg — recoloured from the templates when the child has a look,

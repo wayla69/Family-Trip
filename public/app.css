@@ -1797,3 +1797,5 @@ html[data-fs="1"] main.wrap{zoom:1.1}html[data-fs="2"] main.wrap{zoom:1.2}html[d
 .famsw{display:flex;gap:6px;flex-wrap:wrap}.famsw button{width:30px;height:30px;border-radius:50%;border:2px solid #fff;background:var(--sw);box-shadow:0 0 0 1px var(--rule);padding:0}.famsw button.on{box-shadow:0 0 0 3px var(--accent)}
 .famacts{margin-top:8px}.famacts .mini:disabled{opacity:.35}
 .famadd{width:100%;justify-content:center;margin:4px 0 14px}.famsave{margin-top:14px}
+.famphoto{position:relative;overflow:hidden}.famphoto input,.famaddrow label input{position:absolute;inset:0;opacity:0;cursor:pointer}.famphoto.off,.famaddrow label.off{opacity:.6}
+.famaddrow{margin:4px 0 14px}.famaddrow .famadd{flex:1;margin:0;position:relative;overflow:hidden}
