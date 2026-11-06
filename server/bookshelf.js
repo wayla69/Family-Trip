@@ -10,6 +10,7 @@ const IMG = require('./images');
 const GUIDE = require('./guide');
 const IMPORT = require('./bookimport');
 const FAM = require('./family');
+const AVATAR = require('./avatar');
 const sharp = require('sharp');
 
 const FAMILY = process.env.FAMILY_ID || 'family';
@@ -114,7 +115,7 @@ function router({ pool, media, A, ai, hooks = {} }) {   // hooks.heart(h): set b
   const keyAudio = (tid, id, ext) => `a/${tid}/${id}.${ext}`;   // voice memos: stored as the phone recorded them
 
   // ----- the family: who the children are and how they are drawn (server/family.js)
-  const kidRows = () => q('SELECT slug, name_th, name_en, emoji, color, birth_ym, look, pos FROM children WHERE family_id=$1 ORDER BY pos', [FAMILY]);
+  const kidRows = () => q('SELECT slug, name_th, name_en, emoji, color, birth_ym, look, avatar, pos FROM children WHERE family_id=$1 ORDER BY pos', [FAMILY]);
   const kidsFor = async (t) => FAM.kidsFor(await kidRows(), t && t.date_from ? new Date(t.date_from) : new Date());   // for prompts: names and ages at the trip
   // before login the app shows only the family's app name and the drawings — never the children's names
   r.get('/api/brand', async (_req, res, next) => {
@@ -146,18 +147,58 @@ function router({ pool, media, A, ai, hooks = {} }) {   // hooks.heart(h): set b
       res.json({ ok: true, family: FAM.profile(prof, rows), children: rows.map((k) => ({ ...k, v: FAM.lookVersion(k.look) })) });
     } catch (e) { next(e); }
   });
-  // a look from a photo of the child (the parents' own tap; the photo is shrunk to 512 px, sent once to Claude, never stored)
-  r.post('/api/b/family/look', A.requireEditor, express.raw({ type: () => true, limit: '12mb' }), async (req, res, next) => {
+  // a child's own cartoon character from a photo (server/avatar.js, OpenAI): a few tries a year per child, used at once
+  let drawing = false;   // one drawing at a time per family
+  const avatarLeft = async (slug) => Math.max(0, AVATAR.YEARLY() - Number((await q("SELECT count(*)::int n FROM avatar_gens WHERE family_id=$1 AND child=$2 AND created_at > now() - interval '365 days'", [FAMILY, slug]))[0].n));
+  const avatarKey = (slug, id, kind) => `k/${slug}/${id}-${kind}.png`;
+  r.get('/api/b/family/avatars', A.requireEditor, async (_req, res, next) => {
     try {
-      if (!(ai && ai.enabled())) return bad(res, 'no-key', 501);
-      if (!Buffer.isBuffer(req.body) || req.body.length < 100) return bad(res, 'photo');
-      let jpeg;
-      try { jpeg = await sharp(req.body, { failOn: 'none', limitInputPixels: 120e6 }).rotate().resize({ width: 512, height: 512, fit: 'inside', withoutEnlargement: true }).jpeg({ quality: 82 }).toBuffer(); } catch (_) { return bad(res, 'photo'); }
-      if (!(await aiTake())) return bad(res, 'limit', 429);
-      let look;
-      try { look = FAM.cleanLook(await ai.lookFromPhoto({ jpeg })); } catch (e) { console.error('look', e.code || e.status || e.message); return bad(res, e.code === 'refusal' ? 'refusal' : 'failed', 502); }
+      const kids = await kidRows(), left = {};
+      for (const k of kids) left[k.slug] = await avatarLeft(k.slug);
       res.setHeader('Cache-Control', 'no-store');
-      res.json({ look });
+      res.json({ on: AVATAR.enabled(), yearly: AVATAR.YEARLY(), left });
+    } catch (e) { next(e); }
+  });
+  r.post('/api/b/family/avatar/:slug', A.requireEditor, express.raw({ type: () => true, limit: '15mb' }), async (req, res, next) => {
+    try {
+      if (!AVATAR.enabled()) return bad(res, 'no-key', 501);
+      const kid = (await q('SELECT slug, avatar FROM children WHERE family_id=$1 AND slug=$2', [FAMILY, req.params.slug]))[0];
+      if (!kid) return bad(res, 'child', 404);
+      if (!Buffer.isBuffer(req.body) || req.body.length < 100) return bad(res, 'photo');
+      try { await sharp(req.body, { failOn: 'none' }).metadata(); } catch (_) { return bad(res, 'photo'); }
+      if ((await avatarLeft(kid.slug)) < 1) return res.status(429).json({ error: 'quota', left: 0 });
+      if (drawing) return bad(res, 'busy', 409);
+      drawing = true;
+      let out;
+      try { out = await AVATAR.draw(req.body); } catch (e) { console.error('avatar', e.code || '', e.message); return bad(res, e.code === 'refused' ? 'refused' : 'failed', 502); } finally { drawing = false; }
+      const id = crypto.randomBytes(6).toString('hex');
+      await media.put(avatarKey(kid.slug, id, 'full'), out.full, 'image/png');
+      await media.put(avatarKey(kid.slug, id, 'face'), out.face, 'image/png');
+      await q('INSERT INTO avatar_gens (family_id, child) VALUES ($1,$2)', [FAMILY, kid.slug]);
+      await q('UPDATE children SET avatar=$3 WHERE family_id=$1 AND slug=$2', [FAMILY, kid.slug, id]);
+      if (kid.avatar) for (const kind of ['full', 'face']) await media.del(avatarKey(kid.slug, kid.avatar, kind)).catch(() => {});   // the previous drawing goes
+      res.json({ avatar: id, left: await avatarLeft(kid.slug) });
+    } catch (e) { next(e); }
+  });
+  // back to the app's own drawing (or the emoji); the drawing's files go, the tries used stay used
+  r.delete('/api/b/family/avatar/:slug', A.requireEditor, async (req, res, next) => {
+    try {
+      const kid = (await q('SELECT slug, avatar FROM children WHERE family_id=$1 AND slug=$2', [FAMILY, req.params.slug]))[0];
+      if (!kid) return bad(res, 'child', 404);
+      await q('UPDATE children SET avatar=NULL WHERE family_id=$1 AND slug=$2', [FAMILY, kid.slug]);
+      if (kid.avatar) for (const kind of ['full', 'face']) await media.del(avatarKey(kid.slug, kid.avatar, kind)).catch(() => {});
+      res.json({ ok: true });
+    } catch (e) { next(e); }
+  });
+  // the drawing itself, for the family only (signed in): it is made from a child's photo, so never on the public sign-in page
+  r.get('/media/kid/:slug/:kind.png', A.requireUser, async (req, res, next) => {
+    try {
+      if (!['full', 'face'].includes(req.params.kind)) return next();
+      const kid = (await q('SELECT avatar FROM children WHERE family_id=$1 AND slug=$2', [FAMILY, req.params.slug]))[0];
+      const buf = kid && kid.avatar ? await media.get(avatarKey(req.params.slug, kid.avatar, req.params.kind)) : null;
+      if (!buf) return res.sendStatus(404);
+      res.setHeader('Cache-Control', 'private, max-age=604800');   // the app versions the url by the drawing (?v=)
+      res.type('image/png').send(buf);
     } catch (e) { next(e); }
   });
   // a child's drawing: /art/kids/<slug>[-<outfit>][-full].svg — recoloured from the templates when the child has a look,
@@ -180,7 +221,7 @@ function router({ pool, media, A, ai, hooks = {} }) {   // hooks.heart(h): set b
   r.get('/api/b/state', A.requireUser, async (req, res, next) => {
     try {
       const [children, trips, days, firsts, entries, mediaRows, places, hearts, reviews, spendRows] = await Promise.all([
-        q('SELECT slug, name_th, name_en, emoji, color, birth_ym, look FROM children WHERE family_id=$1 ORDER BY pos', [FAMILY]),
+        q('SELECT slug, name_th, name_en, emoji, color, birth_ym, look, avatar FROM children WHERE family_id=$1 ORDER BY pos', [FAMILY]),
         q("SELECT id, slug, legacy_id, title, sub, to_char(date_from,'YYYY-MM-DD') date_from, to_char(date_to,'YYYY-MM-DD') date_to, timezone, theme, cover, stamp, moods, passport, info, source FROM trips WHERE family_id=$1 ORDER BY date_from", [FAMILY]),
         q("SELECT d.trip_id, d.day_index, to_char(d.date,'YYYY-MM-DD') date, d.title, d.sleep, d.emoji, d.gradient, d.planned, d.wx, d.plan, d.done_at FROM trip_days d JOIN trips t ON t.id=d.trip_id WHERE t.family_id=$1 ORDER BY d.trip_id, d.day_index", [FAMILY]),
         q('SELECT f.trip_id, f.key, f.emoji, f.label FROM firsts_catalog f JOIN trips t ON t.id=f.trip_id WHERE t.family_id=$1 ORDER BY f.trip_id, f.pos, f.key', [FAMILY]),
@@ -216,7 +257,7 @@ function router({ pool, media, A, ai, hooks = {} }) {   // hooks.heart(h): set b
         hearts: hearts.map(({ trip_id, day_index, created_uid, created_at, from_name, ...h }) => ({ ...h, trip: trip_id, day: day_index, from: from_name, at: ms(created_at), mine: created_uid === req.user.uid })),
         reviews: reviews.map(({ trip_id, day_index, updated_at, ...r }) => ({ ...r, trip: trip_id, day: day_index, at: ms(updated_at) })),
         spend: spendRows.map(({ trip_id, day_index, updated_at, amount, ...s }) => ({ ...s, trip: trip_id, day: day_index, amount: Number(amount), at: ms(updated_at) })),
-        features: { story: !!(ai && ai.enabled()), photoAi: !!(ai && ai.photoEnabled && ai.photoEnabled()) },   // photoAi: the owner's PHOTO_AI switch (captions/tags from the pictures)
+        features: { avatar: AVATAR.enabled(), story: !!(ai && ai.enabled()), photoAi: !!(ai && ai.photoEnabled && ai.photoEnabled()) },   // photoAi: the owner's PHOTO_AI switch (captions/tags from the pictures)
       }, true);
     } catch (e) { next(e); }
   });
@@ -545,6 +586,7 @@ function router({ pool, media, A, ai, hooks = {} }) {   // hooks.heart(h): set b
       peek: { stops: (seed.days || []).reduce((a, d) => a + n(d.planned), 0), restaurants: ((inf.restaurants && inf.restaurants.groups) || []).reduce((a, g) => a + n(g.items), 0), missions: n(pp.days),
         wild: n(inf.wild), firsts: n(seed.firsts_catalog), words: list('words'), food: list('food'), map: n(pp.map && pp.map.stops), stays: n(inf.stays) } };
   };
+  const IMPORT_CALLS = 30;   // a manual of ~300 restaurants: structure, info, ~12 restaurant calls, kids, extras, ~4 Thai batches, and room for retries
   let job = null;   // { id, slug, status: running|done|error, log, draft, error, started }
   const jobView = () => (job ? { id: job.id, slug: job.slug, status: job.status, log: job.log, draft: job.draft || null, error: job.error || null, started: job.started } : { status: 'idle' });
   r.post('/api/b/import', A.requireEditor, express.raw({ type: () => true, limit: '25mb' }), async (req, res, next) => {
@@ -555,6 +597,10 @@ function router({ pool, media, A, ai, hooks = {} }) {   // hooks.heart(h): set b
       if (!SLUG_RE.test(slug)) return bad(res, 'slug');
       if (!Buffer.isBuffer(req.body) || req.body.length < 2000 || req.body.subarray(0, 5).toString() !== '%PDF-') return bad(res, 'pdf');
       if ((await q('SELECT 1 FROM trips WHERE family_id=$1 AND slug=$2', [FAMILY, slug])).length) return bad(res, 'exists', 409);
+      // a book takes about 30 Claude calls: start only when today's allowance can carry it, so a cap hit midway never wastes the calls already paid for
+      const used = Number(((await q("SELECT calls FROM ai_usage WHERE family_id=$1 AND day=(now() AT TIME ZONE 'UTC')::date", [FAMILY]))[0] || {}).calls || 0);
+      const need = Math.min(IMPORT_CALLS, STORY_DAILY);   // a family whose daily cap is below a book's needs can still start from a fresh day
+      if (STORY_DAILY - used < need) return res.status(429).json({ error: 'limit', left: Math.max(0, STORY_DAILY - used), need });
       const id = crypto.randomBytes(8).toString('hex'), who = req.user.name || '', buf = req.body;
       job = { id, slug, status: 'running', log: [], started: Date.now() };
       const log = (line) => { job.log.push(`${new Date().toISOString().slice(11, 19)} ${line}`); if (job.log.length > 60) job.log.shift(); };
@@ -843,8 +889,8 @@ function router({ pool, media, A, ai, hooks = {} }) {   // hooks.heart(h): set b
 
 // the family's app name and kicker, resolved as the app shows them (the manifest and /api/brand)
 async function brand(pool) {
-  const kids = (await pool.query('SELECT slug, name_th, name_en, look FROM children WHERE family_id=$1 ORDER BY pos', [FAMILY])).rows;
+  const kids = (await pool.query('SELECT slug, name_th, name_en, look, avatar FROM children WHERE family_id=$1 ORDER BY pos', [FAMILY])).rows;
   const prof = FAM.profile(((await pool.query('SELECT profile FROM families WHERE id=$1', [FAMILY])).rows[0] || {}).profile, kids);
-  return { ...prof, kids: kids.map((k) => ({ slug: k.slug, v: FAM.lookVersion(k.look) })) };
+  return { ...prof, kids: kids.map((k) => ({ slug: k.slug, v: FAM.lookVersion(k.look), ...(k.avatar ? { a: 1 } : {}) })) };
 }
 module.exports = { router, syncSeeds, brand, FAMILY, AUDIO_EXT };

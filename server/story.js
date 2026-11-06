@@ -312,26 +312,4 @@ STOPS: ${stops.length ? stops.map((s) => `"${s}"`).join(', ') : '(none)'}`;
   return out;
 }
 
-// A child's drawn look from one photo (the parents' own tap at #/family): Claude picks the closest options of the app's own palette —
-// which of the two drawings, skin, hair and top colour — and nothing else comes back; the photo is not kept anywhere.
-const LOOK_PROMPT = 'You see one photo of a small child. Pick the closest options so a drawn character resembles the child. Reply with JSON only, no prose: '
-  + '{"base": "girl" | "boy", "skin": "light" | "warm" | "tan" | "deep", "hair": "dark" | "black" | "brown" | "chestnut" | "auburn" | "blonde", "top": "red" | "blue" | "green" | "yellow" | "purple" | "pink" | "teal" | "orange" | "mint"}. '
-  + '"base": "boy" is the toddler drawing (a baby or a child under about two, or a boy with short hair); "girl" is the drawing of a girl with a ponytail pulling a wagon. '
-  + '"top" is the colour of the clothes the child wears in the photo, or the colour that suits them best. Only these words.';
-async function lookFromPhoto({ jpeg, signal }) {
-  const stream = api().beta.messages.stream({
-    model: MODEL(),
-    max_tokens: 200,
-    betas: ['server-side-fallback-2026-07-01'],
-    fallbacks: 'default',
-    output_config: { effort: 'low' },
-    system: LOOK_PROMPT,
-    messages: [{ role: 'user', content: [{ type: 'image', source: { type: 'base64', media_type: 'image/jpeg', data: jpeg.toString('base64') } }, { type: 'text', text: 'The child.' }] }],
-  }, { signal });
-  const msg = await stream.finalMessage();
-  noteUsage(msg);
-  if (msg.stop_reason === 'refusal') throw Object.assign(new Error('refusal'), { code: 'refusal' });
-  const raw = msg.content.filter((b) => b.type === 'text').map((b) => b.text).join('');
-  try { return JSON.parse(raw.slice(raw.indexOf('{'), raw.lastIndexOf('}') + 1)); } catch (_) { throw Object.assign(new Error('bad json'), { code: 'failed' }); }
-}
-module.exports = { prompt, askPrompt, lookFromPhoto, parseQuiz, enabled, photoEnabled, writeStory, askGuide, translate, describePhotos, TAGS, clean, onUsage, SDK };
+module.exports = { prompt, askPrompt, parseQuiz, enabled, photoEnabled, writeStory, askGuide, translate, describePhotos, TAGS, clean, onUsage, SDK };

@@ -1238,17 +1238,11 @@ let vg = null, vgForm = null, vgJust = null;
    The two hand-drawn characters (a girl with her wagon, a toddler) recoloured per child; the server renders the SVG (server/family.js).
    fam = the form being edited; saved as a whole with PUT /api/b/family, then the state is reloaded. */
 let fam = null;
-const FAM_PAL = { bases: [['girl', 'เด็กผู้หญิงกับรถลาก', 'Girl with a wagon'], ['boy', 'เด็กเล็ก', 'Little one']],
-  skins: [['light', '#F8DCC6'], ['warm', '#EFC9A6'], ['tan', '#D9A776'], ['deep', '#A86B46']],
-  hairs: [['dark', '#2E211B'], ['black', '#1C1A1F'], ['brown', '#6B4423'], ['chestnut', '#8B5A2B'], ['auburn', '#A0452A'], ['blonde', '#D9B55A']],
-  tops: [['red', '#E53935'], ['blue', '#2F8BFF'], ['green', '#3BAA6E'], ['yellow', '#F2B32B'], ['purple', '#8E5BE0'], ['pink', '#FF6FA3'], ['teal', '#26A69A'], ['orange', '#FF8A3D'], ['mint', '#A8D5C2']] };
-// what the app names itself when the fields are left empty: the children's initials + Memory, the kicker from their names (as server/family.js)
 const famBuilt = () => { const ks = fam.kids.filter((k) => k.name_en.trim()); const ini = ks.map((k) => k.name_en.trim()[0].toUpperCase()).join(''); const th = ks.map((k) => k.name_th.trim() || k.name_en.trim());
   const app = ini ? `${ini} Memory` : 'Memory Bookshelf', nth = th.length <= 1 ? th.join('') : th.slice(0, -1).join(' ') + 'และ' + th[th.length - 1];
   return { app: { th: app, en: app }, kicker: { th: ks.length ? `ของ${nth}` : 'สมุดความทรงจำของครอบครัว', en: ks.length ? ks.map((k) => k.name_en.trim()).join(' & ') : 'Our family memory books' } }; };
-const famDefaultLook = (slug) => ({ base: slug === 'mika' ? 'boy' : 'girl', skin: 'light', hair: 'dark', top: slug === 'mika' ? 'mint' : 'red' });
 // the drawing for a kid card: the look being edited (rendered by the server from ?look=), or Mimi / Mika as drawn
-const famArt = (k, full) => (k.look ? `/art/kids/${encodeURIComponent(k.slug || 'new')}${full ? '-full' : ''}.svg?look=${encodeURIComponent(JSON.stringify(k.look))}` : kidArt(k.slug, full));
+const famArt = (k, full) => (k.avatar ? `/media/kid/${encodeURIComponent(k.slug)}/${full ? 'full' : 'face'}.png?v=${encodeURIComponent(k.avatar)}` : k.look ? `/art/kids/${encodeURIComponent(k.slug || 'new')}${full ? '-full' : ''}.svg?look=${encodeURIComponent(JSON.stringify(k.look))}` : kidArt(k.slug, full));
 // each child's colour on the page: their top colour, a shade deep enough for text and borders on paper
 const FAM_TONE = { red: '#E53935', blue: '#2F7FE0', green: '#2E9E62', yellow: '#D9940A', purple: '#8E5BE0', pink: '#E8467F', teal: '#1E9488', orange: '#EE7424', mint: '#2A9C84' };
 const famTone = (k) => FAM_TONE[(k.look && k.look.top) || (k.slug === 'mika' ? 'mint' : 'red')];
@@ -1258,13 +1252,13 @@ function viewFamily() {
   if (!fam) {
     const c = (S.family && S.family.custom) || {}, ca = c.app || {}, ck = c.kicker || {};   // only what the parents typed; empty = built from the children
     fam = { app: { th: ca.th || '', en: ca.en || '' }, kicker: { th: ck.th || '', en: ck.en || '' },
-      kids: children().map((k) => ({ slug: k.slug, name_th: k.name_th, name_en: k.name_en, emoji: k.emoji || '', birth_ym: k.birth_ym || '', look: k.look ? { ...k.look } : null })), err: '', busy: false, busyKid: null };
+      kids: children().map((k) => ({ slug: k.slug, name_th: k.name_th, name_en: k.name_en, emoji: k.emoji || '', birth_ym: k.birth_ym || '', look: k.look ? { ...k.look } : null, avatar: k.avatar || null })), err: '', busy: false, busyKid: null, quota: null };
   }
   const built = famBuilt(), shown = { app: L(fam.app.th, fam.app.en) || L(built.app.th, built.app.en), kicker: L(fam.kicker.th, fam.kicker.en) || L(built.kicker.th, built.kicker.en) };
-  const drawn = (k) => !!(k.look || k.slug === 'mimi' || k.slug === 'mika');
-  const cast = fam.kids.filter(drawn).map((k) => `<img class="who ${k.look ? (k.look.base === 'boy' ? 'mika' : 'mimi') : k.slug}" src="${famArt(k, true)}" alt="">`).join('');
-  const sw = (list, i, f, cur) => `<div class="famsw">${list.map(([v, hex]) => `<button type="button" class="${cur === v ? 'on' : ''}" data-a="famlook" data-i="${i}" data-f="${f}" data-v="${v}" style="--sw:${hex}" aria-label="${v}" aria-pressed="${cur === v}"></button>`).join('')}</div>`;
-  const photoBtn = (i, label) => (S.features.story ? `<label class="famphoto ${fam.busyKid === i ? 'busy' : ''}"><span>${fam.busyKid === i ? '⏳' : '📷'}</span><b>${fam.busyKid === i ? L('Claude กำลังดูรูป…', 'Claude is looking…') : label}</b><input type="file" accept="image/*" capture="user" data-famphoto="${i}" ${fam.busyKid !== null ? 'disabled' : ''}></label>` : '');
+  if (fam.quota === null && S.features.avatar) { fam.quota = 'loading'; api('GET', '/api/b/family/avatars').then((r) => { fam.quota = r; safeRender(); }, () => { fam.quota = { left: {}, yearly: 3 }; }); }
+  const q = fam.quota && typeof fam.quota === 'object' ? fam.quota : { left: {}, yearly: 3 };
+  const drawn = (k) => !!(k.avatar || k.look || k.slug === 'mimi' || k.slug === 'mika');
+  const cast = fam.kids.filter(drawn).map((k) => `<img class="who ${k.avatar ? 'drawnai' : k.look ? (k.look.base === 'boy' ? 'mika' : 'mimi') : k.slug}" src="${famArt(k, true)}" alt="">`).join('');
   const card = (k, i) => {
     const look = k.look || null, age = famAge(k.birth_ym), nm = L(k.name_th || k.name_en, k.name_en || k.name_th);
     return `<article class="famkid" style="--kc:${famTone(k)}">
@@ -1273,15 +1267,20 @@ function viewFamily() {
 <div class="fambody">
 <div class="famrow"><label>${L('ชื่อเล่น (ไทย)', 'Name (Thai)')}<input class="field" data-fam="${i}:name_th" value="${esc(k.name_th)}" maxlength="40"></label><label>${L('ชื่อเล่น (อังกฤษ)', 'Name (English)')}<input class="field" data-fam="${i}:name_en" value="${esc(k.name_en)}" maxlength="40" required></label></div>
 <div class="famrow famrow2"><label>${L('เกิดเดือน', 'Born')}<input class="field" type="month" data-fam="${i}:birth_ym" value="${esc(k.birth_ym)}"></label><label>${L('อีโมจิ', 'Emoji')}<input class="field famemo" data-fam="${i}:emoji" value="${esc(k.emoji)}" maxlength="8"></label></div>
-<div class="famdress"><div class="famdresshd"><b>🎨 ${L('แต่งตัวการ์ตูน', 'Dress up the character')}</b>${photoBtn(i, L('ให้ Claude ดูรูปแล้วเลือกให้', 'Let Claude pick from a photo'))}</div>
-${!look ? `<p class="famhint">${L('ตอนนี้เป็นภาพวาดเดิม แตะเลือกด้านล่างเพื่อแต่งเอง', 'The original drawing — tap below to make it your own')}</p>` : ''}
-<div class="fambases">${FAM_PAL.bases.map(([v, th, en]) => `<button type="button" class="${look && look.base === v ? 'on' : ''}" data-a="famlook" data-i="${i}" data-f="base" data-v="${v}"><img src="/art/kids/${v === 'boy' ? 'mika' : 'mimi'}.svg" alt="">${L(th, en)}</button>`).join('')}</div>
-<div class="fampal"><span>${L('ผิว', 'Skin')}</span>${sw(FAM_PAL.skins, i, 'skin', look && look.skin)}<span>${L('ผม', 'Hair')}</span>${sw(FAM_PAL.hairs, i, 'hair', look && look.hair)}<span>${L('เสื้อ', 'Top')}</span>${sw(FAM_PAL.tops, i, 'top', look && look.top)}</div></div>
+${(() => {
+  const saved = children().some((c) => c.slug === k.slug), left = q.left[k.slug], busy = fam.busyKid === i, who = esc(nm) || L('ลูก', 'your child');
+  const body = !S.features.avatar ? `<p class="famhint">${L('ต้องตั้งค่า OPENAI_API_KEY บนเซิร์ฟเวอร์ก่อน จึงจะให้ AI วาดตัวละครได้', 'Set OPENAI_API_KEY on the server to let the AI draw characters')}</p>`
+    : !saved ? `<p class="famhint">${L('กดบันทึกครอบครัวก่อน แล้วค่อยอัปโหลดรูป', 'Save the family first, then upload a photo')}</p>`
+    : `<label class="famupload ${busy ? 'busy' : ''} ${left === 0 ? 'off' : ''}"><span class="e">${busy ? '🎨' : '📷'}</span><span><b>${busy ? L('AI กำลังวาด…', 'The AI is drawing…') : k.avatar ? L('อัปโหลดรูปใหม่ วาดอีกครั้ง', 'Upload a new photo, draw again') : L('อัปโหลดรูปลูก ให้ AI วาดตัวละคร', 'Upload a photo, the AI draws the character')}</b><small>${busy ? L('ราว 30–60 วินาที อย่าเพิ่งปิดหน้านี้', 'About 30–60 seconds — keep this page open') : L('รูปหน้าตรง เห็นทั้งตัว แสงสว่าง ได้ผลดีที่สุด', 'Facing the camera, whole body, good light works best')}</small></span>
+<input type="file" accept="image/*" data-famavatar="${i}" ${fam.busyKid !== null || left === 0 ? 'disabled' : ''}></label>
+<div class="famleft">${left === undefined ? '' : left > 0 ? L(`เหลือ ${left} จาก ${q.yearly} ครั้งในรอบ 12 เดือน`, `${left} of ${q.yearly} tries left this year`) : L(`ใช้ครบ ${q.yearly} ครั้งของปีนี้แล้ว`, `All ${q.yearly} tries used this year`)}${k.avatar ? ` · <button type="button" class="linkbtn" data-a="famavoff" data-i="${i}">${L('กลับไปใช้ภาพเดิม', 'Back to the plain drawing')}</button>` : ''}</div>`;
+  return `<div class="famai"><div class="famaihd"><b>✨ ${L(`ตัวละครของ${who}`, `${who}'s character`)}</b>${k.avatar ? '<span class="pill">AI</span>' : ''}</div>${body}</div>`;
+})()}
 <div class="famacts"><button type="button" class="mini" data-a="fammove" data-i="${i}" data-v="-1" ${i === 0 ? 'disabled' : ''} aria-label="${L('เลื่อนขึ้น', 'Move up')}">↑</button><button type="button" class="mini" data-a="fammove" data-i="${i}" data-v="1" ${i === fam.kids.length - 1 ? 'disabled' : ''} aria-label="${L('เลื่อนลง', 'Move down')}">↓</button><button type="button" class="mini famdel" data-a="famdel" data-i="${i}">${L('เอาออก', 'Remove')}</button></div>
 </div></article>`;
   };
   return `<section class="famhero"><div class="famherotx"><div class="kicker">👨‍👩‍👧‍👦 ${L('ครอบครัวของเรา', 'Our family')}</div><h2>${L('ใครอยู่ในสมุดเล่มนี้', 'Who is in these books')}</h2>
-<p>${L('ตั้งชื่อแอป ใส่ชื่อลูกๆ แล้วแต่งตัวการ์ตูนของแต่ละคน ทุกหน้า นิทาน และการแจ้งเตือนจะใช้ชื่อและตัวละครเหล่านี้', 'Name the app, add the children and dress up each one’s character — every page, story and reminder uses them.')}</p></div>
+<p>${L('ตั้งชื่อแอป ใส่ชื่อลูกๆ แล้วอัปโหลดรูปให้ AI วาดตัวละครของแต่ละคน ทุกหน้า นิทาน และการแจ้งเตือนจะใช้ชื่อและตัวละครเหล่านี้', 'Name the app, add the children and let the AI draw each one’s character from a photo — every page, story and reminder uses them.')}</p></div>
 <div class="cast" aria-hidden="true">${cast}</div></section>
 
 <section class="famapp"><div class="fampreview" aria-hidden="true"><small>${esc(shown.kicker)}</small><b>${esc(shown.app)}</b><span>${L('หน้าตาบนหัวแอปและหน้าเข้าสู่ระบบ', 'How it shows at the top and on the sign-in page')}</span></div>
@@ -1292,11 +1291,11 @@ ${!look ? `<p class="famhint">${L('ตอนนี้เป็นภาพวา
 
 <h2 class="famh3">🧒 ${L('ลูกๆ', 'The children')} <span class="pill">${fam.kids.length}/6</span></h2>
 <div class="famkids">${fam.kids.map(card).join('')}
-${fam.kids.length < 6 ? `<div class="famaddtiles"><button type="button" class="famaddtile" data-a="famadd"><span>＋</span><b>${L('เพิ่มลูกอีกคน', 'Add a child')}</b><small>${L('พิมพ์ชื่อแล้วแต่งตัวเอง', 'Type a name, dress them up')}</small></button>
-${S.features.story ? `<label class="famaddtile cam ${fam.busyKid === 'new' ? 'busy' : ''}"><span>${fam.busyKid === 'new' ? '⏳' : '📷'}</span><b>${fam.busyKid === 'new' ? L('Claude กำลังดูรูป…', 'Claude is looking…') : L('เพิ่มจากรูปถ่าย', 'Add from a photo')}</b><small>${L('ถ่ายรูปลูก Claude แต่งตัวให้', 'Snap the child, Claude dresses them up')}</small><input type="file" accept="image/*" capture="user" data-famphoto="new" ${fam.busyKid !== null ? 'disabled' : ''}></label>` : ''}</div>` : ''}</div>
+${fam.kids.length < 6 ? `<div class="famaddtiles"><button type="button" class="famaddtile" data-a="famadd"><span>＋</span><b>${L('เพิ่มลูกอีกคน', 'Add a child')}</b><small>${L('ใส่ชื่อ บันทึก แล้วอัปโหลดรูปให้ AI วาด', 'Add a name, save, then let the AI draw them')}</small></button>
+</div>` : ''}</div>
 ${fam.err ? `<div class="notice">${esc(fam.err)}</div>` : ''}
 <div class="famsave"><button type="button" class="btn" data-a="famsave" ${fam.busy ? 'disabled' : ''}>${fam.busy ? '⏳ ' + L('กำลังบันทึก…', 'Saving…') : '💾 ' + L('บันทึกครอบครัว', 'Save our family')}</button><a class="btn ghost" href="#/">${L('ยกเลิก', 'Cancel')}</a></div>
-<p class="impnote">🔒 ${S.features.story ? L('รูปที่ถ่ายให้ Claude ถูกย่อเหลือ 512 px ส่งไปครั้งเดียว ไม่เก็บไว้ที่ไหน Claude ตอบกลับแค่ร่าง สีผิว ผม และเสื้อ · ', 'A photo for Claude is shrunk to 512 px, sent once and kept nowhere; only the drawing, skin, hair and top colour come back · ') : ''}${L('ชื่อและเดือนเกิดอยู่ในฐานข้อมูลของครอบครัวนี้เท่านั้น หน้าเข้าสู่ระบบแสดงแค่ชื่อแอปและภาพวาด · ลูกที่มีบันทึกแล้วเอาออกไม่ได้ (เปลี่ยนชื่อได้)', "Names and birth months stay in this family's own database; the sign-in page shows only the app's name and the drawings · a child with memories recorded cannot be removed (but can be renamed)")}</p>`;
+<p class="impnote">🔒 ${S.features.avatar ? L('รูปลูกถูกย่อแล้วส่งให้ OpenAI ครั้งเดียวเพื่อวาด ไม่เก็บรูปไว้ที่ไหน เก็บแค่ตัวการ์ตูน ซึ่งเห็นได้เฉพาะคนในครอบครัวที่เข้าสู่ระบบ · ', 'The photo is shrunk and sent to OpenAI once to draw; the photo is kept nowhere, only the cartoon, which only signed-in family can see · ') : ''}${L('ชื่อและเดือนเกิดอยู่ในฐานข้อมูลของครอบครัวนี้เท่านั้น หน้าเข้าสู่ระบบแสดงแค่ชื่อแอปและภาพวาด · ลูกที่มีบันทึกแล้วเอาออกไม่ได้ (เปลี่ยนชื่อได้)', "Names and birth months stay in this family's own database; the sign-in page shows only the app's name and the drawings · a child with memories recorded cannot be removed (but can be renamed)")}</p>`;
 }
    // the groups · the form being filled {id, name, trips, link} · {name, pin} just saved
 /* ---------- a book from a Trip Operations Manual PDF (#/import, editors) ----------
