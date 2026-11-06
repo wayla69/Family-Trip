@@ -443,10 +443,13 @@ const A = {
     try { await api('DELETE', '/api/b/viewers/' + encodeURIComponent(b.dataset.v)); vg = null; vgJust = null; toast(L('ลบกลุ่มแล้ว', 'Group deleted')); render(); } catch (_) { toast(L('ลบไม่สำเร็จ', 'Could not delete')); }
   },
   // ---- our family (#/family): edit in place, save as a whole
-  famlook(b) { const k = fam.kids[+b.dataset.i]; if (!k) return; k.look = { ...(k.look || famDefaultLook(k.slug)), [b.dataset.f]: b.dataset.v }; render(); },
   fammove(b) { const i = +b.dataset.i, j = i + +b.dataset.v; if (j < 0 || j >= fam.kids.length) return; [fam.kids[i], fam.kids[j]] = [fam.kids[j], fam.kids[i]]; render(); },
   famdel(b) { if (!armed(b, L('แตะอีกครั้งเพื่อเอาออก', 'Tap again to remove'))) return; fam.kids.splice(+b.dataset.i, 1); render(); },
-  famadd() { if (fam.kids.length >= 6) return; fam.kids.push({ slug: '', name_th: '', name_en: '', emoji: '🧒', birth_ym: '', look: famDefaultLook('') }); render(); },
+  famadd() { if (fam.kids.length >= 6) return; fam.kids.push({ slug: '', name_th: '', name_en: '', emoji: '🧒', birth_ym: '', look: null, avatar: null }); render(); },
+  async famavoff(b) {   // back to the plain drawing (or the emoji); the tries used stay used
+    const k = fam.kids[+b.dataset.i]; if (!k || !armed(b, L('แตะอีกครั้งเพื่อยืนยัน', 'Tap again to confirm'))) return;
+    try { await api('DELETE', `/api/b/family/avatar/${encodeURIComponent(k.slug)}`); k.avatar = null; await load(); render(); } catch (_) { toast(L('ไม่สำเร็จ', 'Did not work')); }
+  },
   async famsave() {
     fam.err = '';
     const kids = fam.kids.map((k) => ({ ...k, name_en: k.name_en.trim(), name_th: k.name_th.trim() || k.name_en.trim() })).filter((k) => k.name_en);
@@ -565,7 +568,7 @@ const A = {
       imp.job = { status: 'running', slug: imp.slug, log: [] }; render();
       await api('POST', `/api/b/import?slug=${encodeURIComponent(imp.slug)}`, undefined, new Blob([await f.arrayBuffer()], { type: 'application/pdf' }));
       imp.file = null; await impRefresh();
-    } catch (e) { imp.job = null; imp.err = { 409: L('มีงานกำลังทำ หรือมีเล่มรหัสนี้แล้ว', 'Busy, or the id exists'), 503: L('Claude ยังไม่ได้เปิดบนเซิร์ฟเวอร์', 'Claude is not set up on the server'), 400: L('ไฟล์ไม่ใช่ PDF หรือรหัสเล่มไม่ถูกต้อง', 'Not a PDF, or a bad id'), 413: L('ไฟล์ใหญ่เกิน 25 MB', 'Over 25 MB') }[e.code] || L('ส่งไม่สำเร็จ', 'Could not send'); render(); }
+    } catch (e) { imp.job = null; imp.err = { 409: L('มีงานกำลังทำ หรือมีเล่มรหัสนี้แล้ว', 'Busy, or the id exists'), 503: L('Claude ยังไม่ได้เปิดบนเซิร์ฟเวอร์', 'Claude is not set up on the server'), 429: L('โควตา Claude ของวันนี้เหลือไม่พอทำทั้งเล่ม (ต้องใช้ราว 30 ครั้ง) ลองพรุ่งนี้', 'Not enough of today’s Claude allowance left for a whole book (about 30 calls) — try tomorrow'), 400: L('ไฟล์ไม่ใช่ PDF หรือรหัสเล่มไม่ถูกต้อง', 'Not a PDF, or a bad id'), 413: L('ไฟล์ใหญ่เกิน 25 MB', 'Over 25 MB') }[e.code] || L('ส่งไม่สำเร็จ', 'Could not send'); render(); }
   },
   async impsave(b) {
     try { const r = await api('POST', `/api/b/import/${encodeURIComponent(b.dataset.v)}/save`, {}); toast(L('บันทึกเล่มแล้ว', 'Book saved')); imp.list = null; imp.job = null; await load(); location.hash = `#/t/${encodeURIComponent(r.id)}`; }
@@ -884,14 +887,13 @@ document.addEventListener('change', (e) => {
   if (e.target.id === 'lcfile') { const f = e.target.files && e.target.files[0]; if (f) { if (lostPhoto) URL.revokeObjectURL(lostPhoto); lostPhoto = URL.createObjectURL(f); render(); } return; }   // this morning's photo: in memory only
   if (e.target.id === 'impfile') { imp.file = (e.target.files || [])[0] || null; const sl = $('#impslug'); if (imp.file && sl && !sl.value) { sl.value = imp.file.name.replace(/\.pdf$/i, '').normalize('NFKD').toLowerCase().replace(/[^a-z0-9]+/g, '-').replace(/^-+|-+$/g, '').slice(0, 40); } return; }
   if (e.target.id === 'impslug') { imp.slug = e.target.value; return; }
-  if (e.target.dataset && e.target.dataset.famphoto !== undefined && fam) {   // a photo of the child → Claude picks the drawn look
-    const f = (e.target.files || [])[0], who = e.target.dataset.famphoto; if (!f) return;
-    fam.busyKid = who === 'new' ? 'new' : +who; fam.err = ''; render();
-    api('POST', '/api/b/family/look', undefined, new Blob([f], { type: f.type || 'image/jpeg' })).then((r) => {
-      if (who === 'new') fam.kids.push({ slug: '', name_th: '', name_en: '', emoji: r.look.base === 'boy' ? '👶' : '🧒', birth_ym: '', look: r.look });
-      else if (fam.kids[+who]) fam.kids[+who].look = r.look;
-      toast(L('Claude เลือกให้แล้ว ปรับต่อได้เลย', 'Claude picked — adjust as you like'));
-    }, (err) => { fam.err = { 429: L('ครบโควตา Claude ของวันนี้แล้ว', "Today's Claude limit is used up"), 501: L('Claude ยังไม่ได้เปิดบนเซิร์ฟเวอร์', 'Claude is not set up on the server'), 400: L('อ่านรูปไม่ได้', 'Could not read the photo') }[err.code] || L('ครั้งนี้ไม่สำเร็จ ลองใหม่', 'That did not work — try again'); })
+  if (e.target.dataset && e.target.dataset.famavatar !== undefined && fam) {   // a photo of the child → the AI draws their character, used at once
+    const f = (e.target.files || [])[0], i = +e.target.dataset.famavatar, k = fam.kids[i]; if (!f || !k) return;
+    fam.busyKid = i; fam.err = ''; render();
+    api('POST', `/api/b/family/avatar/${encodeURIComponent(k.slug)}`, undefined, new Blob([f], { type: f.type || 'image/jpeg' })).then(async (r) => {
+      k.avatar = r.avatar; if (fam.quota && fam.quota.left) fam.quota.left[k.slug] = r.left;
+      await load(); toast(L('ได้ตัวละครใหม่แล้ว ✨', 'A new character ✨'));
+    }, (err) => { fam.err = { 429: L('ใช้ครบโควตาของปีนี้แล้ว', 'All tries for this year are used'), 501: L('ยังไม่ได้ตั้งค่า OPENAI_API_KEY บนเซิร์ฟเวอร์', 'OPENAI_API_KEY is not set on the server'), 400: L('อ่านรูปไม่ได้ ลองรูปอื่น', 'Could not read the photo — try another'), 409: L('กำลังวาดตัวอื่นอยู่ รอสักครู่', 'Another drawing is in progress — wait a moment'), 502: L('AI วาดไม่สำเร็จ ไม่เสียโควตา ลองรูปอื่นได้', 'The AI could not draw it — no try used; try another photo') }[err.code] || L('ครั้งนี้ไม่สำเร็จ ลองใหม่', 'That did not work — try again'); })
       .finally(() => { fam.busyKid = null; render(); });
     return;
   }

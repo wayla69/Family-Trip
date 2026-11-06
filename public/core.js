@@ -385,13 +385,17 @@ const kidsNames = () => { const ns = children().map((k) => (lang === 'th' ? k.na
 const kidRows = () => (S ? S.children : ((BRAND && BRAND.kids) || []));
 const kidArtSlugs = () => kidRows().filter((k) => kidArt(k.slug)).map((k) => k.slug);
 // which drawing a child is: 'mimi' (the girl with her wagon) or 'mika' (the toddler) — the CSS sizes the two differently
-const kidBase = (slug) => { const k = kidRows().find((c) => c.slug === slug); return k && k.look ? (k.look.base === 'boy' ? 'mika' : 'mimi') : slug; };
+const kidBase = (slug) => { const k = kidRows().find((c) => c.slug === slug); return k && k.avatar ? 'drawnai' : k && k.look ? (k.look.base === 'boy' ? 'mika' : 'mimi') : slug; };
 // the kids dress for the trip: a book's theme.outfit (e.g. "adventure" for Australia) picks /art/kids/<kid>-<outfit>[-full].svg;
 // artTrip is the book on screen (set by render), so every drawing of the kids on that page wears the same clothes
 const KID_OUTFITS = ['adventure'];
 let artTrip = null;
 const kidArt = (slug, full, t) => {
-  const k = kidRows().find((c) => c.slug === slug); if (!k || !(k.look || k.v || slug === 'mimi' || slug === 'mika')) return '';   // v: a look's version (the brand lists only that)
+  const k = kidRows().find((c) => c.slug === slug); if (!k) return '';
+  // a character drawn from the child's photo (server/avatar.js): family only, so never on the sign-in page (the brand says only that one exists)
+  if (k.avatar) return `/media/kid/${encodeURIComponent(slug)}/${full ? 'full' : 'face'}.png?v=${encodeURIComponent(k.avatar)}`;
+  if (k.a) return '';
+  if (!(k.look || k.v || slug === 'mimi' || slug === 'mika')) return '';   // v: a look's version (the brand lists only that)
   const o = (((t || artTrip) || {}).theme || {}).outfit;
   return `/art/kids/${slug}${KID_OUTFITS.includes(o) ? '-' + o : ''}${full ? '-full' : ''}.svg${k.v ? '?v=' + k.v : ''}`;
 };

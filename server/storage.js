@@ -5,7 +5,7 @@
 const fs = require('fs');
 const path = require('path');
 
-const KEY_RE = /^[A-Za-z0-9/_-]{1,200}\.(jpg|json|webm|m4a|mp3|ogg|aac)$/;   // photos, thumbnails, the odd json, and the kids' voice memos
+const KEY_RE = /^[A-Za-z0-9/_-]{1,200}\.(jpg|png|json|webm|m4a|mp3|ogg|aac)$/;   // photos, thumbnails, the odd json, the kids' voice memos and their drawn characters (png)
 const checkKey = (k) => { if (!KEY_RE.test(k) || k.includes('..')) throw new Error('bad storage key'); return k; };
 
 function fsStore(root) {

@@ -77,6 +77,7 @@ const vars = {
   DATA_DIR: '/data', STORY_DAILY: '60', STORY_MODEL: 'claude-sonnet-5-5', HOME_TZ: 'Asia/Bangkok',
   BUNDLED_SEEDS: '0',   // this family starts empty: no Mimi and Mika, no Hong Kong or Australia book — they set up their family in the app
   ...(process.env.ANTHROPIC_API_KEY ? { ANTHROPIC_API_KEY: process.env.ANTHROPIC_API_KEY } : {}),
+  ...(process.env.OPENAI_API_KEY ? { OPENAI_API_KEY: process.env.OPENAI_API_KEY } : {}),   // the children's characters drawn from a photo (#/family)
 };
 await gql(`mutation variableCollectionUpsert($input: VariableCollectionUpsertInput!) { variableCollectionUpsert(input: $input) }`,
   { input: { projectId: P.id, environmentId: E.id, serviceId: APP.id, variables: vars, skipDeploys: true } });

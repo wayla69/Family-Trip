@@ -37,6 +37,10 @@ async function sendZip(res, pool, media) {
     const buf = await media.get(m.storage_key);
     if (buf) z.append(buf, { name: String(m.mime || '').startsWith('audio/') ? `audio/${m.id}.${AUDIO_EXT[m.mime] || 'webm'}` : `photos/${m.id}.jpg` });
   }
+  for (const k of b.tables.children || []) {   // each child's character drawn from a photo (server/avatar.js), full figure and face
+    if (!k.avatar) continue;
+    for (const kind of ['full', 'face']) { const buf = await media.get(`k/${k.slug}/${k.avatar}-${kind}.png`); if (buf) z.append(buf, { name: `kids/${k.slug}-${k.avatar}-${kind}.png` }); }
+  }
   await z.finalize();
 }
 
@@ -89,6 +93,16 @@ async function importZip(file, pool, media) {
         await media.put(thumbKey(m.storage_key), await sharp(buf).resize({ width: 520, height: 520, fit: 'inside', withoutEnlargement: true }).jpeg({ quality: 74, mozjpeg: true }).toBuffer());
       }
       res.photos++;
+    }
+    // the children's drawn characters: keys rebuilt from a checked slug and id, written only when missing, and only real PNGs
+    for (const k of b.tables.children || []) {
+      if (!SLUG_RE.test(String(k.slug)) || !/^[0-9a-f]{12}$/.test(String(k.avatar || ''))) { k.avatar = null; continue; }
+      for (const kind of ['full', 'face']) {
+        const e = out[`kids/${k.slug}-${k.avatar}-${kind}.png`], key = `k/${k.slug}/${k.avatar}-${kind}.png`;
+        if (!e || (await media.get(key))) continue;
+        const buf = await readEntry(z, e, 10e6);
+        if ((await sharp(buf).metadata()).format === 'png') await media.put(key, buf, 'image/png');
+      }
     }
     const okMedia = new Set(mediaRows.map((m) => m.id));
     const c = await pool.connect();

@@ -17,7 +17,19 @@ const freePort = () => new Promise((res) => { const s = net.createServer().liste
 // ---- mock Messages API (SSE)
 const calls = [], importCalls = [];
 let upstreamClosedEarly = false;
+const openaiCalls = [];
 const mock = http.createServer((req, res) => {
+  if (req.url === '/v1/images/edits') {   // OpenAI's image model: the first call is turned down by its safety system, the rest draw a small PNG
+    const chunks = []; req.on('data', (d) => chunks.push(d));
+    req.on('end', async () => {
+      const raw = Buffer.concat(chunks); openaiCalls.push({ headers: req.headers, raw });
+      if (openaiCalls.length === 1) { res.writeHead(400, { 'content-type': 'application/json' }); return res.end(JSON.stringify({ error: { message: 'Your request was rejected by the safety system.' } })); }
+      const png = await createRequire(import.meta.url)('sharp')({ create: { width: 400, height: 600, channels: 4, background: { r: 0, g: 0, b: 0, alpha: 0 } } })
+        .composite([{ input: Buffer.from('<svg xmlns="http://www.w3.org/2000/svg" width="200" height="400"><circle cx="100" cy="90" r="80" fill="#F8DCC6"/><rect x="40" y="170" width="120" height="220" fill="#8E5BE0"/></svg>'), left: 100, top: 100 }]).png().toBuffer();
+      res.writeHead(200, { 'content-type': 'application/json' }); res.end(JSON.stringify({ data: [{ b64_json: png.toString('base64') }], usage: { input_tokens: 500, output_tokens: 6000 } }));
+    });
+    return;
+  }
   let body = ''; req.on('data', (d) => { body += d; });
   req.on('end', async () => {
     const b = JSON.parse(body); calls.push({ url: req.url, headers: req.headers, body: b });
@@ -30,7 +42,6 @@ const mock = http.createServer((req, res) => {
     const trans = String(b.system).startsWith('Translate');
     const photo = String(b.system).includes('"cap"');   // look at today's photos: JSON per id; a stop from the STOPS line, plus junk that must be dropped
     const pids = [...facts.matchAll(/^id: (\S+)$/gm)].map((m) => m[1]), stop0 = (/STOPS: "([^"]*)"/.exec(facts) || [])[1] || '';
-    const look = String(b.system).startsWith('You see one photo of a small child');   // a child's look from a photo: the palette words
     const quiz = String(b.system).includes('"ok":');   // the memory game answers JSON (once with a bad item, which must be dropped)   // translate: answer JSON [{id, tr}] for the items it was given
     const sysText = JSON.stringify(b.system);   // the import sends system as blocks (the redacted manual cached in the second one)
     const imp = sysText.includes('Trip Operations Manual') ? (facts.includes('top level and its days') ? 'top' : facts.includes('pocket guide') ? 'info' : facts.startsWith('List EVERY restaurant') ? 'restlist' : facts.startsWith('For each of these places') ? 'rest' : 'other')
@@ -56,7 +67,7 @@ const mock = http.createServer((req, res) => {
         tale: { th: 'วันนี้สนุก', en: 'Today was fun', scenes: [{ e: '🌉', h: L2('สะพาน', 'The bridge'), th: 'วันนี้สนุก', en: 'Today was fun' }] } })) }),
       thai: () => JSON.stringify(JSON.parse(facts).map((x) => `ไทย: ${x}`)),
     };
-    const parts = imp ? [IMP[imp]()] : look ? ['{"base":"boy","skin":"tan","hair":"brown","top":"teal","extra":"x"}'] : photo ? [JSON.stringify(pids.map((id, k) => (k === 0 ? { id, cap: '## เด็กๆ **ยิ้ม** หน้าปราสาท', tags: ['kids', 'Character', 'bogus', 'kids'], place: stop0, best: true } : { id, cap: 'เรากินติ่มซำ', tags: ['food'], place: 'Narnia', best: 'yes' })))]
+    const parts = imp ? [IMP[imp]()] : photo ? [JSON.stringify(pids.map((id, k) => (k === 0 ? { id, cap: '## เด็กๆ **ยิ้ม** หน้าปราสาท', tags: ['kids', 'Character', 'bogus', 'kids'], place: stop0, best: true } : { id, cap: 'เรากินติ่มซำ', tags: ['food'], place: 'Narnia', best: 'yes' })))]
       : quiz ? ['```json\n[{"q":"เมื่อวานมีมี่บอกว่าปลาอยู่ที่ไหน","a":[{"e":"💧","t":"ในน้ำ"},{"e":"🌳","t":"บนต้นไม้"},{"e":"🚌","t":"บนรถบัส"}],"ok":0},',
       '{"q":"ไปไหนมา","a":[{"e":"🏰","t":"ดิสนีย์"},{"e":"🏖️","t":"ทะเล"},{"e":"🏔️","t":"ภูเขา"}],"ok":0},{"q":"bad","a":[{"t":"x"}],"ok":3}]\n```']
       : trans ? [JSON.stringify(JSON.parse(facts).map((x) => ({ id: x.id, tr: `${x.to}:${x.text}` })))]
@@ -83,7 +94,7 @@ const dbName = 'mb_story_' + Date.now().toString(36); await admin.query(`CREATE 
 const u = new URL(process.env.TEST_DATABASE_URL); u.pathname = '/' + dbName;
 const port = await freePort(), data = fs.mkdtempSync(path.join(os.tmpdir(), 'mb-story-'));
 const srv = spawn(process.execPath, ['server/index.js'], { cwd: process.cwd(), stdio: ['ignore', 'ignore', 'inherit'],
-  env: { ...process.env, PORT: String(port), DATA_DIR: data, DATABASE_URL: u.toString(), ANTHROPIC_API_KEY: 'test-key', ANTHROPIC_BASE_URL: `http://localhost:${mockPort}`, STORY_DAILY: '17', PHOTO_AI: '1' } });
+  env: { ...process.env, PORT: String(port), DATA_DIR: data, DATABASE_URL: u.toString(), ANTHROPIC_API_KEY: 'test-key', ANTHROPIC_BASE_URL: `http://localhost:${mockPort}`, OPENAI_API_KEY: 'test-openai', OPENAI_BASE_URL: `http://localhost:${mockPort}`, STORY_DAILY: '17', PHOTO_AI: '1' } });
 const BASE = `http://localhost:${port}`;
 try {
   for (let i = 0; i < 80; i++) { try { if ((await fetch(BASE + '/healthz')).ok) break; } catch (_) {} await new Promise((r) => setTimeout(r, 250)); }
@@ -457,15 +468,35 @@ try {
   ok((await fetch(BASE + '/api/b/import?slug=test-hop', { method: 'POST', headers: IH, body: pdf })).status === 409, 'import: the saved book\'s id is now taken');
   const lite = (await (await fetch(BASE + '/api/b/state?lite=1', { headers: { cookie: ck } })).json()).trips.find((t) => t.id === 'test-hop');
   ok(lite && lite.seed && (await fetch(BASE + '/api/b/seed/test-hop/' + lite.seed, { headers: { cookie: ck } })).status === 200, 'import: the book\'s guide text is served by its hash');
-  // ---- a child's look from a photo (#/family): shrunk, sent once, only the palette comes back
+  // ---- a child's own character from a photo (#/family, OpenAI): a refused try is free, three a year, the drawing is family-only
   { const sharp = createRequire(import.meta.url)('sharp');
-    const photo = await sharp({ create: { width: 1200, height: 1600, channels: 3, background: '#8B5A2B' } }).jpeg().toBuffer();
-    const n0 = calls.length;
-    const r = await fetch(BASE + '/api/b/family/look', { method: 'POST', headers: { 'x-mb': '1', cookie: ck, 'content-type': 'image/jpeg' }, body: photo });
-    const j = await r.json(), c = calls[n0] || { body: { messages: [{ content: [] }] } }, img = (c.body.messages[0].content || []).find((x) => x.type === 'image');
-    ok(r.ok && JSON.stringify(j.look) === JSON.stringify({ base: 'boy', skin: 'tan', hair: 'brown', top: 'teal' }), `look from a photo: the palette words only, nothing extra (${JSON.stringify(j.look)})`);
-    ok(calls.length === n0 + 1 && img && Buffer.from(img.source.data, 'base64').length < photo.length / 4 && c.body.max_tokens === 200, 'one call, the photo shrunk before it leaves (512 px), a tiny answer');
-    ok((await fetch(BASE + '/api/b/family/look', { method: 'POST', headers: { 'x-mb': '1', cookie: ck, 'content-type': 'image/jpeg' }, body: Buffer.from('not a picture at all, really not') })).status === 400, 'a file that is not a picture is refused before any call');
+    const photo = await sharp({ create: { width: 2400, height: 3200, channels: 3, background: '#8B5A2B' } }).jpeg().toBuffer();
+    const draw = () => fetch(BASE + '/api/b/family/avatar/mimi', { method: 'POST', headers: { 'x-mb': '1', cookie: ck, 'content-type': 'image/jpeg' }, body: photo });
+    const quota = async () => (await (await fetch(BASE + '/api/b/family/avatars', { headers: { cookie: ck } })).json());
+    const q0 = await quota();
+    ok(q0.on === true && q0.yearly === 3 && q0.left.mimi === 3 && q0.left.mika === 3, 'avatars: on with the OpenAI key, three a year for each child');
+    const r0 = await draw();
+    ok(r0.status === 502 && (await r0.json()).error === 'refused' && (await quota()).left.mimi === 3, 'avatars: a picture the safety system turns down says so and does not use a try');
+    const c = openaiCalls[0], body = c.raw.toString('latin1');
+    ok(c.headers.authorization === 'Bearer test-openai' && /multipart\/form-data/.test(c.headers['content-type']) && /name="model"\r\n\r\ngpt-image-1/.test(body) && /name="background"\r\n\r\ntransparent/.test(body) && /name="size"\r\n\r\n1024x1536/.test(body) && body.includes('Transparent background.'), 'avatars: one multipart call to the image model, transparent background, portrait');
+    ok(c.raw.length < photo.length && c.raw.length < 2.5e6, 'avatars: the photo is shrunk to 1024 px before it leaves');
+    const r1 = await draw(), j1 = await r1.json();
+    ok(r1.ok && /^[0-9a-f]{12}$/.test(j1.avatar) && j1.left === 2, `avatars: drawn and used at once, two tries left (${JSON.stringify(j1)})`);
+    const st = await (await fetch(BASE + '/api/b/state', { headers: { cookie: ck } })).json();
+    ok(st.children.find((k) => k.slug === 'mimi').avatar === j1.avatar && st.features.avatar === true, 'avatars: the state carries the drawing id');
+    const full = await fetch(BASE + `/media/kid/mimi/full.png?v=${j1.avatar}`, { headers: { cookie: ck } }), face = await fetch(BASE + '/media/kid/mimi/face.png', { headers: { cookie: ck } });
+    const fm = await sharp(Buffer.from(await full.arrayBuffer())).metadata(), cm = await sharp(Buffer.from(await face.arrayBuffer())).metadata();
+    ok(full.ok && full.headers.get('content-type') === 'image/png' && fm.hasAlpha && fm.height <= 900 && fm.width < 400 && cm.width === 256 && cm.height === 256, `avatars: a trimmed full figure with transparency and a 256 px face (${fm.width}×${fm.height})`);
+    ok((await fetch(BASE + '/media/kid/mimi/full.png')).status === 401, 'avatars: never without signing in');
+    const brand = await (await fetch(BASE + '/api/brand')).json();
+    ok(brand.kids.find((k) => k.slug === 'mimi').a === 1 && !JSON.stringify(brand).includes(j1.avatar), 'avatars: the sign-in page only learns that a drawing exists, not where');
+    const r2 = await draw(), j2 = await r2.json();
+    ok(r2.ok && j2.left === 1 && (await fetch(BASE + `/media/kid/mimi/full.png?v=${j1.avatar}`, { headers: { cookie: ck } })).ok, 'avatars: drawing again replaces the old one (same url, new version)');
+    await draw();
+    const r4 = await draw();
+    ok(r4.status === 429 && (await r4.json()).left === 0 && openaiCalls.length === 4, 'avatars: the fourth try in a year is refused before any call');
+    ok((await fetch(BASE + '/api/b/family/avatar/mimi', { method: 'DELETE', headers: { 'x-mb': '1', cookie: ck } })).ok && (await fetch(BASE + '/media/kid/mimi/full.png', { headers: { cookie: ck } })).status === 404 && (await quota()).left.mimi === 0, 'avatars: back to the plain drawing; the tries used stay used');
+    ok((await fetch(BASE + '/api/b/family/avatar/nobody', { method: 'POST', headers: { 'x-mb': '1', cookie: ck, 'content-type': 'image/jpeg' }, body: photo })).status === 404, 'avatars: only for a child of this family');
   }
   await browser.close();
 } finally {
