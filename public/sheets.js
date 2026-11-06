@@ -442,8 +442,27 @@ const A = {
     if (!armed(b, L('แตะอีกครั้ง — คนในกลุ่มจะออกจากระบบ', 'Tap again — its phones get signed out'))) return;
     try { await api('DELETE', '/api/b/viewers/' + encodeURIComponent(b.dataset.v)); vg = null; vgJust = null; toast(L('ลบกลุ่มแล้ว', 'Group deleted')); render(); } catch (_) { toast(L('ลบไม่สำเร็จ', 'Could not delete')); }
   },
+  // ---- our family (#/family): edit in place, save as a whole
+  famlook(b) { const k = fam.kids[+b.dataset.i]; if (!k) return; k.look = { ...(k.look || famDefaultLook(k.slug)), [b.dataset.f]: b.dataset.v }; render(); },
+  fammove(b) { const i = +b.dataset.i, j = i + +b.dataset.v; if (j < 0 || j >= fam.kids.length) return; [fam.kids[i], fam.kids[j]] = [fam.kids[j], fam.kids[i]]; render(); },
+  famdel(b) { if (!armed(b, L('แตะอีกครั้งเพื่อเอาออก', 'Tap again to remove'))) return; fam.kids.splice(+b.dataset.i, 1); render(); },
+  famadd() { if (fam.kids.length >= 6) return; fam.kids.push({ slug: '', name_th: '', name_en: '', emoji: '🧒', birth_ym: '', look: famDefaultLook('') }); render(); },
+  async famsave() {
+    fam.err = '';
+    const kids = fam.kids.map((k) => ({ ...k, name_en: k.name_en.trim(), name_th: k.name_th.trim() || k.name_en.trim() })).filter((k) => k.name_en);
+    if (kids.length !== fam.kids.length) { fam.err = L('ลูกทุกคนต้องมีชื่อภาษาอังกฤษ (ใช้ในลิงก์และไฟล์)', 'Every child needs an English name (it is used in links and files)'); render(); return; }
+    fam.busy = true; render();
+    try {
+      await api('PUT', '/api/b/family', { profile: { app: fam.app, kicker: fam.kicker }, children: kids });
+      fam = null; toast(L('บันทึกโปรไฟล์แล้ว', 'Profile saved')); ls('brand', null); await load(); nav('#/');
+    } catch (e) {
+      fam.busy = false;
+      fam.err = e.code === 409 ? L('เอาออกไม่ได้ มีบันทึกของลูกคนนี้อยู่แล้ว เปลี่ยนชื่อแทนได้', 'Cannot remove: this child already has memories recorded — rename instead') : L('บันทึกไม่สำเร็จ', 'Could not save');
+      render();
+    }
+  },
   async vgshare(b) {
-    const url = location.origin + b.dataset.v, text = L(`สมุดความทรงจำของมีมี่และมีก้า (${b.dataset.n})`, `Mimi & Mika's memory books (${b.dataset.n})`);
+    const url = location.origin + b.dataset.v, text = L(`สมุดความทรงจำ${kicker()} (${b.dataset.n})`, `${kicker()}'s memory books (${b.dataset.n})`);
     if (navigator.share) { try { await navigator.share({ text, url }); } catch (e) { if (e.name !== 'AbortError') toast(L('แชร์ไม่สำเร็จ', 'Could not share')); } return; }
     try { await navigator.clipboard.writeText(url); toast(L('คัดลอกลิงก์แล้ว', 'Link copied')); } catch (_) { toast(url); }
   },
@@ -852,7 +871,7 @@ document.addEventListener('click', (e) => {
   if (b && A[b.dataset.a]) { if (b.tagName === 'A' || b.type === 'submit') e.preventDefault(); A[b.dataset.a](b, e); return; }
   if (e.target.id === 'scrim') closeSheet();
 });
-document.addEventListener('input', (e) => { const el = e.target; if (el.dataset && el.dataset.fx) { const fx = ls('fx') || {}, v = parseFloat(String(el.value).replace(',', '.')); if (v > 0 && v < 100000) fx[el.dataset.fx] = v; else delete fx[el.dataset.fx]; ls('fx', fx); const t = trip(route().parts[1]), r = $('#fxres'); if (t && r) r.innerHTML = fxResult(t); document.querySelectorAll('.fxa').forEach((x) => { const rows = spendOf(t.id).filter((s2) => s2.cur === x.dataset.fxc); x.textContent = thbLine(rows); }); } if (el.dataset && el.dataset.lc) { const v = ls('lostTel') || ['', '']; v[+el.dataset.lc] = el.value.slice(0, 40); ls('lostTel', v); } if (el.dataset && el.dataset.draft) drafts[el.dataset.draft] = el.value; if (el.id === 'eatq') { eatQ = el.value.trim(); eatFilter(); } if (el.id === 'bookq') { bookQ = el.value; const r = $('#bookres'), t = trip(route().parts[1]); if (r && t) r.innerHTML = bookResults(t); } });
+document.addEventListener('input', (e) => { const el = e.target; if (el.dataset && el.dataset.fx) { const fx = ls('fx') || {}, v = parseFloat(String(el.value).replace(',', '.')); if (v > 0 && v < 100000) fx[el.dataset.fx] = v; else delete fx[el.dataset.fx]; ls('fx', fx); const t = trip(route().parts[1]), r = $('#fxres'); if (t && r) r.innerHTML = fxResult(t); document.querySelectorAll('.fxa').forEach((x) => { const rows = spendOf(t.id).filter((s2) => s2.cur === x.dataset.fxc); x.textContent = thbLine(rows); }); } if (el.dataset && el.dataset.lc) { const v = ls('lostTel') || ['', '']; v[+el.dataset.lc] = el.value.slice(0, 40); ls('lostTel', v); } if (el.dataset && el.dataset.draft) drafts[el.dataset.draft] = el.value; if (el.dataset && el.dataset.fam && fam) { const [i, f] = el.dataset.fam.split(':'); if (fam.kids[+i]) fam.kids[+i][f] = el.value; } if (el.dataset && el.dataset.famp && fam) { const [o, l] = el.dataset.famp.split(':'); fam[o][l] = el.value; } if (el.id === 'eatq') { eatQ = el.value.trim(); eatFilter(); } if (el.id === 'bookq') { bookQ = el.value; const r = $('#bookres'), t = trip(route().parts[1]); if (r && t) r.innerHTML = bookResults(t); } });
 document.addEventListener('focusout', (e) => { const el = e.target; if (el.dataset && el.dataset.aBlur) saveBlur(el); if (el.id === 'lbcap') saveCaption(el); if (el.id === 'lbtags' || el.id === 'lbplace') saveTags(el); });
 document.addEventListener('focusout', (e) => {   // a voice memo's caption ("who said what") saves when the box is left, like a photo caption
   const el = e.target; if (!el.classList || !el.classList.contains('clipcap')) return;
@@ -865,6 +884,17 @@ document.addEventListener('change', (e) => {
   if (e.target.id === 'lcfile') { const f = e.target.files && e.target.files[0]; if (f) { if (lostPhoto) URL.revokeObjectURL(lostPhoto); lostPhoto = URL.createObjectURL(f); render(); } return; }   // this morning's photo: in memory only
   if (e.target.id === 'impfile') { imp.file = (e.target.files || [])[0] || null; const sl = $('#impslug'); if (imp.file && sl && !sl.value) { sl.value = imp.file.name.replace(/\.pdf$/i, '').normalize('NFKD').toLowerCase().replace(/[^a-z0-9]+/g, '-').replace(/^-+|-+$/g, '').slice(0, 40); } return; }
   if (e.target.id === 'impslug') { imp.slug = e.target.value; return; }
+  if (e.target.dataset && e.target.dataset.famphoto !== undefined && fam) {   // a photo of the child → Claude picks the drawn look
+    const f = (e.target.files || [])[0], who = e.target.dataset.famphoto; if (!f) return;
+    fam.busyKid = who === 'new' ? 'new' : +who; fam.err = ''; render();
+    api('POST', '/api/b/family/look', undefined, new Blob([f], { type: f.type || 'image/jpeg' })).then((r) => {
+      if (who === 'new') fam.kids.push({ slug: '', name_th: '', name_en: '', emoji: r.look.base === 'boy' ? '👶' : '🧒', birth_ym: '', look: r.look });
+      else if (fam.kids[+who]) fam.kids[+who].look = r.look;
+      toast(L('Claude เลือกให้แล้ว ปรับต่อได้เลย', 'Claude picked — adjust as you like'));
+    }, (err) => { fam.err = { 429: L('ครบโควตา Claude ของวันนี้แล้ว', "Today's Claude limit is used up"), 501: L('Claude ยังไม่ได้เปิดบนเซิร์ฟเวอร์', 'Claude is not set up on the server'), 400: L('อ่านรูปไม่ได้', 'Could not read the photo') }[err.code] || L('ครั้งนี้ไม่สำเร็จ ลองใหม่', 'That did not work — try again'); })
+      .finally(() => { fam.busyKid = null; render(); });
+    return;
+  }
   if (e.target.id === 'fpick') { const el = e.target; addPhotos(trip(el.dataset.t), +el.dataset.d, el.files); el.value = ''; }
   if (e.target.id === 'spendplace') { const n = $('#spendnote'); if (n) { if (e.target.value) { n.value = e.target.value; drafts[n.dataset.draft] = n.value; $('#spendamt').focus(); } else n.focus(); } }   // a picked place becomes the note; "other" → type it
 });
@@ -896,6 +926,8 @@ async function refresh() {
 }
 (async function boot() {
   if ('serviceWorker' in navigator) navigator.serviceWorker.register('/sw.js').catch(() => {});
+  // the app's name and the children's drawings for the login page (kept on the phone for the next cold start)
+  fetch('/api/brand', { credentials: 'same-origin', cache: 'no-store' }).then((r) => (r.ok ? r.json() : null)).then((b) => { if (b) { BRAND = b; ls('brand', b); if (!S) render(); } }).catch(() => {});
   queue = await idb.all();
   seq = Math.max(seq, ...queue.map((o) => o.seq || 0));
   // open from the phone's own copy at once, then ask the server (a 304 when nothing changed) and redraw only if something did

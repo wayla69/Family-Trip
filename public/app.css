@@ -1783,3 +1783,19 @@ html[data-fs="1"] main.wrap{zoom:1.1}html[data-fs="2"] main.wrap{zoom:1.2}html[d
 .impwarn{font-size:13px;color:var(--muted)}.impwarn ul{margin:6px 0 0;padding-left:18px;display:grid;gap:4px;line-height:1.4}
 .impacts{margin-top:4px}
 .impnote{color:var(--muted);font-size:12px;line-height:1.5;margin-top:18px}
+/* ---- our family (#/family): the profile form and the children's cards with a live drawing ---- */
+.famwelcome{display:grid;grid-template-columns:48px 1fr;gap:12px;align-items:center;text-decoration:none;color:inherit;margin:14px 0 4px}.famwelcome span{font-size:36px;line-height:1}.famwelcome b{display:block;font-size:16px}.famwelcome small{color:var(--muted);font-size:13px;line-height:1.35}
+.famapp h3{margin-top:0}.famh3{font-size:18px;margin:22px 0 8px;display:flex;align-items:baseline;gap:8px}
+.famrow{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:10px 14px;margin:8px 0}.famrow label{display:grid;gap:4px;font-size:13px;font-weight:600;color:var(--muted)}.famrow .field{margin:0}.famrow small{font-weight:400;font-size:11px;line-height:1.3}
+.famkid{display:grid;grid-template-columns:150px minmax(0,1fr);gap:16px;border:1px solid var(--rule);border-radius:18px;padding:14px;background:var(--paper);margin-bottom:12px;box-shadow:0 12px 28px -22px rgba(0,0,0,.35)}
+@media (max-width:520px){.famkid{grid-template-columns:1fr}.famart{min-height:140px}}
+.famart{display:grid;place-items:center;background:var(--panel);border-radius:14px;min-height:190px;padding:10px}.famart img{height:160px;width:auto;filter:drop-shadow(0 8px 10px rgba(0,0,0,.2))}.famart .e{font-size:64px}
+.fambody{display:grid;gap:4px;align-content:start}
+.famlook{display:grid;gap:8px;margin-top:6px}.famlook b{font-size:14px}.famlook>small{color:var(--muted);font-size:12px}
+.fambases{display:flex;gap:8px;flex-wrap:wrap}.fambases button{display:inline-flex;align-items:center;gap:8px;border:2px solid var(--rule);border-radius:12px;padding:6px 12px 6px 6px;background:var(--paper);font:inherit;font-size:13px;font-weight:600;color:var(--ink)}.fambases button img{width:34px;height:34px}.fambases button.on{border-color:var(--accent);background:color-mix(in srgb,var(--accent) 9%,var(--paper))}
+.famrow3{display:grid;grid-template-columns:repeat(auto-fit,minmax(140px,1fr));gap:8px 14px}.famrow3 small{display:block;color:var(--muted);font-size:11px;font-weight:600;margin-bottom:4px}
+.famsw{display:flex;gap:6px;flex-wrap:wrap}.famsw button{width:30px;height:30px;border-radius:50%;border:2px solid #fff;background:var(--sw);box-shadow:0 0 0 1px var(--rule);padding:0}.famsw button.on{box-shadow:0 0 0 3px var(--accent)}
+.famacts{margin-top:8px}.famacts .mini:disabled{opacity:.35}
+.famadd{width:100%;justify-content:center;margin:4px 0 14px}.famsave{margin-top:14px}
+.famphoto{position:relative;overflow:hidden}.famphoto input,.famaddrow label input{position:absolute;inset:0;opacity:0;cursor:pointer}.famphoto.off,.famaddrow label.off{opacity:.6}
+.famaddrow{margin:4px 0 14px}.famaddrow .famadd{flex:1;margin:0;position:relative;overflow:hidden}

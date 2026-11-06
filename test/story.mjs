@@ -30,6 +30,7 @@ const mock = http.createServer((req, res) => {
     const trans = String(b.system).startsWith('Translate');
     const photo = String(b.system).includes('"cap"');   // look at today's photos: JSON per id; a stop from the STOPS line, plus junk that must be dropped
     const pids = [...facts.matchAll(/^id: (\S+)$/gm)].map((m) => m[1]), stop0 = (/STOPS: "([^"]*)"/.exec(facts) || [])[1] || '';
+    const look = String(b.system).startsWith('You see one photo of a small child');   // a child's look from a photo: the palette words
     const quiz = String(b.system).includes('"ok":');   // the memory game answers JSON (once with a bad item, which must be dropped)   // translate: answer JSON [{id, tr}] for the items it was given
     const sysText = JSON.stringify(b.system);   // the import sends system as blocks (the redacted manual cached in the second one)
     const imp = sysText.includes('Trip Operations Manual') ? (facts.includes('top level and its days') ? 'top' : facts.includes('pocket guide') ? 'info' : facts.startsWith('List EVERY restaurant') ? 'restlist' : facts.startsWith('For each of these places') ? 'rest' : 'other')
@@ -55,7 +56,7 @@ const mock = http.createServer((req, res) => {
         tale: { th: 'วันนี้สนุก', en: 'Today was fun', scenes: [{ e: '🌉', h: L2('สะพาน', 'The bridge'), th: 'วันนี้สนุก', en: 'Today was fun' }] } })) }),
       thai: () => JSON.stringify(JSON.parse(facts).map((x) => `ไทย: ${x}`)),
     };
-    const parts = imp ? [IMP[imp]()] : photo ? [JSON.stringify(pids.map((id, k) => (k === 0 ? { id, cap: '## เด็กๆ **ยิ้ม** หน้าปราสาท', tags: ['kids', 'Character', 'bogus', 'kids'], place: stop0, best: true } : { id, cap: 'เรากินติ่มซำ', tags: ['food'], place: 'Narnia', best: 'yes' })))]
+    const parts = imp ? [IMP[imp]()] : look ? ['{"base":"boy","skin":"tan","hair":"brown","top":"teal","extra":"x"}'] : photo ? [JSON.stringify(pids.map((id, k) => (k === 0 ? { id, cap: '## เด็กๆ **ยิ้ม** หน้าปราสาท', tags: ['kids', 'Character', 'bogus', 'kids'], place: stop0, best: true } : { id, cap: 'เรากินติ่มซำ', tags: ['food'], place: 'Narnia', best: 'yes' })))]
       : quiz ? ['```json\n[{"q":"เมื่อวานมีมี่บอกว่าปลาอยู่ที่ไหน","a":[{"e":"💧","t":"ในน้ำ"},{"e":"🌳","t":"บนต้นไม้"},{"e":"🚌","t":"บนรถบัส"}],"ok":0},',
       '{"q":"ไปไหนมา","a":[{"e":"🏰","t":"ดิสนีย์"},{"e":"🏖️","t":"ทะเล"},{"e":"🏔️","t":"ภูเขา"}],"ok":0},{"q":"bad","a":[{"t":"x"}],"ok":3}]\n```']
       : trans ? [JSON.stringify(JSON.parse(facts).map((x) => ({ id: x.id, tr: `${x.to}:${x.text}` })))]
@@ -455,6 +456,16 @@ try {
   ok((await fetch(BASE + '/api/b/import?slug=test-hop', { method: 'POST', headers: IH, body: pdf })).status === 409, 'import: the saved book\'s id is now taken');
   const lite = (await (await fetch(BASE + '/api/b/state?lite=1', { headers: { cookie: ck } })).json()).trips.find((t) => t.id === 'test-hop');
   ok(lite && lite.seed && (await fetch(BASE + '/api/b/seed/test-hop/' + lite.seed, { headers: { cookie: ck } })).status === 200, 'import: the book\'s guide text is served by its hash');
+  // ---- a child's look from a photo (#/family): shrunk, sent once, only the palette comes back
+  { const sharp = createRequire(import.meta.url)('sharp');
+    const photo = await sharp({ create: { width: 1200, height: 1600, channels: 3, background: '#8B5A2B' } }).jpeg().toBuffer();
+    const n0 = calls.length;
+    const r = await fetch(BASE + '/api/b/family/look', { method: 'POST', headers: { 'x-mb': '1', cookie: ck, 'content-type': 'image/jpeg' }, body: photo });
+    const j = await r.json(), c = calls[n0] || { body: { messages: [{ content: [] }] } }, img = (c.body.messages[0].content || []).find((x) => x.type === 'image');
+    ok(r.ok && JSON.stringify(j.look) === JSON.stringify({ base: 'boy', skin: 'tan', hair: 'brown', top: 'teal' }), `look from a photo: the palette words only, nothing extra (${JSON.stringify(j.look)})`);
+    ok(calls.length === n0 + 1 && img && Buffer.from(img.source.data, 'base64').length < photo.length / 4 && c.body.max_tokens === 200, 'one call, the photo shrunk before it leaves (512 px), a tiny answer');
+    ok((await fetch(BASE + '/api/b/family/look', { method: 'POST', headers: { 'x-mb': '1', cookie: ck, 'content-type': 'image/jpeg' }, body: Buffer.from('not a picture at all, really not') })).status === 400, 'a file that is not a picture is refused before any call');
+  }
   await browser.close();
 } finally {
   srv.kill(); await new Promise((r) => srv.on('exit', r)); mock.close();
