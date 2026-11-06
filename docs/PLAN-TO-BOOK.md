@@ -11,6 +11,7 @@
   prompt ปิดท้าย session วางแผน (คัดลอกได้):
   > Export this plan as `plan.json` following https://github.com/wayla69/Family-Trip/blob/main/docs/handoff/plan.schema.json (example: plan.sample.json next to it). Bilingual th/en everywhere, one `days[]` entry per date, every stop with a full Google Maps query `q`, a `mission` per day for the kids (4 things to spot), `restaurants` for the whole trip, `passport.words` and `passport.food`, a `tale` per day (the guide's story in 4–5 scenes) — see docs/handoff/PLANNER-BRIEF.md for the density per day. No booking references, confirmation numbers, e-tickets, passport numbers, costs we paid, e-mails or personal phone numbers.
 - PDF คู่มือ (Trip Operations Manual) ยังส่งได้เหมือนเดิม — Claude Code ถอดเป็น `plan.json` เช่นกัน แล้วเข้าทางเดียวกัน
+- **ทดลองนำเข้า PDF อัตโนมัติด้วย Claude API** (ต้นแบบสำหรับให้คนนอกใช้): `npm run import-pdf -- <manual.pdf> --out=<โฟลเดอร์นอก repo> [--dry]` — ดึงข้อความด้วย `pdftotext` (ต้องมี poppler) · ตัดบรรทัด/ค่าส่วนตัวในเครื่องก่อนส่ง (`--dry` = ดูไฟล์ที่ตัดแล้วโดยไม่เรียก API) · Haiku ถอดโครง (วัน ไกด์พกพา ร้านอาหาร) · Sonnet เขียนหน้าเด็กและแปลไทย · ส่งต่อ `plan-to-seed` (privacy scan) · พิมพ์ token และค่าใช้จ่ายต่อเล่ม (`cost.json`) · ส่งแค่ข้อความ ไม่ส่งไฟล์ PDF/รูป · ต้องมี `ANTHROPIC_API_KEY` — คีย์อยู่ใน Railway จึงรันด้วย `railway run npm run import-pdf -- …` ได้โดยไม่ต้องคัดลอกคีย์ · ผลลัพธ์ต้องตรวจก่อนเป็น seed
 
 ## 2. สิ่งที่แผนควรมี (เพื่อให้ทุกหน้าในแอปมีของ)
 | หน้าในแอป | มาจาก `plan.json` |
