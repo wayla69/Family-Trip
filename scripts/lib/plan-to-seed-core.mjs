@@ -112,7 +112,9 @@ function toSeed(p, notes, opts = {}) {
   if (!info.emergency || !info.emergency.length) { info.emergency = [{ label: TODO('all emergencies — police, ambulance, fire'), tel: 'TODO', main: true }]; note('info.emergency missing → TODO (fill before the trip)'); }
   if (!info.lost) { info.lost = TODO('if a child is lost: where to stand, whom to call, what to show'); note('info.lost missing → TODO'); }
   if ((!info.stays || !info.stays.length) && stayRows.length) {
-    info.stays = stayRows.map((s) => ({ base: s.base, prop: i18n(s.name, s.name), ci: i18n(D.fmtTh(s.ci), D.fmtEn(s.ci)), co: i18n(D.fmtTh(s.co), D.fmtEn(s.co)), n: s.n, why: TODO('why we chose it'), addr: s.addr, q: s.q }));
+    // p.staysWhy [{name, why:{th,en}}] (the app's PDF import writes it) fills "why we chose it" where the names match
+    const whyFor = (name) => { const n = String(name).toLowerCase(); const hit = (p.staysWhy || []).find((w) => w && w.name && w.why && (n.includes(String(w.name).toLowerCase()) || String(w.name).toLowerCase().includes(n))); return hit ? hit.why : null; };
+    info.stays = stayRows.map((s) => ({ base: s.base, prop: i18n(s.name, s.name), ci: i18n(D.fmtTh(s.ci), D.fmtEn(s.ci)), co: i18n(D.fmtTh(s.co), D.fmtEn(s.co)), n: s.n, why: whyFor(s.name) || TODO('why we chose it'), addr: s.addr, q: s.q }));
     note(`info.stays built from the days' stay cards (${stayRows.length} stays) — add "why we chose it"`);
   }
 
@@ -158,7 +160,7 @@ function toSeed(p, notes, opts = {}) {
     { key: 'guide1', art: `/art/guides/${slug}-1.svg`, name: TODO('guide 1 name'), hello: TODO('hello from guide 1, use {name}') },
     { key: 'guide2', art: `/art/guides/${slug}-2.svg`, name: TODO('guide 2 name'), hello: TODO('hello from guide 2') },
   ];
-  if (!(Array.isArray(pp.guides) && pp.guides.length)) note('passport.guides: two TODO guides (name them, draw public/art/guides/*.svg)');
+  if (!(Array.isArray(pp.guides) && pp.guides.length)) note(opts.art === false ? 'passport.guides: Kiki and Roo stand in (no drawings of its own)' : 'passport.guides: two TODO guides (name them, draw public/art/guides/*.svg)');
 
   const kids = p.kids || ['mimi', 'mika'];
   const seed = {

@@ -32,8 +32,8 @@ const mock = http.createServer((req, res) => {
     const pids = [...facts.matchAll(/^id: (\S+)$/gm)].map((m) => m[1]), stop0 = (/STOPS: "([^"]*)"/.exec(facts) || [])[1] || '';
     const quiz = String(b.system).includes('"ok":');   // the memory game answers JSON (once with a bad item, which must be dropped)   // translate: answer JSON [{id, tr}] for the items it was given
     const sysText = JSON.stringify(b.system);   // the import sends system as blocks (the redacted manual cached in the second one)
-    const imp = sysText.includes('Trip Operations Manual') ? (facts.includes('top level and its days') ? 'top' : facts.includes('pocket guide') ? 'info' : 'rest')
-      : sysText.includes("children's pages") ? 'kids' : sysText.includes('You translate a family trip guide') ? 'thai' : null;
+    const imp = sysText.includes('Trip Operations Manual') ? (facts.includes('top level and its days') ? 'top' : facts.includes('pocket guide') ? 'info' : facts.startsWith('List EVERY restaurant') ? 'restlist' : facts.startsWith('For each of these places') ? 'rest' : 'other')
+      : sysText.includes("children's pages") ? 'kids' : sysText.includes('playful pages') ? 'extras' : sysText.includes('You translate a family trip guide') ? 'thai' : null;
     if (imp) importCalls.push({ step: imp, system: sysText, user: facts });
     const en = (x) => ({ en: x }), L2 = (th, e) => ({ th, en: e });
     const IMP = {
@@ -41,7 +41,15 @@ const mock = http.createServer((req, res) => {
         days: [0, 1].map((i) => ({ title: en(`Day ${i + 1} of the test`), sleep: en('Test Inn'), planned: [{ en: 'Test Square', zh: '測試', q: 'Test Square, Testland' }], moving: en('Walk 5 min'),
           plan: [{ t: '09:00', en: 'Breakfast' }, { t: '11:00', en: 'Super Fun Zone opens' }], tips: [en('Show the driver: 測試')], stay: { name: 'Test Inn', addr: '1 Test St', q: 'Test Inn, Testland' } })) }),
       info: () => JSON.stringify({ emergency: [{ label: en('All emergencies'), tel: '999', main: true }], lost: en('Stand still'), guide: [{ title: en('Clocks'), text: en('One hour ahead') }] }),
-      rest: () => JSON.stringify({ lede: en('Near the inn'), kinds: [en('Restaurants'), en('Food courts'), en('Cafés')], groups: [{ area: en('Test town'), kind: 0, items: [{ name: 'Test Noodles', what: en('Noodles'), pr: 'MOP 50', q: 'Test Noodles, Testland' }] }] }),
+      restlist: () => JSON.stringify({ areas: [{ area: en('Test town'), kind: 0, names: ['Test Noodles', 'Test Dumplings'] }, { area: en('Test sweets'), kind: 2, names: ['Test Tarts'] }] }),
+      // the rows for the names asked; "Test Dumplings" is left out the first time so the retry is exercised
+      rest: () => JSON.stringify({ items: JSON.parse(/Places: (\[.*\])/.exec(facts)[1]).filter((n) => n !== 'Test Dumplings' || importCalls.filter((c) => c.step === 'rest').length > 1).map((n) => ({ name: n, what: en(n === 'Test Tarts' ? 'Egg tarts' : 'Noodles'), pr: 'MOP 50', q: `${n}, Testland`, pick: n === 'Test Noodles' ? ['Day 1 · Lunch'] : [] })) }),
+      extras: () => JSON.stringify({ wild: [{ name: L2('นกนางนวล', 'Seagull'), emo: '🐦', text: L2('บินเหนือท่าเรือ', 'Flies over the pier') }, { name: L2('ปูทะเล', 'Crab'), emo: '🦀', text: L2('ซ่อนอยู่ใต้ก้อนหิน', 'Hides under rocks') }], wildLabel: { emo: '🐾', title: L2('สัตว์ที่อาจได้เจอ', 'Animals we may meet'), short: L2('สัตว์', 'Animals') },
+        firsts: [{ key: 'ferry', emoji: '⛴️', label: L2('นั่งเรือ', 'A ferry') }, { key: 'tram', emoji: '🚋', label: L2('นั่งรถราง', 'A tram') }, { key: 'tart', emoji: '🥧', label: L2('ทาร์ตไข่', 'An egg tart') }, { key: 'bad', label: 'x' }, { key: 'ferry', emoji: '⛴️', label: L2('ซ้ำ', 'dup') }],
+        words: [{ k: 'hello', e: '👋', th: 'เฮลโล', en: 'Hello', note: L2('สวัสดี', 'Hi'), say: 'Hello, Kiki!', speak: { text: 'hello', lang: 'en-GB' } }, { k: 'thanks', e: '🙏', th: 'แธงกิ้ว', en: 'Thank you', note: L2('ขอบคุณ', 'Thanks'), speak: { text: 'thank you', lang: 'en-GB' } }, { k: 'bye', e: '👋', th: 'บ๊ายบาย', en: 'Bye', note: L2('ลาก่อน', 'Bye') }],
+        food: [{ k: 'tart', e: '🥧', th: 'ทาร์ตไข่', en: 'Egg tart', note: L2('ไส้คัสตาร์ด', 'custard') }, { k: 'noodle', e: '🍜', th: 'บะหมี่', en: 'Noodles' }, { k: 'bun', e: '🥟', th: 'ซาลาเปา', en: 'Bun' }],
+        map: { sea: L2('ทะเลทดสอบ', 'Test Sea'), stops: [{ k: 'inn', e: '🛏️', th: 'โรงแรม', en: 'Test Inn', q: 'Test Inn', x: 20, y: 40 }, { k: 'square', e: '🏮', th: 'จัตุรัส', en: 'Test Square', q: 'Test Square', x: 150, y: -3 }], days: [['inn'], ['square', 'inn', 'nowhere']] },
+        stays: [{ name: 'Test Inn', why: L2('ใกล้ทุกอย่าง', 'Close to everything') }] }),
       kids: () => JSON.stringify({ days: [0, 1].map((i) => ({ learn: [{ name: L2('จัตุรัส', 'The square'), facts: [L2('กว้าง', 'Wide'), L2('เก่า', 'Old')], kid: L2('นับเสา', 'Count the posts') }], quiz: [{ q: L2('สีอะไร', 'What colour?'), a: L2('แดง', 'Red') }],
         mission: { title: L2('ไปกัน!', "Let's go!"), stamp: `TEST ${i + 1}`, facts: [L2('สนุก', 'Fun')], spot: [{ k: 'ball', e: '🟡', th: 'ลูกบอล', en: 'A ball' }] },
         tale: { th: 'วันนี้สนุก', en: 'Today was fun', scenes: [{ e: '🌉', h: L2('สะพาน', 'The bridge'), th: 'วันนี้สนุก', en: 'Today was fun' }] } })) }),
@@ -420,7 +428,7 @@ try {
   let imp;
   for (let i = 0; i < 120; i++) { imp = await (await fetch(BASE + '/api/b/import', { headers: { cookie: ck } })).json(); if (imp.job.status !== 'running') break; await new Promise((r) => setTimeout(r, 250)); }
   ok(imp.job.status === 'done' && imp.job.draft && imp.job.draft.slug === 'test-hop' && imp.job.draft.days === 2, `import: job done → a draft (${imp.job.status}: ${(imp.job.log || []).at(-1)})`);
-  ok(importCalls.length === 5 && importCalls.map((c) => c.step).join(',') === 'top,info,rest,kids,thai', `import: 5 model calls in order (${importCalls.map((c) => c.step).join(',')})`);
+  ok(importCalls.map((c) => c.step).join(',') === 'top,info,restlist,rest,rest,kids,extras,thai', `import: the model calls in order — structure, guide, restaurant names, rows, the retry for the missing row, kids, extras, Thai (${importCalls.map((c) => c.step).join(',')})`);
   const sent = importCalls.map((c) => c.system + c.user).join('\n');
   ok(sent.includes('Test Square') && sent.includes('Super Fun Zone') && sent.includes('Test Noodles'), 'import: the manual\'s text reached the model');
   ok(!Object.values(FAKE).some((v) => sent.includes(v)) && !/born 2023|allergies/.test(sent), 'import: PNR, booking numbers, e-tickets, the baht amount, birth and allergy lines never reached the model');
@@ -428,11 +436,19 @@ try {
   ok(imp.drafts.length === 1 && imp.drafts[0].slug === 'test-hop' && imp.drafts[0].days === 2 && typeof imp.drafts[0].cost.usd === 'number', 'import: the draft is listed with its size and cost');
   const dr = await (await fetch(BASE + '/api/b/import/' + imp.drafts[0].id, { headers: { cookie: ck } })).json();
   ok(dr.seed && dr.seed.slug === 'test-hop' && dr.seed.days.length === 2 && dr.seed.days[1].plan[1].t === '11:00' && dr.seed.days[0].title.th === 'ไทย: Day 1 of the test' && dr.seed.days[0].tale.scenes.length === 1 && dr.seed.theme.art === '' && dr.seed.passport.guides[0].art === '/art/guides/kiki.svg', 'import: the seed has the days, the Thai, the kids\' pages, no drawn art and the generic guides');
-  ok(dr.seed.info.restaurants.groups[0].items[0].name === 'Test Noodles' && dr.seed.info.emergency[0].tel === '999', 'import: pocket guide and restaurants in the seed');
+  const rg = dr.seed.info.restaurants.groups;
+  ok(rg.length === 2 && rg[0].items.map((x) => x.name).join(',') === 'Test Noodles,Test Dumplings' && rg[0].items[1].what && rg[0].items[1].what.th.startsWith('ไทย:') && rg[1].kind === 2 && rg[1].items[0].name === 'Test Tarts' && dr.seed.info.emergency[0].tel === '999', 'import: every listed restaurant has its row (the missing one came back on the retry), areas and kinds kept, pocket guide in the seed');
+  const px = dr.seed.passport, fx = dr.seed.firsts_catalog;
+  ok(dr.seed.info.wild.length === 2 && dr.seed.info.wild[1].emo === '🦀' && dr.seed.info.wildLabel.short.th === 'สัตว์', 'import: animals & friends to spot, with their label');
+  ok(fx.length === 3 && fx.map((f) => f.key).join(',') === 'ferry,tram,tart', 'import: the trip\'s own firsts (a broken one and a duplicate key dropped)');
+  const wl = px.lists.find((l) => l.key === 'words'), fl = px.lists.find((l) => l.key === 'food');
+  ok(wl && wl.groups[0].items.length === 3 && wl.groups[0].items[0].speak.lang === 'en-GB' && fl && fl.groups[0].items.length === 3 && fl.goal === 2, 'import: say-it-like-a-local words (read aloud) and the tasting card');
+  ok(px.map.sea.en === 'Test Sea' && px.map.stops.length === 2 && px.map.stops[1].x === 92 && px.map.stops[1].y === 8 && JSON.stringify(px.map.days) === '[["inn"],["square","inn"]]', 'import: the living map with clamped positions and only known stops per day');
+  ok(dr.seed.info.stays[0].why.en === 'Close to everything' && dr.report.todo === 0, 'import: "why we chose it" filled, nothing left TODO');
   const sv = await fetch(BASE + '/api/b/import/' + imp.drafts[0].id + '/save', { method: 'POST', headers: H, body: '{}' });
   ok(sv.status === 200 && (await sv.json()).id === 'test-hop', 'import: saved as a book');
   const stt = await state(), nt = stt.trips.find((t) => t.id === 'test-hop');
-  ok(nt && nt.source === 'manual' && nt.days.length === 2 && nt.days[1].plan.plan[1].en === 'Super Fun Zone opens' && nt.firsts.length === 10 && nt.passport.days.length === 2, 'import: the new book is in the state with its days, plans, firsts and passport');
+  ok(nt && nt.source === 'manual' && nt.days.length === 2 && nt.days[1].plan.plan[1].en === 'Super Fun Zone opens' && nt.firsts.length === 3 && nt.firsts[0].key === 'ferry' && nt.passport.days.length === 2, 'import: the new book is in the state with its days, plans, its own firsts and passport');
   ok((await (await fetch(BASE + '/api/b/import', { headers: { cookie: ck } })).json()).drafts.length === 0, 'import: the draft is gone once saved');
   ok((await fetch(BASE + '/api/b/import?slug=test-hop', { method: 'POST', headers: IH, body: pdf })).status === 409, 'import: the saved book\'s id is now taken');
   const lite = (await (await fetch(BASE + '/api/b/state?lite=1', { headers: { cookie: ck } })).json()).trips.find((t) => t.id === 'test-hop');
