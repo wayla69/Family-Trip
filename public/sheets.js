@@ -927,7 +927,7 @@ async function refresh() {
 (async function boot() {
   if ('serviceWorker' in navigator) navigator.serviceWorker.register('/sw.js').catch(() => {});
   // the app's name and the children's drawings for the login page (kept on the phone for the next cold start)
-  fetch('/api/brand', { credentials: 'same-origin', cache: 'no-store' }).then((r) => (r.ok ? r.json() : null)).then((b) => { if (b) { BRAND = b; ls('brand', b); if (!S) render(); } }).catch(() => {});
+  fetch('/api/brand', { credentials: 'same-origin', cache: 'no-store' }).then((r) => (r.ok ? r.json() : null)).then((b) => { if (!b) return; const changed = JSON.stringify(b) !== JSON.stringify(BRAND); BRAND = b; ls('brand', b); const pin = $('#lcode'); if (!S && changed && !(pin && pin.value)) render(); }).catch(() => {});   // never redraw the login form under someone typing
   queue = await idb.all();
   seq = Math.max(seq, ...queue.map((o) => o.seq || 0));
   // open from the phone's own copy at once, then ask the server (a 304 when nothing changed) and redraw only if something did

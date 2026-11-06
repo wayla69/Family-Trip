@@ -213,25 +213,39 @@ Trip: ${JSON.stringify({ title: top.title, place: top.place, from: top.from, to:
     if (whys.size) { plan.info.stays = (Array.isArray(plan.info.stays) ? plan.info.stays : []); for (const st of plan.info.stays) { const w = st.prop && whys.get(norm(st.prop.en || st.prop)); if (w && (!st.why || !st.why.en)) st.why = w; } plan.staysWhy = (Array.isArray(E.stays) ? E.stays : []).filter((s2) => s2 && s2.name && asI18n(s2.why)).map((s2) => ({ name: String(s2.name), why: asI18n(s2.why) })); }
     log(`extras: ${wild.length} animals & friends · ${firsts.length} firsts · ${words.length} words · ${food.length} foods · map ${stops.length} stops · ${whys.size} stays' why`);
   }
+  // every text that has English but no usable Thai yet — the models sometimes send "th": "" or null, which counts as missing
   const holes = [];
   (function walk(v) {
     if (Array.isArray(v)) v.forEach(walk);
     else if (v && typeof v === 'object') {
-      if (typeof v.en === 'string' && v.th === undefined) holes.push(v);
+      if (typeof v.en === 'string' && v.en.trim() && !(typeof v.th === 'string' && v.th.trim())) holes.push(v);
       for (const x of Object.values(v)) if (x && typeof x === 'object') walk(x);
     }
   })(plan);
   const BATCH = 350;
-  for (let b = 0; b < holes.length; b += BATCH) {
-    const part = holes.slice(b, b + BATCH);
-    const th = await ask(`thai ${b / BATCH + 1}/${Math.ceil(holes.length / BATCH)}`, WRITE(), {
+  const thaiBatch = async (part, step) => {
+    const th = await ask(step, WRITE(), {
       system: 'You translate a family trip guide from English into natural Thai for Thai parents. Keep proper names, place names, times, prices and numbers as written (Latin script for names is fine). Short and clear. Answer with a JSON array of strings only — the same length and order as the input.',
       user: JSON.stringify(part.map((h) => h.en)),
       max: 32000, manual: false,
     });
-    if (!Array.isArray(th) || th.length !== part.length) throw Object.assign(new Error(`translation: ${th && th.length} strings for ${part.length}`), { code: 'thai' });
+    if (!Array.isArray(th) || th.length !== part.length) throw Object.assign(new Error(`${step}: ${th && th.length} strings for ${part.length}`), { code: 'thai' });
     part.forEach((h, i) => { h.th = String(th[i]); });
+  };
+  for (let b = 0; b < holes.length; b += BATCH) {
+    const part = holes.slice(b, b + BATCH), step = `thai ${b / BATCH + 1}/${Math.ceil(holes.length / BATCH)}`;
+    // a batch that comes back the wrong length (or too long) is asked once more in halves; what still fails keeps its English, never the whole book
+    try { await thaiBatch(part, step); } catch (e) {
+      if (!['thai', 'long', 'json'].includes(e.code)) throw e;
+      log(`${step}: ${e.message} — asking again in halves`);
+      const h = Math.ceil(part.length / 2);
+      for (const [half, tag] of [[part.slice(0, h), 'a'], [part.slice(h), 'b']]) { try { await thaiBatch(half, step + tag); } catch (e2) { if (!['thai', 'long', 'json'].includes(e2.code)) throw e2; } }
+    }
   }
+  // whatever has no Thai after all that stays readable in English rather than failing the import after every call was paid for
+  const left = holes.filter((h) => !(typeof h.th === 'string' && h.th.trim()));
+  for (const h of left) h.th = h.en;
+  if (left.length) log(`thai: ${left.length} texts kept in English (no translation came back)`);
   plan.days.forEach((d, i) => Object.assign(d, ((kidsOut && kidsOut.days) || [])[i] || {}));
 
   // plan → seed (no drawn art: an imported book keeps its colours and the generic guides) + the privacy scan
@@ -244,7 +258,7 @@ Trip: ${JSON.stringify({ title: top.title, place: top.place, from: top.from, to:
   const { errs, warns } = core.sanity(seed, { art: false });
   if (errs.length) throw Object.assign(new Error(`seed: ${errs.join('; ')}`), { code: 'seed', errs });
   const cost = ledger.reduce((a, r) => a + (r.usd || 0), 0);
-  const report = { lines: core.report(seed).split('\n').map((l) => l.trim()), warns: [...v.warns, ...warns, ...soft.map((w) => `${w.rule} at ${w.at}`)], notes, todo: core.todos(seed), dropped, masked };
+  const report = { lines: core.report(seed).split('\n').map((l) => l.trim()), warns: [...v.warns, ...warns, ...soft.map((w) => `${w.rule} at ${w.at}`), ...(left.length ? [`${left.length} texts have no Thai yet (kept in English)`] : [])], notes, todo: core.todos(seed), dropped, masked };
   log(`seed: ${report.lines[0]}`);
   return { seed, plan, report, cost: { usd: ledger.some((r) => r.usd === null) ? null : cost, calls: ledger } };
 }
