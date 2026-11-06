@@ -434,6 +434,8 @@ try {
   ok(!Object.values(FAKE).some((v) => sent.includes(v)) && !/born 2023|allergies/.test(sent), 'import: PNR, booking numbers, e-tickets, the baht amount, birth and allergy lines never reached the model');
   ok(importCalls[1].system.includes('cache_control') && JSON.parse(importCalls[0].system)[1].text.startsWith('<manual>'), 'import: the manual rides as one cached system block');
   ok(imp.drafts.length === 1 && imp.drafts[0].slug === 'test-hop' && imp.drafts[0].days === 2 && typeof imp.drafts[0].cost.usd === 'number', 'import: the draft is listed with its size and cost');
+  const d0 = imp.drafts[0] || {};
+  ok(d0.seed === undefined && d0.cover && Array.isArray(d0.toc) && d0.toc.length === 2 && d0.peek && d0.peek.stops > 0 && d0.peek.restaurants > 0 && d0.peek.firsts >= 3 && d0.peek.words >= 3 && d0.peek.wild >= 1, `import: the list carries the cover, the contents and the peek counts, never the seed (${JSON.stringify(d0.peek)})`);
   const dr = await (await fetch(BASE + '/api/b/import/' + imp.drafts[0].id, { headers: { cookie: ck } })).json();
   ok(dr.seed && dr.seed.slug === 'test-hop' && dr.seed.days.length === 2 && dr.seed.days[1].plan[1].t === '11:00' && dr.seed.days[0].title.th === 'ไทย: Day 1 of the test' && dr.seed.days[0].tale.scenes.length === 1 && dr.seed.theme.art === '' && dr.seed.passport.guides[0].art === '/art/guides/kiki.svg', 'import: the seed has the days, the Thai, the kids\' pages, no drawn art and the generic guides');
   const rg = dr.seed.info.restaurants.groups;

@@ -467,6 +467,15 @@ function router({ pool, media, A, ai, hooks = {} }) {   // hooks.heart(h): set b
   // (an optional USD estimate when AI_USD_PER_MTOK_IN / _OUT are set — prices are not hard-coded here)
   // ----- a book from a Trip Operations Manual PDF (server/bookimport.js): one job at a time, the result waits as a draft until saved
   const DATA_TMP = path.join(path.resolve(process.env.DATA_DIR || './data'), 'tmp');
+  // What the draft list shows of a seed without sending the seed itself: cover, dates, the table of contents and what the kids' pages hold
+  const peek = (seed) => {
+    const n = (a) => (Array.isArray(a) ? a.length : 0), pp = seed.passport || {}, inf = seed.info || {};
+    const list = (k) => { const l = (pp.lists || []).find((x) => x && x.key === k); return l ? (l.groups || []).reduce((a, g) => a + n(g.items), 0) : 0; };
+    return { title: seed.title, cover: seed.cover || null, date_from: seed.date_from || null, date_to: seed.date_to || null, days: n(seed.days),
+      toc: (seed.days || []).map((d) => ({ t: d.title, e: d.emoji || '' })),
+      peek: { stops: (seed.days || []).reduce((a, d) => a + n(d.planned), 0), restaurants: ((inf.restaurants && inf.restaurants.groups) || []).reduce((a, g) => a + n(g.items), 0), missions: n(pp.days),
+        wild: n(inf.wild), firsts: n(seed.firsts_catalog), words: list('words'), food: list('food'), map: n(pp.map && pp.map.stops), stays: n(inf.stays) } };
+  };
   let job = null;   // { id, slug, status: running|done|error, log, draft, error, started }
   const jobView = () => (job ? { id: job.id, slug: job.slug, status: job.status, log: job.log, draft: job.draft || null, error: job.error || null, started: job.started } : { status: 'idle' });
   r.post('/api/b/import', A.requireEditor, express.raw({ type: () => true, limit: '25mb' }), async (req, res, next) => {
@@ -495,9 +504,9 @@ function router({ pool, media, A, ai, hooks = {} }) {   // hooks.heart(h): set b
   });
   r.get('/api/b/import', A.requireEditor, async (_req, res, next) => {
     try {
-      const drafts = await q("SELECT id, slug, seed->'title' AS title, jsonb_array_length(seed->'days') AS days, report, cost, created_by, created_at FROM book_drafts WHERE family_id=$1 ORDER BY created_at DESC", [FAMILY]);
+      const drafts = await q('SELECT id, slug, seed, report, cost, created_by, created_at FROM book_drafts WHERE family_id=$1 ORDER BY created_at DESC', [FAMILY]);
       res.setHeader('Cache-Control', 'no-store');
-      res.json({ job: jobView(), drafts: drafts.map((d) => ({ ...d, created_at: new Date(d.created_at).getTime() })), on: !!(ai && ai.enabled()) });
+      res.json({ job: jobView(), drafts: drafts.map(({ seed, ...d }) => ({ ...d, ...peek(seed), created_at: new Date(d.created_at).getTime() })), on: !!(ai && ai.enabled()) });
     } catch (e) { next(e); }
   });
   r.get('/api/b/import/:id', A.requireEditor, async (req, res, next) => {
