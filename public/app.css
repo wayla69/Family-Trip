@@ -306,15 +306,15 @@ nav.bar a[aria-current=page]{color:var(--accent)}
 .toast{position:fixed;left:50%;bottom:calc(96px + env(safe-area-inset-bottom,0px));transform:translateX(-50%);z-index:60;background:var(--ink);color:var(--paper);border-radius:10px;padding:9px 16px;font-size:14px;max-width:calc(100vw - 32px)}
 
 /* ---------- login ---------- */
-.login{min-height:100vh;display:grid;place-items:center;padding:24px var(--gut)}
-.login form{width:100%;max-width:380px;position:relative;padding-left:22px}
-.login form::before{content:"";position:absolute;left:0;top:0;bottom:0;width:8px;background:var(--accent);border-radius:2px}
-.login h1{font-family:var(--serif);font-size:44px;line-height:1;font-weight:600;margin:10px 0 4px}
+.login{min-height:100vh;display:grid;place-items:center;padding:24px var(--gut);background:radial-gradient(60% 45% at 100% 0%,color-mix(in srgb,var(--sun) 40%,transparent),transparent 70%),radial-gradient(55% 45% at 0% 100%,color-mix(in srgb,var(--sky) 32%,transparent),transparent 70%),radial-gradient(40% 35% at 0% 20%,color-mix(in srgb,var(--rose) 22%,transparent),transparent 70%),var(--paper)}
+.login form{width:100%;max-width:400px;position:relative;overflow:hidden;padding:22px 22px 18px;border-radius:28px;background:var(--paper);box-shadow:0 30px 60px -36px rgba(0,0,0,.5),0 0 0 1px color-mix(in srgb,var(--ink) 6%,transparent)}
+.login form::before{content:"";position:absolute;left:0;right:0;top:0;height:7px;background:linear-gradient(90deg,var(--rose),var(--sun),var(--leaf),var(--sky),var(--grape))}
+.login h1{font-family:var(--serif);font-size:46px;line-height:.95;font-weight:600;margin:8px 0 6px;color:var(--accent)}
 .login label{display:block;font-size:13px;color:var(--muted);margin:14px 0 4px}
 .login .pin{font-size:28px;letter-spacing:.4em;text-align:center;font-variant-numeric:tabular-nums}
 .pinpad{display:grid;grid-template-columns:repeat(3,1fr);gap:8px;margin-top:10px}
-.pinpad button{height:56px;border:1px solid var(--rule);border-radius:12px;background:var(--paper);font-size:24px;font-weight:600;font-variant-numeric:lining-nums}
-.pinpad button:active{background:var(--panel)}
+.pinpad button{height:56px;border:0;border-radius:16px;background:color-mix(in srgb,var(--accent) 6%,var(--paper));box-shadow:inset 0 -3px 0 color-mix(in srgb,var(--accent) 12%,transparent);font-size:24px;font-weight:700;color:var(--ink);font-variant-numeric:lining-nums;transition:transform .08s}
+.pinpad button:active{transform:translateY(2px);box-shadow:none;background:color-mix(in srgb,var(--sun) 30%,var(--paper))}
 .login .err{color:var(--accent2);min-height:22px;margin-top:8px;font-size:14px}
 
 .empty{padding:22px 0;color:var(--muted)}
@@ -881,10 +881,10 @@ button.nbcard{width:100%;font:inherit;text-align:left;cursor:pointer}
 .nbrow p{margin:4px 0 0;font-size:14px;white-space:pre-line}.nbhead .mini{margin-left:auto;text-decoration:none}
 
 /* ---------- login art ---------- */
-.loginart{display:flex;align-items:flex-end;margin:0 0 14px;min-height:96px}
+.loginart{position:relative;display:flex;align-items:flex-end;margin:4px -6px 10px;min-height:118px;padding:10px 6px 0;border-radius:20px;background:linear-gradient(160deg,color-mix(in srgb,var(--sun) 26%,var(--paper)),color-mix(in srgb,var(--rose) 16%,var(--paper)))}
 .loginart .art{width:44px;height:44px;margin-right:-6px;box-shadow:0 0 0 3px var(--paper);animation:bob 4s ease-in-out infinite;align-self:flex-start}
 .loginart .f1{animation-delay:-.8s;--r:6deg}.loginart .f2{animation-delay:-1.6s;--r:-6deg}
-.loginart .cast{margin-left:auto}.loginart .cast .who{height:96px}.loginart .cast .who.mika{height:70px}
+.loginart .cast{margin-left:auto}.loginart .cast .who{height:110px}.loginart .cast .who.mika{height:80px}
 .empty .cast{justify-content:flex-start;margin-bottom:10px}.empty .cast .who{height:120px}.empty .cast .who.mika{height:88px}
 
 /* ---------- the kids as drawn characters ---------- */
@@ -1783,19 +1783,44 @@ html[data-fs="1"] main.wrap{zoom:1.1}html[data-fs="2"] main.wrap{zoom:1.2}html[d
 .impwarn{font-size:13px;color:var(--muted)}.impwarn ul{margin:6px 0 0;padding-left:18px;display:grid;gap:4px;line-height:1.4}
 .impacts{margin-top:4px}
 .impnote{color:var(--muted);font-size:12px;line-height:1.5;margin-top:18px}
-/* ---- our family (#/family): the profile form and the children's cards with a live drawing ---- */
-.famwelcome{display:grid;grid-template-columns:48px 1fr;gap:12px;align-items:center;text-decoration:none;color:inherit;margin:14px 0 4px}.famwelcome span{font-size:36px;line-height:1}.famwelcome b{display:block;font-size:16px}.famwelcome small{color:var(--muted);font-size:13px;line-height:1.35}
-.famapp h3{margin-top:0}.famh3{font-size:18px;margin:22px 0 8px;display:flex;align-items:baseline;gap:8px}
-.famrow{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:10px 14px;margin:8px 0}.famrow label{display:grid;gap:4px;font-size:13px;font-weight:600;color:var(--muted)}.famrow .field{margin:0}.famrow small{font-weight:400;font-size:11px;line-height:1.3}
-.famkid{display:grid;grid-template-columns:150px minmax(0,1fr);gap:16px;border:1px solid var(--rule);border-radius:18px;padding:14px;background:var(--paper);margin-bottom:12px;box-shadow:0 12px 28px -22px rgba(0,0,0,.35)}
-@media (max-width:520px){.famkid{grid-template-columns:1fr}.famart{min-height:140px}}
-.famart{display:grid;place-items:center;background:var(--panel);border-radius:14px;min-height:190px;padding:10px}.famart img{height:160px;width:auto;filter:drop-shadow(0 8px 10px rgba(0,0,0,.2))}.famart .e{font-size:64px}
-.fambody{display:grid;gap:4px;align-content:start}
-.famlook{display:grid;gap:8px;margin-top:6px}.famlook b{font-size:14px}.famlook>small{color:var(--muted);font-size:12px}
-.fambases{display:flex;gap:8px;flex-wrap:wrap}.fambases button{display:inline-flex;align-items:center;gap:8px;border:2px solid var(--rule);border-radius:12px;padding:6px 12px 6px 6px;background:var(--paper);font:inherit;font-size:13px;font-weight:600;color:var(--ink)}.fambases button img{width:34px;height:34px}.fambases button.on{border-color:var(--accent);background:color-mix(in srgb,var(--accent) 9%,var(--paper))}
-.famrow3{display:grid;grid-template-columns:repeat(auto-fit,minmax(140px,1fr));gap:8px 14px}.famrow3 small{display:block;color:var(--muted);font-size:11px;font-weight:600;margin-bottom:4px}
-.famsw{display:flex;gap:6px;flex-wrap:wrap}.famsw button{width:30px;height:30px;border-radius:50%;border:2px solid #fff;background:var(--sw);box-shadow:0 0 0 1px var(--rule);padding:0}.famsw button.on{box-shadow:0 0 0 3px var(--accent)}
-.famacts{margin-top:8px}.famacts .mini:disabled{opacity:.35}
-.famadd{width:100%;justify-content:center;margin:4px 0 14px}.famsave{margin-top:14px}
-.famphoto{position:relative;overflow:hidden}.famphoto input,.famaddrow label input{position:absolute;inset:0;opacity:0;cursor:pointer}.famphoto.off,.famaddrow label.off{opacity:.6}
-.famaddrow{margin:4px 0 14px}.famaddrow .famadd{flex:1;margin:0;position:relative;overflow:hidden}
+/* ---- our family (#/family): a sunny hero, a live name tag, one bright card per child in their own colour ---- */
+.famwelcome{display:grid;grid-template-columns:52px 1fr;gap:14px;align-items:center;text-decoration:none;color:inherit;margin:16px 0 4px;padding:16px 18px;border-radius:20px;background:linear-gradient(120deg,color-mix(in srgb,var(--sun) 28%,var(--paper)),color-mix(in srgb,var(--rose) 20%,var(--paper)));box-shadow:0 14px 30px -22px rgba(0,0,0,.45)}
+.famwelcome span{font-size:40px;line-height:1}.famwelcome b{display:block;font-size:17px}.famwelcome small{color:var(--muted);font-size:13px;line-height:1.35}
+.famhero{position:relative;overflow:hidden;display:grid;grid-template-columns:minmax(0,1fr) auto;gap:8px;align-items:end;margin-top:14px;border-radius:24px;padding:22px 20px 0;
+  background:radial-gradient(120% 120% at 100% 0%,color-mix(in srgb,var(--sun) 55%,transparent),transparent 55%),radial-gradient(90% 120% at 0% 100%,color-mix(in srgb,var(--sky) 40%,transparent),transparent 60%),linear-gradient(135deg,color-mix(in srgb,var(--rose) 30%,var(--paper)),color-mix(in srgb,var(--sun) 22%,var(--paper)));box-shadow:0 18px 36px -26px rgba(0,0,0,.5)}
+.famherotx{padding-bottom:20px}.famhero .kicker{color:color-mix(in srgb,var(--rose) 70%,var(--ink))}
+.famhero h2{font-family:var(--display);font-size:clamp(26px,5vw,36px);line-height:1.1;margin:6px 0 8px}.famhero p{margin:0;max-width:44ch;line-height:1.45;color:color-mix(in srgb,var(--ink) 80%,transparent)}
+.famhero .cast{gap:0}.famhero .cast .who{height:130px}.famhero .cast .who.mika{height:96px}
+@media (max-width:600px){.famhero{grid-template-columns:1fr}.famhero .cast{justify-content:flex-end;margin:-6px -8px 0 0}.famhero .cast .who{height:108px}.famhero .cast .who.mika{height:80px}.famherotx{padding-bottom:0}}
+.famapp{display:grid;grid-template-columns:260px minmax(0,1fr);gap:18px;align-items:start;margin-top:16px;border:1px solid var(--rule);border-radius:22px;padding:16px;background:var(--paper);box-shadow:0 12px 28px -24px rgba(0,0,0,.4)}
+@media (max-width:640px){.famapp{grid-template-columns:1fr}}
+.fampreview{display:grid;gap:2px;align-content:center;min-height:150px;border-radius:16px;padding:18px;color:#fff;background:linear-gradient(135deg,var(--accent),color-mix(in srgb,var(--accent) 55%,var(--rose)));box-shadow:inset 0 -40px 60px -40px rgba(0,0,0,.35)}
+.fampreview small{font-size:11px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;opacity:.85}.fampreview b{font-family:var(--serif);font-size:32px;line-height:1.05;font-weight:600;overflow-wrap:anywhere}.fampreview span{font-size:11px;opacity:.75;margin-top:8px}
+.famappf h3{margin:0 0 4px;font-size:17px}
+.famrow{display:grid;grid-template-columns:repeat(auto-fit,minmax(180px,1fr));gap:8px 12px;margin:8px 0}.famrow label{display:grid;gap:4px;font-size:12px;font-weight:600;color:var(--muted)}.famrow .field{margin:0}
+.famrow2{grid-template-columns:minmax(0,1fr) 96px}.famemo{text-align:center;font-size:22px;padding:6px}
+.famhint{color:var(--muted);font-size:12px;line-height:1.4;margin:4px 0 0}
+.famh3{font-size:20px;margin:26px 0 10px;display:flex;align-items:center;gap:8px}
+.famkids{display:grid;grid-template-columns:repeat(auto-fill,minmax(min(100%,340px),1fr));gap:16px}
+.famkid{--kc:var(--accent);display:grid;grid-template-rows:auto 1fr;border-radius:24px;overflow:hidden;background:var(--paper);border:2px solid color-mix(in srgb,var(--kc) 35%,var(--rule));box-shadow:0 16px 32px -24px color-mix(in srgb,var(--kc) 70%,#000)}
+.famstage{position:relative;display:grid;place-items:end center;min-height:220px;padding:18px 12px 0;background:radial-gradient(70% 80% at 50% 100%,color-mix(in srgb,var(--kc) 30%,var(--paper)),transparent 70%),linear-gradient(180deg,color-mix(in srgb,var(--kc) 14%,var(--paper)),color-mix(in srgb,var(--kc) 26%,var(--paper)))}
+.famstage img{height:188px;width:auto;filter:drop-shadow(2px 0 0 #fff) drop-shadow(-2px 0 0 #fff) drop-shadow(0 2px 0 #fff) drop-shadow(0 10px 12px rgba(0,0,0,.22));animation:bob 3.6s ease-in-out infinite}.famstage .e{font-size:84px;line-height:1.4}
+.famnum{position:absolute;left:14px;top:14px;width:30px;height:30px;border-radius:50%;display:grid;place-items:center;font-weight:800;font-size:14px;background:var(--kc);color:#fff;box-shadow:0 4px 10px -4px var(--kc)}
+.famtag{position:absolute;right:12px;top:12px;display:grid;justify-items:end;gap:0;background:var(--paper);border-radius:14px;padding:6px 12px;box-shadow:0 6px 14px -8px rgba(0,0,0,.35);max-width:60%}
+.famtag b{font-family:var(--display);font-size:18px;line-height:1.15;color:var(--kc);overflow-wrap:anywhere}.famtag small{font-size:12px;color:var(--muted)}
+.fambody{display:grid;gap:2px;align-content:start;padding:14px 16px 12px}
+.famdress{margin-top:8px;border-radius:18px;padding:12px;background:color-mix(in srgb,var(--kc) 7%,var(--paper));border:1px dashed color-mix(in srgb,var(--kc) 35%,var(--rule))}
+.famdresshd{display:flex;flex-wrap:wrap;gap:8px;align-items:center;justify-content:space-between;margin-bottom:6px}.famdresshd>b{font-size:15px}
+.famphoto{position:relative;overflow:hidden;display:inline-flex;align-items:center;gap:6px;border-radius:999px;padding:7px 14px;background:var(--kc);color:#fff;font-size:13px;cursor:pointer;box-shadow:0 6px 14px -8px var(--kc)}.famphoto b{font-weight:700}
+.famphoto input,.famaddtile input{position:absolute;inset:0;opacity:0;cursor:pointer}.famphoto.busy,.famaddtile.busy{opacity:.7}
+.fambases{display:grid;grid-template-columns:1fr 1fr;gap:8px;margin:8px 0}.fambases button{display:flex;align-items:center;gap:8px;border:2px solid var(--rule);border-radius:14px;padding:6px 10px 6px 6px;background:var(--paper);font:inherit;font-size:13px;font-weight:600;color:var(--ink);text-align:left;line-height:1.2}
+.fambases button img{width:38px;height:38px;flex:none}.fambases button.on{border-color:var(--kc);background:color-mix(in srgb,var(--kc) 12%,var(--paper));box-shadow:0 0 0 3px color-mix(in srgb,var(--kc) 18%,transparent)}
+.fampal{display:grid;grid-template-columns:40px 1fr;gap:8px 8px;align-items:center}.fampal>span{font-size:12px;font-weight:700;color:var(--muted)}
+.famsw{display:flex;gap:7px;flex-wrap:wrap}.famsw button{width:30px;height:30px;border-radius:50%;border:3px solid var(--paper);background:var(--sw);box-shadow:0 0 0 1px var(--rule);padding:0;transition:transform .12s}.famsw button:active{transform:scale(.9)}.famsw button.on{box-shadow:0 0 0 3px var(--kc);transform:scale(1.08)}
+.famacts{display:flex;gap:6px;justify-content:flex-end;margin-top:10px}.famacts .mini:disabled{opacity:.3}.famacts .famdel{margin-left:auto;color:var(--muted)}
+.famaddtiles{display:grid;gap:12px;align-content:start}
+.famaddtile{position:relative;overflow:hidden;display:grid;justify-items:center;text-align:center;gap:2px;padding:22px 16px;border-radius:24px;border:2px dashed color-mix(in srgb,var(--accent) 40%,var(--rule));background:color-mix(in srgb,var(--accent) 5%,var(--paper));font:inherit;color:var(--ink);cursor:pointer}
+.famaddtile span{font-size:34px;line-height:1.1;color:var(--accent)}.famaddtile b{font-size:16px}.famaddtile small{font-size:12px;color:var(--muted)}
+.famaddtile.cam{border-style:solid;border-color:transparent;color:#fff;background:linear-gradient(135deg,var(--grape),var(--rose));box-shadow:0 14px 28px -20px var(--grape)}.famaddtile.cam span,.famaddtile.cam small{color:#fff}.famaddtile.cam small{opacity:.9}
+.famsave{position:sticky;bottom:calc(76px + env(safe-area-inset-bottom,0px));z-index:5;display:flex;gap:10px;margin-top:18px;padding:10px;border-radius:18px;background:color-mix(in srgb,var(--paper) 88%,transparent);backdrop-filter:blur(8px);-webkit-backdrop-filter:blur(8px);box-shadow:0 10px 30px -18px rgba(0,0,0,.45)}.famsave .btn{flex:1;justify-content:center}.famsave .btn.ghost{flex:0 0 auto}
+.login .pin{border-radius:16px;border:2px solid color-mix(in srgb,var(--accent) 18%,var(--rule))}.login button[type=submit]{padding:12px 22px;border-radius:14px;font-size:16px}
