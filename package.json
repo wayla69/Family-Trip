@@ -12,6 +12,7 @@
     "check:migrations": "node scripts/check-migrations.js",
     "new-book": "node scripts/new-book.mjs",
     "plan-to-seed": "node scripts/plan-to-seed.mjs",
+    "import-pdf": "node scripts/import-pdf.mjs",
     "s3": "s3rver -d ./data/s3 -p 4569 --configure-bucket mb-test --silent"
   },
   "engines": {
