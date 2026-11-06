@@ -16,36 +16,36 @@ const onUsage = (fn) => { usageHook = fn; };
 const noteUsage = (msg) => { try { if (usageHook && msg && msg.usage) usageHook(msg.usage); } catch (_) { /* counting never breaks a story */ } };
 
 // mode 'sum': two or three lines for the day page of the book (parents' voice), the same facts, the same rules
-function sumPrompt(lang) {
+function sumPrompt(lang, k) {
   if (lang === 'en') {
     return 'Summarise this family day in 2–3 sentences (at most 60 words) for a printed memory book, in the parents’ voice ("we"), past tense. '
-      + 'The children are Mimi (3) and Mika (1½). Use only the facts given — do not invent places, events or words anyone said. '
+      + `The children are ${k.who.en}. Use only the facts given — do not invent places, events or words anyone said. `
       + 'Reply with the summary only — no title, no markdown, no emoji.';
   }
-  return 'สรุปวันนี้ของครอบครัว 2–3 ประโยค (ไม่เกิน 60 คำ) สำหรับสมุดความทรงจำ เล่าแบบพ่อแม่ ใช้ "เรา" ลูกชื่อ มีมี่ (3 ขวบ) และ มีก้า (1 ขวบครึ่ง) — '
+  return `สรุปวันนี้ของครอบครัว 2–3 ประโยค (ไม่เกิน 60 คำ) สำหรับสมุดความทรงจำ เล่าแบบพ่อแม่ ใช้ "เรา" ลูกชื่อ ${k.who.th} — `
     + 'ใช้เฉพาะข้อมูลที่ให้ ห้ามแต่งสถานที่/เหตุการณ์/คำพูดเพิ่ม ตอบเฉพาะข้อความสรุป ไม่มีหัวข้อ/markdown/อีโมจิ';
 }
 
 // mode 'msg': a short note from the parents to the grandparents for LINE; never saved, the parents edit and send it themselves
-function msgPrompt(lang) {
+function msgPrompt(lang, k) {
   if (lang === 'en') {
     return 'Write a short, warm message (3–5 sentences, at most 80 words) from the parents to the grandparents about today, to send on LINE. '
-      + 'The children are Mimi (3) and Mika (1½); use the children’s own words if there are any. Use only the facts given — do not invent places, events or words anyone said. '
+      + `The children are ${k.who.en}; use the children’s own words if there are any. Use only the facts given — do not invent places, events or words anyone said. `
       + 'No addresses, no hotel or room details. One or two emoji are fine. Reply with the message only — no greeting line like "Subject", no markdown.';
   }
-  return 'เขียนข้อความสั้นๆ อบอุ่น 3–5 ประโยค (ไม่เกิน 80 คำ) จากพ่อแม่ถึงคุณตาคุณยาย เล่าเรื่องวันนี้ สำหรับส่งทาง LINE ลูกชื่อ มีมี่ (3 ขวบ) และ มีก้า (1 ขวบครึ่ง) ถ้ามีคำพูดของเด็กให้ใส่ด้วย — '
+  return `เขียนข้อความสั้นๆ อบอุ่น 3–5 ประโยค (ไม่เกิน 80 คำ) จากพ่อแม่ถึงคุณตาคุณยาย เล่าเรื่องวันนี้ สำหรับส่งทาง LINE ลูกชื่อ ${k.who.th} ถ้ามีคำพูดของเด็กให้ใส่ด้วย — `
     + 'ใช้เฉพาะข้อมูลที่ให้ ห้ามแต่งสถานที่/เหตุการณ์/คำพูดเพิ่ม ไม่ใส่ที่อยู่หรือรายละเอียดที่พัก ใส่อีโมจิได้ 1–2 ตัว ตอบเฉพาะตัวข้อความ ไม่มี markdown';
 }
 
 // mode 'talk': three tiny bedtime questions about today for the children, read aloud to them in kid mode
-function talkPrompt(lang) {
+function talkPrompt(lang, k) {
   if (lang === 'en') {
-    return 'Write 3 bedtime questions to ask Mimi (3) and Mika (1½) about today, so they can talk about their day. '
+    return `Write 3 bedtime questions to ask ${k.who.en} about today, so they can talk about their day. `
       + 'Use only the facts given — do not invent places, events or words anyone said. Very short, easy to answer for a toddler (who, what, which animal, what colour, did you like…), '
       + 'in little-kid words and full of excitement (“Wow! What colour was the big bus?”). '
       + 'One question per line, each starting with one emoji; no numbers, no markdown. Reply with the 3 lines only.';
   }
-  return 'ตั้งคำถามชวนคุยก่อนนอน 3 ข้อ ถามมีมี่ (3 ขวบ) และมีก้า (1 ขวบครึ่ง) เรื่องวันนี้ ให้เด็กได้เล่าเรื่องของวัน — '
+  return `ตั้งคำถามชวนคุยก่อนนอน 3 ข้อ ถาม${k.who.th} เรื่องวันนี้ ให้เด็กได้เล่าเรื่องของวัน — `
     + 'ใช้เฉพาะข้อมูลที่ให้ ห้ามแต่งสถานที่/เหตุการณ์/คำพูดเพิ่ม คำถามสั้นมาก เด็กเล็กตอบได้ง่าย (ใคร อะไร สัตว์อะไร สีอะไร ชอบไหม) '
     + 'ใช้ภาษาเด็ก น้ำเสียงตื่นเต้น ชวนลุ้น (เช่น "ว้าว! รถบัสคันใหญ่สีอะไรน้า?") '
     + 'ข้อละบรรทัด ขึ้นต้นด้วยอีโมจิ 1 ตัว ไม่มีเลขข้อ ไม่มี markdown ตอบเฉพาะคำถาม 3 บรรทัด';
@@ -62,14 +62,14 @@ const NATURAL = {
 };
 
 // mode 'letter': the parents' letter to the children, to read when they are older — from the whole trip's notes
-function letterPrompt(lang) {
+function letterPrompt(lang, k) {
   if (lang === 'en') {
-    return 'Write a letter from Mum and Dad to Mimi and Mika about this trip, for them to read when they are grown up (around 15). 200–300 words. '
-      + 'Start with "Dear Mimi and Mika," and end with a short line of love from Mum and Dad. Tell them what they did, said and loved on the trip, '
+    return `Write a letter from Mum and Dad to ${k.names.en} about this trip, for them to read when they are grown up (around 15). 200–300 words. `
+      + `Start with "Dear ${k.names.en}," and end with a short line of love from Mum and Dad. Tell them what they did, said and loved on the trip, `
       + 'the small moments, and how it felt to be their parents there. Use only the facts given — do not invent places, events or words anyone said. Plain text, no title, no markdown.';
   }
-  return 'เขียนจดหมายจากพ่อกับแม่ถึงมีมี่และมีก้า เรื่องทริปนี้ ให้ลูกอ่านตอนโต (ราว 15 ปี) ยาว 200–300 คำ '
-    + 'ขึ้นต้นว่า "ถึงมีมี่และมีก้า" และปิดด้วยประโยคสั้นๆ ว่ารักจากพ่อกับแม่ เล่าว่าลูกทำอะไร พูดอะไร ชอบอะไรในทริปนี้ ช่วงเล็กๆ ที่จำได้ และความรู้สึกของพ่อแม่ตอนนั้น '
+  return `เขียนจดหมายจากพ่อกับแม่ถึง${k.names.th} เรื่องทริปนี้ ให้ลูกอ่านตอนโต (ราว 15 ปี) ยาว 200–300 คำ `
+    + `ขึ้นต้นว่า "ถึง${k.names.th}" และปิดด้วยประโยคสั้นๆ ว่ารักจากพ่อกับแม่ เล่าว่าลูกทำอะไร พูดอะไร ชอบอะไรในทริปนี้ ช่วงเล็กๆ ที่จำได้ และความรู้สึกของพ่อแม่ตอนนั้น `
     + 'ใช้เฉพาะข้อมูลที่ให้ ห้ามแต่งสถานที่/เหตุการณ์/คำพูดเพิ่ม ข้อความธรรมดา ไม่มีหัวข้อ ไม่มี markdown';
 }
 // 'likes': what this family likes, from the travel notebook across every trip — for planning the next one
@@ -96,47 +96,48 @@ function nextPrompt(lang) {
     + 'ถ้าบันทึกวันนี้บอกว่าเด็กเหนื่อยหรืองอแง ให้แนะนำปรับพรุ่งนี้ให้เบาลงโดยใช้ตัวเลือกที่มีในแผน '
     + 'ใช้เฉพาะข้อมูลที่ให้ ห้ามแต่งเวลา สถานที่ หรือราคาเพิ่ม บรรทัดละข้อ ขึ้นต้นด้วยอีโมจิ 1 ตัว ไม่มีหัวข้อ ไม่มี markdown';
 }
-// 'mquiz': the morning memory game — three picture questions about the day for Mimi, answered in kid mode next morning (JSON)
-function mquizPrompt(lang) {
+// 'mquiz': the morning memory game — three picture questions about the day for the eldest, answered in kid mode next morning (JSON)
+function mquizPrompt(lang, k) {
   const shape = '[{"q":"…","a":[{"e":"🐟","t":"…"},{"e":"🦁","t":"…"},{"e":"🚌","t":"…"}],"ok":0}]';
   if (lang === 'en') {
-    return 'From the facts of this day, write 3 very easy memory questions for Mimi (3) to answer the next morning ("Yesterday, what did we…?", "What did Mika say…?"). '
+    return `From the facts of this day, write 3 very easy memory questions for ${k.first ? k.first.en + (k.first.age ? ` (${k.first.age.en})` : '') : 'a small child'} to answer the next morning ("Yesterday, what did we…?", "What did we say…?"). `
       + 'Each has 3 short answers (1–3 words, each with one emoji): exactly one is true from the facts, the other two are plausible but not in the facts. '
       + 'Use only the facts given. Little-kid words, excited and friendly. Reply with JSON only — no prose, no code fence: ' + shape + ' where "ok" is the index of the true answer.';
   }
-  return 'จากข้อมูลของวันนี้ ตั้งคำถามความจำง่ายมาก 3 ข้อ ให้มีมี่ (3 ขวบ) ตอบตอนเช้าพรุ่งนี้ (เช่น "เมื่อวานเราไปเจออะไร" "มีก้าพูดว่าอะไร") '
+  return `จากข้อมูลของวันนี้ ตั้งคำถามความจำง่ายมาก 3 ข้อ ให้${k.first ? k.first.th + (k.first.age ? ` (${k.first.age.th})` : '') : 'ลูก'} ตอบตอนเช้าพรุ่งนี้ (เช่น "เมื่อวานเราไปเจออะไร" "ใครพูดว่าอะไร") `
     + 'แต่ละข้อมีคำตอบสั้น 3 ตัวเลือก (1–3 คำ มีอีโมจิ 1 ตัว) ถูกจริงตามข้อมูลหนึ่งข้อ อีกสองข้อฟังดูเป็นไปได้แต่ไม่มีในข้อมูล '
     + 'ใช้เฉพาะข้อมูลที่ให้ ภาษาเด็ก น้ำเสียงตื่นเต้นเป็นมิตร ตอบเป็น JSON เท่านั้น ไม่มีคำอธิบาย ไม่มี code fence: ' + shape + ' โดย "ok" คือลำดับของคำตอบที่ถูก';
 }
 // 'fore': the foreword of the printed memory book — the whole trip on one page, in the parents' voice
-function forePrompt(lang) {
+function forePrompt(lang, k) {
   if (lang === 'en') {
     return 'Write the foreword of this family\'s printed memory book about the trip: 120–180 words in the parents\' voice ("we"), past tense — '
-      + 'where we went, who came (Mimi, 3, and Mika, 1½), and the few moments that stood out, so the family enjoys reading it again in years. '
+      + `where we went, who came (${k.who.en}), and the few moments that stood out, so the family enjoys reading it again in years. `
       + 'Use only the facts given — do not invent places, events or words anyone said. Plain text, no title, no markdown.';
   }
-  return 'เขียนคำนำของสมุดความทรงจำเล่มนี้ ทั้งทริป 120–180 คำ เล่าแบบพ่อแม่ ใช้ "เรา" — ไปที่ไหน ไปกับใคร (มีมี่ 3 ขวบ มีก้า 1 ขวบครึ่ง) '
+  return `เขียนคำนำของสมุดความทรงจำเล่มนี้ ทั้งทริป 120–180 คำ เล่าแบบพ่อแม่ ใช้ "เรา" — ไปที่ไหน ไปกับใคร (${k.who.th}) `
     + 'และช่วงไม่กี่ช่วงที่จำได้ที่สุด ให้ครอบครัวกลับมาอ่านแล้วยิ้มได้อีกหลายปี ใช้เฉพาะข้อมูลที่ให้ ห้ามแต่งสถานที่/เหตุการณ์/คำพูดเพิ่ม ข้อความธรรมดา ไม่มีหัวข้อ ไม่มี markdown';
 }
 // the memory game is JSON for the app, not words for the family: it skips the "sound like the parents" tail
-function prompt({ lang, whole, mode }) { return basePrompt({ lang, whole, mode }) + (mode === 'mquiz' ? '' : NATURAL[lang === 'en' ? 'en' : 'th']); }
-function basePrompt({ lang, whole, mode }) {
-  if (mode === 'sum') return sumPrompt(lang);
-  if (mode === 'talk') return talkPrompt(lang);
-  if (mode === 'letter') return letterPrompt(lang);
+const NOBODY = { n: 0, who: { en: 'the children', th: 'เด็กๆ' }, names: { en: 'the children', th: 'ลูกๆ' }, first: null, pairs: 'The children' };
+function prompt({ lang, whole, mode, kids }) { return basePrompt({ lang, whole, mode, kids: kids || NOBODY }) + (mode === 'mquiz' ? '' : NATURAL[lang === 'en' ? 'en' : 'th']); }
+function basePrompt({ lang, whole, mode, kids: k }) {
+  if (mode === 'sum') return sumPrompt(lang, k);
+  if (mode === 'talk') return talkPrompt(lang, k);
+  if (mode === 'letter') return letterPrompt(lang, k);
   if (mode === 'likes') return likesPrompt(lang);
-  if (mode === 'msg') return msgPrompt(lang);
+  if (mode === 'msg') return msgPrompt(lang, k);
   if (mode === 'next') return nextPrompt(lang);
-  if (mode === 'mquiz') return mquizPrompt(lang);
-  if (mode === 'fore') return forePrompt(lang);
+  if (mode === 'mquiz') return mquizPrompt(lang, k);
+  if (mode === 'fore') return forePrompt(lang, k);
   if (lang === 'en') {
-    return `Write an English bedtime story of ${whole ? '250–350' : '120–180'} words starring "Mimi" (3) and "Mika" (1½). `
+    return `Write an English bedtime story of ${whole ? '250–350' : '120–180'} words starring ${k.who.en}. `
       + 'Use only the facts given — do not invent places, events or words anyone said. If there is little to go on, make the story shorter. '
       + 'Talk like a children’s picture book for a 3-year-old: tiny words, very short sentences, and make it EXCITING — sound words (Whoosh! Splash! Wow!), '
       + 'a little “guess what happened next?”, a happy repeating line the kids can say along. Put the children’s own words into the story. '
       + 'Then slow down at the end: calm and cosy, and finish with a good-night line. Reply with the story only — no title, no markdown.';
   }
-  return `เขียนนิทานก่อนนอนภาษาไทย ${whole ? '250–350' : '120–180'} คำ ตัวเอก "มีมี่" (3 ขวบ) และ "มีก้า" (1 ขวบครึ่ง) — `
+  return `เขียนนิทานก่อนนอนภาษาไทย ${whole ? '250–350' : '120–180'} คำ ตัวเอก ${k.who.th} — `
     + 'ใช้เฉพาะข้อมูลที่ให้ ห้ามแต่งสถานที่/เหตุการณ์/คำพูดเพิ่ม ถ้าข้อมูลน้อยให้เล่าสั้นลง '
     + 'ใช้ภาษาเด็กแบบนิทานภาพสำหรับเด็ก 3 ขวบ คำง่ายมาก ประโยคสั้นมาก เล่าให้ตื่นเต้นสนุก มีเสียงประกอบ (ว้าว! ฟิ้ว~ ตูม! จ๋อม!) '
     + 'มีชวนลุ้น (แล้วรู้ไหมว่าเจออะไร?) มีประโยคซ้ำๆ ให้เด็กพูดตามได้ ใส่คำพูดของเด็กในเรื่อง '
@@ -164,14 +165,14 @@ function parseQuiz(text) {
 const clean = (s) => s.replace(/^#+\s*/gm, '').replace(/\*\*|__|`/g, '').replace(/^\s*[-*]\s+/gm, '').replace(/\n{3,}/g, '\n\n').trim();
 
 // Streams text chunks through onText; resolves with the cleaned story (or day summary). Throws {code:'refusal'} if declined.
-async function writeStory({ lang, whole, mode, facts, onText, signal }) {
+async function writeStory({ lang, whole, mode, facts, kids, onText, signal }) {
   const stream = api().beta.messages.stream({
     model: MODEL(),
     max_tokens: !mode || mode === 'story' || mode === 'letter' ? 4000 : mode === 'likes' || mode === 'fore' ? 2000 : 1000,
     betas: ['server-side-fallback-2026-07-01'],
     fallbacks: 'default',                  // a policy decline is re-run server-side on Anthropic's recommended fallback
     output_config: { effort: 'low' },      // a short story from given facts needs little reasoning
-    system: prompt({ lang, whole, mode }),
+    system: prompt({ lang, whole, mode, kids }),
     messages: [{ role: 'user', content: facts }],
   }, { signal });
   for await (const ev of stream) {
@@ -185,14 +186,14 @@ async function writeStory({ lang, whole, mode, facts, onText, signal }) {
 
 // "Ask the guide": answer a grown-up's question from excerpts of the book's own manual (server/guide.js), never from memory.
 // Not saved. Streams like a story; resolves with the cleaned answer.
-function askPrompt(lang) {
+function askPrompt(lang, k) {
   if (lang === 'en') {
-    return 'You are the pocket guide for a family trip (two small children, Mimi 3 and Mika 1½). Answer the parent’s question using ONLY the excerpts from the trip manual below. '
+    return `You are the pocket guide for a family trip (small children: ${k.who.en}). Answer the parent’s question using ONLY the excerpts from the trip manual below. `
       + 'If the excerpts do not answer it, say so in one line and name the page of the app to check (Today, Plan, Eat, Stays, SOS, Prep, Learn). '
       + 'Be short and practical: at most 120 words; plain text; short lines starting with "• " are fine; keep times, names and numbers exactly as written. '
       + 'Never invent opening hours, prices, phone numbers or addresses. In an emergency, tell them to call the local emergency number first.';
   }
-  return 'คุณคือไกด์ประจำทริปของครอบครัวที่มีลูกเล็กสองคน (มีมี่ 3 ขวบ มีก้า 1 ขวบครึ่ง) ตอบคำถามของพ่อแม่ โดยใช้เฉพาะข้อความจากคู่มือทริปที่ให้มาเท่านั้น '
+  return `คุณคือไกด์ประจำทริปของครอบครัวที่มีลูกเล็ก (${k.who.th}) ตอบคำถามของพ่อแม่ โดยใช้เฉพาะข้อความจากคู่มือทริปที่ให้มาเท่านั้น `
     + 'ถ้าคู่มือไม่ได้ตอบเรื่องนี้ ให้บอกสั้นๆ ว่าไม่มีในคู่มือ แล้วบอกหน้าในแอปที่ควรดู (วันนี้ แผน ร้านอาหาร ที่พัก ฉุกเฉิน เตรียมตัว เรียนรู้) '
     + 'ตอบสั้นและใช้ได้จริง ไม่เกิน 120 คำ เป็นข้อความธรรมดา ขึ้นบรรทัดด้วย "• " ได้ เวลา ชื่อ และตัวเลขให้คงตามคู่มือ '
     + 'ห้ามแต่งเวลาเปิดปิด ราคา เบอร์โทร หรือที่อยู่ ถ้าเป็นเหตุฉุกเฉิน ให้บอกโทรเบอร์ฉุกเฉินก่อน';
@@ -201,14 +202,14 @@ function askPrompt(lang) {
 // guide = { stable, rest } from server/guide.js: the stable part (trip overview + the day's plan) is the same for every
 // question asked from that day, so it goes first and is marked for the prompt cache — a second question within a few
 // minutes reads it from the cache (cheaper, faster); the excerpts that match this question and the question follow.
-async function askGuide({ lang, guide, q, onText, signal }) {
+async function askGuide({ lang, guide, q, kids, onText, signal }) {
   const stream = api().beta.messages.stream({
     model: MODEL(),
     max_tokens: 1500,
     betas: ['server-side-fallback-2026-07-01'],
     fallbacks: 'default',
     output_config: { effort: 'low' },
-    system: askPrompt(lang),
+    system: askPrompt(lang, kids || NOBODY),
     messages: [{ role: 'user', content: [
       { type: 'text', text: `${lang === 'en' ? 'TRIP MANUAL (excerpts)' : 'คู่มือทริป (บางส่วน)'}:\n${guide.stable}`, cache_control: { type: 'ephemeral' } },
       { type: 'text', text: `${guide.rest}\n\n${lang === 'en' ? 'QUESTION' : 'คำถาม'}: ${q}` },
@@ -225,7 +226,7 @@ async function askGuide({ lang, guide, q, onText, signal }) {
 
 // Translate a day's words (Thai ↔ English) for the two-language book: items [{id, text, to}] → {id: translation}.
 // Children's words stay a child's words — simple, not polished. Returns only ids it was given.
-async function translate({ items, signal }) {
+async function translate({ items, kids, signal }) {
   const stream = api().beta.messages.stream({
     model: MODEL(),
     max_tokens: 4000,
@@ -233,7 +234,7 @@ async function translate({ items, signal }) {
     fallbacks: 'default',
     output_config: { effort: 'low' },
     system: 'Translate each item of a family travel diary into the language in its "to" field ("en" = English, "th" = Thai). '
-      + 'Mimi (มีมี่) and Mika (มีก้า) are small children: keep their quotes childlike and simple, do not polish them; keep names, places and numbers as they are. '
+      + `${(kids || NOBODY).pairs} are small children: keep their quotes childlike and simple, do not polish them; keep names, places and numbers as they are. `
       + 'Use natural everyday language, the way a parent would say it, not a stiff word-for-word or bookish translation. '
       + 'Reply with JSON only: an array of {"id": ..., "tr": ...} with the same ids — no markdown, no commentary.',
     messages: [{ role: 'user', content: JSON.stringify(items) }],
@@ -311,4 +312,4 @@ STOPS: ${stops.length ? stops.map((s) => `"${s}"`).join(', ') : '(none)'}`;
   return out;
 }
 
-module.exports = { parseQuiz, enabled, photoEnabled, writeStory, askGuide, translate, describePhotos, TAGS, clean, onUsage, SDK };
+module.exports = { prompt, askPrompt, parseQuiz, enabled, photoEnabled, writeStory, askGuide, translate, describePhotos, TAGS, clean, onUsage, SDK };

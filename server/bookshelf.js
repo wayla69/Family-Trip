@@ -9,6 +9,7 @@ const crypto = require('crypto');
 const IMG = require('./images');
 const GUIDE = require('./guide');
 const IMPORT = require('./bookimport');
+const FAM = require('./family');
 
 const FAMILY = process.env.FAMILY_ID || 'family';
 const ID_RE = /^[A-Za-z0-9_.:-]{4,80}$/;
@@ -78,6 +79,8 @@ async function syncSeeds(pool, dir = path.join(__dirname, 'seeds')) {
   try {
     await c.query('BEGIN');
     await c.query('INSERT INTO families (id, name) VALUES ($1, $2) ON CONFLICT (id) DO NOTHING', [FAMILY, 'Family']);
+    // another family's instance (scripts/provision.mjs sets BUNDLED_SEEDS=0) starts empty: no Mimi and Mika, no Hong Kong or Australia book
+    if (process.env.BUNDLED_SEEDS === '0') { await c.query('COMMIT'); return 0; }
     const kidColor = { mimi: '#FF4F8B', mika: '#2F8BFF' };
     const kids = new Map();
     for (const t of seeds) for (const k of t.children || []) kids.set(k.slug, k);
@@ -109,11 +112,60 @@ function router({ pool, media, A, ai, hooks = {} }) {   // hooks.heart(h): set b
   const keyThumb = (tid, id) => `t/${tid}/${id}.jpg`;
   const keyAudio = (tid, id, ext) => `a/${tid}/${id}.${ext}`;   // voice memos: stored as the phone recorded them
 
+  // ----- the family: who the children are and how they are drawn (server/family.js)
+  const kidRows = () => q('SELECT slug, name_th, name_en, emoji, color, birth_ym, look, pos FROM children WHERE family_id=$1 ORDER BY pos', [FAMILY]);
+  const kidsFor = async (t) => FAM.kidsFor(await kidRows(), t && t.date_from ? new Date(t.date_from) : new Date());   // for prompts: names and ages at the trip
+  // before login the app shows only the family's app name and the drawings — never the children's names
+  r.get('/api/brand', async (_req, res, next) => {
+    try { res.setHeader('Cache-Control', 'no-store'); res.json(await brand(pool)); } catch (e) { next(e); }
+  });
+  r.put('/api/b/family', ...W, async (req, res, next) => {
+    try {
+      const b = req.body || {}, prof = FAM.cleanProfile(b.profile);
+      const kids = (Array.isArray(b.children) ? b.children : []).slice(0, 6).map(FAM.cleanKid).filter(Boolean);
+      if (new Set(kids.map((k) => k.slug)).size !== kids.length) return bad(res, 'slug');
+      const have = await kidRows(), gone = have.filter((k) => !kids.some((x) => x.slug === k.slug));
+      for (const k of gone) {   // a child with memories recorded stays (the parents remove nothing by accident)
+        const used = await q('SELECT 1 FROM entries WHERE family_id=$1 AND child=$2 UNION ALL SELECT 1 FROM hearts WHERE family_id=$1 AND child=$2 LIMIT 1', [FAMILY, k.slug]);
+        if (used.length) return res.status(409).json({ error: 'used', slug: k.slug });
+      }
+      const c = await pool.connect();
+      try {
+        await c.query('BEGIN');
+        await c.query('UPDATE families SET profile=$2 WHERE id=$1', [FAMILY, JSON.stringify(prof)]);
+        for (const k of gone) await c.query('DELETE FROM children WHERE family_id=$1 AND slug=$2', [FAMILY, k.slug]);
+        for (const [i, k] of kids.entries()) {
+          await c.query(`INSERT INTO children (id, family_id, slug, name_th, name_en, emoji, color, birth_ym, look, pos) VALUES ($1,$2,$3,$4,$5,$6,$7,$8,$9,$10)
+            ON CONFLICT (family_id, slug) DO UPDATE SET name_th=EXCLUDED.name_th, name_en=EXCLUDED.name_en, emoji=EXCLUDED.emoji, color=EXCLUDED.color, birth_ym=EXCLUDED.birth_ym, look=EXCLUDED.look, pos=EXCLUDED.pos`,
+          [`${FAMILY}:${k.slug}`, FAMILY, k.slug, k.name_th, k.name_en, k.emoji, k.color, k.birth_ym, k.look ? JSON.stringify(k.look) : null, i]);
+        }
+        await c.query('COMMIT');
+      } catch (e) { await c.query('ROLLBACK'); throw e; } finally { c.release(); }
+      const rows = await kidRows();
+      res.json({ ok: true, family: FAM.profile(prof, rows), children: rows.map((k) => ({ ...k, v: FAM.lookVersion(k.look) })) });
+    } catch (e) { next(e); }
+  });
+  // a child's drawing: /art/kids/<slug>[-<outfit>][-full].svg — recoloured from the templates when the child has a look,
+  // else left to the static files (Mimi and Mika as drawn). ?look=<json> (editors) previews a look before it is saved.
+  r.get(/^\/art\/kids\/([a-z0-9-]+?)(?:-(adventure))?(?:-(full))?\.svg$/, async (req, res, next) => {
+    try {
+      const slug = req.params[0], outfit = req.params[1], full = req.params[2];
+      let look = null;
+      if (req.query.look !== undefined) { if (!req.user || req.user.role !== 'editor') return next(); try { look = JSON.parse(String(req.query.look)); } catch (_) { return bad(res, 'look'); } }
+      else look = ((await q('SELECT look FROM children WHERE family_id=$1 AND slug=$2', [FAMILY, slug]))[0] || {}).look;
+      if (!look) return next();
+      const svg = FAM.renderKid({ slug, look, outfit, full: !!full });
+      res.setHeader('Content-Type', 'image/svg+xml; charset=utf-8');
+      res.setHeader('Cache-Control', req.query.look !== undefined ? 'no-store' : 'public, max-age=604800');   // the app versions the url by the look (?v=)
+      res.end(svg);
+    } catch (e) { next(e); }
+  });
+
   // ----- everything in one payload (cached by the app for offline use)
   r.get('/api/b/state', A.requireUser, async (req, res, next) => {
     try {
       const [children, trips, days, firsts, entries, mediaRows, places, hearts, reviews, spendRows] = await Promise.all([
-        q('SELECT slug, name_th, name_en, emoji, color, birth_ym FROM children WHERE family_id=$1 ORDER BY pos', [FAMILY]),
+        q('SELECT slug, name_th, name_en, emoji, color, birth_ym, look FROM children WHERE family_id=$1 ORDER BY pos', [FAMILY]),
         q("SELECT id, slug, legacy_id, title, sub, to_char(date_from,'YYYY-MM-DD') date_from, to_char(date_to,'YYYY-MM-DD') date_to, timezone, theme, cover, stamp, moods, passport, info, source FROM trips WHERE family_id=$1 ORDER BY date_from", [FAMILY]),
         q("SELECT d.trip_id, d.day_index, to_char(d.date,'YYYY-MM-DD') date, d.title, d.sleep, d.emoji, d.gradient, d.planned, d.wx, d.plan, d.done_at FROM trip_days d JOIN trips t ON t.id=d.trip_id WHERE t.family_id=$1 ORDER BY d.trip_id, d.day_index", [FAMILY]),
         q('SELECT f.trip_id, f.key, f.emoji, f.label FROM firsts_catalog f JOIN trips t ON t.id=f.trip_id WHERE t.family_id=$1 ORDER BY f.trip_id, f.pos, f.key', [FAMILY]),
@@ -134,7 +186,8 @@ function router({ pool, media, A, ai, hooks = {} }) {   // hooks.heart(h): set b
       res.setHeader('Cache-Control', 'no-store');
       sendJson(req, res, {
         me: { role: req.user.role, name: req.user.name, uid: req.user.uid, group: req.user.groupName || null },
-        children,
+        family: FAM.profile(((await q('SELECT profile FROM families WHERE id=$1', [FAMILY]))[0] || {}).profile, children),
+        children: children.map((k) => ({ ...k, v: FAM.lookVersion(k.look) })),
         trips: trips.map((t) => {
           const td = days.filter((d) => d.trip_id === t.id).map(({ trip_id, ...d }) => ({ ...d, done_at: ms(d.done_at) }));
           const out = { ...t, days: td, firsts: firsts.filter((f) => f.trip_id === t.id).map(({ trip_id, ...f }) => f) };
@@ -412,8 +465,9 @@ function router({ pool, media, A, ai, hooks = {} }) {   // hooks.heart(h): set b
   // ----- bedtime story (Claude): only when pressed, text facts only, streamed as SSE; disconnect = stop, nothing saved
   async function storyFacts(t, day, lang) {
     const days = await q("SELECT day_index, to_char(date,'YYYY-MM-DD') date, title FROM trip_days WHERE trip_id=$1 ORDER BY day_index", [t.id]);
-    const kids = Object.fromEntries((await q('SELECT slug, name_th, name_en FROM children WHERE family_id=$1', [FAMILY])).map((k) => [k.slug, lang === 'en' ? k.name_en : k.name_th]));
-    const who = (s) => (s === 'both' ? (lang === 'en' ? 'Mimi and Mika' : 'มีมี่และมีก้า') : kids[s] || s);
+    const kidRows = await q('SELECT slug, name_th, name_en FROM children WHERE family_id=$1 ORDER BY pos', [FAMILY]);
+    const kids = Object.fromEntries(kidRows.map((k) => [k.slug, lang === 'en' ? k.name_en : k.name_th]));
+    const who = (s) => (s === 'both' ? FAM.names(kidRows, lang) : kids[s] || s);
     const firsts = Object.fromEntries((await q('SELECT key, label FROM firsts_catalog WHERE trip_id=$1', [t.id])).map((f) => [f.key, f.label[lang] || f.label.en]));
     const pp = ((await q('SELECT passport FROM trips WHERE id=$1', [t.id]))[0] || {}).passport || {};
     const spot = (di, k) => { const it = (((pp.days || [])[di] || {}).spot || []).find((x) => `spot.d${di}.${x.k}` === k) || ((((pp.little || {}).days || [])[di]) || []).find((x) => `little.d${di}.${x.k}` === k); return it ? it[lang] || it.en : null; };
@@ -491,9 +545,10 @@ function router({ pool, media, A, ai, hooks = {} }) {   // hooks.heart(h): set b
       const log = (line) => { job.log.push(`${new Date().toISOString().slice(11, 19)} ${line}`); if (job.log.length > 60) job.log.shift(); };
       res.status(202).json({ job: id });
       try {
-        const kids = await q('SELECT name_en, birth_ym FROM children WHERE family_id=$1 ORDER BY pos', [FAMILY]);
+        const kids = await q('SELECT slug, name_th, name_en, emoji, birth_ym FROM children WHERE family_id=$1 ORDER BY pos', [FAMILY]);
         const out = await IMPORT.run({ buf, slug, client: new ai.SDK(), take: aiTake, onUsage: addUsage, log, dir: DATA_TMP,
           kids: kids.map((k) => ({ name_en: k.name_en, age: k.birth_ym ? Math.max(0, Math.floor((Date.now() - new Date(k.birth_ym + '-01')) / 31557600000)) : '' })) });
+        if (kids.length) out.seed.children = FAM.seedChildren(kids, out.seed.date_from);   // the book is about this family's children, whatever the manual's defaults
         await q('INSERT INTO book_drafts (id, family_id, slug, seed, report, cost, created_by) VALUES ($1,$2,$3,$4,$5,$6,$7)', [id, FAMILY, slug, out.seed, out.report, out.cost, who]);
         job.draft = { id, slug, title: out.seed.title, days: out.seed.days.length, report: out.report, cost: out.cost };
         job.status = 'done'; log('done — review the draft, then save it as a book');
@@ -555,6 +610,7 @@ function router({ pool, media, A, ai, hooks = {} }) {   // hooks.heart(h): set b
       if (mode === 'next' && day + 1 >= t.days) return bad(res, 'day');   // no tomorrow after the last day
       const facts = mode === 'next' ? await nextFacts(t, day, lang) : await storyFacts(t, day, lang);
       if (!facts) return bad(res, 'empty', 422);   // nothing written down → don't call the model
+      const kids = await kidsFor(t);
       if (!(await aiTake())) return bad(res, 'limit', 429);
       const ctl = new AbortController();
       let done = false;
@@ -562,7 +618,7 @@ function router({ pool, media, A, ai, hooks = {} }) {   // hooks.heart(h): set b
       res.writeHead(200, { 'Content-Type': 'text/event-stream; charset=utf-8', 'Cache-Control': 'no-store', 'X-Accel-Buffering': 'no' });
       const send = (ev, data) => res.write(`${ev ? `event: ${ev}\n` : ''}data: ${JSON.stringify(data)}\n\n`);
       try {
-        let text = await ai.writeStory({ lang, whole: day === null, mode, facts, signal: ctl.signal, onText: (x) => send(null, { t: x }) });
+        let text = await ai.writeStory({ lang, whole: day === null, mode, facts, kids, signal: ctl.signal, onText: (x) => send(null, { t: x }) });
         if (mode === 'talk') text = text.split('\n').map((l) => l.replace(/^\s*\d+[.)]\s*/, '').trim()).filter(Boolean).slice(0, 5).join('\n');   // one question per line, no numbering
         if (mode === 'msg' || mode === 'next') { done = true; send('done', { text }); return res.end(); }   // the note for the relatives and tomorrow's lines live only on the phone
         if (mode === 'mquiz') {   // the memory game: only a valid set of picture questions is kept
@@ -604,7 +660,7 @@ function router({ pool, media, A, ai, hooks = {} }) {   // hooks.heart(h): set b
       res.writeHead(200, { 'Content-Type': 'text/event-stream; charset=utf-8', 'Cache-Control': 'no-store', 'X-Accel-Buffering': 'no' });
       const send = (ev, data) => res.write(`${ev ? `event: ${ev}\n` : ''}data: ${JSON.stringify(data)}\n\n`);
       try {
-        const text = await ai.askGuide({ lang, guide, q: qtext, signal: ctl.signal, onText: (x) => send(null, { t: x }) });
+        const text = await ai.askGuide({ lang, guide, q: qtext, kids: await kidsFor(t), signal: ctl.signal, onText: (x) => send(null, { t: x }) });
         done = true;
         send('done', { text });
       } catch (e) {
@@ -673,7 +729,7 @@ function router({ pool, media, A, ai, hooks = {} }) {   // hooks.heart(h): set b
       if (!(await aiTake())) return bad(res, 'limit', 429);
       const items = rows.map((e) => ({ id: e.id, to: /[\u0E00-\u0E7F]/.test(e.text) ? 'en' : 'th', text: e.text }));
       let tr;
-      try { tr = await ai.translate({ items }); } catch (e) { console.error('translate', e.code || e.status || e.message); return bad(res, e.code === 'refusal' ? 'refusal' : 'failed', 502); }
+      try { tr = await ai.translate({ items, kids: await kidsFor(t) }); } catch (e) { console.error('translate', e.code || e.status || e.message); return bad(res, e.code === 'refusal' ? 'refusal' : 'failed', 502); }
       let n = 0;
       for (const e of rows) if (tr[e.id]) n += (await pool.query('UPDATE entries SET tr=$1 WHERE id=$2 AND trip_id=$3 AND text=$4', [tr[e.id], e.id, t.id, e.text])).rowCount;
       res.json({ ok: true, n });
@@ -703,7 +759,7 @@ function router({ pool, media, A, ai, hooks = {} }) {   // hooks.heart(h): set b
       res.writeHead(200, { 'Content-Type': 'text/event-stream; charset=utf-8', 'Cache-Control': 'no-store', 'X-Accel-Buffering': 'no' });
       const send = (ev, data) => res.write(`${ev ? `event: ${ev}\n` : ''}data: ${JSON.stringify(data)}\n\n`);
       try {
-        const text = await ai.writeStory({ lang, whole: true, mode: 'likes', facts, signal: ctl.signal, onText: (x) => send(null, { t: x }) });
+        const text = await ai.writeStory({ lang, whole: true, mode: 'likes', facts, kids: await kidsFor(), signal: ctl.signal, onText: (x) => send(null, { t: x }) });
         const v = { text, lang, at: Date.now(), n: rows.length };
         await q("INSERT INTO settings (key, value) VALUES ('family_likes', $1) ON CONFLICT (key) DO UPDATE SET value=EXCLUDED.value", [JSON.stringify(v)]);
         done = true;
@@ -770,4 +826,10 @@ function router({ pool, media, A, ai, hooks = {} }) {   // hooks.heart(h): set b
   return r;
 }
 
-module.exports = { router, syncSeeds, FAMILY, AUDIO_EXT };
+// the family's app name and kicker, resolved as the app shows them (the manifest and /api/brand)
+async function brand(pool) {
+  const kids = (await pool.query('SELECT slug, name_th, name_en, look FROM children WHERE family_id=$1 ORDER BY pos', [FAMILY])).rows;
+  const prof = FAM.profile(((await pool.query('SELECT profile FROM families WHERE id=$1', [FAMILY])).rows[0] || {}).profile, kids);
+  return { ...prof, kids: kids.map((k) => ({ slug: k.slug, v: FAM.lookVersion(k.look) })) };
+}
+module.exports = { router, syncSeeds, brand, FAMILY, AUDIO_EXT };

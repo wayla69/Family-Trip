@@ -172,6 +172,13 @@ const SW = (() => {
   const tag = h.digest('hex').slice(0, 10);
   return fs.readFileSync(path.join(PUB, 'sw.js'), 'utf8').replace(/const V = '(mbs-v\d+)'/, `const V = '$1-${tag}'`);
 })();
+// the web app manifest carries the family's own app name (Add to Home Screen), the rest as in public/manifest.webmanifest
+const MANIFEST = JSON.parse(fs.readFileSync(path.join(PUB, 'manifest.webmanifest'), 'utf8'));
+app.get('/manifest.webmanifest', async (_req, res) => {
+  const m = { ...MANIFEST };
+  try { const b = await BS.brand(PG); m.name = m.short_name = b.app.en || b.app.th || m.name; } catch (_) { /* the stock name */ }
+  res.setHeader('Content-Type', 'application/manifest+json; charset=utf-8'); res.setHeader('Cache-Control', 'no-cache'); res.end(JSON.stringify(m));
+});
 app.get('/sw.js', (_req, res) => { res.setHeader('Content-Type', 'text/javascript; charset=utf-8'); res.setHeader('Cache-Control', 'no-cache'); res.end(SW); });
 app.use(express.static(PUB, { maxAge: 0, etag: true, setHeaders: (res, f) => { if (/\.(woff2|svg|png)$/.test(f)) res.setHeader('Cache-Control', 'public, max-age=604800'); } }));
 app.get(/^\/(?!api\/|media\/).*/, (req, res) => res.sendFile(path.join(PUB, 'index.html')));

@@ -75,6 +75,7 @@ const vars = {
   FAMILY_CODE: code, VIEW_PIN: viewPin, VIEW_TOKEN: viewToken, SESSION_SECRET: sessionSecret, BACKUP_TOKEN: backupToken,
   DATABASE_URL: `postgresql://postgres:${pgPassword}@\${{Postgres.RAILWAY_PRIVATE_DOMAIN}}:5432/mb`,
   DATA_DIR: '/data', STORY_DAILY: '60', STORY_MODEL: 'claude-sonnet-5-5', HOME_TZ: 'Asia/Bangkok',
+  BUNDLED_SEEDS: '0',   // this family starts empty: no Mimi and Mika, no Hong Kong or Australia book — they set up their family in the app
   ...(process.env.ANTHROPIC_API_KEY ? { ANTHROPIC_API_KEY: process.env.ANTHROPIC_API_KEY } : {}),
 };
 await gql(`mutation variableCollectionUpsert($input: VariableCollectionUpsertInput!) { variableCollectionUpsert(input: $input) }`,

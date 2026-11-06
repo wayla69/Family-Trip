@@ -6,6 +6,7 @@
 const crypto = require('crypto');
 const express = require('express');
 const webpush = require('web-push');
+const FAM = require('./family');
 
 const LEAD = (+process.env.PUSH_LEAD_MIN || 30) * 60000;   // how early the reminder comes
 const LATE = 15 * 60000;
@@ -62,7 +63,8 @@ const HOME_TZ = process.env.HOME_TZ || 'Asia/Bangkok';
 const ANN_AT = '09:00', ANN_YEARS = 20;
 const addYears = (date, n) => { const y = +date.slice(0, 4) + n, s = `${y}${date.slice(4)}`; return s.slice(5) === '02-29' && !(y % 4 === 0 && (y % 100 !== 0 || y % 400 === 0)) ? null : s; };   // 29 Feb only in leap years
 const addDays = (date, n) => new Date(Date.parse(date + 'T00:00:00Z') + n * 864e5).toISOString().slice(0, 10);
-function extras(trips, now) {
+// kids = {th, en}: the children's names as one phrase (server/family.js names), 'เด็กๆ' / 'the kids' when none are set up yet
+function extras(trips, now, kids = { th: 'เด็กๆ', en: 'the kids' }) {
   const out = [], live = (at) => now >= at && now < at + LATE;
   for (const x of trips) {
     const name = x.title || {}, nTh = name.th || name.en || '', nEn = name.en || name.th || '';
@@ -76,8 +78,8 @@ function extras(trips, now) {
     for (let left = x.doors || 0; left >= 1; left--) {
       const k = (x.doors || 0) - left + 1, at = zoned(addDays(x.from, -left), DOOR_AT, home);
       if (live(at)) out.push({ key: `${x.trip}.x.door${k}`, at, url: '/#/',
-        th: { title: `🎁 ประตูที่ ${k} เปิดได้แล้ว`, body: `อีก ${left} วันไป${nTh} — ให้มีมี่กับมีก้าเปิดเซอร์ไพรส์ของวันนี้` },
-        en: { title: `🎁 Door ${k} is ready`, body: `${left} ${left === 1 ? 'sleep' : 'sleeps'} to ${nEn} — today's surprise for Mimi and Mika` } });
+        th: { title: `🎁 ประตูที่ ${k} เปิดได้แล้ว`, body: `อีก ${left} วันไป${nTh} — ให้${kids.th}เปิดเซอร์ไพรส์ของวันนี้` },
+        en: { title: `🎁 Door ${k} is ready`, body: `${left} ${left === 1 ? 'sleep' : 'sleeps'} to ${nEn} — today's surprise for ${kids.en}` } });
     }
     // every evening of the trip: record the day (tick() skips a day that already has something in it)
     for (let i = 0, d = x.from; d <= x.to; i++, d = addDays(d, 1)) {
@@ -116,6 +118,10 @@ function create({ pool, family, A, sender = (sub, payload, opt) => webpush.sendN
       return false;
     }
   };
+  const kidNames = async () => {
+    const rows = (await pool.query('SELECT name_th, name_en FROM children WHERE family_id=$1 ORDER BY pos', [family])).rows;
+    return rows.length ? { th: FAM.names(rows, 'th'), en: FAM.names(rows, 'en') } : { th: 'เด็กๆ', en: 'the kids' };
+  };
   async function tick(now = Date.now()) {
     const days = (await pool.query(`SELECT t.id trip, t.timezone tz, d.day_index, to_char(d.date,'YYYY-MM-DD') date, d.plan->'plan' rows
       FROM trip_days d JOIN trips t ON t.id=d.trip_id WHERE t.family_id=$1 AND d.date BETWEEN $2::date - 1 AND $2::date + 1`, [family, new Date(now).toISOString().slice(0, 10)])).rows;
@@ -123,7 +129,7 @@ function create({ pool, family, A, sender = (sub, payload, opt) => webpush.sendN
         coalesce(jsonb_array_length(passport->'countdown'->'doors'), 0) doors
       FROM trips WHERE family_id=$1 AND ($2::date BETWEEN date_from - 16 AND date_to + 1 OR date_to < $2::date)`, [family, new Date(now).toISOString().slice(0, 10)])).rows;   // past trips too: their days come back on the anniversary
     const list = due(days, now).map((r) => ({ ...r, msg: (lang) => message(r, lang, now) }));
-    for (const x of extras(trips, now)) {
+    for (const x of extras(trips, now, await kidNames())) {
       if (x.day !== undefined) {
         const has = (await pool.query(`SELECT 1 FROM entries WHERE trip_id=$1 AND day_index=$2 AND kind IN ('quote','mood','fav','note','first')
           UNION ALL SELECT 1 FROM media WHERE trip_id=$1 AND day_index=$2 LIMIT 1`, [x.trip, x.day])).rowCount > 0;
@@ -147,10 +153,10 @@ function create({ pool, family, A, sender = (sub, payload, opt) => webpush.sendN
   async function heart({ trip }, now = Date.now()) {
     const key = `heart.${Math.floor(now / HEART_GAP)}`;
     if (!(await pool.query('INSERT INTO push_sent (key) VALUES ($1) ON CONFLICT DO NOTHING RETURNING key', [key])).rowCount) return 0;
-    const subs = (await pool.query('SELECT * FROM push_subs WHERE family_id=$1', [family])).rows;
+    const subs = (await pool.query('SELECT * FROM push_subs WHERE family_id=$1', [family])).rows, kids = await kidNames();
     const msg = (lang) => JSON.stringify(lang === 'en'
-      ? { title: 'A heart for the kids 💗', body: 'Someone in the family sent one — open it with Mimi and Mika at bedtime', tag: 'heart', url: `/#/t/${trip}/hearts` }
-      : { title: 'ญาติส่งหัวใจมาให้เด็กๆ 💗', body: 'เปิดดูด้วยกันกับมีมี่และมีก้าก่อนนอนนะ', tag: 'heart', url: `/#/t/${trip}/hearts` });
+      ? { title: 'A heart for the kids 💗', body: `Someone in the family sent one — open it with ${kids.en} at bedtime`, tag: 'heart', url: `/#/t/${trip}/hearts` }
+      : { title: 'ญาติส่งหัวใจมาให้เด็กๆ 💗', body: `เปิดดูด้วยกันกับ${kids.th}ก่อนนอนนะ`, tag: 'heart', url: `/#/t/${trip}/hearts` });
     let n = 0;
     for (const s of subs) if (await send(s, msg(s.lang))) n++;
     return n;

@@ -17,6 +17,7 @@
     { "id": "0014", "file": "0014_letter.sql" },
     { "id": "0015", "file": "0015_memory_quiz_foreword.sql" },
     { "id": "0016", "file": "0016_photo_ai.sql" },
-    { "id": "0017", "file": "0017_book_drafts.sql" }
+    { "id": "0017", "file": "0017_book_drafts.sql" },
+    { "id": "0018", "file": "0018_family_profile.sql" }
   ]
 }

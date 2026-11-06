@@ -264,7 +264,7 @@ function toThb(rows) {
 }
 const thbLine = (rows) => { const r = toThb(rows); return !r.missing.length && rows.some((s) => s.cur !== 'THB') ? `≈ ${fmtMoney(Math.round(r.thb), 'THB')}` : ''; };
 const kidName = (slug) => { if (slug === 'both') return L('ทั้งคู่', 'Both'); const k = children().find((c) => c.slug === slug); return k ? (lang === 'th' ? k.name_th : k.name_en) : ''; };
-const kidEmoji = (slug) => (slug === 'both' ? '👧👶' : (children().find((c) => c.slug === slug) || {}).emoji || '');
+const kidEmoji = (slug) => (slug === 'both' ? children().map((c) => c.emoji || '🧒').join('') : (children().find((c) => c.slug === slug) || {}).emoji || '');
 const entriesOf = (tid, day) => S.entries.filter((e) => e.trip === tid && (day === undefined || e.day === day));
 // photos and voice memos share the media table; mediaOf() is the photos (everything that draws a picture), audioOf() the kids' voices
 const isAudio = (m) => !!m && String(m.mime || '').startsWith('audio/');
@@ -334,7 +334,7 @@ const offlineUrls = (t) => {
   t.days.forEach((_, i) => { if (dayArt(t, i)) urls.add(dayArt(t, i)); const c = (t.passport || {}).colour; if (c) urls.add(c.replace('{n}', i + 1)); });
   ((t.passport || {}).guides || []).forEach((g) => g.art && urls.add(g.art));
   if ((t.passport || {}).style && t.passport.style.crest) urls.add(t.passport.style.crest);
-  KID_ART.forEach((k) => { urls.add(kidArt(k)); urls.add(kidArt(k, true)); urls.add(kidArt(k, false, t)); urls.add(kidArt(k, true, t)); });
+  kidArtSlugs().forEach((k) => { urls.add(kidArt(k)); urls.add(kidArt(k, true)); urls.add(kidArt(k, false, t)); urls.add(kidArt(k, true, t)); });
   mediaOf(t.id).forEach((m) => { if (!m.local) { urls.add(`/media/${encodeURIComponent(m.id)}/t`); if (m.highlight || isDrawingId(m.id)) urls.add(`/media/${encodeURIComponent(m.id)}`); } });
   return [...urls];
 };
@@ -373,17 +373,34 @@ function burst(el, chars) {
   }
 }
 // the kids as drawn characters (public/art/kids, drawn from photos the owner shared — the photos themselves are not in the repo)
-const KID_ART = ['mimi', 'mika'];
+// the family's profile: the app's name and the kicker under it (S.family after login; /api/brand before — app name and the
+// children's drawings only, never their names), and the children as drawn (server/family.js: each child's "look" recolours one of
+// the two hand-drawn characters; Mimi and Mika with no look are the drawings as they are)
+let BRAND = ls('brand') || null;
+const famProf = () => (S && S.family) || BRAND || { app: { th: 'Memory Bookshelf', en: 'Memory Bookshelf' }, kicker: { th: '', en: '' } };
+const appName = () => T(famProf().app) || 'Memory Bookshelf';
+const kicker = () => T(famProf().kicker);
+// "มีมี่และมีก้า" / "Mimi and Mika" — every child, in the language on screen
+const kidsNames = () => { const ns = children().map((k) => (lang === 'th' ? k.name_th : k.name_en)).filter(Boolean); return ns.length <= 1 ? ns.join('') : ns.slice(0, -1).join(lang === 'th' ? ' ' : ', ') + (lang === 'th' ? 'และ' : ' and ') + ns[ns.length - 1]; };
+const kidRows = () => (S ? S.children : ((BRAND && BRAND.kids) || []));
+const kidArtSlugs = () => kidRows().filter((k) => kidArt(k.slug)).map((k) => k.slug);
+// which drawing a child is: 'mimi' (the girl with her wagon) or 'mika' (the toddler) — the CSS sizes the two differently
+const kidBase = (slug) => { const k = kidRows().find((c) => c.slug === slug); return k && k.look ? (k.look.base === 'boy' ? 'mika' : 'mimi') : slug; };
 // the kids dress for the trip: a book's theme.outfit (e.g. "adventure" for Australia) picks /art/kids/<kid>-<outfit>[-full].svg;
 // artTrip is the book on screen (set by render), so every drawing of the kids on that page wears the same clothes
 const KID_OUTFITS = ['adventure'];
 let artTrip = null;
-const kidArt = (slug, full, t) => { if (!KID_ART.includes(slug)) return ''; const o = (((t || artTrip) || {}).theme || {}).outfit; return `/art/kids/${slug}${KID_OUTFITS.includes(o) ? '-' + o : ''}${full ? '-full' : ''}.svg`; };
-const kidFace = (slug) => (slug === 'both' ? KID_ART.map((k) => `<img class="face" src="${kidArt(k)}" alt="">`).join('')
+const kidArt = (slug, full, t) => {
+  const k = kidRows().find((c) => c.slug === slug); if (!k || !(k.look || k.v || slug === 'mimi' || slug === 'mika')) return '';   // v: a look's version (the brand lists only that)
+  const o = (((t || artTrip) || {}).theme || {}).outfit;
+  return `/art/kids/${slug}${KID_OUTFITS.includes(o) ? '-' + o : ''}${full ? '-full' : ''}.svg${k.v ? '?v=' + k.v : ''}`;
+};
+const kidFace = (slug) => (slug === 'both' ? kidArtSlugs().map((k) => `<img class="face" src="${kidArt(k)}" alt="">`).join('')
   : kidArt(slug) ? `<img class="face" src="${kidArt(slug)}" alt="">` : esc(kidEmoji(slug)));
 function kidBadge(slug, off) {
-  const art = slug === 'both' ? `<img src="${kidArt('mimi')}" alt=""><img src="${kidArt('mika')}" alt="">` : kidArt(slug) ? `<img src="${kidArt(slug)}" alt="">` : kidEmoji(slug);
-  return `<span class="kid ${esc(slug)}${off ? ' off' : ''}${kidArt(slug) || slug === 'both' ? ' drawn' : ''}" title="${esc(kidName(slug))}">${art}</span>`;
+  const art = slug === 'both' ? kidArtSlugs().map((k) => `<img src="${kidArt(k)}" alt="">`).join('') : kidArt(slug) ? `<img src="${kidArt(slug)}" alt="">` : kidEmoji(slug);
+  const c = (children().find((k) => k.slug === slug) || {}).color;
+  return `<span class="kid ${esc(slug)}${off ? ' off' : ''}${kidArt(slug) || slug === 'both' ? ' drawn' : ''}"${c ? ` style="--c:${esc(c)}"` : ''} title="${esc(kidName(slug))}">${art}</span>`;
 }
 // two taps to delete (no confirm()): first tap arms for 3 s
 function armed(btn, label) {
