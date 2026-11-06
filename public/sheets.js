@@ -122,6 +122,8 @@ const A = {
     const f = $('#lcode'), k = b.dataset.v;
     f.value = k === 'clear' ? '' : k === 'back' ? f.value.slice(0, -1) : (f.value + k).slice(0, 32);
     $('#lerr').textContent = '';
+    b.classList.add('tap'); setTimeout(() => b.classList.remove('tap'), 110);   // a visible press for a quick finger (and a tiny buzz where the phone allows)
+    try { if (navigator.vibrate) navigator.vibrate(8); } catch (_) { /* no buzz */ }
   },
   'who-login'(b) { const n = $('#lname'); n.value = n.value === b.dataset.v ? '' : b.dataset.v; $$('[data-a="who-login"]').forEach((c) => c.setAttribute('aria-pressed', c.dataset.v === n.value)); },
   print() { window.print(); },
