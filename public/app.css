@@ -1861,3 +1861,12 @@ html[data-fs="1"] main.wrap{zoom:1.1}html[data-fs="2"] main.wrap{zoom:1.2}html[d
 .famreq{color:var(--accent2)}.famneed{border-color:color-mix(in srgb,var(--accent2) 55%,var(--rule))}.famagenow{color:var(--kc,var(--accent));font-weight:700}
 .famgrow{border-radius:14px;padding:10px 12px;background:color-mix(in srgb,var(--leaf) 16%,var(--paper));font-size:13px;line-height:1.4}.famgrow b{color:color-mix(in srgb,var(--leaf) 70%,var(--ink))}
 .famhist{margin:0;font-size:12px;color:var(--muted);line-height:1.4}
+/* kid mode picture tiles (owner's icon set, art/kidui): a glossy gradient tile, the picture on top, a big navy label with a white edge */
+.kidtiles button.pic{background:linear-gradient(170deg,var(--k1),var(--k2))!important;padding:0;overflow:hidden;display:flex;flex-direction:column;align-items:stretch;justify-content:flex-end;gap:0;border:3px solid rgba(255,255,255,.75);box-shadow:0 12px 22px -12px color-mix(in srgb,var(--k2) 80%,#000),inset 0 -6px 0 rgba(0,0,0,.08)}
+.kidtiles button.pic img{flex:1;min-height:0;width:100%;object-fit:cover;object-position:center top;display:block}
+.kidtiles button.pic span{flex:1;display:grid;place-items:center;filter:drop-shadow(0 6px 6px rgba(0,0,0,.18))}
+.kidtiles button.pic b{flex:none;padding:4px 6px 10px;color:#14206B;font-weight:800;text-shadow:0 0 1px #fff,0 0 2px #fff,0 0 3px #fff,0 0 4px #fff,0 2px 6px #fff;line-height:1.15}
+.kidtiles button.pic:active{transform:scale(.96)}
+/* the kid bar's pictures (the passport keeps its emoji) */
+.kidbar .kbi{height:38px;width:auto;max-width:56px;object-fit:contain;display:block;filter:drop-shadow(0 2px 2px rgba(0,0,0,.12))}
+.kidbar button[aria-current=page] .kbi{transform:scale(1.1)}

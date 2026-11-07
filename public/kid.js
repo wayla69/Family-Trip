@@ -505,6 +505,11 @@ function kidDayOf(t) {
   const n = dayNow(t); return n >= 0 ? n : 0;
 }
 const preTrip = (t) => dayNow(t) < 0 && daysUntil(t) > 0;
+// kid mode's picture tiles (owner's set, public/art/kidui): [picture or '' for the emoji, gradient top, gradient bottom]
+const KTILE = { count: ['surprise', '#FFC93C', '#FF9F0A'], pack: ['pack', '#62CCFF', '#1C9BEA'], words: ['say', '#C9A2FF', '#8F5CEB'], colour: ['colour', '#FF93B5', '#F2557F'],
+  draw: ['draw', '#AEEA80', '#5EBB3D'], match: ['match', '#B592FF', '#7C4EE5'], quiz: ['quiz', '#86D6FF', '#2BA8F0'], animals: ['animals', '#93DD60', '#3FA82C'], numbers: ['count', '#FFB54A', '#FF8A1F'],
+  spot: ['', '#7FE3D2', '#24B39B'], stamp: ['', '#8FB4FF', '#3F6FE0'], talk: ['', '#FFB0C8', '#F06A93'], memory: ['', '#FFD36B', '#F2A90C'], photos: ['', '#9CD9FF', '#3BA0E8'], mood: ['', '#FFC2A0', '#FF8A57'], _: ['', '#C9D3E6', '#8C9BB8'] };
+const KBAR = { home: 'home', map: 'map', colour: 'colour', stickers: 'stickers', trophies: 'trophies' };   // the passport keeps its 🛂
 function viewKid(p) {
   const ks = children(), kid = p[1], k = ks.find((c) => c.slug === kid);
   if (!k) {
@@ -533,7 +538,7 @@ function viewKid(p) {
         kidTalk(t, i) ? [['talk', '💬', L('คุยกัน', 'Let’s talk')]] : [], !pre && i > 0 && memQuiz(t, i - 1) ? [['memory', '🧠', L('จำได้ไหม', 'Remember?')]] : [], kidPhotos(t, i).length ? [['photos', '📸', L('ดูรูป', 'Photos')]] : [], [['match', '🧩', L('จับคู่', 'Match')]], pre ? [] : [['mood', '😊', L('วันนี้รู้สึก', 'My mood')]],
         wild.length ? [['animals', (t.info.wildLabel || {}).emo || '🦘', t.info.wildLabel ? esc(T(t.info.wildLabel.short)) : L('สัตว์', 'Animals')]] : [], [['numbers', '🔢', L('นับเลข', 'Count')]]).filter(Boolean);   // map, stickers and trophies live on the kid bar below — not twice
     const until = daysUntil(t);
-    const btns = tiles.map(([v, e, lbl]) => `<button data-a="kidnav" data-v="#/kid/${esc(kid)}/${v}" data-say="${esc(lbl)}"><span>${e}</span><b>${lbl}</b></button>`)
+    const btns = tiles.map(([v, e, lbl]) => { const k = KTILE[v] || KTILE._; return `<button class="pic" style="--k1:${k[1]};--k2:${k[2]}" data-a="kidnav" data-v="#/kid/${esc(kid)}/${v}" data-say="${esc(lbl)}">${k[0] ? `<img src="/art/kidui/${k[0]}.webp" alt="">` : `<span>${e}</span>`}<b>${lbl}</b></button>`; })
       .concat(story ? [`<button class="night" data-a="bedtime" data-v="${esc(story.id)}"><span>🌙</span><b>${L('นิทาน', 'Story')}</b></button>`] : [],
         heartsFor(kid).length && !fresh.length ? [`<button class="love" data-a="kidnav" data-v="#/kid/${esc(kid)}/hearts" data-say="${esc(L('หัวใจจากญาติ', 'Hearts from the family'))}"><span>💗</span><b>${heartsFor(kid).length}</b></button>`] : []);
     const pages = []; for (let k = 0; k < btns.length; k += 4) pages.push(btns.slice(k, k + 4));
@@ -657,7 +662,7 @@ ${mapHtml(t, i, [kid].concat((t.theme.children || []).map((c) => c.slug).filter(
   } else body = `<button class="kidbig" data-a="kidnav" data-v="#/kid/${esc(kid)}">🏠</button>`;
   // kid mode's own bar: big pictures, read aloud on tap (data-say), no grown-up pages
   const kb = [['', '🏠', L('บ้าน', 'Home')], pp.map && ['map', '🗺️', L('แผนที่', 'Map')], [pre ? 'colour' : 'stamp', pre ? '🎨' : '🛂', pre ? L('ระบายสี', 'Colour') : L('พาสปอร์ต', 'Passport')], ['stickers', '⭐', L('สติกเกอร์', 'Stickers')], ['trophies', '🏆', L('รางวัล', 'Trophies')]].filter(Boolean);
-  const bar = `<nav class="kidbar">${kb.map(([v, e, lbl]) => `<button data-a="kidnav" data-v="#/kid/${esc(kid)}${v ? '/' + v : ''}" data-say="${esc(lbl)}"${(v || 'home') === view ? ' aria-current="page"' : ''}><span>${e}</span><b>${lbl}</b></button>`).join('')}</nav>`;
+  const bar = `<nav class="kidbar">${kb.map(([v, e, lbl]) => `<button data-a="kidnav" data-v="#/kid/${esc(kid)}${v ? '/' + v : ''}" data-say="${esc(lbl)}"${(v || 'home') === view ? ' aria-current="page"' : ''}>${KBAR[v || 'home'] ? `<img class="kbi" src="/art/kidui/bar-${KBAR[v || 'home']}.webp" alt="">` : ''}<span${KBAR[v || 'home'] ? ' class="vh"' : ''}>${e}</span><b>${lbl}</b></button>`).join('')}</nav>`;
   return `<div class="kidwrap" style="${style}">${head}${body}${lock}${bar}</div>`;
 }
 
