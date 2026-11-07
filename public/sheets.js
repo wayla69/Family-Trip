@@ -59,8 +59,8 @@ async function startRec(t, day) {
     const st = recState; recState = null; clearInterval(st.timer);
     const secs = Math.round((Date.now() - st.started) / 1000), type = (rec.mimeType || mime || 'audio/webm').split(';')[0];
     const blob = new Blob(chunks, { type });
-    if (blob.size < 1000 || secs < 1) { toast(L('สั้นเกินไป ลองอัดใหม่', 'Too short — try again')); render(); return; }
-    await addClip(t, day, blob, secs); render();
+    if (blob.size < 1000 || secs < 1) { toast(L('สั้นเกินไป ลองอัดใหม่', 'Too short — try again')); safeRender(); return; }
+    await addClip(t, day, blob, secs); safeRender();   // never over a field being typed in (the 30 s cap stops the recorder by itself)
   };
   recState = { rec, stream, started: Date.now(), timer: setInterval(() => { const el = $('#rectime'), sec = Math.round((Date.now() - recState.started) / 1000); if (el) el.textContent = `0:${String(sec).padStart(2, '0')}`; if (sec >= 30) stopRec(); }, 250) };
   rec.start(); render();
@@ -175,7 +175,6 @@ const A = {
     try { await api('POST', '/api/b/push/test', { endpoint: s.endpoint }); toast(L('ส่งแล้ว — ดูแจ้งเตือนบนเครื่องนี้', 'Sent — look for it on this phone')); }
     catch (_) { toast(L('ส่งทดสอบไม่สำเร็จ', 'The test did not go through')); }
   },
-  jump(b, e) { e.preventDefault(); const el = document.getElementById('d' + b.dataset.v); if (el) el.scrollIntoView({ behavior: 'smooth' }); },
   pin(b) {
     const f = $('#lcode'), k = b.dataset.v;
     f.value = k === 'clear' ? '' : k === 'back' ? f.value.slice(0, -1) : (f.value + k).slice(0, 32);
@@ -217,7 +216,7 @@ const A = {
     });
     try { await navigator.clipboard.writeText(lines.join('\n')); toast(L('คัดลอกแล้ว', 'Copied')); } catch (_) { toast(L('คัดลอกไม่ได้ในเบราว์เซอร์นี้', 'Copy not available here')); }
   },
-  who(b) { quoteWho = b.dataset.v; render(); },
+  who(b) { quoteWho = b.dataset.v; $$('[data-a="who"]').forEach((x) => x.setAttribute('aria-pressed', String(x.dataset.v === quoteWho))); },   // in place: a streaming story box must not be redrawn
   async savequote(b) {
     const t = trip(b.dataset.t), d = +b.dataset.d, ta = $('#qtext'), text = ta.value.trim();
     if (!text) { ta.focus(); return; }
@@ -241,7 +240,7 @@ const A = {
   delspend(b) { if (armed(b)) enqueue({ method: 'DELETE', url: '/api/b/spend/' + encodeURIComponent(b.dataset.v), local: { coll: 'spend', id: b.dataset.v, del: true } }); },
   rec(b) { if (recState) stopRec(); else startRec(trip(b.dataset.t), +b.dataset.d); },
   delclip(b) { if (armed(b)) enqueue({ method: 'DELETE', url: '/api/b/media/' + encodeURIComponent(b.dataset.v), local: { coll: 'media', id: b.dataset.v, del: true } }); },
-  kidplay(b) { kidAudioEl = kidAudioEl || new Audio(); kidAudioEl.src = `/media/${encodeURIComponent(b.dataset.v)}`; kidAudioEl.play().catch(() => {}); },
+  kidplay(b) { const m = (S.media || []).find((x) => x.id === b.dataset.v); kidAudioEl = kidAudioEl || new Audio(); kidAudioEl.src = (m && m.local) || `/media/${encodeURIComponent(b.dataset.v)}`; kidAudioEl.play().catch(() => {}); },   // a clip still waiting to upload plays from the phone
   // the day's words and up to three photos go to whatever the phone can share with (LINE, Messages…); the photos are fetched
   // from our own server with the session cookie and handed over as files, so no public link is ever made
   async share(b) {
@@ -552,7 +551,7 @@ const A = {
     } catch (e) {
       btns.forEach((x) => { x.disabled = false; }); b.removeAttribute('aria-busy');
       toast(e.code === 422 ? L('ไม่มีรูปใหม่ให้ดู', 'Nothing new to look at') : e.code === 429 ? L('วันนี้ผู้ช่วยทำงานครบจำนวนแล้ว — พรุ่งนี้ใช้ต่อได้', 'That’s all the Claude calls for today — more tomorrow') : e.code === 501 ? L('การดูรูปยังไม่เปิดในบัญชีนี้', 'Not switched on (PHOTO_AI)') : L('ดูไม่สำเร็จ ลองใหม่อีกครั้ง', 'That didn’t work — try again'));
-    }
+    } finally { btns.forEach((x) => { x.disabled = false; }); b.removeAttribute('aria-busy'); }
     return ok;
   },
   // photos by tag: the chip filters the page in place (hides the photos, groups and days that don't carry the tag) — never a re-render
@@ -576,7 +575,7 @@ const A = {
     } catch (e) {
       b.disabled = false; b.removeAttribute('aria-busy');
       toast(e.code === 422 ? L('ไม่มีข้อความใหม่ให้แปล', 'Nothing new to translate') : e.code === 429 ? L('วันนี้ผู้ช่วยทำงานครบจำนวนแล้ว — พรุ่งนี้ใช้ต่อได้', 'That’s all the Claude writing for today — more tomorrow') : L('แปลไม่สำเร็จ ลองใหม่อีกครั้ง', 'That didn’t work — try again'));
-    }
+    } finally { b.disabled = false; b.removeAttribute('aria-busy'); }
   },
   // ask the guide: the question goes with excerpts of this book's manual (picked on the server), the answer streams back; never saved —
   // the last answer stays on this page (askAns) until another question; a chip (data-v) asks its own question
@@ -1051,7 +1050,8 @@ document.addEventListener('change', (e) => {
 function tlToggle(li) { const o = li.classList.toggle('open'), d = li.querySelector(':scope > [aria-expanded]'); if (d) d.setAttribute('aria-expanded', String(o)); }
 document.addEventListener('keydown', (e) => {
   if ((e.key === 'Enter' || e.key === ' ') && e.target.matches && e.target.matches('.tl.plan > li > [role="button"]')) { e.preventDefault(); tlToggle(e.target.parentElement); return; }
-  if (lbState) { if (e.key === 'Escape') lbAct('close'); if (e.key === 'ArrowRight') lbAct('next'); if (e.key === 'ArrowLeft') lbAct('prev'); return; }
+  if (lbState) { if (/^(INPUT|TEXTAREA)$/.test((e.target && e.target.tagName) || '')) return;   // arrows inside the caption box move the cursor, not the photo
+    if (e.key === 'Escape') lbAct('close'); if (e.key === 'ArrowRight') lbAct('next'); if (e.key === 'ArrowLeft') lbAct('prev'); return; }
   if (e.key === 'Escape') closeSheet();
   if (e.key === 'Enter' && e.target.id === 'askq') { e.preventDefault(); const b = $('#askgo'); if (b && !b.disabled) A.ask(b); }   // Enter = ask the guide
   if (e.key === 'Enter' && e.target.id === 'bookq') { e.preventDefault(); const a = $('.sres a'); if (a) a.click(); }   // Enter = open the best hit
@@ -1087,8 +1087,7 @@ document.addEventListener('submit', async (e) => {
 /* ---------- boot ---------- */
 async function refresh() {
   if (document.hidden || sheetOpen() || flushing || (queue.length && !(allHeld && holdMedia()))) return;
-  const before = JSON.stringify([S && S.entries.length, S && S.media.length, S && S.places.length]);
-  if ((await load()) === 'ok' && JSON.stringify([S.entries.length, S.media.length, S.places.length]) !== before) safeRender();
+  if ((await load()) === 'ok') safeRender();   // 'ok' = the state changed on the server (a 304 is 'same'): the other parent's caption, ⭐ or mood shows up too
 }
 (async function boot() {
   if ('serviceWorker' in navigator) navigator.serviceWorker.register('/sw.js').catch(() => {});

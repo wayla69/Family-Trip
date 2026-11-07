@@ -141,10 +141,10 @@ async function load(tries = 0) {
     if (written !== w0 && tries < 5) return load(tries + 1);
     S = fresh; offline = false; S.syncedAt = Date.now();
     idb.set('state', structuredClone(S)); ls('state', null);   // the offline copy lives in IndexedDB, as the server sent it (before pending writes are laid on top)
-  } catch (_) {
+  } catch (e) {
     const c = (await idb.get('state')) || ls('state');
     if (!c) return 'fail';
-    S = c; offline = true;
+    S = c; offline = !navigator.onLine || e instanceof TypeError;   // a failed fetch is no signal; a server error (5xx) is not, so the banner must not say so
   }
   overlay();
   return offline ? 'cached' : 'ok';

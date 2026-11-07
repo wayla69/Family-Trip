@@ -63,7 +63,7 @@ const mock = http.createServer((req, res) => {
       top: () => JSON.stringify({ slug: 'wrong-slug', title: en('The Test Hop · Testland'), from: '2027-03-10', to: '2027-03-11', tz: 'Asia/Tokyo', place: { en: 'Testland', flag: '🏳️' },
         days: [0, 1].map((i) => ({ title: en(`Day ${i + 1} of the test`), sleep: en('Test Inn'), planned: [{ en: 'Test Square', th: i ? null : '', zh: '測試', q: 'Test Square, Testland' }], moving: { en: 'Walk 5 min', th: ' ' },
           plan: [{ t: '09:00', en: 'Breakfast' }, { t: '11:00', h: { en: '🎈 Super Fun Zone opens' }, en: 'Super Fun Zone opens' }], tips: [en('Show the driver: 測試')], stay: { name: 'Test Inn', addr: '1 Test St', q: 'Test Inn, Testland' } })) }),
-      info: () => JSON.stringify({ emergency: [{ label: en('All emergencies'), tel: '999', main: true }], lost: en('Stand still'), guide: [{ title: en('Clocks'), text: en('One hour ahead') }, { title: en('Front desk'), text: en('Show booking ref KL4PQZ at check-in') }] }),
+      info: () => JSON.stringify({ emergency: [{ label: en('All emergencies'), tel: '999', main: true }], lost: en('Stand still'), ifthen: { plans: { head: en('If… then…'), cols: [en('If'), en('Then')], rows: [[en('Rain'), en('The museum instead')]] } }, visa: { lede: en('Visa-free for Thais'), groups: [{ title: en('Bring'), items: [en('Passport')] }] }, guide: [{ title: en('Clocks'), text: en('One hour ahead') }, { title: en('Front desk'), text: en('Show booking ref KL4PQZ at check-in') }] }),
       restlist: () => JSON.stringify({ areas: [{ area: en('Test town'), kind: 0, names: ['Test Noodles', 'Test Dumplings'] }, { area: en('Test sweets'), kind: 2, names: ['Test Tarts'] }] }),
       // the list overflows once (stop_reason max_tokens below), so the fallback asks for the headings, then the names
       restareas: () => JSON.stringify({ areas: [{ area: en('Test town'), kind: 0 }, { area: en('Test sweets'), kind: 2 }] }),
@@ -485,6 +485,7 @@ try {
   const stt = await state(), nt = stt.trips.find((t) => t.id === 'test-hop');
   ok(nt && nt.source === 'manual' && nt.days.length === 2 && nt.days[1].plan.plan[1].en === 'Super Fun Zone opens' && nt.days[0].planned[0].th === 'ไทย: Test Square' && nt.days[1].planned[0].th === 'ไทย: Test Square' && nt.firsts.length === 3 && nt.firsts[0].key === 'ferry' && nt.passport.days.length === 2, 'import: the new book is in the state with its days, plans, its own firsts and passport');
   ok((await (await fetch(BASE + '/api/b/import', { headers: { cookie: ck } })).json()).drafts.length === 0, 'import: the draft is gone once saved');
+  ok(nt.info.ifthen && Array.isArray(nt.info.ifthen.rows) && nt.info.ifthen.rows.length === 1 && nt.info.ifthen.cols.length === 2 && nt.info.visa && nt.info.visa.groups.length === 1 && !nt.info.visa.flow, 'import: the model\'s {plans:{…}} if-then table is stored in the seeds\' shape ({cols, rows}); a visa without a step list is kept as it came');
   // ---- the book's own pictures (server/bookart.js): saving an imported book starts the drawing by itself — a circle per day, the crest, then the two guides
   { const artDirs = () => fs.readdirSync(path.join(data, 'media', 'd', 'test-hop')).filter((v) => fs.readdirSync(path.join(data, 'media', 'd', 'test-hop', v)).length).length;   // version folders that still hold files
     let art; for (let k = 0; k < 150; k++) { art = await (await fetch(BASE + '/api/b/art', { headers: { cookie: ck } })).json(); if (art.status === 'done' || art.status === 'error') break; await new Promise((r) => setTimeout(r, 200)); }
@@ -565,6 +566,13 @@ try {
     const r4 = await draw();
     ok(r4.status === 429 && (await r4.json()).left === 0 && openaiCalls.length === 4, 'avatars: the fourth try in a year is refused before any call');
     ok((await fetch(BASE + '/api/b/family/avatar/mimi', { method: 'DELETE', headers: { 'x-mb': '1', cookie: ck } })).ok && (await fetch(BASE + '/media/kid/mimi/full.png', { headers: { cookie: ck } })).status === 404 && (await fetch(BASE + `/media/kid/mimi/full.png?v=${j1.avatar}`, { headers: { cookie: ck } })).status === 404 && (await quota()).left.mimi === 0, 'avatars: back to the plain drawing — every drawing goes; the tries used stay used');
+    { const kidsNow = (await state()).children.map((k) => ({ slug: k.slug, name_th: k.name_th, name_en: k.name_en, emoji: k.emoji, birth_ym: k.birth_ym }));
+      const withTemp = await fetch(BASE + '/api/b/family', { method: 'PUT', headers: H, body: JSON.stringify({ profile: {}, children: [...kidsNow, { slug: 'temp', name_th: 'เทมป์', name_en: 'Temp', emoji: '🧸', birth_ym: ym(30) }] }) });
+      const dr = await fetch(BASE + '/api/b/family/avatar/temp', { method: 'POST', headers: { 'x-mb': '1', cookie: ck, 'content-type': 'image/jpeg' }, body: photo });
+      const dir = path.join(data, 'media', 'k', 'temp'), files = () => (fs.existsSync(dir) ? fs.readdirSync(dir) : []);
+      ok(withTemp.ok && dr.ok && files().length === 2, `a third child gets a drawn character (${files().length} files)`);
+      const gone = await fetch(BASE + '/api/b/family', { method: 'PUT', headers: H, body: JSON.stringify({ profile: {}, children: kidsNow }) });
+      ok(gone.ok && files().length === 0 && !(await state()).children.some((k) => k.slug === 'temp'), 'removing a child removes the character drawn from their photo too (nothing of a removed child stays)'); }
     ok((await fetch(BASE + '/api/b/family/avatar/nobody', { method: 'POST', headers: { 'x-mb': '1', cookie: ck, 'content-type': 'image/jpeg' }, body: photo })).status === 404, 'avatars: only for a child of this family');
   }
   await browser.close();

@@ -23,7 +23,8 @@ async function dump(pool) {
   for (const t of TABLES) {
     tables[t] = (await pool.query(familyScoped(t) ? `SELECT * FROM ${t} WHERE family_id=$1` : `SELECT x.* FROM ${t} x JOIN trips p ON p.id=x.trip_id WHERE p.family_id=$1`, [FAMILY])).rows;
   }
-  return { format: 'memory-bookshelf-backup', version: 1, at: Date.now(), complete: true, family: FAMILY, tables };
+  const fam = (await pool.query('SELECT profile FROM families WHERE id=$1', [FAMILY])).rows[0];
+  return { format: 'memory-bookshelf-backup', version: 1, at: Date.now(), complete: true, family: FAMILY, profile: (fam && fam.profile) || null, tables };
 }
 
 async function sendZip(res, pool, media) {
@@ -35,10 +36,14 @@ async function sendZip(res, pool, media) {
   z.on('error', () => res.end());
   z.pipe(res);
   z.append(JSON.stringify(b), { name: 'backup.json' });
-  for (const m of b.tables.media) {   // one photo (or voice memo) in memory at a time
-    const buf = await media.get(m.storage_key);
-    if (buf) z.append(buf, { name: String(m.mime || '').startsWith('audio/') ? `audio/${m.id}.${AUDIO_EXT[m.mime] || 'webm'}` : `photos/${m.id}.jpg` });
-  }
+  // one object in flight at a time: archiver queues appends, so without waiting for each entry to be written every photo of every book
+  // would be fetched into memory while the download drains (a small instance ran out of memory that way)
+  const add = async (buf, name) => { const done = new Promise((r) => z.once('entry', r)); z.append(buf, { name }); await done; };
+  try {
+    for (const m of b.tables.media) {
+      const buf = await media.get(m.storage_key);
+      if (buf) await add(buf, String(m.mime || '').startsWith('audio/') ? `audio/${m.id}.${AUDIO_EXT[m.mime] || 'webm'}` : `photos/${m.id}.jpg`);
+    }
   for (const k of b.tables.children || []) {   // each child's character drawn from a photo (server/avatar.js), full figure and face
     const ids = new Set([k.avatar, ...(Array.isArray(k.avatars) ? k.avatars.map((d) => d && d.id) : [])].filter(Boolean));
     for (const id of ids) for (const kind of ['full', 'face']) { const buf = await media.get(`k/${k.slug}/${id}-${kind}.png`); if (buf) z.append(buf, { name: `kids/${k.slug}-${id}-${kind}.png` }); }
@@ -53,6 +58,7 @@ async function sendZip(res, pool, media) {
     const buf = await media.get(e.storage_key); if (buf) z.append(buf, { name: `emoji/${e.id}.png` });
   }
   await z.finalize();
+  } catch (e) { console.error('backup', e.message); try { z.abort(); } catch (_) {} res.end(); }   // a failed read mid-way: end the download instead of hanging it
 }
 
 const openZip = (file) => new Promise((ok, no) => yauzl.open(file, { lazyEntries: true, autoClose: false },
@@ -152,6 +158,7 @@ async function importZip(file, pool, media) {
     try {
       await c.query('BEGIN');
       await c.query('INSERT INTO families (id, name) VALUES ($1, $2) ON CONFLICT (id) DO NOTHING', [FAMILY, 'Family']);
+      if (b.profile && typeof b.profile === 'object') await c.query("UPDATE families SET profile = CASE WHEN profile IS NULL OR profile = '{}'::jsonb THEN $2::jsonb ELSE profile END WHERE id=$1", [FAMILY, JSON.stringify(b.profile)]);   // the app's name, kicker and menu look, where none was set yet
       for (const t of TABLES) {
         const cols = (await c.query("SELECT column_name, data_type FROM information_schema.columns WHERE table_schema='public' AND table_name=$1", [t])).rows;
         const jsonb = new Set(cols.filter((x) => x.data_type === 'jsonb').map((x) => x.column_name));
@@ -169,6 +176,10 @@ async function importZip(file, pool, media) {
             // days already exist from the seeds on a fresh server: still bring back their Done marks
             const onConflict = t === 'trip_days' && ks.includes('done_at')
               ? 'ON CONFLICT (trip_id, day_index) DO UPDATE SET done_at = EXCLUDED.done_at WHERE trip_days.done_at IS NULL AND EXCLUDED.done_at IS NOT NULL'
+              // children already exist from the seeds on a fresh server: bring back what they left blank (birth month, look, the drawn characters)
+              : t === 'children' ? ((fill) => (fill.length ? `ON CONFLICT (family_id, slug) DO UPDATE SET ${fill.map(([k]) => (k === 'avatars' ? "avatars = CASE WHEN children.avatars IS NULL OR children.avatars = '[]'::jsonb THEN EXCLUDED.avatars ELSE children.avatars END" : `${k} = COALESCE(children.${k}, EXCLUDED.${k})`)).join(', ')} WHERE ${fill.map(([, w]) => w).join(' OR ')}` : 'ON CONFLICT DO NOTHING'))(   // only a blank the backup can fill counts as a change, so a second restore is still a no-op
+                  [...['birth_ym', 'look', 'avatar'].filter((k) => ks.includes(k)).map((k) => [k, `(children.${k} IS NULL AND EXCLUDED.${k} IS NOT NULL)`]),
+                    ...(ks.includes('avatars') ? [['avatars', "((children.avatars IS NULL OR children.avatars = '[]'::jsonb) AND EXCLUDED.avatars IS NOT NULL AND EXCLUDED.avatars <> '[]'::jsonb)"]] : [])])
               : 'ON CONFLICT DO NOTHING';
             n += (await c.query(`INSERT INTO ${t} (${ks.join(',')}) VALUES (${ks.map((_, i) => '$' + (i + 1)).join(',')}) ${onConflict}`, vals)).rowCount;
             await c.query('RELEASE SAVEPOINT r');

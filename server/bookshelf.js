@@ -189,7 +189,12 @@ function router({ pool, media, A, ai, hooks = {} }) {   // hooks.heart(h): set b
       try {
         await c.query('BEGIN');
         await c.query('UPDATE families SET profile=$2 WHERE id=$1', [FAMILY, JSON.stringify(prof)]);
-        for (const k of gone) await c.query('DELETE FROM children WHERE family_id=$1 AND slug=$2', [FAMILY, k.slug]);
+        for (const k of gone) {   // the character drawn from the child's photo goes with the child (PDPA: nothing of a removed child stays)
+          const row = (await c.query('SELECT avatar, avatars FROM children WHERE family_id=$1 AND slug=$2', [FAMILY, k.slug])).rows[0];
+          const ids = new Set([row && row.avatar, ...((row && Array.isArray(row.avatars)) ? row.avatars.map((d) => d && d.id) : [])].filter(Boolean));
+          for (const id of ids) for (const kind of ['full', 'face']) await media.del(avatarKey(k.slug, id, kind)).catch(() => {});
+          await c.query('DELETE FROM children WHERE family_id=$1 AND slug=$2', [FAMILY, k.slug]);
+        }
         for (const [i, k] of kids.entries()) {
           await c.query(`INSERT INTO children (id, family_id, slug, name_th, name_en, emoji, color, birth_ym, look, pos) VALUES ($1,$2,$3,$4,$5,$6,$7,$8,$9,$10)
             ON CONFLICT (family_id, slug) DO UPDATE SET name_th=EXCLUDED.name_th, name_en=EXCLUDED.name_en, emoji=EXCLUDED.emoji, color=EXCLUDED.color, birth_ym=EXCLUDED.birth_ym, look=EXCLUDED.look, pos=EXCLUDED.pos`,
@@ -300,6 +305,7 @@ function router({ pool, media, A, ai, hooks = {} }) {   // hooks.heart(h): set b
       // a relatives' group sees only its ticked books — everything tied to another book is left out here, at the source
       const see = (x) => A.canSee(req.user, x.trip_id === undefined ? x.id : x.trip_id);
       if (req.user.group) for (const list of [trips, days, firsts, entries, mediaRows, places, hearts, reviews, spendRows]) list.splice(0, list.length, ...list.filter(see));
+      if (req.user.role !== 'editor') spendRows.length = 0;   // what the family spent is the parents' own ledger (the spend page is editors-only; the state must be too)
       // ?lite=1 (the app): each book's guide text (info, passport, day plans — ~95% of the bytes, changes only with a new seed)
       // is left out and named by a hash; the app keeps the copy it has or fetches /api/b/seed/<trip>/<hash> once
       const lite = req.query.lite === '1';
@@ -599,6 +605,7 @@ function router({ pool, media, A, ai, hooks = {} }) {   // hooks.heart(h): set b
       if (!SLUG_RE.test(slug)) return bad(res, 'slug');
       if (isNaN(from) || isNaN(to) || to < from || (to - from) / 864e5 > 60) return bad(res, 'dates');
       if (!clip(b.title && (b.title.th || b.title.en || b.title), 120).trim()) return bad(res, 'title');
+      try { new Intl.DateTimeFormat('en', { timeZone: clip(b.timezone || 'Asia/Bangkok', 60) }); } catch (_) { return bad(res, 'timezone'); }   // reminders run in this zone
       await c.query('BEGIN');
       const ins = await c.query(`INSERT INTO trips (id, family_id, slug, title, sub, date_from, date_to, timezone, theme, cover, source)
         VALUES ($1,$2,$1,$3,$4,$5,$6,$7,$8,$9,'manual') ON CONFLICT DO NOTHING RETURNING id`,
@@ -691,11 +698,13 @@ function router({ pool, media, A, ai, hooks = {} }) {   // hooks.heart(h): set b
       const slug = clip(req.query.slug, 60);
       if (!SLUG_RE.test(slug)) return bad(res, 'slug');
       if (!Buffer.isBuffer(req.body) || req.body.length < 2000 || req.body.subarray(0, 5).toString() !== '%PDF-') return bad(res, 'pdf');
-      if ((await q('SELECT 1 FROM trips WHERE family_id=$1 AND slug=$2', [FAMILY, slug])).length) return bad(res, 'exists', 409);
+      const prevJob = job; job = { id: '', slug, status: 'running', log: [], started: Date.now() };   // claimed before the first await: two uploads at once cannot both run
+      const giveBack = () => { job = prevJob; };
+      if ((await q('SELECT 1 FROM trips WHERE family_id=$1 AND slug=$2', [FAMILY, slug])).length) { giveBack(); return bad(res, 'exists', 409); }
       // a book takes about 30 Claude calls: start only when today's allowance can carry it, so a cap hit midway never wastes the calls already paid for
       const used = Number(((await q("SELECT calls FROM ai_usage WHERE family_id=$1 AND day=(now() AT TIME ZONE 'UTC')::date", [FAMILY]))[0] || {}).calls || 0);
       const need = Math.min(IMPORT_CALLS, STORY_DAILY);   // a family whose daily cap is below a book's needs can still start from a fresh day
-      if (STORY_DAILY - used < need) return res.status(429).json({ error: 'limit', left: Math.max(0, STORY_DAILY - used), need });
+      if (STORY_DAILY - used < need) { giveBack(); return res.status(429).json({ error: 'limit', left: Math.max(0, STORY_DAILY - used), need }); }
       const id = crypto.randomBytes(8).toString('hex'), who = req.user.name || '', buf = req.body;
       job = { id, slug, status: 'running', log: [], started: Date.now() };
       const log = (line) => { job.log.push(`${new Date().toISOString().slice(11, 19)} ${line}`); if (job.log.length > 60) job.log.shift(); };

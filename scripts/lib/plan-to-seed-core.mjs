@@ -44,6 +44,7 @@ function validate(p) {
   const d0 = D.parseDay(p.from), d1 = D.parseDay(p.to);
   must(d0 && d1 && d1 >= d0 && (d1 - d0) / 864e5 <= 60, 'from/to: YYYY-MM-DD, to after from, 60 days max');
   must(typeof p.tz === 'string' && /^[A-Za-z_]+\/[A-Za-z_]+/.test(p.tz), 'tz: an IANA zone like Asia/Tokyo');
+  if (typeof p.tz === 'string') { let ok = true; try { new Intl.DateTimeFormat('en', { timeZone: p.tz }); } catch { ok = false; } must(ok, `tz "${p.tz}" is not a timezone the platform knows (reminders run in it)`); }   // a model-written "Pacific/Sidney" would stop every reminder
   must(p.place && typeof p.place.th === 'string' && typeof p.place.en === 'string', 'place: {th, en, flag}');
   if (p.accent !== undefined) must(/^#[0-9a-fA-F]{6}$/.test(p.accent), 'accent: #rrggbb');
   if (p.kids !== undefined) must(Array.isArray(p.kids) && p.kids.every((k) => (typeof k === 'string' && /^[a-z0-9]+$/.test(k)) || (k && k.slug && k.name_th && k.name_en)), 'kids: slugs (mimi, mika) or {slug, name_th, name_en, emoji?, birth?}');

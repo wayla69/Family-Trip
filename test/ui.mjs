@@ -283,6 +283,9 @@ const T = 'hk-macau-2026';
   await page.click('#lb [data-lb="next"]');
   ok((await page.textContent('#lb .grow')).trim() === '2 / 3', 'next → 2 / 3');
   await page.fill('#lbcap', 'ที่ท่าเรือ'); await page.locator('#lbcap').blur();
+  await page.focus('#lbcap'); await page.keyboard.press('ArrowRight'); await page.keyboard.press('ArrowLeft');
+  ok((await page.textContent('#lb .grow')).trim() === '2 / 3' && (await page.inputValue('#lbcap')) === 'ที่ท่าเรือ', 'lightbox: arrow keys inside the caption box move the cursor, never the photo (a caption landed on the next photo)');
+  await page.locator('#lbcap').blur();
   await page.click('#lb [data-lb="star"]');
   await s.shot('05-lightbox', false);
   await page.click('#lb [data-lb="next"]');
@@ -741,13 +744,14 @@ const T = 'hk-macau-2026';
   await page.click('#offl [data-a="offline"]');
   await page.waitForFunction((tid) => !!ls('offline_' + tid), T, { timeout: 30000 });
   ok((await page.textContent('#offl')).includes('อยู่ในเครื่องแล้ว') && await page.evaluate(() => idb.get('state').then((s) => !!(s && s.trips.length && s.syncedAt))), 'offline pack stored; server state kept in IndexedDB with a sync time');
-  const cached = async (urls) => page.evaluate(async (us) => { const ks = await caches.keys(); const c = await caches.open(ks.find((k) => k.startsWith('mbs-'))); const out = {}; for (const u of us) out[u] = !!(await c.match(u)); return out; }, urls);
+  const cached = async (urls) => page.evaluate(async (us) => { const out = {}; for (const k of await caches.keys()) { const c = await caches.open(k); for (const u of us) if (!out[u] && await c.match(u)) out[u] = true; } for (const u of us) out[u] = !!out[u]; return out; }, urls);
   const fave = st.media.find((m) => m.trip === T && m.highlight), plain = st.media.find((m) => m.trip === T && m.day === 2);
   const want = ['/', '/app.css', '/core.js', '/views.js', '/sheets.js', '/kid.js', '/art/guides/pinky.svg', '/art/crest/hk.svg', '/art/kids/mika-full.svg', '/art/colour/hk/day-3.svg', '/art/hk/day-6.svg',
     ...st.media.filter((m) => m.trip === T && !(m.mime || '').startsWith('audio/')).map((m) => `/media/${m.id}/t`), `/media/${fave.id}`];   // a voice memo has no thumbnail
   const have = await cached(want.concat(`/media/${plain.id}`));
   ok(want.every((u) => have[u]), 'service worker cache holds the shell, all art (precached at install), every thumbnail of the book and the full-size favourite' + want.filter((u) => !have[u]).map((u) => ' MISSING ' + u).join(''));
   ok(!have[`/media/${plain.id}`], 'a plain photo is kept as a thumbnail only (full size stays on the server until opened or "with all photos")');
+  ok(await page.evaluate(async (u) => (await caches.keys()).includes('mbs-media') && !!(await (await caches.open('mbs-media')).match(u)) && !(await (await caches.open((await caches.keys()).find((k) => /^mbs-v/.test(k)))).match(u)), `/media/${fave.id}/t`), 'photos live in their own cache, not the versioned shell cache — a deploy must never empty the offline pack');
   await page.click('#offl [data-a="offline"][data-v="all"]');
   await page.waitForFunction((tid) => (ls('offline_' + tid) || {}).all === true, T, { timeout: 30000 });
   ok((await cached([`/media/${plain.id}`]))[`/media/${plain.id}`], '"with all full-size photos" stores the rest too');
@@ -1048,7 +1052,7 @@ const T = 'hk-macau-2026';
   await page.goto(`${BASE}/#/t/big-hop-2027/sos`); await page.waitForSelector('.calls');
   ok(await page.locator('.callb.main[href="tel:000"]').count() === 1 && await page.locator('.stayc.tonight').count() === 1 && await s.noHScroll(), 'emergency glance: big call buttons (000 first), tonight\'s address');
   await page.goto(`${BASE}/#/t/big-hop-2027/prep`); await page.waitForSelector('.glg');
-  ok(await page.locator('.glg .glc').count() >= 6 && /packed/.test(await page.textContent('.glg')), 'get-ready glance: a card per topic, packing progress');
+  ok(await page.locator('.glg .glc').count() >= 6 && /\d+ things|\d+\/\d+ packed/.test(await page.textContent('.glg')), 'get-ready glance: a card per topic, the packing list named by its size (never “0/27 packed”)');
   await page.locator('.glg .glc').nth(2).click(); await page.waitForSelector('#pocket');
   ok(/\/prep\/full\/2$/.test(page.url()) && await page.locator('#pocket details.pg[open]').count() === 1 && await page.locator('#pg-prep-2[open]').count() === 1 && await page.locator('.backsum').count() === 1, 'a glance card opens the report on its own section, with a way back');
   await page.goto(`${BASE}/#/t/big-hop-2027/plan/full`); await page.waitForSelector('.itin > li.now');
@@ -1209,6 +1213,40 @@ const T = 'hk-macau-2026';
   ok(await s.noHScroll(), '320 px biggest text: the book menu fits');
   const zeros = await page.$$eval('.hubgrid small', (els) => els.map((e) => e.textContent).filter((x) => /(^|\s)0 (รูป|คำพูด|ครั้งแรก|รีวิว|ตรา)|\b0\/\d|ตรา 0\b/.test(x)));
   ok(zeros.length === 0, `menu tiles never show a zero or "0/6" (${zeros.join(' | ') || 'none'})`);
+  // the same rule on every page a parent or a child reads before anything is recorded (a crawl of the app found these)
+  { const Z = /(^|\s)0\/\d|(^|\s)0 (รูป|วัน|คำพูด|ครั้งแรก|ข้อความ|photos?|days?|quotes?|firsts?)\b/;
+    for (const [r, w] of [[`#/t/${T}/prep`, '.tp-prep, .glc'], [`#/passport/mika/big-hop-2027`, '.stkhd'], [`#/print/big-hop-2027`, '.facts'], [`#/t/big-hop-2027/log/12`, '#lgphotos'], ['#/kid/mika/stickers', '.stkhd'], ['#/kid/mika/trophies', '.trophies'], ['#/notebook', 'main h1'], ['#/family', '.famh3']]) {
+      await page.goto(`${BASE}/${r}`); await page.waitForSelector(w); const tx = await page.evaluate(() => (document.querySelector('main') || document.body).textContent.replace(/\s+/g, ' '));
+      ok(!Z.test(tx), `${r}: no zero counter on the page (${(tx.match(Z) || [''])[0].trim() || 'none'})`); }
+    // kid mode guards: a map with stops but no day that reaches one, two keys with one face in the match game, the words trophy, bubbles that survive a redraw, a child without a book
+    const kidChecks = await page.evaluate(() => {
+      const au = S.trips.find((t) => t.id === 'big-hop-2027'), t2 = JSON.parse(JSON.stringify(au)); t2.passport = { ...t2.passport, map: { stops: [{ k: 'a', x: 10, y: 10 }], days: [] } };
+      const dupes = Array.from({ length: 40 }, () => matchDeck(au)).some((deck) => { const seen = new Map(); return deck.some((c) => c.e && seen.has(c.e) && seen.get(c.e) !== c.k || (c.e && seen.set(c.e, c.k) && false)); });
+      const words = trophies(au, 'mimi').find((x) => x[0] === 'words');
+      bubN = 7; bubT = setInterval(() => {}, 1e6); const field = document.createElement('div'); field.id = 'bubblefield'; document.body.appendChild(field); startBubbles(); const kept = bubN; clearInterval(bubT); bubT = null; bubN = 0; field.remove();
+      S.children.push({ slug: 'nobody', name_th: 'ไม่มีใคร', name_en: 'Nobody', emoji: '🧸' }); const html = viewKid(['kid', 'nobody', 'home']); S.children.pop();
+      return { map: mapModel(t2), dupes, words: typeof words[3] === 'boolean', kept, lock: html.includes('id="kidexit"') };
+    });
+    ok(kidChecks.map === null && !kidChecks.dupes && kidChecks.words && kidChecks.kept === 7 && kidChecks.lock, `kid mode: no walk → no map (${kidChecks.map}); one card per face (dupes ${kidChecks.dupes}); the words trophy counts (${kidChecks.words}); bubbles keep their score over a redraw (${kidChecks.kept}); a child without a book keeps the lock (${kidChecks.lock})`);
+    // the record page: the spend amount and the day's summary are different drafts; the quote's child chip never redraws the page
+    await page.goto(`${BASE}/#/t/${T}/log/1`); await page.waitForSelector('#spendamt'); await page.fill('#spendamt', '120'); await page.locator('#spendamt').blur();
+    const dr = await page.evaluate(() => { const ks = Object.keys(drafts); document.querySelector('#app').dataset.mark = 'kept'; return { sa: ks.some((k) => k.startsWith('sa:')), s: ks.some((k) => k.startsWith('s:')), sum: document.querySelector('#sumtext').value }; });
+    await page.click('[data-a="who"][data-v="mika"]');
+    ok(dr.sa && !dr.s && dr.sum !== '120' && await page.evaluate(() => document.querySelector('#app').dataset.mark === 'kept' && document.querySelector('[data-a="who"][data-v="mika"]').getAttribute('aria-pressed') === 'true'), 'record page: a typed amount never lands in the summary box; the child chip switches in place');
+    // the journey strip jumps to the day (its action took a selector, the strip passed a number)
+    await page.goto(`${BASE}/#/t/${T}/book`); await page.waitForSelector('.journey'); const errs0 = s.errs.length; await page.click('.journey a[data-a="jump"]'); await page.waitForTimeout(400);
+    ok(s.errs.length === errs0 && await page.evaluate(() => window.scrollY > 100), 'book: the journey strip jumps to the day, without a script error');
+    // what the parents type in #/family is text, never markup, wherever it lands (the kicker reaches the sign-in page before login)
+    const kidsNow = await page.evaluate(() => S.children.map((k) => ({ slug: k.slug, name_th: k.name_th, name_en: k.name_en, emoji: k.emoji, birth_ym: k.birth_ym || '2023-01' })));   // a save needs every birth month
+    await page.evaluate(async (kids) => api('PUT', '/api/b/family', { profile: { kicker: { th: 'ของ<b id="xss">x</b>', en: '<b id="xss">x</b>' } }, children: kids.map((k, i) => ({ ...k, name_en: i ? k.name_en : 'Mimi <i id="xss2">!</i>' })) }), kidsNow);
+    await page.goto(`${BASE}/#/`); await page.reload(); await page.waitForSelector('.shelf'); await page.goto(`${BASE}/#/passport/mimi/${T}`); await page.waitForSelector('.pp-page');
+    const xss = await page.evaluate(() => ({ a: !!document.querySelector('#xss, #xss2'), txt: document.body.textContent.includes('<i id="xss2">!</i>') }));
+    await page.evaluate(async (kids) => api('PUT', '/api/b/family', { profile: {}, children: kids }), kidsNow);
+    ok(!xss.a && xss.txt, 'a child\'s name and the kicker are shown as typed, never as markup (stored XSS)');
+    await page.goto(`${BASE}/#/t/${T}`); await page.waitForSelector('.hubgrid');
+    // an imported book may carry an if-then table as {plans:{…}} and a visa without a step list: every info page still renders
+    ok(await page.evaluate(() => { const t = JSON.parse(JSON.stringify(S.trips[0])); t.info = { ...t.info, ifthen: { plans: { head: { en: 'If' }, cols: [{ en: 'If' }, { en: 'Then' }], rows: [[{ en: 'Rain' }, { en: 'Museum' }]] } }, visa: { lede: { en: 'Visa-free' }, groups: [{ title: { en: 'Bring' }, items: [{ en: 'Passport' }] }] }, stays: undefined, more: [{ page: 'stays', title: { en: 'Where we sleep' }, text: { en: 'x' } }] }; try { return typeof infoBlocks(t) === 'object' && [viewHub(t), viewSearch(t), viewSos(t), viewPrep(t), viewStays(t), viewLearn(t), viewSos(t, true), viewPrep(t, true)].every((h) => typeof h === 'string' && h.length > 100); } catch (e) { return 'threw: ' + e.message; } }) === true, 'info pages render a book whose if-then table came as {plans}, whose visa has no steps and whose stays live only in a chapter');
+  }
   await page.goto(`${BASE}/#/t/${T}/book`); await page.waitForSelector('.cover');
   ok(await page.locator('.bookstart').count() === 0 && await page.locator('.letterblk').count() === 1 && await page.locator('a[data-a="pdf"]').count() === 1, 'a book with records: no “still empty” card; the letter box and the PDF button are there');
   ok(await page.locator('.bookmore .linkbtn[data-a="print"]').count() === 1 && await page.locator('.bookmore .linkbtn[data-a="copytext"]').count() === 1 && await page.locator('.btn[data-a="print"], .btn[data-a="copytext"]').count() === 0 && await page.evaluate(() => document.querySelector('.bookmore').getBoundingClientRect().top > document.querySelector('a[data-a="pdf"]').getBoundingClientRect().bottom), 'book page: print and copy are quiet text buttons under the PDF button, not two more buttons beside it');

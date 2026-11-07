@@ -11,6 +11,7 @@ ok(r0.status === 200, 'correct PIN signs in, no name needed');
 const me = await (await fetch(BASE + '/api/b/state', { headers: { cookie: r0.headers.get('set-cookie').split(';')[0] } })).json();
 ok(me.me.name === 'Family' && me.me.role === 'editor', 'name defaults to "Family"');
 ok(/Max-Age=34560000/.test(r0.headers.get('set-cookie')), 'session lasts 400 days — the PIN is rarely asked again');
+ok((await fetch(BASE + '/', { headers: { cookie: 'mb=%E0%A4%A; other=%ZZ' } })).status === 200 && (await fetch(BASE + '/api/b/state', { headers: { cookie: 'mb=%E0%A4%A' } })).status === 401, 'a mangled cookie is skipped (401 on the API, the sign-in page still opens) — never a 500 on every page');
 
 // relatives' read-only PIN (VIEW_PIN): same pad, viewer session with their own name; writes refused
 const rv = await login('835911', '10.0.0.9', 'คุณยาย');

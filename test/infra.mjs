@@ -99,6 +99,9 @@ ok(['families', 'children', 'trips', 'trip_days', 'firsts_catalog', 'entries', '
     fs.writeFileSync(path.join(dir, 'short.json'), JSON.stringify({ ...sample, days: sample.days.slice(0, 2) }));
     const r2 = spawnSync(process.execPath, ['scripts/plan-to-seed.mjs', path.join(dir, 'short.json'), `--out=${path.join(dir, 'short-seed.json')}`], { encoding: 'utf8' });
     ok(r2.status === 1 && /days: 2 given, 3 dates/.test(r2.stdout), 'a plan with fewer days than dates is not valid');
+    fs.writeFileSync(path.join(dir, 'tz.json'), JSON.stringify({ ...sample, tz: 'Pacific/Sidney' }));
+    const rtz = spawnSync(process.execPath, ['scripts/plan-to-seed.mjs', path.join(dir, 'tz.json'), `--out=${path.join(dir, 'tz-seed.json')}`], { encoding: 'utf8' });
+    ok(rtz.status === 1 && /not a timezone the platform knows/.test(rtz.stdout) && !fs.existsSync(path.join(dir, 'tz-seed.json')), 'a plan whose timezone the platform does not know is refused (reminders would throw)');
     // the Thai check (owner's rule): English-only titles and the เช็ค spelling are named, never refused
     const eng = JSON.parse(JSON.stringify(sample)); eng.title.th = 'Tokyo'; eng.days[1].title.th = 'Sumida Aquarium'; eng.days[0].plan[0].h.th = '🛬 Haneda'; eng.days[0].tips.push({ th: 'เช็คอินตอนบ่าย', en: 'Check in in the afternoon' });
     fs.writeFileSync(path.join(dir, 'eng.json'), JSON.stringify(eng));

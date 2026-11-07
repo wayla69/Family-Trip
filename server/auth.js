@@ -50,7 +50,7 @@ function parseCookies(h) {
   const o = {};
   (h || '').split(';').forEach((kv) => {
     const i = kv.indexOf('=');
-    if (i > 0) o[kv.slice(0, i).trim()] = decodeURIComponent(kv.slice(i + 1).trim());
+    if (i > 0) { try { o[kv.slice(0, i).trim()] = decodeURIComponent(kv.slice(i + 1).trim()); } catch (_) { /* a mangled cookie is skipped, never a 500 on every page */ } }
   });
   return o;
 }

@@ -70,6 +70,7 @@ try {
   ok(r1.ok && r1.photos === srcImgs && r1.audio === srcAud, `restore: ${r1.photos} photos + ${r1.audio} voice memo(s), rows ${JSON.stringify(r1.rows)}`);
   const dst = await state(B2, ck2);
   ok(counts(dst) === counts(src), `restored counts match: entries/photos/places/hearts/reviews/trips/done = ${counts(dst)}`);
+  ok(JSON.stringify(dst.children.map((k) => [k.slug, k.birth_ym, k.avatar, JSON.stringify(k.look || null)]).sort()) === JSON.stringify(src.children.map((k) => [k.slug, k.birth_ym, k.avatar, JSON.stringify(k.look || null)]).sort()), 'restore: the children\'s birth months, looks and drawn characters come back even though the seeds made the rows first');
   ok(JSON.stringify(dst.entries.map((e) => [e.id, e.text, e.highlight]).sort()) === JSON.stringify(src.entries.map((e) => [e.id, e.text, e.highlight]).sort()), 'restored entries identical (text, ⭐)');
   const pid = dst.media.find((m) => !(m.mime || '').startsWith('audio/')).id, aid = (dst.media.find((m) => (m.mime || '').startsWith('audio/')) || {}).id;
   const [f, t] = await Promise.all([fetch(`${B2}/media/${pid}`, { headers: { cookie: ck2 } }), fetch(`${B2}/media/${pid}/t`, { headers: { cookie: ck2 } })]);
