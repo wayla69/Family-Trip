@@ -106,7 +106,7 @@ async function api(method, url, body, blob) {
   else if (body !== undefined) { opt.body = JSON.stringify(body); opt.headers['content-type'] = 'application/json'; }
   const r = await fetch(url, opt);
   if (r.status === 401) { S = null; render(); throw Object.assign(new Error('auth'), { code: 401 }); }
-  if (!r.ok) throw Object.assign(new Error('http ' + r.status), { code: r.status });
+  if (!r.ok) { const j = await r.json().catch(() => null); throw Object.assign(new Error('http ' + r.status), { code: r.status, error: j && j.error, body: j }); }   // e.error = the server's word (limit, runs, exists…)
   return r.json();
 }
 // a write that lands while the state is being fetched would be lost: the older answer would replace it locally and the next

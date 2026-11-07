@@ -450,9 +450,9 @@ function artCard(t) {
   const job = typeof artJob !== 'undefined' && artJob && artJob.trip === t.id ? artJob : null, has = !!(t.theme && t.theme.art);
   const running = job && job.status === 'running';
   return `<div class="call info artcall" data-trip="${esc(t.id)}"><b>${L('รูปประจำเล่ม', "The book's pictures")}</b><span>${running
-    ? L(`ผู้ช่วยกำลังวาด… ${job.done}/${job.total}`, `The helper is drawing… ${job.done}/${job.total}`)
-    : has ? L('วงกลมประจำวันและตราพาสปอร์ตวาดโดยผู้ช่วยแล้ว', 'The day circles and the passport crest were drawn by the helper')
-    : L('ให้ผู้ช่วยวาดวงกลมประจำวันและตราพาสปอร์ตของเล่มนี้ — ใช้แค่ชื่อวันกับหัวข้อในแผน ไม่ส่งรูปหรือชื่อใคร', "Let the helper draw a circle for every day and the passport crest — from the day titles and headlines only, never a photo or a name")}</span>${running ? '' : `<button type="button" class="btn small" data-a="bookart" data-t="${esc(t.id)}">${has ? L('วาดใหม่', 'Draw again') : L('วาดรูปด้วยผู้ช่วย ✨', 'Draw them ✨')}</button>`}</div>`;
+    ? (job.total ? L(`ผู้ช่วยกำลังวาด… ${job.done}/${job.total}`, `The helper is drawing… ${job.done}/${job.total}`) : L('ผู้ช่วยกำลังเริ่มวาด…', 'The helper is starting to draw…'))
+    : has ? L('วงกลมประจำวัน ตราพาสปอร์ต และไกด์สองตัว วาดโดยผู้ช่วยแล้ว', 'The day circles, the passport crest and the two guides were drawn by the helper')
+    : L('ให้ผู้ช่วยวาดวงกลมประจำวัน ตราพาสปอร์ต และไกด์สองตัวของเล่มนี้ — ใช้แค่ชื่อวันกับหัวข้อในแผน ไม่ส่งรูปหรือบันทึกของครอบครัว', "Let the helper draw a circle for every day, the passport crest and the two guides — from the day titles and headlines only, never a photo or a record")}</span>${running ? '' : `<button type="button" class="btn small" data-a="bookart" data-t="${esc(t.id)}">${has ? L('วาดใหม่', 'Draw again') : L('วาดรูปด้วยผู้ช่วย ✨', 'Draw them ✨')}</button>`}</div>`;
 }
 function viewHub(t) {
   const n = t.info || {}, st = stats(t), i = todayIdx(t), dn = dayNow(t), until = daysUntil(t), ed = isEditor(), d = t.days[i], has = hasInfo(t);
@@ -630,7 +630,7 @@ const navB = (q, label) => (q ? `<a class="navb" href="${esc(mapsUrl(q))}" targe
 const mealDd = (p) => `<span class="nmrow"><b>${esc(p.name)}</b>${navB(p.q, p.name)}</span>${p.alt ? `<small class="bk"><span class="nmrow">${L('ร้านสำรอง', 'Backup')}: ${esc(p.alt.name)}${navB(p.alt.q, p.alt.name)}</span></small>` : ''}`;
 // Today's header (owner's review, Nov 2026: "reads like a lecture, not a trip"): the bed and the weather as short icon lines, not one paragraph —
 // each " · " piece of d.wx is its own line, the "(averages, not a forecast …)" aside drops to one quiet word, "x — do y" leads with the y
-const WX_ICON = [[/sunset|พระอาทิตย์ตก/i, '🌅'], [/°C/, '🌡️'], [/wind|ลม|breeze|sleeve|เสื้อ|jacket|cool|เย็น/i, '🧥'], [/\bsea\b|น้ำทะเล|water park|สวนน้ำ/i, '🌊'], [/clock|นาฬิกา|daylight|ออมแสง/i, '🕒'], [/rain|ฝน|umbrella|ร่ม/i, '☔'], [/sun\b|แดด|hat|หมวก/i, '🧢'], [/dark|มืด|night|ค่ำ/i, '🌙']];
+const WX_ICON = [[/sunset|พระอาทิตย์ตก/i, '🌅'], [/°C/, '🌡️'], [/\bwindy?\b|ลม|breeze|sleeve|เสื้อ|jacket|\bcool|เย็น/i, '🧥'], [/\bsea\b|น้ำทะเล|water park|สวนน้ำ/i, '🌊'], [/clock|นาฬิกา|daylight|ออมแสง/i, '🕒'], [/rain|ฝน|umbrella|ร่ม/i, '☔'], [/\bsun\b|\bsunny\b|แดด|\bhats?\b|หมวก/i, '🧢'], [/dark|มืด|night|ค่ำ/i, '🌙']];
 function dayFacts(d) {
   const lines = [];
   if (d.sleep) lines.push(['🛏️', `<b>${esc(T(d.sleep))}</b>`]);
@@ -647,7 +647,7 @@ function dayFacts(d) {
   return `<ul class="dfacts" style="grid-column:2/3">${lines.map(([e, h]) => `<li><span class="fi" aria-hidden="true">${emoIn(e)}</span><span>${h}</span></li>`).join('')}${avg ? `<li class="avg"><span class="fi"></span><small>${L('อากาศเป็นค่าเฉลี่ยช่วงนี้ ไม่ใช่พยากรณ์', 'Weather: usual for the season, not a forecast')}</small></li>` : ''}</ul>`;
 }
 // a travel icon per timeline step, picked from its English words (first match wins)
-const TL_ICON = [[/\bdeparts?\b|\bflight\b|\bfly\b|boarding|\bTG ?\d|\bQF ?\d|take ?off/i, '✈️'], [/\bland\b|arriv|immigration/i, '🛬'], [/check in|check-in/i, '🧳'], [/\bbus\b|coach|shuttle/i, '🚌'], [/ferry|\bboat\b|cruise/i, '⛴️'], [/train|MTR|metro|tram|\brail/i, '🚆'], [/\bdrive\b|\bcar\b|van\b|taxi|\bUber/i, '🚗'], [/breakfast/i, '🥐'], [/lunch|dinner|\beat\b|snack|restaurant|dim sum|café|cafe/i, '🍽️'], [/bath|\bbed\b|sleep|nap/i, '🛁'], [/beach|swim|pool|water park/i, '🏖️'], [/park|disney|zoo|aquarium|ocean park/i, '🎡'], [/walk|hike|trail/i, '🚶'], [/museum|temple|church|ruins/i, '🏛️'], [/shop|market|mall/i, '🛍️'], [/hotel|resort|apartment/i, '🏨']];
+const TL_ICON = [[/\bdeparts?\b|\bflight\b|\bfly\b|boarding|\bTG ?\d|\bQF ?\d|take ?off/i, '✈️'], [/\bland\b|arriv|immigration/i, '🛬'], [/check in|check-in/i, '🧳'], [/\bbus\b|coach|shuttle/i, '🚌'], [/ferry|\bboat\b|cruise/i, '⛴️'], [/train|MTR|metro|tram|\brail/i, '🚆'], [/\bdrive\b|\bcar\b|van\b|taxi|\bUber/i, '🚗'], [/breakfast/i, '🥐'], [/lunch|dinner|\beat\b|snack|restaurant|dim sum|café|cafe/i, '🍽️'], [/bath|\bbed\b|sleep|nap/i, '🛁'], [/beach|swim|pool|water park/i, '🏖️'], [/theme park|water park|disney|\bzoo\b|aquarium|ocean park|fun zone/i, '🎡'], [/walk|hike|trail/i, '🚶'], [/museum|temple|church|ruins/i, '🏛️'], [/shop|market|mall/i, '🛍️'], [/hotel|resort|apartment/i, '🏨']];
 const tlIcon = (r) => { const en = (r && r.en) || ''; const m = TL_ICON.find(([re]) => re.test(en.split(' · ')[0])) || TL_ICON.find(([re]) => re.test(en)); return m ? `<span class="tli" aria-hidden="true">${emoIn(m[1])}</span>` : ''; };
 // Today's timeline (owner's review, Nov 2026): each step reads as its first clause; the rest (" · " pieces) folds below it, one tap opens it (sheets.js)
 // a step with its own headline (seed format: plan rows carry h {th, en}, a fun line that starts with an emoji) shows that line; the whole step folds below it
