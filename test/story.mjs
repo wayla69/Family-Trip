@@ -70,7 +70,8 @@ const mock = http.createServer((req, res) => {
         tale: { th: 'วันนี้สนุก', en: 'Today was fun', scenes: [{ e: '🌉', h: L2('สะพาน', 'The bridge'), th: 'วันนี้สนุก', en: 'Today was fun' }] } })) }),
       thai: () => JSON.stringify(JSON.parse(facts).map((x) => `ไทย: ${x}`)),
     };
-    const parts = imp ? [IMP[imp]()] : photo ? [JSON.stringify(pids.map((id, k) => (k === 0 ? { id, cap: '## เด็กๆ **ยิ้ม** หน้าปราสาท', tags: ['kids', 'Character', 'bogus', 'kids'], place: stop0, best: true } : { id, cap: 'เรากินติ่มซำ', tags: ['food'], place: 'Narnia', best: 'yes' })))]
+    const badJson = imp === 'kids' && importCalls.filter((c) => c.step === 'kids').length === 1;   // the first kids' answer is broken JSON (a missing comma), as a live run once got
+    const parts = imp ? [badJson ? '{"days":[{"learn":[{"name":{"th":"x" "en":"x"}}]}]}' : IMP[imp]()] : photo ? [JSON.stringify(pids.map((id, k) => (k === 0 ? { id, cap: '## เด็กๆ **ยิ้ม** หน้าปราสาท', tags: ['kids', 'Character', 'bogus', 'kids'], place: stop0, best: true } : { id, cap: 'เรากินติ่มซำ', tags: ['food'], place: 'Narnia', best: 'yes' })))]
       : quiz ? ['```json\n[{"q":"เมื่อวานมีมี่บอกว่าปลาอยู่ที่ไหน","a":[{"e":"💧","t":"ในน้ำ"},{"e":"🌳","t":"บนต้นไม้"},{"e":"🚌","t":"บนรถบัส"}],"ok":0},',
       '{"q":"ไปไหนมา","a":[{"e":"🏰","t":"ดิสนีย์"},{"e":"🏖️","t":"ทะเล"},{"e":"🏔️","t":"ภูเขา"}],"ok":0},{"q":"bad","a":[{"t":"x"}],"ok":3}]\n```']
       : trans ? [JSON.stringify(JSON.parse(facts).map((x) => ({ id: x.id, tr: `${x.to}:${x.text}` })))]
@@ -444,7 +445,7 @@ try {
   let imp;
   for (let i = 0; i < 120; i++) { imp = await (await fetch(BASE + '/api/b/import', { headers: { cookie: ck } })).json(); if (imp.job.status !== 'running') break; await new Promise((r) => setTimeout(r, 250)); }
   ok(imp.job.status === 'done' && imp.job.draft && imp.job.draft.slug === 'test-hop' && imp.job.draft.days === 2, `import: job done → a draft (${imp.job.status}: ${(imp.job.log || []).at(-1)})`);
-  ok(importCalls.map((c) => c.step).join(',') === 'top,info,restlist,restareas,restnames,rest,rest,kids,extras,thai', `import: the model calls in order — structure, guide, restaurant names, rows, the retry for the missing row, kids, extras, Thai (${importCalls.map((c) => c.step).join(',')})`);
+  ok(importCalls.map((c) => c.step).join(',') === 'top,info,restlist,restareas,restnames,rest,rest,kids,kids,extras,thai', `import: the model calls in order — structure, guide, restaurant names, rows, the retry for the missing row, kids, extras, Thai (${importCalls.map((c) => c.step).join(',')})`);
   const sent = importCalls.map((c) => c.system + c.user).join('\n');
   ok(sent.includes('Test Square') && sent.includes('Super Fun Zone') && sent.includes('Test Noodles'), 'import: the manual\'s text reached the model');
   ok(!Object.values(FAKE).some((v) => sent.includes(v)) && !/born 2023|allergies/.test(sent), 'import: PNR, booking numbers and references, confirmation and reservation codes, e-tickets, the baht amount, birth and allergy lines never reached the model');

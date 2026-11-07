@@ -74,7 +74,7 @@ const parseJSON = (s) => {
   const t = s.replace(/^```(?:json)?\s*/m, '').replace(/```\s*$/m, '').trim();
   const a = Math.min(...['{', '['].map((c) => { const i = t.indexOf(c); return i < 0 ? Infinity : i; }));
   if (!isFinite(a)) throw Object.assign(new Error('no JSON in the answer'), { code: 'json' });
-  return JSON.parse(t.slice(a));
+  try { return JSON.parse(t.slice(a)); } catch (e) { throw Object.assign(new Error(`unreadable JSON: ${e.message}`), { code: 'json' }); }
 };
 let schema = null;
 const SCHEMA = () => (schema = schema || JSON.parse(fs.readFileSync(path.join(ROOT, 'docs/handoff/plan.schema.json'), 'utf8')));
@@ -92,7 +92,15 @@ async function run({ buf, slug, client, take, onUsage, log = () => {}, dir, kids
   log(`text ${raw.length} chars → ${text.length} after redaction (${dropped} lines dropped, ${masked} values masked)`);
   const ledger = [];
   const manualBlock = { type: 'text', text: `<manual>\n${text}\n</manual>`, cache_control: { type: 'ephemeral' } };
-  async function ask(step, model, { system, user, max = 32000, effort = 'low', manual = true }) {
+  // a model call; an answer that isn't readable JSON (a missing comma killed a live import) is asked once more before giving up
+  async function ask(step, model, opts) {
+    try { return await askOnce(step, model, opts); } catch (e) {
+      if (e.code !== 'json') throw e;
+      log(`${step}: ${e.message} — asking once more`);
+      return askOnce(`${step} (again)`, model, opts);
+    }
+  }
+  async function askOnce(step, model, { system, user, max = 32000, effort = 'low', manual = true }) {
     if (take && !(await take())) throw Object.assign(new Error('limit'), { code: 'limit' });
     const t0 = Date.now();
     const stream = client.messages.stream({
