@@ -781,7 +781,7 @@ function askBlock(t, i) {
   if (!isEditor() || !S.features.story) return '';
   const a = askAns && askAns.t === t.id ? askAns : null, dv = `data-t="${esc(t.id)}" data-d="${i}"`;
   const ex = [L('ถ้าฝนตกวันนี้ทำอะไรแทน', 'What do we do if it rains today?'), L('ร้านกินง่ายใกล้ที่พักคืนนี้', 'An easy dinner near tonight’s stay?'), L('ถ้าเด็กหลงทำยังไง', 'What if a child gets lost?')];
-  return `<section class="ask noprint"><h3>${ic('route')} ${L('ถามไกด์', 'Ask the guide')} <span class="label">${L('ผู้ช่วยตอบจากคู่มือของเล่มนี้เท่านั้น', 'Claude answers from this book’s manual only')}</span></h3>
+  return `<section class="ask noprint"><h3>${ic('route')} ${L('ถามไกด์', 'Ask the guide')} <span class="label">${L('ผู้ช่วยตอบจากคู่มือของเล่มนี้เท่านั้น', 'The helper answers from this book’s manual only')}</span></h3>
 <div class="row askrow"><input id="askq" class="field" type="search" enterkeyhint="send" maxlength="300" data-draft="ask:${esc(t.id)}" value="${esc(drafts['ask:' + t.id] ?? (a ? a.q : ''))}" placeholder="${L('เช่น วันนี้กินข้าวเที่ยงที่ไหน', 'e.g. where do we have lunch today?')}">
 <button class="btn" data-a="ask" ${dv} id="askgo">${L('ถาม', 'Ask')}</button><button class="btn ghost" data-a="storystop" id="askstop" hidden>■</button></div>
 <div class="chips">${ex.map((x) => `<button class="chip" data-a="ask" ${dv} data-v="${esc(x)}">${esc(x)}</button>`).join('')}</div>
@@ -1191,7 +1191,7 @@ function sumBlock(t, i, dk) {
   const s = entriesOf(t.id, i).find((e) => e.kind === 'sum'), ai = S.features.story;
   return `<section class="blk sumblk"><h3>${ic('book')} ${L('สรุปวันนี้', 'Today in brief')} <span class="label">${L('ขึ้นในสมุด', 'in the book')}</span></h3>
 <textarea id="sumtext" class="field" data-a-blur="sum" data-t="${esc(t.id)}" data-d="${i}" data-draft="s:${esc(dk)}" maxlength="600" placeholder="${L('2–3 บรรทัดว่าวันนี้เป็นยังไง', 'Two or three lines about today')}">${esc(drafts['s:' + dk] ?? (s ? s.text : ''))}</textarea><p class="label savenote">${L('บันทึกเองเมื่อแตะออกจากช่อง', 'Saves by itself when you leave the box')}</p>
-${ai ? `<div class="row" style="margin-top:6px"><button class="btn small" data-a="story" data-m="sum" data-t="${esc(t.id)}" data-d="${i}" id="sumgo">✨ ${s ? L('สรุปใหม่', 'Summarise again') : L('ให้ผู้ช่วยสรุปวันนี้', 'Ask Claude to sum up the day')}</button>
+${ai ? `<div class="row" style="margin-top:6px"><button class="btn small" data-a="story" data-m="sum" data-t="${esc(t.id)}" data-d="${i}" id="sumgo">✨ ${s ? L('สรุปใหม่', 'Summarise again') : L('ให้ผู้ช่วยสรุปวันนี้', 'Ask the helper to sum up the day')}</button>
 <button class="btn ghost small" data-a="storystop" id="sumstop" hidden>■ ${L('หยุด', 'Stop')}</button>
 <span class="label" id="summsg"></span></div>` : ''}</section>`;
 }
@@ -1204,7 +1204,7 @@ function msgBlock(t, i, dk) {
   return `<section class="blk noprint msgblk"><h3>${ic('mail')} ${L('ส่งข่าวให้ญาติ', 'News for the family')}</h3>
 <p class="label">${L('แก้ได้ แล้วส่งทาง LINE เอง', 'Edit it, then send it on LINE yourself')}</p>
 <textarea id="msgtext" class="field" rows="5" data-draft="m:${esc(dk)}" maxlength="1500"${dr ? '' : ' hidden'}>${esc(dr)}</textarea>
-<div class="row" style="margin-top:6px"><button class="btn small" data-a="story" data-m="msg" data-t="${esc(t.id)}" data-d="${i}" id="msggo">✨ ${dr ? L('เขียนใหม่', 'Write again') : L('ให้ผู้ช่วยเขียนข่าว', 'Ask Claude to write it')}</button>
+<div class="row" style="margin-top:6px"><button class="btn small" data-a="story" data-m="msg" data-t="${esc(t.id)}" data-d="${i}" id="msggo">✨ ${dr ? L('เขียนใหม่', 'Write again') : L('ให้ผู้ช่วยเขียนข่าว', 'Ask the helper to write it')}</button>
 <button class="btn ghost small" data-a="storystop" id="msgstop" hidden>■ ${L('หยุด', 'Stop')}</button>
 <button class="btn small" data-a="share" data-src="msg" data-t="${esc(t.id)}" data-d="${i}" id="msgsend"${dr ? '' : ' hidden'}>${navigator.share ? `📤 ${L('ส่ง', 'Send')}` : `📋 ${L('คัดลอก', 'Copy')}`}</button>
 <span class="label" id="msgmsg"></span></div></section>`;
@@ -1216,7 +1216,7 @@ function photoAiBlock(t, i) {
   if (!isEditor() || !S.features.photoAi) return '';
   const ph = mediaOf(t.id, i), todo = ph.filter((m) => !m.ai && !m.pending).length, seen = ph.length - todo;
   if (!ph.length) return '';
-  return `<section class="blk phaiblk"><h3>${ic('eye')} ${L('ให้ผู้ช่วยดูรูปวันนี้', 'Claude looks at today’s photos')} <span class="label">${seen ? L(`ดูแล้ว ${seen}/${ph.length}`, `${seen}/${ph.length} seen`) : L(`${ph.length} รูป`, `${ph.length} photo${ph.length === 1 ? '' : 's'}`)}</span></h3>
+  return `<section class="blk phaiblk"><h3>${ic('eye')} ${L('ให้ผู้ช่วยดูรูปวันนี้', 'The helper looks at today’s photos')} <span class="label">${seen ? L(`ดูแล้ว ${seen}/${ph.length}`, `${seen}/${ph.length} seen`) : L(`${ph.length} รูป`, `${ph.length} photo${ph.length === 1 ? '' : 's'}`)}</span></h3>
 ${aiNote(L('ได้คำบรรยาย แท็ก สถานที่ และดาว ⭐ รูปโปรด', 'A caption, tags, the place and a ⭐ on the best ones'), L('ส่งรูปย่อของวันนี้ ไม่เกิน 12 รูป ไม่มีตำแหน่งที่ถ่าย เฉพาะตอนกด · คำบรรยายใส่ให้เฉพาะรูปที่ยังว่าง · ดาวติดให้ 1–2 รูปถ้าวันนี้ยังไม่มีดาว แตะรูปเพื่อเปลี่ยนได้', 'Sends today’s small thumbnails (never the full file, no GPS), up to 12 a press, with the day’s stop names, only when you press · captions only where there is none · a ⭐ on 1–2 photos if the day has no star yet; tap a photo to change it'))}
 <div class="row" style="margin-top:6px"><button class="btn small" data-a="photoai" data-t="${esc(t.id)}" data-d="${i}" id="phaigo"${todo ? '' : ' disabled'}>👀 ${todo ? L(`ดูรูปที่ยังไม่ได้ดู (${Math.min(todo, 12)})`, `Look at the new ones (${Math.min(todo, 12)})`) : L('ดูครบแล้ว', 'All seen')}</button>${seen ? `<button class="btn ghost small" data-a="photoai" data-all="1" data-t="${esc(t.id)}" data-d="${i}">${L('ดูใหม่ทั้งวัน', 'Look again at the whole day')}</button>` : ''}<a class="btn ghost small" href="#/t/${esc(t.id)}/photos">🏷️ ${L('รูปตามแท็ก', 'Photos by tag')}</a></div></section>`;
 }
@@ -1252,9 +1252,9 @@ function aiPanel(t, i, dk) {
   if (!isEditor() || !S.features.story) return '';
   const steps = aiSteps(t, i, dk), todo = aiTodo(t, i, dk), calls = aiCalls(t, i, dk);
   const all = aiRun ? `<button class="btn small" id="aiall" disabled aria-busy="true">⏳ ${L(`กำลังทำ ${aiRun.n}/${aiRun.of}…`, `Working ${aiRun.n} of ${aiRun.of}…`)}</button><button class="btn ghost small" data-a="aistop" id="aistop">■ ${L('หยุด', 'Stop')}</button>`
-    : `<button class="btn small" data-a="aiall" data-t="${esc(t.id)}" data-d="${i}" id="aiall"${todo.length ? '' : ' disabled'}>${todo.length ? `✨ ${L(`ทำทั้งหมดในครั้งเดียว (ผู้ช่วย ${calls} ครั้ง)`, `Do it all (${calls} Claude call${calls > 1 ? 's' : ''})`)}` : `✓ ${L('ทำครบแล้ว', 'All done')}`}</button>`;
-  return `<section class="blk noprint aipanel" id="aipanel"><h3>${ic('sparkle')} ${L('คืนนี้ให้ผู้ช่วยทำให้', 'Tonight, Claude helps')} <span class="label">${esc(aiToday())}</span></h3>
-${aiNote(L('บันทึกรูป คำพูด อารมณ์ก่อน แล้วไล่จากบนลงล่าง', 'Record photos, words and moods first, then go from the top'), L('ส่งเฉพาะข้อความที่บันทึกไว้ ไม่ส่งรูป (ยกเว้นปุ่ม "ดูรูป" ที่ส่งรูปย่อของวันนี้ เฉพาะตอนกด) · แต่ละปุ่มใช้โควตา 1 ครั้งต่อวัน · "ทำทั้งหมด" ทำ ดูรูป → สรุป → นิทาน → คำถาม ข้ามข้อที่ทำแล้ว กดหยุดได้', 'Every button sends Claude only the written notes, never photos — except "Photos", which sends today’s small thumbnails (never the full file, no GPS) when you press it · each button is one Claude call from the daily allowance · do the photos first: their captions make the summary and the story fuller · "Do it all" runs photos → summary → story → questions in turn, skipping what is done; Stop works any time'))}
+    : `<button class="btn small" data-a="aiall" data-t="${esc(t.id)}" data-d="${i}" id="aiall"${todo.length ? '' : ' disabled'}>${todo.length ? `✨ ${L(`ทำทั้งหมดในครั้งเดียว (ผู้ช่วย ${calls} ครั้ง)`, `Do it all (${calls} step${calls > 1 ? 's' : ''})`)}` : `✓ ${L('ทำครบแล้ว', 'All done')}`}</button>`;
+  return `<section class="blk noprint aipanel" id="aipanel"><h3>${ic('sparkle')} ${L('คืนนี้ให้ผู้ช่วยทำให้', 'Tonight, with the helper')} <span class="label">${esc(aiToday())}</span></h3>
+${aiNote(L('บันทึกรูป คำพูด อารมณ์ก่อน แล้วไล่จากบนลงล่าง', 'Record photos, words and moods first, then go from the top'), L('ส่งเฉพาะข้อความที่บันทึกไว้ ไม่ส่งรูป (ยกเว้นปุ่ม "ดูรูป" ที่ส่งรูปย่อของวันนี้ เฉพาะตอนกด) · แต่ละปุ่มใช้โควตา 1 ครั้งต่อวัน · "ทำทั้งหมด" ทำ ดูรูป → สรุป → นิทาน → คำถาม ข้ามข้อที่ทำแล้ว กดหยุดได้', 'Every button sends the helper only the written notes, never photos — except "Photos", which sends today’s small thumbnails (never the full file, no GPS) when you press it · each button is one request from the daily allowance · do the photos first: their captions make the summary and the story fuller · "Do it all" runs photos → summary → story → questions in turn, skipping what is done; Stop works any time'))}
 <div class="row" style="margin-top:8px">${all}</div>
 <ol class="aisteps">${steps.map((x) => `<li><button class="aistep${x.done ? ' done' : ''}" data-a="jump" data-v="${x.sel}" data-k="${x.k}"><span class="e">${x.e}</span><b>${L(x.th, x.en)}</b><small>${x.done ? (x.stat && x.k !== 'msg' ? '✓ ' + esc(x.stat) : '✓') : esc(x.stat || '')}</small></button></li>`).join('')}</ol></section>`;
 }
@@ -1271,7 +1271,7 @@ ${msgBlock(t, i, dk)}`;
 function aiJump(t, i, dk) {
   if (!isEditor() || !S.features.story) return '';
   const n = aiTodo(t, i, dk).length;
-  return `<button class="aijump noprint" data-a="jump" data-v="#aipanel">✨ ${L('คืนนี้ให้ผู้ช่วยทำให้', 'Tonight, Claude helps')}${n ? ` <small>${L(`เหลือ ${n}`, `${n} to do`)}</small>` : ' <small>✓</small>'} ↓</button>`;
+  return `<button class="aijump noprint" data-a="jump" data-v="#aipanel">✨ ${L('คืนนี้ให้ผู้ช่วยทำให้', 'Tonight, with the helper')}${n ? ` <small>${L(`เหลือ ${n}`, `${n} to do`)}</small>` : ' <small>✓</small>'} ↓</button>`;
 }
 
 /* ---------- both languages (record page): Claude translates the day's words Thai ↔ English; shown under each text in the book ---------- */
@@ -1293,7 +1293,7 @@ function nextBlock(t, i) {
   const a = nextAns && nextAns.t === t.id && nextAns.i === i ? nextAns.text : '';
   return `<section class="blk noprint nextblk"><h3>${ic('moon')} ${L('เตรียมพรุ่งนี้', 'Ready for tomorrow')} <span class="label">${L(`วันที่ ${i + 2} ใน 5 บรรทัด`, `day ${i + 2} in five lines`)}</span></h3>
 <div class="call calm" id="nexttext" style="white-space:pre-line"${a ? '' : ' hidden'}>${esc(a)}</div>
-<div class="row" style="margin-top:6px"><button class="btn small" data-a="story" data-m="next" data-t="${esc(t.id)}" data-d="${i}" id="nextgo">✨ ${a ? L('สรุปใหม่', 'Again') : L('ให้ผู้ช่วยสรุปพรุ่งนี้', 'Ask Claude for tomorrow')}</button>
+<div class="row" style="margin-top:6px"><button class="btn small" data-a="story" data-m="next" data-t="${esc(t.id)}" data-d="${i}" id="nextgo">✨ ${a ? L('สรุปใหม่', 'Again') : L('ให้ผู้ช่วยสรุปพรุ่งนี้', 'Ask the helper about tomorrow')}</button>
 <button class="btn ghost small" data-a="storystop" id="nextstop" hidden>■ ${L('หยุด', 'Stop')}</button>
 <span class="label">${L('จากแผนพรุ่งนี้ พยากรณ์อากาศ และบันทึกวันนี้ · ไม่ส่งรูป · ไม่บันทึก', 'From tomorrow’s plan, the forecast and today’s notes · never photos · not saved')}</span></div></section>`;
 }
@@ -1305,7 +1305,7 @@ function mquizBlock(t, i) {
   if (!S.features.story && !q) return '';
   return `<section class="blk noprint mquizblk"><h3>${ic('learn')} ${L('เกมความจำพรุ่งนี้เช้า', 'Memory game for tomorrow morning')} <span class="label">${L('เด็กๆ เล่นในโหมดเด็ก', 'the kids play it in kid mode')}</span></h3>
 <div class="call calm" id="mquiztext"${q ? '' : ' hidden'}>${q ? q.map((x) => `<div>❓ ${esc(x.q)} <small class="label">${x.a.map((c, n) => `${n === x.ok ? '✓ ' : ''}${esc(c.e)} ${esc(c.t)}`).join(' · ')}</small></div>`).join('') : ''}</div>
-${S.features.story ? `<div class="row" style="margin-top:6px"><button class="btn small" data-a="story" data-m="mquiz" data-t="${esc(t.id)}" data-d="${i}" id="mquizgo">✨ ${q ? L('ตั้งเกมใหม่', 'New game') : L('ให้ผู้ช่วยตั้งเกมจากวันนี้', 'Ask Claude for a game from today')}</button>
+${S.features.story ? `<div class="row" style="margin-top:6px"><button class="btn small" data-a="story" data-m="mquiz" data-t="${esc(t.id)}" data-d="${i}" id="mquizgo">✨ ${q ? L('ตั้งเกมใหม่', 'New game') : L('ให้ผู้ช่วยตั้งเกมจากวันนี้', 'Ask the helper for a game from today')}</button>
 <button class="btn ghost small" data-a="storystop" id="mquizstop" hidden>■ ${L('หยุด', 'Stop')}</button>
 </div>` : ''}</section>`;
 }
@@ -1314,7 +1314,7 @@ function talkBlock(t, i) {
   if (!S.features.story && !e) return '';
   return `<section class="blk noprint talkblk"><h3>${ic('quote')} ${L('คำถามชวนคุยก่อนนอน', 'Bedtime questions')} <span class="label">${L('เด็กๆ ฟังในโหมดเด็ก', 'the kids hear them in kid mode')}</span></h3>
 <div class="call calm" id="talktext" style="white-space:pre-line"${e ? '' : ' hidden'}>${e ? esc(e.text) : ''}</div>
-${S.features.story ? `<div class="row" style="margin-top:6px"><button class="btn small" data-a="story" data-m="talk" data-t="${esc(t.id)}" data-d="${i}" id="talkgo">✨ ${e ? L('ตั้งคำถามใหม่', 'New questions') : L('ให้ผู้ช่วยตั้งคำถาม', 'Ask Claude for questions')}</button>
+${S.features.story ? `<div class="row" style="margin-top:6px"><button class="btn small" data-a="story" data-m="talk" data-t="${esc(t.id)}" data-d="${i}" id="talkgo">✨ ${e ? L('ตั้งคำถามใหม่', 'New questions') : L('ให้ผู้ช่วยตั้งคำถาม', 'Ask the helper for questions')}</button>
 <button class="btn ghost small" data-a="storystop" id="talkstop" hidden>■ ${L('หยุด', 'Stop')}</button>
 ${e ? `<button class="mini" data-a="delentry" data-v="${esc(e.id)}">${L('ลบ', 'Delete')}</button>` : ''}</div>` : ''}</section>`;
 }
@@ -1330,7 +1330,7 @@ function foreBlock(t, nDays) {
   const ai = S.features.story && nDays;
   return `<section class="blk foreblk"><h3>${ic('book')} ${L('คำนำของสมุด', 'The book’s foreword')} <span class="label">${L('หน้าแรกของ PDF ต่อจากปก', 'the first page of the PDF after the cover')}</span></h3>
 <textarea id="foretext" class="field" rows="6" data-a-blur="fore" data-t="${esc(t.id)}" data-d="" data-draft="fw:${esc(t.id)}" maxlength="3000" placeholder="${L('ทริปนี้เราไป…', 'On this trip we went…')}">${esc(drafts['fw:' + t.id] ?? (e ? e.text : ''))}</textarea><p class="label savenote">${L('บันทึกเองเมื่อแตะออกจากช่อง', 'Saves by itself when you leave the box')}</p>
-${ai ? `<div class="row noprint" style="margin-top:6px"><button class="btn small" data-a="story" data-m="fore" data-t="${esc(t.id)}" data-d="" id="forego">✨ ${e ? L('ร่างใหม่', 'Draft again') : L('ให้ผู้ช่วยร่างคำนำ', 'Ask Claude for a first draft')}</button>
+${ai ? `<div class="row noprint" style="margin-top:6px"><button class="btn small" data-a="story" data-m="fore" data-t="${esc(t.id)}" data-d="" id="forego">✨ ${e ? L('ร่างใหม่', 'Draft again') : L('ให้ผู้ช่วยร่างคำนำ', 'Ask the helper for a first draft')}</button>
 <button class="btn ghost small" data-a="storystop" id="forestop" hidden>■ ${L('หยุด', 'Stop')}</button>
 <span class="label" id="foremsg">${L('จากบันทึกทั้งทริป ไม่ส่งรูป · แก้ในช่องได้', 'From the whole trip’s notes, never photos · edit it in the box')}</span></div>` : ''}</section>`;
 }
@@ -1341,7 +1341,7 @@ function letterBlock(t, nDays) {
   const ai = S.features.story && nDays;
   return `<section class="blk letterblk"><h3>${ic('mail')} ${L(`จดหมายถึง${esc(kidsNames() || 'ลูก')}`, `A letter to ${esc(kidsNames() || 'you')}`)} <span class="label">${L('ไว้อ่านตอนโต · หน้าสุดท้ายของ PDF', 'for when they are older · the last page of the PDF')}</span></h3>
 <textarea id="lettertext" class="field" rows="8" data-a-blur="letter" data-t="${esc(t.id)}" data-d="" data-draft="l:${esc(t.id)}" maxlength="4000" placeholder="${L(`ถึง${esc(kidsNames() || 'ลูก')}…`, `Dear ${esc(kidsNames() || 'you')}…`)}">${esc(drafts['l:' + t.id] ?? (e ? e.text : ''))}</textarea><p class="label savenote">${L('บันทึกเองเมื่อแตะออกจากช่อง', 'Saves by itself when you leave the box')}</p>
-${ai ? `<div class="row noprint" style="margin-top:6px"><button class="btn small" data-a="story" data-m="letter" data-t="${esc(t.id)}" data-d="" id="lettergo">✨ ${e ? L('ร่างใหม่', 'Draft again') : L('ให้ผู้ช่วยร่างจดหมาย', 'Ask Claude for a first draft')}</button>
+${ai ? `<div class="row noprint" style="margin-top:6px"><button class="btn small" data-a="story" data-m="letter" data-t="${esc(t.id)}" data-d="" id="lettergo">✨ ${e ? L('ร่างใหม่', 'Draft again') : L('ให้ผู้ช่วยร่างจดหมาย', 'Ask the helper for a first draft')}</button>
 <button class="btn ghost small" data-a="storystop" id="letterstop" hidden>■ ${L('หยุด', 'Stop')}</button>
 <span class="label" id="lettermsg">${L('จากบันทึกทั้งทริป ไม่ส่งรูป · แก้ในช่องให้เป็นคำของเราเอง', 'From the whole trip’s notes, never photos · make it your own words in the box')}</span></div>` : ''}</section>`;
 }
@@ -1354,7 +1354,7 @@ function likesBlock(n) {
   if (!ai && !(likes && likes.text)) return '';
   return `<section class="blk likesblk"><h3>${ic('sparkle')} ${L('ครอบครัวเราชอบอะไร', 'What our family likes')}${likes && likes.at ? ` <span class="label">${esc(new Date(likes.at).toLocaleDateString(LOC(), { day: 'numeric', month: 'short', year: 'numeric' }))}</span>` : ''}</h3>
 <div class="call calm" id="likestext" style="white-space:pre-line"${likes && likes.text ? '' : ' hidden'}>${likes && likes.text ? esc(likes.text) : ''}</div>
-${ai ? `<div class="row" style="margin-top:6px"><button class="btn small" data-a="likes" id="likesgo">✨ ${likes && likes.text ? L('สรุปใหม่', 'Sum up again') : L('ให้ผู้ช่วยสรุปจากทุกทริป', 'Ask Claude to sum up every trip')}</button>
+${ai ? `<div class="row" style="margin-top:6px"><button class="btn small" data-a="likes" id="likesgo">✨ ${likes && likes.text ? L('สรุปใหม่', 'Sum up again') : L('ให้ผู้ช่วยสรุปจากทุกทริป', 'Ask the helper to sum up every trip')}</button>
 <span class="label">${L('ส่งเฉพาะข้อความในสมุดโน้ต ไม่ส่งรูป', 'Sends only the notebook’s words — never photos')}</span></div>` : ''}</section>`;
 }
 
@@ -1367,7 +1367,7 @@ function storyBlock(t, day) {
   return `<section class="blk${st ? '' : ' noprint'}" id="storyblk"><h3>${ic('sparkle')} ${whole ? L('นิทานของทั้งทริป', 'The story of the whole trip') : L('นิทานก่อนนอนของวันนี้', "Tonight's bedtime story")}</h3>
 ${st ? `${bedBtn(st)}<div class="call calm" id="storytext" style="white-space:pre-line">${esc(st.text)}</div>` : `<div class="call calm" id="storytext" style="white-space:pre-line" hidden></div>`}
 ${can ? `<div class="row noprint" style="margin-top:8px">
-<button class="btn small" data-a="story" data-t="${esc(t.id)}" data-d="${dv}" id="storygo">✨ ${st ? L('แต่งใหม่', 'Write again') : L('ให้ผู้ช่วยแต่งนิทาน', 'Ask Claude for a story')}</button>
+<button class="btn small" data-a="story" data-t="${esc(t.id)}" data-d="${dv}" id="storygo">✨ ${st ? L('แต่งใหม่', 'Write again') : L('ให้ผู้ช่วยแต่งนิทาน', 'Ask the helper for a story')}</button>
 <button class="btn ghost small" data-a="storystop" id="storystop" hidden>■ ${L('หยุด', 'Stop')}</button>
 ${st ? `<button class="mini" data-a="delentry" data-v="${esc(st.id)}">${L('ลบนิทาน', 'Delete story')}</button>` : ''}
 ${whole ? `<span class="label">${L('ส่งเฉพาะข้อความที่บันทึกไว้ ไม่ส่งรูป', 'Sends only the written notes — never photos')}${aiToday() ? ' · ' + esc(aiToday()) : ''}</span>` : ''}</div>` : ''}</section>`;
@@ -1671,8 +1671,8 @@ function viewImport() {
   let jobCard = '';
   if (running) {
     const pct = Math.round((done.size / IMP_STEPS.length) * 100);
-    jobCard = `<section class="impjob running"><div class="impjobhd"><span class="e">✨</span><div><b>${L('ผู้ช่วยกำลังเขียนเล่ม', 'Claude is writing')} <i>${esc(j.slug || '')}</i></b>
-<small>${elapsed ? L(`ผ่านไป ${elapsed}`, `${elapsed} so far`) + ' · ' : ''}${L('ปกติใช้ 5–10 นาที · ปิดหน้านี้ได้ ระบบทำต่อเอง', 'Usually 5–10 min · you can leave this page, Claude carries on')}</small></div></div>
+    jobCard = `<section class="impjob running"><div class="impjobhd"><span class="e">✨</span><div><b>${L('ผู้ช่วยกำลังเขียนเล่ม', 'The helper is writing')} <i>${esc(j.slug || '')}</i></b>
+<small>${elapsed ? L(`ผ่านไป ${elapsed}`, `${elapsed} so far`) + ' · ' : ''}${L('ปกติใช้ 5–10 นาที · ปิดหน้านี้ได้ ระบบทำต่อเอง', 'Usually 5–10 min · you can leave this page, the helper carries on')}</small></div></div>
 <div class="impbar" role="progressbar" aria-valuenow="${pct}" aria-valuemin="0" aria-valuemax="100"><i style="width:${Math.max(4, pct)}%"></i></div>
 <ol class="impsteps">${IMP_STEPS.map(([k, , th, en, dth, den], i) => `<li class="${done.has(k) ? 'done' : i === at ? 'now' : ''}"><span>${done.has(k) ? '✓' : i === at ? '…' : i + 1}</span><div>${L(th, en)}${i === at ? `<small>${L(dth, den)}</small>` : ''}</div></li>`).join('')}</ol>${logBox}</section>`;
   } else if (j.status === 'done') {
@@ -1692,17 +1692,17 @@ function viewImport() {
 <div class="impbody">
 <div class="impstats">${tile(d.days, '📅', 'วัน', 'days')}${tile(pk.stops, '📍', 'จุดแวะ', 'stops')}${tile(pk.restaurants, '🍽️', 'ร้านอาหาร', 'places to eat')}${tile(pk.stays, '🛏️', 'ที่พัก', 'stays')}${tile(pk.missions, '🛂', 'ภารกิจเด็ก', "kids' missions")}${tile(pk.wild, '🐾', 'สัตว์และเพื่อน', 'animals & friends')}${tile(pk.firsts, '🌟', 'ครั้งแรก', 'firsts')}${tile(pk.words, '💬', 'คำท้องถิ่น', 'local words')}${tile(pk.food, '😋', 'ของอร่อยให้ชิม', 'tastes to try')}${tile(pk.map, '🗺️', 'จุดบนแผนที่', 'map stops')}</div>
 ${Array.isArray(d.toc) && d.toc.length ? `<details class="imptoc" open><summary>${ic('book')} ${L('สารบัญ', 'Contents')}</summary><ol>${d.toc.slice(0, 20).map((x, i) => `<li><em>${L(`วันที่ ${i + 1}`, `Day ${i + 1}`)}</em><span>${esc(x.e || '')}</span>${esc(T(x.t) || '')}</li>`).join('')}${d.toc.length > 20 ? `<li>… ${d.toc.length - 20} ${L('วันถัดไป', 'more days')}</li>` : ''}</ol></details>` : ''}
-<details class="impcost"><summary>💸 ${L('ค่าใช้จ่ายของเล่มนี้ (รายละเอียดทางเทคนิค)', 'Claude cost for this book')} ${usd(d.cost)}${calls.length ? ` · ${impMins(took(d.cost))}` : ''}</summary>${costRows ? `<table><thead><tr><th>${L('ขั้นตอน', 'Step')}</th><th>${L('โมเดล', 'Model')}</th><th class="n">USD</th><th class="n">${L('เวลา', 'Time')}</th></tr></thead><tbody>${costRows}</tbody></table>` : ''}</details>
+<details class="impcost"><summary>💸 ${L('ค่าใช้จ่ายของเล่มนี้ (รายละเอียดทางเทคนิค)', 'This book’s cost (technical details)')} ${usd(d.cost)}${calls.length ? ` · ${impMins(took(d.cost))}` : ''}</summary>${costRows ? `<table><thead><tr><th>${L('ขั้นตอน', 'Step')}</th><th>${L('โมเดล', 'Model')}</th><th class="n">USD</th><th class="n">${L('เวลา', 'Time')}</th></tr></thead><tbody>${costRows}</tbody></table>` : ''}</details>
 ${warns.length || todo ? `<details class="impwarn"><summary>⚠️ ${L('ข้อควรดูก่อนวางบนชั้น', 'Worth a look before shelving')} <span class="pill">${warns.length + (todo ? 1 : 0)}</span></summary><ul>${todo ? `<li>${L(`มี ${todo} จุดที่ไม่พบในคู่มือ จึงเว้นไว้ว่า "รอเติม" แก้ได้ในแอปทีหลัง`, `${todo} spots were not in the manual and are marked TODO — edit them in the app later`)}</li>` : ''}${warns.map((w) => `<li>${esc(w)}</li>`).join('')}</ul></details>` : `<p class="label">✅ ${L('ไม่มีข้อควรระวัง พร้อมวางบนชั้น', 'Nothing to flag — ready for the shelf')}</p>`}
 <div class="row impacts"><button class="btn" data-a="impsave" data-v="${esc(d.id)}">📚 ${L('วางเล่มนี้บนชั้น', 'Put it on the shelf')}</button><button class="btn ghost small" data-a="impdel" data-v="${esc(d.id)}">${L('ทิ้งร่างนี้', 'Discard')}</button></div></div></article>`;
   };
   const list = Array.isArray(imp.list) ? imp.list : [];
-  const how = `<div class="imphow"><div><span>1</span><b>${L('เลือกไฟล์ PDF', 'Pick the PDF')}</b><small>${L('คู่มือทริปที่วางแผนไว้', 'The Trip Operations Manual')}</small></div><div><span>2</span><b>${L('ผู้ช่วยเขียนเล่ม', 'Claude writes')}</b><small>${L('ราว 5–10 นาที หน้านี้อัปเดตเอง', 'About 5–10 min, this page updates itself')}</small></div><div><span>3</span><b>${L('ตรวจแล้ววางบนชั้น', 'Check and shelve')}</b><small>${L('ได้ร่างให้ดูก่อน ค่อยบันทึก', 'A draft to look at before you keep it')}</small></div></div>`;
+  const how = `<div class="imphow"><div><span>1</span><b>${L('เลือกไฟล์ PDF', 'Pick the PDF')}</b><small>${L('คู่มือทริปที่วางแผนไว้', 'The Trip Operations Manual')}</small></div><div><span>2</span><b>${L('ผู้ช่วยเขียนเล่ม', 'The helper writes')}</b><small>${L('ราว 5–10 นาที หน้านี้อัปเดตเอง', 'About 5–10 min, this page updates itself')}</small></div><div><span>3</span><b>${L('ตรวจแล้ววางบนชั้น', 'Check and shelve')}</b><small>${L('ได้ร่างให้ดูก่อน ค่อยบันทึก', 'A draft to look at before you keep it')}</small></div></div>`;
   const form = running ? '' : `<div class="impcard">
 <label class="impdrop ${imp.file ? 'has' : ''} ${!on ? 'off' : ''}"><input id="impfile" type="file" accept="application/pdf,.pdf" ${!on ? 'disabled' : ''}>
 <span class="e">${imp.file ? '📘' : '📄'}</span><b>${imp.file ? esc(imp.file.name) : L('แตะเพื่อเลือกไฟล์ PDF', 'Tap to choose the PDF')}</b><small>${imp.file ? `${(imp.file.size / 1048576).toFixed(1)} MB · ${L('แตะอีกครั้งเพื่อเปลี่ยน', 'tap again to change')}` : L('ไม่เกิน 25 MB', 'Up to 25 MB')}</small></label>
 <label class="label impslug">${L('ชื่อสั้นของเล่ม (ใช้ในลิงก์)', 'Short name for the link')} <small>${L('อักษรอังกฤษตัวเล็ก ตัวเลข และ -', 'small letters, digits and -')}</small><input id="impslug" class="field" maxlength="60" value="${esc(imp.slug || '')}" placeholder="tokyo-2027"></label>
-<button class="btn impgo" data-a="impstart" ${!on ? 'disabled' : ''}>✨ ${L('ให้ผู้ช่วยเขียนเล่ม', 'Ask Claude to write the book')}</button>
+<button class="btn impgo" data-a="impstart" ${!on ? 'disabled' : ''}>✨ ${L('ให้ผู้ช่วยเขียนเล่ม', 'Ask the helper to write the book')}</button>
 ${imp.err ? `<div class="err" style="color:var(--accent2)">${esc(imp.err)}</div>` : ''}
 </div>`;
   return `<div class="part">${L('เล่มใหม่', 'New book')}</div>
@@ -1712,9 +1712,9 @@ ${!on ? `<div class="notice">${L('ผู้ช่วยยังไม่ได�
 ${running ? `<p class="impnote">${L('ส่งได้ทีละเล่ม รอเล่มนี้เสร็จก่อนนะ', 'One book at a time — wait for this one to finish')}</p>` : `<div class="impmain">${form}${how}</div>`}
 ${!running ? jobCard : ''}
 ${list.length ? `<h2 class="h3 imph3">${L('ร่างที่รอขึ้นชั้น', 'Drafts waiting for the shelf')}</h2>${list.map(draftCard).join('')}` : ''}
-<p class="impnote">🔒 ${L('ไฟล์ PDF ถูกอ่านแล้วลบทันทีบนเซิร์ฟเวอร์ · บรรทัดที่มีเลขจอง ตั๋ว หนังสือเดินทาง วันเกิด หรือยอดเงินบาท ถูกตัดออกก่อนส่งให้ผู้ช่วย · รูปใน PDF ไม่ถูกส่ง · เล่มถูกตรวจอีกครั้งก่อนเก็บ', 'The PDF is read and deleted on the server at once · lines with booking numbers, e-tickets, passports, birthdays or baht amounts are removed before anything reaches Claude · images are never sent · the book is scanned again before it is kept')}<br>${L('เล่มที่นำเข้ายังไม่มีภาพวาดประจำวัน ใช้สีของเล่มและไกด์กีกี้กับรูไปก่อน', 'An imported book has no drawings of its own yet: its colours and the guides Kiki and Roo stand in.')}</p>`;
+<p class="impnote">🔒 ${L('ไฟล์ PDF ถูกอ่านแล้วลบทันทีบนเซิร์ฟเวอร์ · บรรทัดที่มีเลขจอง ตั๋ว หนังสือเดินทาง วันเกิด หรือยอดเงินบาท ถูกตัดออกก่อนส่งให้ผู้ช่วย · รูปใน PDF ไม่ถูกส่ง · เล่มถูกตรวจอีกครั้งก่อนเก็บ', 'The PDF is read and deleted on the server at once · lines with booking numbers, e-tickets, passports, birthdays or baht amounts are removed before anything reaches the helper · images are never sent · the book is scanned again before it is kept')}<br>${L('เล่มที่นำเข้ายังไม่มีภาพวาดประจำวัน ใช้สีของเล่มและไกด์กีกี้กับรูไปก่อน', 'An imported book has no drawings of its own yet: its colours and the guides Kiki and Roo stand in.')}</p>`;
 }
-const impErr = (e) => ({ limit: L('ผู้ช่วยใช้ครบโควตาวันนี้แล้ว ลองพรุ่งนี้', "Today's Claude limit is used up — try tomorrow"), privacy: L('พบข้อมูลส่วนตัวในเล่ม จึงไม่บันทึก', 'Private data found in the book — not kept'), text: L('อ่านข้อความจาก PDF ไม่ได้ (สแกนเป็นรูป?)', 'No text in the PDF (a scanned image?)'), pdftotext: L('เซิร์ฟเวอร์นี้ยังอ่าน PDF ไม่ได้ แจ้งผู้ดูแลระบบ', 'This server cannot read PDFs yet — tell the operator'), refusal: L('ผู้ช่วยเขียนเล่มนี้ไม่ได้', 'Claude declined'), json: L('คำตอบอ่านไม่ได้ ลองอีกครั้ง', 'Unreadable answer — try again') }[e] || e);
+const impErr = (e) => ({ limit: L('ผู้ช่วยใช้ครบโควตาวันนี้แล้ว ลองพรุ่งนี้', "Today's helper allowance is used up — try tomorrow"), privacy: L('พบข้อมูลส่วนตัวในเล่ม จึงไม่บันทึก', 'Private data found in the book — not kept'), text: L('อ่านข้อความจาก PDF ไม่ได้ (สแกนเป็นรูป?)', 'No text in the PDF (a scanned image?)'), pdftotext: L('เซิร์ฟเวอร์นี้ยังอ่าน PDF ไม่ได้ แจ้งผู้ดูแลระบบ', 'This server cannot read PDFs yet — tell the operator'), refusal: L('ผู้ช่วยเขียนเล่มนี้ไม่ได้', 'The helper could not write this book'), json: L('คำตอบอ่านไม่ได้ ลองอีกครั้ง', 'Unreadable answer — try again') }[e] || e);
 function viewViewers() {
   if (vg === null) { vg = 'loading'; api('GET', '/api/b/viewers').then((r) => { vg = r.groups; safeRender(); }, () => { vg = []; safeRender(); }); }
   const trips = S.trips, list = Array.isArray(vg) ? vg : [];
@@ -2159,7 +2159,7 @@ ${d.planned.map((p) => `<div class="check"><button data-a="place" data-v="${esc(
 ${spendBlock(t, i, dk)}
 ${notebookBlock(t, i)}
 </details>
-${((g) => (g && isEditor() && S.features.story ? `<details class="blk fold aifold"${evening || ls('logall') || aiRun || ph.length || es.length ? ' open' : ''}><summary>${ic('sparkle')}<b>${L('คืนนี้ให้ผู้ช่วยทำให้', 'Tonight, Claude helps')}</b><small>${ph.length || es.length ? L(`เหลือ ${aiTodo(t, i, dk).length}`, `${aiTodo(t, i, dk).length} to do`) : L('บันทึกก่อน แล้วค่อยเปิด', 'Record first, then open')}</small></summary>${g}</details>` : g))(aiGroup(t, i, dk))}`;
+${((g) => (g && isEditor() && S.features.story ? `<details class="blk fold aifold"${evening || ls('logall') || aiRun || ph.length || es.length ? ' open' : ''}><summary>${ic('sparkle')}<b>${L('คืนนี้ให้ผู้ช่วยทำให้', 'Tonight, with the helper')}</b><small>${ph.length || es.length ? L(`เหลือ ${aiTodo(t, i, dk).length}`, `${aiTodo(t, i, dk).length} to do`) : L('บันทึกก่อน แล้วค่อยเปิด', 'Record first, then open')}</small></summary>${g}</details>` : g))(aiGroup(t, i, dk))}`;
 }
 // what we actually spent today: amount + category + a word → a row; the day's total in the heading, the trip's so far underneath.
 // A grown-up's number, so it stays on this page (and in our database) — never in the printed memory book or a seed.
@@ -2228,8 +2228,8 @@ function viewPhotos(t) {
   const grp = (list) => mosaicByPlace(t, list);
   if (!ph.length) return `<h1 class="h2">${L('รูปทั้งเล่ม', 'Every photo')}</h1>${emptyCard(t, L('ยังไม่มีรูปในเล่มนี้', 'No photos in this book yet'), L('รูปที่ถ่ายในหน้าบันทึกจะมาอยู่ที่นี่ เรียงตามวันและที่เที่ยว', 'Photos from the record page land here, by day and by place'), isEditor() ? [`#/t/${esc(t.id)}/log/${Math.max(0, dayNow(t))}`, L('ถ่ายรูปวันนี้', 'Add today’s photos')] : null)}`;
   return `<h1 class="h2">${L('รูปทั้งเล่ม', 'Every photo')} <span class="label">${ph.length}</span></h1>
-<p class="lede">${keys.length ? L('แตะแท็กเพื่อกรอง · แท็กมาจากผู้ช่วย หรือพิมพ์เองตอนเปิดรูป', 'Tap a tag to filter · tags come from “Claude looks at today’s photos” or are typed in the photo viewer')
-    : L('ยังไม่มีแท็ก — กด “ให้ผู้ช่วยดูรูปวันนี้” ในหน้าบันทึก หรือพิมพ์เองตอนเปิดรูป', 'No tags yet — on a day’s record page press “Claude looks at today’s photos”, or type tags in the photo viewer')}</p>
+<p class="lede">${keys.length ? L('แตะแท็กเพื่อกรอง · แท็กมาจากผู้ช่วย หรือพิมพ์เองตอนเปิดรูป', 'Tap a tag to filter · tags come from “The helper looks at today’s photos” or are typed in the photo viewer')
+    : L('ยังไม่มีแท็ก — กด “ให้ผู้ช่วยดูรูปวันนี้” ในหน้าบันทึก หรือพิมพ์เองตอนเปิดรูป', 'No tags yet — on a day’s record page press “The helper looks at today’s photos”, or type tags in the photo viewer')}</p>
 ${keys.length ? `<div class="chips" id="phtags"><button class="chip" data-a="phtag" data-v="" aria-pressed="${!photoTag}">${L('ทั้งหมด', 'All')} ${ph.length}</button>${keys.map((k) => `<button class="chip" data-a="phtag" data-v="${esc(k)}" aria-pressed="${photoTag === k}">${tagHtml(k)} ${counts[k]}</button>`).join('')}</div>` : ''}
 <div id="phlist">${days.map((x) => `<section class="blk phday" data-day="${x.i}"><h3>${L('วันที่', 'Day')} ${x.i + 1} <span class="label">${esc(fmtDay(x.d.date, { day: 'numeric', month: 'short' }))} · ${esc(T(x.d.title))}</span></h3>${grp(x.ph)}</section>`).join('')}
 ${loose.length ? `<section class="blk phday"><h3>${L('ไม่ระบุวัน', 'No day')}</h3>${grp(loose)}</section>` : ''}</div>`;
