@@ -60,7 +60,7 @@ try {
   ok((await fetch(BASE + '/healthz').then(() => 'up', () => 'down')) === 'down', 'the server is really stopped');
   await page.goto(`${BASE}/#/t/${T}`); await page.reload(); await page.waitForSelector('.hubgrid', { timeout: 20000 });
   ok(await page.locator('.notice').count() === 1, 'no server: the menu opens from the phone, with the "last synced" notice');
-  const pages = [['today/1', '.dsheet'], ['today/1', '.bag'], ['plan', 'main h1'], ['plan/full', '.itin'], ['eat', 'main h1'], ['eat/all', '.eatpage .eatc'], ['stays', 'main h1'],
+  const pages = [['today/1', '.tl.plan.brief'], ['today/1', '.bag'], ['plan', 'main h1'], ['plan/full', '.itin'], ['eat', 'main h1'], ['eat/all', '.eatpage .eatc'], ['stays', 'main h1'],
     ['sos', 'main h1'], ['prep', 'main h1'], ['learn', 'main h1'], ['book', '.cover'], ['log/1', '#qtext']];
   for (const [r, sel] of pages) {
     await page.goto(`${BASE}/#/t/${T}/${r}`);
