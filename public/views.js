@@ -133,11 +133,12 @@ function topBar(t, p) {
 function tabBar(t, p) {
   const c = t || curTrip(); if (!c) return '';
   const dn = Math.max(0, dayNow(c)), sec = t ? (p[2] || 'hub') : (p[0] === 'passport' ? 'passport' : p[0] === 'notebook' ? 'notebook' : 'shelf');
-  const item = (k, href, e, lbl) => `<a href="${href}"${sec === k ? ' aria-current="page"' : ''}><i>${ic(e)}</i>${lbl}</a>`;
+  const pi = (e) => `<i${HUB_PIC[e] ? ' class="pic"' : ''}>${hubIc(e)}</i>`;   // the same glossy pictures as the book menu
+  const item = (k, href, e, lbl) => `<a href="${href}"${sec === k ? ' aria-current="page"' : ''}>${pi(e)}${lbl}</a>`;
   // quick mode: the five most-used stops; everything else is a tile on the book's menu (#/t/<trip>)
   const items = isEditor()
     ? [item('hub', `#/t/${esc(c.id)}`, 'home', L('เมนู', 'Menu')), item('today', `#/t/${esc(c.id)}/today`, 'today', L('วันนี้', 'Today')), item('log', `#/t/${esc(c.id)}/log/${dn}`, 'log', L('บันทึก', 'Record')),
-      item('eat', `#/t/${esc(c.id)}/eat`, 'eat', L('ร้านอาหาร', 'Eat')), `<button type="button" data-a="kidmode"><i>${ic('kid')}</i>${L('โหมดเด็ก', 'Kid mode')}</button>`]
+      item('eat', `#/t/${esc(c.id)}/eat`, 'eat', L('ร้านอาหาร', 'Eat')), `<button type="button" data-a="kidmode">${pi('kid')}${L('โหมดเด็ก', 'Kid mode')}</button>`]
     : [item('hub', `#/t/${esc(c.id)}`, 'home', L('เมนู', 'Menu')), item('today', `#/t/${esc(c.id)}/today`, 'today', L('วันนี้', 'Today')), item('book', `#/t/${esc(c.id)}/book`, 'book', L('สมุด', 'Book')),
       item('firsts', `#/t/${esc(c.id)}/firsts`, 'firsts', L('ครั้งแรก', 'Firsts')), item('passport', '#/passport', 'passport', L('พาสปอร์ต', 'Passport'))];
   return `<nav class="bar"><div class="in">${items.join('')}</div></nav>`;
@@ -402,6 +403,13 @@ const HUB = { book: ['book', 'สมุดความทรงจำ', 'Memory 
   stays: ['stays', 'ที่พัก', 'Where we stay'], sos: ['sos', 'ฉุกเฉิน', 'Emergency'], prep: ['prep', 'เตรียมตัว', 'Get ready'], learn: ['learn', 'เรียนรู้', 'Learn'],
   firsts: ['firsts', 'ครั้งแรก', 'Firsts'], hearts: ['hearts', 'หัวใจ', 'Hearts'], offline: ['offline', 'ใช้ตอนไม่มีเน็ต', 'Offline'], log: ['log', 'บันทึกวันนี้', 'Record today'], search: ['search', 'ค้นหา', 'Search'] };
 const secTitle = (k) => (HUB[k] ? L(HUB[k][1], HUB[k][2]) : '');
+// the book menu's glossy pictures (the owner's sets: public/art/hub, the emoji pack, kid mode's passport); a key without one keeps its line icon
+const HUB_PIC = { today: '/art/hub/today.webp', log: '/art/emoji/camera.webp', book: '/art/hub/book.webp', eat: '/art/hub/eat.webp', plan: '/art/emoji/travel-map.webp',
+  stays: '/art/hub/stays.webp', sos: '/art/hub/sos.webp', prep: '/art/emoji/suitcase.webp', learn: '/art/hub/learn.webp', firsts: '/art/emoji/star.webp',
+  hearts: '/art/emoji/heart.webp', offline: '/art/hub/offline.webp', camera: '/art/hub/album.webp', passport: '/art/kidui/bar-passport.webp',
+  money: '/art/hub/money.webp', notebook: '/art/hub/notebook.webp', kid: '/art/emoji/joy.webp', shelf: '/art/hub/shelf.webp', home: '/art/kidui/bar-home.webp' };
+const hubIc = (k) => (HUB_PIC[k] ? `<img src="${HUB_PIC[k]}" alt="" draggable="false">` : ic(k));
+const hubE = (k) => `<span class="e${HUB_PIC[k] ? ' pic' : ''}">${hubIc(k)}</span>`;
 // the day a book opens on: today during the trip, day 1 before it, the last day after
 function todayIdx(t) { const n = dayNow(t); return n >= 0 ? n : tripOver(t) ? t.days.length - 1 : 0; }
 const hasInfo = (t) => {
@@ -415,7 +423,7 @@ function viewHub(t) {
   const kids = children().filter((k) => !(t.theme.children || []).length || (t.theme.children || []).some((c) => c.slug === k.slug));
   const ages = (t.theme.children || []).map((k) => `${kidName(k.slug)} ${k.age ? T(k.age) : ''}`.trim()).join(' · ');
   const got = t.days.filter((_, j) => dayStamped(t, j)).length, hs = heartsOf(t.id), off = offState(t);
-  const tile = (k, href, status, cls, extra) => `<a class="tile t-${k} ${cls || ''}" href="${href}"><span class="e">${ic(HUB[k][0])}</span><b>${L(HUB[k][1], HUB[k][2])}</b>${status ? `<small>${status}</small>` : ''}${extra || ''}</a>`;
+  const tile = (k, href, status, cls, extra) => `<a class="tile t-${k} ${cls || ''}" href="${href}">${hubE(HUB[k][0])}<b>${L(HUB[k][1], HUB[k][2])}</b>${status ? `<small>${status}</small>` : ''}${extra || ''}</a>`;
   const todayStatus = dn >= 0 ? L(`วันที่ ${i + 1} จาก ${t.days.length} · ${T(d.title)}`, `Day ${i + 1} of ${t.days.length} · ${T(d.title)}`)
     : until > 0 ? L(`อีก ${until} วัน · เริ่มที่ ${T(d.title)}`, `${until} days to go · starts with ${T(d.title)}`) : L(`จบทริปแล้ว · วันสุดท้าย: ${T(d.title)}`, `Trip over · last day: ${T(d.title)}`);
   const stops = t.days.reduce((a, x) => a + (x.planned || []).filter((p) => p.kind !== 'food').length, 0), tonight = (d.plan || {}).stay;
@@ -434,15 +442,15 @@ function viewHub(t) {
     has.prep ? tile('prep', `#/t/${esc(t.id)}/prep`, esc([(n.pack || []).length && L('จัดกระเป๋า', 'Packing'), n.visa && L('วีซ่า', 'Visa'), n.bio && L('ด่านกักกัน', 'Biosecurity'), n.car && L('รถเช่า', 'The van'), n.ifthen && n.ifthen.book && L('จองล่วงหน้า', 'Book ahead'), n.prices && L('ค่าเข้า', 'Prices')].filter(Boolean).join(' · '))) : '',
     has.learn ? tile('learn', `#/t/${esc(t.id)}/learn`, esc([learnN && L(`${learnN} เรื่อง`, `${learnN} cards`), (n.wild || []).length && (n.wildLabel ? `${T(n.wildLabel.short)} ${n.wild.length}` : L(`สัตว์ ${n.wild.length} ชนิด`, `${n.wild.length} animals`)), quizN && L(`คำถาม ${quizN} ข้อ`, `${quizN} questions`), (n.general || []).length && L('คำศัพท์', 'Words')].filter(Boolean).join(' · '))) : '',
     tile('firsts', `#/t/${esc(t.id)}/firsts`, esc(L(`${st.firsts} ครั้งแรก`, `${st.firsts} firsts`))),
-    st.photos ? `<a class="tile t-photos" href="#/t/${esc(t.id)}/photos"><span class="e">${ic('camera')}</span><b>${L('รูปตามแท็ก', 'Photos by tag')}</b><small>${esc(((n) => (n ? L(`${st.photos} รูป · ${n} แท็ก`, `${st.photos} photos · ${n} tags`) : L(`${st.photos} รูป · ยังไม่มีแท็ก`, `${st.photos} photos · no tags yet`)))(new Set(mediaOf(t.id).flatMap(tagsOf)).size))}</small></a>` : '',
-    `<a class="tile" href="#/passport"><span class="e">${ic('passport')}</span><b>${L('พาสปอร์ตนักผจญภัย', "Kids' passports")}</b><small>${esc(kids.map((k) => `${kidName(k.slug)} ${t.days.filter((_, j) => dayStamped(t, j) || ticked(t, 'stamp.d' + j, k.slug)).length}`).join(' · '))} ${L('ตรา', 'stamps')}</small></a>`,
+    st.photos ? `<a class="tile t-photos" href="#/t/${esc(t.id)}/photos">${hubE('camera')}<b>${L('รูปตามแท็ก', 'Photos by tag')}</b><small>${esc(((n) => (n ? L(`${st.photos} รูป · ${n} แท็ก`, `${st.photos} photos · ${n} tags`) : L(`${st.photos} รูป · ยังไม่มีแท็ก`, `${st.photos} photos · no tags yet`)))(new Set(mediaOf(t.id).flatMap(tagsOf)).size))}</small></a>` : '',
+    `<a class="tile" href="#/passport">${hubE('passport')}<b>${L('พาสปอร์ตนักผจญภัย', "Kids' passports")}</b><small>${esc(kids.map((k) => `${kidName(k.slug)} ${t.days.filter((_, j) => dayStamped(t, j) || ticked(t, 'stamp.d' + j, k.slug)).length}`).join(' · '))} ${L('ตรา', 'stamps')}</small></a>`,
     tile('hearts', `#/t/${esc(t.id)}/hearts`, esc(hs.length ? L(`${hs.length} ดวงถึงเด็กๆ`, `${hs.length} for the kids`) : L('ส่งหัวใจถึงเด็กๆ', 'Send the kids a heart'))),
-    ed && spendOf(t.id).length ? `<a class="tile t-spend" href="#/t/${esc(t.id)}/spend"><span class="e">${ic('money')}</span><b>${L('ค่าใช้จ่าย', 'Spending')}</b><small>${esc(sumMoney(spendOf(t.id)))}</small></a>` : '',
-    `<a class="tile" href="#/notebook"><span class="e">${ic('notebook')}</span><b>${L('สมุดโน้ตนักเดินทาง', 'Travel notebook')}</b><small>${esc(L(`${S.reviews.filter((r) => r.trip === t.id).length} รีวิวในเล่มนี้`, `${S.reviews.filter((r) => r.trip === t.id).length} reviews in this book`))}</small></a>`,
+    ed && spendOf(t.id).length ? `<a class="tile t-spend" href="#/t/${esc(t.id)}/spend">${hubE('money')}<b>${L('ค่าใช้จ่าย', 'Spending')}</b><small>${esc(sumMoney(spendOf(t.id)))}</small></a>` : '',
+    `<a class="tile" href="#/notebook">${hubE('notebook')}<b>${L('สมุดโน้ตนักเดินทาง', 'Travel notebook')}</b><small>${esc(L(`${S.reviews.filter((r) => r.trip === t.id).length} รีวิวในเล่มนี้`, `${S.reviews.filter((r) => r.trip === t.id).length} reviews in this book`))}</small></a>`,
     ed ? tile('offline', `#/t/${esc(t.id)}/offline`, esc(!off.got ? L('ยังไม่ได้เก็บ — กดก่อนขึ้นเครื่อง', 'Not stored yet — tap before the flight')
       : off.stale ? L(`เก็บเมื่อ ${off.when} · มีรูปใหม่ ${off.fresh} รูป กดเก็บเพิ่ม`, `Stored ${off.when} · ${off.fresh} new photo${off.fresh > 1 ? 's' : ''}, tap to top up`) : L(`เก็บไว้ในเครื่องแล้ว · ${off.when}`, `Stored on this phone · ${off.when}`)), off.got && !off.stale ? '' : 'warn') : '',
-    ed ? `<button class="tile kid" data-a="kidmode"><span class="e">${ic('kid')}</span><b>${L('โหมดเด็ก', 'Kid mode')}</b><small>${L('ระบายสี วาดรูป ปั๊มตรา และแผนที่', 'Colour, draw, stamps and the map')}</small></button>` : '',
-    `<a class="tile shelfgo" href="#/"><span class="e">${ic('shelf')}</span><b>${L('ชั้นหนังสือ', 'Bookshelf')}</b><small>${L('เปลี่ยนเล่ม', 'Other books')}</small></a>`,
+    ed ? `<button class="tile kid" data-a="kidmode">${hubE('kid')}<b>${L('โหมดเด็ก', 'Kid mode')}</b><small>${L('ระบายสี วาดรูป ปั๊มตรา และแผนที่', 'Colour, draw, stamps and the map')}</small></button>` : '',
+    `<a class="tile shelfgo" href="#/">${hubE('shelf')}<b>${L('ชั้นหนังสือ', 'Bookshelf')}</b><small>${L('เปลี่ยนเล่ม', 'Other books')}</small></a>`,
   ].filter(Boolean);
   // the tiles in three named groups, the group the family needs now first: on the trip "during the trip", before it "get ready",
   // after it "memories" — so a parent reads one heading, not fifteen tiles (the Today tile stays on top by itself)

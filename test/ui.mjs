@@ -96,7 +96,7 @@ const T = 'hk-macau-2026';
   ok(await page.locator('.tile[href$="/eat"]').count() === 1 && await page.locator('.tile[href$="/sos"]').count() === 1 && await page.locator('.tile[href$="/stays"]').count() === 1 && await page.locator('.tile.kid[data-a="kidmode"]').count() === 1, 'book menu: eat, emergency, stays, kid mode tiles');
   ok(await page.evaluate(() => [...document.querySelectorAll('.hubgrid .tile')].every((t) => t.scrollHeight <= t.clientHeight + 1)), 'book menu: no tile clips its text (the kid-mode button grows like the link tiles)');
   ok(await page.evaluate(() => [...document.querySelectorAll('.hubgrid .tile')].every((t) => getComputedStyle(t).marginTop === '0px' && getComputedStyle(t).marginBottom === '0px')), 'book menu: no tile carries its own margin, so a row lines up (the bookshelf tile used to pick up the shelf page’s 22 px)');
-  ok(await page.locator('nav.bar .in > *').count() === 5 && await page.locator('nav.bar a[aria-current=page][href$="/hk-macau-2026"] i svg.ic').count() === 1 && (await page.locator('nav.bar .in > *').first().boundingBox()).height >= 60, 'quick bar: five big stops, menu highlighted');
+  ok(await page.locator('nav.bar .in > *').count() === 5 && await page.locator('nav.bar a[aria-current=page][href$="/hk-macau-2026"] i.pic img').count() === 1 && await page.locator('nav.bar .in > * i.pic img').count() === 5 && (await page.locator('nav.bar .in > *').first().boundingBox()).height >= 60, 'quick bar: five big stops with their pictures, menu highlighted');
   await page.click('.tile[href$="/today"]'); await page.waitForSelector('.day.today');
   ok(await page.evaluate(() => { const rows = [...document.querySelectorAll('.cbox .dsheet>div')]; return rows.length > 0 && rows.every((r) => r.querySelector('dt').getBoundingClientRect().width <= r.getBoundingClientRect().width * 0.36); }), 'today: in the answer boxes the label column stays narrow and the answer gets the room');
   ok(await page.locator('.daystrip a').count() === 6 && await page.locator('.call.info').count() === 1 && await page.locator('.dsheet > div').count() >= 4 && await page.locator('.tl.plan.brief li').count() >= 4 && await page.locator('.reportbtn[href$="/today/0/full"]').count() === 1 && await page.locator('.top .ttl small', { hasText: /วันนี้|Today/ }).count() === 1, "today page: day strip, countdown banner, day 1 at a glance (short timeline + answer cards, full report one tap away), topic named in the top bar");
@@ -201,6 +201,11 @@ const T = 'hk-macau-2026';
   await koala.click(); await koala.click();
   await page.waitForFunction(() => !S.emoji.some((e) => e.ch === '🐨'), null, { timeout: 8000 }).catch(() => {});
   ok(await page.locator('.emocard').count() === 24, 'emoji page: deleted with two taps');
+  // the book's menu: every card shows the owner's glossy picture, and each picture is there
+  await page.goto(`${BASE}/#/t/${T}`); await page.waitForSelector('.tile');
+  const hubPics = await page.evaluate(async () => { const t = [...document.querySelectorAll('main .tile')]; const imgs = t.map((x) => x.querySelector('.e.pic img')).filter(Boolean);
+    return { tiles: t.length, pics: imgs.length, ok: (await Promise.all(imgs.map((i) => fetch(i.src).then((r) => r.ok)))).every(Boolean) }; });
+  ok(hubPics.tiles >= 12 && hubPics.pics === hubPics.tiles && hubPics.ok, `book menu: all ${hubPics.tiles} cards show a glossy picture, every one loads`);
   // every icon the manifest names exists at its stated size; each shortcut has its own picture; iPhone gets a 180 px icon
   const icons = [...man.icons, ...man.shortcuts.flatMap((s) => s.icons)], sizes = [];
   for (const ic of icons) { const r = await page.request.get(BASE + ic.src); const m = r.ok() ? await sharp(await r.body()).metadata() : {}; sizes.push(`${m.width}x${m.height}` === ic.sizes); }
@@ -1033,7 +1038,7 @@ const T = 'hk-macau-2026';
   // all places to eat: the manual's "Where to eat", searchable, every card opens Maps
   await page.evaluate(() => localStorage.removeItem('mbs_kidmode'));   // a grown-up leaves kid mode
   await page.goto(`${BASE}/#/t/big-hop-2027/eat/all`); await page.waitForSelector('.eatc');
-  ok(await page.locator('.eatc').count() === 294 && await page.locator('nav.bar a[aria-current=page][href$="/eat"] i svg.ic').count() === 1, 'eat page: 294 places from the manual, tab highlighted');
+  ok(await page.locator('.eatc').count() === 294 && await page.locator('nav.bar a[aria-current=page][href$="/eat"] i.pic img').count() === 1, 'eat page: 294 places from the manual, tab highlighted');
   ok(await page.locator('.eatc a[href*="google.com/maps/search"]').count() === 588 && await page.locator('.eatc a[href*="maps/dir/"]').count() === 294, 'eat page: every place has a map link (name + button) and directions');
   await page.fill('#eatq', 'pie');
   const pies = await page.$$eval('.eatc', (els) => els.filter((e) => e.dataset.s.includes('pie')).length), shownPies = await page.locator('.eatc:visible').count();
