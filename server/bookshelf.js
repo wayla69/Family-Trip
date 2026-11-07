@@ -20,7 +20,7 @@ const AUDIO_EXT = { 'audio/webm': 'webm', 'audio/mp4': 'm4a', 'audio/x-m4a': 'm4
 const SLUG_RE = /^[a-z0-9-]{2,60}$/;
 const KINDS = ['quote', 'mood', 'fav', 'note', 'first', 'story', 'tick', 'field', 'sum', 'talk', 'letter', 'mquiz', 'fore'];   // mquiz = the morning memory game (kid mode) · fore = the book's foreword   // sum = the day in a few lines (book + PDF) · talk = bedtime questions (kid mode)
 const TRIP_WIDE = ['story', 'tick', 'field', 'letter', 'fore'];   // kinds that may have no day (whole-trip story, passport checklists, Explorer ID, the letter to the kids)
-const HEART_EMOJI = ['💗', '🤗', '😘', '⭐', '👏', '🎈'];
+const HEART_EMOJI = ['💗', '😍', '👏', '🙏', '⭐', '🎉', '🤗', '😘', '🎈'];   // the picker's six (views.js HEARTS) + the older ones, still accepted
 const REVIEW_KINDS = ['stay', 'food', 'place'], KID_VERDICT = ['love', 'ok', 'no'];
 const HEARTS_PER_DAY = { sender: 40, family: 400 };   // the view link is shared: cap what one phone, and everyone together, can send
 const clip = (s, n) => String(s == null ? '' : s).slice(0, n);

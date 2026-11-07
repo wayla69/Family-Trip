@@ -1,6 +1,6 @@
 // Memory Bookshelf service worker: app shell + all drawn art offline from the first visit; photos cached as you view them
 // (or all at once with "Keep this book offline"). Data (/api) is cached by the app itself (IndexedDB) and written through its queue.
-const V = 'mbs-v126';
+const V = 'mbs-v127';
 const SHELL = ['/', '/app.css', '/core.js', '/views.js', '/sheets.js', '/kid.js', '/manifest.webmanifest', '/icon-192.png',
   '/fonts/KIRA-UI-Regular.woff2', '/fonts/KIRA-UI-Medium.woff2', '/fonts/KIRA-UI-SemiBold.woff2', '/fonts/KIRA-UI-Bold.woff2',
   '/fonts/CormorantGaramond-SemiBold.woff2', '/fonts/CormorantGaramond-MediumItalic.woff2'];
@@ -16,7 +16,8 @@ const ART = ['/art/day-1.svg', '/art/day-2.svg', '/art/day-3.svg', '/art/day-4.s
   '/art/kids/mimi-adventure.svg', '/art/kids/mimi-adventure-full.svg', '/art/kids/mika-adventure.svg', '/art/kids/mika-adventure-full.svg',
   '/art/kidui/surprise.webp', '/art/kidui/pack.webp', '/art/kidui/say.webp', '/art/kidui/colour.webp', '/art/kidui/draw.webp', '/art/kidui/match.webp', '/art/kidui/quiz.webp',
   '/art/kidui/animals.webp', '/art/kidui/count.webp', '/art/kidui/bar-home.webp', '/art/kidui/bar-map.webp', '/art/kidui/bar-colour.webp', '/art/kidui/bar-stickers.webp', '/art/kidui/bar-trophies.webp',
-  '/art/kidui/find.webp', '/art/kidui/stamp.webp', '/art/kidui/talk.webp', '/art/kidui/memory.webp', '/art/kidui/photos.webp', '/art/kidui/mood.webp', '/art/kidui/bar-passport.webp'];   // kid mode's picture tiles and bar
+  '/art/kidui/find.webp', '/art/kidui/stamp.webp', '/art/kidui/talk.webp', '/art/kidui/memory.webp', '/art/kidui/photos.webp', '/art/kidui/mood.webp', '/art/kidui/bar-passport.webp',
+  '/art/emoji/airplane.webp', '/art/emoji/angry.webp', '/art/emoji/birthday-cake.webp', '/art/emoji/camera.webp', '/art/emoji/celebrate.webp', '/art/emoji/clap.webp', '/art/emoji/cozy.webp', '/art/emoji/gift.webp', '/art/emoji/heart.webp', '/art/emoji/joy.webp', '/art/emoji/laugh.webp', '/art/emoji/love.webp', '/art/emoji/partly-cloudy.webp', '/art/emoji/rainbow.webp', '/art/emoji/rainy.webp', '/art/emoji/sad.webp', '/art/emoji/sleepy-moon.webp', '/art/emoji/star.webp', '/art/emoji/suitcase.webp', '/art/emoji/sun.webp', '/art/emoji/surprise.webp', '/art/emoji/thanks.webp', '/art/emoji/thumbs-up.webp', '/art/emoji/travel-map.webp'];   // kid mode's picture tiles and bar
 const SHELL_TIMEOUT = 4000;   // on a bad connection fall back to the cached shell after this long instead of hanging
 
 // one missing file must not stop the whole install (addAll is all-or-nothing)

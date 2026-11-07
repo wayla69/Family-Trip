@@ -151,6 +151,18 @@ function ensureWx(t) {
     if (j) { ls(k, WX[t.id]); if (j.days.some(Boolean)) safeRender(); }
   }).catch(() => { WX[t.id] = { ...(c || { days: [] }), at: Date.now() - 3600e3 + 600e3, pending: false }; });
 }
+/* ---------- the family's own emoji (public/art/emoji, the owner's glossy set): emo('💗') → a picture when there is one,
+   else the emoji as text. The data keeps the Unicode emoji (moods, hearts, weather); only the drawing changes.
+   emoIn(html) swaps them inside an already-escaped text (emoji are never part of an entity, so this is safe) — never on attributes. */
+const EMO = { '😄': 'joy', '😊': 'joy', '🥰': 'love', '😍': 'love', '😂': 'laugh', '🤣': 'laugh', '😮': 'surprise', '😲': 'surprise', '😢': 'sad', '😭': 'sad', '😠': 'angry', '😡': 'angry',
+  '👍': 'thumbs-up', '💗': 'heart', '❤': 'heart', '💖': 'heart', '👏': 'clap', '🙏': 'thanks', '🎉': 'celebrate', '🥳': 'celebrate', '☕': 'cozy', '⭐': 'star', '🌟': 'star',
+  '🌈': 'rainbow', '☀': 'sun', '🌙': 'sleepy-moon', '😴': 'sleepy-moon', '⛅': 'partly-cloudy', '🌤': 'partly-cloudy', '🌥': 'partly-cloudy', '🌧': 'rainy', '🌦': 'rainy', '☔': 'rainy',
+  '🎂': 'birthday-cake', '🎁': 'gift', '📷': 'camera', '📸': 'camera', '✈': 'airplane', '🧳': 'suitcase', '🗺': 'travel-map' };
+const EMO_FILES = [...new Set(Object.values(EMO))];
+const emoKey = (ch) => EMO[String(ch || '').replace(/️/g, '')];
+const emo = (ch, cls = '') => { const k = emoKey(ch); return k ? `<img class="emi${cls ? ' ' + cls : ''}" src="/art/emoji/${k}.webp" alt="${esc(ch)}" draggable="false">` : esc(ch); };
+const EMO_RE = new RegExp(`(${Object.keys(EMO).sort((a, b) => b.length - a.length).join('|')})\\uFE0F?`, 'gu');
+const emoIn = (html) => String(html).replace(EMO_RE, (m) => emo(m));
 // WMO weather codes → a glyph and a word (the first row whose ceiling the code fits under)
 const WX_CODES = [[0, '☀️', 'แดดจัด', 'clear'], [2, '🌤️', 'มีเมฆบ้าง', 'partly cloudy'], [3, '☁️', 'เมฆมาก', 'overcast'], [48, '🌫️', 'หมอก', 'fog'], [57, '🌦️', 'ฝนปรอย', 'drizzle'],
   [67, '🌧️', 'ฝน', 'rain'], [77, '❄️', 'หิมะ', 'snow'], [82, '🌦️', 'ฝนซู่', 'showers'], [86, '🌨️', 'หิมะซู่', 'snow showers'], [99, '⛈️', 'พายุฝน', 'thunderstorms']];

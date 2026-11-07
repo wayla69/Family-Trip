@@ -617,7 +617,7 @@ const A = {
   offline(b) { if (!navigator.onLine) { toast(L('ต้องมีสัญญาณตอนเก็บ', 'Needs a connection to store the book')); return; } packOffline(trip(b.dataset.t), b.dataset.v === 'all'); },
   // hearts from the family
   heartto(b) { heartTo = b.dataset.v; $$('[data-a="heartto"]').forEach((x) => x.setAttribute('aria-pressed', x.dataset.v === heartTo)); },
-  heartemo(b) { heartEmoji = b.dataset.v; $$('[data-a="heartemo"]').forEach((x) => x.setAttribute('aria-pressed', x.dataset.v === heartEmoji)); const s = $('[data-a="sendheart"]'); if (s) s.textContent = `${L('ส่ง', 'Send')} ${heartEmoji}`; },
+  heartemo(b) { heartEmoji = b.dataset.v; $$('[data-a="heartemo"]').forEach((x) => x.setAttribute('aria-pressed', x.dataset.v === heartEmoji)); const s = $('[data-a="sendheart"]'); if (s) s.innerHTML = `${L('ส่ง', 'Send')} ${emo(heartEmoji)}`; },
   sendheart(b) {
     const t = trip(b.dataset.t), f = $('#hfrom'), m = $('#htext'), from = f.value.trim(), text = m.value.trim();
     if (!from) { f.focus(); toast(L('ใส่ชื่อผู้ส่งก่อนนะ เด็กๆ จะได้รู้ว่าใครส่ง', 'Add your name so the kids know who it is from')); return; }

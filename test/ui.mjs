@@ -776,7 +776,10 @@ const T = 'hk-macau-2026';
   await s.shot('20-viewer');
   // grandma sends Mimi a heart from the book
   await page.goto(`${BASE}/#/t/${T}/hearts`); await page.waitForSelector('#hearts .hform');
-  await page.click('[data-a="heartto"][data-v="mimi"]'); await page.click('[data-a="heartemo"][data-v="🤗"]');
+  ok(await page.locator('[data-a="heartemo"]').count() === 6 && await page.locator('[data-a="heartemo"] img.emi').count() === 6
+    && await page.evaluate(async () => (await Promise.all([...document.querySelectorAll('[data-a="heartemo"] img.emi')].map((i) => fetch(i.src).then((r) => r.ok)))).every(Boolean)), 'heart picker: the family\'s own emoji, every picture there');
+  await page.click('[data-a="heartto"][data-v="mimi"]'); await page.click('[data-a="heartemo"][data-v="😍"]');
+  ok((await page.innerHTML('[data-a="sendheart"]')).includes('/art/emoji/love.webp'), 'heart: the send button shows the picked emoji as its picture');
   await page.click('[data-a="sendheart"]');
   ok(await page.locator('.hlist li').count() === 0 && await page.evaluate(() => document.activeElement.id) === 'hfrom', 'heart: a sender name is asked for first');
   await page.fill('#hfrom', 'Grandma'); await page.fill('#htext', 'Big hug from Grandma!');
