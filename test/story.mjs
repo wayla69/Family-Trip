@@ -219,7 +219,8 @@ try {
   // browser: the button streams the story into the page and saves it
   const exe = process.env.CHROME || (fs.existsSync(chromium.executablePath()) ? undefined : '/opt/pw-browsers/chromium-1194/chrome-linux/chrome');
   const browser = await chromium.launch({ executablePath: exe, args: ['--no-sandbox'] });
-  const page = await (await browser.newContext({ viewport: { width: 390, height: 844 } })).newPage();
+  const ctx1 = await browser.newContext({ viewport: { width: 390, height: 844 } }); await ctx1.addInitScript(() => localStorage.setItem('mbs_logall', '1'));   // every record-page box on the page
+  const page = await ctx1.newPage();
   const errs = []; page.on('pageerror', (e) => errs.push(e.message));
   await page.goto(BASE + '/'); await page.fill('#lcode', CODE); await page.click('#lf button[type=submit]'); await page.waitForSelector('.shelf');
   await page.goto(`${BASE}/#/t/${T}/log/1`); await page.waitForSelector('#storygo');
@@ -354,7 +355,7 @@ try {
     ok(!vck || (await (await fetch(BASE + '/api/b/state', { headers: { cookie: vck.split(';')[0] } })).json()).media.find((m) => m.id === 'ph-ai-0001').tags.includes('kids'), 'photos: relatives see the tags in the book'); }
   { const P = createRequire(import.meta.url)('../server/story.js').parseQuiz;
     ok(P('no json here') === null && P('[{"q":"x","a":[{"t":"a"}],"ok":0}]') === null && P('[{"q":"x","a":[{"t":"a"},{"t":"b"}],"ok":1}]')[0].a.length === 2, 'memory game parser: no JSON or too few answers → nothing kept'); }
-  { const b2 = await chromium.launch({ executablePath: exe, args: ['--no-sandbox'] }); const pg2 = await (await b2.newContext({ viewport: { width: 390, height: 844 } })).newPage();
+  { const b2 = await chromium.launch({ executablePath: exe, args: ['--no-sandbox'] }); const ctx2 = await b2.newContext({ viewport: { width: 390, height: 844 } }); await ctx2.addInitScript(() => localStorage.setItem('mbs_logall', '1')); const pg2 = await ctx2.newPage();
     await pg2.goto(BASE + '/'); await pg2.fill('#lcode', CODE); await pg2.click('#lf button[type=submit]'); await pg2.waitForSelector('.shelf');
     await pg2.goto(`${BASE}/#/t/${T}/book`); await pg2.waitForSelector('#foretext');
     ok(await pg2.inputValue('#foretext') === 'ทริปนี้เราไปฮ่องกง — พ่อแม่เขียนเอง' && await pg2.locator('#forego').count() === 1, 'book: the foreword box holds the saved foreword, with a Claude draft button');

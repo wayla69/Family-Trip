@@ -18,8 +18,9 @@ const jpg = (i, w = 1800, h = 1200) => sharp({ create: { width: w, height: h, ch
   ok(/script-src 'self';/.test(csp) && /frame-ancestors 'none'/.test(csp), 'Content-Security-Policy: own scripts only, no framing');
 }
 const browser = await chromium.launch({ executablePath: exe, args: ['--no-sandbox'] });
-async function session(name, { width = 390, height = 844, scheme = 'light' } = {}) {
+async function session(name, { width = 390, height = 844, scheme = 'light', logall = true } = {}) {
   const ctx = await browser.newContext({ viewport: { width, height }, deviceScaleFactor: 2, colorScheme: scheme, reducedMotion: 'reduce' });   // stable screenshots
+  if (logall) await ctx.addInitScript(() => localStorage.setItem('mbs_logall', '1'));   // the record page's "more" fold stays open (the parents' own "keep open" switch), so every box is on the page for the checks below
   const page = await ctx.newPage();
   const errs = [];
   page.on('pageerror', (e) => errs.push(e.message));
@@ -72,6 +73,17 @@ const T = 'hk-macau-2026';
   await page.click(`.spine[href="#/t/${T}"]`); await page.waitForSelector('.hubgrid');
   // the book opens on its menu: a tile per topic, today first, the detail one tap away
   ok(await page.locator('.hubgrid .tile').count() >= 14 && await page.locator('.hubgrid .tile.today').count() === 1 && /อีก|to go/.test(await page.textContent('.tile.today')), 'book menu: topic tiles, today on top with the countdown');
+  // the tiles sit in three named groups; before the trip "get ready" leads, and every tile is in exactly one group
+  ok(await page.locator('.hubpart').count() === 3 && /ready|เตรียม/.test(await page.locator('.hubpart').first().textContent()) && await page.locator('.hubpart + .hubgrid').count() === 3 && await page.locator('.hubgrid.hero .tile').count() === 1, 'book menu: three named groups, "get ready" first before the trip');
+  { // a fresh phone: the record page shows tonight's three (photos, words, moods) and "day done", the rest folded under "more"
+    const f = await session('fold', { logall: false }); await login(f.page);
+    await f.page.goto(`${BASE}/#/t/${T}/log/0`); await f.page.waitForSelector('details.more');
+    const y = (q) => f.page.evaluate((q) => document.querySelector(q).getBoundingClientRect().top, q);
+    ok(!(await f.page.locator('details.more').evaluate((d) => d.open)) && (await y('#qtext')) < (await y('[data-a="done"]')) && (await y('[data-a="done"]')) < (await y('details.more')) && !(await f.page.locator('#favtext').isVisible()), 'record page: quotes → mood → day done above the fold; favourite/note/firsts folded on a fresh day');
+    await f.page.click('details.more .linkbtn[data-a="logall"]'); await f.page.waitForSelector('#favtext');
+    ok(await f.page.locator('#favtext').isVisible() && await f.page.evaluate(() => localStorage.getItem('mbs_logall') === '1'), 'record page: "keep open" shows every box and is remembered on this phone');
+    await f.ctx.close();
+  }
   ok(await page.locator('.tile[href$="/eat"]').count() === 1 && await page.locator('.tile[href$="/sos"]').count() === 1 && await page.locator('.tile[href$="/stays"]').count() === 1 && await page.locator('.tile.kid[data-a="kidmode"]').count() === 1, 'book menu: eat, emergency, stays, kid mode tiles');
   ok(await page.evaluate(() => [...document.querySelectorAll('.hubgrid .tile')].every((t) => t.scrollHeight <= t.clientHeight + 1)), 'book menu: no tile clips its text (the kid-mode button grows like the link tiles)');
   ok(await page.evaluate(() => [...document.querySelectorAll('.hubgrid .tile')].every((t) => getComputedStyle(t).marginTop === '0px' && getComputedStyle(t).marginBottom === '0px')), 'book menu: no tile carries its own margin, so a row lines up (the bookshelf tile used to pick up the shelf page’s 22 px)');
@@ -646,7 +658,7 @@ const T = 'hk-macau-2026';
   const s = await session('wide', { width: 1440, height: 900 });
   await login(s.page);
   await s.page.goto(`${BASE}/#/t/${T}`); await s.page.waitForSelector('.hubgrid');
-  ok((await s.page.locator('.hubgrid').evaluate((g) => getComputedStyle(g).gridTemplateColumns.split(' ').length)) >= 5, 'wide: the menu spreads into 5+ columns');
+  ok((await s.page.locator('.hubgrid:not(.hero)').first().evaluate((g) => getComputedStyle(g).gridTemplateColumns.split(' ').length)) >= 5, 'wide: the menu spreads into 5+ columns');
   await s.shot('10a-menu-wide', false);
   await s.page.goto(`${BASE}/#/t/${T}/book`); await s.page.waitForSelector('#d1');
   const m = await s.page.evaluate(() => ({

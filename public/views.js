@@ -124,7 +124,7 @@ function topBar(t, p) {
   const sub = t && p[2] && p[2] !== 'hub';
   const back = t ? `<a class="ibtn" href="${sub ? `#/t/${esc(t.id)}` : '#/'}" aria-label="${sub ? L('เมนูเล่ม', 'Book menu') : L('ชั้นหนังสือ', 'Bookshelf')}">${ic('back')}</a>` : '';
   const secName = sub ? (p[2] === 'log' ? L('บันทึก', 'Record') : secTitle(p[2]) || esc(t.theme.kicker || '')) : '';
-  const ttl = t ? `<small>${sub ? secName : esc(t.theme.kicker || '')}</small>${esc(T(t.title))}` : `<small>${esc(kicker())}</small>${esc(appName())}`;
+  const ttl = t ? `<small>${sub ? secName : esc(t.theme.kicker || '')}</small>${esc(T(t.title).split(' · ').pop())}` : `<small>${esc(kicker())}</small>${esc(appName())}`;   // the place, not the long brand name: it fits a phone's bar
   return `<header class="top"><div class="in">${back}<div class="ttl">${ttl}</div>
 <span class="progress" id="prog"></span>${t && sub && p[2] !== 'search' ? `<a class="ibtn" href="#/t/${esc(t.id)}/search" aria-label="${L('ค้นหาทั้งเล่ม', 'Search the whole book')}">${ic('search')}</a>` : ''}<button class="ibtn fsb" data-a="fs" data-l="${+ls('fs') || 0}" aria-label="${L('ขนาดตัวอักษร', 'Text size')}">Aa</button>
 <div class="seg" role="group" aria-label="language"><button data-a="lang" data-v="th" aria-pressed="${lang === 'th'}">ไทย</button><button data-a="lang" data-v="en" aria-pressed="${lang === 'en'}">EN</button></div></div></header>`;
@@ -193,8 +193,9 @@ ${visual}
 <p class="lede">${L('แต่ละทริปคือหนึ่งเล่ม เปิดอ่านได้ทั้งตอนเที่ยวและอีกหลายปีข้างหน้า', 'Each trip is a book — to fill in on the road and reread for years.')}</p>
 <div class="shelf">${books}${add}</div>
 <div class="part">${L('พาสปอร์ตนักผจญภัย', 'The kids’ passports')} 🛂</div>
-<a class="nbcard" href="#/notebook"><span class="emb">📓</span><div><b>${L('สมุดโน้ตนักเดินทาง', 'Travel notebook')}</b><small>${S.reviews.length ? L(`${S.reviews.length} รีวิว · ที่พัก ร้านอาหาร สถานที่ — ไว้วางแผนทริปหน้า`, `${S.reviews.length} reviews · stays, food, places — for planning the next trip`) : L('ให้ดาว ติดแท็ก จดว่าอะไรที่ครอบครัวเราชอบ — ไว้วางแผนทริปหน้า', 'Stars, tags and notes on what worked for our family — for planning the next trip')}</small></div><span class="arrow">›</span></a>
 <div class="ppmini">${children().map((k) => { const n = passportStamps(k.slug); return `<a class="ppc s kid-${esc(k.slug)}" href="#/passport/${esc(k.slug)}"><span class="emb">${kidArt(k.slug) ? `<img src="${kidArt(k.slug)}" alt="">` : '🌏'}</span><b>${L('พาสปอร์ตนักผจญภัย', 'Memory Passport')}</b><span class="nm">${esc(kidName(k.slug))}</span><small>${n} ${L('ตราประทับ', n === 1 ? 'stamp' : 'stamps')}</small></a>`; }).join('')}</div>
+<div class="part">${L('สำหรับทริปหน้า', 'For the next trip')} 📓</div>
+<a class="nbcard" href="#/notebook"><span class="emb">📓</span><div><b>${L('สมุดโน้ตนักเดินทาง', 'Travel notebook')}</b><small>${S.reviews.length ? L(`${S.reviews.length} รีวิว · ที่พัก ร้านอาหาร สถานที่ — ไว้วางแผนทริปหน้า`, `${S.reviews.length} reviews · stays, food, places — for planning the next trip`) : L('ให้ดาว ติดแท็ก จดว่าอะไรที่ครอบครัวเราชอบ — ไว้วางแผนทริปหน้า', 'Stars, tags and notes on what worked for our family — for planning the next trip')}</small></div><span class="arrow">›</span></a>
 ${isEditor() ? backupCard() : ''}
 ${aiCard()}
 <div class="row end" style="margin-top:18px">${isEditor() ? `<a class="btn ghost small" href="#/family">👨‍👩‍👧‍👦 ${L('ครอบครัวของเรา', 'Our family')}</a><a class="btn ghost small" href="#/viewers">👪 ${L('ญาติที่ดูได้', 'Who can see the books')}</a>` : ''}${isEditor() && S.features.story ? `<a class="btn ghost small" href="#/import">📄 ${L('นำเข้าเล่มจาก PDF', 'Book from a PDF')}</a>` : ''}<button class="btn ghost small" data-a="logout">⎋ ${L('ออกจากระบบ', 'Sign out')}</button></div>`;
@@ -432,10 +433,17 @@ function viewHub(t) {
       : off.stale ? L(`เก็บเมื่อ ${off.when} · มีรูปใหม่ ${off.fresh} รูป กดเก็บเพิ่ม`, `Stored ${off.when} · ${off.fresh} new photo${off.fresh > 1 ? 's' : ''}, tap to top up`) : L(`เก็บไว้ในเครื่องแล้ว · ${off.when}`, `Stored on this phone · ${off.when}`)), off.got && !off.stale ? '' : 'warn') : '',
     ed ? `<button class="tile kid" data-a="kidmode"><span class="e">${ic('kid')}</span><b>${L('โหมดเด็ก', 'Kid mode')}</b><small>${L('ระบายสี วาดรูป ปั๊มตรา และแผนที่', 'Colour, draw, stamps and the map')}</small></button>` : '',
     `<a class="tile shelfgo" href="#/"><span class="e">${ic('shelf')}</span><b>${L('ชั้นหนังสือ', 'Bookshelf')}</b><small>${L('เปลี่ยนเล่ม', 'Other books')}</small></a>`,
-  ].filter(Boolean).join('');
+  ].filter(Boolean);
+  // the tiles in three named groups, the group the family needs now first: on the trip "during the trip", before it "get ready",
+  // after it "memories" — so a parent reads one heading, not fifteen tiles (the Today tile stays on top by itself)
+  const GROUPS = { now: ['ระหว่างทริป', 'During the trip', /\bt-(log|eat|stays|sos)\b/], mem: ['ความทรงจำ', 'Memories', /\bt-(book|firsts|photos|hearts)\b|href="#\/passport"|tile kid\b/], prep: ['แผนและเตรียมตัว', 'Plans & getting ready', /./] };
+  const order = dn >= 0 ? ['now', 'mem', 'prep'] : until > 0 ? ['prep', 'now', 'mem'] : ['mem', 'now', 'prep'];
+  const groupOf = (h) => ['now', 'mem', 'prep'].find((g) => GROUPS[g][2].test(h));   // matched in this order: "prep" takes whatever is left
+  const hero = tiles.filter((h) => /\btile t-today\b/.test(h)).join(''), rest = tiles.filter((h) => !/\btile t-today\b/.test(h));
+  const groups = order.map((g) => { const xs = rest.filter((h) => groupOf(h) === g); return xs.length ? `<div class="part hubpart">${L(GROUPS[g][0], GROUPS[g][1])}</div><div class="hubgrid">${xs.join('')}</div>` : ''; }).join('');
   return `<section class="hubhead">${stampHtml(t, true)}<div class="grow"><div class="kicker">${esc(t.theme.kicker || '')}</div><h1>${esc(T(t.title).split(' · ')[0])}</h1><p class="line">${esc(fmtRange(t))}${ages ? ' · ' + esc(ages) : ''}</p></div></section>
 <a class="hubsearch" href="#/t/${esc(t.id)}/search">${ic('search')}<span><b>${L('ค้นหาทั้งเล่ม', 'Search the whole book')}</b><small>${L('หมอ · ยา · แท็กซี่ · ห้องน้ำ · เด็กหลง', 'doctor · pharmacy · taxi · toilet · lost child')}</small></span></a>
-<div class="hubgrid">${tiles}</div>`;
+<div class="hubgrid hero">${hero}</div>${groups}`;
 }
 /* ---------- search the whole book ----------
    One index per book, both languages (a Thai phone finds "taxi", an English one finds "แท็กซี่"): the pocket-guide sections (stays, emergency,
@@ -1768,6 +1776,9 @@ function viewLog(t, i, evening) {
   const firstDay = (key, k) => { const e = entriesOf(t.id).find((x) => x.kind === 'first' && x.first_key === key && x.child === k); return e ? e.day : -1; };
   const kidsDoneElsewhere = (key) => kids.every((k) => { const fd = firstDay(key, k); return fd >= 0 && fd !== i; });
   const kids = children().map((c) => c.slug);
+  // tonight's three (photos, words, moods) and "day done" come first; everything else folds under "more" — open once it holds
+  // something of this day, or always when the parents asked for that (ls logall)
+  const moreOpen = !!(ls('logall') || fav || note || visited.size || audioOf(t.id, i).length || spendOf(t.id, i).length || es.some((e) => e.kind === 'first') || S.reviews.some((r) => r.trip === t.id && r.day === i));
   return `<div class="daystrip" role="tablist">${strip}</div>${aiJump(t, i, dk)}
 <div class="day" style="border:0;margin-top:0;padding-top:6px"><div class="hd"><div class="no">${String(i + 1).padStart(2, '0')}</div>
 <div class="dl">${L('วันที่', 'Day')} ${i + 1} · ${esc(fmtDay(d.date))}</div><div></div>
@@ -1777,7 +1788,6 @@ ${planHtml(t, i, i === now) ? `<section class="blk planblk">${planHtml(t, i, i =
 <section class="blk"><h3>📷 ${L('รูป', 'Photos')} <span class="label">${ph.length}</span></h3>
 <div class="row"><button class="btn" type="button" data-a="pickphotos" data-fpick data-t="${esc(t.id)}" data-d="${i}">＋ ${L('เพิ่มรูป', 'Add photos')}</button><span class="progress" id="prog2"></span></div>
 ${ph.length ? `<div class="mosaic" style="margin-top:10px">${ph.map((m) => photoBtn(t, m)).join('')}</div>` : ''}${upBlock()}</section>
-${clipsBlock(t, i)}
 
 <section class="blk"><h3>💬 ${L('คำพูดน่ารัก', 'Things they said')}</h3>
 <div class="row" role="group">${kids.concat('both').map((k) => `<button class="chip" data-a="who" data-v="${k}" aria-pressed="${quoteWho === k}">${kidFace(k)} ${esc(kidName(k))}</button>`).join('')}</div>
@@ -1787,6 +1797,12 @@ ${quotes.length ? `<ul class="items">${quotes.map((e) => `<li><div class="grow">
 
 <section class="blk"><h3>🙂 ${L('อารมณ์วันนี้', 'Mood today')} <span class="label">${L('แตะซ้ำเพื่อล้าง', 'tap again to clear')}</span></h3>
 ${kids.map((k) => `<div class="moodrow">${kidBadge(k)}<div class="opts">${(t.moods.length ? t.moods : ['😄', '🥰', '🤩', '😋', '😴', '😢']).map((m) => `<button data-a="mood" data-k="${k}" data-v="${esc(m)}" data-t="${esc(t.id)}" data-d="${i}" aria-pressed="${mood(k) === m}" aria-label="${esc(kidName(k))} ${esc(m)}">${esc(m)}</button>`).join('')}</div></div>`).join('')}</section>
+
+<section class="blk dayendblk"><button class="btn dayend${d.done_at ? ' is-done' : ''}" data-a="done" data-t="${esc(t.id)}" data-d="${i}">${d.done_at ? '✓ ' + L('วันนี้เสร็จแล้ว (แตะเพื่อยกเลิก)', 'Day done (tap to undo)') : '🏁 ' + L('จบวันนี้', 'Mark day done')}</button>
+<div class="row"><a class="btn ghost" href="#/t/${esc(t.id)}">📖 ${L('ดูในสมุด', 'See it in the book')}</a>${navigator.share ? `<button class="btn ghost" data-a="share" data-t="${esc(t.id)}" data-d="${i}">📤 ${L('ส่งให้ญาติ', 'Share with family')}</button>` : ''}<button class="btn ghost" data-a="daycard" data-t="${esc(t.id)}" data-d="${i}">🖼️ ${L('การ์ดวันนี้', 'Day card')}</button></div></section>
+
+<details class="more"${moreOpen ? ' open' : ''}><summary><span><b>＋ ${L('เพิ่มเติม', 'More')}</b><small>${L('ของโปรด · โน้ต · เสียงเด็กๆ · ครั้งแรก · เช็กอิน · ค่าใช้จ่าย · รีวิว', 'favourite · note · voices · firsts · check-ins · spending · reviews')}</small></span><button type="button" class="linkbtn" data-a="logall">${ls('logall') ? L('พับได้', 'Can fold') : L('เปิดไว้ตลอด', 'Keep open')}</button></summary>
+${clipsBlock(t, i)}
 
 <section class="blk"><h3>💖 ${L('ของโปรดวันนี้', 'Favourite thing today')}</h3>
 <input id="favtext" class="field" data-a-blur="fav" data-t="${esc(t.id)}" data-d="${i}" data-draft="f:${esc(dk)}" value="${esc(drafts['f:' + dk] ?? (fav ? fav.text : ''))}" placeholder="${L('เช่น ไอติมมะม่วง', 'e.g. mango ice cream')}"></section>
@@ -1807,10 +1823,8 @@ ${d.planned.map((p) => `<div class="check"><button data-a="place" data-v="${esc(
 
 ${spendBlock(t, i, dk)}
 ${notebookBlock(t, i)}
-${aiGroup(t, i, dk)}
-
-<section class="blk"><button class="btn dayend${d.done_at ? ' is-done' : ''}" data-a="done" data-t="${esc(t.id)}" data-d="${i}">${d.done_at ? '✓ ' + L('วันนี้เสร็จแล้ว (แตะเพื่อยกเลิก)', 'Day done (tap to undo)') : '🏁 ' + L('จบวันนี้', 'Mark day done')}</button>
-<div class="row"><a class="btn ghost" href="#/t/${esc(t.id)}">📖 ${L('ดูในสมุด', 'See it in the book')}</a>${navigator.share ? `<button class="btn ghost" data-a="share" data-t="${esc(t.id)}" data-d="${i}">📤 ${L('ส่งให้ญาติ', 'Share with family')}</button>` : ''}<button class="btn ghost" data-a="daycard" data-t="${esc(t.id)}" data-d="${i}">🖼️ ${L('การ์ดวันนี้', 'Day card')}</button></div></section>`;
+</details>
+${aiGroup(t, i, dk)}`;
 }
 // what we actually spent today: amount + category + a word → a row; the day's total in the heading, the trip's so far underneath.
 // A grown-up's number, so it stays on this page (and in our database) — never in the printed memory book or a seed.
