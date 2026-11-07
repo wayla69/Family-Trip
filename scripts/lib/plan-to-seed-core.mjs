@@ -52,6 +52,7 @@ function validate(p) {
     const n = D.datesBetween(d0, d1).length;
     must(p.days.length === n, `days: ${p.days.length} given, ${n} dates from ${p.from} to ${p.to}`);
   }
+  let noH = 0;   // timeline steps without their own headline h (the Today page then shows the step's first clause)
   (p.days || []).forEach((d, i) => {
     const at = `days[${i}]`;
     must(isI18n(d.title), `${at}.title: {th, en}`);
@@ -60,13 +61,14 @@ function validate(p) {
       must(s && typeof s.en === 'string' && typeof s.th === 'string' && s.en.trim() && s.th.trim(), `${at}.planned[${j}]: needs th and en`);
       if (s.key !== undefined) must(/^[a-z0-9][a-z0-9._-]{0,59}$/i.test(s.key), `${at}.planned[${j}].key: letters, digits . _ - only`);
     });
-    (d.plan || []).forEach((x, j) => { must(isI18n(x), `${at}.plan[${j}]: {t?, th, en}`); if (x.t !== undefined && !/^[0-2]\d:[0-5]\d$/.test(x.t)) warns.push(`${at}.plan[${j}].t "${x.t}" is not HH:MM`); if (x.tz !== undefined) { let ok = true; try { new Intl.DateTimeFormat('en', { timeZone: x.tz }); } catch { ok = false; } must(ok, `${at}.plan[${j}].tz "${x.tz}" is not an IANA timezone`); } });
+    (d.plan || []).forEach((x, j) => { must(isI18n(x), `${at}.plan[${j}]: {t?, th, en}`); if (x.h !== undefined) must(isI18n(x.h), `${at}.plan[${j}].h: {th, en}`); else noH++; if (x.t !== undefined && !/^[0-2]\d:[0-5]\d$/.test(x.t)) warns.push(`${at}.plan[${j}].t "${x.t}" is not HH:MM`); if (x.tz !== undefined) { let ok = true; try { new Intl.DateTimeFormat('en', { timeZone: x.tz }); } catch { ok = false; } must(ok, `${at}.plan[${j}].tz "${x.tz}" is not an IANA timezone`); } });
     (d.legs || []).forEach((l, j) => must(l && l.from && l.to, `${at}.legs[${j}]: needs from and to`));
     (d.picks || []).forEach((x, j) => must(x && x.name, `${at}.picks[${j}]: needs name`));
     if (d.mission) { if (!Array.isArray(d.mission.facts) || !d.mission.facts.length) warns.push(`${at}.mission has no facts`); if (!Array.isArray(d.mission.spot) || d.mission.spot.length !== 4) warns.push(`${at}.mission.spot: 4 things to spot work best (${(d.mission.spot || []).length} given)`); }
     const known = new Set(['title', 'sleep', 'wx', 'emoji', 'planned', 'moving', 'pick', 'planB', 'money', 'plan', 'tips', 'stay', 'route', 'eat', 'learn', 'quiz', 'tale', 'legs', 'picks', 'food', 'mission']);
     const extra = Object.keys(d).filter((k) => !known.has(k)); if (extra.length) warns.push(`${at}: unknown keys ignored: ${extra.join(', ')}`);
   });
+  if (noH) warns.push(`${noH} timeline step${noH === 1 ? '' : 's'} without a headline h — the Today page shows each one's first clause instead`);
   return { errs, warns };
 }
 

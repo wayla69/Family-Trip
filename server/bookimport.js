@@ -123,7 +123,7 @@ async function run({ buf, slug, client, take, onUsage, log = () => {}, dir, kids
   const top = await ask('structure', EXTRACT(), {
     system: sys,
     user: `Write the plan's top level and its days from the manual: {slug, title, sub, from, to, tz, place, places, kicker, display, emoji, days}. `
-      + `slug = "${slug}". One day per date from the first to the last day. For each day fill title, sleep, wx, planned (every stop, with a FULL Google Maps query q and a local-script name zh when the manual gives one), moving, pick, planB, money (prices only), plan (the timeline: t = HH:MM), tips (include the "show the driver" names), legs (every move with from/to/by/min), picks (each meal: the pick, with alt = the backup), stay {name, addr, q}. `
+      + `slug = "${slug}". One day per date from the first to the last day. For each day fill title, sleep, wx, planned (every stop, with a FULL Google Maps query q and a local-script name zh when the manual gives one), moving, pick, planB, money (prices only), plan (the timeline: t = HH:MM; h = the step's headline for the trip itself — one emoji, then at most 6 short, fun, concrete words a parent reads at a glance, never a bare noun list ("🏰 Off to Disneyland!", "🌉 Golden bus over the sea"); en = every detail of the step, ' · ' between the pieces, opened with a tap), tips (include the "show the driver" names), legs (every move with from/to/by/min), picks (each meal: the pick, with alt = the backup), stay {name, addr, q}. `
       + `Day item schema: ${JSON.stringify(S.properties.days.items)}\nExample of a whole plan (format only): ${SAMPLE()}\n${EN_ONLY}`,
     max: 48000,
   });
@@ -260,7 +260,7 @@ Trip: ${JSON.stringify({ title: top.title, place: top.place, from: top.from, to:
   const BATCH = 350;
   const thaiBatch = async (part, step) => {
     const th = await ask(step, WRITE(), {
-      system: 'You translate a family trip guide from English into natural Thai for Thai parents. Keep proper names, place names, times, prices and numbers as written (Latin script for names is fine). Short and clear. Answer with a JSON array of strings only — the same length and order as the input.',
+      system: 'You translate a family trip guide from English into natural Thai for Thai parents. Keep times, prices and numbers as written. Never translate a proper name word by word (a bus line, a hotel, an attraction, a place): keep it in Latin script, or in a short headline write it the way Thais say it (Golden Bus → โกลเด้นบัส, Luna Park → ลูน่าพาร์ค, Scenic World → ซีนิกเวิลด์). Short and clear; a timeline headline (one emoji + a few words) stays as short and as fun in Thai. Answer with a JSON array of strings only — the same length and order as the input.',
       user: JSON.stringify(part.map((h) => h.en)),
       max: 32000, manual: false,
     });

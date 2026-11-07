@@ -144,6 +144,21 @@ details.fold[open]>summary{margin-bottom:8px}.planblk.fold .dayplan{margin-top:4
 /* a long timeline row shows two lines; a tap shows it all (sheets.js) */
 .tl.plan li>div{display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden;cursor:pointer}
 .tl.plan li.open>div{display:block;-webkit-line-clamp:unset}
+/* Today's timeline: the step's first clause is the summary, the rest folds below it (views.js tlBrief) */
+.tl.plan.brief li>div{display:block;overflow:visible}
+.tl.plan.brief .tm{display:flex;align-items:flex-start;gap:6px;justify-content:space-between}
+.tl.plan.brief .tlchev{flex:none;display:inline-flex;align-items:center;justify-content:center;width:26px;height:26px;margin:-1px -4px 0 0;border-radius:50%;color:var(--accent);background:color-mix(in srgb,var(--accent) 10%,transparent)}
+.tl.plan.brief .tlchev .ic{width:16px;height:16px;transition:transform .15s}.tl.plan.brief li.open .tlchev .ic{transform:rotate(90deg)}
+.tl.plan.brief .tsub{display:none;margin:6px 0 2px;padding:0 0 0 16px;font-size:14px;line-height:1.45;color:var(--muted)}
+.tl.plan.brief li.open .tsub{display:block}.tl.plan.brief .tsub li{margin:2px 0}
+.tl.plan.brief li>div[role=button]{min-height:30px}
+.tl.plan.brief .tli{display:inline-block;width:1.4em;margin-right:4px;text-align:center}.tl.plan.brief .tli .emi{width:1.15em;height:1.15em;vertical-align:-.2em}
+/* Today's header: bed + weather as icon lines (views.js dayFacts) */
+.dfacts{list-style:none;margin:8px 0 0;padding:0;display:grid;gap:6px;font-size:15px;line-height:1.4;color:var(--ink)}
+.dfacts li{display:grid;grid-template-columns:1.6em 1fr;gap:6px;align-items:start}
+.dfacts .fi{text-align:center;font-size:17px;line-height:1.25}.dfacts .fi .emi{width:1.2em;height:1.2em}
+.dfacts b{font-weight:600}.dfacts small{display:block;font-size:13px;color:var(--muted)}
+.dfacts li.avg small{display:inline;font-size:12px}.tl.plan.brief li.next .tsub{font-weight:400}
 /* tap targets (owner's review, Nov 2026): 44 px for everything a parent taps on a phone, including the small chips,
    the eat page's navigate buttons and inline map links (which keep their place in the text through negative margins) */
 main .chip,main .btn.small,main .mini,main .seg button,main .linkbtn,.stayc .go,.eatday a.go,.eatday button.go,.remind .btn{min-height:44px}

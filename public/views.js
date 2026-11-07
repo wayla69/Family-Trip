@@ -616,6 +616,31 @@ const mealKind = (p) => { const m = ((p.meal || {}).en || '').toLowerCase(); ret
 // a name with its navigate button (Today's answer rows): the name is plain text, the 44 px pin opens Maps — an underlined name read as a link to a page
 const navB = (q, label) => (q ? `<a class="navb" href="${esc(mapsUrl(q))}" target="_blank" rel="noopener" aria-label="${esc(L('นำทางไป ', 'Navigate to ') + label)}">${ic('pin')}</a>` : '');
 const mealDd = (p) => `<span class="nmrow"><b>${esc(p.name)}</b>${navB(p.q, p.name)}</span>${p.alt ? `<small class="bk"><span class="nmrow">${L('ร้านสำรอง', 'Backup')}: ${esc(p.alt.name)}${navB(p.alt.q, p.alt.name)}</span></small>` : ''}`;
+// Today's header (owner's review, Nov 2026: "reads like a lecture, not a trip"): the bed and the weather as short icon lines, not one paragraph —
+// each " · " piece of d.wx is its own line, the "(averages, not a forecast …)" aside drops to one quiet word, "x — do y" leads with the y
+const WX_ICON = [[/sunset|พระอาทิตย์ตก/i, '🌅'], [/°C/, '🌡️'], [/wind|ลม|breeze|sleeve|เสื้อ|jacket|cool|เย็น/i, '🧥'], [/\bsea\b|น้ำทะเล|water park|สวนน้ำ/i, '🌊'], [/clock|นาฬิกา|daylight|ออมแสง/i, '🕒'], [/rain|ฝน|umbrella|ร่ม/i, '☔'], [/sun\b|แดด|hat|หมวก/i, '🧢'], [/dark|มืด|night|ค่ำ/i, '🌙']];
+function dayFacts(d) {
+  const lines = [];
+  if (d.sleep) lines.push(['🛏️', `<b>${esc(T(d.sleep))}</b>`]);
+  let avg = false;
+  String(T(d.wx) || '').split(' · ').map((x) => x.trim()).filter(Boolean).forEach((x) => {
+    const p = x.replace(/\s*\(([^)]*)\)\s*$/, (m, a) => { if (/forecast|พยากรณ์|average|เฉลี่ย/i.test(a)) avg = true; return ''; });
+    const [lead, ...rest] = p.split(' — '), ico = (WX_ICON.find(([re]) => re.test(p)) || [, '☁️'])[1];
+    const sun = lead.match(/(?:sunset|พระอาทิตย์ตก)[^\d]*(\d{1,2}[:.]\d{2})/i);
+    const txt = sun ? `<b>${L('พระอาทิตย์ตก', 'Sunset')} ${esc(sun[1])}</b>${rest.length ? ` <small>${esc(rest.join(' — '))}</small>` : ''}`
+      : rest.length ? `<b>${esc(rest.join(' — '))}</b> <small>${esc(lead)}</small>` : esc(lead);
+    lines.push([ico, txt]);
+  });
+  if (!lines.length) return '';
+  return `<ul class="dfacts" style="grid-column:2/3">${lines.map(([e, h]) => `<li><span class="fi" aria-hidden="true">${emoIn(e)}</span><span>${h}</span></li>`).join('')}${avg ? `<li class="avg"><span class="fi"></span><small>${L('อากาศเป็นค่าเฉลี่ยช่วงนี้ ไม่ใช่พยากรณ์', 'Weather: usual for the season, not a forecast')}</small></li>` : ''}</ul>`;
+}
+// a travel icon per timeline step, picked from its English words (first match wins)
+const TL_ICON = [[/\bdeparts?\b|\bflight\b|\bfly\b|boarding|\bTG ?\d|\bQF ?\d|take ?off/i, '✈️'], [/\bland\b|arriv|immigration/i, '🛬'], [/check in|check-in/i, '🧳'], [/\bbus\b|coach|shuttle/i, '🚌'], [/ferry|\bboat\b|cruise/i, '⛴️'], [/train|MTR|metro|tram|\brail/i, '🚆'], [/\bdrive\b|\bcar\b|van\b|taxi|\bUber/i, '🚗'], [/breakfast/i, '🥐'], [/lunch|dinner|\beat\b|snack|restaurant|dim sum|café|cafe/i, '🍽️'], [/bath|\bbed\b|sleep|nap/i, '🛁'], [/beach|swim|pool|water park/i, '🏖️'], [/park|disney|zoo|aquarium|ocean park/i, '🎡'], [/walk|hike|trail/i, '🚶'], [/museum|temple|church|ruins/i, '🏛️'], [/shop|market|mall/i, '🛍️'], [/hotel|resort|apartment/i, '🏨']];
+const tlIcon = (r) => { const en = (r && r.en) || ''; const m = TL_ICON.find(([re]) => re.test(en.split(' · ')[0])) || TL_ICON.find(([re]) => re.test(en)); return m ? `<span class="tli" aria-hidden="true">${emoIn(m[1])}</span>` : ''; };
+// Today's timeline (owner's review, Nov 2026): each step reads as its first clause; the rest (" · " pieces) folds below it, one tap opens it (sheets.js)
+// a step with its own headline (seed format: plan rows carry h {th, en}, a fun line that starts with an emoji) shows that line; the whole step folds below it
+const tlMore = (r) => !!(r && r.h && T(r.h)) || T(r).includes(' · ');
+const tlBrief = (r) => { const own = r && r.h && T(r.h); const [a, ...b] = own ? [own, ...T(r).split(' · ')] : T(r).split(' · '); return `<span class="tm"><span class="tmt">${own ? emoIn(esc(a)) : tlIcon(r) + esc(a)}</span>${b.length ? `<span class="tlchev" aria-hidden="true">${ic('chev')}</span>` : ''}</span>${b.length ? `<ul class="tsub">${b.map((x) => `<li>${esc(x)}</li>`).join('')}</ul>` : ''}`; };
 // today: the day as one sheet (short timeline, then label → answer rows like the manual's tables); the full plan is one tap away (/today/<i>/full)
 function dayGlance(t, i, brief) {   // brief (before the trip): the timeline, then everything else folded under one line
   const d = t.days[i], pl = d.plan || {}, rows = pl.plan || [], full = `#/t/${esc(t.id)}/today/${i}/full`;
@@ -638,7 +663,7 @@ function dayGlance(t, i, brief) {   // brief (before the trip): the timeline, th
     d.wx && row(L('อากาศ', 'Weather'), esc(T(d.wx))),
     wxLine(t, i) && !brief && row(L('พยากรณ์วันนี้', 'Live forecast'), `<span class="wxlive">${emoIn(esc(wxLine(t, i)))}</span>`),   // before the trip the live line sits above the fold instead
     (nl || nq) && row(L('เรียนรู้', 'Learn'), esc(L(`${nl} เรื่อง · ${nq} คำถามในรถ`, `${nl} card${nl === 1 ? '' : 's'} · ${nq} car question${nq === 1 ? '' : 's'}`)))].filter(Boolean).join('');
-  return `${rows.length ? `<section class="cbox c-sky"><h3 class="ch">${ic('clock')}${L('ไทม์ไลน์', 'Timeline')}</h3><ol class="tl plan brief">${rows.map((r, k) => `<li${st[k] ? ` class="${st[k]}"` : ''}><time>${esc(r.t || '')}</time><div>${st[k] === 'next' ? `<span class="nexttag">${L('ถัดไป', 'Next')}</span> ` : ''}${esc(T(r))}</div></li>`).join('')}</ol></section>` : ''}
+  return `${rows.length ? `<section class="cbox c-sky"><h3 class="ch">${ic('clock')}${L('ไทม์ไลน์', 'Timeline')}</h3><ol class="tl plan brief">${rows.map((r, k) => `<li${st[k] ? ` class="${st[k]}"` : ''}><time>${esc(r.t || '')}</time><div${tlMore(r) ? ' role="button" tabindex="0" aria-expanded="false"' : ''}>${st[k] === 'next' ? `<span class="nexttag">${L('ถัดไป', 'Next')}</span> ` : ''}${tlBrief(r)}</div></li>`).join('')}</ol></section>` : ''}
 ${brief && wxLine(t, i) ? `<p class="wxpre">${ic('weather')} <span class="wxlive">${emoIn(esc(wxLine(t, i)))}</span></p>` : ''}${brief ? `<details class="dmore"><summary>${ic('chev')}<span><b>${L('รายละเอียดวันนี้', 'The rest of the day')}</b><small>${L('เดินทาง · มื้ออาหาร · แผนสำรอง · เงิน · อากาศ', 'Getting around · meals · plan B · money · weather')}</small></span></summary>` : ''}<div class="cgrid">${box('ind', 'route', L('เดินทางและที่พัก', 'Getting around & tonight'), go)}${box('sun', 'eat', L('มื้ออาหาร', 'Meals'), food)}${pl.planB ? `<section class="cbox c-hot"><h3 class="ch">${ic('shuffle')}${L('แผนสำรอง', 'Plan B')}</h3>${pts(T(pl.planB))}</section>` : ''}${box('leaf', 'money', L('เงิน อากาศ และเรื่องเล่า', 'Money, weather, stories'), more)}</div>${brief ? '</details>' : ''}
 ${reportBtn(full, L('อ่านแผนเต็มของวันนี้', "Read today's full plan"))}`;
 }
@@ -730,7 +755,7 @@ function viewToday(t, j, full) {
   const mission = ((t.passport || {}).days || [])[i];
   return `${full ? backSum(`#/t/${esc(t.id)}/today/${i}`) : ''}<div class="daystrip" role="tablist">${strip}</div>
 <article class="day today" style="border:0;margin-top:0;padding-top:6px"><div class="hd"><div class="no">${String(i + 1).padStart(2, '0')}</div><div class="dl">${L('วันที่', 'Day')} ${i + 1} · ${esc(fmtDay(d.date))}${i === dn ? ` <span class="tag">${L('วันนี้', 'Today')}</span>` : ''}</div><div></div><h3>${esc(T(d.title))}</h3>${artImg(t, i, 'hdart')}
-<div class="meta" style="grid-column:2/3">${d.sleep ? `<b>${L('นอนที่', 'Sleep')}</b> ${esc(T(d.sleep))}` : ''}${d.wx ? ` · ${esc(T(d.wx))}` : ''}</div></div></article>
+${dayFacts(d)}</div></article>
 ${banner}
 ${isEditor() && (dn >= 0 || until > 0) ? remindLine(t) : ''}
 <div class="row quick">${isEditor() ? `<a class="btn" href="#/t/${esc(t.id)}/log/${i}">${ic('log')} ${L('บันทึกวันนี้', 'Record today')}</a>` : ''}${pl.route ? extA(pl.route, ic('route') + ' ' + L('เส้นทางวันนี้', "Today's route"), 'qlink') : ''}${pl.stay ? extA(mapsUrl(pl.stay.q || pl.stay.addr), ic('stays') + ' ' + L('ไปที่พัก', 'To the stay'), 'qlink') : ''}${eatCount(t) ? `<a class="qlink" href="#/t/${esc(t.id)}/eat/d/${i}">${ic('eat')} ${L('ร้านอาหาร', 'Eat')}</a>` : ''}</div>

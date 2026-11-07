@@ -349,6 +349,12 @@ const T = 'hk-macau-2026';
   ok(await page.locator('.remind.line [data-a="remind"]').count() === 1 && await page.locator('.remind:not(.line)').count() === 0 && /30/.test(await page.textContent('.remind')), 'today page: one line with a “turn on” button — not a second reminder card (the ask lives on the shelf)');
   const tlRows = await page.$$eval('.tl.plan.brief li div', (els) => els.map((e) => e.textContent));
   ok(tlRows.length > 0 && tlRows.every((x) => !x.endsWith('…')), 'today page: every timeline step is shown whole, never cut with …');
+  { const tl = '.tl.plan.brief > li:has(.tsub)';
+    const sum = await page.$eval(tl, (li) => [[...li.querySelector('.tmt').childNodes].map((n) => (n.alt || n.textContent)).join('').trim(), getComputedStyle(li.querySelector('.tsub')).display, li.querySelector('[aria-expanded]').getAttribute('aria-expanded')]);
+    await page.click(`${tl} .tm`);
+    const op = await page.$eval(tl, (li) => [getComputedStyle(li.querySelector('.tsub')).display, li.querySelector('.tsub li').innerText.trim(), li.querySelector('[aria-expanded]').getAttribute('aria-expanded')]);
+    ok(/^\p{Extended_Pictographic}/u.test(sum[0]) && sum[0].split(' ').length <= 8 && !sum[0].includes(' · ') && sum[1] === 'none' && sum[2] === 'false' && op[0] === 'block' && op[1].length > 0 && op[2] === 'true', `today page: a timeline step reads as a short summary and a tap opens its details below (${sum[0]} → ${op[1]})`);
+    await page.click(`${tl} .tm`); }
   const pickDd = await page.$$eval('.dsheet > div:not(.meal) > dd', (els) => els.map((e) => e.textContent));
   const seedPick = await page.evaluate(() => T(S.trips.find((x) => x.id === 'hk-macau-2026').days[1].plan.pick));
   ok(seedPick.length > 110 && pickDd.includes(seedPick), "today page: the local pick is shown whole (it was cut at 110 characters)");
@@ -1024,7 +1030,7 @@ const T = 'hk-macau-2026';
     ok(pr.status() === 200 && pb.subarray(0, 5).toString('latin1') === '%PDF-' && pages >= pgs.length, `Australia server PDF: ${Math.round(pb.length / 1024)} KB, ${pages} A4 pages for ${pgs.length} book pages`);
   }
   await page.goto(`${BASE}/#/t/big-hop-2027/today`); await page.waitForSelector('.tl.plan');
-  { const r = await page.evaluate(() => [...document.querySelectorAll('.tl.plan li')].map((li) => [li.className, li.querySelector('time').textContent]));
+  { const r = await page.evaluate(() => [...document.querySelectorAll('.tl.plan > li')].map((li) => [li.className, li.querySelector('time').textContent]));
     const nx = r.findIndex(([c]) => c === 'next'), tm = (x) => (x.match(/\d{1,2}:\d{2}/) || [''])[0].padStart(5, '0');
     ok(nx > 0 && r.filter(([c]) => c === 'next').length === 1 && tm(r[nx][1]) > '10:00' && r.slice(0, nx).every(([c, x]) => c === 'past' || !tm(x)) && (await page.textContent('.tl.plan li.next')).includes('Next'),
       `today at 10:00 on day 2: earlier steps fade, the next one is marked (${r.map(([c, x]) => `${x}${c ? ':' + c : ''}`).join(' ')})`); }
