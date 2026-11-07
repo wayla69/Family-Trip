@@ -32,6 +32,8 @@ function beep(kind, x) {   // x: the note's frequency for 'note'
     else if (kind === 'kick') sweep(c, t0, 150, 45, 0.25, 'sine', 0.6);
     else if (kind === 'snare') { noise(c, t0, 0.18, 0.35, 1800); tone(190, 0, 0.1, 'triangle', 0.25); }
     else if (kind === 'hat') noise(c, t0, 0.06, 0.2, 6000);
+    else if (kind === 'clap') { noise(c, t0, 0.09, 0.3, 1200); noise(c, t0 + 0.03, 0.12, 0.25, 1500); }
+    else if (kind === 'frog') { sweep(c, t0, 420, 180, 0.16, 'sawtooth', 0.12); sweep(c, t0 + 0.17, 380, 160, 0.14, 'sawtooth', 0.1); }
     else if (kind === 'bubble') sweep(c, t0, 520 + Math.random() * 380, 1500, 0.12, 'sine', 0.16);
     else if (kind === 'hello') [523, 659, 784].forEach((f, i) => tone(f, i * 0.11, 0.3, 'triangle', 0.16));   // a child picked themself
     else if (kind === 'fanfare') [523, 659, 784, 1047, 784, 1047, 1319].forEach((f, i) => tone(f, i * 0.09, i === 6 ? 0.6 : 0.22, 'triangle', 0.16));
@@ -650,7 +652,7 @@ ${memState.got ? `<button class="kidbig" data-a="memnext">${memState.n + 1 < qs.
   } else if (view === 'music') {   // a xylophone (C major, an animal on every bar), three drums, two songs that light the bars to follow
     body = `<div class="kidguide">${guideImg(1)}<p>${L('แตะแท่งสีให้ร้องเพลง!', 'Tap the bars to make music!')}</p></div>
 <div class="xylo" role="group">${XYLO.map((n, k) => `<button data-a="xylo" data-v="${k}" style="--c:${n[2]};--h:${100 - k * 7}%" aria-label="${n[0]}"><span>${n[3]}</span></button>`).join('')}</div>
-<div class="drums" role="group">${[['kick', '🥁', L('ตุ้ม', 'Boom')], ['snare', '🪘', L('แต๊ก', 'Tak')], ['hat', '🔔', L('ฉิ่ง', 'Ting')]].map(([k, e, l]) => `<button data-a="drum" data-v="${k}"><span>${e}</span><b>${l}</b></button>`).join('')}</div>
+<div class="drums" role="group">${[['kick', '🥁', L('ตุ้ม', 'Boom')], ['snare', '🪘', L('แต๊ก', 'Tak')], ['hat', '🔔', L('ฉิ่ง', 'Ting')], ['clap', '👏', L('ปรบมือ', 'Clap')], ['frog', '🐸', L('กบ', 'Frog')]].map(([k, e, l]) => `<button data-a="drum" data-v="${k}"><span>${e}</span><b>${l}</b></button>`).join('')}</div>
 <div class="songs">${SONGS.map((s, k) => `<button class="kidbig ghost" data-a="song" data-v="${k}" data-k="${esc(kid)}">🎶 ${L(s.th, s.en)}</button>`).join('')}</div>`;
   } else if (view === 'hideseek') {   // I spy: twelve things scattered over the day's picture; the guide names one at a time (its Thai name read aloud)
     if (!hs || hs.key !== `${t.id}.${i}.${kid}`) newHide(t, i, kid);
@@ -941,8 +943,12 @@ const jgPos = (p, g) => `background-image:var(--art);background-size:${g.cols * 
 // ---- music: the xylophone's bars (C major) and two songs as bar numbers; a song lights each bar as it plays ----
 const XYLO = [['C', 261.63, '#FF6B6B', '🐥'], ['D', 293.66, '#FFA94D', '🐸'], ['E', 329.63, '#FFD43B', '🐱'], ['F', 349.23, '#8CE99A', '🐶'], ['G', 392.00, '#66D9E8', '🐰'], ['A', 440.00, '#74C0FC', '🐼'], ['B', 493.88, '#B197FC', '🦊'], ['C', 523.25, '#F783AC', '🐨']];
 const SONGS = [
-  { th: 'ดาวน้อย', en: 'Twinkle twinkle', seq: [0, 0, 4, 4, 5, 5, 4, -1, 3, 3, 2, 2, 1, 1, 0] },
-  { th: 'ลูกแกะน้อย', en: 'Mary had a little lamb', seq: [2, 1, 0, 1, 2, 2, 2, -1, 1, 1, 1, -1, 2, 4, 4] },
+  { th: 'ดาวน้อย', en: 'Twinkle', seq: [0, 0, 4, 4, 5, 5, 4, -1, 3, 3, 2, 2, 1, 1, 0] },
+  { th: 'ลูกแกะน้อย', en: 'Little lamb', seq: [2, 1, 0, 1, 2, 2, 2, -1, 1, 1, 1, -1, 2, 4, 4] },
+  { th: 'พายเรือ', en: 'Row your boat', seq: [0, 0, 0, 1, 2, -1, 2, 1, 2, 3, 4, -1, 7, 7, 7, 4, 4, 4, 2, 2, 2, 0, 0, 0, -1, 4, 3, 2, 1, 0] },
+  { th: 'สะพานลอนดอน', en: 'London Bridge', seq: [4, 5, 4, 3, 2, 3, 4, -1, 1, 2, 3, -1, 2, 3, 4, -1, 4, 5, 4, 3, 2, 3, 4, -1, 1, 4, 2, 0] },
+  { th: 'ลุงแมคโดนัลด์', en: 'Old MacDonald', seq: [0, 0, 0, 4, 5, 5, 4, -1, 2, 2, 1, 1, 0, -1, 0, 0, 0, 4, 5, 5, 4, -1, 2, 2, 1, 1, 0] },
+  { th: 'จิงเกิลเบล', en: 'Jingle bells', seq: [2, 2, 2, -1, 2, 2, 2, -1, 2, 4, 0, 1, 2, -1, 3, 3, 3, 3, 3, 2, 2, 2, 2, 1, 1, 2, 1, -1, 4] },
 ];
 let songT = 0;
 function playSong(n, kid) {
