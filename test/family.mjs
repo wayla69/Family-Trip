@@ -17,7 +17,7 @@ const state = async () => (await fetch(BASE + '/api/b/state', { headers: { cooki
   ok(b.app.en === 'MM Memory' && b.kicker.th === 'ของมีมี่และมีก้า' && b.kicker.en === 'Mimi & Mika', `brand: the app name from the kids' initials and the kicker from their names (${b.app.en} · ${b.kicker.th})`);
   ok(JSON.stringify(b.kids) === JSON.stringify([{ slug: 'mimi', v: '' }, { slug: 'mika', v: '' }]) && !JSON.stringify(b).includes('name_'), 'brand: the drawings by slug only, no names, no birth months');
   const m = await (await fetch(BASE + '/manifest.webmanifest')).json();
-  ok(m.name === 'MM Memory' && m.short_name === 'MM Memory' && m.icons.length === 2, 'the manifest carries the app name');
+  ok(m.name === 'MM Memory' && m.short_name === 'MM Memory' && m.icons.length === 3, 'the manifest carries the app name');
 }
 // ---- the state
 {

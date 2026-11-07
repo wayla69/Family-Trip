@@ -162,6 +162,12 @@ const T = 'hk-macau-2026';
   ok(await page.locator('.golit [data-a="pickphotos"]').count() === 1, 'shortcut "photo": the photo box is lit up and in view');
   const man = await (await page.request.get(`${BASE}/manifest.webmanifest`)).json();
   ok(man.shortcuts.length === 4 && man.shortcuts.every((s) => s.url.startsWith('/#/go/') && s.name && s.short_name), 'manifest: four icon shortcuts to #/go/…');
+  // every icon the manifest names exists at its stated size; each shortcut has its own picture; iPhone gets a 180 px icon
+  const icons = [...man.icons, ...man.shortcuts.flatMap((s) => s.icons)], sizes = [];
+  for (const ic of icons) { const r = await page.request.get(BASE + ic.src); const m = r.ok() ? await sharp(await r.body()).metadata() : {}; sizes.push(`${m.width}x${m.height}` === ic.sizes); }
+  const touch = await page.evaluate(() => document.querySelector('link[rel="apple-touch-icon"]').getAttribute('href'));
+  const tm = await sharp(await (await page.request.get(BASE + touch)).body()).metadata();
+  ok(sizes.every(Boolean) && new Set(man.shortcuts.map((s) => s.icons[0].src)).size === 4 && man.icons.some((i) => i.purpose === 'maskable') && tm.width === 180 && !tm.hasAlpha, 'app icons: every manifest icon at its size, four shortcut pictures, a maskable one, an opaque 180 px iPhone icon');
   await page.goto(`${BASE}/#/t/${T}/log/1`); await page.waitForSelector('#qtext');
   // the day as a message for relatives: title line, the quotes in quotation marks, never a link; the button only where the phone can share
   const shTxt = await page.evaluate(() => shareText(trip('hk-macau-2026'), 1));
