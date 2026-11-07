@@ -60,6 +60,8 @@ const T = 'hk-macau-2026';
   ok(await page.inputValue('#lcode') === '', 'wrong PIN clears the field');
   ok(JSON.stringify((await (await fetch(BASE + '/api/brand')).json()).pin) === JSON.stringify({ lens: [CODE.length], open: false }), 'the brand says only how long a code is (never a digit)');
   await page.click('button[data-a="who-login"][data-v="Mum"]');   // who first: the pad signs in by itself at the last digit
+  ok(await page.locator('.pinpad button img[src^="/art/keypad/"]').count() === 12 && await page.evaluate(async () => (await Promise.all([...document.querySelectorAll('.pinpad img')].map((i) => fetch(i.src).then((r) => r.ok)))).every(Boolean))
+    && await page.locator('.pinpad button[data-v="7"][aria-label="7"]').count() === 1, 'sign-in pad: the owner\'s twelve glossy keys, each named for a screen reader');
   for (const d of CODE.slice(0, -1)) await page.click(`.pinpad button[data-v="${d}"]`);   // tap the PIN on the number pad
   await page.click('.pinpad button[data-v="back"]'); await page.click(`.pinpad button[data-v="${CODE.at(-2)}"]`);
   ok(await page.inputValue('#lcode') === CODE.slice(0, -1), 'number pad types the PIN (⌫ works); one digit short, nothing happens yet');
