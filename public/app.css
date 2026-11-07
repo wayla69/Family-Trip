@@ -129,6 +129,16 @@ main .blk{scroll-margin-top:76px}   /* a jump (panel, steps, shortcuts) lands be
 /* a long timeline row shows two lines; a tap shows it all (sheets.js) */
 .tl.plan li>div{display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden;cursor:pointer}
 .tl.plan li.open>div{display:block;-webkit-line-clamp:unset}
+/* tap targets (owner's review, Nov 2026): 44 px for everything a parent taps on a phone, including the small chips,
+   the eat page's navigate buttons and inline map links (which keep their place in the text through negative margins) */
+main .chip,main .btn.small,main .mini,main .seg button,main .linkbtn,.stayc .go,.eatday a.go,.eatday button.go,.remind .btn{min-height:44px}
+main .chip{padding:8px 14px}main .mini{padding:8px 10px}
+.eatday a.go.sq{min-width:44px;display:inline-grid;place-items:center}
+a.maplink{display:inline-block;padding:10px 0;margin:-10px 0}
+.bag summary{min-height:44px;display:flex;align-items:center;gap:8px}
+.chk label{min-height:44px;align-items:center;padding:4px 0}.chk input{margin:0}
+.vgck{min-height:44px}
+.nowrap{white-space:nowrap}
 /* privacy and your data (#/privacy) */
 .privacy{max-width:640px;margin:0 auto;padding:18px 0 40px}.privacy .lede{max-width:none}
 .pvsec{margin-top:22px}.pvsec h2{font-size:var(--fs-2);font-weight:600;margin:0 0 6px;padding-top:12px;border-top:1px solid var(--line)}.pvsec p{margin:6px 0;font-size:var(--fs-3);line-height:1.5}
@@ -196,7 +206,7 @@ body.onb nav.bar{display:none}body.onb{padding-bottom:24px}
 .kid.off{filter:grayscale(1);opacity:.4}
 
 /* ---------- shelf ---------- */
-.shelf{display:grid;grid-template-columns:repeat(auto-fill,minmax(250px,1fr));gap:22px;margin:22px 0}
+.shelf{display:grid;grid-template-columns:repeat(auto-fill,minmax(min(100%,250px),1fr));gap:22px;margin:22px 0}
 .spine{position:relative;display:block;text-decoration:none;color:var(--ink);background:var(--paper);border:1px solid var(--rule);border-radius:6px 14px 14px 6px;padding:22px 20px 20px 30px;min-height:290px;overflow:hidden;box-shadow:0 1px 0 var(--rule),0 12px 28px -18px rgba(0,0,0,.35)}
 .spine::before{content:"";position:absolute;inset:0 auto 0 0;width:12px;background:var(--accent)}
 .spine .kicker{font-size:10px}

@@ -116,7 +116,7 @@ const T = 'hk-macau-2026';
   ok(true, 'back arrow inside a topic returns to the menu');
   await page.click('.tile[href$="/book"]'); await page.waitForSelector('.cover');
   ok(await page.locator('.cover .stamp.pending').count() === 1, 'stamp is dashed until earned');
-  ok(await page.locator('.fact').count() === 4, 'cover: 4 stats (photos, quotes, firsts, places)');
+  ok(await page.locator('.fact').count() === 0, 'cover: an empty book shows no counts (never a row of zeros)');
   ok(await page.evaluate(() => getComputedStyle(document.documentElement).getPropertyValue('--accent').trim().toUpperCase()) === '#1F3A5F', 'book uses the HK navy theme');
   ok(await page.evaluate(() => getComputedStyle(document.querySelector('.cover h1')).fontFamily.includes('Cormorant')), 'HK title in Cormorant Garamond (as in the manual)');
 
@@ -237,6 +237,7 @@ const T = 'hk-macau-2026';
   ok(!!srvClip && srvClip.day === 1 && (await page.evaluate(() => stats(trip('hk-macau-2026')).photos)) === photosBefore, 'voice memo uploaded (audio/webm) and not counted as a photo');
   await page.fill('.clipcap', 'มีมี่ร้องเพลง'); await page.locator('.clipcap').blur(); await page.waitForFunction(() => queue.length === 0, null, { timeout: 15000 });
   await page.goto(`${BASE}/#/t/${T}/book`); await page.waitForSelector('#d1');
+  ok(await page.locator('.fact').count() >= 2 && await page.locator('.fact b').allTextContents().then((xs) => xs.every((x) => +x > 0)), 'cover: counts only for what the book now holds, none of them zero');
   ok(await page.locator('#d1 .clips audio').count() === 1 && /มีมี่ร้องเพลง/.test(await page.locator('#d1 .clips').textContent()) && await page.locator('#d1 .mosaic img').count() === await page.evaluate(() => mediaOf('hk-macau-2026', 1).length), 'book: the clip plays from the day page with its caption; the photo mosaic is photos only');
   await page.goto(`${BASE}/#/t/${T}/log/1`); await page.waitForSelector('.clips audio');
   let st = await apiState(page);
@@ -1133,6 +1134,32 @@ const T = 'hk-macau-2026';
   await page.click('[data-a="logout"]'); await page.click('[data-a="logout"]'); await page.waitForSelector('#lcode');
   await page.reload(); await page.waitForSelector('#lcode');
   ok((await page.evaluate(async () => (await idb.get('state')) == null)) && (await page.locator('[data-a="logout"]').count()) === 0, 'sign out: login form back, cookie gone after reload, offline copy cleared');
+  await s.ctx.close();
+}
+
+// ---------- the owner's UX review (Nov 2026), level 1: no sideways scroll at 320 px with the biggest text, 44 px taps, no zeros ----------
+{
+  const s = await session('lvl1', { width: 320, height: 568 });
+  const { page } = s;
+  await page.context().addInitScript(() => localStorage.setItem('mbs_fs', JSON.stringify(3)));
+  await login(page); await page.reload(); await page.waitForSelector('.shelf');
+  ok(await s.noHScroll(), '320 px at the biggest reading size: the shelf no longer scrolls sideways (its grid asked for 250 px columns)');
+  await page.goto(`${BASE}/#/t/${T}`); await page.waitForSelector('.hubgrid');
+  ok(await s.noHScroll(), '320 px biggest text: the book menu fits');
+  const zeros = await page.$$eval('.hubgrid small', (els) => els.map((e) => e.textContent).filter((x) => /(^|\s)0 (รูป|คำพูด|ครั้งแรก|รีวิว|ตรา)|\b0\/\d|ตรา 0\b/.test(x)));
+  ok(zeros.length === 0, `menu tiles never show a zero or "0/6" (${zeros.join(' | ') || 'none'})`);
+  await page.goto(`${BASE}/#/t/${T}/book`); await page.waitForSelector('.cover');
+  ok(await page.locator('.cover .line .nowrap').count() === 2 && await page.evaluate(() => [...document.querySelectorAll('.cover .line .nowrap')].every((e) => e.getClientRects().length === 1)), 'cover: each child\'s name and age sits on one line (Thai word breaking split a name)');
+  // every control a parent taps is at least 44 px tall on the pages used during the trip
+  const audit = `(sel) => [...document.querySelectorAll(sel)].filter((e) => { const r = e.getBoundingClientRect(); return r.width > 0 && r.height > 0 && r.height < 44 && !e.closest('details:not([open])'); }).map((e) => (e.textContent || e.className).trim().slice(0, 24) + ' ' + Math.round(e.getBoundingClientRect().height))`;
+  const SEL = 'main .chip, main .btn.small, main .mini, main .seg button, main .linkbtn, a.maplink, .stayc .go, .eatday .go, .bag summary, .chk label, .remind .btn';
+  for (const [name, path, wait] of [['record', `/log/1`, '.daystrip'], ['today', `/today/1`, '.dsheet'], ['eat', `/eat/d/1`, '.eatday'], ['sos', `/sos`, '.tp-sos']]) {
+    await page.goto(`${BASE}/#/t/${T}${path}`); await page.waitForSelector(wait);
+    const small = await page.evaluate(`(${audit})(${JSON.stringify(SEL)})`);
+    ok(small.length === 0, `${name}: every tap target is 44 px or taller (${small.slice(0, 6).join(' | ') || 'all good'})`);
+  }
+  await s.shot('01-shelf-320-big');
+  ok(s.errs.length === 0, 'level 1: no console errors ' + s.errs.join(' | '));
   await s.ctx.close();
 }
 
