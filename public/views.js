@@ -2,6 +2,7 @@
 /* ===== Memory Bookshelf · views (render functions return HTML strings) ===== */
 const drafts = {};          // text being typed, survives re-renders and syncs
 let quoteWho = 'mimi';
+let mdayPick = {};   // the passport before the trip: which day's mission is open, per book (a tap on the day chips; survives re-renders)
 let lastView = null;
 
 // a shortcut's box on the record page: scrolled into view and lit up; the quote box gets the cursor. Browsers only open the camera,
@@ -1890,12 +1891,14 @@ function viewPassport(slug, tid) {
   // daily missions
   const feel = [['🤩', L('สุดยอด', 'Super')], ['😄', L('มีความสุข', 'Happy')], ['😴', L('ง่วงนอน', 'Sleepy')]];
   const mood = (i) => (S.entries.find((e) => e.id === `${t.id}.mood.d${i}.${kid}`) || {}).mood;
-  const liveDay = dayNow(t);   // -1 before and after the trip: then every mission stays open
+  const liveDay = dayNow(t);   // -1 before and after the trip
+  // before the trip only one mission is open — the day chosen on the chips (day 1 to start); after the trip all open (owner's review, Nov 2026: 13,000 px of missions months ahead)
+  const pre = liveDay < 0 && daysUntil(t) > 0, pick = pre ? (mdayPick[t.id] ?? 0) : -1;
   const missions = (pp.days || []).map((pd, i) => {
     const d = t.days[i]; if (!d) return '';
     const lit = littleOf(t, kid), spots = daySpots(t, i, kid), n = spots.filter((s) => ticked(t, s.key, kid)).length;
     const pl = d.plan || {}, facts = (pd.facts || []).concat((pl.learn || []).map((x) => x.kid).filter(Boolean));   // the guide's facts + one line per stop from the manual
-    const open = liveDay < 0 || i === liveDay;   // during the trip only today's mission is open (the rest fold away, a tap opens one)
+    const open = liveDay < 0 ? (!pre || i === pick) : i === liveDay;   // during the trip only today's mission is open (the rest fold away, a tap opens one)
     return `<article class="mission${dayStamped(t, i) ? ' stamped' : ''}${i === liveDay ? ' today' : ''}" id="m${i}"${pd.acc ? ` style="--accent:${esc(pd.acc)};--tint:${esc(pd.tint || '')}"` : ''}><details class="mfold"${open ? ' open' : ''}><summary>
 <header>${artImg(t, i)}<div><div class="kicker">${L('วันที่', 'Day')} ${i + 1} · ${esc(fmtDay(d.date))}${i === liveDay ? ` · <b>${L('วันนี้', 'today')}</b>` : ''}</div><h4>${esc(T(pd.title) || T(d.title))}</h4></div>${pd.stamp ? `<span class="mstamp${dayStamped(t, i) ? ' on' : ''}" style="--n:${longWord(pd.stamp)}">${esc(pd.stamp)}</span>` : ''}</header></summary>
 ${facts.length ? `<div class="says">${guide(0)}<div><b>${esc(T((g[0] || {}).name))} ${L('เล่าว่า…', 'says…')}</b><ul>${facts.map((f) => `<li>${esc(T(f))}</li>`).join('')}</ul><button class="mini hearbtn" data-a="sayfacts" data-v="${esc(facts.map((f) => T(f)).join(' '))}">🔊 ${L('อ่านให้ฟัง', 'Read aloud')}</button></div></div>` : ''}
@@ -1982,7 +1985,7 @@ ${pp.map ? `<section class="pp-page mapsec"><header><div><div class="kicker">${L
 <div class="mapdays" role="group" aria-label="${L('เลือกวัน', 'Pick a day')}"><span class="label">${L('วันที่', 'Day')}</span>${t.days.map((_, d) => `<button class="chip" data-a="ppmapday" data-t="${esc(t.id)}" data-v="${d}" aria-pressed="${d === md}">${d + 1}</button>`).join('')}</div>
 <p class="label" style="margin-top:8px">${L('เส้นทึบ = ไปมาแล้ว · แตะวันให้เด็กๆ เดินตาม · แตะหมุดเพื่อเปิดแผนที่จริงและนำทาง', 'Solid line = been there · tap a day to walk the kids there · tap a pin for the real map and directions')}</p></section>` : ''}
 </div>
-${missions ? `<div class="part">${L('ภารกิจรายวัน', 'Daily missions')} · ${esc(name)}</div><div class="missions" style="${themeStyle(t)}">${missions}</div>` : ''}
+${missions ? `<div class="part">${L('ภารกิจรายวัน', 'Daily missions')} · ${esc(name)}</div>${pre ? `<div class="mapdays mdays" role="group" aria-label="${L('เลือกวัน', 'Pick a day')}"><span class="label">${L('วันที่', 'Day')}</span>${(pp.days || []).map((_, i) => (t.days[i] ? `<button type="button" class="chip" data-a="mday" data-t="${esc(t.id)}" data-v="${i}" aria-pressed="${i === pick}">${i + 1}</button>` : '')).join('')}</div>` : ''}<div class="missions" style="${themeStyle(t)}">${missions}</div>` : ''}
 <div class="pp kid-${esc(kid)}" style="${themeStyle(t)}">${lit && lit.note ? `<p class="call calm lnote">👶 ${esc(T(lit.note))}</p>` : ''}${lists}${littleHtml}${declHtml}${certHtml}
 <section class="pp-page stkpage"><header><div><div class="kicker">${L('หน้าสติกเกอร์', 'Sticker page')}</div><h3>⭐ ${L(`สติกเกอร์ของ${name}`, `${name}’s stickers`)}</h3></div></header>${stickerBoard(t, kid, false)}
 <p class="label" style="margin-top:8px">${L('ได้สติกเกอร์จากภารกิจ เช็กลิสต์ ตราประทับ และประตูเซอร์ไพรส์ · เด็กๆ แปะเองในโหมดเด็ก', 'Stickers come from missions, checklists, stamps and surprise doors · the kids stick them on in kid mode')}</p></section>
