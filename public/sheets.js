@@ -85,10 +85,12 @@ async function impRefresh() {
 /* ---------- actions ---------- */
 const A = {
   lang(b) { lang = b.dataset.v; ls('lang', lang); render(); if (ls('remind')) pushSub().then((s) => s && api('POST', '/api/b/push/sub', { ...s.toJSON(), lang })).catch(() => {}); },   // reminders follow the language
-  fs() {   // text size: normal → large → larger → largest (the page content zooms; the bars stay put)
-    const n = ((+ls('fs') || 0) + 1) % 4; ls('fs', n); document.documentElement.dataset.fs = String(n);
-    $$('.fsb').forEach((b) => { b.dataset.l = n; });
-    toast(L(`ขนาดตัวอักษร: ${['ปกติ', 'ใหญ่', 'ใหญ่มาก', 'ใหญ่สุด'][n]}`, `Text size: ${['normal', 'large', 'larger', 'largest'][n]}`));
+  fs(b) {   // text size: normal → large → larger → largest (the page content zooms; the bars stay put) — a value from the shelf's four Aa, else the sign-in page's one Aa cycles
+    const n = b && b.dataset.v !== undefined ? +b.dataset.v : ((+ls('fs') || 0) + 1) % 4; ls('fs', n); document.documentElement.dataset.fs = String(n);
+    $$('.fsb').forEach((x) => { x.dataset.l = n; });
+    $$('.fsseg button').forEach((x) => x.setAttribute('aria-pressed', String(+x.dataset.v === n)));   // in place: no re-render
+    const nm = $('#fsname'); if (nm) nm.textContent = L(FS_NAMES[n][0], FS_NAMES[n][1]);
+    toast(L(`ขนาดตัวอักษร: ${FS_NAMES[n][0]}`, `Text size: ${FS_NAMES[n][1].toLowerCase()}`));
   },
   sq(b) { bookQ = b.dataset.v; const i = $('#bookq'), r = $('#bookres'), t = trip(route().parts[1]); if (i) i.value = bookQ; if (r && t) r.innerHTML = bookResults(t); },   // a suggestion chip
   eatgo(b) { eatTrip = b.dataset.t; eatQ = b.dataset.v; eatKind = -1; eatPick = false; location.hash = `#/t/${encodeURIComponent(b.dataset.t)}/eat/all`; },   // a place found by the search: open the list filtered to it
