@@ -737,62 +737,74 @@ function router({ pool, media, A, ai, hooks = {} }) {   // hooks.heart(h): set b
       await c.query('DELETE FROM book_drafts WHERE id=$1', [req.params.id]);
       await c.query('COMMIT');
       res.json({ ok: true, id: d.seed.slug });
-      if (ART.enabled()) startArt(d.seed.slug).catch((e) => console.error('bookart', e.message));   // a book without drawings gets its circles and crest drawn now
+      if (ART.enabled()) startArt(d.seed.slug).catch((e) => console.error('bookart', e.code || e.message));   // a book without drawings gets its circles, crest and guides drawn now
     } catch (e) { await c.query('ROLLBACK').catch(() => {}); next(e); } finally { c.release(); }
   });
   r.delete('/api/b/import/:id', A.requireEditor, async (req, res, next) => {
     try { await q('DELETE FROM book_drafts WHERE id=$1 AND family_id=$2', [req.params.id, FAMILY]); res.json({ ok: true }); } catch (e) { next(e); }
   });
 
-  // ---------- the book's own pictures (server/bookart.js, OpenAI): one round picture per day + the passport crest ----------
-  const artKeys = (id, days) => [...Array.from({ length: days }, (_, n) => ART.dayKey(id, n + 1)), ART.crestKey(id)];
+  // ---------- the book's own pictures (server/bookart.js): Claude draws a circle per day, the passport crest and the two guides as SVG ----------
+  const artKeys = (id, days) => [...Array.from({ length: days }, (_, n) => ART.dayKey(id, n + 1)), ART.crestKey(id), ART.guideKey(id, 1), ART.guideKey(id, 2)];
   let artJob = null;   // { trip, status: running|done|error, done, total, error, started }
   const artView = () => (artJob ? { trip: artJob.trip, status: artJob.status, done: artJob.done, total: artJob.total, error: artJob.error || null, started: artJob.started } : { status: 'idle' });
-  // start drawing for one book: only a book without the owner's hand-drawn art (theme.art empty or already drawn by the model), at most ART_RUNS full runs
+  const ownGuides = (pp) => Array.isArray(pp && pp.guides) && pp.guides.some((g) => g && /^\/art\/guides\/(?!kiki\.svg$|roo\.svg$)/.test(String(g.art || '')));   // drawn by the owner, not the stand-ins
+  // start drawing for one book: only a book without the owner's hand-drawn art (theme.art empty or already drawn by Claude), at most ART_RUNS full runs,
+  // and only when today's Claude allowance can carry the whole book (so a cap hit midway never leaves it half drawn)
   async function startArt(id) {
     if (artJob && artJob.status === 'running') throw Object.assign(new Error('busy'), { code: 'busy' });
-    const t = (await q('SELECT id, title, theme, passport, to_char(date_from,\'YYYY-MM-DD\') date_from, to_char(date_to,\'YYYY-MM-DD\') date_to FROM trips WHERE id=$1 AND family_id=$2', [id, FAMILY]))[0];
+    const t = (await q('SELECT id, title, sub, theme, passport, to_char(date_from,\'YYYY-MM-DD\') date_from, to_char(date_to,\'YYYY-MM-DD\') date_to FROM trips WHERE id=$1 AND family_id=$2', [id, FAMILY]))[0];
     if (!t) throw Object.assign(new Error('trip'), { code: 'trip' });
     const theme = t.theme || {};
     if (theme.art && !String(theme.art).startsWith('/media/art/')) throw Object.assign(new Error('own art'), { code: 'own' });
     const runs = Number(theme.artRuns || 0);
     if (runs >= ART.RUNS()) throw Object.assign(new Error('runs'), { code: 'runs', left: 0 });
     const days = await q('SELECT day_index, title, plan FROM trip_days WHERE trip_id=$1 ORDER BY day_index', [id]);
+    const used = Number(((await q("SELECT calls FROM ai_usage WHERE family_id=$1 AND day=(now() AT TIME ZONE 'UTC')::date", [FAMILY]))[0] || {}).calls || 0);
+    const need = Math.min(ART.CALLS(days.length), STORY_DAILY);
+    if (STORY_DAILY - used < need) throw Object.assign(new Error('limit'), { code: 'limit', left: Math.max(0, STORY_DAILY - used), need });
     const en = (x) => (x && typeof x === 'object' ? x.en || x.th || '' : String(x || ''));
     const place = (Array.isArray(theme.places) && theme.places[0] && theme.places[0].en) || en(t.sub) || en(t.title);
-    const when = `${t.date_from.slice(0, 7)}`;
+    const when = new Date(t.date_from + 'T00:00:00Z').toLocaleDateString('en-GB', { month: 'long', year: 'numeric', timeZone: 'UTC' });
     const redraw = String(theme.art || '').startsWith('/media/art/');
-    if (redraw) for (const k of artKeys(id, days.length)) await media.del(k).catch(() => {});   // a redraw starts clean: every circle drawn again
-    artJob = { trip: id, status: 'running', done: 0, total: days.length + 1, started: Date.now() };
+    if (redraw) for (const k of artKeys(id, days.length)) await media.del(k).catch(() => {});   // a redraw starts clean: every picture drawn again
+    const kids = (await kidsFor(t)).who.en;
+    artJob = { trip: id, status: 'running', done: 0, total: days.length + 3, started: Date.now() };
     (async () => {
       try {
-        const out = await ART.drawBook({ trip: id, title: en(t.title).split(' · ')[0], place, when, accent: theme.accent || '#1F3A5F', media,
+        const out = await ART.drawBook({ trip: id, title: en(t.title).split(' · ')[0], place, when, accent: theme.accent || '#1F3A5F', kids, media, client: new ai.SDK(), take: aiTake, onUsage: addUsage,
           days: days.map((d) => ({ title: en(d.title), lines: (((d.plan || {}).plan) || []).map((r) => en(r.h)).filter(Boolean).slice(0, 6) })),
           onStep: (done, total) => { artJob.done = done; artJob.total = total; } });
         const v = Date.now().toString(36);
-        const theme2 = { ...theme, art: `/media/art/${id}/day-{n}.png?v=${v}`, artRuns: runs + 1, artAt: new Date().toISOString() };
-        const pp = t.passport && typeof t.passport === 'object' ? { ...t.passport, style: { ...(t.passport.style || {}), crest: `/media/art/${id}/crest.png?v=${v}` }, colour: '' } : t.passport;
+        const theme2 = { ...theme, art: `/media/art/${id}/day-{n}.svg?v=${v}`, artRuns: runs + 1, artAt: new Date().toISOString() };
+        const pp0 = t.passport && typeof t.passport === 'object' ? t.passport : null;
+        const guides = out.guides && pp0 && !ownGuides(pp0) ? out.guides.map((g, k) => ({ ...g, art: `/media/art/${id}/guide-${k + 1}.svg?v=${v}` })) : null;
+        const pp = pp0 ? { ...pp0, style: { ...(pp0.style || {}), crest: `/media/art/${id}/crest.svg?v=${v}` }, colour: '', ...(guides ? { guides } : {}) } : pp0;
         await q('UPDATE trips SET theme=$3, passport=$4 WHERE id=$1 AND family_id=$2', [id, FAMILY, JSON.stringify(theme2), JSON.stringify(pp)]);
-        artJob.status = 'done'; console.log(`bookart ${id}: ${out.drawn} pictures drawn (${out.usage.calls} calls)`);
-      } catch (e) { artJob.status = 'error'; artJob.error = e.code === 'refused' ? 'refused' : 'failed'; console.error('bookart', id, e.message); }
+        artJob.status = 'done'; console.log(`bookart ${id}: ${out.drawn} pictures drawn`);
+      } catch (e) { artJob.status = 'error'; artJob.error = e.code === 'refused' ? 'refused' : e.code === 'limit' ? 'limit' : 'failed'; console.error('bookart', id, e.message); }
     })();
   }
   r.post('/api/b/art/:trip', A.requireEditor, async (req, res, next) => {
     try {
       if (!ART.enabled()) return bad(res, 'off', 503);
-      try { await startArt(req.params.trip); } catch (e) { return e.code === 'busy' ? bad(res, 'busy', 409) : e.code === 'trip' ? bad(res, 'trip', 404) : e.code === 'runs' ? res.status(429).json({ error: 'runs', left: 0 }) : e.code === 'own' ? bad(res, 'own', 409) : next(e); }
+      try { await startArt(req.params.trip); } catch (e) {
+        return e.code === 'busy' ? bad(res, 'busy', 409) : e.code === 'trip' ? bad(res, 'trip', 404) : e.code === 'runs' ? res.status(429).json({ error: 'runs', left: 0 })
+          : e.code === 'limit' ? res.status(429).json({ error: 'limit', left: e.left, need: e.need }) : e.code === 'own' ? bad(res, 'own', 409) : next(e);
+      }
       res.status(202).json(artView());
     } catch (e) { next(e); }
   });
   r.get('/api/b/art', A.requireEditor, (_req, res) => { res.setHeader('Cache-Control', 'no-store'); res.json({ ...artView(), on: ART.enabled(), runs: ART.RUNS() }); });
-  // the pictures themselves, for the family and its relatives' groups (a book they may see)
+  // the pictures themselves, for the family and its relatives' groups (a book they may see); SVG, so locked down when opened directly
   r.get('/media/art/:trip/:file', A.requireUser, async (req, res, next) => {
     try {
       if (!ART.FILE_RE.test(req.params.file) || !SLUG_RE.test(req.params.trip) || !A.canSee(req.user, req.params.trip)) return next();
       const buf = await media.get(`d/${req.params.trip}/${req.params.file}`);
       if (!buf) return res.sendStatus(404);
       res.setHeader('Cache-Control', 'private, max-age=604800');   // the app versions the url by the run (?v=)
-      res.type('image/png').send(buf);
+      res.setHeader('Content-Security-Policy', "default-src 'none'; style-src 'unsafe-inline'");
+      res.type('image/svg+xml').send(buf);
     } catch (e) { next(e); }
   });
 

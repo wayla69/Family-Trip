@@ -1,77 +1,107 @@
-// A book's own pictures, drawn by OpenAI's image model (the same key and model as the children's characters, server/avatar.js):
-// one round picture per day — the "circles" that lead the story on the shelf, the day strip, the book pages and the kid games —
-// and the book's crest, the round stamp on the kids' adventure passport. For books that arrive without drawings (a PDF import,
-// an app-made book, the sample): the owner's hand-drawn SVGs under public/art stay as they are. Only the plan's words travel
-// (a day's title, its timeline headlines, the place) — never a photo, a name or a record. The files live in the family's own
-// storage (d/<trip>/day-<n>.png, d/<trip>/crest.png) and are served signed-in only.
-const sharp = require('sharp');
+// A book's own pictures, drawn by Claude as SVG — the same way the two shipped books were drawn (their day circles, crests
+// and guide characters are 1–2 KB of hand-written SVG in public/art): one round picture per day (the circles that lead the
+// story on the shelf, the day strip, the book pages, the kid games — and, being SVG, the colouring pages too), the book's crest
+// (the round stamp on the kids' adventure passport) and the two guide characters. For books that arrive without drawings
+// (a PDF import, an app-made book, the sample); the owner's own SVGs stay as they are. Only the plan's words travel (a day's
+// title, its timeline headlines, the place) — never a photo, a name or a record. Every answer is checked before it is kept:
+// one <svg> with a viewBox, no script, no event handlers, no links, no images, no foreign objects, a size cap; a bad answer
+// is asked once more. Files live in the family's storage (d/<trip>/day-<n>.svg, crest.svg, guide-1.svg, guide-2.svg) and are
+// served signed-in only. Each drawing is one call on the family's daily Claude cap (STORY_DAILY).
+const fs = require('fs');
+const path = require('path');
 
-const enabled = () => !!process.env.OPENAI_API_KEY;
-const MODEL = () => process.env.OPENAI_IMAGE_MODEL || 'gpt-image-1';
-const QUALITY = () => (['low', 'medium', 'high'].includes(process.env.OPENAI_IMAGE_QUALITY) ? process.env.OPENAI_IMAGE_QUALITY : 'medium');
-const BASE = () => (process.env.OPENAI_BASE_URL || 'https://api.openai.com').replace(/\/+$/, '');
-const RUNS = () => Math.max(1, Number(process.env.ART_RUNS) || 3);   // full drawings per book (a redraw costs a call per day)
-const SIZE = 640;   // the stored side: the circles are 44–150 px on screen, the passport crest 120 px, the printed book 3 cm
+const enabled = () => !!process.env.ANTHROPIC_API_KEY;
+const MODEL = () => process.env.ART_MODEL || process.env.STORY_MODEL || 'claude-sonnet-5-5';
+const RUNS = () => Math.max(1, Number(process.env.ART_RUNS) || 3);   // full drawings per book (a redraw is a call per picture again)
+const MAX_SVG = 12000;   // chars kept: the shipped drawings are 1–3 KB; a crest with its ring of dots about 3 KB
 
-// the house style: the owner's hand-drawn day circles (thick navy outline, flat soft colours, one scene in a round badge)
-const STYLE = 'Flat vector-style illustration for a children\'s travel memory book, drawn inside a perfect circle (a round sticker badge) on a transparent background. '
-  + 'Clean thick dark-navy outlines, flat soft pastel colours with only light shading, cheerful and simple, no gradients, no photo realism. '
-  + 'No text, no letters, no numbers, no people\'s faces, no logos or brand marks. The circle fills the image edge to edge; everything outside the circle is transparent.';
+// the owner's drawings as the style sheet (read once): a day circle, the crest, a guide character
+const example = (f) => { try { return fs.readFileSync(path.join(__dirname, '..', 'public', 'art', f), 'utf8').trim(); } catch (_) { return ''; } };
+const EX = { day: example('hk/day-1.svg'), crest: example('crest/hk.svg'), guide: example('guides/pinky.svg') };
 
-// a day's circle: the scene of the day from its title and its timeline headlines (the fun lines, not the details)
-const dayPrompt = ({ title, place, lines, accent }) => `${STYLE} The scene: "${title}" — a day of a family trip in ${place}. `
-  + (lines.length ? `Moments of the day: ${lines.join('; ')}. ` : '')
-  + `Pick the one or two most iconic things of that day (a landmark, a vehicle, an animal, a landscape) and draw them big and simple. `
-  + `The main colour of this book is ${accent}; use it somewhere in the picture.`;
-// the book's crest: the round passport stamp of the whole trip — one emblem of the place, a ring with the title
-const crestPrompt = ({ title, place, when, accent }) => `${STYLE.replace('No text, no letters, no numbers, ', '')} A round passport stamp / expedition crest for a family trip: "${title}", ${place}, ${when}. `
-  + `In the middle one iconic emblem of ${place} (an animal or a landmark), drawn big and simple. Around it a ring with the title "${title.toUpperCase()}" written in clean capital letters at the top and "${place.toUpperCase()}" at the bottom — nothing else written. `
-  + `Colours: the ink is ${accent}, with cream and one warm highlight. It should look like a stamp pressed on paper, with a dotted or double border.`;
+const SYSTEM = 'You draw the pictures of a children\'s travel memory book as SVG code, in the book\'s hand-drawn house style: '
+  + 'simple flat shapes, thick dark outlines (stroke #22213A, stroke-width about 2.4 in a 100-unit box; stroke-linejoin and stroke-linecap round), '
+  + 'soft flat colours (no gradients, no filters, no text unless asked), two or three big simple things rather than many small ones, cheerful and clear at 48 px. '
+  + 'Answer with ONE complete <svg> element and nothing else: no prose, no code fence, no XML declaration, no <script>, no event attributes, no href, no <image>, no <foreignObject>, no external references. '
+  + 'Keep it under 3000 characters. Give every id a unique prefix you choose for this picture.';
 
-// one call to the image model → a square PNG, trimmed to its circle and resized; the usage block for the ledger
-async function draw(prompt, { signal } = {}) {
-  let r;
-  try {
-    r = await fetch(`${BASE()}/v1/images/generations`, { method: 'POST', headers: { Authorization: `Bearer ${process.env.OPENAI_API_KEY}`, 'Content-Type': 'application/json' },
-      body: JSON.stringify({ model: MODEL(), prompt, size: '1024x1024', quality: QUALITY(), background: 'transparent', output_format: 'png', n: 1 }), signal: signal || AbortSignal.timeout(240000) });
-  } catch (e) { throw Object.assign(new Error(`openai: ${e.message}`), { code: 'failed' }); }
-  const j = await r.json().catch(() => ({}));
-  if (!r.ok) {
-    const msg = (j.error && j.error.message) || `http ${r.status}`;
-    throw Object.assign(new Error(`openai: ${msg}`), { code: /safety|moderation|policy/i.test(msg) ? 'refused' : 'failed', status: r.status });
-  }
-  const b64 = j.data && j.data[0] && j.data[0].b64_json;
-  if (!b64) throw Object.assign(new Error('openai: no image'), { code: 'failed' });
-  const png = await sharp(Buffer.from(b64, 'base64')).trim({ threshold: 1 }).resize(SIZE, SIZE, { fit: 'contain', background: { r: 0, g: 0, b: 0, alpha: 0 } }).png({ compressionLevel: 9 }).toBuffer();
-  return { png, usage: j.usage || null };
+// a day's circle: the scene of the day from its title, its timeline headlines and the place
+const dayPrompt = ({ title, place, lines, accent, n }) => `Draw day ${n}'s round picture: "${title}" — a day of a family trip in ${place}.`
+  + (lines.length ? ` Moments of the day: ${lines.join('; ')}.` : '')
+  + ` Pick the one or two most iconic things of that day (a landmark, a vehicle, an animal, a landscape, a dish) and draw them big and simple. `
+  + `Same frame as the example: viewBox="-4 -4 108 108", a white circle r=50 under a pale filled circle r=46 at (50,50), the scene clipped to that circle; the book's colour is ${accent} — use it or a tint of it for the sky, sea or ground. No text.\n\nExample (the look to match, a different scene):\n${EX.day}`;
+// the book's crest: the round passport stamp of the whole trip, an emblem of the place in a ring with the title
+const crestPrompt = ({ title, place, when, accent }) => `Draw the book's crest: a round passport stamp / expedition crest for "${title}" — a family trip to ${place}, ${when}. `
+  + `Same frame as the example: viewBox="0 0 200 200", a cream disc with a ring of dots, the title in capitals on a text path along the top and "${place.toUpperCase()} · ${when.toUpperCase()}" along the bottom (short; use <text> with font-family sans-serif, font-weight 700, letter-spacing), and in the middle one iconic emblem of ${place} (an animal or a landmark) drawn big and simple. Ink ${accent}, with cream and one warm highlight.\n\nExample (the look to match, a different trip):\n${EX.crest}`;
+// the two guides: their names first (one small JSON), then a character each
+const namesPrompt = ({ title, place, kids }) => `Invent the two guide characters of the kids' adventure passport for "${title}", a family trip to ${place}. Each is a friendly animal or creature that belongs to ${place} (never a trademarked character). `
+  + `The children are ${kids}. Answer with JSON only: {"guides":[{"key":"<a-z, 3-10 letters>","kind":"<the animal, in English>","colour":"<hex>","name":{"th":"…","en":"…"},"hello":{"th":"…","en":"…"}}, {…}]}. `
+  + `The hello is one or two warm sentences the guide says to the child, in natural Thai (transliterate the names) and in English, with {name} where the child's name goes; it may name the other guide.`;
+const guidePrompt = ({ name, kind, colour, place }) => `Draw the guide character "${name}": a ${kind} from ${place}, a friendly cartoon with a big head, big round eyes, rosy cheeks and a happy smile, facing the viewer, body colour ${colour}. `
+  + `Same frame as the example: viewBox="0 0 120 120", no background, stroke #1e293b stroke-width 4 on every shape. No text.\n\nExample (the look to match, a different character):\n${EX.guide}`;
+
+// the answer must be one safe <svg>: nothing that could run or load anything when the file is opened or inlined for colouring
+function svgOf(text) {
+  const m = /<svg[\s>][\s\S]*?<\/svg>/i.exec(String(text || ''));
+  if (!m) return null;
+  const svg = m[0];
+  if (svg.length > MAX_SVG) return null;
+  if (!/\bviewBox="/.test(svg)) return null;
+  if (/<\s*(script|image|foreignObject|iframe|object|embed|use|set|animate)/i.test(svg)) return null;
+  if (/\bon[a-z]+\s*=/i.test(svg) || /\bxlink:href|\bhref\s*=/i.test(svg) || /url\((?!#)/i.test(svg) || /<!ENTITY|<!DOCTYPE/i.test(svg)) return null;
+  if (/javascript:|data:/i.test(svg)) return null;
+  return svg;
+}
+const nameOk = (g) => g && typeof g === 'object' && /^[a-z]{3,10}$/.test(String(g.key || '')) && g.name && typeof g.name.th === 'string' && typeof g.name.en === 'string' && g.name.th.trim() && g.name.en.trim()
+  && g.hello && typeof g.hello.th === 'string' && typeof g.hello.en === 'string' && g.hello.th.trim() && g.hello.en.trim();
+
+// one call: ask Claude, read the text back (streamed like the import, so the mock and the SDK agree), count the usage
+async function ask(client, user, { take, onUsage, max = 6000 }) {
+  if (take && !(await take())) throw Object.assign(new Error('limit'), { code: 'limit' });
+  const stream = client.messages.stream({ model: MODEL(), max_tokens: max, system: SYSTEM, messages: [{ role: 'user', content: user }] });
+  const msg = await stream.finalMessage();
+  if (onUsage) { try { onUsage(msg.usage || {}); } catch (_) { /* counting never breaks a drawing */ } }
+  if (msg.stop_reason === 'refusal') throw Object.assign(new Error('refused'), { code: 'refused' });
+  return msg.content.filter((b) => b.type === 'text').map((b) => b.text).join('');
+}
+// a drawing: asked once more when the answer is not one safe <svg>
+async function drawSvg(client, user, o) {
+  let svg = svgOf(await ask(client, user, o));
+  if (!svg) svg = svgOf(await ask(client, user, o));
+  if (!svg) throw Object.assign(new Error('no usable svg'), { code: 'failed' });
+  return svg;
 }
 
-const dayKey = (trip, n) => `d/${trip}/day-${n}.png`;
-const crestKey = (trip) => `d/${trip}/crest.png`;
-const FILE_RE = /^(day-\d{1,2}|crest)\.png$/;
+const dayKey = (trip, n) => `d/${trip}/day-${n}.svg`;
+const crestKey = (trip) => `d/${trip}/crest.svg`;
+const guideKey = (trip, k) => `d/${trip}/guide-${k}.svg`;
+const FILE_RE = /^(day-\d{1,2}|crest|guide-[12])\.svg$/;
+const CALLS = (days) => days + 4;   // one per day, the crest, the guides' names, two guides (retries on top)
 
-// draw every missing picture of a book: days first (a failed day is tried once more, then the run stops and what is drawn stays —
-// the next run picks up where this one ended), then the crest. onStep(done, total) reports progress; returns {drawn, usage}
-async function drawBook({ trip, title, days, place, when, accent, media, onStep = () => {}, signal }) {
-  const total = days.length + 1;
+// draw every missing picture of a book: the days (what is drawn stays — the next run picks up where this one ended), the crest,
+// then the two guides (their names in one call; kept only when both are usable). onStep(done, total) reports progress.
+async function drawBook({ trip, title, days, place, when, accent, kids, media, client, take, onUsage, onStep = () => {} }) {
+  const total = days.length + 3, o = { take, onUsage };
   let done = 0, drawn = 0;
-  const usage = { calls: 0, in: 0, out: 0 };
-  const add = (u) => { usage.calls++; if (u) { usage.in += u.input_tokens || 0; usage.out += u.output_tokens || 0; } };
-  const once = async (prompt) => { try { return await draw(prompt, { signal }); } catch (e) { if (e.code === 'refused') throw e; return draw(prompt, { signal }); } };
   for (let i = 0; i < days.length; i++) {
     const key = dayKey(trip, i + 1);
-    if (!(await media.get(key))) {
-      const out = await once(dayPrompt({ ...days[i], place, accent }));
-      add(out.usage); await media.put(key, out.png, 'image/png'); drawn++;
-    }
+    if (!(await media.get(key))) { await media.put(key, Buffer.from(await drawSvg(client, dayPrompt({ ...days[i], place, accent, n: i + 1 }), o)), 'image/svg+xml'); drawn++; }
     onStep(++done, total);
   }
-  if (!(await media.get(crestKey(trip)))) {
-    const out = await once(crestPrompt({ title, place, when, accent }));
-    add(out.usage); await media.put(crestKey(trip), out.png, 'image/png'); drawn++;
-  }
+  if (!(await media.get(crestKey(trip)))) { await media.put(crestKey(trip), Buffer.from(await drawSvg(client, crestPrompt({ title, place, when, accent }), o)), 'image/svg+xml'); drawn++; }
   onStep(++done, total);
-  return { drawn, usage };
+  let guides = null;
+  if (!(await media.get(guideKey(trip, 1))) || !(await media.get(guideKey(trip, 2)))) {
+    let j = null;
+    for (let k = 0; k < 2 && !j; k++) { try { const t = await ask(client, namesPrompt({ title, place, kids }), o); j = JSON.parse(t.slice(t.indexOf('{'), t.lastIndexOf('}') + 1)); } catch (e) { if (e.code === 'limit' || e.code === 'refused') throw e; } }
+    const gs = j && Array.isArray(j.guides) ? j.guides.filter(nameOk).slice(0, 2) : [];
+    if (gs.length !== 2 || gs[0].key === gs[1].key) throw Object.assign(new Error('no usable guides'), { code: 'failed' });
+    onStep(++done, total);
+    for (let k = 0; k < 2; k++) { await media.put(guideKey(trip, k + 1), Buffer.from(await drawSvg(client, guidePrompt({ name: gs[k].name.en, kind: String(gs[k].kind || 'animal').slice(0, 40), colour: /^#[0-9a-f]{6}$/i.test(gs[k].colour) ? gs[k].colour : '#F9A8C9', place }), o)), 'image/svg+xml'); drawn++; }
+    guides = gs.map((g) => ({ key: g.key, name: { th: g.name.th.trim().slice(0, 40), en: g.name.en.trim().slice(0, 40) }, hello: { th: g.hello.th.trim().slice(0, 300), en: g.hello.en.trim().slice(0, 300) } }));
+  } else onStep(++done, total);
+  onStep(++done, total);
+  return { drawn, guides };
 }
 
-module.exports = { enabled, draw, drawBook, dayPrompt, crestPrompt, dayKey, crestKey, FILE_RE, RUNS, MODEL, STYLE };
+module.exports = { enabled, drawBook, svgOf, dayPrompt, crestPrompt, namesPrompt, guidePrompt, dayKey, crestKey, guideKey, FILE_RE, RUNS, CALLS, MODEL, SYSTEM };
