@@ -451,7 +451,7 @@ const A = {
   logall(b, e) { e.preventDefault(); e.stopPropagation(); ls('logall', ls('logall') ? 0 : 1); render(); },
   // the printed cover: 'art' (day pictures, the default) or 'photo' (the first ⭐ photo) — one trip-wide entry, read by #/print and the PDF
   async cover(b) { const t = trip(b.dataset.t); await putEntry(t, { day: null, kind: 'cover', text: b.dataset.v }, `${t.id}.cover.all`); render(); },
-  jump(b) { const el = $(b.dataset.v); if (el) { el.scrollIntoView({ behavior: matchMedia('(prefers-reduced-motion: reduce)').matches ? 'auto' : 'smooth', block: 'start' }); el.classList.remove('flash'); void el.offsetWidth; el.classList.add('flash'); } },
+  jump(b) { const el = $(b.dataset.v); if (el) { let d = el.closest('details:not([open])'); while (d) { d.open = true; d = d.parentElement && d.parentElement.closest('details:not([open])'); } el.scrollIntoView({ behavior: matchMedia('(prefers-reduced-motion: reduce)').matches ? 'auto' : 'smooth', block: 'start' }); el.classList.remove('flash'); void el.offsetWidth; el.classList.add('flash'); } },
   // relatives' groups (#/viewers): the form lives in vgForm (views.js) so a background render keeps the ticks
   wifionly(b) { ls('wifionly', b.checked ? 1 : null); upNow = false; renderProgress(); flush(); },
   upnow() { upNow = true; toast(L('กำลังส่งรูปที่รออยู่…', 'Sending the waiting photos…')); renderProgress(); flush(); },

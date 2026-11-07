@@ -28,7 +28,8 @@ function beep(kind) {
     else if (kind === 'sparkle') [1047, 1319, 1568, 2093].forEach((f, i) => tone(f, i * 0.06, 0.35, 'sine', 0.12));
     else if (kind === 'yay') [523, 659, 784, 1047, 1319].forEach((f, i) => tone(f, i * 0.07, 0.25, 'triangle', 0.14));
     else if (kind === 'boing') sweep(c, t0, 180, 520, 0.3, 'triangle', 0.2);
-    else tone(600, 0, 0.08, 'triangle', 0.12);
+    else if (kind === 'fanfare') [523, 659, 784, 1047, 784, 1047, 1319].forEach((f, i) => tone(f, i * 0.09, i === 6 ? 0.6 : 0.22, 'triangle', 0.16));
+    else { tone(740, 0, 0.06, 'sine', 0.14); tone(980, 0.045, 0.09, 'sine', 0.1); }   // 'tap': a soft two-note tick (every kid button)
   } catch (_) { /* no audio — fine */ }
 }
 
@@ -366,6 +367,19 @@ function hydrateMap(root) {
 
 /* ---------- stickers: every mission ticked earns one; drag them onto your sticker page ---------- */
 // the morning surprise box: one per trip day, opened by the child in kid mode (tick gift.d<i>) — a sticker of its own and today's missions
+// the big celebration (owner's ask, Nov 2026: the stamp, the surprise box, a finished game felt quiet): confetti over the whole screen,
+// 36 pieces in the book's pastels and a few emoji, falling for ~2 s; nothing when the phone asks for reduced motion
+const CONF_C = ['#FFD36B', '#FFB0C8', '#7FE3D2', '#8FB4FF', '#C9B6FF', '#FF9A6B'];
+function celebrate(chars) {
+  if (matchMedia('(prefers-reduced-motion: reduce)').matches) return;
+  const cs = chars || ['⭐', '✨', '🎉'];
+  for (let i = 0; i < 36; i++) {
+    const s = document.createElement('span'), e = i % 6 === 0;
+    s.className = 'confetti' + (e ? ' e' : ''); if (e) s.textContent = cs[(i / 6) % cs.length | 0]; else s.style.background = CONF_C[i % CONF_C.length];
+    s.style.cssText += `left:${Math.random() * 100}vw;--dx:${(Math.random() - 0.5) * 120}px;--rot:${(Math.random() - 0.5) * 900}deg;--t:${1.5 + Math.random() * 0.9}s;--d:${Math.random() * 0.45}s`;
+    document.body.appendChild(s); setTimeout(() => s.remove(), 2800);
+  }
+}
 let memState = null;   // the memory game's place: {key: trip.day.kid, n: question, got: answered right}
 const GIFT_E = ['🦄', '🐉', '🎈', '🍭', '🌈', '🚀', '🦋', '🍦', '🐳', '🪁', '🎠', '🧸', '🌟', '🦕', '🎪', '🍩'];
 const giftE = (i) => GIFT_E[i % GIFT_E.length];
@@ -587,7 +601,7 @@ ${sp.length ? `<div class="gmiss"><b>${lit ? L('วันนี้ชี้ใ�
       const x = qs[memState.n], voice = /[\u0E00-\u0E7F]/.test(x.q) ? 'th-TH' : 'en-GB';
       body = `<div class="kidguide">${guideImg(1)}<p>${L('เมื่อวานนะ… จำได้ไหม?', 'Yesterday… do you remember?')}</p></div>
 <button class="memq" data-a="kidword" data-v="${esc(x.q)}" data-lang="${voice}"><b>${esc(x.q)}</b><i>🔊</i></button>
-<div class="mema">${x.a.map((c, n) => `<button data-a="memans" data-ok="${n === x.ok ? 1 : 0}" data-say="${esc(c.t)}"${memState.got && n === x.ok ? ' class="right"' : ''}><span>${esc(c.e)}</span><b>${esc(c.t)}</b></button>`).join('')}</div>
+<div class="mema">${x.a.map((c, n) => `<button data-a="memans" data-ok="${n === x.ok ? 1 : 0}" data-last="${memState.n + 1 >= qs.length ? 1 : 0}" data-say="${esc(c.t)}"${memState.got && n === x.ok ? ' class="right"' : ''}><span>${esc(c.e)}</span><b>${esc(c.t)}</b></button>`).join('')}</div>
 ${memState.got ? `<button class="kidbig" data-a="memnext">${memState.n + 1 < qs.length ? L('ข้อต่อไป ›', 'Next ›') : L('เสร็จแล้ว! 🎉', 'All done! 🎉')}</button>` : ''}`;
     }
   } else if (view === 'stamp') {
@@ -685,7 +699,7 @@ Object.assign(A, {
     mg.moves++; const [x, y] = mg.up.map((k) => mg.cards[k]);
     if (x.k === y.k) {
       mg.done.add(x.k); mg.up = []; beep('chime'); burst(b, ['⭐', '✨']);
-      if (mg.done.size * 2 === mg.cards.length) { mg.won = true; ls('match_' + mg.kid, (ls('match_' + mg.kid) || 0) + 1); setTimeout(() => { render(); sayUi(L('เก่งมาก!', 'Brilliant!')); }, 350); }
+      if (mg.done.size * 2 === mg.cards.length) { mg.won = true; ls('match_' + mg.kid, (ls('match_' + mg.kid) || 0) + 1); celebrate(); setTimeout(() => { render(); sayUi(L('เก่งมาก!', 'Brilliant!')); }, 350); }
     } else setTimeout(() => { mg.up = []; $$('.mcard').forEach((el, k) => { if (!mg.done.has(mg.cards[k].k)) el.classList.remove('open'); }); beep('thud'); }, 800);
   },
   kidnewmatch() { beep('pop'); const t = trip(mg.t); newMatch(t, mg.kid); render(); },
@@ -694,11 +708,11 @@ Object.assign(A, {
     const k = +b.dataset.v; if (!cnt || cnt.hit.includes(k)) return;
     cnt.hit.push(k); const n = cnt.hit.length; beep('pop'); burst(b, [cnt.e, '✨']);
     say(NUMW[lang === 'th' ? 'th' : 'en'][n - 1] || String(n), lang === 'th' ? 'th-TH' : 'en-GB');
-    if (n >= cnt.n) setTimeout(() => { beep('chime'); render(); sayUi(L(`ทั้งหมด ${n} ตัว!`, `${n} altogether!`)); }, 500); else render();
+    if (n >= cnt.n) setTimeout(() => { beep('chime'); celebrate([cnt.e, '⭐', '✨']); render(); sayUi(L(`ทั้งหมด ${n} ตัว!`, `${n} altogether!`)); }, 500); else render();
   },
   kidnewcount() { beep('pop'); const t = kidTrip(route().parts[1]); newCount(t); render(); },
   kidcolor(b) { beep('tap'); kidColour = b.dataset.v; $$('.palette button').forEach((x) => x.setAttribute('aria-pressed', x.dataset.v === kidColour)); },
-  kidcolourdone(b) { beep('chime'); burst(b, ['🎨', '✨', '⭐']); setTimeout(() => nav(b.dataset.v), 600); },
+  kidcolourdone(b) { beep('chime'); burst(b, ['🎨', '✨', '⭐']); celebrate(['🎨', '⭐', '✨']); setTimeout(() => nav(b.dataset.v), 900); },
   kidspot(b) {
     if (b.dataset.say) sayUi(b.dataset.say);
     beep(b.getAttribute('aria-pressed') === 'true' ? 'tap' : 'chime');
@@ -707,23 +721,23 @@ Object.assign(A, {
   kidword(b) { beep('tap'); say(b.dataset.v, b.dataset.lang); },
   memans(b) {
     if (memState && memState.got) return;
-    if (b.dataset.ok === '1') { beep('chime'); burst(b, ['⭐', '🎉', '✨']); sayUi(L(`ใช่แล้ว! ${b.dataset.say} เก่งมาก!`, `Yes! ${b.dataset.say} — well done!`)); memState.got = true; setTimeout(render, 700); }
+    if (b.dataset.ok === '1') { beep('chime'); burst(b, ['⭐', '🎉', '✨']); if (b.dataset.last === '1') celebrate(); sayUi(L(`ใช่แล้ว! ${b.dataset.say} เก่งมาก!`, `Yes! ${b.dataset.say} — well done!`)); memState.got = true; setTimeout(render, 700); }
     else { beep('tap'); b.classList.remove('nope'); void b.offsetWidth; b.classList.add('nope'); sayUi(L('อืม… ลองอีกทีนะ', 'Hmm… try again!')); }
   },
   memnext() { beep('pop'); memState.n++; memState.got = false; render(); },
   memagain() { beep('pop'); memState.n = 0; memState.got = false; render(); },
   kidgift(b) {
     const t = trip(b.dataset.t), i = +b.dataset.d, kid = b.dataset.k, id = `${t.id}.tick.gift.d${i}.${kid}`;
-    b.classList.add('pop'); beep('pop'); setTimeout(() => beep('chime'), 250);
-    burst(b, ['🎉', '✨', '⭐', '🎊', giftE(i)]);
+    b.classList.add('pop'); beep('pop'); setTimeout(() => beep('fanfare'), 250);
+    burst(b, ['🎉', '✨', '⭐', '🎊', giftE(i)]); celebrate(['🎁', '✨', giftE(i)]);
     sayUi(L('เย้! ได้สติกเกอร์ใหม่!', 'Yay! A new sticker!'));
     setTimeout(() => { if (!S.entries.some((e) => e.id === id)) putEntry(t, { day: i, kind: 'tick', child: kid, first_key: `gift.d${i}`, text: '' }, id); }, 650);
   },
   async kidstamp(b) {
     const t = trip(b.dataset.t), i = +b.dataset.d, kid = b.dataset.k, box = $('#kidstamp');
     box.classList.remove('done'); void box.offsetWidth; box.classList.add('done', 'slam');
-    beep('thud'); setTimeout(() => beep('chime'), 350);
-    burst(box, ['⭐', '✨', '🎉', '💫']);
+    beep('thud'); setTimeout(() => beep('fanfare'), 350);
+    burst(box, ['⭐', '✨', '🎉', '💫']); celebrate(['🛂', '⭐', '🎉']);
     const cheer = $('#kidcheer'); if (cheer) cheer.hidden = false;
     sayUi(L(`ปั๊ก! เก่งมาก ${kidName(kid)}!`, `Thump! Well done, ${kidName(kid)}!`));
     const id = `${t.id}.tick.stamp.d${i}.${kid}`;
@@ -765,7 +779,7 @@ Object.assign(A, {
     if (!S.entries.some((e) => e.id === id)) putEntry(t, { day: null, kind: 'tick', child: kid, first_key: `cd.${n + 1}`, text: '' }, id);
     kidDoor = n; beep('creak'); setTimeout(() => beep('chime'), 250);
     render();
-    burst($('#doorcard .in') || b, ['🎁', '✨', '🎉', '⭐']);
+    burst($('#doorcard .in') || b, ['🎁', '✨', '🎉', '⭐']); celebrate(['🎁', '⭐', '✨']);
     sayUi(String(T(cd.doors[n])).replace(/\{name\}/g, kidName(kid)));
   },
   kiddoorclose() { beep('pop'); kidDoor = null; render(); },
