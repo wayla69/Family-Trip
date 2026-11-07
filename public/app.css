@@ -872,10 +872,10 @@ body.kidmode{padding-bottom:0;background:var(--tint,#F3F6FA)}
 .xylo{display:grid;grid-template-columns:repeat(8,minmax(0,1fr));gap:4px;align-items:end;height:38vh;min-height:220px}
 .xylo button{border:0;border-radius:14px;background:var(--c);height:var(--h);min-width:0;display:grid;place-items:end center;padding:0 0 8px;font-size:22px;box-shadow:inset 0 -6px 0 rgba(0,0,0,.12),0 8px 16px -10px rgba(0,0,0,.4);transition:transform .08s}
 .xylo button.lit{transform:translateY(6px) scale(1.05);filter:brightness(1.15)}
-.drums{display:grid;grid-template-columns:repeat(3,1fr);gap:12px}
-.drums button{border:0;border-radius:50%;aspect-ratio:1;background:#fff;display:grid;place-items:center;align-content:center;gap:2px;font-size:40px;box-shadow:0 10px 22px -14px rgba(0,0,0,.45)}
-.drums button b{font-size:16px}.drums button.hit{animation:drumhit .18s ease-out}@keyframes drumhit{50%{transform:scale(.9)}}
-.songs{display:grid;gap:10px}.songs .kidbig{font-size:22px;padding:14px}
+.drums{display:grid;grid-template-columns:repeat(5,1fr);gap:8px}
+.drums button{border:0;border-radius:50%;aspect-ratio:1;min-width:0;background:#fff;display:grid;place-items:center;align-content:center;gap:0;font-size:30px;padding:0;box-shadow:0 10px 22px -14px rgba(0,0,0,.45)}
+.drums button b{font-size:12px}.drums button.hit{animation:drumhit .18s ease-out}@keyframes drumhit{50%{transform:scale(.9)}}
+.songs{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:8px}.songs .kidbig{font-size:17px;padding:12px 8px;min-width:0;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
 @media (prefers-reduced-motion:reduce){.kidhello .poke img{animation:none}.bub{animation-duration:12s}}
 /* hearts from the family, in kid mode */
 .memq{display:flex;align-items:center;gap:10px;width:100%;border:0;border-radius:24px;background:#fff;padding:16px 18px;margin:10px 0 14px;font:inherit;text-align:left;box-shadow:0 8px 20px -14px rgba(0,0,0,.4)}.memq b{font-size:24px;flex:1;line-height:1.3}.memq i{font-style:normal;font-size:26px}

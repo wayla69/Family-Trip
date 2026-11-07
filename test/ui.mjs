@@ -557,7 +557,7 @@ const T = 'hk-macau-2026';
   ok(await page.evaluate(() => document.querySelector('#bubscore').textContent === '1'), 'kid mode: bubbles float up and a tap pops one (the score counts the pops)');
   await page.goto(`${BASE}/#/kid/mimi/music`); await page.waitForSelector('.xylo');
   await page.click('.xylo button[data-v="4"]'); await page.click('.drums button[data-v="kick"]');
-  ok(await page.locator('.xylo button').count() === 8 && await page.locator('.drums button').count() === 3 && await page.locator('.songs .kidbig').count() === 2 && await page.locator('.xylo button[data-v="4"].lit').count() === 1, 'kid mode: a xylophone of eight bars, three drums and two songs; a tapped bar lights up');
+  ok(await page.locator('.xylo button').count() === 8 && await page.locator('.drums button').count() === 5 && await page.locator('.songs .kidbig').count() === 6 && await page.locator('.xylo button[data-v="4"].lit').count() === 1, 'kid mode: a xylophone of eight bars, five instruments and six songs; a tapped bar lights up');
   await page.goto(`${BASE}/#/kid/mimi/hideseek`); await page.waitForSelector('.hideboard');
   const wantTh = await page.evaluate(() => hs.targets[0][1]);
   await page.locator(`.hid[aria-label="${wantTh}"]`).dispatchEvent('click');   // Playwright's own hit test blames the board's veil; the browser's elementFromPoint (a real tap) returns the button
