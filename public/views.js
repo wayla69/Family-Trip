@@ -132,8 +132,20 @@ function topBar(t, p) {
   const secName = sub ? (p[2] === 'log' ? L('บันทึก', 'Record') : secTitle(p[2]) || esc(t.theme.kicker || '')) : '';
   const ttl = t ? `<small>${sub ? secName : esc(t.theme.kicker || '')}</small>${esc(T(t.title).split(' · ').pop())}` : `<small>${esc(kicker())}</small>${esc(appName())}`;   // the place, not the long brand name: it fits a phone's bar
   return `<header class="top"><div class="in">${back}<div class="ttl">${ttl}</div>
-<span class="progress" id="prog"></span>${t && sub && p[2] !== 'search' ? `<a class="ibtn" href="#/t/${esc(t.id)}/search" aria-label="${L('ค้นหาทั้งเล่ม', 'Search the whole book')}">${ic('search')}</a>` : ''}<button class="ibtn fsb" data-a="fs" data-l="${+ls('fs') || 0}" aria-label="${L('ขนาดตัวอักษร', 'Text size')}">Aa</button>
-<div class="seg" role="group" aria-label="language"><button data-a="lang" data-v="th" aria-pressed="${lang === 'th'}">ไทย</button><button data-a="lang" data-v="en" aria-pressed="${lang === 'en'}">EN</button></div></div></header>`;
+<span class="progress" id="prog"></span>${t && sub && p[2] !== 'search' ? `<a class="ibtn" href="#/t/${esc(t.id)}/search" aria-label="${L('ค้นหาทั้งเล่ม', 'Search the whole book')}">${ic('search')}</a>` : ''}</div></header>`;
+}
+// the language switch (sign-in page, the shelf) and the reading size (the shelf: four Aa of growing size; the sign-in page: one Aa that cycles)
+const FS_NAMES = [['ปกติ', 'Normal'], ['ใหญ่', 'Large'], ['ใหญ่มาก', 'Larger'], ['ใหญ่สุด', 'Largest']];
+const langSeg = () => `<span class="seg" role="group" aria-label="${L('ภาษา', 'Language')}"><button type="button" data-a="lang" data-v="th" aria-pressed="${lang === 'th'}">ไทย</button><button type="button" data-a="lang" data-v="en" aria-pressed="${lang === 'en'}">EN</button></span>`;
+const fsSeg = () => { const n = +ls('fs') || 0; return `<span class="seg fsseg" role="group" aria-label="${L('ขนาดตัวอักษร', 'Text size')}">${FS_NAMES.map(([th, en], i) => `<button type="button" data-a="fs" data-v="${i}" data-l="${i}" aria-pressed="${n === i}" aria-label="${L(th, en)}">Aa</button>`).join('')}</span>`; };
+// the shelf's "language and text" card — for everyone who signs in, relatives included: the one place these settings live (the top bar stays back · title · search)
+function dispCard() {
+  const n = +ls('fs') || 0;
+  return `<div class="part">${L('ภาษาและตัวอักษร', 'Language and text')}</div>
+<div class="setlist disp">
+<div class="setrow">${hubE('globe')}<span><b>${L('ภาษา', 'Language')}</b><small>${L('ทั้งแอป เตือนความจำตามภาษานี้ด้วย', 'The whole app; reminders follow it')}</small></span>${langSeg()}</div>
+<div class="setrow"><span class="e fse">Aa</span><span><b>${L('ขนาดตัวอักษร', 'Text size')}</b><small id="fsname">${L(FS_NAMES[n][0], FS_NAMES[n][1])}</small></span>${fsSeg()}</div>
+</div>`;
 }
 function tabBar(t, p) {
   const c = t || curTrip(); if (!c) return '';
@@ -172,7 +184,7 @@ function loginView() {
 <input id="lcode" class="field pin" type="password" inputmode="numeric" autocomplete="current-password" required aria-describedby="lerr">
 <div class="pinpad" role="group" aria-label="${L('แป้นตัวเลข', 'Number pad')}">${keys.map((k) => `<button type="button" data-a="pin" data-v="${k}"${k === 'clear' ? ` aria-label="${L('ล้าง', 'Clear')}"` : k === 'back' ? ` aria-label="${L('ลบ', 'Delete')}"` : ''}>${k === 'clear' ? 'C' : k === 'back' ? '⌫' : k}</button>`).join('')}</div>
 <div class="row lgo"><button class="btn" type="submit">${L('เข้าสมุด', 'Open the shelf')}</button>
-<span class="seg"><button type="button" data-a="lang" data-v="th" aria-pressed="${lang === 'th'}">ไทย</button><button type="button" data-a="lang" data-v="en" aria-pressed="${lang === 'en'}">EN</button></span></div>
+<span class="row" style="gap:8px">${langSeg()}<button type="button" class="ibtn fsb" data-a="fs" data-l="${+ls('fs') || 0}" aria-label="${L('ขนาดตัวอักษร', 'Text size')}">Aa</button></span></div>
 <div class="err" id="lerr" role="alert"></div>
 <p class="label" style="margin-top:6px"><a href="#/privacy">${L('ความเป็นส่วนตัวและข้อมูลของคุณ', 'Privacy and your data')}</a> · ${L('ใส่รหัสครั้งเดียว เครื่องนี้จะจำไว้ · ญาติใช้รหัสที่พ่อแม่ให้ แล้วพิมพ์ชื่อตัวเองในช่อง "ชื่ออื่น"', "Enter the PIN once — this phone remembers it · Relatives use the view-only PIN from Mum or Dad and type their name under “Other name”")}</p></form></div>`;
 }
@@ -208,6 +220,7 @@ ${S.trips.some((t) => t.id === 'sakura-hop-2028') ? '' : `<button type="button" 
 <div class="part">${L('สำหรับทริปหน้า', 'For the next trip')} 📓</div>
 <a class="nbcard" href="#/notebook"><span class="emb">📓</span><div><b>${L('สมุดโน้ตนักเดินทาง', 'Travel notebook')}</b><small>${S.reviews.length ? L(`${S.reviews.length} รีวิว · ที่พัก ร้านอาหาร สถานที่ — ไว้วางแผนทริปหน้า`, `${S.reviews.length} reviews · stays, food, places — for planning the next trip`) : L('ให้ดาว ติดแท็ก จดว่าอะไรที่ครอบครัวเราชอบ — ไว้วางแผนทริปหน้า', 'Stars, tags and notes on what worked for our family — for planning the next trip')}</small></div><span class="arrow">›</span></a>
 ${isEditor() ? backupCard() : ''}
+${dispCard()}
 ${isEditor() ? `<div class="part">${L('ตั้งค่า', 'Settings')} <img class="partpic" src="/art/hub/settings.webp" alt=""></div>
 <nav class="setlist">
 <a href="#/family">${hubE('family')}<span><b>${L('ครอบครัวของเรา', 'Our family')}</b><small>${L('ชื่อแอป ชื่อลูก และเดือนเกิด', 'App name, the children and their birth months')}</small></span><i>›</i></a>

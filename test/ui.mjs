@@ -367,7 +367,7 @@ const T = 'hk-macau-2026';
     ok(gap.length >= 2 && gap.every((x) => x >= 12), `topic pages: every coloured section heading sits inside its frame, not on the edge (${Math.min(...gap).toFixed(0)} px)`); }
   // ---- search the whole book · text size · what is stored on the phone · teasers that end whole
   await page.goto(`${BASE}/#/t/${T}`); await page.waitForSelector('.hubgrid');
-  ok(await page.locator(`.hubsearch[href="#/t/${T}/search"]`).count() === 1 && await page.locator('.top .fsb').count() === 1 && await page.locator('.top a[href$="/search"]').count() === 0, 'menu: a big “Search the whole book” bar; the top bar has the text-size button but no second search icon');
+  ok(await page.locator(`.hubsearch[href="#/t/${T}/search"]`).count() === 1 && await page.locator('.top .fsb, .top .seg, .top [data-a="lang"]').count() === 0 && await page.locator('.top a[href$="/search"]').count() === 0, 'menu: a big “Search the whole book” bar; the top bar is back · title only — no text-size button, no language switch, no second search icon (owner’s review: six things at 320 px)');
   await page.goto(`${BASE}/#/t/${T}/sos`); await page.waitForSelector('.tp-sos');
   // the lost-child card: numbers kept on the phone, this morning's photo never uploaded, a 1080×1920 picture drawn here
   const reqs = []; page.on('request', (r) => { if (['PUT', 'POST', 'PATCH'].includes(r.method())) reqs.push(r.url()); });
@@ -415,15 +415,17 @@ const T = 'hk-macau-2026';
   ok(page.url().endsWith(first), `Enter in the search box opens the first hit (${first})`);
   await page.goto(`${BASE}/#/t/${T}/search`); await page.waitForSelector('#bookq');
   ok(await page.locator('.chips.recent .chip[data-v="taxi"]').count() === 1, 'the search that led somewhere is offered again as a recent chip');
-  // text size: Aa cycles 100 → 110 → 120 → 130 %, is remembered, and nothing overflows at the largest
-  await page.goto(`${BASE}/#/t/${T}/today`); await page.waitForSelector('.dsheet');
+  // text size and language live on the shelf's "language and text" card (and the sign-in page) — not in the top bar of every page
+  await page.goto(`${BASE}/#/`); await page.waitForSelector('.setlist.disp');
+  ok(await page.locator('.top .fsb, .top [data-a="lang"]').count() === 0 && await page.locator('.setlist.disp [data-a="lang"]').count() === 2 && await page.locator('.setlist.disp .fsseg [data-a="fs"]').count() === 4, 'shelf: one card holds ไทย/EN and four Aa of growing size; the top bar holds neither');
   const z = async () => page.evaluate(() => getComputedStyle(document.querySelector('main.wrap')).zoom);
-  const z0 = await z(); await page.click('.fsb'); const z1 = await z(); await page.click('.fsb'); await page.click('.fsb'); const z3 = await z();
-  ok(z0 === '1' && z1 === '1.1' && z3 === '1.3' && await page.evaluate(() => document.documentElement.dataset.fs === '3' && localStorage.getItem('mbs_fs') === '3'), `text size: Aa cycles normal → 110 % → … → 130 % and is remembered (${z0} / ${z1} / ${z3})`);
-  ok(await s.noHScroll(), 'text size 130 %: today does not overflow the phone');
+  const z0 = await z(); await page.click('.fsseg [data-v="1"]'); const z1 = await z(); await page.click('.fsseg [data-v="3"]'); const z3 = await z();
+  ok(z0 === '1' && z1 === '1.1' && z3 === '1.3' && await page.evaluate(() => document.documentElement.dataset.fs === '3' && localStorage.getItem('mbs_fs') === '3' && document.querySelector('.fsseg [data-v="3"]').getAttribute('aria-pressed') === 'true' && document.querySelector('#fsname').textContent === 'Largest'), `text size: the Aa row sets 110 % / 130 % at once, marks the chosen size and is remembered (${z0} / ${z1} / ${z3})`);
+  await page.goto(`${BASE}/#/t/${T}/today`); await page.waitForSelector('.dsheet');
+  ok(await z() === '1.3' && await s.noHScroll(), 'text size 130 %: today keeps the size and does not overflow the phone');
   await page.goto(`${BASE}/#/t/${T}/prep/full`); await page.waitForSelector('.steps');
   ok(await s.noHScroll(), 'text size 130 %: the booking steps do not overflow');
-  await page.click('.fsb'); ok(await z() === '1', 'a fourth tap returns to normal');
+  await page.goto(`${BASE}/#/`); await page.waitForSelector('.fsseg'); await page.click('.fsseg [data-v="0"]'); ok(await z() === '1', '“Normal” returns to 100 %');
   // what this phone holds of the book: when, and how many new photos since
   await page.goto(`${BASE}/#/t/${T}`); await page.waitForSelector('.hubgrid');
   await page.evaluate((id) => { ls('offline_' + id, { at: Date.now(), n: mediaOf(id).length, all: false }); render(); }, T);
@@ -648,11 +650,12 @@ const T = 'hk-macau-2026';
   ok(await page.evaluate(() => (heroHtml() !== '') === !!document.querySelector('.hero')), 'shelf: next-adventure hero while a trip is ahead or on');
   ok(await s.noHScroll(), 'shelf: no horizontal scroll with hero + passports');
   await s.shot('07-shelf-after');
+  await page.goto(`${BASE}/#/`); await page.waitForSelector('.setlist.disp'); await page.click('.setlist.disp button[data-a="lang"][data-v="en"]');   // the language lives on the shelf's card (and the sign-in page), not in every top bar
   await page.goto(`${BASE}/#/t/${T}/book`); await page.waitForSelector('#d1');
-  await page.click('button[data-a="lang"][data-v="en"]');
   await page.waitForSelector('text=Favourite moments');
-  ok(true, 'language toggle to English');
-  await page.click('button[data-a="lang"][data-v="th"]');
+  ok(true, 'language toggle to English (from the shelf) holds on the book page');
+  await page.goto(`${BASE}/#/`); await page.waitForSelector('.setlist.disp'); await page.click('.setlist.disp button[data-a="lang"][data-v="th"]');
+  await page.goto(`${BASE}/#/t/${T}/book`); await page.waitForSelector('#d1');
   await page.pdf({ path: path.join(OUT, 'book-hk.pdf'), format: 'A4', printBackground: true });
   ok(fs.statSync(path.join(OUT, 'book-hk.pdf')).size > 20000, 'A4 print/PDF of the book renders');
   ok(s.errs.length === 0, 'no console errors: ' + s.errs.join(' | '));
@@ -802,6 +805,7 @@ const T = 'hk-macau-2026';
   const { page } = s;
   await page.goto(BASE + '/v/grandma'); await page.waitForSelector('.shelf');
   ok(await page.locator('.spine.add').count() === 0, 'viewer: no "new book"');
+  ok(await page.locator('.setlist.disp [data-a="lang"]').count() === 2 && await page.locator('.setlist.disp .fsseg').count() === 1 && await page.locator('.top [data-a="lang"], .top .fsb').count() === 0, 'viewer: relatives get the language and text-size card on the shelf too (and no controls in the top bar)');
   ok(await page.locator('nav.bar a[href*="/log/"]').count() === 0, 'viewer: no Record tab');
   ok(await page.locator('nav.bar a[href="#/passport"]').count() === 1 && await page.locator('nav.bar a[href$="/today"]').count() === 1, 'viewer: relatives get menu, today, book, firsts, passports');
   await page.goto(`${BASE}/#/passport/mimi`); await page.waitForSelector('.mission');
