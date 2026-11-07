@@ -467,6 +467,9 @@ const T = 'hk-macau-2026';
   ok(await page.locator('.kpage').count() === 3 && await page.locator('#kdots i').count() === 3 && (await page.locator('.kidtiles button').first().boundingBox()).height >= 150, 'kid home: three swipe pages of four huge tiles, with dots');
   await page.click('.kparrow.next'); await page.waitForFunction(() => document.querySelectorAll('#kdots i')[1].classList.contains('on'), null, { timeout: 5000 });
   ok(await page.locator('.kparrow.prev:not([hidden])').count() === 1, 'kid home: the arrow turns the page, the dots follow');
+  await page.waitForTimeout(700);   // after the page's entrance animation
+  ok(await page.evaluate(() => { const r = document.querySelector('.kidbar').getBoundingClientRect(); return Math.abs(r.bottom - innerHeight) <= 1; }), 'kid bar: stuck to the bottom of the screen, not to the end of the page (no transform left on the page by its entrance)');
+  ok(await page.evaluate(() => [...document.querySelectorAll('.kidtiles button.pic img, .kidbar img.kbi')].length >= 8 && [...document.querySelectorAll('.kidtiles img, .kidbar img')].every((i) => i.complete && i.naturalWidth > 0)), 'kid mode: the picture tiles and bar icons load');
   ok(await page.locator('.kidbar button').count() === 5 && await page.locator('.kidbar button[aria-current=page] span').textContent() === '🏠' && await page.locator('.kidbar button[data-v$="/trophies"]').count() === 1, "kid mode has its own bar: home, map, passport, stickers, trophies");
   await page.goto(`${BASE}/#/t/${T}`); await page.waitForSelector('.kidwrap');
   ok(page.url().includes('#/kid/mimi'), 'kid mode is locked: other pages lead back to it');

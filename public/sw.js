@@ -1,6 +1,6 @@
 // Memory Bookshelf service worker: app shell + all drawn art offline from the first visit; photos cached as you view them
 // (or all at once with "Keep this book offline"). Data (/api) is cached by the app itself (IndexedDB) and written through its queue.
-const V = 'mbs-v117';
+const V = 'mbs-v119';
 const SHELL = ['/', '/app.css', '/core.js', '/views.js', '/sheets.js', '/kid.js', '/manifest.webmanifest', '/icon.svg',
   '/fonts/KIRA-UI-Regular.woff2', '/fonts/KIRA-UI-Medium.woff2', '/fonts/KIRA-UI-SemiBold.woff2', '/fonts/KIRA-UI-Bold.woff2',
   '/fonts/CormorantGaramond-SemiBold.woff2', '/fonts/CormorantGaramond-MediumItalic.woff2'];
@@ -13,7 +13,10 @@ const ART = ['/art/day-1.svg', '/art/day-2.svg', '/art/day-3.svg', '/art/day-4.s
   '/art/colour/au/day-9.svg', '/art/colour/au/day-10.svg', '/art/colour/au/day-11.svg', '/art/colour/au/day-12.svg', '/art/colour/au/day-13.svg', '/art/colour/au/day-14.svg', '/art/colour/au/day-15.svg', '/art/colour/au/day-16.svg',
   '/art/guides/pinky.svg', '/art/guides/bao.svg', '/art/guides/roo.svg', '/art/guides/kiki.svg', '/art/crest/hk.svg', '/art/crest/au.svg',
   '/art/kids/mimi.svg', '/art/kids/mimi-full.svg', '/art/kids/mika.svg', '/art/kids/mika-full.svg',
-  '/art/kids/mimi-adventure.svg', '/art/kids/mimi-adventure-full.svg', '/art/kids/mika-adventure.svg', '/art/kids/mika-adventure-full.svg'];
+  '/art/kids/mimi-adventure.svg', '/art/kids/mimi-adventure-full.svg', '/art/kids/mika-adventure.svg', '/art/kids/mika-adventure-full.svg',
+  '/art/kidui/surprise.webp', '/art/kidui/pack.webp', '/art/kidui/say.webp', '/art/kidui/colour.webp', '/art/kidui/draw.webp', '/art/kidui/match.webp', '/art/kidui/quiz.webp',
+  '/art/kidui/animals.webp', '/art/kidui/count.webp', '/art/kidui/bar-home.webp', '/art/kidui/bar-map.webp', '/art/kidui/bar-colour.webp', '/art/kidui/bar-stickers.webp', '/art/kidui/bar-trophies.webp',
+  '/art/kidui/find.webp', '/art/kidui/stamp.webp', '/art/kidui/talk.webp', '/art/kidui/memory.webp', '/art/kidui/photos.webp', '/art/kidui/mood.webp', '/art/kidui/bar-passport.webp'];   // kid mode's picture tiles and bar
 const SHELL_TIMEOUT = 4000;   // on a bad connection fall back to the cached shell after this long instead of hanging
 
 // one missing file must not stop the whole install (addAll is all-or-nothing)
