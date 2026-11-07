@@ -122,14 +122,18 @@ function create({ pool, family, A, sender = (sub, payload, opt) => webpush.sendN
     const rows = (await pool.query('SELECT name_th, name_en FROM children WHERE family_id=$1 ORDER BY pos', [family])).rows;
     return rows.length ? { th: FAM.names(rows, 'th'), en: FAM.names(rows, 'en') } : { th: 'เด็กๆ', en: 'the kids' };
   };
+  // a timezone the platform does not know (a hand-typed or model-written one) would throw inside zoned() and stop every book's reminders:
+  // such a book is skipped and named once in the log
+  const tzBad = new Set();
+  const tzOk = (tz) => { if (tzBad.has(tz)) return false; try { new Intl.DateTimeFormat('en', { timeZone: tz }); return true; } catch (_) { tzBad.add(tz); console.error('push: unknown timezone skipped', tz); return false; } };
   async function tick(now = Date.now()) {
     const days = (await pool.query(`SELECT t.id trip, t.timezone tz, d.day_index, to_char(d.date,'YYYY-MM-DD') date, d.plan->'plan' rows
       FROM trip_days d JOIN trips t ON t.id=d.trip_id WHERE t.family_id=$1 AND d.date BETWEEN $2::date - 1 AND $2::date + 1`, [family, new Date(now).toISOString().slice(0, 10)])).rows;
     const trips = (await pool.query(`SELECT id trip, title, timezone tz, to_char(date_from,'YYYY-MM-DD') "from", to_char(date_to,'YYYY-MM-DD') "to",
         coalesce(jsonb_array_length(passport->'countdown'->'doors'), 0) doors
       FROM trips WHERE family_id=$1 AND ($2::date BETWEEN date_from - 16 AND date_to + 1 OR date_to < $2::date)`, [family, new Date(now).toISOString().slice(0, 10)])).rows;   // past trips too: their days come back on the anniversary
-    const list = due(days, now).map((r) => ({ ...r, msg: (lang) => message(r, lang, now) }));
-    for (const x of extras(trips, now, await kidNames())) {
+    const list = due(days.filter((d) => tzOk(d.tz) && (d.rows || []).every((r) => !r || !r.tz || tzOk(r.tz))), now).map((r) => ({ ...r, msg: (lang) => message(r, lang, now) }));
+    for (const x of extras(trips.filter((t) => tzOk(t.tz)), now, await kidNames())) {
       if (x.day !== undefined) {
         const has = (await pool.query(`SELECT 1 FROM entries WHERE trip_id=$1 AND day_index=$2 AND kind IN ('quote','mood','fav','note','first')
           UNION ALL SELECT 1 FROM media WHERE trip_id=$1 AND day_index=$2 LIMIT 1`, [x.trip, x.day])).rowCount > 0;

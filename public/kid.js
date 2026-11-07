@@ -326,6 +326,7 @@ function mapModel(t) {
     const cx = (a[0] + b[0]) / 2 - (b[1] - a[1]) * bend, cy = (a[1] + b[1]) / 2 + (b[0] - a[0]) * bend;
     return { day: v.day, d: `M${a[0]},${a[1]} Q${cx.toFixed(1)},${cy.toFixed(1)} ${b[0]},${b[1]}` };
   });
+  if (!seq.length) return null;   // a map with stops but no day that reaches one (an import whose day keys matched nothing): no walk to draw
   return { m, at, seq, hops };
 }
 // index into seq where the kids are at the end of day i
@@ -435,7 +436,7 @@ function stickerBoard(t, kid, edit) {
   const tray = set.filter((s) => s.got && !used.has(s.k)), got = set.filter((s) => s.got).length;
   const st = (t.passport || {}).style || {};
   return `<div class="stkboard${edit ? ' edit' : ''}" id="stkboard" data-t="${esc(t.id)}" data-k="${esc(kid)}" style="--bgA:${esc(st.bgA || '#FFF6E5')};--bgB:${esc(st.bgB || '#E8F4FF')}">
-<span class="stkhd">⭐ ${esc(kidName(kid))} · ${got}/${set.length}</span>
+<span class="stkhd">⭐ ${esc(kidName(kid))}${got ? ` · ${got}` : ''}</span>
 ${placed.map((p, i) => `<span class="stk on${by[p[0]].img ? ' img' : ''}" data-i="${i}" style="left:${+p[1]}%;top:${+p[2]}%;--r:${+p[3] || 0}deg">${stkFace(by[p[0]])}</span>`).join('')}
 ${!placed.length ? `<p class="stkempty">${edit ? L('ลากสติกเกอร์มาแปะตรงนี้!', 'Drag your stickers here!') : L('ยังไม่ได้แปะสติกเกอร์', 'No stickers yet')}</p>` : ''}</div>
 ${edit ? `<div class="stktray" id="stktray">${tray.map((s) => `<button class="stk${s.img ? ' img' : ''}" data-k="${esc(s.k)}" aria-label="${L('สติกเกอร์', 'Sticker')}">${stkFace(s)}</button>`).join('')
@@ -491,7 +492,8 @@ function matchDeck(t) {
   if (faces.length < 6) t.days.forEach((_, i) => { const a = dayArt(t, i); if (a) faces.push({ k: 'd' + i, img: a }); });
   ((t.passport || {}).days || []).forEach((pd, i) => (pd.spot || []).forEach((s) => faces.push({ k: `s${i}.${s.k}`, e: s.e })));
   if (faces.length < 6) ['🐨', '🦘', '🐬', '🐼', '🚢', '✈️'].forEach((e, i) => faces.push({ k: 'x' + i, e }));
-  const pick = faces.filter((f) => f.ph).concat(shuffle(faces.filter((f) => !f.ph))).slice(0, 6); return shuffle(pick.concat(pick));
+  const seenE = new Set(), uniq = faces.filter((f) => !f.e || (!seenE.has(f.e) && seenE.add(f.e)));   // one card per face: two different keys with the same emoji would never match
+  const pick = uniq.filter((f) => f.ph).concat(shuffle(uniq.filter((f) => !f.ph))).slice(0, 6); return shuffle(pick.concat(pick));
 }
 // which pictures a game uses (owner's ask, Nov 2026: the children's own photos are the pictures they love most): 'art' = the day's drawing,
 // 'photo' = one of the family's photos (520 px thumbnails, on the phone once the book is stored) — per game, this visit
@@ -515,7 +517,7 @@ function trophies(t, kid) {
   const stamps = t.days.filter((_, j) => ticked(t, `stamp.d${j}`, kid)).length;
   const colours = S.entries.filter((e) => e.trip === t.id && e.kind === 'field' && e.child === kid && /^colour\./.test(e.first_key)).length;
   const draws = mediaOf(t.id).filter((m) => m.id.startsWith(`dr-${kid}-`)).length;
-  const said = (pp.lists || []).filter((l) => l.said).reduce((n, l) => n + listGot(t, l, kid).length, 0);
+  const said = (pp.lists || []).filter((l) => l.said).reduce((n, l) => n + listGot(t, l, kid), 0);
   const spotsAll = t.days.some((_, j) => { const sp = daySpots(t, j, kid); return sp.length && sp.every((x) => ticked(t, x.key, kid)); });
   const stk = stickersPlaced(t, kid).length, hearts = heartsFor(kid).length, wins = ls('match_' + kid) || 0;
   const wildN = (info.wild || []).filter((_, n) => ticked(t, `wild.${n}`, kid)).length;
@@ -573,7 +575,8 @@ function viewKid(p) {
     return `<div class="kidwrap pick enter"><h1>${L('ใครจะเล่น?', 'Who is playing?')}</h1><div class="kidpick">${ks.map((c) => `<button data-a="kidpick" data-v="${esc(c.slug)}">${kidArt(c.slug) ? `<img src="${kidArt(c.slug, true)}" alt="">` : `<span>${esc(c.emoji)}</span>`}<b>${esc(kidName(c.slug))}</b></button>`).join('')}</div>
 <button class="kidexit" id="kidexit" aria-label="${L('ผู้ใหญ่: กดค้างเพื่อออก', 'Grown-ups: press and hold to leave')}">🔒</button></div>`;
   }
-  const t = kidTrip(kid); if (!t) return `<div class="empty">${L('ยังไม่มีทริป', 'No trips yet')}</div>`;
+  if (!kidTrip(kid)) return `<div class="kidwrap pick enter"><p class="empty">${L('ยังไม่มีเล่มของหนู', 'No book for you yet')}</p><button class="kidexit" id="kidexit" aria-label="${L('ผู้ใหญ่: กดค้างเพื่อออก', 'Grown-ups: press and hold to leave')}">🔒</button></div>`;   // never a page without the lock: a grown-up must be able to leave
+  const t = kidTrip(kid);
   const pp = t.passport || {}, i = kidDayOf(t), d = t.days[i], pd = (pp.days || [])[i] || {}, g = pp.guides || [];
   const view = p[2] || 'home', name = kidName(kid), pre = preTrip(t), cd = pp.countdown, wild = ((t.info || {}).wild || []);
   const fill = (x) => String(x || '').replace(/\{name\}/g, name);
@@ -693,7 +696,7 @@ ${door.art !== undefined ? artImg(t, Math.min(door.art, t.days.length - 1), 'big
     body = `<div class="kidguide">${guideImg(1)}<p>${n >= items.length ? L('กระเป๋าพร้อมแล้ว! เก่งมาก 🎉', 'Bag packed! Brilliant 🎉') : esc(fill(T(cd.pack.title)))}</p></div>
 <div class="kidspots">${items.map((s) => { const on = ticked(t, `pack.${s.k}`, kid); return `<button class="${on ? 'on' : ''}" data-a="kidspot" data-t="${esc(t.id)}" data-d="" data-k="${esc(kid)}" data-v="pack.${esc(s.k)}" data-say="${esc(T(s))}" aria-pressed="${!!on}"><span>${esc(s.e)}</span><b>${esc(T(s))}</b>${on ? '<i>✓</i>' : ''}</button>`; }).join('')}</div>`;
   } else if (view === 'map' && pp.map) {
-    if (mapFrom === null && kidEnter && !pre && i > 0) mapFrom = mapPos(mapModel(t), Math.max(0, i - 1));   // walk in from yesterday's stop
+    if (mapFrom === null && kidEnter && !pre && i > 0 && mapModel(t)) mapFrom = mapPos(mapModel(t), Math.max(0, i - 1));   // walk in from yesterday's stop
     body = `<div class="kidguide">${guideImg(0)}<p>${L('แตะรูปหมุด แล้วไปด้วยกันเลย!', "Tap a pin and we'll walk there!")}</p></div>
 ${mapHtml(t, i, [kid].concat((t.theme.children || []).map((c) => c.slug).filter((s) => s !== kid)), mapAt !== null ? mapAt : pre ? 0 : null)}`;
   } else if (view === 'quiz' && ((d.plan || {}).quiz || []).length) {
@@ -708,7 +711,7 @@ ${mapHtml(t, i, [kid].concat((t.theme.children || []).map((c) => c.slug).filter(
   } else if (view === 'photos') {
     const ph = kidPhotos(t, i); if (kidPhoto >= ph.length) kidPhoto = 0; const m = ph[kidPhoto];
     body = m ? `<div class="kidguide">${guideImg(0)}<p>${m.caption ? esc(m.caption) : L(`รูปวันที่ ${m.day + 1}`, `A photo from day ${m.day + 1}`)}</p></div>
-<button class="kidphoto" data-a="kidphoto" data-v="1" aria-label="${L('รูปถัดไป', 'Next photo')}"><img src="/media/${esc(m.id)}" alt=""></button>
+<button class="kidphoto" data-a="kidphoto" data-v="1" aria-label="${L('รูปถัดไป', 'Next photo')}"><img src="${esc(imgT(m))}" alt=""></button>
 <div class="kpnav"><button class="kidbig ghost" data-a="kidphoto" data-v="-1" aria-label="${L('รูปก่อนหน้า', 'Previous')}">‹</button><span class="kpn">${kidPhoto + 1} / ${ph.length}</span><button class="kidbig ghost" data-a="kidphoto" data-v="1" aria-label="${L('รูปถัดไป', 'Next')}">›</button></div>`
       : `<div class="kidguide">${guideImg(0)}<p>${L('ยังไม่มีรูปเลย', 'No photos yet')}</p></div>`;
     body += kidAudio(t, i);
@@ -735,15 +738,15 @@ ${pixPick(t, i, 'match', 'kidnewmatch')}
   } else if (view === 'trophies') {
     const all = trophies(t, kid), got = all.filter((x) => x[3]), seen = new Set(ls('tseen_' + kid) || []), fresh = got.filter((x) => !seen.has(x[0]));
     if (fresh.length) ls('tseen_' + kid, got.map((x) => x[0]));
-    body = `<div class="kidguide${fresh.length ? ' pop' : ''}">${guideImg(0)}<p>${fresh.length ? L(`เย้! รางวัลใหม่: ${fresh.map((x) => x[2]).join(', ')} 🎉`, `Yay! New: ${fresh.map((x) => x[2]).join(', ')} 🎉`) : L(`${esc(name)} มี ${got.length} จาก ${all.length} รางวัล`, `${esc(name)} has ${got.length} of ${all.length} trophies`)}</p></div>
-<div class="trophies">${all.map((x) => `<button class="tro${x[3] ? ' got' : ''}${fresh.some((f) => f[0] === x[0]) ? ' new' : ''}" data-a="sayfacts" data-v="${esc(x[3] ? x[2] : L(`${x[2]} — ยังไม่ได้ ลองดูนะ`, `${x[2]} — not yet, keep going`))}"><span>${x[3] ? x[1] : '🔒'}</span><b>${esc(x[2])}</b></button>`).join('')}</div>`;
+    body = `<div class="kidguide${fresh.length ? ' pop' : ''}">${guideImg(0)}<p>${fresh.length ? L(`เย้! รางวัลใหม่: ${fresh.map((x) => x[2]).join(', ')} 🎉`, `Yay! New: ${fresh.map((x) => x[2]).join(', ')} 🎉`) : (got.length ? L(`${esc(name)} มี ${got.length} รางวัลแล้ว`, `${esc(name)} has ${got.length} troph${got.length === 1 ? 'y' : 'ies'}`) : L('ถ้วยรางวัลรอหนูอยู่', 'Trophies are waiting for you'))}</p></div>
+<div class="trophies">${all.map((x) => `<button class="tro${x[3] ? ' got' : ''}${fresh.some((f) => f[0] === x[0]) ? ' new' : ''}" data-a="sayfacts" data-v="${esc(x[2])}"><span>${x[3] ? x[1] : '🔒'}</span><b>${esc(x[2])}</b></button>`).join('')}</div>`;
   } else if (view === 'hearts') {
     const hs = heartsFor(kid), seen = ls('hseen_' + kid) || 0;
     if (hs.length) ls('hseen_' + kid, Math.max(seen, hs[0].at));
     body = `<div class="kidhearts-list">${hs.map((h) => `<button class="${h.at > seen ? 'new' : ''}" data-a="kidheart" data-v="${esc(heartLine(h, kid))}"><span class="e">${emo(h.emoji)}</span><b>${esc(h.from)}</b>${h.text ? `<p>${emoIn(esc(h.text))}</p>` : ''}<i>🔊</i></button>`).join('') || `<div class="kidguide">${guideImg(0)}<p>${L(`ยังไม่มีหัวใจเลย — เดี๋ยวคุณตาคุณยายส่งมาให้${esc(name)}นะ 💗`, `No hearts yet — the family will send ${esc(name)} some soon 💗`)}</p></div>`}</div>`;
   } else body = `<button class="kidbig" data-a="kidnav" data-v="#/kid/${esc(kid)}">🏠</button>`;
   // kid mode's own bar: big pictures, read aloud on tap (data-say), no grown-up pages
-  const kb = [['', '🏠', L('บ้าน', 'Home')], pp.map && ['map', '🗺️', L('แผนที่', 'Map')], [pre ? (canColour(t, i) ? 'colour' : 'draw') : 'stamp', pre ? (canColour(t, i) ? '🎨' : '🖍️') : '🛂', pre ? (canColour(t, i) ? L('ระบายสี', 'Colour') : L('วาดรูป', 'Draw')) : L('พาสปอร์ต', 'Passport')], ['stickers', '⭐', L('สติกเกอร์', 'Stickers')], ['trophies', '🏆', L('รางวัล', 'Trophies')]].filter(Boolean);
+  const kb = [['', '🏠', L('บ้าน', 'Home')], mapModel(t) && ['map', '🗺️', L('แผนที่', 'Map')], [pre ? (canColour(t, i) ? 'colour' : 'draw') : 'stamp', pre ? (canColour(t, i) ? '🎨' : '🖍️') : '🛂', pre ? (canColour(t, i) ? L('ระบายสี', 'Colour') : L('วาดรูป', 'Draw')) : L('พาสปอร์ต', 'Passport')], ['stickers', '⭐', L('สติกเกอร์', 'Stickers')], ['trophies', '🏆', L('รางวัล', 'Trophies')]].filter(Boolean);
   const bar = `<nav class="kidbar">${kb.map(([v, e, lbl]) => `<button data-a="kidnav" data-v="#/kid/${esc(kid)}${v ? '/' + v : ''}" data-say="${esc(lbl)}"${(v || 'home') === view ? ' aria-current="page"' : ''}>${KBAR[v || 'home'] ? `<img class="kbi" src="/art/kidui/bar-${KBAR[v || 'home']}.webp" alt="">` : ''}<span${KBAR[v || 'home'] ? ' class="vh"' : ''}>${e}</span><b>${lbl}</b></button>`).join('')}</nav>`;
   return `<div class="kidwrap${view === 'home' ? ' home' : ''}${kidEnter ? ' enter' : ''}" style="${style}">${head}${body}${lock}${bar}</div>`;
 }
@@ -753,7 +756,7 @@ let colourSaveT = 0;
 Object.assign(A, {
   kidmode(b) { ls('kidmode', b.dataset.v || 'pick'); nav(b.dataset.v ? `#/kid/${b.dataset.v}` : '#/kid'); },
   kidpick(b) { beep('hello'); ls('kidmode', b.dataset.v); kidDay = null; nav(`#/kid/${b.dataset.v}`); },
-  kidnav(b) { beep('tap'); kidDoor = null; nav(b.dataset.v); if (b.dataset.say) sayUi(b.dataset.say); },
+  kidnav(b) { beep('tap'); kidDoor = null; if (!/\/bubbles$/.test(b.dataset.v || '')) { clearInterval(bubT); bubT = null; bubN = 0; } nav(b.dataset.v); if (b.dataset.say) sayUi(b.dataset.say); },
   kidday(b) { beep('pop'); kidDay = +b.dataset.v; mapAt = null; kidPhoto = 0; render(); },
   kidpage(b) { beep('tap'); const pg = $('#kidpager'); if (pg) pg.scrollBy({ left: +b.dataset.v * pg.clientWidth, behavior: reduced() ? 'auto' : 'smooth' }); },
   kidphoto(b) { beep('tap'); const t = trip(route().parts[1] && kidTrip(route().parts[1]).id), n = kidPhotos(t, kidDayOf(t)).length; if (!n) return; kidPhoto = (kidPhoto + +b.dataset.v + n) % n; render(); },
@@ -904,6 +907,7 @@ Object.assign(A, {
 let bubT = 0, bubN = 0;
 const BUB_E = ['🐟', '🐙', '⭐', '🦋', '🌼', '🍓', '🎈', '🐥', '🐢', '🌈'];
 function startBubbles() {
+  if (bubT && $('#bubblefield')) { const sc = $('#bubscore'); if (sc && bubN) sc.textContent = bubN; return; }   // already running: the page was only redrawn
   clearInterval(bubT); bubN = 0;
   const spawn = () => {
     const f = $('#bubblefield'); if (!f) { clearInterval(bubT); return; }

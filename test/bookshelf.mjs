@@ -147,6 +147,8 @@ ok((await put(`/api/b/spend/${T}.sp.0001`, sp)).ok && (await state()).spend.some
 ok((await put(`/api/b/spend/${T}.sp.0001`, { ...sp, amount: 300.5 })).ok && (await state()).spend.filter((x) => x.id === `${T}.sp.0001`).map((x) => x.amount).join() === '300.5', 'same id → updated, not duplicated');
 ok((await put(`/api/b/spend/${T}.sp.bad1`, { ...sp, cat: 'casino' })).status === 400 && (await put(`/api/b/spend/${T}.sp.bad2`, { ...sp, amount: -5 })).status === 400
   && (await put(`/api/b/spend/${T}.sp.bad3`, { ...sp, cur: 'dollars' })).status === 400 && (await put(`/api/b/spend/${T}.sp.bad4`, { ...sp, day: 99 })).status === 400, 'spend: unknown category, negative amount, bad currency or day → 400');
+ok((await state(vck)).spend.length === 0 && (await state()).spend.length > 0, 'spending is the parents\' own ledger: a relative\'s state carries none of it');
+ok((await fetch(BASE + '/api/b/trips', { method: 'POST', headers: H, body: JSON.stringify({ slug: 'tz-test-book', title: { th: 'ทดสอบ', en: 'Test' }, date_from: '2030-01-01', date_to: '2030-01-02', timezone: 'Pacific/Sidney' }) })).status === 400, 'a new book with a timezone the platform does not know is refused (reminders would stop for every book)');
 ok((await fetch(BASE + `/api/b/spend/${T}.sp.0001`, { method: 'DELETE', headers: H })).ok && !(await state()).spend.length, 'spend deleted');
 const nt = await fetch(BASE + '/api/b/trips', { method: 'POST', headers: H, body: JSON.stringify({ slug: 'chiang-mai-2027', title: { th: 'เชียงใหม่', en: 'Chiang Mai' }, date_from: '2027-08-10', date_to: '2027-08-13' }) });
 s = await state();

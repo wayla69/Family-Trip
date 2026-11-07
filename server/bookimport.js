@@ -226,6 +226,7 @@ async function run({ buf, slug, client, take, onUsage, log = () => {}, dir, kids
 Trip: ${JSON.stringify({ title: top.title, place: top.place, from: top.from, to: top.to, days: brief })}`,
     max: 24000, effort: 'medium', manual: false,
   });
+  if (info && info.ifthen && !Array.isArray(info.ifthen.rows) && info.ifthen.plans && Array.isArray(info.ifthen.plans.rows)) info.ifthen = { ...info.ifthen, head: info.ifthen.plans.head || info.ifthen.head, cols: info.ifthen.plans.cols || info.ifthen.cols, rows: info.ifthen.plans.rows };   // the seeds' shape ({cols, rows}), as views.js reads it
   const plan = { ...top, info: info || {}, ...(rest && rest.groups ? { restaurants: rest } : {}) };
   const asI18n = (x) => (x && typeof x === 'object' && typeof x.en === 'string' ? { th: typeof x.th === 'string' ? x.th : x.en, en: x.en } : null);
   const keyOf = (k, i) => (String(k || '').toLowerCase().replace(/[^a-z0-9]+/g, '-').replace(/^-+|-+$/g, '') || `x${i + 1}`);

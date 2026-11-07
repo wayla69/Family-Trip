@@ -1,6 +1,7 @@
 // Memory Bookshelf service worker: app shell + all drawn art offline from the first visit; photos cached as you view them
 // (or all at once with "Keep this book offline"). Data (/api) is cached by the app itself (IndexedDB) and written through its queue.
-const V = 'mbs-v158';
+const V = 'mbs-v159';
+const MEDIA = 'mbs-media';   // photos, clips, drawn characters, emoji pictures, drawn book art: kept across shell versions, so a deploy never empties the offline pack
 const SHELL = ['/', '/app.css', '/core.js', '/views.js', '/sheets.js', '/kid.js', '/manifest.webmanifest', '/icon-192.png',
   '/fonts/KIRA-UI-Regular.woff2', '/fonts/KIRA-UI-Medium.woff2', '/fonts/KIRA-UI-SemiBold.woff2', '/fonts/KIRA-UI-Bold.woff2',
   '/fonts/CormorantGaramond-SemiBold.woff2', '/fonts/CormorantGaramond-MediumItalic.woff2'];
@@ -27,7 +28,7 @@ const addEach = (c, urls) => Promise.allSettled(urls.map((u) => fetch(u, { cache
 self.addEventListener('install', (e) => {
   e.waitUntil(caches.open(V).then((c) => c.addAll(SHELL).then(() => addEach(c, ART))).then(() => self.skipWaiting()));
 });
-self.addEventListener('activate', (e) => { e.waitUntil(caches.keys().then((ks) => Promise.all(ks.filter((k) => k !== V).map((k) => caches.delete(k)))).then(() => self.clients.claim())); });
+self.addEventListener('activate', (e) => { e.waitUntil(caches.keys().then((ks) => Promise.all(ks.filter((k) => k !== V && k !== MEDIA).map((k) => caches.delete(k)))).then(() => self.clients.claim())); });
 
 // trip reminders from the server (Web Push): show them, and a tap opens that day's page
 self.addEventListener('push', (e) => {
@@ -48,8 +49,8 @@ self.addEventListener('fetch', (e) => {
   const r = e.request, u = new URL(r.url);
   if (r.method !== 'GET' || u.origin !== location.origin) return;
   if (u.pathname.startsWith('/api/') || u.pathname.startsWith('/v/')) return;
-  if (u.pathname.startsWith('/media/') || u.pathname.startsWith('/fonts/') || u.pathname.startsWith('/art/')) {   // immutable: cache first
-    e.respondWith(caches.open(V).then(async (c) => {
+  if (u.pathname.startsWith('/media/') || u.pathname.startsWith('/fonts/') || u.pathname.startsWith('/art/')) {   // immutable: cache first (media in its own cache that outlives the shell version)
+    e.respondWith(caches.open(u.pathname.startsWith('/media/') ? MEDIA : V).then(async (c) => {
       const hit = await c.match(r); if (hit) return hit;
       const res = await fetch(r); if (res.ok) c.put(r, res.clone()); return res;
     }));
