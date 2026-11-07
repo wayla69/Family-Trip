@@ -19,9 +19,9 @@ const png = await sharp({ create: { width: 600, height: 400, channels: 4, backgr
 
 // ---- the bundled set, seeded once, every picture there
 let s = await state();
-ok(Array.isArray(s.emoji) && s.emoji.length === 24 && s.emoji.every((e) => e.ch && e.th && e.en && /^\/art\/emoji\/[a-z-]+\.webp$/.test(e.src)), 'state: the 24 bundled emoji, each with its emoji, Thai and English name and picture');
+ok(Array.isArray(s.emoji) && s.emoji.length === 34 && s.emoji.every((e) => e.ch && e.th && e.en && /^\/art\/emoji\/[a-z-]+\.webp$/.test(e.src)), 'state: the 34 bundled emoji, each with its emoji, Thai and English name and picture');
 ok((await Promise.all(s.emoji.map((e) => fetch(BASE + e.src).then((r) => r.ok)))).every(Boolean), 'every bundled picture is served');
-ok((await state(vck)).emoji.length === 24, 'relatives see the library too (it draws their hearts)');
+ok((await state(vck)).emoji.length === 34, 'relatives see the library too (it draws their hearts)');
 
 // ---- relatives may not change it; bad input is refused
 ok((await put('my-kanga', { ch: '🦘', th: 'จิงโจ้', en: 'Kangaroo' }, png, vck)).status === 403, 'a relative cannot add an emoji');
@@ -43,7 +43,7 @@ ok(pic.ok && meta.format === 'png' && meta.width === 160 && meta.height === 160,
 ok((await fetch(BASE + added.src)).status === 401, 'the picture is not public');
 ok((await fetch(BASE + added.src, { headers: { cookie: vck } })).ok, 'relatives can see it');
 s = await state();
-ok(s.emoji.length === 25 && s.emoji[24].id === 'my-kanga' && s.emoji[24].th === 'จิงโจ้', 'state: the new one comes last');
+ok(s.emoji.length === 35 && s.emoji[34].id === 'my-kanga' && s.emoji[34].th === 'จิงโจ้', 'state: the new one comes last');
 ok((await put('my-kanga', { ch: '🦘', th: 'จิงโจ้น้อย', en: 'Joey' }, Buffer.alloc(0))).status === 200 && (await state()).emoji.find((e) => e.id === 'my-kanga').en === 'Joey', 'renaming keeps the picture');
 
 // ---- in the backup, with its picture
@@ -59,6 +59,24 @@ const back = await (await fetch(BASE + '/api/b/emoji/defaults', { method: 'POST'
 ok(back.added === 1 && (await state()).emoji.some((e) => e.id === 'heart'), '"bring back the original set" puts back only what is missing');
 ok((await del('my-kanga')).status === 200 && !(await state()).emoji.some((e) => e.id === 'my-kanga'), 'the family\'s own can be deleted');
 ok((await fetch(BASE + added.src, { headers: { cookie: ck } })).status === 404, '… and its picture goes with it');
+
+// ---- a new bundled pack reaches a family seeded before it; a picture the parents deleted stays deleted
+{
+  const { Pool } = require('pg'); const EMOJI = require('../server/emoji.js');
+  const pool = new Pool({ connectionString: process.env.DATABASE_URL });
+  const fam = (await pool.query('SELECT id FROM families LIMIT 1')).rows[0].id;
+  const second = EMOJI.DEFAULTS.slice(24).map((d) => d[0]);
+  // as on a server seeded before the second pack: only the first 24, no 'emoji_offered' yet
+  await pool.query('DELETE FROM emoji WHERE family_id=$1 AND id = ANY($2)', [fam, second]);
+  await pool.query("DELETE FROM settings WHERE key='emoji_offered'");
+  const added = await EMOJI.seed(pool, fam);
+  const ids = (await pool.query('SELECT id FROM emoji WHERE family_id=$1', [fam])).rows.map((r) => r.id);
+  ok(added === 10 && second.every((id) => ids.includes(id)), 'a family seeded before the second pack gets its ten on the next boot');
+  await pool.query("DELETE FROM emoji WHERE family_id=$1 AND id='yummy'", [fam]);
+  ok(await EMOJI.seed(pool, fam) === 0 && !(await pool.query("SELECT 1 FROM emoji WHERE family_id=$1 AND id='yummy'", [fam])).rowCount, 'a bundled picture the parents deleted is not put back by the next boot');
+  ok((await state()).emoji.some((e) => e.ch === '😋') === false && (await state()).emoji.some((e) => e.ch === '🤩' && e.src === '/art/emoji/excited.webp'), 'the state follows: 🤩 drawn by the new picture, 😋 gone after its delete');
+  await pool.end();
+}
 
 console.log(failures ? `\n${failures} FAILED` : '\nALL PASSED');
 process.exit(failures ? 1 : 0);

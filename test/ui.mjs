@@ -142,7 +142,7 @@ const T = 'hk-macau-2026';
   ok(await page.inputValue('#qtext') === 'ปลาอยู่ในน้ำเหมือนหนูเลย', 'typed quote survives switching speaker');
   // the emoji library: the button beside the box opens the grid, the one tapped goes in at the cursor, the box keeps the focus
   await page.click('[data-a="emopick"][data-for="qtext"]'); await page.waitForSelector('#emopop');
-  ok(await page.locator('#emopop [data-a="emoput"]').count() === 24 && await page.locator('#emopop img.emi').count() === 24, 'emoji library: 24 pictures in the grid');
+  ok(await page.locator('#emopop [data-a="emoput"]').count() === 34 && await page.locator('#emopop img.emi').count() === 34, 'emoji library: 34 pictures in the grid');
   await page.click('#emopop [data-a="emoput"][data-v="😍"]');
   ok(await page.inputValue('#qtext') === 'ปลาอยู่ในน้ำเหมือนหนูเลย😍' && await page.evaluate(() => document.activeElement.id) === 'qtext' && await page.locator('#emopop').count() === 0, 'emoji library: the pick goes in the box, the box keeps the focus, the grid closes');
   await page.fill('#qtext', 'ปลาอยู่ในน้ำเหมือนหนูเลย');
@@ -210,13 +210,13 @@ const T = 'hk-macau-2026';
     && await page.evaluate(() => getComputedStyle(document.querySelector('.famsave')).backgroundColor !== 'rgba(0, 0, 0, 0)'), 'family page: no character box or server words without the drawing helper; a hint under each birth month; a solid save bar');
   // #/emoji: the library from the database — add one with a picture from the phone, it shows in the grid beside a text box, delete it (two taps)
   await page.goto(`${BASE}/#/emoji`); await page.waitForSelector('.emolist');
-  ok(await page.locator('.emocard').count() === 24 && await page.locator('.setlist').count() === 0, 'emoji page: the 24 of the library');
+  ok(await page.locator('.emocard').count() === 34 && await page.locator('.setlist').count() === 0, 'emoji page: the 34 of the library');
   const pic = await sharp({ create: { width: 300, height: 300, channels: 4, background: { r: 30, g: 160, b: 90, alpha: 1 } } }).png().toBuffer();
   await page.setInputFiles('#emfile', { name: 'koala.png', mimeType: 'image/png', buffer: pic }); await page.waitForSelector('#emprev');
   await page.fill('[data-emf="ch"]', '🐨'); await page.fill('[data-emf="th"]', 'โคอาล่า'); await page.fill('[data-emf="en"]', 'Koala');
   await page.click('[data-a="emoadd"]');
   await page.waitForFunction(() => S.emoji.some((e) => e.ch === '🐨'), null, { timeout: 8000 }).catch(() => {});
-  ok(await page.locator('.emocard').count() === 25 && (await page.textContent('.emolist')).includes('Koala') && await page.inputValue('[data-emf="ch"]') === '', 'emoji page: a new one with its picture, the form cleared');
+  ok(await page.locator('.emocard').count() === 35 && (await page.textContent('.emolist')).includes('Koala') && await page.inputValue('[data-emf="ch"]') === '', 'emoji page: a new one with its picture, the form cleared');
   await page.goto(`${BASE}/#/t/${T}/log/1`); await page.waitForSelector('#qtext');
   await page.click('[data-a="emopick"][data-for="qtext"]'); await page.waitForSelector('#emopop');
   ok(await page.locator('#emopop [data-a="emoput"][data-v="🐨"] img.emi[src^="/media/emoji/"]').count() === 1, 'emoji page: the new one is in the grid beside a text box');
@@ -224,7 +224,7 @@ const T = 'hk-macau-2026';
   const koala = page.locator('.emocard', { hasText: 'Koala' }).locator('[data-a="emodel"]');
   await koala.click(); await koala.click();
   await page.waitForFunction(() => !S.emoji.some((e) => e.ch === '🐨'), null, { timeout: 8000 }).catch(() => {});
-  ok(await page.locator('.emocard').count() === 24, 'emoji page: deleted with two taps');
+  ok(await page.locator('.emocard').count() === 34, 'emoji page: deleted with two taps');
   // the book's menu: every card shows the owner's glossy picture, and each picture is there
   await page.goto(`${BASE}/#/t/${T}`); await page.waitForSelector('.tile');
   const hubPics = await page.evaluate(async () => { const t = [...document.querySelectorAll('main .tile')]; const imgs = t.map((x) => x.querySelector('.e.pic img')).filter(Boolean);
