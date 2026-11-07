@@ -139,8 +139,8 @@ details.fold[open]>summary{margin-bottom:8px}.planblk.fold .dayplan{margin-top:4
 .dayendblk{border-top:0;padding-top:4px}
 /* the book's menu in named groups */
 .part.hubpart,.part.pickh{margin-top:22px}
-.hubgrid.hero{margin-bottom:0}
-.hubgrid.hero+.hubpart{margin-top:14px}
+.hubgrid.lead{margin-bottom:0}
+.hubgrid.lead+.hubpart{margin-top:14px}
 /* a long timeline row shows two lines; a tap shows it all (sheets.js) */
 .tl.plan li>div{display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden;cursor:pointer}
 .tl.plan li.open>div{display:block;-webkit-line-clamp:unset}
@@ -2269,3 +2269,80 @@ h1 .h1pic{display:inline-block;width:1.15em;height:1.15em;vertical-align:-.2em;o
 @media (max-width:560px){.prices td.s{display:inline-flex;gap:5px;align-items:baseline;width:auto;padding:2px 14px 2px 8px}.prices td.s[data-h]::before{display:inline;font-size:12px}}
 .repall details.ledemore>summary{display:none}.repall details.ledemore>.fb{padding-top:0}
 .addr .cjk>span{display:block}.addr .cjk>span.zh{font-size:16px}
+
+/* the facts a parent acts on (times, prices, phone numbers) in bold, never in colour */
+b.kf{font-weight:700;color:var(--ink);font-variant-numeric:tabular-nums}
+.call.warn b.kf,.elost b.kf{color:inherit}
+
+/* ---------- consistency pass (owner, Nov 2026: "make every page match, once and for all") ---------- */
+:root{--card:var(--paper);--hot-fill:#D6362A;--accent-deep:var(--accent)}
+@media (prefers-color-scheme:dark){:root:not([data-theme=light]){--card:#232B3B;--accent-deep:color-mix(in srgb,var(--accent) 45%,#0E1420)}}
+:root[data-theme=dark]{--card:#232B3B;--accent-deep:color-mix(in srgb,var(--accent) 45%,#0E1420)}
+/* one card surface: in dark, a card is lifted from the page instead of disappearing into it */
+.remind,.bag,.dmore>summary,.reportbtn,.learnlink,.hubsearch,.enear,.enearfar,.setlist,.nbcard,.call.info.pre,.stayc,.famapp,.mlcard,.eatl>.eatc,.emeal .epick,.tpo,.glc{background:var(--card)}
+.call.info.pre{border:1px solid var(--line)}
+.tpo[aria-pressed=true]{background:color-mix(in srgb,var(--accent) 8%,var(--card))}
+/* passport colours from the seed: as printed in light; lifted in dark (pale pastel under white text was unreadable) */
+.mission[style*="--ma"],.grp[style*="--ma"]{--accent:var(--ma);--tint:var(--mt)}
+@media (prefers-color-scheme:dark){:root:not([data-theme=light]) .mission[style*="--ma"],.grp[style*="--ma"]{--accent:color-mix(in srgb,var(--ma) 45%,#fff);--tint:color-mix(in srgb,var(--ma) 22%,var(--paper))}}:root[data-theme=dark] .mission[style*="--ma"],.grp[style*="--ma"]{--accent:color-mix(in srgb,var(--ma) 45%,#fff);--tint:color-mix(in srgb,var(--ma) 22%,var(--paper))}
+.plist.wide .grp .tick,.mission .mstamp{background:var(--paper);color:var(--ink)}
+/* white on a colour band: the band takes the deep accent (dark mode lifts --accent to a light blue) */
+.fampreview,.impcover{background-color:var(--accent-deep)}
+.fampreview{background:linear-gradient(135deg,var(--accent-deep),color-mix(in srgb,var(--accent-deep) 70%,#000))}
+.imphero{--hero:var(--accent-deep)}
+/* a tick or a number on an accent fill takes the readable "on accent" colour */
+.tick i,.check button,.pts.nums>li::before{color:var(--on-accent)}
+.chk input:checked::after{border-color:var(--on-accent)}
+/* the most important number on the page keeps its contrast in dark */
+.callb.main{background:var(--hot-fill);border-color:var(--hot-fill)}
+/* meal tags: soft tags that read in both themes, like every other tag */
+.mtag,.cbox .dsheet .mtag{background:color-mix(in srgb,var(--mk) 16%,var(--paper));color:color-mix(in srgb,var(--mk) 72%,var(--ink))}
+.eatc .epk span{background:color-mix(in srgb,var(--sun) 20%,var(--paper));color:color-mix(in srgb,var(--sun) 55%,var(--ink))}
+@media (prefers-color-scheme:dark){:root:not([data-theme=light]) .mk-bf{--mk:#F0B04A}}:root[data-theme=dark] .mk-bf{--mk:#F0B04A}
+@media (prefers-color-scheme:dark){:root:not([data-theme=light]) .mk-lu{--mk:#4CC58A}}:root[data-theme=dark] .mk-lu{--mk:#4CC58A}
+@media (prefers-color-scheme:dark){:root:not([data-theme=light]) .mk-di{--mk:#9AA6F2}}:root[data-theme=dark] .mk-di{--mk:#9AA6F2}
+@media (prefers-color-scheme:dark){:root:not([data-theme=light]) .mk-sn{--mk:#F27DA8}}:root[data-theme=dark] .mk-sn{--mk:#F27DA8}
+
+/* selected = tint + ring everywhere (the sign-in page's Aa too); "still to do" is a dot, never a ring that reads as selected */
+.fsb:not([data-l="0"]){background:color-mix(in srgb,var(--accent) 12%,var(--paper));color:var(--accent);border-color:var(--accent);box-shadow:inset 0 0 0 1px var(--accent)}
+.hubgrid .tile.warn{box-shadow:0 6px 14px -10px var(--g2)}.hubgrid .tile.warn::after{content:"";position:absolute;top:12px;right:12px;width:10px;height:10px;border-radius:50%;background:var(--hot);box-shadow:0 0 0 2px var(--paper)}
+.hubgrid .tile{position:relative}
+.daytabs a.now{border-color:var(--sun)}
+/* taps 44 px or taller everywhere; checkboxes in the book's colour; a focused field is ringed in it too */
+.ibtn{width:44px;height:44px}
+.moodrow .opts button{width:44px;height:44px}
+.check button{position:relative}.check button::before{content:"";position:absolute;inset:-9px}
+input[type=checkbox],input[type=radio]{accent-color:var(--accent)}
+.field:focus-visible,textarea:focus-visible,input:focus-visible{outline:2px solid var(--accent);outline-offset:1px}
+.remind.line .btn{padding:0 16px}
+.btn{justify-content:center}
+/* the menu: a tile's line never runs past two lines; the top bar's small line ends in "…" */
+.hubgrid .tile small{display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden}
+.top .ttl small,.top .ttl .k{display:block;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+
+/* every page opens the same way: its title (or its small heading) 18 px under the top bar */
+main.wrap>h1.h2:first-child,main.wrap>.tp>h1.h2:first-child,main.wrap>.part:first-child,main.wrap>.tp>.part:first-child{margin-top:18px}
+/* a place's map and directions: one tinted, 44 px button style (the stay cards had 12 px grey text, the eat list a solid pill) */
+.stayc .go{display:inline-flex;align-items:center;gap:4px;min-height:44px;padding:0 12px;border-radius:999px;font-size:13px;font-weight:700;color:var(--accent);background:color-mix(in srgb,var(--accent) 10%,var(--paper));border:1px solid color-mix(in srgb,var(--accent) 28%,transparent);text-decoration:none}
+.stayc .go:hover{text-decoration:none;border-color:var(--accent)}
+.stayc .sf .acts{display:flex;flex-wrap:wrap;gap:6px}
+.eatc .ef .go{color:var(--accent);background:color-mix(in srgb,var(--accent) 10%,var(--paper));border:1px solid color-mix(in srgb,var(--accent) 28%,transparent);min-height:44px;padding:0 12px}
+.sleep ol .t b a{text-decoration:none}   /* a name is plain text; its pin opens the map (owner's rule) */
+/* rows that open another page: one card look */
+.nbcard,.addway,.onbway,.reportbtn,.learnlink{border:1px solid var(--line);border-radius:var(--r);background:var(--card)}
+/* wide screens */
+.missions{align-items:start}
+.bookstart .cast{justify-content:center}
+.enears{grid-template-columns:repeat(auto-fit,minmax(min(100%,340px),1fr))}.enearfar{border-style:solid}
+.callb.main{grid-column:1/-1}
+@media (min-width:760px){
+  .btn.dayend,.eatday .btn.wide{max-width:440px;margin-inline:auto;display:flex}
+  .famsave{max-width:560px;margin-inline:auto}
+  body:not(.printbook) .day .hd{grid-template-columns:auto minmax(0,560px) auto;justify-content:start}
+  .setlist.disp{grid-template-columns:1fr 1fr}.setlist.disp>*+*{border-top:0;border-left:1px solid var(--rule)}
+}
+/* dark mode: the passport's printed cover, the living map's sea and the reminder card are lifted, not glaring */
+@media (prefers-color-scheme:dark){:root:not([data-theme=light]) .advc{background:linear-gradient(135deg,color-mix(in srgb,var(--bgA) 22%,var(--paper)) 0 50%,color-mix(in srgb,var(--bgB) 22%,var(--paper)) 50%)}}:root[data-theme=dark] .advc{background:linear-gradient(135deg,color-mix(in srgb,var(--bgA) 22%,var(--paper)) 0 50%,color-mix(in srgb,var(--bgB) 22%,var(--paper)) 50%)}
+@media (prefers-color-scheme:dark){:root:not([data-theme=light]) .tmap .sea{fill:#20344A;stroke:#2C4864}}:root[data-theme=dark] .tmap .sea{fill:#20344A;stroke:#2C4864}
+@media (prefers-color-scheme:dark){:root:not([data-theme=light]) .tmap .sealbl{fill:#8FB4D6}}:root[data-theme=dark] .tmap .sealbl{fill:#8FB4D6}
+@media (prefers-color-scheme:dark){:root:not([data-theme=light]) .remind.ask{background:linear-gradient(135deg,color-mix(in srgb,var(--sun) 12%,var(--card)),color-mix(in srgb,var(--sky) 10%,var(--card)))}}:root[data-theme=dark] .remind.ask{background:linear-gradient(135deg,color-mix(in srgb,var(--sun) 12%,var(--card)),color-mix(in srgb,var(--sky) 10%,var(--card)))}

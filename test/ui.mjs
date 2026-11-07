@@ -98,7 +98,7 @@ const T = 'hk-macau-2026';
   // the book opens on its menu: a tile per topic, today first, the detail one tap away
   ok(await page.locator('.hubgrid .tile').count() >= 14 && await page.locator('.hubgrid .tile.today').count() === 1 && /อีก|to go/.test(await page.textContent('.tile.today')), 'book menu: topic tiles, today on top with the countdown');
   // the tiles sit in three named groups; before the trip "get ready" leads, and every tile is in exactly one group
-  ok(await page.locator('.hubpart').count() === 3 && /ready|เตรียม/.test(await page.locator('.hubpart').first().textContent()) && await page.locator('.hubpart + .hubgrid').count() === 3 && await page.locator('.hubgrid.hero .tile').count() === 1, 'book menu: three named groups, "get ready" first before the trip');
+  ok(await page.locator('.hubpart').count() === 3 && /ready|เตรียม/.test(await page.locator('.hubpart').first().textContent()) && await page.locator('.hubpart + .hubgrid').count() === 3 && await page.locator('.hubgrid.lead .tile').count() === 1, 'book menu: three named groups, "get ready" first before the trip');
   { // a fresh phone: the record page shows tonight's three (photos, words, moods) and "day done", the rest folded under "more"
     const f = await session('fold', { logall: false }); await login(f.page);
     await f.page.goto(`${BASE}/#/t/${T}/log/0`); await f.page.waitForSelector('details.more');
