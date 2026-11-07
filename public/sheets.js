@@ -409,6 +409,8 @@ const A = {
       box.textContent = e.name === 'AbortError' ? before : L('ไม่สำเร็จ ลองใหม่อีกครั้ง', 'That didn’t work — try again');
     } finally { storyCtl = null; aiUseAt = 0; const g = $('#likesgo'); if (g) g.disabled = false; }
   },
+  // the record page's "more" fold: keep it open on this phone from now on (or let it fold again)
+  logall(b, e) { e.preventDefault(); e.stopPropagation(); ls('logall', ls('logall') ? 0 : 1); render(); },
   jump(b) { const el = $(b.dataset.v); if (el) { el.scrollIntoView({ behavior: matchMedia('(prefers-reduced-motion: reduce)').matches ? 'auto' : 'smooth', block: 'start' }); el.classList.remove('flash'); void el.offsetWidth; el.classList.add('flash'); } },
   // relatives' groups (#/viewers): the form lives in vgForm (views.js) so a background render keeps the ticks
   wifionly(b) { ls('wifionly', b.checked ? 1 : null); upNow = false; renderProgress(); flush(); },
@@ -875,6 +877,7 @@ document.addEventListener('click', (e) => {
   if (e.target.closest('.sres a')) rememberQ();   // a search that found what was needed comes back as a chip next time
   const b = e.target.closest('[data-a]');
   if (b && A[b.dataset.a]) { if (b.tagName === 'A' || b.type === 'submit') e.preventDefault(); A[b.dataset.a](b, e); return; }
+  const tl = e.target.closest('.tl.plan li'); if (tl && !e.target.closest('a')) { tl.classList.toggle('open'); return; }   // a long timeline row shows two lines; a tap shows it all
   if (e.target.id === 'scrim') closeSheet();
 });
 document.addEventListener('input', (e) => { const el = e.target; if (el.dataset && el.dataset.fx) { const fx = ls('fx') || {}, v = parseFloat(String(el.value).replace(',', '.')); if (v > 0 && v < 100000) fx[el.dataset.fx] = v; else delete fx[el.dataset.fx]; ls('fx', fx); const t = trip(route().parts[1]), r = $('#fxres'); if (t && r) r.innerHTML = fxResult(t); document.querySelectorAll('.fxa').forEach((x) => { const rows = spendOf(t.id).filter((s2) => s2.cur === x.dataset.fxc); x.textContent = thbLine(rows); }); } if (el.dataset && el.dataset.lc) { const v = ls('lostTel') || ['', '']; v[+el.dataset.lc] = el.value.slice(0, 40); ls('lostTel', v); } if (el.dataset && el.dataset.draft) drafts[el.dataset.draft] = el.value; if (el.dataset && el.dataset.fam && fam) { const [i, f] = el.dataset.fam.split(':'), k = fam.kids[+i]; if (k) { k[f] = el.value; const tag = el.closest('.famkid') && el.closest('.famkid').querySelector('.famtag b'); if (tag && (f === 'name_th' || f === 'name_en')) tag.textContent = L(k.name_th || k.name_en, k.name_en || k.name_th) || L('ลูกคนใหม่', 'New child'); } } if (el.dataset && el.dataset.famp && fam) { const [o, l] = el.dataset.famp.split(':'); fam[o][l] = el.value; const pv = $('.fampreview'), b = famBuilt(); if (pv) { pv.querySelector('b').textContent = L(fam.app.th, fam.app.en) || L(b.app.th, b.app.en); pv.querySelector('small').textContent = L(fam.kicker.th, fam.kicker.en) || L(b.kicker.th, b.kicker.en); } } if (el.id === 'eatq') { eatQ = el.value.trim(); eatFilter(); } if (el.id === 'bookq') { bookQ = el.value; const r = $('#bookres'), t = trip(route().parts[1]); if (r && t) r.innerHTML = bookResults(t); } });

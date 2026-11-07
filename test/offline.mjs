@@ -45,6 +45,7 @@ const browser = await chromium.launch({ executablePath: exe, args: ['--no-sandbo
 try {
   await up();
   const ctx = await browser.newContext({ viewport: { width: 390, height: 844 }, permissions: ['microphone'] });
+  await ctx.addInitScript(() => localStorage.setItem('mbs_logall', '1'));   // every record-page box on the page
   const page = await ctx.newPage();
   const errs = []; page.on('pageerror', (e) => errs.push(e.message));
   await page.goto(BASE + '/'); await page.fill('#lcode', CODE); await page.click('#lf button[type=submit]'); await page.waitForSelector('.shelf');
