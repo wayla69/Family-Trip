@@ -197,6 +197,7 @@ ${visual}
   const pdf = S.features.story;
   const add = isEditor() ? `<div class="spine add"><div class="addhd"><b class="addplus" aria-hidden="true">＋</b><div><h3>${L('เล่มใหม่', 'New book')}</h3><small>${pdf ? L('เริ่มได้ 2 แบบ', 'Two ways to start') : L('ทริปใหม่ เล่มใหม่', 'A new trip, a new book')}</small></div></div>
 ${pdf ? `<a class="addway main" href="#/import"><span class="e">${ic('doc')}</span><span><b>${L('จากคู่มือทริป (PDF)', 'From the trip manual (PDF)')}</b><small>${L('ผู้ช่วยอ่านคู่มือ แล้วทำแผนรายวัน ร้านอาหาร และหน้าของเด็กๆ ให้', 'The helper reads the manual and makes the day plans, places to eat and the kids’ pages')}</small></span><i>›</i></a>` : ''}
+${S.trips.some((t) => t.id === 'sakura-hop-2028') ? '' : `<button type="button" class="addway" data-a="sample"><span class="e">${ic('book')}</span><span><b>${L('เล่มตัวอย่าง', 'A sample book')}</b><small>${L('ทริปสมมติ 3 วันที่เติมไว้แล้ว ลบได้ทุกเมื่อ', 'A filled-in 3-day trip, delete it any time')}</small></span><i>›</i></button>`}
 <button type="button" class="addway" data-a="newtrip"><span class="e">${ic('log')}</span><span><b>${L('เล่มเปล่า', 'An empty book')}</b><small>${L('ใส่ชื่อทริปกับวันที่ แล้วค่อยเติมเอง', 'Type the trip name and dates, fill it in as you go')}</small></span><i>›</i></button></div>` : '';
   const welcome = isEditor() && !children().length ? `<a class="famwelcome" href="#/start"><span>${ic('family')}</span><div><b>${L('เริ่มที่ครอบครัวของเรา', 'Start with your family')}</b><small>${L('ตั้งชื่อแอป ใส่ชื่อลูกๆ และเลือกตัวการ์ตูนของแต่ละคน แล้วทุกหน้าจะเป็นของครอบครัวเรา', "Name the app, add the children and pick each one's character — every page becomes yours")}</small></div></a>` : '';
   return `${remindAsk()}${heroHtml()}${welcome}<div class="part">${L('ชั้นหนังสือ', 'The bookshelf')}</div><h1 class="h2">${L(kicker() ? `ทุกทริป${kicker()}` : 'ทุกทริปของเรา', 'Every trip, one book each')}</h1>
@@ -470,7 +471,7 @@ function viewHub(t) {
   const pick = isEditor() ? `<div class="row tilepick"><span class="label">${L('สีของเมนู', 'Menu colours')}</span><div class="seg" role="group">${[['pastel', 'สีสัน', 'Colourful'], ['accent', 'สีเล่ม', 'The book’s colour'], ['plain', 'เรียบ', 'Plain']].map(([k, th, en]) => `<button type="button" data-a="tiles" data-v="${k}" aria-pressed="${tl === ` tl-${k}`}">${L(th, en)}</button>`).join('')}</div></div>` : '';
   return `<section class="hubhead">${stampHtml(t, true)}<div class="grow"><div class="kicker">${esc(t.theme.kicker || '')}</div><h1>${esc(T(t.title).split(' · ')[0])}</h1><p class="line">${esc(fmtRange(t))}${ages ? ' · ' + esc(ages) : ''}</p></div></section>
 <a class="hubsearch" href="#/t/${esc(t.id)}/search">${ic('search')}<span><b>${L('ค้นหาทั้งเล่ม', 'Search the whole book')}</b><small>${L('หมอ · ยา · แท็กซี่ · ห้องน้ำ · เด็กหลง', 'doctor · pharmacy · taxi · toilet · lost child')}</small></span></a>
-<div class="hubgrid hero${tl}">${hero}</div>${groups}${pick}`;
+<div class="hubgrid hero${tl}">${hero}</div>${groups}${pick}${isEditor() && t.source && t.source !== 'seed' ? `<div class="row end tripdel"><button type="button" class="mini" data-a="tripdel" data-t="${esc(t.id)}">${L('ลบเล่มนี้', 'Delete this book')}</button></div>` : ''}`;
 }
 /* ---------- search the whole book ----------
    One index per book, both languages (a Thai phone finds "taxi", an English one finds "แท็กซี่"): the pocket-guide sections (stays, emergency,
@@ -618,7 +619,7 @@ function dayGlance(t, i) {
   const more = [money && row(L('เงินวันนี้', 'Money today'), `<span class="num">${esc(mm ? mm[0].replace(/^(?:วันนี้|Today)\s*/, '').trim() : brief(money))}</span>`),
     d.wx && row(L('อากาศ', 'Weather'), esc(T(d.wx))),
     wxLine(t, i) && row(L('พยากรณ์วันนี้', 'Live forecast'), `<span class="wxlive">${emoIn(esc(wxLine(t, i)))}</span>`),
-    (nl || nq) && row(L('เรียนรู้', 'Learn'), esc(L(`${nl} เรื่อง · ${nq} คำถามในรถ`, `${nl} cards · ${nq} car questions`)))].filter(Boolean).join('');
+    (nl || nq) && row(L('เรียนรู้', 'Learn'), esc(L(`${nl} เรื่อง · ${nq} คำถามในรถ`, `${nl} card${nl === 1 ? '' : 's'} · ${nq} car question${nq === 1 ? '' : 's'}`)))].filter(Boolean).join('');
   return `${rows.length ? `<section class="cbox c-sky"><h3 class="ch">${ic('clock')}${L('ไทม์ไลน์', 'Timeline')}</h3><ol class="tl plan brief">${rows.map((r, k) => `<li${st[k] ? ` class="${st[k]}"` : ''}><time>${esc(r.t || '')}</time><div>${st[k] === 'next' ? `<span class="nexttag">${L('ถัดไป', 'Next')}</span> ` : ''}${esc(T(r))}</div></li>`).join('')}</ol></section>` : ''}
 <div class="cgrid">${box('ind', 'route', L('เดินทางและที่พัก', 'Getting around & tonight'), go)}${box('sun', 'eat', L('มื้ออาหาร', 'Meals'), food)}${pl.planB ? `<section class="cbox c-hot"><h3 class="ch">${ic('shuffle')}${L('แผนสำรอง', 'Plan B')}</h3>${pts(T(pl.planB))}</section>` : ''}${box('leaf', 'money', L('เงิน อากาศ และเรื่องเล่า', 'Money, weather, stories'), more)}</div>
 ${reportBtn(full, L('อ่านแผนเต็มของวันนี้', "Read today's full plan"))}`;
@@ -1458,6 +1459,7 @@ ${on ? `<div class="call calm">✓ ${L('เปิดเตือนบนเค�
 <h1 class="h2" style="text-align:center">${L('พร้อมแล้ว มาทำเล่มแรกกัน', 'All set — let’s make the first book')}</h1>
 <p class="lede" style="text-align:center;max-width:none">${S.trips.length ? L('ชั้นหนังสือมีเล่มอยู่แล้ว เปิดดูได้เลย', 'The shelf already has a book — open it.') : L('ชั้นหนังสือยังว่าง เริ่มได้ 2 แบบ', 'The shelf is empty. Two ways to start.')}</p>
 <div class="onbways">${S.features.story ? `<a class="onbway main" href="#/import"><span class="e">${ic('doc')}</span><span><b>${L('จากคู่มือทริป (PDF)', 'From the trip manual (PDF)')}</b><small>${L('ผู้ช่วยอ่านคู่มือ แล้วทำแผนรายวัน ร้านอาหาร และหน้าของเด็กๆ ให้ · ราว 15 นาที', 'The helper reads the manual and makes the day plans, places to eat and the kids’ pages · about 15 min')}</small></span>${ic('chev')}</a>` : ''}
+${S.trips.some((t) => t.id === 'sakura-hop-2028') ? '' : `<button type="button" class="onbway" data-a="sample"><span class="e">${ic('book')}</span><span><b>${L('ดูเล่มตัวอย่างก่อน', 'Look at a sample book first')}</b><small>${L('ทริปสมมติ 3 วันที่เติมไว้แล้ว ใช้ชื่อลูกของบ้านคุณ ลบได้ทุกเมื่อ', 'A filled-in 3-day trip with your children’s names — delete it any time')}</small></span>${ic('chev')}</button>`}
 <button type="button" class="onbway" data-a="newtrip"><span class="e">${ic('log')}</span><span><b>${L('เล่มเปล่า', 'An empty book')}</b><small>${L('ใส่ชื่อทริปกับวันที่ แล้วค่อยเติมเอง · 1 นาที', 'Type the trip name and dates, fill it in as you go · 1 min')}</small></span>${ic('chev')}</button>
 <a class="onbway" href="#/"><span class="e">${ic('shelf')}</span><span><b>${L('ไปที่ชั้นหนังสือ', 'Go to the bookshelf')}</b><small>${S.trips.length ? L(`มี ${S.trips.length} เล่ม`, `${S.trips.length} book${S.trips.length > 1 ? 's' : ''}`) : L('ว่างอยู่', 'Empty for now')}</small></span>${ic('chev')}</a></div>
 <ul class="onbsum">${kids.length ? `<li>✓ ${L(`ครอบครัว: ${nm}`, `Family: ${nm}`)}</li>` : `<li>○ ${L('ยังไม่ได้ใส่ลูก', 'No children yet')} · <a href="#/start/1">${L('ใส่เลย', 'Add them')}</a></li>`}
@@ -1917,7 +1919,7 @@ ${ed ? `<button class="chip kidgo" data-a="kidmode" data-v="${esc(kid)}">🧒 ${
 <span class="sep"></span>${mine.map((x) => `<a class="chip" href="#/passport/${esc(kid)}/${esc(x.id)}" aria-pressed="${x.id === t.id}">${flagsOf(x)} ${esc(T(x.title).split(' · ')[0])}</a>`).join('')}</div>
 <div class="pp kid-${esc(kid)}${t.theme.display === 'serif' ? ' serif' : ''}" style="${themeStyle(t)}">
 ${st ? `<section class="advc" style="--ink:${esc(st.ink)};--hi:${esc(st.hi)};--bgA:${esc(st.bgA)};--bgB:${esc(st.bgB)};--gold:${esc(st.gold)}"><div class="card">
-<img class="crest" src="${esc(st.crest)}" alt="">
+${st.crest ? `<img class="crest" src="${esc(st.crest)}" alt="">` : `<span class="crest nocrest">${stampHtml(t, true)}</span>`}
 <div class="kick">${L('พาสปอร์ตนักผจญภัยของเด็กๆ', 'Kids adventure passport')}</div>
 <h2>${esc(st.title.replace(new RegExp(`\\s*${st.hl}$`), ''))} <em>${esc(st.hl)}</em></h2>
 <p class="sub">${esc(fill(T(st.sub)))}</p>

@@ -1195,6 +1195,23 @@ const T = 'hk-macau-2026';
   ok(await page.locator('.onbway[data-a="newtrip"]').count() === 1 && await page.locator('.onbway[href="#/"]').count() === 1 && await page.locator('.onbsum li').count() === 4 && !!await page.evaluate(() => ls('startDone')), 'step 5: an empty book, the shelf, the summary; the steps are done');
   await s.shot('05-done', false);
   await page.evaluate(() => fetch('/api/b/viewers').then((r) => r.json()).then((j) => Promise.all(j.groups.filter((g) => /ญาติ|Relatives/.test(g.name)).map((g) => fetch('/api/b/viewers/' + g.id, { method: 'DELETE' })))));
+  // the sample book: made for this family from the last step, its own children, every page of a seeded book; deleted from its menu
+  await page.goto(`${BASE}/#/start/5`); await page.waitForSelector('.onbway[data-a="sample"]');
+  await page.click('.onbway[data-a="sample"]'); await page.waitForSelector('.hubhead');
+  const st1 = await apiState(page), sample = st1.trips.find((t) => t.id === 'sakura-hop-2028');
+  ok(page.url().endsWith('#/t/sakura-hop-2028') && sample && sample.source === 'manual' && (sample.theme.children || []).map((k) => k.slug).join() === st1.children.map((k) => k.slug).join() && /Sakura/.test(await page.textContent('.hubhead h1')), 'sample: made on request as an app-made book with the family\'s own children, its menu opens');
+  ok(await page.locator('.tile.t-today, .tile.t-plan, .tile.t-eat, .tile.t-sos').count() >= 3 && await page.locator('.tripdel [data-a="tripdel"]').count() === 1 && await page.locator('.onbway[data-a="sample"], .addway[data-a="sample"]').count() === 0, 'sample: the menu has its tiles and a delete button at the foot; the offer is gone once it exists');
+  await s.shot('06-sample-menu', false);
+  await page.goto(`${BASE}/#/t/sakura-hop-2028/today/0`); await page.waitForSelector('.dsheet');
+  await s.shot('07-sample-today');
+  await page.goto(`${BASE}/#/passport/${st1.children[0].slug}/sakura-hop-2028`); await page.waitForSelector('.advc');
+  ok(await page.locator('.advc img.crest').count() === 0 && await page.locator('.pp-page').count() >= 2, 'sample: today and the passport render without drawn art (no crest, the generic guides)');
+  await page.goto(`${BASE}/#/t/hk-macau-2026`); await page.waitForSelector('.hubgrid');
+  ok(await page.locator('[data-a="tripdel"]').count() === 0, 'a bundled book has no delete button');
+  await page.goto(`${BASE}/#/t/sakura-hop-2028`); await page.waitForSelector('[data-a="tripdel"]');
+  await page.click('[data-a="tripdel"]'); await page.click('[data-a="tripdel"]'); await page.waitForSelector('.shelf');
+  ok(!(await apiState(page)).trips.some((t) => t.id === 'sakura-hop-2028') && await page.locator('.addway[data-a="sample"]').count() === 1, 'delete: two taps, the book is gone, the shelf offers the sample again');
+  ok((await page.evaluate(async () => (await fetch('/api/b/trips/hk-macau-2026', { method: 'DELETE', headers: { 'x-mb': '1' } })).status)) === 409, 'the server refuses to delete a bundled book');
   ok(s.errs.length === 0, 'setup steps: no console errors ' + s.errs.join(' | '));
   await s.ctx.close();
 }
