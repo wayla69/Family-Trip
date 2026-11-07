@@ -1890,3 +1890,17 @@ html[data-fs="1"] main.wrap{zoom:1.1}html[data-fs="2"] main.wrap{zoom:1.2}html[d
 .kidwrap .nw{display:inline-block}   /* a Thai phrase that must not break in the middle */
 @media (min-width:700px){.kidhello{justify-content:center;gap:24px}.kidhello p{flex:0 1 auto;max-width:60%}}   /* a wide screen: the bubble wraps its words, it does not stretch */
 @media (max-width:400px){.kidday{padding:5px 12px 5px 5px;gap:8px}.kidday .art{width:42px;height:42px}.kidday b{font-size:15px;line-height:1.2}.kidhd{gap:8px}.kidhear{width:44px;height:44px;font-size:18px}.kidme{flex:none}}
+/* the tiles fill whatever room is left above the kid bar, dots included: kid home is one screen (the bar is fixed now, so it
+   no longer pushes the page down). The page is a column of the viewport's height; the pager takes the rest, never less than
+   two rows a child can tap. The drawing on a trip morning (gift banner too) gets smaller on short phones. */
+.kidwrap.home{height:100vh;height:100dvh;min-height:0;box-sizing:border-box}
+.kidwrap.home>*{flex:none}   /* nothing above the tiles gets squeezed (the day strip was) */
+.kidwrap.home>.kidpagerwrap{flex:1 1 0;min-height:250px;display:flex}
+.kidwrap.home .kidpager{flex:1;align-items:stretch}
+.kidwrap.home .kpage{height:auto}
+.kidwrap.home .kdots{flex:none;padding-bottom:2px}
+@media (max-height:900px){.kidwrap.home .kidhello img{max-height:120px}.kidwrap.home .kiddays .art{width:50px;height:50px}}
+@media (max-height:760px){.kidwrap.home .kidhello img{max-height:96px}.kidwrap.home .kidhello p{font-size:19px}.kidwrap.home .kiddays .art{width:44px;height:44px}.kidwrap.home{gap:10px}.kidwrap.home .kidgift,.kidwrap.home .kidnight{padding:8px 14px;margin-bottom:0}.kidwrap.home .kidgift .box,.kidwrap.home .kidnight .moon{font-size:36px}}
+/* a trip-day banner (surprise box, stamp before bed) is the greeting: the drawing and its bubble step aside so the
+   tiles stay big enough for small fingers (🔊 still reads the hello) */
+.kidwrap.home:has(.kidgift,.kidnight) .kidhello{display:none}
