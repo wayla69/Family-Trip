@@ -44,7 +44,7 @@ const mock = http.createServer((req, res) => {
     const pids = [...facts.matchAll(/^id: (\S+)$/gm)].map((m) => m[1]), stop0 = (/STOPS: "([^"]*)"/.exec(facts) || [])[1] || '';
     const quiz = String(b.system).includes('"ok":');   // the memory game answers JSON (once with a bad item, which must be dropped)   // translate: answer JSON [{id, tr}] for the items it was given
     const sysText = JSON.stringify(b.system);   // the import sends system as blocks (the redacted manual cached in the second one)
-    const imp = sysText.includes('Trip Operations Manual') ? (facts.includes('top level and its days') ? 'top' : facts.includes('pocket guide') ? 'info' : facts.startsWith('List EVERY restaurant') ? 'restlist' : facts.startsWith('For each of these places') ? 'rest' : 'other')
+    const imp = sysText.includes('Trip Operations Manual') ? (facts.includes('top level and its days') ? 'top' : facts.includes('pocket guide') ? 'info' : facts.startsWith('List EVERY restaurant') ? 'restlist' : facts.startsWith('List only the area headings') ? 'restareas' : facts.startsWith('For these areas') ? 'restnames' : facts.startsWith('For each of these places') ? 'rest' : 'other')
       : sysText.includes("children's pages") ? 'kids' : sysText.includes('playful pages') ? 'extras' : sysText.includes('You translate a family trip guide') ? 'thai' : null;
     if (imp) importCalls.push({ step: imp, system: sysText, user: facts });
     const en = (x) => ({ en: x }), L2 = (th, e) => ({ th, en: e });
@@ -54,6 +54,9 @@ const mock = http.createServer((req, res) => {
           plan: [{ t: '09:00', en: 'Breakfast' }, { t: '11:00', en: 'Super Fun Zone opens' }], tips: [en('Show the driver: 測試')], stay: { name: 'Test Inn', addr: '1 Test St', q: 'Test Inn, Testland' } })) }),
       info: () => JSON.stringify({ emergency: [{ label: en('All emergencies'), tel: '999', main: true }], lost: en('Stand still'), guide: [{ title: en('Clocks'), text: en('One hour ahead') }] }),
       restlist: () => JSON.stringify({ areas: [{ area: en('Test town'), kind: 0, names: ['Test Noodles', 'Test Dumplings'] }, { area: en('Test sweets'), kind: 2, names: ['Test Tarts'] }] }),
+      // the list overflows once (stop_reason max_tokens below), so the fallback asks for the headings, then the names
+      restareas: () => JSON.stringify({ areas: [{ area: en('Test town'), kind: 0 }, { area: en('Test sweets'), kind: 2 }] }),
+      restnames: () => JSON.stringify({ areas: [{ area: en('Test town'), names: ['Test Noodles', 'Test Dumplings'] }, { area: en('Test sweets'), names: ['Test Tarts'] }] }),
       // the rows for the names asked; "Test Dumplings" is left out the first time so the retry is exercised
       rest: () => JSON.stringify({ items: JSON.parse(/Places: (\[.*\])/.exec(facts)[1]).filter((n) => n !== 'Test Dumplings' || importCalls.filter((c) => c.step === 'rest').length > 1).map((n) => ({ name: n, what: en(n === 'Test Tarts' ? 'Egg tarts' : 'Noodles'), pr: 'MOP 50', q: `${n}, Testland`, pick: n === 'Test Noodles' ? ['Day 1 · Lunch'] : [] })) }),
       extras: () => JSON.stringify({ wild: [{ name: L2('นกนางนวล', 'Seagull'), emo: '🐦', text: L2('บินเหนือท่าเรือ', 'Flies over the pier') }, { name: L2('ปูทะเล', 'Crab'), emo: '🦀', text: L2('ซ่อนอยู่ใต้ก้อนหิน', 'Hides under rocks') }], wildLabel: { emo: '🐾', title: L2('สัตว์ที่อาจได้เจอ', 'Animals we may meet'), short: L2('สัตว์', 'Animals') },
@@ -80,7 +83,8 @@ const mock = http.createServer((req, res) => {
       await new Promise((r) => setTimeout(r, slow ? 700 : 20));
     }
     ev('content_block_stop', { index: 0 });
-    ev('message_delta', { delta: { stop_reason: refuse ? 'refusal' : 'end_turn', stop_sequence: null }, usage: { output_tokens: 20 } });
+    const tooLong = imp === 'restlist' && importCalls.filter((c) => c.step === 'restlist').length === 1;   // the guide's first list answer runs out of room
+    ev('message_delta', { delta: { stop_reason: refuse ? 'refusal' : tooLong ? 'max_tokens' : 'end_turn', stop_sequence: null }, usage: { output_tokens: 20 } });
     ev('message_stop', {});
     res.end();
   });
@@ -440,7 +444,7 @@ try {
   let imp;
   for (let i = 0; i < 120; i++) { imp = await (await fetch(BASE + '/api/b/import', { headers: { cookie: ck } })).json(); if (imp.job.status !== 'running') break; await new Promise((r) => setTimeout(r, 250)); }
   ok(imp.job.status === 'done' && imp.job.draft && imp.job.draft.slug === 'test-hop' && imp.job.draft.days === 2, `import: job done → a draft (${imp.job.status}: ${(imp.job.log || []).at(-1)})`);
-  ok(importCalls.map((c) => c.step).join(',') === 'top,info,restlist,rest,rest,kids,extras,thai', `import: the model calls in order — structure, guide, restaurant names, rows, the retry for the missing row, kids, extras, Thai (${importCalls.map((c) => c.step).join(',')})`);
+  ok(importCalls.map((c) => c.step).join(',') === 'top,info,restlist,restareas,restnames,rest,rest,kids,extras,thai', `import: the model calls in order — structure, guide, restaurant names, rows, the retry for the missing row, kids, extras, Thai (${importCalls.map((c) => c.step).join(',')})`);
   const sent = importCalls.map((c) => c.system + c.user).join('\n');
   ok(sent.includes('Test Square') && sent.includes('Super Fun Zone') && sent.includes('Test Noodles'), 'import: the manual\'s text reached the model');
   ok(!Object.values(FAKE).some((v) => sent.includes(v)) && !/born 2023|allergies/.test(sent), 'import: PNR, booking numbers, e-tickets, the baht amount, birth and allergy lines never reached the model');
