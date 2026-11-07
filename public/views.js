@@ -704,8 +704,8 @@ function dayBag(t, i) {
 function bagBlock(t, i) {
   if (!isEditor()) return '';
   const items = dayBag(t, i), ck = ls('ck') || {}, key = (k) => `${t.id}.bag.d${i}.${k}`, got = items.filter((x) => ck[key(x.k)]).length;
-  return `<details class="bag noprint"${dayNow(t) === i && got < items.length ? ' open' : ''}><summary>🎒 ${L('กระเป๋าวันนี้', 'Today’s bag')} <span class="label">${got ? L(`จัดแล้ว ${got}/${items.length}`, `${got}/${items.length} packed`) : L(`${items.length} อย่าง`, `${items.length} thing${items.length === 1 ? '' : 's'}`)}</span></summary>
-<ul class="chk bagl">${items.map((x) => `<li><label><input type="checkbox" data-ck="${esc(key(x.k))}"${ck[key(x.k)] ? ' checked' : ''}><span>${x.e} ${esc(L(x.th, x.en))}<small>${esc(x.why)}</small></span></label></li>`).join('')}</ul>
+  return `<details class="bag noprint"${dayNow(t) === i && got < items.length ? ' open' : ''}><summary>${emo('🎒')} ${L('กระเป๋าวันนี้', 'Today’s bag')} <span class="label">${got ? L(`จัดแล้ว ${got}/${items.length}`, `${got}/${items.length} packed`) : L(`${items.length} อย่าง`, `${items.length} thing${items.length === 1 ? '' : 's'}`)}</span></summary>
+<ul class="chk bagl">${items.map((x) => `<li><label><input type="checkbox" data-ck="${esc(key(x.k))}"${ck[key(x.k)] ? ' checked' : ''}><span>${emo(x.e)} ${esc(L(x.th, x.en))}<small>${esc(x.why)}</small></span></label></li>`).join('')}</ul>
 <p class="label">${L('จากแผนของวันนี้ในคู่มือ · ติ๊กเก็บไว้ในเครื่องนี้', 'From today’s plan in the manual · ticks stay on this phone')}</p></details>`;
 }
 function askBlock(t, i) {
@@ -2095,13 +2095,13 @@ function spendBlock(t, i, dk) {
   const rows = spendOf(t.id, i), all = spendOf(t.id), curs = tripCurs(t), cur = curs.includes(spendCur) ? spendCur : curs[0];
   const places = spendPlaces(t, i);
   return `<section class="blk spend"><h3>${ic('money')} ${L('จ่ายจริงวันนี้', 'Spent today')} ${rows.length ? `<span class="label">${esc(sumMoney(rows))}</span>` : ''}</h3>
-<div class="row" role="group">${SPEND_CATS.map(([k, e, th, en]) => `<button class="chip" data-a="spendcat" data-v="${k}" aria-pressed="${spendCat === k}">${e} ${L(th, en)}</button>`).join('')}</div>
+<div class="row" role="group">${SPEND_CATS.map(([k, e, th, en]) => `<button class="chip" data-a="spendcat" data-v="${k}" aria-pressed="${spendCat === k}">${emo(e)} ${L(th, en)}</button>`).join('')}</div>
 ${places.length ? `<div class="row spendfood" style="margin-top:8px"${spendCat === 'food' ? '' : ' hidden'}><select id="spendplace" class="field" aria-label="${L('ร้าน', 'Place')}"><option value="">${L('ร้านไหน? (เลือก หรือพิมพ์เองด้านล่าง)', 'Which place? (pick, or type below)')}</option>${places.map(([label, xs]) => `<optgroup label="${esc(label)}">${xs.map((n) => `<option value="${esc(n)}">${esc(n)}</option>`).join('')}</optgroup>`).join('')}<option value="">${L('อื่นๆ — ไม่อยู่ในลิสต์ พิมพ์เอง', 'Other — not on the list, type it')}</option></select></div>` : ''}
 <div class="row" style="margin-top:8px"><input id="spendamt" class="field" style="flex:1;min-width:110px" inputmode="decimal" placeholder="0" aria-label="${L('จำนวนเงิน', 'Amount')}" data-draft="s:${esc(dk)}" value="${esc(drafts['s:' + dk] || '')}">
 ${curs.length > 1 ? curs.map((c) => `<button class="chip" data-a="spendcur" data-v="${c}" aria-pressed="${cur === c}">${c}</button>`).join('') : `<span class="label">${cur}</span>`}
 <input id="spendnote" class="field" style="flex:2;min-width:150px" maxlength="200" placeholder="${L('เช่น ติ่มซำมื้อเที่ยง', 'e.g. dim sum lunch')}" data-draft="sn:${esc(dk)}" value="${esc(drafts['sn:' + dk] || '')}">
 <button class="btn small" data-a="addspend" data-t="${esc(t.id)}" data-d="${i}">＋ ${L('เพิ่ม', 'Add')}</button></div>
-${rows.length ? `<ul class="items">${rows.map((s) => { const c = SPEND_CATS.find((x) => x[0] === s.cat) || SPEND_CATS[5]; return `<li><div class="grow">${c[1]} <b>${esc(fmtMoney(s.amount, s.cur))}</b>${s.note ? ` · ${esc(s.note)}` : ''}</div><button class="mini" data-a="delspend" data-v="${esc(s.id)}" aria-label="${L('ลบ', 'Delete')}">✕</button></li>`; }).join('')}</ul>` : ''}
+${rows.length ? `<ul class="items">${rows.map((s) => { const c = SPEND_CATS.find((x) => x[0] === s.cat) || SPEND_CATS[5]; return `<li><div class="grow">${emo(c[1])} <b>${esc(fmtMoney(s.amount, s.cur))}</b>${s.note ? ` · ${esc(s.note)}` : ''}</div><button class="mini" data-a="delspend" data-v="${esc(s.id)}" aria-label="${L('ลบ', 'Delete')}">✕</button></li>`; }).join('')}</ul>` : ''}
 ${all.length ? `<p class="lede" style="margin:8px 0 0;font-size:14px">${L('ทั้งทริปจนถึงตอนนี้', 'Whole trip so far')}: <b>${esc(sumMoney(all))}</b>${thbLine(all) ? ` (${esc(thbLine(all))})` : ''} · <a href="#/t/${esc(t.id)}/spend">${L('ดูสรุป ›', 'See the summary ›')}</a> · ${L('อยู่ในสมุดของเราเท่านั้น ไม่เข้าเล่มพิมพ์', 'stays in our book, not in the printed one')}</p>` : ''}</section>`;
 }
 // the trip's spending (editors): totals per currency (no exchange rates — each currency stays its own), by category with bars,
@@ -2135,7 +2135,7 @@ function viewPhotos(t) {
   return `<h1 class="h2">${ic('camera')} ${L('รูปทั้งเล่ม', 'Every photo')} <span class="label">${ph.length}</span></h1>
 <p class="lede">${keys.length ? L('แตะแท็กเพื่อกรอง · แท็กมาจากปุ่ม “ให้ผู้ช่วยดูรูปวันนี้” หรือพิมพ์เองในหน้าต่างรูป', 'Tap a tag to filter · tags come from “Claude looks at today’s photos” or are typed in the photo viewer')
     : L('ยังไม่มีแท็ก — ในหน้าบันทึกวัน กด “ให้ผู้ช่วยดูรูปวันนี้” หรือพิมพ์แท็กเองในหน้าต่างรูป', 'No tags yet — on a day’s record page press “Claude looks at today’s photos”, or type tags in the photo viewer')}</p>
-${keys.length ? `<div class="chips" id="phtags"><button class="chip" data-a="phtag" data-v="" aria-pressed="${!photoTag}">${L('ทั้งหมด', 'All')} ${ph.length}</button>${keys.map((k) => `<button class="chip" data-a="phtag" data-v="${esc(k)}" aria-pressed="${photoTag === k}">${esc(tagLabel(k))} ${counts[k]}</button>`).join('')}</div>` : ''}
+${keys.length ? `<div class="chips" id="phtags"><button class="chip" data-a="phtag" data-v="" aria-pressed="${!photoTag}">${L('ทั้งหมด', 'All')} ${ph.length}</button>${keys.map((k) => `<button class="chip" data-a="phtag" data-v="${esc(k)}" aria-pressed="${photoTag === k}">${tagHtml(k)} ${counts[k]}</button>`).join('')}</div>` : ''}
 <div id="phlist">${days.map((x) => `<section class="blk phday" data-day="${x.i}"><h3>${L('วันที่', 'Day')} ${x.i + 1} <span class="label">${esc(fmtDay(x.d.date, { day: 'numeric', month: 'short' }))} · ${esc(T(x.d.title))}</span></h3>${grp(x.ph)}</section>`).join('')}
 ${loose.length ? `<section class="blk phday"><h3>${L('ไม่ระบุวัน', 'No day')}</h3>${grp(loose)}</section>` : ''}</div>`;
 }
@@ -2147,7 +2147,7 @@ function viewSpend(t) {
     const rows = all.filter((s) => s.cur === c), total = rows.reduce((a, s) => a + s.amount, 0);
     const cats = SPEND_CATS.map(([k, e, th, en]) => ({ k, e, name: L(th, en), n: rows.filter((s) => (s.cat || 'other') === k).reduce((a, s) => a + s.amount, 0) })).filter((x) => x.n > 0).sort((a, b) => b.n - a.n);
     const max = Math.max(...cats.map((x) => x.n));
-    return `<section class="blk spsum"><h3>${esc(c)} · ${esc(fmtMoney(total, c))}${c !== 'THB' ? ` <span class="label fxa" data-fxc="${esc(c)}">${esc(thbLine(rows))}</span>` : ''}</h3><ul class="spbars">${cats.map((x) => `<li><span class="spl">${x.e} ${esc(x.name)}</span><span class="spbar"><i style="width:${Math.max(3, Math.round((x.n / max) * 100))}%"></i></span><b>${esc(fmtMoney(x.n, c))}</b><small>${Math.round((x.n / total) * 100)}%</small></li>`).join('')}</ul></section>`;
+    return `<section class="blk spsum"><h3>${esc(c)} · ${esc(fmtMoney(total, c))}${c !== 'THB' ? ` <span class="label fxa" data-fxc="${esc(c)}">${esc(thbLine(rows))}</span>` : ''}</h3><ul class="spbars">${cats.map((x) => `<li><span class="spl">${emo(x.e)} ${esc(x.name)}</span><span class="spbar"><i style="width:${Math.max(3, Math.round((x.n / max) * 100))}%"></i></span><b>${esc(fmtMoney(x.n, c))}</b><small>${Math.round((x.n / total) * 100)}%</small></li>`).join('')}</ul></section>`;
   }).join('');
   const days = t.days.map((d, i) => ({ d, i, rows: spendOf(t.id, i) })).filter((x) => x.rows.length);
   const top = [...all].sort((a, b) => b.amount - a.amount).slice(0, 5);
@@ -2155,5 +2155,5 @@ function viewSpend(t) {
 <p class="lede">${L(`ทั้งหมด ${all.length} รายการ · ${esc(sumMoney(all))} · แยกตามสกุลเงิน (เงินบาทด้านล่างเป็นค่าประมาณจากเรตที่ใส่เอง) · อยู่ในสมุดของเราเท่านั้น ไม่เข้าเล่มพิมพ์`, `${all.length} items · ${esc(sumMoney(all))} · each currency on its own (the baht below is an estimate at your own rate) · stays in our book, not in the printed one`)}</p>
 ${fxBlock(t)}<div class="spgrid">${byCur}</div>
 <section class="blk"><h3>${ic('today')} ${L('รายวัน', 'Day by day')}</h3><ul class="items spdays">${days.map(({ d, i, rows }) => `<li><a class="grow" href="#/t/${esc(t.id)}/log/${i}"><b>${L('วันที่', 'Day')} ${i + 1}</b> · ${esc(fmtDay(d.date, { day: 'numeric', month: 'short' }))} · ${esc(T(d.title))}</a><b>${esc(sumMoney(rows))}</b></li>`).join('')}</ul></section>
-<section class="blk"><h3>${ic('up')} ${L('รายการใหญ่สุด', 'The biggest items')}</h3><ul class="items">${top.map((s) => { const c = SPEND_CATS.find((x) => x[0] === s.cat) || SPEND_CATS[5]; return `<li><div class="grow">${c[1]} ${s.note ? esc(s.note) : esc(L(c[2], c[3]))} <small class="label">· ${L('วันที่', 'Day')} ${s.day + 1}</small></div><b>${esc(fmtMoney(s.amount, s.cur))}</b></li>`; }).join('')}</ul></section>`;
+<section class="blk"><h3>${ic('up')} ${L('รายการใหญ่สุด', 'The biggest items')}</h3><ul class="items">${top.map((s) => { const c = SPEND_CATS.find((x) => x[0] === s.cat) || SPEND_CATS[5]; return `<li><div class="grow">${emo(c[1])} ${s.note ? esc(s.note) : esc(L(c[2], c[3]))} <small class="label">· ${L('วันที่', 'Day')} ${s.day + 1}</small></div><b>${esc(fmtMoney(s.amount, s.cur))}</b></li>`; }).join('')}</ul></section>`;
 }

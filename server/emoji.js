@@ -21,9 +21,21 @@ const DEFAULTS = [
   // the owner's second pack (Nov 2026): the two moods without a picture, the forecast's other skies, the older hearts
   ['excited', '🤩', 'ตื่นเต้น', 'Excited'], ['yummy', '😋', 'อร่อย', 'Yummy'], ['hug', '🤗', 'กอด', 'Hug'], ['kiss', '😘', 'จุ๊บ', 'Kiss', '😚'],
   ['cloudy', '☁', 'เมฆมาก', 'Overcast'], ['fog', '🌫', 'หมอก', 'Fog'], ['snowflake', '❄', 'หิมะ', 'Snow'], ['snowy', '🌨', 'หิมะตก', 'Snowing'],
-  ['storm', '⛈', 'พายุฝน', 'Storm', '🌩'], ['balloon', '🎈', 'ลูกโป่ง', 'Balloon']];
+  ['storm', '⛈', 'พายุฝน', 'Storm', '🌩'], ['balloon', '🎈', 'ลูกโป่ง', 'Balloon'],
+  // the third pack (Nov 2026): Today's bag, the photo tags and the spending categories (five reuse the app's own pictures)
+  ['passport-book', '📕', 'หนังสือเดินทาง', 'Passport'], ['passport', '🛂', 'พาสปอร์ตนักผจญภัย', 'Kids’ passport'], ['swimsuit', '🩱', 'ชุดว่ายน้ำ', 'Swimsuit', '👙', '🩳'],
+  ['sunscreen', '🧴', 'ครีมกันแดด', 'Sunscreen'], ['jacket', '🧥', 'เสื้อกันหนาว', 'Jacket'], ['backpack', '🎒', 'เป้', 'Backpack'],
+  ['stroller', '🛒', 'รถเข็น', 'Stroller'], ['cash', '💵', 'เงินสด', 'Cash', '💴', '💶', '💷', '💰'], ['card', '💳', 'บัตร', 'Card'],
+  ['ticket', '🎟', 'ตั๋ว', 'Ticket', '🎫'], ['tshirt', '👕', 'เสื้อยืด', 'T-shirt'], ['apple', '🍎', 'แอปเปิล', 'Apple'], ['nappy', '🧷', 'ผ้าอ้อม', 'Nappy'],
+  ['child', '🧒', 'เด็กๆ', 'Child', '👦', '👧'], ['family', '👨‍👩‍👧‍👦', 'ครอบครัว', 'Family', '👪'], ['icecream', '🍦', 'ไอติม', 'Ice cream', '🍨'],
+  ['koala', '🐨', 'โคอาล่า', 'Koala'], ['tree', '🌳', 'ต้นไม้', 'Tree', '🌲'], ['beach', '🏖', 'ชายหาด', 'Beach', '🏝'], ['splash', '💦', 'เล่นน้ำ', 'Splash'],
+  ['slide', '🛝', 'สไลเดอร์', 'Slide'], ['rollercoaster', '🎢', 'รถไฟเหาะ', 'Rollercoaster'], ['taxi', '🚕', 'แท็กซี่', 'Taxi', '🚖'], ['receipt', '🧾', 'ใบเสร็จ', 'Receipt'],
+  ['bus', '🚌', 'รถบัส', 'Bus', '🚍'], ['city', '🏙', 'เมือง', 'City'], ['sunrise', '🌄', 'วิว', 'View', '🌅'], ['museum', '🏛', 'พิพิธภัณฑ์', 'Museum'],
+  ['palette', '🎨', 'ศิลปะ', 'Art'], ['shopping', '🛍', 'ช้อปปิ้ง', 'Shopping'], ['bed', '🛏', 'ที่พัก', 'Bed'], ['teddy', '🧸', 'ตุ๊กตาหมี', 'Teddy'],
+  ['walking', '🚶', 'เดินเล่น', 'Walk', '👟'], ['selfie', '🤳', 'เซลฟี่', 'Selfie'], ['signpost', '🪧', 'ป้าย', 'Sign'], ['mouse', '🐭', 'หนู', 'Mouse'],
+  ['noodles', '🍜', 'ก๋วยเตี๋ยว', 'Noodles']];
 const FIRST_SET = 24;   // the families seeded before the second pack were offered DEFAULTS[0..23]
-const MAX = 120;                                  // pictures in one family's library
+const MAX = 160;                                  // pictures in one family's library
 const ID_RE = /^[a-z0-9][a-z0-9-]{1,39}$/;
 const keyOf = (id) => `e/${id}.png`;
 const bare = (s) => String(s || '').replace(/️/g, '').trim();
