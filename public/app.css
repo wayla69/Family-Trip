@@ -12,7 +12,7 @@
 
 :root{
   --paper:#FFFFFF;--ink:#1F2A3A;--muted:#666D79;--rule:#E8EBEA;--panel:#F7F2EA;
-  --accent:#1F3A5F;--accent2:#C8402B;--on-accent:#FFFFFF;
+  --accent:#1F3A5F;--accent2:#C8402B;--on-accent:#FFFFFF;--on-accent2:#FFFFFF;
   --pick:#FBEDE9;--info:#EAF0F7;--calm:#E8F4F0;--warn:#FBF0E4;
   --mimi:#FF4F8B;--mika:#2F8BFF;--both:#8B3DFF;
   --ui:"KIRA UI",system-ui,-apple-system,"Noto Sans Thai","Segoe UI",sans-serif;
@@ -67,7 +67,7 @@ hr.rule{border:0;border-top:1px solid var(--rule);margin:22px 0}
 .btn{text-decoration:none;border:0;border-radius:10px;padding:10px 16px;font-weight:600;background:var(--accent);color:var(--on-accent);display:inline-flex;align-items:center;gap:8px}
 .btn.ghost{background:transparent;color:var(--accent);border:1px solid var(--rule)}
 .btn.small{padding:6px 11px;font-size:13px}
-.btn.danger,.btn.confirm{background:var(--accent2);color:#fff}
+.btn.danger,.btn.confirm{background:var(--accent2);color:var(--on-accent2)}
 .btn:disabled{opacity:.5}
 /* today's bag (Today page) */
 .bag{border:1px solid var(--rule);border-radius:14px;padding:10px 14px;margin:12px 0}.bag summary{cursor:pointer;font-weight:700}
@@ -330,7 +330,7 @@ textarea.field{min-height:76px;resize:vertical}
 .items li .grow{flex:1;min-width:0}
 .mini{border:0;background:none;font-size:13px;font-weight:600;color:var(--muted);padding:4px 6px;border-radius:6px;white-space:nowrap}
 .mini.on{color:var(--accent2)}
-.mini[data-armed]{background:var(--accent2);color:#fff}
+.mini[data-armed]{background:var(--accent2);color:var(--on-accent2)}
 .progress{font-size:13px;font-weight:600;color:var(--accent)}
 .notice{background:var(--warn);border-radius:10px;padding:10px 14px;font-size:14px;margin:12px 0}
 .notice small{color:var(--muted)}
@@ -1761,6 +1761,18 @@ p,li,.bubble p{text-wrap:pretty}
 .hubgrid .tile .e{background:rgba(255,255,255,.75);color:color-mix(in srgb,var(--g2) 80%,#101820)}
 .hubgrid .tile.today{background:linear-gradient(135deg,color-mix(in srgb,var(--g1) 20%,#fff),color-mix(in srgb,var(--g1) 38%,#fff));border-color:color-mix(in srgb,var(--g1) 30%,#fff)}
 .hubgrid .tile.today small{color:#3A4350}
+/* the family's other two looks (menu › "สีของเมนู"): the book's colour on every tile, or plain white with hairlines (DESIGN.md §9) */
+.hubgrid.tl-accent .tile,.hubgrid.tl-accent .tile.today{background:color-mix(in srgb,var(--accent) 11%,var(--paper));border:1px solid color-mix(in srgb,var(--accent) 22%,transparent);box-shadow:none;color:var(--ink)}
+.hubgrid.tl-accent .tile b{color:var(--ink)}.hubgrid.tl-accent .tile small,.hubgrid.tl-accent .tile.today small{color:var(--muted)}
+.hubgrid.tl-accent .tile .e{background:color-mix(in srgb,var(--accent) 18%,var(--paper));color:var(--accent)}
+.hubgrid.tl-plain .tile,.hubgrid.tl-plain .tile.today{background:var(--paper);border:1px solid var(--line);box-shadow:none;color:var(--ink)}
+.hubgrid.tl-plain .tile b{color:var(--ink)}.hubgrid.tl-plain .tile small,.hubgrid.tl-plain .tile.today small{color:var(--muted)}
+.hubgrid.tl-plain .tile .e{background:var(--soft);color:var(--accent)}
+.hubgrid.tl-accent .tile.today.hi,.hubgrid.tl-plain .tile.today.hi{background:var(--accent);border-color:var(--accent);color:var(--on-accent)}
+.hubgrid.tl-accent .tile.today.hi b,.hubgrid.tl-plain .tile.today.hi b,.hubgrid.tl-accent .tile.today.hi small,.hubgrid.tl-plain .tile.today.hi small{color:var(--on-accent)}
+.hubgrid.tl-accent .tile.today.hi .e,.hubgrid.tl-plain .tile.today.hi .e{background:color-mix(in srgb,var(--on-accent) 16%,transparent);color:var(--on-accent)}
+.hubgrid.tl-accent .tile.t-sos .e,.hubgrid.tl-plain .tile.t-sos .e{background:color-mix(in srgb,var(--hot) 10%,var(--paper));color:var(--hot)}
+.tilepick{align-items:center;gap:10px;margin:18px 0 6px;flex-wrap:wrap}
 /* 16 colours with 16 different names (owner: no two alike) — red, orange, gold, brown, lime, green, teal, cyan, sky, blue, indigo, violet, purple, magenta, pink, charcoal; placed so look-alikes never touch on the phone or the desktop grid */
 .hubgrid .tile.today{--g1:#4F7BFF;--g2:#2F55E8}   /* blue */
 .hubgrid .t-log{--g1:#9BD82A;--g2:#5E9E00}   /* lime */
@@ -1828,7 +1840,7 @@ html[data-fs="1"] main.wrap{zoom:1.1}html[data-fs="2"] main.wrap{zoom:1.2}html[d
 /* voice memos: the recorder on the record page, the clips in the book and in kid mode */
 .clips audio{display:block;width:100%;max-width:440px;height:36px;margin-bottom:6px}
 .clips .field.small{padding:6px 10px;font-size:14px}
-.btn.rec{background:var(--accent2);border-color:var(--accent2);color:#fff;animation:recpulse 1s ease-in-out infinite}
+.btn.rec{background:var(--accent2);border-color:var(--accent2);color:var(--on-accent2);animation:recpulse 1s ease-in-out infinite}
 @keyframes recpulse{50%{opacity:.7}}
 .day .clips{display:grid;gap:8px;margin:10px 0}
 .day .clip span{display:block;font-size:13px;color:var(--muted);margin-bottom:2px}

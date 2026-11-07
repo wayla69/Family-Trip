@@ -355,6 +355,7 @@ function themeStyle(t) {
     .map(([k, v]) => `${v}:${k === 'accent' && dark && th.accentDark ? th.accentDark : th[k]}`);
   const acc = dark && th.accentDark ? th.accentDark : th.accent;
   if (acc) css.push(`--on-accent:${onAccent(acc)}`);   // text on an accent fill: white on a deep accent, the dark paper on the light dark-mode accent
+  if (th.accent2) css.push(`--on-accent2:${onAccent(th.accent2)}`);   // the same for the second colour (AU's sea blue wants dark text)
   return css.join(';');
 }
 // WCAG contrast: white or the dark paper, whichever reads better on this colour

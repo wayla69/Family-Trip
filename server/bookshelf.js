@@ -159,9 +159,21 @@ function router({ pool, media, A, ai, hooks = {} }) {   // hooks.heart(h): set b
       res.json({ ok: true, files: gone });
     } catch (e) { next(e); }
   });
+  // one look setting at a time (the menu's tile colours), merged into the stored profile; the rest of the profile stays
+  r.patch('/api/b/family/profile', ...W, async (req, res, next) => {
+    try {
+      const b = req.body || {};
+      if (b.tiles !== undefined && !FAM.TILES.includes(b.tiles)) return bad(res, 'tiles');
+      const cur = (await q('SELECT profile FROM families WHERE id=$1', [FAMILY]))[0], prof = FAM.cleanProfile(cur ? cur.profile : null);
+      if (b.tiles !== undefined) prof.tiles = b.tiles;
+      await q('UPDATE families SET profile=$2 WHERE id=$1', [FAMILY, JSON.stringify(prof)]);
+      res.json({ ok: true, family: FAM.profile(prof, await kidRows()) });
+    } catch (e) { next(e); }
+  });
   r.put('/api/b/family', ...W, async (req, res, next) => {
     try {
       const b = req.body || {}, prof = FAM.cleanProfile(b.profile);
+      if (!prof.tiles) prof.tiles = FAM.cleanProfile((await q('SELECT profile FROM families WHERE id=$1', [FAMILY]))[0]?.profile).tiles;   // the form sends no tile look: keep the one chosen on the menu
       const kids = (Array.isArray(b.children) ? b.children : []).slice(0, 6).map(FAM.cleanKid).filter(Boolean);
       if (new Set(kids.map((k) => k.slug)).size !== kids.length) return bad(res, 'slug');
       if (kids.some((k) => !k.birth_ym)) return bad(res, 'birth');   // the age at each trip (and the age a character is drawn at) comes from it
