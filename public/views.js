@@ -361,8 +361,11 @@ const TIPK = { warn: 1, tip: 1, info: 1 };
 const points = (s) => {
   let d = 0; const SEP = { '.': '\u0001', ';': '\u0002', '·': '\u0003', '—': '\u0004', ':': '\u0005' };
   const t = String(s || '').replace(/[().;·—:]/g, (c) => { if (c === '(') { d++; return c; } if (c === ')') { d = Math.max(0, d - 1); return c; } return d ? SEP[c] : c; });
-  let parts = t.split(/(?<=[A-Za-z0-9)"'’][.;]|;)\s+(?=\S)|\s+·\s+/);   // a full stop counts only after a Latin letter, digit or bracket (Thai dates like มี.ค. never split)
-  parts = parts.flatMap((x) => (x.length > 110 ? x.split(/\s+—\s+|:\s+(?=\S)/) : [x]));   // still long: cut at a dash or a colon too
+  // a full stop counts only after a Latin letter, digit or bracket (Thai dates like มี.ค. never split), and never after an initial or a
+  // short title ("Conde S. Januário", "St. John's", "Mt. Annan", "No. 5") — those are inside a name
+  let parts = t.split(/(?<=[A-Za-z0-9)"'’][.;]|;)(?<!(?:^|[\s(])(?:[A-Z]|St|Mt|Dr|Mr|Mrs|Ms|No|Nos|Rd|Ave|approx|vs|e\.g|i\.e)\.)\s+(?=\S)|\s+·\s+/);
+  // still long: cut at a dash or a colon too — but not at a colon that opens a quote ("สอนมีมี่ว่า: …", "tell them: …")
+  parts = parts.flatMap((x) => (x.length > 110 ? x.split(/\s+—\s+|(?<!ว่า|that|them|say|says|teach \w+):\s+(?=\S)/) : [x]));
   parts = parts.map((x) => x.replace(/[\u0001-\u0005]/g, (c) => '.;·—:'[c.charCodeAt(0) - 1]).replace(/;\s*$|(?<![ก-๙]\.[ก-๙]{1,2})\.\s*$/, '').replace(/^[—–-]\s*/, '').trim()).filter(Boolean);
   // a numbered list written "1 · first · 2 · second": the number joins its item ("1. first"), never a point of its own
   parts = parts.flatMap((x, j) => { const m = x.match(/^(.*\S:)\s+(1)$/); return m && parts[j + 2] === '2' ? [m[1], m[2]] : [x]; });   // "Cut in this order: 1 · …"

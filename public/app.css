@@ -1714,7 +1714,7 @@ button.tile.kid{border:1px solid var(--line);text-align:left;justify-items:start
 .bill>div.tot{border-bottom:0;border-top:2px solid var(--ink);font-weight:700}.bill>div.tot dd{font-size:16px}
 .bill>div.bn{border-bottom:0}.bill>div.bn dd{white-space:normal;font-weight:400;font-size:12.5px;color:var(--muted)}
 .tl .tm{display:block}.tl .tsub{display:block;font-size:13px;color:var(--muted);margin-top:2px;line-height:1.45}
-.tips small.tsub{display:block;font-size:13px;color:var(--muted);margin-top:2px}
+.tips small.tsub,.gl dd small.tsub,.pocket dd small.tsub{display:block;font-size:13px;color:var(--muted);margin-top:2px}   /* a second point sits on its own line, never glued to the first */
 /* ===== colour + sections (owner 18 Oct 2026: "ปรับเพิ่มสี และจัดให้เป็นสัดส่วน") — each part in its own box, its colour on the header ===== */
 .cbox{--cb:var(--accent);margin:12px 0;border-radius:16px;background:color-mix(in srgb,var(--cb) 5%,var(--paper));border:1px solid color-mix(in srgb,var(--cb) 24%,transparent);padding:0 14px 8px;overflow:hidden}
 .cbox>.ch{display:flex;align-items:center;gap:8px;margin:0 -14px 6px;padding:10px 14px;background:color-mix(in srgb,var(--cb) 15%,var(--paper));color:color-mix(in srgb,var(--cb) 72%,var(--ink));font-size:14.5px;font-weight:700}
