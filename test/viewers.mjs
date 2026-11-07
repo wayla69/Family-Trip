@@ -78,7 +78,7 @@ const browser = await chromium.launch({ executablePath: exe, args: ['--no-sandbo
 try {
   const page = await (await browser.newContext({ viewport: { width: 390, height: 844 } })).newPage();
   const errs = []; page.on('pageerror', (e) => errs.push(e.message));
-  await page.goto(BASE + '/'); await page.fill('#lcode', CODE); await page.click('#lf button[type=submit]'); await page.waitForSelector('.shelf');
+  await page.goto(BASE + '/'); await page.fill('#lcode', CODE); await page.keyboard.press('Enter'); await page.waitForSelector('.shelf');
   await page.click('a[href="#/viewers"]'); await page.waitForSelector('.vgform');
   await page.fill('#vgname', 'ฝั่งคุณย่า'); await page.fill('#vgpin', '445566');
   await page.locator(`.vgchecks input[data-v="${AU}"]`).uncheck();

@@ -1552,7 +1552,7 @@ button.tile.kid{border:1px solid var(--line);text-align:left;justify-items:start
 /* meals: pick + backup per meal (today sheet, eat page) */
 .dsheet .meal dd b{font-weight:600}
 /* a name + its navigate pin on one line (Today's meals and tonight's stay): the pin is a 44 px square that keeps the row's height through negative margins */
-.nmrow{display:inline-flex;align-items:center;gap:6px;max-width:100%}.nmrow>b,.nmrow>span{min-width:0}
+.nmrow{display:flex;align-items:center;gap:6px;width:100%}.nmrow>b,.nmrow>span{min-width:0}.nmrow .navb{margin-left:auto}   /* the pins of a meal and its backup line up on the right */
 .navb{display:inline-grid;place-items:center;width:44px;height:44px;margin:-9px 0;flex:none;border:1px solid var(--rule);border-radius:12px;background:var(--paper);color:var(--accent);text-decoration:none}
 .navb .ic{width:20px;height:20px}.navb:hover{border-color:var(--accent)}
 .dsheet .meal dd small{display:block;color:var(--muted);font-size:13px;margin-top:2px}

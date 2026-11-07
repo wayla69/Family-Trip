@@ -222,7 +222,7 @@ try {
   const ctx1 = await browser.newContext({ viewport: { width: 390, height: 844 } }); await ctx1.addInitScript(() => localStorage.setItem('mbs_logall', '1'));   // every record-page box on the page
   const page = await ctx1.newPage();
   const errs = []; page.on('pageerror', (e) => errs.push(e.message));
-  await page.goto(BASE + '/'); await page.fill('#lcode', CODE); await page.click('#lf button[type=submit]'); await page.waitForSelector('.shelf');
+  await page.goto(BASE + '/'); await page.fill('#lcode', CODE); await page.keyboard.press('Enter'); await page.waitForSelector('.shelf');
   await page.goto(`${BASE}/#/t/${T}/log/1`); await page.waitForSelector('#storygo');
   await page.click('#storygo');
   await page.waitForFunction(() => document.querySelector('#storytext') && document.querySelector('#storytext').textContent.includes('ฝันดี'));
@@ -356,7 +356,7 @@ try {
   { const P = createRequire(import.meta.url)('../server/story.js').parseQuiz;
     ok(P('no json here') === null && P('[{"q":"x","a":[{"t":"a"}],"ok":0}]') === null && P('[{"q":"x","a":[{"t":"a"},{"t":"b"}],"ok":1}]')[0].a.length === 2, 'memory game parser: no JSON or too few answers → nothing kept'); }
   { const b2 = await chromium.launch({ executablePath: exe, args: ['--no-sandbox'] }); const ctx2 = await b2.newContext({ viewport: { width: 390, height: 844 } }); await ctx2.addInitScript(() => localStorage.setItem('mbs_logall', '1')); const pg2 = await ctx2.newPage();
-    await pg2.goto(BASE + '/'); await pg2.fill('#lcode', CODE); await pg2.click('#lf button[type=submit]'); await pg2.waitForSelector('.shelf');
+    await pg2.goto(BASE + '/'); await pg2.fill('#lcode', CODE); await pg2.keyboard.press('Enter'); await pg2.waitForSelector('.shelf');
     await pg2.goto(`${BASE}/#/t/${T}/book`); await pg2.waitForSelector('#foretext');
     ok(await pg2.inputValue('#foretext') === 'ทริปนี้เราไปฮ่องกง — พ่อแม่เขียนเอง' && await pg2.locator('#forego').count() === 1, 'book: the foreword box holds the saved foreword, with a Claude draft button');
     await pg2.goto(`${BASE}/#/print/${T}`); await pg2.waitForSelector('.forep');

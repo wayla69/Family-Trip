@@ -66,7 +66,7 @@ try {
   const browser = await chromium.launch({ executablePath: exe, args: ['--no-sandbox'] });
   const page = await (await browser.newContext({ viewport: { width: 390, height: 844 } })).newPage();
   const errs = []; page.on('pageerror', (e) => errs.push(e.message));
-  await page.goto(BASE + '/'); await page.fill('#lcode', CODE); await page.click('#lf button[type=submit]'); await page.waitForSelector('.shelf');
+  await page.goto(BASE + '/'); await page.fill('#lcode', CODE); await page.keyboard.press('Enter'); await page.waitForSelector('.shelf');
   await page.goto(`${BASE}/#/t/hk-macau-2026/today/1`); await page.waitForSelector('.wxlive', { timeout: 10000 });
   const line = await page.locator('.wxlive').first().textContent();
   ok(/Forecast \d+–\d+°C/.test(line) && /rain \d+%/.test(line), `Today page: live forecast line "${line.trim()}"`);
