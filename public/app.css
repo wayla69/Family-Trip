@@ -129,6 +129,31 @@ main .blk{scroll-margin-top:76px}   /* a jump (panel, steps, shortcuts) lands be
 /* a long timeline row shows two lines; a tap shows it all (sheets.js) */
 .tl.plan li>div{display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden;cursor:pointer}
 .tl.plan li.open>div{display:block;-webkit-line-clamp:unset}
+/* first run: the setup steps (#/start) */
+.onb{max-width:520px;margin:0 auto;padding:18px 0 40px;display:flex;flex-direction:column;gap:12px}
+.onb .h2{margin-top:4px}.onb .lede{max-width:none}
+.onbhd{display:flex;align-items:center;gap:10px;margin:0 0 8px}.onbhd .label{width:38px;text-align:right;font-variant-numeric:tabular-nums}
+.onbdots{flex:1;display:flex;gap:6px;justify-content:center}.onbdots span{width:6px;height:6px;border-radius:3px;background:var(--rule)}.onbdots span.done{background:var(--accent)}.onbdots span.on{width:22px;background:var(--accent)}
+.onbart{display:flex;flex-direction:column;align-items:center;gap:6px;margin:8px 0}.onbart .cast{justify-content:center}.onbart .cast .who{height:150px}.onbart .cast .who.mika{height:118px}
+.onbsteps{list-style:none;margin:6px 0;padding:0;border-top:1px solid var(--line)}
+.onbsteps li{display:flex;align-items:center;gap:14px;padding:13px 2px;border-bottom:1px solid var(--line)}
+.onbsteps li>span:last-child{flex:1;min-width:0;display:flex;flex-direction:column;gap:2px}.onbsteps b{font-size:var(--fs-3);font-weight:600}.onbsteps small{font-size:13px;color:var(--muted);line-height:1.4}.onbsteps small:empty{display:none}
+.onbno{width:28px;height:28px;border-radius:50%;background:var(--soft);color:var(--accent);font-weight:700;font-size:13px;display:grid;place-items:center;flex:none}
+.onbsteps.times .onbno{width:54px;height:auto;border-radius:0;background:none;justify-content:start;font-size:15px;font-variant-numeric:tabular-nums}
+.onbnext{display:flex;align-items:center;justify-content:center;gap:8px;height:52px;border-radius:10px;font-size:16px;margin-top:6px}
+.btn.ghost.onbnext{border:0;height:44px}
+.onbpriv{text-align:center;line-height:1.5;margin-top:4px}
+.onbpin{font-size:22px;letter-spacing:.3em;text-align:center}
+.onb .vgform.onb{display:grid;gap:10px;border:1px solid var(--rule);border-radius:var(--r);padding:14px}
+.onb .vgjust{display:grid;gap:4px;text-align:center}.onb .vgjust .vgpin{font-size:34px;font-weight:700;letter-spacing:.2em;font-variant-numeric:tabular-nums}
+.onbicon{display:flex;flex-direction:column;align-items:center;gap:8px;margin:14px 0 4px}.onbtile{width:72px;height:72px;border-radius:18px;background:var(--accent);display:grid;place-items:center;box-shadow:0 4px 18px rgba(0,0,0,.18);overflow:hidden}.onbtile .art{width:56px;height:56px}.onbtile .e{font-size:36px}.onbicon small{font-size:12px}
+.onbways{display:grid;gap:10px;margin-top:10px}
+.onbway{display:flex;align-items:center;gap:14px;padding:14px 16px;border-radius:var(--r);border:1px solid var(--line);background:var(--paper);color:var(--ink);text-decoration:none;text-align:left;font:inherit;cursor:pointer}
+.onbway.main{border-color:var(--accent);background:var(--soft)}.onbway .e{width:44px;height:44px;border-radius:12px;background:var(--soft);display:grid;place-items:center;color:var(--accent);flex:none}.onbway.main .e{background:var(--paper)}
+.onbway>span:nth-child(2){flex:1;min-width:0;display:flex;flex-direction:column;gap:2px}.onbway b{font-size:16px;font-weight:600}.onbway small{font-size:13px;color:var(--muted);line-height:1.4}.onbway>.ic:last-child{color:var(--muted);width:18px;height:18px}
+.onbsum{list-style:none;margin:18px 0 0;padding:12px 0 0;border-top:1px solid var(--line);display:grid;gap:6px;font-size:13px;color:var(--muted)}.onbsum a{color:var(--accent)}
+.onb .famhero,.onb .famsave{margin-left:0;margin-right:0}
+body.onb nav.bar{display:none}body.onb{padding-bottom:24px}
 /* relatives' groups (#/viewers) */
 .vglist{display:grid;grid-template-columns:repeat(auto-fill,minmax(280px,1fr));gap:12px;margin:14px 0}
 .vgcard{border:1px solid var(--rule);border-radius:14px;padding:14px;background:var(--paper);display:grid;gap:10px}

@@ -27,6 +27,8 @@ function render() {
   let t = null, html;
   // kid mode is "locked": while it is on, every route leads back to it (a grown-up holds the lock to leave)
   const km = isEditor() && ls('kidmode');
+  // a new family (no children yet) starts at the setup steps until it finishes or skips them
+  if (isEditor() && !p[0] && Array.isArray(S.children) && !S.children.length && !ls('startDone')) { location.replace('#/start'); return; }
   if (km && p[0] !== 'kid') { location.replace('#/kid' + (km !== 'pick' ? '/' + km : '')); return; }
   document.body.classList.toggle('kidmode', !!(p[0] === 'kid' && isEditor()));
   if (p[0] === 'kid' && isEditor()) {
@@ -82,11 +84,13 @@ function render() {
   else if (p[0] === 'viewers' && isEditor()) html = viewViewers();
   else if (p[0] === 'import' && isEditor()) html = viewImport();
   else if (p[0] === 'family' && isEditor()) html = viewFamily();
+  else if (p[0] === 'start' && isEditor()) html = viewStart(p);
   else if (p[0] === 'emoji' && isEditor()) html = viewEmoji();
   else html = viewShelf();
   document.documentElement.style.cssText = t ? themeStyle(t) : themeStyle(curTrip());
   document.body.classList.toggle('serif', !!(t ? t.theme.display === 'serif' : false));
   document.documentElement.lang = lang;
+  document.body.classList.toggle('onb', p[0] === 'start');   // the setup steps have no bottom bar
   document.title = t ? `${T(t.title)} · MM Memory` : 'MM Memory';
   const key = p.slice(0, 3).join('/') + (p.includes('full') ? '/full/' + (p[4] || '') : ''), enter = key !== lastView; lastView = key;   // animate only when the page changes, not on every save
   app.innerHTML = topBar(t, p) + `<main class="wrap${enter ? ' enter' : ''}">${offline ? `<div class="notice">${L('ไม่มีเน็ต — แสดงข้อมูลล่าสุดที่เก็บไว้ บันทึกได้ตามปกติ จะส่งขึ้นเองเมื่อกลับมามีเน็ต', 'Offline — showing the last saved copy. You can keep recording; it uploads when you are back online.')}${S.syncedAt ? ` <small>· ${L('ข้อมูลล่าสุดเมื่อ', 'last synced')} ${esc(new Date(S.syncedAt).toLocaleString(LOC(), { day: 'numeric', month: 'short', hour: '2-digit', minute: '2-digit' }))}</small>` : ''}</div>` : ''}${html}</main>` + tabBar(t, p);
@@ -193,7 +197,7 @@ ${visual}
   const add = isEditor() ? `<div class="spine add"><div class="addhd"><b class="addplus" aria-hidden="true">＋</b><div><h3>${L('เล่มใหม่', 'New book')}</h3><small>${pdf ? L('เริ่มได้ 2 แบบ', 'Two ways to start') : L('ทริปใหม่ เล่มใหม่', 'A new trip, a new book')}</small></div></div>
 ${pdf ? `<a class="addway main" href="#/import"><span class="e">${ic('doc')}</span><span><b>${L('จากคู่มือทริป (PDF)', 'From the trip manual (PDF)')}</b><small>${L('ผู้ช่วยอ่านคู่มือ แล้วทำแผนรายวัน ร้านอาหาร และหน้าของเด็กๆ ให้', 'The helper reads the manual and makes the day plans, places to eat and the kids’ pages')}</small></span><i>›</i></a>` : ''}
 <button type="button" class="addway" data-a="newtrip"><span class="e">${ic('log')}</span><span><b>${L('เล่มเปล่า', 'An empty book')}</b><small>${L('ใส่ชื่อทริปกับวันที่ แล้วค่อยเติมเอง', 'Type the trip name and dates, fill it in as you go')}</small></span><i>›</i></button></div>` : '';
-  const welcome = isEditor() && !children().length ? `<a class="famwelcome" href="#/family"><span>${ic('family')}</span><div><b>${L('เริ่มที่ครอบครัวของเรา', 'Start with your family')}</b><small>${L('ตั้งชื่อแอป ใส่ชื่อลูกๆ และเลือกตัวการ์ตูนของแต่ละคน แล้วทุกหน้าจะเป็นของครอบครัวเรา', "Name the app, add the children and pick each one's character — every page becomes yours")}</small></div></a>` : '';
+  const welcome = isEditor() && !children().length ? `<a class="famwelcome" href="#/start"><span>${ic('family')}</span><div><b>${L('เริ่มที่ครอบครัวของเรา', 'Start with your family')}</b><small>${L('ตั้งชื่อแอป ใส่ชื่อลูกๆ และเลือกตัวการ์ตูนของแต่ละคน แล้วทุกหน้าจะเป็นของครอบครัวเรา', "Name the app, add the children and pick each one's character — every page becomes yours")}</small></div></a>` : '';
   return `${remindAsk()}${heroHtml()}${welcome}<div class="part">${L('ชั้นหนังสือ', 'The bookshelf')}</div><h1 class="h2">${L(kicker() ? `ทุกทริป${kicker()}` : 'ทุกทริปของเรา', 'Every trip, one book each')}</h1>
 <p class="lede">${L('เติมระหว่างเที่ยว แล้วเปิดอ่านได้อีกหลายปี', 'Fill it in on the road, reread it for years.')}</p>
 <div class="shelf">${books}${add}</div>
@@ -1330,6 +1334,7 @@ function viewFamily() {
     fam = { app: { th: ca.th || '', en: ca.en || '' }, kicker: { th: ck.th || '', en: ck.en || '' },
       kids: children().map((k) => ({ slug: k.slug, name_th: k.name_th, name_en: k.name_en, emoji: k.emoji || '', birth_ym: k.birth_ym || '', look: k.look ? { ...k.look } : null, avatar: k.avatar || null, avatars: Array.isArray(k.avatars) ? k.avatars : [] })), err: '', busy: false, busyKid: null, quota: null };
   }
+  if (!fam.kids.length && route().parts[0] === 'start') fam.kids.push({ slug: '', name_th: '', name_en: '', emoji: '🧒', birth_ym: '', look: null, avatar: null, avatars: [] });   // the setup opens with one card to fill
   const built = famBuilt(), shown = { app: L(fam.app.th, fam.app.en) || L(built.app.th, built.app.en), kicker: L(fam.kicker.th, fam.kicker.en) || L(built.kicker.th, built.kicker.en) };
   if (fam.quota === null && S.features.avatar) { fam.quota = 'loading'; api('GET', '/api/b/family/avatars').then((r) => { fam.quota = r; safeRender(); }, () => { fam.quota = { left: {}, yearly: 3 }; }); }
   const q = fam.quota && typeof fam.quota === 'object' ? fam.quota : { left: {}, yearly: 3 };
@@ -1376,10 +1381,89 @@ ${!S.features.avatar ? '' : (() => {   // no drawing helper on this server: no b
 ${fam.kids.length < 6 ? `<div class="famaddtiles"><button type="button" class="famaddtile" data-a="famadd"><span>＋</span><b>${L('เพิ่มลูกอีกคน', 'Add a child')}</b><small>${S.features.avatar ? L('ใส่ชื่อ บันทึก แล้วอัปโหลดรูปให้วาด', 'Add a name, save, then upload a photo to draw them') : L('ใส่ชื่อและเดือนเกิด แล้วกดบันทึก', 'Add a name and birth month, then save')}</small></button>
 </div>` : ''}</div>
 ${fam.err ? `<div class="notice">${esc(fam.err)}</div>` : ''}
-<div class="famsave"><button type="button" class="btn" data-a="famsave" ${fam.busy ? 'disabled' : ''}>${fam.busy ? '⏳ ' + L('กำลังบันทึก…', 'Saving…') : '💾 ' + L('บันทึกครอบครัว', 'Save our family')}</button><a class="btn ghost" href="#/">${L('ยกเลิก', 'Cancel')}</a></div>
+<div class="famsave"><button type="button" class="btn" data-a="famsave" ${fam.busy ? 'disabled' : ''}>${fam.busy ? '⏳ ' + L('กำลังบันทึก…', 'Saving…') : (route().parts[0] === 'start' ? L('บันทึกแล้วไปต่อ', 'Save and continue') : '💾 ' + L('บันทึกครอบครัว', 'Save our family'))}</button><a class="btn ghost" href="#/">${L('ยกเลิก', 'Cancel')}</a></div>
 <p class="impnote">🔒 ${S.features.avatar ? L('รูปลูกถูกย่อแล้วส่งให้ผู้ช่วยวาดภาพครั้งเดียว ไม่เก็บรูปไว้ที่ไหน เก็บแค่ตัวการ์ตูน ซึ่งเห็นได้เฉพาะคนในครอบครัวที่เข้าสู่ระบบ · ', 'The photo is shrunk and sent once to the drawing helper. The photo is kept nowhere, only the cartoon, which only signed-in family can see · ') : ''}${L('ชื่อและเดือนเกิดอยู่ในฐานข้อมูลของครอบครัวนี้เท่านั้น หน้าเข้าสู่ระบบแสดงแค่ชื่อแอปและภาพวาด · ลูกที่มีบันทึกแล้วเอาออกไม่ได้ (เปลี่ยนชื่อได้)', "Names and birth months stay in this family's own database; the sign-in page shows only the app's name and the drawings · a child with memories recorded cannot be removed (but can be renamed)")}</p>`;
 }
    // the groups · the form being filled {id, name, trips, link} · {name, pin} just saved
+/* ---------- first run (#/start/<n>, editors): a new family sets itself up in four steps ----------
+   0 welcome · 1 the family (the #/family form) · 2 a PIN for the relatives · 3 the Home-Screen icon (an iPhone sends
+   reminders only from it) · 4 reminders · 5 the first book. Every step but the family can be skipped; `ls('startDone')`
+   ends the redirect from the shelf. The owner's rule: one main button a page, a dot row for the place. */
+const START_LAST = 5;
+function viewStart(p) {
+  const n = Math.min(START_LAST, Math.max(0, parseInt(p[1], 10) || 0));
+  const ios = /iP(hone|ad|od)/.test(navigator.userAgent), android = /Android/.test(navigator.userAgent);
+  const standalone = matchMedia('(display-mode: standalone)').matches || !!navigator.standalone;
+  const head = n && n < START_LAST ? `<div class="onbhd"><a class="ibtn" href="#/start/${n - 1}" aria-label="${L('ย้อนกลับ', 'Back')}">${ic('back')}</a>
+<div class="onbdots" aria-label="${L(`ขั้น ${n} จาก 4`, `Step ${n} of 4`)}">${[1, 2, 3, 4].map((i) => `<span class="${i === n ? 'on' : i < n ? 'done' : ''}"></span>`).join('')}</div><span class="label">${n}/4</span></div>` : '';
+  const next = (to, th, en, ghost) => `<a class="btn onbnext${ghost ? ' ghost' : ''}" href="#/start/${to}">${L(th, en)}</a>`;
+  const row = (no, th, en, sth, sen) => `<li><span class="onbno">${no}</span><span><b>${L(th, en)}</b><small>${L(sth, sen)}</small></span></li>`;
+  let body;
+  if (n === 0) body = `<div class="kicker">${L('สมุดส่วนตัวของครอบครัว', 'Private family book')}</div>
+<h1 class="h2">${L('ยินดีต้อนรับสู่สมุดความทรงจำของครอบครัว', 'Welcome to your family’s memory book')}</h1>
+<p class="lede">${L('ทริปละหนึ่งเล่ม เติมระหว่างเที่ยว เปิดอ่านได้อีกหลายปี ตั้งค่า 4 ขั้น ใช้เวลาราว 3 นาที', 'One book per trip, filled in on the road and reread for years. Four steps, about three minutes.')}</p>
+<div class="onbart"><div class="cast" aria-hidden="true"><img class="who mimi" src="/art/kids/mimi-full.svg" alt=""><img class="who mika" src="/art/kids/mika-full.svg" alt=""></div><p class="label">${L('ตัวละครตัวอย่าง ขั้นแรกจะเปลี่ยนเป็นลูกของบ้านคุณ', 'Sample characters — the first step makes them your own children')}</p></div>
+<ol class="onbsteps">${row(1, 'ครอบครัวของเรา', 'Your family', 'ชื่อลูกๆ เดือนเกิด ตัวการ์ตูนของแต่ละคน', 'The children’s names, birth months and characters')}
+${row(2, 'รหัสสำหรับญาติ', 'A PIN for the relatives', 'ปู่ย่าตายายเปิดดูได้ แก้ไม่ได้', 'Grandparents can look, not change')}
+${row(3, 'เพิ่มไว้บนหน้าจอโฮม', 'Add to the Home Screen', 'เปิดเร็วเหมือนแอป และรับการเตือนได้', 'Opens like an app and can show reminders')}
+${row(4, 'เตือนระหว่างทริป', 'Reminders during the trip', 'ก่อนแต่ละช่วง 30 นาที และตอนค่ำให้บันทึกวัน', '30 min before each step, and the evening nudge to record the day')}</ol>
+${next(1, 'เริ่มตั้งค่า', 'Start')}
+<p class="label onbpriv">${L('รูปและข้อความอยู่บนเซิร์ฟเวอร์ของครอบครัวคุณเท่านั้น ไม่มีโฆษณา ไม่มีการติดตาม', 'Photos and words stay on your family’s own server. No ads, no tracking.')} · <button type="button" class="linkbtn" data-a="startskip">${L('ข้ามการตั้งค่า', 'Skip setup')}</button></p>`;
+  else if (n === 1) body = `<h1 class="h2">${L('ครอบครัวของเรา', 'Your family')}</h1>
+<p class="lede">${L('ชื่อแอปจะเป็นของบ้านคุณ ตั้งจากชื่อลูกให้เอง แก้ได้ทีหลัง', 'The app names itself after the children; everything can be changed later.')}</p>${viewFamily()}`;
+  else if (n === 2) {
+    if (vg === null) { vg = 'loading'; api('GET', '/api/b/viewers').then((r) => { vg = r.groups; safeRender(); }, () => { vg = []; safeRender(); }); }
+    if (!vgForm || vgForm.id) vgForm = { id: '', name: L('ญาติ', 'Relatives'), trips: S.trips.map((t) => t.id), link: true };
+    const f = vgForm, had = Array.isArray(vg) && vg.length;
+    body = `<h1 class="h2">${L('รหัสสำหรับญาติ', 'A PIN for the relatives')}</h1>
+<p class="lede">${L('ปู่ย่าตายายใส่รหัสนี้แล้วเปิดดูเล่มและส่งหัวใจให้เด็กๆ ได้ แต่แก้อะไรไม่ได้ ข้ามได้ ตั้งทีหลังที่ เมนู › ญาติ', 'Grandparents sign in with it, read the books and send the kids hearts, but cannot change anything. Skippable: set it later under Menu › Relatives.')}</p>
+${vgJust ? `<div class="call pick vgjust"><span>${L('รหัสของกลุ่ม', 'PIN for')} <b>${esc(vgJust.name)}</b></span><span class="vgpin">${esc(vgJust.pin)}</span><small>${L('จดไว้ส่งให้ญาติ แอปไม่เก็บรหัสเป็นตัวเลข เปลี่ยนได้ทีหลัง', 'Write it down for the relatives — the app keeps no copy; it can be changed later')}</small></div>${next(3, 'ต่อไป', 'Next')}`
+    : `<div class="vgform onb"><label class="vgl">${L('ชื่อกลุ่ม', 'Group name')}<input id="vgname" class="field" value="${esc(drafts['vg:name'] ?? f.name)}" data-draft="vg:name" maxlength="40"></label>
+<label class="vgl">${L('รหัส 6–12 ตัวเลข', 'PIN, 6–12 digits')}<input id="vgpin" class="field onbpin" inputmode="numeric" pattern="[0-9]*" value="${esc(drafts['vg:pin'] ?? '')}" data-draft="vg:pin" maxlength="12" autocomplete="off"></label>
+<p class="label">${had ? L('มีกลุ่มญาติอยู่แล้ว กลุ่มนี้จะเพิ่มเข้าไป', 'A relatives’ group exists already; this adds another') : L('กลุ่มนี้เห็นทุกเล่ม และได้ลิงก์เปิดดูด้วย', 'This group sees every book and gets a view link too')}</p>
+<p id="vgmsg" class="notice" hidden></p>
+<button type="button" class="btn onbnext" data-a="vgsave">${L('บันทึกรหัส', 'Save the PIN')}</button></div>${next(3, 'ข้ามไปก่อน', 'Skip for now', true)}`}`;
+  } else if (n === 3) body = `<h1 class="h2">${L('เพิ่มไว้บนหน้าจอโฮม', 'Add to the Home Screen')}</h1>
+<p class="lede">${L('เปิดได้ในแตะเดียวเหมือนแอป', 'Opens in one tap, like an app.')} ${ios ? `<b>${L('บน iPhone การเตือนทำงานเฉพาะจากไอคอนบนหน้าจอโฮม', 'On an iPhone, reminders work only from the Home-Screen icon.')}</b>` : ''}</p>
+${standalone ? `<div class="call calm">✓ ${L('เรียบร้อย ตอนนี้เปิดจากหน้าจอโฮมอยู่แล้ว', 'Done — you are already opening it from the Home Screen.')}</div>${next(4, 'ต่อไป', 'Next')}`
+    : `<ol class="onbsteps">${ios ? `${row(1, 'แตะปุ่มแชร์ใน Safari', 'Tap Share in Safari', 'สี่เหลี่ยมมีลูกศรชี้ขึ้น กลางแถบล่าง', 'The square with the arrow, bottom centre')}
+${row(2, 'เลื่อนลง แตะ “เพิ่มไปยังหน้าจอโฮม”', 'Scroll down, tap “Add to Home Screen”', '', '')}
+${row(3, 'แตะ “เพิ่ม” มุมขวาบน', 'Tap “Add”, top right', 'แล้วเปิดแอปจากไอคอนใหม่', 'Then open the app from the new icon')}`
+      : android ? `${row(1, 'แตะเมนู ⋮ ของเบราว์เซอร์', 'Tap the browser’s ⋮ menu', 'มุมขวาบน', 'Top right')}
+${row(2, 'แตะ “ติดตั้งแอป” หรือ “เพิ่มลงหน้าจอหลัก”', 'Tap “Install app” or “Add to Home screen”', '', '')}
+${row(3, 'เปิดจากไอคอนใหม่', 'Open it from the new icon', '', '')}`
+      : `${row(1, 'เปิดลิงก์นี้บนมือถือ', 'Open this link on your phone', 'ขั้นนี้ทำบนมือถือที่จะใช้ระหว่างทริป', 'This step is for the phone you will carry on the trip')}`}</ol>
+<div class="onbicon"><span class="onbtile">${(curTrip() && dayArt(curTrip(), 0)) ? artImg(curTrip(), 0) : `<span class="e">${esc((famProf().app && '📖') || '📖')}</span>`}</span><small>${esc(appName())}</small></div>
+${next(4, 'ทำแล้ว เปิดจากหน้าจอโฮมแล้ว', 'Done, I open it from the Home Screen')}${next(4, 'ไว้ทีหลัง', 'Later', true)}`}`;
+  else if (n === 4) {
+    const on = !!ls('remind'), can = pushOk(), needHome = ios && !standalone;
+    body = `<h1 class="h2">${L('เตือนระหว่างทริป', 'Reminders during the trip')}</h1>
+<p class="lede">${L('ส่งเฉพาะช่วงที่มีทริป ใช้แค่ข้อความจากแผน ไม่มีรูปหรือชื่อเด็กออกไปข้างนอก', 'Only around a trip, with the plan’s words alone — no photos or names leave the phone.')}</p>
+<ol class="onbsteps times">${row('−30', 'ก่อนแต่ละช่วงของวัน', 'Before each step of the day', '“08:00 · อีก 30 นาที — ขึ้นเรือข้ามไป Central”', '“08:00 · in 30 min — the ferry to Central”')}
+${row('08:00', 'ประตูเซอร์ไพรส์ให้เด็กๆ', 'The kids’ surprise door', 'ทุกเช้าช่วงนับถอยหลังก่อนเดินทาง', 'Every countdown morning before the trip')}
+${row('21:30', 'บันทึกวันนี้ก่อนนอน', 'Record the day before bed', 'ไม่เตือนถ้าบันทึกไปแล้ว', 'Not sent when the day is already recorded')}
+${row('19:00', 'เก็บเล่มไว้ในเครื่อง', 'Keep the book on the phone', 'สองวันก่อนบิน ให้ใช้ได้ตอนไม่มีเน็ต', 'Two days before the flight, for no-signal days')}</ol>
+${on ? `<div class="call calm">✓ ${L('เปิดเตือนบนเครื่องนี้แล้ว', 'Reminders are on for this phone')}</div>${next(5, 'ต่อไป', 'Next')}`
+    : needHome ? `<div class="call warn"><span class="lbl">${L('ยังเปิดไม่ได้', 'Not yet')}</span>${L('iPhone ต้องเปิดแอปจากไอคอนบนหน้าจอโฮมก่อน (ขั้นที่แล้ว) แล้วค่อยเปิดเตือนที่หน้า “วันนี้”', 'An iPhone needs the Home-Screen icon first (the previous step); then turn reminders on from Today.')}</div>${next(5, 'ต่อไป', 'Next')}`
+    : can ? `<button type="button" class="btn onbnext" data-a="remind">${ic('bell')} ${L('เปิดเตือนบนเครื่องนี้', 'Turn reminders on for this phone')}</button><button type="button" class="btn ghost onbnext" data-a="startlater">${L('ไว้ก่อน', 'Not now')}</button>`
+    : `<div class="call info">${L('เบราว์เซอร์นี้ยังไม่รองรับการแจ้งเตือน เปิดได้ทีหลังบนมือถือจากหน้า “วันนี้”', 'This browser cannot show reminders; turn them on later from Today on the phone.')}</div>${next(5, 'ต่อไป', 'Next')}`}`;
+  } else {
+    ls('startDone', 1);
+    const kids = children(), nm = kidsNames();
+    body = `<div class="onbart">${castHtml(kids.map((k) => k.slug))}</div><div class="kicker" style="text-align:center">${esc(kicker())}</div>
+<h1 class="h2" style="text-align:center">${L('พร้อมแล้ว มาทำเล่มแรกกัน', 'All set — let’s make the first book')}</h1>
+<p class="lede" style="text-align:center;max-width:none">${S.trips.length ? L('ชั้นหนังสือมีเล่มอยู่แล้ว เปิดดูได้เลย', 'The shelf already has a book — open it.') : L('ชั้นหนังสือยังว่าง เริ่มได้ 2 แบบ', 'The shelf is empty. Two ways to start.')}</p>
+<div class="onbways">${S.features.story ? `<a class="onbway main" href="#/import"><span class="e">${ic('doc')}</span><span><b>${L('จากคู่มือทริป (PDF)', 'From the trip manual (PDF)')}</b><small>${L('ผู้ช่วยอ่านคู่มือ แล้วทำแผนรายวัน ร้านอาหาร และหน้าของเด็กๆ ให้ · ราว 15 นาที', 'The helper reads the manual and makes the day plans, places to eat and the kids’ pages · about 15 min')}</small></span>${ic('chev')}</a>` : ''}
+<button type="button" class="onbway" data-a="newtrip"><span class="e">${ic('log')}</span><span><b>${L('เล่มเปล่า', 'An empty book')}</b><small>${L('ใส่ชื่อทริปกับวันที่ แล้วค่อยเติมเอง · 1 นาที', 'Type the trip name and dates, fill it in as you go · 1 min')}</small></span>${ic('chev')}</button>
+<a class="onbway" href="#/"><span class="e">${ic('shelf')}</span><span><b>${L('ไปที่ชั้นหนังสือ', 'Go to the bookshelf')}</b><small>${S.trips.length ? L(`มี ${S.trips.length} เล่ม`, `${S.trips.length} book${S.trips.length > 1 ? 's' : ''}`) : L('ว่างอยู่', 'Empty for now')}</small></span>${ic('chev')}</a></div>
+<ul class="onbsum">${kids.length ? `<li>✓ ${L(`ครอบครัว: ${nm}`, `Family: ${nm}`)}</li>` : `<li>○ ${L('ยังไม่ได้ใส่ลูก', 'No children yet')} · <a href="#/start/1">${L('ใส่เลย', 'Add them')}</a></li>`}
+<li>${standalone ? '✓ ' + L('เปิดจากหน้าจอโฮมแล้ว', 'On the Home Screen') : '○ ' + L('ยังไม่ได้เพิ่มไว้บนหน้าจอโฮม', 'Not on the Home Screen yet')}</li>
+<li>${ls('remind') ? '✓ ' + L('เตือนเปิดอยู่', 'Reminders on') : '○ ' + L('เตือนยังไม่เปิด เปิดได้ที่หน้า “วันนี้”', 'Reminders off — turn them on from Today')}</li>
+<li>○ ${L('รหัสญาติ ตั้งหรือแก้ได้ที่ เมนู › ญาติ', 'Relatives’ PIN: set or change it under Menu › Relatives')}</li></ul>`;
+  }
+  return `<section class="onb">${head}${body}</section>`;
+}
+
 /* ---------- a book from a Trip Operations Manual PDF (#/import, editors) ----------
    The PDF goes to the server once; the server extracts the text, removes private lines and values, asks Claude for the plan and
    the kids' pages, and keeps the result as a draft. The parents read the draft's summary here and press "save as a book".
