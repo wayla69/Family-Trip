@@ -257,6 +257,8 @@ function styleCheck(seed) {
   const walk = (x, path) => {
     if (Array.isArray(x)) return x.forEach((v, k) => walk(v, `${path}[${k}]`));
     if (!x || typeof x !== 'object') return;
+    // a price line with words is read in both languages: {th, en}; a plain string is for money only ("$ · A$10–20")
+    if (typeof x.pr === 'string' && /[A-Za-z฀-๿]{2,}/.test(x.pr.replace(/\b(?:A|AU|HK|NZ|US)\$|\b(?:AUD|HKD|MOP|USD|NZD)\b/g, ''))) add(`${path.replace(/^\./, '')}.pr "${x.pr}" — a price with words in one language; write {th, en}`);
     if (typeof x.th === 'string' && typeof x.en === 'string') {
       const p = path.replace(/^\./, '');
       if (US_SPELLING.test(x.en)) add(`${p}.en — American spelling "${x.en.match(US_SPELLING)[0]}" (the book is in British English)`);
