@@ -82,6 +82,9 @@ const SAMPLE = () => fs.readFileSync(path.join(ROOT, 'docs/handoff/plan.sample.j
 const RULES = 'Copy times, names, prices, hours, phone numbers and addresses exactly as the manual writes them; never invent one. '
   + 'Leave out anything private: booking references, confirmation numbers, e-tickets, passport numbers, what the family paid in baht, e-mails, personal phone numbers, travellers\' full names. '
   + 'Masked values like [number] were removed on purpose — never guess them. Answer with JSON only, no prose, no code fence.';
+// How Thai is written in a book (owner's rule, Nov 2026): what a parent reads at a glance is Thai or transliterated, a name matched
+// against a sign stays in Latin script, and a proper name is never translated word by word. Every call that writes Thai carries it.
+const THAI_STYLE = 'Thai style: write the way a Thai parent speaks, never a word-for-word translation. A proper name (a place, bus line, hotel, attraction, park land) is never translated literally: in a title, headline or weather line write it the way Thais say it (Golden Bus → โกลเด้นบัส, Luna Park → ลูน่าพาร์ค, Scenic World → ซีนิกเวิลด์, Katoomba → คาทูมบา); inside the details keep in Latin script only what a parent must match against a sign or a map (a station, a hotel, a bay number, "landing slip", "Coach"). Ordinary words are Thai (shuttle → รถรับส่ง, contactless → บัตรแตะจ่าย, biosecurity → ด่านตรวจของต้องห้าม (biosecurity), lockbox → กล่องกุญแจ, light rail → รถราง). Spell เช็กอิน / เช็กเอาต์ (never เช็ค).';
 const EN_ONLY = 'Wherever the schema asks for an {th, en} object, write {"en": "…"} only — the Thai is added later.';
 
 // ---------- 3–5. the import itself. client = an Anthropic SDK instance; take() = the daily cap (false → stop); log(line) = progress
@@ -201,7 +204,7 @@ async function run({ buf, slug, client, take, onUsage, log = () => {}, dir, kids
   const who = kids && kids.length ? kids.map((k) => `${k.name_en} (${k.age})`).join(' and ') : 'Mimi (3, a girl) and Mika (1½, a boy)';
   const brief = top.days.map((d, i) => ({ i, title: d.title, plan: d.plan, planned: (d.planned || []).map((p) => p.en || p.name), pick: d.pick }));
   const kidsOut = await ask('kids', WRITE(), {
-    system: `You write the children's pages of a family memory book. The children: ${who}. Write warm, simple, true sentences a small child enjoys hearing; every text bilingual {"th": "…", "en": "…"} with natural Thai for a Thai family (not a word-for-word translation). Only facts that are true and that the day really includes. Answer with JSON only, no code fence.`,
+    system: `You write the children's pages of a family memory book. The children: ${who}. Write warm, simple, true sentences a small child enjoys hearing; every text bilingual {"th": "…", "en": "…"} with natural Thai for a Thai family. ${THAI_STYLE} Only facts that are true and that the day really includes. Answer with JSON only, no code fence.`,
     user: `For each day below write: learn (2–3 cards: name, facts[2], kid), quiz (3: q, a), mission {title, stamp (short CAPITALS), facts[3], spot[4] {k, e (emoji), th, en}}, tale {th, en, scenes:[4–5 × {e, h:{th,en}, th, en}]} — the guide's story of the day, the scenes cut from the same words. Return {"days":[{learn, quiz, mission, tale}, …]} in day order.\nDays: ${JSON.stringify(brief)}`,
     max: 48000, effort: 'medium', manual: false,
   });
@@ -212,7 +215,7 @@ async function run({ buf, slug, client, take, onUsage, log = () => {}, dir, kids
   const stayNames = [...new Set(top.days.map((d) => d.stay && d.stay.name).filter(Boolean))];
   const placeEn = (top.place && top.place.en) || '';
   const extras = await ask('extras', WRITE(), {
-    system: `You add the playful pages of a family memory book for a trip to ${placeEn}. The children: ${who}. Every text bilingual {"th": "…", "en": "…"} in natural Thai. Only things that are true of this trip and this place; keep them simple and concrete. Answer with JSON only, no code fence.`,
+    system: `You add the playful pages of a family memory book for a trip to ${placeEn}. The children: ${who}. Every text bilingual {"th": "…", "en": "…"} in natural Thai. ${THAI_STYLE} Only things that are true of this trip and this place; keep them simple and concrete. Answer with JSON only, no code fence.`,
     user: `From this trip brief write:
 "wild": 6–10 animals, birds, sea creatures or famous characters the children may really meet on this trip (each {name:{th,en}, emo, text:{th,en} — two or three friendly sentences and where to look}); "wildLabel": {emo, title:{th,en}, short:{th,en}} (e.g. "Animals and friends we may meet");
 "firsts": 8–12 real possible "firsts" of this trip for a small child ({key (a-z), emoji, label:{th,en}} — e.g. a ferry, a tram, snow, a temple), ordered by the days;
@@ -260,7 +263,7 @@ Trip: ${JSON.stringify({ title: top.title, place: top.place, from: top.from, to:
   const BATCH = 350;
   const thaiBatch = async (part, step) => {
     const th = await ask(step, WRITE(), {
-      system: 'You translate a family trip guide from English into natural Thai for Thai parents. Keep times, prices and numbers as written. Never translate a proper name word by word (a bus line, a hotel, an attraction, a place): keep it in Latin script, or in a short headline write it the way Thais say it (Golden Bus → โกลเด้นบัส, Luna Park → ลูน่าพาร์ค, Scenic World → ซีนิกเวิลด์). Short and clear; a timeline headline (one emoji + a few words) stays as short and as fun in Thai. Answer with a JSON array of strings only — the same length and order as the input.',
+      system: `You translate a family trip guide from English into natural Thai for Thai parents. Keep times, prices and numbers as written. ${THAI_STYLE} Short and clear; a timeline headline (one emoji + a few words) stays as short and as fun in Thai. Answer with a JSON array of strings only — the same length and order as the input.`,
       user: JSON.stringify(part.map((h) => h.en)),
       max: 32000, manual: false,
     });
