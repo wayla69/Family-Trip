@@ -232,6 +232,8 @@ const KID_PATHS = [/\.learn\[\d+\]\.kid$/, /\.quiz\[\d+\]\.(q|a)$/, /\.tale(\.sc
 function styleCheck(seed) {
   const warns = [], add = (w) => warns.push(w);
   if (noThai(seed.title)) add(`title.th "${seed.title.th}" has no Thai — transliterate the name (ออสเตรเลีย, not Australia)`);
+  // a stay's place is the heading of its card on the stays page — a glance line (the hotel's own name stays in Latin in `prop`)
+  ((seed.info || {}).stays || []).forEach((s, k) => { if (noThai(s.base)) add(`info.stays[${k}].base.th "${s.base.th}" has no Thai — write the place the way Thais say it (อ่าวเจอร์วิส)`); });
   (seed.days || []).forEach((d, i) => {
     const at = `days[${i}]`;
     if (noThai(d.title)) add(`${at}.title.th "${d.title.th}" has no Thai — write it the way Thais say it (ฮ่องกงดิสนีย์แลนด์)`);

@@ -116,6 +116,7 @@ const A = {
   repmode(b) {   // the report short (headlines, detail on a tap) or in full (every detail open) — in place, kept on this phone
     const f = b.dataset.v === '1'; ls('repfull', f);
     $$('details.ifold').forEach((d) => { d.open = f; });
+    $$('.tp.full').forEach((x) => x.classList.toggle('repall', f));
     $$('.repseg button').forEach((x) => x.setAttribute('aria-pressed', String((x.dataset.v === '1') === f)));
   },
   sq(b) { bookQ = b.dataset.v; const i = $('#bookq'), r = $('#bookres'), t = trip(route().parts[1]); if (i) i.value = bookQ; if (r && t) r.innerHTML = bookResults(t); },   // a suggestion chip

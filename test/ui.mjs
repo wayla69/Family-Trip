@@ -1087,6 +1087,13 @@ const T = 'hk-macau-2026';
     await page.locator('.repseg button[data-v="0"]').click();
     ok(n >= 30 && fullOpen === n && kept === n && pressed === 'true' && await open() === 0 && (await page.locator('.repseg button').first().boundingBox()).height >= 44,
       `report: "full" opens every detail and stays after a reload, "short" folds them again (${fullOpen}/${kept}/${n})`); }
+  { // the full report reads well on a phone (owner's review, Nov 2026): drive legs grouped by day, durations as docs/STYLE.md §5, short values on one line
+    await page.goto(`${BASE}/#/t/big-hop-2027/prep/full`); await page.waitForSelector('#pocket');
+    await page.evaluate(() => document.querySelectorAll('#pocket details').forEach((d) => (d.open = true)));
+    const legs = await page.evaluate(() => { const t = document.querySelector('table.legs'); return t && { grp: t.querySelectorAll('tr.grp').length, rows: t.querySelectorAll('tbody tr').length, txt: t.textContent, short: t.querySelectorAll('td.s').length }; });
+    ok(legs && legs.grp >= 8 && legs.rows - legs.grp >= 20 && !/ชม\. 00|\bh 00\b/.test(legs.txt) && legs.short > 20 && await s.noHScroll(),
+      `full report: drive legs grouped under one heading a day, "1 h" not "1 h 00", short values on one line, no sideways scroll (${legs && legs.grp} days)`);
+    await page.goto(`${BASE}/#/t/big-hop-2027/sos/full`); await page.waitForSelector('#pocket'); }   // back to the emergency page the next checks read
   ok(await page.locator('#pocket .ecard .emerg li.main a[href="tel:000"]').count() === 1 && await page.locator('#pocket .ecard .enights li').count() === 8 && await page.locator('#pocket .ecard .elost').count() === 1, 'emergency card like the manual: 000 first, every night\'s address (8 stays), the lost-child line');
   await page.goto(`${BASE}/#/t/big-hop-2027/prep/full`); await page.waitForSelector('#pocket');
   ok(await page.locator('#pocket details.pg').count() >= 6 && (await page.textContent('#pocket')).includes('Biosecurity'), 'get-ready page: packing, prices, visa, biosecurity, the van, drive legs, crowds, book-ahead');

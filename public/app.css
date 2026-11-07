@@ -2264,3 +2264,8 @@ h1 .h1pic{display:inline-block;width:1.15em;height:1.15em;vertical-align:-.2em;o
 .daystrip a[aria-current=true] .has{background:var(--accent)}
 .seg button[aria-pressed=true]{font-weight:700}
 .eatday a.go{color:var(--accent);background:color-mix(in srgb,var(--accent) 10%,var(--paper));border:1px solid color-mix(in srgb,var(--accent) 28%,transparent)}   /* directions: one tinted style, with or without its label */
+
+/* full reports, second pass: short table values share one line on a phone; "read more" says nothing when everything is open */
+@media (max-width:560px){.prices td.s{display:inline-flex;gap:5px;align-items:baseline;width:auto;padding:2px 14px 2px 8px}.prices td.s[data-h]::before{display:inline;font-size:12px}}
+.repall details.ledemore>summary{display:none}.repall details.ledemore>.fb{padding-top:0}
+.addr .cjk>span{display:block}.addr .cjk>span.zh{font-size:16px}
