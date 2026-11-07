@@ -318,6 +318,7 @@ ${(() => { const f = [[L('รูป', 'Photos'), st.photos], [L('คำพูด
     const inner = `${artImg(t, i)}<b>${String(i + 1).padStart(2, '0')}</b><small>${esc(fmtDay(d.date, { day: 'numeric', month: 'short' }))}</small>`;
     return href ? `<a class="${on ? 'on' : ''}" href="${href}"${href[0] === '#' && href[1] === 'd' ? ` data-a="jump" data-v="${i}"` : ''}>${inner}</a>` : `<span class="${on ? 'on' : ''}">${inner}</span>`;
   }).join('')}</nav>
+${days.length ? '' : `<div class="empty bookstart">${castHtml((t.theme.children || []).map((k) => k.slug))}<b>${L('เล่มนี้ยังว่าง', 'This book is still empty')}</b>${edit ? `<p>${L('บันทึกคืนละนิด — รูป คำพูด อารมณ์ — แล้วสมุดจะเต็มเอง', 'A little each night — photos, words, moods — and the book fills itself')}</p><a class="btn" href="#/t/${esc(t.id)}/log/${Math.max(0, dayNow(t))}">${ic('log')} ${L('เริ่มบันทึกวันแรก', 'Record the first day')}</a>` : `<p>${L('รอพ่อแม่บันทึกระหว่างทริป', 'The grown-ups will fill it in during the trip')}</p>`}</div>`}
 ${foreBlock(t, days.length)}
 ${favs ? `<div class="part">${L('ช่วงเวลาที่ชอบที่สุด', 'Favourite moments')} ⭐</div>${favs}` : ''}
 ${firsts.length ? `<div class="part">${L('ครั้งแรกของหนู', 'Firsts')}</div><div class="firsts">${firsts.map((e) => { const f = firstLabel(t, e.first_key); return `<div class="first got"><span class="e">${esc(f.e)}</span><span class="t">${esc(e.first_key === 'custom' ? e.text : f.t)}<br><small class="muted">${L('วันที่', 'Day')} ${e.day + 1}</small></span><span class="kids">${kidBadge(e.child)}</span></div>`; }).join('')}</div>` : ''}
@@ -325,8 +326,8 @@ ${drawingsHtml(t)}
 ${isEditor() && S.features.story && days.length ? storyBlock(t, null)
     : story ? `<div class="part">${L('นิทานของทั้งทริป', 'The story of the trip')}</div><div class="call calm" style="white-space:pre-line">${bedBtn(story)}${esc(story.text)}</div>` : ''}
 ${letterBlock(t, days.length)}
-${days.map((i) => dayPage(t, i)).join('') || `<div class="empty">${castHtml((t.theme.children || []).map((k) => k.slug))}${L('ยังไม่มีบันทึก — ', 'Nothing recorded yet — ')}${edit ? `<a href="#/t/${esc(t.id)}/log/${Math.max(0, dayNow(t))}">${L('เริ่มบันทึกวันแรก', 'start with a day')}</a>` : L('รอพ่อแม่บันทึกระหว่างทริป', 'the grown-ups will fill it in during the trip')}</div>`}
-${coverPick(t)}<div class="row noprint" style="margin:28px 0 8px"><a class="btn small" href="/api/b/pdf/${esc(t.id)}" download data-a="pdf">📕 ${L('สมุดความทรงจำ (PDF A4)', 'Memory book (PDF A4)')}</a><a class="btn ghost small" href="#/print/${esc(t.id)}">👀 ${L('ดูตัวอย่างเล่ม', 'Preview the book')}</a><button class="btn ghost small" data-a="print">🖨️ ${L('พิมพ์หน้านี้', 'Print this page')}</button><button class="btn ghost small" data-a="copytext">📋 ${L('คัดลอกเป็นข้อความ', 'Copy as text')}</button></div></div>`;
+${days.map((i) => dayPage(t, i)).join('')}
+${days.length ? coverPick(t) : ''}<div class="row noprint" style="margin:28px 0 8px"${days.length ? '' : ' hidden'}><a class="btn small" href="/api/b/pdf/${esc(t.id)}" download data-a="pdf">📕 ${L('สมุดความทรงจำ (PDF A4)', 'Memory book (PDF A4)')}</a><a class="btn ghost small" href="#/print/${esc(t.id)}">👀 ${L('ดูตัวอย่างเล่ม', 'Preview the book')}</a><button class="btn ghost small" data-a="print">🖨️ ${L('พิมพ์หน้านี้', 'Print this page')}</button><button class="btn ghost small" data-a="copytext">📋 ${L('คัดลอกเป็นข้อความ', 'Copy as text')}</button></div></div>`;
 }
 // the whole plan, day by day, like the manual's day list: every day (recorded or not), where we sleep, the planned stops
 function itinerary(t) {
@@ -1239,6 +1240,7 @@ ${ai ? `<div class="row noprint" style="margin-top:6px"><button class="btn small
 function letterBlock(t, nDays) {
   const e = entriesOf(t.id).find((x) => x.kind === 'letter'), ed = isEditor();
   if (!ed) return e && e.text ? `<div class="part">💌 ${L('จดหมายถึงลูก', 'A letter to you')}</div><div class="call calm letter">${esc(e.text)}</div>` : '';
+  if (!nDays && !e) return '';   // an empty book shows the way in first; the letter box comes once a day is recorded
   const ai = S.features.story && nDays;
   return `<section class="blk letterblk"><h3>${ic('mail')} ${L(`จดหมายถึง${kidsNames() || 'ลูก'}`, `A letter to ${kidsNames() || 'you'}`)} <span class="label">${L('ไว้อ่านตอนโต · หน้าสุดท้ายของ PDF', 'for when they are older · the last page of the PDF')}</span></h3>
 <textarea id="lettertext" class="field" rows="8" data-a-blur="letter" data-t="${esc(t.id)}" data-d="" data-draft="l:${esc(t.id)}" maxlength="4000" placeholder="${L(`ถึง${kidsNames() || 'ลูก'}…`, `Dear ${kidsNames() || 'you'}…`)}">${esc(drafts['l:' + t.id] ?? (e ? e.text : ''))}</textarea><p class="label savenote">${L('บันทึกเองเมื่อแตะออกจากช่อง', 'Saves by itself when you leave the box')}</p>
