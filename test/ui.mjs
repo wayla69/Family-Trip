@@ -721,7 +721,7 @@ const T = 'hk-macau-2026';
   const s = await session('wide', { width: 1440, height: 900 });
   await login(s.page);
   await s.page.goto(`${BASE}/#/t/${T}`); await s.page.waitForSelector('.hubgrid');
-  ok((await s.page.locator('.hubgrid:not(.hero)').first().evaluate((g) => getComputedStyle(g).gridTemplateColumns.split(' ').length)) >= 5, 'wide: the menu spreads into 5+ columns');
+  ok((await s.page.locator('.hubgrid:not(.hero)').first().evaluate((g) => getComputedStyle(g).gridTemplateColumns.split(' ').length)) === 4, 'wide: the menu is four roomy tiles a row (six cramped ones left a stray seventh)');
   await s.shot('10a-menu-wide', false);
   await s.page.goto(`${BASE}/#/t/${T}/book`); await s.page.waitForSelector('#d1');
   const m = await s.page.evaluate(() => ({

@@ -178,7 +178,7 @@ main .blk{scroll-margin-top:76px}   /* a jump (panel, steps, shortcuts) lands be
 .addhd{display:flex;align-items:center;gap:12px;margin-bottom:2px}.addhd h3{margin:0;font-size:20px;line-height:1.15}.addhd small{color:var(--muted);font-size:13px}
 .addplus{display:grid;place-items:center;flex:none;width:44px;height:44px;border-radius:50%;font-size:26px;line-height:1;font-weight:500;color:var(--on-accent);background:var(--accent);box-shadow:0 6px 14px -8px var(--accent)}
 .addway{display:grid;grid-template-columns:34px minmax(0,1fr) auto;gap:10px;align-items:center;width:100%;padding:12px 12px 12px 10px;border:1px solid var(--rule);border-radius:14px;background:var(--paper);color:var(--ink);text-decoration:none;text-align:left;font:inherit;cursor:pointer}
-.addway .e{font-size:24px;line-height:1;text-align:center}.addway b{display:block;font-size:15px;line-height:1.25}.addway small{display:block;font-size:12px;color:var(--muted);line-height:1.35;margin-top:1px}.addway>i{font-style:normal;font-size:22px;color:var(--muted)}
+.addway .e{font-size:24px;line-height:1;text-align:center;color:var(--accent)}.addway .e .ic{width:24px;height:24px}.addway b{display:block;font-size:15px;line-height:1.25}.addway small{display:block;font-size:12px;color:var(--muted);line-height:1.35;margin-top:1px}.addway>i{font-style:normal;font-size:22px;color:var(--muted)}
 .addway.main{border-color:color-mix(in srgb,var(--accent) 40%,var(--rule));background:color-mix(in srgb,var(--accent) 7%,var(--paper))}.addway.main b{color:var(--accent)}
 .addway:active{transform:scale(.98)}
 /* the shelf's foot: settings as one list (family, relatives, the helper's use today); sign out on its own below */
@@ -277,11 +277,15 @@ main .blk{scroll-margin-top:76px}   /* a jump (panel, steps, shortcuts) lands be
 .daystrip a b{display:block;font-family:var(--display);font-size:20px;line-height:1.1;color:var(--accent)}
 .daystrip a small{font-size:11px;color:var(--muted)}
 .daystrip a[aria-current=true]{background:var(--accent);border-color:var(--accent);color:var(--on-accent)}
-.daystrip a[aria-current=true] b,.daystrip a[aria-current=true] small{color:#fff}
+.daystrip a[aria-current=true] b,.daystrip a[aria-current=true] small{color:var(--on-accent)}
 .daystrip .today{display:block;font-size:10px;font-weight:700;color:var(--accent2)}
 .blk{border-top:1px solid var(--rule);padding:16px 0}
 .blk>h3{font-family:var(--display);font-size:20px;font-weight:600;margin-bottom:8px;display:flex;align-items:baseline;gap:8px}
 .blk>h3 .label{font-family:var(--ui);font-weight:400}
+.blk>h3 .ic,.h2 .ic,.ask h3 .ic,.famappf h3 .ic{width:22px;height:22px;color:var(--accent);align-self:center;flex:none}
+.savenote{margin-top:4px}
+.daystrip .has{display:inline-block;width:6px;height:6px;border-radius:50%;background:var(--accent);margin-left:4px;vertical-align:1px}
+.daystrip a[aria-current=true] .has{background:var(--on-accent)}
 .field{width:100%;border:1px solid var(--rule);border-radius:10px;padding:10px 12px;background:var(--paper)}
 textarea.field{min-height:76px;resize:vertical}
 .row{display:flex;gap:8px;align-items:center;flex-wrap:wrap}
@@ -1069,6 +1073,7 @@ nav.bar button i{font-style:normal;font-size:27px;line-height:1.1}
 .hubhead{display:flex;align-items:center;gap:14px;margin-top:18px}
 .hubhead .stamp.s{flex:none}.hubhead h1{font-family:var(--display);font-size:clamp(26px,6vw,36px);line-height:1.05;font-weight:600;margin:2px 0}.hubhead .line{color:var(--muted);font-size:14px;margin:0}
 .hubgrid{display:grid;grid-template-columns:repeat(auto-fill,minmax(min(100%,136px),1fr));gap:10px;margin:16px 0 8px}
+@media (min-width:900px){.hubgrid{grid-template-columns:repeat(auto-fill,minmax(200px,1fr));gap:12px}}
 .tile{position:relative;display:grid;align-content:start;gap:4px;text-decoration:none;color:var(--ink);background:var(--panel);border:1px solid transparent;border-radius:16px;padding:14px 14px 12px;min-height:124px;font:inherit;text-align:left;cursor:pointer;overflow:hidden}
 .tile .e{font-size:30px;line-height:1}.tile b{font-size:16px;line-height:1.2;margin-top:2px}.tile small{color:var(--muted);font-size:12px;line-height:1.3;overflow-wrap:anywhere}
 .tile:active{transform:scale(.97)}
@@ -1835,7 +1840,7 @@ html[data-fs="1"] main.wrap{zoom:1.1}html[data-fs="2"] main.wrap{zoom:1.2}html[d
 .impnote{color:var(--muted);font-size:12px;line-height:1.5;margin-top:18px}
 /* ---- our family (#/family): a sunny hero, a live name tag, one bright card per child in their own colour ---- */
 .famwelcome{display:grid;grid-template-columns:52px 1fr;gap:14px;align-items:center;text-decoration:none;color:inherit;margin:16px 0 4px;padding:16px 18px;border-radius:20px;background:linear-gradient(120deg,color-mix(in srgb,var(--sun) 28%,var(--paper)),color-mix(in srgb,var(--rose) 20%,var(--paper)));box-shadow:0 14px 30px -22px rgba(0,0,0,.45)}
-.famwelcome span{font-size:40px;line-height:1}.famwelcome b{display:block;font-size:17px}.famwelcome small{color:var(--muted);font-size:13px;line-height:1.35}
+.famwelcome span{font-size:40px;line-height:1;color:var(--accent)}.famwelcome span .ic{width:44px;height:44px}.famwelcome b{display:block;font-size:17px}.famwelcome small{color:var(--muted);font-size:13px;line-height:1.35}
 .famhero{position:relative;overflow:hidden;display:grid;grid-template-columns:minmax(0,1fr) auto;gap:8px;align-items:end;margin-top:14px;border-radius:24px;padding:22px 20px 0;
   background:radial-gradient(120% 120% at 100% 0%,color-mix(in srgb,var(--sun) 55%,transparent),transparent 55%),radial-gradient(90% 120% at 0% 100%,color-mix(in srgb,var(--sky) 40%,transparent),transparent 60%),linear-gradient(135deg,color-mix(in srgb,var(--rose) 30%,var(--paper)),color-mix(in srgb,var(--sun) 22%,var(--paper)));box-shadow:0 18px 36px -26px rgba(0,0,0,.5)}
 .famherotx{padding-bottom:20px}.famhero .kicker{color:color-mix(in srgb,var(--rose) 70%,var(--ink))}
