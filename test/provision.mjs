@@ -52,6 +52,12 @@ try {
   calls.length = 0;
   const d = await run(['jones', '--dry', `--registry=${reg}`], { RAILWAY_TOKEN: '' });
   ok(d.status === 0 && calls.length === 0 && d.stdout.includes('[dry]') && JSON.parse(fs.readFileSync(reg, 'utf8')).length === 1, '--dry: prints the plan, calls nothing, writes nothing');
+  // --no-codes (the "New family" workflow in this public repo): a real run and a dry run print no code, PIN, token or password
+  const n = await run(['lee', '--code=98765432', '--view-pin=246810', '--no-codes', `--registry=${reg}`]);
+  const nv = calls[6].v.input.variables, npg = calls[2].v.input.variables.POSTGRES_PASSWORD;
+  ok(n.status === 0 && nv.FAMILY_CODE === '98765432' && !n.stdout.includes('98765432') && !n.stdout.includes('246810') && !n.stdout.includes(nv.VIEW_TOKEN) && !n.stdout.includes(nv.BACKUP_TOKEN) && !n.stdout.includes(npg) && /Variables tab/.test(n.stdout) && n.stdout.includes('mm-test.up.railway.app'), '--no-codes: the codes go to Railway, the output names only the url and where to read them');
+  const nd = await run(['lee', '--code=98765432', '--view-pin=246810', '--no-codes', '--dry', `--registry=${reg}`], { RAILWAY_TOKEN: '' });
+  ok(nd.status === 0 && nd.stdout.includes('[dry]') && !nd.stdout.includes('98765432') && !nd.stdout.includes('246810') && !/sk-test-key/.test(nd.stdout) && !/DATABASE_URL":"postgresql/.test(nd.stdout) && nd.stdout.includes('"BUNDLED_SEEDS":"0"'), '--no-codes --dry: the plan shows the plain settings, every secret as •••');
 } finally { mock.close(); fs.rmSync(dir, { recursive: true, force: true }); }
 console.log(failures ? `\n${failures} FAILED` : '\nALL PASSED');
 process.exit(failures ? 1 : 0);
