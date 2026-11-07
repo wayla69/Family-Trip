@@ -113,6 +113,12 @@ const A = {
     const nm = $('#fsname'); if (nm) nm.textContent = L(FS_NAMES[n][0], FS_NAMES[n][1]);
     toast(L(`ขนาดตัวอักษร: ${FS_NAMES[n][0]}`, `Text size: ${FS_NAMES[n][1].toLowerCase()}`));
   },
+  repmode(b) {   // the report short (headlines, detail on a tap) or in full (every detail open) — in place, kept on this phone
+    const f = b.dataset.v === '1'; ls('repfull', f);
+    $$('details.ifold').forEach((d) => { d.open = f; });
+    $$('.tp.full').forEach((x) => x.classList.toggle('repall', f));
+    $$('.repseg button').forEach((x) => x.setAttribute('aria-pressed', String((x.dataset.v === '1') === f)));
+  },
   sq(b) { bookQ = b.dataset.v; const i = $('#bookq'), r = $('#bookres'), t = trip(route().parts[1]); if (i) i.value = bookQ; if (r && t) r.innerHTML = bookResults(t); },   // a suggestion chip
   eatgo(b) { eatTrip = b.dataset.t; eatQ = b.dataset.v; eatKind = -1; eatPick = false; location.hash = `#/t/${encodeURIComponent(b.dataset.t)}/eat/all`; },   // a place found by the search: open the list filtered to it
   async remind() {

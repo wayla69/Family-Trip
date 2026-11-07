@@ -98,7 +98,7 @@ const T = 'hk-macau-2026';
   // the book opens on its menu: a tile per topic, today first, the detail one tap away
   ok(await page.locator('.hubgrid .tile').count() >= 14 && await page.locator('.hubgrid .tile.today').count() === 1 && /อีก|to go/.test(await page.textContent('.tile.today')), 'book menu: topic tiles, today on top with the countdown');
   // the tiles sit in three named groups; before the trip "get ready" leads, and every tile is in exactly one group
-  ok(await page.locator('.hubpart').count() === 3 && /ready|เตรียม/.test(await page.locator('.hubpart').first().textContent()) && await page.locator('.hubpart + .hubgrid').count() === 3 && await page.locator('.hubgrid.hero .tile').count() === 1, 'book menu: three named groups, "get ready" first before the trip');
+  ok(await page.locator('.hubpart').count() === 3 && /ready|เตรียม/.test(await page.locator('.hubpart').first().textContent()) && await page.locator('.hubpart + .hubgrid').count() === 3 && await page.locator('.hubgrid.lead .tile').count() === 1, 'book menu: three named groups, "get ready" first before the trip');
   { // a fresh phone: the record page shows tonight's three (photos, words, moods) and "day done", the rest folded under "more"
     const f = await session('fold', { logall: false }); await login(f.page);
     await f.page.goto(`${BASE}/#/t/${T}/log/0`); await f.page.waitForSelector('details.more');
@@ -376,7 +376,7 @@ const T = 'hk-macau-2026';
   ok(badge, 'notifications use a transparent one-colour badge (Android shows an opaque icon as a white square)');
   // the owner: "make it easier to read, not long" — booking timeline as step cards, guide cards with short points
   await page.goto(`${BASE}/#/t/${T}/prep/full`); await page.waitForSelector('.steps');
-  ok(await page.locator('.steps > li').count() === 8 && await page.locator('.steps > li.ok').count() === 1 && await page.locator('.steps > li').nth(1).locator('.when').textContent() === 'This week · early Oct' && await page.locator('.steps > li').nth(0).locator('.pts > li').count() === 6,
+  ok(await page.locator('.steps > li').count() === 8 && await page.locator('.steps > li.ok').count() === 1 && await page.locator('.steps > li').nth(1).locator('.when').textContent() === 'October · early Oct' && await page.locator('.steps > li').nth(0).locator('.pts > li').count() === 6,
     'prep: the booking timeline is a list of steps — date chip, task, short points (the done one ticked)');
   { const vp = page.viewportSize(); await page.setViewportSize({ width: 1440, height: 900 }); await page.waitForTimeout(200);
     const xs = await page.$$eval('.steps > li', (ls) => [...new Set(ls.map((l) => Math.round(l.getBoundingClientRect().left)))]);
@@ -385,7 +385,7 @@ const T = 'hk-macau-2026';
   ok(!/no booking|book Nov/.test(await page.locator('.steps').evaluate((e) => e.closest('details').querySelector('.lede').textContent)), 'prep: the booking timeline opens with its date line only (no shredded status list)');
   await page.goto(`${BASE}/#/t/${T}/learn/full`); await page.waitForSelector('.gcards');
   const gl = await page.$$eval('.gcard .pts > li', (els) => els.map((e) => e.textContent.trim()));
-  ok(gl.length > 10 && gl.every((x) => !/^[a-z]+(?=[\s,:;]|$)/.test(x)) && await page.locator('.gcard summary b + .gsub').count() === 13, 'learn: guide cards put the headline first and no point starts mid-sentence ("book 3–5 days ahead" → "Book …")');
+  ok(gl.length > 10 && gl.every((x) => !/^[a-z]+(?=[\s,:;]|$)/.test(x)) && await page.locator('.gcard summary b + .gsub').count() === 9, 'learn: guide cards put the headline first and no point starts mid-sentence ("book 3–5 days ahead" → "Book …")');
   { const g = page.locator('.gcard details.ifold').nth(1), body = g.locator('.fb');
     ok(!(await body.isVisible()) && (await g.locator('summary').click(), await body.isVisible()), 'learn: a guide card shows its headline and one-line fact; the explanation opens on a tap'); }
   ok(await page.evaluate(() => points('TG 638 ขาไป 5 ธ.ค. · Noah\'s Ark 5–7 ธ.ค.').join('|')) === 'TG 638 ขาไป 5 ธ.ค.|Noah\'s Ark 5–7 ธ.ค.', 'points keep the dot of a Thai month (ธ.ค.)');
@@ -997,7 +997,7 @@ const T = 'hk-macau-2026';
   ok(await page.locator('.itin .dayplan').count() === 6 && await page.locator('.itin .dayplan[open]').count() === 0, 'itinerary: every HK day has a collapsed plan (not on the trip yet)');
   await page.locator('.itin > li').nth(3).locator('.dayplan > summary').first().click();
   const p4 = await page.locator('.itin > li').nth(3).locator('.dayplan').textContent();
-  ok(/11:00/.test(p4) && /teamLab/.test(p4) && /Plan B/.test(p4) && /Money today/.test(p4) && /Local pick/.test(p4), 'itinerary: day 4 plan shows the timeline, local pick, plan B and money');
+  ok(/11:00/.test(p4) && /teamLab/.test(p4) && /Plan B/.test(p4) && /Money today/.test(p4) && /Local tip/.test(p4), 'itinerary: day 4 plan shows the timeline, local tip, plan B and money');
   await page.locator('.itin > li').nth(3).screenshot({ path: path.join(OUT, 'countdown-05-dayplan.png') });
   await page.goto(`${BASE}/#/t/${T}/log/3`); await page.waitForSelector('.planblk');
   ok(await page.locator('.planblk .dayplan').count() === 1 && (await page.textContent('.planblk')).includes('Wong Chi Kei') && await page.locator('details.planblk').count() === 1, 'record page: the plan sits at the top of the day in a fold (open on this phone: “keep open” is on)');
@@ -1078,6 +1078,22 @@ const T = 'hk-macau-2026';
   { const f = page.locator('.ifts details.ifold').first(), b = f.locator('.fb');
     ok(await page.locator('.ifts details.ifold').count() >= 30 && !(await b.isVisible()) && (await f.locator('summary').click(), await b.isVisible()) && (await f.locator('summary').boundingBox()).height >= 44,
       'emergency page: each “if” is one line; what to do opens under it on a tap (44 px)'); }
+  { // two versions always (owner): the short report and the full one with every detail open, kept on the phone across a reload
+    const all = page.locator('#pocket details.ifold'), open = () => page.$$eval('#pocket details.ifold', (ds) => ds.filter((d) => d.open).length);
+    await page.locator('.repseg button[data-v="1"]').click();
+    const n = await all.count(), fullOpen = await open();
+    await page.reload(); await page.waitForSelector('#pocket');
+    const kept = await open(), pressed = await page.locator('.repseg button[data-v="1"]').getAttribute('aria-pressed');
+    await page.locator('.repseg button[data-v="0"]').click();
+    ok(n >= 30 && fullOpen === n && kept === n && pressed === 'true' && await open() === 0 && (await page.locator('.repseg button').first().boundingBox()).height >= 44,
+      `report: "full" opens every detail and stays after a reload, "short" folds them again (${fullOpen}/${kept}/${n})`); }
+  { // the full report reads well on a phone (owner's review, Nov 2026): drive legs grouped by day, durations as docs/STYLE.md §5, short values on one line
+    await page.goto(`${BASE}/#/t/big-hop-2027/prep/full`); await page.waitForSelector('#pocket');
+    await page.evaluate(() => document.querySelectorAll('#pocket details').forEach((d) => (d.open = true)));
+    const legs = await page.evaluate(() => { const t = document.querySelector('table.legs'); return t && { grp: t.querySelectorAll('tr.grp').length, rows: t.querySelectorAll('tbody tr').length, txt: t.textContent, short: t.querySelectorAll('td.s').length }; });
+    ok(legs && legs.grp >= 8 && legs.rows - legs.grp >= 20 && !/ชม\. 00|\bh 00\b/.test(legs.txt) && legs.short > 20 && await s.noHScroll(),
+      `full report: drive legs grouped under one heading a day, "1 h" not "1 h 00", short values on one line, no sideways scroll (${legs && legs.grp} days)`);
+    await page.goto(`${BASE}/#/t/big-hop-2027/sos/full`); await page.waitForSelector('#pocket'); }   // back to the emergency page the next checks read
   ok(await page.locator('#pocket .ecard .emerg li.main a[href="tel:000"]').count() === 1 && await page.locator('#pocket .ecard .enights li').count() === 8 && await page.locator('#pocket .ecard .elost').count() === 1, 'emergency card like the manual: 000 first, every night\'s address (8 stays), the lost-child line');
   await page.goto(`${BASE}/#/t/big-hop-2027/prep/full`); await page.waitForSelector('#pocket');
   ok(await page.locator('#pocket details.pg').count() >= 6 && (await page.textContent('#pocket')).includes('Biosecurity'), 'get-ready page: packing, prices, visa, biosecurity, the van, drive legs, crowds, book-ahead');

@@ -108,11 +108,32 @@ ok(['families', 'children', 'trips', 'trip_days', 'firsts_catalog', 'entries', '
     const r3 = spawnSync(process.execPath, ['scripts/plan-to-seed.mjs', path.join(dir, 'eng.json'), `--out=${path.join(dir, 'eng-seed.json')}`], { encoding: 'utf8' });
     ok(r3.status === 0 && /title\.th "Tokyo" has no Thai/.test(r3.stdout) && /days\[1\]\.title\.th "Sumida Aquarium" has no Thai/.test(r3.stdout) && /days\[0\]\.plan\[0\]\.h\.th "🛬 Haneda" has no Thai/.test(r3.stdout) && /1 × "เช็ค"/.test(r3.stdout) && fs.existsSync(path.join(dir, 'eng-seed.json')),
       `plan-to-seed warns about a title, a day title or a headline with no Thai letters and about the เช็ค spelling, and still writes the book (${r3.stdout.split('\n').filter((l) => /warn/.test(l)).join(' | ')})`);
+    // the rest of docs/STYLE.md §7: headline shape, British spelling, spacing, times/prices that agree, kids' lines, children's names in Thai
+    const sty = JSON.parse(JSON.stringify(sample));
+    sty.days[0].plan[1].h = { th: 'เช็กอิน พักแป๊บ', en: '🏨 A very long headline with far too many words' };
+    sty.days[0].plan[2].h = { th: '🛝 สนามเด็กเล่น (ริมบึง) · ใหญ่', en: '🛝 Playground by the pond' };
+    sty.days[0].tips.push({ th: 'ร้านเปิด 10:00 ราคา ¥800', en: 'Opens 11:00, ¥900 — the favorite  colors of the center' });
+    sty.days[0].tips.push({ th: 'ของ Mimi เก็บไว้ในกระเป๋า', en: "Mimi's things in the bag" });
+    fs.writeFileSync(path.join(dir, 'sty.json'), JSON.stringify(sty));
+    const r4 = spawnSync(process.execPath, ['scripts/plan-to-seed.mjs', path.join(dir, 'sty.json'), `--out=${path.join(dir, 'sty-seed.json')}`], { encoding: 'utf8' });
+    const w4 = r4.stdout.split('\n').filter((l) => /warn/.test(l)).join(' | ');
+    ok(r4.status === 0 && /h\.th "เช็กอิน พักแป๊บ" — a headline starts with one emoji/.test(w4) && /9 words; a headline is 6 at most/.test(w4) && /no " · " or brackets in a headline/.test(w4)
+      && /American spelling "favorite"/.test(w4) && /a double space/.test(w4) && /the times differ: th \[10:00\] en \[11:00\]/.test(w4) && /the prices differ/.test(w4) && /a child's name in Latin script/.test(w4),
+      `plan-to-seed names a headline without its emoji, too long or with brackets, an American spelling, a double space, times and prices that differ between the languages, a child's name in Latin script in Thai (${w4.slice(0, 600)})`);
+    // docs/STYLE.md §7.1 (the template for the next books): the full report reads on its own
+    const rep = JSON.parse(JSON.stringify(sample));
+    rep.days[0].tips.push({ th: 'การ์ดอยู่ใน Part 11 · ไป Day 3 ใช้เวลา 1 ชม. 00 นาที', en: 'The card is in Part 11 · Day 3 takes 1 h 00' });
+    rep.info.more = [{ page: 'sos', title: { th: 'บัตรฉุกเฉิน', en: 'Emergency card' }, rows: [{ t: { th: 'ก', en: 'a' }, x: { th: '1', en: '1' } }] }];
+    fs.writeFileSync(path.join(dir, 'rep.json'), JSON.stringify(rep));
+    const r5 = spawnSync(process.execPath, ['scripts/plan-to-seed.mjs', path.join(dir, 'rep.json'), `--out=${path.join(dir, 'rep-seed.json')}`], { encoding: 'utf8' });
+    const w5 = r5.stdout.split('\n').filter((l) => /warn/.test(l)).join(' | ');
+    ok(r5.status === 0 && /"Part 11" refers to the paper manual/.test(w5) && /"Day 3" in Thai text/.test(w5) && /a duration with ":00"/.test(w5) && /the app builds this section itself/.test(w5),
+      `plan-to-seed names a paper-manual reference, "Day N" in Thai, a ":00" duration and a chapter that repeats the emergency card (${w5.slice(0, 500)})`);
     for (const f of fs.readdirSync(path.resolve('server/seeds'))) {
       const c = spawnSync(process.execPath, ['scripts/plan-to-seed.mjs', '--check', path.resolve('server/seeds', f)], { encoding: 'utf8' });
       const rows = JSON.parse(fs.readFileSync(path.resolve('server/seeds', f), 'utf8')).days.flatMap((d) => d.plan || []), noH = rows.filter((r) => !(r.h && r.h.th && r.h.en && /^\p{Extended_Pictographic}/u.test(r.h.en) && !r.h.en.includes(' · ')));
       ok(rows.length > 0 && noH.length === 0, `${f}: every timeline step has its own short headline h (emoji first) for the Today page${noH.length ? ' — missing: ' + noH.slice(0, 3).map((r) => r.en).join(' | ') : ''}`);
-      ok(c.status === 0 && /privacy: clean/.test(c.stdout) && !/ERROR/.test(c.stdout) && !/has no Thai|เช็ค/.test(c.stdout), `${f} passes plan-to-seed --check (privacy, unique stop keys)` + (c.status ? ` — ${c.stdout.split('\n').filter((l) => /ERROR|PRIVACY|    /.test(l)).join(' | ')}` : ''));
+      ok(c.status === 0 && /privacy: clean/.test(c.stdout) && !/ERROR/.test(c.stdout) && !/  warn: /.test(c.stdout), `${f} passes plan-to-seed --check (privacy, unique stop keys, and not one docs/STYLE.md warning)` + ` — ${c.stdout.split('\n').filter((l) => /ERROR|PRIVACY|warn: /.test(l)).slice(0, 5).join(' | ')}`);
     }
   } finally { fs.rmSync(dir, { recursive: true, force: true }); }
 }
