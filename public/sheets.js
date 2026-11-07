@@ -901,7 +901,7 @@ document.addEventListener('change', (e) => {
     api('POST', `/api/b/family/avatar/${encodeURIComponent(k.slug)}`, undefined, new Blob([f], { type: f.type || 'image/jpeg' })).then(async (r) => {
       k.avatar = r.avatar; if (Array.isArray(r.avatars)) k.avatars = r.avatars; if (fam.quota && fam.quota.left) fam.quota.left[k.slug] = r.left;
       await load(); toast(L('ได้ตัวละครใหม่แล้ว ✨', 'A new character ✨'));
-    }, (err) => { fam.err = { 429: L('ใช้ครบโควตาของปีนี้แล้ว', 'All tries for this year are used'), 501: L('การวาดตัวละครยังไม่เปิดในบัญชีนี้', 'OPENAI_API_KEY is not set on the server'), 400: L('อ่านรูปไม่ได้ ลองรูปอื่น', 'Could not read the photo — try another'), 409: L('กำลังวาดตัวอื่นอยู่ รอสักครู่', 'Another drawing is in progress — wait a moment'), 502: L('วาดไม่สำเร็จ ไม่เสียโควตา ลองรูปอื่นได้', 'The AI could not draw it — no try used; try another photo') }[err.code] || L('ครั้งนี้ไม่สำเร็จ ลองใหม่', 'That did not work — try again'); })
+    }, (err) => { fam.err = { 429: L('ใช้ครบโควตาของปีนี้แล้ว', 'All tries for this year are used'), 501: L('การวาดตัวละครยังไม่เปิดในบัญชีนี้', 'Drawing characters is not switched on for this account'), 400: L('อ่านรูปไม่ได้ ลองรูปอื่น', 'Could not read the photo — try another'), 409: L('กำลังวาดตัวอื่นอยู่ รอสักครู่', 'Another drawing is in progress — wait a moment'), 502: L('วาดไม่สำเร็จ ไม่เสียโควตา ลองรูปอื่นได้', 'The AI could not draw it — no try used; try another photo') }[err.code] || L('ครั้งนี้ไม่สำเร็จ ลองใหม่', 'That did not work — try again'); })
       .finally(() => { fam.busyKid = null; render(); });
     return;
   }
