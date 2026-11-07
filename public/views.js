@@ -650,6 +650,15 @@ function remindAsk() {
     : L('ก่อนกิจกรรม 30 นาที · ประตูเซอร์ไพรส์ 08:00 · ชวนบันทึก 21:30', '30 min before each step · a surprise door at 08:00 · record the day at 21:30')}</small></span>
 <span class="rb"><button class="btn small ghost" data-a="remindlater">${L('ไว้ทีหลัง', 'Later')}</button>${needHome ? '' : `<button class="btn small" data-a="remind">${L('เปิดการเตือน', 'Turn on')}</button>`}</span></div>`;
 }
+// one line, never a second card (owner's review, Nov 2026: the same reminder card sat on the shelf, the Today page and the no-signal page):
+// on → "เตือนเปิดอยู่ ✓" with a link to the no-signal page (test / turn off live there); off → the line and one "เปิด" button.
+// A browser that can never show reminders gets nothing (the shelf's ask card already says the iPhone Home-Screen step).
+function remindLine(t) {
+  if (!isEditor()) return '';
+  const on = !!ls('remind');
+  if (!on && !pushOk()) return '';
+  return `<div class="remind line${on ? ' on' : ''}">${ic('bell')}<span><b>${on ? L('เตือนเปิดอยู่ ✓ ก่อนทุกกิจกรรม 30 นาที', 'Reminders on ✓ 30 min before each step') : L('ยังไม่เปิดเตือนก่อนกิจกรรม 30 นาที', 'Reminders 30 min before each step are off')}</b></span>${on ? `<a class="btn small ghost" href="#/t/${esc(t.id)}/offline">${L('ตั้งค่า', 'Settings')}</a>` : `<button class="btn small" data-a="remind">${L('เปิด', 'Turn on')}</button>`}</div>`;
+}
 function remindBar() {
   const on = !!ls('remind');
   return `<div class="remind${on ? ' on' : ''}">${ic('bell')}<span><b>${on ? L('เตือนก่อนทุกกิจกรรม 30 นาที · เปิดอยู่', 'Reminders 30 min before each step · on') : L('ให้แอปเตือนก่อนทุกกิจกรรม 30 นาที', 'Remind me 30 min before each step')}</b>
@@ -714,7 +723,7 @@ function viewToday(t, j, full) {
 <article class="day today" style="border:0;margin-top:0;padding-top:6px"><div class="hd"><div class="no">${String(i + 1).padStart(2, '0')}</div><div class="dl">${L('วันที่', 'Day')} ${i + 1} · ${esc(fmtDay(d.date))}${i === dn ? ` <span class="tag">${L('วันนี้', 'Today')}</span>` : ''}</div><div></div><h3>${esc(T(d.title))}</h3>${artImg(t, i, 'hdart')}
 <div class="meta" style="grid-column:2/3">${d.sleep ? `<b>${L('นอนที่', 'Sleep')}</b> ${esc(T(d.sleep))}` : ''}${d.wx ? ` · ${esc(T(d.wx))}` : ''}</div></div></article>
 ${banner}
-${isEditor() && !ls('remind') && (dn >= 0 || until > 0) ? remindBar() : ''}
+${isEditor() && (dn >= 0 || until > 0) ? remindLine(t) : ''}
 <div class="row quick">${isEditor() ? `<a class="btn" href="#/t/${esc(t.id)}/log/${i}">${ic('log')} ${L('บันทึกวันนี้', 'Record today')}</a>` : ''}${pl.route ? extA(pl.route, ic('route') + ' ' + L('เส้นทางวันนี้', "Today's route"), 'qlink') : ''}${pl.stay ? extA(mapsUrl(pl.stay.q || pl.stay.addr), ic('stays') + ' ' + L('ไปที่พัก', 'To the stay'), 'qlink') : ''}${eatCount(t) ? `<a class="qlink" href="#/t/${esc(t.id)}/eat/d/${i}">${ic('eat')} ${L('ร้านอาหาร', 'Eat')}</a>` : ''}</div>
 ${full ? '' : bagBlock(t, i)}
 ${full ? '' : nextBlock(t, i)}
@@ -874,7 +883,7 @@ function viewLearn(t, full, open) {
   return glancePage(t, 'learn', B, lede, '', []);
 }
 const viewHearts = (t) => `<h1 class="h2">${secTitle('hearts')}</h1>${heartsHtml(t)}`;
-const viewOffline = (t) => `<h1 class="h2">${secTitle('offline')}</h1><p class="lede">${L('เก็บเล่มนี้ไว้ในเครื่องก่อนขึ้นเครื่องบินหรือลงเรือ แล้วเปิดสมุด แผน ร้านอาหาร พาสปอร์ต และโหมดเด็กได้โดยไม่ต้องมีเน็ต', 'Store this book on the phone before the flight or the ferry, then the book, the plans, places to eat, the passports and kid mode all open without signal')}</p>${offlineHtml(t)}<section class="blk noprint"><h3>${ic('wifi')} ${L('ประหยัดเน็ตโรมมิ่ง', 'Save roaming data')}</h3>${upBlock()}</section>${pushOk() || ls('remind') ? remindBar() : ''}
+const viewOffline = (t) => `<h1 class="h2">${secTitle('offline')}</h1><p class="lede">${L('เก็บเล่มนี้ไว้ในเครื่องก่อนขึ้นเครื่องบินหรือลงเรือ แล้วเปิดสมุด แผน ร้านอาหาร พาสปอร์ต และโหมดเด็กได้โดยไม่ต้องมีเน็ต', 'Store this book on the phone before the flight or the ferry, then the book, the plans, places to eat, the passports and kid mode all open without signal')}</p>${offlineHtml(t)}<section class="blk noprint"><h3>${ic('wifi')} ${L('ประหยัดเน็ตโรมมิ่ง', 'Save roaming data')}</h3>${upBlock()}</section>${ls('remind') ? remindBar() : remindLine(t)}
 <div class="part">${L('สมุดภาพสำหรับพิมพ์', 'The printed book')}</div><div class="row noprint" style="margin:8px 0"><a class="btn small" href="/api/b/pdf/${esc(t.id)}" download data-a="pdf">${L('สมุดความทรงจำ (PDF A4)', 'Memory book (PDF A4)')}</a><a class="btn ghost small" href="#/print/${esc(t.id)}">${L('ดูตัวอย่างเล่ม', 'Preview the book')}</a></div>`;
 function favouritesHtml(t) {
   const ph = mediaOf(t.id).filter((m) => m.highlight), qs = entriesOf(t.id).filter((e) => e.kind === 'quote' && e.highlight);
