@@ -86,8 +86,8 @@ function extras(trips, now, kids = { th: 'เด็กๆ', en: 'the kids' }) {
       const at = zoned(d, LOG_AT, x.tz);
       // opens the record page at the evening buttons (/ai): today in brief, the bedtime story, the bedtime questions
       if (live(at)) out.push({ key: `${x.trip}.x.log.d${i}`, at, trip: x.trip, day: i, url: `/#/t/${x.trip}/log/${i}/ai`,
-        th: { title: `บันทึกวันที่ ${i + 1} · ${nTh}`, body: 'รูป อารมณ์ คำพูดเด็ก — แล้วกดให้ Claude สรุปวันนี้ แต่งนิทาน และตั้งคำถามก่อนนอน' },
-        en: { title: `Record day ${i + 1} · ${nEn}`, body: 'Photos, moods, what the kids said — then let Claude sum up the day, write the story and the bedtime questions' } });
+        th: { title: `บันทึกวันที่ ${i + 1} · ${nTh}`, body: 'รูป อารมณ์ คำพูดเด็ก — แล้วให้ผู้ช่วยสรุปวันนี้ แต่งนิทาน และตั้งคำถามก่อนนอน' },
+        en: { title: `Record day ${i + 1} · ${nEn}`, body: 'Photos, moods, what the kids said — then let the helper sum up the day, write the story and the bedtime questions' } });
     }
     // on this day, years later: 09:00 home time on each trip day's anniversary, opening that day of the book
     // (tick() sends it only when that day has something in it — a photo, a quote, a mood…; words only, never a photo)
