@@ -782,6 +782,8 @@ const T = 'hk-macau-2026';
   const tiles = await page.locator('.kidtiles button').evaluateAll((bs) => bs.map((b) => b.dataset.v || b.dataset.a));
   ok(tiles.some((v) => v.endsWith('/count')) && tiles.some((v) => v.endsWith('/pack')) && !tiles.some((v) => /\/(stamp|spot)$/.test(v)), 'kid mode before the trip: surprise + pack tiles, no stamp/find yet');
   ok((await page.textContent('.kidhello p')).includes('7'), 'kid home counts down: 7 sleeps');
+  await page.click('.kidhear');   // 🔊 in the header: every kid page reads its own line aloud
+  ok((await page.evaluate(() => window.__said)).some((x) => /7/.test(x) && /\|(th-TH|en-GB)$/.test(x)) && await page.locator('.kidhd .kidhear').count() === 1, 'kid home: the 🔊 button reads the greeting aloud');
   ok(await page.locator('.kidhearts').count() === 1 && (await page.textContent('.kidhearts')).includes('Grandma'), "hearts: grandma's heart waits on Mimi's home screen");
   await s.shot('01-kid-countdown-home');
   await page.click('.kidhearts'); await page.waitForSelector('.kidhearts-list button');

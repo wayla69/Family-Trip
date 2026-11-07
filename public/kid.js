@@ -520,7 +520,8 @@ function viewKid(p) {
   const lock = `<button class="kidexit" id="kidexit" aria-label="${L('ผู้ใหญ่: กดค้างเพื่อออก', 'Grown-ups: press and hold to leave')}">🔒</button>`;
   const guideImg = (n) => (g[n] ? `<img class="guide" src="${esc(g[n].art)}" alt="">` : '');
   const head = `<header class="kidhd">${view === 'home' ? `<button class="kidme" data-a="kidnav" data-v="#/kid" aria-label="${L('เปลี่ยนคน', 'Switch child')}">${kidFace(kid)}</button>` : back}
-<div class="kidday">${artImg(t, i)}<div><small>${L('วันที่', 'Day')} ${i + 1}</small><b>${esc(T(pd.title) || T(d.title))}</b></div></div></header>`;
+<div class="kidday">${artImg(t, i)}<div><small>${L('วันที่', 'Day')} ${i + 1}</small><b>${esc(T(pd.title) || T(d.title))}</b></div></div>
+<button class="kidhear" data-a="kidhear" aria-label="${L('ฟัง', 'Listen')}">🔊</button></header>`;   // every kid page reads itself aloud: a small child cannot read yet
   let body = '';
   if (view === 'home') {
     const lit = littleOf(t, kid), words = lit ? null : (pp.lists || []).find((l) => l.said), story = kidStory(t, i), live = dayNow(t);   // the little one: no words-to-say, no quiz
@@ -727,6 +728,8 @@ Object.assign(A, {
   },
   hear(b) { say(b.dataset.v, b.dataset.lang); },
   sayfacts(b) { sayUi(b.dataset.v); },
+  // 🔊 in the kid header: read the page's own line (the guide's words, the greeting, else the day's name)
+  kidhear() { beep('pop'); const el = $('.kidguide p') || $('.kidhello p') || $('.kidday b'); if (el) sayUi(el.textContent.replace(/\s+/g, ' ').trim()); },
   saytale(b) { sayTale(b); },
   // drawing
   kidpen(b) { beep('tap'); pen = +b.dataset.v; $$('.drawtools [data-a="kidpen"]').forEach((x) => x.setAttribute('aria-pressed', +x.dataset.v === pen)); },
