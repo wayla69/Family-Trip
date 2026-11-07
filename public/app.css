@@ -92,6 +92,11 @@ hr.rule{border:0;border-top:1px solid var(--rule);margin:22px 0}
 .spdays a{color:inherit;text-decoration:none}
 /* the evening panel (record page from the 21:30 reminder) and the block it jumps to */
 /* tonight, Claude helps: the jump under the day strip, the panel's step grid, one-line notes with details behind ⓘ */
+/* the record page's strip under the date: tonight's three (photos · words · mood), ✓ or ○, a tap jumps to the box */
+.logprog{display:flex;gap:6px;flex-wrap:wrap;margin:4px 0 10px}
+.lpc{display:inline-flex;align-items:center;gap:6px;min-height:44px;padding:6px 13px;border:1px solid var(--rule);border-radius:999px;background:var(--paper);color:var(--muted);font-size:13.5px;font-weight:600}
+.lpc .ic{width:16px;height:16px}.lpc i{font-style:normal;font-size:14px;margin-left:2px}
+.lpc.on{color:var(--leaf);border-color:color-mix(in srgb,var(--leaf) 40%,var(--line));background:color-mix(in srgb,var(--leaf) 7%,var(--paper))}
 .aijump{display:flex;align-items:center;gap:8px;width:100%;margin:10px 0 0;padding:10px 14px;border:1px solid var(--rule);border-radius:12px;background:var(--soft);color:var(--ink);font-weight:600;font-size:15px;text-align:left}
 .aijump small{margin-left:auto;font-weight:500;color:var(--muted);font-size:12px}
 .aipanel{border-top:2px solid var(--accent)}
