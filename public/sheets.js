@@ -108,7 +108,7 @@ const A = {
       const { key } = await api('GET', '/api/b/push/key'), reg = await navigator.serviceWorker.ready;
       const s = (await reg.pushManager.getSubscription()) || (await reg.pushManager.subscribe({ userVisibleOnly: true, applicationServerKey: b64u(key) }));
       await api('POST', '/api/b/push/sub', { ...s.toJSON(), lang });
-      ls('remind', 1); render(); toast(L('เปิดการเตือนแล้ว ✓ จะเด้งก่อนทุกกิจกรรม 30 นาที · ทดสอบหรือปิดได้ที่หน้าใช้ออฟไลน์', 'Reminders on ✓ — 30 min before each step · test or turn off on the Offline page'));
+      ls('remind', 1); render(); toast(L('เปิดการเตือนแล้ว ✓ จะเด้งก่อนทุกกิจกรรม 30 นาที · ทดสอบหรือปิดได้ที่หน้า "ใช้ตอนไม่มีเน็ต"', 'Reminders on ✓ — 30 min before each step · test or turn off on the Offline page'));
     } catch (_) { toast(L('เปิดการเตือนไม่สำเร็จ ลองอีกครั้ง', 'Could not turn reminders on — try again')); }
   },
   async remindtest() {
@@ -152,7 +152,7 @@ const A = {
       const md = es.filter((e) => e.kind === 'mood' && e.mood).map((e) => `${kidName(e.child)} ${e.mood}`); if (md.length) lines.push(`  ${L('อารมณ์', 'Mood')}: ${md.join(' · ')}`);
       es.filter((e) => e.kind === 'quote').forEach((e) => lines.push(`  “${e.text}” — ${kidName(e.child)}`));
       const fav = es.find((e) => e.kind === 'fav'); if (fav) lines.push(`  ${L('ของโปรด', 'Favourite')}: ${fav.text}`);
-      const note = es.find((e) => e.kind === 'note'); if (note) lines.push(`  ${L('บันทึก', 'Note')}: ${note.text}`);
+      const note = es.find((e) => e.kind === 'note'); if (note) lines.push(`  ${L('โน้ต', 'Note')}: ${note.text}`);
       es.filter((e) => e.kind === 'first').forEach((e) => lines.push(`  ${L('ครั้งแรก', 'First')}: ${e.first_key === 'custom' ? e.text : firstLabel(t, e.first_key).t} — ${kidName(e.child)}`));
       lines.push('');
     });
@@ -264,7 +264,7 @@ const A = {
     const mode = ['sum', 'msg', 'talk', 'letter', 'next', 'mquiz', 'fore'].includes(b.dataset.m) ? b.dataset.m : 'story', sum = ['sum', 'msg', 'letter', 'fore'].includes(mode);   // sum/msg/letter/fore write into a textarea; story/talk/next/mquiz into a box
     const quiet = mode === 'mquiz';   // the memory game streams JSON: show a line, not the raw text
     const t = trip(b.dataset.t), day = b.dataset.d === '' ? null : +b.dataset.d;
-    if (!navigator.onLine) { toast(L('ต้องต่อเน็ตเพื่อใช้ Claude', 'Claude needs a connection')); return; }
+    if (!navigator.onLine) { toast(L('ต้องต่อเน็ตก่อน ผู้ช่วยจึงทำงานได้', 'Claude needs a connection')); return; }
     const box = $(`#${mode}text`), msg = sum ? $(`#${mode}msg`) : box, before = sum ? box.value : '';
     const say = (x) => { if (sum) { box.value = before; msg.textContent = x; } else box.textContent = x; };
     const show = (x) => { if (sum) box.value = x; else box.textContent = x; };
@@ -275,8 +275,8 @@ const A = {
     try {
       const r = await fetch('/api/b/story', { method: 'POST', credentials: 'same-origin', signal: storyCtl.signal,
         headers: { 'x-mb': '1', 'content-type': 'application/json' }, body: JSON.stringify({ trip: t.id, day, lang, mode }) });
-      if (r.status === 422) { say(L('ยังไม่มีบันทึกของวันนี้ — เพิ่มคำพูด คำอธิบายรูป หรือเช็คอินก่อน', 'Nothing written down yet — add a quote, a photo caption or a check-in first')); return; }
-      if (r.status === 429) { say(L('วันนี้ใช้ Claude ครบจำนวนแล้ว — พรุ่งนี้ใช้ต่อได้', 'That’s all the Claude writing for today — more tomorrow')); return; }
+      if (r.status === 422) { say(L('ยังไม่มีบันทึกของวันนี้ — เพิ่มคำพูด คำอธิบายรูป หรือเช็กอินก่อน', 'Nothing written down yet — add a quote, a photo caption or a check-in first')); return; }
+      if (r.status === 429) { say(L('วันนี้ผู้ช่วยทำงานครบจำนวนแล้ว — พรุ่งนี้ใช้ต่อได้', 'That’s all the Claude writing for today — more tomorrow')); return; }
       if (!r.ok) throw new Error('http ' + r.status);
       const rd = r.body.getReader(), dec = new TextDecoder();
       let buf = '', ev = null;
@@ -302,7 +302,7 @@ const A = {
             if (sum) delete drafts[box.dataset.draft];   // the saved summary wins over a half-typed draft
             storyCtl = null; await load(); render();
             toast(mode === 'mquiz' ? L('เกมพร้อมแล้ว — พรุ่งนี้เช้าเปิดโหมดเด็ก แตะ 🧠', 'The game is ready — tomorrow morning, kid mode, tap 🧠') : mode === 'fore' ? L('เก็บคำนำแล้ว — แก้ในช่องได้', 'Foreword saved — edit it in the box') : mode === 'letter' ? L('เก็บร่างจดหมายแล้ว — แก้ในช่องให้เป็นคำของเราเอง', 'Draft saved — make it your own words in the box') : sum ? L('เก็บสรุปไว้ในสมุดแล้ว — แก้ในช่องได้', 'Summary saved in the book — edit it in the box') : mode === 'talk' ? L('คำถามอยู่ในโหมดเด็กแล้ว — แตะ 💬 คุยกัน', 'The questions are in kid mode — tap 💬 Let’s talk') : L('เก็บนิทานไว้ในสมุดแล้ว', 'Story saved in the book'));
-          } else if (ev === 'error') say(d.error === 'refusal' ? L('Claude เขียนอันนี้ไม่ได้ ลองเพิ่มบันทึกแล้วลองใหม่', 'Claude could not write this one — try again later') : L('ไม่สำเร็จ ลองใหม่อีกครั้ง', 'That didn’t work — try again'));
+          } else if (ev === 'error') say(d.error === 'refusal' ? L('ผู้ช่วยเขียนอันนี้ไม่ได้ ลองเพิ่มบันทึกแล้วลองใหม่', 'Claude could not write this one — try again later') : L('ไม่สำเร็จ ลองใหม่อีกครั้ง', 'That didn’t work — try again'));
         }
       }
     } catch (e) {
@@ -319,7 +319,7 @@ const A = {
   // each step scrolls to its box and streams there as if pressed; the first failure (or Stop) ends the run
   async aiall(b) {
     if (aiRun || storyCtl) return;
-    if (!navigator.onLine) { toast(L('ต้องต่อเน็ตเพื่อใช้ Claude', 'Claude needs a connection')); return; }
+    if (!navigator.onLine) { toast(L('ต้องต่อเน็ตก่อน ผู้ช่วยจึงทำงานได้', 'Claude needs a connection')); return; }
     if (queue.length) { toast(L('รอให้บันทึกและรูปส่งเสร็จก่อน แล้วค่อยกด', 'Wait for the records and photos to upload first')); return; }
     const t = trip(b.dataset.t), i = +b.dataset.d, dk = `${t.id}:${i}`, steps = aiTodo(t, i, dk);
     if (!steps.length) return;
@@ -380,14 +380,14 @@ const A = {
   // what our family likes: the notebook of every trip → Claude → saved for both parents (settings), streamed into #likestext
   async likes(b) {
     if (storyCtl) return;
-    if (!navigator.onLine) { toast(L('ต้องต่อเน็ตเพื่อใช้ Claude', 'Claude needs a connection')); return; }
+    if (!navigator.onLine) { toast(L('ต้องต่อเน็ตก่อน ผู้ช่วยจึงทำงานได้', 'Claude needs a connection')); return; }
     const box = $('#likestext'), before = box.textContent; box.hidden = false; box.textContent = ''; b.disabled = true;
     storyCtl = new AbortController();
     let text = '';
     try {
       const r = await fetch('/api/b/likes', { method: 'POST', credentials: 'same-origin', signal: storyCtl.signal, headers: { 'x-mb': '1', 'content-type': 'application/json' }, body: JSON.stringify({ lang }) });
       if (r.status === 422) { box.textContent = L('ยังไม่มีรีวิวในสมุดโน้ต — ให้ดาวที่พัก ร้าน สถานที่ ในหน้าบันทึกก่อน', 'No reviews yet — rate stays, food and places on the record pages first'); return; }
-      if (r.status === 429) { box.textContent = L('วันนี้ใช้ Claude ครบจำนวนแล้ว — พรุ่งนี้ใช้ต่อได้', 'That’s all the Claude writing for today — more tomorrow'); return; }
+      if (r.status === 429) { box.textContent = L('วันนี้ผู้ช่วยทำงานครบจำนวนแล้ว — พรุ่งนี้ใช้ต่อได้', 'That’s all the Claude writing for today — more tomorrow'); return; }
       if (!r.ok) throw new Error('http ' + r.status);
       const rd = r.body.getReader(), dec = new TextDecoder();
       let buf = '';
@@ -426,8 +426,8 @@ const A = {
   async vgsave(b) {
     const name = $('#vgname').value.trim(), pin = $('#vgpin').value.trim(), msg = $('#vgmsg'), f = vgForm;
     if (!name) { msg.textContent = L('ใส่ชื่อกลุ่มก่อน', 'Give the group a name'); $('#vgname').focus(); return; }
-    if (pin && !/^\d{6,12}$/.test(pin)) { msg.textContent = L('PIN ต้องเป็นตัวเลข 6–12 หลัก', 'The PIN must be 6–12 digits'); $('#vgpin').focus(); return; }
-    if (!f.id && !pin && !f.link) { msg.textContent = L('ต้องมี PIN หรือลิงก์อย่างน้อยหนึ่งอย่าง', 'Give it a PIN or a link'); return; }
+    if (pin && !/^\d{6,12}$/.test(pin)) { msg.textContent = L('รหัสต้องเป็นตัวเลข 6–12 ตัว', 'The PIN must be 6–12 digits'); $('#vgpin').focus(); return; }
+    if (!f.id && !pin && !f.link) { msg.textContent = L('ต้องมีรหัสหรือลิงก์อย่างน้อยหนึ่งอย่าง', 'Give it a PIN or a link'); return; }
     const id = f.id || 'vg-' + Math.random().toString(36).slice(2, 10);
     b.disabled = true;
     try {
@@ -436,8 +436,8 @@ const A = {
       toast(L('บันทึกกลุ่มแล้ว', 'Group saved')); render(); scrollTo(0, 0);
     } catch (e) {
       b.disabled = false;
-      msg.textContent = e.code === 409 ? L('PIN นี้ใช้แล้ว (ซ้ำกับกลุ่มอื่นหรือ PIN ของครอบครัว) — ลองตัวอื่น', 'That PIN is taken (another group or the family PIN) — try another')
-        : e.code === 400 ? L('ต้องมี PIN หรือลิงก์อย่างน้อยหนึ่งอย่าง', 'Give it a PIN or a link') : L('บันทึกไม่สำเร็จ ลองใหม่', 'Could not save — try again');
+      msg.textContent = e.code === 409 ? L('รหัสนี้ใช้แล้ว (ซ้ำกับกลุ่มอื่นหรือรหัสครอบครัว) — ลองตัวอื่น', 'That PIN is taken (another group or the family PIN) — try another')
+        : e.code === 400 ? L('ต้องมีรหัสหรือลิงก์อย่างน้อยหนึ่งอย่าง', 'Give it a PIN or a link') : L('บันทึกไม่สำเร็จ ลองใหม่', 'Could not save — try again');
     }
   },
   async vgdel(b) {
@@ -475,18 +475,18 @@ const A = {
   // look at today's photos: the server sends the day's unseen thumbnails to Claude and saves caption/tags/place; then the state reloads
   async photoai(b) {
     let ok = false;   // returned: "do it all" goes on only after the photos were seen
-    if (!navigator.onLine) { toast(L('ต้องต่อเน็ตเพื่อให้ Claude ดูรูป', 'Claude needs a connection to look')); return; }
+    if (!navigator.onLine) { toast(L('ต้องต่อเน็ตก่อน จึงให้ดูรูปได้', 'Claude needs a connection to look')); return; }
     if (queue.length) { toast(L('รอให้รูปส่งเสร็จก่อน แล้วค่อยให้ดู', 'Wait for the photos to upload first')); return; }
     const btns = $$('.phaiblk button'); btns.forEach((x) => { x.disabled = true; }); b.setAttribute('aria-busy', 'true');
     try {
       const r = await api('POST', '/api/b/photos/ai', { trip: b.dataset.t, day: +b.dataset.d, lang, all: !!b.dataset.all }); aiUseAt = 0;
       await load(); safeRender();
       ok = r;   // truthy: the answer itself, so "do it all" knows how many are left
-      const star = r.starred ? L(` · ติดดาว ⭐ ให้ ${r.starred} รูปเด่น (แตะรูปเพื่อเปลี่ยน)`, ` · ⭐ on ${r.starred} best photo${r.starred > 1 ? 's' : ''} (tap a photo to change)`) : '';
+      const star = r.starred ? L(` · ติดดาว ⭐ ให้ ${r.starred} รูป (แตะรูปเพื่อเปลี่ยน)`, ` · ⭐ on ${r.starred} best photo${r.starred > 1 ? 's' : ''} (tap a photo to change)`) : '';
       toast((r.left ? L(`ดูแล้ว ${r.n} รูป · เหลืออีก ${r.left} กดอีกครั้ง`, `${r.n} photos seen · ${r.left} more, press again`) : L(`ดูแล้ว ${r.n} รูป`, `${r.n} photos seen`)) + star);
     } catch (e) {
       btns.forEach((x) => { x.disabled = false; }); b.removeAttribute('aria-busy');
-      toast(e.code === 422 ? L('ไม่มีรูปใหม่ให้ดู', 'Nothing new to look at') : e.code === 429 ? L('วันนี้ใช้ Claude ครบจำนวนแล้ว — พรุ่งนี้ใช้ต่อได้', 'That’s all the Claude calls for today — more tomorrow') : e.code === 501 ? L('ยังไม่ได้เปิดใช้ (PHOTO_AI)', 'Not switched on (PHOTO_AI)') : L('ดูไม่สำเร็จ ลองใหม่อีกครั้ง', 'That didn’t work — try again'));
+      toast(e.code === 422 ? L('ไม่มีรูปใหม่ให้ดู', 'Nothing new to look at') : e.code === 429 ? L('วันนี้ผู้ช่วยทำงานครบจำนวนแล้ว — พรุ่งนี้ใช้ต่อได้', 'That’s all the Claude calls for today — more tomorrow') : e.code === 501 ? L('การดูรูปยังไม่เปิดในบัญชีนี้', 'Not switched on (PHOTO_AI)') : L('ดูไม่สำเร็จ ลองใหม่อีกครั้ง', 'That didn’t work — try again'));
     }
     return ok;
   },
@@ -510,7 +510,7 @@ const A = {
       toast(L(`แปลแล้ว ${r.n} ข้อความ`, `${r.n} translated`));
     } catch (e) {
       b.disabled = false; b.removeAttribute('aria-busy');
-      toast(e.code === 422 ? L('ไม่มีข้อความใหม่ให้แปล', 'Nothing new to translate') : e.code === 429 ? L('วันนี้ใช้ Claude ครบจำนวนแล้ว — พรุ่งนี้ใช้ต่อได้', 'That’s all the Claude writing for today — more tomorrow') : L('แปลไม่สำเร็จ ลองใหม่อีกครั้ง', 'That didn’t work — try again'));
+      toast(e.code === 422 ? L('ไม่มีข้อความใหม่ให้แปล', 'Nothing new to translate') : e.code === 429 ? L('วันนี้ผู้ช่วยทำงานครบจำนวนแล้ว — พรุ่งนี้ใช้ต่อได้', 'That’s all the Claude writing for today — more tomorrow') : L('แปลไม่สำเร็จ ลองใหม่อีกครั้ง', 'That didn’t work — try again'));
     }
   },
   // ask the guide: the question goes with excerpts of this book's manual (picked on the server), the answer streams back; never saved —
@@ -532,7 +532,7 @@ const A = {
     try {
       const r = await fetch('/api/b/ask', { method: 'POST', credentials: 'same-origin', signal: storyCtl.signal,
         headers: { 'x-mb': '1', 'content-type': 'application/json' }, body: JSON.stringify({ trip: t.id, day, lang, q }) });
-      if (r.status === 429) { say(L('วันนี้ใช้ Claude ครบจำนวนแล้ว — พรุ่งนี้ใช้ต่อได้', 'That’s all the Claude writing for today — more tomorrow')); return; }
+      if (r.status === 429) { say(L('วันนี้ผู้ช่วยทำงานครบจำนวนแล้ว — พรุ่งนี้ใช้ต่อได้', 'That’s all the Claude writing for today — more tomorrow')); return; }
       if (!r.ok) throw new Error('http ' + r.status);
       const rd = r.body.getReader(), dec = new TextDecoder();
       let buf = '';
@@ -547,7 +547,7 @@ const A = {
           const d = JSON.parse(data || '{}');
           if (!ev) { text += d.t; say(text); }
           else if (ev === 'done') say(d.text || text);
-          else if (ev === 'error') say(d.error === 'refusal' ? L('Claude ตอบข้อนี้ไม่ได้ ลองถามแบบอื่น', 'Claude could not answer that one — try asking another way') : L('ไม่สำเร็จ ลองใหม่อีกครั้ง', 'That didn’t work — try again'));
+          else if (ev === 'error') say(d.error === 'refusal' ? L('ผู้ช่วยตอบข้อนี้ไม่ได้ ลองถามแบบอื่น', 'Claude could not answer that one — try asking another way') : L('ไม่สำเร็จ ลองใหม่อีกครั้ง', 'That didn’t work — try again'));
         }
       }
     } catch (e) {
@@ -571,7 +571,7 @@ const A = {
       imp.job = { status: 'running', slug: imp.slug, log: [] }; render();
       await api('POST', `/api/b/import?slug=${encodeURIComponent(imp.slug)}`, undefined, new Blob([await f.arrayBuffer()], { type: 'application/pdf' }));
       imp.file = null; await impRefresh();
-    } catch (e) { imp.job = null; imp.err = { 409: L('มีงานกำลังทำ หรือมีเล่มรหัสนี้แล้ว', 'Busy, or the id exists'), 503: L('Claude ยังไม่ได้เปิดบนเซิร์ฟเวอร์', 'Claude is not set up on the server'), 429: L('โควตา Claude ของวันนี้เหลือไม่พอทำทั้งเล่ม (ต้องใช้ราว 30 ครั้ง) ลองพรุ่งนี้', 'Not enough of today’s Claude allowance left for a whole book (about 30 calls) — try tomorrow'), 400: L('ไฟล์ไม่ใช่ PDF หรือรหัสเล่มไม่ถูกต้อง', 'Not a PDF, or a bad id'), 413: L('ไฟล์ใหญ่เกิน 25 MB', 'Over 25 MB') }[e.code] || L('ส่งไม่สำเร็จ', 'Could not send'); render(); }
+    } catch (e) { imp.job = null; imp.err = { 409: L('มีงานกำลังทำ หรือมีเล่มรหัสนี้แล้ว', 'Busy, or the id exists'), 503: L('ผู้ช่วยยังไม่เปิดในบัญชีนี้', 'Claude is not set up on the server'), 429: L('โควตาผู้ช่วยของวันนี้เหลือไม่พอทำทั้งเล่ม ลองพรุ่งนี้', 'Not enough of today’s Claude allowance left for a whole book (about 30 calls) — try tomorrow'), 400: L('ไฟล์ไม่ใช่ PDF หรือรหัสเล่มไม่ถูกต้อง', 'Not a PDF, or a bad id'), 413: L('ไฟล์ใหญ่เกิน 25 MB', 'Over 25 MB') }[e.code] || L('ส่งไม่สำเร็จ', 'Could not send'); render(); }
   },
   async impsave(b) {
     try { const r = await api('POST', `/api/b/import/${encodeURIComponent(b.dataset.v)}/save`, {}); toast(L('บันทึกเล่มแล้ว', 'Book saved')); imp.list = null; imp.job = null; await load(); location.hash = `#/t/${encodeURIComponent(r.id)}`; }
@@ -584,9 +584,9 @@ const A = {
   pickphotos(b) { const fp = $('#fpick'); fp.dataset.t = b.dataset.t; fp.dataset.d = b.dataset.d; fp.click(); },
   // full backup zip (editors only on the server too); the browser downloads it in place, the page stays
   backup() {
-    if (!navigator.onLine) { toast(L('ต้องต่อเน็ตก่อนจึงสำรองได้', 'Connect to the internet to back up')); return; }
+    if (!navigator.onLine) { toast(L('ต้องต่อเน็ตก่อนจึงทำสำเนาได้', 'Connect to the internet to back up')); return; }
     if (queue.length) toast(L('ยังมีบันทึกรอส่ง — ไฟล์นี้จะยังไม่มีรายการเหล่านั้น', 'Some records are still waiting to send — this file will not have them yet'));
-    else toast(L('กำลังเตรียมไฟล์สำรอง… รูปเยอะอาจใช้เวลาสักครู่', 'Preparing the backup… many photos can take a minute'));
+    else toast(L('กำลังเตรียมสำเนา… รูปเยอะอาจใช้เวลาสักครู่', 'Preparing the backup… many photos can take a minute'));
     ls('last_backup', Date.now());
     const a = document.createElement('a'); a.href = '/api/export.zip'; a.download = ''; document.body.appendChild(a); a.click(); a.remove();
     render();
@@ -657,7 +657,7 @@ Object.assign(A, {
   ragain(b) { const card = b.closest('.rev'), cur = reviewFrom(card), v = b.dataset.v === '1'; putReview(card, { again: cur.again === v ? null : v }); },
   rdel(b) { if (!armed(b)) return; const card = b.closest('.rev'), cur = reviewFrom(card), id = revId(trip(card.dataset.t), cur.kind, cur.key); enqueue({ method: 'DELETE', url: '/api/b/reviews/' + encodeURIComponent(id), local: { coll: 'reviews', id, del: true } }); },
   async copynotebook() {
-    const lines = [L('สมุดโน้ตนักเดินทาง — อะไรเวิร์กกับครอบครัวเรา', 'Travel notebook — what works for our family'), ''];
+    const lines = [L('สมุดโน้ตนักเดินทาง — อะไรที่ครอบครัวเราชอบ', 'Travel notebook — what works for our family'), ''];
     for (const kind of ['stay', 'food', 'place']) {
       const list = S.reviews.filter((r) => r.kind === kind).sort((a, b) => (b.rating || 0) - (a.rating || 0)); if (!list.length) continue;
       lines.push(`${RKIND[kind][0]} ${L(RKIND[kind][1], RKIND[kind][2])}`);
@@ -681,7 +681,7 @@ function askOffline(t, q, box) {
     hits = [...seen.values()].sort((a, b) => b.score - a.score);
   }
   const alts = core ? core.split(' ') : [];
-  const html = `<p class="label">📴 ${L('ออฟไลน์ — ส่วนในคู่มือที่ตรงกับคำถาม (ไม่ได้ใช้ Claude)', 'Offline — the parts of the manual that match (no Claude)')}</p>`
+  const html = `<p class="label">📴 ${L('ไม่มีเน็ต — คำตอบจากคู่มือที่อยู่ในเครื่อง', 'Offline — the parts of the manual that match (no Claude)')}</p>`
     + (hits.length ? `<ul class="sres">${hits.slice(0, 5).map(({ e }) => `<li class="k-${e.topic}"><a href="${esc(e.href)}"><span class="stopic">${esc(topicName(e.topic))}</span><b>${esc((e.title[lang] || e.title.en).replace(/\s+·\s+\d+$/, ''))}</b><span class="ssnip">${snippet(e, alts)}</span></a></li>`).join('')}</ul>`
       : `<p>${L('ไม่พบในคู่มือ ลองคำสั้นๆ เช่น หมอ แท็กซี่ ห้องน้ำ', 'Nothing in the manual — try one word: doctor, taxi, toilet')}</p>`)
     + `<p><a href="#/t/${esc(t.id)}/search">${L('ค้นทั้งเล่ม ›', 'Search the whole book ›')}</a></p>`;
@@ -896,7 +896,7 @@ document.addEventListener('change', (e) => {
     api('POST', `/api/b/family/avatar/${encodeURIComponent(k.slug)}`, undefined, new Blob([f], { type: f.type || 'image/jpeg' })).then(async (r) => {
       k.avatar = r.avatar; if (Array.isArray(r.avatars)) k.avatars = r.avatars; if (fam.quota && fam.quota.left) fam.quota.left[k.slug] = r.left;
       await load(); toast(L('ได้ตัวละครใหม่แล้ว ✨', 'A new character ✨'));
-    }, (err) => { fam.err = { 429: L('ใช้ครบโควตาของปีนี้แล้ว', 'All tries for this year are used'), 501: L('ยังไม่ได้ตั้งค่า OPENAI_API_KEY บนเซิร์ฟเวอร์', 'OPENAI_API_KEY is not set on the server'), 400: L('อ่านรูปไม่ได้ ลองรูปอื่น', 'Could not read the photo — try another'), 409: L('กำลังวาดตัวอื่นอยู่ รอสักครู่', 'Another drawing is in progress — wait a moment'), 502: L('AI วาดไม่สำเร็จ ไม่เสียโควตา ลองรูปอื่นได้', 'The AI could not draw it — no try used; try another photo') }[err.code] || L('ครั้งนี้ไม่สำเร็จ ลองใหม่', 'That did not work — try again'); })
+    }, (err) => { fam.err = { 429: L('ใช้ครบโควตาของปีนี้แล้ว', 'All tries for this year are used'), 501: L('การวาดตัวละครยังไม่เปิดในบัญชีนี้', 'OPENAI_API_KEY is not set on the server'), 400: L('อ่านรูปไม่ได้ ลองรูปอื่น', 'Could not read the photo — try another'), 409: L('กำลังวาดตัวอื่นอยู่ รอสักครู่', 'Another drawing is in progress — wait a moment'), 502: L('วาดไม่สำเร็จ ไม่เสียโควตา ลองรูปอื่นได้', 'The AI could not draw it — no try used; try another photo') }[err.code] || L('ครั้งนี้ไม่สำเร็จ ลองใหม่', 'That did not work — try again'); })
       .finally(() => { fam.busyKid = null; render(); });
     return;
   }
@@ -920,7 +920,7 @@ document.addEventListener('submit', async (e) => {
   const r = await fetch('/api/login', { method: 'POST', credentials: 'same-origin', headers: { 'x-mb': '1', 'content-type': 'application/json' }, body: JSON.stringify({ code: $('#lcode').value, name }) });
   if (r.ok) { await load(); render(); flush(); return; }
   $('#lcode').value = '';
-  $('#lerr').textContent = r.status === 429 ? L('ใส่ผิดหลายครั้งเกินไป รอ 10 นาทีแล้วลองใหม่', 'Too many wrong tries — wait 10 minutes') : L('PIN ไม่ถูกต้อง', 'Wrong PIN');
+  $('#lerr').textContent = r.status === 429 ? L('ใส่ผิดหลายครั้งเกินไป รอ 10 นาทีแล้วลองใหม่', 'Too many wrong tries — wait 10 minutes') : L('รหัสไม่ถูกต้อง', 'Wrong PIN');
 });
 
 /* ---------- boot ---------- */

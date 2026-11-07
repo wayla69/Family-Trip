@@ -109,6 +109,8 @@ main .blk{scroll-margin-top:76px}   /* a jump (panel, steps, shortcuts) lands be
 /* Claude usage card (shelf, editors) */
 .aicard{display:flex;flex-wrap:wrap;gap:4px 14px;align-items:baseline;border:1px solid var(--rule);border-radius:12px;padding:12px 14px;margin-top:14px;font-size:14px}
 .aicard small{flex-basis:100%;color:var(--muted)}
+.aicard summary{flex-basis:100%;display:flex;gap:10px;align-items:baseline;cursor:pointer;list-style:none}   /* the parents see one line; the counts open on a tap */
+.aicard summary::-webkit-details-marker{display:none}
 /* relatives' groups (#/viewers) */
 .vglist{display:grid;grid-template-columns:repeat(auto-fill,minmax(280px,1fr));gap:12px;margin:14px 0}
 .vgcard{border:1px solid var(--rule);border-radius:14px;padding:14px;background:var(--paper);display:grid;gap:10px}
