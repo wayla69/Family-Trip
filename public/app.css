@@ -1773,6 +1773,8 @@ p,li,.bubble p{text-wrap:pretty}
 .hubgrid.tl-accent .tile.today.hi .e,.hubgrid.tl-plain .tile.today.hi .e{background:color-mix(in srgb,var(--on-accent) 16%,transparent);color:var(--on-accent)}
 .hubgrid.tl-accent .tile.t-sos .e,.hubgrid.tl-plain .tile.t-sos .e{background:color-mix(in srgb,var(--hot) 10%,var(--paper));color:var(--hot)}
 .tilepick{align-items:center;gap:10px;margin:18px 0 6px;flex-wrap:wrap}
+.tripdel{margin:22px 0 8px}
+.advc .nocrest{display:grid;place-items:center}.advc .nocrest .stamp{transform:none}
 /* 16 colours with 16 different names (owner: no two alike) — red, orange, gold, brown, lime, green, teal, cyan, sky, blue, indigo, violet, purple, magenta, pink, charcoal; placed so look-alikes never touch on the phone or the desktop grid */
 .hubgrid .tile.today{--g1:#4F7BFF;--g2:#2F55E8}   /* blue */
 .hubgrid .t-log{--g1:#9BD82A;--g2:#5E9E00}   /* lime */

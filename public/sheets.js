@@ -113,6 +113,20 @@ const A = {
   },
   // the setup steps: skip them for good (the shelf's welcome card still leads back) · "not now" on the reminders step
   startskip() { ls('startDone', 1); nav('#/'); },
+  // the sample book: made for this family on request; opens its menu (already there: just opens it)
+  async sample(b) {
+    b.disabled = true;
+    try { const r = await api('POST', '/api/b/sample'); ls('startDone', 1); await load(); nav('#/t/' + r.id); toast(L('เล่มตัวอย่างอยู่บนชั้นแล้ว ลบได้ทุกเมื่อจากท้ายเมนูเล่ม', 'The sample book is on the shelf — delete it any time from the foot of its menu')); }
+    catch (e) { b.disabled = false; if (e.code === 409) { nav('#/t/sakura-hop-2028'); return; } toast(L('สร้างไม่สำเร็จ ลองใหม่', 'Could not make it — try again')); }
+  },
+  // delete a book the family made (never a bundled one): two taps, then everything in it goes
+  async tripdel(b) {
+    const t = trip(b.dataset.t); if (!t) return;
+    if (!armed(b, L('แตะอีกครั้งเพื่อลบทั้งเล่ม รูปและบันทึกในเล่มหายด้วย', 'Tap again to delete the whole book — its photos and records go too'))) return;
+    b.disabled = true;
+    try { await api('DELETE', '/api/b/trips/' + encodeURIComponent(t.id)); await load(); nav('#/'); toast(L('ลบเล่มแล้ว', 'Book deleted')); }
+    catch (_) { b.disabled = false; toast(L('ลบไม่สำเร็จ ลองใหม่', 'Could not delete — try again')); }
+  },
   // the book menu's tile look, for the whole family: applied at once, saved in the profile
   tiles(b) { const v = b.dataset.v; if (S.family) S.family.tiles = v; render(); api('PATCH', '/api/b/family/profile', { tiles: v }).catch(() => toast(L('บันทึกไม่สำเร็จ ลองใหม่', 'Could not save — try again'))); },
   // delete everything (privacy page): the typed app name is the confirmation; afterwards this phone is signed out and wiped

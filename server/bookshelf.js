@@ -12,6 +12,7 @@ const IMPORT = require('./bookimport');
 const FAM = require('./family');
 const AVATAR = require('./avatar');
 const EMOJI = require('./emoji');
+const CORE = require('../scripts/lib/plan-to-seed-core.mjs');   // the sample book is built from its plan on request (ESM via require, Node ≥ 22.12)
 const sharp = require('sharp');
 
 const FAMILY = process.env.FAMILY_ID || 'family';
@@ -558,6 +559,34 @@ function router({ pool, media, A, ai, hooks = {} }) {   // hooks.heart(h): set b
   });
 
   // ----- a new trip (book) created in the app
+  // the sample book (#/start step 5, the shelf's "new book" card): a fictional 3-day trip from server/samples, built for this family —
+  // its own children, no drawn art (Kiki and Roo stand in) — as an app-made book, so it can be deleted like one
+  r.post('/api/b/sample', ...W, async (_req, res, next) => {
+    const c = await pool.connect();
+    try {
+      const plan = JSON.parse(fs.readFileSync(path.join(__dirname, 'samples', 'sakura-hop-2028.plan.json'), 'utf8'));
+      const seed = CORE.toSeed(plan, [], { art: false });
+      seed.children = FAM.seedChildren(await kidRows(), seed.date_from);
+      await c.query('BEGIN');
+      try { await putSeed(c, seed, 'manual'); } catch (e) { await c.query('ROLLBACK'); if (e.code === 'exists') return bad(res, 'exists', 409); throw e; }
+      await c.query('COMMIT');
+      res.json({ ok: true, id: seed.slug });
+    } catch (e) { await c.query('ROLLBACK').catch(() => {}); next(e); } finally { c.release(); }
+  });
+  // delete a book the family made (an empty book, an imported manual, the sample) with everything in it — never a bundled seed
+  r.delete('/api/b/trips/:id', A.requireEditor, async (req, res, next) => {
+    try {
+      const t = (await q('SELECT id, source FROM trips WHERE id=$1 AND family_id=$2', [req.params.id, FAMILY]))[0];
+      if (!t) return bad(res, 'trip', 404);
+      if (t.source === 'seed') return bad(res, 'seed', 409);
+      for (const m of await q('SELECT id, storage_key, mime FROM media WHERE trip_id=$1 AND family_id=$2', [t.id, FAMILY])) {
+        await media.del(m.storage_key).catch(() => {});
+        if (!String(m.mime || '').startsWith('audio/')) await media.del(keyThumb(t.id, m.id)).catch(() => {});
+      }
+      await q('DELETE FROM trips WHERE id=$1 AND family_id=$2', [t.id, FAMILY]);   // its days, entries, media rows, places, hearts, reviews and spending go with it
+      res.json({ ok: true });
+    } catch (e) { next(e); }
+  });
   r.post('/api/b/trips', ...W, async (req, res, next) => {
     const c = await pool.connect();
     try {
