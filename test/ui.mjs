@@ -453,6 +453,7 @@ const T = 'hk-macau-2026';
   { const cut = []; for (const r of ['prep', 'learn', 'sos', 'stays']) { await page.goto(`${BASE}/#/t/${T}/${r}`); await page.waitForSelector('.glg'); cut.push(...await page.$$eval('.glc small', (els) => els.map((e) => e.textContent.trim()).filter((x) => /…$/.test(x)))); }
     ok(cut.length === 0, `HK glance cards: no subtitle ends with “…” ${cut.slice(0, 2).join(' | ')}`); }
   await page.goto(`${BASE}/#/t/${T}/today/1`); await page.waitForSelector('.day.today'); await page.evaluate(() => { const d = document.querySelector('details.dmore'); if (d) d.open = true; });
+  ok(await page.locator('.dsheet .meal a.maplink').count() === 0 && await page.locator('.dsheet .meal a.navb[href*="maps/search"]').count() >= 4 && await page.locator('.dsheet .meal b').first().evaluate((b) => !b.querySelector('a') && getComputedStyle(b).textDecorationLine === 'none'), 'today: a meal’s name is plain text with a navigate pin beside it, not an underlined link (owner’s review)');
   ok(await page.locator('.dsheet .meal').count() === 4 && /Hoi Lin Tea House/.test(await page.textContent('.cgrid')) && /Plaza Inn/.test(await page.locator('.dsheet .meal').nth(3).textContent()) && await page.locator('.dsheet a[href="/art/hk/disney-map.svg"]').count() === 1, 'HK today, Disney day: four meals each with a pick and a backup, and the park map');
   const vp0 = page.viewportSize(); await page.setViewportSize({ width: 1440, height: 900 }); await page.waitForSelector('.cgrid.packed');
   const colH = await page.$$eval('.cgrid.packed > .ccol', (cs) => cs.map((c) => c.offsetHeight));
@@ -1174,7 +1175,7 @@ const T = 'hk-macau-2026';
   ok(await page.locator('.cover .line .nowrap').count() === 2 && await page.evaluate(() => [...document.querySelectorAll('.cover .line .nowrap')].every((e) => e.getClientRects().length === 1)), 'cover: each child\'s name and age sits on one line (Thai word breaking split a name)');
   // every control a parent taps is at least 44 px tall on the pages used during the trip
   const audit = `(sel) => [...document.querySelectorAll(sel)].filter((e) => { const r = e.getBoundingClientRect(); return r.width > 0 && r.height > 0 && r.height < 44 && !e.closest('details:not([open])'); }).map((e) => (e.textContent || e.className).trim().slice(0, 24) + ' ' + Math.round(e.getBoundingClientRect().height))`;
-  const SEL = 'main .chip, main .btn.small, main .mini, main .seg button, main .linkbtn, a.maplink, .stayc .go, .eatday .go, .bag summary, .chk label, .remind .btn, .lpc, .dmore > summary';
+  const SEL = 'main .chip, main .btn.small, main .mini, main .seg button, main .linkbtn, a.maplink, .navb, .stayc .go, .eatday .go, .bag summary, .chk label, .remind .btn, .lpc, .dmore > summary';
   for (const [name, path, wait] of [['record', `/log/1`, '.daystrip'], ['today', `/today/1`, '.day.today'], ['eat', `/eat/d/1`, '.eatday'], ['sos', `/sos`, '.tp-sos']]) {
     await page.goto(`${BASE}/#/t/${T}${path}`); await page.waitForSelector(wait);
     const small = await page.evaluate(`(${audit})(${JSON.stringify(SEL)})`);

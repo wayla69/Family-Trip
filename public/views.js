@@ -612,7 +612,9 @@ ${((r) => (r.length ? `<div class="row chips recent" role="group"><span class="l
 // which meal a pick is (its colour everywhere): breakfast · lunch · dinner · snack
 const mealKind = (p) => { const m = ((p.meal || {}).en || '').toLowerCase(); return /breakfast/.test(m) ? 'bf' : /lunch/.test(m) ? 'lu' : /dinner/.test(m) ? 'di' : 'sn'; };
 // a meal in one line: the pick (opens Maps), then its backup — so a hungry family never has to search
-const mealDd = (p) => `<b>${p.q ? mapA(p.q, esc(p.name)) : esc(p.name)}</b>${p.alt ? `<small class="bk">${L('ร้านสำรอง', 'Backup')}: ${p.alt.q ? mapA(p.alt.q, esc(p.alt.name)) : esc(p.alt.name)}</small>` : ''}`;
+// a name with its navigate button (Today's answer rows): the name is plain text, the 44 px pin opens Maps — an underlined name read as a link to a page
+const navB = (q, label) => (q ? `<a class="navb" href="${esc(mapsUrl(q))}" target="_blank" rel="noopener" aria-label="${esc(L('นำทางไป ', 'Navigate to ') + label)}">${ic('pin')}</a>` : '');
+const mealDd = (p) => `<span class="nmrow"><b>${esc(p.name)}</b>${navB(p.q, p.name)}</span>${p.alt ? `<small class="bk"><span class="nmrow">${L('ร้านสำรอง', 'Backup')}: ${esc(p.alt.name)}${navB(p.alt.q, p.alt.name)}</span></small>` : ''}`;
 // today: the day as one sheet (short timeline, then label → answer rows like the manual's tables); the full plan is one tap away (/today/<i>/full)
 function dayGlance(t, i, brief) {   // brief (before the trip): the timeline, then everything else folded under one line
   const d = t.days[i], pl = d.plan || {}, rows = pl.plan || [], full = `#/t/${esc(t.id)}/today/${i}/full`;
@@ -627,7 +629,7 @@ function dayGlance(t, i, brief) {   // brief (before the trip): the timeline, th
   const row = (dt, dd, cls) => `<div${cls ? ` class="${cls}"` : ''}><dt>${dt}</dt><dd>${dd}</dd></div>`;
   const box = (c, icon, title, rowsHtml) => (rowsHtml ? `<section class="cbox c-${c}"><h3 class="ch">${ic(icon)}${title}</h3><dl class="dsheet">${rowsHtml}</dl></section>` : '');
   const go = [pl.moving && row(L('เดินทาง', 'Getting around'), esc(T(pl.moving))),
-    pl.stay && row(L('คืนนี้', 'Tonight'), mapA(pl.stay.q || pl.stay.addr, esc(pl.stay.name))),
+    pl.stay && row(L('คืนนี้', 'Tonight'), `<span class="nmrow">${esc(pl.stay.name)}${navB(pl.stay.q || pl.stay.addr, pl.stay.name)}</span>`),
     ...((t.info || {}).more || []).filter((m) => m.img && new RegExp(`^Day ${i + 1}\\b`).test((m.title || {}).en || '')).map((m) => row(L('แผนที่', 'Map'), `<a href="${esc(m.img)}" target="_blank" rel="noopener">${esc(T(m.title).replace(/^[^·]*·\s*/, ''))} ↗</a>`))].filter(Boolean).join('');
   const food = [pl.pick && row(L('ร้านเด็ด', 'Local pick'), esc(T(pl.pick))),
     ...(pl.picks || []).map((p) => row(`<span class="mtag mk-${mealKind(p)}">${esc(T(p.meal).split(' · ')[0])}</span>${T(p.meal).includes(' · ') ? `<span class="mt">${esc(T(p.meal).split(' · ').slice(1).join(' · '))}</span>` : ''}`, mealDd(p), 'meal'))].filter(Boolean).join('');
