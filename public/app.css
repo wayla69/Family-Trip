@@ -144,6 +144,7 @@ details.fold[open]>summary{margin-bottom:8px}.planblk.fold .dayplan{margin-top:4
 /* a long timeline row shows two lines; a tap shows it all (sheets.js) */
 .tl.plan li>div{display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden;cursor:pointer}
 .tl.plan li.open>div{display:block;-webkit-line-clamp:unset}
+.dayplan.full .tl.plan li>div{display:block;-webkit-line-clamp:unset;overflow:visible;cursor:auto}   /* a report shows every line whole */
 /* Today's timeline: the step's first clause is the summary, the rest folds below it (views.js tlBrief) */
 .tl.plan.brief li>div{display:block;overflow:visible}
 .tl.plan.brief .tm{display:flex;align-items:flex-start;gap:6px;justify-content:space-between}
@@ -1714,7 +1715,7 @@ button.tile.kid{border:1px solid var(--line);text-align:left;justify-items:start
 .bill>div.tot{border-bottom:0;border-top:2px solid var(--ink);font-weight:700}.bill>div.tot dd{font-size:16px}
 .bill>div.bn{border-bottom:0}.bill>div.bn dd{white-space:normal;font-weight:400;font-size:12.5px;color:var(--muted)}
 .tl .tm{display:block}.tl .tsub{display:block;font-size:13px;color:var(--muted);margin-top:2px;line-height:1.45}
-.tips small.tsub,.gl dd small.tsub,.pocket dd small.tsub{display:block;font-size:13px;color:var(--muted);margin-top:2px}   /* a second point sits on its own line, never glued to the first */
+small.tsub{display:block;font-size:13px;color:var(--muted);margin-top:2px;line-height:1.45}   /* a second point sits on its own line, never glued to the first */
 /* ===== colour + sections (owner 18 Oct 2026: "ปรับเพิ่มสี และจัดให้เป็นสัดส่วน") — each part in its own box, its colour on the header ===== */
 .cbox{--cb:var(--accent);margin:12px 0;border-radius:16px;background:color-mix(in srgb,var(--cb) 5%,var(--paper));border:1px solid color-mix(in srgb,var(--cb) 24%,transparent);padding:0 14px 8px;overflow:hidden}
 .cbox>.ch{display:flex;align-items:center;gap:8px;margin:0 -14px 6px;padding:10px 14px;background:color-mix(in srgb,var(--cb) 15%,var(--paper));color:color-mix(in srgb,var(--cb) 72%,var(--ink));font-size:14.5px;font-weight:700}
@@ -1745,7 +1746,7 @@ button.tile.kid{border:1px solid var(--line);text-align:left;justify-items:start
 .glc .gt>b::before{content:"";display:inline-block;width:10px;height:10px;border-radius:3px;margin-right:8px;background:var(--gd);vertical-align:1px}
 .tp-learn .gcard{border-top:3px solid var(--sky)}.tp-learn .gcard:nth-child(6n+2){border-top-color:var(--leaf)}.tp-learn .gcard:nth-child(6n+3){border-top-color:var(--sun)}.tp-learn .gcard:nth-child(6n+4){border-top-color:#4F63C9}.tp-learn .gcard:nth-child(6n+5){border-top-color:var(--rose)}.tp-learn .gcard:nth-child(6n){border-top-color:var(--tealc)}
 .pocket{grid-template-columns:minmax(0,1fr)}.pocket>*{min-width:0}
-.bill dd{white-space:normal;text-align:right;max-width:62%;overflow-wrap:anywhere}.bill dt{min-width:0}.itin .grow{min-width:0}
+.bill dd{white-space:normal;text-align:right;max-width:62%;overflow-wrap:normal;word-break:keep-all}.bill>div.bn dd{max-width:none;text-align:left;font-weight:400;color:var(--muted);font-size:13px}.bill dt{min-width:0}.itin .grow{min-width:0}
 .pgrid>*{min-width:0}.dayplan .pmain{min-width:0}.qa summary,.qa p{overflow-wrap:anywhere}
 .quiz{grid-template-columns:minmax(0,1fr)}.quiz>.qa{min-width:0}
 .itin>li{min-width:0}
@@ -2229,3 +2230,26 @@ h1 .h1pic{display:inline-block;width:1.15em;height:1.15em;vertical-align:-.2em;o
 @media (max-height:900px){.login .pinpad{row-gap:4px}.lwho{margin-top:4px}.login label{margin:6px 0 2px}}
 @media (max-width:360px){.lwho .chip.who{gap:4px;padding:3px 10px 3px 4px}.lwho .chip.who img{width:28px;height:28px}.lwho .field{flex-basis:64px!important}}
 
+
+/* full reports, made easier to read (owner's review, Nov 2026) */
+.learnlink{display:flex;align-items:center;gap:10px;min-height:44px;margin:10px 0;padding:10px 14px;border:1px solid var(--line);border-radius:var(--r);background:var(--paper);color:var(--ink);text-decoration:none}
+.learnlink b{flex:1;font-size:15px}.learnlink .label{white-space:nowrap}.learnlink .ic{color:var(--accent);width:18px;height:18px}
+.manualnote{margin:14px 0 4px}
+.wxbox .dfacts{margin:6px 0 0;font-size:14px}
+.pt1.tight{font-size:14px;line-height:1.45;margin:2px 0}.pt1.lede{color:var(--muted)}
+.ecard .emerg li span small,.enights li span small{display:block;font-size:12.5px;color:var(--muted);font-weight:400;margin-top:2px;line-height:1.4}
+.enights li span>b{display:block;color:var(--ink);font-size:13.5px}.ecard h4 .label{font-weight:400}
+.elost .pts{margin:0}.elost .pts li,.elost .pt1{color:var(--hot);font-weight:600}
+/* stacked tables on a phone: "label  value" on one line, an empty cell says nothing, a group row is a heading */
+@media (max-width:560px){.prices td[data-h]{display:grid;grid-template-columns:minmax(84px,36%) 1fr;gap:8px;align-items:baseline}.prices td[data-h]::before{display:inline;font-size:12px}.prices td.nv{display:none}
+.prices tr.grp{display:block;padding:10px 0 2px;border-bottom:0}.prices tr.grp th{display:block;padding:0 8px;font-size:13px;color:var(--accent);text-transform:none;letter-spacing:0}}
+.prices tr.grp th{background:var(--soft);font-weight:700}
+.tips.nums{list-style:decimal;padding-left:1.4em}.tips.nums>li::before{content:none}
+.mtl{margin:6px 0 4px}.mtl>li{font-size:14px}
+.cjk>span{display:block}.cjk>span.zh{font-size:17px;line-height:1.35;font-weight:600}
+.tl.plan.mtl li>div{display:block;-webkit-line-clamp:unset;overflow:visible;cursor:auto}.mtl time{color:var(--accent);font-weight:600}
+.call.info .cdsub{display:block;font-size:14px;margin-top:2px}
+.wc .wt{margin:2px 0 0;font-size:14px;line-height:1.45}
+@media (max-width:480px){.words>div{display:block}.words dt{margin-bottom:1px}}
+.tips li small.tsub{padding-left:9px;border-left:2px solid var(--rule);margin-top:3px}   /* a tip's details hang under it, visibly its own */
+.dayplan .stay .addr{font-weight:600}

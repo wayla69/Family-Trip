@@ -997,7 +997,7 @@ const T = 'hk-macau-2026';
   ok(await page.locator('.itin .dayplan').count() === 6 && await page.locator('.itin .dayplan[open]').count() === 0, 'itinerary: every HK day has a collapsed plan (not on the trip yet)');
   await page.locator('.itin > li').nth(3).locator('.dayplan > summary').first().click();
   const p4 = await page.locator('.itin > li').nth(3).locator('.dayplan').textContent();
-  ok(/11:00/.test(p4) && /teamLab/.test(p4) && /Plan B/.test(p4) && /Money today/.test(p4) && /Local pick/.test(p4), 'itinerary: day 4 plan shows the timeline, local pick, plan B and money');
+  ok(/11:00/.test(p4) && /teamLab/.test(p4) && /Plan B/.test(p4) && /Money today/.test(p4) && /Local tip/.test(p4), 'itinerary: day 4 plan shows the timeline, local tip, plan B and money');
   await page.locator('.itin > li').nth(3).screenshot({ path: path.join(OUT, 'countdown-05-dayplan.png') });
   await page.goto(`${BASE}/#/t/${T}/log/3`); await page.waitForSelector('.planblk');
   ok(await page.locator('.planblk .dayplan').count() === 1 && (await page.textContent('.planblk')).includes('Wong Chi Kei') && await page.locator('details.planblk').count() === 1, 'record page: the plan sits at the top of the day in a fold (open on this phone: “keep open” is on)');
