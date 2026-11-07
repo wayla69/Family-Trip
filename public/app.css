@@ -448,6 +448,15 @@ nav.bar a[aria-current=page]{color:var(--accent)}
 main.enter>*{animation:up .38s cubic-bezier(.2,.7,.3,1) backwards}   /* backwards, not both: a kept transform makes the page the containing block of every position:fixed child (the kid bar sat at the end of the page instead of the bottom of the screen) */
 main.enter>*:nth-child(2){animation-delay:.04s}main.enter>*:nth-child(3){animation-delay:.08s}main.enter>*:nth-child(4){animation-delay:.12s}main.enter>*:nth-child(n+5){animation-delay:.16s}
 .spark{position:fixed;z-index:70;pointer-events:none;font-size:18px;margin:-10px 0 0 -10px;animation:spark .7s ease-out forwards}
+/* kid mode polish (owner's ask, Nov 2026): a page slides in when the view changes, the home tiles hop in one after another,
+   the emoji on a tile floats, a bar icon pops under the thumb — none of it under reduced motion */
+@media (prefers-reduced-motion:no-preference){
+.kidwrap.enter{animation:kidin .3s cubic-bezier(.2,.8,.3,1) both}@keyframes kidin{from{opacity:0;transform:translateY(14px) scale(.985)}}
+.kidwrap.enter .kidtiles button{animation:tilein .5s cubic-bezier(.2,.9,.3,1.15) both}@keyframes tilein{from{opacity:0;transform:translateY(26px) scale(.9)}}
+.kidwrap.enter .kidtiles button:nth-child(2){animation-delay:.07s}.kidwrap.enter .kidtiles button:nth-child(3){animation-delay:.14s}.kidwrap.enter .kidtiles button:nth-child(4){animation-delay:.21s}
+.kidtiles button>span{display:inline-block;animation:bob 3.4s ease-in-out infinite}.kidtiles button:nth-child(2)>span{animation-delay:-1.1s}.kidtiles button:nth-child(3)>span{animation-delay:-2.2s}.kidtiles button:nth-child(4)>span{animation-delay:-.6s}
+.kidbar button span{transition:transform .12s}.kidbar button:active span{transform:scale(1.3)}
+}
 /* the big celebration in kid mode (kid.js celebrate): confetti falling over the whole screen */
 .confetti{position:fixed;top:-24px;z-index:80;pointer-events:none;width:11px;height:17px;border-radius:3px;opacity:0;animation:confall var(--t,1.8s) cubic-bezier(.25,.55,.45,1) var(--d,0s) forwards}
 .confetti.e{width:auto;height:auto;background:none;font-size:28px;line-height:1}
