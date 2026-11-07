@@ -260,7 +260,7 @@ Trip: ${JSON.stringify({ title: top.title, place: top.place, from: top.from, to:
   const BATCH = 350;
   const thaiBatch = async (part, step) => {
     const th = await ask(step, WRITE(), {
-      system: 'You translate a family trip guide from English into natural Thai for Thai parents. Keep proper names, place names, times, prices and numbers as written (Latin script for names is fine). Short and clear. Answer with a JSON array of strings only — the same length and order as the input.',
+      system: 'You translate a family trip guide from English into natural Thai for Thai parents. Keep times, prices and numbers as written. Never translate a proper name word by word (a bus line, a hotel, an attraction, a place): keep it in Latin script, or in a short headline write it the way Thais say it (Golden Bus → โกลเด้นบัส, Luna Park → ลูน่าพาร์ค, Scenic World → ซีนิกเวิลด์). Short and clear; a timeline headline (one emoji + a few words) stays as short and as fun in Thai. Answer with a JSON array of strings only — the same length and order as the input.',
       user: JSON.stringify(part.map((h) => h.en)),
       max: 32000, manual: false,
     });
