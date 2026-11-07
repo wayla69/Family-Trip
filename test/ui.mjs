@@ -488,6 +488,9 @@ const T = 'hk-macau-2026';
   ok(await page.locator('.bdg').count() === 1 && (await page.textContent('.bdg')).includes('Mickey'), 'passport: Mimi’s first is a badge');
   ok(!(await page.textContent('#app')).match(/\b[A-Z]{1,2}\d{6,9}\b|e-ticket/), 'passport: nothing that looks like a real passport / ticket number');
   // tick a mission spot, a food (yum), an Explorer ID answer
+  ok(await page.locator('.mdays .chip').count() === 6 && await page.locator('.mfold[open]').count() === 1 && await page.locator('#m0 .mfold[open]').count() === 1 && await page.evaluate(() => document.documentElement.scrollHeight < 11000), `passport before the trip: day chips, only day 1's mission open (${await page.evaluate(() => document.documentElement.scrollHeight)} px)`);
+  await page.click('.mdays [data-a="mday"][data-v="1"]'); await page.waitForSelector('#m1 .mfold[open]');
+  ok(await page.locator('.mfold[open]').count() === 1 && await page.locator('.mdays .chip[aria-pressed="true"][data-v="1"]').count() === 1, 'a tap on day 2 opens its mission and folds day 1');
   await page.click('#m1 button[data-a="tick"][data-v="spot.d1.tower"]');
   await page.click('#pl-dimsum button[data-v="dimsum.eggtart"][data-yum="3"]');
   await page.click('#pl-words button[data-v="words.mhgoi"]');
@@ -526,7 +529,7 @@ const T = 'hk-macau-2026';
     'Australia, little edition too: Mika hops like a kangaroo on day 4 — a point/touch/sound mission every day, her new-words page, no words-to-say, explorer list or customs form');
   await page.click('.ppkids a[role=tab][href="#/passport/mimi/big-hop-2027"]'); await page.waitForSelector('.pp.kid-mimi #pl-master');
   ok(await page.locator('.mission .spot.little').count() === 0 && await page.locator('#m3 button[data-v^="spot.d3."]').count() === 4, 'Australia: Mimi keeps her own find-these missions');
-  await page.click('.ppkids a[role=tab][href="#/passport/mika/big-hop-2027"]'); await page.waitForSelector('.pp.kid-mika #lwords'); await page.waitForSelector('#m15 .spot.little');   // Mika's page itself (#m15 alone also matches Mimi's page still on screen)
+  await page.click('.ppkids a[role=tab][href="#/passport/mika/big-hop-2027"]'); await page.waitForSelector('.pp.kid-mika #lwords'); await page.waitForSelector('#m15 .spot.little', { state: 'attached' });   // (folded before the trip) Mika's page itself (#m15 alone also matches Mimi's page still on screen)
   await page.locator('.mapsec').screenshot({ path: path.join(OUT, 'phone-06b-map-au.png') });
   // kid mode: big buttons, locked until a grown-up holds the lock
   await page.evaluate(() => { window.__said = []; Object.defineProperty(window, 'speechSynthesis', { configurable: true, value: {

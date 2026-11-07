@@ -115,6 +115,8 @@ const A = {
   },
   // the setup steps: skip them for good (the shelf's welcome card still leads back) · "not now" on the reminders step
   startskip() { ls('startDone', 1); nav('#/'); },
+  // the passport before the trip: open that day's mission (the others fold) and go to it
+  mday(b) { mdayPick[b.dataset.t] = +b.dataset.v; render(); const el = $('#m' + b.dataset.v); if (el) el.scrollIntoView({ block: 'start', behavior: matchMedia('(prefers-reduced-motion: reduce)').matches ? 'auto' : 'smooth' }); },
   // the sample book: made for this family on request; opens its menu (already there: just opens it)
   async sample(b) {
     b.disabled = true;
