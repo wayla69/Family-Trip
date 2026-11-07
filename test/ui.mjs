@@ -1126,6 +1126,8 @@ const T = 'hk-macau-2026';
     await page.goto(`${BASE}/#/t/${tid}/today/1`); await page.waitForSelector('.dsheet');
     const btn = await page.evaluate(`(${CONTRAST})(document.querySelectorAll('main .btn:not(.ghost):not(.danger):not(.confirm)'), (b) => b)`);
     ok(btn.n >= 1 && btn.worst >= 4.5, `${tid} dark: the accent button's label reads on it (${btn.n} buttons, worst ${btn.worst.toFixed(2)}:1)`);
+    const dng = await page.evaluate(`(${CONTRAST})([(() => { const b = document.createElement('button'); b.className = 'btn danger'; b.textContent = 'x'; document.querySelector('main').appendChild(b); return b; })()], (b) => b)`);
+    ok(dng.worst >= 4.5, `${tid} dark: a danger button (accent2 fill) reads (${dng.worst.toFixed(2)}:1)`);
   }
   await page.goto(`${BASE}/#/`); await page.waitForSelector('[data-a="logout"]');
   await page.click('[data-a="logout"]'); await page.click('[data-a="logout"]'); await page.waitForSelector('#lcode');
@@ -1150,6 +1152,15 @@ const T = 'hk-macau-2026';
   await s.shot('01-privacy');
   await page.goto(`${BASE}/#/`); await page.waitForSelector('.setlist');
   ok(await page.locator('.setlist a[href="#/privacy"]').count() === 1, 'the shelf\'s settings list links to it');
+  // the menu's colours are the family's choice: pastel (default) · the book's colour · plain; saved in the profile, the same on every phone
+  await page.goto(`${BASE}/#/t/hk-macau-2026`); await page.waitForSelector('.tilepick');
+  ok(await page.locator('.hubgrid.tl-pastel').count() >= 2 && await page.locator('.tilepick button[data-v="pastel"][aria-pressed="true"]').count() === 1, 'menu: pastel tiles by default, the switch at the foot');
+  await page.click('.tilepick button[data-v="plain"]'); await page.waitForSelector('.hubgrid.tl-plain');
+  const plainBg = await page.evaluate(() => getComputedStyle(document.querySelector('.hubgrid.tl-plain .tile.t-eat')).backgroundImage);
+  ok(plainBg === 'none' && (await apiState(page)).family.tiles === 'plain', 'plain: white tiles (no pastel gradient), saved in the family profile');
+  await page.click('.tilepick button[data-v="accent"]'); await page.waitForSelector('.hubgrid.tl-accent');
+  ok((await apiState(page)).family.tiles === 'accent', 'the book\'s colour: saved too');
+  await page.click('.tilepick button[data-v="pastel"]'); await page.waitForSelector('.hubgrid.tl-pastel');
   ok(s.errs.length === 0, 'privacy: no console errors ' + s.errs.join(' | '));
   await s.ctx.close();
 }

@@ -465,10 +465,12 @@ function viewHub(t) {
   const order = dn >= 0 ? ['now', 'mem', 'prep'] : until > 0 ? ['prep', 'now', 'mem'] : ['mem', 'now', 'prep'];
   const groupOf = (h) => ['now', 'mem', 'prep'].find((g) => GROUPS[g][2].test(h));   // matched in this order: "prep" takes whatever is left
   const hero = tiles.filter((h) => /\btile t-today\b/.test(h)).join(''), rest = tiles.filter((h) => !/\btile t-today\b/.test(h));
-  const groups = order.map((g) => { const xs = rest.filter((h) => groupOf(h) === g); return xs.length ? `<div class="part hubpart">${L(GROUPS[g][0], GROUPS[g][1])}</div><div class="hubgrid">${xs.join('')}</div>` : ''; }).join('');
+  const tl = ` tl-${esc((S.family && S.family.tiles) || 'pastel')}`;   // the family's chosen tile look (pastel · the book's colour · plain), the same on every phone
+  const groups = order.map((g) => { const xs = rest.filter((h) => groupOf(h) === g); return xs.length ? `<div class="part hubpart">${L(GROUPS[g][0], GROUPS[g][1])}</div><div class="hubgrid${tl}">${xs.join('')}</div>` : ''; }).join('');
+  const pick = isEditor() ? `<div class="row tilepick"><span class="label">${L('สีของเมนู', 'Menu colours')}</span><div class="seg" role="group">${[['pastel', 'สีสัน', 'Colourful'], ['accent', 'สีเล่ม', 'The book’s colour'], ['plain', 'เรียบ', 'Plain']].map(([k, th, en]) => `<button type="button" data-a="tiles" data-v="${k}" aria-pressed="${tl === ` tl-${k}`}">${L(th, en)}</button>`).join('')}</div></div>` : '';
   return `<section class="hubhead">${stampHtml(t, true)}<div class="grow"><div class="kicker">${esc(t.theme.kicker || '')}</div><h1>${esc(T(t.title).split(' · ')[0])}</h1><p class="line">${esc(fmtRange(t))}${ages ? ' · ' + esc(ages) : ''}</p></div></section>
 <a class="hubsearch" href="#/t/${esc(t.id)}/search">${ic('search')}<span><b>${L('ค้นหาทั้งเล่ม', 'Search the whole book')}</b><small>${L('หมอ · ยา · แท็กซี่ · ห้องน้ำ · เด็กหลง', 'doctor · pharmacy · taxi · toilet · lost child')}</small></span></a>
-<div class="hubgrid hero">${hero}</div>${groups}`;
+<div class="hubgrid hero${tl}">${hero}</div>${groups}${pick}`;
 }
 /* ---------- search the whole book ----------
    One index per book, both languages (a Thai phone finds "taxi", an English one finds "แท็กซี่"): the pocket-guide sections (stays, emergency,

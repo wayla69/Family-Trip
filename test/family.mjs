@@ -78,6 +78,17 @@ const kids = [
   const vck = jar(await fetch(BASE + '/api/login', { method: 'POST', headers: { 'x-mb': '1', 'content-type': 'application/json' }, body: JSON.stringify({ code: process.env.VIEW_PIN || '835911', name: 'ยาย' }) }));
   ok((await fetch(BASE + '/api/b/family', { method: 'PUT', headers: { ...H, cookie: vck }, body: '{}' })).status === 403, 'a viewer cannot change the family');
 }
+// ---- the menu's tile look lives in the profile: PATCH sets it, a bad value is refused, PUT (the family form) keeps it
+{
+  const bad = await fetch(BASE + '/api/b/family/profile', { method: 'PATCH', headers: H, body: JSON.stringify({ tiles: 'neon' }) });
+  ok(bad.status === 400, 'profile: an unknown tile look is refused');
+  const r = await fetch(BASE + '/api/b/family/profile', { method: 'PATCH', headers: H, body: JSON.stringify({ tiles: 'plain' }) });
+  ok(r.ok && (await r.json()).family.tiles === 'plain' && (await state()).family.tiles === 'plain', 'profile: tiles = plain saved, in the state');
+  const st = await state();
+  const put = await fetch(BASE + '/api/b/family', { method: 'PUT', headers: H, body: JSON.stringify({ profile: { app: st.family.custom.app, kicker: st.family.custom.kicker }, children: st.children.map((k) => ({ slug: k.slug, name_th: k.name_th, name_en: k.name_en, emoji: k.emoji, birth_ym: k.birth_ym || '2023-01', look: k.look })) }) });
+  ok(put.ok && (await state()).family.tiles === 'plain' && (await state()).family.app.en === st.family.app.en, 'the family form (no tile look sent) keeps the chosen look and the name');
+}
+
 // ---- delete everything (the privacy page): the typed app name confirms; files and rows go; the bundled books come back empty
 {
   const st0 = await state(), app = st0.family.app.en;

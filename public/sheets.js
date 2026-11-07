@@ -113,6 +113,8 @@ const A = {
   },
   // the setup steps: skip them for good (the shelf's welcome card still leads back) · "not now" on the reminders step
   startskip() { ls('startDone', 1); nav('#/'); },
+  // the book menu's tile look, for the whole family: applied at once, saved in the profile
+  tiles(b) { const v = b.dataset.v; if (S.family) S.family.tiles = v; render(); api('PATCH', '/api/b/family/profile', { tiles: v }).catch(() => toast(L('บันทึกไม่สำเร็จ ลองใหม่', 'Could not save — try again'))); },
   // delete everything (privacy page): the typed app name is the confirmation; afterwards this phone is signed out and wiped
   async erase(b) {
     const msg = $('#erasemsg'), typed = ($('#erasetxt') || {}).value || '';
