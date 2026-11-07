@@ -14,15 +14,15 @@ const state = async () => (await fetch(BASE + '/api/b/state', { headers: { cooki
 // ---- before login: the brand, with no names
 {
   const b = await (await fetch(BASE + '/api/brand')).json();
-  ok(b.app.en === 'MM Memory' && b.kicker.th === 'ของมีมี่และมีก้า' && b.kicker.en === 'Mimi & Mika', `brand: the app name from the kids' initials and the kicker from their names (${b.app.en} · ${b.kicker.th})`);
+  ok(b.app.en === 'LifeBook' && b.kicker.th === 'ของมีมี่และมีก้า' && b.kicker.en === 'Mimi & Mika', `brand: the app name from the kids' initials and the kicker from their names (${b.app.en} · ${b.kicker.th})`);
   ok(JSON.stringify(b.kids) === JSON.stringify([{ slug: 'mimi', v: '' }, { slug: 'mika', v: '' }]) && !JSON.stringify(b).includes('name_'), 'brand: the drawings by slug only, no names, no birth months');
   const m = await (await fetch(BASE + '/manifest.webmanifest')).json();
-  ok(m.name === 'MM Memory' && m.short_name === 'MM Memory' && m.icons.length === 3, 'the manifest carries the app name');
+  ok(m.name === 'LifeBook' && m.short_name === 'LifeBook' && m.icons.length === 3, 'the manifest carries the app name');
 }
 // ---- the state
 {
   const s = await state();
-  ok(s.family && s.family.app.th === 'MM Memory' && s.children.length === 2 && s.children[0].look === null && s.children[0].v === '', 'state: the family block, the children with their (empty) look');
+  ok(s.family && s.family.app.th === 'LifeBook' && s.children.length === 2 && s.children[0].look === null && s.children[0].v === '', 'state: the family block, the children with their (empty) look');
   ok((await fetch(BASE + '/art/kids/mimi.svg')).headers.get('content-type').includes('svg') && (await (await fetch(BASE + '/art/kids/mimi.svg')).text()).includes('kmimi'), 'Mimi with no look is the static drawing');
   ok((await fetch(BASE + '/art/kids/nobody.svg')).status === 200 && (await (await fetch(BASE + '/art/kids/nobody.svg')).text()).includes('<!doctype html'), 'an unknown kid falls through to the app shell like any other path');
 }

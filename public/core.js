@@ -422,8 +422,8 @@ function burst(el, chars) {
 // children's drawings only, never their names), and the children as drawn (server/family.js: each child's "look" recolours one of
 // the two hand-drawn characters; Mimi and Mika with no look are the drawings as they are)
 let BRAND = ls('brand') || null;
-const famProf = () => (S && S.family) || BRAND || { app: { th: 'Memory Bookshelf', en: 'Memory Bookshelf' }, kicker: { th: '', en: '' } };
-const appName = () => T(famProf().app) || 'Memory Bookshelf';
+const famProf = () => (S && S.family) || BRAND || { app: { th: 'LifeBook', en: 'LifeBook' }, kicker: { th: '', en: '' } };
+const appName = () => T(famProf().app) || 'LifeBook';
 const kicker = () => T(famProf().kicker);
 // "มีมี่และมีก้า" / "Mimi and Mika" — every child, in the language on screen
 const kidsNames = () => { const ns = children().map((k) => (lang === 'th' ? k.name_th : k.name_en)).filter(Boolean); return ns.length <= 1 ? ns.join('') : ns.slice(0, -1).join(lang === 'th' ? ' ' : ', ') + (lang === 'th' ? 'และ' : ' and ') + ns[ns.length - 1]; };

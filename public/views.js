@@ -91,7 +91,7 @@ function render() {
   document.body.classList.toggle('serif', !!(t ? t.theme.display === 'serif' : false));
   document.documentElement.lang = lang;
   document.body.classList.toggle('onb', p[0] === 'start');   // the setup steps have no bottom bar
-  document.title = t ? `${T(t.title)} · MM Memory` : 'MM Memory';
+  document.title = t ? `${T(t.title)} · ${appName()}` : appName();
   const key = p.slice(0, 3).join('/') + (p.includes('full') ? '/full/' + (p[4] || '') : ''), enter = key !== lastView; lastView = key;   // animate only when the page changes, not on every save
   app.innerHTML = topBar(t, p) + `<main class="wrap${enter ? ' enter' : ''}">${offline ? `<div class="notice">${L('ไม่มีเน็ต — แสดงข้อมูลล่าสุดที่เก็บไว้ บันทึกได้ตามปกติ จะส่งขึ้นเองเมื่อกลับมามีเน็ต', 'Offline — showing the last saved copy. You can keep recording; it uploads when you are back online.')}${S.syncedAt ? ` <small>· ${L('ข้อมูลล่าสุดเมื่อ', 'last synced')} ${esc(new Date(S.syncedAt).toLocaleString(LOC(), { day: 'numeric', month: 'short', hour: '2-digit', minute: '2-digit' }))}</small>` : ''}</div>` : ''}${html}</main>` + tabBar(t, p);
   if (p[0] === 't' && p[2] === 'search' && enter) setTimeout(() => { const q = $('#bookq'); if (q) q.focus(); }, 60);   // a search page opens ready to type
@@ -1053,7 +1053,7 @@ ${cert && certEarned(t, kid) ? `<div class="pcert"><div class="kicker">${L('ใ�
   const forePg = fore ? pg('forep', `${head(L('คำนำ', 'Foreword'), esc(T(t.title).split(' · ')[0]))}<div class="call calm fore">${esc(fore.text)}</div>`) : '';
   const letter = entriesOf(t.id).find((e) => e.kind === 'letter' && e.text);   // the letter to the kids: the last page before the back cover
   const letterPg = letter ? pg('letterp', `${head(L('จดหมายถึงลูก', 'A letter to you'), L('ไว้อ่านตอนโต', 'For when you are older'))}<div class="letter">${esc(letter.text)}</div>`) : '';
-  const back = pg('back', `<div class="bk">${castHtml(kids)}<h2>${L('จบเล่ม', 'The end')}</h2><p>${esc(short)} · ${esc(fmtRange(t))}</p><p class="label">${L(`${st.photos} รูป · ${st.quotes} คำพูด · ${st.firsts} ครั้งแรก · บันทึก ${days.length} วัน`, `${st.photos} photos · ${st.quotes} quotes · ${st.firsts} firsts · ${days.length} days recorded`)}</p><p class="label">MM Memory · ${esc(printed)}</p></div>`);
+  const back = pg('back', `<div class="bk">${castHtml(kids)}<h2>${L('จบเล่ม', 'The end')}</h2><p>${esc(short)} · ${esc(fmtRange(t))}</p><p class="label">${L(`${st.photos} รูป · ${st.quotes} คำพูด · ${st.firsts} ครั้งแรก · บันทึก ${days.length} วัน`, `${st.photos} photos · ${st.quotes} quotes · ${st.firsts} firsts · ${days.length} days recorded`)}</p><p class="label">${esc(appName())} · ${esc(printed)}</p></div>`);
   return `<div class="pbook noprint-bar"><a class="btn small" href="/api/b/pdf/${esc(t.id)}" download data-a="pdf">⬇ ${L('ดาวน์โหลด PDF', 'Download PDF')}</a><a class="btn ghost small" href="#/t/${esc(t.id)}">‹ ${L('กลับไปสมุด', 'Back to the book')}</a><span class="label">${L('ตัวอย่างสมุดความทรงจำ — หน้า A4 ตามที่จะพิมพ์', 'Memory book preview — A4 pages as they will print')}</span></div>
 ${cover}${forePg}${numbers}${contents}${dayPages}${firstsPg}${wordsPg}${ppPages}${heartsPg}${storyPg}${notesPg}${letterPg}${back}`;
 }
@@ -1318,7 +1318,7 @@ ${rows.length ? `<ul class="emolist">${rows.map(card).join('')}</ul>` : `<p clas
 }
 let fam = null;
 const famBuilt = () => { const ks = fam.kids.filter((k) => k.name_en.trim()); const ini = ks.map((k) => k.name_en.trim()[0].toUpperCase()).join(''); const th = ks.map((k) => k.name_th.trim() || k.name_en.trim());
-  const app = ini ? `${ini} Memory` : 'Memory Bookshelf', nth = th.length <= 1 ? th.join('') : th.slice(0, -1).join(' ') + 'และ' + th[th.length - 1];
+  const app = 'LifeBook', nth = th.length <= 1 ? th.join('') : th.slice(0, -1).join(' ') + 'และ' + th[th.length - 1];
   return { app: { th: app, en: app }, kicker: { th: ks.length ? `ของ${nth}` : 'สมุดความทรงจำของครอบครัว', en: ks.length ? ks.map((k) => k.name_en.trim()).join(' & ') : 'Our family memory books' } }; };
 // the drawing for a kid card: the look being edited (rendered by the server from ?look=), or Mimi / Mika as drawn
 const famArt = (k, full) => (k.avatar ? `/media/kid/${encodeURIComponent(k.slug)}/${full ? 'full' : 'face'}.png?v=${encodeURIComponent(k.avatar)}` : k.look ? `/art/kids/${encodeURIComponent(k.slug || 'new')}${full ? '-full' : ''}.svg?look=${encodeURIComponent(JSON.stringify(k.look))}` : kidArt(k.slug, full));
@@ -1374,7 +1374,7 @@ ${!S.features.avatar ? '' : (() => {   // no drawing helper on this server: no b
 <div class="famappf"><h3>${ic('device')} ${L('ชื่อแอป', 'App name')}</h3>
 <div class="famrow"><label>${L('ชื่อแอป (ไทย)', 'App name (Thai)')}<input class="field" data-famp="app:th" value="${esc(fam.app.th)}" maxlength="40"></label><label>${L('ชื่อแอป (อังกฤษ)', 'App name (English)')}<input class="field" data-famp="app:en" value="${esc(fam.app.en)}" maxlength="40"></label></div>
 <div class="famrow"><label>${L('บรรทัดเล็กใต้ชื่อ (ไทย)', 'Line under the name (Thai)')}<input class="field" data-famp="kicker:th" value="${esc(fam.kicker.th)}" maxlength="40"></label><label>${L('บรรทัดเล็กใต้ชื่อ (อังกฤษ)', 'Line under the name (English)')}<input class="field" data-famp="kicker:en" value="${esc(fam.kicker.en)}" maxlength="40"></label></div>
-<p class="famhint">${L('เว้นว่างได้ แอปจะตั้งให้เองจากชื่อลูก (ตัวอักษรแรก + Memory)', 'Leave empty and the app names itself from the children (initials + Memory)')}</p></div></section>
+<p class="famhint">${L('เว้นว่างได้ แอปจะใช้ชื่อ LifeBook และบรรทัดเล็กจากชื่อลูก', 'Leave empty for LifeBook with the children’s names under it')}</p></div></section>
 
 <h2 class="famh3">🧒 ${L('ลูกๆ', 'The children')} <span class="pill">${fam.kids.length}/6</span></h2>
 <div class="famkids">${fam.kids.map(card).join('')}

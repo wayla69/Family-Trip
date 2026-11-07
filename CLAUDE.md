@@ -1,6 +1,6 @@
 # CLAUDE.md — Memory Bookshelf
 
-Shown to users as **MM Memory** (tab title, home-screen name, login page, top bar, push fallback title, PDF footer and back cover); the code, docs and backup format keep the project name Memory Bookshelf (`memory-bookshelf-backup` must not change — old backups must still restore).
+Shown to users as **LifeBook** (the product name, Nov 2026: tab title, home-screen name, login page, top bar, push fallback title, PDF footer and back cover; a family may rename its own app in `#/family`, the kicker names the children); the code, docs and backup format keep the project name Memory Bookshelf (`memory-bookshelf-backup` must not change — old backups must still restore).
 
 Family memory bookshelf for Mimi (มีมี่) and Mika (มีก้า): one book per trip. Self-hosted on **Railway**: Node 22 + **Postgres** + photos in a **Railway Storage Bucket**. The owner (Oshinei) writes Thai and wants direct execution, concise replies. UI strings are bilingual (TH/EN) through `L(th, en)`.
 

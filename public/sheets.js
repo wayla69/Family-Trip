@@ -753,7 +753,7 @@ async function drawDayCard(t, i) {
     g.fillStyle = '#666D79'; g.font = F(500, 30); g.fillText(`— ${kidName(quote.child)}`, M + 32, y); y += 40;
   }
   g.fillStyle = '#666D79'; g.font = F(600, 28);
-  g.fillText(`MM Memory · ${T(t.title).split(' · ')[0]}`, M, CARD_H - 56);
+  g.fillText(`${appName()} · ${T(t.title).split(' · ')[0]}`, M, CARD_H - 56);
   return new Promise((ok) => c.toBlob(ok, 'image/png'));
 }
 // the lost-child card: 1080×1920 (a phone's lock screen; the top is left calm for the clock). English first (staff anywhere read it),
@@ -776,7 +776,7 @@ async function drawLostCard(t, kid, photoUrl, tels) {
   g.fillStyle = th.calm || th.panel || '#EEF3EF'; g.fillRect(0, 0, W0, 340);   // calm area under the lock-screen clock
   // bottom up: the footer, the emergency bar, tonight's address, the call box — the photo takes what is left
   g.fillStyle = muted; g.font = F(600, 30);
-  center(`${new Date(d.date + 'T00:00:00').toLocaleDateString('en-GB', { weekday: 'short', day: 'numeric', month: 'short', year: 'numeric' })} · MM Memory`, H0 - 44);
+  center(`${new Date(d.date + 'T00:00:00').toLocaleDateString('en-GB', { weekday: 'short', day: 'numeric', month: 'short', year: 'numeric' })} · ${appName()}`, H0 - 44);
   let bottom = H0 - 96;
   if (sos) {
     const sh = 100; bottom -= sh;
