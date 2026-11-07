@@ -126,6 +126,13 @@ const T = 'hk-macau-2026';
 
   // record day 2
   await page.goto(`${BASE}/#/t/${T}/log/1`); await page.waitForSelector('.daystrip');
+  // the strip under the date: tonight's three, ✓ where the day holds something, ○ where it is still empty; a tap jumps to that box
+  ok(await page.evaluate(() => { const cs = [...document.querySelectorAll('.logprog .lpc')], es = entriesOf('hk-macau-2026', 1);
+    const want = { '#lgphotos': mediaOf('hk-macau-2026', 1).length > 0, '#lgquotes': es.some((e) => e.kind === 'quote'), '#lgmood': es.some((e) => e.kind === 'mood' && e.mood) };
+    return cs.length === 3 && cs.every((c) => document.querySelector(c.dataset.v) && c.classList.contains('on') === want[c.dataset.v] && c.querySelector('i').textContent === (want[c.dataset.v] ? '✓' : '○')); }), 'record page: the strip under the date says which of photos · words · mood the day already holds');
+  await page.click('.logprog .lpc[data-v="#lgmood"]'); await page.waitForFunction(() => Math.abs(document.querySelector('#lgmood').getBoundingClientRect().top) < 140);
+  ok(true, 'record page: a tap on the strip scrolls to that box');
+  await page.goto(`${BASE}/#/t/${T}/log/1`); await page.waitForSelector('.daystrip');
   ok(await page.locator('.daystrip a').count() === 6, 'day strip shows 6 days');
   await page.fill('#qtext', 'ปลาอยู่ในน้ำเหมือนหนูเลย');
   await page.click('button[data-a="who"][data-v="mika"]');
@@ -1163,7 +1170,7 @@ const T = 'hk-macau-2026';
   ok(await page.locator('.cover .line .nowrap').count() === 2 && await page.evaluate(() => [...document.querySelectorAll('.cover .line .nowrap')].every((e) => e.getClientRects().length === 1)), 'cover: each child\'s name and age sits on one line (Thai word breaking split a name)');
   // every control a parent taps is at least 44 px tall on the pages used during the trip
   const audit = `(sel) => [...document.querySelectorAll(sel)].filter((e) => { const r = e.getBoundingClientRect(); return r.width > 0 && r.height > 0 && r.height < 44 && !e.closest('details:not([open])'); }).map((e) => (e.textContent || e.className).trim().slice(0, 24) + ' ' + Math.round(e.getBoundingClientRect().height))`;
-  const SEL = 'main .chip, main .btn.small, main .mini, main .seg button, main .linkbtn, a.maplink, .stayc .go, .eatday .go, .bag summary, .chk label, .remind .btn';
+  const SEL = 'main .chip, main .btn.small, main .mini, main .seg button, main .linkbtn, a.maplink, .stayc .go, .eatday .go, .bag summary, .chk label, .remind .btn, .lpc, .dmore > summary';
   for (const [name, path, wait] of [['record', `/log/1`, '.daystrip'], ['today', `/today/1`, '.day.today'], ['eat', `/eat/d/1`, '.eatday'], ['sos', `/sos`, '.tp-sos']]) {
     await page.goto(`${BASE}/#/t/${T}${path}`); await page.waitForSelector(wait);
     const small = await page.evaluate(`(${audit})(${JSON.stringify(SEL)})`);
