@@ -29,6 +29,14 @@ async function session(name, { width = 390, height = 844, scheme = 'light', loga
   const noHScroll = () => page.evaluate(() => document.documentElement.scrollWidth <= window.innerWidth + 1);
   return { ctx, page, errs, shot, noHScroll };
 }
+// WCAG contrast, run in the page: (elements, el → the element whose background is the ground) → { worst, n }
+const CONTRAST = `function (els, groundOf) {
+  const rgb = (c) => { const m = c.match(/[\\d.]+/g).map(Number); return /^color\\(/.test(c) ? m.slice(0, 3).map((v) => v * 255) : m.slice(0, 3); };
+  const lum = (c) => rgb(c).map((v) => v / 255).map((v) => (v <= 0.03928 ? v / 12.92 : ((v + 0.055) / 1.055) ** 2.4)).reduce((s, v, i) => s + v * [0.2126, 0.7152, 0.0722][i], 0);
+  let worst = Infinity, n = 0;
+  for (const el of els) { const a = lum(getComputedStyle(el).color), b = lum(getComputedStyle(groundOf(el)).backgroundColor); worst = Math.min(worst, (Math.max(a, b) + 0.05) / (Math.min(a, b) + 0.05)); n++; }
+  return { worst, n };
+}`;
 async function login(page) {
   await page.goto(BASE + '/');
   await page.waitForSelector('#lf');
@@ -1069,6 +1077,19 @@ const T = 'hk-macau-2026';
   await s.ctx.close();
 }
 
+// every book's grey text reads on its cream panel and callout tints (Harbour Hop's #6D7480 was 4.2:1 on the panel)
+{
+  const lum = (h) => [0, 2, 4].map((i) => parseInt(h.slice(1 + i, 3 + i), 16) / 255).map((v) => (v <= 0.03928 ? v / 12.92 : ((v + 0.055) / 1.055) ** 2.4)).reduce((s, v, i) => s + v * [0.2126, 0.7152, 0.0722][i], 0);
+  const cr = (a, b) => { const x = lum(a), y = lum(b); return (Math.max(x, y) + 0.05) / (Math.min(x, y) + 0.05); };
+  const css = fs.readFileSync('public/app.css', 'utf8'), root = (k) => css.match(new RegExp(`--${k}:(#[0-9A-Fa-f]{6})`))[1];
+  const books = [['app default', { muted: root('muted'), panel: root('panel'), pick: root('pick'), warn: root('warn') }],
+    ...fs.readdirSync('server/seeds').filter((f) => f.endsWith('.json')).map((f) => [f, JSON.parse(fs.readFileSync(`server/seeds/${f}`, 'utf8')).theme])];
+  for (const [name, th] of books) {
+    const worst = Math.min(...['panel', 'pick', 'warn', 'paper'].map((g) => cr(th.muted, th[g] || '#FFFFFF')));
+    ok(worst >= 4.5, `${name}: muted text reads on paper, panel and callout tints (worst ${worst.toFixed(2)}:1)`);
+  }
+}
+
 // kid mode + bedtime player on a desktop, dark
 {
   const s = await session('kid-wide', { width: 1440, height: 900, scheme: 'dark' });
@@ -1089,6 +1110,12 @@ const T = 'hk-macau-2026';
   ok(s.errs.length === 0, 'kid wide: no console errors ' + s.errs.join(' | '));
   // sign out from the shelf: two taps → the login form; after a reload the cookie is gone, and the phone's offline copy with it
   await page.evaluate(() => ls('kidmode', null));
+  // dark mode lightens the book's accent, so text on an accent fill turns dark (white on it was ~2.2:1)
+  for (const tid of [T, 'big-hop-2027']) {
+    await page.goto(`${BASE}/#/t/${tid}/today/1`); await page.waitForSelector('.dsheet');
+    const btn = await page.evaluate(`(${CONTRAST})(document.querySelectorAll('main .btn:not(.ghost):not(.danger):not(.confirm)'), (b) => b)`);
+    ok(btn.n >= 1 && btn.worst >= 4.5, `${tid} dark: the accent button's label reads on it (${btn.n} buttons, worst ${btn.worst.toFixed(2)}:1)`);
+  }
   await page.goto(`${BASE}/#/`); await page.waitForSelector('[data-a="logout"]');
   await page.click('[data-a="logout"]'); await page.click('[data-a="logout"]'); await page.waitForSelector('#lcode');
   await page.reload(); await page.waitForSelector('#lcode');

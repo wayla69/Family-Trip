@@ -335,8 +335,18 @@ function themeStyle(t) {
   const th = (t && t.theme) || {};
   const keys = { accent: '--accent', accent2: '--accent2', ink: '--ink', muted: '--muted', panel: '--panel', rule: '--rule', pick: '--pick', info: '--info', calm: '--calm', warn: '--warn' };
   const dark = matchMedia('(prefers-color-scheme: dark)').matches;
-  return Object.entries(keys).filter(([k]) => th[k] && !(dark && ['ink', 'muted', 'panel', 'rule', 'pick', 'info', 'calm', 'warn'].includes(k)))
-    .map(([k, v]) => `${v}:${k === 'accent' && dark && th.accentDark ? th.accentDark : th[k]}`).join(';');
+  const css = Object.entries(keys).filter(([k]) => th[k] && !(dark && ['ink', 'muted', 'panel', 'rule', 'pick', 'info', 'calm', 'warn'].includes(k)))
+    .map(([k, v]) => `${v}:${k === 'accent' && dark && th.accentDark ? th.accentDark : th[k]}`);
+  const acc = dark && th.accentDark ? th.accentDark : th.accent;
+  if (acc) css.push(`--on-accent:${onAccent(acc)}`);   // text on an accent fill: white on a deep accent, the dark paper on the light dark-mode accent
+  return css.join(';');
+}
+// WCAG contrast: white or the dark paper, whichever reads better on this colour
+function onAccent(hex) {
+  const m = /^#?([0-9a-f]{6})$/i.exec(String(hex).trim()); if (!m) return '#FFFFFF';
+  const lum = (h) => [0, 2, 4].map((i) => parseInt(h.slice(i, i + 2), 16) / 255).map((v) => (v <= 0.03928 ? v / 12.92 : ((v + 0.055) / 1.055) ** 2.4)).reduce((s, v, i) => s + v * [0.2126, 0.7152, 0.0722][i], 0);
+  const l = lum(m[1]), cr = (a, b) => (Math.max(a, b) + 0.05) / (Math.min(a, b) + 0.05);
+  return cr(l, 1) >= cr(l, lum('1B2230')) ? '#FFFFFF' : '#1B2230';
 }
 const firstLabel = (t, key) => { const f = t.firsts.find((x) => x.key === key); return f ? { e: f.emoji, t: T(f.label) } : { e: '⭐', t: key }; };
 
