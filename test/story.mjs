@@ -479,12 +479,17 @@ try {
     const photo = await sharp({ create: { width: 2400, height: 3200, channels: 3, background: '#8B5A2B' } }).jpeg().toBuffer();
     const draw = () => fetch(BASE + '/api/b/family/avatar/mimi', { method: 'POST', headers: { 'x-mb': '1', cookie: ck, 'content-type': 'image/jpeg' }, body: photo });
     const quota = async () => (await (await fetch(BASE + '/api/b/family/avatars', { headers: { cookie: ck } })).json());
+    const noBirth = await draw();
+    ok(noBirth.status === 400 && (await noBirth.json()).error === 'birth' && openaiCalls.length === 0, 'avatars: no drawing before the birth month is set (the character is drawn at the child\'s age)');
+    const ym = (mAgo) => { const d = new Date(); d.setUTCDate(1); d.setUTCMonth(d.getUTCMonth() - mAgo); return d.toISOString().slice(0, 7); };
+    const fam = await fetch(BASE + '/api/b/family', { method: 'PUT', headers: H, body: JSON.stringify({ profile: {}, children: [{ slug: 'mimi', name_th: 'มีมี่', name_en: 'Mimi', emoji: '👧', birth_ym: ym(42) }, { slug: 'mika', name_th: 'มีก้า', name_en: 'Mika', emoji: '👶', birth_ym: ym(18) }] }) });
+    ok(fam.ok, 'avatars: the parents set the birth months');
     const q0 = await quota();
     ok(q0.on === true && q0.yearly === 3 && q0.left.mimi === 3 && q0.left.mika === 3, 'avatars: on with the OpenAI key, three a year for each child');
     const r0 = await draw();
     ok(r0.status === 502 && (await r0.json()).error === 'refused' && (await quota()).left.mimi === 3, 'avatars: a picture the safety system turns down says so and does not use a try');
     const c = openaiCalls[0], body = c.raw.toString('latin1');
-    ok(c.headers.authorization === 'Bearer test-openai' && /multipart\/form-data/.test(c.headers['content-type']) && /name="model"\r\n\r\ngpt-image-1/.test(body) && /name="background"\r\n\r\ntransparent/.test(body) && /name="size"\r\n\r\n1024x1536/.test(body) && body.includes('Transparent background.'), 'avatars: one multipart call to the image model, transparent background, portrait');
+    ok(c.headers.authorization === 'Bearer test-openai' && /multipart\/form-data/.test(c.headers['content-type']) && /name="model"\r\n\r\ngpt-image-1/.test(body) && /name="background"\r\n\r\ntransparent/.test(body) && /name="size"\r\n\r\n1024x1536/.test(body) && body.includes('Transparent background.') && body.includes('The child is 3 and a half years old: draw them at exactly that age'), 'avatars: one multipart call to the image model, transparent background, portrait, the child\'s age today');
     ok(c.raw.length < photo.length && c.raw.length < 2.5e6, 'avatars: the photo is shrunk to 1024 px before it leaves');
     const r1 = await draw(), j1 = await r1.json();
     ok(r1.ok && /^[0-9a-f]{12}$/.test(j1.avatar) && j1.left === 2, `avatars: drawn and used at once, two tries left (${JSON.stringify(j1)})`);
@@ -497,11 +502,14 @@ try {
     const brand = await (await fetch(BASE + '/api/brand')).json();
     ok(brand.kids.find((k) => k.slug === 'mimi').a === 1 && !JSON.stringify(brand).includes(j1.avatar), 'avatars: the sign-in page only learns that a drawing exists, not where');
     const r2 = await draw(), j2 = await r2.json();
-    ok(r2.ok && j2.left === 1 && (await fetch(BASE + `/media/kid/mimi/full.png?v=${j1.avatar}`, { headers: { cookie: ck } })).ok, 'avatars: drawing again replaces the old one (same url, new version)');
+    ok(r2.ok && j2.left === 1 && j2.avatars.length === 2 && j2.avatars[0].id === j1.avatar && j2.avatars[1].id === j2.avatar && j2.avatars[1].age_m === 42 && /^\d{4}-\d{2}-\d{2}$/.test(j2.avatars[1].at), `avatars: every drawing is kept with its day and the age it was drawn at (${JSON.stringify(j2.avatars)})`);
+    ok((await fetch(BASE + `/media/kid/mimi/full.png?v=${j1.avatar}`, { headers: { cookie: ck } })).ok && (await fetch(BASE + '/media/kid/mimi/full.png?v=deadbeef0000', { headers: { cookie: ck } })).ok, 'avatars: an older book still gets its own drawing; an id the child doesn\'t own falls back to the newest');
+    const st2 = await (await fetch(BASE + '/api/b/state', { headers: { cookie: ck } })).json();
+    ok(st2.children.find((k) => k.slug === 'mimi').avatars.length === 2 && st2.children.find((k) => k.slug === 'mimi').avatar === j2.avatar, 'avatars: the state carries the drawing history for each book to pick from');
     await draw();
     const r4 = await draw();
     ok(r4.status === 429 && (await r4.json()).left === 0 && openaiCalls.length === 4, 'avatars: the fourth try in a year is refused before any call');
-    ok((await fetch(BASE + '/api/b/family/avatar/mimi', { method: 'DELETE', headers: { 'x-mb': '1', cookie: ck } })).ok && (await fetch(BASE + '/media/kid/mimi/full.png', { headers: { cookie: ck } })).status === 404 && (await quota()).left.mimi === 0, 'avatars: back to the plain drawing; the tries used stay used');
+    ok((await fetch(BASE + '/api/b/family/avatar/mimi', { method: 'DELETE', headers: { 'x-mb': '1', cookie: ck } })).ok && (await fetch(BASE + '/media/kid/mimi/full.png', { headers: { cookie: ck } })).status === 404 && (await fetch(BASE + `/media/kid/mimi/full.png?v=${j1.avatar}`, { headers: { cookie: ck } })).status === 404 && (await quota()).left.mimi === 0, 'avatars: back to the plain drawing — every drawing goes; the tries used stay used');
     ok((await fetch(BASE + '/api/b/family/avatar/nobody', { method: 'POST', headers: { 'x-mb': '1', cookie: ck, 'content-type': 'image/jpeg' }, body: photo })).status === 404, 'avatars: only for a child of this family');
   }
   await browser.close();

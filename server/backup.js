@@ -38,8 +38,8 @@ async function sendZip(res, pool, media) {
     if (buf) z.append(buf, { name: String(m.mime || '').startsWith('audio/') ? `audio/${m.id}.${AUDIO_EXT[m.mime] || 'webm'}` : `photos/${m.id}.jpg` });
   }
   for (const k of b.tables.children || []) {   // each child's character drawn from a photo (server/avatar.js), full figure and face
-    if (!k.avatar) continue;
-    for (const kind of ['full', 'face']) { const buf = await media.get(`k/${k.slug}/${k.avatar}-${kind}.png`); if (buf) z.append(buf, { name: `kids/${k.slug}-${k.avatar}-${kind}.png` }); }
+    const ids = new Set([k.avatar, ...(Array.isArray(k.avatars) ? k.avatars.map((d) => d && d.id) : [])].filter(Boolean));
+    for (const id of ids) for (const kind of ['full', 'face']) { const buf = await media.get(`k/${k.slug}/${id}-${kind}.png`); if (buf) z.append(buf, { name: `kids/${k.slug}-${id}-${kind}.png` }); }
   }
   await z.finalize();
 }
@@ -96,9 +96,12 @@ async function importZip(file, pool, media) {
     }
     // the children's drawn characters: keys rebuilt from a checked slug and id, written only when missing, and only real PNGs
     for (const k of b.tables.children || []) {
-      if (!SLUG_RE.test(String(k.slug)) || !/^[0-9a-f]{12}$/.test(String(k.avatar || ''))) { k.avatar = null; continue; }
-      for (const kind of ['full', 'face']) {
-        const e = out[`kids/${k.slug}-${k.avatar}-${kind}.png`], key = `k/${k.slug}/${k.avatar}-${kind}.png`;
+      const okId = (id) => /^[0-9a-f]{12}$/.test(String(id || ''));
+      if (!SLUG_RE.test(String(k.slug))) { k.avatar = null; k.avatars = []; continue; }
+      if (!okId(k.avatar)) k.avatar = null;
+      k.avatars = (Array.isArray(k.avatars) ? k.avatars : []).filter((d) => d && okId(d.id) && /^\d{4}-\d{2}-\d{2}$/.test(String(d.at || ''))).map((d) => ({ id: d.id, at: d.at, age_m: Number.isInteger(d.age_m) ? d.age_m : null }));
+      for (const [id, kind] of [...new Set([k.avatar, ...k.avatars.map((d) => d.id)].filter(Boolean))].flatMap((i) => [[i, 'full'], [i, 'face']])) {
+        const e = out[`kids/${k.slug}-${id}-${kind}.png`], key = `k/${k.slug}/${id}-${kind}.png`;
         if (!e || (await media.get(key))) continue;
         const buf = await readEntry(z, e, 10e6);
         if ((await sharp(buf).metadata()).format === 'png') await media.put(key, buf, 'image/png');

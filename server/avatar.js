@@ -17,13 +17,15 @@ const PROMPT = 'Turn the child in this photo into a cute cartoon character for a
   + 'Keep what makes the child recognisable: the hairstyle and hair colour, the skin tone, and the colours and pattern of the clothes in the photo. '
   + 'Simple sneakers. Only the child: no background, no text, no props, no other people. Transparent background.';
 
-// photo (any image) → { full: PNG, face: PNG, usage }
-async function draw(photo, { signal } = {}) {
+// the child's age as the prompt says it: "18 months" under two, else "3 years" / "3 and a half years"
+const ageWords = (m) => (m == null ? '' : m < 24 ? `${m} months` : `${Math.floor(m / 12)}${m % 12 >= 6 ? ' and a half' : ''} years`);
+// photo (any image) → { full: PNG, face: PNG, usage }; ageM = the child's age in months today, so the character is drawn at that age
+async function draw(photo, { signal, ageM = null } = {}) {
   const src = await sharp(photo, { failOn: 'none', limitInputPixels: 120e6 }).rotate().resize({ width: 1024, height: 1024, fit: 'inside', withoutEnlargement: true }).png().toBuffer();
   const fd = new FormData();
   fd.append('model', MODEL());
   fd.append('image', new Blob([src], { type: 'image/png' }), 'child.png');
-  fd.append('prompt', PROMPT);
+  fd.append('prompt', ageM == null ? PROMPT : `${PROMPT} The child is ${ageWords(ageM)} old: draw them at exactly that age (body proportions, face, hair length), even if the photo is older.`);
   fd.append('size', '1024x1536');
   fd.append('quality', QUALITY());
   fd.append('background', 'transparent');
@@ -49,4 +51,4 @@ async function draw(photo, { signal } = {}) {
   return { full, face, usage: j.usage || null };
 }
 
-module.exports = { enabled, draw, YEARLY, MODEL, PROMPT };
+module.exports = { enabled, draw, ageWords, YEARLY, MODEL, PROMPT };

@@ -456,6 +456,7 @@ const A = {
     fam.err = '';
     const kids = fam.kids.map((k) => ({ ...k, name_en: k.name_en.trim(), name_th: k.name_th.trim() || k.name_en.trim() })).filter((k) => k.name_en);
     if (kids.length !== fam.kids.length) { fam.err = L('ลูกทุกคนต้องมีชื่อภาษาอังกฤษ (ใช้ในลิงก์และไฟล์)', 'Every child needs an English name (it is used in links and files)'); render(); return; }
+    if (kids.some((k) => !k.birth_ym)) { fam.err = L('ใส่เดือนและปีเกิดของลูกทุกคน (ใช้คิดอายุในแต่ละทริป)', 'Add every child’s month and year of birth (it gives the age on each trip)'); render(); return; }
     fam.busy = true; render();
     try {
       await api('PUT', '/api/b/family', { profile: { app: fam.app, kicker: fam.kicker }, children: kids });
@@ -893,7 +894,7 @@ document.addEventListener('change', (e) => {
     const f = (e.target.files || [])[0], i = +e.target.dataset.famavatar, k = fam.kids[i]; if (!f || !k) return;
     fam.busyKid = i; fam.err = ''; render();
     api('POST', `/api/b/family/avatar/${encodeURIComponent(k.slug)}`, undefined, new Blob([f], { type: f.type || 'image/jpeg' })).then(async (r) => {
-      k.avatar = r.avatar; if (fam.quota && fam.quota.left) fam.quota.left[k.slug] = r.left;
+      k.avatar = r.avatar; if (Array.isArray(r.avatars)) k.avatars = r.avatars; if (fam.quota && fam.quota.left) fam.quota.left[k.slug] = r.left;
       await load(); toast(L('ได้ตัวละครใหม่แล้ว ✨', 'A new character ✨'));
     }, (err) => { fam.err = { 429: L('ใช้ครบโควตาของปีนี้แล้ว', 'All tries for this year are used'), 501: L('ยังไม่ได้ตั้งค่า OPENAI_API_KEY บนเซิร์ฟเวอร์', 'OPENAI_API_KEY is not set on the server'), 400: L('อ่านรูปไม่ได้ ลองรูปอื่น', 'Could not read the photo — try another'), 409: L('กำลังวาดตัวอื่นอยู่ รอสักครู่', 'Another drawing is in progress — wait a moment'), 502: L('AI วาดไม่สำเร็จ ไม่เสียโควตา ลองรูปอื่นได้', 'The AI could not draw it — no try used; try another photo') }[err.code] || L('ครั้งนี้ไม่สำเร็จ ลองใหม่', 'That did not work — try again'); })
       .finally(() => { fam.busyKid = null; render(); });

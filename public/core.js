@@ -393,7 +393,12 @@ let artTrip = null;
 const kidArt = (slug, full, t) => {
   const k = kidRows().find((c) => c.slug === slug); if (!k) return '';
   // a character drawn from the child's photo (server/avatar.js): family only, so never on the sign-in page (the brand says only that one exists)
-  if (k.avatar) return `/media/kid/${encodeURIComponent(slug)}/${full ? 'full' : 'face'}.png?v=${encodeURIComponent(k.avatar)}`;
+  if (k.avatar) {   // the child as they were on that trip: the newest drawing made by the book's last day (else the earliest one), the newest elsewhere
+    const tt = t || artTrip, list = Array.isArray(k.avatars) ? k.avatars : [];
+    let id = k.avatar;
+    if (tt && tt.date_to && list.length) { const by = list.filter((d) => d.at <= tt.date_to); id = (by.length ? by[by.length - 1] : list[0]).id; }
+    return `/media/kid/${encodeURIComponent(slug)}/${full ? 'full' : 'face'}.png?v=${encodeURIComponent(id)}`;
+  }
   if (k.a) return '';
   if (!(k.look || k.v || slug === 'mimi' || slug === 'mika')) return '';   // v: a look's version (the brand lists only that)
   const o = (((t || artTrip) || {}).theme || {}).outfit;

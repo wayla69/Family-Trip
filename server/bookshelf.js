@@ -115,7 +115,7 @@ function router({ pool, media, A, ai, hooks = {} }) {   // hooks.heart(h): set b
   const keyAudio = (tid, id, ext) => `a/${tid}/${id}.${ext}`;   // voice memos: stored as the phone recorded them
 
   // ----- the family: who the children are and how they are drawn (server/family.js)
-  const kidRows = () => q('SELECT slug, name_th, name_en, emoji, color, birth_ym, look, avatar, pos FROM children WHERE family_id=$1 ORDER BY pos', [FAMILY]);
+  const kidRows = () => q('SELECT slug, name_th, name_en, emoji, color, birth_ym, look, avatar, avatars, pos FROM children WHERE family_id=$1 ORDER BY pos', [FAMILY]);
   const kidsFor = async (t) => FAM.kidsFor(await kidRows(), t && t.date_from ? new Date(t.date_from) : new Date());   // for prompts: names and ages at the trip
   // before login the app shows only the family's app name and the drawings — never the children's names
   r.get('/api/brand', async (_req, res, next) => {
@@ -126,6 +126,7 @@ function router({ pool, media, A, ai, hooks = {} }) {   // hooks.heart(h): set b
       const b = req.body || {}, prof = FAM.cleanProfile(b.profile);
       const kids = (Array.isArray(b.children) ? b.children : []).slice(0, 6).map(FAM.cleanKid).filter(Boolean);
       if (new Set(kids.map((k) => k.slug)).size !== kids.length) return bad(res, 'slug');
+      if (kids.some((k) => !k.birth_ym)) return bad(res, 'birth');   // the age at each trip (and the age a character is drawn at) comes from it
       const have = await kidRows(), gone = have.filter((k) => !kids.some((x) => x.slug === k.slug));
       for (const k of gone) {   // a child with memories recorded stays (the parents remove nothing by accident)
         const used = await q('SELECT 1 FROM entries WHERE family_id=$1 AND child=$2 UNION ALL SELECT 1 FROM hearts WHERE family_id=$1 AND child=$2 LIMIT 1', [FAMILY, k.slug]);
@@ -159,34 +160,42 @@ function router({ pool, media, A, ai, hooks = {} }) {   // hooks.heart(h): set b
       res.json({ on: AVATAR.enabled(), yearly: AVATAR.YEARLY(), left });
     } catch (e) { next(e); }
   });
+  const ageMonths = (ym, at = new Date()) => { if (!/^\d{4}-\d{2}$/.test(ym || '')) return null; const [y, m] = ym.split('-').map(Number); const n = (at.getUTCFullYear() - y) * 12 + at.getUTCMonth() + 1 - m; return n >= 0 ? n : null; };
+  const AVATAR_KEEP = 12;   // drawings kept per child (a few a year: years of books)
   r.post('/api/b/family/avatar/:slug', A.requireEditor, express.raw({ type: () => true, limit: '15mb' }), async (req, res, next) => {
     try {
       if (!AVATAR.enabled()) return bad(res, 'no-key', 501);
-      const kid = (await q('SELECT slug, avatar FROM children WHERE family_id=$1 AND slug=$2', [FAMILY, req.params.slug]))[0];
+      const kid = (await q('SELECT slug, birth_ym, avatars FROM children WHERE family_id=$1 AND slug=$2', [FAMILY, req.params.slug]))[0];
       if (!kid) return bad(res, 'child', 404);
+      const ageM = ageMonths(kid.birth_ym);
+      if (ageM === null) return bad(res, 'birth');   // the character is drawn at the child's age: the birth month comes first
       if (!Buffer.isBuffer(req.body) || req.body.length < 100) return bad(res, 'photo');
       try { await sharp(req.body, { failOn: 'none' }).metadata(); } catch (_) { return bad(res, 'photo'); }
       if ((await avatarLeft(kid.slug)) < 1) return res.status(429).json({ error: 'quota', left: 0 });
       if (drawing) return bad(res, 'busy', 409);
       drawing = true;
       let out;
-      try { out = await AVATAR.draw(req.body); } catch (e) { console.error('avatar', e.code || '', e.message); return bad(res, e.code === 'refused' ? 'refused' : 'failed', 502); } finally { drawing = false; }
+      try { out = await AVATAR.draw(req.body, { ageM }); } catch (e) { console.error('avatar', e.code || '', e.message); return bad(res, e.code === 'refused' ? 'refused' : 'failed', 502); } finally { drawing = false; }
       const id = crypto.randomBytes(6).toString('hex');
       await media.put(avatarKey(kid.slug, id, 'full'), out.full, 'image/png');
       await media.put(avatarKey(kid.slug, id, 'face'), out.face, 'image/png');
+      // every drawing is kept with the day and the age it was drawn at, so an older book keeps the younger child
+      const all = [...(Array.isArray(kid.avatars) ? kid.avatars : []), { id, at: new Date().toISOString().slice(0, 10), age_m: ageM }];
+      const drop = all.slice(0, Math.max(0, all.length - AVATAR_KEEP)), keep = all.slice(-AVATAR_KEEP);
       await q('INSERT INTO avatar_gens (family_id, child) VALUES ($1,$2)', [FAMILY, kid.slug]);
-      await q('UPDATE children SET avatar=$3 WHERE family_id=$1 AND slug=$2', [FAMILY, kid.slug, id]);
-      if (kid.avatar) for (const kind of ['full', 'face']) await media.del(avatarKey(kid.slug, kid.avatar, kind)).catch(() => {});   // the previous drawing goes
-      res.json({ avatar: id, left: await avatarLeft(kid.slug) });
+      await q('UPDATE children SET avatar=$3, avatars=$4 WHERE family_id=$1 AND slug=$2', [FAMILY, kid.slug, id, JSON.stringify(keep)]);
+      for (const d of drop) for (const kind of ['full', 'face']) await media.del(avatarKey(kid.slug, d.id, kind)).catch(() => {});
+      res.json({ avatar: id, avatars: keep, left: await avatarLeft(kid.slug) });
     } catch (e) { next(e); }
   });
   // back to the app's own drawing (or the emoji); the drawing's files go, the tries used stay used
   r.delete('/api/b/family/avatar/:slug', A.requireEditor, async (req, res, next) => {
     try {
-      const kid = (await q('SELECT slug, avatar FROM children WHERE family_id=$1 AND slug=$2', [FAMILY, req.params.slug]))[0];
+      const kid = (await q('SELECT slug, avatar, avatars FROM children WHERE family_id=$1 AND slug=$2', [FAMILY, req.params.slug]))[0];
       if (!kid) return bad(res, 'child', 404);
-      await q('UPDATE children SET avatar=NULL WHERE family_id=$1 AND slug=$2', [FAMILY, kid.slug]);
-      if (kid.avatar) for (const kind of ['full', 'face']) await media.del(avatarKey(kid.slug, kid.avatar, kind)).catch(() => {});
+      await q("UPDATE children SET avatar=NULL, avatars='[]' WHERE family_id=$1 AND slug=$2", [FAMILY, kid.slug]);
+      const ids = new Set([kid.avatar, ...(Array.isArray(kid.avatars) ? kid.avatars.map((d) => d.id) : [])].filter(Boolean));
+      for (const did of ids) for (const kind of ['full', 'face']) await media.del(avatarKey(kid.slug, did, kind)).catch(() => {});
       res.json({ ok: true });
     } catch (e) { next(e); }
   });
@@ -194,8 +203,9 @@ function router({ pool, media, A, ai, hooks = {} }) {   // hooks.heart(h): set b
   r.get('/media/kid/:slug/:kind.png', A.requireUser, async (req, res, next) => {
     try {
       if (!['full', 'face'].includes(req.params.kind)) return next();
-      const kid = (await q('SELECT avatar FROM children WHERE family_id=$1 AND slug=$2', [FAMILY, req.params.slug]))[0];
-      const buf = kid && kid.avatar ? await media.get(avatarKey(req.params.slug, kid.avatar, req.params.kind)) : null;
+      const kid = (await q('SELECT avatar, avatars FROM children WHERE family_id=$1 AND slug=$2', [FAMILY, req.params.slug]))[0];
+      const pick = kid && Array.isArray(kid.avatars) && kid.avatars.some((d) => d.id === req.query.v) ? req.query.v : kid && kid.avatar;   // only an id this child owns
+      const buf = pick ? await media.get(avatarKey(req.params.slug, pick, req.params.kind)) : null;
       if (!buf) return res.sendStatus(404);
       res.setHeader('Cache-Control', 'private, max-age=604800');   // the app versions the url by the drawing (?v=)
       res.type('image/png').send(buf);
@@ -221,7 +231,7 @@ function router({ pool, media, A, ai, hooks = {} }) {   // hooks.heart(h): set b
   r.get('/api/b/state', A.requireUser, async (req, res, next) => {
     try {
       const [children, trips, days, firsts, entries, mediaRows, places, hearts, reviews, spendRows] = await Promise.all([
-        q('SELECT slug, name_th, name_en, emoji, color, birth_ym, look, avatar FROM children WHERE family_id=$1 ORDER BY pos', [FAMILY]),
+        q('SELECT slug, name_th, name_en, emoji, color, birth_ym, look, avatar, avatars FROM children WHERE family_id=$1 ORDER BY pos', [FAMILY]),
         q("SELECT id, slug, legacy_id, title, sub, to_char(date_from,'YYYY-MM-DD') date_from, to_char(date_to,'YYYY-MM-DD') date_to, timezone, theme, cover, stamp, moods, passport, info, source FROM trips WHERE family_id=$1 ORDER BY date_from", [FAMILY]),
         q("SELECT d.trip_id, d.day_index, to_char(d.date,'YYYY-MM-DD') date, d.title, d.sleep, d.emoji, d.gradient, d.planned, d.wx, d.plan, d.done_at FROM trip_days d JOIN trips t ON t.id=d.trip_id WHERE t.family_id=$1 ORDER BY d.trip_id, d.day_index", [FAMILY]),
         q('SELECT f.trip_id, f.key, f.emoji, f.label FROM firsts_catalog f JOIN trips t ON t.id=f.trip_id WHERE t.family_id=$1 ORDER BY f.trip_id, f.pos, f.key', [FAMILY]),

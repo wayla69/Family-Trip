@@ -19,6 +19,7 @@
     { "id": "0016", "file": "0016_photo_ai.sql" },
     { "id": "0017", "file": "0017_book_drafts.sql" },
     { "id": "0018", "file": "0018_family_profile.sql" },
-    { "id": "0019", "file": "0019_kid_avatar.sql" }
+    { "id": "0019", "file": "0019_kid_avatar.sql" },
+    { "id": "0020", "file": "0020_kid_avatar_history.sql" }
   ]
 }
