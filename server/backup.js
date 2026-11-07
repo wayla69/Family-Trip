@@ -8,9 +8,10 @@ const yauzl = require('yauzl');
 const sharp = require('sharp');
 const IMG = require('./images');
 const { FAMILY, AUDIO_EXT } = require('./bookshelf');
+const EMOJI = require('./emoji');
 
 // restore order follows foreign keys
-const TABLES = ['children', 'trips', 'trip_days', 'firsts_catalog', 'entries', 'media', 'places', 'hearts', 'reviews', 'spend'];
+const TABLES = ['children', 'trips', 'trip_days', 'firsts_catalog', 'entries', 'media', 'places', 'hearts', 'reviews', 'spend', 'emoji'];
 const ID_RE = /^[A-Za-z0-9_.:-]{4,80}$/;
 const SLUG_RE = /^[a-z0-9-]{2,60}$/;
 const thumbKey = (k) => k.replace(/^p\//, 't/');
@@ -40,6 +41,10 @@ async function sendZip(res, pool, media) {
   for (const k of b.tables.children || []) {   // each child's character drawn from a photo (server/avatar.js), full figure and face
     const ids = new Set([k.avatar, ...(Array.isArray(k.avatars) ? k.avatars.map((d) => d && d.id) : [])].filter(Boolean));
     for (const id of ids) for (const kind of ['full', 'face']) { const buf = await media.get(`k/${k.slug}/${id}-${kind}.png`); if (buf) z.append(buf, { name: `kids/${k.slug}-${id}-${kind}.png` }); }
+  }
+  for (const e of b.tables.emoji || []) {   // the family's own emoji pictures (the bundled ones come with the app)
+    if (!e.storage_key) continue;
+    const buf = await media.get(e.storage_key); if (buf) z.append(buf, { name: `emoji/${e.id}.png` });
   }
   await z.finalize();
 }
@@ -107,6 +112,24 @@ async function importZip(file, pool, media) {
         if ((await sharp(buf).metadata()).format === 'png') await media.put(key, buf, 'image/png');
       }
     }
+    // the family's own emoji pictures: the key rebuilt from a checked id, written only when missing, only real PNGs;
+    // a row whose picture did not come along (and has no bundled one) is left out
+    const emojiRows = [];
+    for (const e of Array.isArray(b.tables.emoji) ? b.tables.emoji : []) {
+      if (!e || !EMOJI.ID_RE.test(String(e.id)) || !EMOJI.isEmoji(String(e.ch || ''))) continue;
+      if (e.storage_key) {
+        e.storage_key = EMOJI.keyOf(e.id); e.file = null;
+        const ent = out[`emoji/${e.id}.png`];
+        if (!(await media.get(e.storage_key))) {
+          if (!ent) continue;
+          const buf = await readEntry(z, ent, 5e6);
+          if ((await sharp(buf).metadata()).format !== 'png') continue;
+          await media.put(e.storage_key, buf, 'image/png');
+        }
+      } else if (!/^[a-z0-9-]{2,40}$/.test(String(e.file || ''))) continue;
+      emojiRows.push(e);
+    }
+    b.tables.emoji = emojiRows;
     const okMedia = new Set(mediaRows.map((m) => m.id));
     const c = await pool.connect();
     try {

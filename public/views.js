@@ -82,6 +82,7 @@ function render() {
   else if (p[0] === 'viewers' && isEditor()) html = viewViewers();
   else if (p[0] === 'import' && isEditor()) html = viewImport();
   else if (p[0] === 'family' && isEditor()) html = viewFamily();
+  else if (p[0] === 'emoji' && isEditor()) html = viewEmoji();
   else html = viewShelf();
   document.documentElement.style.cssText = t ? themeStyle(t) : themeStyle(curTrip());
   document.body.classList.toggle('serif', !!(t ? t.theme.display === 'serif' : false));
@@ -203,6 +204,7 @@ ${isEditor() ? backupCard() : ''}
 ${isEditor() ? `<div class="part">${L('ตั้งค่า', 'Settings')} ⚙️</div>
 <nav class="setlist">
 <a href="#/family"><span class="e">👨‍👩‍👧‍👦</span><span><b>${L('ครอบครัวของเรา', 'Our family')}</b><small>${L('ชื่อแอป ชื่อลูก และเดือนเกิด', 'App name, the children and their birth months')}</small></span><i>›</i></a>
+<a href="#/emoji"><span class="e">${emo('😄')}</span><span><b>${L('อีโมจิของเรา', 'Our emoji')}</b><small>${L(`${emoRows().length} รูป เพิ่มหรือลบได้`, `${emoRows().length} pictures, add or delete`)}</small></span><i>›</i></a>
 <a href="#/viewers"><span class="e">👪</span><span><b>${L('ญาติที่ดูได้', 'Who can see the books')}</b><small>${L('รหัสและลิงก์ของแต่ละกลุ่มญาติ', 'A code and a link for each group of relatives')}</small></span><i>›</i></a>
 ${aiCard()}</nav>` : ''}
 <div class="row end setout"><button class="btn ghost small" data-a="logout">⎋ ${L('ออกจากระบบ', 'Sign out')}</button></div>`;
@@ -1265,6 +1267,26 @@ let vg = null, vgForm = null, vgJust = null;
 /* ---------- our family (#/family, editors): the app's name, the children, and how each one is drawn ----------
    The two hand-drawn characters (a girl with her wagon, a toddler) recoloured per child; the server renders the SVG (server/family.js).
    fam = the form being edited; saved as a whole with PUT /api/b/family, then the state is reloaded. */
+/* ---------- the family's emoji library (#/emoji, editors): every picture, delete one (two taps), add one of your own
+   (an emoji + a name + a picture from the phone; the server shrinks it to 160 px), bring back the original set ---------- */
+let emoForm = { ch: '', th: '', en: '', file: null, url: null, err: '', busy: false };
+function viewEmoji() {
+  const rows = emoRows(), f = emoForm;
+  const card = (e) => `<li class="emocard"><img src="${esc(e.src)}" alt=""><b>${esc(L(e.th || e.en, e.en || e.th))}</b><small>${esc(e.ch)}${(e.alt || []).length ? ` ${esc(e.alt.slice(0, 4).join(' '))}` : ''}</small>
+<button type="button" class="mini emodel" data-a="emodel" data-v="${esc(e.id)}" aria-label="${esc(L(`ลบ ${e.th || e.en}`, `Delete ${e.en || e.th}`))}">${L('ลบ', 'Delete')}</button></li>`;
+  return `<div class="part">${L('ตั้งค่า', 'Settings')}</div><h1 class="h2">${emo('😄')} ${L('อีโมจิของเรา', 'Our emoji')}</h1>
+<p class="lede">${L('รูปที่แอปใช้แทนอีโมจิ ทั้งในอารมณ์วันนี้ หัวใจจากญาติ คำพูด โน้ต และคำอธิบายรูป เพิ่มรูปของครอบครัวเองได้ หรือลบตัวที่ไม่ใช้', 'The pictures the app draws for each emoji — in moods, hearts, quotes, notes and captions. Add your own, or delete the ones you don’t use.')}</p>
+<section class="blk emoadd"><h3>＋ ${L('เพิ่มอีโมจิ', 'Add an emoji')}</h3>
+<div class="emoaddrow"><label class="emopic${f.url ? ' on' : ''}">${f.url ? `<img id="emprev" src="${esc(f.url)}" alt="">` : `<span>🖼️</span><small>${L('เลือกรูป', 'Pick a picture')}</small>`}<input type="file" id="emfile" accept="image/*"></label>
+<div class="emofields"><label>${L('อีโมจิที่จะให้รูปนี้แทน', 'The emoji it stands for')}<input class="field emoch" data-emf="ch" value="${esc(f.ch)}" maxlength="16" placeholder="🦘" inputmode="text"></label>
+<div class="famrow"><label>${L('ชื่อ (ไทย)', 'Name (Thai)')}<input class="field" data-emf="th" value="${esc(f.th)}" maxlength="30" placeholder="${L('จิงโจ้', 'จิงโจ้')}"></label><label>${L('ชื่อ (อังกฤษ)', 'Name (English)')}<input class="field" data-emf="en" value="${esc(f.en)}" maxlength="30" placeholder="Kangaroo"></label></div></div></div>
+<p class="famhint">${L('รูปพื้นใสได้ผลดีที่สุด ระบบย่อเหลือ 160 พิกเซล รูปเก็บไว้ในพื้นที่ของครอบครัว เห็นเฉพาะคนที่เข้าสู่ระบบ', 'A picture with a see-through background works best. It is shrunk to 160 px and kept in your family’s own storage, seen only by people who are signed in.')}</p>
+${f.err ? `<div class="notice">${esc(f.err)}</div>` : ''}
+<div class="row end"><button type="button" class="btn" data-a="emoadd" ${f.busy ? 'disabled' : ''}>${f.busy ? '⏳ ' + L('กำลังเพิ่ม…', 'Adding…') : L('เพิ่มอีโมจิ', 'Add emoji')}</button></div></section>
+<h2 class="famh3">${L('ทั้งหมด', 'All of them')} <span class="pill">${rows.length}</span></h2>
+${rows.length ? `<ul class="emolist">${rows.map(card).join('')}</ul>` : `<p class="empty">${L('ยังไม่มีอีโมจิ', 'No emoji yet')}</p>`}
+<div class="row end" style="margin-top:14px"><button type="button" class="btn ghost small" data-a="emodefaults">↺ ${L('เอาชุดเดิมกลับมา', 'Bring back the original set')}</button></div>`;
+}
 let fam = null;
 const famBuilt = () => { const ks = fam.kids.filter((k) => k.name_en.trim()); const ini = ks.map((k) => k.name_en.trim()[0].toUpperCase()).join(''); const th = ks.map((k) => k.name_th.trim() || k.name_en.trim());
   const app = ini ? `${ini} Memory` : 'Memory Bookshelf', nth = th.length <= 1 ? th.join('') : th.slice(0, -1).join(' ') + 'และ' + th[th.length - 1];

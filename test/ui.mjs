@@ -184,6 +184,23 @@ const T = 'hk-macau-2026';
   const famTx = await page.evaluate(() => document.querySelector('main').textContent);
   ok(await page.locator('.famai').count() === 0 && !/OPENAI|API_KEY|OpenAI/.test(famTx) && await page.locator('.famrow2 .famagenow').count() === await page.locator('.famkid').count()
     && await page.evaluate(() => getComputedStyle(document.querySelector('.famsave')).backgroundColor !== 'rgba(0, 0, 0, 0)'), 'family page: no character box or server words without the drawing helper; a hint under each birth month; a solid save bar');
+  // #/emoji: the library from the database — add one with a picture from the phone, it shows in the grid beside a text box, delete it (two taps)
+  await page.goto(`${BASE}/#/emoji`); await page.waitForSelector('.emolist');
+  ok(await page.locator('.emocard').count() === 24 && await page.locator('.setlist').count() === 0, 'emoji page: the 24 of the library');
+  const pic = await sharp({ create: { width: 300, height: 300, channels: 4, background: { r: 30, g: 160, b: 90, alpha: 1 } } }).png().toBuffer();
+  await page.setInputFiles('#emfile', { name: 'koala.png', mimeType: 'image/png', buffer: pic }); await page.waitForSelector('#emprev');
+  await page.fill('[data-emf="ch"]', '🐨'); await page.fill('[data-emf="th"]', 'โคอาล่า'); await page.fill('[data-emf="en"]', 'Koala');
+  await page.click('[data-a="emoadd"]');
+  await page.waitForFunction(() => S.emoji.some((e) => e.ch === '🐨'), null, { timeout: 8000 }).catch(() => {});
+  ok(await page.locator('.emocard').count() === 25 && (await page.textContent('.emolist')).includes('Koala') && await page.inputValue('[data-emf="ch"]') === '', 'emoji page: a new one with its picture, the form cleared');
+  await page.goto(`${BASE}/#/t/${T}/log/1`); await page.waitForSelector('#qtext');
+  await page.click('[data-a="emopick"][data-for="qtext"]'); await page.waitForSelector('#emopop');
+  ok(await page.locator('#emopop [data-a="emoput"][data-v="🐨"] img.emi[src^="/media/emoji/"]').count() === 1, 'emoji page: the new one is in the grid beside a text box');
+  await page.keyboard.press('Escape'); await page.goto(`${BASE}/#/emoji`); await page.waitForSelector('.emolist');
+  const koala = page.locator('.emocard', { hasText: 'Koala' }).locator('[data-a="emodel"]');
+  await koala.click(); await koala.click();
+  await page.waitForFunction(() => !S.emoji.some((e) => e.ch === '🐨'), null, { timeout: 8000 }).catch(() => {});
+  ok(await page.locator('.emocard').count() === 24, 'emoji page: deleted with two taps');
   // every icon the manifest names exists at its stated size; each shortcut has its own picture; iPhone gets a 180 px icon
   const icons = [...man.icons, ...man.shortcuts.flatMap((s) => s.icons)], sizes = [];
   for (const ic of icons) { const r = await page.request.get(BASE + ic.src); const m = r.ok() ? await sharp(await r.body()).metadata() : {}; sizes.push(`${m.width}x${m.height}` === ic.sizes); }

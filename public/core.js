@@ -151,26 +151,23 @@ function ensureWx(t) {
     if (j) { ls(k, WX[t.id]); if (j.days.some(Boolean)) safeRender(); }
   }).catch(() => { WX[t.id] = { ...(c || { days: [] }), at: Date.now() - 3600e3 + 600e3, pending: false }; });
 }
-/* ---------- the family's emoji library (public/art/emoji, the owner's glossy set) ----------
-   EMOJI_LIB = one row per picture: [file, the emoji it stands for, Thai name, English name, …other emoji drawn the same].
-   The data always keeps the Unicode emoji (moods, hearts, quotes, notes, captions), so old entries, push texts and shares
-   are unchanged; only the drawing changes. emo('💗') → the picture (else the emoji as text); emoIn(html) swaps them inside
-   already-escaped text (an emoji is never part of an entity) — never on attributes. The parents pick from the library with
-   emoBtn(fieldId) next to a text box (sheets.js emopick/emoput). */
-const EMOJI_LIB = [
-  ['joy', '😄', 'ดีใจ', 'Joy', '😊', '🙂', '😀', '😃'], ['love', '😍', 'รักเลย', 'Love', '🥰'], ['laugh', '😂', 'ขำมาก', 'Laugh', '🤣'],
-  ['surprise', '😮', 'ว้าว', 'Wow', '😲', '😯'], ['sad', '😢', 'เศร้า', 'Sad', '😭'], ['angry', '😠', 'โกรธ', 'Cross', '😡'],
-  ['thumbs-up', '👍', 'เยี่ยม', 'Great'], ['heart', '💗', 'หัวใจ', 'Heart', '❤', '💖', '💕', '🧡', '💛', '💚', '💙', '💜'], ['clap', '👏', 'ปรบมือ', 'Clap'],
-  ['thanks', '🙏', 'ขอบคุณ', 'Thank you'], ['celebrate', '🎉', 'เย้!', 'Hooray', '🥳', '🎊'], ['cozy', '☕', 'อบอุ่น', 'Cosy'],
-  ['star', '⭐', 'ดาว', 'Star', '🌟'], ['rainbow', '🌈', 'สายรุ้ง', 'Rainbow'], ['sun', '☀', 'แดด', 'Sunny'],
-  ['sleepy-moon', '🌙', 'ฝันดี', 'Sleepy', '😴'], ['partly-cloudy', '⛅', 'เมฆบ้าง', 'Cloudy', '🌤', '🌥'], ['rainy', '☔', 'ฝนตก', 'Rainy', '🌧', '🌦'],
-  ['birthday-cake', '🎂', 'วันเกิด', 'Birthday'], ['gift', '🎁', 'ของขวัญ', 'Gift'], ['camera', '📷', 'กล้อง', 'Camera', '📸'],
-  ['airplane', '✈', 'เครื่องบิน', 'Plane', '🛫'], ['suitcase', '🧳', 'กระเป๋า', 'Suitcase'], ['travel-map', '🗺', 'แผนที่', 'Map']];
-const EMO = Object.fromEntries(EMOJI_LIB.flatMap(([file, ch, , , ...more]) => [ch, ...more].map((c) => [c, file])));
-const emoKey = (ch) => EMO[String(ch || '').replace(/\uFE0F/g, '')];
-const emo = (ch, cls = '') => { const k = emoKey(ch); return k ? `<img class="emi${cls ? ' ' + cls : ''}" src="/art/emoji/${k}.webp" alt="${esc(ch)}" draggable="false">` : esc(ch); };
-const EMO_RE = new RegExp(`(${Object.keys(EMO).sort((a, b) => b.length - a.length).join('|')})\\uFE0F?`, 'gu');
-const emoIn = (html) => String(html).replace(EMO_RE, (m) => emo(m));
+/* ---------- the family's emoji library (table emoji, server/emoji.js; managed on #/emoji) ----------
+   S.emoji = [{id, ch, alt, th, en, src}]: each emoji the family has a picture for — the owner's bundled set to start with,
+   then whatever the parents add or delete. The data always keeps the Unicode emoji (moods, hearts, quotes, notes, captions),
+   so old entries, push texts and shares are unchanged; only the drawing changes. emo('💗') → the picture (else the emoji as
+   text); emoIn(html) swaps them inside already-escaped text (an emoji is never part of an entity) — never on attributes. */
+const emoRows = () => (S && Array.isArray(S.emoji) ? S.emoji : []);
+let emoMemo = { rows: null, map: {}, re: null };
+function emoMap() {
+  const rows = emoRows(); if (emoMemo.rows === rows) return emoMemo;
+  const map = {}; for (const e of rows) for (const c of [e.ch, ...(e.alt || [])]) if (c && !map[c.replace(/\uFE0F/g, '')]) map[c.replace(/\uFE0F/g, '')] = e;
+  const keys = Object.keys(map).sort((a, b) => b.length - a.length).map((k) => k.replace(/[.*+?^${}()|[\]\\]/g, '\\$&'));
+  emoMemo = { rows, map, re: keys.length ? new RegExp(`(${keys.join('|')})\\uFE0F?`, 'gu') : null };
+  return emoMemo;
+}
+const emoOf = (ch) => emoMap().map[String(ch || '').replace(/\uFE0F/g, '')];
+const emo = (ch, cls = '') => { const e = emoOf(ch); return e ? `<img class="emi${cls ? ' ' + cls : ''}" src="${esc(e.src)}" alt="${esc(ch)}" draggable="false">` : esc(ch); };
+const emoIn = (html) => { const m = emoMap(); return m.re ? String(html).replace(m.re, (x) => emo(x)) : String(html); };
 // the library button beside a text box: opens the grid of pictures, the one tapped goes in at the cursor
 const emoBtn = (id) => `<button type="button" class="emobtn" data-a="emopick" data-for="${esc(id)}" aria-label="${L('ใส่อีโมจิ', 'Add an emoji')}" title="${L('ใส่อีโมจิ', 'Add an emoji')}">${emo('😄')}</button>`;
 // WMO weather codes → a glyph and a word (the first row whose ceiling the code fits under)

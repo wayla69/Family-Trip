@@ -10,6 +10,7 @@ const BK = require('./backup');
 const { health } = require('./health');
 const PGM = require('./pg');
 const BS = require('./bookshelf');
+const EMOJI = require('./emoji');
 const HH = require('./importer');
 const PDF = require('./pdf');
 const PUSH = require('./push');
@@ -199,7 +200,7 @@ if (require.main === module) {
   if (process.env.NODE_ENV === 'production' && MEDIA.kind !== 's3') console.warn('WARNING: BUCKET is not set — photos go to local disk and are lost on the next deploy unless /data is a Railway volume.');
   if (!PG) { console.error('DATABASE_URL is not set — add Railway Postgres and reference ${{Postgres.DATABASE_URL}} (locally: see CLAUDE.md)'); process.exit(1); }
   PGM.ready(PG)
-    .then(async (n) => { await A.init(PG); await PUSH.init(PG); const seeds = await BS.syncSeeds(PG); return [n, seeds]; })
+    .then(async (n) => { await A.init(PG); await PUSH.init(PG); const seeds = await BS.syncSeeds(PG); await EMOJI.seed(PG, BS.FAMILY); return [n, seeds]; })
     .then(([n, seeds]) => {
       REMIND.start();
       const server = app.listen(PORT, () => console.log(`Memory Bookshelf on :${PORT} · postgres ${n} migrations · ${seeds} seeded trips · photos ${MEDIA.kind}`));
