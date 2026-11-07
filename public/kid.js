@@ -143,6 +143,7 @@ async function hydrateColours(root) {
   }
 }
 const colourUrl = (t, i) => { const pat = (t.passport || {}).colour; return pat ? pat.replace('{n}', i + 1) : dayArt(t, i); };
+const canColour = (t, i) => /\.svg(\?|$)/.test(colourUrl(t, i));   // the colouring page is the day's SVG with its fills lifted; a PNG (drawn by the helper) has no regions to tap
 const colourFill = (t, i, kid) => fieldVal(t, `colour.d${i}`, kid) || '{}';
 
 /* ---------- finger drawing ("Draw today's best moment") → a private picture, like a photo ---------- */
@@ -564,7 +565,7 @@ const wj = (s) => String(s).replace(/วันนี้/g, 'วัน\u2060น�
 // kid mode's picture tiles (owner's set, public/art/kidui): [picture or '' for the emoji, gradient top, gradient bottom]
 const KTILE = { count: ['surprise', '#FFC93C', '#FF9F0A'], pack: ['pack', '#62CCFF', '#1C9BEA'], words: ['say', '#C9A2FF', '#8F5CEB'], colour: ['colour', '#FF93B5', '#F2557F'],
   draw: ['draw', '#AEEA80', '#5EBB3D'], match: ['match', '#B592FF', '#7C4EE5'], quiz: ['quiz', '#86D6FF', '#2BA8F0'], animals: ['animals', '#93DD60', '#3FA82C'], numbers: ['count', '#FFB54A', '#FF8A1F'],
-  spot: ['find', '#7FE3D2', '#24B39B'], stamp: ['stamp', '#8FB4FF', '#3F6FE0'], talk: ['talk', '#FFB0C8', '#F06A93'], memory: ['memory', '#FFD36B', '#F2A90C'], photos: ['photos', '#9CD9FF', '#3BA0E8'], mood: ['mood', '#FFC2A0', '#FF8A57'], hideseek: ['', '#FFE08A', '#F5A623'], jigsaw: ['', '#B5F0C9', '#2FB36B'], bubbles: ['', '#A5E9FF', '#3DB4F2'], music: ['', '#FFC4EE', '#E35FBF'], _: ['', '#C9D3E6', '#8C9BB8'] };
+  spot: ['find', '#7FE3D2', '#24B39B'], stamp: ['stamp', '#8FB4FF', '#3F6FE0'], talk: ['talk', '#FFB0C8', '#F06A93'], memory: ['memory', '#FFD36B', '#F2A90C'], photos: ['photos', '#9CD9FF', '#3BA0E8'], mood: ['mood', '#FFC2A0', '#FF8A57'], hideseek: ['spy', '#FFD54A', '#E8A317'], jigsaw: ['jigsaw', '#A8E86A', '#2E9E4F'], bubbles: ['bubbles', '#5BB8FF', '#1E6FE8'], music: ['music', '#FF8FD8', '#7B3FE0'], _: ['', '#C9D3E6', '#8C9BB8'] };
 const KBAR = { home: 'home', map: 'map', colour: 'colour', stamp: 'passport', stickers: 'stickers', trophies: 'trophies' };   // the bar's middle button: colour before the trip, the passport on it
 function viewKid(p) {
   const ks = children(), kid = p[1], k = ks.find((c) => c.slug === kid);
@@ -588,8 +589,8 @@ function viewKid(p) {
     const lit = littleOf(t, kid), words = lit ? null : (pp.lists || []).find((l) => l.said), story = kidStory(t, i), live = dayNow(t);   // the little one: no words-to-say, no quiz
     const fresh = heartsFor(kid).filter((h) => h.at > (ls('hseen_' + kid) || 0));
     const tiles = (pre
-      ? [cd && ['count', '🎁', L('เซอร์ไพรส์', 'Surprise')], cd && cd.pack && ['pack', '🧳', L('จัดกระเป๋า', 'Pack')], ['colour', '🎨', L('ระบายสี', 'Colour')], ['draw', '🖍️', L('วาดรูป', 'Draw')], ['bubbles', '🫧', L('ฟองสบู่', 'Bubbles')], ['music', '🎵', L('ดนตรี', 'Music')], ['hideseek', '🙈', L('ซ่อนหา', 'I spy')]]
-      : [['colour', '🎨', L('ระบายสี', 'Colour')], ['draw', '🖍️', L('วาดรูป', 'Draw')], ['bubbles', '🫧', L('ฟองสบู่', 'Bubbles')], ['music', '🎵', L('ดนตรี', 'Music')], ['hideseek', '🙈', L('ซ่อนหา', 'I spy')], ['spot', littleOf(t, kid) ? '👉' : '🔍', littleOf(t, kid) ? L('ชี้ แตะ', 'Point it') : L('หาของ', 'Find it')], ['stamp', '🛂', L('ปั๊มตรา', 'Stamp')]])
+      ? [cd && ['count', '🎁', L('เซอร์ไพรส์', 'Surprise')], cd && cd.pack && ['pack', '🧳', L('จัดกระเป๋า', 'Pack')], canColour(t, i) && ['colour', '🎨', L('ระบายสี', 'Colour')], ['draw', '🖍️', L('วาดรูป', 'Draw')], ['bubbles', '🫧', L('ฟองสบู่', 'Bubbles')], ['music', '🎵', L('ดนตรี', 'Music')], ['hideseek', '🙈', L('ซ่อนหา', 'I spy')]]
+      : [canColour(t, i) && ['colour', '🎨', L('ระบายสี', 'Colour')], ['draw', '🖍️', L('วาดรูป', 'Draw')], ['bubbles', '🫧', L('ฟองสบู่', 'Bubbles')], ['music', '🎵', L('ดนตรี', 'Music')], ['hideseek', '🙈', L('ซ่อนหา', 'I spy')], ['spot', littleOf(t, kid) ? '👉' : '🔍', littleOf(t, kid) ? L('ชี้ แตะ', 'Point it') : L('หาของ', 'Find it')], ['stamp', '🛂', L('ปั๊มตรา', 'Stamp')]])
       .concat(words ? [['words', '🗣️', L('พูดตาม', 'Say it')]] : [], ((d.plan || {}).quiz || []).length && !lit ? [['quiz', '❓', L('ทายซิ', 'Quiz')]] : [],
         kidTalk(t, i) ? [['talk', '💬', L('คุยกัน', 'Let’s talk')]] : [], !pre && i > 0 && memQuiz(t, i - 1) ? [['memory', '🧠', L('จำได้ไหม', 'Remember?')]] : [], kidPhotos(t, i).length ? [['photos', '📸', L('ดูรูป', 'Photos')]] : [], [['match', '🧩', L('จับคู่', 'Match')]], pre ? [] : [['mood', '😊', L('วันนี้รู้สึก', 'My mood')]],
         wild.length ? [['animals', (t.info.wildLabel || {}).emo || '🦘', t.info.wildLabel ? esc(T(t.info.wildLabel.short)) : L('สัตว์', 'Animals')]] : [], [['numbers', '🔢', L('นับเลข', 'Count')]], dayArt(t, i) || kidPhotoPool(t).length ? [['jigsaw', '🖼️', L('ต่อภาพ', 'Puzzle')]] : []).filter(Boolean);   // map, stickers and trophies live on the kid bar below — not twice
@@ -742,7 +743,7 @@ ${pixPick(t, i, 'match', 'kidnewmatch')}
     body = `<div class="kidhearts-list">${hs.map((h) => `<button class="${h.at > seen ? 'new' : ''}" data-a="kidheart" data-v="${esc(heartLine(h, kid))}"><span class="e">${emo(h.emoji)}</span><b>${esc(h.from)}</b>${h.text ? `<p>${emoIn(esc(h.text))}</p>` : ''}<i>🔊</i></button>`).join('') || `<div class="kidguide">${guideImg(0)}<p>${L(`ยังไม่มีหัวใจเลย — เดี๋ยวคุณตาคุณยายส่งมาให้${esc(name)}นะ 💗`, `No hearts yet — the family will send ${esc(name)} some soon 💗`)}</p></div>`}</div>`;
   } else body = `<button class="kidbig" data-a="kidnav" data-v="#/kid/${esc(kid)}">🏠</button>`;
   // kid mode's own bar: big pictures, read aloud on tap (data-say), no grown-up pages
-  const kb = [['', '🏠', L('บ้าน', 'Home')], pp.map && ['map', '🗺️', L('แผนที่', 'Map')], [pre ? 'colour' : 'stamp', pre ? '🎨' : '🛂', pre ? L('ระบายสี', 'Colour') : L('พาสปอร์ต', 'Passport')], ['stickers', '⭐', L('สติกเกอร์', 'Stickers')], ['trophies', '🏆', L('รางวัล', 'Trophies')]].filter(Boolean);
+  const kb = [['', '🏠', L('บ้าน', 'Home')], pp.map && ['map', '🗺️', L('แผนที่', 'Map')], [pre ? (canColour(t, i) ? 'colour' : 'draw') : 'stamp', pre ? (canColour(t, i) ? '🎨' : '🖍️') : '🛂', pre ? (canColour(t, i) ? L('ระบายสี', 'Colour') : L('วาดรูป', 'Draw')) : L('พาสปอร์ต', 'Passport')], ['stickers', '⭐', L('สติกเกอร์', 'Stickers')], ['trophies', '🏆', L('รางวัล', 'Trophies')]].filter(Boolean);
   const bar = `<nav class="kidbar">${kb.map(([v, e, lbl]) => `<button data-a="kidnav" data-v="#/kid/${esc(kid)}${v ? '/' + v : ''}" data-say="${esc(lbl)}"${(v || 'home') === view ? ' aria-current="page"' : ''}>${KBAR[v || 'home'] ? `<img class="kbi" src="/art/kidui/bar-${KBAR[v || 'home']}.webp" alt="">` : ''}<span${KBAR[v || 'home'] ? ' class="vh"' : ''}>${e}</span><b>${lbl}</b></button>`).join('')}</nav>`;
   return `<div class="kidwrap${view === 'home' ? ' home' : ''}${kidEnter ? ' enter' : ''}" style="${style}">${head}${body}${lock}${bar}</div>`;
 }

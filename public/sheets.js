@@ -75,6 +75,20 @@ async function addClip(t, day, blob, secs) {
 
 /* ---------- a book from a PDF (#/import): page state, polling, upload ---------- */
 let imp = { list: null, job: null, slug: '', err: '', file: null, timer: null };
+let artTimer = null;
+async function artPoll() {
+  if (artTimer) return;
+  artTimer = setInterval(async () => {
+    let j; try { j = await api('GET', '/api/b/art'); } catch (_) { return; }
+    artJob = j.status === 'idle' ? null : j;
+    if (!artJob || artJob.status !== 'running') {
+      clearInterval(artTimer); artTimer = null;
+      if (artJob && artJob.status === 'done') { toast(L('วาดรูปประจำเล่มเสร็จแล้ว ✨', "The book's pictures are drawn ✨")); try { await load(); } catch (_) {} }
+      else if (artJob) toast(artJob.error === 'refused' ? L('ผู้ช่วยไม่วาดภาพนี้ให้', 'The helper declined this picture') : L('วาดไม่สำเร็จ ลองใหม่ได้', 'Drawing failed — try again'));
+    }
+    safeRender();
+  }, 3000);
+}
 async function impRefresh() {
   try { const r = await api('GET', '/api/b/import'); imp.list = r.drafts; imp.job = r.job; }
   catch (_) { imp.list = []; }
@@ -617,8 +631,16 @@ const A = {
       imp.file = null; await impRefresh();
     } catch (e) { imp.job = null; imp.err = { 409: L('มีงานกำลังทำ หรือมีเล่มรหัสนี้แล้ว', 'Busy, or the id exists'), 503: L('ผู้ช่วยยังไม่เปิดในบัญชีนี้', 'Claude is not set up on the server'), 429: L('โควตาผู้ช่วยของวันนี้เหลือไม่พอทำทั้งเล่ม ลองพรุ่งนี้', 'Not enough of today’s Claude allowance left for a whole book (about 30 calls) — try tomorrow'), 400: L('ไฟล์ไม่ใช่ PDF หรือรหัสเล่มไม่ถูกต้อง', 'Not a PDF, or a bad id'), 413: L('ไฟล์ใหญ่เกิน 25 MB', 'Over 25 MB') }[e.code] || L('ส่งไม่สำเร็จ', 'Could not send'); render(); }
   },
+  // the helper draws a book's day circles and passport crest (server/bookart.js); the menu card shows the progress, the state reloads when it is done
+  async bookart(b) {
+    const id = b.dataset.t;
+    if (!navigator.onLine) { toast(L('ต้องต่อเน็ตก่อน', 'Connect to the internet first')); return; }
+    try { artJob = await api('POST', `/api/b/art/${encodeURIComponent(id)}`, {}); }
+    catch (e) { toast(e.code === 409 ? L('ผู้ช่วยกำลังวาดเล่มอื่นอยู่', 'The helper is busy with another book') : e.code === 429 ? L('เล่มนี้วาดใหม่ครบจำนวนแล้ว', 'This book has had all its redraws') : L('เริ่มวาดไม่ได้', 'Could not start')); return; }
+    safeRender(); artPoll();
+  },
   async impsave(b) {
-    try { const r = await api('POST', `/api/b/import/${encodeURIComponent(b.dataset.v)}/save`, {}); toast(L('บันทึกเล่มแล้ว', 'Book saved')); imp.list = null; imp.job = null; await load(); location.hash = `#/t/${encodeURIComponent(r.id)}`; }
+    try { const r = await api('POST', `/api/b/import/${encodeURIComponent(b.dataset.v)}/save`, {}); toast(L('บันทึกเล่มแล้ว', 'Book saved')); imp.list = null; imp.job = null; await load(); if ((S.features || {}).bookArt) { artJob = { trip: r.id, status: 'running', done: 0, total: 0 }; artPoll(); } location.hash = `#/t/${encodeURIComponent(r.id)}`; }
     catch (e) { toast(e.code === 409 ? L('มีเล่มรหัสนี้แล้ว', 'A book with this id exists') : L('บันทึกไม่สำเร็จ', 'Could not save')); }
   },
   async impdel(b) {

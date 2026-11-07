@@ -344,6 +344,7 @@ function stats(t) {
   };
 }
 // illustrated stamp per day (theme.art = "/art/hk/day-{n}.svg"); app-made trips have none and use the day emoji
+let artJob = null;   // the helper drawing a book's pictures (sheets.js bookart ↔ GET /api/b/art), shown on the book menu
 const dayArt = (t, i) => (t.theme && t.theme.art ? t.theme.art.replace('{n}', i + 1) : '');
 // passport: a day's stamp is inked once the day is Done or has anything recorded in it
 const dayStamped = (t, i) => !!t.days[i].done_at || !!dayHasContent(t, i);

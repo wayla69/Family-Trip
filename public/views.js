@@ -280,13 +280,14 @@ function heroHtml() {
   const lbl = dn >= 0 ? L('วันที่ของทริป', 'day of the trip') : L(until === 1 ? 'พรุ่งนี้ออกเดินทาง!' : 'วันก่อนออกเดินทาง', until === 1 ? 'day to go — tomorrow!' : 'days to go');
   const go = (dn >= 0 && isEditor() ? `<a class="btn" href="#/t/${esc(t.id)}/log/${dn}">${ic('log')} ${L('บันทึกวันนี้', 'Record today')}</a>` : `<a class="btn" href="#/t/${esc(t.id)}">${ic('book')} ${L('เปิดเล่มนี้', 'Open the book')}</a>`)
     + (dn < 0 && isEditor() && (t.passport || {}).countdown ? ` <button class="btn ghost" data-a="kidmode" data-v="">${ic('gift')} ${L('เด็กๆ เปิดเซอร์ไพรส์วันนี้', "Today's surprise for the kids")}</button>` : '');
-  const art = t.days.map((_, i) => i).filter((i) => dn < 0 || i === dn || i === dn + 1).slice(0, dn < 0 ? 5 : 2);
+  // the day circles: before the trip up to six (evenly through the book — the owner missed the days between); on it today and tomorrow
+  const all = t.days.map((_, i) => i), art = dn < 0 ? (all.length <= 6 ? all : Array.from({ length: 6 }, (_, k) => Math.round(k * (all.length - 1) / 5))) : all.filter((i) => i === dn || i === dn + 1).slice(0, 2);
   return `<section class="hero${t.theme.display === 'serif' ? ' serif' : ''}" style="${themeStyle(t)};--hero:${esc(t.theme.accent || '#1F3A5F')}">
 <div class="txt"><div class="kicker">${dn >= 0 ? L('ตอนนี้กำลังเที่ยว', 'On the road now') : L('การผจญภัยครั้งต่อไป', 'Next adventure')} ${flagsOf(t)}</div>
 <h2>${esc(dn >= 0 ? `${t.days[dn].emoji || ''} ${T(t.days[dn].title)}` : T(t.title).split(' · ')[0])}</h2>
 <div class="count">${big}<span>${lbl}</span></div>
 ${kids ? `<p class="kids">${kids}</p>` : ''}${go}</div>
-<div class="float">${art.slice(0, 3).map((i, j) => artImg(t, i, 'f' + j)).join('')}${castHtml((t.theme.children || []).map((k) => k.slug))}</div></section>`;
+<div class="float">${art.slice(0, 6).map((i, j) => artImg(t, i, 'f' + j)).join('')}${castHtml((t.theme.children || []).map((k) => k.slug))}</div></section>`;
 }
 // stamp text is sized to its longest word, so a long place name never breaks mid-word or spills out of the circle
 const longWord = (...s) => Math.max(4, ...s.join(' ').split(/\s+/).map((w) => [...w].length));
@@ -442,6 +443,17 @@ const hasInfo = (t) => {
     prep: !!((n.pack || []).length || n.visa || n.bio || n.car || n.drive || (n.prices && (n.prices.rows || []).length) || (n.ifthen && (n.ifthen.book || n.ifthen.crowd))) || more('prep'),
     learn: !!((n.guide || []).length || (n.general || []).length || (n.wild || []).length || n.eatRules || t.days.some((d) => ((d.plan || {}).learn || []).length || ((d.plan || {}).quiz || []).length)) || more('learn') };
 };
+// the book's own pictures (server/bookart.js): a book without the owner's hand-drawn circles can have the helper draw one per day + the passport crest
+const artOwn = (t) => !!(t.theme && t.theme.art && !String(t.theme.art).startsWith('/media/art/'));
+function artCard(t) {
+  if (!isEditor() || !(S.features || {}).bookArt || artOwn(t)) return '';
+  const job = typeof artJob !== 'undefined' && artJob && artJob.trip === t.id ? artJob : null, has = !!(t.theme && t.theme.art);
+  const running = job && job.status === 'running';
+  return `<div class="call info artcall" data-trip="${esc(t.id)}"><b>${L('รูปประจำเล่ม', "The book's pictures")}</b><span>${running
+    ? L(`ผู้ช่วยกำลังวาด… ${job.done}/${job.total}`, `The helper is drawing… ${job.done}/${job.total}`)
+    : has ? L('วงกลมประจำวันและตราพาสปอร์ตวาดโดยผู้ช่วยแล้ว', 'The day circles and the passport crest were drawn by the helper')
+    : L('ให้ผู้ช่วยวาดวงกลมประจำวันและตราพาสปอร์ตของเล่มนี้ — ใช้แค่ชื่อวันกับหัวข้อในแผน ไม่ส่งรูปหรือชื่อใคร', "Let the helper draw a circle for every day and the passport crest — from the day titles and headlines only, never a photo or a name")}</span>${running ? '' : `<button type="button" class="btn small" data-a="bookart" data-t="${esc(t.id)}">${has ? L('วาดใหม่', 'Draw again') : L('วาดรูปด้วยผู้ช่วย ✨', 'Draw them ✨')}</button>`}</div>`;
+}
 function viewHub(t) {
   const n = t.info || {}, st = stats(t), i = todayIdx(t), dn = dayNow(t), until = daysUntil(t), ed = isEditor(), d = t.days[i], has = hasInfo(t);
   const kids = children().filter((k) => !(t.theme.children || []).length || (t.theme.children || []).some((c) => c.slug === k.slug));
@@ -487,7 +499,7 @@ function viewHub(t) {
   const pick = isEditor() ? `<div class="row tilepick"><span class="label">${L('สีของเมนู', 'Menu colours')}</span><div class="seg" role="group">${[['pastel', 'สีสัน', 'Colourful'], ['accent', 'สีเล่ม', 'The book’s colour'], ['plain', 'เรียบ', 'Plain']].map(([k, th, en]) => `<button type="button" data-a="tiles" data-v="${k}" aria-pressed="${tl === ` tl-${k}`}">${L(th, en)}</button>`).join('')}</div></div>` : '';
   return `<section class="hubhead">${stampHtml(t, true)}<div class="grow"><div class="kicker">${esc(t.theme.kicker || '')}</div><h1>${esc(T(t.title).split(' · ')[0])}</h1><p class="line">${esc(fmtRange(t))}${ages ? ' · ' + ages : ''}</p></div></section>
 <a class="hubsearch" href="#/t/${esc(t.id)}/search">${ic('search')}<span><b>${L('ค้นหาทั้งเล่ม', 'Search the whole book')}</b><small>${L('หมอ · ยา · แท็กซี่ · ห้องน้ำ · เด็กหลง', 'doctor · pharmacy · taxi · toilet · lost child')}</small></span></a>
-<div class="hubgrid hero${tl}">${hero}</div>${groups}${pick}${isEditor() && t.source && t.source !== 'seed' ? `<div class="row end tripdel"><button type="button" class="mini" data-a="tripdel" data-t="${esc(t.id)}">${L('ลบเล่มนี้', 'Delete this book')}</button></div>` : ''}`;
+<div class="hubgrid hero${tl}">${hero}</div>${groups}${pick}${artCard(t)}${isEditor() && t.source && t.source !== 'seed' ? `<div class="row end tripdel"><button type="button" class="mini" data-a="tripdel" data-t="${esc(t.id)}">${L('ลบเล่มนี้', 'Delete this book')}</button></div>` : ''}`;
 }
 /* ---------- search the whole book ----------
    One index per book, both languages (a Thai phone finds "taxi", an English one finds "แท็กซี่"): the pocket-guide sections (stays, emergency,

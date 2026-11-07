@@ -9,7 +9,8 @@ The bookshelf side (`docs/PLAN-TO-BOOK.md`) turns the result into a book; this f
 1. The Trip Operations Manual PDF (TH and EN) as usual — the source of truth.
 2. **Plus `plan.json`** following `docs/handoff/plan.schema.json` (example `plan.sample.json`), embedded in the trip-app Artifact as
    `<script type="application/json" id="plan">…</script>` or sent as a file. Every text field bilingual `{ "th": "…", "en": "…" }`.
-3. Never in `plan.json`: booking refs/PNR, confirmation or e-ticket numbers, passport numbers, formal names, full birthdates
+3. **Thai reads like Thai** (owner's rule, Nov 2026): what a parent reads at a glance — the book title, day titles, weather lines, timeline headlines `h`, ordinary words — is Thai or transliterated (โกลเด้นบัส, คาทูมบา, รถรับส่ง, บัตรแตะจ่าย). Only a name they must match against a sign or a map (a station, a hotel, a bay number, "landing slip", "Coach") stays in Latin script, inside the details. Never translate a proper name word by word. Spell เช็กอิน / เช็กเอาต์.
+4. Never in `plan.json`: booking refs/PNR, confirmation or e-ticket numbers, passport numbers, formal names, full birthdates
    (year-month only), costs we paid, THB amounts, e-mails, personal phones. Prices of entry/food in **local currency** are fine.
    The converter refuses the file if it finds them; the manual PDF itself may keep them.
 

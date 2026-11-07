@@ -7,6 +7,7 @@ import os from 'node:os';
 import path from 'node:path';
 import { createRequire } from 'node:module';
 import { chromium } from 'playwright';
+import yauzl from 'yauzl';
 
 const { CODE } = process.env;
 let failures = 0;
@@ -17,7 +18,7 @@ const freePort = () => new Promise((res) => { const s = net.createServer().liste
 // ---- mock Messages API (SSE)
 const calls = [], importCalls = [];
 let upstreamClosedEarly = false;
-const openaiCalls = [];
+const openaiCalls = [], artCalls = [];
 const mock = http.createServer((req, res) => {
   if (req.url === '/v1/images/edits') {   // OpenAI's image model: the first call is turned down by its safety system, the rest draw a small PNG
     const chunks = []; req.on('data', (d) => chunks.push(d));
@@ -47,11 +48,21 @@ const mock = http.createServer((req, res) => {
     const imp = sysText.includes('Trip Operations Manual') ? (facts.includes('top level and its days') ? 'top' : facts.includes('pocket guide') ? 'info' : facts.startsWith('List EVERY restaurant') ? 'restlist' : facts.startsWith('List only the area headings') ? 'restareas' : facts.startsWith('For these areas') ? 'restnames' : facts.startsWith('For each of these places') ? 'rest' : 'other')
       : sysText.includes("children's pages") ? 'kids' : sysText.includes('playful pages') ? 'extras' : sysText.includes('You translate a family trip guide') ? 'thai' : null;
     if (imp) importCalls.push({ step: imp, system: sysText, user: facts });
+    // the book's pictures (server/bookart.js): SVG per day / crest / guide, the guides' names as JSON; the first day answer is unsafe (a script), so it is asked again
+    const art = String(b.system).startsWith('You draw the pictures') ? (facts.startsWith('Invent the two guide') ? 'names' : facts.startsWith('Draw day') ? 'day' : facts.startsWith("Draw the book's crest") ? 'crest' : 'guide') : null;
+    if (art) artCalls.push({ kind: art, user: facts, system: String(b.system) });
+    const ARTA = {
+      day: () => (artCalls.length === 1 ? '<svg viewBox="-4 -4 108 108" xmlns="http://www.w3.org/2000/svg"><script>alert(1)</script><circle cx="50" cy="50" r="46" fill="#DDF2FF"/></svg>'
+        : `Here it is:\n<svg viewBox="-4 -4 108 108" xmlns="http://www.w3.org/2000/svg"><defs><clipPath id="t${artCalls.length}"><circle cx="50" cy="50" r="46"/></clipPath></defs><circle cx="50" cy="50" r="50" fill="#fff"/><circle cx="50" cy="50" r="46" fill="#DDF2FF"/><g clip-path="url(#t${artCalls.length})"><rect x="0" y="60" width="100" height="40" fill="#8FD36B" stroke="#22213A" stroke-width="2.4"/><circle cx="76" cy="26" r="9" fill="#FFD54A" stroke="#22213A" stroke-width="2.4"/></g></svg>`),
+      crest: () => '<svg viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg"><circle cx="100" cy="100" r="97" fill="#FBF3DC" stroke="#1F3A5F" stroke-width="4"/><text x="100" y="40" text-anchor="middle" font-family="sans-serif" font-weight="700">THE TEST HOP</text><circle cx="100" cy="110" r="30" fill="#E05A7A" stroke="#1F3A5F" stroke-width="4"/></svg>',
+      names: () => JSON.stringify({ guides: [{ key: 'momo', kind: 'crab', colour: '#FF8A5B', name: { th: 'โมโม่', en: 'Momo' }, hello: { th: 'สวัสดี {name}! โมโม่กับเปปเปอร์จะพาเที่ยว', en: 'Hi {name}! Momo and Pepper will show you around' } }, { key: 'pepper', kind: 'seagull', colour: '#D9E6F2', name: { th: 'เปปเปอร์', en: 'Pepper' }, hello: { th: 'เปปเปอร์บินอยู่บนฟ้านะ', en: 'Pepper is up in the sky' } }] }),
+      guide: () => '<svg viewBox="0 0 120 120" xmlns="http://www.w3.org/2000/svg"><circle cx="60" cy="66" r="40" fill="#FF8A5B" stroke="#1e293b" stroke-width="4"/><circle cx="48" cy="60" r="5" fill="#1e293b"/><circle cx="72" cy="60" r="5" fill="#1e293b"/></svg>',
+    };
     const en = (x) => ({ en: x }), L2 = (th, e) => ({ th, en: e });
     const IMP = {
       top: () => JSON.stringify({ slug: 'wrong-slug', title: en('The Test Hop · Testland'), from: '2027-03-10', to: '2027-03-11', tz: 'Asia/Tokyo', place: { en: 'Testland', flag: '🏳️' },
         days: [0, 1].map((i) => ({ title: en(`Day ${i + 1} of the test`), sleep: en('Test Inn'), planned: [{ en: 'Test Square', th: i ? null : '', zh: '測試', q: 'Test Square, Testland' }], moving: { en: 'Walk 5 min', th: ' ' },
-          plan: [{ t: '09:00', en: 'Breakfast' }, { t: '11:00', en: 'Super Fun Zone opens' }], tips: [en('Show the driver: 測試')], stay: { name: 'Test Inn', addr: '1 Test St', q: 'Test Inn, Testland' } })) }),
+          plan: [{ t: '09:00', en: 'Breakfast' }, { t: '11:00', h: { en: '🎈 Super Fun Zone opens' }, en: 'Super Fun Zone opens' }], tips: [en('Show the driver: 測試')], stay: { name: 'Test Inn', addr: '1 Test St', q: 'Test Inn, Testland' } })) }),
       info: () => JSON.stringify({ emergency: [{ label: en('All emergencies'), tel: '999', main: true }], lost: en('Stand still'), guide: [{ title: en('Clocks'), text: en('One hour ahead') }, { title: en('Front desk'), text: en('Show booking ref KL4PQZ at check-in') }] }),
       restlist: () => JSON.stringify({ areas: [{ area: en('Test town'), kind: 0, names: ['Test Noodles', 'Test Dumplings'] }, { area: en('Test sweets'), kind: 2, names: ['Test Tarts'] }] }),
       // the list overflows once (stop_reason max_tokens below), so the fallback asks for the headings, then the names
@@ -71,7 +82,7 @@ const mock = http.createServer((req, res) => {
       thai: () => JSON.stringify(JSON.parse(facts).map((x) => `ไทย: ${x}`)),
     };
     const badJson = imp === 'kids' && importCalls.filter((c) => c.step === 'kids').length === 1;   // the first kids' answer is broken JSON (a missing comma), as a live run once got
-    const parts = imp ? [badJson ? '{"days":[{"learn":[{"name":{"th":"x" "en":"x"}}]}]}' : IMP[imp]()] : photo ? [JSON.stringify(pids.map((id, k) => (k === 0 ? { id, cap: '## เด็กๆ **ยิ้ม** หน้าปราสาท', tags: ['kids', 'Character', 'bogus', 'kids'], place: stop0, best: true } : { id, cap: 'เรากินติ่มซำ', tags: ['food'], place: 'Narnia', best: 'yes' })))]
+    const parts = art ? [ARTA[art]()] : imp ? [badJson ? '{"days":[{"learn":[{"name":{"th":"x" "en":"x"}}]}]}' : IMP[imp]()] : photo ? [JSON.stringify(pids.map((id, k) => (k === 0 ? { id, cap: '## เด็กๆ **ยิ้ม** หน้าปราสาท', tags: ['kids', 'Character', 'bogus', 'kids'], place: stop0, best: true } : { id, cap: 'เรากินติ่มซำ', tags: ['food'], place: 'Narnia', best: 'yes' })))]
       : quiz ? ['```json\n[{"q":"เมื่อวานมีมี่บอกว่าปลาอยู่ที่ไหน","a":[{"e":"💧","t":"ในน้ำ"},{"e":"🌳","t":"บนต้นไม้"},{"e":"🚌","t":"บนรถบัส"}],"ok":0},',
       '{"q":"ไปไหนมา","a":[{"e":"🏰","t":"ดิสนีย์"},{"e":"🏖️","t":"ทะเล"},{"e":"🏔️","t":"ภูเขา"}],"ok":0},{"q":"bad","a":[{"t":"x"}],"ok":3}]\n```']
       : trans ? [JSON.stringify(JSON.parse(facts).map((x) => ({ id: x.id, tr: `${x.to}:${x.text}` })))]
@@ -99,7 +110,7 @@ const dbName = 'mb_story_' + Date.now().toString(36); await admin.query(`CREATE 
 const u = new URL(process.env.TEST_DATABASE_URL); u.pathname = '/' + dbName;
 const port = await freePort(), data = fs.mkdtempSync(path.join(os.tmpdir(), 'mb-story-'));
 const srv = spawn(process.execPath, ['server/index.js'], { cwd: process.cwd(), stdio: ['ignore', 'ignore', 'inherit'],
-  env: { ...process.env, PORT: String(port), DATA_DIR: data, DATABASE_URL: u.toString(), ANTHROPIC_API_KEY: 'test-key', ANTHROPIC_BASE_URL: `http://localhost:${mockPort}`, OPENAI_API_KEY: 'test-openai', OPENAI_BASE_URL: `http://localhost:${mockPort}`, STORY_DAILY: '17', PHOTO_AI: '1' } });
+  env: { ...process.env, PORT: String(port), DATA_DIR: data, DATABASE_URL: u.toString(), ANTHROPIC_API_KEY: 'test-key', ANTHROPIC_BASE_URL: `http://localhost:${mockPort}`, OPENAI_API_KEY: 'test-openai', OPENAI_BASE_URL: `http://localhost:${mockPort}`, STORY_DAILY: '17', PHOTO_AI: '1', ART_RUNS: '2', BACKUP_TOKEN: 'story-backup-token-0123456789' } });
 const BASE = `http://localhost:${port}`;
 try {
   for (let i = 0; i < 80; i++) { try { if ((await fetch(BASE + '/healthz')).ok) break; } catch (_) {} await new Promise((r) => setTimeout(r, 250)); }
@@ -467,14 +478,44 @@ try {
   ok(dr.seed.info.stays[0].why.en === 'Close to everything' && dr.report.todo === 0, 'import: "why we chose it" filled, nothing left TODO');
   ok(dr.seed.info.guide.length === 1 && dr.seed.info.guide[0].title.en === 'Clocks' && !JSON.stringify(dr.seed).includes('KL4PQZ') && dr.report.warns.some((w) => /removed info\.guide\[1\] \(looked like a booking reference\)/.test(w)), `import: a guide card that looks like a booking reference is taken out and named, the book is kept (${JSON.stringify(dr.report.warns)})`);
   ok(dr.seed.days[0].moving.th === 'ไทย: Walk 5 min' && dr.seed.days[0].planned[0].th === 'ไทย: Test Square' && dr.seed.days[1].planned[0].th === 'ไทย: Test Square', 'import: a blank, a space or a null Thai from the model counts as missing and is translated');
+  { const db = new Client({ connectionString: u.toString() }); await db.connect(); await db.query('UPDATE ai_usage SET calls=0'); await db.end(); }   // a fresh day's allowance: saving starts the book's drawings (6 calls)
   const sv = await fetch(BASE + '/api/b/import/' + imp.drafts[0].id + '/save', { method: 'POST', headers: H, body: '{}' });
   ok(sv.status === 200 && (await sv.json()).id === 'test-hop', 'import: saved as a book');
   const stt = await state(), nt = stt.trips.find((t) => t.id === 'test-hop');
   ok(nt && nt.source === 'manual' && nt.days.length === 2 && nt.days[1].plan.plan[1].en === 'Super Fun Zone opens' && nt.days[0].planned[0].th === 'ไทย: Test Square' && nt.days[1].planned[0].th === 'ไทย: Test Square' && nt.firsts.length === 3 && nt.firsts[0].key === 'ferry' && nt.passport.days.length === 2, 'import: the new book is in the state with its days, plans, its own firsts and passport');
   ok((await (await fetch(BASE + '/api/b/import', { headers: { cookie: ck } })).json()).drafts.length === 0, 'import: the draft is gone once saved');
-  ok((await fetch(BASE + '/api/b/import?slug=test-hop', { method: 'POST', headers: IH, body: pdf })).status === 409, 'import: the saved book\'s id is now taken');
-  const lite = (await (await fetch(BASE + '/api/b/state?lite=1', { headers: { cookie: ck } })).json()).trips.find((t) => t.id === 'test-hop');
-  ok(lite && lite.seed && (await fetch(BASE + '/api/b/seed/test-hop/' + lite.seed, { headers: { cookie: ck } })).status === 200, 'import: the book\'s guide text is served by its hash');
+  // ---- the book's own pictures (server/bookart.js): saving an imported book starts the drawing by itself — a circle per day, the crest, then the two guides
+  { let art; for (let k = 0; k < 150; k++) { art = await (await fetch(BASE + '/api/b/art', { headers: { cookie: ck } })).json(); if (art.status === 'done' || art.status === 'error') break; await new Promise((r) => setTimeout(r, 200)); }
+    ok(art.status === 'done' && art.trip === 'test-hop' && art.done === 5 && art.total === 5 && art.on === true && art.runs === 2, `bookart: the saved book's pictures are drawn by themselves (${JSON.stringify(art)})`);
+    const kinds = artCalls.map((c) => c.kind).join(',');
+    ok(kinds === 'day,day,day,crest,names,guide,guide' && artCalls.every((c) => /hand-drawn house style/.test(c.system) && /no <script>/.test(c.system)),
+      `bookart: one call per day (an unsafe answer asked again), the crest, the guides' names, a guide each — in the house style (${kinds})`);
+    ok(artCalls[0].user === artCalls[1].user && /"Day 1 of the test"/.test(artCalls[0].user) && /Testland/.test(artCalls[0].user) && /Super Fun Zone opens/.test(artCalls[2].user) && /viewBox="-4 -4 108 108"/.test(artCalls[2].user) && /<svg viewBox="-4 -4 108 108"/.test(artCalls[2].user)
+      && /"The Test Hop"/.test(artCalls[3].user) && /TESTLAND · MARCH 2027/.test(artCalls[3].user) && /Mimi/.test(artCalls[4].user) && /"Momo": a crab from Testland/.test(artCalls[5].user) && /#FF8A5B/.test(artCalls[5].user),
+      `bookart: a day asks for its title, place, headlines and the owner's example drawing; the crest its title and month; the guides their names and kinds (${[0, 2, 3, 4, 5].map((k) => artCalls[k].user.slice(0, 150)).join(' || ')})`);
+    ok(!artCalls.some((c) => /KL4PQZ|999/.test(c.user)) && !artCalls.slice(0, 4).some((c) => /Mimi|Mika|มีมี่|มีก้า/.test(c.user)), 'bookart: nothing private in a prompt; the children are named only where the guides greet them');
+    const st2 = (await state()).trips.find((t) => t.id === 'test-hop');
+    ok(/^\/media\/art\/test-hop\/day-\{n\}\.svg\?v=/.test(st2.theme.art) && /^\/media\/art\/test-hop\/crest\.svg\?v=/.test(st2.passport.style.crest) && st2.passport.colour === '' && st2.theme.artRuns === 1
+      && st2.passport.guides.length === 2 && st2.passport.guides[0].key === 'momo' && st2.passport.guides[0].name.th === 'โมโม่' && /^\/media\/art\/test-hop\/guide-1\.svg\?v=/.test(st2.passport.guides[0].art) && st2.passport.guides[1].hello.en === 'Pepper is up in the sky',
+      'bookart: the book now points at its drawn circles, crest and guides (Kiki and Roo stand down); the colouring page uses the day circles');
+    const day1 = await fetch(BASE + st2.theme.art.replace('{n}', '1'), { headers: { cookie: ck } }), day1Text = await day1.text();
+    ok(day1.status === 200 && day1.headers.get('content-type').startsWith('image/svg+xml') && /default-src 'none'/.test(day1.headers.get('content-security-policy')) && day1Text.startsWith('<svg') && !/script/.test(day1Text) && !/Here it is/.test(day1Text), 'bookart: a day circle is served as locked-down SVG, the prose around the answer stripped, the unsafe answer never kept');
+    ok((await fetch(BASE + st2.passport.style.crest, { headers: { cookie: ck } })).status === 200 && (await fetch(BASE + st2.passport.guides[1].art, { headers: { cookie: ck } })).status === 200 && (await fetch(BASE + '/media/art/test-hop/day-1.svg')).status === 401 && (await fetch(BASE + '/media/art/test-hop/day-9.svg', { headers: { cookie: ck } })).status === 404, 'bookart: crest and guides served; signed-in only; a day never drawn is 404');
+    ok((await fetch(BASE + '/api/b/art/hk-macau-2026', { method: 'POST', headers: H, body: '{}' })).status === 409, 'bookart: a book with the owner\'s own drawings is never redrawn');
+    const n0 = artCalls.length, again = await fetch(BASE + '/api/b/art/test-hop', { method: 'POST', headers: H, body: '{}' });
+    ok(again.status === 202, 'bookart: a redraw can be asked for (every picture drawn again)');
+    for (let k = 0; k < 150; k++) { art = await (await fetch(BASE + '/api/b/art', { headers: { cookie: ck } })).json(); if (art.status !== 'running') break; await new Promise((r) => setTimeout(r, 200)); }
+    const st3 = (await state()).trips.find((t) => t.id === 'test-hop');
+    ok(art.status === 'done' && artCalls.length === n0 + 6 && st3.theme.artRuns === 2 && st3.theme.art !== st2.theme.art, `bookart: the redraw drew everything again under a new version (${artCalls.length - n0} calls)`);
+    ok((await fetch(BASE + '/api/b/art/test-hop', { method: 'POST', headers: H, body: '{}' })).status === 429, 'bookart: ART_RUNS full drawings per book, then no more');
+    { const db = new Client({ connectionString: u.toString() }); await db.connect(); await db.query('UPDATE ai_usage SET calls=16'); await db.end(); }
+    const sv2 = await fetch(BASE + '/api/b/art/test-hop', { method: 'POST', headers: H, body: '{}' });   // runs are used up, but the allowance check comes first
+    ok(sv2.status === 429 && ['runs', 'limit'].includes((await sv2.json()).error), 'bookart: a book is never started on an allowance that cannot carry it');
+    { const db = new Client({ connectionString: u.toString() }); await db.connect(); await db.query('UPDATE ai_usage SET calls=0'); await db.end(); }
+    const zip = Buffer.from(await (await fetch(BASE + '/api/backup.zip', { headers: { authorization: 'Bearer story-backup-token-0123456789' } })).arrayBuffer());
+    const names = await new Promise((res, rej) => yauzl.fromBuffer(zip, { lazyEntries: true }, (e, z) => { if (e) return rej(e); const ns = []; z.on('entry', (en) => { ns.push(en.fileName); z.readEntry(); }); z.on('end', () => res(ns)); z.readEntry(); }));
+    ok(['art/test-hop/day-1.svg', 'art/test-hop/day-2.svg', 'art/test-hop/crest.svg', 'art/test-hop/guide-1.svg', 'art/test-hop/guide-2.svg'].every((n) => names.includes(n)) && !names.some((n) => n.startsWith('art/hk-macau-2026/')), 'bookart: the drawn pictures travel in the backup (the owner\'s SVGs come with the app, not the zip)');
+  }
   // ---- a child's own character from a photo (#/family, OpenAI): a refused try is free, three a year, the drawing is family-only
   { const sharp = createRequire(import.meta.url)('sharp');
     const photo = await sharp({ create: { width: 2400, height: 3200, channels: 3, background: '#8B5A2B' } }).jpeg().toBuffer();
