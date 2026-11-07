@@ -159,13 +159,12 @@ function loginView() {
   return `<div class="login"><form id="lf" autocomplete="on">
 <div class="loginart" aria-hidden="true">${['/art/hk/day-2.svg', '/art/day-4.svg', '/art/day-13.svg'].map((a, i) => `<img class="art f${i}" src="${a}" alt="">`).join('')}${castHtml(kidArtSlugs())}</div>
 <div class="kicker">${L('สมุดความทรงจำ · ส่วนตัว', 'Private family book')}</div>
-<h1>${esc(appName()).replace(' ', '<br>')}</h1><p class="muted">${kicker() ? L(`ความทรงจำ${kicker()} ทุกทริป`, `${kicker()}'s memories, every trip`) : L('ความทรงจำของครอบครัว ทุกทริป', 'Our family memories, every trip')}</p>
+<h1>${esc(appName()).replace(' ', ' <br>')}</h1><p class="muted">${kicker() ? L(`ความทรงจำ${kicker()} ทุกทริป`, `${kicker()}'s memories, every trip`) : L('ความทรงจำของครอบครัว ทุกทริป', 'Our family memories, every trip')}</p>
+<div class="row lwho"><span class="lwl">${L('ใครใช้เครื่องนี้', 'Who is this?')}</span>${chips}<input id="lname" class="field" style="flex:1;min-width:110px" value="${esc(who)}" placeholder="${L('ชื่ออื่น', 'Other name')}" maxlength="24"></div>
 <label for="lcode">${L('รหัสครอบครัว', 'Family PIN')}</label>
 <input id="lcode" class="field pin" type="password" inputmode="numeric" autocomplete="current-password" required aria-describedby="lerr">
 <div class="pinpad" role="group" aria-label="${L('แป้นตัวเลข', 'Number pad')}">${keys.map((k) => `<button type="button" data-a="pin" data-v="${k}"${k === 'clear' ? ` aria-label="${L('ล้าง', 'Clear')}"` : k === 'back' ? ` aria-label="${L('ลบ', 'Delete')}"` : ''}>${k === 'clear' ? 'C' : k === 'back' ? '⌫' : k}</button>`).join('')}</div>
-<label>${L('ใครใช้เครื่องนี้ (ไม่บังคับ)', 'Who is this? (optional)')}</label>
-<div class="row">${chips}<input id="lname" class="field" style="flex:1;min-width:110px" value="${esc(who)}" placeholder="${L('ชื่ออื่น', 'Other name')}" maxlength="24"></div>
-<div class="row" style="margin-top:16px"><button class="btn" type="submit">${L('เข้าสมุด', 'Open the shelf')}</button>
+<div class="row lgo"><button class="btn" type="submit">${L('เข้าสมุด', 'Open the shelf')}</button>
 <span class="seg"><button type="button" data-a="lang" data-v="th" aria-pressed="${lang === 'th'}">ไทย</button><button type="button" data-a="lang" data-v="en" aria-pressed="${lang === 'en'}">EN</button></span></div>
 <div class="err" id="lerr" role="alert"></div>
 <p class="label" style="margin-top:6px">${L('ใส่รหัสครั้งเดียว เครื่องนี้จะจำไว้ · ญาติใช้รหัสที่พ่อแม่ให้ แล้วพิมพ์ชื่อตัวเองในช่อง "ชื่ออื่น"', "Enter the PIN once — this phone remembers it · Relatives use the view-only PIN from Mum or Dad and type their name under “Other name”")}</p></form></div>`;
@@ -189,7 +188,7 @@ ${visual}
   }).join('');
   const add = isEditor() ? `<button class="spine add" data-a="newtrip"><span><b style="font-size:32px;display:block">＋</b>${L('เล่มใหม่', 'New book')}</span></button>` : '';
   const welcome = isEditor() && !children().length ? `<a class="famwelcome" href="#/family"><span>👨‍👩‍👧‍👦</span><div><b>${L('เริ่มที่ครอบครัวของเรา', 'Start with your family')}</b><small>${L('ตั้งชื่อแอป ใส่ชื่อลูกๆ และเลือกตัวการ์ตูนของแต่ละคน แล้วทุกหน้าจะเป็นของครอบครัวเรา', "Name the app, add the children and pick each one's character — every page becomes yours")}</small></div></a>` : '';
-  return `${heroHtml()}${welcome}<div class="part">${L('ชั้นหนังสือ', 'The bookshelf')}</div><h1 class="h2">${L(kicker() ? `ทุกทริป${kicker()}` : 'ทุกทริปของเรา', 'Every trip, one book each')}</h1>
+  return `${remindAsk()}${heroHtml()}${welcome}<div class="part">${L('ชั้นหนังสือ', 'The bookshelf')}</div><h1 class="h2">${L(kicker() ? `ทุกทริป${kicker()}` : 'ทุกทริปของเรา', 'Every trip, one book each')}</h1>
 <p class="lede">${L('แต่ละทริปคือหนึ่งเล่ม เปิดอ่านได้ทั้งตอนเที่ยวและอีกหลายปีข้างหน้า', 'Each trip is a book — to fill in on the road and reread for years.')}</p>
 <div class="shelf">${books}${add}</div>
 <div class="part">${L('พาสปอร์ตนักผจญภัย', 'The kids’ passports')} 🛂</div>
@@ -598,6 +597,18 @@ ${reportBtn(full, L('อ่านแผนเต็มของวันนี�
 }
 // grown-ups switch the trip reminders on per phone (the server pushes 30 min before each timed step of the day);
 // once on, the box leaves the Today page and lives on the Offline page (test / turn off)
+// reminders, offered right after signing in (parents only), at the top of the shelf — until they are on or the parent says "later".
+// On an iPhone in Safari the phone can't take reminders yet: the card says the one step that makes it possible (Home Screen).
+function remindAsk() {
+  if (!isEditor() || ls('remind') || ls('remindLater')) return '';
+  const ios = /iP(hone|ad|od)/.test(navigator.userAgent), standalone = matchMedia('(display-mode: standalone)').matches || navigator.standalone;
+  if (!pushOk() && !(ios && !standalone)) return '';   // a browser that can never show them: say nothing
+  const needHome = ios && !standalone;
+  return `<div class="remind ask">${ic('bell')}<span><b>${L('ให้แอปเตือนระหว่างทริป', 'Reminders during the trip')}</b>
+<small>${needHome ? L('บน iPhone: แตะปุ่มแชร์ ⬆️ → "เพิ่มไปยังหน้าจอโฮม" แล้วเปิดแอปจากไอคอน จากนั้นกด "เปิดการเตือน" ตรงนี้', 'On iPhone: tap Share ⬆️ → "Add to Home Screen", open the app from its icon, then turn reminders on here')
+    : L('ก่อนกิจกรรม 30 นาที · ประตูเซอร์ไพรส์ 08:00 · ชวนบันทึก 21:30', '30 min before each step · a surprise door at 08:00 · record the day at 21:30')}</small></span>
+<span class="rb"><button class="btn small ghost" data-a="remindlater">${L('ไว้ทีหลัง', 'Later')}</button>${needHome ? '' : `<button class="btn small" data-a="remind">${L('เปิดการเตือน', 'Turn on')}</button>`}</span></div>`;
+}
 function remindBar() {
   const on = !!ls('remind');
   return `<div class="remind${on ? ' on' : ''}">${ic('bell')}<span><b>${on ? L('เตือนก่อนทุกกิจกรรม 30 นาที · เปิดอยู่', 'Reminders 30 min before each step · on') : L('ให้แอปเตือนก่อนทุกกิจกรรม 30 นาที', 'Remind me 30 min before each step')}</b>

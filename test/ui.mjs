@@ -50,12 +50,17 @@ const T = 'hk-macau-2026';
   await page.waitForFunction(() => document.querySelector('#lerr').textContent.length > 0);
   ok(true, 'wrong code shows an error');
   ok(await page.inputValue('#lcode') === '', 'wrong PIN clears the field');
-  for (const d of CODE) await page.click(`.pinpad button[data-v="${d}"]`);   // tap the PIN on the number pad
-  await page.click('.pinpad button[data-v="back"]'); await page.click(`.pinpad button[data-v="${CODE.at(-1)}"]`);
-  ok(await page.inputValue('#lcode') === CODE, 'number pad types the PIN (⌫ works)');
-  await page.click('button[data-a="who-login"][data-v="Mum"]');
-  await page.click('#lf button[type=submit]');
+  ok(JSON.stringify((await (await fetch(BASE + '/api/brand')).json()).pin) === JSON.stringify({ lens: [CODE.length], open: false }), 'the brand says only how long a code is (never a digit)');
+  await page.click('button[data-a="who-login"][data-v="Mum"]');   // who first: the pad signs in by itself at the last digit
+  for (const d of CODE.slice(0, -1)) await page.click(`.pinpad button[data-v="${d}"]`);   // tap the PIN on the number pad
+  await page.click('.pinpad button[data-v="back"]'); await page.click(`.pinpad button[data-v="${CODE.at(-2)}"]`);
+  ok(await page.inputValue('#lcode') === CODE.slice(0, -1), 'number pad types the PIN (⌫ works); one digit short, nothing happens yet');
+  await page.click(`.pinpad button[data-v="${CODE.at(-1)}"]`);   // the last digit: in without a button
   await page.waitForSelector('.shelf');
+  ok(true, 'the last digit signs in by itself');
+  ok(await page.evaluate(() => { const a = document.querySelector('.remind.ask'), h = document.querySelector('.hero'); return !!a && !!a.querySelector('[data-a="remind"]') && (!h || a.getBoundingClientRect().top < h.getBoundingClientRect().top); }), 'after signing in: reminders are offered first thing on the shelf');
+  await page.click('.remind.ask [data-a="remindlater"]');
+  ok(await page.locator('.remind.ask').count() === 0 && await page.evaluate(() => ls('remindLater') === 1), '"later" puts the offer away on this phone');
   ok(await page.evaluate(async () => (await (await fetch('/api/b/state')).json()).me.name) === 'Mum', 'who-is-this chip used as the name (optional)');
   ok(await page.locator('.spine:not(.add)').count() === 2 && await page.locator('.spine.add').count() === 1, 'shelf: 2 books + new book');
   ok((await page.locator('.spine').first().textContent()).includes('DOLPHIN'), 'HK spine shows the manual kicker');

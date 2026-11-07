@@ -1904,3 +1904,30 @@ html[data-fs="1"] main.wrap{zoom:1.1}html[data-fs="2"] main.wrap{zoom:1.2}html[d
 /* a trip-day banner (surprise box, stamp before bed) is the greeting: the drawing and its bubble step aside so the
    tiles stay big enough for small fingers (🔊 still reads the hello) */
 .kidwrap.home:has(.kidgift,.kidnight) .kidhello{display:none}
+.remind.ask{border:0;margin-top:0;background:linear-gradient(135deg,color-mix(in srgb,var(--sun) 30%,var(--paper)),color-mix(in srgb,var(--sky) 22%,var(--paper)));box-shadow:0 10px 22px -16px rgba(0,0,0,.35);margin:14px 0 4px}
+.remind.ask>.ic{color:var(--accent);width:26px;height:26px}
+/* sign-in fits one phone screen (iPhone 13 in Safari shows ~390×664): who first, then the code — it opens by itself at the last digit */
+.login{padding:12px var(--gut);place-items:start center}
+@media (min-height:760px){.login{place-items:center}}
+.login form{padding:16px 18px 12px}
+.lwho{gap:6px;align-items:center;flex-wrap:nowrap;margin-top:8px}
+.lwho .lwl{font-size:13px;color:var(--muted);flex:none}
+.lwho .chip{flex:none;padding:6px 12px}
+.lwho .field{min-width:0!important;padding:8px 10px}
+.login label{margin:10px 0 4px}
+.lgo{margin-top:10px;justify-content:space-between}
+@media (max-height:900px){
+  .loginart{min-height:0;height:74px;margin:2px -6px 8px;padding:6px 6px 0}
+  .loginart .art{width:34px;height:34px}
+  .loginart .cast img{max-height:66px}
+  .login h1{font-size:34px;margin:4px 0 2px}.login h1 br{display:none}
+  .login .muted{font-size:13.5px;margin:0}
+  .login .pin{font-size:24px;padding:8px}
+  .pinpad{gap:8px 18px;margin:10px auto 2px;max-width:270px}
+  .pinpad button{max-width:62px;font-size:24px}
+  .login .err{min-height:0;margin-top:4px}
+  .login .err:empty{display:none}
+  .login p.label{font-size:12px;line-height:1.35}
+}
+@media (max-height:600px){.loginart{display:none}.login .kicker{display:none}.pinpad button{max-width:54px}}
+@media (max-height:900px){.login .pin{height:48px;padding:4px 10px;letter-spacing:.35em}}

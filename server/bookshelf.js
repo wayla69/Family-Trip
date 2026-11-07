@@ -119,8 +119,15 @@ function router({ pool, media, A, ai, hooks = {} }) {   // hooks.heart(h): set b
   const kidsFor = async (t) => FAM.kidsFor(await kidRows(), t && t.date_from ? new Date(t.date_from) : new Date());   // for prompts: names and ages at the trip
   // before login the app shows only the family's app name and the drawings — never the children's names
   r.get('/api/brand', async (_req, res, next) => {
-    try { res.setHeader('Cache-Control', 'no-store'); res.json(await brand(pool)); } catch (e) { next(e); }
+    try { res.setHeader('Cache-Control', 'no-store'); res.json({ ...(await brand(pool)), pin: await pinLens() }); } catch (e) { next(e); }
   });
+  // the lengths a sign-in code can have (the family's, the relatives' shared PIN, each group's) — never a digit of any of them — so
+  // the pad signs in by itself at the last digit; open = a group PIN of unknown length exists (saved before migration 0021)
+  async function pinLens() {
+    const g = await q('SELECT pin_len FROM viewer_groups WHERE family_id=$1 AND pin_hash IS NOT NULL', [FAMILY]);
+    const lens = new Set([A.FAMILY_CODE.length, A.VIEW_PIN.length, ...g.map((x) => x.pin_len)].filter((n) => n > 0));
+    return { lens: [...lens].sort((a, b) => a - b), open: g.some((x) => !x.pin_len) };
+  }
   r.put('/api/b/family', ...W, async (req, res, next) => {
     try {
       const b = req.body || {}, prof = FAM.cleanProfile(b.profile);
@@ -860,20 +867,20 @@ function router({ pool, media, A, ai, hooks = {} }) {   // hooks.heart(h): set b
       const trips = [...new Set((Array.isArray(b.trips) ? b.trips : []).map(String))].filter((x) => all.includes(x));
       const cur = (await q('SELECT * FROM viewer_groups WHERE id=$1', [id]))[0];
       if (cur && cur.family_id !== FAMILY) return bad(res, 'conflict', 409);
-      let pin = cur ? cur.pin_hash : null, link = cur ? cur.link_token : null;
-      if (b.pin === null) pin = null;   // remove the PIN (link only)
+      let pin = cur ? cur.pin_hash : null, link = cur ? cur.link_token : null, pinLen = cur ? cur.pin_len : null;
+      if (b.pin === null) { pin = null; pinLen = null; }   // remove the PIN (link only)
       else if (b.pin !== undefined && String(b.pin) !== '') {
         const code = String(b.pin);
         if (!/^\d{6,12}$/.test(code)) return bad(res, 'pin');   // the login pad is digits; at least 6 so a group PIN is not guessable in the throttle window
         if ((A.FAMILY_CODE && A.safeEq(code, A.FAMILY_CODE)) || (A.VIEW_PIN && A.safeEq(code, A.VIEW_PIN))) return bad(res, 'pin-taken', 409);
-        pin = A.pinHash(code);
+        pin = A.pinHash(code); pinLen = code.length;   // only the length is kept beside the hash: the sign-in pad opens by itself at the last digit
         if ((await q('SELECT 1 FROM viewer_groups WHERE pin_hash=$1 AND id<>$2', [pin, id])).length) return bad(res, 'pin-taken', 409);
       }
       if (b.link === false) link = null;
       else if (b.link === 'new' || (b.link === true && !link)) link = crypto.randomBytes(24).toString('base64url');   // a fresh link stops the old one
       if (!pin && !link) return bad(res, 'no-way-in');
-      await q(`INSERT INTO viewer_groups (id, family_id, name, pin_hash, link_token, trips) VALUES ($1,$2,$3,$4,$5,$6)
-        ON CONFLICT (id) DO UPDATE SET name=EXCLUDED.name, pin_hash=EXCLUDED.pin_hash, link_token=EXCLUDED.link_token, trips=EXCLUDED.trips, updated_at=now()`, [id, FAMILY, name, pin, link, trips]);
+      await q(`INSERT INTO viewer_groups (id, family_id, name, pin_hash, link_token, trips, pin_len) VALUES ($1,$2,$3,$4,$5,$6,$7)
+        ON CONFLICT (id) DO UPDATE SET name=EXCLUDED.name, pin_hash=EXCLUDED.pin_hash, link_token=EXCLUDED.link_token, trips=EXCLUDED.trips, pin_len=EXCLUDED.pin_len, updated_at=now()`, [id, FAMILY, name, pin, link, trips, pinLen]);
       A.groupsChanged();
       res.json({ ok: true, group: groupOut((await q('SELECT * FROM viewer_groups WHERE id=$1', [id]))[0]) });
     } catch (e) { if (e.code === '23505') return bad(res, 'pin-taken', 409); next(e); }
