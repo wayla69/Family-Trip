@@ -153,7 +153,7 @@ function router({ pool, media, A, ai, hooks = {} }) {   // hooks.heart(h): set b
       let gone = 0;
       for (const k of new Set(keys)) { try { await media.del(k); gone++; } catch (_) { /* a file already missing is fine */ } }
       await q('DELETE FROM families WHERE id=$1', [FAMILY]);
-      await q("DELETE FROM settings WHERE key IN ('family_likes', 'emoji_seeded')");
+      await q("DELETE FROM settings WHERE key IN ('family_likes', 'emoji_seeded', 'emoji_offered')");
       await q('INSERT INTO families (id, name) VALUES ($1, $2) ON CONFLICT (id) DO NOTHING', [FAMILY, 'Family']);
       await syncSeeds(pool); await EMOJI.seed(pool, FAMILY); A.groupsChanged();
       console.log(`family erased on request: ${gone} files, every row`);   // no names, no codes

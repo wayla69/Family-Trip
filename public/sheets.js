@@ -870,7 +870,7 @@ ${ed ? `<button data-lb="star" aria-pressed="${!!m.highlight}">${m.highlight ? '
 <div class="stage"><img src="${esc(imgF(m))}" alt="${esc(m.caption)}">${list.length > 1 ? `<button class="nav prev" data-lb="prev" aria-label="prev">‹</button><button class="nav next" data-lb="next" aria-label="next">›</button>` : ''}</div>
 <div class="capbox">${ed ? `<span class="emowrap"><input id="lbcap" value="${esc(m.caption || '')}" placeholder="${L('คำอธิบายรูป', 'Caption')}" maxlength="500">${emoBtn('lbcap')}</span>` : m.caption ? `<p>${emoIn(esc(m.caption))}</p>` : ''}
 ${ed ? `<div class="tagrow"><input id="lbtags" value="${esc(tagsOf(m).join(', '))}" placeholder="${L('แท็ก คั่นด้วยจุลภาค เช่น food, kids', 'Tags, comma-separated, e.g. food, kids')}" maxlength="200"><input id="lbplace" value="${esc(m.place || '')}" placeholder="${L('ที่ไหน (จุดแวะ)', 'Where (the stop)')}" maxlength="120"></div>` : ''}
-${tagsOf(m).length || m.place ? `<div class="tags">${m.place ? `<span class="tagc">📍 ${esc(m.place)}</span>` : ''}${tagsOf(m).map((k) => `<span class="tagc">${esc(tagLabel(k))}</span>`).join('')}</div>` : ''}</div>`;
+${tagsOf(m).length || m.place ? `<div class="tags">${m.place ? `<span class="tagc">📍 ${esc(m.place)}</span>` : ''}${tagsOf(m).map((k) => `<span class="tagc">${tagHtml(k)}</span>`).join('')}</div>` : ''}</div>`;
   lb.hidden = false;
 }
 function lbAct(k, btn) {
