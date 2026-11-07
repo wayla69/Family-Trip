@@ -1981,4 +1981,9 @@ nav.bar i.pic img{width:32px;height:32px;object-fit:contain;display:block;opacit
 nav.bar a[aria-current=page] i.pic img{opacity:1;filter:none;transform:scale(1.1)}
 nav.bar a[aria-current=page]{background:color-mix(in srgb,var(--accent) 11%,transparent);font-weight:700}
 nav.bar a:active i.pic img,nav.bar button:active i.pic img{transform:scale(.92)}
+/* the settings list and its pages with the owner's pictures (views.js HUB_PIC) */
+.setlist .e.pic{width:36px;height:36px}.setlist .e.pic img{width:100%;height:100%;object-fit:contain;display:block}
+.part .partpic{display:inline-block;width:18px;height:18px;vertical-align:-4px;object-fit:contain}
+.kicker .kickpic{display:inline-block;width:22px;height:22px;vertical-align:-6px;object-fit:contain}
+h1 .h1pic{display:inline-block;width:1.15em;height:1.15em;vertical-align:-.2em;object-fit:contain}
 
