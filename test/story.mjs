@@ -7,6 +7,7 @@ import os from 'node:os';
 import path from 'node:path';
 import { createRequire } from 'node:module';
 import { chromium } from 'playwright';
+import yauzl from 'yauzl';
 
 const { CODE } = process.env;
 let failures = 0;
@@ -17,8 +18,19 @@ const freePort = () => new Promise((res) => { const s = net.createServer().liste
 // ---- mock Messages API (SSE)
 const calls = [], importCalls = [];
 let upstreamClosedEarly = false;
-const openaiCalls = [];
+const openaiCalls = [], artCalls = [];
 const mock = http.createServer((req, res) => {
+  if (req.url === '/v1/images/generations') {   // the book's own pictures (server/bookart.js): a square PNG per prompt, the first day refused once (tried again)
+    let body = ''; req.on('data', (d) => { body += d; });
+    req.on('end', async () => {
+      const b = JSON.parse(body); artCalls.push({ headers: req.headers, body: b });
+      if (artCalls.length === 1) { res.writeHead(500, { 'content-type': 'application/json' }); return res.end(JSON.stringify({ error: { message: 'server hiccup' } })); }
+      const png = await createRequire(import.meta.url)('sharp')({ create: { width: 300, height: 300, channels: 4, background: { r: 0, g: 0, b: 0, alpha: 0 } } })
+        .composite([{ input: Buffer.from('<svg xmlns="http://www.w3.org/2000/svg" width="300" height="300"><circle cx="150" cy="150" r="140" fill="#E3EEF9" stroke="#1F3A5F" stroke-width="8"/></svg>') }]).png().toBuffer();
+      res.writeHead(200, { 'content-type': 'application/json' }); res.end(JSON.stringify({ data: [{ b64_json: png.toString('base64') }], usage: { input_tokens: 100, output_tokens: 4000 } }));
+    });
+    return;
+  }
   if (req.url === '/v1/images/edits') {   // OpenAI's image model: the first call is turned down by its safety system, the rest draw a small PNG
     const chunks = []; req.on('data', (d) => chunks.push(d));
     req.on('end', async () => {
@@ -51,7 +63,7 @@ const mock = http.createServer((req, res) => {
     const IMP = {
       top: () => JSON.stringify({ slug: 'wrong-slug', title: en('The Test Hop · Testland'), from: '2027-03-10', to: '2027-03-11', tz: 'Asia/Tokyo', place: { en: 'Testland', flag: '🏳️' },
         days: [0, 1].map((i) => ({ title: en(`Day ${i + 1} of the test`), sleep: en('Test Inn'), planned: [{ en: 'Test Square', th: i ? null : '', zh: '測試', q: 'Test Square, Testland' }], moving: { en: 'Walk 5 min', th: ' ' },
-          plan: [{ t: '09:00', en: 'Breakfast' }, { t: '11:00', en: 'Super Fun Zone opens' }], tips: [en('Show the driver: 測試')], stay: { name: 'Test Inn', addr: '1 Test St', q: 'Test Inn, Testland' } })) }),
+          plan: [{ t: '09:00', en: 'Breakfast' }, { t: '11:00', h: { en: '🎈 Super Fun Zone opens' }, en: 'Super Fun Zone opens' }], tips: [en('Show the driver: 測試')], stay: { name: 'Test Inn', addr: '1 Test St', q: 'Test Inn, Testland' } })) }),
       info: () => JSON.stringify({ emergency: [{ label: en('All emergencies'), tel: '999', main: true }], lost: en('Stand still'), guide: [{ title: en('Clocks'), text: en('One hour ahead') }, { title: en('Front desk'), text: en('Show booking ref KL4PQZ at check-in') }] }),
       restlist: () => JSON.stringify({ areas: [{ area: en('Test town'), kind: 0, names: ['Test Noodles', 'Test Dumplings'] }, { area: en('Test sweets'), kind: 2, names: ['Test Tarts'] }] }),
       // the list overflows once (stop_reason max_tokens below), so the fallback asks for the headings, then the names
@@ -99,7 +111,7 @@ const dbName = 'mb_story_' + Date.now().toString(36); await admin.query(`CREATE 
 const u = new URL(process.env.TEST_DATABASE_URL); u.pathname = '/' + dbName;
 const port = await freePort(), data = fs.mkdtempSync(path.join(os.tmpdir(), 'mb-story-'));
 const srv = spawn(process.execPath, ['server/index.js'], { cwd: process.cwd(), stdio: ['ignore', 'ignore', 'inherit'],
-  env: { ...process.env, PORT: String(port), DATA_DIR: data, DATABASE_URL: u.toString(), ANTHROPIC_API_KEY: 'test-key', ANTHROPIC_BASE_URL: `http://localhost:${mockPort}`, OPENAI_API_KEY: 'test-openai', OPENAI_BASE_URL: `http://localhost:${mockPort}`, STORY_DAILY: '17', PHOTO_AI: '1' } });
+  env: { ...process.env, PORT: String(port), DATA_DIR: data, DATABASE_URL: u.toString(), ANTHROPIC_API_KEY: 'test-key', ANTHROPIC_BASE_URL: `http://localhost:${mockPort}`, OPENAI_API_KEY: 'test-openai', OPENAI_BASE_URL: `http://localhost:${mockPort}`, STORY_DAILY: '17', PHOTO_AI: '1', ART_RUNS: '2', BACKUP_TOKEN: 'story-backup-token-0123456789' } });
 const BASE = `http://localhost:${port}`;
 try {
   for (let i = 0; i < 80; i++) { try { if ((await fetch(BASE + '/healthz')).ok) break; } catch (_) {} await new Promise((r) => setTimeout(r, 250)); }
@@ -472,6 +484,29 @@ try {
   const stt = await state(), nt = stt.trips.find((t) => t.id === 'test-hop');
   ok(nt && nt.source === 'manual' && nt.days.length === 2 && nt.days[1].plan.plan[1].en === 'Super Fun Zone opens' && nt.days[0].planned[0].th === 'ไทย: Test Square' && nt.days[1].planned[0].th === 'ไทย: Test Square' && nt.firsts.length === 3 && nt.firsts[0].key === 'ferry' && nt.passport.days.length === 2, 'import: the new book is in the state with its days, plans, its own firsts and passport');
   ok((await (await fetch(BASE + '/api/b/import', { headers: { cookie: ck } })).json()).drafts.length === 0, 'import: the draft is gone once saved');
+  // ---- the book's own pictures (server/bookart.js): saving an imported book starts the drawing by itself — a circle per day, then the crest
+  { let art; for (let k = 0; k < 100; k++) { art = await (await fetch(BASE + '/api/b/art', { headers: { cookie: ck } })).json(); if (art.status === 'done' || art.status === 'error') break; await new Promise((r) => setTimeout(r, 200)); }
+    ok(art.status === 'done' && art.trip === 'test-hop' && art.done === 3 && art.total === 3 && art.on === true && art.runs === 2, `bookart: the saved book's pictures are drawn by themselves (${JSON.stringify(art)})`);
+    const ps = artCalls.map((c) => c.body.prompt);
+    ok(artCalls.length === 4 && artCalls.every((c) => c.headers.authorization === 'Bearer test-openai' && c.body.model === 'gpt-image-1' && c.body.size === '1024x1024' && c.body.background === 'transparent')
+      && ps[0] === ps[1] && /inside a perfect circle/.test(ps[1]) && /No text/.test(ps[1]) && ps[2].includes('Super Fun Zone opens') && /passport stamp/.test(ps[3]) && /TEST HOP/.test(ps[3]),
+      `bookart: one call per day (a failed one tried again) + the crest, in the house style, from the titles and headlines only (${artCalls.length}: ${ps.map((p) => p.slice(0, 40) + '…' + p.slice(p.indexOf('The scene'), p.indexOf('The scene') + 160)).join(' | ')})`);
+    ok(!ps.some((p) => /มีมี่|มีก้า|Mimi|Mika|KL4PQZ/.test(p)), 'bookart: no child\'s name and nothing private in a prompt');
+    const st2 = (await state()).trips.find((t) => t.id === 'test-hop');
+    ok(/^\/media\/art\/test-hop\/day-\{n\}\.png\?v=/.test(st2.theme.art) && /^\/media\/art\/test-hop\/crest\.png\?v=/.test(st2.passport.style.crest) && st2.passport.colour === '' && st2.theme.artRuns === 1, 'bookart: the book now points at its drawn circles and crest, the colouring pages are off (a PNG has no regions)');
+    const day1 = await fetch(BASE + st2.theme.art.replace('{n}', '1'), { headers: { cookie: ck } }), crest = await fetch(BASE + st2.passport.style.crest, { headers: { cookie: ck } });
+    ok(day1.status === 200 && day1.headers.get('content-type') === 'image/png' && crest.status === 200 && (await fetch(BASE + '/media/art/test-hop/day-1.png')).status === 401 && (await fetch(BASE + '/media/art/test-hop/day-9.png', { headers: { cookie: ck } })).status === 404, 'bookart: the pictures are served signed-in only; a day that was never drawn is 404');
+    ok((await fetch(BASE + '/api/b/art/hk-macau-2026', { method: 'POST', headers: H, body: '{}' })).status === 409, 'bookart: a book with the owner\'s own drawings is never redrawn');
+    const again = await fetch(BASE + '/api/b/art/test-hop', { method: 'POST', headers: H, body: '{}' });
+    ok(again.status === 202, 'bookart: a redraw can be asked for (every circle drawn again)');
+    for (let k = 0; k < 100; k++) { art = await (await fetch(BASE + '/api/b/art', { headers: { cookie: ck } })).json(); if (art.status !== 'running') break; await new Promise((r) => setTimeout(r, 200)); }
+    const st3 = (await state()).trips.find((t) => t.id === 'test-hop');
+    ok(art.status === 'done' && artCalls.length === 7 && st3.theme.artRuns === 2 && st3.theme.art !== st2.theme.art, 'bookart: the redraw drew all three again under a new version');
+    ok((await fetch(BASE + '/api/b/art/test-hop', { method: 'POST', headers: H, body: '{}' })).status === 429, 'bookart: ART_RUNS full drawings per book, then no more');
+    const zip = Buffer.from(await (await fetch(BASE + '/api/backup.zip', { headers: { authorization: 'Bearer story-backup-token-0123456789' } })).arrayBuffer());
+    const names = await new Promise((res, rej) => yauzl.fromBuffer(zip, { lazyEntries: true }, (e, z) => { if (e) return rej(e); const ns = []; z.on('entry', (en) => { ns.push(en.fileName); z.readEntry(); }); z.on('end', () => res(ns)); z.readEntry(); }));
+    ok(['art/test-hop/day-1.png', 'art/test-hop/day-2.png', 'art/test-hop/crest.png'].every((n) => names.includes(n)) && !names.some((n) => n.startsWith('art/hk-macau-2026/')), 'bookart: the drawn pictures travel in the backup (the owner\'s SVGs come with the app, not the zip)');
+  }
   ok((await fetch(BASE + '/api/b/import?slug=test-hop', { method: 'POST', headers: IH, body: pdf })).status === 409, 'import: the saved book\'s id is now taken');
   const lite = (await (await fetch(BASE + '/api/b/state?lite=1', { headers: { cookie: ck } })).json()).trips.find((t) => t.id === 'test-hop');
   ok(lite && lite.seed && (await fetch(BASE + '/api/b/seed/test-hop/' + lite.seed, { headers: { cookie: ck } })).status === 200, 'import: the book\'s guide text is served by its hash');

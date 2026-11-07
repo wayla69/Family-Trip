@@ -42,6 +42,11 @@ async function sendZip(res, pool, media) {
     const ids = new Set([k.avatar, ...(Array.isArray(k.avatars) ? k.avatars.map((d) => d && d.id) : [])].filter(Boolean));
     for (const id of ids) for (const kind of ['full', 'face']) { const buf = await media.get(`k/${k.slug}/${id}-${kind}.png`); if (buf) z.append(buf, { name: `kids/${k.slug}-${id}-${kind}.png` }); }
   }
+  for (const t of b.tables.trips || []) {   // a book's pictures drawn by the helper (server/bookart.js): day circles + crest, so a restore keeps them
+    if (!String((t.theme || {}).art || '').startsWith('/media/art/')) continue;
+    const n = (b.tables.trip_days || []).filter((d) => d.trip_id === t.id).length;
+    for (const f of [...Array.from({ length: n }, (_, i) => `day-${i + 1}.png`), 'crest.png']) { const buf = await media.get(`d/${t.id}/${f}`); if (buf) z.append(buf, { name: `art/${t.id}/${f}` }); }
+  }
   for (const e of b.tables.emoji || []) {   // the family's own emoji pictures (the bundled ones come with the app)
     if (!e.storage_key) continue;
     const buf = await media.get(e.storage_key); if (buf) z.append(buf, { name: `emoji/${e.id}.png` });
@@ -100,6 +105,15 @@ async function importZip(file, pool, media) {
       res.photos++;
     }
     // the children's drawn characters: keys rebuilt from a checked slug and id, written only when missing, and only real PNGs
+    for (const t of b.tables.trips || []) {   // the helper's drawn pictures of a book (a trip id is a slug; a file name is day-<n>.png or crest.png)
+      if (!SLUG_RE.test(String(t.id)) || !String((t.theme || {}).art || '').startsWith('/media/art/')) continue;
+      for (const name of Object.keys(out).filter((x) => x.startsWith(`art/${t.id}/`))) {
+        const f = name.slice(`art/${t.id}/`.length), key = `d/${t.id}/${f}`;
+        if (!/^(day-\d{1,2}|crest)\.png$/.test(f) || (await media.get(key))) continue;
+        const buf = await readEntry(z, out[name], 10e6);
+        if ((await sharp(buf).metadata()).format === 'png') await media.put(key, buf, 'image/png');
+      }
+    }
     for (const k of b.tables.children || []) {
       const okId = (id) => /^[0-9a-f]{12}$/.test(String(id || ''));
       if (!SLUG_RE.test(String(k.slug))) { k.avatar = null; k.avatars = []; continue; }
