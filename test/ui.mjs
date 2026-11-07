@@ -1134,6 +1134,40 @@ const T = 'hk-macau-2026';
   await s.ctx.close();
 }
 
+// ---------- first run: the setup steps (#/start) ----------
+{
+  const s = await session('start', { width: 390, height: 844 });
+  const { page } = s;
+  await login(page);
+  // a family with no children is sent to the steps from any page; "skip" ends that, the shelf's welcome card leads back
+  await page.goto(`${BASE}/#/t/hk-macau-2026`); await page.waitForSelector('.hubgrid'); await page.evaluate(() => { S.children = []; ls('startDone', null); location.hash = '#/'; });
+  await page.waitForSelector('.onb');
+  ok(page.url().endsWith('#/start') && await page.locator('.onb .onbsteps li').count() === 4 && await page.locator('nav.bar').count() === 1 && await page.evaluate(() => getComputedStyle(document.querySelector('nav.bar')).display === 'none'), 'first run: no children → the shelf leads to the welcome step, four steps listed, no bottom bar');
+  await s.shot('01-welcome', false);
+  await page.click('[data-a="startskip"]'); await page.waitForSelector('.famwelcome');
+  ok(page.url().endsWith('#/') && await page.locator('.famwelcome[href="#/start"]').count() === 1 && !!await page.evaluate(() => ls('startDone')), 'skip: back on the shelf, the welcome card leads to the steps again');
+  await page.reload(); await page.waitForSelector('.shelf');   // the real family again
+  // step 1 is the family form with a blank child when there is none; here the seeded family fills it
+  await page.goto(`${BASE}/#/start/1`); await page.waitForSelector('.onb .famkid');
+  ok(await page.locator('.onbdots span').count() === 4 && await page.locator('.onbdots span.on').count() === 1 && /ไปต่อ|continue/i.test(await page.textContent('[data-a="famsave"]')), 'step 1: the family form, dot 1 lit, the save button goes on');
+  for (const [i, ym] of [['0', '2023-06'], ['1', '2025-04']]) if (!await page.inputValue(`input[data-fam="${i}:birth_ym"]`)) await page.fill(`input[data-fam="${i}:birth_ym"]`, ym);   // the seeded family carries no birth month; the form requires one
+  await page.click('[data-a="famsave"]'); await page.waitForSelector('#vgpin');
+  ok(page.url().endsWith('#/start/2') && await page.inputValue('#vgname') !== '' && await page.locator('.onbdots span.done').count() === 1, 'save → step 2: a relatives\' group named already, dot 1 done');
+  await page.fill('#vgpin', '446688'); await page.click('.onb [data-a="vgsave"]'); await page.waitForSelector('.onb .vgjust');
+  ok((await page.textContent('.onb .vgpin')).trim() === '446688' && (await page.evaluate(async () => (await (await fetch('/api/b/viewers')).json()).groups)).some((g) => g.pin && g.link), 'step 2: the PIN is shown once, the group exists with PIN + link');
+  await s.shot('02-pin', false);
+  await page.click('.onb a[href="#/start/3"]'); await page.waitForSelector('.onbicon');
+  ok(await page.locator('.onb .onbsteps li').count() >= 1 && await page.locator('.onb a[href="#/start/4"]').count() === 2, 'step 3: Home-Screen steps for this device, an icon preview, done / later');
+  await page.goto(`${BASE}/#/start/4`); await page.waitForSelector('.onbsteps.times');
+  ok(await page.locator('.onbsteps.times li').count() === 4 && (await page.locator('.onb [data-a="remind"], .onb a[href="#/start/5"]').count()) >= 1, 'step 4: the four reminders and a way on');
+  await page.goto(`${BASE}/#/start/5`); await page.waitForSelector('.onbways');
+  ok(await page.locator('.onbway[data-a="newtrip"]').count() === 1 && await page.locator('.onbway[href="#/"]').count() === 1 && await page.locator('.onbsum li').count() === 4 && !!await page.evaluate(() => ls('startDone')), 'step 5: an empty book, the shelf, the summary; the steps are done');
+  await s.shot('05-done', false);
+  await page.evaluate(() => fetch('/api/b/viewers').then((r) => r.json()).then((j) => Promise.all(j.groups.filter((g) => /ญาติ|Relatives/.test(g.name)).map((g) => fetch('/api/b/viewers/' + g.id, { method: 'DELETE' })))));
+  ok(s.errs.length === 0, 'setup steps: no console errors ' + s.errs.join(' | '));
+  await s.ctx.close();
+}
+
 // ---------- during the trip (the clock set to day 3 in Macau): the passport folds the other days; Mika's kid mode points ----------
 {
   const s = await session('tripday');

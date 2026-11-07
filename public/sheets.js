@@ -111,6 +111,9 @@ const A = {
       ls('remind', 1); render(); toast(L('เปิดการเตือนแล้ว ✓ จะเด้งก่อนทุกกิจกรรม 30 นาที · ทดสอบหรือปิดได้ที่หน้า "ใช้ตอนไม่มีเน็ต"', 'Reminders on ✓ — 30 min before each step · test or turn off on the Offline page'));
     } catch (_) { toast(L('เปิดการเตือนไม่สำเร็จ ลองอีกครั้ง', 'Could not turn reminders on — try again')); }
   },
+  // the setup steps: skip them for good (the shelf's welcome card still leads back) · "not now" on the reminders step
+  startskip() { ls('startDone', 1); nav('#/'); },
+  startlater() { ls('remindLater', 1); nav('#/start/5'); },
   remindlater() { ls('remindLater', 1); render(); toast(L('เปิดได้ทีหลังที่หน้า "วันนี้" หรือ "ใช้ตอนไม่มีเน็ต"', 'You can turn them on later from Today or the no-signal page')); },
   async remindtest() {
     const s = await pushSub().catch(() => null);
@@ -439,6 +442,7 @@ const A = {
     try {
       await api('PUT', '/api/b/viewers/' + id, { name, trips: f.trips, ...(pin ? { pin } : {}), link: f.newLink ? 'new' : f.link });
       vgJust = pin ? { name, pin } : null; vgForm = null; vg = null; delete drafts['vg:name']; delete drafts['vg:pin'];
+      if (route().parts[0] === 'start' && !vgJust) { nav('#/start/3'); return; }   // a link-only group in the setup: nothing to show, on to the next step
       toast(L('บันทึกกลุ่มแล้ว', 'Group saved')); render(); scrollTo(0, 0);
     } catch (e) {
       b.disabled = false;
@@ -466,7 +470,8 @@ const A = {
     fam.busy = true; render();
     try {
       await api('PUT', '/api/b/family', { profile: { app: fam.app, kicker: fam.kicker }, children: kids });
-      fam = null; toast(L('บันทึกโปรไฟล์แล้ว', 'Profile saved')); ls('brand', null); await load(); nav('#/');
+      const onb = route().parts[0] === 'start';
+      fam = null; toast(L('บันทึกโปรไฟล์แล้ว', 'Profile saved')); ls('brand', null); await load(); nav(onb ? '#/start/2' : '#/');
     } catch (e) {
       fam.busy = false;
       fam.err = e.code === 409 ? L('เอาออกไม่ได้ มีบันทึกของลูกคนนี้อยู่แล้ว เปลี่ยนชื่อแทนได้', 'Cannot remove: this child already has memories recorded — rename instead') : L('บันทึกไม่สำเร็จ', 'Could not save');
