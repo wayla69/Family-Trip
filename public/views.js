@@ -1246,13 +1246,15 @@ const famArt = (k, full) => (k.avatar ? `/media/kid/${encodeURIComponent(k.slug)
 // each child's colour on the page: their top colour, a shade deep enough for text and borders on paper
 const FAM_TONE = { red: '#E53935', blue: '#2F7FE0', green: '#2E9E62', yellow: '#D9940A', purple: '#8E5BE0', pink: '#E8467F', teal: '#1E9488', orange: '#EE7424', mint: '#2A9C84' };
 const famTone = (k) => FAM_TONE[(k.look && k.look.top) || (k.slug === 'mika' ? 'mint' : 'red')];
+const famMonths = (ym) => { if (!/^\d{4}-\d{2}$/.test(ym || '')) return null; const [y, m] = ym.split('-').map(Number), n = new Date(), mo = (n.getFullYear() - y) * 12 + n.getMonth() + 1 - m; return mo >= 0 ? mo : null; };
+const famAgeM = (mo) => (mo == null ? '' : mo < 12 ? L(`${mo} เดือน`, `${mo} mo`) : L(`${Math.floor(mo / 12)}${mo % 12 >= 6 ? ' ขวบครึ่ง' : ' ขวบ'}`, `${Math.floor(mo / 12)}${mo % 12 >= 6 ? '½' : ''} yrs`));
 const famAge = (ym) => { if (!/^\d{4}-\d{2}$/.test(ym || '')) return ''; const [y, m] = ym.split('-').map(Number), n = new Date(), mo = (n.getFullYear() - y) * 12 + n.getMonth() + 1 - m; if (mo < 0) return ''; const yr = Math.floor(mo / 12), half = mo % 12 >= 6;
   return yr < 1 ? L(`${mo} เดือน`, `${mo} mo`) : L(`${yr}${half ? ' ขวบครึ่ง' : ' ขวบ'}`, `${yr}${half ? '½' : ''} yrs`); };
 function viewFamily() {
   if (!fam) {
     const c = (S.family && S.family.custom) || {}, ca = c.app || {}, ck = c.kicker || {};   // only what the parents typed; empty = built from the children
     fam = { app: { th: ca.th || '', en: ca.en || '' }, kicker: { th: ck.th || '', en: ck.en || '' },
-      kids: children().map((k) => ({ slug: k.slug, name_th: k.name_th, name_en: k.name_en, emoji: k.emoji || '', birth_ym: k.birth_ym || '', look: k.look ? { ...k.look } : null, avatar: k.avatar || null })), err: '', busy: false, busyKid: null, quota: null };
+      kids: children().map((k) => ({ slug: k.slug, name_th: k.name_th, name_en: k.name_en, emoji: k.emoji || '', birth_ym: k.birth_ym || '', look: k.look ? { ...k.look } : null, avatar: k.avatar || null, avatars: Array.isArray(k.avatars) ? k.avatars : [] })), err: '', busy: false, busyKid: null, quota: null };
   }
   const built = famBuilt(), shown = { app: L(fam.app.th, fam.app.en) || L(built.app.th, built.app.en), kicker: L(fam.kicker.th, fam.kicker.en) || L(built.kicker.th, built.kicker.en) };
   if (fam.quota === null && S.features.avatar) { fam.quota = 'loading'; api('GET', '/api/b/family/avatars').then((r) => { fam.quota = r; safeRender(); }, () => { fam.quota = { left: {}, yearly: 3 }; }); }
@@ -1266,15 +1268,20 @@ function viewFamily() {
 <div class="famtag"><b>${esc(nm) || L('ลูกคนใหม่', 'New child')}</b>${age ? `<small>${esc(age)}</small>` : ''}</div></div>
 <div class="fambody">
 <div class="famrow"><label>${L('ชื่อเล่น (ไทย)', 'Name (Thai)')}<input class="field" data-fam="${i}:name_th" value="${esc(k.name_th)}" maxlength="40"></label><label>${L('ชื่อเล่น (อังกฤษ)', 'Name (English)')}<input class="field" data-fam="${i}:name_en" value="${esc(k.name_en)}" maxlength="40" required></label></div>
-<div class="famrow famrow2"><label>${L('เกิดเดือน', 'Born')}<input class="field" type="month" data-fam="${i}:birth_ym" value="${esc(k.birth_ym)}"></label><label>${L('อีโมจิ', 'Emoji')}<input class="field famemo" data-fam="${i}:emoji" value="${esc(k.emoji)}" maxlength="8"></label></div>
+<div class="famrow famrow2"><label><span>${L('เดือนและปีเกิด', 'Month and year of birth')} <b class="famreq">*</b></span><input class="field ${k.birth_ym ? '' : 'famneed'}" type="month" data-fam="${i}:birth_ym" value="${esc(k.birth_ym)}" required><small class="famagenow">${k.birth_ym ? L(`ตอนนี้ ${famAge(k.birth_ym)}`, `Now ${famAge(k.birth_ym)}`) : L('ใช้คิดอายุในแต่ละทริป และวาดตัวละครให้ตรงวัย', 'For the age on each trip and a character drawn at the right age')}</small></label><label>${L('อีโมจิ', 'Emoji')}<input class="field famemo" data-fam="${i}:emoji" value="${esc(k.emoji)}" maxlength="8"></label></div>
 ${(() => {
   const saved = children().some((c) => c.slug === k.slug), left = q.left[k.slug], busy = fam.busyKid === i, who = esc(nm) || L('ลูก', 'your child');
   const body = !S.features.avatar ? `<p class="famhint">${L('ต้องตั้งค่า OPENAI_API_KEY บนเซิร์ฟเวอร์ก่อน จึงจะให้ AI วาดตัวละครได้', 'Set OPENAI_API_KEY on the server to let the AI draw characters')}</p>`
     : !saved ? `<p class="famhint">${L('กดบันทึกครอบครัวก่อน แล้วค่อยอัปโหลดรูป', 'Save the family first, then upload a photo')}</p>`
+    : !k.birth_ym || !(children().find((c) => c.slug === k.slug) || {}).birth_ym ? `<p class="famhint">${L('ใส่เดือนและปีเกิดแล้วกดบันทึกก่อน AI จะได้วาดตัวละครให้ตรงวัย', 'Add the month and year of birth and save first, so the AI draws the character at the right age')}</p>`
     : `<label class="famupload ${busy ? 'busy' : ''} ${left === 0 ? 'off' : ''}"><span class="e">${busy ? '🎨' : '📷'}</span><span><b>${busy ? L('AI กำลังวาด…', 'The AI is drawing…') : k.avatar ? L('อัปโหลดรูปใหม่ วาดอีกครั้ง', 'Upload a new photo, draw again') : L('อัปโหลดรูปลูก ให้ AI วาดตัวละคร', 'Upload a photo, the AI draws the character')}</b><small>${busy ? L('ราว 30–60 วินาที อย่าเพิ่งปิดหน้านี้', 'About 30–60 seconds — keep this page open') : L('รูปหน้าตรง เห็นทั้งตัว แสงสว่าง ได้ผลดีที่สุด', 'Facing the camera, whole body, good light works best')}</small></span>
 <input type="file" accept="image/*" data-famavatar="${i}" ${fam.busyKid !== null || left === 0 ? 'disabled' : ''}></label>
 <div class="famleft">${left === undefined ? '' : left > 0 ? L(`เหลือ ${left} จาก ${q.yearly} ครั้งในรอบ 12 เดือน`, `${left} of ${q.yearly} tries left this year`) : L(`ใช้ครบ ${q.yearly} ครั้งของปีนี้แล้ว`, `All ${q.yearly} tries used this year`)}${k.avatar ? ` · <button type="button" class="linkbtn" data-a="famavoff" data-i="${i}">${L('กลับไปใช้ภาพเดิม', 'Back to the plain drawing')}</button>` : ''}</div>`;
-  return `<div class="famai"><div class="famaihd"><b>✨ ${L(`ตัวละครของ${who}`, `${who}'s character`)}</b>${k.avatar ? '<span class="pill">AI</span>' : ''}</div>${body}</div>`;
+  const last = k.avatars.length ? k.avatars[k.avatars.length - 1] : null, nowM = famMonths(k.birth_ym);
+  const grown = last && last.age_m != null && nowM != null && nowM - last.age_m >= 12;   // a year older than the newest drawing
+  const hist = k.avatars.length ? `<p class="famhist">🖼️ ${L(`วาดไว้ ${k.avatars.length} ตัว`, `${k.avatars.length} drawing${k.avatars.length > 1 ? 's' : ''}`)}${last && last.age_m != null ? L(` · ตัวล่าสุดตอนอายุ ${famAgeM(last.age_m)}`, ` · the newest at ${famAgeM(last.age_m)}`) : ''} · ${L('แต่ละเล่มใช้ตัวที่ตรงกับช่วงทริปนั้น', 'each book shows the one from its own time')}</p>` : '';
+  const nudge = grown && S.features.avatar ? `<div class="famgrow">🌱 <b>${L(`${who}โตขึ้นแล้ว`, `${who} has grown`)}</b> ${L(`ตอนนี้ ${famAgeM(nowM)} อัปโหลดรูปใหม่ ให้ตัวละครโตตามด้วย`, `now ${famAgeM(nowM)} — upload a new photo so the character grows up too`)}</div>` : '';
+  return `<div class="famai"><div class="famaihd"><b>✨ ${L(`ตัวละครของ${who}`, `${who}'s character`)}</b>${k.avatar ? '<span class="pill">AI</span>' : ''}</div>${nudge}${body}${hist}</div>`;
 })()}
 <div class="famacts"><button type="button" class="mini" data-a="fammove" data-i="${i}" data-v="-1" ${i === 0 ? 'disabled' : ''} aria-label="${L('เลื่อนขึ้น', 'Move up')}">↑</button><button type="button" class="mini" data-a="fammove" data-i="${i}" data-v="1" ${i === fam.kids.length - 1 ? 'disabled' : ''} aria-label="${L('เลื่อนลง', 'Move down')}">↓</button><button type="button" class="mini famdel" data-a="famdel" data-i="${i}">${L('เอาออก', 'Remove')}</button></div>
 </div></article>`;

@@ -1835,3 +1835,6 @@ html[data-fs="1"] main.wrap{zoom:1.1}html[data-fs="2"] main.wrap{zoom:1.2}html[d
 .cast .who.drawnai{height:150px}.famstage img[src*="/media/kid/"]{height:200px}
 /* the sign-in page has no book theme yet, so in the dark its accent stays the light-mode navy: give it a light one there */
 @media (prefers-color-scheme:dark){:root:not([data-theme=light]) .login{--accent:#9DBDF0}}:root[data-theme=dark] .login{--accent:#9DBDF0}
+.famreq{color:var(--accent2)}.famneed{border-color:color-mix(in srgb,var(--accent2) 55%,var(--rule))}.famagenow{color:var(--kc,var(--accent));font-weight:700}
+.famgrow{border-radius:14px;padding:10px 12px;background:color-mix(in srgb,var(--leaf) 16%,var(--paper));font-size:13px;line-height:1.4}.famgrow b{color:color-mix(in srgb,var(--leaf) 70%,var(--ink))}
+.famhist{margin:0;font-size:12px;color:var(--muted);line-height:1.4}

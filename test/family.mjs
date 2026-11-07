@@ -73,6 +73,8 @@ const kids = [
   ok(r.status === 409 && (await r.json()).slug === 'mimi' && (await state()).children.length === 3, 'removing Mimi (she has a mood recorded) is refused and nothing changes');
   const r2 = await fetch(BASE + '/api/b/family', { method: 'PUT', headers: H, body: JSON.stringify({ profile: {}, children: [...kids, { name_en: 'Nora Jane' }] }) });
   ok(r2.status === 400, 'two children with the same slug are refused');
+  const r3 = await fetch(BASE + '/api/b/family', { method: 'PUT', headers: H, body: JSON.stringify({ profile: {}, children: kids.map((k, i) => (i === 1 ? { ...k, birth_ym: '' } : k)) }) });
+  ok(r3.status === 400 && (await r3.json()).error === 'birth', 'every child needs a month and year of birth');
   const vck = jar(await fetch(BASE + '/api/login', { method: 'POST', headers: { 'x-mb': '1', 'content-type': 'application/json' }, body: JSON.stringify({ code: process.env.VIEW_PIN || '835911', name: 'ยาย' }) }));
   ok((await fetch(BASE + '/api/b/family', { method: 'PUT', headers: { ...H, cookie: vck }, body: '{}' })).status === 403, 'a viewer cannot change the family');
 }
