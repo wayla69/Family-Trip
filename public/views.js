@@ -334,7 +334,7 @@ ${isEditor() && S.features.story && days.length ? storyBlock(t, null)
     : story ? `<div class="part">${L('นิทานของทั้งทริป', 'The story of the trip')}</div><div class="call calm" style="white-space:pre-line">${bedBtn(story)}${esc(story.text)}</div>` : ''}
 ${letterBlock(t, days.length)}
 ${days.map((i) => dayPage(t, i)).join('')}
-${days.length ? coverPick(t) + bookAgePick(t) : ''}<div class="row noprint" style="margin:28px 0 8px"${days.length ? '' : ' hidden'}><a class="btn small" href="/api/b/pdf/${esc(t.id)}" download data-a="pdf">📕 ${L('สมุดความทรงจำ (PDF A4)', 'Memory book (PDF A4)')}</a><a class="btn ghost small" href="#/print/${esc(t.id)}">👀 ${L('ดูตัวอย่างเล่ม', 'Preview the book')}</a></div>
+${days.length ? printSet(t) : ''}<div class="row noprint" style="margin:28px 0 8px"${days.length ? '' : ' hidden'}><a class="btn small" href="/api/b/pdf/${esc(t.id)}" download data-a="pdf">📕 ${L('สมุดความทรงจำ (PDF A4)', 'Memory book (PDF A4)')}</a><a class="btn ghost small" href="#/print/${esc(t.id)}">👀 ${L('ดูตัวอย่างเล่ม', 'Preview the book')}</a></div>
 <div class="row noprint bookmore"${days.length ? '' : ' hidden'}><button class="linkbtn" data-a="print">${L('พิมพ์หน้านี้', 'Print this page')}</button><span class="label">·</span><button class="linkbtn" data-a="copytext">${L('คัดลอกเป็นข้อความ', 'Copy as text')}</button></div></div>`;
 }
 // the whole plan, day by day, like the manual's day list: every day (recorded or not), where we sleep, the planned stops
@@ -1110,7 +1110,7 @@ const coverMode = (t) => { const e = entriesOf(t.id).find((x) => x.kind === 'cov
 // the printed book grows with the children (owner, Nov 2026): 'little' (1–3: big pictures, big type, few words, a handprint page),
 // 'kid' (4–7: bright and playful, a drawing page), 'big' (8+: a travel journal, writing lines) — by the youngest child's age at the
 // end of the trip, unless the parents chose (entry kind 'bookage', id `<trip>.bookage.all`)
-const BOOK_AGES = { little: ['🧸', 'เด็กเล็ก', 'Little ones', '1–3 ขวบ · รูปใหญ่ ตัวโต', 'ages 1–3 · big pictures'], kid: ['🖍️', 'เด็ก', 'Kids', '4–7 ขวบ · สีสด มีหน้าวาดรูป', 'ages 4–7 · a drawing page'], big: ['📓', 'เด็กโต', 'Big kids', '8 ขวบขึ้นไป · แบบสมุดบันทึก', '8 and up · a journal'] };
+const BOOK_AGES = { little: ['/art/emoji/teddy.webp', 'เด็กเล็ก', 'Little ones', '1–3 ขวบ', 'ages 1–3', 'รูปใหญ่ ตัวโต', 'big pictures'], kid: ['/art/emoji/palette.webp', 'เด็ก', 'Kids', '4–7 ขวบ', 'ages 4–7', 'มีหน้าวาดรูป', 'a drawing page'], big: ['/art/hub/notebook.webp', 'เด็กโต', 'Big kids', '8 ขวบขึ้นไป', '8 and up', 'แบบสมุดบันทึก', 'a journal'] };
 const monthsAt = (ym, iso) => { if (!/^\d{4}-\d{2}$/.test(ym || '') || !iso) return null; const [y, m] = ym.split('-').map(Number), d = new Date(iso); const mo = (d.getFullYear() - y) * 12 + d.getMonth() + 1 - m; return mo >= 0 ? mo : null; };
 const bookAgeAuto = (t) => {
   const end = (t.days[t.days.length - 1] || {}).date || t.date_to;
@@ -1121,18 +1121,23 @@ const bookAgeAuto = (t) => {
 };
 const bookAgeSet = (t) => { const e = entriesOf(t.id).find((x) => x.kind === 'bookage'); return e && BOOK_AGES[e.text] ? e.text : 'auto'; };
 const bookAge = (t) => (bookAgeSet(t) === 'auto' ? bookAgeAuto(t) : bookAgeSet(t));
+// the printed book's look, one card on the book page (editors; owner's review, Nov 2026: "ทำใหม่ ใช้ icon ที่เรามี"):
+// the cover as two little paper previews (the day pictures / the ⭐ photo — only once a photo is starred) and the style by age
+// as three cards with the app's own drawn icons; the card that fits the youngest child now says so, and choosing it means
+// "follow their age" (saved as 'auto', so next year's book moves on by itself)
 function bookAgePick(t) {
-  if (!isEditor()) return '';
-  const set = bookAgeSet(t), auto = BOOK_AGES[bookAgeAuto(t)];
-  const card = (k, e, b, sm) => `<button type="button" class="tpo" data-a="bookage" data-t="${esc(t.id)}" data-v="${k}" aria-pressed="${set === k}"><span class="rpe" aria-hidden="true">${e}</span><b>${b}</b><small>${sm}</small><span class="ck" aria-hidden="true">✓</span></button>`;
-  return `<section class="noprint agepick"><div class="part pickh">${L('สมุดตามวัยของลูก', 'The book for their age')}</div><div class="tpk agek" role="group" aria-label="${L('สมุดตามวัยของลูก', 'The book for their age')}">
-${card('auto', '✨', L('ตามวัยอัตโนมัติ', 'By their age'), L(`ตอนนี้: ${auto[1]}`, `Now: ${auto[2].toLowerCase()}`))}${Object.entries(BOOK_AGES).map(([k, a]) => card(k, a[0], L(a[1], a[2]), L(a[3], a[4]))).join('')}</div></section>`;
+  const set = bookAgeSet(t), cur = bookAge(t), fit = bookAgeAuto(t);
+  return `<div class="pspart">${L('สไตล์ตามวัย', 'Style for their age')}</div><div class="tpk agek" role="group" aria-label="${L('สไตล์ตามวัย', 'Style for their age')}">${Object.entries(BOOK_AGES).map(([k, a]) => `<button type="button" class="tpo" data-a="bookage" data-t="${esc(t.id)}" data-v="${k === fit ? 'auto' : k}" data-age="${k}" aria-pressed="${cur === k}"><img class="psi" src="${a[0]}" alt="" draggable="false"><b>${L(a[1], a[2])}</b><small>${L(a[3], a[4])}<br>${L(a[5], a[6])}</small>${k === fit ? `<span class="psfit">${set === 'auto' || set === k ? L('✓ ตามวัยลูก', '✓ Their age') : L('วัยตอนนี้', 'Their age now')}</span>` : ''}<span class="ck" aria-hidden="true">✓</span></button>`).join('')}</div>`;
 }
-// the cover switch on the book page (editors; only once a photo is starred — until then there is only the art cover)
 function coverPick(t) {
-  if (!isEditor() || !starredPhotos(t).length) return '';
-  const m = coverMode(t);
-  return `<section class="noprint coverpick"><div class="part pickh">${L('ปกเล่มพิมพ์', 'Printed cover')}</div><div class="tpk cvk" role="group" aria-label="${L('ปกเล่มพิมพ์', 'Printed cover')}">${[['art', '🖼️', L('ภาพประจำวัน', 'Day pictures')], ['photo', '⭐', L('รูปโปรด', 'Starred photo')]].map(([k, e, l]) => `<button type="button" class="tpo" data-a="cover" data-t="${esc(t.id)}" data-v="${k}" aria-pressed="${m === k}"><span class="rpe" aria-hidden="true">${e}</span><b>${l}</b><span class="ck" aria-hidden="true">✓</span></button>`).join('')}</div></section>`;
+  const fav = starredPhotos(t)[0]; if (!fav) return '';
+  const m = coverMode(t), n = Math.min(t.days.length, 6);
+  const prev = { art: `<span class="mcv mcv-a"><i></i><span class="mcvg">${Array.from({ length: n }, (_, i) => artImg(t, i)).join('')}</span></span>`, photo: `<span class="mcv mcv-p"><img src="${esc(imgT(fav))}" alt=""><i></i></span>` };
+  return `<div class="pspart">${L('ปก', 'Cover')}</div><div class="tpk cvk" role="group" aria-label="${L('ปกเล่มพิมพ์', 'Printed cover')}">${[['art', L('ภาพประจำวัน', 'Day pictures')], ['photo', L('รูปโปรด ⭐', 'Starred photo ⭐')]].map(([k, l]) => `<button type="button" class="tpo" data-a="cover" data-t="${esc(t.id)}" data-v="${k}" aria-pressed="${m === k}">${prev[k]}<b>${l}</b><span class="ck" aria-hidden="true">✓</span></button>`).join('')}</div>`;
+}
+function printSet(t) {
+  if (!isEditor()) return '';
+  return `<section class="noprint printset coverpick agepick"><div class="pshd"><img src="/art/hub/book.webp" alt="" draggable="false"><div><b>${L('เล่มพิมพ์ของลูก', 'The printed book')}</b><small>${L('เลือกปกและสไตล์ แล้วกดดูตัวอย่างได้เลย', 'Pick a cover and a style, then preview it')}</small></div></div>${coverPick(t)}${bookAgePick(t)}</section>`;
 }
 
 /* ---------- the memory book (#/print/<trip> → /api/b/pdf/<trip>): the trip as a printed book after it ends ----------
@@ -1165,7 +1170,7 @@ function viewPrint(t) {
     ? `<div class="cv photo"><div class="cvph"><img class="big" src="${esc(imgF(faves[0]))}" alt="">${stampHtml(t)}${castHtml(kids)}</div>
 <div class="cvband">${cvTitle}<div class="cvft"><div class="cvart strip">${t.days.slice(0, 8).map((_, i) => artImg(t, i)).join('')}</div>${cvFoot}</div></div></div>`
     : `<div class="cv art">${cvTitle}
-<div class="cvart${nArt > 6 ? ' c4' : ''}">${t.days.slice(0, nArt).map((d, i) => `<figure>${artImg(t, i)}<b>${String(i + 1).padStart(2, '0')} · ${esc(fmtDay(d.date, { day: 'numeric', month: 'short' }))}</b><small>${esc(T(d.title))}</small></figure>`).join('')}${more > 0 ? `<p class="cvmore">${L(`และอีก ${more} วัน`, `and ${more} more day${more > 1 ? 's' : ''}`)}</p>` : ''}</div>
+<div class="cvart${nArt > 6 ? ' c4' : ''}">${t.days.slice(0, nArt).map((d, i) => `<figure style="--kc:var(--k${(i % 6) + 1})">${artImg(t, i)}<span class="cvd"><i>${i + 1}</i><b><em>${L('วันที่', 'Day')}</em>${esc(fmtDay(d.date, { day: 'numeric', month: 'short' }))}</b></span><small>${esc(T(d.title))}</small></figure>`).join('')}${more > 0 ? `<p class="cvmore">${L(`และอีก ${more} วัน`, `and ${more} more day${more > 1 ? 's' : ''}`)}</p>` : ''}</div>
 <div class="cvft">${castHtml(kids)}${cvFoot}</div></div>`);
   // 2 · the trip in numbers, the map, where we slept
   const facts = [days.length ? [L('วันที่บันทึก', 'Days recorded'), days.length] : [L('วัน', 'Days'), t.days.length], ...[[L('รูป', 'Photos'), st.photos], [L('คำพูด', 'Quotes'), st.quotes], [L('ครั้งแรก', 'Firsts'), st.firsts], [L('ที่ไป', 'Places'), st.places]].filter(([, v]) => v)]   // never a row of zeros
