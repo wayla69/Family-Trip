@@ -8,7 +8,7 @@
 
 /* ---------- sounds ---------- */
 let audioCtx = null;
-function beep(kind) {
+function beep(kind, x) {   // x: the note's frequency for 'note'
   try {
     audioCtx = audioCtx || new (window.AudioContext || window.webkitAudioContext)();
     const c = audioCtx, t0 = c.currentTime;
@@ -28,6 +28,11 @@ function beep(kind) {
     else if (kind === 'sparkle') [1047, 1319, 1568, 2093].forEach((f, i) => tone(f, i * 0.06, 0.35, 'sine', 0.12));
     else if (kind === 'yay') [523, 659, 784, 1047, 1319].forEach((f, i) => tone(f, i * 0.07, 0.25, 'triangle', 0.14));
     else if (kind === 'boing') sweep(c, t0, 180, 520, 0.3, 'triangle', 0.2);
+    else if (kind === 'note') { tone(x, 0, 0.6, 'triangle', 0.2); tone(x * 2, 0, 0.3, 'sine', 0.05); }   // the xylophone
+    else if (kind === 'kick') sweep(c, t0, 150, 45, 0.25, 'sine', 0.6);
+    else if (kind === 'snare') { noise(c, t0, 0.18, 0.35, 1800); tone(190, 0, 0.1, 'triangle', 0.25); }
+    else if (kind === 'hat') noise(c, t0, 0.06, 0.2, 6000);
+    else if (kind === 'bubble') sweep(c, t0, 520 + Math.random() * 380, 1500, 0.12, 'sine', 0.16);
     else if (kind === 'fanfare') [523, 659, 784, 1047, 784, 1047, 1319].forEach((f, i) => tone(f, i * 0.09, i === 6 ? 0.6 : 0.22, 'triangle', 0.16));
     else { tone(740, 0, 0.06, 'sine', 0.14); tone(980, 0.045, 0.09, 'sine', 0.1); }   // 'tap': a soft two-note tick (every kid button)
   } catch (_) { /* no audio — fine */ }
@@ -39,6 +44,15 @@ function sweep(c, t0, f1, f2, dur, type, vol) {
   o.type = type; o.frequency.setValueAtTime(f1, t0); o.frequency.exponentialRampToValueAtTime(f2, t0 + dur);
   g.gain.setValueAtTime(vol, t0); g.gain.exponentialRampToValueAtTime(0.001, t0 + dur);
   o.connect(g); g.connect(c.destination); o.start(t0); o.stop(t0 + dur);
+}
+// a burst of white noise through a high-pass filter (the snare, the hi-hat)
+let noiseBuf = null;
+function noise(c, t0, dur, vol, hp) {
+  if (!noiseBuf) { noiseBuf = c.createBuffer(1, c.sampleRate, c.sampleRate); const d = noiseBuf.getChannelData(0); for (let i = 0; i < d.length; i++) d[i] = Math.random() * 2 - 1; }
+  const s = c.createBufferSource(), f = c.createBiquadFilter(), g = c.createGain();
+  s.buffer = noiseBuf; f.type = 'highpass'; f.frequency.value = hp;
+  g.gain.setValueAtTime(vol, t0); g.gain.exponentialRampToValueAtTime(0.001, t0 + dur);
+  s.connect(f); f.connect(g); g.connect(c.destination); s.start(t0); s.stop(t0 + dur);
 }
 
 /* ---------- the phone reads aloud ---------- */
@@ -369,6 +383,20 @@ function hydrateMap(root) {
 // the morning surprise box: one per trip day, opened by the child in kid mode (tick gift.d<i>) — a sticker of its own and today's missions
 // the big celebration (owner's ask, Nov 2026: the stamp, the surprise box, a finished game felt quiet): confetti over the whole screen,
 // 36 pieces in the book's pastels and a few emoji, falling for ~2 s; nothing when the phone asks for reduced motion
+// the star jar: every finished game drops stars in (kept on this phone, `stars_<kid>`); every ten stars the jar is full and a new
+// friend joins (`pets_<kid>`) — a celebration, never a goal: nothing says what is missing
+const PETS = ['🐣', '🦊', '🐼', '🦄', '🐬', '🦉', '🐨', '🦋', '🐢', '🦜', '🐧', '🦁'];
+const stars = (kid) => +ls('stars_' + kid) || 0, pets = (kid) => ls('pets_' + kid) || [];
+const kidNow = () => route().parts[1];
+function star(kid, n) {
+  if (!kid) return;
+  const was = stars(kid), now = was + (n || 1); ls('stars_' + kid, now);
+  const jar = $('.starjar'); if (jar) { jar.querySelector('b').textContent = now; burst(jar, ['⭐']); }
+  if (Math.floor(now / 10) > Math.floor(was / 10)) {
+    const ps = pets(kid), pet = PETS[ps.length % PETS.length]; ls('pets_' + kid, ps.concat(pet));
+    setTimeout(() => { beep('fanfare'); celebrate(['⭐', pet, '✨']); sayUi(L(`โถดาวเต็มแล้ว! ${pet} มาเป็นเพื่อนใหม่`, `The star jar is full! ${pet} is your new friend`)); }, 900);
+  }
+}
 const CONF_C = ['#FFD36B', '#FFB0C8', '#7FE3D2', '#8FB4FF', '#C9B6FF', '#FF9A6B'];
 function celebrate(chars) {
   if (matchMedia('(prefers-reduced-motion: reduce)').matches) return;
@@ -524,7 +552,7 @@ const wj = (s) => String(s).replace(/วันนี้/g, 'วัน\u2060น�
 // kid mode's picture tiles (owner's set, public/art/kidui): [picture or '' for the emoji, gradient top, gradient bottom]
 const KTILE = { count: ['surprise', '#FFC93C', '#FF9F0A'], pack: ['pack', '#62CCFF', '#1C9BEA'], words: ['say', '#C9A2FF', '#8F5CEB'], colour: ['colour', '#FF93B5', '#F2557F'],
   draw: ['draw', '#AEEA80', '#5EBB3D'], match: ['match', '#B592FF', '#7C4EE5'], quiz: ['quiz', '#86D6FF', '#2BA8F0'], animals: ['animals', '#93DD60', '#3FA82C'], numbers: ['count', '#FFB54A', '#FF8A1F'],
-  spot: ['find', '#7FE3D2', '#24B39B'], stamp: ['stamp', '#8FB4FF', '#3F6FE0'], talk: ['talk', '#FFB0C8', '#F06A93'], memory: ['memory', '#FFD36B', '#F2A90C'], photos: ['photos', '#9CD9FF', '#3BA0E8'], mood: ['mood', '#FFC2A0', '#FF8A57'], _: ['', '#C9D3E6', '#8C9BB8'] };
+  spot: ['find', '#7FE3D2', '#24B39B'], stamp: ['stamp', '#8FB4FF', '#3F6FE0'], talk: ['talk', '#FFB0C8', '#F06A93'], memory: ['memory', '#FFD36B', '#F2A90C'], photos: ['photos', '#9CD9FF', '#3BA0E8'], mood: ['mood', '#FFC2A0', '#FF8A57'], hideseek: ['', '#FFE08A', '#F5A623'], jigsaw: ['', '#B5F0C9', '#2FB36B'], bubbles: ['', '#A5E9FF', '#3DB4F2'], music: ['', '#FFC4EE', '#E35FBF'], _: ['', '#C9D3E6', '#8C9BB8'] };
 const KBAR = { home: 'home', map: 'map', colour: 'colour', stamp: 'passport', stickers: 'stickers', trophies: 'trophies' };   // the bar's middle button: colour before the trip, the passport on it
 function viewKid(p) {
   const ks = children(), kid = p[1], k = ks.find((c) => c.slug === kid);
@@ -548,11 +576,11 @@ function viewKid(p) {
     const lit = littleOf(t, kid), words = lit ? null : (pp.lists || []).find((l) => l.said), story = kidStory(t, i), live = dayNow(t);   // the little one: no words-to-say, no quiz
     const fresh = heartsFor(kid).filter((h) => h.at > (ls('hseen_' + kid) || 0));
     const tiles = (pre
-      ? [cd && ['count', '🎁', L('เซอร์ไพรส์', 'Surprise')], cd && cd.pack && ['pack', '🧳', L('จัดกระเป๋า', 'Pack')], ['colour', '🎨', L('ระบายสี', 'Colour')], ['draw', '🖍️', L('วาดรูป', 'Draw')]]
-      : [['colour', '🎨', L('ระบายสี', 'Colour')], ['draw', '🖍️', L('วาดรูป', 'Draw')], ['spot', littleOf(t, kid) ? '👉' : '🔍', littleOf(t, kid) ? L('ชี้ แตะ', 'Point it') : L('หาของ', 'Find it')], ['stamp', '🛂', L('ปั๊มตรา', 'Stamp')]])
+      ? [cd && ['count', '🎁', L('เซอร์ไพรส์', 'Surprise')], cd && cd.pack && ['pack', '🧳', L('จัดกระเป๋า', 'Pack')], ['colour', '🎨', L('ระบายสี', 'Colour')], ['draw', '🖍️', L('วาดรูป', 'Draw')], ['bubbles', '🫧', L('ฟองสบู่', 'Bubbles')], ['music', '🎵', L('ดนตรี', 'Music')], ['hideseek', '🙈', L('ซ่อนหา', 'I spy')]]
+      : [['colour', '🎨', L('ระบายสี', 'Colour')], ['draw', '🖍️', L('วาดรูป', 'Draw')], ['bubbles', '🫧', L('ฟองสบู่', 'Bubbles')], ['music', '🎵', L('ดนตรี', 'Music')], ['hideseek', '🙈', L('ซ่อนหา', 'I spy')], ['spot', littleOf(t, kid) ? '👉' : '🔍', littleOf(t, kid) ? L('ชี้ แตะ', 'Point it') : L('หาของ', 'Find it')], ['stamp', '🛂', L('ปั๊มตรา', 'Stamp')]])
       .concat(words ? [['words', '🗣️', L('พูดตาม', 'Say it')]] : [], ((d.plan || {}).quiz || []).length && !lit ? [['quiz', '❓', L('ทายซิ', 'Quiz')]] : [],
         kidTalk(t, i) ? [['talk', '💬', L('คุยกัน', 'Let’s talk')]] : [], !pre && i > 0 && memQuiz(t, i - 1) ? [['memory', '🧠', L('จำได้ไหม', 'Remember?')]] : [], kidPhotos(t, i).length ? [['photos', '📸', L('ดูรูป', 'Photos')]] : [], [['match', '🧩', L('จับคู่', 'Match')]], pre ? [] : [['mood', '😊', L('วันนี้รู้สึก', 'My mood')]],
-        wild.length ? [['animals', (t.info.wildLabel || {}).emo || '🦘', t.info.wildLabel ? esc(T(t.info.wildLabel.short)) : L('สัตว์', 'Animals')]] : [], [['numbers', '🔢', L('นับเลข', 'Count')]]).filter(Boolean);   // map, stickers and trophies live on the kid bar below — not twice
+        wild.length ? [['animals', (t.info.wildLabel || {}).emo || '🦘', t.info.wildLabel ? esc(T(t.info.wildLabel.short)) : L('สัตว์', 'Animals')]] : [], [['numbers', '🔢', L('นับเลข', 'Count')]], dayArt(t, i) ? [['jigsaw', '🖼️', L('ต่อภาพ', 'Puzzle')]] : []).filter(Boolean);   // map, stickers and trophies live on the kid bar below — not twice
     const until = daysUntil(t);
     const btns = tiles.map(([v, e, lbl]) => { const k = KTILE[v] || KTILE._; return `<button class="pic" style="--k1:${k[1]};--k2:${k[2]}" data-a="kidnav" data-v="#/kid/${esc(kid)}/${v}" data-say="${esc(lbl)}">${k[0] ? `<img src="/art/kidui/${k[0]}.webp" alt="">` : `<span>${e}</span>`}<b>${lbl}</b></button>`; })
       .concat(story ? [`<button class="night" data-a="bedtime" data-v="${esc(story.id)}"><span>${emo('🌙')}</span><b>${L('นิทาน', 'Story')}</b></button>`] : [],
@@ -561,7 +589,8 @@ function viewKid(p) {
     body = `${fresh.length ? `<button class="kidhearts" data-a="kidnav" data-v="#/kid/${esc(kid)}/hearts" data-say="${esc(heartLine(fresh[0], kid))}"><span class="float" aria-hidden="true">💗</span><span class="e">${emo(fresh[0].emoji)}</span><b>${esc(L(`${fresh[0].from} ส่งหัวใจให้หนู!`, `${fresh[0].from} sent you a heart!`))}</b>${fresh.length > 1 ? `<small>+${fresh.length - 1}</small>` : ''}</button>` : ''}
 ${live === i && !ticked(t, `gift.d${i}`, kid) ? `<button class="kidgift" data-a="kidnav" data-v="#/kid/${esc(kid)}/gift" data-say="${esc(L('มีกล่องเซอร์ไพรส์มาให้! แตะเปิดเลย', 'A surprise box for you! Tap to open it'))}"><span class="box" aria-hidden="true">${emo('🎁')}</span><b>${L('<span class="nw">กล่องเซอร์ไพรส์</span><span class="nw">วันนี้!</span>', 'Today’s surprise box!')}</b><small>${L('แตะเปิดเลย', 'Tap to open')}</small></button>`
   : live === i && hourIn(t.timezone) >= 17 && !ticked(t, `stamp.d${i}`, kid) ? `<button class="kidnight" data-a="kidnav" data-v="#/kid/${esc(kid)}/stamp" data-say="${esc(L('ก่อนนอน มาปั๊มตราวันนี้กัน!', 'Before bed — let’s stamp today!'))}"><span class="moon" aria-hidden="true">${emo('🌙')}</span><b>${L('ปั๊มตราวันนี้ก่อนนอน!', 'Stamp today before bed!')}</b><small>🛂 ${L('ปั๊ก!', 'Thump!')}</small></button>` : ''}
-<div class="kidhello">${kidArt(kid) ? `<img src="${kidArt(kid, true)}" alt="">` : ''}<p>${pre ? L(`<span class="nw">อีก <b>${until}</b> วัน</span> เราจะไป<span class="nw">${esc(T(t.title).split(' · ').pop())}กัน!</span>`, `<b>${until}</b> ${until === 1 ? 'sleep' : 'sleeps'} to ${esc(T(t.title).split(' · ')[0])}!`) : L(`<span class="nw">สวัสดี ${esc(name)}!</span> <span class="nw">วันนี้เล่นอะไรดี?</span>`, `Hello ${esc(name)}! What shall we play?`)}</p></div>
+<div class="kidhello">${kidArt(kid) ? `<button class="poke" data-a="kidpoke" data-k="${esc(kid)}" aria-label="${esc(name)}"><img src="${kidArt(kid, true)}" alt=""></button>` : ''}<p>${pre ? L(`<span class="nw">อีก <b>${until}</b> วัน</span> เราจะไป<span class="nw">${esc(T(t.title).split(' · ').pop())}กัน!</span>`, `<b>${until}</b> ${until === 1 ? 'sleep' : 'sleeps'} to ${esc(T(t.title).split(' · ')[0])}!`) : L(`<span class="nw">สวัสดี ${esc(name)}!</span> <span class="nw">วันนี้เล่นอะไรดี?</span>`, `Hello ${esc(name)}! What shall we play?`)}</p></div>
+${stars(kid) ? `<div class="jarrow"><button class="starjar" data-a="kidjar" data-k="${esc(kid)}" aria-label="${L('โถดาว', 'Star jar')}">⭐ <b>${stars(kid)}</b></button>${pets(kid).length ? `<span class="pets" aria-label="${L('เพื่อน', 'Friends')}">${pets(kid).join('')}</span>` : ''}</div>` : ''}
 <nav class="kiddays">${t.days.map((x, j) => `<button data-a="kidday" data-v="${j}" aria-pressed="${j === i}" aria-label="${L('วันที่', 'Day')} ${j + 1}">${artImg(t, j)}</button>`).join('')}</nav>
 <div class="kidpagerwrap"><button class="kparrow prev" data-a="kidpage" data-v="-1" aria-label="${L('หน้าก่อน', 'Previous page')}" hidden>‹</button>
 <div class="kidpager" id="kidpager">${pages.map((pg, n) => `<div class="kpage kidtiles" data-n="${n}">${pg.join('')}</div>`).join('')}</div>
@@ -604,6 +633,27 @@ ${sp.length ? `<div class="gmiss"><b>${lit ? L('วันนี้ชี้ใ�
 <div class="mema">${x.a.map((c, n) => `<button data-a="memans" data-ok="${n === x.ok ? 1 : 0}" data-last="${memState.n + 1 >= qs.length ? 1 : 0}" data-say="${esc(c.t)}"${memState.got && n === x.ok ? ' class="right"' : ''}><span>${esc(c.e)}</span><b>${esc(c.t)}</b></button>`).join('')}</div>
 ${memState.got ? `<button class="kidbig" data-a="memnext">${memState.n + 1 < qs.length ? L('ข้อต่อไป ›', 'Next ›') : L('เสร็จแล้ว! 🎉', 'All done! 🎉')}</button>` : ''}`;
     }
+  } else if (view === 'bubbles') {   // pop the bubbles: they float up, anything tapped pops with a sound; every 15 pops a cheer and a star
+    setTimeout(startBubbles, 0);
+    body = `<div class="kidguide">${guideImg(0)}<p>${L('แตะฟองให้แตก!', 'Pop the bubbles!')}</p></div>
+<div class="bubblefield" id="bubblefield" data-k="${esc(kid)}"><div class="bubscore" id="bubscore" aria-live="polite"></div></div>`;
+  } else if (view === 'music') {   // a xylophone (C major, an animal on every bar), three drums, two songs that light the bars to follow
+    body = `<div class="kidguide">${guideImg(1)}<p>${L('แตะแท่งสีให้ร้องเพลง!', 'Tap the bars to make music!')}</p></div>
+<div class="xylo" role="group">${XYLO.map((n, k) => `<button data-a="xylo" data-v="${k}" style="--c:${n[2]};--h:${100 - k * 7}%" aria-label="${n[0]}"><span>${n[3]}</span></button>`).join('')}</div>
+<div class="drums" role="group">${[['kick', '🥁', L('ตุ้ม', 'Boom')], ['snare', '🪘', L('แต๊ก', 'Tak')], ['hat', '🔔', L('ฉิ่ง', 'Ting')]].map(([k, e, l]) => `<button data-a="drum" data-v="${k}"><span>${e}</span><b>${l}</b></button>`).join('')}</div>
+<div class="songs">${SONGS.map((s, k) => `<button class="kidbig ghost" data-a="song" data-v="${k}" data-k="${esc(kid)}">🎶 ${L(s.th, s.en)}</button>`).join('')}</div>`;
+  } else if (view === 'hideseek') {   // I spy: twelve things scattered over the day's picture; the guide names one at a time (its Thai name read aloud)
+    if (!hs || hs.key !== `${t.id}.${i}.${kid}`) newHide(t, i, kid);
+    const want = hs.targets[hs.found.length];
+    body = `<div class="kidguide">${guideImg(0)}<p>${want ? L(`หา${want[1]}ให้เจอ! ${want[0]}`, `Find the ${want[2]}! ${want[0]}`) : L('เจอครบแล้ว! เก่งมาก 🎉', 'Found them all! Brilliant 🎉')}</p></div>
+<div class="hideboard"${dayArt(t, i) ? ` style="--art:url('${esc(dayArt(t, i))}')"` : ''}>${hs.items.map((it, n) => `<button class="hid${it.found ? ' found' : ''}" style="left:${it.x}%;top:${it.y}%;--s:${it.s}px;--r:${it.r}deg" data-a="kidhide" data-v="${n}" aria-label="${esc(it.th)}">${it.e}</button>`).join('')}</div>
+${want ? `<div class="hidetarget" aria-hidden="true">${want[0]}</div>` : `<button class="kidbig" data-a="kidnewhide">🔁 ${L('เล่นใหม่', 'Play again')}</button>`}`;
+  } else if (view === 'jigsaw' && dayArt(t, i)) {   // the day's picture in pieces: tap a piece, tap its place (tap-tap, not drag: a small hand can do it)
+    if (!jg || jg.key !== `${t.id}.${i}.${kid}`) newJigsaw(t, i, kid);
+    body = `<div class="kidguide">${guideImg(1)}<p>${jg.done ? L('ต่อภาพเสร็จแล้ว! 🎉', 'Picture done! 🎉') : jg.pick === null ? L('แตะชิ้นข้างล่าง แล้วแตะช่องที่ใช่!', 'Tap a piece, then tap where it goes!') : L('ใส่ตรงไหนดีนะ?', 'Where does it go?')}</p></div>
+<div class="jigboard" style="--art:url('${esc(dayArt(t, i))}');--c:${jg.cols}">${jg.slots.map((p, s) => `<button class="jslot${p !== null ? ' filled' : ''}" data-a="kidjslot" data-v="${s}"${p !== null ? ` style="${jgPos(p, jg)}"` : ''} aria-label="${L('ช่อง', 'Slot')} ${s + 1}"></button>`).join('')}</div>
+<div class="jigtray" style="--art:url('${esc(dayArt(t, i))}')">${jg.tray.map((p) => `<button class="jpiece${jg.pick === p ? ' pick' : ''}" data-a="kidjpick" data-v="${p}" style="${jgPos(p, jg)}" aria-label="${L('ชิ้น', 'Piece')} ${p + 1}"></button>`).join('')}</div>
+${jg.done ? `<button class="kidbig" data-a="kidnewjig">🔁 ${L('ต่อใหม่', 'Again')}</button>` : ''}`;
   } else if (view === 'stamp') {
     const mine = ticked(t, `stamp.d${i}`, kid);
     body = `<div class="kidstamp${mine ? ' done' : ''}" id="kidstamp"><div class="ring"><span class="lbl">${esc(pd.stamp || fmtDay(d.date, { day: 'numeric', month: 'short' }))}</span>${artImg(t, i, 'inked')}</div></div>
@@ -699,7 +749,7 @@ Object.assign(A, {
     mg.moves++; const [x, y] = mg.up.map((k) => mg.cards[k]);
     if (x.k === y.k) {
       mg.done.add(x.k); mg.up = []; beep('chime'); burst(b, ['⭐', '✨']);
-      if (mg.done.size * 2 === mg.cards.length) { mg.won = true; ls('match_' + mg.kid, (ls('match_' + mg.kid) || 0) + 1); celebrate(); setTimeout(() => { render(); sayUi(L('เก่งมาก!', 'Brilliant!')); }, 350); }
+      if (mg.done.size * 2 === mg.cards.length) { mg.won = true; ls('match_' + mg.kid, (ls('match_' + mg.kid) || 0) + 1); celebrate(); star(mg.kid, 2); setTimeout(() => { render(); sayUi(L('เก่งมาก!', 'Brilliant!')); }, 350); }
     } else setTimeout(() => { mg.up = []; $$('.mcard').forEach((el, k) => { if (!mg.done.has(mg.cards[k].k)) el.classList.remove('open'); }); beep('thud'); }, 800);
   },
   kidnewmatch() { beep('pop'); const t = trip(mg.t); newMatch(t, mg.kid); render(); },
@@ -708,11 +758,11 @@ Object.assign(A, {
     const k = +b.dataset.v; if (!cnt || cnt.hit.includes(k)) return;
     cnt.hit.push(k); const n = cnt.hit.length; beep('pop'); burst(b, [cnt.e, '✨']);
     say(NUMW[lang === 'th' ? 'th' : 'en'][n - 1] || String(n), lang === 'th' ? 'th-TH' : 'en-GB');
-    if (n >= cnt.n) setTimeout(() => { beep('chime'); celebrate([cnt.e, '⭐', '✨']); render(); sayUi(L(`ทั้งหมด ${n} ตัว!`, `${n} altogether!`)); }, 500); else render();
+    if (n >= cnt.n) setTimeout(() => { beep('chime'); celebrate([cnt.e, '⭐', '✨']); star(kidNow(), 1); render(); sayUi(L(`ทั้งหมด ${n} ตัว!`, `${n} altogether!`)); }, 500); else render();
   },
   kidnewcount() { beep('pop'); const t = kidTrip(route().parts[1]); newCount(t); render(); },
   kidcolor(b) { beep('tap'); kidColour = b.dataset.v; $$('.palette button').forEach((x) => x.setAttribute('aria-pressed', x.dataset.v === kidColour)); },
-  kidcolourdone(b) { beep('chime'); burst(b, ['🎨', '✨', '⭐']); celebrate(['🎨', '⭐', '✨']); setTimeout(() => nav(b.dataset.v), 900); },
+  kidcolourdone(b) { beep('chime'); burst(b, ['🎨', '✨', '⭐']); celebrate(['🎨', '⭐', '✨']); star(kidNow(), 1); setTimeout(() => nav(b.dataset.v), 900); },
   kidspot(b) {
     if (b.dataset.say) sayUi(b.dataset.say);
     beep(b.getAttribute('aria-pressed') === 'true' ? 'tap' : 'chime');
@@ -721,15 +771,39 @@ Object.assign(A, {
   kidword(b) { beep('tap'); say(b.dataset.v, b.dataset.lang); },
   memans(b) {
     if (memState && memState.got) return;
-    if (b.dataset.ok === '1') { beep('chime'); burst(b, ['⭐', '🎉', '✨']); if (b.dataset.last === '1') celebrate(); sayUi(L(`ใช่แล้ว! ${b.dataset.say} เก่งมาก!`, `Yes! ${b.dataset.say} — well done!`)); memState.got = true; setTimeout(render, 700); }
+    if (b.dataset.ok === '1') { beep('chime'); burst(b, ['⭐', '🎉', '✨']); if (b.dataset.last === '1') { celebrate(); star(kidNow(), 2); } sayUi(L(`ใช่แล้ว! ${b.dataset.say} เก่งมาก!`, `Yes! ${b.dataset.say} — well done!`)); memState.got = true; setTimeout(render, 700); }
     else { beep('tap'); b.classList.remove('nope'); void b.offsetWidth; b.classList.add('nope'); sayUi(L('อืม… ลองอีกทีนะ', 'Hmm… try again!')); }
   },
+  kidpoke(b) { b.classList.remove('wig'); void b.offsetWidth; b.classList.add('wig'); beep('boing'); burst(b, ['💛', '✨']); const k = kidName(b.dataset.k), ph = [L(`สวัสดี ${k}!`, `Hello ${k}!`), L('วันนี้เล่นอะไรดี?', 'What shall we play today?'), L(`${k} เก่งที่สุดเลย!`, `${k}, you are the best!`), L('จั๊กจี้!', 'Tickles!'), L('ไปผจญภัยกันเถอะ!', 'Let’s go on an adventure!')]; sayUi(ph[Math.floor(Math.random() * ph.length)]); },
+  kidjar(b) { beep('sparkle'); burst(b, ['⭐', '✨']); const n = stars(b.dataset.k), ps = pets(b.dataset.k); sayUi(L(`มีดาว ${n} ดวงแล้ว${ps.length ? ` และเพื่อน ${ps.length} ตัว` : ''}`, `${n} stars${ps.length ? ` and ${ps.length} friends` : ''} so far`)); },
+  xylo(b) { const n = XYLO[+b.dataset.v]; beep('note', n[1]); b.classList.remove('lit'); void b.offsetWidth; b.classList.add('lit'); },
+  drum(b) { beep(b.dataset.v); b.classList.remove('hit'); void b.offsetWidth; b.classList.add('hit'); },
+  song(b) { playSong(+b.dataset.v, b.dataset.k); },
+  kidhide(b) {
+    const it = hs.items[+b.dataset.v], want = hs.targets[hs.found.length]; if (!it || it.found || !want) return;
+    if (it.e === want[0]) {
+      it.found = true; hs.found.push(want); beep('pop'); burst(b, [want[0], '✨']);
+      if (hs.found.length === hs.targets.length) { sayUi(L('เจอครบแล้ว! เก่งมาก', 'Found them all! Brilliant')); setTimeout(() => { beep('yay'); celebrate(); star(kidNow(), 1); render(); }, 350); }
+      else { sayUi(L(`เจอ${want[1]}แล้ว!`, `Found the ${want[2]}!`)); render(); }
+    } else { beep('tap'); b.classList.remove('nope'); void b.offsetWidth; b.classList.add('nope'); sayUi(L(`นั่น${it.th} ลองหา${want[1]}อีกที`, `That is the ${it.en} — look for the ${want[2]}`)); }
+  },
+  kidnewhide() { beep('pop'); hs = null; render(); },
+  kidjpick(b) { jg.pick = jg.pick === +b.dataset.v ? null : +b.dataset.v; beep('tap'); render(); },
+  kidjslot(b) {
+    const s = +b.dataset.v; if (jg.pick === null || jg.slots[s] !== null) { beep('tap'); return; }
+    if (jg.pick === s) {
+      jg.slots[s] = s; jg.tray = jg.tray.filter((x) => x !== s); jg.pick = null; beep('pop'); burst(b, ['✨']);
+      if (!jg.tray.length) { jg.done = true; beep('yay'); celebrate(['🖼️', '⭐', '✨']); star(kidNow(), 2); sayUi(L('ต่อภาพเสร็จแล้ว! เก่งมาก', 'Picture done! Brilliant')); }
+      render();
+    } else { beep('thud'); b.classList.remove('nope'); void b.offsetWidth; b.classList.add('nope'); sayUi(L('ยังไม่ใช่ช่องนี้นะ', 'Not this one — try another')); }
+  },
+  kidnewjig() { beep('pop'); jg = null; render(); },
   memnext() { beep('pop'); memState.n++; memState.got = false; render(); },
   memagain() { beep('pop'); memState.n = 0; memState.got = false; render(); },
   kidgift(b) {
     const t = trip(b.dataset.t), i = +b.dataset.d, kid = b.dataset.k, id = `${t.id}.tick.gift.d${i}.${kid}`;
     b.classList.add('pop'); beep('pop'); setTimeout(() => beep('fanfare'), 250);
-    burst(b, ['🎉', '✨', '⭐', '🎊', giftE(i)]); celebrate(['🎁', '✨', giftE(i)]);
+    burst(b, ['🎉', '✨', '⭐', '🎊', giftE(i)]); celebrate(['🎁', '✨', giftE(i)]); star(kid, 2);
     sayUi(L('เย้! ได้สติกเกอร์ใหม่!', 'Yay! A new sticker!'));
     setTimeout(() => { if (!S.entries.some((e) => e.id === id)) putEntry(t, { day: i, kind: 'tick', child: kid, first_key: `gift.d${i}`, text: '' }, id); }, 650);
   },
@@ -737,7 +811,7 @@ Object.assign(A, {
     const t = trip(b.dataset.t), i = +b.dataset.d, kid = b.dataset.k, box = $('#kidstamp');
     box.classList.remove('done'); void box.offsetWidth; box.classList.add('done', 'slam');
     beep('thud'); setTimeout(() => beep('fanfare'), 350);
-    burst(box, ['⭐', '✨', '🎉', '💫']); celebrate(['🛂', '⭐', '🎉']);
+    burst(box, ['⭐', '✨', '🎉', '💫']); celebrate(['🛂', '⭐', '🎉']); star(kid, 3);
     const cheer = $('#kidcheer'); if (cheer) cheer.hidden = false;
     sayUi(L(`ปั๊ก! เก่งมาก ${kidName(kid)}!`, `Thump! Well done, ${kidName(kid)}!`));
     const id = `${t.id}.tick.stamp.d${i}.${kid}`;
@@ -779,7 +853,7 @@ Object.assign(A, {
     if (!S.entries.some((e) => e.id === id)) putEntry(t, { day: null, kind: 'tick', child: kid, first_key: `cd.${n + 1}`, text: '' }, id);
     kidDoor = n; beep('creak'); setTimeout(() => beep('chime'), 250);
     render();
-    burst($('#doorcard .in') || b, ['🎁', '✨', '🎉', '⭐']); celebrate(['🎁', '⭐', '✨']);
+    burst($('#doorcard .in') || b, ['🎁', '✨', '🎉', '⭐']); celebrate(['🎁', '⭐', '✨']); star(kid, 1);
     sayUi(String(T(cd.doors[n])).replace(/\{name\}/g, kidName(kid)));
   },
   kiddoorclose() { beep('pop'); kidDoor = null; render(); },
@@ -809,6 +883,65 @@ Object.assign(A, {
   btnext() { btGo(1); },
   btprev() { btGo(-1); },
 });
+// ---- bubbles: spawned while the field is on the page; a pointerdown on one pops it ----
+let bubT = 0, bubN = 0;
+const BUB_E = ['🐟', '🐙', '⭐', '🦋', '🌼', '🍓', '🎈', '🐥', '🐢', '🌈'];
+function startBubbles() {
+  clearInterval(bubT); bubN = 0;
+  const spawn = () => {
+    const f = $('#bubblefield'); if (!f) { clearInterval(bubT); return; }
+    if (f.querySelectorAll('.bub').length > 9) return;
+    const b = document.createElement('button'), sz = 52 + Math.random() * 64;
+    b.className = 'bub'; b.setAttribute('aria-label', L('ฟอง', 'Bubble'));
+    b.style.cssText = `left:${4 + Math.random() * 80}%;width:${sz}px;height:${sz}px;--t:${4.5 + Math.random() * 3}s;--hue:${Math.floor(Math.random() * 360)}`;
+    if (Math.random() < 0.45) b.textContent = BUB_E[Math.floor(Math.random() * BUB_E.length)];
+    b.addEventListener('animationend', () => b.remove());
+    f.appendChild(b);
+  };
+  spawn(); bubT = setInterval(spawn, 700);
+}
+document.addEventListener('pointerdown', (e) => {
+  const b = e.target.closest && e.target.closest('.bub'); if (!b || b.classList.contains('pop')) return;
+  e.preventDefault();
+  b.classList.add('pop'); beep('bubble'); burst(b, [b.textContent || '💧', '✨']); setTimeout(() => b.remove(), 220);
+  bubN++; const sc = $('#bubscore'); if (sc) sc.textContent = bubN;
+  if (bubN % 15 === 0) { celebrate(['🫧', '⭐', '✨']); beep('yay'); star($('#bubblefield').dataset.k, 1); sayUi(L(`เย้! ${bubN} ฟองแล้ว!`, `Yay! ${bubN} bubbles!`)); }
+});
+// ---- I spy: twelve things scattered without overlap; five of them are the targets, named one at a time ----
+const HIDE_POOL = [['🐥', 'ลูกเจี๊ยบ', 'chick'], ['🐸', 'กบ', 'frog'], ['🦋', 'ผีเสื้อ', 'butterfly'], ['🐢', 'เต่า', 'turtle'], ['🍓', 'สตรอว์เบอร์รี', 'strawberry'], ['⭐', 'ดาว', 'star'],
+  ['🎈', 'ลูกโป่ง', 'balloon'], ['🐟', 'ปลา', 'fish'], ['🌼', 'ดอกไม้', 'flower'], ['🍎', 'แอปเปิล', 'apple'], ['🚗', 'รถ', 'car'], ['🐱', 'แมว', 'cat'], ['🐶', 'หมา', 'dog'], ['🦆', 'เป็ด', 'duck'], ['🍦', 'ไอศกรีม', 'ice cream'], ['🚀', 'จรวด', 'rocket']];
+let hs = null, jg = null;
+function newHide(t, i, kid) {
+  const pool = HIDE_POOL.slice().sort(() => Math.random() - 0.5).slice(0, 12), targets = pool.slice(0, 5), items = [];
+  pool.forEach((p) => { let x, y, tries = 0; do { x = 12 + Math.random() * 76; y = 12 + Math.random() * 76; tries++; } while (tries < 80 && items.some((o) => Math.hypot(o.x - x, o.y - y) < 17));   // whole inside the board (a tap on the edge must land)
+    items.push({ e: p[0], th: p[1], en: p[2], x, y, s: 40 + Math.round(Math.random() * 16), r: Math.round(Math.random() * 40 - 20), found: false }); });
+  hs = { key: `${t.id}.${i}.${kid}`, targets, found: [], items: items.sort(() => Math.random() - 0.5) };
+}
+// ---- the jigsaw: the day's picture cut into 2×2 (the little one) or 3×2; a piece shows its crop through background-position ----
+function newJigsaw(t, i, kid) {
+  const cols = littleOf(t, kid) ? 2 : 3, rows = 2, n = cols * rows;
+  jg = { key: `${t.id}.${i}.${kid}`, cols, rows, slots: Array(n).fill(null), tray: Array.from({ length: n }, (_, k) => k).sort(() => Math.random() - 0.5), pick: null, done: false };
+}
+const jgPos = (p, g) => `background-image:var(--art);background-size:${g.cols * 100}% ${g.rows * 100}%;background-position:${g.cols > 1 ? (p % g.cols) / (g.cols - 1) * 100 : 0}% ${g.rows > 1 ? Math.floor(p / g.cols) / (g.rows - 1) * 100 : 0}%`;
+// ---- music: the xylophone's bars (C major) and two songs as bar numbers; a song lights each bar as it plays ----
+const XYLO = [['C', 261.63, '#FF6B6B', '🐥'], ['D', 293.66, '#FFA94D', '🐸'], ['E', 329.63, '#FFD43B', '🐱'], ['F', 349.23, '#8CE99A', '🐶'], ['G', 392.00, '#66D9E8', '🐰'], ['A', 440.00, '#74C0FC', '🐼'], ['B', 493.88, '#B197FC', '🦊'], ['C', 523.25, '#F783AC', '🐨']];
+const SONGS = [
+  { th: 'ดาวน้อย', en: 'Twinkle twinkle', seq: [0, 0, 4, 4, 5, 5, 4, -1, 3, 3, 2, 2, 1, 1, 0] },
+  { th: 'ลูกแกะน้อย', en: 'Mary had a little lamb', seq: [2, 1, 0, 1, 2, 2, 2, -1, 1, 1, 1, -1, 2, 4, 4] },
+];
+let songT = 0;
+function playSong(n, kid) {
+  const s = SONGS[n]; if (!s) return;
+  clearTimeout(songT); let k = 0;
+  const step = () => {
+    const bars = $$('.xylo button'); if (!bars.length) return;
+    if (k >= s.seq.length) { beep('yay'); celebrate(['🎵', '⭐', '✨']); star(kid, 1); return; }
+    const v = s.seq[k++];
+    if (v >= 0) { beep('note', XYLO[v][1]); const b = bars[v]; b.classList.remove('lit'); void b.offsetWidth; b.classList.add('lit'); }
+    songT = setTimeout(step, 400);
+  };
+  step();
+}
 // tap a shape on the colouring page
 document.addEventListener('click', (e) => {
   const el = e.target.closest && e.target.closest('.colourpad [data-c]'); if (!el || !isEditor()) return;
