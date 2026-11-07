@@ -2369,3 +2369,106 @@ details.fold>summary::after{content:none}
 /* the printed book: a place name is plain text (a link cannot be tapped on paper) */
 body.printbook a.maplink,body.printbook a.maplink:visited{text-decoration:none;color:inherit}
 @media print{a.maplink{text-decoration:none;color:inherit}}
+
+/* ---------- the printed memory book, made for children (owner, Nov 2026: "สีสดใส ปรับตามอายุ สวย อ่านง่าย สร้างความทรงจำ") ----------
+   Bright and playful but easy to read: dark ink on light tints, never text on a busy pattern. Every page has a colour of its own
+   (--ph, cycling through six), a heading with a picture in a ringed circle, confetti in one corner. Photos are polaroids, quotes are
+   speech bubbles, firsts are round stickers. .age-little / .age-kid / .age-big scale it with the children (views.js bookAge). */
+.kbook{--k1:#2F9BEF;--k2:#FFAE1F;--k3:#2FBF71;--k4:#8B5CF6;--k5:#FF5C9A;--k6:#FF7A3D;--kfs:15.5px;--kink:#1F2A3A;-webkit-print-color-adjust:exact;print-color-adjust:exact}
+.kbook section.pg{font-size:var(--kfs);color:var(--kink);background:#fff}
+.kbook section.pg::after{content:"";position:absolute;top:0;right:0;width:190px;height:120px;pointer-events:none;z-index:0;
+  background:radial-gradient(circle at 86% 22%,color-mix(in srgb,var(--ph) 70%,#fff) 0 9px,transparent 10px),radial-gradient(circle at 64% 12%,color-mix(in srgb,var(--k2) 75%,#fff) 0 6px,transparent 7px),
+  radial-gradient(circle at 74% 46%,color-mix(in srgb,var(--k5) 60%,#fff) 0 5px,transparent 6px),radial-gradient(circle at 93% 58%,color-mix(in srgb,var(--k3) 65%,#fff) 0 4px,transparent 5px),
+  radial-gradient(circle at 48% 30%,color-mix(in srgb,var(--k1) 55%,#fff) 0 4px,transparent 5px)}
+.kbook section.pg>*{position:relative;z-index:1}
+.kbook section.pg.cover::after,.kbook section.pg.back::after{width:100%;height:100%;opacity:.55}
+/* headings: a picture in a ringed circle, the title big and dark, on a tint of the page's colour */
+.kbook .pghd{display:flex;align-items:center;gap:14px;border:0;padding:12px 18px;border-radius:24px;background:color-mix(in srgb,var(--ph) 15%,#fff);margin-bottom:18px;max-width:calc(100% - 120px)}
+.kbook .pghd .pge{flex:none;display:grid;place-items:center;width:58px;height:58px;border-radius:50%;background:#fff;border:4px solid var(--ph);font-size:28px;line-height:1}
+.kbook .pghd .kicker{color:color-mix(in srgb,var(--ph) 65%,var(--kink));letter-spacing:.08em;font-weight:700}
+.kbook .pghd h2{font-family:var(--ui);font-size:30px;font-weight:800;line-height:1.15;color:var(--kink);margin:0}
+/* the cover: a rainbow edge, the title with a rainbow underline, the day pictures ringed in colours on a bright panel */
+.kbook .cv::before{background:linear-gradient(var(--k5),var(--k6),var(--k2),var(--k3),var(--k1),var(--k4));width:12px;border-radius:6px}
+.kbook .cv h1{font-family:var(--ui);font-weight:800;color:var(--kink)}
+.kbook .cv h1::after{content:"";display:block;width:140px;height:10px;border-radius:5px;margin-top:12px;background:linear-gradient(90deg,var(--k5),var(--k2),var(--k3),var(--k1))}
+.kbook .cv.art .cvart{background:linear-gradient(160deg,color-mix(in srgb,var(--k1) 13%,#fff),color-mix(in srgb,var(--k5) 11%,#fff));border:3px dashed color-mix(in srgb,var(--k1) 35%,#fff);border-radius:28px}
+.kbook .cv.art .cvart figure .art{border-radius:50%;box-shadow:0 0 0 6px #fff,0 0 0 11px var(--kc,var(--k1))}
+.kbook .cvart figure:nth-child(6n+2) .art,.kbook .journey span:nth-child(6n+2) .art,.kbook .dstamp:nth-child(6n+2) .art{--kc:var(--k2)}
+.kbook .cvart figure:nth-child(6n+3) .art,.kbook .journey span:nth-child(6n+3) .art,.kbook .dstamp:nth-child(6n+3) .art{--kc:var(--k3)}
+.kbook .cvart figure:nth-child(6n+4) .art,.kbook .journey span:nth-child(6n+4) .art,.kbook .dstamp:nth-child(6n+4) .art{--kc:var(--k4)}
+.kbook .cvart figure:nth-child(6n+5) .art,.kbook .journey span:nth-child(6n+5) .art,.kbook .dstamp:nth-child(6n+5) .art{--kc:var(--k5)}
+.kbook .cvart figure:nth-child(6n+6) .art,.kbook .journey span:nth-child(6n+6) .art,.kbook .dstamp:nth-child(6n+6) .art{--kc:var(--k6)}
+.kbook .cv.art .cvart b{color:var(--kink);font-weight:800}
+.kbook .cvband{background:linear-gradient(135deg,var(--accent),color-mix(in srgb,var(--accent) 55%,var(--k4)))}
+/* the trip in numbers: big coloured bubbles */
+.kbook .facts{grid-template-columns:repeat(auto-fill,minmax(130px,1fr));gap:12px;margin:6px 0 18px}
+.kbook .fact{border:0;border-radius:22px;padding:12px 10px;text-align:center;background:color-mix(in srgb,var(--kc,var(--k1)) 15%,#fff)}
+.kbook .fact b{display:block;font-size:40px;line-height:1.05;font-weight:800;color:color-mix(in srgb,var(--kc,var(--k1)) 85%,var(--kink))}
+.kbook .fact:nth-child(6n+2){--kc:var(--k2)}.kbook .fact:nth-child(6n+3){--kc:var(--k3)}.kbook .fact:nth-child(6n+4){--kc:var(--k4)}.kbook .fact:nth-child(6n+5){--kc:var(--k5)}.kbook .fact:nth-child(6n+6){--kc:var(--k6)}
+.kbook .journey .art,.kbook .dstamp .art{border-radius:50%;box-shadow:0 0 0 3px #fff,0 0 0 6px var(--kc,var(--k1))}
+/* contents: each day's number in a coloured circle */
+.kbook .toc li{border-bottom:2px dotted color-mix(in srgb,var(--ph) 30%,#fff)}
+.kbook .toc b{display:grid;place-items:center;flex:none;width:46px;height:46px;min-width:46px;border-radius:50%;background:var(--kc,var(--k1));color:#fff;font-family:var(--ui);font-weight:800;font-size:19px}
+.kbook .toc li:nth-child(6n+2){--kc:var(--k2)}.kbook .toc li:nth-child(6n+3){--kc:var(--k3)}.kbook .toc li:nth-child(6n+4){--kc:var(--k4)}.kbook .toc li:nth-child(6n+5){--kc:var(--k5)}.kbook .toc li:nth-child(6n+6){--kc:var(--k6)}
+/* a day: the number in a big coloured circle, the title big, photos as polaroids, quotes as bubbles */
+.kbook .dayp .day .hd .no{display:grid;place-items:center;width:88px;height:88px;border-radius:50%;background:var(--ph);color:#fff;font-family:var(--ui);font-weight:800;font-size:40px;line-height:1;box-shadow:0 5px 0 color-mix(in srgb,var(--ph) 70%,#000)}
+.kbook .dayp .day .hd h3{font-family:var(--ui);font-weight:800;font-size:30px;line-height:1.2}
+.kbook .dayp .moods .pill{background:#fff;border:2px solid color-mix(in srgb,var(--ph) 45%,#fff);font-size:18px}
+.kbook .dayp .daysum{font-size:calc(var(--kfs) + 2px);line-height:1.6;background:color-mix(in srgb,var(--k2) 13%,#fff);border-radius:18px;padding:12px 16px}
+.kbook .dayp .mosaic{gap:16px 12px;margin:6px 0 10px}
+.kbook .dayp .mosaic>button{background:#fff;padding:7px 7px 20px;border-radius:4px;box-shadow:0 6px 14px -8px rgba(0,0,0,.4);transform:rotate(-1.6deg)}
+.kbook .dayp .mosaic>button:nth-child(even){transform:rotate(1.8deg)}
+.kbook .dayp .mosaic>button img{border-radius:2px}
+.kbook .call{border-radius:20px}
+.kbook .dayp .call.pick,.kbook .dayp .call.info{background:#fff;border:3px solid color-mix(in srgb,var(--k5) 55%,#fff)}
+.kbook .dayp .call q,.kbook .qgrid q{font-size:calc(var(--kfs) + 3px);line-height:1.45}
+.kbook .dayp .route{background:color-mix(in srgb,var(--ph) 9%,#fff);border-radius:18px}
+.kbook .dayp .foot3>div{background:color-mix(in srgb,var(--kc,var(--k3)) 12%,#fff);border-radius:18px;padding:10px 14px}
+.kbook .dayp .foot3>div:nth-child(2){--kc:var(--k2)}.kbook .dayp .foot3>div:nth-child(3){--kc:var(--k4)}
+/* firsts: round stickers */
+.kbook .badges{grid-template-columns:repeat(auto-fill,minmax(150px,1fr));gap:16px}
+.kbook .bdg{border-radius:50%;aspect-ratio:1;align-content:center;padding:14px;background:color-mix(in srgb,var(--kc,var(--k2)) 16%,#fff);border:4px dashed var(--kc,var(--k2))}
+.kbook .bdg span{font-size:36px;line-height:1}.kbook .bdg b{font-size:14px;line-height:1.25}
+.kbook .bdg:nth-child(5n+2){--kc:var(--k1)}.kbook .bdg:nth-child(5n+3){--kc:var(--k3)}.kbook .bdg:nth-child(5n+4){--kc:var(--k5)}.kbook .bdg:nth-child(5n+5){--kc:var(--k4)}
+.kbook .badges.sm{grid-template-columns:repeat(auto-fill,minmax(110px,1fr))}.kbook .badges.sm .bdg span{font-size:26px}
+/* their own words: speech bubbles in colours, with a tail */
+.kbook .qgrid .call{position:relative;background:#fff;border:3px solid var(--kc,var(--k1));margin:0 0 22px}
+.kbook .qgrid .call::after{content:"";position:absolute;left:28px;bottom:-14px;width:22px;height:22px;background:#fff;border-right:3px solid var(--kc,var(--k1));border-bottom:3px solid var(--kc,var(--k1));transform:rotate(45deg)}
+.kbook .qgrid .call:nth-child(5n+2){--kc:var(--k5)}.kbook .qgrid .call:nth-child(5n+3){--kc:var(--k3)}.kbook .qgrid .call:nth-child(5n+4){--kc:var(--k2)}.kbook .qgrid .call:nth-child(5n+5){--kc:var(--k4)}
+/* my page: who they were on this trip, and a thing to do on the printed page */
+.kbook .myhero{display:flex;align-items:flex-end;gap:22px;margin:4px 0 18px}
+.kbook .myhero .cast{flex:none;margin:0}.kbook .myhero .cast .who{height:200px}.kbook .myhero .cast .who.mika{height:160px}
+.kbook .mybig{flex:1;min-width:0}
+.kbook .myage{font-size:24px;line-height:1.35;margin:0 0 12px}.kbook .myage b{font-size:36px;font-weight:800;color:color-mix(in srgb,var(--ph) 80%,var(--kink))}
+.kbook .myfacts{list-style:none;padding:0;margin:0;display:grid;gap:8px}
+.kbook .myfacts li{background:color-mix(in srgb,var(--ph) 12%,#fff);border-radius:16px;padding:8px 14px;font-size:16px}.kbook .myfacts li span{margin-right:8px}
+.kbook .myact{border-radius:24px;padding:16px 18px;background:color-mix(in srgb,var(--ph) 8%,#fff);border:3px dashed color-mix(in srgb,var(--ph) 55%,#fff)}
+.kbook .myact>b{display:block;font-size:21px;margin-bottom:10px}.kbook .myact b.wq{font-size:17px;margin:14px 0 4px}
+.kbook .drawbox{height:430px;border-radius:18px;background:#fff;border:2px dashed color-mix(in srgb,var(--ph) 40%,#fff)}
+.kbook .myact.hand .drawbox{height:560px}
+.kbook .wlines i{display:block;height:36px;border-bottom:2px solid color-mix(in srgb,var(--ph) 35%,#fff)}
+.kbook .myact.journal{background:#fff}.kbook .myact.journal .wlines i{height:34px}
+.kbook .top3{padding-left:26px;margin:0}.kbook .top3 li{font-weight:800;color:var(--ph)}
+/* the end */
+.kbook .bk h2{font-family:var(--ui);font-weight:800;font-size:48px;background:linear-gradient(90deg,var(--k5),var(--k6),var(--k2),var(--k3),var(--k1));-webkit-background-clip:text;background-clip:text;color:transparent}
+/* little ones (1–3): big pictures, big type, few words on a line */
+.kbook.age-little{--kfs:18px}
+.kbook.age-little .pghd h2{font-size:38px}.kbook.age-little .pghd .pge{width:70px;height:70px;font-size:36px}
+.kbook.age-little .dayp .day .hd h3{font-size:36px}.kbook.age-little .dayp .day .hd .no{width:104px;height:104px;font-size:48px}
+.kbook.age-little .dayp .mosaic{grid-template-columns:repeat(2,1fr)}
+.kbook.age-little .qgrid{columns:1}.kbook.age-little .qgrid q{font-size:26px}
+.kbook.age-little .toc li{font-size:20px}.kbook.age-little .toc .art{width:58px;height:58px}
+.kbook.age-little .bdg span{font-size:46px}.kbook.age-little .bdg b{font-size:16px}
+.kbook.age-little .fact b{font-size:48px}
+/* big kids (8+): a travel journal — calmer pages, smaller type, more on a page */
+.kbook.age-big{--kfs:14px}
+.kbook.age-big section.pg::after{opacity:.35}
+.kbook.age-big .pghd{background:none;border-radius:0;border-bottom:3px solid var(--ph);padding:0 0 10px;max-width:none}
+.kbook.age-big .pghd .pge{width:46px;height:46px;font-size:22px;border-width:3px}
+.kbook.age-big .pghd h2{font-size:26px}
+.kbook.age-big .dayp .day .hd .no{width:70px;height:70px;font-size:32px;box-shadow:none}
+.kbook.age-big .qgrid{columns:3}
+.kbook.age-big .dayp .mosaic>button{transform:none}
+@media (max-width:600px){.kbook .pghd{max-width:none}.kbook .myhero{flex-wrap:wrap}.kbook .drawbox{height:260px}.kbook .myact.hand .drawbox{height:320px}.kbook.age-big .qgrid{columns:1}}
+.kbook .journey .art,.kbook .dstamp .art{margin-bottom:8px}   /* the coloured ring never touches the day number under it */
+.tpk.agek{grid-template-columns:repeat(2,minmax(0,1fr));max-width:560px}@media (min-width:760px){.tpk.agek{grid-template-columns:repeat(4,minmax(0,1fr));max-width:none}}

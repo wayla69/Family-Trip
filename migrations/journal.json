@@ -23,6 +23,7 @@
     { "id": "0020", "file": "0020_kid_avatar_history.sql" },
     { "id": "0021", "file": "0021_viewer_pin_len.sql" },
     { "id": "0022", "file": "0022_emoji.sql" },
-    { "id": "0023", "file": "0023_cover.sql" }
+    { "id": "0023", "file": "0023_cover.sql" },
+    { "id": "0024", "file": "0024_book_age.sql" }
   ]
 }

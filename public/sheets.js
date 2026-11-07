@@ -476,6 +476,7 @@ const A = {
   // the record page's "more" fold: keep it open on this phone from now on (or let it fold again)
   logall(b, e) { e.preventDefault(); e.stopPropagation(); ls('logall', ls('logall') ? 0 : 1); render(); },
   // the printed cover: 'art' (day pictures, the default) or 'photo' (the first ⭐ photo) — one trip-wide entry, read by #/print and the PDF
+  async bookage(b) { const t = trip(b.dataset.t); await putEntry(t, { day: null, kind: 'bookage', text: b.dataset.v }, `${t.id}.bookage.all`); render(); },   // the printed book's style by age
   async cover(b) { const t = trip(b.dataset.t); await putEntry(t, { day: null, kind: 'cover', text: b.dataset.v }, `${t.id}.cover.all`); render(); },
   jump(b) { const el = $(b.dataset.v); if (el) { let d = el.closest('details:not([open])'); while (d) { d.open = true; d = d.parentElement && d.parentElement.closest('details:not([open])'); } el.scrollIntoView({ behavior: matchMedia('(prefers-reduced-motion: reduce)').matches ? 'auto' : 'smooth', block: 'start' }); el.classList.remove('flash'); void el.offsetWidth; el.classList.add('flash'); } },
   // relatives' groups (#/viewers): the form lives in vgForm (views.js) so a background render keeps the ticks

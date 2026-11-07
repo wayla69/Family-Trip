@@ -827,6 +827,18 @@ const T = 'hk-macau-2026';
   await s.page.goto(`${BASE}/#/print/hk-macau-2026`); await s.page.waitForSelector('.pg.cover .cv.art');
   ok(await s.page.locator('.pg.ppp .dstamp').count() === 12 && await s.page.locator('.pg.ppp .colsvg svg, .pg.ppp .colsvg').count() >= 1, 'passport spreads: 6 stamp slots per child, Mimi\'s colouring');
   ok(await s.page.locator('nav.bar, .top').count() === 0, 'memory book preview has no app chrome');
+  // the printed book grows with the children (owner, Nov 2026): by the youngest child's age at the trip (HK: Mika 1½ → little ones),
+  // a page of each child's own after their passport, and the parents may choose the style on the book page
+  ok(await s.page.locator('.kbook.age-little').count() === 1 && await s.page.locator('.pg.mypage').count() === 2 && await s.page.locator('.pg.mypage .myact.hand .drawbox').count() === 2
+    && await s.page.locator('.pghd .pge').count() >= 4, 'printed book: auto style for HK is "little ones" (Mika was 1½), each child has their own page with a handprint box, headings carry a picture');
+  await s.page.goto(`${BASE}/#/t/hk-macau-2026/book`); await s.page.waitForSelector('.agepick');
+  ok(await s.page.locator('.agek .tpo').count() === 4 && await s.page.locator('.agek .tpo[data-v="auto"][aria-pressed="true"]').count() === 1, 'book page: the book-for-their-age cards, automatic by default');
+  await s.page.click('.agek .tpo[data-v="big"]'); await s.page.waitForSelector('.agek .tpo[data-v="big"][aria-pressed="true"]');
+  await s.page.goto(`${BASE}/#/print/hk-macau-2026`); await s.page.waitForSelector('.kbook');
+  ok(await s.page.locator('.kbook.age-big').count() === 1 && await s.page.locator('.pg.mypage .myact.journal .wlines i').count() >= 14
+    && (await apiState(s.page)).entries.some((e) => e.id === 'hk-macau-2026.bookage.all' && e.kind === 'bookage' && e.text === 'big' && e.day === null), 'printed book: "big kids" chosen → the journal pages with writing lines; one trip-wide entry');
+  await s.page.goto(`${BASE}/#/t/hk-macau-2026/book`); await s.page.waitForSelector('.agepick'); await s.page.click('.agek .tpo[data-v="auto"]'); await s.page.waitForSelector('.agek .tpo[data-v="auto"][aria-pressed="true"]');
+  await s.page.goto(`${BASE}/#/print/hk-macau-2026`); await s.page.waitForSelector('.kbook');
   await s.page.screenshot({ path: path.join(OUT, 'wide-13-memory-book.png'), fullPage: true });
   await s.shot('10-book-wide');
   await s.page.goto(`${BASE}/#/passport/mimi`); await s.page.waitForSelector('.pp .dstamp');
