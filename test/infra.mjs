@@ -124,7 +124,7 @@ ok(['families', 'children', 'trips', 'trip_days', 'firsts_catalog', 'entries', '
       const c = spawnSync(process.execPath, ['scripts/plan-to-seed.mjs', '--check', path.resolve('server/seeds', f)], { encoding: 'utf8' });
       const rows = JSON.parse(fs.readFileSync(path.resolve('server/seeds', f), 'utf8')).days.flatMap((d) => d.plan || []), noH = rows.filter((r) => !(r.h && r.h.th && r.h.en && /^\p{Extended_Pictographic}/u.test(r.h.en) && !r.h.en.includes(' · ')));
       ok(rows.length > 0 && noH.length === 0, `${f}: every timeline step has its own short headline h (emoji first) for the Today page${noH.length ? ' — missing: ' + noH.slice(0, 3).map((r) => r.en).join(' | ') : ''}`);
-      ok(c.status === 0 && /privacy: clean/.test(c.stdout) && !/ERROR/.test(c.stdout) && !/has no Thai|เช็ค/.test(c.stdout), `${f} passes plan-to-seed --check (privacy, unique stop keys)` + (c.status ? ` — ${c.stdout.split('\n').filter((l) => /ERROR|PRIVACY|    /.test(l)).join(' | ')}` : ''));
+      ok(c.status === 0 && /privacy: clean/.test(c.stdout) && !/ERROR/.test(c.stdout) && !/  warn: /.test(c.stdout), `${f} passes plan-to-seed --check (privacy, unique stop keys, and not one docs/STYLE.md warning)` + ` — ${c.stdout.split('\n').filter((l) => /ERROR|PRIVACY|warn: /.test(l)).slice(0, 5).join(' | ')}`);
     }
   } finally { fs.rmSync(dir, { recursive: true, force: true }); }
 }

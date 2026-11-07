@@ -25,17 +25,22 @@
 - **อ่านเป็นไทย**: ชื่อที่อ่านผ่านตา (ชื่อเล่ม ชื่อวัน อากาศ หัวข้อ) ทับศัพท์เป็นไทยตามที่คนไทยพูด: ฮ่องกงดิสนีย์แลนด์, คาทูมบา, โกลเด้นบัส, ลูน่าพาร์ค
 - **ชื่อที่ต้องเทียบป้าย** (สถานี โรงแรม ร้าน ช่องจอด สายรถ "landing slip") คงอักษรละตินไว้ในรายละเอียด เพราะพ่อแม่ต้องอ่านเทียบกับป้ายจริง
 - **ห้ามแปลชื่อเฉพาะตรงตัว**: Golden Bus ไม่ใช่ "บัสทอง", Three Sisters ไม่ใช่ "สามพี่น้อง" (เขียน "ทรีซิสเตอร์ส" หรือ "หินทรีซิสเตอร์ส")
-- **คำทั่วไปเป็นไทย**: shuttle → รถรับส่ง · contactless → บัตรแตะจ่าย · biosecurity → ด่านตรวจของต้องห้าม (biosecurity) · lockbox → กล่องกุญแจ · light rail → รถราง · check in → เช็กอิน · tag (ทางด่วน) → แท็กทางด่วน
+- **ชื่อเดียว สะกดแบบเดียวทั้งเล่ม**: เลือกแบบที่ชื่อวันใช้ แล้วใช้ทุกที่ (หม่าวาน ไม่ใช่ มาวาน · โคอาล่า · แมนลี่ · อ่าวเจอร์วิส ไม่ใช่ เจอร์วิสเบย์)
+- **ชื่อสถานที่ในหน้าเด็กเป็นไทยเสมอ** (ชื่อการ์ดความรู้ คำถาม หัวข้อนิทาน): บรรทัดนี้อ่านออกเสียง — "ทรายที่หาดไฮแอมส์ส่งเสียงอะไร?" ไม่ใช่ "ทรายที่ Hyams Beach…"
+- **คำทั่วไปเป็นไทย**: shuttle → รถรับส่ง · contactless → บัตรแตะจ่าย · biosecurity → ด่านตรวจของต้องห้าม (biosecurity) · lockbox → กล่องกุญแจ · light rail → รถราง · check in → เช็กอิน · tag (ทางด่วน) → แท็กทางด่วน · Plan B → แผนสำรอง · nap → งีบ · jacket → เสื้อกันหนาว · voucher → ใบยืนยัน · polarised → ตัดแสงสะท้อน · Day 7 → วันที่ 7 · หนังสือเดินทางจริง → หนังสือเดินทาง (พาสปอร์ต = พาสปอร์ตนักผจญภัยของเด็ก)
+- **คำต้องตรงความหมาย**: hang-glider = เครื่องร่อน (ร่มร่อน คือ paraglider) · ระวัง "หนู" ที่อ่านได้ทั้ง "เจ้าหนู" และ "หนู (สัตว์)" ในหน้าเด็ก · grandparents = ปู่ย่าตายาย ไม่ใช่ ผู้สูงอายุ
 - **สะกด**: เช็กอิน / เช็กเอาต์ / เช็ก (ไม่ใช่ เช็ค) · ไอศกรีม · คุกกี้ · ช็อกโกแลต · แท็กซี่ · อีโมจิ
 - **ชื่อเด็กในข้อความไทยเขียนเป็นไทย**: มีมี่ / มีก้า — ไม่ใช่ "น้อง Mimi"
 - **คำในแอป** ตามอภิธานศัพท์ใน CLAUDE.md: ผู้ช่วย · รหัส · สำเนา · ไม่มีเน็ต · เล่ม · สมุดความทรงจำ · พาสปอร์ตนักผจญภัย · ตราประทับ · ญาติ
 - **น้ำเสียง**: เป็นกันเอง ไม่ใส่ ค่ะ/ครับ ในเนื้อหาเล่ม · เรียกเด็กว่า "หนู" ในหน้าเด็ก · ไม่ขึ้นต้นประโยคด้วยคำเชื่อมภาษาอังกฤษ
-- **ไม่แปลตามโครงอังกฤษ**: "ทำให้แน่ใจว่า…" → "อย่าลืม…" · "มันเป็น…" → ตัดออก · "ซึ่ง" ซ้อนกันหลายชั้น → แยกประโยค
+- **ไม่แปลตามโครงอังกฤษ**: "ทำให้แน่ใจว่า…" → "อย่าลืม…" · "มันเป็น…" → ตัดออก · "ซึ่ง" ซ้อนกันหลายชั้น → แยกประโยค · "X คือที่ที่…" → "X เป็น…" หรือเริ่มด้วยคนทำ ("คนซิดนีย์มากินมื้อเช้ากันที่นี่") · "ฉันคือเรนเจอร์รู" → "ฉันชื่อเรนเจอร์รู" · "…รอบมัน" → "…ตามนี้"
+- คำแนะนำยาวหลายเรื่องในบรรทัดเดียว แยกด้วย ` · ` (ในรายละเอียดเท่านั้น ไม่ใช่หัวข้อหรือหน้าเด็ก)
 - ช่องว่างแบ่งวลีแบบไทย หนึ่งช่องว่าง ไม่มีช่องว่างก่อนเครื่องหมายวรรคตอน
 
 ## 4. English
 - **British spelling** (colour, centre, kilometre, favourite, travelled, organise) — except a proper name spelt otherwise (Baby Care Center)
-- **Sentence case** for headings and labels: only the first word and names take a capital (`Over Sea Cliff Bridge`, `Dinner with a bridge view`)
+- **Sentence case** for headings and labels: only the first word and names take a capital (`Over Sea Cliff Bridge`, `Dinner with a bridge view`, `All aboard the steam train!`). After a label's colon, carry on in lower case: `Nap: on the plane after lunch`, `If tired, cut first: the carousel`
+- "and", not "&", in titles (`Rock pools and pelicans!`); `dolls' houses`; one word per thing across the book (if it says `stroller` once, it says `stroller` everywhere)
 - Short, plain, warm; written for a parent on a phone, not a brochure. No "Let's" on every line; no exclamation on more than about a quarter of a day's headlines
 - Say the same thing as the Thai — the same places, times and prices; neither side adds or drops a fact
 - Ranges with an en dash and no spaces: `10:00–16:00`, `15–22°C`; " — " (spaced em dash) between clauses
