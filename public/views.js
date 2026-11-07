@@ -186,7 +186,11 @@ ${visual}
 <div class="meta"><span>${flagsOf(t)} ${esc(fmtRange(t))}</span><span>📷 ${st.photos} · 💬 ${st.quotes}</span></div>
 <div class="prog" title="${L('ตราประทับ', 'Stamps')} ${got}/${n}"><i style="width:${n ? Math.round((got / n) * 100) : 0}%"></i></div></a>`;
   }).join('');
-  const add = isEditor() ? `<button class="spine add" data-a="newtrip"><span><b style="font-size:32px;display:block">＋</b>${L('เล่มใหม่', 'New book')}</span></button>` : '';
+  // a new book, both ways in one place: from the trip manual (the helper reads the PDF) or an empty book filled in by hand
+  const pdf = S.features.story;
+  const add = isEditor() ? `<div class="spine add"><div class="addhd"><b class="addplus" aria-hidden="true">＋</b><div><h3>${L('เล่มใหม่', 'New book')}</h3><small>${pdf ? L('เริ่มได้ 2 แบบ', 'Two ways to start') : L('ทริปใหม่ เล่มใหม่', 'A new trip, a new book')}</small></div></div>
+${pdf ? `<a class="addway main" href="#/import"><span class="e">📄</span><span><b>${L('จากคู่มือทริป (PDF)', 'From the trip manual (PDF)')}</b><small>${L('ผู้ช่วยอ่านคู่มือ แล้วทำแผนรายวัน ร้านอาหาร และหน้าของเด็กๆ ให้', 'The helper reads the manual and makes the day plans, places to eat and the kids’ pages')}</small></span><i>›</i></a>` : ''}
+<button type="button" class="addway" data-a="newtrip"><span class="e">✏️</span><span><b>${L('เล่มเปล่า', 'An empty book')}</b><small>${L('ใส่ชื่อทริปกับวันที่ แล้วค่อยเติมเอง', 'Type the trip name and dates, fill it in as you go')}</small></span><i>›</i></button></div>` : '';
   const welcome = isEditor() && !children().length ? `<a class="famwelcome" href="#/family"><span>👨‍👩‍👧‍👦</span><div><b>${L('เริ่มที่ครอบครัวของเรา', 'Start with your family')}</b><small>${L('ตั้งชื่อแอป ใส่ชื่อลูกๆ และเลือกตัวการ์ตูนของแต่ละคน แล้วทุกหน้าจะเป็นของครอบครัวเรา', "Name the app, add the children and pick each one's character — every page becomes yours")}</small></div></a>` : '';
   return `${remindAsk()}${heroHtml()}${welcome}<div class="part">${L('ชั้นหนังสือ', 'The bookshelf')}</div><h1 class="h2">${L(kicker() ? `ทุกทริป${kicker()}` : 'ทุกทริปของเรา', 'Every trip, one book each')}</h1>
 <p class="lede">${L('แต่ละทริปคือหนึ่งเล่ม เปิดอ่านได้ทั้งตอนเที่ยวและอีกหลายปีข้างหน้า', 'Each trip is a book — to fill in on the road and reread for years.')}</p>
@@ -196,8 +200,12 @@ ${visual}
 <div class="part">${L('สำหรับทริปหน้า', 'For the next trip')} 📓</div>
 <a class="nbcard" href="#/notebook"><span class="emb">📓</span><div><b>${L('สมุดโน้ตนักเดินทาง', 'Travel notebook')}</b><small>${S.reviews.length ? L(`${S.reviews.length} รีวิว · ที่พัก ร้านอาหาร สถานที่ — ไว้วางแผนทริปหน้า`, `${S.reviews.length} reviews · stays, food, places — for planning the next trip`) : L('ให้ดาว ติดแท็ก จดว่าอะไรที่ครอบครัวเราชอบ — ไว้วางแผนทริปหน้า', 'Stars, tags and notes on what worked for our family — for planning the next trip')}</small></div><span class="arrow">›</span></a>
 ${isEditor() ? backupCard() : ''}
-${aiCard()}
-<div class="row end" style="margin-top:18px">${isEditor() ? `<a class="btn ghost small" href="#/family">👨‍👩‍👧‍👦 ${L('ครอบครัวของเรา', 'Our family')}</a><a class="btn ghost small" href="#/viewers">👪 ${L('ญาติที่ดูได้', 'Who can see the books')}</a>` : ''}${isEditor() && S.features.story ? `<a class="btn ghost small" href="#/import">📄 ${L('นำเข้าเล่มจาก PDF', 'Book from a PDF')}</a>` : ''}<button class="btn ghost small" data-a="logout">⎋ ${L('ออกจากระบบ', 'Sign out')}</button></div>`;
+${isEditor() ? `<div class="part">${L('ตั้งค่า', 'Settings')} ⚙️</div>
+<nav class="setlist">
+<a href="#/family"><span class="e">👨‍👩‍👧‍👦</span><span><b>${L('ครอบครัวของเรา', 'Our family')}</b><small>${L('ชื่อแอป ชื่อลูก และเดือนเกิด', 'App name, the children and their birth months')}</small></span><i>›</i></a>
+<a href="#/viewers"><span class="e">👪</span><span><b>${L('ญาติที่ดูได้', 'Who can see the books')}</b><small>${L('รหัสและลิงก์ของแต่ละกลุ่มญาติ', 'A code and a link for each group of relatives')}</small></span><i>›</i></a>
+${aiCard()}</nav>` : ''}
+<div class="row end setout"><button class="btn ghost small" data-a="logout">⎋ ${L('ออกจากระบบ', 'Sign out')}</button></div>`;
 }
 // off-site copy kept by the family: one tap downloads everything (data + full photos) as a zip; nags when there is something new since the last one on this phone
 // Claude usage (editors): today's calls against the daily cap + the last 30 days; fetched from /api/b/ai at most once a minute,
@@ -208,14 +216,15 @@ function aiUsage() {
   if (Date.now() - aiUseAt > 60000) { aiUseAt = Date.now(); api('GET', '/api/b/ai').then((r) => { aiUse = r; safeRender(); }, () => {}); }
   return aiUse;
 }
-const aiToday = () => { const u = aiUsage(); return u ? L(`ผู้ช่วยวันนี้ ${u.today.calls}/${u.limit} ครั้ง`, `Claude today ${u.today.calls}/${u.limit}`) : ''; };
+const aiToday = () => { const u = aiUsage(); return u ? L(`ผู้ช่วยวันนี้ ${u.today.calls}/${u.limit} ครั้ง`, `Helper today ${u.today.calls}/${u.limit}`) : ''; };
 const tok = (n) => (n >= 1e6 ? (n / 1e6).toFixed(1) + 'M' : n >= 1e3 ? Math.round(n / 1e3) + 'k' : String(Math.round(n)));
 function aiCard() {
   const u = aiUsage(); if (!u) return '';
   const d = u.days30;
-  return `<details class="aicard"><summary><b>✨ ${L('ผู้ช่วย', 'Claude')}</b><span>${L('วันนี้', 'Today')} <b>${u.today.calls}/${u.limit}</b> ${L('ครั้ง', 'calls')}</span></summary>
-<span>${L('30 วัน', '30 days')}: ${d.calls} ${L('ครั้ง', 'calls')} · ${tok(d.tin + d.tcache)} ${L('คำที่อ่าน', 'tokens in')}${d.tcache ? ` (${L('ซ้ำ', 'cached')} ${tok(d.tcache)})` : ''} · ${tok(d.tout)} ${L('คำที่เขียน', 'out')}${u.usd30 != null ? ` · ≈ $${u.usd30.toFixed(2)}` : ''}</span>
-<small>${L('สำหรับผู้ดูแล — ยอดจริงอยู่ในบัญชีผู้ให้บริการ', 'Exact cost: console.anthropic.com → Usage')}</small></details>`;
+  const pct = Math.min(100, Math.round((u.today.calls / Math.max(1, u.limit)) * 100));
+  return `<details class="aicard"><summary><span class="e">✨</span><span><b>${L('ผู้ช่วย', 'The helper')}</b><small>${L(`วันนี้ใช้ไป ${u.today.calls} จาก ${u.limit} ครั้ง`, `Used today: ${u.today.calls} of ${u.limit}`)}</small><span class="aibar"><i style="width:${pct}%"></i></span></span><i>›</i></summary>
+<div class="aimore"><span>${L('30 วัน', '30 days')}: ${d.calls} ${L('ครั้ง', 'times')} · ${tok(d.tin + d.tcache)} ${L('คำที่อ่าน', 'words read')}${d.tcache ? ` (${L('ซ้ำ', 'repeated')} ${tok(d.tcache)})` : ''} · ${tok(d.tout)} ${L('คำที่เขียน', 'written')}${u.usd30 != null ? ` · ≈ $${u.usd30.toFixed(2)}` : ''}</span>
+<small>${L('นับใหม่ทุกวัน · ยอดจริงอยู่ในบัญชีผู้ให้บริการ', 'Starts again each day · the exact bill is in the provider’s account')}</small></div></details>`;
 }
 function backupCard() {
   const last = ls('last_backup') || 0;
@@ -1286,11 +1295,11 @@ function viewFamily() {
 <div class="famtag"><b>${esc(nm) || L('ลูกคนใหม่', 'New child')}</b>${age ? `<small>${esc(age)}</small>` : ''}</div></div>
 <div class="fambody">
 <div class="famrow"><label>${L('ชื่อเล่น (ไทย)', 'Name (Thai)')}<input class="field" data-fam="${i}:name_th" value="${esc(k.name_th)}" maxlength="40"></label><label>${L('ชื่อเล่น (อังกฤษ)', 'Name (English)')}<input class="field" data-fam="${i}:name_en" value="${esc(k.name_en)}" maxlength="40" required></label></div>
-<div class="famrow famrow2"><label><span>${L('เดือนและปีเกิด', 'Month and year of birth')} <b class="famreq">*</b></span><input class="field ${k.birth_ym ? '' : 'famneed'}" type="month" data-fam="${i}:birth_ym" value="${esc(k.birth_ym)}" required><small class="famagenow">${k.birth_ym ? L(`ตอนนี้ ${famAge(k.birth_ym)}`, `Now ${famAge(k.birth_ym)}`) : L('ใช้คิดอายุในแต่ละทริป และวาดตัวละครให้ตรงวัย', 'For the age on each trip and a character drawn at the right age')}</small></label><label>${L('อีโมจิ', 'Emoji')}<input class="field famemo" data-fam="${i}:emoji" value="${esc(k.emoji)}" maxlength="8"></label></div>
-${(() => {
+<div class="famrow famrow2"><label><span>${L('เดือนและปีเกิด', 'Month and year of birth')} <b class="famreq">*</b></span><input class="field ${k.birth_ym ? '' : 'famneed'}" type="month" data-fam="${i}:birth_ym" value="${esc(k.birth_ym)}" required></label><label>${L('อีโมจิ', 'Emoji')}<input class="field famemo" data-fam="${i}:emoji" value="${esc(k.emoji)}" maxlength="8"></label>
+<small class="famagenow ${k.birth_ym ? 'on' : ''}">${k.birth_ym ? L(`ตอนนี้ ${famAge(k.birth_ym)}`, `Now ${famAge(k.birth_ym)}`) : L('ใช้คิดอายุลูกในแต่ละเล่ม', 'Used for the age in each book')}</small></div>
+${!S.features.avatar ? '' : (() => {   // no drawing helper on this server: no box at all (nothing for a parent to do here)
   const saved = children().some((c) => c.slug === k.slug), left = q.left[k.slug], busy = fam.busyKid === i, who = esc(nm) || L('ลูก', 'your child');
-  const body = !S.features.avatar ? `<p class="famhint">${L('การวาดตัวละครยังไม่เปิดในบัญชีนี้', 'Set OPENAI_API_KEY on the server to let the AI draw characters')}</p>`
-    : !saved ? `<p class="famhint">${L('กดบันทึกครอบครัวก่อน แล้วค่อยอัปโหลดรูป', 'Save the family first, then upload a photo')}</p>`
+  const body = !saved ? `<p class="famhint">${L('กดบันทึกครอบครัวก่อน แล้วค่อยอัปโหลดรูป', 'Save the family first, then upload a photo')}</p>`
     : !k.birth_ym || !(children().find((c) => c.slug === k.slug) || {}).birth_ym ? `<p class="famhint">${L('ใส่เดือนและปีเกิดแล้วกดบันทึกก่อน จะได้วาดตัวละครให้ตรงวัย', 'Add the month and year of birth and save first, so the AI draws the character at the right age')}</p>`
     : `<label class="famupload ${busy ? 'busy' : ''} ${left === 0 ? 'off' : ''}"><span class="e">${busy ? '🎨' : '📷'}</span><span><b>${busy ? L('กำลังวาดตัวละคร…', 'The AI is drawing…') : k.avatar ? L('อัปโหลดรูปใหม่ วาดอีกครั้ง', 'Upload a new photo, draw again') : L('อัปโหลดรูปลูก ให้วาดเป็นตัวละคร', 'Upload a photo, the AI draws the character')}</b><small>${busy ? L('ราว 30–60 วินาที อย่าเพิ่งปิดหน้านี้', 'About 30–60 seconds — keep this page open') : L('รูปหน้าตรง เห็นทั้งตัว แสงสว่าง ได้ผลดีที่สุด', 'Facing the camera, whole body, good light works best')}</small></span>
 <input type="file" accept="image/*" data-famavatar="${i}" ${fam.busyKid !== null || left === 0 ? 'disabled' : ''}></label>
@@ -1299,13 +1308,14 @@ ${(() => {
   const grown = last && last.age_m != null && nowM != null && nowM - last.age_m >= 12;   // a year older than the newest drawing
   const hist = k.avatars.length ? `<p class="famhist">🖼️ ${L(`วาดไว้ ${k.avatars.length} ตัว`, `${k.avatars.length} drawing${k.avatars.length > 1 ? 's' : ''}`)}${last && last.age_m != null ? L(` · ตัวล่าสุดตอนอายุ ${famAgeM(last.age_m)}`, ` · the newest at ${famAgeM(last.age_m)}`) : ''} · ${L('แต่ละเล่มใช้ตัวที่ตรงกับช่วงทริปนั้น', 'each book shows the one from its own time')}</p>` : '';
   const nudge = grown && S.features.avatar ? `<div class="famgrow">🌱 <b>${L(`${who}โตขึ้นแล้ว`, `${who} has grown`)}</b> ${L(`ตอนนี้ ${famAgeM(nowM)} อัปโหลดรูปใหม่ ให้ตัวละครโตตามด้วย`, `now ${famAgeM(nowM)} — upload a new photo so the character grows up too`)}</div>` : '';
-  return `<div class="famai"><div class="famaihd"><b>✨ ${L(`ตัวละครของ${who}`, `${who}'s character`)}</b>${k.avatar ? '<span class="pill">AI</span>' : ''}</div>${nudge}${body}${hist}</div>`;
+  return `<div class="famai"><div class="famaihd"><b>✨ ${L(`ตัวละครของ${who}`, `${who}'s character`)}</b></div>${nudge}${body}${hist}</div>`;
 })()}
 <div class="famacts"><button type="button" class="mini" data-a="fammove" data-i="${i}" data-v="-1" ${i === 0 ? 'disabled' : ''} aria-label="${L('เลื่อนขึ้น', 'Move up')}">↑</button><button type="button" class="mini" data-a="fammove" data-i="${i}" data-v="1" ${i === fam.kids.length - 1 ? 'disabled' : ''} aria-label="${L('เลื่อนลง', 'Move down')}">↓</button><button type="button" class="mini famdel" data-a="famdel" data-i="${i}">${L('เอาออก', 'Remove')}</button></div>
 </div></article>`;
   };
   return `<section class="famhero"><div class="famherotx"><div class="kicker">👨‍👩‍👧‍👦 ${L('ครอบครัวของเรา', 'Our family')}</div><h2>${L('ใครอยู่ในสมุดเล่มนี้', 'Who is in these books')}</h2>
-<p>${L('ตั้งชื่อแอป ใส่ชื่อลูกๆ แล้วอัปโหลดรูปให้วาดตัวละครของแต่ละคน ทุกหน้า นิทาน และการแจ้งเตือนจะใช้ชื่อและตัวละครเหล่านี้', 'Name the app, add the children and let the AI draw each one’s character from a photo — every page, story and reminder uses them.')}</p></div>
+<p>${S.features.avatar ? L('ตั้งชื่อแอป ใส่ชื่อลูกๆ แล้วอัปโหลดรูปให้วาดตัวละครของแต่ละคน ทุกหน้า นิทาน และการแจ้งเตือนจะใช้ชื่อและตัวละครเหล่านี้', 'Name the app, add the children and upload a photo to draw each one’s character. Every page, story and reminder uses them.')
+  : L('ตั้งชื่อแอปและใส่ชื่อลูกๆ ทุกหน้า นิทาน และการแจ้งเตือนจะใช้ชื่อเหล่านี้', 'Name the app and add the children. Every page, story and reminder uses their names.')}</p></div>
 <div class="cast" aria-hidden="true">${cast}</div></section>
 
 <section class="famapp"><div class="fampreview" aria-hidden="true"><small>${esc(shown.kicker)}</small><b>${esc(shown.app)}</b><span>${L('หน้าตาบนหัวแอปและหน้าเข้าสู่ระบบ', 'How it shows at the top and on the sign-in page')}</span></div>
@@ -1316,11 +1326,11 @@ ${(() => {
 
 <h2 class="famh3">🧒 ${L('ลูกๆ', 'The children')} <span class="pill">${fam.kids.length}/6</span></h2>
 <div class="famkids">${fam.kids.map(card).join('')}
-${fam.kids.length < 6 ? `<div class="famaddtiles"><button type="button" class="famaddtile" data-a="famadd"><span>＋</span><b>${L('เพิ่มลูกอีกคน', 'Add a child')}</b><small>${L('ใส่ชื่อ บันทึก แล้วอัปโหลดรูปให้วาด', 'Add a name, save, then let the AI draw them')}</small></button>
+${fam.kids.length < 6 ? `<div class="famaddtiles"><button type="button" class="famaddtile" data-a="famadd"><span>＋</span><b>${L('เพิ่มลูกอีกคน', 'Add a child')}</b><small>${S.features.avatar ? L('ใส่ชื่อ บันทึก แล้วอัปโหลดรูปให้วาด', 'Add a name, save, then upload a photo to draw them') : L('ใส่ชื่อและเดือนเกิด แล้วกดบันทึก', 'Add a name and birth month, then save')}</small></button>
 </div>` : ''}</div>
 ${fam.err ? `<div class="notice">${esc(fam.err)}</div>` : ''}
 <div class="famsave"><button type="button" class="btn" data-a="famsave" ${fam.busy ? 'disabled' : ''}>${fam.busy ? '⏳ ' + L('กำลังบันทึก…', 'Saving…') : '💾 ' + L('บันทึกครอบครัว', 'Save our family')}</button><a class="btn ghost" href="#/">${L('ยกเลิก', 'Cancel')}</a></div>
-<p class="impnote">🔒 ${S.features.avatar ? L('รูปลูกถูกย่อแล้วส่งให้ OpenAI ครั้งเดียวเพื่อวาด ไม่เก็บรูปไว้ที่ไหน เก็บแค่ตัวการ์ตูน ซึ่งเห็นได้เฉพาะคนในครอบครัวที่เข้าสู่ระบบ · ', 'The photo is shrunk and sent to OpenAI once to draw; the photo is kept nowhere, only the cartoon, which only signed-in family can see · ') : ''}${L('ชื่อและเดือนเกิดอยู่ในฐานข้อมูลของครอบครัวนี้เท่านั้น หน้าเข้าสู่ระบบแสดงแค่ชื่อแอปและภาพวาด · ลูกที่มีบันทึกแล้วเอาออกไม่ได้ (เปลี่ยนชื่อได้)', "Names and birth months stay in this family's own database; the sign-in page shows only the app's name and the drawings · a child with memories recorded cannot be removed (but can be renamed)")}</p>`;
+<p class="impnote">🔒 ${S.features.avatar ? L('รูปลูกถูกย่อแล้วส่งให้ผู้ช่วยวาดภาพครั้งเดียว ไม่เก็บรูปไว้ที่ไหน เก็บแค่ตัวการ์ตูน ซึ่งเห็นได้เฉพาะคนในครอบครัวที่เข้าสู่ระบบ · ', 'The photo is shrunk and sent once to the drawing helper. The photo is kept nowhere, only the cartoon, which only signed-in family can see · ') : ''}${L('ชื่อและเดือนเกิดอยู่ในฐานข้อมูลของครอบครัวนี้เท่านั้น หน้าเข้าสู่ระบบแสดงแค่ชื่อแอปและภาพวาด · ลูกที่มีบันทึกแล้วเอาออกไม่ได้ (เปลี่ยนชื่อได้)', "Names and birth months stay in this family's own database; the sign-in page shows only the app's name and the drawings · a child with memories recorded cannot be removed (but can be renamed)")}</p>`;
 }
    // the groups · the form being filled {id, name, trips, link} · {name, pin} just saved
 /* ---------- a book from a Trip Operations Manual PDF (#/import, editors) ----------

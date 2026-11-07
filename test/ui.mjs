@@ -63,6 +63,10 @@ const T = 'hk-macau-2026';
   ok(await page.locator('.remind.ask').count() === 0 && await page.evaluate(() => ls('remindLater') === 1), '"later" puts the offer away on this phone');
   ok(await page.evaluate(async () => (await (await fetch('/api/b/state')).json()).me.name) === 'Mum', 'who-is-this chip used as the name (optional)');
   ok(await page.locator('.spine:not(.add)').count() === 2 && await page.locator('.spine.add').count() === 1, 'shelf: 2 books + new book');
+  const pdfOn = await page.evaluate(() => !!S.features.story);
+  ok(await page.locator('.spine.add [data-a="newtrip"]').count() === 1 && await page.locator('.spine.add a[href="#/import"]').count() === (pdfOn ? 1 : 0) && await page.locator('a[href="#/import"]:not(.addway)').count() === 0
+    && await page.locator('.setlist a[href="#/family"]').count() === 1 && await page.locator('.setlist a[href="#/viewers"]').count() === 1 && await page.locator('.setout [data-a="logout"]').count() === 1,
+    'shelf: every way to a new book sits in the new-book tile; family and relatives in one settings list; sign out on its own');
   ok((await page.locator('.spine').first().textContent()).includes('DOLPHIN'), 'HK spine shows the manual kicker');
   ok(await s.noHScroll(), 'shelf: no horizontal scroll at 390 px');
   await s.shot('02-shelf');
@@ -167,6 +171,11 @@ const T = 'hk-macau-2026';
   ok(await page.locator('.golit [data-a="pickphotos"]').count() === 1, 'shortcut "photo": the photo box is lit up and in view');
   const man = await (await page.request.get(`${BASE}/manifest.webmanifest`)).json();
   ok(man.shortcuts.length === 4 && man.shortcuts.every((s) => s.url.startsWith('/#/go/') && s.name && s.short_name), 'manifest: four icon shortcuts to #/go/…');
+  // #/family without the drawing helper: no character box, no server words, the birth row says what the month is for
+  await page.goto(`${BASE}/#/family`); await page.waitForSelector('.famkid');
+  const famTx = await page.evaluate(() => document.querySelector('main').textContent);
+  ok(await page.locator('.famai').count() === 0 && !/OPENAI|API_KEY|OpenAI/.test(famTx) && await page.locator('.famrow2 .famagenow').count() === await page.locator('.famkid').count()
+    && await page.evaluate(() => getComputedStyle(document.querySelector('.famsave')).backgroundColor !== 'rgba(0, 0, 0, 0)'), 'family page: no character box or server words without the drawing helper; a hint under each birth month; a solid save bar');
   // every icon the manifest names exists at its stated size; each shortcut has its own picture; iPhone gets a 180 px icon
   const icons = [...man.icons, ...man.shortcuts.flatMap((s) => s.icons)], sizes = [];
   for (const ic of icons) { const r = await page.request.get(BASE + ic.src); const m = r.ok() ? await sharp(await r.body()).metadata() : {}; sizes.push(`${m.width}x${m.height}` === ic.sizes); }
