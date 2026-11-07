@@ -125,11 +125,36 @@ async function run({ buf, slug, client, take, onUsage, log = () => {}, dir, kids
   // restaurants in two passes, so a long guide (200+ places) comes through complete: first every name by area (cheap), then the
   // rows for 25 names at a time (halved again when an answer runs too long); names still missing after that are asked for once more
   const restSchema = JSON.stringify(S.properties.restaurants);
-  const index = await ask('restaurants: list', EXTRACT(), {
-    system: sys,
-    user: 'List EVERY restaurant, café, food court, bakery, dessert shop and snack stall in the manual\'s restaurant guide (and its "where to eat" pages), grouped by the manual\'s own area headings in order. Return {"areas":[{"area":{"en":"…"},"kind":0|1|2,"names":["…", …]}]} — kind 0 restaurants · 1 food courts and quick bites · 2 cafés and sweets. Names exactly as the manual writes them, one entry per place, none left out, no details yet.',
-    max: 16000,
-  });
+  // every name by area in one answer; a guide too long for one answer (it happened live) is asked again as the area headings, then the names four areas at a time
+  const normA = (x) => String((x && (x.en || x)) || '').toLowerCase().replace(/[^a-z0-9฀-๿一-鿿]+/g, '');
+  let index;
+  try {
+    index = await ask('restaurants: list', EXTRACT(), {
+      system: sys,
+      user: 'List EVERY restaurant, café, food court, bakery, dessert shop and snack stall in the manual\'s restaurant guide (and its "where to eat" pages), grouped by the manual\'s own area headings in order. Return {"areas":[{"area":{"en":"…"},"kind":0|1|2,"names":["…", …]}]} — kind 0 restaurants · 1 food courts and quick bites · 2 cafés and sweets. Names exactly as the manual writes them, one entry per place, none left out, no details yet.',
+      max: 32000,
+    });
+  } catch (e) {
+    if (e.code !== 'long') throw e;
+    log('restaurants: the list ran too long — asking for the area headings, then the names a few areas at a time');
+    const heads = await ask('restaurants: areas', EXTRACT(), {
+      system: sys,
+      user: 'List only the area headings of the manual\'s restaurant guide (and its "where to eat" pages), in order. Return {"areas":[{"area":{"en":"…"},"kind":0|1|2}]} — kind 0 restaurants · 1 food courts and quick bites · 2 cafés and sweets. No place names.',
+      max: 8000,
+    });
+    const hs = (heads && Array.isArray(heads.areas) ? heads.areas : []).filter((h) => h && h.area);
+    index = { areas: [] };
+    for (let i = 0; i < hs.length; i += 4) {
+      const part = hs.slice(i, i + 4);
+      const got = await ask(`restaurants: names ${i / 4 + 1}/${Math.ceil(hs.length / 4)}`, EXTRACT(), {
+        system: sys,
+        user: `For these areas of the manual's restaurant guide, list EVERY place under each, names exactly as the manual writes them, one entry per place, none left out, no details. Areas: ${JSON.stringify(part.map((h) => (h.area && (h.area.en || h.area)) || ''))}. Return {"areas":[{"area":{"en":"…"},"names":["…"]}]} in the same order.`,
+        max: 16000,
+      });
+      const byArea = new Map(((got && Array.isArray(got.areas)) ? got.areas : []).filter((g) => g && Array.isArray(g.names)).map((g) => [normA(g.area), g.names]));
+      for (const h of part) index.areas.push({ area: h.area, kind: h.kind, names: byArea.get(normA(h.area)) || [] });
+    }
+  }
   const areas = (index && Array.isArray(index.areas) ? index.areas : []).filter((a) => a && Array.isArray(a.names) && a.names.length);
   const wanted = areas.flatMap((a) => a.names.map((n) => String(n).trim()).filter(Boolean));
   log(`restaurants: ${wanted.length} names in ${areas.length} areas`);
