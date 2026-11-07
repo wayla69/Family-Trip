@@ -32,6 +32,8 @@ function beep(kind, x) {   // x: the note's frequency for 'note'
     else if (kind === 'kick') sweep(c, t0, 150, 45, 0.25, 'sine', 0.6);
     else if (kind === 'snare') { noise(c, t0, 0.18, 0.35, 1800); tone(190, 0, 0.1, 'triangle', 0.25); }
     else if (kind === 'hat') noise(c, t0, 0.06, 0.2, 6000);
+    else if (kind === 'clap') { noise(c, t0, 0.09, 0.3, 1200); noise(c, t0 + 0.03, 0.12, 0.25, 1500); }
+    else if (kind === 'frog') { sweep(c, t0, 420, 180, 0.16, 'sawtooth', 0.12); sweep(c, t0 + 0.17, 380, 160, 0.14, 'sawtooth', 0.1); }
     else if (kind === 'bubble') sweep(c, t0, 520 + Math.random() * 380, 1500, 0.12, 'sine', 0.16);
     else if (kind === 'hello') [523, 659, 784].forEach((f, i) => tone(f, i * 0.11, 0.3, 'triangle', 0.16));   // a child picked themself
     else if (kind === 'fanfare') [523, 659, 784, 1047, 784, 1047, 1319].forEach((f, i) => tone(f, i * 0.09, i === 6 ? 0.6 : 0.22, 'triangle', 0.16));
@@ -600,7 +602,7 @@ function viewKid(p) {
 ${live === i && !ticked(t, `gift.d${i}`, kid) ? `<button class="kidgift" data-a="kidnav" data-v="#/kid/${esc(kid)}/gift" data-say="${esc(L('มีกล่องเซอร์ไพรส์มาให้! แตะเปิดเลย', 'A surprise box for you! Tap to open it'))}"><span class="box" aria-hidden="true">${emo('🎁')}</span><b>${L('<span class="nw">กล่องเซอร์ไพรส์</span><span class="nw">วันนี้!</span>', 'Today’s surprise box!')}</b><small>${L('แตะเปิดเลย', 'Tap to open')}</small></button>`
   : live === i && hourIn(t.timezone) >= 17 && !ticked(t, `stamp.d${i}`, kid) ? `<button class="kidnight" data-a="kidnav" data-v="#/kid/${esc(kid)}/stamp" data-say="${esc(L('ก่อนนอน มาปั๊มตราวันนี้กัน!', 'Before bed — let’s stamp today!'))}"><span class="moon" aria-hidden="true">${emo('🌙')}</span><b>${L('ปั๊มตราวันนี้ก่อนนอน!', 'Stamp today before bed!')}</b><small>🛂 ${L('ปั๊ก!', 'Thump!')}</small></button>` : ''}
 <div class="kidhello">${kidArt(kid) ? `<button class="poke" data-a="kidpoke" data-k="${esc(kid)}" aria-label="${esc(name)}"><img src="${kidArt(kid, true)}" alt=""></button>` : ''}<p>${pre ? L(`<span class="nw">อีก <b>${until}</b> วัน</span> เราจะไป<span class="nw">${esc(T(t.title).split(' · ').pop())}กัน!</span>`, `<b>${until}</b> ${until === 1 ? 'sleep' : 'sleeps'} to ${esc(T(t.title).split(' · ')[0])}!`) : L(`<span class="nw">สวัสดี ${esc(name)}!</span> <span class="nw">วันนี้เล่นอะไรดี?</span>`, `Hello ${esc(name)}! What shall we play?`)}</p></div>
-${stars(kid) ? `<div class="jarrow"><button class="starjar" data-a="kidjar" data-k="${esc(kid)}" aria-label="${L('โถดาว', 'Star jar')}">⭐ <b>${stars(kid)}</b></button>${pets(kid).length ? `<span class="pets" aria-label="${L('เพื่อน', 'Friends')}">${pets(kid).join('')}</span>` : ''}</div>` : ''}
+${stars(kid) ? `<div class="jarrow"><button class="starjar" data-a="kidjar" data-k="${esc(kid)}" aria-label="${L('โถดาว · ผู้ใหญ่กดค้างเพื่อล้าง', 'Star jar · grown-ups press and hold to empty')}">⭐ <b>${stars(kid)}</b></button>${pets(kid).length ? `<span class="pets" aria-label="${L('เพื่อน', 'Friends')}">${pets(kid).join('')}</span>` : ''}</div>` : ''}
 <nav class="kiddays">${t.days.map((x, j) => `<button data-a="kidday" data-v="${j}" aria-pressed="${j === i}" aria-label="${L('วันที่', 'Day')} ${j + 1}">${artImg(t, j)}</button>`).join('')}</nav>
 <div class="kidpagerwrap"><button class="kparrow prev" data-a="kidpage" data-v="-1" aria-label="${L('หน้าก่อน', 'Previous page')}" hidden>‹</button>
 <div class="kidpager" id="kidpager">${pages.map((pg, n) => `<div class="kpage kidtiles" data-n="${n}">${pg.join('')}</div>`).join('')}</div>
@@ -650,7 +652,7 @@ ${memState.got ? `<button class="kidbig" data-a="memnext">${memState.n + 1 < qs.
   } else if (view === 'music') {   // a xylophone (C major, an animal on every bar), three drums, two songs that light the bars to follow
     body = `<div class="kidguide">${guideImg(1)}<p>${L('แตะแท่งสีให้ร้องเพลง!', 'Tap the bars to make music!')}</p></div>
 <div class="xylo" role="group">${XYLO.map((n, k) => `<button data-a="xylo" data-v="${k}" style="--c:${n[2]};--h:${100 - k * 7}%" aria-label="${n[0]}"><span>${n[3]}</span></button>`).join('')}</div>
-<div class="drums" role="group">${[['kick', '🥁', L('ตุ้ม', 'Boom')], ['snare', '🪘', L('แต๊ก', 'Tak')], ['hat', '🔔', L('ฉิ่ง', 'Ting')]].map(([k, e, l]) => `<button data-a="drum" data-v="${k}"><span>${e}</span><b>${l}</b></button>`).join('')}</div>
+<div class="drums" role="group">${[['kick', '🥁', L('ตุ้ม', 'Boom')], ['snare', '🪘', L('แต๊ก', 'Tak')], ['hat', '🔔', L('ฉิ่ง', 'Ting')], ['clap', '👏', L('ปรบมือ', 'Clap')], ['frog', '🐸', L('กบ', 'Frog')]].map(([k, e, l]) => `<button data-a="drum" data-v="${k}"><span>${e}</span><b>${l}</b></button>`).join('')}</div>
 <div class="songs">${SONGS.map((s, k) => `<button class="kidbig ghost" data-a="song" data-v="${k}" data-k="${esc(kid)}">🎶 ${L(s.th, s.en)}</button>`).join('')}</div>`;
   } else if (view === 'hideseek') {   // I spy: twelve things scattered over the day's picture; the guide names one at a time (its Thai name read aloud)
     if (!hs || hs.key !== `${t.id}.${i}.${kid}`) newHide(t, i, kid);
@@ -941,8 +943,12 @@ const jgPos = (p, g) => `background-image:var(--art);background-size:${g.cols * 
 // ---- music: the xylophone's bars (C major) and two songs as bar numbers; a song lights each bar as it plays ----
 const XYLO = [['C', 261.63, '#FF6B6B', '🐥'], ['D', 293.66, '#FFA94D', '🐸'], ['E', 329.63, '#FFD43B', '🐱'], ['F', 349.23, '#8CE99A', '🐶'], ['G', 392.00, '#66D9E8', '🐰'], ['A', 440.00, '#74C0FC', '🐼'], ['B', 493.88, '#B197FC', '🦊'], ['C', 523.25, '#F783AC', '🐨']];
 const SONGS = [
-  { th: 'ดาวน้อย', en: 'Twinkle twinkle', seq: [0, 0, 4, 4, 5, 5, 4, -1, 3, 3, 2, 2, 1, 1, 0] },
-  { th: 'ลูกแกะน้อย', en: 'Mary had a little lamb', seq: [2, 1, 0, 1, 2, 2, 2, -1, 1, 1, 1, -1, 2, 4, 4] },
+  { th: 'ดาวน้อย', en: 'Twinkle', seq: [0, 0, 4, 4, 5, 5, 4, -1, 3, 3, 2, 2, 1, 1, 0] },
+  { th: 'ลูกแกะน้อย', en: 'Little lamb', seq: [2, 1, 0, 1, 2, 2, 2, -1, 1, 1, 1, -1, 2, 4, 4] },
+  { th: 'พายเรือ', en: 'Row your boat', seq: [0, 0, 0, 1, 2, -1, 2, 1, 2, 3, 4, -1, 7, 7, 7, 4, 4, 4, 2, 2, 2, 0, 0, 0, -1, 4, 3, 2, 1, 0] },
+  { th: 'สะพานลอนดอน', en: 'London Bridge', seq: [4, 5, 4, 3, 2, 3, 4, -1, 1, 2, 3, -1, 2, 3, 4, -1, 4, 5, 4, 3, 2, 3, 4, -1, 1, 4, 2, 0] },
+  { th: 'ลุงแมคโดนัลด์', en: 'Old MacDonald', seq: [0, 0, 0, 4, 5, 5, 4, -1, 2, 2, 1, 1, 0, -1, 0, 0, 0, 4, 5, 5, 4, -1, 2, 2, 1, 1, 0] },
+  { th: 'จิงเกิลเบล', en: 'Jingle bells', seq: [2, 2, 2, -1, 2, 2, 2, -1, 2, 4, 0, 1, 2, -1, 3, 3, 3, 3, 3, 2, 2, 2, 2, 1, 1, 2, 1, -1, 4] },
 ];
 let songT = 0;
 function playSong(n, kid) {
@@ -970,6 +976,14 @@ document.addEventListener('click', (e) => {
     putEntry(t, { day: null, kind: 'field', child: kid, first_key: `colour.d${i}`, text: pad.dataset.fill }, `${t.id}.field.colour.d${i}.${kid}`);
   }, 500);
 });
+// grown-ups empty the star jar (and its friends) by pressing and holding it 1.5 s — a test run's stars, a fresh start; nothing on the server
+let jarT = 0;
+document.addEventListener('pointerdown', (e) => {
+  const jar = e.target.closest && e.target.closest('.starjar'); if (!jar || !isEditor()) return;
+  jar.classList.add('holding');
+  jarT = setTimeout(() => { const k = jar.dataset.k; ls('stars_' + k, null); ls('pets_' + k, null); beep('pop'); toast(L('ล้างโถดาวแล้ว', 'The star jar is empty again')); render(); }, 1500);
+});
+['pointerup', 'pointercancel', 'pointerleave'].forEach((ev) => document.addEventListener(ev, () => { clearTimeout(jarT); const j = $('.starjar'); if (j) j.classList.remove('holding'); }, true));
 // grown-ups leave kid mode by pressing and holding the lock
 let holdT = 0;
 document.addEventListener('pointerdown', (e) => {
