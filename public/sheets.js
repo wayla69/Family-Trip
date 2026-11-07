@@ -1048,6 +1048,8 @@ document.addEventListener('change', (e) => {
   if (e.target.id === 'spendplace') { const n = $('#spendnote'); if (n) { if (e.target.value) { n.value = e.target.value; drafts[n.dataset.draft] = n.value; $('#spendamt').focus(); } else n.focus(); } }   // a picked place becomes the note; "other" → type it
 });
 function tlToggle(li) { const o = li.classList.toggle('open'), d = li.querySelector(':scope > [aria-expanded]'); if (d) d.setAttribute('aria-expanded', String(o)); }
+window.addEventListener('beforeprint', () => { $$('details.ifold:not([open])').forEach((d) => { d.open = true; d.dataset.printOpened = '1'; }); });   // a printed pocket guide shows every detail
+window.addEventListener('afterprint', () => { $$('details.ifold[data-print-opened]').forEach((d) => { d.open = false; delete d.dataset.printOpened; }); });
 document.addEventListener('keydown', (e) => {
   if ((e.key === 'Enter' || e.key === ' ') && e.target.matches && e.target.matches('.tl.plan > li > [role="button"]')) { e.preventDefault(); tlToggle(e.target.parentElement); return; }
   if (lbState) { if (/^(INPUT|TEXTAREA)$/.test((e.target && e.target.tagName) || '')) return;   // arrows inside the caption box move the cursor, not the photo

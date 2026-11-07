@@ -384,7 +384,7 @@ const moneyHtml = (s) => {
     return `<div${tot ? ' class="tot"' : ''}><dt>${esc(lab || '—')}</dt><dd>${esc(amt)}</dd></div>`; }).join('')}</dl>`;
 };
 // a timeline row: the first part is the line, the rest (after " · ") sit underneath, smaller
-const tlRow = (r) => { const [a, ...b] = T(r).split(' · '); return `<span class="tm">${esc(a)}</span>${b.length ? `<span class="tsub">${b.map(esc).join('<br>')}</span>` : ''}`; };   // a tip's kind sets its marker colour (app.css .tips li.tk-*)
+const tlRow = (r) => { const own = r && r.h && T(r.h), [a, ...b] = own ? [own, ...T(r).split(' · ')] : T(r).split(' · '); return `<span class="tm">${own ? emoIn(esc(a)) : esc(a)}</span>${b.length ? `<span class="tsub">${b.map(esc).join('<br>')}</span>` : ''}`; };   // the full plan: the step's own headline, then every detail (nothing folded on the report)   // a tip's kind sets its marker colour (app.css .tips li.tk-*)
 function planHtml(t, i, open, wx) {
   const pl = t.days[i].plan || {}, rows = pl.plan || [], dwx = wx && t.days[i].wx;
   if (!rows.length && !pl.moving && !pl.pick && !pl.planB) return '';
@@ -792,7 +792,7 @@ function infoBlocks(t) {
   const n = t.info || {}, B = { stays: [], sos: [], prep: [], learn: [], drive: '', meta: { stays: [], sos: [], prep: [], learn: [] } };
   // every section also leaves a one-line teaser (sub) for the glance page; key names the sections a glance page shows inline
   const pg = (k, sub, key, title, inner) => { title = noEmo(title); B.meta[k].push({ title, sub: sub || '', key: key || '' }); B[k].push(`<details class="pg" open id="pg-${k}-${B[k].length}"><summary>${title}</summary>${inner}</details>`); };
-  const sh = (x, len) => esc(brief(T(x), len));
+  const sh = (x, len) => { const a = brief(T(x), len || 48); return esc(/…$/.test(a) ? brief(T(x), 110) : a); };   // one short phrase; never cut with "…" (a long clause keeps the old, longer teaser)   // a glance card's second line: one short phrase (owner, Nov 2026: "reads like a lecture")
   const tel = (x) => `<a href="tel:${esc(String(x).split('·')[0].replace(/[^+\d]/g, ''))}">${esc(x)}</a>`;   // "number · address" → dial the number only
   const tbl = (cols, rows, cls) => `<div class="tblwrap"><table class="prices ${cls || ''}">${cols ? `<thead><tr>${cols.map((c) => `<th>${esc(T(c))}</th>`).join('')}</tr></thead>` : ''}<tbody>${rows.map((r) => `<tr>${r.map((c, k) => `<td${k === 0 ? ' class="nm"' : cols && cols[k] ? ` data-h="${esc(T(cols[k]))}"` : ''}>${esc(typeof c === 'object' ? T(c) : String(c))}</td>`).join('')}</tr>`).join('')}</tbody></table></div>`;   // phones stack each row into a card, every value labelled by its column (app.css)
   // a to-do table (when · task · action, or what · for · when/how) as cards: the date as a chip, the task bold, the action as short points
@@ -800,14 +800,21 @@ function infoBlocks(t) {
     if ((cols || []).length !== 3) return tbl(cols, rows);
     return `<ol class="steps">${rows.map((r) => { const v = r.map((x) => (typeof x === 'object' ? T(x) : String(x))), done = /^(done|เสร็จ)/i.test(v[w[0]]);
       return `<li${done ? ' class="ok"' : ''}><span class="when">${done ? '✓ ' : ''}${esc(v[w[0]])}</span><b>${esc(v[w[1]])}</b>${pts(v[w[2]], 'tight')}</li>`; }).join('')}</ol>`; };
-  const lede = (x) => (x && T(x) ? (T(x).length > 150 ? pts(T(x), 'lede') : `<p class="lede">${esc(T(x))}</p>`) : '');
+  // the pocket guide reads like the Today page (owner's review, Nov 2026): a short headline you see first, the detail one tap below it
+  const fold = (head, body, cls) => `<details class="ifold${cls ? ' ' + cls : ''}"><summary><span class="fs">${head}</span>${ic('chev')}</summary><div class="fb">${body}</div></details>`;
+  const cellT = (c) => (typeof c === 'object' && c ? T(c) : String(c == null ? '' : c));
+  // an if-then table as one line per case ("ถ้า … "), what to do folded under it; a third column keeps its label
+  const ifts = (cols, rows) => `<div class="ifts">${rows.map((r) => fold(`<b>${esc(cellT(r[0]))}</b>`, r.slice(1).map((c, k) => `${r.length > 2 && cols && cols[k + 1] ? `<span class="label">${esc(T(cols[k + 1]))}</span>` : ''}${pts(cellT(c), 'tight')}`).join(''), 'ift')).join('')}</div>`;
+  // a long opening paragraph: its first point stays, the rest folds under "อ่านต่อ"
+  const lede = (x) => { if (!(x && T(x))) return ''; if (T(x).length <= 150) return `<p class="lede">${esc(T(x))}</p>`;
+    const p = points(T(x)); return p.length > 1 ? `<p class="lede">${pt(p[0])}</p>${fold(`<span class="more">${L('อ่านต่อ', 'Read more')}</span>`, pts(p.slice(1).join(' · '), 'lede'), 'ledemore')}` : pts(T(x), 'lede'); };
   const list = (items) => `<ul class="tips">${items.map((x) => `<li>${lead(T(x))}</li>`).join('')}</ul>`;
   // tickable checklist, like the manual's boxes — ticks are a per-phone convenience (localStorage), nothing is sent
   const ckDone = ls('ck') || {};
   const chk = (items, key) => `<ul class="chk">${items.map((x, i) => { const k = `${t.id}.${key}.${i}`; return `<li><label><input type="checkbox" data-ck="${esc(k)}"${ckDone[k] ? ' checked' : ''}><span>${esc(T(x))}</span></label></li>`; }).join('')}</ul>`;
   const packSub = () => { const all = (n.pack || []).flatMap((g, gi) => g.items.map((_, i) => `${t.id}.pack${gi}.${i}`)), got = all.filter((k) => ckDone[k]).length; return esc(got ? L(`จัดแล้ว ${got}/${all.length}`, `${got}/${all.length} packed`) : L(`${all.length} อย่าง`, `${all.length} things`)); };
   const cols = (blocks) => `<div class="cols2">${blocks.join('')}</div>`;
-  const dl = (rows) => `<dl class="gl">${rows.map((r) => `<div><dt>${esc(T(r.t))}</dt><dd>${lead(T(r.x))}</dd></div>`).join('')}</dl>`;
+  const dl = (rows) => `<dl class="gl">${rows.map((r) => { const p = points(T(r.x)); return `<div><dt>${esc(T(r.t))}</dt><dd>${p.length > 2 ? fold(pt(p[0]), pts(p.slice(1).join(' · '), 'tight'), 'ddf') : lead(T(r.x))}</dd></div>`; }).join('')}</dl>`;
   // stays — laid out like the manual's "Where we sleep": a night-by-night strip in each stay's colour, then one card per stay
   const SC = ['#6C7A80', '#3E7EA6', '#B98535', '#5E6FA8', '#5B8A6A', '#2E8C8C', '#C9704F', '#2F4E6E', '#8A5A9E', '#A0623A'];
   const nights = t.days.map((d, i) => ({ i, d, s: (d.plan || {}).stay })).filter((x) => x.s || (x.d.sleep && !isHome(x.d.sleep)));
@@ -833,8 +840,8 @@ ${(n.emergency || []).length ? `<ul class="emerg">${n.emergency.map((e) => `<li 
 ${runs.length ? `<h5>${L('ที่พักแต่ละคืน — ให้คนขับแท็กซี่ดูได้เลย', 'Each night’s address — show it to any taxi driver')}</h5><ul class="enights">${runs.map((r) => { const s0 = r.n[0].s; return `<li${tonight && s0 && s0.name === tonight.name ? ' class="now"' : ''}><b>${nightsLbl(r)}</b><span>${s0 ? (s0.addr && s0.addr.startsWith(s0.name.split(' ')[0]) ? esc(s0.addr) : `${esc(s0.name)}${s0.addr ? ` · ${esc(s0.addr)}` : ''}`) : esc(r.key)}</span></li>`; }).join('')}</ul>` : ''}
 ${n.lost ? `<p class="elost">${esc(T(n.lost))}</p>` : ''}</div>`);
   if (tonight) pg('sos', esc(tonight.name), 'tonight', `🛏️ ${L('ที่พักคืนนี้', 'Tonight’s address')}`, B.tonight = `<div class="stayc tonight"><h4>${esc(tonight.name)}</h4><div class="addr">${esc(tonight.addr || '')}</div><div class="sf"><span class="acts">${extA(mapsUrl(tonight.q || tonight.addr), L('แผนที่', 'Map') + ' ↗', 'go')}${extA(`https://www.google.com/maps/dir/?api=1&destination=${encodeURIComponent(tonight.q || tonight.addr)}`, L('นำทาง', 'Directions') + ' ↗', 'go')}${tk >= 0 ? `<button class="go" data-a="driver" data-t="${esc(t.id)}" data-v="${tk}">${ic('car')} ${L('ให้คนขับดู', 'Show the driver')}</button>` : ''}</span></div></div>`);
-  if (n.ifthen) { const f = ifthenOf(n.ifthen), sub = (x) => (x ? `<h5>${esc(T(x.head))}</h5>${lede(x.lede)}${tbl(x.cols, x.rows)}` : '');
-    pg('sos', esc(f.rows.slice(0, 3).map((r) => T(r[0])).join(' · ')), 'ifthen', `🔀 ${L('ถ้า… ก็…', 'If… then…')}${f.rows.length + ((f.mishap || {}).rows || []).length ? ` <span class="label">· ${f.rows.length + ((f.mishap || {}).rows || []).length}</span>` : ''}`, `${tbl(f.cols, f.rows, 'ift')}${f.mishap ? `<h5>${esc(T(f.mishap.head))}</h5>${lede(f.mishap.lede)}${tbl(f.cols, f.mishap.rows, 'ift')}` : ''}${sub(f.carry)}`);
+  if (n.ifthen) { const f = ifthenOf(n.ifthen), sub = (x) => (x ? `<h5>${esc(T(x.head))}</h5>${lede(x.lede)}${ifts(x.cols, x.rows)}` : '');
+    pg('sos', esc(f.rows.slice(0, 3).map((r) => T(r[0])).join(' · ')), 'ifthen', `🔀 ${L('ถ้า… ก็…', 'If… then…')}${f.rows.length + ((f.mishap || {}).rows || []).length ? ` <span class="label">· ${f.rows.length + ((f.mishap || {}).rows || []).length}</span>` : ''}`, `${ifts(f.cols, f.rows)}${f.mishap ? `<h5>${esc(T(f.mishap.head))}</h5>${lede(f.mishap.lede)}${ifts(f.cols, f.mishap.rows)}` : ''}${sub(f.carry)}`);
     if (f.crowd) pg('prep', sh(f.crowd.lede), '', `👥 ${esc(T(f.crowd.head))}`, `${lede(f.crowd.lede)}${tbl(f.crowd.cols, f.crowd.rows)}`);
     if (f.book) pg('prep', sh(f.book.lede), '', `📅 ${esc(T(f.book.head))}`, `${f.book.lede && T(f.book.lede) ? `<p class="lede">${esc(points(T(f.book.lede))[0])}</p>` : ''}${steps(f.book.cols, f.book.rows)}`); }
   // get ready
@@ -849,7 +856,7 @@ ${n.lost ? `<p class="elost">${esc(T(n.lost))}</p>` : ''}</div>`);
     B.drive = `<details class="pg" open id="pg-prep-${B.prep.length}"><summary>${dvt}</summary>${lede(dv.lede)}${tbl(dv.cols, dv.legs.map((g) => [L('วันที่ ', 'Day ') + g[0], g[1], g[2], g[3] >= 60 ? `${Math.floor(g[3] / 60)} ${L('ชม.', 'h')} ${String(g[3] % 60).padStart(2, '0')}` : `${g[3]} ${L('นาที', 'min')}`]), 'legs')}${(dv.notes || []).map((x) => `<div class="call info">${x.title ? `<span class="lbl">${esc(T(x.title))}</span>` : ''}${pts(T(x))}</div>`).join('')}</details>`;
     B.prep.push(B.drive); }
   // learn
-  if ((n.guide || []).length) pg('learn', esc(n.guide.slice(0, 3).map((g) => T(g.title)).join(' · ')), '', `🧭 ${L('เรื่องที่กำหนดแผนทั้งทริป', 'What shapes this trip')} <span class="label">· ${n.guide.length}</span>`, `<div class="gcards">${n.guide.map((g) => `<div class="gcard"><b>${esc(T(g.title))}</b><div class="gsub">${esc(T(g.sub))}</div>${pts(T(g.text), 'tight')}</div>`).join('')}</div>`);
+  if ((n.guide || []).length) pg('learn', esc(n.guide.slice(0, 3).map((g) => T(g.title)).join(' · ')), '', `🧭 ${L('เรื่องที่กำหนดแผนทั้งทริป', 'What shapes this trip')} <span class="label">· ${n.guide.length}</span>`, `<div class="gcards">${n.guide.map((g) => `<div class="gcard">${T(g.text) ? fold(`<b>${esc(T(g.title))}</b><div class="gsub">${esc(T(g.sub))}</div>`, pts(T(g.text), 'tight'), 'gf') : `<b>${esc(T(g.title))}</b><div class="gsub">${esc(T(g.sub))}</div>`}</div>`).join('')}</div>`);
   const learnDays = t.days.map((d, i) => ({ i, d, pl: d.plan || {} })).filter((x) => (x.pl.learn || []).length || (x.pl.quiz || []).length);
   if (learnDays.length) pg('learn', esc(L(`${learnDays.reduce((a, x) => a + (x.pl.learn || []).length, 0)} เรื่อง · ${learnDays.reduce((a, x) => a + (x.pl.quiz || []).length, 0)} คำถาม`, `${learnDays.reduce((a, x) => a + (x.pl.learn || []).length, 0)} cards · ${learnDays.reduce((a, x) => a + (x.pl.quiz || []).length, 0)} questions`)), 'days', `📚 ${L('เรียนรู้ระหว่างทาง · วันต่อวัน', 'Learn on the way · day by day')} <span class="label">· ${learnDays.length} ${L('วัน', 'days')}</span>`, learnDays.map(({ i, d, pl }) => `<details class="sub"><summary>${artImg(t, i)} <span class="st"><b>${L('วันที่', 'Day')}&nbsp;${i + 1}</b> · ${esc(T(d.title))}</span></summary>${(pl.learn || []).map((x) => `<div class="learn"><b>${esc(T(x.name))}</b> <span class="label">${esc(T(x.country))}</span><ul>${(x.facts || []).map((f) => `<li>${lead(T(f))}</li>`).join('')}</ul>${x.kid ? `<p class="kidline"><b>${L('เล่าให้เด็กฟัง', 'For the kids')}</b> ${esc(T(x.kid))}</p>` : ''}</div>`).join('')}${(pl.quiz || []).length ? `<h5>${L('ถามหนูในรถ', 'Quiz in the car')}</h5>${quizHtml(pl.quiz)}` : ''}${pl.tale ? taleHtml(t, i, pl.tale) : ''}</details>`).join(''));
   if ((n.general || []).length) pg('learn', esc(n.general.map((g) => T(g.theme)).join(' · ')), '', `🗣️ ${L('เรียนรู้ระหว่างนั่งรถ', 'Learn in the car')} <span class="label">· ${n.general.reduce((s, g) => s + g.items.length, 0)}</span>`, `<div class="cols2">${n.general.map((g) => `<div><h5>${esc(T(g.theme))}</h5><dl class="words">${g.items.map((x) => `<div><dt>${esc(T(x.t))}</dt><dd>${esc(T(x.x))}</dd></div>`).join('')}</dl></div>`).join('')}</div>`);

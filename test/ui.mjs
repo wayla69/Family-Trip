@@ -385,7 +385,9 @@ const T = 'hk-macau-2026';
   ok(!/no booking|book Nov/.test(await page.locator('.steps').evaluate((e) => e.closest('details').querySelector('.lede').textContent)), 'prep: the booking timeline opens with its date line only (no shredded status list)');
   await page.goto(`${BASE}/#/t/${T}/learn/full`); await page.waitForSelector('.gcards');
   const gl = await page.$$eval('.gcard .pts > li', (els) => els.map((e) => e.textContent.trim()));
-  ok(gl.length > 10 && gl.every((x) => !/^[a-z]+(?=[\s,:;]|$)/.test(x)) && await page.locator('.gcard > b + .gsub').count() === 13, 'learn: guide cards put the headline first and no point starts mid-sentence ("book 3–5 days ahead" → "Book …")');
+  ok(gl.length > 10 && gl.every((x) => !/^[a-z]+(?=[\s,:;]|$)/.test(x)) && await page.locator('.gcard summary b + .gsub').count() === 13, 'learn: guide cards put the headline first and no point starts mid-sentence ("book 3–5 days ahead" → "Book …")');
+  { const g = page.locator('.gcard details.ifold').nth(1), body = g.locator('.fb');
+    ok(!(await body.isVisible()) && (await g.locator('summary').click(), await body.isVisible()), 'learn: a guide card shows its headline and one-line fact; the explanation opens on a tap'); }
   ok(await page.evaluate(() => points('TG 638 ขาไป 5 ธ.ค. · Noah\'s Ark 5–7 ธ.ค.').join('|')) === 'TG 638 ขาไป 5 ธ.ค.|Noah\'s Ark 5–7 ธ.ค.', 'points keep the dot of a Thai month (ธ.ค.)');
   ok(await page.locator('.gcard ol.nums > li').count() === 5 && !(await page.locator('.gcard .pts > li').allTextContents()).some((x) => /^\d+$/.test(x.trim())), 'learn: "1 · … · 2 · …" is a numbered list — no number stands alone as its own point');
   ok(await page.$$eval('details.pg details.sub > summary .st b', (bs) => bs.length >= 6 && bs.every((b) => b.getClientRects().length === 1)), 'learn: “Day 3” never breaks over two lines in the day-by-day list');
@@ -1072,7 +1074,10 @@ const T = 'hk-macau-2026';
   const hrefs = await page.$$eval('a[href*="google.com/maps"]', (as) => as.map((a) => a.href));
   ok(hrefs.length > 300 && hrefs.every((h) => { const u = new URL(h), q = u.searchParams.get('query') || u.searchParams.get('destination'); return q && q.length > 3 && !/undefined|null/.test(q); }), `every Google Maps link has a full query (${hrefs.length})`);
   await page.goto(`${BASE}/#/t/big-hop-2027/sos/full`); await page.waitForSelector('#pocket');
-  ok(await page.locator('#pocket details.pg').count() >= 3 && await page.locator('table.ift').count() === 2 && await s.noHScroll(), 'emergency page: numbers, tonight\'s address, if-then + mishaps; fits the phone');
+  ok(await page.locator('#pocket details.pg').count() >= 3 && await page.locator('.ifts').count() === 3 && await page.locator('table.ift').count() === 0 && await s.noHScroll(), 'emergency page: numbers, tonight\'s address, if-then + mishaps + who carries what; fits the phone');
+  { const f = page.locator('.ifts details.ifold').first(), b = f.locator('.fb');
+    ok(await page.locator('.ifts details.ifold').count() >= 30 && !(await b.isVisible()) && (await f.locator('summary').click(), await b.isVisible()) && (await f.locator('summary').boundingBox()).height >= 44,
+      'emergency page: each “if” is one line; what to do opens under it on a tap (44 px)'); }
   ok(await page.locator('#pocket .ecard .emerg li.main a[href="tel:000"]').count() === 1 && await page.locator('#pocket .ecard .enights li').count() === 8 && await page.locator('#pocket .ecard .elost').count() === 1, 'emergency card like the manual: 000 first, every night\'s address (8 stays), the lost-child line');
   await page.goto(`${BASE}/#/t/big-hop-2027/prep/full`); await page.waitForSelector('#pocket');
   ok(await page.locator('#pocket details.pg').count() >= 6 && (await page.textContent('#pocket')).includes('Biosecurity'), 'get-ready page: packing, prices, visa, biosecurity, the van, drive legs, crowds, book-ahead');
@@ -1084,7 +1089,7 @@ const T = 'hk-macau-2026';
   const ck = page.locator('#pocket .chk input').first(); await ck.check(); await page.evaluate(() => render());
   ok(await page.locator('#pocket .chk input').count() >= 20 && await page.locator('#pocket .chk input').first().isChecked() && await s.noHScroll(), 'get-ready page: packing and visa as tickable checklists; a tick survives a re-render (kept on this phone)');
   await page.goto(`${BASE}/#/t/hk-macau-2026/sos/full`); await page.waitForSelector('#pocket');
-  ok(/Taxi card/.test(await page.textContent('#pocket')) && await page.locator('#pocket table.ift').count() === 1 && await s.noHScroll(), 'HK emergency page: if-then table and the Chinese taxi card');
+  ok(/Taxi card/.test(await page.textContent('#pocket')) && await page.locator('#pocket .ifts').count() === 1 && await s.noHScroll(), 'HK emergency page: the if-then cases and the Chinese taxi card');
   await page.goto(`${BASE}/#/t/big-hop-2027/learn/full`); await page.waitForSelector('#pocket');
   ok(await page.locator('#pocket details.sub:not(.tale)').count() === 16 && await page.locator('#pocket .qa').count() === 48 && await page.locator('#pocket details.tale .talebtn[data-a="saytale"]').count() === 16 && await page.locator('#pocket details.tale .scenes li').count() >= 48, 'learn page: a fold per day with its cards, quiz questions and the guide’s story (a picture book of scenes)');
   await page.evaluate(() => { const d = document.querySelector('#pocket details.sub:not(.tale)'); d.open = true; d.querySelector('details.tale').open = true; });
