@@ -314,6 +314,8 @@ const PHOTO_TAGS = [['kids', '🧒', 'เด็กๆ', 'Kids'], ['family', '�
   ['stay', '🛏️', 'ที่พัก', 'Stay'], ['sleep', '😴', 'หลับ', 'Sleeping'], ['play', '🧸', 'เล่น', 'Playing'], ['walk', '🚶', 'เดินเล่น', 'Walking'], ['night', '🌙', 'กลางคืน', 'Night'],
   ['rain', '🌧️', 'ฝน', 'Rain'], ['funny', '😂', 'ขำๆ', 'Funny'], ['selfie', '🤳', 'เซลฟี่', 'Selfie'], ['sign', '🪧', 'ป้าย', 'Signs'], ['character', '🐭', 'ตัวการ์ตูน', 'Characters']];
 const tagLabel = (k) => { const x = PHOTO_TAGS.find((t) => t[0] === k); return x ? `${x[1]} ${L(x[2], x[3])}` : `#${k}`; };
+// the same, as HTML: the emoji drawn by the family's library picture (emo), the words escaped
+const tagHtml = (k) => { const x = PHOTO_TAGS.find((t) => t[0] === k); return x ? `${emo(x[1])} ${esc(L(x[2], x[3]))}` : esc(`#${k}`); };
 const tagsOf = (m) => (Array.isArray(m && m.tags) ? m.tags : []);
 const imgT = (m) => m.local || `/media/${encodeURIComponent(m.id)}/t`;
 const imgF = (m) => m.local || `/media/${encodeURIComponent(m.id)}`;
