@@ -151,18 +151,28 @@ function ensureWx(t) {
     if (j) { ls(k, WX[t.id]); if (j.days.some(Boolean)) safeRender(); }
   }).catch(() => { WX[t.id] = { ...(c || { days: [] }), at: Date.now() - 3600e3 + 600e3, pending: false }; });
 }
-/* ---------- the family's own emoji (public/art/emoji, the owner's glossy set): emo('💗') → a picture when there is one,
-   else the emoji as text. The data keeps the Unicode emoji (moods, hearts, weather); only the drawing changes.
-   emoIn(html) swaps them inside an already-escaped text (emoji are never part of an entity, so this is safe) — never on attributes. */
-const EMO = { '😄': 'joy', '😊': 'joy', '🥰': 'love', '😍': 'love', '😂': 'laugh', '🤣': 'laugh', '😮': 'surprise', '😲': 'surprise', '😢': 'sad', '😭': 'sad', '😠': 'angry', '😡': 'angry',
-  '👍': 'thumbs-up', '💗': 'heart', '❤': 'heart', '💖': 'heart', '👏': 'clap', '🙏': 'thanks', '🎉': 'celebrate', '🥳': 'celebrate', '☕': 'cozy', '⭐': 'star', '🌟': 'star',
-  '🌈': 'rainbow', '☀': 'sun', '🌙': 'sleepy-moon', '😴': 'sleepy-moon', '⛅': 'partly-cloudy', '🌤': 'partly-cloudy', '🌥': 'partly-cloudy', '🌧': 'rainy', '🌦': 'rainy', '☔': 'rainy',
-  '🎂': 'birthday-cake', '🎁': 'gift', '📷': 'camera', '📸': 'camera', '✈': 'airplane', '🧳': 'suitcase', '🗺': 'travel-map' };
-const EMO_FILES = [...new Set(Object.values(EMO))];
-const emoKey = (ch) => EMO[String(ch || '').replace(/️/g, '')];
+/* ---------- the family's emoji library (public/art/emoji, the owner's glossy set) ----------
+   EMOJI_LIB = one row per picture: [file, the emoji it stands for, Thai name, English name, …other emoji drawn the same].
+   The data always keeps the Unicode emoji (moods, hearts, quotes, notes, captions), so old entries, push texts and shares
+   are unchanged; only the drawing changes. emo('💗') → the picture (else the emoji as text); emoIn(html) swaps them inside
+   already-escaped text (an emoji is never part of an entity) — never on attributes. The parents pick from the library with
+   emoBtn(fieldId) next to a text box (sheets.js emopick/emoput). */
+const EMOJI_LIB = [
+  ['joy', '😄', 'ดีใจ', 'Joy', '😊', '🙂', '😀', '😃'], ['love', '😍', 'รักเลย', 'Love', '🥰'], ['laugh', '😂', 'ขำมาก', 'Laugh', '🤣'],
+  ['surprise', '😮', 'ว้าว', 'Wow', '😲', '😯'], ['sad', '😢', 'เศร้า', 'Sad', '😭'], ['angry', '😠', 'โกรธ', 'Cross', '😡'],
+  ['thumbs-up', '👍', 'เยี่ยม', 'Great'], ['heart', '💗', 'หัวใจ', 'Heart', '❤', '💖', '💕', '🧡', '💛', '💚', '💙', '💜'], ['clap', '👏', 'ปรบมือ', 'Clap'],
+  ['thanks', '🙏', 'ขอบคุณ', 'Thank you'], ['celebrate', '🎉', 'เย้!', 'Hooray', '🥳', '🎊'], ['cozy', '☕', 'อบอุ่น', 'Cosy'],
+  ['star', '⭐', 'ดาว', 'Star', '🌟'], ['rainbow', '🌈', 'สายรุ้ง', 'Rainbow'], ['sun', '☀', 'แดด', 'Sunny'],
+  ['sleepy-moon', '🌙', 'ฝันดี', 'Sleepy', '😴'], ['partly-cloudy', '⛅', 'เมฆบ้าง', 'Cloudy', '🌤', '🌥'], ['rainy', '☔', 'ฝนตก', 'Rainy', '🌧', '🌦'],
+  ['birthday-cake', '🎂', 'วันเกิด', 'Birthday'], ['gift', '🎁', 'ของขวัญ', 'Gift'], ['camera', '📷', 'กล้อง', 'Camera', '📸'],
+  ['airplane', '✈', 'เครื่องบิน', 'Plane', '🛫'], ['suitcase', '🧳', 'กระเป๋า', 'Suitcase'], ['travel-map', '🗺', 'แผนที่', 'Map']];
+const EMO = Object.fromEntries(EMOJI_LIB.flatMap(([file, ch, , , ...more]) => [ch, ...more].map((c) => [c, file])));
+const emoKey = (ch) => EMO[String(ch || '').replace(/\uFE0F/g, '')];
 const emo = (ch, cls = '') => { const k = emoKey(ch); return k ? `<img class="emi${cls ? ' ' + cls : ''}" src="/art/emoji/${k}.webp" alt="${esc(ch)}" draggable="false">` : esc(ch); };
 const EMO_RE = new RegExp(`(${Object.keys(EMO).sort((a, b) => b.length - a.length).join('|')})\\uFE0F?`, 'gu');
 const emoIn = (html) => String(html).replace(EMO_RE, (m) => emo(m));
+// the library button beside a text box: opens the grid of pictures, the one tapped goes in at the cursor
+const emoBtn = (id) => `<button type="button" class="emobtn" data-a="emopick" data-for="${esc(id)}" aria-label="${L('ใส่อีโมจิ', 'Add an emoji')}" title="${L('ใส่อีโมจิ', 'Add an emoji')}">${emo('😄')}</button>`;
 // WMO weather codes → a glyph and a word (the first row whose ceiling the code fits under)
 const WX_CODES = [[0, '☀️', 'แดดจัด', 'clear'], [2, '🌤️', 'มีเมฆบ้าง', 'partly cloudy'], [3, '☁️', 'เมฆมาก', 'overcast'], [48, '🌫️', 'หมอก', 'fog'], [57, '🌦️', 'ฝนปรอย', 'drizzle'],
   [67, '🌧️', 'ฝน', 'rain'], [77, '❄️', 'หิมะ', 'snow'], [82, '🌦️', 'ฝนซู่', 'showers'], [86, '🌨️', 'หิมะซู่', 'snow showers'], [99, '⛈️', 'พายุฝน', 'thunderstorms']];

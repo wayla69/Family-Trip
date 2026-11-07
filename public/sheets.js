@@ -828,7 +828,7 @@ function drawLb() {
   lb.innerHTML = `<div class="bar"><button data-lb="close" aria-label="${L('ปิด', 'Close')}">✕</button><span class="grow">${i + 1} / ${list.length}</span>
 ${ed ? `<button data-lb="star" aria-pressed="${!!m.highlight}">${m.highlight ? '⭐' : '☆'} ${L('ชอบ', 'Fave')}</button><button data-lb="del">${L('ลบ', 'Delete')}</button>` : ''}</div>
 <div class="stage"><img src="${esc(imgF(m))}" alt="${esc(m.caption)}">${list.length > 1 ? `<button class="nav prev" data-lb="prev" aria-label="prev">‹</button><button class="nav next" data-lb="next" aria-label="next">›</button>` : ''}</div>
-<div class="capbox">${ed ? `<input id="lbcap" value="${esc(m.caption || '')}" placeholder="${L('คำอธิบายรูป', 'Caption')}" maxlength="500">` : m.caption ? `<p>${esc(m.caption)}</p>` : ''}
+<div class="capbox">${ed ? `<span class="emowrap"><input id="lbcap" value="${esc(m.caption || '')}" placeholder="${L('คำอธิบายรูป', 'Caption')}" maxlength="500">${emoBtn('lbcap')}</span>` : m.caption ? `<p>${emoIn(esc(m.caption))}</p>` : ''}
 ${ed ? `<div class="tagrow"><input id="lbtags" value="${esc(tagsOf(m).join(', '))}" placeholder="${L('แท็ก คั่นด้วยจุลภาค เช่น food, kids', 'Tags, comma-separated, e.g. food, kids')}" maxlength="200"><input id="lbplace" value="${esc(m.place || '')}" placeholder="${L('ที่ไหน (จุดแวะ)', 'Where (the stop)')}" maxlength="120"></div>` : ''}
 ${tagsOf(m).length || m.place ? `<div class="tags">${m.place ? `<span class="tagc">📍 ${esc(m.place)}</span>` : ''}${tagsOf(m).map((k) => `<span class="tagc">${esc(tagLabel(k))}</span>`).join('')}</div>` : ''}</div>`;
   lb.hidden = false;
@@ -872,6 +872,36 @@ function newTripSheet() {
 <div class="err" id="nterr" style="color:var(--accent2);min-height:20px;margin-top:6px"></div>
 <div class="row end"><button type="button" class="btn ghost" data-a="closesheet">${L('ยกเลิก', 'Cancel')}</button><button class="btn" data-a="createtrip">${L('สร้างเล่ม', 'Create')}</button></div></form>`;
 }
+
+/* ---------- the emoji library beside a text box (core.js EMOJI_LIB / emoBtn) ----------
+   The grid floats on <body>, so a render underneath never takes it away; the box keeps the focus the whole time (pointerdown
+   is held back on the button and the grid), so a box that saves when left (note, favourite, caption) saves the emoji too. */
+const emoClose = () => { const p = $('#emopop'); if (p) p.remove(); };
+Object.assign(A, {
+  emopick(b) {
+    const was = $('#emopop'); emoClose(); if (was && was.dataset.for === b.dataset.for) return;   // a second tap closes it
+    const f = document.getElementById(b.dataset.for);
+    if (f && document.activeElement !== f) { f.focus(); const n = f.value.length; f.setSelectionRange(n, n); }   // not typing in it: the emoji goes at the end
+    const p = document.createElement('div'); p.id = 'emopop'; p.className = 'emopop'; p.dataset.for = b.dataset.for;
+    p.setAttribute('role', 'dialog'); p.setAttribute('aria-label', L('อีโมจิของเรา', 'Our emoji'));
+    p.innerHTML = EMOJI_LIB.map(([, ch, th, en]) => `<button type="button" data-a="emoput" data-v="${esc(ch)}" title="${esc(L(th, en))}" aria-label="${esc(L(th, en))}">${emo(ch)}</button>`).join('');
+    document.body.appendChild(p);
+    const r = b.getBoundingClientRect(), w = Math.min(320, innerWidth - 16);
+    p.style.width = w + 'px'; const h = p.offsetHeight;
+    p.style.left = Math.max(8, Math.min(innerWidth - w - 8, r.right - w)) + 'px';
+    p.style.top = (r.bottom + h + 8 < innerHeight || r.top < h + 8 ? r.bottom + 6 : r.top - h - 6) + 'px';   // below the button, or above it near the foot of the screen
+  },
+  emoput(b) {
+    const f = document.getElementById($('#emopop').dataset.for); emoClose(); if (!f) return;
+    const ch = b.dataset.v, a = f.selectionStart ?? f.value.length, z = f.selectionEnd ?? a, max = +f.getAttribute('maxlength') || Infinity;
+    if (f.value.length - (z - a) + ch.length > max) { toast(L('ข้อความยาวเต็มแล้ว', 'The box is full')); return; }
+    f.value = f.value.slice(0, a) + ch + f.value.slice(z); f.focus(); f.setSelectionRange(a + ch.length, a + ch.length);
+    f.dispatchEvent(new Event('input', { bubbles: true }));   // drafts and live previews follow, as if typed
+  },
+});
+document.addEventListener('pointerdown', (e) => { if (e.target.closest('.emobtn, #emopop')) e.preventDefault(); else emoClose(); });
+document.addEventListener('mousedown', (e) => { if (e.target.closest('.emobtn, #emopop')) e.preventDefault(); });
+window.addEventListener('hashchange', emoClose);
 
 /* ---------- events ---------- */
 document.addEventListener('click', (e) => {
