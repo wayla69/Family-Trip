@@ -2354,3 +2354,18 @@ main.wrap>h1.h2:first-child,main.wrap>.tp>h1.h2:first-child,main.wrap>.part:firs
 @media (prefers-color-scheme:dark){:root:not([data-theme=light]) .tpo-pastel .sw i:nth-child(1){background:color-mix(in srgb,#4F7BFF 30%,var(--card));border-color:color-mix(in srgb,#4F7BFF 40%,transparent)}}:root[data-theme=dark] .tpo-pastel .sw i:nth-child(1){background:color-mix(in srgb,#4F7BFF 30%,var(--card));border-color:color-mix(in srgb,#4F7BFF 40%,transparent)}
 @media (prefers-color-scheme:dark){:root:not([data-theme=light]) .tpo-pastel .sw i:nth-child(2){background:color-mix(in srgb,#FF6FA8 30%,var(--card));border-color:color-mix(in srgb,#FF6FA8 40%,transparent)}}:root[data-theme=dark] .tpo-pastel .sw i:nth-child(2){background:color-mix(in srgb,#FF6FA8 30%,var(--card));border-color:color-mix(in srgb,#FF6FA8 40%,transparent)}
 @media (prefers-color-scheme:dark){:root:not([data-theme=light]) .tpo-pastel .sw i:nth-child(3){background:color-mix(in srgb,#F2B90C 30%,var(--card));border-color:color-mix(in srgb,#F2B90C 40%,transparent)}}:root[data-theme=dark] .tpo-pastel .sw i:nth-child(3){background:color-mix(in srgb,#F2B90C 30%,var(--card));border-color:color-mix(in srgb,#F2B90C 40%,transparent)}
+
+/* one fold marker everywhere: the chevron in a tinted circle on the right, turning when open (the old "›" and the left chevron go) */
+details>summary>svg.ic.chv{flex:none;width:26px;height:26px;padding:5px;box-sizing:border-box;border-radius:50%;color:var(--accent);background:color-mix(in srgb,var(--accent) 10%,transparent);margin-left:auto;transition:transform .15s}
+details[open]>summary>svg.ic.chv{transform:rotate(90deg)}
+details.fold>summary::after{content:none}
+.more>summary b::before{content:none}
+.dmore>summary>span{flex:1;min-width:0}
+.bag summary{list-style:none}.bag summary::-webkit-details-marker{display:none}
+@media print{details>summary>svg.ic.chv{display:none}}
+/* the eat page's day picker is the same strip as Today's */
+.eatday .daystrip{margin-top:0}
+
+/* the printed book: a place name is plain text (a link cannot be tapped on paper) */
+body.printbook a.maplink,body.printbook a.maplink:visited{text-decoration:none;color:inherit}
+@media print{a.maplink{text-decoration:none;color:inherit}}

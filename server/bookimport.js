@@ -256,6 +256,14 @@ Trip: ${JSON.stringify({ title: top.title, place: top.place, from: top.from, to:
     if (whys.size) { plan.info.stays = (Array.isArray(plan.info.stays) ? plan.info.stays : []); for (const st of plan.info.stays) { const w = st.prop && whys.get(norm(st.prop.en || st.prop)); if (w && (!st.why || !st.why.en)) st.why = w; } plan.staysWhy = (Array.isArray(E.stays) ? E.stays : []).filter((s2) => s2 && s2.name && asI18n(s2.why)).map((s2) => ({ name: String(s2.name), why: asI18n(s2.why) })); }
     log(`extras: ${wild.length} animals & friends · ${firsts.length} firsts · ${words.length} words · ${food.length} foods · map ${stops.length} stops · ${whys.size} stays' why`);
   }
+  // a price line with words ("mains A$22–32", "A$20–30 /adult") becomes {en} like every other text, so the Thai pass below translates
+  // it; a line of money only ("$ · A$10–20") stays a plain string (docs/STYLE.md §5)
+  (function prices(v) {
+    if (Array.isArray(v)) return v.forEach(prices);
+    if (!v || typeof v !== 'object') return;
+    if (typeof v.pr === 'string' && /[A-Za-z]{2,}/.test(v.pr.replace(/\b(?:A|AU|HK|NZ|US)\$|\b(?:AUD|HKD|MOP|USD|NZD)\b/g, ''))) v.pr = { en: v.pr };
+    for (const x of Object.values(v)) if (x && typeof x === 'object') prices(x);
+  })(plan);
   // every text that has English but no usable Thai yet — the models sometimes send "th": "" or null, which counts as missing
   const holes = [];
   (function walk(v) {
