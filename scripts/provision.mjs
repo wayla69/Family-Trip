@@ -58,7 +58,7 @@ const dryAnswer = (op) => ({ projectCreate: { projectCreate: { id: 'dry-project'
 
 console.log(`${DRY ? '[dry run] ' : ''}family "${name}" → Railway project mm-${name} · app from ${REPO}@${BRANCH} · region ${REGION}`);
 const P = (await gql(`mutation projectCreate($input: ProjectCreateInput!) { projectCreate(input: $input) { id name } }`,
-  { input: { name: `mm-${name}`, description: `MM Memory for the ${name} family`, defaultEnvironmentName: 'production', ...(flags.workspace ? { workspaceId: flags.workspace } : {}) } })).projectCreate;
+  { input: { name: `mm-${name}`, description: `LifeBook for the ${name} family`, defaultEnvironmentName: 'production', ...(flags.workspace ? { workspaceId: flags.workspace } : {}) } })).projectCreate;
 const envs = (await gql(`query environments($projectId: String!) { environments(projectId: $projectId) { edges { node { id name } } } }`, { projectId: P.id })).environments.edges.map((e) => e.node);
 const E = envs.find((e) => e.name === 'production') || envs[0];
 if (!E) throw new Error('the new project has no environment');

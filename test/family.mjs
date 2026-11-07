@@ -14,15 +14,15 @@ const state = async () => (await fetch(BASE + '/api/b/state', { headers: { cooki
 // ---- before login: the brand, with no names
 {
   const b = await (await fetch(BASE + '/api/brand')).json();
-  ok(b.app.en === 'MM Memory' && b.kicker.th === 'ของมีมี่และมีก้า' && b.kicker.en === 'Mimi & Mika', `brand: the app name from the kids' initials and the kicker from their names (${b.app.en} · ${b.kicker.th})`);
+  ok(b.app.en === 'LifeBook' && b.kicker.th === 'ของมีมี่และมีก้า' && b.kicker.en === 'Mimi & Mika', `brand: the app name from the kids' initials and the kicker from their names (${b.app.en} · ${b.kicker.th})`);
   ok(JSON.stringify(b.kids) === JSON.stringify([{ slug: 'mimi', v: '' }, { slug: 'mika', v: '' }]) && !JSON.stringify(b).includes('name_'), 'brand: the drawings by slug only, no names, no birth months');
   const m = await (await fetch(BASE + '/manifest.webmanifest')).json();
-  ok(m.name === 'MM Memory' && m.short_name === 'MM Memory' && m.icons.length === 3, 'the manifest carries the app name');
+  ok(m.name === 'LifeBook' && m.short_name === 'LifeBook' && m.icons.length === 3, 'the manifest carries the app name');
 }
 // ---- the state
 {
   const s = await state();
-  ok(s.family && s.family.app.th === 'MM Memory' && s.children.length === 2 && s.children[0].look === null && s.children[0].v === '', 'state: the family block, the children with their (empty) look');
+  ok(s.family && s.family.app.th === 'LifeBook' && s.children.length === 2 && s.children[0].look === null && s.children[0].v === '', 'state: the family block, the children with their (empty) look');
   ok((await fetch(BASE + '/art/kids/mimi.svg')).headers.get('content-type').includes('svg') && (await (await fetch(BASE + '/art/kids/mimi.svg')).text()).includes('kmimi'), 'Mimi with no look is the static drawing');
   ok((await fetch(BASE + '/art/kids/nobody.svg')).status === 200 && (await (await fetch(BASE + '/art/kids/nobody.svg')).text()).includes('<!doctype html'), 'an unknown kid falls through to the app shell like any other path');
 }
@@ -77,6 +77,20 @@ const kids = [
   ok(r3.status === 400 && (await r3.json()).error === 'birth', 'every child needs a month and year of birth');
   const vck = jar(await fetch(BASE + '/api/login', { method: 'POST', headers: { 'x-mb': '1', 'content-type': 'application/json' }, body: JSON.stringify({ code: process.env.VIEW_PIN || '835911', name: 'ยาย' }) }));
   ok((await fetch(BASE + '/api/b/family', { method: 'PUT', headers: { ...H, cookie: vck }, body: '{}' })).status === 403, 'a viewer cannot change the family');
+}
+// ---- delete everything (the privacy page): the typed app name confirms; files and rows go; the bundled books come back empty
+{
+  const st0 = await state(), app = st0.family.app.en;
+  ok(typeof st0.operator === 'object' && 'name' in st0.operator, 'state names the operator block (empty until OPERATOR_NAME is set)');
+  const bad = await fetch(BASE + '/api/b/family/erase', { method: 'POST', headers: H, body: JSON.stringify({ confirm: 'nope' }) });
+  ok(bad.status === 400 && (await state()).entries.length === st0.entries.length, 'erase: a wrong confirmation changes nothing');
+  const vck = jar(await fetch(BASE + '/api/login', { method: 'POST', headers: { 'x-mb': '1', 'content-type': 'application/json' }, body: JSON.stringify({ code: process.env.VIEW_PIN || '835911', name: 'ยาย' }) }));
+  ok((await fetch(BASE + '/api/b/family/erase', { method: 'POST', headers: { ...H, cookie: vck }, body: JSON.stringify({ confirm: app }) })).status === 403, 'erase: a viewer cannot');
+  const r = await fetch(BASE + '/api/b/family/erase', { method: 'POST', headers: H, body: JSON.stringify({ confirm: app }) });
+  const j = await r.json(), st = await state();
+  ok(r.ok && j.ok && st.entries.length === 0 && st.media.length === 0 && st.reviews.length === 0 && st.children.length === 2 && !st.children.some((k) => k.slug === 'nora-jane') && st.trips.length === 2,
+    `erase: every entry, photo and review gone, the added child gone, the two bundled books and their children seeded again (${j.files} files removed)`);
+  ok((await fetch(BASE + '/api/b/viewers', { headers: H })).ok && (await (await fetch(BASE + '/api/b/viewers', { headers: H })).json()).groups.length === 0, 'erase: the relatives\' groups are gone');
 }
 console.log(failures ? `\n${failures} FAILED` : '\nALL PASSED');
 process.exit(failures ? 1 : 0);

@@ -15,6 +15,8 @@ const EMOJI = require('./emoji');
 const sharp = require('sharp');
 
 const FAMILY = process.env.FAMILY_ID || 'family';
+// who runs this instance, named on the privacy page (#/privacy) — the data controller the family can write to
+const OPERATOR = { name: process.env.OPERATOR_NAME || '', email: process.env.OPERATOR_EMAIL || '' };
 const ID_RE = /^[A-Za-z0-9_.:-]{4,80}$/;
 // voice memos arrive as the phone's recorder made them: Chrome/Android webm-opus, iPhone mp4-aac; stored under a/<trip>/<id>.<ext>
 const AUDIO_EXT = { 'audio/webm': 'webm', 'audio/mp4': 'm4a', 'audio/x-m4a': 'm4a', 'audio/aac': 'aac', 'audio/mpeg': 'mp3', 'audio/ogg': 'ogg' };
@@ -121,7 +123,7 @@ function router({ pool, media, A, ai, hooks = {} }) {   // hooks.heart(h): set b
   const kidsFor = async (t) => FAM.kidsFor(await kidRows(), t && t.date_from ? new Date(t.date_from) : new Date());   // for prompts: names and ages at the trip
   // before login the app shows only the family's app name and the drawings — never the children's names
   r.get('/api/brand', async (_req, res, next) => {
-    try { res.setHeader('Cache-Control', 'no-store'); res.json({ ...(await brand(pool)), pin: await pinLens() }); } catch (e) { next(e); }
+    try { res.setHeader('Cache-Control', 'no-store'); res.json({ ...(await brand(pool)), pin: await pinLens(), operator: OPERATOR }); } catch (e) { next(e); }
   });
   // the lengths a sign-in code can have (the family's, the relatives' shared PIN, each group's) — never a digit of any of them — so
   // the pad signs in by itself at the last digit; open = a group PIN of unknown length exists (saved before migration 0021)
@@ -130,6 +132,33 @@ function router({ pool, media, A, ai, hooks = {} }) {   // hooks.heart(h): set b
     const lens = new Set([A.FAMILY_CODE.length, A.VIEW_PIN.length, ...g.map((x) => x.pin_len)].filter((n) => n > 0));
     return { lens: [...lens].sort((a, b) => a - b), open: g.some((x) => !x.pin_len) };
   }
+  // erase everything this family has (the privacy page's "delete all data", PDPA right to erasure): every file the rows name
+  // (photos and thumbnails, voice clips, drawings, the children's drawn characters, uploaded emoji), then every row — the families
+  // row goes with its CASCADE and comes back empty; the bundled books and emoji are seeded again as on a first boot (BUNDLED_SEEDS=0:
+  // nothing). The caller types the app's name to confirm. Session secret, VAPID keys and the sign-in codes (env) stay.
+  r.post('/api/b/family/erase', ...W, async (req, res, next) => {
+    try {
+      const want = String((req.body || {}).confirm || '').trim(), b = await brand(pool);
+      if (!want || ![b.app.th, b.app.en].some((n) => n && n.trim() === want)) return bad(res, 'confirm');
+      const keys = [];
+      for (const m of await q('SELECT id, trip_id, storage_key, mime FROM media WHERE family_id=$1', [FAMILY])) {
+        keys.push(m.storage_key); if (!String(m.mime || '').startsWith('audio/')) keys.push(keyThumb(m.trip_id, m.id));
+      }
+      for (const k of await q('SELECT slug, avatar, avatars FROM children WHERE family_id=$1', [FAMILY])) {
+        const ids = new Set([k.avatar, ...(Array.isArray(k.avatars) ? k.avatars.map((d) => d && d.id) : [])].filter(Boolean));
+        for (const id of ids) for (const kind of ['full', 'face']) keys.push(avatarKey(k.slug, id, kind));
+      }
+      for (const e of await q('SELECT storage_key FROM emoji WHERE family_id=$1 AND storage_key IS NOT NULL', [FAMILY])) keys.push(e.storage_key);
+      let gone = 0;
+      for (const k of new Set(keys)) { try { await media.del(k); gone++; } catch (_) { /* a file already missing is fine */ } }
+      await q('DELETE FROM families WHERE id=$1', [FAMILY]);
+      await q("DELETE FROM settings WHERE key IN ('family_likes', 'emoji_seeded')");
+      await q('INSERT INTO families (id, name) VALUES ($1, $2) ON CONFLICT (id) DO NOTHING', [FAMILY, 'Family']);
+      await syncSeeds(pool); await EMOJI.seed(pool, FAMILY); A.groupsChanged();
+      console.log(`family erased on request: ${gone} files, every row`);   // no names, no codes
+      res.json({ ok: true, files: gone });
+    } catch (e) { next(e); }
+  });
   r.put('/api/b/family', ...W, async (req, res, next) => {
     try {
       const b = req.body || {}, prof = FAM.cleanProfile(b.profile);
@@ -278,6 +307,7 @@ function router({ pool, media, A, ai, hooks = {} }) {   // hooks.heart(h): set b
         reviews: reviews.map(({ trip_id, day_index, updated_at, ...r }) => ({ ...r, trip: trip_id, day: day_index, at: ms(updated_at) })),
         emoji: emojiRows.map(EMOJI.out),   // the family's emoji library: each emoji's picture (core.js emo)
         spend: spendRows.map(({ trip_id, day_index, updated_at, amount, ...s }) => ({ ...s, trip: trip_id, day: day_index, amount: Number(amount), at: ms(updated_at) })),
+        operator: OPERATOR,   // named on the privacy page
         features: { avatar: AVATAR.enabled(), story: !!(ai && ai.enabled()), photoAi: !!(ai && ai.photoEnabled && ai.photoEnabled()) },   // photoAi: the owner's PHOTO_AI switch (captions/tags from the pictures)
       }, true);
     } catch (e) { next(e); }

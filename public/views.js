@@ -22,7 +22,7 @@ function curTrip() {
 
 function render() {
   const app = $('#app');
-  if (!S) { app.innerHTML = loginView(); document.documentElement.style.cssText = ''; return; }
+  if (!S) { app.innerHTML = route().parts[0] === 'privacy' ? `<main class="wrap">${viewPrivacy()}</main>` : loginView(); document.documentElement.style.cssText = ''; return; }
   const r = route(), p = r.parts;
   let t = null, html;
   // kid mode is "locked": while it is on, every route leads back to it (a grown-up holds the lock to leave)
@@ -85,13 +85,14 @@ function render() {
   else if (p[0] === 'import' && isEditor()) html = viewImport();
   else if (p[0] === 'family' && isEditor()) html = viewFamily();
   else if (p[0] === 'start' && isEditor()) html = viewStart(p);
+  else if (p[0] === 'privacy') html = viewPrivacy();
   else if (p[0] === 'emoji' && isEditor()) html = viewEmoji();
   else html = viewShelf();
   document.documentElement.style.cssText = t ? themeStyle(t) : themeStyle(curTrip());
   document.body.classList.toggle('serif', !!(t ? t.theme.display === 'serif' : false));
   document.documentElement.lang = lang;
   document.body.classList.toggle('onb', p[0] === 'start');   // the setup steps have no bottom bar
-  document.title = t ? `${T(t.title)} · MM Memory` : 'MM Memory';
+  document.title = t ? `${T(t.title)} · ${appName()}` : appName();
   const key = p.slice(0, 3).join('/') + (p.includes('full') ? '/full/' + (p[4] || '') : ''), enter = key !== lastView; lastView = key;   // animate only when the page changes, not on every save
   app.innerHTML = topBar(t, p) + `<main class="wrap${enter ? ' enter' : ''}">${offline ? `<div class="notice">${L('ไม่มีเน็ต — แสดงข้อมูลล่าสุดที่เก็บไว้ บันทึกได้ตามปกติ จะส่งขึ้นเองเมื่อกลับมามีเน็ต', 'Offline — showing the last saved copy. You can keep recording; it uploads when you are back online.')}${S.syncedAt ? ` <small>· ${L('ข้อมูลล่าสุดเมื่อ', 'last synced')} ${esc(new Date(S.syncedAt).toLocaleString(LOC(), { day: 'numeric', month: 'short', hour: '2-digit', minute: '2-digit' }))}</small>` : ''}</div>` : ''}${html}</main>` + tabBar(t, p);
   if (p[0] === 't' && p[2] === 'search' && enter) setTimeout(() => { const q = $('#bookq'); if (q) q.focus(); }, 60);   // a search page opens ready to type
@@ -173,7 +174,7 @@ function loginView() {
 <div class="row lgo"><button class="btn" type="submit">${L('เข้าสมุด', 'Open the shelf')}</button>
 <span class="seg"><button type="button" data-a="lang" data-v="th" aria-pressed="${lang === 'th'}">ไทย</button><button type="button" data-a="lang" data-v="en" aria-pressed="${lang === 'en'}">EN</button></span></div>
 <div class="err" id="lerr" role="alert"></div>
-<p class="label" style="margin-top:6px">${L('ใส่รหัสครั้งเดียว เครื่องนี้จะจำไว้ · ญาติใช้รหัสที่พ่อแม่ให้ แล้วพิมพ์ชื่อตัวเองในช่อง "ชื่ออื่น"', "Enter the PIN once — this phone remembers it · Relatives use the view-only PIN from Mum or Dad and type their name under “Other name”")}</p></form></div>`;
+<p class="label" style="margin-top:6px"><a href="#/privacy">${L('ความเป็นส่วนตัวและข้อมูลของคุณ', 'Privacy and your data')}</a> · ${L('ใส่รหัสครั้งเดียว เครื่องนี้จะจำไว้ · ญาติใช้รหัสที่พ่อแม่ให้ แล้วพิมพ์ชื่อตัวเองในช่อง "ชื่ออื่น"', "Enter the PIN once — this phone remembers it · Relatives use the view-only PIN from Mum or Dad and type their name under “Other name”")}</p></form></div>`;
 }
 
 /* ---------- shelf ---------- */
@@ -211,6 +212,7 @@ ${isEditor() ? `<div class="part">${L('ตั้งค่า', 'Settings')} <img
 <a href="#/family">${hubE('family')}<span><b>${L('ครอบครัวของเรา', 'Our family')}</b><small>${L('ชื่อแอป ชื่อลูก และเดือนเกิด', 'App name, the children and their birth months')}</small></span><i>›</i></a>
 <a href="#/emoji">${hubE('kid')}<span><b>${L('อีโมจิของเรา', 'Our emoji')}</b><small>${L(`${emoRows().length} รูป เพิ่มหรือลบได้`, `${emoRows().length} pictures, add or delete`)}</small></span><i>›</i></a>
 <a href="#/viewers">${hubE('relatives')}<span><b>${L('ญาติที่ดูได้', 'Who can see the books')}</b><small>${L('รหัสและลิงก์ของแต่ละกลุ่มญาติ', 'A code and a link for each group of relatives')}</small></span><i>›</i></a>
+<a href="#/privacy">${hubE('settings')}<span><b>${L('ความเป็นส่วนตัวและข้อมูล', 'Privacy and your data')}</b><small>${L('เก็บอะไร ใครเห็น ขอสำเนา หรือลบทั้งหมด', 'What is kept, who sees it, take a copy or delete everything')}</small></span></a>
 ${aiCard()}</nav>` : ''}
 <div class="row end setout"><button class="btn ghost small" data-a="logout">⎋ ${L('ออกจากระบบ', 'Sign out')}</button></div>`;
 }
@@ -1053,7 +1055,7 @@ ${cert && certEarned(t, kid) ? `<div class="pcert"><div class="kicker">${L('ใ�
   const forePg = fore ? pg('forep', `${head(L('คำนำ', 'Foreword'), esc(T(t.title).split(' · ')[0]))}<div class="call calm fore">${esc(fore.text)}</div>`) : '';
   const letter = entriesOf(t.id).find((e) => e.kind === 'letter' && e.text);   // the letter to the kids: the last page before the back cover
   const letterPg = letter ? pg('letterp', `${head(L('จดหมายถึงลูก', 'A letter to you'), L('ไว้อ่านตอนโต', 'For when you are older'))}<div class="letter">${esc(letter.text)}</div>`) : '';
-  const back = pg('back', `<div class="bk">${castHtml(kids)}<h2>${L('จบเล่ม', 'The end')}</h2><p>${esc(short)} · ${esc(fmtRange(t))}</p><p class="label">${L(`${st.photos} รูป · ${st.quotes} คำพูด · ${st.firsts} ครั้งแรก · บันทึก ${days.length} วัน`, `${st.photos} photos · ${st.quotes} quotes · ${st.firsts} firsts · ${days.length} days recorded`)}</p><p class="label">MM Memory · ${esc(printed)}</p></div>`);
+  const back = pg('back', `<div class="bk">${castHtml(kids)}<h2>${L('จบเล่ม', 'The end')}</h2><p>${esc(short)} · ${esc(fmtRange(t))}</p><p class="label">${L(`${st.photos} รูป · ${st.quotes} คำพูด · ${st.firsts} ครั้งแรก · บันทึก ${days.length} วัน`, `${st.photos} photos · ${st.quotes} quotes · ${st.firsts} firsts · ${days.length} days recorded`)}</p><p class="label">${esc(appName())} · ${esc(printed)}</p></div>`);
   return `<div class="pbook noprint-bar"><a class="btn small" href="/api/b/pdf/${esc(t.id)}" download data-a="pdf">⬇ ${L('ดาวน์โหลด PDF', 'Download PDF')}</a><a class="btn ghost small" href="#/t/${esc(t.id)}">‹ ${L('กลับไปสมุด', 'Back to the book')}</a><span class="label">${L('ตัวอย่างสมุดความทรงจำ — หน้า A4 ตามที่จะพิมพ์', 'Memory book preview — A4 pages as they will print')}</span></div>
 ${cover}${forePg}${numbers}${contents}${dayPages}${firstsPg}${wordsPg}${ppPages}${heartsPg}${storyPg}${notesPg}${letterPg}${back}`;
 }
@@ -1318,7 +1320,7 @@ ${rows.length ? `<ul class="emolist">${rows.map(card).join('')}</ul>` : `<p clas
 }
 let fam = null;
 const famBuilt = () => { const ks = fam.kids.filter((k) => k.name_en.trim()); const ini = ks.map((k) => k.name_en.trim()[0].toUpperCase()).join(''); const th = ks.map((k) => k.name_th.trim() || k.name_en.trim());
-  const app = ini ? `${ini} Memory` : 'Memory Bookshelf', nth = th.length <= 1 ? th.join('') : th.slice(0, -1).join(' ') + 'และ' + th[th.length - 1];
+  const app = 'LifeBook', nth = th.length <= 1 ? th.join('') : th.slice(0, -1).join(' ') + 'และ' + th[th.length - 1];
   return { app: { th: app, en: app }, kicker: { th: ks.length ? `ของ${nth}` : 'สมุดความทรงจำของครอบครัว', en: ks.length ? ks.map((k) => k.name_en.trim()).join(' & ') : 'Our family memory books' } }; };
 // the drawing for a kid card: the look being edited (rendered by the server from ?look=), or Mimi / Mika as drawn
 const famArt = (k, full) => (k.avatar ? `/media/kid/${encodeURIComponent(k.slug)}/${full ? 'full' : 'face'}.png?v=${encodeURIComponent(k.avatar)}` : k.look ? `/art/kids/${encodeURIComponent(k.slug || 'new')}${full ? '-full' : ''}.svg?look=${encodeURIComponent(JSON.stringify(k.look))}` : kidArt(k.slug, full));
@@ -1374,7 +1376,7 @@ ${!S.features.avatar ? '' : (() => {   // no drawing helper on this server: no b
 <div class="famappf"><h3>${ic('device')} ${L('ชื่อแอป', 'App name')}</h3>
 <div class="famrow"><label>${L('ชื่อแอป (ไทย)', 'App name (Thai)')}<input class="field" data-famp="app:th" value="${esc(fam.app.th)}" maxlength="40"></label><label>${L('ชื่อแอป (อังกฤษ)', 'App name (English)')}<input class="field" data-famp="app:en" value="${esc(fam.app.en)}" maxlength="40"></label></div>
 <div class="famrow"><label>${L('บรรทัดเล็กใต้ชื่อ (ไทย)', 'Line under the name (Thai)')}<input class="field" data-famp="kicker:th" value="${esc(fam.kicker.th)}" maxlength="40"></label><label>${L('บรรทัดเล็กใต้ชื่อ (อังกฤษ)', 'Line under the name (English)')}<input class="field" data-famp="kicker:en" value="${esc(fam.kicker.en)}" maxlength="40"></label></div>
-<p class="famhint">${L('เว้นว่างได้ แอปจะตั้งให้เองจากชื่อลูก (ตัวอักษรแรก + Memory)', 'Leave empty and the app names itself from the children (initials + Memory)')}</p></div></section>
+<p class="famhint">${L('เว้นว่างได้ แอปจะใช้ชื่อ LifeBook และบรรทัดเล็กจากชื่อลูก', 'Leave empty for LifeBook with the children’s names under it')}</p></div></section>
 
 <h2 class="famh3">🧒 ${L('ลูกๆ', 'The children')} <span class="pill">${fam.kids.length}/6</span></h2>
 <div class="famkids">${fam.kids.map(card).join('')}
@@ -1408,7 +1410,7 @@ ${row(2, 'รหัสสำหรับญาติ', 'A PIN for the relatives'
 ${row(3, 'เพิ่มไว้บนหน้าจอโฮม', 'Add to the Home Screen', 'เปิดเร็วเหมือนแอป และรับการเตือนได้', 'Opens like an app and can show reminders')}
 ${row(4, 'เตือนระหว่างทริป', 'Reminders during the trip', 'ก่อนแต่ละช่วง 30 นาที และตอนค่ำให้บันทึกวัน', '30 min before each step, and the evening nudge to record the day')}</ol>
 ${next(1, 'เริ่มตั้งค่า', 'Start')}
-<p class="label onbpriv">${L('รูปและข้อความอยู่บนเซิร์ฟเวอร์ของครอบครัวคุณเท่านั้น ไม่มีโฆษณา ไม่มีการติดตาม', 'Photos and words stay on your family’s own server. No ads, no tracking.')} · <button type="button" class="linkbtn" data-a="startskip">${L('ข้ามการตั้งค่า', 'Skip setup')}</button></p>`;
+<p class="label onbpriv">${L('รูปและข้อความอยู่บนเซิร์ฟเวอร์ของครอบครัวคุณเท่านั้น ไม่มีโฆษณา ไม่มีการติดตาม', 'Photos and words stay on your family’s own server. No ads, no tracking.')} · <a href="#/privacy">${L('นโยบายความเป็นส่วนตัว', 'Privacy policy')}</a> · <button type="button" class="linkbtn" data-a="startskip">${L('ข้ามการตั้งค่า', 'Skip setup')}</button></p>`;
   else if (n === 1) body = `<h1 class="h2">${L('ครอบครัวของเรา', 'Your family')}</h1>
 <p class="lede">${L('ชื่อแอปจะเป็นของบ้านคุณ ตั้งจากชื่อลูกให้เอง แก้ได้ทีหลัง', 'The app names itself after the children; everything can be changed later.')}</p>${viewFamily()}`;
   else if (n === 2) {
@@ -1462,6 +1464,55 @@ ${on ? `<div class="call calm">✓ ${L('เปิดเตือนบนเค�
 <li>○ ${L('รหัสญาติ ตั้งหรือแก้ได้ที่ เมนู › ญาติ', 'Relatives’ PIN: set or change it under Menu › Relatives')}</li></ul>`;
   }
   return `<section class="onb">${head}${body}</section>`;
+}
+
+/* ---------- privacy and your data (#/privacy): readable before sign-in; the erase box for editors ----------
+   The plain-words policy (PDPA): what is kept, where, who else ever sees it, how long, and the rights — each with the button
+   that exercises it. The operator comes from /api/brand (OPERATOR_NAME / OPERATOR_EMAIL on the server). */
+let eraseTyped = '';
+function viewPrivacy() {
+  const op = (S && S.operator) || (BRAND && BRAND.operator) || {}, ed = !!(S && isEditor()), app = appName();
+  const sec = (th, en, body) => `<section class="pvsec"><h2>${L(th, en)}</h2>${body}</section>`;
+  const ul = (rows) => `<ul class="pvl">${rows.map(([th, en]) => `<li>${L(th, en)}</li>`).join('')}</ul>`;
+  const who = op.name ? `<p>${L(`ผู้ดูแลระบบนี้คือ <b>${esc(op.name)}</b>`, `This instance is run by <b>${esc(op.name)}</b>`)}${op.email ? ` · <a href="mailto:${esc(op.email)}">${esc(op.email)}</a>` : ''}</p>`
+    : `<p class="notice">${L('ยังไม่ได้ระบุชื่อผู้ดูแลระบบ ตั้งได้ในหน้าตั้งค่าของเซิร์ฟเวอร์', 'No operator is named yet — it is set in the server’s settings')}</p>`;
+  const erase = !ed ? '' : `<div class="call warn pverase"><span class="lbl">${L('ลบข้อมูลทั้งหมด', 'Delete everything')}</span>
+<p>${L(`ลบทุกเล่ม ทุกรูป ทุกเสียง ทุกข้อความ ลูกๆ ญาติ และการเตือน ออกจากเซิร์ฟเวอร์และที่เก็บไฟล์ทันที กู้คืนไม่ได้ (ยกเว้นจากสำเนาที่คุณดาวน์โหลดไว้เอง) เล่มที่มากับแอปจะกลับมาว่างเปล่า`, `Removes every book, photo, voice clip and word, the children, the relatives’ groups and the reminders from the server and the file store at once. It cannot be undone (except from a copy you downloaded yourself). The books that come with the app return empty.`)}</p>
+<label class="vgl">${L(`พิมพ์ชื่อแอป “${app}” เพื่อยืนยัน`, `Type the app’s name, “${app}”, to confirm`)}<input id="erasetxt" class="field" value="${esc(eraseTyped)}" autocomplete="off" data-draft="erase"></label>
+<p id="erasemsg" class="label"></p>
+<button type="button" class="btn danger" data-a="erase" ${eraseTyped.trim() === app ? '' : 'disabled'}>${L('ลบข้อมูลทั้งหมดของครอบครัวนี้', 'Delete all of this family’s data')}</button></div>`;
+  return `<article class="privacy"><div class="part">${L('ความเป็นส่วนตัว', 'Privacy')}</div><h1 class="h2">${L('ความเป็นส่วนตัวและข้อมูลของคุณ', 'Privacy and your data')}</h1>
+<p class="lede">${L(`${app} เป็นสมุดความทรงจำส่วนตัวของครอบครัวเดียว ทำงานบนเซิร์ฟเวอร์ของครอบครัวนั้นเอง ไม่มีโฆษณา ไม่มีการติดตาม และไม่ขายข้อมูลใครทั้งสิ้น`, `${app} is one family’s private memory book, running on that family’s own server. No ads, no tracking, and nobody’s data is ever sold.`)}</p>
+${sec('ใครดูแลข้อมูล', 'Who looks after the data', who + `<p>${L('พ่อแม่ที่ถือรหัสครอบครัวเป็นคนตัดสินใจว่าจะบันทึกอะไร ใครเห็น และจะลบเมื่อไร ข้อมูลของเด็กถูกบันทึกโดยผู้ปกครองของเด็กเท่านั้น', 'The parents who hold the family PIN decide what is recorded, who sees it and when it is deleted. Children’s data is entered only by their own parents or guardians.')}</p>`)}
+${sec('เก็บอะไรบ้าง', 'What is kept', ul([
+  ['ชื่อเล่น เดือนและปีเกิดของลูก และตัวการ์ตูนที่เลือก', 'The children’s nicknames, month and year of birth, and the characters chosen for them'],
+  ['รูป เสียง และภาพวาดที่พ่อแม่อัปโหลด (ตำแหน่ง GPS และข้อมูลกล้องถูกลบออกก่อนเก็บ)', 'Photos, voice clips and drawings the parents upload (GPS and camera data are stripped before storing)'],
+  ['ข้อความที่พิมพ์: คำพูดเด็ก โน้ต อารมณ์ ครั้งแรก รีวิว ค่าใช้จ่าย จดหมาย', 'Words the parents type: the kids’ quotes, notes, moods, firsts, reviews, spending, letters'],
+  ['หัวใจและข้อความสั้นจากญาติ', 'Hearts and short messages from relatives'],
+  ['รหัสของญาติ เก็บเป็นค่าที่อ่านคืนไม่ได้ · รหัสครอบครัวไม่ได้เก็บในฐานข้อมูล', 'Relatives’ PINs, stored only as one-way hashes · the family PIN is not stored in the database'],
+  ['ที่อยู่สำหรับส่งการเตือนของเครื่องที่เปิดเตือน และจำนวนครั้งที่ใช้ผู้ช่วยต่อวัน', 'The push address of each phone that turned reminders on, and how many times a day the helper was used'],
+  ['ไม่เก็บ: ตำแหน่งของโทรศัพท์ รายชื่อผู้ติดต่อ ข้อมูลการจอง เลขหนังสือเดินทาง หรือประวัติการใช้งาน', 'Not kept: the phone’s location, contacts, booking details, passport numbers, or usage analytics']]))}
+${sec('เก็บไว้ที่ไหน นานแค่ไหน', 'Where, and for how long', ul([
+  ['บนเซิร์ฟเวอร์และที่เก็บไฟล์ที่ตั้งขึ้นสำหรับครอบครัวนี้โดยเฉพาะ (Railway) ไม่ปนกับครอบครัวอื่น', 'On a server and a file store set up for this family alone (hosted on Railway), never shared with another family'],
+  ['รูปไม่มีลิงก์สาธารณะ เปิดได้เฉพาะคนที่เข้าสู่ระบบหรือถือลิงก์ของญาติ ทุกหน้าสั่งไม่ให้เครื่องมือค้นหาเก็บ', 'Photos have no public link: only someone signed in or holding a relatives’ link can open them; every page tells search engines to stay away'],
+  ['เก็บจนกว่าพ่อแม่จะลบ · สำเนาสำรองอัตโนมัติเก็บไว้ 30 วัน (รายคืนช่วงมีทริป) และ 90 วัน (รายสัปดาห์)', 'Kept until the parents delete it · automatic backups are kept 30 days (nightly around a trip) and 90 days (weekly)'],
+  ['สำเนาในเครื่องของคุณ (สำหรับใช้ตอนไม่มีเน็ต) ถูกล้างเมื่อออกจากระบบ', 'The copy on your own phone (for no-signal days) is cleared when you sign out']]))}
+${sec('ใครอื่นเห็นบ้าง', 'Who else ever sees it', ul([
+  ['ญาติที่พ่อแม่ให้รหัสหรือลิงก์: เห็นเฉพาะเล่มที่ติ๊กไว้ ดูอย่างเดียว ส่งหัวใจได้', 'Relatives the parents give a PIN or link: only the books ticked for them, read-only, hearts allowed'],
+  ['ผู้ช่วย (Anthropic) เฉพาะเมื่อพ่อแม่กดขอ เช่น นิทาน สรุปวัน แปลภาษา: ส่งเฉพาะข้อความ ไม่ส่งรูป ไม่เก็บไว้ฝึกโมเดล', 'The helper (Anthropic), only when a parent presses for it — a story, the day in brief, a translation: words only, never photos, not used to train models'],
+  ['“ให้ผู้ช่วยดูรูปวันนี้” เฉพาะเมื่อเปิดใช้และกดเอง: ส่งรูปย่อของวันนั้นครั้งเดียว ไม่เก็บ', '“Look at today’s photos”, only when switched on and pressed: that day’s small thumbnails, once, not stored'],
+  ['วาดตัวการ์ตูนจากรูปลูก (OpenAI) เฉพาะเมื่อพ่อแม่อัปโหลด: รูปถูกย่อ ส่งครั้งเดียว และไม่เก็บที่ไหน', 'Drawing a character from a child’s photo (OpenAI), only when a parent uploads one: shrunk, sent once, stored nowhere'],
+  ['พยากรณ์อากาศ (Open-Meteo): ส่งเฉพาะพิกัดระดับเมืองของที่พักในแผน ไม่ใช่ตำแหน่งโทรศัพท์', 'The weather forecast (Open-Meteo): only the town-level location of the planned stay, never the phone’s position'],
+  ['การเตือน: ผ่านบริการแจ้งเตือนของเครื่อง (Apple, Google) ส่งเฉพาะข้อความจากแผน ไม่มีรูปหรือชื่อ', 'Reminders: through the phone’s own push service (Apple, Google), carrying the plan’s words only, no photos or names']]))}
+${sec('คุกกี้', 'Cookies', `<p>${L('ใช้คุกกี้ 1 ตัวสำหรับจำว่าเข้าสู่ระบบแล้ว ไม่มีคุกกี้โฆษณาหรือวิเคราะห์ และไม่มีสคริปต์ของบุคคลที่สาม', 'One cookie remembers that you are signed in. There are no advertising or analytics cookies and no third-party scripts.')}</p>`)}
+${sec('สิทธิ์ของคุณ', 'Your rights', `<ul class="pvl">
+<li>${L('ดูและแก้ไข: ทุกอย่างแก้ได้ในแอป', 'See and correct: everything can be edited in the app')}</li>
+<li>${L('ขอสำเนา: ปุ่ม “สำเนา” บนชั้นหนังสือดาวน์โหลดทุกอย่างเป็นไฟล์เดียว (ข้อมูล + รูป)', 'Take a copy: the “backup” button on the shelf downloads everything as one file (data + photos)')}${ed ? ` · <a href="/api/export.zip" download>${L('ดาวน์โหลดตอนนี้', 'Download now')}</a>` : ''}</li>
+<li>${L('ถอนความยินยอม: ปิดการเตือนได้ที่หน้า “วันนี้” · ลบญาติออกได้ที่ เมนู › ญาติ', 'Withdraw: turn reminders off from Today · remove a relatives’ group under Menu › Relatives')}</li>
+<li>${L('ลบ: ลบรูป ข้อความ หรือทั้งเล่มได้ในแอป หรือลบทุกอย่างด้วยปุ่มด้านล่าง', 'Erase: delete a photo, a note or a whole book in the app, or everything with the button below')}</li>
+<li>${L('ร้องเรียน: ติดต่อผู้ดูแลระบบข้างต้น หรือสำนักงานคณะกรรมการคุ้มครองข้อมูลส่วนบุคคล (สคส.)', 'Complain: write to the operator above, or to Thailand’s Personal Data Protection Committee (PDPC)')}</li></ul>`)}
+${erase}
+<p class="label">${L('ฉบับ 7 พฤศจิกายน 2569', 'Version 7 November 2026')}${S ? '' : ` · <a href="#/">${L('กลับไปหน้าเข้าสู่ระบบ', 'Back to sign-in')}</a>`}</p></article>`;
 }
 
 /* ---------- a book from a Trip Operations Manual PDF (#/import, editors) ----------

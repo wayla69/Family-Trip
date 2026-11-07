@@ -72,11 +72,11 @@ function kidsFor(kids, at) {
     pairs: kids.length ? kids.map((k) => `${k.name_en} (${k.name_th})`).join(' and ') : 'The children',
   };
 }
-// the profile as the app shows it: stored values first, else built from the children ("MM Memory" = the kids' initials)
+// the profile as the app shows it: stored values first, else the product name LifeBook (the kicker names the children)
 function profile(stored, kids) {
   const p = stored && typeof stored === 'object' ? stored : {};
   const ini = kids.map((k) => (k.name_en || '?')[0].toUpperCase()).join('');
-  const app = { th: (p.app && p.app.th) || (ini ? `${ini} Memory` : 'Memory Bookshelf'), en: (p.app && p.app.en) || (ini ? `${ini} Memory` : 'Memory Bookshelf') };
+  const app = { th: (p.app && p.app.th) || 'LifeBook', en: (p.app && p.app.en) || 'LifeBook' };
   const kicker = { th: (p.kicker && p.kicker.th) || (kids.length ? `ของ${names(kids, 'th')}` : 'สมุดความทรงจำของครอบครัว'), en: (p.kicker && p.kicker.en) || (kids.length ? kids.map((k) => k.name_en).join(' & ') : 'Our family memory books') };
   return { app, kicker, custom: { app: p.app || null, kicker: p.kicker || null } };   // custom = what the parents typed (the form edits that, the rest is built)
 }
