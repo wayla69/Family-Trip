@@ -1140,7 +1140,9 @@ section.pg.cover{display:flex}.cv{position:relative;flex:1;min-height:1000px;pad
 .cvart.strip{display:flex;gap:8px;flex-wrap:wrap}.cvart.strip .art{width:52px;height:52px;background:#fff;border-radius:50%}.cvart.strip .art.emo{display:grid;place-items:center;font-size:28px}
 .tpo .rpe{font-size:20px;line-height:1}
 section.pg .facts{margin:6px 0 16px}
-section.pg .journey{margin:0 0 14px}
+section.pg .journey{margin:0 0 14px;padding:10px 0 6px;flex-wrap:wrap;row-gap:12px;overflow:visible}section.pg .journey>*::after{display:none}
+.pg.numbers .journey:has(>:nth-child(10)) .art{width:40px;height:40px}.pg.numbers .journey:has(>:nth-child(10))>*{width:52px}   /* a long trip's strip in two short rows */
+.pg.numbers:has(.journey>:nth-child(10)) .pmap{max-width:420px}
 .pmap{max-width:560px;margin:0 auto 14px}.pmap .walkers img{height:60px}.pmap .walkers img.mika{height:46px}
 section.pg h4{font-size:14px;color:var(--accent);margin:10px 0 6px}
 .pstays{margin:0;padding-left:20px;font-size:14px}.pstays li{padding:3px 0}
@@ -1161,7 +1163,7 @@ section.pg.back{display:grid;place-items:center;text-align:center}.bk h2{font-fa
 @media print{
   body.printbook{background:#fff}
   .pbook{display:none}
-  section.pg{width:auto;min-height:0;margin:0;box-shadow:none;padding:0;break-after:page;overflow:visible}
+  section.pg{width:auto;min-height:0;margin:0;box-shadow:none;padding:0;break-after:page;overflow:visible;overflow-x:clip}   /* never sideways: one row wider than the sheet makes Chromium shrink the whole PDF (the 16-day book printed at 65%) */
   section.pg:last-child{break-after:auto}
   .cv{min-height:266mm}   /* the cover fills its sheet (A4 less the 14 mm margins) */
   @page{size:A4;margin:14mm 12mm}
@@ -2400,15 +2402,15 @@ body.printbook a.maplink,body.printbook a.maplink:visited{text-decoration:none;c
 .kbook .cvart figure:nth-child(6n+6) .art,.kbook .journey span:nth-child(6n+6) .art,.kbook .dstamp:nth-child(6n+6) .art{--kc:var(--k6)}
 /* each day on the cover: the picture ringed in its colour, then a date ticket in the same colour (the day's number in a white
    circle + the date, big and bold), then the day's name — set apart from the ring, never touching it (owner's review, Nov 2026) */
-.kbook .cv.art .cvart{gap:20px 18px;padding:22px;align-self:stretch}.kbook .cv.art .cvart.c4{gap:16px 12px;padding:18px}
+.kbook .cv.art .cvart{gap:20px 18px;padding:22px;align-self:stretch}.kbook .cv.art .cvart.c4{gap:12px 12px;padding:16px}
 .kbook .cv.art .cvart figure{gap:0}
 .kbook .cv.art .cvart figure .art{box-shadow:0 0 0 5px #fff,0 0 0 10px var(--kc);margin:10px 0 18px;max-width:150px}
-.kbook .cv.art .cvart.c4 figure .art{box-shadow:0 0 0 4px #fff,0 0 0 8px var(--kc);margin:8px 0 14px;max-width:108px}
+.kbook .cv.art .cvart.c4 figure .art{box-shadow:0 0 0 4px #fff,0 0 0 8px var(--kc);margin:6px 0 12px;max-width:100px}
 .kbook .cvd{display:inline-flex;align-items:center;gap:8px;background:var(--kc);color:#fff;border-radius:999px;padding:4px 14px 4px 4px;box-shadow:0 3px 0 color-mix(in srgb,var(--kc) 60%,var(--kink));font-variant-numeric:tabular-nums;white-space:nowrap}
 .kbook .cvd i{font-style:normal;display:grid;place-items:center;width:34px;height:34px;border-radius:50%;background:#fff;color:color-mix(in srgb,var(--kc) 80%,var(--kink));font-size:20px;font-weight:800;line-height:1}
 .kbook .cv.art .cvart .cvd b{display:flex;flex-direction:column;align-items:flex-start;color:#fff;font-size:17px;font-weight:800;line-height:1.1}
 .kbook .cvd b em{font-style:normal;font-size:10.5px;font-weight:700;letter-spacing:.06em;opacity:.9}
-.kbook .cv.art .cvart small{margin-top:9px;font-size:13.5px;font-weight:600;color:var(--kink);line-height:1.3;display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden}.kbook .cv.art .cvart.c4 small{display:none}
+.kbook .cv.art .cvart small{margin-top:9px;font-size:13.5px;font-weight:600;color:var(--kink);line-height:1.3;display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden}.kbook .cv.art .cvart.c4 small{margin-top:6px;font-size:12px;-webkit-line-clamp:1;max-width:100%}
 .kbook .cv.art .cvart.c4 .cvd{gap:6px;padding:3px 11px 3px 3px}.kbook .cv.art .cvart.c4 .cvd i{width:28px;height:28px;font-size:16px}.kbook .cv.art .cvart.c4 .cvd b{font-size:14.5px}
 .kbook.age-little .cv.art .cvart .cvd b{font-size:19px}.kbook.age-little .cv.art .cvart .cvd i{width:38px;height:38px;font-size:22px}
 .kbook.age-big .cvd{box-shadow:none}
@@ -2463,7 +2465,8 @@ body.printbook a.maplink,body.printbook a.maplink:visited{text-decoration:none;c
 .kbook .myact.journal{background:#fff}.kbook .myact.journal .wlines i{height:34px}
 .kbook .top3{padding-left:26px;margin:0}.kbook .top3 li{font-weight:800;color:var(--ph)}
 /* the end */
-.kbook .bk h2{font-family:var(--ui);font-weight:800;font-size:48px;background:linear-gradient(90deg,var(--k5),var(--k6),var(--k2),var(--k3),var(--k1));-webkit-background-clip:text;background-clip:text;color:transparent}
+.kbook .bk h2{font-family:var(--ui);font-weight:800;font-size:48px;color:var(--k6)}
+.kbook .bk h2::after{content:"";display:block;width:120px;height:10px;border-radius:5px;margin:10px auto 0;background:linear-gradient(90deg,var(--k5),var(--k2),var(--k3),var(--k1))}   /* text-clipped gradients print with a box around them */
 /* little ones (1–3): big pictures, big type, few words on a line */
 .kbook.age-little{--kfs:18px}
 .kbook.age-little .pghd h2{font-size:38px}.kbook.age-little .pghd .pge{width:70px;height:70px;font-size:36px}
@@ -2484,6 +2487,17 @@ body.printbook a.maplink,body.printbook a.maplink:visited{text-decoration:none;c
 .kbook.age-big .dayp .mosaic>button{transform:none}
 @media (max-width:600px){.kbook .pghd{max-width:none}.kbook .myhero{flex-wrap:wrap}.kbook .drawbox{height:260px}.kbook .myact.hand .drawbox{height:320px}.kbook.age-big .qgrid{columns:1}}
 .kbook .journey .art,.kbook .dstamp .art{margin-bottom:8px}   /* the coloured ring never touches the day number under it */
+/* the passport's stamps across the sheet: alone they fill the page (3 or 4 a row, big), with the rest of the passport a row of six */
+section.pg .dstamps.pst{grid-template-columns:repeat(6,1fr);gap:14px 8px;margin:4px 0 18px}
+section.pg .dstamps.pst.c3{grid-template-columns:repeat(3,1fr)}section.pg .dstamps.pst.c4{grid-template-columns:repeat(4,1fr)}
+section.pg.ppfull{display:flex;flex-direction:column}section.pg.ppfull .dstamps.pst{flex:1;align-content:space-evenly;gap:22px 14px;margin:6px 0 0}
+section.pg .dstamps.pst .dstamp{gap:2px}
+section.pg .dstamps.pst .art{width:100%;height:auto;aspect-ratio:1;max-width:84px}
+section.pg .dstamps.pst.c3 .art{max-width:150px}section.pg .dstamps.pst.c3.r2 .art{max-width:176px}section.pg .dstamps.pst.c4 .art{max-width:118px}
+section.pg .dstamps.pst b{font-size:12px;font-weight:800;color:var(--kc,var(--accent));line-height:1.2}section.pg .dstamps.pst .dstamp:not(.on) b{color:var(--muted)}
+section.pg .dstamps.pst.c3 b,section.pg .dstamps.pst.c4 b{font-size:16px}section.pg .dstamps.pst.c3 small,section.pg .dstamps.pst.c4 small{font-size:12.5px}
+.kbook .dstamps.pst .dstamp .art{opacity:.3}.kbook .dstamps.pst .dstamp.on .art{opacity:1}
+.kbook .dstamps.pst .dstamp:nth-child(6n+2){--kc:var(--k2)}.kbook .dstamps.pst .dstamp:nth-child(6n+3){--kc:var(--k3)}.kbook .dstamps.pst .dstamp:nth-child(6n+4){--kc:var(--k4)}.kbook .dstamps.pst .dstamp:nth-child(6n+5){--kc:var(--k5)}.kbook .dstamps.pst .dstamp:nth-child(6n+6){--kc:var(--k6)}
 /* the printed book's look (book page, editors): one card — a heading with the book icon, the cover as two little paper
    previews, the style by age as three cards with the app's drawn icons (owner's review, Nov 2026) */
 .printset{margin:30px 0 4px;padding:16px;border:1px solid var(--line);border-radius:calc(var(--r) + 6px);background:var(--card);max-width:620px}
@@ -2503,3 +2517,14 @@ body.printbook a.maplink,body.printbook a.maplink:visited{text-decoration:none;c
 .mcvg .art{width:100%;height:auto;aspect-ratio:1;border-radius:50%;background:#fff}.mcvg .art.emo{display:grid;place-items:center;font-size:9px}
 .mcv-p img{display:block;width:100%;height:68%;object-fit:cover}.mcv-p>i{position:absolute;left:0;right:0;bottom:0;height:32%;background:var(--accent-deep,var(--accent))}
 @media (max-width:360px){.printset{padding:12px}.printset .tpk.agek{gap:6px}.psi{width:44px;height:44px}}
+/* the memory book's day: one quiet line for the bed and the temperature, the day told in its headlines */
+.day .hd .dmem{display:flex;flex-wrap:wrap;gap:4px 14px;margin:4px 0 0;font-size:13.5px;color:var(--muted)}.day .hd .dmem span{white-space:nowrap}
+.route.dstory ol{list-style:none;padding:0;margin:4px 0 10px}.route.dstory li{padding:4px 0;border:0}.route.dstory li::before{display:none}
+.route.dstory li b{font-weight:600;font-size:13.5px;line-height:1.35}.route.dstory .went li small{margin-left:6px;color:var(--accent);font-weight:700}
+/* where we slept: a card per stay — the arrival day's picture, the town big, the place's name, the nights */
+.beds{display:grid;grid-template-columns:repeat(auto-fill,minmax(min(100%,150px),1fr));gap:10px;margin:8px 0 0}
+.bed{display:flex;align-items:center;gap:10px;padding:8px 10px;border-radius:16px;background:color-mix(in srgb,var(--kc,var(--accent)) 12%,#fff);break-inside:avoid}
+.bed .art{flex:none;width:46px;height:46px;border-radius:50%;background:#fff;box-shadow:0 0 0 3px var(--kc,var(--accent))}.bed .art.emo{display:grid;place-items:center;font-size:24px}
+.bed b{display:block;font-size:14.5px;font-weight:800;line-height:1.2;color:var(--kink,var(--ink))}.bed small{display:block;font-size:11.5px;color:var(--muted);line-height:1.25;margin-top:1px}
+.bed .nights{display:inline-block;margin-top:4px;font-size:11.5px;font-weight:700;color:color-mix(in srgb,var(--kc,var(--accent)) 75%,#000)}
+.pg.numbers .bedsh{margin:14px 0 4px}

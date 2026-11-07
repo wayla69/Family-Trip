@@ -1043,6 +1043,14 @@ const T = 'hk-macau-2026';
     const pgs = await page.locator('.pg').evaluateAll((els) => els.map((e) => e.className.replace('pg ', '').split(' ')[0]));
     ok(pgs[0] === 'cover' && pgs.includes('numbers') && pgs.includes('contents') && pgs.filter((c) => c === 'ppp').length === 2 && pgs[pgs.length - 1] === 'back'
       && await page.locator('.pg.ppp .dstamp').count() === 32 && await page.locator('.pg.cover .cvart .art').count() >= 6 && !s.errs.length, `Australia memory book: ${pgs.join(' · ')}`);
+    // owner's review, Nov 2026: the 16-day strip ran wider than the sheet and Chromium printed the whole book at 65%; and the book
+    // never pastes the app: no review scores, booking sites or room types, no plan tips in a day's header
+    const vpP = page.viewportSize(); await page.setViewportSize({ width: 1000, height: 1400 }); await page.emulateMedia({ media: 'print' });   // server/pdf.js prints at 1000 px
+    const wide = await page.evaluate(() => [...document.querySelectorAll('.pg, .pg .journey, .pg .dstamps')].filter((e) => e.scrollWidth > e.clientWidth + 1).map((e) => e.className));
+    const txt = await page.locator('.kbook').textContent();
+    await page.emulateMedia({ media: 'screen' }); await page.setViewportSize(vpP);
+    ok(!wide.length && !/★|รีวิว|reviews|Airbnb|2-Bedroom|ห้องนอน/.test(txt) && await page.locator('.pg.numbers .beds .bed').count() === 8 && await page.locator('.pg.ppp.ppfull .dstamps.c4').count() === 2,
+      `printed book: nothing wider than the sheet (${wide.join(', ')}), where we slept as 8 cards with no scores, the stamps fill their page`);
     const pr = await page.request.get(`${BASE}/api/b/pdf/big-hop-2027`, { timeout: 180000 }), pb = await pr.body();
     const pages = (pb.toString('latin1').match(/\/Type\s*\/Page[^s]/g) || []).length;
     ok(pr.status() === 200 && pb.subarray(0, 5).toString('latin1') === '%PDF-' && pages >= pgs.length, `Australia server PDF: ${Math.round(pb.length / 1024)} KB, ${pages} A4 pages for ${pgs.length} book pages`);
