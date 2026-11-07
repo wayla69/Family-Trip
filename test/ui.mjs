@@ -350,10 +350,10 @@ const T = 'hk-macau-2026';
   const tlRows = await page.$$eval('.tl.plan.brief li div', (els) => els.map((e) => e.textContent));
   ok(tlRows.length > 0 && tlRows.every((x) => !x.endsWith('…')), 'today page: every timeline step is shown whole, never cut with …');
   { const tl = '.tl.plan.brief > li:has(.tsub)';
-    const sum = await page.$eval(tl, (li) => [li.querySelector('.tm').innerText.trim(), getComputedStyle(li.querySelector('.tsub')).display, li.querySelector('[aria-expanded]').getAttribute('aria-expanded')]);
+    const sum = await page.$eval(tl, (li) => [[...li.querySelector('.tmt').childNodes].map((n) => (n.alt || n.textContent)).join('').trim(), getComputedStyle(li.querySelector('.tsub')).display, li.querySelector('[aria-expanded]').getAttribute('aria-expanded')]);
     await page.click(`${tl} .tm`);
     const op = await page.$eval(tl, (li) => [getComputedStyle(li.querySelector('.tsub')).display, li.querySelector('.tsub li').innerText.trim(), li.querySelector('[aria-expanded]').getAttribute('aria-expanded')]);
-    ok(sum[0].length > 0 && !sum[0].includes(' · ') && sum[1] === 'none' && sum[2] === 'false' && op[0] === 'block' && op[1].length > 0 && op[2] === 'true', `today page: a timeline step reads as a short summary and a tap opens its details below (${sum[0]} → ${op[1]})`);
+    ok(/^\p{Extended_Pictographic}/u.test(sum[0]) && sum[0].split(' ').length <= 8 && !sum[0].includes(' · ') && sum[1] === 'none' && sum[2] === 'false' && op[0] === 'block' && op[1].length > 0 && op[2] === 'true', `today page: a timeline step reads as a short summary and a tap opens its details below (${sum[0]} → ${op[1]})`);
     await page.click(`${tl} .tm`); }
   const pickDd = await page.$$eval('.dsheet > div:not(.meal) > dd', (els) => els.map((e) => e.textContent));
   const seedPick = await page.evaluate(() => T(S.trips.find((x) => x.id === 'hk-macau-2026').days[1].plan.pick));

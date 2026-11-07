@@ -83,7 +83,7 @@ ok(['families', 'children', 'trips', 'trip_days', 'firsts_catalog', 'entries', '
     const log = execFileSync(process.execPath, ['scripts/plan-to-seed.mjs', 'docs/handoff/plan.sample.json', `--out=${out}`], { encoding: 'utf8' });
     const seed = JSON.parse(fs.readFileSync(out, 'utf8'));
     const d0 = seed.days[0], keys = seed.days.flatMap((d) => d.planned.map((s) => s.key));
-    ok(seed.format === 2 && seed.days.length === 3 && seed.days[2].date === '2028-03-12' && d0.index === 0 && d0.planned[1].key === 'ueno-park' && d0.planned[1].q === 'Ueno Park, Tokyo' && d0.planned[0].key === 'hnd' && new Set(keys).size === keys.length, 'plan → seed: dated days, stop keys derived and unique, default Maps query');
+    ok(seed.days[0].plan[0].h && seed.days[0].plan[0].h.en === '🛬 Hello Tokyo!' && seed.format === 2 && seed.days.length === 3 && seed.days[2].date === '2028-03-12' && d0.index === 0 && d0.planned[1].key === 'ueno-park' && d0.planned[1].q === 'Ueno Park, Tokyo' && d0.planned[0].key === 'hnd' && new Set(keys).size === keys.length, 'plan → seed: dated days, stop keys derived and unique, default Maps query');
     ok(seed.theme.accent === '#B8456B' && seed.theme.art === '/art/sakura-hop-2028/day-{n}.svg' && seed.children.length === 2 && seed.children[0].age_at_trip.en === '4' && seed.days[2].sleep.en === 'Home' && seed.days[1].stay && seed.info.stays.length === 1 && seed.info.stays[0].n === 2 && seed.info.restaurants.groups.length === 1, 'plan → seed: theme tokens, ages, Home day, stays built from the stay cards, restaurants');
     const pp = seed.passport;
     ok(pp.days.length === 3 && pp.days[0].spot.length === 4 && pp.days[0].stamp === 'BKK → HND' && pp.countdown.doors.length === 14 && pp.countdown.doors[0].e === '🌸' && pp.countdown.doors[13].e === '🚀' && pp.lists.map((l) => l.key).join() === 'words,food,master' && pp.lists[2].groups[0].items.length === 7 && pp.map.stops.length === 3 && pp.pins.items.length === 3 && /privacy: clean/.test(log) && /TODO left/.test(log), 'plan → seed: missions, 14 doors (plan\'s first, generic rest), words/food/master lists, map, pins, report');
@@ -101,6 +101,8 @@ ok(['families', 'children', 'trips', 'trip_days', 'firsts_catalog', 'entries', '
     ok(r2.status === 1 && /days: 2 given, 3 dates/.test(r2.stdout), 'a plan with fewer days than dates is not valid');
     for (const f of fs.readdirSync(path.resolve('server/seeds'))) {
       const c = spawnSync(process.execPath, ['scripts/plan-to-seed.mjs', '--check', path.resolve('server/seeds', f)], { encoding: 'utf8' });
+      const rows = JSON.parse(fs.readFileSync(path.resolve('server/seeds', f), 'utf8')).days.flatMap((d) => d.plan || []), noH = rows.filter((r) => !(r.h && r.h.th && r.h.en && /^\p{Extended_Pictographic}/u.test(r.h.en) && !r.h.en.includes(' · ')));
+      ok(rows.length > 0 && noH.length === 0, `${f}: every timeline step has its own short headline h (emoji first) for the Today page${noH.length ? ' — missing: ' + noH.slice(0, 3).map((r) => r.en).join(' | ') : ''}`);
       ok(c.status === 0 && /privacy: clean/.test(c.stdout) && !/ERROR/.test(c.stdout), `${f} passes plan-to-seed --check (privacy, unique stop keys)` + (c.status ? ` — ${c.stdout.split('\n').filter((l) => /ERROR|PRIVACY|    /.test(l)).join(' | ')}` : ''));
     }
   } finally { fs.rmSync(dir, { recursive: true, force: true }); }
