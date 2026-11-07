@@ -1016,6 +1016,21 @@ const trLine = (e) => (e && e.tr ? `<span class="tr" lang="${/[\u0E00-\u0E7F]/.t
 function quoteCall(e, pick) {
   return `<div class="call ${pick ? 'pick' : 'info'}"><div class="who">${kidBadge(e.child)}${esc(kidName(e.child))}${e.pending ? ' <span class="tag">⏳</span>' : ''}</div>${pick ? `<span class="lbl">${L('คำพูดที่ชอบ', 'Favourite words')}</span>` : ''}<q>${emoIn(esc(e.text))}</q>${trLine(e)}</div>`;
 }
+// the memory book's day, said short (owner's review, Nov 2026: "สรุปให้ดี สั้นๆ กระชับ ไม่ใช่ลอกมาลง"): the header keeps where we slept and
+// the temperature in one line — never the plan's packing tips, sunset or forecast notes; the side box tells the day in the plan's own
+// headlines (one emoji + a few words each), then the places we really checked in at, with short names (no bay numbers, no brackets)
+const shortName = (s) => String(s || '').replace(/\s*\([^)]*\)/g, '').split(/\s+[—·]\s+|:\s|,\s/)[0].trim();
+function dayMem(d) {
+  const bed = shortName(T(d.sleep)), tmp = (String(T(d.wx) || '').match(/-?\d+\s*[–-]\s*-?\d+\s*°C/) || [])[0];
+  const bits = [bed && ['🛏️', bed], tmp && ['🌡️', tmp.replace(/\s+/g, '')]].filter(Boolean);
+  return bits.length ? `<p class="dmem" style="grid-column:2/3">${bits.map(([e, x]) => `<span>${emoIn(e)} ${esc(x)}</span>`).join('')}</p>` : '';
+}
+function dayStory(t, d, route, visited) {
+  const seen = new Set(), hl = ((d.plan || {}).plan || []).map((r) => r && r.h && T(r.h)).filter((h) => h && !seen.has(h) && seen.add(h));
+  const went = route.filter((p) => visited.has(p.key)).map((p) => shortName(T(p))).filter((n, k, a) => n && a.indexOf(n) === k);
+  if (!hl.length && !went.length) return '<div></div>';
+  return `<aside class="route dstory">${hl.length ? `<span class="label">${L('วันนี้ของเรา', 'Our day')}</span><ol>${hl.map((h) => `<li><b>${emoIn(esc(h))}</b></li>`).join('')}</ol>` : ''}${went.length ? `<span class="label">${L('ไปมาแล้ว', 'Where we went')}</span><ol class="went">${went.map((n) => `<li class="done"><b>📍 ${esc(n)}</b><small>✓</small></li>`).join('')}</ol>` : ''}</aside>`;
+}
 function dayPage(t, i) {
   const d = t.days[i], es = entriesOf(t.id, i), ph = mediaOf(t.id, i), pl = placesOf(t.id, i);
   const moods = es.filter((e) => e.kind === 'mood' && e.mood);
@@ -1026,7 +1041,7 @@ function dayPage(t, i) {
   const route = planned.concat(extra.map((p) => ({ key: p.key, en: p.name.en, th: p.name.th })));
   const timeline = [
     ...es.filter((e) => e.kind === 'quote').map((e) => ({ at: e.at, h: quoteCall(e, e.highlight) })),
-    ...pl.map((p) => ({ at: p.at, h: `<span>${p.kind === 'food' ? '🍽️' : '📍'} ${esc(T(p.name))}</span>` })),
+    ...pl.map((p) => ({ at: p.at, h: `<span>${p.kind === 'food' ? '🍽️' : '📍'} ${esc(shortName(T(p.name)))}</span>` })),
     ...es.filter((e) => e.kind === 'first').map((e) => { const f = firstLabel(t, e.first_key); return { at: e.at, h: `<span>${esc(f.e)} ${L('ครั้งแรก', 'First')}: ${esc(e.first_key === 'custom' ? e.text : f.t)} · ${esc(kidName(e.child))}</span>` }; }),
   ].sort((a, b) => a.at - b.at);
   const food = pl.filter((p) => p.kind === 'food'), firsts = es.filter((e) => e.kind === 'first'), hs = heartsOf(t.id, i);
@@ -1035,9 +1050,9 @@ function dayPage(t, i) {
 <div class="dl">${L('วันที่', 'Day')} ${i + 1} · ${esc(fmtDay(d.date))}</div>
 <div class="moods">${moods.map((m) => `<span class="pill">${kidFace(m.child)} ${emo(m.mood)}</span>`).join('')}${hs.map((h) => `<span class="pill heart" title="${esc(h.text)}">${emo(h.emoji)} ${esc(h.from)}</span>`).join('')}</div>
 <h3>${esc(T(d.title))}</h3>${artImg(t, i, 'hdart')}
-${dayFacts(d)}${wxLine(t, i) ? `<div class="meta wxlive" style="grid-column:2/3">${emoIn(esc(wxLine(t, i)))}</div>` : ''}</div>
+${dayMem(d)}</div>
 <div class="body">
-${route.length ? `<aside class="route"><span class="label">${L('ที่ไปวันนี้', 'Getting around')}</span><ol>${route.map((p) => `<li class="${visited.has(p.key) ? 'done' : ''}"><b>${placeA(t, p)}</b>${visited.has(p.key) ? `<small>${L('ไปแล้ว', 'visited')} ✓</small>` : ''}</li>`).join('')}</ol></aside>` : '<div></div>'}
+${dayStory(t, d, route, visited)}
 <div>
 ${sum ? `<p class="daysum">${emoIn(esc(sum.text))}${trLine(sum)}</p>` : ''}
 ${mosaicByPlace(t, ph)}
@@ -1047,7 +1062,7 @@ ${note ? `<div class="call calm"><span class="lbl">${L('โน้ตพ่อแ
 ${story ? `<div class="call pick" style="white-space:pre-line"><span class="lbl">${L('นิทานก่อนนอน', 'Bedtime story')}</span>${bedBtn(story)}${esc(story.text)}</div>` : ''}
 </div></div>
 ${food.length || fav || firsts.length ? `<div class="foot3">
-${food.length ? `<div><h4>${L('กินอะไร', 'Where we ate')}</h4><ul>${food.map((p) => `<li>${esc(T(p.name))}</li>`).join('')}</ul></div>` : ''}
+${food.length ? `<div><h4>${L('กินอะไร', 'Where we ate')}</h4><ul>${food.map((p) => `<li>${esc(shortName(T(p.name)))}</li>`).join('')}</ul></div>` : ''}
 ${fav ? `<div><h4>${L('ของโปรดวันนี้', 'Favourite today')}</h4><p>${emoIn(esc(fav.text))}${trLine(fav)}</p></div>` : ''}
 ${firsts.length ? `<div><h4>${L('ครั้งแรกวันนี้', 'First today')}</h4><ul>${firsts.map((e) => { const f = firstLabel(t, e.first_key); return `<li>${esc(f.e)} ${esc(e.first_key === 'custom' ? e.text : f.t)} — ${esc(kidName(e.child))}${e.first_key === 'custom' ? trLine(e) : ''}</li>`; }).join('')}</ul></div>` : ''}
 </div>` : ''}
@@ -1145,6 +1160,14 @@ function printSet(t) {
    · firsts · in their own words · a passport spread per child (stamps, badges, Explorer ID, colourings, drawings, stickers,
    certificate) · hearts from the family · the story of the trip · notes for the next trip · back cover. Nothing private
    beyond what the book already holds (no bookings, no passport data). */
+// where we slept, for the printed book (owner, Nov 2026: "ทำให้น่าสนใจ ไม่ใช่ตัดแปะจากใน app" — never a review score, a room type
+// or a booking site): a card per stay with the picture of the day we arrived, the town in big letters, the place's short name and the nights
+function bedsHtml(t, stays) {
+  const ss = sleepStops(t); if (!ss.length) return '';
+  const base = (k, s) => { const n = shortName(s.name).toLowerCase(); const m = stays.find((x) => shortName(T(x.prop)).toLowerCase().startsWith(n.slice(0, 12))) || (stays.length === ss.length ? stays[k] : null); return m ? shortName(T(m.base)) : ''; };
+  return `<h4 class="bedsh">🛏️ ${L('บ้านพักของเรา', 'Where we slept')}</h4><div class="beds">${ss.map((s, k) => { const town = base(k, s), nm = shortName(s.name).replace(/\s*\((?:airbnb|booking[^)]*)\)/i, ''), n = s.days.length;
+    return `<div class="bed" style="--kc:var(--k${(k % 6) + 1})">${artImg(t, s.art)}<div><b>${esc(town || nm)}</b>${town ? `<small>${esc(nm)}</small>` : ''}<span class="nights">🌙 ${L(`${n} คืน`, `${n} night${n > 1 ? 's' : ''}`)}</span></div></div>`; }).join('')}</div>`;
+}
 function viewPrint(t) {
   const kids = (t.theme.children || []).map((k) => k.slug).filter((k) => children().some((c) => c.slug === k));
   const st = stats(t), days = t.days.map((_, i) => i).filter((i) => dayHasContent(t, i));
@@ -1179,8 +1202,7 @@ function viewPrint(t) {
 <div class="facts">${facts.map(([l, v]) => `<div class="fact"><span class="label">${l}</span><b>${v}</b></div>`).join('')}</div>
 <nav class="journey">${t.days.map((d, i) => `<span class="${dayStamped(t, i) ? 'on' : ''}">${artImg(t, i)}<b>${String(i + 1).padStart(2, '0')}</b><small>${esc(fmtDay(d.date, { day: 'numeric', month: 'short' }))}</small></span>`).join('')}</nav>
 ${(t.passport || {}).map && typeof mapHtml === 'function' ? `<div class="pmap">${mapHtml(t, t.days.length - 1, kids)}</div>` : ''}
-${stays.length ? `<h4>🛏️ ${L('เรานอนที่ไหนบ้าง', 'Where we slept')}</h4><ol class="pstays">${stays.map((s) => `<li><b>${esc(T(s.prop))}</b> <span class="label">${esc(T(s.base))} · ${esc(T(s.ci))} → ${esc(T(s.co))}</span></li>`).join('')}</ol>`
-    : sleepStops(t).length ? `<h4>🛏️ ${L('เรานอนที่ไหนบ้าง', 'Where we slept')}</h4><ol class="pstays">${sleepStops(t).map((s) => `<li><b>${esc(s.name)}</b> <span class="label">${L('คืนที่', 'Nights')} ${esc(s.label)}</span></li>`).join('')}</ol>` : ''}`);
+${bedsHtml(t, stays)}`);
   // 3 · contents
   const contents = pg('contents', `${head(L('สารบัญ', 'Contents'), L('วันของเรา', 'Our days'), '📚')}<ol class="toc">${t.days.map((d, i) => `<li class="${dayHasContent(t, i) ? 'has' : ''}">${artImg(t, i)}<b>${String(i + 1).padStart(2, '0')}</b><span>${esc(T(d.title))}<small>${esc(fmtDay(d.date))}${dayHasContent(t, i) ? '' : ' · ' + L('ไม่มีบันทึก', 'nothing recorded')}</small></span></li>`).join('')}</ol>`);
   // 4 · a page per recorded day (the book's own day page)
@@ -1193,9 +1215,13 @@ ${stays.length ? `<h4>🛏️ ${L('เรานอนที่ไหนบ้า
     const name = kidName(kid), pp = t.passport || {}, myFirsts = firsts.filter((e) => e.child === kid), mine = drawingsOf(t, kid), cert = pp.certificate, cl = (pp.lists || []).find((l) => l.certificate);
     const colours = t.days.map((_, i) => i).filter((i) => fieldVal(t, `colour.d${i}`, kid));
     const idRows = [['fav_animal', L('สัตว์ที่ชอบที่สุด', 'Favourite animal')], ['superpower', L('พลังพิเศษ', 'Superpower')], ['height_first', L('ส่วนสูงวันแรก', 'Height on day 1')], ['height_last', L('ส่วนสูงวันสุดท้าย', 'Height on the last day')]].filter(([k]) => fieldVal(t, k, kid));
-    return pg('ppp kid-' + kid, `${head(L('พาสปอร์ตนักผจญภัย', 'Adventure passport'), `${kidFace(kid)} ${esc(name)}`, '🛂')}
-<div class="ppcols"><div>
-<div class="dstamps">${t.days.map((d, i) => `<div class="dstamp${dayStamped(t, i) ? ' on' : ''}" style="--r:${((i * 37 + t.id.length * 11) % 17) - 8}deg">${artImg(t, i)}<small>${esc(((pp.days || [])[i] || {}).stamp || fmtDay(d.date, { day: 'numeric', month: 'short' }))}</small></div>`).join('')}</div>
+    // the stamps run across the whole sheet (owner's review, Nov 2026: "สแตมป์ทำให้เต็มหน้า"): alone on the page they fill it
+    // (3 a row up to 9 days, else 4); with the rest of the passport below they take a row of six
+    const more = idRows.length || myFirsts.length || colours.length || mine.length || cert && certEarned(t, kid) || (typeof stickerBoard === 'function' && stickersPlaced(t, kid).length);
+    const nd = t.days.length, sz = more ? 'sm' : nd <= 6 ? 'c3 r2' : nd <= 9 ? 'c3' : 'c4';
+    return pg('ppp kid-' + kid + (more ? '' : ' ppfull'), `${head(L('พาสปอร์ตนักผจญภัย', 'Adventure passport'), `${kidFace(kid)} ${esc(name)}`, '🛂')}
+<div class="dstamps pst ${sz}">${t.days.map((d, i) => `<div class="dstamp${dayStamped(t, i) ? ' on' : ''}" style="--r:${((i * 37 + t.id.length * 11) % 17) - 8}deg">${artImg(t, i)}<b>${L('วันที่', 'Day')} ${i + 1}</b><small>${esc(((pp.days || [])[i] || {}).stamp || fmtDay(d.date, { day: 'numeric', month: 'short' }))}</small></div>`).join('')}</div>
+<div class="ppcols"${more ? '' : ' hidden'}><div>
 ${idRows.length ? `<dl class="pid">${idRows.map(([k, l]) => `<div><dt>${l}</dt><dd>${esc(fieldVal(t, k, kid))}</dd></div>`).join('')}</dl>` : ''}
 ${myFirsts.length ? `<div class="badges sm">${myFirsts.map((e) => { const f = firstLabel(t, e.first_key); return `<div class="bdg"><span>${esc(e.first_key === 'custom' ? '⭐' : f.e)}</span><b>${esc(e.first_key === 'custom' ? e.text : f.t)}</b><small>${L('วันที่', 'Day')} ${e.day + 1}</small></div>`; }).join('')}</div>` : ''}
 </div><div>
