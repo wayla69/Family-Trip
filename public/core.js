@@ -151,6 +151,25 @@ function ensureWx(t) {
     if (j) { ls(k, WX[t.id]); if (j.days.some(Boolean)) safeRender(); }
   }).catch(() => { WX[t.id] = { ...(c || { days: [] }), at: Date.now() - 3600e3 + 600e3, pending: false }; });
 }
+/* ---------- the family's emoji library (table emoji, server/emoji.js; managed on #/emoji) ----------
+   S.emoji = [{id, ch, alt, th, en, src}]: each emoji the family has a picture for — the owner's bundled set to start with,
+   then whatever the parents add or delete. The data always keeps the Unicode emoji (moods, hearts, quotes, notes, captions),
+   so old entries, push texts and shares are unchanged; only the drawing changes. emo('💗') → the picture (else the emoji as
+   text); emoIn(html) swaps them inside already-escaped text (an emoji is never part of an entity) — never on attributes. */
+const emoRows = () => (S && Array.isArray(S.emoji) ? S.emoji : []);
+let emoMemo = { rows: null, map: {}, re: null };
+function emoMap() {
+  const rows = emoRows(); if (emoMemo.rows === rows) return emoMemo;
+  const map = {}; for (const e of rows) for (const c of [e.ch, ...(e.alt || [])]) if (c && !map[c.replace(/\uFE0F/g, '')]) map[c.replace(/\uFE0F/g, '')] = e;
+  const keys = Object.keys(map).sort((a, b) => b.length - a.length).map((k) => k.replace(/[.*+?^${}()|[\]\\]/g, '\\$&'));
+  emoMemo = { rows, map, re: keys.length ? new RegExp(`(${keys.join('|')})\\uFE0F?`, 'gu') : null };
+  return emoMemo;
+}
+const emoOf = (ch) => emoMap().map[String(ch || '').replace(/\uFE0F/g, '')];
+const emo = (ch, cls = '') => { const e = emoOf(ch); return e ? `<img class="emi${cls ? ' ' + cls : ''}" src="${esc(e.src)}" alt="${esc(ch)}" draggable="false">` : esc(ch); };
+const emoIn = (html) => { const m = emoMap(); return m.re ? String(html).replace(m.re, (x) => emo(x)) : String(html); };
+// the library button beside a text box: opens the grid of pictures, the one tapped goes in at the cursor
+const emoBtn = (id) => `<button type="button" class="emobtn" data-a="emopick" data-for="${esc(id)}" aria-label="${L('ใส่อีโมจิ', 'Add an emoji')}" title="${L('ใส่อีโมจิ', 'Add an emoji')}">${emo('😄')}</button>`;
 // WMO weather codes → a glyph and a word (the first row whose ceiling the code fits under)
 const WX_CODES = [[0, '☀️', 'แดดจัด', 'clear'], [2, '🌤️', 'มีเมฆบ้าง', 'partly cloudy'], [3, '☁️', 'เมฆมาก', 'overcast'], [48, '🌫️', 'หมอก', 'fog'], [57, '🌦️', 'ฝนปรอย', 'drizzle'],
   [67, '🌧️', 'ฝน', 'rain'], [77, '❄️', 'หิมะ', 'snow'], [82, '🌦️', 'ฝนซู่', 'showers'], [86, '🌨️', 'หิมะซู่', 'snow showers'], [99, '⛈️', 'พายุฝน', 'thunderstorms']];

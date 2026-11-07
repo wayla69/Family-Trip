@@ -11,6 +11,7 @@ const GUIDE = require('./guide');
 const IMPORT = require('./bookimport');
 const FAM = require('./family');
 const AVATAR = require('./avatar');
+const EMOJI = require('./emoji');
 const sharp = require('sharp');
 
 const FAMILY = process.env.FAMILY_ID || 'family';
@@ -20,7 +21,7 @@ const AUDIO_EXT = { 'audio/webm': 'webm', 'audio/mp4': 'm4a', 'audio/x-m4a': 'm4
 const SLUG_RE = /^[a-z0-9-]{2,60}$/;
 const KINDS = ['quote', 'mood', 'fav', 'note', 'first', 'story', 'tick', 'field', 'sum', 'talk', 'letter', 'mquiz', 'fore'];   // mquiz = the morning memory game (kid mode) · fore = the book's foreword   // sum = the day in a few lines (book + PDF) · talk = bedtime questions (kid mode)
 const TRIP_WIDE = ['story', 'tick', 'field', 'letter', 'fore'];   // kinds that may have no day (whole-trip story, passport checklists, Explorer ID, the letter to the kids)
-const HEART_EMOJI = ['💗', '🤗', '😘', '⭐', '👏', '🎈'];
+const HEART_EMOJI = ['💗', '😍', '👏', '🙏', '⭐', '🎉', '🤗', '😘', '🎈'];   // the picker's six (views.js HEARTS) + the older ones, still accepted
 const REVIEW_KINDS = ['stay', 'food', 'place'], KID_VERDICT = ['love', 'ok', 'no'];
 const HEARTS_PER_DAY = { sender: 40, family: 400 };   // the view link is shared: cap what one phone, and everyone together, can send
 const clip = (s, n) => String(s == null ? '' : s).slice(0, n);
@@ -107,6 +108,7 @@ function router({ pool, media, A, ai, hooks = {} }) {   // hooks.heart(h): set b
   const json = express.json({ limit: '200kb' });
   const W = [A.requireEditor, json];
   const q = (sql, args) => pool.query(sql, args).then((x) => x.rows);
+  EMOJI.routes(r, { q, pool, media, A, family: FAMILY });   // the family's emoji library (server/emoji.js)
   const trip = async (id) => (await q('SELECT id, date_from, date_to, (SELECT count(*)::int FROM trip_days WHERE trip_id=t.id) AS days FROM trips t WHERE id=$1 AND family_id=$2', [id, FAMILY]))[0];
   const dayOk = (t, d) => d === null || (Number.isInteger(d) && d >= 0 && d < t.days);
   const dayArg = (v) => (v === null || v === undefined || v === '' ? null : Number(v));
@@ -237,7 +239,7 @@ function router({ pool, media, A, ai, hooks = {} }) {   // hooks.heart(h): set b
   // ----- everything in one payload (cached by the app for offline use)
   r.get('/api/b/state', A.requireUser, async (req, res, next) => {
     try {
-      const [children, trips, days, firsts, entries, mediaRows, places, hearts, reviews, spendRows] = await Promise.all([
+      const [children, trips, days, firsts, entries, mediaRows, places, hearts, reviews, spendRows, emojiRows] = await Promise.all([
         q('SELECT slug, name_th, name_en, emoji, color, birth_ym, look, avatar, avatars FROM children WHERE family_id=$1 ORDER BY pos', [FAMILY]),
         q("SELECT id, slug, legacy_id, title, sub, to_char(date_from,'YYYY-MM-DD') date_from, to_char(date_to,'YYYY-MM-DD') date_to, timezone, theme, cover, stamp, moods, passport, info, source FROM trips WHERE family_id=$1 ORDER BY date_from", [FAMILY]),
         q("SELECT d.trip_id, d.day_index, to_char(d.date,'YYYY-MM-DD') date, d.title, d.sleep, d.emoji, d.gradient, d.planned, d.wx, d.plan, d.done_at FROM trip_days d JOIN trips t ON t.id=d.trip_id WHERE t.family_id=$1 ORDER BY d.trip_id, d.day_index", [FAMILY]),
@@ -248,6 +250,7 @@ function router({ pool, media, A, ai, hooks = {} }) {   // hooks.heart(h): set b
         q('SELECT id, trip_id, day_index, child, emoji, text, from_name, created_uid, created_at FROM hearts WHERE family_id=$1 ORDER BY created_at', [FAMILY]),
         q('SELECT id, trip_id, day_index, kind, key, name, rating, tags, kids, again, note, created_by, updated_at FROM reviews WHERE family_id=$1 ORDER BY updated_at', [FAMILY]),
         q('SELECT id, trip_id, day_index, amount, cur, cat, note, created_by, updated_at FROM spend WHERE family_id=$1 ORDER BY updated_at', [FAMILY]),
+        EMOJI.rows(q, FAMILY),
       ]);
       const ms = (d) => (d ? new Date(d).getTime() : null);
       // a relatives' group sees only its ticked books — everything tied to another book is left out here, at the source
@@ -273,6 +276,7 @@ function router({ pool, media, A, ai, hooks = {} }) {   // hooks.heart(h): set b
         places: places.map(({ trip_id, day_index, visited_at, ...p }) => ({ ...p, trip: trip_id, day: day_index, at: ms(visited_at) })),
         hearts: hearts.map(({ trip_id, day_index, created_uid, created_at, from_name, ...h }) => ({ ...h, trip: trip_id, day: day_index, from: from_name, at: ms(created_at), mine: created_uid === req.user.uid })),
         reviews: reviews.map(({ trip_id, day_index, updated_at, ...r }) => ({ ...r, trip: trip_id, day: day_index, at: ms(updated_at) })),
+        emoji: emojiRows.map(EMOJI.out),   // the family's emoji library: each emoji's picture (core.js emo)
         spend: spendRows.map(({ trip_id, day_index, updated_at, amount, ...s }) => ({ ...s, trip: trip_id, day: day_index, amount: Number(amount), at: ms(updated_at) })),
         features: { avatar: AVATAR.enabled(), story: !!(ai && ai.enabled()), photoAi: !!(ai && ai.photoEnabled && ai.photoEnabled()) },   // photoAi: the owner's PHOTO_AI switch (captions/tags from the pictures)
       }, true);

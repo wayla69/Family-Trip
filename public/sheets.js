@@ -617,7 +617,7 @@ const A = {
   offline(b) { if (!navigator.onLine) { toast(L('ต้องมีสัญญาณตอนเก็บ', 'Needs a connection to store the book')); return; } packOffline(trip(b.dataset.t), b.dataset.v === 'all'); },
   // hearts from the family
   heartto(b) { heartTo = b.dataset.v; $$('[data-a="heartto"]').forEach((x) => x.setAttribute('aria-pressed', x.dataset.v === heartTo)); },
-  heartemo(b) { heartEmoji = b.dataset.v; $$('[data-a="heartemo"]').forEach((x) => x.setAttribute('aria-pressed', x.dataset.v === heartEmoji)); const s = $('[data-a="sendheart"]'); if (s) s.textContent = `${L('ส่ง', 'Send')} ${heartEmoji}`; },
+  heartemo(b) { heartEmoji = b.dataset.v; $$('[data-a="heartemo"]').forEach((x) => x.setAttribute('aria-pressed', x.dataset.v === heartEmoji)); const s = $('[data-a="sendheart"]'); if (s) s.innerHTML = `${L('ส่ง', 'Send')} ${emo(heartEmoji)}`; },
   sendheart(b) {
     const t = trip(b.dataset.t), f = $('#hfrom'), m = $('#htext'), from = f.value.trim(), text = m.value.trim();
     if (!from) { f.focus(); toast(L('ใส่ชื่อผู้ส่งก่อนนะ เด็กๆ จะได้รู้ว่าใครส่ง', 'Add your name so the kids know who it is from')); return; }
@@ -828,7 +828,7 @@ function drawLb() {
   lb.innerHTML = `<div class="bar"><button data-lb="close" aria-label="${L('ปิด', 'Close')}">✕</button><span class="grow">${i + 1} / ${list.length}</span>
 ${ed ? `<button data-lb="star" aria-pressed="${!!m.highlight}">${m.highlight ? '⭐' : '☆'} ${L('ชอบ', 'Fave')}</button><button data-lb="del">${L('ลบ', 'Delete')}</button>` : ''}</div>
 <div class="stage"><img src="${esc(imgF(m))}" alt="${esc(m.caption)}">${list.length > 1 ? `<button class="nav prev" data-lb="prev" aria-label="prev">‹</button><button class="nav next" data-lb="next" aria-label="next">›</button>` : ''}</div>
-<div class="capbox">${ed ? `<input id="lbcap" value="${esc(m.caption || '')}" placeholder="${L('คำอธิบายรูป', 'Caption')}" maxlength="500">` : m.caption ? `<p>${esc(m.caption)}</p>` : ''}
+<div class="capbox">${ed ? `<span class="emowrap"><input id="lbcap" value="${esc(m.caption || '')}" placeholder="${L('คำอธิบายรูป', 'Caption')}" maxlength="500">${emoBtn('lbcap')}</span>` : m.caption ? `<p>${emoIn(esc(m.caption))}</p>` : ''}
 ${ed ? `<div class="tagrow"><input id="lbtags" value="${esc(tagsOf(m).join(', '))}" placeholder="${L('แท็ก คั่นด้วยจุลภาค เช่น food, kids', 'Tags, comma-separated, e.g. food, kids')}" maxlength="200"><input id="lbplace" value="${esc(m.place || '')}" placeholder="${L('ที่ไหน (จุดแวะ)', 'Where (the stop)')}" maxlength="120"></div>` : ''}
 ${tagsOf(m).length || m.place ? `<div class="tags">${m.place ? `<span class="tagc">📍 ${esc(m.place)}</span>` : ''}${tagsOf(m).map((k) => `<span class="tagc">${esc(tagLabel(k))}</span>`).join('')}</div>` : ''}</div>`;
   lb.hidden = false;
@@ -873,6 +873,72 @@ function newTripSheet() {
 <div class="row end"><button type="button" class="btn ghost" data-a="closesheet">${L('ยกเลิก', 'Cancel')}</button><button class="btn" data-a="createtrip">${L('สร้างเล่ม', 'Create')}</button></div></form>`;
 }
 
+/* ---------- the emoji library beside a text box (core.js EMOJI_LIB / emoBtn) ----------
+   The grid floats on <body>, so a render underneath never takes it away; the box keeps the focus the whole time (pointerdown
+   is held back on the button and the grid), so a box that saves when left (note, favourite, caption) saves the emoji too. */
+const emoClose = () => { const p = $('#emopop'); if (p) p.remove(); };
+Object.assign(A, {
+  emopick(b) {
+    const was = $('#emopop'); emoClose(); if (was && was.dataset.for === b.dataset.for) return;   // a second tap closes it
+    const f = document.getElementById(b.dataset.for);
+    if (f && document.activeElement !== f) { f.focus(); const n = f.value.length; f.setSelectionRange(n, n); }   // not typing in it: the emoji goes at the end
+    const p = document.createElement('div'); p.id = 'emopop'; p.className = 'emopop'; p.dataset.for = b.dataset.for;
+    p.setAttribute('role', 'dialog'); p.setAttribute('aria-label', L('อีโมจิของเรา', 'Our emoji'));
+    const rows = emoRows();
+    p.innerHTML = rows.map((e) => `<button type="button" data-a="emoput" data-v="${esc(e.ch)}" title="${esc(L(e.th || e.en, e.en || e.th))}" aria-label="${esc(L(e.th || e.en, e.en || e.th))}">${emo(e.ch)}</button>`).join('')
+      + (isEditor() ? `<a class="emoman" href="#/emoji" title="${L('จัดการอีโมจิ', 'Manage emoji')}" aria-label="${L('จัดการอีโมจิ', 'Manage emoji')}">⚙️</a>` : '')
+      + (rows.length ? '' : `<p class="emonone">${L('ยังไม่มีอีโมจิ', 'No emoji yet')}</p>`);
+    document.body.appendChild(p);
+    const r = b.getBoundingClientRect(), w = Math.min(320, innerWidth - 16);
+    p.style.width = w + 'px'; const h = p.offsetHeight;
+    p.style.left = Math.max(8, Math.min(innerWidth - w - 8, r.right - w)) + 'px';
+    p.style.top = (r.bottom + h + 8 < innerHeight || r.top < h + 8 ? r.bottom + 6 : r.top - h - 6) + 'px';   // below the button, or above it near the foot of the screen
+  },
+  // the library page (#/emoji): add one (a picture + the emoji it stands for + a name), delete one, bring back the original set
+  async emoadd() {
+    const f = emoForm; f.err = '';
+    const ch = f.ch.replace(/\s+/g, '');
+    if (!f.file) f.err = L('เลือกรูปก่อน', 'Pick a picture first');
+    else if (!ch) f.err = L('ใส่อีโมจิที่จะให้รูปนี้แทน เช่น 🦘', 'Type the emoji it stands for, e.g. 🦘');
+    else if (!f.th.trim() && !f.en.trim()) f.err = L('ตั้งชื่อให้อีโมจิ', 'Give it a name');
+    else if (emoOf(ch)) f.err = L('อีโมจินี้มีรูปอยู่แล้ว ลบตัวเดิมก่อนถ้าจะเปลี่ยน', 'That emoji already has a picture — delete it first to change it');
+    if (f.err) { render(); return; }
+    if (!navigator.onLine) { f.err = L('ต้องต่อเน็ตก่อน', 'You need to be online'); render(); return; }
+    f.busy = true; render();
+    const id = 'my-' + uid('e').replace(/[^a-z0-9]/gi, '').toLowerCase().slice(-12);
+    try {
+      const qs = new URLSearchParams({ ch, th: f.th.trim(), en: f.en.trim() });
+      await api('PUT', `/api/b/emoji/${id}?${qs}`, undefined, f.file);
+      if (f.url) URL.revokeObjectURL(f.url);
+      emoForm = { ch: '', th: '', en: '', file: null, url: null, err: '', busy: false };
+      toast(L('เพิ่มอีโมจิแล้ว', 'Emoji added')); await load(); render();
+    } catch (e) {
+      f.busy = false;
+      f.err = { 409: L('อีโมจินี้มีรูปอยู่แล้ว หรือคลังเต็มแล้ว', 'That emoji already has a picture, or the library is full'), 400: L('อ่านรูปหรืออีโมจิไม่ได้ ลองใหม่', 'Could not read the picture or the emoji — try again'), 413: L('รูปใหญ่เกินไป', 'The picture is too big') }[e.code] || L('เพิ่มไม่สำเร็จ ลองใหม่', 'Could not add it — try again');
+      render();
+    }
+  },
+  async emodel(b) {
+    if (!armed(b)) return;
+    try { await api('DELETE', '/api/b/emoji/' + encodeURIComponent(b.dataset.v)); toast(L('ลบแล้ว', 'Deleted')); await load(); render(); }
+    catch (_) { toast(L('ลบไม่สำเร็จ ต้องต่อเน็ตก่อน', 'Could not delete — you need to be online')); }
+  },
+  async emodefaults() {
+    try { const r = await api('POST', '/api/b/emoji/defaults', {}); toast(r.added ? L(`เอากลับมา ${r.added} ตัว`, `${r.added} brought back`) : L('ชุดเดิมอยู่ครบแล้ว', 'The original set is all there')); await load(); render(); }
+    catch (_) { toast(L('ทำไม่สำเร็จ ต้องต่อเน็ตก่อน', 'Did not work — you need to be online')); }
+  },
+  emoput(b) {
+    const f = document.getElementById($('#emopop').dataset.for); emoClose(); if (!f) return;
+    const ch = b.dataset.v, a = f.selectionStart ?? f.value.length, z = f.selectionEnd ?? a, max = +f.getAttribute('maxlength') || Infinity;
+    if (f.value.length - (z - a) + ch.length > max) { toast(L('ข้อความยาวเต็มแล้ว', 'The box is full')); return; }
+    f.value = f.value.slice(0, a) + ch + f.value.slice(z); f.focus(); f.setSelectionRange(a + ch.length, a + ch.length);
+    f.dispatchEvent(new Event('input', { bubbles: true }));   // drafts and live previews follow, as if typed
+  },
+});
+document.addEventListener('pointerdown', (e) => { if (e.target.closest('.emobtn, #emopop')) e.preventDefault(); else emoClose(); });
+document.addEventListener('mousedown', (e) => { if (e.target.closest('.emobtn, #emopop')) e.preventDefault(); });
+window.addEventListener('hashchange', emoClose);
+
 /* ---------- events ---------- */
 document.addEventListener('click', (e) => {
   const lb = e.target.closest('[data-lb]'); if (lb) { lbAct(lb.dataset.lb, lb); return; }
@@ -882,7 +948,7 @@ document.addEventListener('click', (e) => {
   const tl = e.target.closest('.tl.plan li'); if (tl && !e.target.closest('a')) { tl.classList.toggle('open'); return; }   // a long timeline row shows two lines; a tap shows it all
   if (e.target.id === 'scrim') closeSheet();
 });
-document.addEventListener('input', (e) => { const el = e.target; if (el.dataset && el.dataset.fx) { const fx = ls('fx') || {}, v = parseFloat(String(el.value).replace(',', '.')); if (v > 0 && v < 100000) fx[el.dataset.fx] = v; else delete fx[el.dataset.fx]; ls('fx', fx); const t = trip(route().parts[1]), r = $('#fxres'); if (t && r) r.innerHTML = fxResult(t); document.querySelectorAll('.fxa').forEach((x) => { const rows = spendOf(t.id).filter((s2) => s2.cur === x.dataset.fxc); x.textContent = thbLine(rows); }); } if (el.dataset && el.dataset.lc) { const v = ls('lostTel') || ['', '']; v[+el.dataset.lc] = el.value.slice(0, 40); ls('lostTel', v); } if (el.dataset && el.dataset.draft) drafts[el.dataset.draft] = el.value; if (el.dataset && el.dataset.fam && fam) { const [i, f] = el.dataset.fam.split(':'), k = fam.kids[+i]; if (k) { k[f] = el.value; const tag = el.closest('.famkid') && el.closest('.famkid').querySelector('.famtag b'); if (tag && (f === 'name_th' || f === 'name_en')) tag.textContent = L(k.name_th || k.name_en, k.name_en || k.name_th) || L('ลูกคนใหม่', 'New child'); } } if (el.dataset && el.dataset.famp && fam) { const [o, l] = el.dataset.famp.split(':'); fam[o][l] = el.value; const pv = $('.fampreview'), b = famBuilt(); if (pv) { pv.querySelector('b').textContent = L(fam.app.th, fam.app.en) || L(b.app.th, b.app.en); pv.querySelector('small').textContent = L(fam.kicker.th, fam.kicker.en) || L(b.kicker.th, b.kicker.en); } } if (el.id === 'eatq') { eatQ = el.value.trim(); eatFilter(); } if (el.id === 'bookq') { bookQ = el.value; const r = $('#bookres'), t = trip(route().parts[1]); if (r && t) r.innerHTML = bookResults(t); } });
+document.addEventListener('input', (e) => { const el = e.target; if (el.dataset && el.dataset.emf) emoForm[el.dataset.emf] = el.value; if (el.dataset && el.dataset.fx) { const fx = ls('fx') || {}, v = parseFloat(String(el.value).replace(',', '.')); if (v > 0 && v < 100000) fx[el.dataset.fx] = v; else delete fx[el.dataset.fx]; ls('fx', fx); const t = trip(route().parts[1]), r = $('#fxres'); if (t && r) r.innerHTML = fxResult(t); document.querySelectorAll('.fxa').forEach((x) => { const rows = spendOf(t.id).filter((s2) => s2.cur === x.dataset.fxc); x.textContent = thbLine(rows); }); } if (el.dataset && el.dataset.lc) { const v = ls('lostTel') || ['', '']; v[+el.dataset.lc] = el.value.slice(0, 40); ls('lostTel', v); } if (el.dataset && el.dataset.draft) drafts[el.dataset.draft] = el.value; if (el.dataset && el.dataset.fam && fam) { const [i, f] = el.dataset.fam.split(':'), k = fam.kids[+i]; if (k) { k[f] = el.value; const tag = el.closest('.famkid') && el.closest('.famkid').querySelector('.famtag b'); if (tag && (f === 'name_th' || f === 'name_en')) tag.textContent = L(k.name_th || k.name_en, k.name_en || k.name_th) || L('ลูกคนใหม่', 'New child'); } } if (el.dataset && el.dataset.famp && fam) { const [o, l] = el.dataset.famp.split(':'); fam[o][l] = el.value; const pv = $('.fampreview'), b = famBuilt(); if (pv) { pv.querySelector('b').textContent = L(fam.app.th, fam.app.en) || L(b.app.th, b.app.en); pv.querySelector('small').textContent = L(fam.kicker.th, fam.kicker.en) || L(b.kicker.th, b.kicker.en); } } if (el.id === 'eatq') { eatQ = el.value.trim(); eatFilter(); } if (el.id === 'bookq') { bookQ = el.value; const r = $('#bookres'), t = trip(route().parts[1]); if (r && t) r.innerHTML = bookResults(t); } });
 document.addEventListener('focusout', (e) => { const el = e.target; if (el.dataset && el.dataset.aBlur) saveBlur(el); if (el.id === 'lbcap') saveCaption(el); if (el.id === 'lbtags' || el.id === 'lbplace') saveTags(el); });
 document.addEventListener('focusout', (e) => {   // a voice memo's caption ("who said what") saves when the box is left, like a photo caption
   const el = e.target; if (!el.classList || !el.classList.contains('clipcap')) return;
@@ -892,6 +958,11 @@ document.addEventListener('focusout', (e) => {   // a voice memo's caption ("who
 document.addEventListener('change', (e) => {
   if (e.target.dataset && e.target.dataset.ck) { const m = ls('ck') || {}; if (e.target.checked) m[e.target.dataset.ck] = 1; else delete m[e.target.dataset.ck]; ls('ck', m); return; }
   if (e.target.dataset && e.target.dataset.fx) { safeRender(); return; }   // leaving a rate field: redraw (the field has lost focus)
+  if (e.target.id === 'emfile') {   // the picture for a new emoji: a preview in place, the file kept until "add"
+    const file = e.target.files && e.target.files[0]; if (!file) return;
+    if (emoForm.url) URL.revokeObjectURL(emoForm.url);
+    emoForm.file = file; emoForm.url = URL.createObjectURL(file); emoForm.err = ''; render(); return;
+  }
   if (e.target.id === 'lcfile') { const f = e.target.files && e.target.files[0]; if (f) { if (lostPhoto) URL.revokeObjectURL(lostPhoto); lostPhoto = URL.createObjectURL(f); render(); } return; }   // this morning's photo: in memory only
   if (e.target.id === 'impfile') { imp.file = (e.target.files || [])[0] || null; const sl = $('#impslug'); if (imp.file && sl && !sl.value) { sl.value = imp.file.name.replace(/\.pdf$/i, '').normalize('NFKD').toLowerCase().replace(/[^a-z0-9]+/g, '-').replace(/^-+|-+$/g, '').slice(0, 40); } return; }
   if (e.target.id === 'impslug') { imp.slug = e.target.value; return; }

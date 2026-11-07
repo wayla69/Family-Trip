@@ -1947,3 +1947,28 @@ html[data-fs="1"] main.wrap{zoom:1.1}html[data-fs="2"] main.wrap{zoom:1.2}html[d
 }
 @media (max-height:600px){.loginart{display:none}.login .kicker{display:none}.pinpad button{max-width:54px}}
 @media (max-height:900px){.login .pin{height:48px;padding:4px 10px;letter-spacing:.35em}}
+/* the family's own emoji (core.js emo): a picture the size of the text around it; the sticker edge and shadow are in the art */
+img.emi{display:inline-block;width:1.3em;height:1.3em;object-fit:contain;vertical-align:-.3em;margin:-.1em 0;-webkit-user-drag:none;user-select:none}
+/* the emoji library: a button in the corner of a text box, the grid floats over the page (sheets.js emopick) */
+.emowrap{position:relative;display:block}.emowrap>.field,.emowrap>input{padding-right:48px}
+.emobtn{position:absolute;right:6px;bottom:6px;width:36px;height:36px;display:grid;place-items:center;padding:0;border:0;border-radius:50%;background:transparent;font-size:22px;line-height:1;cursor:pointer;opacity:.85}
+.emowrap>input~.emobtn{top:50%;bottom:auto;transform:translateY(-50%)}
+.emobtn:hover,.emobtn:focus-visible{opacity:1;background:color-mix(in srgb,var(--accent) 10%,transparent)}
+.emopop{position:fixed;z-index:70;display:grid;grid-template-columns:repeat(6,1fr);gap:2px;padding:8px;border-radius:18px;background:var(--paper);border:1px solid var(--rule);box-shadow:0 18px 40px -18px rgba(0,0,0,.5)}
+.emopop button{aspect-ratio:1;display:grid;place-items:center;border:0;border-radius:12px;background:none;font-size:28px;line-height:1;padding:0;cursor:pointer}
+.emopop button:hover,.emopop button:focus-visible{background:color-mix(in srgb,var(--accent) 10%,transparent)}.emopop button:active{transform:scale(.9)}
+.emoman{display:grid;place-items:center;aspect-ratio:1;border-radius:12px;font-size:20px;text-decoration:none;opacity:.7}.emoman:hover{opacity:1;background:color-mix(in srgb,var(--accent) 10%,transparent)}
+.emonone{grid-column:1/-1;margin:6px;color:var(--muted);font-size:13px}
+/* #/emoji: the family's emoji library */
+.emoaddrow{display:grid;grid-template-columns:116px minmax(0,1fr);gap:14px;align-items:start}
+.emopic{position:relative;display:grid;place-items:center;align-content:center;gap:4px;width:116px;aspect-ratio:1;border-radius:20px;border:2px dashed color-mix(in srgb,var(--accent) 35%,var(--rule));background:color-mix(in srgb,var(--accent) 5%,var(--paper));cursor:pointer;overflow:hidden}
+.emopic span{font-size:34px;line-height:1}.emopic small{font-size:12px;color:var(--muted)}.emopic.on{border-style:solid}
+.emopic img{width:84%;height:84%;object-fit:contain}.emopic input{position:absolute;inset:0;opacity:0;cursor:pointer}
+.emofields label{display:grid;gap:4px;font-size:12px;font-weight:600;color:var(--muted)}.emofields .famrow{margin:8px 0 0}
+.emoch{font-size:24px;padding:6px 10px;max-width:120px}
+.emolist{list-style:none;padding:0;margin:0;display:grid;grid-template-columns:repeat(auto-fill,minmax(104px,1fr));gap:10px}
+.emocard{display:grid;justify-items:center;text-align:center;gap:2px;padding:10px 8px 8px;border:1px solid var(--rule);border-radius:16px;background:var(--paper)}
+.emocard img{width:56px;height:56px;object-fit:contain}.emocard b{font-size:13px;line-height:1.2;overflow-wrap:anywhere}.emocard small{font-size:12px;color:var(--muted)}
+.emocard .emodel{margin-top:4px;font-size:12px;color:var(--muted)}.emocard .emodel[data-armed]{color:var(--accent2);border-color:var(--accent2)}
+@media (max-width:420px){.emoaddrow{grid-template-columns:92px minmax(0,1fr)}.emopic{width:92px}}
+
