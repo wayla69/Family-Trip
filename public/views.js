@@ -133,11 +133,12 @@ function topBar(t, p) {
 function tabBar(t, p) {
   const c = t || curTrip(); if (!c) return '';
   const dn = Math.max(0, dayNow(c)), sec = t ? (p[2] || 'hub') : (p[0] === 'passport' ? 'passport' : p[0] === 'notebook' ? 'notebook' : 'shelf');
-  const item = (k, href, e, lbl) => `<a href="${href}"${sec === k ? ' aria-current="page"' : ''}><i>${ic(e)}</i>${lbl}</a>`;
+  const pi = (e) => `<i${HUB_PIC[e] ? ' class="pic"' : ''}>${hubIc(e)}</i>`;   // the same glossy pictures as the book menu
+  const item = (k, href, e, lbl) => `<a href="${href}"${sec === k ? ' aria-current="page"' : ''}>${pi(e)}${lbl}</a>`;
   // quick mode: the five most-used stops; everything else is a tile on the book's menu (#/t/<trip>)
   const items = isEditor()
     ? [item('hub', `#/t/${esc(c.id)}`, 'home', L('เมนู', 'Menu')), item('today', `#/t/${esc(c.id)}/today`, 'today', L('วันนี้', 'Today')), item('log', `#/t/${esc(c.id)}/log/${dn}`, 'log', L('บันทึก', 'Record')),
-      item('eat', `#/t/${esc(c.id)}/eat`, 'eat', L('ร้านอาหาร', 'Eat')), `<button type="button" data-a="kidmode"><i>${ic('kid')}</i>${L('โหมดเด็ก', 'Kid mode')}</button>`]
+      item('eat', `#/t/${esc(c.id)}/eat`, 'eat', L('ร้านอาหาร', 'Eat')), `<button type="button" data-a="kidmode">${pi('kid')}${L('โหมดเด็ก', 'Kid mode')}</button>`]
     : [item('hub', `#/t/${esc(c.id)}`, 'home', L('เมนู', 'Menu')), item('today', `#/t/${esc(c.id)}/today`, 'today', L('วันนี้', 'Today')), item('book', `#/t/${esc(c.id)}/book`, 'book', L('สมุด', 'Book')),
       item('firsts', `#/t/${esc(c.id)}/firsts`, 'firsts', L('ครั้งแรก', 'Firsts')), item('passport', '#/passport', 'passport', L('พาสปอร์ต', 'Passport'))];
   return `<nav class="bar"><div class="in">${items.join('')}</div></nav>`;
@@ -406,7 +407,7 @@ const secTitle = (k) => (HUB[k] ? L(HUB[k][1], HUB[k][2]) : '');
 const HUB_PIC = { today: '/art/hub/today.webp', log: '/art/emoji/camera.webp', book: '/art/hub/book.webp', eat: '/art/hub/eat.webp', plan: '/art/emoji/travel-map.webp',
   stays: '/art/hub/stays.webp', sos: '/art/hub/sos.webp', prep: '/art/emoji/suitcase.webp', learn: '/art/hub/learn.webp', firsts: '/art/emoji/star.webp',
   hearts: '/art/emoji/heart.webp', offline: '/art/hub/offline.webp', camera: '/art/hub/album.webp', passport: '/art/kidui/bar-passport.webp',
-  money: '/art/hub/money.webp', notebook: '/art/hub/notebook.webp', kid: '/art/emoji/joy.webp', shelf: '/art/hub/shelf.webp' };
+  money: '/art/hub/money.webp', notebook: '/art/hub/notebook.webp', kid: '/art/emoji/joy.webp', shelf: '/art/hub/shelf.webp', home: '/art/kidui/bar-home.webp' };
 const hubIc = (k) => (HUB_PIC[k] ? `<img src="${HUB_PIC[k]}" alt="" draggable="false">` : ic(k));
 const hubE = (k) => `<span class="e${HUB_PIC[k] ? ' pic' : ''}">${hubIc(k)}</span>`;
 // the day a book opens on: today during the trip, day 1 before it, the last day after

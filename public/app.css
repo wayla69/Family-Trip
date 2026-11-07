@@ -1975,4 +1975,10 @@ img.emi{display:inline-block;width:1.3em;height:1.3em;object-fit:contain;vertica
 .tile .e.pic{width:52px;height:52px;border-radius:0;background:none;margin:-4px 0 -2px -4px}
 .tile .e.pic img{width:100%;height:100%;object-fit:contain;display:block}
 .tile.today.hi .e.pic{background:none}
+/* the bottom bar with the same pictures: the page you are on in full colour on a soft pill, the others a little faded */
+nav.bar i.pic{height:32px}
+nav.bar i.pic img{width:32px;height:32px;object-fit:contain;display:block;opacity:.62;filter:saturate(.75);transition:opacity .15s,filter .15s,transform .15s}
+nav.bar a[aria-current=page] i.pic img{opacity:1;filter:none;transform:scale(1.1)}
+nav.bar a[aria-current=page]{background:color-mix(in srgb,var(--accent) 11%,transparent);font-weight:700}
+nav.bar a:active i.pic img,nav.bar button:active i.pic img{transform:scale(.92)}
 
