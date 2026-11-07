@@ -67,6 +67,8 @@ const T = 'hk-macau-2026';
   ok(await page.locator('.spine.add [data-a="newtrip"]').count() === 1 && await page.locator('.spine.add a[href="#/import"]').count() === (pdfOn ? 1 : 0) && await page.locator('a[href="#/import"]:not(.addway)').count() === 0
     && await page.locator('.setlist a[href="#/family"]').count() === 1 && await page.locator('.setlist a[href="#/viewers"]').count() === 1 && await page.locator('.setout [data-a="logout"]').count() === 1,
     'shelf: every way to a new book sits in the new-book tile; family and relatives in one settings list; sign out on its own');
+  ok(await page.locator('.setlist > a .e.pic img').count() === await page.locator('.setlist > a').count() && await page.locator('.setlist a[href="#/family"] img[src$="/art/hub/family.webp"]').count() === 1
+    && await page.locator('.setlist a[href="#/viewers"] img[src$="/art/hub/relatives.webp"]').count() === 1, 'settings list: each row has its own picture (family, emoji, relatives)');
   ok((await page.locator('.spine').first().textContent()).includes('DOLPHIN'), 'HK spine shows the manual kicker');
   ok(await s.noHScroll(), 'shelf: no horizontal scroll at 390 px');
   await s.shot('02-shelf');
