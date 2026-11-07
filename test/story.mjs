@@ -52,7 +52,7 @@ const mock = http.createServer((req, res) => {
       top: () => JSON.stringify({ slug: 'wrong-slug', title: en('The Test Hop · Testland'), from: '2027-03-10', to: '2027-03-11', tz: 'Asia/Tokyo', place: { en: 'Testland', flag: '🏳️' },
         days: [0, 1].map((i) => ({ title: en(`Day ${i + 1} of the test`), sleep: en('Test Inn'), planned: [{ en: 'Test Square', th: i ? null : '', zh: '測試', q: 'Test Square, Testland' }], moving: { en: 'Walk 5 min', th: ' ' },
           plan: [{ t: '09:00', en: 'Breakfast' }, { t: '11:00', en: 'Super Fun Zone opens' }], tips: [en('Show the driver: 測試')], stay: { name: 'Test Inn', addr: '1 Test St', q: 'Test Inn, Testland' } })) }),
-      info: () => JSON.stringify({ emergency: [{ label: en('All emergencies'), tel: '999', main: true }], lost: en('Stand still'), guide: [{ title: en('Clocks'), text: en('One hour ahead') }] }),
+      info: () => JSON.stringify({ emergency: [{ label: en('All emergencies'), tel: '999', main: true }], lost: en('Stand still'), guide: [{ title: en('Clocks'), text: en('One hour ahead') }, { title: en('Front desk'), text: en('Show booking ref KL4PQZ at check-in') }] }),
       restlist: () => JSON.stringify({ areas: [{ area: en('Test town'), kind: 0, names: ['Test Noodles', 'Test Dumplings'] }, { area: en('Test sweets'), kind: 2, names: ['Test Tarts'] }] }),
       // the list overflows once (stop_reason max_tokens below), so the fallback asks for the headings, then the names
       restareas: () => JSON.stringify({ areas: [{ area: en('Test town'), kind: 0 }, { area: en('Test sweets'), kind: 2 }] }),
@@ -428,9 +428,9 @@ try {
     out += `xref\n0 ${objs.length + 1}\n0000000000 65535 f \n${offs.map((o) => String(o).padStart(10, '0') + ' 00000 n \n').join('')}trailer\n<< /Size ${objs.length + 1} /Root 1 0 R >>\nstartxref\n${xref}\n%%EOF\n`;
     return Buffer.from(out, 'latin1');
   };
-  const FAKE = { pnr: 'ZZ9ZZ9', tripcom: '1111222233334444', eticket: '999-0000000001', hotel: '5555666677778888', baht: '12,345' };   // invented values, not any real booking
+  const FAKE = { pnr: 'ZZ9ZZ9', tripcom: '1111222233334444', eticket: '999-0000000001', hotel: '5555666677778888', baht: '12,345', ref: 'QX7KLM', conf: 'HB4471', resv: 'TQ9302' };   // invented values, not any real booking
   const manualLines = ['THE TEST HOP - Trip Operations Manual', 'Day 1 - Wed 10 Mar 2027 - Test Square, breakfast 09:00', 'Day 2 - Thu 11 Mar 2027 - Super Fun Zone opens 11:00',
-    `Flights TG 123 - PNR ${FAKE.pnr} - Trip.com ${FAKE.tripcom} - e-tickets ${FAKE.eticket}`, `Hotel booking ${FAKE.hotel} - paid ${FAKE.baht} baht`, 'Children: born 2023-06 - allergies none', 'Emergency 999 - Test Inn, 1 Test St - restaurants: Test Noodles MOP 50',
+    `Flights TG 123 - PNR ${FAKE.pnr} - Trip.com ${FAKE.tripcom} - e-tickets ${FAKE.eticket}`, `Hotel booking ${FAKE.hotel} - paid ${FAKE.baht} baht`, `Front desk: show booking ref ${FAKE.ref} at check-in`, `Ferry confirmation number ${FAKE.conf}`, `Dinner reservation code: ${FAKE.resv}`, 'Children: born 2023-06 - allergies none', 'Emergency 999 - Test Inn, 1 Test St - restaurants: Test Noodles MOP 50',
     ...Array.from({ length: 40 }, (_, i) => `Line ${i} of filler text so the manual is long enough to count as a real document with many words in it.`)];
   const pdf = pdfOf(manualLines);
   const IH = { 'x-mb': '1', cookie: ck, 'content-type': 'application/pdf' };
@@ -447,7 +447,7 @@ try {
   ok(importCalls.map((c) => c.step).join(',') === 'top,info,restlist,restareas,restnames,rest,rest,kids,extras,thai', `import: the model calls in order — structure, guide, restaurant names, rows, the retry for the missing row, kids, extras, Thai (${importCalls.map((c) => c.step).join(',')})`);
   const sent = importCalls.map((c) => c.system + c.user).join('\n');
   ok(sent.includes('Test Square') && sent.includes('Super Fun Zone') && sent.includes('Test Noodles'), 'import: the manual\'s text reached the model');
-  ok(!Object.values(FAKE).some((v) => sent.includes(v)) && !/born 2023|allergies/.test(sent), 'import: PNR, booking numbers, e-tickets, the baht amount, birth and allergy lines never reached the model');
+  ok(!Object.values(FAKE).some((v) => sent.includes(v)) && !/born 2023|allergies/.test(sent), 'import: PNR, booking numbers and references, confirmation and reservation codes, e-tickets, the baht amount, birth and allergy lines never reached the model');
   ok(importCalls[1].system.includes('cache_control') && JSON.parse(importCalls[0].system)[1].text.startsWith('<manual>'), 'import: the manual rides as one cached system block');
   ok(imp.drafts.length === 1 && imp.drafts[0].slug === 'test-hop' && imp.drafts[0].days === 2 && typeof imp.drafts[0].cost.usd === 'number', 'import: the draft is listed with its size and cost');
   const d0 = imp.drafts[0] || {};
@@ -463,6 +463,7 @@ try {
   ok(wl && wl.groups[0].items.length === 3 && wl.groups[0].items[0].speak.lang === 'en-GB' && fl && fl.groups[0].items.length === 3 && fl.goal === 2, 'import: say-it-like-a-local words (read aloud) and the tasting card');
   ok(px.map.sea.en === 'Test Sea' && px.map.stops.length === 2 && px.map.stops[1].x === 92 && px.map.stops[1].y === 8 && JSON.stringify(px.map.days) === '[["inn"],["square","inn"]]', 'import: the living map with clamped positions and only known stops per day');
   ok(dr.seed.info.stays[0].why.en === 'Close to everything' && dr.report.todo === 0, 'import: "why we chose it" filled, nothing left TODO');
+  ok(dr.seed.info.guide.length === 1 && dr.seed.info.guide[0].title.en === 'Clocks' && !JSON.stringify(dr.seed).includes('KL4PQZ') && dr.report.warns.some((w) => /removed info\.guide\[1\] \(looked like a booking reference\)/.test(w)), `import: a guide card that looks like a booking reference is taken out and named, the book is kept (${JSON.stringify(dr.report.warns)})`);
   ok(dr.seed.days[0].moving.th === 'ไทย: Walk 5 min' && dr.seed.days[0].planned[0].th === 'ไทย: Test Square' && dr.seed.days[1].planned[0].th === 'ไทย: Test Square', 'import: a blank, a space or a null Thai from the model counts as missing and is translated');
   const sv = await fetch(BASE + '/api/b/import/' + imp.drafts[0].id + '/save', { method: 'POST', headers: H, body: '{}' });
   ok(sv.status === 200 && (await sv.json()).id === 'test-hop', 'import: saved as a book');

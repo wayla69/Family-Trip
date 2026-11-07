@@ -35,7 +35,9 @@ function pdfText(buf, dir) {
 }
 
 // ---------- 2. redact before anything leaves this machine
-const DROP_LINE = /\b(e-?tickets?|PNR|booking no|confirmation no|booking record|policy|passport no|born|allergies)\b|\bbooking\s+\d|Trip\.com\s+\d|เลขจอง|เลขยืนยัน|เลขที่จอง|หมายเลขการจอง/i;
+// a line naming a booking / reservation / confirmation / ticket / itinerary reference, a record locator or a policy never leaves the server
+// (the same words the seed's privacy scan looks for: a live import once carried "booking ref …" this far and was thrown away at the end)
+const DROP_LINE = /\b(e-?tickets?|PNR|booking no|confirmation no|booking record|policy|passport no|born|allergies|record locator)\b|\b(booking|reservation|confirmation|conf\.?|ticket|itinerary)\s*(ref(erence)?|no\.?|number|code|#|id)\b|\bbooking\s+\d|\bref(erence)?\b\s*(no\.?|number|code|#)?\s*[:#]?\s*(?=[A-Z0-9]*\d)[A-Z0-9]{5,}\b|Trip\.com\s+\d|เลขจอง|เลขยืนยัน|เลขที่จอง|หมายเลขการจอง|รหัสจอง|รหัสยืนยัน|รหัสอ้างอิง/i;
 const SUB = [
   [/\b\d{3}-\d{10}\b/g, '[e-ticket]'],
   [/\b\d{9,}\b/g, '[number]'],
@@ -278,12 +280,32 @@ Trip: ${JSON.stringify({ title: top.title, place: top.place, from: top.from, to:
   if (v.errs.length) throw Object.assign(new Error(`plan: ${v.errs.slice(0, 3).join('; ')}`), { code: 'plan', errs: v.errs });
   const notes = [];
   const seed = core.toSeed(plan, notes, { art: false });
-  const { hits, warns: soft } = core.scan(seed);
+  // the privacy scan: an item that trips it (a guide card, a timeline row, a fact — any entry of a list below the days) is taken out
+  // and named in the warnings, rather than throwing away a whole book whose calls were already paid for; a hit anywhere else still fails
+  let { hits, warns: soft } = core.scan(seed);
+  const removed = [];
+  if (hits.length) {
+    const drops = new Map();
+    for (const h of hits) {
+      const toks = [...h.at.matchAll(/([^.[\]]+)|\[(\d+)\]/g)].map((m) => (m[2] !== undefined ? Number(m[2]) : m[1]));
+      const last = toks.map((t, i) => (typeof t === 'number' ? i : -1)).filter((i) => i >= 0).pop();
+      if (last === undefined || (last === 1 && toks[0] === 'days')) continue;   // not inside a list, or a whole day: leave it to fail below
+      const key = toks.slice(0, last + 1).join('/');
+      if (!drops.has(key)) drops.set(key, { toks: toks.slice(0, last + 1), why: h.rule });
+    }
+    // deepest and latest first, so removing one never shifts another
+    for (const { toks, why } of [...drops.values()].sort((a, b) => b.toks.length - a.toks.length || String(b.toks).localeCompare(String(a.toks), undefined, { numeric: true }))) {
+      let o = seed; for (const t of toks.slice(0, -1)) o = o && o[t];
+      if (Array.isArray(o) && toks[toks.length - 1] < o.length) { o.splice(toks[toks.length - 1], 1); removed.push(`removed ${toks.map((t) => (typeof t === 'number' ? `[${t}]` : `.${t}`)).join('').replace(/^\./, '')} (looked like a ${why})`); }
+    }
+    ({ hits, warns: soft } = core.scan(seed));
+  }
   if (hits.length) throw Object.assign(new Error(`privacy: ${hits.map((h) => `${h.rule} at ${h.at}`).slice(0, 5).join('; ')}`), { code: 'privacy' });
+  if (removed.length) log(`privacy: ${removed.length} item(s) taken out`);
   const { errs, warns } = core.sanity(seed, { art: false });
   if (errs.length) throw Object.assign(new Error(`seed: ${errs.join('; ')}`), { code: 'seed', errs });
   const cost = ledger.reduce((a, r) => a + (r.usd || 0), 0);
-  const report = { lines: core.report(seed).split('\n').map((l) => l.trim()), warns: [...v.warns, ...warns, ...soft.map((w) => `${w.rule} at ${w.at}`), ...(left.length ? [`${left.length} texts have no Thai yet (kept in English)`] : [])], notes, todo: core.todos(seed), dropped, masked };
+  const report = { lines: core.report(seed).split('\n').map((l) => l.trim()), warns: [...v.warns, ...warns, ...soft.map((w) => `${w.rule} at ${w.at}`), ...(left.length ? [`${left.length} texts have no Thai yet (kept in English)`] : []), ...removed], notes, todo: core.todos(seed), dropped, masked };
   log(`seed: ${report.lines[0]}`);
   return { seed, plan, report, cost: { usd: ledger.some((r) => r.usd === null) ? null : cost, calls: ledger } };
 }
