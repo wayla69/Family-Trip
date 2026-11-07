@@ -98,6 +98,8 @@ hr.rule{border:0;border-top:1px solid var(--rule);margin:22px 0}
 .lpc .ic{width:16px;height:16px}.lpc i{font-style:normal;font-size:14px;margin-left:2px}
 .lpc.on{color:var(--leaf);border-color:color-mix(in srgb,var(--leaf) 40%,var(--line));background:color-mix(in srgb,var(--leaf) 7%,var(--paper))}
 /* an empty book: the way in, first (owner's review, Nov 2026: the foreword and letter boxes came before it) */
+/* the book page's foot: the PDF leads; print / copy sit under it as quiet text buttons (owner's review, Nov 2026: four buttons of equal weight) */
+.bookmore{gap:10px;margin:0 0 8px;align-items:center}.bookmore .linkbtn{color:var(--muted);font-size:13.5px;text-decoration-color:color-mix(in srgb,var(--muted) 50%,transparent)}.bookmore .linkbtn:hover{color:var(--accent)}
 .bookstart{text-align:center;padding:26px 18px 28px;margin:18px 0}.bookstart b{display:block;font-size:19px;margin-top:6px}.bookstart p{color:var(--muted);margin:6px 0 14px;font-size:14.5px}
 .aijump{display:flex;align-items:center;gap:8px;width:100%;margin:10px 0 0;padding:10px 14px;border:1px solid var(--rule);border-radius:12px;background:var(--soft);color:var(--ink);font-weight:600;font-size:15px;text-align:left}
 .aijump small{margin-left:auto;font-weight:500;color:var(--muted);font-size:12px}
