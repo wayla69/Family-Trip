@@ -1167,6 +1167,7 @@ const T = 'hk-macau-2026';
   const zeros = await page.$$eval('.hubgrid small', (els) => els.map((e) => e.textContent).filter((x) => /(^|\s)0 (รูป|คำพูด|ครั้งแรก|รีวิว|ตรา)|\b0\/\d|ตรา 0\b/.test(x)));
   ok(zeros.length === 0, `menu tiles never show a zero or "0/6" (${zeros.join(' | ') || 'none'})`);
   await page.goto(`${BASE}/#/t/${T}/book`); await page.waitForSelector('.cover');
+  ok(await page.locator('.bookstart').count() === 0 && await page.locator('.letterblk').count() === 1 && await page.locator('a[data-a="pdf"]').count() === 1, 'a book with records: no “still empty” card; the letter box and the PDF button are there');
   ok(await page.locator('.cover .line .nowrap').count() === 2 && await page.evaluate(() => [...document.querySelectorAll('.cover .line .nowrap')].every((e) => e.getClientRects().length === 1)), 'cover: each child\'s name and age sits on one line (Thai word breaking split a name)');
   // every control a parent taps is at least 44 px tall on the pages used during the trip
   const audit = `(sel) => [...document.querySelectorAll(sel)].filter((e) => { const r = e.getBoundingClientRect(); return r.width > 0 && r.height > 0 && r.height < 44 && !e.closest('details:not([open])'); }).map((e) => (e.textContent || e.className).trim().slice(0, 24) + ' ' + Math.round(e.getBoundingClientRect().height))`;
@@ -1249,6 +1250,8 @@ const T = 'hk-macau-2026';
   await s.shot('06-sample-menu', false);
   await page.goto(`${BASE}/#/t/sakura-hop-2028/today/0`); await page.waitForSelector('.day.today');
   await s.shot('07-sample-today');
+  await page.goto(`${BASE}/#/t/sakura-hop-2028/book`); await page.waitForSelector('.cover');
+  ok(await page.locator('.bookstart a.btn[href*="/log/"]').count() === 1 && await page.locator('.foreblk, .letterblk, .coverpick').count() === 0 && await page.locator('a[data-a="pdf"]:visible').count() === 0 && await page.evaluate(() => document.querySelector('.bookstart').getBoundingClientRect().top < document.querySelector('.bookstart').getBoundingClientRect().height + 900), 'empty book: the way in (“record the first day”) comes right after the cover; the foreword, letter, cover choice and PDF wait for content');
   await page.goto(`${BASE}/#/passport/${st1.children[0].slug}/sakura-hop-2028`); await page.waitForSelector('.advc');
   ok(await page.locator('.advc img.crest').count() === 0 && await page.locator('.pp-page').count() >= 2, 'sample: today and the passport render without drawn art (no crest, the generic guides)');
   await page.goto(`${BASE}/#/t/hk-macau-2026`); await page.waitForSelector('.hubgrid');
