@@ -36,8 +36,9 @@ ok((await put('/api/b/viewers/vg-x-000001', { name: 'x', pin: '12ab', trips: [HK
 ok((await put('/api/b/viewers/vg-x-000001', { name: 'x', trips: [HK], link: false })).status === 400, 'a group needs a PIN or a link');
 const { Client } = createRequire(import.meta.url)('pg');
 const db = new Client({ connectionString: process.env.DATABASE_URL }); await db.connect();
-const row = (await db.query("SELECT pin_hash FROM viewer_groups WHERE id='vg-yai-001'")).rows[0];
+const row = (await db.query("SELECT pin_hash, pin_len FROM viewer_groups WHERE id='vg-yai-001'")).rows[0];
 ok(row && row.pin_hash.length === 64 && !row.pin_hash.includes('112233'), 'only a keyed hash of the PIN is stored');
+ok(row.pin_len === 6 && (await (await fetch(BASE + '/api/brand')).json()).pin.lens.includes(6) && !JSON.stringify(await (await fetch(BASE + '/api/brand')).json()).includes('112233'), "the group PIN's length is kept beside the hash and offered to the sign-in pad (no digit of it)");
 
 // ---- a group PIN sees only its books, everywhere
 const yr = await login('112233');

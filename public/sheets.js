@@ -111,6 +111,7 @@ const A = {
       ls('remind', 1); render(); toast(L('เปิดการเตือนแล้ว ✓ จะเด้งก่อนทุกกิจกรรม 30 นาที · ทดสอบหรือปิดได้ที่หน้า "ใช้ตอนไม่มีเน็ต"', 'Reminders on ✓ — 30 min before each step · test or turn off on the Offline page'));
     } catch (_) { toast(L('เปิดการเตือนไม่สำเร็จ ลองอีกครั้ง', 'Could not turn reminders on — try again')); }
   },
+  remindlater() { ls('remindLater', 1); render(); toast(L('เปิดได้ทีหลังที่หน้า "วันนี้" หรือ "ใช้ตอนไม่มีเน็ต"', 'You can turn them on later from Today or the no-signal page')); },
   async remindtest() {
     const s = await pushSub().catch(() => null);
     if (!s) { ls('remind', null); render(); toast(L('เครื่องนี้ยังไม่ได้เปิดการเตือน', 'Reminders are not on for this phone')); return; }
@@ -124,6 +125,7 @@ const A = {
     $('#lerr').textContent = '';
     b.classList.add('tap'); setTimeout(() => b.classList.remove('tap'), 110);   // a visible press for a quick finger (and a tiny buzz where the phone allows)
     try { if (navigator.vibrate) navigator.vibrate(8); } catch (_) { /* no buzz */ }
+    pinAuto();
   },
   'who-login'(b) { const n = $('#lname'); n.value = n.value === b.dataset.v ? '' : b.dataset.v; $$('[data-a="who-login"]').forEach((c) => c.setAttribute('aria-pressed', c.dataset.v === n.value)); },
   print() { window.print(); },
@@ -915,6 +917,15 @@ document.addEventListener('keydown', (e) => {
 let sx = null;
 document.addEventListener('touchstart', (e) => { if (lbState && e.target.closest('.stage')) sx = e.touches[0].clientX; }, { passive: true });
 document.addEventListener('touchend', (e) => { if (sx === null || !lbState) return; const dx = e.changedTouches[0].clientX - sx; sx = null; if (Math.abs(dx) > 50) lbAct(dx < 0 ? 'next' : 'prev'); });
+// the pad signs in by itself at the last digit: when the code has reached a length a code can have and no longer one exists
+// (the lengths come from /api/brand, never a digit); a code of unknown length (an old group PIN) keeps the button
+let pinTry = false;
+function pinAuto() {
+  const f = $('#lcode'), p = BRAND && BRAND.pin; if (!f || !p || !Array.isArray(p.lens) || pinTry) return;
+  const n = f.value.length;
+  if (p.lens.includes(n) && !p.lens.some((l) => l > n) && !p.open) { pinTry = true; setTimeout(() => { pinTry = false; const form = $('#lf'); if (form && $('#lcode') && $('#lcode').value.length === n) form.requestSubmit(); }, 180); }   // a beat to see the last dot
+}
+document.addEventListener('input', (e) => { if (e.target && e.target.id === 'lcode') { $('#lerr').textContent = ''; pinAuto(); } });   // typed on a keyboard too
 document.addEventListener('submit', async (e) => {
   if (e.target.id === 'ntf') { e.preventDefault(); A.createtrip(null, e); return; }
   if (e.target.id !== 'lf') return;
