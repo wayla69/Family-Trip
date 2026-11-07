@@ -138,7 +138,7 @@ details.fold[open]>summary{margin-bottom:8px}.planblk.fold .dayplan{margin-top:4
 .more>summary .linkbtn{flex:none;font-size:13px}
 .dayendblk{border-top:0;padding-top:4px}
 /* the book's menu in named groups */
-.part.hubpart{margin-top:22px}
+.part.hubpart,.part.pickh{margin-top:22px}
 .hubgrid.hero{margin-bottom:0}
 .hubgrid.hero+.hubpart{margin-top:14px}
 /* a long timeline row shows two lines; a tap shows it all (sheets.js) */
@@ -1137,7 +1137,7 @@ section.pg.cover{display:flex}.cv{position:relative;flex:1;min-height:1000px;pad
 .cvband .kicker,.cvband .line,.cvband .sub-it,.cvband .cvfoot{color:rgba(255,255,255,.86)}.cvband h1{color:#fff;max-width:none;margin-top:6px}
 .cvband .cvft{margin-top:auto}
 .cvart.strip{display:flex;gap:8px;flex-wrap:wrap}.cvart.strip .art{width:52px;height:52px;background:#fff;border-radius:50%}.cvart.strip .art.emo{display:grid;place-items:center;font-size:28px}
-.coverpick{align-items:center;gap:10px;margin:18px 0 -14px}
+.coverpick{margin:18px 0 -6px}.tpk.cvk{grid-template-columns:repeat(2,minmax(0,1fr));max-width:420px}.tpo .rpe{font-size:20px;line-height:1}
 section.pg .facts{margin:6px 0 16px}
 section.pg .journey{margin:0 0 14px}
 .pmap{max-width:560px;margin:0 auto 14px}.pmap .walkers img{height:60px}.pmap .walkers img.mika{height:46px}
@@ -1593,6 +1593,8 @@ p.money{background:none;border:0;padding:0}p.money b{color:var(--ink)}
 .reportbtn b{flex:1;font-size:var(--fs-3)}
 .backsum{display:inline-flex;align-items:center;gap:4px;background:none;padding:6px 0;color:var(--accent)}
 .backsum .ic{width:16px;height:16px}
+.tpk.repseg{grid-template-columns:repeat(2,minmax(0,1fr));max-width:420px;margin:8px 0 14px}.repseg small{color:var(--muted);font-size:13px;line-height:1.3;margin-top:-5px}   /* short ⇄ full report, the same cards as the menu colours */
+@media print{.repseg{display:none}}
 /* whole trip: plain rows */
 .drows{gap:0;border-top:1px solid var(--line)}
 .drows a{border:0;border-bottom:1px solid var(--line);border-radius:0;background:none;padding:10px 2px}
@@ -1896,7 +1898,22 @@ p,li,.bubble p{text-wrap:pretty}
 .hubgrid.tl-accent .tile.today.hi b,.hubgrid.tl-plain .tile.today.hi b,.hubgrid.tl-accent .tile.today.hi small,.hubgrid.tl-plain .tile.today.hi small{color:var(--on-accent)}
 .hubgrid.tl-accent .tile.today.hi .e,.hubgrid.tl-plain .tile.today.hi .e{background:color-mix(in srgb,var(--on-accent) 16%,transparent);color:var(--on-accent)}
 .hubgrid.tl-accent .tile.t-sos .e,.hubgrid.tl-plain .tile.t-sos .e{background:color-mix(in srgb,var(--hot) 10%,var(--paper));color:var(--hot)}
-.tilepick{align-items:center;gap:10px;margin:18px 0 6px;flex-wrap:wrap}
+/* the menu's colours: three small cards like the tiles they choose, each with a preview of three tiles; the chosen one ringed + ✓ */
+.tilepick{margin:6px 0 6px}
+.tpk{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:8px;margin:12px 0 8px;max-width:560px}
+.tpo{position:relative;display:flex;flex-direction:column;align-items:flex-start;gap:9px;min-height:44px;padding:12px;border:1px solid var(--line);border-radius:var(--r);background:var(--paper);color:var(--ink);font:inherit;text-align:left;cursor:pointer;box-shadow:0 6px 14px -12px rgba(16,24,32,.5)}
+.tpo b{font-size:15px;font-weight:700;line-height:1.25}
+.tpo .sw{display:grid;grid-template-columns:repeat(3,1fr);gap:4px;width:100%}
+.tpo .sw i{display:block;height:22px;border-radius:7px;border:1px solid transparent}
+.tpo-pastel .sw i:nth-child(1){background:color-mix(in srgb,#4F7BFF 32%,#fff);border-color:color-mix(in srgb,#4F7BFF 30%,#fff)}
+.tpo-pastel .sw i:nth-child(2){background:color-mix(in srgb,#FF6FA8 32%,#fff);border-color:color-mix(in srgb,#FF6FA8 30%,#fff)}
+.tpo-pastel .sw i:nth-child(3){background:color-mix(in srgb,#F2B90C 32%,#fff);border-color:color-mix(in srgb,#F2B90C 30%,#fff)}
+.tpo-accent .sw i{background:color-mix(in srgb,var(--accent) 20%,var(--paper));border-color:color-mix(in srgb,var(--accent) 26%,transparent)}
+.tpo-plain .sw i{background:var(--paper);border-color:var(--line)}
+.tpo[aria-pressed=true]{border:2px solid var(--accent);padding:11px;background:color-mix(in srgb,var(--accent) 6%,var(--paper))}
+.tpo .ck{position:absolute;top:-8px;right:-8px;width:22px;height:22px;border-radius:50%;background:var(--accent);color:var(--on-accent);box-shadow:0 0 0 2px var(--paper);font-size:12px;font-weight:700;line-height:22px;text-align:center;display:none}
+.tpo[aria-pressed=true] .ck{display:block}
+.tpo:focus-visible{outline:2px solid var(--accent);outline-offset:2px}
 .tripdel{margin:22px 0 8px}
 .advc .nocrest{display:grid;place-items:center}.advc .nocrest .stamp{transform:none}
 /* 16 colours with 16 different names (owner: no two alike) — red, orange, gold, brown, lime, green, teal, cyan, sky, blue, indigo, violet, purple, magenta, pink, charcoal; placed so look-alikes never touch on the phone or the desktop grid */

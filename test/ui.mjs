@@ -1078,6 +1078,15 @@ const T = 'hk-macau-2026';
   { const f = page.locator('.ifts details.ifold').first(), b = f.locator('.fb');
     ok(await page.locator('.ifts details.ifold').count() >= 30 && !(await b.isVisible()) && (await f.locator('summary').click(), await b.isVisible()) && (await f.locator('summary').boundingBox()).height >= 44,
       'emergency page: each “if” is one line; what to do opens under it on a tap (44 px)'); }
+  { // two versions always (owner): the short report and the full one with every detail open, kept on the phone across a reload
+    const all = page.locator('#pocket details.ifold'), open = () => page.$$eval('#pocket details.ifold', (ds) => ds.filter((d) => d.open).length);
+    await page.locator('.repseg button[data-v="1"]').click();
+    const n = await all.count(), fullOpen = await open();
+    await page.reload(); await page.waitForSelector('#pocket');
+    const kept = await open(), pressed = await page.locator('.repseg button[data-v="1"]').getAttribute('aria-pressed');
+    await page.locator('.repseg button[data-v="0"]').click();
+    ok(n >= 30 && fullOpen === n && kept === n && pressed === 'true' && await open() === 0 && (await page.locator('.repseg button').first().boundingBox()).height >= 44,
+      `report: "full" opens every detail and stays after a reload, "short" folds them again (${fullOpen}/${kept}/${n})`); }
   ok(await page.locator('#pocket .ecard .emerg li.main a[href="tel:000"]').count() === 1 && await page.locator('#pocket .ecard .enights li').count() === 8 && await page.locator('#pocket .ecard .elost').count() === 1, 'emergency card like the manual: 000 first, every night\'s address (8 stays), the lost-child line');
   await page.goto(`${BASE}/#/t/big-hop-2027/prep/full`); await page.waitForSelector('#pocket');
   ok(await page.locator('#pocket details.pg').count() >= 6 && (await page.textContent('#pocket')).includes('Biosecurity'), 'get-ready page: packing, prices, visa, biosecurity, the van, drive legs, crowds, book-ahead');
