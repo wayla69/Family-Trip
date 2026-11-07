@@ -416,7 +416,7 @@ try {
     const nFood = (await state()).media.filter((m) => (m.tags || []).includes('food')).length;
     ok(nFood >= 1 && await pg2.locator('#phlist .mosaic button:visible').count() === nFood && await pg2.locator('#phlist [data-v="ph-ai-0001"]:visible').count() === 0 && await pg2.locator('#phtags [data-v="food"][aria-pressed="true"]').count() === 1, `photos by tag: the food chip shows exactly the ${nFood} food photos, in place`);
     await pg2.locator('#phlist .mosaic button:visible').first().click(); await pg2.waitForSelector('#lbtags');
-    ok((await pg2.inputValue('#lbtags')).includes('food') && (await pg2.textContent('#lb .tags')).includes('🍜'), 'lightbox: tags and place shown and editable');
+    ok((await pg2.inputValue('#lbtags')).includes('food') && await pg2.locator('#lb .tags img.emi[alt="🍜"]').count() === 1, 'lightbox: tags and place shown (🍜 drawn by the library picture) and editable');
     await b2.close(); }
   // ---- a book from a PDF (#/import): a tiny PDF whose made-up "manual" has private-looking lines that must never reach the mock
   { const db = new Client({ connectionString: u.toString() }); await db.connect(); await db.query('UPDATE ai_usage SET calls=0'); await db.end(); }
