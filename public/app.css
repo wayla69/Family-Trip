@@ -961,16 +961,36 @@ section.pg{position:relative;width:min(100%,794px);min-height:1123px;margin:0 au
 section.pg .day{break-before:auto;border-top:0;margin-top:0;padding-top:0}
 .pghd{margin-bottom:14px;padding-bottom:8px;border-bottom:1px solid var(--rule)}
 .pghd h2{font-family:var(--display);font-size:30px;line-height:1.1;font-weight:600;margin-top:2px}
-section.pg.cover{display:flex}.cv{position:relative;flex:1;padding:8px 0 0 22px;display:flex;flex-direction:column}
+section.pg.cover{display:flex}.cv{position:relative;flex:1;min-height:1000px;padding:8px 0 0 22px;display:flex;flex-direction:column}
 .cv::before{content:"";position:absolute;left:0;top:0;bottom:0;width:10px;background:var(--accent);border-radius:2px}
 .cv h1{font-family:var(--display);font-size:60px;line-height:1;font-weight:600;margin-top:14px;max-width:80%}
 .cv .sub-it{font-size:30px;color:var(--accent);margin-top:4px}
 .cv .line{color:var(--muted);margin-top:8px}
 .cv .stamp{position:absolute;right:0;top:0}
-.cvart{display:flex;gap:6px;margin-top:28px;flex-wrap:wrap}.cvart .art{width:64px;height:64px}
-.cvph{display:grid;grid-template-columns:repeat(3,1fr);gap:10px;margin-top:22px}.cvph img{width:100%;aspect-ratio:4/3;object-fit:cover;border-radius:6px;box-shadow:0 4px 12px -8px rgba(0,0,0,.5);background:#fff;padding:6px 6px 22px;border:1px solid var(--rule)}
-.cv .cast{margin-top:auto;align-self:flex-end;margin-bottom:30px}.cv .cast .who{height:170px}.cv .cast .who.mika{height:125px}
-.cvfoot{font-size:12px;color:var(--muted);letter-spacing:.06em;text-transform:uppercase}
+/* the cover fills the page (owner, Nov 2026): 'art' = the day pictures as a grid on the cream panel; 'photo' = the ⭐ photo over a band in the book's colour */
+.cvhd{display:flex;justify-content:space-between;align-items:flex-start;gap:20px}.cvhd .cvtx{flex:1;min-width:0}
+.cv.art .stamp{position:relative;right:auto;top:auto;flex:none;margin-top:4px}
+.cv.art .cvart{flex:1;margin-top:26px;background:var(--panel);border-radius:18px;padding:30px;display:grid;grid-template-columns:repeat(3,1fr);gap:22px 16px;align-content:center}
+.cv.art .cvart.c4{grid-template-columns:repeat(4,1fr);gap:16px 12px;padding:24px}
+.cv.art .cvart figure{margin:0;display:flex;flex-direction:column;align-items:center;gap:6px;text-align:center;min-width:0}
+.cv.art .cvart .art{width:100%;max-width:164px;height:auto;aspect-ratio:1}.cv.art .cvart.c4 .art{max-width:108px}
+.cv.art .cvart .art.emo{display:grid;place-items:center;font-size:64px;background:#fff;border-radius:50%}.cv.art .cvart.c4 .art.emo{font-size:46px}
+.cv.art .cvart b{font-size:13px;color:var(--accent);font-variant-numeric:tabular-nums}.cv.art .cvart small{font-size:12.5px;color:var(--muted);line-height:1.3;max-width:170px}
+.cv.art .cvart.c4 small{display:none}
+.cvmore{grid-column:1/-1;text-align:center;font-size:12.5px;color:var(--muted);margin:2px 0 0}
+.cvft{display:flex;align-items:flex-end;justify-content:space-between;gap:16px;margin-top:22px}
+.cv .cast{margin:0}.cv.art .cast .who{height:118px}.cv.art .cast .who.mika{height:90px}
+.cvfoot{font-size:12px;color:var(--muted);letter-spacing:.06em;text-transform:uppercase;text-align:right;line-height:1.5;margin:0}
+.cv.photo{padding:0}.cv.photo::before{display:none}
+.cvph{position:relative;height:540px;border-radius:14px;overflow:hidden;background:var(--panel)}
+.cvph img.big{width:100%;height:100%;object-fit:cover;display:block}
+.cv.photo .stamp{right:16px;top:16px;background:#fff;border-radius:50%;box-shadow:0 4px 18px rgba(0,0,0,.18)}
+.cv.photo .cvph .cast{position:absolute;left:16px;bottom:0}.cv.photo .cast .who{height:150px}.cv.photo .cast .who.mika{height:118px}
+.cvband{flex:1;background:var(--accent);color:#fff;border-radius:14px;padding:30px 36px 26px;margin-top:14px;display:flex;flex-direction:column}
+.cvband .kicker,.cvband .line,.cvband .sub-it,.cvband .cvfoot{color:rgba(255,255,255,.86)}.cvband h1{color:#fff;max-width:none;margin-top:6px}
+.cvband .cvft{margin-top:auto}
+.cvart.strip{display:flex;gap:8px;flex-wrap:wrap}.cvart.strip .art{width:52px;height:52px;background:#fff;border-radius:50%}.cvart.strip .art.emo{display:grid;place-items:center;font-size:28px}
+.coverpick{align-items:center;gap:10px;margin:18px 0 -14px}
 section.pg .facts{margin:6px 0 16px}
 section.pg .journey{margin:0 0 14px}
 .pmap{max-width:560px;margin:0 auto 14px}.pmap .walkers img{height:60px}.pmap .walkers img.mika{height:46px}
@@ -989,12 +1009,13 @@ section.pg .dstamps{display:grid;grid-template-columns:repeat(3,1fr);gap:10px 6p
 .pcert{margin-top:12px;border:2px solid var(--accent);border-radius:12px;padding:12px 14px;text-align:center}.pcert b{display:block;font-family:var(--display);font-size:20px;margin:4px 0}.pcert p{margin:0;font-size:13px}
 .storytxt{white-space:pre-line;font-size:16px;line-height:1.7}
 section.pg.back{display:grid;place-items:center;text-align:center}.bk h2{font-family:var(--display);font-size:40px;margin:14px 0 6px}.bk .cast{justify-content:center}.bk .cast .who{height:150px}.bk .cast .who.mika{height:110px}
-@media (max-width:600px){section.pg{min-height:0;padding:20px 16px}.ppcols,.qgrid{display:block;columns:1}.cv h1{font-size:40px;max-width:none}}
+@media (max-width:600px){section.pg{min-height:0;padding:20px 16px}.ppcols,.qgrid{display:block;columns:1}.cv h1{font-size:40px;max-width:none}.cv{min-height:0}.cvhd{flex-wrap:wrap}.cv.art .cvart{padding:16px;gap:14px 8px}.cvph{height:360px}.cvband{padding:20px}}
 @media print{
   body.printbook{background:#fff}
   .pbook{display:none}
   section.pg{width:auto;min-height:0;margin:0;box-shadow:none;padding:0;break-after:page;overflow:visible}
   section.pg:last-child{break-after:auto}
+  .cv{min-height:266mm}   /* the cover fills its sheet (A4 less the 14 mm margins) */
   @page{size:A4;margin:14mm 12mm}
 }
 @media print{

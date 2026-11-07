@@ -306,7 +306,7 @@ ${isEditor() && S.features.story && days.length ? storyBlock(t, null)
     : story ? `<div class="part">${L('นิทานของทั้งทริป', 'The story of the trip')}</div><div class="call calm" style="white-space:pre-line">${bedBtn(story)}${esc(story.text)}</div>` : ''}
 ${letterBlock(t, days.length)}
 ${days.map((i) => dayPage(t, i)).join('') || `<div class="empty">${castHtml((t.theme.children || []).map((k) => k.slug))}${L('ยังไม่มีบันทึก — ', 'Nothing recorded yet — ')}${edit ? `<a href="#/t/${esc(t.id)}/log/${Math.max(0, dayNow(t))}">${L('เริ่มบันทึกวันแรก', 'start with a day')}</a>` : L('รอพ่อแม่บันทึกระหว่างทริป', 'the grown-ups will fill it in during the trip')}</div>`}
-<div class="row noprint" style="margin:28px 0 8px"><a class="btn small" href="/api/b/pdf/${esc(t.id)}" download data-a="pdf">📕 ${L('สมุดความทรงจำ (PDF A4)', 'Memory book (PDF A4)')}</a><a class="btn ghost small" href="#/print/${esc(t.id)}">👀 ${L('ดูตัวอย่างเล่ม', 'Preview the book')}</a><button class="btn ghost small" data-a="print">🖨️ ${L('พิมพ์หน้านี้', 'Print this page')}</button><button class="btn ghost small" data-a="copytext">📋 ${L('คัดลอกเป็นข้อความ', 'Copy as text')}</button></div></div>`;
+${coverPick(t)}<div class="row noprint" style="margin:28px 0 8px"><a class="btn small" href="/api/b/pdf/${esc(t.id)}" download data-a="pdf">📕 ${L('สมุดความทรงจำ (PDF A4)', 'Memory book (PDF A4)')}</a><a class="btn ghost small" href="#/print/${esc(t.id)}">👀 ${L('ดูตัวอย่างเล่ม', 'Preview the book')}</a><button class="btn ghost small" data-a="print">🖨️ ${L('พิมพ์หน้านี้', 'Print this page')}</button><button class="btn ghost small" data-a="copytext">📋 ${L('คัดลอกเป็นข้อความ', 'Copy as text')}</button></div></div>`;
 }
 // the whole plan, day by day, like the manual's day list: every day (recorded or not), where we sleep, the planned stops
 function itinerary(t) {
@@ -966,6 +966,16 @@ function drawingsHtml(t) {
 }
 const bedBtn = (e) => `<button class="btn ghost small noprint bedbtn" data-a="bedtime" data-v="${esc(e.id)}">🌙 ${L('อ่านให้ฟังก่อนนอน', 'Read it at bedtime')}</button>`;
 
+// the printed cover: 'photo' only when the parents chose it and the book has a ⭐ photo; else the day pictures
+const starredPhotos = (t) => mediaOf(t.id).filter((m) => m.highlight && !isDrawing(m));
+const coverMode = (t) => { const e = entriesOf(t.id).find((x) => x.kind === 'cover'); return e && e.text === 'photo' && starredPhotos(t).length ? 'photo' : 'art'; };
+// the cover switch on the book page (editors; only once a photo is starred — until then there is only the art cover)
+function coverPick(t) {
+  if (!isEditor() || !starredPhotos(t).length) return '';
+  const m = coverMode(t);
+  return `<div class="row noprint coverpick"><span class="label">${L('ปกเล่มพิมพ์', 'Printed cover')}</span><div class="seg" role="group">${[['art', L('ภาพประจำวัน', 'Day pictures')], ['photo', L('รูปโปรด ⭐', 'Starred photo ⭐')]].map(([k, l]) => `<button type="button" data-a="cover" data-t="${esc(t.id)}" data-v="${k}" aria-pressed="${m === k}">${l}</button>`).join('')}</div></div>`;
+}
+
 /* ---------- the memory book (#/print/<trip> → /api/b/pdf/<trip>): the trip as a printed book after it ends ----------
    A4 pages in the manual's language: cover · the trip in numbers + map + where we slept · contents · a page per recorded day
    · firsts · in their own words · a passport spread per child (stamps, badges, Explorer ID, colourings, drawings, stickers,
@@ -983,14 +993,20 @@ function viewPrint(t) {
   const stays = (t.info && t.info.stays) || [];
   const pg = (cls, inner) => `<section class="pg ${cls}">${inner}</section>`;
   const head = (kicker, title) => `<header class="pghd"><div class="kicker">${kicker}</div><h2>${title}</h2></header>`;
-  // 1 · cover
-  const cover = pg('cover', `<div class="cv"><div class="kicker">${esc(t.theme.kicker || '')}</div>
+  // 1 · cover — two layouts (owner's pick, Nov 2026): 'art' = the day pictures as a grid on the manual's cream panel (the default:
+  // every book has them), 'photo' = the first ⭐ photo full width over a band in the book's colour (only when a photo is starred;
+  // the parents switch on the book page → entry kind 'cover', id `<trip>.cover.all`)
+  const cvMode = coverMode(t), cvTitle = `<div class="cvhd"><div class="cvtx"><div class="kicker">${esc(t.theme.kicker || '')}</div>
 <h1>${esc(short)}</h1><div class="sub-it">${esc(T(t.sub))}</div>
-<p class="line">${esc(fmtRange(t))}${ages ? ' · ' + esc(ages) : ''}</p>
-<div class="cvart">${t.days.slice(0, 8).map((_, i) => artImg(t, i)).join('')}</div>
-${faves.length ? `<div class="cvph">${faves.map((m) => `<img src="${esc(imgT(m))}" alt="">`).join('')}</div>` : ''}
-${castHtml(kids)}${stampHtml(t)}
-<p class="cvfoot">${L('สมุดความทรงจำ', 'Memory book')} · MM Memory · ${esc(printed)}</p></div>`);
+<p class="line">${esc(fmtRange(t))}${ages ? ' · ' + esc(ages) : ''}</p></div>${cvMode === 'art' ? stampHtml(t) : ''}</div>`;
+  const cvFoot = `<p class="cvfoot">${L('สมุดความทรงจำ', 'Memory book')} · ${esc(appName())} · ${esc(printed)}</p>`;
+  const nArt = t.days.length <= 6 ? 6 : 12, more = t.days.length - nArt;
+  const cover = pg('cover', cvMode === 'photo'
+    ? `<div class="cv photo"><div class="cvph"><img class="big" src="${esc(imgF(faves[0]))}" alt="">${stampHtml(t)}${castHtml(kids)}</div>
+<div class="cvband">${cvTitle}<div class="cvft"><div class="cvart strip">${t.days.slice(0, 8).map((_, i) => artImg(t, i)).join('')}</div>${cvFoot}</div></div></div>`
+    : `<div class="cv art">${cvTitle}
+<div class="cvart${nArt > 6 ? ' c4' : ''}">${t.days.slice(0, nArt).map((d, i) => `<figure>${artImg(t, i)}<b>${String(i + 1).padStart(2, '0')} · ${esc(fmtDay(d.date, { day: 'numeric', month: 'short' }))}</b><small>${esc(T(d.title))}</small></figure>`).join('')}${more > 0 ? `<p class="cvmore">${L(`และอีก ${more} วัน`, `and ${more} more day${more > 1 ? 's' : ''}`)}</p>` : ''}</div>
+<div class="cvft">${castHtml(kids)}${cvFoot}</div></div>`);
   // 2 · the trip in numbers, the map, where we slept
   const facts = [[L('วัน', 'Days'), `${days.length}<small>/${t.days.length}</small>`], [L('รูป', 'Photos'), st.photos], [L('คำพูด', 'Quotes'), st.quotes], [L('ครั้งแรก', 'Firsts'), st.firsts], [L('ที่ไป', 'Places'), st.places]]
     .concat(hearts.length ? [[L('หัวใจจากญาติ', 'Hearts'), hearts.length]] : [], drawings.length ? [[L('ภาพวาด', 'Drawings'), drawings.length]] : []);

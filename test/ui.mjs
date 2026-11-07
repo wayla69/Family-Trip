@@ -747,6 +747,17 @@ const T = 'hk-macau-2026';
   const pgs = await s.page.locator('.pg').evaluateAll((els) => els.map((e) => e.className.replace('pg ', '').split(' ')[0]));
   ok(pgs[0] === 'cover' && pgs.includes('numbers') && pgs.includes('contents') && pgs.filter((c) => c === 'dayp').length >= 1 && pgs.filter((c) => c === 'ppp').length === 2 && pgs.includes('wordsp') && pgs.includes('firstsp') && pgs[pgs.length - 1] === 'back', `memory book pages: ${pgs.join(' · ')}`);
   ok(await s.page.locator('.pg.cover .cast .who').count() === 2 && await s.page.locator('.pg.cover .cvart .art').count() === 6 && await s.page.locator('.pg.numbers .pmap .pin').count() === 7, 'memory book cover: the kids, the six day stamps; numbers page: the route map');
+  // the cover fills the page: by default the six day pictures as a grid (every book has them); the parents may switch to the ⭐ photo
+  ok(await s.page.locator('.pg.cover .cv.art .cvart figure').count() === 6 && await s.page.locator('.pg.cover .cv.art .cvart figure small').first().textContent() !== '' && await s.page.locator('.pg.cover .cv.photo').count() === 0, 'cover default: a 3×2 grid of the day pictures with the date and the day\'s name, no photo');
+  await s.page.goto(`${BASE}/#/t/hk-macau-2026/book`); await s.page.waitForSelector('.coverpick');
+  ok(await s.page.locator('.coverpick button[data-v="art"][aria-pressed="true"]').count() === 1, 'book page: the printed-cover switch shows (a photo is starred), day pictures selected');
+  await s.page.click('.coverpick button[data-v="photo"]'); await s.page.waitForSelector('.coverpick button[data-v="photo"][aria-pressed="true"]');
+  await s.page.goto(`${BASE}/#/print/hk-macau-2026`); await s.page.waitForSelector('.pg.cover .cv.photo');
+  ok(await s.page.locator('.pg.cover .cvph img.big').count() === 1 && await s.page.locator('.pg.cover .cvband h1').count() === 1 && await s.page.locator('.pg.cover .cvart.strip .art').count() === 6 && await s.page.locator('.pg.cover .cast .who').count() === 2, 'cover "photo": the ⭐ photo full width, the title on a band in the book\'s colour, the day strip, the kids');
+  await s.page.screenshot({ path: path.join(OUT, 'wide-13b-cover-photo.png'), clip: { x: 0, y: 0, width: 1440, height: 1250 } });
+  ok((await apiState(s.page)).entries.some((e) => e.id === 'hk-macau-2026.cover.all' && e.kind === 'cover' && e.text === 'photo' && e.day === null), 'server: the cover choice is one trip-wide entry (the PDF renders it too)');
+  await s.page.goto(`${BASE}/#/t/hk-macau-2026/book`); await s.page.waitForSelector('.coverpick'); await s.page.click('.coverpick button[data-v="art"]'); await s.page.waitForSelector('.coverpick button[data-v="art"][aria-pressed="true"]');
+  await s.page.goto(`${BASE}/#/print/hk-macau-2026`); await s.page.waitForSelector('.pg.cover .cv.art');
   ok(await s.page.locator('.pg.ppp .dstamp').count() === 12 && await s.page.locator('.pg.ppp .colsvg svg, .pg.ppp .colsvg').count() >= 1, 'passport spreads: 6 stamp slots per child, Mimi\'s colouring');
   ok(await s.page.locator('nav.bar, .top').count() === 0, 'memory book preview has no app chrome');
   await s.page.screenshot({ path: path.join(OUT, 'wide-13-memory-book.png'), fullPage: true });
