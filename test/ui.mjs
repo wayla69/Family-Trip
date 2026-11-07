@@ -201,6 +201,11 @@ const T = 'hk-macau-2026';
   await koala.click(); await koala.click();
   await page.waitForFunction(() => !S.emoji.some((e) => e.ch === '🐨'), null, { timeout: 8000 }).catch(() => {});
   ok(await page.locator('.emocard').count() === 24, 'emoji page: deleted with two taps');
+  // the book's menu: every card shows the owner's glossy picture, and each picture is there
+  await page.goto(`${BASE}/#/t/${T}`); await page.waitForSelector('.tile');
+  const hubPics = await page.evaluate(async () => { const t = [...document.querySelectorAll('main .tile')]; const imgs = t.map((x) => x.querySelector('.e.pic img')).filter(Boolean);
+    return { tiles: t.length, pics: imgs.length, ok: (await Promise.all(imgs.map((i) => fetch(i.src).then((r) => r.ok)))).every(Boolean) }; });
+  ok(hubPics.tiles >= 12 && hubPics.pics === hubPics.tiles && hubPics.ok, `book menu: all ${hubPics.tiles} cards show a glossy picture, every one loads`);
   // every icon the manifest names exists at its stated size; each shortcut has its own picture; iPhone gets a 180 px icon
   const icons = [...man.icons, ...man.shortcuts.flatMap((s) => s.icons)], sizes = [];
   for (const ic of icons) { const r = await page.request.get(BASE + ic.src); const m = r.ok() ? await sharp(await r.body()).metadata() : {}; sizes.push(`${m.width}x${m.height}` === ic.sizes); }
