@@ -220,22 +220,66 @@ const artList = (seed) => `public/art/${seed.slug}/day-1..${seed.days.length}.sv
 // Warnings only: a book is never refused for its wording, the warnings name what to fix.
 const THAI = /[\u0E00-\u0E7F]/;
 const noThai = (x) => x && typeof x === 'object' && typeof x.th === 'string' && x.th.trim() && !THAI.test(x.th);
-function thaiCheck(seed) {
-  const warns = [];
-  if (noThai(seed.title)) warns.push(`title.th "${seed.title.th}" has no Thai — transliterate the name (ออสเตรเลีย, not Australia)`);
+function thaiCheck(seed) { return styleCheck(seed); }   // the old name, kept for callers
+// docs/STYLE.md §7 — what a machine can see of the book's writing; warnings only, the book is never refused for its wording
+const EMOJI_FIRST = /^\p{Extended_Pictographic}/u;
+const US_SPELLING = /\b(colors?|colored|centers?|centered|favorites?|traveled|traveling|organiz\w*|(?:kilo|centi)meters?)\b/;   // lower case only ("Baby Care Center" is a name); a taxi "meter" is right in British English too
+const TIMES = (x) => (String(x).match(/\b\d{1,2}:\d{2}\b/g) || []).map((t) => t.replace(/^0(?=\d:)/, '')).sort().join(' ');
+const MONEY = (x) => (String(x).match(/(?:HK\$|MOP|A\$|AU\$|NZ\$|US\$|\$|€|£|¥)\s?\d[\d,.]*/g) || []).map((m) => m.replace(/\s/g, '').replace('AU$', 'A$').replace(/[.,]+$/, '')).sort().join(' ');
+const KID_PATHS = [/\.learn\[\d+\]\.kid$/, /\.quiz\[\d+\]\.(q|a)$/, /\.tale(\.scenes\[\d+\])?$/, /^passport\.days\[\d+\]\.(title|spot\[\d+\]|facts\[\d+\])$/, /^passport\.countdown\.doors\[\d+\]$/, /^passport\.little\.days\[\d+\]\[\d+\]$/, /^passport\.guides\[\d+\]\.hello$/];
+function styleCheck(seed) {
+  const warns = [], add = (w) => warns.push(w);
+  if (noThai(seed.title)) add(`title.th "${seed.title.th}" has no Thai — transliterate the name (ออสเตรเลีย, not Australia)`);
   (seed.days || []).forEach((d, i) => {
     const at = `days[${i}]`;
-    if (noThai(d.title)) warns.push(`${at}.title.th "${d.title.th}" has no Thai — write it the way Thais say it (ฮ่องกงดิสนีย์แลนด์)`);
-    if (noThai(d.wx)) warns.push(`${at}.wx.th has no Thai`);
+    if (noThai(d.title)) add(`${at}.title.th "${d.title.th}" has no Thai — write it the way Thais say it (ฮ่องกงดิสนีย์แลนด์)`);
+    if (noThai(d.wx)) add(`${at}.wx.th has no Thai`);
     const rows = Array.isArray(d.plan) ? d.plan : (d.plan && Array.isArray(d.plan.plan) ? d.plan.plan : []);
-    rows.forEach((r, j) => { if (r && noThai(r.h)) warns.push(`${at}.plan[${j}].h.th "${r.h.th}" has no Thai`); });
+    rows.forEach((r, j) => {
+      const h = r && r.h; if (!h || typeof h !== 'object') return;
+      if (noThai(h)) add(`${at}.plan[${j}].h.th "${h.th}" has no Thai`);
+      for (const l of ['th', 'en']) {
+        const x = String(h[l] || '');
+        if (!EMOJI_FIRST.test(x)) add(`${at}.plan[${j}].h.${l} "${x}" — a headline starts with one emoji`);
+        if (/ · |[()]/.test(x)) add(`${at}.plan[${j}].h.${l} "${x}" — no " · " or brackets in a headline (the detail is below it)`);
+      }
+      const words = String(h.en || '').replace(EMOJI_FIRST, '').trim().split(/\s+/).filter((w) => /\w/.test(w)).length;
+      if (words > 6) add(`${at}.plan[${j}].h.en "${h.en}" — ${words} words; a headline is 6 at most`);
+      const thLen = [...String(h.th || '').replace(/^\P{L}+/u, '').replace(/\p{M}/gu, '')].length;   // what the eye sees: Thai vowel and tone marks sit on a letter
+      if (thLen > 32) add(`${at}.plan[${j}].h.th "${h.th}" — ${thLen} characters; about 25, 32 at most`);
+    });
   });
+  // every {th, en} text of the book: spelling, spacing, times and prices that agree, the kids' lines
+  const walk = (x, path) => {
+    if (Array.isArray(x)) return x.forEach((v, k) => walk(v, `${path}[${k}]`));
+    if (!x || typeof x !== 'object') return;
+    if (typeof x.th === 'string' && typeof x.en === 'string') {
+      const p = path.replace(/^\./, '');
+      if (US_SPELLING.test(x.en)) add(`${p}.en — American spelling "${x.en.match(US_SPELLING)[0]}" (the book is in British English)`);
+      for (const l of ['th', 'en']) { if (/ {2}/.test(x[l])) add(`${p}.${l} — a double space`); if (x[l] !== x[l].trim()) add(`${p}.${l} — a space at the start or the end`); }
+      if (x.th.trim() && x.en.trim()) {
+        if (TIMES(x.th) !== TIMES(x.en)) add(`${p} — the times differ: th [${TIMES(x.th)}] en [${TIMES(x.en)}]`);
+        if (MONEY(x.th) !== MONEY(x.en)) add(`${p} — the prices differ: th [${MONEY(x.th)}] en [${MONEY(x.en)}]`);
+      }
+      if (KID_PATHS.some((r) => r.test(p))) for (const l of ['th', 'en']) {
+        if (/ · /.test(x[l])) add(`${p}.${l} — a kids' line is read aloud: no " · "`);
+        if (/\b\d{1,2}:\d{2}\b/.test(x[l])) add(`${p}.${l} — a kids' line says the time in words ("in the evening"), not HH:MM`);
+      }
+    }
+    for (const [k, v] of Object.entries(x)) if (k !== 'speak' && k !== 'zh') walk(v, `${path}.${k}`);
+  };
+  walk(seed, '');
+  // a child's name in a Thai text is written in Thai (มีมี่, not Mimi)
+  const kidNames = (seed.children || []).map((k) => k && (k.name_en || (k.name && k.name.en))).filter((n) => n && /^[A-Za-z]/.test(n));
+  if (kidNames.length) { const re = new RegExp(`\\b(${kidNames.map((n) => n.replace(/[.*+?^${}()|[\]\\]/g, '\\$&')).join('|')})\\b`);
+    const hit = []; const look = (x, path) => { if (Array.isArray(x)) return x.forEach((v, k) => look(v, `${path}[${k}]`)); if (!x || typeof x !== 'object') return; if (typeof x.th === 'string' && re.test(x.th)) hit.push(path.replace(/^\./, '')); for (const [k, v] of Object.entries(x)) if (k !== 'children') look(v, `${path}.${k}`); };
+    look(seed, ''); hit.slice(0, 12).forEach((p) => add(`${p}.th — a child's name in Latin script; write it in Thai (${(seed.children || []).map((k) => k.name_th || (k.name && k.name.th)).filter(Boolean).join(', ')})`)); if (hit.length > 12) add(`… and ${hit.length - 12} more Thai texts with a child's name in Latin script`); }
   const wrong = (JSON.stringify(seed).match(/เช็ค/g) || []).length;
-  if (wrong) warns.push(`${wrong} × "เช็ค" — the spelling is เช็ก (เช็กอิน / เช็กเอาต์)`);
+  if (wrong) add(`${wrong} × "เช็ค" — the spelling is เช็ก (เช็กอิน / เช็กเอาต์)`);
   return warns;
 }
 function sanity(seed, opts = {}) {
-  const errs = [], warns = thaiCheck(seed);
+  const errs = [], warns = styleCheck(seed);
   if (seed.format !== 2) errs.push('format must be 2');
   if (!Array.isArray(seed.days) || !seed.days.length) errs.push('days missing');
   else {
@@ -257,4 +301,4 @@ function sanity(seed, opts = {}) {
 }
 
 
-export { EXEMPT, RULES, SOFT, scan, todos, isI18n, validate, toSeed, report, artList, sanity, thaiCheck };
+export { EXEMPT, RULES, SOFT, scan, todos, isI18n, validate, toSeed, report, artList, sanity, thaiCheck, styleCheck };

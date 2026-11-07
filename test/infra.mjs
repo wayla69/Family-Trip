@@ -108,6 +108,18 @@ ok(['families', 'children', 'trips', 'trip_days', 'firsts_catalog', 'entries', '
     const r3 = spawnSync(process.execPath, ['scripts/plan-to-seed.mjs', path.join(dir, 'eng.json'), `--out=${path.join(dir, 'eng-seed.json')}`], { encoding: 'utf8' });
     ok(r3.status === 0 && /title\.th "Tokyo" has no Thai/.test(r3.stdout) && /days\[1\]\.title\.th "Sumida Aquarium" has no Thai/.test(r3.stdout) && /days\[0\]\.plan\[0\]\.h\.th "🛬 Haneda" has no Thai/.test(r3.stdout) && /1 × "เช็ค"/.test(r3.stdout) && fs.existsSync(path.join(dir, 'eng-seed.json')),
       `plan-to-seed warns about a title, a day title or a headline with no Thai letters and about the เช็ค spelling, and still writes the book (${r3.stdout.split('\n').filter((l) => /warn/.test(l)).join(' | ')})`);
+    // the rest of docs/STYLE.md §7: headline shape, British spelling, spacing, times/prices that agree, kids' lines, children's names in Thai
+    const sty = JSON.parse(JSON.stringify(sample));
+    sty.days[0].plan[1].h = { th: 'เช็กอิน พักแป๊บ', en: '🏨 A very long headline with far too many words' };
+    sty.days[0].plan[2].h = { th: '🛝 สนามเด็กเล่น (ริมบึง) · ใหญ่', en: '🛝 Playground by the pond' };
+    sty.days[0].tips.push({ th: 'ร้านเปิด 10:00 ราคา ¥800', en: 'Opens 11:00, ¥900 — the favorite  colors of the center' });
+    sty.days[0].tips.push({ th: 'ของ Mimi เก็บไว้ในกระเป๋า', en: "Mimi's things in the bag" });
+    fs.writeFileSync(path.join(dir, 'sty.json'), JSON.stringify(sty));
+    const r4 = spawnSync(process.execPath, ['scripts/plan-to-seed.mjs', path.join(dir, 'sty.json'), `--out=${path.join(dir, 'sty-seed.json')}`], { encoding: 'utf8' });
+    const w4 = r4.stdout.split('\n').filter((l) => /warn/.test(l)).join(' | ');
+    ok(r4.status === 0 && /h\.th "เช็กอิน พักแป๊บ" — a headline starts with one emoji/.test(w4) && /9 words; a headline is 6 at most/.test(w4) && /no " · " or brackets in a headline/.test(w4)
+      && /American spelling "favorite"/.test(w4) && /a double space/.test(w4) && /the times differ: th \[10:00\] en \[11:00\]/.test(w4) && /the prices differ/.test(w4) && /a child's name in Latin script/.test(w4),
+      `plan-to-seed names a headline without its emoji, too long or with brackets, an American spelling, a double space, times and prices that differ between the languages, a child's name in Latin script in Thai (${w4.slice(0, 600)})`);
     for (const f of fs.readdirSync(path.resolve('server/seeds'))) {
       const c = spawnSync(process.execPath, ['scripts/plan-to-seed.mjs', '--check', path.resolve('server/seeds', f)], { encoding: 'utf8' });
       const rows = JSON.parse(fs.readFileSync(path.resolve('server/seeds', f), 'utf8')).days.flatMap((d) => d.plan || []), noH = rows.filter((r) => !(r.h && r.h.th && r.h.en && /^\p{Extended_Pictographic}/u.test(r.h.en) && !r.h.en.includes(' · ')));
