@@ -226,6 +226,8 @@ const EMOJI_FIRST = /^\p{Extended_Pictographic}/u;
 const US_SPELLING = /\b(colors?|colored|centers?|centered|favorites?|traveled|traveling|organiz\w*|(?:kilo|centi)meters?)\b/;   // lower case only ("Baby Care Center" is a name); a taxi "meter" is right in British English too
 const TIMES = (x) => (String(x).match(/\b\d{1,2}:\d{2}\b/g) || []).map((t) => t.replace(/^0(?=\d:)/, '')).sort().join(' ');
 const MONEY = (x) => (String(x).match(/(?:HK\$|MOP|A\$|AU\$|NZ\$|US\$|\$|€|£|¥)\s?\d[\d,.]*/g) || []).map((m) => m.replace(/\s/g, '').replace('AU$', 'A$').replace(/[.,]+$/, '')).sort().join(' ');
+const PAPER = /\bPart \d+\b|\bOption [A-C]\b|ตัดตามเส้นประ|cut along the (?:dotted|dashed) line/i;   // the paper manual's chapters and cut-outs
+const BUILT = /^\s*(?:บัตรฉุกเฉิน|คืนต่อคืน|ที่อยู่คืนนี้)|\b(?:Emergency card|Night by night|Tonight's address)\b/i;
 const KID_PATHS = [/\.learn\[\d+\]\.kid$/, /\.quiz\[\d+\]\.(q|a)$/, /\.tale(\.scenes\[\d+\])?$/, /^passport\.days\[\d+\]\.(title|spot\[\d+\]|facts\[\d+\])$/, /^passport\.countdown\.doors\[\d+\]$/, /^passport\.little\.days\[\d+\]\[\d+\]$/, /^passport\.guides\[\d+\]\.hello$/];
 function styleCheck(seed) {
   const warns = [], add = (w) => warns.push(w);
@@ -256,6 +258,10 @@ function styleCheck(seed) {
     if (typeof x.th === 'string' && typeof x.en === 'string') {
       const p = path.replace(/^\./, '');
       if (US_SPELLING.test(x.en)) add(`${p}.en — American spelling "${x.en.match(US_SPELLING)[0]}" (the book is in British English)`);
+      // docs/STYLE.md §7.1 — the full report reads on its own: no paper-manual references, Thai says วันที่ N, durations without ":00"
+      for (const l of ['th', 'en']) { const m = x[l].match(PAPER); if (m) add(`${p}.${l} — "${m[0]}" refers to the paper manual; write it so it reads on its own (docs/STYLE.md §7.1)`); }
+      if (/\bDays? \d/.test(x.th)) add(`${p}.th — "${x.th.match(/\bDays? \d+/)[0]}" in Thai text; write วันที่ N`);
+      for (const l of ['th', 'en']) if (/\d\s*(?:ชม\.|h)\s*00\b/.test(x[l])) add(`${p}.${l} — a duration with ":00" ("1 ชม. 00 นาที"); write "1 ชม." / "1 h"`);
       for (const l of ['th', 'en']) { if (/ {2}/.test(x[l])) add(`${p}.${l} — a double space`); if (x[l] !== x[l].trim()) add(`${p}.${l} — a space at the start or the end`); }
       if (x.th.trim() && x.en.trim()) {
         if (TIMES(x.th) !== TIMES(x.en)) add(`${p} — the times differ: th [${TIMES(x.th)}] en [${TIMES(x.en)}]`);
@@ -274,6 +280,9 @@ function styleCheck(seed) {
   if (kidNames.length) { const re = new RegExp(`\\b(${kidNames.map((n) => n.replace(/[.*+?^${}()|[\]\\]/g, '\\$&')).join('|')})\\b`);
     const hit = []; const look = (x, path) => { if (Array.isArray(x)) return x.forEach((v, k) => look(v, `${path}[${k}]`)); if (!x || typeof x !== 'object') return; if (typeof x.th === 'string' && re.test(x.th)) hit.push(path.replace(/^\./, '')); for (const [k, v] of Object.entries(x)) if (k !== 'children') look(v, `${path}.${k}`); };
     look(seed, ''); hit.slice(0, 12).forEach((p) => add(`${p}.th — a child's name in Latin script; write it in Thai (${(seed.children || []).map((k) => k.name_th || (k.name && k.name.th)).filter(Boolean).join(', ')})`)); if (hit.length > 12) add(`… and ${hit.length - 12} more Thai texts with a child's name in Latin script`); }
+  // a manual chapter that repeats a section the app builds itself (the emergency card, night by night, tonight's address)
+  ((seed.info || {}).more || []).forEach((m, k) => { const tt = `${(m.title || {}).th || ''} ${(m.title || {}).en || ''}`;
+    if (BUILT.test(tt)) add(`info.more[${k}] "${(m.title || {}).th || (m.title || {}).en}" — the app builds this section itself; leave the chapter out (docs/STYLE.md §7.1)`); });
   const wrong = (JSON.stringify(seed).match(/เช็ค/g) || []).length;
   if (wrong) add(`${wrong} × "เช็ค" — the spelling is เช็ก (เช็กอิน / เช็กเอาต์)`);
   return warns;

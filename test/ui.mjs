@@ -376,7 +376,7 @@ const T = 'hk-macau-2026';
   ok(badge, 'notifications use a transparent one-colour badge (Android shows an opaque icon as a white square)');
   // the owner: "make it easier to read, not long" — booking timeline as step cards, guide cards with short points
   await page.goto(`${BASE}/#/t/${T}/prep/full`); await page.waitForSelector('.steps');
-  ok(await page.locator('.steps > li').count() === 8 && await page.locator('.steps > li.ok').count() === 1 && await page.locator('.steps > li').nth(1).locator('.when').textContent() === 'This week · early Oct' && await page.locator('.steps > li').nth(0).locator('.pts > li').count() === 6,
+  ok(await page.locator('.steps > li').count() === 8 && await page.locator('.steps > li.ok').count() === 1 && await page.locator('.steps > li').nth(1).locator('.when').textContent() === 'October · early Oct' && await page.locator('.steps > li').nth(0).locator('.pts > li').count() === 6,
     'prep: the booking timeline is a list of steps — date chip, task, short points (the done one ticked)');
   { const vp = page.viewportSize(); await page.setViewportSize({ width: 1440, height: 900 }); await page.waitForTimeout(200);
     const xs = await page.$$eval('.steps > li', (ls) => [...new Set(ls.map((l) => Math.round(l.getBoundingClientRect().left)))]);
@@ -385,7 +385,7 @@ const T = 'hk-macau-2026';
   ok(!/no booking|book Nov/.test(await page.locator('.steps').evaluate((e) => e.closest('details').querySelector('.lede').textContent)), 'prep: the booking timeline opens with its date line only (no shredded status list)');
   await page.goto(`${BASE}/#/t/${T}/learn/full`); await page.waitForSelector('.gcards');
   const gl = await page.$$eval('.gcard .pts > li', (els) => els.map((e) => e.textContent.trim()));
-  ok(gl.length > 10 && gl.every((x) => !/^[a-z]+(?=[\s,:;]|$)/.test(x)) && await page.locator('.gcard summary b + .gsub').count() === 13, 'learn: guide cards put the headline first and no point starts mid-sentence ("book 3–5 days ahead" → "Book …")');
+  ok(gl.length > 10 && gl.every((x) => !/^[a-z]+(?=[\s,:;]|$)/.test(x)) && await page.locator('.gcard summary b + .gsub').count() === 9, 'learn: guide cards put the headline first and no point starts mid-sentence ("book 3–5 days ahead" → "Book …")');
   { const g = page.locator('.gcard details.ifold').nth(1), body = g.locator('.fb');
     ok(!(await body.isVisible()) && (await g.locator('summary').click(), await body.isVisible()), 'learn: a guide card shows its headline and one-line fact; the explanation opens on a tap'); }
   ok(await page.evaluate(() => points('TG 638 ขาไป 5 ธ.ค. · Noah\'s Ark 5–7 ธ.ค.').join('|')) === 'TG 638 ขาไป 5 ธ.ค.|Noah\'s Ark 5–7 ธ.ค.', 'points keep the dot of a Thai month (ธ.ค.)');

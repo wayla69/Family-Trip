@@ -261,7 +261,7 @@ function backupCard() {
       : fresh ? L(`สำเนาล่าสุด ${when} · มีของใหม่ ${fresh} รายการ`, `Last backup ${when} · ${fresh} new since`)
         : L(`สำเนาล่าสุด ${when} · ครบแล้ว`, `Last backup ${when} · up to date`);
   const warn = items.length && (!last || fresh);
-  return `<div class="part">${L('สำเนาสำรอง', 'Backup')} 💾</div>
+  return `<div class="part">${L('สำเนา', 'Backup')} 💾</div>
 <button class="nbcard backup${warn ? ' warn' : ''}" data-a="backup"><span class="emb">💾</span><div><b>${L('ดาวน์โหลดสำเนาทั้งหมด', 'Download a full backup')}</b><small>${esc(line)}</small><small>${L('บันทึกและรูปเต็มทุกรูปในไฟล์เดียว · เก็บในคอมหรือไดรฟ์ส่วนตัว อย่าแชร์ต่อ', 'A .zip of every record and full-size photo — keep it on a computer or private drive, never a public link')}</small></div><span class="arrow">⬇</span></button>`;
 }
 const artImg = (t, i, cls) => { const a = dayArt(t, i); return a ? `<img class="art${cls ? ' ' + cls : ''}" src="${esc(a)}" alt="" loading="lazy">` : `<span class="art emo${cls ? ' ' + cls : ''}">${esc(t.days[i].emoji || '📍')}</span>`; };
@@ -381,7 +381,8 @@ const lead = (s) => ((p) => `${pt(p[0] || '')}${p.slice(1).map((y) => `<small cl
 const cap1 = (x) => x.replace(/^[a-z](?=[a-z]*(?:[\s,:;!?)]|$))/, (c) => c.toUpperCase());   // "book Nov" → "Book Nov"; eSIM and iPhone stay
 const pts = (s, cls) => { const p = points(s).map(cap1), a = p.findIndex((x) => /^1\. /.test(x));
   let z = a; while (a >= 0 && z + 1 < p.length && p[z + 1].startsWith(`${z - a + 2}. `)) z++;
-  if (a >= 0 && z > a && a <= 1 && z >= p.length - 2) return `${p.slice(0, a).map((x) => `<p class="pt1">${pt(x)}</p>`).join('')}<ol class="pts nums${cls ? ' ' + cls : ''}">${p.slice(a, z + 1).map((x) => `<li>${pt(cap1(x.replace(/^\d+\.\s/, '')))}</li>`).join('')}</ol>${p.slice(z + 1).map((x) => `<p class="pt1">${pt(x)}</p>`).join('')}`;   // "1 · … · 2 · …" is a numbered list
+  if (a >= 0 && z > a && a <= 1) { const rest = p.slice(z + 1);   // "1 · … · 2 · …" is a numbered list; what follows it reads as its own points
+    return `${p.slice(0, a).map((x) => `<p class="pt1">${pt(x)}</p>`).join('')}<ol class="pts nums${cls ? ' ' + cls : ''}">${p.slice(a, z + 1).map((x) => `<li>${pt(cap1(x.replace(/^\d+\.\s/, '')))}</li>`).join('')}</ol>${rest.length > 1 ? `<ul class="pts${cls ? ' ' + cls : ''}">${rest.map((x) => `<li>${pt(x)}</li>`).join('')}</ul>` : rest.map((x) => `<p class="pt1${cls ? ' ' + cls : ''}">${pt(x)}</p>`).join('')}`; }
   return p.length > 1 ? `<ul class="pts${cls ? ' ' + cls : ''}">${p.map((x) => `<li>${pt(x)}</li>`).join('')}</ul>` : `<p class="pt1${cls ? ' ' + cls : ''}">${pt(p[0] || '')}</p>`; };   // one point keeps the list's size (a lone answer is never bigger than its neighbours)
 // money as a small bill: one line per item with its amount on the right, the day's total last, footnotes small
 const moneyHtml = (s) => {
@@ -554,6 +555,8 @@ function searchIndex(t) {
       return;
     }
     add(k, `#/t/${t.id}/${k}/full/${j}`, { th: plain(m.title), en: plain(me.title) }, { th: plain(B.th[k][j]), en: plain((B.en[k] || [])[j]) });
+    // the lost-child advice is its own hit too (the card it sits on is long, so its snippet would stop before the advice)
+    if (m.key === 'card' && (t.info || {}).lost) add(k, `#/t/${t.id}/${k}/full/${j}`, { th: 'ถ้าเด็กหลง', en: 'If a child is lost' }, { th: flatText(t.info.lost, 'th'), en: flatText(t.info.lost, 'en') });
   }));
   t.days.forEach((d, i) => {
     const pl = d.plan || {}, part = (l) => [d.title, d.sleep, d.wx, pl.plan, pl.moving, pl.pick, pl.picks, pl.planB, pl.tips, pl.money, pl.stay, pl.legs, pl.food, pl.eat, d.planned].map((x) => flatText(x, l)).join(' · ');
@@ -730,8 +733,8 @@ function remindBar() {
 // today's bag: what the day's own plan says to carry — read from the manual's timeline rows and the climate note (English text,
 // matched by rule), each item with the step that asks for it; plus a short everyday line. Ticks stay on this phone (ls 'ck').
 const BAG = [
-  ['passports', '📕', 'พาสปอร์ตทุกคน', 'Everyone’s passports', /\bpassports\b|immigration|passport control|border/i],
-  ['kidpp', '🛂', 'พาสปอร์ตผจญภัยของเด็กๆ', 'The kids’ adventure Passport', /\bthe Passport\b|Passport stamps/],
+  ['passports', '📕', 'หนังสือเดินทางทุกคน', 'Everyone’s passports', /\bpassports\b|immigration|passport control|border/i],
+  ['kidpp', '🛂', 'พาสปอร์ตนักผจญภัยของเด็กๆ', 'The kids’ adventure passport', /\bthe Passport\b|Passport stamps|adventure passport/i],
   ['swim', '🩱', 'ชุดว่ายน้ำ ผ้าเช็ดตัว', 'Swimmers and a towel', /\bswim|water ?park|water play|netted baths/i],
   ['sun', '🧴', 'ครีมกันแดด หมวก', 'Sunscreen and hats', /sunscreen|\bhats?\b|strong sun/i],
   ['warm', '🧥', 'เสื้อแขนยาว / แจ็กเก็ต', 'A long-sleeve layer / jackets', /jacket|long-sleeve|\blayer\b|cool(s)? (down|quickly)|\bcold\b/i],
@@ -1609,7 +1612,7 @@ ${sec('เก็บอะไรบ้าง', 'What is kept', ul([
 ${sec('เก็บไว้ที่ไหน นานแค่ไหน', 'Where, and for how long', ul([
   ['บนเซิร์ฟเวอร์และที่เก็บไฟล์ที่ตั้งขึ้นสำหรับครอบครัวนี้โดยเฉพาะ (Railway) ไม่ปนกับครอบครัวอื่น', 'On a server and a file store set up for this family alone (hosted on Railway), never shared with another family'],
   ['รูปไม่มีลิงก์สาธารณะ เปิดได้เฉพาะคนที่เข้าสู่ระบบหรือถือลิงก์ของญาติ ทุกหน้าสั่งไม่ให้เครื่องมือค้นหาเก็บ', 'Photos have no public link: only someone signed in or holding a relatives’ link can open them; every page tells search engines to stay away'],
-  ['เก็บจนกว่าพ่อแม่จะลบ · สำเนาสำรองอัตโนมัติเก็บไว้ 30 วัน (รายคืนช่วงมีทริป) และ 90 วัน (รายสัปดาห์)', 'Kept until the parents delete it · automatic backups are kept 30 days (nightly around a trip) and 90 days (weekly)'],
+  ['เก็บจนกว่าพ่อแม่จะลบ · สำเนาอัตโนมัติเก็บไว้ 30 วัน (รายคืนช่วงมีทริป) และ 90 วัน (รายสัปดาห์)', 'Kept until the parents delete it · automatic backups are kept 30 days (nightly around a trip) and 90 days (weekly)'],
   ['สำเนาในเครื่องของคุณ (สำหรับใช้ตอนไม่มีเน็ต) ถูกล้างเมื่อออกจากระบบ', 'The copy on your own phone (for no-signal days) is cleared when you sign out']]))}
 ${sec('ใครอื่นเห็นบ้าง', 'Who else ever sees it', ul([
   ['ญาติที่พ่อแม่ให้รหัสหรือลิงก์: เห็นเฉพาะเล่มที่ติ๊กไว้ ดูอย่างเดียว ส่งหัวใจได้', 'Relatives the parents give a PIN or link: only the books ticked for them, read-only, hearts allowed'],

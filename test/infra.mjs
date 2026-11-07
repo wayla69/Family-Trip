@@ -120,6 +120,15 @@ ok(['families', 'children', 'trips', 'trip_days', 'firsts_catalog', 'entries', '
     ok(r4.status === 0 && /h\.th "เช็กอิน พักแป๊บ" — a headline starts with one emoji/.test(w4) && /9 words; a headline is 6 at most/.test(w4) && /no " · " or brackets in a headline/.test(w4)
       && /American spelling "favorite"/.test(w4) && /a double space/.test(w4) && /the times differ: th \[10:00\] en \[11:00\]/.test(w4) && /the prices differ/.test(w4) && /a child's name in Latin script/.test(w4),
       `plan-to-seed names a headline without its emoji, too long or with brackets, an American spelling, a double space, times and prices that differ between the languages, a child's name in Latin script in Thai (${w4.slice(0, 600)})`);
+    // docs/STYLE.md §7.1 (the template for the next books): the full report reads on its own
+    const rep = JSON.parse(JSON.stringify(sample));
+    rep.days[0].tips.push({ th: 'การ์ดอยู่ใน Part 11 · ไป Day 3 ใช้เวลา 1 ชม. 00 นาที', en: 'The card is in Part 11 · Day 3 takes 1 h 00' });
+    rep.info.more = [{ page: 'sos', title: { th: 'บัตรฉุกเฉิน', en: 'Emergency card' }, rows: [{ t: { th: 'ก', en: 'a' }, x: { th: '1', en: '1' } }] }];
+    fs.writeFileSync(path.join(dir, 'rep.json'), JSON.stringify(rep));
+    const r5 = spawnSync(process.execPath, ['scripts/plan-to-seed.mjs', path.join(dir, 'rep.json'), `--out=${path.join(dir, 'rep-seed.json')}`], { encoding: 'utf8' });
+    const w5 = r5.stdout.split('\n').filter((l) => /warn/.test(l)).join(' | ');
+    ok(r5.status === 0 && /"Part 11" refers to the paper manual/.test(w5) && /"Day 3" in Thai text/.test(w5) && /a duration with ":00"/.test(w5) && /the app builds this section itself/.test(w5),
+      `plan-to-seed names a paper-manual reference, "Day N" in Thai, a ":00" duration and a chapter that repeats the emergency card (${w5.slice(0, 500)})`);
     for (const f of fs.readdirSync(path.resolve('server/seeds'))) {
       const c = spawnSync(process.execPath, ['scripts/plan-to-seed.mjs', '--check', path.resolve('server/seeds', f)], { encoding: 'utf8' });
       const rows = JSON.parse(fs.readFileSync(path.resolve('server/seeds', f), 'utf8')).days.flatMap((d) => d.plan || []), noH = rows.filter((r) => !(r.h && r.h.th && r.h.en && /^\p{Extended_Pictographic}/u.test(r.h.en) && !r.h.en.includes(' · ')));
