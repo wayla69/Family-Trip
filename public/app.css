@@ -122,6 +122,12 @@ main .blk{scroll-margin-top:76px}   /* a jump (panel, steps, shortcuts) lands be
 .aicard summary::-webkit-details-marker{display:none}
 /* the record page: tonight's three on top, the rest under one fold */
 .more{border-top:1px solid var(--rule);margin-top:4px}
+/* the record page's folds (the plan, the helper's panel): one line each until opened (owner's ask, Nov 2026: the page should open on tonight's three) */
+details.fold>summary{display:flex;align-items:center;gap:10px;min-height:44px;cursor:pointer;list-style:none;font-size:16px}
+details.fold>summary::-webkit-details-marker{display:none}details.fold>summary>.ic{width:20px;height:20px;flex:none;color:var(--accent)}
+details.fold>summary b{flex:1;min-width:0}details.fold>summary small{color:var(--muted);font-size:12.5px;white-space:nowrap}
+details.fold>summary::after{content:"›";font-size:22px;color:var(--accent);transition:transform .15s}details.fold[open]>summary::after{transform:rotate(90deg)}
+details.fold[open]>summary{margin-bottom:8px}.planblk.fold .dayplan{margin-top:4px}.aifold>.aipanel{border-top:0}
 .more>summary{display:flex;align-items:center;justify-content:space-between;gap:10px;padding:14px 0;cursor:pointer;list-style:none}
 .more>summary::-webkit-details-marker{display:none}
 .more>summary>span{display:grid;gap:2px}
@@ -442,6 +448,11 @@ nav.bar a[aria-current=page]{color:var(--accent)}
 main.enter>*{animation:up .38s cubic-bezier(.2,.7,.3,1) backwards}   /* backwards, not both: a kept transform makes the page the containing block of every position:fixed child (the kid bar sat at the end of the page instead of the bottom of the screen) */
 main.enter>*:nth-child(2){animation-delay:.04s}main.enter>*:nth-child(3){animation-delay:.08s}main.enter>*:nth-child(4){animation-delay:.12s}main.enter>*:nth-child(n+5){animation-delay:.16s}
 .spark{position:fixed;z-index:70;pointer-events:none;font-size:18px;margin:-10px 0 0 -10px;animation:spark .7s ease-out forwards}
+/* the big celebration in kid mode (kid.js celebrate): confetti falling over the whole screen */
+.confetti{position:fixed;top:-24px;z-index:80;pointer-events:none;width:11px;height:17px;border-radius:3px;opacity:0;animation:confall var(--t,1.8s) cubic-bezier(.25,.55,.45,1) var(--d,0s) forwards}
+.confetti.e{width:auto;height:auto;background:none;font-size:28px;line-height:1}
+@keyframes confall{0%{opacity:1;transform:translate(0,0) rotate(0)}85%{opacity:1}100%{opacity:0;transform:translate(var(--dx,0),108vh) rotate(var(--rot,360deg))}}
+@media (prefers-reduced-motion:reduce){.confetti{display:none}}
 .btn,.chip,.spine,.ppc,.journey a,.moodrow .opts button,.first .kids button,.check button,nav.bar a{transition:transform .15s ease,box-shadow .2s ease}
 .btn:active,.chip:active,.moodrow .opts button:active,.first .kids button:active,.check button:active{transform:scale(.93)}
 @media (hover:hover){.spine:not(.add):hover{transform:translateY(-4px) rotate(-.4deg);box-shadow:0 1px 0 var(--rule),0 22px 36px -20px rgba(0,0,0,.45)}.ppc.s:hover{transform:translateY(-3px) rotate(-1deg)}}
