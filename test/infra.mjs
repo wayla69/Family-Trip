@@ -99,11 +99,17 @@ ok(['families', 'children', 'trips', 'trip_days', 'firsts_catalog', 'entries', '
     fs.writeFileSync(path.join(dir, 'short.json'), JSON.stringify({ ...sample, days: sample.days.slice(0, 2) }));
     const r2 = spawnSync(process.execPath, ['scripts/plan-to-seed.mjs', path.join(dir, 'short.json'), `--out=${path.join(dir, 'short-seed.json')}`], { encoding: 'utf8' });
     ok(r2.status === 1 && /days: 2 given, 3 dates/.test(r2.stdout), 'a plan with fewer days than dates is not valid');
+    // the Thai check (owner's rule): English-only titles and the เช็ค spelling are named, never refused
+    const eng = JSON.parse(JSON.stringify(sample)); eng.title.th = 'Tokyo'; eng.days[1].title.th = 'Sumida Aquarium'; eng.days[0].plan[0].h.th = '🛬 Haneda'; eng.days[0].tips.push({ th: 'เช็คอินตอนบ่าย', en: 'Check in in the afternoon' });
+    fs.writeFileSync(path.join(dir, 'eng.json'), JSON.stringify(eng));
+    const r3 = spawnSync(process.execPath, ['scripts/plan-to-seed.mjs', path.join(dir, 'eng.json'), `--out=${path.join(dir, 'eng-seed.json')}`], { encoding: 'utf8' });
+    ok(r3.status === 0 && /title\.th "Tokyo" has no Thai/.test(r3.stdout) && /days\[1\]\.title\.th "Sumida Aquarium" has no Thai/.test(r3.stdout) && /days\[0\]\.plan\[0\]\.h\.th "🛬 Haneda" has no Thai/.test(r3.stdout) && /1 × "เช็ค"/.test(r3.stdout) && fs.existsSync(path.join(dir, 'eng-seed.json')),
+      `plan-to-seed warns about a title, a day title or a headline with no Thai letters and about the เช็ค spelling, and still writes the book (${r3.stdout.split('\n').filter((l) => /warn/.test(l)).join(' | ')})`);
     for (const f of fs.readdirSync(path.resolve('server/seeds'))) {
       const c = spawnSync(process.execPath, ['scripts/plan-to-seed.mjs', '--check', path.resolve('server/seeds', f)], { encoding: 'utf8' });
       const rows = JSON.parse(fs.readFileSync(path.resolve('server/seeds', f), 'utf8')).days.flatMap((d) => d.plan || []), noH = rows.filter((r) => !(r.h && r.h.th && r.h.en && /^\p{Extended_Pictographic}/u.test(r.h.en) && !r.h.en.includes(' · ')));
       ok(rows.length > 0 && noH.length === 0, `${f}: every timeline step has its own short headline h (emoji first) for the Today page${noH.length ? ' — missing: ' + noH.slice(0, 3).map((r) => r.en).join(' | ') : ''}`);
-      ok(c.status === 0 && /privacy: clean/.test(c.stdout) && !/ERROR/.test(c.stdout), `${f} passes plan-to-seed --check (privacy, unique stop keys)` + (c.status ? ` — ${c.stdout.split('\n').filter((l) => /ERROR|PRIVACY|    /.test(l)).join(' | ')}` : ''));
+      ok(c.status === 0 && /privacy: clean/.test(c.stdout) && !/ERROR/.test(c.stdout) && !/has no Thai|เช็ค/.test(c.stdout), `${f} passes plan-to-seed --check (privacy, unique stop keys)` + (c.status ? ` — ${c.stdout.split('\n').filter((l) => /ERROR|PRIVACY|    /.test(l)).join(' | ')}` : ''));
     }
   } finally { fs.rmSync(dir, { recursive: true, force: true }); }
 }

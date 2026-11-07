@@ -214,8 +214,27 @@ function report(seed) {
 }
 const artList = (seed) => `public/art/${seed.slug}/day-1..${seed.days.length}.svg` + (seed.passport && seed.passport.guides ? ', ' + seed.passport.guides.map((g) => 'public' + g.art).join(', ') : '') + (seed.passport && seed.passport.style && seed.passport.style.crest ? ', public' + seed.passport.style.crest : '');
 
+// ---------- the Thai a parent reads at a glance (owner's rule, Nov 2026): the book title, day titles, weather lines and timeline
+// headlines must hold Thai letters (a transliteration counts; a bare English name does not), and the spelling is เช็ก, never เช็ค.
+// Warnings only: a book is never refused for its wording, the warnings name what to fix.
+const THAI = /[\u0E00-\u0E7F]/;
+const noThai = (x) => x && typeof x === 'object' && typeof x.th === 'string' && x.th.trim() && !THAI.test(x.th);
+function thaiCheck(seed) {
+  const warns = [];
+  if (noThai(seed.title)) warns.push(`title.th "${seed.title.th}" has no Thai — transliterate the name (ออสเตรเลีย, not Australia)`);
+  (seed.days || []).forEach((d, i) => {
+    const at = `days[${i}]`;
+    if (noThai(d.title)) warns.push(`${at}.title.th "${d.title.th}" has no Thai — write it the way Thais say it (ฮ่องกงดิสนีย์แลนด์)`);
+    if (noThai(d.wx)) warns.push(`${at}.wx.th has no Thai`);
+    const rows = Array.isArray(d.plan) ? d.plan : (d.plan && Array.isArray(d.plan.plan) ? d.plan.plan : []);
+    rows.forEach((r, j) => { if (r && noThai(r.h)) warns.push(`${at}.plan[${j}].h.th "${r.h.th}" has no Thai`); });
+  });
+  const wrong = (JSON.stringify(seed).match(/เช็ค/g) || []).length;
+  if (wrong) warns.push(`${wrong} × "เช็ค" — the spelling is เช็ก (เช็กอิน / เช็กเอาต์)`);
+  return warns;
+}
 function sanity(seed, opts = {}) {
-  const errs = [], warns = [];
+  const errs = [], warns = thaiCheck(seed);
   if (seed.format !== 2) errs.push('format must be 2');
   if (!Array.isArray(seed.days) || !seed.days.length) errs.push('days missing');
   else {
@@ -237,4 +256,4 @@ function sanity(seed, opts = {}) {
 }
 
 
-export { EXEMPT, RULES, SOFT, scan, todos, isI18n, validate, toSeed, report, artList, sanity };
+export { EXEMPT, RULES, SOFT, scan, todos, isI18n, validate, toSeed, report, artList, sanity, thaiCheck };
