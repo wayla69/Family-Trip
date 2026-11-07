@@ -17,7 +17,12 @@ const DEFAULTS = [
   ['star', '⭐', 'ดาว', 'Star', '🌟'], ['rainbow', '🌈', 'สายรุ้ง', 'Rainbow'], ['sun', '☀', 'แดด', 'Sunny'],
   ['sleepy-moon', '🌙', 'ฝันดี', 'Sleepy', '😴'], ['partly-cloudy', '⛅', 'เมฆบ้าง', 'Cloudy', '🌤', '🌥'], ['rainy', '☔', 'ฝนตก', 'Rainy', '🌧', '🌦'],
   ['birthday-cake', '🎂', 'วันเกิด', 'Birthday'], ['gift', '🎁', 'ของขวัญ', 'Gift'], ['camera', '📷', 'กล้อง', 'Camera', '📸'],
-  ['airplane', '✈', 'เครื่องบิน', 'Plane', '🛫'], ['suitcase', '🧳', 'กระเป๋า', 'Suitcase'], ['travel-map', '🗺', 'แผนที่', 'Map']];
+  ['airplane', '✈', 'เครื่องบิน', 'Plane', '🛫'], ['suitcase', '🧳', 'กระเป๋า', 'Suitcase'], ['travel-map', '🗺', 'แผนที่', 'Map'],
+  // the owner's second pack (Nov 2026): the two moods without a picture, the forecast's other skies, the older hearts
+  ['excited', '🤩', 'ตื่นเต้น', 'Excited'], ['yummy', '😋', 'อร่อย', 'Yummy'], ['hug', '🤗', 'กอด', 'Hug'], ['kiss', '😘', 'จุ๊บ', 'Kiss', '😚'],
+  ['cloudy', '☁', 'เมฆมาก', 'Overcast'], ['fog', '🌫', 'หมอก', 'Fog'], ['snowflake', '❄', 'หิมะ', 'Snow'], ['snowy', '🌨', 'หิมะตก', 'Snowing'],
+  ['storm', '⛈', 'พายุฝน', 'Storm', '🌩'], ['balloon', '🎈', 'ลูกโป่ง', 'Balloon']];
+const FIRST_SET = 24;   // the families seeded before the second pack were offered DEFAULTS[0..23]
 const MAX = 120;                                  // pictures in one family's library
 const ID_RE = /^[a-z0-9][a-z0-9-]{1,39}$/;
 const keyOf = (id) => `e/${id}.png`;
@@ -26,16 +31,25 @@ const bare = (s) => String(s || '').replace(/️/g, '').trim();
 const isEmoji = (s) => s.length > 0 && s.length <= 16 && /\p{Extended_Pictographic}/u.test(s) && !/[\p{L}\p{N}\s]/u.test(s.replace(/[‍\u{1F3FB}-\u{1F3FF}⃣]/gu, ''));
 const name = (s) => String(s || '').replace(/[\u0000-\u001F<>]/g, '').trim().slice(0, 30);
 
+// every boot: the bundled pictures this family has never been offered are added once (a new pack reaches families that
+// already exist); one the parents deleted stays deleted — settings 'emoji_offered' remembers the ids offered so far
+// (a family seeded before it existed was offered the first set)
 async function seed(pool, family) {
-  if ((await pool.query("SELECT 1 FROM settings WHERE key='emoji_seeded'")).rowCount) return 0;
-  const n = await putDefaults(pool, family);
+  const kv = Object.fromEntries((await pool.query("SELECT key, value FROM settings WHERE key IN ('emoji_seeded', 'emoji_offered')")).rows.map((r) => [r.key, r.value]));
+  let offered = [];
+  try { offered = kv.emoji_offered ? JSON.parse(kv.emoji_offered) : kv.emoji_seeded ? DEFAULTS.slice(0, FIRST_SET).map((d) => d[0]) : []; } catch (_) { offered = []; }
+  const fresh = DEFAULTS.map((d) => d[0]).filter((id) => !offered.includes(id));
+  if (!fresh.length) return 0;
+  const n = await putDefaults(pool, family, fresh);
+  await pool.query("INSERT INTO settings (key, value) VALUES ('emoji_offered', $1) ON CONFLICT (key) DO UPDATE SET value=EXCLUDED.value", [JSON.stringify(DEFAULTS.map((d) => d[0]))]);
   await pool.query("INSERT INTO settings (key, value) VALUES ('emoji_seeded', $1) ON CONFLICT (key) DO NOTHING", [new Date().toISOString()]);
   return n;
 }
-// the bundled set, only what is missing (by id, or an emoji already drawn by one of the family's own)
-async function putDefaults(pool, family) {
+// the bundled set (or just `only` of it), only what is missing (by id, or an emoji already drawn by one of the family's own)
+async function putDefaults(pool, family, only = null) {
   let n = 0;
   for (const [i, [file, ch, th, en, ...alt]] of DEFAULTS.entries()) {
+    if (only && !only.includes(file)) continue;
     n += (await pool.query('INSERT INTO emoji (family_id, id, ch, alt, name_th, name_en, file, pos) VALUES ($1,$2,$3,$4,$5,$6,$7,$8) ON CONFLICT DO NOTHING',
       [family, file, ch, alt, th, en, file, i])).rowCount;
   }
