@@ -48,7 +48,7 @@ function svgOf(text) {
   if (svg.length > MAX_SVG) return null;
   if (!/\bviewBox="/.test(svg)) return null;
   if (/<\s*(script|image|foreignObject|iframe|object|embed|use|set|animate)/i.test(svg)) return null;
-  if (/\bon[a-z]+\s*=/i.test(svg) || /\bxlink:href|\bhref\s*=/i.test(svg) || /url\((?!#)/i.test(svg) || /<!ENTITY|<!DOCTYPE/i.test(svg)) return null;
+  if (/\bon[a-z]+\s*=/i.test(svg) || /(?:xlink:)?href\s*=\s*["'](?!#)/i.test(svg) || /url\((?!#)/i.test(svg) || /<!ENTITY|<!DOCTYPE/i.test(svg)) return null;   // a link only to an id in the same file (a textPath on its arc)
   if (/javascript:|data:/i.test(svg)) return null;
   return svg;
 }
@@ -72,36 +72,38 @@ async function drawSvg(client, user, o) {
   return svg;
 }
 
-const dayKey = (trip, n) => `d/${trip}/day-${n}.svg`;
-const crestKey = (trip) => `d/${trip}/crest.svg`;
-const guideKey = (trip, k) => `d/${trip}/guide-${k}.svg`;
+// every run draws into its own version folder (v): the book keeps its previous pictures until the new run has finished, and a run that
+// stops leaves nothing behind (the caller removes the folder)
+const dayKey = (trip, v, n) => `d/${trip}/${v}/day-${n}.svg`;
+const crestKey = (trip, v) => `d/${trip}/${v}/crest.svg`;
+const guideKey = (trip, v, k) => `d/${trip}/${v}/guide-${k}.svg`;
 const FILE_RE = /^(day-\d{1,2}|crest|guide-[12])\.svg$/;
+const V_RE = /^[a-z0-9]{4,16}$/;
 const CALLS = (days) => days + 4;   // one per day, the crest, the guides' names, two guides (retries on top)
 
-// draw every missing picture of a book: the days (what is drawn stays — the next run picks up where this one ended), the crest,
-// then the two guides (their names in one call; kept only when both are usable). onStep(done, total) reports progress.
-async function drawBook({ trip, title, days, place, when, accent, kids, media, client, take, onUsage, onStep = () => {} }) {
+// draw every picture of a book into version v: the days, the crest, then the two guides (their names in one call; kept only when
+// both are usable). onStep(done, total) reports progress.
+async function drawBook({ trip, v, title, days, place, when, accent, kids, media, client, take, onUsage, onStep = () => {} }) {
   const total = days.length + 3, o = { take, onUsage };
   let done = 0, drawn = 0;
   for (let i = 0; i < days.length; i++) {
-    const key = dayKey(trip, i + 1);
-    if (!(await media.get(key))) { await media.put(key, Buffer.from(await drawSvg(client, dayPrompt({ ...days[i], place, accent, n: i + 1 }), o)), 'image/svg+xml'); drawn++; }
+    await media.put(dayKey(trip, v, i + 1), Buffer.from(await drawSvg(client, dayPrompt({ ...days[i], place, accent, n: i + 1 }), o)), 'image/svg+xml'); drawn++;
     onStep(++done, total);
   }
-  if (!(await media.get(crestKey(trip)))) { await media.put(crestKey(trip), Buffer.from(await drawSvg(client, crestPrompt({ title, place, when, accent }), o)), 'image/svg+xml'); drawn++; }
+  await media.put(crestKey(trip, v), Buffer.from(await drawSvg(client, crestPrompt({ title, place, when, accent }), o)), 'image/svg+xml'); drawn++;
   onStep(++done, total);
   let guides = null;
-  if (!(await media.get(guideKey(trip, 1))) || !(await media.get(guideKey(trip, 2)))) {
+  {
     let j = null;
     for (let k = 0; k < 2 && !j; k++) { try { const t = await ask(client, namesPrompt({ title, place, kids }), o); j = JSON.parse(t.slice(t.indexOf('{'), t.lastIndexOf('}') + 1)); } catch (e) { if (e.code === 'limit' || e.code === 'refused') throw e; } }
     const gs = j && Array.isArray(j.guides) ? j.guides.filter(nameOk).slice(0, 2) : [];
     if (gs.length !== 2 || gs[0].key === gs[1].key) throw Object.assign(new Error('no usable guides'), { code: 'failed' });
     onStep(++done, total);
-    for (let k = 0; k < 2; k++) { await media.put(guideKey(trip, k + 1), Buffer.from(await drawSvg(client, guidePrompt({ name: gs[k].name.en, kind: String(gs[k].kind || 'animal').slice(0, 40), colour: /^#[0-9a-f]{6}$/i.test(gs[k].colour) ? gs[k].colour : '#F9A8C9', place }), o)), 'image/svg+xml'); drawn++; }
+    for (let k = 0; k < 2; k++) { await media.put(guideKey(trip, v, k + 1), Buffer.from(await drawSvg(client, guidePrompt({ name: gs[k].name.en, kind: String(gs[k].kind || 'animal').slice(0, 40), colour: /^#[0-9a-f]{6}$/i.test(gs[k].colour) ? gs[k].colour : '#F9A8C9', place }), o)), 'image/svg+xml'); drawn++; }
     guides = gs.map((g) => ({ key: g.key, name: { th: g.name.th.trim().slice(0, 40), en: g.name.en.trim().slice(0, 40) }, hello: { th: g.hello.th.trim().slice(0, 300), en: g.hello.en.trim().slice(0, 300) } }));
-  } else onStep(++done, total);
+  }
   onStep(++done, total);
   return { drawn, guides };
 }
 
-module.exports = { enabled, drawBook, svgOf, dayPrompt, crestPrompt, namesPrompt, guidePrompt, dayKey, crestKey, guideKey, FILE_RE, RUNS, CALLS, MODEL, SYSTEM };
+module.exports = { enabled, drawBook, svgOf, dayPrompt, crestPrompt, namesPrompt, guidePrompt, dayKey, crestKey, guideKey, FILE_RE, V_RE, RUNS, CALLS, MODEL, SYSTEM };

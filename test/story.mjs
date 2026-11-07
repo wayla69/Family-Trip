@@ -55,7 +55,7 @@ const mock = http.createServer((req, res) => {
       day: () => (artCalls.length === 1 ? '<svg viewBox="-4 -4 108 108" xmlns="http://www.w3.org/2000/svg"><script>alert(1)</script><circle cx="50" cy="50" r="46" fill="#DDF2FF"/></svg>'
         : `Here it is:\n<svg viewBox="-4 -4 108 108" xmlns="http://www.w3.org/2000/svg"><defs><clipPath id="t${artCalls.length}"><circle cx="50" cy="50" r="46"/></clipPath></defs><circle cx="50" cy="50" r="50" fill="#fff"/><circle cx="50" cy="50" r="46" fill="#DDF2FF"/><g clip-path="url(#t${artCalls.length})"><rect x="0" y="60" width="100" height="40" fill="#8FD36B" stroke="#22213A" stroke-width="2.4"/><circle cx="76" cy="26" r="9" fill="#FFD54A" stroke="#22213A" stroke-width="2.4"/></g></svg>`),
       crest: () => '<svg viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg"><circle cx="100" cy="100" r="97" fill="#FBF3DC" stroke="#1F3A5F" stroke-width="4"/><text x="100" y="40" text-anchor="middle" font-family="sans-serif" font-weight="700">THE TEST HOP</text><circle cx="100" cy="110" r="30" fill="#E05A7A" stroke="#1F3A5F" stroke-width="4"/></svg>',
-      names: () => JSON.stringify({ guides: [{ key: 'momo', kind: 'crab', colour: '#FF8A5B', name: { th: 'โมโม่', en: 'Momo' }, hello: { th: 'สวัสดี {name}! โมโม่กับเปปเปอร์จะพาเที่ยว', en: 'Hi {name}! Momo and Pepper will show you around' } }, { key: 'pepper', kind: 'seagull', colour: '#D9E6F2', name: { th: 'เปปเปอร์', en: 'Pepper' }, hello: { th: 'เปปเปอร์บินอยู่บนฟ้านะ', en: 'Pepper is up in the sky' } }] }),
+      names: () => ([2, 3].includes(artCalls.filter((c) => c.kind === 'names').length) ? 'sorry, no names today' : JSON.stringify({ guides: [{ key: 'momo', kind: 'crab', colour: '#FF8A5B', name: { th: 'โมโม่', en: 'Momo' }, hello: { th: 'สวัสดี {name}! โมโม่กับเปปเปอร์จะพาเที่ยว', en: 'Hi {name}! Momo and Pepper will show you around' } }, { key: 'pepper', kind: 'seagull', colour: '#D9E6F2', name: { th: 'เปปเปอร์', en: 'Pepper' }, hello: { th: 'เปปเปอร์บินอยู่บนฟ้านะ', en: 'Pepper is up in the sky' } }] })),   // the second run's two tries at the names come back unusable, so that run fails
       guide: () => '<svg viewBox="0 0 120 120" xmlns="http://www.w3.org/2000/svg"><circle cx="60" cy="66" r="40" fill="#FF8A5B" stroke="#1e293b" stroke-width="4"/><circle cx="48" cy="60" r="5" fill="#1e293b"/><circle cx="72" cy="60" r="5" fill="#1e293b"/></svg>',
     };
     const en = (x) => ({ en: x }), L2 = (th, e) => ({ th, en: e });
@@ -480,12 +480,14 @@ try {
   ok(dr.seed.days[0].moving.th === 'ไทย: Walk 5 min' && dr.seed.days[0].planned[0].th === 'ไทย: Test Square' && dr.seed.days[1].planned[0].th === 'ไทย: Test Square', 'import: a blank, a space or a null Thai from the model counts as missing and is translated');
   { const db = new Client({ connectionString: u.toString() }); await db.connect(); await db.query('UPDATE ai_usage SET calls=0'); await db.end(); }   // a fresh day's allowance: saving starts the book's drawings (6 calls)
   const sv = await fetch(BASE + '/api/b/import/' + imp.drafts[0].id + '/save', { method: 'POST', headers: H, body: '{}' });
-  ok(sv.status === 200 && (await sv.json()).id === 'test-hop', 'import: saved as a book');
+  const svj = await sv.json();
+  ok(sv.status === 200 && svj.id === 'test-hop' && svj.art === 'started', 'import: saved as a book, and the page is told its drawings started');
   const stt = await state(), nt = stt.trips.find((t) => t.id === 'test-hop');
   ok(nt && nt.source === 'manual' && nt.days.length === 2 && nt.days[1].plan.plan[1].en === 'Super Fun Zone opens' && nt.days[0].planned[0].th === 'ไทย: Test Square' && nt.days[1].planned[0].th === 'ไทย: Test Square' && nt.firsts.length === 3 && nt.firsts[0].key === 'ferry' && nt.passport.days.length === 2, 'import: the new book is in the state with its days, plans, its own firsts and passport');
   ok((await (await fetch(BASE + '/api/b/import', { headers: { cookie: ck } })).json()).drafts.length === 0, 'import: the draft is gone once saved');
   // ---- the book's own pictures (server/bookart.js): saving an imported book starts the drawing by itself — a circle per day, the crest, then the two guides
-  { let art; for (let k = 0; k < 150; k++) { art = await (await fetch(BASE + '/api/b/art', { headers: { cookie: ck } })).json(); if (art.status === 'done' || art.status === 'error') break; await new Promise((r) => setTimeout(r, 200)); }
+  { const artDirs = () => fs.readdirSync(path.join(data, 'media', 'd', 'test-hop')).filter((v) => fs.readdirSync(path.join(data, 'media', 'd', 'test-hop', v)).length).length;   // version folders that still hold files
+    let art; for (let k = 0; k < 150; k++) { art = await (await fetch(BASE + '/api/b/art', { headers: { cookie: ck } })).json(); if (art.status === 'done' || art.status === 'error') break; await new Promise((r) => setTimeout(r, 200)); }
     ok(art.status === 'done' && art.trip === 'test-hop' && art.done === 5 && art.total === 5 && art.on === true && art.runs === 2, `bookart: the saved book's pictures are drawn by themselves (${JSON.stringify(art)})`);
     const kinds = artCalls.map((c) => c.kind).join(',');
     ok(kinds === 'day,day,day,crest,names,guide,guide' && artCalls.every((c) => /hand-drawn house style/.test(c.system) && /no <script>/.test(c.system)),
@@ -502,11 +504,22 @@ try {
     ok(day1.status === 200 && day1.headers.get('content-type').startsWith('image/svg+xml') && /default-src 'none'/.test(day1.headers.get('content-security-policy')) && day1Text.startsWith('<svg') && !/script/.test(day1Text) && !/Here it is/.test(day1Text), 'bookart: a day circle is served as locked-down SVG, the prose around the answer stripped, the unsafe answer never kept');
     ok((await fetch(BASE + st2.passport.style.crest, { headers: { cookie: ck } })).status === 200 && (await fetch(BASE + st2.passport.guides[1].art, { headers: { cookie: ck } })).status === 200 && (await fetch(BASE + '/media/art/test-hop/day-1.svg')).status === 401 && (await fetch(BASE + '/media/art/test-hop/day-9.svg', { headers: { cookie: ck } })).status === 404, 'bookart: crest and guides served; signed-in only; a day never drawn is 404');
     ok((await fetch(BASE + '/api/b/art/hk-macau-2026', { method: 'POST', headers: H, body: '{}' })).status === 409, 'bookart: a book with the owner\'s own drawings is never redrawn');
+    ok((await fetch(BASE + st2.theme.art.replace('{n}', '1').replace(/v=\w+/, 'v=nope'), { headers: { cookie: ck } })).status === 404, 'bookart: a picture is served only under the version its url names');
     const n0 = artCalls.length, again = await fetch(BASE + '/api/b/art/test-hop', { method: 'POST', headers: H, body: '{}' });
     ok(again.status === 202, 'bookart: a redraw can be asked for (every picture drawn again)');
     for (let k = 0; k < 150; k++) { art = await (await fetch(BASE + '/api/b/art', { headers: { cookie: ck } })).json(); if (art.status !== 'running') break; await new Promise((r) => setTimeout(r, 200)); }
     const st3 = (await state()).trips.find((t) => t.id === 'test-hop');
-    ok(art.status === 'done' && artCalls.length === n0 + 6 && st3.theme.artRuns === 2 && st3.theme.art !== st2.theme.art, `bookart: the redraw drew everything again under a new version (${artCalls.length - n0} calls)`);
+    ok(art.status === 'error' && art.error === 'failed' && artCalls.length === n0 + 5 && st3.theme.art === st2.theme.art && st3.theme.artRuns === 1 && st3.passport.guides[0].key === 'momo'
+      && (await fetch(BASE + st2.theme.art.replace('{n}', '2'), { headers: { cookie: ck } })).status === 200 && artDirs() === 1,
+      `bookart: a run whose guides never come back usable fails, the book keeps every picture it had and the half-drawn version is removed (${art.status}/${art.error}, ${artCalls.length - n0} calls)`);
+    { const db = new Client({ connectionString: u.toString() }); await db.connect(); await db.query('UPDATE ai_usage SET calls=0'); await db.end(); }   // two runs used 12 of the 17: a fresh allowance for the third
+    const n1 = artCalls.length, third = await fetch(BASE + '/api/b/art/test-hop', { method: 'POST', headers: H, body: '{}' });
+    ok(third.status === 202, 'bookart: a failed run does not use up a redraw');
+    for (let k = 0; k < 150; k++) { art = await (await fetch(BASE + '/api/b/art', { headers: { cookie: ck } })).json(); if (art.status !== 'running') break; await new Promise((r) => setTimeout(r, 200)); }
+    const st4 = (await state()).trips.find((t) => t.id === 'test-hop');
+    ok(art.status === 'done' && artCalls.length === n1 + 6 && st4.theme.artRuns === 2 && st4.theme.art !== st2.theme.art && (await fetch(BASE + st4.theme.art.replace('{n}', '1'), { headers: { cookie: ck } })).status === 200
+      && (await fetch(BASE + st2.theme.art.replace('{n}', '1'), { headers: { cookie: ck } })).status === 404 && artDirs() === 1,
+      `bookart: the redraw drew everything again under a new version and the old one is gone (${artCalls.length - n1} calls)`);
     ok((await fetch(BASE + '/api/b/art/test-hop', { method: 'POST', headers: H, body: '{}' })).status === 429, 'bookart: ART_RUNS full drawings per book, then no more');
     { const db = new Client({ connectionString: u.toString() }); await db.connect(); await db.query('UPDATE ai_usage SET calls=16'); await db.end(); }
     const sv2 = await fetch(BASE + '/api/b/art/test-hop', { method: 'POST', headers: H, body: '{}' });   // runs are used up, but the allowance check comes first
