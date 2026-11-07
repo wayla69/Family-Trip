@@ -1248,8 +1248,7 @@ const FAM_TONE = { red: '#E53935', blue: '#2F7FE0', green: '#2E9E62', yellow: '#
 const famTone = (k) => FAM_TONE[(k.look && k.look.top) || (k.slug === 'mika' ? 'mint' : 'red')];
 const famMonths = (ym) => { if (!/^\d{4}-\d{2}$/.test(ym || '')) return null; const [y, m] = ym.split('-').map(Number), n = new Date(), mo = (n.getFullYear() - y) * 12 + n.getMonth() + 1 - m; return mo >= 0 ? mo : null; };
 const famAgeM = (mo) => (mo == null ? '' : mo < 12 ? L(`${mo} เดือน`, `${mo} mo`) : L(`${Math.floor(mo / 12)}${mo % 12 >= 6 ? ' ขวบครึ่ง' : ' ขวบ'}`, `${Math.floor(mo / 12)}${mo % 12 >= 6 ? '½' : ''} yrs`));
-const famAge = (ym) => { if (!/^\d{4}-\d{2}$/.test(ym || '')) return ''; const [y, m] = ym.split('-').map(Number), n = new Date(), mo = (n.getFullYear() - y) * 12 + n.getMonth() + 1 - m; if (mo < 0) return ''; const yr = Math.floor(mo / 12), half = mo % 12 >= 6;
-  return yr < 1 ? L(`${mo} เดือน`, `${mo} mo`) : L(`${yr}${half ? ' ขวบครึ่ง' : ' ขวบ'}`, `${yr}${half ? '½' : ''} yrs`); };
+const famAge = (ym) => famAgeM(famMonths(ym));   // "3 ขวบครึ่ง" today from a birth month, '' when unknown
 function viewFamily() {
   if (!fam) {
     const c = (S.family && S.family.custom) || {}, ca = c.app || {}, ck = c.kicker || {};   // only what the parents typed; empty = built from the children
