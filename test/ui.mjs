@@ -570,6 +570,7 @@ const T = 'hk-macau-2026';
   ok(await page.locator('.starjar b').textContent() === '10' && await page.locator('.pets').count() === 1 && await page.locator('.kidhello .poke').count() === 1, 'kid mode: the star jar counts the stars; ten stars bring a new friend; the character can be poked');
   await page.evaluate(() => { localStorage.removeItem('mbs_stars_mimi'); localStorage.removeItem('mbs_pets_mimi'); });
   await page.goto(`${BASE}/#/kid/mimi`); await page.waitForSelector('.kidtiles');
+  ok(await page.locator('.kidwrap.enter').count() === 1, 'kid mode: a freshly opened page carries the enter class (the slide-in; a tap’s re-render does not)');
   ok(await page.locator('.kpage').count() === 4 && await page.locator('#kdots i').count() === 4 && (await page.locator('.kidtiles button').first().boundingBox()).height >= 150, 'kid home: three swipe pages of four huge tiles, with dots');
   await page.click('.kparrow.next'); await page.waitForFunction(() => document.querySelectorAll('#kdots i')[1].classList.contains('on'), null, { timeout: 5000 });
   ok(await page.locator('.kparrow.prev:not([hidden])').count() === 1, 'kid home: the arrow turns the page, the dots follow');
