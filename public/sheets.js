@@ -743,9 +743,9 @@ async function drawDayCard(t, i) {
     const ql = wrapLines(g, `“${quote.text}”`, W - 40, 3);
     g.fillRect(M, y - 38, 8, ql.length * 56 + 44);
     g.fillStyle = '#1F2A3A'; for (const ln of ql) { g.fillText(ln, M + 32, y); y += 56; }
-    g.fillStyle = '#6D7480'; g.font = F(500, 30); g.fillText(`— ${kidName(quote.child)}`, M + 32, y); y += 40;
+    g.fillStyle = '#666D79'; g.font = F(500, 30); g.fillText(`— ${kidName(quote.child)}`, M + 32, y); y += 40;
   }
-  g.fillStyle = '#6D7480'; g.font = F(600, 28);
+  g.fillStyle = '#666D79'; g.font = F(600, 28);
   g.fillText(`MM Memory · ${T(t.title).split(' · ')[0]}`, M, CARD_H - 56);
   return new Promise((ok) => c.toBlob(ok, 'image/png'));
 }
@@ -754,7 +754,7 @@ async function drawDayCard(t, i) {
 const LOST_LOCAL = [[/Hong_Kong|Macau/, { head: '我走失了', call: '請致電我的父母', stay: '我們住在', sos: '緊急求助' }]];
 async function drawLostCard(t, kid, photoUrl, tels) {
   await (document.fonts ? document.fonts.ready : Promise.resolve());
-  const W0 = 1080, H0 = 1920, th = t.theme || {}, accent = th.accent || '#1F3A5F', ink = th.ink || '#1F2A3A', muted = th.muted || '#6D7480';   // the book's light colours, also in dark mode
+  const W0 = 1080, H0 = 1920, th = t.theme || {}, accent = th.accent || '#1F3A5F', ink = th.ink || '#1F2A3A', muted = th.muted || '#666D79';   // the book's light colours, also in dark mode
   const c = document.createElement('canvas'); c.width = W0; c.height = H0;
   const g = c.getContext('2d'), F = (w, px) => `${w} ${px}px "KIRA UI", system-ui, "PingFang HK", "Noto Sans CJK TC", sans-serif`, M = 80, W = W0 - M * 2;
   const rr = (x, y, w, h, r) => { g.beginPath(); if (g.roundRect) g.roundRect(x, y, w, h, r); else g.rect(x, y, w, h); };

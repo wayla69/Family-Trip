@@ -12,7 +12,7 @@
 | `--accent` | `#1F3A5F` navy | `#2C5646` eucalyptus green | แถบซ้ายปก, kicker, เลขวัน, หัวข้อเล็ก, เส้นทาง |
 | `--accent-2` | `#C8402B` route red | `#6BA7C1` sea blue | เส้นทางบนแผนที่, จุดสำคัญ |
 | `--ink` | `#1F2A3A` | `#263733` | ตัวหนังสือหลัก |
-| `--muted` | `#6D7480` | `#59635F` | คำอธิบาย, label |
+| `--muted` | `#666D79` | `#59635F` | คำอธิบาย, label |
 | `--paper` | `#FFFFFF` | `#FFFFFF` | พื้นหน้า |
 | `--panel` | `#F7F2EA` cream | `#FAF6EE` cream | แผง "Getting around / Road strip" |
 | `--rule` | `#E8EBEA` | `#E6EAE7` | เส้นคั่นบาง 1px |

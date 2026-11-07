@@ -39,7 +39,7 @@ export const children = (kids, d0) => kids.map((k) => {
 
 // ---- look: DESIGN.md tokens around one accent
 export const theme = ({ slug, accent = '#1F3A5F', accent2 = '#C8402B', display = 'sans', kicker = 'TODO KICKER', badge = '📖', flag = '🏳️', placeTh = 'TODO', placeEn = 'TODO', places }) => ({
-  kicker, badge, accent, accent2, ink: '#1F2A3A', muted: '#6D7480', panel: '#F7F2EA', rule: '#E8EBEA', pick: '#FBEDE9', info: '#EAF0F7', calm: '#E8F4F0', warn: '#FBF0E4', accentDark: '#8FB0E0', display,
+  kicker, badge, accent, accent2, ink: '#1F2A3A', muted: '#666D79', panel: '#F7F2EA', rule: '#E8EBEA', pick: '#FBEDE9', info: '#EAF0F7', calm: '#E8F4F0', warn: '#FBF0E4', accentDark: '#8FB0E0', display,
   art: `/art/${slug}/day-{n}.svg`, places: places || [{ flag, th: placeTh, en: placeEn }],
 });
 export const passportStyle = ({ slug, accent = '#1F3A5F', placeTh, placeEn }) => ({
