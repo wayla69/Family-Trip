@@ -483,11 +483,20 @@ let kidPhoto = 0, kidPage = 0;
 const shuffle = (a) => { a = a.slice(); for (let i = a.length - 1; i > 0; i--) { const j = Math.floor(Math.random() * (i + 1)); [a[i], a[j]] = [a[j], a[i]]; } return a; };
 let mg = null;   // pairs game: {t, kid, cards:[{k, img|e}], up:[card indexes face up], done:Set(k), moves, won}
 function matchDeck(t) {
-  const faces = []; t.days.forEach((_, i) => { const a = dayArt(t, i); if (a) faces.push({ k: 'd' + i, img: a }); });
+  const faces = [];
+  if (pixMode(t, kidDayOf(t), 'match') === 'photo') shuffle(kidPhotoPool(t)).slice(0, 6).forEach((m) => faces.push({ k: 'p' + m.id, img: imgT(m), ph: true }));   // the family's photos first, drawings fill the rest
+  if (faces.length < 6) t.days.forEach((_, i) => { const a = dayArt(t, i); if (a) faces.push({ k: 'd' + i, img: a }); });
   ((t.passport || {}).days || []).forEach((pd, i) => (pd.spot || []).forEach((s) => faces.push({ k: `s${i}.${s.k}`, e: s.e })));
   if (faces.length < 6) ['🐨', '🦘', '🐬', '🐼', '🚢', '✈️'].forEach((e, i) => faces.push({ k: 'x' + i, e }));
-  const pick = shuffle(faces).slice(0, 6); return shuffle(pick.concat(pick));
+  const pick = faces.filter((f) => f.ph).concat(shuffle(faces.filter((f) => !f.ph))).slice(0, 6); return shuffle(pick.concat(pick));
 }
+// which pictures a game uses (owner's ask, Nov 2026: the children's own photos are the pictures they love most): 'art' = the day's drawing,
+// 'photo' = one of the family's photos (520 px thumbnails, on the phone once the book is stored) — per game, this visit
+let kidPix = { jigsaw: null, hideseek: null, match: null };
+const kidPhotoPool = (t) => mediaOf(t.id).filter((m) => !isDrawing(m) && !m.pending);
+const pixMode = (t, i, g) => kidPix[g] || (g === 'jigsaw' && !dayArt(t, i) ? 'photo' : 'art');
+const randPhoto = (t) => { const p = kidPhotoPool(t); return p.length ? imgT(p[Math.floor(Math.random() * p.length)]) : null; };
+const pixPick = (t, i, g, again) => (kidPhotoPool(t).length ? `<div class="pixpick" role="group" aria-label="${L('รูปที่ใช้', 'Pictures')}">${(g === 'jigsaw' && !dayArt(t, i) ? [] : [['art', '🎨', L('ภาพวาด', 'Drawing')]]).concat([['photo', '📷', L('รูปของเรา', 'Our photos')]]).map(([v, e, l]) => `<button data-a="kidpix" data-g="${g}" data-v="${v}" aria-pressed="${pixMode(t, i, g) === v}">${e} ${l}</button>`).join('')}${pixMode(t, i, g) === 'photo' ? `<button data-a="${again}">🔀 ${L('รูปใหม่', 'New photo')}</button>` : ''}</div>` : '');
 const newMatch = (t, kid) => { mg = { t: t.id, kid, cards: matchDeck(t), up: [], done: new Set(), moves: 0, won: false }; };
 let cnt = null;   // counting game: {n, e, hit:[card indexes in the order tapped]}
 const NUMW = { th: ['หนึ่ง', 'สอง', 'สาม', 'สี่', 'ห้า', 'หก', 'เจ็ด', 'แปด', 'เก้า', 'สิบ'], en: ['one', 'two', 'three', 'four', 'five', 'six', 'seven', 'eight', 'nine', 'ten'] };
@@ -581,7 +590,7 @@ function viewKid(p) {
       : [['colour', '🎨', L('ระบายสี', 'Colour')], ['draw', '🖍️', L('วาดรูป', 'Draw')], ['bubbles', '🫧', L('ฟองสบู่', 'Bubbles')], ['music', '🎵', L('ดนตรี', 'Music')], ['hideseek', '🙈', L('ซ่อนหา', 'I spy')], ['spot', littleOf(t, kid) ? '👉' : '🔍', littleOf(t, kid) ? L('ชี้ แตะ', 'Point it') : L('หาของ', 'Find it')], ['stamp', '🛂', L('ปั๊มตรา', 'Stamp')]])
       .concat(words ? [['words', '🗣️', L('พูดตาม', 'Say it')]] : [], ((d.plan || {}).quiz || []).length && !lit ? [['quiz', '❓', L('ทายซิ', 'Quiz')]] : [],
         kidTalk(t, i) ? [['talk', '💬', L('คุยกัน', 'Let’s talk')]] : [], !pre && i > 0 && memQuiz(t, i - 1) ? [['memory', '🧠', L('จำได้ไหม', 'Remember?')]] : [], kidPhotos(t, i).length ? [['photos', '📸', L('ดูรูป', 'Photos')]] : [], [['match', '🧩', L('จับคู่', 'Match')]], pre ? [] : [['mood', '😊', L('วันนี้รู้สึก', 'My mood')]],
-        wild.length ? [['animals', (t.info.wildLabel || {}).emo || '🦘', t.info.wildLabel ? esc(T(t.info.wildLabel.short)) : L('สัตว์', 'Animals')]] : [], [['numbers', '🔢', L('นับเลข', 'Count')]], dayArt(t, i) ? [['jigsaw', '🖼️', L('ต่อภาพ', 'Puzzle')]] : []).filter(Boolean);   // map, stickers and trophies live on the kid bar below — not twice
+        wild.length ? [['animals', (t.info.wildLabel || {}).emo || '🦘', t.info.wildLabel ? esc(T(t.info.wildLabel.short)) : L('สัตว์', 'Animals')]] : [], [['numbers', '🔢', L('นับเลข', 'Count')]], dayArt(t, i) || kidPhotoPool(t).length ? [['jigsaw', '🖼️', L('ต่อภาพ', 'Puzzle')]] : []).filter(Boolean);   // map, stickers and trophies live on the kid bar below — not twice
     const until = daysUntil(t);
     const btns = tiles.map(([v, e, lbl]) => { const k = KTILE[v] || KTILE._; return `<button class="pic" style="--k1:${k[1]};--k2:${k[2]}" data-a="kidnav" data-v="#/kid/${esc(kid)}/${v}" data-say="${esc(lbl)}">${k[0] ? `<img src="/art/kidui/${k[0]}.webp" alt="">` : `<span>${e}</span>`}<b>${lbl}</b></button>`; })
       .concat(story ? [`<button class="night" data-a="bedtime" data-v="${esc(story.id)}"><span>${emo('🌙')}</span><b>${L('นิทาน', 'Story')}</b></button>`] : [],
@@ -647,13 +656,15 @@ ${memState.got ? `<button class="kidbig" data-a="memnext">${memState.n + 1 < qs.
     if (!hs || hs.key !== `${t.id}.${i}.${kid}`) newHide(t, i, kid);
     const want = hs.targets[hs.found.length];
     body = `<div class="kidguide">${guideImg(0)}<p>${want ? L(`หา${want[1]}ให้เจอ! ${want[0]}`, `Find the ${want[2]}! ${want[0]}`) : L('เจอครบแล้ว! เก่งมาก 🎉', 'Found them all! Brilliant 🎉')}</p></div>
-<div class="hideboard"${dayArt(t, i) ? ` style="--art:url('${esc(dayArt(t, i))}')"` : ''}>${hs.items.map((it, n) => `<button class="hid${it.found ? ' found' : ''}" style="left:${it.x}%;top:${it.y}%;--s:${it.s}px;--r:${it.r}deg" data-a="kidhide" data-v="${n}" aria-label="${esc(it.th)}">${it.e}</button>`).join('')}</div>
+${pixPick(t, i, 'hideseek', 'kidnewhide')}
+<div class="hideboard"${hs.src ? ` style="--art:url('${esc(hs.src)}')"` : ''}>${hs.items.map((it, n) => `<button class="hid${it.found ? ' found' : ''}" style="left:${it.x}%;top:${it.y}%;--s:${it.s}px;--r:${it.r}deg" data-a="kidhide" data-v="${n}" aria-label="${esc(it.th)}">${it.e}</button>`).join('')}</div>
 ${want ? `<div class="hidetarget" aria-hidden="true">${want[0]}</div>` : `<button class="kidbig" data-a="kidnewhide">🔁 ${L('เล่นใหม่', 'Play again')}</button>`}`;
-  } else if (view === 'jigsaw' && dayArt(t, i)) {   // the day's picture in pieces: tap a piece, tap its place (tap-tap, not drag: a small hand can do it)
+  } else if (view === 'jigsaw' && (dayArt(t, i) || kidPhotoPool(t).length)) {   // the day's picture in pieces: tap a piece, tap its place (tap-tap, not drag: a small hand can do it)
     if (!jg || jg.key !== `${t.id}.${i}.${kid}`) newJigsaw(t, i, kid);
     body = `<div class="kidguide">${guideImg(1)}<p>${jg.done ? L('ต่อภาพเสร็จแล้ว! 🎉', 'Picture done! 🎉') : jg.pick === null ? L('แตะชิ้นข้างล่าง แล้วแตะช่องที่ใช่!', 'Tap a piece, then tap where it goes!') : L('ใส่ตรงไหนดีนะ?', 'Where does it go?')}</p></div>
-<div class="jigboard" style="--art:url('${esc(dayArt(t, i))}');--c:${jg.cols}">${jg.slots.map((p, s) => `<button class="jslot${p !== null ? ' filled' : ''}" data-a="kidjslot" data-v="${s}"${p !== null ? ` style="${jgPos(p, jg)}"` : ''} aria-label="${L('ช่อง', 'Slot')} ${s + 1}"></button>`).join('')}</div>
-<div class="jigtray" style="--art:url('${esc(dayArt(t, i))}')">${jg.tray.map((p) => `<button class="jpiece${jg.pick === p ? ' pick' : ''}" data-a="kidjpick" data-v="${p}" style="${jgPos(p, jg)}" aria-label="${L('ชิ้น', 'Piece')} ${p + 1}"></button>`).join('')}</div>
+${pixPick(t, i, 'jigsaw', 'kidnewjig')}
+<div class="jigboard" style="--art:url('${esc(jg.src)}');--c:${jg.cols};aspect-ratio:${jg.ar}">${jg.slots.map((p, s) => `<button class="jslot${p !== null ? ' filled' : ''}" data-a="kidjslot" data-v="${s}"${p !== null ? ` style="${jgPos(p, jg)}"` : ''} aria-label="${L('ช่อง', 'Slot')} ${s + 1}"></button>`).join('')}</div>
+<div class="jigtray" style="--art:url('${esc(jg.src)}');--pa:${jg.ar * jg.rows / jg.cols}">${jg.tray.map((p) => `<button class="jpiece${jg.pick === p ? ' pick' : ''}" data-a="kidjpick" data-v="${p}" style="${jgPos(p, jg)}" aria-label="${L('ชิ้น', 'Piece')} ${p + 1}"></button>`).join('')}</div>
 ${jg.done ? `<button class="kidbig" data-a="kidnewjig">🔁 ${L('ต่อใหม่', 'Again')}</button>` : ''}`;
   } else if (view === 'stamp') {
     const mine = ticked(t, `stamp.d${i}`, kid);
@@ -701,7 +712,8 @@ ${mapHtml(t, i, [kid].concat((t.theme.children || []).map((c) => c.slug).filter(
   } else if (view === 'match') {
     if (!mg || mg.t !== t.id || mg.kid !== kid) newMatch(t, kid);
     body = `<div class="kidguide">${guideImg(1)}<p>${mg.won ? L(`เก่งมาก! จับคู่ครบใน ${mg.moves} ครั้ง 🎉`, `Brilliant! All the pairs in ${mg.moves} goes 🎉`) : L('แตะเปิดการ์ดสองใบ หาคู่ที่เหมือนกัน!', 'Tap two cards — find the pairs!')}</p></div>
-<div class="mgrid">${mg.cards.map((c, n) => `<button class="mcard${mg.up.includes(n) || mg.done.has(c.k) ? ' open' : ''}${mg.done.has(c.k) ? ' done' : ''}" data-a="kidflip" data-v="${n}" aria-label="${L('การ์ด', 'Card')} ${n + 1}"><span class="back">?</span><span class="face">${c.img ? `<img src="${esc(c.img)}" alt="">` : esc(c.e)}</span></button>`).join('')}</div>
+${pixPick(t, i, 'match', 'kidnewmatch')}
+<div class="mgrid">${mg.cards.map((c, n) => `<button class="mcard${c.ph ? ' ph' : ''}${mg.up.includes(n) || mg.done.has(c.k) ? ' open' : ''}${mg.done.has(c.k) ? ' done' : ''}" data-a="kidflip" data-v="${n}" aria-label="${L('การ์ด', 'Card')} ${n + 1}"><span class="back">?</span><span class="face">${c.img ? `<img src="${esc(c.img)}" alt="">` : esc(c.e)}</span></button>`).join('')}</div>
 <button class="kidbig ghost" data-a="kidnewmatch">🔁 ${L('เล่นใหม่', 'Play again')}</button>`;
   } else if (view === 'mood' && !pre) {
     const moods = t.moods.length ? t.moods : Object.keys(MOODW), cur = (S.entries.find((e) => e.id === `${t.id}.mood.d${i}.${kid}`) || {}).mood;
@@ -789,6 +801,7 @@ Object.assign(A, {
     } else { beep('tap'); b.classList.remove('nope'); void b.offsetWidth; b.classList.add('nope'); sayUi(L(`นั่น${it.th} ลองหา${want[1]}อีกที`, `That is the ${it.en} — look for the ${want[2]}`)); }
   },
   kidnewhide() { beep('pop'); hs = null; render(); },
+  kidpix(b) { kidPix[b.dataset.g] = b.dataset.v; beep('tap'); if (b.dataset.g === 'jigsaw') jg = null; else if (b.dataset.g === 'hideseek') hs = null; else mg = null; render(); },
   kidjpick(b) { jg.pick = jg.pick === +b.dataset.v ? null : +b.dataset.v; beep('tap'); render(); },
   kidjslot(b) {
     const s = +b.dataset.v; if (jg.pick === null || jg.slots[s] !== null) { beep('tap'); return; }
@@ -913,15 +926,16 @@ const HIDE_POOL = [['🐥', 'ลูกเจี๊ยบ', 'chick'], ['🐸', '�
   ['🎈', 'ลูกโป่ง', 'balloon'], ['🐟', 'ปลา', 'fish'], ['🌼', 'ดอกไม้', 'flower'], ['🍎', 'แอปเปิล', 'apple'], ['🚗', 'รถ', 'car'], ['🐱', 'แมว', 'cat'], ['🐶', 'หมา', 'dog'], ['🦆', 'เป็ด', 'duck'], ['🍦', 'ไอศกรีม', 'ice cream'], ['🚀', 'จรวด', 'rocket']];
 let hs = null, jg = null;
 function newHide(t, i, kid) {
-  const pool = HIDE_POOL.slice().sort(() => Math.random() - 0.5).slice(0, 12), targets = pool.slice(0, 5), items = [];
+  const pool = HIDE_POOL.slice().sort(() => Math.random() - 0.5).slice(0, 12), targets = pool.slice(0, 5), items = [], src = (pixMode(t, i, 'hideseek') === 'photo' && randPhoto(t)) || dayArt(t, i);
   pool.forEach((p) => { let x, y, tries = 0; do { x = 12 + Math.random() * 76; y = 12 + Math.random() * 76; tries++; } while (tries < 80 && items.some((o) => Math.hypot(o.x - x, o.y - y) < 17));   // whole inside the board (a tap on the edge must land)
     items.push({ e: p[0], th: p[1], en: p[2], x, y, s: 40 + Math.round(Math.random() * 16), r: Math.round(Math.random() * 40 - 20), found: false }); });
-  hs = { key: `${t.id}.${i}.${kid}`, targets, found: [], items: items.sort(() => Math.random() - 0.5) };
+  hs = { key: `${t.id}.${i}.${kid}`, targets, found: [], items: items.sort(() => Math.random() - 0.5), src };
 }
 // ---- the jigsaw: the day's picture cut into 2×2 (the little one) or 3×2; a piece shows its crop through background-position ----
 function newJigsaw(t, i, kid) {
-  const cols = littleOf(t, kid) ? 2 : 3, rows = 2, n = cols * rows;
-  jg = { key: `${t.id}.${i}.${kid}`, cols, rows, slots: Array(n).fill(null), tray: Array.from({ length: n }, (_, k) => k).sort(() => Math.random() - 0.5), pick: null, done: false };
+  const cols = littleOf(t, kid) ? 2 : 3, rows = 2, n = cols * rows, photo = pixMode(t, i, 'jigsaw') === 'photo', src = (photo && randPhoto(t)) || dayArt(t, i);
+  jg = { key: `${t.id}.${i}.${kid}`, cols, rows, src, ar: 1, slots: Array(n).fill(null), tray: Array.from({ length: n }, (_, k) => k).sort(() => Math.random() - 0.5), pick: null, done: false };
+  if (photo && src) { const im = new Image(); im.onload = () => { if (jg && jg.src === src) { jg.ar = Math.min(1.5, Math.max(0.7, im.naturalWidth / im.naturalHeight)); render(); } }; im.src = src; }   // the board takes the photo's shape once known
 }
 const jgPos = (p, g) => `background-image:var(--art);background-size:${g.cols * 100}% ${g.rows * 100}%;background-position:${g.cols > 1 ? (p % g.cols) / (g.cols - 1) * 100 : 0}% ${g.rows > 1 ? Math.floor(p / g.cols) / (g.rows - 1) * 100 : 0}%`;
 // ---- music: the xylophone's bars (C major) and two songs as bar numbers; a song lights each bar as it plays ----
