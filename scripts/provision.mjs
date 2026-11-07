@@ -2,7 +2,9 @@
 // One family = one Railway project with its own app service, its own Postgres and (by hand, see below) its own storage bucket.
 // Nothing of one family can touch another's: separate databases, separate buckets, separate domains, separate codes.
 //   RAILWAY_TOKEN=<account or workspace token> node scripts/provision.mjs <family-name> [--code=<family code>] [--view-pin=<pin>]
-//        [--repo=wayla69/Family-Trip] [--branch=main] [--region=asia-southeast1] [--workspace=<id>] [--registry=families.json] [--dry]
+//        [--repo=wayla69/Family-Trip] [--branch=main] [--region=asia-southeast1] [--workspace=<id>] [--registry=families.json] [--dry] [--no-codes]
+//   --no-codes: print no code, PIN, token or password at all (for a run whose output others can read, such as the "New family" GitHub
+//               workflow in a public repo): the owner reads them from the App service's Variables tab in Railway instead.
 // What it does, in order (every call is one documented mutation of Railway's public GraphQL API, https://docs.railway.com/integrations/api):
 //   1. projectCreate                      "mm-<family>"
 //   2. serviceCreate (image)              "Postgres" = postgres:16-alpine + a volume at /var/lib/postgresql/data + POSTGRES_* variables
@@ -28,7 +30,9 @@ const TOKEN = process.env.RAILWAY_TOKEN;
 const API = process.env.RAILWAY_API || 'https://backboard.railway.com/graphql/v2';
 const REPO = flags.repo || 'wayla69/Family-Trip', BRANCH = flags.branch || 'main', REGION = flags.region || 'asia-southeast1';
 const REG = path.resolve(flags.registry || process.env.FAMILIES_FILE || 'families.json');
-const DRY = !!flags.dry;
+const DRY = !!flags.dry, NOCODES = !!flags['no-codes'];
+const SECRETISH = /CODE|PIN|TOKEN|SECRET|PASSWORD|KEY|DATABASE_URL/;   // variable names whose values never go to a shared log
+const shown = (v) => (NOCODES && v && typeof v === 'object' ? JSON.parse(JSON.stringify(v), (k, x) => (SECRETISH.test(k) && typeof x === 'string' ? '•••' : x)) : v);
 if (!TOKEN && !DRY) { console.error('RAILWAY_TOKEN is not set (an account or workspace token from railway.com/account/tokens). --dry shows the plan without one.'); process.exit(1); }
 
 // the family's secrets: digits for the two PINs (the app's pad), random strings for the rest
@@ -43,7 +47,7 @@ const calls = [];
 async function gql(query, variables) {
   const op = /(mutation|query)\s+(\w+)/.exec(query)[2];
   calls.push({ op, variables });
-  if (DRY) { console.log(`  [dry] ${op} ${JSON.stringify(variables)}`); return dryAnswer(op); }
+  if (DRY) { console.log(`  [dry] ${op} ${JSON.stringify(shown(variables))}`); return dryAnswer(op); }
   const r = await fetch(API, { method: 'POST', headers: { 'content-type': 'application/json', authorization: `Bearer ${TOKEN}` }, body: JSON.stringify({ query, variables }) });
   const j = await r.json().catch(() => ({}));
   if (!r.ok || (j.errors && j.errors.length)) throw new Error(`${op}: ${r.status} ${JSON.stringify(j.errors || j).slice(0, 300)}`);
@@ -97,12 +101,14 @@ if (!DRY) {
   fs.writeFileSync(REG, JSON.stringify(reg, null, 1) + '\n');
 }
 console.log(`
-done: ${url}   (first build takes a few minutes; check ${url}/healthz)
+done: ${url}   (first build takes a few minutes; check ${url}/healthz)` + (NOCODES ? `
+  family code, relatives' PIN, relatives' link (/v/<VIEW_TOKEN>) and backup token: not printed here — read FAMILY_CODE, VIEW_PIN,
+  VIEW_TOKEN and BACKUP_TOKEN from the App service's Variables tab in Railway (project mm-${name}).` : `
   family code (parents, editors) : ${code}
   relatives' PIN (view only)     : ${viewPin}
   relatives' link                : ${url}/v/${viewToken}
   backup token                   : in ${path.basename(REG)} (for scripts/fleet.mjs backup)
-These are printed once. Send the code and the PIN to the family over a channel you trust; they are only stored in that project's variables.
+These are printed once. Send the code and the PIN to the family over a channel you trust; they are only stored in that project's variables.`) + `
 
 still by hand, in the Railway dashboard (project mm-${name}):
   1. Create → Bucket, name it "Bucket" (region ${REGION}) — buckets cannot be created through the API yet.

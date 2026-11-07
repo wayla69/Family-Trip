@@ -1,0 +1,51 @@
+name: New family
+# Opens a new family's own Railway project (docs/ADR.md ADR-11: one family = one project, one database, one bucket) by running
+# scripts/provision.mjs from GitHub, so the owner types only the family's name — Actions → New family → Run workflow.
+# Needs, once, in GitHub → Settings → Secrets and variables → Actions:
+#   secret RAILWAY_ACCOUNT_TOKEN   an account or workspace token from railway.com/account/tokens (not a project token: it creates projects)
+#   secret ANTHROPIC_API_KEY       optional — the new family's Claude features (stories, summaries, imports)
+#   secret OPENAI_API_KEY          optional — the children's characters drawn from a photo (#/family)
+# This repository is public, so the run prints NO code, PIN, token or password (provision.mjs --no-codes): read the new family's
+# FAMILY_CODE, VIEW_PIN and VIEW_TOKEN from the App service's Variables tab in Railway, and send them over a channel you trust.
+# Still by hand afterwards (the API cannot do it yet): Create → Bucket named "Bucket" in the new project and add the five
+# ${{Bucket.…}} variable references to the App — before the family uploads a photo.
+on:
+  workflow_dispatch:
+    inputs:
+      name:
+        description: "Family name (a-z, 0-9, dashes) → Railway project mm-<name>"
+        required: true
+        type: string
+      dry:
+        description: "Dry run: show the plan only, create nothing"
+        required: false
+        type: boolean
+        default: false
+
+permissions:
+  contents: read
+
+concurrency:
+  group: new-family
+  cancel-in-progress: false
+
+jobs:
+  provision:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@v5
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+      - name: Create the family's Railway project
+        env:
+          RAILWAY_TOKEN: ${{ secrets.RAILWAY_ACCOUNT_TOKEN }}
+          ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
+          OPENAI_API_KEY: ${{ secrets.OPENAI_API_KEY }}
+          NAME: ${{ inputs.name }}
+          DRY: ${{ inputs.dry }}
+        run: |
+          if [ "$DRY" != "true" ] && [ -z "$RAILWAY_TOKEN" ]; then echo "::error::secret RAILWAY_ACCOUNT_TOKEN is not set — nothing was created"; exit 1; fi
+          node scripts/provision.mjs "$NAME" --no-codes --registry="$RUNNER_TEMP/families.json" $([ "$DRY" = "true" ] && echo --dry) | tee "$RUNNER_TEMP/out.txt"
+          { echo '## New family'; echo; echo '```'; cat "$RUNNER_TEMP/out.txt"; echo '```'; } >> "$GITHUB_STEP_SUMMARY"
