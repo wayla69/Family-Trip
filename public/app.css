@@ -2253,3 +2253,14 @@ h1 .h1pic{display:inline-block;width:1.15em;height:1.15em;vertical-align:-.2em;o
 @media (max-width:480px){.words>div{display:block}.words dt{margin-bottom:1px}}
 .tips li small.tsub{padding-left:9px;border-left:2px solid var(--rule);margin-top:3px}   /* a tip's details hang under it, visibly its own */
 .dayplan .stay .addr{font-weight:600}
+
+/* ---------- one selected state everywhere (owner's review, Nov 2026: "match the rest") ----------
+   What is chosen is tinted and ringed in the book's colour — like the option cards (.tpo), the mood picker and the mission
+   answers — never a solid dark block. Primary buttons (.btn) stay solid: they are actions, not states. */
+.seg{background:var(--paper)}
+.seg button[aria-pressed=true],.chip[aria-pressed=true],.rtags .chip[aria-pressed=true],.daystrip a[aria-current=true],.daytabs a[aria-current=page]{background:color-mix(in srgb,var(--accent) 12%,var(--paper));border-color:var(--accent);color:var(--accent);box-shadow:inset 0 0 0 1px var(--accent)}
+.daystrip a[aria-current=true] b,.daystrip a[aria-current=true] small,.daytabs a[aria-current=page] b{color:var(--accent)}
+.daytabs a[aria-current=page] small{color:color-mix(in srgb,var(--accent) 75%,var(--ink))}
+.daystrip a[aria-current=true] .has{background:var(--accent)}
+.seg button[aria-pressed=true]{font-weight:700}
+.eatday a.go{color:var(--accent);background:color-mix(in srgb,var(--accent) 10%,var(--paper));border:1px solid color-mix(in srgb,var(--accent) 28%,transparent)}   /* directions: one tinted style, with or without its label */
