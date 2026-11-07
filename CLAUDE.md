@@ -91,6 +91,7 @@ UI screenshots go to `$SHOTS` (default `/tmp/mb-shots`) — look at them after U
 - Kid mode opens the next trip (HK before AU): to check another book's colouring pages, render `lineArt()` on its SVGs directly.
 - Tests: closed `<details>` hide their text from `innerText` — use `textContent`. Headless `speechSynthesis` exists but has no voices; assert the UI state, not the sound.
 - A test that needs content not yet written: `git stash` it rather than pushing a red commit.
+- Tests sign in with `page.keyboard.press('Enter')` after filling the code (the name first), never a click on the submit button: the pad auto-submits at the last digit (`pinAuto`), so the shelf can render under the click, which then lands on a book and the wait for `.shelf` times out (the "login flake" of Nov 2026).
 
 ## Debug mantra
 1. **Reproduce before you fix** — see the bug on the real screen (screenshot 390 px + 1440 px, TH + EN), not just in a test.

@@ -48,7 +48,7 @@ try {
   await ctx.addInitScript(() => localStorage.setItem('mbs_logall', '1'));   // every record-page box on the page
   const page = await ctx.newPage();
   const errs = []; page.on('pageerror', (e) => errs.push(e.message));
-  await page.goto(BASE + '/'); await page.fill('#lcode', CODE); await page.click('#lf button[type=submit]'); await page.waitForSelector('.shelf');
+  await page.goto(BASE + '/'); await page.fill('#lcode', CODE); await page.keyboard.press('Enter'); await page.waitForSelector('.shelf');
   await page.goto(`${BASE}/#/t/${T}/offline`); await page.waitForSelector('#offl');
   await page.waitForFunction(() => navigator.serviceWorker && navigator.serviceWorker.controller, null, { timeout: 15000 });
   await page.click('#offl [data-a="offline"]');

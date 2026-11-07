@@ -40,7 +40,7 @@ const CONTRAST = `function (els, groundOf) {
 async function login(page) {
   await page.goto(BASE + '/');
   await page.waitForSelector('#lf');
-  await page.fill('#lcode', CODE); await page.fill('#lname', 'แม่'); await page.click('#lf button[type=submit]');
+  await page.fill('#lname', 'แม่'); await page.fill('#lcode', CODE); await page.keyboard.press('Enter');   // the name first: the pad auto-submits at the last digit; Enter, never a click on the button (the shelf can render under the click, which then lands on a book)
   await page.waitForSelector('.shelf');
 }
 // the page re-renders after each sync; measure again if the element was just swapped
@@ -54,7 +54,7 @@ const T = 'hk-macau-2026';
   const { page } = s;
   await page.goto(BASE + '/'); await page.waitForSelector('#lf');
   await s.shot('01-login', false);
-  await page.fill('#lcode', 'wrong'); await page.click('#lf button[type=submit]');
+  await page.fill('#lcode', 'wrong'); await page.keyboard.press('Enter');
   await page.waitForFunction(() => document.querySelector('#lerr').textContent.length > 0);
   ok(true, 'wrong code shows an error');
   ok(await page.inputValue('#lcode') === '', 'wrong PIN clears the field');
