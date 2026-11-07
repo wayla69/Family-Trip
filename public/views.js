@@ -123,6 +123,7 @@ function packBoxes(root) {
   });
 }
 let packT; addEventListener('resize', () => { clearTimeout(packT); packT = setTimeout(() => packBoxes(document), 150); });
+document.addEventListener('toggle', (e) => { if (e.target && e.target.classList && e.target.classList.contains('dmore') && e.target.open) packBoxes(e.target); }, true);   // the day's folded glance: pack once it is open (closed boxes measure 0)
 if (document.fonts) document.fonts.ready.then(() => packBoxes(document));
 const mapLegacy = (id) => { const t = trips().find((x) => x.id === id || x.legacy_id === id); return t && t.id; };
 
@@ -611,7 +612,7 @@ const mealKind = (p) => { const m = ((p.meal || {}).en || '').toLowerCase(); ret
 // a meal in one line: the pick (opens Maps), then its backup — so a hungry family never has to search
 const mealDd = (p) => `<b>${p.q ? mapA(p.q, esc(p.name)) : esc(p.name)}</b>${p.alt ? `<small class="bk">${L('ร้านสำรอง', 'Backup')}: ${p.alt.q ? mapA(p.alt.q, esc(p.alt.name)) : esc(p.alt.name)}</small>` : ''}`;
 // today: the day as one sheet (short timeline, then label → answer rows like the manual's tables); the full plan is one tap away (/today/<i>/full)
-function dayGlance(t, i) {
+function dayGlance(t, i, brief) {   // brief (before the trip): the timeline, then everything else folded under one line
   const d = t.days[i], pl = d.plan || {}, rows = pl.plan || [], full = `#/t/${esc(t.id)}/today/${i}/full`;
   if (!rows.length && !pl.moving && !pl.pick && !pl.planB) return '';
   // on the day itself: steps whose time has passed fade, the next one is marked (each row in its own time zone — Bangkok rows on day 1)
@@ -633,7 +634,7 @@ function dayGlance(t, i) {
     wxLine(t, i) && row(L('พยากรณ์วันนี้', 'Live forecast'), `<span class="wxlive">${emoIn(esc(wxLine(t, i)))}</span>`),
     (nl || nq) && row(L('เรียนรู้', 'Learn'), esc(L(`${nl} เรื่อง · ${nq} คำถามในรถ`, `${nl} card${nl === 1 ? '' : 's'} · ${nq} car question${nq === 1 ? '' : 's'}`)))].filter(Boolean).join('');
   return `${rows.length ? `<section class="cbox c-sky"><h3 class="ch">${ic('clock')}${L('ไทม์ไลน์', 'Timeline')}</h3><ol class="tl plan brief">${rows.map((r, k) => `<li${st[k] ? ` class="${st[k]}"` : ''}><time>${esc(r.t || '')}</time><div>${st[k] === 'next' ? `<span class="nexttag">${L('ถัดไป', 'Next')}</span> ` : ''}${esc(T(r))}</div></li>`).join('')}</ol></section>` : ''}
-<div class="cgrid">${box('ind', 'route', L('เดินทางและที่พัก', 'Getting around & tonight'), go)}${box('sun', 'eat', L('มื้ออาหาร', 'Meals'), food)}${pl.planB ? `<section class="cbox c-hot"><h3 class="ch">${ic('shuffle')}${L('แผนสำรอง', 'Plan B')}</h3>${pts(T(pl.planB))}</section>` : ''}${box('leaf', 'money', L('เงิน อากาศ และเรื่องเล่า', 'Money, weather, stories'), more)}</div>
+${brief ? `<details class="dmore"><summary>${ic('chev')}<span><b>${L('รายละเอียดวันนี้', 'The rest of the day')}</b><small>${L('เดินทาง · มื้ออาหาร · แผนสำรอง · เงิน · อากาศ', 'Getting around · meals · plan B · money · weather')}</small></span></summary>` : ''}<div class="cgrid">${box('ind', 'route', L('เดินทางและที่พัก', 'Getting around & tonight'), go)}${box('sun', 'eat', L('มื้ออาหาร', 'Meals'), food)}${pl.planB ? `<section class="cbox c-hot"><h3 class="ch">${ic('shuffle')}${L('แผนสำรอง', 'Plan B')}</h3>${pts(T(pl.planB))}</section>` : ''}${box('leaf', 'money', L('เงิน อากาศ และเรื่องเล่า', 'Money, weather, stories'), more)}</div>${brief ? '</details>' : ''}
 ${reportBtn(full, L('อ่านแผนเต็มของวันนี้', "Read today's full plan"))}`;
 }
 // grown-ups switch the trip reminders on per phone (the server pushes 30 min before each timed step of the day);
@@ -698,7 +699,7 @@ function dayBag(t, i) {
 function bagBlock(t, i) {
   if (!isEditor()) return '';
   const items = dayBag(t, i), ck = ls('ck') || {}, key = (k) => `${t.id}.bag.d${i}.${k}`, got = items.filter((x) => ck[key(x.k)]).length;
-  return `<details class="bag noprint"${got < items.length ? ' open' : ''}><summary>🎒 ${L('กระเป๋าวันนี้', 'Today’s bag')} <span class="label">${L(`จัดแล้ว ${got}/${items.length}`, `${got}/${items.length} packed`)}</span></summary>
+  return `<details class="bag noprint"${dayNow(t) === i && got < items.length ? ' open' : ''}><summary>🎒 ${L('กระเป๋าวันนี้', 'Today’s bag')} <span class="label">${got ? L(`จัดแล้ว ${got}/${items.length}`, `${got}/${items.length} packed`) : L(`${items.length} อย่าง`, `${items.length} thing${items.length === 1 ? '' : 's'}`)}</span></summary>
 <ul class="chk bagl">${items.map((x) => `<li><label><input type="checkbox" data-ck="${esc(key(x.k))}"${ck[key(x.k)] ? ' checked' : ''}><span>${x.e} ${esc(L(x.th, x.en))}<small>${esc(x.why)}</small></span></label></li>`).join('')}</ul>
 <p class="label">${L('จากแผนของวันนี้ในคู่มือ · ติ๊กเก็บไว้ในเครื่องนี้', 'From today’s plan in the manual · ticks stay on this phone')}</p></details>`;
 }
@@ -716,7 +717,10 @@ function viewToday(t, j, full) {
   ensureWx(t);   // the live forecast arrives in the background and re-renders once (see core.js)
   const i = j !== undefined && j >= 0 && j < t.days.length ? j : todayIdx(t), d = t.days[i], dn = dayNow(t), until = daysUntil(t), pl = d.plan || {};
   const strip = t.days.map((x, k) => `<a href="#/t/${esc(t.id)}/today/${k}${full ? '/full' : ''}" aria-current="${k === i}">${k === dn ? `<span class="today">${L('วันนี้', 'Today')}</span>` : ''}<b>${String(k + 1).padStart(2, '0')}</b><small>${esc(fmtDay(x.date, { day: 'numeric', month: 'short' }))}</small></a>`).join('');
-  const banner = dn < 0 && until > 0 ? `<div class="call info">${L(`อีก ${until} วันออกเดินทาง — นี่คือแผนวันที่ ${i + 1}`, `${until} days to go — this is the plan for day ${i + 1}`)}</div>`
+  // before the trip (owner's review, Nov 2026: this page ran 3,500 px months ahead): the countdown with the two things to do now,
+  // the day's timeline, the rest of the day under one line, the bag closed, the kids' mission waiting for the trip
+  const pre = dn < 0 && until > 0 && !full, has = pre ? hasInfo(t) : null;
+  const banner = dn < 0 && until > 0 ? `<div class="call info${pre ? ' pre' : ''}"><b>${L(`อีก ${until} วันออกเดินทาง`, `${until} days to go`)}</b><span>${L(`นี่คือแผนวันที่ ${i + 1} จากคู่มือ`, `This is the plan for day ${i + 1}`)}</span>${pre ? `<div class="row">${has.prep ? `<a class="btn small ghost" href="#/t/${esc(t.id)}/prep">${ic('prep')} ${L('สิ่งที่ต้องเตรียม', 'What to prepare')}</a>` : ''}${isEditor() ? `<a class="btn small ghost" href="#/t/${esc(t.id)}/offline">${ic('offline')} ${L('เก็บเล่มไว้ในเครื่อง', 'Store the book on the phone')}</a>` : ''}</div>` : ''}</div>`
     : dn < 0 && until <= 0 ? `<div class="call calm">${L('จบทริปแล้ว — เปิดสมุดความทรงจำได้เลย', 'The trip is over — open the memory book')}</div>` : '';
   const mission = ((t.passport || {}).days || [])[i];
   return `${full ? backSum(`#/t/${esc(t.id)}/today/${i}`) : ''}<div class="daystrip" role="tablist">${strip}</div>
@@ -728,8 +732,8 @@ ${isEditor() && (dn >= 0 || until > 0) ? remindLine(t) : ''}
 ${full ? '' : bagBlock(t, i)}
 ${full ? '' : nextBlock(t, i)}
 ${full ? '' : askBlock(t, i)}
-${(full ? planHtml(t, i, true) : dayGlance(t, i)) || `<div class="empty">${L('วันนี้ไม่มีแผนในคู่มือ', 'No plan in the manual for this day')}</div>`}
-${mission && (mission.facts || []).length ? `<div class="part kidm">${L('ภารกิจของเด็กๆ วันนี้', "The kids' mission today")}</div><div class="call pick mission"><b>${esc(T(mission.title))}</b><ul class="tips">${mission.facts.map((f) => `<li>${esc(T(f))}</li>`).join('')}</ul></div>` : ''}`;
+${(full ? planHtml(t, i, true) : dayGlance(t, i, pre)) || `<div class="empty">${L('วันนี้ไม่มีแผนในคู่มือ', 'No plan in the manual for this day')}</div>`}
+${!pre && mission && (mission.facts || []).length ? `<div class="part kidm">${L('ภารกิจของเด็กๆ วันนี้', "The kids' mission today")}</div><div class="call pick mission"><b>${esc(T(mission.title))}</b><ul class="tips">${mission.facts.map((f) => `<li>${esc(T(f))}</li>`).join('')}</ul></div>` : ''}`;
 }
 // the whole trip: one line per day (tap → that day); the road book with every plan is the full report
 function viewPlan(t, full) {

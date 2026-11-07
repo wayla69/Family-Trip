@@ -1035,12 +1035,17 @@ function pinAuto() {
   if (p.lens.includes(n) && !p.lens.some((l) => l > n) && !p.open) { pinTry = true; setTimeout(() => { pinTry = false; const form = $('#lf'); if (form && $('#lcode') && $('#lcode').value.length === n) form.requestSubmit(); }, 180); }   // a beat to see the last dot
 }
 document.addEventListener('input', (e) => { if (e.target && e.target.id === 'lcode') { $('#lerr').textContent = ''; pinAuto(); } });   // typed on a keyboard too
+let loginBusy = false;
 document.addEventListener('submit', async (e) => {
   if (e.target.id === 'ntf') { e.preventDefault(); A.createtrip(null, e); return; }
   if (e.target.id !== 'lf') return;
   e.preventDefault();
+  if (loginBusy) return;   // the pad's auto-submit and a tap on the button can both fire: one sign-in at a time
+  loginBusy = true;
   const name = $('#lname').value.trim(); ls('name', name);
-  const r = await fetch('/api/login', { method: 'POST', credentials: 'same-origin', headers: { 'x-mb': '1', 'content-type': 'application/json' }, body: JSON.stringify({ code: $('#lcode').value, name }) });
+  let r; try { r = await fetch('/api/login', { method: 'POST', credentials: 'same-origin', headers: { 'x-mb': '1', 'content-type': 'application/json' }, body: JSON.stringify({ code: $('#lcode').value, name }) }); }
+  catch (_) { loginBusy = false; $('#lerr').textContent = L('ต่อเน็ตไม่ได้ ลองใหม่', 'No connection — try again'); return; }
+  loginBusy = false;
   if (r.ok) { await load(); render(); flush(); return; }
   $('#lcode').value = '';
   $('#lerr').textContent = r.status === 429 ? L('ใส่ผิดหลายครั้งเกินไป รอ 10 นาทีแล้วลองใหม่', 'Too many wrong tries — wait 10 minutes') : L('รหัสไม่ถูกต้อง', 'Wrong PIN');
