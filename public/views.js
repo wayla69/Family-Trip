@@ -328,7 +328,8 @@ ${isEditor() && S.features.story && days.length ? storyBlock(t, null)
     : story ? `<div class="part">${L('นิทานของทั้งทริป', 'The story of the trip')}</div><div class="call calm" style="white-space:pre-line">${bedBtn(story)}${esc(story.text)}</div>` : ''}
 ${letterBlock(t, days.length)}
 ${days.map((i) => dayPage(t, i)).join('')}
-${days.length ? coverPick(t) : ''}<div class="row noprint" style="margin:28px 0 8px"${days.length ? '' : ' hidden'}><a class="btn small" href="/api/b/pdf/${esc(t.id)}" download data-a="pdf">📕 ${L('สมุดความทรงจำ (PDF A4)', 'Memory book (PDF A4)')}</a><a class="btn ghost small" href="#/print/${esc(t.id)}">👀 ${L('ดูตัวอย่างเล่ม', 'Preview the book')}</a><button class="btn ghost small" data-a="print">🖨️ ${L('พิมพ์หน้านี้', 'Print this page')}</button><button class="btn ghost small" data-a="copytext">📋 ${L('คัดลอกเป็นข้อความ', 'Copy as text')}</button></div></div>`;
+${days.length ? coverPick(t) : ''}<div class="row noprint" style="margin:28px 0 8px"${days.length ? '' : ' hidden'}><a class="btn small" href="/api/b/pdf/${esc(t.id)}" download data-a="pdf">📕 ${L('สมุดความทรงจำ (PDF A4)', 'Memory book (PDF A4)')}</a><a class="btn ghost small" href="#/print/${esc(t.id)}">👀 ${L('ดูตัวอย่างเล่ม', 'Preview the book')}</a></div>
+<div class="row noprint bookmore"${days.length ? '' : ' hidden'}><button class="linkbtn" data-a="print">${L('พิมพ์หน้านี้', 'Print this page')}</button><span class="label">·</span><button class="linkbtn" data-a="copytext">${L('คัดลอกเป็นข้อความ', 'Copy as text')}</button></div></div>`;
 }
 // the whole plan, day by day, like the manual's day list: every day (recorded or not), where we sleep, the planned stops
 function itinerary(t) {
