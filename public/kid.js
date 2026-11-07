@@ -53,7 +53,7 @@ function speak(text, langTag, opt) {
   const o = opt || {};
   if (!window.speechSynthesis || !text) return false;
   const v = voiceFor(langTag);
-  if (!v && /^zh-HK$/i.test(langTag)) { toast(L('เครื่องนี้ยังไม่มีเสียงภาษากวางตุ้ง (ตั้งค่า › การช่วยการเข้าถึง › เนื้อหาที่ถูกอ่าน › เสียง)', 'No Cantonese voice on this phone yet (Settings › Accessibility › Spoken Content › Voices)')); return false; }
+  if (!v && /^zh-HK$/i.test(langTag)) { toast(L('เครื่องนี้ยังไม่มีเสียงภาษากวางตุ้ง', 'No Cantonese voice on this phone yet (Settings › Accessibility › Spoken Content › Voices)')); return false; }
   try {   // never let a voice problem stop a tap from doing its job
     if (!o.keep) speechSynthesis.cancel();
     const u = new SpeechSynthesisUtterance(text);
@@ -393,7 +393,7 @@ function stickerBoard(t, kid, edit) {
 ${placed.map((p, i) => `<span class="stk on${by[p[0]].img ? ' img' : ''}" data-i="${i}" style="left:${+p[1]}%;top:${+p[2]}%;--r:${+p[3] || 0}deg">${stkFace(by[p[0]])}</span>`).join('')}
 ${!placed.length ? `<p class="stkempty">${edit ? L('ลากสติกเกอร์มาแปะตรงนี้!', 'Drag your stickers here!') : L('ยังไม่ได้แปะสติกเกอร์', 'No stickers yet')}</p>` : ''}</div>
 ${edit ? `<div class="stktray" id="stktray">${tray.map((s) => `<button class="stk${s.img ? ' img' : ''}" data-k="${esc(s.k)}" aria-label="${L('สติกเกอร์', 'Sticker')}">${stkFace(s)}</button>`).join('')
-    || `<p class="label">${got ? L('แปะครบทุกอันแล้ว! 🎉', 'All your stickers are on the page! 🎉') : L('ทำภารกิจ ติ๊กของที่เจอ แล้วจะได้สติกเกอร์', 'Do missions and tick what you spot to earn stickers')}</p>`}</div>` : ''}`;
+    || `<p class="label">${got ? L('แปะครบทุกอันแล้ว! 🎉', 'All your stickers are on the page! 🎉') : L('ทำภารกิจ แล้วได้สติกเกอร์นะ!', 'Do missions and tick what you spot to earn stickers')}</p>`}</div>` : ''}`;
 }
 function saveStickers(t, kid, arr) {
   putEntry(t, { day: null, kind: 'field', child: kid, first_key: 'stickers', text: JSON.stringify(arr.slice(-STK_MAX)) }, `${t.id}.field.stickers.${kid}`);
@@ -471,7 +471,7 @@ function trophies(t, kid) {
   return [
     doorsAll ? ['door1', '🚪', L('เปิดประตูแรก', 'First door opened'), doors >= 1] : null,
     packAll.length ? ['packed', '🧳', L('ช่วยจัดกระเป๋า', 'Packing helper'), packed >= Math.min(5, packAll.length)] : null,
-    doorsAll > 1 ? ['doorhalf', '🗓️', L('นับถอยหลังครึ่งทาง', 'Halfway there'), doors >= Math.ceil(doorsAll / 2)] : null,
+    doorsAll > 1 ? ['doorhalf', '🗓️', L('มาได้ครึ่งทางแล้ว!', 'Halfway there'), doors >= Math.ceil(doorsAll / 2)] : null,
     ['stamp1', '🛂', L('ตราแรก', 'First stamp'), stamps >= 1],
     ['stamp3', '🏅', L('นักสะสมตรา', 'Stamp collector'), stamps >= 3],
     ['stampall', '👑', L('ครบทุกวัน!', 'Every day stamped!'), days > 0 && stamps >= days],
@@ -534,12 +534,12 @@ function viewKid(p) {
     const until = daysUntil(t);
     const btns = tiles.map(([v, e, lbl]) => `<button data-a="kidnav" data-v="#/kid/${esc(kid)}/${v}" data-say="${esc(lbl)}"><span>${e}</span><b>${lbl}</b></button>`)
       .concat(story ? [`<button class="night" data-a="bedtime" data-v="${esc(story.id)}"><span>🌙</span><b>${L('นิทาน', 'Story')}</b></button>`] : [],
-        heartsFor(kid).length && !fresh.length ? [`<button class="love" data-a="kidnav" data-v="#/kid/${esc(kid)}/hearts" data-say="${esc(L('หัวใจจากครอบครัว', 'Hearts from the family'))}"><span>💗</span><b>${heartsFor(kid).length}</b></button>`] : []);
+        heartsFor(kid).length && !fresh.length ? [`<button class="love" data-a="kidnav" data-v="#/kid/${esc(kid)}/hearts" data-say="${esc(L('หัวใจจากญาติ', 'Hearts from the family'))}"><span>💗</span><b>${heartsFor(kid).length}</b></button>`] : []);
     const pages = []; for (let k = 0; k < btns.length; k += 4) pages.push(btns.slice(k, k + 4));
     body = `${fresh.length ? `<button class="kidhearts" data-a="kidnav" data-v="#/kid/${esc(kid)}/hearts" data-say="${esc(heartLine(fresh[0], kid))}"><span class="float" aria-hidden="true">💗</span><span class="e">${esc(fresh[0].emoji)}</span><b>${esc(L(`${fresh[0].from} ส่งหัวใจให้หนู!`, `${fresh[0].from} sent you a heart!`))}</b>${fresh.length > 1 ? `<small>+${fresh.length - 1}</small>` : ''}</button>` : ''}
 ${live === i && !ticked(t, `gift.d${i}`, kid) ? `<button class="kidgift" data-a="kidnav" data-v="#/kid/${esc(kid)}/gift" data-say="${esc(L('มีกล่องเซอร์ไพรส์มาให้! แตะเปิดเลย', 'A surprise box for you! Tap to open it'))}"><span class="box" aria-hidden="true">🎁</span><b>${L('กล่องเซอร์ไพรส์วันนี้!', 'Today’s surprise box!')}</b><small>${L('แตะเปิดเลย', 'Tap to open')}</small></button>`
   : live === i && hourIn(t.timezone) >= 17 && !ticked(t, `stamp.d${i}`, kid) ? `<button class="kidnight" data-a="kidnav" data-v="#/kid/${esc(kid)}/stamp" data-say="${esc(L('ก่อนนอน มาปั๊มตราวันนี้กัน!', 'Before bed — let’s stamp today!'))}"><span class="moon" aria-hidden="true">🌙</span><b>${L('ปั๊มตราวันนี้ก่อนนอน!', 'Stamp today before bed!')}</b><small>🛂 ${L('ปั๊ก!', 'Thump!')}</small></button>` : ''}
-<div class="kidhello">${kidArt(kid) ? `<img src="${kidArt(kid, true)}" alt="">` : ''}<p>${pre ? L(`อีก <b>${until}</b> วันไป ${esc(T(t.title).split(' · ')[0])}!`, `<b>${until}</b> ${until === 1 ? 'sleep' : 'sleeps'} to ${esc(T(t.title).split(' · ')[0])}!`) : L(`สวัสดี ${esc(name)}! วันนี้เล่นอะไรดี?`, `Hello ${esc(name)}! What shall we play?`)}</p></div>
+<div class="kidhello">${kidArt(kid) ? `<img src="${kidArt(kid, true)}" alt="">` : ''}<p>${pre ? L(`อีก <b>${until}</b> วัน เราจะไป${esc(T(t.title).split(' · ').pop())}กัน!`, `<b>${until}</b> ${until === 1 ? 'sleep' : 'sleeps'} to ${esc(T(t.title).split(' · ')[0])}!`) : L(`สวัสดี ${esc(name)}! วันนี้เล่นอะไรดี?`, `Hello ${esc(name)}! What shall we play?`)}</p></div>
 <nav class="kiddays">${t.days.map((x, j) => `<button data-a="kidday" data-v="${j}" aria-pressed="${j === i}" aria-label="${L('วันที่', 'Day')} ${j + 1}">${artImg(t, j)}</button>`).join('')}</nav>
 <div class="kidpagerwrap"><button class="kparrow prev" data-a="kidpage" data-v="-1" aria-label="${L('หน้าก่อน', 'Previous page')}" hidden>‹</button>
 <div class="kidpager" id="kidpager">${pages.map((pg, n) => `<div class="kpage kidtiles" data-n="${n}">${pg.join('')}</div>`).join('')}</div>
@@ -586,7 +586,7 @@ ${memState.got ? `<button class="kidbig" data-a="memnext">${memState.n + 1 < qs.
     const mine = ticked(t, `stamp.d${i}`, kid);
     body = `<div class="kidstamp${mine ? ' done' : ''}" id="kidstamp"><div class="ring"><span class="lbl">${esc(pd.stamp || fmtDay(d.date, { day: 'numeric', month: 'short' }))}</span>${artImg(t, i, 'inked')}</div></div>
 <div class="kidguide pop" id="kidcheer" ${mine ? '' : 'hidden'}>${guideImg(0)}<p>${L(`เก่งมาก ${name}! ได้ตราวันนี้แล้ว`, `Well done, ${name}! Today's stamp is yours`)}</p></div>
-<button class="kidbig stampbtn" data-a="kidstamp" data-t="${esc(t.id)}" data-d="${i}" data-k="${esc(kid)}">${mine ? L('ปั๊มอีกที! 🛂', 'Stamp again! 🛂') : L('ปั๊ม! 🛂', 'Stamp! 🛂')}</button>`;
+<button class="kidbig stampbtn" data-a="kidstamp" data-t="${esc(t.id)}" data-d="${i}" data-k="${esc(kid)}">${mine ? L('ปั๊มอีกที! 🛂', 'Stamp again! 🛂') : L('ปั๊มตรา! 🛂', 'Stamp! 🛂')}</button>`;
   } else if (view === 'words') {
     const l = (pp.lists || []).find((x) => x.said);
     body = `<div class="kidwords">${(l ? listItems(l) : []).map((it) => { const on = ticked(t, `${l.key}.${it.k}`, kid); return `<div class="kw${on ? ' on' : ''}">
@@ -607,7 +607,7 @@ ${door.art !== undefined ? artImg(t, Math.min(door.art, t.days.length - 1), 'big
 <div class="kidspots">${items.map((s) => { const on = ticked(t, `pack.${s.k}`, kid); return `<button class="${on ? 'on' : ''}" data-a="kidspot" data-t="${esc(t.id)}" data-d="" data-k="${esc(kid)}" data-v="pack.${esc(s.k)}" data-say="${esc(T(s))}" aria-pressed="${!!on}"><span>${esc(s.e)}</span><b>${esc(T(s))}</b>${on ? '<i>✓</i>' : ''}</button>`; }).join('')}</div>`;
   } else if (view === 'map' && pp.map) {
     if (mapFrom === null && kidEnter && !pre && i > 0) mapFrom = mapPos(mapModel(t), Math.max(0, i - 1));   // walk in from yesterday's stop
-    body = `<div class="kidguide">${guideImg(0)}<p>${L('แตะหมุด แล้วเราจะเดินไปด้วยกัน!', "Tap a pin and we'll walk there!")}</p></div>
+    body = `<div class="kidguide">${guideImg(0)}<p>${L('แตะรูปหมุด แล้วไปด้วยกันเลย!', "Tap a pin and we'll walk there!")}</p></div>
 ${mapHtml(t, i, [kid].concat((t.theme.children || []).map((c) => c.slug).filter((s) => s !== kid)), mapAt !== null ? mapAt : pre ? 0 : null)}`;
   } else if (view === 'quiz' && ((d.plan || {}).quiz || []).length) {
     body = `<div class="kidguide">${guideImg(1)}<p>${L('แตะการ์ดเพื่อดูคำตอบ!', 'Tap a card to see the answer!')}</p></div>
@@ -635,7 +635,7 @@ ${mapHtml(t, i, [kid].concat((t.theme.children || []).map((c) => c.slug).filter(
     body = `<div class="kidguide">${guideImg(1)}<p>${cur ? L(`วันนี้${esc(name)}รู้สึก ${cur}`, `Today ${esc(name)} feels ${cur}`) : L(`${esc(name)} วันนี้รู้สึกยังไง?`, `${esc(name)}, how do you feel today?`)}</p></div>
 <div class="moodgrid">${moods.map((m) => `<button data-a="kidmood" data-t="${esc(t.id)}" data-d="${i}" data-k="${esc(kid)}" data-v="${esc(m)}" aria-pressed="${cur === m}"><span>${esc(m)}</span><b>${esc(MOODW[m] ? L(MOODW[m][0], MOODW[m][1]) : '')}</b></button>`).join('')}</div>`;
   } else if (view === 'animals' && wild.length) {
-    body = `<div class="kidguide">${guideImg(0)}<p>${(t.info.wildLabel ? L('แตะเพื่อฟังชื่อ · เจอตัวจริงแล้วแตะ 👀', 'Tap to hear the name · tap 👀 when you spot one') : L('แตะสัตว์เพื่อฟังชื่อ · เจอตัวจริงแล้วแตะ 👀', 'Tap an animal to hear its name · tap 👀 when you spot one'))}</p></div>
+    body = `<div class="kidguide">${guideImg(0)}<p>${(t.info.wildLabel ? L('แตะแล้วฟังชื่อ เจอตัวจริงแตะ 👀 นะ', 'Tap to hear the name · tap 👀 when you spot one') : L('แตะสัตว์ ฟังชื่อเลย! เจอตัวจริงแตะ 👀 นะ', 'Tap an animal to hear its name · tap 👀 when you spot one'))}</p></div>
 <div class="animals">${wild.map((w, n) => { const key = `wild.${n}`, on = ticked(t, key, kid); return `<div class="an${on ? ' on' : ''}"><button class="hear" data-a="sayfacts" data-v="${esc(T(w.name))}. ${esc(T(w.text))}"><span>${esc(w.emo || '🐾')}</span><b>${esc(T(w.name))}</b></button><button class="seen" data-a="kidspot" data-t="${esc(t.id)}" data-d="" data-k="${esc(kid)}" data-v="${key}" data-say="${esc(L(`เจอ${T(w.name)}แล้ว!`, `Spotted a ${T(w.name)}!`))}" aria-pressed="${!!on}" aria-label="${L('เจอแล้ว', 'Spotted')}">${on ? '✓' : '👀'}</button></div>`; }).join('')}</div>`;
   } else if (view === 'numbers') {
     if (!cnt) newCount(t, kid);
@@ -750,7 +750,7 @@ Object.assign(A, {
   // countdown doors
   kiddoor(b) {
     const t = trip(b.dataset.t), kid = b.dataset.k, n = +b.dataset.v, cd = t.passport.countdown, N = cd.doors.length;
-    if (!doorOpen(t, n, N)) { beep('tap'); const x = doorIn(t, n, N); sayUi(L(`ประตูนี้เปิดได้อีก ${x} วัน`, `This door opens in ${x} ${x === 1 ? 'day' : 'days'}`)); return; }
+    if (!doorOpen(t, n, N)) { beep('tap'); const x = doorIn(t, n, N); sayUi(L(`อีก ${x} วัน ถึงจะเปิดได้นะ`, `This door opens in ${x} ${x === 1 ? 'day' : 'days'}`)); return; }
     const id = `${t.id}.tick.cd.${n + 1}.${kid}`;
     if (!S.entries.some((e) => e.id === id)) putEntry(t, { day: null, kind: 'tick', child: kid, first_key: `cd.${n + 1}`, text: '' }, id);
     kidDoor = n; beep('creak'); setTimeout(() => beep('chime'), 250);

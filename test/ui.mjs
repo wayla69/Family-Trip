@@ -1086,7 +1086,7 @@ const T = 'hk-macau-2026';
   await login(s.page);
   await s.page.evaluate(() => { lang = 'th'; ls('lang', 'th'); });
   await s.page.goto(`${BASE}/#/kid/mimi`); await s.page.waitForSelector('.kidhello');
-  ok(/วันไป \S/.test(await s.page.textContent('.kidhello')), `kid mode countdown: "…วันไป The Harbour Hop" with a space (${(await s.page.textContent('.kidhello')).trim().slice(0, 40)})`);
+  ok(/อีก \d+ วัน เราจะไปฮ่องกง–มาเก๊ากัน!/.test(await s.page.textContent('.kidhello')), `kid mode countdown: a Thai sentence for a small child, the book's Thai name, no English (${(await s.page.textContent('.kidhello')).trim().slice(0, 40)})`);
   await s.page.evaluate(() => { ls('kidmode', null); ls('lang', null); });
   await s.ctx.close();
 }
