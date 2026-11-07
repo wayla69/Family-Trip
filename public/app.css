@@ -681,6 +681,9 @@ body.kidmode{padding-bottom:0;background:var(--tint,#F3F6FA)}
 .kidme img.face{width:52px;height:52px;margin:0}
 .kidday{flex:1;min-width:0;display:flex;align-items:center;gap:10px;background:#fff;border-radius:999px;padding:6px 16px 6px 6px;box-shadow:0 6px 14px -10px rgba(0,0,0,.3)}
 .kidday .art{width:50px;height:50px}
+.kidhd{padding-right:58px}   /* room for the fixed 🔒 at the top right */
+.kidhear{flex:none;width:48px;height:48px;border-radius:50%;border:0;background:#fff;font-size:20px;box-shadow:0 6px 14px -10px rgba(0,0,0,.3);cursor:pointer}
+.kidhear:active{transform:scale(.94)}
 .kidday small{display:block;font-size:12px;font-weight:700;color:var(--accent)}.kidday b{display:block;font-size:17px;line-height:1.15;color:var(--accent)}
 .kidhello{display:flex;align-items:flex-end;gap:10px;justify-content:center}
 .kidhello img{height:150px;filter:drop-shadow(0 8px 10px rgba(0,0,0,.2))}
