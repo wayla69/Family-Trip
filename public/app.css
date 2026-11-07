@@ -857,12 +857,17 @@ body.kidmode{padding-bottom:0;background:var(--tint,#F3F6FA)}
 .hid.found{opacity:.2;filter:grayscale(1)}.hid.nope{animation:nope .4s}@keyframes nope{25%{transform:translate(-50%,-50%) rotate(-12deg)}75%{transform:translate(-50%,-50%) rotate(12deg)}}
 .hidetarget{text-align:center;font-size:64px;line-height:1.1;animation:bob 2s ease-in-out infinite}
 /* the jigsaw: a board of slots, a tray of pieces; a piece shows its crop of the picture */
-.jigboard{display:grid;grid-template-columns:repeat(var(--c,3),1fr);gap:4px;aspect-ratio:calc(var(--c,3) / 2);background:#fff;border-radius:18px;padding:6px;box-shadow:0 10px 22px -14px rgba(0,0,0,.4)}
+.jigboard{display:grid;grid-template-columns:repeat(var(--c,3),1fr);gap:4px;aspect-ratio:1;background:#fff;border-radius:18px;padding:6px;box-shadow:0 10px 22px -14px rgba(0,0,0,.4)}
 .jslot{border:2px dashed #B6C6E3;border-radius:8px;background:#F3F6FA;min-height:44px;padding:0}
 .jslot.filled{border:2px solid transparent;background-color:#fff;background-repeat:no-repeat}.jslot.nope{animation:drumhit .25s}
 .jigtray{display:flex;gap:10px;flex-wrap:wrap;justify-content:center;margin-top:12px;min-height:60px}
-.jpiece{width:92px;height:92px;border:3px solid #fff;border-radius:10px;background-color:#fff;background-repeat:no-repeat;box-shadow:0 8px 16px -10px rgba(0,0,0,.5);padding:0;transition:transform .12s}
+.jpiece{width:92px;height:calc(92px / var(--pa,1));border:3px solid #fff;border-radius:10px;background-color:#fff;background-repeat:no-repeat;box-shadow:0 8px 16px -10px rgba(0,0,0,.5);padding:0;transition:transform .12s}
 .jpiece.pick{outline:4px solid var(--accent);transform:scale(1.1)}
+/* which pictures a game uses: the day's drawing or the family's photos (kid.js pixPick) */
+.pixpick{display:flex;gap:8px;justify-content:center;flex-wrap:wrap}
+.pixpick button{border:0;border-radius:999px;background:#fff;padding:8px 14px;min-height:44px;font-size:16px;font-weight:700;color:var(--accent);box-shadow:0 6px 14px -10px rgba(0,0,0,.4)}
+.pixpick button[aria-pressed="true"]{background:var(--accent);color:var(--on-accent,#fff)}
+.mcard.ph .face{padding:0;overflow:hidden}.mcard.ph .face img{width:100%;height:100%;object-fit:cover;border-radius:20px}
 /* music: a xylophone (bars shorten to the right), three drums, two songs */
 .xylo{display:grid;grid-template-columns:repeat(8,minmax(0,1fr));gap:4px;align-items:end;height:38vh;min-height:220px}
 .xylo button{border:0;border-radius:14px;background:var(--c);height:var(--h);min-width:0;display:grid;place-items:end center;padding:0 0 8px;font-size:22px;box-shadow:inset 0 -6px 0 rgba(0,0,0,.12),0 8px 16px -10px rgba(0,0,0,.4);transition:transform .08s}
