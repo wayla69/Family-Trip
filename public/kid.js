@@ -565,7 +565,7 @@ const wj = (s) => String(s).replace(/วันนี้/g, 'วัน\u2060น�
 // kid mode's picture tiles (owner's set, public/art/kidui): [picture or '' for the emoji, gradient top, gradient bottom]
 const KTILE = { count: ['surprise', '#FFC93C', '#FF9F0A'], pack: ['pack', '#62CCFF', '#1C9BEA'], words: ['say', '#C9A2FF', '#8F5CEB'], colour: ['colour', '#FF93B5', '#F2557F'],
   draw: ['draw', '#AEEA80', '#5EBB3D'], match: ['match', '#B592FF', '#7C4EE5'], quiz: ['quiz', '#86D6FF', '#2BA8F0'], animals: ['animals', '#93DD60', '#3FA82C'], numbers: ['count', '#FFB54A', '#FF8A1F'],
-  spot: ['find', '#7FE3D2', '#24B39B'], stamp: ['stamp', '#8FB4FF', '#3F6FE0'], talk: ['talk', '#FFB0C8', '#F06A93'], memory: ['memory', '#FFD36B', '#F2A90C'], photos: ['photos', '#9CD9FF', '#3BA0E8'], mood: ['mood', '#FFC2A0', '#FF8A57'], hideseek: ['', '#FFE08A', '#F5A623'], jigsaw: ['', '#B5F0C9', '#2FB36B'], bubbles: ['', '#A5E9FF', '#3DB4F2'], music: ['', '#FFC4EE', '#E35FBF'], _: ['', '#C9D3E6', '#8C9BB8'] };
+  spot: ['find', '#7FE3D2', '#24B39B'], stamp: ['stamp', '#8FB4FF', '#3F6FE0'], talk: ['talk', '#FFB0C8', '#F06A93'], memory: ['memory', '#FFD36B', '#F2A90C'], photos: ['photos', '#9CD9FF', '#3BA0E8'], mood: ['mood', '#FFC2A0', '#FF8A57'], hideseek: ['spy', '#FFD54A', '#E8A317'], jigsaw: ['jigsaw', '#A8E86A', '#2E9E4F'], bubbles: ['bubbles', '#5BB8FF', '#1E6FE8'], music: ['music', '#FF8FD8', '#7B3FE0'], _: ['', '#C9D3E6', '#8C9BB8'] };
 const KBAR = { home: 'home', map: 'map', colour: 'colour', stamp: 'passport', stickers: 'stickers', trophies: 'trophies' };   // the bar's middle button: colour before the trip, the passport on it
 function viewKid(p) {
   const ks = children(), kid = p[1], k = ks.find((c) => c.slug === kid);
