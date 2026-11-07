@@ -1134,6 +1134,26 @@ const T = 'hk-macau-2026';
   await s.ctx.close();
 }
 
+// ---------- privacy and your data (#/privacy): before sign-in, and the erase box for editors ----------
+{
+  const s = await session('privacy', { width: 390, height: 844 });
+  const { page } = s;
+  await page.goto(`${BASE}/#/privacy`); await page.waitForSelector('.privacy');
+  ok(await page.locator('.privacy .pvsec').count() === 6 && await page.locator('.pverase').count() === 0 && await page.locator('#lcode').count() === 0, 'signed out: the privacy page reads in full, no erase box, no login form');
+  await page.goto(`${BASE}/#/`); await page.waitForSelector('#lcode');
+  ok(await page.locator('.login a[href="#/privacy"]').count() === 1, 'the login page links to it');
+  await login(page);
+  await page.goto(`${BASE}/#/privacy`); await page.waitForSelector('.pverase');
+  ok(await page.locator('[data-a="erase"]').isDisabled() && await page.locator('.setlist a[href="#/privacy"]').count() === 0, 'editor: the erase box, its button off until the app name is typed');
+  await page.fill('#erasetxt', await page.evaluate(() => appName()));
+  ok(!(await page.locator('[data-a="erase"]').isDisabled()), 'typing the app name arms the button (the family test presses it)');
+  await s.shot('01-privacy');
+  await page.goto(`${BASE}/#/`); await page.waitForSelector('.setlist');
+  ok(await page.locator('.setlist a[href="#/privacy"]').count() === 1, 'the shelf\'s settings list links to it');
+  ok(s.errs.length === 0, 'privacy: no console errors ' + s.errs.join(' | '));
+  await s.ctx.close();
+}
+
 // ---------- first run: the setup steps (#/start) ----------
 {
   const s = await session('start', { width: 390, height: 844 });

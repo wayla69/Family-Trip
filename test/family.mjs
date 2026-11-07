@@ -78,5 +78,19 @@ const kids = [
   const vck = jar(await fetch(BASE + '/api/login', { method: 'POST', headers: { 'x-mb': '1', 'content-type': 'application/json' }, body: JSON.stringify({ code: process.env.VIEW_PIN || '835911', name: 'ยาย' }) }));
   ok((await fetch(BASE + '/api/b/family', { method: 'PUT', headers: { ...H, cookie: vck }, body: '{}' })).status === 403, 'a viewer cannot change the family');
 }
+// ---- delete everything (the privacy page): the typed app name confirms; files and rows go; the bundled books come back empty
+{
+  const st0 = await state(), app = st0.family.app.en;
+  ok(typeof st0.operator === 'object' && 'name' in st0.operator, 'state names the operator block (empty until OPERATOR_NAME is set)');
+  const bad = await fetch(BASE + '/api/b/family/erase', { method: 'POST', headers: H, body: JSON.stringify({ confirm: 'nope' }) });
+  ok(bad.status === 400 && (await state()).entries.length === st0.entries.length, 'erase: a wrong confirmation changes nothing');
+  const vck = jar(await fetch(BASE + '/api/login', { method: 'POST', headers: { 'x-mb': '1', 'content-type': 'application/json' }, body: JSON.stringify({ code: process.env.VIEW_PIN || '835911', name: 'ยาย' }) }));
+  ok((await fetch(BASE + '/api/b/family/erase', { method: 'POST', headers: { ...H, cookie: vck }, body: JSON.stringify({ confirm: app }) })).status === 403, 'erase: a viewer cannot');
+  const r = await fetch(BASE + '/api/b/family/erase', { method: 'POST', headers: H, body: JSON.stringify({ confirm: app }) });
+  const j = await r.json(), st = await state();
+  ok(r.ok && j.ok && st.entries.length === 0 && st.media.length === 0 && st.reviews.length === 0 && st.children.length === 2 && !st.children.some((k) => k.slug === 'nora-jane') && st.trips.length === 2,
+    `erase: every entry, photo and review gone, the added child gone, the two bundled books and their children seeded again (${j.files} files removed)`);
+  ok((await fetch(BASE + '/api/b/viewers', { headers: H })).ok && (await (await fetch(BASE + '/api/b/viewers', { headers: H })).json()).groups.length === 0, 'erase: the relatives\' groups are gone');
+}
 console.log(failures ? `\n${failures} FAILED` : '\nALL PASSED');
 process.exit(failures ? 1 : 0);
