@@ -602,7 +602,7 @@ function viewKid(p) {
 ${live === i && !ticked(t, `gift.d${i}`, kid) ? `<button class="kidgift" data-a="kidnav" data-v="#/kid/${esc(kid)}/gift" data-say="${esc(L('มีกล่องเซอร์ไพรส์มาให้! แตะเปิดเลย', 'A surprise box for you! Tap to open it'))}"><span class="box" aria-hidden="true">${emo('🎁')}</span><b>${L('<span class="nw">กล่องเซอร์ไพรส์</span><span class="nw">วันนี้!</span>', 'Today’s surprise box!')}</b><small>${L('แตะเปิดเลย', 'Tap to open')}</small></button>`
   : live === i && hourIn(t.timezone) >= 17 && !ticked(t, `stamp.d${i}`, kid) ? `<button class="kidnight" data-a="kidnav" data-v="#/kid/${esc(kid)}/stamp" data-say="${esc(L('ก่อนนอน มาปั๊มตราวันนี้กัน!', 'Before bed — let’s stamp today!'))}"><span class="moon" aria-hidden="true">${emo('🌙')}</span><b>${L('ปั๊มตราวันนี้ก่อนนอน!', 'Stamp today before bed!')}</b><small>🛂 ${L('ปั๊ก!', 'Thump!')}</small></button>` : ''}
 <div class="kidhello">${kidArt(kid) ? `<button class="poke" data-a="kidpoke" data-k="${esc(kid)}" aria-label="${esc(name)}"><img src="${kidArt(kid, true)}" alt=""></button>` : ''}<p>${pre ? L(`<span class="nw">อีก <b>${until}</b> วัน</span> เราจะไป<span class="nw">${esc(T(t.title).split(' · ').pop())}กัน!</span>`, `<b>${until}</b> ${until === 1 ? 'sleep' : 'sleeps'} to ${esc(T(t.title).split(' · ')[0])}!`) : L(`<span class="nw">สวัสดี ${esc(name)}!</span> <span class="nw">วันนี้เล่นอะไรดี?</span>`, `Hello ${esc(name)}! What shall we play?`)}</p></div>
-${stars(kid) ? `<div class="jarrow"><button class="starjar" data-a="kidjar" data-k="${esc(kid)}" aria-label="${L('โถดาว', 'Star jar')}">⭐ <b>${stars(kid)}</b></button>${pets(kid).length ? `<span class="pets" aria-label="${L('เพื่อน', 'Friends')}">${pets(kid).join('')}</span>` : ''}</div>` : ''}
+${stars(kid) ? `<div class="jarrow"><button class="starjar" data-a="kidjar" data-k="${esc(kid)}" aria-label="${L('โถดาว · ผู้ใหญ่กดค้างเพื่อล้าง', 'Star jar · grown-ups press and hold to empty')}">⭐ <b>${stars(kid)}</b></button>${pets(kid).length ? `<span class="pets" aria-label="${L('เพื่อน', 'Friends')}">${pets(kid).join('')}</span>` : ''}</div>` : ''}
 <nav class="kiddays">${t.days.map((x, j) => `<button data-a="kidday" data-v="${j}" aria-pressed="${j === i}" aria-label="${L('วันที่', 'Day')} ${j + 1}">${artImg(t, j)}</button>`).join('')}</nav>
 <div class="kidpagerwrap"><button class="kparrow prev" data-a="kidpage" data-v="-1" aria-label="${L('หน้าก่อน', 'Previous page')}" hidden>‹</button>
 <div class="kidpager" id="kidpager">${pages.map((pg, n) => `<div class="kpage kidtiles" data-n="${n}">${pg.join('')}</div>`).join('')}</div>
@@ -976,6 +976,14 @@ document.addEventListener('click', (e) => {
     putEntry(t, { day: null, kind: 'field', child: kid, first_key: `colour.d${i}`, text: pad.dataset.fill }, `${t.id}.field.colour.d${i}.${kid}`);
   }, 500);
 });
+// grown-ups empty the star jar (and its friends) by pressing and holding it 1.5 s — a test run's stars, a fresh start; nothing on the server
+let jarT = 0;
+document.addEventListener('pointerdown', (e) => {
+  const jar = e.target.closest && e.target.closest('.starjar'); if (!jar || !isEditor()) return;
+  jar.classList.add('holding');
+  jarT = setTimeout(() => { const k = jar.dataset.k; ls('stars_' + k, null); ls('pets_' + k, null); beep('pop'); toast(L('ล้างโถดาวแล้ว', 'The star jar is empty again')); render(); }, 1500);
+});
+['pointerup', 'pointercancel', 'pointerleave'].forEach((ev) => document.addEventListener(ev, () => { clearTimeout(jarT); const j = $('.starjar'); if (j) j.classList.remove('holding'); }, true));
 // grown-ups leave kid mode by pressing and holding the lock
 let holdT = 0;
 document.addEventListener('pointerdown', (e) => {

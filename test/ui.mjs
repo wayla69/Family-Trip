@@ -574,8 +574,9 @@ const T = 'hk-macau-2026';
   await page.evaluate(() => { localStorage.setItem('mbs_stars_mimi', '9'); star('mimi', 1); });
   await page.goto(`${BASE}/#/kid/mimi`); await page.waitForSelector('.kidtiles');
   ok(await page.locator('.starjar b').textContent() === '10' && await page.locator('.pets').count() === 1 && await page.locator('.kidhello .poke').count() === 1, 'kid mode: the star jar counts the stars; ten stars bring a new friend; the character can be poked');
-  await page.evaluate(() => { localStorage.removeItem('mbs_stars_mimi'); localStorage.removeItem('mbs_pets_mimi'); });
-  await page.goto(`${BASE}/#/kid/mimi`); await page.waitForSelector('.kidtiles');
+  await page.locator('.starjar').dispatchEvent('pointerdown'); await page.waitForFunction(() => !JSON.parse(localStorage.getItem('mbs_stars_mimi') || 'null'), null, { timeout: 5000 });   // ls(k, null) stores "null"
+  ok(await page.evaluate(() => !JSON.parse(localStorage.getItem('mbs_pets_mimi') || 'null') && document.querySelectorAll('.starjar').length === 0), 'kid mode: a grown-up holding the star jar 1.5 s empties it (stars and friends gone)');
+  await page.goto(`${BASE}/#/kid/mimi/music`); await page.waitForSelector('.xylo'); await page.goto(`${BASE}/#/kid/mimi`); await page.waitForSelector('.kidtiles');   // away and back: a fresh view (the jar's clear re-rendered in place)
   ok(await page.locator('.kidwrap.enter').count() === 1, 'kid mode: a freshly opened page carries the enter class (the slide-in; a tap’s re-render does not)');
   ok(await page.locator('.kpage').count() === 4 && await page.locator('#kdots i').count() === 4 && (await page.locator('.kidtiles button').first().boundingBox()).height >= 150, 'kid home: three swipe pages of four huge tiles, with dots');
   await page.click('.kparrow.next'); await page.waitForFunction(() => document.querySelectorAll('#kdots i')[1].classList.contains('on'), null, { timeout: 5000 });
