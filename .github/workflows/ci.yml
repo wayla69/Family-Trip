@@ -81,7 +81,7 @@ jobs:
           docker logs mb | grep -q "migration 0001_init.sql applied"
           docker logs mb | grep -q "2 seeded trips"
           docker exec mb test -w /data
-          curl -fsS localhost:3000/ | grep -q "MM Memory"
+          curl -fsS localhost:3000/ | grep -q "LifeBook"
           curl -fsS -o /dev/null localhost:3000/fonts/KIRA-UI-Regular.woff2
           # archiver 8 is ESM-only and server/backup.js require()s it: the image's Node must load it and build a zip
           docker exec mb node -e "const {ZipArchive}=require('archiver');const z=new ZipArchive();let n=0;z.on('data',(d)=>{n+=d.length});z.on('end',()=>{console.log(process.version,'zip',n);if(!n)process.exit(1)});z.append('x',{name:'a.txt'});z.finalize()"
