@@ -175,7 +175,7 @@ function renderProgress() {
 // PIN login: one field + a big number pad; "who's this?" is optional and remembered on the device
 function loginView() {
   const who = ls('name') || '';
-  const chips = [['พ่อ', 'Dad'], ['แม่', 'Mum']].map(([th, en]) => { const v = L(th, en); return `<button type="button" class="chip" data-a="who-login" data-v="${esc(v)}" aria-pressed="${who === v}">${esc(v)}</button>`; }).join('');
+  const chips = [['พ่อ', 'Dad', 'dad'], ['แม่', 'Mum', 'mum']].map(([th, en, pic]) => { const v = L(th, en); return `<button type="button" class="chip who" data-a="who-login" data-v="${esc(v)}" aria-pressed="${who === v}"><img src="/art/hub/${pic}.webp" alt="" draggable="false">${esc(v)}</button>`; }).join('');   // the owner's dad and mum faces
   const keys = ['1', '2', '3', '4', '5', '6', '7', '8', '9', 'clear', '0', 'back'];
   return `<div class="login"><form id="lf" autocomplete="on">
 <div class="loginart" aria-hidden="true">${['/art/hk/day-2.svg', '/art/day-4.svg', '/art/day-13.svg'].map((a, i) => `<img class="art f${i}" src="${a}" alt="">`).join('')}${castHtml(kidArtSlugs())}</div>
