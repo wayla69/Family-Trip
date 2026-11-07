@@ -333,19 +333,16 @@ nav.bar a[aria-current=page]{color:var(--accent)}
 .login label{display:block;font-size:13px;color:var(--muted);margin:14px 0 4px}
 .login .pin{font-size:28px;letter-spacing:.4em;text-align:center;font-variant-numeric:tabular-nums}
 .pinpad{display:grid;grid-template-columns:repeat(3,1fr);gap:14px 20px;justify-items:center;max-width:300px;margin:16px auto 6px}
-/* round, candy-coloured keys: each digit its own soft colour from the palette, a light glint, and a press that sinks */
-.pinpad button{--c:var(--accent);width:100%;max-width:76px;aspect-ratio:1;height:auto;border:0;border-radius:50%;padding:0;display:grid;place-items:center;
-  font-size:28px;font-weight:700;font-variant-numeric:lining-nums;color:color-mix(in srgb,var(--c) 72%,var(--ink));cursor:pointer;-webkit-tap-highlight-color:transparent;
-  background:radial-gradient(circle at 34% 26%,color-mix(in srgb,var(--c) 6%,#fff) 0 18%,color-mix(in srgb,var(--c) 20%,var(--paper)) 62%,color-mix(in srgb,var(--c) 30%,var(--paper)));
-  box-shadow:0 5px 0 color-mix(in srgb,var(--c) 40%,var(--paper)),0 12px 18px -12px color-mix(in srgb,var(--c) 80%,#000),inset 0 2px 0 rgba(255,255,255,.75);transition:transform .08s ease,box-shadow .08s ease,filter .15s}
-.pinpad button:nth-child(6n+1){--c:var(--rose)}.pinpad button:nth-child(6n+2){--c:var(--sun)}.pinpad button:nth-child(6n+3){--c:var(--leaf)}
-.pinpad button:nth-child(6n+4){--c:var(--sky)}.pinpad button:nth-child(6n+5){--c:var(--grape)}.pinpad button:nth-child(6n){--c:var(--tealc)}
+/* the keys are drawn (art/keypad, glossy candy keys): the button is only a hit area; the press sinks and dims the picture */
+.pinpad button{width:100%;max-width:76px;height:auto;aspect-ratio:160/150;border:0;padding:0;margin:0;background:none;box-shadow:none;border-radius:22%;display:block;cursor:pointer;
+  -webkit-tap-highlight-color:transparent;-webkit-touch-callout:none;user-select:none;transition:transform .08s ease,filter .12s}
+.pinpad button img{display:block;width:100%;height:100%;object-fit:contain;pointer-events:none;filter:drop-shadow(0 6px 8px rgba(40,30,80,.22))}
+.pinpad button[data-v=clear],.pinpad button[data-v="0"],.pinpad button[data-v=back]{aspect-ratio:160/115;align-self:center}
 .pinpad button:hover{filter:brightness(1.04)}
-.pinpad button:active,.pinpad button.tap{transform:translateY(4px);box-shadow:0 1px 0 color-mix(in srgb,var(--c) 40%,var(--paper)),0 4px 8px -6px color-mix(in srgb,var(--c) 80%,#000),inset 0 2px 0 rgba(255,255,255,.6)}
-.pinpad button[data-v=clear],.pinpad button[data-v=back]{--c:var(--slate);background:none;box-shadow:none;color:var(--muted);font-size:20px;font-weight:600}
-.pinpad button[data-v=clear]:active,.pinpad button[data-v=back]:active,.pinpad button[data-v=clear].tap,.pinpad button[data-v=back].tap{background:color-mix(in srgb,var(--slate) 14%,var(--paper));transform:none;box-shadow:none}
-@media (prefers-color-scheme:dark){:root:not([data-theme=light]) .pinpad button:not([data-v=clear]):not([data-v=back]){color:color-mix(in srgb,var(--c) 55%,#fff);background:radial-gradient(circle at 34% 26%,color-mix(in srgb,var(--c) 55%,var(--paper)) 0 16%,color-mix(in srgb,var(--c) 30%,var(--paper)) 62%,color-mix(in srgb,var(--c) 22%,var(--paper)));box-shadow:0 5px 0 color-mix(in srgb,var(--c) 18%,#000),0 12px 18px -12px #000,inset 0 1px 0 rgba(255,255,255,.18)}}
-:root[data-theme=dark] .pinpad button:not([data-v=clear]):not([data-v=back]){color:color-mix(in srgb,var(--c) 55%,#fff);background:radial-gradient(circle at 34% 26%,color-mix(in srgb,var(--c) 55%,var(--paper)) 0 16%,color-mix(in srgb,var(--c) 30%,var(--paper)) 62%,color-mix(in srgb,var(--c) 22%,var(--paper)));box-shadow:0 5px 0 color-mix(in srgb,var(--c) 18%,#000),0 12px 18px -12px #000,inset 0 1px 0 rgba(255,255,255,.18)}
+.pinpad button:active,.pinpad button.tap{transform:translateY(3px) scale(.95);filter:brightness(.93)}
+.pinpad button:focus-visible{outline:3px solid var(--accent);outline-offset:3px}
+@media (prefers-color-scheme:dark){:root:not([data-theme=light]) .pinpad button img{filter:drop-shadow(0 6px 10px rgba(0,0,0,.45))}}
+:root[data-theme=dark] .pinpad button img{filter:drop-shadow(0 6px 10px rgba(0,0,0,.45))}
 .login .err{color:var(--accent2);min-height:22px;margin-top:8px;font-size:14px}
 
 .empty{padding:22px 0;color:var(--muted)}
