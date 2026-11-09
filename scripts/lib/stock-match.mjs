@@ -4,7 +4,8 @@
 //
 // For each day: which city it is in (the place aliases found in the day's words, else the day before's city, else the book's
 // own place), then the picture whose keywords best match the day (a landmark or a day scene of that city, never the same one
-// twice while another fits), else an unused picture of that city, else none (the helper may draw it). The passport gets the
+// twice while another fits), else the city's own scene, else a landscape / route scene the day names (t.* / r.*), else none
+// (the helper may draw it). The passport gets the
 // country's stamp as its crest and a stamp per city and country in the order the trip reaches them, each earned on that day.
 
 const lc = (s) => String(s || '').normalize('NFKC').toLowerCase();
@@ -41,14 +42,21 @@ export function stockMatch(days, placeText, index) {
   let prev = null;
   const cityOf = words.map((w) => { const b = best(w); prev = b ? b[0] : prev || bookCity; return prev; });
   const used = new Set();
+  // the landscape (t.*) and route (r.*) scenes: for a day the city layer cannot picture — a town the library does not have,
+  // or a city without a scene — the one whose keywords the day names (a lake, a glacier, a ferry crossing), unused first
+  const wide = items.filter((it) => it.cat === 'day' && (scopeOf(it.id) === 't' || scopeOf(it.id) === 'r'));
+  const scene = (i) => {
+    const s = wide.map((it) => [it, hits(words[i], it.kw) - (used.has(it.id) ? 0.5 : 0)]).filter(([, n]) => n >= 1).sort((a, b) => b[1] - a[1] || (scopeOf(a[0].id) === 't' ? -1 : 1))[0];
+    return s ? s[0] : null;
+  };
   const artDays = cityOf.map((city, i) => {
-    if (!city) return '';
+    if (!city) { const w = scene(i); if (!w) return ''; used.add(w.id); return w.id; }
     const pool = items.filter((it) => scopeOf(it.id) === city && (it.cat === 'landmark' || it.cat === 'day'));
     const scored = pool.map((it) => [it, hits(words[i], it.kw)]).filter(([it, n]) => n > 0 && !used.has(it.id)).sort((a, b) => b[1] - a[1]);
     // no picture of what the day does: the city's own scene (a picture whose keywords name the city), repeated if need be —
     // never a specific place the day doesn't go to (Fuji on a day spent in Ueno)
     const generic = pool.filter((it) => it.cat === 'day' && hits(lc((it.kw || []).join(' ')), places[city].alias) > 0);
-    const pick = (scored[0] && scored[0][0]) || generic.find((it) => !used.has(it.id)) || generic[0];
+    const pick = (scored[0] && scored[0][0]) || generic.find((it) => !used.has(it.id)) || generic[0] || scene(i);
     if (!pick) return '';
     used.add(pick.id);
     return pick.id;

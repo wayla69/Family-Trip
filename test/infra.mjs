@@ -253,6 +253,10 @@ if (process.env.BASE) {
   const other = { ...plan, place: { th: 'เรคยาวิก', en: 'Reykjavik' }, title: { th: 'เรคยาวิก', en: 'Reykjavik' }, days: plan.days.map((d) => ({ ...d, title: { th: 'เรคยาวิก', en: 'Reykjavik' }, sleep: { th: 'เรคยาวิก', en: 'Reykjavik' }, planned: [], plan: [], moving: { th: '', en: '' } })) };
   const jpOnly = { ...idx, places: Object.fromEntries(Object.entries(idx.places).filter(([k]) => k.startsWith('jp'))), items: idx.items.filter((it) => it.id.startsWith('jp')) };   // a slice that stays true as the library grows
   ok(!C.toSeed(other, [], { art: false, stock: jpOnly }).theme.artDays, 'stock match: a city the library does not have gets nothing (no Tokyo pictures in a Reykjavik book)');
+  // S4: a town the library has no set for still gets the landscape / route scene its day names; a day naming none stays empty
+  const wild = { ...other, days: other.days.map((d, i) => ({ ...d, title: [{ th: 'เดินบนธารน้ำแข็ง', en: 'Walking on a glacier' }, { th: 'เรคยาวิก', en: 'Reykjavik' }, { th: 'นั่งเรือเฟอร์รีข้ามไปเกาะ', en: 'The ferry to the island' }][i] || d.title })) };
+  const wa = C.toSeed(wild, [], { art: false, stock: idx }).theme.artDays || [];
+  ok(wa[0] === 'stock:t.day.glacier' && !wa[1] && wa[2] === 'stock:r.day.ferry', 'stock match: an unknown town gets the glacier / the ferry its days name, nothing for a day that names neither' + ` — got ${wa.join()}`);
   const withMap = { ...plan, passport: { ...(plan.passport || {}), map: { title: { th: 'แผนที่', en: 'Map' }, sea: { th: 'ทะเล', en: 'Sea' }, stops: [
     { k: 'tower', e: '🗼', th: 'โตเกียวทาวเวอร์', en: 'Tokyo Tower', x: 40, y: 40 }, { k: 'hotel', e: '🛏️', th: 'โรงแรม', en: 'Our hotel', x: 60, y: 60 },
     { k: 'own', e: '🏯', th: 'ปราสาท', en: 'A castle', x: 20, y: 20, art: '/art/x.svg' }], days: [['tower'], ['hotel'], ['own']] } } };
