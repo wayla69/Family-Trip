@@ -1,0 +1,7 @@
+<svg viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+<rect x="8" y="8" width="184" height="184" rx="34" fill="#FFFDF7" stroke="#CE1126" stroke-width="5" stroke-dasharray="8 5"/>
+<rect x="22" y="22" width="156" height="156" rx="24" fill="none" stroke="#CE1126" stroke-width="3"/>
+<g stroke="#22213A" stroke-width="3.5" stroke-linejoin="round" stroke-linecap="round"><path d="M56 124h88" fill="none" stroke="#6D4C41" stroke-width="5"/><ellipse cx="100" cy="104" rx="18" ry="22" fill="#A1887F" stroke-width="3"/><circle cx="100" cy="76" r="20" fill="#A1887F" stroke-width="3"/><circle cx="90" cy="74" r="9" fill="#FFCA28" stroke-width="2.5"/><circle cx="90" cy="74" r="5" fill="#22213A" stroke="none"/><circle cx="110" cy="74" r="9" fill="#FFCA28" stroke-width="2.5"/><circle cx="110" cy="74" r="5" fill="#22213A" stroke="none"/><circle cx="80" cy="62" r="6" fill="#A1887F" stroke-width="2"/><circle cx="120" cy="62" r="6" fill="#A1887F" stroke-width="2"/><path d="M86 120c-4 4-4 8 0 8M114 120c4 4 4 8 0 8" fill="none" stroke="#A1887F" stroke-width="3"/></g>
+<text x="100" y="166" text-anchor="middle" font-family="KIRA UI, Arial, sans-serif" font-weight="800" font-size="20" letter-spacing="4" fill="#CE1126">PILIPINAS</text>
+<g fill="#E3F2FD" stroke="#22213A" stroke-width="2"><circle cx="44" cy="46" r="6"/><circle cx="156" cy="46" r="6"/></g>
+</svg>
