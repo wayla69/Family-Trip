@@ -92,6 +92,7 @@ async function lint(dir = DIR) {
     if (!Array.isArray(it.kw) || it.kw.filter((w) => typeof w === 'string' && w.trim()).length < 2) bad(`item ${id}: needs at least two keywords (kw)`);
     if (/เช็ค/.test(JSON.stringify(it.name || {}))) bad(`item ${id}: spell เช็ก`);
     if (it.ok !== undefined && !/^\d{4}-\d{2}-\d{2}$/.test(String(it.ok))) bad(`item ${id}: ok must be the approval date YYYY-MM-DD`);
+    if (it.review !== undefined && it.review !== 'pending') bad(`item ${id}: review is 'pending' (live, the owner has not looked yet) or absent`);
     // ch = the emoji this picture draws in the family's emoji library (the country pack, server/emoji.js stockPack)
     if (it.ch !== undefined && !(typeof it.ch === 'string' && /\p{Extended_Pictographic}|\p{Regional_Indicator}/u.test(it.ch) && it.ch.length <= 16)) bad(`item ${id}: ch must be one emoji`);
     if (it.alt !== undefined && !(Array.isArray(it.alt) && it.ch && it.alt.every((x) => typeof x === 'string' && /\p{Extended_Pictographic}/u.test(x)))) bad(`item ${id}: alt must be emoji (and needs ch)`);
@@ -123,6 +124,13 @@ async function lint(dir = DIR) {
         } catch (e) { bad(`item ${id}: ${name} unreadable: ${e.message}`); }
       }
     }
+  }
+  // no two pictures may draw the same thing (owner, Nov 2026: "อย่าทำให้ซ้ำกัน"): the same shapes, ids and spacing aside, are refused
+  const shapesOf = (f) => { try { const t = fs.readFileSync(path.join(dir, f), 'utf8'); return f.endsWith('.svg') ? t.replace(/\sid="[^"]*"|url\(#[^)]*\)|href="#[^"]*"|<text[\s\S]*?<\/text>/g, '').replace(/\s+/g, ' ') : t.toString('base64'); } catch (_) { return null; } };
+  const seenShape = new Map();
+  for (const it of items) for (const f of [it.file, it.next].filter(Boolean)) {
+    const k = shapesOf(f); if (!k) continue;
+    if (seenShape.has(k)) bad(`item ${it.id}: ${f} draws the same picture as ${seenShape.get(k)}`); else seenShape.set(k, f);
   }
   // every file on disk is named by the index (a stray file would ship unseen)
   const walk = (d) => fs.readdirSync(d, { withFileTypes: true }).flatMap((e) => (e.isDirectory() ? walk(path.join(d, e.name)) : [path.join(d, e.name)]));
