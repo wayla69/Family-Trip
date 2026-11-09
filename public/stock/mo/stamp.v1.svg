@@ -1,0 +1,7 @@
+<svg viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+<rect x="8" y="8" width="184" height="184" rx="34" fill="#FFFDF7" stroke="#F9A825" stroke-width="5" stroke-dasharray="8 5"/>
+<rect x="22" y="22" width="156" height="156" rx="24" fill="none" stroke="#F9A825" stroke-width="3"/>
+<g stroke="#22213A" stroke-width="3.5" stroke-linejoin="round" stroke-linecap="round"><path d="M54 106c0 24 20 38 46 38s46-14 46-38z" fill="#E9A64C" stroke-width="3"/><path d="M58 112l8 26M80 118l2 24M100 120v24M120 118l-2 24M142 112l-8 26" fill="none" stroke="#C8862F" stroke-width="2.5"/><ellipse cx="100" cy="104" rx="44" ry="14" fill="#FFE082" stroke-width="3"/><ellipse cx="84" cy="102" rx="6" ry="3" fill="#8D5524" stroke="none"/><ellipse cx="104" cy="98" rx="6" ry="3" fill="#8D5524" stroke="none"/><ellipse cx="118" cy="106" rx="6" ry="3" fill="#8D5524" stroke="none"/><ellipse cx="94" cy="108" rx="6" ry="3" fill="#8D5524" stroke="none"/></g>
+<text x="100" y="166" text-anchor="middle" font-family="KIRA UI, Arial, sans-serif" font-weight="800" font-size="20" letter-spacing="4" fill="#F9A825">MACAU</text>
+<g fill="#E8F5E9" stroke="#22213A" stroke-width="2"><circle cx="44" cy="46" r="6"/><circle cx="156" cy="46" r="6"/></g>
+</svg>

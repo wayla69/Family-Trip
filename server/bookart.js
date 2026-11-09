@@ -79,13 +79,14 @@ const crestKey = (trip, v) => `d/${trip}/${v}/crest.svg`;
 const guideKey = (trip, v, k) => `d/${trip}/${v}/guide-${k}.svg`;
 const FILE_RE = /^(day-\d{1,2}|crest|guide-[12])\.svg$/;
 const V_RE = /^[a-z0-9]{4,16}$/;
-const CALLS = (days, crest = true) => days + (crest ? 4 : 3);   // one per day still to draw, the crest, the guides' names, two guides (retries on top)
+const CALLS = (days, crest = true, guides = true) => days + (crest ? 1 : 0) + (guides ? 3 : 0);   // one per day still to draw, the crest, the guides' names, two guides (retries on top)
 
 // draw every picture of a book into version v: the days, the crest, then the two guides (their names in one call; kept only when
 // both are usable). onStep(done, total) reports progress.
-// days[i].skip = that day already has a stock library picture (not drawn, no file); keepCrest = the passport keeps its crest
-async function drawBook({ trip, v, title, days, place, when, accent, kids, media, client, take, onUsage, onStep = () => {}, keepCrest = false }) {
-  const total = days.filter((d) => !d.skip).length + (keepCrest ? 2 : 3), o = { take, onUsage };
+// days[i].skip = that day already has a stock library picture (not drawn, no file); keepCrest = the passport keeps its crest;
+// keepGuides = the passport keeps its guides (the country's pair from the library, S8): no names call, no guide drawings
+async function drawBook({ trip, v, title, days, place, when, accent, kids, media, client, take, onUsage, onStep = () => {}, keepCrest = false, keepGuides = false }) {
+  const total = days.filter((d) => !d.skip).length + (keepCrest ? 0 : 1) + (keepGuides ? 0 : 1) + 1, o = { take, onUsage };
   let done = 0, drawn = 0;
   for (let i = 0; i < days.length; i++) {
     if (days[i].skip) continue;
@@ -97,7 +98,7 @@ async function drawBook({ trip, v, title, days, place, when, accent, kids, media
     onStep(++done, total);
   }
   let guides = null;
-  {
+  if (!keepGuides) {
     let j = null;
     for (let k = 0; k < 2 && !j; k++) { try { const t = await ask(client, namesPrompt({ title, place, kids }), o); j = JSON.parse(t.slice(t.indexOf('{'), t.lastIndexOf('}') + 1)); } catch (e) { if (e.code === 'limit' || e.code === 'refused') throw e; } }
     const gs = j && Array.isArray(j.guides) ? j.guides.filter(nameOk).slice(0, 2) : [];

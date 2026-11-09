@@ -13,7 +13,7 @@ const ID_RE = /^(?:g|t|r|[a-z]{2}|[a-z]{2}-[a-z0-9-]{2,30}|p-[a-z0-9-]{2,40})\.[
 const PLACE_RE = /^(?:[a-z]{2}(?:-[a-z0-9-]{2,30})?|p-[a-z0-9-]{2,40})$/;
 const FILE_RE = /^[a-z0-9-]+(?:\/[a-z0-9-]+)*\.v\d+\.(svg|webp)$/;
 const CATS = {   // category → the file types it may be (docs/STOCK-ART.md §2.2, §4.2; the owner chose SVG stickers too, Nov 2026)
-  stamp: ['svg'], day: ['svg'], landmark: ['svg'],
+  stamp: ['svg'], day: ['svg'], landmark: ['svg'], guide: ['svg'],   // guide = a country's passport guide (S8): name + hello {th, en}
   food: ['svg', 'webp'], animal: ['svg', 'webp'], transport: ['svg', 'webp'], culture: ['svg', 'webp'], flag: ['svg', 'webp'], hello: ['svg', 'webp'], money: ['svg', 'webp'],
 };
 const SVG_MAX = 12 * 1024, WEBP_MAX = 12 * 1024, INDEX_MAX = 300 * 1024;
@@ -91,6 +91,7 @@ async function lint(dir = DIR) {
     if (!named(it.name)) bad(`item ${id}: needs name.th and name.en`);
     if (!Array.isArray(it.kw) || it.kw.filter((w) => typeof w === 'string' && w.trim()).length < 2) bad(`item ${id}: needs at least two keywords (kw)`);
     if (/เช็ค/.test(JSON.stringify(it.name || {}))) bad(`item ${id}: spell เช็ก`);
+    if (cat === 'guide' && !(named(it.hello) && /\{name\}/.test(it.hello.th + it.hello.en))) bad(`item ${id}: a guide needs hello.th and hello.en, one of them greeting {name}`);
     if (it.ok !== undefined && !/^\d{4}-\d{2}-\d{2}$/.test(String(it.ok))) bad(`item ${id}: ok must be the approval date YYYY-MM-DD`);
     if (it.review !== undefined && it.review !== 'pending') bad(`item ${id}: review is 'pending' (live, the owner has not looked yet) or absent`);
     // ch = the emoji this picture draws in the family's emoji library (the country pack, server/emoji.js stockPack)

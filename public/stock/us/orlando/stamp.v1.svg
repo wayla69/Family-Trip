@@ -1,0 +1,10 @@
+<svg viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+<defs><path id="por-st-a" d="M 38 100 A 62 62 0 0 1 162 100"/><path id="por-st-b" d="M 30 106 A 70 70 0 0 0 170 106"/></defs>
+<circle cx="100" cy="100" r="96" fill="#FFF7F2" stroke="#7B1FA2" stroke-width="5" stroke-dasharray="7 5"/>
+<circle cx="100" cy="100" r="84" fill="none" stroke="#7B1FA2" stroke-width="3"/>
+<circle cx="100" cy="100" r="54" fill="#F3E5F5" stroke="#7B1FA2" stroke-width="3"/>
+<g stroke="#22213A" stroke-width="3.5" stroke-linejoin="round" stroke-linecap="round"><path d="M54 128c0-60 92-60 92 0s-46 24-46 0" fill="none" stroke="#7B1FA2" stroke-width="5"/><circle cx="100" cy="100" r="24" fill="#FF9800" stroke-width="3"/><path d="M90 92c4-4 10-6 14-4" fill="none" stroke="#FFE0B2" stroke-width="3"/><path d="M100 76c4-14 20-18 28-10-8 8-18 12-28 10z" fill="#43A047" stroke-width="2.5"/></g>
+<text font-family="KIRA UI, Arial, sans-serif" font-weight="800" font-size="19" letter-spacing="3" fill="#7B1FA2"><textPath href="#por-st-a" startOffset="50%" text-anchor="middle">ORLANDO</textPath></text>
+<text font-family="KIRA UI, Arial, sans-serif" font-weight="700" font-size="11" letter-spacing="3" fill="#FF6F00"><textPath href="#por-st-b" startOffset="50%" text-anchor="middle">FLORIDA</textPath></text>
+<path d="M22 100l5-3 5 3-5 3zM168 100l5-3 5 3-5 3z" fill="#7B1FA2"/>
+</svg>

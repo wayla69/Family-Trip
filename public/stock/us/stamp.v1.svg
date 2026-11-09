@@ -1,0 +1,7 @@
+<svg viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+<rect x="8" y="8" width="184" height="184" rx="34" fill="#FFFDF7" stroke="#C62828" stroke-width="5" stroke-dasharray="8 5"/>
+<rect x="22" y="22" width="156" height="156" rx="24" fill="none" stroke="#C62828" stroke-width="3"/>
+<g stroke="#22213A" stroke-width="3.5" stroke-linejoin="round" stroke-linecap="round"><path d="M70 136c0-36 14-60 34-60s30 14 30 30c0 10-6 18-14 22l-6 8z" fill="#FFFFFF" stroke-width="3"/><path d="M118 96l26 6-10 14-18-4z" fill="#FFCA28" stroke-width="3"/><circle cx="112" cy="96" r="4" fill="#22213A" stroke="none"/><path d="M70 136c10 6 30 8 44 0l10 10H62z" fill="#6D4C41" stroke-width="3"/><path d="M72 45L69.6 50.7L63.4 51.2L68.1 55.3L66.7 61.3L72.0 58.0L77.3 61.3L75.9 55.3L80.6 51.2L74.4 50.7z" fill="#C62828" stroke-width="2"/><path d="M100 45L97.6 50.7L91.4 51.2L96.1 55.3L94.7 61.3L100.0 58.0L105.3 61.3L103.9 55.3L108.6 51.2L102.4 50.7z" fill="#C62828" stroke-width="2"/><path d="M128 45L125.6 50.7L119.4 51.2L124.1 55.3L122.7 61.3L128.0 58.0L133.3 61.3L131.9 55.3L136.6 51.2L130.4 50.7z" fill="#C62828" stroke-width="2"/></g>
+<text x="100" y="166" text-anchor="middle" font-family="KIRA UI, Arial, sans-serif" font-weight="800" font-size="20" letter-spacing="4" fill="#C62828">U.S.A.</text>
+<g fill="#E8EAF6" stroke="#22213A" stroke-width="2"><circle cx="44" cy="46" r="6"/><circle cx="156" cy="46" r="6"/></g>
+</svg>

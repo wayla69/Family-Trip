@@ -537,10 +537,10 @@ try {
     const n2 = artCalls.length, go = await fetch(BASE + '/api/b/art/sakura-hop-2028', { method: 'POST', headers: H, body: '{}' });
     let art2; for (let k = 0; k < 150; k++) { art2 = await (await fetch(BASE + '/api/b/art', { headers: { cookie: ck } })).json(); if (art2.status !== 'running') break; await new Promise((r) => setTimeout(r, 200)); }
     const kinds2 = artCalls.slice(n2).map((c) => c.kind).join(), sk = (await state()).trips.find((t) => t.id === 'sakura-hop-2028');
-    ok(go.status === 202 && art2.status === 'done' && art2.total === 3 && kinds2 === 'day,names,guide,guide' && /^\/stock\//.test(sk.passport.style.crest)
+    ok(go.status === 202 && art2.status === 'done' && art2.total === 2 && kinds2 === 'day' && /^\/stock\//.test(sk.passport.style.crest) && sk.passport.guides.map((g) => g.key).join() === 'hana,momo' && sk.passport.guides.every((g) => /^\/stock\/jp\/guide-/.test(g.art))
       && /^\/stock\//.test(sk.theme.artDays[0]) && sk.theme.artDays[1] === '' && /^\/media\/art\/sakura-hop-2028\/day-\{n\}\.svg/.test(sk.theme.art)
       && (await fetch(BASE + sk.theme.art.replace('{n}', '2'), { headers: { cookie: ck } })).status === 200 && (await fetch(BASE + sk.theme.art.replace('{n}', '1'), { headers: { cookie: ck } })).status === 404,
-      `bookart: only the day without a library picture is drawn, the library's Japan crest is kept, then the guides (${kinds2}, ${JSON.stringify(art2)})`);
+      `bookart: only the day without a library picture is drawn; the library's Japan crest and its two guides (Hana, Momo) are kept (${kinds2}, ${JSON.stringify(art2)})`);
     await fetch(BASE + '/api/b/trips/sakura-hop-2028', { method: 'DELETE', headers: H });
     { const db = new Client({ connectionString: u.toString() }); await db.connect(); await db.query('UPDATE ai_usage SET calls=0'); await db.end(); }
   }

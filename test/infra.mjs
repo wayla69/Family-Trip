@@ -244,8 +244,9 @@ if (process.env.BASE) {
   const idx = JSON.parse(fs.readFileSync(path.resolve('public/stock/index.json'), 'utf8'));
   const s = C.toSeed(plan, [], { art: false, stock: idx });
   ok(s.theme.artDays.join() === 'stock:jp-tokyo.day.skyline,stock:jp-tokyo.landmark.skytree,stock:jp-tokyo.day.skyline' && s.passport.style.crest === 'stock:jp.stamp'
-    && JSON.stringify(s.passport.stamps) === JSON.stringify([{ art: 'stock:jp.stamp', day: 0 }, { art: 'stock:jp-tokyo.stamp', day: 0 }]) && s.stock.places.join() === 'jp-tokyo',
-    'stock match: Tokyo days get the skyline / the Skytree they visit / the skyline again (never a place the day skips), the Japan crest, Japan + Tokyo stamps');
+    && JSON.stringify(s.passport.stamps) === JSON.stringify([{ art: 'stock:jp.stamp', day: 0 }, { art: 'stock:jp-tokyo.stamp', day: 0 }]) && s.stock.places.join() === 'jp-tokyo'
+    && s.passport.guides.map((g) => g.art).join() === 'stock:jp.guide.hana,stock:jp.guide.momo' && /\{name\}/.test(s.passport.guides[0].hello.th),
+    'stock match: Tokyo days get the skyline / the Skytree they visit / the skyline again (never a place the day skips), the Japan crest, Japan + Tokyo stamps, Japan\'s two guides');
   const unapproved = { ...idx, items: idx.items.map((it) => ({ ...it, ok: undefined })) };
   const s2 = C.toSeed(plan, [], { art: false, stock: unapproved }), s3 = C.toSeed(plan, [], { art: false }), s4 = C.toSeed(plan, [], { stock: idx });
   ok(!s2.theme.artDays && !s2.passport.stamps && !s3.theme.artDays && s3.passport.style.crest === '' && !s4.theme.artDays && !s4.stock,
@@ -253,6 +254,10 @@ if (process.env.BASE) {
   const other = { ...plan, place: { th: 'เรคยาวิก', en: 'Reykjavik' }, title: { th: 'เรคยาวิก', en: 'Reykjavik' }, days: plan.days.map((d) => ({ ...d, title: { th: 'เรคยาวิก', en: 'Reykjavik' }, sleep: { th: 'เรคยาวิก', en: 'Reykjavik' }, planned: [], plan: [], moving: { th: '', en: '' } })) };
   const jpOnly = { ...idx, places: Object.fromEntries(Object.entries(idx.places).filter(([k]) => k.startsWith('jp'))), items: idx.items.filter((it) => it.id.startsWith('jp')) };   // a slice that stays true as the library grows
   ok(!C.toSeed(other, [], { art: false, stock: jpOnly }).theme.artDays, 'stock match: a city the library does not have gets nothing (no Tokyo pictures in a Reykjavik book)');
+  // S4: a town the library has no set for still gets the landscape / route scene its day names; a day naming none stays empty
+  const wild = { ...other, days: other.days.map((d, i) => ({ ...d, title: [{ th: 'เดินบนธารน้ำแข็ง', en: 'Walking on a glacier' }, { th: 'เรคยาวิก', en: 'Reykjavik' }, { th: 'นั่งเรือเฟอร์รีข้ามไปเกาะ', en: 'The ferry to the island' }][i] || d.title })) };
+  const wa = C.toSeed(wild, [], { art: false, stock: idx }).theme.artDays || [];
+  ok(wa[0] === 'stock:t.day.glacier' && !wa[1] && wa[2] === 'stock:r.day.ferry', 'stock match: an unknown town gets the glacier / the ferry its days name, nothing for a day that names neither' + ` — got ${wa.join()}`);
   const withMap = { ...plan, passport: { ...(plan.passport || {}), map: { title: { th: 'แผนที่', en: 'Map' }, sea: { th: 'ทะเล', en: 'Sea' }, stops: [
     { k: 'tower', e: '🗼', th: 'โตเกียวทาวเวอร์', en: 'Tokyo Tower', x: 40, y: 40 }, { k: 'hotel', e: '🛏️', th: 'โรงแรม', en: 'Our hotel', x: 60, y: 60 },
     { k: 'own', e: '🏯', th: 'ปราสาท', en: 'A castle', x: 20, y: 20, art: '/art/x.svg' }], days: [['tower'], ['hotel'], ['own']] } } };
