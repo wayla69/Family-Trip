@@ -14,6 +14,7 @@
     "plan-to-seed": "node scripts/plan-to-seed.mjs",
     "import-pdf": "node scripts/import-pdf.mjs",
     "stock:lint": "node scripts/stock-lint.mjs",
+    "stock:sheet": "node scripts/stock-sheet.mjs",
     "s3": "s3rver -d ./data/s3 -p 4569 --configure-bucket mb-test --silent"
   },
   "engines": {

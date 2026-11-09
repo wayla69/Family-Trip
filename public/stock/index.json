@@ -1,5 +1,19 @@
 {
   "v": 1,
-  "places": {},
-  "items": []
+  "places": {
+    "jp": { "country": "jp", "wave": 1, "name": { "th": "ญี่ปุ่น", "en": "Japan" }, "tz": "Asia/Tokyo", "alias": ["japan", "ญี่ปุ่น", "日本"], "colors": { "k1": "#E4573D", "k2": "#2F5D8C", "k3": "#F6C6D0" } },
+    "jp-tokyo": { "country": "jp", "wave": 1, "name": { "th": "โตเกียว", "en": "Tokyo" }, "tz": "Asia/Tokyo", "ll": [35.68, 139.76], "alias": ["tokyo", "โตเกียว", "東京", "shinjuku", "shibuya", "asakusa", "ginza", "odaiba", "ueno"], "colors": { "k1": "#E4573D", "k2": "#2F5D8C", "k3": "#F6C6D0" } }
+  },
+  "items": [
+    { "id": "jp.stamp", "cat": "stamp", "file": "jp/stamp.v1.svg", "name": { "th": "ตราประทับญี่ปุ่น", "en": "Japan stamp" }, "kw": ["japan", "ญี่ปุ่น"] },
+    { "id": "jp-tokyo.stamp", "cat": "stamp", "file": "jp/tokyo/stamp.v1.svg", "name": { "th": "ตราประทับโตเกียว", "en": "Tokyo stamp" }, "kw": ["tokyo", "โตเกียว"] },
+    { "id": "jp-tokyo.day.skyline", "cat": "day", "file": "jp/tokyo/day-skyline.v1.svg", "name": { "th": "เมืองโตเกียว", "en": "Tokyo skyline" }, "kw": ["tokyo", "โตเกียว", "city", "เมือง", "tower", "skytree"] },
+    { "id": "jp-tokyo.day.fuji", "cat": "day", "file": "jp/tokyo/day-fuji.v1.svg", "name": { "th": "ภูเขาไฟฟูจิกับทะเลสาบ", "en": "Fuji by the lake" }, "kw": ["fuji", "ฟูจิ", "kawaguchiko", "คาวากุจิโกะ", "lake", "ทะเลสาบ", "sakura", "ซากุระ"] },
+    { "id": "jp-tokyo.landmark.tower", "cat": "landmark", "file": "jp/tokyo/landmark-tower.v1.svg", "name": { "th": "โตเกียวทาวเวอร์", "en": "Tokyo Tower" }, "kw": ["tokyo tower", "โตเกียวทาวเวอร์", "shiba", "ชิบะ"], "colour": true, "spot": { "th": "หาหอคอยสีแดงขาว", "en": "Find the red and white tower" } },
+    { "id": "jp-tokyo.landmark.skytree", "cat": "landmark", "file": "jp/tokyo/landmark-skytree.v1.svg", "name": { "th": "โตเกียวสกายทรี", "en": "Tokyo Skytree" }, "kw": ["skytree", "สกายทรี", "oshiage", "sumida"], "colour": true, "spot": { "th": "หาหอคอยที่สูงที่สุด", "en": "Find the tallest tower" } },
+    { "id": "jp-tokyo.landmark.kaminarimon", "cat": "landmark", "file": "jp/tokyo/landmark-kaminarimon.v1.svg", "name": { "th": "ประตูฟ้าคำราม วัดเซ็นโซจิ", "en": "Kaminarimon gate, Senso-ji" }, "kw": ["sensoji", "senso-ji", "เซ็นโซจิ", "kaminarimon", "asakusa", "อาซากุสะ", "lantern", "โคมไฟ"], "colour": true, "spot": { "th": "หาโคมไฟสีแดงอันใหญ่", "en": "Find the giant red lantern" } },
+    { "id": "jp-tokyo.landmark.shibuya", "cat": "landmark", "file": "jp/tokyo/landmark-shibuya.v1.svg", "name": { "th": "ทางม้าลายชิบูย่า", "en": "Shibuya crossing" }, "kw": ["shibuya", "ชิบูย่า", "crossing", "ทางม้าลาย", "hachiko"], "colour": true, "spot": { "th": "นับแถบทางม้าลาย", "en": "Count the zebra stripes" } },
+    { "id": "jp-tokyo.landmark.yamanote", "cat": "landmark", "file": "jp/tokyo/landmark-yamanote.v1.svg", "name": { "th": "รถไฟสายยามาโนเตะ", "en": "Yamanote line train" }, "kw": ["yamanote", "ยามาโนเตะ", "jr", "train", "รถไฟ", "metro"], "colour": true, "spot": { "th": "หารถไฟแถบสีเขียว", "en": "Find the train with the green stripe" } },
+    { "id": "jp-tokyo.landmark.fuji", "cat": "landmark", "file": "jp/tokyo/landmark-fuji.v1.svg", "name": { "th": "ภูเขาไฟฟูจิ", "en": "Mount Fuji" }, "kw": ["fuji", "ฟูจิ", "mount fuji", "kawaguchiko", "hakone", "ฮาโกเน่"], "colour": true, "spot": { "th": "หาภูเขาที่มีหิมะบนยอด", "en": "Find the mountain with snow on top" } }
+  ]
 }

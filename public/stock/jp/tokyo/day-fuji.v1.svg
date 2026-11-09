@@ -1,0 +1,18 @@
+<svg viewBox="0 0 240 240" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+<defs><clipPath id="jtk-d2"><circle cx="120" cy="120" r="110"/></clipPath></defs>
+<circle cx="120" cy="120" r="120" fill="#fff"/>
+<circle cx="120" cy="120" r="110" fill="#FFE9D6"/>
+<g clip-path="url(#jtk-d2)" stroke="#22213A" stroke-width="5" stroke-linejoin="round" stroke-linecap="round">
+<circle cx="64" cy="70" r="16" fill="#FF8A65"/>
+<path d="M14 160L102 62h36l88 98z" fill="#5B7FB0"/>
+<path d="M102 62h36l24 27-14 8-12-10-14 12-14-12-14 10-14-8z" fill="#fff"/>
+<path d="M-4 156h248v90H-4z" fill="#64B5F6"/>
+<path d="M26 182c8-4 16-4 24 0M150 176c8-4 16-4 24 0M84 200c8-4 16-4 24 0" fill="none" stroke="#fff" stroke-width="5"/>
+<path d="M118 196h40l-6 12h-28z" fill="#E4573D"/>
+<path d="M136 196v-24l14 18z" fill="#fff" stroke-width="4"/>
+<path d="M240 16c-30 6-58 22-74 46" fill="none" stroke="#6D4C41" stroke-width="7"/>
+<path d="M200 36c-4 12-2 22 4 30" fill="none" stroke="#6D4C41" stroke-width="5"/>
+<g fill="#F6C6D0" stroke-width="4"><circle cx="176" cy="54" r="11"/><circle cx="196" cy="34" r="12"/><circle cx="214" cy="54" r="10"/><circle cx="204" cy="72" r="9"/><circle cx="224" cy="26" r="10"/></g>
+</g>
+<circle cx="120" cy="120" r="110" fill="none" stroke="#22213A" stroke-width="5"/>
+</svg>

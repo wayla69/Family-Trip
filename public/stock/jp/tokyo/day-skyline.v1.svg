@@ -1,0 +1,24 @@
+<svg viewBox="0 0 240 240" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+<defs><clipPath id="jtk-d1"><circle cx="120" cy="120" r="110"/></clipPath></defs>
+<circle cx="120" cy="120" r="120" fill="#fff"/>
+<circle cx="120" cy="120" r="110" fill="#DDF2FF"/>
+<g clip-path="url(#jtk-d1)" stroke="#22213A" stroke-width="5" stroke-linejoin="round" stroke-linecap="round">
+<circle cx="186" cy="64" r="18" fill="#FFD54A"/>
+<path d="M30 52c6-8 18-8 24 0 8 0 12 6 10 12H24c-4-6 0-12 6-12z" fill="#fff" stroke-width="4"/>
+<rect x="20" y="132" width="34" height="80" fill="#B8C7DE"/>
+<rect x="150" y="122" width="30" height="90" fill="#9FB3D1"/>
+<rect x="196" y="140" width="34" height="72" fill="#B8C7DE"/>
+<path d="M162 210L170 34l8 176z" fill="#E9EEF5"/>
+<path d="M163 96h14M164 70h12" stroke-width="4"/>
+<ellipse cx="170" cy="96" rx="10" ry="5" fill="#fff" stroke-width="4"/>
+<path d="M78 212L110 62l32 150z" fill="#E4573D"/>
+<path d="M98 132h24M88 172h44" stroke="#fff" stroke-width="9"/>
+<rect x="96" y="108" width="28" height="12" rx="3" fill="#fff"/>
+<path d="M110 62V44" stroke-width="4"/>
+<path d="M100 212v-20h20v20" fill="#FFE0B2" stroke-width="4"/>
+<path d="M-4 200c22-10 44-10 66 0s44 10 66 0 44-10 66 0 44 10 66 0v50H-4z" fill="#8BC34A"/>
+<g fill="#F6C6D0" stroke-width="4"><circle cx="44" cy="178" r="18"/><circle cx="66" cy="186" r="14"/><circle cx="26" cy="190" r="12"/><circle cx="208" cy="186" r="15"/><circle cx="224" cy="196" r="11"/></g>
+<path d="M44 196v24M208 200v20" stroke-width="5"/>
+</g>
+<circle cx="120" cy="120" r="110" fill="none" stroke="#22213A" stroke-width="5"/>
+</svg>
