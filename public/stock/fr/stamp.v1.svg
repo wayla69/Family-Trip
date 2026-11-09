@@ -1,0 +1,7 @@
+<svg viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+<rect x="8" y="8" width="184" height="184" rx="34" fill="#FFFDF7" stroke="#C62828" stroke-width="5" stroke-dasharray="8 5"/>
+<rect x="22" y="22" width="156" height="156" rx="24" fill="none" stroke="#C62828" stroke-width="3"/>
+<g stroke="#22213A" stroke-width="3.5" stroke-linejoin="round" stroke-linecap="round"><path d="M120 104c20-10 30-30 22-50 12 10 14 30 6 44zM120 104c24 0 34-16 34-34 8 16 4 34-10 42z" fill="#1E88E5" stroke-width="3"/><path d="M124 108c10-6 20-6 26 4-8 6-20 6-26-4z" fill="#E53935" stroke-width="3"/><ellipse cx="100" cy="104" rx="30" ry="24" fill="#FFFFFF"/><circle cx="80" cy="76" r="14" fill="#FFFFFF"/><path d="M74 62l4-10 4 8 4-10 4 10z" fill="#E53935" stroke-width="2.5"/><path d="M66 78l-10 3 10 3z" fill="#FFB300" stroke-width="2.5"/><path d="M94 126l-4 14M108 126l4 14" fill="none" stroke="#FFB300" stroke-width="3"/></g>
+<text x="100" y="166" text-anchor="middle" font-family="KIRA UI, Arial, sans-serif" font-weight="800" font-size="20" letter-spacing="4" fill="#C62828">FRANCE</text>
+<g fill="#E3F2FD" stroke="#22213A" stroke-width="2"><circle cx="44" cy="46" r="6"/><circle cx="156" cy="46" r="6"/></g>
+</svg>
