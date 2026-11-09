@@ -1,0 +1,6 @@
+<svg viewBox="0 0 240 240" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+<defs><clipPath id="ntr-d1"><circle cx="120" cy="120" r="110"/></clipPath></defs>
+<circle cx="120" cy="120" r="120" fill="#fff"/><circle cx="120" cy="120" r="110" fill="#F8BBD0"/>
+<g clip-path="url(#ntr-d1)"><g stroke="#22213A" stroke-width="5" stroke-linejoin="round" stroke-linecap="round"><path d="M-4 110l40-40 30 30 40-50 40 40 30-20 68 40z" fill="#ECEFF1"/><path d="M66 100l40-50 40 40" fill="none" stroke="none"/><path d="M-4 110h248v140H-4z" fill="#1A237E"/><path d="M20 140c20-6 40 6 60 0M150 150c20-6 40 6 60 0" fill="none" stroke="#3949AB" stroke-width="3"/><path d="M50 170c4-26 10-40 16-48 2 20 6 34 4 48z" fill="#22213A"/><path d="M150 196c-10-30 10-40 20-36 10-4 30 6 20 36-6-10-14-14-20-10-6-4-14 0-20 10z" fill="#455A64"/><path d="M160 196v20" fill="none" stroke="#455A64" stroke-width="8"/><path d="M80 214h56l-8 10H88z" fill="#C62828" stroke-width="3"/><rect x="96" y="204" width="20" height="10" rx="2" fill="#FFFFFF" stroke-width="2.5"/></g></g>
+<circle cx="120" cy="120" r="110" fill="none" stroke="#22213A" stroke-width="5"/>
+</svg>

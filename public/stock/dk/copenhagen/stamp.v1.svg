@@ -1,0 +1,10 @@
+<svg viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+<defs><path id="dcp-st-a" d="M 38 100 A 62 62 0 0 1 162 100"/><path id="dcp-st-b" d="M 30 106 A 70 70 0 0 0 170 106"/></defs>
+<circle cx="100" cy="100" r="96" fill="#FFF7F2" stroke="#E65100" stroke-width="5" stroke-dasharray="7 5"/>
+<circle cx="100" cy="100" r="84" fill="none" stroke="#E65100" stroke-width="3"/>
+<circle cx="100" cy="100" r="54" fill="#FFF3E0" stroke="#E65100" stroke-width="3"/>
+<g stroke="#22213A" stroke-width="3.5" stroke-linejoin="round" stroke-linecap="round"><path d="M76 120c-6-40 6-70 24-70s30 30 24 70z" fill="#22213A" stroke-width="3"/><circle cx="100" cy="124" r="14" fill="#FFE0BD" stroke-width="2.5"/><path d="M86 120c4 14 24 14 28 0" fill="none" stroke="#FFCA28" stroke-width="2"/><circle cx="100" cy="98" r="4" fill="#FFCA28" stroke-width="2"/><rect x="88" y="136" width="24" height="8" rx="2" fill="#1565C0" stroke-width="2"/><circle class="f" cx="95.8" cy="122" r="1.3" fill="#22213A" stroke="none"/><circle class="f" cx="104.2" cy="122" r="1.3" fill="#22213A" stroke="none"/><ellipse class="f" cx="92.8" cy="124.7" rx="2.1" ry="1.3" fill="#FF8FA3" stroke="none" opacity=".7"/><ellipse class="f" cx="107.2" cy="124.7" rx="2.1" ry="1.3" fill="#FF8FA3" stroke="none" opacity=".7"/><path class="f" d="M98.2 124.1q1.8 1.8 3.6 0" fill="none" stroke-width="1.1"/></g>
+<text font-family="KIRA UI, Arial, sans-serif" font-weight="800" font-size="15" letter-spacing="3" fill="#E65100"><textPath href="#dcp-st-a" startOffset="50%" text-anchor="middle">KØBENHAVN</textPath></text>
+<text font-family="KIRA UI, Arial, sans-serif" font-weight="700" font-size="11" letter-spacing="3" fill="#1565C0"><textPath href="#dcp-st-b" startOffset="50%" text-anchor="middle">DENMARK</textPath></text>
+<path d="M22 100l5-3 5 3-5 3zM168 100l5-3 5 3-5 3z" fill="#E65100"/>
+</svg>

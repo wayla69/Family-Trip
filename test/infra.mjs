@@ -251,11 +251,11 @@ if (process.env.BASE) {
   const s2 = C.toSeed(plan, [], { art: false, stock: unapproved }), s3 = C.toSeed(plan, [], { art: false }), s4 = C.toSeed(plan, [], { stock: idx });
   ok(!s2.theme.artDays && !s2.passport.stamps && !s3.theme.artDays && s3.passport.style.crest === '' && !s4.theme.artDays && !s4.stock,
     'stock match: unapproved pictures are never picked; no index or a book with its own art → nothing from the library');
-  const other = { ...plan, place: { th: 'เรคยาวิก', en: 'Reykjavik' }, title: { th: 'เรคยาวิก', en: 'Reykjavik' }, days: plan.days.map((d) => ({ ...d, title: { th: 'เรคยาวิก', en: 'Reykjavik' }, sleep: { th: 'เรคยาวิก', en: 'Reykjavik' }, planned: [], plan: [], moving: { th: '', en: '' } })) };
+  const other = { ...plan, place: { th: 'อูซัวยา', en: 'Ushuaia' }, title: { th: 'อูซัวยา', en: 'Ushuaia' }, days: plan.days.map((d) => ({ ...d, title: { th: 'อูซัวยา', en: 'Ushuaia' }, sleep: { th: 'อูซัวยา', en: 'Ushuaia' }, planned: [], plan: [], moving: { th: '', en: '' } })) };
   const jpOnly = { ...idx, places: Object.fromEntries(Object.entries(idx.places).filter(([k]) => k.startsWith('jp'))), items: idx.items.filter((it) => it.id.startsWith('jp')) };   // a slice that stays true as the library grows
-  ok(!C.toSeed(other, [], { art: false, stock: jpOnly }).theme.artDays, 'stock match: a city the library does not have gets nothing (no Tokyo pictures in a Reykjavik book)');
+  ok(!C.toSeed(other, [], { art: false, stock: jpOnly }).theme.artDays, 'stock match: a city the library does not have gets nothing (no Tokyo pictures in an Ushuaia book)');
   // S4: a town the library has no set for still gets the landscape / route scene its day names; a day naming none stays empty
-  const wild = { ...other, days: other.days.map((d, i) => ({ ...d, title: [{ th: 'เดินบนธารน้ำแข็ง', en: 'Walking on a glacier' }, { th: 'เรคยาวิก', en: 'Reykjavik' }, { th: 'นั่งเรือเฟอร์รีข้ามไปเกาะ', en: 'The ferry to the island' }][i] || d.title })) };
+  const wild = { ...other, days: other.days.map((d, i) => ({ ...d, title: [{ th: 'เดินบนธารน้ำแข็ง', en: 'Walking on a glacier' }, { th: 'อูซัวยา', en: 'Ushuaia' }, { th: 'นั่งเรือเฟอร์รีข้ามไปเกาะ', en: 'The ferry to the island' }][i] || d.title })) };
   const wa = C.toSeed(wild, [], { art: false, stock: idx }).theme.artDays || [];
   ok(wa[0] === 'stock:t.day.glacier' && !wa[1] && wa[2] === 'stock:r.day.ferry', 'stock match: an unknown town gets the glacier / the ferry its days name, nothing for a day that names neither' + ` — got ${wa.join()}`);
   const withMap = { ...plan, passport: { ...(plan.passport || {}), map: { title: { th: 'แผนที่', en: 'Map' }, sea: { th: 'ทะเล', en: 'Sea' }, stops: [

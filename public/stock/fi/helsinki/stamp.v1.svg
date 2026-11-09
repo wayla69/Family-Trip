@@ -1,0 +1,10 @@
+<svg viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+<defs><path id="fhe-st-a" d="M 38 100 A 62 62 0 0 1 162 100"/><path id="fhe-st-b" d="M 30 106 A 70 70 0 0 0 170 106"/></defs>
+<circle cx="100" cy="100" r="96" fill="#FFF7F2" stroke="#1565C0" stroke-width="5" stroke-dasharray="7 5"/>
+<circle cx="100" cy="100" r="84" fill="none" stroke="#1565C0" stroke-width="3"/>
+<circle cx="100" cy="100" r="54" fill="#E3F2FD" stroke="#1565C0" stroke-width="3"/>
+<g stroke="#22213A" stroke-width="3.5" stroke-linejoin="round" stroke-linecap="round"><rect x="70" y="96" width="60" height="30" fill="#FFFFFF" stroke-width="3"/><path d="M86 96c0-26 28-26 28 0z" fill="#26A69A" stroke-width="3"/><path d="M64 96c0-10 12-10 12 0z" fill="#26A69A" stroke-width="2.5"/><path d="M124 96c0-10 12-10 12 0z" fill="#26A69A" stroke-width="2.5"/><path d="M80 96l20-12 20 12z" fill="#FFFFFF" stroke-width="2.5"/><rect x="66" y="126" width="68" height="4" fill="#ECEFF1" stroke-width="1.5"/><rect x="63" y="130" width="74" height="4" fill="#ECEFF1" stroke-width="1.5"/><rect x="60" y="134" width="80" height="4" fill="#ECEFF1" stroke-width="1.5"/><rect x="57" y="138" width="86" height="4" fill="#ECEFF1" stroke-width="1.5"/></g>
+<text font-family="KIRA UI, Arial, sans-serif" font-weight="800" font-size="15" letter-spacing="3" fill="#1565C0"><textPath href="#fhe-st-a" startOffset="50%" text-anchor="middle">HELSINKI</textPath></text>
+<text font-family="KIRA UI, Arial, sans-serif" font-weight="700" font-size="11" letter-spacing="3" fill="#00897B"><textPath href="#fhe-st-b" startOffset="50%" text-anchor="middle">FINLAND</textPath></text>
+<path d="M22 100l5-3 5 3-5 3zM168 100l5-3 5 3-5 3z" fill="#1565C0"/>
+</svg>
