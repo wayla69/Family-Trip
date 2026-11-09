@@ -204,6 +204,8 @@ function toSeed(p, notes, opts = {}) {
     if (m.filled) { seed.theme.artDays = m.artDays; note(`stock art: ${m.filled} of ${days.length} days have a library picture (${m.places.join(', ')})` + (m.filled < days.length ? ' — the rest keep the day emoji or the helper draws them' : '')); }
     if (m.crest && !(pp.style && pp.style.crest)) seed.passport.style = { ...seed.passport.style, crest: m.crest };
     if (m.stamps.length) seed.passport.stamps = m.stamps;
+    // the country's own two guides stand in for Kiki and Roo (a plan that names its guides keeps them)
+    if (m.guides && !(Array.isArray(pp.guides) && pp.guides.length)) { seed.passport.guides = m.guides; note(`passport.guides: ${m.guides.map((g) => g.name.en).join(' and ')} from the library`); }
     if (m.places.length) seed.stock = { places: m.places, countries: m.countries };
     const map = seed.passport.map;
     if (map && Array.isArray(map.stops)) for (const st of map.stops) { if (st.art) continue; const a = m.mapArt(st); if (a) st.art = a; }

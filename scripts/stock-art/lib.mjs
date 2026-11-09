@@ -7,11 +7,12 @@
 export const INK = '#22213A';
 const n = (v) => +(+v).toFixed(1);
 
-// low-level shapes (fill, then an optional stroke width; the outline colour comes from the group)
-export const P = (d, fill = 'none', sw) => `<path d="${d}" fill="${fill}"${sw ? ` stroke-width="${sw}"` : ''}/>`;
-export const R = (x, y, w, h, fill, rx = 0, sw) => `<rect x="${n(x)}" y="${n(y)}" width="${n(w)}" height="${n(h)}"${rx ? ` rx="${rx}"` : ''} fill="${fill}"${sw ? ` stroke-width="${sw}"` : ''}/>`;
-export const C = (x, y, r, fill, sw) => `<circle cx="${n(x)}" cy="${n(y)}" r="${n(r)}" fill="${fill}"${sw ? ` stroke-width="${sw}"` : ''}/>`;
-export const E = (x, y, rx, ry, fill, sw) => `<ellipse cx="${n(x)}" cy="${n(y)}" rx="${n(rx)}" ry="${n(ry)}" fill="${fill}"${sw ? ` stroke-width="${sw}"` : ''}/>`;
+// low-level shapes (fill, then an optional stroke width; the outline colour comes from the group; a width of 0 = no outline)
+const sw_ = (sw) => (sw === 0 ? ' stroke="none"' : sw ? ` stroke-width="${sw}"` : '');
+export const P = (d, fill = 'none', sw) => `<path d="${d}" fill="${fill}"${sw_(sw)}/>`;
+export const R = (x, y, w, h, fill, rx = 0, sw) => `<rect x="${n(x)}" y="${n(y)}" width="${n(w)}" height="${n(h)}"${rx ? ` rx="${rx}"` : ''} fill="${fill}"${sw_(sw)}/>`;
+export const C = (x, y, r, fill, sw) => `<circle cx="${n(x)}" cy="${n(y)}" r="${n(r)}" fill="${fill}"${sw_(sw)}/>`;
+export const E = (x, y, rx, ry, fill, sw) => `<ellipse cx="${n(x)}" cy="${n(y)}" rx="${n(rx)}" ry="${n(ry)}" fill="${fill}"${sw_(sw)}/>`;
 // a coloured line (stripe, steam, noodles): its own stroke colour
 export const Lc = (d, colour, w = 5) => `<path d="${d}" fill="none" stroke="${colour}" stroke-width="${w}"/>`;
 export const g = (x, y, s, inner, rot = 0) => `<g transform="translate(${n(x)} ${n(y)})${rot ? ` rotate(${rot})` : ''}${s !== 1 ? ` scale(${n(s)})` : ''}">${inner}</g>`;

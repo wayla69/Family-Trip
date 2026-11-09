@@ -763,6 +763,7 @@ function router({ pool, media, A, ai, hooks = {} }) {   // hooks.heart(h): set b
   const artV = (theme) => (ART.V_RE.test(String((theme || {}).artV || '')) ? theme.artV : null);
   let artJob = null;   // { trip, status: running|done|error, done, total, error, started }
   const artView = () => (artJob ? { trip: artJob.trip, status: artJob.status, done: artJob.done, total: artJob.total, error: artJob.error || null, started: artJob.started } : { status: 'idle' });
+  const stockGuides = (pp) => Array.isArray(pp && pp.guides) && pp.guides.length > 0 && pp.guides.every((g) => g && String(g.art || '').startsWith('stock:') && !!STOCK.maybe(g.art));
   const ownGuides = (pp) => Array.isArray(pp && pp.guides) && pp.guides.some((g) => g && /^\/art\/guides\/(?!kiki\.svg$|roo\.svg$)/.test(String(g.art || '')));   // drawn by the owner, not the stand-ins
   // start drawing for one book: only a book without the owner's hand-drawn art (theme.art empty or already drawn by Claude), at most ART_RUNS full runs,
   // and only when today's Claude allowance can carry the whole book plus a couple of retries. The job is claimed before the first await, so two
@@ -786,18 +787,19 @@ function router({ pool, media, A, ai, hooks = {} }) {   // hooks.heart(h): set b
       // days with a stock library picture are not drawn, and a stock crest is kept (docs/STOCK-ART.md §5.7)
       const stockDays = STOCK.maybe(theme.artDays) || [], skip = days.map((_, i) => !!(Array.isArray(stockDays) && stockDays[i]));
       const crest0 = ((t.passport || {}).style || {}).crest || '', keepCrest = String(crest0).startsWith('stock:') && !!STOCK.maybe(crest0);
-      const need = Math.min(ART.CALLS(skip.filter((x) => !x).length, !keepCrest) + 2, STORY_DAILY);   // a family whose daily cap is below a book's needs can still start from a fresh day
+      const keepGuides = stockGuides(t.passport);   // the country's own pair from the library (S8) stays
+      const need = Math.min(ART.CALLS(skip.filter((x) => !x).length, !keepCrest, !keepGuides) + 2, STORY_DAILY);   // a family whose daily cap is below a book's needs can still start from a fresh day
       if (STORY_DAILY - used < need) throw Object.assign(new Error('limit'), { code: 'limit', left: Math.max(0, STORY_DAILY - used), need });
       const en = (x) => (x && typeof x === 'object' ? x.en || x.th || '' : String(x || ''));
       const place = (Array.isArray(theme.places) && theme.places[0] && theme.places[0].en) || en(t.sub) || en(t.title);
       const when = new Date(t.date_from + 'T00:00:00Z').toLocaleDateString('en-GB', { month: 'long', year: 'numeric', timeZone: 'UTC' });
       const kids = (await kidsFor(t)).who.en;
       const v = Date.now().toString(36), old = artV(theme);
-      artJob.total = skip.filter((x) => !x).length + (keepCrest ? 2 : 3);
+      artJob.total = skip.filter((x) => !x).length + (keepCrest ? 0 : 1) + (keepGuides ? 0 : 1) + 1;
       (async () => {
         try {
           const out = await ART.drawBook({ trip: id, v, title: en(t.title).split(' · ')[0], place, when, accent: theme.accent || '#1F3A5F', kids, media, client: new ai.SDK(), take: aiTake, onUsage: addUsage,
-            days: days.map((d, i) => ({ title: en(d.title), lines: (((d.plan || {}).plan) || []).map((r) => en(r.h)).filter(Boolean).slice(0, 6), skip: skip[i] })), keepCrest,
+            days: days.map((d, i) => ({ title: en(d.title), lines: (((d.plan || {}).plan) || []).map((r) => en(r.h)).filter(Boolean).slice(0, 6), skip: skip[i] })), keepCrest, keepGuides,
             onStep: (done, total) => { artJob.done = done; artJob.total = total; } });
           const theme2 = { ...theme, art: `/media/art/${id}/day-{n}.svg?v=${v}`, artV: v, artRuns: runs + 1, artAt: new Date().toISOString() };
           const pp0 = t.passport && typeof t.passport === 'object' ? t.passport : null;

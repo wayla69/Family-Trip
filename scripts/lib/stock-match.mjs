@@ -76,10 +76,14 @@ export function stockMatch(days, placeText, index) {
   };
   const firstCountry = countryOf(cityOf.find(Boolean));
   const crest = firstCountry && has(`${firstCountry}.stamp`) ? 'stock:' + firstCountry + '.stamp' : '';
+  // the passport's two guides (S8): the first country's own pair, when the library has both
+  const gs = firstCountry ? items.filter((it) => it.cat === 'guide' && scopeOf(it.id) === firstCountry).slice(0, 2) : [];
+  const guides = gs.length === 2 ? gs.map((it) => ({ key: it.id.split('.').pop(), art: 'stock:' + it.id, name: it.name, hello: it.hello })) : null;
   const placesUsed = [...new Set(cityOf.filter(Boolean))];
   return {
     artDays: artDays.map((id) => (id ? 'stock:' + id : '')),
     crest,
+    guides,
     stamps,
     places: placesUsed,
     countries: [...new Set(placesUsed.map(countryOf).filter(Boolean))],

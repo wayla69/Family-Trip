@@ -3,7 +3,7 @@
 <circle cx="100" cy="100" r="96" fill="#FFF7F2" stroke="#11457E" stroke-width="5" stroke-dasharray="7 5"/>
 <circle cx="100" cy="100" r="84" fill="none" stroke="#11457E" stroke-width="3"/>
 <circle cx="100" cy="100" r="54" fill="#E3F2FD" stroke="#11457E" stroke-width="3"/>
-<g stroke="#22213A" stroke-width="3.5" stroke-linejoin="round" stroke-linecap="round"><circle cx="100" cy="96" r="34" fill="#64B5F6"/><path d="M66 96a34 34 0 0 1 68 0z" fill="#FFB74D"/><circle cx="100" cy="96" r="34" fill="none" stroke-width="3"/><circle cx="100" cy="90" r="20" fill="none" stroke-width="2.5"/><path d="M100 96l18-18" fill="none" stroke="#FFD54A" stroke-width="4"/><circle cx="118" cy="78" r="4" fill="#FFD54A" stroke-width="2"/><circle cx="100" cy="96" r="4" fill="#22213A"/></g>
+<g stroke="#22213A" stroke-width="3.5" stroke-linejoin="round" stroke-linecap="round"><circle cx="100" cy="96" r="34" fill="#64B5F6"/><path d="M66 96a34 34 0 0 1 68 0z" fill="#FFB74D" stroke="none"/><circle cx="100" cy="96" r="34" fill="none" stroke-width="3"/><circle cx="100" cy="90" r="20" fill="none" stroke-width="2.5"/><path d="M100 96l18-18" fill="none" stroke="#FFD54A" stroke-width="4"/><circle cx="118" cy="78" r="4" fill="#FFD54A" stroke-width="2"/><circle cx="100" cy="96" r="4" fill="#22213A" stroke="none"/></g>
 <text font-family="KIRA UI, Arial, sans-serif" font-weight="800" font-size="19" letter-spacing="3" fill="#11457E"><textPath href="#cpr-st-a" startOffset="50%" text-anchor="middle">PRAHA</textPath></text>
 <text font-family="KIRA UI, Arial, sans-serif" font-weight="700" font-size="11" letter-spacing="3" fill="#D7141A"><textPath href="#cpr-st-b" startOffset="50%" text-anchor="middle">ČESKO</textPath></text>
 <path d="M22 100l5-3 5 3-5 3zM168 100l5-3 5 3-5 3z" fill="#11457E"/>

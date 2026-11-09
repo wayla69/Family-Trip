@@ -244,8 +244,9 @@ if (process.env.BASE) {
   const idx = JSON.parse(fs.readFileSync(path.resolve('public/stock/index.json'), 'utf8'));
   const s = C.toSeed(plan, [], { art: false, stock: idx });
   ok(s.theme.artDays.join() === 'stock:jp-tokyo.day.skyline,stock:jp-tokyo.landmark.skytree,stock:jp-tokyo.day.skyline' && s.passport.style.crest === 'stock:jp.stamp'
-    && JSON.stringify(s.passport.stamps) === JSON.stringify([{ art: 'stock:jp.stamp', day: 0 }, { art: 'stock:jp-tokyo.stamp', day: 0 }]) && s.stock.places.join() === 'jp-tokyo',
-    'stock match: Tokyo days get the skyline / the Skytree they visit / the skyline again (never a place the day skips), the Japan crest, Japan + Tokyo stamps');
+    && JSON.stringify(s.passport.stamps) === JSON.stringify([{ art: 'stock:jp.stamp', day: 0 }, { art: 'stock:jp-tokyo.stamp', day: 0 }]) && s.stock.places.join() === 'jp-tokyo'
+    && s.passport.guides.map((g) => g.art).join() === 'stock:jp.guide.hana,stock:jp.guide.momo' && /\{name\}/.test(s.passport.guides[0].hello.th),
+    'stock match: Tokyo days get the skyline / the Skytree they visit / the skyline again (never a place the day skips), the Japan crest, Japan + Tokyo stamps, Japan\'s two guides');
   const unapproved = { ...idx, items: idx.items.map((it) => ({ ...it, ok: undefined })) };
   const s2 = C.toSeed(plan, [], { art: false, stock: unapproved }), s3 = C.toSeed(plan, [], { art: false }), s4 = C.toSeed(plan, [], { stock: idx });
   ok(!s2.theme.artDays && !s2.passport.stamps && !s3.theme.artDays && s3.passport.style.crest === '' && !s4.theme.artDays && !s4.stock,
