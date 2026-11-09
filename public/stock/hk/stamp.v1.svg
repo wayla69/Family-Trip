@@ -1,0 +1,7 @@
+<svg viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+<rect x="8" y="8" width="184" height="184" rx="34" fill="#FFFDF7" stroke="#1565C0" stroke-width="5" stroke-dasharray="8 5"/>
+<rect x="22" y="22" width="156" height="156" rx="24" fill="none" stroke="#1565C0" stroke-width="3"/>
+<g stroke="#22213A" stroke-width="3.5" stroke-linejoin="round" stroke-linecap="round"><path d="M52 124h96l-12 18H66z" fill="#8D6E63" stroke-width="3"/><path d="M72 50c15.6 20 15.6 50 0 74h-4V50z" fill="#E53935" stroke-width="3"/><path d="M72 68h10.4M72 90h13" fill="none" stroke="#B71C1C" stroke-width="2"/><path d="M100 40c19.2 20 19.2 50 0 74h-4V40z" fill="#E53935" stroke-width="3"/><path d="M100 58h12.8M100 80h16" fill="none" stroke="#B71C1C" stroke-width="2"/><path d="M128 56c13.2 20 13.2 50 0 74h-4V56z" fill="#E53935" stroke-width="3"/><path d="M128 74h8.8M128 96h11" fill="none" stroke="#B71C1C" stroke-width="2"/><path d="M40 148c20-6 40 6 60 0s40 6 60 0" fill="none" stroke="#1E88E5" stroke-width="4"/></g>
+<text x="100" y="166" text-anchor="middle" font-family="KIRA UI, Arial, sans-serif" font-weight="800" font-size="20" letter-spacing="4" fill="#1565C0">HONG KONG</text>
+<g fill="#FFEBEE" stroke="#22213A" stroke-width="2"><circle cx="44" cy="46" r="6"/><circle cx="156" cy="46" r="6"/></g>
+</svg>
