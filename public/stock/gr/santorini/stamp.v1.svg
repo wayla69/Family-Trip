@@ -1,0 +1,10 @@
+<svg viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+<defs><path id="gst-st-a" d="M 38 100 A 62 62 0 0 1 162 100"/><path id="gst-st-b" d="M 30 106 A 70 70 0 0 0 170 106"/></defs>
+<circle cx="100" cy="100" r="96" fill="#FFF7F2" stroke="#1E88E5" stroke-width="5" stroke-dasharray="7 5"/>
+<circle cx="100" cy="100" r="84" fill="none" stroke="#1E88E5" stroke-width="3"/>
+<circle cx="100" cy="100" r="54" fill="#E3F2FD" stroke="#1E88E5" stroke-width="3"/>
+<g stroke="#22213A" stroke-width="3.5" stroke-linejoin="round" stroke-linecap="round"><rect x="70" y="96" width="60" height="34" fill="#FFFFFF" stroke-width="3"/><path d="M76 96c0-30 48-30 48 0z" fill="#1E88E5" stroke-width="3"/><rect x="112" y="76" width="14" height="20" fill="#FFFFFF" stroke-width="2.5"/><circle cx="119" cy="86" r="3" fill="#22213A" stroke="none"/><rect x="92" y="108" width="16" height="22" rx="2" fill="#1E88E5" stroke-width="2"/><path d="M52 136c16-6 32 6 48 0s32-6 48 0" fill="none" stroke="#1E88E5" stroke-width="4"/></g>
+<text font-family="KIRA UI, Arial, sans-serif" font-weight="800" font-size="15" letter-spacing="3" fill="#1E88E5"><textPath href="#gst-st-a" startOffset="50%" text-anchor="middle">SANTORINI</textPath></text>
+<text font-family="KIRA UI, Arial, sans-serif" font-weight="700" font-size="11" letter-spacing="3" fill="#EC407A"><textPath href="#gst-st-b" startOffset="50%" text-anchor="middle">GREECE</textPath></text>
+<path d="M22 100l5-3 5 3-5 3zM168 100l5-3 5 3-5 3z" fill="#1E88E5"/>
+</svg>
