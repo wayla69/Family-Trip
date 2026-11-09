@@ -12,7 +12,8 @@
 <path d="M92 128h56M92 172h56" fill="none" stroke-width="4"/>
 <rect x="88" y="116" width="64" height="10" rx="3" fill="#22213A"/>
 <rect x="88" y="174" width="64" height="10" rx="3" fill="#22213A"/>
-<path d="M106 140h28v20h-28z" fill="#FFD54A" stroke-width="4"/>
+
 <path d="M30 218h180" fill="none"/>
+<circle cx="108.8" cy="140" r="3.6" fill="#22213A" stroke="none"/><circle cx="131.2" cy="140" r="3.6" fill="#22213A" stroke="none"/><ellipse cx="100.8" cy="147.2" rx="5.6" ry="3.6" fill="#FF8FA3" stroke="none" opacity=".7"/><ellipse cx="139.2" cy="147.2" rx="5.6" ry="3.6" fill="#FF8FA3" stroke="none" opacity=".7"/><path d="M115.2 145.6q4.8 4.8 9.6 0" fill="none" stroke-width="2.8"/>
 </g>
 </svg>

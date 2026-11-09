@@ -36,13 +36,15 @@ const lineArt = (file) => {
 };
 const places = idx.places || {};
 const scopeOf = (id) => id.split('.')[0];
+const row = (f, colour) => { const la = lineArt(f); return `<div class="row"><span class="lt"><img src="${dataUrl(f)}" alt=""></span><span class="dk"><img src="${dataUrl(f)}" alt=""></span>${la && colour ? `<span class="lt"><img src="${la}" alt=""></span>` : ''}</div>`; };
+// a redraw waiting for review (`next`) shows under the live picture, so the two can be compared; the card stays "waiting" until it is promoted
 const card = (it) => {
-  const f = it.file, kb = (fs.statSync(path.join(STOCK.DIR, f)).size / 1024).toFixed(1), la = lineArt(f);
-  return `<figure class="c${it.ok ? ' ok' : ''}">
-  <div class="row"><span class="lt"><img src="${dataUrl(f)}" alt=""></span><span class="dk"><img src="${dataUrl(f)}" alt=""></span>${la && it.colour ? `<span class="lt"><img src="${la}" alt=""></span>` : ''}</div>
+  const f = it.file, kb = (fs.statSync(path.join(STOCK.DIR, f)).size / 1024).toFixed(1);
+  return `<figure class="c${it.ok && !it.next ? ' ok' : ''}">
+  ${it.next ? `<small>ตอนนี้ (${esc(f.split('.').slice(-2, -1)[0])})</small>` : ''}${row(f, it.colour)}${it.next ? `<small>แบบใหม่ (${esc(it.next.split('.').slice(-2, -1)[0])}) รอตรวจ</small>${row(it.next, it.colour)}` : ''}
   <figcaption><b>${esc(it.name.th)}</b> · ${esc(it.name.en)}<br><code>${esc(it.id)}</code> · ${kb} KB${it.colour ? ' · ระบายสีได้' : ''}
   <br><small>${esc((it.kw || []).join(', '))}</small>${it.spot ? `<br><small>ภารกิจ: ${esc(it.spot.th)}</small>` : ''}
-  <br><span class="st">${it.ok ? `✓ อนุมัติ ${esc(it.ok)}` : 'รอตรวจ'}</span></figcaption></figure>`;
+  <br><span class="st">${it.next ? 'แบบใหม่รอตรวจ' : it.ok ? `✓ อนุมัติ ${esc(it.ok)}` : 'รอตรวจ'}</span></figcaption></figure>`;
 };
 const groups = [...new Set(items.map((it) => scopeOf(it.id)))];
 const html = `<!doctype html><html lang="th"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">

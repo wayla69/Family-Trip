@@ -10,5 +10,6 @@
 <path d="M120 22V6" fill="none"/>
 <circle cx="120" cy="6" r="3" fill="#FFD54A"/>
 <path d="M58 222h124" fill="none"/>
+<circle cx="112.3" cy="204" r="2.5" fill="#22213A" stroke="none"/><circle cx="127.7" cy="204" r="2.5" fill="#22213A" stroke="none"/><ellipse cx="106.8" cy="208.9" rx="3.9" ry="2.5" fill="#FF8FA3" stroke="none" opacity=".7"/><ellipse cx="133.2" cy="208.9" rx="3.9" ry="2.5" fill="#FF8FA3" stroke="none" opacity=".7"/><path d="M116.7 207.8q3.3 3.3 6.6 0" fill="none" stroke-width="1.9"/>
 </g>
 </svg>

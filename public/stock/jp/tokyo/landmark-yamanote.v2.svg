@@ -14,5 +14,6 @@
 <path d="M6 204h228" fill="none"/>
 <path d="M30 216h20M80 216h20M130 216h20M180 216h20" fill="none" stroke-width="4"/>
 <circle cx="208" cy="160" r="5" fill="#FFD54A" stroke-width="3"/>
+<circle cx="112.3" cy="160" r="2.5" fill="#22213A" stroke="none"/><circle cx="127.7" cy="160" r="2.5" fill="#22213A" stroke="none"/><ellipse cx="106.8" cy="164.9" rx="3.9" ry="2.5" fill="#FF8FA3" stroke="none" opacity=".7"/><ellipse cx="133.2" cy="164.9" rx="3.9" ry="2.5" fill="#FF8FA3" stroke="none" opacity=".7"/><path d="M116.7 163.8q3.3 3.3 6.6 0" fill="none" stroke-width="1.9"/>
 </g>
 </svg>

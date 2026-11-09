@@ -478,7 +478,8 @@ const hasInfo = (t) => {
     learn: !!((n.guide || []).length || (n.general || []).length || (n.wild || []).length || n.eatRules || t.days.some((d) => ((d.plan || {}).learn || []).length || ((d.plan || {}).quiz || []).length)) || more('learn') };
 };
 // the book's own pictures (server/bookart.js): a book without the owner's hand-drawn circles can have the helper draw one per day + the passport crest
-const artOwn = (t) => !!(t.theme && t.theme.art && !String(t.theme.art).startsWith('/media/art/'));
+// a book with its own drawings, or one whose every day already has a stock library picture (theme.artDays), needs no helper drawing
+const artOwn = (t) => !!(t.theme && ((t.theme.art && !String(t.theme.art).startsWith('/media/art/')) || (Array.isArray(t.theme.artDays) && t.days.length && t.days.every((_, i) => t.theme.artDays[i]))));
 function artCard(t) {
   if (!isEditor() || !(S.features || {}).bookArt || artOwn(t)) return '';
   const job = typeof artJob !== 'undefined' && artJob && artJob.trip === t.id ? artJob : null, has = !!(t.theme && t.theme.art);
@@ -1234,7 +1235,7 @@ ${bedsHtml(t, stays)}`);
     const more = idRows.length || myFirsts.length || colours.length || mine.length || cert && certEarned(t, kid) || (typeof stickerBoard === 'function' && stickersPlaced(t, kid).length);
     const nd = t.days.length, sz = more ? 'sm' : nd <= 6 ? 'c3 r2' : nd <= 9 ? 'c3' : 'c4';
     return pg('ppp kid-' + kid + (more ? '' : ' ppfull'), `${head(L('พาสปอร์ตนักผจญภัย', 'Adventure passport'), `${kidFace(kid)} ${esc(name)}`, '🛂')}
-<div class="dstamps pst ${sz}">${t.days.map((d, i) => `<div class="dstamp${dayStamped(t, i) ? ' on' : ''}" style="--r:${((i * 37 + t.id.length * 11) % 17) - 8}deg">${artImg(t, i)}<b>${L('วันที่', 'Day')} ${i + 1}</b><small>${esc(((pp.days || [])[i] || {}).stamp || fmtDay(d.date, { day: 'numeric', month: 'short' }))}</small></div>`).join('')}</div>
+<div class="dstamps pst ${sz}">${t.days.map((d, i) => `<div class="dstamp${dayStamped(t, i) ? ' on' : ''}" style="--r:${((i * 37 + t.id.length * 11) % 17) - 8}deg">${artImg(t, i)}<b>${L('วันที่', 'Day')} ${i + 1}</b><small>${esc(((pp.days || [])[i] || {}).stamp || fmtDay(d.date, { day: 'numeric', month: 'short' }))}</small></div>`).join('')}</div>${cityStampsHtml(t, "pr")}
 <div class="ppcols"${more ? '' : ' hidden'}><div>
 ${idRows.length ? `<dl class="pid">${idRows.map(([k, l]) => `<div><dt>${l}</dt><dd>${esc(fieldVal(t, k, kid))}</dd></div>`).join('')}</dl>` : ''}
 ${myFirsts.length ? `<div class="badges sm">${myFirsts.map((e) => { const f = firstLabel(t, e.first_key); return `<div class="bdg"><span>${esc(e.first_key === 'custom' ? '⭐' : f.e)}</span><b>${esc(e.first_key === 'custom' ? e.text : f.t)}</b><small>${L('วันที่', 'Day')} ${e.day + 1}</small></div>`; }).join('')}</div>` : ''}
@@ -2003,6 +2004,10 @@ function viewFirsts(t) {
    checklists and a certificate. Content from the trip seed (`passport`); ticks are entries kind 'tick', ID answers 'field'.
    No real passport data — ever (PRD privacy): the number and the MRZ line are decorative. */
 const kidTrips = (slug) => trips().filter((t) => !(t.theme.children || []).length || (t.theme.children || []).some((c) => c.slug === slug));
+// the stock library's city and country stamps (seed passport.stamps = [{art, day}]): each one appears once its day is stamped —
+// never an empty slot for one still to come (play, not homework)
+const cityStamps = (t) => ((t.passport || {}).stamps || []).filter((s) => s && s.art && t.days[s.day] && dayStamped(t, s.day));
+const cityStampsHtml = (t, cls = '') => { const xs = cityStamps(t); return xs.length ? `<div class="cstamps ${cls}">${xs.map((s, n) => `<img src="${esc(s.art)}" alt="" style="--r:${((n * 29 + 7) % 15) - 7}deg">`).join('')}</div>` : ''; };
 const passportStamps = (slug) => kidTrips(slug).reduce((n, t) => n + t.days.filter((_, i) => dayStamped(t, i)).length, 0);
 const tickId = (t, key, kid) => `${t.id}.tick.${key}.${kid}`;
 const ticked = (t, key, kid) => S.entries.find((e) => e.id === tickId(t, key, kid));
@@ -2162,7 +2167,7 @@ ${g.map((x, i) => `<div class="bubble${i % 2 ? ' r' : ''}">${guide(i)}<div><b>${
 <section class="pp-page visa"><header><div><div class="kicker">${L('วีซ่า', 'Visa')} · ${esc(fmtRange(t))}</div><h3><span class="vflags">${flagsOf(t)}</span> ${esc(short)}</h3>
 <p class="label">${((t.theme.places || []).map((p) => esc(T(p))).join(' · ')) || esc(T(t.sub))} · ${got ? L(`ได้ตราแล้ว ${got}`, `${got} stamp${got > 1 ? 's' : ''}`) : L('ยังไม่มีตรา', 'No stamps yet')}</p></div>${stampHtml(t, false)}</header>
 <div class="dstamps">${ds}</div>
-<p class="label" style="margin-top:10px">${L('ได้ตราเมื่อวันนั้นมีบันทึก หรือกด "จบวันนี้"', 'A stamp is inked when the day has something recorded or is marked Done')}</p></section>
+${cityStampsHtml(t)}<p class="label" style="margin-top:10px">${L('ได้ตราเมื่อวันนั้นมีบันทึก หรือกด "จบวันนี้"', 'A stamp is inked when the day has something recorded or is marked Done')}</p></section>
 ${pp.pins ? `<section class="pp-page sleep"><header><div><div class="kicker">${esc(T(pp.pins.sub)) || `${L('หมุด', 'Hops')} · ${pp.pins.items.length}`}</div><h3>📍 ${esc(T(pp.pins.title))}</h3></div></header>
 <ol>${pp.pins.items.map((s, n) => `<li><span class="n">${n + 1}</span><span class="t"><b>${stopQ(s) ? mapA(stopQ(s), esc(T(s))) : esc(T(s))}</b><small>${esc(T(s.days))}</small></span><span class="pe">${esc(s.e)}</span></li>`).join('')}</ol></section>`
     : `<section class="pp-page sleep"><header><div><div class="kicker">${L('ที่พัก', 'Hops')} · ${sleepStops(t).length}</div><h3>🛏️ ${L('เรานอนที่ไหนบ้าง', 'Where we sleep')}</h3></div></header>

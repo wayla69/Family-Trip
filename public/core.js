@@ -386,6 +386,7 @@ const offlineUrls = (t) => {
   t.days.forEach((_, i) => { if (dayArt(t, i)) urls.add(dayArt(t, i)); const c = (t.passport || {}).colour; if (c) urls.add(c.replace('{n}', i + 1)); });
   ((t.passport || {}).guides || []).forEach((g) => g.art && urls.add(g.art));
   if ((t.passport || {}).style && t.passport.style.crest) urls.add(t.passport.style.crest);
+  ((t.passport || {}).stamps || []).forEach((s) => s && s.art && urls.add(s.art));   // the stock library's city/country stamps
   kidArtSlugs().forEach((k) => { urls.add(kidArt(k)); urls.add(kidArt(k, true)); urls.add(kidArt(k, false, t)); urls.add(kidArt(k, true, t)); });
   mediaOf(t.id).forEach((m) => { if (!m.local) { urls.add(`/media/${encodeURIComponent(m.id)}/t`); if (m.highlight || isDrawingId(m.id)) urls.add(`/media/${encodeURIComponent(m.id)}`); } });
   return [...urls];

@@ -212,7 +212,7 @@ if (process.env.BASE) {
   fs.renameSync(path.join(d, '..', path.basename(d) + '-stray.svg'), path.join(d, 'jp/stray.v1.svg'));
   write({ ...good, places: { ...good.places, 'Tokyo!': { country: 'JP', wave: 4, name: { th: '' }, tz: 'Mars/Base', alias: [] } }, items: [...good.items,
     { id: 'jp-tokyo.landmark.bad', cat: 'landmark', file: 'jp/tokyo/landmark-bad.v1.svg', name: nm('Bad'), kw: ['a', 'b'] },
-    { id: 'jp-tokyo.landmark.text', cat: 'landmark', file: 'jp/tokyo/landmark-text.v1.svg', name: nm('Text'), kw: ['a', 'b'] },
+    { id: 'jp-tokyo.landmark.text', cat: 'landmark', file: 'jp/tokyo/landmark-text.v1.svg', next: 'jp/tokyo/landmark-text.v2.svg', name: nm('Text'), kw: ['a', 'b'] },
     { id: 'jp.food.sushi', cat: 'food', file: 'jp/food-sushi.v1.webp', name: nm('Sushi'), kw: ['a', 'b'] },
     { id: 'jp.food.ramen', cat: 'food', file: 'jp/food-ramen.v1.webp', name: nm('Ramen'), kw: ['ramen', 'x'] },
     { id: 'jp-osaka.stamp', cat: 'stamp', file: 'jp/osaka/stamp.v1.svg', name: nm('Osaka'), kw: ['osaka'] },
@@ -221,9 +221,9 @@ if (process.env.BASE) {
   const e = (await STOCK.lint(d)).join('\n');
   const want = [/place Tokyo!: bad key/, /Tokyo!: country/, /Tokyo!: wave/, /unknown timezone/, /landmark-bad\.v1\.svg is not a safe SVG/, /landmark\.text: only a stamp may carry text/,
     /landmark\.text: viewBox must be "0 0 240 240"/, /food-sushi\.v1\.webp must be 160×160/, /food-sushi\.v1\.webp needs a transparent background/, /jp\.food\.ramen: duplicate id/,
-    /jp-osaka\.stamp: city jp-osaka is not in places/, /jp-osaka\.stamp: needs at least two keywords/, /jp\.food\.tea: cat must be "food"/, /jp\.food\.tea: file must look like/, /file jp\/stray\.v1\.svg is not in index\.json/];
+    /jp-osaka\.stamp: city jp-osaka is not in places/, /jp-osaka\.stamp: needs at least two keywords/, /jp\.food\.tea: cat must be "food"/, /jp\.food\.tea: file must look like/, /file jp\/stray\.v1\.svg is not in index\.json/, /landmark-text\.v2\.svg is missing/];
   const miss = want.filter((re) => !re.test(e));
-  ok(!miss.length, `stock lint catches bad keys, unsafe SVG, text, viewBox, size, alpha, duplicates, unknown city, keywords, category, file name, stray files` + (miss.length ? ' — missed: ' + miss.join(' ') : ''));
+  ok(!miss.length, `stock lint catches bad keys, unsafe SVG, text, viewBox, size, alpha, duplicates, unknown city, keywords, category, file name, stray files, a missing redraw (next)` + (miss.length ? ' — missed: ' + miss.join(' ') : ''));
   write(good);
   const lib = STOCK.reload(d);
   ok(lib.size === 2 && STOCK.url('jp-tokyo.stamp') === '/stock/jp/tokyo/stamp.v1.svg' && STOCK.url('jp-tokyo.landmark.skytree') === '', 'stock: only approved pictures resolve');
@@ -237,6 +237,21 @@ if (process.env.BASE) {
   ok(lib2.tag !== tag1 && STOCK.url('jp-tokyo.stamp') === '/stock/jp/tokyo/stamp.v2.svg', 'stock: a redrawn picture (new file version) changes its URL and the library tag');
   STOCK.reload();
   fs.rmSync(d, { recursive: true, force: true });
+}
+// the stock matcher (docs/STOCK-ART.md §5.6): a book without its own drawings takes the library's pictures that fit its days
+{ const C = await import('../scripts/lib/plan-to-seed-core.mjs');
+  const plan = JSON.parse(fs.readFileSync(path.resolve('server/samples/sakura-hop-2028.plan.json'), 'utf8'));
+  const idx = JSON.parse(fs.readFileSync(path.resolve('public/stock/index.json'), 'utf8'));
+  const s = C.toSeed(plan, [], { art: false, stock: idx });
+  ok(s.theme.artDays.join() === 'stock:jp-tokyo.day.skyline,stock:jp-tokyo.landmark.skytree,stock:jp-tokyo.day.skyline' && s.passport.style.crest === 'stock:jp.stamp'
+    && JSON.stringify(s.passport.stamps) === JSON.stringify([{ art: 'stock:jp.stamp', day: 0 }, { art: 'stock:jp-tokyo.stamp', day: 0 }]) && s.stock.places.join() === 'jp-tokyo',
+    'stock match: Tokyo days get the skyline / the Skytree they visit / the skyline again (never a place the day skips), the Japan crest, Japan + Tokyo stamps');
+  const unapproved = { ...idx, items: idx.items.map((it) => ({ ...it, ok: undefined })) };
+  const s2 = C.toSeed(plan, [], { art: false, stock: unapproved }), s3 = C.toSeed(plan, [], { art: false }), s4 = C.toSeed(plan, [], { stock: idx });
+  ok(!s2.theme.artDays && !s2.passport.stamps && !s3.theme.artDays && s3.passport.style.crest === '' && !s4.theme.artDays && !s4.stock,
+    'stock match: unapproved pictures are never picked; no index or a book with its own art → nothing from the library');
+  const other = { ...plan, place: { th: 'ปารีส', en: 'Paris' }, title: { th: 'ปารีส', en: 'Paris' }, days: plan.days.map((d) => ({ ...d, title: { th: 'ปารีส', en: 'Paris' }, sleep: { th: 'ปารีส', en: 'Paris' }, planned: [], plan: [], moving: { th: '', en: '' } })) };
+  ok(!C.toSeed(other, [], { art: false, stock: idx }).theme.artDays, 'stock match: a city the library does not have gets nothing (no Tokyo pictures in a Paris book)');
 }
 // served by the running app: a missing stock file is a 404 (never the app page), the index is not cached for long, nothing needs sign-in
 if (process.env.BASE) {

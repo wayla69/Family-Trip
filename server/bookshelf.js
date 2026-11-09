@@ -575,7 +575,7 @@ function router({ pool, media, A, ai, hooks = {} }) {   // hooks.heart(h): set b
     const c = await pool.connect();
     try {
       const plan = JSON.parse(fs.readFileSync(path.join(__dirname, 'samples', 'sakura-hop-2028.plan.json'), 'utf8'));
-      const seed = CORE.toSeed(plan, [], { art: false });
+      const seed = CORE.toSeed(plan, [], { art: false, stock: STOCK.read() });   // Tokyo: the stock library's pictures
       seed.children = FAM.seedChildren(await kidRows(), seed.date_from);
       await c.query('BEGIN');
       try { await putSeed(c, seed, 'manual'); } catch (e) { await c.query('ROLLBACK'); if (e.code === 'exists') return bad(res, 'exists', 409); throw e; }
@@ -775,6 +775,8 @@ function router({ pool, media, A, ai, hooks = {} }) {   // hooks.heart(h): set b
       if (!t) throw Object.assign(new Error('trip'), { code: 'trip' });
       const theme = t.theme || {};
       if (theme.art && !String(theme.art).startsWith('/media/art/')) throw Object.assign(new Error('own art'), { code: 'own' });
+      { const ad = STOCK.maybe(theme.artDays); const nd = (await q('SELECT count(*)::int n FROM trip_days WHERE trip_id=$1', [id]))[0].n;   // every day already has a stock picture
+        if (Array.isArray(ad) && nd && ad.filter(Boolean).length >= nd) throw Object.assign(new Error('own art'), { code: 'own' }); }
       const runs = Number(theme.artRuns || 0);
       if (runs >= ART.RUNS()) throw Object.assign(new Error('runs'), { code: 'runs', left: 0 });
       const days = await q('SELECT day_index, title, plan FROM trip_days WHERE trip_id=$1 ORDER BY day_index', [id]);

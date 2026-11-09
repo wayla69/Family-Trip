@@ -11,5 +11,6 @@
 <g stroke-width="4"><circle cx="66" cy="178" r="7" fill="#E4573D"/><path d="M66 185v14" fill="none"/><circle cx="122" cy="190" r="7" fill="#2F5D8C"/><path d="M122 197v14" fill="none"/><circle cx="176" cy="174" r="7" fill="#8BC34A"/><path d="M176 181v14" fill="none"/></g>
 <path d="M120 150V96" fill="none"/>
 <rect x="110" y="80" width="20" height="18" rx="4" fill="#8BC34A"/>
+<circle cx="50.0" cy="68" r="2.2" fill="#22213A" stroke="none"/><circle cx="64.0" cy="68" r="2.2" fill="#22213A" stroke="none"/><ellipse cx="45.0" cy="72.5" rx="3.5" ry="2.2" fill="#FF8FA3" stroke="none" opacity=".7"/><ellipse cx="69.0" cy="72.5" rx="3.5" ry="2.2" fill="#FF8FA3" stroke="none" opacity=".7"/><path d="M54.0 71.5q3.0 3.0 6.0 0" fill="none" stroke-width="1.8"/><circle cx="178.0" cy="58" r="2.2" fill="#22213A" stroke="none"/><circle cx="192.0" cy="58" r="2.2" fill="#22213A" stroke="none"/><ellipse cx="173.0" cy="62.5" rx="3.5" ry="2.2" fill="#FF8FA3" stroke="none" opacity=".7"/><ellipse cx="197.0" cy="62.5" rx="3.5" ry="2.2" fill="#FF8FA3" stroke="none" opacity=".7"/><path d="M182.0 61.5q3.0 3.0 6.0 0" fill="none" stroke-width="1.8"/>
 </g>
 </svg>
