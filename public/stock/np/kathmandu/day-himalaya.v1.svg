@@ -1,0 +1,6 @@
+<svg viewBox="0 0 240 240" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+<defs><clipPath id="nkt-d1"><circle cx="120" cy="120" r="110"/></clipPath></defs>
+<circle cx="120" cy="120" r="120" fill="#fff"/><circle cx="120" cy="120" r="110" fill="#B3E5FC"/>
+<g clip-path="url(#nkt-d1)"><g stroke="#22213A" stroke-width="5" stroke-linejoin="round" stroke-linecap="round"><path d="M-4 140l30-50 20 20 40-80 30 50 30-30 40 60 58-30v60z" fill="#ECEFF1"/><path d="M66 40l20 50-14-10-10 10-10-10z" fill="#F8BBD0" stroke="none"/><path d="M170 60l-20 30" fill="#FFE0B2" stroke="none"/><path d="M86 40c-10 20-10 40 0 60" fill="none" stroke="#FFCCBC" stroke-width="4"/><path d="M-4 140c40-20 80-20 120-10s80 10 128-10v40H-4z" fill="#81C784"/><ellipse cx="120" cy="170" rx="90" ry="10" fill="#FFFFFF" stroke="none"/><path d="M-4 180h248v70H-4z" fill="#4DB6AC"/><path d="M90 210h60l-8 10h-44z" fill="#E53935" stroke-width="3"/><path d="M96 214h48" fill="none" stroke="#FFCA28" stroke-width="2"/><path d="M30 200c20-6 40 6 60 0M150 230c20-6 40 6 60 0" fill="none" stroke="#B2DFDB" stroke-width="3"/></g></g>
+<circle cx="120" cy="120" r="110" fill="none" stroke="#22213A" stroke-width="5"/>
+</svg>
