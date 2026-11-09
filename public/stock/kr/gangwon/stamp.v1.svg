@@ -1,0 +1,10 @@
+<svg viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+<defs><path id="kgw-st-a" d="M 38 100 A 62 62 0 0 1 162 100"/><path id="kgw-st-b" d="M 30 106 A 70 70 0 0 0 170 106"/></defs>
+<circle cx="100" cy="100" r="96" fill="#FFF7F2" stroke="#2E7D32" stroke-width="5" stroke-dasharray="7 5"/>
+<circle cx="100" cy="100" r="84" fill="none" stroke="#2E7D32" stroke-width="3"/>
+<circle cx="100" cy="100" r="54" fill="#E8F5E9" stroke="#2E7D32" stroke-width="3"/>
+<g stroke="#22213A" stroke-width="3.5" stroke-linejoin="round" stroke-linecap="round"><ellipse cx="100" cy="104" rx="40" ry="18" fill="#424242" stroke-width="3"/><ellipse cx="100" cy="100" rx="34" ry="13" fill="#E64A19"/><circle cx="86" cy="98" r="4" fill="#7CB342" stroke-width="1.5"/><rect x="99" y="91" width="10" height="6" rx="2" fill="#FFF8E1" stroke-width="1.5"/><circle cx="116" cy="102" r="4" fill="#7CB342" stroke-width="1.5"/><rect x="89" y="103" width="10" height="6" rx="2" fill="#FFF8E1" stroke-width="1.5"/><path d="M60 104h-8M140 104h8" fill="none" stroke="#22213A" stroke-width="4"/><path d="M90 80c-4-8 4-12 0-20M110 80c-4-8 4-12 0-20" fill="none" stroke="#BDBDBD" stroke-width="3"/></g>
+<text font-family="KIRA UI, Arial, sans-serif" font-weight="800" font-size="19" letter-spacing="3" fill="#2E7D32"><textPath href="#kgw-st-a" startOffset="50%" text-anchor="middle">GANGWON</textPath></text>
+<text font-family="KIRA UI, Arial, sans-serif" font-weight="700" font-size="11" letter-spacing="3" fill="#E65100"><textPath href="#kgw-st-b" startOffset="50%" text-anchor="middle">NAMI · CHUNCHEON</textPath></text>
+<path d="M22 100l5-3 5 3-5 3zM168 100l5-3 5 3-5 3z" fill="#2E7D32"/>
+</svg>
