@@ -15,6 +15,7 @@ const HH = require('./importer');
 const PDF = require('./pdf');
 const PUSH = require('./push');
 const WX = require('./weather');
+const STOCK = require('./stock');
 
 const DATA_DIR = path.resolve(process.env.DATA_DIR || './data');
 const PG = PGM.create();
@@ -167,8 +168,8 @@ const SW = (() => {
   const h = crypto.createHash('sha1');
   const walk = (d) => fs.readdirSync(d, { withFileTypes: true }).sort((a, b) => (a.name < b.name ? -1 : 1)).forEach((e) => {
     const f = path.join(d, e.name);
-    if (e.isDirectory()) walk(f); else if (e.name !== 'sw.js') h.update(e.name).update(fs.readFileSync(f));
-  });
+    if (e.isDirectory()) { if (f !== STOCK.DIR) walk(f); } else if (e.name !== 'sw.js') h.update(e.name).update(fs.readFileSync(f));
+  });   // public/stock is left out: a new city's pictures are not a new app shell (they have their own cache, docs/STOCK-ART.md §5.2)
   walk(PUB);
   const tag = h.digest('hex').slice(0, 10);
   return fs.readFileSync(path.join(PUB, 'sw.js'), 'utf8').replace(/const V = '(mbs-v\d+)'/, `const V = '$1-${tag}'`);
@@ -181,8 +182,11 @@ app.get('/manifest.webmanifest', async (_req, res) => {
   res.setHeader('Content-Type', 'application/manifest+json; charset=utf-8'); res.setHeader('Cache-Control', 'no-cache'); res.end(JSON.stringify(m));
 });
 app.get('/sw.js', (_req, res) => { res.setHeader('Content-Type', 'text/javascript; charset=utf-8'); res.setHeader('Cache-Control', 'no-cache'); res.end(SW); });
+// the stock art library: versioned file names (name.v2.svg), so a file never changes — a year's cache; a missing one is a 404, never the app page
+app.use('/stock', express.static(STOCK.DIR, { index: false, fallthrough: true, setHeaders: (res, f) => { res.setHeader('Cache-Control', f.endsWith('index.json') ? 'no-cache' : 'public, max-age=31536000, immutable'); if (f.endsWith('.svg')) res.setHeader('Content-Security-Policy', "default-src 'none'; style-src 'unsafe-inline'"); } }));
+app.use('/stock', (_req, res) => res.status(404).end());
 app.use(express.static(PUB, { maxAge: 0, etag: true, setHeaders: (res, f) => { if (/\.(woff2|svg|png)$/.test(f)) res.setHeader('Cache-Control', 'public, max-age=604800'); } }));
-app.get(/^\/(?!api\/|media\/).*/, (req, res) => res.sendFile(path.join(PUB, 'index.html')));
+app.get(/^\/(?!api\/|media\/|stock\/).*/, (req, res) => res.sendFile(path.join(PUB, 'index.html')));
 app.use('/api', (_req, res) => res.status(404).json({ error: 'not-found' }));
 
 app.use((err, _req, res, _next) => { console.error(err.message); if (!res.headersSent) res.status(err.status || 500).json({ error: 'server' }); });

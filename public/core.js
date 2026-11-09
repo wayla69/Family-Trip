@@ -345,7 +345,8 @@ function stats(t) {
 }
 // illustrated stamp per day (theme.art = "/art/hk/day-{n}.svg"); app-made trips have none and use the day emoji
 let artJob = null;   // the helper drawing a book's pictures (sheets.js bookart ↔ GET /api/b/art), shown on the book menu
-const dayArt = (t, i) => (t.theme && t.theme.art ? t.theme.art.replace('{n}', i + 1) : '');
+// theme.artDays[i] = a stock library picture for that day (resolved to its /stock/ URL by the server; '' = not there) wins over the template
+const dayArt = (t, i) => (t.theme && Array.isArray(t.theme.artDays) && t.theme.artDays[i]) || (t.theme && t.theme.art ? t.theme.art.replace('{n}', i + 1) : '');
 // passport: a day's stamp is inked once the day is Done or has anything recorded in it
 const dayStamped = (t, i) => !!t.days[i].done_at || !!dayHasContent(t, i);
 const daysUntil = (t) => Math.round((Date.parse(t.date_from + 'T00:00:00Z') - Date.parse(todayIn(t.timezone) + 'T00:00:00Z')) / 864e5);

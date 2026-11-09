@@ -13,6 +13,7 @@ const FAM = require('./family');
 const AVATAR = require('./avatar');
 const ART = require('./bookart');
 const EMOJI = require('./emoji');
+const STOCK = require('./stock');   // "stock:<id>" in a seed → the library picture's URL (docs/STOCK-ART.md)
 const CORE = require('../scripts/lib/plan-to-seed-core.mjs');   // the sample book is built from its plan on request (ESM via require, Node ≥ 22.12)
 const sharp = require('sharp');
 
@@ -316,7 +317,7 @@ function router({ pool, media, A, ai, hooks = {} }) {   // hooks.heart(h): set b
         children: children.map((k) => ({ ...k, v: FAM.lookVersion(k.look) })),
         trips: trips.map((t) => {
           const td = days.filter((d) => d.trip_id === t.id).map(({ trip_id, ...d }) => ({ ...d, done_at: ms(d.done_at) }));
-          const out = { ...t, days: td, firsts: firsts.filter((f) => f.trip_id === t.id).map(({ trip_id, ...f }) => f) };
+          const out = { ...t, theme: STOCK.maybe(t.theme), passport: STOCK.maybe(t.passport), info: STOCK.maybe(t.info), days: td.map((d) => ({ ...d, plan: STOCK.maybe(d.plan) })), firsts: firsts.filter((f) => f.trip_id === t.id).map(({ trip_id, ...f }) => f) };
           if (!lite) return out;
           const g = seedOf(t, td);
           return { ...out, info: undefined, passport: undefined, days: td.map(({ plan, ...d }) => d), seed: g.hash };
@@ -334,7 +335,8 @@ function router({ pool, media, A, ai, hooks = {} }) {   // hooks.heart(h): set b
     } catch (e) { next(e); }
   });
   // one book's guide text by its hash: never changes for that hash, so the phone (and its HTTP cache) keeps it
-  const seedOf = (t, td) => { const body = JSON.stringify({ info: t.info, passport: t.passport, plans: td.map((d) => d.plan) }); return { body, hash: sha(body) }; };
+  // (stock pictures resolved first: a redrawn library picture changes the body, so the hash too)
+  const seedOf = (t, td) => { const body = JSON.stringify({ info: STOCK.maybe(t.info), passport: STOCK.maybe(t.passport), plans: td.map((d) => STOCK.maybe(d.plan)) }); return { body, hash: sha(body) }; };
   r.get('/api/b/seed/:trip/:hash', A.requireUser, async (req, res, next) => {
     try {
       if (!A.canSee(req.user, req.params.trip)) return bad(res, 'trip', 404);
