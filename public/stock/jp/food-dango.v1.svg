@@ -1,0 +1,6 @@
+<svg viewBox="0 0 240 240" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+<g fill="#fff" stroke="#fff" stroke-width="15" stroke-linejoin="round" stroke-linecap="round"><path d="M120 222V30" opacity="1"/><circle cx="120" cy="164" r="32" opacity="1"/><circle cx="120" cy="108" r="32" opacity="1"/><circle cx="120" cy="52" r="32" opacity="1"/><path d="M115.5 109.2q4.5 4.5 9.0 0" opacity="1"/></g>
+<g stroke="#22213A" stroke-width="5" stroke-linejoin="round" stroke-linecap="round">
+<path d="M120 222V30" fill="none" stroke="#C8A26B" stroke-width="7"/><circle cx="120" cy="164" r="32" fill="#A5D6A7"/><circle cx="120" cy="108" r="32" fill="#FFFDF7"/><circle cx="120" cy="52" r="32" fill="#F8BBD0"/><circle cx="109.5" cy="104" r="3.4" fill="#22213A" stroke="none"/><circle cx="130.5" cy="104" r="3.4" fill="#22213A" stroke="none"/><ellipse cx="102.0" cy="110.8" rx="5.2" ry="3.4" fill="#FF8FA3" stroke="none" opacity=".7"/><ellipse cx="138.0" cy="110.8" rx="5.2" ry="3.4" fill="#FF8FA3" stroke="none" opacity=".7"/><path d="M115.5 109.2q4.5 4.5 9.0 0" fill="none" stroke-width="2.6"/>
+</g>
+</svg>

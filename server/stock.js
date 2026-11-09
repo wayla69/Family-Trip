@@ -12,9 +12,9 @@ const DIR = path.join(__dirname, '..', 'public', 'stock');
 const ID_RE = /^(?:g|t|r|[a-z]{2}|[a-z]{2}-[a-z0-9-]{2,30}|p-[a-z0-9-]{2,40})\.[a-z]+(?:\.[a-z0-9-]{1,40})?$/;
 const PLACE_RE = /^(?:[a-z]{2}(?:-[a-z0-9-]{2,30})?|p-[a-z0-9-]{2,40})$/;
 const FILE_RE = /^[a-z0-9-]+(?:\/[a-z0-9-]+)*\.v\d+\.(svg|webp)$/;
-const CATS = {   // category → file type (docs/STOCK-ART.md §2.2, §4.2)
-  stamp: 'svg', day: 'svg', landmark: 'svg',
-  food: 'webp', animal: 'webp', transport: 'webp', culture: 'webp', flag: 'webp', hello: 'webp', money: 'webp',
+const CATS = {   // category → the file types it may be (docs/STOCK-ART.md §2.2, §4.2; the owner chose SVG stickers too, Nov 2026)
+  stamp: ['svg'], day: ['svg'], landmark: ['svg'],
+  food: ['svg', 'webp'], animal: ['svg', 'webp'], transport: ['svg', 'webp'], culture: ['svg', 'webp'], flag: ['svg', 'webp'], hello: ['svg', 'webp'], money: ['svg', 'webp'],
 };
 const SVG_MAX = 12 * 1024, WEBP_MAX = 12 * 1024, INDEX_MAX = 300 * 1024;
 const PREFIX = 'stock:';
@@ -94,7 +94,7 @@ async function lint(dir = DIR) {
     if (it.ok !== undefined && !/^\d{4}-\d{2}-\d{2}$/.test(String(it.ok))) bad(`item ${id}: ok must be the approval date YYYY-MM-DD`);
     const m = FILE_RE.exec(it.file || '');
     if (!m) { bad(`item ${id}: file must look like dir/name.v1.svg|webp`); continue; }
-    if (m[1] !== CATS[cat]) bad(`item ${id}: a ${cat} is a .${CATS[cat]} file`);
+    if (!CATS[cat].includes(m[1])) bad(`item ${id}: a ${cat} is a .${CATS[cat].join(' or .')} file`);
     if (files.has(it.file)) bad(`item ${id}: file ${it.file} used twice`); files.add(it.file);
     const f = path.join(dir, it.file);
     if (!fs.existsSync(f)) { bad(`item ${id}: file ${it.file} is missing`); continue; }

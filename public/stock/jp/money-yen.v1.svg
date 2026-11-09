@@ -1,0 +1,6 @@
+<svg viewBox="0 0 240 240" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+<g fill="#fff" stroke="#fff" stroke-width="15" stroke-linejoin="round" stroke-linecap="round"><circle cx="120" cy="120" r="84" opacity="1"/><circle cx="120" cy="120" r="66" opacity="1"/><path d="M96 74l24 34 24-34M120 108v46M100 120h40M100 138h40" opacity="1"/><circle cx="64" cy="76" r="6" opacity="1"/><circle cx="174" cy="166" r="5" opacity="1"/></g>
+<g stroke="#22213A" stroke-width="5" stroke-linejoin="round" stroke-linecap="round">
+<circle cx="120" cy="120" r="84" fill="#FFD54A"/><circle cx="120" cy="120" r="66" fill="none" stroke="#E0A800" stroke-width="5"/><path d="M96 74l24 34 24-34M120 108v46M100 120h40M100 138h40" fill="none" stroke-width="7"/><g fill="#FFFDF7" stroke="none"><circle cx="64" cy="76" r="6"/><circle cx="174" cy="166" r="5"/></g>
+</g>
+</svg>
