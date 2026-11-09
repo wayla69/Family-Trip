@@ -1,0 +1,10 @@
+<svg viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+<defs><path id="ckr-st-a" d="M 38 100 A 62 62 0 0 1 162 100"/><path id="ckr-st-b" d="M 30 106 A 70 70 0 0 0 170 106"/></defs>
+<circle cx="100" cy="100" r="96" fill="#FFF7F2" stroke="#E65100" stroke-width="5" stroke-dasharray="7 5"/>
+<circle cx="100" cy="100" r="84" fill="none" stroke="#E65100" stroke-width="3"/>
+<circle cx="100" cy="100" r="54" fill="#FFF3E0" stroke="#E65100" stroke-width="3"/>
+<g stroke="#22213A" stroke-width="3.5" stroke-linejoin="round" stroke-linecap="round"><rect x="56" y="120" width="88" height="16" fill="#BCAAA4" stroke-width="3"/><ellipse cx="100" cy="104" rx="22" ry="20" fill="#6D4C41" stroke-width="3"/><circle cx="100" cy="76" r="16" fill="#6D4C41" stroke-width="3"/><circle cx="88" cy="62" r="6" fill="#6D4C41" stroke-width="2.5"/><circle cx="112" cy="62" r="6" fill="#6D4C41" stroke-width="2.5"/><ellipse cx="100" cy="82" rx="7" ry="5" fill="#D7A86E" stroke="none"/><path d="M118 98l14-16" fill="none" stroke="#6D4C41" stroke-width="7"/><circle cx="95" cy="74" r="2" fill="#FFFFFF" stroke="none"/><circle cx="105" cy="74" r="2" fill="#FFFFFF" stroke="none"/></g>
+<text font-family="KIRA UI, Arial, sans-serif" font-weight="800" font-size="19" letter-spacing="3" fill="#E65100"><textPath href="#ckr-st-a" startOffset="50%" text-anchor="middle">KRUMLOV</textPath></text>
+<text font-family="KIRA UI, Arial, sans-serif" font-weight="700" font-size="11" letter-spacing="3" fill="#2E7D32"><textPath href="#ckr-st-b" startOffset="50%" text-anchor="middle">CZECHIA</textPath></text>
+<path d="M22 100l5-3 5 3-5 3zM168 100l5-3 5 3-5 3z" fill="#E65100"/>
+</svg>
