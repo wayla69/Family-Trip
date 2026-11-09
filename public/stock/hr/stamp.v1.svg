@@ -1,0 +1,7 @@
+<svg viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+<rect x="8" y="8" width="184" height="184" rx="34" fill="#FFFDF7" stroke="#1A237E" stroke-width="5" stroke-dasharray="8 5"/>
+<rect x="22" y="22" width="156" height="156" rx="24" fill="none" stroke="#1A237E" stroke-width="3"/>
+<g stroke="#22213A" stroke-width="3.5" stroke-linejoin="round" stroke-linecap="round"><path d="M90 54h20l-4 14h-12z" fill="#C62828" stroke-width="3"/><path d="M94 68h12l14 56-20 18-20-18z" fill="#C62828" stroke-width="3"/><rect x="96" y="80" width="8" height="8" fill="#FFFFFF" stroke="none"/><rect x="90" y="94" width="8" height="8" fill="#FFFFFF" stroke="none"/><rect x="102" y="94" width="8" height="8" fill="#FFFFFF" stroke="none"/><rect x="96" y="108" width="8" height="8" fill="#FFFFFF" stroke="none"/><path d="M74 52l16 6M126 52l-16 6" fill="none" stroke="#FFFFFF" stroke-width="4"/></g>
+<text x="100" y="166" text-anchor="middle" font-family="KIRA UI, Arial, sans-serif" font-weight="800" font-size="20" letter-spacing="4" fill="#1A237E">HRVATSKA</text>
+<g fill="#FFEBEE" stroke="#22213A" stroke-width="2"><circle cx="44" cy="46" r="6"/><circle cx="156" cy="46" r="6"/></g>
+</svg>

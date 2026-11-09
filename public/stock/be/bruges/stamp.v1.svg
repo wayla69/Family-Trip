@@ -1,0 +1,10 @@
+<svg viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+<defs><path id="bbg-st-a" d="M 38 100 A 62 62 0 0 1 162 100"/><path id="bbg-st-b" d="M 30 106 A 70 70 0 0 0 170 106"/></defs>
+<circle cx="100" cy="100" r="96" fill="#FFF7F2" stroke="#5D4037" stroke-width="5" stroke-dasharray="7 5"/>
+<circle cx="100" cy="100" r="84" fill="none" stroke="#5D4037" stroke-width="3"/>
+<circle cx="100" cy="100" r="54" fill="#EFEBE9" stroke="#5D4037" stroke-width="3"/>
+<g stroke="#22213A" stroke-width="3.5" stroke-linejoin="round" stroke-linecap="round"><rect x="88" y="72" width="24" height="62" fill="#BCAAA4" stroke-width="3"/><rect x="84" y="128" width="32" height="8" fill="#A1887F" stroke-width="2.5"/><rect x="91" y="54" width="18" height="20" fill="#BCAAA4" stroke-width="3"/><path d="M90 54l10-14 10 14z" fill="#8D6E63" stroke-width="2.5"/><circle cx="100" cy="86" r="5" fill="#FFFFFF" stroke-width="2"/><rect x="96" y="100" width="8" height="8" rx="1" fill="#22213A" stroke="none"/><rect x="96" y="112" width="8" height="8" rx="1" fill="#22213A" stroke="none"/></g>
+<text font-family="KIRA UI, Arial, sans-serif" font-weight="800" font-size="19" letter-spacing="3" fill="#5D4037"><textPath href="#bbg-st-a" startOffset="50%" text-anchor="middle">BRUGGE</textPath></text>
+<text font-family="KIRA UI, Arial, sans-serif" font-weight="700" font-size="11" letter-spacing="3" fill="#1565C0"><textPath href="#bbg-st-b" startOffset="50%" text-anchor="middle">BELGIUM</textPath></text>
+<path d="M22 100l5-3 5 3-5 3zM168 100l5-3 5 3-5 3z" fill="#5D4037"/>
+</svg>
