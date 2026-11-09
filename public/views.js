@@ -1031,6 +1031,11 @@ function dayStory(t, d, route, visited) {
   if (!hl.length && !went.length) return '<div></div>';
   return `<aside class="route dstory">${hl.length ? `<span class="label">${L('วันนี้ของเรา', 'Our day')}</span><ol>${hl.map((h) => `<li><b>${emoIn(esc(h))}</b></li>`).join('')}</ol>` : ''}${went.length ? `<span class="label">${L('ไปมาแล้ว', 'Where we went')}</span><ol class="went">${went.map((n) => `<li class="done"><b>📍 ${esc(n)}</b><small>✓</small></li>`).join('')}</ol>` : ''}</aside>`;
 }
+// a memory is told by the part of the day, not the clock (owner, Nov 2026: "เช้า / บ่าย / เย็น" reads like a children's book)
+function dayPart(at, tz) {
+  let h = 12; try { h = Number(new Date(at).toLocaleString('en-GB', { hour: '2-digit', hourCycle: 'h23', timeZone: tz || undefined })) % 24; } catch { /* a bad zone reads as midday */ }
+  return h >= 5 && h < 11 ? L('ช่วงเช้า', 'Morning') : h >= 11 && h < 13 ? L('ตอนกลางวัน', 'Midday') : h >= 13 && h < 17 ? L('ช่วงบ่าย', 'Afternoon') : h >= 17 && h < 20 ? L('ตอนเย็น', 'Evening') : L('ตอนค่ำ', 'Night');
+}
 function dayPage(t, i) {
   const d = t.days[i], es = entriesOf(t.id, i), ph = mediaOf(t.id, i), pl = placesOf(t.id, i);
   const moods = es.filter((e) => e.kind === 'mood' && e.mood);
@@ -1057,7 +1062,7 @@ ${dayStory(t, d, route, visited)}
 ${sum ? `<p class="daysum">${emoIn(esc(sum.text))}${trLine(sum)}</p>` : ''}
 ${mosaicByPlace(t, ph)}
 ${audioOf(t.id, i).length ? `<div class="clips noprint">${audioOf(t.id, i).map((m) => `<div class="clip"><span>${ic('mic')} ${esc(m.caption || L('เสียงจากวันนี้', 'A voice from today'))}</span>${clipPlayer(m)}</div>`).join('')}</div>` : ''}
-${timeline.length ? `<ol class="tl">${timeline.map((x) => `<li><time>${esc(fmtTime(x.at, t.timezone))}</time><div>${x.h}</div></li>`).join('')}</ol>` : ''}
+${timeline.length ? `<ol class="tl parts">${timeline.map((x, k) => { const pt = dayPart(x.at, t.timezone), prev = k ? dayPart(timeline[k - 1].at, t.timezone) : ''; return `<li${pt === prev ? ' class="same"' : ''}><time>${pt === prev ? '' : esc(pt)}</time><div>${x.h}</div></li>`; }).join('')}</ol>` : ''}
 ${note ? `<div class="call calm"><span class="lbl">${L('โน้ตพ่อแม่', "Parents' note")}</span>${emoIn(esc(note.text))}${trLine(note)}</div>` : ''}
 ${story ? `<div class="call pick" style="white-space:pre-line"><span class="lbl">${L('นิทานก่อนนอน', 'Bedtime story')}</span>${bedBtn(story)}${esc(story.text)}</div>` : ''}
 </div></div>
@@ -1162,11 +1167,20 @@ function printSet(t) {
    beyond what the book already holds (no bookings, no passport data). */
 // where we slept, for the printed book (owner, Nov 2026: "ทำให้น่าสนใจ ไม่ใช่ตัดแปะจากใน app" — never a review score, a room type
 // or a booking site): a card per stay with the picture of the day we arrived, the town in big letters, the place's short name and the nights
-function bedsHtml(t, stays) {
-  const ss = sleepStops(t); if (!ss.length) return '';
+function stayTowns(t, stays) {
+  const ss = sleepStops(t);
   const base = (k, s) => { const n = shortName(s.name).toLowerCase(); const m = stays.find((x) => shortName(T(x.prop)).toLowerCase().startsWith(n.slice(0, 12))) || (stays.length === ss.length ? stays[k] : null); return m ? shortName(T(m.base)) : ''; };
-  return `<h4 class="bedsh">🛏️ ${L('บ้านพักของเรา', 'Where we slept')}</h4><div class="beds">${ss.map((s, k) => { const town = base(k, s), nm = shortName(s.name).replace(/\s*\((?:airbnb|booking[^)]*)\)/i, ''), n = s.days.length;
-    return `<div class="bed" style="--kc:var(--k${(k % 6) + 1})">${artImg(t, s.art)}<div><b>${esc(town || nm)}</b>${town ? `<small>${esc(nm)}</small>` : ''}<span class="nights">🌙 ${L(`${n} คืน`, `${n} night${n > 1 ? 's' : ''}`)}</span></div></div>`; }).join('')}</div>`;
+  return ss.map((s, k) => ({ town: base(k, s), nm: shortName(s.name).replace(/\s*\((?:airbnb|booking[^)]*)\)/i, ''), n: s.days.length, art: s.art }));
+}
+function bedsHtml(t, stays) {
+  const ts = stayTowns(t, stays); if (!ts.length) return '';
+  return `<h4 class="bedsh">🛏️ ${L('บ้านพักของเรา', 'Where we slept')}</h4><div class="beds">${ts.map((s, k) => `<div class="bed" style="--kc:var(--k${(k % 6) + 1})">${artImg(t, s.art)}<div><b>${esc(s.town || s.nm)}</b>${s.town ? `<small>${esc(s.nm)}</small>` : ''}<span class="nights">🌙 ${L(`${s.n} คืน`, `${s.n} night${s.n > 1 ? 's' : ''}`)}</span></div></div>`).join('')}</div>`;
+}
+// the trip as a line of towns, home to home (the numbers page; the stamps already live in the passport)
+function routeHtml(t, stays) {
+  const ts = stayTowns(t, stays).map((s) => s.town || s.nm).filter((x, k, a) => x && x !== a[k - 1]); if (!ts.length) return '';
+  const home = `<span class="rt home">🏠 ${L('บ้าน', 'Home')}</span>`;
+  return `<div class="proute">${home}${ts.map((x, k) => `<i aria-hidden="true">→</i><span class="rt" style="--kc:var(--k${(k % 6) + 1})">${esc(x)}</span>`).join('')}<i aria-hidden="true">→</i>${home}</div>`;
 }
 function viewPrint(t) {
   const kids = (t.theme.children || []).map((k) => k.slug).filter((k) => children().some((c) => c.slug === k));
@@ -1200,11 +1214,11 @@ function viewPrint(t) {
     .concat(hearts.length ? [[L('หัวใจจากญาติ', 'Hearts'), hearts.length]] : [], drawings.length ? [[L('ภาพวาด', 'Drawings'), drawings.length]] : []);
   const numbers = pg('numbers', `${head(L('ทริปนี้ในตัวเลข', 'The trip in numbers'), esc(short), '🗺️')}
 <div class="facts">${facts.map(([l, v]) => `<div class="fact"><span class="label">${l}</span><b>${v}</b></div>`).join('')}</div>
-<nav class="journey">${t.days.map((d, i) => `<span class="${dayStamped(t, i) ? 'on' : ''}">${artImg(t, i)}<b>${String(i + 1).padStart(2, '0')}</b><small>${esc(fmtDay(d.date, { day: 'numeric', month: 'short' }))}</small></span>`).join('')}</nav>
+${routeHtml(t, stays)}
 ${(t.passport || {}).map && typeof mapHtml === 'function' ? `<div class="pmap">${mapHtml(t, t.days.length - 1, kids)}</div>` : ''}
 ${bedsHtml(t, stays)}`);
   // 3 · contents
-  const contents = pg('contents', `${head(L('สารบัญ', 'Contents'), L('วันของเรา', 'Our days'), '📚')}<ol class="toc">${t.days.map((d, i) => `<li class="${dayHasContent(t, i) ? 'has' : ''}">${artImg(t, i)}<b>${String(i + 1).padStart(2, '0')}</b><span>${esc(T(d.title))}<small>${esc(fmtDay(d.date))}${dayHasContent(t, i) ? '' : ' · ' + L('ไม่มีบันทึก', 'nothing recorded')}</small></span></li>`).join('')}</ol>`);
+  const contents = pg('contents', `${head(L('สารบัญ', 'Contents'), L('วันของเรา', 'Our days'), '📚')}<ol class="toc">${t.days.map((d, i) => `<li class="${dayHasContent(t, i) ? 'has' : ''}">${artImg(t, i)}<b>${String(i + 1).padStart(2, '0')}</b><span>${esc(T(d.title))}<small>${esc(fmtDay(d.date))}</small></span></li>`).join('')}</ol>`);
   // 4 · a page per recorded day (the book's own day page)
   const dayPages = days.map((i) => pg('dayp', dayPage(t, i))).join('');
   // 5 · firsts + 6 · in their own words
@@ -1252,7 +1266,11 @@ ${facts.length ? `<ul class="myfacts">${facts.map(([e, l, v]) => `<li><span>${e}
   const forePg = fore ? pg('forep', `${head(L('คำนำ', 'Foreword'), esc(T(t.title).split(' · ')[0]), '✍️')}<div class="call calm fore">${esc(fore.text)}</div>`) : '';
   const letter = entriesOf(t.id).find((e) => e.kind === 'letter' && e.text);   // the letter to the kids: the last page before the back cover
   const letterPg = letter ? pg('letterp', `${head(L('จดหมายถึงลูก', 'A letter to you'), L('ไว้อ่านตอนโต', 'For when you are older'), '💌')}<div class="letter">${esc(letter.text)}</div>`) : '';
-  const back = pg('back', `<div class="bk">${castHtml(kids)}<h2>${L('จบเล่ม', 'The end')}</h2><p>${esc(short)} · ${esc(fmtRange(t))}</p><p class="label">${[st.photos && L(`${st.photos} รูป`, `${st.photos} photo${st.photos === 1 ? '' : 's'}`), st.quotes && L(`${st.quotes} คำพูด`, `${st.quotes} quote${st.quotes === 1 ? '' : 's'}`), st.firsts && L(`${st.firsts} ครั้งแรก`, `${st.firsts} first${st.firsts === 1 ? '' : 's'}`), days.length && L(`บันทึก ${days.length} วัน`, `${days.length} day${days.length === 1 ? '' : 's'} recorded`)].filter(Boolean).join(' · ') || L('เล่มนี้ยังว่าง', 'An empty book')}</p><p class="label">${esc(appName())} · ${esc(printed)}</p></div>`);
+  // the back cover fills its sheet (owner, Nov 2026: it printed as a strip at the top and read as a missing page): the children, "the end",
+  // the trip, the day pictures in a row, a line to the next trip — never a count
+  const back = pg('back', `<div class="bk">${castHtml(kids)}<h2>${L('จบเล่ม', 'The end')}</h2><p class="bkt">${esc(short)}</p><p class="bkd">${esc(fmtRange(t))}</p>
+<div class="bkart">${t.days.slice(0, 8).map((_, i) => artImg(t, i)).join('')}</div>
+<p class="bknext">${L('แล้วเจอกันทริปหน้านะ!', 'See you on the next trip!')}</p><p class="label">${esc(appName())} · ${esc(printed)}</p></div>`);
   return `<div class="pbook noprint-bar"><a class="btn small" href="/api/b/pdf/${esc(t.id)}" download data-a="pdf">⬇ ${L('ดาวน์โหลด PDF', 'Download PDF')}</a><a class="btn ghost small" href="#/t/${esc(t.id)}">‹ ${L('กลับไปสมุด', 'Back to the book')}</a><span class="label">${L('ตัวอย่างสมุดความทรงจำ — หน้า A4 ตามที่จะพิมพ์', 'Memory book preview — A4 pages as they will print')}</span></div>
 <div class="kbook age-${age}">${cover}${forePg}${numbers}${contents}${dayPages}${firstsPg}${wordsPg}${ppPages}${myPages}${heartsPg}${storyPg}${notesPg}${letterPg}${back}</div>`;
 }
