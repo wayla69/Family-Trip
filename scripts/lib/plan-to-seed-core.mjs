@@ -2,6 +2,7 @@
 // privacy scan, plan validation, toSeed (every default filled), report and sanity. Pure: no file IO, no process.exit.
 import crypto from 'node:crypto';
 import * as D from './book-defaults.mjs';
+import { stockMatch } from './stock-match.mjs';
 const { i18n, TODO } = D;
 
 // ---------- privacy: what may never reach the bookshelf (the repo is public)
@@ -197,6 +198,14 @@ function toSeed(p, notes, opts = {}) {
     },
   };
   if (!(Array.isArray(p.firsts) && p.firsts.length)) note('firsts_catalog: the 10 generic firsts');
+  // a book without drawings of its own takes pictures from the stock art library (opts.stock = its index; docs/STOCK-ART.md §5.6)
+  if (opts.art === false && opts.stock) {
+    const m = stockMatch(days, p.place || p.title, opts.stock);
+    if (m.filled) { seed.theme.artDays = m.artDays; note(`stock art: ${m.filled} of ${days.length} days have a library picture (${m.places.join(', ')})` + (m.filled < days.length ? ' — the rest keep the day emoji or the helper draws them' : '')); }
+    if (m.crest && !(pp.style && pp.style.crest)) seed.passport.style = { ...seed.passport.style, crest: m.crest };
+    if (m.stamps.length) seed.passport.stamps = m.stamps;
+    if (m.places.length) seed.stock = { places: m.places, countries: m.countries };
+  }
   return seed;
 }
 

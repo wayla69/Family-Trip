@@ -1377,9 +1377,15 @@ const T = 'hk-macau-2026';
   await page.goto(`${BASE}/#/t/sakura-hop-2028/today/0`); await page.waitForSelector('.day.today');
   await s.shot('07-sample-today');
   await page.goto(`${BASE}/#/t/sakura-hop-2028/book`); await page.waitForSelector('.cover');
+  ok(await page.locator('.cover img[src^="/stock/"]').count() >= 1 || await page.locator('img[src^="/stock/"]').count() >= 1, 'sample: the book shows the library pictures');
   ok(await page.locator('.bookstart a.btn[href*="/log/"]').count() === 1 && await page.locator('.foreblk, .letterblk, .coverpick').count() === 0 && await page.locator('a[data-a="pdf"]:visible').count() === 0 && await page.evaluate(() => document.querySelector('.bookstart').getBoundingClientRect().top < document.querySelector('.bookstart').getBoundingClientRect().height + 900), 'empty book: the way in (“record the first day”) comes right after the cover; the foreword, letter, cover choice and PDF wait for content');
   await page.goto(`${BASE}/#/passport/${st1.children[0].slug}/sakura-hop-2028`); await page.waitForSelector('.advc');
-  ok(await page.locator('.advc img.crest').count() === 0 && await page.locator('.pp-page').count() >= 2, 'sample: today and the passport render without drawn art (no crest, the generic guides)');
+  ok(/^\/stock\/jp\/stamp\.v\d+\.svg$/.test(await page.getAttribute('.advc img.crest', 'src')) && await page.locator('.pp-page').count() >= 2, 'sample: the passport takes the stock library\'s Japan stamp as its crest (no drawn art of its own, the generic guides)');
+  { const ad = (sample.theme || {}).artDays || [], stamps = ((await page.evaluate(() => S.trips.find((t) => t.id === 'sakura-hop-2028').passport)) || {}).stamps || [];
+    ok(ad.length === 3 && ad.every((u) => /^\/stock\/jp\/tokyo\/[a-z-]+\.v\d+\.svg$/.test(u)) && stamps.map((x) => x.art).join() === '/stock/jp/stamp.v1.svg,/stock/jp/tokyo/stamp.v1.svg',
+      'sample: every Tokyo day has a stock library picture and the passport holds the Japan and Tokyo stamps (resolved by the server)');
+    const r = await page.evaluate((u) => fetch(u).then((x) => [x.status, x.headers.get('content-type'), x.headers.get('cache-control')]), ad[0]);
+    ok(r[0] === 200 && /svg/.test(r[1]) && /immutable/.test(r[2]), 'a stock picture is served as an immutable SVG'); }
   await page.goto(`${BASE}/#/t/hk-macau-2026`); await page.waitForSelector('.hubgrid');
   ok(await page.locator('[data-a="tripdel"]').count() === 0, 'a bundled book has no delete button');
   await page.goto(`${BASE}/#/t/sakura-hop-2028`); await page.waitForSelector('[data-a="tripdel"]');

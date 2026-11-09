@@ -303,7 +303,7 @@ Trip: ${JSON.stringify({ title: top.title, place: top.place, from: top.from, to:
   const v = core.validate(plan);
   if (v.errs.length) throw Object.assign(new Error(`plan: ${v.errs.slice(0, 3).join('; ')}`), { code: 'plan', errs: v.errs });
   const notes = [];
-  const seed = core.toSeed(plan, notes, { art: false });
+  const seed = core.toSeed(plan, notes, { art: false, stock: require('./stock').read() });   // the stock library's pictures where they fit
   // the privacy scan: an item that trips it (a guide card, a timeline row, a fact — any entry of a list below the days) is taken out
   // and named in the warnings, rather than throwing away a whole book whose calls were already paid for; a hit anywhere else still fails
   let { hits, warns: soft } = core.scan(seed);

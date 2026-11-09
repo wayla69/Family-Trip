@@ -566,6 +566,9 @@ nav.bar a[aria-current=page] i{transform:translateY(-2px) scale(1.12);display:in
 @media (max-width:520px){.bio .photo{width:84px;font-size:44px}.bio dd{font-size:17px}}
 @media (max-width:380px){.bio{grid-template-columns:1fr}}
 .dstamps{display:grid;grid-template-columns:repeat(auto-fill,minmax(76px,1fr));gap:12px 8px}
+/* the stock library's city and country stamps, inked as the trip reaches them (views.js cityStampsHtml) */
+.cstamps{display:flex;flex-wrap:wrap;gap:10px;margin-top:14px}.cstamps img{width:min(88px,26vw);height:auto;transform:rotate(var(--r,0deg));filter:drop-shadow(0 1px 1px rgba(0,0,0,.15))}
+.cstamps.pr{justify-content:center;margin:12px 0 4px}.cstamps.pr img{width:96px}
 .dstamp{display:grid;justify-items:center;gap:3px;--r:0deg}
 .dstamp .art{width:64px;height:64px;filter:grayscale(1);opacity:.25;outline:2px dashed var(--rule);outline-offset:3px}
 .dstamp.on .art{filter:none;opacity:1;outline:2px solid color-mix(in srgb,var(--accent2) 55%,transparent);outline-offset:3px;transform:rotate(var(--r))}
