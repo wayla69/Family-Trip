@@ -1,0 +1,11 @@
+<svg viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+<rect x="8" y="8" width="184" height="184" rx="34" fill="#FFFDF7" stroke="#2F5D8C" stroke-width="5" stroke-dasharray="8 5"/>
+<rect x="22" y="22" width="156" height="156" rx="24" fill="none" stroke="#2F5D8C" stroke-width="3"/>
+<circle cx="100" cy="86" r="34" fill="#E4573D" stroke="#22213A" stroke-width="3.5"/>
+<path d="M36 132l40-46 14 12 14-18 60 52z" fill="#5B7FB0" stroke="#22213A" stroke-width="3.5" stroke-linejoin="round"/>
+<path d="M76 86l14 12 14-18 13 12-8 6-7-5-8 8-9-6-11 6z" fill="#fff" stroke="#22213A" stroke-width="2.5" stroke-linejoin="round"/>
+<path d="M30 140c12-6 24-6 36 0s24 6 36 0 24-6 36 0 18 4 32 0" fill="none" stroke="#7CC4E8" stroke-width="5" stroke-linecap="round"/>
+<text x="100" y="166" text-anchor="middle" font-family="KIRA UI, Arial, sans-serif" font-weight="800" font-size="22" letter-spacing="6" fill="#2F5D8C">JAPAN</text>
+<g fill="#F6C6D0" stroke="#22213A" stroke-width="2"><circle cx="44" cy="46" r="6"/><circle cx="156" cy="46" r="6"/></g>
+<g fill="#22213A"><circle cx="44" cy="46" r="1.6"/><circle cx="156" cy="46" r="1.6"/></g>
+</svg>
