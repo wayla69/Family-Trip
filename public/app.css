@@ -1024,7 +1024,7 @@ body.btopen{overflow:hidden}
 .tmap .pin circle{fill:#fff;stroke:#C5D2DE;stroke-width:3}
 .tmap .pin.on circle{stroke:var(--accent,#1F3A5F)}
 .tmap .pin.here circle{fill:#FFF6D6;stroke-width:4}
-.tmap .pin .e{font-size:18px;text-anchor:middle}
+.tmap .pin .e{font-size:18px;text-anchor:middle}.tmap .pin .ea{pointer-events:none}
 .tmap .pin .lbl{font-size:10.5px;font-weight:700;text-anchor:middle;fill:#3A4A5C;paint-order:stroke;stroke:#DDEFFB;stroke-width:4px}
 .tmap .pin:active circle{stroke-width:6}
 .tmap .walkers{position:absolute;transform:translate(-50%,-100%);margin-top:-14px;display:flex;align-items:flex-end;pointer-events:none;filter:drop-shadow(0 4px 4px rgba(0,0,0,.25))}

@@ -205,6 +205,8 @@ function toSeed(p, notes, opts = {}) {
     if (m.crest && !(pp.style && pp.style.crest)) seed.passport.style = { ...seed.passport.style, crest: m.crest };
     if (m.stamps.length) seed.passport.stamps = m.stamps;
     if (m.places.length) seed.stock = { places: m.places, countries: m.countries };
+    const map = seed.passport.map;
+    if (map && Array.isArray(map.stops)) for (const st of map.stops) { if (st.art) continue; const a = m.mapArt(st); if (a) st.art = a; }
   }
   return seed;
 }

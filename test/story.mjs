@@ -530,6 +530,20 @@ try {
     const names = await new Promise((res, rej) => yauzl.fromBuffer(zip, { lazyEntries: true }, (e, z) => { if (e) return rej(e); const ns = []; z.on('entry', (en) => { ns.push(en.fileName); z.readEntry(); }); z.on('end', () => res(ns)); z.readEntry(); }));
     ok(['art/test-hop/day-1.svg', 'art/test-hop/day-2.svg', 'art/test-hop/crest.svg', 'art/test-hop/guide-1.svg', 'art/test-hop/guide-2.svg'].every((n) => names.includes(n)) && !names.some((n) => n.startsWith('art/hk-macau-2026/')), 'bookart: the drawn pictures travel in the backup (the owner\'s SVGs come with the app, not the zip)');
   }
+  // ---- the stock art library fills a book's days first; the helper draws only the rest (docs/STOCK-ART.md §5.7)
+  { ok((await fetch(BASE + '/api/b/sample', { method: 'POST', headers: H, body: '{}' })).status === 200, 'the Tokyo sample book is made (its days take the library\'s pictures)');
+    ok((await fetch(BASE + '/api/b/art/sakura-hop-2028', { method: 'POST', headers: H, body: '{}' })).status === 409, 'bookart: a book whose every day has a library picture needs no drawing');
+    { const db = new Client({ connectionString: u.toString() }); await db.connect(); await db.query("UPDATE trips SET theme = jsonb_set(theme, '{artDays,1}', '\"\"') WHERE id='sakura-hop-2028'"); await db.end(); }
+    const n2 = artCalls.length, go = await fetch(BASE + '/api/b/art/sakura-hop-2028', { method: 'POST', headers: H, body: '{}' });
+    let art2; for (let k = 0; k < 150; k++) { art2 = await (await fetch(BASE + '/api/b/art', { headers: { cookie: ck } })).json(); if (art2.status !== 'running') break; await new Promise((r) => setTimeout(r, 200)); }
+    const kinds2 = artCalls.slice(n2).map((c) => c.kind).join(), sk = (await state()).trips.find((t) => t.id === 'sakura-hop-2028');
+    ok(go.status === 202 && art2.status === 'done' && art2.total === 3 && kinds2 === 'day,names,guide,guide' && /^\/stock\//.test(sk.passport.style.crest)
+      && /^\/stock\//.test(sk.theme.artDays[0]) && sk.theme.artDays[1] === '' && /^\/media\/art\/sakura-hop-2028\/day-\{n\}\.svg/.test(sk.theme.art)
+      && (await fetch(BASE + sk.theme.art.replace('{n}', '2'), { headers: { cookie: ck } })).status === 200 && (await fetch(BASE + sk.theme.art.replace('{n}', '1'), { headers: { cookie: ck } })).status === 404,
+      `bookart: only the day without a library picture is drawn, the library's Japan crest is kept, then the guides (${kinds2}, ${JSON.stringify(art2)})`);
+    await fetch(BASE + '/api/b/trips/sakura-hop-2028', { method: 'DELETE', headers: H });
+    { const db = new Client({ connectionString: u.toString() }); await db.connect(); await db.query('UPDATE ai_usage SET calls=0'); await db.end(); }
+  }
   // ---- a child's own character from a photo (#/family, OpenAI): a refused try is free, three a year, the drawing is family-only
   { const sharp = createRequire(import.meta.url)('sharp');
     const photo = await sharp({ create: { width: 2400, height: 3200, channels: 3, background: '#8B5A2B' } }).jpeg().toBuffer();

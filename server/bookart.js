@@ -79,19 +79,23 @@ const crestKey = (trip, v) => `d/${trip}/${v}/crest.svg`;
 const guideKey = (trip, v, k) => `d/${trip}/${v}/guide-${k}.svg`;
 const FILE_RE = /^(day-\d{1,2}|crest|guide-[12])\.svg$/;
 const V_RE = /^[a-z0-9]{4,16}$/;
-const CALLS = (days) => days + 4;   // one per day, the crest, the guides' names, two guides (retries on top)
+const CALLS = (days, crest = true) => days + (crest ? 4 : 3);   // one per day still to draw, the crest, the guides' names, two guides (retries on top)
 
 // draw every picture of a book into version v: the days, the crest, then the two guides (their names in one call; kept only when
 // both are usable). onStep(done, total) reports progress.
-async function drawBook({ trip, v, title, days, place, when, accent, kids, media, client, take, onUsage, onStep = () => {} }) {
-  const total = days.length + 3, o = { take, onUsage };
+// days[i].skip = that day already has a stock library picture (not drawn, no file); keepCrest = the passport keeps its crest
+async function drawBook({ trip, v, title, days, place, when, accent, kids, media, client, take, onUsage, onStep = () => {}, keepCrest = false }) {
+  const total = days.filter((d) => !d.skip).length + (keepCrest ? 2 : 3), o = { take, onUsage };
   let done = 0, drawn = 0;
   for (let i = 0; i < days.length; i++) {
+    if (days[i].skip) continue;
     await media.put(dayKey(trip, v, i + 1), Buffer.from(await drawSvg(client, dayPrompt({ ...days[i], place, accent, n: i + 1 }), o)), 'image/svg+xml'); drawn++;
     onStep(++done, total);
   }
-  await media.put(crestKey(trip, v), Buffer.from(await drawSvg(client, crestPrompt({ title, place, when, accent }), o)), 'image/svg+xml'); drawn++;
-  onStep(++done, total);
+  if (!keepCrest) {
+    await media.put(crestKey(trip, v), Buffer.from(await drawSvg(client, crestPrompt({ title, place, when, accent }), o)), 'image/svg+xml'); drawn++;
+    onStep(++done, total);
+  }
   let guides = null;
   {
     let j = null;

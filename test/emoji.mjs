@@ -75,6 +75,23 @@ ok((await fetch(BASE + added.src, { headers: { cookie: ck } })).status === 404, 
   await pool.query("DELETE FROM emoji WHERE family_id=$1 AND id='yummy'", [fam]);
   ok(await EMOJI.seed(pool, fam) === 0 && !(await pool.query("SELECT 1 FROM emoji WHERE family_id=$1 AND id='yummy'", [fam])).rowCount, 'a bundled picture the parents deleted is not put back by the next boot');
   ok((await state()).emoji.some((e) => e.ch === '😋') === false && (await state()).emoji.some((e) => e.ch === '🤩' && e.src === '/art/emoji/excited.webp'), 'the state follows: 🤩 drawn by the new picture, 😋 gone after its delete');
+  // the stock library's country pack (docs/STOCK-ART.md §5.8): no Japan book → no Japan pictures; the Tokyo sample brings them,
+  // an emoji the family already draws keeps its picture, a deleted one stays deleted
+  const H = { 'x-mb': '1', cookie: ck, 'content-type': 'application/json' };
+  ok(!(await state()).emoji.some((e) => /^\/stock\//.test(e.src)), 'no Japan book yet → no stock pictures in the library');
+  ok((await fetch(BASE + '/api/b/sample', { method: 'POST', headers: H, body: '{}' })).status === 200, 'the Tokyo sample book is made');
+  let st = await state();
+  const sushi = st.emoji.find((e) => e.ch === '🍣'), tower = st.emoji.find((e) => e.ch === '🗼');
+  ok(sushi && /^\/stock\/jp\/food-sushi\.v\d+\.svg$/.test(sushi.src) && tower && /^\/stock\/jp\/tokyo\//.test(tower.src) && sushi.th === 'ซูชิ'
+    && st.emoji.find((e) => e.ch === '🚕').src === '/art/emoji/taxi.webp', 'a Japan book brings the Japan pack (sushi, Tokyo Tower…) — the family\'s own taxi keeps its picture');
+  ok((await fetch(BASE + sushi.src)).ok, 'a pack picture is served');
+  await del(sushi.id);
+  await fetch(BASE + '/api/b/trips/sakura-hop-2028', { method: 'DELETE', headers: { 'x-mb': '1', cookie: ck } });
+  await fetch(BASE + '/api/b/sample', { method: 'POST', headers: H, body: '{}' });
+  await EMOJI.seed(pool, fam);
+  st = await state();
+  ok(!st.emoji.some((e) => e.ch === '🍣') && st.emoji.some((e) => e.ch === '🗼'), 'a pack picture the parents deleted stays deleted (a new Japan book or a reboot does not bring it back)');
+  await fetch(BASE + '/api/b/trips/sakura-hop-2028', { method: 'DELETE', headers: { 'x-mb': '1', cookie: ck } });
   await pool.end();
 }
 
