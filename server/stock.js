@@ -92,6 +92,9 @@ async function lint(dir = DIR) {
     if (!Array.isArray(it.kw) || it.kw.filter((w) => typeof w === 'string' && w.trim()).length < 2) bad(`item ${id}: needs at least two keywords (kw)`);
     if (/เช็ค/.test(JSON.stringify(it.name || {}))) bad(`item ${id}: spell เช็ก`);
     if (it.ok !== undefined && !/^\d{4}-\d{2}-\d{2}$/.test(String(it.ok))) bad(`item ${id}: ok must be the approval date YYYY-MM-DD`);
+    // ch = the emoji this picture draws in the family's emoji library (the country pack, server/emoji.js stockPack)
+    if (it.ch !== undefined && !(typeof it.ch === 'string' && /\p{Extended_Pictographic}|\p{Regional_Indicator}/u.test(it.ch) && it.ch.length <= 16)) bad(`item ${id}: ch must be one emoji`);
+    if (it.alt !== undefined && !(Array.isArray(it.alt) && it.ch && it.alt.every((x) => typeof x === 'string' && /\p{Extended_Pictographic}/u.test(x)))) bad(`item ${id}: alt must be emoji (and needs ch)`);
     // `file` = the picture books use; `next` (optional) = a redraw waiting for the owner's review — checked the same way,
     // shown beside it on the review sheet, never served to a book until it is promoted to `file` (with a fresh `ok`)
     for (const [key, name] of [['file', it.file], ['next', it.next]]) {

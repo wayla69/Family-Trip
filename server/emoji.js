@@ -51,11 +51,12 @@ async function seed(pool, family) {
   let offered = [];
   try { offered = kv.emoji_offered ? JSON.parse(kv.emoji_offered) : kv.emoji_seeded ? DEFAULTS.slice(0, FIRST_SET).map((d) => d[0]) : []; } catch (_) { offered = []; }
   const fresh = DEFAULTS.map((d) => d[0]).filter((id) => !offered.includes(id));
-  if (!fresh.length) return 0;
+  const pack = () => stockPack(pool, family);   // the stock library's country pack, for books that use it (after the bundled set, which wins an emoji)
+  if (!fresh.length) return pack();
   const n = await putDefaults(pool, family, fresh);
   await pool.query("INSERT INTO settings (key, value) VALUES ('emoji_offered', $1) ON CONFLICT (key) DO UPDATE SET value=EXCLUDED.value", [JSON.stringify(DEFAULTS.map((d) => d[0]))]);
   await pool.query("INSERT INTO settings (key, value) VALUES ('emoji_seeded', $1) ON CONFLICT (key) DO NOTHING", [new Date().toISOString()]);
-  return n;
+  return n + await pack();
 }
 // the bundled set (or just `only` of it), only what is missing (by id, or an emoji already drawn by one of the family's own)
 async function putDefaults(pool, family, only = null) {
@@ -67,13 +68,41 @@ async function putDefaults(pool, family, only = null) {
   }
   return n;
 }
+// the stock art library's country pack (docs/STOCK-ART.md §5.8): once the family has a book that uses a country's library pictures
+// (a "stock:<cc>…" anywhere in a book's theme or passport), that country's approved pictures with an emoji (index `ch`) join the
+// library — each once (settings 'emoji_stock_offered'), a deleted one stays deleted, an emoji the family already draws keeps its
+// own picture (UNIQUE ch). The row names its picture as file "stock:<id>" (served from /stock, nothing copied to the bucket).
+const STOCK = require('./stock');
+const stockRowId = (id) => ('s-' + id.replace(/\./g, '-')).slice(0, 40);
+async function stockPack(pool, family) {
+  const used = new Set();
+  for (const r of (await pool.query('SELECT theme, passport FROM trips WHERE family_id=$1', [family])).rows) {
+    for (const m of JSON.stringify([r.theme, r.passport]).matchAll(/"stock:([a-z]{2})[.-]/g)) used.add(m[1]);
+  }
+  if (!used.size) return 0;
+  const items = (STOCK.read().items || []).filter((it) => it.ok && !it.withdrawn && it.ch && used.has(it.id.slice(0, 2)) && STOCK.url(it.id));
+  if (!items.length) return 0;
+  let offered = [];
+  try { offered = JSON.parse(((await pool.query("SELECT value FROM settings WHERE key='emoji_stock_offered'")).rows[0] || {}).value || '[]'); } catch (_) { offered = []; }
+  let n = 0;
+  for (const [i, it] of items.entries()) {
+    if (offered.includes(it.id)) continue;
+    n += (await pool.query('INSERT INTO emoji (family_id, id, ch, alt, name_th, name_en, file, pos) VALUES ($1,$2,$3,$4,$5,$6,$7,$8) ON CONFLICT DO NOTHING',
+      [family, stockRowId(it.id), it.ch, it.alt || [], name(it.name.th), name(it.name.en), 'stock:' + it.id, 500 + i])).rowCount;
+    offered.push(it.id);
+  }
+  await pool.query("INSERT INTO settings (key, value) VALUES ('emoji_stock_offered', $1) ON CONFLICT (key) DO UPDATE SET value=EXCLUDED.value", [JSON.stringify(offered)]);
+  return n;
+}
 const rows = (q, family) => q("SELECT id, ch, alt, name_th, name_en, file, (storage_key IS NOT NULL) AS up, floor(extract(epoch FROM created_at))::bigint AS v FROM emoji WHERE family_id=$1 ORDER BY pos, created_at", [family]);
 // as the app sees a row: where its picture is
-const out = (e) => ({ id: e.id, ch: e.ch, alt: e.alt || [], th: e.name_th, en: e.name_en, src: e.up ? `/media/emoji/${e.id}.png?v=${e.v}` : `/art/emoji/${e.file}.webp` });
+const out = (e) => ({ id: e.id, ch: e.ch, alt: e.alt || [], th: e.name_th, en: e.name_en, src: e.up ? `/media/emoji/${e.id}.png?v=${e.v}` : String(e.file || '').startsWith('stock:') ? STOCK.url(e.file.slice(6)) : `/art/emoji/${e.file}.webp` });
+// a library picture that is no longer there (withdrawn) draws no picture: the plain emoji stays
+const outAll = (list) => list.map(out).filter((e) => e.src);
 
 function routes(r, { q, pool, media, A, family }) {
   const bad = (res, code, status = 400) => res.status(status).json({ error: code });
-  r.get('/api/b/emoji', A.requireUser, async (req, res, next) => { try { res.setHeader('Cache-Control', 'no-store'); res.json((await rows(q, family)).map(out)); } catch (e) { next(e); } });
+  r.get('/api/b/emoji', A.requireUser, async (req, res, next) => { try { res.setHeader('Cache-Control', 'no-store'); res.json(outAll(await rows(q, family))); } catch (e) { next(e); } });
   // an uploaded picture: anyone signed in (relatives see the hearts and quotes too); the url carries the version
   r.get('/media/emoji/:id.png', A.requireUser, async (req, res, next) => {
     try {
@@ -129,4 +158,4 @@ function routes(r, { q, pool, media, A, family }) {
   });
 }
 
-module.exports = { DEFAULTS, seed, routes, rows, out, keyOf, isEmoji, ID_RE };
+module.exports = { DEFAULTS, seed, stockPack, routes, rows, out, outAll, keyOf, isEmoji, ID_RE };

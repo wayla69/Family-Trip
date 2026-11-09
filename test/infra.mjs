@@ -252,6 +252,11 @@ if (process.env.BASE) {
     'stock match: unapproved pictures are never picked; no index or a book with its own art → nothing from the library');
   const other = { ...plan, place: { th: 'ปารีส', en: 'Paris' }, title: { th: 'ปารีส', en: 'Paris' }, days: plan.days.map((d) => ({ ...d, title: { th: 'ปารีส', en: 'Paris' }, sleep: { th: 'ปารีส', en: 'Paris' }, planned: [], plan: [], moving: { th: '', en: '' } })) };
   ok(!C.toSeed(other, [], { art: false, stock: idx }).theme.artDays, 'stock match: a city the library does not have gets nothing (no Tokyo pictures in a Paris book)');
+  const withMap = { ...plan, passport: { ...(plan.passport || {}), map: { title: { th: 'แผนที่', en: 'Map' }, sea: { th: 'ทะเล', en: 'Sea' }, stops: [
+    { k: 'tower', e: '🗼', th: 'โตเกียวทาวเวอร์', en: 'Tokyo Tower', x: 40, y: 40 }, { k: 'hotel', e: '🛏️', th: 'โรงแรม', en: 'Our hotel', x: 60, y: 60 },
+    { k: 'own', e: '🏯', th: 'ปราสาท', en: 'A castle', x: 20, y: 20, art: '/art/x.svg' }], days: [['tower'], ['hotel'], ['own']] } } };
+  const ms = C.toSeed(withMap, [], { art: false, stock: idx }).passport.map.stops;
+  ok(ms[0].art === 'stock:jp-tokyo.landmark.tower' && !ms[1].art && ms[2].art === '/art/x.svg', 'stock match: a map pin named like a library landmark shows its picture; others keep their emoji; a pin\'s own art stays');
 }
 // served by the running app: a missing stock file is a 404 (never the app page), the index is not cached for long, nothing needs sign-in
 if (process.env.BASE) {

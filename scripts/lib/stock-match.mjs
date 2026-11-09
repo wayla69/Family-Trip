@@ -60,6 +60,12 @@ export function stockMatch(days, placeText, index) {
     const c = countryOf(city);
     for (const id of [c && `${c}.stamp`, city && `${city}.stamp`]) if (id && !seen.has(id) && has(id)) { seen.add(id); stamps.push({ art: 'stock:' + id, day: i }); }
   });
+  // the living map's pins: a stop named like one of the library's landmarks of the trip's cities shows that picture (stop.art)
+  const mapArt = (stop) => {
+    const text = lc([T(stop), stop.q || ''].join(' '));
+    const best = items.filter((it) => it.cat === 'landmark' && cityOf.includes(scopeOf(it.id))).map((it) => [it, hits(text, it.kw)]).filter(([, n]) => n > 0).sort((a, b) => b[1] - a[1])[0];
+    return best ? 'stock:' + best[0].id : '';
+  };
   const firstCountry = countryOf(cityOf.find(Boolean));
   const crest = firstCountry && has(`${firstCountry}.stamp`) ? 'stock:' + firstCountry + '.stamp' : '';
   const placesUsed = [...new Set(cityOf.filter(Boolean))];
@@ -70,5 +76,6 @@ export function stockMatch(days, placeText, index) {
     places: placesUsed,
     countries: [...new Set(placesUsed.map(countryOf).filter(Boolean))],
     filled: artDays.filter(Boolean).length,
+    mapArt,
   };
 }

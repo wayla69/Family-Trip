@@ -156,7 +156,7 @@ function router({ pool, media, A, ai, hooks = {} }) {   // hooks.heart(h): set b
       let gone = 0;
       for (const k of new Set(keys)) { try { await media.del(k); gone++; } catch (_) { /* a file already missing is fine */ } }
       await q('DELETE FROM families WHERE id=$1', [FAMILY]);
-      await q("DELETE FROM settings WHERE key IN ('family_likes', 'emoji_seeded', 'emoji_offered')");
+      await q("DELETE FROM settings WHERE key IN ('family_likes', 'emoji_seeded', 'emoji_offered', 'emoji_stock_offered')");
       await q('INSERT INTO families (id, name) VALUES ($1, $2) ON CONFLICT (id) DO NOTHING', [FAMILY, 'Family']);
       await syncSeeds(pool); await EMOJI.seed(pool, FAMILY); A.groupsChanged();
       console.log(`family erased on request: ${gone} files, every row`);   // no names, no codes
@@ -327,7 +327,7 @@ function router({ pool, media, A, ai, hooks = {} }) {   // hooks.heart(h): set b
         places: places.map(({ trip_id, day_index, visited_at, ...p }) => ({ ...p, trip: trip_id, day: day_index, at: ms(visited_at) })),
         hearts: hearts.map(({ trip_id, day_index, created_uid, created_at, from_name, ...h }) => ({ ...h, trip: trip_id, day: day_index, from: from_name, at: ms(created_at), mine: created_uid === req.user.uid })),
         reviews: reviews.map(({ trip_id, day_index, updated_at, ...r }) => ({ ...r, trip: trip_id, day: day_index, at: ms(updated_at) })),
-        emoji: emojiRows.map(EMOJI.out),   // the family's emoji library: each emoji's picture (core.js emo)
+        emoji: EMOJI.outAll(emojiRows),   // the family's emoji library: each emoji's picture (core.js emo)
         spend: spendRows.map(({ trip_id, day_index, updated_at, amount, ...s }) => ({ ...s, trip: trip_id, day: day_index, amount: Number(amount), at: ms(updated_at) })),
         operator: OPERATOR,   // named on the privacy page
         features: { avatar: AVATAR.enabled(), bookArt: ART.enabled(), story: !!(ai && ai.enabled()), photoAi: !!(ai && ai.photoEnabled && ai.photoEnabled()) },   // photoAi: the owner's PHOTO_AI switch (captions/tags from the pictures)
@@ -580,6 +580,7 @@ function router({ pool, media, A, ai, hooks = {} }) {   // hooks.heart(h): set b
       await c.query('BEGIN');
       try { await putSeed(c, seed, 'manual'); } catch (e) { await c.query('ROLLBACK'); if (e.code === 'exists') return bad(res, 'exists', 409); throw e; }
       await c.query('COMMIT');
+      await EMOJI.stockPack(pool, FAMILY).catch((e) => console.error('emoji pack', e.message));   // its country's emoji pictures
       res.json({ ok: true, id: seed.slug });
     } catch (e) { await c.query('ROLLBACK').catch(() => {}); next(e); } finally { c.release(); }
   });
@@ -747,6 +748,7 @@ function router({ pool, media, A, ai, hooks = {} }) {   // hooks.heart(h): set b
       try { await putSeed(c, d.seed, 'manual'); } catch (e) { await c.query('ROLLBACK'); if (e.code === 'exists') return bad(res, 'exists', 409); throw e; }
       await c.query('DELETE FROM book_drafts WHERE id=$1', [req.params.id]);
       await c.query('COMMIT');
+      await EMOJI.stockPack(pool, FAMILY).catch((e) => console.error('emoji pack', e.message));
       let art = 'off';   // a book without drawings gets its circles, crest and guides drawn now; the page is told whether that started
       if (ART.enabled()) { try { await startArt(d.seed.slug); art = 'started'; } catch (e) { art = e.code || 'failed'; console.error('bookart', d.seed.slug, e.message); } }
       res.json({ ok: true, id: d.seed.slug, art });
@@ -781,23 +783,26 @@ function router({ pool, media, A, ai, hooks = {} }) {   // hooks.heart(h): set b
       if (runs >= ART.RUNS()) throw Object.assign(new Error('runs'), { code: 'runs', left: 0 });
       const days = await q('SELECT day_index, title, plan FROM trip_days WHERE trip_id=$1 ORDER BY day_index', [id]);
       const used = Number(((await q("SELECT calls FROM ai_usage WHERE family_id=$1 AND day=(now() AT TIME ZONE 'UTC')::date", [FAMILY]))[0] || {}).calls || 0);
-      const need = Math.min(ART.CALLS(days.length) + 2, STORY_DAILY);   // a family whose daily cap is below a book's needs can still start from a fresh day
+      // days with a stock library picture are not drawn, and a stock crest is kept (docs/STOCK-ART.md §5.7)
+      const stockDays = STOCK.maybe(theme.artDays) || [], skip = days.map((_, i) => !!(Array.isArray(stockDays) && stockDays[i]));
+      const crest0 = ((t.passport || {}).style || {}).crest || '', keepCrest = String(crest0).startsWith('stock:') && !!STOCK.maybe(crest0);
+      const need = Math.min(ART.CALLS(skip.filter((x) => !x).length, !keepCrest) + 2, STORY_DAILY);   // a family whose daily cap is below a book's needs can still start from a fresh day
       if (STORY_DAILY - used < need) throw Object.assign(new Error('limit'), { code: 'limit', left: Math.max(0, STORY_DAILY - used), need });
       const en = (x) => (x && typeof x === 'object' ? x.en || x.th || '' : String(x || ''));
       const place = (Array.isArray(theme.places) && theme.places[0] && theme.places[0].en) || en(t.sub) || en(t.title);
       const when = new Date(t.date_from + 'T00:00:00Z').toLocaleDateString('en-GB', { month: 'long', year: 'numeric', timeZone: 'UTC' });
       const kids = (await kidsFor(t)).who.en;
       const v = Date.now().toString(36), old = artV(theme);
-      artJob.total = days.length + 3;
+      artJob.total = skip.filter((x) => !x).length + (keepCrest ? 2 : 3);
       (async () => {
         try {
           const out = await ART.drawBook({ trip: id, v, title: en(t.title).split(' · ')[0], place, when, accent: theme.accent || '#1F3A5F', kids, media, client: new ai.SDK(), take: aiTake, onUsage: addUsage,
-            days: days.map((d) => ({ title: en(d.title), lines: (((d.plan || {}).plan) || []).map((r) => en(r.h)).filter(Boolean).slice(0, 6) })),
+            days: days.map((d, i) => ({ title: en(d.title), lines: (((d.plan || {}).plan) || []).map((r) => en(r.h)).filter(Boolean).slice(0, 6), skip: skip[i] })), keepCrest,
             onStep: (done, total) => { artJob.done = done; artJob.total = total; } });
           const theme2 = { ...theme, art: `/media/art/${id}/day-{n}.svg?v=${v}`, artV: v, artRuns: runs + 1, artAt: new Date().toISOString() };
           const pp0 = t.passport && typeof t.passport === 'object' ? t.passport : null;
           const guides = out.guides && pp0 && !ownGuides(pp0) ? out.guides.map((g, k) => ({ ...g, art: `/media/art/${id}/guide-${k + 1}.svg?v=${v}` })) : null;
-          const pp = pp0 ? { ...pp0, style: { ...(pp0.style || {}), crest: `/media/art/${id}/crest.svg?v=${v}` }, colour: '', ...(guides ? { guides } : {}) } : pp0;
+          const pp = pp0 ? { ...pp0, style: { ...(pp0.style || {}), ...(keepCrest ? {} : { crest: `/media/art/${id}/crest.svg?v=${v}` }) }, colour: '', ...(guides ? { guides } : {}) } : pp0;
           await q('UPDATE trips SET theme=$3, passport=$4 WHERE id=$1 AND family_id=$2', [id, FAMILY, JSON.stringify(theme2), JSON.stringify(pp)]);
           for (const k of artKeys(id, old, days.length)) await media.del(k).catch(() => {});   // the previous version goes only now
           artJob.status = 'done'; console.log(`bookart ${id}: ${out.drawn} pictures drawn`);
