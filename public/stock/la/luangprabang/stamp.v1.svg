@@ -1,0 +1,10 @@
+<svg viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+<defs><path id="llp-st-a" d="M 38 100 A 62 62 0 0 1 162 100"/><path id="llp-st-b" d="M 30 106 A 70 70 0 0 0 170 106"/></defs>
+<circle cx="100" cy="100" r="96" fill="#FFF7F2" stroke="#F9A825" stroke-width="5" stroke-dasharray="7 5"/>
+<circle cx="100" cy="100" r="84" fill="none" stroke="#F9A825" stroke-width="3"/>
+<circle cx="100" cy="100" r="54" fill="#FFF8E1" stroke="#F9A825" stroke-width="3"/>
+<g stroke="#22213A" stroke-width="3.5" stroke-linejoin="round" stroke-linecap="round"><rect x="64" y="104" width="72" height="30" fill="#FFF3E0" stroke-width="3"/><path d="M48 110c20.8-4 36.4-16 52-20 15.6 4 31.2 16 52 20z" fill="#C62828" stroke-width="2.5"/><path d="M60 94c16-4 28-16 40-20 12 4 24 16 40 20z" fill="#C62828" stroke-width="2.5"/><path d="M74 80c10.4-4 18.2-16 26-20 7.8 4 15.6 16 26 20z" fill="#C62828" stroke-width="2.5"/><circle cx="100" cy="52" r="4" fill="#FFCA28" stroke-width="2"/><rect x="92" y="114" width="16" height="20" rx="1" fill="#FFCA28" stroke-width="2"/></g>
+<text font-family="KIRA UI, Arial, sans-serif" font-weight="800" font-size="13" letter-spacing="3" fill="#F9A825"><textPath href="#llp-st-a" startOffset="50%" text-anchor="middle">LUANG PRABANG</textPath></text>
+<text font-family="KIRA UI, Arial, sans-serif" font-weight="700" font-size="11" letter-spacing="3" fill="#6D4C41"><textPath href="#llp-st-b" startOffset="50%" text-anchor="middle">LAOS</textPath></text>
+<path d="M22 100l5-3 5 3-5 3zM168 100l5-3 5 3-5 3z" fill="#F9A825"/>
+</svg>
