@@ -1,0 +1,7 @@
+<svg viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+<rect x="8" y="8" width="184" height="184" rx="34" fill="#FFFDF7" stroke="#0D5EAF" stroke-width="5" stroke-dasharray="8 5"/>
+<rect x="22" y="22" width="156" height="156" rx="24" fill="none" stroke="#0D5EAF" stroke-width="3"/>
+<g stroke="#22213A" stroke-width="3.5" stroke-linejoin="round" stroke-linecap="round"><ellipse cx="100" cy="92" rx="26" ry="30" fill="#BCAAA4" stroke-width="3"/><path d="M78 68l6-14 10 10zM122 68l-6-14-10 10z" fill="#BCAAA4" stroke-width="2.5"/><circle cx="90" cy="84" r="9" fill="#FFFFFF" stroke-width="2.5"/><circle cx="90" cy="84" r="4" fill="#22213A" stroke="none"/><circle cx="110" cy="84" r="9" fill="#FFFFFF" stroke-width="2.5"/><circle cx="110" cy="84" r="4" fill="#22213A" stroke="none"/><path d="M96 96l4 8 4-8z" fill="#FFCA28" stroke-width="2"/><path d="M66 124h68" fill="none" stroke="#6D4C41" stroke-width="4"/><ellipse cx="76" cy="118" rx="8" ry="4" fill="#7CB342" stroke-width="2"/><ellipse cx="96" cy="128" rx="8" ry="4" fill="#7CB342" stroke-width="2"/><ellipse cx="118" cy="118" rx="8" ry="4" fill="#7CB342" stroke-width="2"/></g>
+<text x="100" y="166" text-anchor="middle" font-family="KIRA UI, Arial, sans-serif" font-weight="800" font-size="20" letter-spacing="4" fill="#0D5EAF">GREECE</text>
+<g fill="#E3F2FD" stroke="#22213A" stroke-width="2"><circle cx="44" cy="46" r="6"/><circle cx="156" cy="46" r="6"/></g>
+</svg>

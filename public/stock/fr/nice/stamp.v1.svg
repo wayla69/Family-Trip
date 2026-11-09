@@ -1,0 +1,10 @@
+<svg viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+<defs><path id="fni-st-a" d="M 38 100 A 62 62 0 0 1 162 100"/><path id="fni-st-b" d="M 30 106 A 70 70 0 0 0 170 106"/></defs>
+<circle cx="100" cy="100" r="96" fill="#FFF7F2" stroke="#0277BD" stroke-width="5" stroke-dasharray="7 5"/>
+<circle cx="100" cy="100" r="84" fill="none" stroke="#0277BD" stroke-width="3"/>
+<circle cx="100" cy="100" r="54" fill="#E1F5FE" stroke="#0277BD" stroke-width="3"/>
+<g stroke="#22213A" stroke-width="3.5" stroke-linejoin="round" stroke-linecap="round"><circle cx="126" cy="64" r="10" fill="#FFCA28" stroke-width="2.5"/><path d="M70 120l20-46h16l-12 32h36l10 14z" fill="#29B6F6" stroke-width="3"/><path d="M76 106h52" fill="none" stroke="#FFFFFF" stroke-width="3"/><path d="M80 120l-6 14M134 120l6 14" fill="none" stroke="#8D6E63" stroke-width="3"/><ellipse cx="68" cy="138" rx="6" ry="3" fill="#BDBDBD" stroke-width="1.5"/><ellipse cx="82" cy="138" rx="6" ry="3" fill="#BDBDBD" stroke-width="1.5"/><ellipse cx="96" cy="138" rx="6" ry="3" fill="#BDBDBD" stroke-width="1.5"/><ellipse cx="110" cy="138" rx="6" ry="3" fill="#BDBDBD" stroke-width="1.5"/><ellipse cx="124" cy="138" rx="6" ry="3" fill="#BDBDBD" stroke-width="1.5"/><ellipse cx="138" cy="138" rx="6" ry="3" fill="#BDBDBD" stroke-width="1.5"/></g>
+<text font-family="KIRA UI, Arial, sans-serif" font-weight="800" font-size="19" letter-spacing="3" fill="#0277BD"><textPath href="#fni-st-a" startOffset="50%" text-anchor="middle">NICE</textPath></text>
+<text font-family="KIRA UI, Arial, sans-serif" font-weight="700" font-size="11" letter-spacing="3" fill="#F57C00"><textPath href="#fni-st-b" startOffset="50%" text-anchor="middle">CÔTE D'AZUR</textPath></text>
+<path d="M22 100l5-3 5 3-5 3zM168 100l5-3 5 3-5 3z" fill="#0277BD"/>
+</svg>

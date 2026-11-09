@@ -1,0 +1,7 @@
+<svg viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+<rect x="8" y="8" width="184" height="184" rx="34" fill="#FFFDF7" stroke="#DC1E35" stroke-width="5" stroke-dasharray="8 5"/>
+<rect x="22" y="22" width="156" height="156" rx="24" fill="none" stroke="#DC1E35" stroke-width="3"/>
+<g stroke="#22213A" stroke-width="3.5" stroke-linejoin="round" stroke-linecap="round"><ellipse cx="100" cy="96" rx="22" ry="30" fill="#22213A" stroke-width="3"/><ellipse cx="100" cy="104" rx="14" ry="20" fill="#FFFFFF" stroke="none"/><circle cx="100" cy="66" r="18" fill="#22213A" stroke-width="3"/><ellipse cx="94" cy="68" rx="10" ry="9" fill="#FFFFFF" stroke="none"/><path d="M108 62l20 6-20 10z" fill="#FF6D00" stroke-width="2.5"/><path d="M112 66v8" fill="none" stroke="#FFCA28" stroke-width="2"/><circle cx="94" cy="66" r="2.5" fill="#22213A" stroke="none"/><path d="M92 126v10M108 126v10" fill="none" stroke="#FF6D00" stroke-width="4"/><path d="M70 138c10-10 50-10 60 0z" fill="#7CB342" stroke-width="2.5"/></g>
+<text x="100" y="166" text-anchor="middle" font-family="KIRA UI, Arial, sans-serif" font-weight="800" font-size="20" letter-spacing="4" fill="#DC1E35">ÍSLAND</text>
+<g fill="#E3F2FD" stroke="#22213A" stroke-width="2"><circle cx="44" cy="46" r="6"/><circle cx="156" cy="46" r="6"/></g>
+</svg>

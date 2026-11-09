@@ -1,0 +1,10 @@
+<svg viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+<defs><path id="pys-st-a" d="M 38 100 A 62 62 0 0 1 162 100"/><path id="pys-st-b" d="M 30 106 A 70 70 0 0 0 170 106"/></defs>
+<circle cx="100" cy="100" r="96" fill="#FFF7F2" stroke="#5D4037" stroke-width="5" stroke-dasharray="7 5"/>
+<circle cx="100" cy="100" r="84" fill="none" stroke="#5D4037" stroke-width="3"/>
+<circle cx="100" cy="100" r="54" fill="#EFEBE9" stroke="#5D4037" stroke-width="3"/>
+<g stroke="#22213A" stroke-width="3.5" stroke-linejoin="round" stroke-linecap="round"><ellipse cx="100" cy="110" rx="46" ry="10" fill="#A1887F" stroke-width="3"/><path d="M74 108c0-30 10-46 26-46s26 16 26 46z" fill="#A1887F" stroke-width="3"/><path d="M90 62l10 12 10-12" fill="none" stroke-width="2.5"/><path d="M76 100h48" fill="none" stroke="#5D4037" stroke-width="4"/><path d="M100 86l-6 12h12z" fill="#2E7D32" stroke-width="2"/></g>
+<text font-family="KIRA UI, Arial, sans-serif" font-weight="800" font-size="13" letter-spacing="3" fill="#5D4037"><textPath href="#pys-st-a" startOffset="50%" text-anchor="middle">YELLOWSTONE</textPath></text>
+<text font-family="KIRA UI, Arial, sans-serif" font-weight="700" font-size="11" letter-spacing="3" fill="#00838F"><textPath href="#pys-st-b" startOffset="50%" text-anchor="middle">NATIONAL PARK</textPath></text>
+<path d="M22 100l5-3 5 3-5 3zM168 100l5-3 5 3-5 3z" fill="#5D4037"/>
+</svg>

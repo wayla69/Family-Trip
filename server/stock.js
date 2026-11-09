@@ -16,7 +16,7 @@ const CATS = {   // category → the file types it may be (docs/STOCK-ART.md §2
   stamp: ['svg'], day: ['svg'], landmark: ['svg'], guide: ['svg'],   // guide = a country's passport guide (S8): name + hello {th, en}
   food: ['svg', 'webp'], animal: ['svg', 'webp'], transport: ['svg', 'webp'], culture: ['svg', 'webp'], flag: ['svg', 'webp'], hello: ['svg', 'webp'], money: ['svg', 'webp'],
 };
-const SVG_MAX = 12 * 1024, WEBP_MAX = 12 * 1024, INDEX_MAX = 300 * 1024;
+const SVG_MAX = 12 * 1024, WEBP_MAX = 12 * 1024, INDEX_MAX = 2 * 1024 * 1024;   // read once by the server at boot, never by a phone (sw.js skips it); ~3,500 pictures ≈ 1.5 MB
 const PREFIX = 'stock:';
 
 const empty = () => ({ v: 1, places: {}, items: [] });
@@ -57,7 +57,7 @@ async function lint(dir = DIR) {
   if (!fs.existsSync(dir)) return errs;
   const indexFile = path.join(dir, 'index.json');
   if (!fs.existsSync(indexFile)) { bad('index.json is missing'); return errs; }
-  if (fs.statSync(indexFile).size > INDEX_MAX) bad(`index.json is over ${INDEX_MAX / 1024} KB — split it by country`);
+  if (fs.statSync(indexFile).size > INDEX_MAX) bad(`index.json is over ${INDEX_MAX / 1024 / 1024} MB — split it by country`);
   let idx;
   try { idx = JSON.parse(fs.readFileSync(indexFile, 'utf8')); } catch (e) { bad('index.json is not JSON: ' + e.message); return errs; }
   if (idx.v !== 1) bad('index.json: v must be 1');

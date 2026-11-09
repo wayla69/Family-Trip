@@ -1,0 +1,10 @@
+<svg viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+<defs><path id="csh-st-a" d="M 38 100 A 62 62 0 0 1 162 100"/><path id="csh-st-b" d="M 30 106 A 70 70 0 0 0 170 106"/></defs>
+<circle cx="100" cy="100" r="96" fill="#FFF7F2" stroke="#6A1B9A" stroke-width="5" stroke-dasharray="7 5"/>
+<circle cx="100" cy="100" r="84" fill="none" stroke="#6A1B9A" stroke-width="3"/>
+<circle cx="100" cy="100" r="54" fill="#F3E5F5" stroke="#6A1B9A" stroke-width="3"/>
+<g stroke="#22213A" stroke-width="3.5" stroke-linejoin="round" stroke-linecap="round"><g transform="translate(100 116) rotate(-40)"><path d="M0 0c-14-20-12-44 0-56 12 12 14 36 0 56z" fill="#FFFFFF" stroke-width="3"/></g><g transform="translate(100 116) rotate(-15)"><path d="M0 0c-14-20-12-44 0-56 12 12 14 36 0 56z" fill="#FFFFFF" stroke-width="3"/></g><g transform="translate(100 116) rotate(15)"><path d="M0 0c-14-20-12-44 0-56 12 12 14 36 0 56z" fill="#FFFFFF" stroke-width="3"/></g><g transform="translate(100 116) rotate(40)"><path d="M0 0c-14-20-12-44 0-56 12 12 14 36 0 56z" fill="#FFFFFF" stroke-width="3"/></g><path d="M100 116c-4-20-2-36 0-44 2 8 4 24 0 44z" fill="#F8BBD0" stroke-width="2"/><path d="M100 118v24" fill="none" stroke="#6D4C41" stroke-width="4"/></g>
+<text font-family="KIRA UI, Arial, sans-serif" font-weight="800" font-size="15" letter-spacing="3" fill="#6A1B9A"><textPath href="#csh-st-a" startOffset="50%" text-anchor="middle">SHANGHAI</textPath></text>
+<text font-family="KIRA UI, Arial, sans-serif" font-weight="700" font-size="11" letter-spacing="3" fill="#00838F"><textPath href="#csh-st-b" startOffset="50%" text-anchor="middle">CHINA</textPath></text>
+<path d="M22 100l5-3 5 3-5 3zM168 100l5-3 5 3-5 3z" fill="#6A1B9A"/>
+</svg>

@@ -1,0 +1,10 @@
+<svg viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+<defs><path id="kbs-st-a" d="M 38 100 A 62 62 0 0 1 162 100"/><path id="kbs-st-b" d="M 30 106 A 70 70 0 0 0 170 106"/></defs>
+<circle cx="100" cy="100" r="96" fill="#FFF7F2" stroke="#0277BD" stroke-width="5" stroke-dasharray="7 5"/>
+<circle cx="100" cy="100" r="84" fill="none" stroke="#0277BD" stroke-width="3"/>
+<circle cx="100" cy="100" r="54" fill="#E1F5FE" stroke="#0277BD" stroke-width="3"/>
+<g stroke="#22213A" stroke-width="3.5" stroke-linejoin="round" stroke-linecap="round"><path d="M50 126c16-10 34 6 50 0s34-10 50 0" fill="none" stroke="#1E88E5" stroke-width="5"/><rect x="122" y="80" width="14" height="40" rx="2" fill="#E53935" stroke-width="3"/><rect x="120" y="72" width="18" height="10" rx="2" fill="#FFF59D" stroke-width="2.5"/><path d="M64 70c10-10 22-10 28 0 6-10 18-10 28 0-10-4-18-2-28 6-10-8-18-10-28-6z" fill="#FFFFFF" stroke-width="2.5"/></g>
+<text font-family="KIRA UI, Arial, sans-serif" font-weight="800" font-size="19" letter-spacing="3" fill="#0277BD"><textPath href="#kbs-st-a" startOffset="50%" text-anchor="middle">BUSAN</textPath></text>
+<text font-family="KIRA UI, Arial, sans-serif" font-weight="700" font-size="11" letter-spacing="3" fill="#F57C00"><textPath href="#kbs-st-b" startOffset="50%" text-anchor="middle">KOREA</textPath></text>
+<path d="M22 100l5-3 5 3-5 3zM168 100l5-3 5 3-5 3z" fill="#0277BD"/>
+</svg>

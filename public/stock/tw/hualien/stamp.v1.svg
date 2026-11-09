@@ -1,0 +1,10 @@
+<svg viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+<defs><path id="thl-st-a" d="M 38 100 A 62 62 0 0 1 162 100"/><path id="thl-st-b" d="M 30 106 A 70 70 0 0 0 170 106"/></defs>
+<circle cx="100" cy="100" r="96" fill="#FFF7F2" stroke="#0277BD" stroke-width="5" stroke-dasharray="7 5"/>
+<circle cx="100" cy="100" r="84" fill="none" stroke="#0277BD" stroke-width="3"/>
+<circle cx="100" cy="100" r="54" fill="#E1F5FE" stroke="#0277BD" stroke-width="3"/>
+<g stroke="#22213A" stroke-width="3.5" stroke-linejoin="round" stroke-linecap="round"><path d="M54 136V60l18 6v70zM146 136V60l-18 6v70z" fill="#ECEFF1" stroke-width="3"/><path d="M60 80l8 6M60 104l8 4M140 90l-8 4M140 116l-8 4" fill="none" stroke="#B0BEC5" stroke-width="2"/><path d="M72 134c10-8 46-8 56 0" fill="none" stroke="#4FC3F7" stroke-width="4"/><path d="M86 92c8-8 20-8 28 0l10-6-4 8 4 6-10-4c-8 6-20 6-28-4z" fill="#1A237E" stroke-width="2"/><ellipse cx="98" cy="96" rx="6" ry="3" fill="#FFFFFF" stroke="none"/></g>
+<text font-family="KIRA UI, Arial, sans-serif" font-weight="800" font-size="19" letter-spacing="3" fill="#0277BD"><textPath href="#thl-st-a" startOffset="50%" text-anchor="middle">HUALIEN</textPath></text>
+<text font-family="KIRA UI, Arial, sans-serif" font-weight="700" font-size="11" letter-spacing="3" fill="#546E7A"><textPath href="#thl-st-b" startOffset="50%" text-anchor="middle">TAROKO</textPath></text>
+<path d="M22 100l5-3 5 3-5 3zM168 100l5-3 5 3-5 3z" fill="#0277BD"/>
+</svg>

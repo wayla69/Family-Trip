@@ -1,0 +1,10 @@
+<svg viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+<defs><path id="ema-st-a" d="M 38 100 A 62 62 0 0 1 162 100"/><path id="ema-st-b" d="M 30 106 A 70 70 0 0 0 170 106"/></defs>
+<circle cx="100" cy="100" r="96" fill="#FFF7F2" stroke="#C62828" stroke-width="5" stroke-dasharray="7 5"/>
+<circle cx="100" cy="100" r="84" fill="none" stroke="#C62828" stroke-width="3"/>
+<circle cx="100" cy="100" r="54" fill="#FFEBEE" stroke="#C62828" stroke-width="3"/>
+<g stroke="#22213A" stroke-width="3.5" stroke-linejoin="round" stroke-linecap="round"><path d="M124 136V70" fill="none" stroke="#6D4C41" stroke-width="5"/><circle cx="124" cy="66" r="22" fill="#43A047" stroke-width="3"/><circle cx="114" cy="60" r="4" fill="#E53935" stroke-width="2"/><circle cx="130" cy="56" r="4" fill="#E53935" stroke-width="2"/><circle cx="134" cy="74" r="4" fill="#E53935" stroke-width="2"/><circle cx="118" cy="76" r="4" fill="#E53935" stroke-width="2"/><ellipse cx="86" cy="110" rx="16" ry="24" fill="#6D4C41" stroke-width="3"/><circle cx="86" cy="80" r="13" fill="#6D4C41" stroke-width="3"/><circle cx="78" cy="70" r="5" fill="#6D4C41" stroke-width="2.5"/><path d="M98 98l18-20" fill="none" stroke="#6D4C41" stroke-width="8"/><path d="M80 132v6M92 132v6" fill="none" stroke="#6D4C41" stroke-width="6"/></g>
+<text font-family="KIRA UI, Arial, sans-serif" font-weight="800" font-size="19" letter-spacing="3" fill="#C62828"><textPath href="#ema-st-a" startOffset="50%" text-anchor="middle">MADRID</textPath></text>
+<text font-family="KIRA UI, Arial, sans-serif" font-weight="700" font-size="11" letter-spacing="3" fill="#F9A825"><textPath href="#ema-st-b" startOffset="50%" text-anchor="middle">ESPAÑA</textPath></text>
+<path d="M22 100l5-3 5 3-5 3zM168 100l5-3 5 3-5 3z" fill="#C62828"/>
+</svg>
