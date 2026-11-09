@@ -1,0 +1,7 @@
+<svg viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+<rect x="8" y="8" width="184" height="184" rx="34" fill="#FFFDF7" stroke="#00796B" stroke-width="5" stroke-dasharray="8 5"/>
+<rect x="22" y="22" width="156" height="156" rx="24" fill="none" stroke="#00796B" stroke-width="3"/>
+<g stroke="#22213A" stroke-width="3.5" stroke-linejoin="round" stroke-linecap="round"><path d="M44 128l34-50 16 16 24-34 38 68z" fill="#4DB6AC"/><path d="M118 60l10 14-8 4-6-6-6 6-6-4z" fill="#fff" stroke-width="3"/><g transform="translate(66 66) scale(0.9)"><g transform="rotate(0) translate(0 -14)"><circle cx="0" cy="0" r="11" fill="#FCE4EC" stroke-width="3"/></g><g transform="rotate(72) translate(0 -14)"><circle cx="0" cy="0" r="11" fill="#FCE4EC" stroke-width="3"/></g><g transform="rotate(144) translate(0 -14)"><circle cx="0" cy="0" r="11" fill="#FCE4EC" stroke-width="3"/></g><g transform="rotate(216) translate(0 -14)"><circle cx="0" cy="0" r="11" fill="#FCE4EC" stroke-width="3"/></g><g transform="rotate(288) translate(0 -14)"><circle cx="0" cy="0" r="11" fill="#FCE4EC" stroke-width="3"/></g><circle cx="0" cy="0" r="7" fill="#FFD54A" stroke-width="3"/></g></g>
+<text x="100" y="166" text-anchor="middle" font-family="KIRA UI, Arial, sans-serif" font-weight="800" font-size="20" letter-spacing="4" fill="#00796B">TAIWAN</text>
+<g fill="#FFF3E0" stroke="#22213A" stroke-width="2"><circle cx="44" cy="46" r="6"/><circle cx="156" cy="46" r="6"/></g>
+</svg>

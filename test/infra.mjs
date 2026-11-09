@@ -250,8 +250,9 @@ if (process.env.BASE) {
   const s2 = C.toSeed(plan, [], { art: false, stock: unapproved }), s3 = C.toSeed(plan, [], { art: false }), s4 = C.toSeed(plan, [], { stock: idx });
   ok(!s2.theme.artDays && !s2.passport.stamps && !s3.theme.artDays && s3.passport.style.crest === '' && !s4.theme.artDays && !s4.stock,
     'stock match: unapproved pictures are never picked; no index or a book with its own art → nothing from the library');
-  const other = { ...plan, place: { th: 'ปารีส', en: 'Paris' }, title: { th: 'ปารีส', en: 'Paris' }, days: plan.days.map((d) => ({ ...d, title: { th: 'ปารีส', en: 'Paris' }, sleep: { th: 'ปารีส', en: 'Paris' }, planned: [], plan: [], moving: { th: '', en: '' } })) };
-  ok(!C.toSeed(other, [], { art: false, stock: idx }).theme.artDays, 'stock match: a city the library does not have gets nothing (no Tokyo pictures in a Paris book)');
+  const other = { ...plan, place: { th: 'เรคยาวิก', en: 'Reykjavik' }, title: { th: 'เรคยาวิก', en: 'Reykjavik' }, days: plan.days.map((d) => ({ ...d, title: { th: 'เรคยาวิก', en: 'Reykjavik' }, sleep: { th: 'เรคยาวิก', en: 'Reykjavik' }, planned: [], plan: [], moving: { th: '', en: '' } })) };
+  const jpOnly = { ...idx, places: Object.fromEntries(Object.entries(idx.places).filter(([k]) => k.startsWith('jp'))), items: idx.items.filter((it) => it.id.startsWith('jp')) };   // a slice that stays true as the library grows
+  ok(!C.toSeed(other, [], { art: false, stock: jpOnly }).theme.artDays, 'stock match: a city the library does not have gets nothing (no Tokyo pictures in a Reykjavik book)');
   const withMap = { ...plan, passport: { ...(plan.passport || {}), map: { title: { th: 'แผนที่', en: 'Map' }, sea: { th: 'ทะเล', en: 'Sea' }, stops: [
     { k: 'tower', e: '🗼', th: 'โตเกียวทาวเวอร์', en: 'Tokyo Tower', x: 40, y: 40 }, { k: 'hotel', e: '🛏️', th: 'โรงแรม', en: 'Our hotel', x: 60, y: 60 },
     { k: 'own', e: '🏯', th: 'ปราสาท', en: 'A castle', x: 20, y: 20, art: '/art/x.svg' }], days: [['tower'], ['hotel'], ['own']] } } };

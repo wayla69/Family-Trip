@@ -1,0 +1,10 @@
+<svg viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+<defs><path id="ttp-st-a" d="M 38 100 A 62 62 0 0 1 162 100"/><path id="ttp-st-b" d="M 30 106 A 70 70 0 0 0 170 106"/></defs>
+<circle cx="100" cy="100" r="96" fill="#FFF7F2" stroke="#D84315" stroke-width="5" stroke-dasharray="7 5"/>
+<circle cx="100" cy="100" r="84" fill="none" stroke="#D84315" stroke-width="3"/>
+<circle cx="100" cy="100" r="54" fill="#FFF3E0" stroke="#D84315" stroke-width="3"/>
+<g stroke="#22213A" stroke-width="3.5" stroke-linejoin="round" stroke-linecap="round"><path d="M86 140l4-12h20l4 12z" fill="#4DB6AC"/><path d="M86 128l4-12h20l4 12z" fill="#4DB6AC"/><path d="M86 116l4-12h20l4 12z" fill="#4DB6AC"/><path d="M86 104l4-12h20l4 12z" fill="#4DB6AC"/><path d="M86 92l4-12h20l4 12z" fill="#4DB6AC"/><path d="M86 80l4-12h20l4 12z" fill="#4DB6AC"/><rect x="96" y="56" width="8" height="16" fill="#4DB6AC"/><path d="M100 56v-10" fill="none"/><rect x="60" y="140" width="80" height="6" rx="2" fill="#00796B"/></g>
+<text font-family="KIRA UI, Arial, sans-serif" font-weight="800" font-size="19" letter-spacing="3" fill="#D84315"><textPath href="#ttp-st-a" startOffset="50%" text-anchor="middle">TAIPEI</textPath></text>
+<text font-family="KIRA UI, Arial, sans-serif" font-weight="700" font-size="11" letter-spacing="3" fill="#00796B"><textPath href="#ttp-st-b" startOffset="50%" text-anchor="middle">TAIWAN</textPath></text>
+<path d="M22 100l5-3 5 3-5 3zM168 100l5-3 5 3-5 3z" fill="#D84315"/>
+</svg>

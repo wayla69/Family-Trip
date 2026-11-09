@@ -1,0 +1,10 @@
+<svg viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+<defs><path id="ssg-st-a" d="M 38 100 A 62 62 0 0 1 162 100"/><path id="ssg-st-b" d="M 30 106 A 70 70 0 0 0 170 106"/></defs>
+<circle cx="100" cy="100" r="96" fill="#FFF7F2" stroke="#EF3340" stroke-width="5" stroke-dasharray="7 5"/>
+<circle cx="100" cy="100" r="84" fill="none" stroke="#EF3340" stroke-width="3"/>
+<circle cx="100" cy="100" r="54" fill="#F3E5F5" stroke="#EF3340" stroke-width="3"/>
+<g stroke="#22213A" stroke-width="3.5" stroke-linejoin="round" stroke-linecap="round"><rect x="70" y="128" width="60" height="14" rx="3" fill="#B0BEC5"/><path d="M86 128c-4-26 2-44 14-50 12 6 18 24 14 50z" fill="#ECEFF1"/><circle cx="100" cy="70" r="16" fill="#ECEFF1"/><path d="M86 66c-6-10 2-20 12-18M114 66c6-10-2-20-12-18" fill="none" stroke-width="3"/><path d="M114 74c14 2 22 14 24 26" fill="none" stroke="#64B5F6" stroke-width="4"/></g>
+<text font-family="KIRA UI, Arial, sans-serif" font-weight="800" font-size="15" letter-spacing="3" fill="#EF3340"><textPath href="#ssg-st-a" startOffset="50%" text-anchor="middle">SINGAPORE</textPath></text>
+<text font-family="KIRA UI, Arial, sans-serif" font-weight="700" font-size="11" letter-spacing="3" fill="#00838F"><textPath href="#ssg-st-b" startOffset="50%" text-anchor="middle">LION CITY</textPath></text>
+<path d="M22 100l5-3 5 3-5 3zM168 100l5-3 5 3-5 3z" fill="#EF3340"/>
+</svg>

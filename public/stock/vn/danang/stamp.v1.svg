@@ -1,0 +1,10 @@
+<svg viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+<defs><path id="vdn-st-a" d="M 38 100 A 62 62 0 0 1 162 100"/><path id="vdn-st-b" d="M 30 106 A 70 70 0 0 0 170 106"/></defs>
+<circle cx="100" cy="100" r="96" fill="#FFF7F2" stroke="#DA251D" stroke-width="5" stroke-dasharray="7 5"/>
+<circle cx="100" cy="100" r="84" fill="none" stroke="#DA251D" stroke-width="3"/>
+<circle cx="100" cy="100" r="54" fill="#FFF8E1" stroke="#DA251D" stroke-width="3"/>
+<g stroke="#22213A" stroke-width="3.5" stroke-linejoin="round" stroke-linecap="round"><path d="M50 92c30-14 70-14 100 0" fill="none" stroke="#FFD54A" stroke-width="9"/><path d="M50 92c30-14 70-14 100 0" fill="none" stroke="#22213A" stroke-width="2.5"/><path d="M56 146c-2-20 0-34 2-42l-4-16c0-4 4-6 6-2l3 10-1-14c0-5 6-5 7 0l1 13 1-15c0-5 7-5 7 0v15l2-12c1-5 7-4 6 1l-2 17c2 14 3 28 1 46z" fill="#B0BEC5"/><path d="M112 146c-2-20 0-34 2-42l-4-16c0-4 4-6 6-2l3 10-1-14c0-5 6-5 7 0l1 13 1-15c0-5 7-5 7 0v15l2-12c1-5 7-4 6 1l-2 17c2 14 3 28 1 46z" fill="#B0BEC5"/></g>
+<text font-family="KIRA UI, Arial, sans-serif" font-weight="800" font-size="19" letter-spacing="3" fill="#DA251D"><textPath href="#vdn-st-a" startOffset="50%" text-anchor="middle">DA NANG</textPath></text>
+<text font-family="KIRA UI, Arial, sans-serif" font-weight="700" font-size="11" letter-spacing="3" fill="#C9A227"><textPath href="#vdn-st-b" startOffset="50%" text-anchor="middle">HOI AN</textPath></text>
+<path d="M22 100l5-3 5 3-5 3zM168 100l5-3 5 3-5 3z" fill="#DA251D"/>
+</svg>
