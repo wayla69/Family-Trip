@@ -1141,8 +1141,6 @@ section.pg.cover{display:flex}.cv{position:relative;flex:1;min-height:1000px;pad
 .tpo .rpe{font-size:20px;line-height:1}
 section.pg .facts{margin:6px 0 16px}
 section.pg .journey{margin:0 0 14px;padding:10px 0 6px;flex-wrap:wrap;row-gap:12px;overflow:visible}section.pg .journey>*::after{display:none}
-.pg.numbers .journey:has(>:nth-child(10)) .art{width:40px;height:40px}.pg.numbers .journey:has(>:nth-child(10))>*{width:52px}   /* a long trip's strip in two short rows */
-.pg.numbers:has(.journey>:nth-child(10)) .pmap{max-width:420px}
 .pmap{max-width:560px;margin:0 auto 14px}.pmap .walkers img{height:60px}.pmap .walkers img.mika{height:46px}
 section.pg h4{font-size:14px;color:var(--accent);margin:10px 0 6px}
 .pstays{margin:0;padding-left:20px;font-size:14px}.pstays li{padding:3px 0}
@@ -2528,3 +2526,16 @@ section.pg .dstamps.pst.c3 b,section.pg .dstamps.pst.c4 b{font-size:16px}section
 .bed b{display:block;font-size:14.5px;font-weight:800;line-height:1.2;color:var(--kink,var(--ink))}.bed small{display:block;font-size:11.5px;color:var(--muted);line-height:1.25;margin-top:1px}
 .bed .nights{display:inline-block;margin-top:4px;font-size:11.5px;font-weight:700;color:color-mix(in srgb,var(--kc,var(--accent)) 75%,#000)}
 .pg.numbers .bedsh{margin:14px 0 4px}
+/* the numbers page: the trip as a line of towns */
+.proute{display:flex;flex-wrap:wrap;align-items:center;gap:6px 6px;margin:2px 0 16px}
+.proute .rt{padding:5px 12px;border-radius:999px;font-size:13.5px;font-weight:700;background:color-mix(in srgb,var(--kc,var(--accent)) 14%,#fff);color:color-mix(in srgb,var(--kc,var(--accent)) 70%,#000)}
+.proute .rt.home{background:#fff;border:2px dashed var(--rule);color:var(--ink)}.proute i{font-style:normal;color:var(--muted);font-size:13px}
+/* the back cover fills its sheet */
+@media print{section.pg.back{min-height:266mm}}
+.pg.back .bk{display:flex;flex-direction:column;align-items:center;gap:6px}
+.pg.back .bk .cast .who{height:190px}.pg.back .bk .cast .who.mika{height:140px}
+.pg.back .bkt{font-size:24px;font-weight:800;margin:6px 0 0;color:var(--kink,var(--ink))}.pg.back .bkd{margin:0;color:var(--muted);font-size:15px}
+.pg.back .bkart{display:flex;flex-wrap:wrap;justify-content:center;gap:10px;margin:22px 0 10px}.pg.back .bkart .art{width:56px;height:56px;border-radius:50%;background:#fff}.pg.back .bkart .art.emo{display:grid;place-items:center;font-size:28px}
+.pg.back .bknext{font-size:20px;font-weight:800;color:var(--k5,var(--accent));margin:10px 0 18px}
+/* a day's moments by the part of the day */
+.tl.parts time{font-size:12px;font-weight:700;letter-spacing:.02em;color:var(--accent)}.tl.parts li.same{padding-top:2px}

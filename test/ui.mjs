@@ -1048,8 +1048,10 @@ const T = 'hk-macau-2026';
     const vpP = page.viewportSize(); await page.setViewportSize({ width: 1000, height: 1400 }); await page.emulateMedia({ media: 'print' });   // server/pdf.js prints at 1000 px
     const wide = await page.evaluate(() => [...document.querySelectorAll('.pg, .pg .journey, .pg .dstamps')].filter((e) => e.scrollWidth > e.clientWidth + 1).map((e) => e.className));
     const txt = await page.locator('.kbook').textContent();
+    const backH = await page.evaluate(() => document.querySelector('.pg.back').getBoundingClientRect().height);
     await page.emulateMedia({ media: 'screen' }); await page.setViewportSize(vpP);
-    ok(!wide.length && !/★|รีวิว|reviews|Airbnb|2-Bedroom|ห้องนอน/.test(txt) && await page.locator('.pg.numbers .beds .bed').count() === 8 && await page.locator('.pg.ppp.ppfull .dstamps.c4').count() === 2,
+    ok(!wide.length && !/★|รีวิว|reviews|Airbnb|2-Bedroom|ห้องนอน/.test(txt) && await page.locator('.pg.numbers .beds .bed').count() === 8 && await page.locator('.pg.ppp.ppfull .dstamps.c4').count() === 2
+      && !/nothing recorded|ไม่มีบันทึก/.test(txt) && await page.locator('.pg.numbers .proute .rt').count() >= 9 && await page.locator('.pg.numbers .journey').count() === 0 && backH > 900,
       `printed book: nothing wider than the sheet (${wide.join(', ')}), where we slept as 8 cards with no scores, the stamps fill their page`);
     const pr = await page.request.get(`${BASE}/api/b/pdf/big-hop-2027`, { timeout: 180000 }), pb = await pr.body();
     const pages = (pb.toString('latin1').match(/\/Type\s*\/Page[^s]/g) || []).length;
