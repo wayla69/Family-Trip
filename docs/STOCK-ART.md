@@ -64,7 +64,7 @@
 | **R เส้นทาง** | `r.scenic-train`, `r.river-cruise`, `r.campervan`, `r.ferry`, `r.cable-car`, `r.road-trip` | ภาพประจำวันของวันเดินทาง |
 | **C ประเทศ** | `jp.food.ramen`, `ch.animal.cow` | ทุกเมืองในประเทศ และเมืองที่ไม่มีชุดของตัวเอง |
 | **M เมือง** | `jp-tokyo.landmark.tower` | เมืองในรายชื่อ §3 |
-| **P สวนสนุก/จุดใหญ่** | `p.disney-paris` (ภาพสวนแบบทั่วไป ห้ามใช้ตัวละคร) | สวนสนุกหรือจุดที่เป็นทั้งวัน (เช่น ยุงเฟรา, แลปแลนด์) |
+| **P สวนสนุก/จุดใหญ่** | `p-disney-paris.day.castle` (ภาพสวนแบบทั่วไป ห้ามใช้ตัวละคร) | สวนสนุกหรือจุดที่เป็นทั้งวัน (เช่น ยุงเฟรา, แลปแลนด์) |
 
 ### 2.2 หมวดและจำนวนต่อชั้น
 
@@ -95,7 +95,7 @@
 
 ### 2.3 รูปแบบ id
 ```
-<scope>.<cat>.<slug>        scope = g | t | r | p | <iso2> | <iso2>-<city>
+<scope>.<cat>[.<slug>]      scope = g | t | r | <iso2> | <iso2>-<city> | p-<place>
 jp.food.ramen               jp-tokyo.landmark.skytree
 fr-paris.stamp              tr-cappadocia.day.balloons
 ```
@@ -318,20 +318,21 @@ SVG ทุกไฟล์ต้องผ่าน `svgOf` ใน `server/bookart
 
 ### 5.4 เวอร์ชัน
 - ชื่อไฟล์มี `.vN` · วาดใหม่ = ไฟล์ใหม่ `.v2` แล้วอัปเดต `file` ในดัชนี (id ยังเหมือนเดิม)
-- seed เก็บ **id** ไม่ใช่ path · ฝั่ง client แปลง id → URL ด้วยดัชนีตอนวาดหน้า (`stockUrl(id)`) ภาพในเล่มเก่าจึงได้เวอร์ชันใหม่อัตโนมัติ
+- seed เก็บ **id** ไม่ใช่ path · **server** แปลง `stock:<id>` → URL ตอนส่งเล่ม (`server/stock.js` `maybe()` ใน `/api/b/state` และ `/api/b/seed`, ทำใน S1) โทรศัพท์จึงไม่ต้องมีดัชนี ภาพในเล่มเก่าได้เวอร์ชันใหม่อัตโนมัติ และ hash ของ seed เปลี่ยนตามเมื่อภาพเปลี่ยนเวอร์ชัน · ภาพที่ยังไม่มี `ok`, ถูกถอน หรือไม่มีในดัชนี แปลงเป็น `''` แล้วหน้าเล่มใช้ภาพสำรองตามเดิม
 - ไฟล์เก่าเก็บไว้อย่างน้อยหนึ่งรอบ deploy ให้โทรศัพท์ที่ยังถือดัชนีเก่าโหลดได้
 - seed ที่ใส่ path `/art/...` เอง (HK/AU) ยังทำงานเหมือนเดิม (ใช้ renderer ตัวเดิม ตามกฎ "format changes never rewrite older books")
 
 ### 5.5 การอ้างจาก seed (format 2 ขยาย ไม่เปลี่ยนรูปแบบเดิม)
 ```jsonc
-"theme": { "art": ["stock:jp-tokyo.day.skyline", "stock:jp-tokyo.landmark.sensoji", "…"] },
+"theme": { "art": "/art/day-{n}.svg", "artDays": ["stock:jp-tokyo.day.skyline", "stock:jp-tokyo.landmark.sensoji", "…"] },
 "passport": {
   "style": { "crest": "stock:jp.stamp" },
   "stamps": ["stock:jp-tokyo.stamp", "stock:jp-kyoto.stamp", "stock:jp-osaka.stamp"]   // ใหม่ ไม่บังคับ
 },
 "stock": { "places": ["jp-tokyo", "jp-kyoto", "jp-osaka"], "countries": ["jp"] }   // ใหม่ ไม่บังคับ
 ```
-- คำนำหน้า `stock:` = ภาพจากคลัง · เล่มที่ไม่มีคีย์ `stock` จะทำงานเหมือนเดิมทุกอย่าง
+- คำนำหน้า `stock:` = ภาพจากคลัง ใช้ได้ทุกที่ในเล่ม (theme, passport, info, แผนรายวัน) · เล่มที่ไม่มี `stock:` จะทำงานเหมือนเดิมทุกอย่าง
+- `theme.art` ยังเป็นแม่แบบ path เดียว (`day-{n}`) ตามเดิม · **`theme.artDays[i]`** (ใหม่, S1) = ภาพของวันที่ i ที่ชนะแม่แบบ ช่องที่ว่าง (`''`) ใช้แม่แบบ (`core.js` `dayArt`)
 - `passport.stamps` = ตราประทับหลายดวง (ตราประเทศ + ตราเมือง) ตามลำดับที่เจอในทริป · ถ้าไม่มี ใช้ `style.crest` ดวงเดียวเหมือนเดิม
 - `stock.places` = รายการเมืองของเล่ม ใช้ตัดสินว่าต้องเก็บภาพไหนไว้ในเครื่อง และชุดอีโมจิไหนต้องเสนอให้ครอบครัว
 
@@ -453,7 +454,7 @@ SVG ทุกไฟล์ต้องผ่าน `svgOf` ใน `server/bookart
 | ระยะ | งาน | ผลลัพธ์ | PR |
 |---|---|---|---|
 | **S0 อนุมัติ** | เจ้าของอ่านเอกสารนี้ แก้รายชื่อเมือง ตอบคำถาม §11 | PRD + ADR-12 ใน `ADR.md` | เอกสารนี้ |
-| **S1 โครง** | `public/stock/`, `index.json` เปล่า, `stockUrl()`, cache `mbs-stock`, ยกเว้นใน test/infra, เครื่องมือ `stock:lint`/`stock:sheet` | ยังไม่มีภาพ แต่ระบบพร้อม | 1 |
+| **S1 โครง** ✓ | `public/stock/`, `index.json` เปล่า, `server/stock.js` (แปลง `stock:` ฝั่ง server + lint), `theme.artDays`, `/stock` (cache 1 ปี, 404, ไม่นับในเวอร์ชันแอป), cache `mbs-stock`, `npm run stock:lint` + test/infra (`stock:sheet` ย้ายไป S2 เพราะต้องมีภาพก่อน) | ยังไม่มีภาพ แต่ระบบพร้อม | 1 |
 | **S2 ต้นแบบโตเกียว** | brief → วาด 20 ภาพ + ชั้นประเทศญี่ปุ่น 20 ภาพ → หน้าตรวจ → เจ้าของเลือกภาพต้นแบบ §4.4 | ลายเส้นที่ตกลงกันได้ | 1 |
 | **S3 ต่อเข้าแอป** | matcher ใน plan-to-seed-core, `stock:` ใน renderer (ปก วัน พาสปอร์ตหลายตรา แผนที่ ระบายสี ไทม์ไลน์), bookart วาดเฉพาะที่ขาด, แพ็กอีโมจิประเทศ, test ตาม §7 | เล่มโตเกียวใหม่มีภาพครบทันที | 2–3 |
 | **S4 ชั้น T + R** | ทิวทัศน์ 20 + เส้นทาง 10 | เมืองนอกคลังยังได้ภาพสวย | 1 |

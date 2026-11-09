@@ -8,6 +8,7 @@ const require = createRequire(import.meta.url);
 const { Pool } = require('pg');
 const { migrate, readJournal } = require('../server/migrate.js');
 const storage = require('../server/storage.js');
+const sharp = require('sharp');
 
 let failures = 0;
 const ok = (c, m) => { if (!c) { failures++; console.log('  FAIL', m); } else console.log('  ok  ', m); };
@@ -173,6 +174,77 @@ if (process.env.BASE) {
   const stUp = { ping: async () => {} }, stDown = { ping: async () => { throw new Error('NoSuchBucket'); } };
   const a = await health(pgUp, stDown, false), b = await health(pgUp, stDown, true), c = await health(pgDown, stUp, false), d = await health(pgUp, stUp, true);
   ok(a.ok && !b.ok && /storage/.test(b.why) && !c.ok && /postgres/.test(c.why) && d.ok, 'health: storage down → deploy check ok, full check fails; Postgres down → both fail'); }
+
+// the stock art library (docs/STOCK-ART.md): the shipped index is clean, the lint catches what §6.3 says, stock: ids resolve only when approved
+{ const STOCK = require('../server/stock.js');
+  const errs = await STOCK.lint();
+  ok(!errs.length, `stock library lint clean (${STOCK.read().items.length} pictures)` + (errs.length ? ' — ' + errs.slice(0, 8).join(' · ') : ''));
+  const sw = fs.readFileSync(path.resolve('public/sw.js'), 'utf8');
+  ok(/const STOCK = 'mbs-stock'/.test(sw) && /k !== STOCK/.test(sw) && !/'\/stock\//.test(sw.split('const SHELL_TIMEOUT')[0]),
+    'sw.js: stock pictures have their own cache that a deploy keeps, and none is precached');
+
+  const d = fs.mkdtempSync(path.join(os.tmpdir(), 'mb-stock-'));
+  const svg = (vb, extra = '') => `<svg xmlns="http://www.w3.org/2000/svg" viewBox="${vb}"><circle cx="100" cy="100" r="90" fill="#E4573D"/>${extra}</svg>`;
+  fs.mkdirSync(path.join(d, 'jp/tokyo'), { recursive: true });
+  fs.writeFileSync(path.join(d, 'jp/tokyo/stamp.v1.svg'), svg('0 0 200 200', '<text x="10" y="20">TOKYO</text>'));
+  fs.writeFileSync(path.join(d, 'jp/tokyo/landmark-skytree.v1.svg'), svg('0 0 240 240'));
+  fs.writeFileSync(path.join(d, 'jp/tokyo/landmark-bad.v1.svg'), svg('0 0 240 240', '<script>alert(1)</script>'));
+  fs.writeFileSync(path.join(d, 'jp/tokyo/landmark-text.v1.svg'), svg('0 0 100 100', '<text>Hi</text>'));
+  await sharp({ create: { width: 160, height: 160, channels: 4, background: { r: 0, g: 0, b: 0, alpha: 0 } } }).webp().toFile(path.join(d, 'jp/food-ramen.v1.webp'));
+  await sharp({ create: { width: 200, height: 200, channels: 3, background: '#fff' } }).webp().toFile(path.join(d, 'jp/food-sushi.v1.webp'));
+  fs.writeFileSync(path.join(d, 'jp/stray.v1.svg'), svg('0 0 240 240'));
+  const nm = (en) => ({ th: 'ไทย', en });
+  const good = {
+    v: 1,
+    places: { 'jp-tokyo': { country: 'jp', wave: 1, name: nm('Tokyo'), tz: 'Asia/Tokyo', ll: [35.68, 139.76], alias: ['tokyo'], colors: { k1: '#E4573D', k2: '#2F5D8C', k3: '#F6C6D0' } } },
+    items: [
+      { id: 'jp-tokyo.stamp', cat: 'stamp', file: 'jp/tokyo/stamp.v1.svg', name: nm('Tokyo'), kw: ['tokyo', 'โตเกียว'], ok: '2026-11-09' },
+      { id: 'jp-tokyo.landmark.skytree', cat: 'landmark', file: 'jp/tokyo/landmark-skytree.v1.svg', name: nm('Skytree'), kw: ['skytree', 'สกายทรี'] },
+      { id: 'jp.food.ramen', cat: 'food', file: 'jp/food-ramen.v1.webp', name: nm('Ramen'), kw: ['ramen', 'ราเมน'], ok: '2026-11-09' },
+    ],
+  };
+  const write = (idx) => fs.writeFileSync(path.join(d, 'index.json'), JSON.stringify(idx));
+  write(good); fs.renameSync(path.join(d, 'jp/stray.v1.svg'), path.join(d, '..', path.basename(d) + '-stray.svg'));
+  const keep = ['jp/tokyo/landmark-bad.v1.svg', 'jp/tokyo/landmark-text.v1.svg', 'jp/food-sushi.v1.webp'];
+  for (const f of keep) fs.renameSync(path.join(d, f), path.join(d, '..', path.basename(d) + '-' + f.replace(/\//g, '_')));
+  ok(!(await STOCK.lint(d)).length, 'stock lint: a well-formed library passes');
+  for (const f of keep) fs.renameSync(path.join(d, '..', path.basename(d) + '-' + f.replace(/\//g, '_')), path.join(d, f));
+  fs.renameSync(path.join(d, '..', path.basename(d) + '-stray.svg'), path.join(d, 'jp/stray.v1.svg'));
+  write({ ...good, places: { ...good.places, 'Tokyo!': { country: 'JP', wave: 4, name: { th: '' }, tz: 'Mars/Base', alias: [] } }, items: [...good.items,
+    { id: 'jp-tokyo.landmark.bad', cat: 'landmark', file: 'jp/tokyo/landmark-bad.v1.svg', name: nm('Bad'), kw: ['a', 'b'] },
+    { id: 'jp-tokyo.landmark.text', cat: 'landmark', file: 'jp/tokyo/landmark-text.v1.svg', name: nm('Text'), kw: ['a', 'b'] },
+    { id: 'jp.food.sushi', cat: 'food', file: 'jp/food-sushi.v1.webp', name: nm('Sushi'), kw: ['a', 'b'] },
+    { id: 'jp.food.ramen', cat: 'food', file: 'jp/food-ramen.v1.webp', name: nm('Ramen'), kw: ['ramen', 'x'] },
+    { id: 'jp-osaka.stamp', cat: 'stamp', file: 'jp/osaka/stamp.v1.svg', name: nm('Osaka'), kw: ['osaka'] },
+    { id: 'jp.food.tea', cat: 'drink', file: 'jp/food-tea.v1.png', name: nm('Tea'), kw: ['a', 'b'] },
+  ] });
+  const e = (await STOCK.lint(d)).join('\n');
+  const want = [/place Tokyo!: bad key/, /Tokyo!: country/, /Tokyo!: wave/, /unknown timezone/, /landmark-bad\.v1\.svg is not a safe SVG/, /landmark\.text: only a stamp may carry text/,
+    /landmark\.text: viewBox must be "0 0 240 240"/, /food-sushi\.v1\.webp must be 160×160/, /food-sushi\.v1\.webp needs a transparent background/, /jp\.food\.ramen: duplicate id/,
+    /jp-osaka\.stamp: city jp-osaka is not in places/, /jp-osaka\.stamp: needs at least two keywords/, /jp\.food\.tea: cat must be "food"/, /jp\.food\.tea: file must look like/, /file jp\/stray\.v1\.svg is not in index\.json/];
+  const miss = want.filter((re) => !re.test(e));
+  ok(!miss.length, `stock lint catches bad keys, unsafe SVG, text, viewBox, size, alpha, duplicates, unknown city, keywords, category, file name, stray files` + (miss.length ? ' — missed: ' + miss.join(' ') : ''));
+  write(good);
+  const lib = STOCK.reload(d);
+  ok(lib.size === 2 && STOCK.url('jp-tokyo.stamp') === '/stock/jp/tokyo/stamp.v1.svg' && STOCK.url('jp-tokyo.landmark.skytree') === '', 'stock: only approved pictures resolve');
+  const theme = { accent: '#1F3A5F', art: '/art/hk/day-{n}.svg', artDays: ['stock:jp-tokyo.stamp', 'stock:jp-tokyo.landmark.skytree', 'stock:nope.x'] };
+  const out = STOCK.maybe(theme);
+  ok(out.artDays.join('|') === '/stock/jp/tokyo/stamp.v1.svg||' && out.art === theme.art && theme.artDays[0] === 'stock:jp-tokyo.stamp' && STOCK.maybe(null) === null && STOCK.maybe({ a: 'x' }).a === 'x',
+    'stock: ids inside a book resolve to URLs (unapproved/unknown → empty), everything else untouched, the stored seed unchanged');
+  write({ ...good, items: good.items.map((it) => (it.id === 'jp-tokyo.stamp' ? { ...it, file: 'jp/tokyo/stamp.v2.svg' } : it)) });
+  fs.copyFileSync(path.join(d, 'jp/tokyo/stamp.v1.svg'), path.join(d, 'jp/tokyo/stamp.v2.svg'));
+  const tag1 = lib.tag, lib2 = STOCK.reload(d);
+  ok(lib2.tag !== tag1 && STOCK.url('jp-tokyo.stamp') === '/stock/jp/tokyo/stamp.v2.svg', 'stock: a redrawn picture (new file version) changes its URL and the library tag');
+  STOCK.reload();
+  fs.rmSync(d, { recursive: true, force: true });
+}
+// served by the running app: a missing stock file is a 404 (never the app page), the index is not cached for long, nothing needs sign-in
+if (process.env.BASE) {
+  const r = await fetch(process.env.BASE + '/stock/jp/tokyo/nope.v1.svg');
+  ok(r.status === 404 && !/<html/i.test(await r.text()), '/stock: a missing picture is a 404, not the app page');
+  const ix = await fetch(process.env.BASE + '/stock/index.json');
+  ok(ix.status === 200 && /no-cache/.test(ix.headers.get('cache-control') || '') && Array.isArray((await ix.json()).items), '/stock/index.json is served, revalidated each time');
+}
 
 console.log(failures ? `\n${failures} FAILED` : '\nALL PASSED');
 process.exit(failures ? 1 : 0);
