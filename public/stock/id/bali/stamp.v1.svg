@@ -1,0 +1,10 @@
+<svg viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+<defs><path id="ibl-st-a" d="M 38 100 A 62 62 0 0 1 162 100"/><path id="ibl-st-b" d="M 30 106 A 70 70 0 0 0 170 106"/></defs>
+<circle cx="100" cy="100" r="96" fill="#FFF7F2" stroke="#CE1126" stroke-width="5" stroke-dasharray="7 5"/>
+<circle cx="100" cy="100" r="84" fill="none" stroke="#CE1126" stroke-width="3"/>
+<circle cx="100" cy="100" r="54" fill="#E0F2F1" stroke="#CE1126" stroke-width="3"/>
+<g stroke="#22213A" stroke-width="3.5" stroke-linejoin="round" stroke-linecap="round"><circle cx="124" cy="80" r="12" fill="#FFB74D"/><path d="M66 140c4-20 14-30 34-34 20 4 30 14 34 34z" fill="#8D6E63"/><path d="M88 104h24l-4-8h-16z" fill="#3E2723"/><path d="M92 94h16l-4-8h-8z" fill="#3E2723"/><path d="M96 84h8l-4-8h-0z" fill="#3E2723"/><path d="M56 142c14-6 28-6 42 0s28 6 46 0" fill="none" stroke="#4FC3F7" stroke-width="4"/></g>
+<text font-family="KIRA UI, Arial, sans-serif" font-weight="800" font-size="19" letter-spacing="3" fill="#CE1126"><textPath href="#ibl-st-a" startOffset="50%" text-anchor="middle">BALI</textPath></text>
+<text font-family="KIRA UI, Arial, sans-serif" font-weight="700" font-size="11" letter-spacing="3" fill="#00897B"><textPath href="#ibl-st-b" startOffset="50%" text-anchor="middle">INDONESIA</textPath></text>
+<path d="M22 100l5-3 5 3-5 3zM168 100l5-3 5 3-5 3z" fill="#CE1126"/>
+</svg>
