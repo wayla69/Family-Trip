@@ -212,7 +212,7 @@ if (process.env.BASE) {
   fs.renameSync(path.join(d, '..', path.basename(d) + '-stray.svg'), path.join(d, 'jp/stray.v1.svg'));
   write({ ...good, places: { ...good.places, 'Tokyo!': { country: 'JP', wave: 4, name: { th: '' }, tz: 'Mars/Base', alias: [] } }, items: [...good.items,
     { id: 'jp-tokyo.landmark.bad', cat: 'landmark', file: 'jp/tokyo/landmark-bad.v1.svg', name: nm('Bad'), kw: ['a', 'b'] },
-    { id: 'jp-tokyo.landmark.text', cat: 'landmark', file: 'jp/tokyo/landmark-text.v1.svg', name: nm('Text'), kw: ['a', 'b'] },
+    { id: 'jp-tokyo.landmark.text', cat: 'landmark', file: 'jp/tokyo/landmark-text.v1.svg', next: 'jp/tokyo/landmark-text.v2.svg', name: nm('Text'), kw: ['a', 'b'] },
     { id: 'jp.food.sushi', cat: 'food', file: 'jp/food-sushi.v1.webp', name: nm('Sushi'), kw: ['a', 'b'] },
     { id: 'jp.food.ramen', cat: 'food', file: 'jp/food-ramen.v1.webp', name: nm('Ramen'), kw: ['ramen', 'x'] },
     { id: 'jp-osaka.stamp', cat: 'stamp', file: 'jp/osaka/stamp.v1.svg', name: nm('Osaka'), kw: ['osaka'] },
@@ -221,9 +221,9 @@ if (process.env.BASE) {
   const e = (await STOCK.lint(d)).join('\n');
   const want = [/place Tokyo!: bad key/, /Tokyo!: country/, /Tokyo!: wave/, /unknown timezone/, /landmark-bad\.v1\.svg is not a safe SVG/, /landmark\.text: only a stamp may carry text/,
     /landmark\.text: viewBox must be "0 0 240 240"/, /food-sushi\.v1\.webp must be 160×160/, /food-sushi\.v1\.webp needs a transparent background/, /jp\.food\.ramen: duplicate id/,
-    /jp-osaka\.stamp: city jp-osaka is not in places/, /jp-osaka\.stamp: needs at least two keywords/, /jp\.food\.tea: cat must be "food"/, /jp\.food\.tea: file must look like/, /file jp\/stray\.v1\.svg is not in index\.json/];
+    /jp-osaka\.stamp: city jp-osaka is not in places/, /jp-osaka\.stamp: needs at least two keywords/, /jp\.food\.tea: cat must be "food"/, /jp\.food\.tea: file must look like/, /file jp\/stray\.v1\.svg is not in index\.json/, /landmark-text\.v2\.svg is missing/];
   const miss = want.filter((re) => !re.test(e));
-  ok(!miss.length, `stock lint catches bad keys, unsafe SVG, text, viewBox, size, alpha, duplicates, unknown city, keywords, category, file name, stray files` + (miss.length ? ' — missed: ' + miss.join(' ') : ''));
+  ok(!miss.length, `stock lint catches bad keys, unsafe SVG, text, viewBox, size, alpha, duplicates, unknown city, keywords, category, file name, stray files, a missing redraw (next)` + (miss.length ? ' — missed: ' + miss.join(' ') : ''));
   write(good);
   const lib = STOCK.reload(d);
   ok(lib.size === 2 && STOCK.url('jp-tokyo.stamp') === '/stock/jp/tokyo/stamp.v1.svg' && STOCK.url('jp-tokyo.landmark.skytree') === '', 'stock: only approved pictures resolve');

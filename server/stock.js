@@ -92,28 +92,33 @@ async function lint(dir = DIR) {
     if (!Array.isArray(it.kw) || it.kw.filter((w) => typeof w === 'string' && w.trim()).length < 2) bad(`item ${id}: needs at least two keywords (kw)`);
     if (/เช็ค/.test(JSON.stringify(it.name || {}))) bad(`item ${id}: spell เช็ก`);
     if (it.ok !== undefined && !/^\d{4}-\d{2}-\d{2}$/.test(String(it.ok))) bad(`item ${id}: ok must be the approval date YYYY-MM-DD`);
-    const m = FILE_RE.exec(it.file || '');
-    if (!m) { bad(`item ${id}: file must look like dir/name.v1.svg|webp`); continue; }
-    if (!CATS[cat].includes(m[1])) bad(`item ${id}: a ${cat} is a .${CATS[cat].join(' or .')} file`);
-    if (files.has(it.file)) bad(`item ${id}: file ${it.file} used twice`); files.add(it.file);
-    const f = path.join(dir, it.file);
-    if (!fs.existsSync(f)) { bad(`item ${id}: file ${it.file} is missing`); continue; }
-    const size = fs.statSync(f).size;
-    if (m[1] === 'svg') {
-      if (size > SVG_MAX) bad(`item ${id}: ${it.file} is ${Math.round(size / 1024)} KB (max ${SVG_MAX / 1024})`);
-      const text = fs.readFileSync(f, 'utf8');
-      if (!svgOf(text)) bad(`item ${id}: ${it.file} is not a safe SVG (svgOf)`);
-      if (cat !== 'stamp' && /<text[\s>]/i.test(text)) bad(`item ${id}: only a stamp may carry text`);
-      const vb = /viewBox="([^"]+)"/.exec(text), want = cat === 'stamp' ? '0 0 200 200' : '0 0 240 240';
-      if (vb && vb[1].trim().split(/[\s,]+/).join(' ') !== want) bad(`item ${id}: viewBox must be "${want}"`);
-    } else {
-      if (size > WEBP_MAX) bad(`item ${id}: ${it.file} is ${Math.round(size / 1024)} KB (max ${WEBP_MAX / 1024})`);
-      try {
-        const meta = await require('sharp')(f).metadata();
-        if (meta.format !== 'webp') bad(`item ${id}: ${it.file} is not a webp`);
-        if (meta.width !== 160 || meta.height !== 160) bad(`item ${id}: ${it.file} must be 160×160 (is ${meta.width}×${meta.height})`);
-        if (!meta.hasAlpha) bad(`item ${id}: ${it.file} needs a transparent background`);
-      } catch (e) { bad(`item ${id}: ${it.file} unreadable: ${e.message}`); }
+    // `file` = the picture books use; `next` (optional) = a redraw waiting for the owner's review — checked the same way,
+    // shown beside it on the review sheet, never served to a book until it is promoted to `file` (with a fresh `ok`)
+    for (const [key, name] of [['file', it.file], ['next', it.next]]) {
+      if (key === 'next' && it.next === undefined) continue;
+      const m = FILE_RE.exec(name || '');
+      if (!m) { bad(`item ${id}: ${key} must look like dir/name.v1.svg|webp`); continue; }
+      if (!CATS[cat].includes(m[1])) bad(`item ${id}: a ${cat} is a .${CATS[cat].join(' or .')} file`);
+      if (files.has(name)) bad(`item ${id}: file ${name} used twice`); files.add(name);
+      const f = path.join(dir, name);
+      if (!fs.existsSync(f)) { bad(`item ${id}: file ${name} is missing`); continue; }
+      const size = fs.statSync(f).size;
+      if (m[1] === 'svg') {
+        if (size > SVG_MAX) bad(`item ${id}: ${name} is ${Math.round(size / 1024)} KB (max ${SVG_MAX / 1024})`);
+        const text = fs.readFileSync(f, 'utf8');
+        if (!svgOf(text)) bad(`item ${id}: ${name} is not a safe SVG (svgOf)`);
+        if (cat !== 'stamp' && /<text[\s>]/i.test(text)) bad(`item ${id}: only a stamp may carry text`);
+        const vb = /viewBox="([^"]+)"/.exec(text), want = cat === 'stamp' ? '0 0 200 200' : '0 0 240 240';
+        if (vb && vb[1].trim().split(/[\s,]+/).join(' ') !== want) bad(`item ${id}: viewBox must be "${want}"`);
+      } else {
+        if (size > WEBP_MAX) bad(`item ${id}: ${name} is ${Math.round(size / 1024)} KB (max ${WEBP_MAX / 1024})`);
+        try {
+          const meta = await require('sharp')(f).metadata();
+          if (meta.format !== 'webp') bad(`item ${id}: ${name} is not a webp`);
+          if (meta.width !== 160 || meta.height !== 160) bad(`item ${id}: ${name} must be 160×160 (is ${meta.width}×${meta.height})`);
+          if (!meta.hasAlpha) bad(`item ${id}: ${name} needs a transparent background`);
+        } catch (e) { bad(`item ${id}: ${name} unreadable: ${e.message}`); }
+      }
     }
   }
   // every file on disk is named by the index (a stray file would ship unseen)
