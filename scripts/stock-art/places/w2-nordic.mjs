@@ -160,7 +160,7 @@ const items = [
     // a layer cake with cream and strawberries, a row of tiny red-and-white paper flags on toothpicks stuck all round the top, candles
     svg: free(E(120, 200, 90, 16, '#ECEFF1') + R(50, 120, 140, 76, '#FFF8E1', 8) + Lc('M50 146h140M50 172h140', '#F8BBD0', 6) + P('M50 128c10 10 20-10 30 0s20-10 30 0 20-10 30 0 20-10 30 0 20-10 20 0', '#FFFFFF', 3)
       + [70, 96, 144, 170].map((x) => Lc(`M${x} 120v-36`, '#D7A86E', 2) + R(x, 84, 20, 14, '#C8102E', 0, 2) + Lc(`M${x + 6} 84v14M${x} 91h20`, '#FFFFFF', 3)).join('') + [110, 130].map((x) => R(x - 3, 96, 6, 24, '#90CAF9', 2, 2) + P(`M${x} 80c-4 6-4 10 0 14 4-4 4-8 0-14z`, '#FFCA28', 2)).join('') + [[80, 120], [160, 120]].map(([x, y]) => C(x, y, 6, '#E53935', 2)).join('') + face(120, 160, 0.4)) },
-  G('dk', 'bolle', 'เบิลเลอ', 'Bølle', 'ไฮ {name}! เบิลเลอพาเที่ยวเดนมาร์กเอง', 'Hej, {name}! Bølle will show you Denmark', ['harbour porpoise', 'โลมาหัวบาตรท่าเรือ', 'porpoise', 'โลมา', 'sea', 'ทะเล'],
+  G('dk', 'bolle', 'เบิลเลอ', 'Bølle', 'ไฮ {name}! เบิลเลอพาเที่ยวเดนมาร์กเอง', 'Hej, {name}! Bølle will show you Denmark', ['harbour porpoise', 'โลมาหัวบาตรท่าเรือ', 'porpoise', 'โลมา', 'ทะเล'],
     // a harbour porpoise: a round dark-grey head with a pale belly, no beak, a gentle smile, a fin poking up behind and water drops
     P('M150 70l20-40 10 44z', '#546E7A') + C(120, 128, 70, '#607D8B') + P('M70 150c10 40 90 40 100 0-20 10-80 10-100 0z', '#ECEFF1') + [[60, 60], [180, 50], [200, 80]].map(([x, y]) => C(x, y, 6, '#B3E5FC', 2.5)).join('') + face(120, 124, 1.3)),
   G('dk', 'spurv', 'สปูร์ฟ', 'Spurv', 'สปูร์ฟบินมานั่งบนจักรยานของ {name}', 'Spurv flew down to sit on {name}\'s bike', ['sparrow', 'นกกระจอก', 'house sparrow', 'bird', 'นก'],

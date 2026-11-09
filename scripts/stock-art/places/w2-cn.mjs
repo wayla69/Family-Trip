@@ -133,7 +133,7 @@ export default {
   places: {
     cn: { country: 'cn', wave: 2, name: nm('จีน', 'China'), tz: 'Asia/Shanghai', alias: ['china', 'จีน', '中国', 'mainland china', 'จีนแผ่นดินใหญ่'], colors: CN },
     'cn-beijing': { country: 'cn', wave: 2, name: nm('ปักกิ่ง', 'Beijing'), tz: 'Asia/Shanghai', ll: [39.9, 116.4], alias: ['beijing', 'ปักกิ่ง', 'peking', '北京', 'great wall', 'กำแพงเมืองจีน', 'forbidden city', 'พระราชวังต้องห้าม', 'mutianyu', 'badaling', 'hutong', 'หูท่ง', 'pek', 'pkx'], colors: BJ },
-    'cn-shanghai': { country: 'cn', wave: 2, name: nm('เซี่ยงไฮ้', 'Shanghai'), tz: 'Asia/Shanghai', ll: [31.23, 121.47], alias: ['shanghai', 'เซี่ยงไฮ้', '上海', 'the bund', 'เดอะบันด์', 'pudong', 'ผู่ตง', 'yu garden', 'อวี้หยวน', 'zhujiajiao', 'pvg', 'sha'], colors: SH },
+    'cn-shanghai': { country: 'cn', wave: 2, name: nm('เซี่ยงไฮ้', 'Shanghai'), tz: 'Asia/Shanghai', ll: [31.23, 121.47], alias: ['shanghai', 'เซี่ยงไฮ้', '上海', 'the bund', 'เดอะบันด์', 'pudong', 'ผู่ตง', 'yu garden', 'อวี้หยวน', 'zhujiajiao', 'pvg'], colors: SH },
     'cn-chengdu': { country: 'cn', wave: 2, name: nm('เฉิงตูและจิ่วไจ้โกว', 'Chengdu and Jiuzhaigou'), tz: 'Asia/Shanghai', ll: [30.57, 104.07], alias: ['chengdu', 'เฉิงตู', '成都', 'sichuan', 'เสฉวน', 'jiuzhaigou', 'จิ่วไจ้โกว', 'huanglong', 'หวงหลง', 'panda base', 'kuanzhai', 'ctu', 'tfu'], colors: CD },
   },
   items,
