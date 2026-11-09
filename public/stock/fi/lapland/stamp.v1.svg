@@ -1,0 +1,10 @@
+<svg viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+<defs><path id="plp-st-a" d="M 38 100 A 62 62 0 0 1 162 100"/><path id="plp-st-b" d="M 30 106 A 70 70 0 0 0 170 106"/></defs>
+<circle cx="100" cy="100" r="96" fill="#FFF7F2" stroke="#C62828" stroke-width="5" stroke-dasharray="7 5"/>
+<circle cx="100" cy="100" r="84" fill="none" stroke="#C62828" stroke-width="3"/>
+<circle cx="100" cy="100" r="54" fill="#FFEBEE" stroke="#C62828" stroke-width="3"/>
+<g stroke="#22213A" stroke-width="3.5" stroke-linejoin="round" stroke-linecap="round"><rect x="76" y="98" width="48" height="34" fill="#C62828"/><path d="M70 100l30-22 30 22z" fill="#FFFFFF"/><rect x="92" y="112" width="14" height="20" rx="2" fill="#5D4037"/><path d="M50 138h100" fill="none" stroke="#1565C0" stroke-width="3"/><path d="M100 52l3 7 8 1-6 5 2 8-7-4-7 4 2-8-6-5 8-1z" fill="#FFD54A" stroke-width="2"/></g>
+<text font-family="KIRA UI, Arial, sans-serif" font-weight="800" font-size="19" letter-spacing="3" fill="#C62828"><textPath href="#plp-st-a" startOffset="50%" text-anchor="middle">LAPLAND</textPath></text>
+<text font-family="KIRA UI, Arial, sans-serif" font-weight="700" font-size="11" letter-spacing="3" fill="#2E7D32"><textPath href="#plp-st-b" startOffset="50%" text-anchor="middle">ARCTIC CIRCLE</textPath></text>
+<path d="M22 100l5-3 5 3-5 3zM168 100l5-3 5 3-5 3z" fill="#C62828"/>
+</svg>

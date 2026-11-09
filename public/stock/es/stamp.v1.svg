@@ -1,0 +1,7 @@
+<svg viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+<rect x="8" y="8" width="184" height="184" rx="34" fill="#FFFDF7" stroke="#F9A825" stroke-width="5" stroke-dasharray="8 5"/>
+<rect x="22" y="22" width="156" height="156" rx="24" fill="none" stroke="#F9A825" stroke-width="3"/>
+<g stroke="#22213A" stroke-width="3.5" stroke-linejoin="round" stroke-linecap="round"><path d="M100 130L54 84c20-34 72-34 92 0z" fill="#C62828" stroke-width="3"/><path d="M100 130L62.0 80.0" fill="none" stroke="#B71C1C" stroke-width="2"/><path d="M100 130L77.0 72.9" fill="none" stroke="#B71C1C" stroke-width="2"/><path d="M100 130L92.0 68.6" fill="none" stroke="#B71C1C" stroke-width="2"/><path d="M100 130L107.0 68.6" fill="none" stroke="#B71C1C" stroke-width="2"/><path d="M100 130L122.0 72.9" fill="none" stroke="#B71C1C" stroke-width="2"/><path d="M100 130L137.0 80.0" fill="none" stroke="#B71C1C" stroke-width="2"/><circle cx="78" cy="90" r="4" fill="#FFD54A" stroke-width="2"/><circle cx="100" cy="78" r="4" fill="#FFD54A" stroke-width="2"/><circle cx="122" cy="90" r="4" fill="#FFD54A" stroke-width="2"/><circle cx="100" cy="132" r="7" fill="#F48FB1" stroke-width="2.5"/></g>
+<text x="100" y="166" text-anchor="middle" font-family="KIRA UI, Arial, sans-serif" font-weight="800" font-size="20" letter-spacing="4" fill="#F9A825">ESPAÑA</text>
+<g fill="#FFF8E1" stroke="#22213A" stroke-width="2"><circle cx="44" cy="46" r="6"/><circle cx="156" cy="46" r="6"/></g>
+</svg>
