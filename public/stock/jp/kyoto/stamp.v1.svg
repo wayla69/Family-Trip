@@ -1,0 +1,10 @@
+<svg viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+<defs><path id="jky-st-a" d="M 38 100 A 62 62 0 0 1 162 100"/><path id="jky-st-b" d="M 30 106 A 70 70 0 0 0 170 106"/></defs>
+<circle cx="100" cy="100" r="96" fill="#FFF7F2" stroke="#C62828" stroke-width="5" stroke-dasharray="7 5"/>
+<circle cx="100" cy="100" r="84" fill="none" stroke="#C62828" stroke-width="3"/>
+<circle cx="100" cy="100" r="54" fill="#FCE4EC" stroke="#C62828" stroke-width="3"/>
+<g stroke="#22213A" stroke-width="3.5" stroke-linejoin="round" stroke-linecap="round"><path d="M70 76q30-8 60 0l-2 6H72z" fill="#C62828"/><rect x="76" y="84" width="6" height="56" fill="#C62828"/><rect x="118" y="84" width="6" height="56" fill="#C62828"/><path d="M86 140c0-30 6-46 14-50 8 4 14 20 14 50z" fill="#FFFDF7"/><path d="M90 94l2-14 6 10M110 94l-2-14-6 10" fill="#FFFDF7" stroke-width="2.5"/><circle cx="100" cy="100" r="10" fill="#FFFDF7"/><path d="M100 112v10" fill="none" stroke="#E53935" stroke-width="3"/></g>
+<text font-family="KIRA UI, Arial, sans-serif" font-weight="800" font-size="19" letter-spacing="3" fill="#C62828"><textPath href="#jky-st-a" startOffset="50%" text-anchor="middle">KYOTO</textPath></text>
+<text font-family="KIRA UI, Arial, sans-serif" font-weight="700" font-size="11" letter-spacing="3" fill="#6D4C41"><textPath href="#jky-st-b" startOffset="50%" text-anchor="middle">JAPAN</textPath></text>
+<path d="M22 100l5-3 5 3-5 3zM168 100l5-3 5 3-5 3z" fill="#C62828"/>
+</svg>

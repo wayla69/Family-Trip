@@ -1,0 +1,10 @@
+<svg viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+<defs><path id="jhk-st-a" d="M 38 100 A 62 62 0 0 1 162 100"/><path id="jhk-st-b" d="M 30 106 A 70 70 0 0 0 170 106"/></defs>
+<circle cx="100" cy="100" r="96" fill="#FFF7F2" stroke="#7B1FA2" stroke-width="5" stroke-dasharray="7 5"/>
+<circle cx="100" cy="100" r="84" fill="none" stroke="#7B1FA2" stroke-width="3"/>
+<circle cx="100" cy="100" r="54" fill="#EDE7F6" stroke="#7B1FA2" stroke-width="3"/>
+<g stroke="#22213A" stroke-width="3.5" stroke-linejoin="round" stroke-linecap="round"><path d="M58 126c20-6 64-6 84 0" fill="none" stroke="#9575CD" stroke-width="4"/><path d="M58 132c20-6 64-6 84 0" fill="none" stroke="#9575CD" stroke-width="4"/><path d="M58 138c20-6 64-6 84 0" fill="none" stroke="#9575CD" stroke-width="4"/><path d="M58 144c20-6 64-6 84 0" fill="none" stroke="#9575CD" stroke-width="4"/><g transform="translate(100 88)"><path d="M0-24V24M-8-16l8 6 8-6M-8 16l8-6 8 6" fill="none" stroke="#1E88E5" stroke-width="4"/></g><g transform="translate(100 88) rotate(60)"><path d="M0-24V24M-8-16l8 6 8-6M-8 16l8-6 8 6" fill="none" stroke="#1E88E5" stroke-width="4"/></g><g transform="translate(100 88) rotate(120)"><path d="M0-24V24M-8-16l8 6 8-6M-8 16l8-6 8 6" fill="none" stroke="#1E88E5" stroke-width="4"/></g></g>
+<text font-family="KIRA UI, Arial, sans-serif" font-weight="800" font-size="15" letter-spacing="3" fill="#7B1FA2"><textPath href="#jhk-st-a" startOffset="50%" text-anchor="middle">HOKKAIDO</textPath></text>
+<text font-family="KIRA UI, Arial, sans-serif" font-weight="700" font-size="11" letter-spacing="3" fill="#1565C0"><textPath href="#jhk-st-b" startOffset="50%" text-anchor="middle">SAPPORO</textPath></text>
+<path d="M22 100l5-3 5 3-5 3zM168 100l5-3 5 3-5 3z" fill="#7B1FA2"/>
+</svg>
