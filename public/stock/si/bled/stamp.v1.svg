@@ -1,0 +1,10 @@
+<svg viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+<defs><path id="sib-st-a" d="M 38 100 A 62 62 0 0 1 162 100"/><path id="sib-st-b" d="M 30 106 A 70 70 0 0 0 170 106"/></defs>
+<circle cx="100" cy="100" r="96" fill="#FFF7F2" stroke="#00897B" stroke-width="5" stroke-dasharray="7 5"/>
+<circle cx="100" cy="100" r="84" fill="none" stroke="#00897B" stroke-width="3"/>
+<circle cx="100" cy="100" r="54" fill="#E0F2F1" stroke="#00897B" stroke-width="3"/>
+<g stroke="#22213A" stroke-width="3.5" stroke-linejoin="round" stroke-linecap="round"><path d="M54 120h92l-10 14H62z" fill="#A1673F" stroke-width="3"/><path d="M50 120c0-8 6-12 10-14M150 120c0-8-6-12-10-14" fill="none" stroke-width="3"/><rect x="68" y="94" width="56" height="6" rx="2" fill="#E53935" stroke-width="2.5"/><rect x="70" y="94" width="7" height="6" fill="#FFFFFF" stroke="none"/><rect x="84" y="94" width="7" height="6" fill="#FFFFFF" stroke="none"/><rect x="98" y="94" width="7" height="6" fill="#FFFFFF" stroke="none"/><rect x="112" y="94" width="7" height="6" fill="#FFFFFF" stroke="none"/><path d="M72 100v20M120 100v20" fill="none" stroke="#5D4037" stroke-width="2.5"/><circle cx="136" cy="92" r="6" fill="#FFE0BD" stroke-width="2"/><path d="M136 98v18M144 104l14 34" fill="none" stroke="#5D4037" stroke-width="3"/><path d="M54 144c10-4 20 4 30 0s20 4 30 0 20 4 30 0" fill="none" stroke="#4FC3F7" stroke-width="2.5"/></g>
+<text font-family="KIRA UI, Arial, sans-serif" font-weight="800" font-size="19" letter-spacing="3" fill="#00897B"><textPath href="#sib-st-a" startOffset="50%" text-anchor="middle">BLED</textPath></text>
+<text font-family="KIRA UI, Arial, sans-serif" font-weight="700" font-size="11" letter-spacing="3" fill="#005DA4"><textPath href="#sib-st-b" startOffset="50%" text-anchor="middle">SLOVENIJA</textPath></text>
+<path d="M22 100l5-3 5 3-5 3zM168 100l5-3 5 3-5 3z" fill="#00897B"/>
+</svg>

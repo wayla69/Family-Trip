@@ -56,8 +56,8 @@ export function cityStamp(id, { name, sub, k1, k2, k3, emblem }) {
     + `<text font-family="KIRA UI, Arial, sans-serif" font-weight="700" font-size="11" letter-spacing="3" fill="${k2}"><textPath href="#${id}-b" startOffset="50%" text-anchor="middle">${sub}</textPath></text>\n`
     + `<path d="M22 100l5-3 5 3-5 3zM168 100l5-3 5 3-5 3z" fill="${k1}"/>\n</svg>\n`;
 }
-export function countryStamp({ name, k2, k3, emblem }) {
+export function countryStamp({ name, k2, k3, emblem, size }) {
   return `${open('0 0 200 200')}\n<rect x="8" y="8" width="184" height="184" rx="34" fill="#FFFDF7" stroke="${k2}" stroke-width="5" stroke-dasharray="8 5"/>\n<rect x="22" y="22" width="156" height="156" rx="24" fill="none" stroke="${k2}" stroke-width="3"/>\n`
-    + `${ink(emblem, 3.5)}\n<text x="100" y="166" text-anchor="middle" font-family="KIRA UI, Arial, sans-serif" font-weight="800" font-size="${name.length > 9 ? 15 : 20}" letter-spacing="4" fill="${k2}">${name}</text>\n`
+    + `${ink(emblem, 3.5)}\n<text x="100" y="166" text-anchor="middle" font-family="KIRA UI, Arial, sans-serif" font-weight="800" font-size="${size || (name.length > 9 ? 15 : 20)}" letter-spacing="4" fill="${k2}">${name}</text>\n`
     + `<g fill="${k3}" stroke="${INK}" stroke-width="2"><circle cx="44" cy="46" r="6"/><circle cx="156" cy="46" r="6"/></g>\n</svg>\n`;
 }
