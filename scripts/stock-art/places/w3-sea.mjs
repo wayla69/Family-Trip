@@ -256,7 +256,7 @@ export default {
     'vn-saigon': { country: 'vn', wave: 3, name: nm('โฮจิมินห์และปากแม่น้ำโขง', 'Ho Chi Minh City and the Mekong Delta'), tz: 'Asia/Ho_Chi_Minh', ll: [10.78, 106.7], alias: ['ho chi minh city', 'โฮจิมินห์', 'saigon', 'ไซง่อน', 'mekong delta', 'ปากแม่น้ำโขง', 'can tho', 'เกิ่นเทอ', 'cu chi', 'ben thanh', 'sgn'], colors: SG },
     'vn-phuquoc': { country: 'vn', wave: 3, name: nm('ฟูก๊วก', 'Phu Quoc'), tz: 'Asia/Ho_Chi_Minh', ll: [10.23, 103.96], alias: ['phu quoc', 'ฟูก๊วก', 'phú quốc', 'hon thom', 'sunset town', 'pqc'], colors: PQ },
     'my-penang': { country: 'my', wave: 3, name: nm('ปีนัง', 'Penang'), tz: 'Asia/Kuala_Lumpur', ll: [5.41, 100.33], alias: ['penang', 'ปีนัง', 'george town', 'จอร์จทาวน์', 'georgetown', 'penang hill', 'batu ferringhi', 'pen'], colors: PN },
-    'my-langkawi': { country: 'my', wave: 3, name: nm('ลังกาวี', 'Langkawi'), tz: 'Asia/Kuala_Lumpur', ll: [6.35, 99.8], alias: ['langkawi', 'ลังกาวี', 'pantai cenang', 'sky bridge', 'kilim', 'kota kinabalu', 'โกตากินาบาลู', 'sabah', 'ซาบาห์', 'lgk', 'bki'], colors: LK },
+    'my-langkawi': { country: 'my', wave: 3, name: nm('ลังกาวี', 'Langkawi'), tz: 'Asia/Kuala_Lumpur', ll: [6.35, 99.8], alias: ['langkawi', 'ลังกาวี', 'pantai cenang', 'sky bridge', 'kilim', 'lgk'], colors: LK },
   },
   items,
 };
