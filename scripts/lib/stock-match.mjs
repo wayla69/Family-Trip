@@ -42,6 +42,10 @@ export function stockMatch(days, placeText, index) {
   let prev = null;
   const cityOf = words.map((w) => { const b = best(w); prev = b ? b[0] : prev || bookCity; return prev; });
   const used = new Set();
+  // a landmark's keywords without its own city's main name (Nov 2026: "tokyo" in the capsule-toy picture's keywords matched every
+  // Tokyo day and beat the city's own scene) — a landmark is picked for the place the day goes to, never for the city it is in
+  const mainOf = (city) => { const p = places[city] || {}; return new Set([p.name && p.name.en, p.name && p.name.th, ...(p.alias || []).slice(0, 2)].filter(Boolean).map((s) => lc(s))); };
+  const kwOf = (it) => { if (it.cat !== 'landmark') return it.kw; const main = mainOf(scopeOf(it.id)); return (it.kw || []).filter((k) => !main.has(lc(k))); };
   // the landscape (t.*) and route (r.*) scenes: for a day the city layer cannot picture — a town the library does not have,
   // or a city without a scene — the one whose keywords the day names (a lake, a glacier, a ferry crossing), unused first
   const wide = items.filter((it) => it.cat === 'day' && (scopeOf(it.id) === 't' || scopeOf(it.id) === 'r'));
@@ -52,7 +56,7 @@ export function stockMatch(days, placeText, index) {
   const artDays = cityOf.map((city, i) => {
     if (!city) { const w = scene(i); if (!w) return ''; used.add(w.id); return w.id; }
     const pool = items.filter((it) => scopeOf(it.id) === city && (it.cat === 'landmark' || it.cat === 'day'));
-    const scored = pool.map((it) => [it, hits(words[i], it.kw)]).filter(([it, n]) => n > 0 && !used.has(it.id)).sort((a, b) => b[1] - a[1]);
+    const scored = pool.map((it) => [it, hits(words[i], kwOf(it))]).filter(([it, n]) => n > 0 && !used.has(it.id)).sort((a, b) => b[1] - a[1]);
     // no picture of what the day does: the city's own scene (a picture whose keywords name the city), repeated if need be —
     // never a specific place the day doesn't go to (Fuji on a day spent in Ueno)
     const generic = pool.filter((it) => it.cat === 'day' && hits(lc((it.kw || []).join(' ')), places[city].alias) > 0);
@@ -71,7 +75,7 @@ export function stockMatch(days, placeText, index) {
   // the living map's pins: a stop named like one of the library's landmarks of the trip's cities shows that picture (stop.art)
   const mapArt = (stop) => {
     const text = lc([T(stop), stop.q || ''].join(' '));
-    const best = items.filter((it) => it.cat === 'landmark' && cityOf.includes(scopeOf(it.id))).map((it) => [it, hits(text, it.kw)]).filter(([, n]) => n > 0).sort((a, b) => b[1] - a[1])[0];
+    const best = items.filter((it) => it.cat === 'landmark' && cityOf.includes(scopeOf(it.id))).map((it) => [it, hits(text, kwOf(it))]).filter(([, n]) => n > 0).sort((a, b) => b[1] - a[1])[0];
     return best ? 'stock:' + best[0].id : '';
   };
   const firstCountry = countryOf(cityOf.find(Boolean));
