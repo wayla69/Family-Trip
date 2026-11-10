@@ -247,6 +247,13 @@ if (process.env.BASE) {
     && JSON.stringify(s.passport.stamps) === JSON.stringify([{ art: 'stock:jp.stamp', day: 0 }, { art: 'stock:jp-tokyo.stamp', day: 0 }]) && s.stock.places.join() === 'jp-tokyo'
     && s.passport.guides.map((g) => g.art).join() === 'stock:jp.guide.hana,stock:jp.guide.momo' && /\{name\}/.test(s.passport.guides[0].hello.th),
     'stock match: Tokyo days get the skyline / the Skytree they visit / the skyline again (never a place the day skips), the Japan crest, Japan + Tokyo stamps, Japan\'s two guides');
+  // a day that names only its city gets the city's own scene, never one of its landmarks (a landmark's keywords may hold the city's
+  // name — "tokyo" in the capsule toys — and that matched every Tokyo day; 39 cities did it before the matcher dropped the city's name)
+  { const M = await import('../scripts/lib/stock-match.mjs');
+    const wrong = Object.entries(idx.places).filter(([k]) => k.includes('-')).filter(([, p]) => {
+      const id = (M.stockMatch([{ title: { en: p.alias[0], th: p.alias[1] } }], p.alias[0], idx).artDays[0] || '').replace('stock:', '');
+      const it = idx.items.find((x) => x.id === id); return it && it.cat === 'landmark'; }).map(([k]) => k);
+    ok(!wrong.length, 'stock match: a day that names only its city gets the city\'s scene, never a landmark picked by the city\'s name' + (wrong.length ? ' — ' + wrong.join(' ') : '')); }
   const unapproved = { ...idx, items: idx.items.map((it) => ({ ...it, ok: undefined })) };
   const s2 = C.toSeed(plan, [], { art: false, stock: unapproved }), s3 = C.toSeed(plan, [], { art: false }), s4 = C.toSeed(plan, [], { stock: idx });
   ok(!s2.theme.artDays && !s2.passport.stamps && !s3.theme.artDays && s3.passport.style.crest === '' && !s4.theme.artDays && !s4.stock,
