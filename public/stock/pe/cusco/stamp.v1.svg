@@ -1,0 +1,10 @@
+<svg viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+<defs><path id="pcu-st-a" d="M 38 100 A 62 62 0 0 1 162 100"/><path id="pcu-st-b" d="M 30 106 A 70 70 0 0 0 170 106"/></defs>
+<circle cx="100" cy="100" r="96" fill="#FFF7F2" stroke="#6D4C41" stroke-width="5" stroke-dasharray="7 5"/>
+<circle cx="100" cy="100" r="84" fill="none" stroke="#6D4C41" stroke-width="3"/>
+<circle cx="100" cy="100" r="54" fill="#EFEBE9" stroke="#6D4C41" stroke-width="3"/>
+<g stroke="#22213A" stroke-width="3.5" stroke-linejoin="round" stroke-linecap="round"><path d="M50 140l30-50 20 14 30-40 26 76z" fill="#E57373" stroke-width="3"/><path d="M58 128c20-14 40-6 50-20 10 10 20 14 26 20" fill="none" stroke="#FFCA28" stroke-width="5"/><path d="M64 118c20-14 40-6 46-20 10 10 20 14 22 20" fill="none" stroke="#4DB6AC" stroke-width="5"/><path d="M70 108c20-14 40-6 42-20 10 10 20 14 18 20" fill="none" stroke="#CE93D8" stroke-width="5"/><path d="M76 98c20-14 40-6 38-20 10 10 20 14 14 20" fill="none" stroke="#FF8A65" stroke-width="5"/><g transform="translate(130 128) scale(0.6)"><ellipse cx="0" cy="0" rx="14" ry="8" fill="#FFFFFF" stroke-width="2.5"/><path d="M10-4v-14" fill="none" stroke="#FFFFFF" stroke-width="5"/><circle cx="10" cy="-20" r="5" fill="#FFFFFF" stroke-width="2"/><path d="M-8 6v8M8 6v8" fill="none" stroke="#22213A" stroke-width="2.5"/></g></g>
+<text font-family="KIRA UI, Arial, sans-serif" font-weight="800" font-size="19" letter-spacing="3" fill="#6D4C41"><textPath href="#pcu-st-a" startOffset="50%" text-anchor="middle">CUSCO</textPath></text>
+<text font-family="KIRA UI, Arial, sans-serif" font-weight="700" font-size="11" letter-spacing="3" fill="#00897B"><textPath href="#pcu-st-b" startOffset="50%" text-anchor="middle">PERÚ</textPath></text>
+<path d="M22 100l5-3 5 3-5 3zM168 100l5-3 5 3-5 3z" fill="#6D4C41"/>
+</svg>

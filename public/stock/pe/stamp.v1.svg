@@ -1,0 +1,7 @@
+<svg viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+<rect x="8" y="8" width="184" height="184" rx="34" fill="#FFFDF7" stroke="#D91023" stroke-width="5" stroke-dasharray="8 5"/>
+<rect x="22" y="22" width="156" height="156" rx="24" fill="none" stroke="#D91023" stroke-width="3"/>
+<g stroke="#22213A" stroke-width="3.5" stroke-linejoin="round" stroke-linecap="round"><rect x="44" y="50" width="112" height="92" rx="4" fill="#F5DEB3" stroke="none"/><path d="M100 70l-2-16M96 88c-6-10-6-18 4-18s10 8 4 18M96 88c-2 14 0 24 4 30 4-6 6-16 4-30M100 118l-12 16M100 118l0 18M100 118l12 16" fill="none" stroke="#8D6E63" stroke-width="3"/><path d="M96 92c-14-2-30-14-40-26 12 4 20 14 40 20M104 92c14-2 30-14 40-26-12 4-20 14-40 20" fill="none" stroke="#8D6E63" stroke-width="3"/><path d="M62 70l6 2M70 76l6 2M138 70l-6 2M130 76l-6 2" fill="none" stroke="#8D6E63" stroke-width="2"/></g>
+<text x="100" y="166" text-anchor="middle" font-family="KIRA UI, Arial, sans-serif" font-weight="800" font-size="20" letter-spacing="4" fill="#D91023">PERÚ</text>
+<g fill="#FFEBEE" stroke="#22213A" stroke-width="2"><circle cx="44" cy="46" r="6"/><circle cx="156" cy="46" r="6"/></g>
+</svg>
