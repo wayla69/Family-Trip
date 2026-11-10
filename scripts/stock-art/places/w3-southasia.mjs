@@ -6,7 +6,7 @@ const nm = (th, en) => ({ th, en });
 const G = (cc, key, th, en, hth, hen, kw, svg) => ({ id: `${cc}.guide.${key}`, cat: 'guide', file: `${cc}/guide-${key}.v1.svg`, name: nm(th, en), hello: nm(hth, hen), kw: [en.toLowerCase(), th, ...kw], svg: free(svg) });
 const flagShape = 'M44 38c40-12 84 12 126 0s28-4 42 0v112c-14-4 0-12-42 0s-86-12-126 0z';
 const pole = Lc('M40 222V24', '#8D6E63', 7) + C(40, 22, 8, '#FFD54A');
-const band = (k, n, fill) => `<path d="M44 ${38 + (k + 0.5) * (112 / n)}c40-12 84 12 126 0s28-4 42 0" stroke="${fill}" stroke-width="${(112 / n + 1).toFixed(1)}" fill="none"/>`;
+const band = (k, n, fill) => `<path d="M44 ${38 + (k + 0.5) * (112 / n)}c40-12 84 12 126 0s28-4 42 0" stroke="${fill}" stroke-width="${(112 / n + 1).toFixed(1)}" fill="none" stroke-linecap="butt"/>`;
 const IN = { k1: '#FF9933', k2: '#138808', k3: '#FFF3E0' };
 const AG = { k1: '#8D6E63', k2: '#E65100', k3: '#FFF8E1' };
 const NP = { k1: '#DC143C', k2: '#003893', k3: '#FFEBEE' };

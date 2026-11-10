@@ -1,0 +1,7 @@
+<svg viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+<rect x="8" y="8" width="184" height="184" rx="34" fill="#FFFDF7" stroke="#EF3340" stroke-width="5" stroke-dasharray="8 5"/>
+<rect x="22" y="22" width="156" height="156" rx="24" fill="none" stroke="#EF3340" stroke-width="3"/>
+<g stroke="#22213A" stroke-width="3.5" stroke-linejoin="round" stroke-linecap="round"><ellipse cx="96" cy="100" rx="30" ry="20" fill="#FFE0B2" stroke-width="3"/><circle cx="124" cy="84" r="12" fill="#FFE0B2" stroke-width="3"/><path d="M136 84l10 2-10 4z" fill="#FB8C00" stroke-width="2"/><path d="M66 100l-12-14 4 20z" fill="#FFE0B2" stroke-width="2.5"/><circle cx="86" cy="96" r="4" fill="#E53935" stroke-width="1.5"/><circle cx="102" cy="106" r="4" fill="#1E88E5" stroke-width="1.5"/><circle cx="94" cy="90" r="4" fill="#43A047" stroke-width="1.5"/><circle cx="126" cy="82" r="2.5" fill="#22213A" stroke="none"/><path d="M90 120v10M104 120v10" fill="none" stroke="#8D6E63" stroke-width="3"/></g>
+<text x="100" y="166" text-anchor="middle" font-family="KIRA UI, Arial, sans-serif" font-weight="800" font-size="15" letter-spacing="4" fill="#EF3340">LËTZEBUERG</text>
+<g fill="#E1F5FE" stroke="#22213A" stroke-width="2"><circle cx="44" cy="46" r="6"/><circle cx="156" cy="46" r="6"/></g>
+</svg>
