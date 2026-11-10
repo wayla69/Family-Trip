@@ -1,0 +1,10 @@
+<svg viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+<defs><path id="fal-st-a" d="M 38 100 A 62 62 0 0 1 162 100"/><path id="fal-st-b" d="M 30 106 A 70 70 0 0 0 170 106"/></defs>
+<circle cx="100" cy="100" r="96" fill="#FFF7F2" stroke="#0277BD" stroke-width="5" stroke-dasharray="7 5"/>
+<circle cx="100" cy="100" r="84" fill="none" stroke="#0277BD" stroke-width="3"/>
+<circle cx="100" cy="100" r="54" fill="#E1F5FE" stroke="#0277BD" stroke-width="3"/>
+<g stroke="#22213A" stroke-width="3.5" stroke-linejoin="round" stroke-linecap="round"><path d="M60 140l20-40 14 10 12-50 10 40 14-10 16 50z" fill="#90A4AE" stroke-width="3"/><path d="M100 60l6-24 6 24z" fill="#B0BEC5" stroke-width="2.5"/><path d="M106 36v-10" fill="none" stroke="#22213A" stroke-width="2.5"/><path d="M96 70l10-10 10 10zM74 108l6-8 6 8z" fill="#FFFFFF" stroke-width="2"/><path d="M50 132L104 40" fill="none" stroke="#22213A" stroke-width="1.5"/><g transform="translate(70 104)"><path d="M0-10v6" fill="none" stroke="#22213A" stroke-width="1.5"/><rect x="-8" y="-4" width="16" height="12" rx="3" fill="#E53935" stroke-width="2"/></g></g>
+<text font-family="KIRA UI, Arial, sans-serif" font-weight="800" font-size="15" letter-spacing="3" fill="#0277BD"><textPath href="#fal-st-a" startOffset="50%" text-anchor="middle">CHAMONIX</textPath></text>
+<text font-family="KIRA UI, Arial, sans-serif" font-weight="700" font-size="11" letter-spacing="3" fill="#E53935"><textPath href="#fal-st-b" startOffset="50%" text-anchor="middle">FRANCE</textPath></text>
+<path d="M22 100l5-3 5 3-5 3zM168 100l5-3 5 3-5 3z" fill="#0277BD"/>
+</svg>
