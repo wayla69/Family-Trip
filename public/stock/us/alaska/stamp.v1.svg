@@ -1,0 +1,10 @@
+<svg viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+<defs><path id="uak-st-a" d="M 38 100 A 62 62 0 0 1 162 100"/><path id="uak-st-b" d="M 30 106 A 70 70 0 0 0 170 106"/></defs>
+<circle cx="100" cy="100" r="96" fill="#FFF7F2" stroke="#006064" stroke-width="5" stroke-dasharray="7 5"/>
+<circle cx="100" cy="100" r="84" fill="none" stroke="#006064" stroke-width="3"/>
+<circle cx="100" cy="100" r="54" fill="#E0F7FA" stroke="#006064" stroke-width="3"/>
+<g stroke="#22213A" stroke-width="3.5" stroke-linejoin="round" stroke-linecap="round"><ellipse cx="100" cy="112" rx="30" ry="28" fill="#263238" stroke-width="3"/><ellipse cx="100" cy="92" rx="22" ry="18" fill="#FFFFFF" stroke-width="3"/><path d="M100 92c14-6 28 0 30 10-12 4-24 2-30-2z" fill="#FB8C00" stroke-width="2.5"/><path d="M112 100h14" fill="none" stroke="#E53935" stroke-width="1.5"/><circle cx="96" cy="88" r="3" fill="#22213A" stroke="none"/><path d="M92 84c-14-6-24 0-30 8M94 86c-14 0-22 8-24 16" fill="none" stroke="#FFD54F" stroke-width="3"/><path d="M90 138v6M110 138v6" fill="none" stroke="#FB8C00" stroke-width="4"/><circle class="f" cx="94.5" cy="92" r="1.1" fill="#22213A" stroke="none"/><circle class="f" cx="101.5" cy="92" r="1.1" fill="#22213A" stroke="none"/><ellipse class="f" cx="92" cy="94.3" rx="1.8" ry="1.1" fill="#FF8FA3" stroke="none" opacity=".7"/><ellipse class="f" cx="104" cy="94.3" rx="1.8" ry="1.1" fill="#FF8FA3" stroke="none" opacity=".7"/></g>
+<text font-family="KIRA UI, Arial, sans-serif" font-weight="800" font-size="19" letter-spacing="3" fill="#006064"><textPath href="#uak-st-a" startOffset="50%" text-anchor="middle">ALASKA</textPath></text>
+<text font-family="KIRA UI, Arial, sans-serif" font-weight="700" font-size="11" letter-spacing="3" fill="#F9A825"><textPath href="#uak-st-b" startOffset="50%" text-anchor="middle">USA</textPath></text>
+<path d="M22 100l5-3 5 3-5 3zM168 100l5-3 5 3-5 3z" fill="#006064"/>
+</svg>
