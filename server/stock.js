@@ -16,7 +16,7 @@ const CATS = {   // category → the file types it may be (docs/STOCK-ART.md §2
   stamp: ['svg'], day: ['svg'], landmark: ['svg'], guide: ['svg'],   // guide = a country's passport guide (S8): name + hello {th, en}
   food: ['svg', 'webp'], animal: ['svg', 'webp'], transport: ['svg', 'webp'], culture: ['svg', 'webp'], flag: ['svg', 'webp'], hello: ['svg', 'webp'], money: ['svg', 'webp'],
 };
-const SVG_MAX = 12 * 1024, WEBP_MAX = 12 * 1024, INDEX_MAX = 2 * 1024 * 1024;   // read once by the server at boot, never by a phone (sw.js skips it); ~3,500 pictures ≈ 1.5 MB
+const SVG_MAX = 12 * 1024, WEBP_MAX = 12 * 1024, INDEX_MAX = 4 * 1024 * 1024;   // read once by the server at boot, never by a phone (sw.js skips it); ~0.7 KB a picture, so the full ~4,000 ≈ 2.8 MB
 const PREFIX = 'stock:';
 
 const empty = () => ({ v: 1, places: {}, items: [] });
