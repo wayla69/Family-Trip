@@ -1,0 +1,10 @@
+<svg viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+<defs><path id="vsg-st-a" d="M 38 100 A 62 62 0 0 1 162 100"/><path id="vsg-st-b" d="M 30 106 A 70 70 0 0 0 170 106"/></defs>
+<circle cx="100" cy="100" r="96" fill="#FFF7F2" stroke="#C62828" stroke-width="5" stroke-dasharray="7 5"/>
+<circle cx="100" cy="100" r="84" fill="none" stroke="#C62828" stroke-width="3"/>
+<circle cx="100" cy="100" r="54" fill="#FFEBEE" stroke="#C62828" stroke-width="3"/>
+<g stroke="#22213A" stroke-width="3.5" stroke-linejoin="round" stroke-linecap="round"><path d="M82 90h36l-4 44H86z" fill="#E3F2FD" stroke-width="3"/><rect x="84" y="110" width="32" height="22" fill="#6D4C41" stroke="none"/><rect x="84" y="100" width="32" height="10" fill="#FFF8E1" stroke="none"/><path d="M82 90h36l-4 44H86z" fill="none" stroke-width="3"/><rect x="80" y="74" width="40" height="16" rx="2" fill="#B0BEC5" stroke-width="2.5"/><rect x="88" y="62" width="24" height="12" rx="2" fill="#B0BEC5" stroke-width="2.5"/><path d="M100 90v6" fill="none" stroke="#6D4C41" stroke-width="2"/><rect x="89" y="117" width="6" height="6" rx="1" fill="#E1F5FE" stroke-width="1"/><rect x="103" y="115" width="6" height="6" rx="1" fill="#E1F5FE" stroke-width="1"/></g>
+<text font-family="KIRA UI, Arial, sans-serif" font-weight="800" font-size="19" letter-spacing="3" fill="#C62828"><textPath href="#vsg-st-a" startOffset="50%" text-anchor="middle">SAIGON</textPath></text>
+<text font-family="KIRA UI, Arial, sans-serif" font-weight="700" font-size="11" letter-spacing="3" fill="#F9A825"><textPath href="#vsg-st-b" startOffset="50%" text-anchor="middle">VIETNAM</textPath></text>
+<path d="M22 100l5-3 5 3-5 3zM168 100l5-3 5 3-5 3z" fill="#C62828"/>
+</svg>

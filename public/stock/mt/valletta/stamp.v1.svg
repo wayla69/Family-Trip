@@ -1,0 +1,10 @@
+<svg viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+<defs><path id="mva-st-a" d="M 38 100 A 62 62 0 0 1 162 100"/><path id="mva-st-b" d="M 30 106 A 70 70 0 0 0 170 106"/></defs>
+<circle cx="100" cy="100" r="96" fill="#FFF7F2" stroke="#F9A825" stroke-width="5" stroke-dasharray="7 5"/>
+<circle cx="100" cy="100" r="84" fill="none" stroke="#F9A825" stroke-width="3"/>
+<circle cx="100" cy="100" r="54" fill="#FFFDE7" stroke="#F9A825" stroke-width="3"/>
+<g stroke="#22213A" stroke-width="3.5" stroke-linejoin="round" stroke-linecap="round"><path d="M56 124v-34c0-10 6-16 16-16h44c18 0 28 14 28 30v20z" fill="#FFCA28" stroke-width="3"/><path d="M56 104h88" fill="none" stroke="#E53935" stroke-width="5"/><rect x="65" y="80" width="14" height="14" rx="2" fill="#E3F2FD" stroke-width="2"/><rect x="85" y="80" width="14" height="14" rx="2" fill="#E3F2FD" stroke-width="2"/><rect x="105" y="80" width="14" height="14" rx="2" fill="#E3F2FD" stroke-width="2"/><circle cx="74" cy="126" r="8" fill="#22213A"/><circle cx="126" cy="126" r="8" fill="#22213A"/></g>
+<text font-family="KIRA UI, Arial, sans-serif" font-weight="800" font-size="15" letter-spacing="3" fill="#F9A825"><textPath href="#mva-st-a" startOffset="50%" text-anchor="middle">VALLETTA</textPath></text>
+<text font-family="KIRA UI, Arial, sans-serif" font-weight="700" font-size="11" letter-spacing="3" fill="#0277BD"><textPath href="#mva-st-b" startOffset="50%" text-anchor="middle">MALTA</textPath></text>
+<path d="M22 100l5-3 5 3-5 3zM168 100l5-3 5 3-5 3z" fill="#F9A825"/>
+</svg>

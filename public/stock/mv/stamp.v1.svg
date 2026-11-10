@@ -1,0 +1,7 @@
+<svg viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+<rect x="8" y="8" width="184" height="184" rx="34" fill="#FFFDF7" stroke="#D21034" stroke-width="5" stroke-dasharray="8 5"/>
+<rect x="22" y="22" width="156" height="156" rx="24" fill="none" stroke="#D21034" stroke-width="3"/>
+<g stroke="#22213A" stroke-width="3.5" stroke-linejoin="round" stroke-linecap="round"><circle cx="100" cy="92" r="34" fill="#FFF8E1" stroke-width="3"/><circle cx="100" cy="92" r="24" fill="#4DD0E1" stroke-width="3"/><path d="M74 74v-10" fill="none" stroke="#6D4C41" stroke-width="2.5"/><path d="M74 64c-8-4-12 0-14 4 4-2 10-2 14-4zM74 64c8-4 12 0 14 4-4-2-10-2-14-4z" fill="#43A047" stroke-width="2"/><path d="M124 70v-10" fill="none" stroke="#6D4C41" stroke-width="2.5"/><path d="M124 60c-8-4-12 0-14 4 4-2 10-2 14-4zM124 60c8-4 12 0 14 4-4-2-10-2-14-4z" fill="#43A047" stroke-width="2"/><path d="M128 112v-10" fill="none" stroke="#6D4C41" stroke-width="2.5"/><path d="M128 102c-8-4-12 0-14 4 4-2 10-2 14-4zM128 102c8-4 12 0 14 4-4-2-10-2-14-4z" fill="#43A047" stroke-width="2"/></g>
+<text x="100" y="166" text-anchor="middle" font-family="KIRA UI, Arial, sans-serif" font-weight="800" font-size="20" letter-spacing="4" fill="#D21034">MALDIVES</text>
+<g fill="#E0F2F1" stroke="#22213A" stroke-width="2"><circle cx="44" cy="46" r="6"/><circle cx="156" cy="46" r="6"/></g>
+</svg>

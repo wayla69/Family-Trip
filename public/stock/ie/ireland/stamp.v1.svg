@@ -1,0 +1,10 @@
+<svg viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+<defs><path id="iei-st-a" d="M 38 100 A 62 62 0 0 1 162 100"/><path id="iei-st-b" d="M 30 106 A 70 70 0 0 0 170 106"/></defs>
+<circle cx="100" cy="100" r="96" fill="#FFF7F2" stroke="#169B62" stroke-width="5" stroke-dasharray="7 5"/>
+<circle cx="100" cy="100" r="84" fill="none" stroke="#169B62" stroke-width="3"/>
+<circle cx="100" cy="100" r="54" fill="#E8F5E9" stroke="#169B62" stroke-width="3"/>
+<g stroke="#22213A" stroke-width="3.5" stroke-linejoin="round" stroke-linecap="round"><path d="M60 140c14-14 28-18 40-18s28 4 40 18z" fill="#81C784" stroke-width="2.5"/><path d="M92 136V82h16v54z" fill="#CFD8DC" stroke-width="3"/><path d="M90 82l10-22 10 22z" fill="#78909C" stroke-width="3"/><rect x="97" y="92" width="6" height="9" rx="2" fill="#455A64" stroke-width="1.5"/><rect x="97" y="116" width="6" height="8" rx="2" fill="#455A64" stroke-width="1.5"/><path d="M94 104h12M94 126h12" fill="none" stroke="#90A4AE" stroke-width="1.5"/><path d="M64 140c10 4 18-2 26 2s16 0 24 2" fill="none" stroke-width="2"/><path d="M118 116l6-10 6 10z" fill="#43A047" stroke-width="2"/></g>
+<text font-family="KIRA UI, Arial, sans-serif" font-weight="800" font-size="19" letter-spacing="3" fill="#169B62"><textPath href="#iei-st-a" startOffset="50%" text-anchor="middle">DUBLIN</textPath></text>
+<text font-family="KIRA UI, Arial, sans-serif" font-weight="700" font-size="11" letter-spacing="3" fill="#FF883E"><textPath href="#iei-st-b" startOffset="50%" text-anchor="middle">IRELAND</textPath></text>
+<path d="M22 100l5-3 5 3-5 3zM168 100l5-3 5 3-5 3z" fill="#169B62"/>
+</svg>

@@ -1,0 +1,10 @@
+<svg viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+<defs><path id="lul-st-a" d="M 38 100 A 62 62 0 0 1 162 100"/><path id="lul-st-b" d="M 30 106 A 70 70 0 0 0 170 106"/></defs>
+<circle cx="100" cy="100" r="96" fill="#FFF7F2" stroke="#00A1DE" stroke-width="5" stroke-dasharray="7 5"/>
+<circle cx="100" cy="100" r="84" fill="none" stroke="#00A1DE" stroke-width="3"/>
+<circle cx="100" cy="100" r="54" fill="#E1F5FE" stroke="#00A1DE" stroke-width="3"/>
+<g stroke="#22213A" stroke-width="3.5" stroke-linejoin="round" stroke-linecap="round"><rect x="50" y="82" width="100" height="10" fill="#BDBDBD" stroke-width="3"/><path d="M56 136c0-30 40-30 44-44 4 14 44 14 44 44z" fill="#7CB342" stroke="none"/><path d="M66 92v44M134 92v44" fill="none" stroke="none"/><path d="M70 136c0-34 60-34 60 0" fill="none" stroke="#BDBDBD" stroke-width="7"/><path d="M70 136c0-34 60-34 60 0" fill="none" stroke="#22213A" stroke-width="2"/><rect x="50" y="92" width="12" height="44" fill="#BDBDBD" stroke-width="2.5"/><rect x="138" y="92" width="12" height="44" fill="#BDBDBD" stroke-width="2.5"/></g>
+<text font-family="KIRA UI, Arial, sans-serif" font-weight="800" font-size="15" letter-spacing="3" fill="#00A1DE"><textPath href="#lul-st-a" startOffset="50%" text-anchor="middle">LUXEMBOURG</textPath></text>
+<text font-family="KIRA UI, Arial, sans-serif" font-weight="700" font-size="11" letter-spacing="3" fill="#EF3340"><textPath href="#lul-st-b" startOffset="50%" text-anchor="middle">LËTZEBUERG</textPath></text>
+<path d="M22 100l5-3 5 3-5 3zM168 100l5-3 5 3-5 3z" fill="#00A1DE"/>
+</svg>

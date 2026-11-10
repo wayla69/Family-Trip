@@ -1,0 +1,10 @@
+<svg viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+<defs><path id="czj-st-a" d="M 38 100 A 62 62 0 0 1 162 100"/><path id="czj-st-b" d="M 30 106 A 70 70 0 0 0 170 106"/></defs>
+<circle cx="100" cy="100" r="96" fill="#FFF7F2" stroke="#558B2F" stroke-width="5" stroke-dasharray="7 5"/>
+<circle cx="100" cy="100" r="84" fill="none" stroke="#558B2F" stroke-width="3"/>
+<circle cx="100" cy="100" r="54" fill="#F1F8E9" stroke="#558B2F" stroke-width="3"/>
+<g stroke="#22213A" stroke-width="3.5" stroke-linejoin="round" stroke-linecap="round"><rect x="68" y="66" width="12" height="70" rx="2" fill="#A1887F" stroke-width="2.5"/><ellipse cx="74" cy="66" rx="8.4" ry="5" fill="#43A047" stroke-width="2"/><rect x="93" y="52" width="14" height="84" rx="2" fill="#A1887F" stroke-width="2.5"/><ellipse cx="100" cy="52" rx="9.8" ry="5" fill="#43A047" stroke-width="2"/><rect x="122" y="70" width="12" height="66" rx="2" fill="#A1887F" stroke-width="2.5"/><ellipse cx="128" cy="70" rx="8.4" ry="5" fill="#43A047" stroke-width="2"/><ellipse cx="100" cy="108" rx="30" ry="8" fill="#FFFFFF" stroke-width="2"/></g>
+<text font-family="KIRA UI, Arial, sans-serif" font-weight="800" font-size="13" letter-spacing="3" fill="#558B2F"><textPath href="#czj-st-a" startOffset="50%" text-anchor="middle">ZHANGJIAJIE</textPath></text>
+<text font-family="KIRA UI, Arial, sans-serif" font-weight="700" font-size="11" letter-spacing="3" fill="#455A64"><textPath href="#czj-st-b" startOffset="50%" text-anchor="middle">CHINA</textPath></text>
+<path d="M22 100l5-3 5 3-5 3zM168 100l5-3 5 3-5 3z" fill="#558B2F"/>
+</svg>

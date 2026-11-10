@@ -1,0 +1,7 @@
+<svg viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+<rect x="8" y="8" width="184" height="184" rx="34" fill="#FFFDF7" stroke="#E53935" stroke-width="5" stroke-dasharray="8 5"/>
+<rect x="22" y="22" width="156" height="156" rx="24" fill="none" stroke="#E53935" stroke-width="3"/>
+<g stroke="#22213A" stroke-width="3.5" stroke-linejoin="round" stroke-linecap="round"><path d="M54 140l26-50 20 24 22-48 26 74z" fill="#B0BEC5" stroke-width="3"/><path d="M74 102l6-12 6 12zM114 78l8-12 8 12z" fill="#FFFFFF" stroke-width="2"/><path d="M92 140V74h20v66z" fill="#D7CCC8" stroke-width="3"/><path d="M88 74l14-14 14 14z" fill="#607D8B" stroke-width="3"/><rect x="98" y="84" width="8" height="10" rx="2" fill="#22213A" stroke="none"/><rect x="98" y="106" width="8" height="8" rx="2" fill="#22213A" stroke="none"/><path d="M92 100h20M92 122h20" fill="none" stroke="#A1887F" stroke-width="1.5"/></g>
+<text x="100" y="166" text-anchor="middle" font-family="KIRA UI, Arial, sans-serif" font-weight="800" font-size="15" letter-spacing="4" fill="#E53935">SAKARTVELO</text>
+<g fill="#FFEBEE" stroke="#22213A" stroke-width="2"><circle cx="44" cy="46" r="6"/><circle cx="156" cy="46" r="6"/></g>
+</svg>

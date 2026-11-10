@@ -1,0 +1,10 @@
+<svg viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+<defs><path id="kgj-st-a" d="M 38 100 A 62 62 0 0 1 162 100"/><path id="kgj-st-b" d="M 30 106 A 70 70 0 0 0 170 106"/></defs>
+<circle cx="100" cy="100" r="96" fill="#FFF7F2" stroke="#6D4C41" stroke-width="5" stroke-dasharray="7 5"/>
+<circle cx="100" cy="100" r="84" fill="none" stroke="#6D4C41" stroke-width="3"/>
+<circle cx="100" cy="100" r="54" fill="#EFEBE9" stroke="#6D4C41" stroke-width="3"/>
+<g stroke="#22213A" stroke-width="3.5" stroke-linejoin="round" stroke-linecap="round"><path d="M84 134c-4-30 6-50 8-70h16c2 20 12 40 8 70z" fill="#D7CCC8" stroke-width="3"/><path d="M86 126h28" fill="none" stroke="#BCAAA4" stroke-width="1.5"/><path d="M86.8 116h26.4" fill="none" stroke="#BCAAA4" stroke-width="1.5"/><path d="M87.6 106h24.8" fill="none" stroke="#BCAAA4" stroke-width="1.5"/><path d="M88.4 96h23.2" fill="none" stroke="#BCAAA4" stroke-width="1.5"/><path d="M89.2 86h21.6" fill="none" stroke="#BCAAA4" stroke-width="1.5"/><path d="M90 76h20" fill="none" stroke="#BCAAA4" stroke-width="1.5"/><rect x="94" y="92" width="12" height="12" rx="1" fill="#22213A" stroke="none"/><rect x="88" y="58" width="24" height="8" fill="#BCAAA4" stroke-width="2.5"/><path d="M60 136h80" fill="none" stroke="#7CB342" stroke-width="4"/></g>
+<text font-family="KIRA UI, Arial, sans-serif" font-weight="800" font-size="15" letter-spacing="3" fill="#6D4C41"><textPath href="#kgj-st-a" startOffset="50%" text-anchor="middle">GYEONGJU</textPath></text>
+<text font-family="KIRA UI, Arial, sans-serif" font-weight="700" font-size="11" letter-spacing="3" fill="#43A047"><textPath href="#kgj-st-b" startOffset="50%" text-anchor="middle">KOREA</textPath></text>
+<path d="M22 100l5-3 5 3-5 3zM168 100l5-3 5 3-5 3z" fill="#6D4C41"/>
+</svg>

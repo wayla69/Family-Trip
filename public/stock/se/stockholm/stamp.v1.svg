@@ -1,0 +1,10 @@
+<svg viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+<defs><path id="ses-st-a" d="M 38 100 A 62 62 0 0 1 162 100"/><path id="ses-st-b" d="M 30 106 A 70 70 0 0 0 170 106"/></defs>
+<circle cx="100" cy="100" r="96" fill="#FFF7F2" stroke="#B71C1C" stroke-width="5" stroke-dasharray="7 5"/>
+<circle cx="100" cy="100" r="84" fill="none" stroke="#B71C1C" stroke-width="3"/>
+<circle cx="100" cy="100" r="54" fill="#FFEBEE" stroke="#B71C1C" stroke-width="3"/>
+<g stroke="#22213A" stroke-width="3.5" stroke-linejoin="round" stroke-linecap="round"><path d="M56 120h80l14-30v-10h-16l-4 10H56z" fill="#8D5524" stroke-width="3"/><path d="M60 104h76M60 112h76" fill="none" stroke="#FFCA28" stroke-width="2"/><rect x="132" y="70" width="18" height="22" rx="2" fill="#A1673F" stroke-width="2.5"/><circle cx="141" cy="80" r="4" fill="#FFCA28" stroke-width="1.5"/><path d="M80 104V56" fill="none" stroke="#5D4037" stroke-width="2.5"/><path d="M72 68h16M74 80h12" fill="none" stroke="#5D4037" stroke-width="2"/><path d="M102 104V60" fill="none" stroke="#5D4037" stroke-width="2.5"/><path d="M94 72h16M96 84h12" fill="none" stroke="#5D4037" stroke-width="2"/><path d="M122 104V64" fill="none" stroke="#5D4037" stroke-width="2.5"/><path d="M114 76h16M116 88h12" fill="none" stroke="#5D4037" stroke-width="2"/><path d="M50 132c10-4 20 4 30 0s20 4 30 0 20 4 30 0" fill="none" stroke="#4FC3F7" stroke-width="2.5"/></g>
+<text font-family="KIRA UI, Arial, sans-serif" font-weight="800" font-size="15" letter-spacing="3" fill="#B71C1C"><textPath href="#ses-st-a" startOffset="50%" text-anchor="middle">STOCKHOLM</textPath></text>
+<text font-family="KIRA UI, Arial, sans-serif" font-weight="700" font-size="11" letter-spacing="3" fill="#006AA7"><textPath href="#ses-st-b" startOffset="50%" text-anchor="middle">SVERIGE</textPath></text>
+<path d="M22 100l5-3 5 3-5 3zM168 100l5-3 5 3-5 3z" fill="#B71C1C"/>
+</svg>

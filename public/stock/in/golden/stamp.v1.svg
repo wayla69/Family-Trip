@@ -1,0 +1,10 @@
+<svg viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+<defs><path id="igt-st-a" d="M 38 100 A 62 62 0 0 1 162 100"/><path id="igt-st-b" d="M 30 106 A 70 70 0 0 0 170 106"/></defs>
+<circle cx="100" cy="100" r="96" fill="#FFF7F2" stroke="#8D6E63" stroke-width="5" stroke-dasharray="7 5"/>
+<circle cx="100" cy="100" r="84" fill="none" stroke="#8D6E63" stroke-width="3"/>
+<circle cx="100" cy="100" r="54" fill="#FFF8E1" stroke="#8D6E63" stroke-width="3"/>
+<g stroke="#22213A" stroke-width="3.5" stroke-linejoin="round" stroke-linecap="round"><rect x="70" y="110" width="60" height="24" fill="#FFFFFF" stroke-width="3"/><path d="M80 112c-4-36 16-50 20-56 4 6 24 20 20 56z" fill="#FFFFFF" stroke-width="3"/><path d="M90 134v-14c0-8 20-8 20 0v14z" fill="#BCAAA4" stroke-width="2"/><rect x="58" y="76" width="8" height="58" fill="#FFFFFF" stroke-width="2.5"/><circle cx="62" cy="74" r="5" fill="#FFFFFF" stroke-width="2"/><rect x="134" y="76" width="8" height="58" fill="#FFFFFF" stroke-width="2.5"/><circle cx="138" cy="74" r="5" fill="#FFFFFF" stroke-width="2"/><path d="M100 56v-8" fill="none" stroke="#22213A" stroke-width="2"/></g>
+<text font-family="KIRA UI, Arial, sans-serif" font-weight="800" font-size="13" letter-spacing="3" fill="#8D6E63"><textPath href="#igt-st-a" startOffset="50%" text-anchor="middle">AGRA · JAIPUR</textPath></text>
+<text font-family="KIRA UI, Arial, sans-serif" font-weight="700" font-size="11" letter-spacing="3" fill="#E65100"><textPath href="#igt-st-b" startOffset="50%" text-anchor="middle">INDIA</textPath></text>
+<path d="M22 100l5-3 5 3-5 3zM168 100l5-3 5 3-5 3z" fill="#8D6E63"/>
+</svg>
