@@ -1,0 +1,10 @@
+<svg viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+<defs><path id="thcm-st-a" d="M 38 100 A 62 62 0 0 1 162 100"/><path id="thcm-st-b" d="M 30 106 A 70 70 0 0 0 170 106"/></defs>
+<circle cx="100" cy="100" r="96" fill="#FFF7F2" stroke="#8E3B46" stroke-width="5" stroke-dasharray="7 5"/>
+<circle cx="100" cy="100" r="84" fill="none" stroke="#8E3B46" stroke-width="3"/>
+<circle cx="100" cy="100" r="54" fill="#FFF4E0" stroke="#8E3B46" stroke-width="3"/>
+<g stroke="#22213A" stroke-width="3.5" stroke-linejoin="round" stroke-linecap="round"><rect x="64" y="112" width="72" height="26" fill="#C68A4E" stroke-width="3"/><path d="M76 112v26M100 112v26M124 112v26" fill="none" stroke="#8D5524" stroke-width="2"/><path d="M58 114l42-40 42 40z" fill="#A0522D" stroke-width="3"/><path d="M70 110l30-28 30 28" fill="none" stroke="#E0B07A" stroke-width="2"/><path d="M100 78l-14-24M100 78l14-24" fill="none" stroke="#8D3B2A" stroke-width="5"/><circle cx="86" cy="52" r="4" fill="#FFCA28" stroke-width="2"/><circle cx="114" cy="52" r="4" fill="#FFCA28" stroke-width="2"/><circle cx="100" cy="98" r="6" fill="#FFF4E0" stroke-width="2"/></g>
+<text font-family="KIRA UI, Arial, sans-serif" font-weight="800" font-size="15" letter-spacing="3" fill="#8E3B46"><textPath href="#thcm-st-a" startOffset="50%" text-anchor="middle">CHIANG MAI</textPath></text>
+<text font-family="KIRA UI, Arial, sans-serif" font-weight="700" font-size="11" letter-spacing="3" fill="#B8860B"><textPath href="#thcm-st-b" startOffset="50%" text-anchor="middle">THAILAND</textPath></text>
+<path d="M22 100l5-3 5 3-5 3zM168 100l5-3 5 3-5 3z" fill="#8E3B46"/>
+</svg>
