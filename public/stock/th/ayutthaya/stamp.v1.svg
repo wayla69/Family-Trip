@@ -1,0 +1,10 @@
+<svg viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+<defs><path id="ayu-st-a" d="M 38 100 A 62 62 0 0 1 162 100"/><path id="ayu-st-b" d="M 30 106 A 70 70 0 0 0 170 106"/></defs>
+<circle cx="100" cy="100" r="96" fill="#FFF7F2" stroke="#B23A2B" stroke-width="5" stroke-dasharray="7 5"/>
+<circle cx="100" cy="100" r="84" fill="none" stroke="#B23A2B" stroke-width="3"/>
+<circle cx="100" cy="100" r="54" fill="#FFF3E0" stroke="#B23A2B" stroke-width="3"/>
+<g stroke="#22213A" stroke-width="3.5" stroke-linejoin="round" stroke-linecap="round"><path d="M60 140c10-12 70-12 80 0z" fill="#7CB342" stroke-width="3"/><path d="M80 136l4-30.799999999999997h32l4 30.799999999999997z" fill="#C1694F"/><path d="M85.6 105.2c0-30.799999999999997 6.4-48.400000000000006 14.399999999999999-57.2 8 8.8 14.399999999999999 26.4 14.399999999999999 57.2z" fill="#C1694F"/><path d="M88 92h24M91.2 76.16h17.6" fill="none" stroke="#8D3B22" stroke-width="2"/><path d="M100 48v-8" fill="none" stroke="#8D3B22" stroke-width="3"/><path d="M130 136v-24" fill="none" stroke="#6D4C41" stroke-width="3"/><circle cx="130" cy="106" r="12" fill="#43A047" stroke-width="2.5"/><circle cx="70" cy="118" r="9" fill="#66BB6A" stroke-width="2.5"/><rect x="84" y="112" width="32" height="6" fill="#8D3B22" stroke="none"/></g>
+<text font-family="KIRA UI, Arial, sans-serif" font-weight="800" font-size="15" letter-spacing="3" fill="#B23A2B"><textPath href="#ayu-st-a" startOffset="50%" text-anchor="middle">AYUTTHAYA</textPath></text>
+<text font-family="KIRA UI, Arial, sans-serif" font-weight="700" font-size="11" letter-spacing="3" fill="#5D4037"><textPath href="#ayu-st-b" startOffset="50%" text-anchor="middle">THAILAND</textPath></text>
+<path d="M22 100l5-3 5 3-5 3zM168 100l5-3 5 3-5 3z" fill="#B23A2B"/>
+</svg>
