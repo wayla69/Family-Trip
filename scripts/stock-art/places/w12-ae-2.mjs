@@ -126,12 +126,12 @@ const items = [
     // a huge bare rocky mountain glowing in the sunrise with a tiny lookout on its peak, green lawns and palms at its foot
     C(190, 60, 24, '#FFE082', 0) + P('M8 196L70 80l30 20 30-56 30 36 30-10 42 126z', '#BC8F6F') + Lc('M70 80l10 40M130 44l-10 50 20 30M160 80l-6 40', '#9C6F50', 3) + R(122, 34, 18, 10, '#FFFFFF', 2) + Lc('M126 34v-8M136 34v-8', INK, 2)
     + E(120, 204, 112, 18, '#9CCC65') + [30, 70, 170, 210].map((x, k) => palm(x, 206, 30 + (k % 2) * 8, 0.6)).join('') + face(130, 130, 0.45)),
-  LM('gargoor', 'กรงดักปลาการ์กูร์ที่หมู่บ้านมรดก', 'Gargoor fish traps at the Heritage Village', ['heritage village', 'หมู่บ้านมรดก', 'gargoor', 'การ์กูร์', 'fish trap', 'กรงดักปลา', 'barasti hut', 'กระท่อมใบปาล์ม', 'old ways', 'วิถีเก่า'],
-    nm('หากรงดักปลาทรงโดมที่สานจากลวด', 'Find the dome-shaped fish traps woven from wire'),
-    // two big dome-shaped woven wire fish traps on the sand with funnel mouths, a little hut of palm fronds behind and the sea beyond
-    P('M8 112h224v40H8z', '#4FC3F7') + P('M120 120h96v56h-96z', '#C8A26B') + Array.from({ length: 9 }, (_, k) => Lc(`M${124 + k * 11} 124v50`, '#A1784A', 2.5)).join('') + P('M112 122l56-34 56 34z', '#BC9A62')
-    + E(120, 196, 110, 22, '#F4D19B') + [[72, 190, 56], [168, 200, 40]].map(([x, y, r]) => P(`M${x - r} ${y}a${r} ${r} 0 0 1 ${r * 2} 0z`, '#FFF8E1') + chords(x, y, r, 45, 10, '#B0A080', 2, y) + chords(x, y, r, -45, 10, '#B0A080', 2, y) + P(`M${x - r} ${y}a${r} ${r} 0 0 1 ${r * 2} 0z`, 'none') + E(x + r * 0.4, y - r * 0.4, r * 0.18, r * 0.24, '#8D6E63', 2.5)).join('')
-    + face(72, 166, 0.35)),
+  LM('emiratespalace', 'วังโรงแรมเอมิเรตส์พาเลซโดมยอดทอง', 'Emirates Palace and its golden-tipped domes', ['emirates palace', 'เอมิเรตส์พาเลซ', 'palace hotel', 'วังโรงแรม', 'golden domes', 'โดมยอดทอง', 'palace gardens', 'สวนหน้าวัง', 'west corniche', 'afternoon tea'],
+    nm('หาวังสีทรายสีชมพูที่มีโดมเล็กโดมใหญ่เรียงกันยาว', 'Find the long sandy-pink palace with a row of big and little domes'),
+    // a very long sandy-pink palace with one big pale dome in the middle and rows of smaller domes on towers along both wings, gold tips on every dome, green lawns and a path in front
+    E(120, 206, 112, 14, '#9CCC65') + P('M96 220l12-26h24l12 26z', '#F4D19B') + R(10, 132, 220, 62, '#E8C9A8') + Lc('M10 146h220', '#D4A984', 3) + Array.from({ length: 10 }, (_, k) => P(`M${18 + k * 21.5} 192v-26c0-10 13-10 13 0v26z`, '#B3E5FC', 2.5)).join('')
+    + [[22, 132, 10], [52, 132, 10], [188, 132, 10], [218, 132, 10], [76, 132, 12], [164, 132, 12]].map(([x, y, r]) => R(x - r, y - 16, r * 2, 16, '#E8C9A8') + P(`M${x - r} ${y - 16}c0-${r * 1.6} ${r * 2}-${r * 1.6} ${r * 2} 0z`, '#F4E4C8') + Lc(`M${x} ${y - 16 - r * 1.2}v-6`, '#E0B040', 3)).join('')
+    + R(92, 108, 56, 24, '#E8C9A8') + P('M90 108c0-50 60-50 60 0z', '#F4E4C8') + Array.from({ length: 4 }, (_, k) => Lc(`M${100 + k * 13} 108Q${(100 + k * 13 + 120) / 2} 78 120 72`, '#D4A984', 2.5)).join('') + Lc('M120 72V56', '#E0B040', 4) + C(120, 54, 4, '#FFCA28', 2) + face(120, 162, 0.35)),
   LM('cheetah', 'เสือชีตาห์บนเกาะเซอร์บานียาส', 'A cheetah on Sir Bani Yas Island', ['sir bani yas', 'เซอร์บานียาส', 'cheetah', 'เสือชีตาห์', 'island safari', 'ซาฟารีบนเกาะ', 'wildlife park', 'อุทยานสัตว์ป่า', 'game drive'],
     nm('หาเสือชีตาห์ลายจุดที่นอนพักใต้ต้นไม้', 'Find the spotty cheetah resting under a tree'),
     // a slim golden cheetah cub lying in the shade of a flat-topped acacia tree on golden grass, black tear-lines under its eyes and a spotty tail
