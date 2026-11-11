@@ -1,0 +1,10 @@
+<svg viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+<defs><path id="rot-st-a" d="M 38 100 A 62 62 0 0 1 162 100"/><path id="rot-st-b" d="M 30 106 A 70 70 0 0 0 170 106"/></defs>
+<circle cx="100" cy="100" r="96" fill="#FFF7F2" stroke="#00695C" stroke-width="5" stroke-dasharray="7 5"/>
+<circle cx="100" cy="100" r="84" fill="none" stroke="#00695C" stroke-width="3"/>
+<circle cx="100" cy="100" r="54" fill="#E0F2F1" stroke="#00695C" stroke-width="3"/>
+<g stroke="#22213A" stroke-width="3.5" stroke-linejoin="round" stroke-linecap="round"><rect x="50" y="118" width="100" height="22" fill="#4FC3F7" stroke-width="2"/><path d="M70 122c6-20 50-24 60 0z" fill="#43A047" stroke-width="3"/><g transform="translate(68 114) scale(0.8)"><path d="M0 0c-6-8 6-14 0-22s6-14 0-22" fill="none" stroke="#FFFFFF" stroke-width="7"/><path d="M0 0c-6-8 6-14 0-22s6-14 0-22" fill="none" stroke="#22213A" stroke-width="1.5"/></g><g transform="translate(100 114) scale(0.8)"><path d="M0 0c-6-8 6-14 0-22s6-14 0-22" fill="none" stroke="#FFFFFF" stroke-width="7"/><path d="M0 0c-6-8 6-14 0-22s6-14 0-22" fill="none" stroke="#22213A" stroke-width="1.5"/></g><g transform="translate(132 114) scale(0.8)"><path d="M0 0c-6-8 6-14 0-22s6-14 0-22" fill="none" stroke="#FFFFFF" stroke-width="7"/><path d="M0 0c-6-8 6-14 0-22s6-14 0-22" fill="none" stroke="#22213A" stroke-width="1.5"/></g></g>
+<text font-family="KIRA UI, Arial, sans-serif" font-weight="800" font-size="19" letter-spacing="3" fill="#00695C"><textPath href="#rot-st-a" startOffset="50%" text-anchor="middle">ROTORUA</textPath></text>
+<text font-family="KIRA UI, Arial, sans-serif" font-weight="700" font-size="11" letter-spacing="3" fill="#F9A825"><textPath href="#rot-st-b" startOffset="50%" text-anchor="middle">NEW ZEALAND</textPath></text>
+<path d="M22 100l5-3 5 3-5 3zM168 100l5-3 5 3-5 3z" fill="#00695C"/>
+</svg>

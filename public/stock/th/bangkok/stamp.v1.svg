@@ -1,0 +1,10 @@
+<svg viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+<defs><path id="bkk-st-a" d="M 38 100 A 62 62 0 0 1 162 100"/><path id="bkk-st-b" d="M 30 106 A 70 70 0 0 0 170 106"/></defs>
+<circle cx="100" cy="100" r="96" fill="#FFF7F2" stroke="#E65100" stroke-width="5" stroke-dasharray="7 5"/>
+<circle cx="100" cy="100" r="84" fill="none" stroke="#E65100" stroke-width="3"/>
+<circle cx="100" cy="100" r="54" fill="#FFF3E0" stroke="#E65100" stroke-width="3"/>
+<g stroke="#22213A" stroke-width="3.5" stroke-linejoin="round" stroke-linecap="round"><path d="M80 132l6-40h28l6 40z" fill="#FFFFFF" stroke-width="3"/><path d="M84 116h32M86 104h28" fill="none" stroke="#90A4AE" stroke-width="2"/><path d="M88 92c0-24 6-38 12-46 6 8 12 22 12 46z" fill="#FFF3E0" stroke-width="3"/><path d="M90 80h20M92 68h16" fill="none" stroke="#F48FB1" stroke-width="2.5"/><path d="M100 46v-10" fill="none" stroke="#FFC107" stroke-width="3"/><circle cx="94" cy="86" r="2.2" fill="#26A69A" stroke="none"/><circle cx="106" cy="86" r="2.2" fill="#26A69A" stroke="none"/><circle cx="100" cy="74" r="2.2" fill="#26A69A" stroke="none"/><circle cx="96" cy="98" r="2.2" fill="#26A69A" stroke="none"/><circle cx="104" cy="98" r="2.2" fill="#26A69A" stroke="none"/><path d="M66 136c10-6 20 6 34 0s24-6 34 0" fill="none"/><path d="M62 136c10-5 18 5 28 0s18-5 28 0 18 5 28 0" fill="none" stroke="#29B6F6" stroke-width="3"/></g>
+<text font-family="KIRA UI, Arial, sans-serif" font-weight="800" font-size="19" letter-spacing="3" fill="#E65100"><textPath href="#bkk-st-a" startOffset="50%" text-anchor="middle">BANGKOK</textPath></text>
+<text font-family="KIRA UI, Arial, sans-serif" font-weight="700" font-size="11" letter-spacing="3" fill="#6A1B9A"><textPath href="#bkk-st-b" startOffset="50%" text-anchor="middle">THAILAND</textPath></text>
+<path d="M22 100l5-3 5 3-5 3zM168 100l5-3 5 3-5 3z" fill="#E65100"/>
+</svg>
