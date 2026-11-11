@@ -412,6 +412,8 @@ async function packOffline(t, all) {
 let toastT = 0;
 // reminders (Web Push): this phone subscribes once; the server sends "08:00 · in 30 min" before each timed step of the day
 const pushOk = () => 'serviceWorker' in navigator && 'PushManager' in window && 'Notification' in window;
+// iPhone, iPod or iPad — an iPad (iPadOS 13+) calls itself a Mac in its user agent, so it is the Mac with a touch screen
+const isIOS = () => /iP(hone|ad|od)/.test(navigator.userAgent) || (/Macintosh/.test(navigator.userAgent) && navigator.maxTouchPoints > 1);
 const pushSub = async () => (pushOk() ? (await navigator.serviceWorker.ready).pushManager.getSubscription() : null);
 const b64u = (s) => { const b = atob((s + '='.repeat((4 - s.length % 4) % 4)).replace(/-/g, '+').replace(/_/g, '/')); return Uint8Array.from(b, (c) => c.charCodeAt(0)); };
 function toast(msg) { const t = $('#toast'); t.textContent = msg; t.hidden = false; clearTimeout(toastT); toastT = setTimeout(() => { t.hidden = true; }, 2800); }

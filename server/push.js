@@ -14,6 +14,16 @@ const LATE = 15 * 60000;
 const PUSH_HOST = /^https:\/\/([a-z0-9-]+\.)*(fcm\.googleapis\.com|android\.googleapis\.com|push\.apple\.com|push\.services\.mozilla\.com|notify\.windows\.com)\/[^\s]{4,600}$/i;                                    // a tick that comes late (deploy, sleep) still sends within this window
 
 let KEYS = null;
+// the VAPID "subject" signed into every push: Apple's push service (iPhone/iPad) refuses a JWT whose subject is not a real
+// mailto: or https: address (403 BadJwtToken) — Google's lets anything through, so Android worked while iPad stayed silent.
+// PUSH_SUBJECT wins; otherwise the app's own https address (Railway sets RAILWAY_PUBLIC_DOMAIN); the .invalid fallback only for local runs
+function subject(env = process.env) {
+  const s = String(env.PUSH_SUBJECT || '').trim();
+  if (/^(mailto:[^@\s]+@[^@\s]+\.[a-z]{2,}|https:\/\/[^\s/]+\.[a-z]{2,}\S*)$/i.test(s) && !/\.(invalid|local|localhost|test|example)(\/|$)/i.test(s)) return s;
+  const d = String(env.RAILWAY_PUBLIC_DOMAIN || '').trim().replace(/^https?:\/\//, '').replace(/\/.*$/, '');
+  if (/^[a-z0-9.-]+\.[a-z]{2,}$/i.test(d)) return 'https://' + d;
+  return 'mailto:noreply@memory-bookshelf.invalid';
+}
 async function init(pool) {
   if (process.env.VAPID_PUBLIC_KEY && process.env.VAPID_PRIVATE_KEY) KEYS = { publicKey: process.env.VAPID_PUBLIC_KEY, privateKey: process.env.VAPID_PRIVATE_KEY };
   else {   // generated once and kept in Postgres, like the session secret
@@ -21,7 +31,9 @@ async function init(pool) {
     await pool.query("INSERT INTO settings (key, value) VALUES ('vapid', $1) ON CONFLICT (key) DO NOTHING", [JSON.stringify(fresh)]);
     KEYS = JSON.parse((await pool.query("SELECT value FROM settings WHERE key='vapid'")).rows[0].value);
   }
-  webpush.setVapidDetails(process.env.PUSH_SUBJECT || 'mailto:noreply@memory-bookshelf.invalid', KEYS.publicKey, KEYS.privateKey);
+  const sub = subject();
+  if (/\.invalid$/.test(sub)) console.warn('NOTE: push subject is a placeholder — iPhone/iPad (Apple) will refuse reminders. Set PUSH_SUBJECT=https://<your domain> (or run on Railway with a public domain).');
+  webpush.setVapidDetails(sub, KEYS.publicKey, KEYS.privateKey);
 }
 
 // the UTC instant of a wall-clock time in a timezone (two passes so a DST change that day lands right)
@@ -107,14 +119,17 @@ function extras(trips, now, kids = { th: 'เด็กๆ', en: 'the kids' }) {
 }
 
 function create({ pool, family, A, sender = (sub, payload, opt) => webpush.sendNotification(sub, payload, opt) }) {   // sender: the tests pass a fake
-  const send = async (sub, payload) => {
+  // true when the push service took it; otherwise {status, reason} (Apple says why in the body, e.g. {"reason":"BadJwtToken"}) — logged, never the endpoint
+  const send = async (sub, payload, why) => {
     try {
       await sender({ endpoint: sub.endpoint, keys: { p256dh: sub.p256dh, auth: sub.auth } }, payload, { TTL: 1800, urgency: 'high' });
       await pool.query('UPDATE push_subs SET last_ok=now() WHERE id=$1', [sub.id]);
       return true;
     } catch (e) {
+      const reason = (/"reason"\s*:\s*"([A-Za-z]{2,40})"/.exec(String(e.body || '')) || [])[1] || '';
       if (e.statusCode === 404 || e.statusCode === 410) await pool.query('DELETE FROM push_subs WHERE id=$1', [sub.id]);   // the phone unsubscribed
-      else console.error('push', e.statusCode || e.message);
+      else console.error('push', e.statusCode || e.message, reason, (/^https:\/\/([^/]+)/.exec(sub.endpoint) || [])[1] || '');
+      if (why) Object.assign(why, { status: e.statusCode || 0, reason });
       return false;
     }
   };
@@ -191,10 +206,11 @@ function create({ pool, family, A, sender = (sub, payload, opt) => webpush.sendN
     const s = (await pool.query('SELECT * FROM push_subs WHERE id=$1 AND family_id=$2', [crypto.createHash('sha256').update(e).digest('hex'), family])).rows[0];
     if (!s) return res.status(404).json({ error: 'not-subscribed' });
     const th = s.lang === 'th';
-    const ok = await send(s, JSON.stringify({ title: th ? 'ทดสอบการเตือน' : 'Test reminder', body: th ? `ใช้ได้แล้ว — จะเตือนก่อนทุกกิจกรรม ${LEAD / 60000} นาที` : `Working — you will hear ${LEAD / 60000} min before each step`, tag: 'test', url: '/' }));
-    res.status(ok ? 200 : 502).json({ ok });
+    const why = {};
+    const ok = await send(s, JSON.stringify({ title: th ? 'ทดสอบการเตือน' : 'Test reminder', body: th ? `ใช้ได้แล้ว — จะเตือนก่อนทุกกิจกรรม ${LEAD / 60000} นาที` : `Working — you will hear ${LEAD / 60000} min before each step`, tag: 'test', url: '/' }), why);
+    res.status(ok ? 200 : 502).json(ok ? { ok } : { ok, status: why.status, reason: why.reason, apple: /push\.apple\.com/.test(s.endpoint) });
   });
   return { router: r, tick, heart, start, stop };
 }
 
-module.exports = { init, create, due, extras, zoned, short, LEAD };
+module.exports = { init, create, due, extras, zoned, short, subject, LEAD };

@@ -725,11 +725,11 @@ ${reportBtn(full, L('อ่านแผนเต็มของวันนี�
 // On an iPhone in Safari the phone can't take reminders yet: the card says the one step that makes it possible (Home Screen).
 function remindAsk() {
   if (!isEditor() || ls('remind') || ls('remindLater')) return '';
-  const ios = /iP(hone|ad|od)/.test(navigator.userAgent), standalone = matchMedia('(display-mode: standalone)').matches || navigator.standalone;
+  const ios = isIOS(), standalone = matchMedia('(display-mode: standalone)').matches || navigator.standalone;
   if (!pushOk() && !(ios && !standalone)) return '';   // a browser that can never show them: say nothing
   const needHome = ios && !standalone;
   return `<div class="remind ask">${ic('bell')}<span><b>${L('ให้แอปเตือนระหว่างทริป', 'Reminders during the trip')}</b>
-<small>${needHome ? L('บน iPhone: แตะปุ่มแชร์ ⬆️ → "เพิ่มไปยังหน้าจอโฮม" แล้วเปิดแอปจากไอคอน จากนั้นกด "เปิดการเตือน" ตรงนี้', 'On iPhone: tap Share ⬆️ → "Add to Home Screen", open the app from its icon, then turn reminders on here')
+<small>${needHome ? L('บน iPhone/iPad: แตะปุ่มแชร์ ⬆️ → "เพิ่มไปยังหน้าจอโฮม" แล้วเปิดแอปจากไอคอน จากนั้นกด "เปิดการเตือน" ตรงนี้', 'On iPhone/iPad: tap Share ⬆️ → "Add to Home Screen", open the app from its icon, then turn reminders on here')
     : L('ก่อนกิจกรรม 30 นาที · ประตูเซอร์ไพรส์ 08:00 · ชวนบันทึก 21:30', '30 min before each step · a surprise door at 08:00 · record the day at 21:30')}</small></span>
 <span class="rb"><button class="btn small ghost" data-a="remindlater">${L('ไว้ทีหลัง', 'Later')}</button>${needHome ? '' : `<button class="btn small" data-a="remind">${L('เปิดการเตือน', 'Turn on')}</button>`}</span></div>`;
 }
@@ -1611,7 +1611,7 @@ ${fam.err ? `<div class="notice">${esc(fam.err)}</div>` : ''}
 const START_LAST = 5;
 function viewStart(p) {
   const n = Math.min(START_LAST, Math.max(0, parseInt(p[1], 10) || 0));
-  const ios = /iP(hone|ad|od)/.test(navigator.userAgent), android = /Android/.test(navigator.userAgent);
+  const ios = isIOS(), android = /Android/.test(navigator.userAgent);
   const standalone = matchMedia('(display-mode: standalone)').matches || !!navigator.standalone;
   const head = n && n < START_LAST ? `<div class="onbhd"><a class="ibtn" href="#/start/${n - 1}" aria-label="${L('ย้อนกลับ', 'Back')}">${ic('back')}</a>
 <div class="onbdots" aria-label="${L(`ขั้น ${n} จาก 4`, `Step ${n} of 4`)}">${[1, 2, 3, 4].map((i) => `<span class="${i === n ? 'on' : i < n ? 'done' : ''}"></span>`).join('')}</div><span class="label">${n}/4</span></div>` : '';
@@ -1643,7 +1643,7 @@ ${vgJust ? `<div class="call pick vgjust"><span>${L('รหัสของกล
 <p id="vgmsg" class="notice" hidden></p>
 <button type="button" class="btn onbnext" data-a="vgsave">${L('บันทึกรหัส', 'Save the PIN')}</button></div>${next(3, 'ข้ามไปก่อน', 'Skip for now', true)}`}`;
   } else if (n === 3) body = `<h1 class="h2">${L('เพิ่มไว้บนหน้าจอโฮม', 'Add to the Home Screen')}</h1>
-<p class="lede">${L('เปิดได้ในแตะเดียวเหมือนแอป', 'Opens in one tap, like an app.')} ${ios ? `<b>${L('บน iPhone การเตือนทำงานเฉพาะจากไอคอนบนหน้าจอโฮม', 'On an iPhone, reminders work only from the Home-Screen icon.')}</b>` : ''}</p>
+<p class="lede">${L('เปิดได้ในแตะเดียวเหมือนแอป', 'Opens in one tap, like an app.')} ${ios ? `<b>${L('บน iPhone/iPad การเตือนทำงานเฉพาะจากไอคอนบนหน้าจอโฮม', 'On an iPhone or iPad, reminders work only from the Home-Screen icon.')}</b>` : ''}</p>
 ${standalone ? `<div class="call calm">✓ ${L('เรียบร้อย ตอนนี้เปิดจากหน้าจอโฮมอยู่แล้ว', 'Done — you are already opening it from the Home Screen.')}</div>${next(4, 'ต่อไป', 'Next')}`
     : `<ol class="onbsteps">${ios ? `${row(1, 'แตะปุ่มแชร์ใน Safari', 'Tap Share in Safari', 'สี่เหลี่ยมมีลูกศรชี้ขึ้น กลางแถบล่าง', 'The square with the arrow, bottom centre')}
 ${row(2, 'เลื่อนลง แตะ “เพิ่มไปยังหน้าจอโฮม”', 'Scroll down, tap “Add to Home Screen”', '', '')}
@@ -1663,7 +1663,7 @@ ${row('08:00', 'ประตูเซอร์ไพรส์ให้เด็�
 ${row('21:30', 'บันทึกวันนี้ก่อนนอน', 'Record the day before bed', 'ไม่เตือนถ้าบันทึกไปแล้ว', 'Not sent when the day is already recorded')}
 ${row('19:00', 'เก็บเล่มไว้ในเครื่อง', 'Keep the book on the phone', 'สองวันก่อนบิน ให้ใช้ได้ตอนไม่มีเน็ต', 'Two days before the flight, for no-signal days')}</ol>
 ${on ? `<div class="call calm">✓ ${L('เปิดเตือนบนเครื่องนี้แล้ว', 'Reminders are on for this phone')}</div>${next(5, 'ต่อไป', 'Next')}`
-    : needHome ? `<div class="call warn"><span class="lbl">${L('ยังเปิดไม่ได้', 'Not yet')}</span>${L('iPhone ต้องเปิดแอปจากไอคอนบนหน้าจอโฮมก่อน (ขั้นที่แล้ว) แล้วค่อยเปิดเตือนที่หน้า “วันนี้”', 'An iPhone needs the Home-Screen icon first (the previous step); then turn reminders on from Today.')}</div>${next(5, 'ต่อไป', 'Next')}`
+    : needHome ? `<div class="call warn"><span class="lbl">${L('ยังเปิดไม่ได้', 'Not yet')}</span>${L('iPhone/iPad ต้องเปิดแอปจากไอคอนบนหน้าจอโฮมก่อน (ขั้นที่แล้ว) แล้วค่อยเปิดเตือนที่หน้า “วันนี้”', 'An iPhone or iPad needs the Home-Screen icon first (the previous step); then turn reminders on from Today.')}</div>${next(5, 'ต่อไป', 'Next')}`
     : can ? `<button type="button" class="btn onbnext" data-a="remind">${ic('bell')} ${L('เปิดเตือนบนเครื่องนี้', 'Turn reminders on for this phone')}</button><button type="button" class="btn ghost onbnext" data-a="startlater">${L('ไว้ก่อน', 'Not now')}</button>`
     : `<div class="call info">${L('เบราว์เซอร์นี้ยังไม่รองรับการแจ้งเตือน เปิดได้ทีหลังบนมือถือจากหน้า “วันนี้”', 'This browser cannot show reminders; turn them on later from Today on the phone.')}</div>${next(5, 'ต่อไป', 'Next')}`}`;
   } else {
