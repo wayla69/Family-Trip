@@ -1304,9 +1304,9 @@ button.tile{width:100%;height:auto;appearance:none;-webkit-appearance:none}   /*
 .animals .seen{position:absolute;right:8px;top:8px;width:46px;height:46px;border-radius:50%;border:0;background:#fff;box-shadow:0 4px 10px -6px rgba(0,0,0,.5);font-size:22px}
 .animals .an.on .seen{background:var(--accent);color:var(--on-accent)}
 /* counting */
-.countfield{display:grid;grid-template-columns:repeat(auto-fill,minmax(88px,1fr));gap:10px}
+.countfield{display:grid;grid-template-columns:repeat(auto-fill,minmax(clamp(88px,16vw,170px),1fr));gap:clamp(10px,1.6vw,18px)}   /* bigger on a tablet (iPad owner: the things to count were tiny) */
 .cnt{position:relative;aspect-ratio:1;border:0;border-radius:22px;background:#fff;box-shadow:0 8px 18px -12px rgba(0,0,0,.45);display:grid;place-items:center}
-.cnt span{font-size:52px;line-height:1;transition:transform .2s}.cnt.hit span{transform:scale(.8);opacity:.55}
+.cnt span{font-size:clamp(52px,10vw,110px);line-height:1;transition:transform .2s}.cnt.hit span{transform:scale(.8);opacity:.55}
 .cnt i{position:absolute;right:6px;top:6px;min-width:30px;height:30px;border-radius:50%;background:var(--accent);color:var(--on-accent);font-style:normal;font-weight:700;font-size:17px;display:grid;place-items:center;padding:0 6px}
 .cnt:not(.hit) i{display:none}
 .bignum{text-align:center;font-size:84px;font-weight:700;color:var(--accent);line-height:1;min-height:84px}
@@ -2547,3 +2547,6 @@ section.pg .dstamps.pst.c3 b,section.pg .dstamps.pst.c4 b{font-size:16px}section
 .pg.back .bknext{font-size:20px;font-weight:800;color:var(--k5,var(--accent));margin:10px 0 18px}
 /* a day's moments by the part of the day */
 .tl.parts time{font-size:12px;font-weight:700;letter-spacing:.02em;color:var(--accent)}.tl.parts li.same{padding-top:2px}
+/* a tablet (iPad owner: the sign-in card looked tiny in the middle of the screen): a wider card, bigger words and keys — last, so it wins */
+@media (min-width:700px) and (min-height:700px){.login form{max-width:560px;padding:30px 34px 24px}.login label{font-size:15px}.login form .field,.login form input{font-size:19px}}
+@media (min-width:700px) and (min-height:950px){.login h1{font-size:60px}.login .pin{font-size:34px}.pinpad{max-width:380px;gap:18px 30px}.login .pinpad button{max-width:92px}}   /* the big keys only where they fit (portrait), so “Open the shelf” stays on screen in landscape */

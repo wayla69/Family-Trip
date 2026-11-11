@@ -10,7 +10,11 @@
 let audioCtx = null;
 function beep(kind, x) {   // x: the note's frequency for 'note'
   try {
+    // iPad/iPhone: web sounds obey the ring/silent switch unless the page says it plays media (Safari 16.4+), and a context made outside
+    // a tap starts "suspended" (or is "interrupted" after a call) — wake it on every sound, which is always a tap (iPad owner: music was silent)
+    try { if (navigator.audioSession && navigator.audioSession.type !== 'playback') navigator.audioSession.type = 'playback'; } catch (_) { /* older Safari */ }
     audioCtx = audioCtx || new (window.AudioContext || window.webkitAudioContext)();
+    if (audioCtx.state !== 'running' && audioCtx.resume) audioCtx.resume().catch(() => {});
     const c = audioCtx, t0 = c.currentTime;
     const tone = (f, at, dur, type, vol) => {
       const o = c.createOscillator(), g = c.createGain();
@@ -910,7 +914,7 @@ function startBubbles() {
   if (bubT && $('#bubblefield')) { const sc = $('#bubscore'); if (sc && bubN) sc.textContent = bubN; return; }   // already running: the page was only redrawn
   clearInterval(bubT); bubN = 0;
   const spawn = () => {
-    const f = $('#bubblefield'); if (!f) { clearInterval(bubT); return; }
+    const f = $('#bubblefield'); if (!f) { clearInterval(bubT); bubT = 0; return; }   // left the game (back gesture, browser back…): forget the timer, or the next visit thinks it still runs and never blows a bubble
     if (f.querySelectorAll('.bub').length > 9) return;
     const b = document.createElement('button'), sz = 52 + Math.random() * 64;
     b.className = 'bub'; b.setAttribute('aria-label', L('ฟอง', 'Bubble'));

@@ -110,8 +110,13 @@ ok((await post('/api/b/push/sub', sub)).ok && (await post('/api/b/push/unsub', {
     userAgent: 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/18.0 Safari/605.1.15' });
   await ctx.addInitScript(() => { Object.defineProperty(navigator, 'maxTouchPoints', { get: () => 5 }); try { delete window.PushManager; } catch (_) {} window.PushManager = undefined; });
   const page = await ctx.newPage();
-  await page.goto(BASE + '/'); await page.fill('#lcode', CODE); await page.keyboard.press('Enter'); await page.waitForSelector('.shelf');
+  await page.goto(BASE + '/'); await page.waitForSelector('#lf');
+  ok(await page.evaluate(() => document.querySelector('.login form').getBoundingClientRect().width >= 520 && document.querySelector('.pinpad button').getBoundingClientRect().width >= 88), 'iPad: the sign-in card and its keys are tablet-sized, not a phone card in the middle');
+  await page.fill('#lcode', CODE); await page.keyboard.press('Enter'); await page.waitForSelector('.shelf');
   const ask = page.locator('.remind.ask');
+  await page.goto(BASE + '/#/kid/mimi/numbers'); await page.waitForSelector('.cnt');
+  ok(await page.evaluate(() => parseFloat(getComputedStyle(document.querySelector('.cnt span')).fontSize) >= 80), 'iPad: the things to count are big on a tablet');
+  await page.goto(BASE + '/#/'); await page.waitForSelector('.shelf');
   ok(await page.evaluate(() => isIOS()) && await ask.count() === 1 && /iPad/.test(await ask.textContent()) && await ask.locator('[data-a="remind"]').count() === 0, 'iPad in Safari: recognised as Apple, told to add it to the Home Screen (no button that cannot work)');
   await browser.close(); }
 await pool.end();
