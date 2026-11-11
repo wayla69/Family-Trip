@@ -1,5 +1,8 @@
 'use strict';
 /* ===== Memory Bookshelf · core: state, api, offline queue, helpers ===== */
+// an older iPad/iPhone (Safari before 16.2: iPadOS 15 on an iPad mini 4 / Air 2) drops every colour written with color-mix() — swap in
+// the copy the server makes with those colours resolved, before the first render
+try { if (window.CSS && CSS.supports && !CSS.supports('color', 'color-mix(in srgb, red 50%, blue)')) { const l = document.querySelector('link[href="/app.css"]'); if (l) l.href = '/app-legacy.css'; } } catch (_) { /* keep app.css */ }
 const $ = (s, r = document) => r.querySelector(s);
 const $$ = (s, r = document) => Array.from(r.querySelectorAll(s));
 const esc = (s) => String(s == null ? '' : s).replace(/[&<>"']/g, (c) => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' }[c]));
@@ -140,7 +143,7 @@ async function load(tries = 0) {
     try { await withSeeds(fresh, prev || (await idb.get('state'))); } catch (e) { if (e.code === 409 && tries < 5) return load(tries + 1); throw e; }
     if (written !== w0 && tries < 5) return load(tries + 1);
     S = fresh; offline = false; S.syncedAt = Date.now();
-    idb.set('state', structuredClone(S)); ls('state', null);   // the offline copy lives in IndexedDB, as the server sent it (before pending writes are laid on top)
+    idb.set('state', typeof structuredClone === 'function' ? structuredClone(S) : JSON.parse(JSON.stringify(S)));   // structuredClone: Safari 15.4+ ls('state', null);   // the offline copy lives in IndexedDB, as the server sent it (before pending writes are laid on top)
   } catch (e) {
     const c = (await idb.get('state')) || ls('state');
     if (!c) return 'fail';

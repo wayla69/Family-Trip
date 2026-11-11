@@ -45,7 +45,7 @@ img{max-width:100%;display:block}
 .serif .sub-it{font-family:var(--serif);font-style:italic;font-weight:500}
 
 /* ---------- top bar ---------- */
-.top{position:sticky;top:0;z-index:20;background:color-mix(in srgb,var(--paper) 92%,transparent);backdrop-filter:blur(8px);border-bottom:1px solid var(--rule);padding-top:env(safe-area-inset-top,0px)}
+.top{position:sticky;top:0;z-index:20;background:color-mix(in srgb,var(--paper) 92%,transparent);-webkit-backdrop-filter:blur(8px);backdrop-filter:blur(8px);border-bottom:1px solid var(--rule);padding-top:env(safe-area-inset-top,0px)}
 .top .in{max-width:var(--max);margin:0 auto;padding:10px var(--gut);display:flex;align-items:center;gap:10px}
 .top .ttl{flex:1;min-width:0;font-weight:600;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
 .top .ttl small{display:block;font-size:11px;font-weight:600;letter-spacing:.12em;text-transform:uppercase;color:var(--accent)}
@@ -392,7 +392,7 @@ img.nophoto{background:repeating-linear-gradient(45deg,var(--panel) 0 8px,var(--
 .check .grow{flex:1}.check small{color:var(--muted)}
 
 /* ---------- tab bar ---------- */
-nav.bar{position:fixed;left:0;right:0;bottom:0;z-index:30;background:color-mix(in srgb,var(--paper) 94%,transparent);backdrop-filter:blur(8px);border-top:1px solid var(--rule);padding-bottom:env(safe-area-inset-bottom,0px)}
+nav.bar{position:fixed;left:0;right:0;bottom:0;z-index:30;background:color-mix(in srgb,var(--paper) 94%,transparent);-webkit-backdrop-filter:blur(8px);backdrop-filter:blur(8px);border-top:1px solid var(--rule);padding-bottom:env(safe-area-inset-bottom,0px)}
 nav.bar .in{max-width:640px;margin:0 auto;display:grid;grid-auto-flow:column;grid-auto-columns:1fr;gap:2px;padding:0 4px}
 nav.bar a{display:grid;justify-items:center;gap:2px;padding:9px 0 8px;text-decoration:none;font-size:12px;font-weight:600;color:var(--muted);border-radius:14px;min-height:66px;align-content:center}
 nav.bar a i{font-style:normal;font-size:27px;line-height:1.1}
@@ -893,12 +893,12 @@ body.kidmode{padding-bottom:0;background:var(--tint,#F3F6FA)}
 /* the jigsaw: a board of slots, a tray of pieces; a piece shows its crop of the picture */
 /* each slot has one piece's shape (--pa = piece width / height), so slots and pieces always match and nothing waits on the board's height;
    the board is only as wide as leaves the tray in view (--ar = the whole picture's width / height) */
-.jigboard{display:grid;grid-template-columns:repeat(var(--c,3),1fr);align-content:start;gap:4px;background:#fff;border-radius:18px;padding:6px;box-shadow:0 10px 22px -14px rgba(0,0,0,.4);width:100%;max-width:max(260px,calc((100vh - 430px) * var(--ar,1)));margin-inline:auto;box-sizing:border-box}
+.jigboard{display:grid;grid-template-columns:repeat(var(--c,3),1fr);align-content:start;gap:4px;background:#fff;border-radius:18px;padding:6px;box-shadow:0 10px 22px -14px rgba(0,0,0,.4);width:100%;max-width:max(260px,calc((100vh - 470px) * var(--ar,1)));margin-inline:auto;box-sizing:border-box}
 .jslot{border:2px dashed #B6C6E3;border-radius:8px;background:#F3F6FA;aspect-ratio:var(--pa,1);min-height:44px;padding:0;width:100%}
 .jslot.hover{border:3px solid var(--accent);background:#E6F0FF}
 .jslot.filled{border:2px solid transparent;background-color:#fff;background-repeat:no-repeat}.jslot.nope{animation:drumhit .25s}
 .jigtray{display:flex;gap:10px;flex-wrap:wrap;justify-content:center;margin-top:12px;min-height:60px}
-.jpiece{width:92px;height:calc(92px / var(--pa,1));border:3px solid #fff;border-radius:10px;background-color:#fff;background-repeat:no-repeat;box-shadow:0 8px 16px -10px rgba(0,0,0,.5);padding:0;transition:transform .12s}
+.jpiece{--pw:clamp(92px,9vw,130px);width:var(--pw);height:calc(var(--pw) / var(--pa,1));border:3px solid #fff;border-radius:10px;background-color:#fff;background-repeat:no-repeat;box-shadow:0 8px 16px -10px rgba(0,0,0,.5);padding:0;transition:transform .12s}
 .jpiece.pick{outline:4px solid var(--accent);transform:scale(1.1)}
 .jpiece{touch-action:none;-webkit-user-select:none;user-select:none;-webkit-touch-callout:none}.jpiece.lifted{opacity:.25}
 .jghost{position:fixed;left:0;top:0;z-index:60;pointer-events:none;border:3px solid #fff;border-radius:10px;background-color:#fff;background-repeat:no-repeat;box-shadow:0 18px 30px -12px rgba(0,0,0,.55)}
@@ -1268,7 +1268,7 @@ nav.bar button i{font-style:normal;font-size:27px;line-height:1.1}
 button.tile{width:100%;height:auto;appearance:none;-webkit-appearance:none}   /* a button tile must grow with its text like the link tiles (it stayed at min-height and clipped the last line) */
 .emerg li{flex-wrap:wrap}.emerg b{min-width:0;text-align:right;margin-left:auto}.emerg b a{white-space:normal;overflow-wrap:anywhere;text-align:right;display:inline-block}
 /* kid home: pages of four huge tiles, swipe or tap the arrows; dots below */
-.kidpagerwrap{position:relative;margin:0 -6px;overflow-x:clip}
+.kidpagerwrap{position:relative;margin:0 -6px;overflow-x:hidden;overflow-x:clip}   /* hidden first: Safari before 16 has no clip */
 .kidpager{display:flex;overflow-x:auto;scroll-snap-type:x mandatory;scrollbar-width:none;gap:12px;padding:4px 6px 8px;-webkit-overflow-scrolling:touch}
 .kidpager::-webkit-scrollbar{display:none}
 .kpage{flex:none;width:calc(100% - 12px);scroll-snap-align:center;display:grid;grid-template-columns:1fr 1fr;grid-template-rows:1fr 1fr;gap:12px;height:clamp(340px,calc(100vh - 470px),540px)}
@@ -2550,3 +2550,5 @@ section.pg .dstamps.pst.c3 b,section.pg .dstamps.pst.c4 b{font-size:16px}section
 /* a tablet (iPad owner: the sign-in card looked tiny in the middle of the screen): a wider card, bigger words and keys — last, so it wins */
 @media (min-width:700px) and (min-height:700px){.login form{max-width:560px;padding:30px 34px 24px}.login label{font-size:15px}.login form .field,.login form input{font-size:19px}}
 @media (min-width:700px) and (min-height:950px){.login h1{font-size:60px}.login .pin{font-size:34px}.pinpad{max-width:380px;gap:18px 30px}.login .pinpad button{max-width:92px}}   /* the big keys only where they fit (portrait), so “Open the shelf” stays on screen in landscape */
+/* a big tablet (iPad Pro 12.9", 11"): kid mode uses the room instead of a 760 px column in the middle (owner, Nov 2026) */
+@media (min-width:1000px) and (min-height:1000px){.kidwrap{max-width:960px}}

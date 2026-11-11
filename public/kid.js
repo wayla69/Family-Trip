@@ -63,13 +63,21 @@ function noise(c, t0, dur, vol, hp) {
 }
 
 /* ---------- the phone reads aloud ---------- */
+// iPad/iPhone list novelty and robot voices among the real ones (Bad News, Bells, Trinoids, Zarvox, Whisper… and the old "Eddy/Rocko/
+// Grandpa" family) — taking the first English voice could land on one, which scared the kids (owner, Nov 2026). Those are never used;
+// a warm, natural voice is preferred, and a downloaded "Enhanced"/"Premium" one above all.
+const VOICE_NO = /^(Albert|Bad News|Bahh|Bells|Boing|Bubbles|Cellos|Deranged|Good News|Hysterical|Jester|Junior|Organ|Pipe Organ|Superstar|Trinoids|Whisper|Wobble|Zarvox|Ralph|Fred|Kathy|Princess|Eddy|Flo|Grandma|Grandpa|Reed|Rocko|Sandy|Shelley)\b/i;
+const VOICE_NICE = /\b(Samantha|Karen|Moira|Tessa|Serena|Kate|Martha|Fiona|Stephanie|Ava|Allison|Susan|Catherine|Nicky|Zoe|Kanya|Narisa|Sinji|Google UK English Female|Google US English|Google ไทย|Microsoft (Libby|Sonia|Maisie|Aria|Jenny|Ana|Premwadee))\b/i;
 function voiceFor(langTag) {
-  const vs = (window.speechSynthesis && speechSynthesis.getVoices()) || [];
+  const vs = ((window.speechSynthesis && speechSynthesis.getVoices()) || []).filter((v) => !VOICE_NO.test(v.name || ''));
   const want = langTag.toLowerCase(), base = want.split('-')[0];
   const ok = (v) => v.lang.toLowerCase().replace('_', '-');
-  if (want === 'zh-hk') return vs.find((v) => ok(v) === 'zh-hk' || ok(v).startsWith('yue')) || null;   // Cantonese only — Mandarin would teach the wrong word
-  return vs.find((v) => ok(v) === want) || vs.find((v) => ok(v).startsWith(base)) || null;
+  const score = (v) => (VOICE_NICE.test(v.name) ? 4 : 0) + (/premium|enhanced|neural|natural/i.test(`${v.name} ${v.voiceURI || ''}`) ? 3 : 0) + (ok(v) === want ? 2 : 0) + (v.localService ? 0.5 : 0);
+  const best = (list) => list.sort((a, b) => score(b) - score(a))[0] || null;
+  if (want === 'zh-hk') return best(vs.filter((v) => ok(v) === 'zh-hk' || ok(v).startsWith('yue')));   // Cantonese only — Mandarin would teach the wrong word
+  return best(vs.filter((v) => ok(v) === want || ok(v).startsWith(base)));
 }
+if (window.speechSynthesis && speechSynthesis.addEventListener) speechSynthesis.addEventListener('voiceschanged', () => {});   // Safari fills the list late; asking early wakes it
 // one utterance; onend runs when it finishes (or fails). Returns false when the phone can't speak.
 function speak(text, langTag, opt) {
   const o = opt || {};
@@ -79,7 +87,7 @@ function speak(text, langTag, opt) {
   try {   // never let a voice problem stop a tap from doing its job
     if (!o.keep) speechSynthesis.cancel();
     const u = new SpeechSynthesisUtterance(text);
-    u.lang = langTag; u.rate = o.rate || 0.85; u.pitch = o.pitch || 1.1;
+    u.lang = langTag; u.rate = o.rate || 0.92; u.pitch = o.pitch || 1.2;   // bright and friendly, still unhurried for small ears
     try { if (v) u.voice = v; } catch (_) {}
     if (o.onend) { u.onend = o.onend; u.onerror = o.onend; }
     speechSynthesis.speak(u);

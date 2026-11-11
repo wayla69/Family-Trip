@@ -185,6 +185,9 @@ app.get('/sw.js', (_req, res) => { res.setHeader('Content-Type', 'text/javascrip
 // the stock art library: versioned file names (name.v2.svg), so a file never changes — a year's cache; a missing one is a 404, never the app page
 app.use('/stock', express.static(STOCK.DIR, { index: false, fallthrough: true, setHeaders: (res, f) => { res.setHeader('Cache-Control', f.endsWith('index.json') ? 'no-cache' : 'public, max-age=31536000, immutable'); if (f.endsWith('.svg')) res.setHeader('Content-Security-Policy', "default-src 'none'; style-src 'unsafe-inline'"); } }));
 app.use('/stock', (_req, res) => res.status(404).end());
+// an older Safari (iPadOS 15, 16.0–16.1) gets app.css with every color-mix() resolved (server/legacycss.js); core.js asks for it only there
+const LEGACY_CSS = require('./legacycss').legacy(fs.readFileSync(path.join(PUB, 'app.css'), 'utf8'));
+app.get('/app-legacy.css', (_req, res) => { res.setHeader('Content-Type', 'text/css; charset=utf-8'); res.setHeader('Cache-Control', 'no-cache'); res.end(LEGACY_CSS); });
 app.use(express.static(PUB, { maxAge: 0, etag: true, setHeaders: (res, f) => { if (/\.(woff2|svg|png)$/.test(f)) res.setHeader('Cache-Control', 'public, max-age=604800'); } }));
 app.get(/^\/(?!api\/|media\/|stock\/).*/, (req, res) => res.sendFile(path.join(PUB, 'index.html')));
 app.use('/api', (_req, res) => res.status(404).json({ error: 'not-found' }));

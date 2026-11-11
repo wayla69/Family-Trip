@@ -573,7 +573,12 @@ const T = 'hk-macau-2026';
   await page.goto(`${BASE}/#/kid/mimi/music`); await page.waitForSelector('.xylo');
   await page.evaluate(() => { navigator.audioSession = { type: 'auto' }; });   // Safari 16.4+ has it; Chromium does not
   await page.click('.xylo button[data-v="4"]');
-  ok(await page.evaluate(() => navigator.audioSession.type) === 'playback', 'sounds: on an iPad/iPhone they play even with the silent switch on (audio session "playback")'); await page.click('.drums button[data-v="kick"]');
+  ok(await page.evaluate(() => navigator.audioSession.type) === 'playback', 'sounds: on an iPad/iPhone they play even with the silent switch on (audio session "playback")');
+  // the read-aloud voice: never one of iPadOS's novelty/robot voices (they scared the kids), a warm natural one first
+  ok(await page.evaluate(() => { const v = (name, l, extra) => ({ name, lang: l, voiceURI: `com.apple.voice.${extra || 'compact'}.${l}.${name}`, localService: true });
+    const list = [v('Bad News', 'en-US'), v('Eddy (English (UK))', 'en-GB'), v('Trinoids', 'en-US'), v('Daniel', 'en-GB'), v('Samantha', 'en-US', 'enhanced'), v('Grandpa (Thai (Thailand))', 'th-TH'), v('Kanya', 'th-TH')];
+    const real = speechSynthesis.getVoices; speechSynthesis.getVoices = () => list.slice();
+    try { return [voiceFor('en-GB').name, voiceFor('th-TH').name].join('|'); } finally { speechSynthesis.getVoices = real; } }) === 'Samantha|Kanya', 'read aloud: a warm natural voice (Samantha, Kanya), never "Bad News", "Trinoids" or the robot "Eddy/Grandpa"'); await page.click('.drums button[data-v="kick"]');
   ok(await page.locator('.xylo button').count() === 8 && await page.locator('.drums button').count() === 5 && await page.locator('.songs .kidbig').count() === 6 && await page.locator('.xylo button[data-v="4"].lit').count() === 1, 'kid mode: a xylophone of eight bars, five instruments and six songs; a tapped bar lights up');
   await page.goto(`${BASE}/#/kid/mimi/hideseek`); await page.waitForSelector('.hideboard');
   const wantTh = await page.evaluate(() => hs.targets[0][1]);

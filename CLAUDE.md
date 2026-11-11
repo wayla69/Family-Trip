@@ -93,6 +93,8 @@ UI screenshots go to `$SHOTS` (default `/tmp/mb-shots`) — look at them after U
 - Stable keys: planned-place `key`s in seeds are check-in keys; never rename one for a trip that has started — add a new stop instead.
 
 ## Gotchas
+- **Older iPads** (owner's family: iPad Pro 12.9" 1st gen = iPadOS 16 max, iPad mini 4 / Air 2 = iPadOS 15 max): no regex lookbehind anywhere in `public/*.js` (Safari < 16.4 refuses the whole file — test/infra.mjs guards it; views.js `splitPoints`/`splitCut`/`dropEndStop` and KEYFACT's `em` group look back by hand); `color-mix()` needs Safari 16.2 — the server serves `/app-legacy.css` (`server/legacycss.js`: each color-mix → its stronger colour) and core.js swaps it in when `CSS.supports` says no; guard Safari-15.4+ APIs (`structuredClone`); prefix `-webkit-backdrop-filter`/`-webkit-mask-image`; give `overflow-x:hidden` before `overflow-x:clip`. Check layouts at 744×1133, 768×1024, 810×1080, 820×1180, 834×1194, 1024×1366 both ways; kid mode widens to 960 px from 1000×1000.
+- Read-aloud voices (kid.js `voiceFor`): iPadOS lists novelty/robot voices (Bad News, Trinoids, Zarvox, Eddy/Rocko/Grandpa…) — `VOICE_NO` drops them, `VOICE_NICE` + Enhanced/Premium rank first; default rate .92, pitch 1.2 (the bedtime player keeps its calm .8/1.05).
 - Cloud sessions: `.claude/hooks/session-start.sh` runs **async** (npm install, Postgres :5432, s3rver :4569, `TEST_*` env). Before the first `npm test`, wait for it: `until [ -f /tmp/mb-session-ready ]; do sleep 1; done`.
 - Don't `pkill -f`/grep-kill node servers in a shell that runs tests — kill by PID.
 - `FAMILY_CODE` unset ⇒ nobody can log in (server only warns).

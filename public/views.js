@@ -371,28 +371,59 @@ const foodHtml = (it) => `<li><b>${mapA(it.q, esc(it.name) + ' ↗')}</b>${it.pi
 const TIPK = { warn: 1, tip: 1, info: 1 };
 /* the manual's long sentences, made skimmable: points() cuts a paragraph at top-level ". ", "; " and " · " (never inside brackets),
    then any piece still long at " — " or ": " (Thai paragraphs rarely have full stops). pts() shows one point as a line and several as a list. */
+// No lookbehind in these patterns: Safari before 16.4 (iPadOS 15 on an iPad mini 4 / Air 2, early iPadOS 16) refuses the whole file
+// over a single lookbehind group, and the app shows nothing. The checks below look back by hand — same splits as the old patterns.
+const PT_ABBR = /(?:^|[\s(])(?:[A-Z]|St|Mt|Dr|Mr|Mrs|Ms|No|Nos|Rd|Ave|approx|vs|e\.g|i\.e)\.$/;
+// split a manual line into points: after a sentence's stop ("…late. Then") or a semicolon, never after an initial or a short title,
+// and at a " · " — the whitespace goes, as String.split with the old pattern did
+function splitPoints(t) {
+  const out = [], re = /\s+/g; let last = 0, m;
+  while ((m = re.exec(t))) {
+    const i = m.index, pre = t.slice(0, i), end = i + m[0].length;
+    if (end < t.length && (/[A-Za-z0-9)"'’][.;]$/.test(pre) || /;$/.test(pre)) && !PT_ABBR.test(pre)) { out.push(t.slice(last, i)); last = end; continue; }
+    const dot = /^\s+·\s+/.exec(t.slice(i));
+    if (dot) { out.push(t.slice(last, i)); last = i + dot[0].length; re.lastIndex = last; }
+  }
+  out.push(t.slice(last));
+  return out;
+}
+// cut a long point at " — " or at "label: rest" (never after "ว่า", "that", "say"…, which open a quote); separators kept, as a capturing split
+function splitCut(x) {
+  const out = [], re = /\s+—\s+|:\s+/g; let last = 0, m;
+  while ((m = re.exec(x))) {
+    if (m[0][0] === ':') {
+      const pre = x.slice(0, m.index), end = m.index + m[0].length;
+      if (end >= x.length || /(?:ว่า|that|them|say|says|teach \w+)$/.test(pre)) { re.lastIndex = m.index + 1; continue; }
+    }
+    out.push(x.slice(last, m.index), m[0]); last = m.index + m[0].length;
+  }
+  out.push(x.slice(last));
+  return out;
+}
+// a point's closing ";" or "." goes — but not the stop of a Thai abbreviation at the end ("มี.ค.")
+const dropEndStop = (x) => { if (/;\s*$/.test(x)) return x.replace(/;\s*$/, ''); const m = /\.\s*$/.exec(x); return m && !/[ก-๙]\.[ก-๙]{1,2}$/.test(x.slice(0, m.index)) ? x.slice(0, m.index) : x; };
 const points = (s) => {
   if (/\n\s*\n/.test(String(s || ''))) return String(s).split(/\n\s*\n/).flatMap(points);   // a blank line in the manual is a new point
   let d = 0; const SEP = { '.': '\u0001', ';': '\u0002', '·': '\u0003', '—': '\u0004', ':': '\u0005' };
   const t = String(s || '').replace(/[().;·—:]/g, (c) => { if (c === '(') { d++; return c; } if (c === ')') { d = Math.max(0, d - 1); return c; } return d ? SEP[c] : c; });
   // a full stop counts only after a Latin letter, digit or bracket (Thai dates like มี.ค. never split), and never after an initial or a
   // short title ("Conde S. Januário", "St. John's", "Mt. Annan", "No. 5") — those are inside a name
-  let parts = t.split(/(?<=[A-Za-z0-9)"'’][.;]|;)(?<!(?:^|[\s(])(?:[A-Z]|St|Mt|Dr|Mr|Mrs|Ms|No|Nos|Rd|Ave|approx|vs|e\.g|i\.e)\.)\s+(?=\S)|\s+·\s+/);
+  let parts = splitPoints(t);
   // still long: cut at a dash or a colon too — only where both sides are a phrase of their own (never a bare label "แผนวันฝนตก" or a
   // tail "ไม่ไปซ้ำ" as a bullet), and never at a colon that opens a quote ("สอนมีมี่ว่า: …", "tell them: …")
-  const cut = (x) => { const bits = x.split(/(\s+—\s+|(?<!ว่า|that|them|say|says|teach \w+):\s+(?=\S))/), out = []; let cur = bits[0];
+  const cut = (x) => { const bits = splitCut(x), out = []; let cur = bits[0];
     for (let k = 1; k < bits.length; k += 2) { if (cur.trim().length >= 25 && bits.slice(k + 1).join('').trim().length >= 25) { out.push(cur); cur = bits[k + 1]; } else cur += bits[k] + bits[k + 1]; }
     return [...out, cur]; };
   parts = parts.flatMap((x) => (x.length > 110 ? cut(x) : [x]));
-  parts = parts.map((x) => x.replace(/[\u0001-\u0005]/g, (c) => '.;·—:'[c.charCodeAt(0) - 1]).replace(/;\s*$|(?<![ก-๙]\.[ก-๙]{1,2})\.\s*$/, '').replace(/^[—–-]\s*/, '').trim()).filter(Boolean);
+  parts = parts.map((x) => dropEndStop(x.replace(/[\u0001-\u0005]/g, (c) => '.;·—:'[c.charCodeAt(0) - 1])).replace(/^[—–-]\s*/, '').trim()).filter(Boolean);
   // a numbered list written "1 · first · 2 · second": the number joins its item ("1. first"), never a point of its own
   parts = parts.flatMap((x, j) => { const m = x.match(/^(.*\S:)\s+(1)$/); return m && parts[j + 2] === '2' ? [m[1], m[2]] : [x]; });   // "Cut in this order: 1 · …"
   return parts.reduce((o, x, j) => { if (/^\d{1,2}$/.test(x) && j < parts.length - 1) o.push(`\u0006${x}`); else if (o.length && o[o.length - 1].startsWith('\u0006') && !/\s/.test(o[o.length - 1])) o[o.length - 1] = `${o[o.length - 1].slice(1)}. ${x}`; else o.push(x); return o; }, []).map((x) => x.replace(/^\u0006/, ''));
 };
 // what a parent acts on stands out in a report line (owner's review, Nov 2026): times, prices and phone numbers in bold — colour stays
 // on the headings. Match the raw text, escape each piece (never decorate escaped text: "Cook's" → &#39; → "39").
-const KEYFACT = /\b\d{1,2}:\d{2}(?:\s?[–-]\s?\d{1,2}:\d{2})?\b|(?:HK\$|MOP ?|A\$|AU\$|NZ\$|US\$|AUD ?|HKD ?|\$|฿|¥|€|£)\d[\d,]*(?:\.\d+)?(?:\s?[–-]\s?\d[\d,]*(?:\.\d+)?)?|(?:\+\d{1,3} )?(?:\(\d{2,3}\) )?\b\d{3,4}(?: \d{3,4}){1,2}\b|(?<![\d,.])(?:999|000|911|112)(?![\d,.])/g;
-const emph = (x) => { const t = String(x || ''); let out = '', at = 0; for (const m of t.matchAll(KEYFACT)) { out += esc(t.slice(at, m.index)) + `<b class="kf">${esc(m[0])}</b>`; at = m.index + m[0].length; } return out + esc(t.slice(at)); };
+const KEYFACT = /\b\d{1,2}:\d{2}(?:\s?[–-]\s?\d{1,2}:\d{2})?\b|(?:HK\$|MOP ?|A\$|AU\$|NZ\$|US\$|AUD ?|HKD ?|\$|฿|¥|€|£)\d[\d,]*(?:\.\d+)?(?:\s?[–-]\s?\d[\d,]*(?:\.\d+)?)?|(?:\+\d{1,3} )?(?:\(\d{2,3}\) )?\b\d{3,4}(?: \d{3,4}){1,2}\b|(?:^|[^\d,.])(?<em>999|000|911|112)(?![\d,.])/g;   // no lookbehind (old Safari): the char before an emergency number is matched, emph bolds only the number
+const emph = (x) => { const t = String(x || ''); let out = '', at = 0; for (const m of t.matchAll(KEYFACT)) { const hit = m.groups && m.groups.em ? m.groups.em : m[0], i = m.index + m[0].length - hit.length; out += esc(t.slice(at, i)) + `<b class="kf">${esc(hit)}</b>`; at = m.index + m[0].length; } return out + esc(t.slice(at)); };
 const pt = (x) => { const m = x.match(/^(.*?)\s*\(([^()]{45,})\)\s*(.*)$/); return m ? `${emph(m[1] + (m[3] ? ' ' + m[3] : ''))}<small>${emph(m[2])}</small>` : emph(x); };   // a long bracket drops to a small line
 const lead = (s) => ((p) => `${pt(p[0] || '')}${p.slice(1).map((y) => `<small class="tsub">${pt(y)}</small>`).join('')}`)(points(s));
 const cap1 = (x) => x.replace(/^[a-z](?=[a-z]*(?:[\s,:;!?)]|$))/, (c) => c.toUpperCase());   // "book Nov" → "Book Nov"; eSIM and iPhone stay
