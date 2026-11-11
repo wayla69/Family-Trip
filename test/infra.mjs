@@ -261,8 +261,18 @@ if (process.env.BASE) {
     // "Bath, story, bed", "Zig Zag Railway", Thai อเมริกา / แอฟริกา / มาเล่น / เดลี่, and the stops' street addresses name no city
     const au = JSON.parse(fs.readFileSync(path.resolve('server/seeds/big-hop-2027.json'), 'utf8'));
     const mau = M.stockMatch(au.days, au.title, idx);
-    ok(mau.places.length === 0 && mau.artDays.every((a) => !a || /^stock:[tr]\.day\./.test(a)),
-      'stock match: a Sydney book (no Australia in the library) gets landscape and route scenes, never another country\'s city' + (mau.places.length ? ' — ' + mau.places.join(' ') : ''));
+    ok(mau.places.every((k) => k.startsWith('au-')) && mau.artDays.every((a) => !a || /^stock:([tr]\.day\.|au-)/.test(a)),
+      'stock match: a Sydney book gets Australia\'s pictures or landscape and route scenes, never another country\'s city (nor Bangkok, where it flies from)' + ' — ' + mau.places.join(' '));
+    // home places (Thailand): a trip starts and ends in Bangkok, so a Thai city counts only when the book is about Thailand
+    const hx = { ...idx, places: { ...idx.places, thx: { name: { en: 'Thailandx', th: 'ไทยx' }, alias: ['thailandx', 'ไทยx'], home: true },
+      'thx-bkk': { country: 'thx', name: { en: 'Bangkokx', th: 'กรุงเทพx' }, alias: ['bangkokx', 'กรุงเทพx', 'BKKX'], home: true } },
+      items: [...idx.items, { id: 'thx.stamp', cat: 'stamp', ok: '2026-11-11' }, { id: 'thx-bkk.stamp', cat: 'stamp', ok: '2026-11-11' }, { id: 'thx-bkk.day.river', cat: 'day', kw: ['bangkokx'], ok: '2026-11-11' }] };
+    const hm = (place, ...days) => M.stockMatch(days.map((en) => ({ title: { en, th: en } })), { en: place, th: place }, hx);
+    const away = hm('Tokyo 2027', 'Fly from Bangkokx (BKKX) to Tokyo', 'Ueno zoo', 'Home to Bangkokx'), here = hm('Bangkokx weekend', 'Boat on the river in Bangkokx'),
+      land = hm('Thailandx', 'Bangkokx', 'Bangkokx again'), both = hm('Bangkokx to Tokyo', 'Bangkokx airport', 'Tokyo');
+    ok(!away.places.includes('thx-bkk') && away.crest === 'stock:jp.stamp' && here.places.join() === 'thx-bkk' && here.crest === 'stock:thx.stamp'
+      && land.places.join() === 'thx-bkk' && !both.places.includes('thx-bkk'),
+      'stock match: a home place (Bangkok) counts only when the book\'s place is it or its country, and nowhere abroad — ' + [away, here, land, both].map((m) => m.places.join('+')).join(' | '));
     const trap = (en, th, q) => M.stockMatch([{ title: { en, th }, planned: q ? [{ en: 'Café', th: 'คาเฟ่', q }] : [] }], { en: 'Our trip', th: 'ทริปของเรา' }, idx).places;
     ok([trap('A nice day, then a bath', 'แวะร้านเดลี่ แล้วมาเล่นที่สวน'), trap('Umbrella and the Zig Zag Railway', 'นักบินจากอเมริกาบินไปแอฟริกา'),
       trap('Brunch', 'บรันช์', '5 Whistler St, Manly NSW'), trap('First stop: the central market', 'ตลาดกลาง')].every((p) => p.length === 0),

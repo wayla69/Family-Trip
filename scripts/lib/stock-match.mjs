@@ -104,8 +104,13 @@ export function stockMatch(days, placeText, index) {
   const inBook = named(placeRaw + ' \n ' + raws.join(' \n '));
   const fromPlace = named(placeRaw);
   const mainNames = (k) => { const p = places[k] || {}; return [p.name && p.name.en, p.name && p.name.th, ...(p.alias || []).slice(0, 2)].filter(Boolean).map((s) => String(s).normalize('NFKC')); };
-  const ok = (c) => !!fromPlace[c] || (!!inBook[c] && ([...inBook[c].names].some((a) => mainNames(c).includes(a))
-    || (!!places[c].country && !!inBook[places[c].country])));
+  // home places (Thailand, Nov 2026: every trip starts and ends in Bangkok) count only when the book's place or title is about
+  // them and about nowhere else — "fly from Bangkok" in a Tokyo book never makes Bangkok a day's city or Thailand the crest
+  const home = (k) => !!(places[k] && places[k].home);
+  const awayInPlace = Object.keys(fromPlace).some((k) => places[k] && !home(k));
+  const homeOk = (c) => !home(c) || (!awayInPlace && (!!fromPlace[c] || (!!places[c].country && !!fromPlace[places[c].country])));
+  const ok = (c) => homeOk(c) && (!!fromPlace[c] || (!!inBook[c] && ([...inBook[c].names].some((a) => mainNames(c).includes(a))
+    || (!!places[c].country && !!inBook[places[c].country]))));
   const best = (raw, by = named(raw)) => cities.filter(ok).map((c) => [c, by[c] ? by[c].names.size : 0]).filter(([, n]) => n > 0).sort((a, b) => b[1] - a[1])[0];
   const bookCity = (best(placeRaw, fromPlace) || [null])[0];
 
