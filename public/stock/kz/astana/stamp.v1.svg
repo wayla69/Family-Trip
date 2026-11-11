@@ -1,0 +1,10 @@
+<svg viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+<defs><path id="kzas-st-a" d="M 38 100 A 62 62 0 0 1 162 100"/><path id="kzas-st-b" d="M 30 106 A 70 70 0 0 0 170 106"/></defs>
+<circle cx="100" cy="100" r="96" fill="#FFF7F2" stroke="#1565C0" stroke-width="5" stroke-dasharray="7 5"/>
+<circle cx="100" cy="100" r="84" fill="none" stroke="#1565C0" stroke-width="3"/>
+<circle cx="100" cy="100" r="54" fill="#E3F2FD" stroke="#1565C0" stroke-width="3"/>
+<g stroke="#22213A" stroke-width="3.5" stroke-linejoin="round" stroke-linecap="round"><path d="M56 142h88" fill="none" stroke="#C5E1A5" stroke-width="6"/><g transform="translate(100 142) scale(0.6)"><path d="M-8 0l3-80h10l3 80z" fill="#FFFFFF"/><path d="M-5-80c-30-6-44-26-40-44l8 2c0 14 14 30 32 34zM5-80c30-6 44-26 40-44l-8 2c0 14-14 30-32 34z" fill="#FFFFFF"/><path d="M-4-82c-10-18-16-34-14-48M4-82c10-18 16-34 14-48M0-84v-46M-4-82c-18-12-28-26-30-44M4-82c18-12 28-26 30-44M-3-82c-6-16-6-34-4-48M3-82c6-16 6-34 4-48" fill="none" stroke="#FFFFFF" stroke-width="4"/><path d="M-4-82c-10-18-16-34-14-48M4-82c10-18 16-34 14-48M0-84v-46M-4-82c-18-12-28-26-30-44M4-82c18-12 28-26 30-44M-3-82c-6-16-6-34-4-48M3-82c6-16 6-34 4-48" fill="none" stroke="#22213A" stroke-width="1.5"/><circle cx="0" cy="-126" r="18" fill="#FFC107"/><path d="M-8-134c4-6 10-6 14-4" fill="none" stroke="#FFF59D" stroke-width="3"/></g></g>
+<text font-family="KIRA UI, Arial, sans-serif" font-weight="800" font-size="19" letter-spacing="3" fill="#1565C0"><textPath href="#kzas-st-a" startOffset="50%" text-anchor="middle">ASTANA</textPath></text>
+<text font-family="KIRA UI, Arial, sans-serif" font-weight="700" font-size="11" letter-spacing="3" fill="#F9A825"><textPath href="#kzas-st-b" startOffset="50%" text-anchor="middle">KAZAKHSTAN</textPath></text>
+<path d="M22 100l5-3 5 3-5 3zM168 100l5-3 5 3-5 3z" fill="#1565C0"/>
+</svg>
