@@ -197,9 +197,11 @@ const items = [
     box('#B3E5FC') + R(14, 120, 212, 40, '#26C6DA', 0, 0) + waves(138) + P('M14 156c60-10 150-10 212 0v70H14z', '#FFE0B2')
       + [60, 100, 140, 180].map((x) => Lc(`M${x} 196v-46`, '#8D6E63', 4)).join('') + R(54, 146, 132, 8, '#C8A165', 1, 2.5) + R(70, 92, 76, 54, '#E6C27A') + Array.from({ length: 7 }, (_, k) => Lc(`M${78 + k * 10} 94v50`, '#C8A165', 1.5)).join('') + R(96, 110, 22, 36, '#8D6E63', 2, 2) + R(126, 106, 14, 14, '#B3E5FC', 1, 2)
       + P('M50 96l70-50 76 50z', '#D7B377', 3) + Lc('M66 86l54-36 58 38', '#B8915A', 2) + Lc('M150 100v46M184 100v46', '#8D6E63', 3) + P('M150 112c10 16 24 16 34 0', '#E53935', 3) + Lc('M152 118c8 8 22 8 30 0', '#FFCA28', 2.5) + face(108, 120, 0.22)),
-  L('samui', 'wovenfish', 'ปลาตะเพียนสานใบมะพร้าว', 'Little fish woven from palm leaves', ['woven palm fish', 'ปลาตะเพียนสาน', 'palm leaf weaving', 'สานใบมะพร้าว', 'mobile', 'โมบายแขวน', 'handicraft', 'งานฝีมือ', 'beach souvenir', 'ของที่ระลึกริมหาด'], 'หาปลาตัวเล็กๆ สานจากใบไม้สีเขียวที่แขวนเป็นพวง', 'Find the little green leaf fish hanging together like a mobile',
-    // a hanging mobile of little fish woven from fresh green and dried golden palm leaf strips, a criss-cross weave on each body, pointed tails, strings tied to a stick
-    Lc('M40 40h160', '#8D6E63', 6) + [[60, 110, '#7CB342'], [120, 150, '#D7B377'], [180, 104, '#7CB342'], [90, 190, '#D7B377'], [154, 196, '#7CB342']].map(([x, y, c]) => Lc(`M${x} 40V${y - 18}`, '#BCAAA4', 2) + g(x, y, 1, P('M-24 0c8-20 34-20 44 0-10 20-36 20-44 0z', c) + P('M20 0l14-12v24z', c, 3) + Lc('M-14-10l20 20M-4-14l20 20M-14 10l20-20M-4 14l20-20', c === '#7CB342' ? '#558B2F' : '#B8915A', 2) + C(-14, -2, 2.5, INK, 0) + E(-10, 5, 3, 2, '#FF8FA3', 0))).join('')),
+  L('samui', 'coconutpole', 'สอยมะพร้าวด้วยไม้ไผ่ยาวที่สวนมะพร้าวสมุย', 'Picking coconuts with a long bamboo pole on Samui', ['coconut plantation', 'สวนมะพร้าว', 'coconut picking', 'สอยมะพร้าว', 'bamboo pole', 'ไม้สอย', 'coconut island', 'เกาะมะพร้าว', 'koh samui', 'เกาะสมุย'], 'หาไม้ไผ่ยาวมากที่มีตะขอเกี่ยวลูกมะพร้าวอยู่บนยอดต้น', 'Find the very long bamboo pole hooking a coconut at the top of the tree',
+    // a tall coconut palm heavy with bunches of green coconuts, a very long bamboo pole with a little curved blade at its tip reaching up to cut one bunch, a coconut tumbling down into a wooden cart full of coconuts
+    box('#E1F5FE') + R(14, 196, 212, 34, '#C5E1A5', 0, 0) + Lc('M150 226c-4-60 0-130 10-176', '#8D6E63', 9) + [160, 195, 230, 270, 310, 345, 20].map((a) => g(160, 52, 1.5, P('M0 0c14-10 34-8 42 6-18-2-30 0-42-6z', '#43A047', 2.5), a)).join('')
+      + [[148, 62], [160, 66], [172, 62], [154, 74], [166, 76]].map(([x, y]) => C(x, y, 8, '#7CB342', 2.5)).join('') + Lc('M40 224L132 58', '#D7B377', 6) + Lc('M40 224L132 58', INK, 1.2).replace('stroke-width="1.2"', 'stroke-width="1.2" stroke-dasharray="2 14"') + P('M132 58c6-6 14-4 16 2l-8-2z', '#B0BEC5', 2)
+      + g(120, 128, 1, C(0, 0, 9, '#7CB342', 2.5) + Lc('M-14-8l-6-4M14-8l6-4', '#90A4AE', 2)) + g(84, 196, 1, R(-34, -20, 68, 26, '#A0632B', 3, 3) + [-20, -6, 8, 22, -13, 1, 15].map((x, k) => C(x, k < 4 ? -22 : -32, 8, k % 2 ? '#7CB342' : '#8D6E63', 2)).join('') + C(-22, 10, 7, INK) + C(22, 10, 7, INK)) + face(84, 186, 0.3).replace(/fill="#22213A" stroke="none"/g, 'fill="#FFFFFF" stroke="none"')),
 ];
 
 export default {
@@ -207,5 +209,5 @@ export default {
     'th-krabi': { country: 'th', wave: 3, home: true, name: nm('กระบี่และเกาะพีพี', 'Krabi and Phi Phi'), tz: 'Asia/Bangkok', ll: [8.04, 98.84], alias: ['krabi', 'กระบี่', 'KBV', 'ao nang', 'อ่าวนาง', 'railay', 'ไร่เลย์', 'phi phi', 'พีพี', 'koh lanta', 'เกาะลันตา'], colors: KB },
     'th-samui': { country: 'th', wave: 3, home: true, name: nm('เกาะสมุย พะงัน และเกาะเต่า', 'Koh Samui, Koh Phangan and Koh Tao'), tz: 'Asia/Bangkok', ll: [9.51, 100.01], alias: ['koh samui', 'เกาะสมุย', 'USM', 'samui', 'สมุย', 'koh phangan', 'เกาะพะงัน', 'koh tao', 'เกาะเต่า', 'ang thong marine park', 'หมู่เกาะอ่างทอง'], colors: SM },
   },
-  items: items.filter((it) => it.id !== 'th-samui.landmark.wovenfish'),   // woven palm-leaf fish: Ayutthaya's mobile already draws it
+  items,
 };
