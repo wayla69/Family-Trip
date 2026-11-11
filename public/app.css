@@ -2552,3 +2552,7 @@ section.pg .dstamps.pst.c3 b,section.pg .dstamps.pst.c4 b{font-size:16px}section
 @media (min-width:700px) and (min-height:950px){.login h1{font-size:60px}.login .pin{font-size:34px}.pinpad{max-width:380px;gap:18px 30px}.login .pinpad button{max-width:92px}}   /* the big keys only where they fit (portrait), so “Open the shelf” stays on screen in landscape */
 /* a big tablet (iPad Pro 12.9", 11"): kid mode uses the room instead of a 760 px column in the middle (owner, Nov 2026) */
 @media (min-width:1000px) and (min-height:1000px){.kidwrap{max-width:960px}}
+/* the kid-mode lock: a drawn lock exactly in the middle of its circle (the 🔒 emoji sat low and to one side in Safari — iPad owner, Nov 2026) */
+.kidexit{display:grid;place-items:center;padding:0;line-height:0;color:#4A5568}.kidexit .klk{width:55%;height:55%;display:block;stroke-width:2.2}
+/* the other round buttons of the kid header: Safari's default button padding and line height pushed their emoji off-centre too */
+.kidhear,.kidback,.kidme{display:grid;place-items:center;padding:0;line-height:1}
