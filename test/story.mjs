@@ -367,7 +367,12 @@ try {
   { const P = createRequire(import.meta.url)('../server/story.js').parseQuiz;
     ok(P('no json here') === null && P('[{"q":"x","a":[{"t":"a"}],"ok":0}]') === null && P('[{"q":"x","a":[{"t":"a"},{"t":"b"}],"ok":1}]')[0].a.length === 2, 'memory game parser: no JSON or too few answers → nothing kept'); }
   { const b2 = await chromium.launch({ executablePath: exe, args: ['--no-sandbox'] }); const ctx2 = await b2.newContext({ viewport: { width: 390, height: 844 } }); await ctx2.addInitScript(() => localStorage.setItem('mbs_logall', '1')); const pg2 = await ctx2.newPage();
-    await pg2.goto(BASE + '/'); await pg2.fill('#lcode', CODE); await pg2.keyboard.press('Enter'); await pg2.waitForSelector('.shelf');
+    // the sign-in race (CI flake, Nov 2026): Enter and the pad's own submit 180 ms after the last digit both fire; while the state is slow to load, only one login may go
+    let logins = 0; pg2.on('request', (q) => { if (q.url().endsWith('/api/login')) logins++; });
+    await pg2.route('**/api/b/state*', async (rt) => { await new Promise((r) => setTimeout(r, 700)); await rt.continue(); });
+    await pg2.goto(BASE + '/'); await pg2.waitForSelector('#lf'); await pg2.fill('#lname', 'Mum'); await pg2.fill('#lcode', CODE); await pg2.keyboard.press('Enter'); await pg2.waitForSelector('.shelf');
+    await pg2.waitForTimeout(300); await pg2.unroute('**/api/b/state*');
+    ok(logins === 1, `sign-in: Enter and the pad's own submit send one login while the shelf loads (sent ${logins})`);
     await pg2.goto(`${BASE}/#/t/${T}/book`); await pg2.waitForSelector('#foretext');
     ok(await pg2.inputValue('#foretext') === 'ทริปนี้เราไปฮ่องกง — พ่อแม่เขียนเอง' && await pg2.locator('#forego').count() === 1, 'book: the foreword box holds the saved foreword, with a Claude draft button');
     await pg2.goto(`${BASE}/#/print/${T}`); await pg2.waitForSelector('.forep');

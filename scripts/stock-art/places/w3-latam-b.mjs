@@ -129,8 +129,8 @@ export default {
     br: { country: 'br', wave: 3, name: nm('บราซิล', 'Brazil'), tz: 'America/Sao_Paulo', alias: ['brazil', 'บราซิล', 'brasil'], colors: BR },
     'br-rio': { country: 'br', wave: 3, name: nm('ริโอเดจาเนโร', 'Rio de Janeiro'), tz: 'America/Sao_Paulo', ll: [-22.91, -43.17], alias: ['rio de janeiro', 'ริโอเดจาเนโร', 'ริโอ', 'copacabana', 'โคปาคาบานา', 'ipanema', 'อิปาเนมา', 'sugarloaf', 'pão de açúcar', 'santa teresa', 'paraty'], colors: RJ },
     ar: { country: 'ar', wave: 3, name: nm('อาร์เจนตินา', 'Argentina'), tz: 'America/Argentina/Buenos_Aires', alias: ['argentina', 'อาร์เจนตินา'], colors: AR },
-    'ar-buenosaires': { country: 'ar', wave: 3, name: nm('บัวโนสไอเรสและอีกวาซู', 'Buenos Aires and Iguazú'), tz: 'America/Argentina/Buenos_Aires', ll: [-34.6, -58.38], alias: ['buenos aires', 'บัวโนสไอเรส', 'la boca', 'ลาโบกา', 'caminito', 'san telmo', 'recoleta', 'iguazu', 'iguazú', 'iguaçu', 'อีกวาซู', 'puerto iguazú', 'aep'], colors: BA },
-    'ar-patagonia': { country: 'ar', wave: 3, name: nm('ปาตาโกเนีย', 'Patagonia'), tz: 'America/Argentina/Rio_Gallegos', ll: [-50.34, -72.26], alias: ['patagonia', 'ปาตาโกเนีย', 'el calafate', 'เอลกาลาฟาเต', 'perito moreno', 'เปริโตโมเรโน', 'el chaltén', 'el chalten', 'fitz roy', 'bariloche', 'บาริโลเช', 'puerto madryn', 'península valdés', 'fte'], colors: PT },
+    'ar-buenosaires': { country: 'ar', wave: 3, name: nm('บัวโนสไอเรสและอีกวาซู', 'Buenos Aires and Iguazú'), tz: 'America/Argentina/Buenos_Aires', ll: [-34.6, -58.38], alias: ['buenos aires', 'บัวโนสไอเรส', 'la boca', 'ลาโบกา', 'caminito', 'san telmo', 'recoleta', 'iguazu', 'iguazú', 'iguaçu', 'อีกวาซู', 'puerto iguazú', 'AEP'], colors: BA },
+    'ar-patagonia': { country: 'ar', wave: 3, name: nm('ปาตาโกเนีย', 'Patagonia'), tz: 'America/Argentina/Rio_Gallegos', ll: [-50.34, -72.26], alias: ['patagonia', 'ปาตาโกเนีย', 'el calafate', 'เอลกาลาฟาเต', 'perito moreno', 'เปริโตโมเรโน', 'el chaltén', 'el chalten', 'fitz roy', 'bariloche', 'บาริโลเช', 'puerto madryn', 'península valdés', 'FTE'], colors: PT },
   },
   items,
 };

@@ -122,11 +122,11 @@ const items = [
 ];
 export default {
   places: {
-    'jp-fukuoka': { country: 'jp', wave: 2, name: nm('ฟุกุโอกะ', 'Fukuoka'), tz: 'Asia/Tokyo', ll: [33.59, 130.4], alias: ['fukuoka', 'ฟุกุโอกะ', 'hakata', 'ฮากาตะ', 'tenjin', 'เท็นจิน', 'nakasu', 'dazaifu', 'ดาไซฟุ', 'momochi', 'yanagawa', 'fuk'], colors: FK },
-    'jp-okinawa': { country: 'jp', wave: 2, name: nm('โอกินาวา', 'Okinawa'), tz: 'Asia/Tokyo', ll: [26.21, 127.68], alias: ['okinawa', 'โอกินาวา', 'naha', 'นาฮะ', 'churaumi', 'จูราอุมิ', 'kouri', 'motobu', 'chatan', 'american village', 'oka', 'ishigaki', 'miyako'], colors: OK },
-    'jp-takayama': { country: 'jp', wave: 2, name: nm('ทาคายามะ ชิราคาวาโกะ และนาโกย่า', 'Takayama, Shirakawa-go and Nagoya'), tz: 'Asia/Tokyo', ll: [36.14, 137.25], alias: ['takayama', 'ทาคายามะ', 'shirakawa-go', 'shirakawago', 'ชิราคาวาโกะ', 'hida', 'ฮิดะ', 'gero', 'nagoya', 'นาโกย่า', 'kanazawa', 'คานาซาวะ', 'ngo'], colors: TK },
-    'kr-busan': { country: 'kr', wave: 2, name: nm('ปูซาน', 'Busan'), tz: 'Asia/Seoul', ll: [35.18, 129.08], alias: ['busan', 'ปูซาน', 'pusan', '부산', 'haeundae', 'แฮอุนแด', 'gamcheon', 'คัมช็อน', 'gwangalli', 'nampo', 'jagalchi', 'pus', 'gimhae'], colors: BS },
-    'kr-jeju': { country: 'kr', wave: 2, name: nm('เชจู', 'Jeju'), tz: 'Asia/Seoul', ll: [33.5, 126.53], alias: ['jeju', 'เชจู', 'jeju island', 'เกาะเชจู', '제주', 'seogwipo', 'ซอกวิโพ', 'seongsan', 'hallasan', 'ฮัลลาซาน', 'cju'], colors: JJ },
+    'jp-fukuoka': { country: 'jp', wave: 2, name: nm('ฟุกุโอกะ', 'Fukuoka'), tz: 'Asia/Tokyo', ll: [33.59, 130.4], alias: ['fukuoka', 'ฟุกุโอกะ', 'hakata', 'ฮากาตะ', 'tenjin', 'เท็นจิน', 'nakasu', 'dazaifu', 'ดาไซฟุ', 'momochi', 'yanagawa', 'FUK'], colors: FK },
+    'jp-okinawa': { country: 'jp', wave: 2, name: nm('โอกินาวา', 'Okinawa'), tz: 'Asia/Tokyo', ll: [26.21, 127.68], alias: ['okinawa', 'โอกินาวา', 'naha', 'นาฮะ', 'churaumi', 'จูราอุมิ', 'kouri', 'motobu', 'chatan', 'american village', 'OKA', 'ishigaki', 'miyako'], colors: OK },
+    'jp-takayama': { country: 'jp', wave: 2, name: nm('ทาคายามะ ชิราคาวาโกะ และนาโกย่า', 'Takayama, Shirakawa-go and Nagoya'), tz: 'Asia/Tokyo', ll: [36.14, 137.25], alias: ['takayama', 'ทาคายามะ', 'shirakawa-go', 'shirakawago', 'ชิราคาวาโกะ', 'hida', 'ฮิดะ', 'gero', 'nagoya', 'นาโกย่า', 'kanazawa', 'คานาซาวะ', 'NGO'], colors: TK },
+    'kr-busan': { country: 'kr', wave: 2, name: nm('ปูซาน', 'Busan'), tz: 'Asia/Seoul', ll: [35.18, 129.08], alias: ['busan', 'ปูซาน', 'pusan', '부산', 'haeundae', 'แฮอุนแด', 'gamcheon', 'คัมช็อน', 'gwangalli', 'nampo', 'jagalchi', 'PUS', 'gimhae'], colors: BS },
+    'kr-jeju': { country: 'kr', wave: 2, name: nm('เชจู', 'Jeju'), tz: 'Asia/Seoul', ll: [33.5, 126.53], alias: ['jeju', 'เชจู', 'jeju island', 'เกาะเชจู', '제주', 'seogwipo', 'ซอกวิโพ', 'seongsan', 'hallasan', 'ฮัลลาซาน', 'CJU'], colors: JJ },
   },
   items,
 };

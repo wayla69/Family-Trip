@@ -214,12 +214,12 @@ const items = [
 export default {
   places: {
     hr: { country: 'hr', wave: 2, name: nm('โครเอเชีย', 'Croatia'), tz: 'Europe/Zagreb', alias: ['croatia', 'โครเอเชีย', 'hrvatska'], colors: HR },
-    'hr-dubrovnik': { country: 'hr', wave: 2, name: nm('ดูบรอฟนิก', 'Dubrovnik'), tz: 'Europe/Zagreb', ll: [42.65, 18.09], alias: ['dubrovnik', 'ดูบรอฟนิก', 'lokrum', 'โลครุม', 'stradun', 'split', 'สปลิต', 'hvar', 'ฮวาร์', 'dbv'], colors: DB },
-    'hr-plitvice': { country: 'hr', wave: 2, name: nm('พลิตวิเซ', 'Plitvice Lakes'), tz: 'Europe/Zagreb', ll: [44.88, 15.62], alias: ['plitvice', 'พลิตวิเซ', 'plitvice lakes', 'kozjak', 'zagreb', 'ซาเกร็บ', 'zag'], colors: PL },
+    'hr-dubrovnik': { country: 'hr', wave: 2, name: nm('ดูบรอฟนิก', 'Dubrovnik'), tz: 'Europe/Zagreb', ll: [42.65, 18.09], alias: ['dubrovnik', 'ดูบรอฟนิก', 'lokrum', 'โลครุม', 'stradun', 'Split', 'สปลิต', 'hvar', 'ฮวาร์', 'DBV'], colors: DB },
+    'hr-plitvice': { country: 'hr', wave: 2, name: nm('พลิตวิเซ', 'Plitvice Lakes'), tz: 'Europe/Zagreb', ll: [44.88, 15.62], alias: ['plitvice', 'พลิตวิเซ', 'plitvice lakes', 'kozjak', 'zagreb', 'ซาเกร็บ', 'ZAG'], colors: PL },
     hu: { country: 'hu', wave: 2, name: nm('ฮังการี', 'Hungary'), tz: 'Europe/Budapest', alias: ['hungary', 'ฮังการี', 'magyarország'], colors: HU },
-    'hu-budapest': { country: 'hu', wave: 2, name: nm('บูดาเปสต์', 'Budapest'), tz: 'Europe/Budapest', ll: [47.5, 19.04], alias: ['budapest', 'บูดาเปสต์', 'buda', 'pest', 'danube', 'ดานูบ', 'szechenyi', 'széchenyi', 'เซเชนยี', 'chain bridge', 'สะพานโซ่', 'bud'], colors: BD },
+    'hu-budapest': { country: 'hu', wave: 2, name: nm('บูดาเปสต์', 'Budapest'), tz: 'Europe/Budapest', ll: [47.5, 19.04], alias: ['budapest', 'บูดาเปสต์', 'Buda', 'Pest', 'danube', 'ดานูบ', 'szechenyi', 'széchenyi', 'เซเชนยี', 'chain bridge', 'สะพานโซ่', 'BUD'], colors: BD },
     be: { country: 'be', wave: 2, name: nm('เบลเยียม', 'Belgium'), tz: 'Europe/Brussels', alias: ['belgium', 'เบลเยียม', 'belgique', 'belgië'], colors: BE },
-    'be-brussels': { country: 'be', wave: 2, name: nm('บรัสเซลส์', 'Brussels'), tz: 'Europe/Brussels', ll: [50.85, 4.35], alias: ['brussels', 'บรัสเซลส์', 'bruxelles', 'brussel', 'grand-place', 'กร็องปลัส', 'atomium', 'อะตอเมียม', 'antwerp', 'แอนต์เวิร์ป', 'bru'], colors: BX },
+    'be-brussels': { country: 'be', wave: 2, name: nm('บรัสเซลส์', 'Brussels'), tz: 'Europe/Brussels', ll: [50.85, 4.35], alias: ['brussels', 'บรัสเซลส์', 'bruxelles', 'brussel', 'grand-place', 'กร็องปลัส', 'atomium', 'อะตอเมียม', 'antwerp', 'แอนต์เวิร์ป', 'BRU'], colors: BX },
     'be-bruges': { country: 'be', wave: 2, name: nm('บรูจส์', 'Bruges'), tz: 'Europe/Brussels', ll: [51.21, 3.22], alias: ['bruges', 'บรูจส์', 'brugge', 'ghent', 'เกนต์', 'gent'], colors: BG },
   },
   items,

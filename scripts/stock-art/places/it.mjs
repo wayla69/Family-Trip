@@ -119,7 +119,7 @@ export default {
   places: {
     it: { country: 'it', wave: 1, name: nm('อิตาลี', 'Italy'), tz: 'Europe/Rome', alias: ['italy', 'อิตาลี', 'italia'], colors: IT },
     'it-rome': { country: 'it', wave: 1, name: nm('โรม', 'Rome'), tz: 'Europe/Rome', ll: [41.9, 12.5], alias: ['rome', 'roma', 'โรม', 'colosseum', 'โคลอสเซียม', 'trevi', 'เทรวี', 'pantheon', 'vatican', 'วาติกัน', 'trastevere', 'spanish steps', 'piazza navona'], colors: RO },
-    'it-venice': { country: 'it', wave: 1, name: nm('เวนิส', 'Venice'), tz: 'Europe/Rome', ll: [45.44, 12.34], alias: ['venice', 'venezia', 'เวนิส', 'rialto', 'ริอัลโต', 'san marco', 'ซานมาร์โก', 'burano', 'บูราโน', 'murano', 'มูราโน', 'lido', 'grand canal'], colors: VE },
+    'it-venice': { country: 'it', wave: 1, name: nm('เวนิส', 'Venice'), tz: 'Europe/Rome', ll: [45.44, 12.34], alias: ['venice', 'venezia', 'เวนิส', 'rialto', 'ริอัลโต', 'san marco', 'ซานมาร์โก', 'burano', 'บูราโน', 'murano', 'มูราโน', 'Lido', 'grand canal'], colors: VE },
     'it-florence': { country: 'it', wave: 1, name: nm('ฟลอเรนซ์และทัสคานี', 'Florence & Tuscany'), tz: 'Europe/Rome', ll: [43.77, 11.25], alias: ['florence', 'firenze', 'ฟลอเรนซ์', 'tuscany', 'toscana', 'ทัสคานี', 'pisa', 'ปิซา', 'siena', 'เซียนา', 'chianti', 'val dorcia', 'uffizi', 'ponte vecchio', 'san gimignano'], colors: FI },
   },
   items,

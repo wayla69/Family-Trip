@@ -89,9 +89,9 @@ const items = [
 export default {
   places: {
     'fr-lyon': { country: 'fr', wave: 3, name: nm('ลียง', 'Lyon'), tz: 'Europe/Paris', ll: [45.76, 4.83], alias: ['lyon', 'ลียง', 'vieux lyon', 'fourvière', 'fourviere', 'presqu\'île', 'tête d\'or', 'tete d\'or'], colors: LY },
-    'de-cologne': { country: 'de', wave: 3, name: nm('โคโลญและหุบเขาไรน์', 'Cologne and the Rhine valley'), tz: 'Europe/Berlin', ll: [50.94, 6.96], alias: ['cologne', 'köln', 'koln', 'โคโลญ', 'rhine valley', 'หุบเขาไรน์', 'loreley', 'ลอเรไล', 'boppard', 'rüdesheim', 'rudesheim', 'bonn', 'บอนน์', 'düsseldorf', 'dusseldorf', 'cgn'], colors: KO },
+    'de-cologne': { country: 'de', wave: 3, name: nm('โคโลญและหุบเขาไรน์', 'Cologne and the Rhine valley'), tz: 'Europe/Berlin', ll: [50.94, 6.96], alias: ['cologne', 'köln', 'koln', 'โคโลญ', 'rhine valley', 'หุบเขาไรน์', 'loreley', 'ลอเรไล', 'boppard', 'rüdesheim', 'rudesheim', 'bonn', 'บอนน์', 'düsseldorf', 'dusseldorf', 'CGN'], colors: KO },
     'it-cinqueterre': { country: 'it', wave: 3, name: nm('ชิงเควแตร์เร', 'The Cinque Terre'), tz: 'Europe/Rome', ll: [44.13, 9.71], alias: ['cinque terre', 'ชิงเควแตร์เร', 'vernazza', 'แวร์นัซซา', 'manarola', 'มานาโรลา', 'riomaggiore', 'monterosso', 'corniglia', 'portofino', 'ปอร์โตฟิโน', 'la spezia', 'genoa', 'genova', 'เจนัว'], colors: CT },
-    'my-borneo': { country: 'my', wave: 3, name: nm('ซาบาห์ เกาะบอร์เนียว', 'Sabah, Borneo'), tz: 'Asia/Kuching', ll: [5.98, 116.07], alias: ['sabah', 'ซาบาห์', 'borneo', 'บอร์เนียว', 'kota kinabalu', 'โกตากินาบาลู', 'kinabalu', 'คินาบาลู', 'sepilok', 'sandakan', 'kundasang', 'bki'], colors: BN },
+    'my-borneo': { country: 'my', wave: 3, name: nm('ซาบาห์ เกาะบอร์เนียว', 'Sabah, Borneo'), tz: 'Asia/Kuching', ll: [5.98, 116.07], alias: ['sabah', 'ซาบาห์', 'borneo', 'บอร์เนียว', 'kota kinabalu', 'โกตากินาบาลู', 'kinabalu', 'คินาบาลู', 'sepilok', 'sandakan', 'kundasang', 'BKI'], colors: BN },
   },
   items,
 };

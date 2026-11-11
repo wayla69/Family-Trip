@@ -230,15 +230,15 @@ const items = [
 export default {
   places: {
     pl: { country: 'pl', wave: 3, name: nm('โปแลนด์', 'Poland'), tz: 'Europe/Warsaw', alias: ['poland', 'โปแลนด์', 'polska'], colors: PL },
-    'pl-krakow': { country: 'pl', wave: 3, name: nm('คราคูฟ', 'Kraków'), tz: 'Europe/Warsaw', ll: [50.06, 19.94], alias: ['krakow', 'kraków', 'คราคูฟ', 'cracow', 'wawel', 'วาเวล', 'zakopane', 'ซาโกปาเน', 'wieliczka', 'warsaw', 'วอร์ซอ', 'gdansk', 'กดานสก์', 'krk', 'waw'], colors: KR },
+    'pl-krakow': { country: 'pl', wave: 3, name: nm('คราคูฟ', 'Kraków'), tz: 'Europe/Warsaw', ll: [50.06, 19.94], alias: ['krakow', 'kraków', 'คราคูฟ', 'cracow', 'wawel', 'วาเวล', 'zakopane', 'ซาโกปาเน', 'wieliczka', 'warsaw', 'วอร์ซอ', 'gdansk', 'กดานสก์', 'KRK', 'WAW'], colors: KR },
     ee: { country: 'ee', wave: 3, name: nm('เอสโตเนีย', 'Estonia'), tz: 'Europe/Tallinn', alias: ['estonia', 'เอสโตเนีย', 'eesti'], colors: EE },
-    'ee-tallinn': { country: 'ee', wave: 3, name: nm('ทาลลินน์', 'Tallinn'), tz: 'Europe/Tallinn', ll: [59.44, 24.75], alias: ['tallinn', 'ทาลลินน์', 'toompea', 'ทูมเปีย', 'viru gate', 'kadriorg', 'tll', 'riga', 'ริกา', 'vilnius', 'วิลนีอุส'], colors: TL },
+    'ee-tallinn': { country: 'ee', wave: 3, name: nm('ทาลลินน์', 'Tallinn'), tz: 'Europe/Tallinn', ll: [59.44, 24.75], alias: ['tallinn', 'ทาลลินน์', 'toompea', 'ทูมเปีย', 'viru gate', 'kadriorg', 'TLL', 'riga', 'vilnius', 'วิลนีอุส'], colors: TL },
     ie: { country: 'ie', wave: 3, name: nm('ไอร์แลนด์', 'Ireland'), tz: 'Europe/Dublin', alias: ['ireland', 'ไอร์แลนด์', 'éire', 'eire', 'republic of ireland'], colors: IE },
-    'ie-ireland': { country: 'ie', wave: 3, name: nm('ดับลินและฝั่งตะวันตก', 'Dublin and the west coast'), tz: 'Europe/Dublin', ll: [53.35, -6.26], alias: ['dublin', 'ดับลิน', 'galway', 'กอลเวย์', 'cliffs of moher', 'ผาโมเฮอร์', 'ring of kerry', 'killarney', 'คิลลาร์นีย์', 'connemara', 'temple bar', 'dub', 'snn'], colors: IE },
+    'ie-ireland': { country: 'ie', wave: 3, name: nm('ดับลินและฝั่งตะวันตก', 'Dublin and the west coast'), tz: 'Europe/Dublin', ll: [53.35, -6.26], alias: ['dublin', 'ดับลิน', 'galway', 'กอลเวย์', 'cliffs of moher', 'ผาโมเฮอร์', 'ring of kerry', 'killarney', 'คิลลาร์นีย์', 'connemara', 'temple bar', 'DUB', 'SNN'], colors: IE },
     mt: { country: 'mt', wave: 3, name: nm('มอลตา', 'Malta'), tz: 'Europe/Malta', alias: ['malta', 'มอลตา'], colors: MT },
-    'mt-valletta': { country: 'mt', wave: 3, name: nm('วัลเลตตาและโกโซ', 'Valletta and Gozo'), tz: 'Europe/Malta', ll: [35.9, 14.51], alias: ['valletta', 'วัลเลตตา', 'mdina', 'เอ็มดีนา', 'gozo', 'โกโซ', 'comino', 'blue grotto', 'blue lagoon', 'sliema', 'st julian\'s', 'mla'], colors: VA },
+    'mt-valletta': { country: 'mt', wave: 3, name: nm('วัลเลตตาและโกโซ', 'Valletta and Gozo'), tz: 'Europe/Malta', ll: [35.9, 14.51], alias: ['valletta', 'วัลเลตตา', 'mdina', 'เอ็มดีนา', 'gozo', 'โกโซ', 'comino', 'blue grotto', 'blue lagoon', 'sliema', 'st julian\'s', 'MLA'], colors: VA },
     lu: { country: 'lu', wave: 3, name: nm('ลักเซมเบิร์ก', 'Luxembourg'), tz: 'Europe/Luxembourg', alias: ['luxembourg', 'ลักเซมเบิร์ก', 'lëtzebuerg', 'letzebuerg'], colors: LU },
-    'lu-luxembourg': { country: 'lu', wave: 3, name: nm('เมืองลักเซมเบิร์กและเวียนเดน', 'Luxembourg City and Vianden'), tz: 'Europe/Luxembourg', ll: [49.61, 6.13], alias: ['luxembourg city', 'เมืองลักเซมเบิร์ก', 'grund', 'กรุนด์', 'vianden', 'เวียนเดน', 'casemates', 'คาสเมต', 'mullerthal', 'lux'], colors: LU },
+    'lu-luxembourg': { country: 'lu', wave: 3, name: nm('เมืองลักเซมเบิร์กและเวียนเดน', 'Luxembourg City and Vianden'), tz: 'Europe/Luxembourg', ll: [49.61, 6.13], alias: ['luxembourg city', 'เมืองลักเซมเบิร์ก', 'Grund', 'กรุนด์', 'vianden', 'เวียนเดน', 'casemates', 'คาสเมต', 'mullerthal', 'LUX'], colors: LU },
   },
   items,
 };

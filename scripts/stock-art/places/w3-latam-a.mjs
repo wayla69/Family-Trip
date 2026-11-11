@@ -116,9 +116,9 @@ const items = [
 export default {
   places: {
     mx: { country: 'mx', wave: 3, name: nm('เม็กซิโก', 'Mexico'), tz: 'America/Mexico_City', alias: ['mexico', 'เม็กซิโก', 'méxico', 'mexican'], colors: MX },
-    'mx-yucatan': { country: 'mx', wave: 3, name: nm('แคนคูนและยูกาตัง', 'Cancún and the Yucatán'), tz: 'America/Cancun', ll: [21.16, -86.85], alias: ['cancun', 'cancún', 'แคนคูน', 'yucatan', 'yucatán', 'ยูกาตัง', 'riviera maya', 'tulum', 'ตูลุม', 'playa del carmen', 'chichen itza', 'chichén itzá', 'ชิเชนอิตซา', 'cozumel', 'valladolid', 'merida', 'mérida', 'cun'], colors: YU },
+    'mx-yucatan': { country: 'mx', wave: 3, name: nm('แคนคูนและยูกาตัง', 'Cancún and the Yucatán'), tz: 'America/Cancun', ll: [21.16, -86.85], alias: ['cancun', 'cancún', 'แคนคูน', 'yucatan', 'yucatán', 'ยูกาตัง', 'riviera maya', 'tulum', 'ตูลุม', 'playa del carmen', 'chichen itza', 'chichén itzá', 'ชิเชนอิตซา', 'cozumel', 'valladolid', 'merida', 'mérida', 'CUN'], colors: YU },
     pe: { country: 'pe', wave: 3, name: nm('เปรู', 'Peru'), tz: 'America/Lima', alias: ['peru', 'เปรู', 'perú'], colors: PE },
-    'pe-cusco': { country: 'pe', wave: 3, name: nm('คุสโก มาชูปิกชู และติติกากา', 'Cusco, Machu Picchu and Titicaca'), tz: 'America/Lima', ll: [-13.53, -71.97], alias: ['cusco', 'cuzco', 'คุสโก', 'machu picchu', 'มาชูปิกชู', 'sacred valley', 'aguas calientes', 'rainbow mountain', 'vinicunca', 'titicaca', 'ติติกากา', 'puno', 'ปูโน', 'lima', 'ลิมา', 'cuz'], colors: CU },
+    'pe-cusco': { country: 'pe', wave: 3, name: nm('คุสโก มาชูปิกชู และติติกากา', 'Cusco, Machu Picchu and Titicaca'), tz: 'America/Lima', ll: [-13.53, -71.97], alias: ['cusco', 'cuzco', 'คุสโก', 'machu picchu', 'มาชูปิกชู', 'sacred valley', 'aguas calientes', 'rainbow mountain', 'vinicunca', 'titicaca', 'ติติกากา', 'puno', 'ปูโน', 'lima', 'ลิมา', 'CUZ'], colors: CU },
   },
   items,
 };

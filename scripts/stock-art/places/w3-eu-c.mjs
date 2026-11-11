@@ -99,7 +99,7 @@ const items = [
 
 export default {
   places: {
-    'fr-provence': { country: 'fr', wave: 3, name: nm('โพรวองซ์', 'Provence'), tz: 'Europe/Paris', ll: [43.95, 4.81], alias: ['provence', 'โพรวองซ์', 'avignon', 'อาวิญง', 'arles', 'อาร์ล', 'gordes', 'กอร์ด', 'luberon', 'aix-en-provence', 'marseille', 'มาร์แซย์', 'valensole', 'pont du gard', 'roussillon', 'mrs'], colors: PV },
+    'fr-provence': { country: 'fr', wave: 3, name: nm('โพรวองซ์', 'Provence'), tz: 'Europe/Paris', ll: [43.95, 4.81], alias: ['provence', 'โพรวองซ์', 'avignon', 'อาวิญง', 'arles', 'อาร์ล', 'gordes', 'กอร์ด', 'luberon', 'aix-en-provence', 'marseille', 'มาร์แซย์', 'valensole', 'pont du gard', 'roussillon', 'MRS'], colors: PV },
     'fr-alps': { country: 'fr', wave: 3, name: nm('ชามอนีและอานซี', 'Chamonix and Annecy'), tz: 'Europe/Paris', ll: [45.92, 6.87], alias: ['chamonix', 'ชามอนี', 'mont blanc', 'มงบล็อง', 'aiguille du midi', 'mer de glace', 'annecy', 'อานซี', 'french alps', 'เทือกเขาแอลป์ฝรั่งเศส', 'megève', 'megeve'], colors: AL },
     'gb-york': { country: 'gb', wave: 3, name: nm('ยอร์กและยอร์กเชียร์', 'York and Yorkshire'), tz: 'Europe/London', ll: [53.96, -1.08], alias: ['york', 'ยอร์ก', 'yorkshire', 'ยอร์กเชียร์', 'the shambles', 'whitby', 'วิตบี', 'harrogate', 'แฮร์โรเกต', 'durham', 'scarborough'], colors: YK },
     'gb-lakes': { country: 'gb', wave: 3, name: nm('เลคดิสทริกต์', 'The Lake District'), tz: 'Europe/London', ll: [54.38, -2.91], alias: ['lake district', 'เลคดิสทริกต์', 'windermere', 'วินเดอร์เมียร์', 'ambleside', 'grasmere', 'แกรสเมียร์', 'keswick', 'เคสวิก', 'bowness', 'cumbria', 'ullswater'], colors: LK },

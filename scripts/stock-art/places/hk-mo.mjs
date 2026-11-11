@@ -127,7 +127,7 @@ function star(x, y, r, fill, sw) { return P(`M${x} ${y - r}` + Array.from({ leng
 export default {
   places: {
     hk: { country: 'hk', wave: 1, name: nm('ฮ่องกง', 'Hong Kong'), tz: 'Asia/Hong_Kong', alias: ['hong kong', 'ฮ่องกง', '香港', 'hk', 'hkg'], colors: HK },
-    'hk-hongkong': { country: 'hk', wave: 1, name: nm('ฮ่องกง', 'Hong Kong'), tz: 'Asia/Hong_Kong', ll: [22.3, 114.17], alias: ['hong kong', 'ฮ่องกง', '香港', 'kowloon', 'เกาลูน', 'tsim sha tsui', 'จิมซาจุ่ย', 'central', 'เซ็นทรัล', 'mong kok', 'มงก๊ก', 'causeway bay', 'คอสเวย์เบย์', 'lantau', 'ลันเตา', 'victoria peak', 'tai o', 'ngong ping'], colors: HC },
+    'hk-hongkong': { country: 'hk', wave: 1, name: nm('ฮ่องกง', 'Hong Kong'), tz: 'Asia/Hong_Kong', ll: [22.3, 114.17], alias: ['hong kong', 'ฮ่องกง', '香港', 'kowloon', 'เกาลูน', 'tsim sha tsui', 'จิมซาจุ่ย', 'mong kok', 'มงก๊ก', 'causeway bay', 'คอสเวย์เบย์', 'lantau', 'ลันเตา', 'victoria peak', 'tai o', 'ngong ping'], colors: HC },
     mo: { country: 'mo', wave: 1, name: nm('มาเก๊า', 'Macau'), tz: 'Asia/Macau', alias: ['macau', 'macao', 'มาเก๊า', '澳門'], colors: MO },
     'mo-macau': { country: 'mo', wave: 1, name: nm('มาเก๊า', 'Macau'), tz: 'Asia/Macau', ll: [22.19, 113.54], alias: ['macau', 'macao', 'มาเก๊า', '澳門', 'taipa', 'ไทปา', 'cotai', 'โคไท', 'coloane', 'โคโลอาน', 'senado', 'เซนาโด', 'st paul', 'เซนต์ปอล'], colors: MC },
   },

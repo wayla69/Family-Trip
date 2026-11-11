@@ -115,7 +115,7 @@ export default {
   places: {
     ch: { country: 'ch', wave: 1, name: nm('สวิตเซอร์แลนด์', 'Switzerland'), tz: 'Europe/Zurich', alias: ['switzerland', 'สวิตเซอร์แลนด์', 'swiss', 'สวิส', 'schweiz', 'suisse'], colors: CH },
     'ch-lucerne': { country: 'ch', wave: 1, name: nm('ลูเซิร์น', 'Lucerne'), tz: 'Europe/Zurich', ll: [47.05, 8.31], alias: ['lucerne', 'luzern', 'ลูเซิร์น', 'pilatus', 'พิลาตุส', 'rigi', 'ริกิ', 'titlis', 'ทิตลิส', 'engelberg', 'vierwaldstattersee'], colors: CH },
-    'ch-interlaken': { country: 'ch', wave: 1, name: nm('อินเทอร์ลาเคนและยุงเฟรา', 'Interlaken & the Jungfrau'), tz: 'Europe/Zurich', ll: [46.69, 7.86], alias: ['interlaken', 'อินเทอร์ลาเคน', 'jungfrau', 'ยุงเฟรา', 'jungfraujoch', 'grindelwald', 'กรินเดลวัลด์', 'lauterbrunnen', 'เลาเทอร์บรุนเนิน', 'wengen', 'murren', 'mürren', 'first'], colors: CH },
+    'ch-interlaken': { country: 'ch', wave: 1, name: nm('อินเทอร์ลาเคนและยุงเฟรา', 'Interlaken & the Jungfrau'), tz: 'Europe/Zurich', ll: [46.69, 7.86], alias: ['interlaken', 'อินเทอร์ลาเคน', 'jungfrau', 'ยุงเฟรา', 'jungfraujoch', 'grindelwald', 'กรินเดลวัลด์', 'lauterbrunnen', 'เลาเทอร์บรุนเนิน', 'wengen', 'murren', 'mürren', 'grindelwald first'], colors: CH },
     'ch-zermatt': { country: 'ch', wave: 1, name: nm('เซอร์แมท', 'Zermatt'), tz: 'Europe/Zurich', ll: [46.02, 7.75], alias: ['zermatt', 'เซอร์แมท', 'matterhorn', 'แมทเทอร์ฮอร์น', 'gornergrat', 'กอร์เนอร์กราท', 'glacier paradise', 'sunnegga', 'täsch'], colors: CH },
   },
   items,
