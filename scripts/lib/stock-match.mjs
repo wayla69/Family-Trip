@@ -157,7 +157,11 @@ export function stockMatch(days, placeText, index) {
     const best = items.filter((it) => it.cat === 'landmark' && cityOf.includes(scopeOf(it.id))).map((it) => [it, hits(text, kwOf(it))]).filter(([, n]) => n > 0).sort((a, b) => b[1] - a[1])[0];
     return best ? 'stock:' + best[0].id : '';
   };
-  const firstCountry = countryOf(cityOf.find(Boolean));
+  // the crest and the guides are the country the book is about — its place or title names it (a city or the country) — and only
+  // without one the first country reached: a Paris book that changes planes in Dubai on day 1 is still French (Nov 2026)
+  const reached = [...new Set(cityOf.filter(Boolean).map(countryOf))];
+  const ownCountry = reached.find((c) => !!fromPlace[c] || (!!bookCity && countryOf(bookCity) === c));
+  const firstCountry = ownCountry || reached[0] || null;
   const crest = firstCountry && has(`${firstCountry}.stamp`) ? 'stock:' + firstCountry + '.stamp' : '';
   // the passport's two guides (S8): the first country's own pair, when the library has both
   const gs = firstCountry ? items.filter((it) => it.cat === 'guide' && scopeOf(it.id) === firstCountry).slice(0, 2) : [];

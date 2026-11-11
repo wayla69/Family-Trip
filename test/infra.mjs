@@ -284,6 +284,12 @@ if (process.env.BASE) {
         'stock match: Blue Mountains finds the Three Sisters; a Thai trip finds its Thai cities, a Chiang Mai book never Bangkok; khanom / saphan / Nan name no city — '
         + [syd, thai, cm, words].map((m) => m.places.join('+')).join(' | ') + ' ' + syd.artDays[2]);
     }
+    // wave 12: a Paris book that changes planes in Dubai on day 1 keeps France's crest and guides; a Dubai book takes the UAE's
+    if (idx.places['ae-dubai']) {
+      const via = wm('Paris 2027', 'Transit in Dubai (DXB)', 'Eiffel Tower'), dxb = wm('Dubai', 'Burj Khalifa');
+      ok(via.crest === 'stock:fr.stamp' && via.places.join() === 'ae-dubai,fr-paris' && dxb.crest === 'stock:ae.stamp',
+        'stock match: the crest is the country the book is about, not the first transit — ' + via.crest + ' ' + dxb.crest);
+    }
     const trap = (en, th, q) => M.stockMatch([{ title: { en, th }, planned: q ? [{ en: 'Café', th: 'คาเฟ่', q }] : [] }], { en: 'Our trip', th: 'ทริปของเรา' }, idx).places;
     ok([trap('A nice day, then a bath', 'แวะร้านเดลี่ แล้วมาเล่นที่สวน'), trap('Umbrella and the Zig Zag Railway', 'นักบินจากอเมริกาบินไปแอฟริกา'),
       trap('Brunch', 'บรันช์', '5 Whistler St, Manly NSW'), trap('First stop: the central market', 'ตลาดกลาง')].every((p) => p.length === 0),
