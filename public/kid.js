@@ -585,16 +585,16 @@ function viewKid(p) {
   const ks = children(), kid = p[1], k = ks.find((c) => c.slug === kid);
   if (!k) {
     return `<div class="kidwrap pick enter"><h1>${L('ใครจะเล่น?', 'Who is playing?')}</h1><div class="kidpick">${ks.map((c) => `<button data-a="kidpick" data-v="${esc(c.slug)}">${kidArt(c.slug) ? `<img src="${kidArt(c.slug, true)}" alt="">` : `<span>${esc(c.emoji)}</span>`}<b>${esc(kidName(c.slug))}</b></button>`).join('')}</div>
-<button class="kidexit" id="kidexit" aria-label="${L('ผู้ใหญ่: กดค้างเพื่อออก', 'Grown-ups: press and hold to leave')}">🔒</button></div>`;
+<button class="kidexit" id="kidexit" aria-label="${L('ผู้ใหญ่: กดค้างเพื่อออก', 'Grown-ups: press and hold to leave')}">${ic('lock', 'klk')}</button></div>`;
   }
-  if (!kidTrip(kid)) return `<div class="kidwrap pick enter"><p class="empty">${L('ยังไม่มีเล่มของหนู', 'No book for you yet')}</p><button class="kidexit" id="kidexit" aria-label="${L('ผู้ใหญ่: กดค้างเพื่อออก', 'Grown-ups: press and hold to leave')}">🔒</button></div>`;   // never a page without the lock: a grown-up must be able to leave
+  if (!kidTrip(kid)) return `<div class="kidwrap pick enter"><p class="empty">${L('ยังไม่มีเล่มของหนู', 'No book for you yet')}</p><button class="kidexit" id="kidexit" aria-label="${L('ผู้ใหญ่: กดค้างเพื่อออก', 'Grown-ups: press and hold to leave')}">${ic('lock', 'klk')}</button></div>`;   // never a page without the lock: a grown-up must be able to leave
   const t = kidTrip(kid);
   const pp = t.passport || {}, i = kidDayOf(t), d = t.days[i], pd = (pp.days || [])[i] || {}, g = pp.guides || [];
   const view = p[2] || 'home', name = kidName(kid), pre = preTrip(t), cd = pp.countdown, wild = ((t.info || {}).wild || []);
   const fill = (x) => String(x || '').replace(/\{name\}/g, name);
   const style = `--accent:${esc(pd.acc || t.theme.accent || '#1F3A5F')};--tint:${esc(pd.tint || '#F3F6FA')}`;
   const back = `<button class="kidback" data-a="kidnav" data-v="#/kid/${esc(kid)}" aria-label="${L('กลับ', 'Back')}">‹</button>`;
-  const lock = `<button class="kidexit" id="kidexit" aria-label="${L('ผู้ใหญ่: กดค้างเพื่อออก', 'Grown-ups: press and hold to leave')}">🔒</button>`;
+  const lock = `<button class="kidexit" id="kidexit" aria-label="${L('ผู้ใหญ่: กดค้างเพื่อออก', 'Grown-ups: press and hold to leave')}">${ic('lock', 'klk')}</button>`;
   const guideImg = (n) => (g[n] ? `<img class="guide" src="${esc(g[n].art)}" alt="">` : '');
   const head = `<header class="kidhd">${view === 'home' ? `<button class="kidme" data-a="kidnav" data-v="#/kid" aria-label="${L('เปลี่ยนคน', 'Switch child')}">${kidFace(kid)}</button>` : back}
 <div class="kidday">${artImg(t, i)}<div><small>${L('วันที่', 'Day')} ${i + 1}</small><b>${wj(esc(T(pd.title) || T(d.title)))}</b></div></div>
