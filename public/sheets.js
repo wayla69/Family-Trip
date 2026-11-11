@@ -1087,8 +1087,9 @@ document.addEventListener('submit', async (e) => {
   const name = $('#lname').value.trim(); ls('name', name);
   let r; try { r = await fetch('/api/login', { method: 'POST', credentials: 'same-origin', headers: { 'x-mb': '1', 'content-type': 'application/json' }, body: JSON.stringify({ code: $('#lcode').value, name }) }); }
   catch (_) { loginBusy = false; $('#lerr').textContent = L('ต่อเน็ตไม่ได้ ลองใหม่', 'No connection — try again'); return; }
+  // signed in: stay busy until the shelf replaces the form, else the pad's own submit (180 ms after the last digit) sends a second login while the state loads
+  if (r.ok) { try { await load(); render(); } finally { loginBusy = false; } flush(); return; }
   loginBusy = false;
-  if (r.ok) { await load(); render(); flush(); return; }
   $('#lcode').value = '';
   $('#lerr').textContent = r.status === 429 ? L('ใส่ผิดหลายครั้งเกินไป รอ 10 นาทีแล้วลองใหม่', 'Too many wrong tries — wait 10 minutes') : L('รหัสไม่ถูกต้อง', 'Wrong PIN');
 });

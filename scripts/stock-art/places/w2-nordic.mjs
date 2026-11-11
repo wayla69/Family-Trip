@@ -202,13 +202,13 @@ const items = [
 export default {
   places: {
     no: { country: 'no', wave: 2, name: nm('นอร์เวย์', 'Norway'), tz: 'Europe/Oslo', alias: ['norway', 'นอร์เวย์', 'norge'], colors: NO },
-    'no-tromso': { country: 'no', wave: 2, name: nm('ทรอมโซ', 'Tromsø'), tz: 'Europe/Oslo', ll: [69.65, 18.96], alias: ['tromso', 'tromsø', 'ทรอมโซ', 'lofoten', 'โลโฟเทน', 'svalbard', 'สวาลบาร์', 'north cape', 'arctic norway', 'tos'], colors: TR },
-    'no-bergen': { country: 'no', wave: 2, name: nm('แบร์เกนและฟยอร์ด', 'Bergen and the fjords'), tz: 'Europe/Oslo', ll: [60.39, 5.32], alias: ['bergen', 'แบร์เกน', 'bryggen', 'บรึกเกน', 'flam', 'flåm', 'ฟลอม', 'geiranger', 'ไกรังเงอร์', 'stavanger', 'preikestolen', 'oslo', 'ออสโล', 'bgo', 'osl'], colors: BG },
+    'no-tromso': { country: 'no', wave: 2, name: nm('ทรอมโซ', 'Tromsø'), tz: 'Europe/Oslo', ll: [69.65, 18.96], alias: ['tromso', 'tromsø', 'ทรอมโซ', 'lofoten', 'โลโฟเทน', 'svalbard', 'สวาลบาร์', 'north cape', 'arctic norway', 'TOS'], colors: TR },
+    'no-bergen': { country: 'no', wave: 2, name: nm('แบร์เกนและฟยอร์ด', 'Bergen and the fjords'), tz: 'Europe/Oslo', ll: [60.39, 5.32], alias: ['bergen', 'แบร์เกน', 'bryggen', 'บรึกเกน', 'flam', 'flåm', 'ฟลอม', 'geiranger', 'ไกรังเงอร์', 'stavanger', 'preikestolen', 'oslo', 'ออสโล', 'BGO', 'OSL'], colors: BG },
     is: { country: 'is', wave: 2, name: nm('ไอซ์แลนด์', 'Iceland'), tz: 'Atlantic/Reykjavik', alias: ['iceland', 'ไอซ์แลนด์', 'ísland'], colors: IS },
-    'is-reykjavik': { country: 'is', wave: 2, name: nm('เรคยาวิกและกอลเดนเซอร์เคิล', 'Reykjavík and the Golden Circle'), tz: 'Atlantic/Reykjavik', ll: [64.15, -21.94], alias: ['reykjavik', 'reykjavík', 'เรคยาวิก', 'golden circle', 'กอลเดนเซอร์เคิล', 'geysir', 'gullfoss', 'blue lagoon', 'บลูลากูน', 'thingvellir', 'vik', 'kef'], colors: RK },
+    'is-reykjavik': { country: 'is', wave: 2, name: nm('เรคยาวิกและกอลเดนเซอร์เคิล', 'Reykjavík and the Golden Circle'), tz: 'Atlantic/Reykjavik', ll: [64.15, -21.94], alias: ['reykjavik', 'reykjavík', 'เรคยาวิก', 'golden circle', 'กอลเดนเซอร์เคิล', 'geysir', 'gullfoss', 'blue lagoon', 'บลูลากูน', 'thingvellir', 'vik', 'KEF'], colors: RK },
     dk: { country: 'dk', wave: 2, name: nm('เดนมาร์ก', 'Denmark'), tz: 'Europe/Copenhagen', alias: ['denmark', 'เดนมาร์ก', 'danmark'], colors: DK },
-    'dk-copenhagen': { country: 'dk', wave: 2, name: nm('โคเปนเฮเกน', 'Copenhagen'), tz: 'Europe/Copenhagen', ll: [55.68, 12.57], alias: ['copenhagen', 'โคเปนเฮเกน', 'københavn', 'kobenhavn', 'nyhavn', 'นูฮาวน์', 'tivoli', 'ทิโวลี', 'billund', 'บิลลุนด์', 'cph'], colors: CP },
-    'fi-helsinki': { country: 'fi', wave: 2, name: nm('เฮลซิงกิ', 'Helsinki'), tz: 'Europe/Helsinki', ll: [60.17, 24.94], alias: ['helsinki', 'เฮลซิงกิ', 'helsingfors', 'suomenlinna', 'ซูโอเมนลินนา', 'temppeliaukio', 'hel'], colors: HE },
+    'dk-copenhagen': { country: 'dk', wave: 2, name: nm('โคเปนเฮเกน', 'Copenhagen'), tz: 'Europe/Copenhagen', ll: [55.68, 12.57], alias: ['copenhagen', 'โคเปนเฮเกน', 'københavn', 'kobenhavn', 'nyhavn', 'นูฮาวน์', 'tivoli', 'ทิโวลี', 'billund', 'บิลลุนด์', 'CPH'], colors: CP },
+    'fi-helsinki': { country: 'fi', wave: 2, name: nm('เฮลซิงกิ', 'Helsinki'), tz: 'Europe/Helsinki', ll: [60.17, 24.94], alias: ['helsinki', 'เฮลซิงกิ', 'helsingfors', 'suomenlinna', 'ซูโอเมนลินนา', 'temppeliaukio', 'HEL'], colors: HE },
   },
   items,
 };

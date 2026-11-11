@@ -253,7 +253,20 @@ if (process.env.BASE) {
     const wrong = Object.entries(idx.places).filter(([k]) => k.includes('-')).filter(([, p]) => {
       const id = (M.stockMatch([{ title: { en: p.alias[0], th: p.alias[1] } }], p.alias[0], idx).artDays[0] || '').replace('stock:', '');
       const it = idx.items.find((x) => x.id === id); return it && it.cat === 'landmark'; }).map(([k]) => k);
-    ok(!wrong.length, 'stock match: a day that names only its city gets the city\'s scene, never a landmark picked by the city\'s name' + (wrong.length ? ' — ' + wrong.join(' ') : '')); }
+    ok(!wrong.length, 'stock match: a day that names only its city gets the city\'s scene, never a landmark picked by the city\'s name' + (wrong.length ? ' — ' + wrong.join(' ') : ''));
+    // a place the library doesn't have (Nov 2026: the Sydney book took the Cotswolds, Interlaken, Plitvice, Tallinn and London):
+    // "Bath, story, bed", "Zig Zag Railway", Thai อเมริกา / แอฟริกา / มาเล่น / เดลี่, and the stops' street addresses name no city
+    const au = JSON.parse(fs.readFileSync(path.resolve('server/seeds/big-hop-2027.json'), 'utf8'));
+    const mau = M.stockMatch(au.days, au.title, idx);
+    ok(mau.places.length === 0 && mau.artDays.every((a) => !a || /^stock:[tr]\.day\./.test(a)),
+      'stock match: a Sydney book (no Australia in the library) gets landscape and route scenes, never another country\'s city' + (mau.places.length ? ' — ' + mau.places.join(' ') : ''));
+    const trap = (en, th, q) => M.stockMatch([{ title: { en, th }, planned: q ? [{ en: 'Café', th: 'คาเฟ่', q }] : [] }], { en: 'Our trip', th: 'ทริปของเรา' }, idx).places;
+    ok([trap('A nice day, then a bath', 'แวะร้านเดลี่ แล้วมาเล่นที่สวน'), trap('Umbrella and the Zig Zag Railway', 'นักบินจากอเมริกาบินไปแอฟริกา'),
+      trap('Brunch', 'บรันช์', '5 Whistler St, Manly NSW'), trap('First stop: the central market', 'ตลาดกลาง')].every((p) => p.length === 0),
+      'stock match: everyday words, Thai words that hold a place\'s name, and street addresses name no city');
+    ok(trap('Split, Croatia', 'สปลิต').join() === 'hr-dubrovnik' && trap('Flight BKK → ZAG to Croatia', 'บินไปซาเกร็บ').join() === 'hr-plitvice' && trap('Old town of Split', 'เมืองเก่า').join() === ''
+      && trap('Day trip to Nice', 'ไปเที่ยวนีซ').join() === 'fr-nice' && trap('Shopping in New York', 'ช้อปปิ้งที่นิวยอร์ก').join() === 'us-newyork',
+      'stock match: a place written with its capitals, an airport code in capitals and the longest name still find their city; a side name alone (Split, no Croatia) names nothing'); }
   const unapproved = { ...idx, items: idx.items.map((it) => ({ ...it, ok: undefined })) };
   const s2 = C.toSeed(plan, [], { art: false, stock: unapproved }), s3 = C.toSeed(plan, [], { art: false }), s4 = C.toSeed(plan, [], { stock: idx });
   ok(!s2.theme.artDays && !s2.passport.stamps && !s3.theme.artDays && s3.passport.style.crest === '' && !s4.theme.artDays && !s4.stock,

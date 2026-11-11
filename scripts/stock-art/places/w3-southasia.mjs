@@ -215,13 +215,13 @@ const items = [
 export default {
   places: {
     in: { country: 'in', wave: 3, name: nm('อินเดีย', 'India'), tz: 'Asia/Kolkata', alias: ['india', 'อินเดีย', 'bharat'], colors: IN },
-    'in-golden': { country: 'in', wave: 3, name: nm('เดลี อัครา และชัยปุระ', 'Delhi, Agra and Jaipur'), tz: 'Asia/Kolkata', ll: [27.18, 78.04], alias: ['delhi', 'เดลี', 'new delhi', 'นิวเดลี', 'agra', 'อัครา', 'taj mahal', 'ทัชมาฮาล', 'jaipur', 'ชัยปุระ', 'rajasthan', 'ราชสถาน', 'udaipur', 'jodhpur', 'golden triangle', 'jai'], colors: AG },
+    'in-golden': { country: 'in', wave: 3, name: nm('เดลี อัครา และชัยปุระ', 'Delhi, Agra and Jaipur'), tz: 'Asia/Kolkata', ll: [27.18, 78.04], alias: ['delhi', 'นิวเดลี', 'new delhi', 'นิวเดลี', 'agra', 'อัครา', 'taj mahal', 'ทัชมาฮาล', 'jaipur', 'ชัยปุระ', 'rajasthan', 'ราชสถาน', 'udaipur', 'jodhpur', 'golden triangle', 'JAI'], colors: AG },
     np: { country: 'np', wave: 3, name: nm('เนปาล', 'Nepal'), tz: 'Asia/Kathmandu', alias: ['nepal', 'เนปาล'], colors: NP },
-    'np-kathmandu': { country: 'np', wave: 3, name: nm('กาฐมาณฑุและหิมาลัย', 'Kathmandu and the Himalaya'), tz: 'Asia/Kathmandu', ll: [27.71, 85.32], alias: ['kathmandu', 'กาฐมาณฑุ', 'pokhara', 'โพขรา', 'bhaktapur', 'ภักตะปูร์', 'chitwan', 'จิตวัน', 'everest', 'เอเวอเรสต์', 'annapurna', 'อันนาปุรณะ', 'himalaya', 'หิมาลัย', 'ktm'], colors: KT },
+    'np-kathmandu': { country: 'np', wave: 3, name: nm('กาฐมาณฑุและหิมาลัย', 'Kathmandu and the Himalaya'), tz: 'Asia/Kathmandu', ll: [27.71, 85.32], alias: ['kathmandu', 'กาฐมาณฑุ', 'pokhara', 'โพขรา', 'bhaktapur', 'ภักตะปูร์', 'chitwan', 'จิตวัน', 'everest', 'เอเวอเรสต์', 'annapurna', 'อันนาปุรณะ', 'himalaya', 'หิมาลัย', 'KTM'], colors: KT },
     bt: { country: 'bt', wave: 3, name: nm('ภูฏาน', 'Bhutan'), tz: 'Asia/Thimphu', alias: ['bhutan', 'ภูฏาน', 'druk yul'], colors: BT },
-    'bt-paro': { country: 'bt', wave: 3, name: nm('พาโร ทิมพู และปูนาคา', 'Paro, Thimphu and Punakha'), tz: 'Asia/Thimphu', ll: [27.43, 89.41], alias: ['paro', 'พาโร', 'thimphu', 'ทิมพู', 'punakha', 'ปูนาคา', 'tiger\'s nest', 'taktsang', 'ทักซัง', 'dochula', 'pbh'], colors: PA },
+    'bt-paro': { country: 'bt', wave: 3, name: nm('พาโร ทิมพู และปูนาคา', 'Paro, Thimphu and Punakha'), tz: 'Asia/Thimphu', ll: [27.43, 89.41], alias: ['paro', 'พาโร', 'thimphu', 'ทิมพู', 'punakha', 'ปูนาคา', 'tiger\'s nest', 'taktsang', 'ทักซัง', 'dochula', 'PBH'], colors: PA },
     lk: { country: 'lk', wave: 3, name: nm('ศรีลังกา', 'Sri Lanka'), tz: 'Asia/Colombo', alias: ['sri lanka', 'ศรีลังกา', 'ceylon', 'colombo', 'โคลัมโบ'], colors: LK },
-    'lk-hills': { country: 'lk', wave: 3, name: nm('แคนดี้ เอลลา และสิกิริยา', 'Kandy, Ella and Sigiriya'), tz: 'Asia/Colombo', ll: [7.29, 80.63], alias: ['kandy', 'แคนดี้', 'ella', 'เอลลา', 'nuwara eliya', 'นูวาราเอลิยา', 'sigiriya', 'สิกิริยา', 'dambulla', 'pinnawala', 'yala', 'ยาลา', 'galle', 'กอลล์', 'bentota', 'cmb'], colors: SL },
+    'lk-hills': { country: 'lk', wave: 3, name: nm('แคนดี้ เอลลา และสิกิริยา', 'Kandy, Ella and Sigiriya'), tz: 'Asia/Colombo', ll: [7.29, 80.63], alias: ['kandy', 'แคนดี้', 'Ella', 'เอลลา', 'nuwara eliya', 'นูวาราเอลิยา', 'sigiriya', 'สิกิริยา', 'dambulla', 'pinnawala', 'yala', 'ยาลา', 'galle', 'กอลล์', 'bentota', 'CMB'], colors: SL },
   },
   items,
 };

@@ -11,21 +11,81 @@
 const lc = (s) => String(s || '').normalize('NFKC').toLowerCase();
 const T = (x) => (x && typeof x === 'object' ? [x.th, x.en].join(' ') : String(x || ''));
 
-function dayWords(d) {
+// a day's words; `addr` adds the stops' map queries (street addresses) — they help pick the picture, but never say which city the
+// day is in: a Sydney book's "5 Whistler St, Manly" and "Oxford Street, Paddington NSW" named Vancouver and London (Nov 2026)
+function dayRaw(d, addr) {
   const bits = [T(d.title), T(d.sleep), T(d.moving)];
-  for (const s of d.planned || []) bits.push(T(s), s.q || '');
+  for (const s of d.planned || []) bits.push(T(s), addr ? s.q || '' : '');
   for (const r of d.plan || []) bits.push(T(r), T(r.h));
-  return lc(bits.join(' \n '));
+  return bits.join(' \n ').normalize('NFKC');
 }
-// how many of the words appear (a word of one or two Latin letters counts only as a whole word)
+const dayWords = (d) => lc(dayRaw(d, true));
+const reEsc = (s) => s.replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
+const latin = (s) => /[a-z]/i.test(s) && !/[^\x00-\x7FÀ-ɏ\s'’.-]/.test(s);
+// a Latin word counts as a whole word, plural s/es allowed ("bath" is not in "bathroom", "ella" not in "umbrella", "ice" not in
+// "price" — Nov 2026: a Sydney book took the Cotswolds, Interlaken and Plitvice); other scripts (Thai, Chinese) have no spaces,
+// so they match inside the text
+// (a plain search and a look at the letters around it — a Unicode-class regular expression per keyword made a book take seconds)
+const wordCh = (c) => !!c && ((c >= '0' && c <= '9') || c.toLowerCase() !== c.toUpperCase() || (c >= '฀' && c <= '๿'));
+function hasWord(text, k) {
+  if (!latin(k)) return text.includes(k);
+  for (let i = text.indexOf(k); i >= 0; i = text.indexOf(k, i + 1)) {
+    if (wordCh(text[i - 1])) continue;
+    let e = i + k.length;
+    if (text[e] === 's') e++; else if (text[e] === 'e' && text[e + 1] === 's') e += 2;
+    if (!wordCh(text[e]) || !wordCh(text[i + k.length])) return true;
+  }
+  return false;
+}
+// how many of the words appear
 function hits(text, words) {
   let n = 0;
-  for (const w of words || []) {
-    const k = lc(w).trim();
-    if (!k) continue;
-    if (/^[a-z0-9]{1,3}$/.test(k) ? new RegExp(`\\b${k}\\b`).test(text) : text.includes(k)) n++;
-  }
+  for (const w of words || []) { const k = lc(w).trim(); if (k && hasWord(text, k)) n++; }
   return n;
+}
+
+// the cities a text names, through the place aliases (the data says how each is matched):
+// - lower case ("dubrovnik"): a whole word, any case, plurals allowed
+// - written with capitals ("Nice", "Split", "Bath", "Ella"): an everyday word as well, so only with those capitals
+// - all capitals ("ZAG", "TAG"): an airport code, only in capitals ("Zig Zag" is not Zagreb)
+// - Thai or Chinese: inside the text, but the longest name found wins — อเมริกา is not ริกา, มาเลเซีย is not มาเล, and a
+//   longer Latin name wins too (New York is not York)
+// built once per library (two regular expressions for the ~2,000 Latin aliases, a plain search for the rest): a book is read in
+// milliseconds, not seconds
+const finders = new WeakMap();
+function aliasFinder(places) {
+  if (finders.has(places)) return finders.get(places);
+  const plain = [], lower = new Map(), caseful = new Map();
+  for (const [k, p] of Object.entries(places)) for (const a of p.alias || []) {
+    const s = String(a || '').normalize('NFKC').trim(); if (!s) continue;
+    if (!latin(s)) { plain.push({ k, a: s }); continue; }
+    const m = s !== s.toLowerCase() ? caseful : lower, key = m === lower ? s.toLowerCase() : s;
+    if (!m.has(key)) m.set(key, []);
+    m.get(key).push(k);
+  }
+  const alt = (m) => [...m.keys()].sort((x, y) => y.length - x.length).map(reEsc).join('|');
+  const reLower = lower.size ? new RegExp(`(?<![\\p{L}\\p{N}])(${alt(lower)})(?:e?s)?(?![\\p{L}\\p{N}])`, 'giu') : null;
+  const reCase = caseful.size ? new RegExp(`(?<![\\p{L}\\p{N}])(${alt(caseful)})(?![\\p{L}\\p{N}])`, 'gu') : null;
+  const find = (raw) => {
+    const out = [];
+    for (const [re, m, low] of [[reLower, lower, true], [reCase, caseful, false]]) if (re) for (const x of raw.matchAll(re)) {
+      const key = low ? x[1].toLowerCase() : x[1];
+      for (const k of m.get(key) || []) out.push({ k, a: key, s: x.index, e: x.index + x[0].length });
+    }
+    for (const { k, a } of plain) { let i = -1; while ((i = raw.indexOf(a, i + 1)) >= 0) out.push({ k, a, s: i, e: i + a.length }); }
+    return out;
+  };
+  const fn = (raw) => {
+    const found = find(raw);
+    found.sort((x, y) => (y.e - y.s) - (x.e - x.s));
+    const kept = [];
+    for (const f of found) if (!kept.some((g) => g.s <= f.s && f.e <= g.e && (g.e - g.s) > (f.e - f.s))) kept.push(f);
+    const by = {};
+    for (const f of kept) { const b = (by[f.k] = by[f.k] || { names: new Set(), n: 0 }); b.names.add(f.a); b.n++; }
+    return by;   // place key → the aliases it was named by and how many times
+  };
+  finders.set(places, fn);
+  return fn;
 }
 
 export function stockMatch(days, placeText, index) {
@@ -35,17 +95,28 @@ export function stockMatch(days, placeText, index) {
   const scopeOf = (id) => id.split('.')[0];
   const has = (id) => items.some((it) => it.id === id);
   const words = days.map(dayWords);
-  const whole = lc(T(placeText)) + ' \n ' + words.join(' \n ');
-  const best = (text) => cities.map((c) => [c, hits(text, places[c].alias)]).filter(([, n]) => n > 0).sort((a, b) => b[1] - a[1])[0];
-  const bookCity = (best(lc(T(placeText))) || best(whole) || [null])[0];
+  const raws = days.map((d) => dayRaw(d));
+  const named = aliasFinder(places);
+  const placeRaw = T(placeText).normalize('NFKC');
+  // the book's own city comes from its place or title only; a street, district or nearby town ("Oxford Street", "Whistler")
+  // counts for a city only once the book names that city itself or its country somewhere — a Sydney book's "Oxford Street,
+  // Paddington" is not London, and it must not become every day's city (Nov 2026)
+  const inBook = named(placeRaw + ' \n ' + raws.join(' \n '));
+  const fromPlace = named(placeRaw);
+  const mainNames = (k) => { const p = places[k] || {}; return [p.name && p.name.en, p.name && p.name.th, ...(p.alias || []).slice(0, 2)].filter(Boolean).map((s) => String(s).normalize('NFKC')); };
+  const ok = (c) => !!fromPlace[c] || (!!inBook[c] && ([...inBook[c].names].some((a) => mainNames(c).includes(a))
+    || (!!places[c].country && !!inBook[places[c].country])));
+  const best = (raw, by = named(raw)) => cities.filter(ok).map((c) => [c, by[c] ? by[c].names.size : 0]).filter(([, n]) => n > 0).sort((a, b) => b[1] - a[1])[0];
+  const bookCity = (best(placeRaw, fromPlace) || [null])[0];
 
   let prev = null;
-  const cityOf = words.map((w) => { const b = best(w); prev = b ? b[0] : prev || bookCity; return prev; });
+  const cityOf = raws.map((w) => { const b = best(w); prev = b ? b[0] : prev || bookCity; return prev; });
   const used = new Set();
   // a landmark's keywords without its own city's main name (Nov 2026: "tokyo" in the capsule-toy picture's keywords matched every
   // Tokyo day and beat the city's own scene) — a landmark is picked for the place the day goes to, never for the city it is in
   const mainOf = (city) => { const p = places[city] || {}; return new Set([p.name && p.name.en, p.name && p.name.th, ...(p.alias || []).slice(0, 2)].filter(Boolean).map((s) => lc(s))); };
-  const kwOf = (it) => { if (it.cat !== 'landmark') return it.kw; const main = mainOf(scopeOf(it.id)); return (it.kw || []).filter((k) => !main.has(lc(k))); };
+  // (a piece of the main name is the name too: "เดลี" inside "นิวเดลี")
+  const kwOf = (it) => { if (it.cat !== 'landmark') return it.kw; const main = [...mainOf(scopeOf(it.id))]; return (it.kw || []).filter((k) => { const x = lc(k); return !main.some((m) => m === x || m.includes(x)); }); };
   // the landscape (t.*) and route (r.*) scenes: for a day the city layer cannot picture — a town the library does not have,
   // or a city without a scene — the one whose keywords the day names (a lake, a glacier, a ferry crossing), unused first
   const wide = items.filter((it) => it.cat === 'day' && (scopeOf(it.id) === 't' || scopeOf(it.id) === 'r'));

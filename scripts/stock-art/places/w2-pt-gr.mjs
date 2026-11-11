@@ -169,11 +169,11 @@ const items = [
 export default {
   places: {
     pt: { country: 'pt', wave: 2, name: nm('โปรตุเกส', 'Portugal'), tz: 'Europe/Lisbon', alias: ['portugal', 'โปรตุเกส'], colors: PT },
-    'pt-lisbon': { country: 'pt', wave: 2, name: nm('ลิสบอนและซินตรา', 'Lisbon and Sintra'), tz: 'Europe/Lisbon', ll: [38.72, -9.14], alias: ['lisbon', 'ลิสบอน', 'lisboa', 'alfama', 'อัลฟามา', 'belem', 'belém', 'เบเลง', 'sintra', 'ซินตรา', 'cascais', 'คาสไกส์', 'lis'], colors: LS },
-    'pt-porto': { country: 'pt', wave: 2, name: nm('ปอร์โต', 'Porto'), tz: 'Europe/Lisbon', ll: [41.15, -8.61], alias: ['porto', 'ปอร์โต', 'oporto', 'ribeira', 'ริเบรา', 'douro', 'ดูโร', 'gaia', 'opo'], colors: PO },
+    'pt-lisbon': { country: 'pt', wave: 2, name: nm('ลิสบอนและซินตรา', 'Lisbon and Sintra'), tz: 'Europe/Lisbon', ll: [38.72, -9.14], alias: ['lisbon', 'ลิสบอน', 'lisboa', 'alfama', 'อัลฟามา', 'belem', 'belém', 'เบเลง', 'sintra', 'ซินตรา', 'cascais', 'คาสไกส์', 'LIS'], colors: LS },
+    'pt-porto': { country: 'pt', wave: 2, name: nm('ปอร์โต', 'Porto'), tz: 'Europe/Lisbon', ll: [41.15, -8.61], alias: ['porto', 'ปอร์โต', 'oporto', 'ribeira', 'ริเบรา', 'douro', 'ดูโร', 'Gaia', 'OPO'], colors: PO },
     gr: { country: 'gr', wave: 2, name: nm('กรีซ', 'Greece'), tz: 'Europe/Athens', alias: ['greece', 'กรีซ', 'hellas'], colors: GR },
-    'gr-santorini': { country: 'gr', wave: 2, name: nm('ซานโตรินี', 'Santorini'), tz: 'Europe/Athens', ll: [36.39, 25.46], alias: ['santorini', 'ซานโตรินี', 'oia', 'เอีย', 'fira', 'ฟีรา', 'thira', 'mykonos', 'มิโคนอส', 'cyclades', 'jtr'], colors: ST },
-    'gr-athens': { country: 'gr', wave: 2, name: nm('เอเธนส์', 'Athens'), tz: 'Europe/Athens', ll: [37.98, 23.73], alias: ['athens', 'เอเธนส์', 'athina', 'acropolis', 'อะโครโพลิส', 'parthenon', 'พาร์เธนอน', 'plaka', 'พลากา', 'piraeus', 'ath'], colors: AT },
+    'gr-santorini': { country: 'gr', wave: 2, name: nm('ซานโตรินี', 'Santorini'), tz: 'Europe/Athens', ll: [36.39, 25.46], alias: ['santorini', 'ซานโตรินี', 'oia', 'เอีย', 'fira', 'ฟีรา', 'thira', 'mykonos', 'มิโคนอส', 'cyclades', 'JTR'], colors: ST },
+    'gr-athens': { country: 'gr', wave: 2, name: nm('เอเธนส์', 'Athens'), tz: 'Europe/Athens', ll: [37.98, 23.73], alias: ['athens', 'เอเธนส์', 'athina', 'acropolis', 'อะโครโพลิส', 'parthenon', 'พาร์เธนอน', 'plaka', 'พลากา', 'piraeus', 'ATH'], colors: AT },
   },
   items,
 };

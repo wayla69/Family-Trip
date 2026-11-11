@@ -84,10 +84,10 @@ const items = [
 
 export default {
   places: {
-    'us-chicago': { country: 'us', wave: 3, name: nm('ชิคาโก', 'Chicago'), tz: 'America/Chicago', ll: [41.88, -87.63], alias: ['chicago', 'ชิคาโก', 'navy pier', 'millennium park', 'lake michigan', 'ทะเลสาบมิชิแกน', 'field museum', 'magnificent mile', 'ord'], colors: CH },
-    'us-dc': { country: 'us', wave: 3, name: nm('วอชิงตัน ดี.ซี.', 'Washington DC'), tz: 'America/New_York', ll: [38.89, -77.03], alias: ['washington dc', 'washington d.c.', 'washington, dc', 'washington, d.c.', 'วอชิงตัน ดี.ซี.', 'วอชิงตันดีซี', 'national mall', 'smithsonian', 'สมิธโซเนียน', 'white house', 'ทำเนียบขาว', 'capitol hill', 'dca', 'iad'], colors: DC },
-    'us-boston': { country: 'us', wave: 3, name: nm('บอสตัน', 'Boston'), tz: 'America/New_York', ll: [42.36, -71.06], alias: ['boston', 'บอสตัน', 'beacon hill', 'freedom trail', 'boston common', 'harvard', 'ฮาร์วาร์ด', 'cambridge, ma', 'cape cod', 'เคปคอด', 'salem', 'bos'], colors: BO },
-    'us-alaska': { country: 'us', wave: 3, name: nm('อะแลสกา', 'Alaska'), tz: 'America/Anchorage', ll: [61.22, -149.9], alias: ['alaska', 'อะแลสกา', 'anchorage', 'แองเคอเรจ', 'juneau', 'จูโน', 'denali', 'เดนาลี', 'fairbanks', 'แฟร์แบงก์ส', 'seward', 'ketchikan', 'skagway', 'glacier bay', 'anc'], colors: AK },
+    'us-chicago': { country: 'us', wave: 3, name: nm('ชิคาโก', 'Chicago'), tz: 'America/Chicago', ll: [41.88, -87.63], alias: ['chicago', 'ชิคาโก', 'navy pier', 'millennium park', 'lake michigan', 'ทะเลสาบมิชิแกน', 'field museum', 'magnificent mile', 'ORD'], colors: CH },
+    'us-dc': { country: 'us', wave: 3, name: nm('วอชิงตัน ดี.ซี.', 'Washington DC'), tz: 'America/New_York', ll: [38.89, -77.03], alias: ['washington dc', 'washington d.c.', 'washington, dc', 'washington, d.c.', 'วอชิงตัน ดี.ซี.', 'วอชิงตันดีซี', 'national mall', 'smithsonian', 'สมิธโซเนียน', 'white house', 'ทำเนียบขาว', 'capitol hill', 'DCA', 'IAD'], colors: DC },
+    'us-boston': { country: 'us', wave: 3, name: nm('บอสตัน', 'Boston'), tz: 'America/New_York', ll: [42.36, -71.06], alias: ['boston', 'บอสตัน', 'beacon hill', 'freedom trail', 'boston common', 'harvard', 'ฮาร์วาร์ด', 'cambridge, ma', 'cape cod', 'เคปคอด', 'salem', 'BOS'], colors: BO },
+    'us-alaska': { country: 'us', wave: 3, name: nm('อะแลสกา', 'Alaska'), tz: 'America/Anchorage', ll: [61.22, -149.9], alias: ['alaska', 'อะแลสกา', 'anchorage', 'แองเคอเรจ', 'juneau', 'จูโน', 'denali', 'เดนาลี', 'fairbanks', 'แฟร์แบงก์ส', 'seward', 'ketchikan', 'skagway', 'glacier bay', 'ANC'], colors: AK },
   },
   items,
 };

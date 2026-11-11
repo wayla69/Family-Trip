@@ -201,13 +201,13 @@ const items = [
 export default {
   places: {
     sk: { country: 'sk', wave: 3, name: nm('สโลวาเกีย', 'Slovakia'), tz: 'Europe/Bratislava', alias: ['slovakia', 'สโลวาเกีย', 'slovensko'], colors: SK },
-    'sk-bratislava': { country: 'sk', wave: 3, name: nm('บราติสลาวาและเทือกเขาตาตราสูง', 'Bratislava and the High Tatras'), tz: 'Europe/Bratislava', ll: [48.15, 17.11], alias: ['bratislava', 'บราติสลาวา', 'high tatras', 'ตาตราสูง', 'štrbské pleso', 'strbske pleso', 'poprad', 'โปปรัด', 'devín', 'devin castle', 'bts'], colors: BA },
+    'sk-bratislava': { country: 'sk', wave: 3, name: nm('บราติสลาวาและเทือกเขาตาตราสูง', 'Bratislava and the High Tatras'), tz: 'Europe/Bratislava', ll: [48.15, 17.11], alias: ['bratislava', 'บราติสลาวา', 'high tatras', 'ตาตราสูง', 'štrbské pleso', 'strbske pleso', 'poprad', 'โปปรัด', 'devín', 'devin castle', 'BTS'], colors: BA },
     ge: { country: 'ge', wave: 3, name: nm('จอร์เจีย', 'Georgia'), tz: 'Asia/Tbilisi', alias: ['georgia country', 'country of georgia', 'จอร์เจีย', 'sakartvelo', 'საქართველო'], colors: GE },
-    'ge-tbilisi': { country: 'ge', wave: 3, name: nm('ทบิลิซีและคาซเบกี', 'Tbilisi and Kazbegi'), tz: 'Asia/Tbilisi', ll: [41.69, 44.8], alias: ['tbilisi', 'ทบิลิซี', 'kazbegi', 'คาซเบกี', 'stepantsminda', 'gergeti', 'mtskheta', 'มตสเคตา', 'signagi', 'sighnaghi', 'batumi', 'บาตูมี', 'tbs'], colors: TB },
+    'ge-tbilisi': { country: 'ge', wave: 3, name: nm('ทบิลิซีและคาซเบกี', 'Tbilisi and Kazbegi'), tz: 'Asia/Tbilisi', ll: [41.69, 44.8], alias: ['tbilisi', 'ทบิลิซี', 'kazbegi', 'คาซเบกี', 'stepantsminda', 'gergeti', 'mtskheta', 'มตสเคตา', 'signagi', 'sighnaghi', 'batumi', 'บาตูมี', 'TBS'], colors: TB },
     si: { country: 'si', wave: 3, name: nm('สโลวีเนีย', 'Slovenia'), tz: 'Europe/Ljubljana', alias: ['slovenia', 'สโลวีเนีย', 'slovenija'], colors: SI },
-    'si-bled': { country: 'si', wave: 3, name: nm('เบลด ลูบลิยานา และโพสตอยนา', 'Bled, Ljubljana and Postojna'), tz: 'Europe/Ljubljana', ll: [46.36, 14.09], alias: ['bled', 'เบลด', 'lake bled', 'ljubljana', 'ลูบลิยานา', 'postojna', 'โพสตอยนา', 'bohinj', 'โบฮินย์', 'vintgar', 'piran', 'ปิราน', 'triglav', 'lju'], colors: BL },
+    'si-bled': { country: 'si', wave: 3, name: nm('เบลด ลูบลิยานา และโพสตอยนา', 'Bled, Ljubljana and Postojna'), tz: 'Europe/Ljubljana', ll: [46.36, 14.09], alias: ['bled', 'เบลด', 'lake bled', 'ljubljana', 'ลูบลิยานา', 'postojna', 'โพสตอยนา', 'bohinj', 'โบฮินย์', 'vintgar', 'piran', 'ปิราน', 'triglav', 'LJU'], colors: BL },
     se: { country: 'se', wave: 3, name: nm('สวีเดน', 'Sweden'), tz: 'Europe/Stockholm', alias: ['sweden', 'สวีเดน', 'sverige'], colors: SE },
-    'se-stockholm': { country: 'se', wave: 3, name: nm('สตอกโฮล์ม', 'Stockholm'), tz: 'Europe/Stockholm', ll: [59.33, 18.07], alias: ['stockholm', 'สตอกโฮล์ม', 'gamla stan', 'กัมลาสตาน', 'skansen', 'สกันเซน', 'djurgården', 'djurgarden', 'junibacken', 'vasa museum', 'vaxholm', 'arn'], colors: ST },
+    'se-stockholm': { country: 'se', wave: 3, name: nm('สตอกโฮล์ม', 'Stockholm'), tz: 'Europe/Stockholm', ll: [59.33, 18.07], alias: ['stockholm', 'สตอกโฮล์ม', 'gamla stan', 'กัมลาสตาน', 'skansen', 'สกันเซน', 'djurgården', 'djurgarden', 'junibacken', 'vasa museum', 'vaxholm', 'ARN'], colors: ST },
   },
   items,
 };

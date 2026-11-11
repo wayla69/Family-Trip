@@ -167,9 +167,9 @@ export default {
   places: {
     'vn-hanoi': { country: 'vn', wave: 2, name: nm('ฮานอยและอ่าวฮาลอง', 'Hanoi and Halong Bay'), tz: 'Asia/Ho_Chi_Minh', ll: [21.03, 105.85], alias: ['hanoi', 'ฮานอย', 'ha noi', 'hà nội', 'halong', 'ha long', 'ฮาลอง', 'old quarter', 'hoan kiem', 'คืนดาบ', 'ninh binh', 'นิงห์บิงห์', 'sapa', 'ซาปา'], colors: HN },
     my: { country: 'my', wave: 2, name: nm('มาเลเซีย', 'Malaysia'), tz: 'Asia/Kuala_Lumpur', alias: ['malaysia', 'มาเลเซีย'], colors: MY },
-    'my-kualalumpur': { country: 'my', wave: 2, name: nm('กัวลาลัมเปอร์', 'Kuala Lumpur'), tz: 'Asia/Kuala_Lumpur', ll: [3.15, 101.71], alias: ['kuala lumpur', 'กัวลาลัมเปอร์', 'klcc', 'petronas', 'เปโตรนาส', 'batu caves', 'ถ้ำบาตู', 'bukit bintang', 'genting', 'เกนติ้ง', 'putrajaya', 'kul', 'melaka', 'malacca', 'มะละกา'], colors: KL },
+    'my-kualalumpur': { country: 'my', wave: 2, name: nm('กัวลาลัมเปอร์', 'Kuala Lumpur'), tz: 'Asia/Kuala_Lumpur', ll: [3.15, 101.71], alias: ['kuala lumpur', 'กัวลาลัมเปอร์', 'klcc', 'petronas', 'เปโตรนาส', 'batu caves', 'ถ้ำบาตู', 'bukit bintang', 'genting', 'เกนติ้ง', 'putrajaya', 'KUL', 'melaka', 'malacca', 'มะละกา'], colors: KL },
     la: { country: 'la', wave: 2, name: nm('ลาว', 'Laos'), tz: 'Asia/Vientiane', alias: ['laos', 'ลาว', 'lao pdr', 'สปป.ลาว'], colors: LA },
-    'la-luangprabang': { country: 'la', wave: 2, name: nm('หลวงพระบาง', 'Luang Prabang'), tz: 'Asia/Vientiane', ll: [19.89, 102.13], alias: ['luang prabang', 'หลวงพระบาง', 'luang phrabang', 'kuang si', 'ตาดกวางสี', 'phousi', 'พูสี', 'vang vieng', 'วังเวียง', 'vientiane', 'เวียงจันทน์', 'lpq'], colors: LP },
+    'la-luangprabang': { country: 'la', wave: 2, name: nm('หลวงพระบาง', 'Luang Prabang'), tz: 'Asia/Vientiane', ll: [19.89, 102.13], alias: ['luang prabang', 'หลวงพระบาง', 'luang phrabang', 'kuang si', 'ตาดกวางสี', 'phousi', 'พูสี', 'vang vieng', 'วังเวียง', 'vientiane', 'เวียงจันทน์', 'LPQ'], colors: LP },
   },
   items,
 };

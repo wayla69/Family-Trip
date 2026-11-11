@@ -82,7 +82,7 @@ const items = [
 export default {
   places: {
     'de-hamburg': { country: 'de', wave: 3, name: nm('ฮัมบวร์ก', 'Hamburg'), tz: 'Europe/Berlin', ll: [53.55, 9.99], alias: ['hamburg', 'ฮัมบวร์ก', 'speicherstadt', 'elbphilharmonie', 'hafencity', 'st. pauli', 'st pauli', 'lübeck', 'lubeck', 'ลือเบค'], colors: HH },
-    'it-sicily': { country: 'it', wave: 3, name: nm('ซิซิลี', 'Sicily'), tz: 'Europe/Rome', ll: [37.6, 14.0], alias: ['sicily', 'ซิซิลี', 'sicilia', 'palermo', 'ปาแลร์โม', 'taormina', 'ทาโอร์มีนา', 'etna', 'เอตนา', 'catania', 'กาตาเนีย', 'syracuse', 'siracusa', 'cefalù', 'cefalu', 'pmo', 'cta'], colors: SC },
+    'it-sicily': { country: 'it', wave: 3, name: nm('ซิซิลี', 'Sicily'), tz: 'Europe/Rome', ll: [37.6, 14.0], alias: ['sicily', 'ซิซิลี', 'sicilia', 'palermo', 'ปาแลร์โม', 'taormina', 'ทาโอร์มีนา', 'etna', 'เอตนา', 'catania', 'กาตาเนีย', 'syracuse', 'siracusa', 'cefalù', 'cefalu', 'PMO', 'CTA'], colors: SC },
   },
   items,
 };

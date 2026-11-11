@@ -97,7 +97,7 @@ const items = [
 export default {
   places: {
     sg: { country: 'sg', wave: 1, name: nm('สิงคโปร์', 'Singapore'), tz: 'Asia/Singapore', alias: ['singapore', 'สิงคโปร์'], colors: K },
-    'sg-singapore': { country: 'sg', wave: 1, name: nm('สิงคโปร์', 'Singapore'), tz: 'Asia/Singapore', ll: [1.29, 103.85], alias: ['singapore', 'สิงคโปร์', 'marina bay', 'มารีน่าเบย์', 'sentosa', 'เซ็นโตซ่า', 'orchard', 'ออร์ชาร์ด', 'chinatown', 'little india', 'changi', 'ชางงี', 'clarke quay', 'bugis', 'jurong'], colors: K },
+    'sg-singapore': { country: 'sg', wave: 1, name: nm('สิงคโปร์', 'Singapore'), tz: 'Asia/Singapore', ll: [1.29, 103.85], alias: ['singapore', 'สิงคโปร์', 'marina bay', 'มารีน่าเบย์', 'sentosa', 'เซ็นโตซ่า', 'orchard road', 'ออร์ชาร์ด', 'chinatown', 'little india', 'changi', 'ชางงี', 'clarke quay', 'bugis', 'jurong'], colors: K },
   },
   items,
 };

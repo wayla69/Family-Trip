@@ -30,7 +30,7 @@ const items = [
 
 export default {
   places: {
-    'vn-dalat': { country: 'vn', wave: 3, name: nm('ดาลัด', 'Đà Lạt'), tz: 'Asia/Ho_Chi_Minh', ll: [11.94, 108.44], alias: ['dalat', 'da lat', 'đà lạt', 'ดาลัด', 'lam dong', 'lâm đồng', 'langbiang', 'ลางเบียง', 'xuan huong', 'dli'], colors: DL },
+    'vn-dalat': { country: 'vn', wave: 3, name: nm('ดาลัด', 'Đà Lạt'), tz: 'Asia/Ho_Chi_Minh', ll: [11.94, 108.44], alias: ['dalat', 'da lat', 'đà lạt', 'ดาลัด', 'lam dong', 'lâm đồng', 'langbiang', 'ลางเบียง', 'xuan huong', 'DLI'], colors: DL },
   },
   items,
 };
