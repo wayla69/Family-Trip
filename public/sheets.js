@@ -128,8 +128,8 @@ const A = {
       ls('remind', null); render(); toast(L('ปิดการเตือนบนเครื่องนี้แล้ว', 'Reminders off on this phone')); return;
     }
     if (!pushOk()) {
-      const ios = /iP(hone|ad|od)/.test(navigator.userAgent) && !matchMedia('(display-mode: standalone)').matches;
-      toast(ios ? L('บน iPhone: กดปุ่มแชร์ → "เพิ่มไปยังหน้าจอโฮม" แล้วเปิดแอปจากไอคอน จึงจะเปิดการเตือนได้', 'On iPhone: Share → "Add to Home Screen", open the app from its icon, then turn reminders on')
+      const ios = isIOS() && !matchMedia('(display-mode: standalone)').matches;
+      toast(ios ? L('บน iPhone/iPad: กดปุ่มแชร์ → "เพิ่มไปยังหน้าจอโฮม" แล้วเปิดแอปจากไอคอน จึงจะเปิดการเตือนได้', 'On iPhone/iPad: Share → "Add to Home Screen", open the app from its icon, then turn reminders on')
         : L('เบราว์เซอร์นี้ยังไม่รองรับการแจ้งเตือน', 'This browser cannot show reminders')); return;
     }
     if (await Notification.requestPermission() !== 'granted') { toast(L('ต้องกด "อนุญาต" การแจ้งเตือนก่อน', 'Allow notifications first')); return; }
@@ -178,8 +178,11 @@ const A = {
   async remindtest() {
     const s = await pushSub().catch(() => null);
     if (!s) { ls('remind', null); render(); toast(L('เครื่องนี้ยังไม่ได้เปิดการเตือน', 'Reminders are not on for this phone')); return; }
-    try { await api('POST', '/api/b/push/test', { endpoint: s.endpoint }); toast(L('ส่งแล้ว — ดูแจ้งเตือนบนเครื่องนี้', 'Sent — look for it on this phone')); }
-    catch (_) { toast(L('ส่งทดสอบไม่สำเร็จ', 'The test did not go through')); }
+    try { await api('POST', '/api/b/push/test', { endpoint: s.endpoint }); toast(L('ส่งแล้ว — ดูแจ้งเตือนบนเครื่องนี้ (ถ้าไม่ขึ้น ดูการตั้งค่า → การแจ้งเตือน ของแอปนี้ และโหมดโฟกัส)', 'Sent — look for it on this phone (nothing? check Settings → Notifications for this app, and Focus)')); }
+    catch (e) {   // the push service said no: show its code and reason so the family can tell us (e.g. Apple 403 BadJwtToken)
+      const d = (e && e.body) || {}, code = [d.status, d.reason].filter(Boolean).join(' ');
+      toast(L(`ส่งทดสอบไม่สำเร็จ${code ? ` (${code})` : ''}${d.apple ? ' — ปิดแล้วเปิดการเตือนใหม่หนึ่งครั้ง ถ้ายังไม่ได้ส่งรหัสนี้มา' : ''}`, `The test did not go through${code ? ` (${code})` : ''}${d.apple ? ' — turn reminders off and on once; if it still fails, send us this code' : ''}`));
+    }
   },
   pin(b) {
     const f = $('#lcode'), k = b.dataset.v;

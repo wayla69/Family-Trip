@@ -86,6 +86,39 @@ gone = true;
 await R.tick(PUSH.zoned('2026-12-06', '09:00', 'Asia/Hong_Kong') - 30 * 60000);
 ok((await pool.query("SELECT count(*)::int n FROM push_subs")).rows[0].n === 0, 'a phone the push service reports gone (410) is removed');
 ok((await post('/api/b/push/sub', sub)).ok && (await post('/api/b/push/unsub', { endpoint: sub.endpoint })).ok && (await pool.query("SELECT count(*)::int n FROM push_subs")).rows[0].n === 0, 'turning reminders off removes the phone');
+// ---- iPhone/iPad (Apple's push service): a subject Apple accepts, and a refusal that says why
+{ const sj = PUSH.subject;
+  ok(sj({}) === 'mailto:noreply@memory-bookshelf.invalid' && sj({ RAILWAY_PUBLIC_DOMAIN: 'mm.up.railway.app' }) === 'https://mm.up.railway.app'
+    && sj({ PUSH_SUBJECT: 'mailto:mum@family.co', RAILWAY_PUBLIC_DOMAIN: 'mm.up.railway.app' }) === 'mailto:mum@family.co'
+    && sj({ PUSH_SUBJECT: 'mailto:x@y.invalid', RAILWAY_PUBLIC_DOMAIN: 'mm.up.railway.app' }) === 'https://mm.up.railway.app', 'push subject: PUSH_SUBJECT if real, else the app\'s own https address (Apple refuses a placeholder)'); }
+{ const express = require('express'), http = require('node:http');
+  await A.init(pool);
+  const apple = { ...sub, endpoint: 'https://web.push.apple.com/QAbcdEfgh1234567890' };
+  ok((await post('/api/b/push/sub', apple)).ok, 'an iPad subscribes through Apple\'s push service');
+  const R3 = PUSH.create({ pool, family: 'family', A, sender: async () => { throw Object.assign(new Error('refused'), { statusCode: 403, body: '{"reason":"BadJwtToken"}' }); } });
+  const app = express(); app.use(A.attachUser); app.use(R3.router);
+  const srv = http.createServer(app); await new Promise((r) => srv.listen(0, r));
+  const r3 = await fetch(`http://localhost:${srv.address().port}/api/b/push/test`, { method: 'POST', headers: { 'x-mb': '1', cookie: ck, 'content-type': 'application/json' }, body: JSON.stringify({ endpoint: apple.endpoint }) });
+  const j3 = await r3.json();
+  ok(r3.status === 502 && j3.status === 403 && j3.reason === 'BadJwtToken' && j3.apple === true && !JSON.stringify(j3).includes('QAbcd'), `test push refused by Apple: the phone hears the code and reason, never the endpoint (${JSON.stringify(j3)})`);
+  srv.close(); await post('/api/b/push/unsub', { endpoint: apple.endpoint }); }
+// an iPad in Safari calls itself a Mac: the app still recognises it and shows the Home-Screen step instead of a button that cannot work
+{ const fs = require('node:fs'), { chromium } = require('playwright');
+  const exe = process.env.CHROME || (fs.existsSync(chromium.executablePath()) ? undefined : '/opt/pw-browsers/chromium');
+  const browser = await chromium.launch({ executablePath: exe, args: ['--no-sandbox'] });
+  const ctx = await browser.newContext({ viewport: { width: 820, height: 1180 }, hasTouch: true,
+    userAgent: 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/18.0 Safari/605.1.15' });
+  await ctx.addInitScript(() => { Object.defineProperty(navigator, 'maxTouchPoints', { get: () => 5 }); try { delete window.PushManager; } catch (_) {} window.PushManager = undefined; });
+  const page = await ctx.newPage();
+  await page.goto(BASE + '/'); await page.waitForSelector('#lf');
+  ok(await page.evaluate(() => document.querySelector('.login form').getBoundingClientRect().width >= 520 && document.querySelector('.pinpad button').getBoundingClientRect().width >= 88), 'iPad: the sign-in card and its keys are tablet-sized, not a phone card in the middle');
+  await page.fill('#lcode', CODE); await page.keyboard.press('Enter'); await page.waitForSelector('.shelf');
+  const ask = page.locator('.remind.ask');
+  await page.goto(BASE + '/#/kid/mimi/numbers'); await page.waitForSelector('.cnt');
+  ok(await page.evaluate(() => parseFloat(getComputedStyle(document.querySelector('.cnt span')).fontSize) >= 80), 'iPad: the things to count are big on a tablet');
+  await page.goto(BASE + '/#/'); await page.waitForSelector('.shelf');
+  ok(await page.evaluate(() => isIOS()) && await ask.count() === 1 && /iPad/.test(await ask.textContent()) && await ask.locator('[data-a="remind"]').count() === 0, 'iPad in Safari: recognised as Apple, told to add it to the Home Screen (no button that cannot work)');
+  await browser.close(); }
 await pool.end();
 
 if (failures) { console.log(`${failures} FAILED`); process.exit(1); }

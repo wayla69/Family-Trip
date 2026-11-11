@@ -10,7 +10,11 @@
 let audioCtx = null;
 function beep(kind, x) {   // x: the note's frequency for 'note'
   try {
+    // iPad/iPhone: web sounds obey the ring/silent switch unless the page says it plays media (Safari 16.4+), and a context made outside
+    // a tap starts "suspended" (or is "interrupted" after a call) — wake it on every sound, which is always a tap (iPad owner: music was silent)
+    try { if (navigator.audioSession && navigator.audioSession.type !== 'playback') navigator.audioSession.type = 'playback'; } catch (_) { /* older Safari */ }
     audioCtx = audioCtx || new (window.AudioContext || window.webkitAudioContext)();
+    if (audioCtx.state !== 'running' && audioCtx.resume) audioCtx.resume().catch(() => {});
     const c = audioCtx, t0 = c.currentTime;
     const tone = (f, at, dur, type, vol) => {
       const o = c.createOscillator(), g = c.createGain();
@@ -59,13 +63,21 @@ function noise(c, t0, dur, vol, hp) {
 }
 
 /* ---------- the phone reads aloud ---------- */
+// iPad/iPhone list novelty and robot voices among the real ones (Bad News, Bells, Trinoids, Zarvox, Whisper… and the old "Eddy/Rocko/
+// Grandpa" family) — taking the first English voice could land on one, which scared the kids (owner, Nov 2026). Those are never used;
+// a warm, natural voice is preferred, and a downloaded "Enhanced"/"Premium" one above all.
+const VOICE_NO = /^(Albert|Bad News|Bahh|Bells|Boing|Bubbles|Cellos|Deranged|Good News|Hysterical|Jester|Junior|Organ|Pipe Organ|Superstar|Trinoids|Whisper|Wobble|Zarvox|Ralph|Fred|Kathy|Princess|Eddy|Flo|Grandma|Grandpa|Reed|Rocko|Sandy|Shelley)\b/i;
+const VOICE_NICE = /\b(Samantha|Karen|Moira|Tessa|Serena|Kate|Martha|Fiona|Stephanie|Ava|Allison|Susan|Catherine|Nicky|Zoe|Kanya|Narisa|Sinji|Google UK English Female|Google US English|Google ไทย|Microsoft (Libby|Sonia|Maisie|Aria|Jenny|Ana|Premwadee))\b/i;
 function voiceFor(langTag) {
-  const vs = (window.speechSynthesis && speechSynthesis.getVoices()) || [];
+  const vs = ((window.speechSynthesis && speechSynthesis.getVoices()) || []).filter((v) => !VOICE_NO.test(v.name || ''));
   const want = langTag.toLowerCase(), base = want.split('-')[0];
   const ok = (v) => v.lang.toLowerCase().replace('_', '-');
-  if (want === 'zh-hk') return vs.find((v) => ok(v) === 'zh-hk' || ok(v).startsWith('yue')) || null;   // Cantonese only — Mandarin would teach the wrong word
-  return vs.find((v) => ok(v) === want) || vs.find((v) => ok(v).startsWith(base)) || null;
+  const score = (v) => (VOICE_NICE.test(v.name) ? 4 : 0) + (/premium|enhanced|neural|natural/i.test(`${v.name} ${v.voiceURI || ''}`) ? 3 : 0) + (ok(v) === want ? 2 : 0) + (v.localService ? 0.5 : 0);
+  const best = (list) => list.sort((a, b) => score(b) - score(a))[0] || null;
+  if (want === 'zh-hk') return best(vs.filter((v) => ok(v) === 'zh-hk' || ok(v).startsWith('yue')));   // Cantonese only — Mandarin would teach the wrong word
+  return best(vs.filter((v) => ok(v) === want || ok(v).startsWith(base)));
 }
+if (window.speechSynthesis && speechSynthesis.addEventListener) speechSynthesis.addEventListener('voiceschanged', () => {});   // Safari fills the list late; asking early wakes it
 // one utterance; onend runs when it finishes (or fails). Returns false when the phone can't speak.
 function speak(text, langTag, opt) {
   const o = opt || {};
@@ -75,7 +87,7 @@ function speak(text, langTag, opt) {
   try {   // never let a voice problem stop a tap from doing its job
     if (!o.keep) speechSynthesis.cancel();
     const u = new SpeechSynthesisUtterance(text);
-    u.lang = langTag; u.rate = o.rate || 0.85; u.pitch = o.pitch || 1.1;
+    u.lang = langTag; u.rate = o.rate || 0.92; u.pitch = o.pitch || 1.2;   // bright and friendly, still unhurried for small ears
     try { if (v) u.voice = v; } catch (_) {}
     if (o.onend) { u.onend = o.onend; u.onerror = o.onend; }
     speechSynthesis.speak(u);
@@ -667,9 +679,9 @@ ${pixPick(t, i, 'hideseek', 'kidnewhide')}
 ${want ? `<div class="hidetarget" aria-hidden="true">${want[0]}</div>` : `<button class="kidbig" data-a="kidnewhide">🔁 ${L('เล่นใหม่', 'Play again')}</button>`}`;
   } else if (view === 'jigsaw' && (dayArt(t, i) || kidPhotoPool(t).length)) {   // the day's picture in pieces: tap a piece, tap its place (tap-tap, not drag: a small hand can do it)
     if (!jg || jg.key !== `${t.id}.${i}.${kid}`) newJigsaw(t, i, kid);
-    body = `<div class="kidguide">${guideImg(1)}<p>${jg.done ? L('ต่อภาพเสร็จแล้ว! 🎉', 'Picture done! 🎉') : jg.pick === null ? L('แตะชิ้นข้างล่าง แล้วแตะช่องที่ใช่!', 'Tap a piece, then tap where it goes!') : L('ใส่ตรงไหนดีนะ?', 'Where does it go?')}</p></div>
+    body = `<div class="kidguide">${guideImg(1)}<p>${jg.done ? L('ต่อภาพเสร็จแล้ว! 🎉', 'Picture done! 🎉') : jg.pick === null ? L('ลากชิ้นไปใส่ช่องที่ใช่! (หรือแตะชิ้น แล้วแตะช่อง)', 'Drag a piece to its place! (or tap it, then tap the place)') : L('ใส่ตรงไหนดีนะ?', 'Where does it go?')}</p></div>
 ${pixPick(t, i, 'jigsaw', 'kidnewjig')}
-<div class="jigboard" style="--art:url('${esc(jg.src)}');--c:${jg.cols};aspect-ratio:${jg.ar}">${jg.slots.map((p, s) => `<button class="jslot${p !== null ? ' filled' : ''}" data-a="kidjslot" data-v="${s}"${p !== null ? ` style="${jgPos(p, jg)}"` : ''} aria-label="${L('ช่อง', 'Slot')} ${s + 1}"></button>`).join('')}</div>
+<div class="jigboard" style="--art:url('${esc(jg.src)}');--c:${jg.cols};--ar:${jg.ar};--pa:${jg.ar * jg.rows / jg.cols}">${jg.slots.map((p, s) => `<button class="jslot${p !== null ? ' filled' : ''}" data-a="kidjslot" data-v="${s}"${p !== null ? ` style="${jgPos(p, jg)}"` : ''} aria-label="${L('ช่อง', 'Slot')} ${s + 1}"></button>`).join('')}</div>
 <div class="jigtray" style="--art:url('${esc(jg.src)}');--pa:${jg.ar * jg.rows / jg.cols}">${jg.tray.map((p) => `<button class="jpiece${jg.pick === p ? ' pick' : ''}" data-a="kidjpick" data-v="${p}" style="${jgPos(p, jg)}" aria-label="${L('ชิ้น', 'Piece')} ${p + 1}"></button>`).join('')}</div>
 ${jg.done ? `<button class="kidbig" data-a="kidnewjig">🔁 ${L('ต่อใหม่', 'Again')}</button>` : ''}`;
   } else if (view === 'stamp') {
@@ -910,7 +922,7 @@ function startBubbles() {
   if (bubT && $('#bubblefield')) { const sc = $('#bubscore'); if (sc && bubN) sc.textContent = bubN; return; }   // already running: the page was only redrawn
   clearInterval(bubT); bubN = 0;
   const spawn = () => {
-    const f = $('#bubblefield'); if (!f) { clearInterval(bubT); return; }
+    const f = $('#bubblefield'); if (!f) { clearInterval(bubT); bubT = 0; return; }   // left the game (back gesture, browser back…): forget the timer, or the next visit thinks it still runs and never blows a bubble
     if (f.querySelectorAll('.bub').length > 9) return;
     const b = document.createElement('button'), sz = 52 + Math.random() * 64;
     b.className = 'bub'; b.setAttribute('aria-label', L('ฟอง', 'Bubble'));
@@ -938,6 +950,40 @@ function newHide(t, i, kid) {
     items.push({ e: p[0], th: p[1], en: p[2], x, y, s: 40 + Math.round(Math.random() * 16), r: Math.round(Math.random() * 40 - 20), found: false }); });
   hs = { key: `${t.id}.${i}.${kid}`, targets, found: [], items: items.sort(() => Math.random() - 0.5), src };
 }
+// ---- the jigsaw by finger: a piece can also be dragged onto its place (iPad owner, Nov 2026: small hands drag; the slots used to stretch
+// to the board's aspect-ratio height, which Safari does not stretch grid rows to, so they came out short and did not match the pieces).
+// A tap-tap still works: a press that hardly moves is left to the click. A drag that ends off the board puts the piece back. ----
+let jdrag = null, jdragEnd = 0;
+document.addEventListener('pointerdown', (e) => {
+  const p = e.target.closest && e.target.closest('.jpiece'); if (!p || !jg || jg.done || e.button > 0) return;
+  const r = p.getBoundingClientRect();
+  jdrag = { p, v: +p.dataset.v, id: e.pointerId, x0: e.clientX, y0: e.clientY, dx: e.clientX - r.left, dy: e.clientY - r.top, w: r.width, h: r.height, ghost: null, over: null };
+});
+const jslotAt = (x, y) => { const el = document.elementFromPoint(x, y); return el && el.closest ? el.closest('.jslot') : null; };
+document.addEventListener('pointermove', (e) => {
+  const d = jdrag; if (!d || e.pointerId !== d.id) return;
+  if (!d.ghost) {
+    if (Math.hypot(e.clientX - d.x0, e.clientY - d.y0) < 8) return;   // not a drag yet: a tap stays a tap
+    const g = document.createElement('div'); g.className = 'jghost'; g.setAttribute('aria-hidden', 'true');
+    g.style.cssText = `width:${d.w}px;height:${d.h}px;background-image:${getComputedStyle(d.p).backgroundImage};background-size:${getComputedStyle(d.p).backgroundSize};background-position:${getComputedStyle(d.p).backgroundPosition}`;
+    document.body.appendChild(g); d.ghost = g; d.p.classList.add('lifted'); jg.pick = d.v; beep('tap');
+  }
+  d.ghost.style.transform = `translate(${e.clientX - d.dx}px,${e.clientY - d.dy}px) scale(1.06)`;
+  const s = jslotAt(e.clientX, e.clientY);
+  if (s !== d.over) { if (d.over) d.over.classList.remove('hover'); d.over = s; if (s && !s.classList.contains('filled')) s.classList.add('hover'); }
+});
+const jdragDone = (e) => {
+  const d = jdrag; if (!d || e.pointerId !== d.id) return;
+  jdrag = null; if (!d.ghost) return;   // a tap: the click does the rest
+  d.ghost.remove(); d.p.classList.remove('lifted'); if (d.over) d.over.classList.remove('hover');
+  jdragEnd = Date.now();   // the click that follows a drag must not pick the piece up again
+  const s = e.type === 'pointerup' ? jslotAt(e.clientX, e.clientY) : null;
+  if (s && jg) { jg.pick = d.v; A.kidjslot(s); if (jg && jg.pick !== null) setTimeout(render, 260); }   // wrong place: the slot shakes, then the piece shows picked (tap the right place)
+  else if (jg) { jg.pick = null; render(); }
+};
+document.addEventListener('pointerup', jdragDone);
+document.addEventListener('pointercancel', jdragDone);
+document.addEventListener('click', (e) => { if (Date.now() - jdragEnd < 400 && e.target.closest && e.target.closest('.jpiece, .jslot')) { e.stopPropagation(); e.preventDefault(); } }, true);
 // ---- the jigsaw: the day's picture cut into 2×2 (the little one) or 3×2; a piece shows its crop through background-position ----
 function newJigsaw(t, i, kid) {
   const cols = littleOf(t, kid) ? 2 : 3, rows = 2, n = cols * rows, photo = pixMode(t, i, 'jigsaw') === 'photo', src = (photo && randPhoto(t)) || dayArt(t, i);

@@ -63,6 +63,7 @@
    - `SESSION_SECRET` = สตริงสุ่ม (`openssl rand -hex 32`) — ถ้าไม่ใส่ ระบบสร้างและเก็บใน Postgres เอง
    - `BACKUP_TOKEN` = สตริงสุ่ม 24 ตัวขึ้นไป (สำหรับ backup อัตโนมัติ)
    - `ANTHROPIC_API_KEY` (ถ้าต้องการปุ่มให้ Claude แต่งนิทาน)
+   - `PUSH_SUBJECT` (ไม่บังคับ) = `https://<โดเมนของแอป>` หรือ `mailto:<อีเมล>` ใช้ลงชื่อการแจ้งเตือน · ไม่ตั้งก็ได้ถ้า Railway มี public domain (ใช้ `https://` + โดเมนนั้นเอง) · iPhone/iPad จะไม่รับการแจ้งเตือนถ้าค่านี้เป็นที่อยู่ปลอม
    - `PHOTO_AI=1` (ถ้าต้องการปุ่ม **ให้ Claude ดูรูปวันนี้** บนหน้าบันทึกวัน: ส่งรูปย่อของวันนั้นเฉพาะตอนกด → คำบรรยายรูป แท็ก และจัดกลุ่มตามจุดแวะ · ไม่ตั้ง = ไม่ส่งรูปให้ AI เลย)
 5. **Settings → Networking → Generate Domain** · ไม่ต้องใช้ Volume แล้ว (ข้อมูลอยู่ใน Postgres รูปอยู่ใน Bucket)
 6. **Project Settings → Tokens → Create token** (environment `production`) — เป็น *Project token* ไม่ใช่ Account token

@@ -566,8 +566,19 @@ const T = 'hk-macau-2026';
   await page.goto(`${BASE}/#/kid/mimi/bubbles`); await page.waitForSelector('#bubblefield'); await page.waitForSelector('.bub');
   await page.locator('.bub').first().dispatchEvent('pointerdown');
   ok(await page.evaluate(() => document.querySelector('#bubscore').textContent === '1'), 'kid mode: bubbles float up and a tap pops one (the score counts the pops)');
+  // iPad owner, Nov 2026: leaving the bubbles another way (back gesture, browser back) and coming back left an empty field — bubbles must come back
+  await page.goto(`${BASE}/#/kid/mimi`); await page.waitForSelector('.kidtiles');
+  await page.goto(`${BASE}/#/kid/mimi/bubbles`); await page.waitForSelector('#bubblefield'); await page.waitForTimeout(1600);
+  ok(await page.locator('.bub').count() > 0, 'bubbles: a second visit (left by the back gesture) blows bubbles again');
   await page.goto(`${BASE}/#/kid/mimi/music`); await page.waitForSelector('.xylo');
-  await page.click('.xylo button[data-v="4"]'); await page.click('.drums button[data-v="kick"]');
+  await page.evaluate(() => { navigator.audioSession = { type: 'auto' }; });   // Safari 16.4+ has it; Chromium does not
+  await page.click('.xylo button[data-v="4"]');
+  ok(await page.evaluate(() => navigator.audioSession.type) === 'playback', 'sounds: on an iPad/iPhone they play even with the silent switch on (audio session "playback")');
+  // the read-aloud voice: never one of iPadOS's novelty/robot voices (they scared the kids), a warm natural one first
+  ok(await page.evaluate(() => { const v = (name, l, extra) => ({ name, lang: l, voiceURI: `com.apple.voice.${extra || 'compact'}.${l}.${name}`, localService: true });
+    const list = [v('Bad News', 'en-US'), v('Eddy (English (UK))', 'en-GB'), v('Trinoids', 'en-US'), v('Daniel', 'en-GB'), v('Samantha', 'en-US', 'enhanced'), v('Grandpa (Thai (Thailand))', 'th-TH'), v('Kanya', 'th-TH')];
+    const real = speechSynthesis.getVoices; speechSynthesis.getVoices = () => list.slice();
+    try { return [voiceFor('en-GB').name, voiceFor('th-TH').name].join('|'); } finally { speechSynthesis.getVoices = real; } }) === 'Samantha|Kanya', 'read aloud: a warm natural voice (Samantha, Kanya), never "Bad News", "Trinoids" or the robot "Eddy/Grandpa"'); await page.click('.drums button[data-v="kick"]');
   ok(await page.locator('.xylo button').count() === 8 && await page.locator('.drums button').count() === 5 && await page.locator('.songs .kidbig').count() === 6 && await page.locator('.xylo button[data-v="4"].lit').count() === 1, 'kid mode: a xylophone of eight bars, five instruments and six songs; a tapped bar lights up');
   await page.goto(`${BASE}/#/kid/mimi/hideseek`); await page.waitForSelector('.hideboard');
   const wantTh = await page.evaluate(() => hs.targets[0][1]);
@@ -576,6 +587,18 @@ const T = 'hk-macau-2026';
   await page.goto(`${BASE}/#/kid/mimi/jigsaw`); await page.waitForSelector('.jigboard');
   await page.click('.jpiece[data-v="0"]'); await page.click('.jslot[data-v="0"]');
   ok(await page.locator('.jpiece').count() === 5 && await page.locator('.jslot.filled').count() === 1 && await page.locator('.jslot').count() === 6, 'kid mode: the jigsaw cuts the day picture into six; tap a piece, tap its slot');
+  // iPad owner, Nov 2026: the slots came out a different shape from the pieces, and small hands drag — every slot is a piece's shape, a drag places it
+  const jshape = await page.evaluate(() => { const r = (q) => { const b = document.querySelector(q).getBoundingClientRect(); return b.width / b.height; }; return Math.abs(r('.jslot') - r('.jpiece')) < 0.02; });
+  const jdrag = async (v, to) => { await page.locator('.jigboard').scrollIntoViewIfNeeded(); await page.waitForTimeout(150);
+    const a = await page.locator(`.jpiece[data-v="${v}"]`).boundingBox(), b = await page.locator(`.jslot[data-v="${to}"]`).boundingBox();
+    await page.mouse.move(a.x + a.width / 2, a.y + a.height / 2); await page.mouse.down();
+    for (let k = 1; k <= 6; k++) await page.mouse.move(a.x + a.width / 2 + (b.x + b.width / 2 - a.x - a.width / 2) * k / 6, a.y + a.height / 2 + (b.y + b.height / 2 - a.y - a.height / 2) * k / 6);
+    await page.mouse.up(); await page.waitForTimeout(600); };
+  await jdrag(1, 2);
+  const wrongKept = await page.locator('.jpiece[data-v="1"]').count() === 1 && await page.locator('.jslot.filled').count() === 1 && await page.locator('.jghost').count() === 0;
+  await jdrag(1, 1);
+  const jfill = await page.locator('.jslot.filled').count(), jleft = await page.locator('.jpiece[data-v="1"]').count();
+  ok(jshape && wrongKept && jfill === 2 && jleft === 0, `jigsaw: slots have the pieces' shape; dragging a piece onto its place puts it there, a wrong place keeps it in the tray (${JSON.stringify({ jshape, wrongKept, jfill, jleft, vh: page.viewportSize() })})`);
   await page.click('.pixpick [data-g="jigsaw"][data-v="photo"]'); await page.waitForSelector('.jigboard');
   ok((await page.getAttribute('.jigboard', 'style')).includes('/media/') && await page.locator('.jpiece').count() === 6 && await page.locator('.pixpick [data-a="kidnewjig"]').count() === 1, 'jigsaw: “our photos” cuts one of the family’s photos instead, with a “new photo” button');
   await page.goto(`${BASE}/#/kid/mimi/hideseek`); await page.waitForSelector('.hideboard'); await page.click('.pixpick [data-g="hideseek"][data-v="photo"]'); await page.waitForSelector('.hideboard');
@@ -935,6 +958,7 @@ const T = 'hk-macau-2026';
   await page.click('button[data-a="lang"][data-v="en"]');
   ok(await page.locator('.hero [data-a="kidmode"]').count() === 1, "shelf: before the trip grown-ups get a “today's surprise” button");
   await page.click('.hero [data-a="kidmode"]'); await page.waitForSelector('.kidpick');
+  ok(await page.evaluate(() => new Set([...document.querySelectorAll('.kidpick button')].map((b) => Math.round(b.getBoundingClientRect().width))).size === 1), 'kid picker: every child\'s card the same width (Mimi\'s wagon no longer widens hers)');
   await page.click('.kidpick button[data-v="mimi"]'); await page.waitForSelector('.kidtiles');
   const tiles = await page.locator('.kidtiles button').evaluateAll((bs) => bs.map((b) => b.dataset.v || b.dataset.a));
   ok(tiles.some((v) => v.endsWith('/count')) && tiles.some((v) => v.endsWith('/pack')) && !tiles.some((v) => /\/(stamp|spot)$/.test(v)), 'kid mode before the trip: surprise + pack tiles, no stamp/find yet');

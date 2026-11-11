@@ -328,5 +328,15 @@ if (process.env.BASE) {
   ok(ix.status === 200 && /no-cache/.test(ix.headers.get('cache-control') || '') && Array.isArray((await ix.json()).items), '/stock/index.json is served, revalidated each time');
 }
 
+// older iPads (iPadOS 15 on an iPad mini 4 / Air 2, early iPadOS 16): Safari before 16.4 refuses a whole script over one regex lookbehind,
+// and before 16.2 drops every colour written with color-mix() — no lookbehind in the client, and a resolved stylesheet for those
+for (const f of ['core.js', 'views.js', 'sheets.js', 'kid.js', 'sw.js']) ok(!/\(\?<[=!]/.test(fs.readFileSync(path.join('public', f), 'utf8')), `old Safari: no regex lookbehind in public/${f} (it would stop the whole file on iPadOS 15)`);
+{ const { legacy, pick } = require('../server/legacycss.js');
+  ok(pick('in srgb, var(--leaf) 55%, var(--rule)') === 'var(--leaf)' && pick('in srgb,var(--accent) 22%,var(--paper)') === 'var(--paper)' && pick('in srgb, 30% red, blue') === 'blue' && pick('in oklab, red, blue') === 'red', 'legacy css: each color-mix() becomes its stronger colour');
+  const css = fs.readFileSync(path.join('public', 'app.css'), 'utf8'), old = legacy(css);
+  ok(!old.includes('color-mix(') && (old.match(/\{/g) || []).length === (css.match(/\{/g) || []).length, 'legacy css: no color-mix() left, every rule kept');
+  ok(fs.readFileSync(path.join('public', 'core.js'), 'utf8').includes("CSS.supports('color', 'color-mix(") && /'\/app-legacy\.css'/.test(fs.readFileSync(path.join('public', 'sw.js'), 'utf8')), 'legacy css: core.js swaps it in where color-mix() is missing; the service worker keeps it for offline'); }
+if (process.env.BASE) { const r = await fetch(process.env.BASE + '/app-legacy.css'); ok(r.ok && /text\/css/.test(r.headers.get('content-type')) && !(await r.text()).includes('color-mix('), '/app-legacy.css is served, resolved'); }
+
 console.log(failures ? `\n${failures} FAILED` : '\nALL PASSED');
 process.exit(failures ? 1 : 0);
