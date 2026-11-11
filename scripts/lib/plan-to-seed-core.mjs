@@ -174,7 +174,7 @@ function toSeed(p, notes, opts = {}) {
     date_from: p.from, date_to: p.to, timezone: p.tz,
     destinations: p.destinations || [placeEn],
     children: D.children(kids, d0),
-    theme: { ...D.theme({ slug, accent, accent2, display: p.display, kicker: p.kicker || p.title.en.toUpperCase(), badge: p.badge, flag: place.flag, placeTh, placeEn, places: p.places }), ...(opts.art === false ? { art: '' } : {}) },
+    theme: { ...D.theme({ slug, accent, accent2, display: p.display, kicker: p.kicker || p.title.en.toUpperCase(), badge: p.badge || p.emoji || place.flag, flag: place.flag, placeTh, placeEn, places: p.places }), ...(opts.art === false ? { art: '' } : {}) },
     days,
     firsts_catalog: Array.isArray(p.firsts) && p.firsts.length ? p.firsts : D.FIRSTS,
     moods: p.moods || D.MOODS,
