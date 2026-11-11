@@ -1,0 +1,10 @@
+<svg viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+<defs><path id="hy-st-a" d="M 38 100 A 62 62 0 0 1 162 100"/><path id="hy-st-b" d="M 30 106 A 70 70 0 0 0 170 106"/></defs>
+<circle cx="100" cy="100" r="96" fill="#FFF7F2" stroke="#0E7490" stroke-width="5" stroke-dasharray="7 5"/>
+<circle cx="100" cy="100" r="84" fill="none" stroke="#0E7490" stroke-width="3"/>
+<circle cx="100" cy="100" r="54" fill="#E6F7FA" stroke="#0E7490" stroke-width="3"/>
+<g stroke="#22213A" stroke-width="3.5" stroke-linejoin="round" stroke-linecap="round"><circle cx="130" cy="74" r="10" fill="#FFCA28" stroke-width="2.5"/><path d="M60 132c4-16 16-24 30-24s26 8 30 24z" fill="#B0BEC5" stroke-width="3"/><path d="M108 128c4-12 4-22 0-32" fill="none" stroke="#26A69A" stroke-width="10"/><path d="M106 98c-14-2-22-10-24-22 10 4 18 6 24 12 6-6 14-8 24-12-2 12-10 20-24 22z" fill="#4DB6AC" stroke-width="2.5"/><rect x="56" y="128" width="88" height="16" rx="6" fill="#4FC3F7" stroke-width="2.5"/><path d="M60 136q6-4 12 0t12 0t12 0t12 0t12 0t12 0" fill="none" stroke="#E1F5FE" stroke-width="2"/></g>
+<text font-family="KIRA UI, Arial, sans-serif" font-weight="800" font-size="19" letter-spacing="3" fill="#0E7490"><textPath href="#hy-st-a" startOffset="50%" text-anchor="middle">HAT YAI</textPath></text>
+<text font-family="KIRA UI, Arial, sans-serif" font-weight="700" font-size="11" letter-spacing="3" fill="#E07A1F"><textPath href="#hy-st-b" startOffset="50%" text-anchor="middle">SONGKHLA · THAILAND</textPath></text>
+<path d="M22 100l5-3 5 3-5 3zM168 100l5-3 5 3-5 3z" fill="#0E7490"/>
+</svg>

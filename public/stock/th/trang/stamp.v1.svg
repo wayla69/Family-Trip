@@ -1,0 +1,10 @@
+<svg viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+<defs><path id="tr-st-a" d="M 38 100 A 62 62 0 0 1 162 100"/><path id="tr-st-b" d="M 30 106 A 70 70 0 0 0 170 106"/></defs>
+<circle cx="100" cy="100" r="96" fill="#FFF7F2" stroke="#C2185B" stroke-width="5" stroke-dasharray="7 5"/>
+<circle cx="100" cy="100" r="84" fill="none" stroke="#C2185B" stroke-width="3"/>
+<circle cx="100" cy="100" r="54" fill="#FFF3E0" stroke="#C2185B" stroke-width="3"/>
+<g stroke="#22213A" stroke-width="3.5" stroke-linejoin="round" stroke-linecap="round"><path d="M112 96c2-20 8-30 16-34h12c6 6 8 20 8 34z" fill="#B0BEC5" stroke-width="2.5"/><path d="M118 66c6-6 18-6 24 0z" fill="#43A047" stroke-width="2.5"/><ellipse cx="92" cy="126" rx="34" ry="10" fill="#FFFFFF" stroke-width="2.5"/><path d="M60 120c0-26 64-26 64 0v-2c0 12-64 12-64 2z" fill="#A1522E" stroke-width="3"/><rect x="60" y="106" width="64" height="16" fill="#A1522E" stroke="none"/><ellipse cx="92" cy="106" rx="32" ry="10" fill="#C77C48" stroke-width="3"/><ellipse cx="92" cy="106" rx="9" ry="3.5" fill="#FFF7F2" stroke-width="2.5"/><path d="M92 106l20-6v16l-20 6z" fill="#FFE082" stroke-width="2.5"/></g>
+<text font-family="KIRA UI, Arial, sans-serif" font-weight="800" font-size="19" letter-spacing="3" fill="#C2185B"><textPath href="#tr-st-a" startOffset="50%" text-anchor="middle">TRANG</textPath></text>
+<text font-family="KIRA UI, Arial, sans-serif" font-weight="700" font-size="11" letter-spacing="3" fill="#2E7D32"><textPath href="#tr-st-b" startOffset="50%" text-anchor="middle">ANDAMAN · THAILAND</textPath></text>
+<path d="M22 100l5-3 5 3-5 3zM168 100l5-3 5 3-5 3z" fill="#C2185B"/>
+</svg>

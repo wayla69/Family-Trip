@@ -290,6 +290,12 @@ if (process.env.BASE) {
       ok(via.crest === 'stock:fr.stamp' && via.places.join() === 'ae-dubai,fr-paris' && dxb.crest === 'stock:ae.stamp',
         'stock match: the crest is the country the book is about, not the first transit — ' + via.crest + ' ' + dxb.crest);
     }
+    // wave 13 (twelve more Thai places): Loei never answers to the everyday "เลย"; Trang answers in a Thai book, never in "Nha Trang"
+    if (idx.places['th-loei']) {
+      const lo = wm('เที่ยวไทย', 'ขับรถไปเลยจ้า', 'กินข้าวกันเลย'), ck = wm('เชียงคาน', 'เดินถนนคนเดินเชียงคาน'), nt = wm('Vietnam', 'Nha Trang beach'), tr = wm('ตรัง', 'เกาะมุก');
+      ok(!lo.places.length && ck.places.join() === 'th-loei' && !nt.places.includes('th-trang') && tr.places.join() === 'th-trang',
+        'stock match: "เลย" the word names no city, Chiang Khan is Loei, Nha Trang is not Trang — ' + [lo, ck, nt, tr].map((m) => m.places.join('+')).join(' | '));
+    }
     const trap = (en, th, q) => M.stockMatch([{ title: { en, th }, planned: q ? [{ en: 'Café', th: 'คาเฟ่', q }] : [] }], { en: 'Our trip', th: 'ทริปของเรา' }, idx).places;
     ok([trap('A nice day, then a bath', 'แวะร้านเดลี่ แล้วมาเล่นที่สวน'), trap('Umbrella and the Zig Zag Railway', 'นักบินจากอเมริกาบินไปแอฟริกา'),
       trap('Brunch', 'บรันช์', '5 Whistler St, Manly NSW'), trap('First stop: the central market', 'ตลาดกลาง')].every((p) => p.length === 0),
