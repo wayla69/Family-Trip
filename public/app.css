@@ -805,8 +805,8 @@ body.kidmode{padding-bottom:0;background:var(--tint,#F3F6FA)}
 .kidwrap.pick{justify-content:center;align-items:center;text-align:center}
 .kidwrap.pick h1{font-size:32px;font-weight:700}
 .kidpick{display:flex;gap:18px;flex-wrap:wrap;justify-content:center}
-.kidpick button{border:0;background:#fff;border-radius:28px;padding:14px 18px;display:grid;justify-items:center;gap:6px;box-shadow:0 10px 24px -14px rgba(0,0,0,.35);min-width:150px}
-.kidpick img{height:170px}.kidpick b{font-size:26px}
+.kidpick button{border:0;background:#fff;border-radius:28px;padding:14px 18px;display:grid;justify-items:center;align-content:end;gap:6px;box-shadow:0 10px 24px -14px rgba(0,0,0,.35);width:min(220px,42vw);box-sizing:border-box}
+.kidpick img{height:170px;width:100%;object-fit:contain}   /* every child's card the same size: Mimi's wagon no longer makes hers wider (iPad owner, Nov 2026) */.kidpick b{font-size:26px}
 .kidhd{display:flex;align-items:center;gap:12px}
 .kidback,.kidme{width:62px;height:62px;border-radius:50%;border:0;background:#fff;font-size:34px;font-weight:700;display:grid;place-items:center;flex:none;box-shadow:0 6px 14px -8px rgba(0,0,0,.35)}
 .kidme img.face{width:52px;height:52px;margin:0}
@@ -891,12 +891,17 @@ body.kidmode{padding-bottom:0;background:var(--tint,#F3F6FA)}
 .hid.found{opacity:.2;filter:grayscale(1)}.hid.nope{animation:nope .4s}@keyframes nope{25%{transform:translate(-50%,-50%) rotate(-12deg)}75%{transform:translate(-50%,-50%) rotate(12deg)}}
 .hidetarget{text-align:center;font-size:64px;line-height:1.1;animation:bob 2s ease-in-out infinite}
 /* the jigsaw: a board of slots, a tray of pieces; a piece shows its crop of the picture */
-.jigboard{display:grid;grid-template-columns:repeat(var(--c,3),1fr);gap:4px;aspect-ratio:1;background:#fff;border-radius:18px;padding:6px;box-shadow:0 10px 22px -14px rgba(0,0,0,.4)}
-.jslot{border:2px dashed #B6C6E3;border-radius:8px;background:#F3F6FA;min-height:44px;padding:0}
+/* each slot has one piece's shape (--pa = piece width / height), so slots and pieces always match and nothing waits on the board's height;
+   the board is only as wide as leaves the tray in view (--ar = the whole picture's width / height) */
+.jigboard{display:grid;grid-template-columns:repeat(var(--c,3),1fr);align-content:start;gap:4px;background:#fff;border-radius:18px;padding:6px;box-shadow:0 10px 22px -14px rgba(0,0,0,.4);width:100%;max-width:max(260px,calc((100vh - 430px) * var(--ar,1)));margin-inline:auto;box-sizing:border-box}
+.jslot{border:2px dashed #B6C6E3;border-radius:8px;background:#F3F6FA;aspect-ratio:var(--pa,1);min-height:44px;padding:0;width:100%}
+.jslot.hover{border:3px solid var(--accent);background:#E6F0FF}
 .jslot.filled{border:2px solid transparent;background-color:#fff;background-repeat:no-repeat}.jslot.nope{animation:drumhit .25s}
 .jigtray{display:flex;gap:10px;flex-wrap:wrap;justify-content:center;margin-top:12px;min-height:60px}
 .jpiece{width:92px;height:calc(92px / var(--pa,1));border:3px solid #fff;border-radius:10px;background-color:#fff;background-repeat:no-repeat;box-shadow:0 8px 16px -10px rgba(0,0,0,.5);padding:0;transition:transform .12s}
 .jpiece.pick{outline:4px solid var(--accent);transform:scale(1.1)}
+.jpiece{touch-action:none;-webkit-user-select:none;user-select:none;-webkit-touch-callout:none}.jpiece.lifted{opacity:.25}
+.jghost{position:fixed;left:0;top:0;z-index:60;pointer-events:none;border:3px solid #fff;border-radius:10px;background-color:#fff;background-repeat:no-repeat;box-shadow:0 18px 30px -12px rgba(0,0,0,.55)}
 /* which pictures a game uses: the day's drawing or the family's photos (kid.js pixPick) */
 .pixpick{display:flex;gap:8px;justify-content:center;flex-wrap:wrap}
 .pixpick button{border:0;border-radius:999px;background:#fff;padding:8px 14px;min-height:44px;font-size:16px;font-weight:700;color:var(--accent);box-shadow:0 6px 14px -10px rgba(0,0,0,.4)}

@@ -667,9 +667,9 @@ ${pixPick(t, i, 'hideseek', 'kidnewhide')}
 ${want ? `<div class="hidetarget" aria-hidden="true">${want[0]}</div>` : `<button class="kidbig" data-a="kidnewhide">🔁 ${L('เล่นใหม่', 'Play again')}</button>`}`;
   } else if (view === 'jigsaw' && (dayArt(t, i) || kidPhotoPool(t).length)) {   // the day's picture in pieces: tap a piece, tap its place (tap-tap, not drag: a small hand can do it)
     if (!jg || jg.key !== `${t.id}.${i}.${kid}`) newJigsaw(t, i, kid);
-    body = `<div class="kidguide">${guideImg(1)}<p>${jg.done ? L('ต่อภาพเสร็จแล้ว! 🎉', 'Picture done! 🎉') : jg.pick === null ? L('แตะชิ้นข้างล่าง แล้วแตะช่องที่ใช่!', 'Tap a piece, then tap where it goes!') : L('ใส่ตรงไหนดีนะ?', 'Where does it go?')}</p></div>
+    body = `<div class="kidguide">${guideImg(1)}<p>${jg.done ? L('ต่อภาพเสร็จแล้ว! 🎉', 'Picture done! 🎉') : jg.pick === null ? L('ลากชิ้นไปใส่ช่องที่ใช่! (หรือแตะชิ้น แล้วแตะช่อง)', 'Drag a piece to its place! (or tap it, then tap the place)') : L('ใส่ตรงไหนดีนะ?', 'Where does it go?')}</p></div>
 ${pixPick(t, i, 'jigsaw', 'kidnewjig')}
-<div class="jigboard" style="--art:url('${esc(jg.src)}');--c:${jg.cols};aspect-ratio:${jg.ar}">${jg.slots.map((p, s) => `<button class="jslot${p !== null ? ' filled' : ''}" data-a="kidjslot" data-v="${s}"${p !== null ? ` style="${jgPos(p, jg)}"` : ''} aria-label="${L('ช่อง', 'Slot')} ${s + 1}"></button>`).join('')}</div>
+<div class="jigboard" style="--art:url('${esc(jg.src)}');--c:${jg.cols};--ar:${jg.ar};--pa:${jg.ar * jg.rows / jg.cols}">${jg.slots.map((p, s) => `<button class="jslot${p !== null ? ' filled' : ''}" data-a="kidjslot" data-v="${s}"${p !== null ? ` style="${jgPos(p, jg)}"` : ''} aria-label="${L('ช่อง', 'Slot')} ${s + 1}"></button>`).join('')}</div>
 <div class="jigtray" style="--art:url('${esc(jg.src)}');--pa:${jg.ar * jg.rows / jg.cols}">${jg.tray.map((p) => `<button class="jpiece${jg.pick === p ? ' pick' : ''}" data-a="kidjpick" data-v="${p}" style="${jgPos(p, jg)}" aria-label="${L('ชิ้น', 'Piece')} ${p + 1}"></button>`).join('')}</div>
 ${jg.done ? `<button class="kidbig" data-a="kidnewjig">🔁 ${L('ต่อใหม่', 'Again')}</button>` : ''}`;
   } else if (view === 'stamp') {
@@ -938,6 +938,40 @@ function newHide(t, i, kid) {
     items.push({ e: p[0], th: p[1], en: p[2], x, y, s: 40 + Math.round(Math.random() * 16), r: Math.round(Math.random() * 40 - 20), found: false }); });
   hs = { key: `${t.id}.${i}.${kid}`, targets, found: [], items: items.sort(() => Math.random() - 0.5), src };
 }
+// ---- the jigsaw by finger: a piece can also be dragged onto its place (iPad owner, Nov 2026: small hands drag; the slots used to stretch
+// to the board's aspect-ratio height, which Safari does not stretch grid rows to, so they came out short and did not match the pieces).
+// A tap-tap still works: a press that hardly moves is left to the click. A drag that ends off the board puts the piece back. ----
+let jdrag = null, jdragEnd = 0;
+document.addEventListener('pointerdown', (e) => {
+  const p = e.target.closest && e.target.closest('.jpiece'); if (!p || !jg || jg.done || e.button > 0) return;
+  const r = p.getBoundingClientRect();
+  jdrag = { p, v: +p.dataset.v, id: e.pointerId, x0: e.clientX, y0: e.clientY, dx: e.clientX - r.left, dy: e.clientY - r.top, w: r.width, h: r.height, ghost: null, over: null };
+});
+const jslotAt = (x, y) => { const el = document.elementFromPoint(x, y); return el && el.closest ? el.closest('.jslot') : null; };
+document.addEventListener('pointermove', (e) => {
+  const d = jdrag; if (!d || e.pointerId !== d.id) return;
+  if (!d.ghost) {
+    if (Math.hypot(e.clientX - d.x0, e.clientY - d.y0) < 8) return;   // not a drag yet: a tap stays a tap
+    const g = document.createElement('div'); g.className = 'jghost'; g.setAttribute('aria-hidden', 'true');
+    g.style.cssText = `width:${d.w}px;height:${d.h}px;background-image:${getComputedStyle(d.p).backgroundImage};background-size:${getComputedStyle(d.p).backgroundSize};background-position:${getComputedStyle(d.p).backgroundPosition}`;
+    document.body.appendChild(g); d.ghost = g; d.p.classList.add('lifted'); jg.pick = d.v; beep('tap');
+  }
+  d.ghost.style.transform = `translate(${e.clientX - d.dx}px,${e.clientY - d.dy}px) scale(1.06)`;
+  const s = jslotAt(e.clientX, e.clientY);
+  if (s !== d.over) { if (d.over) d.over.classList.remove('hover'); d.over = s; if (s && !s.classList.contains('filled')) s.classList.add('hover'); }
+});
+const jdragDone = (e) => {
+  const d = jdrag; if (!d || e.pointerId !== d.id) return;
+  jdrag = null; if (!d.ghost) return;   // a tap: the click does the rest
+  d.ghost.remove(); d.p.classList.remove('lifted'); if (d.over) d.over.classList.remove('hover');
+  jdragEnd = Date.now();   // the click that follows a drag must not pick the piece up again
+  const s = e.type === 'pointerup' ? jslotAt(e.clientX, e.clientY) : null;
+  if (s && jg) { jg.pick = d.v; A.kidjslot(s); if (jg && jg.pick !== null) setTimeout(render, 260); }   // wrong place: the slot shakes, then the piece shows picked (tap the right place)
+  else if (jg) { jg.pick = null; render(); }
+};
+document.addEventListener('pointerup', jdragDone);
+document.addEventListener('pointercancel', jdragDone);
+document.addEventListener('click', (e) => { if (Date.now() - jdragEnd < 400 && e.target.closest && e.target.closest('.jpiece, .jslot')) { e.stopPropagation(); e.preventDefault(); } }, true);
 // ---- the jigsaw: the day's picture cut into 2×2 (the little one) or 3×2; a piece shows its crop through background-position ----
 function newJigsaw(t, i, kid) {
   const cols = littleOf(t, kid) ? 2 : 3, rows = 2, n = cols * rows, photo = pixMode(t, i, 'jigsaw') === 'photo', src = (photo && randPhoto(t)) || dayArt(t, i);
