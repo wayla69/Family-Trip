@@ -1,0 +1,10 @@
+<svg viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+<defs><path id="nan-st-a" d="M 38 100 A 62 62 0 0 1 162 100"/><path id="nan-st-b" d="M 30 106 A 70 70 0 0 0 170 106"/></defs>
+<circle cx="100" cy="100" r="96" fill="#FFF7F2" stroke="#8E2C48" stroke-width="5" stroke-dasharray="7 5"/>
+<circle cx="100" cy="100" r="84" fill="none" stroke="#8E2C48" stroke-width="3"/>
+<circle cx="100" cy="100" r="54" fill="#FBEFF3" stroke="#8E2C48" stroke-width="3"/>
+<g stroke="#22213A" stroke-width="3.5" stroke-linejoin="round" stroke-linecap="round"><rect x="60.9" y="105.1" width="78.2" height="28.9" fill="#FFFFFF" stroke-width="2.5"/><rect x="83" y="94.9" width="34" height="39.1" fill="#FFF8E1" stroke-width="2.5"/><path d="M49 108.5l18.7-18.7h64.6l18.7 18.7z" fill="#C62828" stroke-width="2.5"/><path d="M74.5 96.6l25.5-25.5 25.5 25.5z" fill="#B71C1C" stroke-width="2.5"/><path d="M83 72.80000000000001l17-18.7 17 18.7z" fill="#C62828" stroke-width="2.5"/><path d="M100 54.10000000000001v-10.2" fill="none" stroke="#FFCA28" stroke-width="3"/><path d="M74.5 96.6h51M83 72.80000000000001h34" fill="none" stroke="#FFCA28" stroke-width="3"/><path d="M91.5 134v-17c0-8.5 17-8.5 17 0v17z" fill="#6D4C41" stroke-width="2.5"/><rect x="52" y="134" width="96" height="6" fill="#E0E0E0" stroke-width="2"/></g>
+<text font-family="KIRA UI, Arial, sans-serif" font-weight="800" font-size="19" letter-spacing="3" fill="#8E2C48"><textPath href="#nan-st-a" startOffset="50%" text-anchor="middle">NAN</textPath></text>
+<text font-family="KIRA UI, Arial, sans-serif" font-weight="700" font-size="11" letter-spacing="3" fill="#C99A2E"><textPath href="#nan-st-b" startOffset="50%" text-anchor="middle">PUA · BO KLUEA · THAILAND</textPath></text>
+<path d="M22 100l5-3 5 3-5 3zM168 100l5-3 5 3-5 3z" fill="#8E2C48"/>
+</svg>

@@ -120,8 +120,11 @@ export function stockMatch(days, placeText, index) {
   // a landmark's keywords without its own city's main name (Nov 2026: "tokyo" in the capsule-toy picture's keywords matched every
   // Tokyo day and beat the city's own scene) — a landmark is picked for the place the day goes to, never for the city it is in
   const mainOf = (city) => { const p = places[city] || {}; return new Set([p.name && p.name.en, p.name && p.name.th, ...(p.alias || []).slice(0, 2)].filter(Boolean).map((s) => lc(s))); };
-  // (a piece of the main name is the name too: "เดลี" inside "นิวเดลี")
-  const kwOf = (it) => { if (it.cat !== 'landmark') return it.kw; const main = [...mainOf(scopeOf(it.id))]; return (it.kw || []).filter((k) => { const x = lc(k); return !main.some((m) => m === x || m.includes(x)); }); };
+  // (a piece of the main alias is the name too: "เดลี" inside "นิวเดลี"; but a place's display name may list the places it covers —
+  // "Sydney and the Blue Mountains" — and those keep their keywords, or a Blue Mountains day never finds the Three Sisters)
+  const aliasMain = (city) => new Set(((places[city] || {}).alias || []).slice(0, 2).map((s) => lc(s)));
+  const kwOf = (it) => { if (it.cat !== 'landmark') return it.kw; const city = scopeOf(it.id), main = mainOf(city), part = [...aliasMain(city)];
+    return (it.kw || []).filter((k) => { const x = lc(k); return !main.has(x) && !part.some((m) => m.includes(x)); }); };
   // the landscape (t.*) and route (r.*) scenes: for a day the city layer cannot picture — a town the library does not have,
   // or a city without a scene — the one whose keywords the day names (a lake, a glacier, a ferry crossing), unused first
   const wide = items.filter((it) => it.cat === 'day' && (scopeOf(it.id) === 't' || scopeOf(it.id) === 'r'));

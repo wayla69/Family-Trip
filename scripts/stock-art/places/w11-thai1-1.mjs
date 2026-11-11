@@ -220,7 +220,7 @@ const items = [
 ];
 export default {
   places: {
-    th: { country: 'th', wave: 3, home: true, name: nm('ประเทศไทย', 'Thailand'), tz: 'Asia/Bangkok', alias: ['thailand', 'ประเทศไทย', 'เมืองไทย'], colors: TH },
+    th: { country: 'th', wave: 3, home: true, name: nm('ประเทศไทย', 'Thailand'), tz: 'Asia/Bangkok', alias: ['thailand', 'ประเทศไทย', 'เมืองไทย', 'ไทย'], colors: TH },
     'th-bangkok': { country: 'th', wave: 3, home: true, name: nm('กรุงเทพ', 'Bangkok'), tz: 'Asia/Bangkok', ll: [13.75, 100.5], alias: ['bangkok', 'กรุงเทพ', 'กรุงเทพมหานคร', 'BKK', 'DMK', 'suvarnabhumi', 'สุวรรณภูมิ', 'don mueang', 'ดอนเมือง', 'damnoen saduak', 'ดำเนินสะดวก', 'amphawa', 'อัมพวา'], colors: BK },
   },
   items,

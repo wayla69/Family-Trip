@@ -273,6 +273,17 @@ if (process.env.BASE) {
     ok(!away.places.includes('thx-bkk') && away.crest === 'stock:jp.stamp' && here.places.join() === 'thx-bkk' && here.crest === 'stock:thx.stamp'
       && land.places.join() === 'thx-bkk' && !both.places.includes('thx-bkk'),
       'stock match: a home place (Bangkok) counts only when the book\'s place is it or its country, and nowhere abroad — ' + [away, here, land, both].map((m) => m.places.join('+')).join(' | '));
+    // wave 11 (Thailand, Australia, New Zealand): a place named in a city's display name keeps its keywords ("Sydney and the Blue
+    // Mountains" → the Three Sisters); Thai words that are also place names (khanom = dessert, saphan = bridge, Nan = grandma) name nothing
+    const wm = (place, ...days) => M.stockMatch(days.map((en) => ({ title: { en, th: en } })), { en: place, th: place }, idx);
+    if (idx.places['au-sydney'] && idx.places['th-nan']) {
+      const syd = wm('Sydney 2027', 'Fly from Suvarnabhumi to Sydney', 'Bondi', 'Blue Mountains'), thai = wm('เที่ยวไทย', 'กรุงเทพ', 'อยุธยา'),
+        cm = wm('เชียงใหม่', 'บินจากดอนเมือง', 'ดอยสุเทพ'), words = wm('Japan', 'Try khanom krok', 'Saphan Taksin pier', 'Visit Nan');
+      ok(syd.places.join() === 'au-sydney' && syd.artDays[2] === 'stock:au-sydney.landmark.threesisters' && thai.places.join() === 'th-bangkok,th-ayutthaya'
+        && cm.places.join() === 'th-chiangmai' && words.places.length === 0,
+        'stock match: Blue Mountains finds the Three Sisters; a Thai trip finds its Thai cities, a Chiang Mai book never Bangkok; khanom / saphan / Nan name no city — '
+        + [syd, thai, cm, words].map((m) => m.places.join('+')).join(' | ') + ' ' + syd.artDays[2]);
+    }
     const trap = (en, th, q) => M.stockMatch([{ title: { en, th }, planned: q ? [{ en: 'Café', th: 'คาเฟ่', q }] : [] }], { en: 'Our trip', th: 'ทริปของเรา' }, idx).places;
     ok([trap('A nice day, then a bath', 'แวะร้านเดลี่ แล้วมาเล่นที่สวน'), trap('Umbrella and the Zig Zag Railway', 'นักบินจากอเมริกาบินไปแอฟริกา'),
       trap('Brunch', 'บรันช์', '5 Whistler St, Manly NSW'), trap('First stop: the central market', 'ตลาดกลาง')].every((p) => p.length === 0),

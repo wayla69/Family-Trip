@@ -1,0 +1,10 @@
+<svg viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+<defs><path id="srt-st-a" d="M 38 100 A 62 62 0 0 1 162 100"/><path id="srt-st-b" d="M 30 106 A 70 70 0 0 0 170 106"/></defs>
+<circle cx="100" cy="100" r="96" fill="#FFF7F2" stroke="#1B7F5E" stroke-width="5" stroke-dasharray="7 5"/>
+<circle cx="100" cy="100" r="84" fill="none" stroke="#1B7F5E" stroke-width="3"/>
+<circle cx="100" cy="100" r="54" fill="#E0F5EC" stroke="#1B7F5E" stroke-width="3"/>
+<g stroke="#22213A" stroke-width="3.5" stroke-linejoin="round" stroke-linecap="round"><circle cx="130" cy="72" r="9" fill="#FFCA28" stroke-width="2.5"/><path d="M58 124C57.3 95.4 62.2 72 70.6 72S86.7 92.8 86 124z" fill="#66BB6A" stroke-width="3"/><path d="M84 124C83.2 87.69999999999999 88.8 58 98.4 58S116.8 84.4 116 124z" fill="#43A047" stroke-width="3"/><path d="M116 124C115.4 99.8 119.6 80 126.8 80S140.6 97.6 140 124z" fill="#81C784" stroke-width="3"/><path d="M50 122c16-5 32 4 50 0s34 5 50 0v16H50z" fill="#26A69A" stroke-width="3"/><path d="M66 132h14M104 134h16" fill="none" stroke="#B2DFDB" stroke-width="2.5"/></g>
+<text font-family="KIRA UI, Arial, sans-serif" font-weight="800" font-size="13" letter-spacing="3" fill="#1B7F5E"><textPath href="#srt-st-a" startOffset="50%" text-anchor="middle">SURAT THANI</textPath></text>
+<text font-family="KIRA UI, Arial, sans-serif" font-weight="700" font-size="11" letter-spacing="3" fill="#0E7C86"><textPath href="#srt-st-b" startOffset="50%" text-anchor="middle">KHAO SOK · THAILAND</textPath></text>
+<path d="M22 100l5-3 5 3-5 3zM168 100l5-3 5 3-5 3z" fill="#1B7F5E"/>
+</svg>
