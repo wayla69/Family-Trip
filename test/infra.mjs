@@ -247,6 +247,9 @@ if (process.env.BASE) {
     && JSON.stringify(s.passport.stamps) === JSON.stringify([{ art: 'stock:jp.stamp', day: 0 }, { art: 'stock:jp-tokyo.stamp', day: 0 }]) && s.stock.places.join() === 'jp-tokyo'
     && s.passport.guides.map((g) => g.art).join() === 'stock:jp.guide.hana,stock:jp.guide.momo' && /\{name\}/.test(s.passport.guides[0].hello.th),
     'stock match: Tokyo days get the skyline / the Skytree they visit / the skyline again (never a place the day skips), the Japan crest, Japan + Tokyo stamps, Japan\'s two guides');
+  // a plan without a badge shows its cover emoji in the book's circle and trip stamp, never the 📖 placeholder (the live sample, Nov 2026)
+  ok(s.theme.badge === plan.emoji && C.toSeed({ ...plan, badge: '🗼' }, [], { art: false }).theme.badge === '🗼',
+    'plan-to-seed: the badge is the plan\'s own, else its cover emoji');
   // a day that names only its city gets the city's own scene, never one of its landmarks (a landmark's keywords may hold the city's
   // name — "tokyo" in the capsule toys — and that matched every Tokyo day; 39 cities did it before the matcher dropped the city's name)
   { const M = await import('../scripts/lib/stock-match.mjs');
