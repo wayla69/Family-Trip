@@ -606,8 +606,14 @@ const T = 'hk-macau-2026';
   ok(await page.locator('.jpiece').count() === 5 && await page.locator('.jslot.filled').count() === 1 && await page.locator('.jslot').count() === 6, 'kid mode: the jigsaw cuts the day picture into six; tap a piece, tap its slot');
   // iPad owner, Nov 2026: the slots came out a different shape from the pieces, and small hands drag — every slot is a piece's shape, a drag places it
   const jshape = await page.evaluate(() => { const r = (q) => { const b = document.querySelector(q).getBoundingClientRect(); return b.width / b.height; }; return Math.abs(r('.jslot') - r('.jpiece')) < 0.02; });
-  const jdrag = async (v, to) => { await page.locator('.jigboard').scrollIntoViewIfNeeded(); await page.waitForTimeout(150);
+  let jboxes = '';
+  const jdrag = async (v, to) => {
+    // both ends on screen: a press below the fold never reaches the piece (the redraw after a wrong drop can leave the tray under the fold on CI's fonts)
+    await page.evaluate(([v, to]) => { const p = document.querySelector(`.jpiece[data-v="${v}"]`).getBoundingClientRect(), s = document.querySelector(`.jslot[data-v="${to}"]`).getBoundingClientRect();
+      const top = Math.min(p.top, s.top), bot = Math.max(p.bottom, s.bottom); window.scrollBy(0, (top + bot) / 2 - innerHeight / 2); }, [v, to]);
+    await page.waitForTimeout(150);
     const a = await page.locator(`.jpiece[data-v="${v}"]`).boundingBox(), b = await page.locator(`.jslot[data-v="${to}"]`).boundingBox();
+    jboxes = JSON.stringify({ piece: [a.y, a.height].map(Math.round), slot: [b.y, b.height].map(Math.round) });
     await page.mouse.move(a.x + a.width / 2, a.y + a.height / 2); await page.mouse.down();
     for (let k = 1; k <= 6; k++) await page.mouse.move(a.x + a.width / 2 + (b.x + b.width / 2 - a.x - a.width / 2) * k / 6, a.y + a.height / 2 + (b.y + b.height / 2 - a.y - a.height / 2) * k / 6);
     await page.mouse.up(); await page.waitForTimeout(600); };
@@ -617,7 +623,7 @@ const T = 'hk-macau-2026';
   // under a loaded CI box the board can still be settling from the wrong drop's shake when the second drag measures it: wait, then one more try
   if (!(await page.waitForFunction(() => document.querySelectorAll('.jslot.filled').length === 2, null, { timeout: 2000 }).then(() => true, () => false))) await jdrag(1, 1);
   const jfill = await page.locator('.jslot.filled').count(), jleft = await page.locator('.jpiece[data-v="1"]').count();
-  ok(jshape && wrongKept && jfill === 2 && jleft === 0, `jigsaw: slots have the pieces' shape; dragging a piece onto its place puts it there, a wrong place keeps it in the tray (${JSON.stringify({ jshape, wrongKept, jfill, jleft, vh: page.viewportSize() })})`);
+  ok(jshape && wrongKept && jfill === 2 && jleft === 0, `jigsaw: slots have the pieces' shape; dragging a piece onto its place puts it there, a wrong place keeps it in the tray (${JSON.stringify({ jshape, wrongKept, jfill, jleft, vh: page.viewportSize() })} ${jboxes})`);
   await page.click('.pixpick [data-g="jigsaw"][data-v="photo"]'); await page.waitForSelector('.jigboard');
   ok((await page.getAttribute('.jigboard', 'style')).includes('/media/') && await page.locator('.jpiece').count() === 6 && await page.locator('.pixpick [data-a="kidnewjig"]').count() === 1, 'jigsaw: “our photos” cuts one of the family’s photos instead, with a “new photo” button');
   await page.goto(`${BASE}/#/kid/mimi/hideseek`); await page.waitForSelector('.hideboard'); await page.click('.pixpick [data-g="hideseek"][data-v="photo"]'); await page.waitForSelector('.hideboard');
