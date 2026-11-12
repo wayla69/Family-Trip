@@ -8,6 +8,17 @@
 
 /* ---------- sounds ---------- */
 let audioCtx = null;
+// every sound goes through one limiter (owner, Nov 2026: "เสียงเครื่องดนตรีไม่ค่อยดัง"): the instruments play louder, and a fast run of
+// taps or a drum over a note never clips into a crackle
+let outNode = null;
+function outOf(c) {
+  if (outNode && outNode.context === c) return outNode;
+  try {
+    const comp = c.createDynamicsCompressor(); comp.threshold.value = -12; comp.knee.value = 8; comp.ratio.value = 10; comp.attack.value = 0.002; comp.release.value = 0.18;
+    const g = c.createGain(); g.gain.value = 1.15; comp.connect(g); g.connect(c.destination); outNode = comp;
+  } catch (_) { outNode = c.destination; }
+  return outNode;
+}
 function beep(kind, x) {   // x: the note's frequency for 'note'
   try {
     // iPad/iPhone: web sounds obey the ring/silent switch unless the page says it plays media (Safari 16.4+), and a context made outside
@@ -20,7 +31,7 @@ function beep(kind, x) {   // x: the note's frequency for 'note'
       const o = c.createOscillator(), g = c.createGain();
       o.type = type || 'sine'; o.frequency.setValueAtTime(f, t0 + at);
       g.gain.setValueAtTime(vol || 0.2, t0 + at); g.gain.exponentialRampToValueAtTime(0.001, t0 + at + dur);
-      o.connect(g); g.connect(c.destination); o.start(t0 + at); o.stop(t0 + at + dur);
+      o.connect(g); g.connect(outOf(c)); o.start(t0 + at); o.stop(t0 + at + dur);
     };
     if (kind === 'thud') { tone(140, 0, 0.35, 'triangle', 0.5); tone(70, 0, 0.45, 'sine', 0.5); }
     else if (kind === 'chime') [523, 659, 784, 1047].forEach((f, i) => tone(f, i * 0.09, 0.4, 'sine', 0.18));
@@ -32,12 +43,12 @@ function beep(kind, x) {   // x: the note's frequency for 'note'
     else if (kind === 'sparkle') [1047, 1319, 1568, 2093].forEach((f, i) => tone(f, i * 0.06, 0.35, 'sine', 0.12));
     else if (kind === 'yay') [523, 659, 784, 1047, 1319].forEach((f, i) => tone(f, i * 0.07, 0.25, 'triangle', 0.14));
     else if (kind === 'boing') sweep(c, t0, 180, 520, 0.3, 'triangle', 0.2);
-    else if (kind === 'note') { tone(x, 0, 0.6, 'triangle', 0.2); tone(x * 2, 0, 0.3, 'sine', 0.05); }   // the xylophone
-    else if (kind === 'kick') sweep(c, t0, 150, 45, 0.25, 'sine', 0.6);
-    else if (kind === 'snare') { noise(c, t0, 0.18, 0.35, 1800); tone(190, 0, 0.1, 'triangle', 0.25); }
-    else if (kind === 'hat') noise(c, t0, 0.06, 0.2, 6000);
-    else if (kind === 'clap') { noise(c, t0, 0.09, 0.3, 1200); noise(c, t0 + 0.03, 0.12, 0.25, 1500); }
-    else if (kind === 'frog') { sweep(c, t0, 420, 180, 0.16, 'sawtooth', 0.12); sweep(c, t0 + 0.17, 380, 160, 0.14, 'sawtooth', 0.1); }
+    else if (kind === 'note') { tone(x, 0, 0.7, 'triangle', 0.55); tone(x * 2, 0, 0.35, 'sine', 0.14); tone(x * 3, 0, 0.12, 'sine', 0.05); }   // the xylophone
+    else if (kind === 'kick') { sweep(c, t0, 160, 45, 0.3, 'sine', 1); tone(80, 0, 0.18, 'triangle', 0.45); }
+    else if (kind === 'snare') { noise(c, t0, 0.2, 0.8, 1500); tone(190, 0, 0.12, 'triangle', 0.55); }
+    else if (kind === 'hat') { [2093, 2637, 3136].forEach((f) => tone(f, 0, 0.5, 'sine', 0.12)); noise(c, t0, 0.08, 0.35, 6000); }   // a little bell (its button is 🔔)
+    else if (kind === 'clap') { noise(c, t0, 0.1, 0.75, 1100); noise(c, t0 + 0.025, 0.14, 0.65, 1400); }
+    else if (kind === 'frog') { sweep(c, t0, 420, 180, 0.16, 'sawtooth', 0.32); sweep(c, t0 + 0.17, 380, 160, 0.14, 'sawtooth', 0.28); }
     else if (kind === 'munch') [0, 0.13, 0.26].forEach((at) => { tone(260, at, 0.08, 'triangle', 0.3); noise(c, t0 + at, 0.05, 0.12, 900); });   // feed the animal: chomp chomp chomp
     else if (kind === 'bubble') sweep(c, t0, 520 + Math.random() * 380, 1500, 0.12, 'sine', 0.16);
     else if (kind === 'hello') [523, 659, 784].forEach((f, i) => tone(f, i * 0.11, 0.3, 'triangle', 0.16));   // a child picked themself
@@ -51,7 +62,7 @@ function sweep(c, t0, f1, f2, dur, type, vol) {
   const o = c.createOscillator(), g = c.createGain();
   o.type = type; o.frequency.setValueAtTime(f1, t0); o.frequency.exponentialRampToValueAtTime(f2, t0 + dur);
   g.gain.setValueAtTime(vol, t0); g.gain.exponentialRampToValueAtTime(0.001, t0 + dur);
-  o.connect(g); g.connect(c.destination); o.start(t0); o.stop(t0 + dur);
+  o.connect(g); g.connect(outOf(c)); o.start(t0); o.stop(t0 + dur);
 }
 // a burst of white noise through a high-pass filter (the snare, the hi-hat)
 let noiseBuf = null;
@@ -60,7 +71,7 @@ function noise(c, t0, dur, vol, hp) {
   const s = c.createBufferSource(), f = c.createBiquadFilter(), g = c.createGain();
   s.buffer = noiseBuf; f.type = 'highpass'; f.frequency.value = hp;
   g.gain.setValueAtTime(vol, t0); g.gain.exponentialRampToValueAtTime(0.001, t0 + dur);
-  s.connect(f); f.connect(g); g.connect(c.destination); s.start(t0); s.stop(t0 + dur);
+  s.connect(f); f.connect(g); g.connect(outOf(c)); s.start(t0); s.stop(t0 + dur);
 }
 
 /* ---------- the phone reads aloud ---------- */
@@ -1098,13 +1109,13 @@ function newJigsaw(t, i, kid) {
 const jgPos = (p, g) => `background-image:var(--art);background-size:${g.cols * 100}% ${g.rows * 100}%;background-position:${g.cols > 1 ? (p % g.cols) / (g.cols - 1) * 100 : 0}% ${g.rows > 1 ? Math.floor(p / g.cols) / (g.rows - 1) * 100 : 0}%`;
 // ---- music: the xylophone's bars (C major) and two songs as bar numbers; a song lights each bar as it plays ----
 const XYLO = [['C', 261.63, '#FF6B6B', '🐥'], ['D', 293.66, '#FFA94D', '🐸'], ['E', 329.63, '#FFD43B', '🐱'], ['F', 349.23, '#8CE99A', '🐶'], ['G', 392.00, '#66D9E8', '🐰'], ['A', 440.00, '#74C0FC', '🐼'], ['B', 493.88, '#B197FC', '🦊'], ['C', 523.25, '#F783AC', '🐨']];
-const SONGS = [
-  { th: 'ดาวน้อย', en: 'Twinkle', seq: [0, 0, 4, 4, 5, 5, 4, -1, 3, 3, 2, 2, 1, 1, 0] },
-  { th: 'ลูกแกะน้อย', en: 'Little lamb', seq: [2, 1, 0, 1, 2, 2, 2, -1, 1, 1, 1, -1, 2, 4, 4] },
-  { th: 'พายเรือ', en: 'Row your boat', seq: [0, 0, 0, 1, 2, -1, 2, 1, 2, 3, 4, -1, 7, 7, 7, 4, 4, 4, 2, 2, 2, 0, 0, 0, -1, 4, 3, 2, 1, 0] },
-  { th: 'สะพานลอนดอน', en: 'London Bridge', seq: [4, 5, 4, 3, 2, 3, 4, -1, 1, 2, 3, -1, 2, 3, 4, -1, 4, 5, 4, 3, 2, 3, 4, -1, 1, 4, 2, 0] },
-  { th: 'ลุงแมคโดนัลด์', en: 'Old MacDonald', seq: [0, 0, 0, 4, 5, 5, 4, -1, 2, 2, 1, 1, 0, -1, 0, 0, 0, 4, 5, 5, 4, -1, 2, 2, 1, 1, 0] },
-  { th: 'จิงเกิลเบล', en: 'Jingle bells', seq: [2, 2, 2, -1, 2, 2, 2, -1, 2, 4, 0, 1, 2, -1, 3, 3, 3, 3, 3, 2, 2, 2, 2, 1, 1, 2, 1, -1, 4] },
+const SONGS = [   // the whole verse (owner, Nov 2026: twice as long as the first line they used to stop at)
+  { th: 'ดาวน้อย', en: 'Twinkle', seq: [0, 0, 4, 4, 5, 5, 4, -1, 3, 3, 2, 2, 1, 1, 0, -1, 4, 4, 3, 3, 2, 2, 1, -1, 4, 4, 3, 3, 2, 2, 1, -1, 0, 0, 4, 4, 5, 5, 4, -1, 3, 3, 2, 2, 1, 1, 0] },
+  { th: 'ลูกแกะน้อย', en: 'Little lamb', seq: [2, 1, 0, 1, 2, 2, 2, -1, 1, 1, 1, -1, 2, 4, 4, -1, 2, 1, 0, 1, 2, 2, 2, 2, 1, 1, 2, 1, 0, -1, -1, 2, 1, 0, 1, 2, 2, 2, -1, 1, 1, 1, -1, 2, 4, 4, -1, 2, 1, 0, 1, 2, 2, 2, 2, 1, 1, 2, 1, 0] },
+  { th: 'พายเรือ', en: 'Row your boat', seq: [0, 0, 0, 1, 2, -1, 2, 1, 2, 3, 4, -1, 7, 7, 7, 4, 4, 4, 2, 2, 2, 0, 0, 0, -1, 4, 3, 2, 1, 0, -1, -1, 0, 0, 0, 1, 2, -1, 2, 1, 2, 3, 4, -1, 7, 7, 7, 4, 4, 4, 2, 2, 2, 0, 0, 0, -1, 4, 3, 2, 1, 0] },
+  { th: 'สะพานลอนดอน', en: 'London Bridge', seq: [4, 5, 4, 3, 2, 3, 4, -1, 1, 2, 3, -1, 2, 3, 4, -1, 4, 5, 4, 3, 2, 3, 4, -1, 1, 4, 2, 0, -1, -1, 4, 5, 4, 3, 2, 3, 4, -1, 1, 2, 3, -1, 2, 3, 4, -1, 4, 5, 4, 3, 2, 3, 4, -1, 1, 4, 2, 0] },
+  { th: 'ลุงแมคโดนัลด์', en: 'Old MacDonald', seq: [0, 0, 0, 4, 5, 5, 4, -1, 2, 2, 1, 1, 0, -1, 4, 0, 0, 0, 4, 5, 5, 4, -1, 2, 2, 1, 1, 0, -1, 4, 4, 0, 0, 0, -1, 4, 4, 0, 0, 0, -1, 0, 0, 0, 0, 0, 0, -1, 0, 0, 0, 0, 0, 0, -1, 0, 0, 0, 4, 5, 5, 4, -1, 2, 2, 1, 1, 0] },
+  { th: 'จิงเกิลเบล', en: 'Jingle bells', seq: [2, 2, 2, -1, 2, 2, 2, -1, 2, 4, 0, 1, 2, -1, 3, 3, 3, 3, 3, 2, 2, 2, 2, 1, 1, 2, 1, -1, 4, -1, 2, 2, 2, -1, 2, 2, 2, -1, 2, 4, 0, 1, 2, -1, 3, 3, 3, 3, 3, 2, 2, 2, 4, 4, 3, 1, 0] },
 ];
 let songT = 0;
 function playSong(n, kid) {
