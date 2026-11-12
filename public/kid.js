@@ -510,14 +510,15 @@ const kidPhotos = (t, i) => { const all = mediaOf(t.id).filter((m) => !isDrawing
 let kidPhoto = 0, kidPage = 0;
 const shuffle = (a) => { a = a.slice(); for (let i = a.length - 1; i > 0; i--) { const j = Math.floor(Math.random() * (i + 1)); [a[i], a[j]] = [a[j], a[i]]; } return a; };
 let mg = null;   // pairs game: {t, kid, cards:[{k, img|e}], up:[card indexes face up], done:Set(k), moves, won}
-function matchDeck(t) {
+function matchDeck(t, pairs) {
+  pairs = pairs || 6;
   const faces = [];
-  if (pixMode(t, kidDayOf(t), 'match') === 'photo') shuffle(kidPhotoPool(t)).slice(0, 6).forEach((m) => faces.push({ k: 'p' + m.id, img: imgT(m), ph: true }));   // the family's photos first, drawings fill the rest
-  if (faces.length < 6) t.days.forEach((_, i) => { const a = dayArt(t, i); if (a) faces.push({ k: 'd' + i, img: a }); });
+  if (pixMode(t, kidDayOf(t), 'match') === 'photo') shuffle(kidPhotoPool(t)).slice(0, pairs).forEach((m) => faces.push({ k: 'p' + m.id, img: imgT(m), ph: true }));   // the family's photos first, drawings fill the rest
+  if (faces.length < pairs) t.days.forEach((_, i) => { const a = dayArt(t, i); if (a) faces.push({ k: 'd' + i, img: a }); });
   ((t.passport || {}).days || []).forEach((pd, i) => (pd.spot || []).forEach((s) => faces.push({ k: `s${i}.${s.k}`, e: s.e })));
-  if (faces.length < 6) ['🐨', '🦘', '🐬', '🐼', '🚢', '✈️'].forEach((e, i) => faces.push({ k: 'x' + i, e }));
+  if (faces.length < pairs + 2) ['🐨', '🦘', '🐬', '🐼', '🚢', '✈️', '🦒', '🐢', '🦋', '🍓', '🚗', '🌈'].forEach((e, i) => faces.push({ k: 'x' + i, e }));
   const seenE = new Set(), uniq = faces.filter((f) => !f.e || (!seenE.has(f.e) && seenE.add(f.e)));   // one card per face: two different keys with the same emoji would never match
-  const pick = uniq.filter((f) => f.ph).concat(shuffle(uniq.filter((f) => !f.ph))).slice(0, 6); return shuffle(pick.concat(pick));
+  const pick = uniq.filter((f) => f.ph).concat(shuffle(uniq.filter((f) => !f.ph))).slice(0, pairs); return shuffle(pick.concat(pick));
 }
 // which pictures a game uses (owner's ask, Nov 2026: the children's own photos are the pictures they love most): 'art' = the day's drawing,
 // 'photo' = one of the family's photos (520 px thumbnails, on the phone once the book is stored) — per game, this visit
@@ -526,7 +527,7 @@ const kidPhotoPool = (t) => mediaOf(t.id).filter((m) => !isDrawing(m) && !m.pend
 const pixMode = (t, i, g) => kidPix[g] || (g === 'jigsaw' && !dayArt(t, i) ? 'photo' : 'art');
 const randPhoto = (t) => { const p = kidPhotoPool(t); return p.length ? imgT(p[Math.floor(Math.random() * p.length)]) : null; };
 const pixPick = (t, i, g, again) => (kidPhotoPool(t).length ? `<div class="pixpick" role="group" aria-label="${L('รูปที่ใช้', 'Pictures')}">${(g === 'jigsaw' && !dayArt(t, i) ? [] : [['art', '🎨', L('ภาพวาด', 'Drawing')]]).concat([['photo', '📷', L('รูปของเรา', 'Our photos')]]).map(([v, e, l]) => `<button data-a="kidpix" data-g="${g}" data-v="${v}" aria-pressed="${pixMode(t, i, g) === v}">${e} ${l}</button>`).join('')}${pixMode(t, i, g) === 'photo' ? `<button data-a="${again}">🔀 ${L('รูปใหม่', 'New photo')}</button>` : ''}</div>` : '');
-const newMatch = (t, kid) => { mg = { t: t.id, kid, cards: matchDeck(t), up: [], done: new Set(), moves: 0, won: false }; };
+const newMatch = (t, kid) => { mg = { t: t.id, kid, at: lvState(t, kid, 'match').at, cards: matchDeck(t, lvOf(t, kid, 'match').p), up: [], done: new Set(), moves: 0, won: false }; };
 let cnt = null;   // counting game: {n, e, hit:[card indexes in the order tapped]}
 const NUMW = { th: ['หนึ่ง', 'สอง', 'สาม', 'สี่', 'ห้า', 'หก', 'เจ็ด', 'แปด', 'เก้า', 'สิบ'], en: ['one', 'two', 'three', 'four', 'five', 'six', 'seven', 'eight', 'nine', 'ten'] };
 function newCount(t, kid) {   // count today's things (the day's missions), now and then the trip's animals and friends
@@ -591,7 +592,9 @@ const wj = (s) => String(s).replace(/วันนี้/g, 'วัน\u2060น�
 // kid mode's picture tiles (owner's set, public/art/kidui): [picture or '' for the emoji, gradient top, gradient bottom]
 const KTILE = { count: ['surprise', '#FFC93C', '#FF9F0A'], pack: ['pack', '#62CCFF', '#1C9BEA'], words: ['say', '#C9A2FF', '#8F5CEB'], colour: ['colour', '#FF93B5', '#F2557F'],
   draw: ['draw', '#AEEA80', '#5EBB3D'], match: ['match', '#B592FF', '#7C4EE5'], quiz: ['quiz', '#86D6FF', '#2BA8F0'], animals: ['animals', '#93DD60', '#3FA82C'], numbers: ['count', '#FFB54A', '#FF8A1F'],
-  spot: ['find', '#7FE3D2', '#24B39B'], stamp: ['stamp', '#8FB4FF', '#3F6FE0'], talk: ['talk', '#FFB0C8', '#F06A93'], memory: ['memory', '#FFD36B', '#F2A90C'], photos: ['photos', '#9CD9FF', '#3BA0E8'], mood: ['mood', '#FFC2A0', '#FF8A57'], hideseek: ['spy', '#FFD54A', '#E8A317'], jigsaw: ['jigsaw', '#A8E86A', '#2E9E4F'], bubbles: ['bubbles', '#5BB8FF', '#1E6FE8'], music: ['music', '#FF8FD8', '#7B3FE0'], shadow: ['', '#B8C2D6', '#5B6680'], feed: ['', '#FFD98A', '#F29B38'], sort: ['', '#9EE6B8', '#3FA0E0'], _: ['', '#C9D3E6', '#8C9BB8'] };
+  spot: ['find', '#7FE3D2', '#24B39B'], stamp: ['stamp', '#8FB4FF', '#3F6FE0'], talk: ['talk', '#FFB0C8', '#F06A93'], memory: ['memory', '#FFD36B', '#F2A90C'], photos: ['photos', '#9CD9FF', '#3BA0E8'], mood: ['mood', '#FFC2A0', '#FF8A57'], hideseek: ['spy', '#FFD54A', '#E8A317'], jigsaw: ['jigsaw', '#A8E86A', '#2E9E4F'], bubbles: ['bubbles', '#5BB8FF', '#1E6FE8'], music: ['music', '#FF8FD8', '#7B3FE0'], shadow: ['', '#B8C2D6', '#5B6680'], feed: ['', '#FFD98A', '#F29B38'], sort: ['', '#9EE6B8', '#3FA0E0'], farm: ['', '#B8E986', '#E0893F'], wash: ['', '#BDE6F2', '#4FA3D9'], bigsmall: ['', '#FFD0A8', '#E06A8F'], _: ['', '#C9D3E6', '#8C9BB8'] };
+// each game's own backdrop (owner, Nov 2026: "เพิ่มฉากด้วย"): a sky or room in CSS and a drawn strip along the bottom (app.css .sc-<scene>)
+const KSCENE = { bubbles: 'sea', music: 'stage', shadow: 'night', feed: 'picnic', sort: 'garden', numbers: 'garden', bigsmall: 'garden', farm: 'farm', wash: 'bath' };
 const KBAR = { home: 'home', map: 'map', colour: 'colour', stamp: 'passport', stickers: 'stickers', trophies: 'trophies' };   // the bar's middle button: colour before the trip, the passport on it
 function viewKid(p) {
   const ks = children(), kid = p[1], k = ks.find((c) => c.slug === kid);
@@ -619,7 +622,7 @@ function viewKid(p) {
       ? [cd && ['count', '🎁', L('เซอร์ไพรส์', 'Surprise')], cd && cd.pack && ['pack', '🧳', L('จัดกระเป๋า', 'Pack')], canColour(t, i) && ['colour', '🎨', L('ระบายสี', 'Colour')], ['draw', '🖍️', L('วาดรูป', 'Draw')], ['bubbles', '🫧', L('ฟองสบู่', 'Bubbles')], ['music', '🎵', L('ดนตรี', 'Music')], ['hideseek', '🙈', L('ซ่อนหา', 'I spy')]]
       : [canColour(t, i) && ['colour', '🎨', L('ระบายสี', 'Colour')], ['draw', '🖍️', L('วาดรูป', 'Draw')], ['bubbles', '🫧', L('ฟองสบู่', 'Bubbles')], ['music', '🎵', L('ดนตรี', 'Music')], ['hideseek', '🙈', L('ซ่อนหา', 'I spy')], ['spot', littleOf(t, kid) ? '👉' : '🔍', littleOf(t, kid) ? L('ชี้ แตะ', 'Point it') : L('หาของ', 'Find it')], ['stamp', '🛂', L('ปั๊มตรา', 'Stamp')]])
       .concat(words ? [['words', '🗣️', L('พูดตาม', 'Say it')]] : [], ((d.plan || {}).quiz || []).length && !lit ? [['quiz', '❓', L('ทายซิ', 'Quiz')]] : [],
-        kidTalk(t, i) ? [['talk', '💬', L('คุยกัน', 'Let’s talk')]] : [], !pre && i > 0 && memQuiz(t, i - 1) ? [['memory', '🧠', L('จำได้ไหม', 'Remember?')]] : [], kidPhotos(t, i).length ? [['photos', '📸', L('ดูรูป', 'Photos')]] : [], [['match', '🧩', L('จับคู่', 'Match')], ['shadow', '🦒', L('เงาของใคร', 'Shadows')], ['feed', '🍌', L('ป้อนอาหาร', 'Feed me')], ['sort', '🧺', L('แยกสี', 'Colours')]], pre ? [] : [['mood', '😊', L('วันนี้รู้สึก', 'My mood')]],
+        kidTalk(t, i) ? [['talk', '💬', L('คุยกัน', 'Let’s talk')]] : [], !pre && i > 0 && memQuiz(t, i - 1) ? [['memory', '🧠', L('จำได้ไหม', 'Remember?')]] : [], kidPhotos(t, i).length ? [['photos', '📸', L('ดูรูป', 'Photos')]] : [], [['match', '🧩', L('จับคู่', 'Match')], ['shadow', '🦒', L('เงาของใคร', 'Shadows')], ['feed', '🍌', L('ป้อนอาหาร', 'Feed me')], ['sort', '🧺', L('แยกสี', 'Colours')], ['farm', '🐮', L('เสียงสัตว์', 'Animal sounds')], ['wash', '🛁', L('อาบน้ำ', 'Bath time')], ['bigsmall', '🐘', L('ใหญ่-เล็ก', 'Big & small')]], pre ? [] : [['mood', '😊', L('วันนี้รู้สึก', 'My mood')]],
         wild.length ? [['animals', (t.info.wildLabel || {}).emo || '🦘', t.info.wildLabel ? esc(T(t.info.wildLabel.short)) : L('สัตว์', 'Animals')]] : [], [['numbers', '🔢', L('นับเลข', 'Count')]], dayArt(t, i) || kidPhotoPool(t).length ? [['jigsaw', '🖼️', L('ต่อภาพ', 'Puzzle')]] : []).filter(Boolean);   // map, stickers and trophies live on the kid bar below — not twice
     const until = daysUntil(t);
     const btns = tiles.map(([v, e, lbl]) => { const k = KTILE[v] || KTILE._; return `<button class="pic" style="--k1:${k[1]};--k2:${k[2]}" data-a="kidnav" data-v="#/kid/${esc(kid)}/${v}" data-say="${esc(lbl)}">${k[0] ? `<img src="/art/kidui/${k[0]}.webp" alt="">` : `<span>${e}</span>`}<b>${lbl}</b></button>`; })
@@ -677,27 +680,43 @@ ${memState.got ? `<button class="kidbig" data-a="memnext">${memState.n + 1 < qs.
     setTimeout(startBubbles, 0);
     body = `<div class="kidguide">${guideImg(0)}<p>${L('แตะฟองให้แตก!', 'Pop the bubbles!')}</p></div>
 <div class="bubblefield" id="bubblefield" data-k="${esc(kid)}"><div class="bubscore" id="bubscore" aria-live="polite"></div></div>`;
+  } else if (view === 'farm') {   // animal sounds: the farm is the game, a tap makes an animal jump and say its sound; all of them heard = a cheer
+    const fm = farmFor(t, kid);
+    body = `<div class="kidguide">${guideImg(0)}<p>${L('แตะสัตว์ ฟังเสียงร้องกัน!', 'Tap an animal to hear it!')}</p></div>
+<div class="farmfield">${FARM.map((a, n) => `<button class="fa${fm.heard.has(n) ? ' heard' : ''}" style="left:${a[5]}%;top:${a[6]}%" data-a="farmtap" data-v="${n}" aria-label="${esc(L(a[1], a[2]))}"><span>${a[0]}</span></button>`).join('')}</div>`;
+  } else if (view === 'wash') {   // bath time: scrub the mud off with a finger (a canvas over the animal), a clean animal sparkles
+    const w = washFor(t, kid);
+    setTimeout(washMount, 0);
+    body = `<div class="kidguide">${guideImg(1)}<p>${w.clean ? L(`${esc(w.a[1])}สะอาดแล้ว! หอมจัง`, `${esc(w.a[2])} is all clean!`) : L(`${esc(w.a[1])}เลอะโคลน! ถูให้สะอาดหน่อย`, `${esc(w.a[2])} is muddy! Scrub scrub!`)}</p></div>
+<div class="washbox${w.clean ? ' clean' : ''}" id="washbox"><span class="wa">${w.a[0]}</span><div id="washph"></div></div>
+${w.clean ? `<button class="kidbig" data-a="washnext">🛁 ${L('ตัวต่อไป', 'Next friend')}</button>` : ''}`;
+  } else if (view === 'bigsmall') {   // big and small: the same thing in two or three sizes, tap the biggest or the smallest
+    const g2 = kgFor('bigsmall', t, kid), r = g2.r;
+    body = lvBar(t, kid, 'bigsmall') + (g2.done ? `<div class="kidguide pop">${guideImg(0)}<p>${L(`เก่งมาก ${esc(name)}! ผ่าน${lvWord(t, kid, 'bigsmall')}แล้ว 🎉`, `Brilliant, ${esc(name)}! You finished ${lvWord(t, kid, 'bigsmall')} 🎉`)}</p></div>
+${lvWin(t, kid, 'bigsmall', ['kgagain', 'bigsmall'])}`
+      : `<div class="kidguide">${guideImg(0)}<p>${r.big ? L(`${esc(r.thing[1])}ตัวไหนใหญ่ที่สุด?`, `Which ${esc(r.thing[2])} is the biggest?`) : L(`${esc(r.thing[1])}ตัวไหนเล็กที่สุด?`, `Which ${esc(r.thing[2])} is the smallest?`)}</p></div>
+<div class="bsrow">${r.sizes.map((z, n) => `<button data-a="kgpick" data-v="${n}" style="--z:${z}"${g2.got && n === r.right ? ' class="right"' : ''} aria-label="${esc(L(r.thing[1], r.thing[2]))} ${n + 1}"><span>${r.thing[0]}</span></button>`).join('')}</div>`);
   } else if (view === 'shadow') {   // whose shadow? a big black shape, pick the thing it belongs to; right = the shape fills with colour and its name is said
     const g2 = kgFor('shadow', t, kid), r = g2.r;
-    body = g2.done ? `<div class="kidguide pop">${guideImg(0)}<p>${L(`เก่งมาก ${esc(name)}! ทายเงาถูกหมดเลย 🎉`, `Brilliant, ${esc(name)}! You found every shadow 🎉`)}</p></div>
-<button class="kidbig" data-a="kgagain" data-v="shadow">🔁 ${L('เล่นอีกรอบ', 'Play again')}</button>`
+    body = lvBar(t, kid, 'shadow') + (g2.done ? `<div class="kidguide pop">${guideImg(0)}<p>${L(`เก่งมาก ${esc(name)}! ผ่าน${lvWord(t, kid, 'shadow')}แล้ว 🎉`, `Brilliant, ${esc(name)}! You finished ${lvWord(t, kid, 'shadow')} 🎉`)}</p></div>
+${lvWin(t, kid, 'shadow', ['kgagain', 'shadow'])}`
       : `<div class="kidguide">${guideImg(0)}<p>${g2.got ? L(`ใช่แล้ว! ${esc(r.want[1])}!`, `Yes! A ${esc(r.want[2])}!`) : L('นี่เงาของใครเอ่ย?', 'Whose shadow is this?')}</p></div>
 <div class="shbig${g2.got ? ' lit' : ''}" aria-hidden="true"><span>${r.want[0]}</span></div>
-<div class="mema kgch">${r.opts.map((o) => `<button data-a="kgpick" data-v="${esc(o[0])}"${g2.got && o === r.want ? ' class="right"' : ''}><span>${o[0]}</span><b>${esc(L(o[1], o[2]))}</b></button>`).join('')}</div>`;
+<div class="mema kgch" data-n="${r.opts.length}">${r.opts.map((o) => `<button data-a="kgpick" data-v="${esc(o[0])}"${g2.got && o === r.want ? ' class="right"' : ''}><span>${o[0]}</span><b>${esc(L(o[1], o[2]))}</b></button>`).join('')}</div>`);
   } else if (view === 'feed') {   // feed the animal: it asks for one food (the picture in its bubble, the words read aloud); the right one is munched
     const g2 = kgFor('feed', t, kid), r = g2.r;
-    body = g2.done ? `<div class="kidguide pop">${guideImg(1)}<p>${L(`${esc(r.pal[1])}อิ่มแล้ว! ขอบคุณ${esc(name)}นะ 🎉`, `${esc(r.pal[2])} is full! Thank you, ${esc(name)} 🎉`)}</p></div>
+    body = lvBar(t, kid, 'feed') + (g2.done ? `<div class="kidguide pop">${guideImg(1)}<p>${L(`${esc(r.pal[1])}อิ่มแล้ว! ขอบคุณ${esc(name)}นะ 🎉`, `${esc(r.pal[2])} is full! Thank you, ${esc(name)} 🎉`)}</p></div>
 <div class="feedpal full" aria-hidden="true"><span class="pal">${r.pal[0]}</span><div class="fedrow">${g2.fed.join('')}</div></div>
-<button class="kidbig" data-a="kgagain" data-v="feed">🔁 ${L('เล่นอีกรอบ', 'Play again')}</button>`
+${lvWin(t, kid, 'feed', ['kgagain', 'feed'])}`
       : `<div class="kidguide">${guideImg(1)}<p>${L(`${esc(r.pal[1])}หิวจัง! อยากกิน${esc(r.want[1])}`, `${esc(r.pal[2])} is hungry! ${esc(capFirst(r.want[3]))}, please`)}</p></div>
 <div class="feedpal" aria-hidden="true"><span class="want">${r.want[0]}</span><span class="pal" id="kgpal">${r.pal[0]}</span><div class="fedrow">${g2.fed.join('')}</div></div>
-<div class="mema kgch">${r.opts.map((o) => `<button data-a="kgpick" data-v="${esc(o[0])}"><span>${o[0]}</span><b>${esc(L(o[1], o[2]))}</b></button>`).join('')}</div>`;
+<div class="mema kgch" data-n="${r.opts.length}">${r.opts.map((o) => `<button data-a="kgpick" data-v="${esc(o[0])}"><span>${o[0]}</span><b>${esc(L(o[1], o[2]))}</b></button>`).join('')}</div>`);
   } else if (view === 'sort') {   // sort by colour: one thing at a time, tap the basket of its colour; the colour's name is said
     const g2 = kgFor('sort', t, kid), it = g2.items[g2.n];
-    body = g2.done ? `<div class="kidguide pop">${guideImg(1)}<p>${L(`เก่งมาก ${esc(name)}! แยกสีครบแล้ว 🎉`, `Brilliant, ${esc(name)}! Everything is sorted 🎉`)}</p></div>
-<button class="kidbig" data-a="kgagain" data-v="sort">🔁 ${L('เล่นอีกรอบ', 'Play again')}</button>`
+    body = lvBar(t, kid, 'sort') + (g2.done ? `<div class="kidguide pop">${guideImg(1)}<p>${L(`เก่งมาก ${esc(name)}! ผ่าน${lvWord(t, kid, 'sort')}แล้ว 🎉`, `Brilliant, ${esc(name)}! You finished ${lvWord(t, kid, 'sort')} 🎉`)}</p></div>
+${lvWin(t, kid, 'sort', ['kgagain', 'sort'])}`
       : `<div class="kidguide">${guideImg(1)}<p>${L('อันนี้สีอะไร? ใส่ตะกร้าสีเดียวกันเลย', 'What colour is it? Put it in the same colour basket')}</p></div>
-<div class="sortitem" aria-hidden="true"><span>${it.e}</span></div>`;
+<div class="sortitem" aria-hidden="true"><span>${it.e}</span></div>`);
     if (!g2.done) body += `<div class="baskets">${g2.cols.map((c) => `<button class="basket" style="--bc:${c.c}" data-a="kgpick" data-v="${c.k}" aria-label="${esc(L(c.th, c.en))}"><span class="in">${(g2.bin[c.k] || []).join('')}</span><b>${esc(L(c.th, c.en))}</b></button>`).join('')}</div>`;
   } else if (view === 'music') {   // a xylophone (C major, an animal on every bar), three drums, two songs that light the bars to follow
     body = `<div class="kidguide">${guideImg(1)}<p>${L('แตะแท่งสีให้ร้องเพลง!', 'Tap the bars to make music!')}</p></div>
@@ -712,12 +731,12 @@ ${pixPick(t, i, 'hideseek', 'kidnewhide')}
 <div class="hideboard"${hs.src ? ` style="--art:url('${esc(hs.src)}')"` : ''}>${hs.items.map((it, n) => `<button class="hid${it.found ? ' found' : ''}" style="left:${it.x}%;top:${it.y}%;--s:${it.s}px;--r:${it.r}deg" data-a="kidhide" data-v="${n}" aria-label="${esc(it.th)}">${it.e}</button>`).join('')}</div>
 ${want ? `<div class="hidetarget" aria-hidden="true">${want[0]}</div>` : `<button class="kidbig" data-a="kidnewhide">🔁 ${L('เล่นใหม่', 'Play again')}</button>`}`;
   } else if (view === 'jigsaw' && (dayArt(t, i) || kidPhotoPool(t).length)) {   // the day's picture in pieces: tap a piece, tap its place (tap-tap, not drag: a small hand can do it)
-    if (!jg || jg.key !== `${t.id}.${i}.${kid}`) newJigsaw(t, i, kid);
+    if (!jg || jg.key !== `${t.id}.${i}.${kid}` || jg.at !== lvState(t, kid, 'jigsaw').at) newJigsaw(t, i, kid);
     body = `<div class="kidguide">${guideImg(1)}<p>${jg.done ? L('ต่อภาพเสร็จแล้ว! 🎉', 'Picture done! 🎉') : jg.pick === null ? L('ลากชิ้นไปใส่ช่องที่ใช่! (หรือแตะชิ้น แล้วแตะช่อง)', 'Drag a piece to its place! (or tap it, then tap the place)') : L('ใส่ตรงไหนดีนะ?', 'Where does it go?')}</p></div>
-${pixPick(t, i, 'jigsaw', 'kidnewjig')}
+${lvBar(t, kid, 'jigsaw')}${pixPick(t, i, 'jigsaw', 'kidnewjig')}
 <div class="jigboard" style="--art:url('${esc(jg.src)}');--c:${jg.cols};--ar:${jg.ar};--pa:${jg.ar * jg.rows / jg.cols}">${jg.slots.map((p, s) => `<button class="jslot${p !== null ? ' filled' : ''}" data-a="kidjslot" data-v="${s}"${p !== null ? ` style="${jgPos(p, jg)}"` : ''} aria-label="${L('ช่อง', 'Slot')} ${s + 1}"></button>`).join('')}</div>
-<div class="jigtray" style="--art:url('${esc(jg.src)}');--pa:${jg.ar * jg.rows / jg.cols}">${jg.tray.map((p) => `<button class="jpiece${jg.pick === p ? ' pick' : ''}" data-a="kidjpick" data-v="${p}" style="${jgPos(p, jg)}" aria-label="${L('ชิ้น', 'Piece')} ${p + 1}"></button>`).join('')}</div>
-${jg.done ? `<button class="kidbig" data-a="kidnewjig">🔁 ${L('ต่อใหม่', 'Again')}</button>` : ''}`;
+<div class="jigtray${jg.tray.length + jg.slots.filter((x) => x !== null).length > 6 ? ' many' : ''}" style="--art:url('${esc(jg.src)}');--pa:${jg.ar * jg.rows / jg.cols}">${jg.tray.map((p) => `<button class="jpiece${jg.pick === p ? ' pick' : ''}" data-a="kidjpick" data-v="${p}" style="${jgPos(p, jg)}" aria-label="${L('ชิ้น', 'Piece')} ${p + 1}"></button>`).join('')}</div>
+${jg.done ? lvWin(t, kid, 'jigsaw', ['kidnewjig']) : ''}`;
   } else if (view === 'stamp') {
     const mine = ticked(t, `stamp.d${i}`, kid);
     body = `<div class="kidstamp${mine ? ' done' : ''}" id="kidstamp"><div class="ring"><span class="lbl">${esc(pd.stamp || fmtDay(d.date, { day: 'numeric', month: 'short' }))}</span>${artImg(t, i, 'inked')}</div></div>
@@ -762,11 +781,11 @@ ${mapHtml(t, i, [kid].concat((t.theme.children || []).map((c) => c.slug).filter(
       : `<div class="kidguide">${guideImg(0)}<p>${L('ยังไม่มีรูปเลย', 'No photos yet')}</p></div>`;
     body += kidAudio(t, i);
   } else if (view === 'match') {
-    if (!mg || mg.t !== t.id || mg.kid !== kid) newMatch(t, kid);
+    if (!mg || mg.t !== t.id || mg.kid !== kid || mg.at !== lvState(t, kid, 'match').at) newMatch(t, kid);
     body = `<div class="kidguide">${guideImg(1)}<p>${mg.won ? L(`เก่งมาก! จับคู่ครบใน ${mg.moves} ครั้ง 🎉`, `Brilliant! All the pairs in ${mg.moves} goes 🎉`) : L('แตะเปิดการ์ดสองใบ หาคู่ที่เหมือนกัน!', 'Tap two cards — find the pairs!')}</p></div>
-${pixPick(t, i, 'match', 'kidnewmatch')}
-<div class="mgrid">${mg.cards.map((c, n) => `<button class="mcard${c.ph ? ' ph' : ''}${mg.up.includes(n) || mg.done.has(c.k) ? ' open' : ''}${mg.done.has(c.k) ? ' done' : ''}" data-a="kidflip" data-v="${n}" aria-label="${L('การ์ด', 'Card')} ${n + 1}"><span class="back">?</span><span class="face">${c.img ? `<img src="${esc(c.img)}" alt="">` : esc(c.e)}</span></button>`).join('')}</div>
-<button class="kidbig ghost" data-a="kidnewmatch">🔁 ${L('เล่นใหม่', 'Play again')}</button>`;
+${lvBar(t, kid, 'match')}${pixPick(t, i, 'match', 'kidnewmatch')}
+<div class="mgrid" style="--mc:${mg.cards.length <= 6 ? 3 : mg.cards.length <= 16 ? 4 : 5}">${mg.cards.map((c, n) => `<button class="mcard${c.ph ? ' ph' : ''}${mg.up.includes(n) || mg.done.has(c.k) ? ' open' : ''}${mg.done.has(c.k) ? ' done' : ''}" data-a="kidflip" data-v="${n}" aria-label="${L('การ์ด', 'Card')} ${n + 1}"><span class="back">?</span><span class="face">${c.img ? `<img src="${esc(c.img)}" alt="">` : esc(c.e)}</span></button>`).join('')}</div>
+${mg.won ? lvWin(t, kid, 'match', ['kidnewmatch']) : `<button class="kidbig ghost" data-a="kidnewmatch">🔁 ${L('เล่นใหม่', 'Play again')}</button>`}`;
   } else if (view === 'mood' && !pre) {
     const moods = t.moods.length ? t.moods : Object.keys(MOODW), cur = (S.entries.find((e) => e.id === `${t.id}.mood.d${i}.${kid}`) || {}).mood;
     body = `<div class="kidguide">${guideImg(1)}<p>${cur ? L(`วันนี้${esc(name)}รู้สึก ${cur}`, `Today ${esc(name)} feels ${cur}`) : L(`${esc(name)} วันนี้รู้สึกยังไง?`, `${esc(name)}, how do you feel today?`)}</p></div>
@@ -794,7 +813,7 @@ ${pixPick(t, i, 'match', 'kidnewmatch')}
   // kid mode's own bar: big pictures, read aloud on tap (data-say), no grown-up pages
   const kb = [['', '🏠', L('บ้าน', 'Home')], mapModel(t) && ['map', '🗺️', L('แผนที่', 'Map')], [pre ? (canColour(t, i) ? 'colour' : 'draw') : 'stamp', pre ? (canColour(t, i) ? '🎨' : '🖍️') : '🛂', pre ? (canColour(t, i) ? L('ระบายสี', 'Colour') : L('วาดรูป', 'Draw')) : L('พาสปอร์ต', 'Passport')], ['stickers', '⭐', L('สติกเกอร์', 'Stickers')], ['trophies', '🏆', L('รางวัล', 'Trophies')]].filter(Boolean);
   const bar = `<nav class="kidbar">${kb.map(([v, e, lbl]) => `<button data-a="kidnav" data-v="#/kid/${esc(kid)}${v ? '/' + v : ''}" data-say="${esc(lbl)}"${(v || 'home') === view ? ' aria-current="page"' : ''}>${KBAR[v || 'home'] ? `<img class="kbi" src="/art/kidui/bar-${KBAR[v || 'home']}.webp" alt="">` : ''}<span${KBAR[v || 'home'] ? ' class="vh"' : ''}>${e}</span><b>${lbl}</b></button>`).join('')}</nav>`;
-  return `<div class="kidwrap${view === 'home' ? ' home' : ''}${kidEnter ? ' enter' : ''}" style="${style}">${head}${body}${lock}${bar}</div>`;
+  return `<div class="kidwrap${view === 'home' ? ' home' : ''}${KSCENE[view] ? ` scene sc-${KSCENE[view]}` : ''}${kidEnter ? ' enter' : ''}" style="${style}">${head}${body}${lock}${bar}</div>`;
 }
 
 /* ---------- kid mode actions ---------- */
@@ -814,7 +833,7 @@ Object.assign(A, {
     mg.moves++; const [x, y] = mg.up.map((k) => mg.cards[k]);
     if (x.k === y.k) {
       mg.done.add(x.k); mg.up = []; beep('chime'); burst(b, ['⭐', '✨']);
-      if (mg.done.size * 2 === mg.cards.length) { mg.won = true; ls('match_' + mg.kid, (ls('match_' + mg.kid) || 0) + 1); celebrate(); star(mg.kid, 2); setTimeout(() => { render(); sayUi(L('เก่งมาก!', 'Brilliant!')); }, 350); }
+      if (mg.done.size * 2 === mg.cards.length) { mg.won = true; lvDone(trip(mg.t), mg.kid, 'match'); ls('match_' + mg.kid, (ls('match_' + mg.kid) || 0) + 1); celebrate(); star(mg.kid, 2); setTimeout(() => { render(); sayUi(L('เก่งมาก!', 'Brilliant!')); }, 350); }
     } else setTimeout(() => { mg.up = []; $$('.mcard').forEach((el, k) => { if (!mg.done.has(mg.cards[k].k)) el.classList.remove('open'); }); beep('thud'); }, 800);
   },
   kidnewmatch() { beep('pop'); const t = trip(mg.t); newMatch(t, mg.kid); render(); },
@@ -859,7 +878,7 @@ Object.assign(A, {
     const s = +b.dataset.v; if (jg.pick === null || jg.slots[s] !== null) { beep('tap'); return; }
     if (jg.pick === s) {
       jg.slots[s] = s; jg.tray = jg.tray.filter((x) => x !== s); jg.pick = null; beep('pop'); burst(b, ['✨']);
-      if (!jg.tray.length) { jg.done = true; beep('yay'); celebrate(['🖼️', '⭐', '✨']); star(kidNow(), 2); sayUi(L('ต่อภาพเสร็จแล้ว! เก่งมาก', 'Picture done! Brilliant')); }
+      if (!jg.tray.length) { jg.done = true; lvDone(kidTrip(kidNow()), kidNow(), 'jigsaw'); beep('yay'); celebrate(['🖼️', '⭐', '✨']); star(kidNow(), 2); sayUi(L('ต่อภาพเสร็จแล้ว! เก่งมาก', 'Picture done! Brilliant')); }
       render();
     } else { beep('thud'); b.classList.remove('nope'); void b.offsetWidth; b.classList.add('nope'); sayUi(L('ยังไม่ใช่ช่องนี้นะ', 'Not this one — try another')); }
   },
@@ -995,6 +1014,39 @@ document.addEventListener('pointerdown', (e) => {
 // ---- three quiet games (owner's ask, Nov 2026: "ทำเกมส์เพิ่มอีก"): whose shadow, feed the animal, sort by colour. Five or eight easy rounds,
 // a word said on every right answer, a wobble and "try again" on a wrong one, two stars at the end — nothing saved but the stars. The little
 // one gets two choices instead of three. ----
+// ---- levels for the thinking games (owner, Nov 2026: "ทำเกมส์เชาว์ให้มีหลายด่านขึ้น"): five each, a step harder every time; a win opens the
+// next. Only the levels reached are shown — never a row of locks or "3 more to go" (play, not homework). Kept on this phone: ls('lv_<kid>')
+// = {game: {at, best}}. The little one starts at level 1, the others at 2 (what they used to play). ----
+const LV = {
+  shadow: [{ o: 2, r: 4 }, { o: 3, r: 5 }, { o: 4, r: 5 }, { o: 4, r: 6, same: 1 }, { o: 6, r: 6, same: 1 }],   // same: the wrong answers are the same kind (animals with animals)
+  feed: [{ o: 2, r: 4 }, { o: 3, r: 5 }, { o: 4, r: 5 }, { o: 5, r: 6 }, { o: 6, r: 6 }],
+  sort: [{ c: 2, r: 6 }, { c: 3, r: 8 }, { c: 3, r: 10 }, { c: 4, r: 10 }, { c: 4, r: 14 }],
+  bigsmall: [{ z: [1, 0.45], r: 4 }, { z: [1, 0.62, 0.36], r: 6 }, { z: [1, 0.74, 0.52, 0.34], r: 6 }, { z: [1, 0.82, 0.66, 0.5], r: 6 }, { z: [1, 0.86, 0.72, 0.6, 0.48], r: 8 }],
+  jigsaw: [{ c: 2, r: 2 }, { c: 3, r: 2 }, { c: 3, r: 3 }, { c: 4, r: 3 }, { c: 4, r: 4 }],
+  match: [{ p: 4 }, { p: 6 }, { p: 8 }, { p: 10 }, { p: 12 }],   // level 2 = every game as it was before levels (6 pairs, 3×2 pieces, three choices)
+};
+function lvState(t, kid, game) {
+  const st = (ls('lv_' + kid) || {})[game] || {}, start = littleOf(t, kid) ? 1 : 2, n = LV[game].length;
+  const best = Math.min(n, st.best != null ? Math.max(st.best, start - 1) : start - 1), top = Math.min(n, best + 1);
+  return { at: Math.max(1, Math.min(top, st.at || start)), best, top, n };
+}
+const lvOf = (t, kid, game) => LV[game][lvState(t, kid, game).at - 1];
+function lvSet(kid, game, patch) { const all = ls('lv_' + kid) || {}; all[game] = Object.assign({}, all[game], patch); ls('lv_' + kid, all); }
+// a level won: the best moves up, the next one opens
+function lvDone(t, kid, game) { const s = lvState(t, kid, game); lvSet(kid, game, { at: s.at, best: Math.max(s.best, s.at) }); }
+// the chips of the levels reached (a ⭐ on each one won); none when only level 1 is open
+function lvBar(t, kid, game) {
+  const s = lvState(t, kid, game); if (s.top < 2) return '';
+  return `<div class="lvbar" role="group" aria-label="${L('ด่าน', 'Levels')}"><span>${L('ด่าน', 'Level')}</span>${Array.from({ length: s.top }, (_, k) => k + 1).map((n) => `<button class="lvc${n === s.at ? ' on' : ''}" data-a="kglv" data-g="${game}" data-v="${n}" aria-pressed="${n === s.at}" aria-label="${esc(L(`ด่าน ${n}`, `Level ${n}`))}"><b>${n}</b>${n <= s.best ? '<i aria-hidden="true">⭐</i>' : ''}</button>`).join('')}</div>`;
+}
+// after a win: on to the next level (or "every level done"), and the same one again
+function lvWin(t, kid, game, again) {
+  const s = lvState(t, kid, game);
+  return `${s.at < s.n ? `<button class="kidbig" data-a="kglv" data-g="${game}" data-v="${s.at + 1}">⭐ ${L(`ไปด่าน ${s.at + 1}`, `On to level ${s.at + 1}`)} ›</button>` : `<p class="lvall">${L('ผ่านครบทุกด่านแล้ว! เก่งที่สุดเลย 🏆', 'Every level done! You are the best 🏆')}</p>`}
+<button class="kidbig ghost" data-a="${again[0]}"${again[1] ? ` data-v="${again[1]}"` : ''}>🔁 ${L(`เล่นด่าน ${s.at} อีก`, `Level ${s.at} again`)}</button>`;
+}
+const lvWord = (t, kid, game) => L(`ด่าน ${lvState(t, kid, game).at}`, `level ${lvState(t, kid, game).at}`);
+const SHADOW_THINGS = new Set(['🚗', '✈️', '⛵', '🎸', '🍌', '🚲', '🍄']);
 const SHADOWS = [['🐘', 'ช้าง', 'elephant'], ['🦒', 'ยีราฟ', 'giraffe'], ['🐢', 'เต่า', 'turtle'], ['🐰', 'กระต่าย', 'rabbit'], ['🦀', 'ปู', 'crab'], ['🐟', 'ปลา', 'fish'],
   ['🐌', 'หอยทาก', 'snail'], ['🦋', 'ผีเสื้อ', 'butterfly'], ['🐓', 'ไก่', 'chicken'], ['🐳', 'วาฬ', 'whale'], ['🚗', 'รถ', 'car'], ['✈️', 'เครื่องบิน', 'plane'],
   ['⛵', 'เรือใบ', 'sailboat'], ['🎸', 'กีตาร์', 'guitar'], ['🍌', 'กล้วย', 'banana'], ['🦕', 'ไดโนเสาร์', 'dinosaur'], ['🐿️', 'กระรอก', 'squirrel'], ['🦆', 'เป็ด', 'duck'],
@@ -1008,45 +1060,63 @@ const SORT_COLS = [{ k: 'red', th: 'สีแดง', en: 'red', c: '#FF5A5F', e
   { k: 'yellow', th: 'สีเหลือง', en: 'yellow', c: '#FFC62E', e: ['🍌', '🌻', '⭐', '🐥', '🧀', '🍋', '🌽'] },
   { k: 'green', th: 'สีเขียว', en: 'green', c: '#3DBE63', e: ['🥦', '🐸', '🍀', '🐢', '🥒', '🌲', '🍏'] },
   { k: 'blue', th: 'สีฟ้า', en: 'blue', c: '#3E8BFF', e: ['🐳', '💧', '🧢', '🐋', '🫐', '👖', '🧊'] }];
-const KG_ROUNDS = { shadow: 5, feed: 5, sort: 8 };
+
 let kg = null;   // the game in hand: {game, key: trip.kid, n: round, r: this round, got, done, …}
 function kgRound(g) {
-  const many = g.little ? 2 : 3;
-  if (g.game === 'shadow') { const want = g.deck[g.n]; g.r = { want, opts: shuffle([want].concat(shuffle(SHADOWS.filter((x) => x !== want)).slice(0, many - 1))) }; }
+  const many = g.lv.o || 2;
+  if (g.game === 'shadow') {
+    const want = g.deck[g.n], kind = (x) => SHADOW_THINGS.has(x[0]), pool = SHADOWS.filter((x) => x !== want && (!g.lv.same || kind(x) === kind(want)));
+    g.r = { want, opts: shuffle([want].concat(shuffle(pool).slice(0, many - 1))) };
+  }
+  else if (g.game === 'bigsmall') {   // sizes far enough apart for a toddler's eye; big and small asked in turn, starting at random
+    const zs = shuffle(g.lv.z), big = g.n % 2 === g.first;
+    g.r = { thing: g.deck[g.n], sizes: zs, big, right: zs.indexOf(big ? Math.max(...zs) : Math.min(...zs)) };
+  }
   else if (g.game === 'feed') { const want = g.deck[g.n]; g.r = { pal: g.pal, want, opts: shuffle([want].concat(shuffle(FOODS.filter((x) => x !== want)).slice(0, many - 1))) }; }
   g.got = false;
 }
 function kgNew(game, t, kid) {
-  const g = { game, key: `${t.id}.${kid}`, tid: t.id, kid, n: 0, little: littleOf(t, kid), done: false, got: false };
-  if (game === 'shadow') g.deck = shuffle(SHADOWS).slice(0, KG_ROUNDS.shadow);
-  if (game === 'feed') { g.pal = FEED_PALS[Math.floor(Math.random() * FEED_PALS.length)]; g.deck = shuffle(FOODS).slice(0, KG_ROUNDS.feed); g.fed = []; }
+  const g = { game, key: `${t.id}.${kid}`, tid: t.id, kid, n: 0, lv: lvOf(t, kid, game), at: lvState(t, kid, game).at, done: false, got: false };
+  if (game === 'shadow') g.deck = shuffle(SHADOWS).slice(0, g.lv.r);
+  if (game === 'bigsmall') { g.deck = shuffle(SHADOWS.filter((x) => !/[✈️⛵🎸🚲]/u.test(x[0]))).slice(0, g.lv.r); g.first = Math.random() < 0.5 ? 0 : 1; }
+  if (game === 'feed') { g.pal = FEED_PALS[Math.floor(Math.random() * FEED_PALS.length)]; g.deck = shuffle(FOODS).slice(0, g.lv.r); g.fed = []; }
   if (game === 'sort') {
-    g.cols = shuffle(SORT_COLS).slice(0, g.little ? 2 : 3); g.bin = {};
+    g.cols = shuffle(SORT_COLS).slice(0, g.lv.c); g.bin = {};
     const pool = []; g.cols.forEach((c) => shuffle(c.e).forEach((e) => pool.push({ e, k: c.k })));
     // every colour at least twice, then the rest at random, never the same thing twice
     const firsts = g.cols.flatMap((c) => pool.filter((x) => x.k === c.k).slice(0, 2)), rest = shuffle(pool.filter((x) => !firsts.includes(x)));
-    g.items = shuffle(firsts.concat(rest).slice(0, KG_ROUNDS.sort));
+    g.items = shuffle(firsts.concat(rest).slice(0, g.lv.r));
   }
   kgRound(g); return g;
 }
-const kgFor = (game, t, kid) => { if (!kg || kg.game !== game || kg.key !== `${t.id}.${kid}`) kg = kgNew(game, t, kid); return kg; };
-function kgWin(b, chars) { kg.done = true; beep('fanfare'); celebrate(chars); star(kg.kid, 2); }
+const kgFor = (game, t, kid) => { if (!kg || kg.game !== game || kg.key !== `${t.id}.${kid}` || kg.at !== lvState(t, kid, game).at) kg = kgNew(game, t, kid); return kg; };
+function kgWin(b, chars) { kg.done = true; lvDone(trip(kg.tid), kg.kid, kg.game); beep('fanfare'); celebrate(chars); star(kg.kid, 2); }
 const kgNope = (b, line) => { beep('tap'); b.classList.remove('nope'); void b.offsetWidth; b.classList.add('nope'); sayUi(line); };
 Object.assign(A, {
   kgagain(b) { beep('pop'); kg = kgNew(b.dataset.v, trip(kg.tid), kg.kid); render(); },
+  kglv(b) {   // pick a level (a chip, or "on to level n" after a win): the game starts over at it
+    const kid = kidNow(), t = kidTrip(kid), game = b.dataset.g, n = +b.dataset.v; if (!t || !LV[game]) return;
+    beep('sparkle'); lvSet(kid, game, { at: n });
+    if (game === 'jigsaw') jg = null; else if (game === 'match') mg = null; else kg = kgNew(game, t, kid);
+    render(); sayUi(L(`ด่าน ${n}!`, `Level ${n}!`));
+  },
   kgpick(b) {
     const g = kg; if (!g || g.done || g.got) return;
     const v = b.dataset.v;
     if (g.game === 'shadow') {
       if (v !== g.r.want[0]) return kgNope(b, L('อืม… ไม่ใช่ ลองอีกทีนะ', 'Hmm… not that one. Try again!'));
       g.got = true; beep('chime'); burst(b, ['⭐', '✨']); sayUi(L(`ใช่แล้ว! ${g.r.want[1]}!`, `Yes! A ${g.r.want[2]}!`)); render();
-      setTimeout(() => { if (kg !== g) return; g.n++; if (g.n >= KG_ROUNDS.shadow) kgWin(b, ['🌟', g.r.want[0], '✨']); else { kgRound(g); sayUi(L('อันนี้เงาของใครเอ่ย?', 'And whose shadow is this?')); } safeRender(); }, 1300);
+      setTimeout(() => { if (kg !== g) return; g.n++; if (g.n >= g.lv.r) kgWin(b, ['🌟', g.r.want[0], '✨']); else { kgRound(g); sayUi(L('อันนี้เงาของใครเอ่ย?', 'And whose shadow is this?')); } safeRender(); }, 1300);
     } else if (g.game === 'feed') {
       if (v !== g.r.want[0]) return kgNope(b, L(`ไม่เอาอันนี้ อยากกิน${g.r.want[1]}`, `Not that one — ${g.r.want[3]}, please!`));
       g.got = true; beep('munch'); burst(b, ['💛', '😋']); g.fed.push(g.r.want[0]);
       const pal = $('#kgpal'); if (pal) { pal.classList.remove('chomp'); void pal.offsetWidth; pal.classList.add('chomp'); }
       sayUi(L(`ง่ำ ง่ำ! อร่อยจัง`, 'Yum yum! Delicious!'));
-      setTimeout(() => { if (kg !== g) return; g.n++; if (g.n >= KG_ROUNDS.feed) { kgWin(b, [g.pal[0], '😋', '💛']); sayUi(L(`${g.pal[1]}อิ่มแล้ว! ขอบคุณนะ`, `${g.pal[2]} is full! Thank you!`)); } else { kgRound(g); sayUi(L(`อยากกิน${g.r.want[1]}`, `${capFirst(g.r.want[3])}, please!`)); } safeRender(); }, 1100);
+      setTimeout(() => { if (kg !== g) return; g.n++; if (g.n >= g.lv.r) { kgWin(b, [g.pal[0], '😋', '💛']); sayUi(L(`${g.pal[1]}อิ่มแล้ว! ขอบคุณนะ`, `${g.pal[2]} is full! Thank you!`)); } else { kgRound(g); sayUi(L(`อยากกิน${g.r.want[1]}`, `${capFirst(g.r.want[3])}, please!`)); } safeRender(); }, 1100);
+    } else if (g.game === 'bigsmall') {
+      if (+v !== g.r.right) return kgNope(b, g.r.big ? L('ยังไม่ใหญ่ที่สุดนะ ลองอีกที', 'Not the biggest — try again!') : L('ยังไม่เล็กที่สุดนะ ลองอีกที', 'Not the smallest — try again!'));
+      g.got = true; beep(g.r.big ? 'boom' : 'pop'); burst(b, ['⭐', '✨']); sayUi(g.r.big ? L('ใหญ่ที่สุด! เก่งมาก', 'The biggest! Well done') : L('เล็กที่สุด! เก่งมาก', 'The smallest! Well done')); render();
+      setTimeout(() => { if (kg !== g) return; g.n++; if (g.n >= g.lv.r) kgWin(b, ['🐘', '🐭', '⭐']); else { kgRound(g); sayUi(g.r.big ? L('ตัวไหนใหญ่ที่สุด?', 'Which is the biggest?') : L('ตัวไหนเล็กที่สุด?', 'Which is the smallest?')); } safeRender(); }, 1200);
     } else if (g.game === 'sort') {
       const it = g.items[g.n], col = SORT_COLS.find((c) => c.k === it.k);
       if (v !== it.k) return kgNope(b, L(`อันนี้${col.th}นะ`, `This one is ${col.en}!`));
@@ -1055,6 +1125,61 @@ Object.assign(A, {
       safeRender();
     }
   },
+});
+// ---- animal sounds on the farm: [emoji, th, en, the sound in Thai, in English, x %, y %] — placed by hand so none overlap ----
+const FARM = [['🐮', 'วัว', 'cow', 'มอ มอ', 'moo moo', 14, 54], ['🐷', 'หมู', 'pig', 'อู๊ด อู๊ด', 'oink oink', 40, 54], ['🐔', 'ไก่', 'hen', 'กุ๊ก กุ๊ก', 'cluck cluck', 68, 54],
+  ['🐶', 'หมา', 'dog', 'โฮ่ง โฮ่ง', 'woof woof', 18, 80], ['🐱', 'แมว', 'cat', 'เหมียว เหมียว', 'meow', 50, 80], ['🦆', 'เป็ด', 'duck', 'ก้าบ ก้าบ', 'quack quack', 82, 80],
+  ['🐑', 'แกะ', 'sheep', 'แบ๊ แบ๊', 'baa baa', 26, 28], ['🐴', 'ม้า', 'horse', 'ฮี้ ฮี้', 'neigh', 58, 28], ['🐸', 'กบ', 'frog', 'อ๊บ อ๊บ', 'ribbit', 86, 28]];
+let farm = null;
+const farmFor = (t, kid) => { if (!farm || farm.key !== `${t.id}.${kid}`) farm = { key: `${t.id}.${kid}`, kid, heard: new Set(), done: false }; return farm; };
+// ---- bath time: the mud is a canvas over the animal; a finger rubs it away (destination-out), bubbles and a squeak while scrubbing ----
+const WASH = [['🐶', 'น้องหมา', 'Puppy'], ['🐷', 'น้องหมู', 'Piggy'], ['🐘', 'น้องช้าง', 'Ellie'], ['🐰', 'น้องกระต่าย', 'Bunny'], ['🐻', 'น้องหมี', 'Teddy'], ['🦛', 'น้องฮิปโป', 'Hippo'], ['🐱', 'น้องแมว', 'Kitty'], ['🐼', 'น้องแพนด้า', 'Panda']];
+let wash = null;
+function washFor(t, kid) {
+  if (!wash || wash.key !== `${t.id}.${kid}`) wash = { key: `${t.id}.${kid}`, kid, order: shuffle(WASH), n: 0, clean: false, cv: null };
+  wash.a = wash.order[wash.n % wash.order.length]; return wash;
+}
+function washMount() {
+  const ph = $('#washph'), box = $('#washbox'); if (!ph || !box || !wash) return;
+  if (wash.clean) { ph.remove(); return; }
+  // the same canvas comes back over a redraw, so a page refresh never puts the mud back
+  if (wash.cv && wash.cv.dataset.n === String(wash.n)) { ph.replaceWith(wash.cv); return; }
+  const w = box.clientWidth, h = box.clientHeight, cv = document.createElement('canvas');
+  cv.width = w; cv.height = h; cv.className = 'mud'; cv.dataset.n = String(wash.n); cv.setAttribute('aria-label', L('ถูโคลนออก', 'Rub the mud off'));
+  const x = cv.getContext('2d'), cols = ['#8B5E34', '#7A4E2A', '#9C6B3F', '#6E4524'];
+  for (let i = 0; i < 46; i++) { x.fillStyle = cols[i % cols.length]; x.beginPath(); x.arc(w * (0.18 + Math.random() * 0.64), h * (0.15 + Math.random() * 0.7), Math.min(w, h) * (0.07 + Math.random() * 0.09), 0, Math.PI * 2); x.fill(); }
+  wash.cv = cv; wash.moves = 0; wash.mud0 = mudLeft(cv); ph.replaceWith(cv);
+}
+// how much mud is left: the share of opaque pixels on a coarse grid
+function mudLeft(cv) {
+  try { const d = cv.getContext('2d').getImageData(0, 0, cv.width, cv.height).data, step = 12; let on = 0, all = 0;
+    for (let y = 0; y < cv.height; y += step) for (let x = 0; x < cv.width; x += step) { all++; if (d[(y * cv.width + x) * 4 + 3] > 40) on++; }
+    return all ? on / all : 0; } catch (_) { return 0; }
+}
+let washDown = false, washLast = 0;
+function washRub(e) {
+  const cv = e.target; if (!wash || wash.clean || cv !== wash.cv) return;
+  const r = cv.getBoundingClientRect(), x = (e.clientX - r.left) * cv.width / r.width, y = (e.clientY - r.top) * cv.height / r.height, c = cv.getContext('2d');
+  c.globalCompositeOperation = 'destination-out'; c.beginPath(); c.arc(x, y, Math.max(26, cv.width * 0.08), 0, Math.PI * 2); c.fill(); c.globalCompositeOperation = 'source-over';
+  const now = Date.now(); if (now - washLast > 260) { washLast = now; beep('bubble'); const box = $('#washbox'); if (box) { const s = document.createElement('i'); s.className = 'suds'; s.textContent = '🫧'; s.style.left = `${(e.clientX - box.getBoundingClientRect().left)}px`; s.style.top = `${(e.clientY - box.getBoundingClientRect().top)}px`; box.appendChild(s); setTimeout(() => s.remove(), 900); } }
+  if (++wash.moves % 8 === 0 && mudLeft(cv) < (wash.mud0 || 1) * 0.12) {   // nearly all of it gone: the rest washes off by itself
+    wash.clean = true; c.clearRect(0, 0, cv.width, cv.height); beep('sparkle'); celebrate(['🫧', '✨', wash.a[0]]); star(wash.kid, 1);
+    sayUi(L(`${wash.a[1]}สะอาดแล้ว! หอมจัง`, `${wash.a[2]} is all clean!`)); safeRender();
+  }
+}
+document.addEventListener('pointerdown', (e) => { if (e.target.classList && e.target.classList.contains('mud')) { washDown = true; e.preventDefault(); washRub(e); } });
+document.addEventListener('pointermove', (e) => { if (washDown && e.target.classList && e.target.classList.contains('mud')) washRub(e); });
+document.addEventListener('pointerup', () => { washDown = false; });
+document.addEventListener('pointercancel', () => { washDown = false; });
+Object.assign(A, {
+  farmtap(b) {
+    const n = +b.dataset.v, a = FARM[n]; if (!a || !farm) return;
+    beep('boing'); b.classList.remove('jump'); void b.offsetWidth; b.classList.add('jump', 'heard'); burst(b, ['🎵', '✨']);
+    sayUi(L(`${a[1]}ร้อง ${a[3]}`, `The ${a[2]} says ${a[4]}`));
+    farm.heard.add(n);
+    if (!farm.done && farm.heard.size >= FARM.length) { farm.done = true; star(farm.kid, 1); setTimeout(() => { celebrate(['🐮', '🐷', '🐔']); sayUi(L('ฟังครบทุกตัวแล้ว เก่งมาก!', 'You heard every animal! Well done!')); }, 1400); }
+  },
+  washnext() { beep('pop'); if (!wash) return; wash.n++; wash.clean = false; wash.cv = null; wash.a = wash.order[wash.n % wash.order.length]; render(); sayUi(L(`${wash.a[1]}เลอะโคลน! ถูให้สะอาดหน่อย`, `${wash.a[2]} is muddy! Scrub scrub!`)); },
 });
 // ---- I spy: twelve things scattered without overlap; five of them are the targets, named one at a time ----
 const HIDE_POOL = [['🐥', 'ลูกเจี๊ยบ', 'chick'], ['🐸', 'กบ', 'frog'], ['🦋', 'ผีเสื้อ', 'butterfly'], ['🐢', 'เต่า', 'turtle'], ['🍓', 'สตรอว์เบอร์รี', 'strawberry'], ['⭐', 'ดาว', 'star'],
@@ -1102,8 +1227,8 @@ document.addEventListener('pointercancel', jdragDone);
 document.addEventListener('click', (e) => { if (Date.now() - jdragEnd < 400 && e.target.closest && e.target.closest('.jpiece, .jslot')) { e.stopPropagation(); e.preventDefault(); } }, true);
 // ---- the jigsaw: the day's picture cut into 2×2 (the little one) or 3×2; a piece shows its crop through background-position ----
 function newJigsaw(t, i, kid) {
-  const cols = littleOf(t, kid) ? 2 : 3, rows = 2, n = cols * rows, photo = pixMode(t, i, 'jigsaw') === 'photo', src = (photo && randPhoto(t)) || dayArt(t, i);
-  jg = { key: `${t.id}.${i}.${kid}`, cols, rows, src, ar: 1, slots: Array(n).fill(null), tray: Array.from({ length: n }, (_, k) => k).sort(() => Math.random() - 0.5), pick: null, done: false };
+  const lv = lvOf(t, kid, 'jigsaw'), cols = lv.c, rows = lv.r, n = cols * rows, photo = pixMode(t, i, 'jigsaw') === 'photo', src = (photo && randPhoto(t)) || dayArt(t, i);
+  jg = { key: `${t.id}.${i}.${kid}`, at: lvState(t, kid, 'jigsaw').at, cols, rows, src, ar: 1, slots: Array(n).fill(null), tray: Array.from({ length: n }, (_, k) => k).sort(() => Math.random() - 0.5), pick: null, done: false };
   if (photo && src) { const im = new Image(); im.onload = () => { if (jg && jg.src === src) { jg.ar = Math.min(1.5, Math.max(0.7, im.naturalWidth / im.naturalHeight)); render(); } }; im.src = src; }   // the board takes the photo's shape once known
 }
 const jgPos = (p, g) => `background-image:var(--art);background-size:${g.cols * 100}% ${g.rows * 100}%;background-position:${g.cols > 1 ? (p % g.cols) / (g.cols - 1) * 100 : 0}% ${g.rows > 1 ? Math.floor(p / g.cols) / (g.rows - 1) * 100 : 0}%`;
