@@ -567,7 +567,7 @@ const T = 'hk-macau-2026';
   ok(/(Day 2 of 6|วันที่ 2)/.test(await page.textContent('.tile.today')), 'HK on day 2: the menu’s Today tile names day 2');
   await page.goto(`${BASE}/#/passport/mimi/${T}`); await page.waitForSelector('.kidgo');
   await page.click('.kidgo'); await page.waitForSelector('.kidwrap .kidtiles');
-  ok(await page.locator('.kidtiles button').count() === 18 && await page.locator('.kidtiles button[data-v$="/map"], .kidtiles button[data-v$="/stickers"], .kidtiles button[data-v$="/trophies"]').count() === 0 && await page.locator('.kidbar button[data-v$="/map"]').count() === 1 && await page.locator('.kidtiles button[data-v$="/animals"]').count() === 1 && await page.locator('.kidtiles button[data-v$="/quiz"]').count() === 1 && await page.locator('nav.bar').count() === 0, 'kid mode on the trip: 18 big tiles (colour, draw, find, stamp, say, quiz, photos, match, shadows, feed me, colours, mood, animals & friends, count… — map, stickers and trophies only on the kid bar), no tab bar');
+  ok(await page.locator('.kidtiles button').count() === 21 && await page.locator('.kidtiles button[data-v$="/map"], .kidtiles button[data-v$="/stickers"], .kidtiles button[data-v$="/trophies"]').count() === 0 && await page.locator('.kidbar button[data-v$="/map"]').count() === 1 && await page.locator('.kidtiles button[data-v$="/animals"]').count() === 1 && await page.locator('.kidtiles button[data-v$="/quiz"]').count() === 1 && await page.locator('nav.bar').count() === 0, 'kid mode on the trip: 21 big tiles (colour, draw, find, stamp, say, quiz, photos, match, shadows, feed me, colours, animal sounds, bath time, big & small, mood, animals & friends, count… — map, stickers and trophies only on the kid bar), no tab bar');
   ok(await page.evaluate(() => { const mm = window.matchMedia; window.matchMedia = () => ({ matches: false }); celebrate(); window.matchMedia = mm; const n = document.querySelectorAll('.confetti').length; return n === 36 && [...document.querySelectorAll('.confetti')].every((c) => getComputedStyle(c).position === 'fixed'); }), 'kid mode: the big celebration drops 36 pieces of confetti over the whole screen (stamp, surprise box, a finished game)');
   await page.goto(`${BASE}/#/kid/mimi/bubbles`); await page.waitForSelector('#bubblefield'); await page.waitForSelector('.bub');
   await page.locator('.bub').first().dispatchEvent('pointerdown');
@@ -588,20 +588,44 @@ const T = 'hk-macau-2026';
     await new Promise((r) => setTimeout(r, 1000)); const n = f.querySelectorAll('.bub').length; clearInterval(bubT); bubT = 0; bubN = 0; f.remove(); return n; });
   ok(lateBub > 0, `bubbles: a field drawn late (after the timer's first tick) still fills with bubbles (${lateBub})`);
   // three quiet games (owner, Nov 2026): a wrong tap wobbles and keeps the round, the right ones play every round through to a win and two stars
-  for (const [gm, sel] of [['shadow', '.shbig'], ['feed', '.feedpal'], ['sort', '.baskets']]) {
+  for (const [gm, sel] of [['shadow', '.shbig'], ['feed', '.feedpal'], ['sort', '.baskets'], ['bigsmall', '.bsrow']]) {
     await page.goto(`${BASE}/#/kid/mimi/${gm}`); await page.waitForSelector(sel);
     const st0 = await page.evaluate(() => stars('mimi'));
-    const wrongV = await page.evaluate(() => { const right = kg.game === 'sort' ? kg.items[kg.n].k : kg.r.want[0]; const b = [...document.querySelectorAll('[data-a="kgpick"]')].find((x) => x.dataset.v !== right); return b && b.dataset.v; });
+    const wrongV = await page.evaluate(() => { const right = kg.game === 'sort' ? kg.items[kg.n].k : kg.game === 'bigsmall' ? String(kg.r.right) : kg.r.want[0]; const b = [...document.querySelectorAll('[data-a="kgpick"]')].find((x) => x.dataset.v !== right); return b && b.dataset.v; });
     await page.click(`[data-a="kgpick"][data-v="${wrongV}"]`);
     const kept = await page.evaluate(() => kg.n === 0 && !kg.got);
     for (let k = 0; k < 40 && !(await page.evaluate(() => kg.done)); k++) {
-      const right = await page.evaluate(() => (kg.got ? null : kg.game === 'sort' ? kg.items[kg.n].k : kg.r.want[0]));
+      const right = await page.evaluate(() => (kg.got ? null : kg.game === 'sort' ? kg.items[kg.n].k : kg.game === 'bigsmall' ? String(kg.r.right) : kg.r.want[0]));
       if (right) await page.click(`[data-a="kgpick"][data-v="${right}"]`);
       await page.waitForTimeout(right && gm === 'sort' ? 60 : 250);
     }
-    const end = await page.evaluate(() => ({ done: kg.done, again: !!document.querySelector('[data-a="kgagain"]'), gained: stars('mimi') }));
+    const end = await page.evaluate(() => ({ done: kg.done, again: !!document.querySelector('[data-a="kgagain"]') && !!document.querySelector('[data-a="kglv"].kidbig'), gained: stars('mimi') }));
     ok(kept && end.done && end.again && end.gained - st0 === 2, `kid game ${gm}: a wrong tap keeps the round, the right ones finish it with two stars and "play again" (${JSON.stringify({ kept, ...end, st0 })})`);
+    if (gm === 'shadow') {   // levels (owner, Nov 2026: "ทำเกมส์เชาว์ให้มีหลายด่านขึ้น"): Mimi starts at level 2; winning it offers level 3, which asks with four pictures
+      const nextBtn = page.locator('[data-a="kglv"][data-v="3"].kidbig');
+      const hadNext = await nextBtn.count() === 1; if (hadNext) await nextBtn.click();
+      await page.waitForSelector('.lvbar');
+      const lv = await page.evaluate(() => ({ at: kg.at, opts: kg.r.opts.length, chips: document.querySelectorAll('.lvbar .lvc').length, on: document.querySelector('.lvc.on').dataset.v, won: document.querySelectorAll('.lvc i').length }));
+      ok(hadNext && lv.at === 3 && lv.opts === 4 && lv.chips === 3 && lv.on === '3' && lv.won === 2, `kid levels: a won level opens the next (level 3: four pictures; three chips, a star on the two won) (${JSON.stringify({ hadNext, ...lv })})`);
+    }
   }
+  // animal sounds (owner, Nov 2026: more games + scenes): every animal taps where it is drawn (a pressed kid button scales — the centring must not
+  // live in transform), and all of them heard = one star; bath time: scrubbing the mud canvas clean shows "next friend"
+  await page.goto(`${BASE}/#/kid/mimi/farm`); await page.waitForSelector('.farmfield .fa');
+  const fs0 = await page.evaluate(() => stars('mimi'));
+  for (let n = 0; n < 9; n++) await page.click(`.farmfield .fa[data-v="${n}"]`);
+  await page.waitForFunction(() => farm && farm.done, null, { timeout: 4000 }).catch(() => {});
+  const farmR = await page.evaluate(() => ({ heard: farm.heard.size, done: farm.done, scene: document.querySelector('.kidwrap').classList.contains('sc-farm') }));
+  ok(farmR.heard === 9 && farmR.done && farmR.scene && await page.evaluate((s0) => stars('mimi') - s0, fs0) === 1, `kid game farm: every animal answers a tap on the farm scene, all nine heard = one star (${JSON.stringify(farmR)})`);
+  await page.goto(`${BASE}/#/kid/mimi/wash`); await page.waitForSelector('#washbox canvas.mud');
+  const mudBox = await page.locator('#washbox canvas.mud').boundingBox();
+  for (let y = mudBox.y + 10; y < mudBox.y + mudBox.height && !(await page.evaluate(() => wash.clean)); y += 22) { await page.mouse.move(mudBox.x + 4, y); await page.mouse.down(); for (let x = mudBox.x + 4; x < mudBox.x + mudBox.width; x += 28) await page.mouse.move(x, y); await page.mouse.up(); }
+  await page.waitForSelector('[data-a="washnext"]', { timeout: 3000 }).catch(() => {});
+  ok(await page.evaluate(() => wash.clean) && await page.locator('[data-a="washnext"]').count() === 1 && await page.locator('#washbox canvas.mud').count() === 0, 'kid game wash: scrubbing the mud canvas cleans the animal and offers the next friend');
+  // every game with a scene draws it (the sky and the strip are CSS backgrounds: no file to fetch, works with no signal)
+  const scenes = {};
+  for (const v of ['bubbles', 'music', 'shadow', 'feed', 'sort', 'bigsmall', 'wash']) { await page.goto(`${BASE}/#/kid/mimi/${v}`); await page.waitForSelector('.kidwrap'); scenes[v] = await page.evaluate(() => { const w = document.querySelector('.kidwrap'); return [...w.classList].find((c) => c.startsWith('sc-')) + ':' + /data:image\/svg/.test(getComputedStyle(w).backgroundImage); }); }
+  ok(Object.values(scenes).every((x) => /^sc-\w+:true$/.test(x)) && (await page.evaluate(() => document.documentElement.scrollWidth - document.documentElement.clientWidth)) <= 1, `kid scenes: each game has its own backdrop (${JSON.stringify(scenes)})`);
   await page.goto(`${BASE}/#/kid/mimi/music`); await page.waitForSelector('.xylo');
   await page.evaluate(() => { navigator.audioSession = { type: 'auto' }; });   // Safari 16.4+ has it; Chromium does not
   await page.click('.xylo button[data-v="4"]');
