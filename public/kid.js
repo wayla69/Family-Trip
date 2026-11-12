@@ -921,21 +921,38 @@ const BUB_E = ['🐟', '🐙', '⭐', '🦋', '🌼', '🍓', '🎈', '🐥', '�
 function startBubbles() {
   if (bubT && $('#bubblefield')) { const sc = $('#bubscore'); if (sc && bubN) sc.textContent = bubN; return; }   // already running: the page was only redrawn
   clearInterval(bubT); bubN = 0;
+  let miss = 0;
   const spawn = () => {
-    const f = $('#bubblefield'); if (!f) { clearInterval(bubT); bubT = 0; return; }   // left the game (back gesture, browser back…): forget the timer, or the next visit thinks it still runs and never blows a bubble
+    const f = $('#bubblefield');
+    // left the game (back gesture, browser back…): forget the timer, or the next visit thinks it still runs and never blows a bubble —
+    // but only after a few empty ticks: a page drawn a moment late (iPad, Nov 2026) used to stop the bubbles before the first one
+    if (!f) { if (++miss > 4) { clearInterval(bubT); bubT = 0; } return; }
+    miss = 0;
     if (f.querySelectorAll('.bub').length > 9) return;
     const b = document.createElement('button'), sz = 52 + Math.random() * 64;
+    const t = (matchMedia('(prefers-reduced-motion: reduce)').matches ? 12 : 4.5 + Math.random() * 3) * 1000;
     b.className = 'bub'; b.setAttribute('aria-label', L('ฟอง', 'Bubble'));
-    b.style.cssText = `left:${4 + Math.random() * 80}%;width:${sz}px;height:${sz}px;--t:${4.5 + Math.random() * 3}s;--hue:${Math.floor(Math.random() * 360)}`;
+    b.style.cssText = `left:${4 + Math.random() * 80}%;bottom:${-Math.round(sz) - 4}px;width:${sz}px;height:${sz}px;--t:${t / 1000}s;--hue:${Math.floor(Math.random() * 360)}`;
     if (Math.random() < 0.45) b.textContent = BUB_E[Math.floor(Math.random() * BUB_E.length)];
-    b.addEventListener('animationend', () => b.remove());
     f.appendChild(b);
+    // the rise in px from the field's own height, by the Web Animations API: iPad Safari left the CSS keyframes (a var() inside the
+    // animation shorthand, vh inside the transform) unplayed, so every bubble stayed under the field and none ever came up
+    if (b.animate) {
+      b.classList.add('wa');
+      const up = f.clientHeight + sz + 140, a = b.animate([{ transform: 'translateY(0) rotate(0deg)' }, { transform: `translateY(${-up}px) rotate(12deg)` }], { duration: t, easing: 'linear', fill: 'forwards' });
+      a.onfinish = () => b.remove();
+    } else b.addEventListener('animationend', () => b.remove());
   };
   spawn(); bubT = setInterval(spawn, 700);
 }
 document.addEventListener('pointerdown', (e) => {
   const b = e.target.closest && e.target.closest('.bub'); if (!b || b.classList.contains('pop')) return;
   e.preventDefault();
+  if (b.classList.contains('wa') && b.getAnimations) {   // pop where the finger caught it: freeze the rise, then grow and fade from there
+    const cur = getComputedStyle(b).transform, at = cur && cur !== 'none' ? cur : '';
+    b.getAnimations().forEach((a) => a.cancel()); b.style.transform = at;
+    b.animate([{ transform: at || 'none', opacity: 1 }, { transform: `${at} scale(1.6)`, opacity: 0 }], { duration: 220, easing: 'ease-out', fill: 'forwards' });
+  }
   b.classList.add('pop'); beep('bubble'); burst(b, [b.textContent || '💧', '✨']); setTimeout(() => b.remove(), 220);
   bubN++; const sc = $('#bubscore'); if (sc) sc.textContent = bubN;
   if (bubN % 15 === 0) { celebrate(['🫧', '⭐', '✨']); beep('yay'); star($('#bubblefield').dataset.k, 1); sayUi(L(`เย้! ${bubN} ฟองแล้ว!`, `Yay! ${bubN} bubbles!`)); }
