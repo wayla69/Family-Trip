@@ -118,6 +118,11 @@ ok((await post('/api/b/push/sub', sub)).ok && (await post('/api/b/push/unsub', {
   ok(await page.evaluate(() => parseFloat(getComputedStyle(document.querySelector('.cnt span')).fontSize) >= 80), 'iPad: the things to count are big on a tablet');
   ok(await page.evaluate(() => { const f = document.querySelector('.countfield').getBoundingClientRect(), c = [...document.querySelectorAll('.cnt')].map((x) => x.getBoundingClientRect()), last = c[c.length - 1];
     const row = c.filter((x) => Math.abs(x.top - last.top) < 2); return Math.abs((row[0].left - f.left) - (f.right - row[row.length - 1].right)) < 3; }), 'iPad: a short last row of things to count sits in the middle (not against the left)');
+  await page.goto(BASE + '/#/kid/mimi/bubbles'); await page.waitForSelector('.bub');
+  await page.waitForFunction(() => document.querySelectorAll('.bub').length >= 3);
+  const bubs = await page.evaluate(() => { const f = document.querySelector('#bubblefield').getBoundingClientRect(); return [...document.querySelectorAll('.bub')].map((b) => { const r = b.getBoundingClientRect(); return { w: r.width, inside: r.left >= f.left - 1 && r.right <= f.right + 1 }; }); });
+  ok(bubs.every((b) => b.w >= 52 * 1.6 && b.inside), `iPad: the bubbles are big on a tablet and never cut by the field's sides (${bubs.map((b) => Math.round(b.w)).join(', ')})`);
+  await page.evaluate(() => { clearInterval(bubT); bubT = 0; });
   await page.goto(BASE + '/#/'); await page.waitForSelector('.shelf');
   ok(await page.evaluate(() => isIOS()) && await ask.count() === 1 && /iPad/.test(await ask.textContent()) && await ask.locator('[data-a="remind"]').count() === 0, 'iPad in Safari: recognised as Apple, told to add it to the Home Screen (no button that cannot work)');
   await browser.close(); }
