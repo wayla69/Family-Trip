@@ -567,7 +567,7 @@ const T = 'hk-macau-2026';
   ok(/(Day 2 of 6|วันที่ 2)/.test(await page.textContent('.tile.today')), 'HK on day 2: the menu’s Today tile names day 2');
   await page.goto(`${BASE}/#/passport/mimi/${T}`); await page.waitForSelector('.kidgo');
   await page.click('.kidgo'); await page.waitForSelector('.kidwrap .kidtiles');
-  ok(await page.locator('.kidtiles button').count() === 15 && await page.locator('.kidtiles button[data-v$="/map"], .kidtiles button[data-v$="/stickers"], .kidtiles button[data-v$="/trophies"]').count() === 0 && await page.locator('.kidbar button[data-v$="/map"]').count() === 1 && await page.locator('.kidtiles button[data-v$="/animals"]').count() === 1 && await page.locator('.kidtiles button[data-v$="/quiz"]').count() === 1 && await page.locator('nav.bar').count() === 0, 'kid mode on the trip: 11 big tiles (colour, draw, find, stamp, say, quiz, photos, match, mood, animals & friends, count — map, stickers and trophies only on the kid bar), no tab bar');
+  ok(await page.locator('.kidtiles button').count() === 18 && await page.locator('.kidtiles button[data-v$="/map"], .kidtiles button[data-v$="/stickers"], .kidtiles button[data-v$="/trophies"]').count() === 0 && await page.locator('.kidbar button[data-v$="/map"]').count() === 1 && await page.locator('.kidtiles button[data-v$="/animals"]').count() === 1 && await page.locator('.kidtiles button[data-v$="/quiz"]').count() === 1 && await page.locator('nav.bar').count() === 0, 'kid mode on the trip: 18 big tiles (colour, draw, find, stamp, say, quiz, photos, match, shadows, feed me, colours, mood, animals & friends, count… — map, stickers and trophies only on the kid bar), no tab bar');
   ok(await page.evaluate(() => { const mm = window.matchMedia; window.matchMedia = () => ({ matches: false }); celebrate(); window.matchMedia = mm; const n = document.querySelectorAll('.confetti').length; return n === 36 && [...document.querySelectorAll('.confetti')].every((c) => getComputedStyle(c).position === 'fixed'); }), 'kid mode: the big celebration drops 36 pieces of confetti over the whole screen (stamp, surprise box, a finished game)');
   await page.goto(`${BASE}/#/kid/mimi/bubbles`); await page.waitForSelector('#bubblefield'); await page.waitForSelector('.bub');
   await page.locator('.bub').first().dispatchEvent('pointerdown');
@@ -587,6 +587,21 @@ const T = 'hk-macau-2026';
     const f = document.createElement('div'); f.id = 'bubblefield'; f.className = 'bubblefield'; document.querySelector('main, #app, body').appendChild(f);
     await new Promise((r) => setTimeout(r, 1000)); const n = f.querySelectorAll('.bub').length; clearInterval(bubT); bubT = 0; bubN = 0; f.remove(); return n; });
   ok(lateBub > 0, `bubbles: a field drawn late (after the timer's first tick) still fills with bubbles (${lateBub})`);
+  // three quiet games (owner, Nov 2026): a wrong tap wobbles and keeps the round, the right ones play every round through to a win and two stars
+  for (const [gm, sel] of [['shadow', '.shbig'], ['feed', '.feedpal'], ['sort', '.baskets']]) {
+    await page.goto(`${BASE}/#/kid/mimi/${gm}`); await page.waitForSelector(sel);
+    const st0 = await page.evaluate(() => stars('mimi'));
+    const wrongV = await page.evaluate(() => { const right = kg.game === 'sort' ? kg.items[kg.n].k : kg.r.want[0]; const b = [...document.querySelectorAll('[data-a="kgpick"]')].find((x) => x.dataset.v !== right); return b && b.dataset.v; });
+    await page.click(`[data-a="kgpick"][data-v="${wrongV}"]`);
+    const kept = await page.evaluate(() => kg.n === 0 && !kg.got);
+    for (let k = 0; k < 40 && !(await page.evaluate(() => kg.done)); k++) {
+      const right = await page.evaluate(() => (kg.got ? null : kg.game === 'sort' ? kg.items[kg.n].k : kg.r.want[0]));
+      if (right) await page.click(`[data-a="kgpick"][data-v="${right}"]`);
+      await page.waitForTimeout(right && gm === 'sort' ? 60 : 250);
+    }
+    const end = await page.evaluate(() => ({ done: kg.done, again: !!document.querySelector('[data-a="kgagain"]'), gained: stars('mimi') }));
+    ok(kept && end.done && end.again && end.gained - st0 === 2, `kid game ${gm}: a wrong tap keeps the round, the right ones finish it with two stars and "play again" (${JSON.stringify({ kept, ...end, st0 })})`);
+  }
   await page.goto(`${BASE}/#/kid/mimi/music`); await page.waitForSelector('.xylo');
   await page.evaluate(() => { navigator.audioSession = { type: 'auto' }; });   // Safari 16.4+ has it; Chromium does not
   await page.click('.xylo button[data-v="4"]');
@@ -637,7 +652,8 @@ const T = 'hk-macau-2026';
   ok(await page.evaluate(() => !JSON.parse(localStorage.getItem('mbs_pets_mimi') || 'null') && document.querySelectorAll('.starjar').length === 0), 'kid mode: a grown-up holding the star jar 1.5 s empties it (stars and friends gone)');
   await page.goto(`${BASE}/#/kid/mimi/music`); await page.waitForSelector('.xylo'); await page.goto(`${BASE}/#/kid/mimi`); await page.waitForSelector('.kidtiles');   // away and back: a fresh view (the jar's clear re-rendered in place)
   ok(await page.locator('.kidwrap.enter').count() === 1, 'kid mode: a freshly opened page carries the enter class (the slide-in; a tap’s re-render does not)');
-  ok(await page.locator('.kpage').count() === 4 && await page.locator('#kdots i').count() === 4 && (await page.locator('.kidtiles button').first().boundingBox()).height >= 150, 'kid home: three swipe pages of four huge tiles, with dots');
+  { const kp = await page.locator('.kpage').count(), kb = await page.locator('.kidtiles button').count();   // the pages follow the tiles (four a page): new games add a page, never a fifth tile on one
+    ok(kp >= 4 && kp === Math.ceil(kb / 4) && await page.locator('#kdots i').count() === kp && (await page.locator('.kidtiles button').first().boundingBox()).height >= 150, `kid home: swipe pages of four huge tiles, with dots (${kp} pages, ${kb} tiles)`); }
   await page.click('.kparrow.next'); await page.waitForFunction(() => document.querySelectorAll('#kdots i')[1].classList.contains('on'), null, { timeout: 5000 });
   ok(await page.locator('.kparrow.prev:not([hidden])').count() === 1, 'kid home: the arrow turns the page, the dots follow');
   await page.waitForTimeout(700);   // after the page's entrance animation
