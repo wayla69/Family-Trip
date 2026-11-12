@@ -38,6 +38,7 @@ function beep(kind, x) {   // x: the note's frequency for 'note'
     else if (kind === 'hat') noise(c, t0, 0.06, 0.2, 6000);
     else if (kind === 'clap') { noise(c, t0, 0.09, 0.3, 1200); noise(c, t0 + 0.03, 0.12, 0.25, 1500); }
     else if (kind === 'frog') { sweep(c, t0, 420, 180, 0.16, 'sawtooth', 0.12); sweep(c, t0 + 0.17, 380, 160, 0.14, 'sawtooth', 0.1); }
+    else if (kind === 'munch') [0, 0.13, 0.26].forEach((at) => { tone(260, at, 0.08, 'triangle', 0.3); noise(c, t0 + at, 0.05, 0.12, 900); });   // feed the animal: chomp chomp chomp
     else if (kind === 'bubble') sweep(c, t0, 520 + Math.random() * 380, 1500, 0.12, 'sine', 0.16);
     else if (kind === 'hello') [523, 659, 784].forEach((f, i) => tone(f, i * 0.11, 0.3, 'triangle', 0.16));   // a child picked themself
     else if (kind === 'fanfare') [523, 659, 784, 1047, 784, 1047, 1319].forEach((f, i) => tone(f, i * 0.09, i === 6 ? 0.6 : 0.22, 'triangle', 0.16));
@@ -579,7 +580,7 @@ const wj = (s) => String(s).replace(/วันนี้/g, 'วัน\u2060น�
 // kid mode's picture tiles (owner's set, public/art/kidui): [picture or '' for the emoji, gradient top, gradient bottom]
 const KTILE = { count: ['surprise', '#FFC93C', '#FF9F0A'], pack: ['pack', '#62CCFF', '#1C9BEA'], words: ['say', '#C9A2FF', '#8F5CEB'], colour: ['colour', '#FF93B5', '#F2557F'],
   draw: ['draw', '#AEEA80', '#5EBB3D'], match: ['match', '#B592FF', '#7C4EE5'], quiz: ['quiz', '#86D6FF', '#2BA8F0'], animals: ['animals', '#93DD60', '#3FA82C'], numbers: ['count', '#FFB54A', '#FF8A1F'],
-  spot: ['find', '#7FE3D2', '#24B39B'], stamp: ['stamp', '#8FB4FF', '#3F6FE0'], talk: ['talk', '#FFB0C8', '#F06A93'], memory: ['memory', '#FFD36B', '#F2A90C'], photos: ['photos', '#9CD9FF', '#3BA0E8'], mood: ['mood', '#FFC2A0', '#FF8A57'], hideseek: ['spy', '#FFD54A', '#E8A317'], jigsaw: ['jigsaw', '#A8E86A', '#2E9E4F'], bubbles: ['bubbles', '#5BB8FF', '#1E6FE8'], music: ['music', '#FF8FD8', '#7B3FE0'], _: ['', '#C9D3E6', '#8C9BB8'] };
+  spot: ['find', '#7FE3D2', '#24B39B'], stamp: ['stamp', '#8FB4FF', '#3F6FE0'], talk: ['talk', '#FFB0C8', '#F06A93'], memory: ['memory', '#FFD36B', '#F2A90C'], photos: ['photos', '#9CD9FF', '#3BA0E8'], mood: ['mood', '#FFC2A0', '#FF8A57'], hideseek: ['spy', '#FFD54A', '#E8A317'], jigsaw: ['jigsaw', '#A8E86A', '#2E9E4F'], bubbles: ['bubbles', '#5BB8FF', '#1E6FE8'], music: ['music', '#FF8FD8', '#7B3FE0'], shadow: ['', '#B8C2D6', '#5B6680'], feed: ['', '#FFD98A', '#F29B38'], sort: ['', '#9EE6B8', '#3FA0E0'], _: ['', '#C9D3E6', '#8C9BB8'] };
 const KBAR = { home: 'home', map: 'map', colour: 'colour', stamp: 'passport', stickers: 'stickers', trophies: 'trophies' };   // the bar's middle button: colour before the trip, the passport on it
 function viewKid(p) {
   const ks = children(), kid = p[1], k = ks.find((c) => c.slug === kid);
@@ -607,7 +608,7 @@ function viewKid(p) {
       ? [cd && ['count', '🎁', L('เซอร์ไพรส์', 'Surprise')], cd && cd.pack && ['pack', '🧳', L('จัดกระเป๋า', 'Pack')], canColour(t, i) && ['colour', '🎨', L('ระบายสี', 'Colour')], ['draw', '🖍️', L('วาดรูป', 'Draw')], ['bubbles', '🫧', L('ฟองสบู่', 'Bubbles')], ['music', '🎵', L('ดนตรี', 'Music')], ['hideseek', '🙈', L('ซ่อนหา', 'I spy')]]
       : [canColour(t, i) && ['colour', '🎨', L('ระบายสี', 'Colour')], ['draw', '🖍️', L('วาดรูป', 'Draw')], ['bubbles', '🫧', L('ฟองสบู่', 'Bubbles')], ['music', '🎵', L('ดนตรี', 'Music')], ['hideseek', '🙈', L('ซ่อนหา', 'I spy')], ['spot', littleOf(t, kid) ? '👉' : '🔍', littleOf(t, kid) ? L('ชี้ แตะ', 'Point it') : L('หาของ', 'Find it')], ['stamp', '🛂', L('ปั๊มตรา', 'Stamp')]])
       .concat(words ? [['words', '🗣️', L('พูดตาม', 'Say it')]] : [], ((d.plan || {}).quiz || []).length && !lit ? [['quiz', '❓', L('ทายซิ', 'Quiz')]] : [],
-        kidTalk(t, i) ? [['talk', '💬', L('คุยกัน', 'Let’s talk')]] : [], !pre && i > 0 && memQuiz(t, i - 1) ? [['memory', '🧠', L('จำได้ไหม', 'Remember?')]] : [], kidPhotos(t, i).length ? [['photos', '📸', L('ดูรูป', 'Photos')]] : [], [['match', '🧩', L('จับคู่', 'Match')]], pre ? [] : [['mood', '😊', L('วันนี้รู้สึก', 'My mood')]],
+        kidTalk(t, i) ? [['talk', '💬', L('คุยกัน', 'Let’s talk')]] : [], !pre && i > 0 && memQuiz(t, i - 1) ? [['memory', '🧠', L('จำได้ไหม', 'Remember?')]] : [], kidPhotos(t, i).length ? [['photos', '📸', L('ดูรูป', 'Photos')]] : [], [['match', '🧩', L('จับคู่', 'Match')], ['shadow', '🦒', L('เงาของใคร', 'Shadows')], ['feed', '🍌', L('ป้อนอาหาร', 'Feed me')], ['sort', '🧺', L('แยกสี', 'Colours')]], pre ? [] : [['mood', '😊', L('วันนี้รู้สึก', 'My mood')]],
         wild.length ? [['animals', (t.info.wildLabel || {}).emo || '🦘', t.info.wildLabel ? esc(T(t.info.wildLabel.short)) : L('สัตว์', 'Animals')]] : [], [['numbers', '🔢', L('นับเลข', 'Count')]], dayArt(t, i) || kidPhotoPool(t).length ? [['jigsaw', '🖼️', L('ต่อภาพ', 'Puzzle')]] : []).filter(Boolean);   // map, stickers and trophies live on the kid bar below — not twice
     const until = daysUntil(t);
     const btns = tiles.map(([v, e, lbl]) => { const k = KTILE[v] || KTILE._; return `<button class="pic" style="--k1:${k[1]};--k2:${k[2]}" data-a="kidnav" data-v="#/kid/${esc(kid)}/${v}" data-say="${esc(lbl)}">${k[0] ? `<img src="/art/kidui/${k[0]}.webp" alt="">` : `<span>${e}</span>`}<b>${lbl}</b></button>`; })
@@ -665,6 +666,28 @@ ${memState.got ? `<button class="kidbig" data-a="memnext">${memState.n + 1 < qs.
     setTimeout(startBubbles, 0);
     body = `<div class="kidguide">${guideImg(0)}<p>${L('แตะฟองให้แตก!', 'Pop the bubbles!')}</p></div>
 <div class="bubblefield" id="bubblefield" data-k="${esc(kid)}"><div class="bubscore" id="bubscore" aria-live="polite"></div></div>`;
+  } else if (view === 'shadow') {   // whose shadow? a big black shape, pick the thing it belongs to; right = the shape fills with colour and its name is said
+    const g2 = kgFor('shadow', t, kid), r = g2.r;
+    body = g2.done ? `<div class="kidguide pop">${guideImg(0)}<p>${L(`เก่งมาก ${esc(name)}! ทายเงาถูกหมดเลย 🎉`, `Brilliant, ${esc(name)}! You found every shadow 🎉`)}</p></div>
+<button class="kidbig" data-a="kgagain" data-v="shadow">🔁 ${L('เล่นอีกรอบ', 'Play again')}</button>`
+      : `<div class="kidguide">${guideImg(0)}<p>${g2.got ? L(`ใช่แล้ว! ${esc(r.want[1])}!`, `Yes! A ${esc(r.want[2])}!`) : L('นี่เงาของใครเอ่ย?', 'Whose shadow is this?')}</p></div>
+<div class="shbig${g2.got ? ' lit' : ''}" aria-hidden="true"><span>${r.want[0]}</span></div>
+<div class="mema kgch">${r.opts.map((o) => `<button data-a="kgpick" data-v="${esc(o[0])}"${g2.got && o === r.want ? ' class="right"' : ''}><span>${o[0]}</span><b>${esc(L(o[1], o[2]))}</b></button>`).join('')}</div>`;
+  } else if (view === 'feed') {   // feed the animal: it asks for one food (the picture in its bubble, the words read aloud); the right one is munched
+    const g2 = kgFor('feed', t, kid), r = g2.r;
+    body = g2.done ? `<div class="kidguide pop">${guideImg(1)}<p>${L(`${esc(r.pal[1])}อิ่มแล้ว! ขอบคุณ${esc(name)}นะ 🎉`, `${esc(r.pal[2])} is full! Thank you, ${esc(name)} 🎉`)}</p></div>
+<div class="feedpal full" aria-hidden="true"><span class="pal">${r.pal[0]}</span><div class="fedrow">${g2.fed.join('')}</div></div>
+<button class="kidbig" data-a="kgagain" data-v="feed">🔁 ${L('เล่นอีกรอบ', 'Play again')}</button>`
+      : `<div class="kidguide">${guideImg(1)}<p>${L(`${esc(r.pal[1])}หิวจัง! อยากกิน${esc(r.want[1])}`, `${esc(r.pal[2])} is hungry! ${esc(capFirst(r.want[3]))}, please`)}</p></div>
+<div class="feedpal" aria-hidden="true"><span class="want">${r.want[0]}</span><span class="pal" id="kgpal">${r.pal[0]}</span><div class="fedrow">${g2.fed.join('')}</div></div>
+<div class="mema kgch">${r.opts.map((o) => `<button data-a="kgpick" data-v="${esc(o[0])}"><span>${o[0]}</span><b>${esc(L(o[1], o[2]))}</b></button>`).join('')}</div>`;
+  } else if (view === 'sort') {   // sort by colour: one thing at a time, tap the basket of its colour; the colour's name is said
+    const g2 = kgFor('sort', t, kid), it = g2.items[g2.n];
+    body = g2.done ? `<div class="kidguide pop">${guideImg(1)}<p>${L(`เก่งมาก ${esc(name)}! แยกสีครบแล้ว 🎉`, `Brilliant, ${esc(name)}! Everything is sorted 🎉`)}</p></div>
+<button class="kidbig" data-a="kgagain" data-v="sort">🔁 ${L('เล่นอีกรอบ', 'Play again')}</button>`
+      : `<div class="kidguide">${guideImg(1)}<p>${L('อันนี้สีอะไร? ใส่ตะกร้าสีเดียวกันเลย', 'What colour is it? Put it in the same colour basket')}</p></div>
+<div class="sortitem" aria-hidden="true"><span>${it.e}</span></div>`;
+    if (!g2.done) body += `<div class="baskets">${g2.cols.map((c) => `<button class="basket" style="--bc:${c.c}" data-a="kgpick" data-v="${c.k}" aria-label="${esc(L(c.th, c.en))}"><span class="in">${(g2.bin[c.k] || []).join('')}</span><b>${esc(L(c.th, c.en))}</b></button>`).join('')}</div>`;
   } else if (view === 'music') {   // a xylophone (C major, an animal on every bar), three drums, two songs that light the bars to follow
     body = `<div class="kidguide">${guideImg(1)}<p>${L('แตะแท่งสีให้ร้องเพลง!', 'Tap the bars to make music!')}</p></div>
 <div class="xylo" role="group">${XYLO.map((n, k) => `<button data-a="xylo" data-v="${k}" style="--c:${n[2]};--h:${100 - k * 7}%" aria-label="${n[0]}"><span>${n[3]}</span></button>`).join('')}</div>
@@ -957,6 +980,70 @@ document.addEventListener('pointerdown', (e) => {
   b.classList.add('pop'); beep('bubble'); burst(b, [b.textContent || '💧', '✨']); setTimeout(() => b.remove(), 220);
   bubN++; const sc = $('#bubscore'); if (sc) sc.textContent = bubN;
   if (bubN % 15 === 0) { celebrate(['🫧', '⭐', '✨']); beep('yay'); star($('#bubblefield').dataset.k, 1); sayUi(L(`เย้! ${bubN} ฟองแล้ว!`, `Yay! ${bubN} bubbles!`)); }
+});
+// ---- three quiet games (owner's ask, Nov 2026: "ทำเกมส์เพิ่มอีก"): whose shadow, feed the animal, sort by colour. Five or eight easy rounds,
+// a word said on every right answer, a wobble and "try again" on a wrong one, two stars at the end — nothing saved but the stars. The little
+// one gets two choices instead of three. ----
+const SHADOWS = [['🐘', 'ช้าง', 'elephant'], ['🦒', 'ยีราฟ', 'giraffe'], ['🐢', 'เต่า', 'turtle'], ['🐰', 'กระต่าย', 'rabbit'], ['🦀', 'ปู', 'crab'], ['🐟', 'ปลา', 'fish'],
+  ['🐌', 'หอยทาก', 'snail'], ['🦋', 'ผีเสื้อ', 'butterfly'], ['🐓', 'ไก่', 'chicken'], ['🐳', 'วาฬ', 'whale'], ['🚗', 'รถ', 'car'], ['✈️', 'เครื่องบิน', 'plane'],
+  ['⛵', 'เรือใบ', 'sailboat'], ['🎸', 'กีตาร์', 'guitar'], ['🍌', 'กล้วย', 'banana'], ['🦕', 'ไดโนเสาร์', 'dinosaur'], ['🐿️', 'กระรอก', 'squirrel'], ['🦆', 'เป็ด', 'duck'],
+  ['🐪', 'อูฐ', 'camel'], ['🚲', 'จักรยาน', 'bike'], ['🍄', 'เห็ด', 'mushroom'], ['🦉', 'นกฮูก', 'owl']];
+const FEED_PALS = [['🐼', 'แพนด้า', 'Panda'], ['🐰', 'กระต่าย', 'Bunny'], ['🐵', 'ลิง', 'Monkey'], ['🐻', 'หมี', 'Bear'], ['🐶', 'หมา', 'Puppy'], ['🐱', 'แมว', 'Kitty'], ['🐘', 'ช้าง', 'Elephant'], ['🐷', 'หมู', 'Piggy']];
+const FOODS = [['🍌', 'กล้วย', 'banana', 'a banana'], ['🍎', 'แอปเปิล', 'apple', 'an apple'], ['🥕', 'แครอท', 'carrot', 'a carrot'], ['🍉', 'แตงโม', 'watermelon', 'some watermelon'],
+  ['🍓', 'สตรอว์เบอร์รี', 'strawberry', 'a strawberry'], ['🍇', 'องุ่น', 'grapes', 'some grapes'], ['🌽', 'ข้าวโพด', 'corn', 'some corn'], ['🍪', 'คุกกี้', 'cookie', 'a cookie'],
+  ['🧀', 'ชีส', 'cheese', 'some cheese'], ['🥦', 'บรอกโคลี', 'broccoli', 'some broccoli'], ['🍞', 'ขนมปัง', 'bread', 'some bread'], ['🥚', 'ไข่', 'egg', 'an egg']];   // [emoji, Thai, the button's word, what the animal asks for]
+const capFirst = (x) => x.charAt(0).toUpperCase() + x.slice(1);
+const SORT_COLS = [{ k: 'red', th: 'สีแดง', en: 'red', c: '#FF5A5F', e: ['🍎', '🍓', '🚒', '🌹', '🍒', '🐞', '🍅'] },
+  { k: 'yellow', th: 'สีเหลือง', en: 'yellow', c: '#FFC62E', e: ['🍌', '🌻', '⭐', '🐥', '🧀', '🍋', '🌽'] },
+  { k: 'green', th: 'สีเขียว', en: 'green', c: '#3DBE63', e: ['🥦', '🐸', '🍀', '🐢', '🥒', '🌲', '🍏'] },
+  { k: 'blue', th: 'สีฟ้า', en: 'blue', c: '#3E8BFF', e: ['🐳', '💧', '🧢', '🐋', '🫐', '👖', '🧊'] }];
+const KG_ROUNDS = { shadow: 5, feed: 5, sort: 8 };
+let kg = null;   // the game in hand: {game, key: trip.kid, n: round, r: this round, got, done, …}
+function kgRound(g) {
+  const many = g.little ? 2 : 3;
+  if (g.game === 'shadow') { const want = g.deck[g.n]; g.r = { want, opts: shuffle([want].concat(shuffle(SHADOWS.filter((x) => x !== want)).slice(0, many - 1))) }; }
+  else if (g.game === 'feed') { const want = g.deck[g.n]; g.r = { pal: g.pal, want, opts: shuffle([want].concat(shuffle(FOODS.filter((x) => x !== want)).slice(0, many - 1))) }; }
+  g.got = false;
+}
+function kgNew(game, t, kid) {
+  const g = { game, key: `${t.id}.${kid}`, tid: t.id, kid, n: 0, little: littleOf(t, kid), done: false, got: false };
+  if (game === 'shadow') g.deck = shuffle(SHADOWS).slice(0, KG_ROUNDS.shadow);
+  if (game === 'feed') { g.pal = FEED_PALS[Math.floor(Math.random() * FEED_PALS.length)]; g.deck = shuffle(FOODS).slice(0, KG_ROUNDS.feed); g.fed = []; }
+  if (game === 'sort') {
+    g.cols = shuffle(SORT_COLS).slice(0, g.little ? 2 : 3); g.bin = {};
+    const pool = []; g.cols.forEach((c) => shuffle(c.e).forEach((e) => pool.push({ e, k: c.k })));
+    // every colour at least twice, then the rest at random, never the same thing twice
+    const firsts = g.cols.flatMap((c) => pool.filter((x) => x.k === c.k).slice(0, 2)), rest = shuffle(pool.filter((x) => !firsts.includes(x)));
+    g.items = shuffle(firsts.concat(rest).slice(0, KG_ROUNDS.sort));
+  }
+  kgRound(g); return g;
+}
+const kgFor = (game, t, kid) => { if (!kg || kg.game !== game || kg.key !== `${t.id}.${kid}`) kg = kgNew(game, t, kid); return kg; };
+function kgWin(b, chars) { kg.done = true; beep('fanfare'); celebrate(chars); star(kg.kid, 2); }
+const kgNope = (b, line) => { beep('tap'); b.classList.remove('nope'); void b.offsetWidth; b.classList.add('nope'); sayUi(line); };
+Object.assign(A, {
+  kgagain(b) { beep('pop'); kg = kgNew(b.dataset.v, trip(kg.tid), kg.kid); render(); },
+  kgpick(b) {
+    const g = kg; if (!g || g.done || g.got) return;
+    const v = b.dataset.v;
+    if (g.game === 'shadow') {
+      if (v !== g.r.want[0]) return kgNope(b, L('อืม… ไม่ใช่ ลองอีกทีนะ', 'Hmm… not that one. Try again!'));
+      g.got = true; beep('chime'); burst(b, ['⭐', '✨']); sayUi(L(`ใช่แล้ว! ${g.r.want[1]}!`, `Yes! A ${g.r.want[2]}!`)); render();
+      setTimeout(() => { if (kg !== g) return; g.n++; if (g.n >= KG_ROUNDS.shadow) kgWin(b, ['🌟', g.r.want[0], '✨']); else { kgRound(g); sayUi(L('อันนี้เงาของใครเอ่ย?', 'And whose shadow is this?')); } safeRender(); }, 1300);
+    } else if (g.game === 'feed') {
+      if (v !== g.r.want[0]) return kgNope(b, L(`ไม่เอาอันนี้ อยากกิน${g.r.want[1]}`, `Not that one — ${g.r.want[3]}, please!`));
+      g.got = true; beep('munch'); burst(b, ['💛', '😋']); g.fed.push(g.r.want[0]);
+      const pal = $('#kgpal'); if (pal) { pal.classList.remove('chomp'); void pal.offsetWidth; pal.classList.add('chomp'); }
+      sayUi(L(`ง่ำ ง่ำ! อร่อยจัง`, 'Yum yum! Delicious!'));
+      setTimeout(() => { if (kg !== g) return; g.n++; if (g.n >= KG_ROUNDS.feed) { kgWin(b, [g.pal[0], '😋', '💛']); sayUi(L(`${g.pal[1]}อิ่มแล้ว! ขอบคุณนะ`, `${g.pal[2]} is full! Thank you!`)); } else { kgRound(g); sayUi(L(`อยากกิน${g.r.want[1]}`, `${capFirst(g.r.want[3])}, please!`)); } safeRender(); }, 1100);
+    } else if (g.game === 'sort') {
+      const it = g.items[g.n], col = SORT_COLS.find((c) => c.k === it.k);
+      if (v !== it.k) return kgNope(b, L(`อันนี้${col.th}นะ`, `This one is ${col.en}!`));
+      beep('chime'); burst(b, [it.e, '✨']); sayUi(L(col.th, col.en)); (g.bin[it.k] = g.bin[it.k] || []).push(it.e); g.n++;
+      if (g.n >= g.items.length) kgWin(b, ['🌈', '⭐', '✨']);
+      safeRender();
+    }
+  },
 });
 // ---- I spy: twelve things scattered without overlap; five of them are the targets, named one at a time ----
 const HIDE_POOL = [['🐥', 'ลูกเจี๊ยบ', 'chick'], ['🐸', 'กบ', 'frog'], ['🦋', 'ผีเสื้อ', 'butterfly'], ['🐢', 'เต่า', 'turtle'], ['🍓', 'สตรอว์เบอร์รี', 'strawberry'], ['⭐', 'ดาว', 'star'],
