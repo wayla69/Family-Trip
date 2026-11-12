@@ -592,9 +592,9 @@ const wj = (s) => String(s).replace(/วันนี้/g, 'วัน\u2060น�
 // kid mode's picture tiles (owner's set, public/art/kidui): [picture or '' for the emoji, gradient top, gradient bottom]
 const KTILE = { count: ['surprise', '#FFC93C', '#FF9F0A'], pack: ['pack', '#62CCFF', '#1C9BEA'], words: ['say', '#C9A2FF', '#8F5CEB'], colour: ['colour', '#FF93B5', '#F2557F'],
   draw: ['draw', '#AEEA80', '#5EBB3D'], match: ['match', '#B592FF', '#7C4EE5'], quiz: ['quiz', '#86D6FF', '#2BA8F0'], animals: ['animals', '#93DD60', '#3FA82C'], numbers: ['count', '#FFB54A', '#FF8A1F'],
-  spot: ['find', '#7FE3D2', '#24B39B'], stamp: ['stamp', '#8FB4FF', '#3F6FE0'], talk: ['talk', '#FFB0C8', '#F06A93'], memory: ['memory', '#FFD36B', '#F2A90C'], photos: ['photos', '#9CD9FF', '#3BA0E8'], mood: ['mood', '#FFC2A0', '#FF8A57'], hideseek: ['spy', '#FFD54A', '#E8A317'], jigsaw: ['jigsaw', '#A8E86A', '#2E9E4F'], bubbles: ['bubbles', '#5BB8FF', '#1E6FE8'], music: ['music', '#FF8FD8', '#7B3FE0'], shadow: ['', '#B8C2D6', '#5B6680'], feed: ['', '#FFD98A', '#F29B38'], sort: ['', '#9EE6B8', '#3FA0E0'], farm: ['', '#B8E986', '#E0893F'], wash: ['', '#BDE6F2', '#4FA3D9'], bigsmall: ['', '#FFD0A8', '#E06A8F'], _: ['', '#C9D3E6', '#8C9BB8'] };
+  spot: ['find', '#7FE3D2', '#24B39B'], stamp: ['stamp', '#8FB4FF', '#3F6FE0'], talk: ['talk', '#FFB0C8', '#F06A93'], memory: ['memory', '#FFD36B', '#F2A90C'], photos: ['photos', '#9CD9FF', '#3BA0E8'], mood: ['mood', '#FFC2A0', '#FF8A57'], hideseek: ['spy', '#FFD54A', '#E8A317'], jigsaw: ['jigsaw', '#A8E86A', '#2E9E4F'], bubbles: ['bubbles', '#5BB8FF', '#1E6FE8'], music: ['music', '#FF8FD8', '#7B3FE0'], shadow: ['', '#B8C2D6', '#5B6680'], feed: ['', '#FFD98A', '#F29B38'], sort: ['', '#9EE6B8', '#3FA0E0'], farm: ['', '#B8E986', '#E0893F'], wash: ['', '#BDE6F2', '#4FA3D9'], bigsmall: ['', '#FFD0A8', '#E06A8F'], maze: ['', '#C3F0A0', '#3E9B4F'], where: ['', '#FFE08A', '#F08C2E'], odd: ['', '#D7C6FF', '#7B5BE0'], next: ['', '#A8E6FF', '#2F86D6'], _: ['', '#C9D3E6', '#8C9BB8'] };
 // each game's own backdrop (owner, Nov 2026: "เพิ่มฉากด้วย"): a sky or room in CSS and a drawn strip along the bottom (app.css .sc-<scene>)
-const KSCENE = { bubbles: 'sea', music: 'stage', shadow: 'night', feed: 'picnic', sort: 'garden', numbers: 'garden', bigsmall: 'garden', farm: 'farm', wash: 'bath' };
+const KSCENE = { bubbles: 'sea', music: 'stage', shadow: 'night', feed: 'picnic', sort: 'garden', numbers: 'garden', bigsmall: 'garden', farm: 'farm', wash: 'bath', maze: 'farm', where: 'picnic', odd: 'sea', next: 'stage' };
 const KBAR = { home: 'home', map: 'map', colour: 'colour', stamp: 'passport', stickers: 'stickers', trophies: 'trophies' };   // the bar's middle button: colour before the trip, the passport on it
 function viewKid(p) {
   const ks = children(), kid = p[1], k = ks.find((c) => c.slug === kid);
@@ -622,7 +622,7 @@ function viewKid(p) {
       ? [cd && ['count', '🎁', L('เซอร์ไพรส์', 'Surprise')], cd && cd.pack && ['pack', '🧳', L('จัดกระเป๋า', 'Pack')], canColour(t, i) && ['colour', '🎨', L('ระบายสี', 'Colour')], ['draw', '🖍️', L('วาดรูป', 'Draw')], ['bubbles', '🫧', L('ฟองสบู่', 'Bubbles')], ['music', '🎵', L('ดนตรี', 'Music')], ['hideseek', '🙈', L('ซ่อนหา', 'I spy')]]
       : [canColour(t, i) && ['colour', '🎨', L('ระบายสี', 'Colour')], ['draw', '🖍️', L('วาดรูป', 'Draw')], ['bubbles', '🫧', L('ฟองสบู่', 'Bubbles')], ['music', '🎵', L('ดนตรี', 'Music')], ['hideseek', '🙈', L('ซ่อนหา', 'I spy')], ['spot', littleOf(t, kid) ? '👉' : '🔍', littleOf(t, kid) ? L('ชี้ แตะ', 'Point it') : L('หาของ', 'Find it')], ['stamp', '🛂', L('ปั๊มตรา', 'Stamp')]])
       .concat(words ? [['words', '🗣️', L('พูดตาม', 'Say it')]] : [], ((d.plan || {}).quiz || []).length && !lit ? [['quiz', '❓', L('ทายซิ', 'Quiz')]] : [],
-        kidTalk(t, i) ? [['talk', '💬', L('คุยกัน', 'Let’s talk')]] : [], !pre && i > 0 && memQuiz(t, i - 1) ? [['memory', '🧠', L('จำได้ไหม', 'Remember?')]] : [], kidPhotos(t, i).length ? [['photos', '📸', L('ดูรูป', 'Photos')]] : [], [['match', '🧩', L('จับคู่', 'Match')], ['shadow', '🦒', L('เงาของใคร', 'Shadows')], ['feed', '🍌', L('ป้อนอาหาร', 'Feed me')], ['sort', '🧺', L('แยกสี', 'Colours')], ['farm', '🐮', L('เสียงสัตว์', 'Animal sounds')], ['wash', '🛁', L('อาบน้ำ', 'Bath time')], ['bigsmall', '🐘', L('ใหญ่-เล็ก', 'Big & small')]], pre ? [] : [['mood', '😊', L('วันนี้รู้สึก', 'My mood')]],
+        kidTalk(t, i) ? [['talk', '💬', L('คุยกัน', 'Let’s talk')]] : [], !pre && i > 0 && memQuiz(t, i - 1) ? [['memory', '🧠', L('จำได้ไหม', 'Remember?')]] : [], kidPhotos(t, i).length ? [['photos', '📸', L('ดูรูป', 'Photos')]] : [], [['match', '🧩', L('จับคู่', 'Match')], ['shadow', '🦒', L('เงาของใคร', 'Shadows')], ['feed', '🍌', L('ป้อนอาหาร', 'Feed me')], ['sort', '🧺', L('แยกสี', 'Colours')], ['farm', '🐮', L('เสียงสัตว์', 'Animal sounds')], ['wash', '🛁', L('อาบน้ำ', 'Bath time')], ['bigsmall', '🐘', L('ใหญ่-เล็ก', 'Big & small')], ['maze', '🧭', L('เขาวงกต', 'Maze')], ['where', '📍', L('ตรงไหนนะ', 'Where is it?')], ['odd', '🤔', L('ไม่เข้าพวก', 'Odd one out')], ['next', '➡️', L('อะไรมาต่อ', 'What’s next?')]], pre ? [] : [['mood', '😊', L('วันนี้รู้สึก', 'My mood')]],
         wild.length ? [['animals', (t.info.wildLabel || {}).emo || '🦘', t.info.wildLabel ? esc(T(t.info.wildLabel.short)) : L('สัตว์', 'Animals')]] : [], [['numbers', '🔢', L('นับเลข', 'Count')]], dayArt(t, i) || kidPhotoPool(t).length ? [['jigsaw', '🖼️', L('ต่อภาพ', 'Puzzle')]] : []).filter(Boolean);   // map, stickers and trophies live on the kid bar below — not twice
     const until = daysUntil(t);
     const btns = tiles.map(([v, e, lbl]) => { const k = KTILE[v] || KTILE._; return `<button class="pic" style="--k1:${k[1]};--k2:${k[2]}" data-a="kidnav" data-v="#/kid/${esc(kid)}/${v}" data-say="${esc(lbl)}">${k[0] ? `<img src="/art/kidui/${k[0]}.webp" alt="">` : `<span>${e}</span>`}<b>${lbl}</b></button>`; })
@@ -680,6 +680,28 @@ ${memState.got ? `<button class="kidbig" data-a="memnext">${memState.n + 1 < qs.
     setTimeout(startBubbles, 0);
     body = `<div class="kidguide">${guideImg(0)}<p>${L('แตะฟองให้แตก!', 'Pop the bubbles!')}</p></div>
 <div class="bubblefield" id="bubblefield" data-k="${esc(kid)}"><div class="bubscore" id="bubscore" aria-live="polite"></div></div>`;
+  } else if (view === 'maze') {   // the maze: drag the animal to its goal
+    const m = mazeFor(t, kid);
+    body = lvBar(t, kid, 'maze') + `<div class="kidguide">${guideImg(0)}<p>${m.done ? L(`เย้! ${esc(m.pair[2])}เจอ${esc(m.pair[3])}แล้ว 🎉`, `Hooray! The ${esc(m.pair[4])} found the ${esc(m.pair[5])} 🎉`) : L(`พา${esc(m.pair[2])}ไปหา${esc(m.pair[3])}กัน! ลากนิ้วตามทาง`, `Help the ${esc(m.pair[4])} find the ${esc(m.pair[5])}! Drag along the path`)}</p></div>
+<div class="mazeb${m.done ? ' won' : ''}" id="mazeb" style="--n:${m.n}" role="img" aria-label="${L('เขาวงกต', 'Maze')}">${mazeCells()}</div>
+${m.done ? lvWin(t, kid, 'maze', ['mazeagain']) : `<button class="kidbig ghost" data-a="mazeagain">🔀 ${L('ทางใหม่', 'New maze')}</button>`}`;
+  } else if (view === 'where' || view === 'odd' || view === 'next') {   // where is it · odd one out · what comes next: one round at a time, five levels
+    const g2 = kgFor(view, t, kid), r = g2.r;
+    const doneLine = L(`เก่งมาก ${esc(name)}! ผ่าน${lvWord(t, kid, view)}แล้ว 🎉`, `Brilliant, ${esc(name)}! You finished ${lvWord(t, kid, view)} 🎉`);
+    let board = '';
+    if (!g2.done && view === 'where') {
+      const inPlay = new Set(g2.lv.p);
+      board = `${r.mode === 'place' ? `<div class="wheretake" aria-hidden="true">${r.item}</div>` : ''}<div class="whereb">${Array.from({ length: 9 }, (_, q) => !inPlay.has(q) ? '<div class="wcell off"></div>'
+        : r.mode === 'find' ? `<button class="wcell${g2.got && q === r.pos ? ' right' : ''}" data-a="kgpick" data-v="${q}" aria-label="${esc(L(WHERE_ITEM[r.at[q]][0], WHERE_ITEM[r.at[q]][1]))}"><span>${r.at[q]}</span></button>`
+          : `<button class="wcell slot${g2.got && q === r.pos ? ' right' : ''}" data-a="kgpick" data-v="${q}" aria-label="${esc(L(WHERE_NAME[q][0], WHERE_NAME[q][1]))}"><span>${g2.got && q === r.pos ? r.item : ''}</span></button>`).join('')}</div>`;
+    } else if (!g2.done && view === 'odd') {
+      board = `<div class="mema kgch oddch" data-n="${r.opts.length}">${r.opts.map((e) => `<button data-a="kgpick" data-v="${esc(e)}"${g2.got && e === r.one ? ' class="right"' : ''}><span>${e}</span></button>`).join('')}</div>`;
+    } else if (!g2.done && view === 'next') {
+      board = `<div class="nextrow" aria-hidden="true">${r.shown.map((e) => `<span>${e}</span>`).join('')}<span class="q">${g2.got ? r.answer : '❓'}</span></div>
+<div class="mema kgch" data-n="${r.opts.length}">${r.opts.map((e) => `<button data-a="kgpick" data-v="${esc(e)}"${g2.got && e === r.answer ? ' class="right"' : ''}><span>${e}</span></button>`).join('')}</div>`;
+    }
+    body = lvBar(t, kid, view) + (g2.done ? `<div class="kidguide pop">${guideImg(0)}<p>${doneLine}</p></div>${lvWin(t, kid, view, ['kgagain', view])}`
+      : `<div class="kidguide">${guideImg(1)}<p>${esc(kgAsk(g2))}</p></div>${board}`);
   } else if (view === 'farm') {   // animal sounds: the farm is the game, a tap makes an animal jump and say its sound; all of them heard = a cheer
     const fm = farmFor(t, kid);
     body = `<div class="kidguide">${guideImg(0)}<p>${L('แตะสัตว์ ฟังเสียงร้องกัน!', 'Tap an animal to hear it!')}</p></div>
@@ -1023,7 +1045,12 @@ const LV = {
   sort: [{ c: 2, r: 6 }, { c: 3, r: 8 }, { c: 3, r: 10 }, { c: 4, r: 10 }, { c: 4, r: 14 }],
   bigsmall: [{ z: [1, 0.45], r: 4 }, { z: [1, 0.62, 0.36], r: 6 }, { z: [1, 0.74, 0.52, 0.34], r: 6 }, { z: [1, 0.82, 0.66, 0.5], r: 6 }, { z: [1, 0.86, 0.72, 0.6, 0.48], r: 8 }],
   jigsaw: [{ c: 2, r: 2 }, { c: 3, r: 2 }, { c: 3, r: 3 }, { c: 4, r: 3 }, { c: 4, r: 4 }],
-  match: [{ p: 4 }, { p: 6 }, { p: 8 }, { p: 10 }, { p: 12 }],   // level 2 = every game as it was before levels (6 pairs, 3×2 pieces, three choices)
+  match: [{ p: 4 }, { p: 6 }, { p: 8 }, { p: 10 }, { p: 12 }],
+  maze: [{ n: 3 }, { n: 4 }, { n: 5 }, { n: 6 }, { n: 7 }],
+  // where: p = the board's spots in play (0 top left … 4 middle … 8 bottom right), m = find the thing at a spot, or place one there
+  where: [{ p: [1, 7], m: 'find', r: 4 }, { p: [1, 7, 3, 5], m: 'find', r: 5 }, { p: [1, 7, 3, 5, 4], m: 'find', r: 6 }, { p: [1, 7, 3, 5, 4], m: 'place', r: 6 }, { p: [0, 1, 2, 3, 4, 5, 6, 7, 8], m: 'mix', r: 8 }],
+  odd: [{ o: 3, r: 4 }, { o: 4, r: 5 }, { o: 4, r: 6, near: 1 }, { o: 5, r: 6, near: 1 }, { o: 6, r: 8, near: 1 }],   // near: the odd one is from a close group (a land animal among sea animals)
+  next: [{ pat: ['AB'], o: 2, show: 4, r: 4 }, { pat: ['AB'], o: 3, show: 5, r: 5 }, { pat: ['AAB', 'ABB'], o: 3, show: 5, r: 5 }, { pat: ['ABC'], o: 3, show: 5, r: 6 }, { pat: ['AABB', 'ABC', 'ABB'], o: 4, show: 7, r: 6 }],   // level 2 = every game as it was before levels (6 pairs, 3×2 pieces, three choices)
 };
 function lvState(t, kid, game) {
   const st = (ls('lv_' + kid) || {})[game] || {}, start = littleOf(t, kid) ? 1 : 2, n = LV[game].length;
@@ -1046,6 +1073,15 @@ function lvWin(t, kid, game, again) {
 <button class="kidbig ghost" data-a="${again[0]}"${again[1] ? ` data-v="${again[1]}"` : ''}>🔁 ${L(`เล่นด่าน ${s.at} อีก`, `Level ${s.at} again`)}</button>`;
 }
 const lvWord = (t, kid, game) => L(`ด่าน ${lvState(t, kid, game).at}`, `level ${lvState(t, kid, game).at}`);
+const WHERE_E = ['🐱', '🐶', '🐰', '🐻', '🐸', '🐥', '🍎', '🚗', '⭐', '🎈', '🐢', '🦋'];
+const WHERE_NAME = [['มุมบนซ้าย', 'in the top left corner'], ['ข้างบน', 'on top'], ['มุมบนขวา', 'in the top right corner'], ['ข้างซ้าย', 'on the left'], ['ตรงกลาง', 'in the middle'],
+  ['ข้างขวา', 'on the right'], ['มุมล่างซ้าย', 'in the bottom left corner'], ['ข้างล่าง', 'at the bottom'], ['มุมล่างขวา', 'in the bottom right corner']];
+const WHERE_ITEM = { '🐱': ['แมว', 'cat'], '🐶': ['หมา', 'dog'], '🐰': ['กระต่าย', 'rabbit'], '🐻': ['หมี', 'bear'], '🐸': ['กบ', 'frog'], '🐥': ['ลูกเจี๊ยบ', 'chick'], '🍎': ['แอปเปิล', 'apple'], '🚗': ['รถ', 'car'], '⭐': ['ดาว', 'star'], '🎈': ['ลูกโป่ง', 'balloon'], '🐢': ['เต่า', 'turtle'], '🦋': ['ผีเสื้อ', 'butterfly'] };
+const ODD_GROUPS = [{ k: 'fruit', th: 'ผลไม้', en: 'fruit', e: ['🍎', '🍌', '🍇', '🍓', '🍉', '🍐', '🍒'] }, { k: 'veg', th: 'ผัก', en: 'vegetables', e: ['🥕', '🥦', '🌽', '🥒', '🍆', '🥔'] },
+  { k: 'land', th: 'สัตว์บก', en: 'land animals', e: ['🐶', '🐱', '🐰', '🐻', '🐼', '🐵', '🐯'] }, { k: 'sea', th: 'สัตว์ทะเล', en: 'sea animals', e: ['🐳', '🐙', '🐟', '🦀', '🐬', '🐠'] },
+  { k: 'go', th: 'พาหนะ', en: 'things that go', e: ['🚗', '🚌', '🚲', '✈️', '🚂', '🚀', '⛵'] }, { k: 'wear', th: 'เสื้อผ้า', en: 'clothes', e: ['👕', '👖', '👗', '🧢', '👟', '🧦'] }];
+const ODD_NEAR = [['fruit', 'veg'], ['land', 'sea'], ['veg', 'fruit'], ['sea', 'land']];
+const NEXT_E = ['🍎', '🍌', '🐶', '🐱', '⭐', '🌙', '🚗', '🎈', '🌸', '🐟', '🍓', '🐥'];
 const SHADOW_THINGS = new Set(['🚗', '✈️', '⛵', '🎸', '🍌', '🚲', '🍄']);
 const SHADOWS = [['🐘', 'ช้าง', 'elephant'], ['🦒', 'ยีราฟ', 'giraffe'], ['🐢', 'เต่า', 'turtle'], ['🐰', 'กระต่าย', 'rabbit'], ['🦀', 'ปู', 'crab'], ['🐟', 'ปลา', 'fish'],
   ['🐌', 'หอยทาก', 'snail'], ['🦋', 'ผีเสื้อ', 'butterfly'], ['🐓', 'ไก่', 'chicken'], ['🐳', 'วาฬ', 'whale'], ['🚗', 'รถ', 'car'], ['✈️', 'เครื่องบิน', 'plane'],
@@ -1072,12 +1108,32 @@ function kgRound(g) {
     const zs = shuffle(g.lv.z), big = g.n % 2 === g.first;
     g.r = { thing: g.deck[g.n], sizes: zs, big, right: zs.indexOf(big ? Math.max(...zs) : Math.min(...zs)) };
   }
+  else if (g.game === 'where') {
+    const P = g.lv.p, mode = g.lv.m === 'mix' ? (Math.random() < 0.5 ? 'find' : 'place') : g.lv.m, items = shuffle(WHERE_E).slice(0, P.length), at = {};
+    P.forEach((q, k) => { at[q] = items[k]; });
+    let pos; do { pos = P[Math.floor(Math.random() * P.length)]; } while (P.length > 1 && pos === g.lastPos);
+    g.lastPos = pos; g.r = { mode, at, pos, item: at[pos] };
+  }
+  else if (g.game === 'odd') {
+    let A, B;
+    if (g.lv.near && Math.random() < 0.6) { const pr = ODD_NEAR[Math.floor(Math.random() * ODD_NEAR.length)]; A = ODD_GROUPS.find((x) => x.k === pr[0]); B = ODD_GROUPS.find((x) => x.k === pr[1]); }
+    else { const far = (a, b) => ODD_NEAR.some((q) => q[0] === a.k && q[1] === b.k); do { [A, B] = shuffle(ODD_GROUPS).slice(0, 2); } while (far(A, B)); }
+    const one = B.e[Math.floor(Math.random() * B.e.length)];
+    g.r = { A, B, one, opts: shuffle(shuffle(A.e).slice(0, g.lv.o - 1).concat(one)) };
+  }
+  else if (g.game === 'next') {
+    const pat = g.lv.pat[Math.floor(Math.random() * g.lv.pat.length)], sym = shuffle(NEXT_E).slice(0, 3), seq = [];
+    for (let k = 0; seq.length <= g.lv.show; k++) seq.push(sym['ABC'.indexOf(pat[k % pat.length])]);
+    const answer = seq[g.lv.show], others = sym.filter((x) => x !== answer && pat.includes('ABC'[sym.indexOf(x)])).concat(shuffle(NEXT_E.filter((x) => !sym.includes(x))));
+    g.r = { shown: seq.slice(0, g.lv.show), answer, opts: shuffle([answer].concat(others.slice(0, g.lv.o - 1))) };
+  }
   else if (g.game === 'feed') { const want = g.deck[g.n]; g.r = { pal: g.pal, want, opts: shuffle([want].concat(shuffle(FOODS.filter((x) => x !== want)).slice(0, many - 1))) }; }
   g.got = false;
 }
 function kgNew(game, t, kid) {
   const g = { game, key: `${t.id}.${kid}`, tid: t.id, kid, n: 0, lv: lvOf(t, kid, game), at: lvState(t, kid, game).at, done: false, got: false };
   if (game === 'shadow') g.deck = shuffle(SHADOWS).slice(0, g.lv.r);
+  if (game === 'where' || game === 'odd' || game === 'next') g.deck = Array(g.lv.r).fill(0);   // rounds only: each one is drawn fresh
   if (game === 'bigsmall') { g.deck = shuffle(SHADOWS.filter((x) => !/[✈️⛵🎸🚲]/u.test(x[0]))).slice(0, g.lv.r); g.first = Math.random() < 0.5 ? 0 : 1; }
   if (game === 'feed') { g.pal = FEED_PALS[Math.floor(Math.random() * FEED_PALS.length)]; g.deck = shuffle(FOODS).slice(0, g.lv.r); g.fed = []; }
   if (game === 'sort') {
@@ -1090,6 +1146,13 @@ function kgNew(game, t, kid) {
   kgRound(g); return g;
 }
 const kgFor = (game, t, kid) => { if (!kg || kg.game !== game || kg.key !== `${t.id}.${kid}` || kg.at !== lvState(t, kid, game).at) kg = kgNew(game, t, kid); return kg; };
+// the question of a round, said aloud as the next one comes up
+function kgAsk(g) {
+  if (g.game === 'where') return g.r.mode === 'find' ? L(`อะไรอยู่${WHERE_NAME[g.r.pos][0]}?`, `What is ${WHERE_NAME[g.r.pos][1]}?`) : L(`วาง${WHERE_ITEM[g.r.item][0]}ไว้${WHERE_NAME[g.r.pos][0]}`, `Put the ${WHERE_ITEM[g.r.item][1]} ${WHERE_NAME[g.r.pos][1]}`);
+  if (g.game === 'odd') return L('อันไหนไม่เข้าพวก?', 'Which one does not belong?');
+  if (g.game === 'next') return L('อะไรมาต่อ?', 'What comes next?');
+  return '';
+}
 function kgWin(b, chars) { kg.done = true; lvDone(trip(kg.tid), kg.kid, kg.game); beep('fanfare'); celebrate(chars); star(kg.kid, 2); }
 const kgNope = (b, line) => { beep('tap'); b.classList.remove('nope'); void b.offsetWidth; b.classList.add('nope'); sayUi(line); };
 Object.assign(A, {
@@ -1097,7 +1160,7 @@ Object.assign(A, {
   kglv(b) {   // pick a level (a chip, or "on to level n" after a win): the game starts over at it
     const kid = kidNow(), t = kidTrip(kid), game = b.dataset.g, n = +b.dataset.v; if (!t || !LV[game]) return;
     beep('sparkle'); lvSet(kid, game, { at: n });
-    if (game === 'jigsaw') jg = null; else if (game === 'match') mg = null; else kg = kgNew(game, t, kid);
+    if (game === 'jigsaw') jg = null; else if (game === 'match') mg = null; else if (game === 'maze') mz = null; else kg = kgNew(game, t, kid);
     render(); sayUi(L(`ด่าน ${n}!`, `Level ${n}!`));
   },
   kgpick(b) {
@@ -1113,6 +1176,14 @@ Object.assign(A, {
       const pal = $('#kgpal'); if (pal) { pal.classList.remove('chomp'); void pal.offsetWidth; pal.classList.add('chomp'); }
       sayUi(L(`ง่ำ ง่ำ! อร่อยจัง`, 'Yum yum! Delicious!'));
       setTimeout(() => { if (kg !== g) return; g.n++; if (g.n >= g.lv.r) { kgWin(b, [g.pal[0], '😋', '💛']); sayUi(L(`${g.pal[1]}อิ่มแล้ว! ขอบคุณนะ`, `${g.pal[2]} is full! Thank you!`)); } else { kgRound(g); sayUi(L(`อยากกิน${g.r.want[1]}`, `${capFirst(g.r.want[3])}, please!`)); } safeRender(); }, 1100);
+    } else if (g.game === 'where' || g.game === 'odd' || g.game === 'next') {
+      const ok = g.game === 'where' ? +v === g.r.pos : g.game === 'odd' ? v === g.r.one : v === g.r.answer;
+      if (!ok) return kgNope(b, g.game === 'where' ? L(`ยังไม่ใช่ ลองดู${WHERE_NAME[g.r.pos][0]}นะ`, `Not there — look ${WHERE_NAME[g.r.pos][1]}`) : g.game === 'odd' ? L('อันนี้เข้าพวกนะ ลองอีกที', 'That one belongs — try again!') : L('อืม… ไม่ใช่ ดูแถวอีกทีนะ', 'Hmm… look at the row again!'));
+      g.got = true; beep('chime'); burst(b, ['⭐', '✨']);
+      sayUi(g.game === 'where' ? L(`ใช่แล้ว! ${WHERE_ITEM[g.r.item][0]}อยู่${WHERE_NAME[g.r.pos][0]}`, `Yes! The ${WHERE_ITEM[g.r.item][1]} is ${WHERE_NAME[g.r.pos][1]}`)
+        : g.game === 'odd' ? L(`ใช่แล้ว! อันอื่นเป็น${g.r.A.th}`, `Yes! The others are ${g.r.A.en}`) : L('ใช่แล้ว! เก่งมาก', 'Yes! Well done'));
+      render();
+      setTimeout(() => { if (kg !== g) return; g.n++; if (g.n >= g.lv.r) kgWin(b, ['🧠', '⭐', '✨']); else { kgRound(g); sayUi(kgAsk(g)); } safeRender(); }, 1300);
     } else if (g.game === 'bigsmall') {
       if (+v !== g.r.right) return kgNope(b, g.r.big ? L('ยังไม่ใหญ่ที่สุดนะ ลองอีกที', 'Not the biggest — try again!') : L('ยังไม่เล็กที่สุดนะ ลองอีกที', 'Not the smallest — try again!'));
       g.got = true; beep(g.r.big ? 'boom' : 'pop'); burst(b, ['⭐', '✨']); sayUi(g.r.big ? L('ใหญ่ที่สุด! เก่งมาก', 'The biggest! Well done') : L('เล็กที่สุด! เก่งมาก', 'The smallest! Well done')); render();
@@ -1125,6 +1196,55 @@ Object.assign(A, {
       safeRender();
     }
   },
+});
+// ---- the maze: a fresh maze each round (depth-first carving), the finger draws the way from the animal to its goal; walls stop it,
+// sliding back takes the last step back. Five sizes, 3×3 to 7×7. ----
+const MAZE_PAIRS = [['🐭', '🧀', 'หนู', 'ชีส', 'mouse', 'cheese'], ['🐰', '🥕', 'กระต่าย', 'แครอท', 'rabbit', 'carrot'], ['🐝', '🌻', 'ผึ้ง', 'ดอกไม้', 'bee', 'flower'], ['🐶', '🦴', 'หมา', 'กระดูก', 'puppy', 'bone'], ['🐧', '🐟', 'เพนกวิน', 'ปลา', 'penguin', 'fish'], ['🐿️', '🌰', 'กระรอก', 'ลูกโอ๊ก', 'squirrel', 'nut']];
+let mz = null, mzDown = false;
+function mazeNew(t, kid) {
+  const n = lvOf(t, kid, 'maze').n, right = Array(n * n).fill(true), bottom = Array(n * n).fill(true), seen = new Set([0]), stack = [0];
+  while (stack.length) {
+    const c = stack[stack.length - 1], r = Math.floor(c / n), k = c % n;
+    const nb = shuffle([[r - 1, k], [r + 1, k], [r, k - 1], [r, k + 1]].filter(([y, x]) => y >= 0 && y < n && x >= 0 && x < n && !seen.has(y * n + x)));
+    if (!nb.length) { stack.pop(); continue; }
+    const [y, x] = nb[0], d = y * n + x;
+    if (y === r) right[Math.min(c, d)] = false; else bottom[Math.min(c, d)] = false;
+    seen.add(d); stack.push(d);
+  }
+  mz = { key: `${t.id}.${kid}`, tid: t.id, kid, at: lvState(t, kid, 'maze').at, n, right, bottom, path: [0], done: false, pair: MAZE_PAIRS[Math.floor(Math.random() * MAZE_PAIRS.length)] };
+}
+const mazeFor = (t, kid) => { if (!mz || mz.key !== `${t.id}.${kid}` || mz.at !== lvState(t, kid, 'maze').at) mazeNew(t, kid); return mz; };
+// is there no wall between two neighbouring cells?
+function mazeOpen(a, b) {
+  const n = mz.n, ra = Math.floor(a / n), rb = Math.floor(b / n);
+  if (ra === rb && Math.abs(a - b) === 1) return !mz.right[Math.min(a, b)];
+  if (Math.abs(a - b) === n) return !mz.bottom[Math.min(a, b)];
+  return false;
+}
+function mazeCells() {
+  const n = mz.n, on = new Set(mz.path), head = mz.path[mz.path.length - 1], end = n * n - 1;
+  return Array.from({ length: n * n }, (_, i) => `<div class="mz${mz.right[i] && i % n !== n - 1 ? ' wr' : ''}${mz.bottom[i] && i < end - n + 1 ? ' wb' : ''}${on.has(i) ? ' on' : ''}" data-i="${i}">${i === head ? `<span class="mzhd">${mz.pair[0]}</span>` : i === end ? `<span>${mz.pair[1]}</span>` : ''}</div>`).join('');
+}
+function mazeTry(i) {
+  if (!mz || mz.done || i == null || isNaN(i)) return;
+  const p = mz.path, last = p[p.length - 1];
+  if (i === last) return;
+  if (p.length > 1 && i === p[p.length - 2]) p.pop();
+  else if (!p.includes(i) && mazeOpen(last, i)) { p.push(i); if (p.length % 2) beep('tap'); }
+  else return;
+  const bd = $('#mazeb'); if (bd) bd.innerHTML = mazeCells();
+  if (i === mz.n * mz.n - 1) {
+    mz.done = true; mzDown = false; lvDone(trip(mz.tid), mz.kid, 'maze'); beep('fanfare'); celebrate([mz.pair[0], mz.pair[1], '⭐']); star(mz.kid, 2);
+    sayUi(L(`เย้! ${mz.pair[2]}เจอ${mz.pair[3]}แล้ว`, `Hooray! The ${mz.pair[4]} found the ${mz.pair[5]}`)); setTimeout(safeRender, 600);
+  }
+}
+const mzCell = (e) => { const el = document.elementFromPoint(e.clientX, e.clientY), c = el && el.closest && el.closest('#mazeb .mz'); return c ? +c.dataset.i : null; };
+document.addEventListener('pointerdown', (e) => { if (e.target.closest && e.target.closest('#mazeb')) { mzDown = true; e.preventDefault(); mazeTry(mzCell(e)); } });
+document.addEventListener('pointermove', (e) => { if (mzDown) mazeTry(mzCell(e)); });
+document.addEventListener('pointerup', () => { mzDown = false; });
+document.addEventListener('pointercancel', () => { mzDown = false; });
+Object.assign(A, {
+  mazeagain() { beep('pop'); const t = trip(mz.tid); mazeNew(t, mz.kid); render(); },
 });
 // ---- animal sounds on the farm: [emoji, th, en, the sound in Thai, in English, x %, y %] — placed by hand so none overlap ----
 const FARM = [['🐮', 'วัว', 'cow', 'มอ มอ', 'moo moo', 14, 54], ['🐷', 'หมู', 'pig', 'อู๊ด อู๊ด', 'oink oink', 40, 54], ['🐔', 'ไก่', 'hen', 'กุ๊ก กุ๊ก', 'cluck cluck', 68, 54],

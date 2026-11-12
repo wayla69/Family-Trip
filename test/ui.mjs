@@ -567,7 +567,7 @@ const T = 'hk-macau-2026';
   ok(/(Day 2 of 6|วันที่ 2)/.test(await page.textContent('.tile.today')), 'HK on day 2: the menu’s Today tile names day 2');
   await page.goto(`${BASE}/#/passport/mimi/${T}`); await page.waitForSelector('.kidgo');
   await page.click('.kidgo'); await page.waitForSelector('.kidwrap .kidtiles');
-  ok(await page.locator('.kidtiles button').count() === 21 && await page.locator('.kidtiles button[data-v$="/map"], .kidtiles button[data-v$="/stickers"], .kidtiles button[data-v$="/trophies"]').count() === 0 && await page.locator('.kidbar button[data-v$="/map"]').count() === 1 && await page.locator('.kidtiles button[data-v$="/animals"]').count() === 1 && await page.locator('.kidtiles button[data-v$="/quiz"]').count() === 1 && await page.locator('nav.bar').count() === 0, 'kid mode on the trip: 21 big tiles (colour, draw, find, stamp, say, quiz, photos, match, shadows, feed me, colours, animal sounds, bath time, big & small, mood, animals & friends, count… — map, stickers and trophies only on the kid bar), no tab bar');
+  ok(await page.locator('.kidtiles button').count() === 25 && await page.locator('.kidtiles button[data-v$="/map"], .kidtiles button[data-v$="/stickers"], .kidtiles button[data-v$="/trophies"]').count() === 0 && await page.locator('.kidbar button[data-v$="/map"]').count() === 1 && await page.locator('.kidtiles button[data-v$="/animals"]').count() === 1 && await page.locator('.kidtiles button[data-v$="/quiz"]').count() === 1 && await page.locator('nav.bar').count() === 0, 'kid mode on the trip: 25 big tiles (colour, draw, find, stamp, say, quiz, photos, match, shadows, feed me, colours, animal sounds, bath time, big & small, maze, where, odd one out, what next, mood, animals & friends, count… — map, stickers and trophies only on the kid bar), no tab bar');
   ok(await page.evaluate(() => { const mm = window.matchMedia; window.matchMedia = () => ({ matches: false }); celebrate(); window.matchMedia = mm; const n = document.querySelectorAll('.confetti').length; return n === 36 && [...document.querySelectorAll('.confetti')].every((c) => getComputedStyle(c).position === 'fixed'); }), 'kid mode: the big celebration drops 36 pieces of confetti over the whole screen (stamp, surprise box, a finished game)');
   await page.goto(`${BASE}/#/kid/mimi/bubbles`); await page.waitForSelector('#bubblefield'); await page.waitForSelector('.bub');
   await page.locator('.bub').first().dispatchEvent('pointerdown');
@@ -588,14 +588,14 @@ const T = 'hk-macau-2026';
     await new Promise((r) => setTimeout(r, 1000)); const n = f.querySelectorAll('.bub').length; clearInterval(bubT); bubT = 0; bubN = 0; f.remove(); return n; });
   ok(lateBub > 0, `bubbles: a field drawn late (after the timer's first tick) still fills with bubbles (${lateBub})`);
   // three quiet games (owner, Nov 2026): a wrong tap wobbles and keeps the round, the right ones play every round through to a win and two stars
-  for (const [gm, sel] of [['shadow', '.shbig'], ['feed', '.feedpal'], ['sort', '.baskets'], ['bigsmall', '.bsrow']]) {
+  for (const [gm, sel] of [['shadow', '.shbig'], ['feed', '.feedpal'], ['sort', '.baskets'], ['bigsmall', '.bsrow'], ['where', '.whereb'], ['odd', '.oddch'], ['next', '.nextrow']]) {
     await page.goto(`${BASE}/#/kid/mimi/${gm}`); await page.waitForSelector(sel);
     const st0 = await page.evaluate(() => stars('mimi'));
-    const wrongV = await page.evaluate(() => { const right = kg.game === 'sort' ? kg.items[kg.n].k : kg.game === 'bigsmall' ? String(kg.r.right) : kg.r.want[0]; const b = [...document.querySelectorAll('[data-a="kgpick"]')].find((x) => x.dataset.v !== right); return b && b.dataset.v; });
+    const wrongV = await page.evaluate(() => { const right = kg.game === 'sort' ? kg.items[kg.n].k : kg.game === 'bigsmall' ? String(kg.r.right) : kg.game === 'where' ? String(kg.r.pos) : kg.game === 'odd' ? kg.r.one : kg.game === 'next' ? kg.r.answer : kg.r.want[0]; const b = [...document.querySelectorAll('[data-a="kgpick"]')].find((x) => x.dataset.v !== right); return b && b.dataset.v; });
     await page.click(`[data-a="kgpick"][data-v="${wrongV}"]`);
     const kept = await page.evaluate(() => kg.n === 0 && !kg.got);
     for (let k = 0; k < 40 && !(await page.evaluate(() => kg.done)); k++) {
-      const right = await page.evaluate(() => (kg.got ? null : kg.game === 'sort' ? kg.items[kg.n].k : kg.game === 'bigsmall' ? String(kg.r.right) : kg.r.want[0]));
+      const right = await page.evaluate(() => (kg.got ? null : kg.game === 'sort' ? kg.items[kg.n].k : kg.game === 'bigsmall' ? String(kg.r.right) : kg.game === 'where' ? String(kg.r.pos) : kg.game === 'odd' ? kg.r.one : kg.game === 'next' ? kg.r.answer : kg.r.want[0]));
       if (right) await page.click(`[data-a="kgpick"][data-v="${right}"]`);
       await page.waitForTimeout(right && gm === 'sort' ? 60 : 250);
     }
@@ -622,6 +622,16 @@ const T = 'hk-macau-2026';
   for (let y = mudBox.y + 10; y < mudBox.y + mudBox.height && !(await page.evaluate(() => wash.clean)); y += 22) { await page.mouse.move(mudBox.x + 4, y); await page.mouse.down(); for (let x = mudBox.x + 4; x < mudBox.x + mudBox.width; x += 28) await page.mouse.move(x, y); await page.mouse.up(); }
   await page.waitForSelector('[data-a="washnext"]', { timeout: 3000 }).catch(() => {});
   ok(await page.evaluate(() => wash.clean) && await page.locator('[data-a="washnext"]').count() === 1 && await page.locator('#washbox canvas.mud').count() === 0, 'kid game wash: scrubbing the mud canvas cleans the animal and offers the next friend');
+  // the maze (owner, Nov 2026: "ลากเส้นหาทางออก"): a wall stops the finger, the way out is drawn by dragging along it, a win opens level 3
+  await page.goto(`${BASE}/#/kid/mimi/maze`); await page.waitForSelector('#mazeb .mz');
+  const route = await page.evaluate(() => { const n = mz.n, prev = { 0: -1 }, q = [0]; while (q.length) { const c = q.shift(); for (const d of [c - n, c + n, c - 1, c + 1]) if (d >= 0 && d < n * n && !(d in prev) && mazeOpen(c, d)) { prev[d] = c; q.push(d); } } const out = []; for (let c = n * n - 1; c !== -1; c = prev[c]) out.unshift(c); return out; });
+  const wallStops = await page.evaluate(() => { const n = mz.n, shut = [1, n].find((d) => !mazeOpen(0, d)); if (shut === undefined) return true; mazeTry(shut); const kept = mz.path.length === 1; return kept; });
+  const mzAt = async (i) => { const b = await page.locator(`#mazeb .mz[data-i="${i}"]`).boundingBox(); return [b.x + b.width / 2, b.y + b.height / 2]; };
+  await page.locator('#mazeb').scrollIntoViewIfNeeded();
+  let [mx, my] = await mzAt(route[0]); await page.mouse.move(mx, my); await page.mouse.down();
+  for (const i of route.slice(1)) { [mx, my] = await mzAt(i); await page.mouse.move(mx, my, { steps: 3 }); }
+  await page.mouse.up(); await page.waitForSelector('[data-a="kglv"].kidbig', { timeout: 3000 }).catch(() => {});
+  ok(route.length > 1 && wallStops && await page.evaluate(() => mz.done && mz.n === 4) && await page.locator('[data-a="kglv"][data-v="3"].kidbig').count() === 1, `kid game maze: a wall stops the path, dragging along the way out wins the 4×4 maze and opens level 3 (${route.length} cells)`);
   // every game with a scene draws it (the sky and the strip are CSS backgrounds: no file to fetch, works with no signal)
   const scenes = {};
   for (const v of ['bubbles', 'music', 'shadow', 'feed', 'sort', 'bigsmall', 'wash']) { await page.goto(`${BASE}/#/kid/mimi/${v}`); await page.waitForSelector('.kidwrap'); scenes[v] = await page.evaluate(() => { const w = document.querySelector('.kidwrap'); return [...w.classList].find((c) => c.startsWith('sc-')) + ':' + /data:image\/svg/.test(getComputedStyle(w).backgroundImage); }); }

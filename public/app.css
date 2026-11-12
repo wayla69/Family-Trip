@@ -2609,3 +2609,20 @@ section.pg .dstamps.pst.c3 b,section.pg .dstamps.pst.c4 b{font-size:16px}section
 @media (min-width:700px){.kgch[data-n="4"]{grid-template-columns:repeat(4,1fr)}}
 .jigtray.many .jpiece{--pw:clamp(64px,7vw,104px)}   /* 9 to 16 pieces on the higher levels: smaller in the tray, the board keeps its size */
 .lvall{margin:0;text-align:center;font-size:clamp(20px,2.6vw,28px);font-weight:700;background:rgba(255,255,255,.85);border-radius:20px;padding:12px}
+/* the thinking games, part two: maze · where is it · odd one out · what comes next */
+.mazeb{display:grid;grid-template-columns:repeat(var(--n),1fr);width:min(100%,58vh,560px);aspect-ratio:1;margin:4px auto 12px;border:6px solid #4B3F8F;border-radius:16px;background:#FFFDF6;touch-action:none;overflow:hidden;box-shadow:0 12px 26px -16px rgba(0,0,0,.5)}
+.mazeb .mz{position:relative;display:grid;place-items:center;min-width:0;min-height:0;box-sizing:border-box}
+.mazeb .mz.wr{border-right:5px solid #4B3F8F}.mazeb .mz.wb{border-bottom:5px solid #4B3F8F}
+.mazeb .mz.on{background:#FFE07A}   /* a bright track the finger leaves behind */
+.mazeb .mz span{font-size:calc(min(100vw - 40px,58vh,560px) / var(--n) * .62);line-height:1;pointer-events:none}
+.mazeb.won{box-shadow:0 0 0 6px #FFD43B,0 12px 26px -16px rgba(0,0,0,.5)}
+.whereb{display:grid;grid-template-columns:repeat(3,1fr);gap:clamp(8px,1.6vw,16px);width:min(100%,56vh,520px);aspect-ratio:1;margin:4px auto 12px;padding:clamp(8px,1.6vw,16px);border-radius:24px;background:rgba(255,255,255,.55);box-shadow:inset 0 0 0 3px rgba(31,42,58,.12)}
+.wcell{border:0;border-radius:18px;background:#fff;display:grid;place-items:center;padding:0;box-shadow:0 8px 18px -12px rgba(0,0,0,.45);min-width:0}
+.wcell span{font-size:clamp(46px,9vw,88px);line-height:1}.wcell.off{background:transparent;box-shadow:none}
+.wcell.slot{background:rgba(255,255,255,.6);box-shadow:inset 0 0 0 3px rgba(31,42,58,.18);border:3px dashed rgba(31,42,58,.25)}
+.wcell.right{background:#DCF5E3;outline:4px solid #2E7D32}.wcell.nope{animation:nope .4s}
+.wheretake{text-align:center;font-size:clamp(70px,12vw,120px);line-height:1}
+.oddch button{padding:18px 8px}
+.nextrow{display:flex;flex-wrap:wrap;justify-content:center;gap:clamp(6px,1.2vw,12px);margin:8px 0 14px;padding:14px;border-radius:24px;background:rgba(255,255,255,.88)}
+.nextrow span{font-size:clamp(40px,7vw,72px);line-height:1}.nextrow .q{display:grid;place-items:center;min-width:1.2em;border-radius:14px;box-shadow:inset 0 0 0 3px #F08C2E}
+
