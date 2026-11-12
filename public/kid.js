@@ -932,7 +932,7 @@ function startBubbles() {
     const b = document.createElement('button'), sz = 52 + Math.random() * 64;
     const t = (matchMedia('(prefers-reduced-motion: reduce)').matches ? 12 : 4.5 + Math.random() * 3) * 1000;
     b.className = 'bub'; b.setAttribute('aria-label', L('ฟอง', 'Bubble'));
-    b.style.cssText = `left:${4 + Math.random() * 80}%;width:${sz}px;height:${sz}px;--t:${t / 1000}s;--hue:${Math.floor(Math.random() * 360)}`;
+    b.style.cssText = `left:${4 + Math.random() * 80}%;bottom:${-Math.round(sz) - 4}px;width:${sz}px;height:${sz}px;--t:${t / 1000}s;--hue:${Math.floor(Math.random() * 360)}`;
     if (Math.random() < 0.45) b.textContent = BUB_E[Math.floor(Math.random() * BUB_E.length)];
     f.appendChild(b);
     // the rise in px from the field's own height, by the Web Animations API: iPad Safari left the CSS keyframes (a var() inside the

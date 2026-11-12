@@ -578,8 +578,8 @@ const T = 'hk-macau-2026';
   ok(await page.locator('.bub').count() > 0, 'bubbles: a second visit (left by the back gesture) blows bubbles again');
   // iPad owner, Nov 2026 (iPadOS 17): the field stayed empty — the CSS rise never played, so every bubble waited under the field. The rise is
   // a Web Animation in px now, and the bubbles must actually be inside the field to be seen
-  ok(await page.evaluate(() => { const f = document.querySelector('#bubblefield').getBoundingClientRect(), bs = [...document.querySelectorAll('.bub')];
-    return bs.every((b) => b.classList.contains('wa') && b.getAnimations().length === 1 && getComputedStyle(b).animationName === 'none') && bs.some((b) => { const r = b.getBoundingClientRect(); return r.top < f.bottom && r.bottom > f.top; }); }),
+  ok(await page.waitForFunction(() => { const f = document.querySelector('#bubblefield').getBoundingClientRect(), bs = [...document.querySelectorAll('.bub:not(.pop)')];
+    return bs.length > 0 && bs.every((b) => b.classList.contains('wa') && b.getAnimations().length === 1 && getComputedStyle(b).animationName === 'none') && bs.some((b) => { const r = b.getBoundingClientRect(); return r.top < f.bottom - 10 && r.bottom > f.top; }); }, null, { timeout: 5000 }).then(() => true, () => false),
   'bubbles: they rise by the Web Animations API (not the CSS keyframes iPad Safari left unplayed) and are seen inside the field');
   await page.goto(`${BASE}/#/kid/mimi`); await page.waitForSelector('.kidtiles');
   const lateBub = await page.evaluate(async () => {   // a field drawn a moment after the timer starts still gets bubbles
