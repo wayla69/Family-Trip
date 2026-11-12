@@ -509,6 +509,12 @@ const T = 'hk-macau-2026';
   ok(await page.locator('.mdays .chip').count() === 6 && await page.locator('.mfold[open]').count() === 1 && await page.locator('#m0 .mfold[open]').count() === 1 && await page.evaluate(() => document.documentElement.scrollHeight < 11000), `passport before the trip: day chips, only day 1's mission open (${await page.evaluate(() => document.documentElement.scrollHeight)} px)`);
   await page.click('.mdays [data-a="mday"][data-v="1"]'); await page.waitForSelector('#m1 .mfold[open]');
   ok(await page.locator('.mfold[open]').count() === 1 && await page.locator('.mdays .chip[aria-pressed="true"][data-v="1"]').count() === 1, 'a tap on day 2 opens its mission and folds day 1');
+  { // iPad (owner, Nov 2026): the open day takes the whole row, never half of it beside an empty column
+    const vp = page.viewportSize(); await page.setViewportSize({ width: 1080, height: 810 }); await page.waitForTimeout(150);
+    const w = await page.evaluate(() => [document.querySelector('#m1').getBoundingClientRect().width, document.querySelector('.missions').getBoundingClientRect().width, document.querySelector('#m2').getBoundingClientRect().width]);
+    ok(Math.abs(w[0] - w[1]) < 2 && w[2] < w[1] * 0.7, `passport on a tablet: the open day fills the row, the folded ones stay a grid (${w.map(Math.round).join(' / ')})`);
+    await page.setViewportSize(vp);
+  }
   await page.click('#m1 button[data-a="tick"][data-v="spot.d1.tower"]');
   await page.click('#pl-dimsum button[data-v="dimsum.eggtart"][data-yum="3"]');
   await page.click('#pl-words button[data-v="words.mhgoi"]');
@@ -570,6 +576,17 @@ const T = 'hk-macau-2026';
   await page.goto(`${BASE}/#/kid/mimi`); await page.waitForSelector('.kidtiles');
   await page.goto(`${BASE}/#/kid/mimi/bubbles`); await page.waitForSelector('#bubblefield'); await page.waitForTimeout(1600);
   ok(await page.locator('.bub').count() > 0, 'bubbles: a second visit (left by the back gesture) blows bubbles again');
+  // iPad owner, Nov 2026 (iPadOS 17): the field stayed empty — the CSS rise never played, so every bubble waited under the field. The rise is
+  // a Web Animation in px now, and the bubbles must actually be inside the field to be seen
+  ok(await page.evaluate(() => { const f = document.querySelector('#bubblefield').getBoundingClientRect(), bs = [...document.querySelectorAll('.bub')];
+    return bs.every((b) => b.classList.contains('wa') && b.getAnimations().length === 1 && getComputedStyle(b).animationName === 'none') && bs.some((b) => { const r = b.getBoundingClientRect(); return r.top < f.bottom && r.bottom > f.top; }); }),
+  'bubbles: they rise by the Web Animations API (not the CSS keyframes iPad Safari left unplayed) and are seen inside the field');
+  await page.goto(`${BASE}/#/kid/mimi`); await page.waitForSelector('.kidtiles');
+  const lateBub = await page.evaluate(async () => {   // a field drawn a moment after the timer starts still gets bubbles
+    clearInterval(bubT); bubT = 0; startBubbles(); await new Promise((r) => setTimeout(r, 900));
+    const f = document.createElement('div'); f.id = 'bubblefield'; f.className = 'bubblefield'; document.querySelector('main, #app, body').appendChild(f);
+    await new Promise((r) => setTimeout(r, 1000)); const n = f.querySelectorAll('.bub').length; clearInterval(bubT); bubT = 0; bubN = 0; f.remove(); return n; });
+  ok(lateBub > 0, `bubbles: a field drawn late (after the timer's first tick) still fills with bubbles (${lateBub})`);
   await page.goto(`${BASE}/#/kid/mimi/music`); await page.waitForSelector('.xylo');
   await page.evaluate(() => { navigator.audioSession = { type: 'auto' }; });   // Safari 16.4+ has it; Chromium does not
   await page.click('.xylo button[data-v="4"]');
@@ -597,6 +614,8 @@ const T = 'hk-macau-2026';
   await jdrag(1, 2);
   const wrongKept = await page.locator('.jpiece[data-v="1"]').count() === 1 && await page.locator('.jslot.filled').count() === 1 && await page.locator('.jghost').count() === 0;
   await jdrag(1, 1);
+  // under a loaded CI box the board can still be settling from the wrong drop's shake when the second drag measures it: wait, then one more try
+  if (!(await page.waitForFunction(() => document.querySelectorAll('.jslot.filled').length === 2, null, { timeout: 2000 }).then(() => true, () => false))) await jdrag(1, 1);
   const jfill = await page.locator('.jslot.filled').count(), jleft = await page.locator('.jpiece[data-v="1"]').count();
   ok(jshape && wrongKept && jfill === 2 && jleft === 0, `jigsaw: slots have the pieces' shape; dragging a piece onto its place puts it there, a wrong place keeps it in the tray (${JSON.stringify({ jshape, wrongKept, jfill, jleft, vh: page.viewportSize() })})`);
   await page.click('.pixpick [data-g="jigsaw"][data-v="photo"]'); await page.waitForSelector('.jigboard');

@@ -883,6 +883,7 @@ body.kidmode{padding-bottom:0;background:var(--tint,#F3F6FA)}
 .bub::after{content:"";position:absolute;top:14%;left:18%;width:28%;height:18%;border-radius:50%;background:rgba(255,255,255,.85);transform:rotate(-25deg)}
 @keyframes rise{to{transform:translateY(calc(-58vh - 160px)) rotate(12deg)}}
 .bub.pop{animation:bubpop .22s ease-out forwards}@keyframes bubpop{to{transform:scale(1.6);opacity:0}}
+.bub.wa,.bub.wa.pop{animation:none}   /* kid.js drives the rise and the pop with the Web Animations API (iPad Safari left the keyframes unplayed) */
 .bubscore{position:absolute;top:10px;right:14px;font-size:30px;font-weight:800;color:#1E6FB5;text-shadow:0 2px 0 #fff}
 /* I spy: things scattered over the day's picture (faded under them); a found one fades out */
 .hideboard{position:relative;width:100%;aspect-ratio:1;border-radius:24px;overflow:hidden;background:#DDF4FF var(--art,none) center/cover no-repeat;box-shadow:0 10px 22px -14px rgba(0,0,0,.4)}
@@ -1304,8 +1305,8 @@ button.tile{width:100%;height:auto;appearance:none;-webkit-appearance:none}   /*
 .animals .seen{position:absolute;right:8px;top:8px;width:46px;height:46px;border-radius:50%;border:0;background:#fff;box-shadow:0 4px 10px -6px rgba(0,0,0,.5);font-size:22px}
 .animals .an.on .seen{background:var(--accent);color:var(--on-accent)}
 /* counting */
-.countfield{display:grid;grid-template-columns:repeat(auto-fill,minmax(clamp(88px,16vw,170px),1fr));gap:clamp(10px,1.6vw,18px)}   /* bigger on a tablet (iPad owner: the things to count were tiny) */
-.cnt{position:relative;aspect-ratio:1;border:0;border-radius:22px;background:#fff;box-shadow:0 8px 18px -12px rgba(0,0,0,.45);display:grid;place-items:center}
+.countfield{display:flex;flex-wrap:wrap;justify-content:center;gap:clamp(10px,1.6vw,18px)}   /* bigger on a tablet (iPad owner: the things to count were tiny); a short last row sits in the middle (iPad owner, Nov 2026) */
+.cnt{position:relative;flex:0 0 clamp(84px,26vw,180px);width:clamp(84px,26vw,180px);height:clamp(84px,26vw,180px);border:0;border-radius:22px;background:#fff;box-shadow:0 8px 18px -12px rgba(0,0,0,.45);display:grid;place-items:center}
 .cnt span{font-size:clamp(52px,10vw,110px);line-height:1;transition:transform .2s}.cnt.hit span{transform:scale(.8);opacity:.55}
 .cnt i{position:absolute;right:6px;top:6px;min-width:30px;height:30px;border-radius:50%;background:var(--accent);color:var(--on-accent);font-style:normal;font-weight:700;font-size:17px;display:grid;place-items:center;padding:0 6px}
 .cnt:not(.hit) i{display:none}
@@ -2556,3 +2557,5 @@ section.pg .dstamps.pst.c3 b,section.pg .dstamps.pst.c4 b{font-size:16px}section
 .kidexit{display:grid;place-items:center;padding:0;line-height:0;color:#4A5568}.kidexit .klk{width:55%;height:55%;display:block;stroke-width:2.2}
 /* the other round buttons of the kid header: Safari's default button padding and line height pushed their emoji off-centre too */
 .kidhear,.kidback,.kidme{display:grid;place-items:center;padding:0;line-height:1}
+/* the open day of the passport takes the whole row (iPad owner, Nov 2026: one open day in the left column left the right half empty); the folded days keep their grid under it */
+.missions>.mission:has(>.mfold[open]){grid-column:1/-1}
