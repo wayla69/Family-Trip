@@ -929,10 +929,11 @@ function startBubbles() {
     if (!f) { if (++miss > 4) { clearInterval(bubT); bubT = 0; } return; }
     miss = 0;
     if (f.querySelectorAll('.bub').length > 9) return;
-    const b = document.createElement('button'), sz = 52 + Math.random() * 64;
+    // bigger on a tablet (iPad owner, Nov 2026: "ลูกใหญ่หน่อย"): the size grows with the field's width, up to 1.7× a phone's
+    const k = Math.min(1.7, Math.max(1, f.clientWidth / 400)), b = document.createElement('button'), sz = (52 + Math.random() * 64) * k;
     const t = (matchMedia('(prefers-reduced-motion: reduce)').matches ? 12 : 4.5 + Math.random() * 3) * 1000;
     b.className = 'bub'; b.setAttribute('aria-label', L('ฟอง', 'Bubble'));
-    b.style.cssText = `left:${4 + Math.random() * 80}%;bottom:${-Math.round(sz) - 4}px;width:${sz}px;height:${sz}px;--t:${t / 1000}s;--hue:${Math.floor(Math.random() * 360)}`;
+    b.style.cssText = `left:${Math.round(6 + Math.random() * Math.max(0, f.clientWidth - sz - 12))}px;bottom:${-Math.round(sz) - 4}px;width:${sz}px;height:${sz}px;font-size:${Math.round(sz * .42)}px;--t:${t / 1000}s;--hue:${Math.floor(Math.random() * 360)}`;
     if (Math.random() < 0.45) b.textContent = BUB_E[Math.floor(Math.random() * BUB_E.length)];
     f.appendChild(b);
     // the rise in px from the field's own height, by the Web Animations API: iPad Safari left the CSS keyframes (a var() inside the
