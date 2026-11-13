@@ -1510,6 +1510,7 @@ const T = 'hk-macau-2026';
   ok(await page.locator('.tile.t-today, .tile.t-plan, .tile.t-eat, .tile.t-sos').count() >= 3 && await page.locator('.tripdel [data-a="tripdel"]').count() === 1 && await page.locator('.onbway[data-a="sample"], .addway[data-a="sample"]').count() === 0, 'sample: the menu has its tiles and a delete button at the foot; the offer is gone once it exists');
   await s.shot('06-sample-menu', false);
   await page.goto(`${BASE}/#/t/sakura-hop-2028/today/0`); await page.waitForSelector('.day.today');
+  ok(/¥9,000/.test(await page.textContent('main')), 'sample today: a money line written "today ≈" (lower case) shows its total — dayGlance\'s `pre` flag no longer hides the brief() teaser, which crashed the whole page');
   await s.shot('07-sample-today');
   await page.goto(`${BASE}/#/t/sakura-hop-2028/book`); await page.waitForSelector('.cover');
   ok(await page.locator('.cover img[src^="/stock/"]').count() >= 1 || await page.locator('img[src^="/stock/"]').count() >= 1, 'sample: the book shows the library pictures');
@@ -1517,7 +1518,7 @@ const T = 'hk-macau-2026';
   await page.goto(`${BASE}/#/passport/${st1.children[0].slug}/sakura-hop-2028`); await page.waitForSelector('.advc');
   ok(/^\/stock\/jp\/stamp\.v\d+\.svg$/.test(await page.getAttribute('.advc img.crest', 'src')) && await page.locator('.pp-page').count() >= 2, 'sample: the passport takes the stock library\'s Japan stamp as its crest (no drawn art of its own, the generic guides)');
   { const ad = (sample.theme || {}).artDays || [], stamps = ((await page.evaluate(() => S.trips.find((t) => t.id === 'sakura-hop-2028').passport)) || {}).stamps || [];
-    ok(ad.length === 3 && ad.every((u) => /^\/stock\/jp\/tokyo\/[a-z-]+\.v\d+\.svg$/.test(u)) && stamps.map((x) => x.art).join() === '/stock/jp/stamp.v1.svg,/stock/jp/tokyo/stamp.v1.svg',
+    ok(ad.length === 6 && ad.every((u) => /^\/stock\/jp\/tokyo\/[a-z-]+\.v\d+\.svg$/.test(u)) && stamps.map((x) => x.art).join() === '/stock/jp/stamp.v1.svg,/stock/jp/tokyo/stamp.v1.svg',
       'sample: every Tokyo day has a stock library picture and the passport holds the Japan and Tokyo stamps (resolved by the server)');
     const r = await page.evaluate((u) => fetch(u).then((x) => [x.status, x.headers.get('content-type'), x.headers.get('cache-control')]), ad[0]);
     ok(r[0] === 200 && /svg/.test(r[1]) && /immutable/.test(r[2]), 'a stock picture is served as an immutable SVG'); }

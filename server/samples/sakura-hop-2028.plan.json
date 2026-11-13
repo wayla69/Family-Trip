@@ -1,16 +1,16 @@
 {
-  "$comment": "The sample book (#/start step 5, the shelf): a fictional 3-day trip with no real bookings, built for the family that asks for it — their own children, no drawn art. docs/handoff/plan.schema.json; served by POST /api/b/sample.",
+  "$comment": "The sample book (#/start step 5, the shelf): a fictional 6-day trip with no real bookings, built for the family that asks for it — their own children, no drawn art. It shows every part a real book has (the timeline with headlines, picks, plan B, money, the guide's tales, missions, the pocket guide, the passport). docs/handoff/plan.schema.json; served by POST /api/b/sample. Every name marked (example) is invented; prices are rough guides.",
   "slug": "sakura-hop-2028",
   "title": {
     "th": "The Sakura Hop · โตเกียว",
     "en": "The Sakura Hop · Tokyo"
   },
   "sub": {
-    "th": "เล่มตัวอย่าง · 3 วัน ดอกไม้บาน รถไฟ และราเมง",
-    "en": "A sample book · three days of blossom, trains and ramen"
+    "th": "เล่มตัวอย่าง · 6 วัน ดอกซากุระ รถไฟ เพนกวิน และราเมง",
+    "en": "A sample book · six days of blossom, trains, penguins and ramen"
   },
   "from": "2028-03-10",
-  "to": "2028-03-12",
+  "to": "2028-03-15",
   "tz": "Asia/Tokyo",
   "place": {
     "th": "โตเกียว",
@@ -21,611 +21,533 @@
   "accent": "#B8456B",
   "accent2": "#2F4858",
   "emoji": "🌸",
+  "firsts": [
+    { "key": "blossom", "emoji": "🌸", "label": { "th": "ดูดอกซากุระครั้งแรก", "en": "First cherry blossom" } },
+    { "key": "bullet", "emoji": "🚄", "label": { "th": "เห็นรถไฟหัวกระสุนครั้งแรก", "en": "First bullet train spotted" } },
+    { "key": "chopsticks", "emoji": "🥢", "label": { "th": "ใช้ตะเกียบเองครั้งแรก", "en": "First go with chopsticks" } },
+    { "key": "penguin", "emoji": "🐧", "label": { "th": "เจอเพนกวินครั้งแรก", "en": "First penguin" } },
+    { "key": "temple", "emoji": "⛩️", "label": { "th": "ไปวัดญี่ปุ่นครั้งแรก", "en": "First Japanese temple" } },
+    { "key": "boat", "emoji": "🦢", "label": { "th": "พายเรือหงส์ครั้งแรก", "en": "First swan boat" } },
+    { "key": "robot", "emoji": "🤖", "label": { "th": "เจอหุ่นยนต์ครั้งแรก", "en": "First robot friend" } },
+    { "key": "onsen", "emoji": "♨️", "label": { "th": "แช่น้ำร้อนครั้งแรก", "en": "First hot bath" } }
+  ],
   "days": [
     {
-      "title": {
-        "th": "บินไปหาดอกซากุระ",
-        "en": "Flying to the blossom"
-      },
-      "sleep": {
-        "th": "อุเอโนะ",
-        "en": "Ueno"
-      },
-      "wx": {
-        "th": "8–15°C แดดอ่อน",
-        "en": "8–15°C, soft sun"
-      },
+      "title": { "th": "บินไปหาดอกซากุระ", "en": "Flying to the blossom" },
+      "sleep": { "th": "อุเอโนะ", "en": "Ueno" },
+      "wx": { "th": "8–15°C แดดอ่อน · เย็นลงหลังพระอาทิตย์ตก — พกเสื้อกันหนาวบาง · พระอาทิตย์ตก 17:45", "en": "8–15°C, soft sun · colder after sunset — bring a light layer · sunset 17:45" },
+      "emoji": "✈️",
       "planned": [
-        {
-          "key": "hnd",
-          "kind": "airport",
-          "th": "สนามบินฮาเนดะ",
-          "en": "Haneda airport",
-          "q": "Haneda Airport Terminal 3, Ota City, Tokyo"
-        },
-        {
-          "kind": "place",
-          "th": "สวนอุเอโนะ",
-          "en": "Ueno Park"
-        },
-        {
-          "kind": "food",
-          "meal": "Dinner",
-          "th": "ราเมงร้านเล็กใกล้ที่พัก",
-          "en": "Ramen near the hotel"
-        }
+        { "key": "hnd", "kind": "airport", "th": "สนามบินฮาเนดะ", "en": "Haneda airport", "q": "Haneda Airport Terminal 3, Ota City, Tokyo" },
+        { "key": "ueno-park", "kind": "place", "th": "สวนอุเอโนะ", "en": "Ueno Park", "q": "Ueno Park, Taito City, Tokyo" },
+        { "key": "shinobazu", "kind": "place", "th": "สระชิโนบาซุ", "en": "Shinobazu Pond", "q": "Shinobazu Pond, Ueno, Tokyo" },
+        { "kind": "food", "meal": "Dinner", "th": "ราเมงร้านเล็กใกล้ที่พัก", "en": "Ramen near the hotel" }
       ],
-      "moving": {
-        "th": "โมโนเรลจากฮาเนดะ แล้วต่อรถไฟสายยามาโนเตะ",
-        "en": "Monorail from Haneda, then the Yamanote line"
-      },
+      "moving": { "th": "โมโนเรลจากฮาเนดะ แล้วต่อรถไฟสายยามาโนเตะ (สายสีเขียว)", "en": "Monorail from Haneda, then the green Yamanote line" },
       "legs": [
-        {
-          "from": "Haneda T3",
-          "to": "Ueno",
-          "by": {
-            "th": "โมโนเรล + JR 45 นาที",
-            "en": "Monorail + JR, 45 min"
-          },
-          "min": 45,
-          "url": "https://www.google.com/maps/dir/?api=1&origin=Haneda+Airport+Terminal+3&destination=Ueno+Station&travelmode=transit"
-        }
+        { "from": "Haneda T3", "to": "Ueno", "by": { "th": "โมโนเรล + JR 45 นาที", "en": "Monorail + JR, 45 min" }, "min": 45, "url": "https://www.google.com/maps/dir/?api=1&origin=Haneda+Airport+Terminal+3&destination=Ueno+Station&travelmode=transit" },
+        { "from": "Ueno Station", "to": "Ueno Park", "by": { "th": "เดิน 5 นาที", "en": "Walk, 5 min" }, "min": 5, "url": "https://www.google.com/maps/dir/?api=1&origin=Ueno+Station&destination=Ueno+Park&travelmode=walking" }
       ],
       "plan": [
-        {
-          "t": "10:30",
-          "h": { "th": "🛬 ถึงโตเกียวแล้ว!", "en": "🛬 Hello Tokyo!" }, "th": "ถึงฮาเนดะ รับกระเป๋า ซื้อบัตร Suica",
-          "en": "Land at Haneda, bags, Suica cards"
-        },
-        {
-          "t": "13:00",
-          "h": { "th": "🏨 เช็กอิน พักแป๊บ", "en": "🏨 Check in, a short rest" }, "th": "เช็กอิน พักสักครู่",
-          "en": "Check in, a short rest"
-        },
-        {
-          "t": "15:30",
-          "h": { "th": "🛝 สนามเด็กเล่นริมบึง", "en": "🛝 Playground by the pond" }, "th": "เดินเล่นสวนอุเอโนะ สนามเด็กเล่นใกล้สระชิโนบาซุ",
-          "en": "Ueno Park, the playground by Shinobazu pond"
-        },
-        {
-          "t": "18:00",
-          "h": { "th": "🍜 ราเม็ง แล้วนอนเร็ว", "en": "🍜 Ramen, early night" }, "th": "ราเมงมื้อเย็น เข้านอนเร็ว",
-          "en": "Ramen, early night"
-        }
+        { "t": "10:30", "h": { "th": "🛬 ถึงโตเกียวแล้ว!", "en": "🛬 Hello Tokyo!" }, "th": "ถึงฮาเนดะ อาคาร 3 · รับกระเป๋า · ซื้อบัตร Suica ที่ตู้สีเขียว (เด็กต่ำกว่า 6 ขวบขึ้นรถไฟฟรี)", "en": "Land at Haneda T3 · bags · Suica cards from the green machines (under-6s ride free)" },
+        { "t": "11:30", "h": { "th": "🚝 นั่งโมโนเรลริมทะเล", "en": "🚝 Monorail along the sea" }, "th": "โมโนเรลไปฮามามัตสึโจ · นั่งฝั่งขวาจะเห็นอ่าวโตเกียว · ต่อสายยามาโนเตะไปอุเอโนะ", "en": "Monorail to Hamamatsucho · sit on the right for the bay · change to the Yamanote line for Ueno" },
+        { "t": "13:00", "h": { "th": "🏨 ฝากกระเป๋า กินข้าวกลางวัน", "en": "🏨 Drop bags, then lunch" }, "th": "ฝากกระเป๋าที่ที่พัก · โอนิกิริจากร้านสะดวกซื้อ", "en": "Leave the bags at the inn · onigiri from a convenience store" },
+        { "t": "15:00", "h": { "th": "🛝 สนามเด็กเล่นริมบึง", "en": "🛝 Playground by the pond" }, "th": "สวนอุเอโนะ · สนามเด็กเล่นใกล้สระชิโนบาซุ · ดูเป็ดกับเรือพาย", "en": "Ueno Park · the playground by Shinobazu Pond · ducks and rowing boats" },
+        { "t": "16:30", "h": { "th": "🔑 เช็กอิน อาบน้ำ", "en": "🔑 Check in, bath time" }, "th": "เช็กอิน · อาบน้ำอุ่น · พักขาก่อนมื้อเย็น", "en": "Check in · a warm bath · rest the legs before dinner" },
+        { "t": "18:00", "h": { "th": "🍜 ราเม็ง แล้วนอนเร็ว", "en": "🍜 Ramen, early night" }, "th": "ราเมงมื้อเย็น · ขอชามเล็กสำหรับเด็ก · เข้านอนเร็ว", "en": "Ramen for dinner · ask for a small bowl for the kids · early night" }
       ],
       "tips": [
-        {
-          "th": "เด็กเล็กง่วงหลังบิน — เอาเป้อุ้มติดตัว",
-          "en": "Little ones get sleepy after the flight — bring the carrier"
-        }
+        { "th": "เด็กเล็กง่วงหลังบิน — เอาเป้อุ้มติดตัวแทนรถเข็นในวันแรก", "en": "Little ones get sleepy after the flight — bring the carrier rather than the buggy on day one" },
+        { "th": "ลิฟต์ในสถานีมีป้ายรูปรถเข็นเด็ก มองหาป้ายสีเขียว", "en": "Station lifts have a pushchair sign — look for the green signs" }
       ],
-      "stay": {
-        "name": "Ueno Family Inn (example)",
-        "addr": "Ueno 2-chome, Taito City, Tokyo (example address)",
-        "q": "Ueno Station, Taito City, Tokyo"
-      },
+      "pick": { "th": "ไปถึงสวนก่อนบ่ายสาม เด็กๆ ได้วิ่งเล่นก่อนพระอาทิตย์ตกและหลับง่ายขึ้น", "en": "Reach the park before three: a good run before sunset means an easier first night" },
+      "planB": { "th": "ถ้าฝนตก: พิพิธภัณฑ์วิทยาศาสตร์ในสวนอุเอโนะ อยู่ในร่มทั้งหมด", "en": "If it rains: the science museum inside Ueno Park is all indoors" },
+      "money": { "th": "Suica เติมคนละ ¥2,000 · มื้อกลางวัน ¥1,500 · มื้อเย็น ¥3,500 · วันนี้ ≈ ¥9,000", "en": "Suica top-up ¥2,000 each · lunch ¥1,500 · dinner ¥3,500 · today ≈ ¥9,000" },
+      "stay": { "name": "Ueno Family Inn (example)", "addr": "Ueno 2-chome, Taito City, Tokyo (example address)", "q": "Ueno Station, Taito City, Tokyo" },
       "picks": [
-        {
-          "meal": {
-            "th": "มื้อเย็น",
-            "en": "Dinner"
-          },
-          "name": "Ramen street stall (example)",
-          "what": {
-            "th": "โชยุราเมงเส้นนุ่ม เด็กกินได้",
-            "en": "Soft-noodle shoyu ramen, kid-friendly"
-          },
-          "pr": "¥900–1,200",
-          "q": "ramen Ueno Station"
-        }
+        { "meal": { "th": "มื้อกลางวัน", "en": "Lunch" }, "name": "Convenience store onigiri (example)", "what": { "th": "ข้าวปั้นไส้แซลมอน ไข่ม้วน นมกล่อง", "en": "Salmon rice balls, rolled egg, a carton of milk" }, "pr": "¥500–800", "q": "convenience store Ueno Station" },
+        { "meal": { "th": "มื้อเย็น", "en": "Dinner" }, "name": "Ramen street stall (example)", "what": { "th": "โชยุราเมงเส้นนุ่ม มีชามเด็กกับช้อนเล็ก", "en": "Soft-noodle shoyu ramen, a kids' bowl and small spoons" }, "pr": "¥900–1,200", "q": "ramen Ueno Station" }
       ],
       "learn": [
-        {
-          "name": {
-            "th": "ซากุระ",
-            "en": "Cherry blossom"
-          },
-          "facts": [
-            {
-              "th": "บานแค่ประมาณหนึ่งสัปดาห์",
-              "en": "The flowers last only about a week"
-            }
-          ],
-          "kid": {
-            "th": "กลีบดอกเหมือนหิมะสีชมพู!",
-            "en": "The petals fall like pink snow!"
-          }
-        }
+        { "name": { "th": "ซากุระ", "en": "Cherry blossom" }, "facts": [ { "th": "บานแค่ประมาณหนึ่งสัปดาห์ แล้วกลีบก็ร่วงเหมือนหิมะ", "en": "The flowers last only about a week, then the petals fall like snow" }, { "th": "คนญี่ปุ่นนั่งปิกนิกใต้ต้นซากุระ เรียกว่าฮานามิ", "en": "People picnic under the trees — it is called hanami" } ], "kid": { "th": "กลีบดอกเหมือนหิมะสีชมพู!", "en": "The petals fall like pink snow!" } },
+        { "name": { "th": "บัตร Suica", "en": "The Suica card" }, "facts": [ { "th": "แตะบัตรแล้วประตูเปิดเอง ใช้ซื้อขนมในร้านสะดวกซื้อได้ด้วย", "en": "Tap it and the gate opens — it pays for snacks in shops too" } ], "kid": { "th": "บัตรวิเศษ แตะแล้วประตูเปิด!", "en": "A magic card that opens the gates!" } }
       ],
       "quiz": [
-        {
-          "q": {
-            "th": "ซากุระสีอะไร?",
-            "en": "What colour is the blossom?"
-          },
-          "a": {
-            "th": "ชมพู",
-            "en": "Pink"
-          }
-        }
+        { "q": { "th": "ซากุระสีอะไร?", "en": "What colour is the blossom?" }, "a": { "th": "ชมพูกับขาว", "en": "Pink and white" } },
+        { "q": { "th": "รถไฟสายยามาโนเตะสีอะไร?", "en": "What colour is the Yamanote train?" }, "a": { "th": "สีเขียว", "en": "Green" } }
       ],
+      "tale": {
+        "th": "สวัสดีโตเกียว! เมืองนี้ใหญ่มาก มีรถไฟวิ่งไปทุกทิศเหมือนเส้นสปาเกตตีหลากสี รถไฟสายยามาโนเตะสีเขียววิ่งเป็นวงกลมรอบเมือง วนครบรอบหนึ่งใช้เวลาประมาณหนึ่งชั่วโมง ที่สวนอุเอโนะ ต้นซากุระเริ่มบาน กลีบสีชมพูปลิวลงมาเหมือนหิมะ ลองยื่นมือออกไปรับกลีบดอกไม้ดูสิ ใครรับได้ก่อนขอพรได้หนึ่งข้อนะ คืนนี้เรากินราเมงร้อนๆ แล้วนอนให้เต็มอิ่ม พรุ่งนี้มีวัดเก่า หอคอยสูง และเพนกวินรออยู่!",
+        "en": "Hello, Tokyo! This city is huge, with trains running every way like coloured spaghetti. The green Yamanote line goes round the city in a circle — one lap takes about an hour. In Ueno Park the cherry trees are starting to bloom, and pink petals float down like snow. Hold out your hand and try to catch one — whoever catches the first one makes a wish! Tonight we eat hot ramen and sleep well. Tomorrow an old temple, a tall tower and some penguins are waiting!",
+        "scenes": [
+          { "e": "🚆", "h": { "th": "รถไฟเส้นสปาเกตตี", "en": "Spaghetti trains" }, "th": "เมืองนี้มีรถไฟวิ่งไปทุกทิศเหมือนเส้นสปาเกตตีหลากสี สายสีเขียววิ่งเป็นวงกลมรอบเมือง", "en": "Trains run every way like coloured spaghetti. The green line goes round the city in a circle." },
+          { "e": "🌸", "h": { "th": "หิมะสีชมพู", "en": "Pink snow" }, "th": "ที่สวนอุเอโนะ กลีบซากุระปลิวลงมาเหมือนหิมะ ลองรับกลีบดอกไม้แล้วขอพรสิ", "en": "In Ueno Park the petals float down like snow. Catch one and make a wish!" },
+          { "e": "🍜", "h": { "th": "ราเมงก่อนนอน", "en": "Ramen, then bed" }, "th": "คืนนี้กินราเมงร้อนๆ แล้วนอนให้เต็มอิ่ม พรุ่งนี้มีเพนกวินรออยู่", "en": "Hot ramen tonight, then a good sleep. Penguins are waiting tomorrow!" }
+        ]
+      },
       "mission": {
-        "title": {
-          "th": "บินไปหาดอกไม้!",
-          "en": "Fly to the flowers!"
-        },
+        "title": { "th": "บินไปหาดอกไม้!", "en": "Fly to the flowers!" },
         "stamp": "BKK → HND",
-        "facts": [
-          {
-            "th": "โตเกียวเร็วกว่ากรุงเทพฯ 2 ชั่วโมง",
-            "en": "Tokyo clocks are two hours ahead of Bangkok"
-          }
-        ],
+        "facts": [ { "th": "โตเกียวเร็วกว่ากรุงเทพฯ 2 ชั่วโมง", "en": "Tokyo clocks are two hours ahead of Bangkok" } ],
         "spot": [
-          {
-            "k": "cloud",
-            "e": "☁️",
-            "th": "ก้อนเมฆ",
-            "en": "A cloud"
-          },
-          {
-            "k": "train",
-            "e": "🚆",
-            "th": "รถไฟสีเขียว",
-            "en": "A green train"
-          },
-          {
-            "k": "blossom",
-            "e": "🌸",
-            "th": "ดอกซากุระ",
-            "en": "A blossom"
-          },
-          {
-            "k": "pond",
-            "e": "🦆",
-            "th": "เป็ดในสระ",
-            "en": "A duck on the pond"
-          }
+          { "k": "cloud", "e": "☁️", "th": "ก้อนเมฆ", "en": "A cloud" },
+          { "k": "train", "e": "🚆", "th": "รถไฟสีเขียว", "en": "A green train" },
+          { "k": "blossom", "e": "🌸", "th": "ดอกซากุระ", "en": "A blossom" },
+          { "k": "pond", "e": "🦆", "th": "เป็ดในสระ", "en": "A duck on the pond" }
         ]
       }
     },
     {
-      "title": {
-        "th": "วันปลา วันรถไฟ",
-        "en": "Fish and trains"
-      },
-      "sleep": {
-        "th": "อุเอโนะ",
-        "en": "Ueno"
-      },
+      "title": { "th": "วัดเก่า หอคอยสูง เพนกวิน", "en": "Old temple, tall tower, penguins" },
+      "sleep": { "th": "อุเอโนะ", "en": "Ueno" },
+      "wx": { "th": "9–16°C เมฆบางส่วน · ลมแรงริมแม่น้ำ — ใส่หมวกให้แน่น · พระอาทิตย์ตก 17:46", "en": "9–16°C, some cloud · windy by the river — hats on tight · sunset 17:46" },
+      "emoji": "⛩️",
       "planned": [
-        {
-          "kind": "place",
-          "th": "อควาเรียมซุมิดะ",
-          "en": "Sumida Aquarium",
-          "q": "Sumida Aquarium, Tokyo Skytree Town, Sumida City"
-        },
-        {
-          "kind": "food",
-          "meal": "Lunch",
-          "th": "ฟู้ดคอร์ตโซลามาจิ",
-          "en": "Solamachi food court"
-        }
+        { "key": "sensoji", "kind": "place", "th": "วัดเซ็นโซจิ อาซากุสะ", "en": "Senso-ji temple, Asakusa", "q": "Senso-ji, Asakusa, Taito City, Tokyo" },
+        { "key": "nakamise", "kind": "place", "th": "ถนนนากามิเซะ", "en": "Nakamise street", "q": "Nakamise Shopping Street, Asakusa, Tokyo" },
+        { "key": "skytree", "kind": "place", "th": "โตเกียวสกายทรี", "en": "Tokyo Skytree", "q": "Tokyo Skytree, Sumida City, Tokyo" },
+        { "key": "sumida-aq", "kind": "place", "th": "อควาเรียมซุมิดะ", "en": "Sumida Aquarium", "q": "Sumida Aquarium, Tokyo Skytree Town, Sumida City" },
+        { "kind": "food", "meal": "Lunch", "th": "ฟู้ดคอร์ตโซลามาจิ", "en": "Solamachi food court" }
       ],
-      "moving": {
-        "th": "รถไฟใต้ดินสายกินซ่า 2 ป้าย",
-        "en": "Ginza line, two stops"
-      },
+      "moving": { "th": "รถไฟใต้ดินสายกินซ่าไปอาซากุสะ แล้วเดินข้ามสะพานไปสกายทรี", "en": "Ginza line to Asakusa, then walk over the river to the Skytree" },
+      "legs": [
+        { "from": "Ueno", "to": "Asakusa", "by": { "th": "สายกินซ่า 5 นาที", "en": "Ginza line, 5 min" }, "min": 5, "url": "https://www.google.com/maps/dir/?api=1&origin=Ueno+Station&destination=Asakusa+Station&travelmode=transit" },
+        { "from": "Asakusa", "to": "Tokyo Skytree", "by": { "th": "เดินริมแม่น้ำ 20 นาที", "en": "Riverside walk, 20 min" }, "min": 20, "url": "https://www.google.com/maps/dir/?api=1&origin=Senso-ji&destination=Tokyo+Skytree&travelmode=walking" }
+      ],
       "plan": [
-        {
-          "t": "09:30",
-          "h": { "th": "🐧 อควาเรียม ดูให้อาหารเพนกวิน!", "en": "🐧 Aquarium — penguin feeding!" }, "th": "อควาเรียม — เพนกวินให้อาหาร 11:00",
-          "en": "Aquarium — penguin feeding at 11:00"
-        },
-        {
-          "t": "12:30",
-          "h": { "th": "🍱 มื้อกลางวัน", "en": "🍱 Lunch" }, "th": "ข้าวกลางวันโซลามาจิ",
-          "en": "Lunch at Solamachi"
-        },
-        {
-          "t": "15:00",
-          "h": { "th": "😴 กลับไปงีบ", "en": "😴 Back for a nap" }, "th": "กลับไปงีบ",
-          "en": "Back for a nap"
-        }
+        { "t": "08:30", "h": { "th": "⛩️ วัดเก่าก่อนคนเยอะ", "en": "⛩️ Old temple before the crowds" }, "th": "วัดเซ็นโซจิ · ประตูโคมแดงยักษ์ · ลองเสี่ยงเซียมซี", "en": "Senso-ji · the giant red lantern gate · try an omikuji fortune" },
+        { "t": "09:30", "h": { "th": "🍡 ขนมบนถนนนากามิเซะ", "en": "🍡 Snacks on Nakamise street" }, "th": "ถนนนากามิเซะ · ขนมเซมเบ้อบใหม่ · ดังโงะ", "en": "Nakamise street · fresh senbei crackers · dango" },
+        { "t": "10:30", "h": { "th": "🌉 เดินข้ามแม่น้ำไปหาหอคอย", "en": "🌉 Over the river to the tower" }, "th": "เดินริมแม่น้ำสุมิดะไปสกายทรี · ดูเรือผ่าน", "en": "Walk along the Sumida river to the Skytree · watch the boats" },
+        { "t": "11:00", "h": { "th": "🐧 อควาเรียม ดูให้อาหารเพนกวิน!", "en": "🐧 Aquarium — penguin feeding!" }, "th": "อควาเรียมซุมิดะ · เพนกวินกินปลาตอนสายๆ · แมงกะพรุนเรืองแสง", "en": "Sumida Aquarium · late-morning penguin feeding · glowing jellyfish" },
+        { "t": "12:30", "h": { "th": "🍱 มื้อกลางวัน", "en": "🍱 Lunch" }, "th": "ฟู้ดคอร์ตโซลามาจิ · มีเก้าอี้เด็ก", "en": "Solamachi food court · high chairs" },
+        { "t": "13:30", "h": { "th": "🗼 ขึ้นไปบนฟ้า!", "en": "🗼 Up into the sky!" }, "th": "จุดชมวิวสกายทรีชั้น 350 · ถ้าฟ้าใสเห็นภูเขาไฟฟูจิ", "en": "Skytree deck at 350 m · on a clear day you can see Mount Fuji" },
+        { "t": "15:00", "h": { "th": "😴 กลับไปงีบ", "en": "😴 Back for a nap" }, "th": "สายกินซ่ากลับอุเอโนะ · งีบ", "en": "Ginza line back to Ueno · nap" },
+        { "t": "18:00", "h": { "th": "🍛 แกงกะหรี่ญี่ปุ่น", "en": "🍛 Japanese curry night" }, "th": "แกงกะหรี่ญี่ปุ่นรสอ่อน · เด็กชอบ", "en": "Mild Japanese curry · a kids' favourite" }
       ],
-      "stay": {
-        "name": "Ueno Family Inn (example)",
-        "addr": "Ueno 2-chome, Taito City, Tokyo (example address)",
-        "q": "Ueno Station, Taito City, Tokyo"
+      "tips": [
+        { "th": "วัดเปิดตลอด แต่ร้านบนถนนนากามิเซะเปิดราวเก้าโมง", "en": "The temple never closes, but the Nakamise shops open around nine" },
+        { "th": "จองตั๋วสกายทรีออนไลน์ล่วงหน้าจะได้รอบเวลาที่ต้องการ", "en": "Book Skytree tickets online to get the time you want" }
+      ],
+      "pick": { "th": "ไปวัดก่อนแปดโมงครึ่ง ถ่ายรูปหน้าประตูโคมแดงได้โดยไม่มีคนเต็ม", "en": "Be at the temple by half past eight for a photo at the lantern gate without the crowds" },
+      "planB": { "th": "ถ้าฝนตกหรือเมฆหนา: ข้ามจุดชมวิว อยู่ในอควาเรียมนานขึ้น แล้วไปห้องเล่นเด็กในโซลามาจิ", "en": "If it rains or the sky is grey: skip the deck, stay longer at the aquarium, then the play corner in Solamachi" },
+      "money": { "th": "อควาเรียม ¥2,500 ผู้ใหญ่ · ¥800 เด็ก 3 ขวบขึ้นไป · สกายทรี ¥2,100 ผู้ใหญ่ · ขนมนากามิเซะ ¥1,000 · วันนี้ ≈ ¥14,000", "en": "Aquarium ¥2,500 adult · ¥800 child 3+ · Skytree ¥2,100 adult · Nakamise snacks ¥1,000 · today ≈ ¥14,000" },
+      "stay": { "name": "Ueno Family Inn (example)", "addr": "Ueno 2-chome, Taito City, Tokyo (example address)", "q": "Ueno Station, Taito City, Tokyo" },
+      "picks": [
+        { "meal": { "th": "มื้อกลางวัน", "en": "Lunch" }, "name": "Solamachi food court (example)", "what": { "th": "อุด้ง ข้าวหน้าไข่ ซูชิม้วนเล็ก", "en": "Udon, egg rice bowls, small sushi rolls" }, "pr": "¥1,000–1,500", "q": "Tokyo Solamachi food court" },
+        { "meal": { "th": "มื้อเย็น", "en": "Dinner" }, "name": "Curry corner (example)", "what": { "th": "แกงกะหรี่ญี่ปุ่นรสอ่อน จานเด็กมีของเล่น", "en": "Mild Japanese curry, a kids' plate with a toy" }, "pr": "¥900–1,400", "q": "japanese curry Ueno" }
+      ],
+      "learn": [
+        { "name": { "th": "วัดเซ็นโซจิ", "en": "Senso-ji" }, "facts": [ { "th": "วัดที่เก่าแก่ที่สุดในโตเกียว อายุกว่าหนึ่งพันสามร้อยปี", "en": "Tokyo's oldest temple, more than 1,300 years old" }, { "th": "โคมแดงที่ประตูหนักราวเจ็ดร้อยกิโลกรัม", "en": "The red lantern at the gate weighs about 700 kg" } ], "kid": { "th": "โคมยักษ์หนักเท่าช้างน้อย!", "en": "The giant lantern weighs as much as a baby elephant!" } },
+        { "name": { "th": "โตเกียวสกายทรี", "en": "Tokyo Skytree" }, "facts": [ { "th": "สูง 634 เมตร หอคอยสูงที่สุดในญี่ปุ่น", "en": "634 m tall — the tallest tower in Japan" } ], "kid": { "th": "สูงกว่าตึกบ้านเราเป็นร้อยเท่า!", "en": "Taller than a hundred houses stacked up!" } }
+      ],
+      "quiz": [
+        { "q": { "th": "โคมที่ประตูวัดสีอะไร?", "en": "What colour is the lantern at the gate?" }, "a": { "th": "สีแดง", "en": "Red" } },
+        { "q": { "th": "เพนกวินว่ายน้ำหรือบิน?", "en": "Do penguins swim or fly?" }, "a": { "th": "ว่ายน้ำ", "en": "They swim" } }
+      ],
+      "tale": {
+        "th": "เช้านี้เรามาที่วัดเซ็นโซจิ วัดที่เก่าที่สุดในโตเกียว ที่ประตูมีโคมแดงยักษ์ห้อยอยู่ หนักพอๆ กับช้างน้อยหนึ่งตัว! ลองเสี่ยงเซียมซีดู ถ้าได้ใบไม่ดี ให้ผูกไว้ที่ราวแล้วปล่อยโชคร้ายไว้ที่วัด จากนั้นเราเดินข้ามแม่น้ำไปหาโตเกียวสกายทรี หอคอยที่สูงที่สุดในญี่ปุ่น ข้างล่างหอคอยมีอควาเรียมที่เพนกวินเดินเตาะแตะ แต่พอลงน้ำแล้วว่ายเร็วเหมือนจรวด หนูนับได้ไหมว่าเพนกวินมีกี่ตัว?",
+        "en": "This morning we visit Senso-ji, the oldest temple in Tokyo. A giant red lantern hangs at the gate — as heavy as a baby elephant! Try an omikuji fortune: if it is a bad one, tie it to the rack and leave the bad luck at the temple. Then we walk over the river to the Tokyo Skytree, the tallest tower in Japan. Under the tower is an aquarium where the penguins waddle on land but zoom like rockets in the water. Can you count how many penguins there are?",
+        "scenes": [
+          { "e": "🏮", "h": { "th": "โคมแดงยักษ์", "en": "The giant lantern" }, "th": "ที่ประตูวัดมีโคมแดงยักษ์ หนักพอๆ กับช้างน้อยหนึ่งตัว!", "en": "A giant red lantern hangs at the gate — as heavy as a baby elephant!" },
+          { "e": "📜", "h": { "th": "เซียมซีนำโชค", "en": "A fortune paper" }, "th": "ถ้าได้ใบไม่ดี ผูกไว้ที่ราว แล้วปล่อยโชคร้ายไว้ที่วัด", "en": "A bad fortune? Tie it to the rack and leave the bad luck behind." },
+          { "e": "🐧", "h": { "th": "เพนกวินจรวด", "en": "Rocket penguins" }, "th": "เพนกวินเดินเตาะแตะบนบก แต่ในน้ำว่ายเร็วเหมือนจรวด นับได้กี่ตัว?", "en": "Penguins waddle on land but zoom in the water. How many can you count?" }
+        ]
       },
       "mission": {
-        "title": {
-          "th": "เพนกวินกี่ตัว?",
-          "en": "How many penguins?"
-        },
-        "stamp": "SUMIDA",
-        "facts": [
-          {
-            "th": "เพนกวินว่ายน้ำได้เร็วกว่าที่เดิน",
-            "en": "Penguins swim faster than they waddle"
-          }
-        ],
+        "title": { "th": "เพนกวินกี่ตัว?", "en": "How many penguins?" },
+        "stamp": "ASAKUSA",
+        "facts": [ { "th": "เพนกวินว่ายน้ำได้เร็วกว่าที่เดิน", "en": "Penguins swim faster than they waddle" } ],
         "spot": [
-          {
-            "k": "penguin",
-            "e": "🐧",
-            "th": "เพนกวิน",
-            "en": "A penguin"
-          },
-          {
-            "k": "jelly",
-            "e": "🪼",
-            "th": "แมงกะพรุน",
-            "en": "A jellyfish"
-          },
-          {
-            "k": "tower",
-            "e": "🗼",
-            "th": "หอคอยสูง",
-            "en": "The tall tower"
-          },
-          {
-            "k": "bento",
-            "e": "🍱",
-            "th": "กล่องเบนโตะ",
-            "en": "A bento box"
-          }
+          { "k": "lantern", "e": "🏮", "th": "โคมแดงยักษ์", "en": "The giant lantern" },
+          { "k": "penguin", "e": "🐧", "th": "เพนกวิน", "en": "A penguin" },
+          { "k": "jelly", "e": "🪼", "th": "แมงกะพรุน", "en": "A jellyfish" },
+          { "k": "tower", "e": "🗼", "th": "หอคอยสูง", "en": "The tall tower" }
         ]
       }
     },
     {
-      "title": {
-        "th": "เช้าสบาย แล้วบินกลับ",
-        "en": "A slow morning, then home"
-      },
+      "title": { "th": "ปิกนิกใต้ต้นซากุระ", "en": "A picnic under the blossom" },
+      "sleep": { "th": "ชินจูกุ", "en": "Shinjuku" },
+      "wx": { "th": "10–17°C แดดออก · เหมาะกับปิกนิก — เอาผ้าปูนั่ง · พระอาทิตย์ตก 17:47", "en": "10–17°C, sunny · picnic weather — bring a mat · sunset 17:47" },
+      "emoji": "🌸",
       "planned": [
-        {
-          "kind": "place",
-          "th": "ตลาดอาเมโยโกะ",
-          "en": "Ameyoko market"
-        },
-        {
-          "key": "hnd-home",
-          "kind": "airport",
-          "th": "สนามบินฮาเนดะ",
-          "en": "Haneda airport",
-          "q": "Haneda Airport Terminal 3, Ota City, Tokyo"
-        }
+        { "key": "gyoen", "kind": "place", "th": "สวนชินจูกุเกียวเอ็น", "en": "Shinjuku Gyoen garden", "q": "Shinjuku Gyoen National Garden, Shinjuku City, Tokyo" },
+        { "key": "hachiko", "kind": "place", "th": "รูปปั้นฮาจิโกะ ชิบูย่า", "en": "Hachiko statue, Shibuya", "q": "Hachiko Statue, Shibuya, Tokyo" },
+        { "key": "crossing", "kind": "place", "th": "ทางม้าลายชิบูย่า", "en": "Shibuya crossing", "q": "Shibuya Scramble Crossing, Tokyo" },
+        { "kind": "food", "meal": "Lunch", "th": "ปิกนิกเบนโตะในสวน", "en": "Bento picnic in the garden" }
+      ],
+      "moving": { "th": "ย้ายที่พักไปชินจูกุด้วยสายยามาโนเตะ · ฝากกระเป๋าแล้วเดินไปสวน", "en": "Move to Shinjuku on the Yamanote line · leave the bags and walk to the garden" },
+      "legs": [
+        { "from": "Ueno", "to": "Shinjuku", "by": { "th": "JR สายยามาโนเตะ 25 นาที", "en": "JR Yamanote line, 25 min" }, "min": 25, "url": "https://www.google.com/maps/dir/?api=1&origin=Ueno+Station&destination=Shinjuku+Station&travelmode=transit" },
+        { "from": "Shinjuku", "to": "Shibuya", "by": { "th": "JR สายยามาโนเตะ 7 นาที", "en": "JR Yamanote line, 7 min" }, "min": 7, "url": "https://www.google.com/maps/dir/?api=1&origin=Shinjuku+Station&destination=Shibuya+Station&travelmode=transit" }
       ],
       "plan": [
-        {
-          "t": "09:00",
-          "h": { "th": "🍡 ตลาดขนม ซื้อของฝาก", "en": "🍡 Snack market, gifts for home" }, "th": "ตลาดอาเมโยโกะ ซื้อขนมฝาก",
-          "en": "Ameyoko market, snacks for home"
-        },
-        {
-          "t": "13:00",
-          "h": { "th": "✈️ ไปสนามบิน กลับบ้าน!", "en": "✈️ To the airport — home!" }, "th": "ออกไปสนามบิน",
-          "en": "Leave for the airport"
-        }
+        { "t": "09:00", "h": { "th": "🧳 ย้ายไปชินจูกุ", "en": "🧳 Over to Shinjuku" }, "th": "เช็กเอาต์ · สายยามาโนเตะไปชินจูกุ · ฝากกระเป๋าที่ที่พักใหม่", "en": "Check out · Yamanote line to Shinjuku · leave the bags at the new inn" },
+        { "t": "10:30", "h": { "th": "🌸 ปิกนิกใต้ต้นซากุระ", "en": "🌸 Picnic under the blossom" }, "th": "สวนชินจูกุเกียวเอ็น · ปูผ้านั่งใต้ต้นซากุระ · สนามหญ้ากว้างให้วิ่ง", "en": "Shinjuku Gyoen · a mat under the trees · wide lawns to run on" },
+        { "t": "12:30", "h": { "th": "🍱 เบนโตะใต้ต้นไม้", "en": "🍱 Bento under the trees" }, "th": "เบนโตะซื้อจากห้างใต้ดินก่อนเข้าสวน · ในสวนห้ามดื่มแอลกอฮอล์", "en": "Bento from a department store food hall before the gates · no alcohol inside the garden" },
+        { "t": "14:00", "h": { "th": "😴 งีบในรถเข็น", "en": "😴 A buggy nap" }, "th": "เดินเล่นสวนช้าๆ ให้น้องงีบในรถเข็น", "en": "A slow walk round the garden while the little one naps" },
+        { "t": "16:00", "h": { "th": "🐕 ไปหาหมาฮาจิโกะ", "en": "🐕 Say hello to Hachiko" }, "th": "สายยามาโนเตะไปชิบูย่า · รูปปั้นหมาฮาจิโกะ", "en": "Yamanote line to Shibuya · the Hachiko dog statue" },
+        { "t": "16:30", "h": { "th": "🚦 คนข้ามถนนเต็มเลย!", "en": "🚦 The busiest crossing!" }, "th": "ดูทางม้าลายชิบูย่าจากชั้นบน · จับมือเด็กๆ ไว้ตลอด", "en": "Watch the Shibuya crossing from upstairs · hold hands the whole time" },
+        { "t": "18:00", "h": { "th": "🔑 เช็กอินที่ใหม่", "en": "🔑 Check in at the new place" }, "th": "กลับชินจูกุ · เช็กอิน · มื้อเย็นใกล้ที่พัก", "en": "Back to Shinjuku · check in · dinner near the inn" }
       ],
+      "tips": [
+        { "th": "สวนชินจูกุเกียวเอ็นปิดวันจันทร์ และตรวจกระเป๋าที่ประตู", "en": "Shinjuku Gyoen closes on Mondays and checks bags at the gate" },
+        { "th": "ทางม้าลายชิบูย่าคนเยอะมาก ดูจากชั้นบนของสถานีปลอดภัยกว่า", "en": "The Shibuya crossing is packed — watching from upstairs is safer with little ones" }
+      ],
+      "pick": { "th": "สนามหญ้าฝั่งอังกฤษในสวนกว้างที่สุด ต้นซากุระเยอะ วิ่งเล่นได้", "en": "The English lawn in the garden is the widest, ringed by cherry trees — room to run" },
+      "planB": { "th": "ถ้าฝนตก: เรือนกระจกในสวนอยู่ในร่ม แล้วไปห้องเล่นเด็กในห้างใกล้สถานี", "en": "If it rains: the greenhouse in the garden is indoors, then a play corner in a department store by the station" },
+      "money": { "th": "ค่าเข้าสวน ¥500 ผู้ใหญ่ · เด็กฟรี · เบนโตะ ¥1,200 ต่อกล่อง · วันนี้ ≈ ¥8,000", "en": "Garden entry ¥500 adult · children free · bento ¥1,200 a box · today ≈ ¥8,000" },
+      "stay": { "name": "Shinjuku Garden Rooms (example)", "addr": "Shinjuku 5-chome, Shinjuku City, Tokyo (example address)", "q": "Shinjuku-sanchome Station, Tokyo" },
+      "picks": [
+        { "meal": { "th": "มื้อกลางวัน", "en": "Lunch" }, "name": "Department store bento (example)", "what": { "th": "เบนโตะกล่องสวย มีไข่ม้วน ไก่ทอด และผลไม้", "en": "A pretty bento with rolled egg, fried chicken and fruit" }, "pr": "¥1,000–1,500", "q": "department store food hall Shinjuku" },
+        { "meal": { "th": "มื้อเย็น", "en": "Dinner" }, "name": "Gyoza house (example)", "what": { "th": "เกี๊ยวซ่าทอด ข้าวผัด ซุปมิโซะ", "en": "Pan-fried gyoza, fried rice, miso soup" }, "pr": "¥1,000–1,800", "q": "gyoza Shinjuku" }
+      ],
+      "learn": [
+        { "name": { "th": "หมาฮาจิโกะ", "en": "Hachiko the dog" }, "facts": [ { "th": "หมาที่มารอเจ้าของที่สถานีทุกวันเกือบสิบปี", "en": "A dog who waited for his owner at the station every day for nearly ten years" } ], "kid": { "th": "หมาที่รักเจ้าของที่สุดในโลก!", "en": "The most loyal dog in the world!" } },
+        { "name": { "th": "ฮานามิ", "en": "Hanami" }, "facts": [ { "th": "การนั่งปิกนิกชมดอกไม้ มีมานานกว่าหนึ่งพันปี", "en": "Picnicking under the flowers — people have done it for over a thousand years" } ], "kid": { "th": "ปิกนิกกับดอกไม้!", "en": "A picnic with the flowers!" } }
+      ],
+      "quiz": [
+        { "q": { "th": "ฮาจิโกะเป็นสัตว์อะไร?", "en": "What animal is Hachiko?" }, "a": { "th": "หมา", "en": "A dog" } },
+        { "q": { "th": "ฮานามิคืออะไร?", "en": "What is hanami?" }, "a": { "th": "ปิกนิกชมดอกไม้", "en": "A picnic under the flowers" } }
+      ],
+      "tale": {
+        "th": "วันนี้เราย้ายบ้านไปชินจูกุ! แล้วไปปิกนิกในสวนใหญ่ใต้ต้นซากุระ คนญี่ปุ่นเรียกว่าฮานามิ ทำกันมานานกว่าหนึ่งพันปีแล้ว ตอนบ่ายเราไปชิบูย่า ที่นั่นมีรูปปั้นหมาชื่อฮาจิโกะ เขามารอเจ้าของที่สถานีทุกวันเกือบสิบปี เพราะรักเจ้าของมาก ใกล้ๆ กันมีทางม้าลายที่คนข้ามพร้อมกันเยอะที่สุดในโลก ไฟเขียวทีไรคนเดินออกมาจากทุกมุมเหมือนมดเดินแถว จับมือพ่อแม่ไว้แน่นๆ นะ!",
+        "en": "Today we move house to Shinjuku! Then we picnic in a big garden under the cherry trees — the Japanese call it hanami, and people have done it for over a thousand years. In the afternoon we go to Shibuya, where there is a statue of a dog called Hachiko. He waited for his owner at the station every day for nearly ten years, because he loved him so much. Nearby is the busiest crossing in the world: when the light turns green, people walk out from every corner like marching ants. Hold on tight to a grown-up's hand!",
+        "scenes": [
+          { "e": "🧺", "h": { "th": "ปิกนิกฮานามิ", "en": "A hanami picnic" }, "th": "เราปิกนิกใต้ต้นซากุระ คนญี่ปุ่นทำแบบนี้มานานกว่าหนึ่งพันปีแล้ว", "en": "We picnic under the cherry trees — people have done it for a thousand years." },
+          { "e": "🐕", "h": { "th": "ฮาจิโกะผู้ซื่อสัตย์", "en": "Loyal Hachiko" }, "th": "หมาฮาจิโกะมารอเจ้าของที่สถานีทุกวันเกือบสิบปี เพราะรักเจ้าของมาก", "en": "Hachiko waited for his owner every day for nearly ten years." },
+          { "e": "🚦", "h": { "th": "คนเดินเหมือนมด", "en": "Marching ants" }, "th": "ไฟเขียวทีไรคนเดินออกมาจากทุกมุมเหมือนมด จับมือพ่อแม่ไว้แน่นๆ นะ", "en": "When the light turns green, people march out like ants. Hold on tight!" }
+        ]
+      },
       "mission": {
-        "title": {
-          "th": "บ๊ายบายโตเกียว",
-          "en": "Bye bye, Tokyo"
-        },
+        "title": { "th": "ปิกนิกใต้ดอกไม้", "en": "Picnic under the flowers" },
+        "stamp": "SHIBUYA",
+        "facts": [ { "th": "ทางม้าลายชิบูย่ามีคนข้ามพร้อมกันได้เป็นพันคน", "en": "Up to a thousand people cross the Shibuya crossing at once" } ],
+        "spot": [
+          { "k": "petal", "e": "🌸", "th": "กลีบซากุระบนพื้น", "en": "A petal on the ground" },
+          { "k": "bento", "e": "🍱", "th": "กล่องเบนโตะ", "en": "A bento box" },
+          { "k": "dog", "e": "🐕", "th": "หมาฮาจิโกะ", "en": "Hachiko the dog" },
+          { "k": "light", "e": "🚦", "th": "ไฟเขียว", "en": "A green light" }
+        ]
+      }
+    },
+    {
+      "title": { "th": "หุ่นยนต์กับทะเล", "en": "Robots and the seaside" },
+      "sleep": { "th": "ชินจูกุ", "en": "Shinjuku" },
+      "wx": { "th": "9–15°C ลมทะเล · ริมทะเลหนาวกว่าในเมือง — ใส่เสื้ออีกชั้น · พระอาทิตย์ตก 17:48", "en": "9–15°C, sea breeze · colder by the water than in town — add a layer · sunset 17:48" },
+      "emoji": "🤖",
+      "planned": [
+        { "key": "yurikamome", "kind": "place", "th": "รถไฟไร้คนขับยูริคาโมเมะ", "en": "The driverless Yurikamome train", "q": "Shimbashi Station Yurikamome, Tokyo" },
+        { "key": "miraikan", "kind": "place", "th": "พิพิธภัณฑ์มิไรคัง โอไดบะ", "en": "Miraikan science museum, Odaiba", "q": "Miraikan, Odaiba, Koto City, Tokyo" },
+        { "key": "odaiba-beach", "kind": "place", "th": "ชายหาดโอไดบะ", "en": "Odaiba beach", "q": "Odaiba Seaside Park, Minato City, Tokyo" },
+        { "kind": "food", "meal": "Lunch", "th": "ศูนย์อาหารริมทะเล", "en": "Seaside food court" }
+      ],
+      "moving": { "th": "JR ไปชิมบาชิ แล้วต่อรถไฟไร้คนขับยูริคาโมเมะข้ามสะพานเรนโบว์", "en": "JR to Shimbashi, then the driverless Yurikamome over the Rainbow Bridge" },
+      "legs": [
+        { "from": "Shinjuku", "to": "Shimbashi", "by": { "th": "JR 20 นาที", "en": "JR, 20 min" }, "min": 20, "url": "https://www.google.com/maps/dir/?api=1&origin=Shinjuku+Station&destination=Shimbashi+Station&travelmode=transit" },
+        { "from": "Shimbashi", "to": "Telecom Center", "by": { "th": "ยูริคาโมเมะ 25 นาที", "en": "Yurikamome, 25 min" }, "min": 25, "url": "https://www.google.com/maps/dir/?api=1&origin=Shimbashi+Station&destination=Miraikan&travelmode=transit" }
+      ],
+      "plan": [
+        { "t": "09:00", "h": { "th": "🚝 นั่งหน้าสุด ไม่มีคนขับ!", "en": "🚝 Front seat, no driver!" }, "th": "ยูริคาโมเมะจากชิมบาชิ · แย่งที่นั่งหน้าสุด · ข้ามสะพานเรนโบว์", "en": "Yurikamome from Shimbashi · grab the front seats · over the Rainbow Bridge" },
+        { "t": "10:00", "h": { "th": "🤖 พิพิธภัณฑ์หุ่นยนต์", "en": "🤖 The robot museum" }, "th": "พิพิธภัณฑ์มิไรคัง · หุ่นยนต์ · ลูกโลกยักษ์เรืองแสง · มุมเด็กเล็ก", "en": "Miraikan · robots · the giant glowing globe · a corner for little ones" },
+        { "t": "12:30", "h": { "th": "🍔 มื้อกลางวันริมทะเล", "en": "🍔 Lunch by the sea" }, "th": "ศูนย์อาหารในห้างริมทะเล · มีห้องให้นมและเปลี่ยนผ้าอ้อม", "en": "A food court by the sea · nursing and changing rooms" },
+        { "t": "14:00", "h": { "th": "🏖️ เล่นทรายริมอ่าว", "en": "🏖️ Sand play by the bay" }, "th": "ชายหาดโอไดบะ · เล่นทราย (ห้ามลงว่ายน้ำ) · ดูเรือกับสะพาน", "en": "Odaiba beach · sand play, no swimming · boats and the bridge" },
+        { "t": "16:00", "h": { "th": "🌉 สะพานเปลี่ยนสี", "en": "🌉 A bridge that changes colour" }, "th": "ยูริคาโมเมะกลับ · ตอนเย็นสะพานเปิดไฟหลากสี", "en": "Yurikamome back · the bridge lights up in the evening" },
+        { "t": "18:30", "h": { "th": "🍣 ซูชิสายพาน", "en": "🍣 Conveyor-belt sushi" }, "th": "ซูชิสายพานใกล้ที่พัก · เด็กเลือกจานเองจากสายพาน", "en": "Conveyor-belt sushi near the inn · the kids pick their own plates" }
+      ],
+      "tips": [
+        { "th": "รถไฟยูริคาโมเมะขบวนแรกๆ ตอนเช้าว่าง นั่งหน้าสุดได้ง่าย", "en": "The early Yurikamome trains are quiet — easy to get the front seats" },
+        { "th": "พิพิธภัณฑ์มิไรคังปิดวันอังคาร ตรวจวันก่อนไป", "en": "Miraikan closes on Tuesdays — check the day before you go" }
+      ],
+      "pick": { "th": "ที่นั่งแถวหน้าสุดของยูริคาโมเมะ เห็นรางเหมือนนั่งรถไฟเหาะ", "en": "The very front seats of the Yurikamome: the track ahead feels like a rollercoaster" },
+      "planB": { "th": "ถ้าลมแรงหรือฝนตก: อยู่ในพิพิธภัณฑ์นานขึ้น แล้วไปห้องเล่นในร่มของห้างริมทะเล", "en": "If it is windy or wet: stay longer in the museum, then the indoor play area in the seaside mall" },
+      "money": { "th": "มิไรคัง ¥630 ผู้ใหญ่ · เด็กเล็กฟรี · ยูริคาโมเมะ ¥330 ต่อเที่ยว · ซูชิ ¥150 ต่อจาน · วันนี้ ≈ ¥9,500", "en": "Miraikan ¥630 adult · little ones free · Yurikamome ¥330 a ride · sushi ¥150 a plate · today ≈ ¥9,500" },
+      "stay": { "name": "Shinjuku Garden Rooms (example)", "addr": "Shinjuku 5-chome, Shinjuku City, Tokyo (example address)", "q": "Shinjuku-sanchome Station, Tokyo" },
+      "picks": [
+        { "meal": { "th": "มื้อกลางวัน", "en": "Lunch" }, "name": "Seaside food court (example)", "what": { "th": "ข้าวห่อไข่ อุด้ง ไอศกรีมนม", "en": "Omelette rice, udon, milk ice cream" }, "pr": "¥1,000–1,500", "q": "food court Odaiba" },
+        { "meal": { "th": "มื้อเย็น", "en": "Dinner" }, "name": "Conveyor-belt sushi (example)", "what": { "th": "ซูชิไข่ ซูชิแซลมอน ข้าวโพดมายองเนส ทาโกะยากิ", "en": "Egg sushi, salmon, corn mayo, takoyaki" }, "pr": { "th": "จานละ ¥150", "en": "¥150 a plate" }, "q": "conveyor belt sushi Shinjuku" }
+      ],
+      "learn": [
+        { "name": { "th": "รถไฟไร้คนขับ", "en": "A train with no driver" }, "facts": [ { "th": "ยูริคาโมเมะใช้คอมพิวเตอร์ขับ วิ่งบนล้อยาง", "en": "The Yurikamome is driven by a computer and runs on rubber tyres" } ], "kid": { "th": "รถไฟขับเองได้!", "en": "The train drives itself!" } },
+        { "name": { "th": "หุ่นยนต์", "en": "Robots" }, "facts": [ { "th": "ญี่ปุ่นมีหุ่นยนต์ช่วยงานในโรงพยาบาล ร้านอาหาร และโรงงาน", "en": "Japan has robots helping in hospitals, restaurants and factories" } ], "kid": { "th": "หุ่นยนต์ทักทายด้วย!", "en": "Some robots say hello!" } }
+      ],
+      "quiz": [
+        { "q": { "th": "ใครขับรถไฟยูริคาโมเมะ?", "en": "Who drives the Yurikamome?" }, "a": { "th": "คอมพิวเตอร์", "en": "A computer" } },
+        { "q": { "th": "สะพานเรนโบว์ตอนกลางคืนเป็นยังไง?", "en": "What does the Rainbow Bridge do at night?" }, "a": { "th": "เปิดไฟหลากสี", "en": "It lights up in colours" } }
+      ],
+      "tale": {
+        "th": "วันนี้เรานั่งรถไฟที่ไม่มีคนขับ! คอมพิวเตอร์เป็นคนขับให้ และรถไฟวิ่งบนล้อยางเหมือนรถยนต์ ถ้านั่งหน้าสุดจะเห็นรางพาดข้ามสะพานเรนโบว์ เหมือนนั่งรถไฟเหาะ ที่พิพิธภัณฑ์มิไรคังมีหุ่นยนต์ที่ทักทายเราได้ และมีลูกโลกเรืองแสงลอยอยู่กลางห้อง ตอนบ่ายเราไปเล่นทรายริมอ่าวโตเกียว เมืองนี้มีชายหาดด้วยนะ ตกเย็นสะพานเปิดไฟหลากสี วันนี้หนูชอบอะไรที่สุด รถไฟ หุ่นยนต์ หรือชายหาด?",
+        "en": "Today we ride a train with no driver! A computer drives it, and it runs on rubber tyres like a car. From the front seat you can see the track swoop over the Rainbow Bridge, like a rollercoaster. At the Miraikan museum there are robots that say hello, and a glowing globe floating in the middle of the room. In the afternoon we play in the sand by Tokyo Bay — this city has a beach too! In the evening the bridge lights up in colours. What did you like best today: the train, the robots or the beach?",
+        "scenes": [
+          { "e": "🚝", "h": { "th": "รถไฟขับเอง", "en": "A train that drives itself" }, "th": "คอมพิวเตอร์ขับรถไฟให้ นั่งหน้าสุดเหมือนนั่งรถไฟเหาะข้ามสะพาน", "en": "A computer drives the train. The front seat feels like a rollercoaster over the bridge." },
+          { "e": "🤖", "h": { "th": "หุ่นยนต์ทักทาย", "en": "Robots say hello" }, "th": "ที่พิพิธภัณฑ์มีหุ่นยนต์ทักทาย และลูกโลกเรืองแสงลอยกลางห้อง", "en": "Robots say hello, and a glowing globe floats in the middle of the room." },
+          { "e": "🏖️", "h": { "th": "ชายหาดในเมือง", "en": "A beach in the city" }, "th": "ตอนบ่ายเล่นทรายริมอ่าว ตกเย็นสะพานเปิดไฟหลากสี", "en": "Sand play by the bay, then the bridge lights up in colours." }
+        ]
+      },
+      "mission": {
+        "title": { "th": "นักสำรวจหุ่นยนต์", "en": "Robot explorer" },
+        "stamp": "ODAIBA",
+        "facts": [ { "th": "สะพานเรนโบว์ยาวกว่าหนึ่งกิโลเมตร", "en": "The Rainbow Bridge is over a kilometre long" } ],
+        "spot": [
+          { "k": "robot", "e": "🤖", "th": "หุ่นยนต์", "en": "A robot" },
+          { "k": "globe", "e": "🌏", "th": "ลูกโลกเรืองแสง", "en": "The glowing globe" },
+          { "k": "bridge", "e": "🌉", "th": "สะพานเรนโบว์", "en": "The Rainbow Bridge" },
+          { "k": "shell", "e": "🐚", "th": "เปลือกหอย", "en": "A shell" }
+        ]
+      }
+    },
+    {
+      "title": { "th": "เรือหงส์กับสวนสัตว์จิ๋ว", "en": "Swan boats and a tiny zoo" },
+      "sleep": { "th": "ชินจูกุ", "en": "Shinjuku" },
+      "wx": { "th": "11–17°C แดดอ่อน · ริมบึงมีลม — หมวกกับครีมกันแดด · พระอาทิตย์ตก 17:49", "en": "11–17°C, soft sun · breezy by the pond — hats and sun cream · sunset 17:49" },
+      "emoji": "🦢",
+      "planned": [
+        { "key": "inokashira", "kind": "place", "th": "สวนอิโนะคาชิระ", "en": "Inokashira Park", "q": "Inokashira Park, Musashino, Tokyo" },
+        { "key": "ino-zoo", "kind": "place", "th": "สวนสัตว์อิโนะคาชิระ", "en": "Inokashira Park Zoo", "q": "Inokashira Park Zoo, Musashino, Tokyo" },
+        { "kind": "food", "meal": "Lunch", "th": "คาเฟ่ริมบึง", "en": "Pond-side café" },
+        { "key": "sento", "kind": "place", "th": "โรงอาบน้ำร้อนแบบครอบครัว", "en": "A family hot bath", "q": "sento Shinjuku" }
+      ],
+      "moving": { "th": "JR สายชูโอสีส้มไปคิชิโจจิ แล้วเดินลงไปที่บึง", "en": "The orange Chuo line to Kichijoji, then walk down to the pond" },
+      "legs": [
+        { "from": "Shinjuku", "to": "Kichijoji", "by": { "th": "JR สายชูโอ 15 นาที", "en": "JR Chuo line, 15 min" }, "min": 15, "url": "https://www.google.com/maps/dir/?api=1&origin=Shinjuku+Station&destination=Kichijoji+Station&travelmode=transit" },
+        { "from": "Kichijoji", "to": "Inokashira Park", "by": { "th": "เดิน 8 นาที", "en": "Walk, 8 min" }, "min": 8, "url": "https://www.google.com/maps/dir/?api=1&origin=Kichijoji+Station&destination=Inokashira+Park&travelmode=walking" }
+      ],
+      "plan": [
+        { "t": "09:30", "h": { "th": "🚃 รถไฟสายสีส้ม", "en": "🚃 The orange train" }, "th": "สายชูโอไปคิชิโจจิ · เดินผ่านร้านขนมไปสวน", "en": "Chuo line to Kichijoji · walk past the sweet shops to the park" },
+        { "t": "10:00", "h": { "th": "🦢 ปั่นเรือหงส์", "en": "🦢 Pedal a swan boat" }, "th": "เรือหงส์ในบึงอิโนะคาชิระ · เสื้อชูชีพสำหรับเด็ก · เรือละ 30 นาที", "en": "Swan boats on Inokashira pond · life jackets for the kids · 30 min a boat" },
+        { "t": "11:00", "h": { "th": "🐿️ สวนสัตว์จิ๋ว", "en": "🐿️ The tiny zoo" }, "th": "สวนสัตว์อิโนะคาชิระ · กระรอก · มุมสัตว์ให้ลูบ · นกน้ำ", "en": "Inokashira Park Zoo · squirrels · a petting corner · water birds" },
+        { "t": "12:30", "h": { "th": "🥞 แพนเค้กริมบึง", "en": "🥞 Pancakes by the pond" }, "th": "คาเฟ่ริมบึง · แพนเค้กนุ่ม · นั่งดูเป็ด", "en": "Pond-side café · fluffy pancakes · duck watching" },
+        { "t": "14:00", "h": { "th": "😴 งีบยาวๆ", "en": "😴 A long nap" }, "th": "กลับชินจูกุ · งีบยาวที่ที่พัก", "en": "Back to Shinjuku · a long nap at the inn" },
+        { "t": "17:00", "h": { "th": "♨️ แช่น้ำร้อนครั้งแรก", "en": "♨️ First hot bath" }, "th": "โรงอาบน้ำร้อนแบบครอบครัวใกล้ที่พัก · ล้างตัวก่อนลงอ่าง", "en": "A family hot bath near the inn · wash before you get in" },
+        { "t": "18:30", "h": { "th": "🍢 ยากิโทริกับข้าว", "en": "🍢 Yakitori and rice" }, "th": "ไก่ย่างเสียบไม้ · ข้าวกับไข่ · ร้านที่นั่งพื้น", "en": "Grilled chicken skewers · rice and egg · a floor-seating restaurant" }
+      ],
+      "tips": [
+        { "th": "สวนสัตว์อิโนะคาชิระปิดวันจันทร์", "en": "Inokashira Park Zoo closes on Mondays" },
+        { "th": "โรงอาบน้ำบางแห่งให้เด็กเล็กเข้าได้ฟรี ถามก่อนจ่าย", "en": "Some public baths let little ones in free — ask before paying" }
+      ],
+      "pick": { "th": "เรือหงส์รอบเช้าคนน้อย น้ำนิ่ง เห็นปลาคาร์ปตัวใหญ่ใต้เรือ", "en": "The morning swan boats are quiet, the water still — big carp swim under the boat" },
+      "planB": { "th": "ถ้าฝนตก: ข้ามเรือหงส์ ไปพิพิธภัณฑ์เด็กในร่มหรือห้องเล่นเด็กใกล้สถานี", "en": "If it rains: skip the boats, try an indoor children's museum or a play room by the station" },
+      "money": { "th": "เรือหงส์ ¥800 ต่อ 30 นาที · สวนสัตว์ ¥400 ผู้ใหญ่ · โรงอาบน้ำ ¥550 ผู้ใหญ่ · วันนี้ ≈ ¥8,500", "en": "Swan boat ¥800 per 30 min · zoo ¥400 adult · public bath ¥550 adult · today ≈ ¥8,500" },
+      "stay": { "name": "Shinjuku Garden Rooms (example)", "addr": "Shinjuku 5-chome, Shinjuku City, Tokyo (example address)", "q": "Shinjuku-sanchome Station, Tokyo" },
+      "picks": [
+        { "meal": { "th": "มื้อกลางวัน", "en": "Lunch" }, "name": "Pond-side café (example)", "what": { "th": "แพนเค้กนุ่ม แซนด์วิชไข่ น้ำผลไม้", "en": "Fluffy pancakes, egg sandwiches, juice" }, "pr": "¥1,200–1,800", "q": "cafe Inokashira Park" },
+        { "meal": { "th": "มื้อเย็น", "en": "Dinner" }, "name": "Yakitori corner (example)", "what": { "th": "ไก่ย่างไม่เผ็ด ข้าวไข่ ซุปมิโซะ", "en": "Mild chicken skewers, egg rice, miso soup" }, "pr": "¥1,500–2,500", "q": "yakitori Shinjuku" }
+      ],
+      "learn": [
+        { "name": { "th": "ปลาคาร์ป", "en": "Koi carp" }, "facts": [ { "th": "ปลาคาร์ปบางตัวอายุยืนกว่าคุณปู่คุณย่า", "en": "Some koi live longer than grandparents" } ], "kid": { "th": "ปลาตัวใหญ่สีส้ม ว่ายใต้เรือเรา!", "en": "Big orange fish swim under our boat!" } },
+        { "name": { "th": "โรงอาบน้ำญี่ปุ่น", "en": "A Japanese bath" }, "facts": [ { "th": "ต้องล้างตัวให้สะอาดก่อนลงอ่าง และห้ามเอาผ้าลงน้ำ", "en": "Wash first, then get in — and the towel stays out of the water" } ], "kid": { "th": "อ่างน้ำอุ่นใหญ่เท่าสระ!", "en": "A warm bath as big as a pool!" } }
+      ],
+      "quiz": [
+        { "q": { "th": "เรือในบึงหน้าตาเหมือนอะไร?", "en": "What do the boats on the pond look like?" }, "a": { "th": "หงส์", "en": "Swans" } },
+        { "q": { "th": "ก่อนลงอ่างน้ำร้อนต้องทำอะไร?", "en": "What do we do before the hot bath?" }, "a": { "th": "ล้างตัว", "en": "Wash" } }
+      ],
+      "tale": {
+        "th": "วันนี้เรานั่งรถไฟสายสีส้มไปสวนที่มีบึงใหญ่ ในบึงมีเรือหน้าตาเหมือนหงส์ขาว เราต้องช่วยกันปั่นเรือไปข้างหน้า! ใต้น้ำมีปลาคาร์ปสีส้มตัวโต บางตัวอายุยืนกว่าคุณปู่คุณย่าอีก จากนั้นเราไปสวนสัตว์จิ๋วที่มีกระรอกวิ่งไปมา ตกเย็นเราไปแช่น้ำร้อนแบบญี่ปุ่น ต้องล้างตัวให้สะอาดก่อนลงอ่าง น้ำอุ่นๆ ทำให้ตัวนุ่มและหลับสบาย คืนนี้ฝันถึงเรือหงส์นะ",
+        "en": "Today the orange train takes us to a park with a big pond. On the pond there are boats shaped like white swans, and we pedal them together! Under the water swim big orange carp — some are older than grandparents. Then we visit a tiny zoo where squirrels scamper about. In the evening we try a Japanese hot bath: wash first, then get in. The warm water makes us soft and sleepy. Dream of swan boats tonight!",
+        "scenes": [
+          { "e": "🦢", "h": { "th": "ปั่นเรือหงส์", "en": "Pedal the swan" }, "th": "ในบึงมีเรือหน้าตาเหมือนหงส์ขาว เราช่วยกันปั่นไปข้างหน้า", "en": "Boats shaped like white swans — we pedal them together!" },
+          { "e": "🐟", "h": { "th": "ปลาคาร์ปคุณปู่", "en": "Grandpa carp" }, "th": "ใต้น้ำมีปลาคาร์ปสีส้มตัวโต บางตัวอายุยืนกว่าคุณปู่คุณย่า", "en": "Big orange carp swim below — some are older than grandparents." },
+          { "e": "♨️", "h": { "th": "อ่างน้ำอุ่น", "en": "The warm bath" }, "th": "ล้างตัวก่อนลงอ่าง น้ำอุ่นๆ ทำให้หลับสบาย", "en": "Wash first, then the warm water makes us sleepy." }
+        ]
+      },
+      "mission": {
+        "title": { "th": "กัปตันเรือหงส์", "en": "Swan boat captain" },
+        "stamp": "KICHIJOJI",
+        "facts": [ { "th": "กระรอกซ่อนลูกโอ๊กไว้กินตอนหน้าหนาว", "en": "Squirrels hide acorns to eat in winter" } ],
+        "spot": [
+          { "k": "swan", "e": "🦢", "th": "เรือหงส์", "en": "A swan boat" },
+          { "k": "koi", "e": "🐟", "th": "ปลาคาร์ปสีส้ม", "en": "An orange carp" },
+          { "k": "squirrel", "e": "🐿️", "th": "กระรอก", "en": "A squirrel" },
+          { "k": "pancake", "e": "🥞", "th": "แพนเค้ก", "en": "A pancake" }
+        ]
+      }
+    },
+    {
+      "title": { "th": "ช้อปขนม แล้วบินกลับ", "en": "Snack shopping, then home" },
+      "wx": { "th": "10–16°C เมฆบางส่วน · วันเดินทาง — แต่งตัวเป็นชั้นๆ ถอดง่าย", "en": "10–16°C, some cloud · travel day — easy layers" },
+      "emoji": "🧳",
+      "planned": [
+        { "key": "depachika", "kind": "place", "th": "ห้างใต้ดินชินจูกุ", "en": "A Shinjuku food hall", "q": "department store food hall Shinjuku Station" },
+        { "kind": "food", "meal": "Lunch", "th": "โอนิกิริก่อนขึ้นเครื่อง", "en": "Onigiri before the flight" },
+        { "key": "hnd-home", "kind": "airport", "th": "สนามบินฮาเนดะ", "en": "Haneda airport", "q": "Haneda Airport Terminal 3, Ota City, Tokyo" }
+      ],
+      "moving": { "th": "รถบัสลีมูซีนจากชินจูกุไปฮาเนดะ วางกระเป๋าใต้รถได้", "en": "The limousine bus from Shinjuku to Haneda — bags go underneath" },
+      "legs": [
+        { "from": "Shinjuku", "to": "Haneda T3", "by": { "th": "บัสลีมูซีน 50 นาที", "en": "Limousine bus, 50 min" }, "min": 50, "url": "https://www.google.com/maps/dir/?api=1&origin=Shinjuku+Station&destination=Haneda+Airport+Terminal+3&travelmode=transit" }
+      ],
+      "plan": [
+        { "t": "08:30", "h": { "th": "🧳 เก็บกระเป๋า", "en": "🧳 Pack the bags" }, "th": "เก็บกระเป๋า · เช็กลิ้นชักกับใต้เตียง · เช็กเอาต์ฝากกระเป๋า", "en": "Pack · check the drawers and under the beds · check out and leave the bags" },
+        { "t": "10:00", "h": { "th": "🍡 ขนมฝากจากห้างใต้ดิน", "en": "🍡 Gifts from the food hall" }, "th": "ห้างใต้ดินชินจูกุ · ขนมกล่องสวยๆ ฝากคุณตาคุณยาย", "en": "Shinjuku food hall · pretty boxes of sweets for the grandparents" },
+        { "t": "12:00", "h": { "th": "🍙 โอนิกิริมื้อสุดท้าย", "en": "🍙 One last onigiri" }, "th": "มื้อกลางวันเบาๆ · โอนิกิริกับซุปมิโซะ", "en": "A light lunch · onigiri and miso soup" },
+        { "t": "13:00", "h": { "th": "🚌 บัสไปสนามบิน", "en": "🚌 Bus to the airport" }, "th": "รับกระเป๋า · บัสลีมูซีนจากสถานีชินจูกุ", "en": "Collect the bags · limousine bus from Shinjuku Station" },
+        { "t": "14:30", "h": { "th": "✈️ บ๊ายบายโตเกียว!", "en": "✈️ Bye bye, Tokyo!" }, "th": "เช็กอินที่ฮาเนดะ อาคาร 3 · มุมดูเครื่องบินบนชั้นดาดฟ้า", "en": "Check in at Haneda T3 · the plane-watching deck upstairs" }
+      ],
+      "tips": [
+        { "th": "เก็บขนมฝากไว้ในกระเป๋าถือ กล่องจะได้ไม่บุบ", "en": "Keep the gift boxes in the hand luggage so they don't get squashed" },
+        { "th": "เติมเงินใน Suica ให้เหลือน้อยๆ ก่อนกลับ หรือเก็บไว้ใช้ทริปหน้า", "en": "Spend the Suica down before you leave, or keep it for the next trip" }
+      ],
+      "pick": { "th": "มุมดูเครื่องบินบนดาดฟ้าอาคาร 3 เห็นเครื่องบินขึ้นลงใกล้ๆ", "en": "The plane-watching deck at Terminal 3 — take-offs and landings up close" },
+      "planB": { "th": "ถ้าฝนตกหรือรถติด: นั่งรถไฟแทนบัส (สายเคคิว) ไม่ติดฝนและตรงเวลา", "en": "If it rains or the roads are busy: take the train instead of the bus (Keikyu line), dry and on time" },
+      "money": { "th": "บัสลีมูซีน ¥1,300 ผู้ใหญ่ · ¥650 เด็ก · ขนมฝาก ¥5,000 · วันนี้ ≈ ¥10,000", "en": "Limousine bus ¥1,300 adult · ¥650 child · gifts ¥5,000 · today ≈ ¥10,000" },
+      "picks": [
+        { "meal": { "th": "มื้อกลางวัน", "en": "Lunch" }, "name": "Onigiri stand (example)", "what": { "th": "โอนิกิริไส้แซลมอนกับไข่ ซุปมิโซะ", "en": "Salmon and egg rice balls, miso soup" }, "pr": "¥600–1,000", "q": "onigiri Shinjuku Station" }
+      ],
+      "learn": [
+        { "name": { "th": "ขนมของฝาก", "en": "Gift sweets" }, "facts": [ { "th": "คนญี่ปุ่นชอบซื้อขนมกล่องสวยๆ กลับไปฝากที่บ้านและที่ทำงาน", "en": "People in Japan bring pretty boxes of sweets home for family and friends" } ], "kid": { "th": "ขนมฝากคุณตาคุณยาย!", "en": "Sweets for grandma and grandpa!" } }
+      ],
+      "quiz": [
+        { "q": { "th": "เราซื้อขนมฝากใคร?", "en": "Who are the sweets for?" }, "a": { "th": "คุณตาคุณยาย", "en": "Grandma and grandpa" } }
+      ],
+      "tale": {
+        "th": "วันสุดท้ายแล้ว! เช้านี้เราเก็บกระเป๋า แล้วไปห้างใต้ดินที่มีขนมกล่องสวยๆ เต็มไปหมด คนญี่ปุ่นชอบซื้อขนมกลับไปฝากคนที่รัก หนูอยากซื้อขนมฝากใครบ้าง? จากนั้นเรานั่งรถบัสไปสนามบิน ที่ดาดฟ้ามีมุมดูเครื่องบินขึ้นลง โบกมือบ๊ายบายโตเกียวกัน แล้วกลับบ้านไปเล่าเรื่องเรือหงส์ หุ่นยนต์ และเพนกวินให้ทุกคนฟังนะ",
+        "en": "It is our last day! This morning we pack, then visit a food hall full of pretty boxes of sweets. People in Japan love bringing sweets home for the ones they love — who would you like to bring some to? Then the bus takes us to the airport, where a rooftop deck lets us watch the planes take off and land. Wave goodbye to Tokyo, then fly home to tell everyone about the swan boats, the robots and the penguins!",
+        "scenes": [
+          { "e": "🍡", "h": { "th": "ขนมกล่องสวย", "en": "Pretty sweet boxes" }, "th": "ห้างใต้ดินมีขนมกล่องสวยๆ เต็มไปหมด หนูอยากซื้อฝากใคร?", "en": "A food hall full of pretty sweets. Who would you bring some to?" },
+          { "e": "🛫", "h": { "th": "ดูเครื่องบิน", "en": "Plane watching" }, "th": "ที่ดาดฟ้าสนามบินมีมุมดูเครื่องบินขึ้นลงใกล้ๆ", "en": "From the rooftop we watch the planes take off and land." },
+          { "e": "👋", "h": { "th": "บ๊ายบายโตเกียว", "en": "Bye bye, Tokyo" }, "th": "โบกมือบ๊ายบาย แล้วกลับไปเล่าเรื่องสนุกๆ ให้ทุกคนฟัง", "en": "Wave goodbye, then tell everyone our stories at home." }
+        ]
+      },
+      "mission": {
+        "title": { "th": "บ๊ายบายโตเกียว", "en": "Bye bye, Tokyo" },
         "stamp": "HND → BKK",
-        "facts": [
-          {
-            "th": "เครื่องบินกลับบ้านใช้เวลา 6 ชั่วโมง",
-            "en": "The flight home takes six hours"
-          }
-        ],
+        "facts": [ { "th": "เครื่องบินกลับบ้านใช้เวลาประมาณ 6 ชั่วโมง", "en": "The flight home takes about six hours" } ],
         "spot": [
-          {
-            "k": "fruit",
-            "e": "🍓",
-            "th": "สตรอว์เบอร์รี",
-            "en": "A strawberry"
-          },
-          {
-            "k": "lantern",
-            "e": "🏮",
-            "th": "โคมแดง",
-            "en": "A red lantern"
-          },
-          {
-            "k": "plane",
-            "e": "✈️",
-            "th": "เครื่องบินของเรา",
-            "en": "Our plane"
-          },
-          {
-            "k": "moon",
-            "e": "🌙",
-            "th": "พระจันทร์",
-            "en": "The moon"
-          }
+          { "k": "gift", "e": "🎁", "th": "กล่องขนมฝาก", "en": "A gift box" },
+          { "k": "bus", "e": "🚌", "th": "รถบัสสนามบิน", "en": "The airport bus" },
+          { "k": "plane", "e": "✈️", "th": "เครื่องบินของเรา", "en": "Our plane" },
+          { "k": "moon", "e": "🌙", "th": "พระจันทร์", "en": "The moon" }
         ]
       }
     }
   ],
   "info": {
     "emergency": [
-      {
-        "label": {
-          "th": "ตำรวจ",
-          "en": "Police"
-        },
-        "tel": "110",
-        "main": true
-      },
-      {
-        "label": {
-          "th": "รถพยาบาล · ดับเพลิง",
-          "en": "Ambulance · fire"
-        },
-        "tel": "119"
-      }
+      { "label": { "th": "ตำรวจ", "en": "Police" }, "tel": "110", "main": true },
+      { "label": { "th": "รถพยาบาล · ดับเพลิง", "en": "Ambulance · fire" }, "tel": "119" },
+      { "label": { "th": "ปรึกษาอาการป่วย ไม่ฉุกเฉิน (โตเกียว)", "en": "Medical advice, not an emergency (Tokyo)" }, "tel": "#7119" }
     ],
     "lost": {
-      "th": "ถ้าเด็กหลง: ยืนนิ่งๆ หาพนักงานในเครื่องแบบ โทร 110",
-      "en": "If a child is lost: stand still, find staff in uniform, call 110"
+      "th": "ถ้าเด็กหลง: ยืนนิ่งๆ ตรงที่หลง · หาพนักงานในเครื่องแบบ หรือแม่ที่มีลูกเล็ก · โทร 110 · ในสถานีให้ไปที่ช่องจำหน่ายตั๋ว",
+      "en": "If a child is lost: stand still where you are · find staff in uniform, or a mum with little ones · call 110 · in a station, go to the ticket office"
     },
     "guide": [
-      {
-        "title": {
-          "th": "นาฬิกาเร็วกว่า 2 ชั่วโมง",
-          "en": "Clocks two hours ahead"
-        },
-        "sub": {
-          "th": "ญี่ปุ่น UTC+9",
-          "en": "Japan is UTC+9"
-        },
-        "text": {
-          "th": "เวลางีบเลื่อนตาม 2 ชั่วโมง",
-          "en": "Naps shift by two hours"
-        }
-      }
+      { "title": { "th": "นาฬิกาเร็วกว่า 2 ชั่วโมง", "en": "Clocks two hours ahead" }, "sub": { "th": "ญี่ปุ่น UTC+9", "en": "Japan is UTC+9" }, "text": { "th": "เวลางีบกับเวลานอนเลื่อนตาม 2 ชั่วโมง · วันแรกให้นอนเร็วหน่อย", "en": "Naps and bedtime shift by two hours · an early night on day one" } },
+      { "title": { "th": "เด็กต่ำกว่า 6 ขวบขึ้นรถไฟฟรี", "en": "Under-6s ride free" }, "sub": { "th": "ผู้ใหญ่ 1 คนพาเด็กเล็กได้ 2 คน", "en": "Up to two little ones per adult" }, "text": { "th": "เด็ก 6 ขวบขึ้นไปใช้บัตร Suica เด็ก ราคาครึ่งหนึ่ง", "en": "From six, children use a child Suica at half fare" } },
+      { "title": { "th": "เงียบบนรถไฟ", "en": "Quiet on the train" }, "sub": { "th": "ไม่คุยโทรศัพท์ เสียงเบาๆ", "en": "No phone calls, soft voices" }, "text": { "th": "เด็กร้องได้ ไม่มีใครว่า · พกของเล่นเงียบๆ กับขนมชิ้นเล็ก", "en": "Little ones may cry and nobody minds · bring quiet toys and small snacks" } },
+      { "title": { "th": "ถังขยะหายาก", "en": "Bins are rare" }, "sub": { "th": "เก็บขยะกลับมาที่ที่พัก", "en": "Carry rubbish back to the inn" }, "text": { "th": "พกถุงเล็กไว้ใส่ขยะ · ร้านสะดวกซื้อมีถังขยะแยกประเภท", "en": "Keep a small bag for rubbish · convenience stores have sorted bins" } }
     ],
     "prices": {
-      "head": {
-        "th": "ค่าเข้า (ตรวจซ้ำก่อนเดินทาง)",
-        "en": "Entry prices (re-check before travelling)"
-      },
-      "cols": [
-        {
-          "th": "รายการ",
-          "en": "Item"
-        },
-        {
-          "th": "ผู้ใหญ่",
-          "en": "Adult"
-        },
-        {
-          "th": "เด็ก",
-          "en": "Children"
-        },
-        {
-          "th": "เกณฑ์ฟรี",
-          "en": "Free cut-off"
-        },
-        {
-          "th": "หมายเหตุ",
-          "en": "Note"
-        }
-      ],
+      "head": { "th": "ค่าเข้า (ตรวจซ้ำก่อนเดินทาง)", "en": "Entry prices (re-check before travelling)" },
+      "cols": [ { "th": "รายการ", "en": "Item" }, { "th": "ผู้ใหญ่", "en": "Adult" }, { "th": "เด็ก", "en": "Children" }, { "th": "เกณฑ์ฟรี", "en": "Free cut-off" }, { "th": "หมายเหตุ", "en": "Note" } ],
       "rows": [
-        [
-          {
-            "th": "อควาเรียมซุมิดะ",
-            "en": "Sumida Aquarium"
-          },
-          {
-            "th": "¥2,500",
-            "en": "¥2,500"
-          },
-          {
-            "th": "¥800 (3+)",
-            "en": "¥800 (3+)"
-          },
-          {
-            "th": "ต่ำกว่า 3 ขวบฟรี",
-            "en": "under 3 free"
-          },
-          {
-            "th": "ซื้อออนไลน์ข้ามคิว",
-            "en": "buy online, skip the queue"
-          }
-        ]
+        [ { "th": "อควาเรียมซุมิดะ", "en": "Sumida Aquarium" }, { "th": "¥2,500", "en": "¥2,500" }, { "th": "¥800 (3+)", "en": "¥800 (3+)" }, { "th": "ต่ำกว่า 3 ขวบฟรี", "en": "under 3 free" }, { "th": "ซื้อออนไลน์ข้ามคิว", "en": "buy online, skip the queue" } ],
+        [ { "th": "จุดชมวิวสกายทรี", "en": "Skytree deck" }, { "th": "¥2,100", "en": "¥2,100" }, { "th": "¥950 (6+)", "en": "¥950 (6+)" }, { "th": "ต่ำกว่า 6 ขวบฟรี", "en": "under 6 free" }, { "th": "จองรอบเวลาออนไลน์", "en": "book a time slot online" } ],
+        [ { "th": "สวนชินจูกุเกียวเอ็น", "en": "Shinjuku Gyoen" }, { "th": "¥500", "en": "¥500" }, { "th": "ฟรี", "en": "free" }, { "th": "นักเรียนประถมลงไปฟรี", "en": "primary school and under free" }, { "th": "ปิดวันจันทร์", "en": "closed Mondays" } ],
+        [ { "th": "พิพิธภัณฑ์มิไรคัง", "en": "Miraikan" }, { "th": "¥630", "en": "¥630" }, { "th": "¥210 (6+)", "en": "¥210 (6+)" }, { "th": "ต่ำกว่า 6 ขวบฟรี", "en": "under 6 free" }, { "th": "ปิดวันอังคาร", "en": "closed Tuesdays" } ],
+        [ { "th": "สวนสัตว์อิโนะคาชิระ", "en": "Inokashira Park Zoo" }, { "th": "¥400", "en": "¥400" }, { "th": "ฟรี", "en": "free" }, { "th": "ประถมลงไปฟรี", "en": "primary school and under free" }, { "th": "ปิดวันจันทร์", "en": "closed Mondays" } ]
       ]
     },
     "pack": [
-      {
-        "group": {
-          "th": "ของเด็กๆ",
-          "en": "For the kids"
-        },
-        "items": [
-          {
-            "th": "เสื้อกันหนาวบาง",
-            "en": "A light warm layer"
-          },
-          {
-            "th": "เป้อุ้ม",
-            "en": "Carrier"
-          }
-        ]
-      }
+      { "group": { "th": "ของเด็กๆ", "en": "For the kids" }, "items": [ { "th": "เสื้อกันหนาวบาง 2 ตัว", "en": "Two light warm layers" }, { "th": "หมวกกับครีมกันแดด", "en": "Hats and sun cream" }, { "th": "เป้อุ้ม", "en": "Carrier" }, { "th": "รถเข็นพับเล็ก", "en": "A small folding buggy" }, { "th": "ของเล่นเงียบๆ สำหรับรถไฟ", "en": "Quiet toys for the train" } ] },
+      { "group": { "th": "ปิกนิก", "en": "Picnic" }, "items": [ { "th": "ผ้าปูนั่ง", "en": "A picnic mat" }, { "th": "ทิชชู่เปียก", "en": "Wet wipes" }, { "th": "ถุงใส่ขยะ", "en": "A rubbish bag" } ] },
+      { "group": { "th": "เอกสารและเงิน", "en": "Papers and money" }, "items": [ { "th": "หนังสือเดินทางทุกคน", "en": "Everyone's passports" }, { "th": "เงินเยนสดเล็กน้อย", "en": "A little cash in yen" }, { "th": "บัตรเครดิต", "en": "A credit card" } ] }
+    ],
+    "general": [
+      { "theme": { "th": "รถไฟในโตเกียว", "en": "Trains in Tokyo" }, "emo": "🚆", "items": [ { "t": { "th": "สายยามาโนเตะสีเขียว", "en": "The green Yamanote line" }, "x": { "th": "วิ่งเป็นวงกลม ผ่านอุเอโนะ ชินจูกุ ชิบูย่า", "en": "Runs in a loop through Ueno, Shinjuku and Shibuya" } }, { "t": { "th": "หลีกเลี่ยงช่วงคนเยอะ", "en": "Avoid the rush" }, "x": { "th": "7:30–9:30 และ 17:30–19:00 รถแน่น", "en": "7:30–9:30 and 17:30–19:00 are packed" } } ] },
+      { "theme": { "th": "กินกับเด็ก", "en": "Eating with kids" }, "emo": "🍽️", "items": [ { "t": { "th": "ชามเด็ก", "en": "Kids' bowls" }, "x": { "th": "หลายร้านมีชามเล็ก ช้อนส้อม และเก้าอี้เด็ก ขอได้เลย", "en": "Many places have small bowls, forks and high chairs — just ask" } }, { "t": { "th": "ร้านสะดวกซื้อ", "en": "Convenience stores" }, "x": { "th": "โอนิกิริ ไข่ม้วน นม ผลไม้ หาได้ทุกมุมถนน", "en": "Rice balls, rolled egg, milk and fruit on every corner" } } ] }
     ],
     "wild": [
-      {
-        "name": {
-          "th": "นกกระเรียน",
-          "en": "Crane"
-        },
-        "emo": "🦢",
-        "text": {
-          "th": "นกตัวสูงคอยาว ในสวนตอนเช้า",
-          "en": "A tall long-necked bird, in the park at dawn"
-        }
-      }
-    ]
+      { "name": { "th": "นกกระเรียน", "en": "Crane" }, "emo": "🦢", "text": { "th": "นกตัวสูงคอยาว ในสวนตอนเช้า", "en": "A tall long-necked bird, in the park at dawn" } },
+      { "name": { "th": "อีกา", "en": "Crow" }, "emo": "🐦‍⬛", "text": { "th": "อีกาโตเกียวตัวใหญ่และฉลาดมาก ชอบแอบขโมยขนม", "en": "Tokyo crows are big and clever — they love to steal snacks" } },
+      { "name": { "th": "ปลาคาร์ป", "en": "Koi carp" }, "emo": "🐟", "text": { "th": "ปลาสีส้มขาวตัวโต ในบึงและสระวัด", "en": "Big orange-and-white fish in ponds and temple pools" } },
+      { "name": { "th": "กระรอก", "en": "Squirrel" }, "emo": "🐿️", "text": { "th": "วิ่งบนต้นไม้ในสวนอิโนะคาชิระ", "en": "Running up the trees in Inokashira Park" } },
+      { "name": { "th": "เพนกวิน", "en": "Penguin" }, "emo": "🐧", "text": { "th": "เดินเตาะแตะบนบก ว่ายเร็วในน้ำ ที่อควาเรียมซุมิดะ", "en": "Waddles on land, zooms in the water, at Sumida Aquarium" } }
+    ],
+    "ifthen": {
+      "cols": [ { "th": "ถ้า", "en": "If" }, { "th": "ให้ทำ", "en": "Then" } ],
+      "rows": [
+        [ { "th": "ฝนตกทั้งวัน", "en": "It rains all day" }, { "th": "ดูแผนสำรองของแต่ละวัน · พิพิธภัณฑ์ อควาเรียม และห้องเล่นเด็กในห้างอยู่ในร่ม", "en": "See each day's plan B · museums, the aquarium and mall play rooms are all indoors" } ],
+        [ { "th": "เด็กไม่สบาย", "en": "A child is unwell" }, { "th": "โทร #7119 ปรึกษาก่อน · ร้านขายยามีป้ายกากบาทเขียว · ฉุกเฉินโทร 119", "en": "Call #7119 for advice first · pharmacies show a green cross · in an emergency call 119" } ],
+        [ { "th": "ลืมของบนรถไฟ", "en": "Something left on a train" }, { "th": "บอกพนักงานที่สถานีปลายทาง พร้อมสายและเวลา · ญี่ปุ่นส่วนใหญ่ได้ของคืน", "en": "Tell the staff at the next station, with the line and the time · most things come back in Japan" } ],
+        [ { "th": "ซากุระยังไม่บาน", "en": "The blossom has not opened yet" }, { "th": "ต้นซากุระสายพันธุ์บานเร็วในสวนชินจูกุเกียวเอ็นมักบานก่อน · ไปปิกนิกได้เหมือนเดิม", "en": "Shinjuku Gyoen's early cherry trees often bloom first · the picnic still works" } ]
+      ]
+    }
   },
   "restaurants": {
-    "lede": {
-      "th": "ร้านรอบอุเอโนะและซุมิดะ",
-      "en": "Around Ueno and Sumida"
-    },
-    "kinds": [
-      {
-        "th": "ร้านอาหาร",
-        "en": "Restaurants"
-      },
-      {
-        "th": "คาเฟ่และของหวาน",
-        "en": "Cafés and sweets"
-      },
-      {
-        "th": "ทำกินเอง",
-        "en": "Self-catering"
-      }
-    ],
+    "lede": { "th": "ร้านรอบอุเอโนะ อาซากุสะ ชินจูกุ และโอไดบะ — ชื่อร้านเป็นตัวอย่าง", "en": "Around Ueno, Asakusa, Shinjuku and Odaiba — the names are examples" },
+    "kinds": [ { "th": "ร้านอาหาร", "en": "Restaurants" }, { "th": "คาเฟ่และของหวาน", "en": "Cafés and sweets" }, { "th": "ทำกินเอง", "en": "Self-catering" } ],
     "groups": [
-      {
-        "area": {
-          "th": "อุเอโนะ",
-          "en": "Ueno"
-        },
-        "kind": 0,
-        "items": [
-          {
-            "name": "Ramen street stall (example)",
-            "tag": {
-              "th": "ราเมง",
-              "en": "Ramen"
-            },
-            "what": {
-              "th": "โชยุราเมง",
-              "en": "Shoyu ramen"
-            },
-            "where": {
-              "th": "ใกล้สถานี",
-              "en": "By the station"
-            },
-            "pr": "¥900–1,200",
-            "q": "ramen Ueno Station",
-            "pick": [
-              "1 · Dinner"
-            ]
-          }
-        ]
-      }
+      { "area": { "th": "อุเอโนะ", "en": "Ueno" }, "kind": 0, "items": [
+        { "name": "Ramen street stall (example)", "tag": { "th": "ราเมง", "en": "Ramen" }, "what": { "th": "โชยุราเมง ชามเด็ก", "en": "Shoyu ramen, a kids' bowl" }, "where": { "th": "ใกล้สถานี", "en": "By the station" }, "pr": "¥900–1,200", "q": "ramen Ueno Station", "pick": [ "1 · Dinner" ] },
+        { "name": "Curry corner (example)", "tag": { "th": "แกงกะหรี่", "en": "Curry" }, "what": { "th": "แกงกะหรี่ญี่ปุ่นรสอ่อน จานเด็ก", "en": "Mild Japanese curry, a kids' plate" }, "where": { "th": "ถนนหน้าสวน", "en": "Opposite the park" }, "pr": "¥900–1,400", "q": "japanese curry Ueno", "pick": [ "2 · Dinner" ] }
+      ] },
+      { "area": { "th": "อาซากุสะและซุมิดะ", "en": "Asakusa and Sumida" }, "kind": 0, "items": [
+        { "name": "Solamachi food court (example)", "tag": { "th": "ศูนย์อาหาร", "en": "Food court" }, "what": { "th": "อุด้ง ข้าวหน้าไข่ ซูชิม้วน", "en": "Udon, egg rice bowls, sushi rolls" }, "where": { "th": "ใต้สกายทรี", "en": "Under the Skytree" }, "pr": "¥1,000–1,500", "q": "Tokyo Solamachi food court", "pick": [ "2 · Lunch" ] }
+      ] },
+      { "area": { "th": "อาซากุสะ", "en": "Asakusa" }, "kind": 1, "items": [
+        { "name": "Senbei stand (example)", "tag": { "th": "ขนมเซมเบ้", "en": "Senbei" }, "what": { "th": "ข้าวเกรียบญี่ปุ่นอบใหม่ๆ", "en": "Freshly baked rice crackers" }, "where": { "th": "ถนนนากามิเซะ", "en": "Nakamise street" }, "pr": "¥100–300", "q": "senbei Nakamise" }
+      ] },
+      { "area": { "th": "ชินจูกุ", "en": "Shinjuku" }, "kind": 0, "items": [
+        { "name": "Gyoza house (example)", "tag": { "th": "เกี๊ยวซ่า", "en": "Gyoza" }, "what": { "th": "เกี๊ยวซ่าทอด ข้าวผัด", "en": "Pan-fried gyoza, fried rice" }, "where": { "th": "ใกล้ที่พัก", "en": "Near the inn" }, "pr": "¥1,000–1,800", "q": "gyoza Shinjuku", "pick": [ "3 · Dinner" ] },
+        { "name": "Conveyor-belt sushi (example)", "tag": { "th": "ซูชิ", "en": "Sushi" }, "what": { "th": "ซูชิสายพาน เด็กเลือกเองได้", "en": "Conveyor-belt sushi, the kids choose" }, "where": { "th": "ถนนหลังสถานี", "en": "Behind the station" }, "pr": { "th": "จานละ ¥150", "en": "¥150 a plate" }, "q": "conveyor belt sushi Shinjuku", "pick": [ "4 · Dinner" ] },
+        { "name": "Yakitori corner (example)", "tag": { "th": "ไก่ย่าง", "en": "Yakitori" }, "what": { "th": "ไก่ย่างไม่เผ็ด ข้าวไข่", "en": "Mild chicken skewers, egg rice" }, "where": { "th": "ซอยร้านอาหาร", "en": "The restaurant lane" }, "pr": "¥1,500–2,500", "q": "yakitori Shinjuku", "pick": [ "5 · Dinner" ] }
+      ] },
+      { "area": { "th": "ชินจูกุ", "en": "Shinjuku" }, "kind": 2, "items": [
+        { "name": "Department store food hall (example)", "tag": { "th": "ห้างใต้ดิน", "en": "Food hall" }, "what": { "th": "เบนโตะ ผลไม้ ขนมกล่องฝาก", "en": "Bento, fruit, boxes of gift sweets" }, "where": { "th": "ชั้นใต้ดินของห้าง", "en": "Department store basement" }, "pr": "¥1,000–1,500", "q": "department store food hall Shinjuku", "pick": [ "3 · Lunch" ] }
+      ] },
+      { "area": { "th": "โอไดบะ", "en": "Odaiba" }, "kind": 0, "items": [
+        { "name": "Seaside food court (example)", "tag": { "th": "ศูนย์อาหาร", "en": "Food court" }, "what": { "th": "ข้าวห่อไข่ อุด้ง ไอศกรีมนม", "en": "Omelette rice, udon, milk ice cream" }, "where": { "th": "ห้างริมทะเล", "en": "The seaside mall" }, "pr": "¥1,000–1,500", "q": "food court Odaiba", "pick": [ "4 · Lunch" ] }
+      ] },
+      { "area": { "th": "คิชิโจจิ", "en": "Kichijoji" }, "kind": 1, "items": [
+        { "name": "Pond-side café (example)", "tag": { "th": "แพนเค้ก", "en": "Pancakes" }, "what": { "th": "แพนเค้กนุ่ม แซนด์วิชไข่", "en": "Fluffy pancakes, egg sandwiches" }, "where": { "th": "ริมบึงอิโนะคาชิระ", "en": "By Inokashira pond" }, "pr": "¥1,200–1,800", "q": "cafe Inokashira Park", "pick": [ "5 · Lunch" ] }
+      ] }
     ]
   },
   "passport": {
     "words": [
-      {
-        "k": "konnichiwa",
-        "e": "👋",
-        "th": "คนนิจิวะ",
-        "en": "Konnichiwa",
-        "note": {
-          "th": "สวัสดี",
-          "en": "Hello"
-        },
-        "speak": {
-          "text": "こんにちは",
-          "lang": "ja-JP"
-        }
-      },
-      {
-        "k": "arigato",
-        "e": "🙏",
-        "th": "อาริงาโตะ",
-        "en": "Arigatō",
-        "note": {
-          "th": "ขอบคุณ",
-          "en": "Thank you"
-        },
-        "speak": {
-          "text": "ありがとう",
-          "lang": "ja-JP"
-        }
-      }
+      { "k": "konnichiwa", "e": "👋", "th": "คนนิจิวะ", "en": "Konnichiwa", "note": { "th": "สวัสดี", "en": "Hello" }, "speak": { "text": "こんにちは", "lang": "ja-JP" } },
+      { "k": "arigato", "e": "🙏", "th": "อาริงาโตะ", "en": "Arigatō", "note": { "th": "ขอบคุณ", "en": "Thank you" }, "speak": { "text": "ありがとう", "lang": "ja-JP" } },
+      { "k": "oishii", "e": "😋", "th": "โออิชี", "en": "Oishii", "note": { "th": "อร่อย", "en": "Yummy" }, "speak": { "text": "おいしい", "lang": "ja-JP" } },
+      { "k": "kawaii", "e": "🥰", "th": "คาวาอี", "en": "Kawaii", "note": { "th": "น่ารัก", "en": "Cute" }, "speak": { "text": "かわいい", "lang": "ja-JP" } },
+      { "k": "sakura", "e": "🌸", "th": "ซากุระ", "en": "Sakura", "note": { "th": "ดอกซากุระ", "en": "Cherry blossom" }, "speak": { "text": "さくら", "lang": "ja-JP" } },
+      { "k": "baibai", "e": "👋", "th": "ไบไบ", "en": "Bai bai", "note": { "th": "บ๊ายบาย", "en": "Bye bye" }, "speak": { "text": "バイバイ", "lang": "ja-JP" } }
     ],
     "food": [
-      {
-        "k": "ramen",
-        "e": "🍜",
-        "th": "ราเมง",
-        "en": "Ramen"
-      },
-      {
-        "k": "onigiri",
-        "e": "🍙",
-        "th": "โอนิกิริ",
-        "en": "Onigiri"
-      },
-      {
-        "k": "mochi",
-        "e": "🍡",
-        "th": "โมจิ",
-        "en": "Mochi"
-      }
+      { "k": "ramen", "e": "🍜", "th": "ราเมง", "en": "Ramen" },
+      { "k": "onigiri", "e": "🍙", "th": "โอนิกิริ", "en": "Onigiri" },
+      { "k": "mochi", "e": "🍡", "th": "โมจิ", "en": "Mochi" },
+      { "k": "sushi", "e": "🍣", "th": "ซูชิ", "en": "Sushi" },
+      { "k": "gyoza", "e": "🥟", "th": "เกี๊ยวซ่า", "en": "Gyoza" },
+      { "k": "curry", "e": "🍛", "th": "แกงกะหรี่ญี่ปุ่น", "en": "Japanese curry" }
     ],
     "countdown": {
       "doors": [
-        {
-          "e": "🌸",
-          "th": "สวัสดี {name}! อีก 14 วันเราจะไปดูดอกซากุระกัน!",
-          "en": "Hi {name}! In 14 sleeps we go to see the blossom!"
-        }
+        { "e": "🌸", "th": "สวัสดี {name}! อีกไม่กี่วันเราจะไปดูดอกซากุระกัน!", "en": "Hi {name}! In a few sleeps we go to see the blossom!" },
+        { "e": "🚆", "th": "ที่โตเกียวมีรถไฟสีเขียววิ่งเป็นวงกลมรอบเมือง!", "en": "In Tokyo a green train runs round the city in a circle!" },
+        { "e": "🐧", "th": "เราจะไปดูเพนกวินว่ายน้ำเร็วเหมือนจรวด!", "en": "We will watch penguins zoom like rockets!" },
+        { "e": "🦢", "th": "มีเรือหน้าตาเหมือนหงส์ให้ปั่นด้วยนะ!", "en": "There are boats shaped like swans to pedal!" },
+        { "e": "🧳", "th": "พรุ่งนี้ออกเดินทางแล้ว! ช่วยเก็บของเล่นใส่กระเป๋าหน่อย", "en": "We fly tomorrow! Help pack your toys" }
       ]
     },
     "map": {
-      "sea": {
-        "th": "อ่าวโตเกียว",
-        "en": "Tokyo Bay"
-      },
+      "sea": { "th": "อ่าวโตเกียว", "en": "Tokyo Bay" },
       "stops": [
-        {
-          "k": "hnd",
-          "e": "✈️",
-          "th": "ฮาเนดะ",
-          "en": "Haneda",
-          "x": 70,
-          "y": 70
-        },
-        {
-          "k": "ueno",
-          "e": "🛏️",
-          "th": "อุเอโนะ",
-          "en": "Ueno",
-          "x": 45,
-          "y": 30
-        },
-        {
-          "k": "sumida",
-          "e": "🐧",
-          "th": "ซุมิดะ",
-          "en": "Sumida",
-          "x": 62,
-          "y": 36
-        }
+        { "k": "hnd", "e": "✈️", "th": "ฮาเนดะ", "en": "Haneda", "x": 66, "y": 84 },
+        { "k": "ueno", "e": "🛏️", "th": "อุเอโนะ", "en": "Ueno", "x": 58, "y": 26 },
+        { "k": "asakusa", "e": "🏮", "th": "อาซากุสะ", "en": "Asakusa", "x": 70, "y": 22 },
+        { "k": "sumida", "e": "🐧", "th": "สกายทรี", "en": "Skytree", "x": 80, "y": 26 },
+        { "k": "shinjuku", "e": "🛏️", "th": "ชินจูกุ", "en": "Shinjuku", "x": 30, "y": 40 },
+        { "k": "shibuya", "e": "🐕", "th": "ชิบูย่า", "en": "Shibuya", "x": 34, "y": 56 },
+        { "k": "odaiba", "e": "🤖", "th": "โอไดบะ", "en": "Odaiba", "x": 66, "y": 64 },
+        { "k": "kichijoji", "e": "🦢", "th": "คิชิโจจิ", "en": "Kichijoji", "x": 10, "y": 40 }
       ],
       "days": [
-        [
-          "hnd",
-          "ueno"
-        ],
-        [
-          "sumida",
-          "ueno"
-        ],
-        [
-          "hnd"
-        ]
+        [ "hnd", "ueno" ],
+        [ "asakusa", "sumida", "ueno" ],
+        [ "shinjuku", "shibuya" ],
+        [ "odaiba", "shinjuku" ],
+        [ "kichijoji", "shinjuku" ],
+        [ "hnd" ]
       ]
     }
   }

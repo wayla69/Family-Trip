@@ -243,10 +243,10 @@ if (process.env.BASE) {
   const plan = JSON.parse(fs.readFileSync(path.resolve('server/samples/sakura-hop-2028.plan.json'), 'utf8'));
   const idx = JSON.parse(fs.readFileSync(path.resolve('public/stock/index.json'), 'utf8'));
   const s = C.toSeed(plan, [], { art: false, stock: idx });
-  ok(s.theme.artDays.join() === 'stock:jp-tokyo.day.skyline,stock:jp-tokyo.landmark.skytree,stock:jp-tokyo.day.skyline' && s.passport.style.crest === 'stock:jp.stamp'
+  ok(s.theme.artDays.join() === 'stock:jp-tokyo.day.skyline,stock:jp-tokyo.landmark.kaminarimon,stock:jp-tokyo.landmark.shibuya,stock:jp-tokyo.landmark.yamanote,stock:jp-tokyo.day.skyline,stock:jp-tokyo.day.skyline' && s.passport.style.crest === 'stock:jp.stamp'
     && JSON.stringify(s.passport.stamps) === JSON.stringify([{ art: 'stock:jp.stamp', day: 0 }, { art: 'stock:jp-tokyo.stamp', day: 0 }]) && s.stock.places.join() === 'jp-tokyo'
     && s.passport.guides.map((g) => g.art).join() === 'stock:jp.guide.hana,stock:jp.guide.momo' && /\{name\}/.test(s.passport.guides[0].hello.th),
-    'stock match: Tokyo days get the skyline / the Skytree they visit / the skyline again (never a place the day skips), the Japan crest, Japan + Tokyo stamps, Japan\'s two guides');
+    'stock match: the six Tokyo days get the skyline / the Senso-ji gate / Shibuya / the train / the skyline (a day the library has no landmark for) twice — never a place the day skips —, the Japan crest, Japan + Tokyo stamps, Japan\'s two guides');
   // a plan without a badge shows its cover emoji in the book's circle and trip stamp, never the 📖 placeholder (the live sample, Nov 2026)
   ok(s.theme.badge === plan.emoji && C.toSeed({ ...plan, badge: '🗼' }, [], { art: false }).theme.badge === '🗼',
     'plan-to-seed: the badge is the plan\'s own, else its cover emoji');
