@@ -1,0 +1,6 @@
+<svg viewBox="0 0 240 240" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+<defs><clipPath id="cla-d1"><circle cx="120" cy="120" r="110"/></clipPath></defs>
+<circle cx="120" cy="120" r="120" fill="#fff"/><circle cx="120" cy="120" r="110" fill="#FFAB91"/>
+<g clip-path="url(#cla-d1)"><g stroke="#22213A" stroke-width="5" stroke-linejoin="round" stroke-linecap="round"><circle cx="60" cy="56" r="16" fill="#FFF8E1" stroke="none"/><path d="M-4 80c60 10 120-6 248 6" fill="none" stroke="#F8BBD0" stroke-width="8"/><path d="M120 120L164 60h12L220 120z" fill="#B39DDB"/><path d="M155 82.8L164 60h12l9 22.8-5-6-5 8-5-8-5 6z" fill="#FFFFFF" stroke-width="2.5"/><path d="M-4 120l30-20 30 14 40-22 50 28h98v30H-4z" fill="#CE93D8"/><path d="M-4 150l24-34 18 20 22-30 20 26 26-36 22 30 18-18 30 24 30-20 34 38v100H-4z" fill="#D7B98E"/><path d="M24 120l8 14M62 110l6 18M112 104l-4 22M160 116l6 12M212 116l-6 16" fill="none" stroke="#FFFFFF" stroke-width="3"/><path d="M-4 190c60-30 140-40 248-20v80H-4z" fill="#E8C690"/><path d="M30 200c30-8 60-10 90-8" fill="none" stroke="#F3D9A4" stroke-width="4"/></g></g>
+<circle cx="120" cy="120" r="110" fill="none" stroke="#22213A" stroke-width="5"/>
+</svg>
