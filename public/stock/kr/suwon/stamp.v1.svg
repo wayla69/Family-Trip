@@ -1,0 +1,10 @@
+<svg viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+<defs><path id="sw-st-a" d="M 38 100 A 62 62 0 0 1 162 100"/><path id="sw-st-b" d="M 30 106 A 70 70 0 0 0 170 106"/></defs>
+<circle cx="100" cy="100" r="96" fill="#FFF7F2" stroke="#A93226" stroke-width="5" stroke-dasharray="7 5"/>
+<circle cx="100" cy="100" r="84" fill="none" stroke="#A93226" stroke-width="3"/>
+<circle cx="100" cy="100" r="54" fill="#FBEFE3" stroke="#A93226" stroke-width="3"/>
+<g stroke="#22213A" stroke-width="3.5" stroke-linejoin="round" stroke-linecap="round"><rect x="52" y="126" width="96" height="14" rx="6" fill="#4FC3F7" stroke-width="2.5"/><rect x="56" y="104" width="88" height="24" rx="2" fill="#E0D6C8" stroke-width="3"/><path d="M59 128v-9a5 5 0 0 1 10 0v9z" fill="#4FC3F7" stroke-width="2"/><path d="M71 128v-9a5 5 0 0 1 10 0v9z" fill="#4FC3F7" stroke-width="2"/><path d="M83 128v-9a5 5 0 0 1 10 0v9z" fill="#4FC3F7" stroke-width="2"/><path d="M95 128v-9a5 5 0 0 1 10 0v9z" fill="#4FC3F7" stroke-width="2"/><path d="M107 128v-9a5 5 0 0 1 10 0v9z" fill="#4FC3F7" stroke-width="2"/><path d="M119 128v-9a5 5 0 0 1 10 0v9z" fill="#4FC3F7" stroke-width="2"/><path d="M131 128v-9a5 5 0 0 1 10 0v9z" fill="#4FC3F7" stroke-width="2"/><rect x="76" y="86" width="48" height="18" fill="#C0392B" stroke-width="2.5"/><path d="M88 86v18M100 86v18M112 86v18" fill="none" stroke="#FBEFE3" stroke-width="2"/><path d="M66 80Q71.1 88 76.88 88H123.12Q128.9 88 134 80L121.08 68H78.92Z" fill="#5D4037" stroke-width="2.5"/><path d="M56 134q5-4 10 0t10 0t10 0t10 0t10 0t10 0t10 0t10 0" fill="none" stroke="#E1F5FE" stroke-width="2"/></g>
+<text font-family="KIRA UI, Arial, sans-serif" font-weight="800" font-size="19" letter-spacing="3" fill="#A93226"><textPath href="#sw-st-a" startOffset="50%" text-anchor="middle">SUWON</textPath></text>
+<text font-family="KIRA UI, Arial, sans-serif" font-weight="700" font-size="11" letter-spacing="3" fill="#2E6B4F"><textPath href="#sw-st-b" startOffset="50%" text-anchor="middle">HWASEONG · KOREA</textPath></text>
+<path d="M22 100l5-3 5 3-5 3zM168 100l5-3 5 3-5 3z" fill="#A93226"/>
+</svg>
