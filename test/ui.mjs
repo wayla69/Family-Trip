@@ -567,7 +567,7 @@ const T = 'hk-macau-2026';
   ok(/(Day 2 of 6|วันที่ 2)/.test(await page.textContent('.tile.today')), 'HK on day 2: the menu’s Today tile names day 2');
   await page.goto(`${BASE}/#/passport/mimi/${T}`); await page.waitForSelector('.kidgo');
   await page.click('.kidgo'); await page.waitForSelector('.kidwrap .kidtiles');
-  ok(await page.locator('.kidtiles button').count() === 25 && await page.locator('.kidtiles button[data-v$="/map"], .kidtiles button[data-v$="/stickers"], .kidtiles button[data-v$="/trophies"]').count() === 0 && await page.locator('.kidbar button[data-v$="/map"]').count() === 1 && await page.locator('.kidtiles button[data-v$="/animals"]').count() === 1 && await page.locator('.kidtiles button[data-v$="/quiz"]').count() === 1 && await page.locator('nav.bar').count() === 0, 'kid mode on the trip: 25 big tiles (colour, draw, find, stamp, say, quiz, photos, match, shadows, feed me, colours, animal sounds, bath time, big & small, maze, where, odd one out, what next, mood, animals & friends, count… — map, stickers and trophies only on the kid bar), no tab bar');
+  ok(await page.locator('.kidtiles button').count() === 29 && await page.locator('.kidtiles button[data-v$="/map"], .kidtiles button[data-v$="/stickers"], .kidtiles button[data-v$="/trophies"]').count() === 0 && await page.locator('.kidbar button[data-v$="/map"]').count() === 1 && await page.locator('.kidtiles button[data-v$="/animals"]').count() === 1 && await page.locator('.kidtiles button[data-v$="/quiz"]').count() === 1 && await page.locator('nav.bar').count() === 0, 'kid mode on the trip: 29 big tiles (colour, draw, find, stamp, say, quiz, photos, match, shadows, feed me, colours, animal sounds, bath time, big & small, maze, where, odd one out, what next, copy the tune, join the dots, how many, cake, mood, animals & friends, count… — map, stickers and trophies only on the kid bar), no tab bar');
   ok(await page.evaluate(() => { const mm = window.matchMedia; window.matchMedia = () => ({ matches: false }); celebrate(); window.matchMedia = mm; const n = document.querySelectorAll('.confetti').length; return n === 36 && [...document.querySelectorAll('.confetti')].every((c) => getComputedStyle(c).position === 'fixed'); }), 'kid mode: the big celebration drops 36 pieces of confetti over the whole screen (stamp, surprise box, a finished game)');
   await page.goto(`${BASE}/#/kid/mimi/bubbles`); await page.waitForSelector('#bubblefield'); await page.waitForSelector('.bub');
   await page.locator('.bub').first().dispatchEvent('pointerdown');
@@ -588,14 +588,14 @@ const T = 'hk-macau-2026';
     await new Promise((r) => setTimeout(r, 1000)); const n = f.querySelectorAll('.bub').length; clearInterval(bubT); bubT = 0; bubN = 0; f.remove(); return n; });
   ok(lateBub > 0, `bubbles: a field drawn late (after the timer's first tick) still fills with bubbles (${lateBub})`);
   // three quiet games (owner, Nov 2026): a wrong tap wobbles and keeps the round, the right ones play every round through to a win and two stars
-  for (const [gm, sel] of [['shadow', '.shbig'], ['feed', '.feedpal'], ['sort', '.baskets'], ['bigsmall', '.bsrow'], ['where', '.whereb'], ['odd', '.oddch'], ['next', '.nextrow']]) {
+  for (const [gm, sel] of [['shadow', '.shbig'], ['feed', '.feedpal'], ['sort', '.baskets'], ['bigsmall', '.bsrow'], ['where', '.whereb'], ['odd', '.oddch'], ['next', '.nextrow'], ['howmany', '.hmbox']]) {
     await page.goto(`${BASE}/#/kid/mimi/${gm}`); await page.waitForSelector(sel);
     const st0 = await page.evaluate(() => stars('mimi'));
-    const wrongV = await page.evaluate(() => { const right = kg.game === 'sort' ? kg.items[kg.n].k : kg.game === 'bigsmall' ? String(kg.r.right) : kg.game === 'where' ? String(kg.r.pos) : kg.game === 'odd' ? kg.r.one : kg.game === 'next' ? kg.r.answer : kg.r.want[0]; const b = [...document.querySelectorAll('[data-a="kgpick"]')].find((x) => x.dataset.v !== right); return b && b.dataset.v; });
+    const wrongV = await page.evaluate(() => { const right = kg.game === 'sort' ? kg.items[kg.n].k : kg.game === 'bigsmall' ? String(kg.r.right) : kg.game === 'where' ? String(kg.r.pos) : kg.game === 'odd' ? kg.r.one : kg.game === 'next' ? kg.r.answer : kg.game === 'howmany' ? String(kg.r.n) : kg.r.want[0]; const b = [...document.querySelectorAll('[data-a="kgpick"]')].find((x) => x.dataset.v !== right); return b && b.dataset.v; });
     await page.click(`[data-a="kgpick"][data-v="${wrongV}"]`);
     const kept = await page.evaluate(() => kg.n === 0 && !kg.got);
     for (let k = 0; k < 40 && !(await page.evaluate(() => kg.done)); k++) {
-      const right = await page.evaluate(() => (kg.got ? null : kg.game === 'sort' ? kg.items[kg.n].k : kg.game === 'bigsmall' ? String(kg.r.right) : kg.game === 'where' ? String(kg.r.pos) : kg.game === 'odd' ? kg.r.one : kg.game === 'next' ? kg.r.answer : kg.r.want[0]));
+      const right = await page.evaluate(() => (kg.got ? null : kg.game === 'sort' ? kg.items[kg.n].k : kg.game === 'bigsmall' ? String(kg.r.right) : kg.game === 'where' ? String(kg.r.pos) : kg.game === 'odd' ? kg.r.one : kg.game === 'next' ? kg.r.answer : kg.game === 'howmany' ? String(kg.r.n) : kg.r.want[0]));
       if (right) await page.click(`[data-a="kgpick"][data-v="${right}"]`);
       await page.waitForTimeout(right && gm === 'sort' ? 60 : 250);
     }
@@ -632,6 +632,35 @@ const T = 'hk-macau-2026';
   for (const i of route.slice(1)) { [mx, my] = await mzAt(i); await page.mouse.move(mx, my, { steps: 3 }); }
   await page.mouse.up(); await page.waitForSelector('[data-a="kglv"].kidbig', { timeout: 3000 }).catch(() => {});
   ok(route.length > 1 && wallStops && await page.evaluate(() => mz.done && mz.n === 4) && await page.locator('[data-a="kglv"][data-v="3"].kidbig').count() === 1, `kid game maze: a wall stops the path, dragging along the way out wins the 4×4 maze and opens level 3 (${route.length} cells)`);
+  // copy the tune, join the dots, decorate a cake (owner, Nov 2026: "ทำเกมส์เพิ่มอีก")
+  await page.goto(`${BASE}/#/kid/mimi/simon`); await page.waitForSelector('#simonb .spad');
+  await page.click('[data-a="simonplay"]'); await page.waitForFunction(() => sm.turn === 'you', null, { timeout: 15000 });
+  const wrongPad = await page.evaluate(() => (sm.seq[0] + 1) % 4); await page.click(`#simonb .spad[data-v="${wrongPad}"]`);
+  const replays = await page.evaluate(() => sm.turn !== 'you' && sm.n === 0);
+  for (let round = 0; round < 6 && !(await page.evaluate(() => sm.done)); round++) {
+    await page.waitForFunction(() => sm.turn === 'you' || sm.done, null, { timeout: 15000 }); if (await page.evaluate(() => sm.done)) break;
+    for (const v of await page.evaluate(() => sm.seq.slice())) await page.click(`#simonb .spad[data-v="${v}"]`);
+  }
+  await page.waitForSelector('[data-a="kglv"].kidbig', { timeout: 5000 }).catch(() => {});
+  ok(replays && await page.evaluate(() => sm.done && sm.lv.len === 3) && await page.locator('[data-a="kglv"][data-v="3"].kidbig').count() === 1, 'kid game simon: a wrong note plays the tune again; playing back three 3-note tunes wins level 2 and opens level 3');
+  await page.goto(`${BASE}/#/kid/mimi/dots`); await page.waitForSelector('#dotsb svg');
+  await page.locator('#dotsb').scrollIntoViewIfNeeded();
+  const skip = await page.evaluate(() => { const box = document.querySelector('#dotsb svg').getBoundingClientRect(), q = DOT_SHAPES[dt.order[0]].p[1]; return [box.left + q[0] / 100 * box.width, box.top + q[1] / 100 * box.height]; });
+  await page.mouse.click(skip[0], skip[1]); const orderKept = await page.evaluate(() => dt.hit === 0);
+  for (let k = 0; k < 6 && !(await page.evaluate(() => dt.done)); k++) {
+    await page.waitForFunction(() => !dt.shown || dt.done, null, { timeout: 4000 }); if (await page.evaluate(() => dt.done)) break;   // the last picture stays shown when the level is won
+    await page.locator('#dotsb').scrollIntoViewIfNeeded();
+    const pts = await page.evaluate(() => { const box = document.querySelector('#dotsb svg').getBoundingClientRect(); return DOT_SHAPES[dt.order[dt.n]].p.map(([x, y]) => [box.left + x / 100 * box.width, box.top + y / 100 * box.height]); });
+    await page.mouse.move(pts[0][0], pts[0][1]); await page.mouse.down(); for (const [x, y] of pts.slice(1)) await page.mouse.move(x, y, { steps: 4 }); await page.mouse.up();
+    await page.waitForFunction(() => dt.shown || dt.done, null, { timeout: 4000 });
+  }
+  await page.waitForFunction(() => dt.done, null, { timeout: 6000 }).catch(() => {});
+  ok(orderKept && await page.evaluate(() => dt.done), 'kid game dots: a dot out of order is not joined; dragging 1 → 2 → 3… through every picture of level 2 wins it');
+  await page.goto(`${BASE}/#/kid/mimi/cake`); await page.waitForSelector('.cakebox');
+  const ck0 = await page.evaluate(() => stars('mimi'));
+  for (const e of ['🍓', '⭐', '🕯️']) await page.click(`[data-a="cakeadd"][data-v="${e}"]`);
+  const cakePlaced = await page.locator('.cakebox .ctop').count(); await page.click('[data-a="cakeblow"]');
+  ok(cakePlaced === 3 && await page.evaluate(() => ck.blown) && await page.locator('.ctop.candle.out').count() === 1 && await page.evaluate((s0) => stars('mimi') - s0, ck0) === 1, 'kid game cake: toppings and a candle go on the cake, blowing it out plays the birthday song and drops one star');
   // every game with a scene draws it (the sky and the strip are CSS backgrounds: no file to fetch, works with no signal)
   const scenes = {};
   for (const v of ['bubbles', 'music', 'shadow', 'feed', 'sort', 'bigsmall', 'wash']) { await page.goto(`${BASE}/#/kid/mimi/${v}`); await page.waitForSelector('.kidwrap'); scenes[v] = await page.evaluate(() => { const w = document.querySelector('.kidwrap'); return [...w.classList].find((c) => c.startsWith('sc-')) + ':' + /data:image\/svg/.test(getComputedStyle(w).backgroundImage); }); }

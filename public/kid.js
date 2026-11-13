@@ -592,9 +592,9 @@ const wj = (s) => String(s).replace(/วันนี้/g, 'วัน\u2060น�
 // kid mode's picture tiles (owner's set, public/art/kidui): [picture or '' for the emoji, gradient top, gradient bottom]
 const KTILE = { count: ['surprise', '#FFC93C', '#FF9F0A'], pack: ['pack', '#62CCFF', '#1C9BEA'], words: ['say', '#C9A2FF', '#8F5CEB'], colour: ['colour', '#FF93B5', '#F2557F'],
   draw: ['draw', '#AEEA80', '#5EBB3D'], match: ['match', '#B592FF', '#7C4EE5'], quiz: ['quiz', '#86D6FF', '#2BA8F0'], animals: ['animals', '#93DD60', '#3FA82C'], numbers: ['count', '#FFB54A', '#FF8A1F'],
-  spot: ['find', '#7FE3D2', '#24B39B'], stamp: ['stamp', '#8FB4FF', '#3F6FE0'], talk: ['talk', '#FFB0C8', '#F06A93'], memory: ['memory', '#FFD36B', '#F2A90C'], photos: ['photos', '#9CD9FF', '#3BA0E8'], mood: ['mood', '#FFC2A0', '#FF8A57'], hideseek: ['spy', '#FFD54A', '#E8A317'], jigsaw: ['jigsaw', '#A8E86A', '#2E9E4F'], bubbles: ['bubbles', '#5BB8FF', '#1E6FE8'], music: ['music', '#FF8FD8', '#7B3FE0'], shadow: ['', '#B8C2D6', '#5B6680'], feed: ['', '#FFD98A', '#F29B38'], sort: ['', '#9EE6B8', '#3FA0E0'], farm: ['', '#B8E986', '#E0893F'], wash: ['', '#BDE6F2', '#4FA3D9'], bigsmall: ['', '#FFD0A8', '#E06A8F'], maze: ['', '#C3F0A0', '#3E9B4F'], where: ['', '#FFE08A', '#F08C2E'], odd: ['', '#D7C6FF', '#7B5BE0'], next: ['', '#A8E6FF', '#2F86D6'], _: ['', '#C9D3E6', '#8C9BB8'] };
+  spot: ['find', '#7FE3D2', '#24B39B'], stamp: ['stamp', '#8FB4FF', '#3F6FE0'], talk: ['talk', '#FFB0C8', '#F06A93'], memory: ['memory', '#FFD36B', '#F2A90C'], photos: ['photos', '#9CD9FF', '#3BA0E8'], mood: ['mood', '#FFC2A0', '#FF8A57'], hideseek: ['spy', '#FFD54A', '#E8A317'], jigsaw: ['jigsaw', '#A8E86A', '#2E9E4F'], bubbles: ['bubbles', '#5BB8FF', '#1E6FE8'], music: ['music', '#FF8FD8', '#7B3FE0'], shadow: ['', '#B8C2D6', '#5B6680'], feed: ['', '#FFD98A', '#F29B38'], sort: ['', '#9EE6B8', '#3FA0E0'], farm: ['', '#B8E986', '#E0893F'], wash: ['', '#BDE6F2', '#4FA3D9'], bigsmall: ['', '#FFD0A8', '#E06A8F'], maze: ['', '#C3F0A0', '#3E9B4F'], where: ['', '#FFE08A', '#F08C2E'], odd: ['', '#D7C6FF', '#7B5BE0'], next: ['', '#A8E6FF', '#2F86D6'], simon: ['', '#FFC9C9', '#E8590C'], dots: ['', '#C5CAFF', '#3B3F86'], howmany: ['', '#B2F2BB', '#2B8A3E'], cake: ['', '#FFD6E7', '#E64980'], _: ['', '#C9D3E6', '#8C9BB8'] };
 // each game's own backdrop (owner, Nov 2026: "เพิ่มฉากด้วย"): a sky or room in CSS and a drawn strip along the bottom (app.css .sc-<scene>)
-const KSCENE = { bubbles: 'sea', music: 'stage', shadow: 'night', feed: 'picnic', sort: 'garden', numbers: 'garden', bigsmall: 'garden', farm: 'farm', wash: 'bath', maze: 'farm', where: 'picnic', odd: 'sea', next: 'stage' };
+const KSCENE = { bubbles: 'sea', music: 'stage', shadow: 'night', feed: 'picnic', sort: 'garden', numbers: 'garden', bigsmall: 'garden', farm: 'farm', wash: 'bath', maze: 'farm', where: 'picnic', odd: 'sea', next: 'stage', simon: 'stage', dots: 'night', howmany: 'sea', cake: 'picnic' };
 const KBAR = { home: 'home', map: 'map', colour: 'colour', stamp: 'passport', stickers: 'stickers', trophies: 'trophies' };   // the bar's middle button: colour before the trip, the passport on it
 function viewKid(p) {
   const ks = children(), kid = p[1], k = ks.find((c) => c.slug === kid);
@@ -622,7 +622,7 @@ function viewKid(p) {
       ? [cd && ['count', '🎁', L('เซอร์ไพรส์', 'Surprise')], cd && cd.pack && ['pack', '🧳', L('จัดกระเป๋า', 'Pack')], canColour(t, i) && ['colour', '🎨', L('ระบายสี', 'Colour')], ['draw', '🖍️', L('วาดรูป', 'Draw')], ['bubbles', '🫧', L('ฟองสบู่', 'Bubbles')], ['music', '🎵', L('ดนตรี', 'Music')], ['hideseek', '🙈', L('ซ่อนหา', 'I spy')]]
       : [canColour(t, i) && ['colour', '🎨', L('ระบายสี', 'Colour')], ['draw', '🖍️', L('วาดรูป', 'Draw')], ['bubbles', '🫧', L('ฟองสบู่', 'Bubbles')], ['music', '🎵', L('ดนตรี', 'Music')], ['hideseek', '🙈', L('ซ่อนหา', 'I spy')], ['spot', littleOf(t, kid) ? '👉' : '🔍', littleOf(t, kid) ? L('ชี้ แตะ', 'Point it') : L('หาของ', 'Find it')], ['stamp', '🛂', L('ปั๊มตรา', 'Stamp')]])
       .concat(words ? [['words', '🗣️', L('พูดตาม', 'Say it')]] : [], ((d.plan || {}).quiz || []).length && !lit ? [['quiz', '❓', L('ทายซิ', 'Quiz')]] : [],
-        kidTalk(t, i) ? [['talk', '💬', L('คุยกัน', 'Let’s talk')]] : [], !pre && i > 0 && memQuiz(t, i - 1) ? [['memory', '🧠', L('จำได้ไหม', 'Remember?')]] : [], kidPhotos(t, i).length ? [['photos', '📸', L('ดูรูป', 'Photos')]] : [], [['match', '🧩', L('จับคู่', 'Match')], ['shadow', '🦒', L('เงาของใคร', 'Shadows')], ['feed', '🍌', L('ป้อนอาหาร', 'Feed me')], ['sort', '🧺', L('แยกสี', 'Colours')], ['farm', '🐮', L('เสียงสัตว์', 'Animal sounds')], ['wash', '🛁', L('อาบน้ำ', 'Bath time')], ['bigsmall', '🐘', L('ใหญ่-เล็ก', 'Big & small')], ['maze', '🧭', L('เขาวงกต', 'Maze')], ['where', '📍', L('ตรงไหนนะ', 'Where is it?')], ['odd', '🤔', L('ไม่เข้าพวก', 'Odd one out')], ['next', '➡️', L('อะไรมาต่อ', 'What’s next?')]], pre ? [] : [['mood', '😊', L('วันนี้รู้สึก', 'My mood')]],
+        kidTalk(t, i) ? [['talk', '💬', L('คุยกัน', 'Let’s talk')]] : [], !pre && i > 0 && memQuiz(t, i - 1) ? [['memory', '🧠', L('จำได้ไหม', 'Remember?')]] : [], kidPhotos(t, i).length ? [['photos', '📸', L('ดูรูป', 'Photos')]] : [], [['match', '🧩', L('จับคู่', 'Match')], ['shadow', '🦒', L('เงาของใคร', 'Shadows')], ['feed', '🍌', L('ป้อนอาหาร', 'Feed me')], ['sort', '🧺', L('แยกสี', 'Colours')], ['farm', '🐮', L('เสียงสัตว์', 'Animal sounds')], ['wash', '🛁', L('อาบน้ำ', 'Bath time')], ['bigsmall', '🐘', L('ใหญ่-เล็ก', 'Big & small')], ['maze', '🧭', L('เขาวงกต', 'Maze')], ['where', '📍', L('ตรงไหนนะ', 'Where is it?')], ['odd', '🤔', L('ไม่เข้าพวก', 'Odd one out')], ['next', '➡️', L('อะไรมาต่อ', 'What’s next?')], ['simon', '🎹', L('จำเสียงตามสี', 'Copy the tune')], ['dots', '✨', L('ลากจุดต่อภาพ', 'Join the dots')], ['howmany', '🧮', L('มีกี่ตัว', 'How many?')], ['cake', '🎂', L('แต่งเค้ก', 'Decorate a cake')]], pre ? [] : [['mood', '😊', L('วันนี้รู้สึก', 'My mood')]],
         wild.length ? [['animals', (t.info.wildLabel || {}).emo || '🦘', t.info.wildLabel ? esc(T(t.info.wildLabel.short)) : L('สัตว์', 'Animals')]] : [], [['numbers', '🔢', L('นับเลข', 'Count')]], dayArt(t, i) || kidPhotoPool(t).length ? [['jigsaw', '🖼️', L('ต่อภาพ', 'Puzzle')]] : []).filter(Boolean);   // map, stickers and trophies live on the kid bar below — not twice
     const until = daysUntil(t);
     const btns = tiles.map(([v, e, lbl]) => { const k = KTILE[v] || KTILE._; return `<button class="pic" style="--k1:${k[1]};--k2:${k[2]}" data-a="kidnav" data-v="#/kid/${esc(kid)}/${v}" data-say="${esc(lbl)}">${k[0] ? `<img src="/art/kidui/${k[0]}.webp" alt="">` : `<span>${e}</span>`}<b>${lbl}</b></button>`; })
@@ -685,7 +685,25 @@ ${memState.got ? `<button class="kidbig" data-a="memnext">${memState.n + 1 < qs.
     body = lvBar(t, kid, 'maze') + `<div class="kidguide">${guideImg(0)}<p>${m.done ? L(`เย้! ${esc(m.pair[2])}เจอ${esc(m.pair[3])}แล้ว 🎉`, `Hooray! The ${esc(m.pair[4])} found the ${esc(m.pair[5])} 🎉`) : L(`พา${esc(m.pair[2])}ไปหา${esc(m.pair[3])}กัน! ลากนิ้วตามทาง`, `Help the ${esc(m.pair[4])} find the ${esc(m.pair[5])}! Drag along the path`)}</p></div>
 <div class="mazeb${m.done ? ' won' : ''}" id="mazeb" style="--n:${m.n}" role="img" aria-label="${L('เขาวงกต', 'Maze')}">${mazeCells()}</div>
 ${m.done ? lvWin(t, kid, 'maze', ['mazeagain']) : `<button class="kidbig ghost" data-a="mazeagain">🔀 ${L('ทางใหม่', 'New maze')}</button>`}`;
-  } else if (view === 'where' || view === 'odd' || view === 'next') {   // where is it · odd one out · what comes next: one round at a time, five levels
+  } else if (view === 'simon') {   // copy the tune
+    const s2 = simonFor(t, kid);
+    body = lvBar(t, kid, 'simon') + `<div class="kidguide">${guideImg(0)}<p id="simonsay">${s2.done ? L(`เก่งมาก ${esc(name)}! จำเพลงได้หมดเลย 🎉`, `Brilliant, ${esc(name)}! You remembered every tune 🎉`) : s2.turn === 'you' ? L('ถึงตาหนู! กดตามเพลง', 'Your turn! Play it back') : L('กดฟัง แล้วกดตามนะ', 'Listen, then play it back')}</p></div>
+<div class="simonb${s2.turn === 'listen' ? ' listen' : ''}" id="simonb">${SIMON.map((q, k) => `<button class="spad" style="--pc:${q[0]}" data-a="simonpad" data-v="${k}" aria-label="${esc(L(q[3], q[4]))}"><span>${q[1]}</span></button>`).join('')}</div>
+${s2.n && !s2.done ? `<div class="simstars" aria-hidden="true">${'⭐'.repeat(s2.n)}</div>` : ''}
+${s2.done ? lvWin(t, kid, 'simon', ['simonagain']) : `<button class="kidbig" data-a="simonplay">▶️ ${L('ฟังเพลง', 'Listen')}</button>`}`;
+  } else if (view === 'dots') {   // connect the dots
+    const d2 = dotsFor(t, kid), sh = DOT_SHAPES[d2.order[d2.n]];
+    body = lvBar(t, kid, 'dots') + `<div class="kidguide">${guideImg(1)}<p>${d2.done ? L(`เก่งมาก ${esc(name)}! ต่อจุดครบทุกรูปแล้ว 🎉`, `Brilliant, ${esc(name)}! Every picture is done 🎉`) : d2.shown ? L(`เป็น${esc(sh.th)}!`, `It’s ${esc(sh.en)}!`) : L('ลากนิ้วต่อจุด 1 2 3 ไปเรื่อยๆ', 'Join the dots: 1, 2, 3…')}</p></div>
+<div class="dotsb${d2.shown ? ' won' : ''}" id="dotsb">${dotsSvg()}</div>
+${d2.done ? lvWin(t, kid, 'dots', ['dotsagain']) : ''}`;
+  } else if (view === 'cake') {   // decorate a cake
+    const c2 = cakeFor(kid), candles = c2.items.some((x) => x.e === '🕯️');
+    body = `<div class="kidguide">${guideImg(0)}<p>${c2.blown ? L('สุขสันต์วันเกิด! 🎉', 'Happy birthday! 🎉') : candles ? L('ปักเทียนแล้ว เป่าเลย!', 'Candles on — blow them out!') : L('แตะของแต่งเค้กเลย!', 'Tap the toppings to decorate the cake!')}</p></div>
+<div class="cakebox" id="cakebox">${CAKE_SVG}${c2.items.map((x) => `<span class="ctop${x.e === '🕯️' ? ' candle' : ''}${c2.blown && x.e === '🕯️' ? ' out' : ''}" style="left:${x.x}%;top:${x.y}%">${x.e}</span>`).join('')}</div>
+<div class="ctray">${CAKE_TOPS.map((e) => `<button data-a="cakeadd" data-v="${e}" aria-label="${e}"><span>${e}</span></button>`).join('')}</div>
+${candles && !c2.blown ? `<button class="kidbig" data-a="cakeblow">🌬️ ${L('เป่าเทียน!', 'Blow!')}</button>` : ''}
+${c2.items.length ? `<button class="kidbig ghost" data-a="cakenew">🎂 ${L('เค้กใหม่', 'New cake')}</button>` : ''}`;
+  } else if (view === 'where' || view === 'odd' || view === 'next' || view === 'howmany') {   // where is it · odd one out · what comes next: one round at a time, five levels
     const g2 = kgFor(view, t, kid), r = g2.r;
     const doneLine = L(`เก่งมาก ${esc(name)}! ผ่าน${lvWord(t, kid, view)}แล้ว 🎉`, `Brilliant, ${esc(name)}! You finished ${lvWord(t, kid, view)} 🎉`);
     let board = '';
@@ -696,6 +714,9 @@ ${m.done ? lvWin(t, kid, 'maze', ['mazeagain']) : `<button class="kidbig ghost" 
           : `<button class="wcell slot${g2.got && q === r.pos ? ' right' : ''}" data-a="kgpick" data-v="${q}" aria-label="${esc(L(WHERE_NAME[q][0], WHERE_NAME[q][1]))}"><span>${g2.got && q === r.pos ? r.item : ''}</span></button>`).join('')}</div>`;
     } else if (!g2.done && view === 'odd') {
       board = `<div class="mema kgch oddch" data-n="${r.opts.length}">${r.opts.map((e) => `<button data-a="kgpick" data-v="${esc(e)}"${g2.got && e === r.one ? ' class="right"' : ''}><span>${e}</span></button>`).join('')}</div>`;
+    } else if (!g2.done && view === 'howmany') {
+      board = `<div class="hmbox">${r.items.map((it, k) => `<button class="hmi${r.ct.includes(k) ? ' ct' : ''}" style="left:${it.x}%;top:${it.y}%" data-a="hmtap" data-v="${k}"${r.ct.includes(k) ? ` data-c="${r.ct.indexOf(k) + 1}"` : ''} aria-label="${k + 1}"><span>${r.e}</span></button>`).join('')}</div>
+<div class="mema kgch hmch" data-n="${r.opts.length}">${r.opts.map((n) => `<button data-a="kgpick" data-v="${n}"${g2.got && n === r.n ? ' class="right"' : ''}><span>${n}</span></button>`).join('')}</div>`;
     } else if (!g2.done && view === 'next') {
       board = `<div class="nextrow" aria-hidden="true">${r.shown.map((e) => `<span>${e}</span>`).join('')}<span class="q">${g2.got ? r.answer : '❓'}</span></div>
 <div class="mema kgch" data-n="${r.opts.length}">${r.opts.map((e) => `<button data-a="kgpick" data-v="${esc(e)}"${g2.got && e === r.answer ? ' class="right"' : ''}><span>${e}</span></button>`).join('')}</div>`;
@@ -1050,6 +1071,9 @@ const LV = {
   // where: p = the board's spots in play (0 top left … 4 middle … 8 bottom right), m = find the thing at a spot, or place one there
   where: [{ p: [1, 7], m: 'find', r: 4 }, { p: [1, 7, 3, 5], m: 'find', r: 5 }, { p: [1, 7, 3, 5, 4], m: 'find', r: 6 }, { p: [1, 7, 3, 5, 4], m: 'place', r: 6 }, { p: [0, 1, 2, 3, 4, 5, 6, 7, 8], m: 'mix', r: 8 }],
   odd: [{ o: 3, r: 4 }, { o: 4, r: 5 }, { o: 4, r: 6, near: 1 }, { o: 5, r: 6, near: 1 }, { o: 6, r: 8, near: 1 }],   // near: the odd one is from a close group (a land animal among sea animals)
+  simon: [{ len: 2, r: 3 }, { len: 3, r: 3 }, { len: 4, r: 3 }, { len: 5, r: 3 }, { len: 6, r: 3 }],   // copy the tune: how many notes, how many tunes
+  dots: [{ s: ['tri', 'sq', 'dia', 'boat'], r: 3 }, { s: ['house', 'crown', 'boat', 'dia'], r: 3 }, { s: ['fish', 'rocket', 'house', 'crown'], r: 3 }, { s: ['heart', 'star', 'fish', 'rocket'], r: 3 }, { s: ['tree', 'star', 'heart', 'rocket', 'fish'], r: 4 }],
+  howmany: [{ lo: 1, hi: 3, o: 2, r: 4 }, { lo: 1, hi: 5, o: 3, r: 5 }, { lo: 1, hi: 7, o: 3, r: 5 }, { lo: 1, hi: 10, o: 4, r: 6 }, { lo: 5, hi: 10, o: 4, r: 6 }],
   next: [{ pat: ['AB'], o: 2, show: 4, r: 4 }, { pat: ['AB'], o: 3, show: 5, r: 5 }, { pat: ['AAB', 'ABB'], o: 3, show: 5, r: 5 }, { pat: ['ABC'], o: 3, show: 5, r: 6 }, { pat: ['AABB', 'ABC', 'ABB'], o: 4, show: 7, r: 6 }],   // level 2 = every game as it was before levels (6 pairs, 3×2 pieces, three choices)
 };
 function lvState(t, kid, game) {
@@ -1081,6 +1105,7 @@ const ODD_GROUPS = [{ k: 'fruit', th: 'ผลไม้', en: 'fruit', e: ['🍎'
   { k: 'land', th: 'สัตว์บก', en: 'land animals', e: ['🐶', '🐱', '🐰', '🐻', '🐼', '🐵', '🐯'] }, { k: 'sea', th: 'สัตว์ทะเล', en: 'sea animals', e: ['🐳', '🐙', '🐟', '🦀', '🐬', '🐠'] },
   { k: 'go', th: 'พาหนะ', en: 'things that go', e: ['🚗', '🚌', '🚲', '✈️', '🚂', '🚀', '⛵'] }, { k: 'wear', th: 'เสื้อผ้า', en: 'clothes', e: ['👕', '👖', '👗', '🧢', '👟', '🧦'] }];
 const ODD_NEAR = [['fruit', 'veg'], ['land', 'sea'], ['veg', 'fruit'], ['sea', 'land']];
+const HM_E = ['🐟', '🐥', '🍎', '⭐', '🐞', '🎈', '🐢', '🍓', '🦋', '🌸', '🚗', '🐸'];
 const NEXT_E = ['🍎', '🍌', '🐶', '🐱', '⭐', '🌙', '🚗', '🎈', '🌸', '🐟', '🍓', '🐥'];
 const SHADOW_THINGS = new Set(['🚗', '✈️', '⛵', '🎸', '🍌', '🚲', '🍄']);
 const SHADOWS = [['🐘', 'ช้าง', 'elephant'], ['🦒', 'ยีราฟ', 'giraffe'], ['🐢', 'เต่า', 'turtle'], ['🐰', 'กระต่าย', 'rabbit'], ['🦀', 'ปู', 'crab'], ['🐟', 'ปลา', 'fish'],
@@ -1121,6 +1146,13 @@ function kgRound(g) {
     const one = B.e[Math.floor(Math.random() * B.e.length)];
     g.r = { A, B, one, opts: shuffle(shuffle(A.e).slice(0, g.lv.o - 1).concat(one)) };
   }
+  else if (g.game === 'howmany') {   // count the things (a tap numbers each one aloud), then pick the number
+    let n; do { n = g.lv.lo + Math.floor(Math.random() * (g.lv.hi - g.lv.lo + 1)); } while (g.lv.hi > g.lv.lo && n === g.lastN);
+    g.lastN = n;
+    const items = []; for (let k = 0; k < n; k++) { let x, y, tries = 0; do { x = 12 + Math.random() * 76; y = 14 + Math.random() * 72; tries++; } while (tries < 80 && items.some((o) => Math.hypot(o.x - x, o.y - y) < 19)); items.push({ x, y }); }
+    const near = [n - 1, n + 1, n - 2, n + 2, n - 3, n + 3].filter((x) => x >= 1 && x <= 10);
+    g.r = { n, e: HM_E[Math.floor(Math.random() * HM_E.length)], items, ct: [], opts: shuffle([n].concat(near.slice(0, g.lv.o - 1))) };
+  }
   else if (g.game === 'next') {
     const pat = g.lv.pat[Math.floor(Math.random() * g.lv.pat.length)], sym = shuffle(NEXT_E).slice(0, 3), seq = [];
     for (let k = 0; seq.length <= g.lv.show; k++) seq.push(sym['ABC'.indexOf(pat[k % pat.length])]);
@@ -1133,7 +1165,7 @@ function kgRound(g) {
 function kgNew(game, t, kid) {
   const g = { game, key: `${t.id}.${kid}`, tid: t.id, kid, n: 0, lv: lvOf(t, kid, game), at: lvState(t, kid, game).at, done: false, got: false };
   if (game === 'shadow') g.deck = shuffle(SHADOWS).slice(0, g.lv.r);
-  if (game === 'where' || game === 'odd' || game === 'next') g.deck = Array(g.lv.r).fill(0);   // rounds only: each one is drawn fresh
+  if (game === 'where' || game === 'odd' || game === 'next' || game === 'howmany') g.deck = Array(g.lv.r).fill(0);   // rounds only: each one is drawn fresh
   if (game === 'bigsmall') { g.deck = shuffle(SHADOWS.filter((x) => !/[✈️⛵🎸🚲]/u.test(x[0]))).slice(0, g.lv.r); g.first = Math.random() < 0.5 ? 0 : 1; }
   if (game === 'feed') { g.pal = FEED_PALS[Math.floor(Math.random() * FEED_PALS.length)]; g.deck = shuffle(FOODS).slice(0, g.lv.r); g.fed = []; }
   if (game === 'sort') {
@@ -1151,6 +1183,7 @@ function kgAsk(g) {
   if (g.game === 'where') return g.r.mode === 'find' ? L(`อะไรอยู่${WHERE_NAME[g.r.pos][0]}?`, `What is ${WHERE_NAME[g.r.pos][1]}?`) : L(`วาง${WHERE_ITEM[g.r.item][0]}ไว้${WHERE_NAME[g.r.pos][0]}`, `Put the ${WHERE_ITEM[g.r.item][1]} ${WHERE_NAME[g.r.pos][1]}`);
   if (g.game === 'odd') return L('อันไหนไม่เข้าพวก?', 'Which one does not belong?');
   if (g.game === 'next') return L('อะไรมาต่อ?', 'What comes next?');
+  if (g.game === 'howmany') return L('มีกี่ตัว? แตะนับได้นะ', 'How many? Tap to count them');
   return '';
 }
 function kgWin(b, chars) { kg.done = true; lvDone(trip(kg.tid), kg.kid, kg.game); beep('fanfare'); celebrate(chars); star(kg.kid, 2); }
@@ -1160,7 +1193,7 @@ Object.assign(A, {
   kglv(b) {   // pick a level (a chip, or "on to level n" after a win): the game starts over at it
     const kid = kidNow(), t = kidTrip(kid), game = b.dataset.g, n = +b.dataset.v; if (!t || !LV[game]) return;
     beep('sparkle'); lvSet(kid, game, { at: n });
-    if (game === 'jigsaw') jg = null; else if (game === 'match') mg = null; else if (game === 'maze') mz = null; else kg = kgNew(game, t, kid);
+    if (game === 'jigsaw') jg = null; else if (game === 'match') mg = null; else if (game === 'maze') mz = null; else if (game === 'simon') { clearTimeout(simT); sm = null; } else if (game === 'dots') dt = null; else kg = kgNew(game, t, kid);
     render(); sayUi(L(`ด่าน ${n}!`, `Level ${n}!`));
   },
   kgpick(b) {
@@ -1176,12 +1209,12 @@ Object.assign(A, {
       const pal = $('#kgpal'); if (pal) { pal.classList.remove('chomp'); void pal.offsetWidth; pal.classList.add('chomp'); }
       sayUi(L(`ง่ำ ง่ำ! อร่อยจัง`, 'Yum yum! Delicious!'));
       setTimeout(() => { if (kg !== g) return; g.n++; if (g.n >= g.lv.r) { kgWin(b, [g.pal[0], '😋', '💛']); sayUi(L(`${g.pal[1]}อิ่มแล้ว! ขอบคุณนะ`, `${g.pal[2]} is full! Thank you!`)); } else { kgRound(g); sayUi(L(`อยากกิน${g.r.want[1]}`, `${capFirst(g.r.want[3])}, please!`)); } safeRender(); }, 1100);
-    } else if (g.game === 'where' || g.game === 'odd' || g.game === 'next') {
-      const ok = g.game === 'where' ? +v === g.r.pos : g.game === 'odd' ? v === g.r.one : v === g.r.answer;
-      if (!ok) return kgNope(b, g.game === 'where' ? L(`ยังไม่ใช่ ลองดู${WHERE_NAME[g.r.pos][0]}นะ`, `Not there — look ${WHERE_NAME[g.r.pos][1]}`) : g.game === 'odd' ? L('อันนี้เข้าพวกนะ ลองอีกที', 'That one belongs — try again!') : L('อืม… ไม่ใช่ ดูแถวอีกทีนะ', 'Hmm… look at the row again!'));
+    } else if (g.game === 'where' || g.game === 'odd' || g.game === 'next' || g.game === 'howmany') {
+      const ok = g.game === 'where' ? +v === g.r.pos : g.game === 'odd' ? v === g.r.one : g.game === 'howmany' ? +v === g.r.n : v === g.r.answer;
+      if (!ok) return kgNope(b, g.game === 'where' ? L(`ยังไม่ใช่ ลองดู${WHERE_NAME[g.r.pos][0]}นะ`, `Not there — look ${WHERE_NAME[g.r.pos][1]}`) : g.game === 'odd' ? L('อันนี้เข้าพวกนะ ลองอีกที', 'That one belongs — try again!') : g.game === 'howmany' ? L('ลองนับอีกทีนะ', 'Let’s count again!') : L('อืม… ไม่ใช่ ดูแถวอีกทีนะ', 'Hmm… look at the row again!'));
       g.got = true; beep('chime'); burst(b, ['⭐', '✨']);
       sayUi(g.game === 'where' ? L(`ใช่แล้ว! ${WHERE_ITEM[g.r.item][0]}อยู่${WHERE_NAME[g.r.pos][0]}`, `Yes! The ${WHERE_ITEM[g.r.item][1]} is ${WHERE_NAME[g.r.pos][1]}`)
-        : g.game === 'odd' ? L(`ใช่แล้ว! อันอื่นเป็น${g.r.A.th}`, `Yes! The others are ${g.r.A.en}`) : L('ใช่แล้ว! เก่งมาก', 'Yes! Well done'));
+        : g.game === 'odd' ? L(`ใช่แล้ว! อันอื่นเป็น${g.r.A.th}`, `Yes! The others are ${g.r.A.en}`) : g.game === 'howmany' ? L(`ใช่แล้ว! ${NUMW.th[g.r.n - 1]}`, `Yes! ${NUMW.en[g.r.n - 1]}!`) : L('ใช่แล้ว! เก่งมาก', 'Yes! Well done'));
       render();
       setTimeout(() => { if (kg !== g) return; g.n++; if (g.n >= g.lv.r) kgWin(b, ['🧠', '⭐', '✨']); else { kgRound(g); sayUi(kgAsk(g)); } safeRender(); }, 1300);
     } else if (g.game === 'bigsmall') {
@@ -1196,6 +1229,117 @@ Object.assign(A, {
       safeRender();
     }
   },
+});
+// ---- copy the tune: four coloured pads, each its animal and note; the phone plays a tune (it starts on a tap, so iPad lets the sound out),
+// the child plays it back; a wrong note just plays the tune again. Five levels, 2 to 6 notes. ----
+const SIMON = [['#FF6B6B', '🐥', 261.63, 'ลูกเจี๊ยบ', 'chick'], ['#FFD43B', '🐱', 329.63, 'แมว', 'cat'], ['#51CF66', '🐸', 392.0, 'กบ', 'frog'], ['#4DABF7', '🐳', 523.25, 'วาฬ', 'whale']];
+let sm = null, simT = 0;
+function simonNew(t, kid) { const lv = lvOf(t, kid, 'simon'); sm = { key: `${t.id}.${kid}`, tid: t.id, kid, at: lvState(t, kid, 'simon').at, lv, n: 0, seq: [], pos: 0, turn: 'wait', done: false }; simonRound(); }
+function simonRound() { sm.seq = Array.from({ length: sm.lv.len }, () => Math.floor(Math.random() * SIMON.length)); sm.pos = 0; sm.turn = 'wait'; }
+const simonFor = (t, kid) => { if (!sm || sm.key !== `${t.id}.${kid}` || sm.at !== lvState(t, kid, 'simon').at) simonNew(t, kid); return sm; };
+function simonLight(v) { beep('note', SIMON[v][2]); const p = $(`#simonb .spad[data-v="${v}"]`); if (p) { p.classList.remove('lit'); void p.offsetWidth; p.classList.add('lit'); } }
+function simonSay() { const el = $('#simonsay'), b = $('#simonb'); if (b) b.classList.toggle('listen', sm.turn === 'listen'); if (el) el.textContent = sm.turn === 'listen' ? L('ฟังนะ…', 'Listen…') : sm.turn === 'you' ? L('ถึงตาหนู! กดตามเพลง', 'Your turn! Play it back') : L('กดฟัง แล้วกดตามนะ', 'Listen, then play it back'); }
+function simonPlay() {
+  clearTimeout(simT); if (!sm || sm.done) return;
+  sm.turn = 'listen'; sm.pos = 0; simonSay(); let k = 0;
+  const step = () => {
+    if (!$('#simonb') || !sm) { if (sm) sm.turn = 'wait'; return; }   // left the game: stop
+    if (k >= sm.seq.length) { sm.turn = 'you'; simonSay(); return; }
+    simonLight(sm.seq[k++]); simT = setTimeout(step, 680);
+  };
+  simT = setTimeout(step, 450);
+}
+// ---- connect the dots: numbered stars on a night sky; the finger goes 1 → 2 → 3… and the picture appears ----
+const starPts = Array.from({ length: 10 }, (_, k) => { const a = -Math.PI / 2 + k * Math.PI / 5, r = k % 2 ? 17 : 40; return [Math.round(50 + r * Math.cos(a)), Math.round(54 + r * Math.sin(a))]; });
+const DOT_SHAPES = {
+  tri: { p: [[50, 14], [86, 80], [14, 80]], th: 'สามเหลี่ยม', en: 'a triangle', c: '#FF8787' },
+  sq: { p: [[20, 20], [80, 20], [80, 80], [20, 80]], th: 'สี่เหลี่ยม', en: 'a square', c: '#74C0FC' },
+  dia: { p: [[50, 10], [85, 50], [50, 90], [15, 50]], th: 'ว่าว', en: 'a kite', c: '#FFD43B' },
+  boat: { p: [[10, 58], [90, 58], [74, 84], [26, 84]], th: 'เรือ', en: 'a boat', c: '#4DABF7' },
+  house: { p: [[20, 46], [50, 16], [80, 46], [80, 86], [20, 86]], th: 'บ้าน', en: 'a house', c: '#FFA94D' },
+  crown: { p: [[14, 80], [14, 34], [32, 56], [50, 24], [68, 56], [86, 34], [86, 80]], th: 'มงกุฎ', en: 'a crown', c: '#FCC419' },
+  fish: { p: [[12, 50], [30, 32], [55, 28], [72, 42], [90, 28], [90, 72], [72, 58], [55, 72], [30, 68]], th: 'ปลา', en: 'a fish', c: '#63E6BE' },
+  rocket: { p: [[50, 8], [64, 30], [64, 64], [78, 84], [58, 78], [42, 78], [22, 84], [36, 64], [36, 30]], th: 'จรวด', en: 'a rocket', c: '#E599F7' },
+  heart: { p: [[50, 86], [18, 56], [12, 36], [22, 20], [38, 18], [50, 30], [62, 18], [78, 20], [88, 36], [82, 56]], th: 'หัวใจ', en: 'a heart', c: '#FF6B9A' },
+  star: { p: starPts, th: 'ดาว', en: 'a star', c: '#FFE066' },
+  tree: { p: [[50, 8], [72, 38], [60, 38], [80, 64], [56, 64], [56, 90], [44, 90], [44, 64], [20, 64], [40, 38], [28, 38]], th: 'ต้นไม้', en: 'a tree', c: '#69DB7C' },
+};
+let dt = null, dtDown = false;
+function dotsNew(t, kid) { const lv = lvOf(t, kid, 'dots'); dt = { key: `${t.id}.${kid}`, tid: t.id, kid, at: lvState(t, kid, 'dots').at, lv, order: shuffle(lv.s).slice(0, lv.r), n: 0, hit: 0, shown: false, done: false }; }
+const dotsFor = (t, kid) => { if (!dt || dt.key !== `${t.id}.${kid}` || dt.at !== lvState(t, kid, 'dots').at) dotsNew(t, kid); return dt; };
+function dotsSvg() {
+  const sh = DOT_SHAPES[dt.order[dt.n]], p = sh.p, k = dt.hit, all = dt.shown;
+  const line = (a, b) => `<line x1="${a[0]}" y1="${a[1]}" x2="${b[0]}" y2="${b[1]}"/>`;
+  let lines = ''; for (let i = 1; i < k; i++) lines += line(p[i - 1], p[i]); if (all) lines += line(p[p.length - 1], p[0]);
+  return `<svg viewBox="0 0 100 100" aria-hidden="true">${all ? `<polygon class="dfill" points="${p.map((q) => q.join(',')).join(' ')}" fill="${sh.c}"/>` : ''}<g class="dline">${lines}</g>
+${p.map((q, i) => `<g class="dot${i < k ? ' on' : ''}${i === k && !all ? ' nx' : ''}"><circle cx="${q[0]}" cy="${q[1]}" r="3.4"/><text x="${q[0] + (q[0] > 50 ? 4.5 : -4.5)}" y="${q[1] - 4}" text-anchor="middle">${i + 1}</text><circle class="dhit" data-dot="${i}" cx="${q[0]}" cy="${q[1]}" r="8.5"/></g>`).join('')}</svg>`;
+}
+function dotsTry(e) {
+  if (!dt || dt.done || dt.shown) return;
+  const el = document.elementFromPoint(e.clientX, e.clientY), c = el && el.closest && el.closest('[data-dot]'); if (!c || +c.dataset.dot !== dt.hit) return;
+  const sh = DOT_SHAPES[dt.order[dt.n]]; dt.hit++; beep('note', XYLO[(dt.hit - 1) % XYLO.length][1]);
+  if (dt.hit >= sh.p.length) {
+    dt.shown = true; dtDown = false; beep('chime'); sayUi(L(`เป็น${sh.th}!`, `It’s ${sh.en}!`));
+    setTimeout(() => { if (!dt || dt.order[dt.n] !== Object.keys(DOT_SHAPES).find((x) => DOT_SHAPES[x] === sh)) return;
+      if (dt.n + 1 >= dt.order.length) { dt.done = true; lvDone(trip(dt.tid), dt.kid, 'dots'); beep('fanfare'); celebrate(['✨', '⭐', '🌙']); star(dt.kid, 2); safeRender(); }
+      else { dt.n++; dt.hit = 0; dt.shown = false; safeRender(); } }, 1700);
+  }
+  if (dt.shown) { safeRender(); return; }   // the picture is done: the guide says its name
+  const bd = $('#dotsb'); if (bd) bd.innerHTML = dotsSvg();
+}
+document.addEventListener('pointerdown', (e) => { if (e.target.closest && e.target.closest('#dotsb')) { dtDown = true; e.preventDefault(); dotsTry(e); } });
+document.addEventListener('pointermove', (e) => { if (dtDown) dotsTry(e); });
+document.addEventListener('pointerup', () => { dtDown = false; });
+document.addEventListener('pointercancel', () => { dtDown = false; });
+// ---- decorate a cake (free play): tap a topping to put it on, candles too; blow them out for the birthday song and confetti ----
+const CAKE_TOPS = ['🍓', '🍒', '🫐', '🍫', '⭐', '🌸', '🍬', '🍭', '🕯️'];
+const HAPPY_BDAY = [0, 0, 1, 0, 3, 2, -1, 0, 0, 1, 0, 4, 3, -1, 0, 0, 7, 5, 3, 2, 1, -1, 5, 5, 5, 3, 4, 3];   // on the xylophone's eight bars
+const CAKE_SVG = '<svg class="cakesvg" viewBox="0 0 200 160" aria-hidden="true"><ellipse cx="100" cy="142" rx="92" ry="13" fill="#E9ECEF"/><rect x="28" y="84" width="144" height="56" rx="12" fill="#F7B6CF"/><path d="M28 96 q9 14 18 0 q9 14 18 0 q9 14 18 0 q9 14 18 0 q9 14 18 0 q9 14 18 0 q9 14 18 0 q9 14 18 0 V92 H28Z" fill="#fff"/><rect x="50" y="44" width="100" height="46" rx="12" fill="#FFE3EC"/><path d="M50 56 q8 12 16.6 0 q8 12 16.6 0 q8 12 16.6 0 q8 12 16.6 0 q8 12 16.6 0 q8 12 16.6 0 V52 H50Z" fill="#fff"/><rect x="50" y="44" width="100" height="10" rx="5" fill="#fff"/></svg>';
+let ck = null;
+const cakeFor = (kid) => { if (!ck || ck.kid !== kid) ck = { kid, items: [], blown: false, starred: false }; return ck; };
+function cakeSpot(isCandle) {
+  for (let tries = 0; tries < 60; tries++) {
+    const top = isCandle || Math.random() < 0.45, x = top ? 30 + Math.random() * 40 : 20 + Math.random() * 60, y = isCandle ? 25 : top ? 36 + Math.random() * 14 : 62 + Math.random() * 16;
+    if (!ck.items.some((o) => Math.hypot(o.x - x, (o.y - y) * 0.8) < 9)) return { x, y };
+  }
+  return null;
+}
+Object.assign(A, {
+  simonplay() { beep('tap'); simonPlay(); },
+  simonpad(b) {
+    const v = +b.dataset.v; if (!sm || sm.done) return;
+    simonLight(v);
+    if (sm.turn !== 'you') return;   // between tunes the pads are just an instrument
+    if (v !== sm.seq[sm.pos]) { sm.turn = 'wait'; b.classList.remove('nope'); void b.offsetWidth; b.classList.add('nope'); sayUi(L('อุ๊ย ฟังอีกทีนะ', 'Oops — listen again!')); setTimeout(simonPlay, 1500); return; }
+    sm.pos++;
+    if (sm.pos < sm.seq.length) return;
+    sm.turn = 'wait'; sm.n++; burst(b, ['⭐', '🎵']);
+    if (sm.n >= sm.lv.r) { sm.done = true; lvDone(trip(sm.tid), sm.kid, 'simon'); setTimeout(() => { beep('fanfare'); celebrate(['🎵', '⭐', '✨']); star(sm.kid, 2); sayUi(L('เก่งมาก! จำเพลงได้หมดเลย', 'Brilliant! You remembered every tune')); safeRender(); }, 500); return; }
+    sayUi(L('เก่งมาก! ฟังเพลงต่อไปนะ', 'Well done! Here comes the next one')); simonRound();
+    setTimeout(() => { if (sm && !sm.done) { safeRender(); simonPlay(); } }, 1600);
+  },
+  simonagain() { beep('pop'); clearTimeout(simT); simonNew(trip(sm.tid), sm.kid); render(); },
+  dotsagain() { beep('pop'); dotsNew(trip(dt.tid), dt.kid); render(); },
+  hmtap(b) {
+    const g = kg; if (!g || g.game !== 'howmany' || g.done) return;
+    const k = +b.dataset.v; if (g.r.ct.includes(k)) return;
+    g.r.ct.push(k); const n = g.r.ct.length; b.classList.add('ct'); b.dataset.c = n; beep('pop'); sayUi(L(NUMW.th[n - 1], NUMW.en[n - 1]));
+  },
+  cakeadd(b) {
+    const c = ck; if (!c) return; const e = b.dataset.v;
+    if (c.items.length >= 16) { sayUi(L('เค้กเต็มแล้ว! เป่าเทียนกันไหม', 'The cake is full! Shall we blow out the candles?')); return; }
+    const at = cakeSpot(e === '🕯️'); if (!at) { sayUi(L('ไม่มีที่ว่างแล้ว', 'No more room')); return; }
+    if (c.blown) c.blown = false;
+    c.items.push({ e, x: at.x, y: at.y }); beep('pop'); render();
+  },
+  cakeblow() {
+    const c = ck; if (!c || c.blown) return;
+    c.blown = true; beep('whoosh'); render(); sayUi(L('สุขสันต์วันเกิด!', 'Happy birthday!'));
+    let k = 0; const step = () => { if (k >= HAPPY_BDAY.length || !$('#cakebox')) return; const v = HAPPY_BDAY[k++]; if (v >= 0) beep('note', XYLO[v][1]); setTimeout(step, 360); };
+    setTimeout(step, 500); celebrate(['🎂', '🎉', '🎈']);
+    if (!c.starred) { c.starred = true; star(c.kid, 1); }
+  },
+  cakenew() { beep('pop'); if (ck) { ck.items = []; ck.blown = false; } render(); },
 });
 // ---- the maze: a fresh maze each round (depth-first carving), the finger draws the way from the animal to its goal; walls stop it,
 // sliding back takes the last step back. Five sizes, 3×3 to 7×7. ----
