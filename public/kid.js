@@ -173,7 +173,9 @@ const colourFill = (t, i, kid) => fieldVal(t, `colour.d${i}`, kid) || '{}';
 /* ---------- finger drawing ("Draw today's best moment") → a private picture, like a photo ---------- */
 const DRAW_W = 1200, DRAW_H = 900, PEN = [10, 24, 48];
 let pen = PEN[1];
-const pad = { key: '', strokes: [], cur: null, gone: null, hide: false, full: false };   // kept while the page re-renders; cleared once saved (gone = the strokes the sponge just wiped, ↶ brings them back; hide = the colour tray tucked away while drawing; full = the paper fills the screen)
+// The paper takes the screen's shape (owner's Samsung, Nov 2026: "พอกดแล้วมันไม่เต็มหน้าจอ ใช้ยาก" — a 4:3 sheet filled a third of a tall phone): going full screen
+// grows the sheet (pad.w × pad.h, never smaller, so what is drawn stays where it is, top left) to the screen's ratio (0.42 … 2.4, a tall phone either way up).
+const pad = { key: '', strokes: [], cur: null, gone: null, hide: false, full: false, w: DRAW_W, h: DRAW_H };   // kept while the page re-renders; cleared once saved (gone = the strokes the sponge just wiped, ↶ brings them back; hide = the colour tray tucked away while drawing; full = the paper fills the screen)
 const isDrawing = (m) => /^dr-/.test(m.id);
 const drawingsOf = (t, kid, day) => mediaOf(t.id, day).filter((m) => m.id.startsWith(`dr-${kid}-`));
 const drawBusy = () => !!pad.cur || (typeof stk !== 'undefined' && !!stk);   // safeRender waits while a finger is drawing or dragging a sticker
@@ -187,13 +189,17 @@ function paint(ctx, st, from) {
 }
 function redraw(cv) {
   const ctx = cv.getContext('2d');
-  ctx.fillStyle = '#fff'; ctx.fillRect(0, 0, DRAW_W, DRAW_H);
+  ctx.fillStyle = '#fff'; ctx.fillRect(0, 0, cv.width, cv.height);
   pad.strokes.forEach((st) => paint(ctx, st));
 }
-function hydrateDraw(root) { const cv = $('#kidcanvas', root || document); if (cv) { if (cv.dataset.key !== pad.key) { pad.key = cv.dataset.key; pad.strokes = []; pad.gone = null; pad.hide = false; pad.full = false; drawWrap(); } redraw(cv); } }
+function hydrateDraw(root) { const cv = $('#kidcanvas', root || document); if (cv) { if (cv.dataset.key !== pad.key) { pad.key = cv.dataset.key; pad.strokes = []; pad.gone = null; pad.hide = false; pad.full = false; pad.w = DRAW_W; pad.h = DRAW_H; } drawWrap(); redraw(cv); } }
+// the sheet for this screen: as wide or as tall as the screen's own shape asks (0.42 … 2.4), never smaller than it already is
+function padGrow() { const ar = Math.min(2.4, Math.max(0.42, innerWidth / Math.max(1, innerHeight))); pad.w = Math.max(pad.w, Math.min(2560, Math.round(DRAW_H * ar))); pad.h = Math.max(pad.h, Math.min(2560, Math.round(DRAW_W / ar))); }   // 2560 = the longest side the server keeps of a picture
 // The drawing page's state lives on its wrapper: .busy tucks the colour tray away, .full lays the paper over the whole screen
-function drawWrap() { const w = $('#drawwrap'); if (!w) return; w.classList.toggle('busy', pad.hide); w.classList.toggle('full', pad.full); const c = $('#drawcol'); if (c) c.style.setProperty('--c', kidColour); const f = $('#drawfull'); if (f) { f.textContent = pad.full ? '✕' : '⛶'; f.setAttribute('aria-label', pad.full ? L('ย่อกระดาษ', 'Smaller paper') : L('กระดาษเต็มจอ', 'Full-screen paper')); } }
-const padPoint = (cv, e) => { const r = cv.getBoundingClientRect(); return [Math.round((e.clientX - r.left) * (DRAW_W / r.width)), Math.round((e.clientY - r.top) * (DRAW_H / r.height))]; };
+function drawWrap() { const w = $('#drawwrap'); if (!w) return; w.classList.toggle('busy', pad.hide); w.classList.toggle('full', pad.full);
+  document.body.classList.toggle('padfull', pad.full);   // app.css: nothing above the sheet may hold a transform or an animation, or "fixed" is measured from it, not from the screen
+  const cv = $('#kidcanvas'); if (cv) { if (cv.width !== pad.w || cv.height !== pad.h) { cv.width = pad.w; cv.height = pad.h; redraw(cv); } w.style.setProperty('--ar', String(pad.w / pad.h)); } const c = $('#drawcol'); if (c) c.style.setProperty('--c', kidColour); const f = $('#drawfull'); if (f) { f.textContent = pad.full ? '✕' : '⛶'; f.setAttribute('aria-label', pad.full ? L('ย่อกระดาษ', 'Smaller paper') : L('กระดาษเต็มจอ', 'Full-screen paper')); } }
+const padPoint = (cv, e) => { const r = cv.getBoundingClientRect(); return [Math.round((e.clientX - r.left) * (cv.width / r.width)), Math.round((e.clientY - r.top) * (cv.height / r.height))]; };
 document.addEventListener('pointerdown', (e) => {
   const cv = e.target.closest && e.target.closest('#kidcanvas'); if (!cv) return;
   e.preventDefault();
@@ -737,7 +743,7 @@ ${pages.length > 1 ? `<div class="kdots" id="kdots">${pages.map((_, n) => `<i${n
     const day = pre ? null : i, mine = drawingsOf(t, kid, day === null ? undefined : day).filter((m) => m.day === day);
     body = `<div class="kidguide">${guideImg(1)}<p>${pre ? L(`วาดสิ่งที่อยากเจอที่${esc(T(t.title).split(' · ')[0])}`, `Draw what you want to see in ${esc(T(t.title).split(' · ')[0])}`) : L('วาดสิ่งที่ชอบที่สุดวันนี้!', "Draw today's best moment!")}</p></div>
 <div class="drawwrap${pad.hide ? ' busy' : ''}${pad.full ? ' full' : ''}" id="drawwrap"><div class="drawpad"><canvas id="kidcanvas" width="${DRAW_W}" height="${DRAW_H}" data-key="${esc(`${t.id}:${day}:${kid}`)}" aria-label="${L('กระดานวาดรูป', 'Drawing board')}"></canvas>
-<button class="dpb dpcol" id="drawcol" data-a="kidtray" style="--c:${kidColour}" aria-label="${L('เลือกสี', 'Colours')}">🎨</button><button class="dpb dpfull" id="drawfull" data-a="kidfull" aria-label="${pad.full ? L('ย่อกระดาษ', 'Smaller paper') : L('กระดาษเต็มจอ', 'Full-screen paper')}">${pad.full ? '✕' : '⛶'}</button><button class="dpb dpundo" data-a="kidundo" aria-label="${L('ย้อนกลับ', 'Undo')}">↶</button></div>
+<button class="dpb dpcol" id="drawcol" data-a="kidtray" style="--c:${kidColour}" aria-label="${L('เลือกสี', 'Colours')}">🎨</button><button class="dpb dpfull" id="drawfull" data-a="kidfull" aria-label="${pad.full ? L('ย่อกระดาษ', 'Smaller paper') : L('กระดาษเต็มจอ', 'Full-screen paper')}">${pad.full ? '✕' : '⛶'}</button><button class="dpb dpundo" data-a="kidundo" aria-label="${L('ย้อนกลับ', 'Undo')}">↶</button><button class="dpb dpsave" data-a="kiddrawdone" data-t="${esc(t.id)}" data-d="${day === null ? '' : day}" data-k="${esc(kid)}" aria-label="${L('เก็บรูปนี้', 'Keep it')}">✓</button></div>
 <div class="drawtray" id="drawtray"><div class="palette">${COLOURS.map((c) => `<button data-a="kidcolor" data-v="${c}" style="--c:${c}" aria-pressed="${c === kidColour}" aria-label="${c === '#FFFFFF' ? L('ยางลบ', 'Eraser') : c}"></button>`).join('')}</div>
 <div class="drawtools">${PEN.map((w) => `<button data-a="kidpen" data-v="${w}" aria-pressed="${w === pen}" aria-label="${L('ขนาดพู่กัน', 'Brush')} ${w}"><i style="width:${Math.round(w / 2) + 6}px;height:${Math.round(w / 2) + 6}px"></i></button>`).join('')}
 <button class="dclear" data-a="kidclear" aria-label="${L('ล้างแล้ววาดใหม่', 'Wipe and start again')}">🧽 <b>${L('วาดใหม่', 'Start again')}</b></button></div></div></div>
@@ -1055,7 +1061,7 @@ Object.assign(A, {
   // one tap wipes the paper (owner: starting again should be easy); ↶ brings the picture back until the next stroke
   kidclear() { if (!pad.strokes.length) return; pad.gone = pad.strokes; pad.strokes = []; beep('pop'); const cv = $('#kidcanvas'); if (cv) redraw(cv); },
   kidtray() { beep('tap'); pad.hide = !pad.hide; drawWrap(); },
-  kidfull() { beep('tap'); pad.full = !pad.full; drawWrap(); },
+  kidfull() { beep('tap'); pad.full = !pad.full; if (pad.full) padGrow(); drawWrap(); },
   kiddrawdone(b) {
     const cv = $('#kidcanvas'), t = trip(b.dataset.t), kid = b.dataset.k, day = b.dataset.d === '' ? null : +b.dataset.d;
     if (!cv || !pad.strokes.length) { sayUi(L('วาดอะไรสักหน่อยก่อนนะ', 'Draw something first!')); return; }
@@ -1064,10 +1070,11 @@ Object.assign(A, {
       if (!blob) return;
       const id = `dr-${kid}-${Date.now().toString(36)}${Math.random().toString(36).slice(2, 6)}`, at = Date.now();
       const caption = `🖍️ ${kidName(kid)}`;
-      pad.strokes = []; pad.key = ''; pad.gone = null; pad.hide = false; pad.full = false;
+      const pw = pad.w, ph = pad.h;
+      pad.strokes = []; pad.key = ''; pad.gone = null; pad.hide = false; pad.full = false; document.body.classList.remove('padfull');
       beep('chime'); burst(b, ['🖍️', '✨', '⭐']); sayUi(L(`สวยมาก ${kidName(kid)}!`, `Beautiful, ${kidName(kid)}!`));
       await enqueue({ method: 'PUT', url: `/api/b/media/${id}?trip=${encodeURIComponent(t.id)}&day=${day === null ? '' : day}&at=${at}&caption=${encodeURIComponent(caption)}`, blob,
-        local: { coll: 'media', id, row: { trip: t.id, day, caption, highlight: false, at, w: DRAW_W, h: DRAW_H } } });
+        local: { coll: 'media', id, row: { trip: t.id, day, caption, highlight: false, at, w: pw, h: ph } } });
       setTimeout(() => nav(`#/kid/${kid}`), 700);
     }, 'image/jpeg', 0.9);
   },
