@@ -132,20 +132,26 @@ async function withSeeds(fresh, old) {
   }
 }
 // 'ok' new data · 'same' the server answered 304 (nothing changed since this phone's copy) · 'cached' offline copy · 'auth' · 'fail'
+// A load that started before a newer one succeeded must never undo it: the boot's first ask (no session yet) can come back with its 401
+// after a quick sign-in has already loaded the shelf — the phone would fall back to the sign-in page (the "login flake" seen in the tests).
+let loadGen = 0, loadOk = 0;
 async function load(tries = 0) {
+  const gen = ++loadGen;
   try {
     const w0 = written, prev = S;
     const r = await fetch('/api/b/state?lite=1', { credentials: 'same-origin', cache: 'no-store', headers: prev && prev.etag ? { 'If-None-Match': prev.etag } : {} });
-    if (r.status === 401) { S = null; return 'auth'; }
+    if (r.status === 401) { if (loadOk > gen) return 'stale'; S = null; return 'auth'; }
     if (r.status === 304 && prev) { offline = false; prev.syncedAt = Date.now(); return 'same'; }
     if (!r.ok) throw new Error('http ' + r.status);
     const fresh = await r.json();
     fresh.etag = r.headers.get('ETag');
     try { await withSeeds(fresh, prev || (await idb.get('state'))); } catch (e) { if (e.code === 409 && tries < 5) return load(tries + 1); throw e; }
     if (written !== w0 && tries < 5) return load(tries + 1);
-    S = fresh; offline = false; S.syncedAt = Date.now();
+    if (loadOk > gen) return 'stale';
+    S = fresh; loadOk = gen; offline = false; S.syncedAt = Date.now();
     idb.set('state', typeof structuredClone === 'function' ? structuredClone(S) : JSON.parse(JSON.stringify(S)));   // structuredClone: Safari 15.4+ ls('state', null);   // the offline copy lives in IndexedDB, as the server sent it (before pending writes are laid on top)
   } catch (e) {
+    if (loadOk > gen) return 'stale';
     const c = (await idb.get('state')) || ls('state');
     if (!c) return 'fail';
     S = c; offline = !navigator.onLine || e instanceof TypeError;   // a failed fetch is no signal; a server error (5xx) is not, so the banner must not say so

@@ -216,7 +216,7 @@ ${visual}
   const pdf = S.features.story;
   const add = isEditor() ? `<div class="spine add"><div class="addhd"><b class="addplus" aria-hidden="true">＋</b><div><h3>${L('เล่มใหม่', 'New book')}</h3><small>${pdf ? L('เริ่มได้ 2 แบบ', 'Two ways to start') : L('ทริปใหม่ เล่มใหม่', 'A new trip, a new book')}</small></div></div>
 ${pdf ? `<a class="addway main" href="#/import"><span class="e">${ic('doc')}</span><span><b>${L('จากคู่มือทริป (PDF)', 'From the trip manual (PDF)')}</b><small>${L('ผู้ช่วยอ่านคู่มือแล้วทำแผนรายวัน ร้าน และหน้าของเด็กให้ · ราว 5–10 นาที', 'The helper reads the manual and makes the day plans, places to eat and the kids’ pages · about 5–10 min')}</small></span><i>›</i></a>` : ''}
-${S.trips.some((t) => t.id === 'sakura-hop-2028') ? '' : `<button type="button" class="addway" data-a="sample"><span class="e">${ic('book')}</span><span><b>${L('เล่มตัวอย่าง', 'A sample book')}</b><small>${L('ทริปสมมติ 3 วันที่เติมไว้แล้ว ลบได้ทุกเมื่อ', 'A filled-in 3-day trip, delete it any time')}</small></span><i>›</i></button>`}
+${S.trips.some((t) => t.id === 'sakura-hop-2028') ? '' : `<button type="button" class="addway" data-a="sample"><span class="e">${ic('book')}</span><span><b>${L('เล่มตัวอย่าง', 'A sample book')}</b><small>${L('ทริปสมมติ 6 วันที่เติมไว้แล้ว ลบได้ทุกเมื่อ', 'A filled-in 6-day trip, delete it any time')}</small></span><i>›</i></button>`}
 <button type="button" class="addway" data-a="newtrip"><span class="e">${ic('log')}</span><span><b>${L('เล่มเปล่า', 'An empty book')}</b><small>${L('ใส่ชื่อทริปกับวันที่ แล้วค่อยเติมเอง', 'Type the trip name and dates, fill it in as you go')}</small></span><i>›</i></button></div>` : '';
   const welcome = isEditor() && !children().length ? `<a class="famwelcome" href="#/start"><span>${ic('family')}</span><div><b>${L('เริ่มที่ครอบครัวของเรา', 'Start with your family')}</b><small>${L('ตั้งชื่อแอป ใส่ชื่อลูก เลือกตัวการ์ตูน — ทุกหน้าจะเป็นของบ้านเรา', "Name the app, add the children and pick each one's character — every page becomes yours")}</small></div></a>` : '';
   return `${remindAsk()}${heroHtml()}${welcome}<div class="part">${L('ชั้นหนังสือ', 'The bookshelf')}</div><h1 class="h2">${L(kicker() ? `ทุกทริป${esc(kicker())}` : 'ทุกทริปของเรา', 'Every trip, one book each')}</h1>
@@ -246,13 +246,13 @@ function aiUsage() {
   if (Date.now() - aiUseAt > 60000) { aiUseAt = Date.now(); api('GET', '/api/b/ai').then((r) => { aiUse = r; safeRender(); }, () => {}); }
   return aiUse;
 }
-const aiToday = () => { const u = aiUsage(); return u ? L(`ผู้ช่วยวันนี้ ${u.today.calls}/${u.limit} ครั้ง`, `Helper today ${u.today.calls}/${u.limit}`) : ''; };
+const aiToday = () => { const u = aiUsage(); return u && u.today.calls ? L(`ผู้ช่วยวันนี้ ${u.today.calls}/${u.limit} ครั้ง`, `Helper today ${u.today.calls}/${u.limit}`) : ''; };
 const tok = (n) => (n >= 1e6 ? (n / 1e6).toFixed(1) + 'M' : n >= 1e3 ? Math.round(n / 1e3) + 'k' : String(Math.round(n)));
 function aiCard() {
   const u = aiUsage(); if (!u) return '';
   const d = u.days30;
   const pct = Math.min(100, Math.round((u.today.calls / Math.max(1, u.limit)) * 100));
-  return `<details class="aicard"><summary>${hubE('helper')}<span><b>${L('ผู้ช่วย', 'The helper')}</b><small>${L(`วันนี้ใช้ไป ${u.today.calls} จาก ${u.limit} ครั้ง`, `Used today: ${u.today.calls} of ${u.limit}`)}</small><span class="aibar"><i style="width:${pct}%"></i></span></span><i>›</i></summary>
+  return `<details class="aicard"><summary>${hubE('helper')}<span><b>${L('ผู้ช่วย', 'The helper')}</b><small>${u.today.calls ? L(`วันนี้ใช้ไป ${u.today.calls} จาก ${u.limit} ครั้ง`, `Used today: ${u.today.calls} of ${u.limit}`) : L(`วันนี้ยังไม่ได้ใช้ · ได้วันละ ${u.limit} ครั้ง`, `Not used today · up to ${u.limit} a day`)}</small><span class="aibar"><i style="width:${pct}%"></i></span></span><i>›</i></summary>
 <div class="aimore"><span>${L('30 วัน', '30 days')}: ${d.calls} ${L('ครั้ง', 'times')} · ${tok(d.tin + d.tcache)} ${L('คำที่อ่าน', 'words read')}${d.tcache ? ` (${L('ซ้ำ', 'repeated')} ${tok(d.tcache)})` : ''} · ${tok(d.tout)} ${L('คำที่เขียน', 'written')}${u.usd30 != null ? ` · ≈ $${u.usd30.toFixed(2)}` : ''}</span>
 <small>${L('นับใหม่ทุกวัน · ยอดจริงอยู่ในบัญชีผู้ให้บริการ', 'Starts again each day · the exact bill is in the provider’s account')}</small></div></details>`;
 }
@@ -267,7 +267,7 @@ function backupCard() {
         : L(`สำเนาล่าสุด ${when} · ครบแล้ว`, `Last backup ${when} · up to date`);
   const warn = items.length && (!last || fresh);
   return `<div class="part">${L('สำเนา', 'Backup')} 💾</div>
-<button class="nbcard backup${warn ? ' warn' : ''}" data-a="backup"><span class="emb">💾</span><div><b>${L('ดาวน์โหลดสำเนาทั้งหมด', 'Download a full backup')}</b><small>${esc(line)}</small><small>${L('บันทึกและรูปเต็มทุกรูปในไฟล์เดียว · เก็บในคอมหรือไดรฟ์ส่วนตัว อย่าแชร์ต่อ', 'A .zip of every record and full-size photo — keep it on a computer or private drive, never a public link')}</small></div><span class="arrow">⬇</span></button>`;
+<button class="nbcard backup${warn ? ' warn' : ''}" data-a="backup"><span class="emb">💾</span><div><b>${L('ดาวน์โหลดสำเนาทั้งหมด', 'Download a full backup')}</b><small>${esc(line)}</small><small>${L('บันทึกและรูปเต็มทุกรูปในไฟล์เดียว · เก็บในคอมหรือไดรฟ์ส่วนตัว อย่าแชร์ต่อ', 'One file with every record and full-size photo — keep it on a computer or private drive, never a public link')}</small></div><span class="arrow">⬇</span></button>`;
 }
 const artImg = (t, i, cls) => { const a = dayArt(t, i); return a ? `<img class="art${cls ? ' ' + cls : ''}" src="${esc(a)}" alt="" loading="lazy">` : `<span class="art emo${cls ? ' ' + cls : ''}">${esc(t.days[i].emoji || '📍')}</span>`; };
 // the kids standing together, as drawn characters (Mimi pulls her wagon, as in the photo)
@@ -453,7 +453,7 @@ function planLite(t, i) {
   if (!rows.length) return '';
   const line = (r) => { const own = r && r.h && T(r.h); return own ? emoIn(esc(own)) : tlIcon(r) + esc(T(r).split(' · ')[0]); };
   return `<details class="blk planblk fold"${ls('logall') ? ' open' : ''}><summary>${ic('clock')}<b>${L('แผนวันนี้', 'Today’s plan')}</b><small>${L(`${rows.length} ช่วง`, `${rows.length} steps`)}</small>${ic('chev', 'chv')}</summary>
-<ol class="pll">${rows.map((r) => `<li><time>${esc(r.t || '')}</time><span>${line(r)}</span></li>`).join('')}</ol>
+<ol class="pll">${rows.map((r) => `<li><time>${esc(tlTime(r))}</time><span>${line(r)}</span></li>`).join('')}</ol>
 ${pl.stay && pl.stay.name ? `<p class="plstay">${ic('stays')}<span><small>${L('คืนนี้นอนที่', 'Tonight we sleep at')}</small><b>${esc(pl.stay.name)}</b></span></p>` : ''}
 <a class="learnlink" href="#/t/${esc(t.id)}/today/${i}/full">${ic('doc')}<b>${L('ดูแผนเต็มของวันนี้', 'See the day’s full plan')}</b>${ic('chev')}</a></details>`;
 }
@@ -470,7 +470,7 @@ ${pl.moving ? `<div class="moving">${pts(T(pl.moving), 'tight')}</div>` : ''}
 ${(pl.legs || []).length ? legsHtml(pl.legs) : ''}
 ${pl.route ? `<p class="row">${extA(pl.route, ic('route') + ' ' + L('เส้นทางทั้งวันใน Google Maps', "The whole day's route in Google Maps"), 'btn ghost small')}</p>` : ''}
 ${wxl ? `<div class="wxbox"><div class="kicker">${L('อากาศ', 'Weather')}</div>${wxl}</div>` : ''}</aside>` : ''}<div class="pmain">
-${rows.length ? `<section class="cbox c-sky"><h3 class="ch">${ic('clock')}${L('ไทม์ไลน์', 'Timeline')}</h3><ol class="tl plan">${rows.map((r) => `<li><time>${esc(r.t || '')}</time><div>${tlRow(r)}${r.note ? `<small>${esc(T(r.note))}</small>` : ''}</div></li>`).join('')}</ol></section>` : ''}
+${rows.length ? `<section class="cbox c-sky"><h3 class="ch">${ic('clock')}${L('ไทม์ไลน์', 'Timeline')}</h3><ol class="tl plan">${rows.map((r) => `<li><time>${esc(tlTime(r))}</time><div>${tlRow(r)}${r.note ? `<small>${esc(T(r.note))}</small>` : ''}</div></li>`).join('')}</ol></section>` : ''}
 ${stay}
 ${pl.pick ? `<div class="call pick"><span class="lbl">${L('เคล็ดลับคนท้องถิ่น', 'Local tip')}</span>${pts(T(pl.pick))}</div>` : ''}
 ${pl.planB ? `<div class="call warn"><span class="lbl">${L('แผนสำรอง', 'Plan B')}</span>${pts(T(pl.planB))}</div>` : ''}
@@ -552,7 +552,7 @@ function viewHub(t) {
     eatN && !ed ? tile('eat', `#/t/${esc(t.id)}/eat`, esc(L(`${eatN} ร้าน · ${picks} ร้านแนะนำ`, `${eatN} places · ${picks} picks`))) : '',
     tile('plan', `#/t/${esc(t.id)}/plan`, esc(L(`${t.days.length} วัน · ${stops} จุดแวะ`, `${t.days.length} days · ${stops} stops`))),
     has.stays ? tile('stays', `#/t/${esc(t.id)}/stays`, esc(tonight ? L(`คืนนี้: ${tonight.name}`, `Tonight: ${tonight.name}`) : ((n.stays || []).length ? L(`${n.stays.length} ที่พัก`, `${n.stays.length} stays`) : L('ที่พัก', 'Stays')))) : '',
-    has.sos ? tile('sos', `#/t/${esc(t.id)}/sos`, esc(main ? `${T(main.label)} · ${main.tel}` : L('ถ้า…ก็…', 'If… then…')), 'sos') : '',
+    has.sos ? tile('sos', `#/t/${esc(t.id)}/sos`, esc(main ? `${String(main.tel).split(' · ')[0]} · ${T(main.label)}` : L('ถ้า…ก็…', 'If… then…')), 'sos') : '',
     has.prep ? tile('prep', `#/t/${esc(t.id)}/prep`, esc([(n.pack || []).length && L('จัดกระเป๋า', 'Packing'), n.visa && L('วีซ่า', 'Visa'), n.bio && L('ด่านกักกัน', 'Biosecurity'), n.car && L('รถเช่า', 'The van'), n.ifthen && n.ifthen.book && L('จองล่วงหน้า', 'Book ahead'), n.prices && L('ค่าเข้า', 'Prices')].filter(Boolean).join(' · '))) : '',
     has.learn ? tile('learn', `#/t/${esc(t.id)}/learn`, esc([learnN && L(`${learnN} เรื่อง`, `${learnN} cards`), (n.wild || []).length && (n.wildLabel ? `${T(n.wildLabel.short)} ${n.wild.length}` : L(`สัตว์ ${n.wild.length} ชนิด`, `${n.wild.length} animals`)), quizN && L(`คำถาม ${quizN} ข้อ`, `${quizN} questions`), (n.general || []).length && L('คำศัพท์', 'Words')].filter(Boolean).join(' · '))) : '',
     st.photos ? `<a class="tile t-photos" href="#/t/${esc(t.id)}/photos">${hubE('camera')}<b>${L('รูปตามแท็ก', 'Photos by tag')}</b><small>${esc(((n) => (n ? L(`${st.photos} รูป · ${n} แท็ก`, `${st.photos} photos · ${n} tags`) : L(`${st.photos} รูป · ยังไม่มีแท็ก`, `${st.photos} photos · no tags yet`)))(new Set(mediaOf(t.id).flatMap(tagsOf)).size))}</small></a>` : '',
@@ -737,15 +737,31 @@ const tlBrief = (r) => { const own = r && r.h && T(r.h); const [a, ...b] = own ?
 // today: the day as one sheet (short timeline, then label → answer rows like the manual's tables); the full plan is one tap away (/today/<i>/full)
 // the if-then table as the owner's seeds write it ({cols, rows, mishap}) — the in-app import's model answers {plans:{head, cols, rows}}
 const ifthenOf = (f) => (f && !Array.isArray(f.rows) && f.plans && Array.isArray(f.plans.rows) ? { ...f, cols: f.plans.cols || f.cols, rows: f.plans.rows, head: f.plans.head || f.head } : { ...(f || {}), rows: Array.isArray(f && f.rows) ? f.rows : [] });
-function dayGlance(t, i, pre) {   // pre (before the trip; never named `brief`, which would hide the brief() teaser below and crash a money line without "Today ≈"): the timeline, then everything else folded under one line
+// on the day itself: which timeline steps are behind us and which one is next (each row in its own time zone — Bangkok rows on day 1)
+function tlStates(t, i) {
+  const st = []; if (dayNow(t) !== i) return st; let found = false;
+  (((t.days[i] || {}).plan || {}).plan || []).forEach((r, k) => { const m = String(r.t || '').match(/(\d{1,2}):(\d{2})/); if (!m) return;
+    const at = m[1].padStart(2, '0') + ':' + m[2], now = fmtTime(Date.now(), r.tz || t.timezone);
+    if (at <= now) st[k] = 'past'; else if (!found) { st[k] = 'next'; found = true; } });
+  return st;
+}
+// a time written in words ("ตี 3": no HH:MM, so no reminder fires in the night) reads in the page's language
+const tlTime = (r) => { const x = String((r && r.t) || ''); return lang === 'en' ? x.replace(/^ตี\s*(\d{1,2})$/, '$1 am') : x; };
+const tlHead = (r) => { const own = r && r.h && T(r.h); return own ? emoIn(esc(own)) : tlIcon(r) + esc(T(r).split(' · ')[0]); };
+// what a parent on the move opens the page for (owner, Nov 2026: "ง่ายต่อการใช้เดินทาง"): the next step, big, right under the day's name —
+// a tap goes to it in the timeline; once every step is behind us it says so (and leads to tonight's record for the parents)
+function nextCard(t, i) {
+  if (dayNow(t) !== i) return '';
+  const rows = ((t.days[i].plan || {}).plan || []), st = tlStates(t, i), k = st.indexOf('next'), after = k >= 0 ? rows.slice(k + 1).find((r) => /\d{1,2}:\d{2}/.test(r.t || '')) : null;
+  if (k >= 0) return `<button type="button" class="nextc" data-a="jump" data-v="#tlbox"><span class="nx"><span class="nl">${L('ถัดไป', 'Next')}</span><time>${esc(tlTime(rows[k]))}</time></span><span class="nt"><b>${tlHead(rows[k])}</b>${after ? `<small>${L('ต่อจากนั้น', 'Then')} ${esc(tlTime(after))} · ${tlHead(after)}</small>` : ''}</span>${ic('chev')}</button>`;
+  if (!st.includes('past')) return '';
+  return isEditor() ? `<a class="nextc done" href="#/t/${esc(t.id)}/log/${i}"><span class="nx"><span class="nl">${L('วันนี้', 'Today')}</span><time>✓</time></span><span class="nt"><b>${L('ครบทุกช่วงของวันนี้แล้ว', 'Every step of today is done')}</b><small>${L('บันทึกวันนี้ก่อนนอน', 'Record the day before bed')}</small></span>${ic('chev')}</a>`
+    : `<div class="nextc done"><span class="nx"><span class="nl">${L('วันนี้', 'Today')}</span><time>✓</time></span><span class="nt"><b>${L('ครบทุกช่วงของวันนี้แล้ว', 'Every step of today is done')}</b></span></div>`;
+}
+function dayGlance(t, i, pre, split) {   // pre (before the trip; never named `brief`, which would hide the brief() teaser below and crash a money line without "Today ≈"): the timeline, then everything else folded under one line
   const d = t.days[i], pl = d.plan || {}, rows = pl.plan || [], full = `#/t/${esc(t.id)}/today/${i}/full`;
   if (!rows.length && !pl.moving && !pl.pick && !pl.planB) return '';
-  // on the day itself: steps whose time has passed fade, the next one is marked (each row in its own time zone — Bangkok rows on day 1)
-  const st = [];
-  if (dayNow(t) === i) { let found = false;
-    rows.forEach((r, k) => { const m = String(r.t || '').match(/(\d{1,2}):(\d{2})/); if (!m) return;
-      const at = m[1].padStart(2, '0') + ':' + m[2], now = fmtTime(Date.now(), r.tz || t.timezone);
-      if (at <= now) st[k] = 'past'; else if (!found) { st[k] = 'next'; found = true; } }); }
+  const st = tlStates(t, i);   // on the day itself: steps whose time has passed fade, the next one is marked
   const money = T(pl.money), mm = money.match(/(?:วันนี้|today)\s*≈\s*[^·(]+/i), nl = (pl.learn || []).length, nq = (pl.quiz || []).length;
   const row = (dt, dd, cls) => `<div${cls ? ` class="${cls}"` : ''}><dt>${dt}</dt><dd>${dd}</dd></div>`;
   const box = (c, icon, title, rowsHtml) => (rowsHtml ? `<section class="cbox c-${c}"><h3 class="ch">${ic(icon)}${title}</h3><dl class="dsheet">${rowsHtml}</dl></section>` : '');
@@ -758,9 +774,10 @@ function dayGlance(t, i, pre) {   // pre (before the trip; never named `brief`, 
     d.wx && row(L('อากาศ', 'Weather'), esc(T(d.wx))),
     wxLine(t, i) && !pre && row(L('พยากรณ์วันนี้', 'Live forecast'), `<span class="wxlive">${emoIn(esc(wxLine(t, i)))}</span>`),   // before the trip the live line sits above the fold instead
     (nl || nq) && row(L('เรียนรู้', 'Learn'), esc(L(`${nl} เรื่อง · ${nq} คำถามในรถ`, `${nl} card${nl === 1 ? '' : 's'} · ${nq} car question${nq === 1 ? '' : 's'}`)))].filter(Boolean).join('');
-  return `${rows.length ? `<section class="cbox c-sky"><h3 class="ch">${ic('clock')}${L('ไทม์ไลน์', 'Timeline')}</h3><ol class="tl plan brief">${rows.map((r, k) => `<li${st[k] ? ` class="${st[k]}"` : ''}><time>${esc(r.t || '')}</time><div${tlMore(r) ? ' role="button" tabindex="0" aria-expanded="false"' : ''}>${st[k] === 'next' ? `<span class="nexttag">${L('ถัดไป', 'Next')}</span> ` : ''}${tlBrief(r)}</div></li>`).join('')}</ol></section>` : ''}
-${pre && wxLine(t, i) ? `<p class="wxpre">${ic('weather')} <span class="wxlive">${emoIn(esc(wxLine(t, i)))}</span></p>` : ''}${pre ? `<details class="dmore"><summary><span><b>${L('รายละเอียดวันนี้', 'The rest of the day')}</b><small>${L('เดินทาง · มื้ออาหาร · แผนสำรอง · เงิน · อากาศ', 'Getting around · meals · plan B · money · weather')}</small></span>${ic('chev', 'chv')}</summary>` : ''}<div class="cgrid">${box('ind', 'route', L('เดินทางและที่พัก', 'Getting around & tonight'), go)}${box('sun', 'eat', L('มื้ออาหาร', 'Meals'), food)}${pl.planB ? `<section class="cbox c-hot"><h3 class="ch">${ic('shuffle')}${L('แผนสำรอง', 'Plan B')}</h3>${pts(T(pl.planB))}</section>` : ''}${box('leaf', 'money', L('เงิน อากาศ และเรื่องเล่า', 'Money, weather, stories'), more)}</div>${pre ? '</details>' : ''}
+  const tl = `${rows.length ? `<section class="cbox c-sky" id="tlbox"><h3 class="ch">${ic('clock')}${L('ไทม์ไลน์', 'Timeline')}</h3><ol class="tl plan brief">${rows.map((r, k) => `<li${st[k] ? ` class="${st[k]}"` : ''}><time>${esc(tlTime(r))}</time><div${tlMore(r) ? ' role="button" tabindex="0" aria-expanded="false"' : ''}>${st[k] === 'next' ? `<span class="nexttag">${L('ถัดไป', 'Next')}</span> ` : ''}${tlBrief(r)}</div></li>`).join('')}</ol></section>` : ''}`;
+  const rest = `${pre && wxLine(t, i) ? `<p class="wxpre">${ic('weather')} <span class="wxlive">${emoIn(esc(wxLine(t, i)))}</span></p>` : ''}${pre ? `<details class="dmore"><summary><span><b>${L('รายละเอียดวันนี้', 'The rest of the day')}</b><small>${L('เดินทาง · มื้ออาหาร · แผนสำรอง · เงิน · อากาศ', 'Getting around · meals · plan B · money · weather')}</small></span>${ic('chev', 'chv')}</summary>` : ''}<div class="cgrid">${box('ind', 'route', L('เดินทางและที่พัก', 'Getting around & tonight'), go)}${box('sun', 'eat', L('มื้ออาหาร', 'Meals'), food)}${pl.planB ? `<section class="cbox c-hot"><h3 class="ch">${ic('shuffle')}${L('แผนสำรอง', 'Plan B')}</h3>${pts(T(pl.planB))}</section>` : ''}${box('leaf', 'money', L('เงิน อากาศ และเรื่องเล่า', 'Money, weather, stories'), more)}</div>${pre ? '</details>' : ''}
 ${reportBtn(full, L('อ่านแผนเต็มของวันนี้', "Read today's full plan"))}`;
+  return split ? [tl, rest] : tl + rest;
 }
 // grown-ups switch the trip reminders on per phone (the server pushes 30 min before each timed step of the day);
 // once on, the box leaves the Today page and lives on the Offline page (test / turn off)
@@ -847,18 +864,16 @@ function viewToday(t, j, full) {
   const pre = dn < 0 && until > 0 && !full, has = pre ? hasInfo(t) : null;
   const banner = dn < 0 && until > 0 ? `<div class="call info${pre ? ' pre' : ''}"><b>${L(`อีก ${until} วันออกเดินทาง`, `${until} days to go`)}</b> <span class="cdsub">${L(`นี่คือแผนวันที่ ${i + 1} จากคู่มือ`, `This is the plan for day ${i + 1}`)}</span></div>`
     : dn < 0 && until <= 0 ? `<div class="call calm">${L('จบทริปแล้ว — เปิดสมุดความทรงจำได้เลย', 'The trip is over — open the memory book')}</div>` : '';
-  const mission = ((t.passport || {}).days || [])[i];
+  const mission = ((t.passport || {}).days || [])[i], nop = `<div class="empty">${L('วันนี้ไม่มีแผนในคู่มือ', 'No plan in the manual for this day')}</div>`;
   return `<div class="daystrip" role="tablist">${strip}</div>
 <article class="day today" style="border:0;margin-top:0;padding-top:6px"><div class="hd"><div class="no">${String(i + 1).padStart(2, '0')}</div><div class="dl">${L('วันที่', 'Day')} ${i + 1} · ${esc(fmtDay(d.date))}${i === dn ? ` <span class="tag">${L('วันนี้', 'Today')}</span>` : ''}</div><div></div><h3>${esc(T(d.title))}</h3>${artImg(t, i, 'hdart')}
-${dayFacts(d)}</div></article>
+</div></article>
+${nextCard(t, i)}${dayFacts(d)}
 ${banner}
-${isEditor() && (dn >= 0 || until > 0) ? remindLine(t) : ''}
-<div class="row quick">${isEditor() ? `<a class="btn" href="#/t/${esc(t.id)}/log/${i}">${ic('log')} ${L('บันทึกวันนี้', 'Record today')}</a>` : ''}${pl.route ? extA(pl.route, ic('route') + ' ' + L('เส้นทางวันนี้', "Today's route"), 'qlink') : ''}${pl.stay ? extA(mapsUrl(pl.stay.q || pl.stay.addr), ic('stays') + ' ' + L('ไปที่พัก', 'To the stay'), 'qlink') : ''}${eatCount(t) ? `<a class="qlink" href="#/t/${esc(t.id)}/eat/d/${i}">${ic('eat')} ${L('ร้านอาหาร', 'Eat')}</a>` : ''}</div>
-${full ? '' : bagBlock(t, i)}
-${full ? '' : nextBlock(t, i)}
-${full ? '' : askBlock(t, i)}
-${(full ? planHtml(t, i, true, false, { full: true }) : dayGlance(t, i, pre)) || `<div class="empty">${L('วันนี้ไม่มีแผนในคู่มือ', 'No plan in the manual for this day')}</div>`}
-${!pre && mission && (mission.facts || []).length ? `<div class="part kidm">${L('ภารกิจของเด็กๆ วันนี้', "The kids' mission today")}</div><div class="call pick mission"><b>${esc(T(mission.title))}</b><ul class="tips">${mission.facts.map((f) => `<li>${esc(T(f))}</li>`).join('')}</ul></div>` : ''}`;
+<div class="row quick">${pl.route ? extA(pl.route, ic('route') + ' ' + L('เส้นทางวันนี้', "Today's route"), 'qlink') : ''}${pl.stay ? extA(mapsUrl(pl.stay.q || pl.stay.addr), ic('stays') + ' ' + L('ไปที่พัก', 'To the stay'), 'qlink') : ''}</div>
+${full ? planHtml(t, i, true, false, { full: true }) || nop : ((g) => (g ? `${g[0]}${isEditor() && (dn >= 0 || until > 0) ? remindLine(t) : ''}${bagBlock(t, i)}${g[1]}` : `${isEditor() && (dn >= 0 || until > 0) ? remindLine(t) : ''}${bagBlock(t, i)}${nop}`))(dayGlance(t, i, pre, true))}
+${!pre && mission && (mission.facts || []).length ? `<div class="part kidm">${L('ภารกิจของเด็กๆ วันนี้', "The kids' mission today")}</div><div class="call pick mission"><b>${esc(T(mission.title))}</b><ul class="tips">${mission.facts.map((f) => `<li>${esc(T(f))}</li>`).join('')}</ul></div>` : ''}
+${full ? '' : nextBlock(t, i)}${full ? '' : askBlock(t, i)}`;
 }
 // the whole trip: one line per day (tap → that day); the road book with every plan is the full report
 function viewPlan(t, full) {
@@ -1400,7 +1415,7 @@ function aiPanel(t, i, dk) {
   const steps = aiSteps(t, i, dk), todo = aiTodo(t, i, dk), calls = aiCalls(t, i, dk);
   const all = aiRun ? `<button class="btn small" id="aiall" disabled aria-busy="true">⏳ ${L(`กำลังทำ ${aiRun.n}/${aiRun.of}…`, `Working ${aiRun.n} of ${aiRun.of}…`)}</button><button class="btn ghost small" data-a="aistop" id="aistop">■ ${L('หยุด', 'Stop')}</button>`
     : `<button class="btn small" data-a="aiall" data-t="${esc(t.id)}" data-d="${i}" id="aiall"${todo.length ? '' : ' disabled'}>${todo.length ? `✨ ${L(`ทำทั้งหมดในครั้งเดียว (ผู้ช่วย ${calls} ครั้ง)`, `Do it all (${calls} step${calls > 1 ? 's' : ''})`)}` : `✓ ${L('ทำครบแล้ว', 'All done')}`}</button>`;
-  return `<section class="blk noprint aipanel" id="aipanel"><h3>${ic('sparkle')} ${L('คืนนี้ให้ผู้ช่วยทำให้', 'Tonight, with the helper')} <span class="label">${esc(aiToday())}</span></h3>
+  return `<section class="blk noprint aipanel" id="aipanel"><h3 class="vh">${L('คืนนี้ให้ผู้ช่วยทำให้', 'Tonight, with the helper')}</h3>${aiToday() ? `<p class="label aiuse">${esc(aiToday())}</p>` : ''}
 ${aiNote(L('บันทึกรูป คำพูด อารมณ์ก่อน แล้วไล่จากบนลงล่าง', 'Record photos, words and moods first, then go from the top'), L('ส่งเฉพาะข้อความที่บันทึกไว้ ไม่ส่งรูป (ยกเว้นปุ่ม "ดูรูป" ที่ส่งรูปย่อของวันนี้ เฉพาะตอนกด) · แต่ละปุ่มใช้โควตา 1 ครั้งต่อวัน · "ทำทั้งหมด" ทำ ดูรูป → สรุป → นิทาน → คำถาม ข้ามข้อที่ทำแล้ว กดหยุดได้', 'Every button sends the helper only the written notes, never photos — except "Photos", which sends today’s small thumbnails (never the full file, no GPS) when you press it · each button is one request from the daily allowance · do the photos first: their captions make the summary and the story fuller · "Do it all" runs photos → summary → story → questions in turn, skipping what is done; Stop works any time'))}
 <div class="row" style="margin-top:8px">${all}</div>
 <ol class="aisteps">${steps.map((x) => `<li><button class="aistep${x.done ? ' done' : ''}" data-a="jump" data-v="${x.sel}" data-k="${x.k}"><span class="e">${x.e}</span><b>${L(x.th, x.en)}</b><small>${x.done ? (x.stat && x.k !== 'msg' ? '✓ ' + esc(x.stat) : '✓') : esc(x.stat || '')}</small></button></li>`).join('')}</ol></section>`;
@@ -1418,7 +1433,8 @@ ${msgBlock(t, i, dk)}`;
 function aiJump(t, i, dk) {
   if (!isEditor() || !S.features.story) return '';
   const n = aiTodo(t, i, dk).length;
-  return `<button class="aijump noprint" data-a="jump" data-v="#aipanel">✨ ${L('คืนนี้ให้ผู้ช่วยทำให้', 'Tonight, with the helper')}${n ? ` <small>${L(`เหลือ ${n}`, `${n} to do`)}</small>` : ' <small>✓</small>'} ↓</button>`;
+  // a fourth chip beside photos · words · mood (it was a bar of its own above the date: the helper's name three times on one page)
+  return `<button type="button" class="lph aijump${n ? '' : ' on'}" data-a="jump" data-v="#aipanel" aria-label="${L('คืนนี้ให้ผู้ช่วยทำให้', 'Tonight, with the helper')}: ${n ? L(`เหลือ ${n}`, `${n} to do`) : L('ครบแล้ว', 'done')}">${ic('sparkle')}${L('ผู้ช่วย', 'Helper')}<i>${n || '✓'}</i></button>`;
 }
 
 /* ---------- both languages (record page): Claude translates the day's words Thai ↔ English; shown under each text in the book ---------- */
@@ -1730,7 +1746,7 @@ ${on ? `<div class="call calm">✓ ${L('เปิดเตือนบนเค�
 <h1 class="h2" style="text-align:center">${L('พร้อมแล้ว มาทำเล่มแรกกัน', 'All set — let’s make the first book')}</h1>
 <p class="lede" style="text-align:center;max-width:none">${S.trips.length ? L('ชั้นหนังสือมีเล่มอยู่แล้ว เปิดดูได้เลย', 'The shelf already has a book — open it.') : L('ชั้นหนังสือยังว่าง เริ่มได้ 2 แบบ', 'The shelf is empty. Two ways to start.')}</p>
 <div class="onbways">${S.features.story ? `<a class="onbway main" href="#/import"><span class="e">${ic('doc')}</span><span><b>${L('จากคู่มือทริป (PDF)', 'From the trip manual (PDF)')}</b><small>${L('ผู้ช่วยอ่านคู่มือแล้วทำแผนรายวัน ร้าน และหน้าของเด็กให้ · ราว 15 นาที', 'The helper reads the manual and makes the day plans, places to eat and the kids’ pages · about 15 min')}</small></span>${ic('chev')}</a>` : ''}
-${S.trips.some((t) => t.id === 'sakura-hop-2028') ? '' : `<button type="button" class="onbway" data-a="sample"><span class="e">${ic('book')}</span><span><b>${L('ดูเล่มตัวอย่างก่อน', 'Look at a sample book first')}</b><small>${L('ทริปสมมติ 3 วันที่เติมไว้แล้ว ใช้ชื่อลูกของบ้านคุณ ลบได้ทุกเมื่อ', 'A filled-in 3-day trip with your children’s names — delete it any time')}</small></span>${ic('chev')}</button>`}
+${S.trips.some((t) => t.id === 'sakura-hop-2028') ? '' : `<button type="button" class="onbway" data-a="sample"><span class="e">${ic('book')}</span><span><b>${L('ดูเล่มตัวอย่างก่อน', 'Look at a sample book first')}</b><small>${L('ทริปสมมติ 6 วันที่เติมไว้แล้ว ใช้ชื่อลูกของบ้านคุณ ลบได้ทุกเมื่อ', 'A filled-in 6-day trip with your children’s names — delete it any time')}</small></span>${ic('chev')}</button>`}
 <button type="button" class="onbway" data-a="newtrip"><span class="e">${ic('log')}</span><span><b>${L('เล่มเปล่า', 'An empty book')}</b><small>${L('ใส่ชื่อทริปกับวันที่ แล้วค่อยเติมเอง · 1 นาที', 'Type the trip name and dates, fill it in as you go · 1 min')}</small></span>${ic('chev')}</button>
 <a class="onbway" href="#/"><span class="e">${ic('shelf')}</span><span><b>${L('ไปที่ชั้นหนังสือ', 'Go to the bookshelf')}</b><small>${S.trips.length ? L(`มี ${S.trips.length} เล่ม`, `${S.trips.length} book${S.trips.length > 1 ? 's' : ''}`) : L('ว่างอยู่', 'Empty for now')}</small></span>${ic('chev')}</a></div>
 <ul class="onbsum">${kids.length ? `<li>✓ ${L(`ครอบครัว: ${esc(nm)}`, `Family: ${esc(nm)}`)}</li>` : `<li>○ ${L('ยังไม่ได้ใส่ลูก', 'No children yet')} · <a href="#/start/1">${L('ใส่เลย', 'Add them')}</a></li>`}
@@ -2264,11 +2280,11 @@ function viewLog(t, i, evening) {
   // tonight's three (photos, words, moods) and "day done" come first; everything else folds under "more" — open once it holds
   // something of this day, or always when the parents asked for that (ls logall)
   const moreOpen = !!(ls('logall') || fav || note || visited.size || audioOf(t.id, i).length || spendOf(t.id, i).length || es.some((e) => e.kind === 'first') || S.reviews.some((r) => r.trip === t.id && r.day === i));
-  return `<div class="daystrip" role="tablist">${strip}</div>${aiJump(t, i, dk)}
+  return `<div class="daystrip" role="tablist">${strip}</div>
 <div class="day" style="border:0;margin-top:0;padding-top:6px"><div class="hd"><div class="no">${String(i + 1).padStart(2, '0')}</div>
 <div class="dl">${L('วันที่', 'Day')} ${i + 1} · ${esc(fmtDay(d.date))}</div><div></div>
 <h3>${esc(T(d.title))}</h3>${artImg(t, i, 'hdart' + (dayStamped(t, i) ? '' : ' off'))}</div></div>
-<div class="logprog noprint" role="group" aria-label="${L('บันทึกวันนี้', 'Tonight’s three')}">${[['photos', 'camera', L('รูป', 'Photos'), ph.length], ['quotes', 'quote', L('คำพูด', 'Words'), quotes.length], ['mood', 'kid', L('อารมณ์', 'Mood'), kids.filter((k) => mood(k)).length]].map(([id, icon, lbl, n]) => `<button type="button" class="lpc${n ? ' on' : ''}" data-a="jump" data-v="#lg${id}" aria-label="${lbl}: ${n ? L('มีแล้ว', 'done') : L('ยังว่าง', 'empty')}">${ic(icon)}${lbl}<i>${n ? '✓' : '○'}</i></button>`).join('')}</div>
+<div class="logprog noprint" role="group" aria-label="${L('บันทึกวันนี้', 'Tonight’s three')}">${[['photos', 'camera', L('รูป', 'Photos'), ph.length], ['quotes', 'quote', L('คำพูด', 'Words'), quotes.length], ['mood', 'kid', L('อารมณ์', 'Mood'), kids.filter((k) => mood(k)).length]].map(([id, icon, lbl, n]) => `<button type="button" class="lpc${n ? ' on' : ''}" data-a="jump" data-v="#lg${id}" aria-label="${lbl}: ${n ? L('มีแล้ว', 'done') : L('ยังว่าง', 'empty')}">${ic(icon)}${lbl}<i>${n ? '✓' : '○'}</i></button>`).join('')}${aiJump(t, i, dk)}</div>
 ${planLite(t, i)}
 
 <section class="blk" id="lgphotos"><h3>${ic('camera')} ${L('รูป', 'Photos')}${ph.length ? ` <span class="label">${ph.length}</span>` : ''}</h3>

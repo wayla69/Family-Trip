@@ -94,9 +94,9 @@ hr.rule{border:0;border-top:1px solid var(--rule);margin:22px 0}
 /* tonight, Claude helps: the jump under the day strip, the panel's step grid, one-line notes with details behind ⓘ */
 /* the record page's strip under the date: tonight's three (photos · words · mood), ✓ or ○, a tap jumps to the box */
 .logprog{display:flex;gap:6px;flex-wrap:wrap;margin:4px 0 10px}
-.lpc{display:inline-flex;align-items:center;gap:6px;min-height:44px;padding:6px 13px;border:1px solid var(--rule);border-radius:999px;background:var(--paper);color:var(--muted);font-size:13.5px;font-weight:600}
-.lpc .ic{width:16px;height:16px}.lpc i{font-style:normal;font-size:14px;margin-left:2px}
-.lpc.on{color:var(--leaf);border-color:color-mix(in srgb,var(--leaf) 40%,var(--line));background:color-mix(in srgb,var(--leaf) 7%,var(--paper))}
+.lpc,.lph{display:inline-flex;align-items:center;gap:6px;min-height:44px;padding:6px 13px;border:1px solid var(--rule);border-radius:999px;background:var(--paper);color:var(--muted);font-size:13.5px;font-weight:600}
+.lpc .ic,.lph .ic{width:16px;height:16px}.lpc i,.lph i{font-style:normal;font-size:14px;margin-left:2px}
+.lpc.on,.lph.on{color:var(--leaf);border-color:color-mix(in srgb,var(--leaf) 40%,var(--line));background:color-mix(in srgb,var(--leaf) 7%,var(--paper))}
 /* an empty book: the way in, first (owner's review, Nov 2026: the foreword and letter boxes came before it) */
 /* the book page's foot: the PDF leads; print / copy sit under it as quiet text buttons (owner's review, Nov 2026: four buttons of equal weight) */
 .bookmore{gap:10px;margin:0 0 8px;align-items:center}.bookmore .linkbtn{color:var(--muted);font-size:13.5px;text-decoration-color:color-mix(in srgb,var(--muted) 50%,transparent)}.bookmore .linkbtn:hover{color:var(--accent)}
@@ -2902,3 +2902,41 @@ section.pg .dstamps.pst.c3 b,section.pg .dstamps.pst.c4 b{font-size:16px}section
 }
 /* the passport's tasting card: each dish is its picture from the food library */
 .ticks.food .tick .e .ge{width:40px;height:40px;display:block}
+
+/* Today, on the trip (owner, Nov 2026: "ง่ายต่อการใช้เดินทาง"): the next step leads the page — its time big in the book's colour, the step's
+   headline, what comes after it; then the day's facts, the two ways to navigate, the timeline. The helper's boxes close the page. */
+.nextc{display:flex;align-items:center;gap:14px;width:100%;margin:10px 0 4px;padding:14px 16px;border-radius:18px;border:1.5px solid color-mix(in srgb,var(--accent) 30%,transparent);background:color-mix(in srgb,var(--accent) 9%,var(--card));color:var(--ink);font:inherit;text-align:left;text-decoration:none;cursor:pointer;box-sizing:border-box}
+.nextc .nx{flex:none;display:flex;flex-direction:column;align-items:center;gap:2px;min-width:64px}
+.nextc .nl{font-size:11.5px;font-weight:700;letter-spacing:.06em;text-transform:uppercase;color:var(--on-accent);background:var(--accent);border-radius:999px;padding:1px 9px}
+.nextc time{font-size:26px;font-weight:800;line-height:1.1;font-variant-numeric:tabular-nums;color:color-mix(in srgb,var(--accent) 80%,var(--ink))}
+.nextc .nt{flex:1;min-width:0;display:flex;flex-direction:column;gap:3px}
+.nextc .nt b{font-size:18px;line-height:1.3;overflow-wrap:anywhere}
+.nextc .nt small{font-size:13.5px;line-height:1.35;color:var(--muted)}
+.nextc>.ic{flex:none;width:20px;height:20px;color:var(--accent)}
+.nextc.done{border-color:color-mix(in srgb,var(--leaf) 35%,transparent);background:color-mix(in srgb,var(--leaf) 9%,var(--card))}
+.nextc.done .nl{background:color-mix(in srgb,var(--leaf) 75%,var(--ink));color:#fff}.nextc.done time{color:color-mix(in srgb,var(--leaf) 70%,var(--ink))}
+.day.today+.nextc+.dfacts,.day.today+.dfacts{margin:10px 0 4px}
+/* the two ways to navigate: two equal pills, a thumb wide */
+.row.quick{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,150px),1fr));gap:10px;margin:12px 0}
+.row.quick:empty{display:none}
+.row.quick .qlink{justify-content:center;min-height:48px;padding:8px 14px;border-radius:999px;border:1px solid color-mix(in srgb,var(--accent) 24%,transparent);background:color-mix(in srgb,var(--accent) 8%,var(--card));color:color-mix(in srgb,var(--accent) 85%,var(--ink));box-sizing:border-box}
+#tlbox{scroll-margin-top:76px}
+
+/* every tap a thumb's size, second pass (owner, Nov 2026: easy on the move, with a child on one arm): the stragglers a crawl of every page found */
+.emerg b a{display:inline-flex;align-items:center;min-height:44px;padding:0 2px}
+.eatc .et .pinlink{padding:17px;margin:-17px -15px -17px -16px}
+main .mini.nav,.itin .mini{display:inline-flex;align-items:center;min-height:44px}
+.qa summary{display:flex;align-items:center;gap:6px;min-height:44px}
+details.sub>summary,.emore>summary{padding-block:11px}
+.gl dd details.ifold>summary,details.ledemore>summary,.dayplan.full>summary{min-height:44px;align-items:center}
+.ainote summary{display:flex;align-items:center;gap:6px;min-height:44px}
+.emobtn{width:44px;height:44px;right:2px;bottom:2px}
+.bio .ppf,.field{min-height:44px;box-sizing:border-box}
+.songs .kidbig{min-height:48px}
+.sline .go{width:44px;height:44px}
+.tl.plan.brief li>div[role=button]{display:flex;flex-direction:column;justify-content:center;min-height:44px}
+a.maplink{padding:12px 0;margin:-12px 0}
+.pbook.noprint-bar .btn{min-height:44px}
+@media (max-width:520px){.lostcard .lcrow .field{flex:1 1 100%}}
+
+.lph{color:color-mix(in srgb,var(--accent) 80%,var(--ink));border-color:color-mix(in srgb,var(--accent) 28%,transparent);background:color-mix(in srgb,var(--accent) 7%,var(--paper))}.aipanel .aiuse{margin:0 0 6px}
