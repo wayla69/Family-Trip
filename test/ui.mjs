@@ -588,8 +588,23 @@ const T = 'hk-macau-2026';
     await new Promise((r) => setTimeout(r, 1000)); const n = f.querySelectorAll('.bub').length; clearInterval(bubT); bubT = 0; bubN = 0; f.remove(); return n; });
   ok(lateBub > 0, `bubbles: a field drawn late (after the timer's first tick) still fills with bubbles (${lateBub})`);
   // three quiet games (owner, Nov 2026): a wrong tap wobbles and keeps the round, the right ones play every round through to a win and two stars
+  const gamePics = {};
+  {   // set 6: every thing a game can show has the app's own picture — a round never mixes pictures and emoji
+    const miss = await page.evaluate(() => { const E = /[\u{1F300}-\u{1FAFF}\u2600-\u27BF\u2B50]/gu, has = (e) => !!GAME_ART[String(e).replace(/\uFE0F/g, '')];
+      const pools = { SHADOWS: SHADOWS.map((x) => x[0]), FEED_PALS: FEED_PALS.map((x) => x[0]), FOODS: FOODS.map((x) => x[0]), SORT: SORT_COLS.flatMap((c) => c.e), ODD: ODD_GROUPS.flatMap((g) => g.e), NEXT_E, HM_E, WHERE_E, HIDE: HIDE_POOL.map((x) => x[0]),
+        MAZE: MAZE_PAIRS.flatMap((x) => [x[0], x[1]]), FARM: FARM.map((x) => x[0]), WASH: WASH.map((x) => x[0]), SIMON: SIMON.map((x) => x[1]), CAKE: CAKE_TOPS };
+      return Object.entries(pools).flatMap(([k, v]) => v.filter((e) => !has(e)).map((e) => `${k}:${e}`)); });
+    ok(miss.length === 0, `kid games: every animal, food and thing in the games' lists has its own picture (missing: ${miss.join(' ') || 'none'})`);
+    const artBad = await page.evaluate(async () => { const out = []; for (const f of [...new Set(Object.values(GAME_ART))]) { const r = await fetch(`/art/${f}.webp`); if (!r.ok || !/image\/webp/.test(r.headers.get('content-type') || '')) out.push(f); } return out; });
+    const foodLib = await page.evaluate(() => ({ n: Object.values(GAME_ART).filter((v) => v.startsWith('food/')).length, ramen: gE('🍜'), tea: gE('☕️'), plain: gE('🧿') }));
+    ok(artBad.length === 0 && foodLib.n === 60 && /food\/noodles\.webp/.test(foodLib.ramen) && /food\/hotdrink\.webp/.test(foodLib.tea) && foodLib.plain === '🧿',
+      `kid pictures: every picture the games name is served, the food library holds 60 dishes, a book's ramen and tea draw as pictures and an emoji without one stays an emoji (bad: ${artBad.join(' ') || 'none'}, ${foodLib.n})`);
+  }
   for (const [gm, sel] of [['shadow', '.shbig'], ['feed', '.feedpal'], ['sort', '.baskets'], ['bigsmall', '.bsrow'], ['where', '.whereb'], ['odd', '.oddch'], ['next', '.nextrow'], ['howmany', '.hmbox']]) {
     await page.goto(`${BASE}/#/kid/mimi/${gm}`); await page.waitForSelector(sel);
+    await page.waitForFunction(() => [...document.querySelectorAll('img.ge')].every((i) => i.complete), null, { timeout: 8000 }).catch(() => {});
+    gamePics[gm] = await page.evaluate(() => { const im = [...document.querySelectorAll('.kidwrap img.ge')]; return [im.length, im.filter((i) => i.naturalWidth > 0 && i.getBoundingClientRect().width >= 20).length]; });
+    await s.shot(`09-g-${gm}`, false);
     const st0 = await page.evaluate(() => stars('mimi'));
     const wrongV = await page.evaluate(() => { const right = kg.game === 'sort' ? kg.items[kg.n].k : kg.game === 'bigsmall' ? String(kg.r.right) : kg.game === 'where' ? String(kg.r.pos) : kg.game === 'odd' ? kg.r.one : kg.game === 'next' ? kg.r.answer : kg.game === 'howmany' ? String(kg.r.n) : kg.r.want[0]; const b = [...document.querySelectorAll('[data-a="kgpick"]')].find((x) => x.dataset.v !== right); return b && b.dataset.v; });
     await page.click(`[data-a="kgpick"][data-v="${wrongV}"]`);
@@ -623,7 +638,11 @@ const T = 'hk-macau-2026';
   await page.waitForSelector('[data-a="washnext"]', { timeout: 3000 }).catch(() => {});
   ok(await page.evaluate(() => wash.clean) && await page.locator('[data-a="washnext"]').count() === 1 && await page.locator('#washbox canvas.mud').count() === 0, 'kid game wash: scrubbing the mud canvas cleans the animal and offers the next friend');
   // the maze (owner, Nov 2026: "ลากเส้นหาทางออก"): a wall stops the finger, the way out is drawn by dragging along it, a win opens level 3
+  ok(Object.keys(gamePics).length === 8 && Object.values(gamePics).every(([n, okN]) => n > 0 && n === okN), `kid games: the pick games draw their things as loaded pictures (${JSON.stringify(gamePics)})`);
   await page.goto(`${BASE}/#/kid/mimi/maze`); await page.waitForSelector('#mazeb .mz');
+  await page.waitForFunction(() => [...document.querySelectorAll('#mazeb img.ge')].every((i) => i.complete), null, { timeout: 8000 }).catch(() => {});
+  ok(await page.evaluate(() => { const im = [...document.querySelectorAll('#mazeb img.ge')]; return im.length >= 2 && im.every((i) => i.naturalWidth > 0 && i.getBoundingClientRect().width >= 20); }), 'kid maze: the animal and its goal are pictures');
+  await s.shot('09-g-maze', false);
   const route = await page.evaluate(() => { const n = mz.n, prev = { 0: -1 }, q = [0]; while (q.length) { const c = q.shift(); for (const d of [c - n, c + n, c - 1, c + 1]) if (d >= 0 && d < n * n && !(d in prev) && mazeOpen(c, d)) { prev[d] = c; q.push(d); } } const out = []; for (let c = n * n - 1; c !== -1; c = prev[c]) out.unshift(c); return out; });
   const wallStops = await page.evaluate(() => { const n = mz.n, shut = [1, n].find((d) => !mazeOpen(0, d)); if (shut === undefined) return true; mazeTry(shut); const kept = mz.path.length === 1; return kept; });
   const mzAt = async (i) => { const b = await page.locator(`#mazeb .mz[data-i="${i}"]`).boundingBox(); return [b.x + b.width / 2, b.y + b.height / 2]; };
@@ -791,6 +810,7 @@ const T = 'hk-macau-2026';
   await page.waitForFunction(() => dt.done, null, { timeout: 6000 }).catch(() => {});
   ok(orderKept && await page.evaluate(() => dt.done), 'kid game dots: a dot out of order is not joined; dragging 1 → 2 → 3… through every picture of level 2 wins it');
   await page.goto(`${BASE}/#/kid/mimi/cake`); await page.waitForSelector('.cakebox');
+  ok(await page.evaluate(() => document.querySelectorAll('.ctray button img.ge').length === CAKE_TOPS.length), 'kid cake: every topping on the tray is a picture');
   const ck0 = await page.evaluate(() => stars('mimi'));
   for (const e of ['🍓', '⭐', '🕯️']) await page.click(`[data-a="cakeadd"][data-v="${e}"]`);
   const cakePlaced = await page.locator('.cakebox .ctop').count(); await page.click('[data-a="cakeblow"]');
@@ -814,6 +834,9 @@ const T = 'hk-macau-2026';
     && [...document.querySelectorAll('.songs .kidbig')].every((b) => b.scrollWidth <= b.clientWidth + 1 && getComputedStyle(b).textOverflow !== 'ellipsis')),
   'kid music: every song plays its whole verse (45+ notes), the sounds go through one limiter, and no song name is cut with "…"');
   await page.goto(`${BASE}/#/kid/mimi/hideseek`); await page.waitForSelector('.hideboard');
+  await page.waitForFunction(() => [...document.querySelectorAll('.hideboard img.ge')].every((i) => i.complete), null, { timeout: 8000 }).catch(() => {});
+  ok(await page.evaluate(() => { const im = [...document.querySelectorAll('.hideboard .hid img.ge')]; return im.length === 12 && im.every((i) => i.naturalWidth > 0 && i.getBoundingClientRect().width >= 30) && !!document.querySelector('.hidetarget img.ge'); }), 'kid I spy: the twelve hidden things and the one to find are pictures');
+  await s.shot('09-g-hideseek', false);
   const wantTh = await page.evaluate(() => hs.targets[0][1]);
   await page.locator(`.hid[aria-label="${wantTh}"]`).dispatchEvent('click');   // Playwright's own hit test blames the board's veil; the browser's elementFromPoint (a real tap) returns the button
   ok(await page.locator('.hid').count() === 12 && await page.locator('.hid.found').count() === 1 && await page.evaluate(() => hs.found.length === 1), 'kid mode: I spy scatters twelve things; tapping the named one finds it');
