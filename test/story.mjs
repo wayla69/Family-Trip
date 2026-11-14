@@ -362,6 +362,9 @@ try {
     const patch = (id, b) => fetch(BASE + '/api/b/media/' + id, { method: 'PATCH', headers: H, body: JSON.stringify(b) });
     ok((await patch('ph-ai-0002', { tags: ['Food', ' ride ', 'our own', 'food'], place: 'ไทม์สแควร์' })).ok && (await med('ph-ai-0002')).tags.join(',') === 'food,ride,our own' && (await med('ph-ai-0002')).place === 'ไทม์สแควร์', 'photos: the parents edit tags and place by hand');
     ok((await patch('ph-ai-0002', { tags: 'food' })).status === 400 && (await patch('ph-ai-0002', { tags: Array(11).fill('x') })).status === 400, 'photos: tags must be a short list');
+    // a place the parents gave (the record page's "where was it?" chips, or the lightbox) is theirs: "look again" would have emptied it (the mock answers a place that is not a stop)
+    const lookAgain = await look({ trip: T, day: 1, lang: 'en', all: true });
+    ok(lookAgain.ok && (await med('ph-ai-0002')).place === 'ไทม์สแควร์' && (await med('ph-ai-0001')).place === 'Hong Kong Disneyland', 'photos: the helper never overwrites a place the parents gave');
     ok(!vck || (await fetch(BASE + '/api/b/photos/ai', { method: 'POST', headers: { ...H, cookie: vck.split(';')[0] }, body: '{}' })).status === 403, 'photos: relatives cannot send photos to Claude');
     ok(!vck || (await (await fetch(BASE + '/api/b/state', { headers: { cookie: vck.split(';')[0] } })).json()).media.find((m) => m.id === 'ph-ai-0001').tags.includes('kids'), 'photos: relatives see the tags in the book'); }
   { const P = createRequire(import.meta.url)('../server/story.js').parseQuiz;

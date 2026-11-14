@@ -111,6 +111,10 @@ ok(!fm.exif && !tm.exif && !full.includes('GPSCam'), 'no EXIF/GPS in stored phot
 ok((await fetch(BASE + '/media/ph-test-0001')).status === 401, 'photo needs login');
 ok((await fetch(BASE + '/media/ph-nope-0001', { headers: { cookie: ck } })).status === 404, 'unknown photo → 404');
 ok((await fetch(BASE + '/api/b/media/ph-test-0001', { method: 'PATCH', headers: H, body: JSON.stringify({ caption: 'ที่ท่าเรือ', highlight: true }) })).ok, 'caption + ⭐');
+// a photo may arrive with its place (the record page's "where was it?" chips); a plain upload has none; an over-long one is cut
+ok((await up('ph-test-spot', `trip=${T}&day=1&place=${encodeURIComponent('  Hong Kong Disneyland ')}`)).ok && (await up('ph-test-spot2', `trip=${T}&day=1&place=${'x'.repeat(300)}`)).ok, 'upload with a place');
+{ const m = (await state()).media; ok(m.find((x) => x.id === 'ph-test-spot').place === 'Hong Kong Disneyland' && m.find((x) => x.id === 'ph-test-spot2').place.length === 120 && m.find((x) => x.id === 'ph-test-0001').place === '', 'the place a photo was added under is kept (trimmed, at most 120 characters); a plain upload has none');
+  ok((await fetch(BASE + '/api/b/media/ph-test-spot', { method: 'DELETE', headers: H })).ok && (await fetch(BASE + '/api/b/media/ph-test-spot2', { method: 'DELETE', headers: H })).ok, 'the place test photos are removed'); }
 s = await state();
 ok(s.media.length === 1 && s.media[0].highlight && s.media[0].caption === 'ที่ท่าเรือ' && s.media[0].day === 1, 'photo listed with caption, ⭐ and day');
 // voice memos: kept as recorded, served with byte ranges (Safari), no thumbnail, their mime in the state

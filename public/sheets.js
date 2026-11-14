@@ -32,16 +32,24 @@ async function shrink(file) {
     return await new Promise((res) => c.toBlob((b) => res(b || file), 'image/jpeg', 0.86));
   } catch (_) { return file; }   // e.g. HEIC the browser can't decode — the server converts it
 }
-async function addPhotos(t, day, files) {
+// spot (the record page's "where was it?" chips): { place: the stop's name, key + kind: the planned stop } — the photos carry the place,
+// and a planned stop not yet checked in is checked in (a photo taken there says we went)
+async function addPhotos(t, day, files, spot) {
   const list = Array.from(files).filter((f) => f.type.startsWith('image/') || /\.(heic|heif)$/i.test(f.name));
   if (!list.length) return;
+  const place = String((spot && spot.place) || '').trim().slice(0, 120);
+  if (place && spot.key && (spot.kind === 'place' || spot.kind === 'food') && !S.places.some((x) => x.trip === t.id && x.key === spot.key)) {
+    const p = ((t.days[day] || {}).planned || []).find((x) => x.key === spot.key);
+    if (p) await enqueue({ method: 'PUT', url: '/api/b/places', body: { trip: t.id, key: p.key, day, kind: p.kind || 'place', name: { en: p.en, th: p.th, zh: p.zh }, done: true, at: Date.now() },
+      local: { coll: 'places', id: `${t.id}:${p.key}`, row: { trip: t.id, key: p.key, day, kind: p.kind || 'place', name: { en: p.en, th: p.th }, at: Date.now() } } });
+  }
   toast(L(`เตรียมรูป ${list.length} รูป…`, `Preparing ${list.length} photos…`));
   for (const f of list) {
     const blob = await shrink(f);
     const id = uid('ph');
     const at = f.lastModified && Math.abs(f.lastModified - Date.now()) < 400 * 864e5 ? Math.min(f.lastModified, Date.now()) : Date.now();
-    await enqueue({ method: 'PUT', url: `/api/b/media/${id}?trip=${encodeURIComponent(t.id)}&day=${day}&at=${at}`, blob,
-      local: { coll: 'media', id, row: { trip: t.id, day, caption: '', highlight: false, at, w: 0, h: 0 } } });
+    await enqueue({ method: 'PUT', url: `/api/b/media/${id}?trip=${encodeURIComponent(t.id)}&day=${day}&at=${at}${place ? '&place=' + encodeURIComponent(place) : ''}`, blob,
+      local: { coll: 'media', id, row: { trip: t.id, day, caption: '', highlight: false, at, w: 0, h: 0, place } } });
   }
 }
 
@@ -112,6 +120,14 @@ const A = {
     $$('.fsseg button').forEach((x) => x.setAttribute('aria-pressed', String(+x.dataset.v === n)));   // in place: no re-render
     const nm = $('#fsname'); if (nm) nm.textContent = L(FS_NAMES[n][0], FS_NAMES[n][1]);
     toast(L(`ขนาดตัวอักษร: ${FS_NAMES[n][0]}`, `Text size: ${FS_NAMES[n][1].toLowerCase()}`));
+  },
+  dayfull(b) {   // Today's plan short (a tap opens a step or a box) or in full (everything open) — in place; the address keeps it (/full)
+    const f = b.dataset.v === '1';
+    $$('.tl.plan.brief > li').forEach((li) => { const d = li.querySelector(':scope > [aria-expanded]'); if (d) { li.classList.toggle('open', f); d.setAttribute('aria-expanded', String(f)); } });
+    $$('details.dfold, details.dmore').forEach((x) => { x.open = f; });
+    $$('.dayseg button').forEach((x) => x.setAttribute('aria-pressed', String((x.dataset.v === '1') === f)));
+    $$('.daystrip a').forEach((a) => a.setAttribute('href', a.getAttribute('href').replace(/\/full$/, '') + (f ? '/full' : '')));
+    const cur = $('.daystrip a[aria-current=true]'); if (cur) history.replaceState(null, '', cur.getAttribute('href'));
   },
   repmode(b) {   // the report short (headlines, detail on a tap) or in full (every detail open) — in place, kept on this phone
     const f = b.dataset.v === '1'; ls('repfull', f);
@@ -663,7 +679,7 @@ const A = {
     if (!armed(b, L('แตะอีกครั้งเพื่อทิ้ง', 'Tap again to discard'))) return;
     try { await api('DELETE', `/api/b/import/${encodeURIComponent(b.dataset.v)}`); imp.list = null; if (imp.job && imp.job.draft && imp.job.draft.id === b.dataset.v) imp.job = null; impRefresh(); } catch (_) { toast(L('ลบไม่สำเร็จ', 'Could not delete')); }
   },
-  pickphotos(b) { const fp = $('#fpick'); fp.dataset.t = b.dataset.t; fp.dataset.d = b.dataset.d; fp.click(); },
+  pickphotos(b) { const fp = $('#fpick'); fp.dataset.t = b.dataset.t; fp.dataset.d = b.dataset.d; fp.dataset.place = b.dataset.place || ''; fp.dataset.key = b.dataset.key || ''; fp.dataset.kind = b.dataset.kind || ''; fp.click(); },   // a "where was it?" chip passes its place
   // full backup zip (editors only on the server too); the browser downloads it in place, the page stays
   backup() {
     if (!navigator.onLine) { toast(L('ต้องต่อเน็ตก่อนจึงทำสำเนาได้', 'Connect to the internet to back up')); return; }
@@ -1054,12 +1070,13 @@ document.addEventListener('change', (e) => {
       .finally(() => { fam.busyKid = null; render(); });
     return;
   }
-  if (e.target.id === 'fpick') { const el = e.target; addPhotos(trip(el.dataset.t), +el.dataset.d, el.files); el.value = ''; }
+  if (e.target.id === 'fpick') { const el = e.target; addPhotos(trip(el.dataset.t), +el.dataset.d, el.files, el.dataset.place ? { place: el.dataset.place, key: el.dataset.key, kind: el.dataset.kind } : null); el.value = ''; el.dataset.place = ''; }   // the place is spent: the next pick starts plain
   if (e.target.id === 'spendplace') { const n = $('#spendnote'); if (n) { if (e.target.value) { n.value = e.target.value; drafts[n.dataset.draft] = n.value; $('#spendamt').focus(); } else n.focus(); } }   // a picked place becomes the note; "other" → type it
 });
 function tlToggle(li) { const o = li.classList.toggle('open'), d = li.querySelector(':scope > [aria-expanded]'); if (d) d.setAttribute('aria-expanded', String(o)); }
-window.addEventListener('beforeprint', () => { $$('details.ifold:not([open])').forEach((d) => { d.open = true; d.dataset.printOpened = '1'; }); });   // a printed pocket guide shows every detail
-window.addEventListener('afterprint', () => { $$('details.ifold[data-print-opened]').forEach((d) => { d.open = false; delete d.dataset.printOpened; }); });
+document.addEventListener('cancel', (e) => { if (e.target && e.target.id === 'fpick') e.target.dataset.place = ''; }, true);   // the gallery closed without a photo: forget the chip's place
+window.addEventListener('beforeprint', () => { $$('details.ifold:not([open]), details.dfold:not([open])').forEach((d) => { d.open = true; d.dataset.printOpened = '1'; }); });   // a printed pocket guide shows every detail
+window.addEventListener('afterprint', () => { $$('details.ifold[data-print-opened], details.dfold[data-print-opened]').forEach((d) => { d.open = false; delete d.dataset.printOpened; }); });
 document.addEventListener('keydown', (e) => {
   if ((e.key === 'Enter' || e.key === ' ') && e.target.matches && e.target.matches('.tl.plan > li > [role="button"]')) { e.preventDefault(); tlToggle(e.target.parentElement); return; }
   if (lbState) { if (/^(INPUT|TEXTAREA)$/.test((e.target && e.target.tagName) || '')) return;   // arrows inside the caption box move the cursor, not the photo

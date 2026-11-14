@@ -411,9 +411,10 @@ function router({ pool, media, A, ai, hooks = {} }) {   // hooks.heart(h): set b
       await media.put(keyFull(t.id, id), img.full);
       await media.put(keyThumb(t.id, id), img.thumb);
       const pos = (await q('SELECT count(*)::int n FROM media WHERE trip_id=$1 AND day_index IS NOT DISTINCT FROM $2', [t.id, day]))[0].n;
-      await q(`INSERT INTO media (id, family_id, trip_id, day_index, storage_key, bytes, width, height, caption, pos, taken_at, created_by, created_uid)
-        VALUES ($1,$2,$3,$4,$5,$6,$7,$8,$9,$10,$11,$12,$13) ON CONFLICT (id) DO NOTHING`,
-      [id, FAMILY, t.id, day, keyFull(t.id, id), img.full.length, img.w, img.h, clip(req.query.caption, 500), pos, at(req.query.at), clip(req.user.name, 40), req.user.uid]);
+      // place: the stop the parents added the photo under (the record page's "where was it?" chips) — one of the day's names, or ''
+      await q(`INSERT INTO media (id, family_id, trip_id, day_index, storage_key, bytes, width, height, caption, pos, taken_at, created_by, created_uid, place)
+        VALUES ($1,$2,$3,$4,$5,$6,$7,$8,$9,$10,$11,$12,$13,$14) ON CONFLICT (id) DO NOTHING`,
+      [id, FAMILY, t.id, day, keyFull(t.id, id), img.full.length, img.w, img.h, clip(req.query.caption, 500), pos, at(req.query.at), clip(req.user.name, 40), req.user.uid, clip(req.query.place, 120).trim()]);
       res.json({ ok: true, id, w: img.w, h: img.h });
     } catch (e) { next(e); }
   });
@@ -950,7 +951,7 @@ function router({ pool, media, A, ai, hooks = {} }) {   // hooks.heart(h): set b
       let n = 0;
       for (const m of rows) {
         const x = seen[m.id]; if (!x) continue;
-        await q(`UPDATE media SET caption = CASE WHEN caption = '' THEN $3 ELSE caption END, tags=$4, place=$5, ai_at=now() WHERE id=$1 AND trip_id=$2`, [m.id, t.id, clip(x.cap, 500), x.tags, x.place]);
+        await q(`UPDATE media SET caption = CASE WHEN caption = '' THEN $3 ELSE caption END, tags=$4, place = CASE WHEN place = '' THEN $5 ELSE place END, ai_at=now() WHERE id=$1 AND trip_id=$2`, [m.id, t.id, clip(x.cap, 500), x.tags, x.place]);
         n++;
       }
       // the day's best photos: Claude's picks get the ⭐ only while the day has none yet (the parents' own stars always win;
