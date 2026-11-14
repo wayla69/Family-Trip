@@ -2759,3 +2759,33 @@ section.pg .dstamps.pst.c3 b,section.pg .dstamps.pst.c4 b{font-size:16px}section
 .mcphotos{display:grid;grid-template-columns:repeat(4,1fr);gap:6px;border:0;background:none;padding:0}.mcphotos img{width:100%;aspect-ratio:1;object-fit:cover;border-radius:14px}
 .mcalso{margin:0;font-size:clamp(15px,1.9vw,18px);opacity:.8;text-align:center}
 .mcgo{display:grid;gap:10px}
+/* kid home on a trip day: one line — what we do now (by the clock) — opening "my day": the steps done, now and next, and the sleeps left */
+.kidnow{display:grid;grid-template-columns:auto 1fr auto;align-items:center;gap:12px;width:100%;border:0;border-radius:24px;padding:7px 14px 7px 10px;text-align:left;font:inherit;color:var(--on-accent,#fff);background:var(--accent);box-shadow:0 10px 22px -14px var(--accent)}
+.kidnow .e{font-size:28px;line-height:1;width:46px;height:46px;border-radius:50%;background:#fff;display:grid;place-items:center}
+.kidnow small{display:block;font-size:14px;font-weight:700;opacity:.9;line-height:1.2}.kidnow b{display:block;font-size:clamp(17px,2.2vw,22px);line-height:1.2}
+.kidnow i{font-style:normal;font-size:30px;line-height:1}
+.kidwrap.home:has(.kidnow) .kidhello{display:none}
+.kidwrap.home:has(.kidnow) .kidquest{padding:6px 14px 6px 8px}.kidwrap.home:has(.kidnow) .kidquest .art{width:46px;height:46px;font-size:26px}.kidwrap.home:has(.kidnow) .kidquest i{font-size:28px}   /* two banners on a trip day: both slim, the tiles stay big */
+.kday{list-style:none;margin:0;padding:0;display:grid;gap:8px}
+.kdrow{display:grid;grid-template-columns:auto 1fr auto;align-items:center;gap:12px;width:100%;border:0;border-radius:20px;padding:10px 14px;min-height:64px;text-align:left;font:inherit;color:#1F2A3A;background:#fff;box-shadow:0 6px 14px -12px rgba(0,0,0,.45)}
+.kdrow .e{font-size:36px;line-height:1}.kdrow small{display:block;font-size:15px;font-weight:700}
+.kdrow b{display:block;font-size:clamp(18px,2.4vw,23px);font-weight:600;line-height:1.25}
+.kdrow.done{background:rgba(255,255,255,.6);box-shadow:none}.kdrow.done b{opacity:.6}.kdrow.done i{font-style:normal;font-size:22px;color:#2E9E4F;font-weight:700}
+.kdrow.now{background:var(--accent);color:var(--on-accent,#fff)}.kdrow.now .e{width:56px;height:56px;border-radius:50%;background:#fff;display:grid;place-items:center}
+.kdrow.next{box-shadow:inset 0 0 0 3px var(--accent)}.kdrow.next small{color:var(--accent)}
+.knhome{display:flex;align-items:center;justify-content:center;gap:10px;flex-wrap:wrap;border:0;border-radius:18px;padding:8px 12px;min-height:48px;background:rgba(255,255,255,.7);font:inherit;color:#1F2A3A}
+.knhome span{font-size:22px;line-height:1;letter-spacing:2px}.knhome b{font-size:clamp(16px,2.1vw,20px);font-weight:600}
+/* the kid map: a pin the family really reached, and those places in its card */
+.tmap .pin.real circle{stroke:#F2B01E;fill:#FFF6D6}
+.tmap .pin .flag circle{fill:#2E9E4F;stroke:#fff;stroke-width:2}.tmap .pin .flag text{font-size:10px;font-weight:700;fill:#fff;text-anchor:middle}
+.mcwent{display:flex;flex-wrap:wrap;gap:8px}
+.mcwent button{display:flex;align-items:center;gap:8px;border:0;border-radius:999px;background:#E6F6EA;box-shadow:inset 0 0 0 2px #2E9E4F;padding:8px 14px;min-height:48px;font:inherit;color:#1F2A3A}
+.mcwent span{font-size:22px;line-height:1}.mcwent b{font-size:clamp(15px,2vw,18px);font-weight:600;text-align:left}
+/* the adventure map's foot: grown-ups press and hold to start the road again */
+.qreset{align-self:center;border:0;border-radius:999px;background:rgba(255,255,255,.7);padding:10px 18px;min-height:48px;font:inherit;font-size:15px;color:#3A4A5C;transition:transform 1.5s linear,background 1.5s linear;user-select:none;-webkit-user-select:none;touch-action:none}
+.qreset.holding{transform:scale(.9);background:#FFD9D9}
+/* a won game's buttons: one block (scrolled above the kid bar); on a mission a thin bar on "back to the map" runs for the five seconds before it goes by itself */
+.lvwin{display:grid;gap:14px;scroll-margin-bottom:calc(120px + env(safe-area-inset-bottom,0px))}
+.lvwin.qauto .kidbig{position:relative;overflow:hidden}
+.qbar5{position:absolute;left:0;bottom:0;height:6px;width:100%;background:rgba(255,255,255,.75);transform-origin:left center;animation:qbar5 5s linear 1.5s both}
+@keyframes qbar5{from{transform:scaleX(0)}to{transform:scaleX(1)}}

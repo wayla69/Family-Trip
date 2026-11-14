@@ -363,7 +363,7 @@ const mapDayOf = (t) => { const n = dayNow(t); return n >= 0 ? n : tripOver(t) ?
 function mapHtml(t, day, kids, at) {
   const mm = mapModel(t); if (!mm) return '';
   const pos = at !== undefined && at !== null && mm.seq[at] && mm.seq[at].day === day ? at : mapPos(mm, day), here = mm.seq[pos].k, been = new Set(mm.seq.slice(0, pos + 1).map((v) => v.k));
-  const s0 = mm.at[here];
+  const s0 = mm.at[here], real = mapReal(t, mm);
   const waves = Array.from({ length: 14 }, (_, j) => `<text class="wave" x="${(j * 83) % 380 + 10}" y="${(j * 47) % 270 + 20}">〰</text>`).join('');
   return `<div class="tmap" data-t="${esc(t.id)}" data-pos="${pos}">
 <svg viewBox="0 0 ${MAP_W} ${MAP_H}" role="img" aria-label="${esc(T(mm.m.title))}">
@@ -371,7 +371,7 @@ function mapHtml(t, day, kids, at) {
 <text class="sealbl" x="${MAP_W - 14}" y="${MAP_H - 12}">${esc(T(mm.m.sea))}</text>
 <g class="compass" transform="translate(30,40)"><circle r="15"/><path d="M0,-12 L4,0 L0,12 L-4,0Z"/><text y="-18">N</text></g>
 ${mm.hops.map((h, j) => `<path class="hop${j < pos ? ' done' : ''}" id="hop${j}" d="${h.d}"/>`).join('')}
-${mm.m.stops.filter((s) => mm.seq.some((v) => v.k === s.k)).map((s) => `<g class="pin${been.has(s.k) ? ' on' : ''}${s.k === here ? ' here' : ''}" data-a="mappin" data-t="${esc(t.id)}" data-v="${esc(s.k)}" data-say="${esc(T(s))}" transform="translate(${s.x * MAP_W / 100},${s.y * MAP_H / 100})" role="button" aria-label="${esc(T(s))}"><circle r="17"/>${s.art ? `<image class="ea" href="${esc(s.art)}" x="-15" y="-15" width="30" height="30"/>` : `<text class="e" y="6">${esc(s.e)}</text>`}</g>`).join('')}
+${mm.m.stops.filter((s) => mm.seq.some((v) => v.k === s.k)).map((s) => `<g class="pin${been.has(s.k) ? ' on' : ''}${s.k === here ? ' here' : ''}${real.has(s.k) ? ' real' : ''}" data-a="mappin" data-t="${esc(t.id)}" data-v="${esc(s.k)}" data-say="${esc(T(s))}" transform="translate(${s.x * MAP_W / 100},${s.y * MAP_H / 100})" role="button" aria-label="${esc(T(s))}"><circle r="17"/>${s.art ? `<image class="ea" href="${esc(s.art)}" x="-15" y="-15" width="30" height="30"/>` : `<text class="e" y="6">${esc(s.e)}</text>`}${real.has(s.k) ? '<g class="flag" aria-hidden="true"><circle cx="13" cy="-13" r="8"/><text x="13" y="-9.5">✓</text></g>' : ''}</g>`).join('')}
 </svg>
 <svg class="lbls" viewBox="0 0 ${MAP_W} ${MAP_H}" aria-hidden="true">${mm.m.stops.filter((s) => mm.seq.some((v) => v.k === s.k)).map((s) => `<text class="lbl" x="${s.x * MAP_W / 100}" y="${s.y * MAP_H / 100 + 31}">${esc(T(s))}</text>`).join('')}</svg>
 <div class="walkers" style="left:${s0.x}%;top:${s0.y}%" aria-hidden="true">${kids.filter((k) => kidArt(k)).map((k) => `<img class="${esc(k)} ${esc(kidBase(k))}" src="${kidArt(k, true)}" alt="">`).join('')}</div></div>`;
@@ -385,13 +385,15 @@ function mapCard(t, kid, day, at) {
   const pos = at !== undefined && at !== null && mm.seq[at] && mm.seq[at].day === day ? at : mapPos(mm, day), v = mm.seq[pos], st = mm.at[v.k], i = v.day, d = t.days[i], pd = ((t.passport || {}).days || [])[i] || {};
   const rows = (((d.plan || {}).plan) || []).filter((r) => r && r.h && T(r.h)), step = Math.max(1, Math.ceil(rows.length / 6)), heads = rows.filter((_, n) => n % step === 0).slice(0, 6);
   const spots = daySpots(t, i, kid), fact = (pd.facts || []).length ? T(pd.facts[pos % pd.facts.length]) : '', photos = mediaOf(t.id).filter((m) => m.day === i && !isDrawing(m) && !m.pending).slice(0, 4);
+  const went = mapReal(t, mm).get(v.k) || [], wentDay = went.filter((x) => x.day === i);
   const today = dayNow(t) === i, name = T(st), others = (mm.m.days[i] || []).filter((k) => k !== v.k && mm.at[k]).map((k) => T(mm.at[k]));
-  const line = today ? L(`วันนี้เราอยู่ที่${name}!`, `Today we are at ${name}!`) : dayNow(t) >= 0 && i < dayNow(t) ? L(`เราไป${name}มาแล้ว จำได้ไหม?`, `We went to ${name}. Remember?`) : L(`วันที่ ${i + 1} เราจะไป${name}!`, `On day ${i + 1} we go to ${name}!`);
+  const line = went.length && !today ? L(`เราไป${name}มาแล้ว!`, `We have been to ${name}!`) : today ? L(`วันนี้เราอยู่ที่${name}!`, `Today we are at ${name}!`) : dayNow(t) >= 0 && i < dayNow(t) ? L(`เราไป${name}มาแล้ว จำได้ไหม?`, `We went to ${name}. Remember?`) : L(`วันที่ ${i + 1} เราจะไป${name}!`, `On day ${i + 1} we go to ${name}!`);
   const sec = (e, th, en, inner) => (inner ? `<div class="mcsec"><b><span aria-hidden="true">${e}</span> ${L(th, en)}</b>${inner}</div>` : '');
   const html = `<section class="mapcard" id="mapcard" style="--accent:${esc(pd.acc || t.theme.accent || '#1F3A5F')};--tint:${esc(pd.tint || '#F3F6FA')}">
 <div class="mchead"><button class="mcstep" data-a="mapstep" data-v="-1" aria-label="${L('ที่ก่อนหน้า', 'The stop before')}"${pos === 0 ? ' disabled' : ''}>‹</button>
 <div class="mcname">${st.art ? `<img src="${esc(st.art)}" alt="">` : `<span aria-hidden="true">${esc(st.e || '📍')}</span>`}<div><b>${wj(esc(name))}</b><small>${L('วันที่', 'Day')} ${i + 1}${today ? ` <i>${L('วันนี้', 'today')}</i>` : ''} ${wj(esc(T(pd.title) || T(d.title)))}</small></div></div>
 <button class="mcstep" data-a="mapstep" data-v="1" aria-label="${L('ที่ถัดไป', 'The next stop')}"${pos >= mm.seq.length - 1 ? ' disabled' : ''}>›</button></div>
+${sec('✅', 'เราไปมาแล้ว', 'We really went', wentDay.length ? `<div class="mcwent">${wentDay.map((x) => { const nm = T(x.name) || x.key; return `<button data-a="mapsay" data-say="${esc(nm)}"><span aria-hidden="true">${x.kind === 'food' ? '🍽️' : '📍'}</span><b>${esc(nm)}</b></button>`; }).join('')}</div>` : '')}
 ${sec('🧭', 'วันนั้นเราทำอะไร', 'What we do that day', heads.length ? `<div class="mcdo">${heads.map((r) => { const h = T(r.h), e = (h.match(/^[\p{Extended_Pictographic}️‍]+/u) || ['✨'])[0]; return `<button data-a="mapsay" data-say="${esc(noEmoji(h))}"><span aria-hidden="true">${esc(e)}</span><b>${esc(noEmoji(h))}</b></button>`; }).join('')}</div>` : '')}
 ${sec('🔍', 'หาให้เจอนะ', 'Can you find them?', spots.length ? `<div class="mcfind">${spots.map((x) => `<button class="${ticked(t, x.key, kid) ? 'got' : ''}" data-a="mapsay" data-say="${esc(T(x))}"><span aria-hidden="true">${esc(x.e)}</span><b>${esc(T(x))}</b>${ticked(t, x.key, kid) ? '<i aria-hidden="true">⭐</i>' : ''}</button>`).join('')}</div>` : '')}
 ${fact ? `<button class="mcfact" data-a="mapsay" data-say="${esc(fact)}"><span aria-hidden="true">💡</span><p>${esc(fact)}</p></button>` : ''}
@@ -473,6 +475,7 @@ function stickerSet(t, kid) {
   t.days.forEach((_, i) => add(`stamp.d${i}`, '', dayArt(t, i), dayStamped(t, i)));
   t.days.forEach((_, i) => daySpots(t, i, kid).forEach((s) => add(s.key, s.e, '', ticked(t, s.key, kid))));
   t.days.forEach((_, i) => add(`gift.d${i}`, giftE(i), '', ticked(t, `gift.d${i}`, kid)));
+  { const mm = mapModel(t); if (mm) { const real = mapReal(t, mm); mm.m.stops.forEach((st) => { if (real.has(st.k)) add(`been.${st.k}`, st.e || '📍', st.art || '', true); }); } }   // a place we really went (the parents checked it in)
   t.days.forEach((_, i) => add(questKey(i, 'chest'), QUEST_GEM[i % QUEST_GEM.length], '', ticked(t, questKey(i, 'chest'), kid)));   // a town's treasure on the adventure map   // the morning surprise box's sticker
   kidLists(t, kid).forEach((l) => listItems(l).forEach((it) => { const x = ticked(t, `${l.key}.${it.k}`, kid); add(`${l.key}.${it.k}`, it.e, '', x && x.text !== 'yuck'); }));
   ((pp.countdown || {}).doors || []).forEach((d, n) => add(`cd.${n + 1}`, d.e, '', ticked(t, `cd.${n + 1}`, kid)));
@@ -639,7 +642,7 @@ function viewKid(p) {
   const view = p[2] || 'home', name = kidName(kid), pre = preTrip(t), cd = pp.countdown, wild = ((t.info || {}).wild || []);
   if (quest && (quest.game !== view || quest.kid !== kid || quest.tid !== t.id)) { const qt = trip(quest.tid); if (qt && !questGot(qt, quest.kid, quest.town, quest.slot)) questQuit(quest); quest = null; questReset(); }   // off the mission's page: free play again
   const fill = (x) => String(x || '').replace(/\{name\}/g, name);
-  const hi = quest ? quest.town : i, hpd = quest ? (pp.days || [])[hi] || {} : pd;   // on a mission the page wears its town: colours, picture and name
+  const hi = quest ? quest.town : view === 'day' && dayNow(t) >= 0 ? dayNow(t) : i, hpd = (pp.days || [])[hi] || {};   // on a mission the page wears its town: colours, picture and name
   const style = `--accent:${esc(hpd.acc || t.theme.accent || '#1F3A5F')};--tint:${esc(hpd.tint || '#F3F6FA')}`;
   const back = `<button class="kidback" data-a="kidnav" data-v="#/kid/${esc(kid)}${quest ? '/quest' : ''}" aria-label="${L('กลับ', 'Back')}">‹</button>`;
   const lock = `<button class="kidexit" id="kidexit" aria-label="${L('ผู้ใหญ่: กดค้างเพื่อออก', 'Grown-ups: press and hold to leave')}">${ic('lock', 'klk')}</button>`;
@@ -665,7 +668,7 @@ function viewKid(p) {
     body = `${fresh.length ? `<button class="kidhearts" data-a="kidnav" data-v="#/kid/${esc(kid)}/hearts" data-say="${esc(heartLine(fresh[0], kid))}"><span class="float" aria-hidden="true">💗</span><span class="e">${emo(fresh[0].emoji)}</span><b>${esc(L(`${fresh[0].from} ส่งหัวใจให้หนู!`, `${fresh[0].from} sent you a heart!`))}</b>${fresh.length > 1 ? `<small>+${fresh.length - 1}</small>` : ''}</button>` : ''}
 ${live === i && !ticked(t, `gift.d${i}`, kid) ? `<button class="kidgift" data-a="kidnav" data-v="#/kid/${esc(kid)}/gift" data-say="${esc(L('มีกล่องเซอร์ไพรส์มาให้! แตะเปิดเลย', 'A surprise box for you! Tap to open it'))}"><span class="box" aria-hidden="true">${emo('🎁')}</span><b>${L('<span class="nw">กล่องเซอร์ไพรส์</span><span class="nw">วันนี้!</span>', 'Today’s surprise box!')}</b><small>${L('แตะเปิดเลย', 'Tap to open')}</small></button>`
   : live === i && hourIn(t.timezone) >= 17 && !ticked(t, `stamp.d${i}`, kid) ? `<button class="kidnight" data-a="kidnav" data-v="#/kid/${esc(kid)}/stamp" data-say="${esc(L('ก่อนนอน มาปั๊มตราวันนี้กัน!', 'Before bed — let’s stamp today!'))}"><span class="moon" aria-hidden="true">${emo('🌙')}</span><b>${L('ปั๊มตราวันนี้ก่อนนอน!', 'Stamp today before bed!')}</b><small>🛂 ${L('ปั๊ก!', 'Thump!')}</small></button>` : ''}
-${questBanner(t, kid)}
+${kidNowCard(t, kid)}${questBanner(t, kid)}
 <div class="kidhello">${kidArt(kid) ? `<button class="poke" data-a="kidpoke" data-k="${esc(kid)}" aria-label="${esc(name)}"><img src="${kidArt(kid, true)}" alt=""></button>` : ''}<p>${pre ? L(`<span class="nw">อีก <b>${until}</b> วัน</span> เราจะไป<span class="nw">${esc(T(t.title).split(' · ').pop())}กัน!</span>`, `<b>${until}</b> ${until === 1 ? 'sleep' : 'sleeps'} to ${esc(T(t.title).split(' · ')[0])}!`) : L(`<span class="nw">สวัสดี ${esc(name)}!</span> <span class="nw">วันนี้เล่นอะไรดี?</span>`, `Hello ${esc(name)}! What shall we play?`)}</p></div>
 ${stars(kid) ? `<div class="jarrow"><button class="starjar" data-a="kidjar" data-k="${esc(kid)}" aria-label="${L('โถดาว · ผู้ใหญ่กดค้างเพื่อล้าง', 'Star jar · grown-ups press and hold to empty')}">⭐ <b>${stars(kid)}</b></button>${pets(kid).length ? `<span class="pets" aria-label="${L('เพื่อน', 'Friends')}">${pets(kid).join('')}</span>` : ''}</div>` : ''}
 <nav class="kiddays">${t.days.map((x, j) => `<button data-a="kidday" data-v="${j}" aria-pressed="${j === i}" aria-label="${L('วันที่', 'Day')} ${j + 1}">${artImg(t, j)}</button>`).join('')}</nav>
@@ -673,6 +676,8 @@ ${stars(kid) ? `<div class="jarrow"><button class="starjar" data-a="kidjar" data
 <div class="kidpager" id="kidpager">${pages.map((pg, n) => `<div class="kpage kidtiles" data-n="${n}">${pg.join('')}</div>`).join('')}</div>
 <button class="kparrow next" data-a="kidpage" data-v="1" aria-label="${L('หน้าถัดไป', 'Next page')}"${pages.length > 1 ? '' : ' hidden'}>›</button></div>
 ${pages.length > 1 ? `<div class="kdots" id="kdots">${pages.map((_, n) => `<i${n === 0 ? ' class="on"' : ''}></i>`).join('')}</div>` : ''}`;
+  } else if (view === 'day') {
+    body = kidDayHtml(t, kid, guideImg);
   } else if (view === 'quest') {
     body = questHtml(t, kid, guideImg);
   } else if (view === 'colour') {
@@ -1191,9 +1196,54 @@ function questMark(t, kid, i, k) {
 }
 const questIn = (t, kid, game) => (quest && quest.tid === t.id && quest.kid === kid && quest.game === game ? quest : null);
 // leaving or starting a mission: no half-played board of the other mode stays behind (free play keeps its own levels)
-function questReset() { kg = null; jg = null; mg = null; mz = null; dt = null; clearTimeout(simT); sm = null; }
+function questReset() { clearTimeout(winT2); kg = null; jg = null; mg = null; mz = null; dt = null; clearTimeout(simT); sm = null; }
 const questTown = (t, i) => T(((t.passport || {}).days || [])[i] && t.passport.days[i].title) || T(t.days[i].title);
 const questSecret = (t, i) => { const f = (((t.passport || {}).days || [])[i] || {}).facts || []; return f.length ? T(f[i % f.length]) : ''; };
+/* Kid mode follows the real trip (owner, Nov 2026: "ในเล่มของเด็กลิ้งค์กับทริปจริงได้อีกไหม"):
+   1. the day itself, by the clock — on a trip day the kid home says what we are doing now and what comes next, from the plan's own
+      timeline and the time where we are (a row may carry its own timezone: the departure day's Bangkok rows), and how many sleeps are left;
+   2. the places we really went — a place the parents check in on the record page lights its pin on the kid map (`.pin.real`), gives a
+      sticker, and the map's card says "we went here" with those places. Nothing new is stored: the clock, the plan and the check-ins. */
+const minsIn = (tz) => { try { const [h, m] = new Intl.DateTimeFormat('en-GB', { hour: '2-digit', minute: '2-digit', hourCycle: 'h23', timeZone: tz }).format(new Date()).split(':'); return +h * 60 + +m; } catch (_) { const d = new Date(); return d.getHours() * 60 + d.getMinutes(); } };
+function kidNowOf(t, i) {
+  const rows = ((((t.days[i] || {}).plan || {}).plan) || []).filter((r) => r && /^\d\d?:\d\d$/.test(r.t || '') && r.h && T(r.h));
+  if (!rows.length) return null;
+  const past = (r) => { const [h, m] = r.t.split(':'); return minsIn(r.tz || t.timezone) >= +h * 60 + +m; };
+  let cur = -1; rows.forEach((r, n) => { if (past(r)) cur = n; });
+  return { rows, cur, now: cur >= 0 ? rows[cur] : null, next: rows[cur + 1] || null };
+}
+const headE = (h) => (String(h).match(/^[\p{Extended_Pictographic}\uFE0F\u200D]+/u) || ['✨'])[0];
+const sleepsLine = (t, i) => { const n = t.days.length - 1 - i; return n > 0 ? L(`อีก ${n} คืน เราจะกลับบ้าน`, `${n} more sleep${n > 1 ? 's' : ''} until home`) : L('วันนี้เรากลับบ้านกัน!', 'Today we go home!'); };
+// the kid home's one-line banner on a trip day (the surprise box and the stamp-before-bed banners come first: one banner at a time keeps the tiles big)
+function kidNowCard(t, kid) {
+  const dn = dayNow(t); if (dn < 0) return '';
+  if (kidDayOf(t) === dn && (!ticked(t, `gift.d${dn}`, kid) || (hourIn(t.timezone) >= 17 && !ticked(t, `stamp.d${dn}`, kid)))) return '';
+  const k = kidNowOf(t, dn); if (!k) return '';
+  const r = k.now || k.next, lbl = k.now ? L('ตอนนี้', 'Now') : L('เดี๋ยวเราจะ', 'Soon'), txt = noEmoji(T(r.h));
+  return `<button class="kidnow" id="kidnow" data-a="kidnav" data-v="#/kid/${esc(kid)}/day" data-say="${esc(`${lbl} ${txt}`)}"><span class="e" aria-hidden="true">${esc(headE(T(r.h)))}</span><span><small>${lbl}</small><b>${esc(txt)}</b></span><i aria-hidden="true">›</i></button>`;
+}
+// "my day" (#/kid/<kid>/day): today's steps as pictures — done, now, next — and the sleeps until home; a tap reads a step aloud
+function kidDayHtml(t, kid, guideImg) {
+  const dn = dayNow(t), i = dn >= 0 ? dn : kidDayOf(t), k = kidNowOf(t, i), live = dn >= 0;
+  if (!k) return `<div class="kidguide">${guideImg(0)}<p>${L('วันนี้เที่ยวตามใจเลย!', 'Today we go where we like!')}</p></div>`;
+  const line = !live ? L('วันนั้นเราจะทำแบบนี้', 'This is what we do that day') : k.now && k.next ? L(`ตอนนี้ ${noEmoji(T(k.now.h))} ต่อไป ${noEmoji(T(k.next.h))}`, `Now: ${noEmoji(T(k.now.h))}. Next: ${noEmoji(T(k.next.h))}`)
+    : k.next ? L(`เดี๋ยวเราจะ ${noEmoji(T(k.next.h))}`, `Soon: ${noEmoji(T(k.next.h))}`) : L('วันนี้ทำครบแล้ว เก่งมาก!', 'That was the whole day. Well done!');
+  return `<div class="kidguide">${guideImg(0)}<p>${esc(line)}</p></div>
+<ol class="kday">${k.rows.map((r, n) => { const st = !live ? '' : n < k.cur ? 'done' : n === k.cur ? 'now' : n === k.cur + 1 ? 'next' : '', h = T(r.h); return `<li><button class="kdrow ${st}" data-a="mapsay" data-say="${esc(noEmoji(h))}"><span class="e" aria-hidden="true">${esc(headE(h))}</span><span>${st === 'now' ? `<small>${L('ตอนนี้', 'Now')}</small>` : st === 'next' ? `<small>${L('ต่อไป', 'Next')}</small>` : ''}<b>${esc(noEmoji(h))}</b></span>${st === 'done' ? '<i aria-hidden="true">✓</i>' : ''}</button></li>`; }).join('')}</ol>
+${live ? `<button class="knhome" data-a="mapsay" data-say="${esc(sleepsLine(t, i))}"><span aria-hidden="true">${t.days.length - 1 - i > 0 ? '🌙'.repeat(Math.min(t.days.length - 1 - i, 7)) : '🏠'}</span><b>${sleepsLine(t, i)}</b></button>` : ''}
+${(t.passport || {}).map ? `<button class="kidbig ghost" data-a="kidnav" data-v="#/kid/${esc(kid)}/map">🗺️ ${L('ดูแผนที่', 'See the map')}</button>` : ''}`;
+}
+// a stop on the kid map that the family really reached: a check-in on one of its days whose name fits the stop, or — when no check-in of that day names any stop — any check-in of the day
+function mapReal(t, mm) {
+  const norm = (x) => String(x || '').toLowerCase().replace(/[^a-z0-9฀-๿]+/g, ' ').trim(), real = new Map();
+  const names = (st) => [st.en, st.th, st.q].map(norm).filter(Boolean), fits = (st, pl) => { const ks = [pl.key, (pl.name || {}).en, (pl.name || {}).th].map(norm).filter(Boolean); return names(st).some((a) => ks.some((b) => a.includes(b) || b.includes(a))); };
+  (mm.m.days || []).forEach((ks, d) => {
+    const pls = placesOf(t.id, d); if (!pls.length) return;
+    const stops = ks.map((k) => mm.at[k]).filter(Boolean), named = stops.filter((st) => pls.some((pl) => fits(st, pl)));
+    (named.length ? named : stops).forEach((st) => { const mine = named.length ? pls.filter((pl) => fits(st, pl)) : pls; real.set(st.k, (real.get(st.k) || []).concat(mine)); });
+  });
+  return real;
+}
 // the banner on the kid home: where the road goes next
 function questBanner(t, kid) {
   const at = questAt(t, kid), end = at >= t.days.length, i = end ? t.days.length - 1 : at;
@@ -1229,6 +1279,7 @@ ${who ? `<span class="qwho" aria-hidden="true">${who}</span>` : ''}</button>`;
   return `<div class="kidguide">${guideImg(0)}<p>${line}</p></div>
 <ol class="questpath">${towns}</ol>
 ${questPic(t, kid)}
+${isEditor() && questStarted(t, kid) ? `<button class="qreset" id="qreset" data-t="${esc(t.id)}" data-k="${esc(kid)}">🔄 ${L('ผู้ใหญ่: กดค้างเพื่อเริ่มเส้นทางใหม่', 'Grown-ups: press and hold to start the road again')}</button>` : ''}
 ${end ? `<div class="qend"><span aria-hidden="true">🏆</span><b>${L('นักผจญภัยตัวจริง!', 'A true adventurer!')}</b><div class="qgems" aria-hidden="true">${t.days.map((_, i) => QUEST_GEM[i % QUEST_GEM.length]).join(' ')}</div></div>` : ''}`;
 }
 // the treasure picture: one picture of the trip in as many pieces as there are towns; a town's chest uncovers its piece (shown once there is one)
@@ -1248,13 +1299,27 @@ function questLine(t) {
   }).filter(Boolean);
   return rows.length ? `<section class="questline"><div class="part pickh">${L('แผนที่ผจญภัยของเด็กๆ', 'The kids’ adventure map')}</div><ul>${rows.join('')}</ul></section>` : '';
 }
+// the road from the first town again (a test run, a fresh start): this book's missions and chests of that child go, with the easing kept on this device
+function questWipe(t, kid) {
+  entriesOf(t.id).filter((e) => e.kind === 'tick' && e.child === kid && /^quest\./.test(e.first_key || '')).forEach((e) => delEntry(e.id));
+  [...questMem].filter((id) => id.startsWith(`${t.id}.tick.quest.`) && id.endsWith('.' + kid)).forEach((id) => questMem.delete(id));
+  const ease = ls('qease_' + kid) || {}; Object.keys(ease).filter((k) => k.startsWith(t.id + '.')).forEach((k) => delete ease[k]); ls('qease_' + kid, ease);
+  questOpen = null; questNew = null; toast(L('เริ่มเส้นทางใหม่แล้ว', 'The road starts again')); safeRender();
+}
+const questStarted = (t, kid) => t.days.some((_, i) => [0, 1, 2, 3, 'x', 'chest'].some((k) => questGot(t, kid, i, k)));
+// grown-ups start the road again from the map itself: press and hold 1.5 s (as with the star jar) — a child's tap does nothing
+let qresT = 0;
+document.addEventListener('pointerdown', (e) => {
+  const b = e.target.closest && e.target.closest('#qreset'); if (!b || !isEditor()) return;
+  b.classList.add('holding');
+  qresT = setTimeout(() => { const t = trip(b.dataset.t); if (t) { beep('pop'); questWipe(t, b.dataset.k); } }, 1500);
+});
+['pointerup', 'pointercancel', 'pointerleave'].forEach((ev) => document.addEventListener(ev, () => { clearTimeout(qresT); const b = $('#qreset'); if (b) b.classList.remove('holding'); }, true));
 Object.assign(A, {
   questreset(b) {   // a grown-up starts a child's road again: the missions and chests of this book go, the stars and stickers of other things stay
     const t = trip(b.dataset.t), kid = b.dataset.k; if (!t || !isEditor()) return;
     if (!armed(b, L('แตะอีกครั้ง เส้นทางของลูกจะเริ่มใหม่ตั้งแต่เมืองแรก', 'Tap again — the road starts over from the first town'))) return;
-    entriesOf(t.id).filter((e) => e.kind === 'tick' && e.child === kid && /^quest\./.test(e.first_key || '')).forEach((e) => delEntry(e.id));
-    const ease = ls('qease_' + kid) || {}; Object.keys(ease).filter((k) => k.startsWith(t.id + '.')).forEach((k) => delete ease[k]); ls('qease_' + kid, ease);
-    questOpen = null; questNew = null; toast(L('เริ่มเส้นทางใหม่แล้ว', 'The road starts again')); safeRender();
+    questWipe(t, kid);
   },
   questtown(b) {   // a town on the road: one reached opens (to play or play again); one in the clouds only says so
     const kid = kidNow(), t = kidTrip(kid), i = +b.dataset.v; if (!t) return;
@@ -1309,7 +1374,16 @@ const lvOf = (t, kid, game) => LV[game][lvState(t, kid, game).at - 1];
 function lvSet(kid, game, patch) { if (quest && quest.kid === kid && quest.game === game) return;   // a mission never moves the child's own levels
   const all = ls('lv_' + kid) || {}; all[game] = Object.assign({}, all[game], patch); ls('lv_' + kid, all); }
 // a level won: the best moves up, the next one opens
-function lvDone(t, kid, game) { const q = questIn(t, kid, game); if (q) { questMark(t, kid, q.town, q.slot); return; }
+// a game just won: its buttons come up above the kid bar (owner's phone hid them under it), and a mission goes back to the map by itself
+// after five seconds (owner, Nov 2026: "ค้างไว้ 5 วินาที แล้วออกอัตโนมัติ") — unless the child pressed "play again" meanwhile
+let winT = 0, winT2 = 0;
+function winShow(auto, kid) {
+  clearTimeout(winT); clearTimeout(winT2);
+  winT = setTimeout(() => { const w = $('.lvwin'); if (w) w.scrollIntoView({ block: 'center', behavior: reduced() ? 'auto' : 'smooth' }); }, 1500);
+  if (auto) winT2 = setTimeout(() => { if (quest && $('.lvwin.qauto')) { beep('tap'); nav(`#/kid/${kid}/quest`); } }, 6500);   // 1.5 s for the cheer to draw, then five
+}
+function lvDone(t, kid, game) { const q = questIn(t, kid, game); if (q) { questMark(t, kid, q.town, q.slot); winShow(true, kid); return; }
+  winShow(false, kid);
   const s = lvState(t, kid, game); lvSet(kid, game, { at: s.at, best: Math.max(s.best, s.at) }); }
 // the chips of the levels reached (a ⭐ on each one won); none when only level 1 is open
 function lvBar(t, kid, game) {
@@ -1321,10 +1395,10 @@ function lvBar(t, kid, game) {
 // after a win: on to the next level (or "every level done"), and the same one again
 function lvWin(t, kid, game, again) {
   const s = lvState(t, kid, game);
-  if (s.quest) return `<button class="kidbig" data-a="kidnav" data-v="#/kid/${esc(kid)}/quest">🗺️ ${L('กลับไปแผนที่', 'Back to the map')} ›</button>
-<button class="kidbig ghost" data-a="${again[0]}"${again[1] ? ` data-v="${again[1]}"` : ''}>🔁 ${L('เล่นอีกรอบ', 'Play again')}</button>`;
-  return `${s.at < s.n ? `<button class="kidbig" data-a="kglv" data-g="${game}" data-v="${s.at + 1}">⭐ ${L(`ไปด่าน ${s.at + 1}`, `On to level ${s.at + 1}`)} ›</button>` : `<p class="lvall">${L('ผ่านครบทุกด่านแล้ว! เก่งที่สุดเลย 🏆', 'Every level done! You are the best 🏆')}</p>`}
-<button class="kidbig ghost" data-a="${again[0]}"${again[1] ? ` data-v="${again[1]}"` : ''}>🔁 ${L(`เล่นด่าน ${s.at} อีก`, `Level ${s.at} again`)}</button>`;
+  if (s.quest) return `<div class="lvwin qauto"><button class="kidbig" data-a="kidnav" data-v="#/kid/${esc(kid)}/quest">🗺️ ${L('กลับไปแผนที่', 'Back to the map')} ›<i class="qbar5" aria-hidden="true"></i></button>
+<button class="kidbig ghost" data-a="${again[0]}"${again[1] ? ` data-v="${again[1]}"` : ''}>🔁 ${L('เล่นอีกรอบ', 'Play again')}</button></div>`;
+  return `<div class="lvwin">${s.at < s.n ? `<button class="kidbig" data-a="kglv" data-g="${game}" data-v="${s.at + 1}">⭐ ${L(`ไปด่าน ${s.at + 1}`, `On to level ${s.at + 1}`)} ›</button>` : `<p class="lvall">${L('ผ่านครบทุกด่านแล้ว! เก่งที่สุดเลย 🏆', 'Every level done! You are the best 🏆')}</p>`}
+<button class="kidbig ghost" data-a="${again[0]}"${again[1] ? ` data-v="${again[1]}"` : ''}>🔁 ${L(`เล่นด่าน ${s.at} อีก`, `Level ${s.at} again`)}</button></div>`;
 }
 const lvWord = (t, kid, game) => (questIn(t, kid, game) ? L('ภารกิจ', 'the mission') : L(`ด่าน ${lvState(t, kid, game).at}`, `level ${lvState(t, kid, game).at}`));
 const WHERE_E = ['🐱', '🐶', '🐰', '🐻', '🐸', '🐥', '🍎', '🚗', '⭐', '🎈', '🐢', '🦋'];
