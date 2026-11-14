@@ -1,6 +1,6 @@
 // Memory Bookshelf service worker: app shell + all drawn art offline from the first visit; photos cached as you view them
 // (or all at once with "Keep this book offline"). Data (/api) is cached by the app itself (IndexedDB) and written through its queue.
-const V = 'mbs-v208';
+const V = 'mbs-v210';
 const STOCK = 'mbs-stock';   // the stock art library (/stock/, versioned file names): only a stored book's pictures, kept across shell versions too
 const MEDIA = 'mbs-media';   // photos, clips, drawn characters, emoji pictures, drawn book art: kept across shell versions, so a deploy never empties the offline pack
 const SHELL = ['/', '/app.css', '/app-legacy.css', '/core.js', '/views.js', '/sheets.js', '/kid.js', '/manifest.webmanifest', '/icon-192.png',
@@ -15,6 +15,20 @@ const ART = ['/art/day-1.svg', '/art/day-2.svg', '/art/day-3.svg', '/art/day-4.s
   '/art/colour/au/day-9.svg', '/art/colour/au/day-10.svg', '/art/colour/au/day-11.svg', '/art/colour/au/day-12.svg', '/art/colour/au/day-13.svg', '/art/colour/au/day-14.svg', '/art/colour/au/day-15.svg', '/art/colour/au/day-16.svg',
   '/art/guides/pinky.svg', '/art/guides/bao.svg', '/art/guides/roo.svg', '/art/guides/kiki.svg', '/art/crest/hk.svg', '/art/crest/au.svg',
   '/art/kids/mimi.svg', '/art/kids/mimi-full.svg', '/art/kids/mika.svg', '/art/kids/mika-full.svg',
+  '/art/kids/mimi-beach.webp', '/art/kids/mimi-beach-face.webp', '/art/kids/mimi-hike.webp', '/art/kids/mimi-hike-face.webp', '/art/kids/mimi-city.webp', '/art/kids/mimi-city-face.webp',
+  '/art/kids/mimi-park.webp', '/art/kids/mimi-park-face.webp', '/art/kids/mimi-rain.webp', '/art/kids/mimi-rain-face.webp', '/art/kids/mimi-snow.webp', '/art/kids/mimi-snow-face.webp',
+  '/art/kids/mimi-plane.webp', '/art/kids/mimi-plane-face.webp', '/art/kids/mimi-pyjamas.webp', '/art/kids/mimi-pyjamas-face.webp', '/art/kids/mimi-farm.webp', '/art/kids/mimi-farm-face.webp',
+  '/art/kids/mimi-festival.webp', '/art/kids/mimi-festival-face.webp', '/art/kids/mimi-sailor.webp', '/art/kids/mimi-sailor-face.webp', '/art/kids/mimi-train.webp', '/art/kids/mimi-train-face.webp',
+  '/art/kids/mimi-chef.webp', '/art/kids/mimi-chef-face.webp', '/art/kids/mimi-astronaut.webp', '/art/kids/mimi-astronaut-face.webp', '/art/kids/mimi-hero.webp', '/art/kids/mimi-hero-face.webp',
+  '/art/kids/mimi-kangaroo.webp', '/art/kids/mimi-kangaroo-face.webp', '/art/kids/mimi-koala.webp', '/art/kids/mimi-koala-face.webp', '/art/kids/mimi-panda.webp', '/art/kids/mimi-panda-face.webp',
+  '/art/kids/mimi-penguin.webp', '/art/kids/mimi-penguin-face.webp', '/art/kids/mimi-dino.webp', '/art/kids/mimi-dino-face.webp', '/art/kids/mika-beach.webp', '/art/kids/mika-beach-face.webp',
+  '/art/kids/mika-hike.webp', '/art/kids/mika-hike-face.webp', '/art/kids/mika-city.webp', '/art/kids/mika-city-face.webp', '/art/kids/mika-park.webp', '/art/kids/mika-park-face.webp',
+  '/art/kids/mika-rain.webp', '/art/kids/mika-rain-face.webp', '/art/kids/mika-snow.webp', '/art/kids/mika-snow-face.webp', '/art/kids/mika-plane.webp', '/art/kids/mika-plane-face.webp',
+  '/art/kids/mika-pyjamas.webp', '/art/kids/mika-pyjamas-face.webp', '/art/kids/mika-farm.webp', '/art/kids/mika-farm-face.webp', '/art/kids/mika-festival.webp', '/art/kids/mika-festival-face.webp',
+  '/art/kids/mika-sailor.webp', '/art/kids/mika-sailor-face.webp', '/art/kids/mika-train.webp', '/art/kids/mika-train-face.webp', '/art/kids/mika-chef.webp', '/art/kids/mika-chef-face.webp',
+  '/art/kids/mika-astronaut.webp', '/art/kids/mika-astronaut-face.webp', '/art/kids/mika-hero.webp', '/art/kids/mika-hero-face.webp', '/art/kids/mika-kangaroo.webp', '/art/kids/mika-kangaroo-face.webp',
+  '/art/kids/mika-koala.webp', '/art/kids/mika-koala-face.webp', '/art/kids/mika-panda.webp', '/art/kids/mika-panda-face.webp', '/art/kids/mika-penguin.webp', '/art/kids/mika-penguin-face.webp',
+  '/art/kids/mika-dino.webp', '/art/kids/mika-dino-face.webp',
   '/art/kids/mimi-adventure.svg', '/art/kids/mimi-adventure-full.svg', '/art/kids/mika-adventure.svg', '/art/kids/mika-adventure-full.svg',
   '/art/kidui/surprise.webp', '/art/kidui/pack.webp', '/art/kidui/say.webp', '/art/kidui/colour.webp', '/art/kidui/draw.webp', '/art/kidui/match.webp', '/art/kidui/quiz.webp',
   '/art/kidui/animals.webp', '/art/kidui/count.webp', '/art/kidui/bar-home.webp', '/art/kidui/bar-map.webp', '/art/kidui/bar-colour.webp', '/art/kidui/bar-stickers.webp', '/art/kidui/bar-trophies.webp',

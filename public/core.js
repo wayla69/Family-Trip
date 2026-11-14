@@ -456,6 +456,29 @@ const kidBase = (slug) => { const k = kidRows().find((c) => c.slug === slug); re
 // artTrip is the book on screen (set by render), so every drawing of the kids on that page wears the same clothes
 const KID_OUTFITS = ['adventure'];
 let artTrip = null;
+// Mimi and Mika have a wardrobe (owner, Nov 2026: "สร้างชุดให้หลากหลาย … ให้สอดคล้องกับทริป"): twenty painted outfits each in
+// /art/kids/<kid>-<outfit>.webp (the whole figure) + -face.webp (the round badge). They dress for the day on the page (artDay, set by render):
+// the day's title and its timeline headlines (words and their emoji) pick the outfit (WEAR_RULES: a flight first, else the most hits, the first on a tie); with no day, the book's
+// own (theme.outfit "adventure" = hiking, else the city clothes). A child may choose in kid mode (ls wear_<kid>, this phone only).
+const KID_STOCK = ['mimi', 'mika'];
+const KID_WEAR = ['beach', 'hike', 'city', 'park', 'rain', 'snow', 'plane', 'pyjamas', 'farm', 'festival', 'sailor', 'train', 'chef', 'astronaut', 'hero', 'kangaroo', 'koala', 'panda', 'penguin', 'dino'];
+const WEAR_RULES = [['plane', /\b(flights?|fly|flying|airport|plane|take-?off|boarding)\b|✈|🛫|🛬/g], ['snow', /\b(snow\w*|ski\w*|sledg\w*)\b|❄|☃|⛄/g], ['beach', /\b(beach\w*|swim\w*|pool|snorkel\w*|sandcastles?|paddl\w*)\b|🏖|🏝/g],
+  ['sailor', /\b(ferry|ferries|boats?|cruise|sail\w*)\b|⛴|⛵|🚢|🛥/g], ['park', /(theme park|disneyland|ocean park|luna park|carousel|amusement|playground|funfair|🎢|🎡|🎠)/g],
+  ['farm', /\b(zoo|farm|wildlife|koalas?|kangaroos?|aquarium|pandas?|penguins?|horses?)\b/g], ['train', /\b(trains?|railway|trams?)\b|🚂|🚆|🚃|🚄/g],
+  ['festival', /(festival|fireworks|lanterns?|christmas|new year|light show|🎆|🎇|🏮)/g], ['hike', /\b(hik\w*|trails?|mountains?|lookouts?|national park|bushwalk\w*|peak|waterfalls?)\b|🥾|⛰|🏔/g],
+  ['city', /\b(museums?|gallery|galleries|markets?|temples?|city|harbour|shopping)\b/g]];
+let artDay = null;
+const wearAuto = (t, i) => {
+  const d = t && t.days && i != null && i >= 0 ? t.days[i] : null;
+  if (!d) return t && (t.theme || {}).outfit === 'adventure' ? 'hike' : 'city';
+  const txt = [(d.title || {}).en || ''].concat((((d.plan || {}).plan) || []).map((r) => ((r.h || {}).en) || '')).join(' · ').toLowerCase();
+  if (txt.match(WEAR_RULES[0][1])) return 'plane';   // a flight is the day, whatever else it holds
+  let best = '', n = 0;
+  WEAR_RULES.forEach(([w, re]) => { const c = (txt.match(re) || []).length; if (c > n) { n = c; best = w; } });
+  return best || (t && (t.theme || {}).outfit === 'adventure' ? 'hike' : 'city');
+};
+const kidStock = (slug) => { const k = kidRows().find((c) => c.slug === slug); return !!k && KID_STOCK.includes(slug) && !k.avatar && !k.a && !k.look && !k.v; };
+const kidWear = (slug, t) => { const w = ls('wear_' + slug); return KID_WEAR.includes(w) ? w : wearAuto(t || artTrip, artDay); };
 const kidArt = (slug, full, t) => {
   const k = kidRows().find((c) => c.slug === slug); if (!k) return '';
   // a character drawn from the child's photo (server/avatar.js): family only, so never on the sign-in page (the brand says only that one exists)
@@ -466,6 +489,7 @@ const kidArt = (slug, full, t) => {
     return `/media/kid/${encodeURIComponent(slug)}/${full ? 'full' : 'face'}.png?v=${encodeURIComponent(id)}`;
   }
   if (k.a) return '';
+  if (kidStock(slug)) return `/art/kids/${slug}-${kidWear(slug, t)}${full ? '' : '-face'}.webp`;
   if (!(k.look || k.v || slug === 'mimi' || slug === 'mika')) return '';   // v: a look's version (the brand lists only that)
   const o = (((t || artTrip) || {}).theme || {}).outfit;
   return `/art/kids/${slug}${KID_OUTFITS.includes(o) ? '-' + o : ''}${full ? '-full' : ''}.svg${k.v ? '?v=' + k.v : ''}`;

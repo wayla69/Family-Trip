@@ -173,7 +173,9 @@ const colourFill = (t, i, kid) => fieldVal(t, `colour.d${i}`, kid) || '{}';
 /* ---------- finger drawing ("Draw today's best moment") → a private picture, like a photo ---------- */
 const DRAW_W = 1200, DRAW_H = 900, PEN = [10, 24, 48];
 let pen = PEN[1];
-const pad = { key: '', strokes: [], cur: null, gone: null, hide: false, full: false };   // kept while the page re-renders; cleared once saved (gone = the strokes the sponge just wiped, ↶ brings them back; hide = the colour tray tucked away while drawing; full = the paper fills the screen)
+// The paper takes the screen's shape (owner's Samsung, Nov 2026: "พอกดแล้วมันไม่เต็มหน้าจอ ใช้ยาก" — a 4:3 sheet filled a third of a tall phone): going full screen
+// grows the sheet (pad.w × pad.h, never smaller, so what is drawn stays where it is, top left) to the screen's ratio (0.42 … 2.4, a tall phone either way up).
+const pad = { key: '', strokes: [], cur: null, gone: null, hide: false, full: false, w: DRAW_W, h: DRAW_H };   // kept while the page re-renders; cleared once saved (gone = the strokes the sponge just wiped, ↶ brings them back; hide = the colour tray tucked away while drawing; full = the paper fills the screen)
 const isDrawing = (m) => /^dr-/.test(m.id);
 const drawingsOf = (t, kid, day) => mediaOf(t.id, day).filter((m) => m.id.startsWith(`dr-${kid}-`));
 const drawBusy = () => !!pad.cur || (typeof stk !== 'undefined' && !!stk);   // safeRender waits while a finger is drawing or dragging a sticker
@@ -187,13 +189,17 @@ function paint(ctx, st, from) {
 }
 function redraw(cv) {
   const ctx = cv.getContext('2d');
-  ctx.fillStyle = '#fff'; ctx.fillRect(0, 0, DRAW_W, DRAW_H);
+  ctx.fillStyle = '#fff'; ctx.fillRect(0, 0, cv.width, cv.height);
   pad.strokes.forEach((st) => paint(ctx, st));
 }
-function hydrateDraw(root) { const cv = $('#kidcanvas', root || document); if (cv) { if (cv.dataset.key !== pad.key) { pad.key = cv.dataset.key; pad.strokes = []; pad.gone = null; pad.hide = false; pad.full = false; drawWrap(); } redraw(cv); } }
+function hydrateDraw(root) { const cv = $('#kidcanvas', root || document); if (cv) { if (cv.dataset.key !== pad.key) { pad.key = cv.dataset.key; pad.strokes = []; pad.gone = null; pad.hide = false; pad.full = false; pad.w = DRAW_W; pad.h = DRAW_H; } drawWrap(); redraw(cv); } }
+// the sheet for this screen: as wide or as tall as the screen's own shape asks (0.42 … 2.4), never smaller than it already is
+function padGrow() { const ar = Math.min(2.4, Math.max(0.42, innerWidth / Math.max(1, innerHeight))); pad.w = Math.max(pad.w, Math.min(2560, Math.round(DRAW_H * ar))); pad.h = Math.max(pad.h, Math.min(2560, Math.round(DRAW_W / ar))); }   // 2560 = the longest side the server keeps of a picture
 // The drawing page's state lives on its wrapper: .busy tucks the colour tray away, .full lays the paper over the whole screen
-function drawWrap() { const w = $('#drawwrap'); if (!w) return; w.classList.toggle('busy', pad.hide); w.classList.toggle('full', pad.full); const c = $('#drawcol'); if (c) c.style.setProperty('--c', kidColour); const f = $('#drawfull'); if (f) { f.textContent = pad.full ? '✕' : '⛶'; f.setAttribute('aria-label', pad.full ? L('ย่อกระดาษ', 'Smaller paper') : L('กระดาษเต็มจอ', 'Full-screen paper')); } }
-const padPoint = (cv, e) => { const r = cv.getBoundingClientRect(); return [Math.round((e.clientX - r.left) * (DRAW_W / r.width)), Math.round((e.clientY - r.top) * (DRAW_H / r.height))]; };
+function drawWrap() { const w = $('#drawwrap'); if (!w) return; w.classList.toggle('busy', pad.hide); w.classList.toggle('full', pad.full);
+  document.body.classList.toggle('padfull', pad.full);   // app.css: nothing above the sheet may hold a transform or an animation, or "fixed" is measured from it, not from the screen
+  const cv = $('#kidcanvas'); if (cv) { if (cv.width !== pad.w || cv.height !== pad.h) { cv.width = pad.w; cv.height = pad.h; redraw(cv); } w.style.setProperty('--ar', String(pad.w / pad.h)); } const c = $('#drawcol'); if (c) c.style.setProperty('--c', kidColour); const f = $('#drawfull'); if (f) { f.textContent = pad.full ? '✕' : '⛶'; f.setAttribute('aria-label', pad.full ? L('ย่อกระดาษ', 'Smaller paper') : L('กระดาษเต็มจอ', 'Full-screen paper')); } }
+const padPoint = (cv, e) => { const r = cv.getBoundingClientRect(); return [Math.round((e.clientX - r.left) * (cv.width / r.width)), Math.round((e.clientY - r.top) * (cv.height / r.height))]; };
 document.addEventListener('pointerdown', (e) => {
   const cv = e.target.closest && e.target.closest('#kidcanvas'); if (!cv) return;
   e.preventDefault();
@@ -665,10 +671,14 @@ const preTrip = (t) => dayNow(t) < 0 && daysUntil(t) > 0;
 // Thai has no spaces, and the phone's line breaker splits common words ("วัน|นี้"): a word joiner keeps them whole in the kid's big type
 const wj = (s) => String(s).replace(/วันนี้/g, 'วัน\u2060นี้').replace(/กันเลย/g, 'กัน\u2060เลย').replace(/ทะเล/g, 'ทะ\u2060เล');
 // kid mode's picture tiles (owner's set, public/art/kidui): [picture or '' for the emoji, gradient top, gradient bottom]
-const KTILE = { count: ['surprise', '#FFC93C', '#FF9F0A'], pack: ['pack', '#62CCFF', '#1C9BEA'], words: ['say', '#C9A2FF', '#8F5CEB'], colour: ['colour', '#FF93B5', '#F2557F'],
+const KTILE = { wear: ['', '#FFD9A8', '#FF9F6B'], count: ['surprise', '#FFC93C', '#FF9F0A'], pack: ['pack', '#62CCFF', '#1C9BEA'], words: ['say', '#C9A2FF', '#8F5CEB'], colour: ['colour', '#FF93B5', '#F2557F'],
   draw: ['draw', '#AEEA80', '#5EBB3D'], match: ['match', '#B592FF', '#7C4EE5'], quiz: ['quiz', '#86D6FF', '#2BA8F0'], animals: ['animals', '#93DD60', '#3FA82C'], numbers: ['count', '#FFB54A', '#FF8A1F'],
   spot: ['find', '#7FE3D2', '#24B39B'], stamp: ['stamp', '#8FB4FF', '#3F6FE0'], talk: ['talk', '#FFB0C8', '#F06A93'], memory: ['memory', '#FFD36B', '#F2A90C'], photos: ['photos', '#9CD9FF', '#3BA0E8'], mood: ['mood', '#FFC2A0', '#FF8A57'], hideseek: ['spy', '#FFD54A', '#E8A317'], jigsaw: ['jigsaw', '#A8E86A', '#2E9E4F'], bubbles: ['bubbles', '#5BB8FF', '#1E6FE8'], music: ['music', '#FF8FD8', '#7B3FE0'], shadow: ['shadow', '#B8C2D6', '#5B6680'], feed: ['feed', '#FFD98A', '#F29B38'], sort: ['sort', '#9EE6B8', '#3FA0E0'], farm: ['farm', '#B8E986', '#E0893F'], wash: ['wash', '#BDE6F2', '#4FA3D9'], bigsmall: ['bigsmall', '#FFD0A8', '#E06A8F'], maze: ['maze', '#C3F0A0', '#3E9B4F'], where: ['where', '#FFE08A', '#F08C2E'], odd: ['odd', '#D7C6FF', '#7B5BE0'], next: ['next', '#A8E6FF', '#2F86D6'], simon: ['simon', '#FFC9C9', '#E8590C'], dots: ['dots', '#C5CAFF', '#3B3F86'], howmany: ['howmany', '#B2F2BB', '#2B8A3E'], cake: ['cake', '#FFD6E7', '#E64980'], _: ['', '#C9D3E6', '#8C9BB8'] };
 // each game's own backdrop (owner, Nov 2026: "เพิ่มฉากด้วย"): a sky or room in CSS and a drawn strip along the bottom (app.css .sc-<scene>)
+const WEAR_NAME = { beach: { th: 'ชุดไปทะเล', en: 'Beach' }, hike: { th: 'ชุดเดินเขา', en: 'Hiking' }, city: { th: 'ชุดเที่ยวเมือง', en: 'City day' }, park: { th: 'ชุดสวนสนุก', en: 'Theme park' }, rain: { th: 'ชุดกันฝน', en: 'Rainy day' },
+  snow: { th: 'ชุดกันหนาว', en: 'Snow' }, plane: { th: 'ชุดขึ้นเครื่องบิน', en: 'Plane day' }, pyjamas: { th: 'ชุดนอน', en: 'Pyjamas' }, farm: { th: 'ชุดชาวไร่', en: 'Farm' }, festival: { th: 'ชุดงานเทศกาล', en: 'Festival' },
+  sailor: { th: 'ชุดกะลาสี', en: 'Sailor' }, train: { th: 'ชุดคนขับรถไฟ', en: 'Train driver' }, chef: { th: 'ชุดเชฟ', en: 'Chef' }, astronaut: { th: 'ชุดนักบินอวกาศ', en: 'Astronaut' }, hero: { th: 'ชุดฮีโร่', en: 'Superhero' },
+  kangaroo: { th: 'ชุดจิงโจ้', en: 'Kangaroo' }, koala: { th: 'ชุดโคอาล่า', en: 'Koala' }, panda: { th: 'ชุดแพนด้า', en: 'Panda' }, penguin: { th: 'ชุดเพนกวิน', en: 'Penguin' }, dino: { th: 'ชุดไดโนเสาร์', en: 'Dinosaur' } };
 const KSCENE = { quest: 'road', bubbles: 'sea', music: 'stage', shadow: 'night', feed: 'picnic', sort: 'garden', numbers: 'garden', bigsmall: 'garden', farm: 'farm', wash: 'bath', maze: 'farm', where: 'picnic', odd: 'sea', next: 'stage', simon: 'stage', dots: 'night', howmany: 'sea', cake: 'picnic' };
 const KBAR = { home: 'home', map: 'map', colour: 'colour', stamp: 'passport', stickers: 'stickers', trophies: 'trophies' };   // the bar's middle button: colour before the trip, the passport on it
 function viewKid(p) {
@@ -702,7 +712,7 @@ function viewKid(p) {
         kidTalk(t, i) ? [['talk', '💬', L('คุยกัน', 'Let’s talk')]] : [], !pre && i > 0 && memQuiz(t, i - 1) ? [['memory', '🧠', L('จำได้ไหม', 'Remember?')]] : [], kidPhotos(t, i).length ? [['photos', '📸', L('ดูรูป', 'Photos')]] : [], [['match', '🧩', L('จับคู่', 'Match')], ['shadow', '🦒', L('เงาของใคร', 'Shadows')], ['feed', '🍌', L('ป้อนอาหาร', 'Feed me')], ['sort', '🧺', L('แยกสี', 'Colours')], ['farm', '🐮', L('เสียงสัตว์', 'Animal sounds')], ['wash', '🛁', L('อาบน้ำ', 'Bath time')], ['bigsmall', '🐘', L('ใหญ่-เล็ก', 'Big & small')], ['maze', '🧭', L('เขาวงกต', 'Maze')], ['where', '📍', L('ตรงไหนนะ', 'Where is it?')], ['odd', '🤔', L('ไม่เข้าพวก', 'Odd one out')], ['next', '➡️', L('อะไรมาต่อ', 'What’s next?')], ['simon', '🎹', L('จำเสียงตามสี', 'Copy the tune')], ['dots', '✨', L('ลากจุดต่อภาพ', 'Join the dots')], ['howmany', '🧮', L('มีกี่ตัว', 'How many?')], ['cake', '🎂', L('แต่งเค้ก', 'Decorate a cake')]], pre ? [] : [['mood', '😊', L('วันนี้รู้สึก', 'My mood')]],
         wild.length ? [['animals', (t.info.wildLabel || {}).emo || '🦘', t.info.wildLabel ? esc(T(t.info.wildLabel.short)) : L('สัตว์', 'Animals')]] : [], [['numbers', '🔢', L('นับเลข', 'Count')]], dayArt(t, i) || kidPhotoPool(t).length ? [['jigsaw', '🖼️', L('ต่อภาพ', 'Puzzle')]] : []).filter(Boolean);   // map, stickers and trophies live on the kid bar below — not twice
     const until = daysUntil(t);
-    const btns = tiles.map(([v, e, lbl]) => { const k = KTILE[v] || KTILE._; return `<button class="pic" style="--k1:${k[1]};--k2:${k[2]}" data-a="kidnav" data-v="#/kid/${esc(kid)}/${v}" data-say="${esc(lbl)}">${k[0] ? `<img src="/art/kidui/${k[0]}.webp" alt="">` : `<span>${e}</span>`}<b>${lbl}</b></button>`; })
+    const btns = tiles.concat(kidStock(kid) ? [['wear', '', L('แต่งตัว', 'Dress up')]] : []).map(([v, e, lbl]) => { const k = KTILE[v] || KTILE._; return `<button class="pic" style="--k1:${k[1]};--k2:${k[2]}" data-a="kidnav" data-v="#/kid/${esc(kid)}/${v}" data-say="${esc(lbl)}">${v === 'wear' ? `<img src="${kidArt(kid, true)}" alt="">` : k[0] ? `<img src="/art/kidui/${k[0]}.webp" alt="">` : `<span>${e}</span>`}<b>${lbl}</b></button>`; })
       .concat(story ? [`<button class="night" data-a="bedtime" data-v="${esc(story.id)}"><span>${emo('🌙')}</span><b>${L('นิทาน', 'Story')}</b></button>`] : [],
         heartsFor(kid).length && !fresh.length ? [`<button class="love" data-a="kidnav" data-v="#/kid/${esc(kid)}/hearts" data-say="${esc(L('หัวใจจากญาติ', 'Hearts from the family'))}"><span>${emo('💗')}</span><b>${heartsFor(kid).length}</b></button>`] : []);
     const pages = []; for (let k = 0; k < btns.length; k += 4) pages.push(btns.slice(k, k + 4));
@@ -719,6 +729,10 @@ ${stars(kid) ? `<div class="jarrow"><button class="starjar" data-a="kidjar" data
 ${pages.length > 1 ? `<div class="kdots" id="kdots">${pages.map((_, n) => `<i${n === 0 ? ' class="on"' : ''}></i>`).join('')}</div>` : ''}`;
   } else if (view === 'day') {
     body = kidDayHtml(t, kid, guideImg);
+  } else if (view === 'wear' && kidStock(kid)) {   // the wardrobe: the first card follows the trip's day, the others stay on until changed
+    const cur = KID_WEAR.includes(ls('wear_' + kid)) ? ls('wear_' + kid) : '', auto = wearAuto(t, i);
+    body = `<div class="kidguide">${guideImg(0)}<p>${L(`${esc(name)} อยากใส่ชุดไหน?`, `${esc(name)}, what will you wear?`)}</p></div>
+<div class="wears">${[''].concat(KID_WEAR).map((w) => { const lbl = w ? T(WEAR_NAME[w]) : L('ชุดของวันนี้', 'Today’s outfit'); return `<button data-a="kidwear" data-k="${esc(kid)}" data-v="${w}" data-say="${esc(lbl)}" aria-pressed="${w === cur}"${w ? '' : ' class="auto"'}><img src="/art/kids/${esc(kid)}-${w || auto}.webp" alt="" loading="lazy"><b>${esc(lbl)}</b></button>`; }).join('')}</div>`;
   } else if (view === 'quest') {
     body = questHtml(t, kid, guideImg);
   } else if (view === 'colour') {
@@ -729,7 +743,7 @@ ${pages.length > 1 ? `<div class="kdots" id="kdots">${pages.map((_, n) => `<i${n
     const day = pre ? null : i, mine = drawingsOf(t, kid, day === null ? undefined : day).filter((m) => m.day === day);
     body = `<div class="kidguide">${guideImg(1)}<p>${pre ? L(`วาดสิ่งที่อยากเจอที่${esc(T(t.title).split(' · ')[0])}`, `Draw what you want to see in ${esc(T(t.title).split(' · ')[0])}`) : L('วาดสิ่งที่ชอบที่สุดวันนี้!', "Draw today's best moment!")}</p></div>
 <div class="drawwrap${pad.hide ? ' busy' : ''}${pad.full ? ' full' : ''}" id="drawwrap"><div class="drawpad"><canvas id="kidcanvas" width="${DRAW_W}" height="${DRAW_H}" data-key="${esc(`${t.id}:${day}:${kid}`)}" aria-label="${L('กระดานวาดรูป', 'Drawing board')}"></canvas>
-<button class="dpb dpcol" id="drawcol" data-a="kidtray" style="--c:${kidColour}" aria-label="${L('เลือกสี', 'Colours')}">🎨</button><button class="dpb dpfull" id="drawfull" data-a="kidfull" aria-label="${pad.full ? L('ย่อกระดาษ', 'Smaller paper') : L('กระดาษเต็มจอ', 'Full-screen paper')}">${pad.full ? '✕' : '⛶'}</button><button class="dpb dpundo" data-a="kidundo" aria-label="${L('ย้อนกลับ', 'Undo')}">↶</button></div>
+<button class="dpb dpcol" id="drawcol" data-a="kidtray" style="--c:${kidColour}" aria-label="${L('เลือกสี', 'Colours')}">🎨</button><button class="dpb dpfull" id="drawfull" data-a="kidfull" aria-label="${pad.full ? L('ย่อกระดาษ', 'Smaller paper') : L('กระดาษเต็มจอ', 'Full-screen paper')}">${pad.full ? '✕' : '⛶'}</button><button class="dpb dpundo" data-a="kidundo" aria-label="${L('ย้อนกลับ', 'Undo')}">↶</button><button class="dpb dpsave" data-a="kiddrawdone" data-t="${esc(t.id)}" data-d="${day === null ? '' : day}" data-k="${esc(kid)}" aria-label="${L('เก็บรูปนี้', 'Keep it')}">✓</button></div>
 <div class="drawtray" id="drawtray"><div class="palette">${COLOURS.map((c) => `<button data-a="kidcolor" data-v="${c}" style="--c:${c}" aria-pressed="${c === kidColour}" aria-label="${c === '#FFFFFF' ? L('ยางลบ', 'Eraser') : c}"></button>`).join('')}</div>
 <div class="drawtools">${PEN.map((w) => `<button data-a="kidpen" data-v="${w}" aria-pressed="${w === pen}" aria-label="${L('ขนาดพู่กัน', 'Brush')} ${w}"><i style="width:${Math.round(w / 2) + 6}px;height:${Math.round(w / 2) + 6}px"></i></button>`).join('')}
 <button class="dclear" data-a="kidclear" aria-label="${L('ล้างแล้ววาดใหม่', 'Wipe and start again')}">🧽 <b>${L('วาดใหม่', 'Start again')}</b></button></div></div></div>
@@ -987,6 +1001,7 @@ Object.assign(A, {
     if (b.dataset.ok === '1') { beep('chime'); burst(b, ['⭐', '🎉', '✨']); if (b.dataset.last === '1') { celebrate(); star(kidNow(), 2); } sayUi(L(`ใช่แล้ว! ${b.dataset.say} เก่งมาก!`, `Yes! ${b.dataset.say} — well done!`)); memState.got = true; setTimeout(render, 700); }
     else { beep('tap'); b.classList.remove('nope'); void b.offsetWidth; b.classList.add('nope'); sayUi(L('อืม… ลองอีกทีนะ', 'Hmm… try again!')); }
   },
+  kidwear(b) { beep('pop'); ls('wear_' + b.dataset.k, b.dataset.v || ''); render(); sayUi(b.dataset.say); },
   kidpoke(b) { b.classList.remove('wig'); void b.offsetWidth; b.classList.add('wig'); beep('boing'); burst(b, ['💛', '✨']); const k = kidName(b.dataset.k), ph = [L(`สวัสดี ${k}!`, `Hello ${k}!`), L('วันนี้เล่นอะไรดี?', 'What shall we play today?'), L(`${k} เก่งที่สุดเลย!`, `${k}, you are the best!`), L('จั๊กจี้!', 'Tickles!'), L('ไปผจญภัยกันเถอะ!', 'Let’s go on an adventure!')]; sayUi(ph[Math.floor(Math.random() * ph.length)]); },
   kidjar(b) { beep('sparkle'); burst(b, ['⭐', '✨']); const n = stars(b.dataset.k), ps = pets(b.dataset.k); sayUi(L(`มีดาว ${n} ดวงแล้ว${ps.length ? ` และเพื่อน ${ps.length} ตัว` : ''}`, `${n} stars${ps.length ? ` and ${ps.length} friends` : ''} so far`)); },
   xylo(b) { const n = XYLO[+b.dataset.v]; beep('note', n[1]); b.classList.remove('lit'); void b.offsetWidth; b.classList.add('lit'); },
@@ -1046,7 +1061,7 @@ Object.assign(A, {
   // one tap wipes the paper (owner: starting again should be easy); ↶ brings the picture back until the next stroke
   kidclear() { if (!pad.strokes.length) return; pad.gone = pad.strokes; pad.strokes = []; beep('pop'); const cv = $('#kidcanvas'); if (cv) redraw(cv); },
   kidtray() { beep('tap'); pad.hide = !pad.hide; drawWrap(); },
-  kidfull() { beep('tap'); pad.full = !pad.full; drawWrap(); },
+  kidfull() { beep('tap'); pad.full = !pad.full; if (pad.full) padGrow(); drawWrap(); },
   kiddrawdone(b) {
     const cv = $('#kidcanvas'), t = trip(b.dataset.t), kid = b.dataset.k, day = b.dataset.d === '' ? null : +b.dataset.d;
     if (!cv || !pad.strokes.length) { sayUi(L('วาดอะไรสักหน่อยก่อนนะ', 'Draw something first!')); return; }
@@ -1055,10 +1070,11 @@ Object.assign(A, {
       if (!blob) return;
       const id = `dr-${kid}-${Date.now().toString(36)}${Math.random().toString(36).slice(2, 6)}`, at = Date.now();
       const caption = `🖍️ ${kidName(kid)}`;
-      pad.strokes = []; pad.key = ''; pad.gone = null; pad.hide = false; pad.full = false;
+      const pw = pad.w, ph = pad.h;
+      pad.strokes = []; pad.key = ''; pad.gone = null; pad.hide = false; pad.full = false; document.body.classList.remove('padfull');
       beep('chime'); burst(b, ['🖍️', '✨', '⭐']); sayUi(L(`สวยมาก ${kidName(kid)}!`, `Beautiful, ${kidName(kid)}!`));
       await enqueue({ method: 'PUT', url: `/api/b/media/${id}?trip=${encodeURIComponent(t.id)}&day=${day === null ? '' : day}&at=${at}&caption=${encodeURIComponent(caption)}`, blob,
-        local: { coll: 'media', id, row: { trip: t.id, day, caption, highlight: false, at, w: DRAW_W, h: DRAW_H } } });
+        local: { coll: 'media', id, row: { trip: t.id, day, caption, highlight: false, at, w: pw, h: ph } } });
       setTimeout(() => nav(`#/kid/${kid}`), 700);
     }, 'image/jpeg', 0.9);
   },
