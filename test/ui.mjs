@@ -643,6 +643,15 @@ const T = 'hk-macau-2026';
   }
   await page.waitForSelector('[data-a="kglv"].kidbig', { timeout: 5000 }).catch(() => {});
   ok(replays && await page.evaluate(() => sm.done && sm.lv.len === 3) && await page.locator('[data-a="kglv"][data-v="3"].kidbig').count() === 1, 'kid game simon: a wrong note plays the tune again; playing back three 3-note tunes wins level 2 and opens level 3');
+  {   // the same note twice must read as two: the pad goes dark between notes and the row under the pads shows the animal twice
+    await page.click('[data-a="simonagain"]'); await page.waitForSelector('#simtrack');
+    await page.evaluate(() => { sm.seq = [2, 2, 1]; const el = document.querySelector('#simtrack'); el.outerHTML = simTrackHtml(3); });
+    const darks = await page.evaluate(() => new Promise(res => { let seen = 0, wasLit = false; const p = document.querySelector('#simonb .spad[data-v="2"]'); const iv = setInterval(() => { const l = p.classList.contains('lit'); if (wasLit && !l) seen++; wasLit = l; }, 20); document.querySelector('[data-a="simonplay"]').click(); setTimeout(() => { clearInterval(iv); res(seen); }, 1900); }));
+    await page.waitForFunction(() => sm.turn === 'you', null, { timeout: 8000 });
+    await page.click('#simonb .spad[data-v="2"]'); await page.click('#simonb .spad[data-v="2"]');
+    const row = await page.evaluate(() => [...document.querySelectorAll('#simtrack i')].map(i => i.textContent).join('|'));
+    ok(darks >= 2 && /^(.+)\|\1\|$/.test(row), `kid game simon: a repeated note flashes twice and fills two slots (dark gaps ${darks}, row ${row})`);
+  }
   await page.goto(`${BASE}/#/kid/mimi/dots`); await page.waitForSelector('#dotsb svg');
   await page.locator('#dotsb').scrollIntoViewIfNeeded();
   const skip = await page.evaluate(() => { const box = document.querySelector('#dotsb svg').getBoundingClientRect(), q = DOT_SHAPES[dt.order[0]].p[1]; return [box.left + q[0] / 100 * box.width, box.top + q[1] / 100 * box.height]; });

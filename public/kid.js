@@ -689,6 +689,7 @@ ${m.done ? lvWin(t, kid, 'maze', ['mazeagain']) : `<button class="kidbig ghost" 
     const s2 = simonFor(t, kid);
     body = lvBar(t, kid, 'simon') + `<div class="kidguide">${guideImg(0)}<p id="simonsay">${s2.done ? L(`เก่งมาก ${esc(name)}! จำเพลงได้หมดเลย 🎉`, `Brilliant, ${esc(name)}! You remembered every tune 🎉`) : s2.turn === 'you' ? L('ถึงตาหนู! กดตามเพลง', 'Your turn! Play it back') : L('กดฟัง แล้วกดตามนะ', 'Listen, then play it back')}</p></div>
 <div class="simonb${s2.turn === 'listen' ? ' listen' : ''}" id="simonb">${SIMON.map((q, k) => `<button class="spad" style="--pc:${q[0]}" data-a="simonpad" data-v="${k}" aria-label="${esc(L(q[3], q[4]))}"><span>${q[1]}</span></button>`).join('')}</div>
+${s2.done ? '' : simTrackHtml(s2.seq.length)}
 ${s2.n && !s2.done ? `<div class="simstars" aria-hidden="true">${'⭐'.repeat(s2.n)}</div>` : ''}
 ${s2.done ? lvWin(t, kid, 'simon', ['simonagain']) : `<button class="kidbig" data-a="simonplay">▶️ ${L('ฟังเพลง', 'Listen')}</button>`}`;
   } else if (view === 'dots') {   // connect the dots
@@ -1237,15 +1238,25 @@ let sm = null, simT = 0;
 function simonNew(t, kid) { const lv = lvOf(t, kid, 'simon'); sm = { key: `${t.id}.${kid}`, tid: t.id, kid, at: lvState(t, kid, 'simon').at, lv, n: 0, seq: [], pos: 0, turn: 'wait', done: false }; simonRound(); }
 function simonRound() { sm.seq = Array.from({ length: sm.lv.len }, () => Math.floor(Math.random() * SIMON.length)); sm.pos = 0; sm.turn = 'wait'; }
 const simonFor = (t, kid) => { if (!sm || sm.key !== `${t.id}.${kid}` || sm.at !== lvState(t, kid, 'simon').at) simonNew(t, kid); return sm; };
-function simonLight(v) { beep('note', SIMON[v][2]); const p = $(`#simonb .spad[data-v="${v}"]`); if (p) { p.classList.remove('lit'); void p.offsetWidth; p.classList.add('lit'); } }
+// A pad lights for a moment, then goes dark again — so the same note twice reads as two flashes (owner, Nov 2026: a repeated note looked like one), and its animal hops each time
+const simLitT = {};
+function simonLight(v) {
+  beep('note', SIMON[v][2]); const p = $(`#simonb .spad[data-v="${v}"]`); if (!p) return;
+  clearTimeout(simLitT[v]); const was = p.classList.contains('lit'); p.classList.remove('lit');
+  const on = () => { p.classList.add('lit'); simLitT[v] = setTimeout(() => p.classList.remove('lit'), 380); const e = p.querySelector('span'); if (e && e.animate && !matchMedia('(prefers-reduced-motion: reduce)').matches) e.animate([{ transform: 'translateY(0) scale(1)' }, { transform: 'translateY(-14px) scale(1.18)' }, { transform: 'translateY(0) scale(1)' }], { duration: 320, easing: 'ease-out' }); };
+  if (was) simLitT[v] = setTimeout(on, 90); else on();
+}
+// The row under the pads: one slot per note, filled with its animal as it plays (listen) or as the child plays it back — two chicks in a row = the chick twice
+const simTrackHtml = n => `<div class="simtrack" id="simtrack" aria-hidden="true">${'<i></i>'.repeat(n)}</div>`;
+function simonTrack(filled) { const el = $('#simtrack'); if (!el || !sm) return; if (el.children.length !== sm.seq.length) el.outerHTML = simTrackHtml(sm.seq.length); [...$('#simtrack').children].forEach((c, k) => { const v = filled[k]; const html = v == null ? '' : SIMON[v][1]; if (c.innerHTML !== html) { c.innerHTML = html; c.className = v == null ? '' : 'on'; c.style.setProperty('--pc', v == null ? '' : SIMON[v][0]); } }); }
 function simonSay() { const el = $('#simonsay'), b = $('#simonb'); if (b) b.classList.toggle('listen', sm.turn === 'listen'); if (el) el.textContent = sm.turn === 'listen' ? L('ฟังนะ…', 'Listen…') : sm.turn === 'you' ? L('ถึงตาหนู! กดตามเพลง', 'Your turn! Play it back') : L('กดฟัง แล้วกดตามนะ', 'Listen, then play it back'); }
 function simonPlay() {
   clearTimeout(simT); if (!sm || sm.done) return;
-  sm.turn = 'listen'; sm.pos = 0; simonSay(); let k = 0;
+  sm.turn = 'listen'; sm.pos = 0; simonSay(); simonTrack([]); let k = 0;
   const step = () => {
     if (!$('#simonb') || !sm) { if (sm) sm.turn = 'wait'; return; }   // left the game: stop
-    if (k >= sm.seq.length) { sm.turn = 'you'; simonSay(); return; }
-    simonLight(sm.seq[k++]); simT = setTimeout(step, 680);
+    if (k >= sm.seq.length) { simT = setTimeout(() => { if (!sm || sm.turn !== 'listen') return; sm.turn = 'you'; simonSay(); simonTrack([]); }, 500); return; }
+    simonLight(sm.seq[k]); k++; simonTrack(sm.seq.slice(0, k)); simT = setTimeout(step, 760);
   };
   simT = setTimeout(step, 450);
 }
@@ -1311,7 +1322,7 @@ Object.assign(A, {
     simonLight(v);
     if (sm.turn !== 'you') return;   // between tunes the pads are just an instrument
     if (v !== sm.seq[sm.pos]) { sm.turn = 'wait'; b.classList.remove('nope'); void b.offsetWidth; b.classList.add('nope'); sayUi(L('อุ๊ย ฟังอีกทีนะ', 'Oops — listen again!')); setTimeout(simonPlay, 1500); return; }
-    sm.pos++;
+    sm.pos++; simonTrack(sm.seq.slice(0, sm.pos));
     if (sm.pos < sm.seq.length) return;
     sm.turn = 'wait'; sm.n++; burst(b, ['⭐', '🎵']);
     if (sm.n >= sm.lv.r) { sm.done = true; lvDone(trip(sm.tid), sm.kid, 'simon'); setTimeout(() => { beep('fanfare'); celebrate(['🎵', '⭐', '✨']); star(sm.kid, 2); sayUi(L('เก่งมาก! จำเพลงได้หมดเลย', 'Brilliant! You remembered every tune')); safeRender(); }, 500); return; }
