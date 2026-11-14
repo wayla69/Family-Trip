@@ -131,9 +131,9 @@ function packBoxes(root) {
 let packT; addEventListener('resize', () => { clearTimeout(packT); packT = setTimeout(() => packBoxes(document), 150); });
 // A fold opened or closed inside a packed grid (owner, Nov 2026: on a wide screen an opened box left the other column ending far short of it):
 // the boxes are dealt again by their heights as they are now — without anything moving under the finger. One fold: the box that was tapped and
-// every box written before it keep their columns (so it stays exactly where it is on the screen; a first version moved the boxes above it and
-// scrolled the page by the difference, and the tapped box still jumped by 60–500 px where the page could not scroll that far); only the boxes
-// after it change sides, and only for 100 px or more of gain. Several folds at once (`box` null: the "Short · Full" switch, which sits above
+// every box written before it keep their columns, so it stays exactly where it is on the screen (a first version also moved the boxes above
+// it and scrolled the page by the difference: the tapped box still jumped by 60–500 px in the measurements); only the boxes after it change
+// sides, and only for 100 px or more of gain. Several folds at once (`box` null: the "Short · Full" switch, which sits above
 // the grid): a free deal, the best split. A box changes column by being put in its place in the order the boxes were written in; the others
 // are not touched, so the focus and an open list's scroll stay.
 function repack(g, box) {

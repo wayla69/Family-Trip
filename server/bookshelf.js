@@ -728,9 +728,13 @@ function router({ pool, media, A, ai, hooks = {} }) {   // hooks.heart(h): set b
   });
   r.get('/api/b/import', A.requireEditor, async (_req, res, next) => {
     try {
+      // the job is read BEFORE the list: a job that says "done" has already written its draft, so the list read after it holds that draft. Read the
+      // other way round, a job finishing while the list was being read answered "done" with an empty list (CI, Nov 2026) — the page then showed
+      // the import as finished with no draft to open.
+      const jv = jobView();
       const drafts = await q('SELECT id, slug, seed, report, cost, created_by, created_at FROM book_drafts WHERE family_id=$1 ORDER BY created_at DESC', [FAMILY]);
       res.setHeader('Cache-Control', 'no-store');
-      res.json({ job: jobView(), drafts: drafts.map(({ seed, ...d }) => ({ ...d, ...peek(seed), created_at: new Date(d.created_at).getTime() })), on: !!(ai && ai.enabled()) });
+      res.json({ job: jv, drafts: drafts.map(({ seed, ...d }) => ({ ...d, ...peek(seed), created_at: new Date(d.created_at).getTime() })), on: !!(ai && ai.enabled()) });
     } catch (e) { next(e); }
   });
   r.get('/api/b/import/:id', A.requireEditor, async (req, res, next) => {
