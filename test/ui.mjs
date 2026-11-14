@@ -738,7 +738,7 @@ const T = 'hk-macau-2026';
     // the treasure picture has its first piece; the second town hides a secret mission (a game the town does not have), which is never needed for the chest
     const deep = await page.evaluate(() => { const t = kidTrip('mimi'), h = questBonus(t, 'mimi', 1); return { pieces: document.querySelectorAll('.qpicg i.on').length, cells: document.querySelectorAll('.qpicg i').length, hid: document.querySelectorAll('.qtown.open .qhid').length, none: questBonus(t, 'mimi', 0), fresh: !questPlan(t, 'mimi')[1].some((m) => m.game === h.game), boss: document.querySelectorAll('.qtown.open .qboss').length }; });
     ok(deep.pieces === 1 && deep.cells === 6 && deep.hid === 1 && deep.none === null && deep.fresh && deep.boss === 0, `adventure map: the treasure picture shows its first piece of six; town 2 hides a secret mission the town does not have; no boss before the three games (${JSON.stringify(deep)})`);
-    await page.locator('.qpic').scrollIntoViewIfNeeded(); await s.shot('07-quest-picture', false); await page.locator('#qt1').scrollIntoViewIfNeeded();
+    await page.evaluate(() => document.querySelector('.qpic').scrollIntoView({ block: 'center' })); await s.shot('07-quest-picture', false); await page.evaluate(() => document.querySelector('#qt1').scrollIntoView({ block: 'start' }));   // scrolled inside the page in one step: a locator held across the redraw that follows a sync was detached on CI
     await s.shot('07-quest-town2', false);
     // a mission left unfinished twice comes back a level easier
     const lvA = await page.evaluate(() => questPlan(kidTrip('mimi'), 'mimi')[1][0].lv);
@@ -1546,7 +1546,7 @@ const T = 'hk-macau-2026';
   // the parents' line on the book's menu, and a fresh start behind two taps
   await page.goto(`${BASE}/#/t/big-hop-2027`); await page.waitForSelector('.questline');
   const pl = await page.evaluate(() => ({ rows: document.querySelectorAll('.questline li').length, text: document.querySelector('.questline li').textContent.replace(/\s+/g, ' ') }));
-  await page.locator('.questline').scrollIntoViewIfNeeded(); await page.waitForTimeout(700); await s.shot('04-parents-line', false);
+  await page.evaluate(() => document.querySelector('.questline').scrollIntoView({ block: 'center' })); await page.waitForTimeout(700); await s.shot('04-parents-line', false);
   await page.click('.questline [data-a="questreset"]');
   const still = await page.evaluate(() => questAt(trip('big-hop-2027'), 'mimi'));
   await page.click('.questline [data-a="questreset"]');
