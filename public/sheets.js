@@ -1112,6 +1112,9 @@ async function refresh() {
   const c = await idb.get('state');
   if (c && c.etag) {
     S = c; overlay();
+    // on the trip the app opens on Today (owner, Nov 2026: easy to use while travelling): a parent's phone that already holds the book,
+    // opened from its icon (no page asked for) while a trip is on, goes straight to the day's page — the shelf is the top bar's back, twice
+    try { const live = !location.hash && isEditor() && !ls('kidmode') && trips().find((t) => dayNow(t) >= 0); if (live) history.replaceState(null, '', `#/t/${encodeURIComponent(live.id)}/today`); } catch (e) { /* the shelf it is */ }
     render();
     load().then((r) => { if (r !== 'same') safeRender(); });   // new data, signed out, or offline (load sets the banner)
   } else { await load(); render(); }

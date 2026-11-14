@@ -580,7 +580,7 @@ const T = 'hk-macau-2026';
   await page.clock.setFixedTime(new Date('2026-12-06T12:00:00+08:00'));   // day 2 of the Hong Kong trip (timers keep running)
   await page.goto(`${BASE}/#/t/${T}/today`); await page.waitForSelector('.day.today');
   ok(/Disneyland/.test(await page.textContent('.day.today h3')) && await page.locator('.daystrip a[aria-current="true"] .today').count() === 1 && await page.locator('.daystrip a').nth(1).getAttribute('aria-current') === 'true'
-    && await page.locator('.day.today .tag').count() === 1 && await page.locator('.call.info').count() === 0 && await page.locator('.quick a[href$="/log/1"]').count() === 1 && await page.locator('details.dmore').count() === 0 && await page.locator('details.bag[open]').count() === 1 && await page.locator('.mission').count() === 1, 'HK on day 2: Today opens Disneyland day by itself, marked “Today” in the strip, no countdown banner, Record goes to day 2');
+    && await page.locator('.day.today .tag').count() === 1 && await page.locator('.call.info').count() === 0 && await page.locator('nav.bar a[href$="/log/1"]').count() === 1 && await page.locator('.quick a[href*="/log/"]').count() === 0 && await page.locator('details.dmore').count() === 0 && await page.locator('details.bag[open]').count() === 1 && await page.locator('.mission').count() === 1, 'HK on day 2: Today opens Disneyland day by itself, marked “Today” in the strip, no countdown banner, Record goes to day 2');
   await page.goto(`${BASE}/#/t/${T}`); await page.waitForSelector('.hubgrid');
   ok(/(Day 2 of 6|วันที่ 2)/.test(await page.textContent('.tile.today')), 'HK on day 2: the menu’s Today tile names day 2');
   await page.goto(`${BASE}/#/passport/mimi/${T}`); await page.waitForSelector('.kidgo');
@@ -1048,7 +1048,7 @@ const T = 'hk-macau-2026';
   await page.waitForSelector('.pp .advc');
   ok(page.url().includes('#/passport/mimi') && await page.locator('#m1 .colsvg.sm svg').count() === 1, 'holding the lock leaves kid mode; the passport shows the colouring');
   ok(await page.locator('.mapsec .tmap .pin').count() === 7 && await page.locator('.stkpage #stkboard .stk.on').count() === 1 && await page.locator('.stkpage #stktray').count() === 0, 'passport: the map, and the sticker page (read-only) Mimi made');
-  await page.goto(BASE + '/'); await page.waitForSelector('.shelf');
+  await page.goto(BASE + '/#/'); await page.waitForSelector('.shelf');
   ok(await page.locator('.ppmini .ppc').count() === 2, 'shelf: passport covers for both kids');
   ok(/1 (รีวิว|review)/.test(await page.textContent('a.nbcard')), 'shelf: travel notebook card counts the review');
   // backup: never done on this phone → the card nags; one tap downloads the full zip, then it reads up to date
@@ -1063,7 +1063,7 @@ const T = 'hk-macau-2026';
   ok(await page.locator('.nbrow').count() === 1 && (await page.textContent('.nbrow')).includes('★★★★☆') && /เด็กนอนดี|kids slept well/.test(await page.textContent('.nbsum')), 'notebook page: the stay with its stars; "what worked" lists the tag');
   ok(await s.noHScroll(), 'notebook page fits the phone');
   await s.shot('13-notebook');
-  await page.goto(BASE + '/'); await page.waitForSelector('.shelf');
+  await page.goto(BASE + '/#/'); await page.waitForSelector('.shelf');
   ok(!(await page.evaluate(() => heroHtml() !== '')) || await page.locator('.hero .cast .who').count() === 2, 'shelf: Mimi and Mika stand in the hero as characters');
   ok(await page.locator(`.spine[href="#/t/${T}"] .polas img`).count() >= 1 && await page.locator('.spine .arts .art').count() >= 1, 'shelf: book with photos shows them, the other shows its day art');
   ok(await page.evaluate(() => (heroHtml() !== '') === !!document.querySelector('.hero')), 'shelf: next-adventure hero while a trip is ahead or on');
@@ -1204,7 +1204,7 @@ const T = 'hk-macau-2026';
   ok(pw.gap < 520, `wide passport: the two columns end close together (${pw.gap}px apart), no big hole beside the cover`);
   ok(pw.cols >= 2 && pw.st >= 56 && pw.st <= 90, `wide: passport pages side by side (${pw.cols} cols), stamps ${Math.round(pw.st)}px`);
   await s.shot('11-passport-wide');
-  await s.page.goto(BASE + '/'); await s.page.waitForSelector('.shelf');
+  await s.page.goto(BASE + '/#/'); await s.page.waitForSelector('.shelf');
   await s.shot('12-shelf-wide');
   await s.ctx.close();
   for (const w of [320, 375]) {
@@ -1438,7 +1438,7 @@ const T = 'hk-macau-2026';
   await page.goto(`${BASE}/#/t/big-hop-2027`); await page.waitForSelector('.hubgrid');
   ok(await page.locator('.tile.today.hi').count() === 1 && (await page.textContent('.tile.today')).includes('Day 2 of 16') && (await page.textContent('.tile[href$="/stays"]')).includes('By the Bay'), 'menu on the trip: today tile highlighted with the day, stays tile names tonight');
   await page.goto(`${BASE}/#/t/big-hop-2027/today/full`); await page.waitForSelector('.day.today');
-  ok((await page.textContent('.day.today h3')).includes('Grand Pacific') && await page.locator('.quick a[href*="/log/1"]').count() === 1 && await page.locator('.quick a[href*="maps/dir"]').count() === 1 && await page.locator('.dayplan[open] .picks .pk').count() === 3, "today page on the trip: day 2, record + route buttons, the plan open with its picks");
+  ok((await page.textContent('.day.today h3')).includes('Grand Pacific') && await page.locator('nav.bar a[href*="/log/1"]').count() === 1 && await page.locator('.quick a[href*="maps/dir"]').count() === 1 && await page.locator('.dayplan[open] .picks .pk').count() === 3, "today page on the trip: day 2, the route button (record is on the bar), the plan open with its picks");
   { // the Australia memory book prints too: every section, a passport spread per child with all 16 stamp slots, and a real PDF
     await page.goto(`${BASE}/#/print/big-hop-2027`); await page.waitForSelector('.pg.back');
     const pgs = await page.locator('.pg').evaluateAll((els) => els.map((e) => e.className.replace('pg ', '').split(' ')[0]));
@@ -1963,6 +1963,48 @@ const T = 'hk-macau-2026';
   await s.page.goto(`${BASE}/#/kid/mimi`); await s.page.waitForSelector('.kidhello');
   ok(/อีก \d+ วัน เราจะไปฮ่องกง–มาเก๊ากัน!/.test(await s.page.textContent('.kidhello')), `kid mode countdown: a Thai sentence for a small child, the book's Thai name, no English (${(await s.page.textContent('.kidhello')).trim().slice(0, 40)})`);
   await s.page.evaluate(() => { ls('kidmode', null); ls('lang', null); });
+  await s.ctx.close();
+}
+// ---------- a quick sign-in while the app's first ask is still on its way ----------
+{
+  const s = await session('slow-boot'); const { page } = s; let first = true;
+  await page.route('**/api/b/state*', async (route) => {   // the boot's own ask (no session yet) answers late — after the sign-in has loaded the shelf
+    if (first) { first = false; await new Promise((r) => setTimeout(r, 2500)); return route.fulfill({ status: 401, contentType: 'application/json', body: '{"error":"auth"}' }).catch(() => {}); }
+    return route.continue(); });
+  await page.goto(BASE + '/'); await page.waitForSelector('#lf');
+  await page.fill('#lname', 'Mum'); await page.fill('#lcode', CODE); await page.keyboard.press('Enter'); await page.waitForSelector('.shelf');
+  await page.waitForTimeout(3200);
+  ok(await page.locator('.shelf').count() === 1 && await page.locator('#lf').count() === 0, 'a sign-in quicker than the app\'s first ask keeps the shelf: the late “not signed in” answer does not send the phone back to the sign-in page');
+  await s.ctx.close();
+}
+// ---------- on the trip, a parent's phone: the app opens on Today, and Today opens with what is next ----------
+{
+  const s = await session('trip-today', { width: 412, height: 915 }); const { page } = s;
+  await page.clock.setFixedTime(new Date('2026-12-06T12:00:00+08:00'));   // day 2 of the Hong Kong trip, noon
+  await login(page);
+  ok(!/\/today/.test(page.url()), 'right after signing in the shelf stays (the reminders ask, the books)');
+  await page.goto(BASE + '/'); await page.waitForSelector('.nextc');
+  ok(page.url().endsWith(`#/t/${T}/today`) && await page.locator('.daystrip a[aria-current="true"] .today').count() === 1, `on the trip the app opens on Today when the phone already holds the book and no page was asked for (${page.url()})`);
+  const td = await page.evaluate(() => { const y = (q) => { const e = document.querySelector(q); return e ? e.getBoundingClientRect().top + scrollY : -1; };
+    return { time: document.querySelector('.nextc time').textContent, head: document.querySelector('.nextc .nt b').textContent, then: (document.querySelector('.nextc .nt small') || {}).textContent || '', next: y('.nextc'), facts: y('.dfacts'), quick: y('.row.quick'), tl: y('#tlbox'), bag: y('details.bag'), mission: y('.call.mission'), ask: y('.ask'),
+      rec: document.querySelectorAll('.row.quick a[href*="/log/"], .row.quick a[href*="/eat"]').length, h: document.querySelector('.nextc').getBoundingClientRect().height, qh: Math.min(...[...document.querySelectorAll('.row.quick .qlink')].map((a) => a.getBoundingClientRect().height)), rows: Math.min(...[...document.querySelectorAll('#tlbox li > div[role=button]')].map((a) => a.getBoundingClientRect().height)) }; });
+  await s.shot('01-today-next', false);
+  await page.click('.nextc'); await page.waitForFunction(() => Math.abs(document.querySelector('#tlbox').getBoundingClientRect().top) < 130);
+  await page.clock.setFixedTime(new Date('2026-12-06T22:30:00+08:00')); await page.evaluate(() => render());
+  const late = await page.evaluate(() => ({ done: document.querySelectorAll('a.nextc.done[href$="/log/1"]').length, past: document.querySelectorAll('#tlbox li.past').length, next: document.querySelectorAll('#tlbox li.next').length }));
+  ok(td.time === '12:45' && /Sit-down show/.test(td.head) && /14:30/.test(td.then) && td.next > 0 && td.next < td.facts && td.facts < td.quick && td.quick < td.tl && td.tl < td.bag && td.bag < td.mission && (td.ask < 0 || td.mission < td.ask) && td.rec === 0 && td.h >= 60 && td.qh >= 44 && td.rows >= 44
+    && late.done === 1 && late.past === 9 && late.next === 0 && await s.noHScroll(),
+    `Today on the trip: the next step leads (12:00 → 12:45, then 14:30), then the day's facts, the two navigate pills, the timeline, the bag, the kids' mission, the helper last; nothing repeats the bar; after the last step the card leads to tonight's record (${JSON.stringify({ td, late })})`);
+  await page.goto(BASE + '/#/'); await page.waitForSelector('.shelf');
+  ok(await page.locator('.spine:not(.add)').count() >= 2, 'the shelf is still one step away (asked for by name)');
+  await page.clock.setFixedTime(new Date('2026-11-20T12:00:00+08:00')); await page.goto(BASE + '/'); await page.waitForSelector('.shelf');
+  ok(!/\/today/.test(page.url()), 'before the trip the app opens on the shelf as always');
+  await page.goto(`${BASE}/#/t/${T}/today`); await page.waitForSelector('#tlbox');
+  ok(await page.locator('.nextc').count() === 0 && await page.evaluate(() => document.querySelector('#tlbox').getBoundingClientRect().top < document.querySelector('details.bag').getBoundingClientRect().top), 'before the trip: no “next” card, the timeline still comes before the bag');
+  await page.goto(`${BASE}/#/t/big-hop-2027/today/2`); await page.waitForSelector('#tlbox');
+  await page.evaluate(() => { lang = 'en'; render(); });
+  const words = await page.evaluate(() => [...document.querySelectorAll('#tlbox time')].map((x) => x.textContent));
+  ok(words.includes('3 am') && !words.some((w) => /[\u0E00-\u0E7F]/.test(w)), `a time written in words reads in the page's language (${words.join(' ')})`);
   await s.ctx.close();
 }
 await browser.close();
