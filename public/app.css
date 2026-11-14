@@ -2880,3 +2880,4 @@ section.pg .dstamps.pst.c3 b,section.pg .dstamps.pst.c4 b{font-size:16px}section
 .hubrow>.ic{flex:none;width:18px;height:18px;color:var(--muted)}
 .hubrow.warn{border-color:color-mix(in srgb,var(--hot) 45%,transparent);background:color-mix(in srgb,var(--hot) 6%,var(--card))}
 .hubrow.warn small{color:color-mix(in srgb,var(--hot) 70%,var(--ink));font-weight:600}
+.learnlink.firstsgo .e{flex:none;width:30px;height:30px;display:grid;place-items:center}.learnlink.firstsgo .e img{width:30px;height:30px;object-fit:contain}.learnlink.firstsgo{margin:16px 0}

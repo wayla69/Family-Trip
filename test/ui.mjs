@@ -96,7 +96,7 @@ const T = 'hk-macau-2026';
 
   await page.click(`.spine[href="#/t/${T}"]`); await page.waitForSelector('.hubgrid');
   // the book opens on its menu: a tile per topic, today first, the detail one tap away
-  ok(await page.locator('.hubgrid .tile').count() >= 11 && await page.locator('.hubgrid .tile.today').count() === 1 && /อีก|to go/.test(await page.textContent('.tile.today')), 'book menu: topic tiles, today on top with the countdown');
+  ok(await page.locator('.hubgrid .tile').count() >= 8 && await page.locator('.hubgrid .tile.today').count() === 1 && /อีก|to go/.test(await page.textContent('.tile.today')), 'book menu: topic tiles, today on top with the countdown');
   // the tiles sit in three named groups; before the trip "get ready" leads, and every tile is in exactly one group
   ok(await page.locator('.hubpart').count() === 3 && /ready|เตรียม/.test(await page.locator('.hubpart').first().textContent()) && await page.locator('.hubpart + .hubgrid').count() === 3 && await page.locator('.hubgrid.lead .tile').count() === 1, 'book menu: three named groups, "get ready" first before the trip');
   { // a fresh phone: the record page shows tonight's three (photos, words, moods) and "day done", the rest folded under "more"
@@ -109,9 +109,9 @@ const T = 'hk-macau-2026';
     ok(await f.page.locator('#favtext').isVisible() && await f.page.evaluate(() => localStorage.getItem('mbs_logall') === '1'), 'record page: "keep open" shows every box and is remembered on this phone');
     await f.ctx.close();
   }
-  ok(await page.locator('.tile[href$="/eat"]').count() === 1 && await page.locator('.tile[href$="/sos"]').count() === 1 && await page.locator('.tile[href$="/stays"]').count() === 1 && await page.locator('.tile.kid, .tile.shelfgo, .tile.t-offline').count() === 0
+  ok(await page.locator('.tile[href$="/eat"], .tile[href*="/log/"], .tile[href$="/firsts"]').count() === 0 && await page.locator('nav.bar a[href$="/eat"]').count() === 1 && await page.locator('.tile[href$="/sos"]').count() === 1 && await page.locator('.tile[href$="/stays"]').count() === 1 && await page.locator('.tile.kid, .tile.shelfgo, .tile.t-offline').count() === 0
     && await page.locator('.hubrow.t-offline[href$="/offline"]').count() === 1 && await page.locator('.hubrows .hubrow.shelfgo[href="#/"]').count() === 1 && await page.$$eval('.hubrow', (rs) => rs.every((r) => r.getBoundingClientRect().height >= 44)),
-    'book menu: eat, emergency, stays tiles; keeping the book on the phone and the bookshelf are rows of their own, kid mode lives on the bar only');
+    'book menu: emergency and stays tiles, nothing the bar already carries (record, eat, kid mode) and no firsts tile; keeping the book on the phone and the bookshelf are rows of their own, kid mode lives on the bar only');
   ok(await page.evaluate(() => [...document.querySelectorAll('.hubgrid .tile')].every((t) => t.scrollHeight <= t.clientHeight + 1)), 'book menu: no tile clips its text (the kid-mode button grows like the link tiles)');
   ok(await page.evaluate(() => [...document.querySelectorAll('.hubgrid .tile')].every((t) => getComputedStyle(t).marginTop === '0px' && getComputedStyle(t).marginBottom === '0px')), 'book menu: no tile carries its own margin, so a row lines up (the bookshelf tile used to pick up the shelf page’s 22 px)');
   ok(await page.locator('nav.bar .in > *').count() === 5 && await page.locator('nav.bar a[aria-current=page][href$="/hk-macau-2026"] i.pic img').count() === 1 && await page.locator('nav.bar .in > * i.pic img').count() === 5 && (await page.locator('nav.bar .in > *').first().boundingBox()).height >= 60, 'quick bar: five big stops with their pictures, menu highlighted');
@@ -234,7 +234,7 @@ const T = 'hk-macau-2026';
   await page.goto(`${BASE}/#/t/${T}`); await page.waitForSelector('.tile');
   const hubPics = await page.evaluate(async () => { const t = [...document.querySelectorAll('main .tile')]; const imgs = t.map((x) => x.querySelector('.e.pic img')).filter(Boolean);
     return { tiles: t.length, pics: imgs.length, ok: (await Promise.all(imgs.map((i) => fetch(i.src).then((r) => r.ok)))).every(Boolean) }; });
-  ok(hubPics.tiles >= 12 && hubPics.pics === hubPics.tiles && hubPics.ok, `book menu: all ${hubPics.tiles} cards show a glossy picture, every one loads`);
+  ok(hubPics.tiles >= 8 && hubPics.pics === hubPics.tiles && hubPics.ok, `book menu: all ${hubPics.tiles} cards show a glossy picture, every one loads`);
   // every icon the manifest names exists at its stated size; each shortcut has its own picture; iPhone gets a 180 px icon
   const icons = [...man.icons, ...man.shortcuts.flatMap((s) => s.icons)], sizes = [];
   for (const ic of icons) { const r = await page.request.get(BASE + ic.src); const m = r.ok() ? await sharp(await r.body()).metadata() : {}; sizes.push(`${m.width}x${m.height}` === ic.sizes); }
@@ -1227,8 +1227,9 @@ const T = 'hk-macau-2026';
   await page.goto(`${BASE}/#/passport/mimi`); await page.waitForSelector('.mission');
   ok(await page.locator('button[data-a="tick"]:not([disabled])').count() === 0 && await page.locator('.ppf').count() === 0 && await page.locator('.mission .tick.on').count() >= 1, 'viewer: sees the passport ticks read-only');
   await page.goto(`${BASE}/#/t/${T}`); await page.waitForSelector('.hubgrid');
-  ok(await page.locator('.tile[href*="/log/"], .tile[href$="/offline"], .tile.kid').count() === 0 && await page.locator('.tile[href$="/sos"]').count() === 1, 'viewer menu: no record, offline or kid-mode tiles; emergency numbers stay');
+  ok(await page.locator('.tile[href*="/log/"], .tile[href$="/offline"], .tile.kid').count() === 0 && await page.locator('.tile[href$="/sos"]').count() === 1 && await page.locator('.tile[href$="/eat"]').count() === 1, 'viewer menu: no record, offline or kid-mode tiles; emergency numbers stay, and the eat tile (their bar has no eat button)');
   await page.goto(`${BASE}/#/t/${T}/book`); await page.waitForSelector('#d1');
+  ok(await page.locator(`a.firstsgo[href="#/t/${T}/firsts"]`).count() === 1 && (await page.locator('a.firstsgo').boundingBox()).height >= 44, 'memory book: one row leads to the firsts page (the menu has no firsts tile any more)');
   ok(await page.locator('a[href*="/log/"]').count() === 0, 'viewer: no edit links in the book');
   await page.locator('#d1 .mosaic button').first().click(); await page.waitForSelector('#lb:not([hidden]) img');
   ok(await page.locator('#lb [data-lb="del"]').count() === 0 && await page.locator('#lbcap').count() === 0, 'viewer: lightbox without delete/caption edit');
@@ -1765,7 +1766,7 @@ const T = 'hk-macau-2026';
   await page.goto(`${BASE}/#/t/hk-macau-2026`); await page.waitForSelector('.tilepick');
   ok(await page.locator('.hubgrid.tl-pastel').count() >= 2 && await page.locator('.tilepick button[data-v="pastel"][aria-pressed="true"]').count() === 1, 'menu: pastel tiles by default, the switch at the foot');
   await page.click('.tilepick button[data-v="plain"]'); await page.waitForSelector('.hubgrid.tl-plain');
-  const plainBg = await page.evaluate(() => getComputedStyle(document.querySelector('.hubgrid.tl-plain .tile.t-eat')).backgroundImage);
+  const plainBg = await page.evaluate(() => getComputedStyle(document.querySelector('.hubgrid.tl-plain .tile.t-plan')).backgroundImage);
   ok(plainBg === 'none' && (await apiState(page)).family.tiles === 'plain', 'plain: white tiles (no pastel gradient), saved in the family profile');
   await page.click('.tilepick button[data-v="accent"]'); await page.waitForSelector('.hubgrid.tl-accent');
   ok((await apiState(page)).family.tiles === 'accent', 'the book\'s colour: saved too');
@@ -1809,7 +1810,7 @@ const T = 'hk-macau-2026';
   await page.click('.onbway[data-a="sample"]'); await page.waitForSelector('.hubhead');
   const st1 = await apiState(page), sample = st1.trips.find((t) => t.id === 'sakura-hop-2028');
   ok(page.url().endsWith('#/t/sakura-hop-2028') && sample && sample.source === 'manual' && (sample.theme.children || []).map((k) => k.slug).join() === st1.children.map((k) => k.slug).join() && /Sakura/.test(await page.textContent('.hubhead h1')), 'sample: made on request as an app-made book with the family\'s own children, its menu opens');
-  ok(await page.locator('.tile.t-today, .tile.t-plan, .tile.t-eat, .tile.t-sos').count() >= 3 && await page.locator('.tripdel [data-a="tripdel"]').count() === 1 && await page.locator('.onbway[data-a="sample"], .addway[data-a="sample"]').count() === 0, 'sample: the menu has its tiles and a delete button at the foot; the offer is gone once it exists');
+  ok(await page.locator('.tile.t-today, .tile.t-plan, .tile.t-stays, .tile.t-sos').count() >= 3 && await page.locator('.tripdel [data-a="tripdel"]').count() === 1 && await page.locator('.onbway[data-a="sample"], .addway[data-a="sample"]').count() === 0, 'sample: the menu has its tiles and a delete button at the foot; the offer is gone once it exists');
   await s.shot('06-sample-menu', false);
   await page.goto(`${BASE}/#/t/sakura-hop-2028/today/0`); await page.waitForSelector('.day.today');
   ok(/¥9,000/.test(await page.textContent('main')), 'sample today: a money line written "today ≈" (lower case) shows its total — dayGlance\'s `pre` flag no longer hides the brief() teaser, which crashed the whole page');
