@@ -397,8 +397,11 @@ try {
     // "do it all" on a fresh day: photos → summary → story → questions, one Claude call each, each saved where its own button saves it
     await put('/api/b/entries/q-allday-0001', { trip: T, day: 4, kind: 'quote', child: 'mimi', text: 'ม้าหมุนสีชมพู' });
     await fetch(`${BASE}/api/b/media/ph-all-0001?trip=${T}&day=4`, { method: 'PUT', headers: { 'x-mb': '1', cookie: ck, 'content-type': 'image/jpeg' }, body: await createRequire(import.meta.url)('sharp')({ create: { width: 900, height: 600, channels: 3, background: '#f59e0b' } }).jpeg().toBuffer() });
+    // after a reload the phone draws its stored copy first (this day without the photo just uploaded: three steps), then the fresh state — wait for the
+    // count the check is about, never one look at the first render (CI read "3 steps" here once, Nov 2026)
+    const aiallSays = async (n) => { await pg2.waitForFunction((x) => { const b = document.querySelector('#aiall'); return b && !b.disabled && b.textContent.includes(x); }, String(n), { timeout: 15000 }).catch(() => {}); return (await pg2.textContent('#aiall')).trim(); };
     await pg2.goto(`${BASE}/#/t/${T}/log/4`); await pg2.reload(); await pg2.waitForSelector('#aiall:not([disabled])');
-    ok((await pg2.textContent('#aiall')).includes('4'), 'do it all: the button says it will use 4 Claude calls');
+    { const txt = await aiallSays(4); ok(txt.includes('4'), `do it all: the button says it will use 4 Claude calls (${txt})`); }
     const c0 = calls.length;
     await pg2.click('#aiall');
     await pg2.waitForFunction(() => { const b = document.querySelector('#aiall'); return b && b.disabled && !b.getAttribute('aria-busy') && /All done/.test(b.textContent); }, null, { timeout: 30000 });
@@ -410,7 +413,7 @@ try {
     const sharp2 = createRequire(import.meta.url)('sharp');
     for (let k = 0; k < 13; k++) await fetch(`${BASE}/api/b/media/ph-many-${String(k).padStart(4, '0')}?trip=${T}&day=3&at=${Date.now() - (13 - k) * 60000}`, { method: 'PUT', headers: { 'x-mb': '1', cookie: ck, 'content-type': 'image/jpeg' }, body: await sharp2({ create: { width: 640, height: 480, channels: 3, background: `hsl(${k * 27},70%,55%)` } }).jpeg().toBuffer() });
     await pg2.goto(`${BASE}/#/t/${T}/log/3`); await pg2.reload(); await pg2.waitForSelector('#aiall:not([disabled])');
-    ok((await pg2.textContent('#aiall')).includes('5'), `do it all: 13 unseen photos count as two calls, five in all (${(await pg2.textContent('#aiall')).trim()})`);
+    { const txt = await aiallSays(5); ok(txt.includes('5'), `do it all: 13 unseen photos count as two calls, five in all (${txt})`); }
     const c1 = calls.length;
     await pg2.click('#aiall');
     await pg2.waitForFunction(() => { const b = document.querySelector('#aiall'); return b && b.disabled && !b.getAttribute('aria-busy') && /All done/.test(b.textContent); }, null, { timeout: 40000 });
