@@ -1585,6 +1585,7 @@ nav.bar a,nav.bar button{font-weight:500;font-size:11.5px;letter-spacing:.01em}
 .call.warn .lbl{color:var(--hot)}
 p.money{background:none;border:0;padding:0}p.money b{color:var(--ink)}
 .dayplan .stay b{color:var(--ink)}
+.tips li.tk-local::marker{color:var(--sun)}.tips .tkl{display:block;font-size:var(--fs-4);font-weight:700;letter-spacing:.04em;color:color-mix(in srgb,var(--cb,var(--accent)) 70%,var(--ink));margin:0 0 1px}
 .tips li.tk-warn::marker{color:var(--hot)}.tips li.tk-tip::marker{color:var(--sun)}.tips li.tk-info::marker{color:var(--accent)}
 .kidline b{font-size:var(--fs-4);letter-spacing:.06em;text-transform:uppercase;margin-right:4px}
 /* quick actions: one solid button, the rest quiet links */
@@ -1674,7 +1675,7 @@ button.tile.kid{border:1px solid var(--line);text-align:left;justify-items:start
 .navb{display:inline-grid;place-items:center;width:44px;height:44px;margin:-9px 0;flex:none;border:1px solid var(--rule);border-radius:12px;background:var(--paper);color:var(--accent);text-decoration:none}
 .navb .ic{width:20px;height:20px}.navb:hover{border-color:var(--accent)}
 .dsheet .meal dd small{display:block;color:var(--muted);font-size:13px;margin-top:2px}
-.dsheet .meal dd small.bk{color:var(--ink);opacity:.75}
+.dsheet .meal dd small.bk{color:color-mix(in srgb,var(--ink) 78%,var(--paper))}   /* a colour, never opacity: the backup's navigate pin keeps its full strength */
 .mealplan{margin:6px 0 18px}
 .mday{border-top:1px solid var(--line);padding:8px 0}
 .mday>summary{cursor:pointer;list-style:none;font-size:15px;padding:4px 0}

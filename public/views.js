@@ -114,6 +114,7 @@ function render() {
 function packBoxes(root) {
   root.querySelectorAll('.cgrid, .pp').forEach((g) => {
     const boxes = [...g.querySelectorAll(':scope > section, :scope > .ccol > section')];
+    boxes.forEach((b, i) => { if (b._o === undefined) b._o = i; }); boxes.sort((a, b) => a._o - b._o);   // the order they were written in, however often they are packed again
     g.querySelectorAll(':scope > .ccol').forEach((c) => c.remove()); g.classList.remove('packed'); boxes.forEach((b) => g.append(b));
     if (g.clientWidth < (g.classList.contains('pp') ? 858 : 694) || boxes.length < 2) return;
     const h = boxes.map((b) => b.offsetHeight); let best = null;
@@ -128,7 +129,40 @@ function packBoxes(root) {
   });
 }
 let packT; addEventListener('resize', () => { clearTimeout(packT); packT = setTimeout(() => packBoxes(document), 150); });
-document.addEventListener('toggle', (e) => { if (e.target && e.target.classList && e.target.classList.contains('dmore') && e.target.open) packBoxes(e.target); }, true);   // the day's folded glance: pack once it is open (closed boxes measure 0)
+// A fold opened or closed inside a packed grid (owner, Nov 2026: on a wide screen an opened box left the other column ending far short of it):
+// the boxes are dealt again by their heights as they are now — without anything moving under the finger. One fold: the box that was tapped and
+// every box written before it keep their columns (so it stays exactly where it is on the screen; a first version moved the boxes above it and
+// scrolled the page by the difference, and the tapped box still jumped by 60–500 px where the page could not scroll that far); only the boxes
+// after it change sides, and only for 100 px or more of gain. Several folds at once (`box` null: the "Short · Full" switch, which sits above
+// the grid): a free deal, the best split. A box changes column by being put in its place in the order the boxes were written in; the others
+// are not touched, so the focus and an open list's scroll stay.
+function repack(g, box) {
+  if (!g.classList.contains('packed')) { packBoxes(g.parentNode || document); return; }
+  const cols = [...g.querySelectorAll(':scope > .ccol')], boxes = [...g.querySelectorAll(':scope > .ccol > section')].sort((a, b) => a._o - b._o);
+  const h = boxes.map((b) => b.offsetHeight), all = h.reduce((n, x) => n + x, 0), cur = boxes.map((b) => cols.indexOf(b.parentNode)), k = boxes.indexOf(box);
+  const cost = (side) => { const r = h.reduce((n, x, i) => n + (side(i) ? x : 0), 0); return Math.max(r, all - r); };
+  let best = null;
+  for (let m = 0; m < 1 << boxes.length; m++) {
+    if (m & 1 || cur.some((c, i) => i <= k && (m >> i & 1) !== c)) continue;   // the first box stays on the left; up to the tapped one nothing changes sides
+    const c = cost((i) => m >> i & 1); if (!best || c < best.cost) best = { m, cost: c };
+  }
+  if (!best || cost((i) => cur[i]) - best.cost < (k >= 0 ? 100 : 1)) return;
+  // Chromium keeps its "scroll anchor" (the first box it sees on the screen) still by scrolling the page: when that anchor is a box that changes
+  // column here, the page scrolls with it and the fold just tapped jumps. So the anchoring is off while the boxes move (Safari has none).
+  const root = document.documentElement; root.style.overflowAnchor = 'none';
+  boxes.forEach((b, i) => { const to = cols[best.m >> i & 1]; if (to === b.parentNode) return;
+    to.insertBefore(b, [...to.children].find((x) => x._o > b._o) || null); });
+  void g.offsetHeight; requestAnimationFrame(() => { root.style.overflowAnchor = ''; });
+}
+let packQ = new Map(), packR = 0;   // the folds toggled in this frame, by grid
+document.addEventListener('toggle', (e) => {
+  const d = e.target; if (!d || !d.classList) return;
+  if (d.classList.contains('dmore')) { if (d.open) packBoxes(d); return; }   // the day's folded glance: pack once it is open (closed boxes measure 0)
+  const g = d.closest('.cgrid'); if (!g) return;
+  const box = [...g.querySelectorAll(':scope > .ccol > section, :scope > section')].find((b) => b.contains(d));
+  if (!packQ.has(g)) packQ.set(g, []); packQ.get(g).push(box);
+  if (!packR) packR = requestAnimationFrame(() => { packR = 0; const q = packQ; packQ = new Map(); q.forEach((bs, gr) => { if (gr.isConnected) repack(gr, new Set(bs).size === 1 ? bs[0] : null); }); });
+}, true);
 if (document.fonts) document.fonts.ready.then(() => packBoxes(document));
 const mapLegacy = (id) => { const t = trips().find((x) => x.id === id || x.legacy_id === id); return t && t.id; };
 
@@ -807,16 +841,17 @@ function dayGlance(t, i, pre, split, full) {   // pre (before the trip; never na
   const goSum = [mvFold && L('รายละเอียดการเดินทาง', 'more about getting around'), addr && L('ที่อยู่ที่พัก', 'tonight’s address')].filter(Boolean).join(' · ');
   const goMore = goSum ? more(goSum.charAt(0).toUpperCase() + goSum.slice(1), `${mvFold ? pts(mv, 'tight') : ''}${addr ? stayLine(pl) : ''}`) : '';
   const picked = new Set((pl.picks || []).flatMap((p) => [p.name, p.alt && p.alt.name]).filter(Boolean)), nfood = (pl.food || []).reduce((n, f) => n + f.items.filter((x) => !picked.has(x.name)).length, 0) + eatMore(pl).length;
-  const food = [pl.pick && row(L('ร้านเด็ด', 'Local pick'), esc(T(pl.pick))),
-    ...(pl.picks || []).map((p) => row(`<span class="mtag mk-${mealKind(p)}">${esc(T(p.meal).split(' · ')[0])}</span>${T(p.meal).includes(' · ') ? `<span class="mt">${esc(T(p.meal).split(' · ').slice(1).join(' · '))}</span>` : ''}`, mealDd(p), 'meal'))].filter(Boolean).join('');
+  // the manual's "local tip" of the day (plan.pick) is advice about the day — 16 of the 22 days of the two bundled books say nothing about a place
+  // to eat — so it is not a row of the Meals box (it stood there as "ร้านเด็ด / Local pick"): it leads "Good to know today" under its own name
+  const food = [...(pl.picks || []).map((p) => row(`<span class="mtag mk-${mealKind(p)}">${esc(T(p.meal).split(' · ')[0])}</span>${T(p.meal).includes(' · ') ? `<span class="mt">${esc(T(p.meal).split(' · ').slice(1).join(' · '))}</span>` : ''}`, mealDd(p), 'meal'))].filter(Boolean).join('');
   // the eating part of the manual's day, word for word: what to order at each pick and its backup, the places along the route by stop, the others nearby
   const near = eatMore(pl), foodMore = (pl.picks || []).length ? more(L('ร้านแนะนำสั่งอะไรดี', 'What to order at the picks'), `<ul class="picks">${pl.picks.map(pickHtml).join('')}</ul>`) : '';
   // the long list (the Australia book has 40 places on one day) is its own one-line box near the end, so opening it pushes nothing else down
   const along = nfood ? fbox('sun', 'eat', L('กินตามทางวันนี้', 'Eat along today’s route'), esc(L(`${nfood} ร้าน`, `${nfood} place${nfood === 1 ? '' : 's'}`)), `${(pl.food || []).length ? `<p class="label">${L('เรียงตามจุดที่ผ่าน · ★ = ร้านแนะนำ · กดชื่อเพื่อเปิด Google Maps', 'In the order you pass them · ★ = a pick · tap a name for Google Maps')}</p>${pl.food.map((f) => ((xs) => (xs.length ? `<h5>${esc(T(f.stop))}</h5><ul class="eats">${xs.map(foodHtml).join('')}</ul>` : ''))(f.items.filter((x) => !picked.has(x.name)))).join('')}` : ''}${near.length ? `<h5>${L('ร้านอื่นใกล้ๆ', 'More places to eat nearby')}</h5><ul class="eats">${near.map(eatLi).join('')}</ul>` : ''}`) : '';
   const lk = nl || nq || pl.tale ? infoBlocks(t).meta.learn.findIndex((m) => m.key === 'days') : -1;
-  const live = wxLine(t, i);
+  const live = wxLine(t, i), nknow = tips.length + (pl.pick ? 1 : 0);
   const tl = `${daySeg(full)}${rows.length ? `<section class="cbox c-sky" id="tlbox"><h3 class="ch">${ic('clock')}${L('ไทม์ไลน์', 'Timeline')}</h3><ol class="tl plan brief">${rows.map((r, k) => { const cl = [st[k], full && tlMore(r) ? 'open' : ''].filter(Boolean).join(' '); return `<li${cl ? ` class="${cl}"` : ''}><time>${esc(tlTime(r))}</time><div${tlMore(r) ? ` role="button" tabindex="0" aria-expanded="${!!full}"` : ''}>${st[k] === 'next' ? `<span class="nexttag">${L('ถัดไป', 'Next')}</span> ` : ''}${tlBrief(r)}</div></li>`; }).join('')}</ol></section>` : ''}`;
-  const rest = `${live ? `<p class="wxpre">${ic('weather')} <span class="wxlive">${emoIn(esc(live))}</span></p>` : ''}${pre ? `<details class="dmore"${op}><summary><span><b>${L('รายละเอียดวันนี้', 'The rest of the day')}</b><small>${L('เดินทาง · มื้ออาหาร · แผนสำรอง · เงิน · ควรรู้', 'Getting around · meals · plan B · money · good to know')}</small></span>${ic('chev', 'chv')}</summary>` : ''}<div class="cgrid">${go || goMore ? `<section class="cbox c-ind"><h3 class="ch">${ic('route')}${L('เดินทางและที่พัก', 'Getting around & tonight')}</h3>${go}${goMore}</section>` : ''}${box('sun', 'eat', L('มื้ออาหาร', 'Meals'), food, foodMore)}${pl.planB ? `<section class="cbox c-hot"><h3 class="ch">${ic('shuffle')}${L('แผนสำรอง', 'Plan B')}</h3>${pts(T(pl.planB))}</section>` : ''}${money ? fbox('leaf', 'money', L('เงินวันนี้', 'Money today'), `<span class="num">${esc(mm ? mm[0].replace(/^(?:วันนี้|today)\s*/i, '').trim() : brief(money))}</span>`, moneyHtml(money)) : ''}${tips.length ? fbox('teal', 'learn', L('ควรรู้วันนี้', 'Good to know today'), esc(L(`${tips.length} ข้อ`, `${tips.length} tip${tips.length === 1 ? '' : 's'}`)), `<ul class="tips">${tips.map((x) => `<li${TIPK[x.kind] ? ` class="tk-${x.kind}"` : ''}>${lead(T(x))}</li>`).join('')}</ul>`) : ''}${along}${lk >= 0 ? lbox('rose', 'book', `#/t/${esc(t.id)}/learn/full/${lk}`, L('เรียนรู้ของวันนี้', 'Today’s things to learn'), esc([nl && L(`${nl} เรื่อง`, `${nl} card${nl === 1 ? '' : 's'}`), nq && L(`คำถามในรถ ${nq} ข้อ`, `${nq} car question${nq === 1 ? '' : 's'}`), pl.tale && L('นิทานของไกด์', 'the guide’s story')].filter(Boolean).join(' · '))) : ''}</div><p class="label dfoot"${full ? '' : ' hidden'}>${L('จากคู่มือ · ราคาและเวลาเปิดเช็กซ้ำก่อนไป · เลขจองไม่ได้เก็บที่นี่', 'From the manual · re-check prices and hours before travelling · booking numbers live in the guide app, not here')}</p>${pre ? '</details>' : ''}`;
+  const rest = `${live ? `<p class="wxpre">${ic('weather')} <span class="wxlive">${emoIn(esc(live))}</span></p>` : ''}${pre ? `<details class="dmore"${op}><summary><span><b>${L('รายละเอียดวันนี้', 'The rest of the day')}</b><small>${L('เดินทาง · มื้ออาหาร · แผนสำรอง · เงิน · ควรรู้', 'Getting around · meals · plan B · money · good to know')}</small></span>${ic('chev', 'chv')}</summary>` : ''}<div class="cgrid">${go || goMore ? `<section class="cbox c-ind"><h3 class="ch">${ic('route')}${L('เดินทางและที่พัก', 'Getting around & tonight')}</h3>${go}${goMore}</section>` : ''}${box('sun', 'eat', L('มื้ออาหาร', 'Meals'), food, foodMore)}${pl.planB ? `<section class="cbox c-hot"><h3 class="ch">${ic('shuffle')}${L('แผนสำรอง', 'Plan B')}</h3>${pts(T(pl.planB))}</section>` : ''}${money ? fbox('leaf', 'money', L('เงินวันนี้', 'Money today'), `<span class="num">${esc(mm ? mm[0].replace(/^(?:วันนี้|today)\s*/i, '').trim() : brief(money))}</span>`, moneyHtml(money)) : ''}${nknow ? fbox('teal', 'learn', L('ควรรู้วันนี้', 'Good to know today'), esc(L(`${nknow} ข้อ`, `${nknow} tip${nknow === 1 ? '' : 's'}`)), `<ul class="tips">${pl.pick ? `<li class="tk-local"><b class="tkl">${L('เคล็ดลับคนท้องถิ่น', 'Local tip')}</b>${lead(T(pl.pick))}</li>` : ''}${tips.map((x) => `<li${TIPK[x.kind] ? ` class="tk-${x.kind}"` : ''}>${lead(T(x))}</li>`).join('')}</ul>`) : ''}${along}${lk >= 0 ? lbox('rose', 'book', `#/t/${esc(t.id)}/learn/full/${lk}`, L('เรียนรู้ของวันนี้', 'Today’s things to learn'), esc([nl && L(`${nl} เรื่อง`, `${nl} card${nl === 1 ? '' : 's'}`), nq && L(`คำถามในรถ ${nq} ข้อ`, `${nq} car question${nq === 1 ? '' : 's'}`), pl.tale && L('นิทานของไกด์', 'the guide’s story')].filter(Boolean).join(' · '))) : ''}</div><p class="label dfoot"${full ? '' : ' hidden'}>${L('จากคู่มือ · ราคาและเวลาเปิดเช็กซ้ำก่อนไป · เลขจองไม่ได้เก็บที่นี่', 'From the manual · re-check prices and hours before travelling · booking numbers live in the guide app, not here')}</p>${pre ? '</details>' : ''}`;
   return split ? [tl, rest] : tl + rest;
 }
 // grown-ups switch the trip reminders on per phone (the server pushes 30 min before each timed step of the day);
@@ -878,10 +913,16 @@ function dayBag(t, i) {
     return { k, e, th, en, why, fromPlan: !!r };
   }).filter(Boolean).sort((a, b) => b.fromPlan - a.fromPlan);
 }
+// the bag's count on its one line: what is in so far, never "0/n"
+const bagLabel = (got, n) => (got >= n && n ? L('จัดครบแล้ว ✓', 'All packed ✓') : got ? L(`จัดแล้ว ${got}/${n}`, `${got}/${n} packed`) : L(`${n} อย่าง`, `${n} thing${n === 1 ? '' : 's'}`));
+// Today's bag is the morning's job (owner, Nov 2026: Today on a trip day ran to five screens, the open list of eight things sat between the timeline
+// and "getting around" all day): on the day it is open until everything is ticked or the day is under way — the first step is done and the second
+// has begun (two timed steps behind us) — then it is its one line again, a tap away. A tick counts in place and the last one folds it (sheets.js).
 function bagBlock(t, i) {
   if (!isEditor()) return '';
   const items = dayBag(t, i), ck = ls('ck') || {}, key = (k) => `${t.id}.bag.d${i}.${k}`, got = items.filter((x) => ck[key(x.k)]).length;
-  return `<details class="bag noprint"${dayNow(t) === i && got < items.length ? ' open' : ''}><summary>${emo('🎒')} ${L('กระเป๋าวันนี้', 'Today’s bag')} <span class="label">${got ? L(`จัดแล้ว ${got}/${items.length}`, `${got}/${items.length} packed`) : L(`${items.length} อย่าง`, `${items.length} thing${items.length === 1 ? '' : 's'}`)}</span>${ic('chev', 'chv')}</summary>
+  const under = tlStates(t, i).filter((x) => x === 'past').length >= 2;
+  return `<details class="bag noprint"${dayNow(t) === i && got < items.length && !under ? ' open' : ''}><summary>${emo('🎒')} ${L('กระเป๋าวันนี้', 'Today’s bag')} <span class="label bagn">${bagLabel(got, items.length)}</span>${ic('chev', 'chv')}</summary>
 <ul class="chk bagl">${items.map((x) => `<li><label><input type="checkbox" data-ck="${esc(key(x.k))}"${ck[key(x.k)] ? ' checked' : ''}><span>${emo(x.e)} ${esc(L(x.th, x.en))}<small>${esc(x.why)}</small></span></label></li>`).join('')}</ul>
 <p class="label">${L('จากแผนของวันนี้ในคู่มือ · ติ๊กเก็บไว้ในเครื่องนี้', 'From today’s plan in the manual · ticks stay on this phone')}</p></details>`;
 }
