@@ -2676,3 +2676,54 @@ section.pg .dstamps.pst.c3 b,section.pg .dstamps.pst.c4 b{font-size:16px}section
 .ctray button span{font-size:clamp(34px,6vw,48px);line-height:1}
 @media (prefers-reduced-motion:no-preference){.dotsb .dot.nx circle:not(.dhit){animation:dotpulse 1s ease-in-out infinite}@keyframes dotpulse{50%{r:4.6}}.ctop{animation:ctin .3s ease-out}@keyframes ctin{from{scale:.3}}}
 
+
+/* ---------- the adventure map (kid mode): a road of towns, one per day; three missions and a chest in each ---------- */
+.kidquest{display:grid;grid-template-columns:auto 1fr auto;align-items:center;gap:12px;border:0;border-radius:24px;padding:10px 16px 10px 10px;text-align:left;font:inherit;color:#1F2A3A;background:linear-gradient(135deg,#C9F2D0,#BEE3FF);box-shadow:0 10px 22px -14px #1B6E4B}
+.kidquest .art{width:56px;height:56px;border-radius:50%;background:#fff;box-shadow:0 0 0 3px #fff;object-fit:cover;display:grid;place-items:center;font-size:30px}
+.kidquest b{display:block;font-size:clamp(19px,2.4vw,24px);line-height:1.2}.kidquest small{display:block;font-size:clamp(15px,1.9vw,18px);opacity:.8}
+.kidquest i{font-style:normal;font-size:34px;line-height:1}
+.kidwrap.scene.sc-road{background:linear-gradient(180deg,#BFE6FF 0,#DDF3FF 34%,#E9F7DF 70%,#CDEBB8 100%)}
+.questpath{list-style:none;margin:0;padding:0 0 6px;display:grid;gap:0;position:relative}
+.questpath::before{content:"";position:absolute;left:43px;top:44px;bottom:44px;width:0;border-left:6px dotted rgba(31,42,58,.28)}   /* the road between the towns */
+.qtown{position:relative;padding:8px 0}
+.qhead{position:relative;display:grid;grid-template-columns:auto 1fr auto;align-items:center;gap:14px;width:100%;border:0;background:none;padding:0;font:inherit;color:#1F2A3A;text-align:left;min-height:88px}
+.qart{position:relative;width:88px;height:88px;flex:none;display:grid;place-items:center}
+.qart .art{width:80px;height:80px;border-radius:50%;background:#fff;box-shadow:0 0 0 4px #fff,0 8px 18px -10px rgba(0,0,0,.5);object-fit:cover;display:grid;place-items:center;font-size:42px}
+.qtown.here .qart .art{box-shadow:0 0 0 4px #fff,0 0 0 9px var(--accent),0 8px 18px -10px rgba(0,0,0,.5)}
+.qtown.ahead .qart .art{filter:grayscale(1) opacity(.35)}
+.qcloud{position:absolute;inset:0;display:grid;place-items:center;font-size:64px;line-height:1;pointer-events:none}
+.qgem{position:absolute;right:-6px;bottom:-4px;width:40px;height:40px;border-radius:50%;background:#fff;display:grid;place-items:center;font-size:24px;line-height:1;box-shadow:0 4px 10px -5px rgba(0,0,0,.5)}
+.qname b{display:block;font-size:clamp(20px,2.6vw,26px);line-height:1.2}.qname small{display:block;font-size:clamp(15px,1.9vw,18px);opacity:.75;margin-top:2px}
+.qtown.ahead .qname b{opacity:.55;font-weight:600}
+.qwho{display:flex;align-items:flex-end}.qwho img{height:64px;width:auto}.qwho .qsib{height:44px;opacity:.9;margin-left:-6px}
+.qhead.nope{animation:nope .4s}
+.qbody{margin:6px 0 8px 0;padding:14px;border-radius:26px;background:#FAFDFF;box-shadow:0 12px 26px -18px rgba(0,0,0,.5);display:grid;gap:12px;position:relative}
+.qms{display:grid;grid-template-columns:repeat(3,1fr);gap:10px}
+.qm{position:relative;border:0;border-radius:22px;background:#fff;padding:14px 6px 12px;display:grid;justify-items:center;gap:6px;font:inherit;color:#1F2A3A;box-shadow:inset 0 0 0 3px rgba(31,42,58,.1),0 8px 16px -12px rgba(0,0,0,.45);min-width:0}
+.qm span{font-size:clamp(40px,9vw,60px);line-height:1}.qm b{font-size:clamp(14px,3.4vw,18px);line-height:1.2;text-align:center;overflow-wrap:anywhere}
+.qm.got{background:#FFF6D6;box-shadow:inset 0 0 0 3px #F2B01E,0 8px 16px -12px rgba(0,0,0,.45)}
+.qm i{position:absolute;right:-4px;top:-8px;font-style:normal;font-size:26px;line-height:1}
+.qchest{border:0;border-radius:22px;padding:12px 16px;display:flex;align-items:center;justify-content:center;gap:12px;font:inherit;color:#1F2A3A;background:rgba(31,42,58,.06);box-shadow:inset 0 0 0 3px rgba(31,42,58,.1)}
+.qchest span{font-size:44px;line-height:1;filter:grayscale(.7) opacity(.7)}.qchest b{font-size:clamp(18px,2.3vw,22px);opacity:.7}
+.qchest.ready{background:linear-gradient(135deg,#FFE7A3,#FFC96B);box-shadow:0 10px 22px -12px #B45309}.qchest.ready span{filter:none}.qchest.ready b{opacity:1;font-size:clamp(22px,2.8vw,28px)}
+.qchest.nope{animation:nope .4s}
+.qtreasure{display:grid;grid-template-columns:auto 1fr;align-items:center;gap:14px;padding:12px 14px;border-radius:22px;background:#FFF6D6;box-shadow:inset 0 0 0 3px #F2B01E}
+.qtreasure .gem{font-size:54px;line-height:1}.qtreasure p{margin:0;font-size:clamp(17px,2.2vw,21px);line-height:1.4}.qtreasure small{display:block;font-size:14px;font-weight:700;opacity:.7}
+.qend{display:grid;justify-items:center;gap:6px;padding:18px;border-radius:28px;background:linear-gradient(135deg,#FFE7A3,#FFD1E1);text-align:center}
+.qend>span{font-size:64px;line-height:1}.qend b{font-size:clamp(22px,2.8vw,28px)}.qgems{font-size:28px;line-height:1.5}
+.lvbar.qbar>span{background:#fff;box-shadow:inset 0 0 0 3px var(--accent)}
+@media (prefers-reduced-motion:no-preference){.qchest.ready span{animation:bob 1.6s ease-in-out infinite}.qtreasure.new{animation:gpop .5s}.qtown.here .qme{animation:bob 2.2s ease-in-out infinite}}
+.qboss{position:relative;border:0;border-radius:22px;padding:12px 16px;display:flex;align-items:center;justify-content:center;gap:12px;font:inherit;color:#fff;background:linear-gradient(135deg,#7B4FE0,#E0567F);box-shadow:0 10px 22px -12px #5B2FB0}
+.qboss span{font-size:38px;line-height:1}.qboss b{font-size:clamp(20px,2.6vw,26px)}.qboss em{font-style:normal;font-size:34px;line-height:1;background:rgba(255,255,255,.9);border-radius:50%;width:52px;height:52px;display:grid;place-items:center}
+.qboss i{position:absolute;right:-4px;top:-10px;font-style:normal;font-size:28px;line-height:1}.qboss.got{background:linear-gradient(135deg,#F2B01E,#F08C2E);box-shadow:0 10px 22px -12px #B45309}
+.qhid{position:absolute;right:-6px;top:-30px;width:56px;height:56px;border:0;border-radius:50%;background:none;padding:0;display:grid;place-items:center;z-index:2}
+.qhid span{font-size:38px;line-height:1}.qhid i{position:absolute;right:0;top:0;font-style:normal;font-size:20px;line-height:1}
+.qhid.got{background:#FFF6D6;box-shadow:inset 0 0 0 3px #F2B01E}
+.qpic{display:grid;justify-items:center;gap:10px;padding:16px;border-radius:28px;background:rgba(255,255,255,.86);box-shadow:0 12px 26px -18px rgba(0,0,0,.5)}
+.qpic>b{font-size:clamp(19px,2.4vw,24px)}
+.qpicg{display:grid;grid-template-columns:repeat(var(--c),1fr);gap:3px;width:min(100%,340px);padding:6px;border-radius:20px;background:#F2E3BF;box-shadow:inset 0 0 0 3px #D9BE84}
+.qpicg i{aspect-ratio:1;border-radius:8px;background-color:#fff;display:grid;place-items:center;font-style:normal;font-size:clamp(26px,6vw,40px);line-height:1}
+.qpicg i:not(.on){background:rgba(255,255,255,.55)}
+.qpic.all .qpicg{gap:0;box-shadow:inset 0 0 0 3px #F2B01E,0 0 0 5px #FFE7A3}.qpic.all .qpicg i{border-radius:0}
+.kgch button.hint,.bsrow button.hint,.wcell.hint,.basket.hint{outline:5px dashed #F2B01E;outline-offset:3px}   /* the helping hand after three wrong taps */
+@media (prefers-reduced-motion:no-preference){.qhid:not(.got) span{animation:wiggle 1.4s ease-in-out infinite}.kgch button.hint,.bsrow button.hint,.wcell.hint,.basket.hint{animation:bob 1s ease-in-out infinite}}

@@ -689,6 +689,64 @@ const T = 'hk-macau-2026';
     await page.evaluate((v) => ls('lv_mimi', v), saved || {});
     ok(!bad.length, `kid levels: the last level of every game brings its twist and fits the phone (${bad.join(' | ') || 'all'})`);
   }
+  {   // the adventure map (owner, Nov 2026: the highlight): a road of towns, three missions and a chest in each — one whole town played for real
+    const lv0 = await page.evaluate(() => JSON.stringify(ls('lv_mimi') || {}));
+    await page.goto(`${BASE}/#/kid/mimi`); await page.waitForSelector('.kidquest');
+    await page.click('.kidquest'); await page.waitForSelector('.questpath');
+    const road = await page.evaluate(() => ({ towns: document.querySelectorAll('.qtown').length, ahead: document.querySelectorAll('.qtown.ahead').length, here: document.querySelectorAll('.qtown.here').length, open: document.querySelectorAll('.qtown.open .qm').length, locks: /🔒/.test(document.querySelector('.questpath').textContent), zero: /\b0\/\d/.test(document.querySelector('.questpath').textContent), plan: questPlan(kidTrip('mimi'), 'mimi')[0].map((m) => m.game + m.lv).join(','), last: questPlan(kidTrip('mimi'), 'mimi')[5].map((m) => m.lv).join(','), little: questPlan(kidTrip('mika'), 'mika').map((d) => d[0].lv).join('') }));
+    ok(road.towns === 6 && road.ahead === 5 && road.here === 1 && road.open === 3 && !road.locks && !road.zero && road.plan === 'shadow2,maze2,feed2' && road.last === '10,10,10' && road.little === '123345', `adventure map: six towns, the first open with three missions, the rest in the clouds (no locks, no 0/n); the road climbs 2 → 10, the little one 1 → 5 (${JSON.stringify(road)})`);
+    await page.click('.qtown.ahead .qhead'); await page.click('.qchest');
+    ok(await page.evaluate(() => document.querySelectorAll('.qtown.open').length === 1 && document.querySelector('.qtown.open').id === 'qt0' && !questTownDone(kidTrip('mimi'), 'mimi', 0)), 'adventure map: a town in the clouds does not open, a chest does not open before its three games');
+    ok(await s.noHScroll(), 'adventure map fits the phone'); await s.shot('07-quest', false);
+    const backToMap = async () => { await page.click('.kidbig[data-a="kidnav"][data-v$="/quest"]'); await page.waitForSelector('.questpath'); };
+    const pickGame = async () => {   // shadow / feed: the right picture each round until the game is done
+      for (let n = 0; n < 12 && !(await page.evaluate(() => kg.done)); n++) {
+        await page.waitForFunction(() => kg.done || !kg.got, null, { timeout: 5000 }); if (await page.evaluate(() => kg.done)) break;
+        await page.click(`[data-a="kgpick"][data-v="${await page.evaluate(() => kg.r.want[0])}"]`);
+      }
+      await page.waitForFunction(() => kg.done, null, { timeout: 5000 });
+    };
+    await page.click('.qtown.open .qm >> nth=0'); await page.waitForSelector('.shbig');
+    const inGame = await page.evaluate(() => ({ bar: !!document.querySelector('.lvbar.qbar'), chips: document.querySelectorAll('.lvc').length, at: kg.at, back: document.querySelector('.kidback').dataset.v }));
+    await pickGame(); await page.waitForSelector('.kidbig[data-a="kidnav"][data-v$="/quest"]');
+    ok(inGame.bar && inGame.chips === 0 && inGame.at === 2 && /\/quest$/.test(inGame.back) && await page.locator('[data-a="kglv"]').count() === 0, `adventure map: a mission plays at the road's level with the town in its bar, no level chips, and ends with "back to the map" (${JSON.stringify(inGame)})`);
+    await backToMap();
+    await page.click('.qtown.open .qm >> nth=1'); await page.waitForSelector('#mazeb');
+    await page.evaluate(() => { const n = mz.n, prev = { 0: -1 }, q = [0]; while (q.length) { const c = q.shift(); [c - n, c + n, c - 1, c + 1].forEach((d) => { if (d >= 0 && d < n * n && !(d in prev) && mazeOpen(c, d)) { prev[d] = c; q.push(d); } }); } const route = []; for (let c = n * n - 1; c !== -1; c = prev[c]) route.unshift(c); route.slice(1).forEach((c) => mazeTry(c)); });
+    await page.waitForSelector('.kidbig[data-a="kidnav"][data-v$="/quest"]'); await backToMap();
+    await page.click('.qtown.open .qm >> nth=2'); await page.waitForSelector('.feedpal'); await pickGame(); await page.waitForSelector('.kidbig[data-a="kidnav"][data-v$="/quest"]'); await backToMap();
+    // the boss shows only now: one of the town's games a level up; the chest waits for it; three wrong taps make the right answer glow
+    const bossUp = await page.evaluate(() => ({ boss: document.querySelectorAll('.qtown.open .qboss').length, ready: !!document.querySelector('.qchest.ready'), b: questBoss(kidTrip('mimi'), 'mimi', 0) }));
+    await page.click('.qchest'); await page.click('.qboss'); await page.waitForSelector('.shbig');
+    const wrongs = await page.evaluate(() => kg.r.opts.filter((o) => o !== kg.r.want).map((o) => o[0]));
+    for (let n = 0; n < 3; n++) await page.click(`[data-a="kgpick"][data-v="${wrongs[n % wrongs.length]}"]`);
+    const hint = await page.evaluate(() => ({ at: kg.at, n: document.querySelectorAll('[data-a="kgpick"].hint').length, right: (document.querySelector('[data-a="kgpick"].hint') || { dataset: {} }).dataset.v === kg.r.want[0], crown: /👑/.test(document.querySelector('.qbar').textContent) }));
+    await pickGame(); await page.waitForSelector('.kidbig[data-a="kidnav"][data-v$="/quest"]'); await backToMap();
+    ok(bossUp.boss === 1 && !bossUp.ready && bossUp.b.game === 'shadow' && bossUp.b.lv === 3 && hint.at === 3 && hint.n === 1 && hint.right && hint.crown && !(await page.evaluate(() => questTownDone(kidTrip('mimi'), 'mimi', 0))),
+      `adventure map: the boss comes after the three games (shadows, a level up), the chest waits for it, and three wrong taps make the right answer glow (${JSON.stringify({ bossUp, hint })})`);
+    const before = await page.evaluate(() => ({ got: document.querySelectorAll('.qtown.open .qm.got').length, ready: !!document.querySelector('.qchest.ready'), stars: stars('mimi') }));
+    await page.click('.qchest.ready'); await page.waitForSelector('.qtreasure');
+    await page.waitForFunction(() => queue.length === 0, null, { timeout: 15000 });
+    const stq = (await apiState(page)).entries.filter((e) => /\.tick\.quest\./.test(e.id)).map((e) => `${e.first_key}:${e.child}:${e.day}`).sort().join(' ');
+    const after = await page.evaluate((lv0) => ({ done: questTownDone(kidTrip('mimi'), 'mimi', 0), at: questAt(kidTrip('mimi'), 'mimi'), secret: (document.querySelector('.qtreasure p') || {}).textContent || '', gained: stars('mimi'), next: !!document.querySelector('[data-a="questnext"][data-v="1"]'), lvSame: JSON.stringify(ls('lv_mimi') || {}) === lv0, sticker: stickerSet(kidTrip('mimi'), 'mimi').some((x) => x.k === 'quest.d0.chest' && x.got), tro: trophies(kidTrip('mimi'), 'mimi').some((x) => x[0] === 'quest1' && x[3]) }), lv0);
+    ok(before.got === 3 && before.ready && after.done && after.at === 1 && after.secret.length > 20 && after.gained - before.stars === 3 && after.next && after.lvSame && after.sticker && after.tro
+      && stq === 'quest.d0.0:mimi:null quest.d0.1:mimi:null quest.d0.2:mimi:null quest.d0.3:mimi:null quest.d0.chest:mimi:null', `adventure map: three missions played, the chest opens with the town's secret, three stars, a sticker and a trophy; saved as five ticks; the child's own levels untouched (${JSON.stringify({ before, after, stq })})`);
+    await page.click('[data-a="questnext"]');
+    ok(await page.evaluate(() => document.querySelector('.qtown.open').id === 'qt1' && document.querySelector('#qt1').classList.contains('here') && document.querySelector('#qt0').classList.contains('done') && document.querySelectorAll('.qtown.ahead').length === 4 && !quest), 'adventure map: on to the next town — it is open, the first keeps its treasure, one more cloud has lifted');
+    // the treasure picture has its first piece; the second town hides a secret mission (a game the town does not have), which is never needed for the chest
+    const deep = await page.evaluate(() => { const t = kidTrip('mimi'), h = questBonus(t, 'mimi', 1); return { pieces: document.querySelectorAll('.qpicg i.on').length, cells: document.querySelectorAll('.qpicg i').length, hid: document.querySelectorAll('.qtown.open .qhid').length, none: questBonus(t, 'mimi', 0), fresh: !questPlan(t, 'mimi')[1].some((m) => m.game === h.game), boss: document.querySelectorAll('.qtown.open .qboss').length }; });
+    ok(deep.pieces === 1 && deep.cells === 6 && deep.hid === 1 && deep.none === null && deep.fresh && deep.boss === 0, `adventure map: the treasure picture shows its first piece of six; town 2 hides a secret mission the town does not have; no boss before the three games (${JSON.stringify(deep)})`);
+    await page.locator('.qpic').scrollIntoViewIfNeeded(); await s.shot('07-quest-picture', false); await page.locator('#qt1').scrollIntoViewIfNeeded();
+    await s.shot('07-quest-town2', false);
+    // a mission left unfinished twice comes back a level easier
+    const lvA = await page.evaluate(() => questPlan(kidTrip('mimi'), 'mimi')[1][0].lv);
+    for (let n = 0; n < 2; n++) { await page.click('.qtown.open .qm >> nth=0'); await page.waitForSelector('.lvbar.qbar'); await page.click('.kidback'); await page.waitForSelector('.questpath'); }
+    await page.click('.qtown.open .qm >> nth=0'); await page.waitForSelector('.lvbar.qbar');
+    const lvB = await page.evaluate(() => quest.lv); await page.click('.kidback'); await page.waitForSelector('.questpath');
+    ok(lvA - lvB === 1, `adventure map: a mission left unfinished twice comes back one level easier (${lvA} → ${lvB})`);
+    await page.goto(`${BASE}/#/kid/mimi/shadow`); await page.waitForSelector('.lvbar');
+    ok(await page.evaluate(() => !quest && !document.querySelector('.qbar') && document.querySelectorAll('.lvc').length >= 2), 'adventure map: opening a game from the home tiles is free play again (its own level chips)');
+  }
   await page.goto(`${BASE}/#/kid/mimi/dots`); await page.waitForSelector('#dotsb svg');
   await page.locator('#dotsb').scrollIntoViewIfNeeded();
   const skip = await page.evaluate(() => { const box = document.querySelector('#dotsb svg').getBoundingClientRect(), q = DOT_SHAPES[dt.order[0]].p[1]; return [box.left + q[0] / 100 * box.width, box.top + q[1] / 100 * box.height]; });
