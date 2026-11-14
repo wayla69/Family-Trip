@@ -716,7 +716,13 @@ const T = 'hk-macau-2026';
     await page.waitForSelector('.kidbig[data-a="kidnav"][data-v$="/quest"]'); await backToMap();
     await page.click('.qtown.open .qm >> nth=2'); await page.waitForSelector('.feedpal');
     ok(await page.evaluate(() => { const f = questFoods(kidTrip('mimi')).map((x) => x[0]); return f.length >= 8 && kg.deck.every((x) => f.includes(x[0])) && /^some /.test(kg.deck[0][3]); }), 'adventure map: the feed mission serves the book’s own foods (the dim sum list)');
-    await pickGame(); await page.waitForSelector('.kidbig[data-a="kidnav"][data-v$="/quest"]'); await backToMap();
+    await pickGame(); await page.waitForSelector('.kidbig[data-a="kidnav"][data-v$="/quest"]');
+    {   // a won mission shows its buttons above the kid bar and goes back to the map by itself after five seconds (owner: the buttons hid under the bar on a tall phone)
+      await page.waitForTimeout(1800);
+      const vis = await page.evaluate(() => { const b = document.querySelector('.lvwin .kidbig').getBoundingClientRect(), bar = document.querySelector('.kidbar').getBoundingClientRect(); return { bottom: Math.round(b.bottom), bar: Math.round(bar.top), still: /\/feed$/.test(location.hash) }; });
+      await page.waitForSelector('.questpath', { timeout: 9000 });
+      ok(vis.bottom <= vis.bar && vis.still && await page.evaluate(() => /\/quest$/.test(location.hash) && !quest), `adventure map: a won mission shows "back to the map" above the kid bar and returns to the map by itself after five seconds (${JSON.stringify(vis)})`);
+    }
     // the boss shows only now: one of the town's games a level up; the chest waits for it; three wrong taps make the right answer glow
     const bossUp = await page.evaluate(() => ({ boss: document.querySelectorAll('.qtown.open .qboss').length, ready: !!document.querySelector('.qchest.ready'), b: questBoss(kidTrip('mimi'), 'mimi', 0) }));
     await page.click('.qchest'); await page.click('.qboss'); await page.waitForSelector('.shbig');
@@ -902,6 +908,28 @@ const T = 'hk-macau-2026';
     await page.click('[data-a="mapquest"]'); await page.waitForSelector('.questpath');
     ok(await page.evaluate(() => /\/quest$/.test(location.hash) && !!document.querySelector('.qtown.open')), 'map: the place card leads to the adventure map');
     await page.click('.kidbar button[data-v$="/map"]'); await page.waitForSelector('.tmap .walkers');
+  }
+  {   // kid mode follows the real trip (owner, Nov 2026): the day by the clock on the kid home, and the places really checked in on the kid map
+    await page.goto(`${BASE}/#/kid/mimi`); await page.waitForSelector('#kidnow');
+    const home = await page.evaluate(() => ({ now: document.querySelector('#kidnow b').textContent, lbl: document.querySelector('#kidnow small').textContent, tile: Math.round(document.querySelector('.kidtiles button').getBoundingClientRect().height), raw: /\d\d:\d\d/.test(document.querySelector('#kidnow').textContent) }));
+    await s.shot('09-kid-now', false);
+    await page.click('#kidnow'); await page.waitForSelector('.kday');
+    const day = await page.evaluate(() => ({ rows: document.querySelectorAll('.kdrow').length, done: document.querySelectorAll('.kdrow.done').length, now: document.querySelector('.kdrow.now b').textContent, next: document.querySelector('.kdrow.next b').textContent, home: document.querySelector('.knhome b').textContent, head: document.querySelector('.kidday small').textContent, raw: /\d\d:\d\d/.test(document.querySelector('.kday').textContent) }));
+    await s.shot('09-kid-day', false);
+    await page.clock.setFixedTime(new Date('2026-12-06T07:00:00+08:00')); await page.evaluate(() => render());
+    const early = await page.evaluate(() => ({ now: document.querySelectorAll('.kdrow.now').length, next: document.querySelector('.kdrow.next b').textContent, line: document.querySelector('.kidguide p').textContent }));
+    await page.clock.setFixedTime(new Date('2026-12-06T12:00:00+08:00')); await page.evaluate(() => render());
+    ok(home.now === 'Early lunch, beat the rush' && home.lbl === 'Now' && home.tile >= 120 && !home.raw && day.rows === 9 && day.done === 4 && day.now === home.now && /Sit-down show/.test(day.next) && day.home === '4 more sleeps until home' && /Day 2/.test(day.head) && !day.raw
+      && early.now === 0 && early.next === 'Taxi to Tsuen Wan' && /^Soon/.test(early.line) && await s.noHScroll(),
+      `kid mode follows the clock: the home says what we do now (12:00 → lunch) and keeps its big tiles; "my day" shows the steps done, now and next and the sleeps until home, never a clock time; at 07:00 the taxi is "soon" (${JSON.stringify({ home, day, early })})`);
+    await page.evaluate(async () => { await fetch('/api/b/places', { method: 'PUT', headers: { 'content-type': 'application/json' }, body: JSON.stringify({ trip: 'hk-macau-2026', key: 'Hong Kong Disneyland', day: 1, kind: 'place', name: { en: 'Hong Kong Disneyland', th: 'ฮ่องกงดิสนีย์แลนด์' }, done: true, at: Date.now() }) }); await load(); render(); });
+    await page.click('.kidbar button[data-v$="/map"]'); await page.waitForSelector('.tmap .pin.real');
+    const real = await page.evaluate(() => ({ pins: [...document.querySelectorAll('.tmap .pin.real')].map((p) => p.dataset.v).join(','), flags: document.querySelectorAll('.tmap .pin .flag').length, sticker: stickerSet(kidTrip('mimi'), 'mimi').some((x) => x.k === 'been.disney' && x.got) }));
+    await page.click('.tmap .pin[data-v="disney"]'); await page.waitForSelector('.tmap .pin.here[data-v="disney"]');
+    const went = await page.evaluate(() => ({ list: [...document.querySelectorAll('.mcwent b')].map((b) => b.textContent).join('|'), line: document.querySelector('.kidguide p').textContent }));
+    ok(real.pins === 'disney' && real.flags === 1 && real.sticker && went.list === 'Hong Kong Disneyland', `kid map: a place the parents checked in lights its pin (only that stop of the day), gives a sticker, and the card lists where we really went (${JSON.stringify({ real, went })})`);
+    await page.evaluate(() => document.querySelector('.tmap').scrollIntoView({ block: 'start' })); await s.shot('09-map-real', false);
+    await page.click('.tmap .pin[data-v="taipa"]'); await page.waitForSelector('.tmap .pin.here[data-v="taipa"]');   // back where the checks below expect the children (day 5)
   }
   ok(await s.noHScroll(), 'map + stickers fit the phone');
   await s.shot('12-kid-map', false);
@@ -1570,6 +1598,13 @@ const T = 'hk-macau-2026';
   const gone = (await apiState(page)).entries.filter((e) => /\.tick\.quest\./.test(e.id) && e.trip === 'big-hop-2027').length;
   ok(pl.rows === 1 && /Mimi is in town 2/.test(pl.text) && /1 treasure/.test(pl.text) && still === 1 && gone === 0, `adventure map: the book's menu tells the parents where the child is (only a child who has set off); "start again" takes two taps and clears the road (${JSON.stringify({ pl, still, gone })})`);
   await page.goto(`${BASE}/#/kid/mimi/quest`); await page.waitForSelector('.questpath');
+  const noReset = await page.locator('#qreset').count();   // a road not started has nothing to reset
+  await page.evaluate(() => { const t = kidTrip('mimi'); [0, 1, 2, 3, 'chest'].forEach((k) => questMark(t, 'mimi', 0, k)); render(); });
+  await page.waitForSelector('#qreset'); await page.click('#qreset'); await page.waitForTimeout(300);
+  const tapKeeps = await page.evaluate(() => questAt(kidTrip('mimi'), 'mimi'));   // a tap (a child's) does nothing
+  await page.locator('#qreset').dispatchEvent('pointerdown'); await page.waitForFunction(() => questAt(kidTrip('mimi'), 'mimi') === 0 && !document.querySelector('#qreset'), null, { timeout: 6000 });
+  await page.waitForFunction(() => queue.length === 0, null, { timeout: 15000 });
+  ok(noReset === 0 && tapKeeps === 1 && (await apiState(page)).entries.filter((e) => /\.tick\.quest\./.test(e.id) && e.trip === 'big-hop-2027').length === 0, 'adventure map: grown-ups start the road again from the map itself — press and hold (a tap does nothing); the button is there only once the road has begun');
   await page.evaluate(() => { const t = kidTrip('mimi'); [0, 1, 2, 3, 'chest'].forEach((k) => questMark(t, 'mimi', 0, k)); render(); });
   await page.setViewportSize({ width: 1112, height: 834 }); await page.waitForTimeout(200);
   ok(await s.noHScroll() && await page.evaluate(() => { const r = document.querySelector('.qtown.open .qms').getBoundingClientRect(); return r.width > 500 && r.right <= innerWidth; }), 'adventure map fits the iPad in landscape');
