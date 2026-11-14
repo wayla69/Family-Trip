@@ -451,8 +451,18 @@ const PET_ART = { '🐣': ['chick', 'ลูกเจี๊ยบ', 'A chick'], '
 // sized like the emoji it replaces (1em), so every layout stays; an emoji without a picture (a book's own food) stays an emoji
 const GAME_ART = { '🐑': 'game/sheep', '🐔': 'game/hen', '🐘': 'game/elephant', '🐥': 'game/chick', '🐮': 'game/cow', '🐰': 'game/rabbit', '🐱': 'game/cat', '🐳': 'game/whale', '🐴': 'game/horse', '🐵': 'game/monkey',
   '🐶': 'game/dog', '🐷': 'game/pig', '🐸': 'game/frog', '🐻': 'game/bear', '🐼': 'kidui/pet-panda', '🦆': 'game/duck', '🦛': 'game/hippo',
-  '🍌': 'game/banana', '🍎': 'game/apple', '🥕': 'game/carrot', '🍉': 'game/watermelon', '🍓': 'game/strawberry', '🍇': 'game/grapes', '🌽': 'game/corn', '🍪': 'game/cookie', '🍞': 'game/bread', '🥚': 'game/egg', '🥦': 'game/broccoli', '🧀': 'game/cheese' };
-const gE = (e) => (GAME_ART[e] ? `<img class="ge" src="/art/${GAME_ART[e]}.webp" alt="">` : esc(e));
+  '🍌': 'game/banana', '🍎': 'game/apple', '🥕': 'game/carrot', '🍉': 'game/watermelon', '🍓': 'game/strawberry', '🍇': 'game/grapes', '🌽': 'game/corn', '🍪': 'game/cookie', '🍞': 'game/bread', '🥚': 'game/egg', '🥦': 'game/broccoli', '🧀': 'game/cheese',
+  // set 6: every other thing the games show (shadows, colours, odd one out, patterns, counting, where, the maze, I spy, the cake)
+  '🚗': 'game/car', '🐢': 'kidui/pet-turtle', '🐟': 'game/fish', '🦋': 'kidui/pet-butterfly', '🎈': 'game/balloon', '🍒': 'game/cherries', '🌸': 'game/blossom', '🦀': 'game/crab', '✈': 'game/plane', '⛵': 'game/sailboat',
+  '🐿': 'game/squirrel', '🚲': 'game/bike', '🐞': 'game/ladybird', '🌻': 'game/sunflower', '🥒': 'game/cucumber', '🧢': 'game/cap', '🫐': 'game/blueberries', '👖': 'game/jeans', '🍊': 'game/orange', '🦁': 'kidui/pet-lion',
+  '🍆': 'game/aubergine', '🚀': 'game/rocket', '🦒': 'game/giraffe', '🐌': 'game/snail', '🐓': 'game/rooster', '🎸': 'game/guitar', '🦕': 'game/dinosaur', '🐪': 'game/camel', '🍄': 'game/mushroom', '🦉': 'kidui/pet-owl',
+  '🚒': 'game/fireengine', '🌹': 'game/rose', '🍅': 'game/tomato', '🍋': 'game/lemon', '🍀': 'game/clover', '🌲': 'game/pine', '🍏': 'game/greenapple', '💧': 'game/drop', '🐋': 'game/bluewhale', '🧊': 'game/icecube',
+  '🎃': 'game/pumpkin', '🦊': 'kidui/pet-fox', '🏀': 'game/basketball', '🧡': 'game/orangeheart', '🔮': 'game/crystalball', '☂': 'game/umbrella', '👾': 'game/monster', '💜': 'game/purpleheart', '🟣': 'game/purpleball', '🐭': 'game/mouse',
+  '🐝': 'game/bee', '🦴': 'game/bone', '🐧': 'kidui/pet-penguin', '🌰': 'game/acorn', '🍐': 'game/pear', '🍍': 'game/pineapple', '🥝': 'game/kiwi', '🥔': 'game/potato', '🧅': 'game/onion', '🫑': 'game/pepper',
+  '🥬': 'game/greens', '🐯': 'game/tiger', '🐙': 'game/octopus', '🐬': 'kidui/pet-dolphin', '🐠': 'game/reeffish', '🦈': 'game/shark', '🦑': 'game/squid', '🐡': 'game/pufferfish', '🚌': 'game/bus', '🚂': 'game/train',
+  '🚁': 'game/helicopter', '🚜': 'game/tractor', '🛵': 'game/scooter', '👕': 'game/tshirt', '👗': 'game/dress', '👟': 'game/shoe', '🧦': 'game/socks', '🧤': 'game/mittens', '🧣': 'game/scarf', '👒': 'game/sunhat',
+  '🌙': 'kidui/moon', '🌼': 'game/daisy', '🍦': 'game/icecream', '🍫': 'game/chocolate', '🍬': 'game/sweet', '🍭': 'game/lollipop', '🕯': 'game/candle', '⭐': 'quest/star' };
+const gE = (e) => { const a = GAME_ART[String(e).replace(/\uFE0F/g, '')]; return a ? `<img class="ge" src="/art/${a}.webp" alt="">` : esc(e); };   // the lists write some emoji with a variation selector
 const kuImg = (name, cls) => `<img class="ku${cls ? ' ' + cls : ''}" src="/art/kidui/${name}.webp" alt="">`;
 const petImg = (e) => (PET_ART[e] ? kuImg('pet-' + PET_ART[e][0]) : esc(e));
 const petName = (e) => (PET_ART[e] ? L(PET_ART[e][1], PET_ART[e][2]) : L('เพื่อนใหม่', 'A new friend'));
@@ -758,8 +768,8 @@ ${d2.done ? lvWin(t, kid, 'dots', ['dotsagain']) : ''}`;
   } else if (view === 'cake') {   // decorate a cake
     const c2 = cakeFor(kid), candles = c2.items.some((x) => x.e === '🕯️');
     body = `<div class="kidguide">${guideImg(0)}<p>${c2.blown ? L('สุขสันต์วันเกิด! 🎉', 'Happy birthday! 🎉') : candles ? L('ปักเทียนแล้ว เป่าเลย!', 'Candles on — blow them out!') : L('แตะของแต่งเค้กเลย!', 'Tap the toppings to decorate the cake!')}</p></div>
-<div class="cakebox" id="cakebox">${CAKE_SVG}${c2.items.map((x) => `<span class="ctop${x.e === '🕯️' ? ' candle' : ''}${c2.blown && x.e === '🕯️' ? ' out' : ''}" style="left:${x.x}%;top:${x.y}%">${x.e}</span>`).join('')}</div>
-<div class="ctray">${CAKE_TOPS.map((e) => `<button data-a="cakeadd" data-v="${e}" aria-label="${e}"><span>${e}</span></button>`).join('')}</div>
+<div class="cakebox" id="cakebox">${CAKE_SVG}${c2.items.map((x) => `<span class="ctop${x.e === '🕯️' ? ' candle' : ''}${c2.blown && x.e === '🕯️' ? ' out' : ''}" style="left:${x.x}%;top:${x.y}%">${gE(x.e)}</span>`).join('')}</div>
+<div class="ctray">${CAKE_TOPS.map((e) => `<button data-a="cakeadd" data-v="${e}" aria-label="${e}"><span>${gE(e)}</span></button>`).join('')}</div>
 ${candles && !c2.blown ? `<button class="kidbig" data-a="cakeblow">🌬️ ${L('เป่าเทียน!', 'Blow!')}</button>` : ''}
 ${c2.items.length ? `<button class="kidbig ghost" data-a="cakenew">🎂 ${L('เค้กใหม่', 'New cake')}</button>` : ''}`;
   } else if (view === 'where' || view === 'odd' || view === 'next' || view === 'howmany') {   // where is it · odd one out · what comes next: one round at a time, five levels
@@ -768,18 +778,18 @@ ${c2.items.length ? `<button class="kidbig ghost" data-a="cakenew">🎂 ${L('เ
     let board = '';
     if (!g2.done && view === 'where') {
       const inPlay = new Set(g2.lv.p);
-      board = `${r.mode === 'place' || (r.mode === 'two' && !g2.got) ? `<div class="wheretake" aria-hidden="true">${r.item}</div>` : ''}<div class="whereb">${Array.from({ length: 9 }, (_, q) => !inPlay.has(q) ? '<div class="wcell off"></div>'
-        : r.mode === 'two' ? `<button class="wcell slot${r.placed[q] ? ' right' : ''}" data-a="kgpick" data-v="${q}" aria-label="${esc(L(WHERE_NAME[q][0], WHERE_NAME[q][1]))}"><span>${r.placed[q] || ''}</span></button>`
-        : r.mode === 'find' ? `<button class="wcell${g2.got && q === r.pos ? ' right' : ''}" data-a="kgpick" data-v="${q}" aria-label="${esc(L(WHERE_ITEM[r.at[q]][0], WHERE_ITEM[r.at[q]][1]))}"><span>${r.at[q]}</span></button>`
-          : `<button class="wcell slot${g2.got && q === r.pos ? ' right' : ''}" data-a="kgpick" data-v="${q}" aria-label="${esc(L(WHERE_NAME[q][0], WHERE_NAME[q][1]))}"><span>${g2.got && q === r.pos ? r.item : ''}</span></button>`).join('')}</div>`;
+      board = `${r.mode === 'place' || (r.mode === 'two' && !g2.got) ? `<div class="wheretake" aria-hidden="true">${gE(r.item)}</div>` : ''}<div class="whereb">${Array.from({ length: 9 }, (_, q) => !inPlay.has(q) ? '<div class="wcell off"></div>'
+        : r.mode === 'two' ? `<button class="wcell slot${r.placed[q] ? ' right' : ''}" data-a="kgpick" data-v="${q}" aria-label="${esc(L(WHERE_NAME[q][0], WHERE_NAME[q][1]))}"><span>${r.placed[q] ? gE(r.placed[q]) : ''}</span></button>`
+        : r.mode === 'find' ? `<button class="wcell${g2.got && q === r.pos ? ' right' : ''}" data-a="kgpick" data-v="${q}" aria-label="${esc(L(WHERE_ITEM[r.at[q]][0], WHERE_ITEM[r.at[q]][1]))}"><span>${gE(r.at[q])}</span></button>`
+          : `<button class="wcell slot${g2.got && q === r.pos ? ' right' : ''}" data-a="kgpick" data-v="${q}" aria-label="${esc(L(WHERE_NAME[q][0], WHERE_NAME[q][1]))}"><span>${g2.got && q === r.pos ? gE(r.item) : ''}</span></button>`).join('')}</div>`;
     } else if (!g2.done && view === 'odd') {
-      board = `<div class="mema kgch oddch" data-n="${r.opts.length}">${r.opts.map((e) => `<button data-a="kgpick" data-v="${esc(e)}"${g2.got && e === r.one ? ' class="right"' : ''}><span>${e}</span></button>`).join('')}</div>`;
+      board = `<div class="mema kgch oddch" data-n="${r.opts.length}">${r.opts.map((e) => `<button data-a="kgpick" data-v="${esc(e)}"${g2.got && e === r.one ? ' class="right"' : ''}><span>${gE(e)}</span></button>`).join('')}</div>`;
     } else if (!g2.done && view === 'howmany') {
-      board = `<div class="hmbox${r.n > 10 ? ' many' : ''}">${r.items.map((it, k) => `<button class="hmi${r.ct.includes(k) ? ' ct' : ''}" style="left:${it.x}%;top:${it.y}%" data-a="hmtap" data-v="${k}"${r.ct.includes(k) ? ` data-c="${r.ct.indexOf(k) + 1}"` : ''} aria-label="${k + 1}"><span>${r.e}</span></button>`).join('')}</div>
+      board = `<div class="hmbox${r.n > 10 ? ' many' : ''}">${r.items.map((it, k) => `<button class="hmi${r.ct.includes(k) ? ' ct' : ''}" style="left:${it.x}%;top:${it.y}%" data-a="hmtap" data-v="${k}"${r.ct.includes(k) ? ` data-c="${r.ct.indexOf(k) + 1}"` : ''} aria-label="${k + 1}"><span>${gE(r.e)}</span></button>`).join('')}</div>
 <div class="mema kgch hmch" data-n="${r.opts.length}">${r.opts.map((n) => `<button data-a="kgpick" data-v="${n}"${g2.got && n === r.n ? ' class="right"' : ''}><span>${n}</span></button>`).join('')}</div>`;
     } else if (!g2.done && view === 'next') {
-      board = `<div class="nextrow" aria-hidden="true">${r.shown.map((e) => `<span>${e}</span>`).join('')}<span class="q">${g2.got ? r.answer : '❓'}</span></div>
-<div class="mema kgch" data-n="${r.opts.length}">${r.opts.map((e) => `<button data-a="kgpick" data-v="${esc(e)}"${g2.got && e === r.answer ? ' class="right"' : ''}><span>${e}</span></button>`).join('')}</div>`;
+      board = `<div class="nextrow" aria-hidden="true">${r.shown.map((e) => `<span>${gE(e)}</span>`).join('')}<span class="q">${g2.got ? gE(r.answer) : '❓'}</span></div>
+<div class="mema kgch" data-n="${r.opts.length}">${r.opts.map((e) => `<button data-a="kgpick" data-v="${esc(e)}"${g2.got && e === r.answer ? ' class="right"' : ''}><span>${gE(e)}</span></button>`).join('')}</div>`;
     }
     body = lvBar(t, kid, view) + (g2.done ? `<div class="kidguide pop">${guideImg(0)}<p>${doneLine}</p></div>${lvWin(t, kid, view, ['kgagain', view])}`
       : `<div class="kidguide">${guideImg(1)}<p>${esc(kgAsk(g2))}</p></div>${board}`);
@@ -798,14 +808,14 @@ ${w.clean ? `<button class="kidbig" data-a="washnext">🛁 ${L('ตัวต่�
     body = lvBar(t, kid, 'bigsmall') + (g2.done ? `<div class="kidguide pop">${guideImg(0)}<p>${L(`เก่งมาก ${esc(name)}! ผ่าน${lvWord(t, kid, 'bigsmall')}แล้ว 🎉`, `Brilliant, ${esc(name)}! You finished ${lvWord(t, kid, 'bigsmall')} 🎉`)}</p></div>
 ${lvWin(t, kid, 'bigsmall', ['kgagain', 'bigsmall'])}`
       : `<div class="kidguide">${guideImg(0)}<p>${r.big ? L(`${esc(r.thing[1])}ตัวไหนใหญ่ที่สุด?`, `Which ${esc(r.thing[2])} is the biggest?`) : L(`${esc(r.thing[1])}ตัวไหนเล็กที่สุด?`, `Which ${esc(r.thing[2])} is the smallest?`)}</p></div>
-<div class="bsrow${r.sizes.length > 4 ? ' many' : ''}" style="--bk:${Math.min(1, 3.2 / r.sizes.length).toFixed(2)}">${r.sizes.map((z, n) => `<button data-a="kgpick" data-v="${n}" style="--z:${z}"${g2.got && n === r.right ? ' class="right"' : ''} aria-label="${esc(L(r.thing[1], r.thing[2]))} ${n + 1}"><span>${r.thing[0]}</span></button>`).join('')}</div>`);
+<div class="bsrow${r.sizes.length > 4 ? ' many' : ''}" style="--bk:${Math.min(1, 3.2 / r.sizes.length).toFixed(2)}">${r.sizes.map((z, n) => `<button data-a="kgpick" data-v="${n}" style="--z:${z}"${g2.got && n === r.right ? ' class="right"' : ''} aria-label="${esc(L(r.thing[1], r.thing[2]))} ${n + 1}"><span>${gE(r.thing[0])}</span></button>`).join('')}</div>`);
   } else if (view === 'shadow') {   // whose shadow? a big black shape, pick the thing it belongs to; right = the shape fills with colour and its name is said
     const g2 = kgFor('shadow', t, kid), r = g2.r;
     body = lvBar(t, kid, 'shadow') + (g2.done ? `<div class="kidguide pop">${guideImg(0)}<p>${L(`เก่งมาก ${esc(name)}! ผ่าน${lvWord(t, kid, 'shadow')}แล้ว 🎉`, `Brilliant, ${esc(name)}! You finished ${lvWord(t, kid, 'shadow')} 🎉`)}</p></div>
 ${lvWin(t, kid, 'shadow', ['kgagain', 'shadow'])}`
       : `<div class="kidguide">${guideImg(0)}<p>${g2.got ? L(`ใช่แล้ว! ${esc(r.want[1])}!`, `Yes! A ${esc(r.want[2])}!`) : g2.lv.half ? L('เห็นแค่ครึ่งเดียว! เงาของใครเอ่ย?', 'Only half of it! Whose shadow is this?') : L('นี่เงาของใครเอ่ย?', 'Whose shadow is this?')}</p></div>
-<div class="shbig${g2.got ? ' lit' : ''}${g2.lv.flip ? ' flip' : ''}${g2.lv.half ? ' half' : ''}" aria-hidden="true"><span>${r.want[0]}</span></div>
-<div class="mema kgch" data-n="${r.opts.length}">${r.opts.map((o) => `<button data-a="kgpick" data-v="${esc(o[0])}"${g2.got && o === r.want ? ' class="right"' : ''}><span>${o[0]}</span><b>${esc(L(o[1], o[2]))}</b></button>`).join('')}</div>`);
+<div class="shbig${g2.got ? ' lit' : ''}${g2.lv.flip ? ' flip' : ''}${g2.lv.half ? ' half' : ''}" aria-hidden="true"><span>${gE(r.want[0])}</span></div>
+<div class="mema kgch" data-n="${r.opts.length}">${r.opts.map((o) => `<button data-a="kgpick" data-v="${esc(o[0])}"${g2.got && o === r.want ? ' class="right"' : ''}><span>${gE(o[0])}</span><b>${esc(L(o[1], o[2]))}</b></button>`).join('')}</div>`);
   } else if (view === 'feed') {   // feed the animal: it asks for one food (the picture in its bubble, the words read aloud); the right one is munched
     const g2 = kgFor('feed', t, kid), r = g2.r;
     body = lvBar(t, kid, 'feed') + (g2.done ? `<div class="kidguide pop">${guideImg(1)}<p>${L(`${esc(r.pal[1])}อิ่มแล้ว! ขอบคุณ${esc(name)}นะ 🎉`, `${esc(r.pal[2])} is full! Thank you, ${esc(name)} 🎉`)}</p></div>
@@ -819,8 +829,8 @@ ${lvWin(t, kid, 'feed', ['kgagain', 'feed'])}`
     body = lvBar(t, kid, 'sort') + (g2.done ? `<div class="kidguide pop">${guideImg(1)}<p>${L(`เก่งมาก ${esc(name)}! ผ่าน${lvWord(t, kid, 'sort')}แล้ว 🎉`, `Brilliant, ${esc(name)}! You finished ${lvWord(t, kid, 'sort')} 🎉`)}</p></div>
 ${lvWin(t, kid, 'sort', ['kgagain', 'sort'])}`
       : `<div class="kidguide">${guideImg(1)}<p>${L('อันนี้สีอะไร? ใส่ตะกร้าสีเดียวกันเลย', 'What colour is it? Put it in the same colour basket')}</p></div>
-<div class="sortitem" aria-hidden="true"><span>${it.e}</span></div>`);
-    if (!g2.done) body += `<div class="baskets">${g2.cols.map((c) => `<button class="basket" style="--bc:${c.c}" data-a="kgpick" data-v="${c.k}" aria-label="${esc(L(c.th, c.en))}"><span class="in">${(g2.bin[c.k] || []).join('')}</span><b>${esc(L(c.th, c.en))}</b></button>`).join('')}</div>`;
+<div class="sortitem" aria-hidden="true"><span>${gE(it.e)}</span></div>`);
+    if (!g2.done) body += `<div class="baskets">${g2.cols.map((c) => `<button class="basket" style="--bc:${c.c}" data-a="kgpick" data-v="${c.k}" aria-label="${esc(L(c.th, c.en))}"><span class="in">${(g2.bin[c.k] || []).map(gE).join('')}</span><b>${esc(L(c.th, c.en))}</b></button>`).join('')}</div>`;
   } else if (view === 'music') {   // a xylophone (C major, an animal on every bar), three drums, two songs that light the bars to follow
     body = `<div class="kidguide">${guideImg(1)}<p>${L('แตะแท่งสีให้ร้องเพลง!', 'Tap the bars to make music!')}</p></div>
 <div class="xylo" role="group">${XYLO.map((n, k) => `<button data-a="xylo" data-v="${k}" style="--c:${n[2]};--h:${100 - k * 7}%" aria-label="${n[0]}"><span>${n[3]}</span></button>`).join('')}</div>
@@ -829,10 +839,10 @@ ${lvWin(t, kid, 'sort', ['kgagain', 'sort'])}`
   } else if (view === 'hideseek') {   // I spy: twelve things scattered over the day's picture; the guide names one at a time (its Thai name read aloud)
     if (!hs || hs.key !== `${t.id}.${i}.${kid}`) newHide(t, i, kid);
     const want = hs.targets[hs.found.length];
-    body = `<div class="kidguide">${guideImg(0)}<p>${want ? L(`หา${want[1]}ให้เจอ! ${want[0]}`, `Find the ${want[2]}! ${want[0]}`) : L('เจอครบแล้ว! เก่งมาก 🎉', 'Found them all! Brilliant 🎉')}</p></div>
+    body = `<div class="kidguide">${guideImg(0)}<p>${want ? L(`หา${want[1]}ให้เจอ!`, `Find the ${want[2]}!`) : L('เจอครบแล้ว! เก่งมาก 🎉', 'Found them all! Brilliant 🎉')}</p></div>
 ${pixPick(t, i, 'hideseek', 'kidnewhide')}
-<div class="hideboard"${hs.src ? ` style="--art:url('${esc(hs.src)}')"` : ''}>${hs.items.map((it, n) => `<button class="hid${it.found ? ' found' : ''}" style="left:${it.x}%;top:${it.y}%;--s:${it.s}px;--r:${it.r}deg" data-a="kidhide" data-v="${n}" aria-label="${esc(it.th)}">${it.e}</button>`).join('')}</div>
-${want ? `<div class="hidetarget" aria-hidden="true">${want[0]}</div>` : `<button class="kidbig" data-a="kidnewhide">🔁 ${L('เล่นใหม่', 'Play again')}</button>`}`;
+<div class="hideboard"${hs.src ? ` style="--art:url('${esc(hs.src)}')"` : ''}>${hs.items.map((it, n) => `<button class="hid${it.found ? ' found' : ''}" style="left:${it.x}%;top:${it.y}%;--s:${it.s}px;--r:${it.r}deg" data-a="kidhide" data-v="${n}" aria-label="${esc(it.th)}">${gE(it.e)}</button>`).join('')}</div>
+${want ? `<div class="hidetarget" aria-hidden="true">${gE(want[0])}</div>` : `<button class="kidbig" data-a="kidnewhide">🔁 ${L('เล่นใหม่', 'Play again')}</button>`}`;
   } else if (view === 'jigsaw' && (dayArt(t, i) || kidPhotoPool(t).length)) {   // the day's picture in pieces: tap a piece, tap its place (tap-tap, not drag: a small hand can do it)
     if (!jg || jg.key !== `${t.id}.${i}.${kid}` || jg.at !== lvState(t, kid, 'jigsaw').at) newJigsaw(t, i, kid);
     body = `<div class="kidguide">${guideImg(1)}<p>${jg.done ? L('ต่อภาพเสร็จแล้ว! 🎉', 'Picture done! 🎉') : jg.pick === null ? L('ลากชิ้นไปใส่ช่องที่ใช่! (หรือแตะชิ้น แล้วแตะช่อง)', 'Drag a piece to its place! (or tap it, then tap the place)') : L('ใส่ตรงไหนดีนะ?', 'Where does it go?')}</p></div>
@@ -1741,7 +1751,7 @@ function mazeOpen(a, b) {
 }
 function mazeCells() {
   const n = mz.n, on = new Set(mz.path), head = mz.path[mz.path.length - 1], end = n * n - 1;
-  return Array.from({ length: n * n }, (_, i) => `<div class="mz${mz.right[i] && i % n !== n - 1 ? ' wr' : ''}${mz.bottom[i] && i < end - n + 1 ? ' wb' : ''}${on.has(i) ? ' on' : ''}" data-i="${i}">${i === head ? `<span class="mzhd">${mz.pair[0]}</span>` : i === end ? `<span>${mz.pair[1]}</span>` : i === mz.star && !mz.got ? '<span class="mzstar">⭐</span>' : ''}</div>`).join('');
+  return Array.from({ length: n * n }, (_, i) => `<div class="mz${mz.right[i] && i % n !== n - 1 ? ' wr' : ''}${mz.bottom[i] && i < end - n + 1 ? ' wb' : ''}${on.has(i) ? ' on' : ''}" data-i="${i}">${i === head ? `<span class="mzhd">${gE(mz.pair[0])}</span>` : i === end ? `<span>${gE(mz.pair[1])}</span>` : i === mz.star && !mz.got ? `<span class="mzstar">${gE('⭐')}</span>` : ''}</div>`).join('');
 }
 function mazeTry(i) {
   if (!mz || mz.done || i == null || isNaN(i)) return;
