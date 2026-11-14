@@ -2789,3 +2789,13 @@ section.pg .dstamps.pst.c3 b,section.pg .dstamps.pst.c4 b{font-size:16px}section
 .lvwin.qauto .kidbig{position:relative;overflow:hidden}
 .qbar5{position:absolute;left:0;bottom:0;height:6px;width:100%;background:rgba(255,255,255,.75);transform-origin:left center;animation:qbar5 5s linear 1.5s both}
 @keyframes qbar5{from{transform:scaleX(0)}to{transform:scaleX(1)}}
+/* the adventure map's own pictures (public/art/quest): sized by the box they sit in */
+.qi{display:block;width:1em;height:1em;object-fit:contain}
+.kidquest i .qi{width:44px;height:44px}.kidwrap.home:has(.kidnow) .kidquest i .qi{width:36px;height:36px}
+.qcloud .qi{width:76px;height:76px}.qgem .qi{width:30px;height:30px}
+.qchest span .qi{width:56px;height:56px}.qchest span{filter:none}.qchest:not(.ready) span{opacity:.75}
+.qboss span .qi{width:46px;height:46px}.qtreasure .gem .qi{width:64px;height:64px}
+.qend>span .qi{width:88px;height:88px}.qgems{display:flex;flex-wrap:wrap;justify-content:center;gap:6px}.qgems .qi{width:36px;height:36px}
+.qpicg i .qi{width:62%;height:62%}
+.lvbar.qbar>span{display:inline-flex;align-items:center;gap:8px}.lvbar.qbar .qi{width:28px;height:28px}
+@media (min-width:700px){.qcloud .qi{width:98px;height:98px}.qchest span .qi{width:68px;height:68px}}

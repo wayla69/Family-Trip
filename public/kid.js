@@ -476,7 +476,7 @@ function stickerSet(t, kid) {
   t.days.forEach((_, i) => daySpots(t, i, kid).forEach((s) => add(s.key, s.e, '', ticked(t, s.key, kid))));
   t.days.forEach((_, i) => add(`gift.d${i}`, giftE(i), '', ticked(t, `gift.d${i}`, kid)));
   { const mm = mapModel(t); if (mm) { const real = mapReal(t, mm); mm.m.stops.forEach((st) => { if (real.has(st.k)) add(`been.${st.k}`, st.e || '📍', st.art || '', true); }); } }   // a place we really went (the parents checked it in)
-  t.days.forEach((_, i) => add(questKey(i, 'chest'), QUEST_GEM[i % QUEST_GEM.length], '', ticked(t, questKey(i, 'chest'), kid)));   // a town's treasure on the adventure map   // the morning surprise box's sticker
+  t.days.forEach((_, i) => add(questKey(i, 'chest'), QUEST_GEM[i % QUEST_GEM.length], qArt(gemArt(i)), ticked(t, questKey(i, 'chest'), kid)));   // a town's treasure on the adventure map   // the morning surprise box's sticker
   kidLists(t, kid).forEach((l) => listItems(l).forEach((it) => { const x = ticked(t, `${l.key}.${it.k}`, kid); add(`${l.key}.${it.k}`, it.e, '', x && x.text !== 'yuck'); }));
   ((pp.countdown || {}).doors || []).forEach((d, n) => add(`cd.${n + 1}`, d.e, '', ticked(t, `cd.${n + 1}`, kid)));
   entriesOf(t.id).filter((e) => e.kind === 'first' && e.child === kid && e.first_key !== 'custom').forEach((e) => add(`first.${e.first_key}`, firstLabel(t, e.first_key).e, '', true));
@@ -1150,7 +1150,12 @@ const QUEST_G = { shadow: ['🦒', 'เงาของใคร', 'Shadows'], fe
   odd: ['🤔', 'ไม่เข้าพวก', 'Odd one out'], next: ['➡️', 'อะไรมาต่อ', 'What’s next?'], howmany: ['🧮', 'มีกี่ตัว', 'How many?'], maze: ['🧭', 'เขาวงกต', 'Maze'], simon: ['🎹', 'จำเสียงตามสี', 'Copy the tune'],
   dots: ['✨', 'ลากจุดต่อภาพ', 'Join the dots'], match: ['🧩', 'จับคู่', 'Match'], jigsaw: ['🖼️', 'ต่อภาพ', 'Puzzle'] };
 const QUEST_ORDER = ['shadow', 'maze', 'feed', 'match', 'howmany', 'dots', 'sort', 'where', 'simon', 'bigsmall', 'odd', 'jigsaw', 'next'];   // neighbours differ in kind (look · move · remember)
-const QUEST_GEM = ['💎', '👑', '🗝️', '🏺', '🔮', '🧭', '🪙', '💍', '🐚', '🏮', '🪄', '🎖️', '🌟', '🦜', '🪁', '🧿'];   // what a town's chest holds (also its sticker)
+// The adventure map's own pictures (owner, Nov 2026: an emoji looks different on every phone — the chest was a toolbox on a Samsung):
+// drawn for the app (public/art/quest/*.webp, 320 px, transparent), precached with the shell. The emoji stay for the confetti and as the fallback.
+const QUEST_ART = ['diamond', 'key', 'coin', 'ruby', 'shell', 'emerald', 'compass', 'star'];   // what a town's chest holds (also its sticker), eight in turn
+const QUEST_GEM = ['💎', '🗝️', '🪙', '❤️', '🐚', '💚', '🧭', '⭐'];
+const qArt = (name) => `/art/quest/${name}.webp`, qImg = (name, cls) => `<img class="qi${cls ? ' ' + cls : ''}" src="${qArt(name)}" alt="">`;
+const gemArt = (i) => QUEST_ART[i % QUEST_ART.length], gemImg = (i) => qImg(gemArt(i));
 let quest = null, questOpen = null, questNew = null, questWalking = false;   // quest = the mission being played {tid, kid, town, slot, game, lv}; questOpen = the town open on the map; questNew = the chest just opened
 const questMem = new Set();   // a relative's play this visit (nothing saved)
 function questPlan(t, kid) {
@@ -1248,7 +1253,7 @@ function mapReal(t, mm) {
 function questBanner(t, kid) {
   const at = questAt(t, kid), end = at >= t.days.length, i = end ? t.days.length - 1 : at;
   const line = end ? L('เก็บสมบัติครบแล้ว!', 'Every treasure found!') : at === 0 && !questGot(t, kid, 0, 0) && !questGot(t, kid, 0, 1) && !questGot(t, kid, 0, 2) ? L('ออกเดินทางกันเลย!', 'Let’s set off!') : L('ไปต่อกันเลย!', 'On we go!');
-  return `<button class="kidquest" data-a="kidnav" data-v="#/kid/${esc(kid)}/quest" data-say="${esc(L('แผนที่ผจญภัย', 'The adventure map'))}">${artImg(t, i)}<span><b>${L('แผนที่ผจญภัย', 'Adventure map')}</b><small>${line}</small></span><i aria-hidden="true">${end ? '🏆' : '🗺️'}</i></button>`;
+  return `<button class="kidquest" data-a="kidnav" data-v="#/kid/${esc(kid)}/quest" data-say="${esc(L('แผนที่ผจญภัย', 'The adventure map'))}">${artImg(t, i)}<span><b>${L('แผนที่ผจญภัย', 'Adventure map')}</b><small>${line}</small></span><i aria-hidden="true">${qImg(end ? 'trophy' : 'map')}</i></button>`;
 }
 function questHtml(t, kid, guideImg) {
   const plan = questPlan(t, kid), n = t.days.length, real = questAt(t, kid), end = real >= n, at = questNew !== null && questNew < n - 1 ? questNew : real;   // the chest just opened: the child still stands there, the walk comes next
@@ -1265,29 +1270,29 @@ function questHtml(t, kid, guideImg) {
     const done = questTownDone(t, kid, i), here = i === Math.min(at, n - 1) && !end, ahead = i > at, isOpen = i === open && !ahead, tp = ((t.passport || {}).days || [])[i] || {};
     const who = (here ? [`<img class="qme ${esc(kidBase(kid))}" src="${kidArt(kid, true)}" alt="">`] : []).concat(sib.filter((b) => b.at === i).map((b) => `<img class="qsib ${esc(kidBase(b.x))}" src="${kidArt(b.x, true)}" alt="">`)).join('');
     const head = `<button class="qhead" data-a="questtown" data-v="${i}" aria-expanded="${isOpen}" data-say="${esc(ahead ? L('ยังไปไม่ถึง เดินไปทีละเมืองนะ', 'Not yet — one town at a time') : questTown(t, i))}">
-<span class="qart">${artImg(t, i)}${ahead ? '<span class="qcloud" aria-hidden="true">☁️</span>' : ''}${done ? `<span class="qgem" aria-hidden="true">${QUEST_GEM[i % QUEST_GEM.length]}</span>` : ''}</span>
+<span class="qart">${artImg(t, i)}${ahead ? `<span class="qcloud" aria-hidden="true">${qImg('cloud')}</span>` : ''}${done ? `<span class="qgem" aria-hidden="true">${gemImg(i)}</span>` : ''}</span>
 <span class="qname"><b>${ahead ? L('เมืองในเมฆ', 'A town in the clouds') : wj(esc(questTown(t, i)))}</b>${done ? `<small>${L('เก็บสมบัติแล้ว', 'Treasure found')}</small>` : here ? `<small>${L('เราอยู่ที่นี่', 'We are here')}</small>` : ''}</span>
 ${who ? `<span class="qwho" aria-hidden="true">${who}</span>` : ''}</button>`;
     const ms = plan[i].map((m, k) => { const got = questGot(t, kid, i, k), g = QUEST_G[m.game]; return `<button class="qm${got ? ' got' : ''}" data-a="questgo" data-t="${esc(t.id)}" data-k="${esc(kid)}" data-d="${i}" data-v="${k}" data-say="${esc(L(g[1], g[2]))}"><span>${g[0]}</span><b>${L(g[1], g[2])}</b>${got ? '<i aria-hidden="true">⭐</i>' : ''}</button>`; }).join('');
     const ready = questReady(t, kid, i), secret = questSecret(t, i), three = questThree(t, kid, i), bs = questBoss(t, kid, i), bg = QUEST_G[bs.game], bgot = questGot(t, kid, i, 3), hid = questBonus(t, kid, i), hgot = hid && questGot(t, kid, i, 'x');
-    const boss = three ? `<button class="qboss${bgot ? ' got' : ''}" data-a="questgo" data-t="${esc(t.id)}" data-k="${esc(kid)}" data-d="${i}" data-v="3" data-say="${esc(L('ด่านหัวหน้า', 'The big one'))}"><span aria-hidden="true">👑</span><b>${L('ด่านหัวหน้า', 'The big one')}</b><em aria-hidden="true">${bg[0]}</em>${bgot ? '<i aria-hidden="true">⭐</i>' : ''}</button>` : '';
+    const boss = three ? `<button class="qboss${bgot ? ' got' : ''}" data-a="questgo" data-t="${esc(t.id)}" data-k="${esc(kid)}" data-d="${i}" data-v="3" data-say="${esc(L('ด่านหัวหน้า', 'The big one'))}"><span aria-hidden="true">${qImg('crown')}</span><b>${L('ด่านหัวหน้า', 'The big one')}</b><em aria-hidden="true">${bg[0]}</em>${bgot ? '<i aria-hidden="true">⭐</i>' : ''}</button>` : '';
     const hidden = hid ? `<button class="qhid${hgot ? ' got' : ''}" data-a="questgo" data-t="${esc(t.id)}" data-k="${esc(kid)}" data-d="${i}" data-v="x" data-say="${esc(hgot ? L('เพื่อนลับของเมืองนี้', 'This town’s secret friend') : L('เจอภารกิจลับ!', 'A secret mission!'))}" aria-label="${L('ภารกิจลับ', 'Secret mission')}"><span>${hid.e}</span>${hgot ? '<i aria-hidden="true">⭐</i>' : ''}</button>` : '';
-    const chest = done ? `<div class="qtreasure${questNew === i ? ' new' : ''}"><span class="gem" aria-hidden="true">${QUEST_GEM[i % QUEST_GEM.length]}</span>${secret ? `<p><small>${L('ความลับของเมืองนี้', 'This town’s secret')}</small>${esc(secret)}</p>` : `<p>${L('สมบัติของเมืองนี้!', 'This town’s treasure!')}</p>`}</div>${i + 1 < n ? `<button class="kidbig" data-a="questnext" data-v="${i + 1}">${L('ไปเมืองต่อไป', 'On to the next town')} ›</button>` : ''}`
-      : `<button class="qchest${ready ? ' ready' : ''}" data-a="questchest" data-t="${esc(t.id)}" data-k="${esc(kid)}" data-d="${i}" aria-label="${L('หีบสมบัติ', 'Treasure chest')}"><span aria-hidden="true">🧰</span><b>${ready ? L('เปิดหีบ!', 'Open it!') : L('หีบสมบัติ', 'Treasure chest')}</b></button>`;
+    const chest = done ? `<div class="qtreasure${questNew === i ? ' new' : ''}"><span class="gem" aria-hidden="true">${gemImg(i)}</span>${secret ? `<p><small>${L('ความลับของเมืองนี้', 'This town’s secret')}</small>${esc(secret)}</p>` : `<p>${L('สมบัติของเมืองนี้!', 'This town’s treasure!')}</p>`}</div>${i + 1 < n ? `<button class="kidbig" data-a="questnext" data-v="${i + 1}">${L('ไปเมืองต่อไป', 'On to the next town')} ›</button>` : ''}`
+      : `<button class="qchest${ready ? ' ready' : ''}" data-a="questchest" data-t="${esc(t.id)}" data-k="${esc(kid)}" data-d="${i}" aria-label="${L('หีบสมบัติ', 'Treasure chest')}"><span aria-hidden="true">${qImg(ready ? 'chest-open' : 'chest')}</span><b>${ready ? L('เปิดหีบ!', 'Open it!') : L('หีบสมบัติ', 'Treasure chest')}</b></button>`;
     return `<li class="qtown${done ? ' done' : ''}${here ? ' here' : ''}${ahead ? ' ahead' : ''}${isOpen ? ' open' : ''}" id="qt${i}"${ahead ? '' : ` style="--accent:${esc(tp.acc || t.theme.accent || '#1F3A5F')};--qt:${esc(tp.tint || '#FAFDFF')}"`}>${head}${isOpen ? `<div class="qbody">${hidden}<div class="qms">${ms}</div>${boss}${chest}</div>` : ''}</li>`;
   }).join('');
   return `<div class="kidguide">${guideImg(0)}<p>${line}</p></div>
 <ol class="questpath">${towns}</ol>
 ${questPic(t, kid)}
 ${isEditor() && questStarted(t, kid) ? `<button class="qreset" id="qreset" data-t="${esc(t.id)}" data-k="${esc(kid)}">🔄 ${L('ผู้ใหญ่: กดค้างเพื่อเริ่มเส้นทางใหม่', 'Grown-ups: press and hold to start the road again')}</button>` : ''}
-${end ? `<div class="qend"><span aria-hidden="true">🏆</span><b>${L('นักผจญภัยตัวจริง!', 'A true adventurer!')}</b><div class="qgems" aria-hidden="true">${t.days.map((_, i) => QUEST_GEM[i % QUEST_GEM.length]).join(' ')}</div></div>` : ''}`;
+${end ? `<div class="qend"><span aria-hidden="true">${qImg('trophy')}</span><b>${L('นักผจญภัยตัวจริง!', 'A true adventurer!')}</b><div class="qgems" aria-hidden="true">${t.days.map((_, i) => gemImg(i)).join('')}</div></div>` : ''}`;
 }
 // the treasure picture: one picture of the trip in as many pieces as there are towns; a town's chest uncovers its piece (shown once there is one)
 function questPic(t, kid) {
   const n = t.days.length, src = ((t.passport || {}).style || {}).crest || dayArt(t, n - 1) || dayArt(t, 0); if (!src || !t.days.some((_, i) => questTownDone(t, kid, i))) return '';
   const cols = n <= 4 ? 2 : n <= 9 ? 3 : 4, rows = Math.ceil(n / cols), all = t.days.every((_, i) => questTownDone(t, kid, i));
   return `<div class="qpic${all ? ' all' : ''}"><b>${all ? L('ภาพสมบัติครบแล้ว!', 'The treasure picture is complete!') : L('ภาพสมบัติของเรา', 'Our treasure picture')}</b>
-<div class="qpicg" style="--c:${cols};--art:url('${esc(src)}')" aria-hidden="true">${Array.from({ length: cols * rows }, (_, k) => { const on = k >= n ? all : questTownDone(t, kid, k); return `<i class="${on ? 'on' : ''}"${on ? ` style="${jgPos(k, { cols, rows })}"` : ''}>${on ? '' : '☁️'}</i>`; }).join('')}</div></div>`;
+<div class="qpicg" style="--c:${cols};--art:url('${esc(src)}')" aria-hidden="true">${Array.from({ length: cols * rows }, (_, k) => { const on = k >= n ? all : questTownDone(t, kid, k); return `<i class="${on ? 'on' : ''}"${on ? ` style="${jgPos(k, { cols, rows })}"` : ''}>${on ? '' : qImg('cloud')}</i>`; }).join('')}</div></div>`;
 }
 // for the grown-ups, on the book's menu: where each child is on the road (only a child who has set off), and a fresh start behind two taps
 function questLine(t) {
@@ -1350,7 +1355,7 @@ Object.assign(A, {
       questWalking = false; questNew = null; questOpen = to; render(); beep('sparkle');
       const el = $('#qt' + to); if (el) el.scrollIntoView({ block: 'center', behavior: reduced() ? 'auto' : 'smooth' });
       const art = moved && $(`#qt${to} .qart`);
-      if (art && art.animate) { const c = document.createElement('span'); c.className = 'qcloud lift'; c.textContent = '☁️'; art.appendChild(c); c.animate([{ transform: 'translate(0,0) scale(1)', opacity: 1 }, { transform: 'translate(46px,-54px) scale(1.5)', opacity: 0 }], { duration: 1100, easing: 'ease-out' }).onfinish = () => c.remove(); }
+      if (art && art.animate) { const c = document.createElement('span'); c.className = 'qcloud lift'; c.innerHTML = qImg('cloud'); art.appendChild(c); c.animate([{ transform: 'translate(0,0) scale(1)', opacity: 1 }, { transform: 'translate(46px,-54px) scale(1.5)', opacity: 0 }], { duration: 1100, easing: 'ease-out' }).onfinish = () => c.remove(); }
       sayUi(L(`ถึงแล้ว! ${questTown(t, to)}`, `Here we are! ${questTown(t, to)}`));
     };
     const me = $(`#qt${to - 1} .qme`), dest = $(`#qt${to} .qart`);
@@ -1388,7 +1393,7 @@ function lvDone(t, kid, game) { const q = questIn(t, kid, game); if (q) { questM
 // the chips of the levels reached (a ⭐ on each one won); none when only level 1 is open
 function lvBar(t, kid, game) {
   const s = lvState(t, kid, game);
-  if (s.quest) return `<div class="lvbar qbar"><span>${s.quest.slot === 3 ? '👑' : s.quest.slot === 'x' ? '✨' : '🗺️'} ${wj(esc(questTown(t, s.quest.town)))}</span></div>`;   // on a mission: the town, no level chips
+  if (s.quest) return `<div class="lvbar qbar"><span>${s.quest.slot === 3 ? qImg('crown') : s.quest.slot === 'x' ? '✨' : qImg('map')} ${wj(esc(questTown(t, s.quest.town)))}</span></div>`;   // on a mission: the town, no level chips
   if (s.top < 2) return '';
   return `<div class="lvbar" role="group" aria-label="${L('ด่าน', 'Levels')}"><span>${L('ด่าน', 'Level')}</span>${Array.from({ length: s.top }, (_, k) => k + 1).map((n) => `<button class="lvc${n === s.at ? ' on' : ''}" data-a="kglv" data-g="${game}" data-v="${n}" aria-pressed="${n === s.at}" aria-label="${esc(L(`ด่าน ${n}`, `Level ${n}`))}"><b>${n}</b>${n <= s.best ? '<i aria-hidden="true">⭐</i>' : ''}</button>`).join('')}</div>`;
 }
