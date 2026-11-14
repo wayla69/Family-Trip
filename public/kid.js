@@ -173,7 +173,7 @@ const colourFill = (t, i, kid) => fieldVal(t, `colour.d${i}`, kid) || '{}';
 /* ---------- finger drawing ("Draw today's best moment") → a private picture, like a photo ---------- */
 const DRAW_W = 1200, DRAW_H = 900, PEN = [10, 24, 48];
 let pen = PEN[1];
-const pad = { key: '', strokes: [], cur: null };   // kept while the page re-renders; cleared once saved
+const pad = { key: '', strokes: [], cur: null, gone: null, hide: false, full: false };   // kept while the page re-renders; cleared once saved (gone = the strokes the sponge just wiped, ↶ brings them back; hide = the colour tray tucked away while drawing; full = the paper fills the screen)
 const isDrawing = (m) => /^dr-/.test(m.id);
 const drawingsOf = (t, kid, day) => mediaOf(t.id, day).filter((m) => m.id.startsWith(`dr-${kid}-`));
 const drawBusy = () => !!pad.cur || (typeof stk !== 'undefined' && !!stk);   // safeRender waits while a finger is drawing or dragging a sticker
@@ -190,13 +190,16 @@ function redraw(cv) {
   ctx.fillStyle = '#fff'; ctx.fillRect(0, 0, DRAW_W, DRAW_H);
   pad.strokes.forEach((st) => paint(ctx, st));
 }
-function hydrateDraw(root) { const cv = $('#kidcanvas', root || document); if (cv) { if (cv.dataset.key !== pad.key) { pad.key = cv.dataset.key; pad.strokes = []; } redraw(cv); } }
+function hydrateDraw(root) { const cv = $('#kidcanvas', root || document); if (cv) { if (cv.dataset.key !== pad.key) { pad.key = cv.dataset.key; pad.strokes = []; pad.gone = null; pad.hide = false; pad.full = false; drawWrap(); } redraw(cv); } }
+// The drawing page's state lives on its wrapper: .busy tucks the colour tray away, .full lays the paper over the whole screen
+function drawWrap() { const w = $('#drawwrap'); if (!w) return; w.classList.toggle('busy', pad.hide); w.classList.toggle('full', pad.full); const c = $('#drawcol'); if (c) c.style.setProperty('--c', kidColour); const f = $('#drawfull'); if (f) { f.textContent = pad.full ? '✕' : '⛶'; f.setAttribute('aria-label', pad.full ? L('ย่อกระดาษ', 'Smaller paper') : L('กระดาษเต็มจอ', 'Full-screen paper')); } }
 const padPoint = (cv, e) => { const r = cv.getBoundingClientRect(); return [Math.round((e.clientX - r.left) * (DRAW_W / r.width)), Math.round((e.clientY - r.top) * (DRAW_H / r.height))]; };
 document.addEventListener('pointerdown', (e) => {
   const cv = e.target.closest && e.target.closest('#kidcanvas'); if (!cv) return;
   e.preventDefault();
   try { cv.setPointerCapture(e.pointerId); } catch (_) {}
-  pad.cur = { c: kidColour, w: pen, pts: [padPoint(cv, e)], id: e.pointerId };
+  if (!pad.hide) { pad.hide = true; drawWrap(); }   // owner: the tray hides once the child starts drawing; the colour dot on the paper brings it back
+  pad.cur = { c: kidColour, w: pen, pts: [padPoint(cv, e)], id: e.pointerId }; pad.gone = null;
   pad.strokes.push(pad.cur); paint(cv.getContext('2d'), pad.cur);
 });
 document.addEventListener('pointermove', (e) => {
@@ -646,10 +649,11 @@ ${pages.length > 1 ? `<div class="kdots" id="kdots">${pages.map((_, n) => `<i${n
   } else if (view === 'draw') {
     const day = pre ? null : i, mine = drawingsOf(t, kid, day === null ? undefined : day).filter((m) => m.day === day);
     body = `<div class="kidguide">${guideImg(1)}<p>${pre ? L(`วาดสิ่งที่อยากเจอที่${esc(T(t.title).split(' · ')[0])}`, `Draw what you want to see in ${esc(T(t.title).split(' · ')[0])}`) : L('วาดสิ่งที่ชอบที่สุดวันนี้!', "Draw today's best moment!")}</p></div>
-<div class="drawpad"><canvas id="kidcanvas" width="${DRAW_W}" height="${DRAW_H}" data-key="${esc(`${t.id}:${day}:${kid}`)}" aria-label="${L('กระดานวาดรูป', 'Drawing board')}"></canvas></div>
-<div class="palette">${COLOURS.map((c) => `<button data-a="kidcolor" data-v="${c}" style="--c:${c}" aria-pressed="${c === kidColour}" aria-label="${c === '#FFFFFF' ? L('ยางลบ', 'Eraser') : c}"></button>`).join('')}</div>
+<div class="drawwrap${pad.hide ? ' busy' : ''}${pad.full ? ' full' : ''}" id="drawwrap"><div class="drawpad"><canvas id="kidcanvas" width="${DRAW_W}" height="${DRAW_H}" data-key="${esc(`${t.id}:${day}:${kid}`)}" aria-label="${L('กระดานวาดรูป', 'Drawing board')}"></canvas>
+<button class="dpb dpcol" id="drawcol" data-a="kidtray" style="--c:${kidColour}" aria-label="${L('เลือกสี', 'Colours')}">🎨</button><button class="dpb dpfull" id="drawfull" data-a="kidfull" aria-label="${pad.full ? L('ย่อกระดาษ', 'Smaller paper') : L('กระดาษเต็มจอ', 'Full-screen paper')}">${pad.full ? '✕' : '⛶'}</button><button class="dpb dpundo" data-a="kidundo" aria-label="${L('ย้อนกลับ', 'Undo')}">↶</button></div>
+<div class="drawtray" id="drawtray"><div class="palette">${COLOURS.map((c) => `<button data-a="kidcolor" data-v="${c}" style="--c:${c}" aria-pressed="${c === kidColour}" aria-label="${c === '#FFFFFF' ? L('ยางลบ', 'Eraser') : c}"></button>`).join('')}</div>
 <div class="drawtools">${PEN.map((w) => `<button data-a="kidpen" data-v="${w}" aria-pressed="${w === pen}" aria-label="${L('ขนาดพู่กัน', 'Brush')} ${w}"><i style="width:${Math.round(w / 2) + 6}px;height:${Math.round(w / 2) + 6}px"></i></button>`).join('')}
-<button data-a="kidundo" aria-label="${L('ย้อนกลับ', 'Undo')}">↶</button><button data-a="kidclear" aria-label="${L('ล้างทั้งหมด', 'Clear')}">🧽</button></div>
+<button class="dclear" data-a="kidclear" aria-label="${L('ล้างแล้ววาดใหม่', 'Wipe and start again')}">🧽 <b>${L('วาดใหม่', 'Start again')}</b></button></div></div></div>
 <button class="kidbig" data-a="kiddrawdone" data-t="${esc(t.id)}" data-d="${day === null ? '' : day}" data-k="${esc(kid)}">${L('เก็บรูปนี้! ✨', 'Keep it! ✨')}</button>
 ${mine.length ? `<div class="drawn">${mine.map((m) => `<img src="${esc(imgT(m))}" alt="">`).join('')}</div>` : ''}`;
   } else if (view === 'spot') {
@@ -689,6 +693,7 @@ ${m.done ? lvWin(t, kid, 'maze', ['mazeagain']) : `<button class="kidbig ghost" 
     const s2 = simonFor(t, kid);
     body = lvBar(t, kid, 'simon') + `<div class="kidguide">${guideImg(0)}<p id="simonsay">${s2.done ? L(`เก่งมาก ${esc(name)}! จำเพลงได้หมดเลย 🎉`, `Brilliant, ${esc(name)}! You remembered every tune 🎉`) : s2.turn === 'you' ? L('ถึงตาหนู! กดตามเพลง', 'Your turn! Play it back') : L('กดฟัง แล้วกดตามนะ', 'Listen, then play it back')}</p></div>
 <div class="simonb${s2.turn === 'listen' ? ' listen' : ''}" id="simonb">${SIMON.map((q, k) => `<button class="spad" style="--pc:${q[0]}" data-a="simonpad" data-v="${k}" aria-label="${esc(L(q[3], q[4]))}"><span>${q[1]}</span></button>`).join('')}</div>
+${s2.done ? '' : simTrackHtml(s2.seq.length)}
 ${s2.n && !s2.done ? `<div class="simstars" aria-hidden="true">${'⭐'.repeat(s2.n)}</div>` : ''}
 ${s2.done ? lvWin(t, kid, 'simon', ['simonagain']) : `<button class="kidbig" data-a="simonplay">▶️ ${L('ฟังเพลง', 'Listen')}</button>`}`;
   } else if (view === 'dots') {   // connect the dots
@@ -888,7 +893,7 @@ Object.assign(A, {
     if (n >= cnt.n) setTimeout(() => { beep('chime'); celebrate([cnt.e, '⭐', '✨']); star(kidNow(), 1); render(); sayUi(L(`ทั้งหมด ${n} ตัว!`, `${n} altogether!`)); }, 500); else render();
   },
   kidnewcount() { beep('pop'); const t = kidTrip(route().parts[1]); newCount(t); render(); },
-  kidcolor(b) { beep('tap'); kidColour = b.dataset.v; $$('.palette button').forEach((x) => x.setAttribute('aria-pressed', x.dataset.v === kidColour)); },
+  kidcolor(b) { beep('tap'); kidColour = b.dataset.v; $$('.palette button').forEach((x) => x.setAttribute('aria-pressed', x.dataset.v === kidColour)); drawWrap(); },
   kidcolourdone(b) { beep('chime'); burst(b, ['🎨', '✨', '⭐']); celebrate(['🎨', '⭐', '✨']); star(kidNow(), 1); setTimeout(() => nav(b.dataset.v), 900); },
   kidspot(b) {
     if (b.dataset.say) sayUi(b.dataset.say);
@@ -956,8 +961,11 @@ Object.assign(A, {
   saytale(b) { sayTale(b); },
   // drawing
   kidpen(b) { beep('tap'); pen = +b.dataset.v; $$('.drawtools [data-a="kidpen"]').forEach((x) => x.setAttribute('aria-pressed', +x.dataset.v === pen)); },
-  kidundo() { beep('tap'); pad.strokes.pop(); const cv = $('#kidcanvas'); if (cv) redraw(cv); },
-  kidclear(b) { if (!pad.strokes.length) return; if (!b.dataset.armed) { b.dataset.armed = '1'; b.classList.add('armed'); setTimeout(() => { delete b.dataset.armed; b.classList.remove('armed'); }, 2500); beep('tap'); return; } pad.strokes = []; beep('pop'); const cv = $('#kidcanvas'); if (cv) redraw(cv); },
+  kidundo() { beep('tap'); if (!pad.strokes.length && pad.gone) { pad.strokes = pad.gone; pad.gone = null; } else pad.strokes.pop(); const cv = $('#kidcanvas'); if (cv) redraw(cv); },
+  // one tap wipes the paper (owner: starting again should be easy); ↶ brings the picture back until the next stroke
+  kidclear() { if (!pad.strokes.length) return; pad.gone = pad.strokes; pad.strokes = []; beep('pop'); const cv = $('#kidcanvas'); if (cv) redraw(cv); },
+  kidtray() { beep('tap'); pad.hide = !pad.hide; drawWrap(); },
+  kidfull() { beep('tap'); pad.full = !pad.full; drawWrap(); },
   kiddrawdone(b) {
     const cv = $('#kidcanvas'), t = trip(b.dataset.t), kid = b.dataset.k, day = b.dataset.d === '' ? null : +b.dataset.d;
     if (!cv || !pad.strokes.length) { sayUi(L('วาดอะไรสักหน่อยก่อนนะ', 'Draw something first!')); return; }
@@ -966,7 +974,7 @@ Object.assign(A, {
       if (!blob) return;
       const id = `dr-${kid}-${Date.now().toString(36)}${Math.random().toString(36).slice(2, 6)}`, at = Date.now();
       const caption = `🖍️ ${kidName(kid)}`;
-      pad.strokes = []; pad.key = '';
+      pad.strokes = []; pad.key = ''; pad.gone = null; pad.hide = false; pad.full = false;
       beep('chime'); burst(b, ['🖍️', '✨', '⭐']); sayUi(L(`สวยมาก ${kidName(kid)}!`, `Beautiful, ${kidName(kid)}!`));
       await enqueue({ method: 'PUT', url: `/api/b/media/${id}?trip=${encodeURIComponent(t.id)}&day=${day === null ? '' : day}&at=${at}&caption=${encodeURIComponent(caption)}`, blob,
         local: { coll: 'media', id, row: { trip: t.id, day, caption, highlight: false, at, w: DRAW_W, h: DRAW_H } } });
@@ -1237,15 +1245,25 @@ let sm = null, simT = 0;
 function simonNew(t, kid) { const lv = lvOf(t, kid, 'simon'); sm = { key: `${t.id}.${kid}`, tid: t.id, kid, at: lvState(t, kid, 'simon').at, lv, n: 0, seq: [], pos: 0, turn: 'wait', done: false }; simonRound(); }
 function simonRound() { sm.seq = Array.from({ length: sm.lv.len }, () => Math.floor(Math.random() * SIMON.length)); sm.pos = 0; sm.turn = 'wait'; }
 const simonFor = (t, kid) => { if (!sm || sm.key !== `${t.id}.${kid}` || sm.at !== lvState(t, kid, 'simon').at) simonNew(t, kid); return sm; };
-function simonLight(v) { beep('note', SIMON[v][2]); const p = $(`#simonb .spad[data-v="${v}"]`); if (p) { p.classList.remove('lit'); void p.offsetWidth; p.classList.add('lit'); } }
+// A pad lights for a moment, then goes dark again — so the same note twice reads as two flashes (owner, Nov 2026: a repeated note looked like one), and its animal hops each time
+const simLitT = {};
+function simonLight(v) {
+  beep('note', SIMON[v][2]); const p = $(`#simonb .spad[data-v="${v}"]`); if (!p) return;
+  clearTimeout(simLitT[v]); const was = p.classList.contains('lit'); p.classList.remove('lit');
+  const on = () => { p.classList.add('lit'); simLitT[v] = setTimeout(() => p.classList.remove('lit'), 380); const e = p.querySelector('span'); if (e && e.animate && !matchMedia('(prefers-reduced-motion: reduce)').matches) e.animate([{ transform: 'translateY(0) scale(1)' }, { transform: 'translateY(-14px) scale(1.18)' }, { transform: 'translateY(0) scale(1)' }], { duration: 320, easing: 'ease-out' }); };
+  if (was) simLitT[v] = setTimeout(on, 90); else on();
+}
+// The row under the pads: one slot per note, filled with its animal as it plays (listen) or as the child plays it back — two chicks in a row = the chick twice
+const simTrackHtml = n => `<div class="simtrack" id="simtrack" aria-hidden="true">${'<i></i>'.repeat(n)}</div>`;
+function simonTrack(filled) { const el = $('#simtrack'); if (!el || !sm) return; if (el.children.length !== sm.seq.length) el.outerHTML = simTrackHtml(sm.seq.length); [...$('#simtrack').children].forEach((c, k) => { const v = filled[k]; const html = v == null ? '' : SIMON[v][1]; if (c.innerHTML !== html) { c.innerHTML = html; c.className = v == null ? '' : 'on'; c.style.setProperty('--pc', v == null ? '' : SIMON[v][0]); } }); }
 function simonSay() { const el = $('#simonsay'), b = $('#simonb'); if (b) b.classList.toggle('listen', sm.turn === 'listen'); if (el) el.textContent = sm.turn === 'listen' ? L('ฟังนะ…', 'Listen…') : sm.turn === 'you' ? L('ถึงตาหนู! กดตามเพลง', 'Your turn! Play it back') : L('กดฟัง แล้วกดตามนะ', 'Listen, then play it back'); }
 function simonPlay() {
   clearTimeout(simT); if (!sm || sm.done) return;
-  sm.turn = 'listen'; sm.pos = 0; simonSay(); let k = 0;
+  sm.turn = 'listen'; sm.pos = 0; simonSay(); simonTrack([]); let k = 0;
   const step = () => {
     if (!$('#simonb') || !sm) { if (sm) sm.turn = 'wait'; return; }   // left the game: stop
-    if (k >= sm.seq.length) { sm.turn = 'you'; simonSay(); return; }
-    simonLight(sm.seq[k++]); simT = setTimeout(step, 680);
+    if (k >= sm.seq.length) { simT = setTimeout(() => { if (!sm || sm.turn !== 'listen') return; sm.turn = 'you'; simonSay(); simonTrack([]); }, 500); return; }
+    simonLight(sm.seq[k]); k++; simonTrack(sm.seq.slice(0, k)); simT = setTimeout(step, 760);
   };
   simT = setTimeout(step, 450);
 }
@@ -1311,7 +1329,7 @@ Object.assign(A, {
     simonLight(v);
     if (sm.turn !== 'you') return;   // between tunes the pads are just an instrument
     if (v !== sm.seq[sm.pos]) { sm.turn = 'wait'; b.classList.remove('nope'); void b.offsetWidth; b.classList.add('nope'); sayUi(L('อุ๊ย ฟังอีกทีนะ', 'Oops — listen again!')); setTimeout(simonPlay, 1500); return; }
-    sm.pos++;
+    sm.pos++; simonTrack(sm.seq.slice(0, sm.pos));
     if (sm.pos < sm.seq.length) return;
     sm.turn = 'wait'; sm.n++; burst(b, ['⭐', '🎵']);
     if (sm.n >= sm.lv.r) { sm.done = true; lvDone(trip(sm.tid), sm.kid, 'simon'); setTimeout(() => { beep('fanfare'); celebrate(['🎵', '⭐', '✨']); star(sm.kid, 2); sayUi(L('เก่งมาก! จำเพลงได้หมดเลย', 'Brilliant! You remembered every tune')); safeRender(); }, 500); return; }

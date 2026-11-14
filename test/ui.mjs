@@ -643,6 +643,15 @@ const T = 'hk-macau-2026';
   }
   await page.waitForSelector('[data-a="kglv"].kidbig', { timeout: 5000 }).catch(() => {});
   ok(replays && await page.evaluate(() => sm.done && sm.lv.len === 3) && await page.locator('[data-a="kglv"][data-v="3"].kidbig').count() === 1, 'kid game simon: a wrong note plays the tune again; playing back three 3-note tunes wins level 2 and opens level 3');
+  {   // the same note twice must read as two: the pad goes dark between notes and the row under the pads shows the animal twice
+    await page.click('[data-a="simonagain"]'); await page.waitForSelector('#simtrack');
+    await page.evaluate(() => { sm.seq = [2, 2, 1]; const el = document.querySelector('#simtrack'); el.outerHTML = simTrackHtml(3); });
+    const darks = await page.evaluate(() => new Promise(res => { let seen = 0, wasLit = false; const p = document.querySelector('#simonb .spad[data-v="2"]'); const iv = setInterval(() => { const l = p.classList.contains('lit'); if (wasLit && !l) seen++; wasLit = l; }, 20); document.querySelector('[data-a="simonplay"]').click(); setTimeout(() => { clearInterval(iv); res(seen); }, 1900); }));
+    await page.waitForFunction(() => sm.turn === 'you', null, { timeout: 8000 });
+    await page.click('#simonb .spad[data-v="2"]'); await page.click('#simonb .spad[data-v="2"]');
+    const row = await page.evaluate(() => [...document.querySelectorAll('#simtrack i')].map(i => i.textContent).join('|'));
+    ok(darks >= 2 && /^(.+)\|\1\|$/.test(row), `kid game simon: a repeated note flashes twice and fills two slots (dark gaps ${darks}, row ${row})`);
+  }
   await page.goto(`${BASE}/#/kid/mimi/dots`); await page.waitForSelector('#dotsb svg');
   await page.locator('#dotsb').scrollIntoViewIfNeeded();
   const skip = await page.evaluate(() => { const box = document.querySelector('#dotsb svg').getBoundingClientRect(), q = DOT_SHAPES[dt.order[0]].p[1]; return [box.left + q[0] / 100 * box.width, box.top + q[1] / 100 * box.height]; });
@@ -1114,15 +1123,27 @@ const T = 'hk-macau-2026';
   ok((await page.evaluate(() => window.__said)).some((x) => /Draw something first/.test(x)) && page.url().endsWith('/draw'), 'draw: an empty board is not saved');
   const box = await page.locator('#kidcanvas').boundingBox();
   await page.click('.palette button[data-v="#EF5350"]');
-  await page.mouse.move(box.x + 40, box.y + 40); await page.mouse.down();
-  for (let k = 1; k <= 12; k++) await page.mouse.move(box.x + 40 + k * 20, box.y + 40 + Math.sin(k) * 30);
+  await page.mouse.move(box.x + 90, box.y + 90); await page.mouse.down();
+  for (let k = 1; k <= 12; k++) await page.mouse.move(box.x + 90 + k * 20, box.y + 90 + Math.sin(k) * 30);
   await page.mouse.up();
+  ok(!(await page.locator('#drawtray').isVisible()) && await page.locator('#drawcol').isVisible(), 'draw: the colour tray tucks away once the child draws; the colour dot on the paper stays');
+  await page.click('#drawcol'); await page.waitForSelector('#drawtray', { state: 'visible' });
   await page.click('.palette button[data-v="#42A5F5"]'); await page.click('[data-a="kidpen"][data-v="48"]');
   await page.mouse.move(box.x + 100, box.y + 150); await page.mouse.down(); await page.mouse.move(box.x + 250, box.y + 200); await page.mouse.up();
   const red = await page.evaluate(() => { const d = document.querySelector('#kidcanvas').getContext('2d').getImageData(0, 0, 1200, 900).data; let n = 0; for (let k = 0; k < d.length; k += 4) if (d[k] > 200 && d[k + 1] < 120 && d[k + 2] < 120) n++; return n; });
   ok(red > 500, `draw: the finger paints on the canvas (${red} red pixels)`);
   ok(await s.noHScroll(), 'draw page fits the phone');
   await s.shot('03-kid-draw', false);
+  {   // the paper fills the screen; one tap of the sponge wipes it and ↶ brings the picture back
+    await page.click('#drawfull');
+    const r = await page.evaluate(() => { const c = document.querySelector('#kidcanvas').getBoundingClientRect(); return { w: Math.round(c.width), vw: innerWidth, top: document.elementFromPoint(c.left + c.width / 2, c.top + c.height / 2) === document.querySelector('#kidcanvas') }; });
+    await s.shot('03-kid-draw-full', false);
+    ok(r.w >= r.vw - 30 && r.top && await page.locator('#drawwrap.full').count() === 1, `draw: full screen paper is as wide as the screen and on top (${r.w}/${r.vw})`);
+    await page.click('#drawcol'); await page.click('[data-a="kidclear"]');
+    const n0 = await page.evaluate(() => pad.strokes.length); await page.click('.dpundo'); const n1 = await page.evaluate(() => pad.strokes.length);
+    ok(n0 === 0 && n1 === 2, `draw: one tap of the sponge wipes the paper, ↶ brings it back (${n0} → ${n1})`);
+    await page.click('#drawfull'); ok(await page.locator('#drawwrap.full').count() === 0, 'draw: the full-screen paper closes again');
+  }
   await page.click('[data-a="kidundo"]');
   await page.click('[data-a="kiddrawdone"]'); await page.waitForSelector('.kidtiles');
   await page.waitForFunction(() => queue.length === 0, null, { timeout: 15000 });
