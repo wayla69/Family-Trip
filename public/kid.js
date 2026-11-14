@@ -514,15 +514,16 @@ const kidPhotos = (t, i) => { const all = mediaOf(t.id).filter((m) => !isDrawing
 let kidPhoto = 0, kidPage = 0;
 const shuffle = (a) => { a = a.slice(); for (let i = a.length - 1; i > 0; i--) { const j = Math.floor(Math.random() * (i + 1)); [a[i], a[j]] = [a[j], a[i]]; } return a; };
 let mg = null;   // pairs game: {t, kid, cards:[{k, img|e}], up:[card indexes face up], done:Set(k), moves, won}
-function matchDeck(t, pairs) {
+function matchDeck(t, pairs, town) {
   pairs = pairs || 6;
   const faces = [];
+  if (town != null) { questPhotos(t, town).slice(0, 2).forEach((m) => faces.push({ k: 'p' + m.id, img: imgT(m), ph: true, own: true })); const a = dayArt(t, town); if (a) faces.push({ k: 'd' + town, img: a, own: true }); questThings(t, town).forEach((x) => faces.push({ k: 'q' + x[0], e: x[0], own: true })); questAnimals(t).forEach((x) => faces.push({ k: 'w' + x[0], e: x[0], own: true })); }
   if (pixMode(t, kidDayOf(t), 'match') === 'photo') shuffle(kidPhotoPool(t)).slice(0, pairs).forEach((m) => faces.push({ k: 'p' + m.id, img: imgT(m), ph: true }));   // the family's photos first, drawings fill the rest
   if (faces.length < pairs) t.days.forEach((_, i) => { const a = dayArt(t, i); if (a) faces.push({ k: 'd' + i, img: a }); });
   ((t.passport || {}).days || []).forEach((pd, i) => (pd.spot || []).forEach((s) => faces.push({ k: `s${i}.${s.k}`, e: s.e })));
   if (faces.length < pairs + 2) ['🐨', '🦘', '🐬', '🐼', '🚢', '✈️', '🦒', '🐢', '🦋', '🍓', '🚗', '🌈', '🐘', '🦁', '🐙', '🍉', '🚂', '🎈', '🦉', '🐞', '🍄', '⛵', '🐧', '🦊'].forEach((e, i) => faces.push({ k: 'x' + i, e }));
-  const seenE = new Set(), uniq = faces.filter((f) => !f.e || (!seenE.has(f.e) && seenE.add(f.e)));   // one card per face: two different keys with the same emoji would never match
-  const pick = uniq.filter((f) => f.ph).concat(shuffle(uniq.filter((f) => !f.ph))).slice(0, pairs); return shuffle(pick.concat(pick));
+  const seenE = new Set(), seenK = new Set(), uniq = faces.filter((f) => !seenK.has(f.k) && seenK.add(f.k) && (!f.e || (!seenE.has(f.e) && seenE.add(f.e))));   // one card per face: two different keys with the same emoji would never match
+  const pick = uniq.filter((f) => f.ph || f.own).concat(shuffle(uniq.filter((f) => !f.ph && !f.own))).slice(0, pairs); return shuffle(pick.concat(pick));
 }
 // which pictures a game uses (owner's ask, Nov 2026: the children's own photos are the pictures they love most): 'art' = the day's drawing,
 // 'photo' = one of the family's photos (520 px thumbnails, on the phone once the book is stored) — per game, this visit
@@ -531,7 +532,7 @@ const kidPhotoPool = (t) => mediaOf(t.id).filter((m) => !isDrawing(m) && !m.pend
 const pixMode = (t, i, g) => kidPix[g] || (g === 'jigsaw' && !dayArt(t, i) ? 'photo' : 'art');
 const randPhoto = (t) => { const p = kidPhotoPool(t); return p.length ? imgT(p[Math.floor(Math.random() * p.length)]) : null; };
 const pixPick = (t, i, g, again) => (kidPhotoPool(t).length ? `<div class="pixpick" role="group" aria-label="${L('รูปที่ใช้', 'Pictures')}">${(g === 'jigsaw' && !dayArt(t, i) ? [] : [['art', '🎨', L('ภาพวาด', 'Drawing')]]).concat([['photo', '📷', L('รูปของเรา', 'Our photos')]]).map(([v, e, l]) => `<button data-a="kidpix" data-g="${g}" data-v="${v}" aria-pressed="${pixMode(t, i, g) === v}">${e} ${l}</button>`).join('')}${pixMode(t, i, g) === 'photo' ? `<button data-a="${again}">🔀 ${L('รูปใหม่', 'New photo')}</button>` : ''}</div>` : '');
-const newMatch = (t, kid) => { mg = { t: t.id, kid, at: lvState(t, kid, 'match').at, cards: matchDeck(t, lvOf(t, kid, 'match').p), up: [], done: new Set(), moves: 0, won: false }; };
+const newMatch = (t, kid) => { mg = { t: t.id, kid, at: lvState(t, kid, 'match').at, cards: matchDeck(t, lvOf(t, kid, 'match').p, (questIn(t, kid, 'match') || {}).town), up: [], done: new Set(), moves: 0, won: false }; };
 let cnt = null;   // counting game: {n, e, hit:[card indexes in the order tapped]}
 const NUMW = { th: ['หนึ่ง', 'สอง', 'สาม', 'สี่', 'ห้า', 'หก', 'เจ็ด', 'แปด', 'เก้า', 'สิบ', 'สิบเอ็ด', 'สิบสอง', 'สิบสาม', 'สิบสี่', 'สิบห้า', 'สิบหก', 'สิบเจ็ด', 'สิบแปด', 'สิบเก้า', 'ยี่สิบ'], en: ['one', 'two', 'three', 'four', 'five', 'six', 'seven', 'eight', 'nine', 'ten', 'eleven', 'twelve', 'thirteen', 'fourteen', 'fifteen', 'sixteen', 'seventeen', 'eighteen', 'nineteen', 'twenty'] };
 function newCount(t, kid) {   // count today's things (the day's missions), now and then the trip's animals and friends
@@ -790,7 +791,7 @@ ${want ? `<div class="hidetarget" aria-hidden="true">${want[0]}</div>` : `<butto
   } else if (view === 'jigsaw' && (dayArt(t, i) || kidPhotoPool(t).length)) {   // the day's picture in pieces: tap a piece, tap its place (tap-tap, not drag: a small hand can do it)
     if (!jg || jg.key !== `${t.id}.${i}.${kid}` || jg.at !== lvState(t, kid, 'jigsaw').at) newJigsaw(t, i, kid);
     body = `<div class="kidguide">${guideImg(1)}<p>${jg.done ? L('ต่อภาพเสร็จแล้ว! 🎉', 'Picture done! 🎉') : jg.pick === null ? L('ลากชิ้นไปใส่ช่องที่ใช่! (หรือแตะชิ้น แล้วแตะช่อง)', 'Drag a piece to its place! (or tap it, then tap the place)') : L('ใส่ตรงไหนดีนะ?', 'Where does it go?')}</p></div>
-${lvBar(t, kid, 'jigsaw')}${pixPick(t, i, 'jigsaw', 'kidnewjig')}
+${lvBar(t, kid, 'jigsaw')}${quest ? '' : pixPick(t, i, 'jigsaw', 'kidnewjig')}
 <div class="jigboard" style="--art:url('${esc(jg.src)}');--c:${jg.cols};--ar:${jg.ar};--pa:${jg.ar * jg.rows / jg.cols}">${jg.slots.map((p, s) => `<button class="jslot${p !== null ? ' filled' : ''}" data-a="kidjslot" data-v="${s}"${p !== null ? ` style="${jgPos(p, jg)}"` : ''} aria-label="${L('ช่อง', 'Slot')} ${s + 1}"></button>`).join('')}</div>
 <div class="jigtray${jg.slots.length > 20 ? ' many lots' : jg.slots.length > 6 ? ' many' : ''}" style="--art:url('${esc(jg.src)}');--pa:${jg.ar * jg.rows / jg.cols}">${jg.tray.map((p) => `<button class="jpiece${jg.pick === p ? ' pick' : ''}" data-a="kidjpick" data-v="${p}" style="${jgPos(p, jg)}" aria-label="${L('ชิ้น', 'Piece')} ${p + 1}"></button>`).join('')}</div>
 ${jg.done ? lvWin(t, kid, 'jigsaw', ['kidnewjig']) : ''}`;
@@ -840,7 +841,7 @@ ${mapHtml(t, i, [kid].concat((t.theme.children || []).map((c) => c.slug).filter(
   } else if (view === 'match') {
     if (!mg || mg.t !== t.id || mg.kid !== kid || mg.at !== lvState(t, kid, 'match').at) newMatch(t, kid);
     body = `<div class="kidguide">${guideImg(1)}<p>${mg.won ? L(`เก่งมาก! จับคู่ครบใน ${mg.moves} ครั้ง 🎉`, `Brilliant! All the pairs in ${mg.moves} goes 🎉`) : L('แตะเปิดการ์ดสองใบ หาคู่ที่เหมือนกัน!', 'Tap two cards — find the pairs!')}</p></div>
-${lvBar(t, kid, 'match')}${pixPick(t, i, 'match', 'kidnewmatch')}
+${lvBar(t, kid, 'match')}${quest ? '' : pixPick(t, i, 'match', 'kidnewmatch')}
 <div class="mgrid" style="--mc:${mg.cards.length <= 6 ? 3 : mg.cards.length <= 16 ? 4 : mg.cards.length <= 24 ? 5 : 6}">${mg.cards.map((c, n) => `<button class="mcard${c.ph ? ' ph' : ''}${mg.up.includes(n) || mg.done.has(c.k) ? ' open' : ''}${mg.done.has(c.k) ? ' done' : ''}" data-a="kidflip" data-v="${n}" aria-label="${L('การ์ด', 'Card')} ${n + 1}"><span class="back">?</span><span class="face">${c.img ? `<img src="${esc(c.img)}" alt="">` : esc(c.e)}</span></button>`).join('')}</div>
 ${mg.won ? lvWin(t, kid, 'match', ['kidnewmatch']) : `<button class="kidbig ghost" data-a="kidnewmatch">🔁 ${L('เล่นใหม่', 'Play again')}</button>`}`;
   } else if (view === 'mood' && !pre) {
@@ -1131,6 +1132,16 @@ const questSlot = (t, kid, i, k) => (k === 'x' ? questBonus(t, kid, i) : k === 3
 // a mission left unfinished twice comes back one level easier (this device only; the child never sees a number)
 const questEase = (kid, t, i, k) => Math.floor(((ls('qease_' + kid) || {})[`${t.id}.${i}.${k}`] || 0) / 2);
 function questQuit(q) { const all = ls('qease_' + q.kid) || {}, key = `${q.tid}.${q.town}.${q.slot}`; all[key] = (all[key] || 0) + 1; ls('qease_' + q.kid, all); }
+/* A mission is made of its town (owner's plan, part 4): the things the book says to spot that day, the trip's animals and foods and the
+   family's photos of that day stand in for the games' stock pictures. Shapes match the games' own lists: [emoji, Thai, English]. */
+const qEn = (x) => { const v = String(x || '').replace(/^(a|an|the|our|some)\s+/i, ''); return v.charAt(0).toLowerCase() + v.slice(1); };
+const qUniq = (xs) => { const seen = new Set(); return xs.filter((x) => x && x[0] && x[1] && x[2] && !seen.has(x[0]) && seen.add(x[0])); };
+const questThings = (t, i) => qUniq(((((t.passport || {}).days || [])[i] || {}).spot || []).map((x) => [x.e, x.th, qEn(x.en)]));
+const questAnimals = (t) => qUniq((((t.info || {}).wild) || []).map((w) => [w.emo, (w.name || {}).th, qEn((w.name || {}).en)]));
+const questFoods = (t) => { const pp = t.passport || {}; return qUniq((Array.isArray(pp.food) ? pp.food : []).concat((pp.lists || []).filter((l) => l.yum || l.stars).flatMap((l) => listItems(l))).map((x) => [x.e, x.th, qEn(x.en)])).map((x) => x.concat(`some ${x[2]}`)); };
+const questPhotos = (t, i) => mediaOf(t.id).filter((m) => m.day === i && !isDrawing(m) && !m.pending);
+// a list that leads with the town's own, the game's stock after it (never the same emoji twice)
+const qLead = (own, stock) => qUniq(shuffle(own).concat(shuffle(stock)));
 const questKey = (i, k) => `quest.d${i}.${k}`;
 const questGot = (t, kid, i, k) => !!ticked(t, questKey(i, k), kid) || questMem.has(tickId(t, questKey(i, k), kid));
 const questTownDone = (t, kid, i) => questGot(t, kid, i, 'chest');
@@ -1190,7 +1201,24 @@ function questPic(t, kid) {
   return `<div class="qpic${all ? ' all' : ''}"><b>${all ? L('ภาพสมบัติครบแล้ว!', 'The treasure picture is complete!') : L('ภาพสมบัติของเรา', 'Our treasure picture')}</b>
 <div class="qpicg" style="--c:${cols};--art:url('${esc(src)}')" aria-hidden="true">${Array.from({ length: cols * rows }, (_, k) => { const on = k >= n ? all : questTownDone(t, kid, k); return `<i class="${on ? 'on' : ''}"${on ? ` style="${jgPos(k, { cols, rows })}"` : ''}>${on ? '' : '☁️'}</i>`; }).join('')}</div></div>`;
 }
+// for the grown-ups, on the book's menu: where each child is on the road (only a child who has set off), and a fresh start behind two taps
+function questLine(t) {
+  const n = t.days.length, rows = (t.theme.children || []).map((c) => c.slug).map((kid) => {
+    const mine = entriesOf(t.id).filter((e) => e.kind === 'tick' && e.child === kid && /^quest\./.test(e.first_key || '')); if (!mine.length) return '';
+    const at = questAt(t, kid), gems = t.days.filter((_, i) => questTownDone(t, kid, i)).length;
+    const where = at >= n ? L('เก็บสมบัติครบทุกเมืองแล้ว', 'found every treasure') : L(`อยู่เมืองที่ ${at + 1} ${questTown(t, at)}`, `is in town ${at + 1}, ${questTown(t, at)}`);
+    return `<li>${kidFace(kid)}<span><b>${esc(kidName(kid))}</b> ${esc(where)}${gems && at < n ? ` <span class="nowrap">${esc(L(`สมบัติ ${gems} ชิ้น`, `${gems} treasure${gems > 1 ? 's' : ''}`))}</span>` : ''}</span>${isEditor() ? `<button type="button" class="mini" data-a="questreset" data-t="${esc(t.id)}" data-k="${esc(kid)}">${L('เริ่มใหม่', 'Start again')}</button>` : ''}</li>`;
+  }).filter(Boolean);
+  return rows.length ? `<section class="questline"><div class="part pickh">${L('แผนที่ผจญภัยของเด็กๆ', 'The kids’ adventure map')}</div><ul>${rows.join('')}</ul></section>` : '';
+}
 Object.assign(A, {
+  questreset(b) {   // a grown-up starts a child's road again: the missions and chests of this book go, the stars and stickers of other things stay
+    const t = trip(b.dataset.t), kid = b.dataset.k; if (!t || !isEditor()) return;
+    if (!armed(b, L('แตะอีกครั้ง เส้นทางของลูกจะเริ่มใหม่ตั้งแต่เมืองแรก', 'Tap again — the road starts over from the first town'))) return;
+    entriesOf(t.id).filter((e) => e.kind === 'tick' && e.child === kid && /^quest\./.test(e.first_key || '')).forEach((e) => delEntry(e.id));
+    const ease = ls('qease_' + kid) || {}; Object.keys(ease).filter((k) => k.startsWith(t.id + '.')).forEach((k) => delete ease[k]); ls('qease_' + kid, ease);
+    questOpen = null; questNew = null; toast(L('เริ่มเส้นทางใหม่แล้ว', 'The road starts again')); safeRender();
+  },
   questtown(b) {   // a town on the road: one reached opens (to play or play again); one in the clouds only says so
     const kid = kidNow(), t = kidTrip(kid), i = +b.dataset.v; if (!t) return;
     if (questWalking) return;
@@ -1294,7 +1322,7 @@ let kg = null;   // the game in hand: {game, key: trip.kid, n: round, r: this ro
 function kgRound(g) {
   const many = g.lv.o || 2;
   if (g.game === 'shadow') {
-    const want = g.deck[g.n], kind = (x) => SHADOW_THINGS.has(x[0]), pool = SHADOWS.filter((x) => x !== want && (!g.lv.same || kind(x) === kind(want)));
+    const want = g.deck[g.n], kind = (x) => SHADOW_THINGS.has(x[0]), mine = g.own && g.own.has(want[0]), pool = (g.pool || SHADOWS).filter((x) => x[0] !== want[0] && (!g.lv.same || mine || kind(x) === kind(want)));   // a town's own thing has no "kind": any other picture may sit beside it
     g.r = { want, opts: shuffle([want].concat(shuffle(pool).slice(0, many - 1))) };
   }
   else if (g.game === 'bigsmall') {   // sizes far enough apart for a toddler's eye; big and small asked in turn, starting at random
@@ -1323,23 +1351,27 @@ function kgRound(g) {
     g.lastN = n;
     const gap = n > 14 ? 13 : n > 10 ? 15 : 19, items = []; for (let k = 0; k < n; k++) { let x, y, tries = 0; do { x = 9 + Math.random() * 82; y = 10 + Math.random() * 80; tries++; } while (tries < 120 && items.some((o) => Math.hypot(o.x - x, o.y - y) < gap)); items.push({ x, y }); }
     const near = [n - 1, n + 1, n - 2, n + 2, n - 3, n + 3].filter((x) => x >= 1 && x <= 20);
-    g.r = { n, e: HM_E[Math.floor(Math.random() * HM_E.length)], items, ct: [], opts: shuffle([n].concat(near.slice(0, g.lv.o - 1))) };
+    const hm = g.things && g.things.length ? g.things : HM_E;
+    g.r = { n, e: hm[Math.floor(Math.random() * hm.length)], items, ct: [], opts: shuffle([n].concat(near.slice(0, g.lv.o - 1))) };
   }
   else if (g.game === 'next') {
-    const pat = g.lv.pat[Math.floor(Math.random() * g.lv.pat.length)], sym = shuffle(NEXT_E).slice(0, 4), seq = [];
+    const pat = g.lv.pat[Math.floor(Math.random() * g.lv.pat.length)], pool = g.things && g.things.length ? shuffle(g.things).concat(shuffle(NEXT_E.filter((x) => !g.things.includes(x)))) : shuffle(NEXT_E), sym = pool.slice(0, 4), seq = [];
     for (let k = 0; seq.length <= g.lv.show; k++) seq.push(sym['ABCD'.indexOf(pat[k % pat.length])]);
-    const answer = seq[g.lv.show], others = sym.filter((x) => x !== answer && pat.includes('ABCD'[sym.indexOf(x)])).concat(shuffle(NEXT_E.filter((x) => !sym.includes(x))));
+    const answer = seq[g.lv.show], others = sym.filter((x) => x !== answer && pat.includes('ABCD'[sym.indexOf(x)])).concat(shuffle(pool.filter((x) => !sym.includes(x))));
     g.r = { shown: seq.slice(0, g.lv.show), answer, opts: shuffle([answer].concat(others.slice(0, g.lv.o - 1))) };
   }
-  else if (g.game === 'feed') { const want = g.deck[g.n]; g.r = { pal: g.pal, want, opts: shuffle([want].concat(shuffle(FOODS.filter((x) => x !== want)).slice(0, many - 1))) }; if (g.lv.mem) feedHide(g); }
+  else if (g.game === 'feed') { const want = g.deck[g.n]; g.r = { pal: g.pal, want, opts: shuffle([want].concat(shuffle((g.foods || FOODS).filter((x) => x[0] !== want[0])).slice(0, many - 1))) }; if (g.lv.mem) feedHide(g); }
   g.got = false; g.miss = 0;
 }
 function kgNew(game, t, kid) {
   const g = { game, key: `${t.id}.${kid}`, tid: t.id, kid, n: 0, lv: lvOf(t, kid, game), at: lvState(t, kid, game).at, done: false, got: false };
-  if (game === 'shadow') g.deck = shuffle(SHADOWS).slice(0, g.lv.r);
+  const q = questIn(t, kid, game), own = q ? questThings(t, q.town) : [];
+  if (q) g.own = new Set(own.map((x) => x[0]).concat(questAnimals(t).map((x) => x[0])));
+  if (game === 'shadow') { g.pool = q ? qUniq(own.concat(questAnimals(t), SHADOWS)) : SHADOWS; g.deck = q ? qLead(own, questAnimals(t)).concat(shuffle(SHADOWS)).slice(0, g.lv.r) : shuffle(SHADOWS).slice(0, g.lv.r); if (q) g.deck = shuffle(qUniq(g.deck)); }
   if (game === 'where' || game === 'odd' || game === 'next' || game === 'howmany') g.deck = Array(g.lv.r).fill(0);   // rounds only: each one is drawn fresh
-  if (game === 'bigsmall') { g.deck = shuffle(SHADOWS.filter((x) => !/[✈️⛵🎸🚲]/u.test(x[0]))).slice(0, g.lv.r); g.first = Math.random() < 0.5 ? 0 : 1; }
-  if (game === 'feed') { g.pal = FEED_PALS[Math.floor(Math.random() * FEED_PALS.length)]; g.deck = shuffle(FOODS).slice(0, g.lv.r); g.fed = []; }
+  if (game === 'bigsmall') { const stock = SHADOWS.filter((x) => !/[✈️⛵🎸🚲]/u.test(x[0])); g.deck = (q ? qLead(own.concat(questAnimals(t)), stock) : shuffle(stock)).slice(0, g.lv.r); g.first = Math.random() < 0.5 ? 0 : 1; }
+  if (game === 'feed') { const tf = q ? questFoods(t) : []; g.foods = tf.length >= 3 ? qUniq(tf.concat(FOODS)) : FOODS; g.pal = FEED_PALS[Math.floor(Math.random() * FEED_PALS.length)]; g.deck = (tf.length >= 3 ? qLead(tf, FOODS) : shuffle(FOODS)).slice(0, g.lv.r); g.fed = []; }
+  if (q && (game === 'howmany' || game === 'next')) g.things = own.map((x) => x[0]);
   if (game === 'sort') {
     g.cols = g.lv.c <= SORT_BASE ? shuffle(SORT_COLS.slice(0, SORT_BASE)).slice(0, g.lv.c) : shuffle(SORT_COLS.slice(0, g.lv.c)); g.bin = {};
     const pool = []; g.cols.forEach((c) => shuffle(c.e).forEach((e) => pool.push({ e, k: c.k })));
@@ -1558,7 +1590,7 @@ function mazeNew(t, kid) {
     if (y === r) right[Math.min(c, d)] = false; else bottom[Math.min(c, d)] = false;
     seen.add(d); stack.push(d);
   }
-  mz = { key: `${t.id}.${kid}`, tid: t.id, kid, at: lvState(t, kid, 'maze').at, n, right, bottom, path: [0], done: false, pair: MAZE_PAIRS[Math.floor(Math.random() * MAZE_PAIRS.length)], star: -1, got: false };
+  mz = { key: `${t.id}.${kid}`, tid: t.id, kid, at: lvState(t, kid, 'maze').at, n, right, bottom, path: [0], done: false, pair: (() => { const q = questIn(t, kid, 'maze'), th = q ? questThings(t, q.town) : [], an = q ? questAnimals(t) : []; if (!th.length) return MAZE_PAIRS[Math.floor(Math.random() * MAZE_PAIRS.length)]; const a = an.length ? an[Math.floor(Math.random() * an.length)] : ['🐭', 'หนู', 'mouse'], g = th[Math.floor(Math.random() * th.length)]; return [a[0], g[0], a[1], g[1], a[2], g[2]]; })(), star: -1, got: false };
   if (lvOf(t, kid, 'maze').star) {   // the ⭐ sits off the route from start to goal, as far down a side path as possible
     const prev = { 0: -1 }, q = [0]; while (q.length) { const c = q.shift(); [c - n, c + n, c - 1, c + 1].forEach((d) => { if (d >= 0 && d < n * n && !(d in prev) && mazeOpen(c, d)) { prev[d] = c; q.push(d); } }); }
     const route = new Set(); for (let c = n * n - 1; c !== -1; c = prev[c]) route.add(c);
@@ -1703,7 +1735,8 @@ document.addEventListener('pointercancel', jdragDone);
 document.addEventListener('click', (e) => { if (Date.now() - jdragEnd < 400 && e.target.closest && e.target.closest('.jpiece, .jslot')) { e.stopPropagation(); e.preventDefault(); } }, true);
 // ---- the jigsaw: the day's picture cut into 2×2 (the little one) or 3×2; a piece shows its crop through background-position ----
 function newJigsaw(t, i, kid) {
-  const lv = lvOf(t, kid, 'jigsaw'), cols = lv.c, rows = lv.r, n = cols * rows, photo = pixMode(t, i, 'jigsaw') === 'photo', src = (photo && randPhoto(t)) || dayArt(t, i);
+  const q = questIn(t, kid, 'jigsaw'), qp = q ? questPhotos(t, q.town) : [], qsrc = q ? (qp.length ? imgT(qp[Math.floor(Math.random() * qp.length)]) : dayArt(t, q.town)) : null;   // a mission: a photo of that day when the family took one, else the town's picture
+  const lv = lvOf(t, kid, 'jigsaw'), cols = lv.c, rows = lv.r, n = cols * rows, photo = qsrc ? qp.length > 0 : pixMode(t, i, 'jigsaw') === 'photo', src = qsrc || (photo && randPhoto(t)) || dayArt(t, i);
   jg = { key: `${t.id}.${i}.${kid}`, at: lvState(t, kid, 'jigsaw').at, cols, rows, src, ar: 1, slots: Array(n).fill(null), tray: Array.from({ length: n }, (_, k) => k).sort(() => Math.random() - 0.5), pick: null, done: false };
   if (photo && src) { const im = new Image(); im.onload = () => { if (jg && jg.src === src) { jg.ar = Math.min(1.5, Math.max(0.7, im.naturalWidth / im.naturalHeight)); render(); } }; im.src = src; }   // the board takes the photo's shape once known
 }
