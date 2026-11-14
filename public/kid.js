@@ -461,7 +461,14 @@ const GAME_ART = { '🐑': 'game/sheep', '🐔': 'game/hen', '🐘': 'game/eleph
   '🐝': 'game/bee', '🦴': 'game/bone', '🐧': 'kidui/pet-penguin', '🌰': 'game/acorn', '🍐': 'game/pear', '🍍': 'game/pineapple', '🥝': 'game/kiwi', '🥔': 'game/potato', '🧅': 'game/onion', '🫑': 'game/pepper',
   '🥬': 'game/greens', '🐯': 'game/tiger', '🐙': 'game/octopus', '🐬': 'kidui/pet-dolphin', '🐠': 'game/reeffish', '🦈': 'game/shark', '🦑': 'game/squid', '🐡': 'game/pufferfish', '🚌': 'game/bus', '🚂': 'game/train',
   '🚁': 'game/helicopter', '🚜': 'game/tractor', '🛵': 'game/scooter', '👕': 'game/tshirt', '👗': 'game/dress', '👟': 'game/shoe', '🧦': 'game/socks', '🧤': 'game/mittens', '🧣': 'game/scarf', '👒': 'game/sunhat',
-  '🌙': 'kidui/moon', '🌼': 'game/daisy', '🍦': 'game/icecream', '🍫': 'game/chocolate', '🍬': 'game/sweet', '🍭': 'game/lollipop', '🕯': 'game/candle', '⭐': 'quest/star' };
+  '🌙': 'kidui/moon', '🌼': 'game/daisy', '🍦': 'game/icecream', '🍫': 'game/chocolate', '🍬': 'game/sweet', '🍭': 'game/lollipop', '🕯': 'game/candle', '⭐': 'quest/star',
+  // set 7: a food library kept ready for any book (owner: "ทำรูปอาหารต่างๆเผื่อไว้") — a book's own food on a mission (passport.food, the tasting lists) is drawn when its emoji is here
+  '🍈': 'food/melon', '🍑': 'food/peach', '🥭': 'food/mango', '🥥': 'food/coconut', '🥑': 'food/avocado', '🌶': 'food/chilli', '🍠': 'food/sweetpotato', '🥐': 'food/croissant', '🥯': 'food/bagel', '🥖': 'food/baguette',
+  '🥨': 'food/pretzel', '🥞': 'food/pancakes', '🧇': 'food/waffle', '🍳': 'food/friedegg', '🥛': 'food/milk', '🥩': 'food/steak', '🍗': 'food/drumstick', '🍖': 'food/meatbone', '🌭': 'food/hotdog', '🍔': 'food/burger',
+  '🍟': 'food/fries', '🍕': 'food/pizza', '🥪': 'food/sandwich', '🌮': 'food/taco', '🌯': 'food/springroll', '🥙': 'food/pita', '🥗': 'food/salad', '🍝': 'food/spaghetti', '🍜': 'food/noodles', '🍲': 'food/stew',
+  '🍛': 'food/curry', '🥘': 'food/paella', '🍚': 'food/rice', '🍣': 'food/sushi', '🍱': 'food/bento', '🥟': 'food/dumplings', '🍤': 'food/prawn', '🍙': 'food/onigiri', '🍘': 'food/ricecracker', '🥮': 'food/mooncake',
+  '🍢': 'food/skewer', '🍡': 'food/dango', '🦪': 'food/oyster', '🍧': 'food/shavedice', '🍨': 'food/gelato', '🥧': 'food/pie', '🧁': 'food/cupcake', '🍰': 'food/cakeslice', '🎂': 'food/birthdaycake', '🍮': 'food/pudding',
+  '🍿': 'food/popcorn', '🍩': 'food/doughnut', '🥜': 'food/peanuts', '🍯': 'food/honey', '🫖': 'food/teapot', '☕': 'food/hotdrink', '🍵': 'food/greentea', '🧃': 'food/juicebox', '🥤': 'food/softdrink', '🧋': 'food/bubbletea' };
 const gE = (e) => { const a = GAME_ART[String(e).replace(/\uFE0F/g, '')]; return a ? `<img class="ge" src="/art/${a}.webp" alt="">` : esc(e); };   // the lists write some emoji with a variation selector
 const kuImg = (name, cls) => `<img class="ku${cls ? ' ' + cls : ''}" src="/art/kidui/${name}.webp" alt="">`;
 const petImg = (e) => (PET_ART[e] ? kuImg('pet-' + PET_ART[e][0]) : esc(e));

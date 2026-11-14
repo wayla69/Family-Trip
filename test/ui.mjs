@@ -595,6 +595,10 @@ const T = 'hk-macau-2026';
         MAZE: MAZE_PAIRS.flatMap((x) => [x[0], x[1]]), FARM: FARM.map((x) => x[0]), WASH: WASH.map((x) => x[0]), SIMON: SIMON.map((x) => x[1]), CAKE: CAKE_TOPS };
       return Object.entries(pools).flatMap(([k, v]) => v.filter((e) => !has(e)).map((e) => `${k}:${e}`)); });
     ok(miss.length === 0, `kid games: every animal, food and thing in the games' lists has its own picture (missing: ${miss.join(' ') || 'none'})`);
+    const artBad = await page.evaluate(async () => { const out = []; for (const f of [...new Set(Object.values(GAME_ART))]) { const r = await fetch(`/art/${f}.webp`); if (!r.ok || !/image\/webp/.test(r.headers.get('content-type') || '')) out.push(f); } return out; });
+    const foodLib = await page.evaluate(() => ({ n: Object.values(GAME_ART).filter((v) => v.startsWith('food/')).length, ramen: gE('🍜'), tea: gE('☕️'), plain: gE('🧿') }));
+    ok(artBad.length === 0 && foodLib.n === 60 && /food\/noodles\.webp/.test(foodLib.ramen) && /food\/hotdrink\.webp/.test(foodLib.tea) && foodLib.plain === '🧿',
+      `kid pictures: every picture the games name is served, the food library holds 60 dishes, a book's ramen and tea draw as pictures and an emoji without one stays an emoji (bad: ${artBad.join(' ') || 'none'}, ${foodLib.n})`);
   }
   for (const [gm, sel] of [['shadow', '.shbig'], ['feed', '.feedpal'], ['sort', '.baskets'], ['bigsmall', '.bsrow'], ['where', '.whereb'], ['odd', '.oddch'], ['next', '.nextrow'], ['howmany', '.hmbox']]) {
     await page.goto(`${BASE}/#/kid/mimi/${gm}`); await page.waitForSelector(sel);
