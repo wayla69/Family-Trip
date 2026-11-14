@@ -751,7 +751,9 @@ const tlBrief = (r) => { const own = r && r.h && T(r.h), nt = tlNote(r); const [
 // the day's legs on Today (owner, Nov 2026, on the old full page's "getting around": "ปรับส่วนนี้ให้ดูง่ายหน่อย" — bullets, then a dashed line of
 // the same legs, an underlined "Directions", a second route button): one row a leg — how we travel as a picture (the timeline's own icons),
 // from on one line and "→ to" on the next, the how-and-how-long under them, and the navigate pin of every other place on this page
-const legRow = (g) => { const by = T(g.by), icon = tlIcon({ en: (g.by && g.by.en) || by });
+// a leg's picture is the way of travel its words name first ("Walk (or a taxi with bags)" is a walk), not the first in the icon list
+const legIcon = (en) => { const m = TL_ICON.map(([re, e]) => [String(en || '').search(re), e]).filter(([k]) => k >= 0).sort((x, y) => x[0] - y[0])[0]; return m ? `<span class="tli">${emoIn(m[1])}</span>` : ''; };
+const legRow = (g) => { const by = T(g.by), icon = legIcon((g.by && g.by.en) || by);
   return `<li><span class="dli" aria-hidden="true">${icon || '<i class="dot"></i>'}</span><span class="dlt"><b>${esc(g.from)}</b><b class="to"><span class="arr" aria-hidden="true">→</span> ${esc(g.to)}</b>${by ? `<small>${esc(by)}</small>` : ''}</span>${g.url ? `<a class="navb" href="${esc(g.url)}" target="_blank" rel="noopener" aria-label="${esc(L('นำทาง: ', 'Directions: ') + g.from + ' → ' + g.to)}">${ic('pin')}</a>` : ''}</li>`; };
 const daySeg = (full) => `<div class="dayhd"><b>${L('แผนของวัน', 'The day’s plan')}</b><span class="seg dayseg" role="group" aria-label="${L('ดูแผนแบบสรุปหรือแบบเต็ม', 'The plan short or in full')}">${[['0', L('สรุป', 'Short')], ['1', L('เต็ม', 'Full')]].map(([v, lb]) => `<button type="button" data-a="dayfull" data-v="${v}" aria-pressed="${(v === '1') === !!full}">${lb}</button>`).join('')}</span></div>`;
 // the if-then table as the owner's seeds write it ({cols, rows, mishap}) — the in-app import's model answers {plans:{head, cols, rows}}

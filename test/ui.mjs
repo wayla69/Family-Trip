@@ -373,6 +373,8 @@ const T = 'hk-macau-2026';
     const mv = await page.evaluate((seed) => { const box = document.querySelector('.cbox.c-ind'), fold = box.querySelector('details.cmore'), norm = (x) => x.toLowerCase().replace(/\s+/g, ''), txt = norm(fold.textContent);
       const rows = [...box.querySelectorAll(':scope > .dlegs > li')];
       return { points: fold.querySelectorAll('.pts > li').length, lost: seed.split(/\s+·\s+/).filter((x) => !txt.includes(norm(x))), bullets: box.querySelectorAll(':scope > .dlegs .pts').length, rows: rows.length, pins: rows.filter((r) => { const a = r.querySelector('a.navb'); return a && a.getBoundingClientRect().height >= 44; }).length, bed: rows.some((r) => r.classList.contains('dlbed') && /Noah/.test(r.textContent)) }; }, seedMv);
+    const walk = await page.evaluate(() => [legIcon('Walk (or a taxi with bags)'), legIcon('Taxi · about HK$130'), legIcon('50 min')].map((h) => (h.match(/alt="([^"]*)"/) || h.match(/>([^<]+)</) || ['', ''])[1]));
+    ok(walk[0] !== walk[1] && walk[1] !== '' && walk[2] === '', `a leg's picture is the way of travel its words name first: a walk "or a taxi" is a walk, a taxi a car, a bare duration none (${walk.join(' | ')})`);
     ok(seedMv.length > 110 && mv.points >= 2 && mv.lost.length === 0 && mv.bullets === 0 && mv.rows >= 2 && mv.pins >= 2 && mv.bed,
       `today page: getting around reads like the other boxes — a row a leg with its navigate pin and tonight's bed (${mv.rows} rows, ${mv.pins} pins), no list of bullet points; the manual's whole line waits in the fold, a point a line (${mv.points} points${mv.lost.length ? '; missing: ' + mv.lost.join(' | ') : ''})`); }
   await page.evaluate(() => { ls('remind', 1); render(); });
