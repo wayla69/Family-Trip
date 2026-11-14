@@ -2814,3 +2814,22 @@ section.pg .dstamps.pst.c3 b,section.pg .dstamps.pst.c4 b{font-size:16px}section
 .ge{display:inline-block;width:1em;height:1em;object-fit:contain;vertical-align:middle}
 .feedpal .fedrow .ge{margin:0 2px}
 .feedpal .want .ge{width:.78em;height:.78em}
+/* kid home fits one screen on every phone (owner's Samsung, Nov 2026: with the adventure banner above the hello the tiles ran under the kid bar and the
+   dots sat behind it). The page above the tiles gets smaller in steps by the screen's height; the tiles keep two rows a child can tap. */
+@media (max-height:940px){
+  .kidwrap.home{gap:10px}
+  .kidwrap.home .kidquest{padding:6px 14px 6px 8px}.kidwrap.home .kidquest .art{width:46px;height:46px;font-size:26px}.kidwrap.home .kidquest i .qi{width:36px;height:36px}
+  .kidwrap.home .kidhello img{max-height:96px}.kidwrap.home .kidhello p{font-size:clamp(17px,4.8vw,21px);padding:8px 14px}
+  .kidwrap.home .kiddays{padding-top:6px;padding-bottom:6px}
+}
+@media (max-height:860px){
+  .kidwrap.home .kidhello img{max-height:60px}.kidwrap.home .kidhello p{font-size:17px;padding:6px 12px;line-height:1.25}
+  .kidwrap.home .kiddays{padding-top:4px;padding-bottom:4px}.kidwrap.home .kiddays .art{width:44px;height:44px}
+  .kidwrap.home>.kidpagerwrap{min-height:222px}
+  .kidwrap.home .starjar{padding:4px 14px}
+}
+/* a short phone (under 720 px of page): the home may scroll a little rather than squeeze the tiles too small to tap */
+@media (max-height:720px){
+  .kidwrap.home{height:auto;min-height:100vh;min-height:100dvh;gap:8px}
+  .kidwrap.home>.kidpagerwrap{flex:none;height:222px}
+}

@@ -1283,6 +1283,23 @@ const T = 'hk-macau-2026';
   ok((await page.evaluate(() => window.__said)).some((x) => /7/.test(x) && /\|(th-TH|en-GB)$/.test(x)) && await page.locator('.kidhd .kidhear').count() === 1, 'kid home: the 🔊 button reads the greeting aloud');
   ok(await page.locator('.kidhearts').count() === 1 && (await page.textContent('.kidhearts')).includes('Grandma'), "hearts: grandma's heart waits on Mimi's home screen");
   await s.shot('01-kid-countdown-home');
+  {   // owner's Samsung (412×795 of page, Nov 2026): before the trip the home holds the adventure banner, the hello, the day strip — and the star jar once
+      // a game was won — and the tiles ran under the kid bar with the dots behind it. Every phone height keeps the tiles and the dots above the bar.
+    const fit = [];
+    for (const jar of [0, 12]) {
+      await page.evaluate((n) => { if (n) { ls('stars_mimi', n); ls('pets_mimi', ['🐣']); } else { localStorage.removeItem('mb.stars_mimi'); ls('stars_mimi', 0); ls('pets_mimi', []); } render(); }, jar);
+      for (const [w, h] of [[412, 795], [390, 844], [390, 664], [360, 640], [412, 915]]) {
+        await page.setViewportSize({ width: w, height: h }); await page.waitForTimeout(120);
+        const m = await page.evaluate(() => { const bar = document.querySelector('.kidbar').getBoundingClientRect().top, d = document.querySelector('#kdots').getBoundingClientRect(), ts = [...document.querySelectorAll('.kpage')[0].querySelectorAll('button')].map((b) => b.getBoundingClientRect());
+          const slack = Math.max(0, document.documentElement.scrollHeight - innerHeight);   // a short phone may scroll: what counts is where the dots end up
+          return { bar: Math.round(bar), dots: Math.round(d.bottom - slack), slack: Math.round(slack), tiles: Math.round(Math.max(...ts.map((r) => r.bottom))), th: Math.round(Math.min(...ts.map((r) => r.height))), jar: !!document.querySelector('.starjar'), hello: !!document.querySelector('.kidhello p') && document.querySelector('.kidhello p').getBoundingClientRect().height > 0, quest: !!document.querySelector('.kidquest'), sx: document.documentElement.scrollWidth > innerWidth + 1 }; });
+        if (!(m.dots <= m.bar && (h < 720 || m.slack === 0) && m.tiles - m.slack < m.dots && m.th >= 96 && m.hello && m.quest && !m.sx && m.jar === !!jar)) fit.push(`${w}x${h} jar ${jar}: ${JSON.stringify(m)}`);
+        if (w === 412 && h === 795 && jar) await s.shot('01b-kid-home-samsung', false);
+      }
+    }
+    await page.setViewportSize({ width: 390, height: 844 }); await page.evaluate(() => { ls('stars_mimi', 0); ls('pets_mimi', []); render(); });
+    ok(fit.length === 0, `kid home before the trip: the four tiles (96 px or taller) and the dots sit above the kid bar with the hello, the adventure banner and the star jar on the page — on one screen from 720 px of height, after a short scroll below that (${fit.join(' | ') || 'all fit'})`);
+  }
   await page.click('.kidhearts'); await page.waitForSelector('.kidhearts-list button');
   await page.locator('.kidhearts-list button').first().click();
   ok((await page.evaluate(() => window.__said)).some((x) => x.includes('Grandma') && x.includes('Big hug')), 'hearts: tapping reads the note aloud');
