@@ -698,7 +698,7 @@ const T = 'hk-macau-2026';
     {   // the map's own pictures (owner, Nov 2026: emoji differ by phone — the chest was a toolbox on a Samsung): every picture loads, no emoji stands in for chest or cloud
       await page.waitForFunction(() => [...document.querySelectorAll('.questpath img.qi, .kidquest img.qi')].every((i) => i.complete && i.naturalWidth > 0), null, { timeout: 8000 }).catch(() => {});
       const pix = await page.evaluate(() => ({ n: document.querySelectorAll('.questpath img.qi').length, bad: [...document.querySelectorAll('.questpath img.qi')].filter((i) => !(i.complete && i.naturalWidth > 0)).map((i) => i.getAttribute('src')), chest: document.querySelector('.qchest img.qi').getAttribute('src'), clouds: document.querySelectorAll('.qcloud img.qi').length, emoji: /🧰|☁️/.test(document.querySelector('.questpath').textContent) }));
-      ok(pix.n >= 6 && !pix.bad.length && pix.chest === '/art/quest/chest.webp' && pix.clouds === 5 && !pix.emoji, `adventure map: its own pictures — the chest and the five clouds are drawn, every picture loads, no stand-in emoji (${JSON.stringify(pix)})`);
+      ok(pix.n >= 6 && !pix.bad.length && pix.chest === '/art/quest/chest.webp' && pix.clouds === 5 && !pix.emoji && await page.evaluate(() => [...document.querySelectorAll('.qtown.open .qm img.qi')].map((i) => i.getAttribute('src')).join(',') === '/art/kidui/shadow.webp,/art/kidui/maze.webp,/art/kidui/feed.webp'), `adventure map: its own pictures — the chest and the five clouds are drawn, every picture loads, no stand-in emoji (${JSON.stringify(pix)})`);
     }
     await page.click('.qtown.ahead .qhead'); await page.click('.qchest');
     ok(await page.evaluate(() => document.querySelectorAll('.qtown.open').length === 1 && document.querySelector('.qtown.open').id === 'qt0' && !questTownDone(kidTrip('mimi'), 'mimi', 0)), 'adventure map: a town in the clouds does not open, a chest does not open before its three games');
@@ -843,6 +843,11 @@ const T = 'hk-macau-2026';
   await page.waitForTimeout(700);   // after the page's entrance animation
   ok(await page.evaluate(() => { const r = document.querySelector('.kidbar').getBoundingClientRect(); return Math.abs(r.bottom - innerHeight) <= 1; }), 'kid bar: stuck to the bottom of the screen, not to the end of the page (no transform left on the page by its entrance)');
   ok(await page.evaluate(() => [...document.querySelectorAll('.kidtiles button.pic img, .kidbar img.kbi')].length >= 8 && [...document.querySelectorAll('.kidtiles img, .kidbar img')].every((i) => i.complete && i.naturalWidth > 0)), 'kid mode: the picture tiles and bar icons load');
+  {   // every game tile has its own picture now (owner, Nov 2026: emoji differ by phone) — no home tile falls back to an emoji
+    await page.waitForFunction(() => [...document.querySelectorAll('.kidtiles button.pic img')].every((i) => i.complete), null, { timeout: 8000 }).catch(() => {});
+    const tl = await page.evaluate(() => ({ pics: document.querySelectorAll('.kidtiles button.pic img').length, emoji: [...document.querySelectorAll('.kidtiles button.pic > span')].map((x) => x.textContent), bad: [...document.querySelectorAll('.kidtiles button.pic img')].filter((i) => !(i.complete && i.naturalWidth > 0)).map((i) => i.getAttribute('src')), games: ['shadow', 'feed', 'sort', 'farm', 'wash', 'bigsmall', 'maze', 'where', 'odd', 'next', 'simon', 'dots', 'howmany', 'cake'].filter((g) => !document.querySelector(`.kidtiles button[data-v$="/${g}"] img[src="/art/kidui/${g}.webp"]`)) }));
+    ok(tl.pics >= 27 && !tl.emoji.length && !tl.bad.length && !tl.games.length, `kid home: every game tile carries its own picture, none an emoji (${JSON.stringify(tl)})`);
+  }
   ok(await page.locator('.kidbar button').count() === 5 && await page.locator('.kidbar button[aria-current=page] span').textContent() === '🏠' && await page.locator('.kidbar button[data-v$="/trophies"]').count() === 1, "kid mode has its own bar: home, map, passport, stickers, trophies");
   await page.goto(`${BASE}/#/t/${T}`); await page.waitForSelector('.kidwrap');
   ok(page.url().includes('#/kid/mimi'), 'kid mode is locked: other pages lead back to it');

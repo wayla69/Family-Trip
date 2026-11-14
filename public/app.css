@@ -2799,3 +2799,5 @@ section.pg .dstamps.pst.c3 b,section.pg .dstamps.pst.c4 b{font-size:16px}section
 .qpicg i .qi{width:62%;height:62%}
 .lvbar.qbar>span{display:inline-flex;align-items:center;gap:8px}.lvbar.qbar .qi{width:28px;height:28px}
 @media (min-width:700px){.qcloud .qi{width:98px;height:98px}.qchest span .qi{width:68px;height:68px}}
+/* the mission buttons and the boss on the adventure map wear the games' own pictures (public/art/kidui) */
+.qm span .qi{width:clamp(56px,13vw,84px);height:clamp(56px,13vw,84px)}.qboss em .qi{width:40px;height:40px}
