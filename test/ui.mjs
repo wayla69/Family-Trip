@@ -714,7 +714,9 @@ const T = 'hk-macau-2026';
     await page.click('.qtown.open .qm >> nth=1'); await page.waitForSelector('#mazeb');
     await page.evaluate(() => { const n = mz.n, prev = { 0: -1 }, q = [0]; while (q.length) { const c = q.shift(); [c - n, c + n, c - 1, c + 1].forEach((d) => { if (d >= 0 && d < n * n && !(d in prev) && mazeOpen(c, d)) { prev[d] = c; q.push(d); } }); } const route = []; for (let c = n * n - 1; c !== -1; c = prev[c]) route.unshift(c); route.slice(1).forEach((c) => mazeTry(c)); });
     await page.waitForSelector('.kidbig[data-a="kidnav"][data-v$="/quest"]'); await backToMap();
-    await page.click('.qtown.open .qm >> nth=2'); await page.waitForSelector('.feedpal'); await pickGame(); await page.waitForSelector('.kidbig[data-a="kidnav"][data-v$="/quest"]'); await backToMap();
+    await page.click('.qtown.open .qm >> nth=2'); await page.waitForSelector('.feedpal');
+    ok(await page.evaluate(() => { const f = questFoods(kidTrip('mimi')).map((x) => x[0]); return f.length >= 8 && kg.deck.every((x) => f.includes(x[0])) && /^some /.test(kg.deck[0][3]); }), 'adventure map: the feed mission serves the book’s own foods (the dim sum list)');
+    await pickGame(); await page.waitForSelector('.kidbig[data-a="kidnav"][data-v$="/quest"]'); await backToMap();
     // the boss shows only now: one of the town's games a level up; the chest waits for it; three wrong taps make the right answer glow
     const bossUp = await page.evaluate(() => ({ boss: document.querySelectorAll('.qtown.open .qboss').length, ready: !!document.querySelector('.qchest.ready'), b: questBoss(kidTrip('mimi'), 'mimi', 0) }));
     await page.click('.qchest'); await page.click('.qboss'); await page.waitForSelector('.shbig');
@@ -1524,6 +1526,35 @@ const T = 'hk-macau-2026';
   const worn = await page.evaluate(() => { const t = kidTrip('mimi'); return { small: document.querySelector('.kidday small').textContent, acc: document.querySelector('.kidwrap').style.getPropertyValue('--accent'), want: t.passport.days[1].acc || t.theme.accent, art: document.querySelector('.kidday .art').getAttribute('src') === dayArt(t, 1) }; });
   ok(/Town 2/.test(worn.small) && worn.acc === worn.want && worn.art, `adventure map: a mission page wears its town — the town's number, picture and colour in the header (${JSON.stringify(worn)})`);
   await page.click('.kidback'); await page.waitForSelector('.questpath');
+  // a mission is made of its town: the day's things to spot, the trip's animals, the town's picture
+  const things = await page.evaluate(() => ({ t1: questThings(kidTrip('mimi'), 1).map((x) => x[0]), an: questAnimals(kidTrip('mimi')).map((x) => x[0]), en: questThings(kidTrip('mimi'), 1).map((x) => x[2]).join('|') }));
+  await page.click('#qt1 .qm >> nth=0'); await page.waitForSelector('.nextrow');
+  const nx = await page.evaluate(() => kg.r.shown.slice());
+  await page.click('.kidback'); await page.waitForSelector('.questpath');
+  await page.click('#qt1 .qm >> nth=1'); await page.waitForSelector('.shbig');
+  const sh = await page.evaluate(() => ({ deck: kg.deck.map((x) => x[0]), names: kg.deck.map((x) => x[2]).join('|'), uniq: new Set(kg.r.opts.map((o) => o[0])).size === kg.r.opts.length }));
+  await page.click('.kidback'); await page.waitForSelector('.questpath');
+  await page.click('#qt1 .qm >> nth=2'); await page.waitForSelector('#mazeb');
+  const mzp = await page.evaluate(() => mz.pair.slice(0, 2));
+  await page.click('.kidback'); await page.waitForSelector('.questpath');
+  await page.click('#qt0 .qhead'); await page.waitForSelector('#qt0.open .qm'); await page.click('#qt0 .qm >> nth=2'); await page.waitForSelector('.jigboard');
+  const jgs = await page.evaluate(() => ({ src: jg.src, want: dayArt(kidTrip('mimi'), 0), pix: document.querySelectorAll('.pixpick').length }));
+  await page.click('.kidback'); await page.waitForSelector('.questpath');
+  ok(things.t1.length === 4 && things.an.length >= 8 && /^hang-glider\|curvy bridge\|giant splash\|family van$/.test(things.en) && nx.every((e) => things.t1.includes(e)) && things.t1.every((e) => sh.deck.includes(e)) && sh.uniq
+    && things.an.includes(mzp[0]) && things.t1.includes(mzp[1]) && jgs.src === jgs.want && jgs.pix === 0,
+    `adventure map: a mission is made of its town — the pattern, the shadows and the maze use the day's things and the trip's animals, the jigsaw is the town's picture (${JSON.stringify({ things, nx, sh, mzp, jgs })})`);
+  // the parents' line on the book's menu, and a fresh start behind two taps
+  await page.goto(`${BASE}/#/t/big-hop-2027`); await page.waitForSelector('.questline');
+  const pl = await page.evaluate(() => ({ rows: document.querySelectorAll('.questline li').length, text: document.querySelector('.questline li').textContent.replace(/\s+/g, ' ') }));
+  await page.locator('.questline').scrollIntoViewIfNeeded(); await page.waitForTimeout(700); await s.shot('04-parents-line', false);
+  await page.click('.questline [data-a="questreset"]');
+  const still = await page.evaluate(() => questAt(trip('big-hop-2027'), 'mimi'));
+  await page.click('.questline [data-a="questreset"]');
+  await page.waitForFunction(() => queue.length === 0 && !document.querySelector('.questline'), null, { timeout: 15000 });
+  const gone = (await apiState(page)).entries.filter((e) => /\.tick\.quest\./.test(e.id) && e.trip === 'big-hop-2027').length;
+  ok(pl.rows === 1 && /Mimi is in town 2/.test(pl.text) && /1 treasure/.test(pl.text) && still === 1 && gone === 0, `adventure map: the book's menu tells the parents where the child is (only a child who has set off); "start again" takes two taps and clears the road (${JSON.stringify({ pl, still, gone })})`);
+  await page.goto(`${BASE}/#/kid/mimi/quest`); await page.waitForSelector('.questpath');
+  await page.evaluate(() => { const t = kidTrip('mimi'); [0, 1, 2, 3, 'chest'].forEach((k) => questMark(t, 'mimi', 0, k)); render(); });
   await page.setViewportSize({ width: 1112, height: 834 }); await page.waitForTimeout(200);
   ok(await s.noHScroll() && await page.evaluate(() => { const r = document.querySelector('.qtown.open .qms').getBoundingClientRect(); return r.width > 500 && r.right <= innerWidth; }), 'adventure map fits the iPad in landscape');
   await s.shot('03-landscape', false);
