@@ -1307,17 +1307,17 @@ const T = 'hk-macau-2026';
     const fit = [];
     for (const jar of [0, 12]) {
       await page.evaluate((n) => { if (n) { ls('stars_mimi', n); ls('pets_mimi', ['🐣']); } else { localStorage.removeItem('mb.stars_mimi'); ls('stars_mimi', 0); ls('pets_mimi', []); } render(); }, jar);
-      for (const [w, h] of [[412, 795], [390, 844], [390, 664], [360, 640], [412, 915]]) {
+      for (const [w, h] of [[412, 795], [390, 844], [390, 664], [360, 640], [412, 915], [375, 715], [360, 700]]) {   // 375×715: the Samsung at a bigger display size — a fixed tile height left a blank band above the bar
         await page.setViewportSize({ width: w, height: h }); await page.waitForTimeout(120);
         const m = await page.evaluate(() => { const bar = document.querySelector('.kidbar').getBoundingClientRect().top, d = document.querySelector('#kdots').getBoundingClientRect(), ts = [...document.querySelectorAll('.kpage')[0].querySelectorAll('button')].map((b) => b.getBoundingClientRect());
           const slack = Math.max(0, document.documentElement.scrollHeight - innerHeight);   // a short phone may scroll: what counts is where the dots end up
           return { bar: Math.round(bar), dots: Math.round(d.bottom - slack), slack: Math.round(slack), tiles: Math.round(Math.max(...ts.map((r) => r.bottom))), th: Math.round(Math.min(...ts.map((r) => r.height))), jar: !!document.querySelector('.starjar'), hello: !!document.querySelector('.kidhello p') && document.querySelector('.kidhello p').getBoundingClientRect().height > 0, quest: !!document.querySelector('.kidquest'), sx: document.documentElement.scrollWidth > innerWidth + 1 }; });
-        if (!(m.dots <= m.bar && (h < 720 || m.slack === 0) && m.tiles - m.slack < m.dots && m.th >= 96 && m.hello && m.quest && !m.sx && m.jar === !!jar)) fit.push(`${w}x${h} jar ${jar}: ${JSON.stringify(m)}`);
+        if (!(m.dots <= m.bar && m.bar - m.dots <= 40 && (h < 720 || m.slack === 0) && m.tiles - m.slack < m.dots && m.th >= 96 && m.hello && m.quest && !m.sx && m.jar === !!jar)) fit.push(`${w}x${h} jar ${jar}: ${JSON.stringify(m)}`);
         if (w === 412 && h === 795 && jar) await s.shot('01b-kid-home-samsung', false);
       }
     }
     await page.setViewportSize({ width: 390, height: 844 }); await page.evaluate(() => { ls('stars_mimi', 0); ls('pets_mimi', []); render(); });
-    ok(fit.length === 0, `kid home before the trip: the four tiles (96 px or taller) and the dots sit above the kid bar with the hello, the adventure banner and the star jar on the page — on one screen from 720 px of height, after a short scroll below that (${fit.join(' | ') || 'all fit'})`);
+    ok(fit.length === 0, `kid home before the trip: the four tiles (96 px or taller) and the dots sit above the kid bar with the hello, the adventure banner and the star jar on the page — on one screen from 720 px of height, after a short scroll below that, and the tiles take the room there is: no blank band above the bar (${fit.join(' | ') || 'all fit'})`);
   }
   await page.click('.kidhearts'); await page.waitForSelector('.kidhearts-list button');
   await page.locator('.kidhearts-list button').first().click();
@@ -1351,7 +1351,7 @@ const T = 'hk-macau-2026';
   await page.click('.kidbar button[data-v="#/kid/mimi"]'); await page.waitForSelector('.kidtiles'); await page.click('.kidtiles button[data-v$="/pack"]'); await page.waitForSelector('.kidspots button');
   // finger drawing → a private picture (no day before the trip)
   await page.click('.kidback'); await page.click('.kidtiles button[data-v$="/draw"]'); await page.waitForSelector('#kidcanvas');
-  await page.click('[data-a="kiddrawdone"]');
+  await page.click('.kidbig[data-a="kiddrawdone"]');
   ok((await page.evaluate(() => window.__said)).some((x) => /Draw something first/.test(x)) && page.url().endsWith('/draw'), 'draw: an empty board is not saved');
   const box = await page.locator('#kidcanvas').boundingBox();
   await page.click('.palette button[data-v="#EF5350"]');
@@ -1367,21 +1367,32 @@ const T = 'hk-macau-2026';
   ok(await s.noHScroll(), 'draw page fits the phone');
   await s.shot('03-kid-draw', false);
   {   // the paper fills the screen; one tap of the sponge wipes it and ↶ brings the picture back
+    const before = await page.evaluate(() => JSON.stringify(pad.strokes.map((x) => x.pts)));
     await page.click('#drawfull');
-    const r = await page.evaluate(() => { const c = document.querySelector('#kidcanvas').getBoundingClientRect(); return { w: Math.round(c.width), vw: innerWidth, top: document.elementFromPoint(c.left + c.width / 2, c.top + c.height / 2) === document.querySelector('#kidcanvas') }; });
+    const r = await page.evaluate(() => { const cv = document.querySelector('#kidcanvas'), c = cv.getBoundingClientRect(), w = document.querySelector('#drawwrap').getBoundingClientRect(); return { w: Math.round(c.width), h: Math.round(c.height), vw: innerWidth, vh: innerHeight, wrap: [Math.round(w.left), Math.round(w.top), Math.round(w.width), Math.round(w.height)], attr: [cv.width, cv.height],
+      top: document.elementFromPoint(c.left + c.width / 2, c.top + c.height / 2) === cv, bar: !!document.querySelector('.kidbar') && getComputedStyle(document.querySelector('.kidbar')).display !== 'none', save: getComputedStyle(document.querySelector('.dpsave')).display !== 'none', same: JSON.stringify(pad.strokes.map((x) => x.pts)) }; });
     await s.shot('03-kid-draw-full', false);
-    ok(r.w >= r.vw - 30 && r.top && await page.locator('#drawwrap.full').count() === 1, `draw: full screen paper is as wide as the screen and on top (${r.w}/${r.vw})`);
+    const cover = Math.round(100 * r.w * r.h / (r.vw * r.vh));
+    ok(r.w >= r.vw - 30 && r.top && await page.locator('#drawwrap.full').count() === 1 && cover >= 85 && r.wrap[0] === 0 && r.wrap[1] === 0 && r.wrap[2] === r.vw && r.wrap[3] === r.vh && !r.bar && r.save && r.same === before && Math.abs(r.attr[0] / r.attr[1] - r.w / r.h) < 0.02,
+      `draw: the full-screen paper takes the screen's shape — ${cover}% of the screen (it was a 4:3 sheet, a third of a phone), over the whole screen, the kid bar away, a keep button on it, and what was drawn stays where it was (paper ${r.w}×${r.h} of ${r.vw}×${r.vh}, sheet ${r.attr.join('×')})`);
+    { const c = await page.evaluate(() => { const b = document.querySelector('#kidcanvas').getBoundingClientRect(); return [b.left, b.top, b.width, b.height]; });
+      await page.mouse.move(c[0] + c[2] * 0.5, c[1] + c[3] * 0.9); await page.mouse.down(); await page.mouse.move(c[0] + c[2] * 0.6, c[1] + c[3] * 0.95); await page.mouse.up();
+      const pt = await page.evaluate(() => { const st = pad.strokes[pad.strokes.length - 1], cv = document.querySelector('#kidcanvas'); return [st.pts[0][0] / cv.width, st.pts[0][1] / cv.height]; });
+      ok(Math.abs(pt[0] - 0.5) < 0.02 && Math.abs(pt[1] - 0.9) < 0.02, `draw: a finger near the foot of the tall paper lands where it touched (${pt.map((x) => x.toFixed(2)).join(', ')})`);
+      await page.evaluate(() => { pad.strokes.pop(); redraw(document.querySelector('#kidcanvas')); }); }
     await page.click('#drawcol'); await page.click('[data-a="kidclear"]');
     const n0 = await page.evaluate(() => pad.strokes.length); await page.click('.dpundo'); const n1 = await page.evaluate(() => pad.strokes.length);
     ok(n0 === 0 && n1 === 2, `draw: one tap of the sponge wipes the paper, ↶ brings it back (${n0} → ${n1})`);
-    await page.click('#drawfull'); ok(await page.locator('#drawwrap.full').count() === 0, 'draw: the full-screen paper closes again');
+    await page.click('#drawfull');
+    const sm = await page.evaluate(() => { const cv = document.querySelector('#kidcanvas'), c = cv.getBoundingClientRect(); return { ar: c.width / c.height, attr: cv.width / cv.height, h: Math.round(c.height), vh: innerHeight, bar: getComputedStyle(document.querySelector('.kidbar')).display !== 'none' }; });
+    ok(await page.locator('#drawwrap.full').count() === 0 && Math.abs(sm.ar - sm.attr) < 0.02 && sm.h <= sm.vh * 0.62 && sm.bar && await s.noHScroll(), `draw: the full-screen paper closes again, the sheet keeps its shape undistorted and the page still fits (${sm.h}px of ${sm.vh})`);
   }
   await page.click('[data-a="kidundo"]');
-  await page.click('[data-a="kiddrawdone"]'); await page.waitForSelector('.kidtiles');
+  await page.click('.kidbig[data-a="kiddrawdone"]'); await page.waitForSelector('.kidtiles');
   await page.waitForFunction(() => queue.length === 0, null, { timeout: 15000 });
   let st = await apiState(page);
   const dr = st.media.find((m) => m.id.startsWith('dr-mimi-'));
-  ok(dr && dr.day === null && dr.w === 1200 && dr.caption.includes('Mimi'), 'draw: saved as a private picture of the trip (no day before we go)');
+  ok(dr && dr.day === null && dr.w === 1200 && dr.h > 2000 && dr.h <= 2560 && dr.caption.includes('Mimi'), `draw: saved as a private picture of the trip (no day before we go), in the tall shape the full-screen paper took (${dr && dr.w}×${dr && dr.h})`);
   ok(st.entries.some((e) => e.id === `${T}.tick.cd.4.mimi`) && st.entries.some((e) => e.id === `${T}.tick.pack.toy.mimi`), 'server: door 4 opened + toy packed, for Mimi only');
   ok((await page.evaluate(async (id) => (await fetch('/media/' + id)).headers.get('content-type'), dr.id)) === 'image/jpeg', 'draw: the drawing is served like a photo (signed-in only)');
 

@@ -36,6 +36,7 @@ function render() {
     const kt = kidTrip(p[1]) || curTrip(); artTrip = kt; artDay = kt ? kidDayOf(kt) : null;   // in kid mode the kids dress for the day picked
     document.documentElement.style.cssText = themeStyle(kt); document.documentElement.lang = lang;
     const key = p.slice(0, 3).join('/'), enter = key !== lastView; lastView = key; kidEnter = enter;
+    document.body.classList.remove('padfull');   // the drawing board's full-screen sheet puts it back (hydrateDraw) while it is open
     app.innerHTML = `<main class="kidmain${enter ? ' enter' : ''}">${viewKid(p)}</main>`;
     hydrateColours(app); hydrateDraw(app); hydrateMap(app); hydratePager(app);
     return;
