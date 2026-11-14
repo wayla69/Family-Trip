@@ -1442,6 +1442,7 @@
       "items": [
        {
         "k": "hargau",
+        "art": "food/hargau",
         "e": "🥟",
         "th": "ฮะเก๋า",
         "en": "Har gau",
@@ -1452,6 +1453,7 @@
        },
        {
         "k": "siumai",
+        "art": "food/siumai",
         "e": "🥟",
         "th": "ขนมจีบ",
         "en": "Siu mai",
@@ -1462,6 +1464,7 @@
        },
        {
         "k": "charsiubao",
+        "art": "food/charsiubao",
         "e": "🍞",
         "th": "ซาลาเปาหมูแดง",
         "en": "Char siu bao",
@@ -1502,6 +1505,7 @@
        },
        {
         "k": "pineapplebun",
+        "art": "food/pineapplebun",
         "e": "🍍",
         "th": "ขนมปังสับปะรด",
         "en": "Pineapple bun",
@@ -1512,6 +1516,7 @@
        },
        {
         "k": "milktea",
+        "art": "food/hkmilktea",
         "e": "🧋",
         "th": "ชานม",
         "en": "Milk tea",
@@ -1532,6 +1537,7 @@
        },
        {
         "k": "porkchopbun",
+        "art": "food/porkchopbun",
         "e": "🍔",
         "th": "ขนมปังหมูชอป",
         "en": "Pork chop bun",

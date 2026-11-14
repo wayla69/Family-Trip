@@ -469,6 +469,14 @@ const GAME_ART = { '🐑': 'game/sheep', '🐔': 'game/hen', '🐘': 'game/eleph
   '🍛': 'food/curry', '🥘': 'food/paella', '🍚': 'food/rice', '🍣': 'food/sushi', '🍱': 'food/bento', '🥟': 'food/dumplings', '🍤': 'food/prawn', '🍙': 'food/onigiri', '🍘': 'food/ricecracker', '🥮': 'food/mooncake',
   '🍢': 'food/skewer', '🍡': 'food/dango', '🦪': 'food/oyster', '🍧': 'food/shavedice', '🍨': 'food/gelato', '🥧': 'food/pie', '🧁': 'food/cupcake', '🍰': 'food/cakeslice', '🎂': 'food/birthdaycake', '🍮': 'food/pudding',
   '🍿': 'food/popcorn', '🍩': 'food/doughnut', '🥜': 'food/peanuts', '🍯': 'food/honey', '🫖': 'food/teapot', '☕': 'food/hotdrink', '🍵': 'food/greentea', '🧃': 'food/juicebox', '🥤': 'food/softdrink', '🧋': 'food/bubbletea' };
+// a dish is drawn only from pictures of food: a book's "fish and chips" is 🐟, and the games' 🐟 is a goldfish (owner's tasting card, Nov 2026) — so an
+// animal or a thing never stands in for something to eat; the games' own fruit, vegetables and snacks count as food
+const FOOD_GAME = new Set(['banana', 'apple', 'carrot', 'watermelon', 'strawberry', 'grapes', 'corn', 'cookie', 'bread', 'egg', 'broccoli', 'cheese', 'cherries', 'blueberries', 'orange', 'aubergine', 'cucumber', 'tomato', 'lemon',
+  'greenapple', 'pumpkin', 'pear', 'pineapple', 'kiwi', 'potato', 'onion', 'pepper', 'greens', 'mushroom', 'icecream', 'chocolate', 'sweet', 'lollipop'].map((n) => 'game/' + n));
+// a dish may name its own picture (a list item's `art: "food/lamington"`): an emoji is too coarse for a real dish — 🍰 drew a cream slice for the lamington,
+// 🥧 a custard tart for the meat pie (owner, Nov 2026: "Lamington ไม่ใช่เค้กแบบนั้น"). The emoji's picture is the fallback.
+const foodArt = (e, art) => { if (/^food\/[a-z0-9-]+$/.test(art || '')) return `/art/${art}.webp`; const a = GAME_ART[String(e || '').replace(/\uFE0F/g, '')]; return a && (a.startsWith('food/') || FOOD_GAME.has(a)) ? `/art/${a}.webp` : ''; };
+const gFood = (e, art) => { const a = foodArt(e, art); return a ? `<img class="ge" src="${a}" alt="">` : esc(e || ''); };
 const gE = (e) => { const a = GAME_ART[String(e).replace(/\uFE0F/g, '')]; return a ? `<img class="ge" src="/art/${a}.webp" alt="">` : esc(e); };   // the lists write some emoji with a variation selector
 const kuImg = (name, cls) => `<img class="ku${cls ? ' ' + cls : ''}" src="/art/kidui/${name}.webp" alt="">`;
 const petImg = (e) => (PET_ART[e] ? kuImg('pet-' + PET_ART[e][0]) : esc(e));
@@ -506,7 +514,7 @@ function stickerSet(t, kid) {
   t.days.forEach((_, i) => add(`gift.d${i}`, giftE(i), '', ticked(t, `gift.d${i}`, kid)));
   { const mm = mapModel(t); if (mm) { const real = mapReal(t, mm); mm.m.stops.forEach((st) => { if (real.has(st.k)) add(`been.${st.k}`, st.e || '📍', st.art || '', true); }); } }   // a place we really went (the parents checked it in)
   t.days.forEach((_, i) => add(questKey(i, 'chest'), QUEST_GEM[i % QUEST_GEM.length], qArt(gemArt(i)), ticked(t, questKey(i, 'chest'), kid)));   // a town's treasure on the adventure map   // the morning surprise box's sticker
-  kidLists(t, kid).forEach((l) => listItems(l).forEach((it) => { const x = ticked(t, `${l.key}.${it.k}`, kid); add(`${l.key}.${it.k}`, it.e, '', x && x.text !== 'yuck'); }));
+  kidLists(t, kid).forEach((l) => listItems(l).forEach((it) => { const x = ticked(t, `${l.key}.${it.k}`, kid); add(`${l.key}.${it.k}`, it.e, l.yum || l.stars ? foodArt(it.e, it.art) : '', x && x.text !== 'yuck'); }));   // a dish tasted is a sticker of its picture
   ((pp.countdown || {}).doors || []).forEach((d, n) => add(`cd.${n + 1}`, d.e, '', ticked(t, `cd.${n + 1}`, kid)));
   entriesOf(t.id).filter((e) => e.kind === 'first' && e.child === kid && e.first_key !== 'custom').forEach((e) => add(`first.${e.first_key}`, firstLabel(t, e.first_key).e, '', true));
   return out;
@@ -826,11 +834,11 @@ ${lvWin(t, kid, 'shadow', ['kgagain', 'shadow'])}`
   } else if (view === 'feed') {   // feed the animal: it asks for one food (the picture in its bubble, the words read aloud); the right one is munched
     const g2 = kgFor('feed', t, kid), r = g2.r;
     body = lvBar(t, kid, 'feed') + (g2.done ? `<div class="kidguide pop">${guideImg(1)}<p>${L(`${esc(r.pal[1])}อิ่มแล้ว! ขอบคุณ${esc(name)}นะ 🎉`, `${esc(r.pal[2])} is full! Thank you, ${esc(name)} 🎉`)}</p></div>
-<div class="feedpal full" aria-hidden="true"><span class="pal">${gE(r.pal[0])}</span><div class="fedrow">${g2.fed.map(gE).join('')}</div></div>
+<div class="feedpal full" aria-hidden="true"><span class="pal">${gE(r.pal[0])}</span><div class="fedrow">${g2.fed.map((w) => gFood(w[0], w[4])).join('')}</div></div>
 ${lvWin(t, kid, 'feed', ['kgagain', 'feed'])}`
       : `<div class="kidguide">${guideImg(1)}<p>${g2.lv.mem ? L(`${esc(r.pal[1])}หิวจัง! จำให้ดีนะ อยากกินอะไร`, `${esc(r.pal[2])} is hungry! Remember the wish`) : L(`${esc(r.pal[1])}หิวจัง! อยากกิน${esc(r.want[1])}`, `${esc(r.pal[2])} is hungry! ${esc(capFirst(r.want[3]))}, please`)}</p></div>
-<div class="feedpal${g2.lv.mem ? ' mem' : ''}"><span class="want${r.hid ? ' gone' : ''}" id="kgwant" aria-hidden="true">${gE(r.want[0])}</span><button class="pal" id="kgpal" data-a="kgpal" aria-label="${esc(L(r.pal[1], r.pal[2]))}">${gE(r.pal[0])}</button><div class="fedrow" aria-hidden="true">${g2.fed.map(gE).join('')}</div></div>
-<div class="mema kgch" data-n="${r.opts.length}">${r.opts.map((o) => `<button data-a="kgpick" data-v="${esc(o[0])}"><span>${gE(o[0])}</span><b>${esc(L(o[1], o[2]))}</b></button>`).join('')}</div>`);
+<div class="feedpal${g2.lv.mem ? ' mem' : ''}"><span class="want${r.hid ? ' gone' : ''}" id="kgwant" aria-hidden="true">${gFood(r.want[0], r.want[4])}</span><button class="pal" id="kgpal" data-a="kgpal" aria-label="${esc(L(r.pal[1], r.pal[2]))}">${gE(r.pal[0])}</button><div class="fedrow" aria-hidden="true">${g2.fed.map((w) => gFood(w[0], w[4])).join('')}</div></div>
+<div class="mema kgch" data-n="${r.opts.length}">${r.opts.map((o) => `<button data-a="kgpick" data-v="${esc(o[0])}"><span>${gFood(o[0], o[4])}</span><b>${esc(L(o[1], o[2]))}</b></button>`).join('')}</div>`);
   } else if (view === 'sort') {   // sort by colour: one thing at a time, tap the basket of its colour; the colour's name is said
     const g2 = kgFor('sort', t, kid), it = g2.items[g2.n];
     body = lvBar(t, kid, 'sort') + (g2.done ? `<div class="kidguide pop">${guideImg(1)}<p>${L(`เก่งมาก ${esc(name)}! ผ่าน${lvWord(t, kid, 'sort')}แล้ว 🎉`, `Brilliant, ${esc(name)}! You finished ${lvWord(t, kid, 'sort')} 🎉`)}</p></div>
@@ -1218,7 +1226,7 @@ const qEn = (x) => { const v = String(x || '').replace(/^(a|an|the|our|some)\s+/
 const qUniq = (xs) => { const seen = new Set(); return xs.filter((x) => x && x[0] && x[1] && x[2] && !seen.has(x[0]) && seen.add(x[0])); };
 const questThings = (t, i) => qUniq(((((t.passport || {}).days || [])[i] || {}).spot || []).map((x) => [x.e, x.th, qEn(x.en)]));
 const questAnimals = (t) => qUniq((((t.info || {}).wild) || []).map((w) => [w.emo, (w.name || {}).th, qEn((w.name || {}).en)]));
-const questFoods = (t) => { const pp = t.passport || {}; return qUniq((Array.isArray(pp.food) ? pp.food : []).concat((pp.lists || []).filter((l) => l.yum || l.stars).flatMap((l) => listItems(l))).map((x) => [x.e, x.th, qEn(x.en)])).map((x) => x.concat(`some ${x[2]}`)); };
+const questFoods = (t) => { const pp = t.passport || {}; return qUniq((Array.isArray(pp.food) ? pp.food : []).concat((pp.lists || []).filter((l) => l.yum || l.stars).flatMap((l) => listItems(l))).map((x) => [x.e, x.th, qEn(x.en), x.art || ''])).map((x) => [x[0], x[1], x[2], `some ${x[2]}`, x[3]]); };   // [emoji, th, en, what it asks for, its own picture]
 const questPhotos = (t, i) => mediaOf(t.id).filter((m) => m.day === i && !isDrawing(m) && !m.pending);
 // a list that leads with the town's own, the game's stock after it (never the same emoji twice)
 const qLead = (own, stock) => qUniq(shuffle(own).concat(shuffle(stock)));
@@ -1568,7 +1576,7 @@ Object.assign(A, {
       setTimeout(() => { if (kg !== g) return; g.n++; if (g.n >= g.lv.r) kgWin(b, ['🌟', g.r.want[0], '✨']); else { kgRound(g); sayUi(L('อันนี้เงาของใครเอ่ย?', 'And whose shadow is this?')); } safeRender(); }, 1300);
     } else if (g.game === 'feed') {
       if (v !== g.r.want[0]) return kgNope(b, L(`ไม่เอาอันนี้ อยากกิน${g.r.want[1]}`, `Not that one — ${g.r.want[3]}, please!`));
-      g.got = true; beep('munch'); burst(b, ['💛', '😋']); g.fed.push(g.r.want[0]);
+      g.got = true; beep('munch'); burst(b, ['💛', '😋']); g.fed.push(g.r.want);
       const pal = $('#kgpal'); if (pal) { pal.classList.remove('chomp'); void pal.offsetWidth; pal.classList.add('chomp'); }
       sayUi(L(`ง่ำ ง่ำ! อร่อยจัง`, 'Yum yum! Delicious!'));
       setTimeout(() => { if (kg !== g) return; g.n++; if (g.n >= g.lv.r) { kgWin(b, [g.pal[0], '😋', '💛']); sayUi(L(`${g.pal[1]}อิ่มแล้ว! ขอบคุณนะ`, `${g.pal[2]} is full! Thank you!`)); } else { kgRound(g); sayUi(L(`อยากกิน${g.r.want[1]}`, `${capFirst(g.r.want[3])}, please!`)); } safeRender(); }, 1100);

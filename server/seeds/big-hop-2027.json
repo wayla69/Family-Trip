@@ -3654,6 +3654,7 @@
        },
        {
         "k": "pie",
+        "art": "food/meatpie",
         "e": "🥧",
         "th": "พายเนื้อ",
         "en": "Meat pie",
@@ -3664,6 +3665,7 @@
        },
        {
         "k": "fishchips",
+        "art": "food/fishchips",
         "e": "🐟",
         "th": "ฟิชแอนด์ชิปส์",
         "en": "Fish & chips",
@@ -3674,6 +3676,7 @@
        },
        {
         "k": "lobster",
+        "art": "food/lobster",
         "e": "🦞",
         "th": "กุ้งมังกร",
         "en": "Lobster",
@@ -3724,6 +3727,7 @@
        },
        {
         "k": "lamington",
+        "art": "food/lamington",
         "e": "🍰",
         "th": "ลามิงตัน",
         "en": "Lamington",
@@ -3744,6 +3748,7 @@
        },
        {
         "k": "anzac",
+        "art": "food/anzac",
         "e": "🍪",
         "th": "คุกกี้แอนแซก",
         "en": "Anzac biscuit",
