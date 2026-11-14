@@ -2835,3 +2835,11 @@ section.pg .dstamps.pst.c3 b,section.pg .dstamps.pst.c4 b{font-size:16px}section
 }
 /* the passport's tasting card: each dish is its picture from the food library */
 .ticks.food .tick .e .ge{width:40px;height:40px;display:block}
+/* the wardrobe (kid mode): Mimi's and Mika's outfits as cards, the one worn ringed */
+.wears{display:grid;grid-template-columns:repeat(auto-fill,minmax(min(100%,104px),1fr));gap:10px;width:100%}
+.wears button{border:3px solid transparent;border-radius:20px;background:#fff;color:#14206B;padding:8px 6px 8px;display:flex;flex-direction:column;align-items:center;gap:4px;min-height:150px;box-shadow:0 4px 10px rgba(0,0,0,.08)}
+.wears button img{height:104px;width:100%;object-fit:contain;display:block}
+.wears button b{font-size:14px;line-height:1.2;font-weight:800;text-align:center}
+.wears button[aria-pressed=true]{border-color:#1C6FD6;background:#E4F1FF}
+.wears button.auto{background:linear-gradient(170deg,#FFF3C4,#FFD9A8);color:#14206B}
+@media (min-width:700px){.wears{grid-template-columns:repeat(auto-fill,minmax(150px,1fr));gap:14px}.wears button img{height:150px}.wears button b{font-size:17px}}

@@ -331,7 +331,7 @@ const T = 'hk-macau-2026';
   await page.waitForFunction(() => typeof lastCard !== 'undefined' && lastCard, null, { timeout: 15000 });
   const card = await page.evaluate(async () => { const bm = await createImageBitmap(lastCard); return { w: bm.width, h: bm.height, size: lastCard.size, type: lastCard.type }; });
   ok(card.w === 1080 && card.h === 1350 && card.type === 'image/png' && card.size > 20000, `day card: 1080×1350 PNG drawn on the phone (${card.size} bytes)`);
-  ok(await page.locator('.first.got .kid.drawn img[src="/art/kids/mimi.svg"]').count() === 1 && await page.locator('#d1 .pill img.face').count() >= 1, 'kid badges and mood pills use the drawn characters');
+  ok(await page.locator('.first.got .kid.drawn img[src^="/art/kids/mimi-"][src$="-face.webp"]').count() === 1 && await page.locator('#d1 .pill img.face').count() >= 1, 'kid badges and mood pills use the drawn characters');
   ok(await page.locator('#d1 .foot3 h4').count() >= 2, 'day footer: favourite + firsts');
   ok(await s.noHScroll(), 'book: no horizontal scroll at 390 px');
   ok(await page.locator('.journey > *').count() === 6 && await page.locator('.journey > .on').count() === 1, 'book: illustrated route strip, the recorded day in full colour');
@@ -487,7 +487,7 @@ const T = 'hk-macau-2026';
   await page.goto(`${BASE}/#/t/${T}`); await page.waitForSelector('.hubgrid');
   await page.click('.tile[href="#/passport"]'); await page.waitForSelector('.pp .advc');
   ok(await page.locator('.ppkids a[role=tab]').count() === 2 && await page.locator('.ppkids a:not([role=tab])').count() === 2, 'passport: one per child, a page set per trip');
-  ok(await page.locator('.advc .xbox img[src="/art/kids/mimi.svg"]').count() === 1 && await page.locator('.bio .photo img[src="/art/kids/mimi.svg"]').count() === 1, 'passport: Mimi drawn as her character on the cover and photo page');
+  ok(await page.locator('.advc .xbox img[src^="/art/kids/mimi-"][src$="-face.webp"]').count() === 1 && await page.locator('.bio .photo img[src^="/art/kids/mimi-"][src$="-face.webp"]').count() === 1, 'passport: Mimi drawn as her character on the cover and photo page');
   ok(await page.locator('.advc img.crest[src="/art/crest/hk.svg"]').count() === 1 && (await page.textContent('.advc')).includes('DOLPHIN-2026-MIMI'), 'passport cover as printed: crest, title, passport no. per child');
   ok(await page.evaluate(() => getComputedStyle(document.querySelector('#m1 header')).backgroundColor) === 'rgb(252, 231, 241)', 'day 2 mission in the printed pink (#FCE7F1)');
   ok((await page.textContent('.guides')).includes('Captain Pinky') && await page.locator('#pl-words .tick').count() === 10 && await page.locator('#pl-dimsum .stars').count() === 10, 'Captain Pinky, Say It Like a Local (10), Dim Sum Tasting Card (stars)');
@@ -578,7 +578,7 @@ const T = 'hk-macau-2026';
   ok(/(Day 2 of 6|วันที่ 2)/.test(await page.textContent('.tile.today')), 'HK on day 2: the menu’s Today tile names day 2');
   await page.goto(`${BASE}/#/passport/mimi/${T}`); await page.waitForSelector('.kidgo');
   await page.click('.kidgo'); await page.waitForSelector('.kidwrap .kidtiles');
-  ok(await page.locator('.kidtiles button').count() === 29 && await page.locator('.kidtiles button[data-v$="/map"], .kidtiles button[data-v$="/stickers"], .kidtiles button[data-v$="/trophies"]').count() === 0 && await page.locator('.kidbar button[data-v$="/map"]').count() === 1 && await page.locator('.kidtiles button[data-v$="/animals"]').count() === 1 && await page.locator('.kidtiles button[data-v$="/quiz"]').count() === 1 && await page.locator('nav.bar').count() === 0, 'kid mode on the trip: 29 big tiles (colour, draw, find, stamp, say, quiz, photos, match, shadows, feed me, colours, animal sounds, bath time, big & small, maze, where, odd one out, what next, copy the tune, join the dots, how many, cake, mood, animals & friends, count… — map, stickers and trophies only on the kid bar), no tab bar');
+  ok(await page.locator('.kidtiles button').count() === 30 && await page.locator('.kidtiles button[data-v$="/wear"]').count() === 1 && await page.locator('.kidtiles button[data-v$="/map"], .kidtiles button[data-v$="/stickers"], .kidtiles button[data-v$="/trophies"]').count() === 0 && await page.locator('.kidbar button[data-v$="/map"]').count() === 1 && await page.locator('.kidtiles button[data-v$="/animals"]').count() === 1 && await page.locator('.kidtiles button[data-v$="/quiz"]').count() === 1 && await page.locator('nav.bar').count() === 0, 'kid mode on the trip: 30 big tiles (dress up, colour, draw, find, stamp, say, quiz, photos, match, shadows, feed me, colours, animal sounds, bath time, big & small, maze, where, odd one out, what next, copy the tune, join the dots, how many, cake, mood, animals & friends, count… — map, stickers and trophies only on the kid bar), no tab bar');
   ok(await page.evaluate(() => { const mm = window.matchMedia; window.matchMedia = () => ({ matches: false }); celebrate(); window.matchMedia = mm; const n = document.querySelectorAll('.confetti').length; return n === 36 && [...document.querySelectorAll('.confetti')].every((c) => getComputedStyle(c).position === 'fixed'); }), 'kid mode: the big celebration drops 36 pieces of confetti over the whole screen (stamp, surprise box, a finished game)');
   await page.goto(`${BASE}/#/kid/mimi/bubbles`); await page.waitForSelector('#bubblefield'); await page.waitForSelector('.bub');
   await page.locator('.bub').first().dispatchEvent('pointerdown');
@@ -1098,7 +1098,7 @@ const T = 'hk-macau-2026';
   ok((await page.textContent('#offl')).includes('อยู่ในเครื่องแล้ว') && await page.evaluate(() => idb.get('state').then((s) => !!(s && s.trips.length && s.syncedAt))), 'offline pack stored; server state kept in IndexedDB with a sync time');
   const cached = async (urls) => page.evaluate(async (us) => { const out = {}; for (const k of await caches.keys()) { const c = await caches.open(k); for (const u of us) if (!out[u] && await c.match(u)) out[u] = true; } for (const u of us) out[u] = !!out[u]; return out; }, urls);
   const fave = st.media.find((m) => m.trip === T && m.highlight), plain = st.media.find((m) => m.trip === T && m.day === 2);
-  const want = ['/', '/app.css', '/core.js', '/views.js', '/sheets.js', '/kid.js', '/art/guides/pinky.svg', '/art/crest/hk.svg', '/art/kids/mika-full.svg', '/art/colour/hk/day-3.svg', '/art/hk/day-6.svg',
+  const want = ['/', '/app.css', '/core.js', '/views.js', '/sheets.js', '/kid.js', '/art/guides/pinky.svg', '/art/crest/hk.svg', '/art/kids/mika-city.webp', '/art/kids/mika-dino-face.webp', '/art/colour/hk/day-3.svg', '/art/hk/day-6.svg',
     ...st.media.filter((m) => m.trip === T && !(m.mime || '').startsWith('audio/')).map((m) => `/media/${m.id}/t`), `/media/${fave.id}`];   // a voice memo has no thumbnail
   const have = await cached(want.concat(`/media/${plain.id}`));
   ok(want.every((u) => have[u]), 'service worker cache holds the shell, all art (precached at install), every thumbnail of the book and the full-size favourite' + want.filter((u) => !have[u]).map((u) => ' MISSING ' + u).join(''));
@@ -1443,7 +1443,26 @@ const T = 'hk-macau-2026';
     ok(nx > 0 && r.filter(([c]) => c === 'next').length === 1 && tm(r[nx][1]) > '10:00' && r.slice(0, nx).every(([c, x]) => c === 'past' || !tm(x)) && (await page.textContent('.tl.plan li.next')).includes('Next'),
       `today at 10:00 on day 2: earlier steps fade, the next one is marked (${r.map(([c, x]) => `${x}${c ? ':' + c : ''}`).join(' ')})`); }
   await page.goto(`${BASE}/#/t/big-hop-2027/book`); await page.waitForSelector('.cover');
-  ok(await page.locator('img[src="/art/kids/mimi-adventure-full.svg"]').count() >= 1 && await page.locator('img[src="/art/kids/mimi-full.svg"]').count() === 0, 'Australia book: the kids wear their adventure outfits');
+  ok(await page.locator('img[src="/art/kids/mimi-beach.webp"]').count() >= 1 && await page.locator('img[src^="/art/kids/mimi"][src$=".svg"]').count() === 0, 'Australia book on day 2, a beach day: the kids wear their beach clothes');
+  // the wardrobe (owner, Nov 2026): Mimi and Mika dress for the day on the page; in kid mode a child may choose one of twenty outfits
+  { const w = await page.evaluate(() => { const au = S.trips.find((x) => x.id === 'big-hop-2027'), hk = S.trips.find((x) => x.id === 'hk-macau-2026');
+      return { au: au.days.map((d, i) => wearAuto(au, i)), hk: hk.days.map((d, i) => wearAuto(hk, i)), hkNone: wearAuto(hk, null), auNone: wearAuto(au, null), n: KID_WEAR.length }; });
+    ok(w.n === 20 && w.au[0] === 'plane' && w.au[w.au.length - 1] === 'plane' && w.au[1] === 'beach' && w.hk[0] === 'plane' && w.hk[1] === 'park' && w.hkNone === 'city' && w.auNone === 'hike' && true,
+      `the day's plan picks the outfit: a flight day the plane clothes, a beach day the beach, Disneyland the theme park; outside the trip the book's own (AU ${w.au.join(' ')} · HK ${w.hk.join(' ')})`);
+    const miss = await page.evaluate(async () => { const out = []; for (const k of KID_STOCK) for (const o of KID_WEAR) for (const s of ['', '-face']) { const r = await fetch(`/art/kids/${k}-${o}${s}.webp`); if (!r.ok || !/webp/.test(r.headers.get('content-type') || '')) out.push(k + '-' + o + s); } return out; });
+    ok(miss.length === 0, `every outfit of both children is served, the figure and the round face (${miss.join(' ') || 'all 80'})`);
+    await page.evaluate(() => { ls('kidmode', 'mimi'); location.hash = '#/kid/mimi'; }); await page.waitForSelector('.kidwrap.home');
+    const tile = await page.locator('.kidtiles button[data-v="#/kid/mimi/wear"]').count();
+    await page.evaluate(() => { location.hash = '#/kid/mimi/wear'; }); await page.waitForSelector('.wears');
+    const cards = await page.evaluate(() => [...document.querySelectorAll('.wears button')].map((b) => [b.dataset.v, b.getAttribute('aria-pressed'), Math.round(b.getBoundingClientRect().height), b.querySelector('b').textContent.trim().length > 0]));
+    await page.locator('.wears button[data-v=dino]').click(); await page.waitForSelector('.wears button[data-v=dino][aria-pressed=true]');
+    await page.evaluate(() => { location.hash = '#/kid/mimi'; }); await page.waitForSelector('.kidwrap.home');
+    const worn = await page.evaluate(() => [document.querySelector('.kidhello img').getAttribute('src'), document.querySelector('.kidme img').getAttribute('src'), kidArt('mika', true)]);
+    await page.evaluate(() => { location.hash = '#/kid/mimi/wear'; }); await page.waitForSelector('.wears'); await page.locator('.wears button.auto').click(); await page.waitForSelector('.wears button.auto[aria-pressed=true]');
+    const back = await page.evaluate(() => kidArt('mimi', true));
+    ok(tile === 1 && cards.length === 21 && cards[0][0] === '' && cards[0][1] === 'true' && cards.every((c) => c[2] >= 44 && c[3]) && worn[0] === '/art/kids/mimi-dino.webp' && worn[1] === '/art/kids/mimi-dino-face.webp' && !/dino/.test(worn[2]) && !/dino/.test(back),
+      `kid mode wardrobe: a Dress up tile, "today's outfit" + 20 cards with names, the dinosaur chosen is worn on the home page and the badge, only by that child, and "today's outfit" goes back to the trip's (${worn.join(' ')} → ${back})`);
+    await page.evaluate(() => { ls('kidmode', null); ls('wear_mimi', ''); location.hash = '#/'; }); await page.waitForSelector('.shelf'); }
   // glance first: each topic opens as a few answer cards; the manual-style report is one tap away
   await page.goto(`${BASE}/#/t/big-hop-2027/today`); await page.waitForSelector('.day.today');
   ok(/Money today/.test(await page.textContent('.cgrid')) && /≈ A\$\d/.test(await page.textContent('.dsheet .num')) && await page.locator('.dayplan').count() === 0 && await s.noHScroll(), 'today glance: answer cards (money shows the day total), no full plan until tapped');
