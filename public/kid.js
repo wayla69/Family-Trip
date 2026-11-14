@@ -448,7 +448,8 @@ function stickerSet(t, kid) {
   const add = (k, e, img, got) => { if (seen.has(k) || (!e && !img)) return; seen.add(k); out.push({ k, e, img, got: !!got }); };
   t.days.forEach((_, i) => add(`stamp.d${i}`, '', dayArt(t, i), dayStamped(t, i)));
   t.days.forEach((_, i) => daySpots(t, i, kid).forEach((s) => add(s.key, s.e, '', ticked(t, s.key, kid))));
-  t.days.forEach((_, i) => add(`gift.d${i}`, giftE(i), '', ticked(t, `gift.d${i}`, kid)));   // the morning surprise box's sticker
+  t.days.forEach((_, i) => add(`gift.d${i}`, giftE(i), '', ticked(t, `gift.d${i}`, kid)));
+  t.days.forEach((_, i) => add(questKey(i, 'chest'), QUEST_GEM[i % QUEST_GEM.length], '', ticked(t, questKey(i, 'chest'), kid)));   // a town's treasure on the adventure map   // the morning surprise box's sticker
   kidLists(t, kid).forEach((l) => listItems(l).forEach((it) => { const x = ticked(t, `${l.key}.${it.k}`, kid); add(`${l.key}.${it.k}`, it.e, '', x && x.text !== 'yuck'); }));
   ((pp.countdown || {}).doors || []).forEach((d, n) => add(`cd.${n + 1}`, d.e, '', ticked(t, `cd.${n + 1}`, kid)));
   entriesOf(t.id).filter((e) => e.kind === 'first' && e.child === kid && e.first_key !== 'custom').forEach((e) => add(`first.${e.first_key}`, firstLabel(t, e.first_key).e, '', true));
@@ -570,6 +571,8 @@ function trophies(t, kid) {
     (info.wild || []).length ? ['wild', (info.wildLabel || {}).emo || '🦘', info.wildLabel ? L('นักตามหา', 'Spotter') : L('นักดูสัตว์', 'Animal spotter'), wildN >= 3] : null,
     ['firsts', '🌟', L('ครั้งแรก 3 อย่าง', '3 firsts'), firsts >= 3],
     doorsAll ? ['doors', '🎁', L('เปิดครบทุกประตู', 'All doors opened'), doors >= doorsAll] : null,
+    ['quest1', '🗺️', L('สมบัติชิ้นแรก', 'First treasure'), t.days.some((_, j) => ticked(t, questKey(j, 'chest'), kid))],
+    ['questall', '💎', L('นักผจญภัย', 'Adventurer'), days > 0 && t.days.every((_, j) => ticked(t, questKey(j, 'chest'), kid))],
     ['explorer', '🧭', L('นักสำรวจตัวจริง', 'Master Explorer'), certEarned(t, kid)],
   ].filter(Boolean);
 }
@@ -597,7 +600,7 @@ const KTILE = { count: ['surprise', '#FFC93C', '#FF9F0A'], pack: ['pack', '#62CC
   draw: ['draw', '#AEEA80', '#5EBB3D'], match: ['match', '#B592FF', '#7C4EE5'], quiz: ['quiz', '#86D6FF', '#2BA8F0'], animals: ['animals', '#93DD60', '#3FA82C'], numbers: ['count', '#FFB54A', '#FF8A1F'],
   spot: ['find', '#7FE3D2', '#24B39B'], stamp: ['stamp', '#8FB4FF', '#3F6FE0'], talk: ['talk', '#FFB0C8', '#F06A93'], memory: ['memory', '#FFD36B', '#F2A90C'], photos: ['photos', '#9CD9FF', '#3BA0E8'], mood: ['mood', '#FFC2A0', '#FF8A57'], hideseek: ['spy', '#FFD54A', '#E8A317'], jigsaw: ['jigsaw', '#A8E86A', '#2E9E4F'], bubbles: ['bubbles', '#5BB8FF', '#1E6FE8'], music: ['music', '#FF8FD8', '#7B3FE0'], shadow: ['', '#B8C2D6', '#5B6680'], feed: ['', '#FFD98A', '#F29B38'], sort: ['', '#9EE6B8', '#3FA0E0'], farm: ['', '#B8E986', '#E0893F'], wash: ['', '#BDE6F2', '#4FA3D9'], bigsmall: ['', '#FFD0A8', '#E06A8F'], maze: ['', '#C3F0A0', '#3E9B4F'], where: ['', '#FFE08A', '#F08C2E'], odd: ['', '#D7C6FF', '#7B5BE0'], next: ['', '#A8E6FF', '#2F86D6'], simon: ['', '#FFC9C9', '#E8590C'], dots: ['', '#C5CAFF', '#3B3F86'], howmany: ['', '#B2F2BB', '#2B8A3E'], cake: ['', '#FFD6E7', '#E64980'], _: ['', '#C9D3E6', '#8C9BB8'] };
 // each game's own backdrop (owner, Nov 2026: "เพิ่มฉากด้วย"): a sky or room in CSS and a drawn strip along the bottom (app.css .sc-<scene>)
-const KSCENE = { bubbles: 'sea', music: 'stage', shadow: 'night', feed: 'picnic', sort: 'garden', numbers: 'garden', bigsmall: 'garden', farm: 'farm', wash: 'bath', maze: 'farm', where: 'picnic', odd: 'sea', next: 'stage', simon: 'stage', dots: 'night', howmany: 'sea', cake: 'picnic' };
+const KSCENE = { quest: 'road', bubbles: 'sea', music: 'stage', shadow: 'night', feed: 'picnic', sort: 'garden', numbers: 'garden', bigsmall: 'garden', farm: 'farm', wash: 'bath', maze: 'farm', where: 'picnic', odd: 'sea', next: 'stage', simon: 'stage', dots: 'night', howmany: 'sea', cake: 'picnic' };
 const KBAR = { home: 'home', map: 'map', colour: 'colour', stamp: 'passport', stickers: 'stickers', trophies: 'trophies' };   // the bar's middle button: colour before the trip, the passport on it
 function viewKid(p) {
   const ks = children(), kid = p[1], k = ks.find((c) => c.slug === kid);
@@ -609,9 +612,10 @@ function viewKid(p) {
   const t = kidTrip(kid);
   const pp = t.passport || {}, i = kidDayOf(t), d = t.days[i], pd = (pp.days || [])[i] || {}, g = pp.guides || [];
   const view = p[2] || 'home', name = kidName(kid), pre = preTrip(t), cd = pp.countdown, wild = ((t.info || {}).wild || []);
+  if (quest && (quest.game !== view || quest.kid !== kid || quest.tid !== t.id)) { quest = null; questReset(); }   // off the mission's page: free play again
   const fill = (x) => String(x || '').replace(/\{name\}/g, name);
   const style = `--accent:${esc(pd.acc || t.theme.accent || '#1F3A5F')};--tint:${esc(pd.tint || '#F3F6FA')}`;
-  const back = `<button class="kidback" data-a="kidnav" data-v="#/kid/${esc(kid)}" aria-label="${L('กลับ', 'Back')}">‹</button>`;
+  const back = `<button class="kidback" data-a="kidnav" data-v="#/kid/${esc(kid)}${quest ? '/quest' : ''}" aria-label="${L('กลับ', 'Back')}">‹</button>`;
   const lock = `<button class="kidexit" id="kidexit" aria-label="${L('ผู้ใหญ่: กดค้างเพื่อออก', 'Grown-ups: press and hold to leave')}">${ic('lock', 'klk')}</button>`;
   const guideImg = (n) => (g[n] ? `<img class="guide" src="${esc(g[n].art)}" alt="">` : '');
   const head = `<header class="kidhd">${view === 'home' ? `<button class="kidme" data-a="kidnav" data-v="#/kid" aria-label="${L('เปลี่ยนคน', 'Switch child')}">${kidFace(kid)}</button>` : back}
@@ -635,6 +639,7 @@ function viewKid(p) {
     body = `${fresh.length ? `<button class="kidhearts" data-a="kidnav" data-v="#/kid/${esc(kid)}/hearts" data-say="${esc(heartLine(fresh[0], kid))}"><span class="float" aria-hidden="true">💗</span><span class="e">${emo(fresh[0].emoji)}</span><b>${esc(L(`${fresh[0].from} ส่งหัวใจให้หนู!`, `${fresh[0].from} sent you a heart!`))}</b>${fresh.length > 1 ? `<small>+${fresh.length - 1}</small>` : ''}</button>` : ''}
 ${live === i && !ticked(t, `gift.d${i}`, kid) ? `<button class="kidgift" data-a="kidnav" data-v="#/kid/${esc(kid)}/gift" data-say="${esc(L('มีกล่องเซอร์ไพรส์มาให้! แตะเปิดเลย', 'A surprise box for you! Tap to open it'))}"><span class="box" aria-hidden="true">${emo('🎁')}</span><b>${L('<span class="nw">กล่องเซอร์ไพรส์</span><span class="nw">วันนี้!</span>', 'Today’s surprise box!')}</b><small>${L('แตะเปิดเลย', 'Tap to open')}</small></button>`
   : live === i && hourIn(t.timezone) >= 17 && !ticked(t, `stamp.d${i}`, kid) ? `<button class="kidnight" data-a="kidnav" data-v="#/kid/${esc(kid)}/stamp" data-say="${esc(L('ก่อนนอน มาปั๊มตราวันนี้กัน!', 'Before bed — let’s stamp today!'))}"><span class="moon" aria-hidden="true">${emo('🌙')}</span><b>${L('ปั๊มตราวันนี้ก่อนนอน!', 'Stamp today before bed!')}</b><small>🛂 ${L('ปั๊ก!', 'Thump!')}</small></button>` : ''}
+${questBanner(t, kid)}
 <div class="kidhello">${kidArt(kid) ? `<button class="poke" data-a="kidpoke" data-k="${esc(kid)}" aria-label="${esc(name)}"><img src="${kidArt(kid, true)}" alt=""></button>` : ''}<p>${pre ? L(`<span class="nw">อีก <b>${until}</b> วัน</span> เราจะไป<span class="nw">${esc(T(t.title).split(' · ').pop())}กัน!</span>`, `<b>${until}</b> ${until === 1 ? 'sleep' : 'sleeps'} to ${esc(T(t.title).split(' · ')[0])}!`) : L(`<span class="nw">สวัสดี ${esc(name)}!</span> <span class="nw">วันนี้เล่นอะไรดี?</span>`, `Hello ${esc(name)}! What shall we play?`)}</p></div>
 ${stars(kid) ? `<div class="jarrow"><button class="starjar" data-a="kidjar" data-k="${esc(kid)}" aria-label="${L('โถดาว · ผู้ใหญ่กดค้างเพื่อล้าง', 'Star jar · grown-ups press and hold to empty')}">⭐ <b>${stars(kid)}</b></button>${pets(kid).length ? `<span class="pets" aria-label="${L('เพื่อน', 'Friends')}">${pets(kid).join('')}</span>` : ''}</div>` : ''}
 <nav class="kiddays">${t.days.map((x, j) => `<button data-a="kidday" data-v="${j}" aria-pressed="${j === i}" aria-label="${L('วันที่', 'Day')} ${j + 1}">${artImg(t, j)}</button>`).join('')}</nav>
@@ -642,6 +647,8 @@ ${stars(kid) ? `<div class="jarrow"><button class="starjar" data-a="kidjar" data
 <div class="kidpager" id="kidpager">${pages.map((pg, n) => `<div class="kpage kidtiles" data-n="${n}">${pg.join('')}</div>`).join('')}</div>
 <button class="kparrow next" data-a="kidpage" data-v="1" aria-label="${L('หน้าถัดไป', 'Next page')}"${pages.length > 1 ? '' : ' hidden'}>›</button></div>
 ${pages.length > 1 ? `<div class="kdots" id="kdots">${pages.map((_, n) => `<i${n === 0 ? ' class="on"' : ''}></i>`).join('')}</div>` : ''}`;
+  } else if (view === 'quest') {
+    body = questHtml(t, kid, guideImg);
   } else if (view === 'colour') {
     body = `<div class="colourpad colsvg" data-src="${esc(colourUrl(t, i))}" data-fill="${esc(colourFill(t, i, kid))}" data-t="${esc(t.id)}" data-d="${i}" data-k="${esc(kid)}"></div>
 <div class="palette">${COLOURS.map((c) => `<button data-a="kidcolor" data-v="${c}" style="--c:${c}" aria-pressed="${c === kidColour}" aria-label="${c}"></button>`).join('')}</div>
@@ -1090,27 +1097,122 @@ const LV = {   // ten levels a game (owner, Nov 2026: "ด่านเยอะ�
   next: [{ pat: ['AB'], o: 2, show: 4, r: 4 }, { pat: ['AB'], o: 3, show: 5, r: 5 }, { pat: ['AAB', 'ABB'], o: 3, show: 5, r: 5 }, { pat: ['ABC'], o: 3, show: 5, r: 6 }, { pat: ['AABB', 'ABC', 'ABB'], o: 4, show: 7, r: 6 },
     { pat: ['ABC', 'AABB', 'ABBC'], o: 4, show: 7, r: 6 }, { pat: ['ABCD'], o: 4, show: 7, r: 6 }, { pat: ['AABC', 'ABAC', 'ABCD'], o: 4, show: 8, r: 6 }, { pat: ['ABCD', 'AABBC', 'ABACD'], o: 5, show: 8, r: 8 }, { pat: ['ABCD', 'AABC', 'ABBCD', 'AABBC', 'ABACD'], o: 5, show: 9, r: 8 }],   // level 2 = every game as it was before levels (6 pairs, 3×2 pieces, three choices)
 };
+/* ---------- the adventure map (owner, Nov 2026: "แผนที่ผจญภัยจะเป็น hilight") ----------
+   One town per day of the book, walked in order. A town = three missions (games the app already has, at a level that climbs along the road)
+   and a treasure chest that opens once the three are played. Progress = ticks `quest.d<i>.<0|1|2|chest>` (trip-wide, day null: a tick is never
+   a memory of a day), so it follows the child from the iPad to the phone and sits in backups. Relatives may play; nothing of theirs is saved.
+   Play, not homework: a town ahead waits in the clouds (never a lock), a tile only shows what was done. */
+const QUEST_G = { shadow: ['🦒', 'เงาของใคร', 'Shadows'], feed: ['🍌', 'ป้อนอาหาร', 'Feed me'], sort: ['🧺', 'แยกสี', 'Colours'], bigsmall: ['🐘', 'ใหญ่-เล็ก', 'Big & small'], where: ['📍', 'ตรงไหนนะ', 'Where is it?'],
+  odd: ['🤔', 'ไม่เข้าพวก', 'Odd one out'], next: ['➡️', 'อะไรมาต่อ', 'What’s next?'], howmany: ['🧮', 'มีกี่ตัว', 'How many?'], maze: ['🧭', 'เขาวงกต', 'Maze'], simon: ['🎹', 'จำเสียงตามสี', 'Copy the tune'],
+  dots: ['✨', 'ลากจุดต่อภาพ', 'Join the dots'], match: ['🧩', 'จับคู่', 'Match'], jigsaw: ['🖼️', 'ต่อภาพ', 'Puzzle'] };
+const QUEST_ORDER = ['shadow', 'maze', 'feed', 'match', 'howmany', 'dots', 'sort', 'where', 'simon', 'bigsmall', 'odd', 'jigsaw', 'next'];   // neighbours differ in kind (look · move · remember)
+const QUEST_GEM = ['💎', '👑', '🗝️', '🏺', '🔮', '🧭', '🪙', '💍', '🐚', '🏮', '🪄', '🎖️', '🌟', '🦜', '🪁', '🧿'];   // what a town's chest holds (also its sticker)
+let quest = null, questOpen = null, questNew = null;   // quest = the mission being played {tid, kid, town, slot, game, lv}; questOpen = the town open on the map; questNew = the chest just opened
+const questMem = new Set();   // a relative's play this visit (nothing saved)
+function questPlan(t, kid) {
+  const n = t.days.length, lit = littleOf(t, kid), pool = QUEST_ORDER.filter((g) => g !== 'jigsaw' || t.days.some((_, j) => dayArt(t, j)) || kidPhotoPool(t).length);
+  let off = 0; for (const ch of t.id) off = (off * 31 + ch.charCodeAt(0)) % 997;
+  return t.days.map((_, i) => {
+    const f = n > 1 ? i / (n - 1) : 0, base = lit ? 1 + Math.round(f * 4) : 2 + Math.round(f * 8);   // the road climbs: the little one 1 → 5, the others 2 → 10
+    return [0, 1, 2].map((k) => { const game = pool[(off + i * 3 + k) % pool.length]; return { game, lv: Math.min(LV[game].length, base) }; });
+  });
+}
+const questKey = (i, k) => `quest.d${i}.${k}`;
+const questGot = (t, kid, i, k) => !!ticked(t, questKey(i, k), kid) || questMem.has(tickId(t, questKey(i, k), kid));
+const questTownDone = (t, kid, i) => questGot(t, kid, i, 'chest');
+const questReady = (t, kid, i) => [0, 1, 2].every((k) => questGot(t, kid, i, k));
+const questAt = (t, kid) => { const i = t.days.findIndex((_, j) => !questTownDone(t, kid, j)); return i < 0 ? t.days.length : i; };   // the town the child stands in (= days.length: every chest is open)
+function questMark(t, kid, i, k) {
+  const id = tickId(t, questKey(i, k), kid); if (questGot(t, kid, i, k)) return;
+  if (isEditor()) putEntry(t, { day: null, kind: 'tick', child: kid, first_key: questKey(i, k), text: '' }, id); else questMem.add(id);
+}
+const questIn = (t, kid, game) => (quest && quest.tid === t.id && quest.kid === kid && quest.game === game ? quest : null);
+// leaving or starting a mission: no half-played board of the other mode stays behind (free play keeps its own levels)
+function questReset() { kg = null; jg = null; mg = null; mz = null; dt = null; clearTimeout(simT); sm = null; }
+const questTown = (t, i) => T(((t.passport || {}).days || [])[i] && t.passport.days[i].title) || T(t.days[i].title);
+const questSecret = (t, i) => { const f = (((t.passport || {}).days || [])[i] || {}).facts || []; return f.length ? T(f[i % f.length]) : ''; };
+// the banner on the kid home: where the road goes next
+function questBanner(t, kid) {
+  const at = questAt(t, kid), end = at >= t.days.length, i = end ? t.days.length - 1 : at;
+  const line = end ? L('เก็บสมบัติครบแล้ว!', 'Every treasure found!') : at === 0 && !questGot(t, kid, 0, 0) && !questGot(t, kid, 0, 1) && !questGot(t, kid, 0, 2) ? L('ออกเดินทางกันเลย!', 'Let’s set off!') : L('ไปต่อกันเลย!', 'On we go!');
+  return `<button class="kidquest" data-a="kidnav" data-v="#/kid/${esc(kid)}/quest" data-say="${esc(L('แผนที่ผจญภัย', 'The adventure map'))}">${artImg(t, i)}<span><b>${L('แผนที่ผจญภัย', 'Adventure map')}</b><small>${line}</small></span><i aria-hidden="true">${end ? '🏆' : '🗺️'}</i></button>`;
+}
+function questHtml(t, kid, guideImg) {
+  const plan = questPlan(t, kid), n = t.days.length, at = questAt(t, kid), end = at >= n, open = questOpen !== null && questOpen <= Math.min(at, n - 1) ? questOpen : Math.min(at, n - 1);
+  const sib = (t.theme.children || []).map((c) => c.slug).filter((x) => x !== kid && kidArt(x)).map((x) => ({ x, at: Math.min(n - 1, questAt(t, x)) }));
+  const line = questNew !== null ? L('เปิดหีบแล้ว! ได้สมบัติมาหนึ่งชิ้น', 'The chest is open! One more treasure')
+    : end ? L('เก็บสมบัติครบทุกเมืองแล้ว! เก่งที่สุดเลย', 'Every treasure is found! You are the best')
+      : questReady(t, kid, open) && !questTownDone(t, kid, open) ? L('เล่นครบแล้ว! แตะหีบสมบัติเลย', 'All played! Tap the treasure chest')
+        : L('เล่นสามเกม แล้วเปิดหีบสมบัติ!', 'Play three games, then open the treasure chest!');
+  const towns = t.days.map((_, i) => {
+    const done = questTownDone(t, kid, i), here = i === Math.min(at, n - 1) && !end, ahead = i > at, isOpen = i === open && !ahead;
+    const who = (here ? [`<img class="qme ${esc(kidBase(kid))}" src="${kidArt(kid, true)}" alt="">`] : []).concat(sib.filter((b) => b.at === i).map((b) => `<img class="qsib ${esc(kidBase(b.x))}" src="${kidArt(b.x, true)}" alt="">`)).join('');
+    const head = `<button class="qhead" data-a="questtown" data-v="${i}" aria-expanded="${isOpen}" data-say="${esc(ahead ? L('ยังไปไม่ถึง เดินไปทีละเมืองนะ', 'Not yet — one town at a time') : questTown(t, i))}">
+<span class="qart">${artImg(t, i)}${ahead ? '<span class="qcloud" aria-hidden="true">☁️</span>' : ''}${done ? `<span class="qgem" aria-hidden="true">${QUEST_GEM[i % QUEST_GEM.length]}</span>` : ''}</span>
+<span class="qname"><b>${ahead ? L('เมืองในเมฆ', 'A town in the clouds') : wj(esc(questTown(t, i)))}</b>${done ? `<small>${L('เก็บสมบัติแล้ว', 'Treasure found')}</small>` : here ? `<small>${L('เราอยู่ที่นี่', 'We are here')}</small>` : ''}</span>
+${who ? `<span class="qwho" aria-hidden="true">${who}</span>` : ''}</button>`;
+    const ms = plan[i].map((m, k) => { const got = questGot(t, kid, i, k), g = QUEST_G[m.game]; return `<button class="qm${got ? ' got' : ''}" data-a="questgo" data-t="${esc(t.id)}" data-k="${esc(kid)}" data-d="${i}" data-v="${k}" data-say="${esc(L(g[1], g[2]))}"><span>${g[0]}</span><b>${L(g[1], g[2])}</b>${got ? '<i aria-hidden="true">⭐</i>' : ''}</button>`; }).join('');
+    const ready = questReady(t, kid, i), secret = questSecret(t, i);
+    const chest = done ? `<div class="qtreasure${questNew === i ? ' new' : ''}"><span class="gem" aria-hidden="true">${QUEST_GEM[i % QUEST_GEM.length]}</span>${secret ? `<p><small>${L('ความลับของเมืองนี้', 'This town’s secret')}</small>${esc(secret)}</p>` : `<p>${L('สมบัติของเมืองนี้!', 'This town’s treasure!')}</p>`}</div>${i + 1 < n ? `<button class="kidbig" data-a="questnext" data-v="${i + 1}">${L('ไปเมืองต่อไป', 'On to the next town')} ›</button>` : ''}`
+      : `<button class="qchest${ready ? ' ready' : ''}" data-a="questchest" data-t="${esc(t.id)}" data-k="${esc(kid)}" data-d="${i}" aria-label="${L('หีบสมบัติ', 'Treasure chest')}"><span aria-hidden="true">🧰</span><b>${ready ? L('เปิดหีบ!', 'Open it!') : L('หีบสมบัติ', 'Treasure chest')}</b></button>`;
+    return `<li class="qtown${done ? ' done' : ''}${here ? ' here' : ''}${ahead ? ' ahead' : ''}${isOpen ? ' open' : ''}" id="qt${i}">${head}${isOpen ? `<div class="qbody"><div class="qms">${ms}</div>${chest}</div>` : ''}</li>`;
+  }).join('');
+  return `<div class="kidguide">${guideImg(0)}<p>${line}</p></div>
+<ol class="questpath">${towns}</ol>
+${end ? `<div class="qend"><span aria-hidden="true">🏆</span><b>${L('นักผจญภัยตัวจริง!', 'A true adventurer!')}</b><div class="qgems" aria-hidden="true">${t.days.map((_, i) => QUEST_GEM[i % QUEST_GEM.length]).join(' ')}</div></div>` : ''}`;
+}
+Object.assign(A, {
+  questtown(b) {   // a town on the road: one reached opens (to play or play again); one in the clouds only says so
+    const kid = kidNow(), t = kidTrip(kid), i = +b.dataset.v; if (!t) return;
+    if (i > questAt(t, kid)) { beep('tap'); b.classList.remove('nope'); void b.offsetWidth; b.classList.add('nope'); sayUi(b.dataset.say); return; }
+    beep('pop'); questOpen = questOpen === i ? null : i; questNew = null; render(); sayUi(questTown(t, i));
+  },
+  questgo(b) {   // a mission: its game opens at the road's level, the child's own levels stay as they are
+    const t = trip(b.dataset.t), kid = b.dataset.k, i = +b.dataset.d, k = +b.dataset.v, m = questPlan(t, kid)[i][k];
+    beep('sparkle'); questReset(); questNew = null; questOpen = i;
+    quest = { tid: t.id, kid, town: i, slot: k, game: m.game, lv: m.lv };
+    nav(`#/kid/${kid}/${m.game}`); sayUi(L(QUEST_G[m.game][1], QUEST_G[m.game][2]));
+  },
+  questchest(b) {
+    const t = trip(b.dataset.t), kid = b.dataset.k, i = +b.dataset.d;
+    if (!questReady(t, kid, i)) { beep('tap'); b.classList.remove('nope'); void b.offsetWidth; b.classList.add('nope'); sayUi(L('เล่นให้ครบสามเกมก่อนนะ', 'Play the three games first!')); return; }
+    if (questTownDone(t, kid, i)) return;
+    beep('pop'); setTimeout(() => beep('fanfare'), 250); burst(b, ['✨', '⭐', QUEST_GEM[i % QUEST_GEM.length]]); celebrate(['🗺️', '✨', QUEST_GEM[i % QUEST_GEM.length]]); star(kid, 3);
+    questMark(t, kid, i, 'chest'); questNew = i; questOpen = i;
+    const secret = questSecret(t, i), last = i + 1 >= t.days.length;
+    sayUi(last ? L('เย้! เก็บสมบัติครบทุกเมืองแล้ว', 'Hooray! Every treasure is found') : secret ? L(`เย้! ได้สมบัติแล้ว ความลับคือ ${secret}`, `Hooray, a treasure! The secret: ${secret}`) : L('เย้! ได้สมบัติแล้ว', 'Hooray! A treasure!'));
+    setTimeout(safeRender, 500);
+  },
+  questnext(b) { beep('sparkle'); questNew = null; questOpen = +b.dataset.v; render(); const el = $('#qt' + b.dataset.v); if (el) el.scrollIntoView({ block: 'center', behavior: reduced() ? 'auto' : 'smooth' }); const kid = kidNow(), t = kidTrip(kid); if (t) sayUi(questTown(t, +b.dataset.v)); },
+});
 function lvState(t, kid, game) {
+  const q = questIn(t, kid, game); if (q) return { at: q.lv, best: q.lv - 1, top: q.lv, n: LV[game].length, quest: q };   // a mission plays at the road's level
   const st = (ls('lv_' + kid) || {})[game] || {}, start = littleOf(t, kid) ? 1 : 2, n = LV[game].length;
   const best = Math.min(n, st.best != null ? Math.max(st.best, start - 1) : start - 1), top = Math.min(n, best + 1);
   return { at: Math.max(1, Math.min(top, st.at || start)), best, top, n };
 }
 const lvOf = (t, kid, game) => LV[game][lvState(t, kid, game).at - 1];
-function lvSet(kid, game, patch) { const all = ls('lv_' + kid) || {}; all[game] = Object.assign({}, all[game], patch); ls('lv_' + kid, all); }
+function lvSet(kid, game, patch) { if (quest && quest.kid === kid && quest.game === game) return;   // a mission never moves the child's own levels
+  const all = ls('lv_' + kid) || {}; all[game] = Object.assign({}, all[game], patch); ls('lv_' + kid, all); }
 // a level won: the best moves up, the next one opens
-function lvDone(t, kid, game) { const s = lvState(t, kid, game); lvSet(kid, game, { at: s.at, best: Math.max(s.best, s.at) }); }
+function lvDone(t, kid, game) { const q = questIn(t, kid, game); if (q) { questMark(t, kid, q.town, q.slot); return; }
+  const s = lvState(t, kid, game); lvSet(kid, game, { at: s.at, best: Math.max(s.best, s.at) }); }
 // the chips of the levels reached (a ⭐ on each one won); none when only level 1 is open
 function lvBar(t, kid, game) {
-  const s = lvState(t, kid, game); if (s.top < 2) return '';
+  const s = lvState(t, kid, game);
+  if (s.quest) return `<div class="lvbar qbar"><span>🗺️ ${wj(esc(questTown(t, s.quest.town)))}</span></div>`;   // on a mission: the town, no level chips
+  if (s.top < 2) return '';
   return `<div class="lvbar" role="group" aria-label="${L('ด่าน', 'Levels')}"><span>${L('ด่าน', 'Level')}</span>${Array.from({ length: s.top }, (_, k) => k + 1).map((n) => `<button class="lvc${n === s.at ? ' on' : ''}" data-a="kglv" data-g="${game}" data-v="${n}" aria-pressed="${n === s.at}" aria-label="${esc(L(`ด่าน ${n}`, `Level ${n}`))}"><b>${n}</b>${n <= s.best ? '<i aria-hidden="true">⭐</i>' : ''}</button>`).join('')}</div>`;
 }
 // after a win: on to the next level (or "every level done"), and the same one again
 function lvWin(t, kid, game, again) {
   const s = lvState(t, kid, game);
+  if (s.quest) return `<button class="kidbig" data-a="kidnav" data-v="#/kid/${esc(kid)}/quest">🗺️ ${L('กลับไปแผนที่', 'Back to the map')} ›</button>
+<button class="kidbig ghost" data-a="${again[0]}"${again[1] ? ` data-v="${again[1]}"` : ''}>🔁 ${L('เล่นอีกรอบ', 'Play again')}</button>`;
   return `${s.at < s.n ? `<button class="kidbig" data-a="kglv" data-g="${game}" data-v="${s.at + 1}">⭐ ${L(`ไปด่าน ${s.at + 1}`, `On to level ${s.at + 1}`)} ›</button>` : `<p class="lvall">${L('ผ่านครบทุกด่านแล้ว! เก่งที่สุดเลย 🏆', 'Every level done! You are the best 🏆')}</p>`}
 <button class="kidbig ghost" data-a="${again[0]}"${again[1] ? ` data-v="${again[1]}"` : ''}>🔁 ${L(`เล่นด่าน ${s.at} อีก`, `Level ${s.at} again`)}</button>`;
 }
-const lvWord = (t, kid, game) => L(`ด่าน ${lvState(t, kid, game).at}`, `level ${lvState(t, kid, game).at}`);
+const lvWord = (t, kid, game) => (questIn(t, kid, game) ? L('ภารกิจ', 'the mission') : L(`ด่าน ${lvState(t, kid, game).at}`, `level ${lvState(t, kid, game).at}`));
 const WHERE_E = ['🐱', '🐶', '🐰', '🐻', '🐸', '🐥', '🍎', '🚗', '⭐', '🎈', '🐢', '🦋'];
 const WHERE_NAME = [['มุมบนซ้าย', 'in the top left corner'], ['ข้างบน', 'on top'], ['มุมบนขวา', 'in the top right corner'], ['ข้างซ้าย', 'on the left'], ['ตรงกลาง', 'in the middle'],
   ['ข้างขวา', 'on the right'], ['มุมล่างซ้าย', 'in the bottom left corner'], ['ข้างล่าง', 'at the bottom'], ['มุมล่างขวา', 'in the bottom right corner']];
