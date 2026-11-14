@@ -713,7 +713,10 @@ const mealKind = (p) => { const m = ((p.meal || {}).en || '').toLowerCase(); ret
 // a meal in one line: the pick (opens Maps), then its backup — so a hungry family never has to search
 // a name with its navigate button (Today's answer rows): the name is plain text, the 44 px pin opens Maps — an underlined name read as a link to a page
 const navB = (q, label) => (q ? `<a class="navb" href="${esc(mapsUrl(q))}" target="_blank" rel="noopener" aria-label="${esc(L('นำทางไป ', 'Navigate to ') + label)}">${ic('pin')}</a>` : '');
-const mealDd = (p) => `<span class="nmrow"><b>${esc(p.name)}</b>${navB(p.q, p.name)}</span>${p.alt ? `<small class="bk"><span class="nmrow">${L('ร้านสำรอง', 'Backup')}: ${esc(p.alt.name)}${navB(p.alt.q, p.alt.name)}</span></small>` : ''}`;
+// a meal and its backup each have a navigate pin: the two stack as a pair (class "two" — the pick's pin bleeds up, the backup's down, 4 px between
+// them), so neither 44 px tap covers the other (they overlapped by 10–16 px: the live check of Nov 2026)
+const mealDd = (p) => { const two = p.q && p.alt && p.alt.q ? ' two' : '';
+  return `<span class="nmrow${two}"><b>${esc(p.name)}</b>${navB(p.q, p.name)}</span>${p.alt ? `<small class="bk"><span class="nmrow${two}"><span>${L('ร้านสำรอง', 'Backup')}: ${esc(p.alt.name)}</span>${navB(p.alt.q, p.alt.name)}</span></small>` : ''}`; };
 // Today's header (owner's review, Nov 2026: "reads like a lecture, not a trip"): the bed and the weather as short icon lines, not one paragraph —
 // each " · " piece of d.wx is its own line, the "(averages, not a forecast …)" aside drops to one quiet word, "x — do y" leads with the y
 const WX_ICON = [[/sunset|พระอาทิตย์ตก/i, '🌅'], [/°C/, '🌡️'], [/\bwindy?\b|ลม|breeze|sleeve|เสื้อ|jacket|\bcool|เย็น/i, '🧥'], [/\bsea\b|น้ำทะเล|water park|สวนน้ำ/i, '🌊'], [/clock|นาฬิกา|daylight|ออมแสง/i, '🕒'], [/rain|ฝน|umbrella|ร่ม/i, '☔'], [/\bsun\b|\bsunny\b|แดด|\bhats?\b|หมวก/i, '🧢'], [/dark|มืด|night|ค่ำ/i, '🌙']];
@@ -1127,7 +1130,12 @@ const spotSame = (a, b) => { const y = spotWords(b); return spotWords(a).some((w
 const bedLike = (bed, nm) => { const a = String(bed || '').toLowerCase(), c = String(nm || '').toLowerCase(); return !!a && !!c && (a.startsWith(c) || c.startsWith(a)) && Math.min(a.length, c.length) >= 0.6 * Math.max(a.length, c.length); };   // a planned stop that is the hotel itself ("Noah's Ark Hotel" · "Noah's Ark Hotel & Resort"), never a sight in the same town
 function photoStops(t, i) {
   const d = (t.days || [])[i] || {}, pl = d.plan || {}, out = [], seen = new Set();
-  const add = (key, nm, kind) => { const en = String((nm && nm.en) || '').trim(), th = String((nm && nm.th) || '').trim(), id = (en || th).toLowerCase(); if (!id || seen.has(id)) return null; seen.add(id); const x = { key: key || '', kind, name: { th: th || en, en: en || th } }; out.push(x); return x; };
+  // two planned stops at one map address are one place ("Hong Kong Disneyland" · "… rides and shows", the same `q`): one chip — the first one's name and
+  // check-in — that also answers to the other's names (aka), so a photo tagged with either sits under it; a meal never merges into a sight
+  const add = (key, nm, kind, q) => { const en = String((nm && nm.en) || '').trim(), th = String((nm && nm.th) || '').trim(), id = (en || th).toLowerCase(); if (!id || seen.has(id)) return null; seen.add(id);
+    const same = q ? out.find((x) => x.q === q && (x.kind === 'food') === (kind === 'food')) : null;
+    if (same) { same.aka.push(...[th, en].filter(Boolean)); return null; }
+    const x = { key: key || '', kind, q: q || '', aka: [], name: { th: th || en, en: en || th } }; out.push(x); return x; };
   const covered = (nm) => out.some((x) => spotSame(x.name.en, (nm && nm.en) || ''));
   const mp = (t.passport || {}).map || {}, mapStops = ((mp.days || [])[i] || []).map((k) => (mp.stops || []).find((x) => x.k === k)).filter(Boolean);
   const planned = d.planned || [], isAir = (x) => /✈|🛫|🛬/.test(x.e || '') || SPOT_AIR.test(`${x.en || ''} ${x.th || ''}`);
@@ -1138,16 +1146,16 @@ function photoStops(t, i) {
     const airs = ends.map((e) => known.find((k) => spotSame(k.en || '', e)) || { en: e });
     known.forEach((k) => { if (!airs.some((a) => a === k || spotSame(a.en || '', k.en || ''))) airs.push(k); });
     if (!airs.length) airs.push({ th: 'สนามบิน', en: 'Airport' });
-    airs.forEach((a, n) => { add(a.key, a, 'air'); if (n === 0) add('', { th: 'บนเครื่องบิน', en: 'On the plane' }, 'air'); });
+    airs.forEach((a, n) => { add(a.key, a, 'air', a.q); if (n === 0) add('', { th: 'บนเครื่องบิน', en: 'On the plane' }, 'air'); });
   }
-  planned.filter((p) => p.kind !== 'food').forEach((p) => add(p.key, p, beds.some((b) => bedLike(b, p.en)) ? 'stay' : 'place'));
+  planned.filter((p) => p.kind !== 'food').forEach((p) => add(p.key, p, beds.some((b) => bedLike(b, p.en)) ? 'stay' : 'place', p.q));
   mapStops.filter((x) => !isAir(x) && !covered(x) && !beds.some((b) => spotSame(b, x.en || ''))).forEach((x) => add('', x, 'map'));
   beds.forEach((b) => { if (!out.some((x) => x.kind === 'stay' && bedLike(b, x.name.en))) add('', { en: b }, 'stay'); });
-  planned.filter((p) => p.kind === 'food').forEach((p) => add(p.key, p, 'food'));
+  planned.filter((p) => p.kind === 'food').forEach((p) => add(p.key, p, 'food', p.q));
   placesOf(t.id, i).forEach((p) => add(p.key, p.name && typeof p.name === 'object' ? p.name : { en: p.name || p.key }, p.kind === 'food' ? 'food' : 'place'));
   return out;
 }
-const stopOf = (t, i, place) => { const p = String(place || '').trim().toLowerCase(); return p && i != null ? photoStops(t, i).find((x) => [x.name.th, x.name.en].some((n) => n.toLowerCase() === p)) || null : null; };
+const stopOf = (t, i, place) => { const p = String(place || '').trim().toLowerCase(); return p && i != null ? photoStops(t, i).find((x) => [x.name.th, x.name.en, ...x.aka].some((n) => n.toLowerCase() === p)) || null : null; };
 const STOP_IC = { air: 'plane', place: 'pin', map: 'pin', food: 'eat', stay: 'stays' };
 function photoSpots(t, i, ph) {
   const stops = photoStops(t, i); if (!stops.length) return '';
