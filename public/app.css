@@ -2955,3 +2955,14 @@ body.padfull .kidbar{display:none}
 .dpb.dpsave{display:none;bottom:12px;left:12px;width:64px;height:64px;font-size:30px;font-weight:800;color:#fff;background:#1565C0;border:4px solid #fff}
 .drawwrap.full .dpb.dpsave{display:grid;top:80px;bottom:auto}
 .drawwrap.full .dpb.dpundo{top:80px;bottom:auto}   /* the colour tray opens over the foot of a tall sheet: the buttons stay at its head */
+
+/* where to eat, on the day itself: the meal to eat now or next is ringed and tagged, a meal already behind us folds to its one line */
+.emeal.nextm{border-color:color-mix(in srgb,var(--mk) 70%,var(--ink));box-shadow:0 0 0 2px color-mix(in srgb,var(--mk) 40%,transparent)}
+.emeal .eh3 .nexttag{margin-left:auto}
+details.emeal>summary{list-style:none;cursor:pointer;min-height:48px;box-sizing:border-box}
+details.emeal>summary::-webkit-details-marker{display:none}
+details.emeal>summary .mname{flex:1;min-width:0;font-size:14px;font-weight:500;color:var(--muted);white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+details.emeal[open]>summary .mname{visibility:hidden}
+/* night by night: a stay's name is never cut — its nights' columns grow to hold it and the strip scrolls sideways inside its own box */
+.nstrip{grid-template-columns:repeat(var(--n),minmax(38px,auto));width:max-content;min-width:100%;box-sizing:border-box}
+.nstrip .nb{overflow:visible;text-overflow:clip;padding:4px 8px}
