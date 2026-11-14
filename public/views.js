@@ -101,7 +101,7 @@ function render() {
   // the photo picker is one input outside #app, so a render while the picker is open cannot replace it and drop the chosen photos
   const fp = document.getElementById('fpick'), host = app.querySelector('[data-fpick]'); if (fp && host) { fp.dataset.t = host.dataset.t; fp.dataset.d = host.dataset.d; }
   if (typeof hydrateColours === 'function') hydrateColours(app);   // kid.js loads after this file
-  if (enter && p[3] === 'full' && p[4] !== undefined) setTimeout(() => { const el = document.getElementById(`pg-${p[2]}-${p[4]}`); if (el) el.scrollIntoView(); }, 0);   // after the router's scroll-to-top   // a glance card opens the report on its section
+  if (enter && p[3] === 'full' && p[4] !== undefined) setTimeout(() => { const el = document.getElementById(`pg-${p[2]}-${p[4]}`); if (el && !el.closest('.tp.one')) el.scrollIntoView(); }, 0);   // after the router's scroll-to-top   // a glance card opens the report on its section
   if (p[2] === 'log' && p[4] === 'ai' ? aiOpened !== location.hash && (aiOpened = location.hash) : (aiOpened = null)) setTimeout(() => { const el = document.getElementById('aipanel'); if (el) { el.scrollIntoView({ block: 'start' }); el.classList.add('flash'); } }, 60);   // the 21:30 reminder: open at tonight's Claude panel
   if (enter && p[2] === 'book' && p[3] === 'd') { const el = document.getElementById('d' + p[4]); if (el) el.scrollIntoView(); }   // #/t/<trip>/book/d/<i> opens on that day
 }
@@ -445,6 +445,17 @@ const moneyHtml = (s, skip) => {
 const tlRow = (r) => { const own = r && r.h && T(r.h), [a, ...b] = own ? [own, ...T(r).split(' · ')] : T(r).split(' · '); return `<span class="tm">${own ? emoIn(esc(a)) : esc(a)}</span>${b.length ? `<span class="tsub">${b.map(esc).join('<br>')}</span>` : ''}`; };   // the full plan: the step's own headline, then every detail (nothing folded on the report)   // a tip's kind sets its marker colour (app.css .tips li.tk-*)
 // o.full: a report — every timeline line whole. o.learn / o.eat (the plan page): the day's learn cards, quiz and story, and the long
 // eat-along-the-route lists, are one link each to the page that holds them word for word; the manual's footnote is said once below
+// the record page's reminder of the day (owner, Nov 2026: "อ่านยากมาก ปรับใหม่" — it held the whole manual page inside a second fold):
+// one line a step, the time and the step's own headline, tonight's bed, and one link to the full plan. Nothing folds inside it.
+function planLite(t, i) {
+  const pl = t.days[i].plan || {}, rows = pl.plan || [];
+  if (!rows.length) return '';
+  const line = (r) => { const own = r && r.h && T(r.h); return own ? emoIn(esc(own)) : tlIcon(r) + esc(T(r).split(' · ')[0]); };
+  return `<details class="blk planblk fold"${ls('logall') ? ' open' : ''}><summary>${ic('clock')}<b>${L('แผนวันนี้', 'Today’s plan')}</b><small>${L(`${rows.length} ช่วง`, `${rows.length} steps`)}</small>${ic('chev', 'chv')}</summary>
+<ol class="pll">${rows.map((r) => `<li><time>${esc(r.t || '')}</time><span>${line(r)}</span></li>`).join('')}</ol>
+${pl.stay && pl.stay.name ? `<p class="plstay">${ic('stays')}<span><small>${L('คืนนี้นอนที่', 'Tonight we sleep at')}</small><b>${esc(pl.stay.name)}</b></span></p>` : ''}
+<a class="learnlink" href="#/t/${esc(t.id)}/today/${i}/full">${ic('doc')}<b>${L('ดูแผนเต็มของวันนี้', 'See the day’s full plan')}</b>${ic('chev')}</a></details>`;
+}
 function planHtml(t, i, open, wx, o = {}) {
   const pl = t.days[i].plan || {}, rows = pl.plan || [], dwx = wx && t.days[i].wx;
   if (!rows.length && !pl.moving && !pl.pick && !pl.planB) return '';
@@ -549,11 +560,14 @@ function viewHub(t) {
     tile('hearts', `#/t/${esc(t.id)}/hearts`, esc(hs.length ? L(`${hs.length} ดวงถึงเด็กๆ`, `${hs.length} for the kids`) : L('ส่งหัวใจถึงเด็กๆ', 'Send the kids a heart'))),
     ed && spendOf(t.id).length ? `<a class="tile t-spend" href="#/t/${esc(t.id)}/spend">${hubE('money')}<b>${L('ค่าใช้จ่าย', 'Spending')}</b><small>${esc(sumMoney(spendOf(t.id)))}</small></a>` : '',
     `<a class="tile" href="#/notebook">${hubE('notebook')}<b>${L('สมุดโน้ตนักเดินทาง', 'Travel notebook')}</b><small>${esc(((n) => (n ? L(`${n} รีวิวในเล่มนี้`, `${n} review${n === 1 ? '' : 's'} in this book`) : L('ให้ดาวที่พักและร้านไว้ใช้ทริปหน้า', 'Star the stays and places for next time')))(S.reviews.filter((r) => r.trip === t.id).length))}</small></a>`,
-    ed ? tile('offline', `#/t/${esc(t.id)}/offline`, esc(!off.got ? L('ยังไม่ได้เก็บ — กดก่อนขึ้นเครื่อง', 'Not stored yet — tap before the flight')
-      : off.stale ? L(`เก็บเมื่อ ${off.when} · มีรูปใหม่ ${off.fresh} รูป กดเก็บเพิ่ม`, `Stored ${off.when} · ${off.fresh} new photo${off.fresh > 1 ? 's' : ''}, tap to top up`) : L(`เก็บไว้ในเครื่องแล้ว · ${off.when}`, `Stored on this phone · ${off.when}`)), off.got && !off.stale ? '' : 'warn') : '',
-    ed ? `<button class="tile kid" data-a="kidmode">${hubE('kid')}<b>${L('โหมดเด็ก', 'Kid mode')}</b><small>${L('ระบายสี วาดรูป ปั๊มตรา และแผนที่', 'Colour, draw, stamps and the map')}</small></button>` : '',
-    `<a class="tile shelfgo" href="#/">${hubE('shelf')}<b>${L('ชั้นหนังสือ', 'Bookshelf')}</b><small>${L('เปลี่ยนเล่ม', 'Other books')}</small></a>`,
   ].filter(Boolean);
+  // not topics of the book, so not tiles (owner, Nov 2026: "ควรจะเป็นปุ่มแยก"): keeping the book on the phone and the way back to the shelf are
+  // two rows of their own — the offline row comes up under Today while it still needs a tap (not stored yet, or new photos), else it waits at the foot.
+  // Kid mode has its button on the bar below, so the menu no longer repeats it.
+  const offWarn = !(off.got && !off.stale), row = (cls, href, k, b, sm) => `<a class="hubrow ${cls}" href="${href}">${hubE(k)}<span class="ht"><b>${b}</b><small>${sm}</small></span>${ic('chev')}</a>`;
+  const offRow = ed ? row(`t-offline${offWarn ? ' warn' : ''}`, `#/t/${esc(t.id)}/offline`, 'offline', L('เก็บเล่มไว้ใช้ตอนไม่มีเน็ต', 'Keep this book for no signal'), esc(!off.got ? L('ยังไม่ได้เก็บ — กดก่อนขึ้นเครื่อง', 'Not stored yet — tap before the flight')
+    : off.stale ? L(`เก็บเมื่อ ${off.when} · มีรูปใหม่ ${off.fresh} รูป กดเก็บเพิ่ม`, `Stored ${off.when} · ${off.fresh} new photo${off.fresh > 1 ? 's' : ''}, tap to top up`) : L(`เก็บไว้ในเครื่องแล้ว · ${off.when}`, `Stored on this phone · ${off.when}`))) : '';
+  const shelfRow = row('shelfgo', '#/', 'shelf', L('ชั้นหนังสือ', 'Bookshelf'), L('เปลี่ยนเล่ม', 'Other books'));
   // the tiles in three named groups, the group the family needs now first: on the trip "during the trip", before it "get ready",
   // after it "memories" — so a parent reads one heading, not fifteen tiles (the Today tile stays on top by itself)
   const GROUPS = { now: ['ระหว่างทริป', 'During the trip', /\bt-(log|eat|stays|sos)\b/], mem: ['ความทรงจำ', 'Memories', /\bt-(book|firsts|photos|hearts)\b|href="#\/passport"|tile kid\b/], prep: ['แผนและเตรียมตัว', 'Plans & getting ready', /./] };
@@ -566,7 +580,7 @@ function viewHub(t) {
   const pick = isEditor() ? `<section class="tilepick"><div class="part pickh">${L('สีของเมนู', 'Menu colours')}</div><div class="tpk" role="group" aria-label="${L('สีของเมนู', 'Menu colours')}">${[['pastel', 'สีสัน', 'Colourful'], ['accent', 'สีเล่ม', 'Book colour'], ['plain', 'เรียบ', 'Plain']].map(([k, th, en]) => `<button type="button" class="tpo tpo-${k}" data-a="tiles" data-v="${k}" aria-pressed="${tl === ` tl-${k}`}"><span class="sw" aria-hidden="true"><i></i><i></i><i></i></span><b>${L(th, en)}</b><span class="ck" aria-hidden="true">✓</span></button>`).join('')}</div></section>` : '';
   return `<section class="hubhead">${stampHtml(t, true)}<div class="grow"><div class="kicker">${esc(t.theme.kicker || '')}</div><h1>${esc(T(t.title).split(' · ')[0])}</h1><p class="line">${esc(fmtRange(t))}${ages ? ' · ' + ages : ''}</p></div></section>
 <a class="hubsearch" href="#/t/${esc(t.id)}/search">${ic('search')}<span><b>${L('ค้นหาทั้งเล่ม', 'Search the whole book')}</b><small>${L('หมอ · ยา · แท็กซี่ · ห้องน้ำ · เด็กหลง', 'doctor · pharmacy · taxi · toilet · lost child')}</small></span></a>
-<div class="hubgrid lead${tl}">${hero}</div>${groups}${typeof questLine === 'function' ? questLine(t) : ''}${pick}${artCard(t)}${isEditor() && t.source && t.source !== 'seed' ? `<div class="row end tripdel"><button type="button" class="mini" data-a="tripdel" data-t="${esc(t.id)}">${L('ลบเล่มนี้', 'Delete this book')}</button></div>` : ''}`;
+<div class="hubgrid lead${tl}">${hero}</div>${offWarn ? offRow : ''}${groups}<div class="hubrows">${offWarn ? '' : offRow}${shelfRow}</div>${typeof questLine === 'function' ? questLine(t) : ''}${pick}${artCard(t)}${isEditor() && t.source && t.source !== 'seed' ? `<div class="row end tripdel"><button type="button" class="mini" data-a="tripdel" data-t="${esc(t.id)}">${L('ลบเล่มนี้', 'Delete this book')}</button></div>` : ''}`;
 }
 /* ---------- search the whole book ----------
    One index per book, both languages (a Thai phone finds "taxi", an English one finds "แท็กซี่"): the pocket-guide sections (stays, emergency,
@@ -974,8 +988,23 @@ const repFull = () => !!ls('repfull');
 const repOpen = (html) => (repFull() ? html.replace(/<details class="ifold([^"]*)">/g, '<details class="ifold$1" open>') : html);
 const repSeg = (html) => (html.includes('class="ifold') ? `<div class="tpk repseg" role="group" aria-label="${L('แบบรายงาน', 'Report view')}">${[['0', '📋', L('แบบสรุป', 'Short'), L('หัวข้อก่อน แตะดูรายละเอียด', 'Headlines, tap for detail')], ['1', '📄', L('แบบเต็ม', 'Full'), L('รายละเอียดเปิดครบทุกข้อ', 'Every detail open')]].map(([v, e, b, sm]) => `<button type="button" class="tpo" data-a="repmode" data-v="${v}" aria-pressed="${(v === '1') === repFull()}"><span class="rpe" aria-hidden="true">${e}</span><b>${b}</b><small>${sm}</small><span class="ck" aria-hidden="true">✓</span></button>`).join('')}</div>` : '');
 // the report: every section of the manual; from a card only that section opens, otherwise a long page (20+ chapters) opens on its first
-const topicPage = (t, k, blocks, lede, open) => ((body) => `<div class="tp tp-${k} full${repFull() ? ' repall' : ''}">${topicHead(k, lede)}${repSeg(body)}${blocks.length ? `<section class="pocket" id="pocket">${repOpen(body)}</section>` : emptyTopic()}</div>`)(blocks.map((b, i) => ((open !== undefined ? i !== open : blocks.length > 6 && i) ? b.replace('<details class="pg" open', '<details class="pg"') : b)).join(''));
-const glancePage = (t, k, B, lede, top, skip) => (B[k].length ? `<div class="tp tp-${k} glance">${topicHead(k, lede)}${top || ''}${((ts) => (ts ? `<div class="glg">${ts}</div>` : ''))(B.meta[k].map((m, j) => (skip.includes(m.key) ? '' : glc(fullHref(t, k, j), m.title, m.sub))).join(''))}${reportBtn(fullHref(t, k))}</div>` : `<div class="tp tp-${k}">${topicHead(k, lede)}${emptyTopic()}</div>`);
+const topicPage = (t, k, blocks, lede, open) => (open !== undefined && onePage(t, k, blocks, open)) || ((body) => `<div class="tp tp-${k} full${repFull() ? ' repall' : ''}">${topicHead(k, lede)}${repSeg(body)}${blocks.length ? `<section class="pocket" id="pocket">${repOpen(body)}</section>` : emptyTopic()}</div>`)(blocks.map((b, i) => ((open !== undefined ? i !== open : blocks.length > 6 && i) ? b.replace('<details class="pg" open', '<details class="pg"') : b)).join(''));
+// one topic, one page (owner, Nov 2026: "ซ้อนกันหลายชั้น ทำให้ใช้งานง่ายๆ"): a card of the summary opens that section alone — its title is the
+// page's heading, every detail is open (no report switch, no fold inside a fold), and ‹ › at the foot walk to the topics beside it
+const PG_RE = /^<details class="pg" open id="([^"]+)"><summary>([\s\S]*?)<\/summary>([\s\S]*)<\/details>$/;
+const pgName = (b) => { const m = PG_RE.exec(b || ''); return m ? m[2].replace(/<span class="label">[\s\S]*?<\/span>/g, '').replace(/<[^>]+>/g, '').trim() : ''; };
+const onePage = (t, k, blocks, open) => { const m = PG_RE.exec(blocks[open] || ''); if (!m) return '';
+  const nav = (j, cls, lbl) => (pgName(blocks[j]) ? `<a class="pgn ${cls}" href="${fullHref(t, k, j)}"><small>${lbl}</small><b>${pgName(blocks[j])}</b></a>` : '<span></span>');
+  return `<div class="tp tp-${k} one repall"><h1 class="h2">${m[2]}</h1><section class="pocket" id="pocket"><div class="pg1" id="${m[1]}">${m[3].replace(/<details class="ifold([^"]*)">/g, '<details class="ifold$1" open>')}</div></section>
+<nav class="pgnav" aria-label="${L('หัวข้ออื่น', 'Other topics')}">${nav(open - 1, 'prev', L('‹ ก่อนหน้า', '‹ Before'))}${nav(open + 1, 'next', L('ถัดไป ›', 'Next ›'))}</nav></div>`; };
+// the summary's list: the topics for the whole trip first, then the chapters written for one day ("Day 2 · …") under their own heading,
+// the day a chip instead of a prefix repeated on every row (owner, Nov 2026: the HK list was 19 look-alike rows)
+const DAYPG = /^((?:Days?|วันที่)\s*\d+(?:\s*[–-]\s*\d+)?)\s+·\s+(.+)$/;
+const glanceList = (t, k, meta, skip) => { const rows = meta.map((m, j) => ({ m, j, d: DAYPG.exec(m.title) })).filter((x) => !skip.includes(x.m.key));
+  const all = rows.filter((x) => !x.d), byDay = rows.filter((x) => x.d), wrap = (ts) => (ts ? `<div class="glg">${ts}</div>` : '');
+  if (byDay.length < 2 || !all.length) return wrap(rows.map((x) => glc(fullHref(t, k, x.j), x.m.title, x.m.sub)).join(''));
+  return `${wrap(all.map((x) => glc(fullHref(t, k, x.j), x.m.title, x.m.sub)).join(''))}<h3 class="gh">${L('เฉพาะบางวัน', 'For one day')}</h3>${wrap(byDay.map((x) => glc(fullHref(t, k, x.j), `<span class="gday">${x.d[1]}</span>${x.d[2]}`, x.m.sub)).join(''))}`; };
+const glancePage = (t, k, B, lede, top, skip) => (B[k].length ? `<div class="tp tp-${k} glance">${topicHead(k, lede)}${top || ''}${glanceList(t, k, B.meta[k], skip)}${reportBtn(fullHref(t, k))}</div>` : `<div class="tp tp-${k}">${topicHead(k, lede)}${emptyTopic()}</div>`);
 function viewStays(t, full, open) {
   const B = infoBlocks(t), n = t.info || {}, lede = L('ทุกที่พักของทริป พร้อมแผนที่และการ์ดที่อยู่ให้คนขับดู', 'Every stay of the trip, with its map and an address card for the driver');
   if (full) return topicPage(t, 'stays', B.stays, lede, open);
@@ -2243,7 +2272,7 @@ function viewLog(t, i, evening) {
 <div class="dl">${L('วันที่', 'Day')} ${i + 1} · ${esc(fmtDay(d.date))}</div><div></div>
 <h3>${esc(T(d.title))}</h3>${artImg(t, i, 'hdart' + (dayStamped(t, i) ? '' : ' off'))}</div></div>
 <div class="logprog noprint" role="group" aria-label="${L('บันทึกวันนี้', 'Tonight’s three')}">${[['photos', 'camera', L('รูป', 'Photos'), ph.length], ['quotes', 'quote', L('คำพูด', 'Words'), quotes.length], ['mood', 'kid', L('อารมณ์', 'Mood'), kids.filter((k) => mood(k)).length]].map(([id, icon, lbl, n]) => `<button type="button" class="lpc${n ? ' on' : ''}" data-a="jump" data-v="#lg${id}" aria-label="${lbl}: ${n ? L('มีแล้ว', 'done') : L('ยังว่าง', 'empty')}">${ic(icon)}${lbl}<i>${n ? '✓' : '○'}</i></button>`).join('')}</div>
-${planHtml(t, i, i === now) ? `<details class="blk planblk fold"${ls('logall') ? ' open' : ''}><summary>${ic('clock')}<b>${L('แผนวันนี้', 'Today’s plan')}</b><small>${L(`${((d.plan || {}).plan || []).length} ช่วง`, `${((d.plan || {}).plan || []).length} steps`)}</small>${ic('chev', 'chv')}</summary>${planHtml(t, i, i === now)}</details>` : ''}
+${planLite(t, i)}
 
 <section class="blk" id="lgphotos"><h3>${ic('camera')} ${L('รูป', 'Photos')}${ph.length ? ` <span class="label">${ph.length}</span>` : ''}</h3>
 <div class="row"><button class="btn" type="button" data-a="pickphotos" data-fpick data-t="${esc(t.id)}" data-d="${i}">＋ ${L('เพิ่มรูป', 'Add photos')}</button><span class="progress" id="prog2"></span></div>

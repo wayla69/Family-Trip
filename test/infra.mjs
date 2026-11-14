@@ -336,6 +336,12 @@ for (const f of ['core.js', 'views.js', 'sheets.js', 'kid.js', 'sw.js']) ok(!/\(
   const css = fs.readFileSync(path.join('public', 'app.css'), 'utf8'), old = legacy(css);
   ok(!old.includes('color-mix(') && (old.match(/\{/g) || []).length === (css.match(/\{/g) || []).length, 'legacy css: no color-mix() left, every rule kept');
   ok(fs.readFileSync(path.join('public', 'core.js'), 'utf8').includes("CSS.supports('color', 'color-mix(") && /'\/app-legacy\.css'/.test(fs.readFileSync(path.join('public', 'sw.js'), 'utf8')), 'legacy css: core.js swaps it in where color-mix() is missing; the service worker keeps it for offline'); }
+// a dark-mode rule with several selectors must scope every one of them: ":root[data-theme=dark] .a,.b{…}" sends .b to light mode too
+// (Nov 2026: the book menu's second lines turned pale grey on the pastel tiles, the passport's group headings faded)
+{ const css = fs.readFileSync(path.join('public', 'app.css'), 'utf8'), bad = [];
+  const split = (x) => { const out = []; let d = 0, cur = ''; for (const ch of x) { if (ch === '(') d++; if (ch === ')') d--; if (ch === ',' && !d) { out.push(cur); cur = ''; } else cur += ch; } out.push(cur); return out.map((y) => y.trim()); };
+  for (const m of css.matchAll(/(?:^|[{}])\s*([^{}@]*(?::root\[data-theme=dark\]|:root:not\(\[data-theme=light\]\))[^{}]*)\{/g)) bad.push(...split(m[1]).filter((x) => !/^:root(\[data-theme=dark\]|:not\(\[data-theme=light\]\))/.test(x)));
+  ok(!bad.length, `app.css: every selector of a dark-mode rule carries the dark scope${bad.length ? ' — ' + bad.slice(0, 3).join(' | ') : ''}`); }
 if (process.env.BASE) { const r = await fetch(process.env.BASE + '/app-legacy.css'); ok(r.ok && /text\/css/.test(r.headers.get('content-type')) && !(await r.text()).includes('color-mix('), '/app-legacy.css is served, resolved'); }
 
 console.log(failures ? `\n${failures} FAILED` : '\nALL PASSED');
