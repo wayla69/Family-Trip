@@ -18,8 +18,8 @@ const jpg = (i, w = 1800, h = 1200) => sharp({ create: { width: w, height: h, ch
   ok(/script-src 'self';/.test(csp) && /frame-ancestors 'none'/.test(csp), 'Content-Security-Policy: own scripts only, no framing');
 }
 const browser = await chromium.launch({ executablePath: exe, args: ['--no-sandbox'] });
-async function session(name, { width = 390, height = 844, scheme = 'light', logall = true } = {}) {
-  const ctx = await browser.newContext({ viewport: { width, height }, deviceScaleFactor: 2, colorScheme: scheme, reducedMotion: 'reduce' });   // stable screenshots
+async function session(name, { width = 390, height = 844, scheme = 'light', logall = true, motion = false } = {}) {
+  const ctx = await browser.newContext({ viewport: { width, height }, deviceScaleFactor: 2, colorScheme: scheme, reducedMotion: motion ? 'no-preference' : 'reduce' });   // stable screenshots
   if (logall) await ctx.addInitScript(() => localStorage.setItem('mbs_logall', '1'));   // the record page's "more" fold stays open (the parents' own "keep open" switch), so every box is on the page for the checks below
   const page = await ctx.newPage();
   const errs = [];
@@ -1494,6 +1494,40 @@ const T = 'hk-macau-2026';
   await page.click('[data-a="logout"]'); await page.click('[data-a="logout"]'); await page.waitForSelector('#lcode');
   await page.reload(); await page.waitForSelector('#lcode');
   ok((await page.evaluate(async () => (await idb.get('state')) == null)) && (await page.locator('[data-a="logout"]').count()) === 0, 'sign out: login form back, cookie gone after reload, offline copy cleared');
+  await s.ctx.close();
+}
+
+// ---------- the adventure map on the owner's iPad size, the Australia book, with motion on (the owner's devices do not reduce motion) ----------
+{
+  const s = await session('quest-ipad', { width: 834, height: 1112, motion: true });
+  const { page } = s;
+  await page.clock.setFixedTime(new Date('2027-04-03T10:00:00+11:00'));   // day 2 of the Australia trip
+  await login(page);
+  await page.goto(`${BASE}/#/kid/mimi/quest`); await page.waitForSelector('.questpath');
+  const au = await page.evaluate(() => { const t = kidTrip('mimi'), pl = questPlan(t, 'mimi'); return { id: t.id, towns: document.querySelectorAll('.qtown').length, lv: pl.map((d) => d[0].lv).join(','), same: pl.some((d, i) => i && d.some((m) => pl[i - 1].some((x) => x.game === m.game))), intro: document.querySelector('.kidguide p').textContent, tint: getComputedStyle(document.querySelector('#qt0 .qbody')).backgroundColor }; });
+  ok(/big-hop/.test(au.id) && au.towns === 16 && au.lv === '2,3,3,4,4,5,5,6,6,7,7,8,8,9,9,10' && !au.same && /dropped the treasures/.test(au.intro) && au.tint !== 'rgb(250, 253, 255)' && await s.noHScroll(),
+    `adventure map, Australia on an iPad: sixteen towns, the road climbs gently 2 → 10, neighbouring towns share no game, the guide opens the story, the town wears its own colour (${JSON.stringify(au)})`);
+  await s.shot('01-road', false);
+  // the first town's missions marked as played (the games themselves are played in the phone session), then the chest and the walk
+  await page.evaluate(() => { const t = kidTrip('mimi'); [0, 1, 2, 3].forEach((k) => questMark(t, 'mimi', 0, k)); render(); });
+  await page.click('.qchest.ready'); await page.waitForSelector('.qtreasure');
+  const stay = await page.evaluate(() => ({ here: document.querySelector('.qtown.here').id, next: document.querySelector('#qt1').classList.contains('ahead'), at: questAt(kidTrip('mimi'), 'mimi') }));
+  await page.click('[data-a="questnext"]');
+  const walk = await page.evaluate(() => ({ ghost: document.querySelectorAll('.qwalk').length, walking: questWalking }));
+  await page.waitForFunction(() => !questWalking && document.querySelector('#qt1.here.open'), null, { timeout: 8000 });
+  const lifted = await page.evaluate(() => document.querySelectorAll('#qt1 .qcloud.lift').length);
+  await page.waitForFunction(() => !document.querySelector('.qcloud.lift') && !document.querySelector('.qwalk'), null, { timeout: 5000 });
+  ok(stay.here === 'qt0' && stay.next && stay.at === 1 && walk.ghost === 1 && walk.walking && lifted === 1 && await page.evaluate(() => document.querySelectorAll('#qt1 .qme').length === 1 && document.querySelectorAll('.qtown.ahead').length === 14),
+    `adventure map: after the chest the child still stands in the town; "on to the next town" walks the character there, the cloud lifts, the town opens (${JSON.stringify({ stay, walk, lifted })})`);
+  await s.shot('02-town2', false);
+  await page.click('#qt1 .qm >> nth=0'); await page.waitForSelector('.lvbar.qbar');
+  const worn = await page.evaluate(() => { const t = kidTrip('mimi'); return { small: document.querySelector('.kidday small').textContent, acc: document.querySelector('.kidwrap').style.getPropertyValue('--accent'), want: t.passport.days[1].acc || t.theme.accent, art: document.querySelector('.kidday .art').getAttribute('src') === dayArt(t, 1) }; });
+  ok(/Town 2/.test(worn.small) && worn.acc === worn.want && worn.art, `adventure map: a mission page wears its town — the town's number, picture and colour in the header (${JSON.stringify(worn)})`);
+  await page.click('.kidback'); await page.waitForSelector('.questpath');
+  await page.setViewportSize({ width: 1112, height: 834 }); await page.waitForTimeout(200);
+  ok(await s.noHScroll() && await page.evaluate(() => { const r = document.querySelector('.qtown.open .qms').getBoundingClientRect(); return r.width > 500 && r.right <= innerWidth; }), 'adventure map fits the iPad in landscape');
+  await s.shot('03-landscape', false);
+  ok(s.errs.length === 0, 'adventure map on the iPad: no console errors ' + s.errs.join(' | '));
   await s.ctx.close();
 }
 
