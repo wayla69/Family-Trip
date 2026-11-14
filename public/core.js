@@ -9,6 +9,8 @@ const esc = (s) => String(s == null ? '' : s).replace(/[&<>"']/g, (c) => ({ '&':
 // one line-icon set for the grown-ups' pages (kid mode keeps its emoji): 24-unit grid, 1.75 stroke, drawn in currentColor
 const ICONS = {
   search: '<circle cx="11" cy="11" r="7"/><path d="M20 20l-4-4"/>',
+  plus: '<path d="M12 5v14M5 12h14"/>',
+  plane: '<path d="M20.2 3.8c.9.9.2 2.8-1.2 4.2l-2.7 2.7 1.9 8.3-1.6 1.6-3.6-6.6-3.2 3.2.3 2.6-1.3 1.3-1.7-3.2-3.2-1.7 1.3-1.3 2.6.3 3.2-3.2L4.4 8.4 6 6.8l8.3 1.9L17 6c1.4-1.4 3.3-2.1 3.2-2.2z"/>',
   camera: '<path d="M4 8h3l2-3h6l2 3h3v11H4z"/><circle cx="12" cy="13" r="3.5"/>',
   home: '<path d="M3 11l9-7 9 7"/><path d="M5 10v10h14V10"/><path d="M10 20v-6h4v6"/>',
   today: '<rect x="3" y="5" width="18" height="16" rx="2"/><path d="M3 10h18M8 3v4M16 3v4"/><path d="M8 14h3v3H8z"/>',
@@ -132,20 +134,26 @@ async function withSeeds(fresh, old) {
   }
 }
 // 'ok' new data · 'same' the server answered 304 (nothing changed since this phone's copy) · 'cached' offline copy · 'auth' · 'fail'
+// A load that started before a newer one succeeded must never undo it: the boot's first ask (no session yet) can come back with its 401
+// after a quick sign-in has already loaded the shelf — the phone would fall back to the sign-in page (the "login flake" seen in the tests).
+let loadGen = 0, loadOk = 0;
 async function load(tries = 0) {
+  const gen = ++loadGen;
   try {
     const w0 = written, prev = S;
     const r = await fetch('/api/b/state?lite=1', { credentials: 'same-origin', cache: 'no-store', headers: prev && prev.etag ? { 'If-None-Match': prev.etag } : {} });
-    if (r.status === 401) { S = null; return 'auth'; }
+    if (r.status === 401) { if (loadOk > gen) return 'stale'; S = null; return 'auth'; }
     if (r.status === 304 && prev) { offline = false; prev.syncedAt = Date.now(); return 'same'; }
     if (!r.ok) throw new Error('http ' + r.status);
     const fresh = await r.json();
     fresh.etag = r.headers.get('ETag');
     try { await withSeeds(fresh, prev || (await idb.get('state'))); } catch (e) { if (e.code === 409 && tries < 5) return load(tries + 1); throw e; }
     if (written !== w0 && tries < 5) return load(tries + 1);
-    S = fresh; offline = false; S.syncedAt = Date.now();
+    if (loadOk > gen) return 'stale';
+    S = fresh; loadOk = gen; offline = false; S.syncedAt = Date.now();
     idb.set('state', typeof structuredClone === 'function' ? structuredClone(S) : JSON.parse(JSON.stringify(S)));   // structuredClone: Safari 15.4+ ls('state', null);   // the offline copy lives in IndexedDB, as the server sent it (before pending writes are laid on top)
   } catch (e) {
+    if (loadOk > gen) return 'stale';
     const c = (await idb.get('state')) || ls('state');
     if (!c) return 'fail';
     S = c; offline = !navigator.onLine || e instanceof TypeError;   // a failed fetch is no signal; a server error (5xx) is not, so the banner must not say so

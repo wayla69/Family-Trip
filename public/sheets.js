@@ -38,7 +38,7 @@ async function addPhotos(t, day, files, spot) {
   const list = Array.from(files).filter((f) => f.type.startsWith('image/') || /\.(heic|heif)$/i.test(f.name));
   if (!list.length) return;
   const place = String((spot && spot.place) || '').trim().slice(0, 120);
-  if (place && spot.key && (spot.kind === 'place' || spot.kind === 'food') && !S.places.some((x) => x.trip === t.id && x.key === spot.key)) {
+  if (place && spot.key && !S.places.some((x) => x.trip === t.id && x.key === spot.key)) {   // a chip with a key is a planned stop (a sight, a meal, a planned airport or hotel)
     const p = ((t.days[day] || {}).planned || []).find((x) => x.key === spot.key);
     if (p) await enqueue({ method: 'PUT', url: '/api/b/places', body: { trip: t.id, key: p.key, day, kind: p.kind || 'place', name: { en: p.en, th: p.th, zh: p.zh }, done: true, at: Date.now() },
       local: { coll: 'places', id: `${t.id}:${p.key}`, row: { trip: t.id, key: p.key, day, kind: p.kind || 'place', name: { en: p.en, th: p.th }, at: Date.now() } } });
@@ -679,6 +679,7 @@ const A = {
     if (!armed(b, L('แตะอีกครั้งเพื่อทิ้ง', 'Tap again to discard'))) return;
     try { await api('DELETE', `/api/b/import/${encodeURIComponent(b.dataset.v)}`); imp.list = null; if (imp.job && imp.job.draft && imp.job.draft.id === b.dataset.v) imp.job = null; impRefresh(); } catch (_) { toast(L('ลบไม่สำเร็จ', 'Could not delete')); }
   },
+  phmore(b) { const r = b.closest('.phsrow'); if (r) r.classList.add('all'); b.remove(); },   // the photo box: show the meals' chips too
   pickphotos(b) { const fp = $('#fpick'); fp.dataset.t = b.dataset.t; fp.dataset.d = b.dataset.d; fp.dataset.place = b.dataset.place || ''; fp.dataset.key = b.dataset.key || ''; fp.dataset.kind = b.dataset.kind || ''; fp.click(); },   // a "where was it?" chip passes its place
   // full backup zip (editors only on the server too); the browser downloads it in place, the page stays
   backup() {
@@ -1129,6 +1130,9 @@ async function refresh() {
   const c = await idb.get('state');
   if (c && c.etag) {
     S = c; overlay();
+    // on the trip the app opens on Today (owner, Nov 2026: easy to use while travelling): a parent's phone that already holds the book,
+    // opened from its icon (no page asked for) while a trip is on, goes straight to the day's page — the shelf is the top bar's back, twice
+    try { const live = !location.hash && isEditor() && !ls('kidmode') && trips().find((t) => dayNow(t) >= 0); if (live) history.replaceState(null, '', `#/t/${encodeURIComponent(live.id)}/today`); } catch (e) { /* the shelf it is */ }
     render();
     load().then((r) => { if (r !== 'same') safeRender(); });   // new data, signed out, or offline (load sets the banner)
   } else { await load(); render(); }
