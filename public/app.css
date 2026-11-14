@@ -2810,3 +2810,7 @@ section.pg .dstamps.pst.c3 b,section.pg .dstamps.pst.c4 b{font-size:16px}section
 .tro:not(.got) span .ku{filter:grayscale(1);opacity:.75}
 @media (max-height:760px){.kidwrap.home .kidgift .box .ku,.kidwrap.home .kidnight .moon .ku{width:44px;height:44px}}
 @media (min-width:700px){.pets .ku{width:46px;height:46px}.tro span .ku{width:60px;height:60px}}
+/* the games' own animals and foods (set 5): a picture the size of the emoji it replaces */
+.ge{display:inline-block;width:1em;height:1em;object-fit:contain;vertical-align:middle}
+.feedpal .fedrow .ge{margin:0 2px}
+.feedpal .want .ge{width:.78em;height:.78em}

@@ -447,6 +447,12 @@ const PETS = ['🐣', '🦊', '🐼', '🦄', '🐬', '🦉', '🐨', '🦋', '�
 // each friend's own picture (public/art/kidui/pet-<name>.webp) and its name, said aloud when it joins — an emoji is never read out
 const PET_ART = { '🐣': ['chick', 'ลูกเจี๊ยบ', 'A chick'], '🦊': ['fox', 'จิ้งจอกน้อย', 'A little fox'], '🐼': ['panda', 'แพนด้า', 'A panda'], '🦄': ['unicorn', 'ยูนิคอร์น', 'A unicorn'], '🐬': ['dolphin', 'โลมา', 'A dolphin'], '🦉': ['owl', 'นกฮูก', 'An owl'],
   '🐨': ['koala', 'โคอาล่า', 'A koala'], '🦋': ['butterfly', 'ผีเสื้อ', 'A butterfly'], '🐢': ['turtle', 'เต่าน้อย', 'A little turtle'], '🦜': ['parrot', 'นกแก้ว', 'A parrot'], '🐧': ['penguin', 'เพนกวิน', 'A penguin'], '🦁': ['lion', 'สิงโตน้อย', 'A little lion'] };
+// the games' own animals and foods (set 5, public/art/game): where a game shows one of these emoji as its thing, gE() draws the picture instead —
+// sized like the emoji it replaces (1em), so every layout stays; an emoji without a picture (a book's own food) stays an emoji
+const GAME_ART = { '🐑': 'game/sheep', '🐔': 'game/hen', '🐘': 'game/elephant', '🐥': 'game/chick', '🐮': 'game/cow', '🐰': 'game/rabbit', '🐱': 'game/cat', '🐳': 'game/whale', '🐴': 'game/horse', '🐵': 'game/monkey',
+  '🐶': 'game/dog', '🐷': 'game/pig', '🐸': 'game/frog', '🐻': 'game/bear', '🐼': 'kidui/pet-panda', '🦆': 'game/duck', '🦛': 'game/hippo',
+  '🍌': 'game/banana', '🍎': 'game/apple', '🥕': 'game/carrot', '🍉': 'game/watermelon', '🍓': 'game/strawberry', '🍇': 'game/grapes', '🌽': 'game/corn', '🍪': 'game/cookie', '🍞': 'game/bread', '🥚': 'game/egg', '🥦': 'game/broccoli', '🧀': 'game/cheese' };
+const gE = (e) => (GAME_ART[e] ? `<img class="ge" src="/art/${GAME_ART[e]}.webp" alt="">` : esc(e));
 const kuImg = (name, cls) => `<img class="ku${cls ? ' ' + cls : ''}" src="/art/kidui/${name}.webp" alt="">`;
 const petImg = (e) => (PET_ART[e] ? kuImg('pet-' + PET_ART[e][0]) : esc(e));
 const petName = (e) => (PET_ART[e] ? L(PET_ART[e][1], PET_ART[e][2]) : L('เพื่อนใหม่', 'A new friend'));
@@ -740,7 +746,7 @@ ${m.done ? lvWin(t, kid, 'maze', ['mazeagain']) : `<button class="kidbig ghost" 
   } else if (view === 'simon') {   // copy the tune
     const s2 = simonFor(t, kid);
     body = lvBar(t, kid, 'simon') + `<div class="kidguide">${guideImg(0)}<p id="simonsay">${s2.done ? L(`เก่งมาก ${esc(name)}! จำเพลงได้หมดเลย 🎉`, `Brilliant, ${esc(name)}! You remembered every tune 🎉`) : s2.turn === 'you' ? L('ถึงตาหนู! กดตามเพลง', 'Your turn! Play it back') : L('กดฟัง แล้วกดตามนะ', 'Listen, then play it back')}</p></div>
-<div class="simonb${s2.turn === 'listen' ? ' listen' : ''}" id="simonb">${SIMON.map((q, k) => `<button class="spad" style="--pc:${q[0]}" data-a="simonpad" data-v="${k}" aria-label="${esc(L(q[3], q[4]))}"><span>${q[1]}</span></button>`).join('')}</div>
+<div class="simonb${s2.turn === 'listen' ? ' listen' : ''}" id="simonb">${SIMON.map((q, k) => `<button class="spad" style="--pc:${q[0]}" data-a="simonpad" data-v="${k}" aria-label="${esc(L(q[3], q[4]))}"><span>${gE(q[1])}</span></button>`).join('')}</div>
 ${s2.done ? '' : simTrackHtml(s2.seq.length)}
 ${s2.n && !s2.done ? `<div class="simstars" aria-hidden="true">${'⭐'.repeat(s2.n)}</div>` : ''}
 ${s2.done ? lvWin(t, kid, 'simon', ['simonagain']) : `<button class="kidbig" data-a="simonplay">▶️ ${L('ฟังเพลง', 'Listen')}</button>`}`;
@@ -780,12 +786,12 @@ ${c2.items.length ? `<button class="kidbig ghost" data-a="cakenew">🎂 ${L('เ
   } else if (view === 'farm') {   // animal sounds: the farm is the game, a tap makes an animal jump and say its sound; all of them heard = a cheer
     const fm = farmFor(t, kid);
     body = `<div class="kidguide">${guideImg(0)}<p>${L('แตะสัตว์ ฟังเสียงร้องกัน!', 'Tap an animal to hear it!')}</p></div>
-<div class="farmfield">${FARM.map((a, n) => `<button class="fa${fm.heard.has(n) ? ' heard' : ''}" style="left:${a[5]}%;top:${a[6]}%" data-a="farmtap" data-v="${n}" aria-label="${esc(L(a[1], a[2]))}"><span>${a[0]}</span></button>`).join('')}</div>`;
+<div class="farmfield">${FARM.map((a, n) => `<button class="fa${fm.heard.has(n) ? ' heard' : ''}" style="left:${a[5]}%;top:${a[6]}%" data-a="farmtap" data-v="${n}" aria-label="${esc(L(a[1], a[2]))}"><span>${gE(a[0])}</span></button>`).join('')}</div>`;
   } else if (view === 'wash') {   // bath time: scrub the mud off with a finger (a canvas over the animal), a clean animal sparkles
     const w = washFor(t, kid);
     setTimeout(washMount, 0);
     body = `<div class="kidguide">${guideImg(1)}<p>${w.clean ? L(`${esc(w.a[1])}สะอาดแล้ว! หอมจัง`, `${esc(w.a[2])} is all clean!`) : L(`${esc(w.a[1])}เลอะโคลน! ถูให้สะอาดหน่อย`, `${esc(w.a[2])} is muddy! Scrub scrub!`)}</p></div>
-<div class="washbox${w.clean ? ' clean' : ''}" id="washbox"><span class="wa">${w.a[0]}</span><div id="washph"></div></div>
+<div class="washbox${w.clean ? ' clean' : ''}" id="washbox"><span class="wa">${gE(w.a[0])}</span><div id="washph"></div></div>
 ${w.clean ? `<button class="kidbig" data-a="washnext">🛁 ${L('ตัวต่อไป', 'Next friend')}</button>` : ''}`;
   } else if (view === 'bigsmall') {   // big and small: the same thing in two or three sizes, tap the biggest or the smallest
     const g2 = kgFor('bigsmall', t, kid), r = g2.r;
@@ -803,11 +809,11 @@ ${lvWin(t, kid, 'shadow', ['kgagain', 'shadow'])}`
   } else if (view === 'feed') {   // feed the animal: it asks for one food (the picture in its bubble, the words read aloud); the right one is munched
     const g2 = kgFor('feed', t, kid), r = g2.r;
     body = lvBar(t, kid, 'feed') + (g2.done ? `<div class="kidguide pop">${guideImg(1)}<p>${L(`${esc(r.pal[1])}อิ่มแล้ว! ขอบคุณ${esc(name)}นะ 🎉`, `${esc(r.pal[2])} is full! Thank you, ${esc(name)} 🎉`)}</p></div>
-<div class="feedpal full" aria-hidden="true"><span class="pal">${r.pal[0]}</span><div class="fedrow">${g2.fed.join('')}</div></div>
+<div class="feedpal full" aria-hidden="true"><span class="pal">${gE(r.pal[0])}</span><div class="fedrow">${g2.fed.map(gE).join('')}</div></div>
 ${lvWin(t, kid, 'feed', ['kgagain', 'feed'])}`
       : `<div class="kidguide">${guideImg(1)}<p>${g2.lv.mem ? L(`${esc(r.pal[1])}หิวจัง! จำให้ดีนะ อยากกินอะไร`, `${esc(r.pal[2])} is hungry! Remember the wish`) : L(`${esc(r.pal[1])}หิวจัง! อยากกิน${esc(r.want[1])}`, `${esc(r.pal[2])} is hungry! ${esc(capFirst(r.want[3]))}, please`)}</p></div>
-<div class="feedpal${g2.lv.mem ? ' mem' : ''}"><span class="want${r.hid ? ' gone' : ''}" id="kgwant" aria-hidden="true">${r.want[0]}</span><button class="pal" id="kgpal" data-a="kgpal" aria-label="${esc(L(r.pal[1], r.pal[2]))}">${r.pal[0]}</button><div class="fedrow" aria-hidden="true">${g2.fed.join('')}</div></div>
-<div class="mema kgch" data-n="${r.opts.length}">${r.opts.map((o) => `<button data-a="kgpick" data-v="${esc(o[0])}"><span>${o[0]}</span><b>${esc(L(o[1], o[2]))}</b></button>`).join('')}</div>`);
+<div class="feedpal${g2.lv.mem ? ' mem' : ''}"><span class="want${r.hid ? ' gone' : ''}" id="kgwant" aria-hidden="true">${gE(r.want[0])}</span><button class="pal" id="kgpal" data-a="kgpal" aria-label="${esc(L(r.pal[1], r.pal[2]))}">${gE(r.pal[0])}</button><div class="fedrow" aria-hidden="true">${g2.fed.map(gE).join('')}</div></div>
+<div class="mema kgch" data-n="${r.opts.length}">${r.opts.map((o) => `<button data-a="kgpick" data-v="${esc(o[0])}"><span>${gE(o[0])}</span><b>${esc(L(o[1], o[2]))}</b></button>`).join('')}</div>`);
   } else if (view === 'sort') {   // sort by colour: one thing at a time, tap the basket of its colour; the colour's name is said
     const g2 = kgFor('sort', t, kid), it = g2.items[g2.n];
     body = lvBar(t, kid, 'sort') + (g2.done ? `<div class="kidguide pop">${guideImg(1)}<p>${L(`เก่งมาก ${esc(name)}! ผ่าน${lvWord(t, kid, 'sort')}แล้ว 🎉`, `Brilliant, ${esc(name)}! You finished ${lvWord(t, kid, 'sort')} 🎉`)}</p></div>
@@ -1594,7 +1600,7 @@ function simonLight(v, ms) {
 }
 // The row under the pads: one slot per note, filled with its animal as it plays (listen) or as the child plays it back — two chicks in a row = the chick twice
 const simTrackHtml = n => `<div class="simtrack" id="simtrack" aria-hidden="true">${'<i></i>'.repeat(n)}</div>`;
-function simonTrack(filled) { const el = $('#simtrack'); if (!el || !sm) return; if (el.children.length !== sm.seq.length) el.outerHTML = simTrackHtml(sm.seq.length); [...$('#simtrack').children].forEach((c, k) => { const v = filled[k]; const html = v == null ? '' : SIMON[v][1]; if (c.innerHTML !== html) { c.innerHTML = html; c.className = v == null ? '' : 'on'; c.style.setProperty('--pc', v == null ? '' : SIMON[v][0]); } }); }
+function simonTrack(filled) { const el = $('#simtrack'); if (!el || !sm) return; if (el.children.length !== sm.seq.length) el.outerHTML = simTrackHtml(sm.seq.length); [...$('#simtrack').children].forEach((c, k) => { const v = filled[k]; const html = v == null ? '' : gE(SIMON[v][1]); if (c.dataset.v !== String(v)) { c.dataset.v = String(v); c.innerHTML = html; c.className = v == null ? '' : 'on'; c.style.setProperty('--pc', v == null ? '' : SIMON[v][0]); } }); }
 function simonSay() { const el = $('#simonsay'), b = $('#simonb'); if (b) b.classList.toggle('listen', sm.turn === 'listen'); if (el) el.textContent = sm.turn === 'listen' ? L('ฟังนะ…', 'Listen…') : sm.turn === 'you' ? L('ถึงตาหนู! กดตามเพลง', 'Your turn! Play it back') : L('กดฟัง แล้วกดตามนะ', 'Listen, then play it back'); }
 function simonPlay() {
   clearTimeout(simT); if (!sm || sm.done) return;

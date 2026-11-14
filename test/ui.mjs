@@ -649,8 +649,25 @@ const T = 'hk-macau-2026';
     const darks = await page.evaluate(() => new Promise(res => { let seen = 0, wasLit = false; const p = document.querySelector('#simonb .spad[data-v="2"]'); const iv = setInterval(() => { const l = p.classList.contains('lit'); if (wasLit && !l) seen++; wasLit = l; }, 20); document.querySelector('[data-a="simonplay"]').click(); setTimeout(() => { clearInterval(iv); res(seen); }, 1900); }));
     await page.waitForFunction(() => sm.turn === 'you', null, { timeout: 8000 });
     await page.click('#simonb .spad[data-v="2"]'); await page.click('#simonb .spad[data-v="2"]');
-    const row = await page.evaluate(() => [...document.querySelectorAll('#simtrack i')].map(i => i.textContent).join('|'));
+    const row = await page.evaluate(() => [...document.querySelectorAll('#simtrack i')].map(i => (i.querySelector('img.ge') ? i.dataset.v : '')).join('|'));
     ok(darks >= 2 && /^(.+)\|\1\|$/.test(row), `kid game simon: a repeated note flashes twice and fills two slots (dark gaps ${darks}, row ${row})`);
+    {   // set 5: the games' animals and foods are the app's own pictures, the size of the emoji they replace
+      await page.waitForFunction(() => [...document.querySelectorAll('#simonb img.ge')].every((i) => i.complete), null, { timeout: 8000 }).catch(() => {});
+      const pads = await page.evaluate(() => [...document.querySelectorAll('#simonb .spad img.ge')].map((i) => [i.naturalWidth > 0, Math.round(i.getBoundingClientRect().width)]));
+      await page.goto(`${BASE}/#/kid/mimi/farm`); await page.waitForSelector('.farmfield .fa');
+      await page.waitForFunction(() => [...document.querySelectorAll('.farmfield img.ge')].every((i) => i.complete), null, { timeout: 8000 }).catch(() => {});
+      const farmPics = await page.evaluate(() => [...document.querySelectorAll('.farmfield .fa img.ge')].filter((i) => i.naturalWidth > 0 && i.getBoundingClientRect().width >= 50).length);
+      await page.goto(`${BASE}/#/kid/mimi/feed`); await page.waitForSelector('.feedpal');
+      await page.waitForFunction(() => [...document.querySelectorAll('.feedpal img.ge, .kgch img.ge')].every((i) => i.complete), null, { timeout: 8000 }).catch(() => {});
+      const feed = await page.evaluate(() => ({ pal: !!document.querySelector('#kgpal img.ge'), want: !!document.querySelector('#kgwant img.ge'), opts: document.querySelectorAll('.kgch button').length, pics: [...document.querySelectorAll('.kgch button img.ge')].filter((i) => i.naturalWidth > 0).length }));
+      await s.shot('09-kid-feed', false);
+      await page.goto(`${BASE}/#/kid/mimi/farm`); await page.waitForSelector('.farmfield .fa'); await s.shot('09-kid-farm', false);
+      await page.goto(`${BASE}/#/kid/mimi/wash`); await page.waitForSelector('.washbox .wa');
+      const washPic = await page.evaluate(() => { const i = document.querySelector('.washbox .wa img.ge'); return i ? Math.round(i.getBoundingClientRect().width) : 0; });
+      ok(pads.length === 4 && pads.every((x) => x[0] && x[1] >= 50) && farmPics === 9 && feed.pal && feed.want && feed.opts > 0 && feed.pics === feed.opts && washPic >= 150 && await s.noHScroll(),
+        `kid games: the tune pads, the nine farm animals, the hungry animal with its wish and foods, and the bath's animal are the app's own pictures (${JSON.stringify({ pads, farmPics, feed, washPic })})`);
+      await page.goto(`${BASE}/#/kid/mimi/simon`); await page.waitForSelector('#simonb');
+    }
   }
   {   // the top levels (owner, Nov 2026: "ด่านเยอะขึ้น ยากขึ้น"): every game opens at its last level with its twist, fits the phone, and the chips show them all
     const saved = await page.evaluate(() => ls('lv_mimi'));
