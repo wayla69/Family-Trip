@@ -831,7 +831,7 @@ const T = 'hk-macau-2026';
   ok(await page.locator('.mcard.ph').count() >= 2 && await page.locator('.mcard').count() === 12, 'match: the pairs are the family’s photos (drawings fill the rest)');
   await page.evaluate(() => { localStorage.setItem('mbs_stars_mimi', '9'); star('mimi', 1); });
   await page.goto(`${BASE}/#/kid/mimi`); await page.waitForSelector('.kidtiles');
-  ok(await page.locator('.starjar b').textContent() === '10' && await page.locator('.pets').count() === 1 && await page.locator('.kidhello .poke').count() === 1, 'kid mode: the star jar counts the stars; ten stars bring a new friend; the character can be poked');
+  ok(await page.locator('.starjar b').textContent() === '10' && await page.locator('.pets').count() === 1 && await page.locator('.pets img.ku[src="/art/kidui/pet-chick.webp"]').count() === 1 && await page.locator('.kidhello .poke').count() === 1, 'kid mode: the star jar counts the stars; ten stars bring a new friend; the character can be poked');
   await page.locator('.starjar').dispatchEvent('pointerdown'); await page.waitForFunction(() => !JSON.parse(localStorage.getItem('mbs_stars_mimi') || 'null'), null, { timeout: 5000 });   // ls(k, null) stores "null"
   ok(await page.evaluate(() => !JSON.parse(localStorage.getItem('mbs_pets_mimi') || 'null') && document.querySelectorAll('.starjar').length === 0), 'kid mode: a grown-up holding the star jar 1.5 s empties it (stars and friends gone)');
   await page.goto(`${BASE}/#/kid/mimi/music`); await page.waitForSelector('.xylo'); await page.goto(`${BASE}/#/kid/mimi`); await page.waitForSelector('.kidtiles');   // away and back: a fresh view (the jar's clear re-rendered in place)
@@ -970,6 +970,11 @@ const T = 'hk-macau-2026';
   ok(nc >= 3 && nc <= 10 && await page.locator('.cnt.hit').count() === nc && (await page.evaluate(() => window.__said)).some((x) => /^(one|หนึ่ง)\|/.test(x)), `count: ${nc} to tap, each one numbered and said`);
   await page.click('.kidbar button[data-v$="/trophies"]'); await page.waitForSelector('.tro');
   ok(await page.locator('.tro.got').count() >= 3 && await page.locator('.tro.got.new').count() >= 3 && await page.locator('.tro:not(.got)').count() >= 3, 'trophies: first stamp, little painter, pair finder earned and celebrated; the rest locked');
+  {
+    await page.waitForFunction(() => [...document.querySelectorAll('.tro img.ku')].every((i) => i.complete), null, { timeout: 8000 }).catch(() => {});
+    const tp = await page.evaluate(() => ({ n: document.querySelectorAll('.tro').length, pics: [...document.querySelectorAll('.tro img.ku')].filter((i) => i.naturalWidth > 0).length, lock: /🔒/.test(document.querySelector('.trophies').textContent), dim: getComputedStyle(document.querySelector('.tro:not(.got) img.ku')).filter }));
+    ok(tp.n > 0 && tp.pics === tp.n && !tp.lock && /grayscale/.test(tp.dim), `trophies: every trophy shows its own picture (no emoji, never a lock); one not earned yet is the same picture in grey (${JSON.stringify(tp)})`);
+  }
   await s.shot('12b-kid-trophies', false);
   await page.reload(); await page.waitForSelector('.tro');
   ok(await page.locator('.tro.new').count() === 0, 'trophies: celebrated once, not on every visit');
@@ -1790,6 +1795,7 @@ const T = 'hk-macau-2026';
   // the morning surprise box: on a trip day kid mode greets with a box; opening it gives a sticker and shows today's missions; once
   await page.goto(`${BASE}/#/kid/mimi`); await page.waitForSelector('.kidtiles');
   ok(await page.locator('.kidgift').count() === 1 && await page.locator('.kidnight').count() === 0, 'kid mode on a trip morning: a surprise box waits on the home page');
+  ok(await page.locator('.kidgift .box img.ku[src="/art/kidui/surprise.webp"]').count() === 1, 'kid home: the surprise-box banner shows the app\'s own picture, not an emoji');
   await page.click('.kidgift'); await page.waitForSelector('.giftbox');
   await page.click('.giftbox'); await page.waitForSelector('.giftopen .gstk', { timeout: 5000 });
   ok(await page.locator('.gmiss span').count() === 4 && await page.locator('.giftopen [data-v$="/spot"]').count() === 1, 'surprise box: a new sticker, today’s four things to find, and a button to go and find them');

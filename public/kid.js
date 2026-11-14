@@ -443,7 +443,13 @@ function hydrateMap(root) {
 // 36 pieces in the book's pastels and a few emoji, falling for ~2 s; nothing when the phone asks for reduced motion
 // the star jar: every finished game drops stars in (kept on this phone, `stars_<kid>`); every ten stars the jar is full and a new
 // friend joins (`pets_<kid>`) — a celebration, never a goal: nothing says what is missing
-const PETS = ['🐣', '🦊', '🐼', '🦄', '🐬', '🦉', '🐨', '🦋', '🐢', '🦜', '🐧', '🦁'];
+const PETS = ['🐣', '🦊', '🐼', '🦄', '🐬', '🦉', '🐨', '🦋', '🐢', '🦜', '🐧', '🦁'];   // what ls('pets_<kid>') keeps (and the confetti)
+// each friend's own picture (public/art/kidui/pet-<name>.webp) and its name, said aloud when it joins — an emoji is never read out
+const PET_ART = { '🐣': ['chick', 'ลูกเจี๊ยบ', 'A chick'], '🦊': ['fox', 'จิ้งจอกน้อย', 'A little fox'], '🐼': ['panda', 'แพนด้า', 'A panda'], '🦄': ['unicorn', 'ยูนิคอร์น', 'A unicorn'], '🐬': ['dolphin', 'โลมา', 'A dolphin'], '🦉': ['owl', 'นกฮูก', 'An owl'],
+  '🐨': ['koala', 'โคอาล่า', 'A koala'], '🦋': ['butterfly', 'ผีเสื้อ', 'A butterfly'], '🐢': ['turtle', 'เต่าน้อย', 'A little turtle'], '🦜': ['parrot', 'นกแก้ว', 'A parrot'], '🐧': ['penguin', 'เพนกวิน', 'A penguin'], '🦁': ['lion', 'สิงโตน้อย', 'A little lion'] };
+const kuImg = (name, cls) => `<img class="ku${cls ? ' ' + cls : ''}" src="/art/kidui/${name}.webp" alt="">`;
+const petImg = (e) => (PET_ART[e] ? kuImg('pet-' + PET_ART[e][0]) : esc(e));
+const petName = (e) => (PET_ART[e] ? L(PET_ART[e][1], PET_ART[e][2]) : L('เพื่อนใหม่', 'A new friend'));
 const stars = (kid) => +ls('stars_' + kid) || 0, pets = (kid) => ls('pets_' + kid) || [];
 const kidNow = () => route().parts[1];
 function star(kid, n) {
@@ -452,7 +458,7 @@ function star(kid, n) {
   const jar = $('.starjar'); if (jar) { jar.querySelector('b').textContent = now; burst(jar, ['⭐']); }
   if (Math.floor(now / 10) > Math.floor(was / 10)) {
     const ps = pets(kid), pet = PETS[ps.length % PETS.length]; ls('pets_' + kid, ps.concat(pet));
-    setTimeout(() => { beep('fanfare'); celebrate(['⭐', pet, '✨']); sayUi(L(`โถดาวเต็มแล้ว! ${pet} มาเป็นเพื่อนใหม่`, `The star jar is full! ${pet} is your new friend`)); }, 900);
+    setTimeout(() => { beep('fanfare'); celebrate(['⭐', pet, '✨']); sayUi(L(`โถดาวเต็มแล้ว! ${petName(pet)}มาเป็นเพื่อนใหม่`, `The star jar is full! ${petName(pet)} is your new friend`)); }, 900);
   }
 }
 const CONF_C = ['#FFD36B', '#FFB0C8', '#7FE3D2', '#8FB4FF', '#C9B6FF', '#FF9A6B'];
@@ -569,6 +575,10 @@ function newCount(t, kid) {   // count today's things (the day's missions), now 
 }
 const MOODW = { '😄': ['ดีใจ', 'happy'], '🥰': ['มีความสุขมาก', 'loved'], '🤩': ['ตื่นเต้น', 'excited'], '😋': ['อร่อย', 'yummy'], '😴': ['ง่วง', 'sleepy'], '😢': ['เศร้า', 'sad'] };
 // trophies are read off what the child already did — nothing new is stored except which ones were seen
+// a trophy's own picture (the house style; the emoji in the list stays as the fallback): a path under /art
+const TRO_ART = { door1: 'kidui/t-door', packed: 'kidui/pack', doorhalf: 'kidui/t-calendar', stamp1: 'kidui/bar-passport', stamp3: 'kidui/t-medal', stampall: 'quest/crown', colour: 'kidui/colour', draw: 'kidui/draw',
+  words: 'kidui/say', spot: 'kidui/find', stickers: 'kidui/bar-stickers', hearts: 'kidui/t-heart', match: 'kidui/match', wild: 'kidui/t-paw', firsts: 'kidui/t-rosette', doors: 'kidui/surprise', quest1: 'quest/map', questall: 'quest/diamond', explorer: 'quest/compass' };
+const troImg = (x) => (TRO_ART[x[0]] ? `<img class="ku" src="/art/${TRO_ART[x[0]]}.webp" alt="">` : x[1]);
 function trophies(t, kid) {
   const pp = t.passport || {}, info = t.info || {}, days = t.days.length;
   const stamps = t.days.filter((_, j) => ticked(t, `stamp.d${j}`, kid)).length;
@@ -666,11 +676,11 @@ function viewKid(p) {
         heartsFor(kid).length && !fresh.length ? [`<button class="love" data-a="kidnav" data-v="#/kid/${esc(kid)}/hearts" data-say="${esc(L('หัวใจจากญาติ', 'Hearts from the family'))}"><span>${emo('💗')}</span><b>${heartsFor(kid).length}</b></button>`] : []);
     const pages = []; for (let k = 0; k < btns.length; k += 4) pages.push(btns.slice(k, k + 4));
     body = `${fresh.length ? `<button class="kidhearts" data-a="kidnav" data-v="#/kid/${esc(kid)}/hearts" data-say="${esc(heartLine(fresh[0], kid))}"><span class="float" aria-hidden="true">💗</span><span class="e">${emo(fresh[0].emoji)}</span><b>${esc(L(`${fresh[0].from} ส่งหัวใจให้หนู!`, `${fresh[0].from} sent you a heart!`))}</b>${fresh.length > 1 ? `<small>+${fresh.length - 1}</small>` : ''}</button>` : ''}
-${live === i && !ticked(t, `gift.d${i}`, kid) ? `<button class="kidgift" data-a="kidnav" data-v="#/kid/${esc(kid)}/gift" data-say="${esc(L('มีกล่องเซอร์ไพรส์มาให้! แตะเปิดเลย', 'A surprise box for you! Tap to open it'))}"><span class="box" aria-hidden="true">${emo('🎁')}</span><b>${L('<span class="nw">กล่องเซอร์ไพรส์</span><span class="nw">วันนี้!</span>', 'Today’s surprise box!')}</b><small>${L('แตะเปิดเลย', 'Tap to open')}</small></button>`
-  : live === i && hourIn(t.timezone) >= 17 && !ticked(t, `stamp.d${i}`, kid) ? `<button class="kidnight" data-a="kidnav" data-v="#/kid/${esc(kid)}/stamp" data-say="${esc(L('ก่อนนอน มาปั๊มตราวันนี้กัน!', 'Before bed — let’s stamp today!'))}"><span class="moon" aria-hidden="true">${emo('🌙')}</span><b>${L('ปั๊มตราวันนี้ก่อนนอน!', 'Stamp today before bed!')}</b><small>🛂 ${L('ปั๊ก!', 'Thump!')}</small></button>` : ''}
+${live === i && !ticked(t, `gift.d${i}`, kid) ? `<button class="kidgift" data-a="kidnav" data-v="#/kid/${esc(kid)}/gift" data-say="${esc(L('มีกล่องเซอร์ไพรส์มาให้! แตะเปิดเลย', 'A surprise box for you! Tap to open it'))}"><span class="box" aria-hidden="true">${kuImg('surprise')}</span><b>${L('<span class="nw">กล่องเซอร์ไพรส์</span><span class="nw">วันนี้!</span>', 'Today’s surprise box!')}</b><small>${L('แตะเปิดเลย', 'Tap to open')}</small></button>`
+  : live === i && hourIn(t.timezone) >= 17 && !ticked(t, `stamp.d${i}`, kid) ? `<button class="kidnight" data-a="kidnav" data-v="#/kid/${esc(kid)}/stamp" data-say="${esc(L('ก่อนนอน มาปั๊มตราวันนี้กัน!', 'Before bed — let’s stamp today!'))}"><span class="moon" aria-hidden="true">${kuImg('moon')}</span><b>${L('ปั๊มตราวันนี้ก่อนนอน!', 'Stamp today before bed!')}</b><small>${L('ปั๊ก!', 'Thump!')}</small></button>` : ''}
 ${kidNowCard(t, kid)}${questBanner(t, kid)}
 <div class="kidhello">${kidArt(kid) ? `<button class="poke" data-a="kidpoke" data-k="${esc(kid)}" aria-label="${esc(name)}"><img src="${kidArt(kid, true)}" alt=""></button>` : ''}<p>${pre ? L(`<span class="nw">อีก <b>${until}</b> วัน</span> เราจะไป<span class="nw">${esc(T(t.title).split(' · ').pop())}กัน!</span>`, `<b>${until}</b> ${until === 1 ? 'sleep' : 'sleeps'} to ${esc(T(t.title).split(' · ')[0])}!`) : L(`<span class="nw">สวัสดี ${esc(name)}!</span> <span class="nw">วันนี้เล่นอะไรดี?</span>`, `Hello ${esc(name)}! What shall we play?`)}</p></div>
-${stars(kid) ? `<div class="jarrow"><button class="starjar" data-a="kidjar" data-k="${esc(kid)}" aria-label="${L('โถดาว · ผู้ใหญ่กดค้างเพื่อล้าง', 'Star jar · grown-ups press and hold to empty')}">⭐ <b>${stars(kid)}</b></button>${pets(kid).length ? `<span class="pets" aria-label="${L('เพื่อน', 'Friends')}">${pets(kid).join('')}</span>` : ''}</div>` : ''}
+${stars(kid) ? `<div class="jarrow"><button class="starjar" data-a="kidjar" data-k="${esc(kid)}" aria-label="${L('โถดาว · ผู้ใหญ่กดค้างเพื่อล้าง', 'Star jar · grown-ups press and hold to empty')}">⭐ <b>${stars(kid)}</b></button>${pets(kid).length ? `<span class="pets" aria-label="${L('เพื่อน', 'Friends')}">${pets(kid).map(petImg).join('')}</span>` : ''}</div>` : ''}
 <nav class="kiddays">${t.days.map((x, j) => `<button data-a="kidday" data-v="${j}" aria-pressed="${j === i}" aria-label="${L('วันที่', 'Day')} ${j + 1}">${artImg(t, j)}</button>`).join('')}</nav>
 <div class="kidpagerwrap"><button class="kparrow prev" data-a="kidpage" data-v="-1" aria-label="${L('หน้าก่อน', 'Previous page')}" hidden>‹</button>
 <div class="kidpager" id="kidpager">${pages.map((pg, n) => `<div class="kpage kidtiles" data-n="${n}">${pg.join('')}</div>`).join('')}</div>
@@ -705,7 +715,7 @@ ${mine.length ? `<div class="drawn">${mine.map((m) => `<img src="${esc(imgT(m))}
 ${sp.length ? `<div class="gmiss"><b>${lit ? L('วันนี้ชี้ให้ดูนะ', 'Point to these today') : L('วันนี้หาให้เจอนะ', 'Find these today')}</b><div>${sp.map((x) => `<span title="${esc(T(x))}">${esc(x.e)}</span>`).join('')}</div></div>` : ''}
 <button class="kidbig" data-a="kidnav" data-v="#/kid/${esc(kid)}/spot">${lit ? '👉 ' + L('ไปชี้กัน!', 'Let’s point!') : '🔍 ' + L('ไปหากัน!', 'Let’s find them!')}</button></div>`
       : `<div class="kidguide">${guideImg(0)}<p>${L(`${esc(name)} แตะกล่องเลย!`, `${esc(name)}, tap the box!`)}</p></div>
-<button class="giftbox" data-a="kidgift" data-t="${esc(t.id)}" data-d="${i}" data-k="${esc(kid)}" aria-label="${L('เปิดกล่อง', 'Open the box')}"><span>🎁</span></button>`;
+<button class="giftbox" data-a="kidgift" data-t="${esc(t.id)}" data-d="${i}" data-k="${esc(kid)}" aria-label="${L('เปิดกล่อง', 'Open the box')}"><span>${kuImg('surprise')}</span></button>`;
   } else if (view === 'memory' && i > 0 && memQuiz(t, i - 1)) {   // yesterday's memory game: one question at a time, no score — a wrong tap just says "try again"
     const qs = memQuiz(t, i - 1), key = `${t.id}.${i - 1}.${kid}`;
     if (!memState || memState.key !== key) memState = { key, n: 0, got: false };
@@ -892,7 +902,7 @@ ${mg.won ? lvWin(t, kid, 'match', ['kidnewmatch']) : `<button class="kidbig ghos
     const all = trophies(t, kid), got = all.filter((x) => x[3]), seen = new Set(ls('tseen_' + kid) || []), fresh = got.filter((x) => !seen.has(x[0]));
     if (fresh.length) ls('tseen_' + kid, got.map((x) => x[0]));
     body = `<div class="kidguide${fresh.length ? ' pop' : ''}">${guideImg(0)}<p>${fresh.length ? L(`เย้! รางวัลใหม่: ${fresh.map((x) => x[2]).join(', ')} 🎉`, `Yay! New: ${fresh.map((x) => x[2]).join(', ')} 🎉`) : (got.length ? L(`${esc(name)} มี ${got.length} รางวัลแล้ว`, `${esc(name)} has ${got.length} troph${got.length === 1 ? 'y' : 'ies'}`) : L('ถ้วยรางวัลรอหนูอยู่', 'Trophies are waiting for you'))}</p></div>
-<div class="trophies">${all.map((x) => `<button class="tro${x[3] ? ' got' : ''}${fresh.some((f) => f[0] === x[0]) ? ' new' : ''}" data-a="sayfacts" data-v="${esc(x[2])}"><span>${x[3] ? x[1] : '🔒'}</span><b>${esc(x[2])}</b></button>`).join('')}</div>`;
+<div class="trophies">${all.map((x) => `<button class="tro${x[3] ? ' got' : ''}${fresh.some((f) => f[0] === x[0]) ? ' new' : ''}" data-a="sayfacts" data-v="${esc(x[2])}"><span>${troImg(x)}</span><b>${esc(x[2])}</b></button>`).join('')}</div>`;
   } else if (view === 'hearts') {
     const hs = heartsFor(kid), seen = ls('hseen_' + kid) || 0;
     if (hs.length) ls('hseen_' + kid, Math.max(seen, hs[0].at));
