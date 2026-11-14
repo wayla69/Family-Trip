@@ -123,7 +123,7 @@
         "greeting": { "$ref": "#/$defs/i18n" },
         "words": { "type": "array", "items": { "type": "object", "required": ["k", "th", "en"], "properties": { "k": { "type": "string" }, "e": { "type": "string" }, "th": { "type": "string" }, "en": { "type": "string" }, "note": { "$ref": "#/$defs/i18n" }, "say": { "type": "string" }, "speak": { "type": "object", "properties": { "text": { "type": "string" }, "lang": { "type": "string" } } } } }, "description": "say-it-like-a-local words (read aloud with speak.lang)" },
         "wordsSub": { "$ref": "#/$defs/i18n" },
-        "food": { "type": "array", "items": { "type": "object", "required": ["k", "th", "en"], "properties": { "k": { "type": "string" }, "e": { "type": "string" }, "th": { "type": "string" }, "en": { "type": "string" }, "note": { "$ref": "#/$defs/i18n" } } }, "description": "tasting card (YUM / YUCK)" },
+        "food": { "type": "array", "items": { "type": "object", "required": ["k", "th", "en"], "properties": { "k": { "type": "string" }, "e": { "type": "string" }, "art": { "type": "string", "pattern": "^food/[a-z0-9-]+$", "description": "the dish's own picture in public/art/food, when its emoji is too coarse (food/lamington)" }, "th": { "type": "string" }, "en": { "type": "string" }, "note": { "$ref": "#/$defs/i18n" } } }, "description": "tasting card (YUM / YUCK)" },
         "lists": { "type": "array", "description": "full control: extra passport lists in seed form" },
         "certificate": { "type": "object", "properties": { "title": { "$ref": "#/$defs/i18n" }, "text": { "$ref": "#/$defs/i18n" }, "bye": { "$ref": "#/$defs/i18n" } } },
         "style": { "type": "object" },

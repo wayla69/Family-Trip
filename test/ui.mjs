@@ -553,6 +553,17 @@ const T = 'hk-macau-2026';
     'Australia, little edition too: Mika hops like a kangaroo on day 4 — a point/touch/sound mission every day, her new-words page, no words-to-say, explorer list or customs form');
   await page.click('.ppkids a[role=tab][href="#/passport/mimi/big-hop-2027"]'); await page.waitForSelector('.pp.kid-mimi #pl-master');
   ok(await page.locator('.mission .spot.little').count() === 0 && await page.locator('#m3 button[data-v^="spot.d3."]').count() === 4, 'Australia: Mimi keeps her own find-these missions');
+  {   // the tasting card draws each dish from the food library (owner, Nov 2026: "ต่อรูปใน การ์ดชิมอาหารในพาสปอร์ต"); a dish tasted is a sticker of its picture
+    await page.waitForFunction(() => [...document.querySelectorAll('.ticks.food .tick .e img.ge')].every((i) => i.complete), null, { timeout: 8000 }).catch(() => {});
+    const taste = await page.evaluate(() => { const t = trip('big-hop-2027'), l = kidLists(t, 'mimi').find((x) => x.yum || x.stars), rows = [...document.querySelectorAll(`#pl-${l.key} .tick`)];
+      const pics = rows.filter((r) => { const i = r.querySelector('.e img.ge'); return i && i.naturalWidth > 0 && i.getBoundingClientRect().width >= 32; }).length, plain = rows.filter((r) => !r.querySelector('.e img')).map((r) => r.querySelector('.e').textContent).filter((e) => foodArt(e));   // a dish left as an emoji although the library has it
+      const st = stickerSet(t, 'mimi').filter((x) => x.k.startsWith(l.key + '.'));
+      const src = (k) => { const i = document.querySelector(`#pl-${l.key} .tick button[data-v="${l.key}.${k}"]`); const im = i && i.closest('.tick').querySelector('.e img.ge'); return im ? im.getAttribute('src') : ''; };
+      return { lam: src('lamington'), pie: src('pie'), fish: foodArt('🐟'), snag: foodArt('🌭'), rows: rows.length, pics, plain, stickers: st.length, stickerArt: st.filter((x) => /^\/art\/(food|game)\//.test(x.img || '')).length, sx: document.documentElement.scrollWidth > innerWidth + 1 }; });
+    ok(taste.rows >= 8 && taste.pics === taste.rows && /food\/lamington\.webp$/.test(taste.lam) && /food\/meatpie\.webp$/.test(taste.pie) && taste.plain.length === 0 && taste.stickerArt === taste.pics && !taste.sx && taste.fish === '' && /food\/hotdog/.test(taste.snag),
+      `passport tasting card: every dish with a picture in the food library is drawn as that picture and its sticker carries it; a dish that names its own picture shows it (the lamington is the chocolate and coconut cube, the meat pie a savoury pie); an animal's picture never stands in for a dish (${JSON.stringify(taste)})`);
+    await page.evaluate(() => { const l = kidLists(trip('big-hop-2027'), 'mimi').find((x) => x.yum || x.stars); document.querySelector(`#pl-${l.key}`).scrollIntoView({ block: 'start' }); window.scrollBy(0, -70); }); await s.shot('07c-passport-tasting', false);
+  }
   await page.click('.ppkids a[role=tab][href="#/passport/mika/big-hop-2027"]'); await page.waitForSelector('.pp.kid-mika #lwords'); await page.waitForSelector('#m15 .spot.little', { state: 'attached' });   // (folded before the trip) Mika's page itself (#m15 alone also matches Mimi's page still on screen)
   await page.locator('.mapsec').screenshot({ path: path.join(OUT, 'phone-06b-map-au.png') });
   // kid mode: big buttons, locked until a grown-up holds the lock
@@ -1283,6 +1294,23 @@ const T = 'hk-macau-2026';
   ok((await page.evaluate(() => window.__said)).some((x) => /7/.test(x) && /\|(th-TH|en-GB)$/.test(x)) && await page.locator('.kidhd .kidhear').count() === 1, 'kid home: the 🔊 button reads the greeting aloud');
   ok(await page.locator('.kidhearts').count() === 1 && (await page.textContent('.kidhearts')).includes('Grandma'), "hearts: grandma's heart waits on Mimi's home screen");
   await s.shot('01-kid-countdown-home');
+  {   // owner's Samsung (412×795 of page, Nov 2026): before the trip the home holds the adventure banner, the hello, the day strip — and the star jar once
+      // a game was won — and the tiles ran under the kid bar with the dots behind it. Every phone height keeps the tiles and the dots above the bar.
+    const fit = [];
+    for (const jar of [0, 12]) {
+      await page.evaluate((n) => { if (n) { ls('stars_mimi', n); ls('pets_mimi', ['🐣']); } else { localStorage.removeItem('mb.stars_mimi'); ls('stars_mimi', 0); ls('pets_mimi', []); } render(); }, jar);
+      for (const [w, h] of [[412, 795], [390, 844], [390, 664], [360, 640], [412, 915]]) {
+        await page.setViewportSize({ width: w, height: h }); await page.waitForTimeout(120);
+        const m = await page.evaluate(() => { const bar = document.querySelector('.kidbar').getBoundingClientRect().top, d = document.querySelector('#kdots').getBoundingClientRect(), ts = [...document.querySelectorAll('.kpage')[0].querySelectorAll('button')].map((b) => b.getBoundingClientRect());
+          const slack = Math.max(0, document.documentElement.scrollHeight - innerHeight);   // a short phone may scroll: what counts is where the dots end up
+          return { bar: Math.round(bar), dots: Math.round(d.bottom - slack), slack: Math.round(slack), tiles: Math.round(Math.max(...ts.map((r) => r.bottom))), th: Math.round(Math.min(...ts.map((r) => r.height))), jar: !!document.querySelector('.starjar'), hello: !!document.querySelector('.kidhello p') && document.querySelector('.kidhello p').getBoundingClientRect().height > 0, quest: !!document.querySelector('.kidquest'), sx: document.documentElement.scrollWidth > innerWidth + 1 }; });
+        if (!(m.dots <= m.bar && (h < 720 || m.slack === 0) && m.tiles - m.slack < m.dots && m.th >= 96 && m.hello && m.quest && !m.sx && m.jar === !!jar)) fit.push(`${w}x${h} jar ${jar}: ${JSON.stringify(m)}`);
+        if (w === 412 && h === 795 && jar) await s.shot('01b-kid-home-samsung', false);
+      }
+    }
+    await page.setViewportSize({ width: 390, height: 844 }); await page.evaluate(() => { ls('stars_mimi', 0); ls('pets_mimi', []); render(); });
+    ok(fit.length === 0, `kid home before the trip: the four tiles (96 px or taller) and the dots sit above the kid bar with the hello, the adventure banner and the star jar on the page — on one screen from 720 px of height, after a short scroll below that (${fit.join(' | ') || 'all fit'})`);
+  }
   await page.click('.kidhearts'); await page.waitForSelector('.kidhearts-list button');
   await page.locator('.kidhearts-list button').first().click();
   ok((await page.evaluate(() => window.__said)).some((x) => x.includes('Grandma') && x.includes('Big hug')), 'hearts: tapping reads the note aloud');

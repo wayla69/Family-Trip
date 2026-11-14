@@ -517,7 +517,7 @@
       { "k": "onigiri", "e": "🍙", "th": "โอนิกิริ", "en": "Onigiri" },
       { "k": "mochi", "e": "🍡", "th": "โมจิ", "en": "Mochi" },
       { "k": "sushi", "e": "🍣", "th": "ซูชิ", "en": "Sushi" },
-      { "k": "gyoza", "e": "🥟", "th": "เกี๊ยวซ่า", "en": "Gyoza" },
+      { "k": "gyoza", "e": "🥟", "art": "food/gyoza", "th": "เกี๊ยวซ่า", "en": "Gyoza" },
       { "k": "curry", "e": "🍛", "th": "แกงกะหรี่ญี่ปุ่น", "en": "Japanese curry" }
     ],
     "countdown": {
