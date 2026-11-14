@@ -1052,7 +1052,12 @@ document.addEventListener('focusout', (e) => {   // a voice memo's caption ("who
   if (m && (m.caption || '') !== cap) enqueue({ method: 'PATCH', url: '/api/b/media/' + encodeURIComponent(id), body: { caption: cap }, local: { coll: 'media', id, row: { caption: cap } } });
 });
 document.addEventListener('change', (e) => {
-  if (e.target.dataset && e.target.dataset.ck) { const m = ls('ck') || {}; if (e.target.checked) m[e.target.dataset.ck] = 1; else delete m[e.target.dataset.ck]; ls('ck', m); return; }
+  if (e.target.dataset && e.target.dataset.ck) { const m = ls('ck') || {}; if (e.target.checked) m[e.target.dataset.ck] = 1; else delete m[e.target.dataset.ck]; ls('ck', m);
+    const bag = e.target.closest('details.bag');   // today's bag counts in place, and folds itself a moment after the last thing is in
+    if (bag) { const n = bag.querySelectorAll('input[data-ck]').length, left = () => bag.querySelectorAll('input[data-ck]:not(:checked)').length, lb = bag.querySelector('.bagn');
+      if (lb) lb.textContent = bagLabel(n - left(), n);
+      if (!left()) setTimeout(() => { if (bag.isConnected && !left()) bag.open = false; }, 700); }
+    return; }
   if (e.target.dataset && e.target.dataset.fx) { safeRender(); return; }   // leaving a rate field: redraw (the field has lost focus)
   if (e.target.id === 'emfile') {   // the picture for a new emoji: a preview in place, the file kept until "add"
     const file = e.target.files && e.target.files[0]; if (!file) return;

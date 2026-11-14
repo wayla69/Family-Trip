@@ -47,6 +47,15 @@ async function login(page) {
 const boxOf = async (page, sel) => { for (let k = 0; k < 30; k++) { const b = await page.locator(sel).first().boundingBox().catch(() => null); if (b) return b; await page.waitForTimeout(100); } throw new Error('no box: ' + sel); };
 const apiState = (page) => page.evaluate(async () => (await fetch('/api/b/state')).json());
 const T = 'hk-macau-2026';
+// What the old full plan of a day said that Today (opened) and the learn page it links to no longer say — run in the page, for the books named.
+// Every piece of text of planHtml(…, {full: true}) must be found; the old page's own headings and buttons are not content.
+const todayLost = (ids) => { const norm = (x) => String(x).toLowerCase().replace(/\s+/g, '').replace(/[↗›‹★·]/g, ''), div = (h) => { const d = document.createElement('div'); d.innerHTML = h; return d; };
+      const CHROME = /^(Plan for the day|· \d+ steps|Local tip|Today's picks|All places|The whole day's route|Timeline|Getting around|Tonight|Map|Plan B|Money today|Good to know today|Backup:|Eat along|More places|Learn on the way|Quiz in the car|For the kids|Directions|Weather)/, out = [];
+      for (const t of S.trips.filter((x) => ids.includes(x.id))) { const learn = norm(div(viewLearn(t, true)).textContent);
+        t.days.forEach((d, i) => { const today = norm(div(viewToday(t, i, true)).textContent), w = document.createTreeWalker(div(planHtml(t, i, true, false, { full: true })), NodeFilter.SHOW_TEXT); let n;
+          while ((n = w.nextNode())) { const leaf = n.nodeValue.trim(); if (leaf.length < 2 || CHROME.test(leaf)) continue;
+            leaf.split(/\s+·\s+|\s+—\s+|\s*\(|\)\s*/).forEach((x) => { const y = norm(x).replace(/^[—–-]+|[.,;:]+$/g, ''); if (y.length >= 3 && !today.includes(y) && !learn.includes(y)) out.push(`${t.id} d${i + 1}: ${x.slice(0, 50)}`); }); } }); }
+      return out; };
 
 // ---------- editor on a phone ----------
 {
@@ -360,9 +369,10 @@ const T = 'hk-macau-2026';
     const op = await page.$eval(tl, (li) => [getComputedStyle(li.querySelector('.tsub')).display, li.querySelector('.tsub li').innerText.trim(), li.querySelector('[aria-expanded]').getAttribute('aria-expanded')]);
     ok(/^\p{Extended_Pictographic}/u.test(sum[0]) && sum[0].split(' ').length <= 8 && !sum[0].includes(' · ') && sum[1] === 'none' && sum[2] === 'false' && op[0] === 'block' && op[1].length > 0 && op[2] === 'true', `today page: a timeline step reads as a short summary and a tap opens its details below (${sum[0]} → ${op[1]})`);
     await page.click(`${tl} .tm`); }
-  const pickDd = await page.$$eval('.dsheet > div:not(.meal) > dd', (els) => els.map((e) => e.textContent));
+  const pickDd = await page.$$eval('.dsheet > div:not(.meal) > dd', (els) => els.map((e) => e.textContent));   // the answer boxes' own rows (the weather must not be one of them, below)
+  const pickLi = await page.$$eval('.cbox .tips > li.tk-local', (els) => els.map((e) => e.textContent)), pn = (x) => x.replace(/[\s:—–·.,;()]+/g, '');
   const seedPick = await page.evaluate(() => T(S.trips.find((x) => x.id === 'hk-macau-2026').days[1].plan.pick));
-  ok(seedPick.length > 110 && pickDd.includes(seedPick), "today page: the local pick is shown whole (it was cut at 110 characters)");
+  ok(seedPick.length > 110 && pickLi.length === 1 && pn(pickLi[0]).includes(pn(seedPick)), `today page: the local tip is shown whole under "Good to know today" (it was once cut at 110 characters; ${pn(seedPick).length} letters)`);
   const seedWx = await page.evaluate(() => T(S.trips.find((x) => x.id === 'hk-macau-2026').days[1].wx));
   { // the weather is said once, in the day's header (it used to sit in an answer box too): every piece of the manual's line is there
     const facts = (await page.textContent('.dfacts')).replace(/\s+/g, ' ').toLowerCase();
@@ -487,10 +497,39 @@ const T = 'hk-macau-2026';
       for (let a = 0; a < r.length; a++) for (let b = a + 1; b < r.length; b++) { const ox = Math.min(r[a].right, r[b].right) - Math.max(r[a].left, r[b].left), oy = Math.min(r[a].bottom, r[b].bottom) - Math.max(r[a].top, r[b].top); if (ox > 0 && oy > 0.5) { over++; worst = Math.max(worst, oy); } else if (ox > 0) gap = Math.min(gap, -oy); }
       return { n: r.length, over, worst: Math.round(worst), gap: Math.round(gap * 10) / 10, low: r.filter((x) => x.height < 43.5 || x.width < 43.5).length, two: document.querySelectorAll('.dsheet .meal .nmrow.two').length / 2 }; });
     ok(pins.two === 3 && pins.over === 0 && pins.gap >= 2 && pins.low === 0, `today: a meal and its backup each keep a whole 44 px navigate pin — no two pins on the page overlap (${pins.n} pins, ${pins.two} meals with a backup, ${pins.over} overlapping${pins.over ? ' by up to ' + pins.worst + ' px' : ''}, at least ${pins.gap} px apart)`); }
+  { const tip = await page.evaluate(() => { const div = (h) => { const d = document.createElement('div'); d.innerHTML = h; return d; }, bad = []; let days = 0, withTip = 0;
+      for (const t of S.trips.filter((x) => /^(hk-macau-2026|big-hop-2027)$/.test(x.id))) t.days.forEach((d, i) => { const pn = (x) => String(x).replace(/[\s:—–·.,;()]+/g, ''), pk = T((d.plan || {}).pick || ''), dom = div(viewToday(t, i, true)), key = pn(pk); days++; if (!pk) return; withTip++;
+        const boxes = [...dom.querySelectorAll('.cbox')], meals = boxes.find((b) => b.querySelector('.meal') || /^(Meals|มื้ออาหาร)/.test((b.querySelector('.ch') || {}).textContent || '')), know = boxes.find((b) => /Good to know today|ควรรู้วันนี้/.test((b.querySelector('.ch') || {}).textContent || ''));
+        const li = know && know.querySelector('.tips > li.tk-local'), n = know ? know.querySelectorAll('.tips > li').length : 0, said = know ? +((know.querySelector('.cs') || {}).textContent.match(/\d+/) || [0])[0] : 0;
+        if ((meals && pn(meals.textContent).includes(key)) || !li || !/^Local tip/.test(li.textContent) || !pn(li.textContent).includes(key) || know.querySelector('.tips > li') !== li || said !== n || n !== ((d.plan || {}).tips || []).length + 1) bad.push(`${t.id} d${i + 1}`); });
+      const bk = document.querySelector('.dsheet .meal small.bk'), cs = bk && getComputedStyle(bk);
+      return { bad, days, withTip, row: [...document.querySelectorAll('.dsheet dt')].some((x) => /Local pick|ร้านเด็ด/.test(x.textContent)), op: cs && cs.opacity, pin: bk && getComputedStyle(bk.querySelector('.navb')).opacity }; });
+    ok(tip.bad.length === 0 && tip.withTip >= 20 && !tip.row, `today: the manual's local tip of the day leads "Good to know today" under its own name and is counted there — never a row of the Meals box (${tip.withTip} of ${tip.days} days ${tip.bad.slice(0, 3).join(' | ') || 'all right'})`);
+    ok(tip.op === '1' && tip.pin === '1', `today: a meal's backup line is a colour, not faded with opacity — its navigate pin is as strong as the pick's (opacity ${tip.op} / ${tip.pin})`); }
   ok(await page.locator('.dsheet .meal').count() === 4 && /Hoi Lin Tea House/.test(await page.textContent('.cgrid')) && /Plaza Inn/.test(await page.locator('.dsheet .meal').nth(3).textContent()) && await page.locator('.cbox.c-ind .dlegs a[href="/art/hk/disney-map.svg"]').count() === 1, 'HK today, Disney day: four meals each with a pick and a backup, and the park map');
   const vp0 = page.viewportSize(); await page.setViewportSize({ width: 1440, height: 900 }); await page.waitForSelector('.cgrid.packed');
   const colH = await page.$$eval('.cgrid.packed > .ccol', (cs) => cs.map((c) => c.offsetHeight));
   ok(colH.length === 2 && Math.abs(colH[0] - colH[1]) < 260 && await page.locator('.cgrid .cbox').count() >= 5 && await page.locator('.cgrid .cbox.cone').count() >= 3, `HK today, wide screen: the boxes (four answer boxes and the one-line ones under them) packed into two columns of near-equal height (${colH.join(' / ')})`);
+  { // a fold opened on a wide screen: the boxes after it change sides so the columns stay near each other; the tapped fold and everything before it stay put
+    await page.goto(`${BASE}/#/t/big-hop-2027/today/1`); await page.waitForSelector('details.dmore'); await page.evaluate(() => { document.querySelector('details.dmore').open = true; }); await page.waitForSelector('.cgrid.packed');
+    const two = () => page.evaluate(() => new Promise((r) => requestAnimationFrame(() => requestAnimationFrame(() => setTimeout(r, 60)))));
+    const look = () => page.evaluate(() => { const cols = [...document.querySelectorAll('.cgrid.packed > .ccol')], name = (b) => (b.querySelector('.ch') || {}).textContent.trim().replace(/\s+/g, ' ').slice(0, 12), boxes = cols.flatMap((c, k) => [...c.children].map((b) => ({ o: b._o, side: k, h: b.offsetHeight, name: name(b) }))).sort((a, b) => a.o - b.o);
+      const all = boxes.reduce((n, x) => n + x.h, 0), cost = (f) => { const r = boxes.reduce((n, x, i) => n + (f(x, i) ? x.h : 0), 0); return Math.max(r, all - r); }; let best = Infinity;
+      for (let m = 0; m < 1 << boxes.length; m += 2) best = Math.min(best, cost((x, i) => m >> i & 1));
+      const s = [...document.querySelectorAll('.cgrid .cbox details.cmore > summary')].find((x) => /What to order/.test(x.textContent)), r = s.getBoundingClientRect();
+      return { sides: boxes.map((x) => x.side).join(''), names: boxes.map((x) => x.name), cost: cost((x) => x.side), best, h: boxes.map((x) => x.h), top: Math.round(r.top), focus: document.activeElement === s, order: cols.every((c) => [...c.children].every((b, i, a) => !i || a[i - 1]._o < b._o)) }; });
+    const tap = () => page.evaluate(() => { const s = [...document.querySelectorAll('.cgrid .cbox details.cmore > summary')].find((x) => /What to order/.test(x.textContent)); s.scrollIntoView({ block: 'center' }); s.focus(); });
+    await tap(); const a0 = await look();
+    await page.evaluate(() => document.activeElement.click()); await two(); const a1 = await look();
+    const k = a0.names.findIndex((x) => /^Meals/.test(x)), stay = a0.sides.slice(0, k + 1) === a1.sides.slice(0, k + 1), still = (() => { const r = a1.h.reduce((n, x, i) => n + (a0.sides[i] === '1' ? x : 0), 0); return Math.max(r, a1.h.reduce((n, x) => n + x, 0) - r); })();
+    ok(k >= 0 && a1.sides !== a0.sides && stay && a1.top === a0.top && a1.focus && a1.order && still - a1.cost >= 100,
+      `today, wide screen: a fold opened in "Meals" deals the boxes after it again (${a0.sides} → ${a1.sides}: the taller column ${still} → ${a1.cost} px); the boxes up to the tapped one keep their columns, the tapped fold does not move on the screen (${a0.top} → ${a1.top} px) and keeps the focus`);
+    await page.evaluate(() => document.activeElement.click()); await two(); const a2 = await look();
+    await page.evaluate(() => scrollTo(0, 0)); await page.click('.dayseg button[data-v="1"]'); await two(); const a3 = await look();
+    await page.click('.dayseg button[data-v="0"]'); await page.evaluate(() => { document.querySelector('details.dmore').open = true; }); await two(); const a4 = await look();   // before the trip "Short" also closes the day's folded glance: open it again to look
+    ok(a2.sides === a0.sides && a3.cost === a3.best && a3.sides !== a0.sides && a3.order && a4.sides === a0.sides && await s.noHScroll(),
+      `today, wide screen: closing the fold puts the boxes back (${a2.sides}); "Full" deals them all by their open heights — the best split there is (${a3.sides}, taller column ${a3.cost} px of best ${a3.best}) — and "Short" returns to where it began (${a4.sides})`);
+  }
   await page.setViewportSize(vp0); await page.waitForFunction(() => !document.querySelector('.cgrid.packed'));
   await page.goto(`${BASE}/#/t/${T}/eat/d/1`); await page.waitForSelector('.eatday');
   ok(await page.locator('.eatday .daystrip a').count() === 6 && await page.locator('.eatday .daystrip a[aria-current=true]').textContent().then((x) => x.includes('02')) && await page.locator('.emeal').count() === 4 && /Hoi Lin Tea House/.test(await page.locator('.emeal').first().textContent()) && await page.locator('.emeal .erow.bk').count() === 3, 'eat page, day by day: a tab per day, one box per meal with the pick and the backup');
@@ -594,7 +633,7 @@ const T = 'hk-macau-2026';
   await page.clock.setFixedTime(new Date('2026-12-06T12:00:00+08:00'));   // day 2 of the Hong Kong trip (timers keep running)
   await page.goto(`${BASE}/#/t/${T}/today`); await page.waitForSelector('.day.today');
   ok(/Disneyland/.test(await page.textContent('.day.today h3')) && await page.locator('.daystrip a[aria-current="true"] .today').count() === 1 && await page.locator('.daystrip a').nth(1).getAttribute('aria-current') === 'true'
-    && await page.locator('.day.today .tag').count() === 1 && await page.locator('.call.info').count() === 0 && await page.locator('nav.bar a[href$="/log/1"]').count() === 1 && await page.locator('.quick a[href*="/log/"]').count() === 0 && await page.locator('details.dmore').count() === 0 && await page.locator('details.bag[open]').count() === 1 && await page.locator('.mission').count() === 1, 'HK on day 2: Today opens Disneyland day by itself, marked “Today” in the strip, no countdown banner, Record goes to day 2');
+    && await page.locator('.day.today .tag').count() === 1 && await page.locator('.call.info').count() === 0 && await page.locator('nav.bar a[href$="/log/1"]').count() === 1 && await page.locator('.quick a[href*="/log/"]').count() === 0 && await page.locator('details.dmore').count() === 0 && await page.locator('details.bag:not([open])').count() === 1 && await page.locator('.mission').count() === 1, 'HK on day 2: Today opens Disneyland day by itself, marked “Today” in the strip, no countdown banner, Record goes to day 2');
   await page.goto(`${BASE}/#/t/${T}`); await page.waitForSelector('.hubgrid');
   ok(/(Day 2 of 6|วันที่ 2)/.test(await page.textContent('.tile.today')), 'HK on day 2: the menu’s Today tile names day 2');
   await page.goto(`${BASE}/#/passport/mimi/${T}`); await page.waitForSelector('.kidgo');
@@ -1516,13 +1555,7 @@ const T = 'hk-macau-2026';
     ok(full.closed === 0 && full.li === full.rows && full.rows >= 5 && /\/today\/1\/full$/.test(full.hash) && /\/full$/.test(full.strip) && full.h > short.h * 1.5 && !full.sx && /Waldegrave/.test(full.txt) && full.legs >= 3 && full.pins === full.legs && /Fuel/.test(full.txt) && back.open === 0 && /\/today\/1$/.test(back.hash) && Math.abs(back.h - short.h) < 4,
       `today, "Full": every step and fold opens in place — a row a leg with its navigate pin (${full.legs}), tonight's address, the bill — the address says /full and the day strip keeps it; "Short" closes it all again (${short.h} → ${full.h} → ${back.h} px)`);
     // nothing the second page said is lost: every piece of the manual's full day is on Today (opened) or on the learn page it links to — all days, both books
-    const lost = await page.evaluate(() => { const norm = (x) => String(x).toLowerCase().replace(/\s+/g, '').replace(/[↗›‹★·]/g, ''), div = (h) => { const d = document.createElement('div'); d.innerHTML = h; return d; };
-      const CHROME = /^(Plan for the day|· \d+ steps|Local tip|Today's picks|All places|The whole day's route|Timeline|Getting around|Tonight|Map|Plan B|Money today|Good to know today|Backup:|Eat along|More places|Learn on the way|Quiz in the car|For the kids|Directions|Weather)/, out = [];
-      for (const t of S.trips.filter((x) => /^(hk-macau-2026|big-hop-2027)$/.test(x.id))) { const learn = norm(div(viewLearn(t, true)).textContent);
-        t.days.forEach((d, i) => { const today = norm(div(viewToday(t, i, true)).textContent), w = document.createTreeWalker(div(planHtml(t, i, true, false, { full: true })), NodeFilter.SHOW_TEXT); let n;
-          while ((n = w.nextNode())) { const leaf = n.nodeValue.trim(); if (leaf.length < 2 || CHROME.test(leaf)) continue;
-            leaf.split(/\s+·\s+|\s+—\s+|\s*\(|\)\s*/).forEach((x) => { const y = norm(x).replace(/^[—–-]+|[.,;:]+$/g, ''); if (y.length >= 3 && !today.includes(y) && !learn.includes(y)) out.push(`${t.id} d${i + 1}: ${x.slice(0, 50)}`); }); } }); }
-      return out; });
+    const lost = await page.evaluate(todayLost, ['hk-macau-2026', 'big-hop-2027']);
     ok(lost.length === 0, `today is one page and loses nothing: every piece of the old full plan of all 22 days is on Today or on the learn page it links to (${lost.slice(0, 4).join(' | ') || 'nothing missing'}${lost.length > 4 ? ` … ${lost.length}` : ''})`);
     await s.shot('au-02-today-one-page', false);
   }
@@ -1956,6 +1989,8 @@ const T = 'hk-macau-2026';
   await s.shot('06-sample-menu', false);
   await page.goto(`${BASE}/#/t/sakura-hop-2028/today/0`); await page.waitForSelector('.day.today');
   ok(/¥9,000/.test(await page.textContent('main')), 'sample today: a money line written "today ≈" (lower case) shows its total — dayGlance\'s `pre` flag no longer hides the brief() teaser, which crashed the whole page');
+  { const lost = await page.evaluate(todayLost, ['sakura-hop-2028']), n = await page.evaluate(() => S.trips.find((x) => x.id === 'sakura-hop-2028').days.length);
+    ok(n >= 6 && lost.length === 0, `sample book: Today loses nothing of the old full plan either — every piece of all ${n} days of a book built by plan-to-seed is on Today or on the learn page (${lost.slice(0, 4).join(' | ') || 'nothing missing'}${lost.length > 4 ? ` … ${lost.length}` : ''})`); }
   await s.shot('07-sample-today');
   await page.goto(`${BASE}/#/t/sakura-hop-2028/book`); await page.waitForSelector('.cover');
   ok(await page.locator('.cover img[src^="/stock/"]').count() >= 1 || await page.locator('img[src^="/stock/"]').count() >= 1, 'sample: the book shows the library pictures');
@@ -2069,6 +2104,17 @@ const T = 'hk-macau-2026';
       rec: document.querySelectorAll('.row.quick a[href*="/log/"], .row.quick a[href*="/eat"]').length, h: document.querySelector('.nextc').getBoundingClientRect().height, qh: Math.min(...[...document.querySelectorAll('.row.quick .qlink')].map((a) => a.getBoundingClientRect().height)), rows: Math.min(...[...document.querySelectorAll('#tlbox li > div[role=button]')].map((a) => a.getBoundingClientRect().height)) }; });
   await s.shot('01-today-next', false);
   await page.click('.nextc'); await page.waitForFunction(() => Math.abs(document.querySelector('#tlbox').getBoundingClientRect().top) < 130);
+  { // today's bag is the morning's job: open until the day is under way (two timed steps behind us) or everything is in; a tick counts in place
+    const look = async (iso) => { await page.clock.setFixedTime(new Date(iso)); await page.evaluate(() => render()); return page.evaluate(() => ({ open: document.querySelector('details.bag').open, label: document.querySelector('.bag .bagn').textContent, past: document.querySelectorAll('#tlbox li.past').length, h: document.documentElement.scrollHeight })); };
+    const noon = await look('2026-12-06T12:00:00+08:00'), early = await look('2026-12-06T07:20:00+08:00'), one = await look('2026-12-06T07:50:00+08:00'), two = await look('2026-12-06T08:05:00+08:00');
+    await look('2026-12-06T07:20:00+08:00'); const was = await page.evaluate(() => ls('ck') || {}), n = await page.locator('.bag input[data-ck]').count(), seen = [];
+    for (let k = 0; k < n; k++) { await page.locator('.bag input[data-ck]').nth(k).check(); seen.push(await page.textContent('.bag .bagn')); }
+    await page.waitForFunction(() => !document.querySelector('details.bag').open, null, { timeout: 5000 }).catch(() => {});
+    const done = await page.evaluate(() => ({ open: document.querySelector('details.bag').open, label: document.querySelector('.bag .bagn').textContent }));
+    await page.evaluate((x) => ls('ck', x), was);
+    ok(!noon.open && noon.past >= 2 && early.open && early.past === 0 && one.open && one.past === 1 && !two.open && two.past === 2 && early.h - two.h > 300 && !/\b0\//.test(noon.label + early.label)
+      && seen[0] === `1/${n} packed` && seen[n - 1] === 'All packed ✓' && !done.open && done.label === 'All packed ✓',
+      `Today on the trip: the bag is open in the morning (07:20, and 07:50 with one step gone), one line once the day is under way (08:05, two steps gone — ${early.h - two.h} px shorter) and at noon; a tick counts in place (${seen[0]} → ${seen[n - 1]}) and the last one folds it (${JSON.stringify({ noon, early, one, two, done })})`); }
   await page.clock.setFixedTime(new Date('2026-12-06T22:30:00+08:00')); await page.evaluate(() => render());
   const late = await page.evaluate(() => ({ done: document.querySelectorAll('a.nextc.done[href$="/log/1"]').length, past: document.querySelectorAll('#tlbox li.past').length, next: document.querySelectorAll('#tlbox li.next').length }));
   ok(td.time === '12:45' && /Sit-down show/.test(td.head) && /14:30/.test(td.then) && td.next > 0 && td.next < td.facts && td.facts < td.quick && td.quick < td.tl && td.tl < td.bag && td.bag < td.mission && (td.ask < 0 || td.mission < td.ask) && td.rec === 0 && td.h >= 60 && td.qh >= 44 && td.rows >= 44
