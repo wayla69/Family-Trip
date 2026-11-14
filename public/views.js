@@ -2001,14 +2001,20 @@ function viewEatDay(t, i) {
   const info = (name) => { for (const g of r.groups) for (const x of g.items) if (eatSame(x.name, name)) return x; return null; };
   const facts = (x) => (x ? [T(x.pr) && `<span class="pr">${esc(T(x.pr))}</span>`, T(x.hours) && `<span class="hr">${esc(T(x.hours))}</span>`].filter(Boolean).join('') : '');
   const row = (x, cls) => `<li class="erow${cls ? ' ' + cls : ''}"><div><b>${mapA(x.q || x.name, esc(x.name))}</b>${T(x.tag) ? ` <span class="etag">${esc(T(x.tag))}</span>` : ''}${T(x.what) ? `<small>${esc(T(x.what))}</small>` : ''}${facts(x) ? `<span class="echips">${facts(x)}</span>` : ''}</div>${goA(x.q || x.name)}</li>`;
-  const meal = (p) => {
-    const k = mealKind(p), [lbl, ...w] = T(p.meal).split(' · '), x = info(p.name), bx = p.alt && info(p.alt.name);
+  // on the day itself (owner, Nov 2026: easy on the move): a meal already behind us folds to its one line and the one to eat now or next is
+  // marked — "now" from its time until 90 minutes after. A meal's time is read in the zone of the timeline step at that time (Bangkok rows on day 1).
+  const mst = []; if (now === i) { let found = false; const rows = (d.plan || {}).plan || [], mins = (z) => +z.slice(0, 2) * 60 + +z.slice(3);
+    ps.forEach((p, n) => { const m = T(p.meal).match(/(\d{1,2}):(\d{2})/); if (!m) return; const at = m[1].padStart(2, '0') + ':' + m[2], rw = rows.find((y) => String(y.t || '').padStart(5, '0') === at), cur = mins(fmtTime(Date.now(), (rw && rw.tz) || t.timezone)), a = mins(at);
+      if (found) return; if (a + 90 > cur) { mst[n] = a <= cur ? 'now' : 'next'; found = true; } else mst[n] = 'past'; }); }
+  const meal = (p, n) => {
+    const k = mealKind(p), [lbl, ...w] = T(p.meal).split(' · '), x = info(p.name), bx = p.alt && info(p.alt.name), ms = mst[n];
     const alsoAll = (meals[k] || []).map((m) => m.x).filter((x2, n, arr) => arr.indexOf(x2) === n && !eatSame(x2.name, p.name) && !(p.alt && eatSame(x2.name, p.alt.name)));
     const alsoHot = alsoAll.filter((x2) => hot.has(x2)), also = alsoHot.length ? alsoHot : alsoAll.slice(0, 4), alsoMore = alsoAll.length - also.length;   // on the day's route first; the rest sit in the areas below
-    return `<section class="emeal mk-${k}"><h3 class="eh3"><span class="mtag">${esc(lbl)}</span>${w.length ? `<span class="mtime">${esc(w.join(' · '))}</span>` : ''}</h3>
+    const head = `<span class="mtag">${esc(lbl)}</span>${w.length ? `<span class="mtime">${esc(w.join(' · '))}</span>` : ''}`;
+    return `${ms === 'past' ? `<details class="emeal mk-${k} pastm"><summary class="eh3">${head}<span class="mname">${esc(p.name)}</span>${ic('chev', 'chv')}</summary>` : `<section class="emeal mk-${k}${ms ? ' nextm' : ''}"><h3 class="eh3">${head}${ms ? `<span class="nexttag">${ms === 'now' ? L('ตอนนี้', 'Now') : L('ถัดไป', 'Next')}</span>` : ''}</h3>`}
 <div class="epick"><span class="elbl">★ ${L('ร้านแนะนำ', 'Our pick')}</span><div class="et"><b class="en">${mapA(p.q || p.name, esc(p.name))}</b>${goA(p.q || p.name, L('นำทาง', 'Go'))}</div>${T(p.what) ? `<p>${esc(T(p.what))}</p>` : x && T(x.what) ? `<p>${esc(T(x.what))}</p>` : ''}${facts(x) || T(p.pr) ? `<span class="echips">${facts(x) || `<span class="pr">${esc(T(p.pr))}</span>`}</span>` : ''}</div>
 ${p.alt ? `<ul class="erows"><li class="erow bk"><div><span class="elbl">${L('ร้านสำรอง', 'Backup')}</span><b>${p.alt.q || bx ? mapA(p.alt.q || p.alt.name, esc(p.alt.name)) : esc(p.alt.name)}</b>${T(p.alt.what) ? `<small>${esc(T(p.alt.what))}</small>` : bx && T(bx.what) ? `<small>${esc(T(bx.what))}</small>` : ''}${facts(bx) ? `<span class="echips">${facts(bx)}</span>` : ''}</div>${p.alt.q || bx ? goA(p.alt.q || p.alt.name) : ''}</li></ul>` : ''}
-${also.length ? `<div class="ealso"><span class="elbl">${L('กินมื้อนี้ได้อีก', 'Also good for this meal')}</span><ul class="erows">${also.map((x2) => row(x2)).join('')}</ul>${alsoMore > 0 ? `<small class="emoren">${L(`อีก ${alsoMore} ร้านอยู่ในย่านด้านล่าง`, `${alsoMore} more under the areas below`)}</small>` : ''}</div>` : ''}</section>`;
+${also.length ? `<div class="ealso"><span class="elbl">${L('กินมื้อนี้ได้อีก', 'Also good for this meal')}</span><ul class="erows">${also.map((x2) => row(x2)).join('')}</ul>${alsoMore > 0 ? `<small class="emoren">${L(`อีก ${alsoMore} ร้านอยู่ในย่านด้านล่าง`, `${alsoMore} more under the areas below`)}</small>` : ''}</div>` : ''}${ms === 'past' ? '</details>' : '</section>'}`;
   };
   const seen = new Set(ps.flatMap((p) => [p.name, p.alt && p.alt.name]).filter(Boolean));
   // areas within reach: the places on today's route open first; an area's other places fold under "N more"; areas with nothing on
