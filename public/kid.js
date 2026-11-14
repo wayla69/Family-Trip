@@ -612,7 +612,7 @@ function viewKid(p) {
   const t = kidTrip(kid);
   const pp = t.passport || {}, i = kidDayOf(t), d = t.days[i], pd = (pp.days || [])[i] || {}, g = pp.guides || [];
   const view = p[2] || 'home', name = kidName(kid), pre = preTrip(t), cd = pp.countdown, wild = ((t.info || {}).wild || []);
-  if (quest && (quest.game !== view || quest.kid !== kid || quest.tid !== t.id)) { quest = null; questReset(); }   // off the mission's page: free play again
+  if (quest && (quest.game !== view || quest.kid !== kid || quest.tid !== t.id)) { const qt = trip(quest.tid); if (qt && !questGot(qt, quest.kid, quest.town, quest.slot)) questQuit(quest); quest = null; questReset(); }   // off the mission's page: free play again
   const fill = (x) => String(x || '').replace(/\{name\}/g, name);
   const style = `--accent:${esc(pd.acc || t.theme.accent || '#1F3A5F')};--tint:${esc(pd.tint || '#F3F6FA')}`;
   const back = `<button class="kidback" data-a="kidnav" data-v="#/kid/${esc(kid)}${quest ? '/quest' : ''}" aria-label="${L('กลับ', 'Back')}">‹</button>`;
@@ -1117,10 +1117,24 @@ function questPlan(t, kid) {
     return [0, 1, 2].map((k) => { const game = pool[(off + i * 3 + k) % pool.length]; return { game, lv: Math.min(LV[game].length, base) }; });
   });
 }
+// the town's boss: one of its three games again, a level up — it shows once the three are played, and the chest waits for it
+const questBoss = (t, kid, i) => { const m = questPlan(t, kid)[i][i % 3]; return { game: m.game, lv: Math.min(LV[m.game].length, m.lv + 1) }; };
+// a hidden mission in every second town: a little creature on the map, a game the town does not have, a level easier — never needed for the chest
+const QUEST_HID = ['🦋', '🐦', '🐠', '🐞', '🐿️', '🦎', '🐝', '🐌'];
+function questBonus(t, kid, i) {
+  if (i % 2 === 0) return null;
+  const plan = questPlan(t, kid)[i], have = new Set(plan.map((m) => m.game)), pool = QUEST_ORDER.filter((g) => !have.has(g) && g !== 'jigsaw');
+  const game = pool[(i * 5 + t.id.length) % pool.length]; return { game, lv: Math.max(1, Math.min(LV[game].length, plan[0].lv - 1)), e: QUEST_HID[((i - 1) / 2) % QUEST_HID.length] };
+}
+const questSlot = (t, kid, i, k) => (k === 'x' ? questBonus(t, kid, i) : k === 3 ? questBoss(t, kid, i) : questPlan(t, kid)[i][k]);
+// a mission left unfinished twice comes back one level easier (this device only; the child never sees a number)
+const questEase = (kid, t, i, k) => Math.floor(((ls('qease_' + kid) || {})[`${t.id}.${i}.${k}`] || 0) / 2);
+function questQuit(q) { const all = ls('qease_' + q.kid) || {}, key = `${q.tid}.${q.town}.${q.slot}`; all[key] = (all[key] || 0) + 1; ls('qease_' + q.kid, all); }
 const questKey = (i, k) => `quest.d${i}.${k}`;
 const questGot = (t, kid, i, k) => !!ticked(t, questKey(i, k), kid) || questMem.has(tickId(t, questKey(i, k), kid));
 const questTownDone = (t, kid, i) => questGot(t, kid, i, 'chest');
-const questReady = (t, kid, i) => [0, 1, 2].every((k) => questGot(t, kid, i, k));
+const questThree = (t, kid, i) => [0, 1, 2].every((k) => questGot(t, kid, i, k));
+const questReady = (t, kid, i) => questThree(t, kid, i) && questGot(t, kid, i, 3);
 const questAt = (t, kid) => { const i = t.days.findIndex((_, j) => !questTownDone(t, kid, j)); return i < 0 ? t.days.length : i; };   // the town the child stands in (= days.length: every chest is open)
 function questMark(t, kid, i, k) {
   const id = tickId(t, questKey(i, k), kid); if (questGot(t, kid, i, k)) return;
@@ -1143,6 +1157,7 @@ function questHtml(t, kid, guideImg) {
   const line = questNew !== null ? L('เปิดหีบแล้ว! ได้สมบัติมาหนึ่งชิ้น', 'The chest is open! One more treasure')
     : end ? L('เก็บสมบัติครบทุกเมืองแล้ว! เก่งที่สุดเลย', 'Every treasure is found! You are the best')
       : questReady(t, kid, open) && !questTownDone(t, kid, open) ? L('เล่นครบแล้ว! แตะหีบสมบัติเลย', 'All played! Tap the treasure chest')
+        : questThree(t, kid, open) && !questTownDone(t, kid, open) ? L('เหลือด่านหัวหน้าอีกด่านเดียว!', 'One more: the big one!')
         : L('เล่นสามเกม แล้วเปิดหีบสมบัติ!', 'Play three games, then open the treasure chest!');
   const towns = t.days.map((_, i) => {
     const done = questTownDone(t, kid, i), here = i === Math.min(at, n - 1) && !end, ahead = i > at, isOpen = i === open && !ahead;
@@ -1152,14 +1167,24 @@ function questHtml(t, kid, guideImg) {
 <span class="qname"><b>${ahead ? L('เมืองในเมฆ', 'A town in the clouds') : wj(esc(questTown(t, i)))}</b>${done ? `<small>${L('เก็บสมบัติแล้ว', 'Treasure found')}</small>` : here ? `<small>${L('เราอยู่ที่นี่', 'We are here')}</small>` : ''}</span>
 ${who ? `<span class="qwho" aria-hidden="true">${who}</span>` : ''}</button>`;
     const ms = plan[i].map((m, k) => { const got = questGot(t, kid, i, k), g = QUEST_G[m.game]; return `<button class="qm${got ? ' got' : ''}" data-a="questgo" data-t="${esc(t.id)}" data-k="${esc(kid)}" data-d="${i}" data-v="${k}" data-say="${esc(L(g[1], g[2]))}"><span>${g[0]}</span><b>${L(g[1], g[2])}</b>${got ? '<i aria-hidden="true">⭐</i>' : ''}</button>`; }).join('');
-    const ready = questReady(t, kid, i), secret = questSecret(t, i);
+    const ready = questReady(t, kid, i), secret = questSecret(t, i), three = questThree(t, kid, i), bs = questBoss(t, kid, i), bg = QUEST_G[bs.game], bgot = questGot(t, kid, i, 3), hid = questBonus(t, kid, i), hgot = hid && questGot(t, kid, i, 'x');
+    const boss = three ? `<button class="qboss${bgot ? ' got' : ''}" data-a="questgo" data-t="${esc(t.id)}" data-k="${esc(kid)}" data-d="${i}" data-v="3" data-say="${esc(L('ด่านหัวหน้า', 'The big one'))}"><span aria-hidden="true">👑</span><b>${L('ด่านหัวหน้า', 'The big one')}</b><em aria-hidden="true">${bg[0]}</em>${bgot ? '<i aria-hidden="true">⭐</i>' : ''}</button>` : '';
+    const hidden = hid ? `<button class="qhid${hgot ? ' got' : ''}" data-a="questgo" data-t="${esc(t.id)}" data-k="${esc(kid)}" data-d="${i}" data-v="x" data-say="${esc(hgot ? L('เพื่อนลับของเมืองนี้', 'This town’s secret friend') : L('เจอภารกิจลับ!', 'A secret mission!'))}" aria-label="${L('ภารกิจลับ', 'Secret mission')}"><span>${hid.e}</span>${hgot ? '<i aria-hidden="true">⭐</i>' : ''}</button>` : '';
     const chest = done ? `<div class="qtreasure${questNew === i ? ' new' : ''}"><span class="gem" aria-hidden="true">${QUEST_GEM[i % QUEST_GEM.length]}</span>${secret ? `<p><small>${L('ความลับของเมืองนี้', 'This town’s secret')}</small>${esc(secret)}</p>` : `<p>${L('สมบัติของเมืองนี้!', 'This town’s treasure!')}</p>`}</div>${i + 1 < n ? `<button class="kidbig" data-a="questnext" data-v="${i + 1}">${L('ไปเมืองต่อไป', 'On to the next town')} ›</button>` : ''}`
       : `<button class="qchest${ready ? ' ready' : ''}" data-a="questchest" data-t="${esc(t.id)}" data-k="${esc(kid)}" data-d="${i}" aria-label="${L('หีบสมบัติ', 'Treasure chest')}"><span aria-hidden="true">🧰</span><b>${ready ? L('เปิดหีบ!', 'Open it!') : L('หีบสมบัติ', 'Treasure chest')}</b></button>`;
-    return `<li class="qtown${done ? ' done' : ''}${here ? ' here' : ''}${ahead ? ' ahead' : ''}${isOpen ? ' open' : ''}" id="qt${i}">${head}${isOpen ? `<div class="qbody"><div class="qms">${ms}</div>${chest}</div>` : ''}</li>`;
+    return `<li class="qtown${done ? ' done' : ''}${here ? ' here' : ''}${ahead ? ' ahead' : ''}${isOpen ? ' open' : ''}" id="qt${i}">${head}${isOpen ? `<div class="qbody">${hidden}<div class="qms">${ms}</div>${boss}${chest}</div>` : ''}</li>`;
   }).join('');
   return `<div class="kidguide">${guideImg(0)}<p>${line}</p></div>
 <ol class="questpath">${towns}</ol>
+${questPic(t, kid)}
 ${end ? `<div class="qend"><span aria-hidden="true">🏆</span><b>${L('นักผจญภัยตัวจริง!', 'A true adventurer!')}</b><div class="qgems" aria-hidden="true">${t.days.map((_, i) => QUEST_GEM[i % QUEST_GEM.length]).join(' ')}</div></div>` : ''}`;
+}
+// the treasure picture: one picture of the trip in as many pieces as there are towns; a town's chest uncovers its piece (shown once there is one)
+function questPic(t, kid) {
+  const n = t.days.length, src = ((t.passport || {}).style || {}).crest || dayArt(t, n - 1) || dayArt(t, 0); if (!src || !t.days.some((_, i) => questTownDone(t, kid, i))) return '';
+  const cols = n <= 4 ? 2 : n <= 9 ? 3 : 4, rows = Math.ceil(n / cols), all = t.days.every((_, i) => questTownDone(t, kid, i));
+  return `<div class="qpic${all ? ' all' : ''}"><b>${all ? L('ภาพสมบัติครบแล้ว!', 'The treasure picture is complete!') : L('ภาพสมบัติของเรา', 'Our treasure picture')}</b>
+<div class="qpicg" style="--c:${cols};--art:url('${esc(src)}')" aria-hidden="true">${Array.from({ length: cols * rows }, (_, k) => { const on = k >= n ? all : questTownDone(t, kid, k); return `<i class="${on ? 'on' : ''}"${on ? ` style="${jgPos(k, { cols, rows })}"` : ''}>${on ? '' : '☁️'}</i>`; }).join('')}</div></div>`;
 }
 Object.assign(A, {
   questtown(b) {   // a town on the road: one reached opens (to play or play again); one in the clouds only says so
@@ -1168,14 +1193,14 @@ Object.assign(A, {
     beep('pop'); questOpen = questOpen === i ? null : i; questNew = null; render(); sayUi(questTown(t, i));
   },
   questgo(b) {   // a mission: its game opens at the road's level, the child's own levels stay as they are
-    const t = trip(b.dataset.t), kid = b.dataset.k, i = +b.dataset.d, k = +b.dataset.v, m = questPlan(t, kid)[i][k];
+    const t = trip(b.dataset.t), kid = b.dataset.k, i = +b.dataset.d, k = b.dataset.v === 'x' ? 'x' : +b.dataset.v, m = questSlot(t, kid, i, k); if (!m) return;
     beep('sparkle'); questReset(); questNew = null; questOpen = i;
-    quest = { tid: t.id, kid, town: i, slot: k, game: m.game, lv: m.lv };
+    quest = { tid: t.id, kid, town: i, slot: k, game: m.game, lv: Math.max(1, m.lv - questEase(kid, t, i, k)) };
     nav(`#/kid/${kid}/${m.game}`); sayUi(L(QUEST_G[m.game][1], QUEST_G[m.game][2]));
   },
   questchest(b) {
     const t = trip(b.dataset.t), kid = b.dataset.k, i = +b.dataset.d;
-    if (!questReady(t, kid, i)) { beep('tap'); b.classList.remove('nope'); void b.offsetWidth; b.classList.add('nope'); sayUi(L('เล่นให้ครบสามเกมก่อนนะ', 'Play the three games first!')); return; }
+    if (!questReady(t, kid, i)) { beep('tap'); b.classList.remove('nope'); void b.offsetWidth; b.classList.add('nope'); sayUi(questThree(t, kid, i) ? L('เล่นด่านหัวหน้าก่อนนะ', 'Play the big one first!') : L('เล่นให้ครบสามเกมก่อนนะ', 'Play the three games first!')); return; }
     if (questTownDone(t, kid, i)) return;
     beep('pop'); setTimeout(() => beep('fanfare'), 250); burst(b, ['✨', '⭐', QUEST_GEM[i % QUEST_GEM.length]]); celebrate(['🗺️', '✨', QUEST_GEM[i % QUEST_GEM.length]]); star(kid, 3);
     questMark(t, kid, i, 'chest'); questNew = i; questOpen = i;
@@ -1200,7 +1225,7 @@ function lvDone(t, kid, game) { const q = questIn(t, kid, game); if (q) { questM
 // the chips of the levels reached (a ⭐ on each one won); none when only level 1 is open
 function lvBar(t, kid, game) {
   const s = lvState(t, kid, game);
-  if (s.quest) return `<div class="lvbar qbar"><span>🗺️ ${wj(esc(questTown(t, s.quest.town)))}</span></div>`;   // on a mission: the town, no level chips
+  if (s.quest) return `<div class="lvbar qbar"><span>${s.quest.slot === 3 ? '👑' : s.quest.slot === 'x' ? '✨' : '🗺️'} ${wj(esc(questTown(t, s.quest.town)))}</span></div>`;   // on a mission: the town, no level chips
   if (s.top < 2) return '';
   return `<div class="lvbar" role="group" aria-label="${L('ด่าน', 'Levels')}"><span>${L('ด่าน', 'Level')}</span>${Array.from({ length: s.top }, (_, k) => k + 1).map((n) => `<button class="lvc${n === s.at ? ' on' : ''}" data-a="kglv" data-g="${game}" data-v="${n}" aria-pressed="${n === s.at}" aria-label="${esc(L(`ด่าน ${n}`, `Level ${n}`))}"><b>${n}</b>${n <= s.best ? '<i aria-hidden="true">⭐</i>' : ''}</button>`).join('')}</div>`;
 }
@@ -1283,7 +1308,7 @@ function kgRound(g) {
     g.r = { shown: seq.slice(0, g.lv.show), answer, opts: shuffle([answer].concat(others.slice(0, g.lv.o - 1))) };
   }
   else if (g.game === 'feed') { const want = g.deck[g.n]; g.r = { pal: g.pal, want, opts: shuffle([want].concat(shuffle(FOODS.filter((x) => x !== want)).slice(0, many - 1))) }; if (g.lv.mem) feedHide(g); }
-  g.got = false;
+  g.got = false; g.miss = 0;
 }
 function kgNew(game, t, kid) {
   const g = { game, key: `${t.id}.${kid}`, tid: t.id, kid, n: 0, lv: lvOf(t, kid, game), at: lvState(t, kid, game).at, done: false, got: false };
@@ -1313,7 +1338,9 @@ function kgAsk(g) {
 // feed, levels 8+: the wish shows for a moment, then the child keeps it in mind (a tap on the animal shows and says it again)
 function feedHide(g, ms) { const r = g.r; clearTimeout(g.hideT); r.hid = false; g.hideT = setTimeout(() => { if (kg !== g || g.r !== r || g.got) return; r.hid = true; const w = $('#kgwant'); if (w) w.classList.add('gone'); }, ms || 2600); }
 function kgWin(b, chars) { kg.done = true; lvDone(trip(kg.tid), kg.kid, kg.game); beep('fanfare'); celebrate(chars); star(kg.kid, 2); }
-const kgNope = (b, line) => { beep('tap'); b.classList.remove('nope'); void b.offsetWidth; b.classList.add('nope'); sayUi(line); };
+const kgRight = (g) => String(g.game === 'shadow' || g.game === 'feed' ? g.r.want[0] : g.game === 'where' ? (g.r.mode === 'two' ? g.r.steps[g.r.k].pos : g.r.pos) : g.game === 'odd' ? g.r.one : g.game === 'howmany' ? g.r.n : g.game === 'next' ? g.r.answer : g.game === 'bigsmall' ? g.r.right : g.game === 'sort' ? g.items[g.n].k : '');
+// three wrong taps in one round: the right answer glows (owner's plan: a child who is stuck gets a hint, never a score)
+const kgNope = (b, line) => { beep('tap'); b.classList.remove('nope'); void b.offsetWidth; b.classList.add('nope'); sayUi(line); if (kg) { kg.miss = (kg.miss || 0) + 1; if (kg.miss >= 3) { const v = kgRight(kg), el = $$('[data-a="kgpick"]').find((x) => x.dataset.v === v); if (el) el.classList.add('hint'); } } };
 Object.assign(A, {
   kgpal() {   // the hungry animal says its wish again (and on the memory levels shows it for a moment)
     const g = kg; if (!g || g.game !== 'feed' || g.done) return;
@@ -1362,7 +1389,7 @@ Object.assign(A, {
     } else if (g.game === 'sort') {
       const it = g.items[g.n], col = SORT_COLS.find((c) => c.k === it.k);
       if (v !== it.k) return kgNope(b, L(`อันนี้${col.th}นะ`, `This one is ${col.en}!`));
-      beep('chime'); burst(b, [it.e, '✨']); sayUi(L(col.th, col.en)); (g.bin[it.k] = g.bin[it.k] || []).push(it.e); g.n++;
+      beep('chime'); burst(b, [it.e, '✨']); sayUi(L(col.th, col.en)); (g.bin[it.k] = g.bin[it.k] || []).push(it.e); g.n++; g.miss = 0;
       if (g.n >= g.items.length) kgWin(b, ['🌈', '⭐', '✨']);
       safeRender();
     }
