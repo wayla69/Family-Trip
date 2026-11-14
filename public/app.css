@@ -2801,3 +2801,12 @@ section.pg .dstamps.pst.c3 b,section.pg .dstamps.pst.c4 b{font-size:16px}section
 @media (min-width:700px){.qcloud .qi{width:98px;height:98px}.qchest span .qi{width:68px;height:68px}}
 /* the mission buttons and the boss on the adventure map wear the games' own pictures (public/art/kidui) */
 .qm span .qi{width:clamp(56px,13vw,84px);height:clamp(56px,13vw,84px)}.qboss em .qi{width:40px;height:40px}
+/* kid mode's own pictures in place of emoji (set 4): the banners, the trophies and the star jar's friends */
+.ku{display:block;width:1em;height:1em;object-fit:contain}
+.kidgift .box .ku,.kidnight .moon .ku{width:56px;height:56px}
+.giftbox .ku{width:200px;height:200px;margin:0 auto}
+.pets{display:inline-flex;flex-wrap:wrap;gap:4px;align-items:center;letter-spacing:0}.pets .ku{width:38px;height:38px}
+.tro span .ku{width:56px;height:56px}
+.tro:not(.got) span .ku{filter:grayscale(1);opacity:.75}
+@media (max-height:760px){.kidwrap.home .kidgift .box .ku,.kidwrap.home .kidnight .moon .ku{width:44px;height:44px}}
+@media (min-width:700px){.pets .ku{width:46px;height:46px}.tro span .ku{width:60px;height:60px}}
