@@ -2955,6 +2955,63 @@ body.padfull .kidbar{display:none}
 .dpb.dpsave{display:none;bottom:12px;left:12px;width:64px;height:64px;font-size:30px;font-weight:800;color:#fff;background:#1565C0;border:4px solid #fff}
 .drawwrap.full .dpb.dpsave{display:grid;top:80px;bottom:auto}
 .drawwrap.full .dpb.dpundo{top:80px;bottom:auto}   /* the colour tray opens over the foot of a tall sheet: the buttons stay at its head */
+/* Today is one page: "the day's plan" + สรุป · เต็ม, and every box's own detail one tap below it (views.js dayGlance) */
+.dayhd{display:flex;align-items:center;justify-content:space-between;gap:12px;margin:16px 0 0}
+.dayhd>b{font-size:15.5px;font-weight:800}
+.dayhd .seg button{min-width:58px;padding:5px 14px;font-size:13.5px}
+.tl.plan .tsub .tnote{color:var(--muted);font-style:italic}
+/* a box's "more" at its foot: a fold (its detail) or a link (the page that holds the long list) — one look for both */
+.cbox .cmore{display:block;margin:6px -14px -8px;border-top:1px solid color-mix(in srgb,var(--cb) 22%,transparent)}
+.cbox a.cmore,.cbox details.cmore>summary{display:flex;align-items:center;gap:10px;min-height:44px;padding:8px 14px;box-sizing:border-box;font-size:14px;font-weight:600;color:color-mix(in srgb,var(--cb) 60%,var(--ink));text-decoration:none;list-style:none;cursor:pointer}
+.cbox details.cmore>summary::-webkit-details-marker,.cbox.cone summary::-webkit-details-marker{display:none}
+.cbox .cmore .fs,.cbox.cone .ch .fs{flex:1;min-width:0}
+.cbox details.cmore>.fb{padding:2px 14px 12px}
+.cbox details.cmore>.fb .legs{margin:0}.cbox details.cmore>.fb .stay{margin:10px 0 0}
+.cbox details.dfold>.fb h5{margin:14px 0 4px;font-size:14px}.cbox details.dfold>.fb .picks,.cbox details.dfold>.fb .eats{margin:0;padding-left:0;list-style:none}.cbox details.dfold>.fb .eats>li{padding:8px 0;border-top:1px solid var(--rule)}.cbox details.dfold>.fb .label{margin:8px 0 0}
+/* a box that is one line until it is opened (money, good to know) or one link (learn): the coloured heading is the whole control */
+.cbox.cone{padding:0}
+.cbox.cone .ch{display:flex;align-items:center;gap:8px;min-height:44px;margin:0;padding:10px 14px;box-sizing:border-box;background:color-mix(in srgb,var(--cb) 15%,var(--paper));color:color-mix(in srgb,var(--cb) 52%,var(--ink));font-size:14.5px;font-weight:700;text-decoration:none;list-style:none;cursor:pointer}
+.cbox.cone .ch .ic{width:18px;height:18px;flex:none}
+.cbox.cone .ch .cs{font-weight:600;color:var(--ink);margin-left:6px}
+.cbox.cone .ch .cs .num{font-weight:800}
+.cbox.cone details>.fb{padding:4px 14px 10px}
+.cbox .ic.chl,.cbox .ch .ic.chl{flex:none;width:26px;height:26px;padding:5px;box-sizing:border-box;border-radius:50%;color:var(--accent);background:color-mix(in srgb,var(--accent) 10%,transparent);margin-left:auto}
+.cbox.cone details>summary>svg.ic.chv{width:26px;height:26px}
+/* the record page's photo box: "where was it?" — a chip per place of the day; a tap adds photos that carry the place */
+.phstops{margin-top:12px}.phstops>.label{margin:0 0 6px}
+.phsrow{display:flex;flex-wrap:wrap;gap:8px}
+main .chip.phstop{max-width:100%;min-height:44px;padding:6px 12px;gap:6px;text-align:left}
+.chip.phstop .ic{width:16px;height:16px;flex:none;color:var(--muted)}
+.chip.phstop .pn{min-width:0;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+.chip.phstop .ic.pp{flex:none;width:15px;height:15px;stroke-width:2.4;color:var(--accent)}
+.chip.phstop .pc{flex:none;font-size:12.5px;font-weight:700;color:color-mix(in srgb,var(--leaf) 60%,var(--ink))}
+.chip.phstop.has{border-color:color-mix(in srgb,var(--leaf) 55%,var(--rule));background:color-mix(in srgb,var(--leaf) 9%,var(--paper))}
+.lgmos .phgrp+.phgrp{margin-top:10px}
+.phsrow:not(.all) .phstop.extra{display:none}
+main .chip.phmore{min-height:44px;padding:6px 10px 6px 12px;gap:6px;color:var(--muted)}
+.chip.phmore .ic{width:16px;height:16px;flex:none}
+/* the day's legs inside Today's "getting around" fold: a row a leg, no dashed line, the navigate pin on the right */
+.dlegs{list-style:none;margin:0;padding:0}
+.dlegs>li{display:flex;align-items:center;gap:10px;padding:10px 0;border-top:1px solid color-mix(in srgb,var(--cb,var(--accent)) 18%,transparent)}
+.dlegs>li:first-child{border-top:0;padding-top:4px}
+.dlegs .dli{flex:none;width:28px;display:grid;place-items:center;font-size:20px;line-height:1}
+.dlegs .dli .tli{margin:0}.dlegs .dli .emi{width:24px;height:24px}
+.dlegs .dli .dot{width:8px;height:8px;border-radius:50%;background:color-mix(in srgb,var(--cb,var(--accent)) 60%,var(--paper))}
+.dlegs .dlt{flex:1;min-width:0;display:grid;gap:1px;font-size:14.5px;line-height:1.35;overflow-wrap:anywhere}
+.dlegs .dlt b{font-weight:700}.dlegs .dlt .to{font-weight:600}
+.dlegs .dlt .arr{color:color-mix(in srgb,var(--cb,var(--accent)) 70%,var(--ink));font-weight:700}
+.dlegs .dlt small{font-size:13px;color:var(--muted);margin-top:2px}
+.dlegs .navb{margin:0}
+.cbox>.dlegs{margin:2px 0 4px}
+.cbox>.dlsum{margin:10px 0 2px;font-size:15px;font-weight:700}
+.dlegs .dlt>small:first-child{margin:0 0 1px;font-size:11.5px;font-weight:600;letter-spacing:.06em;text-transform:uppercase}
+.dlegs .dlt a{color:var(--accent);font-weight:600}
+.dlegs .dli>.ic{width:20px;height:20px;color:color-mix(in srgb,var(--cb,var(--accent)) 70%,var(--ink))}
+.dlegs .dlt .pts{margin:0}
+.cbox details.cmore>.fb .pts{margin:2px 0 0}
+.cbox details.cmore>.fb .pts+.stay{margin-top:12px;padding-top:12px;border-top:1px solid color-mix(in srgb,var(--cb,var(--accent)) 18%,transparent)}
+/* the timeline's "next" tag is a small pill: the row became a column flex box (44 px taps), which stretched it across the whole row */
+.tl.plan.brief li>div[role=button]>.nexttag{align-self:flex-start;margin-bottom:2px}
 
 /* where to eat, on the day itself: the meal to eat now or next is ringed and tagged, a meal already behind us folds to its one line */
 .emeal.nextm{border-color:color-mix(in srgb,var(--mk) 70%,var(--ink));box-shadow:0 0 0 2px color-mix(in srgb,var(--mk) 40%,transparent)}

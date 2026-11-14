@@ -103,7 +103,7 @@ function render() {
   if (p[0] === 't' && p[2] === 'search' && enter) setTimeout(() => { const q = $('#bookq'); if (q) q.focus(); }, 60);   // a search page opens ready to type
   renderProgress(); packBoxes(app); if (typeof hydrateMap === 'function') hydrateMap(app);   // the passport map walks the kids to a tapped day
   // the photo picker is one input outside #app, so a render while the picker is open cannot replace it and drop the chosen photos
-  const fp = document.getElementById('fpick'), host = app.querySelector('[data-fpick]'); if (fp && host) { fp.dataset.t = host.dataset.t; fp.dataset.d = host.dataset.d; }
+  const fp = document.getElementById('fpick'), host = app.querySelector('[data-fpick]'); if (fp && host) { fp.dataset.t = host.dataset.t; fp.dataset.d = host.dataset.d; }   // (the place a "where was it?" chip set stays: a background redraw while the phone's gallery is open must not drop it)
   if (typeof hydrateColours === 'function') hydrateColours(app);   // kid.js loads after this file
   if (enter && p[3] === 'full' && p[4] !== undefined) setTimeout(() => { const el = document.getElementById(`pg-${p[2]}-${p[4]}`); if (el && !el.closest('.tp.one')) el.scrollIntoView(); }, 0);   // after the router's scroll-to-top   // a glance card opens the report on its section
   if (p[2] === 'log' && p[4] === 'ai' ? aiOpened !== location.hash && (aiOpened = location.hash) : (aiOpened = null)) setTimeout(() => { const el = document.getElementById('aipanel'); if (el) { el.scrollIntoView({ block: 'start' }); el.classList.add('flash'); } }, 60);   // the 21:30 reminder: open at tonight's Claude panel
@@ -134,8 +134,7 @@ const mapLegacy = (id) => { const t = trips().find((x) => x.id === id || x.legac
 
 function topBar(t, p) {
   const sub = t && p[2] && p[2] !== 'hub';
-  const up = !t ? null : p[2] === 'today' && p[4] === 'full' ? [`#/t/${esc(t.id)}/today/${esc(p[3])}`, L('วันนี้', 'Today')]
-    : ['stays', 'sos', 'prep', 'learn', 'plan'].includes(p[2]) && p[3] === 'full' ? [`#/t/${esc(t.id)}/${p[2]}`, L('หน้าสรุป', 'Summary')]
+  const up = !t ? null : ['stays', 'sos', 'prep', 'learn', 'plan'].includes(p[2]) && p[3] === 'full' ? [`#/t/${esc(t.id)}/${p[2]}`, L('หน้าสรุป', 'Summary')]
     : p[2] === 'eat' && p[3] === 'all' ? [`#/t/${esc(t.id)}/eat`, L('ร้านอาหารทีละวัน', 'Places to eat, day by day')]
     : sub ? [`#/t/${esc(t.id)}`, L('เมนูเล่ม', 'Book menu')] : ['#/', L('ชั้นหนังสือ', 'Bookshelf')];
   const back = t ? `<a class="ibtn" href="${up[0]}" aria-label="${up[1]}">${ic('back')}</a>`
@@ -461,13 +460,14 @@ function planLite(t, i) {
 ${pl.stay && pl.stay.name ? `<p class="plstay">${ic('stays')}<span><small>${L('คืนนี้นอนที่', 'Tonight we sleep at')}</small><b>${esc(pl.stay.name)}</b></span></p>` : ''}
 <a class="learnlink" href="#/t/${esc(t.id)}/today/${i}/full">${ic('doc')}<b>${L('ดูแผนเต็มของวันนี้', 'See the day’s full plan')}</b>${ic('chev')}</a></details>`;
 }
+// tonight's bed with its address: the name once — an address that already starts with the hotel's name is shown alone
+const stayLine = (pl) => (pl.stay ? ((nm, ad) => `<p class="stay"><b>${L('ที่พักคืนนี้', 'Tonight')}</b> ${ad && ad.startsWith(nm.split(/\s+/).slice(0, 2).join(' ')) ? '' : `${esc(nm)}<br>`}<span class="addr">${addrHtml(ad)}</span> ${extA(mapsUrl(pl.stay.q || pl.stay.addr), L('แผนที่', 'Map') + ' ↗')}</p>`)(pl.stay.name || '', pl.stay.addr || '') : '');
 function planHtml(t, i, open, wx, o = {}) {
   const pl = t.days[i].plan || {}, rows = pl.plan || [], dwx = wx && t.days[i].wx;
   if (!rows.length && !pl.moving && !pl.pick && !pl.planB) return '';
   const nl = (pl.learn || []).length, nq = (pl.quiz || []).length, wxl = dwx ? dayFacts({ wx: t.days[i].wx }) : '';
   const picked = new Set((pl.picks || []).flatMap((p) => [p.name, p.alt && p.alt.name]).filter(Boolean)), nfood = (pl.food || []).reduce((n, f) => n + f.items.filter((x) => !picked.has(x.name)).length, 0) + eatMore(pl).length;
-  // tonight's bed: the name once — an address that already starts with the hotel's name is shown alone
-  const stay = pl.stay ? ((nm, ad) => `<p class="stay"><b>${L('ที่พักคืนนี้', 'Tonight')}</b> ${ad && ad.startsWith(nm.split(/\s+/).slice(0, 2).join(' ')) ? '' : `${esc(nm)}<br>`}<span class="addr">${addrHtml(ad)}</span> ${extA(mapsUrl(pl.stay.q || pl.stay.addr), L('แผนที่', 'Map') + ' ↗')}</p>`)(pl.stay.name || '', pl.stay.addr || '') : '';
+  const stay = stayLine(pl);
   return `<details class="dayplan${o.full ? ' full' : ''}"${open ? ' open' : ''}><summary>${L('แผนวันนี้', 'Plan for the day')}${rows.length ? ` <span class="label">· ${rows.length} ${L('ช่วง', 'steps')}</span>` : ''}</summary>
 <div class="pgrid">${pl.moving || (pl.legs || []).length || pl.route || dwx ? `<aside class="strip"><div class="kicker">${L('การเดินทาง', 'Getting around')}</div>
 ${pl.moving ? `<div class="moving">${pts(T(pl.moving), 'tight')}</div>` : ''}
@@ -482,12 +482,13 @@ ${pl.money ? `<section class="cbox c-leaf money"><h3 class="ch">${ic('money')}${
 ${(pl.tips || []).length ? `<section class="cbox c-sun"><h3 class="ch">${ic('learn')}${L('ควรรู้วันนี้', 'Good to know today')}</h3><ul class="tips">${pl.tips.map((x) => `<li${TIPK[x.kind] ? ` class="tk-${x.kind}"` : ''}>${lead(T(x))}</li>`).join('')}</ul></section>` : ''}
 ${(pl.picks || []).length ? `<h5 class="ph">${L('ร้านแนะนำวันนี้ · เน้นร้านคนท้องถิ่น', "Today's picks · locals' places first")} <a class="mini" href="#/t/${esc(t.id)}/eat/all">${L('ร้านทั้งหมด', 'All places')} ›</a></h5><ul class="picks">${pl.picks.map(pickHtml).join('')}</ul>` : ''}
 ${o.eat ? (nfood ? `<a class="learnlink" href="${o.eat}">🍽️ <b>${L('ร้านตามทางวันนี้', "Places to eat along today's route")}</b><span class="label">${L(`${nfood} ร้าน`, `${nfood} places`)}</span>${ic('chev')}</a>` : '') : `${(pl.food || []).length ? `<details class="sub"><summary>${L('กินตามเส้นทางวันนี้', "Eat along today's route")} <span class="label">· ${pl.food.reduce((n, f) => n + f.items.length, 0)}</span></summary><p class="label">${L('เรียงตามจุดที่ผ่าน · ★ = ร้านแนะนำ · กดชื่อเพื่อเปิด Google Maps', 'In the order you pass them · ★ = a pick · tap a name for Google Maps')}</p>${pl.food.map((f) => ((xs) => (xs.length ? `<h5>${esc(T(f.stop))}</h5><ul class="eats">${xs.map(foodHtml).join('')}</ul>` : ''))(f.items.filter((x) => !picked.has(x.name)))).join('')}</details>` : ''}
-${eatMore(pl).length ? `<details class="sub"><summary>${L('ร้านอื่นใกล้ๆ', 'More places to eat nearby')} <span class="label">· ${eatMore(pl).length}</span></summary><ul class="eats">${eatMore(pl).map((e) => `<li><b>${e.q ? mapA(e.q, esc(e.name) + ' ↗') : esc(e.name)}</b>${e.pr ? ` <span class="label">${esc(T(e.pr))}</span>` : ''}${T(e.note) ? `<br><small>${esc(T(e.note))}</small>` : ''}</li>`).join('')}</ul></details>` : ''}`}
+${eatMore(pl).length ? `<details class="sub"><summary>${L('ร้านอื่นใกล้ๆ', 'More places to eat nearby')} <span class="label">· ${eatMore(pl).length}</span></summary><ul class="eats">${eatMore(pl).map(eatLi).join('')}</ul></details>` : ''}`}
 ${o.learn ? (nl || nq || pl.tale ? `<a class="learnlink" href="${o.learn}">📚 <b>${L('เรียนรู้ของวันนี้', "Today's things to learn")}</b><span class="label">${[nl && L(`${nl} เรื่อง`, `${nl} cards`), nq && L(`คำถาม ${nq} ข้อ`, `${nq} questions`), pl.tale && L('นิทาน', 'a story')].filter(Boolean).join(' · ')}</span>${ic('chev')}</a>` : '') : `${(pl.learn || []).length ? `<details class="sub"><summary>${L('เรียนรู้ระหว่างทาง', 'Learn on the way')} <span class="label">· ${pl.learn.length}</span></summary>${pl.learn.map((x) => `<div class="learn"><b>${esc(T(x.name))}</b> <span class="label">${esc(T(x.country))}</span><ul>${(x.facts || []).map((f) => `<li>${lead(T(f))}</li>`).join('')}</ul>${x.kid ? `<p class="kidline"><b>${L('เล่าให้เด็กฟัง', 'For the kids')}</b> ${esc(T(x.kid))}</p>` : ''}</div>`).join('')}</details>` : ''}
 ${(pl.quiz || []).length ? `<details class="sub"><summary>${L('ถามหนูในรถ', 'Quiz in the car')} <span class="label">· ${pl.quiz.length}</span></summary>${quizHtml(pl.quiz)}</details>` : ''}
 ${pl.tale ? taleHtml(t, i, pl.tale) : ''}`}
 ${o.learn ? '' : `<p class="label">${L('จากคู่มือ · ราคาและเวลาเปิดเช็กซ้ำก่อนไป · เลขจองไม่ได้เก็บที่นี่', 'From the manual · re-check prices and hours before travelling · booking numbers live in the guide app, not here')}</p>`}</div></div></details>`;
 }
+const eatLi = (e) => `<li><b>${e.q ? mapA(e.q, esc(e.name) + ' ↗') : esc(e.name)}</b>${e.pr ? ` <span class="label">${esc(T(e.pr))}</span>` : ''}${T(e.note) ? `<br><small>${esc(T(e.note))}</small>` : ''}</li>`;
 // "more nearby" leaves out what the picks and the by-stop list already show
 const eatMore = (pl) => { const seen = [...(pl.picks || []).flatMap((p) => [p.name, p.alt && p.alt.name]), ...(pl.food || []).flatMap((f) => f.items.map((x) => x.name))].filter(Boolean).map((x) => x.toLowerCase());
   return (pl.eat || []).filter((e) => { const n = String(e.name || '').toLowerCase(); return n && !seen.some((x) => x === n || x.includes(n) || n.includes(x)); }); };
@@ -736,9 +737,25 @@ const TL_ICON = [[/\bdeparts?\b|\bflight\b|\bfly\b|boarding|\bTG ?\d|\bQF ?\d|ta
 const tlIcon = (r) => { const en = (r && r.en) || ''; const m = TL_ICON.find(([re]) => re.test(en.split(' · ')[0])) || TL_ICON.find(([re]) => re.test(en)); return m ? `<span class="tli" aria-hidden="true">${emoIn(m[1])}</span>` : ''; };
 // Today's timeline (owner's review, Nov 2026): each step reads as its first clause; the rest (" · " pieces) folds below it, one tap opens it (sheets.js)
 // a step with its own headline (seed format: plan rows carry h {th, en}, a fun line that starts with an emoji) shows that line; the whole step folds below it
-const tlMore = (r) => !!(r && r.h && T(r.h)) || T(r).includes(' · ');
-const tlBrief = (r) => { const own = r && r.h && T(r.h); const [a, ...b] = own ? [own, ...T(r).split(' · ')] : T(r).split(' · '); return `<span class="tm"><span class="tmt">${own ? emoIn(esc(a)) : tlIcon(r) + esc(a)}</span>${b.length ? `<span class="tlchev" aria-hidden="true">${ic('chev')}</span>` : ''}</span>${b.length ? `<ul class="tsub">${b.map((x) => `<li>${esc(x)}</li>`).join('')}</ul>` : ''}`; };
-// today: the day as one sheet (short timeline, then label → answer rows like the manual's tables); the full plan is one tap away (/today/<i>/full)
+const tlNote = (r) => (r && r.note ? T(r.note) : '');   // a step's own note (the Australia book has 52): it was on the full plan only
+const tlMore = (r) => !!(r && r.h && T(r.h)) || T(r).includes(' · ') || !!tlNote(r);
+const tlBrief = (r) => { const own = r && r.h && T(r.h), nt = tlNote(r); const [a, ...b] = own ? [own, ...T(r).split(' · ')] : T(r).split(' · '); return `<span class="tm"><span class="tmt">${own ? emoIn(esc(a)) : tlIcon(r) + esc(a)}</span>${b.length || nt ? `<span class="tlchev" aria-hidden="true">${ic('chev')}</span>` : ''}</span>${b.length || nt ? `<ul class="tsub">${b.map((x) => `<li>${esc(x)}</li>`).join('')}${nt ? `<li class="tnote">${esc(nt)}</li>` : ''}</ul>` : ''}`; };
+/* Today is one page (owner, Nov 2026: "Full plan จำเป็นไหม … ทำให้เหลือหน้าเดียวโดยที่รวมกัน แต่อย่าให้เสียการใช้งานง่ายของหน้าวันนี้").
+   The second page (/today/<i>/full) repeated the timeline and then held two thirds of the day's words nowhere else: the legs with their
+   directions, the stay's address, the bill, the day's tips, each step's note, the long eating lists, the learn cards, quiz and story.
+   Now the short view is the page as it was, and every box carries its own "more" one tap below it:
+     timeline step → its details and its note · getting around → a row a leg, the manual's words + tonight's address (fold) · meals → what to order at the picks (fold) · eat along the route → the long list (the box is the fold)
+     money → the bill (the box is the fold) · good to know → the tips (the box is the fold) · learn → that day on the learn page (link).
+   "สรุป · เต็ม" (daySeg, action dayfull) opens or closes all of it in place; the address keeps the choice (/full), so a search result or the
+   record page's link lands on the day fully open. Two versions, always — on one page. */
+// the day's legs on Today (owner, Nov 2026, on the old full page's "getting around": "ปรับส่วนนี้ให้ดูง่ายหน่อย" — bullets, then a dashed line of
+// the same legs, an underlined "Directions", a second route button): one row a leg — how we travel as a picture (the timeline's own icons),
+// from on one line and "→ to" on the next, the how-and-how-long under them, and the navigate pin of every other place on this page
+// a leg's picture is the way of travel its words name first ("Walk (or a taxi with bags)" is a walk), not the first in the icon list
+const legIcon = (en) => { const m = TL_ICON.map(([re, e]) => [String(en || '').search(re), e]).filter(([k]) => k >= 0).sort((x, y) => x[0] - y[0])[0]; return m ? `<span class="tli">${emoIn(m[1])}</span>` : ''; };
+const legRow = (g) => { const by = T(g.by), icon = legIcon((g.by && g.by.en) || by);
+  return `<li><span class="dli" aria-hidden="true">${icon || '<i class="dot"></i>'}</span><span class="dlt"><b>${esc(g.from)}</b><b class="to"><span class="arr" aria-hidden="true">→</span> ${esc(g.to)}</b>${by ? `<small>${esc(by)}</small>` : ''}</span>${g.url ? `<a class="navb" href="${esc(g.url)}" target="_blank" rel="noopener" aria-label="${esc(L('นำทาง: ', 'Directions: ') + g.from + ' → ' + g.to)}">${ic('pin')}</a>` : ''}</li>`; };
+const daySeg = (full) => `<div class="dayhd"><b>${L('แผนของวัน', 'The day’s plan')}</b><span class="seg dayseg" role="group" aria-label="${L('ดูแผนแบบสรุปหรือแบบเต็ม', 'The plan short or in full')}">${[['0', L('สรุป', 'Short')], ['1', L('เต็ม', 'Full')]].map(([v, lb]) => `<button type="button" data-a="dayfull" data-v="${v}" aria-pressed="${(v === '1') === !!full}">${lb}</button>`).join('')}</span></div>`;
 // the if-then table as the owner's seeds write it ({cols, rows, mishap}) — the in-app import's model answers {plans:{head, cols, rows}}
 const ifthenOf = (f) => (f && !Array.isArray(f.rows) && f.plans && Array.isArray(f.plans.rows) ? { ...f, cols: f.plans.cols || f.cols, rows: f.plans.rows, head: f.plans.head || f.head } : { ...(f || {}), rows: Array.isArray(f && f.rows) ? f.rows : [] });
 // on the day itself: which timeline steps are behind us and which one is next (each row in its own time zone — Bangkok rows on day 1)
@@ -762,25 +779,41 @@ function nextCard(t, i) {
   return isEditor() ? `<a class="nextc done" href="#/t/${esc(t.id)}/log/${i}"><span class="nx"><span class="nl">${L('วันนี้', 'Today')}</span><time>✓</time></span><span class="nt"><b>${L('ครบทุกช่วงของวันนี้แล้ว', 'Every step of today is done')}</b><small>${L('บันทึกวันนี้ก่อนนอน', 'Record the day before bed')}</small></span>${ic('chev')}</a>`
     : `<div class="nextc done"><span class="nx"><span class="nl">${L('วันนี้', 'Today')}</span><time>✓</time></span><span class="nt"><b>${L('ครบทุกช่วงของวันนี้แล้ว', 'Every step of today is done')}</b></span></div>`;
 }
-function dayGlance(t, i, pre, split) {   // pre (before the trip; never named `brief`, which would hide the brief() teaser below and crash a money line without "Today ≈"): the timeline, then everything else folded under one line
-  const d = t.days[i], pl = d.plan || {}, rows = pl.plan || [], full = `#/t/${esc(t.id)}/today/${i}/full`;
+function dayGlance(t, i, pre, split, full) {   // pre (before the trip; never named `brief`, which would hide the brief() teaser below and crash a money line without "Today ≈"): the timeline, then everything else folded under one line; split: [the timeline, the rest], so the page can put the reminders line and the bag between them; full: every step, fold and the rest of the day open
+  const d = t.days[i], pl = d.plan || {}, rows = pl.plan || [], op = full ? ' open' : '';
   if (!rows.length && !pl.moving && !pl.pick && !pl.planB) return '';
   const st = tlStates(t, i);   // on the day itself: steps whose time has passed fade, the next one is marked
-  const money = T(pl.money), mm = money.match(/(?:วันนี้|today)\s*≈\s*[^·(]+/i), nl = (pl.learn || []).length, nq = (pl.quiz || []).length;
+  const money = T(pl.money), mm = money.match(/(?:วันนี้|today)\s*≈\s*[^·(]+/i), nl = (pl.learn || []).length, nq = (pl.quiz || []).length, tips = pl.tips || [], legs = pl.legs || [];
   const row = (dt, dd, cls) => `<div${cls ? ` class="${cls}"` : ''}><dt>${dt}</dt><dd>${dd}</dd></div>`;
-  const box = (c, icon, title, rowsHtml) => (rowsHtml ? `<section class="cbox c-${c}"><h3 class="ch">${ic(icon)}${title}</h3><dl class="dsheet">${rowsHtml}</dl></section>` : '');
-  const go = [pl.moving && row(L('เดินทาง', 'Getting around'), esc(T(pl.moving))),
-    pl.stay && row(L('คืนนี้', 'Tonight'), `<span class="nmrow">${esc(pl.stay.name)}${navB(pl.stay.q || pl.stay.addr, pl.stay.name)}</span>`),
-    ...((t.info || {}).more || []).filter((m) => m.img && new RegExp(`^Day ${i + 1}\\b`).test((m.title || {}).en || '')).map((m) => row(L('แผนที่', 'Map'), `<a href="${esc(m.img)}" target="_blank" rel="noopener">${esc(T(m.title).replace(/^[^·]*·\s*/, ''))} ↗</a>`))].filter(Boolean).join('');
+  const chv = ic('chev', 'chv');
+  const box = (c, icon, title, rowsHtml, foot) => (rowsHtml || foot ? `<section class="cbox c-${c}"><h3 class="ch">${ic(icon)}${title}</h3>${rowsHtml ? `<dl class="dsheet">${rowsHtml}</dl>` : ''}${foot || ''}</section>` : '');
+  const more = (sum, body) => `<details class="dfold cmore"${op}><summary><span class="fs">${sum}</span>${chv}</summary><div class="fb">${body}</div></details>`;   // a box's own detail, at its foot
+  const fbox = (c, icon, title, sub, body) => `<section class="cbox c-${c} cone"><details class="dfold"${op}><summary class="ch">${ic(icon)}<span class="fs">${title}${sub ? ` <span class="cs">${sub}</span>` : ''}</span>${chv}</summary><div class="fb">${body}</div></details></section>`;   // a box that is one fold: its heading is the summary
+  const lbox = (c, icon, href, title, sub) => `<section class="cbox c-${c} cone"><a class="ch" href="${href}">${ic(icon)}<span class="fs">${title}${sub ? ` <span class="cs">${sub}</span>` : ''}</span>${ic('chev', 'chl')}</a></section>`;   // a box that is one link: the long list lives on its own page
+  const addr = pl.stay && pl.stay.addr;
+  // getting around & tonight (owner, Nov 2026: a list of bullet points here "ยัง UI ไม่สวย … ปรับให้เข้ากับอันอื่น"): the box reads like the meals and the
+  // timeline — a row a leg (the travel picture, from and "→ to", how long, the navigate pin), tonight's bed and the day's map in the same shape.
+  // The manual's own words about the day's travel (prices, how often, which bay) and the stay's address wait in the foot fold; a one-line
+  // summary ("2 h 55 in 3 legs") stays above the rows. A day without legs shows those words as its one row.
+  const mv = T(pl.moving), mvShort = !!mv && points(mv).length === 1 && mv.length <= 48, mvFold = !!mv && !mvShort && legs.length > 0;
+  const maps = ((t.info || {}).more || []).filter((m) => m.img && new RegExp(`^Day ${i + 1}\\b`).test((m.title || {}).en || ''));
+  const goRows = [...(legs.length ? legs.map(legRow) : mv && !mvShort ? [`<li><span class="dli" aria-hidden="true">${ic('route')}</span><span class="dlt">${pts(mv, 'tight')}</span></li>`] : []),
+    pl.stay && `<li class="dlbed"><span class="dli" aria-hidden="true">${emoIn('🛏️')}</span><span class="dlt"><small>${L('คืนนี้', 'Tonight')}</small><b>${esc(pl.stay.name)}</b></span>${navB(pl.stay.q || pl.stay.addr, pl.stay.name)}</li>`,
+    ...maps.map((m) => `<li><span class="dli" aria-hidden="true">${ic('image')}</span><span class="dlt"><small>${L('แผนที่', 'Map')}</small><a href="${esc(m.img)}" target="_blank" rel="noopener">${esc(T(m.title).replace(/^[^·]*·\s*/, ''))} ↗</a></span></li>`)].filter(Boolean).join('');
+  const go = `${mvShort ? `<p class="dlsum">${esc(mv)}</p>` : ''}${goRows ? `<ol class="dlegs">${goRows}</ol>` : ''}`;
+  const goSum = [mvFold && L('รายละเอียดการเดินทาง', 'more about getting around'), addr && L('ที่อยู่ที่พัก', 'tonight’s address')].filter(Boolean).join(' · ');
+  const goMore = goSum ? more(goSum.charAt(0).toUpperCase() + goSum.slice(1), `${mvFold ? pts(mv, 'tight') : ''}${addr ? stayLine(pl) : ''}`) : '';
+  const picked = new Set((pl.picks || []).flatMap((p) => [p.name, p.alt && p.alt.name]).filter(Boolean)), nfood = (pl.food || []).reduce((n, f) => n + f.items.filter((x) => !picked.has(x.name)).length, 0) + eatMore(pl).length;
   const food = [pl.pick && row(L('ร้านเด็ด', 'Local pick'), esc(T(pl.pick))),
     ...(pl.picks || []).map((p) => row(`<span class="mtag mk-${mealKind(p)}">${esc(T(p.meal).split(' · ')[0])}</span>${T(p.meal).includes(' · ') ? `<span class="mt">${esc(T(p.meal).split(' · ').slice(1).join(' · '))}</span>` : ''}`, mealDd(p), 'meal'))].filter(Boolean).join('');
-  const more = [money && row(L('เงินวันนี้', 'Money today'), `<span class="num">${esc(mm ? mm[0].replace(/^(?:วันนี้|today)\s*/i, '').trim() : brief(money))}</span>`),
-    d.wx && row(L('อากาศ', 'Weather'), esc(T(d.wx))),
-    wxLine(t, i) && !pre && row(L('พยากรณ์วันนี้', 'Live forecast'), `<span class="wxlive">${emoIn(esc(wxLine(t, i)))}</span>`),   // before the trip the live line sits above the fold instead
-    (nl || nq) && row(L('เรียนรู้', 'Learn'), esc(L(`${nl} เรื่อง · ${nq} คำถามในรถ`, `${nl} card${nl === 1 ? '' : 's'} · ${nq} car question${nq === 1 ? '' : 's'}`)))].filter(Boolean).join('');
-  const tl = `${rows.length ? `<section class="cbox c-sky" id="tlbox"><h3 class="ch">${ic('clock')}${L('ไทม์ไลน์', 'Timeline')}</h3><ol class="tl plan brief">${rows.map((r, k) => `<li${st[k] ? ` class="${st[k]}"` : ''}><time>${esc(tlTime(r))}</time><div${tlMore(r) ? ' role="button" tabindex="0" aria-expanded="false"' : ''}>${st[k] === 'next' ? `<span class="nexttag">${L('ถัดไป', 'Next')}</span> ` : ''}${tlBrief(r)}</div></li>`).join('')}</ol></section>` : ''}`;
-  const rest = `${pre && wxLine(t, i) ? `<p class="wxpre">${ic('weather')} <span class="wxlive">${emoIn(esc(wxLine(t, i)))}</span></p>` : ''}${pre ? `<details class="dmore"><summary><span><b>${L('รายละเอียดวันนี้', 'The rest of the day')}</b><small>${L('เดินทาง · มื้ออาหาร · แผนสำรอง · เงิน · อากาศ', 'Getting around · meals · plan B · money · weather')}</small></span>${ic('chev', 'chv')}</summary>` : ''}<div class="cgrid">${box('ind', 'route', L('เดินทางและที่พัก', 'Getting around & tonight'), go)}${box('sun', 'eat', L('มื้ออาหาร', 'Meals'), food)}${pl.planB ? `<section class="cbox c-hot"><h3 class="ch">${ic('shuffle')}${L('แผนสำรอง', 'Plan B')}</h3>${pts(T(pl.planB))}</section>` : ''}${box('leaf', 'money', L('เงิน อากาศ และเรื่องเล่า', 'Money, weather, stories'), more)}</div>${pre ? '</details>' : ''}
-${reportBtn(full, L('อ่านแผนเต็มของวันนี้', "Read today's full plan"))}`;
+  // the eating part of the manual's day, word for word: what to order at each pick and its backup, the places along the route by stop, the others nearby
+  const near = eatMore(pl), foodMore = (pl.picks || []).length ? more(L('ร้านแนะนำสั่งอะไรดี', 'What to order at the picks'), `<ul class="picks">${pl.picks.map(pickHtml).join('')}</ul>`) : '';
+  // the long list (the Australia book has 40 places on one day) is its own one-line box near the end, so opening it pushes nothing else down
+  const along = nfood ? fbox('sun', 'eat', L('กินตามทางวันนี้', 'Eat along today’s route'), esc(L(`${nfood} ร้าน`, `${nfood} place${nfood === 1 ? '' : 's'}`)), `${(pl.food || []).length ? `<p class="label">${L('เรียงตามจุดที่ผ่าน · ★ = ร้านแนะนำ · กดชื่อเพื่อเปิด Google Maps', 'In the order you pass them · ★ = a pick · tap a name for Google Maps')}</p>${pl.food.map((f) => ((xs) => (xs.length ? `<h5>${esc(T(f.stop))}</h5><ul class="eats">${xs.map(foodHtml).join('')}</ul>` : ''))(f.items.filter((x) => !picked.has(x.name)))).join('')}` : ''}${near.length ? `<h5>${L('ร้านอื่นใกล้ๆ', 'More places to eat nearby')}</h5><ul class="eats">${near.map(eatLi).join('')}</ul>` : ''}`) : '';
+  const lk = nl || nq || pl.tale ? infoBlocks(t).meta.learn.findIndex((m) => m.key === 'days') : -1;
+  const live = wxLine(t, i);
+  const tl = `${daySeg(full)}${rows.length ? `<section class="cbox c-sky" id="tlbox"><h3 class="ch">${ic('clock')}${L('ไทม์ไลน์', 'Timeline')}</h3><ol class="tl plan brief">${rows.map((r, k) => { const cl = [st[k], full && tlMore(r) ? 'open' : ''].filter(Boolean).join(' '); return `<li${cl ? ` class="${cl}"` : ''}><time>${esc(tlTime(r))}</time><div${tlMore(r) ? ` role="button" tabindex="0" aria-expanded="${!!full}"` : ''}>${st[k] === 'next' ? `<span class="nexttag">${L('ถัดไป', 'Next')}</span> ` : ''}${tlBrief(r)}</div></li>`; }).join('')}</ol></section>` : ''}`;
+  const rest = `${live ? `<p class="wxpre">${ic('weather')} <span class="wxlive">${emoIn(esc(live))}</span></p>` : ''}${pre ? `<details class="dmore"${op}><summary><span><b>${L('รายละเอียดวันนี้', 'The rest of the day')}</b><small>${L('เดินทาง · มื้ออาหาร · แผนสำรอง · เงิน · ควรรู้', 'Getting around · meals · plan B · money · good to know')}</small></span>${ic('chev', 'chv')}</summary>` : ''}<div class="cgrid">${go || goMore ? `<section class="cbox c-ind"><h3 class="ch">${ic('route')}${L('เดินทางและที่พัก', 'Getting around & tonight')}</h3>${go}${goMore}</section>` : ''}${box('sun', 'eat', L('มื้ออาหาร', 'Meals'), food, foodMore)}${pl.planB ? `<section class="cbox c-hot"><h3 class="ch">${ic('shuffle')}${L('แผนสำรอง', 'Plan B')}</h3>${pts(T(pl.planB))}</section>` : ''}${money ? fbox('leaf', 'money', L('เงินวันนี้', 'Money today'), `<span class="num">${esc(mm ? mm[0].replace(/^(?:วันนี้|today)\s*/i, '').trim() : brief(money))}</span>`, moneyHtml(money)) : ''}${tips.length ? fbox('teal', 'learn', L('ควรรู้วันนี้', 'Good to know today'), esc(L(`${tips.length} ข้อ`, `${tips.length} tip${tips.length === 1 ? '' : 's'}`)), `<ul class="tips">${tips.map((x) => `<li${TIPK[x.kind] ? ` class="tk-${x.kind}"` : ''}>${lead(T(x))}</li>`).join('')}</ul>`) : ''}${along}${lk >= 0 ? lbox('rose', 'book', `#/t/${esc(t.id)}/learn/full/${lk}`, L('เรียนรู้ของวันนี้', 'Today’s things to learn'), esc([nl && L(`${nl} เรื่อง`, `${nl} card${nl === 1 ? '' : 's'}`), nq && L(`คำถามในรถ ${nq} ข้อ`, `${nq} car question${nq === 1 ? '' : 's'}`), pl.tale && L('นิทานของไกด์', 'the guide’s story')].filter(Boolean).join(' · '))) : ''}</div><p class="label dfoot"${full ? '' : ' hidden'}>${L('จากคู่มือ · ราคาและเวลาเปิดเช็กซ้ำก่อนไป · เลขจองไม่ได้เก็บที่นี่', 'From the manual · re-check prices and hours before travelling · booking numbers live in the guide app, not here')}</p>${pre ? '</details>' : ''}`;
   return split ? [tl, rest] : tl + rest;
 }
 // grown-ups switch the trip reminders on per phone (the server pushes 30 min before each timed step of the day);
@@ -865,7 +898,7 @@ function viewToday(t, j, full) {
   const strip = t.days.map((x, k) => `<a href="#/t/${esc(t.id)}/today/${k}${full ? '/full' : ''}" aria-current="${k === i}">${k === dn ? `<span class="today">${L('วันนี้', 'Today')}</span>` : ''}<b>${String(k + 1).padStart(2, '0')}</b><small>${esc(fmtDay(x.date, { day: 'numeric', month: 'short' }))}</small></a>`).join('');
   // before the trip (owner's review, Nov 2026: this page ran 3,500 px months ahead): the countdown with the two things to do now,
   // the day's timeline, the rest of the day under one line, the bag closed, the kids' mission waiting for the trip
-  const pre = dn < 0 && until > 0 && !full, has = pre ? hasInfo(t) : null;
+  const pre = dn < 0 && until > 0;   // `full` no longer changes the page: it is the same page with every detail open
   const banner = dn < 0 && until > 0 ? `<div class="call info${pre ? ' pre' : ''}"><b>${L(`อีก ${until} วันออกเดินทาง`, `${until} days to go`)}</b> <span class="cdsub">${L(`นี่คือแผนวันที่ ${i + 1} จากคู่มือ`, `This is the plan for day ${i + 1}`)}</span></div>`
     : dn < 0 && until <= 0 ? `<div class="call calm">${L('จบทริปแล้ว — เปิดสมุดความทรงจำได้เลย', 'The trip is over — open the memory book')}</div>` : '';
   const mission = ((t.passport || {}).days || [])[i], nop = `<div class="empty">${L('วันนี้ไม่มีแผนในคู่มือ', 'No plan in the manual for this day')}</div>`;
@@ -875,9 +908,9 @@ function viewToday(t, j, full) {
 ${nextCard(t, i)}${dayFacts(d)}
 ${banner}
 <div class="row quick">${pl.route ? extA(pl.route, ic('route') + ' ' + L('เส้นทางวันนี้', "Today's route"), 'qlink') : ''}${pl.stay ? extA(mapsUrl(pl.stay.q || pl.stay.addr), ic('stays') + ' ' + L('ไปที่พัก', 'To the stay'), 'qlink') : ''}</div>
-${full ? planHtml(t, i, true, false, { full: true }) || nop : ((g) => (g ? `${g[0]}${isEditor() && (dn >= 0 || until > 0) ? remindLine(t) : ''}${bagBlock(t, i)}${g[1]}` : `${isEditor() && (dn >= 0 || until > 0) ? remindLine(t) : ''}${bagBlock(t, i)}${nop}`))(dayGlance(t, i, pre, true))}
+${((g) => (g ? `${g[0]}${isEditor() && (dn >= 0 || until > 0) ? remindLine(t) : ''}${bagBlock(t, i)}${g[1]}` : `${isEditor() && (dn >= 0 || until > 0) ? remindLine(t) : ''}${bagBlock(t, i)}${nop}`))(dayGlance(t, i, pre, true, full))}
 ${!pre && mission && (mission.facts || []).length ? `<div class="part kidm">${L('ภารกิจของเด็กๆ วันนี้', "The kids' mission today")}</div><div class="call pick mission"><b>${esc(T(mission.title))}</b><ul class="tips">${mission.facts.map((f) => `<li>${esc(T(f))}</li>`).join('')}</ul></div>` : ''}
-${full ? '' : nextBlock(t, i)}${full ? '' : askBlock(t, i)}`;
+${nextBlock(t, i)}${askBlock(t, i)}`;
 }
 // the whole trip: one line per day (tap → that day); the road book with every plan is the full report
 function viewPlan(t, full) {
@@ -1078,12 +1111,58 @@ function favouritesHtml(t) {
 function photoBtn(t, m) {
   return `<button data-a="lb" data-v="${esc(m.id)}" data-t="${esc(t.id)}" aria-label="${esc(m.caption || L('รูป', 'Photo'))}"><img loading="lazy" src="${esc(imgT(m))}" alt="">${m.highlight ? '<span class="star">⭐</span>' : ''}${m.caption ? `<span class="cap">${emoIn(esc(m.caption))}</span>` : ''}${m.pending ? '<span class="cap">⏳</span>' : ''}</button>`;
 }
-// the day's photos by stop (media.place, from "look at today's photos" or the lightbox): one mosaic per place in the order the stops were
-// first photographed, the photos with no place last and unlabelled; a day with no places at all is one plain mosaic
+/* Photos by spot (owner, Nov 2026: "การใส่รูป … ถ้าอยากให้มีแบบทุก check in spot หรือแนะนำตาม landmark หลักๆ"): the record page's photo box lists the
+   places of the day as suggestions (photoStops below: airports on a flight day, the sights, the meals, the hotels). A tap on one opens the picker and those photos carry the place (media.place,
+   set at upload) and check the place in; the book's day page then shows them under that stop. A place is kept as the name it had when the
+   photo was added — stopOf() finds the stop again in either language, so the label follows the language on screen. */
+// Suggestions, in the order of a travel day (owner, Nov 2026: "มี suggestions ให้เราแปะรูปตามได้ไหม เช่น สนามบิน โรงแรม ที่เที่ยว"):
+//   a flight day → the airports the day names (its legs, planned stops, the kids' map) or a plain "airport", and "on the plane"
+//   the sights → the planned stops, then the day's stops on the kids' map that no chip covers yet
+//   the hotels → this morning's (when we move on) and tonight's · the meals → the planned food stops (behind one "meals" chip until
+//   it is tapped, so the box stays short) · the check-ins made by hand
+const SPOT_AIR = /airport|สนามบิน|suvarnabhumi|สุวรรณภูมิ|don mueang|ดอนเมือง/i, SPOT_FLY = /✈|🛫|🛬|\bflights?\b/i;   // a flight day: the plane in a step's headline, or the word (never "land": Toy Story Land is not a landing)
+const SPOT_STOP = new Set(['the', 'and', 'for', 'bay', 'park', 'beach', 'hotel', 'resort', 'island', 'city', 'village', 'point', 'head', 'port', 'new', 'old', 'airport', 'international', 'terminal', 'apartment']);
+const spotWords = (x) => String(x || '').toLowerCase().split(/[^a-z฀-๿]+/).filter((w) => w.length >= 3 && !SPOT_STOP.has(w));
+const spotSame = (a, b) => { const y = spotWords(b); return spotWords(a).some((w) => y.includes(w)); };   // two names of one place ("Disneyland" · "Hong Kong Disneyland")
+const bedLike = (bed, nm) => { const a = String(bed || '').toLowerCase(), c = String(nm || '').toLowerCase(); return !!a && !!c && (a.startsWith(c) || c.startsWith(a)) && Math.min(a.length, c.length) >= 0.6 * Math.max(a.length, c.length); };   // a planned stop that is the hotel itself ("Noah's Ark Hotel" · "Noah's Ark Hotel & Resort"), never a sight in the same town
+function photoStops(t, i) {
+  const d = (t.days || [])[i] || {}, pl = d.plan || {}, out = [], seen = new Set();
+  const add = (key, nm, kind) => { const en = String((nm && nm.en) || '').trim(), th = String((nm && nm.th) || '').trim(), id = (en || th).toLowerCase(); if (!id || seen.has(id)) return null; seen.add(id); const x = { key: key || '', kind, name: { th: th || en, en: en || th } }; out.push(x); return x; };
+  const covered = (nm) => out.some((x) => spotSame(x.name.en, (nm && nm.en) || ''));
+  const mp = (t.passport || {}).map || {}, mapStops = ((mp.days || [])[i] || []).map((k) => (mp.stops || []).find((x) => x.k === k)).filter(Boolean);
+  const planned = d.planned || [], isAir = (x) => /✈|🛫|🛬/.test(x.e || '') || SPOT_AIR.test(`${x.en || ''} ${x.th || ''}`);
+  const beds = [((t.days[i - 1] || {}).plan || {}).stay, pl.stay].filter((b) => b && b.name).map((b) => b.name).filter((n, k, a) => a.indexOf(n) === k);
+  if ((pl.plan || []).some((r) => SPOT_FLY.test(`${r.en || ''} ${(r.h || {}).en || ''}`))) {
+    const known = [...planned.filter((p) => p.kind !== 'food' && isAir(p)), ...mapStops.filter(isAir)], ends = [];
+    (pl.legs || []).forEach((g) => [g.from, g.to].forEach((x) => { const part = String(x || '').split(',').map((y) => y.trim()).find((y) => SPOT_AIR.test(y)); if (part && !beds.some((b) => spotSame(b, part)) && !ends.some((e) => spotSame(e, part) || e === part)) ends.push(part); }));
+    const airs = ends.map((e) => known.find((k) => spotSame(k.en || '', e)) || { en: e });
+    known.forEach((k) => { if (!airs.some((a) => a === k || spotSame(a.en || '', k.en || ''))) airs.push(k); });
+    if (!airs.length) airs.push({ th: 'สนามบิน', en: 'Airport' });
+    airs.forEach((a, n) => { add(a.key, a, 'air'); if (n === 0) add('', { th: 'บนเครื่องบิน', en: 'On the plane' }, 'air'); });
+  }
+  planned.filter((p) => p.kind !== 'food').forEach((p) => add(p.key, p, beds.some((b) => bedLike(b, p.en)) ? 'stay' : 'place'));
+  mapStops.filter((x) => !isAir(x) && !covered(x) && !beds.some((b) => spotSame(b, x.en || ''))).forEach((x) => add('', x, 'map'));
+  beds.forEach((b) => { if (!out.some((x) => x.kind === 'stay' && bedLike(b, x.name.en))) add('', { en: b }, 'stay'); });
+  planned.filter((p) => p.kind === 'food').forEach((p) => add(p.key, p, 'food'));
+  placesOf(t.id, i).forEach((p) => add(p.key, p.name && typeof p.name === 'object' ? p.name : { en: p.name || p.key }, p.kind === 'food' ? 'food' : 'place'));
+  return out;
+}
+const stopOf = (t, i, place) => { const p = String(place || '').trim().toLowerCase(); return p && i != null ? photoStops(t, i).find((x) => [x.name.th, x.name.en].some((n) => n.toLowerCase() === p)) || null : null; };
+const STOP_IC = { air: 'plane', place: 'pin', map: 'pin', food: 'eat', stay: 'stays' };
+function photoSpots(t, i, ph) {
+  const stops = photoStops(t, i); if (!stops.length) return '';
+  const at = ph.map((m) => stopOf(t, i, m.place)), cnt = (x) => at.filter((y) => y && y.name.en === x.name.en).length;
+  const chip = (x, hide) => { const n = cnt(x), nm = T(x.name);
+    return `<button type="button" class="chip phstop${n ? ' has' : ''}${hide ? ' extra' : ''}" data-a="pickphotos" data-t="${esc(t.id)}" data-d="${i}" data-place="${esc(nm)}" data-key="${esc(x.key || '')}" data-kind="${x.kind}" aria-label="${esc(L(`เพิ่มรูปของ ${nm}`, `Add photos of ${nm}`))}${n ? esc(L(` · มีแล้ว ${n} รูป`, ` · ${n} so far`)) : ''}">${ic(STOP_IC[x.kind] || 'pin')}<span class="pn">${esc(nm)}</span>${n ? `<span class="pc">✓ ${n}</span>` : ic('plus', 'pp')}</button>`; };
+  const meals = stops.filter((x) => x.kind === 'food'), wait = meals.filter((x) => !cnt(x));   // a meal that already has photos is shown; the others wait behind one chip
+  return `<div class="phstops"><p class="label">${L('แนะนำจุดแปะรูปของวันนี้ · แตะแล้วเลือกรูปของที่นั่น', 'Photo spots for today · tap one and pick its photos')}</p><div class="phsrow">${stops.map((x) => chip(x, wait.includes(x))).join('')}${wait.length ? `<button type="button" class="chip phmore" data-a="phmore" aria-expanded="false">${ic('eat')}<span class="pn">${L(`มื้ออาหาร ${wait.length} ร้าน`, `Meals · ${wait.length}`)}</span>${ic('chev')}</button>` : ''}</div></div>`;
+}
+// the day's photos by stop (media.place, from the record page's chips, "look at today's photos" or the lightbox): one mosaic per place in the
+// order the stops were first photographed, the photos with no place last and unlabelled; a day with no places at all is one plain mosaic
 function mosaicByPlace(t, ph) {
   if (!ph.length) return '';
   const groups = [], at = {};
-  for (const m of ph) { const k = (m.place || '').trim(); if (!(k in at)) { at[k] = groups.length; groups.push({ place: k, ph: [] }); } groups[at[k]].ph.push(m); }
+  for (const m of ph) { const raw = (m.place || '').trim(), st = raw ? stopOf(t, m.day, raw) : null, k = st ? 's:' + st.name.en.toLowerCase() : raw; if (!(k in at)) { at[k] = groups.length; groups.push({ place: st ? T(st.name) : raw, ph: [] }); } groups[at[k]].ph.push(m); }
   if (groups.length === 1 && !groups[0].place) return `<div class="mosaic">${ph.map((m) => photoBtn(t, m)).join('')}</div>`;
   groups.sort((a, b) => (a.place ? 0 : 1) - (b.place ? 0 : 1));
   return groups.map((g) => `<div class="phgrp">${g.place ? `<div class="label">📍 ${esc(g.place)}</div>` : ''}<div class="mosaic">${g.ph.map((m) => photoBtn(t, m)).join('')}</div></div>`).join('');
@@ -2299,7 +2378,8 @@ ${planLite(t, i)}
 
 <section class="blk" id="lgphotos"><h3>${ic('camera')} ${L('รูป', 'Photos')}${ph.length ? ` <span class="label">${ph.length}</span>` : ''}</h3>
 <div class="row"><button class="btn" type="button" data-a="pickphotos" data-fpick data-t="${esc(t.id)}" data-d="${i}">＋ ${L('เพิ่มรูป', 'Add photos')}</button><span class="progress" id="prog2"></span></div>
-${ph.length ? `<div class="mosaic" style="margin-top:10px">${ph.map((m) => photoBtn(t, m)).join('')}</div>` : ''}${upBlock()}</section>
+${photoSpots(t, i, ph)}
+${ph.length ? `<div class="lgmos" style="margin-top:10px">${mosaicByPlace(t, ph)}</div>` : ''}${upBlock()}</section>
 
 <section class="blk" id="lgquotes"><h3>${ic('quote')} ${L('คำพูดน่ารัก', 'Things they said')}</h3>
 <div class="row" role="group">${kids.concat('both').map((k) => `<button class="chip" data-a="who" data-v="${k}" aria-pressed="${quoteWho === k}">${kidFace(k)} ${esc(kidName(k))}</button>`).join('')}</div>

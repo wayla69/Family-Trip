@@ -9,6 +9,8 @@ const esc = (s) => String(s == null ? '' : s).replace(/[&<>"']/g, (c) => ({ '&':
 // one line-icon set for the grown-ups' pages (kid mode keeps its emoji): 24-unit grid, 1.75 stroke, drawn in currentColor
 const ICONS = {
   search: '<circle cx="11" cy="11" r="7"/><path d="M20 20l-4-4"/>',
+  plus: '<path d="M12 5v14M5 12h14"/>',
+  plane: '<path d="M20.2 3.8c.9.9.2 2.8-1.2 4.2l-2.7 2.7 1.9 8.3-1.6 1.6-3.6-6.6-3.2 3.2.3 2.6-1.3 1.3-1.7-3.2-3.2-1.7 1.3-1.3 2.6.3 3.2-3.2L4.4 8.4 6 6.8l8.3 1.9L17 6c1.4-1.4 3.3-2.1 3.2-2.2z"/>',
   camera: '<path d="M4 8h3l2-3h6l2 3h3v11H4z"/><circle cx="12" cy="13" r="3.5"/>',
   home: '<path d="M3 11l9-7 9 7"/><path d="M5 10v10h14V10"/><path d="M10 20v-6h4v6"/>',
   today: '<rect x="3" y="5" width="18" height="16" rx="2"/><path d="M3 10h18M8 3v4M16 3v4"/><path d="M8 14h3v3H8z"/>',
