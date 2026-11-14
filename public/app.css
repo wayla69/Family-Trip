@@ -2578,8 +2578,10 @@ section.pg .dstamps.pst.c3 b,section.pg .dstamps.pst.c4 b{font-size:16px}section
 .shbig{display:grid;place-items:center;height:clamp(180px,32vh,340px);margin:6px 0 16px;border-radius:28px;background:radial-gradient(circle at 50% 60%,#fff,#E8EEF8)}
 .shbig span{font-size:clamp(130px,24vh,260px);line-height:1;filter:brightness(0);opacity:.82;transition:filter .5s,opacity .5s,transform .5s}
 .shbig.lit span{filter:none;opacity:1;transform:scale(1.08)}
+.shbig.flip span{scale:-1 1}.shbig.half span{clip-path:inset(0 0 50% 0)}.shbig.lit.half span{clip-path:none}   /* the top levels: the shadow faces the other way, or only its top half shows */
 .feedpal{position:relative;display:grid;place-items:center;height:clamp(200px,34vh,360px);margin:6px 0 16px;border-radius:28px;background:radial-gradient(circle at 50% 70%,#FFF8E6,#FFE7B8)}
-.feedpal .pal{font-size:clamp(120px,22vh,230px);line-height:1}
+.feedpal .pal{font-size:clamp(120px,22vh,230px);line-height:1;border:0;background:none;padding:0}
+.feedpal .want{transition:opacity .4s}.feedpal .want.gone{opacity:0}   /* the memory levels: the wish hides, a tap on the animal shows it again */
 .feedpal .want{position:absolute;top:14px;right:18px;font-size:clamp(44px,7vh,72px);line-height:1;background:#fff;border-radius:50%;width:1.6em;height:1.6em;display:grid;place-items:center;box-shadow:0 8px 18px -10px rgba(0,0,0,.4)}
 .feedpal .want::after{content:"";position:absolute;left:-6px;bottom:6px;width:18px;height:18px;background:#fff;transform:rotate(45deg);border-radius:3px}
 .feedpal .fedrow{position:absolute;left:0;right:0;bottom:10px;text-align:center;font-size:clamp(26px,4vh,40px);letter-spacing:4px}
@@ -2610,7 +2612,8 @@ section.pg .dstamps.pst.c3 b,section.pg .dstamps.pst.c4 b{font-size:16px}section
 .washbox .suds{position:absolute;font-style:normal;font-size:34px;transform:translate(-50%,-50%);pointer-events:none;opacity:.9}
 .bsrow{display:flex;align-items:stretch;justify-content:center;gap:clamp(10px,2vw,22px);min-height:clamp(220px,36vh,420px);margin:6px 0 16px}
 .bsrow button{flex:1;max-width:260px;min-height:120px;border:0;border-radius:28px;background:rgba(255,255,255,.75);padding:10px;display:flex;align-items:flex-end;justify-content:center;box-shadow:0 10px 22px -14px rgba(0,0,0,.45)}   /* one height for all: the animals stand on one line */
-.bsrow button span{font-size:calc(clamp(120px,22vw,230px) * var(--z,1));line-height:1}
+.bsrow button span{font-size:calc(clamp(120px,22vw,230px) * var(--z,1) * var(--bk,1));line-height:1}
+.bsrow.many{gap:6px}.bsrow.many button{min-width:0;padding:8px 2px;border-radius:20px}   /* five or six sizes on a phone */
 .bsrow button.right{background:#DCF5E3;outline:4px solid #2E7D32}.bsrow button.nope{animation:nope .4s}
 @media (prefers-reduced-motion:no-preference){.farmfield .fa.jump{animation:fajump .6s}@keyframes fajump{30%{transform:translateY(-28%) scale(1.12)}60%{transform:translateY(4%) scale(.95)}}.washbox .suds{animation:suds .9s ease-out forwards}@keyframes suds{to{transform:translate(-50%,-140%) scale(1.5);opacity:0}}.washbox.clean .wa{animation:shpop .6s}}
 /* the levels of the thinking games: the levels reached as chips, the one in play tinted and ringed (never a solid block), a star on each one won */
@@ -2619,8 +2622,10 @@ section.pg .dstamps.pst.c3 b,section.pg .dstamps.pst.c4 b{font-size:16px}section
 .lvc b{font-size:20px}.lvc i{position:absolute;right:-6px;top:-6px;font-style:normal;font-size:16px;line-height:1}
 .lvc.on{background:color-mix(in srgb,var(--accent) 16%,#fff);box-shadow:inset 0 0 0 3px var(--accent)}
 .kgch[data-n="2"]{grid-template-columns:repeat(2,1fr)}.kgch[data-n="3"]{grid-template-columns:repeat(3,1fr)}.kgch[data-n="4"]{grid-template-columns:repeat(2,1fr)}.kgch[data-n="5"],.kgch[data-n="6"]{grid-template-columns:repeat(3,1fr)}
+.kgch[data-n="7"],.kgch[data-n="8"]{grid-template-columns:repeat(4,1fr)}.kgch[data-n="9"]{grid-template-columns:repeat(3,1fr)}   /* the top levels: up to nine choices */
+.kgch[data-n="7"] button span,.kgch[data-n="8"] button span,.kgch[data-n="9"] button span{font-size:clamp(34px,7vw,64px)}.kgch[data-n="7"] b,.kgch[data-n="8"] b{font-size:clamp(12px,2.8vw,17px)}
 @media (min-width:700px){.kgch[data-n="4"]{grid-template-columns:repeat(4,1fr)}}
-.jigtray.many .jpiece{--pw:clamp(64px,7vw,104px)}   /* 9 to 16 pieces on the higher levels: smaller in the tray, the board keeps its size */
+.jigtray.many .jpiece{--pw:clamp(64px,7vw,104px)}.jigtray.lots .jpiece{--pw:clamp(46px,5.4vw,78px)}.jigtray.lots{gap:6px}   /* 20 to 36 pieces */   /* 9 to 16 pieces on the higher levels: smaller in the tray, the board keeps its size */
 .lvall{margin:0;text-align:center;font-size:clamp(20px,2.6vw,28px);font-weight:700;background:rgba(255,255,255,.85);border-radius:20px;padding:12px}
 /* the thinking games, part two: maze · where is it · odd one out · what comes next */
 .mazeb{display:grid;grid-template-columns:repeat(var(--n),1fr);width:min(100%,58vh,560px);aspect-ratio:1;margin:4px auto 12px;border:6px solid #4B3F8F;border-radius:16px;background:#FFFDF6;touch-action:none;overflow:hidden;box-shadow:0 12px 26px -16px rgba(0,0,0,.5)}
@@ -2628,6 +2633,7 @@ section.pg .dstamps.pst.c3 b,section.pg .dstamps.pst.c4 b{font-size:16px}section
 .mazeb .mz.wr{border-right:5px solid #4B3F8F}.mazeb .mz.wb{border-bottom:5px solid #4B3F8F}
 .mazeb .mz.on{background:#FFE07A}   /* a bright track the finger leaves behind */
 .mazeb .mz span{font-size:calc(min(100vw - 40px,58vh,560px) / var(--n) * .62);line-height:1;pointer-events:none}
+.mazeb .mz .mzstar{animation:none}
 .mazeb.won{box-shadow:0 0 0 6px #FFD43B,0 12px 26px -16px rgba(0,0,0,.5)}
 .whereb{display:grid;grid-template-columns:repeat(3,1fr);gap:clamp(8px,1.6vw,16px);width:min(100%,56vh,520px);aspect-ratio:1;margin:4px auto 12px;padding:clamp(8px,1.6vw,16px);border-radius:24px;background:rgba(255,255,255,.55);box-shadow:inset 0 0 0 3px rgba(31,42,58,.12)}
 .wcell{border:0;border-radius:18px;background:#fff;display:grid;place-items:center;padding:0;box-shadow:0 8px 18px -12px rgba(0,0,0,.45);min-width:0}
@@ -2657,6 +2663,7 @@ section.pg .dstamps.pst.c3 b,section.pg .dstamps.pst.c4 b{font-size:16px}section
 .hmbox{position:relative;height:clamp(240px,40vh,440px);margin:4px 0 12px;border-radius:28px;background:rgba(255,255,255,.6);box-shadow:inset 0 0 0 3px rgba(255,255,255,.7)}
 .hmi{position:absolute;translate:-50% -50%;border:0;background:none;padding:0;width:clamp(56px,11vw,96px);height:clamp(56px,11vw,96px);display:grid;place-items:center}
 .hmi span{font-size:clamp(44px,8.5vw,80px);line-height:1}
+.hmbox.many .hmi{width:clamp(44px,8.5vw,76px);height:clamp(44px,8.5vw,76px)}.hmbox.many .hmi span{font-size:clamp(32px,6.6vw,60px)}   /* up to twenty things */
 .hmi.ct::after{content:attr(data-c);position:absolute;right:-4px;top:-4px;min-width:30px;height:30px;padding:0 6px;border-radius:999px;background:var(--accent);color:var(--on-accent,#fff);font-weight:700;font-size:17px;display:grid;place-items:center}
 .hmch button span{font-size:clamp(40px,7vw,68px);font-weight:800;color:#1F2A3A}
 .cakebox{position:relative;width:min(100%,62vh,560px);aspect-ratio:200/160;margin:4px auto 10px}
