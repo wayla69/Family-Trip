@@ -887,6 +887,22 @@ const T = 'hk-macau-2026';
   ok((await page.textContent('.kidday small')).includes('5') && (await page.evaluate(() => window.__said)).some((x) => x.startsWith('Taipa Village')), 'map: tapping Taipa walks there (day 5) and says its name');
   const wl = await boxOf(page, '.tmap .walkers'), pin = await boxOf(page, '.tmap .pin[data-v="taipa"]');
   ok(Math.abs(wl.x + wl.width / 2 - (pin.x + pin.width / 2)) < 12, 'map: the walkers stand on the pin');
+  {   // the place card (owner, Nov 2026: the map must be of real use): the stop's day — what we do, what to find, one thing to know — every line read aloud; ‹ › walk the journey
+    const card = await page.evaluate(() => ({ name: document.querySelector('.mcname b').textContent, day: document.querySelector('.mcname small').textContent, doN: document.querySelectorAll('.mcdo button').length, first: document.querySelector('.mcdo b').textContent, find: document.querySelectorAll('.mcfind button').length, fact: (document.querySelector('.mcfact p') || {}).textContent || '', line: document.querySelector('.kidguide p').textContent, raw: /\d\d:\d\d| · /.test(document.querySelector('#mapcard').textContent) }));
+    await page.evaluate(() => { window.__said.length = 0; }); await page.click('.mcdo button >> nth=0');
+    const read = await page.evaluate(() => window.__said.slice());
+    await page.click('.mcstep[data-v="1"]'); await page.waitForSelector('.tmap .pin.here[data-v="studio"]');
+    const next = await page.evaluate(() => ({ name: document.querySelector('.mcname b').textContent, also: (document.querySelector('.mcalso') || {}).textContent || '', day: document.querySelector('.kidday small').textContent }));
+    await page.click('.mcstep[data-v="-1"]'); await page.waitForSelector('.tmap .pin.here[data-v="taipa"]');
+    ok(card.name === 'Taipa Village' && /Day 5/.test(card.day) && card.doN >= 3 && card.doN <= 6 && card.find === 4 && card.fact.length > 20 && /day 5 we go to Taipa Village/.test(card.line) && !card.raw
+      && read.length === 1 && read[0].startsWith(card.first) && next.name === 'Studio City' && /Taipa Village/.test(next.also) && /5/.test(next.day),
+      `map: the place card tells the stop's day (up to six plan headlines, four things to find, one fact, no clock times), reads a line aloud on a tap, and ‹ › walk the journey (${JSON.stringify({ card, read, next })})`);
+    ok(await s.noHScroll(), 'map with its place card fits the phone');
+    await page.evaluate(() => document.querySelector('#mapcard').scrollIntoView({ block: 'start' })); await s.shot('08-map-card', false);
+    await page.click('[data-a="mapquest"]'); await page.waitForSelector('.questpath');
+    ok(await page.evaluate(() => /\/quest$/.test(location.hash) && !!document.querySelector('.qtown.open')), 'map: the place card leads to the adventure map');
+    await page.click('.kidbar button[data-v$="/map"]'); await page.waitForSelector('.tmap .walkers');
+  }
   ok(await s.noHScroll(), 'map + stickers fit the phone');
   await s.shot('12-kid-map', false);
   // the new games: photos, pairs, my mood, counting, trophies

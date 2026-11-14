@@ -2738,3 +2738,24 @@ section.pg .dstamps.pst.c3 b,section.pg .dstamps.pst.c4 b{font-size:16px}section
 .questline ul{list-style:none;margin:0;padding:0;display:grid;gap:8px}
 .questline li{display:grid;grid-template-columns:auto 1fr auto;align-items:center;gap:12px;padding:10px 14px;border-radius:var(--r,14px);background:var(--card);box-shadow:inset 0 0 0 1px var(--line)}
 .questline li img.face{width:40px;height:40px}.questline li span{min-width:0;line-height:1.45}
+/* the place card under the kid map: the stop's day in pictures and short lines, every line read aloud on a tap */
+.mapcard{display:grid;gap:14px;padding:14px;border-radius:28px;background:#fff;box-shadow:0 12px 26px -18px rgba(0,0,0,.5)}
+.mchead{display:grid;grid-template-columns:auto 1fr auto;align-items:center;gap:10px}
+.mcstep{width:56px;height:56px;border:0;border-radius:50%;background:var(--tint);color:var(--accent);font-size:34px;line-height:1;font-weight:700;display:grid;place-items:center;padding:0 0 4px}
+.mcstep:disabled{opacity:.3}
+.mcname{display:flex;align-items:center;gap:12px;min-width:0}.mcname>span,.mcname>img{flex:none;width:60px;height:60px;border-radius:50%;background:var(--tint);box-shadow:inset 0 0 0 3px var(--accent);display:grid;place-items:center;font-size:34px;line-height:1;object-fit:contain}
+.mcname b{display:block;font-size:clamp(22px,2.8vw,28px);line-height:1.2;color:var(--accent)}.mcname small{display:block;font-size:clamp(15px,1.9vw,18px);line-height:1.35;opacity:.8}
+.mcname small i{font-style:normal;font-weight:700;background:var(--accent);color:var(--on-accent,#fff);border-radius:999px;padding:1px 9px;margin:0 2px}
+.mcsec{display:grid;gap:8px}.mcsec>b{font-size:clamp(17px,2.1vw,20px)}
+.mcdo{display:grid;gap:8px}
+.mcdo button{display:grid;grid-template-columns:auto 1fr;align-items:center;gap:12px;border:0;border-radius:18px;background:var(--tint);padding:10px 14px;min-height:56px;text-align:left;font:inherit;color:#1F2A3A}
+.mcdo span{font-size:30px;line-height:1}.mcdo b{font-size:clamp(17px,2.2vw,21px);font-weight:600;line-height:1.3}
+.mcfind{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,130px),1fr));gap:8px}
+.mcfind button{position:relative;border:0;border-radius:20px;background:#fff;box-shadow:inset 0 0 0 3px var(--tint);padding:12px 6px 10px;display:grid;justify-items:center;gap:4px;font:inherit;color:#1F2A3A;min-width:0}
+.mcfind span{font-size:40px;line-height:1}.mcfind b{font-size:clamp(14px,1.9vw,17px);font-weight:600;line-height:1.25;text-align:center;overflow-wrap:anywhere}
+.mcfind .got{background:#FFF6D6;box-shadow:inset 0 0 0 3px #F2B01E}.mcfind i{position:absolute;right:-2px;top:-8px;font-style:normal;font-size:22px;line-height:1}
+.mcfact{display:grid;grid-template-columns:auto 1fr;align-items:center;gap:12px;border:0;border-radius:20px;background:#FFF6D6;padding:12px 14px;text-align:left;font:inherit;color:#1F2A3A}
+.mcfact span{font-size:34px;line-height:1}.mcfact p{margin:0;font-size:clamp(17px,2.1vw,20px);line-height:1.45}
+.mcphotos{display:grid;grid-template-columns:repeat(4,1fr);gap:6px;border:0;background:none;padding:0}.mcphotos img{width:100%;aspect-ratio:1;object-fit:cover;border-radius:14px}
+.mcalso{margin:0;font-size:clamp(15px,1.9vw,18px);opacity:.8;text-align:center}
+.mcgo{display:grid;gap:10px}
