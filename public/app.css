@@ -3002,5 +3002,13 @@ main .chip.phmore{min-height:44px;padding:6px 10px 6px 12px;gap:6px;color:var(--
 .dlegs .dlt .arr{color:color-mix(in srgb,var(--cb,var(--accent)) 70%,var(--ink));font-weight:700}
 .dlegs .dlt small{font-size:13px;color:var(--muted);margin-top:2px}
 .dlegs .navb{margin:0}
-.cbox details.cmore>.fb .dlegs+.stay{margin-top:6px;padding-top:12px;border-top:1px solid color-mix(in srgb,var(--cb,var(--accent)) 18%,transparent)}
-.dsheet dd>.pts{margin:0}
+.cbox>.dlegs{margin:2px 0 4px}
+.cbox>.dlsum{margin:10px 0 2px;font-size:15px;font-weight:700}
+.dlegs .dlt>small:first-child{margin:0 0 1px;font-size:11.5px;font-weight:600;letter-spacing:.06em;text-transform:uppercase}
+.dlegs .dlt a{color:var(--accent);font-weight:600}
+.dlegs .dli>.ic{width:20px;height:20px;color:color-mix(in srgb,var(--cb,var(--accent)) 70%,var(--ink))}
+.dlegs .dlt .pts{margin:0}
+.cbox details.cmore>.fb .pts{margin:2px 0 0}
+.cbox details.cmore>.fb .pts+.stay{margin-top:12px;padding-top:12px;border-top:1px solid color-mix(in srgb,var(--cb,var(--accent)) 18%,transparent)}
+/* the timeline's "next" tag is a small pill: the row became a column flex box (44 px taps), which stretched it across the whole row */
+.tl.plan.brief li>div[role=button]>.nexttag{align-self:flex-start;margin-bottom:2px}
