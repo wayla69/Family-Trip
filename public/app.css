@@ -2833,3 +2833,5 @@ section.pg .dstamps.pst.c3 b,section.pg .dstamps.pst.c4 b{font-size:16px}section
   .kidwrap.home{height:auto;min-height:100vh;min-height:100dvh;gap:8px}
   .kidwrap.home>.kidpagerwrap{flex:none;height:222px}
 }
+/* the passport's tasting card: each dish is its picture from the food library */
+.ticks.food .tick .e .ge{width:40px;height:40px;display:block}

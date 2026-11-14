@@ -553,6 +553,17 @@ const T = 'hk-macau-2026';
     'Australia, little edition too: Mika hops like a kangaroo on day 4 — a point/touch/sound mission every day, her new-words page, no words-to-say, explorer list or customs form');
   await page.click('.ppkids a[role=tab][href="#/passport/mimi/big-hop-2027"]'); await page.waitForSelector('.pp.kid-mimi #pl-master');
   ok(await page.locator('.mission .spot.little').count() === 0 && await page.locator('#m3 button[data-v^="spot.d3."]').count() === 4, 'Australia: Mimi keeps her own find-these missions');
+  {   // the tasting card draws each dish from the food library (owner, Nov 2026: "ต่อรูปใน การ์ดชิมอาหารในพาสปอร์ต"); a dish tasted is a sticker of its picture
+    await page.waitForFunction(() => [...document.querySelectorAll('.ticks.food .tick .e img.ge')].every((i) => i.complete), null, { timeout: 8000 }).catch(() => {});
+    const taste = await page.evaluate(() => { const t = trip('big-hop-2027'), l = kidLists(t, 'mimi').find((x) => x.yum || x.stars), rows = [...document.querySelectorAll(`#pl-${l.key} .tick`)];
+      const pics = rows.filter((r) => { const i = r.querySelector('.e img.ge'); return i && i.naturalWidth > 0 && i.getBoundingClientRect().width >= 32; }).length, plain = rows.filter((r) => !r.querySelector('.e img')).map((r) => r.querySelector('.e').textContent).filter((e) => foodArt(e));   // a dish left as an emoji although the library has it
+      const st = stickerSet(t, 'mimi').filter((x) => x.k.startsWith(l.key + '.'));
+      const src = (k) => { const i = document.querySelector(`#pl-${l.key} .tick button[data-v="${l.key}.${k}"]`); const im = i && i.closest('.tick').querySelector('.e img.ge'); return im ? im.getAttribute('src') : ''; };
+      return { lam: src('lamington'), pie: src('pie'), fish: foodArt('🐟'), snag: foodArt('🌭'), rows: rows.length, pics, plain, stickers: st.length, stickerArt: st.filter((x) => /^\/art\/(food|game)\//.test(x.img || '')).length, sx: document.documentElement.scrollWidth > innerWidth + 1 }; });
+    ok(taste.rows >= 8 && taste.pics === taste.rows && /food\/lamington\.webp$/.test(taste.lam) && /food\/meatpie\.webp$/.test(taste.pie) && taste.plain.length === 0 && taste.stickerArt === taste.pics && !taste.sx && taste.fish === '' && /food\/hotdog/.test(taste.snag),
+      `passport tasting card: every dish with a picture in the food library is drawn as that picture and its sticker carries it; a dish that names its own picture shows it (the lamington is the chocolate and coconut cube, the meat pie a savoury pie); an animal's picture never stands in for a dish (${JSON.stringify(taste)})`);
+    await page.evaluate(() => { const l = kidLists(trip('big-hop-2027'), 'mimi').find((x) => x.yum || x.stars); document.querySelector(`#pl-${l.key}`).scrollIntoView({ block: 'start' }); window.scrollBy(0, -70); }); await s.shot('07c-passport-tasting', false);
+  }
   await page.click('.ppkids a[role=tab][href="#/passport/mika/big-hop-2027"]'); await page.waitForSelector('.pp.kid-mika #lwords'); await page.waitForSelector('#m15 .spot.little', { state: 'attached' });   // (folded before the trip) Mika's page itself (#m15 alone also matches Mimi's page still on screen)
   await page.locator('.mapsec').screenshot({ path: path.join(OUT, 'phone-06b-map-au.png') });
   // kid mode: big buttons, locked until a grown-up holds the lock
