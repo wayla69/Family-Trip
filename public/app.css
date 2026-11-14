@@ -2697,7 +2697,7 @@ section.pg .dstamps.pst.c3 b,section.pg .dstamps.pst.c4 b{font-size:16px}section
 .qtown.ahead .qname b{opacity:.55;font-weight:600}
 .qwho{display:flex;align-items:flex-end}.qwho img{height:64px;width:auto}.qwho .qsib{height:44px;opacity:.9;margin-left:-6px}
 .qhead.nope{animation:nope .4s}
-.qbody{margin:6px 0 8px 0;padding:14px;border-radius:26px;background:#FAFDFF;box-shadow:0 12px 26px -18px rgba(0,0,0,.5);display:grid;gap:12px;position:relative}
+.qbody{margin:6px 0 8px 0;padding:14px;border-radius:26px;background:var(--qt,#FAFDFF);box-shadow:0 12px 26px -18px rgba(0,0,0,.5);display:grid;gap:12px;position:relative}
 .qms{display:grid;grid-template-columns:repeat(3,1fr);gap:10px}
 .qm{position:relative;border:0;border-radius:22px;background:#fff;padding:14px 6px 12px;display:grid;justify-items:center;gap:6px;font:inherit;color:#1F2A3A;box-shadow:inset 0 0 0 3px rgba(31,42,58,.1),0 8px 16px -12px rgba(0,0,0,.45);min-width:0}
 .qm span{font-size:clamp(40px,9vw,60px);line-height:1}.qm b{font-size:clamp(14px,3.4vw,18px);line-height:1.2;text-align:center;overflow-wrap:anywhere}
@@ -2727,3 +2727,10 @@ section.pg .dstamps.pst.c3 b,section.pg .dstamps.pst.c4 b{font-size:16px}section
 .qpic.all .qpicg{gap:0;box-shadow:inset 0 0 0 3px #F2B01E,0 0 0 5px #FFE7A3}.qpic.all .qpicg i{border-radius:0}
 .kgch button.hint,.bsrow button.hint,.wcell.hint,.basket.hint{outline:5px dashed #F2B01E;outline-offset:3px}   /* the helping hand after three wrong taps */
 @media (prefers-reduced-motion:no-preference){.qhid:not(.got) span{animation:wiggle 1.4s ease-in-out infinite}.kgch button.hint,.bsrow button.hint,.wcell.hint,.basket.hint{animation:bob 1s ease-in-out infinite}}
+/* the walk between towns: the character's copy hops along the road above everything; the cloud of the town reached floats off */
+.qwalk{position:fixed;z-index:40;pointer-events:none;object-fit:contain}
+.qcloud.lift{z-index:2}
+.qtown.done .qart .art{box-shadow:0 0 0 4px #fff,0 0 0 7px var(--accent),0 8px 18px -10px rgba(0,0,0,.5)}
+.qtown:not(.ahead) .qname b{color:var(--accent)}
+.questpath::before{border-left-color:rgba(31,42,58,.22)}
+@media (min-width:700px){.questpath::before{left:55px}.qart{width:112px;height:112px}.qart .art{width:100px;height:100px;font-size:52px}.qcloud{font-size:82px}.qwho img{height:84px}.qwho .qsib{height:58px}.qhead{min-height:112px;gap:20px}.qbody{padding:20px;gap:16px}.qms{gap:16px}.qm{padding:20px 8px 16px}.qpicg{width:min(100%,460px)}}
