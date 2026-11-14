@@ -3012,3 +3012,14 @@ main .chip.phmore{min-height:44px;padding:6px 10px 6px 12px;gap:6px;color:var(--
 .cbox details.cmore>.fb .pts+.stay{margin-top:12px;padding-top:12px;border-top:1px solid color-mix(in srgb,var(--cb,var(--accent)) 18%,transparent)}
 /* the timeline's "next" tag is a small pill: the row became a column flex box (44 px taps), which stretched it across the whole row */
 .tl.plan.brief li>div[role=button]>.nexttag{align-self:flex-start;margin-bottom:2px}
+
+/* where to eat, on the day itself: the meal to eat now or next is ringed and tagged, a meal already behind us folds to its one line */
+.emeal.nextm{border-color:color-mix(in srgb,var(--mk) 70%,var(--ink));box-shadow:0 0 0 2px color-mix(in srgb,var(--mk) 40%,transparent)}
+.emeal .eh3 .nexttag{margin-left:auto}
+details.emeal>summary{list-style:none;cursor:pointer;min-height:48px;box-sizing:border-box}
+details.emeal>summary::-webkit-details-marker{display:none}
+details.emeal>summary .mname{flex:1;min-width:0;font-size:14px;font-weight:500;color:var(--muted);white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+details.emeal[open]>summary .mname{visibility:hidden}
+/* night by night: a stay's name is never cut — its nights' columns grow to hold it and the strip scrolls sideways inside its own box */
+.nstrip{grid-template-columns:repeat(var(--n),minmax(38px,auto));width:max-content;min-width:100%;box-sizing:border-box}
+.nstrip .nb{overflow:visible;text-overflow:clip;padding:4px 8px}

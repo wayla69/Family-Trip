@@ -1513,7 +1513,7 @@ const T = 'hk-macau-2026';
       `today, "Full": every step and fold opens in place — a row a leg with its navigate pin (${full.legs}), tonight's address, the bill — the address says /full and the day strip keeps it; "Short" closes it all again (${short.h} → ${full.h} → ${back.h} px)`);
     // nothing the second page said is lost: every piece of the manual's full day is on Today (opened) or on the learn page it links to — all days, both books
     const lost = await page.evaluate(() => { const norm = (x) => String(x).toLowerCase().replace(/\s+/g, '').replace(/[↗›‹★·]/g, ''), div = (h) => { const d = document.createElement('div'); d.innerHTML = h; return d; };
-      const CHROME = /^(Plan for the day|· \d+ steps|Local tip|Today's picks|All places|The whole day's route|Timeline|Getting around|Tonight|Map|Plan B|Money today|Good to know today|Backup:|Eat along|More places|Learn on the way|Quiz in the car|From the manual|For the kids|Directions|Weather)/, out = [];
+      const CHROME = /^(Plan for the day|· \d+ steps|Local tip|Today's picks|All places|The whole day's route|Timeline|Getting around|Tonight|Map|Plan B|Money today|Good to know today|Backup:|Eat along|More places|Learn on the way|Quiz in the car|For the kids|Directions|Weather)/, out = [];
       for (const t of S.trips.filter((x) => /^(hk-macau-2026|big-hop-2027)$/.test(x.id))) { const learn = norm(div(viewLearn(t, true)).textContent);
         t.days.forEach((d, i) => { const today = norm(div(viewToday(t, i, true)).textContent), w = document.createTreeWalker(div(planHtml(t, i, true, false, { full: true })), NodeFilter.SHOW_TEXT); let n;
           while ((n = w.nextNode())) { const leaf = n.nodeValue.trim(); if (leaf.length < 2 || CHROME.test(leaf)) continue;
@@ -2066,12 +2066,27 @@ const T = 'hk-macau-2026';
   ok(td.time === '12:45' && /Sit-down show/.test(td.head) && /14:30/.test(td.then) && td.next > 0 && td.next < td.facts && td.facts < td.quick && td.quick < td.tl && td.tl < td.bag && td.bag < td.mission && (td.ask < 0 || td.mission < td.ask) && td.rec === 0 && td.h >= 60 && td.qh >= 44 && td.rows >= 44
     && late.done === 1 && late.past === 9 && late.next === 0 && await s.noHScroll(),
     `Today on the trip: the next step leads (12:00 → 12:45, then 14:30), then the day's facts, the two navigate pills, the timeline, the bag, the kids' mission, the helper last; nothing repeats the bar; after the last step the card leads to tonight's record (${JSON.stringify({ td, late })})`);
+  // where to eat on the day itself: a meal behind us folds to one line, the one to eat now or next is ringed and tagged
+  await page.goto(`${BASE}/#/t/${T}/eat`); await page.waitForSelector('.eatday .emeal');
+  const eatAt = () => page.evaluate(() => ({ all: document.querySelectorAll('.emeal').length, past: [...document.querySelectorAll('details.emeal.pastm:not([open])')].map((m) => m.querySelector('.mtag').textContent), mark: [...document.querySelectorAll('.emeal.nextm')].map((m) => `${m.querySelector('.mtag').textContent} ${m.querySelector('.nexttag').textContent}`), sumH: Math.min(48, ...[...document.querySelectorAll('details.emeal > summary')].map((x) => x.getBoundingClientRect().height)) }));
+  const eatLate = await eatAt();
+  await page.clock.setFixedTime(new Date('2026-12-06T12:00:00+08:00')); await page.evaluate(() => render()); const eatNoon = await eatAt();
+  await page.clock.setFixedTime(new Date('2026-12-06T10:00:00+08:00')); await page.evaluate(() => render()); const eatTen = await eatAt();
+  await page.locator('details.emeal.pastm > summary').first().click();
+  ok(eatNoon.all === 4 && eatNoon.past.join() === 'Breakfast' && eatNoon.mark.join() === 'Lunch Now' && eatTen.past.join() === 'Breakfast' && eatTen.mark.join() === 'Lunch Next' && eatLate.past.join() === 'Breakfast,Lunch,Dinner' && !eatLate.mark.length && eatNoon.sumH >= 44
+    && await page.locator('details.emeal.pastm[open] .epick').count() === 1 && await s.noHScroll(),
+    `eat page on the day: at 10:00 lunch is next, at 12:00 it is “now” and breakfast has folded to one line (a tap opens it), at 22:30 every timed meal has folded (${JSON.stringify({ eatTen, eatNoon, eatLate })})`);
+  await page.goto(`${BASE}/#/t/big-hop-2027/stays`); await page.waitForSelector('.nstrip');
+  const strip = await page.evaluate(() => ({ cut: [...document.querySelectorAll('.nstrip .nb')].filter((b) => b.scrollWidth > b.clientWidth + 1).map((b) => b.textContent), n: document.querySelectorAll('.nstrip .nb').length, scrolls: document.querySelector('.nstripw').scrollWidth > document.querySelector('.nstripw').clientWidth }));
+  ok(strip.n >= 8 && !strip.cut.length && strip.scrolls && await s.noHScroll(), `night by night (Australia, nine stays): no stay's name is cut — the strip scrolls inside its own box, the page does not (${JSON.stringify(strip)})`);
   await page.goto(BASE + '/#/'); await page.waitForSelector('.shelf');
   ok(await page.locator('.spine:not(.add)').count() >= 2, 'the shelf is still one step away (asked for by name)');
   await page.clock.setFixedTime(new Date('2026-11-20T12:00:00+08:00')); await page.goto(BASE + '/'); await page.waitForSelector('.shelf');
   ok(!/\/today/.test(page.url()), 'before the trip the app opens on the shelf as always');
   await page.goto(`${BASE}/#/t/${T}/today`); await page.waitForSelector('#tlbox');
   ok(await page.locator('.nextc').count() === 0 && await page.evaluate(() => document.querySelector('#tlbox').getBoundingClientRect().top < document.querySelector('details.bag').getBoundingClientRect().top), 'before the trip: no “next” card, the timeline still comes before the bag');
+  await page.goto(`${BASE}/#/t/${T}/eat/d/1`); await page.waitForSelector('.eatday .emeal');
+  ok(await page.locator('.emeal.pastm, .emeal.nextm').count() === 0 && await page.locator('section.emeal').count() === 4, 'eat page before the trip: every meal open, none marked');
   await page.goto(`${BASE}/#/t/big-hop-2027/today/2`); await page.waitForSelector('#tlbox');
   await page.evaluate(() => { lang = 'en'; render(); });
   const words = await page.evaluate(() => [...document.querySelectorAll('#tlbox time')].map((x) => x.textContent));

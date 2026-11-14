@@ -125,6 +125,7 @@ const A = {
     const f = b.dataset.v === '1';
     $$('.tl.plan.brief > li').forEach((li) => { const d = li.querySelector(':scope > [aria-expanded]'); if (d) { li.classList.toggle('open', f); d.setAttribute('aria-expanded', String(f)); } });
     $$('details.dfold, details.dmore').forEach((x) => { x.open = f; });
+    $$('.dfoot').forEach((x) => { x.hidden = !f; });   // the manual's footnote belongs to the full view
     $$('.dayseg button').forEach((x) => x.setAttribute('aria-pressed', String((x.dataset.v === '1') === f)));
     $$('.daystrip a').forEach((a) => a.setAttribute('href', a.getAttribute('href').replace(/\/full$/, '') + (f ? '/full' : '')));
     const cur = $('.daystrip a[aria-current=true]'); if (cur) history.replaceState(null, '', cur.getAttribute('href'));
