@@ -376,6 +376,30 @@ ${mm.m.stops.filter((s) => mm.seq.some((v) => v.k === s.k)).map((s) => `<g class
 <svg class="lbls" viewBox="0 0 ${MAP_W} ${MAP_H}" aria-hidden="true">${mm.m.stops.filter((s) => mm.seq.some((v) => v.k === s.k)).map((s) => `<text class="lbl" x="${s.x * MAP_W / 100}" y="${s.y * MAP_H / 100 + 31}">${esc(T(s))}</text>`).join('')}</svg>
 <div class="walkers" style="left:${s0.x}%;top:${s0.y}%" aria-hidden="true">${kids.filter((k) => kidArt(k)).map((k) => `<img class="${esc(k)} ${esc(kidBase(k))}" src="${kidArt(k, true)}" alt="">`).join('')}</div></div>`;
 }
+/* The place card under the kid map (owner, Nov 2026: "ไม่ค่อยมีประโยชน์หรือสาระเลย ทำให้มันใช้ได้จริงหน่อย"): the map was pins and a walk.
+   Now the stop the children stand on tells its day — what we do there (the plan's own headlines, read aloud on a tap), what to look for,
+   one thing to know, the family's photos of that day, the way into that town's missions — and ‹ › walk the journey stop by stop. */
+const noEmoji = (x) => String(x || '').replace(/[\p{Extended_Pictographic}️‍]/gu, '').replace(/\s+/g, ' ').trim();
+function mapCard(t, kid, day, at) {
+  const mm = mapModel(t); if (!mm) return { line: L('แตะรูปหมุด แล้วไปด้วยกันเลย!', "Tap a pin and we'll walk there!"), html: '' };
+  const pos = at !== undefined && at !== null && mm.seq[at] && mm.seq[at].day === day ? at : mapPos(mm, day), v = mm.seq[pos], st = mm.at[v.k], i = v.day, d = t.days[i], pd = ((t.passport || {}).days || [])[i] || {};
+  const rows = (((d.plan || {}).plan) || []).filter((r) => r && r.h && T(r.h)), step = Math.max(1, Math.ceil(rows.length / 6)), heads = rows.filter((_, n) => n % step === 0).slice(0, 6);
+  const spots = daySpots(t, i, kid), fact = (pd.facts || []).length ? T(pd.facts[pos % pd.facts.length]) : '', photos = mediaOf(t.id).filter((m) => m.day === i && !isDrawing(m) && !m.pending).slice(0, 4);
+  const today = dayNow(t) === i, name = T(st), others = (mm.m.days[i] || []).filter((k) => k !== v.k && mm.at[k]).map((k) => T(mm.at[k]));
+  const line = today ? L(`วันนี้เราอยู่ที่${name}!`, `Today we are at ${name}!`) : dayNow(t) >= 0 && i < dayNow(t) ? L(`เราไป${name}มาแล้ว จำได้ไหม?`, `We went to ${name}. Remember?`) : L(`วันที่ ${i + 1} เราจะไป${name}!`, `On day ${i + 1} we go to ${name}!`);
+  const sec = (e, th, en, inner) => (inner ? `<div class="mcsec"><b><span aria-hidden="true">${e}</span> ${L(th, en)}</b>${inner}</div>` : '');
+  const html = `<section class="mapcard" id="mapcard" style="--accent:${esc(pd.acc || t.theme.accent || '#1F3A5F')};--tint:${esc(pd.tint || '#F3F6FA')}">
+<div class="mchead"><button class="mcstep" data-a="mapstep" data-v="-1" aria-label="${L('ที่ก่อนหน้า', 'The stop before')}"${pos === 0 ? ' disabled' : ''}>‹</button>
+<div class="mcname">${st.art ? `<img src="${esc(st.art)}" alt="">` : `<span aria-hidden="true">${esc(st.e || '📍')}</span>`}<div><b>${wj(esc(name))}</b><small>${L('วันที่', 'Day')} ${i + 1}${today ? ` <i>${L('วันนี้', 'today')}</i>` : ''} ${wj(esc(T(pd.title) || T(d.title)))}</small></div></div>
+<button class="mcstep" data-a="mapstep" data-v="1" aria-label="${L('ที่ถัดไป', 'The next stop')}"${pos >= mm.seq.length - 1 ? ' disabled' : ''}>›</button></div>
+${sec('🧭', 'วันนั้นเราทำอะไร', 'What we do that day', heads.length ? `<div class="mcdo">${heads.map((r) => { const h = T(r.h), e = (h.match(/^[\p{Extended_Pictographic}️‍]+/u) || ['✨'])[0]; return `<button data-a="mapsay" data-say="${esc(noEmoji(h))}"><span aria-hidden="true">${esc(e)}</span><b>${esc(noEmoji(h))}</b></button>`; }).join('')}</div>` : '')}
+${sec('🔍', 'หาให้เจอนะ', 'Can you find them?', spots.length ? `<div class="mcfind">${spots.map((x) => `<button class="${ticked(t, x.key, kid) ? 'got' : ''}" data-a="mapsay" data-say="${esc(T(x))}"><span aria-hidden="true">${esc(x.e)}</span><b>${esc(T(x))}</b>${ticked(t, x.key, kid) ? '<i aria-hidden="true">⭐</i>' : ''}</button>`).join('')}</div>` : '')}
+${fact ? `<button class="mcfact" data-a="mapsay" data-say="${esc(fact)}"><span aria-hidden="true">💡</span><p>${esc(fact)}</p></button>` : ''}
+${sec('📸', 'รูปของเราวันนั้น', 'Our photos that day', photos.length ? `<button class="mcphotos" data-a="mapgo" data-d="${i}" data-v="#/kid/${esc(kid)}/photos" aria-label="${L('ดูรูป', 'Photos')}">${photos.map((m) => `<img src="${esc(imgT(m))}" alt="">`).join('')}</button>` : '')}
+${others.length ? `<p class="mcalso">${L(`วันเดียวกันเราไป${esc(others.join(' และ '))}ด้วย`, `The same day we also go to ${esc(others.join(' and '))}`)}</p>` : ''}
+<div class="mcgo"><button class="kidbig" data-a="mapquest" data-d="${i}" data-v="#/kid/${esc(kid)}/quest">🗺️ ${L('เล่นภารกิจของที่นี่', 'Play this place’s missions')}</button>${spots.length && dayNow(t) === i ? `<button class="kidbig ghost" data-a="mapgo" data-d="${i}" data-v="#/kid/${esc(kid)}/spot">🔍 ${L('ไปหาของกัน', 'Go and find them')}</button>` : ''}</div></section>`;
+  return { line, html };
+}
 // a pin on the passport map, for the grown-ups: which days we are there, the real place in Google Maps, directions, the day pages
 function pinSheet(t, s) {
   const days = ((t.passport.map || {}).days || []).map((ks, d) => (ks.includes(s.k) ? d : -1)).filter((d) => d >= 0), q = s.q || T(s);
@@ -820,8 +844,9 @@ ${door.art !== undefined ? artImg(t, Math.min(door.art, t.days.length - 1), 'big
 <div class="kidspots">${items.map((s) => { const on = ticked(t, `pack.${s.k}`, kid); return `<button class="${on ? 'on' : ''}" data-a="kidspot" data-t="${esc(t.id)}" data-d="" data-k="${esc(kid)}" data-v="pack.${esc(s.k)}" data-say="${esc(T(s))}" aria-pressed="${!!on}"><span>${esc(s.e)}</span><b>${esc(T(s))}</b>${on ? '<i>✓</i>' : ''}</button>`; }).join('')}</div>`;
   } else if (view === 'map' && pp.map) {
     if (mapFrom === null && kidEnter && !pre && i > 0 && mapModel(t)) mapFrom = mapPos(mapModel(t), Math.max(0, i - 1));   // walk in from yesterday's stop
-    body = `<div class="kidguide">${guideImg(0)}<p>${L('แตะรูปหมุด แล้วไปด้วยกันเลย!', "Tap a pin and we'll walk there!")}</p></div>
-${mapHtml(t, i, [kid].concat((t.theme.children || []).map((c) => c.slug).filter((s) => s !== kid)), mapAt !== null ? mapAt : pre ? 0 : null)}`;
+    const mAt = mapAt !== null ? mapAt : pre ? 0 : null, mc = mapCard(t, kid, i, mAt);
+    body = `<div class="kidguide">${guideImg(0)}<p>${mc.line}</p></div>
+${mapHtml(t, i, [kid].concat((t.theme.children || []).map((c) => c.slug).filter((s) => s !== kid)), mAt)}${mc.html}`;
   } else if (view === 'quiz' && ((d.plan || {}).quiz || []).length) {
     body = `<div class="kidguide">${guideImg(1)}<p>${L('แตะการ์ดเพื่อดูคำตอบ!', 'Tap a card to see the answer!')}</p></div>
 <div class="kidquiz">${d.plan.quiz.map((q, n) => `<button class="qcard" data-a="kidquiz" data-v="${n}" data-q="${esc(T(q.q))}" data-ans="${esc(T(q.a))}" aria-pressed="false"><small>${L('คำถาม', 'Question')} ${n + 1}</small><b>${esc(T(q.q))}</b><span class="ans" hidden>${esc(T(q.a))}</span></button>`).join('')}</div>`;
@@ -1010,6 +1035,18 @@ Object.assign(A, {
     const box = $('.tmap'), cur = box ? +box.dataset.pos : mapPos(mm, kidDayOf(t)), j = mm.seq.reduce((best, v, n) => (v.k === b.dataset.v && (best < 0 || Math.abs(n - cur) < Math.abs(best - cur)) ? n : best), -1);   // the visit nearest to where we stand
     if (j < 0 || j === cur) return;
     mapFrom = cur; mapAt = j; kidDay = mm.seq[j].day; render();
+  },
+  mapstep(b) {   // ‹ ›: the journey one stop at a time — the children walk there and its card opens
+    const kid = kidNow(), t = kidTrip(kid), mm = t && mapModel(t), box = $('.tmap'); if (!mm || !box) return;
+    const cur = +box.dataset.pos, j = cur + +b.dataset.v; if (j < 0 || j >= mm.seq.length) return;
+    beep('pop'); mapFrom = cur; mapAt = j; kidDay = mm.seq[j].day; render(); sayUi(T(mm.at[mm.seq[j].k]));
+  },
+  mapsay(b) { beep('tap'); burst(b, ['✨']); sayUi(b.dataset.say); },
+  mapgo(b) { beep('tap'); kidDay = +b.dataset.d; kidPhoto = 0; nav(b.dataset.v); },
+  mapquest(b) {   // this place's town on the adventure map (a town not reached yet: the road opens where the child stands)
+    const kid = kidNow(), t = kidTrip(kid), i = +b.dataset.d; if (!t) return;
+    beep('sparkle'); questNew = null; questOpen = i <= questAt(t, kid) ? i : null; nav(b.dataset.v);
+    sayUi(i <= questAt(t, kid) ? questTown(t, i) : L('เดินไปทีละเมืองนะ', 'One town at a time'));
   },
   ppmapday(b) {   // passport map: walk the kids to the picked day
     const box = $('.tmap'); mapFrom = box ? +box.dataset.pos : null;
