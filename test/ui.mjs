@@ -652,6 +652,43 @@ const T = 'hk-macau-2026';
     const row = await page.evaluate(() => [...document.querySelectorAll('#simtrack i')].map(i => i.textContent).join('|'));
     ok(darks >= 2 && /^(.+)\|\1\|$/.test(row), `kid game simon: a repeated note flashes twice and fills two slots (dark gaps ${darks}, row ${row})`);
   }
+  {   // the top levels (owner, Nov 2026: "ด่านเยอะขึ้น ยากขึ้น"): every game opens at its last level with its twist, fits the phone, and the chips show them all
+    const saved = await page.evaluate(() => ls('lv_mimi'));
+    const counts = await page.evaluate(() => { const o = {}; Object.keys(LV).forEach((g) => { o[g] = { at: LV[g].length, best: LV[g].length - 1 }; }); ls('lv_mimi', o); return Object.fromEntries(Object.keys(LV).map((g) => [g, LV[g].length])); });
+    ok(Object.entries(counts).every(([g, n]) => n === (g === 'jigsaw' ? 9 : 10)), `kid levels: ten levels a game, nine for the jigsaw (${JSON.stringify(counts)})`);
+    const CHECK = {
+      shadow: () => kg.lv.half && !!document.querySelector('.shbig.half') && kg.r.opts.length >= 7,
+      feed: () => kg.lv.mem && !!document.querySelector('.feedpal.mem #kgwant') && kg.r.opts.length === 9,
+      sort: () => kg.cols.length === 6 && document.querySelectorAll('.basket').length === 6 && kg.items.length === 22,
+      bigsmall: () => document.querySelectorAll('.bsrow button').length === 6,
+      where: () => kg.r.mode === 'two' && kg.r.steps.length === 2 && !!document.querySelector('.wheretake'),
+      odd: () => kg.r.opts.length === 9 && document.querySelectorAll('.oddch button').length === 9,
+      next: () => kg.r.shown.length === 9 && kg.r.opts.length === 5,
+      howmany: () => kg.r.n >= 13 && document.querySelectorAll('.hmi').length === kg.r.n && !!document.querySelector('.hmbox.many'),
+      maze: () => mz.n === 10 && mz.star > 0 && !!document.querySelector('#mazeb .mzstar'),
+      simon: () => sm.lv.len === 9 && !!sm.lv.fast,
+      dots: () => dt.order.length === 5 && dt.order.every((k) => DOT_SHAPES[k]),
+      match: () => mg.cards.length === 36 && document.querySelectorAll('.mgrid .mcard').length === 36,
+    };
+    const bad = [];
+    for (const [gm, fn] of Object.entries(CHECK)) {
+      await page.goto(`${BASE}/#/kid/mimi/${gm}`); await page.waitForSelector('.lvbar');
+      const r = { ok: !!(await page.evaluate(fn).catch((e) => { bad.push(`${gm}: ${e.message.split('\n')[0]}`); return false; })), ...(await page.evaluate(() => ({ chips: document.querySelectorAll('.lvbar .lvc').length, fit: document.documentElement.scrollWidth <= innerWidth + 1 }))) };
+      if (!r.ok || !r.fit || r.chips < 9) bad.push(`${gm}:${JSON.stringify(r)}`);
+      if (gm === 'where') {   // one instruction, two things: the first placed, then the second, and the round is won
+        for (const k of [0, 1]) { const pos = await page.evaluate((k) => kg.r.steps[k].pos, k); await page.click(`.whereb .wcell[data-v="${pos}"]`); }
+        if (!(await page.evaluate(() => kg.got && Object.keys(kg.r.placed).length === 2))) bad.push('where: two steps did not finish the round');
+      }
+      if (gm === 'feed') await page.waitForFunction(() => document.querySelector('#kgwant.gone'), null, { timeout: 6000 }).catch(() => bad.push('feed: the wish never hid'));
+      if (gm === 'maze') {   // the goal without the star does not finish the maze
+        const ends = await page.evaluate(() => { const n = mz.n, prev = { 0: -1 }, q = [0]; while (q.length) { const c = q.shift(); [c - n, c + n, c - 1, c + 1].forEach((d) => { if (d >= 0 && d < n * n && !(d in prev) && mazeOpen(c, d)) { prev[d] = c; q.push(d); } }); } const route = []; for (let c = n * n - 1; c !== -1; c = prev[c]) route.unshift(c); route.slice(1).forEach((c) => mazeTry(c)); return { done: mz.done, onStar: route.includes(mz.star) }; });
+        if (ends.done || ends.onStar) bad.push(`maze: ${JSON.stringify(ends)}`);
+      }
+      if (['shadow', 'where', 'howmany', 'maze', 'match', 'sort'].includes(gm)) await s.shot(`06-top-${gm}`, false);
+    }
+    await page.evaluate((v) => ls('lv_mimi', v), saved || {});
+    ok(!bad.length, `kid levels: the last level of every game brings its twist and fits the phone (${bad.join(' | ') || 'all'})`);
+  }
   await page.goto(`${BASE}/#/kid/mimi/dots`); await page.waitForSelector('#dotsb svg');
   await page.locator('#dotsb').scrollIntoViewIfNeeded();
   const skip = await page.evaluate(() => { const box = document.querySelector('#dotsb svg').getBoundingClientRect(), q = DOT_SHAPES[dt.order[0]].p[1]; return [box.left + q[0] / 100 * box.width, box.top + q[1] / 100 * box.height]; });
