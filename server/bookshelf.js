@@ -790,7 +790,7 @@ function router({ pool, media, A, ai, hooks = {} }) {   // hooks.heart(h): set b
   r.get('/api/b/geo', A.requireUser, (_req, res) => {
     const ps = Object.entries(STOCK.read().places || {});
     res.setHeader('Cache-Control', 'private, max-age=86400');
-    res.json({ places: ps.filter(([, p]) => Array.isArray(p.ll)).map(([id, p]) => ({ id, name: p.name, ll: p.ll, tz: p.tz, cc: p.country, home: !!p.home })),
+    res.json({ places: ps.filter(([, p]) => Array.isArray(p.ll)).map(([id, p]) => ({ id, name: p.name, ll: p.ll, tz: p.tz, cc: p.country, home: !!p.home, art: STOCK.url(id + '.stamp'), c: (p.colors || {}).k1 || '' })),   // art + c: the town's own stamp and colour for the photo-book screens
       countries: ps.filter(([id, p]) => id === p.country).map(([id, p]) => ({ cc: id, name: p.name, tz: p.tz || null })) });
   });
   // the online place-name lookup (editors; the phone sends it only with the family's switch on): a position rounded to ~1 km in,

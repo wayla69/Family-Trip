@@ -284,6 +284,7 @@ const T = 'hk-macau-2026';
     // B3, the place sheet: the day's photo places, the region's landmarks from the library, the library's towns; the search filters in place
     await page.click('.snapday:nth-child(1) [data-a="snapplace"]'); await page.waitForSelector('#sheet .pslist .psopt');
     const heads = await page.$$eval('#sheet .pslist .psh', (ls) => ls.map((l) => l.textContent));
+    await s.shot('snap-place-sheet');
     await page.fill('#psq', 'gibbon');
     const shown = await page.$$eval('#sheet .pslist li:not([hidden]) .psopt', (bs) => bs.map((b) => b.textContent));
     const short = await page.evaluate(() => [...document.querySelectorAll('#sheet .psopt, #sheet [data-own], .snapplb')].filter((e) => e.offsetParent && e.getBoundingClientRect().height < 44).map((e) => e.className + ':' + Math.round(e.getBoundingClientRect().height))), tall = !short.length, hs = await s.noHScroll();
