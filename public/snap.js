@@ -636,7 +636,7 @@ Object.assign(A, {
     snapS.typed[b.dataset.d] = v.trim(); closeSheet(); render();
   },
   snaprun(b) {   // the trip this book is made of, or 'both' (a book each) / 'all' (one book)
-    if (!snapS) return; const v = b.dataset.v; if (v === 'both' || v === 'all') snapS.runPick = v; else { snapS.runPick = null; snapS.runAt = v; } snapS.typed = {}; snapS.name = ''; render();
+    if (!snapS) return; const v = b.dataset.v; if (v === 'both' || v === 'all') snapS.runPick = v; else { snapS.runPick = null; snapS.runAt = v; } snapS.typed = {}; snapS.name = ''; snapS.folds = null; render();
   },
   snapstar(b) {   // in place: a redraw would close the day's fold under the finger
     if (!snapS) return; const i = +b.dataset.i, on = !snapS.star.has(i); if (on) snapS.star.add(i); else snapS.star.delete(i);
@@ -669,7 +669,7 @@ Object.assign(A, {
     const id = await snapMakeOne(s, plan, false); if (!id) { s.making = false; render(); return; }
     // the photos held more than one trip: keep the rest on the phone and go on with the next one (the files are still in memory)
     s.made = (s.made || []).concat(snapTrips().filter((r) => r.dates.some((d) => plan.days.some((x) => x.date === d))).map((r) => r.at));
-    s.making = false; s.typed = {}; s.name = ''; s.runAt = null; s.runPick = null; s.lastMade = id; snapName = '';
+    s.making = false; s.typed = {}; s.name = ''; s.runAt = null; s.runPick = null; s.folds = null; s.lastMade = id; snapName = '';   // the next trip's days open as new
     if (snapTrips().some((r) => !r.made)) { toast(L('สร้างเล่มแล้ว ทำอีกทริปต่อได้เลย', 'The book is made — now the next trip')); nav('#/snap/read'); return; }
     snapForget();
     toast(L('สร้างเล่มแล้ว รูปกำลังส่งขึ้น', 'The book is made — the photos are on their way'));

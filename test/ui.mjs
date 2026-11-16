@@ -279,8 +279,8 @@ const T = 'hk-macau-2026';
     const cards = await page.$$eval('.snaptrips .tpo', (bs) => bs.map((b) => [b.dataset.v, b.getAttribute('aria-pressed'), b.textContent.replace(/\s+/g, ' ').trim()]));
     await page.click('.snaptrips .tpo[data-v="2026-04-03"]'); await page.waitForSelector('.snaptrips .tpo[data-v="2026-04-03"][aria-pressed="true"]');
     const sum = (await page.$$eval('.snapsum li', (ls) => ls.map((l) => l.textContent.replace(/\s+/g, ' ').trim()))).join(' | ');
-    ok(cards.length === 2 && cards[0][1] === 'true' && /5 photos/.test(cards[0][2]) && /2 days · 4 photos/.test(cards[1][2]) && /3 Apr – 4 Apr · 2 days/.test(sum) && /Other trips\s*6, not in this book/.test(sum) && await s.noHScroll(),
-      `book from photos, two trips: the read page offers both (December first, the bigger), April picked shows its own dates, the other six photos (December and one dated only by its file) stay out of it (${JSON.stringify(cards)} · ${sum})`);
+    ok(cards.length === 2 && cards[1][1] === 'true' && /3 days · 3 photos/.test(cards[0][2]) && /2 days · 4 photos/.test(cards[1][2]) && /3 Apr – 4 Apr · 2 days/.test(sum) && /Other trips\s*4, not in this book/.test(sum) && await s.noHScroll(),
+      `book from photos, two trips: the read page offers both (April first: December's two repeats are set aside, so it holds three), April shows its own dates, the other four photos (December and one dated only by its file) stay out of it (${JSON.stringify(cards)} · ${sum})`);
     await s.shot('snap-two-trips');
     await page.click('.snapfoot a.btn'); await page.waitForSelector('.snapdays');
     await page.click('[data-a="snapmake"]');
