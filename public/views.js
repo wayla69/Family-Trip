@@ -1282,7 +1282,7 @@ ${dayMem(d)}</div>
 <div class="body">
 ${dayStory(t, d, route, visited)}
 <div>
-${sum ? `<p class="daysum">${emoIn(esc(sum.text))}${trLine(sum)}</p>` : ''}
+${sum ? `${aiTag(t, sum)}<p class="daysum">${emoIn(esc(sum.text))}${trLine(sum)}</p>` : ''}
 ${mosaicByPlace(t, ph)}
 ${vidsBlock(t, i, false)}
 ${audioOf(t.id, i).length ? `<div class="clips noprint">${audioOf(t.id, i).map((m) => `<div class="clip"><span>${ic('mic')} ${esc(m.caption || L('เสียงจากวันนี้', 'A voice from today'))}</span>${clipPlayer(m)}</div>`).join('')}</div>` : ''}
@@ -1637,13 +1637,16 @@ ${e ? `<button class="mini" data-a="delentry" data-v="${esc(e.id)}">${L('ลบ'
    from the whole trip's notes, then edited by hand (blur saves). Relatives read it; only the family writes it. ---------- */
 /* ---------- the book's foreword (book page, near the top; the PDF's first page after the cover): typed, or drafted by Claude from
    the whole trip's notes and edited by hand (blur saves). Relatives read it. ---------- */
+// the helper's draft not yet kept (entries.src 'ai', a book from photos): a quiet tag for the parents only — never for relatives, never printed —
+// leading to the page that checks the whole draft
+const aiTag = (t, e) => (isEditor() && e && e.src === 'ai' && e.text ? `<a class="aitag2 noprint" href="#/t/${encodeURIComponent(t.id)}/draft/review">${ic('sparkle')}${L('ร่างโดยผู้ช่วย · ตรวจ', 'Drafted by the helper · check')}</a>` : '');
 function foreBlock(t, nDays) {
   const e = entriesOf(t.id).find((x) => x.kind === 'fore'), ed = isEditor();
   if (!ed) return e && e.text ? `<div class="part">📖 ${L('คำนำ', 'Foreword')}</div><div class="call calm fore">${esc(e.text)}</div>` : '';
   if (!nDays && !e) return '';
   const ai = S.features.story && nDays;
   return `<section class="blk foreblk"><h3>${ic('book')} ${L('คำนำของสมุด', 'The book’s foreword')} <span class="label">${L('หน้าแรกของ PDF ต่อจากปก', 'the first page of the PDF after the cover')}</span></h3>
-<textarea id="foretext" class="field" rows="6" data-a-blur="fore" data-t="${esc(t.id)}" data-d="" data-draft="fw:${esc(t.id)}" maxlength="3000" placeholder="${L('ทริปนี้เราไป…', 'On this trip we went…')}">${esc(drafts['fw:' + t.id] ?? (e ? e.text : ''))}</textarea><p class="label savenote">${L('บันทึกเองเมื่อแตะออกจากช่อง', 'Saves by itself when you leave the box')}</p>
+${aiTag(t, e)}<textarea id="foretext" class="field" rows="6" data-a-blur="fore" data-t="${esc(t.id)}" data-d="" data-draft="fw:${esc(t.id)}" maxlength="3000" placeholder="${L('ทริปนี้เราไป…', 'On this trip we went…')}">${esc(drafts['fw:' + t.id] ?? (e ? e.text : ''))}</textarea><p class="label savenote">${L('บันทึกเองเมื่อแตะออกจากช่อง', 'Saves by itself when you leave the box')}</p>
 ${ai ? `<div class="row noprint" style="margin-top:6px"><button class="btn small" data-a="story" data-m="fore" data-t="${esc(t.id)}" data-d="" id="forego">✨ ${e ? L('ร่างใหม่', 'Draft again') : L('ให้ผู้ช่วยร่างคำนำ', 'Ask the helper for a first draft')}</button>
 <button class="btn ghost small" data-a="storystop" id="forestop" hidden>■ ${L('หยุด', 'Stop')}</button>
 <span class="label" id="foremsg">${L('จากบันทึกทั้งทริป ไม่ส่งรูป · แก้ในช่องได้', 'From the whole trip’s notes, never photos · edit it in the box')}</span></div>` : ''}</section>`;

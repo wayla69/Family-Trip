@@ -93,6 +93,10 @@ ok((await pool.query("SELECT count(*)::int n FROM push_sent WHERE key LIKE 'hear
   ok(await R.heart({ trip: 'hk-macau-2026' }, t0) === 1 && sent[n0].p.url === '/#/t/hk-macau-2026/hearts' && sent[n0].p.tag === 'heart', 'heart: the parents\' phone hears a heart arrived (opens the hearts page)');
   ok(!/มีมี่ได้|คุณยาย|from|💗.*:/.test(sent[n0].p.body) && sent[n0].p.body.length <= 140, 'heart: no sender name or heart text on the lock screen');
   ok(await R.heart({ trip: 'hk-macau-2026' }, t0 + 5 * 60000) === 0 && await R.heart({ trip: 'hk-macau-2026' }, t0 + 11 * 60000) === 1, 'heart: a burst within 10 minutes is one nudge'); }
+// the helper finished a photo book's draft: one nudge that opens the page to check it, the book's name only
+{ const n0 = sent.length, t0 = Date.UTC(2026, 11, 6, 13, 0);
+  ok(await R.draft({ trip: 'snap-x', title: { th: 'เขาใหญ่ 3 วัน', en: 'Khao Yai, 3 days' } }, t0) >= 1 && sent[n0].p.url === '/#/t/snap-x/draft/review' && /เขาใหญ่ 3 วัน|Khao Yai, 3 days/.test(sent[n0].p.body) && sent[n0].p.body.length <= 140,
+    `draft ready: the parents' phone hears the draft is ready and opens the page to check it (${sent[n0] && sent[n0].p.title})`); }
 gone = true;
 await R.tick(PUSH.zoned('2026-12-06', '09:00', 'Asia/Hong_Kong') - 30 * 60000);
 ok((await pool.query("SELECT count(*)::int n FROM push_subs")).rows[0].n === 0, 'a phone the push service reports gone (410) is removed');

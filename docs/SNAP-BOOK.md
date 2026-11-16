@@ -10,7 +10,7 @@ the trip for this book; after it is made the phone keeps the rest and comes back
 (`#/t/<id>/draft/review`, `viewSnapReview`; migration 0026 `entries.src` = 'ai' on the helper's drafts, cleared by a changed text
 or "keep this draft"), the 21:30 nudge on an open book's day never opened (push.js `extras`: a snap book's own days, gaps kept,
 no store-the-book or doors; key `<trip>.x.log.<date>`, opens its Today page) and the no-signal day in test/offline.mjs.
-Still left out: photo help inside the job (D6.2; the record page's "look at today's photos" still works per day). Written 16 Nov 2026 for handoff; the next session implements from this file.
+Then the last three (16 Nov 2026, owner: "ทำหมดเลย"): photo help inside the job (D6.2: a `photos` step per day, first, only with `PHOTO_AI=1` and the parents' tick; bookshelf.js `photoLook` is shared with the record page's button), the "draft ready" push (push.js `draft`, opens `/draft/review`) and the quiet "drafted by the helper" tag in the book for editors (views.js `aiTag`, never printed). Nothing of the plan is left. Written 16 Nov 2026 for handoff; the next session implements from this file.
 Owner's ask: "บางครอบครัวไม่ได้วางแผน ให้ทำเล่มเปล่า ถ่ายรูป ใช้ location ในรูป แล้วใช้ AI ร่างเป็นเก็บประวัติ storybook เองได้เลย …
 ทำให้การใช้งานแบบทริปพิเศษ หรือคนไทยเที่ยวใกล้ๆ ยกมือถือมาทำแล้วได้เล่มเลย".
 

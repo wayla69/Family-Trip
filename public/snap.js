@@ -725,8 +725,8 @@ if (typeof document !== 'undefined') document.addEventListener('change', (e) => 
 /* ---------- P3: the helper drafts the book (docs/SNAP-BOOK.md D6; screens C1–C2) ----------
    #/t/<id>/draft: what to draft (the book's and the days' names, a summary a day, the foreword, a bedtime story a day), how many
    helper calls that takes, then the job's steps as they go (the job runs on the server: this page can be closed). */
-const snapDraft = { opt: { names: true, sums: true, fore: true, stories: false }, job: null, err: '', timer: 0 };
-const snapDraftCalls = (t, o) => (o.names ? 1 : 0) + (o.sums ? t.days.length : 0) + (o.fore ? 1 : 0) + (o.stories ? t.days.length : 0);
+const snapDraft = { opt: { photos: false, names: true, sums: true, fore: true, stories: false }, job: null, err: '', timer: 0 };   // photos: off until ticked (small copies of the photos go to the helper)
+const snapDraftCalls = (t, o) => (o.photos && S.features.photoAi ? t.days.length : 0) + (o.names ? 1 : 0) + (o.sums ? t.days.length : 0) + (o.fore ? 1 : 0) + (o.stories ? t.days.length : 0);
 function snapDraftPoll() {
   clearTimeout(snapDraft.timer);
   api('GET', '/api/b/snap/draft').then(async (r) => {
@@ -736,12 +736,16 @@ function snapDraftPoll() {
     safeRender();
   }).catch(() => { snapDraft.timer = setTimeout(snapDraftPoll, 4000); });
 }
+// what travels to the helper, said exactly — the photos only when the parents ticked them (small copies, never a position)
+const snapDraftNote = (o) => (o.photos && S.features.photoAi
+  ? snapNote('ผู้ช่วยได้รูปย่อขนาดเล็กของแต่ละวัน วัน เวลา ชื่อสถานที่ คำที่คุณจด และชื่อเล่นกับอายุของเด็ก ไม่รู้พิกัด', 'The helper gets small copies of each day’s photos, the dates, times, place names, what you wrote, and the children’s names and ages — never a position.')
+  : snapNote('ผู้ช่วยรู้แค่วัน เวลา ชื่อสถานที่ คำที่คุณจด และชื่อเล่นกับอายุของเด็ก ไม่เห็นรูป ไม่รู้พิกัด', 'The helper only gets the dates, times, place names, what you wrote, and the children’s names and ages — no photos, no positions.'));
 function viewSnapDraft(t) {
   // a running job shows on any phone; a finished one only on the phone that started it (a later visit offers the parts again)
   const job = snapDraft.job && snapDraft.job.trip === t.id && (snapDraft.job.status === 'running' || snapDraft.mine === t.id) ? snapDraft.job : null, o = snapDraft.opt, n = snapDraftCalls(t, o);
   if (!S.features.story) return emptyCard(t, L('ผู้ช่วยยังไม่ได้เปิดใช้', 'The helper is not switched on'), L('เขียนชื่อวันและเรื่องราวเองได้ในหน้าบันทึกของแต่ละวัน', 'Name the days and write their stories on each day’s record page'), [`#/t/${encodeURIComponent(t.id)}/book`, L('ไปที่เล่ม', 'Go to the book')]);
   if (!job && !snapDraft.asked) { snapDraft.asked = true; snapDraftPoll(); }   // a job may already be running for this book
-  const stepName = (s) => (s.k === 'names' ? L('ชื่อเล่มและชื่อของแต่ละวัน', 'The book’s and the days’ names') : s.k === 'fore' ? L('คำนำของเล่ม', 'The foreword')
+  const stepName = (s) => (s.k === 'photos' ? L(`ดูรูปวันที่ ${s.day + 1}`, `Day ${s.day + 1}’s photos`) : s.k === 'names' ? L('ชื่อเล่มและชื่อของแต่ละวัน', 'The book’s and the days’ names') : s.k === 'fore' ? L('คำนำของเล่ม', 'The foreword')
     : s.k === 'sum' ? L(`สรุปวันที่ ${s.day + 1}`, `Day ${s.day + 1} in a few lines`) : L(`นิทานวันที่ ${s.day + 1}`, `Day ${s.day + 1}’s bedtime story`));
   const stepSt = (s) => ({ done: ['ok', '✓', L('เสร็จ', 'done')], kept: ['ok', '✓', L('มีอยู่แล้ว ไม่แตะ', 'already written, left alone')], skip: ['wait', '–', L('ยังไม่มีอะไรให้เล่า', 'nothing to go on yet')],
     now: ['now', '…', L('กำลังเขียน', 'writing')], error: ['err', '!', L('ไม่สำเร็จ', 'did not work')] }[s.st] || ['wait', '', L('รอคิว', 'waiting')]);
@@ -759,11 +763,12 @@ ${why ? `<p class="notice">${why}</p>` : ''}
   const row = (k, th, en, sth, sen) => `<label class="snapopt"><span><b>${L(th, en)}</b>${sth ? `<small>${L(sth, sen)}</small>` : ''}</span><input type="checkbox" data-snapopt="${k}"${o[k] ? ' checked' : ''}></label>`;
   return `<h1>${L('ให้ผู้ช่วยร่างเล่ม', 'Let the helper draft the book')}</h1>
 <p class="sub">${L('ผู้ช่วยเขียนร่างให้ทั้งเล่ม คุณแก้ได้ทุกบรรทัดก่อนพิมพ์', 'The helper drafts the whole book — you can change every line before printing')}</p>
-<div class="snapopts">${row('names', 'ชื่อเล่ม และชื่อของแต่ละวัน', 'The book’s and the days’ names', 'วันที่คุณตั้งชื่อเองแล้วจะไม่ถูกเปลี่ยน', 'A day you named yourself keeps its name')}
+<div class="snapopts">${S.features.photoAi ? row('photos', 'ให้ผู้ช่วยดูรูปก่อน', 'Let the helper look at the photos first', 'คำบรรยายรูป แท็ก และรูปโปรด ⭐ ของแต่ละวัน แล้วเขียนจากที่เห็น', 'Captions, tags and each day’s ⭐ — then it writes from what it saw') : ''}
+${row('names', 'ชื่อเล่ม และชื่อของแต่ละวัน', 'The book’s and the days’ names', 'วันที่คุณตั้งชื่อเองแล้วจะไม่ถูกเปลี่ยน', 'A day you named yourself keeps its name')}
 ${row('sums', 'สรุปวันละ 2–3 ประโยค', 'Each day in 2–3 sentences', 'จากสถานที่ เวลา และคำที่คุณจดไว้', 'From the places, times and your notes')}
 ${row('fore', 'คำนำของเล่ม', 'The foreword')}
 ${row('stories', 'นิทานก่อนนอนของแต่ละวัน', 'A bedtime story for each day', 'ให้เด็กฟังในโหมดเด็ก', 'For the children in kid mode')}</div>
-${snapNote('ผู้ช่วยรู้แค่วัน เวลา ชื่อสถานที่ คำที่คุณจด และชื่อเล่นกับอายุของเด็ก ไม่เห็นรูป ไม่รู้พิกัด', 'The helper only gets the dates, times, place names, what you wrote, and the children’s names and ages — no photos, no positions.')}
+<div id="snapdnote">${snapDraftNote(o)}</div>
 ${snapDraft.err ? `<p class="notice">${esc(snapDraft.err)}</p>` : ''}
 <div class="snapfoot"><button type="button" class="btn wide" data-a="snapdraft" data-t="${esc(t.id)}"${n ? '' : ' disabled'}>${L('เริ่มร่าง', 'Start the draft')}</button>
 <small>${n ? L(`ใช้ผู้ช่วย ${n} ครั้ง`, `${n} helper call${n === 1 ? '' : 's'}`) : L('เลือกอย่างน้อยหนึ่งอย่าง', 'Pick at least one')}</small>
@@ -811,6 +816,7 @@ Object.assign(A, {
 });
 if (typeof document !== 'undefined') document.addEventListener('change', (e) => {
   if (e.target.dataset && e.target.dataset.snapopt) { snapDraft.opt[e.target.dataset.snapopt] = e.target.checked; const t = trip((route().parts || [])[1]), sm = document.querySelector('.snapfoot small'), go = document.querySelector('[data-a="snapdraft"]');
+    const nt = document.getElementById('snapdnote'); if (nt) nt.innerHTML = snapDraftNote(snapDraft.opt);   // the privacy line follows the photos tick
     if (t && sm && go) { const n = snapDraftCalls(t, snapDraft.opt); sm.textContent = n ? L(`ใช้ผู้ช่วย ${n} ครั้ง`, `${n} helper call${n === 1 ? '' : 's'}`) : L('เลือกอย่างน้อยหนึ่งอย่าง', 'Pick at least one'); go.disabled = !n; } }   // counted in place
 });
 if (typeof document !== 'undefined') document.addEventListener('input', (e) => {   // typed in place: no redraw under the finger
