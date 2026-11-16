@@ -783,6 +783,7 @@ ${pages.length > 1 ? `<div class="kdots" id="kdots">${pages.map((_, n) => `<i${n
 <div class="drawtray" id="drawtray"><div class="palette">${COLOURS.map((c) => `<button data-a="kidcolor" data-v="${c}" style="--c:${c}" aria-pressed="${c === kidColour}" aria-label="${c === '#FFFFFF' ? L('ยางลบ', 'Eraser') : c}"></button>`).join('')}</div>
 <div class="drawtools">${PEN.map((w) => `<button data-a="kidpen" data-v="${w}" aria-pressed="${w === pen}" aria-label="${L('ขนาดพู่กัน', 'Brush')} ${w}"><i style="width:${Math.round(w / 2) + 6}px;height:${Math.round(w / 2) + 6}px"></i></button>`).join('')}
 <button class="dclear" data-a="kidclear" aria-label="${L('ล้างแล้ววาดใหม่', 'Wipe and start again')}">🧽 <b>${L('วาดใหม่', 'Start again')}</b></button></div></div></div>
+<div class="drawtools coltools drawrow"><button class="dclear" data-a="kidundo" aria-label="${L('ย้อนกลับ', 'Undo')}">↶ <b>${L('ย้อน', 'Undo')}</b></button><button class="dclear" data-a="kidclear" aria-label="${L('ล้างแล้ววาดใหม่', 'Wipe and start again')}">🧽 <b>${L('ล้างภาพ', 'Wipe')}</b></button></div>
 <button class="kidbig" data-a="kiddrawdone" data-t="${esc(t.id)}" data-d="${day === null ? '' : day}" data-k="${esc(kid)}">${L('เก็บรูปนี้! ✨', 'Keep it! ✨')}</button>
 ${mine.length ? `<div class="drawn">${mine.map((m) => `<img src="${esc(imgT(m))}" alt="">`).join('')}</div>` : ''}`;
   } else if (view === 'spot') {

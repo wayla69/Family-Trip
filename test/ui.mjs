@@ -1517,7 +1517,15 @@ const T = 'hk-macau-2026';
     const sm = await page.evaluate(() => { const cv = document.querySelector('#kidcanvas'), c = cv.getBoundingClientRect(); return { ar: c.width / c.height, attr: cv.width / cv.height, h: Math.round(c.height), vh: innerHeight, bar: getComputedStyle(document.querySelector('.kidbar')).display !== 'none' }; });
     ok(await page.locator('#drawwrap.full').count() === 0 && Math.abs(sm.ar - sm.attr) < 0.02 && sm.h <= sm.vh * 0.62 && sm.bar && await s.noHScroll(), `draw: the full-screen paper closes again, the sheet keeps its shape undistorted and the page still fits (${sm.h}px of ${sm.vh})`);
   }
-  await page.click('[data-a="kidundo"]');
+  {   // the small paper: ↶ and the sponge always under it, like the colouring page (the tray hides while the child draws)
+    const n0 = await page.evaluate(() => pad.strokes.length);
+    const row = await page.evaluate(() => [...document.querySelectorAll('.drawrow button')].map((b) => [b.dataset.a, Math.round(b.getBoundingClientRect().height), getComputedStyle(b).display]));
+    await page.click('.drawrow [data-a="kidclear"]'); const n1 = await page.evaluate(() => pad.strokes.length);
+    await page.click('.drawrow [data-a="kidundo"]'); const n2 = await page.evaluate(() => pad.strokes.length);
+    ok(n0 > 0 && n1 === 0 && n2 === n0 && row.map((r) => r[0]).join() === 'kidundo,kidclear' && row.every((r) => r[1] >= 48 && r[2] !== 'none') && await page.locator('#drawwrap:not(.full) .dpundo:visible, #drawwrap:not(.full) .drawtray .dclear:visible').count() === 0 && await s.noHScroll(),
+      `draw: under the paper ↶ and the sponge are always there — the sponge wipes, ↶ brings it back; the corner and tray copies only on the full-screen paper (${JSON.stringify({ n0, n1, n2, row })})`);
+  }
+  await page.click('.drawrow [data-a="kidundo"]');
   await page.click('.kidbig[data-a="kiddrawdone"]'); await page.waitForSelector('.kidtiles');
   await page.waitForFunction(() => queue.length === 0, null, { timeout: 15000 });
   let st = await apiState(page);
