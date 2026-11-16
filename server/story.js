@@ -118,10 +118,29 @@ function forePrompt(lang, k) {
   return `เขียนคำนำของสมุดความทรงจำเล่มนี้ ทั้งทริป 120–180 คำ เล่าแบบพ่อแม่ ใช้ "เรา" — ไปที่ไหน ไปกับใคร (${k.who.th}) `
     + 'และช่วงไม่กี่ช่วงที่จำได้ที่สุด ให้ครอบครัวกลับมาอ่านแล้วยิ้มได้อีกหลายปี ใช้เฉพาะข้อมูลที่ให้ ห้ามแต่งสถานที่/เหตุการณ์/คำพูดเพิ่ม ข้อความธรรมดา ไม่มีหัวข้อ ไม่มี markdown';
 }
+// 'snapnames': a book made from photos (docs/SNAP-BOOK.md P3) — a name for the book and for each day, both languages, from the facts
+function snapNamesPrompt(k) {
+  return `Name this family's photo book of a trip and each of its days, for a picture book the children (${k.who.en}) will look at. `
+    + 'Use only the places and moments in the facts — never invent a place or an event. No dates, no numbers of days in a day\'s name. '
+    + 'The book\'s name: at most 5 words. A day\'s name: at most 5 English words, warm and a little playful, about what the day was (a place, a moment). '
+    + 'Thai: natural Thai a parent would write, at most 30 Thai letters, place names in Thai script, no ค่ะ/ครับ. One fitting emoji per day. '
+    + 'Reply with JSON only — no prose, no code fence: {"title":{"th":"…","en":"…"},"days":[{"day":1,"th":"…","en":"…","emoji":"🌻"}]} with one entry for every day in the facts.';
+}
+// its answer → {title, days: {<day number>: {th, en, emoji}}}, or null
+function parseNames(text) {
+  const a = text.indexOf('{'), b = text.lastIndexOf('}'); if (a < 0 || b < a) return null;
+  let j; try { j = JSON.parse(text.slice(a, b + 1)); } catch (_) { return null; }
+  const s = (v, n) => (typeof v === 'string' ? v.replace(/\s+/g, ' ').trim().slice(0, n) : '');
+  const title = j && j.title && s(j.title.th, 60) && s(j.title.en, 80) ? { th: s(j.title.th, 60), en: s(j.title.en, 80) } : null;
+  const days = {};
+  for (const d of (j && Array.isArray(j.days) ? j.days : [])) { const n = Number(d && d.day); if (Number.isInteger(n) && n > 0 && s(d.th, 60) && s(d.en, 80)) days[n] = { th: s(d.th, 60), en: s(d.en, 80), emoji: s(d.emoji, 8) }; }
+  return title || Object.keys(days).length ? { title, days } : null;
+}
 // the memory game is JSON for the app, not words for the family: it skips the "sound like the parents" tail
 const NOBODY = { n: 0, who: { en: 'the children', th: 'เด็กๆ' }, names: { en: 'the children', th: 'ลูกๆ' }, first: null, pairs: 'The children' };
-function prompt({ lang, whole, mode, kids }) { return basePrompt({ lang, whole, mode, kids: kids || NOBODY }) + (mode === 'mquiz' ? '' : NATURAL[lang === 'en' ? 'en' : 'th']); }
+function prompt({ lang, whole, mode, kids }) { return basePrompt({ lang, whole, mode, kids: kids || NOBODY }) + (mode === 'mquiz' || mode === 'snapnames' ? '' : NATURAL[lang === 'en' ? 'en' : 'th']); }
 function basePrompt({ lang, whole, mode, kids: k }) {
+  if (mode === 'snapnames') return snapNamesPrompt(k);
   if (mode === 'sum') return sumPrompt(lang, k);
   if (mode === 'talk') return talkPrompt(lang, k);
   if (mode === 'letter') return letterPrompt(lang, k);
@@ -168,7 +187,7 @@ const clean = (s) => s.replace(/^#+\s*/gm, '').replace(/\*\*|__|`/g, '').replace
 async function writeStory({ lang, whole, mode, facts, kids, onText, signal }) {
   const stream = api().beta.messages.stream({
     model: MODEL(),
-    max_tokens: !mode || mode === 'story' || mode === 'letter' ? 4000 : mode === 'likes' || mode === 'fore' ? 2000 : 1000,
+    max_tokens: !mode || mode === 'story' || mode === 'letter' ? 4000 : mode === 'likes' || mode === 'fore' || mode === 'snapnames' ? 2000 : 1000,
     betas: ['server-side-fallback-2026-07-01'],
     fallbacks: 'default',                  // a policy decline is re-run server-side on Anthropic's recommended fallback
     output_config: { effort: 'low' },      // a short story from given facts needs little reasoning
@@ -312,4 +331,4 @@ STOPS: ${stops.length ? stops.map((s) => `"${s}"`).join(', ') : '(none)'}`;
   return out;
 }
 
-module.exports = { prompt, askPrompt, parseQuiz, enabled, photoEnabled, writeStory, askGuide, translate, describePhotos, TAGS, clean, onUsage, SDK };
+module.exports = { prompt, askPrompt, parseQuiz, parseNames, enabled, photoEnabled, writeStory, askGuide, translate, describePhotos, TAGS, clean, onUsage, SDK };

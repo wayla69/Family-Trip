@@ -44,6 +44,7 @@ const mock = http.createServer((req, res) => {
     const trans = String(b.system).startsWith('Translate');
     const photo = String(b.system).includes('"cap"');   // look at today's photos: JSON per id; a stop from the STOPS line, plus junk that must be dropped
     const pids = [...facts.matchAll(/^id: (\S+)$/gm)].map((m) => m[1]), stop0 = (/STOPS: "([^"]*)"/.exec(facts) || [])[1] || '';
+    const snapn = String(b.system).includes('photo book of a trip');   // a book from photos: its name and its days' names as JSON
     const quiz = String(b.system).includes('"ok":');   // the memory game answers JSON (once with a bad item, which must be dropped)   // translate: answer JSON [{id, tr}] for the items it was given
     const sysText = JSON.stringify(b.system);   // the import sends system as blocks (the redacted manual cached in the second one)
     const imp = sysText.includes('Trip Operations Manual') ? (facts.includes('top level and its days') ? 'top' : facts.includes('pocket guide') ? 'info' : facts.startsWith('List EVERY restaurant') ? 'restlist' : facts.startsWith('List only the area headings') ? 'restareas' : facts.startsWith('For these areas') ? 'restnames' : facts.startsWith('For each of these places') ? 'rest' : 'other')
@@ -84,6 +85,7 @@ const mock = http.createServer((req, res) => {
     };
     const badJson = imp === 'kids' && importCalls.filter((c) => c.step === 'kids').length === 1;   // the first kids' answer is broken JSON (a missing comma), as a live run once got
     const parts = art ? [ARTA[art]()] : imp ? [badJson ? '{"days":[{"learn":[{"name":{"th":"x" "en":"x"}}]}]}' : IMP[imp]()] : photo ? [JSON.stringify(pids.map((id, k) => (k === 0 ? { id, cap: '## เด็กๆ **ยิ้ม** หน้าปราสาท', tags: ['kids', 'Character', 'bogus', 'kids'], place: stop0, best: true } : { id, cap: 'เรากินติ่มซำ', tags: ['food'], place: 'Narnia', best: 'yes' })))]
+      : snapn ? ['```json\n' + JSON.stringify({ title: { th: 'เขาใหญ่ทุ่งดอกไม้', en: 'Khao Yai in bloom' }, days: [{ day: 1, th: 'ทานตะวันยามเช้า', en: 'Sunflowers at breakfast', emoji: '🌻' }, { day: 2, th: 'ฝนพรำ', en: 'Drizzle', emoji: '🌧️' }, { day: 9, th: 'x', en: 'x' }] }) + '\n```']
       : quiz ? ['```json\n[{"q":"เมื่อวานมีมี่บอกว่าปลาอยู่ที่ไหน","a":[{"e":"💧","t":"ในน้ำ"},{"e":"🌳","t":"บนต้นไม้"},{"e":"🚌","t":"บนรถบัส"}],"ok":0},',
       '{"q":"ไปไหนมา","a":[{"e":"🏰","t":"ดิสนีย์"},{"e":"🏖️","t":"ทะเล"},{"e":"🏔️","t":"ภูเขา"}],"ok":0},{"q":"bad","a":[{"t":"x"}],"ok":3}]\n```']
       : trans ? [JSON.stringify(JSON.parse(facts).map((x) => ({ id: x.id, tr: `${x.to}:${x.text}` })))]
@@ -606,6 +608,46 @@ try {
       const gone = await fetch(BASE + '/api/b/family', { method: 'PUT', headers: H, body: JSON.stringify({ profile: {}, children: kidsNow }) });
       ok(gone.ok && files().length === 0 && !(await state()).children.some((k) => k.slug === 'temp'), 'removing a child removes the character drawn from their photo too (nothing of a removed child stays)'); }
     ok((await fetch(BASE + '/api/b/family/avatar/nobody', { method: 'POST', headers: { 'x-mb': '1', cookie: ck, 'content-type': 'image/jpeg' }, body: photo })).status === 404, 'avatars: only for a child of this family');
+  }
+  // ---- the helper drafts a book from photos (docs/SNAP-BOOK.md P3): names, a summary a day, the foreword — from text facts only
+  // (the days' places and photo moments, the family's words); what the parents wrote stays; one call a step on the daily cap
+  {
+    const db = new Client({ connectionString: u.toString() }); await db.connect(); await db.query('UPDATE ai_usage SET calls=12'); await db.end();   // 5 left of 17
+    const post = (u2, b, m = 'POST') => fetch(BASE + u2, { method: m, headers: H, body: JSON.stringify(b) });
+    const sb = await (await post('/api/b/snap', { days: [{ date: '2025-12-12', place: { th: 'ปากช่อง', en: 'Pak Chong' } }, { date: '2025-12-13', title: { th: 'วันฝนตก', en: 'The rainy day' } }] })).json();
+    const sharp = createRequire(import.meta.url)('sharp'), jp = await sharp({ create: { width: 64, height: 48, channels: 3, background: '#88aa66' } }).jpeg().toBuffer();
+    for (const [k, at] of [[1, Date.parse('2025-12-12T09:10:00+07:00')], [2, Date.parse('2025-12-12T09:40:00+07:00')]]) await fetch(`${BASE}/api/b/media/ph-sd-000${k}?trip=${sb.id}&day=0&at=${at}&place=${encodeURIComponent('ทุ่งทานตะวัน')}`, { method: 'PUT', headers: { 'x-mb': '1', cookie: ck, 'content-type': 'image/jpeg' }, body: jp });
+    await put(`/api/b/entries/${sb.id}.q.d1`, { trip: sb.id, day: 1, kind: 'quote', child: 'mimi', text: 'ฝนตกเปาะแปะ' });
+    await put(`/api/b/entries/${sb.id}.sum.d1`, { trip: sb.id, day: 1, kind: 'sum', text: 'พ่อแม่เขียนเอง' });
+    const before = calls.length;
+    ok((await post(`/api/b/snap/${sb.id}/draft`, { stories: true })).status === 429, 'snap draft: names + 2 summaries + foreword + 2 stories (6 calls) do not fit the 5 left today — refused before any call');
+    const st0 = await post(`/api/b/snap/${sb.id}/draft`, {});
+    ok(st0.status === 202 && (await post(`/api/b/snap/${sb.id}/draft`, {})).status === 409, 'snap draft: started (202); a second press while it runs is busy (409)');
+    let job; for (let k = 0; k < 80; k++) { job = (await (await fetch(BASE + '/api/b/snap/draft', { headers: { cookie: ck } })).json()).job; if (job && job.status !== 'running') break; await new Promise((r) => setTimeout(r, 150)); }
+    const mine = calls.slice(before), names = mine.find((c) => String(c.body.system).includes('photo book of a trip'));
+    const s1 = await state(), t1 = s1.trips.find((x) => x.id === sb.id), es = s1.entries.filter((e) => e.trip === sb.id);
+    ok(job && job.status === 'done' && job.steps.map((s) => s.k + ':' + s.st).join() === 'names:done,sum:done,sum:kept,fore:done', `snap draft: done step by step; the parents' summary kept, no call for it (${job && job.steps.map((s) => s.k + ':' + s.st).join()})`);
+    ok(t1.title.th === 'เขาใหญ่ทุ่งดอกไม้' && t1.days[0].title.en === 'Sunflowers at breakfast' && t1.days[0].emoji === '🌻' && t1.days[1].title.en === 'The rainy day', `snap draft: the book and its untouched day named; a day the parents named keeps its name (${JSON.stringify([t1.title, ...t1.days.map((d) => d.title)])})`);
+    ok(es.find((e) => e.id === `${sb.id}.sum.d0`).text.includes('ฝันดี') && es.find((e) => e.id === `${sb.id}.sum.d1`).text === 'พ่อแม่เขียนเอง' && es.find((e) => e.id === `${sb.id}.fore.all`), 'snap draft: a summary for the day without one, the foreword; the parents\' summary untouched');
+    const sent = mine.map((c) => (typeof c.body.messages[0].content === 'string' ? c.body.messages[0].content : '')).join('\n');
+    ok(mine.length === 3 && names && names.body.max_tokens === 2000 && !names.body.system.includes('ห้ามใช้สำนวนแบบ AI') && sent.includes('ที่ไหน: ปากช่อง') && sent.includes('ช่วงเช้า · ทุ่งทานตะวัน (2)') && sent.includes('ฝนตกเปาะแปะ')
+      && !/"image"|base64|\d+\.\d{3,}/.test(JSON.stringify(mine.map((c) => c.body.messages))), `snap draft: 3 calls, text facts only — the day's place, the photo moments (part of day · place · how many), the kids' words; no photo, no position (${mine.length})`);
+    // the page (C1 → C2): what to draft, how many calls, the steps as they go, then the book
+    { const db2 = new Client({ connectionString: u.toString() }); await db2.connect(); await db2.query('UPDATE ai_usage SET calls=0'); await db2.end(); }
+    const pc = await browser.newContext({ viewport: { width: 390, height: 844 } }), pp = await pc.newPage();
+    await pp.goto(BASE + '/'); await pp.waitForSelector('#lf'); await pp.fill('#lname', 'Mum'); await pp.fill('#lcode', CODE); await pp.keyboard.press('Enter'); await pp.waitForSelector('.shelf');
+    await pp.goto(`${BASE}/#/t/${sb.id}`); await pp.waitForSelector('.hubrow.snapdraftgo');
+    await pp.click('.hubrow.snapdraftgo'); await pp.waitForSelector('.snapopts');
+    const calls0 = await pp.textContent('.snapfoot small');
+    await pp.check('[data-snapopt="stories"]'); const calls1 = await pp.textContent('.snapfoot small');
+    ok(/4 helper calls/.test(calls0) && /6 helper calls/.test(calls1) && /no photos, no positions/.test(await pp.textContent('.snapnote')) && await pp.evaluate(() => document.documentElement.scrollWidth <= innerWidth + 1),
+      `snap draft page: the parts to draft and what they cost, counted in place (${calls0} → ${calls1}); what the helper gets said up front`);
+    await pp.uncheck('[data-snapopt="stories"]'); await pp.uncheck('[data-snapopt="fore"]'); await pp.uncheck('[data-snapopt="sums"]');
+    await pp.click('[data-a="snapdraft"]');
+    await pp.waitForFunction(() => /The draft is ready/.test(document.querySelector('main h1').textContent), null, { timeout: 15000 });
+    ok(await pp.locator('.snapsteps li').count() === 1 && await pp.locator('.snapsteps li.ok').count() === 1 && await pp.locator(`.snapfoot a[href="#/t/${sb.id}/book"]`).count() === 1, 'snap draft page: the steps as they go, then "read the book"');
+    await pc.close();
+    await fetch(BASE + `/api/b/trips/${sb.id}`, { method: 'DELETE', headers: H });
   }
   await browser.close();
 } finally {

@@ -3098,6 +3098,17 @@ details.emeal[open]>summary .mname{visibility:hidden}
 .snapact{display:flex;flex-direction:column;align-items:center;justify-content:center;gap:6px;min-height:96px;padding:12px;border:1px solid var(--rule);border-radius:12px;background:var(--card,var(--paper));color:var(--ink);font:inherit;text-decoration:none;cursor:pointer;text-align:center}
 .snapact .ic{width:28px;height:28px;color:var(--accent)}.snapact b{font-size:15.5px}.snapact small{color:var(--muted);font-size:12.5px}
 .snapact:first-child{background:color-mix(in srgb,var(--accent) 10%,var(--paper));border-color:color-mix(in srgb,var(--accent) 40%,var(--rule))}
+/* the helper drafts the book (#/t/<id>/draft): a switch a part, then the steps as they go */
+.snapopts{display:grid;gap:0;margin:12px 0;border-top:1px solid var(--rule)}
+.snapopt{display:flex;align-items:center;gap:12px;min-height:56px;padding:10px 2px;border-bottom:1px solid var(--rule);cursor:pointer}
+.snapopt>span{flex:1;min-width:0;display:flex;flex-direction:column;gap:2px}.snapopt b{font-size:15.5px}.snapopt small{color:var(--muted);font-size:13px}
+.snapopt input{width:24px;height:24px;accent-color:var(--accent);flex:none}
+.snapsteps{list-style:none;margin:14px 0;padding:0;display:grid;gap:0;border-top:1px solid var(--rule)}
+.snapsteps li{display:grid;grid-template-columns:32px minmax(0,1fr);gap:0 10px;align-items:center;padding:10px 0;border-bottom:1px solid var(--rule)}
+.snapsteps .ssi{grid-row:1/3;width:28px;height:28px;border-radius:50%;display:grid;place-items:center;font-weight:700;font-size:14px;background:var(--line);color:var(--muted)}
+.snapsteps li.ok .ssi{background:color-mix(in srgb,var(--accent) 14%,var(--paper));color:var(--accent)}
+.snapsteps li.now .ssi{background:var(--accent);color:var(--on-accent,#fff)}.snapsteps li.err .ssi{background:color-mix(in srgb,var(--hot) 18%,var(--paper));color:color-mix(in srgb,var(--hot) 70%,var(--ink))}
+.snapsteps small{color:var(--muted);font-size:13px}
 .snapmoms li b{font-size:14.5px}.snapmoms li small{grid-column:1;color:var(--muted);font-size:13px}.snapmoms li .sdph{grid-row:1/3;grid-column:2}
 /* kid games' painted props (public/art/game2, house style, owner Nov 2026: "ทำหมดเลย"): wicker baskets, a starry card back, a meadow under the maze, a painted cake, coins for the levels, the cheering dragon */
 .basket{background:url(/art/game2/basket.webp) center 38%/auto 58% no-repeat,color-mix(in srgb,var(--bc) 22%,#fff)}

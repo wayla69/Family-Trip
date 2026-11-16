@@ -738,7 +738,16 @@ function router({ pool, media, A, ai, hooks = {} }) {   // hooks.heart(h): set b
 
   // ----- bedtime story (Claude): only when pressed, text facts only, streamed as SSE; disconnect = stop, nothing saved
   async function storyFacts(t, day, lang) {
-    const days = await q("SELECT day_index, to_char(date,'YYYY-MM-DD') date, title FROM trip_days WHERE trip_id=$1 ORDER BY day_index", [t.id]);
+    const days = await q("SELECT day_index, to_char(date,'YYYY-MM-DD') date, title, place FROM trip_days WHERE trip_id=$1 ORDER BY day_index", [t.id]);
+    const tk = (await q('SELECT kind, timezone FROM trips WHERE id=$1', [t.id]))[0] || {};
+    // a book from photos has no plan and often no words yet: its days' places and photo moments are the facts (part of day · place · how many)
+    const snapMoments = async (di) => {
+      if (tk.kind !== 'snap') return [];
+      const rows = await q(`SELECT place, EXTRACT(HOUR FROM taken_at AT TIME ZONE $3)::int h FROM media WHERE trip_id=$1 AND day_index=$2 AND (mime IS NULL OR mime NOT LIKE 'audio/%') ORDER BY taken_at`, [t.id, di, tk.timezone || 'Asia/Bangkok']);
+      const part = (h) => (lang === 'en' ? (h < 11 ? 'morning' : h < 14 ? 'midday' : h < 17 ? 'afternoon' : h < 19 ? 'evening' : 'night') : (h < 11 ? 'ช่วงเช้า' : h < 14 ? 'ตอนกลางวัน' : h < 17 ? 'ช่วงบ่าย' : h < 19 ? 'ตอนเย็น' : 'ตอนค่ำ'));
+      const out = []; for (const r of rows) { const k = part(r.h) + (r.place ? ` · ${r.place}` : ''), last = out[out.length - 1]; if (last && last.k === k) last.n++; else out.push({ k, n: 1 }); }
+      return out.map((m) => `${lang === 'en' ? 'Photos' : 'รูป'}: ${m.k} (${m.n})`);
+    };
     const kidRows = await q('SELECT slug, name_th, name_en FROM children WHERE family_id=$1 ORDER BY pos', [FAMILY]);
     const kids = Object.fromEntries(kidRows.map((k) => [k.slug, lang === 'en' ? k.name_en : k.name_th]));
     const who = (s) => (s === 'both' ? FAM.names(kidRows, lang) : kids[s] || s);
@@ -751,7 +760,9 @@ function router({ pool, media, A, ai, hooks = {} }) {   // hooks.heart(h): set b
       const pl = await q('SELECT name FROM places WHERE trip_id=$1 AND day_index=$2 ORDER BY visited_at', [t.id, d.day_index]);
       const caps = (await q("SELECT caption FROM media WHERE trip_id=$1 AND day_index=$2 AND caption<>'' ORDER BY taken_at", [t.id, d.day_index])).map((m) => m.caption);
       const part = [];
+      if (d.place && (d.place[lang] || d.place.en)) part.push(`${lang === 'en' ? 'Where' : 'ที่ไหน'}: ${d.place[lang] || d.place.en}`);
       if (pl.length) part.push(`${lang === 'en' ? 'Places' : 'ที่ไป'}: ${pl.map((p) => p.name[lang] || p.name.en).join(', ')}`);
+      part.push(...await snapMoments(d.day_index));
       es.filter((e) => e.kind === 'mood' && e.mood).forEach((e) => part.push(`${lang === 'en' ? 'Mood' : 'อารมณ์'} ${who(e.child)}: ${e.mood}`));
       es.filter((e) => e.kind === 'quote').forEach((e) => part.push(`${who(e.child)} ${lang === 'en' ? 'said' : 'พูดว่า'}: "${e.text}"`));
       caps.forEach((c) => part.push(`${lang === 'en' ? 'Photo' : 'รูป'}: ${c}`));
@@ -1008,6 +1019,73 @@ function router({ pool, media, A, ai, hooks = {} }) {   // hooks.heart(h): set b
       res.end();
     } catch (e) { next(e); }
   });
+
+  // ----- the helper drafts a book from photos (docs/SNAP-BOOK.md P3, screens C1–C2): one job, step by step — the book's and the days'
+  // names, a summary a day, the foreword, and (asked for) a bedtime story a day — from text facts only (places, photo moments, the
+  // family's own words; never a photo, never a position). Every step is saved as it ends; what the parents wrote is never replaced:
+  // a day's name only while it is still "Day n", an entry only while it does not exist. One call each on the daily cap, all of
+  // which must fit today before it starts. One job at a time, claimed before the first await; GET reads the job first.
+  let snapJob = null;
+  const snapJobView = () => (snapJob ? { trip: snapJob.trip, status: snapJob.status, error: snapJob.error || null, steps: snapJob.steps.map(({ k, day, st }) => ({ k, day, st })) } : null);
+  const autoDay = (x) => !x || /^วันที่ \d+$/.test(x.th || '') || /^Day \d+$/.test(x.en || '');
+  const autoBook = (x) => !x || /^(ทริปของเรา|Our trip)$/.test(x.th || x.en || '') || /^ทริป /.test(x.th || '');
+  r.post('/api/b/snap/:trip/draft', ...W, async (req, res, next) => {
+    if (snapJob && snapJob.status === 'running') return bad(res, 'busy', 409);
+    const prev = snapJob; snapJob = { trip: req.params.trip, status: 'running', steps: [] };   // claimed: a second press cannot start a second job
+    const giveBack = () => { snapJob = prev; };
+    try {
+      if (!ai || !ai.enabled()) { giveBack(); return bad(res, 'no-key', 501); }
+      const t0 = await snapTrip(req.params.trip); if (!t0 || t0.kind !== 'snap') { giveBack(); return bad(res, 'trip', 404); }
+      const t = await trip(t0.id), b = req.body || {}, lang = b.lang === 'en' ? 'en' : 'th';
+      const parts = { names: b.names !== false, sums: b.sums !== false, fore: b.fore !== false, stories: b.stories === true };
+      const steps = [];
+      if (parts.names) steps.push({ k: 'names', day: null });
+      if (parts.sums) for (let i = 0; i < t.days; i++) steps.push({ k: 'sum', day: i });
+      if (parts.fore) steps.push({ k: 'fore', day: null });
+      if (parts.stories) for (let i = 0; i < t.days; i++) steps.push({ k: 'story', day: i });
+      if (!steps.length) { giveBack(); return bad(res, 'nothing'); }
+      const used = Number(((await q("SELECT calls FROM ai_usage WHERE family_id=$1 AND day=(now() AT TIME ZONE 'UTC')::date", [FAMILY]))[0] || {}).calls || 0);
+      if (STORY_DAILY - used < Math.min(steps.length, STORY_DAILY)) { giveBack(); return res.status(429).json({ error: 'limit', left: Math.max(0, STORY_DAILY - used), need: steps.length }); }
+      const job = snapJob = { trip: t.id, status: 'running', steps: steps.map((s) => ({ ...s, st: 'wait' })), ctl: new AbortController() };
+      res.status(202).json(snapJobView());
+      (async () => {
+        try {
+          const kids = await kidsFor(t);
+          for (const s of job.steps) {
+            if (job.ctl.signal.aborted) { job.status = 'stopped'; return; }
+            s.st = 'now';
+            const id = s.day === null ? `${t.id}.${s.k}.all` : `${t.id}.${s.k}.d${s.day}`;
+            if (s.k !== 'names' && (await q("SELECT 1 FROM entries WHERE id=$1 AND text<>''", [id])).length) { s.st = 'kept'; continue; }   // the family's own words stay
+            const facts = await storyFacts(t, s.day, lang);
+            if (!facts) { s.st = 'skip'; continue; }   // nothing to go on: no call
+            if (!(await aiTake())) throw Object.assign(new Error('limit'), { code: 'limit' });
+            let text = await ai.writeStory({ lang, whole: s.day === null, mode: s.k === 'names' ? 'snapnames' : s.k, facts, kids, signal: job.ctl.signal, onText: () => {} });
+            if (s.k === 'names') {
+              const nm = ai.parseNames(text); if (!nm) throw Object.assign(new Error('names'), { code: 'failed' });
+              const cur = (await q('SELECT title FROM trips WHERE id=$1', [t.id]))[0];
+              if (nm.title && autoBook(cur && cur.title)) await q('UPDATE trips SET title=$2 WHERE id=$1', [t.id, nm.title]);
+              for (const d of await q('SELECT day_index, title, emoji FROM trip_days WHERE trip_id=$1', [t.id])) {
+                const x = nm.days[d.day_index + 1]; if (!x || !autoDay(d.title)) continue;
+                await q('UPDATE trip_days SET title=$3, emoji=CASE WHEN emoji=\'\' THEN $4 ELSE emoji END WHERE trip_id=$1 AND day_index=$2', [t.id, d.day_index, { th: x.th, en: x.en }, x.emoji || '']);
+              }
+            } else {
+              await q(`INSERT INTO entries (id, family_id, trip_id, day_index, kind, text, lang, created_by, created_uid) VALUES ($1,$2,$3,$4,$5,$6,$7,$8,$9)
+                ON CONFLICT (id) DO UPDATE SET text=EXCLUDED.text, lang=EXCLUDED.lang, updated_at=now(), tr=NULL WHERE entries.text=''`, [id, FAMILY, t.id, s.day, s.k, text, lang, 'Claude', req.user.uid]);
+            }
+            s.st = 'done';
+          }
+          job.status = 'done';
+        } catch (e) {
+          if (job.ctl.signal.aborted) { job.status = 'stopped'; return; }
+          job.status = 'error'; job.error = e.code === 'refusal' ? 'refusal' : e.code === 'limit' ? 'limit' : 'failed';
+          for (const s of job.steps) if (s.st === 'now') s.st = 'error';
+          console.error('snap draft', t.id, e.code || e.message);
+        }
+      })();
+    } catch (e) { giveBack(); next(e); }
+  });
+  r.get('/api/b/snap/draft', A.requireEditor, (_req, res) => { res.setHeader('Cache-Control', 'no-store'); res.json({ job: snapJobView(), on: !!(ai && ai.enabled()) }); });
+  r.delete('/api/b/snap/draft', A.requireEditor, (_req, res) => { if (snapJob && snapJob.ctl && snapJob.status === 'running') snapJob.ctl.abort(); res.json({ ok: true }); });
 
   // ----- ask the guide (Claude): a parent's question answered from the book's own manual (excerpts picked by server/guide.js).
   // Editors only, only when asked, guide text only (no records, no photos), streamed as SSE, never saved; shares the daily cap.
