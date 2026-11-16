@@ -241,6 +241,12 @@ const T = 'hk-macau-2026';
     ok(/12 Dec – 14 Dec · 3 days/.test(sum) && /Know where\s*4/.test(sum) && /Outside the trip\s*2, left out/.test(sum) && !/14\.4|101\.3|-33\.8/.test(await page.textContent('main')), `book from photos: 7 photos read on the phone → 3 days, 4 placed, 2 outside the trip (${sum})`);
     await s.shot('snap-read');
     await page.click('.snapfoot a.btn'); await page.waitForSelector('.snapdays');
+    // the three fixtures of day 1 are one synthetic picture with one camera second — a burst of the same shot: two are set aside (the
+    // "set aside" fold of the day); a tap on each brings it back into the book, so the day keeps its three photos
+    const asideN = await page.locator('.snapday:nth-child(1) .snapaside .sdpt').count();
+    if (asideN) await page.click('.snapday:nth-child(1) .snapaside > summary');
+    for (let k = 0; k < asideN; k++) await page.locator('.snapday:nth-child(1) .snapaside .sdpt').nth(k).click();
+    ok(asideN === 2 && await page.locator('.snapday:nth-child(1) .snapaside .sdpt.kept').count() === 2, `book from photos: the same shot taken twice more in that second is set aside, and a tap brings each back (${asideN})`);
     const title = await page.inputValue('#snaptitle'), d1 = await page.textContent('.snapday:nth-child(1) .sdt'), d2 = await page.textContent('.snapday:nth-child(2) .sdt');
     const moms = await page.$$eval('.snapday:nth-child(1) .snapmoms li', (ls) => ls.map((l) => l.textContent.replace(/\s+/g, ' ').trim()));
     ok(title === 'Khao Yai, 3 days' && /Khao Yai · 3 photos/.test(d1) && /No place yet · 1 photos?/.test(d2) && moms.length === 1 && /^Morning · Khao Yai/.test(moms[0]), `book from photos: the days named from the place (${title}; ${d1.trim()} | ${d2.trim()} | ${moms.join(' / ')})`);
@@ -323,6 +329,27 @@ const T = 'hk-macau-2026';
     const toastTx = await page.evaluate(() => document.getElementById('toast').textContent);
     ok(tl.days.length === 2 && tl.days[1].date === nextDay && ml.length === 3 && ml.filter((m) => m.day === 1).length === 1 && /left out/.test(toastTx),
       `photos found later: the next day was added and holds its photo; the old and the undated ones left out, and said (days ${tl.days.map((d) => d.date)}, media ${ml.map((m) => m.day)}, toast "${toastTx}")`);
+    // edit the book after it is made (owner, Nov 2026: "แก้เล่มหลังสร้างแล้ว"): the book's name, a day's name and place, saved on leaving
+    // the box; a photo on the wrong day moves from its viewer
+    await page.goto(`${BASE}/#/t/${id}`); await page.waitForSelector('.snapeditgo'); await page.click('.snapeditgo');
+    await page.waitForSelector('#sebook');
+    await page.fill('#sebook', 'ทะเลบางแสน'); await page.press('#sebook', 'Tab');
+    await page.waitForFunction((tid) => trips().find((x) => x.id === tid).title.th === 'ทะเลบางแสน', id, { timeout: 8000 }).catch(() => {});
+    await page.fill('.sedt[data-d="1"][data-k="title"]', 'Sandcastles'); await page.press('.sedt[data-d="1"][data-k="title"]', 'Tab');
+    await page.waitForFunction((tid) => T(trips().find((x) => x.id === tid).days[1].title) === 'Sandcastles', id, { timeout: 8000 }).catch(() => {});
+    await page.fill('.sedt[data-d="1"][data-k="place"]', 'Bang Saen'); await page.press('.sedt[data-d="1"][data-k="place"]', 'Tab');
+    await page.waitForFunction((tid) => (trips().find((x) => x.id === tid).days[1].place || {}).en === 'Bang Saen', id, { timeout: 8000 }).catch(() => {});
+    const te = (await apiState(page)).trips.find((x) => x.id === id), editTaps = await page.evaluate(() => [...document.querySelectorAll('.sedt, #sebook')].every((e) => e.getBoundingClientRect().height >= 44));
+    ok(te.title.th === 'ทะเลบางแสน' && te.title.en === 'ทะเลบางแสน' && te.days[1].title.en === 'Sandcastles' && te.days[1].place.en === 'Bang Saen' && editTaps && await s.noHScroll(),
+      `edit the book: its name, a day's name and its place are saved on leaving the box; boxes 44 px tall, no sideways scroll (${JSON.stringify({ title: te.title, d1: te.days[1] })})`);
+    const mv = (await apiState(page)).media.find((m) => m.trip === id && m.day === 1);
+    await page.goto(`${BASE}/#/t/${id}/book`); await page.waitForSelector(`[data-a="lb"][data-v="${mv.id}"]`);
+    await page.click(`[data-a="lb"][data-v="${mv.id}"]`); await page.waitForSelector('#lbday');
+    await page.selectOption('#lbday', '0');
+    await page.waitForFunction(() => queue.length === 0, null, { timeout: 15000 }).catch(() => {});
+    const moved = (await apiState(page)).media.find((m) => m.id === mv.id);
+    ok(moved.day === 0, `a photo on the wrong day moves from its viewer (day ${moved.day})`);
+    await page.keyboard.press('Escape'); await page.evaluate(() => { lbState = null; drawLb(); });
     // "go here again" (owner, Nov 2026): from the menu, a first date → a new book with the same towns day by day; it opens on its menu
     await page.goto(`${BASE}/#/t/${id}`); await page.waitForSelector('.snapagaingo');
     await page.click('.snapagaingo'); await page.waitForSelector('#againfrom');
@@ -334,6 +361,39 @@ const T = 'hk-macau-2026';
     ok(!!nb && nb.days.length === tl.days.length && nb.days[0].place && nb.days[0].place.en === tl.days[0].place.en && await page.locator('.hubgrid a[href$="/today"]').count() === 0 && !s.errs.length,
       `go again: a new book with the same towns from the chosen date, on its menu (no Today tile before its dates); no page error (${nid} ${s.errs.join(' | ')})`);
     await page.evaluate((xs) => Promise.all(xs.map((x) => fetch('/api/b/trips/' + x, { method: 'DELETE', headers: { 'x-mb': '1' } }))), [id, nid]);
+    // two trips in one pick, a burst of the same shot, a screenshot, the best photo of each day (owner, Nov 2026): the read page says "these
+    // look like 2 trips" and what was set aside and starred; "a book each" makes two books; the burst sends one photo, the screenshot none,
+    // each book has a ⭐ photo. Pictures are generated noise (never a real photo), each with its own camera time.
+    {
+      const shot = async (seed, when) => ({ name: `IMG_${seed}.jpg`, mimeType: 'image/jpeg', buffer: await sharp({ create: { width: 320, height: 240, channels: 3, noise: { type: 'gaussian', mean: 60 + (seed % 7) * 20, sigma: 40 + seed } } })
+        .jpeg({ quality: 85 }).withExif({ IFD0: { DateTime: when }, IFD2: { DateTimeOriginal: when } }).toBuffer() });
+      const files = [];
+      for (let k = 0; k < 6; k++) files.push(await shot(k + 1, `2025:03:0${1 + (k % 2)} 1${k}:00:00`));
+      const burst = await shot(50, '2025:03:01 15:00:00');
+      files.push(burst, { ...burst, name: 'IMG_51.jpg', buffer: await sharp(burst.buffer).withExif({ IFD0: { DateTime: '2025:03:01 15:00:01' }, IFD2: { DateTimeOriginal: '2025:03:01 15:00:01' } }).toBuffer() });
+      for (let k = 0; k < 5; k++) files.push(await shot(20 + k, `2025:05:1${k % 2} 0${k + 1}:30:00`));
+      files.push({ name: 'Screenshot_20250301.png', mimeType: 'image/png', buffer: await sharp({ create: { width: 200, height: 400, channels: 3, background: '#eee' } }).png().toBuffer() });
+      await page.goto(`${BASE}/#/snap`); await page.waitForSelector('.snapmode');
+      await page.click('.snapmode .tpo[data-v="after"]');
+      const [fb] = await Promise.all([page.waitForEvent('filechooser'), page.click('[data-a="snappickbook"]')]);
+      await fb.setFiles(files);
+      await page.waitForSelector('.snaptwo', { timeout: 30000 }).catch(() => {});
+      const rd = await page.evaluate(() => ({ two: document.querySelectorAll('.snaptwo .tpo').length, sum: document.querySelector('.snapsum') ? document.querySelector('.snapsum').textContent : '', aside: { ...snapS.aside }, stars: snapS.star.size }));
+      ok(rd.two === 3 && /set aside/i.test(rd.sum) && /best photos/i.test(rd.sum) && Object.values(rd.aside).filter((v) => v === 'dup').length === 1 && Object.values(rd.aside).filter((v) => v === 'shot').length === 1 && rd.stars >= 2,
+        `two trips: the read page offers either trip or a book each (not one book: March to May is over 60 days); one of the burst and the screenshot set aside; a star a day (${JSON.stringify(rd)})`);
+      await page.click('.snaptwo .tpo[data-v="both"]');
+      await page.goto(`${BASE}/#/snap/days`); await page.waitForSelector('[data-a="snapmake"]');
+      const daysOk = await page.evaluate(() => document.querySelectorAll('.sdpt.on').length >= 1 && document.querySelectorAll('.snapaside').length >= 1 && [...document.querySelectorAll('.sdpt')].every((e) => e.getBoundingClientRect().height >= 44));
+      const before = (await apiState(page)).trips.filter((x) => x.kind === 'snap').map((x) => x.id);
+      await page.click('[data-a="snapmake"]');
+      await page.waitForFunction(() => location.hash === '#/', null, { timeout: 30000 }).catch(() => {});
+      await page.waitForFunction(() => queue.length === 0, null, { timeout: 60000 }).catch(() => {});
+      const st2 = await apiState(page), made = st2.trips.filter((x) => x.kind === 'snap' && !before.includes(x.id)).sort((a, b) => (a.date_from < b.date_from ? -1 : 1));
+      const per = made.map((x) => { const ms = st2.media.filter((m) => m.trip === x.id); return { from: x.date_from, n: ms.length, stars: ms.filter((m) => m.highlight).length }; });
+      ok(daysOk && made.length === 2 && per[0].from === '2025-03-01' && per[0].n === 7 && per[1].from === '2025-05-10' && per[1].n === 5 && per.every((x) => x.stars >= 1),
+        `two trips: "a book each" makes two books; the burst sends one photo, the screenshot none; each book has its best photo starred (${JSON.stringify({ daysOk, per })})`);
+      await page.evaluate((xs) => Promise.all(xs.map((x) => fetch('/api/b/trips/' + x, { method: 'DELETE', headers: { 'x-mb': '1' } }))), made.map((x) => x.id));
+    }
     await s.ctx.close();
   }
   // #/family without the drawing helper: no character box, no server words, the birth row says what the month is for
