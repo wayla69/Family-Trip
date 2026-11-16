@@ -452,4 +452,5 @@ Design notes that are easy to lose:
 Decisions after P0: **D3 route (Android, decided from the Samsung):** a photo picked from the phone carries its time but never
 its position, through either picker; so on Android "after the trip" asks one place per day (A4) as its main path, and "during the
 trip" takes photos through the app's own camera button (position kept) or reads the live position on "ใช้ตำแหน่งตอนนี้". No second
-picker button. Still to run: iPhone and iPads (expected to keep the position) · gazetteer source = … · R3 confirmed by owner on … .
+picker button. **Share from the gallery** (owner: "ทำข้อ 1", 16 Nov 2026): LifeBook is a share target, so photos chosen in Samsung's
+Gallery or Google Photos can be shared into `#/snaptest` — whether that route keeps the position is the next device check. Still to run: iPhone and iPads (expected to keep the position) · gazetteer source = … · R3 confirmed by owner on … .

@@ -181,6 +181,7 @@ app.get('/manifest.webmanifest', async (_req, res) => {
   try { const b = await BS.brand(PG); m.name = m.short_name = b.app.en || b.app.th || m.name; } catch (_) { /* the stock name */ }
   res.setHeader('Content-Type', 'application/manifest+json; charset=utf-8'); res.setHeader('Cache-Control', 'no-cache'); res.end(JSON.stringify(m));
 });
+app.post('/share', (_req, res) => res.redirect(303, '/#/snaptest?shared=0'));   // a share before the service worker is in place: open the check page (the photos were not kept)
 app.get('/sw.js', (_req, res) => { res.setHeader('Content-Type', 'text/javascript; charset=utf-8'); res.setHeader('Cache-Control', 'no-cache'); res.end(SW); });
 // the stock art library: versioned file names (name.v2.svg), so a file never changes — a year's cache; a missing one is a 404, never the app page
 app.use('/stock', express.static(STOCK.DIR, { index: false, fallthrough: true, setHeaders: (res, f) => { res.setHeader('Cache-Control', f.endsWith('index.json') ? 'no-cache' : 'public, max-age=31536000, immutable'); if (f.endsWith('.svg')) res.setHeader('Content-Security-Policy', "default-src 'none'; style-src 'unsafe-inline'"); } }));

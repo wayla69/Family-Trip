@@ -173,11 +173,30 @@ async function snapRead(files, onEach, width) {
    The owner picks photos on each phone; the page lists what the phone handed over. It shows "yes/no" for a position,
    never the numbers, and nothing is uploaded. */
 const snapT = { runs: [], busy: false, geo: null };
+// photos shared to the app from the gallery (manifest share_target → sw.js takeShare → cache 'mbs-share'): read once, then forgotten
+async function snapTakeShared() {
+  if (!('caches' in self)) return [];
+  const c = await caches.open('mbs-share'), keys = await c.keys(), files = [];
+  for (const k of keys) {
+    const res = await c.match(k); if (!res) continue;
+    files.push(new File([await res.blob()], decodeURIComponent(res.headers.get('x-name') || '') || 'shared', { type: res.headers.get('content-type') || '', lastModified: +res.headers.get('x-mod') || Date.now() }));
+    await c.delete(k);
+  }
+  return files;
+}
+function snapRun(via, files) {
+  const run = { via, files, rows: new Array(files.length).fill(null), ms: 0 }, t0 = performance.now();
+  snapT.runs.push(run); snapT.busy = true; render();
+  let last = 0;
+  return snapRead(files, (i, m) => { run.rows[i] = m; const now = performance.now(); if (now - last > 250) { last = now; snapDraw(); } })
+    .then(() => { run.ms = performance.now() - t0; snapT.busy = false; render(); });
+}
 const SNAP_PICKS = [
   ['photos', 'image/*', false, 'คลังรูป', 'Photo library'],
   ['files', '', false, 'ไฟล์', 'Files'],
   ['camera', 'image/*', true, 'ถ่ายด้วยกล้องตอนนี้', 'Take one now'],
 ];
+const SNAP_SHARE = ['share', '', false, 'แชร์จากแกลเลอรี', 'Shared from the gallery'];
 function snapDevice() {
   const ua = navigator.userAgent;
   const os = /Android ([\d.]+)/.exec(ua), ios = /OS (\d+)_(\d+)/.exec(ua), cr = /Chrome\/(\d+)/.exec(ua), sa = /Version\/([\d.]+).*Safari/.exec(ua), sm = /SamsungBrowser\/([\d.]+)/.exec(ua);
@@ -192,7 +211,7 @@ function snapRunHtml(run) {
   const exif = cnt((m) => m.src === 'exif'), off = cnt((m) => m.tz), gps = cnt((m) => m.ll), heif = run.files.filter((f) => /hei[cf]|avif/i.test(f.type + f.name)).length;
   const line = (th, en, v) => `<li><span>${L(th, en)}</span><b>${v}</b></li>`;
   const pct = (k) => (done.length ? Math.round(k * 100 / done.length) + '%' : '');
-  const pick = SNAP_PICKS.find((p) => p[0] === run.via) || SNAP_PICKS[0];
+  const pick = SNAP_PICKS.concat([SNAP_SHARE]).find((p) => p[0] === run.via) || SNAP_PICKS[0];
   return `<section class="snaprun"><h2>${L(pick[3], pick[4])} · ${L(`${n} รูป`, `${n} photo${n === 1 ? '' : 's'}`)}</h2>
 ${done.length < n ? `<p class="label">${L('กำลังอ่าน', 'Reading')} ${done.length}/${n}</p>` : `<p class="label">${L('อ่านเสร็จใน', 'Read in')} ${(run.ms / 1000).toFixed(1)} ${L('วินาที', 's')}</p>`}
 <ul class="snapsum">${line('มีเวลาถ่ายในรูป', 'Time taken (EXIF)', `${exif} · ${pct(exif)}`)}${line('มีเขตเวลา', 'Time zone', `${off} · ${pct(off)}`)}${line('มีตำแหน่ง', 'Position', `${gps} · ${pct(gps)}`)}${line('ไฟล์ HEIC/HEIF', 'HEIC/HEIF files', heif)}</ul>
@@ -213,6 +232,11 @@ function snapText() {   // what the owner pastes back: the device and the counts
   return lines.join('\n');
 }
 function viewSnapTest() {
+  const shq = route().q.get('shared');
+  if (shq !== null && !snapT.shareTaken) {   // arrived from the gallery's share sheet: read what it handed over, once
+    snapT.shareTaken = true; history.replaceState(null, '', '#/snaptest');
+    snapTakeShared().then((fs) => { if (fs.length) snapRun('share', fs); else { snapT.shareNone = true; render(); } }).catch(() => { snapT.shareNone = true; render(); });
+  }
   // Chrome on Android always says "Android 10" in its user agent; the real version comes from the client hints, once
   if (!snapT.platAsked && navigator.userAgentData && navigator.userAgentData.getHighEntropyValues) { snapT.platAsked = true;
     navigator.userAgentData.getHighEntropyValues(['platformVersion']).then((h) => { const pf = navigator.userAgentData.platform; if (pf && h.platformVersion) { snapT.plat = `${pf} ${h.platformVersion}`; render(); } }).catch(() => {}); }
@@ -220,6 +244,8 @@ function viewSnapTest() {
 <p class="notice">${L('หน้านี้ใช้ทดสอบเล่มจากรูป: ดูว่ามือถืออ่านเวลาถ่ายและตำแหน่งจากรูปได้หรือไม่ ไม่มีรูปถูกส่งไปไหน และไม่แสดงพิกัด แสดงแค่ว่ามีหรือไม่มี',
     'A check for the book-from-photos idea: does this phone hand over when and where each photo was taken? Nothing is uploaded and no position is shown — only whether there is one.')}</p>
 <p class="label">${esc(snapDevice())}</p>
+<p class="label">${L('อีกทาง: เปิดแกลเลอรี เลือกรูป กด "แชร์" แล้วเลือก LifeBook รูปจะมาที่หน้านี้ (ต้องเป็นแอปที่ติดตั้งบนหน้าจอโฮม)', 'Another way: in the gallery, pick photos, tap Share and choose LifeBook — they arrive on this page (the Home-Screen app only).')}</p>
+${snapT.shareNone ? `<p class="notice">${L('การแชร์มาถึงแล้ว แต่ไม่มีรูปติดมา ลองติดตั้งแอปบนหน้าจอโฮมใหม่ แล้วแชร์อีกครั้ง', 'The share arrived without photos. Re-add the app to the Home Screen and share again.')}</p>` : ''}
 <div class="snappicks">${SNAP_PICKS.map(([k, , , th, en]) => `<button type="button" class="btn${k === 'photos' ? '' : ' ghost'}" data-a="snappick" data-v="${k}"${snapT.busy ? ' disabled' : ''}>${L(th, en)}</button>`).join('')}
 <button type="button" class="btn ghost" data-a="snapgeo">${L('ตำแหน่งตอนนี้', 'Position now')}</button></div>
 ${snapT.geo ? `<p class="label">${L('ตำแหน่งตอนนี้', 'Position now')}: ${esc(snapT.geo)}</p>` : ''}
@@ -243,14 +269,10 @@ Object.assign(A, {
       { enableHighAccuracy: false, timeout: 15000, maximumAge: 60000 });
   },
   snapcopy() { const s = snapText(); (navigator.clipboard ? navigator.clipboard.writeText(s) : Promise.reject()).then(() => toast(L('คัดลอกแล้ว', 'Copied'))).catch(() => { prompt(L('คัดลอกข้อความนี้', 'Copy this'), s); }); },
-  snapclear() { snapT.runs = []; snapT.geo = null; render(); },
+  snapclear() { snapT.runs = []; snapT.geo = null; snapT.shareNone = false; render(); },
 });
 if (typeof document !== 'undefined') document.addEventListener('change', (e) => {
   if (!e.target.classList || !e.target.classList.contains('snapin')) return;
   const files = [...(e.target.files || [])]; if (!files.length) return;
-  const run = { via: e.target.dataset.v, files, rows: new Array(files.length).fill(null), ms: 0 }, t0 = performance.now();
-  snapT.runs.push(run); snapT.busy = true; render();
-  let last = 0;
-  snapRead(files, (i, m) => { run.rows[i] = m; const now = performance.now(); if (now - last > 250) { last = now; snapDraw(); } })
-    .then(() => { run.ms = performance.now() - t0; snapT.busy = false; render(); });
+  snapRun(e.target.dataset.v, files);
 });
