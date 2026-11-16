@@ -283,6 +283,21 @@ const T = 'hk-macau-2026';
     await page.waitForFunction(() => queue.length === 0, null, { timeout: 30000 });
     const st = await apiState(page), ms = st.media.filter((m) => m.trip === id).map((m) => m.place).sort().join(',');
     ok(ms === 'Bang Saen,Khao Yai' && st.places.some((p) => p.trip === id && p.key === 'snap.th-khaoyai'), `on the trip: a photo with a position takes its town, one without takes "now around" (${ms})`);
+    // P4: the day took the photo's town as its place, so the book has the library's picture, crest and town — and the kids' side works
+    await page.waitForFunction((tid) => { const x = trips().find((y) => y.id === tid); return x && x.days[0].place && (x.theme.artDays || [])[0]; }, id, { timeout: 10000 });
+    const tk = (await apiState(page)).trips.find((x) => x.id === id);
+    ok(tk.days[0].place.en === 'Khao Yai' && /^\/stock\//.test(tk.theme.artDays[0]) && /^\/stock\//.test(tk.passport.style.crest) && tk.passport.map.stops.length === 1,
+      `book from photos, kids' side (P4): the day took its photo's town; a library picture, the crest and the town on the map (${tk.theme.artDays[0]})`);
+    await page.goto(`${BASE}/#/passport/mimi/${id}`); await page.waitForSelector('.pp');
+    const crestOk = await page.evaluate(() => [...document.querySelectorAll('.pp img')].some((i) => /\/stock\//.test(i.src)));
+    await page.goto(`${BASE}/#/kid/mimi`); await page.waitForSelector('.kidtiles');
+    await page.goto(`${BASE}/#/kid/mimi/quest`); await page.waitForSelector('.kidwrap');
+    const questTx = await page.textContent('.kidwrap');
+    await page.goto(`${BASE}/#/print/${id}`); await page.waitForSelector('section.pg');
+    const printOk = await page.evaluate(() => document.querySelectorAll('section.pg').length >= 3 && [...document.querySelectorAll('img')].some((i) => /\/stock\//.test(i.src)));
+    await s.shot('snap-print');
+    ok(crestOk && questTx.length > 20 && printOk && !s.errs.length, `book from photos, kids' side (P4): the passport shows the library crest, kid mode and the adventure map open, the printed book has its pages and the day picture; no page error (${s.errs.join(' | ')})`);
+    await page.goto(`${BASE}/#/t/${id}/today`); await page.waitForSelector('.snapacts');
     await page.click('[data-a="snapclose"]'); await page.click('[data-a="snapclose"]');
     await page.waitForFunction(() => /\/book$/.test(location.hash), null, { timeout: 10000 });
     t = (await apiState(page)).trips.find((x) => x.id === id);
@@ -1088,7 +1103,10 @@ const T = 'hk-macau-2026';
   { // undo and the sponge (owner, Nov 2026: "ทำให้ล้างได้หน่อย"): a slip goes back one tap at a time, the sponge washes the picture white, ↶ brings it back
     const filled = () => page.evaluate(() => [...document.querySelectorAll('.colourpad [data-c]')].filter((x) => x.getAttribute('fill').toLowerCase() !== '#ffffff').map((x) => x.getAttribute('fill')).join());
     const saved = () => page.evaluate(() => (S.entries.find((e) => e.id === 'hk-macau-2026.field.colour.d1.mimi') || {}).text);
+    await page.waitForFunction(() => queue.length === 0 && document.querySelectorAll('.colourpad [data-c]').length > 0, null, { timeout: 8000 });   // the blue tap's save is back and the picture redrawn
     await page.click('.palette button[data-v="#EF5350"]'); await page.locator('.colourpad [data-c]').nth(0).click({ force: true });
+    // a redraw before the red tap is saved (a state refresh lands within the 500 ms the save waits): the red must stay on the picture
+    await page.evaluate(() => render()); await page.waitForFunction(() => document.querySelectorAll('.colourpad [data-c]').length > 0, null, { timeout: 5000 });
     const two = await filled(); await page.click('[data-a="kidcolundo"]'); const one = await filled();
     await page.click('[data-a="kidcolwipe"]'); const none = await filled(); await page.waitForFunction(() => (S.entries.find((e) => e.id === 'hk-macau-2026.field.colour.d1.mimi') || {}).text === '{}', null, { timeout: 5000 });
     await page.click('[data-a="kidcolundo"]'); const back = await filled(); await page.waitForFunction(() => /42A5F5/.test((S.entries.find((e) => e.id === 'hk-macau-2026.field.colour.d1.mimi') || {}).text || ''), null, { timeout: 5000 });

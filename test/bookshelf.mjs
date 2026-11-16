@@ -174,6 +174,11 @@ ok((await fetch(BASE + '/api/b/trips', { method: 'POST', headers: H, body: JSON.
   ok(r1.ok && /^snap-20261212-[0-9a-f]{6}$/.test(id) && t.kind === 'snap' && t.open === false && t.source === 'manual' && t.date_from === '2026-12-12' && t.date_to === '2026-12-14'
     && t.days.map((d) => d.date).join() === '2026-12-12,2026-12-13,2026-12-14' && t.days[0].place.th === 'ปากช่อง' && t.days[1].place === null && t.days[2].place.en === 'เขาใหญ่'
     && t.days[2].title.en === 'Sunflowers' && t.days[1].title.th === 'วันที่ 2' && JSON.stringify(t.theme.snap.places) === '["th-khaoyai"]', 'snap: a book made from the photos\' dates, in date order, each day with its place; bad place ids dropped');
+  { const pp = t.passport || {}, art = (t.theme.artDays || []).filter(Boolean);
+    ok(art.length === 3 && art.every((u) => u.startsWith('/stock/')) && String((pp.style || {}).crest).startsWith('/stock/') && (pp.stamps || []).length >= 1
+      && (pp.days || []).length === 3 && pp.days[0].facts[0].th.includes('ปากช่อง') && pp.days.every((d) => d.acc && d.tint) && t.theme.accent !== '#2C5646'
+      && pp.map && pp.map.stops.length === 2 && pp.map.days[0].length === 1 && pp.map.days[1].length === 0 && pp.map.stops.every((s) => s.x >= 0 && s.x <= 100),
+    `snap pictures (P4): every day a library picture, the crest and stamps, the town's colours, a passport day each with a line about the town, a map of the towns visited (${art.length} pictures, crest ${(pp.style || {}).crest}, ${(pp.stamps || []).length} stamps, ${pp.map && pp.map.stops.length} map stops)`); }
   ok((await post('/api/b/snap', { days: [{ date: '2026-12-01' }, { date: '2027-03-01' }] })).status === 400 && (await post('/api/b/snap', { days: [{ date: '2026-02-30' }] })).status === 400
     && (await post('/api/b/snap', { days: [{ date: '2026-12-01' }], timezone: 'Mars/Base' })).status === 400, 'snap: more than 60 days, an impossible date or an unknown zone is refused');
   const live = await (await post('/api/b/snap', { open: true, timezone: 'Asia/Bangkok' })).json();

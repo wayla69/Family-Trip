@@ -794,7 +794,7 @@ ${pages.length > 1 ? `<div class="kdots" id="kdots">${pages.map((_, n) => `<i${n
   } else if (view === 'colour') {
     const pics = colourPics(t, i), cur = pics.find((p) => p.key === colChoice[`${t.id}.${kid}.${i}`]) || pics[0];
     const ck = `${t.id}.${cur.key}.${kid}`; if (colKey !== ck) { colKey = ck; colHist = []; }   // the undo history belongs to one picture of one child
-    body = `<div class="colourpad colsvg" data-src="${esc(cur.url)}" data-fill="${esc(fieldVal(t, cur.key, kid) || '{}')}" data-key="${esc(cur.key)}" data-t="${esc(t.id)}" data-d="${i}" data-k="${esc(kid)}"></div>
+    body = `<div class="colourpad colsvg" data-src="${esc(cur.url)}" data-fill="${esc(colPend[colPendKey(t.id, cur.key, kid)] || fieldVal(t, cur.key, kid) || '{}')}" data-key="${esc(cur.key)}" data-t="${esc(t.id)}" data-d="${i}" data-k="${esc(kid)}"></div>
 <div class="palette">${COLOURS.map((c) => `<button data-a="kidcolor" data-v="${c}" style="--c:${c}" aria-pressed="${c === kidColour}" aria-label="${c}"></button>`).join('')}</div>
 ${pics.length > 1 ? `<div class="colpics" role="group" aria-label="${L('เลือกรูประบายสี', 'Pick a picture')}">${pics.map((p) => `<button data-a="kidcolpic" data-t="${esc(t.id)}" data-k="${esc(kid)}" data-d="${i}" data-v="${esc(p.key)}" data-say="${esc(p.name)}" aria-pressed="${p === cur}" aria-label="${esc(p.name)}"><img src="${esc(p.url)}" alt="" loading="lazy">${fieldVal(t, p.key, kid) && fieldVal(t, p.key, kid) !== '{}' ? '<i>🎨</i>' : ''}</button>`).join('')}</div>` : ''}
 <div class="drawtools coltools"><button class="dclear" data-a="kidcolundo" aria-label="${L('ย้อนกลับ', 'Undo')}"${colHist.length ? '' : ' disabled'}>↶ <b>${L('ย้อน', 'Undo')}</b></button><button class="dclear" data-a="kidcolwipe" aria-label="${L('ล้างสีแล้วระบายใหม่', 'Wipe the colours and start again')}">🧽 <b>${L('ล้างสี', 'Wipe')}</b></button></div>
@@ -2139,14 +2139,22 @@ document.addEventListener('click', (e) => {
 // the colouring page's undo and wipe (owner, Nov 2026: "ทำให้ล้างได้หน่อย"): every tap can be taken back one at a time (↶), and the sponge
 // washes the whole picture white in one tap — and ↶ brings it all back, so a wipe by mistake is never a loss. The history lives in memory only.
 let colHist = [], colKey = '';
+// the colours a child has put on a picture but not yet saved (the save waits 500 ms for the next tap): a redraw in that half second —
+// the previous tap's save coming back, a state refresh — paints the picture from these, never from the older stored copy, or the
+// newest colour blinked off and a tap on a picture being redrawn was lost (a CI test of Nov 2026 caught both)
+const colPend = {};
+const colPendKey = (tid, key, kid) => `${tid}|${key}|${kid}`;
 function colourSet(pad, fills) {
   pad.dataset.fill = JSON.stringify(fills);
   pad.querySelectorAll('[data-c]').forEach((x) => x.setAttribute('fill', fills[x.dataset.c] || '#ffffff'));
   const u = $('[data-a="kidcolundo"]'); if (u) u.disabled = !colHist.length;
+  const t0 = pad.dataset.t, kid0 = pad.dataset.k, key0 = pad.dataset.key || `colour.d${pad.dataset.d}`, pk = colPendKey(t0, key0, kid0);
+  colPend[pk] = pad.dataset.fill;
   clearTimeout(colourSaveT);
   colourSaveT = setTimeout(() => {
-    const t = trip(pad.dataset.t), kid = pad.dataset.k, key = pad.dataset.key || `colour.d${pad.dataset.d}`;
-    putEntry(t, { day: null, kind: 'field', child: kid, first_key: key, text: pad.dataset.fill }, `${t.id}.field.${key}.${kid}`);
+    const t = trip(t0), text = colPend[pk]; if (!t || text === undefined) return;
+    // forgotten once the phone's state holds it (and only if no newer tap came meanwhile)
+    Promise.resolve(putEntry(t, { day: null, kind: 'field', child: kid0, first_key: key0, text }, `${t.id}.field.${key0}.${kid0}`)).finally(() => { if (colPend[pk] === text) delete colPend[pk]; });
   }, 500);
 }
 // grown-ups empty the star jar (and its friends) by pressing and holding it 1.5 s — a test run's stars, a fresh start; nothing on the server
