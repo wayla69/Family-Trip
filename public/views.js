@@ -596,7 +596,7 @@ function viewHub(t) {
   const eatN = eatCount(t), picks = eatN ? eatData(t).groups.reduce((a, g) => a + g.items.filter((x) => (x.pick || []).length).length, 0) : 0;
   const learnN = t.days.reduce((a, x) => a + ((x.plan || {}).learn || []).length, 0), quizN = t.days.reduce((a, x) => a + ((x.plan || {}).quiz || []).length, 0);
   const tiles = [
-    t.kind === 'snap' && !t.open ? '' : tile('today', `#/t/${esc(t.id)}/today`, esc(t.kind === 'snap' ? L('ถ่ายรูป เลือกรูป บอกว่าอยู่ที่ไหน', 'Photos and where we are') : todayStatus), 'today' + (dn >= 0 || t.kind === 'snap' ? ' hi' : ''), artImg(t, i, 'tart')),
+    t.kind === 'snap' && !snapLive(t) ? '' : tile('today', `#/t/${esc(t.id)}/today`, esc(t.kind === 'snap' ? L('ถ่ายรูป เลือกรูป บอกว่าอยู่ที่ไหน', 'Photos and where we are') : todayStatus), 'today' + (dn >= 0 || t.kind === 'snap' ? ' hi' : ''), artImg(t, i, 'tart')),
     tile('book', `#/t/${esc(t.id)}/book`, esc([st.photos && L(`${st.photos} รูป`, `${st.photos} photo${st.photos > 1 ? 's' : ''}`), st.quotes && L(`${st.quotes} คำพูด`, `${st.quotes} quote${st.quotes > 1 ? 's' : ''}`), got && L(`ตรา ${got}`, `${got} stamp${got > 1 ? 's' : ''}`)].filter(Boolean).join(' · ') || L('ยังว่าง — เติมได้ระหว่างทริป', 'Empty for now — fills in on the trip'))),
     // the travel notebook and the kids' passports are on the shelf (they span every book), so the menu holds neither
     // the menu never repeats the bar below (owner, Nov 2026): record and eat are on the parents' bar, firsts is a row in the memory book (relatives: on their bar), so relatives alone keep the eat tile
@@ -614,11 +614,12 @@ function viewHub(t) {
   // two rows of their own — the offline row comes up under Today while it still needs a tap (not stored yet, or new photos), else it waits at the foot.
   // Kid mode has its button on the bar below, so the menu no longer repeats it.
   // (a book from photos made after the trip has no flight to store it before: its row waits at the foot)
-  const offWarn = !(off.got && !off.stale) && !(t.kind === 'snap' && !t.open), row = (cls, href, k, b, sm) => `<a class="hubrow ${cls}" href="${href}">${hubE(k)}<span class="ht"><b>${b}</b><small>${sm}</small></span>${ic('chev')}</a>`;
+  const offWarn = !(off.got && !off.stale) && !(t.kind === 'snap' && !snapLive(t)), row = (cls, href, k, b, sm) => `<a class="hubrow ${cls}" href="${href}">${hubE(k)}<span class="ht"><b>${b}</b><small>${sm}</small></span>${ic('chev')}</a>`;
   const offRow = ed ? row(`t-offline${offWarn ? ' warn' : ''}`, `#/t/${esc(t.id)}/offline`, 'offline', L('เก็บเล่มไว้ใช้ตอนไม่มีเน็ต', 'Keep this book for no signal'), esc(!off.got ? L('ยังไม่ได้เก็บ — กดก่อนขึ้นเครื่อง', 'Not stored yet — tap before the flight')
     : off.stale ? L(`เก็บเมื่อ ${off.when} · มีรูปใหม่ ${off.fresh} รูป กดเก็บเพิ่ม`, `Stored ${off.when} · ${off.fresh} new photo${off.fresh > 1 ? 's' : ''}, tap to top up`) : L(`เก็บไว้ในเครื่องแล้ว · ${off.when}`, `Stored on this phone · ${off.when}`))) : '';
   // a closed book from photos: the photos found later go in from here, each to the day it was taken (snap.js snapMoreAdd)
-  const moreRow = ed && t.kind === 'snap' && !t.open ? `<button type="button" class="hubrow snapmorego" data-a="snapmore" data-t="${esc(t.id)}">${hubE('camera')}<span class="ht"><b>${L('เติมรูปที่เจอทีหลัง', 'Add photos found later')}</b><small>${L('รูปลงวันที่ถ่ายเอง วันใหม่ต่อท้ายให้', 'Each goes to the day it was taken')}</small></span>${ic('chev')}</button>` : '';
+  const moreRow = (ed && t.kind === 'snap' ? `<button type="button" class="hubrow snapagaingo" data-a="snapagain" data-t="${esc(t.id)}">${hubE('plan')}<span class="ht"><b>${L('ไปที่นี่อีกครั้ง', 'Go here again')}</b><small>${L('เล่มใหม่ เมืองเดิมทีละวัน เลือกวันไปได้', 'A new book, the same towns day by day')}</small></span>${ic('chev')}</button>` : '')
+    + (ed && t.kind === 'snap' && !snapLive(t) ? `<button type="button" class="hubrow snapmorego" data-a="snapmore" data-t="${esc(t.id)}">${hubE('camera')}<span class="ht"><b>${L('เติมรูปที่เจอทีหลัง', 'Add photos found later')}</b><small>${L('รูปลงวันที่ถ่ายเอง วันใหม่ต่อท้ายให้', 'Each goes to the day it was taken')}</small></span>${ic('chev')}</button>` : '');
   const shelfRow = moreRow + row('shelfgo', '#/', 'shelf', L('ชั้นหนังสือ', 'Bookshelf'), L('เปลี่ยนเล่ม', 'Other books'))
     + (ed && t.kind === 'snap' && S.features.story ? row('snapdraftgo', `#/t/${esc(t.id)}/draft`, 'sparkle', L('ให้ผู้ช่วยร่างเล่ม', 'Let the helper draft the book'), L('ชื่อวัน สรุปวัน คำนำ นิทาน', 'Day names, summaries, foreword, stories')) : '');
   // the tiles in three named groups, the group the family needs now first: on the trip "during the trip", before it "get ready",

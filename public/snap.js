@@ -475,6 +475,9 @@ const snapHereKey = (t) => 'snapHere_' + t.id;
 function snapHere(t) { const h = ls(snapHereKey(t)); return h && h.date === todayIn(t.timezone) ? h : null; }   // where we are: kept for today only
 let snapDayAsk = {};
 // today's day of an open book: added when the page opens on a new date (after its last day), so the record page, the 21:30 nudge and the kids have it
+// a book from photos is "live" (its Today page, the app opening on it) while it is open; a "go again" book (made from an earlier one
+// for the next trip, theme.snap.again) also on its own dates — a book the family closed with "we're home" stays closed
+const snapLive = (t) => !!t && t.kind === 'snap' && (!!t.open || (!!((t.theme || {}).snap || {}).again && dayNow(t) >= 0));
 function snapEnsureToday(t) {
   const today = todayIn(t.timezone), last = t.days.length ? t.days[t.days.length - 1].date : '';
   if (!t.open || !isEditor() || t.days.some((d) => d.date === today) || today < last || snapDayAsk[t.id + today] || offline) return;
@@ -484,7 +487,7 @@ function snapEnsureToday(t) {
 function viewSnapLive(t) {
   snapEnsureToday(t);
   const today = todayIn(t.timezone), i = t.days.findIndex((d) => d.date === today), d = t.days[i];
-  if (!t.open) { setTimeout(() => location.replace(`#/t/${encodeURIComponent(t.id)}/book`), 0); return ''; }
+  if (!snapLive(t)) { setTimeout(() => location.replace(`#/t/${encodeURIComponent(t.id)}/book`), 0); return ''; }
   const here = snapHere(t), ph = i >= 0 ? mediaOf(t.id, i) : [], words = i >= 0 ? entriesOf(t.id, i).filter((e) => e.kind === 'quote').length : 0, clips = i >= 0 ? audioOf(t.id, i).length : 0;
   const act = (k, icon, th, en, extra) => `<button type="button" class="snapact" data-a="${k}" data-t="${esc(t.id)}"${extra || ''}>${ic(icon)}<b>${L(th, en)}</b></button>`;
   const lnk = (href, icon, th, en, n) => `<a class="snapact" href="${href}">${ic(icon)}<b>${L(th, en)}</b>${n ? `<small>${n}</small>` : ''}</a>`;
@@ -579,6 +582,22 @@ Object.assign(A, {
   snapcam(b) { const t = trip(b.dataset.t); if (t) snapLivePick(t, true); },
   snapadd(b) { const t = trip(b.dataset.t); if (t) snapLivePick(t, false); },
   snapmore(b) { const t = trip(b.dataset.t); if (t) snapMorePick(t); },
+  snapagain(b) {   // "go here again": the first day of the next trip, then a new book with the same towns day by day
+    const t = trip(b.dataset.t); if (!t) return;
+    const next = new Date(Date.now() + 30 * 864e5).toISOString().slice(0, 10), n = t.days.length;
+    openSheet(`<h3>${L('ไปที่นี่อีกครั้ง', 'Go here again')}</h3>
+<p class="lede">${L(`ได้เล่มใหม่ ${n} วัน เมืองเดิมทีละวัน พร้อมรูป พาสปอร์ต และแผนที่ของเด็กๆ ส่วนรูปและคำพูดของทริปนี้อยู่ที่เล่มนี้เหมือนเดิม`, `A new ${n}-day book: the same towns day by day, with its pictures, passports and the kids' map. This trip's photos and words stay in this book.`)}</p>
+<label class="label" for="againfrom">${L('วันแรกของทริปหน้า', 'First day of the next trip')}</label>
+<input id="againfrom" class="field" type="date" value="${next}">
+<div class="row end" style="margin-top:12px"><button class="btn ghost" data-a="closesheet">${L('ยกเลิก', 'Cancel')}</button><button class="btn" data-a="snapagaingo" data-t="${esc(t.id)}">${L('สร้างเล่มใหม่', 'Make the new book')}</button></div>`);
+  },
+  async snapagaingo(b) {
+    const t = trip(b.dataset.t), from = ($('#againfrom') || {}).value;
+    if (!t || !/^\d{4}-\d{2}-\d{2}$/.test(from || '')) { toast(L('เลือกวันแรกก่อน', 'Pick the first day')); return; }
+    b.disabled = true;
+    try { const r = await api('POST', `/api/b/snap/${encodeURIComponent(t.id)}/again`, { date_from: from }); await load(); closeSheet(); toast(L('ได้เล่มใหม่แล้ว', 'Your new book is ready')); nav(`#/t/${encodeURIComponent(r.id)}`); }
+    catch (e) { b.disabled = false; toast(e && e.error === 'dates' ? L('วันนี้ใช้ไม่ได้ ลองวันอื่น', 'That date does not work — try another') : L('สร้างเล่มไม่ได้ ลองใหม่อีกครั้ง', 'Could not make the book — try again')); }
+  },
   snaphere(b) {   // the live position → the nearest library town's name, kept for today; the position itself is not kept
     const t = trip(b.dataset.t); if (!t) return;
     if (!navigator.geolocation) { toast(L('เครื่องนี้หาตำแหน่งไม่ได้ พิมพ์ชื่อแทนได้', 'This phone has no location — type the place instead')); return; }

@@ -239,7 +239,20 @@ ok((await fetch(BASE + '/api/b/trips', { method: 'POST', headers: H, body: JSON.
   ok((await post('/api/b/media/ph-snap-0001', { day: 3 }, 'PATCH')).ok && (await state()).media.find((m) => m.id === 'ph-snap-0001').day === 3
     && (await post('/api/b/media/ph-snap-0001', { day: 5 }, 'PATCH')).status === 404 && (await post('/api/b/media/ph-snap-0001', { day: -1 }, 'PATCH')).status === 400, `snap: a photo moves to another day of its book, never past its last day (upload ${upS.status})`);
   ok((await fetch(BASE + `/api/b/snap`, { method: 'POST', headers: { ...H, cookie: vck }, body: '{}' })).status === 403, 'snap: relatives cannot make a book');
-  for (const x of [id, live.id]) await fetch(BASE + `/api/b/trips/${x}`, { method: 'DELETE', headers: H });
+  // "go again" (owner, Nov 2026): a new empty book from this one — the same towns day by day from a new first date (gaps kept),
+  // each day's name, place and emoji, the library's pictures and the kids' side; no photo, word or tick of the old trip
+  const src = (await state()).trips.find((x) => x.id === id);
+  const ra = await post(`/api/b/snap/${id}/again`, { date_from: '2027-12-20' }), aid = (await ra.json()).id;
+  const ag = (await state()).trips.find((x) => x.id === aid);
+  const sameDays = ag && ag.days.length === src.days.length && ag.days.every((d, k) => (d.place || {}).th === (src.days[k].place || {}).th && d.emoji === src.days[k].emoji
+    && (/^วันที่ \d+$/.test(src.days[k].title.th) ? d.title.th === `วันที่ ${k + 1}` : d.title.th === src.days[k].title.th));
+  ok(ra.ok && ag && ag.kind === 'snap' && ag.open === false && ag.date_from === '2027-12-20' && ag.days[1].date === '2027-12-22' && ag.date_to === '2027-12-25' && sameDays
+    && /อีกครั้ง$/.test(ag.title.th) && / again$/.test(ag.title.en) && !(await state()).media.some((m) => m.trip === aid) && !(await state()).entries.some((e) => e.trip === aid)
+    && (ag.theme.artDays || []).filter(Boolean).length === (src.theme.artDays || []).filter(Boolean).length,
+  `go again: a new book from ${src.days.length} days (gaps kept, ${ag && ag.days.map((d) => d.date)}), the days' names and places, the library's pictures; nothing recorded is copied (${JSON.stringify({ st: ra.status, same: sameDays, open: ag && ag.open, title: ag && ag.title, art: [(ag && ag.theme.artDays || []).filter(Boolean).length, (src.theme.artDays || []).filter(Boolean).length] })})`);
+  ok((await post(`/api/b/snap/${id}/again`, { date_from: 'soon' })).status === 400 && (await post(`/api/b/snap/${T}/again`, { date_from: '2027-01-01' })).status === 404
+    && (await fetch(BASE + `/api/b/snap/${id}/again`, { method: 'POST', headers: { ...H, cookie: vck }, body: JSON.stringify({ date_from: '2027-01-01' }) })).status === 403, 'go again: a bad date → 400, a planned book → 404, relatives → 403');
+  for (const x of [id, live.id, aid]) await fetch(BASE + `/api/b/trips/${x}`, { method: 'DELETE', headers: H });
 }
 
 // re-sync seeds (= every boot): keeps Done, never touches app-made trips

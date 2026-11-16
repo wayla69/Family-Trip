@@ -319,7 +319,17 @@ const T = 'hk-macau-2026';
     const toastTx = await page.evaluate(() => document.getElementById('toast').textContent);
     ok(tl.days.length === 2 && tl.days[1].date === nextDay && ml.length === 3 && ml.filter((m) => m.day === 1).length === 1 && /left out/.test(toastTx),
       `photos found later: the next day was added and holds its photo; the old and the undated ones left out, and said (days ${tl.days.map((d) => d.date)}, media ${ml.map((m) => m.day)}, toast "${toastTx}")`);
-    await page.evaluate((x) => fetch('/api/b/trips/' + x, { method: 'DELETE', headers: { 'x-mb': '1' } }), id);
+    // "go here again" (owner, Nov 2026): from the menu, a first date → a new book with the same towns day by day; it opens on its menu
+    await page.goto(`${BASE}/#/t/${id}`); await page.waitForSelector('.snapagaingo');
+    await page.click('.snapagaingo'); await page.waitForSelector('#againfrom');
+    await page.fill('#againfrom', '2027-12-20'); await page.click('[data-a="snapagaingo"]');
+    await page.waitForFunction((x) => /^#\/t\/snap-20271220-/.test(location.hash) && !location.hash.includes(x), id, { timeout: 15000 }).catch(() => {});
+    const nid = await page.evaluate(() => decodeURIComponent((location.hash.split('/')[2] || '')));
+    const nb = (await apiState(page)).trips.find((x) => x.id === nid);
+    await page.waitForSelector('.hubhead');
+    ok(!!nb && nb.days.length === tl.days.length && nb.days[0].place && nb.days[0].place.en === tl.days[0].place.en && await page.locator('.hubgrid a[href$="/today"]').count() === 0 && !s.errs.length,
+      `go again: a new book with the same towns from the chosen date, on its menu (no Today tile before its dates); no page error (${nid} ${s.errs.join(' | ')})`);
+    await page.evaluate((xs) => Promise.all(xs.map((x) => fetch('/api/b/trips/' + x, { method: 'DELETE', headers: { 'x-mb': '1' } }))), [id, nid]);
     await s.ctx.close();
   }
   // #/family without the drawing helper: no character box, no server words, the birth row says what the month is for

@@ -769,6 +769,37 @@ function router({ pool, media, A, ai, hooks = {} }) {   // hooks.heart(h): set b
       res.json({ ok: true, id });
     } catch (e) { await c.query('ROLLBACK').catch(() => {}); next(e); } finally { c.release(); }
   });
+  // "go again" (owner, Nov 2026: "ใช้เล่มจากรูปเป็นแผนของทริปหน้า" → "ไปอีกครั้ง"): a new, empty book from a book from photos —
+  // the same towns day by day from a new first date (the gaps between days kept), each day's name, place and emoji, the book's
+  // colour; then the library's pictures, crest, passport days and the kids' map (snapMatch). Nothing the family recorded is copied
+  // (no photo, word or tick). The new book is a book from photos too (closed: it becomes the Today page on its own dates).
+  r.post('/api/b/snap/:trip/again', ...W, async (req, res, next) => {
+    const c = await pool.connect();
+    try {
+      const src = (await q("SELECT id, title, timezone, theme, cover, kind FROM trips WHERE id=$1 AND family_id=$2", [req.params.trip, FAMILY]))[0];
+      if (!src || src.kind !== 'snap') return bad(res, 'trip', 404);
+      const from = String((req.body || {}).date_from || '');
+      if (!/^\d{4}-\d{2}-\d{2}$/.test(from) || Number.isNaN(dayMs(from))) return bad(res, 'dates');
+      const sd = await q("SELECT day_index, to_char(date,'YYYY-MM-DD') date, title, place, emoji FROM trip_days WHERE trip_id=$1 ORDER BY day_index", [src.id]);
+      if (!sd.length) return bad(res, 'empty');
+      const shift = dayMs(from) - dayMs(sd[0].date), dates = sd.map((d) => new Date(dayMs(d.date) + shift).toISOString().slice(0, 10));
+      if (!goodDates(dates) || !spanOk(dates)) return bad(res, 'dates');
+      const st = src.title || {}, title = { th: clip(`${st.th || st.en || 'ทริปของเรา'} อีกครั้ง`, 120), en: clip(`${st.en || st.th || 'Our trip'} again`, 120) };
+      const th = src.theme || {}, id = `snap-${dates[0].replace(/-/g, '')}-${crypto.randomBytes(3).toString('hex')}`;
+      const theme = { accent: th.accent || SNAPDEF, accentAuto: th.accentAuto !== false, display: 'sans', snap: { places: ((th.snap || {}).places || []).slice(0, 30), again: src.id } };
+      await c.query('BEGIN');
+      await c.query(`INSERT INTO trips (id, family_id, slug, title, date_from, date_to, timezone, theme, cover, source, kind, open)
+        VALUES ($1,$2,$1,$3,$4,$5,$6,$7,$8,'manual','snap',false)`, [id, FAMILY, title, dates[0], dates[dates.length - 1], src.timezone || 'Asia/Bangkok', theme, src.cover || { emoji: '📷' }]);
+      for (const [i, d] of sd.entries()) {
+        const auto = /^(วันที่ \d+|Day \d+)$/.test((d.title || {}).en || '') || /^วันที่ \d+$/.test((d.title || {}).th || '');
+        await c.query('INSERT INTO trip_days (trip_id, day_index, date, title, place, emoji) VALUES ($1,$2,$3,$4,$5,$6)',
+          [id, i, dates[i], auto ? { th: `วันที่ ${i + 1}`, en: `Day ${i + 1}` } : d.title, d.place, d.emoji || '']);
+      }
+      await c.query('COMMIT');
+      await snapMatch(id).catch((e) => console.error('snap match', e.message));
+      res.json({ ok: true, id });
+    } catch (e) { await c.query('ROLLBACK').catch(() => {}); next(e); } finally { c.release(); }
+  });
   // more days for a book from photos: a date after the last day is added; an earlier one only while the book holds nothing yet —
   // a day's number is in the ids of what it holds (`<trip>.sum.d<i>`, ticks, the phone's queue), so days are never renumbered
   r.post('/api/b/snap/:trip/days', ...W, async (req, res, next) => {
