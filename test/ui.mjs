@@ -639,7 +639,7 @@ const T = 'hk-macau-2026';
   ok(/(Day 2 of 6|วันที่ 2)/.test(await page.textContent('.tile.today')), 'HK on day 2: the menu’s Today tile names day 2');
   await page.goto(`${BASE}/#/passport/mimi/${T}`); await page.waitForSelector('.kidgo');
   await page.click('.kidgo'); await page.waitForSelector('.kidwrap .kidtiles');
-  ok(await page.locator('.kidtiles button').count() === 30 && await page.locator('.kidtiles button[data-v$="/wear"]').count() === 1 && await page.locator('.kidtiles button[data-v$="/map"], .kidtiles button[data-v$="/stickers"], .kidtiles button[data-v$="/trophies"]').count() === 0 && await page.locator('.kidbar button[data-v$="/map"]').count() === 1 && await page.locator('.kidtiles button[data-v$="/animals"]').count() === 1 && await page.locator('.kidtiles button[data-v$="/quiz"]').count() === 1 && await page.locator('nav.bar').count() === 0, 'kid mode on the trip: 30 big tiles (dress up, colour, draw, find, stamp, say, quiz, photos, match, shadows, feed me, colours, animal sounds, bath time, big & small, maze, where, odd one out, what next, copy the tune, join the dots, how many, cake, mood, animals & friends, count… — map, stickers and trophies only on the kid bar), no tab bar');
+  ok(await page.locator('.kidtiles button').count() === 34 && await page.locator('.kidtiles button[data-v$="/wear"]').count() === 1 && await page.locator('.kidtiles button[data-v$="/map"], .kidtiles button[data-v$="/stickers"], .kidtiles button[data-v$="/trophies"]').count() === 0 && await page.locator('.kidbar button[data-v$="/map"]').count() === 1 && await page.locator('.kidtiles button[data-v$="/animals"]').count() === 1 && await page.locator('.kidtiles button[data-v$="/quiz"]').count() === 1 && await page.locator('nav.bar').count() === 0, 'kid mode on the trip: 34 big tiles (what comes first, what\'s missing, spot the difference, green light red light, dress up, colour, draw, find, stamp, say, quiz, photos, match, shadows, feed me, colours, animal sounds, bath time, big & small, maze, where, odd one out, what next, copy the tune, join the dots, how many, cake, mood, animals & friends, count… — map, stickers and trophies only on the kid bar), no tab bar');
   ok(await page.evaluate(() => { const mm = window.matchMedia; window.matchMedia = () => ({ matches: false }); celebrate(); window.matchMedia = mm; const n = document.querySelectorAll('.confetti').length; return n === 36 && [...document.querySelectorAll('.confetti')].every((c) => getComputedStyle(c).position === 'fixed'); }), 'kid mode: the big celebration drops 36 pieces of confetti over the whole screen (stamp, surprise box, a finished game)');
   await page.goto(`${BASE}/#/kid/mimi/bubbles`); await page.waitForSelector('#bubblefield'); await page.waitForSelector('.bub');
   await page.locator('.bub').first().dispatchEvent('pointerdown');
@@ -887,6 +887,38 @@ const T = 'hk-macau-2026';
   for (const e of ['🍓', '⭐', '🕯️']) await page.click(`[data-a="cakeadd"][data-v="${e}"]`);
   const cakePlaced = await page.locator('.cakebox .ctop').count(); await page.click('[data-a="cakeblow"]');
   ok(cakePlaced === 3 && await page.evaluate(() => ck.blown) && await page.locator('.ctop.candle.out').count() === 1 && await page.evaluate((s0) => stars('mimi') - s0, ck0) === 1, 'kid game cake: toppings and a candle go on the cake, blowing it out plays the birthday song and drops one star');
+  // thinking games, part four (owner, Nov 2026: "ทำเลย" — sequencing, short-term memory, attention, self-control)
+  await page.goto(`${BASE}/#/kid/mimi/order`); await page.waitForSelector('.ordtray .ocard');
+  const ordWrong = await page.evaluate(() => kg.r.order.find((k) => k !== 0)); await page.click(`.ocard[data-v="${ordWrong}"]`);
+  const ordKept = await page.evaluate(() => kg.r.placed.length === 0 && kg.r.steps.length === 3);
+  for (let k = 0; k < 80 && !(await page.evaluate(() => kg.done)); k++) { const v = await page.evaluate(() => (kg.got ? null : kg.r.placed.length)); if (v !== null) await page.click(`.ocard[data-v="${v}"]`); await page.waitForTimeout(v === null ? 300 : 60); }
+  ok(ordKept && await page.evaluate(() => kg.done) && await page.locator('[data-a="kglv"][data-v="3"].kidbig').count() === 1, 'kid game order: a card out of turn stays in the tray; tapping the steps in order through level 2 (three steps) wins it');
+  await page.goto(`${BASE}/#/kid/mimi/missing`); await page.waitForSelector('[data-a="missask"]');
+  const missLook = await page.evaluate(() => kg.r.phase === 'look' && document.querySelectorAll('.missb span').length === kg.r.items.length && !document.querySelector('.kgch'));
+  await page.click('[data-a="missask"]'); await page.waitForSelector('.kgch [data-a="kgpick"]');
+  const missWrong = await page.evaluate(() => kg.r.opts.find((x) => x !== kg.r.items[kg.r.gone])[0]); await page.click(`.kgch [data-a="kgpick"][data-v="${missWrong}"]`);
+  const missKept = await page.evaluate(() => !kg.got && kg.n === 0 && !!document.querySelector('.missb .mq'));
+  for (let k = 0; k < 60 && !(await page.evaluate(() => kg.done)); k++) {
+    const ph = await page.evaluate(() => (kg.got ? 'wait' : kg.r.phase));
+    if (ph === 'look') await page.click('[data-a="missask"]'); else if (ph === 'ask') { const v = await page.evaluate(() => kg.r.items[kg.r.gone][0]); await page.click(`.kgch [data-a="kgpick"][data-v="${v}"]`); }
+    await page.waitForTimeout(250);
+  }
+  ok(missLook && missKept && await page.evaluate(() => kg.done), 'kid game missing: the things are shown with no answers yet; the curtain asks with a ❓ in the gap, a wrong pick keeps the round, the right ones win level 2');
+  await page.goto(`${BASE}/#/kid/mimi/diff`); await page.waitForSelector('.diffb.r .dfi');
+  const sameK = await page.evaluate(() => kg.r.items.findIndex((_, k) => !(k in kg.r.diffs))); await page.click(`.diffb.r .dfi[data-v="${sameK}"]`);
+  const diffKept = await page.evaluate(() => kg.r.found.length === 0 && Object.keys(kg.r.diffs).length === 2);
+  for (let k = 0; k < 80 && !(await page.evaluate(() => kg.done)); k++) { const v = await page.evaluate(() => (kg.got ? null : Object.keys(kg.r.diffs).find((x) => !kg.r.found.includes(+x)))); if (v != null) await page.click(`.diffb.r .dfi[data-v="${v}"]`); await page.waitForTimeout(v == null ? 300 : 60); }
+  ok(diffKept && await page.evaluate(() => kg.done), 'kid game diff: tapping a thing that is the same does nothing; finding both differences in every picture of level 2 wins it');
+  await page.goto(`${BASE}/#/kid/mimi/golight`); await page.waitForSelector('[data-a="glstart"]');
+  const gl0 = await page.evaluate(() => stars('mimi')); await page.click('[data-a="glstart"]');
+  let glNoTapped = false, glGoHit = false;
+  for (let k = 0; k < 500 && !(await page.evaluate(() => gl.done)); k++) {
+    const st = await page.evaluate(() => ({ k: gl.k, go: gl.k >= 0 && gl.seq[gl.k] ? (gl.rule === 'animal') === !!gl.seq[gl.k].animal : null, hit: !!gl.hit[gl.k] }));
+    if (st.k >= 0 && st.go === false && !glNoTapped) { await page.click('.glit').catch(() => {}); glNoTapped = await page.evaluate((k) => !gl.hit[k], st.k); }
+    else if (st.k >= 0 && st.go && !st.hit) { await page.click('.glit').catch(() => {}); glGoHit = glGoHit || await page.evaluate((k) => !!gl.hit[k], st.k); }
+    await page.waitForTimeout(120);
+  }
+  ok(await page.evaluate(() => gl.done) && glGoHit && await page.evaluate((s0) => stars('mimi') - s0, gl0) === 2, `kid game golight: an animal tapped counts${glNoTapped ? ', a vehicle tapped does not' : ''}; the whole run of level 2 ends with two stars`);
   // every game with a scene draws it (the sky and the strip are CSS backgrounds: no file to fetch, works with no signal)
   const scenes = {};
   for (const v of ['bubbles', 'music', 'shadow', 'feed', 'sort', 'bigsmall', 'wash']) { await page.goto(`${BASE}/#/kid/mimi/${v}`); await page.waitForSelector('.kidwrap'); scenes[v] = await page.evaluate(() => { const w = document.querySelector('.kidwrap'); return [...w.classList].find((c) => c.startsWith('sc-')) + ':' + /data:image\/svg/.test(getComputedStyle(w).backgroundImage); }); }

@@ -3027,3 +3027,31 @@ details.emeal[open]>summary .mname{visibility:hidden}
 /* night by night: a stay's name is never cut — its nights' columns grow to hold it and the strip scrolls sideways inside its own box */
 .nstrip{grid-template-columns:repeat(var(--n),minmax(38px,auto));width:max-content;min-width:100%;box-sizing:border-box}
 .nstrip .nb{overflow:visible;text-overflow:clip;padding:4px 8px}
+/* thinking games, part four: what comes first · what's missing · spot the difference · green light, red light */
+.ordslots{display:grid;grid-template-columns:repeat(var(--n),1fr);gap:clamp(8px,1.6vw,14px);margin:6px 0 12px}
+.oslot{position:relative;min-height:clamp(110px,18vw,170px);border-radius:20px;border:3px dashed rgba(31,42,58,.25);background:rgba(255,255,255,.55);display:grid;place-items:center;align-content:center;gap:4px;padding:8px 4px;text-align:center}
+.oslot i{position:absolute;left:8px;top:6px;font-style:normal;font-weight:800;font-size:18px;color:#1F2A3A;opacity:.55}
+.oslot.on{border:3px solid #2E7D32;background:#EBFBEE}
+.oslot span,.ocard span{font-size:clamp(44px,8vw,76px);line-height:1}.oslot b,.ocard b{font-size:clamp(14px,1.8vw,18px);line-height:1.2}
+.oslot img,.ocard img{width:100%;max-width:150px;aspect-ratio:1;object-fit:cover;border-radius:14px}
+.ordtray{display:flex;flex-wrap:wrap;justify-content:center;gap:clamp(8px,1.6vw,14px);margin-bottom:14px}
+.ocard{flex:0 0 clamp(96px,22vw,170px);min-height:clamp(110px,18vw,170px);border:0;border-radius:20px;background:#fff;box-shadow:0 8px 18px -12px rgba(0,0,0,.45);display:grid;place-items:center;align-content:center;gap:4px;padding:8px 6px}
+.ocard.ph{padding:6px}.ocard.nope{animation:nope .4s}
+.missb{display:flex;flex-wrap:wrap;justify-content:center;gap:clamp(10px,2vw,18px);min-height:clamp(150px,24vh,240px);align-content:center;margin:6px 0 14px;padding:16px;border-radius:26px;background:rgba(255,255,255,.88);box-shadow:0 10px 22px -14px rgba(0,0,0,.45)}
+.missb span{font-size:clamp(48px,9vw,86px);line-height:1}.missb .mq{display:grid;place-items:center;min-width:1.2em;border-radius:16px;box-shadow:inset 0 0 0 3px #7048E8}
+.diffwrap{display:grid;grid-template-columns:1fr;gap:10px;margin:6px 0 12px}
+@media (min-width:700px){.diffwrap{grid-template-columns:1fr 1fr}}
+.diffb{position:relative;height:clamp(200px,30vh,380px);border-radius:22px;background:rgba(255,255,255,.85);box-shadow:inset 0 0 0 3px rgba(31,42,58,.12)}
+.diffb.r{box-shadow:inset 0 0 0 3px #1098AD}
+.dfi{position:absolute;translate:-50% -50%;width:clamp(58px,11vw,96px);height:clamp(58px,11vw,96px);border:0;border-radius:50%;background:none;padding:0;display:grid;place-items:center}
+.dfi span{font-size:clamp(44px,8vw,72px);line-height:1}
+.dfi.found{box-shadow:0 0 0 4px #E8590C;background:rgba(255,236,153,.55)}.dfi.nope{animation:nope .4s}
+.glrule{display:flex;flex-wrap:wrap;justify-content:center;gap:10px}
+.glrule span{display:inline-flex;align-items:center;gap:6px;padding:8px 14px;border-radius:999px;font-weight:700;font-size:clamp(16px,2vw,20px);background:#fff}
+.glrule .go{box-shadow:inset 0 0 0 3px #2F9E44}.glrule .no{box-shadow:inset 0 0 0 3px #E03131}
+.glrule .ge{width:28px;height:28px}
+.glbox{display:grid;place-items:center;height:clamp(220px,36vh,400px);margin:8px 0 14px;border-radius:28px;background:rgba(255,255,255,.7);box-shadow:inset 0 0 0 3px rgba(31,42,58,.12)}
+.glit{width:clamp(150px,30vw,260px);height:clamp(150px,30vw,260px);border:0;border-radius:50%;background:#fff;box-shadow:0 12px 24px -14px rgba(0,0,0,.5);display:grid;place-items:center;padding:0}
+.glit span{font-size:clamp(90px,17vw,160px);line-height:1}.glit.hit{box-shadow:0 0 0 6px #2F9E44,0 12px 24px -14px rgba(0,0,0,.5)}.glit.nope{animation:nope .4s}
+@media (prefers-reduced-motion:no-preference){.glit{animation:glin .25s ease-out}@keyframes glin{from{scale:.5;opacity:0}}.missb.asked{animation:curtain .5s ease-out}@keyframes curtain{from{opacity:.2}}}
+
