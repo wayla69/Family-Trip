@@ -522,11 +522,14 @@ const T = 'hk-macau-2026';
     ok(a2.sides === a0.sides && a3.cost === a3.best && a3.sides !== a0.sides && a3.order && a4.sides === a0.sides && await s.noHScroll(),
       `today, wide screen: closing the fold puts the boxes back (${a2.sides}); "Full" deals them all by their open heights — the best split there is (${a3.sides}, taller column ${a3.cost} px of best ${a3.best}) — and "Short" returns to where it began (${a4.sides})`);
     // a big box written late (42 places to eat along the route): the boxes above it move to the other column and the page is scrolled by what the tapped fold moved
-    const big = (go) => page.evaluate((press) => { const s = [...document.querySelectorAll('.cgrid .cbox.cone details.dfold > summary')].find((x) => /Eat along/.test(x.textContent)); if (press) s.click(); else s.scrollIntoView({ block: 'center' });
-      const cols = [...document.querySelectorAll('.cgrid.packed > .ccol')], col = s.closest('.ccol'); return { top: Math.round(s.getBoundingClientRect().top), alone: col.children.length, h: cols.map((c) => c.offsetHeight), y: Math.round(scrollY) }; }, go);
-    const b0 = await big(false); await big(true); await two(); const b1 = await big(false);
-    ok(b0.alone > 1 && b1.alone === 1 && Math.abs(b1.top - b0.top) <= 1 && Math.min(...b1.h) > Math.min(...b0.h) + 300 && await s.noHScroll(),
-      `today, wide screen: "Eat along today's route" opened on its own takes a column for itself (${b0.alone} → ${b1.alone} box), the other column grows from ${Math.min(...b0.h)} to ${Math.min(...b1.h)} px, and the tapped fold stays where it was on the screen (${b0.top} → ${b1.top} px, the page scrolled ${b0.y} → ${b1.y})`);
+    // (in the Thai layout, where the meals box sits above it in its column — in the English one only two one-line boxes do, too little to move)
+    await page.evaluate(() => { lang = 'th'; render(); document.querySelector('details.dmore').open = true; }); await page.waitForSelector('.cgrid.packed'); await two();
+    const big = (press) => page.evaluate((go) => { const s = [...document.querySelectorAll('.cgrid .cbox.cone details.dfold > summary')].find((x) => /กินตามทาง/.test(x.textContent)); if (go === 1) s.scrollIntoView({ block: 'center' }); if (go === 2) s.click();
+      const cols = [...document.querySelectorAll('.cgrid.packed > .ccol')], col = s.closest('.ccol'); return { top: Math.round(s.getBoundingClientRect().top), alone: col.children.length, h: cols.map((c) => c.offsetHeight), y: Math.round(scrollY) }; }, press);
+    const b0 = await big(1); await big(2); await two(); const b1 = await big(0);
+    await page.evaluate(() => { lang = 'en'; render(); });
+    ok(b0.alone > 1 && b1.alone === 1 && Math.abs(b1.top - b0.top) <= 1 && Math.min(...b1.h) > Math.min(...b0.h) + 300 && b1.y < b0.y,
+      `today, wide screen: "กินตามทางวันนี้" opened on its own takes a column for itself (${b0.alone} → ${b1.alone} box), the other column grows from ${Math.min(...b0.h)} to ${Math.min(...b1.h)} px, and the tapped fold stays where it was on the screen (${b0.top} → ${b1.top} px, the page scrolled ${b0.y} → ${b1.y})`);
   }
   await page.setViewportSize(vp0); await page.waitForFunction(() => !document.querySelector('.cgrid.packed'));
   await page.goto(`${BASE}/#/t/${T}/eat/d/1`); await page.waitForSelector('.eatday');
