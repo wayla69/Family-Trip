@@ -972,9 +972,9 @@ const T = 'hk-macau-2026';
     await page.waitForTimeout(120);
   }
   ok(await page.evaluate(() => gl.done) && glGoHit && await page.evaluate((s0) => stars('mimi') - s0, gl0) === 2, `kid game golight: an animal tapped counts${glNoTapped ? ', a vehicle tapped does not' : ''}; the whole run of level 2 ends with two stars`);
-  // every game with a scene draws it (the sky and the strip are CSS backgrounds: no file to fetch, works with no signal)
+  // every game with a scene draws its painting (public/art/scene, precached by the service worker's ART list, so it works with no signal)
   const scenes = {};
-  for (const v of ['bubbles', 'music', 'shadow', 'feed', 'sort', 'bigsmall', 'wash']) { await page.goto(`${BASE}/#/kid/mimi/${v}`); await page.waitForSelector('.kidwrap'); scenes[v] = await page.evaluate(() => { const w = document.querySelector('.kidwrap'); return [...w.classList].find((c) => c.startsWith('sc-')) + ':' + /data:image\/svg/.test(getComputedStyle(w).backgroundImage); }); }
+  for (const v of ['bubbles', 'music', 'shadow', 'feed', 'sort', 'bigsmall', 'wash']) { await page.goto(`${BASE}/#/kid/mimi/${v}`); await page.waitForSelector('.kidwrap'); scenes[v] = await page.evaluate(() => { const w = document.querySelector('.kidwrap'); return [...w.classList].find((c) => c.startsWith('sc-')) + ':' + /\/art\/scene\/\w+-[pl]\.webp/.test(getComputedStyle(w).backgroundImage); }); }
   ok(Object.values(scenes).every((x) => /^sc-\w+:true$/.test(x)) && (await page.evaluate(() => document.documentElement.scrollWidth - document.documentElement.clientWidth)) <= 1, `kid scenes: each game has its own backdrop (${JSON.stringify(scenes)})`);
   await page.goto(`${BASE}/#/kid/mimi/music`); await page.waitForSelector('.xylo');
   await page.evaluate(() => { navigator.audioSession = { type: 'auto' }; });   // Safari 16.4+ has it; Chromium does not
@@ -1056,6 +1056,17 @@ const T = 'hk-macau-2026';
   await page.waitForFunction(() => S.entries.some((e) => e.id === 'hk-macau-2026.field.colour.d1.mimi'), null, { timeout: 5000 });
   ok(shapes >= 3 && (await page.locator('.colourpad [fill="#42A5F5"]').count()) === 1, `colouring: ${shapes} tappable shapes, tapped one turns blue`);
   ok(await s.noHScroll(), 'kid colouring page fits the phone');
+  { // undo and the sponge (owner, Nov 2026: "ทำให้ล้างได้หน่อย"): a slip goes back one tap at a time, the sponge washes the picture white, ↶ brings it back
+    const filled = () => page.evaluate(() => [...document.querySelectorAll('.colourpad [data-c]')].filter((x) => x.getAttribute('fill').toLowerCase() !== '#ffffff').map((x) => x.getAttribute('fill')).join());
+    const saved = () => page.evaluate(() => (S.entries.find((e) => e.id === 'hk-macau-2026.field.colour.d1.mimi') || {}).text);
+    await page.click('.palette button[data-v="#EF5350"]'); await page.locator('.colourpad [data-c]').nth(0).click({ force: true });
+    const two = await filled(); await page.click('[data-a="kidcolundo"]'); const one = await filled();
+    await page.click('[data-a="kidcolwipe"]'); const none = await filled(); await page.waitForFunction(() => (S.entries.find((e) => e.id === 'hk-macau-2026.field.colour.d1.mimi') || {}).text === '{}', null, { timeout: 5000 });
+    await page.click('[data-a="kidcolundo"]'); const back = await filled(); await page.waitForFunction(() => /42A5F5/.test((S.entries.find((e) => e.id === 'hk-macau-2026.field.colour.d1.mimi') || {}).text || ''), null, { timeout: 5000 });
+    const btn = await page.evaluate(() => [...document.querySelectorAll('.coltools button')].map((b) => Math.round(b.getBoundingClientRect().height)));
+    ok(/EF5350/.test(two) && /42A5F5/.test(two) && one === '#42A5F5' && none === '' && back === '#42A5F5' && /42A5F5/.test(await saved()) && btn.length === 2 && btn.every((h) => h >= 48) && await s.noHScroll(),
+      `colouring: ↶ takes back the last colour, the sponge washes the picture white (saved), ↶ brings the picture back (${JSON.stringify({ two, one, none, back, btn })})`);
+  }
   await s.shot('08-kid-colour');
   await page.click('.kidback'); await page.click('.kidtiles button[data-v$="/spot"]'); await page.waitForSelector('.kidspots button');
   await page.locator('.kidspots button').nth(1).click();
@@ -2029,7 +2040,8 @@ const T = 'hk-macau-2026';
   const s = await session('privacy', { width: 390, height: 844 });
   const { page } = s;
   await page.goto(`${BASE}/#/privacy`); await page.waitForSelector('.privacy');
-  ok(await page.locator('.privacy .pvsec').count() === 6 && await page.locator('.pverase').count() === 0 && await page.locator('#lcode').count() === 0, 'signed out: the privacy page reads in full, no erase box, no login form');
+  ok(await page.locator('.privacy .pvsec').count() === 7 && await page.locator('.pverase').count() === 0 && await page.locator('#lcode').count() === 0, 'signed out: the privacy page reads in full (seven sections, one crediting the pictures and sounds), no erase box, no login form');
+  ok(await page.locator('.privacy .pvsec a[href*="Barking_of_a_dog"]').count() === 1 && await page.locator('.privacy .pvsec a[href*="by-sa/3.0"]').count() === 1, 'the privacy page credits the dog\'s bark (CC BY-SA: author, source and licence)');
   await page.goto(`${BASE}/#/`); await page.waitForSelector('#lcode');
   ok(await page.locator('.login a[href="#/privacy"]').count() === 1, 'the login page links to it');
   await login(page);

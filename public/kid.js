@@ -499,7 +499,41 @@ function star(kid, n) {
   }
 }
 const CONF_C = ['#FFD36B', '#FFB0C8', '#7FE3D2', '#8FB4FF', '#C9B6FF', '#FF9A6B'];
+// real recordings (public/art/sound/*.mp3 , public domain / CC0 from Wikimedia Commons, sources in docs/SOUND-CREDITS.txt): fetched and decoded once,
+// played through the same limiter as every other sound; a file that is missing or will not decode falls back to the synthesised sound
+const clipBuf = {};
+function clip(name, fallback) {
+  try {
+    try { if (navigator.audioSession && navigator.audioSession.type !== 'playback') navigator.audioSession.type = 'playback'; } catch (_) { /* older Safari */ }
+    audioCtx = audioCtx || new (window.AudioContext || window.webkitAudioContext)();
+    if (audioCtx.state !== 'running' && audioCtx.resume) audioCtx.resume().catch(() => {});
+    const c = audioCtx;
+    const play = (b) => { if (!b) { if (fallback) beep(fallback); return; } const s = c.createBufferSource(); s.buffer = b; s.connect(outOf(c)); s.start(); };
+    const have = clipBuf[name];
+    if (have === false) return play(null);
+    if (have && !have.then) return play(have);
+    if (!have) {
+      clipBuf[name] = fetch(`/art/sound/${name}.mp3`).then((r) => (r.ok && /audio|mpeg/.test(r.headers.get('content-type') || '') ? r.arrayBuffer() : Promise.reject(new Error(r.status))))   // never decode the app page a missing file falls back to
+        .then((a) => new Promise((ok, no) => c.decodeAudioData(a, ok, no)))   // the callback form: older Safari has no promise
+        .then((b) => { clipBuf[name] = b; return b; }, () => { clipBuf[name] = false; return null; });
+    }
+    clipBuf[name].then(play);
+  } catch (_) { if (fallback) beep(fallback); }
+}
+// the cheering friend (owner, Nov 2026: "ทำหมดเลย"): a painted baby dragon pops up beside the game — cheers or claps after a win,
+// holds a heart when a child is stuck, waves hello when a child is picked; it never takes a tap (pointer-events: none) and goes by itself
+const PAL_POSE = { cheer: 'pal-cheer', clap: 'pal-clap', heart: 'pal-heart', wave: 'pal-wave' };
+let palT = 0;
+function palPop(pose) {
+  if (!document.querySelector('.kidwrap') || document.body.classList.contains('padfull')) return;
+  let el = document.getElementById('kpal');
+  if (!el) { el = document.createElement('img'); el.id = 'kpal'; el.alt = ''; el.setAttribute('aria-hidden', 'true'); document.body.appendChild(el); }
+  el.src = `/art/game2/${PAL_POSE[pose] || PAL_POSE.cheer}.webp`; el.dataset.pose = pose; el.className = 'kpal show';
+  clearTimeout(palT); palT = setTimeout(() => el.classList.remove('show'), 2600);
+  if (el.animate && !matchMedia('(prefers-reduced-motion: reduce)').matches) el.animate([{ transform: 'translateY(120px) scale(.6)' }, { transform: 'translateY(-14px) scale(1.05)', offset: 0.6 }, { transform: 'translateY(0) scale(1)' }], { duration: 520, easing: 'ease-out' });
+}
 function celebrate(chars) {
+  palPop(Math.random() < 0.5 ? 'cheer' : 'clap');
   if (matchMedia('(prefers-reduced-motion: reduce)').matches) return;
   const cs = chars || ['⭐', '✨', '🎉'];
   for (let i = 0; i < 36; i++) {
@@ -736,8 +770,10 @@ ${pages.length > 1 ? `<div class="kdots" id="kdots">${pages.map((_, n) => `<i${n
   } else if (view === 'quest') {
     body = questHtml(t, kid, guideImg);
   } else if (view === 'colour') {
+    const ck = `${t.id}.${i}.${kid}`; if (colKey !== ck) { colKey = ck; colHist = []; }   // the undo history belongs to one picture of one child
     body = `<div class="colourpad colsvg" data-src="${esc(colourUrl(t, i))}" data-fill="${esc(colourFill(t, i, kid))}" data-t="${esc(t.id)}" data-d="${i}" data-k="${esc(kid)}"></div>
 <div class="palette">${COLOURS.map((c) => `<button data-a="kidcolor" data-v="${c}" style="--c:${c}" aria-pressed="${c === kidColour}" aria-label="${c}"></button>`).join('')}</div>
+<div class="drawtools coltools"><button class="dclear" data-a="kidcolundo" aria-label="${L('ย้อนกลับ', 'Undo')}"${colHist.length ? '' : ' disabled'}>↶ <b>${L('ย้อน', 'Undo')}</b></button><button class="dclear" data-a="kidcolwipe" aria-label="${L('ล้างสีแล้วระบายใหม่', 'Wipe the colours and start again')}">🧽 <b>${L('ล้างสี', 'Wipe')}</b></button></div>
 <button class="kidbig" data-a="kidcolourdone" data-v="#/kid/${esc(kid)}">${L('เสร็จแล้ว! ✨', 'All done! ✨')}</button>`;
   } else if (view === 'draw') {
     const day = pre ? null : i, mine = drawingsOf(t, kid, day === null ? undefined : day).filter((m) => m.day === day);
@@ -944,7 +980,7 @@ ${mapHtml(t, i, [kid].concat((t.theme.children || []).map((c) => c.slug).filter(
     if (!mg || mg.t !== t.id || mg.kid !== kid || mg.at !== lvState(t, kid, 'match').at) newMatch(t, kid);
     body = `<div class="kidguide">${guideImg(1)}<p>${mg.won ? L(`เก่งมาก! จับคู่ครบใน ${mg.moves} ครั้ง 🎉`, `Brilliant! All the pairs in ${mg.moves} goes 🎉`) : L('แตะเปิดการ์ดสองใบ หาคู่ที่เหมือนกัน!', 'Tap two cards — find the pairs!')}</p></div>
 ${lvBar(t, kid, 'match')}${quest ? '' : pixPick(t, i, 'match', 'kidnewmatch')}
-<div class="mgrid" style="--mc:${mg.cards.length <= 6 ? 3 : mg.cards.length <= 16 ? 4 : mg.cards.length <= 24 ? 5 : 6}">${mg.cards.map((c, n) => `<button class="mcard${c.ph ? ' ph' : ''}${mg.up.includes(n) || mg.done.has(c.k) ? ' open' : ''}${mg.done.has(c.k) ? ' done' : ''}" data-a="kidflip" data-v="${n}" aria-label="${L('การ์ด', 'Card')} ${n + 1}"><span class="back">?</span><span class="face">${c.img ? `<img src="${esc(c.img)}" alt="">` : esc(c.e)}</span></button>`).join('')}</div>
+<div class="mgrid" style="--mc:${mg.cards.length <= 6 ? 3 : mg.cards.length <= 16 ? 4 : mg.cards.length <= 24 ? 5 : 6}">${mg.cards.map((c, n) => `<button class="mcard${c.ph ? ' ph' : ''}${mg.up.includes(n) || mg.done.has(c.k) ? ' open' : ''}${mg.done.has(c.k) ? ' done' : ''}" data-a="kidflip" data-v="${n}" aria-label="${L('การ์ด', 'Card')} ${n + 1}"><span class="back" aria-hidden="true"></span><span class="face">${c.img ? `<img src="${esc(c.img)}" alt="">` : esc(c.e)}</span></button>`).join('')}</div>
 ${mg.won ? lvWin(t, kid, 'match', ['kidnewmatch']) : `<button class="kidbig ghost" data-a="kidnewmatch">🔁 ${L('เล่นใหม่', 'Play again')}</button>`}`;
   } else if (view === 'mood' && !pre) {
     const moods = t.moods.length ? t.moods : Object.keys(MOODW), cur = (S.entries.find((e) => e.id === `${t.id}.mood.d${i}.${kid}`) || {}).mood;
@@ -980,7 +1016,7 @@ ${mg.won ? lvWin(t, kid, 'match', ['kidnewmatch']) : `<button class="kidbig ghos
 let colourSaveT = 0;
 Object.assign(A, {
   kidmode(b) { ls('kidmode', b.dataset.v || 'pick'); nav(b.dataset.v ? `#/kid/${b.dataset.v}` : '#/kid'); },
-  kidpick(b) { beep('hello'); ls('kidmode', b.dataset.v); kidDay = null; nav(`#/kid/${b.dataset.v}`); },
+  kidpick(b) { beep('hello'); ls('kidmode', b.dataset.v); kidDay = null; nav(`#/kid/${b.dataset.v}`); setTimeout(() => palPop('wave'), 350); },
   kidnav(b) { beep('tap'); kidDoor = null; if (!/\/bubbles$/.test(b.dataset.v || '')) { clearInterval(bubT); bubT = null; bubN = 0; } nav(b.dataset.v); if (b.dataset.say) sayUi(b.dataset.say); },
   kidday(b) { beep('pop'); kidDay = +b.dataset.v; mapAt = null; kidPhoto = 0; render(); },
   kidpage(b) { beep('tap'); const pg = $('#kidpager'); if (pg) pg.scrollBy({ left: +b.dataset.v * pg.clientWidth, behavior: reduced() ? 'auto' : 'smooth' }); },
@@ -1005,6 +1041,8 @@ Object.assign(A, {
     if (n >= cnt.n) setTimeout(() => { beep('chime'); celebrate([cnt.e, '⭐', '✨']); star(kidNow(), 1); render(); sayUi(L(`ทั้งหมด ${n} ตัว!`, `${n} altogether!`)); }, 500); else render();
   },
   kidnewcount() { beep('pop'); const t = kidTrip(route().parts[1]); newCount(t); render(); },
+  kidcolundo() { const pad = $('.colourpad'); if (!pad || !colHist.length) return; beep('tap'); let f = {}; try { f = JSON.parse(colHist.pop()); } catch (_) {} colourSet(pad, f); },
+  kidcolwipe() { const pad = $('.colourpad'); if (!pad || pad.dataset.fill === '{}' || !pad.querySelector('[data-c]')) return; beep('whoosh'); colHist.push(pad.dataset.fill); colourSet(pad, {}); },
   kidcolor(b) { beep('tap'); kidColour = b.dataset.v; $$('.palette button').forEach((x) => x.setAttribute('aria-pressed', x.dataset.v === kidColour)); drawWrap(); },
   kidcolourdone(b) { beep('chime'); burst(b, ['🎨', '✨', '⭐']); celebrate(['🎨', '⭐', '✨']); star(kidNow(), 1); setTimeout(() => nav(b.dataset.v), 900); },
   kidspot(b) {
@@ -1473,7 +1511,7 @@ function lvBar(t, kid, game) {
   const s = lvState(t, kid, game);
   if (s.quest) return `<div class="lvbar qbar"><span>${s.quest.slot === 3 ? qImg('crown') : s.quest.slot === 'x' ? '✨' : qImg('map')} ${wj(esc(questTown(t, s.quest.town)))}</span></div>`;   // on a mission: the town, no level chips
   if (s.top < 2) return '';
-  return `<div class="lvbar" role="group" aria-label="${L('ด่าน', 'Levels')}"><span>${L('ด่าน', 'Level')}</span>${Array.from({ length: s.top }, (_, k) => k + 1).map((n) => `<button class="lvc${n === s.at ? ' on' : ''}" data-a="kglv" data-g="${game}" data-v="${n}" aria-pressed="${n === s.at}" aria-label="${esc(L(`ด่าน ${n}`, `Level ${n}`))}"><b>${n}</b>${n <= s.best ? '<i aria-hidden="true">⭐</i>' : ''}</button>`).join('')}</div>`;
+  return `<div class="lvbar" role="group" aria-label="${L('ด่าน', 'Levels')}"><span>${L('ด่าน', 'Level')}</span>${Array.from({ length: s.top }, (_, k) => k + 1).map((n) => `<button class="lvc${n === s.at ? ' on' : ''}${n <= s.best ? ' won' : ''}" data-a="kglv" data-g="${game}" data-v="${n}" aria-pressed="${n === s.at}" aria-label="${esc(L(`ด่าน ${n}`, `Level ${n}`))}"><b>${n}</b>${n <= s.best ? '<i aria-hidden="true">⭐</i>' : ''}</button>`).join('')}</div>`;
 }
 // after a win: on to the next level (or "every level done"), and the same one again
 function lvWin(t, kid, game, again) {
@@ -1641,7 +1679,7 @@ const ORDER_SETS = [
 function kgWin(b, chars) { kg.done = true; lvDone(trip(kg.tid), kg.kid, kg.game); beep('fanfare'); celebrate(chars); star(kg.kid, 2); }
 const kgRight = (g) => String(g.game === 'shadow' || g.game === 'feed' ? g.r.want[0] : g.game === 'where' ? (g.r.mode === 'two' ? g.r.steps[g.r.k].pos : g.r.pos) : g.game === 'odd' ? g.r.one : g.game === 'howmany' ? g.r.n : g.game === 'next' ? g.r.answer : g.game === 'bigsmall' ? g.r.right : g.game === 'sort' ? g.items[g.n].k : '');
 // three wrong taps in one round: the right answer glows (owner's plan: a child who is stuck gets a hint, never a score)
-const kgNope = (b, line) => { beep('tap'); b.classList.remove('nope'); void b.offsetWidth; b.classList.add('nope'); sayUi(line); if (kg) { kg.miss = (kg.miss || 0) + 1; if (kg.miss >= 3) { const v = kgRight(kg), el = $$('[data-a="kgpick"]').find((x) => x.dataset.v === v); if (el) el.classList.add('hint'); } } };
+const kgNope = (b, line) => { beep('tap'); b.classList.remove('nope'); void b.offsetWidth; b.classList.add('nope'); sayUi(line); if (kg) { kg.miss = (kg.miss || 0) + 1; if (kg.miss >= 3) { const v = kgRight(kg), el = $$('[data-a="kgpick"]').find((x) => x.dataset.v === v); if (el) el.classList.add('hint'); if (kg.miss === 3) palPop('heart'); } } };
 Object.assign(A, {
   kgpal() {   // the hungry animal says its wish again (and on the memory levels shows it for a moment)
     const g = kg; if (!g || g.game !== 'feed' || g.done) return;
@@ -1792,12 +1830,12 @@ document.addEventListener('pointercancel', () => { dtDown = false; });
 // ---- decorate a cake (free play): tap a topping to put it on, candles too; blow them out for the birthday song and confetti ----
 const CAKE_TOPS = ['🍓', '🍒', '🫐', '🍫', '⭐', '🌸', '🍬', '🍭', '🕯️'];
 const HAPPY_BDAY = [0, 0, 1, 0, 3, 2, -1, 0, 0, 1, 0, 4, 3, -1, 0, 0, 7, 5, 3, 2, 1, -1, 5, 5, 5, 3, 4, 3];   // on the xylophone's eight bars
-const CAKE_SVG = '<svg class="cakesvg" viewBox="0 0 200 160" aria-hidden="true"><ellipse cx="100" cy="142" rx="92" ry="13" fill="#E9ECEF"/><rect x="28" y="84" width="144" height="56" rx="12" fill="#F7B6CF"/><path d="M28 96 q9 14 18 0 q9 14 18 0 q9 14 18 0 q9 14 18 0 q9 14 18 0 q9 14 18 0 q9 14 18 0 q9 14 18 0 V92 H28Z" fill="#fff"/><rect x="50" y="44" width="100" height="46" rx="12" fill="#FFE3EC"/><path d="M50 56 q8 12 16.6 0 q8 12 16.6 0 q8 12 16.6 0 q8 12 16.6 0 q8 12 16.6 0 q8 12 16.6 0 V52 H50Z" fill="#fff"/><rect x="50" y="44" width="100" height="10" rx="5" fill="#fff"/></svg>';
+const CAKE_SVG = '<img class="cakeimg" src="/art/game2/cake.webp" alt="" draggable="false">';   // the painted cake (house style); cakeSpot's ranges follow its tiers
 let ck = null;
 const cakeFor = (kid) => { if (!ck || ck.kid !== kid) ck = { kid, items: [], blown: false, starred: false }; return ck; };
 function cakeSpot(isCandle) {
   for (let tries = 0; tries < 60; tries++) {
-    const top = isCandle || Math.random() < 0.45, x = top ? 30 + Math.random() * 40 : 20 + Math.random() * 60, y = isCandle ? 25 : top ? 36 + Math.random() * 14 : 62 + Math.random() * 16;
+    const top = isCandle || Math.random() < 0.45, x = top ? 33 + Math.random() * 34 : 24 + Math.random() * 52, y = isCandle ? 20 : top ? 26 + Math.random() * 13 : 54 + Math.random() * 21;
     if (!ck.items.some((o) => Math.hypot(o.x - x, (o.y - y) * 0.8) < 9)) return { x, y };
   }
   return null;
@@ -1936,7 +1974,7 @@ Object.assign(A, {
 const FARM = [['🐮', 'วัว', 'cow', 'มอ มอ', 'moo moo', 14, 54], ['🐷', 'หมู', 'pig', 'อู๊ด อู๊ด', 'oink oink', 40, 54], ['🐔', 'ไก่', 'hen', 'กุ๊ก กุ๊ก', 'cluck cluck', 68, 54],
   ['🐶', 'หมา', 'dog', 'โฮ่ง โฮ่ง', 'woof woof', 18, 80], ['🐱', 'แมว', 'cat', 'เหมียว เหมียว', 'meow', 50, 80], ['🦆', 'เป็ด', 'duck', 'ก้าบ ก้าบ', 'quack quack', 82, 80],
   ['🐑', 'แกะ', 'sheep', 'แบ๊ แบ๊', 'baa baa', 26, 28], ['🐴', 'ม้า', 'horse', 'ฮี้ ฮี้', 'neigh', 58, 28], ['🐸', 'กบ', 'frog', 'อ๊บ อ๊บ', 'ribbit', 86, 28]];
-let farm = null;
+let farm = null, farmSay = 0;
 const farmFor = (t, kid) => { if (!farm || farm.key !== `${t.id}.${kid}`) farm = { key: `${t.id}.${kid}`, kid, heard: new Set(), done: false }; return farm; };
 // ---- bath time: the mud is a canvas over the animal; a finger rubs it away (destination-out), bubbles and a squeak while scrubbing ----
 const WASH = [['🐶', 'น้องหมา', 'Puppy'], ['🐷', 'น้องหมู', 'Piggy'], ['🐘', 'น้องช้าง', 'Ellie'], ['🐰', 'น้องกระต่าย', 'Bunny'], ['🐻', 'น้องหมี', 'Teddy'], ['🦛', 'น้องฮิปโป', 'Hippo'], ['🐱', 'น้องแมว', 'Kitty'], ['🐼', 'น้องแพนด้า', 'Panda']];
@@ -1980,8 +2018,8 @@ document.addEventListener('pointercancel', () => { washDown = false; });
 Object.assign(A, {
   farmtap(b) {
     const n = +b.dataset.v, a = FARM[n]; if (!a || !farm) return;
-    beep('boing'); b.classList.remove('jump'); void b.offsetWidth; b.classList.add('jump', 'heard'); burst(b, ['🎵', '✨']);
-    sayUi(L(`${a[1]}ร้อง ${a[3]}`, `The ${a[2]} says ${a[4]}`));
+    clip(`farm-${a[2]}`, 'boing'); b.classList.remove('jump'); void b.offsetWidth; b.classList.add('jump', 'heard'); burst(b, ['🎵', '✨']);
+    clearTimeout(farmSay); farmSay = setTimeout(() => sayUi(L(`${a[1]}ร้อง ${a[3]}`, `The ${a[2]} says ${a[4]}`)), 1300);   // the animal's own voice first, then the words
     farm.heard.add(n);
     if (!farm.done && farm.heard.size >= FARM.length) { farm.done = true; star(farm.kid, 1); setTimeout(() => { celebrate(['🐮', '🐷', '🐔']); sayUi(L('ฟังครบทุกตัวแล้ว เก่งมาก!', 'You heard every animal! Well done!')); }, 1400); }
   },
@@ -2066,15 +2104,25 @@ function playSong(n, kid) {
 document.addEventListener('click', (e) => {
   const el = e.target.closest && e.target.closest('.colourpad [data-c]'); if (!el || !isEditor()) return;
   const pad = el.closest('.colourpad');
-  el.setAttribute('fill', kidColour); beep('pop');
   let fills = {}; try { fills = JSON.parse(pad.dataset.fill || '{}'); } catch (_) {}
-  fills[el.dataset.c] = kidColour; pad.dataset.fill = JSON.stringify(fills);
+  if ((fills[el.dataset.c] || '#ffffff').toLowerCase() === kidColour.toLowerCase()) { beep('tap'); return; }   // the same colour again: nothing to take back
+  colHist.push(pad.dataset.fill || '{}'); if (colHist.length > 40) colHist.shift();
+  el.setAttribute('fill', kidColour); beep('pop');
+  fills[el.dataset.c] = kidColour; colourSet(pad, fills);
+});
+// the colouring page's undo and wipe (owner, Nov 2026: "ทำให้ล้างได้หน่อย"): every tap can be taken back one at a time (↶), and the sponge
+// washes the whole picture white in one tap — and ↶ brings it all back, so a wipe by mistake is never a loss. The history lives in memory only.
+let colHist = [], colKey = '';
+function colourSet(pad, fills) {
+  pad.dataset.fill = JSON.stringify(fills);
+  pad.querySelectorAll('[data-c]').forEach((x) => x.setAttribute('fill', fills[x.dataset.c] || '#ffffff'));
+  const u = $('[data-a="kidcolundo"]'); if (u) u.disabled = !colHist.length;
   clearTimeout(colourSaveT);
   colourSaveT = setTimeout(() => {
     const t = trip(pad.dataset.t), i = +pad.dataset.d, kid = pad.dataset.k;
     putEntry(t, { day: null, kind: 'field', child: kid, first_key: `colour.d${i}`, text: pad.dataset.fill }, `${t.id}.field.colour.d${i}.${kid}`);
   }, 500);
-});
+}
 // grown-ups empty the star jar (and its friends) by pressing and holding it 1.5 s — a test run's stars, a fresh start; nothing on the server
 let jarT = 0;
 document.addEventListener('pointerdown', (e) => {
