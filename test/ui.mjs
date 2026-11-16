@@ -281,6 +281,16 @@ const T = 'hk-macau-2026';
     await page.waitForFunction(() => /#\/snap\/read$/.test(location.hash) && !!document.querySelector('.notice a'), null, { timeout: 15000 });
     const after = await page.$$eval('.snaptrips .tpo', (bs) => bs.map((b) => [b.dataset.v, b.disabled, b.getAttribute('aria-pressed')]));
     await page.click('.snapfoot a.btn'); await page.waitForSelector('.snapdays');
+    // B3, the place sheet: the day's photo places, the region's landmarks from the library, the library's towns; the search filters in place
+    await page.click('.snapday:nth-child(1) [data-a="snapplace"]'); await page.waitForSelector('#sheet .pslist .psopt');
+    const heads = await page.$$eval('#sheet .pslist .psh', (ls) => ls.map((l) => l.textContent));
+    await page.fill('#psq', 'gibbon');
+    const shown = await page.$$eval('#sheet .pslist li:not([hidden]) .psopt', (bs) => bs.map((b) => b.textContent));
+    const short = await page.evaluate(() => [...document.querySelectorAll('#sheet .psopt, #sheet [data-own], .snapplb')].filter((e) => e.offsetParent && e.getBoundingClientRect().height < 44).map((e) => e.className + ':' + Math.round(e.getBoundingClientRect().height))), tall = !short.length, hs = await s.noHScroll();
+    await page.click('#sheet .pslist li:not([hidden]) .psopt');
+    await page.waitForFunction(() => document.querySelector('#sheet').hidden && /gibbon/i.test((document.querySelector('input[data-snapday="2025-12-12"]') || {}).value || ''));
+    ok(heads.some((h) => /From the day/.test(h)) && heads.some((h) => /^Around Khao Yai/.test(h)) && heads.some((h) => /Towns in the library/.test(h)) && shown.length === 1 && /gibbon/i.test(shown[0]) && tall && hs,
+      `book from photos, the place sheet: the day's photo places, the region's landmarks and the library's towns; the search leaves one, a tap makes it the day's place (${heads.join(' / ')} · ${shown.join(', ')} · short ${short.join(' ') || 'none'} · sideways ${!hs})`);
     await page.click('[data-a="snapmake"]');
     await page.waitForFunction(() => /\/(book|draft)$/.test(location.hash), null, { timeout: 15000 });
     await page.waitForFunction(() => queue.length === 0, null, { timeout: 30000 });

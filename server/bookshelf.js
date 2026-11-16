@@ -778,6 +778,14 @@ function router({ pool, media, A, ai, hooks = {} }) {   // hooks.heart(h): set b
     try { const out = await snapMatch(req.params.trip); if (!out) return bad(res, 'trip', 404); res.json({ ok: true, ...out }); } catch (e) { next(e); }
   });
   // the places the phone can name a position with: every library city with its centre (no family data; the index stays on the server)
+  // the place sheet (docs/SNAP-BOOK.md D2.3, B3): a region's library landmarks by name, for a day finer than its town — names and
+  // pictures from the stock library only (no family data)
+  r.get('/api/b/geo/:place/landmarks', A.requireUser, (req, res) => {
+    const id = String(req.params.place || ''), ix = STOCK.read();
+    if (!SLUG_RE.test(id) || !(ix.places || {})[id]) return bad(res, 'place', 404);
+    res.setHeader('Cache-Control', 'private, max-age=86400');
+    res.json({ landmarks: (ix.items || []).filter((it) => it && it.ok && !it.withdrawn && it.cat === 'landmark' && it.id.startsWith(id + '.')).map((it) => ({ id: it.id, name: it.name, art: STOCK.url(it.id) })) });
+  });
   r.get('/api/b/geo', A.requireUser, (_req, res) => {
     const ps = Object.entries(STOCK.read().places || {});
     res.setHeader('Cache-Control', 'private, max-age=86400');

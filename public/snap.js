@@ -410,6 +410,26 @@ function snapThumb(i) { if (!snapS.urls[i]) snapS.urls[i] = URL.createObjectURL(
 function snapForget() { if (snapS) Object.values(snapS.urls).forEach((u) => URL.revokeObjectURL(u)); snapS = null; }
 const snapNote = (th, en) => `<p class="snapnote">${ic('lock')}<span>${L(th, en)}</span></p>`;
 
+// B3, the place sheet (docs/SNAP-BOOK.md D2.3): a day's place picked from a list instead of typed — the places its photos named, the
+// landmarks of that region from the library (finer than the town: "a waterfall", "the night safari"), the places this family used in
+// its other books, then every library town; a search box filters the list in place, and what is typed can be used as it is
+const snapPlBtn = (d) => `<button type="button" class="snapplb" data-a="snapplace" data-v="${d.date}" aria-label="${L('เลือกจากรายการ', 'Pick from a list')}">${ic('pin')}<span>${L('เลือก', 'Pick')}</span></button>`;
+const snapLm = {};   // place id → Promise of its landmarks
+function snapLandmarks(id) { if (!snapLm[id]) snapLm[id] = api('GET', `/api/b/geo/${encodeURIComponent(id)}/landmarks`).then((r) => r.landmarks || []).catch(() => { delete snapLm[id]; return []; }); return snapLm[id]; }
+async function snapPlaceSheet(date) {
+  const plan = snapPlan(), d = plan.days.find((x) => x.date === date); if (!d) return;
+  const k = lang === 'en' ? 'en' : 'th', seen = new Set(), group = (title, names) => { const xs = names.map((n) => String(n || '').trim()).filter((n) => n && !seen.has(n.toLowerCase()) && seen.add(n.toLowerCase()));
+    return xs.length ? `<li class="psh">${title}</li>${xs.map((n) => `<li><button type="button" class="psopt" data-a="snapplacepick" data-d="${date}" data-v="${esc(n)}">${esc(n)}</button></li>`).join('')}` : ''; };
+  const photo = d.top.flatMap((p) => [p.spot ? p.spot[k] || p.spot.th : '', p[k] || p.th]);
+  const region = d.top[0] && d.top[0].id ? await snapLandmarks(d.top[0].id) : [];
+  const ours = [...new Set(trips().filter((t) => t.kind === 'snap').flatMap((t) => t.days.map((x) => x.place && T(x.place)).filter(Boolean)))];
+  const towns = ((snapS.geo && snapS.geo.places) || []).slice().sort((a, b) => (b.home ? 1 : 0) - (a.home ? 1 : 0)).map((g) => snapShort(g.name)[k]);
+  openSheet(`<h3>${L('สถานที่ของวัน', 'The day’s place')} · ${esc(fmtDay(date, { day: 'numeric', month: 'short' }))}</h3>
+<input id="psq" class="field" type="search" maxlength="120" autocomplete="off" placeholder="${L('ค้นหา หรือพิมพ์ชื่อเอง', 'Search, or type your own')}" value="${esc(snapS.typed[date] || '')}">
+<button type="button" class="btn ghost wide" data-a="snapplacepick" data-d="${date}" data-own="1">${L('ใช้คำที่พิมพ์', 'Use what I typed')}</button>
+<ul class="pslist">${group(L('จากรูปของวันนี้', 'From the day’s photos'), photo)}${group(d.top[0] ? L(`ที่เที่ยวแถว${d.top[0].th}`, `Around ${d.top[0].en}`) : '', region.map((x) => x.name[k] || x.name.th))}${group(L('ที่เคยใส่ในเล่มอื่น', 'Used in your other books'), ours)}${group(L('เมืองในคลังภาพ', 'Towns in the library'), towns)}</ul>
+<button type="button" class="btn ghost wide" data-a="closesheet">${L('ปิด', 'Close')}</button>`);
+}
 function viewSnap(p) {
   const step = p[1] || '';
   if (step && !snapS) { setTimeout(() => location.replace('#/snap'), 0); return ''; }   // the picked files live only in this page's memory
@@ -461,7 +481,7 @@ ${snapNote('ทั้งหมดนี้ทำบนเครื่องข�
     return `<h1>${L('แต่ละวันอยู่ที่ไหน', 'Where was each day?')}</h1>
 <p class="sub">${L('พิมพ์ชื่อเมืองหรือที่เที่ยวสั้นๆ ไม่ใส่ก็ได้', 'A town or a place, short — or leave it')}</p>${dl}
 <div class="snapplaces">${plan.days.map((d, i) => `<label class="snapplace"><span>${dayLine(d, i)} <small>${L(`${d.items.length} รูป`, `${d.items.length} photo${d.items.length === 1 ? '' : 's'}`)}</small></span>
-<input class="field" type="text" maxlength="120" list="snapgeo" data-snapday="${d.date}" value="${esc(placeVal(d))}" placeholder="${L('เช่น เขาใหญ่', 'e.g. Khao Yai')}"></label>`).join('')}</div>
+<span class="snappl"><input class="field" type="text" maxlength="120" list="snapgeo" data-snapday="${d.date}" value="${esc(placeVal(d))}" placeholder="${L('เช่น เขาใหญ่', 'e.g. Khao Yai')}">${snapPlBtn(d)}</span></label>`).join('')}</div>
 ${plan.days.length > 1 ? `<button type="button" class="linkbtn" data-a="snapsame">${L('ใช้ชื่อวันแรกกับทุกวัน', 'Use the first day’s place for every day')}</button>` : ''}
 <div class="snapfoot"><a class="btn wide" href="#/snap/days">${L('ต่อไป', 'Next')}</a><a class="linkbtn" href="#/snap/days">${L('ข้าม', 'Skip')}</a></div>`;
   }
@@ -473,7 +493,7 @@ ${plan.days.length > 1 ? `<button type="button" class="linkbtn" data-a="snapsame
 <div class="snapdays">${plan.days.map((d, i) => `<details class="snapday"${i === 0 ? ' open' : ''}><summary>
 <span class="sdt"><b>${dayLine(d, i)}</b><small>${esc(placeVal(d) || L('ยังไม่ได้ใส่สถานที่', 'No place yet'))} · ${L(`${d.items.length} รูป`, `${d.items.length} photo${d.items.length === 1 ? '' : 's'}`)}</small></span>
 <span class="sdph">${d.items.slice(0, 3).map((x) => `<img src="${snapThumb(x.i)}" alt="" loading="lazy">`).join('')}</span>${ic('chev', 'chv')}</summary>
-<label class="snapplace"><span>${L('สถานที่ของวัน', 'The day’s place')}</span><input class="field" type="text" maxlength="120" list="snapgeo" data-snapday="${d.date}" value="${esc(placeVal(d))}"></label>
+<label class="snapplace"><span>${L('สถานที่ของวัน', 'The day’s place')}</span><span class="snappl"><input class="field" type="text" maxlength="120" list="snapgeo" data-snapday="${d.date}" value="${esc(placeVal(d))}">${snapPlBtn(d)}</span></label>
 <ol class="snapmoms">${d.moments.map((m) => `<li><b>${snapPart(m.first)}${m.place ? ' · ' + esc(T(snapNameOf(m.place))) : ''}</b><small>${L(`${m.items.length} รูป`, `${m.items.length} photo${m.items.length === 1 ? '' : 's'}`)}</small>
 <span class="sdph">${m.items.slice(0, 4).map((x) => `<img src="${snapThumb(x.i)}" alt="" loading="lazy">`).join('')}</span></li>`).join('')}</ol></details>`).join('')}</div>
 ${plan.out + plan.none ? `<p class="label">${L(`${plan.out + plan.none} รูปไม่อยู่ในช่วงทริปหรือไม่รู้วันที่ ไม่ใส่ในเล่มนี้`, `${plan.out + plan.none} photos are outside the trip or have no date — left out of this book`)}</p>` : ''}
@@ -487,6 +507,11 @@ Object.assign(A, {
     let inp = document.getElementById('snapin-book');
     if (!inp) { inp = document.createElement('input'); inp.type = 'file'; inp.id = 'snapin-book'; inp.multiple = true; inp.accept = 'image/*'; inp.hidden = true; document.body.append(inp); }
     inp.value = ''; inp.click();
+  },
+  snapplace(b) { if (snapS) snapPlaceSheet(b.dataset.v); },
+  snapplacepick(b) {   // a name from the sheet (or what was typed in its search box) becomes the day's place
+    if (!snapS) return; const v = b.dataset.own ? ((document.getElementById('psq') || {}).value || '') : b.dataset.v;
+    snapS.typed[b.dataset.d] = v.trim(); closeSheet(); render();
   },
   snaprun(b) { if (!snapS) return; snapS.runAt = b.dataset.v; snapS.typed = {}; snapS.name = ''; render(); },   // the trip this book is made of
   snapsame() { const plan = snapPlan(), first = (document.querySelector('[data-snapday]') || {}).value || ''; plan.days.forEach((d) => { snapS.typed[d.date] = first; }); render(); },
@@ -752,5 +777,6 @@ if (typeof document !== 'undefined') document.addEventListener('change', (e) => 
 if (typeof document !== 'undefined') document.addEventListener('input', (e) => {   // typed in place: no redraw under the finger
   if (e.target.id === 'snapname') { snapName = e.target.value; if (snapS) snapS.name = e.target.value; return; }
   if (e.target.id === 'snaptitle' && snapS) { snapS.name = e.target.value; return; }
+  if (e.target.id === 'psq') { const q = e.target.value.trim().toLowerCase(); document.querySelectorAll('.pslist li').forEach((li) => { li.hidden = !!q && !li.classList.contains('psh') && !li.textContent.toLowerCase().includes(q); }); return; }   // the sheet's search filters in place
   if (e.target.dataset && e.target.dataset.snapday && snapS) snapS.typed[e.target.dataset.snapday] = e.target.value;
 });

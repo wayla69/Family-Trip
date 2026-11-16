@@ -3070,6 +3070,12 @@ details.emeal[open]>summary .mname{visibility:hidden}
 .snaprun h2{font-size:17px;margin:0 0 4px}
 .snapsum{list-style:none;margin:8px 0;padding:0}
 .snaph2{font-size:1.05rem;margin:18px 0 2px}
+.snappl{display:flex;gap:6px;align-items:stretch}.snappl .field{flex:1;min-width:0}
+.snapplb{display:inline-flex;align-items:center;gap:4px;min-height:44px;padding:0 12px;border:1px solid color-mix(in srgb,var(--accent) 35%,var(--line));border-radius:12px;background:color-mix(in srgb,var(--accent) 10%,var(--card));color:color-mix(in srgb,var(--accent) 60%,var(--ink));font:inherit;font-weight:700;white-space:nowrap}
+.snapplb .ic{width:18px;height:18px}
+.pslist{list-style:none;margin:10px 0;padding:0;max-height:52vh;overflow-y:auto}
+.pslist .psh{font-size:.82rem;font-weight:700;color:var(--muted);margin:12px 2px 4px}
+.psopt{display:block;width:100%;min-height:44px;text-align:left;padding:8px 12px;border:0;border-bottom:1px solid var(--line);background:none;color:var(--ink);font:inherit}
 .snaptrips{grid-template-columns:repeat(auto-fill,minmax(min(100%,150px),1fr))}
 .snaptrips .tpo[disabled]{opacity:1;color:var(--muted);background:var(--card)}
 .snapsum li{display:flex;justify-content:space-between;gap:12px;padding:6px 0;border-bottom:1px solid var(--line)}
