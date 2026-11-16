@@ -1,0 +1,13 @@
+Recorded animal voices for the kid farm game (public/art/sound, kid.js clip(), FARM).
+Each file is a short trimmed, levelled mono mp3; most are cut from a recording on Wikimedia Commons
+(https://commons.wikimedia.org/wiki/File:<name>). None of these needs attribution; it is kept so every source can be traced.
+
+farm-cow.mp3    File:Cow in Vezo.ogg                              CC0
+farm-duck.mp3   File:Duck in Vezo.ogg                             CC0
+farm-cat.mp3    File:Meow of a Siamese cat - freemaster2.wav      CC0
+farm-sheep.mp3  File:Sheep bleating.ogg (0.25 s – 1.85 s)         Public domain
+farm-hen.mp3    File:Hens leaving coop.ogg (1.2 s – 2.8 s)        Public domain
+farm-horse.mp3  File:Wiehern.ogg (0.1 s – 1.9 s)                  Public domain
+farm-pig.mp3    made with the owner's Higgsfield account (sound effects, 0.25 s – 1.65 s of a 3 s clip)
+farm-frog.mp3   made with the owner's Higgsfield account (sound effects, 0 s – 1.6 s of a 3 s clip)
+farm-dog        none yet: the synthesised sound plays
