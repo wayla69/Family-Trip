@@ -673,13 +673,13 @@ const wj = (s) => String(s).replace(/วันนี้/g, 'วัน\u2060น�
 // kid mode's picture tiles (owner's set, public/art/kidui): [picture or '' for the emoji, gradient top, gradient bottom]
 const KTILE = { wear: ['', '#FFD9A8', '#FF9F6B'], count: ['surprise', '#FFC93C', '#FF9F0A'], pack: ['pack', '#62CCFF', '#1C9BEA'], words: ['say', '#C9A2FF', '#8F5CEB'], colour: ['colour', '#FF93B5', '#F2557F'],
   draw: ['draw', '#AEEA80', '#5EBB3D'], match: ['match', '#B592FF', '#7C4EE5'], quiz: ['quiz', '#86D6FF', '#2BA8F0'], animals: ['animals', '#93DD60', '#3FA82C'], numbers: ['count', '#FFB54A', '#FF8A1F'],
-  spot: ['find', '#7FE3D2', '#24B39B'], stamp: ['stamp', '#8FB4FF', '#3F6FE0'], talk: ['talk', '#FFB0C8', '#F06A93'], memory: ['memory', '#FFD36B', '#F2A90C'], photos: ['photos', '#9CD9FF', '#3BA0E8'], mood: ['mood', '#FFC2A0', '#FF8A57'], hideseek: ['spy', '#FFD54A', '#E8A317'], jigsaw: ['jigsaw', '#A8E86A', '#2E9E4F'], bubbles: ['bubbles', '#5BB8FF', '#1E6FE8'], music: ['music', '#FF8FD8', '#7B3FE0'], shadow: ['shadow', '#B8C2D6', '#5B6680'], feed: ['feed', '#FFD98A', '#F29B38'], sort: ['sort', '#9EE6B8', '#3FA0E0'], farm: ['farm', '#B8E986', '#E0893F'], wash: ['wash', '#BDE6F2', '#4FA3D9'], bigsmall: ['bigsmall', '#FFD0A8', '#E06A8F'], maze: ['maze', '#C3F0A0', '#3E9B4F'], where: ['where', '#FFE08A', '#F08C2E'], odd: ['odd', '#D7C6FF', '#7B5BE0'], next: ['next', '#A8E6FF', '#2F86D6'], simon: ['simon', '#FFC9C9', '#E8590C'], dots: ['dots', '#C5CAFF', '#3B3F86'], howmany: ['howmany', '#B2F2BB', '#2B8A3E'], cake: ['cake', '#FFD6E7', '#E64980'], _: ['', '#C9D3E6', '#8C9BB8'] };
+  spot: ['find', '#7FE3D2', '#24B39B'], stamp: ['stamp', '#8FB4FF', '#3F6FE0'], talk: ['talk', '#FFB0C8', '#F06A93'], memory: ['memory', '#FFD36B', '#F2A90C'], photos: ['photos', '#9CD9FF', '#3BA0E8'], mood: ['mood', '#FFC2A0', '#FF8A57'], hideseek: ['spy', '#FFD54A', '#E8A317'], jigsaw: ['jigsaw', '#A8E86A', '#2E9E4F'], bubbles: ['bubbles', '#5BB8FF', '#1E6FE8'], music: ['music', '#FF8FD8', '#7B3FE0'], shadow: ['shadow', '#B8C2D6', '#5B6680'], feed: ['feed', '#FFD98A', '#F29B38'], sort: ['sort', '#9EE6B8', '#3FA0E0'], farm: ['farm', '#B8E986', '#E0893F'], wash: ['wash', '#BDE6F2', '#4FA3D9'], bigsmall: ['bigsmall', '#FFD0A8', '#E06A8F'], maze: ['maze', '#C3F0A0', '#3E9B4F'], where: ['where', '#FFE08A', '#F08C2E'], odd: ['odd', '#D7C6FF', '#7B5BE0'], next: ['next', '#A8E6FF', '#2F86D6'], simon: ['simon', '#FFC9C9', '#E8590C'], dots: ['dots', '#C5CAFF', '#3B3F86'], howmany: ['howmany', '#B2F2BB', '#2B8A3E'], cake: ['cake', '#FFD6E7', '#E64980'], order: ['order', '#FFE8A3', '#F59F00'], missing: ['missing', '#E5DBFF', '#7048E8'], diff: ['diff', '#C5F6FA', '#1098AD'], golight: ['golight', '#D3F9D8', '#E03131'], _: ['', '#C9D3E6', '#8C9BB8'] };
 // each game's own backdrop (owner, Nov 2026: "เพิ่มฉากด้วย"): a sky or room in CSS and a drawn strip along the bottom (app.css .sc-<scene>)
 const WEAR_NAME = { beach: { th: 'ชุดไปทะเล', en: 'Beach' }, hike: { th: 'ชุดเดินเขา', en: 'Hiking' }, city: { th: 'ชุดเที่ยวเมือง', en: 'City day' }, park: { th: 'ชุดสวนสนุก', en: 'Theme park' }, rain: { th: 'ชุดกันฝน', en: 'Rainy day' },
   snow: { th: 'ชุดกันหนาว', en: 'Snow' }, plane: { th: 'ชุดขึ้นเครื่องบิน', en: 'Plane day' }, pyjamas: { th: 'ชุดนอน', en: 'Pyjamas' }, farm: { th: 'ชุดชาวไร่', en: 'Farm' }, festival: { th: 'ชุดงานเทศกาล', en: 'Festival' },
   sailor: { th: 'ชุดกะลาสี', en: 'Sailor' }, train: { th: 'ชุดคนขับรถไฟ', en: 'Train driver' }, chef: { th: 'ชุดเชฟ', en: 'Chef' }, astronaut: { th: 'ชุดนักบินอวกาศ', en: 'Astronaut' }, hero: { th: 'ชุดฮีโร่', en: 'Superhero' },
   kangaroo: { th: 'ชุดจิงโจ้', en: 'Kangaroo' }, koala: { th: 'ชุดโคอาล่า', en: 'Koala' }, panda: { th: 'ชุดแพนด้า', en: 'Panda' }, penguin: { th: 'ชุดเพนกวิน', en: 'Penguin' }, dino: { th: 'ชุดไดโนเสาร์', en: 'Dinosaur' } };
-const KSCENE = { quest: 'road', bubbles: 'sea', music: 'stage', shadow: 'night', feed: 'picnic', sort: 'garden', numbers: 'garden', bigsmall: 'garden', farm: 'farm', wash: 'bath', maze: 'farm', where: 'picnic', odd: 'sea', next: 'stage', simon: 'stage', dots: 'night', howmany: 'sea', cake: 'picnic' };
+const KSCENE = { quest: 'road', bubbles: 'sea', music: 'stage', shadow: 'night', feed: 'picnic', sort: 'garden', numbers: 'garden', bigsmall: 'garden', farm: 'farm', wash: 'bath', maze: 'farm', where: 'picnic', odd: 'sea', next: 'stage', simon: 'stage', dots: 'night', howmany: 'sea', cake: 'picnic', order: 'farm', missing: 'stage', diff: 'picnic', golight: 'garden' };
 const KBAR = { home: 'home', map: 'map', colour: 'colour', stamp: 'passport', stickers: 'stickers', trophies: 'trophies' };   // the bar's middle button: colour before the trip, the passport on it
 function viewKid(p) {
   const ks = children(), kid = p[1], k = ks.find((c) => c.slug === kid);
@@ -709,7 +709,7 @@ function viewKid(p) {
       ? [cd && ['count', '🎁', L('เซอร์ไพรส์', 'Surprise')], cd && cd.pack && ['pack', '🧳', L('จัดกระเป๋า', 'Pack')], canColour(t, i) && ['colour', '🎨', L('ระบายสี', 'Colour')], ['draw', '🖍️', L('วาดรูป', 'Draw')], ['bubbles', '🫧', L('ฟองสบู่', 'Bubbles')], ['music', '🎵', L('ดนตรี', 'Music')], ['hideseek', '🙈', L('ซ่อนหา', 'I spy')]]
       : [canColour(t, i) && ['colour', '🎨', L('ระบายสี', 'Colour')], ['draw', '🖍️', L('วาดรูป', 'Draw')], ['bubbles', '🫧', L('ฟองสบู่', 'Bubbles')], ['music', '🎵', L('ดนตรี', 'Music')], ['hideseek', '🙈', L('ซ่อนหา', 'I spy')], ['spot', littleOf(t, kid) ? '👉' : '🔍', littleOf(t, kid) ? L('ชี้ แตะ', 'Point it') : L('หาของ', 'Find it')], ['stamp', '🛂', L('ปั๊มตรา', 'Stamp')]])
       .concat(words ? [['words', '🗣️', L('พูดตาม', 'Say it')]] : [], ((d.plan || {}).quiz || []).length && !lit ? [['quiz', '❓', L('ทายซิ', 'Quiz')]] : [],
-        kidTalk(t, i) ? [['talk', '💬', L('คุยกัน', 'Let’s talk')]] : [], !pre && i > 0 && memQuiz(t, i - 1) ? [['memory', '🧠', L('จำได้ไหม', 'Remember?')]] : [], kidPhotos(t, i).length ? [['photos', '📸', L('ดูรูป', 'Photos')]] : [], [['match', '🧩', L('จับคู่', 'Match')], ['shadow', '🦒', L('เงาของใคร', 'Shadows')], ['feed', '🍌', L('ป้อนอาหาร', 'Feed me')], ['sort', '🧺', L('แยกสี', 'Colours')], ['farm', '🐮', L('เสียงสัตว์', 'Animal sounds')], ['wash', '🛁', L('อาบน้ำ', 'Bath time')], ['bigsmall', '🐘', L('ใหญ่-เล็ก', 'Big & small')], ['maze', '🧭', L('เขาวงกต', 'Maze')], ['where', '📍', L('ตรงไหนนะ', 'Where is it?')], ['odd', '🤔', L('ไม่เข้าพวก', 'Odd one out')], ['next', '➡️', L('อะไรมาต่อ', 'What’s next?')], ['simon', '🎹', L('จำเสียงตามสี', 'Copy the tune')], ['dots', '✨', L('ลากจุดต่อภาพ', 'Join the dots')], ['howmany', '🧮', L('มีกี่ตัว', 'How many?')], ['cake', '🎂', L('แต่งเค้ก', 'Decorate a cake')]], pre ? [] : [['mood', '😊', L('วันนี้รู้สึก', 'My mood')]],
+        kidTalk(t, i) ? [['talk', '💬', L('คุยกัน', 'Let’s talk')]] : [], !pre && i > 0 && memQuiz(t, i - 1) ? [['memory', '🧠', L('จำได้ไหม', 'Remember?')]] : [], kidPhotos(t, i).length ? [['photos', '📸', L('ดูรูป', 'Photos')]] : [], [['match', '🧩', L('จับคู่', 'Match')], ['shadow', '🦒', L('เงาของใคร', 'Shadows')], ['feed', '🍌', L('ป้อนอาหาร', 'Feed me')], ['sort', '🧺', L('แยกสี', 'Colours')], ['farm', '🐮', L('เสียงสัตว์', 'Animal sounds')], ['wash', '🛁', L('อาบน้ำ', 'Bath time')], ['bigsmall', '🐘', L('ใหญ่-เล็ก', 'Big & small')], ['maze', '🧭', L('เขาวงกต', 'Maze')], ['where', '📍', L('ตรงไหนนะ', 'Where is it?')], ['odd', '🤔', L('ไม่เข้าพวก', 'Odd one out')], ['next', '➡️', L('อะไรมาต่อ', 'What’s next?')], ['simon', '🎹', L('จำเสียงตามสี', 'Copy the tune')], ['dots', '✨', L('ลากจุดต่อภาพ', 'Join the dots')], ['howmany', '🧮', L('มีกี่ตัว', 'How many?')], ['cake', '🎂', L('แต่งเค้ก', 'Decorate a cake')], ['order', '🐣', L('อะไรก่อน-หลัง', 'What comes first?')], ['missing', '🎩', L('อะไรหายไป', 'What’s missing?')], ['diff', '👀', L('หาจุดต่าง', 'Spot the difference')], ['golight', '🚦', L('ไฟเขียวไฟแดง', 'Green light, red light')]], pre ? [] : [['mood', '😊', L('วันนี้รู้สึก', 'My mood')]],
         wild.length ? [['animals', (t.info.wildLabel || {}).emo || '🦘', t.info.wildLabel ? esc(T(t.info.wildLabel.short)) : L('สัตว์', 'Animals')]] : [], [['numbers', '🔢', L('นับเลข', 'Count')]], dayArt(t, i) || kidPhotoPool(t).length ? [['jigsaw', '🖼️', L('ต่อภาพ', 'Puzzle')]] : []).filter(Boolean);   // map, stickers and trophies live on the kid bar below — not twice
     const until = daysUntil(t);
     const btns = tiles.concat(kidStock(kid) ? [['wear', '', L('แต่งตัว', 'Dress up')]] : []).map(([v, e, lbl]) => { const k = KTILE[v] || KTILE._; return `<button class="pic" style="--k1:${k[1]};--k2:${k[2]}" data-a="kidnav" data-v="#/kid/${esc(kid)}/${v}" data-say="${esc(lbl)}">${v === 'wear' ? `<img src="${kidArt(kid, true)}" alt="">` : k[0] ? `<img src="/art/kidui/${k[0]}.webp" alt="">` : `<span>${e}</span>`}<b>${lbl}</b></button>`; })
@@ -801,7 +801,7 @@ ${d2.done ? lvWin(t, kid, 'dots', ['dotsagain']) : ''}`;
 <div class="ctray">${CAKE_TOPS.map((e) => `<button data-a="cakeadd" data-v="${e}" aria-label="${e}"><span>${gE(e)}</span></button>`).join('')}</div>
 ${candles && !c2.blown ? `<button class="kidbig" data-a="cakeblow">🌬️ ${L('เป่าเทียน!', 'Blow!')}</button>` : ''}
 ${c2.items.length ? `<button class="kidbig ghost" data-a="cakenew">🎂 ${L('เค้กใหม่', 'New cake')}</button>` : ''}`;
-  } else if (view === 'where' || view === 'odd' || view === 'next' || view === 'howmany') {   // where is it · odd one out · what comes next: one round at a time, five levels
+  } else if (['where', 'odd', 'next', 'howmany', 'order', 'missing', 'diff'].includes(view)) {   // where is it · odd one out · what comes next: one round at a time, five levels
     const g2 = kgFor(view, t, kid), r = g2.r;
     const doneLine = L(`เก่งมาก ${esc(name)}! ผ่าน${lvWord(t, kid, view)}แล้ว 🎉`, `Brilliant, ${esc(name)}! You finished ${lvWord(t, kid, view)} 🎉`);
     let board = '';
@@ -816,12 +816,29 @@ ${c2.items.length ? `<button class="kidbig ghost" data-a="cakenew">🎂 ${L('เ
     } else if (!g2.done && view === 'howmany') {
       board = `<div class="hmbox${r.n > 10 ? ' many' : ''}">${r.items.map((it, k) => `<button class="hmi${r.ct.includes(k) ? ' ct' : ''}" style="left:${it.x}%;top:${it.y}%" data-a="hmtap" data-v="${k}"${r.ct.includes(k) ? ` data-c="${r.ct.indexOf(k) + 1}"` : ''} aria-label="${k + 1}"><span>${gE(r.e)}</span></button>`).join('')}</div>
 <div class="mema kgch hmch" data-n="${r.opts.length}">${r.opts.map((n) => `<button data-a="kgpick" data-v="${n}"${g2.got && n === r.n ? ' class="right"' : ''}><span>${n}</span></button>`).join('')}</div>`;
+    } else if (!g2.done && view === 'order') {
+      const sh = (st, show) => (st.img ? `<img src="${esc(st.img)}" alt="">${show || !st.hide ? `<b>${esc(L(st.th, st.en))}</b>` : ''}` : `<span>${gE(st.e)}</span><b>${esc(L(st.th, st.en))}</b>`);
+      board = `<div class="ordslots" style="--n:${r.steps.length}">${r.steps.map((st, k) => `<div class="oslot${k < r.placed.length ? ' on' : ''}"><i>${k + 1}</i>${k < r.placed.length ? sh(r.steps[k], true) : ''}</div>`).join('')}</div>
+<div class="ordtray">${r.order.map((k) => (r.placed.includes(k) ? '' : `<button class="ocard${r.steps[k].img ? ' ph' : ''}" data-a="kgpick" data-v="${k}" aria-label="${esc(r.steps[k].hide ? L('รูป', 'A picture') : L(r.steps[k].th, r.steps[k].en))}">${sh(r.steps[k])}</button>`)).join('')}</div>`;
+    } else if (!g2.done && view === 'missing') {
+      const shown = r.after.map((k) => (r.phase === 'ask' && k === r.gone ? '<span class="mq">❓</span>' : `<span>${gE(r.items[k][0])}</span>`)).join('');
+      board = `<div class="missb${r.phase === 'ask' ? ' asked' : ''}">${r.phase === 'look' ? r.items.map((x) => `<span>${gE(x[0])}</span>`).join('') : shown}</div>
+${r.phase === 'look' ? `<button class="kidbig" data-a="missask">✋ ${L('จำได้แล้ว', 'I remember!')}</button>` : `<div class="mema kgch" data-n="${r.opts.length}">${r.opts.map((x) => `<button data-a="kgpick" data-v="${esc(x[0])}" aria-label="${esc(L(x[1], x[2]))}"${g2.got && x === r.items[r.gone] ? ' class="right"' : ''}><span>${gE(x[0])}</span></button>`).join('')}</div>`}`;
+    } else if (!g2.done && view === 'diff') {
+      const side = (right) => `<div class="diffb${right ? ' r' : ''}">${r.items.map((it, k) => { const d = right && r.diffs[k], e = d ? (d.kind === 'gone' ? '' : d.e2) : it.e; return `<button class="dfi${r.found.includes(k) ? ' found' : ''}" style="left:${it.x}%;top:${it.y}%" data-a="kgpick" data-v="${k}" aria-label="${k + 1}"><span>${e ? gE(e) : ''}</span></button>`; }).join('')}</div>`;
+      board = `<div class="diffwrap">${side(false)}${side(true)}</div>`;
     } else if (!g2.done && view === 'next') {
       board = `<div class="nextrow" aria-hidden="true">${r.shown.map((e) => `<span>${gE(e)}</span>`).join('')}<span class="q">${g2.got ? gE(r.answer) : '❓'}</span></div>
 <div class="mema kgch" data-n="${r.opts.length}">${r.opts.map((e) => `<button data-a="kgpick" data-v="${esc(e)}"${g2.got && e === r.answer ? ' class="right"' : ''}><span>${gE(e)}</span></button>`).join('')}</div>`;
     }
     body = lvBar(t, kid, view) + (g2.done ? `<div class="kidguide pop">${guideImg(0)}<p>${doneLine}</p></div>${lvWin(t, kid, view, ['kgagain', view])}`
       : `<div class="kidguide">${guideImg(1)}<p>${esc(kgAsk(g2))}</p></div>${board}`);
+  } else if (view === 'golight') {   // green light, red light: tap the animals, never the vehicles; the top levels swap the rule half way
+    const s2 = glFor(t, kid);
+    body = lvBar(t, kid, 'golight') + `<div class="kidguide">${guideImg(0)}<p>${s2.done ? L(`เก่งมาก ${esc(name)}! ผ่าน${lvWord(t, kid, 'golight')}แล้ว 🎉`, `Brilliant, ${esc(name)}! You finished ${lvWord(t, kid, 'golight')} 🎉`) : L('แตะสัตว์ให้ไว ห้ามแตะรถนะ!', 'Tap the animals quickly — never the vehicles!')}</p></div>
+<div class="glrule" id="glrule">${glRule()}</div>
+<div class="glbox" id="glbox">${s2.k >= 0 && !s2.done ? glItem() : ''}</div>
+${s2.done ? lvWin(t, kid, 'golight', ['glagain']) : s2.run ? '' : `<button class="kidbig" data-a="glstart">▶️ ${L('เริ่มเลย', 'Start')}</button>`}`;
   } else if (view === 'farm') {   // animal sounds: the farm is the game, a tap makes an animal jump and say its sound; all of them heard = a cheer
     const fm = farmFor(t, kid);
     body = `<div class="kidguide">${guideImg(0)}<p>${L('แตะสัตว์ ฟังเสียงร้องกัน!', 'Tap an animal to hear it!')}</p></div>
@@ -1193,6 +1210,10 @@ const LV = {   // ten levels a game (owner, Nov 2026: "ด่านเยอะ�
   simon: [{ len: 2, r: 3 }, { len: 3, r: 3 }, { len: 4, r: 3 }, { len: 5, r: 3 }, { len: 6, r: 3 }, { len: 7, r: 3 }, { len: 7, r: 3, fast: 1 }, { len: 8, r: 3 }, { len: 8, r: 3, fast: 1 }, { len: 9, r: 3, fast: 1 }],   // copy the tune: how many notes, how many tunes; fast = a quicker tune
   dots: [{ s: ['tri', 'sq', 'dia', 'boat'], r: 3 }, { s: ['house', 'crown', 'boat', 'dia'], r: 3 }, { s: ['fish', 'rocket', 'house', 'crown'], r: 3 }, { s: ['heart', 'star', 'fish', 'rocket'], r: 3 }, { s: ['tree', 'star', 'heart', 'rocket', 'fish'], r: 4 },
     { s: ['house', 'crown', 'car', 'cat'], r: 4 }, { s: ['rocket', 'heart', 'car', 'cat'], r: 4 }, { s: ['star', 'tree', 'castle', 'car'], r: 4 }, { s: ['heart', 'castle', 'butterfly', 'tree', 'star'], r: 4 }, { s: ['butterfly', 'castle', 'tree', 'star', 'rocket', 'cat'], r: 5 }],
+  order: [{ n: 2, r: 4 }, { n: 3, r: 4 }, { n: 3, r: 5 }, { n: 4, r: 5 }, { n: 4, r: 4, trip: 1 }, { n: 4, r: 6 }, { n: 5, r: 4 }, { n: 5, r: 5 }, { n: 5, r: 4, trip: 1 }, { n: 5, r: 6 }],   // what comes first: steps per round; the top level orders our own trip
+  missing: [{ n: 3, o: 2, r: 4, ms: 6000 }, { n: 4, o: 3, r: 5, ms: 6000 }, { n: 5, o: 3, r: 5, ms: 7000 }, { n: 6, o: 4, r: 5, ms: 7000, mix: 1 }, { n: 7, o: 4, r: 5, ms: 8000, mix: 1 }, { n: 7, o: 5, r: 5, ms: 8000, mix: 1 }, { n: 8, o: 5, r: 5, ms: 8000, mix: 1 }, { n: 9, o: 6, r: 6, ms: 9000, mix: 1 }, { n: 10, o: 6, r: 6, ms: 10000, mix: 1 }, { n: 10, o: 6, r: 6, ms: 7000, mix: 1 }],   // the last level: as many things, a shorter look   // mix: the rest change places too
+  diff: [{ n: 5, k: 1, r: 3 }, { n: 6, k: 2, r: 3 }, { n: 8, k: 3, r: 3 }, { n: 10, k: 4, r: 2 }, { n: 12, k: 5, r: 2 }, { n: 12, k: 5, r: 3 }, { n: 14, k: 6, r: 2 }, { n: 14, k: 6, r: 3 }, { n: 16, k: 7, r: 2 }, { n: 16, k: 8, r: 2 }],   // things on each picture, differences to find
+  golight: [{ n: 8, ms: 2200 }, { n: 10, ms: 1800 }, { n: 12, ms: 1500 }, { n: 12, ms: 1500, sw: 1 }, { n: 14, ms: 1200, sw: 1 }, { n: 14, ms: 1150, sw: 1 }, { n: 16, ms: 1100, sw: 1 }, { n: 18, ms: 1000, sw: 1 }, { n: 18, ms: 950, sw: 2 }, { n: 20, ms: 900, sw: 2 }],   // sw: the rule swaps half way (2: twice, at a third and two thirds)
   howmany: [{ lo: 1, hi: 3, o: 2, r: 4 }, { lo: 1, hi: 5, o: 3, r: 5 }, { lo: 1, hi: 7, o: 3, r: 5 }, { lo: 1, hi: 10, o: 4, r: 6 }, { lo: 5, hi: 10, o: 4, r: 6 },
     { lo: 6, hi: 12, o: 4, r: 6 }, { lo: 8, hi: 14, o: 4, r: 6 }, { lo: 10, hi: 15, o: 5, r: 6 }, { lo: 11, hi: 18, o: 5, r: 6 }, { lo: 13, hi: 20, o: 5, r: 8 }],
   next: [{ pat: ['AB'], o: 2, show: 4, r: 4 }, { pat: ['AB'], o: 3, show: 5, r: 5 }, { pat: ['AAB', 'ABB'], o: 3, show: 5, r: 5 }, { pat: ['ABC'], o: 3, show: 5, r: 6 }, { pat: ['AABB', 'ABC', 'ABB'], o: 4, show: 7, r: 6 },
@@ -1519,6 +1540,32 @@ function kgRound(g) {
     const one = B.e[Math.floor(Math.random() * B.e.length)];
     g.r = { A, B, one, opts: shuffle(shuffle(A.e).slice(0, g.lv.o - 1).concat(one)) };
   }
+  else if (g.game === 'order') {   // what comes first: the steps shuffled, tapped in order into the numbered slots
+    let steps = null;
+    if (g.lv.trip) {   // our own trip: one photo from each of three or four days (else the days' own pictures), put back in order
+      const t = trip(g.tid), byDay = {};
+      kidPhotoPool(t).forEach((m) => { if (m.day != null && !byDay[m.day]) byDay[m.day] = m; });
+      let days = Object.keys(byDay).map(Number).sort((a, b) => a - b), pick = (xs) => shuffle(xs).slice(0, Math.min(g.lv.n, xs.length)).sort((a, b) => a - b);
+      if (days.length >= 3) steps = pick(days).map((d) => ({ img: imgT(byDay[d]), th: `วันที่ ${d + 1}`, en: `Day ${d + 1}`, hide: 1 }));
+      else { days = t.days.map((_, d) => d).filter((d) => dayArt(t, d)); if (days.length >= 3) steps = pick(days).map((d) => ({ img: dayArt(t, d), th: `วันที่ ${d + 1}`, en: `Day ${d + 1}`, hide: 1 })); }
+    }
+    if (!steps) { const set = shuffle(ORDER_SETS.filter((x) => x.length >= g.lv.n && x !== g.lastSet))[0]; g.lastSet = set; steps = set.slice(0, g.lv.n).map((x) => ({ e: x[0], th: x[1], en: x[2] })); }
+    g.r = { steps, order: shuffle(steps.map((_, k) => k)), placed: [] };
+    if (g.r.order.every((k, j) => k === j)) g.r.order.reverse();   // never dealt already in order
+  }
+  else if (g.game === 'missing') {   // what's missing: look, the curtain closes, one thing is gone
+    const items = shuffle(HIDE_POOL).slice(0, g.lv.n), gone = Math.floor(Math.random() * items.length);
+    const others = shuffle(HIDE_POOL.filter((x) => !items.includes(x))).slice(0, g.lv.o - 1);
+    g.r = { items, gone, phase: 'look', after: g.lv.mix ? shuffle(items.map((_, k) => k)) : items.map((_, k) => k), opts: shuffle([items[gone]].concat(others)) };
+    clearTimeout(g.timer); g.timer = setTimeout(() => missAsk(g), g.lv.ms);
+  }
+  else if (g.game === 'diff') {   // spot the difference: the same scattered things twice, a few changed or gone on the right
+    const pool = shuffle([...new Set(HIDE_POOL.map((x) => x[0]).concat(HM_E, GL_GO, GL_NO))]), items = [], gap = g.lv.n > 12 ? 17 : 22;   // enough different things for sixteen and their swaps
+    for (let k = 0; k < g.lv.n; k++) { let x, y, tries = 0; do { x = 12 + Math.random() * 76; y = 12 + Math.random() * 76; tries++; } while (tries < 120 && items.some((o) => Math.hypot(o.x - x, o.y - y) < gap)); items.push({ e: pool[k], x, y }); }
+    const spare = pool.slice(g.lv.n), diffs = {};
+    shuffle(items.map((_, k) => k)).slice(0, g.lv.k).forEach((k, j) => { diffs[k] = j % 3 === 2 ? { kind: 'gone' } : { kind: 'swap', e2: spare[j % spare.length] }; });
+    g.r = { items, diffs, found: [] };
+  }
   else if (g.game === 'howmany') {   // count the things (a tap numbers each one aloud), then pick the number
     let n; do { n = g.lv.lo + Math.floor(Math.random() * (g.lv.hi - g.lv.lo + 1)); } while (g.lv.hi > g.lv.lo && n === g.lastN);
     g.lastN = n;
@@ -1541,7 +1588,7 @@ function kgNew(game, t, kid) {
   const q = questIn(t, kid, game), own = q ? questThings(t, q.town) : [];
   if (q) g.own = new Set(own.map((x) => x[0]).concat(questAnimals(t).map((x) => x[0])));
   if (game === 'shadow') { g.pool = q ? qUniq(own.concat(questAnimals(t), SHADOWS)) : SHADOWS; g.deck = q ? qLead(own, questAnimals(t)).concat(shuffle(SHADOWS)).slice(0, g.lv.r) : shuffle(SHADOWS).slice(0, g.lv.r); if (q) g.deck = shuffle(qUniq(g.deck)); }
-  if (game === 'where' || game === 'odd' || game === 'next' || game === 'howmany') g.deck = Array(g.lv.r).fill(0);   // rounds only: each one is drawn fresh
+  if (['where', 'odd', 'next', 'howmany', 'order', 'missing', 'diff'].includes(game)) g.deck = Array(g.lv.r).fill(0);   // rounds only: each one is drawn fresh
   if (game === 'bigsmall') { const stock = SHADOWS.filter((x) => !/[✈️⛵🎸🚲]/u.test(x[0])); g.deck = (q ? qLead(own.concat(questAnimals(t)), stock) : shuffle(stock)).slice(0, g.lv.r); g.first = Math.random() < 0.5 ? 0 : 1; }
   if (game === 'feed') { const tf = q ? questFoods(t) : []; g.foods = tf.length >= 3 ? qUniq(tf.concat(FOODS)) : FOODS; g.pal = FEED_PALS[Math.floor(Math.random() * FEED_PALS.length)]; g.deck = (tf.length >= 3 ? qLead(tf, FOODS) : shuffle(FOODS)).slice(0, g.lv.r); g.fed = []; }
   if (q && (game === 'howmany' || game === 'next')) g.things = own.map((x) => x[0]);
@@ -1562,10 +1609,35 @@ function kgAsk(g) {
   if (g.game === 'odd') return L('อันไหนไม่เข้าพวก?', 'Which one does not belong?');
   if (g.game === 'next') return L('อะไรมาต่อ?', 'What comes next?');
   if (g.game === 'howmany') return L('มีกี่ตัว? แตะนับได้นะ', 'How many? Tap to count them');
+  if (g.game === 'order') return g.r.steps[0].hide ? L('วันไหนมาก่อน? แตะเรียงตามลำดับนะ', 'Which day came first? Tap them in order') : L('อะไรมาก่อน? แตะเรียงตามลำดับนะ', 'What comes first? Tap them in order');
+  if (g.game === 'missing') return g.r.phase === 'look' ? L('ดูให้ดี จำไว้นะ', 'Look carefully and remember') : L('อะไรหายไป?', 'What is missing?');
+  if (g.game === 'diff') return L('หาจุดที่ไม่เหมือนกันเลย', 'Find what is different');
   return '';
 }
 // feed, levels 8+: the wish shows for a moment, then the child keeps it in mind (a tap on the animal shows and says it again)
 function feedHide(g, ms) { const r = g.r; clearTimeout(g.hideT); r.hid = false; g.hideT = setTimeout(() => { if (kg !== g || g.r !== r || g.got) return; r.hid = true; const w = $('#kgwant'); if (w) w.classList.add('gone'); }, ms || 2600); }
+// the next round after a short cheer (or the win after the last one)
+function kgNext(g, b, chars, ms) { setTimeout(() => { if (kg !== g) return; g.n++; if (g.n >= g.lv.r) kgWin(b, chars || ['🧠', '⭐', '✨']); else { kgRound(g); sayUi(kgAsk(g)); } safeRender(); }, ms || 1300); }
+// what's missing: the curtain falls, the question is asked
+function missAsk(g) { clearTimeout(g.timer); if (kg !== g || !g.r || g.r.phase !== 'look') return; g.r.phase = 'ask'; beep('whoosh'); sayUi(kgAsk(g)); safeRender(); }
+const ORDER_SETS = [
+  [['🥚', 'ไข่', 'an egg'], ['🐣', 'ลูกเจี๊ยบ', 'a chick'], ['🐔', 'ไก่', 'a hen']],
+  [['🌰', 'เมล็ด', 'a seed'], ['🌱', 'ต้นอ่อน', 'a sprout'], ['🌿', 'ต้นไม้เล็ก', 'a little plant'], ['🌷', 'ดอกไม้', 'a flower']],
+  [['🥚', 'ไข่', 'an egg'], ['🐛', 'หนอน', 'a caterpillar'], ['🦋', 'ผีเสื้อ', 'a butterfly']],
+  [['🌅', 'ตอนเช้า', 'morning'], ['☀️', 'ตอนกลางวัน', 'midday'], ['🌇', 'ตอนเย็น', 'evening'], ['🌙', 'ตอนกลางคืน', 'night']],
+  [['☁️', 'เมฆ', 'clouds'], ['🌧️', 'ฝนตก', 'rain'], ['🌈', 'สายรุ้ง', 'a rainbow']],
+  [['👶', 'เด็กทารก', 'a baby'], ['🧒', 'เด็ก', 'a child'], ['🧑', 'ผู้ใหญ่', 'a grown-up'], ['👴', 'คุณตา', 'a grandpa']],
+  [['🛏️', 'ตื่นนอน', 'wake up'], ['🪥', 'แปรงฟัน', 'brush teeth'], ['🍳', 'กินข้าวเช้า', 'breakfast'], ['🎒', 'ออกไปเที่ยว', 'off we go']],
+  [['🧦', 'ใส่ถุงเท้า', 'socks on'], ['👟', 'ใส่รองเท้า', 'shoes on']],
+  [['🥚', 'ตอกไข่', 'crack the eggs'], ['🥣', 'ผสมแป้ง', 'mix'], ['🔥', 'อบ', 'bake'], ['🎂', 'ได้เค้ก', 'a cake']],
+  [['🧳', 'จัดกระเป๋า', 'pack'], ['✈️', 'ขึ้นเครื่องบิน', 'fly'], ['🏨', 'ถึงที่พัก', 'arrive'], ['🏖️', 'ไปเที่ยว', 'play']],
+  // five steps (levels 7 and up)
+  [['🌰', 'เมล็ด', 'a seed'], ['🌱', 'ต้นอ่อน', 'a sprout'], ['🌿', 'ต้นไม้เล็ก', 'a little plant'], ['🌸', 'ออกดอก', 'flowers'], ['🍎', 'ออกผล', 'fruit']],
+  [['🛏️', 'ตื่นนอน', 'wake up'], ['🚿', 'อาบน้ำ', 'a shower'], ['🪥', 'แปรงฟัน', 'brush teeth'], ['🍳', 'กินข้าวเช้า', 'breakfast'], ['🎒', 'ออกไปเที่ยว', 'off we go']],
+  [['🧳', 'จัดกระเป๋า', 'pack'], ['🚕', 'นั่งรถไปสนามบิน', 'a taxi'], ['✈️', 'ขึ้นเครื่องบิน', 'fly'], ['🏨', 'ถึงที่พัก', 'arrive'], ['🏖️', 'ไปเที่ยว', 'play']],
+  [['🥚', 'ตอกไข่', 'crack the eggs'], ['🥣', 'ผสมแป้ง', 'mix'], ['🔥', 'อบ', 'bake'], ['🎂', 'ได้เค้ก', 'a cake'], ['🕯️', 'เป่าเทียน', 'blow the candles']],
+  [['🌄', 'ฟ้าสาง', 'dawn'], ['🌅', 'ตอนเช้า', 'morning'], ['☀️', 'ตอนกลางวัน', 'midday'], ['🌇', 'ตอนเย็น', 'evening'], ['🌙', 'ตอนกลางคืน', 'night']],
+];
 function kgWin(b, chars) { kg.done = true; lvDone(trip(kg.tid), kg.kid, kg.game); beep('fanfare'); celebrate(chars); star(kg.kid, 2); }
 const kgRight = (g) => String(g.game === 'shadow' || g.game === 'feed' ? g.r.want[0] : g.game === 'where' ? (g.r.mode === 'two' ? g.r.steps[g.r.k].pos : g.r.pos) : g.game === 'odd' ? g.r.one : g.game === 'howmany' ? g.r.n : g.game === 'next' ? g.r.answer : g.game === 'bigsmall' ? g.r.right : g.game === 'sort' ? g.items[g.n].k : '');
 // three wrong taps in one round: the right answer glows (owner's plan: a child who is stuck gets a hint, never a score)
@@ -1580,7 +1652,7 @@ Object.assign(A, {
   kglv(b) {   // pick a level (a chip, or "on to level n" after a win): the game starts over at it
     const kid = kidNow(), t = kidTrip(kid), game = b.dataset.g, n = +b.dataset.v; if (!t || !LV[game]) return;
     beep('sparkle'); lvSet(kid, game, { at: n });
-    if (game === 'jigsaw') jg = null; else if (game === 'match') mg = null; else if (game === 'maze') mz = null; else if (game === 'simon') { clearTimeout(simT); sm = null; } else if (game === 'dots') dt = null; else kg = kgNew(game, t, kid);
+    if (game === 'golight') { clearTimeout(glT); gl = null; } else if (game === 'jigsaw') jg = null; else if (game === 'match') mg = null; else if (game === 'maze') mz = null; else if (game === 'simon') { clearTimeout(simT); sm = null; } else if (game === 'dots') dt = null; else kg = kgNew(game, t, kid);
     render(); sayUi(L(`ด่าน ${n}!`, `Level ${n}!`));
   },
   kgpick(b) {
@@ -1603,6 +1675,24 @@ Object.assign(A, {
       if (g.r.k < g.r.steps.length) { const nx = g.r.steps[g.r.k]; g.r.pos = nx.pos; g.r.item = nx.item; sayUi(L(`ใช่! แล้ว${WHERE_ITEM[nx.item][0]}ล่ะ?`, `Yes! And the ${WHERE_ITEM[nx.item][1]}?`)); render(); return; }
       g.got = true; sayUi(L('ใช่แล้ว! จำได้ทั้งสองอย่างเลย', 'Yes! You remembered both')); render();
       setTimeout(() => { if (kg !== g) return; g.n++; if (g.n >= g.lv.r) kgWin(b, ['🧠', '⭐', '✨']); else { kgRound(g); sayUi(kgAsk(g)); } safeRender(); }, 1300);
+    } else if (g.game === 'order') {
+      const k = +v, r = g.r; if (r.placed.includes(k)) return;
+      if (k !== r.placed.length) return kgNope(b, r.steps[0].hide ? L('ยังไม่ใช่ วันไหนมาก่อนนะ?', 'Not yet — which day came first?') : L('ยังไม่ใช่ อะไรมาก่อนนะ?', 'Not yet — what comes first?'));
+      r.placed.push(k); beep('note', XYLO[Math.min(XYLO.length - 1, r.placed.length * 2 - 2)][1]); sayUi(L(r.steps[k].th, r.steps[k].en));
+      if (r.placed.length === r.steps.length) { g.got = true; setTimeout(() => { beep('chime'); sayUi(L('เรียงถูกหมดแล้ว เก่งมาก!', 'All in order — well done!')); }, 600); kgNext(g, b, ['🐣', '⭐', '✨'], 1900); }
+      render();
+    } else if (g.game === 'missing') {
+      if (g.r.phase !== 'ask') return;
+      const want = g.r.items[g.r.gone];
+      if (v !== want[0]) return kgNope(b, L('อันนี้ไม่ได้หายนะ ลองอีกที', 'That one is not missing — try again!'));
+      g.got = true; beep('chime'); burst(b, ['⭐', '✨']); sayUi(L(`ใช่แล้ว! ${want[1]}หายไป`, `Yes! The ${want[2]} was missing`)); render(); kgNext(g, b, ['🎩', '⭐', '✨']);
+    } else if (g.game === 'diff') {
+      const k = +v, r = g.r; if (r.found.includes(k)) return;
+      if (!(k in r.diffs)) return kgNope(b, L('ตรงนี้เหมือนกันนะ ลองหาใหม่', 'That one is the same — look again!'));
+      r.found.push(k); beep('chime'); burst(b, ['⭐']);
+      const left = Object.keys(r.diffs).length - r.found.length;
+      if (!left) { g.got = true; sayUi(L('เจอครบแล้ว! ตาดีมาก', 'Found them all — sharp eyes!')); kgNext(g, b, ['👀', '⭐', '✨'], 1500); } else sayUi(L('เจอแล้ว! ยังมีอีกนะ', 'Found one! There is more'));
+      render();
     } else if (g.game === 'where' || g.game === 'odd' || g.game === 'next' || g.game === 'howmany') {
       const ok = g.game === 'where' ? +v === g.r.pos : g.game === 'odd' ? v === g.r.one : g.game === 'howmany' ? +v === g.r.n : v === g.r.answer;
       if (!ok) return kgNope(b, g.game === 'where' ? L(`ยังไม่ใช่ ลองดู${WHERE_NAME[g.r.pos][0]}นะ`, `Not there — look ${WHERE_NAME[g.r.pos][1]}`) : g.game === 'odd' ? L('อันนี้เข้าพวกนะ ลองอีกที', 'That one belongs — try again!') : g.game === 'howmany' ? L('ลองนับอีกทีนะ', 'Let’s count again!') : L('อืม… ไม่ใช่ ดูแถวอีกทีนะ', 'Hmm… look at the row again!'));
@@ -1806,6 +1896,41 @@ document.addEventListener('pointerup', () => { mzDown = false; });
 document.addEventListener('pointercancel', () => { mzDown = false; });
 Object.assign(A, {
   mazeagain() { beep('pop'); const t = trip(mz.tid); mazeNew(t, mz.kid); render(); },
+});
+// ---- green light, red light: one thing at a time in the box, tap it when it is an animal (or, after the swap, a vehicle) ----
+const GL_GO = ['🐶', '🐱', '🐰', '🐻', '🐼', '🐸', '🐵', '🐷', '🐮', '🦁'], GL_NO = ['🚗', '🚌', '🚲', '✈️', '🚂', '🚀', '⛵', '🚒'];
+let gl = null, glT = 0;
+function glNew(t, kid) {
+  const lv = lvOf(t, kid, 'golight'), seq = Array.from({ length: lv.n }, () => (Math.random() < 0.65 ? { e: GL_GO[Math.floor(Math.random() * GL_GO.length)], animal: 1 } : { e: GL_NO[Math.floor(Math.random() * GL_NO.length)], animal: 0 }));
+  gl = { key: `${t.id}.${kid}`, tid: t.id, kid, at: lvState(t, kid, 'golight').at, lv, seq, k: -1, rule: 'animal', run: false, done: false, hit: {}, sw: {} };
+}
+const glFor = (t, kid) => { if (!gl || gl.key !== `${t.id}.${kid}` || gl.at !== lvState(t, kid, 'golight').at) glNew(t, kid); return gl; };
+const glRule = () => (!gl ? '' : gl.rule === 'animal' ? `<span class="go">✅ ${L('แตะสัตว์', 'Tap animals')} ${gE('🐶')}</span><span class="no">🚫 ${L('ไม่แตะรถ', 'Not vehicles')} ${gE('🚗')}</span>`
+  : `<span class="go">✅ ${L('แตะรถ', 'Tap vehicles')} ${gE('🚗')}</span><span class="no">🚫 ${L('ไม่แตะสัตว์', 'Not animals')} ${gE('🐶')}</span>`);
+const glItem = () => { const it = gl.seq[gl.k]; return `<button class="glit${gl.hit[gl.k] ? ' hit' : ''}" data-a="gltap" data-v="${gl.k}"><span>${gE(it.e)}</span></button>`; };
+const glPaint = () => { const b = $('#glbox'), r = $('#glrule'); if (b) b.innerHTML = gl.k >= 0 && !gl.done ? glItem() : ''; if (r) r.innerHTML = glRule(); };
+function glStep() {
+  clearTimeout(glT); if (!gl || gl.done) return;
+  if (!$('#glbox')) { gl.run = false; return; }   // left the game: stop the clock
+  gl.k++;
+  if (gl.k >= gl.seq.length) { gl.done = true; gl.run = false; lvDone(trip(gl.tid), gl.kid, 'golight'); beep('fanfare'); celebrate(['🚦', '⭐', '✨']); star(gl.kid, 2); sayUi(L('จบแล้ว! ตาไวมือไวมาก', 'All done — quick eyes and quick hands!')); safeRender(); return; }
+  const n = gl.seq.length, swaps = gl.lv.sw === 2 ? [Math.floor(n / 3), Math.floor((2 * n) / 3)] : gl.lv.sw ? [Math.floor(n / 2)] : [];
+  if (swaps.includes(gl.k) && !gl.sw[gl.k]) {   // a swap: a pause, the new rule said out loud
+    gl.sw[gl.k] = 1; gl.rule = gl.rule === 'animal' ? 'vehicle' : 'animal'; gl.k--; glPaint(); beep('boing');
+    sayUi(gl.rule === 'vehicle' ? L('เปลี่ยนกติกา! ตอนนี้แตะรถนะ', 'New rule! Now tap the vehicles') : L('เปลี่ยนกลับ! ตอนนี้แตะสัตว์นะ', 'Swap back! Now tap the animals')); glT = setTimeout(glStep, 2600); return;
+  }
+  glPaint(); glT = setTimeout(glStep, gl.lv.ms);
+}
+Object.assign(A, {
+  glstart() { if (!gl || gl.run) return; beep('tap'); gl.run = true; gl.k = -1; safeRender(); sayUi(L('พร้อมนะ… เริ่ม!', 'Ready… go!')); glT = setTimeout(glStep, 1200); },
+  gltap(b) {
+    if (!gl || !gl.run) return; const k = +b.dataset.v; if (k !== gl.k || gl.hit[k]) return;
+    const it = gl.seq[k], go = (gl.rule === 'animal') === !!it.animal;
+    if (go) { gl.hit[k] = 1; b.classList.add('hit'); beep('chime'); burst(b, ['⭐', '✨']); }
+    else { beep('tap'); b.classList.remove('nope'); void b.offsetWidth; b.classList.add('nope'); sayUi(gl.rule === 'animal' ? L('อุ๊ย รถไม่แตะนะ', 'Oops — not the vehicles!') : L('อุ๊ย สัตว์ไม่แตะนะ', 'Oops — not the animals!')); }
+  },
+  glagain() { beep('pop'); clearTimeout(glT); glNew(trip(gl.tid), gl.kid); render(); },
+  missask() { if (kg && kg.game === 'missing') missAsk(kg); },
 });
 // ---- animal sounds on the farm: [emoji, th, en, the sound in Thai, in English, x %, y %] — placed by hand so none overlap ----
 const FARM = [['🐮', 'วัว', 'cow', 'มอ มอ', 'moo moo', 14, 54], ['🐷', 'หมู', 'pig', 'อู๊ด อู๊ด', 'oink oink', 40, 54], ['🐔', 'ไก่', 'hen', 'กุ๊ก กุ๊ก', 'cluck cluck', 68, 54],
