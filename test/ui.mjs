@@ -1019,6 +1019,17 @@ const T = 'hk-macau-2026';
   await page.waitForFunction(() => S.entries.some((e) => e.id === 'hk-macau-2026.field.colour.d1.mimi'), null, { timeout: 5000 });
   ok(shapes >= 3 && (await page.locator('.colourpad [fill="#42A5F5"]').count()) === 1, `colouring: ${shapes} tappable shapes, tapped one turns blue`);
   ok(await s.noHScroll(), 'kid colouring page fits the phone');
+  { // undo and the sponge (owner, Nov 2026: "ทำให้ล้างได้หน่อย"): a slip goes back one tap at a time, the sponge washes the picture white, ↶ brings it back
+    const filled = () => page.evaluate(() => [...document.querySelectorAll('.colourpad [data-c]')].filter((x) => x.getAttribute('fill').toLowerCase() !== '#ffffff').map((x) => x.getAttribute('fill')).join());
+    const saved = () => page.evaluate(() => (S.entries.find((e) => e.id === 'hk-macau-2026.field.colour.d1.mimi') || {}).text);
+    await page.click('.palette button[data-v="#EF5350"]'); await page.locator('.colourpad [data-c]').nth(0).click({ force: true });
+    const two = await filled(); await page.click('[data-a="kidcolundo"]'); const one = await filled();
+    await page.click('[data-a="kidcolwipe"]'); const none = await filled(); await page.waitForFunction(() => (S.entries.find((e) => e.id === 'hk-macau-2026.field.colour.d1.mimi') || {}).text === '{}', null, { timeout: 5000 });
+    await page.click('[data-a="kidcolundo"]'); const back = await filled(); await page.waitForFunction(() => /42A5F5/.test((S.entries.find((e) => e.id === 'hk-macau-2026.field.colour.d1.mimi') || {}).text || ''), null, { timeout: 5000 });
+    const btn = await page.evaluate(() => [...document.querySelectorAll('.coltools button')].map((b) => Math.round(b.getBoundingClientRect().height)));
+    ok(/EF5350/.test(two) && /42A5F5/.test(two) && one === '#42A5F5' && none === '' && back === '#42A5F5' && /42A5F5/.test(await saved()) && btn.length === 2 && btn.every((h) => h >= 48) && await s.noHScroll(),
+      `colouring: ↶ takes back the last colour, the sponge washes the picture white (saved), ↶ brings the picture back (${JSON.stringify({ two, one, none, back, btn })})`);
+  }
   await s.shot('08-kid-colour');
   await page.click('.kidback'); await page.click('.kidtiles button[data-v$="/spot"]'); await page.waitForSelector('.kidspots button');
   await page.locator('.kidspots button').nth(1).click();

@@ -770,8 +770,10 @@ ${pages.length > 1 ? `<div class="kdots" id="kdots">${pages.map((_, n) => `<i${n
   } else if (view === 'quest') {
     body = questHtml(t, kid, guideImg);
   } else if (view === 'colour') {
+    const ck = `${t.id}.${i}.${kid}`; if (colKey !== ck) { colKey = ck; colHist = []; }   // the undo history belongs to one picture of one child
     body = `<div class="colourpad colsvg" data-src="${esc(colourUrl(t, i))}" data-fill="${esc(colourFill(t, i, kid))}" data-t="${esc(t.id)}" data-d="${i}" data-k="${esc(kid)}"></div>
 <div class="palette">${COLOURS.map((c) => `<button data-a="kidcolor" data-v="${c}" style="--c:${c}" aria-pressed="${c === kidColour}" aria-label="${c}"></button>`).join('')}</div>
+<div class="drawtools coltools"><button class="dclear" data-a="kidcolundo" aria-label="${L('ย้อนกลับ', 'Undo')}"${colHist.length ? '' : ' disabled'}>↶ <b>${L('ย้อน', 'Undo')}</b></button><button class="dclear" data-a="kidcolwipe" aria-label="${L('ล้างสีแล้วระบายใหม่', 'Wipe the colours and start again')}">🧽 <b>${L('ล้างสี', 'Wipe')}</b></button></div>
 <button class="kidbig" data-a="kidcolourdone" data-v="#/kid/${esc(kid)}">${L('เสร็จแล้ว! ✨', 'All done! ✨')}</button>`;
   } else if (view === 'draw') {
     const day = pre ? null : i, mine = drawingsOf(t, kid, day === null ? undefined : day).filter((m) => m.day === day);
@@ -1039,6 +1041,8 @@ Object.assign(A, {
     if (n >= cnt.n) setTimeout(() => { beep('chime'); celebrate([cnt.e, '⭐', '✨']); star(kidNow(), 1); render(); sayUi(L(`ทั้งหมด ${n} ตัว!`, `${n} altogether!`)); }, 500); else render();
   },
   kidnewcount() { beep('pop'); const t = kidTrip(route().parts[1]); newCount(t); render(); },
+  kidcolundo() { const pad = $('.colourpad'); if (!pad || !colHist.length) return; beep('tap'); let f = {}; try { f = JSON.parse(colHist.pop()); } catch (_) {} colourSet(pad, f); },
+  kidcolwipe() { const pad = $('.colourpad'); if (!pad || pad.dataset.fill === '{}' || !pad.querySelector('[data-c]')) return; beep('whoosh'); colHist.push(pad.dataset.fill); colourSet(pad, {}); },
   kidcolor(b) { beep('tap'); kidColour = b.dataset.v; $$('.palette button').forEach((x) => x.setAttribute('aria-pressed', x.dataset.v === kidColour)); drawWrap(); },
   kidcolourdone(b) { beep('chime'); burst(b, ['🎨', '✨', '⭐']); celebrate(['🎨', '⭐', '✨']); star(kidNow(), 1); setTimeout(() => nav(b.dataset.v), 900); },
   kidspot(b) {
@@ -2100,15 +2104,25 @@ function playSong(n, kid) {
 document.addEventListener('click', (e) => {
   const el = e.target.closest && e.target.closest('.colourpad [data-c]'); if (!el || !isEditor()) return;
   const pad = el.closest('.colourpad');
-  el.setAttribute('fill', kidColour); beep('pop');
   let fills = {}; try { fills = JSON.parse(pad.dataset.fill || '{}'); } catch (_) {}
-  fills[el.dataset.c] = kidColour; pad.dataset.fill = JSON.stringify(fills);
+  if ((fills[el.dataset.c] || '#ffffff').toLowerCase() === kidColour.toLowerCase()) { beep('tap'); return; }   // the same colour again: nothing to take back
+  colHist.push(pad.dataset.fill || '{}'); if (colHist.length > 40) colHist.shift();
+  el.setAttribute('fill', kidColour); beep('pop');
+  fills[el.dataset.c] = kidColour; colourSet(pad, fills);
+});
+// the colouring page's undo and wipe (owner, Nov 2026: "ทำให้ล้างได้หน่อย"): every tap can be taken back one at a time (↶), and the sponge
+// washes the whole picture white in one tap — and ↶ brings it all back, so a wipe by mistake is never a loss. The history lives in memory only.
+let colHist = [], colKey = '';
+function colourSet(pad, fills) {
+  pad.dataset.fill = JSON.stringify(fills);
+  pad.querySelectorAll('[data-c]').forEach((x) => x.setAttribute('fill', fills[x.dataset.c] || '#ffffff'));
+  const u = $('[data-a="kidcolundo"]'); if (u) u.disabled = !colHist.length;
   clearTimeout(colourSaveT);
   colourSaveT = setTimeout(() => {
     const t = trip(pad.dataset.t), i = +pad.dataset.d, kid = pad.dataset.k;
     putEntry(t, { day: null, kind: 'field', child: kid, first_key: `colour.d${i}`, text: pad.dataset.fill }, `${t.id}.field.colour.d${i}.${kid}`);
   }, 500);
-});
+}
 // grown-ups empty the star jar (and its friends) by pressing and holding it 1.5 s — a test run's stars, a fresh start; nothing on the server
 let jarT = 0;
 document.addEventListener('pointerdown', (e) => {
