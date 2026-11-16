@@ -44,7 +44,7 @@ fs.rmSync(tmp, { recursive: true, force: true });
 
 // every button the pages draw has an action behind it (data-a="x" → A.x in sheets.js / kid.js)
 {
-  const src = ['core', 'views', 'sheets', 'kid'].map((f) => fs.readFileSync(path.resolve(`public/${f}.js`), 'utf8')).join('\n') + fs.readFileSync(path.resolve('public/index.html'), 'utf8');
+  const src = ['core', 'views', 'sheets', 'kid', 'snap'].map((f) => fs.readFileSync(path.resolve(`public/${f}.js`), 'utf8')).join('\n') + fs.readFileSync(path.resolve('public/index.html'), 'utf8');
   const acts = new Set([...src.matchAll(/data-a="([a-z-]+)"/g)].map((m) => m[1]));
   const defined = (a) => new RegExp(`^\\s+(?:async\\s+)?(?:'${a}'|${a.replace(/-/g, '_')})\\s*\\(`, 'm').test(src) || new RegExp(`['"]${a}['"]\\s*[:(]`).test(src);
   const missing = [...acts].filter((a) => !defined(a));
@@ -328,9 +328,41 @@ if (process.env.BASE) {
   ok(ix.status === 200 && /no-cache/.test(ix.headers.get('cache-control') || '') && Array.isArray((await ix.json()).items), '/stock/index.json is served, revalidated each time');
 }
 
+// a book from photos (docs/SNAP-BOOK.md P0): public/snap.js reads when and where a photo was taken from the original file, on the phone.
+// The fixtures are 64×48 synthetic pictures (never a real photo): Pillow wrote the little-endian JPEGs, sharp/libexif the big-endian
+// JPEG and the AVIF (the same ISO-BMFF 'meta'/'iinf'/'iloc' layout an iPhone's HEIC uses).
+{
+  const vm = await import('node:vm');
+  const ctx = { A: {}, Blob, File, DataView, Uint8Array, Promise, Math, String, Array, Object, Set, isFinite };
+  vm.createContext(ctx); vm.runInContext(fs.readFileSync(path.resolve('public/snap.js'), 'utf8') + '\n;this.snapMeta = snapMeta; this.snapRead = snapRead;', ctx);
+  const fx = (f, mod) => new File([fs.readFileSync(path.resolve('test/fixtures/snap', f))], f, { lastModified: mod || Date.UTC(2030, 0, 2, 3, 4, 5) });
+  const near = (ll, a, b) => !!ll && Math.abs(ll[0] - a) < 1e-4 && Math.abs(ll[1] - b) < 1e-4;
+  const m1 = await ctx.snapMeta(fx('gps-ii.jpg'));
+  ok(m1.src === 'exif' && m1.at === '2026-12-12T09:15:30' && m1.tz === '+07:00' && near(m1.ll, 14.44, 101.37), `snap: little-endian JPEG → time, zone and position (${JSON.stringify(m1)})`);
+  const m2 = await ctx.snapMeta(fx('gps-mm.jpg'));
+  ok(m2.src === 'exif' && m2.at === '2026-12-12T09:15:30' && m2.tz === '+07:00' && near(m2.ll, 14.44, 101.37), `snap: big-endian JPEG (what iPhones write) → the same (${JSON.stringify(m2)})`);
+  const m3 = await ctx.snapMeta(fx('gps.avif'));
+  ok(m3.kind === 'heif' && m3.src === 'exif' && m3.at === '2026-12-12T09:15:30' && near(m3.ll, 14.44, 101.37), `snap: HEIF container (AVIF here, HEIC on an iPhone) → the Exif item through iinf/iloc (${JSON.stringify(m3)})`);
+  const m4 = await ctx.snapMeta(fx('time-only.jpg'));
+  ok(m4.at === '2026-12-13T17:40:05' && m4.ll === null && m4.tz === null, 'snap: a photo whose position was taken out keeps its time and says no position');
+  const m5 = await ctx.snapMeta(fx('gps-zero.jpg'));
+  ok(m5.at === '2026-12-14T08:00:00' && m5.ll === null, 'snap: an empty 0,0 position counts as none');
+  const m6 = await ctx.snapMeta(fx('gps-south.jpg'));
+  ok(m6.tz === '+11:00' && near(m6.ll, -33.86, 151.21), `snap: south of the equator is negative (${JSON.stringify(m6.ll)})`);
+  const m7 = await ctx.snapMeta(fx('no-exif.jpg', new Date(2026, 11, 15, 20, 30, 0).getTime()));
+  ok(m7.src === 'file' && m7.at === '2026-12-15T20:30:00' && m7.ll === null, 'snap: no EXIF → the file\'s own time, marked as such');
+  const m8 = await ctx.snapMeta(new File([new Uint8Array([0xFF, 0xD8, 0xFF, 0xE1, 0xFF, 0xFF, 0x45, 0x78])], 'broken.jpg', { lastModified: Date.UTC(2026, 0, 1) }));
+  const m9 = await ctx.snapMeta(new File([new Uint8Array(40)], 'x.bin', { lastModified: Date.UTC(2026, 0, 1) }));
+  ok(m8.src === 'file' && m9.src === 'file' && m8.ll === null, 'snap: a cut or unknown file never throws');
+  const all = await ctx.snapRead(['gps-ii.jpg', 'time-only.jpg', 'no-exif.jpg', 'gps.avif'].map((f) => fx(f)), null, 2);
+  ok(all.length === 4 && all.every(Boolean) && all.filter((m) => m.ll).length === 2, 'snap: many files read a few at a time, in order');
+  const src = fs.readFileSync(path.resolve('public/snap.js'), 'utf8');
+  ok(!/m\.ll\[|\.ll\.join|ll\.toFixed|coords\.(latitude|longitude)/.test(src), 'snap: the check page never prints a position (only yes/no, and the live check only its accuracy)');
+}
+
 // older iPads (iPadOS 15 on an iPad mini 4 / Air 2, early iPadOS 16): Safari before 16.4 refuses a whole script over one regex lookbehind,
 // and before 16.2 drops every colour written with color-mix() — no lookbehind in the client, and a resolved stylesheet for those
-for (const f of ['core.js', 'views.js', 'sheets.js', 'kid.js', 'sw.js']) ok(!/\(\?<[=!]/.test(fs.readFileSync(path.join('public', f), 'utf8')), `old Safari: no regex lookbehind in public/${f} (it would stop the whole file on iPadOS 15)`);
+for (const f of ['core.js', 'views.js', 'sheets.js', 'kid.js', 'snap.js', 'sw.js']) ok(!/\(\?<[=!]/.test(fs.readFileSync(path.join('public', f), 'utf8')), `old Safari: no regex lookbehind in public/${f} (it would stop the whole file on iPadOS 15)`);
 { const { legacy, pick } = require('../server/legacycss.js');
   ok(pick('in srgb, var(--leaf) 55%, var(--rule)') === 'var(--leaf)' && pick('in srgb,var(--accent) 22%,var(--paper)') === 'var(--paper)' && pick('in srgb, 30% red, blue') === 'blue' && pick('in oklab, red, blue') === 'red', 'legacy css: each color-mix() becomes its stronger colour');
   const css = fs.readFileSync(path.join('public', 'app.css'), 'utf8'), old = legacy(css);
