@@ -2880,6 +2880,7 @@ section.pg .dstamps.pst.c3 b,section.pg .dstamps.pst.c4 b{font-size:16px}section
 /* the book menu's two rows that are not topics (owner, Nov 2026): keep the book on the phone · the bookshelf */
 .hubrows{display:grid;gap:10px;margin:22px 0 6px}
 .hubrow{display:flex;align-items:center;gap:12px;min-height:60px;padding:10px 14px;border:1px solid var(--line);border-radius:var(--r);background:var(--card);color:var(--ink);text-decoration:none}
+button.hubrow{width:100%;font:inherit;text-align:start;cursor:pointer}
 .hubgrid.lead+.hubrow{margin:12px 0 0}
 .hubrow .e{flex:none;width:40px;height:40px;display:grid;place-items:center}.hubrow .e img{width:40px;height:40px;object-fit:contain}
 .hubrow .ht{flex:1;min-width:0;display:flex;flex-direction:column;gap:1px}.hubrow b{font-size:16px;line-height:1.3}.hubrow small{font-size:13.5px;line-height:1.35;color:var(--muted)}

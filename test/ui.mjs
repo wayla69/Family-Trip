@@ -303,6 +303,22 @@ const T = 'hk-macau-2026';
     t = (await apiState(page)).trips.find((x) => x.id === id);
     await page.goto(`${BASE}/#/t/${id}`); await page.waitForSelector('.hubgrid');
     ok(t.open === false && await page.locator('.hubgrid a[href$="/today"]').count() === 0, 'on the trip: "we\'re home" (two taps) closes the book; a closed book from photos has no Today tile');
+    // photos found later (owner, Nov 2026: "เพิ่มรูปทีหลัง"): from the closed book's menu, each to the day its camera wrote — the next
+    // day adds that day after the last; a photo from long ago and one with no date are left out (never piled on day 1), and the page says so
+    const nextDay = new Date(Date.parse(t.days[0].date + 'T00:00:00Z') + 864e5).toISOString().slice(0, 10);
+    const exifJpg = (d) => sharp({ create: { width: 40, height: 30, channels: 3, background: '#3a7' } }).jpeg().withExif({ IFD0: { DateTime: d }, IFD2: { DateTimeOriginal: d } }).toBuffer();
+    const later = [{ name: 'later.jpg', mimeType: 'image/jpeg', buffer: await exifJpg(nextDay.replace(/-/g, ':') + ' 10:30:00') },
+      { name: 'old.jpg', mimeType: 'image/jpeg', buffer: await exifJpg('2019:03:02 09:00:00') },
+      { name: 'nodate.jpg', mimeType: 'image/jpeg', buffer: await sharp({ create: { width: 40, height: 30, channels: 3, background: '#a37' } }).jpeg().toBuffer() }];
+    ok(await page.locator('.snapmorego').count() === 1 && await page.evaluate(() => document.querySelector('.snapmorego').getBoundingClientRect().height >= 44), 'photos found later: the closed book\'s menu has its row');
+    const [fm] = await Promise.all([page.waitForEvent('filechooser'), page.click('.snapmorego')]);
+    await fm.setFiles(later);
+    await page.waitForFunction((tid) => S.media.filter((m) => m.trip === tid).length === 3, id, { timeout: 15000 }).catch(() => {});
+    await page.waitForFunction(() => queue.length === 0, null, { timeout: 30000 }).catch(() => {});
+    const tl = (await apiState(page)).trips.find((x) => x.id === id), ml = (await apiState(page)).media.filter((m) => m.trip === id);
+    const toastTx = await page.evaluate(() => document.getElementById('toast').textContent);
+    ok(tl.days.length === 2 && tl.days[1].date === nextDay && ml.length === 3 && ml.filter((m) => m.day === 1).length === 1 && /left out/.test(toastTx),
+      `photos found later: the next day was added and holds its photo; the old and the undated ones left out, and said (days ${tl.days.map((d) => d.date)}, media ${ml.map((m) => m.day)}, toast "${toastTx}")`);
     await page.evaluate((x) => fetch('/api/b/trips/' + x, { method: 'DELETE', headers: { 'x-mb': '1' } }), id);
     await s.ctx.close();
   }

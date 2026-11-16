@@ -617,7 +617,9 @@ function viewHub(t) {
   const offWarn = !(off.got && !off.stale) && !(t.kind === 'snap' && !t.open), row = (cls, href, k, b, sm) => `<a class="hubrow ${cls}" href="${href}">${hubE(k)}<span class="ht"><b>${b}</b><small>${sm}</small></span>${ic('chev')}</a>`;
   const offRow = ed ? row(`t-offline${offWarn ? ' warn' : ''}`, `#/t/${esc(t.id)}/offline`, 'offline', L('เก็บเล่มไว้ใช้ตอนไม่มีเน็ต', 'Keep this book for no signal'), esc(!off.got ? L('ยังไม่ได้เก็บ — กดก่อนขึ้นเครื่อง', 'Not stored yet — tap before the flight')
     : off.stale ? L(`เก็บเมื่อ ${off.when} · มีรูปใหม่ ${off.fresh} รูป กดเก็บเพิ่ม`, `Stored ${off.when} · ${off.fresh} new photo${off.fresh > 1 ? 's' : ''}, tap to top up`) : L(`เก็บไว้ในเครื่องแล้ว · ${off.when}`, `Stored on this phone · ${off.when}`))) : '';
-  const shelfRow = row('shelfgo', '#/', 'shelf', L('ชั้นหนังสือ', 'Bookshelf'), L('เปลี่ยนเล่ม', 'Other books'))
+  // a closed book from photos: the photos found later go in from here, each to the day it was taken (snap.js snapMoreAdd)
+  const moreRow = ed && t.kind === 'snap' && !t.open ? `<button type="button" class="hubrow snapmorego" data-a="snapmore" data-t="${esc(t.id)}">${hubE('camera')}<span class="ht"><b>${L('เติมรูปที่เจอทีหลัง', 'Add photos found later')}</b><small>${L('รูปลงวันที่ถ่ายเอง วันใหม่ต่อท้ายให้', 'Each goes to the day it was taken')}</small></span>${ic('chev')}</button>` : '';
+  const shelfRow = moreRow + row('shelfgo', '#/', 'shelf', L('ชั้นหนังสือ', 'Bookshelf'), L('เปลี่ยนเล่ม', 'Other books'))
     + (ed && t.kind === 'snap' && S.features.story ? row('snapdraftgo', `#/t/${esc(t.id)}/draft`, 'sparkle', L('ให้ผู้ช่วยร่างเล่ม', 'Let the helper draft the book'), L('ชื่อวัน สรุปวัน คำนำ นิทาน', 'Day names, summaries, foreword, stories')) : '');
   // the tiles in three named groups, the group the family needs now first: on the trip "during the trip", before it "get ready",
   // after it "memories" — so a parent reads one heading, not fifteen tiles (the Today tile stays on top by itself)
