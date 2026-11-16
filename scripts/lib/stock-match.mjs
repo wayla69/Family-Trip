@@ -175,6 +175,7 @@ export function stockMatch(days, placeText, index) {
     places: placesUsed,
     countries: [...new Set(placesUsed.map(countryOf).filter(Boolean))],
     filled: artDays.filter(Boolean).length,
+    cityOf,   // each day's place key (or null) — a book from photos lays its map and colours out by it
     mapArt,
   };
 }

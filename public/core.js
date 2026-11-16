@@ -473,7 +473,7 @@ let artDay = null;
 const wearAuto = (t, i) => {
   const d = t && t.days && i != null && i >= 0 ? t.days[i] : null;
   if (!d) return t && (t.theme || {}).outfit === 'adventure' ? 'hike' : 'city';
-  const txt = [(d.title || {}).en || ''].concat((((d.plan || {}).plan) || []).map((r) => ((r.h || {}).en) || '')).join(' · ').toLowerCase();
+  const txt = [(d.title || {}).en || '', (d.place || {}).en || ''].concat((((d.plan || {}).plan) || []).map((r) => ((r.h || {}).en) || '')).join(' · ').toLowerCase();
   if (txt.match(WEAR_RULES[0][1])) return 'plane';   // a flight is the day, whatever else it holds
   let best = '', n = 0;
   WEAR_RULES.forEach(([w, re]) => { const c = (txt.match(re) || []).length; if (c > n) { n = c; best = w; } });

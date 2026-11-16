@@ -1,9 +1,9 @@
 # Snap Book — a book from photos, no plan needed
 
-Status: **P0–P3 built** (16 Nov 2026): the reader and `#/snaptest`, the book from photos after the trip (`#/snap`), the share
+Status: **P0–P4 built** (16 Nov 2026): the reader and `#/snaptest`, the book from photos after the trip (`#/snap`), the share
 target into it, every upload taking the photo's own time, the open book's day page during the trip (`viewSnapLive`), and the
 helper's draft of the book (`#/t/<id>/draft`: names, summaries, foreword, stories). R3 confirmed by the owner (16 Nov 2026).
-P4 (pictures and the kids' side) is next. P3 left out photo help inside the job (D6.2; the record page's "look at today's
+P4 (pictures and the kids' side): `server/snapkids.js` `snapKids` (pure) rebuilds, after every change of where the book went (made, days added, a day's place, a `snap.*` check-in, renamed or closed, the helper's draft — bookshelf.js `snapRefresh`, one run per book at a time), the day pictures from the library (a repeated town scene gives way to another picture of the same town), the crest (a trip at home: the first town's own stamp; abroad: the country's), the country's two guides (else Kiki and Roo; a crest or guides the helper drew are kept), the stamps, a colour, a stamp word and a secret a day (what the day's picture shows; facts the helper wrote are kept), the day called by its place while it has no name, the living map (one stop per place, a zigzag) and the certificate, earned when the book is closed (views.js `certEarned`). The outfit reads the day's place too. P3 left out photo help inside the job (D6.2; the record page's "look at today's
 photos" still works per day), the `entries.src` "drafted by the helper" mark and the C3 review screen (the drafts are edited
 where they live: day names on the days, texts on the record page). P2 left out the 21:30 nudge for a day the app
 was never opened on (no day row exists for it) and the offline-day test in test/offline.mjs; P1 left out the B3 place sheet (a day's place is a text box with the library's names) and the "two trips" split. Written 16 Nov 2026 for handoff; the next session implements from this file.

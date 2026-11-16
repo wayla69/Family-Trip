@@ -283,11 +283,41 @@ const T = 'hk-macau-2026';
     await page.waitForFunction(() => queue.length === 0, null, { timeout: 30000 });
     const st = await apiState(page), ms = st.media.filter((m) => m.trip === id).map((m) => m.place).sort().join(',');
     ok(ms === 'Bang Saen,Khao Yai' && st.places.some((p) => p.trip === id && p.key === 'snap.th-khaoyai'), `on the trip: a photo with a position takes its town, one without takes "now around" (${ms})`);
+    { // P4 (docs/SNAP-BOOK.md): the kids' side of the open book — the town's crest, its picture, the adventure map, the kid home on one screen
+      await page.waitForFunction((tid) => { const t = trip(tid); return !!(t && t.passport && t.passport.style && /khaoyai/.test(t.passport.style.crest || '')); }, id, { timeout: 8000 }).catch(() => {});
+      await page.evaluate(() => load()); await page.waitForTimeout(300);
+      const kp = await page.evaluate((tid) => { const t = trip(tid); return { crest: t.passport.style.crest, art: dayArt(t, 0), map: !!mapModel(t), cert: certEarned(t, 'mimi') }; }, id);
+      await page.evaluate(() => { ls('kidmode', 'mimi'); location.hash = '#/kid/mimi'; }); await page.waitForSelector('.kidwrap.home');
+      const fit = [];
+      for (const [w, h] of [[412, 795], [390, 844], [375, 715], [360, 700]]) {
+        await page.setViewportSize({ width: w, height: h }); await page.waitForTimeout(120);
+        const m = await page.evaluate(() => { const bar = document.querySelector('.kidbar').getBoundingClientRect().top, d = document.querySelector('#kdots').getBoundingClientRect(), ts = [...document.querySelectorAll('.kpage')[0].querySelectorAll('button')].map((b) => b.getBoundingClientRect());
+          const slack = Math.max(0, document.documentElement.scrollHeight - innerHeight);
+          return { bar: Math.round(bar), dots: Math.round(d.bottom - slack), th: Math.round(Math.min(...ts.map((r) => r.height))), quest: !!document.querySelector('.kidquest'), broken: [...document.images].filter((i) => i.complete && !i.naturalWidth).map((i) => i.getAttribute('src')) }; });
+        if (!(m.dots <= m.bar && m.th >= 96 && m.quest && !m.broken.length)) fit.push(`${w}x${h}: ${JSON.stringify(m)}`);
+      }
+      await page.setViewportSize({ width: 390, height: 844 }); await s.shot('snap-kid-home');
+      await page.evaluate(() => { location.hash = '#/kid/mimi/quest'; }); await page.waitForSelector('.qtown');
+      const town = await page.textContent('.qtown.here .qname b');
+      await page.evaluate((tid) => { ls('kidmode', null); location.hash = `#/t/${tid}/today`; }, id); await page.waitForSelector('.snapacts');
+      ok(/\/stock\/th\/khaoyai\/stamp\./.test(kp.crest) && /\/stock\/th\/khaoyai\//.test(kp.art) && kp.map && !kp.cert && fit.length === 0 && /Khao Yai/.test(town),
+        `photo book, kids' side: Khao Yai's crest and picture from the library, the adventure map with the town by its name, no certificate while the book is open, the kid home on one screen with no broken picture (${JSON.stringify(kp)} · ${town} · ${fit.join(' | ')})`);
+    }
     await page.click('[data-a="snapclose"]'); await page.click('[data-a="snapclose"]');
     await page.waitForFunction(() => /\/book$/.test(location.hash), null, { timeout: 10000 });
     t = (await apiState(page)).trips.find((x) => x.id === id);
     await page.goto(`${BASE}/#/t/${id}`); await page.waitForSelector('.hubgrid');
     ok(t.open === false && await page.locator('.hubgrid a[href$="/today"]').count() === 0, 'on the trip: "we\'re home" (two taps) closes the book; a closed book from photos has no Today tile');
+    { // P4: closing the book brings the certificate; the printed book has its cover and the day, no "nothing recorded", no broken picture
+      await page.evaluate(() => load()); await page.waitForTimeout(200);
+      const cert = await page.evaluate((tid) => certEarned(trip(tid), 'mimi') && /Bang Saen|Khao Yai/.test(T(trip(tid).passport.certificate.text)), id);
+      await page.setViewportSize({ width: 1000, height: 1400 }); await page.goto(`${BASE}/#/print/${id}`); await page.waitForSelector('.pg.cover');
+      await page.waitForFunction(() => [...document.images].every((i) => i.complete), null, { timeout: 8000 }).catch(() => {});
+      const pr = await page.evaluate(() => ({ cover: document.querySelectorAll('.pg.cover').length, days: document.querySelectorAll('.pg.dayp').length, nothing: /nothing recorded|ไม่มีบันทึก/.test(document.body.innerText),
+        broken: [...document.images].filter((i) => i.complete && !i.naturalWidth).map((i) => i.getAttribute('src')), wide: Math.max(...[...document.querySelectorAll('section.pg')].map((e) => e.scrollWidth - e.clientWidth)) }));
+      await page.setViewportSize({ width: 390, height: 844 });
+      ok(cert && pr.cover === 1 && pr.days === 1 && !pr.nothing && !pr.broken.length && pr.wide <= 1, `photo book, closed: the certificate is earned; the printed book has its cover and its one day, nothing wider than the sheet, no broken picture (${JSON.stringify(pr)})`);
+    }
     await page.evaluate((x) => fetch('/api/b/trips/' + x, { method: 'DELETE', headers: { 'x-mb': '1' } }), id);
     await s.ctx.close();
   }
@@ -297,14 +327,15 @@ const T = 'hk-macau-2026';
   ok(await page.locator('.famai').count() === 0 && !/OPENAI|API_KEY|OpenAI/.test(famTx) && await page.locator('.famrow2 .famagenow').count() === await page.locator('.famkid').count()
     && await page.evaluate(() => getComputedStyle(document.querySelector('.famsave')).backgroundColor !== 'rgba(0, 0, 0, 0)'), 'family page: no character box or server words without the drawing helper; a hint under each birth month; a solid save bar');
   // #/emoji: the library from the database — add one with a picture from the phone, it shows in the grid beside a text box, delete it (two taps)
+  // (the photo book above uses Thailand's library pictures, so Thailand's own emoji pictures joined the library: the bundled 71 are counted apart)
   await page.goto(`${BASE}/#/emoji`); await page.waitForSelector('.emolist');
-  ok(await page.locator('.emocard').count() === 71 && await page.locator('.setlist').count() === 0, 'emoji page: the 71 of the library');
+  ok(await page.locator('.emocard:not(:has(img[src^="/stock/"]))').count() === 71 && await page.locator('.setlist').count() === 0, 'emoji page: the 71 of the library');
   const pic = await sharp({ create: { width: 300, height: 300, channels: 4, background: { r: 30, g: 160, b: 90, alpha: 1 } } }).png().toBuffer();
   await page.setInputFiles('#emfile', { name: 'kanga.png', mimeType: 'image/png', buffer: pic }); await page.waitForSelector('#emprev');
   await page.fill('[data-emf="ch"]', '🦘'); await page.fill('[data-emf="th"]', 'จิงโจ้'); await page.fill('[data-emf="en"]', 'Kangaroo');
   await page.click('[data-a="emoadd"]');
   await page.waitForFunction(() => S.emoji.some((e) => e.ch === '🦘'), null, { timeout: 8000 }).catch(() => {});
-  ok(await page.locator('.emocard').count() === 72 && (await page.textContent('.emolist')).includes('Kangaroo') && await page.inputValue('[data-emf="ch"]') === '', 'emoji page: a new one with its picture, the form cleared');
+  ok(await page.locator('.emocard:not(:has(img[src^="/stock/"]))').count() === 72 && (await page.textContent('.emolist')).includes('Kangaroo') && await page.inputValue('[data-emf="ch"]') === '', 'emoji page: a new one with its picture, the form cleared');
   await page.goto(`${BASE}/#/t/${T}/log/1`); await page.waitForSelector('#qtext');
   await page.click('[data-a="emopick"][data-for="qtext"]'); await page.waitForSelector('#emopop');
   ok(await page.locator('#emopop [data-a="emoput"][data-v="🦘"] img.emi[src^="/media/emoji/"]').count() === 1, 'emoji page: the new one is in the grid beside a text box');
@@ -312,7 +343,7 @@ const T = 'hk-macau-2026';
   const kanga = page.locator('.emocard', { hasText: 'Kangaroo' }).locator('[data-a="emodel"]');
   await kanga.click(); await kanga.click();
   await page.waitForFunction(() => !S.emoji.some((e) => e.ch === '🦘'), null, { timeout: 8000 }).catch(() => {});
-  ok(await page.locator('.emocard').count() === 71, 'emoji page: deleted with two taps');
+  ok(await page.locator('.emocard:not(:has(img[src^="/stock/"]))').count() === 71, 'emoji page: deleted with two taps');
   // the book's menu: every card shows the owner's glossy picture, and each picture is there
   await page.goto(`${BASE}/#/t/${T}`); await page.waitForSelector('.tile');
   const hubPics = await page.evaluate(async () => { const t = [...document.querySelectorAll('main .tile')]; const imgs = t.map((x) => x.querySelector('.e.pic img')).filter(Boolean);
