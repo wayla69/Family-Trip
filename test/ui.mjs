@@ -372,6 +372,9 @@ const T = 'hk-macau-2026';
       const burst = await shot(50, '2025:03:01 15:00:00');
       files.push(burst, { ...burst, name: 'IMG_51.jpg', buffer: await sharp(burst.buffer).withExif({ IFD0: { DateTime: '2025:03:01 15:00:01' }, IFD2: { DateTimeOriginal: '2025:03:01 15:00:01' } }).toBuffer() });
       for (let k = 0; k < 5; k++) files.push(await shot(20 + k, `2025:05:1${k % 2} 0${k + 1}:30:00`));
+      { const { execFile } = await import('node:child_process'), vf = path.join(OUT, 'snap-clip.mp4');   // a clip filmed on the first trip's first day (its own time)
+        await new Promise((res, rej) => execFile('ffmpeg', ['-hide_banner', '-loglevel', 'error', '-y', '-f', 'lavfi', '-i', 'testsrc=size=320x240:rate=12', '-t', '2', '-metadata', 'creation_time=2025-03-01T12:00:00Z', '-c:v', 'libx264', '-preset', 'ultrafast', vf], (e) => (e ? rej(e) : res())));
+        files.push({ name: 'VID_20250301.mp4', mimeType: 'video/mp4', buffer: fs.readFileSync(vf) }); }
       files.push({ name: 'Screenshot_20250301.png', mimeType: 'image/png', buffer: await sharp({ create: { width: 200, height: 400, channels: 3, background: '#eee' } }).png().toBuffer() });
       await page.goto(`${BASE}/#/snap`); await page.waitForSelector('.snapmode');
       await page.click('.snapmode .tpo[data-v="after"]');
@@ -389,9 +392,9 @@ const T = 'hk-macau-2026';
       await page.waitForFunction(() => location.hash === '#/', null, { timeout: 30000 }).catch(() => {});
       await page.waitForFunction(() => queue.length === 0, null, { timeout: 60000 }).catch(() => {});
       const st2 = await apiState(page), made = st2.trips.filter((x) => x.kind === 'snap' && !before.includes(x.id)).sort((a, b) => (a.date_from < b.date_from ? -1 : 1));
-      const per = made.map((x) => { const ms = st2.media.filter((m) => m.trip === x.id); return { from: x.date_from, n: ms.length, stars: ms.filter((m) => m.highlight).length }; });
-      ok(daysOk && made.length === 2 && per[0].from === '2025-03-01' && per[0].n === 7 && per[1].from === '2025-05-10' && per[1].n === 5 && per.every((x) => x.stars >= 1),
-        `two trips: "a book each" makes two books; the burst sends one photo, the screenshot none; each book has its best photo starred (${JSON.stringify({ daysOk, per })})`);
+      const per = made.map((x) => { const ms = st2.media.filter((m) => m.trip === x.id); return { from: x.date_from, n: ms.filter((m) => !(m.mime || '').startsWith('video/')).length, clips: ms.filter((m) => (m.mime || '').startsWith('video/')).map((m) => m.day), stars: ms.filter((m) => m.highlight).length }; });
+      ok(daysOk && made.length === 2 && per[0].from === '2025-03-01' && per[0].n === 7 && per[1].from === '2025-05-10' && per[1].n === 5 && per.every((x) => x.stars >= 1) && JSON.stringify(per[0].clips) === '[0]' && !per[1].clips.length,
+        `two trips: "a book each" makes two books; the burst sends one photo, the screenshot none; each book has its best photo starred; the clip goes to the first trip's first day (${JSON.stringify({ daysOk, per })})`);
       await page.evaluate((xs) => Promise.all(xs.map((x) => fetch('/api/b/trips/' + x, { method: 'DELETE', headers: { 'x-mb': '1' } }))), made.map((x) => x.id));
     }
     await s.ctx.close();

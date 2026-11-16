@@ -82,16 +82,16 @@ function stopRec() { if (recState && recState.rec.state !== 'inactive') recState
 // a video clip from the phone's gallery: sent as it is (the server cuts it to its first 30 s, makes it small and drops where it was
 // filmed — server/video.js), queued like a photo so no signal only means later. The phone reads how long it is first, to say so.
 const VID_MAX = 400e6;
-async function addVideo(t, day, file) {
+async function addVideo(t, day, file, shotAt, quiet) {   // shotAt: when it was filmed (a book from photos reads it from the clip); quiet: the caller says one line for many
   if (!file || !t) return;
   if (file.size > VID_MAX) { toast(L('คลิปใหญ่เกินไป (เกิน 400 MB) เลือกคลิปที่สั้นกว่านี้', 'This clip is over 400 MB — pick a shorter one')); return; }
-  const secs = await new Promise((res) => { const v = document.createElement('video'), u = URL.createObjectURL(file); v.preload = 'metadata'; v.muted = true;
+  const secs = quiet ? NaN : await new Promise((res) => { const v = document.createElement('video'), u = URL.createObjectURL(file); v.preload = 'metadata'; v.muted = true;
     const done = (x) => { URL.revokeObjectURL(u); res(x); }; v.onloadedmetadata = () => done(v.duration); v.onerror = () => done(NaN); setTimeout(() => done(NaN), 8000); v.src = u; });
-  const id = uid('vd'), at = file.lastModified && Math.abs(file.lastModified - Date.now()) < 400 * 864e5 ? Math.min(file.lastModified, Date.now()) : Date.now();
+  const id = uid('vd'), at = shotAt && shotAt <= Date.now() + 864e5 ? shotAt : file.lastModified && Math.abs(file.lastModified - Date.now()) < 400 * 864e5 ? Math.min(file.lastModified, Date.now()) : Date.now();
   const type = ['video/mp4', 'video/quicktime', 'video/webm', 'video/3gpp', 'video/x-m4v'].includes(file.type) ? file.type : 'video/mp4';   // the server reads what it really is
   await enqueue({ method: 'PUT', url: `/api/b/media/${id}?trip=${encodeURIComponent(t.id)}&day=${day}&at=${at}&kind=video`, blob: file.type === type ? file : new Blob([file], { type }),
     local: { coll: 'media', id, row: { trip: t.id, day, caption: '', highlight: false, at, w: 0, h: 0, mime: type } } });
-  toast(secs > 31 ? L('เก็บ 30 วินาทีแรกของคลิปนี้', 'The first 30 s of this clip will be kept') : L('เพิ่มคลิปแล้ว', 'Clip added'));
+  if (!quiet) toast(secs > 31 ? L('เก็บ 30 วินาทีแรกของคลิปนี้', 'The first 30 s of this clip will be kept') : L('เพิ่มคลิปแล้ว', 'Clip added'));
 }
 async function addClip(t, day, blob, secs) {
   const id = uid('vc'), at = Date.now(), type = blob.type || 'audio/webm';

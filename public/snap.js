@@ -346,11 +346,43 @@ async function snapWhere(ll, geo) {
 const snapGeoSwitch = () => `<div class="snapgeosw"><button type="button" class="chip" data-a="snapgeoon" aria-pressed="${!!ls('geoOnline')}">${ls('geoOnline') ? '✓ ' : ''}${L('ชื่อสถานที่ละเอียดจากแผนที่ออนไลน์', 'Finer place names from an online map')}</button>
 <small>${L('เปิดแล้ว: ส่งตำแหน่งแบบคร่าวๆ (ราวหนึ่งกิโลเมตร) ไปถาม OpenStreetMap ผ่านเซิร์ฟเวอร์ของเรา ไม่ส่งรูป ไม่เก็บไว้ ปิดอยู่: ใช้รายชื่อสถานที่ในเครื่อง', 'On: a rough position (about a kilometre) goes to OpenStreetMap through our server — no photo, nothing kept. Off: the list on this phone names it.')}</small></div>`;
 const snapNameOf = (pl) => (pl ? pl.spot || pl : null);   // what a photo is labelled with: the spot, else the town
+/* Clips in a book from photos (owner, Nov 2026: "วิดีโอในเล่มจากรูป"): a video picked with the photos goes to the day it was
+   filmed. Its time is the movie header's creation time ('moov' → 'mvhd', seconds since 1904 in UTC), found by walking the file's
+   top-level boxes with small slices (the picture data is never read); the place a phone writes into a clip is not read at all. */
+const SNAP_VID_RE = /\.(mp4|mov|m4v|3gp|webm)$/i;
+const snapIsVid = (f) => /^video\//.test(f.type || '') || SNAP_VID_RE.test(f.name || '');
+async function snapVidAt(file) {
+  try {
+    const rd = async (a, n) => new DataView(await file.slice(a, a + n).arrayBuffer());
+    const box = async (from, to, want) => {   // the first box of the wanted type between from and to: {at, size, head}
+      let p = from;
+      while (p + 8 <= to) {
+        const h = await rd(p, 16); let size = h.getUint32(0); const type = String.fromCharCode(h.getUint8(4), h.getUint8(5), h.getUint8(6), h.getUint8(7)); let head = 8;
+        if (size === 1) { size = Number(h.getBigUint64(8)); head = 16; } else if (size === 0) size = to - p;
+        if (size < head) return null;
+        if (type === want) return { at: p, size, head };
+        p += size;
+      }
+      return null;
+    };
+    const moov = await box(0, file.size, 'moov'); if (!moov || moov.size > 64e6) return null;
+    const mvhd = await box(moov.at + moov.head, moov.at + moov.size, 'mvhd'); if (!mvhd) return null;
+    const v = await rd(mvhd.at + mvhd.head, 20), ver = v.getUint8(0);
+    const secs = ver === 1 ? Number(v.getBigUint64(4)) : v.getUint32(4);
+    if (!secs) return null;
+    const ms = (secs - 2082844800) * 1000;   // 1904-01-01 → 1970-01-01
+    if (ms < Date.UTC(2000, 0, 1) || ms > Date.now() + 864e5) return null;
+    const p = new Intl.DateTimeFormat('en-CA', { hourCycle: 'h23', year: 'numeric', month: '2-digit', day: '2-digit', hour: '2-digit', minute: '2-digit', second: '2-digit' }).formatToParts(new Date(ms)).reduce((o, x) => ((o[x.type] = x.value), o), {});
+    return { ms, at: `${p.year}-${p.month}-${p.day}T${p.hour}:${p.minute}:${p.second}` };   // the wall clock of this phone's zone
+  } catch (_) { return null; }
+}
 let snapS = null;   // the book being made from photos: {mode, name, files, metas, pl, typed, read, done, geo, urls}
 const snapPart = (at) => { const h = +String(at || '').slice(11, 13); return h < 11 ? L('ช่วงเช้า', 'Morning') : h < 14 ? L('ตอนกลางวัน', 'Midday') : h < 17 ? L('ช่วงบ่าย', 'Afternoon') : h < 19 ? L('ตอนเย็น', 'Evening') : L('ตอนค่ำ', 'Night'); };
 function snapStartRead(files) {
-  const list = files.filter((f) => /^image\//.test(f.type) || /\.(heic|heif|jpe?g|png|webp|avif)$/i.test(f.name)).slice(0, 600);
-  snapS = { mode: 'after', name: snapS ? snapS.name : '', files: list, metas: new Array(list.length).fill(null), pl: new Array(list.length).fill(null), typed: {}, read: 0, done: false, urls: {}, more: files.length > 600, aside: {}, keep: new Set(), star: new Set(), runPick: null };
+  const list = files.filter((f) => !snapIsVid(f) && (/^image\//.test(f.type) || /\.(heic|heif|jpe?g|png|webp|avif)$/i.test(f.name))).slice(0, 600);
+  const vfiles = files.filter(snapIsVid).slice(0, 40);
+  snapS = { mode: 'after', name: snapS ? snapS.name : '', files: list, metas: new Array(list.length).fill(null), pl: new Array(list.length).fill(null), typed: {}, read: 0, done: false, urls: {}, more: files.length > 600, aside: {}, keep: new Set(), star: new Set(), runPick: null, vids: [] };
+  Promise.all(vfiles.map(async (f) => { const v = await snapVidAt(f); return { file: f, at: v ? v.at : '', ms: v ? v.ms : null }; })).then((vs) => { if (snapS && snapS.files === list) snapS.vids = vs; });
   nav('#/snap/read');
   const naming = [];
   snapGeo().then((geo) => {
@@ -445,7 +477,7 @@ function snapPlan(only) {
       if (m && keyOf(p) === keyOf(m.place) && t(x) - m.last <= 90 * 6e4) { m.items.push(x); m.last = t(x); } else moments.push({ place: p, items: [x], first: x.m.at, last: t(x) }); }
     const tally = {}; for (const x of ps) { const p = placeOf(x); if (p) (tally[p.id] = tally[p.id] || { p, n: 0 }).n++; }
     const top = Object.values(tally).sort((a, b) => b.n - a.n).map((v) => v.p);
-    return { date, items: ps, moments, top };
+    return { date, items: ps, moments, top, vids: (s.vids || []).filter((v) => v.at.slice(0, 10) === date) };
   });
   const out = items.filter((x) => !inRun.has(x.m.at.slice(0, 10))).length, none = s.files.filter((f, i) => !(s.metas[i] && s.metas[i].at)).length;
   return { days, out, none, span: run.length ? (Date.parse(run[run.length - 1]) - Date.parse(run[0])) / 864e5 : 0, pos: s.metas.filter((m) => m && m.pos).length,
@@ -503,6 +535,7 @@ ${allSpan <= 60 ? `<button type="button" class="tpo" data-a="snaprun" data-v="al
 <li><span>${L('รู้ว่าถ่ายที่ไหน', 'Know where')}</span><b>${plan.pos ? L(`${plan.pos} รูป`, `${plan.pos}`) : L('ยังไม่รู้', 'not yet')}</b></li>
 ${plan.out ? `<li><span>${L('รูปนอกช่วงทริป', 'Outside the trip')}</span><b>${L(`${plan.out} รูป ไม่ใส่ในเล่ม`, `${plan.out}, left out`)}</b></li>` : ''}
 ${plan.none ? `<li><span>${L('ไม่รู้วันที่ถ่าย', 'No date')}</span><b>${L(`${plan.none} รูป ไม่ใส่ในเล่ม`, `${plan.none}, left out`)}</b></li>` : ''}
+${(s.vids || []).length ? `<li><span>${L('คลิปวิดีโอ', 'Video clips')}</span><b>${((n2) => L(`${n2} คลิปลงวันที่ถ่าย`, `${n2} go on the day they were filmed`))(plan.days.reduce((a, d) => a + d.vids.length, 0))}${s.vids.length - plan.days.reduce((a, d) => a + d.vids.length, 0) ? L(` · ${s.vids.length - plan.days.reduce((a, d) => a + d.vids.length, 0)} คลิปไม่รู้วันหรืออยู่นอกทริป`, ` · ${s.vids.length - plan.days.reduce((a, d) => a + d.vids.length, 0)} with no date or outside the trip`) : ''}</b></li>` : ''}
 ${plan.aside ? `<li><span>${L('พักไว้ก่อน', 'Set aside')}</span><b>${L(`${plan.aside} รูป (ภาพซ้ำ ภาพหน้าจอ) เอากลับได้`, `${plan.aside} (repeats, screenshots) — bring back any`)}</b></li>` : ''}
 ${plan.stars ? `<li><span>${L('รูปเด่น ⭐', 'Best photos ⭐')}</span><b>${L(`เลือกให้ ${plan.stars} รูป เปลี่ยนได้`, `${plan.stars} picked — change any`)}</b></li>` : ''}
 </ul>
@@ -529,7 +562,7 @@ ${plan.days.length > 1 ? `<button type="button" class="linkbtn" data-a="snapsame
 <label class="flabel" for="snaptitle">${L('ชื่อเล่ม', 'Book name')}</label>
 <input id="snaptitle" class="field" type="text" maxlength="120" value="${esc(s.name || T(title))}">
 <div class="snapdays">${plan.days.map((d, i) => `<details class="snapday" data-fold="d${d.date}"${(s.folds ? s.folds.has('d' + d.date) : i === 0) ? ' open' : ''}><summary>
-<span class="sdt"><b>${dayLine(d, i)}</b><small>${esc(placeVal(d) || L('ยังไม่ได้ใส่สถานที่', 'No place yet'))} · ${L(`${d.items.length} รูป`, `${d.items.length} photo${d.items.length === 1 ? '' : 's'}`)}</small></span>
+<span class="sdt"><b>${dayLine(d, i)}</b><small>${esc(placeVal(d) || L('ยังไม่ได้ใส่สถานที่', 'No place yet'))} · ${L(`${d.items.length} รูป`, `${d.items.length} photo${d.items.length === 1 ? '' : 's'}`)}${d.vids.length ? ' · ' + L(`🎬 ${d.vids.length} คลิป`, `🎬 ${d.vids.length} clip${d.vids.length === 1 ? '' : 's'}`) : ''}</small></span>
 <span class="sdph">${d.items.slice(0, 3).map((x) => `<img src="${snapThumb(x.i)}" alt="" loading="lazy">`).join('')}</span>${ic('chev', 'chv')}</summary>
 <label class="snapplace"><span>${L('สถานที่ของวัน', 'The day’s place')}</span><input class="field" type="text" maxlength="120" list="snapgeo" data-snapday="${d.date}" value="${esc(placeVal(d))}"></label>
 <ol class="snapmoms">${d.moments.map((m) => `<li><b>${snapPart(m.first)}${m.place ? ' · ' + esc(T(snapNameOf(m.place))) : ''}</b><small>${L(`${m.items.length} รูป`, `${m.items.length} photo${m.items.length === 1 ? '' : 's'}`)}</small>
@@ -557,7 +590,7 @@ Object.assign(A, {
   snapmode(b) { snapMode = b.dataset.v; if (snapS) snapS.mode = snapMode; render(); },
   snappickbook() {   // outside #app, like #fpick: a background redraw while the gallery is open must not drop the pick
     let inp = document.getElementById('snapin-book');
-    if (!inp) { inp = document.createElement('input'); inp.type = 'file'; inp.id = 'snapin-book'; inp.multiple = true; inp.accept = 'image/*'; inp.hidden = true; document.body.append(inp); }
+    if (!inp) { inp = document.createElement('input'); inp.type = 'file'; inp.id = 'snapin-book'; inp.multiple = true; inp.accept = 'image/*,video/*'; inp.hidden = true; document.body.append(inp); }
     inp.value = ''; inp.click();
   },
   snaprun(b) { if (!snapS) return; const v = b.dataset.v; snapS.runPick = v === 'both' || v === 'all' ? v : Number(v); render(); },
@@ -619,6 +652,7 @@ async function snapMakeOne(s, plan, several) {
         }
         await addPhotos(t, i, m.items.map((x) => s.files[x.i]), name ? { place: name } : null, m.items.map((x) => (s.metas[x.i] ? { ...s.metas[x.i], star: s.star.has(x.i) } : null)));
       }
+      for (const v of d.vids) await addVideo(t, i, v.file, v.ms, true);   // the day's clips, each with the time it was filmed
     }
     return t.id;
   }
@@ -718,12 +752,14 @@ function snapMoreDates(have, cand) {
 // ทีหลัง"): only photos whose date the camera wrote; a new date at either end or in a gap adds its day (once the book holds memories
 // the server adds days after the last one only — day numbers live in the ids — so an earlier date is left out and said so);
 // what has no day is left out, never piled on day 1
-async function snapLiveAdd(t, files, live = true) {
+async function snapLiveAdd(t, files0, live = true) {
   const geo = await snapGeo(), today = todayIn(t.timezone), here = live ? snapHere(t) : null;
+  const clips = []; for (const f of files0.filter(snapIsVid)) { const v = await snapVidAt(f); clips.push({ file: f, at: v ? v.at : '', ms: v ? v.ms : null }); }
+  const files = files0.filter((f) => !snapIsVid(f));
   const metas = []; for (const f of files) { const m = await snapMeta(f).catch(() => null); const pl = m && m.ll ? await snapWhere(m.ll, geo).catch(() => null) : null; if (m) m.ll = null; metas.push({ m, pl }); }
   const dateOf = (x) => (x.m && x.m.src === 'exif' && x.m.at ? x.m.at.slice(0, 10) : live ? today : '');
   const last = t.days.length ? t.days[t.days.length - 1].date : '', tid = encodeURIComponent(t.id);
-  const dates = metas.map(dateOf).filter(Boolean);
+  const dates = metas.map(dateOf).concat(clips.map((c) => c.at.slice(0, 10) || (live ? today : ''))).filter(Boolean);
   const newer = snapMoreDates(t.days.map((d) => d.date), dates);   // the book's gaps and dates close to either end (the server lays the days out again, renumbering what they hold)
   if (newer.length) {
     try { await api('POST', `/api/b/snap/${tid}/days`, { days: newer.map((date) => ({ date })) }); }
@@ -747,23 +783,32 @@ async function snapLiveAdd(t, files, live = true) {
         local: { coll: 'places', id: `${t.id}:${key}`, row: { trip: t.id, key, day: g.i, kind: 'place', name: { th: p.th, en: p.en }, at: Date.now() } } }); }
     await addPhotos(t, g.i, g.files, g.name ? { place: g.name } : null, g.metas);
   }
+  let vout = 0;   // the clips, each on the day it was filmed (during the trip one with no time goes on today)
+  for (const c of clips) {
+    const date = c.at.slice(0, 10) || (live ? today : ''); let i = t.days.findIndex((d) => d.date === date);
+    if (i < 0 && !live) { vout++; continue; }
+    if (i < 0) i = date && date < t.days[0].date ? 0 : t.days.length - 1;
+    await addVideo(t, i, c.file, c.ms, true);
+  }
   // a day with no place yet takes the first place its photos name: the server then finds its library picture, stamp and town
   const named = {}; for (const g of Object.values(groups)) if (g.pl && !named[g.i] && !(t.days[g.i] || {}).place) named[g.i] = g.pl;
   for (const [i, pl] of Object.entries(named)) await api('PATCH', `/api/b/days/${encodeURIComponent(t.id)}/${i}`, { place: { th: pl.th, en: pl.en } }).catch(() => {});
   if (Object.keys(named).length) await load().catch(() => {});
+  const vn = clips.length - vout;
   if (!live) { const n = files.length - out;
-    toast([n && L(`เติม ${n} รูปลงเล่มแล้ว`, `${n} photo${n > 1 ? 's' : ''} added`), out && L(`${out} รูปไม่รู้วันที่หรืออยู่นอกช่วงทริป ไม่ได้ใส่`, `${out} with no date or from outside the trip — left out`)].filter(Boolean).join(' · ')); }
+    toast([n && L(`เติม ${n} รูปลงเล่มแล้ว`, `${n} photo${n > 1 ? 's' : ''} added`), vn && L(`${vn} คลิป`, `${vn} clip${vn > 1 ? 's' : ''}`), out + vout && L(`${out + vout} รูปหรือคลิปไม่รู้วันที่หรืออยู่นอกช่วงทริป ไม่ได้ใส่`, `${out + vout} with no date or from outside the trip — left out`)].filter(Boolean).join(' · ')); }
+  else if (vn) toast(L(`เพิ่ม ${vn} คลิปแล้ว`, `${vn} clip${vn > 1 ? 's' : ''} added`));
   safeRender();
 }
 function snapLivePick(t, cam) {   // outside #app, like #fpick
   const id = cam ? 'snapin-cam' : 'snapin-live';
   let inp = document.getElementById(id);
-  if (!inp) { inp = document.createElement('input'); inp.type = 'file'; inp.id = id; inp.accept = 'image/*'; inp.hidden = true; if (cam) inp.setAttribute('capture', 'environment'); else inp.multiple = true; document.body.append(inp); }
+  if (!inp) { inp = document.createElement('input'); inp.type = 'file'; inp.id = id; inp.accept = cam ? 'image/*' : 'image/*,video/*'; inp.hidden = true; if (cam) inp.setAttribute('capture', 'environment'); else inp.multiple = true; document.body.append(inp); }
   inp.dataset.t = t.id; inp.value = ''; inp.click();
 }
 function snapMorePick(t) {   // a closed book from photos: more photos from the gallery, each to the day it was taken
   let inp = document.getElementById('snapin-more');
-  if (!inp) { inp = document.createElement('input'); inp.type = 'file'; inp.id = 'snapin-more'; inp.accept = 'image/*'; inp.multiple = true; inp.hidden = true; document.body.append(inp); }
+  if (!inp) { inp = document.createElement('input'); inp.type = 'file'; inp.id = 'snapin-more'; inp.accept = 'image/*,video/*'; inp.multiple = true; inp.hidden = true; document.body.append(inp); }
   inp.dataset.t = t.id; inp.value = ''; inp.click();
 }
 Object.assign(A, {
