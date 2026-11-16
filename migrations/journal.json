@@ -25,6 +25,7 @@
     { "id": "0022", "file": "0022_emoji.sql" },
     { "id": "0023", "file": "0023_cover.sql" },
     { "id": "0024", "file": "0024_book_age.sql" },
-    { "id": "0025", "file": "0025_snap.sql" }
+    { "id": "0025", "file": "0025_snap.sql" },
+    { "id": "0026", "file": "0026_entry_src.sql" }
   ]
 }

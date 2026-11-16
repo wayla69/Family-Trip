@@ -81,20 +81,30 @@ function extras(trips, now, kids = { th: 'เด็กๆ', en: 'the kids' }) {
   for (const x of trips) {
     const name = x.title || {}, nTh = name.th || name.en || '', nEn = name.en || name.th || '';
     // two evenings before the flight: store the book on the phone (the shelf can't see which phones already did)
-    const home = x.home || HOME_TZ;
+    const home = x.home || HOME_TZ, snap = x.kind === 'snap';   // a book from photos has no flight and no countdown doors: only the evenings
     const pack = zoned(addDays(x.from, -2), PACK_AT, home);
-    if (live(pack)) out.push({ key: `${x.trip}.x.pack`, at: pack, url: `/#/t/${x.trip}/offline`,
+    if (live(pack) && !snap) out.push({ key: `${x.trip}.x.pack`, at: pack, url: `/#/t/${x.trip}/offline`,
       th: { title: `อีก 2 วันออกเดินทาง · ${nTh}`, body: 'กด "เก็บเล่มนี้ไว้ในเครื่อง" ก่อนขึ้นเครื่อง ถ้ายังไม่ได้เก็บ — เปิดได้แม้ไม่มีสัญญาณ' },
       en: { title: `2 days to go · ${nEn}`, body: 'Tap "Keep this book on the phone" before the flight, if you haven’t yet — it opens without signal' } });
     // the countdown doors: door k opens when N-k+1 sleeps are left (kid.js doorOpen), one morning each
-    for (let left = x.doors || 0; left >= 1; left--) {
+    for (let left = snap ? 0 : x.doors || 0; left >= 1; left--) {
       const k = (x.doors || 0) - left + 1, at = zoned(addDays(x.from, -left), DOOR_AT, home);
       if (live(at)) out.push({ key: `${x.trip}.x.door${k}`, at, url: '/#/',
         th: { title: `🎁 ประตูที่ ${k} เปิดได้แล้ว`, body: `อีก ${left} วันไป${nTh} — ให้${kids.th}เปิดเซอร์ไพรส์ของวันนี้` },
         en: { title: `🎁 Door ${k} is ready`, body: `${left} ${left === 1 ? 'sleep' : 'sleeps'} to ${nEn} — today's surprise for ${kids.en}` } });
     }
-    // every evening of the trip: record the day (tick() skips a day that already has something in it)
-    for (let i = 0, d = x.from; d <= x.to; i++, d = addDays(d, 1)) {
+    // every evening of the trip: record the day (tick() skips a day that already has something in it). A book from photos lists its
+    // own days (they need not follow one another: 12 and 14 Dec are days 1 and 2), and an open one is nudged on an evening it has no
+    // day for yet — the app was never opened that day — on its own page, which adds today when it opens (snap.js snapEnsureToday)
+    const evenings = snap && Array.isArray(x.days) ? x.days.map((d) => [d.i, d.date]) : [];
+    if (!snap) for (let i = 0, d = x.from; d <= x.to; i++, d = addDays(d, 1)) evenings.push([i, d]);
+    if (snap && x.open) {
+      const today = new Date(now).toLocaleDateString('en-CA', { timeZone: x.tz }), at = zoned(today, LOG_AT, x.tz);
+      if (!evenings.some(([, d]) => d === today) && live(at)) out.push({ key: `${x.trip}.x.log.${today}`, at, trip: x.trip, url: `/#/t/${x.trip}/today`,
+        th: { title: `วันนี้เป็นยังไงบ้าง · ${nTh}`, body: 'ถ่ายรูปหรือเลือกรูปของวันนี้ใส่เล่ม แล้วจดคำพูดเด็กสักคำ' },
+        en: { title: `How was today? · ${nEn}`, body: 'Take or pick today’s photos for the book, and note one thing the kids said' } });
+    }
+    for (const [i, d] of evenings) {
       const at = zoned(d, LOG_AT, x.tz);
       // opens the record page at the evening buttons (/ai): today in brief, the bedtime story, the bedtime questions
       if (live(at)) out.push({ key: `${x.trip}.x.log.d${i}`, at, trip: x.trip, day: i, url: `/#/t/${x.trip}/log/${i}/ai`,
@@ -145,8 +155,9 @@ function create({ pool, family, A, sender = (sub, payload, opt) => webpush.sendN
     const days = (await pool.query(`SELECT t.id trip, t.timezone tz, d.day_index, to_char(d.date,'YYYY-MM-DD') date, d.plan->'plan' rows
       FROM trip_days d JOIN trips t ON t.id=d.trip_id WHERE t.family_id=$1 AND d.date BETWEEN $2::date - 1 AND $2::date + 1`, [family, new Date(now).toISOString().slice(0, 10)])).rows;
     const trips = (await pool.query(`SELECT id trip, title, timezone tz, to_char(date_from,'YYYY-MM-DD') "from", to_char(date_to,'YYYY-MM-DD') "to",
-        coalesce(jsonb_array_length(passport->'countdown'->'doors'), 0) doors
-      FROM trips WHERE family_id=$1 AND ($2::date BETWEEN date_from - 16 AND date_to + 1 OR date_to < $2::date)`, [family, new Date(now).toISOString().slice(0, 10)])).rows;   // past trips too: their days come back on the anniversary
+        coalesce(jsonb_array_length(passport->'countdown'->'doors'), 0) doors, kind, open,
+        CASE WHEN kind = 'snap' THEN (SELECT json_agg(json_build_object('i', day_index, 'date', to_char(date,'YYYY-MM-DD')) ORDER BY day_index) FROM trip_days WHERE trip_id=trips.id) END days
+      FROM trips WHERE family_id=$1 AND ($2::date BETWEEN date_from - 16 AND date_to + 1 OR date_to < $2::date OR (kind = 'snap' AND open))`, [family, new Date(now).toISOString().slice(0, 10)])).rows;   // past trips too: their days come back on the anniversary
     const list = due(days.filter((d) => tzOk(d.tz) && (d.rows || []).every((r) => !r || !r.tz || tzOk(r.tz))), now).map((r) => ({ ...r, msg: (lang) => message(r, lang, now) }));
     for (const x of extras(trips.filter((t) => tzOk(t.tz)), now, await kidNames())) {
       if (x.day !== undefined) {

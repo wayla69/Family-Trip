@@ -74,7 +74,7 @@ function render() {
     if (sec === 'log') html = isEditor() ? viewLog(t, Math.min(t.days.length - 1, Math.max(0, +p[3] || 0)), p[4] === 'ai') : viewBook(t);
     else if (sec === 'book') html = viewBook(t);
     else if (sec === 'today' && t.kind === 'snap') html = viewSnapLive(t);
-    else if (sec === 'draft' && t.kind === 'snap' && isEditor()) html = viewSnapDraft(t);   // the helper drafts it (P3)   // a book from photos: the day's page (docs/SNAP-BOOK.md P2)
+    else if (sec === 'draft' && t.kind === 'snap' && isEditor()) html = p[3] === 'review' ? viewSnapReview(t) : viewSnapDraft(t);   // the helper drafts it (P3)   // a book from photos: the day's page (docs/SNAP-BOOK.md P2)
     else if (sec === 'today') html = viewToday(t, p[3] === undefined || p[3] === 'full' ? undefined : +p[3], p.includes('full'));
     else if (sec === 'plan') html = viewPlan(t, p[3] === 'full');
     else if (sec === 'eat') html = p[3] === 'all' ? viewEat(t) : viewEatDay(t, p[3] === 'd' ? Math.min(t.days.length - 1, Math.max(0, +p[4] || 0)) : todayIdx(t));   // day by day; /all = every place

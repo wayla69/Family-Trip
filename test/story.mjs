@@ -629,6 +629,13 @@ try {
     ok(job && job.status === 'done' && job.steps.map((s) => s.k + ':' + s.st).join() === 'names:done,sum:done,sum:kept,fore:done', `snap draft: done step by step; the parents' summary kept, no call for it (${job && job.steps.map((s) => s.k + ':' + s.st).join()})`);
     ok(t1.title.th === 'เขาใหญ่ทุ่งดอกไม้' && t1.days[0].title.en === 'Sunflowers at breakfast' && t1.days[0].emoji === '🌻' && t1.days[1].title.en === 'The rainy day', `snap draft: the book and its untouched day named; a day the parents named keeps its name (${JSON.stringify([t1.title, ...t1.days.map((d) => d.title)])})`);
     ok(es.find((e) => e.id === `${sb.id}.sum.d0`).text.includes('ฝันดี') && es.find((e) => e.id === `${sb.id}.sum.d1`).text === 'พ่อแม่เขียนเอง' && es.find((e) => e.id === `${sb.id}.fore.all`), 'snap draft: a summary for the day without one, the foreword; the parents\' summary untouched');
+    ok(es.find((e) => e.id === `${sb.id}.sum.d0`).src === 'ai' && es.find((e) => e.id === `${sb.id}.fore.all`).src === 'ai' && !es.find((e) => e.id === `${sb.id}.sum.d1`).src,
+      'snap draft (C3): what the helper wrote is marked as its draft; the parents\' own summary is not');
+    { const e0 = es.find((e) => e.id === `${sb.id}.fore.all`), put = (body) => fetch(BASE + '/api/b/entries/' + encodeURIComponent(e0.id), { method: 'PUT', headers: H, body: JSON.stringify({ trip: sb.id, day: null, kind: 'fore', ...body }) });
+      await put({ text: e0.text }); const same = (await state()).entries.find((e) => e.id === e0.id).src;
+      await put({ text: e0.text, accept: true }); const kept = (await state()).entries.find((e) => e.id === e0.id).src;
+      ok(same === 'ai' && !kept, `snap draft (C3): saving the same words keeps the mark, "keep this draft" clears it (${same} → ${kept})`);
+      const db3 = new Client({ connectionString: u.toString() }); await db3.connect(); await db3.query("UPDATE entries SET src='ai' WHERE id=$1", [e0.id]); await db3.end(); }
     const sent = mine.map((c) => (typeof c.body.messages[0].content === 'string' ? c.body.messages[0].content : '')).join('\n');
     ok(mine.length === 3 && names && names.body.max_tokens === 2000 && !names.body.system.includes('ห้ามใช้สำนวนแบบ AI') && sent.includes('ที่ไหน: ปากช่อง') && sent.includes('ช่วงเช้า · ทุ่งทานตะวัน (2)') && sent.includes('ฝนตกเปาะแปะ')
       && !/"image"|base64|\d+\.\d{3,}/.test(JSON.stringify(mine.map((c) => c.body.messages))), `snap draft: 3 calls, text facts only — the day's place, the photo moments (part of day · place · how many), the kids' words; no photo, no position (${mine.length})`);
@@ -646,6 +653,15 @@ try {
     await pp.click('[data-a="snapdraft"]');
     await pp.waitForFunction(() => /The draft is ready/.test(document.querySelector('main h1').textContent), null, { timeout: 15000 });
     ok(await pp.locator('.snapsteps li').count() === 1 && await pp.locator('.snapsteps li.ok').count() === 1 && await pp.locator(`.snapfoot a[href="#/t/${sb.id}/book"]`).count() === 1, 'snap draft page: the steps as they go, then "read the book"');
+    // C3: one page to check the draft — the helper's texts carry their mark, "keep every draft" keeps them, a changed day name saves when left
+    await pp.click(`.snapfoot a[href="#/t/${sb.id}/draft/review"]`); await pp.waitForSelector('.rvday');
+    const tags0 = await pp.locator('.aitag').count(), boxes = await pp.locator('.rvday textarea, .rvbook textarea').count();
+    await pp.locator('.rvday').nth(1).locator('summary').click(); await pp.fill('#rvd1', 'Rain and puddles'); await pp.press('#rvd1', 'Tab');
+    await pp.click('[data-a="snapkeepall"]'); await pp.waitForFunction(() => !document.querySelector('.aitag'), null, { timeout: 8000 });
+    await pp.waitForFunction(() => queue.length === 0, null, { timeout: 8000 });
+    const s3 = await state(), left = s3.entries.filter((e) => e.trip === sb.id && e.src === 'ai').length, t3 = s3.trips.find((x) => x.id === sb.id);
+    ok(tags0 === 2 && boxes === 5 && left === 0 && t3.days[1].title.en === 'Rain and puddles' && await pp.evaluate(() => document.documentElement.scrollWidth <= innerWidth + 1),
+      `snap draft review (C3): the foreword and a summary marked as drafts, "keep every draft" keeps them, a day's name saves when left (${tags0} marked, ${boxes} boxes, ${left} left, ${t3.days[1].title.en})`);
     await pc.close();
     await fetch(BASE + `/api/b/trips/${sb.id}`, { method: 'DELETE', headers: H });
   }
