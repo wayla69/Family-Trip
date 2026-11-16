@@ -125,7 +125,7 @@ J2 that is closed the same evening, or J1 with one date. Title rule gives "<plac
 - Screenshots / chat-app saves (no EXIF time): use `lastModified` if it falls inside the trip span, else "รูปไม่รู้วัน".
 - The page reloads between A3 and "สร้างเล่ม": the picked files are gone (the web cannot keep file handles) → back to A2 with a
   line saying so. Do not try to persist blobs before the book exists.
-- Adding more photos later to a closed snap book: the same reader runs; new dates add days at either end (≤ 60 total).
+- Adding more photos later to a closed snap book (built, Nov 2026: the menu's "เติมรูปที่เจอทีหลัง"): the same reader runs; new dates in the book's gaps and within three days of either end add their days (≤ 60 total). Once the book holds memories only days after the last one can be added (day numbers live in ids), so an earlier photo is left out and the toast says so; undated photos are left out too.
 - No helper configured: C1–C3 never show; B1's only button is "สร้างเล่ม".
 
 ---

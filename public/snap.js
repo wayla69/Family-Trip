@@ -511,19 +511,42 @@ function snapGeoNames() {
   if (!snapGeoCache) snapGeo().then((g) => { snapGeoCache = [...new Set((g.places || []).map((p) => snapShort(p.name)[lang === 'en' ? 'en' : 'th']))].map((x) => `<option value="${esc(x)}">`).join('') || ' '; const dl = document.getElementById('snapgeo'); if (dl) dl.innerHTML = snapGeoCache; });
   return snapGeoCache;
 }
-// photos added during the trip: each to the day it was taken (a new date after the last day adds that day), placed by its own
-// position, else by "now around" when it was taken today
-async function snapLiveAdd(t, files) {
-  const geo = await snapGeo(), today = todayIn(t.timezone), here = snapHere(t);
+// the dates a closed book from photos may still take (snapMoreAdd): the book's own span, then outwards while each next date is
+// under three days from the trip (the same rule that cut the trip out of the gallery, snapPlan), never past 60 days in all
+function snapMoreDates(have, cand) {
+  const dms = (d) => Date.parse(d + 'T00:00:00Z') / 864e5, hv = have.slice().sort(), ok = new Set(hv);
+  let lo = dms(hv[0]), hi = dms(hv[hv.length - 1]);
+  const cs = [...new Set(cand)].filter((d) => !ok.has(d)).sort();
+  cs.forEach((d) => { const x = dms(d); if (x > lo && x < hi) ok.add(d); });
+  for (const d of cs) { const x = dms(d); if (x > hi && x - hi < 3 && x - lo <= 60) { ok.add(d); hi = x; } }
+  for (const d of cs.slice().reverse()) { const x = dms(d); if (x < lo && lo - x < 3 && hi - x <= 60) { ok.add(d); lo = x; } }
+  return cs.filter((d) => ok.has(d));
+}
+// photos added to a book from photos. During the trip (live): each to the day it was taken (a new date after the last day adds
+// that day), placed by its own position, else by "now around" when it was taken today. After the trip (owner, Nov 2026: "เพิ่มรูป
+// ทีหลัง"): only photos whose date the camera wrote; a new date at either end or in a gap adds its day (once the book holds memories
+// the server adds days after the last one only — day numbers live in the ids — so an earlier date is left out and said so);
+// what has no day is left out, never piled on day 1
+async function snapLiveAdd(t, files, live = true) {
+  const geo = await snapGeo(), today = todayIn(t.timezone), here = live ? snapHere(t) : null;
   const metas = []; for (const f of files) { const m = await snapMeta(f).catch(() => null); const pl = m && m.ll ? snapPlace(m.ll, geo) : null; if (m) m.ll = null; metas.push({ m, pl }); }
-  const dateOf = (x) => (x.m && x.m.src === 'exif' && x.m.at ? x.m.at.slice(0, 10) : today);
-  const last = t.days.length ? t.days[t.days.length - 1].date : '';
-  const newer = [...new Set(metas.map(dateOf))].filter((d) => d > last && !t.days.some((x) => x.date === d));
-  if (newer.length) { try { await api('POST', `/api/b/snap/${encodeURIComponent(t.id)}/days`, { days: newer.map((date) => ({ date })) }); await load(); t = trip(t.id); } catch (_) { /* offline: those photos go on the last day */ } }
-  const groups = {};
+  const dateOf = (x) => (x.m && x.m.src === 'exif' && x.m.at ? x.m.at.slice(0, 10) : live ? today : '');
+  const last = t.days.length ? t.days[t.days.length - 1].date : '', tid = encodeURIComponent(t.id);
+  const dates = metas.map(dateOf).filter(Boolean);
+  const newer = live ? [...new Set(dates)].filter((d) => d > last && !t.days.some((x) => x.date === d)) : snapMoreDates(t.days.map((d) => d.date), dates);
+  if (newer.length) {
+    try { await api('POST', `/api/b/snap/${tid}/days`, { days: newer.map((date) => ({ date })) }); }
+    catch (e) {   // a book with memories takes new days after its last one only
+      const after = newer.filter((d) => d > last);
+      if (e && e.error === 'order' && after.length) await api('POST', `/api/b/snap/${tid}/days`, { days: after.map((date) => ({ date })) }).catch(() => {});
+    }
+    await load().catch(() => {}); t = trip(t.id);
+  }
+  const groups = {}; let out = 0;
   metas.forEach((x, k) => {
     const date = dateOf(x); let i = t.days.findIndex((d) => d.date === date);
-    if (i < 0) i = date < t.days[0].date ? 0 : t.days.length - 1;   // a photo from before the book began goes on its first day
+    if (i < 0 && !live) { out++; return; }
+    if (i < 0) i = date < t.days[0].date ? 0 : t.days.length - 1;   // during the trip a photo from before the book began goes on its first day
     const pl = x.pl || (date === today && here ? here : null), name = pl ? T(pl) : '';
     const key = i + '|' + name; (groups[key] = groups[key] || { i, pl, name, files: [], metas: [] }); groups[key].files.push(files[k]); groups[key].metas.push(x.m);
   });
@@ -537,6 +560,8 @@ async function snapLiveAdd(t, files) {
   const named = {}; for (const g of Object.values(groups)) if (g.pl && !named[g.i] && !(t.days[g.i] || {}).place) named[g.i] = g.pl;
   for (const [i, pl] of Object.entries(named)) await api('PATCH', `/api/b/days/${encodeURIComponent(t.id)}/${i}`, { place: { th: pl.th, en: pl.en } }).catch(() => {});
   if (Object.keys(named).length) await load().catch(() => {});
+  if (!live) { const n = files.length - out;
+    toast([n && L(`เติม ${n} รูปลงเล่มแล้ว`, `${n} photo${n > 1 ? 's' : ''} added`), out && L(`${out} รูปไม่รู้วันที่หรืออยู่นอกช่วงทริป ไม่ได้ใส่`, `${out} with no date or from outside the trip — left out`)].filter(Boolean).join(' · ')); }
   safeRender();
 }
 function snapLivePick(t, cam) {   // outside #app, like #fpick
@@ -545,9 +570,15 @@ function snapLivePick(t, cam) {   // outside #app, like #fpick
   if (!inp) { inp = document.createElement('input'); inp.type = 'file'; inp.id = id; inp.accept = 'image/*'; inp.hidden = true; if (cam) inp.setAttribute('capture', 'environment'); else inp.multiple = true; document.body.append(inp); }
   inp.dataset.t = t.id; inp.value = ''; inp.click();
 }
+function snapMorePick(t) {   // a closed book from photos: more photos from the gallery, each to the day it was taken
+  let inp = document.getElementById('snapin-more');
+  if (!inp) { inp = document.createElement('input'); inp.type = 'file'; inp.id = 'snapin-more'; inp.accept = 'image/*'; inp.multiple = true; inp.hidden = true; document.body.append(inp); }
+  inp.dataset.t = t.id; inp.value = ''; inp.click();
+}
 Object.assign(A, {
   snapcam(b) { const t = trip(b.dataset.t); if (t) snapLivePick(t, true); },
   snapadd(b) { const t = trip(b.dataset.t); if (t) snapLivePick(t, false); },
+  snapmore(b) { const t = trip(b.dataset.t); if (t) snapMorePick(t); },
   snaphere(b) {   // the live position → the nearest library town's name, kept for today; the position itself is not kept
     const t = trip(b.dataset.t); if (!t) return;
     if (!navigator.geolocation) { toast(L('เครื่องนี้หาตำแหน่งไม่ได้ พิมพ์ชื่อแทนได้', 'This phone has no location — type the place instead')); return; }
@@ -567,6 +598,7 @@ Object.assign(A, {
 });
 if (typeof document !== 'undefined') document.addEventListener('change', (e) => {
   if (e.target.id === 'snapin-cam' || e.target.id === 'snapin-live') { const t = trip(e.target.dataset.t), fs = [...(e.target.files || [])]; if (t && fs.length) snapLiveAdd(t, fs); return; }
+  if (e.target.id === 'snapin-more') { const t = trip(e.target.dataset.t), fs = [...(e.target.files || [])]; if (t && fs.length) { toast(L(`กำลังอ่าน ${fs.length} รูป…`, `Reading ${fs.length} photos…`)); snapLiveAdd(t, fs, false); } return; }
   if (e.target.id === 'snaphere') { const t = trip(e.target.dataset.t), v = e.target.value.trim(); if (t) ls(snapHereKey(t), v ? { th: v, en: v, date: todayIn(t.timezone) } : null); }   // typed: a name, kept for today
 });
 /* ---------- P3: the helper drafts the book (docs/SNAP-BOOK.md D6; screens C1–C2) ----------
