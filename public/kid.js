@@ -169,6 +169,28 @@ async function hydrateColours(root) {
 const colourUrl = (t, i) => { const pat = (t.passport || {}).colour; return pat ? pat.replace('{n}', i + 1) : dayArt(t, i); };
 const canColour = (t, i) => /\.svg(\?|$)/.test(colourUrl(t, i));   // the colouring page is the day's SVG with its fills lifted; a PNG (drawn by the helper) has no regions to tap
 const colourFill = (t, i, kid) => fieldVal(t, `colour.d${i}`, kid) || '{}';
+// more pictures to colour (owner, Nov 2026: "ทำเกมระบายสีให้มีรูปเพิ่มอีก"): today's picture first, then the book's other days, then the stock
+// library's colouring pictures of the places the book names (GET /api/b/colour/:trip — an animal, a landmark, a food of the place). Each
+// picture keeps its own colours for each child: a day's under colour.d<i> as before (the passport shows it), a library one under colour.p.<hash>.
+const colChoice = {}, colLib = {};
+const colHash = (x) => { let h = 5381; for (let k = 0; k < x.length; k++) h = ((h << 5) + h + x.charCodeAt(k)) >>> 0; return h.toString(36); };
+function colourPics(t, i) {
+  const out = [], seen = new Set(), add = (p) => { if (p.url && !seen.has(p.url)) { seen.add(p.url); out.push(p); } };
+  const day = (j) => ({ key: `colour.d${j}`, url: colourUrl(t, j), name: T(t.days[j].title) });
+  if (canColour(t, i)) add(day(i));
+  t.days.forEach((_, j) => { if (j !== i && canColour(t, j)) add(day(j)); });
+  if (colLib[t.id] === undefined) { colLib[t.id] = ls('colpics_' + t.id) || null; if (navigator.onLine !== false) colFetch(t); }
+  (colLib[t.id] || []).forEach((p) => add({ key: `colour.p.${colHash(p.id)}`, url: p.url, name: T(p.name) }));
+  return out.length ? out : [day(i)];
+}
+async function colFetch(t) {
+  try {
+    const r = await fetch(`/api/b/colour/${encodeURIComponent(t.id)}`, { credentials: 'same-origin' }); if (!r.ok) return;
+    const pics = ((await r.json()).pics || []).filter((p) => p && /^\/stock\/[\w./-]+\.svg$/.test(p.url || ''));
+    const had = JSON.stringify(colLib[t.id] || []); colLib[t.id] = pics; ls('colpics_' + t.id, pics.length ? pics : null);
+    if (JSON.stringify(pics) !== had && /\/colour$/.test(location.hash)) safeRender();
+  } catch (_) { /* no signal: the book's own pictures still colour */ }
+}
 
 /* ---------- finger drawing ("Draw today's best moment") → a private picture, like a photo ---------- */
 const DRAW_W = 1200, DRAW_H = 900, PEN = [10, 24, 48];
@@ -770,9 +792,11 @@ ${pages.length > 1 ? `<div class="kdots" id="kdots">${pages.map((_, n) => `<i${n
   } else if (view === 'quest') {
     body = questHtml(t, kid, guideImg);
   } else if (view === 'colour') {
-    const ck = `${t.id}.${i}.${kid}`; if (colKey !== ck) { colKey = ck; colHist = []; }   // the undo history belongs to one picture of one child
-    body = `<div class="colourpad colsvg" data-src="${esc(colourUrl(t, i))}" data-fill="${esc(colourFill(t, i, kid))}" data-t="${esc(t.id)}" data-d="${i}" data-k="${esc(kid)}"></div>
+    const pics = colourPics(t, i), cur = pics.find((p) => p.key === colChoice[`${t.id}.${kid}.${i}`]) || pics[0];
+    const ck = `${t.id}.${cur.key}.${kid}`; if (colKey !== ck) { colKey = ck; colHist = []; }   // the undo history belongs to one picture of one child
+    body = `<div class="colourpad colsvg" data-src="${esc(cur.url)}" data-fill="${esc(fieldVal(t, cur.key, kid) || '{}')}" data-key="${esc(cur.key)}" data-t="${esc(t.id)}" data-d="${i}" data-k="${esc(kid)}"></div>
 <div class="palette">${COLOURS.map((c) => `<button data-a="kidcolor" data-v="${c}" style="--c:${c}" aria-pressed="${c === kidColour}" aria-label="${c}"></button>`).join('')}</div>
+${pics.length > 1 ? `<div class="colpics" role="group" aria-label="${L('เลือกรูประบายสี', 'Pick a picture')}">${pics.map((p) => `<button data-a="kidcolpic" data-t="${esc(t.id)}" data-k="${esc(kid)}" data-d="${i}" data-v="${esc(p.key)}" data-say="${esc(p.name)}" aria-pressed="${p === cur}" aria-label="${esc(p.name)}"><img src="${esc(p.url)}" alt="" loading="lazy">${fieldVal(t, p.key, kid) && fieldVal(t, p.key, kid) !== '{}' ? '<i>🎨</i>' : ''}</button>`).join('')}</div>` : ''}
 <div class="drawtools coltools"><button class="dclear" data-a="kidcolundo" aria-label="${L('ย้อนกลับ', 'Undo')}"${colHist.length ? '' : ' disabled'}>↶ <b>${L('ย้อน', 'Undo')}</b></button><button class="dclear" data-a="kidcolwipe" aria-label="${L('ล้างสีแล้วระบายใหม่', 'Wipe the colours and start again')}">🧽 <b>${L('ล้างสี', 'Wipe')}</b></button></div>
 <button class="kidbig" data-a="kidcolourdone" data-v="#/kid/${esc(kid)}">${L('เสร็จแล้ว! ✨', 'All done! ✨')}</button>`;
   } else if (view === 'draw') {
@@ -1042,6 +1066,7 @@ Object.assign(A, {
     if (n >= cnt.n) setTimeout(() => { beep('chime'); celebrate([cnt.e, '⭐', '✨']); star(kidNow(), 1); render(); sayUi(L(`ทั้งหมด ${n} ตัว!`, `${n} altogether!`)); }, 500); else render();
   },
   kidnewcount() { beep('pop'); const t = kidTrip(route().parts[1]); newCount(t); render(); },
+  kidcolpic(b) { const key = `${b.dataset.t}.${b.dataset.k}.${b.dataset.d}`; if (colChoice[key] === b.dataset.v) return; colChoice[key] = b.dataset.v; beep('tap'); if (b.dataset.say) sayUi(b.dataset.say); render(); window.scrollTo(0, 0); },
   kidcolundo() { const pad = $('.colourpad'); if (!pad || !colHist.length) return; beep('tap'); let f = {}; try { f = JSON.parse(colHist.pop()); } catch (_) {} colourSet(pad, f); },
   kidcolwipe() { const pad = $('.colourpad'); if (!pad || pad.dataset.fill === '{}' || !pad.querySelector('[data-c]')) return; beep('whoosh'); colHist.push(pad.dataset.fill); colourSet(pad, {}); },
   kidcolor(b) { beep('tap'); kidColour = b.dataset.v; $$('.palette button').forEach((x) => x.setAttribute('aria-pressed', x.dataset.v === kidColour)); drawWrap(); },
@@ -2120,8 +2145,8 @@ function colourSet(pad, fills) {
   const u = $('[data-a="kidcolundo"]'); if (u) u.disabled = !colHist.length;
   clearTimeout(colourSaveT);
   colourSaveT = setTimeout(() => {
-    const t = trip(pad.dataset.t), i = +pad.dataset.d, kid = pad.dataset.k;
-    putEntry(t, { day: null, kind: 'field', child: kid, first_key: `colour.d${i}`, text: pad.dataset.fill }, `${t.id}.field.colour.d${i}.${kid}`);
+    const t = trip(pad.dataset.t), kid = pad.dataset.k, key = pad.dataset.key || `colour.d${pad.dataset.d}`;
+    putEntry(t, { day: null, kind: 'field', child: kid, first_key: key, text: pad.dataset.fill }, `${t.id}.field.${key}.${kid}`);
   }, 500);
 }
 // grown-ups empty the star jar (and its friends) by pressing and holding it 1.5 s — a test run's stars, a fresh start; nothing on the server

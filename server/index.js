@@ -148,6 +148,20 @@ app.get('/api/b/wx/:trip', A.requireUser, async (req, res, next) => {
   } catch (e) { next(e); }
 });
 
+// more pictures for kid mode's colouring page: the stock library's colouring pictures of the places the book names (server/stock.js)
+app.get('/api/b/colour/:trip', A.requireUser, async (req, res, next) => {
+  try {
+    if (!A.canSee(req.user, req.params.trip)) return res.status(404).json({ error: 'trip' });
+    const t = (await PG.query('SELECT id, title, sub FROM trips WHERE id=$1 AND family_id=$2', [req.params.trip, BS.FAMILY])).rows[0];
+    if (!t) return res.status(404).json({ error: 'trip' });
+    const days = (await PG.query('SELECT title FROM trip_days WHERE trip_id=$1 ORDER BY day_index', [t.id])).rows;
+    const words = (o) => (o && typeof o === 'object' ? [o.en, o.th].filter(Boolean).join(' \n ') : String(o || ''));
+    const title = [words(t.title), words(t.sub)].join(' \n '), text = [title, ...days.map((d) => words(d.title))].join(' \n ');
+    res.setHeader('Cache-Control', 'private, max-age=3600');
+    res.json({ trip: t.id, pics: STOCK.colourFor(text, title) });
+  } catch (e) { next(e); }
+});
+
 // import from the Harbour Hop app (zip of moments/visits/days + assets); ?dry=1 reports without writing
 app.post('/api/b/import/harbour-hop', A.requireEditor, async (req, res, next) => {
   let file;
