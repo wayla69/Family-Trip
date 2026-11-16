@@ -291,8 +291,8 @@ function router({ pool, media, A, ai, hooks = {} }) {   // hooks.heart(h): set b
     try {
       const [children, trips, days, firsts, entries, mediaRows, places, hearts, reviews, spendRows, emojiRows] = await Promise.all([
         q('SELECT slug, name_th, name_en, emoji, color, birth_ym, look, avatar, avatars FROM children WHERE family_id=$1 ORDER BY pos', [FAMILY]),
-        q("SELECT id, slug, legacy_id, title, sub, to_char(date_from,'YYYY-MM-DD') date_from, to_char(date_to,'YYYY-MM-DD') date_to, timezone, theme, cover, stamp, moods, passport, info, source FROM trips WHERE family_id=$1 ORDER BY date_from", [FAMILY]),
-        q("SELECT d.trip_id, d.day_index, to_char(d.date,'YYYY-MM-DD') date, d.title, d.sleep, d.emoji, d.gradient, d.planned, d.wx, d.plan, d.done_at FROM trip_days d JOIN trips t ON t.id=d.trip_id WHERE t.family_id=$1 ORDER BY d.trip_id, d.day_index", [FAMILY]),
+        q("SELECT id, slug, legacy_id, title, sub, to_char(date_from,'YYYY-MM-DD') date_from, to_char(date_to,'YYYY-MM-DD') date_to, timezone, theme, cover, stamp, moods, passport, info, source, kind, open FROM trips WHERE family_id=$1 ORDER BY date_from", [FAMILY]),
+        q("SELECT d.trip_id, d.day_index, to_char(d.date,'YYYY-MM-DD') date, d.title, d.sleep, d.place, d.emoji, d.gradient, d.planned, d.wx, d.plan, d.done_at FROM trip_days d JOIN trips t ON t.id=d.trip_id WHERE t.family_id=$1 ORDER BY d.trip_id, d.day_index", [FAMILY]),
         q('SELECT f.trip_id, f.key, f.emoji, f.label FROM firsts_catalog f JOIN trips t ON t.id=f.trip_id WHERE t.family_id=$1 ORDER BY f.trip_id, f.pos, f.key', [FAMILY]),
         q('SELECT id, trip_id, day_index, kind, child, text, tr, mood, first_key, lang, highlight, occurred_at, created_by, created_uid FROM entries WHERE family_id=$1 ORDER BY occurred_at', [FAMILY]),
         q('SELECT id, trip_id, day_index, width, height, caption, highlight, pos, taken_at, created_by, mime, tags, place, ai_at FROM media WHERE family_id=$1 ORDER BY taken_at, pos', [FAMILY]),
@@ -425,8 +425,10 @@ function router({ pool, media, A, ai, hooks = {} }) {   // hooks.heart(h): set b
       if ('highlight' in b) { args.push(!!b.highlight); sets.push(`highlight=$${args.length}`); }
       if ('tags' in b) { const tags = tagList(b.tags); if (!tags) return bad(res, 'tags'); args.push(tags); sets.push(`tags=$${args.length}`); }
       if ('place' in b) { args.push(clip(b.place, 120).trim()); sets.push(`place=$${args.length}`); }
+      let dayCheck = '';   // a photo moved to another day of its book (a book from photos: the parents sort what the phone got wrong)
+      if ('day' in b) { const d = Number(b.day); if (!Number.isInteger(d) || d < 0) return bad(res, 'day'); args.push(d); sets.push(`day_index=$${args.length}`); dayCheck = ` AND $${args.length}::int < (SELECT count(*)::int FROM trip_days WHERE trip_id=media.trip_id)`; }
       if (!sets.length) return bad(res, 'nothing');
-      const out = await q(`UPDATE media SET ${sets.join(', ')} WHERE id=$1 AND family_id=$2 RETURNING id`, args);
+      const out = await q(`UPDATE media SET ${sets.join(', ')} WHERE id=$1 AND family_id=$2${dayCheck} RETURNING id`, args);
       res.status(out.length ? 200 : 404).json({ ok: !!out.length });
     } catch (e) { next(e); }
   });
@@ -622,6 +624,116 @@ function router({ pool, media, A, ai, hooks = {} }) {   // hooks.heart(h): set b
       await c.query('COMMIT');
       res.json({ ok: true, id: slug });
     } catch (e) { await c.query('ROLLBACK').catch(() => {}); next(e); } finally { c.release(); }
+  });
+
+  // ----- a book from photos (docs/SNAP-BOOK.md D4): no plan, no typed dates — the days are the dates the phone read from the photos
+  // (or today, for a book started on the trip, which stays open and takes a new day when a photo of a new date comes). Only a
+  // place's name ever reaches the server: the phone turns a photo's position into a name and drops it (D1/D2).
+  const DATE_RE = /^\d{4}-\d{2}-\d{2}$/;
+  const dayMs = (d) => new Date(d + 'T00:00:00Z').getTime();
+  const goodDates = (v) => { if (!Array.isArray(v) || !v.length || v.length > 61) return null;
+    const ds = [...new Set(v.map(String))].sort(); if (!ds.every((d) => DATE_RE.test(d) && !isNaN(dayMs(d)) && new Date(d + 'T00:00:00Z').toISOString().slice(0, 10) === d)) return null;
+    return ds; };
+  const spanOk = (ds) => (dayMs(ds[ds.length - 1]) - dayMs(ds[0])) / 864e5 <= 60;
+  const tzToday = (tz) => new Date().toLocaleDateString('en-CA', { timeZone: tz });
+  const placeOf = (p) => (p && (typeof p === 'string' ? p.trim() : (p.th || p.en || '').trim()) ? i18n(p, 120) : null);
+  const snapTrip = async (id) => (await q("SELECT id, source, kind, open, timezone, to_char(date_from,'YYYY-MM-DD') date_from FROM trips WHERE id=$1 AND family_id=$2", [id, FAMILY]))[0];
+  const hasMemories = async (tid) => (await q(`SELECT 1 FROM entries WHERE trip_id=$1 UNION ALL SELECT 1 FROM media WHERE trip_id=$1 UNION ALL SELECT 1 FROM places WHERE trip_id=$1
+    UNION ALL SELECT 1 FROM hearts WHERE trip_id=$1 UNION ALL SELECT 1 FROM reviews WHERE trip_id=$1 UNION ALL SELECT 1 FROM spend WHERE trip_id=$1 LIMIT 1`, [tid])).length > 0;
+  // the places the phone can name a position with: every library city with its centre (no family data; the index stays on the server)
+  r.get('/api/b/geo', A.requireUser, (_req, res) => {
+    const ps = Object.entries(STOCK.read().places || {});
+    res.setHeader('Cache-Control', 'private, max-age=86400');
+    res.json({ places: ps.filter(([, p]) => Array.isArray(p.ll)).map(([id, p]) => ({ id, name: p.name, ll: p.ll, tz: p.tz, cc: p.country, home: !!p.home })),
+      countries: ps.filter(([id, p]) => id === p.country).map(([id, p]) => ({ cc: id, name: p.name, tz: p.tz || null })) });
+  });
+  r.post('/api/b/snap', ...W, async (req, res, next) => {
+    const c = await pool.connect();
+    try {
+      const b = req.body || {}, tz = clip(b.timezone || 'Asia/Bangkok', 60);
+      try { new Intl.DateTimeFormat('en', { timeZone: tz }); } catch (_) { return bad(res, 'timezone'); }
+      const days = Array.isArray(b.days) && b.days.length ? b.days : [{ date: tzToday(tz) }];
+      const dates = goodDates(days.map((d) => d && d.date)); if (!dates || dates.length !== days.length || !spanOk(dates)) return bad(res, 'dates');
+      const byDate = Object.fromEntries(days.map((d) => [d.date, d]));
+      const title = b.title && (b.title.th || b.title.en || (typeof b.title === 'string' && b.title)) ? i18n(b.title, 120) : { th: 'ทริปของเรา', en: 'Our trip' };
+      const ids = Array.isArray(b.places) ? b.places.map(String).filter((x) => SLUG_RE.test(x)).slice(0, 30) : [];
+      const id = `snap-${dates[0].replace(/-/g, '')}-${crypto.randomBytes(3).toString('hex')}`;
+      await c.query('BEGIN');
+      await c.query(`INSERT INTO trips (id, family_id, slug, title, date_from, date_to, timezone, theme, cover, source, kind, open)
+        VALUES ($1,$2,$1,$3,$4,$5,$6,$7,$8,'manual','snap',$9)`,
+      [id, FAMILY, title, dates[0], dates[dates.length - 1], tz, { accent: /^#[0-9a-fA-F]{6}$/.test(b.accent) ? b.accent : '#2C5646', display: 'sans', snap: { places: ids } }, { emoji: clip(b.emoji || '📷', 8) }, !!b.open]);
+      for (const [i, d] of dates.entries()) {
+        const x = byDate[d] || {};
+        await c.query('INSERT INTO trip_days (trip_id, day_index, date, title, place, emoji) VALUES ($1,$2,$3,$4,$5,$6)',
+          [id, i, d, x.title && (x.title.th || x.title.en) ? i18n(x.title, 80) : { th: `วันที่ ${i + 1}`, en: `Day ${i + 1}` }, placeOf(x.place), clip(x.emoji || '', 8)]);
+      }
+      await c.query('COMMIT');
+      res.json({ ok: true, id });
+    } catch (e) { await c.query('ROLLBACK').catch(() => {}); next(e); } finally { c.release(); }
+  });
+  // more days for a book from photos: a date after the last day is added; an earlier one only while the book holds nothing yet —
+  // a day's number is in the ids of what it holds (`<trip>.sum.d<i>`, ticks, the phone's queue), so days are never renumbered
+  r.post('/api/b/snap/:trip/days', ...W, async (req, res, next) => {
+    const c = await pool.connect();
+    try {
+      const t = await snapTrip(req.params.trip); if (!t || t.kind !== 'snap') return bad(res, 'trip', 404);
+      const want = goodDates(((req.body || {}).days || []).map((d) => d && d.date)); if (!want) return bad(res, 'dates');
+      const byDate = Object.fromEntries((req.body.days || []).map((d) => [d.date, d]));
+      const cur = await q("SELECT day_index, to_char(date,'YYYY-MM-DD') date, title, place, emoji FROM trip_days WHERE trip_id=$1 ORDER BY day_index", [t.id]);
+      const have = new Set(cur.map((d) => d.date)), add = want.filter((d) => !have.has(d));
+      if (!add.length) return res.json({ ok: true, added: 0, days: cur.map((d) => d.date) });
+      const all = [...cur.map((d) => d.date), ...add].sort();
+      if (all.length > 61 || !spanOk(all)) return bad(res, 'dates');
+      const last = cur.length ? cur[cur.length - 1].date : '';
+      const before = add.some((d) => d < last);
+      if (before && await hasMemories(t.id)) return bad(res, 'order', 409);
+      await c.query('BEGIN');
+      if (before) {   // nothing recorded yet: lay the days out again in date order, each keeping its own title and place
+        const old = Object.fromEntries(cur.map((d) => [d.date, d]));
+        await c.query('DELETE FROM trip_days WHERE trip_id=$1', [t.id]);
+        for (const [i, d] of all.entries()) {
+          const o = old[d], x = byDate[d] || {};
+          const auto = !o || /^(วันที่ \d+|Day \d+)$/.test((o.title || {}).en || '') || /^วันที่ \d+$/.test((o.title || {}).th || '');
+          await c.query('INSERT INTO trip_days (trip_id, day_index, date, title, place, emoji) VALUES ($1,$2,$3,$4,$5,$6)',
+            [t.id, i, d, o && !auto ? o.title : x.title && (x.title.th || x.title.en) ? i18n(x.title, 80) : { th: `วันที่ ${i + 1}`, en: `Day ${i + 1}` }, o ? o.place : placeOf(x.place), o ? o.emoji : clip(x.emoji || '', 8)]);
+        }
+      } else {
+        for (const [k, d] of add.entries()) { const i = cur.length + k, x = byDate[d] || {};
+          await c.query('INSERT INTO trip_days (trip_id, day_index, date, title, place, emoji) VALUES ($1,$2,$3,$4,$5,$6)',
+            [t.id, i, d, x.title && (x.title.th || x.title.en) ? i18n(x.title, 80) : { th: `วันที่ ${i + 1}`, en: `Day ${i + 1}` }, placeOf(x.place), clip(x.emoji || '', 8)]); }
+      }
+      await c.query('UPDATE trips SET date_from=$2, date_to=$3 WHERE id=$1', [t.id, all[0], all[all.length - 1]]);
+      await c.query('COMMIT');
+      res.json({ ok: true, added: add.length, days: all });
+    } catch (e) { await c.query('ROLLBACK').catch(() => {}); next(e); } finally { c.release(); }
+  });
+  // a day's name, place and picture, typed by the parents (app-made books only: a bundled book's days come from its manual)
+  r.patch('/api/b/days/:trip/:day', ...W, async (req, res, next) => {
+    try {
+      const t = await snapTrip(req.params.trip); if (!t) return bad(res, 'trip', 404);
+      if (t.source === 'seed') return bad(res, 'seed', 409);
+      const b = req.body || {}, sets = [], args = [t.id, Number(req.params.day)];
+      if (!Number.isInteger(args[1]) || args[1] < 0) return bad(res, 'day');
+      if ('title' in b) { if (!b.title || !(b.title.th || b.title.en || typeof b.title === 'string')) return bad(res, 'title'); args.push(i18n(b.title, 80)); sets.push(`title=$${args.length}`); }
+      if ('place' in b) { args.push(placeOf(b.place)); sets.push(`place=$${args.length}`); }
+      if ('emoji' in b) { args.push(clip(b.emoji || '', 8)); sets.push(`emoji=$${args.length}`); }
+      if (!sets.length) return bad(res, 'nothing');
+      const out = await q(`UPDATE trip_days SET ${sets.join(', ')} WHERE trip_id=$1 AND day_index=$2 RETURNING day_index`, args);
+      res.status(out.length ? 200 : 404).json({ ok: !!out.length });
+    } catch (e) { next(e); }
+  });
+  // an app-made book's name, and closing a book started on the trip ("we're home")
+  r.patch('/api/b/trips/:id', ...W, async (req, res, next) => {
+    try {
+      const t = await snapTrip(req.params.id); if (!t) return bad(res, 'trip', 404);
+      if (t.source === 'seed') return bad(res, 'seed', 409);
+      const b = req.body || {}, sets = [], args = [t.id];
+      if ('title' in b) { if (!b.title || !(b.title.th || b.title.en || typeof b.title === 'string')) return bad(res, 'title'); args.push(i18n(b.title, 120)); sets.push(`title=$${args.length}`); }
+      if ('open' in b) { args.push(!!b.open); sets.push(`open=$${args.length}`); }
+      if (!sets.length) return bad(res, 'nothing');
+      await q(`UPDATE trips SET ${sets.join(', ')} WHERE id=$1`, args);
+      res.json({ ok: true });
+    } catch (e) { next(e); }
   });
 
   // ----- bedtime story (Claude): only when pressed, text facts only, streamed as SSE; disconnect = stop, nothing saved

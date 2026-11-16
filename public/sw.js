@@ -95,7 +95,7 @@ async function takeShare(r) {
       await c.put(new Request('/share-in/' + n++), new Response(f, { headers: { 'content-type': f.type || 'application/octet-stream', 'x-name': encodeURIComponent(f.name || ''), 'x-mod': String(f.lastModified || 0) } }));
     }
   } catch (_) { /* nothing kept: the page says so */ }
-  return Response.redirect('/#/snaptest?shared=' + n, 303);
+  return Response.redirect('/#/snap?shared=' + n, 303);
 }
 self.addEventListener('fetch', (e) => {
   const r = e.request, u = new URL(r.url);

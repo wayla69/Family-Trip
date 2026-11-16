@@ -225,6 +225,43 @@ const T = 'hk-macau-2026';
     await s.shot('snaptest');
     page.off('request', watch);
   }
+  // #/snap — a book from photos (docs/SNAP-BOOK.md P1): pick → read on the phone → days and places → make the book. Seven synthetic
+  // photos: three on 12 Dec near Khao Yai (two JPEGs and a HEIF), one on 13 Dec with no position, one on 14 Dec with an empty 0,0 one,
+  // one dated by its file only (today) and one in Sydney in April — the last two fall outside the trip and stay out
+  {
+    const bodies = []; const watch = (r) => { if (r.method() !== 'GET') bodies.push(r.url() + ' ' + (r.postData() || '')); }; page.on('request', watch);
+    await page.goto(`${BASE}/#/`); await page.waitForSelector('.spine.add a.addway.main[href="#/snap"]');
+    await page.click('.spine.add a.addway.main[href="#/snap"]'); await page.waitForSelector('.snapmode');
+    ok(await page.locator('.snapmode .tpo[aria-pressed="true"][data-v="after"]').count() === 1 && /never the position/.test(await page.textContent('.snapnote')) && await s.noHScroll(), 'book from photos: the new-book tile leads to it; "we\'re back" chosen, the privacy line said up front');
+    const fx = ['gps-ii.jpg', 'gps-mm.jpg', 'gps.avif', 'time-only.jpg', 'gps-zero.jpg', 'no-exif.jpg', 'gps-south.jpg'].map((f) => path.resolve('test/fixtures/snap', f));
+    const [fc] = await Promise.all([page.waitForEvent('filechooser'), page.click('[data-a="snappickbook"]')]);
+    await fc.setFiles(fx);
+    await page.waitForSelector('.snapsum', { timeout: 10000 });
+    const sum = (await page.$$eval('.snapsum li', (ls) => ls.map((l) => l.textContent.replace(/\s+/g, ' ').trim()))).join(' | ');
+    ok(/12 Dec – 14 Dec · 3 days/.test(sum) && /Know where\s*4/.test(sum) && /Outside the trip\s*2, left out/.test(sum) && !/14\.4|101\.3|-33\.8/.test(await page.textContent('main')), `book from photos: 7 photos read on the phone → 3 days, 4 placed, 2 outside the trip (${sum})`);
+    await s.shot('snap-read');
+    await page.click('.snapfoot a.btn'); await page.waitForSelector('.snapdays');
+    const title = await page.inputValue('#snaptitle'), d1 = await page.textContent('.snapday:nth-child(1) .sdt'), d2 = await page.textContent('.snapday:nth-child(2) .sdt');
+    const moms = await page.$$eval('.snapday:nth-child(1) .snapmoms li', (ls) => ls.map((l) => l.textContent.replace(/\s+/g, ' ').trim()));
+    ok(title === 'Khao Yai, 3 days' && /Khao Yai · 3 photos/.test(d1) && /No place yet · 1 photos?/.test(d2) && moms.length === 1 && /^Morning · Khao Yai/.test(moms[0]), `book from photos: the days named from the place (${title}; ${d1.trim()} | ${d2.trim()} | ${moms.join(' / ')})`);
+    await s.shot('snap-days');
+    await page.click('.snapday:nth-child(2) > summary'); await page.fill('.snapday:nth-child(2) input[data-snapday="2025-12-13"]', 'Pak Chong');
+    ok(await s.noHScroll() && await page.evaluate(() => [...document.querySelectorAll('.snapday > summary, .snapfoot .btn, .snapday input')].every((e) => e.getBoundingClientRect().height >= 44)), 'book from photos: no sideways scroll, every tap 44 px or taller');
+    await page.click('[data-a="snapmake"]');
+    await page.waitForFunction(() => /\/book$/.test(location.hash), null, { timeout: 15000 });
+    await page.waitForFunction(() => queue.length === 0, null, { timeout: 30000 });
+    const st = await apiState(page), t = st.trips.find((x) => x.kind === 'snap');
+    const ms = st.media.filter((m) => m.trip === (t && t.id)), d0 = ms.filter((m) => m.day === 0);
+    ok(t && t.title.en === 'Khao Yai, 3 days' && t.days.length === 3 && t.days[0].place.en === 'Khao Yai' && t.days[1].place.en === 'Pak Chong' && t.days[2].place === null
+      && ms.length === 5 && d0.length === 3 && d0.every((m) => m.place === 'Khao Yai') && ms.find((m) => m.day === 1).place === 'Pak Chong'
+      && d0.some((m) => m.at === Date.parse('2025-12-12T09:15:30+07:00')) && st.places.some((p) => p.trip === t.id && p.key === 'snap.th-khaoyai' && p.day === 0),
+    `book from photos: the book is made from the dates — 3 days with their places, 5 photos on their days with the time they were taken, Khao Yai checked in (${t && t.days.map((d) => d.place && d.place.en).join(',')}; ${ms.map((m) => m.day + ':' + m.place).join(' ')})`);
+    ok(!bodies.some((b) => /14\.4\d|101\.3\d|33\.8\d|151\.2\d/.test(b)), `book from photos: no position in any request (${bodies.length} writes)`);
+    page.off('request', watch);
+    await s.shot('snap-book');
+    await page.goto(`${BASE}/#/t/${t.id}`); await page.waitForSelector('.hubgrid'); await s.shot('snap-hub');
+    await page.evaluate((id) => fetch('/api/b/trips/' + id, { method: 'DELETE', headers: { 'x-mb': '1' } }), t.id); await page.evaluate(() => load());
+  }
   // #/family without the drawing helper: no character box, no server words, the birth row says what the month is for
   await page.goto(`${BASE}/#/family`); await page.waitForSelector('.famkid');
   const famTx = await page.evaluate(() => document.querySelector('main').textContent);
@@ -1237,7 +1274,7 @@ const T = 'hk-macau-2026';
     ok(kept.ok && kept.n === 3 && /(Shared from the gallery|แชร์จากแกลเลอรี) · 3/.test(h) && sum[2].includes('2 ·') && left === 0 && await page.evaluate(() => location.hash) === '#/snaptest'
       && man.share_target && man.share_target.action === '/share' && man.share_target.params.files[0].name === 'photos', `share from the gallery: kept by the service worker (${kept.n}), read once on the check page (${h} · ${sum[2]}), then forgotten (${left} left)`);
     const noSw = await (await page.request.post(`${BASE}/share`, { maxRedirects: 0 })).headers();
-    ok(/\/#\/snaptest\?shared=0$/.test(noSw.location || ''), 'share before the service worker is in place: the server sends the phone to the check page');
+    ok(/\/#\/snap\?shared=0$/.test(noSw.location || ''), 'share before the service worker is in place: the server sends the phone to the book-from-photos page');
     await page.goto(`${BASE}/#/t/${T}/offline`); await page.waitForSelector('#offl');   // back where the offline checks go on
   }
   ok(await page.evaluate(async (u) => (await caches.keys()).includes('mbs-media') && !!(await (await caches.open('mbs-media')).match(u)) && !(await (await caches.open((await caches.keys()).find((k) => /^mbs-v/.test(k)))).match(u)), `/media/${fave.id}/t`), 'photos live in their own cache, not the versioned shell cache — a deploy must never empty the offline pack');

@@ -34,8 +34,8 @@ async function shrink(file) {
 }
 // spot (the record page's "where was it?" chips): { place: the stop's name, key + kind: the planned stop } — the photos carry the place,
 // and a planned stop not yet checked in is checked in (a photo taken there says we went)
-async function addPhotos(t, day, files, spot) {
-  const list = Array.from(files).filter((f) => f.type.startsWith('image/') || /\.(heic|heif)$/i.test(f.name));
+async function addPhotos(t, day, files, spot, metas) {
+  const all = Array.from(files), list = all.filter((f) => f.type.startsWith('image/') || /\.(heic|heif)$/i.test(f.name));
   if (!list.length) return;
   const place = String((spot && spot.place) || '').trim().slice(0, 120);
   if (place && spot.key && !S.places.some((x) => x.trip === t.id && x.key === spot.key)) {   // a chip with a key is a planned stop (a sight, a meal, a planned airport or hotel)
@@ -45,9 +45,13 @@ async function addPhotos(t, day, files, spot) {
   }
   toast(L(`เตรียมรูป ${list.length} รูป…`, `Preparing ${list.length} photos…`));
   for (const f of list) {
+    // when it was taken: the photo's own clock (EXIF, read here before shrink() re-encodes it; snap.js), else the file's time
+    const m = (metas && metas[all.indexOf(f)]) || (typeof snapMeta === 'function' ? await snapMeta(f).catch(() => null) : null);
+    const shot = m && m.src === 'exif' ? snapWallMs(m.at, m.tz, t.timezone) : null;
+    if (m) m.ll = null;   // a position is never used here
     const blob = await shrink(f);
     const id = uid('ph');
-    const at = f.lastModified && Math.abs(f.lastModified - Date.now()) < 400 * 864e5 ? Math.min(f.lastModified, Date.now()) : Date.now();
+    const at = shot && shot <= Date.now() + 864e5 ? shot : f.lastModified && Math.abs(f.lastModified - Date.now()) < 400 * 864e5 ? Math.min(f.lastModified, Date.now()) : Date.now();
     await enqueue({ method: 'PUT', url: `/api/b/media/${id}?trip=${encodeURIComponent(t.id)}&day=${day}&at=${at}${place ? '&place=' + encodeURIComponent(place) : ''}`, blob,
       local: { coll: 'media', id, row: { trip: t.id, day, caption: '', highlight: false, at, w: 0, h: 0, place } } });
   }

@@ -1,7 +1,8 @@
 # Snap Book — a book from photos, no plan needed
 
-Status: **P0 built** (the reader `public/snap.js` + the device check page `#/snaptest`, 16 Nov 2026); P1 onwards waits for the
-P0 results (§11) and the owner's answer on R3. Written 16 Nov 2026 for handoff; the next session implements from this file.
+Status: **P0 and P1 built** (16 Nov 2026): the reader and `#/snaptest`, then the book from photos after the trip (`#/snap`), the
+share target into it, and every upload taking the photo's own time. R3 confirmed by the owner (16 Nov 2026). P2 (during the trip)
+is next; P1 left out the B3 place sheet (a day's place is a text box with the library's names) and the "two trips" split. Written 16 Nov 2026 for handoff; the next session implements from this file.
 Owner's ask: "บางครอบครัวไม่ได้วางแผน ให้ทำเล่มเปล่า ถ่ายรูป ใช้ location ในรูป แล้วใช้ AI ร่างเป็นเก็บประวัติ storybook เองได้เลย …
 ทำให้การใช้งานแบบทริปพิเศษ หรือคนไทยเที่ยวใกล้ๆ ยกมือถือมาทำแล้วได้เล่มเลย".
 
@@ -445,6 +446,7 @@ Design notes that are easy to lose:
 | Samsung (same) | "ไฟล์" (no `accept`) | 1 of 1 HEIC | 0 | HEIC as is | the document picker takes the position out too — no second route on Android |
 | Samsung (same) | camera (`capture`) | 1 of 1 | **1 of 1** | JPEG | a photo taken through the app keeps its position and zone |
 | Samsung (same) | live position | — | yes, about 25 m | — | `getCurrentPosition` after one permission tap |
+| Samsung (same) | share from Gallery to the installed app | 19 of 19 | 0 of 19 | HEIC as is (14) | the share target works (one tap for many photos) but Android takes the position out here too: no web route on Android keeps it |
 | iPhone / Safari (Home-Screen app) | Photos | | | | |
 | iPad Pro 10.5" (iPadOS 17) | Photos | | | | |
 | iPad mini 4 (iPadOS 15) | Photos | | | | |
@@ -452,5 +454,5 @@ Design notes that are easy to lose:
 Decisions after P0: **D3 route (Android, decided from the Samsung):** a photo picked from the phone carries its time but never
 its position, through either picker; so on Android "after the trip" asks one place per day (A4) as its main path, and "during the
 trip" takes photos through the app's own camera button (position kept) or reads the live position on "ใช้ตำแหน่งตอนนี้". No second
-picker button. **Share from the gallery** (owner: "ทำข้อ 1", 16 Nov 2026): LifeBook is a share target, so photos chosen in Samsung's
-Gallery or Google Photos can be shared into `#/snaptest` — whether that route keeps the position is the next device check. Still to run: iPhone and iPads (expected to keep the position) · gazetteer source = … · R3 confirmed by owner on … .
+picker button; a share from the gallery keeps no position either (tested), but stays as the easiest way in. **Share from the gallery** (owner: "ทำข้อ 1", 16 Nov 2026): LifeBook is a share target, so photos chosen in Samsung's
+Gallery or Google Photos can be shared into `#/snaptest` — whether that route keeps the position is the next device check. Still to run: iPhone and iPads (expected to keep the position) · gazetteer source = … · R3 confirmed by the owner on 16 Nov 2026.

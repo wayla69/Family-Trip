@@ -338,15 +338,15 @@ if (process.env.BASE) {
   const fx = (f, mod) => new File([fs.readFileSync(path.resolve('test/fixtures/snap', f))], f, { lastModified: mod || Date.UTC(2030, 0, 2, 3, 4, 5) });
   const near = (ll, a, b) => !!ll && Math.abs(ll[0] - a) < 1e-4 && Math.abs(ll[1] - b) < 1e-4;
   const m1 = await ctx.snapMeta(fx('gps-ii.jpg'));
-  ok(m1.src === 'exif' && m1.at === '2026-12-12T09:15:30' && m1.tz === '+07:00' && near(m1.ll, 14.44, 101.37), `snap: little-endian JPEG → time, zone and position (${JSON.stringify(m1)})`);
+  ok(m1.src === 'exif' && m1.at === '2025-12-12T09:15:30' && m1.tz === '+07:00' && near(m1.ll, 14.44, 101.37), `snap: little-endian JPEG → time, zone and position (${JSON.stringify(m1)})`);
   const m2 = await ctx.snapMeta(fx('gps-mm.jpg'));
-  ok(m2.src === 'exif' && m2.at === '2026-12-12T09:15:30' && m2.tz === '+07:00' && near(m2.ll, 14.44, 101.37), `snap: big-endian JPEG (what iPhones write) → the same (${JSON.stringify(m2)})`);
+  ok(m2.src === 'exif' && m2.at === '2025-12-12T09:15:30' && m2.tz === '+07:00' && near(m2.ll, 14.44, 101.37), `snap: big-endian JPEG (what iPhones write) → the same (${JSON.stringify(m2)})`);
   const m3 = await ctx.snapMeta(fx('gps.avif'));
-  ok(m3.kind === 'heif' && m3.src === 'exif' && m3.at === '2026-12-12T09:15:30' && near(m3.ll, 14.44, 101.37), `snap: HEIF container (AVIF here, HEIC on an iPhone) → the Exif item through iinf/iloc (${JSON.stringify(m3)})`);
+  ok(m3.kind === 'heif' && m3.src === 'exif' && m3.at === '2025-12-12T09:15:30' && near(m3.ll, 14.44, 101.37), `snap: HEIF container (AVIF here, HEIC on an iPhone) → the Exif item through iinf/iloc (${JSON.stringify(m3)})`);
   const m4 = await ctx.snapMeta(fx('time-only.jpg'));
-  ok(m4.at === '2026-12-13T17:40:05' && m4.ll === null && m4.tz === null, 'snap: a photo whose position was taken out keeps its time and says no position');
+  ok(m4.at === '2025-12-13T17:40:05' && m4.ll === null && m4.tz === null, 'snap: a photo whose position was taken out keeps its time and says no position');
   const m5 = await ctx.snapMeta(fx('gps-zero.jpg'));
-  ok(m5.at === '2026-12-14T08:00:00' && m5.ll === null, 'snap: an empty 0,0 position counts as none');
+  ok(m5.at === '2025-12-14T08:00:00' && m5.ll === null, 'snap: an empty 0,0 position counts as none');
   const m6 = await ctx.snapMeta(fx('gps-south.jpg'));
   ok(m6.tz === '+11:00' && near(m6.ll, -33.86, 151.21), `snap: south of the equator is negative (${JSON.stringify(m6.ll)})`);
   const m7 = await ctx.snapMeta(fx('no-exif.jpg', new Date(2026, 11, 15, 20, 30, 0).getTime()));
@@ -366,7 +366,7 @@ if (process.env.BASE) {
     const item1 = Buffer.concat([Buffer.from('Exif\0\0', 'latin1'), tiff]);   // no 4-byte offset first
     const metaA = full('meta', 0, iinf, full('iloc', 1, Buffer.from([0x44, 0x00]), u16(1), u16(7), u16(1), u16(0), u16(1), u32(0), u32(item1.length)), box('idat', item1));
     const a = await ctx.snapMeta(new File([Buffer.concat([ftyp, metaA])], 'a.heic', { lastModified: Date.UTC(2030, 0, 1) }));
-    ok(a.src === 'exif' && a.at === '2026-12-12T09:15:30' && near(a.ll, 14.44, 101.37), `snap: HEIF with the Exif item inside 'meta' (idat) and no offset prefix (${JSON.stringify(a)})`);
+    ok(a.src === 'exif' && a.at === '2025-12-12T09:15:30' && near(a.ll, 14.44, 101.37), `snap: HEIF with the Exif item inside 'meta' (idat) and no offset prefix (${JSON.stringify(a)})`);
     const item2 = Buffer.concat([u32(6), Buffer.from('Exif\0\0', 'latin1'), tiff]), pad = 290000;
     const mdat = box('mdat', Buffer.alloc(pad), item2), at = ftyp.length + 8 + pad;
     const metaB = full('meta', 0, iinf, full('iloc', 0, Buffer.from([0x44, 0x00]), u16(1), u16(7), u16(0), u16(1), u32(at), u32(item2.length)));
