@@ -334,7 +334,7 @@ if (process.env.BASE) {
 {
   const vm = await import('node:vm');
   const ctx = { A: {}, Blob, File, DataView, Uint8Array, Promise, Math, String, Array, Object, Set, isFinite, navigator: {} };
-  vm.createContext(ctx); vm.runInContext(fs.readFileSync(path.resolve('public/snap.js'), 'utf8') + '\n;this.snapMeta = snapMeta; this.snapRead = snapRead;', ctx);
+  vm.createContext(ctx); vm.runInContext(fs.readFileSync(path.resolve('public/snap.js'), 'utf8') + '\n;this.snapMeta = snapMeta; this.snapRead = snapRead; this.snapNearest = snapNearest; this.snapRound = snapRound;', ctx);
   const fx = (f, mod) => new File([fs.readFileSync(path.resolve('test/fixtures/snap', f))], f, { lastModified: mod || Date.UTC(2030, 0, 2, 3, 4, 5) });
   const near = (ll, a, b) => !!ll && Math.abs(ll[0] - a) < 1e-4 && Math.abs(ll[1] - b) < 1e-4;
   const m1 = await ctx.snapMeta(fx('gps-ii.jpg'));
@@ -377,9 +377,35 @@ if (process.env.BASE) {
   }
   const all = await ctx.snapRead(['gps-ii.jpg', 'time-only.jpg', 'no-exif.jpg', 'gps.avif'].map((f) => fx(f)), null, 2);
   ok(all.length === 4 && all.every(Boolean) && all.filter((m) => m.ll).length === 2, 'snap: many files read a few at a time, in order');
-  const src = fs.readFileSync(path.resolve('public/snap.js'), 'utf8'), named = 'snapPlace([p.coords.latitude, p.coords.longitude], await snapGeo())';
-  ok(src.split(named).length === 2 && !/m\.ll\[|\.ll\.join|ll\.toFixed|coords\.(latitude|longitude)/.test(src.replace(named, '')),
-    'snap: a position is never printed or kept — the one live position read ("use where I am") goes straight into snapPlace and is dropped');
+  const src = fs.readFileSync(path.resolve('public/snap.js'), 'utf8'), named = 'snapWhere([p.coords.latitude, p.coords.longitude], await snapGeo())';
+  const sent = "api('POST', '/api/b/geo/near', { ll: snapRound(ll) })";
+  ok(src.split(named).length === 2 && src.split(sent).length === 2 && !/m\.ll\[|\.ll\.join|ll\.toFixed|coords\.(latitude|longitude)/.test(src.replace(named, ''))
+    && (src.match(/api\([^)]*\bll\b/g) || []).length === 1 && /if \(ls\('geoOnline'\)/.test(src),
+    'snap: a position is never printed or kept — the one live read goes straight into snapWhere; the only position that ever leaves the phone is rounded (snapRound) and only with the family\'s switch on');
+  ok(JSON.stringify(ctx.snapRound([13.75049, 100.49171])) === '[13.75,100.49]', 'snap: what leaves the phone is rounded to two decimals (about a kilometre)');
+  // the phone's own list of place names (public/geo/<cc>.json, GeoNames): the nearest spot inside its reach, else a town within 8 km
+  const geoTh = JSON.parse(fs.readFileSync(path.resolve('public/geo/th.json'), 'utf8'));
+  const gp = ctx.snapNearest([13.7502, 100.4913], geoTh), ap = ctx.snapNearest([13.6905, 100.7501], geoTh), sea = ctx.snapNearest([9.5, 97.2], geoTh);
+  ok(gp && gp.en === 'Grand Palace' && gp.th === 'พระบรมมหาราชวัง' && ap && /Suvarnabhumi/.test(ap.en) && /สุวรรณภูมิ/.test(ap.th) && sea === null,
+    `snap: finer names on the phone — the Grand Palace, the airport, nothing at sea (${JSON.stringify([gp, ap, sea])})`);
+  const stockCcs = [...new Set(Object.values(JSON.parse(fs.readFileSync(path.resolve('public/stock/index.json'), 'utf8')).places).map((x) => x.country))];
+  const geoBad = stockCcs.filter((cc) => { try { const g = JSON.parse(fs.readFileSync(path.resolve(`public/geo/${cc}.json`), 'utf8')); return !(g.v === 1 && g.cc === cc && Array.isArray(g.t) && Array.isArray(g.s) && g.t.length + g.s.length > 20 && fs.statSync(path.resolve(`public/geo/${cc}.json`)).size < 600e3 && g.s.every((x) => x.length === 6 && typeof x[3] === 'number' && (g.r || {})[x[5]] > 0)); } catch (_) { return true; } });
+  ok(!geoBad.length, `snap: every country of the library has its list of place names, in shape and under 600 KB (${geoBad.join(' ') || 'all ' + stockCcs.length})`);
+}
+// the online place-name lookup (server/nearname.js, opt-in): the position rounded again, a generic User-Agent, the names in
+// Thai and English, one request a second, an in-memory cache; bad input never reaches the network
+{
+  const http = await import('node:http'), seen = [];
+  const mock = http.createServer((req, res) => { const u = new URL(req.url, 'http://x'); seen.push({ lat: u.searchParams.get('lat'), lon: u.searchParams.get('lon'), ua: req.headers['user-agent'] || '', cookie: req.headers.cookie || '' });
+    res.setHeader('content-type', 'application/json'); res.end(JSON.stringify({ osm_type: 'way', osm_id: 123, namedetails: { name: 'วัดอรุณราชวราราม', 'name:en': 'Wat Arun', 'name:th': 'วัดอรุณฯ' }, address: { suburb: 'Bangkok Yai' } })); });
+  await new Promise((r) => mock.listen(0, r));
+  process.env.NOMINATIM_URL = `http://localhost:${mock.address().port}`;
+  const NEAR = require('../server/nearname.js');
+  const a = await NEAR.near([13.74371, 100.48881]), b = await NEAR.near([13.7441, 100.4851]), c = await NEAR.near(['x', 1]), d = await NEAR.near([200, 1]);
+  ok(a && a.name.en === 'Wat Arun' && a.name.th === 'วัดอรุณฯ' && a.id === 'w123' && seen.length === 1 && seen[0].lat === '13.74' && seen[0].lon === '100.49'
+    && !/lifebook|memory|mimi|mika/i.test(seen[0].ua) && !seen[0].cookie && b === a && c === null && d === null,
+    `place names online: the position goes out rounded, a generic name for the app, no cookie; the same cell is answered from memory; bad input asks nothing (${JSON.stringify(seen)})`);
+  mock.close(); delete process.env.NOMINATIM_URL;
 }
 
 // older iPads (iPadOS 15 on an iPad mini 4 / Air 2, early iPadOS 16): Safari before 16.4 refuses a whole script over one regex lookbehind,

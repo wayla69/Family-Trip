@@ -3080,6 +3080,7 @@ details.emeal[open]>summary .mname{visibility:hidden}
 .flabel{display:block;font-size:13.5px;font-weight:600;margin:12px 0 6px;color:color-mix(in srgb,var(--ink) 80%,var(--paper))}
 .snapnote{display:flex;gap:10px;align-items:flex-start;margin:16px 0;padding:12px 14px;border-radius:12px;background:color-mix(in srgb,var(--accent) 7%,var(--paper));font-size:14px;line-height:1.45}
 .snapnote .ic{width:20px;height:20px;flex:none;color:var(--accent);margin-top:1px}
+.snapgeosw{display:grid;gap:6px;justify-items:start;margin:-4px 0 16px}.snapgeosw .chip{max-width:100%;text-align:start}.snapgeosw small{display:block;font-size:13.5px;line-height:1.45;color:var(--muted)}
 .snapfoot{display:flex;flex-direction:column;align-items:stretch;gap:8px;margin:20px 0 8px}.snapfoot small{color:var(--muted);font-size:13px;text-align:center}
 .snapfoot .linkbtn{align-self:center;min-height:44px}
 .snapbig{font-size:40px;font-weight:700;margin:24px 0;color:var(--accent)}

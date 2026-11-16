@@ -16,7 +16,8 @@ const EMOJI = require('./emoji');
 const STOCK = require('./stock');   // "stock:<id>" in a seed → the library picture's URL (docs/STOCK-ART.md)
 const CORE = require('../scripts/lib/plan-to-seed-core.mjs');   // the sample book is built from its plan on request (ESM via require, Node ≥ 22.12)
 const sharp = require('sharp');
-const VID = require('./video');   // video clips: re-encoded, 30 s, every piece of metadata (the place it was filmed) dropped
+const VID = require('./video');
+const NEAR = require('./nearname');   // the opt-in online place-name lookup (a ~1 km position → OpenStreetMap's name for the spot)   // video clips: re-encoded, 30 s, every piece of metadata (the place it was filmed) dropped
 
 const FAMILY = process.env.FAMILY_ID || 'family';
 // who runs this instance, named on the privacy page (#/privacy) — the data controller the family can write to
@@ -743,6 +744,11 @@ function router({ pool, media, A, ai, hooks = {} }) {   // hooks.heart(h): set b
     res.setHeader('Cache-Control', 'private, max-age=86400');
     res.json({ places: ps.filter(([, p]) => Array.isArray(p.ll)).map(([id, p]) => ({ id, name: p.name, ll: p.ll, tz: p.tz, cc: p.country, home: !!p.home })),
       countries: ps.filter(([id, p]) => id === p.country).map(([id, p]) => ({ cc: id, name: p.name, tz: p.tz || null })) });
+  });
+  // the online place-name lookup (editors; the phone sends it only with the family's switch on): a position rounded to ~1 km in,
+  // the names out — never stored, never logged (server/nearname.js)
+  r.post('/api/b/geo/near', ...W, async (req, res, next) => {
+    try { const out = await NEAR.near((req.body || {}).ll); res.setHeader('Cache-Control', 'no-store'); res.json(out ? { ok: true, ...out } : { ok: false }); } catch (e) { next(e); }
   });
   r.post('/api/b/snap', ...W, async (req, res, next) => {
     const c = await pool.connect();

@@ -253,9 +253,9 @@ const T = 'hk-macau-2026';
     const st = await apiState(page), t = st.trips.find((x) => x.kind === 'snap');
     const ms = st.media.filter((m) => m.trip === (t && t.id)), d0 = ms.filter((m) => m.day === 0);
     ok(t && t.title.en === 'Khao Yai, 3 days' && t.days.length === 3 && t.days[0].place.en === 'Khao Yai' && t.days[1].place.en === 'Pak Chong' && t.days[2].place === null
-      && ms.length === 5 && d0.length === 3 && d0.every((m) => m.place === 'Khao Yai') && ms.find((m) => m.day === 1).place === 'Pak Chong'
-      && d0.some((m) => m.at === Date.parse('2025-12-12T09:15:30+07:00')) && st.places.some((p) => p.trip === t.id && p.key === 'snap.th-khaoyai' && p.day === 0),
-    `book from photos: the book is made from the dates — 3 days with their places, 5 photos on their days with the time they were taken, Khao Yai checked in (${t && t.days.map((d) => d.place && d.place.en).join(',')}; ${ms.map((m) => m.day + ':' + m.place).join(' ')})`);
+      && ms.length === 5 && d0.length === 3 && d0.every((m) => m.place === 'Khao Yai National Park') && ms.find((m) => m.day === 1).place === 'Pak Chong'
+      && d0.some((m) => m.at === Date.parse('2025-12-12T09:15:30+07:00')) && st.places.some((p) => p.trip === t.id && p.key === 'snap.th-khaoyai' && p.day === 0) && st.places.some((p) => p.trip === t.id && /^snap\.g\d+$/.test(p.key) && p.name.en === 'Khao Yai National Park'),
+    `book from photos: the book is made from the dates — 3 days with their towns, 5 photos on their days with the time they were taken and the finer spot from the phone's list (the national park), the town and the spot checked in (${t && t.days.map((d) => d.place && d.place.en).join(',')}; ${ms.map((m) => m.day + ':' + m.place).join(' ')})`);
     ok(!bodies.some((b) => /14\.4\d|101\.3\d|33\.8\d|151\.2\d/.test(b)), `book from photos: no position in any request (${bodies.length} writes)`);
     page.off('request', watch);
     await s.shot('snap-book');
@@ -282,7 +282,7 @@ const T = 'hk-macau-2026';
     await page.waitForFunction((tid) => S.media.filter((m) => m.trip === tid).length === 2, id, { timeout: 15000 });
     await page.waitForFunction(() => queue.length === 0, null, { timeout: 30000 });
     const st = await apiState(page), ms = st.media.filter((m) => m.trip === id).map((m) => m.place).sort().join(',');
-    ok(ms === 'Bang Saen,Khao Yai' && st.places.some((p) => p.trip === id && p.key === 'snap.th-khaoyai'), `on the trip: a photo with a position takes its town, one without takes "now around" (${ms})`);
+    ok(ms === 'Bang Saen,Khao Yai National Park' && st.places.some((p) => p.trip === id && p.key === 'snap.th-khaoyai'), `on the trip: a photo with a position takes its finer spot (the town checked in too), one without takes "now around" (${ms})`);
     // P4: the day took the photo's town as its place, so the book has the library's picture, crest and town — and the kids' side works
     await page.waitForFunction((tid) => { const x = trips().find((y) => y.id === tid); return x && x.days[0].place && (x.theme.artDays || [])[0]; }, id, { timeout: 10000 });
     const tk = (await apiState(page)).trips.find((x) => x.id === id);

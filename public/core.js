@@ -405,6 +405,7 @@ const offlineUrls = (t) => {
   kidArtSlugs().forEach((k) => { urls.add(kidArt(k)); urls.add(kidArt(k, true)); urls.add(kidArt(k, false, t)); urls.add(kidArt(k, true, t)); });
   mediaOf(t.id).forEach((m) => { if (!m.local) { urls.add(`/media/${encodeURIComponent(m.id)}/t`); if (m.highlight || isDrawingId(m.id)) urls.add(`/media/${encodeURIComponent(m.id)}`); } });
   videoOf(t.id).forEach((m) => { if (!m.local) urls.add(`/media/${encodeURIComponent(m.id)}/t`); });   // a clip's poster; the clip itself only with "everything"
+  if (t.kind === 'snap') new Set(['th', ...(((t.theme || {}).snap || {}).places || []).map((p) => String(p).split('-')[0])]).forEach((cc) => { if (/^[a-z]{2}$/.test(cc)) urls.add(`/geo/${cc}.json`); });   // a book from photos names new photos with no signal too
   return [...urls];
 };
 const isDrawingId = (id) => /^dr-/.test(id);
