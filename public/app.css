@@ -3070,6 +3070,25 @@ details.emeal[open]>summary .mname{visibility:hidden}
 .snaprun h2{font-size:17px;margin:0 0 4px}
 .snapsum{list-style:none;margin:8px 0;padding:0}
 .snaph2{font-size:1.05rem;margin:18px 0 2px}
+/* the photo-book screens in the menu's pastel (owner, Nov 2026: "สีสันด้วย"): .pz paints a card in its own --g1 like .hubgrid.tl-pastel .tile */
+.pz{background:linear-gradient(135deg,color-mix(in srgb,var(--g1) 14%,#fff),color-mix(in srgb,var(--g1) 30%,#fff))!important;border-color:color-mix(in srgb,var(--g1) 32%,#fff)!important;color:#1F2A3A}
+@media (prefers-color-scheme:dark){:root:not([data-theme=light]) .pz{background:linear-gradient(135deg,color-mix(in srgb,var(--g1) 16%,var(--card)),color-mix(in srgb,var(--g1) 30%,var(--card)))!important;border-color:color-mix(in srgb,var(--g1) 34%,var(--card))!important;color:var(--ink)}}
+:root[data-theme=dark] .pz{background:linear-gradient(135deg,color-mix(in srgb,var(--g1) 16%,var(--card)),color-mix(in srgb,var(--g1) 30%,var(--card)))!important;border-color:color-mix(in srgb,var(--g1) 34%,var(--card))!important;color:var(--ink)}
+.pzs{display:grid;grid-template-columns:repeat(auto-fill,minmax(min(100%,150px),1fr));gap:8px;margin:12px 0}
+.pzs li.pz{display:flex;flex-direction:column;justify-content:space-between;gap:6px;min-height:76px;padding:10px 12px;border:1px solid;border-radius:var(--r)}
+.pzs li.pz span{font-size:12.5px;font-weight:700;color:color-mix(in srgb,var(--g1) 60%,#1F2A3A)}.pzs li.pz b{font-size:15px;text-align:left}
+@media (prefers-color-scheme:dark){:root:not([data-theme=light]) .pzs li.pz span{color:color-mix(in srgb,var(--g1) 55%,#fff)}}:root[data-theme=dark] .pzs li.pz span{color:color-mix(in srgb,var(--g1) 55%,#fff)}
+.snaptrips .tpo.pz[aria-pressed=true]{border:2px solid color-mix(in srgb,var(--g1) 70%,#1F2A3A)!important}.snaptrips .tpo.pz[aria-pressed=true] .ck{background:color-mix(in srgb,var(--g1) 70%,#1F2A3A)}
+.snaptrips .tpo.pz[disabled]{filter:saturate(.35)}
+.snapday.pz{border:1px solid;border-left-width:5px;border-left-color:var(--g1)!important}
+.snapday.pz .sdart{background:#fff!important;box-shadow:0 0 0 2px color-mix(in srgb,var(--g1) 55%,#fff)}
+.snapday.pz .sdn{background:var(--g1)!important;color:#fff!important}
+.pslist .psh{display:inline-flex;justify-self:start;padding:3px 10px;border-radius:999px;background:color-mix(in srgb,var(--g1) 22%,#fff);color:color-mix(in srgb,var(--g1) 60%,#1F2A3A)!important}
+@media (prefers-color-scheme:dark){:root:not([data-theme=light]) .pslist .psh{background:color-mix(in srgb,var(--g1) 26%,var(--card));color:color-mix(in srgb,var(--g1) 55%,#fff)!important}}:root[data-theme=dark] .pslist .psh{background:color-mix(in srgb,var(--g1) 26%,var(--card));color:color-mix(in srgb,var(--g1) 55%,#fff)!important}
+.psopt.pz .psic{background:var(--g1)!important;color:#fff!important}.psopt.pz .psart{background:#fff!important}
+.psopt.pz[aria-pressed=true]{border:2px solid color-mix(in srgb,var(--g1) 70%,#1F2A3A)!important}.psopt.pz .ck{background:color-mix(in srgb,var(--g1) 70%,#1F2A3A)}
+.rvbook.pz,.rvday.pz{border:1px solid}.rvday.pz .rvn{background:var(--g1)!important;color:#fff!important}
+.rvbook.pz .field,.rvday.pz .field,.snapday.pz .field{background:var(--paper)}
 .snaptrips .tpo[style*="--tc"]{border-top:4px solid var(--tc)}.snaptrips .tpo[aria-pressed=true][style*="--tc"]{border-top-width:4px}
 .sttowns{display:flex}.sttowns img{width:44px;height:44px;border-radius:50%;background:var(--paper);box-shadow:0 0 0 2px var(--card,var(--paper));object-fit:contain}.sttowns img+img{margin-left:-10px}
 .snapday[style*="--tc"]{border-left:4px solid var(--tc)}
