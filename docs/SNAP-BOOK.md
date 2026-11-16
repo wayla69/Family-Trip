@@ -441,10 +441,15 @@ Design notes that are easy to lose:
 
 | Device / browser | Picker | EXIF time | GPS | HEIC handed as | Notes |
 | --- | --- | --- | --- | --- | --- |
-| Samsung S26 Ultra / Chrome (Home-Screen app) | photo picker | 8 of 32 | 0 of 32 | 24 of 32 handed over as HEIC | 16 Nov 2026, first run: 2 with a zone; the UA says "Android 10" (Chrome's frozen value). The 24 without a time are not yet explained — the reader then knew one HEIF layout; v217 reads two more and says why per type |
-| Samsung S26 Ultra / Chrome | "ไฟล์" | | | | |
+| Samsung S26 Ultra · Android 17 · Chrome 157 (Home-Screen app) | photo picker | 14 of 14 (v217) | 0 of 14 | HEIC as is (`image/heic`, 8 of 14) | 16 Nov 2026. Every miss is `nogps`: Android takes the position out. Zone on 9 of 14. Before v217 the reader missed Samsung's HEIC layout (8 of 32 with a time) |
+| Samsung (same) | "ไฟล์" (no `accept`) | 1 of 1 HEIC | 0 | HEIC as is | the document picker takes the position out too — no second route on Android |
+| Samsung (same) | camera (`capture`) | 1 of 1 | **1 of 1** | JPEG | a photo taken through the app keeps its position and zone |
+| Samsung (same) | live position | — | yes, about 25 m | — | `getCurrentPosition` after one permission tap |
 | iPhone / Safari (Home-Screen app) | Photos | | | | |
 | iPad Pro 10.5" (iPadOS 17) | Photos | | | | |
 | iPad mini 4 (iPadOS 15) | Photos | | | | |
 
-Decisions after P0: D3 route = … · gazetteer source = … · R3 confirmed by owner on … .
+Decisions after P0: **D3 route (Android, decided from the Samsung):** a photo picked from the phone carries its time but never
+its position, through either picker; so on Android "after the trip" asks one place per day (A4) as its main path, and "during the
+trip" takes photos through the app's own camera button (position kept) or reads the live position on "ใช้ตำแหน่งตอนนี้". No second
+picker button. Still to run: iPhone and iPads (expected to keep the position) · gazetteer source = … · R3 confirmed by owner on … .
