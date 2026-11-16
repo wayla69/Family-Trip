@@ -16,6 +16,8 @@ const EMOJI = require('./emoji');
 const STOCK = require('./stock');   // "stock:<id>" in a seed → the library picture's URL (docs/STOCK-ART.md)
 const CORE = require('../scripts/lib/plan-to-seed-core.mjs');   // the sample book is built from its plan on request (ESM via require, Node ≥ 22.12)
 const sharp = require('sharp');
+const VID = require('./video');
+const NEAR = require('./nearname');   // the opt-in online place-name lookup (a ~1 km position → OpenStreetMap's name for the spot)   // video clips: re-encoded, 30 s, every piece of metadata (the place it was filmed) dropped
 
 const FAMILY = process.env.FAMILY_ID || 'family';
 // who runs this instance, named on the privacy page (#/privacy) — the data controller the family can write to
@@ -119,6 +121,8 @@ function router({ pool, media, A, ai, hooks = {} }) {   // hooks.heart(h): set b
   const dayArg = (v) => (v === null || v === undefined || v === '' ? null : Number(v));
   const keyFull = (tid, id) => `p/${tid}/${id}.jpg`;
   const keyThumb = (tid, id) => `t/${tid}/${id}.jpg`;
+  const keyVideo = (tid, id) => `v/${tid}/${id}.mp4`;
+  const isAud = (m) => String((m && m.mime) || '').startsWith('audio/'), isVid = (m) => String((m && m.mime) || '').startsWith('video/');
   const keyAudio = (tid, id, ext) => `a/${tid}/${id}.${ext}`;   // voice memos: stored as the phone recorded them
 
   // ----- the family: who the children are and how they are drawn (server/family.js)
@@ -382,6 +386,40 @@ function router({ pool, media, A, ai, hooks = {} }) {   // hooks.heart(h): set b
     try { await q('DELETE FROM entries WHERE id=$1 AND family_id=$2', [req.params.id, FAMILY]); res.json({ ok: true }); } catch (e) { next(e); }
   });
 
+  // ----- video clips (?kind=video): the phone's file streamed to a temporary file, re-encoded by ffmpeg (server/video.js: the
+  // first 30 s, ≤ 1280 px, every piece of metadata — where it was filmed — dropped) + a poster frame as its thumbnail
+  const vidBusy = new Set();
+  r.put('/api/b/media/:id', A.requireEditor, async (req, res, next) => {
+    if (req.query.kind !== 'video') return next('route');
+    let tmp = null;
+    try {
+      const id = req.params.id;
+      if (!ID_RE.test(id)) return bad(res, 'id');
+      if (req.headers['x-mb'] !== '1') return bad(res, 'bad-request');
+      const ex = (await q('SELECT width w, height h, family_id FROM media WHERE id=$1', [id]))[0];
+      if (ex) return ex.family_id === FAMILY ? res.json({ ok: true, id, w: ex.w, h: ex.h, dup: true }) : bad(res, 'conflict', 409);
+      if (vidBusy.has(id)) return bad(res, 'busy', 503);   // the same clip is still being made (a retry from the phone's queue): try later
+      const t = await trip(String(req.query.trip || '')); if (!t) return bad(res, 'trip');
+      const day = dayArg(req.query.day); if (!dayOk(t, day)) return bad(res, 'day');
+      const mime = String(req.headers['content-type'] || '').split(';')[0].trim().toLowerCase();
+      if (!VID.MIMES[mime]) return bad(res, 'bad-video', 415);
+      if (Number(req.headers['content-length'] || 0) > VID.MAX_IN) return bad(res, 'too-big', 413);
+      if (!(await VID.available())) return bad(res, 'no-video', 503);
+      vidBusy.add(id);
+      try {
+        try { tmp = await VID.receive(req); } catch (e) { return e.code === 'big' ? bad(res, 'too-big', 413) : bad(res, 'empty'); }
+        if (tmp.bytes < 1000) return bad(res, 'empty');
+        let v; try { v = await VID.processVideo(tmp.file); } catch (e) { console.error('video', e.message, e.detail || ''); return bad(res, 'bad-video', 415); }
+        await media.put(keyVideo(t.id, id), v.video, 'video/mp4');
+        await media.put(keyThumb(t.id, id), v.thumb);
+        const pos = (await q('SELECT count(*)::int n FROM media WHERE trip_id=$1 AND day_index IS NOT DISTINCT FROM $2', [t.id, day]))[0].n;
+        await q(`INSERT INTO media (id, family_id, trip_id, day_index, storage_key, mime, bytes, width, height, caption, pos, taken_at, created_by, created_uid, place)
+          VALUES ($1,$2,$3,$4,$5,'video/mp4',$6,$7,$8,$9,$10,$11,$12,$13,$14) ON CONFLICT (id) DO NOTHING`,
+        [id, FAMILY, t.id, day, keyVideo(t.id, id), v.video.length, v.w, v.h, clip(req.query.caption, 500), pos, at(req.query.at), clip(req.user.name, 40), req.user.uid, clip(req.query.place, 120).trim()]);
+        res.json({ ok: true, id, w: v.w, h: v.h, mime: 'video/mp4' });
+      } finally { vidBusy.delete(id); }
+    } catch (e) { next(e); } finally { if (tmp) fs.rm(tmp.file, { force: true }, () => {}); }
+  });
   // ----- photos: EXIF/GPS stripped, 2560 px + 520 px thumb, stored in the private bucket
   r.put('/api/b/media/:id', A.requireEditor, express.raw({ type: () => true, limit: '40mb' }), async (req, res, next) => {
     try {
@@ -435,7 +473,8 @@ function router({ pool, media, A, ai, hooks = {} }) {   // hooks.heart(h): set b
   r.delete('/api/b/media/:id', A.requireEditor, async (req, res, next) => {
     try {
       const m = (await q('DELETE FROM media WHERE id=$1 AND family_id=$2 RETURNING trip_id, storage_key, mime', [req.params.id, FAMILY]))[0];
-      if (m && String(m.mime || '').startsWith('audio/')) await media.del(m.storage_key);   // really gone (PDPA)
+      if (m && isAud(m)) await media.del(m.storage_key);   // really gone (PDPA)
+      else if (m && isVid(m)) { await media.del(m.storage_key); await media.del(keyThumb(m.trip_id, req.params.id)); }
       else if (m) { await media.del(keyFull(m.trip_id, req.params.id)); await media.del(keyThumb(m.trip_id, req.params.id)); }
       res.json({ ok: true });
     } catch (e) { next(e); }
@@ -445,13 +484,13 @@ function router({ pool, media, A, ai, hooks = {} }) {   // hooks.heart(h): set b
     try {
       const m = (await q('SELECT trip_id, storage_key, mime FROM media WHERE id=$1 AND family_id=$2', [req.params.id, FAMILY]))[0];
       if (!m || !A.canSee(req.user, m.trip_id)) return res.sendStatus(404);   // a group never sees another book's photos
-      const audio = String(m.mime || '').startsWith('audio/');
+      const audio = isAud(m), video = isVid(m) && !thumb;   // a clip's thumbnail is its poster frame, a JPEG like a photo's
       if (audio && thumb) return res.sendStatus(404);   // a voice memo has no thumbnail
-      const buf = await media.get(audio ? m.storage_key : thumb ? keyThumb(m.trip_id, req.params.id) : keyFull(m.trip_id, req.params.id));
+      const buf = await media.get(audio || video ? m.storage_key : thumb ? keyThumb(m.trip_id, req.params.id) : keyFull(m.trip_id, req.params.id));
       if (!buf) return res.sendStatus(404);
       res.setHeader('Cache-Control', 'private, max-age=31536000, immutable');
-      if (!audio) return res.type('image/jpeg').send(buf);
-      // a voice memo: Safari's <audio> asks for byte ranges and only plays a 206 answer
+      if (!audio && !video) return res.type('image/jpeg').send(buf);
+      // a voice memo or a clip: Safari's <audio>/<video> asks for byte ranges and only plays a 206 answer
       res.setHeader('Accept-Ranges', 'bytes'); res.type(m.mime);
       const r = /^bytes=(\d*)-(\d*)$/.exec(req.headers.range || '');
       if (!r || (r[1] === '' && r[2] === '')) return res.send(buf);
@@ -745,6 +784,11 @@ function router({ pool, media, A, ai, hooks = {} }) {   // hooks.heart(h): set b
     res.json({ places: ps.filter(([, p]) => Array.isArray(p.ll)).map(([id, p]) => ({ id, name: p.name, ll: p.ll, tz: p.tz, cc: p.country, home: !!p.home })),
       countries: ps.filter(([id, p]) => id === p.country).map(([id, p]) => ({ cc: id, name: p.name, tz: p.tz || null })) });
   });
+  // the online place-name lookup (editors; the phone sends it only with the family's switch on): a position rounded to ~1 km in,
+  // the names out — never stored, never logged (server/nearname.js)
+  r.post('/api/b/geo/near', ...W, async (req, res, next) => {
+    try { const out = await NEAR.near((req.body || {}).ll); res.setHeader('Cache-Control', 'no-store'); res.json(out ? { ok: true, ...out } : { ok: false }); } catch (e) { next(e); }
+  });
   r.post('/api/b/snap', ...W, async (req, res, next) => {
     const c = await pool.connect();
     try {
@@ -767,6 +811,37 @@ function router({ pool, media, A, ai, hooks = {} }) {   // hooks.heart(h): set b
       }
       await c.query('COMMIT');
       await snapMatch(id).catch((e) => console.error('snap match', e.message));   // the library's pictures and the kids' towns
+      res.json({ ok: true, id });
+    } catch (e) { await c.query('ROLLBACK').catch(() => {}); next(e); } finally { c.release(); }
+  });
+  // "go again" (owner, Nov 2026: "ใช้เล่มจากรูปเป็นแผนของทริปหน้า" → "ไปอีกครั้ง"): a new, empty book from a book from photos —
+  // the same towns day by day from a new first date (the gaps between days kept), each day's name, place and emoji, the book's
+  // colour; then the library's pictures, crest, passport days and the kids' map (snapMatch). Nothing the family recorded is copied
+  // (no photo, word or tick). The new book is a book from photos too (closed: it becomes the Today page on its own dates).
+  r.post('/api/b/snap/:trip/again', ...W, async (req, res, next) => {
+    const c = await pool.connect();
+    try {
+      const src = (await q("SELECT id, title, timezone, theme, cover, kind FROM trips WHERE id=$1 AND family_id=$2", [req.params.trip, FAMILY]))[0];
+      if (!src || src.kind !== 'snap') return bad(res, 'trip', 404);
+      const from = String((req.body || {}).date_from || '');
+      if (!/^\d{4}-\d{2}-\d{2}$/.test(from) || Number.isNaN(dayMs(from))) return bad(res, 'dates');
+      const sd = await q("SELECT day_index, to_char(date,'YYYY-MM-DD') date, title, place, emoji FROM trip_days WHERE trip_id=$1 ORDER BY day_index", [src.id]);
+      if (!sd.length) return bad(res, 'empty');
+      const shift = dayMs(from) - dayMs(sd[0].date), dates = sd.map((d) => new Date(dayMs(d.date) + shift).toISOString().slice(0, 10));
+      if (!goodDates(dates) || !spanOk(dates)) return bad(res, 'dates');
+      const st = src.title || {}, title = { th: clip(`${st.th || st.en || 'ทริปของเรา'} อีกครั้ง`, 120), en: clip(`${st.en || st.th || 'Our trip'} again`, 120) };
+      const th = src.theme || {}, id = `snap-${dates[0].replace(/-/g, '')}-${crypto.randomBytes(3).toString('hex')}`;
+      const theme = { accent: th.accent || SNAPDEF, accentAuto: th.accentAuto !== false, display: 'sans', snap: { places: ((th.snap || {}).places || []).slice(0, 30), again: src.id } };
+      await c.query('BEGIN');
+      await c.query(`INSERT INTO trips (id, family_id, slug, title, date_from, date_to, timezone, theme, cover, source, kind, open)
+        VALUES ($1,$2,$1,$3,$4,$5,$6,$7,$8,'manual','snap',false)`, [id, FAMILY, title, dates[0], dates[dates.length - 1], src.timezone || 'Asia/Bangkok', theme, src.cover || { emoji: '📷' }]);
+      for (const [i, d] of sd.entries()) {
+        const auto = /^(วันที่ \d+|Day \d+)$/.test((d.title || {}).en || '') || /^วันที่ \d+$/.test((d.title || {}).th || '');
+        await c.query('INSERT INTO trip_days (trip_id, day_index, date, title, place, emoji) VALUES ($1,$2,$3,$4,$5,$6)',
+          [id, i, dates[i], auto ? { th: `วันที่ ${i + 1}`, en: `Day ${i + 1}` } : d.title, d.place, d.emoji || '']);
+      }
+      await c.query('COMMIT');
+      await snapMatch(id).catch((e) => console.error('snap match', e.message));
       res.json({ ok: true, id });
     } catch (e) { await c.query('ROLLBACK').catch(() => {}); next(e); } finally { c.release(); }
   });
@@ -845,7 +920,7 @@ function router({ pool, media, A, ai, hooks = {} }) {   // hooks.heart(h): set b
     // a book from photos has no plan and often no words yet: its days' places and photo moments are the facts (part of day · place · how many)
     const snapMoments = async (di) => {
       if (tk.kind !== 'snap') return [];
-      const rows = await q(`SELECT place, EXTRACT(HOUR FROM taken_at AT TIME ZONE $3)::int h FROM media WHERE trip_id=$1 AND day_index=$2 AND (mime IS NULL OR mime NOT LIKE 'audio/%') ORDER BY taken_at`, [t.id, di, tk.timezone || 'Asia/Bangkok']);
+      const rows = await q(`SELECT place, EXTRACT(HOUR FROM taken_at AT TIME ZONE $3)::int h FROM media WHERE trip_id=$1 AND day_index=$2 AND mime LIKE 'image/%' ORDER BY taken_at`, [t.id, di, tk.timezone || 'Asia/Bangkok']);
       const part = (h) => (lang === 'en' ? (h < 11 ? 'morning' : h < 14 ? 'midday' : h < 17 ? 'afternoon' : h < 19 ? 'evening' : 'night') : (h < 11 ? 'ช่วงเช้า' : h < 14 ? 'ตอนกลางวัน' : h < 17 ? 'ช่วงบ่าย' : h < 19 ? 'ตอนเย็น' : 'ตอนค่ำ'));
       const out = []; for (const r of rows) { const k = part(r.h) + (r.place ? ` · ${r.place}` : ''), last = out[out.length - 1]; if (last && last.k === k) last.n++; else out.push({ k, n: 1 }); }
       return out.map((m) => `${lang === 'en' ? 'Photos' : 'รูป'}: ${m.k} (${m.n})`);
@@ -1232,7 +1307,7 @@ function router({ pool, media, A, ai, hooks = {} }) {   // hooks.heart(h): set b
       const b = req.body || {}, lang = b.lang === 'en' ? 'en' : 'th';
       const t = await trip(String(b.trip || '')); if (!t) return bad(res, 'trip');
       const day = dayArg(b.day); if (day === null || !dayOk(t, day)) return bad(res, 'day');
-      const rows = await q(`SELECT id, caption FROM media WHERE trip_id=$1 AND day_index=$2 AND mime NOT LIKE 'audio/%' ${b.all ? '' : 'AND ai_at IS NULL'} ORDER BY taken_at, pos LIMIT $3`, [t.id, day, PHOTOS_PER_CALL]);
+      const rows = await q(`SELECT id, caption FROM media WHERE trip_id=$1 AND day_index=$2 AND mime LIKE 'image/%' ${b.all ? '' : 'AND ai_at IS NULL'} ORDER BY taken_at, pos LIMIT $3`, [t.id, day, PHOTOS_PER_CALL]);
       if (!rows.length) return bad(res, 'empty', 422);   // nothing new to look at → don't call the model
       const d = (await q('SELECT title, planned, plan FROM trip_days WHERE trip_id=$1 AND day_index=$2', [t.id, day]))[0] || {};
       const nm = (x) => (x && typeof x === 'object' ? x[lang] || x.en || x.th : x);
@@ -1255,10 +1330,10 @@ function router({ pool, media, A, ai, hooks = {} }) {   // hooks.heart(h): set b
       // a drawing is never picked); at most two, and the parents change them in the photo viewer like any star
       let starred = 0;
       const picks = rows.filter((m) => seen[m.id] && seen[m.id].best && !m.id.startsWith('dr-')).slice(0, 2).map((m) => m.id);
-      if (picks.length && !(await q("SELECT 1 FROM media WHERE trip_id=$1 AND day_index=$2 AND highlight AND mime NOT LIKE 'audio/%' AND id NOT LIKE 'dr-%' LIMIT 1", [t.id, day])).length) {
+      if (picks.length && !(await q("SELECT 1 FROM media WHERE trip_id=$1 AND day_index=$2 AND highlight AND mime LIKE 'image/%' AND id NOT LIKE 'dr-%' LIMIT 1", [t.id, day])).length) {
         starred = (await pool.query('UPDATE media SET highlight=true WHERE trip_id=$1 AND id = ANY($2)', [t.id, picks])).rowCount;
       }
-      const left = (await q("SELECT count(*)::int n FROM media WHERE trip_id=$1 AND day_index=$2 AND mime NOT LIKE 'audio/%' AND ai_at IS NULL", [t.id, day]))[0].n;
+      const left = (await q("SELECT count(*)::int n FROM media WHERE trip_id=$1 AND day_index=$2 AND mime LIKE 'image/%' AND ai_at IS NULL", [t.id, day]))[0].n;
       res.json({ ok: true, n, left, starred });
     } catch (e) { next(e); }
   });

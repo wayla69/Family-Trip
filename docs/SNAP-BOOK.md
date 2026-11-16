@@ -392,8 +392,7 @@ checked-in places; a place not in the library → emoji/day art fallback, no bro
 existing 7-size test) with a snap book; printed PDF has a cover, 3 day pages, no "nothing recorded" text.
 
 ### P5 — Later, only if asked
-Opt-in reverse geocode (D2 v2) · "ดูเหมือนสองทริป" split UI polish · video · finer gazetteers abroad · turning a snap book
-into the seed of next year's plan.
+Built (Nov 2026, owner: "ชื่อสถานที่ละเอียดขึ้น วิดีโอ และใช้เล่มจากรูปเป็นแผนของทริปหน้า"): finer place names — a GeoNames list per country read on the phone, plus the opt-in online lookup (D2 v2, a position rounded to ~1 km through our server to OpenStreetMap) · video clips up to 30 s (re-encoded, metadata dropped) · "go again" (a new book with the same towns from a new first date). Still open: "ดูเหมือนสองทริป" split UI polish.
 
 Rough size: P1 ≈ 5–7 days of focused work, P2 ≈ 2, P3 ≈ 3–4, P4 ≈ 3. P1 alone is shippable and useful.
 

@@ -176,14 +176,15 @@ app.post('/api/b/import/harbour-hop', A.requireEditor, async (req, res, next) =>
 
 // static PWA
 const PUB = path.join(__dirname, '..', 'public');
+const GEO_DIR = path.join(PUB, 'geo');   // each country's place names (scripts/geo/build.mjs): read on the phone, cached apart from the app shell
 // the service worker serves the app shell from its cache first (instant open, even on hotel wifi), so a changed file must
 // change sw.js too: its cache name carries a hash of every file under public/, a forgotten mbs-vN bump can't strand a phone
 const SW = (() => {
   const h = crypto.createHash('sha1');
   const walk = (d) => fs.readdirSync(d, { withFileTypes: true }).sort((a, b) => (a.name < b.name ? -1 : 1)).forEach((e) => {
     const f = path.join(d, e.name);
-    if (e.isDirectory()) { if (f !== STOCK.DIR) walk(f); } else if (e.name !== 'sw.js') h.update(e.name).update(fs.readFileSync(f));
-  });   // public/stock is left out: a new city's pictures are not a new app shell (they have their own cache, docs/STOCK-ART.md §5.2)
+    if (e.isDirectory()) { if (f !== STOCK.DIR && f !== GEO_DIR) walk(f); } else if (e.name !== 'sw.js') h.update(e.name).update(fs.readFileSync(f));
+  });   // public/stock and public/geo are left out: a new city's pictures are not a new app shell (they have their own cache, docs/STOCK-ART.md §5.2)
   walk(PUB);
   const tag = h.digest('hex').slice(0, 10);
   return fs.readFileSync(path.join(PUB, 'sw.js'), 'utf8').replace(/const V = '(mbs-v\d+)'/, `const V = '$1-${tag}'`);
@@ -200,6 +201,8 @@ app.get('/sw.js', (_req, res) => { res.setHeader('Content-Type', 'text/javascrip
 // the stock art library: versioned file names (name.v2.svg), so a file never changes — a year's cache; a missing one is a 404, never the app page
 app.use('/stock', express.static(STOCK.DIR, { index: false, fallthrough: true, setHeaders: (res, f) => { res.setHeader('Cache-Control', f.endsWith('index.json') ? 'no-cache' : 'public, max-age=31536000, immutable'); if (f.endsWith('.svg')) res.setHeader('Content-Security-Policy', "default-src 'none'; style-src 'unsafe-inline'"); } }));
 app.use('/stock', (_req, res) => res.status(404).end());
+app.use('/geo', express.static(GEO_DIR, { index: false, fallthrough: true, setHeaders: (res) => res.setHeader('Cache-Control', 'public, max-age=604800') }));
+app.use('/geo', (_req, res) => res.status(404).end());
 // an older Safari (iPadOS 15, 16.0–16.1) gets app.css with every color-mix() resolved (server/legacycss.js); core.js asks for it only there
 const LEGACY_CSS = require('./legacycss').legacy(fs.readFileSync(path.join(PUB, 'app.css'), 'utf8'));
 app.get('/app-legacy.css', (_req, res) => { res.setHeader('Content-Type', 'text/css; charset=utf-8'); res.setHeader('Cache-Control', 'no-cache'); res.end(LEGACY_CSS); });

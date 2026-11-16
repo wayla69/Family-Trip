@@ -253,9 +253,9 @@ const T = 'hk-macau-2026';
     const st = await apiState(page), t = st.trips.find((x) => x.kind === 'snap');
     const ms = st.media.filter((m) => m.trip === (t && t.id)), d0 = ms.filter((m) => m.day === 0);
     ok(t && t.title.en === 'Khao Yai, 3 days' && t.days.length === 3 && t.days[0].place.en === 'Khao Yai' && t.days[1].place.en === 'Pak Chong' && t.days[2].place === null
-      && ms.length === 5 && d0.length === 3 && d0.every((m) => m.place === 'Khao Yai') && ms.find((m) => m.day === 1).place === 'Pak Chong'
-      && d0.some((m) => m.at === Date.parse('2025-12-12T09:15:30+07:00')) && st.places.some((p) => p.trip === t.id && p.key === 'snap.th-khaoyai' && p.day === 0),
-    `book from photos: the book is made from the dates — 3 days with their places, 5 photos on their days with the time they were taken, Khao Yai checked in (${t && t.days.map((d) => d.place && d.place.en).join(',')}; ${ms.map((m) => m.day + ':' + m.place).join(' ')})`);
+      && ms.length === 5 && d0.length === 3 && d0.every((m) => m.place === 'Khao Yai National Park') && ms.find((m) => m.day === 1).place === 'Pak Chong'
+      && d0.some((m) => m.at === Date.parse('2025-12-12T09:15:30+07:00')) && st.places.some((p) => p.trip === t.id && p.key === 'snap.th-khaoyai' && p.day === 0) && st.places.some((p) => p.trip === t.id && /^snap\.g\d+$/.test(p.key) && p.name.en === 'Khao Yai National Park'),
+    `book from photos: the book is made from the dates — 3 days with their towns, 5 photos on their days with the time they were taken and the finer spot from the phone's list (the national park), the town and the spot checked in (${t && t.days.map((d) => d.place && d.place.en).join(',')}; ${ms.map((m) => m.day + ':' + m.place).join(' ')})`);
     ok(!bodies.some((b) => /14\.4\d|101\.3\d|33\.8\d|151\.2\d/.test(b)), `book from photos: no position in any request (${bodies.length} writes)`);
     page.off('request', watch);
     await s.shot('snap-book');
@@ -282,7 +282,7 @@ const T = 'hk-macau-2026';
     await page.waitForFunction((tid) => S.media.filter((m) => m.trip === tid).length === 2, id, { timeout: 15000 });
     await page.waitForFunction(() => queue.length === 0, null, { timeout: 30000 });
     const st = await apiState(page), ms = st.media.filter((m) => m.trip === id).map((m) => m.place).sort().join(',');
-    ok(ms === 'Bang Saen,Khao Yai' && st.places.some((p) => p.trip === id && p.key === 'snap.th-khaoyai'), `on the trip: a photo with a position takes its town, one without takes "now around" (${ms})`);
+    ok(ms === 'Bang Saen,Khao Yai National Park' && st.places.some((p) => p.trip === id && p.key === 'snap.th-khaoyai'), `on the trip: a photo with a position takes its finer spot (the town checked in too), one without takes "now around" (${ms})`);
     // P4: the day took the photo's town as its place, so the book has the library's picture, crest and town — and the kids' side works
     await page.waitForFunction((tid) => { const x = trips().find((y) => y.id === tid); return x && x.days[0].place && (x.theme.artDays || [])[0]; }, id, { timeout: 10000 });
     const tk = (await apiState(page)).trips.find((x) => x.id === id);
@@ -323,7 +323,17 @@ const T = 'hk-macau-2026';
     const toastTx = await page.evaluate(() => document.getElementById('toast').textContent);
     ok(tl.days.length === 2 && tl.days[1].date === nextDay && ml.length === 3 && ml.filter((m) => m.day === 1).length === 1 && /left out/.test(toastTx),
       `photos found later: the next day was added and holds its photo; the old and the undated ones left out, and said (days ${tl.days.map((d) => d.date)}, media ${ml.map((m) => m.day)}, toast "${toastTx}")`);
-    await page.evaluate((x) => fetch('/api/b/trips/' + x, { method: 'DELETE', headers: { 'x-mb': '1' } }), id);
+    // "go here again" (owner, Nov 2026): from the menu, a first date → a new book with the same towns day by day; it opens on its menu
+    await page.goto(`${BASE}/#/t/${id}`); await page.waitForSelector('.snapagaingo');
+    await page.click('.snapagaingo'); await page.waitForSelector('#againfrom');
+    await page.fill('#againfrom', '2027-12-20'); await page.click('[data-a="snapagaingo"]');
+    await page.waitForFunction((x) => /^#\/t\/snap-20271220-/.test(location.hash) && !location.hash.includes(x), id, { timeout: 15000 }).catch(() => {});
+    const nid = await page.evaluate(() => decodeURIComponent((location.hash.split('/')[2] || '')));
+    const nb = (await apiState(page)).trips.find((x) => x.id === nid);
+    await page.waitForSelector('.hubhead');
+    ok(!!nb && nb.days.length === tl.days.length && nb.days[0].place && nb.days[0].place.en === tl.days[0].place.en && await page.locator('.hubgrid a[href$="/today"]').count() === 0 && !s.errs.length,
+      `go again: a new book with the same towns from the chosen date, on its menu (no Today tile before its dates); no page error (${nid} ${s.errs.join(' | ')})`);
+    await page.evaluate((xs) => Promise.all(xs.map((x) => fetch('/api/b/trips/' + x, { method: 'DELETE', headers: { 'x-mb': '1' } }))), [id, nid]);
     await s.ctx.close();
   }
   // #/family without the drawing helper: no character box, no server words, the birth row says what the month is for
@@ -376,6 +386,27 @@ const T = 'hk-macau-2026';
   await page.goto(`${BASE}/#/t/${T}/book`); await page.waitForSelector('#d1');
   ok(await page.locator('.fact').count() >= 2 && await page.locator('.fact b').allTextContents().then((xs) => xs.every((x) => +x > 0)), 'cover: counts only for what the book now holds, none of them zero');
   ok(await page.locator('#d1 .clips audio').count() === 1 && /มีมี่ร้องเพลง/.test(await page.locator('#d1 .clips').textContent()) && await page.locator('#d1 .mosaic img').count() === await page.evaluate(() => mediaOf('hk-macau-2026', 1).length), 'book: the clip plays from the day page with its caption; the photo mosaic is photos only');
+  // a video clip (owner, Nov 2026, ≤ 30 s): picked from the gallery, queued like a photo, made small on the server; it plays on the
+  // record page and the book's day page with its poster, never counts as a photo, never prints; kid mode's photos page plays it too
+  {
+    const { execFile } = await import('node:child_process');
+    const vf = path.join(OUT, 'clip-ui.mp4');
+    await new Promise((res, rej) => execFile('ffmpeg', ['-hide_banner', '-loglevel', 'error', '-y', '-f', 'lavfi', '-i', 'testsrc=size=640x360:rate=12', '-f', 'lavfi', '-i', 'sine=frequency=330', '-t', '3', '-c:v', 'libx264', '-preset', 'ultrafast', '-c:a', 'aac', '-shortest', vf], (e) => (e ? rej(e) : res())));
+    await page.goto(`${BASE}/#/t/${T}/log/1`); await page.waitForSelector('[data-a="pickvideo"]');
+    const ph0 = await page.evaluate(() => stats(trip('hk-macau-2026')).photos);
+    const [vc] = await Promise.all([page.waitForEvent('filechooser'), page.click('[data-a="pickvideo"]')]);
+    await vc.setFiles(vf);
+    await page.waitForFunction(() => S.media.some((m) => (m.mime || '').startsWith('video/')), null, { timeout: 15000 });
+    await page.waitForFunction(() => queue.length === 0, null, { timeout: 60000 });
+    const sv = (await apiState(page)).media.find((m) => (m.mime || '').startsWith('video/'));
+    await page.goto(`${BASE}/#/t/${T}/log/1`); await page.waitForSelector('.vclip video');
+    const recOk = await page.evaluate(() => { const v = document.querySelector('.vclip video'); return !!v && /\/media\/.+\/t$/.test(v.getAttribute('poster') || '') && document.querySelector('.vclip .clipcap') && document.querySelector('.vclip [data-a="delclip"]').getBoundingClientRect().height >= 44; });
+    await page.goto(`${BASE}/#/t/${T}/book`); await page.waitForSelector('#d1');
+    const bookOk = await page.locator('#d1 .vclips.noprint video').count() === 1;
+    const posterOk = (await page.request.get(`${BASE}/media/${sv.id}/t`)).headers()['content-type'] === 'image/jpeg';
+    ok(!!sv && sv.mime === 'video/mp4' && sv.day === 1 && recOk && bookOk && posterOk && (await page.evaluate(() => stats(trip('hk-macau-2026')).photos)) === ph0,
+      `video clip: sent, made into an mp4, plays on the record page (poster, caption, delete) and in the book (not printed), not counted as a photo (${JSON.stringify({ sv: !!sv, recOk, bookOk, posterOk })})`);
+  }
   await page.goto(`${BASE}/#/t/${T}/log/1`); await page.waitForSelector('.clips audio');
   let st = await apiState(page);
   const es = st.entries.filter((e) => e.trip === 'hk-macau-2026' && e.day === 1);
@@ -397,7 +428,7 @@ const T = 'hk-macau-2026';
   await page.setInputFiles('#fpick', await Promise.all([0, 1, 2].map(async (i) => ({ name: `p${i}.jpg`, mimeType: 'image/jpeg', buffer: await jpg(i) }))));
   await page.waitForFunction(() => document.querySelectorAll('.mosaic button').length === 3);
   await page.waitForFunction(() => queue.length === 0, null, { timeout: 30000 });
-  ok((await apiState(page)).media.filter((m) => !(m.mime || '').startsWith('audio/')).length === 3, '3 photos uploaded (the voice memo is not a photo)');
+  ok((await apiState(page)).media.filter((m) => (m.mime || 'image/jpeg').startsWith('image/')).length === 3, '3 photos uploaded (the voice memo is not a photo)');
   await page.locator('.mosaic button').first().click(); await page.waitForSelector('#lb:not([hidden]) .stage img');
   ok((await page.textContent('#lb .grow')).trim() === '1 / 3', 'lightbox counter 1 / 3');
   await page.click('#lb [data-lb="next"]');
@@ -415,7 +446,7 @@ const T = 'hk-macau-2026';
   await page.click('#lb [data-lb="close"]');
   await page.waitForFunction(() => queue.length === 0, null, { timeout: 15000 });
   st = await apiState(page);
-  ok(st.media.filter((m) => !(m.mime || '').startsWith('audio/')).length === 2 && st.media.some((m) => m.caption === 'ที่ท่าเรือ' && m.highlight), 'second tap deleted; caption + ⭐ saved');
+  ok(st.media.filter((m) => (m.mime || 'image/jpeg').startsWith('image/')).length === 2 && st.media.some((m) => m.caption === 'ที่ท่าเรือ' && m.highlight), 'second tap deleted; caption + ⭐ saved');
   ok(await s.noHScroll(), 'record page: no horizontal scroll');
   // travel notebook on the record page: rate the stay, tag it, the kids' verdicts, a note
   await page.waitForSelector('#notebook .rev');

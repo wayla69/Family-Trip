@@ -596,7 +596,7 @@ function viewHub(t) {
   const eatN = eatCount(t), picks = eatN ? eatData(t).groups.reduce((a, g) => a + g.items.filter((x) => (x.pick || []).length).length, 0) : 0;
   const learnN = t.days.reduce((a, x) => a + ((x.plan || {}).learn || []).length, 0), quizN = t.days.reduce((a, x) => a + ((x.plan || {}).quiz || []).length, 0);
   const tiles = [
-    t.kind === 'snap' && !t.open ? '' : tile('today', `#/t/${esc(t.id)}/today`, esc(t.kind === 'snap' ? L('ถ่ายรูป เลือกรูป บอกว่าอยู่ที่ไหน', 'Photos and where we are') : todayStatus), 'today' + (dn >= 0 || t.kind === 'snap' ? ' hi' : ''), artImg(t, i, 'tart')),
+    t.kind === 'snap' && !snapLive(t) ? '' : tile('today', `#/t/${esc(t.id)}/today`, esc(t.kind === 'snap' ? L('ถ่ายรูป เลือกรูป บอกว่าอยู่ที่ไหน', 'Photos and where we are') : todayStatus), 'today' + (dn >= 0 || t.kind === 'snap' ? ' hi' : ''), artImg(t, i, 'tart')),
     tile('book', `#/t/${esc(t.id)}/book`, esc([st.photos && L(`${st.photos} รูป`, `${st.photos} photo${st.photos > 1 ? 's' : ''}`), st.quotes && L(`${st.quotes} คำพูด`, `${st.quotes} quote${st.quotes > 1 ? 's' : ''}`), got && L(`ตรา ${got}`, `${got} stamp${got > 1 ? 's' : ''}`)].filter(Boolean).join(' · ') || L('ยังว่าง — เติมได้ระหว่างทริป', 'Empty for now — fills in on the trip'))),
     // the travel notebook and the kids' passports are on the shelf (they span every book), so the menu holds neither
     // the menu never repeats the bar below (owner, Nov 2026): record and eat are on the parents' bar, firsts is a row in the memory book (relatives: on their bar), so relatives alone keep the eat tile
@@ -614,11 +614,12 @@ function viewHub(t) {
   // two rows of their own — the offline row comes up under Today while it still needs a tap (not stored yet, or new photos), else it waits at the foot.
   // Kid mode has its button on the bar below, so the menu no longer repeats it.
   // (a book from photos made after the trip has no flight to store it before: its row waits at the foot)
-  const offWarn = !(off.got && !off.stale) && !(t.kind === 'snap' && !t.open), row = (cls, href, k, b, sm) => `<a class="hubrow ${cls}" href="${href}">${hubE(k)}<span class="ht"><b>${b}</b><small>${sm}</small></span>${ic('chev')}</a>`;
+  const offWarn = !(off.got && !off.stale) && !(t.kind === 'snap' && !snapLive(t)), row = (cls, href, k, b, sm) => `<a class="hubrow ${cls}" href="${href}">${hubE(k)}<span class="ht"><b>${b}</b><small>${sm}</small></span>${ic('chev')}</a>`;
   const offRow = ed ? row(`t-offline${offWarn ? ' warn' : ''}`, `#/t/${esc(t.id)}/offline`, 'offline', L('เก็บเล่มไว้ใช้ตอนไม่มีเน็ต', 'Keep this book for no signal'), esc(!off.got ? L('ยังไม่ได้เก็บ — กดก่อนขึ้นเครื่อง', 'Not stored yet — tap before the flight')
     : off.stale ? L(`เก็บเมื่อ ${off.when} · มีรูปใหม่ ${off.fresh} รูป กดเก็บเพิ่ม`, `Stored ${off.when} · ${off.fresh} new photo${off.fresh > 1 ? 's' : ''}, tap to top up`) : L(`เก็บไว้ในเครื่องแล้ว · ${off.when}`, `Stored on this phone · ${off.when}`))) : '';
   // a closed book from photos: the photos found later go in from here, each to the day it was taken (snap.js snapMoreAdd)
-  const moreRow = ed && t.kind === 'snap' && !t.open ? `<button type="button" class="hubrow snapmorego" data-a="snapmore" data-t="${esc(t.id)}">${hubE('camera')}<span class="ht"><b>${L('เติมรูปที่เจอทีหลัง', 'Add photos found later')}</b><small>${L('รูปลงวันที่ถ่ายเอง วันใหม่ต่อท้ายให้', 'Each goes to the day it was taken')}</small></span>${ic('chev')}</button>` : '';
+  const moreRow = (ed && t.kind === 'snap' ? `<button type="button" class="hubrow snapagaingo" data-a="snapagain" data-t="${esc(t.id)}">${hubE('plan')}<span class="ht"><b>${L('ไปที่นี่อีกครั้ง', 'Go here again')}</b><small>${L('เล่มใหม่ เมืองเดิมทีละวัน เลือกวันไปได้', 'A new book, the same towns day by day')}</small></span>${ic('chev')}</button>` : '')
+    + (ed && t.kind === 'snap' && !snapLive(t) ? `<button type="button" class="hubrow snapmorego" data-a="snapmore" data-t="${esc(t.id)}">${hubE('camera')}<span class="ht"><b>${L('เติมรูปที่เจอทีหลัง', 'Add photos found later')}</b><small>${L('รูปลงวันที่ถ่ายเอง วันใหม่ต่อท้ายให้', 'Each goes to the day it was taken')}</small></span>${ic('chev')}</button>` : '');
   const shelfRow = moreRow + row('shelfgo', '#/', 'shelf', L('ชั้นหนังสือ', 'Bookshelf'), L('เปลี่ยนเล่ม', 'Other books'))
     + (ed && t.kind === 'snap' && S.features.story ? row('snapdraftgo', `#/t/${esc(t.id)}/draft`, 'sparkle', L('ให้ผู้ช่วยร่างเล่ม', 'Let the helper draft the book'), L('ชื่อวัน สรุปวัน คำนำ นิทาน', 'Day names, summaries, foreword, stories')) : '');
   // the tiles in three named groups, the group the family needs now first: on the trip "during the trip", before it "get ready",
@@ -1283,6 +1284,7 @@ ${dayStory(t, d, route, visited)}
 <div>
 ${sum ? `<p class="daysum">${emoIn(esc(sum.text))}${trLine(sum)}</p>` : ''}
 ${mosaicByPlace(t, ph)}
+${vidsBlock(t, i, false)}
 ${audioOf(t.id, i).length ? `<div class="clips noprint">${audioOf(t.id, i).map((m) => `<div class="clip"><span>${ic('mic')} ${esc(m.caption || L('เสียงจากวันนี้', 'A voice from today'))}</span>${clipPlayer(m)}</div>`).join('')}</div>` : ''}
 ${timeline.length ? `<ol class="tl parts">${timeline.map((x, k) => { const pt = dayPart(x.at, t.timezone), prev = k ? dayPart(timeline[k - 1].at, t.timezone) : ''; return `<li${pt === prev ? ' class="same"' : ''}><time>${pt === prev ? '' : esc(pt)}</time><div>${x.h}</div></li>`; }).join('')}</ol>` : ''}
 ${note ? `<div class="call calm"><span class="lbl">${L('โน้ตพ่อแม่', "Parents' note")}</span>${emoIn(esc(note.text))}${trLine(note)}</div>` : ''}
@@ -1918,7 +1920,7 @@ function viewPrivacy() {
   const who = op.name ? `<p>${L(`ผู้ดูแลระบบนี้คือ <b>${esc(op.name)}</b>`, `This instance is run by <b>${esc(op.name)}</b>`)}${op.email ? ` · <a href="mailto:${esc(op.email)}">${esc(op.email)}</a>` : ''}</p>`
     : `<p class="notice">${L('ยังไม่ได้ระบุชื่อผู้ดูแลระบบ ตั้งได้ในหน้าตั้งค่าของเซิร์ฟเวอร์', 'No operator is named yet — it is set in the server’s settings')}</p>`;
   const erase = !ed ? '' : `<div class="call warn pverase"><span class="lbl">${L('ลบข้อมูลทั้งหมด', 'Delete everything')}</span>
-<p>${L(`ลบทุกเล่ม ทุกรูป ทุกเสียง ทุกข้อความ ลูกๆ ญาติ และการเตือน ออกจากเซิร์ฟเวอร์และที่เก็บไฟล์ทันที กู้คืนไม่ได้ (ยกเว้นจากสำเนาที่คุณดาวน์โหลดไว้เอง) เล่มที่มากับแอปจะกลับมาว่างเปล่า`, `Removes every book, photo, voice clip and word, the children, the relatives’ groups and the reminders from the server and the file store at once. It cannot be undone (except from a copy you downloaded yourself). The books that come with the app return empty.`)}</p>
+<p>${L(`ลบทุกเล่ม ทุกรูป ทุกคลิป ทุกเสียง ทุกข้อความ ลูกๆ ญาติ และการเตือน ออกจากเซิร์ฟเวอร์และที่เก็บไฟล์ทันที กู้คืนไม่ได้ (ยกเว้นจากสำเนาที่คุณดาวน์โหลดไว้เอง) เล่มที่มากับแอปจะกลับมาว่างเปล่า`, `Removes every book, photo, video clip, voice clip and word, the children, the relatives’ groups and the reminders from the server and the file store at once. It cannot be undone (except from a copy you downloaded yourself). The books that come with the app return empty.`)}</p>
 <label class="vgl">${L(`พิมพ์ชื่อแอป “${esc(app)}” เพื่อยืนยัน`, `Type the app’s name, “${esc(app)}”, to confirm`)}<input id="erasetxt" class="field" value="${esc(eraseTyped)}" autocomplete="off" data-draft="erase"></label>
 <p id="erasemsg" class="label"></p>
 <button type="button" class="btn danger" data-a="erase" ${eraseTyped.trim() === app ? '' : 'disabled'}>${L('ลบข้อมูลทั้งหมดของครอบครัวนี้', 'Delete all of this family’s data')}</button></div>`;
@@ -1928,6 +1930,7 @@ ${sec('ใครดูแลข้อมูล', 'Who looks after the data', who
 ${sec('เก็บอะไรบ้าง', 'What is kept', ul([
   ['ชื่อเล่น เดือนและปีเกิดของลูก และตัวการ์ตูนที่เลือก', 'The children’s nicknames, month and year of birth, and the characters chosen for them'],
   ['รูป เสียง และภาพวาดที่พ่อแม่อัปโหลด (ตำแหน่ง GPS และข้อมูลกล้องถูกลบออกก่อนเก็บ)', 'Photos, voice clips and drawings the parents upload (GPS and camera data are stripped before storing)'],
+  ['คลิปวิดีโอ (ไม่เกิน 30 วินาที): ทำเป็นไฟล์ใหม่ขนาดเล็ก ตำแหน่งที่ถ่าย รุ่นโทรศัพท์ และข้อมูลแฝงทั้งหมดถูกลบออกก่อนเก็บ', 'Video clips (up to 30 s): made into a new, smaller file; where it was filmed, the phone model and every other hidden detail are removed before storing'],
   ['ข้อความที่พิมพ์: คำพูดเด็ก โน้ต อารมณ์ ครั้งแรก รีวิว ค่าใช้จ่าย จดหมาย', 'Words the parents type: the kids’ quotes, notes, moods, firsts, reviews, spending, letters'],
   ['หัวใจและข้อความสั้นจากญาติ', 'Hearts and short messages from relatives'],
   ['รหัสของญาติ เก็บเป็นค่าที่อ่านคืนไม่ได้ · รหัสครอบครัวไม่ได้เก็บในฐานข้อมูล', 'Relatives’ PINs, stored only as one-way hashes · the family PIN is not stored in the database'],
@@ -1944,9 +1947,10 @@ ${sec('ใครอื่นเห็นบ้าง', 'Who else ever sees it', 
   ['“ให้ผู้ช่วยดูรูปวันนี้” เฉพาะเมื่อเปิดใช้และกดเอง: ส่งรูปย่อของวันนั้นครั้งเดียว ไม่เก็บ', '“Look at today’s photos”, only when switched on and pressed: that day’s small thumbnails, once, not stored'],
   ['วาดตัวการ์ตูนจากรูปลูก (OpenAI) เฉพาะเมื่อพ่อแม่อัปโหลด: รูปถูกย่อ ส่งครั้งเดียว และไม่เก็บที่ไหน', 'Drawing a character from a child’s photo (OpenAI), only when a parent uploads one: shrunk, sent once, stored nowhere'],
   ['พยากรณ์อากาศ (Open-Meteo): ส่งเฉพาะพิกัดระดับเมืองของที่พักในแผน ไม่ใช่ตำแหน่งโทรศัพท์', 'The weather forecast (Open-Meteo): only the town-level location of the planned stay, never the phone’s position'],
+  ['ชื่อสถานที่ของรูป: ตามปกติเครื่องของคุณหาชื่อเองจากรายชื่อสถานที่ (GeoNames) ไม่ส่งตำแหน่งไปไหน · ถ้าพ่อแม่เปิด “ชื่อสถานที่ละเอียดจากแผนที่ออนไลน์” จะส่งตำแหน่งแบบคร่าวๆ (ราวหนึ่งกิโลเมตร) ไปถาม OpenStreetMap ผ่านเซิร์ฟเวอร์ของเรา ไม่ส่งรูปหรือชื่อใคร ไม่เก็บไว้', 'Place names for photos: normally your phone finds the name itself from a list of places (GeoNames) and sends the position nowhere · if a parent turns on “finer place names from an online map”, a rough position (about a kilometre) goes to OpenStreetMap through our server — no photo, no one’s name, nothing kept'],
   ['การเตือน: ผ่านบริการแจ้งเตือนของเครื่อง (Apple, Google) ส่งเฉพาะข้อความจากแผน ไม่มีรูปหรือชื่อ', 'Reminders: through the phone’s own push service (Apple, Google), carrying the plan’s words only, no photos or names']]))}
 ${sec('ภาพและเสียงในแอป', 'Pictures and sounds in the app', `<p>${L('ภาพวาดในโหมดเด็กวาดขึ้นสำหรับแอปนี้ เสียงสัตว์ในเกมฟาร์มส่วนใหญ่มาจาก Wikimedia Commons (สาธารณสมบัติหรือ CC0)', 'The kid-mode pictures were painted for this app. Most of the farm game’s animal voices come from Wikimedia Commons (public domain or CC0).')}</p>
-<ul class="pvl"><li>${L('เสียงหมา: ตัดจาก', 'The dog’s bark: cut from')} <a href="https://commons.wikimedia.org/wiki/File:Barking_of_a_dog.ogg" target="_blank" rel="noopener">“Barking of a dog”</a> ${L('โดย Amada44 สัญญาอนุญาต', 'by Amada44, licensed')} <a href="https://creativecommons.org/licenses/by-sa/3.0/" target="_blank" rel="noopener">CC BY-SA 3.0</a> ${L('คลิปที่ตัดแล้วเผยแพร่ภายใต้สัญญาอนุญาตเดียวกัน', '— the trimmed clip is shared under the same licence')}</li></ul>`)}
+<ul class="pvl"><li>${L('ชื่อสถานที่: จาก', 'Place names: from')} <a href="https://www.geonames.org/" target="_blank" rel="noopener">GeoNames</a> ${L('สัญญาอนุญาต', 'licensed')} <a href="https://creativecommons.org/licenses/by/4.0/" target="_blank" rel="noopener">CC BY 4.0</a></li><li>${L('เสียงหมา: ตัดจาก', 'The dog’s bark: cut from')} <a href="https://commons.wikimedia.org/wiki/File:Barking_of_a_dog.ogg" target="_blank" rel="noopener">“Barking of a dog”</a> ${L('โดย Amada44 สัญญาอนุญาต', 'by Amada44, licensed')} <a href="https://creativecommons.org/licenses/by-sa/3.0/" target="_blank" rel="noopener">CC BY-SA 3.0</a> ${L('คลิปที่ตัดแล้วเผยแพร่ภายใต้สัญญาอนุญาตเดียวกัน', '— the trimmed clip is shared under the same licence')}</li></ul>`)}
 ${sec('คุกกี้', 'Cookies', `<p>${L('ใช้คุกกี้ 1 ตัวสำหรับจำว่าเข้าสู่ระบบแล้ว ไม่มีคุกกี้โฆษณาหรือวิเคราะห์ และไม่มีสคริปต์ของบุคคลที่สาม', 'One cookie remembers that you are signed in. There are no advertising or analytics cookies and no third-party scripts.')}</p>`)}
 ${sec('สิทธิ์ของคุณ', 'Your rights', `<ul class="pvl">
 <li>${L('ดูและแก้ไข: ทุกอย่างแก้ได้ในแอป', 'See and correct: everything can be edited in the app')}</li>
@@ -2447,9 +2451,9 @@ function viewLog(t, i, evening) {
 ${planLite(t, i)}
 
 <section class="blk" id="lgphotos"><h3>${ic('camera')} ${L('รูป', 'Photos')}${ph.length ? ` <span class="label">${ph.length}</span>` : ''}</h3>
-<div class="row"><button class="btn" type="button" data-a="pickphotos" data-fpick data-t="${esc(t.id)}" data-d="${i}">＋ ${L('เพิ่มรูป', 'Add photos')}</button><span class="progress" id="prog2"></span></div>
+<div class="row"><button class="btn" type="button" data-a="pickphotos" data-fpick data-t="${esc(t.id)}" data-d="${i}">＋ ${L('เพิ่มรูป', 'Add photos')}</button><button class="btn ghost" type="button" data-a="pickvideo" data-t="${esc(t.id)}" data-d="${i}">＋ ${L('คลิปวิดีโอ', 'Video clip')}</button><span class="progress" id="prog2"></span></div>
 ${photoSpots(t, i, ph)}
-${ph.length ? `<div class="lgmos" style="margin-top:10px">${mosaicByPlace(t, ph)}</div>` : ''}${upBlock()}</section>
+${ph.length ? `<div class="lgmos" style="margin-top:10px">${mosaicByPlace(t, ph)}</div>` : ''}${vidsBlock(t, i, true)}${upBlock()}</section>
 
 <section class="blk" id="lgquotes"><h3>${ic('quote')} ${L('คำพูดน่ารัก', 'Things they said')}</h3>
 <div class="row" role="group">${kids.concat('both').map((k) => `<button class="chip" data-a="who" data-v="${k}" aria-pressed="${quoteWho === k}">${kidFace(k)} ${esc(kidName(k))}</button>`).join('')}</div>
@@ -2506,6 +2510,15 @@ function spendPlaces(t, i) {
 // the kids' voices: a few seconds each, recorded on the phone, kept with the day. Played here, in the book and in kid mode —
 // never in the printed book (paper cannot play them) and never sent anywhere else.
 const clipPlayer = (m) => `<audio controls preload="none" src="${esc(m.local || `/media/${encodeURIComponent(m.id)}`)}"></audio>`;
+// video clips (≤ 30 s, owner, Nov 2026): played where they are, the poster frame first (preload none: a book of clips costs nothing until
+// one is tapped); never printed, never shared as a photo. On the record page each has its caption and a delete.
+const vidPlayer = (m) => `<video controls playsinline preload="none"${m.local ? '' : ` poster="/media/${encodeURIComponent(m.id)}/t"`} src="${esc(m.local || `/media/${encodeURIComponent(m.id)}`)}"></video>`;
+function vidsBlock(t, i, edit) {
+  const vs = videoOf(t.id, i); if (!vs.length) return '';
+  return `<div class="vclips noprint">${vs.map((m) => `<figure class="vclip">${vidPlayer(m)}${edit
+    ? `<div class="row"><input class="field small clipcap" data-v="${esc(m.id)}" value="${esc(m.caption || '')}" placeholder="${L('คลิปนี้คืออะไร', 'What is this clip?')}" maxlength="120"><button class="mini" data-a="delclip" data-v="${esc(m.id)}" aria-label="${L('ลบคลิป', 'Delete clip')}">✕</button></div>${m.pending ? `<small class="label">⏳ ${L('รอส่ง', 'Waiting to send')}</small>` : ''}`
+    : m.caption ? `<figcaption>${emoIn(esc(m.caption))}</figcaption>` : ''}</figure>`).join('')}</div>`;
+}
 function clipsBlock(t, i) {
   const cs = audioOf(t.id, i), can = typeof MediaRecorder !== 'undefined' && navigator.mediaDevices && navigator.mediaDevices.getUserMedia;
   return `<section class="blk clips"><h3>${ic('mic')} ${L('เสียงของเด็กๆ', 'Their voices')} ${cs.length ? `<span class="label">${cs.length}</span>` : ''}</h3>
