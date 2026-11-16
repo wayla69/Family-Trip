@@ -3,10 +3,14 @@
 Status: **P0–P4 built** (16 Nov 2026; P4 = the library's pictures, crest, stamps and the kids' towns for a book from photos): the reader and `#/snaptest`, the book from photos after the trip (`#/snap`), the share
 target into it, every upload taking the photo's own time, the open book's day page during the trip (`viewSnapLive`), and the
 helper's draft of the book (`#/t/<id>/draft`: names, summaries, foreword, stories). R3 confirmed by the owner (16 Nov 2026).
-P4 (pictures and the kids' side) is next. P3 left out photo help inside the job (D6.2; the record page's "look at today's
-photos" still works per day), the `entries.src` "drafted by the helper" mark and the C3 review screen (the drafts are edited
-where they live: day names on the days, texts on the record page). P2 left out the 21:30 nudge for a day the app
-was never opened on (no day row exists for it) and the offline-day test in test/offline.mjs; P1 left out the B3 place sheet (a day's place is a text box with the library's names) and the "two trips" split. Written 16 Nov 2026 for handoff; the next session implements from this file.
+The leftovers of P1–P3 are built too (16 Nov 2026, owner: "ทำหมดเลย"): the B3 place sheet (`snapPlaceSheet`: the day's photo
+places, the region's library landmarks from `GET /api/b/geo/:place/landmarks`, the family's other books' places, every library town;
+search in place, "use what I typed"), the "two trips" split (`snapRuns`/`snapTrips`: two or more runs of three photos or more → pick
+the trip for this book; after it is made the phone keeps the rest and comes back to the next), the C3 review page
+(`#/t/<id>/draft/review`, `viewSnapReview`; migration 0026 `entries.src` = 'ai' on the helper's drafts, cleared by a changed text
+or "keep this draft"), the 21:30 nudge on an open book's day never opened (push.js `extras`: a snap book's own days, gaps kept,
+no store-the-book or doors; key `<trip>.x.log.<date>`, opens its Today page) and the no-signal day in test/offline.mjs.
+Still left out: photo help inside the job (D6.2; the record page's "look at today's photos" still works per day). Written 16 Nov 2026 for handoff; the next session implements from this file.
 Owner's ask: "บางครอบครัวไม่ได้วางแผน ให้ทำเล่มเปล่า ถ่ายรูป ใช้ location ในรูป แล้วใช้ AI ร่างเป็นเก็บประวัติ storybook เองได้เลย …
 ทำให้การใช้งานแบบทริปพิเศษ หรือคนไทยเที่ยวใกล้ๆ ยกมือถือมาทำแล้วได้เล่มเลย".
 

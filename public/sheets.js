@@ -3,9 +3,10 @@
 
 /* ---------- writes (all through the offline queue) ---------- */
 function putEntry(t, row, id) {
-  const body = { trip: t.id, day: row.day, kind: row.kind, child: row.child || null, text: row.text || '', mood: row.mood || null, first_key: row.first_key || null, lang: row.lang || null, highlight: !!row.highlight, at: row.at || Date.now() };
-  const cur = S.entries.find((e) => e.id === id), tr = cur && cur.text === body.text ? cur.tr || null : null;   // an edited text drops its translation (the server does the same)
-  return enqueue({ method: 'PUT', url: '/api/b/entries/' + encodeURIComponent(id), body, local: { coll: 'entries', id, row: { ...body, tr, created_by: S.me.name, mine: true } } });
+  const body = { trip: t.id, day: row.day, kind: row.kind, child: row.child || null, text: row.text || '', mood: row.mood || null, first_key: row.first_key || null, lang: row.lang || null, highlight: !!row.highlight, at: row.at || Date.now(), ...(row.accept ? { accept: true } : {}) };
+  const cur = S.entries.find((e) => e.id === id), same = cur && cur.text === body.text, tr = same ? cur.tr || null : null;   // an edited text drops its translation (the server does the same)
+  const src = same && !row.accept ? cur.src || null : null;   // the helper's draft mark: gone once the text changes or the parents keep the draft
+  return enqueue({ method: 'PUT', url: '/api/b/entries/' + encodeURIComponent(id), body, local: { coll: 'entries', id, row: { ...body, tr, src, created_by: S.me.name, mine: true } } });
 }
 const delEntry = (id) => enqueue({ method: 'DELETE', url: '/api/b/entries/' + encodeURIComponent(id), local: { coll: 'entries', id, del: true } });
 let spendCat = 'food', spendCur = '';   // the spend box remembers the last category / money while recording

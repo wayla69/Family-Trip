@@ -449,22 +449,25 @@ async function snapSift(list) {
   }
 }
 const snapIn = (s, i) => !s.aside[i] || s.keep.has(i);   // a photo set aside stays out until the parents bring it back
-// the runs of dates in the picked photos (gaps under three days), in date order, each with how many photos it holds
+// the runs of dates in the picked photos (gaps under three days), in date order, each with how many photos it holds (a photo set aside
+// does not count), the towns it names most and whether it is already a book
 function snapRuns() {
   const s = snapS, items = s.files.map((f, i) => ({ i, m: s.metas[i] })).filter((x) => x.m && x.m.at && snapIn(s, x.i));
   const dates = [...new Set(items.map((x) => x.m.at.slice(0, 10)))].sort();
   const runs = []; for (const d of dates) { const r = runs[runs.length - 1]; if (r && (Date.parse(d) - Date.parse(r[r.length - 1])) / 864e5 < 3) r.push(d); else runs.push([d]); }
-  return runs.map((r) => ({ dates: r, n: items.filter((x) => r.includes(x.m.at.slice(0, 10))).length }));
+  return runs.map((r) => { const its = items.filter((x) => r.includes(x.m.at.slice(0, 10))), tally = {};
+    for (const x of its) { const p = s.pl[x.i]; if (p && p.id) tally[p.id] = (tally[p.id] || 0) + 1; }
+    return { dates: r, at: r[0], n: its.length, made: (s.made || []).includes(r[0]), towns: Object.keys(tally).sort((a, b) => tally[b] - tally[a]).slice(0, 3) }; });
 }
-// "looks like two trips" (owner, Nov 2026): a second run is a trip of its own when it holds five photos or more
-const snapBigRuns = () => snapRuns().filter((r) => r.n >= 5);
-// the trip in the picked photos: dates in a run with gaps under three days (the run that holds the most photos, or the one the parents
-// picked, or every big run merged), its days and moments
+// "ดูเหมือนสองทริป": two or more runs that each look like a trip (three photos or more) — the parents pick one, a book each, or all in one book
+const snapTrips = () => snapRuns().filter((r) => r.n >= 3);
+// the trip in the picked photos: the run asked for (its first date), every trip not yet made ('all'), the one the parents picked, else the
+// one that holds the most photos (not one already made) — its days and moments
 function snapPlan(only) {
   const s = snapS, items = s.files.map((f, i) => ({ i, m: s.metas[i], pl: s.pl[i] })).filter((x) => x.m && x.m.at && snapIn(s, x.i));
-  const runs = snapRuns(), big = runs.filter((r) => r.n >= 5), pick = only !== undefined ? only : s.runPick;
-  const run = typeof pick === 'number' && runs[pick] ? runs[pick].dates : pick === 'all' ? big.flatMap((r) => r.dates)
-    : (runs.slice().sort((a, b) => b.n - a.n)[0] || { dates: [] }).dates;
+  const runs = snapRuns(), pick = only !== undefined ? only : s.runPick === 'all' ? 'all' : s.runAt;
+  const run = pick === 'all' ? snapTrips().filter((r) => !r.made).flatMap((r) => r.dates)
+    : ((pick && runs.find((r) => r.at === pick && !r.made)) || runs.filter((r) => !r.made).sort((x, y) => y.n - x.n)[0] || { dates: [] }).dates;
   const inRun = new Set(run), days = run.map((date) => {
     const ps = items.filter((x) => x.m.at.slice(0, 10) === date).sort((a, b) => (a.m.at < b.m.at ? -1 : 1));
     const t = (x) => Date.parse(x.m.at + 'Z');
@@ -497,6 +500,36 @@ function snapThumb(i) { if (!snapS.urls[i]) snapS.urls[i] = URL.createObjectURL(
 function snapForget() { if (snapS) Object.values(snapS.urls).forEach((u) => URL.revokeObjectURL(u)); snapS = null; }
 const snapNote = (th, en) => `<p class="snapnote">${ic('lock')}<span>${L(th, en)}</span></p>`;
 
+// B3, the place sheet (docs/SNAP-BOOK.md D2.3): a day's place picked from a list instead of typed — the places its photos named, the
+// landmarks of that region from the library (finer than the town: "a waterfall", "the night safari"), the places this family used in
+// its other books, then every library town; a search box filters the list in place, and what is typed can be used as it is
+// the menu's bright colours (app.css .hubgrid .t-*), one per day or group, painted pastel by .pz (the menu tiles' recipe)
+const SNAP_PAL = ['#4F7BFF', '#FF9A3C', '#1CC9A4', '#C850F0', '#FF6FA8', '#F2B90C', '#22D3EE', '#9BD82A'];
+const snapPal = (i) => SNAP_PAL[((i % SNAP_PAL.length) + SNAP_PAL.length) % SNAP_PAL.length];
+// a place's own look on the photo-book screens: its library stamp and colour (from /api/b/geo), else nothing
+const snapGeoOf = (id) => (id && snapS && snapS.geo && (snapS.geo.places || []).find((g) => g.id === id)) || null;
+const snapArtOf = (id) => (snapGeoOf(id) || {}).art || '';
+const snapColOf = (id) => (snapGeoOf(id) || {}).c || '';
+const snapPlBtn = (d) => `<button type="button" class="snapplb" data-a="snapplace" data-v="${d.date}" aria-label="${L('เลือกจากรายการ', 'Pick from a list')}">${ic('pin')}<span>${L('เลือก', 'Pick')}</span></button>`;
+const snapLm = {};   // place id → Promise of its landmarks
+function snapLandmarks(id) { if (!snapLm[id]) snapLm[id] = api('GET', `/api/b/geo/${encodeURIComponent(id)}/landmarks`).then((r) => r.landmarks || []).catch(() => { delete snapLm[id]; return []; }); return snapLm[id]; }
+async function snapPlaceSheet(date) {
+  const plan = snapPlan(), d = plan.days.find((x) => x.date === date); if (!d) return;
+  const k = lang === 'en' ? 'en' : 'th', seen = new Set(), now = (snapS.typed[date] !== undefined ? snapS.typed[date] : T(snapDayPlace(d) || '')).trim().toLowerCase();
+  // a row: a picture (the library's own drawing for a landmark, else a tinted icon), the name, a ✓ on the day's place now — the app's option-card look
+  const group = (title, icon, items) => { const xs = items.map((x) => (typeof x === 'string' ? { n: x } : x)).map((x) => ({ ...x, n: String(x.n || '').trim() })).filter((x) => x.n && !seen.has(x.n.toLowerCase()) && seen.add(x.n.toLowerCase()));
+    const gc = { camera: '#FF6FA8', pin: snapColOf((d.top[0] || {}).id) || '#1CC9A4', book: '#F2B90C', globe: '#4F7BFF' }[icon] || '#4F7BFF';
+    return xs.length ? `<li class="psh" style="--g1:${gc}">${title}</li>${xs.map((x) => `<li><button type="button" class="psopt pz" style="--g1:${gc}" data-a="snapplacepick" data-d="${date}" data-v="${esc(x.n)}" aria-pressed="${x.n.toLowerCase() === now}">${x.art ? `<img class="psart" src="${esc(x.art)}" alt="" loading="lazy">` : `<span class="psic">${ic(icon)}</span>`}<span class="psn">${esc(x.n)}</span><span class="ck" aria-hidden="true">✓</span></button></li>`).join('')}` : ''; };
+  const photo = d.top.flatMap((p) => [p.spot ? { n: p.spot[k] || p.spot.th, art: snapArtOf(p.id) } : '', { n: p[k] || p.th, art: snapArtOf(p.id) }]);
+  const region = (d.top[0] && d.top[0].id ? await snapLandmarks(d.top[0].id) : []).map((x) => ({ n: x.name[k] || x.name.th, art: x.art }));
+  const ours = trips().filter((t) => t.kind === 'snap').flatMap((t) => t.days.map((x, j) => (x.place ? { n: T(x.place), art: dayArt(t, j) || '' } : null)).filter(Boolean));   // with that day's picture from its book
+  const towns = ((snapS.geo && snapS.geo.places) || []).slice().sort((a, b) => (b.home ? 1 : 0) - (a.home ? 1 : 0)).map((g) => ({ n: snapShort(g.name)[k], art: g.art }));
+  openSheet(`<h3>${L('สถานที่ของวัน', 'The day’s place')} · ${esc(fmtDay(date, { day: 'numeric', month: 'short' }))}</h3>
+<div class="psrow"><input id="psq" class="field" type="search" maxlength="120" autocomplete="off" placeholder="${L('ค้นหา หรือพิมพ์ชื่อเอง', 'Search, or type your own')}" value="${esc(snapS.typed[date] || '')}">
+<button type="button" class="btn" data-a="snapplacepick" data-d="${date}" data-own="1">${L('ใช้ชื่อนี้', 'Use this')}</button></div>
+<ul class="pslist">${group(L('จากรูปของวันนี้', 'From the day’s photos'), 'camera', photo)}${group(d.top[0] ? L(`ที่เที่ยวแถว${d.top[0].th}`, `Around ${d.top[0].en}`) : '', 'pin', region)}${group(L('ที่เคยใส่ในเล่มอื่น', 'From your other books'), 'book', ours)}${group(L('เมืองในคลังภาพ', 'Towns in the library'), 'globe', towns)}</ul>
+<button type="button" class="btn ghost wide" data-a="closesheet">${L('ปิด', 'Close')}</button>`);
+}
 function viewSnap(p) {
   const step = p[1] || '';
   if (step && !snapS) { setTimeout(() => location.replace('#/snap'), 0); return ''; }   // the picked files live only in this page's memory
@@ -522,23 +555,27 @@ ${snapGeoSwitch()}
     if (!plan.days.length) return `<h1>${L('ไม่พบวันที่ในรูป', 'No dates in these photos')}</h1><p>${L('รูปที่เลือกไม่มีวันเวลาที่ถ่าย ลองเลือกรูปจากกล้องโดยตรง หรือเริ่มเป็นเล่มเปล่า', 'These photos carry no time taken. Pick photos straight from the camera, or start an empty book.')}</p><div class="snapfoot"><a class="btn wide" href="#/snap">${L('เลือกใหม่', 'Pick again')}</a></div>`;
     if (plan.span > 60) return `<h1>${L('รูปยาวเกิน 60 วัน', 'More than 60 days of photos')}</h1><p>${L('เลือกเฉพาะรูปของทริปเดียว', 'Pick one trip’s photos only')}</p><div class="snapfoot"><a class="btn wide" href="#/snap">${L('เลือกใหม่', 'Pick again')}</a></div>`;
     const few = plan.pos < Math.ceil(n * 0.3), d0 = plan.days[0].date, d1 = plan.days[plan.days.length - 1].date;
-    const big = snapBigRuns(), rng = (r) => `${esc(fmtDay(r.dates[0], { day: 'numeric', month: 'short' }))}${r.dates.length > 1 ? ' – ' + esc(fmtDay(r.dates[r.dates.length - 1], { day: 'numeric', month: 'short' })) : ''}`;
-    const allSpan = big.length ? (Date.parse(big[big.length - 1].dates.slice(-1)[0]) - Date.parse(big[0].dates[0])) / 864e5 : 0, runs = snapRuns();
-    // "looks like two trips" (owner, Nov 2026): one of them, a book each, or all in one book (when they fit in 60 days)
-    const twoTrips = big.length > 1 ? `<section class="snaptwo"><h3>${L(`ดูเหมือนรูปมาจาก ${big.length} ทริป`, `These look like ${big.length} trips`)}</h3>
-<div class="tpk snapruns" role="group">${big.map((r) => { const k = runs.findIndex((x) => x.dates[0] === r.dates[0]); return `<button type="button" class="tpo" data-a="snaprun" data-v="${k}" aria-pressed="${s.runPick === k || (s.runPick === null && plan.days[0].date === r.dates[0])}"><b>${rng(r)}</b><small>${L(`เฉพาะทริปนี้ · ${r.n} รูป`, `Only this trip · ${r.n} photos`)}</small><span class="ck" aria-hidden="true">✓</span></button>`; }).join('')}
-<button type="button" class="tpo" data-a="snaprun" data-v="both" aria-pressed="${s.runPick === 'both'}"><b>${L(`แยกเป็น ${big.length} เล่ม`, `${big.length} books, one a trip`)}</b><small>${L('แต่ละทริปได้เล่มของตัวเอง', 'Each trip gets its own book')}</small><span class="ck" aria-hidden="true">✓</span></button>
-${allSpan <= 60 ? `<button type="button" class="tpo" data-a="snaprun" data-v="all" aria-pressed="${s.runPick === 'all'}"><b>${L('รวมเป็นเล่มเดียว', 'All in one book')}</b><small>${L('วันที่ห่างกันเว้นว่างไว้', 'The days between stay empty')}</small><span class="ck" aria-hidden="true">✓</span></button>` : ''}</div></section>` : '';
-    return `<h1>${L(`อ่าน ${n} รูปแล้ว`, `${n} photos read`)}</h1>${twoTrips}
-<ul class="snapsum">
-<li><span>${L('วันที่', 'Dates')}</span><b>${esc(fmtDay(d0, { day: 'numeric', month: 'short' }))}${d0 !== d1 ? ' – ' + esc(fmtDay(d1, { day: 'numeric', month: 'short' })) : ''} · ${L(`${plan.days.length} วัน`, `${plan.days.length} day${plan.days.length === 1 ? '' : 's'}`)}</b></li>
-<li><span>${L('รู้ว่าถ่ายที่ไหน', 'Know where')}</span><b>${plan.pos ? L(`${plan.pos} รูป`, `${plan.pos}`) : L('ยังไม่รู้', 'not yet')}</b></li>
-${plan.out ? `<li><span>${L('รูปนอกช่วงทริป', 'Outside the trip')}</span><b>${L(`${plan.out} รูป ไม่ใส่ในเล่ม`, `${plan.out}, left out`)}</b></li>` : ''}
-${plan.none ? `<li><span>${L('ไม่รู้วันที่ถ่าย', 'No date')}</span><b>${L(`${plan.none} รูป ไม่ใส่ในเล่ม`, `${plan.none}, left out`)}</b></li>` : ''}
-${(s.vids || []).length ? `<li><span>${L('คลิปวิดีโอ', 'Video clips')}</span><b>${((n2) => L(`${n2} คลิปลงวันที่ถ่าย`, `${n2} go on the day they were filmed`))(plan.days.reduce((a, d) => a + d.vids.length, 0))}${s.vids.length - plan.days.reduce((a, d) => a + d.vids.length, 0) ? L(` · ${s.vids.length - plan.days.reduce((a, d) => a + d.vids.length, 0)} คลิปไม่รู้วันหรืออยู่นอกทริป`, ` · ${s.vids.length - plan.days.reduce((a, d) => a + d.vids.length, 0)} with no date or outside the trip`) : ''}</b></li>` : ''}
-${plan.aside ? `<li><span>${L('พักไว้ก่อน', 'Set aside')}</span><b>${L(`${plan.aside} รูป (ภาพซ้ำ ภาพหน้าจอ) เอากลับได้`, `${plan.aside} (repeats, screenshots) — bring back any`)}</b></li>` : ''}
-${plan.stars ? `<li><span>${L('รูปเด่น ⭐', 'Best photos ⭐')}</span><b>${L(`เลือกให้ ${plan.stars} รูป เปลี่ยนได้`, `${plan.stars} picked — change any`)}</b></li>` : ''}
-</ul>
+    const trips = snapTrips(), span = (r) => esc(fmtDay(r.at, { day: 'numeric', month: 'short' })) + (r.dates.length > 1 ? ' – ' + esc(fmtDay(r.dates[r.dates.length - 1], { day: 'numeric', month: 'short' })) : '');
+    const made = s.lastMade && trip(s.lastMade);
+    const pick = trips.length > 1 ? `<h2 class="snaph2">${L(`ดูเหมือนรูปมาจาก ${trips.length} ทริป`, `These look like ${trips.length} trips`)}</h2>
+<p class="sub">${L('เลือกทริปที่จะทำเป็นเล่มนี้ ทริปที่เหลือทำเป็นอีกเล่มได้หลังสร้างเล่มนี้', 'Pick the trip for this book — the others can be their own books once this one is made')}</p>
+<div class="tpk snaptrips" role="group" aria-label="${L('ทริป', 'Trips')}">${trips.map((r) => `<button type="button" class="tpo pz" data-a="snaprun" data-v="${r.at}" aria-pressed="${!s.runPick && r.dates[0] === d0}"${r.made ? ' disabled' : ''} style="--g1:${esc(snapColOf(r.towns[0]) || snapPal(trips.indexOf(r)))}">${r.towns.some(snapArtOf) ? `<span class="sttowns">${r.towns.map(snapArtOf).filter(Boolean).map((u) => `<img src="${esc(u)}" alt="" loading="lazy">`).join('')}</span>` : ''}<b>${span(r)}</b><small>${r.made ? L('ทำเป็นเล่มแล้ว', 'already a book') : L(`${r.dates.length} วัน · ${r.n} รูป`, `${r.dates.length} day${r.dates.length === 1 ? '' : 's'} · ${r.n} photos`)}</small><span class="ck" aria-hidden="true">✓</span></button>`).join('')}</div>` : '';
+    // "a book each" or "all in one book" (owner, Nov 2026), while two trips or more are still to make; all in one only within 60 days
+    const open = trips.filter((r) => !r.made), allSpan = open.length ? (Date.parse(open[open.length - 1].dates.slice(-1)[0]) - Date.parse(open[0].at)) / 864e5 : 0;
+    const joinRow = open.length > 1 ? `<div class="tpk snapjoin" role="group">
+<button type="button" class="tpo" data-a="snaprun" data-v="both" aria-pressed="${s.runPick === 'both'}"><b>${L(`แยกเป็น ${open.length} เล่ม`, `${open.length} books, one a trip`)}</b><small>${L('แต่ละทริปได้เล่มของตัวเอง', 'Each trip gets its own book')}</small><span class="ck" aria-hidden="true">✓</span></button>
+${allSpan <= 60 ? `<button type="button" class="tpo" data-a="snaprun" data-v="all" aria-pressed="${s.runPick === 'all'}"><b>${L('รวมเป็นเล่มเดียว', 'All in one book')}</b><small>${L('วันที่ห่างกันเว้นว่างไว้', 'The days between stay empty')}</small><span class="ck" aria-hidden="true">✓</span></button>` : ''}</div>` : '';
+    return `${made ? `<p class="notice">${L(`สร้างเล่ม “${esc(T(made.title))}” แล้ว รูปกำลังส่งขึ้น — ทำอีกทริปต่อได้เลย`, `“${esc(T(made.title))}” is made and its photos are on their way — now the next trip`)} <a href="#/t/${encodeURIComponent(made.id)}/${S.features.story ? 'draft' : 'book'}">${L('ไปที่เล่มนั้น', 'Go to that book')}</a></p>` : ''}
+<h1>${L(`อ่าน ${n} รูปแล้ว`, `${n} photos read`)}</h1>
+<ul class="snapsum pzs">
+<li class="pz" style="--g1:#4F7BFF"><span>${L('วันที่', 'Dates')}</span><b>${esc(fmtDay(d0, { day: 'numeric', month: 'short' }))}${d0 !== d1 ? ' – ' + esc(fmtDay(d1, { day: 'numeric', month: 'short' })) : ''} · ${L(`${plan.days.length} วัน`, `${plan.days.length} day${plan.days.length === 1 ? '' : 's'}`)}</b></li>
+<li class="pz" style="--g1:#1CC9A4"><span>${L('รู้ว่าถ่ายที่ไหน', 'Know where')}</span><b>${plan.pos ? L(`${plan.pos} รูป`, `${plan.pos}`) : L('ยังไม่รู้', 'not yet')}</b></li>
+${plan.out ? `<li class="pz" style="--g1:#FF9A3C"><span>${L(trips.length > 1 ? 'รูปของทริปอื่น' : 'รูปนอกช่วงทริป', trips.length > 1 ? 'Other trips' : 'Outside the trip')}</span><b>${trips.length > 1 ? L(`${plan.out} รูป ไม่ใส่ในเล่มนี้`, `${plan.out}, not in this book`) : L(`${plan.out} รูป ไม่ใส่ในเล่ม`, `${plan.out}, left out`)}</b></li>` : ''}
+${plan.none ? `<li class="pz" style="--g1:#FF6FA8"><span>${L('ไม่รู้วันที่ถ่าย', 'No date')}</span><b>${L(`${plan.none} รูป ไม่ใส่ในเล่ม`, `${plan.none}, left out`)}</b></li>` : ''}
+${(s.vids || []).length ? `<li class="pz" style="--g1:#22D3EE"><span>${L('คลิปวิดีโอ', 'Video clips')}</span><b>${((n2, rest) => L(`${n2} คลิปลงวันที่ถ่าย`, `${n2} go on the day they were filmed`) + (rest ? L(` · ${rest} คลิปไม่รู้วันหรืออยู่นอกทริป`, ` · ${rest} with no date or outside the trip`) : ''))(plan.days.reduce((a, d) => a + d.vids.length, 0), s.vids.length - plan.days.reduce((a, d) => a + d.vids.length, 0))}</b></li>` : ''}
+${plan.aside ? `<li class="pz" style="--g1:#C850F0"><span>${L('พักไว้ก่อน', 'Set aside')}</span><b>${L(`${plan.aside} รูป (ภาพซ้ำ ภาพหน้าจอ) เอากลับได้`, `${plan.aside} (repeats, screenshots) — bring back any`)}</b></li>` : ''}
+${plan.stars ? `<li class="pz" style="--g1:#F2B90C"><span>${L('รูปเด่น ⭐', 'Best photos ⭐')}</span><b>${L(`เลือกให้ ${plan.stars} รูป เปลี่ยนได้`, `${plan.stars} picked — change any`)}</b></li>` : ''}
+</ul>${pick}${joinRow}
 ${few ? `<p>${L('รูปส่วนใหญ่ไม่บอกตำแหน่ง (มือถือ Android ตัดออก) ขั้นต่อไปบอกสถานที่ของแต่ละวันได้เลย', 'Most photos don’t say where they were taken (Android takes it out) — the next step asks each day’s place.')}</p>` : ''}
 ${snapNote('ทั้งหมดนี้ทำบนเครื่องของคุณ รูปยังไม่ได้ส่งไปไหน', 'All of this happens on your phone — no photo has been sent anywhere.')}
 <div class="snapfoot"><a class="btn wide" href="${few ? '#/snap/places' : '#/snap/days'}">${L('ต่อไป', 'Next')}</a></div>`;
@@ -552,7 +589,7 @@ ${snapNote('ทั้งหมดนี้ทำบนเครื่องข�
     return `<h1>${L('แต่ละวันอยู่ที่ไหน', 'Where was each day?')}</h1>
 <p class="sub">${L('พิมพ์ชื่อเมืองหรือที่เที่ยวสั้นๆ ไม่ใส่ก็ได้', 'A town or a place, short — or leave it')}</p>${dl}
 <div class="snapplaces">${plan.days.map((d, i) => `<label class="snapplace"><span>${dayLine(d, i)} <small>${L(`${d.items.length} รูป`, `${d.items.length} photo${d.items.length === 1 ? '' : 's'}`)}</small></span>
-<input class="field" type="text" maxlength="120" list="snapgeo" data-snapday="${d.date}" value="${esc(placeVal(d))}" placeholder="${L('เช่น เขาใหญ่', 'e.g. Khao Yai')}"></label>`).join('')}</div>
+<span class="snappl"><input class="field" type="text" maxlength="120" list="snapgeo" data-snapday="${d.date}" value="${esc(placeVal(d))}" placeholder="${L('เช่น เขาใหญ่', 'e.g. Khao Yai')}">${snapPlBtn(d)}</span></label>`).join('')}</div>
 ${plan.days.length > 1 ? `<button type="button" class="linkbtn" data-a="snapsame">${L('ใช้ชื่อวันแรกกับทุกวัน', 'Use the first day’s place for every day')}</button>` : ''}
 <div class="snapfoot"><a class="btn wide" href="#/snap/days">${L('ต่อไป', 'Next')}</a><a class="linkbtn" href="#/snap/days">${L('ข้าม', 'Skip')}</a></div>`;
   }
@@ -561,10 +598,10 @@ ${plan.days.length > 1 ? `<button type="button" class="linkbtn" data-a="snapsame
   return `<h1>${L('วันที่จัดให้', 'Your days')}</h1>${dl}
 <label class="flabel" for="snaptitle">${L('ชื่อเล่ม', 'Book name')}</label>
 <input id="snaptitle" class="field" type="text" maxlength="120" value="${esc(s.name || T(title))}">
-<div class="snapdays">${plan.days.map((d, i) => `<details class="snapday" data-fold="d${d.date}"${(s.folds ? s.folds.has('d' + d.date) : i === 0) ? ' open' : ''}><summary>
+<div class="snapdays">${plan.days.map((d, i) => `<details class="snapday pz" data-fold="d${d.date}"${(s.folds ? s.folds.has('d' + d.date) : i === 0) ? ' open' : ''} style="--g1:${esc(snapColOf((d.top[0] || {}).id) || snapPal(i))}"><summary>${snapArtOf((d.top[0] || {}).id) ? `<img class="sdart" src="${esc(snapArtOf(d.top[0].id))}" alt="" loading="lazy">` : `<span class="sdart sdn" aria-hidden="true">${i + 1}</span>`}
 <span class="sdt"><b>${dayLine(d, i)}</b><small>${esc(placeVal(d) || L('ยังไม่ได้ใส่สถานที่', 'No place yet'))} · ${L(`${d.items.length} รูป`, `${d.items.length} photo${d.items.length === 1 ? '' : 's'}`)}${d.vids.length ? ' · ' + L(`🎬 ${d.vids.length} คลิป`, `🎬 ${d.vids.length} clip${d.vids.length === 1 ? '' : 's'}`) : ''}</small></span>
 <span class="sdph">${d.items.slice(0, 3).map((x) => `<img src="${snapThumb(x.i)}" alt="" loading="lazy">`).join('')}</span>${ic('chev', 'chv')}</summary>
-<label class="snapplace"><span>${L('สถานที่ของวัน', 'The day’s place')}</span><input class="field" type="text" maxlength="120" list="snapgeo" data-snapday="${d.date}" value="${esc(placeVal(d))}"></label>
+<label class="snapplace"><span>${L('สถานที่ของวัน', 'The day’s place')}</span><span class="snappl"><input class="field" type="text" maxlength="120" list="snapgeo" data-snapday="${d.date}" value="${esc(placeVal(d))}">${snapPlBtn(d)}</span></label>
 <ol class="snapmoms">${d.moments.map((m) => `<li><b>${snapPart(m.first)}${m.place ? ' · ' + esc(T(snapNameOf(m.place))) : ''}</b><small>${L(`${m.items.length} รูป`, `${m.items.length} photo${m.items.length === 1 ? '' : 's'}`)}</small>
 <span class="sdph sdpick">${m.items.slice().sort((a, b) => (s.star.has(b.i) ? 1 : 0) - (s.star.has(a.i) ? 1 : 0)).slice(0, 6).map((x) => `<button type="button" class="sdpt${s.star.has(x.i) ? ' on' : ''}" data-a="snapstar" data-i="${x.i}" aria-pressed="${s.star.has(x.i)}" aria-label="${L('รูปเด่น', 'Best photo')}"><img src="${snapThumb(x.i)}" alt="" loading="lazy">${s.star.has(x.i) ? '<i>⭐</i>' : ''}</button>`).join('')}</span></li>`).join('')}</ol>
 ${snapAsideHtml(d.date)}</details>`).join('')}</div>
@@ -577,7 +614,7 @@ function snapAsideHtml(date) {
   const s = snapS, ids = Object.keys(s.aside).map(Number).filter((i) => s.metas[i] && String(s.metas[i].at || '').slice(0, 10) === date);
   if (!ids.length) return '';
   return `<details class="snapaside" data-fold="a${date}"${s.folds && s.folds.has('a' + date) ? ' open' : ''}><summary><span>${L(`พักไว้ ${ids.length} รูป`, `${ids.length} set aside`)}<small>${L('ภาพซ้ำและภาพหน้าจอ แตะรูปเพื่อเอากลับเข้าเล่ม', 'Repeats and screenshots — tap one to put it back')}</small></span>${ic('chev', 'chv')}</summary>
-<span class="sdph sdpick">${ids.map((i) => `<button type="button" class="sdpt${s.keep.has(i) ? ' kept' : ' off'}" data-a="snapkeep" data-i="${i}" aria-pressed="${s.keep.has(i)}"><img src="${snapThumb(i)}" alt="" loading="lazy">${s.keep.has(i) ? '<i>✓</i>' : ''}</button>`).join('')}</span></details>`;
+<span class="sdph sdpick">${ids.map((i) => `<button type="button" class="sdpt${s.keep.has(i) ? ' kept' : ' off'}" data-a="snapback" data-i="${i}" aria-pressed="${s.keep.has(i)}"><img src="${snapThumb(i)}" alt="" loading="lazy">${s.keep.has(i) ? '<i>✓</i>' : ''}</button>`).join('')}</span></details>`;
 }
 // which day and set-aside folds are open on the days page, so a redraw (a photo brought back) leaves them as they were
 if (typeof document !== 'undefined') document.addEventListener('toggle', (e) => {
@@ -593,12 +630,19 @@ Object.assign(A, {
     if (!inp) { inp = document.createElement('input'); inp.type = 'file'; inp.id = 'snapin-book'; inp.multiple = true; inp.accept = 'image/*,video/*'; inp.hidden = true; document.body.append(inp); }
     inp.value = ''; inp.click();
   },
-  snaprun(b) { if (!snapS) return; const v = b.dataset.v; snapS.runPick = v === 'both' || v === 'all' ? v : Number(v); render(); },
+  snapplace(b) { if (snapS) snapPlaceSheet(b.dataset.v); },
+  snapplacepick(b) {   // a name from the sheet (or what was typed in its search box) becomes the day's place
+    if (!snapS) return; const v = b.dataset.own ? ((document.getElementById('psq') || {}).value || '') : b.dataset.v;
+    snapS.typed[b.dataset.d] = v.trim(); closeSheet(); render();
+  },
+  snaprun(b) {   // the trip this book is made of, or 'both' (a book each) / 'all' (one book)
+    if (!snapS) return; const v = b.dataset.v; if (v === 'both' || v === 'all') snapS.runPick = v; else { snapS.runPick = null; snapS.runAt = v; } snapS.typed = {}; snapS.name = ''; render();
+  },
   snapstar(b) {   // in place: a redraw would close the day's fold under the finger
     if (!snapS) return; const i = +b.dataset.i, on = !snapS.star.has(i); if (on) snapS.star.add(i); else snapS.star.delete(i);
     b.classList.toggle('on', on); b.setAttribute('aria-pressed', String(on)); const badge = b.querySelector('i'); if (on && !badge) b.insertAdjacentHTML('beforeend', '<i>⭐</i>'); else if (!on && badge) badge.remove();
   },
-  snapkeep(b) {   // the day's count changes: a redraw, with the folds that were open kept open (snapS.folds)
+  snapback(b) {   // the day's count changes: a redraw, with the folds that were open kept open (snapS.folds)
     if (!snapS) return; const i = +b.dataset.i; if (snapS.keep.has(i)) snapS.keep.delete(i); else snapS.keep.add(i); render();
   },
   snapsame() { const plan = snapPlan(), first = (document.querySelector('[data-snapday]') || {}).value || ''; plan.days.forEach((d) => { snapS.typed[d.date] = first; }); render(); },
@@ -613,9 +657,9 @@ Object.assign(A, {
     if (!snapS || snapS.making) return;
     const s = snapS;
     if (s.runPick === 'both') {   // a book for each trip in the picked photos, in date order
-      const runs = snapRuns(), picks = runs.map((r, k) => (r.n >= 5 ? k : -1)).filter((k) => k >= 0);
+      const picks = snapTrips().filter((r) => !r.made).map((r) => r.at);
       s.making = true; render(); let last = null;
-      for (const k of picks) { const id = await snapMakeOne(s, snapPlan(k), picks.length > 1); if (!id) { s.making = false; render(); return; } last = id; }
+      for (const k of picks) { const id = await snapMakeOne(s, snapPlan(k), picks.length > 1); if (!id) { s.making = false; render(); return; } last = id; s.made = (s.made || []).concat(k); }
       snapForget(); snapName = '';
       toast(L(`สร้าง ${picks.length} เล่มแล้ว รูปกำลังส่งขึ้น`, `${picks.length} books made — the photos are on their way`));
       nav('#/'); return void last;
@@ -623,7 +667,11 @@ Object.assign(A, {
     const plan = snapPlan(); if (!plan.days.length) return;
     s.making = true; render();
     const id = await snapMakeOne(s, plan, false); if (!id) { s.making = false; render(); return; }
-    snapForget(); snapName = '';
+    // the photos held more than one trip: keep the rest on the phone and go on with the next one (the files are still in memory)
+    s.made = (s.made || []).concat(snapTrips().filter((r) => r.dates.some((d) => plan.days.some((x) => x.date === d))).map((r) => r.at));
+    s.making = false; s.typed = {}; s.name = ''; s.runAt = null; s.runPick = null; s.lastMade = id; snapName = '';
+    if (snapTrips().some((r) => !r.made)) { toast(L('สร้างเล่มแล้ว ทำอีกทริปต่อได้เลย', 'The book is made — now the next trip')); nav('#/snap/read'); return; }
+    snapForget();
     toast(L('สร้างเล่มแล้ว รูปกำลังส่งขึ้น', 'The book is made — the photos are on their way'));
     nav(`#/t/${encodeURIComponent(id)}/${S.features.story ? 'draft' : 'book'}`);
   },
@@ -887,7 +935,7 @@ ${running ? `<p class="sub">${L(`เสร็จ ${doneN} จาก ${job.steps.
 ${why ? `<p class="notice">${why}</p>` : ''}
 <ol class="snapsteps">${job.steps.map((s) => { const [c, m, w] = stepSt(s); return `<li class="${c}"><span class="ssi" aria-hidden="true">${m}</span><b>${stepName(s)}</b><small>${w}</small></li>`; }).join('')}</ol>
 <div class="snapfoot">${running ? `<button type="button" class="btn ghost wide" data-a="snapdstop">${L('หยุดร่าง', 'Stop')}</button>`
-    : `<a class="btn wide" href="#/t/${encodeURIComponent(t.id)}/book">${L('อ่านเล่ม', 'Read the book')}</a><small>${L('ทุกบรรทัดแก้ได้ ชื่อวันแก้ที่หน้าวันที่จัดให้ เรื่องของวันแก้ในหน้าบันทึก', 'Every line can be changed — a day’s story on its record page')}</small>`}</div>`;
+    : `<a class="btn wide" href="#/t/${encodeURIComponent(t.id)}/draft/review">${L('ตรวจร่างทีละวัน', 'Check the draft, day by day')}</a><a class="linkbtn" href="#/t/${encodeURIComponent(t.id)}/book">${L('อ่านเล่ม', 'Read the book')}</a>`}</div>`;
   }
   const row = (k, th, en, sth, sen) => `<label class="snapopt"><span><b>${L(th, en)}</b>${sth ? `<small>${L(sth, sen)}</small>` : ''}</span><input type="checkbox" data-snapopt="${k}"${o[k] ? ' checked' : ''}></label>`;
   return `<h1>${L('ให้ผู้ช่วยร่างเล่ม', 'Let the helper draft the book')}</h1>
@@ -902,7 +950,34 @@ ${snapDraft.err ? `<p class="notice">${esc(snapDraft.err)}</p>` : ''}
 <small>${n ? L(`ใช้ผู้ช่วย ${n} ครั้ง`, `${n} helper call${n === 1 ? '' : 's'}`) : L('เลือกอย่างน้อยหนึ่งอย่าง', 'Pick at least one')}</small>
 <a class="linkbtn" href="#/t/${encodeURIComponent(t.id)}/book">${L('ข้าม เขียนเอง', 'Skip — I’ll write it')}</a></div>`;
 }
+// C3 (docs/SNAP-BOOK.md): every word the helper drafted on one page — the book's name, the foreword, and each day's name, few lines and
+// bedtime story — each box saves when left (the record page's own blur-save for the texts), a draft not yet kept carries "ร่างโดยผู้ช่วย"
+// with "ใช้ร่างนี้", and "ใช้ร่างทุกอันเลย" keeps them all; changing a text keeps it too (the server clears the mark)
+const snapDrafted = (t) => S.entries.filter((e) => e.trip === t.id && e.src === 'ai' && e.text);
+function viewSnapReview(t) {
+  const ent = (id) => S.entries.find((e) => e.id === id), tag = (e) => (e && e.src === 'ai' && e.text ? `<span class="aitag"><span>${ic('sparkle')}${L('ร่างโดยผู้ช่วย', 'Drafted by the helper')}</span><button type="button" class="linkbtn" data-a="snapkeep" data-v="${esc(e.id)}">${L('ใช้ร่างนี้', 'Keep this draft')}</button></span>` : '');
+  const box = (kind, d, label, rows) => { const id = d === null ? `${t.id}.${kind}.all` : `${t.id}.${kind}.d${d}`, e = ent(id);
+    return `<label class="flabel" for="rv-${esc(id)}">${label}</label>${tag(e)}<textarea id="rv-${esc(id)}" class="field" rows="${rows}" data-a-blur="${kind}" data-t="${esc(t.id)}"${d === null ? '' : ` data-d="${d}"`} data-draft="rv:${esc(id)}" placeholder="${L('ยังว่าง เขียนเองได้', 'Empty — write your own')}">${esc((e && e.text) || '')}</textarea>`; };
+  const n = snapDrafted(t).length;
+  return `<h1>${L('ตรวจร่าง', 'Check the draft')}</h1>
+<p class="sub">${L('แก้ได้ทุกช่อง ออกจากช่องแล้วบันทึกเอง', 'Change any box — it saves when you leave it')}</p>
+${n ? `<button type="button" class="btn ghost wide" data-a="snapkeepall" data-t="${esc(t.id)}">${L(`ใช้ร่างทุกอันเลย (${n})`, `Keep every draft (${n})`)}</button>` : ''}
+<section class="rvbook pz" style="--g1:${esc(t.theme.accent || '#4F7BFF')}">${((t.passport || {}).style || {}).crest ? `<img class="rvcrest" src="${esc(t.passport.style.crest)}" alt="">` : ''}<label class="flabel" for="rvtitle">${L('ชื่อเล่ม', 'Book name')}</label>
+<input id="rvtitle" class="field" type="text" maxlength="120" data-snaprt="${esc(t.id)}" value="${esc(T(t.title))}">
+${box('fore', null, L('คำนำ', 'Foreword'), 4)}</section>
+${t.days.map((d, i) => `<details class="rvday pz"${i === 0 ? ' open' : ''} style="--g1:${esc((((t.passport || {}).days || [])[i] || {}).acc || snapPal(i))}"><summary>${dayArt(t, i) ? `<img class="rvn rvart" src="${esc(dayArt(t, i))}" alt="" loading="lazy" style="--tc:${esc((((t.passport || {}).days || [])[i] || {}).acc || t.theme.accent || '')}">` : `<span class="rvn" aria-hidden="true">${i + 1}</span>`}<span class="rvt"><b>${esc(T(d.title))}</b><small>${esc(fmtDay(d.date, { day: 'numeric', month: 'short' }))}${d.place ? ' · ' + esc(T(d.place)) : ''}${snapDrafted(t).some((e) => e.day === i) ? ' · ' + L('มีร่างรอตรวจ', 'a draft to check') : ''}</small></span>${ic('chev', 'chv')}</summary>
+<label class="flabel" for="rvd${i}">${L('ชื่อวัน', 'The day’s name')}</label><input id="rvd${i}" class="field" type="text" maxlength="80" data-snapdt="${i}" data-t="${esc(t.id)}" value="${esc(T(d.title))}">
+${box('sum', i, L('สรุปวันนี้', 'The day in a few lines'), 3)}${box('story', i, L('นิทานก่อนนอน', 'Bedtime story'), 5)}</details>`).join('')}
+<div class="snapfoot"><a class="btn wide" href="#/t/${encodeURIComponent(t.id)}/book">${L('อ่านเล่ม', 'Read the book')}</a></div>`;
+}
+if (typeof document !== 'undefined') document.addEventListener('focusout', (e) => {   // the review page's names save when left (the texts use saveBlur)
+  const el = e.target, v = (el.value || '').trim(); if (!el.dataset) return;
+  if (el.dataset.snaprt) { const t = trip(el.dataset.snaprt); if (t && v && v !== T(t.title)) api('PATCH', `/api/b/trips/${encodeURIComponent(t.id)}`, { title: { th: v, en: v } }).then(() => load()).catch(() => toast(L('ยังบันทึกไม่ได้ ต้องมีเน็ต', 'Not saved — you need a connection'))); }
+  if (el.dataset.snapdt !== undefined) { const t = trip(el.dataset.t), i = +el.dataset.snapdt, d = t && t.days[i]; if (d && v && v !== T(d.title)) api('PATCH', `/api/b/days/${encodeURIComponent(t.id)}/${i}`, { title: { th: v, en: v } }).then(() => load()).catch(() => toast(L('ยังบันทึกไม่ได้ ต้องมีเน็ต', 'Not saved — you need a connection'))); }
+});
 Object.assign(A, {
+  snapkeep(b) { const e = S.entries.find((x) => x.id === b.dataset.v), t = e && trip(e.trip); if (!t) return; putEntry(t, { day: e.day, kind: e.kind, text: e.text, lang: e.lang, accept: true }, e.id).then(() => safeRender()); },
+  snapkeepall(b) { const t = trip(b.dataset.t); if (!t) return; Promise.all(snapDrafted(t).map((e) => putEntry(t, { day: e.day, kind: e.kind, text: e.text, lang: e.lang, accept: true }, e.id))).then(() => { toast(L('ใช้ร่างทั้งหมดแล้ว', 'Every draft kept')); safeRender(); }); },
   async snapdraft(b) {
     const t = trip(b.dataset.t); if (!t) return;
     b.disabled = true; snapDraft.err = '';
@@ -922,5 +997,6 @@ if (typeof document !== 'undefined') document.addEventListener('change', (e) => 
 if (typeof document !== 'undefined') document.addEventListener('input', (e) => {   // typed in place: no redraw under the finger
   if (e.target.id === 'snapname') { snapName = e.target.value; if (snapS) snapS.name = e.target.value; return; }
   if (e.target.id === 'snaptitle' && snapS) { snapS.name = e.target.value; return; }
+  if (e.target.id === 'psq') { const q = e.target.value.trim().toLowerCase(); document.querySelectorAll('.pslist li').forEach((li) => { li.hidden = !!q && !li.classList.contains('psh') && !li.textContent.toLowerCase().includes(q); }); return; }   // the sheet's search filters in place
   if (e.target.dataset && e.target.dataset.snapday && snapS) snapS.typed[e.target.dataset.snapday] = e.target.value;
 });
