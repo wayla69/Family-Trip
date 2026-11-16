@@ -293,6 +293,9 @@ const T = 'hk-macau-2026';
     await page.goto(`${BASE}/#/kid/mimi`); await page.waitForSelector('.kidtiles');
     await page.goto(`${BASE}/#/kid/mimi/quest`); await page.waitForSelector('.kidwrap');
     const questTx = await page.textContent('.kidwrap');
+    const openKid = await page.evaluate((tid) => { const t = trip(tid); return { town: T((t.passport.days[0] || {}).title), stamp: (t.passport.days[0] || {}).stamp, cert: certEarned(t, 'mimi') }; }, id);
+    ok(/Khao Yai/.test(questTx) && openKid.town === 'Khao Yai' && openKid.stamp === 'KHAO YAI' && !openKid.cert,
+      `book from photos, kids' side: the adventure map calls the town by its place, its stamp says where, no certificate while the book is open (${JSON.stringify(openKid)})`);
     await page.goto(`${BASE}/#/print/${id}`); await page.waitForSelector('section.pg');
     const printOk = await page.evaluate(() => document.querySelectorAll('section.pg').length >= 3 && [...document.querySelectorAll('img')].some((i) => /\/stock\//.test(i.src)));
     await s.shot('snap-print');
@@ -303,6 +306,7 @@ const T = 'hk-macau-2026';
     t = (await apiState(page)).trips.find((x) => x.id === id);
     await page.goto(`${BASE}/#/t/${id}`); await page.waitForSelector('.hubgrid');
     ok(t.open === false && await page.locator('.hubgrid a[href$="/today"]').count() === 0, 'on the trip: "we\'re home" (two taps) closes the book; a closed book from photos has no Today tile');
+    ok(await page.evaluate((tid) => certEarned(trip(tid), 'mimi') && /Khao Yai/.test(T(trip(tid).passport.certificate.text)), id), 'book from photos: closing the book ("we\'re home") brings the certificate');
     // photos found later (owner, Nov 2026: "เพิ่มรูปทีหลัง"): from the closed book's menu, each to the day its camera wrote — the next
     // day adds that day after the last; a photo from long ago and one with no date are left out (never piled on day 1), and the page says so
     const nextDay = new Date(Date.parse(t.days[0].date + 'T00:00:00Z') + 864e5).toISOString().slice(0, 10);
