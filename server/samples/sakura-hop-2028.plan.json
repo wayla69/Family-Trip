@@ -49,7 +49,7 @@
         { "from": "Ueno Station", "to": "Ueno Park", "by": { "th": "เดิน 5 นาที", "en": "Walk, 5 min" }, "min": 5, "url": "https://www.google.com/maps/dir/?api=1&origin=Ueno+Station&destination=Ueno+Park&travelmode=walking" }
       ],
       "plan": [
-        { "t": "10:30", "h": { "th": "🛬 ถึงโตเกียวแล้ว!", "en": "🛬 Hello Tokyo!" }, "th": "ถึงฮาเนดะ อาคาร 3 · รับกระเป๋า · ซื้อบัตร Suica ที่ตู้สีเขียว (เด็กต่ำกว่า 6 ขวบขึ้นรถไฟฟรี)", "en": "Land at Haneda T3 · bags · Suica cards from the green machines (under-6s ride free)" },
+        { "t": "10:30", "go": true, "h": { "th": "🛬 ถึงโตเกียวแล้ว!", "en": "🛬 Hello Tokyo!" }, "th": "ถึงฮาเนดะ อาคาร 3 · รับกระเป๋า · ซื้อบัตร Suica ที่ตู้สีเขียว (เด็กต่ำกว่า 6 ขวบขึ้นรถไฟฟรี)", "en": "Land at Haneda T3 · bags · Suica cards from the green machines (under-6s ride free)" },
         { "t": "11:30", "h": { "th": "🚝 นั่งโมโนเรลริมทะเล", "en": "🚝 Monorail along the sea" }, "th": "โมโนเรลไปฮามามัตสึโจ · นั่งฝั่งขวาจะเห็นอ่าวโตเกียว · ต่อสายยามาโนเตะไปอุเอโนะ", "en": "Monorail to Hamamatsucho · sit on the right for the bay · change to the Yamanote line for Ueno" },
         { "t": "13:00", "h": { "th": "🏨 ฝากกระเป๋า กินข้าวกลางวัน", "en": "🏨 Drop bags, then lunch" }, "th": "ฝากกระเป๋าที่ที่พัก · โอนิกิริจากร้านสะดวกซื้อ", "en": "Leave the bags at the inn · onigiri from a convenience store" },
         { "t": "15:00", "h": { "th": "🛝 สนามเด็กเล่นริมบึง", "en": "🛝 Playground by the pond" }, "th": "สวนอุเอโนะ · สนามเด็กเล่นใกล้สระชิโนบาซุ · ดูเป็ดกับเรือพาย", "en": "Ueno Park · the playground by Shinobazu Pond · ducks and rowing boats" },
@@ -115,7 +115,7 @@
         { "from": "Asakusa", "to": "Tokyo Skytree", "by": { "th": "เดินริมแม่น้ำ 20 นาที", "en": "Riverside walk, 20 min" }, "min": 20, "url": "https://www.google.com/maps/dir/?api=1&origin=Senso-ji&destination=Tokyo+Skytree&travelmode=walking" }
       ],
       "plan": [
-        { "t": "08:30", "h": { "th": "⛩️ วัดเก่าก่อนคนเยอะ", "en": "⛩️ Old temple before the crowds" }, "th": "วัดเซ็นโซจิ · ประตูโคมแดงยักษ์ · ลองเสี่ยงเซียมซี", "en": "Senso-ji · the giant red lantern gate · try an omikuji fortune" },
+        { "t": "08:30", "go": true, "h": { "th": "⛩️ วัดเก่าก่อนคนเยอะ", "en": "⛩️ Old temple before the crowds" }, "th": "วัดเซ็นโซจิ · ประตูโคมแดงยักษ์ · ลองเสี่ยงเซียมซี", "en": "Senso-ji · the giant red lantern gate · try an omikuji fortune" },
         { "t": "09:30", "h": { "th": "🍡 ขนมบนถนนนากามิเซะ", "en": "🍡 Snacks on Nakamise street" }, "th": "ถนนนากามิเซะ · ขนมเซมเบ้อบใหม่ · ดังโงะ", "en": "Nakamise street · fresh senbei crackers · dango" },
         { "t": "10:30", "h": { "th": "🌉 เดินข้ามแม่น้ำไปหาหอคอย", "en": "🌉 Over the river to the tower" }, "th": "เดินริมแม่น้ำสุมิดะไปสกายทรี · ดูเรือผ่าน", "en": "Walk along the Sumida river to the Skytree · watch the boats" },
         { "t": "11:00", "h": { "th": "🐧 อควาเรียม ดูให้อาหารเพนกวิน!", "en": "🐧 Aquarium — penguin feeding!" }, "th": "อควาเรียมซุมิดะ · เพนกวินกินปลาตอนสายๆ · แมงกะพรุนเรืองแสง", "en": "Sumida Aquarium · late-morning penguin feeding · glowing jellyfish" },
@@ -182,7 +182,7 @@
         { "from": "Shinjuku", "to": "Shibuya", "by": { "th": "JR สายยามาโนเตะ 7 นาที", "en": "JR Yamanote line, 7 min" }, "min": 7, "url": "https://www.google.com/maps/dir/?api=1&origin=Shinjuku+Station&destination=Shibuya+Station&travelmode=transit" }
       ],
       "plan": [
-        { "t": "09:00", "h": { "th": "🧳 ย้ายไปชินจูกุ", "en": "🧳 Over to Shinjuku" }, "th": "เช็กเอาต์ · สายยามาโนเตะไปชินจูกุ · ฝากกระเป๋าที่ที่พักใหม่", "en": "Check out · Yamanote line to Shinjuku · leave the bags at the new inn" },
+        { "t": "09:00", "go": true, "h": { "th": "🧳 ย้ายไปชินจูกุ", "en": "🧳 Over to Shinjuku" }, "th": "เช็กเอาต์ · สายยามาโนเตะไปชินจูกุ · ฝากกระเป๋าที่ที่พักใหม่", "en": "Check out · Yamanote line to Shinjuku · leave the bags at the new inn" },
         { "t": "10:30", "h": { "th": "🌸 ปิกนิกใต้ต้นซากุระ", "en": "🌸 Picnic under the blossom" }, "th": "สวนชินจูกุเกียวเอ็น · ปูผ้านั่งใต้ต้นซากุระ · สนามหญ้ากว้างให้วิ่ง", "en": "Shinjuku Gyoen · a mat under the trees · wide lawns to run on" },
         { "t": "12:30", "h": { "th": "🍱 เบนโตะใต้ต้นไม้", "en": "🍱 Bento under the trees" }, "th": "เบนโตะซื้อจากห้างใต้ดินก่อนเข้าสวน · ในสวนห้ามดื่มแอลกอฮอล์", "en": "Bento from a department store food hall before the gates · no alcohol inside the garden" },
         { "t": "14:00", "h": { "th": "😴 งีบในรถเข็น", "en": "😴 A buggy nap" }, "th": "เดินเล่นสวนช้าๆ ให้น้องงีบในรถเข็น", "en": "A slow walk round the garden while the little one naps" },
@@ -248,7 +248,7 @@
         { "from": "Shimbashi", "to": "Telecom Center", "by": { "th": "ยูริคาโมเมะ 25 นาที", "en": "Yurikamome, 25 min" }, "min": 25, "url": "https://www.google.com/maps/dir/?api=1&origin=Shimbashi+Station&destination=Miraikan&travelmode=transit" }
       ],
       "plan": [
-        { "t": "09:00", "h": { "th": "🚝 นั่งหน้าสุด ไม่มีคนขับ!", "en": "🚝 Front seat, no driver!" }, "th": "ยูริคาโมเมะจากชิมบาชิ · แย่งที่นั่งหน้าสุด · ข้ามสะพานเรนโบว์", "en": "Yurikamome from Shimbashi · grab the front seats · over the Rainbow Bridge" },
+        { "t": "09:00", "go": true, "h": { "th": "🚝 นั่งหน้าสุด ไม่มีคนขับ!", "en": "🚝 Front seat, no driver!" }, "th": "ยูริคาโมเมะจากชิมบาชิ · แย่งที่นั่งหน้าสุด · ข้ามสะพานเรนโบว์", "en": "Yurikamome from Shimbashi · grab the front seats · over the Rainbow Bridge" },
         { "t": "10:00", "h": { "th": "🤖 พิพิธภัณฑ์หุ่นยนต์", "en": "🤖 The robot museum" }, "th": "พิพิธภัณฑ์มิไรคัง · หุ่นยนต์ · ลูกโลกยักษ์เรืองแสง · มุมเด็กเล็ก", "en": "Miraikan · robots · the giant glowing globe · a corner for little ones" },
         { "t": "12:30", "h": { "th": "🍔 มื้อกลางวันริมทะเล", "en": "🍔 Lunch by the sea" }, "th": "ศูนย์อาหารในห้างริมทะเล · มีห้องให้นมและเปลี่ยนผ้าอ้อม", "en": "A food court by the sea · nursing and changing rooms" },
         { "t": "14:00", "h": { "th": "🏖️ เล่นทรายริมอ่าว", "en": "🏖️ Sand play by the bay" }, "th": "ชายหาดโอไดบะ · เล่นทราย (ห้ามลงว่ายน้ำ) · ดูเรือกับสะพาน", "en": "Odaiba beach · sand play, no swimming · boats and the bridge" },
@@ -313,7 +313,7 @@
         { "from": "Kichijoji", "to": "Inokashira Park", "by": { "th": "เดิน 8 นาที", "en": "Walk, 8 min" }, "min": 8, "url": "https://www.google.com/maps/dir/?api=1&origin=Kichijoji+Station&destination=Inokashira+Park&travelmode=walking" }
       ],
       "plan": [
-        { "t": "09:30", "h": { "th": "🚃 รถไฟสายสีส้ม", "en": "🚃 The orange train" }, "th": "สายชูโอไปคิชิโจจิ · เดินผ่านร้านขนมไปสวน", "en": "Chuo line to Kichijoji · walk past the sweet shops to the park" },
+        { "t": "09:30", "go": true, "h": { "th": "🚃 รถไฟสายสีส้ม", "en": "🚃 The orange train" }, "th": "สายชูโอไปคิชิโจจิ · เดินผ่านร้านขนมไปสวน", "en": "Chuo line to Kichijoji · walk past the sweet shops to the park" },
         { "t": "10:00", "h": { "th": "🦢 ปั่นเรือหงส์", "en": "🦢 Pedal a swan boat" }, "th": "เรือหงส์ในบึงอิโนะคาชิระ · เสื้อชูชีพสำหรับเด็ก · เรือละ 30 นาที", "en": "Swan boats on Inokashira pond · life jackets for the kids · 30 min a boat" },
         { "t": "11:00", "h": { "th": "🐿️ สวนสัตว์จิ๋ว", "en": "🐿️ The tiny zoo" }, "th": "สวนสัตว์อิโนะคาชิระ · กระรอก · มุมสัตว์ให้ลูบ · นกน้ำ", "en": "Inokashira Park Zoo · squirrels · a petting corner · water birds" },
         { "t": "12:30", "h": { "th": "🥞 แพนเค้กริมบึง", "en": "🥞 Pancakes by the pond" }, "th": "คาเฟ่ริมบึง · แพนเค้กนุ่ม · นั่งดูเป็ด", "en": "Pond-side café · fluffy pancakes · duck watching" },
@@ -377,7 +377,7 @@
       ],
       "plan": [
         { "t": "08:30", "h": { "th": "🧳 เก็บกระเป๋า", "en": "🧳 Pack the bags" }, "th": "เก็บกระเป๋า · เช็กลิ้นชักกับใต้เตียง · เช็กเอาต์ฝากกระเป๋า", "en": "Pack · check the drawers and under the beds · check out and leave the bags" },
-        { "t": "10:00", "h": { "th": "🍡 ขนมฝากจากห้างใต้ดิน", "en": "🍡 Gifts from the food hall" }, "th": "ห้างใต้ดินชินจูกุ · ขนมกล่องสวยๆ ฝากคุณตาคุณยาย", "en": "Shinjuku food hall · pretty boxes of sweets for the grandparents" },
+        { "t": "10:00", "go": true, "h": { "th": "🍡 ขนมฝากจากห้างใต้ดิน", "en": "🍡 Gifts from the food hall" }, "th": "ห้างใต้ดินชินจูกุ · ขนมกล่องสวยๆ ฝากคุณตาคุณยาย", "en": "Shinjuku food hall · pretty boxes of sweets for the grandparents" },
         { "t": "12:00", "h": { "th": "🍙 โอนิกิริมื้อสุดท้าย", "en": "🍙 One last onigiri" }, "th": "มื้อกลางวันเบาๆ · โอนิกิริกับซุปมิโซะ", "en": "A light lunch · onigiri and miso soup" },
         { "t": "13:00", "h": { "th": "🚌 บัสไปสนามบิน", "en": "🚌 Bus to the airport" }, "th": "รับกระเป๋า · บัสลีมูซีนจากสถานีชินจูกุ", "en": "Collect the bags · limousine bus from Shinjuku Station" },
         { "t": "14:30", "h": { "th": "✈️ บ๊ายบายโตเกียว!", "en": "✈️ Bye bye, Tokyo!" }, "th": "เช็กอินที่ฮาเนดะ อาคาร 3 · มุมดูเครื่องบินบนชั้นดาดฟ้า", "en": "Check in at Haneda T3 · the plane-watching deck upstairs" }

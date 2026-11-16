@@ -1990,6 +1990,8 @@ const T = 'hk-macau-2026';
   await s.shot('06-sample-menu', false);
   await page.goto(`${BASE}/#/t/sakura-hop-2028/today/0`); await page.waitForSelector('.day.today');
   ok(/¥9,000/.test(await page.textContent('main')), 'sample today: a money line written "today ≈" (lower case) shows its total — dayGlance\'s `pre` flag no longer hides the brief() teaser, which crashed the whole page');
+  { const g = await page.evaluate(() => S.trips.find((x) => x.id === 'sakura-hop-2028').days.map((d) => ((d.plan || {}).plan || []).filter((r) => r.go).length));
+    ok(g.length === 6 && g.every((n) => n === 1), `sample book: every day marks the step the family leaves on (go), one a day (${g.join(',')})`); }
   { const lost = await page.evaluate(todayLost, ['sakura-hop-2028']), n = await page.evaluate(() => S.trips.find((x) => x.id === 'sakura-hop-2028').days.length);
     ok(n >= 6 && lost.length === 0, `sample book: Today loses nothing of the old full plan either — every piece of all ${n} days of a book built by plan-to-seed is on Today or on the learn page (${lost.slice(0, 4).join(' | ') || 'nothing missing'}${lost.length > 4 ? ` … ${lost.length}` : ''})`); }
   await s.shot('07-sample-today');
