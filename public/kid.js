@@ -499,7 +499,7 @@ function star(kid, n) {
   }
 }
 const CONF_C = ['#FFD36B', '#FFB0C8', '#7FE3D2', '#8FB4FF', '#C9B6FF', '#FF9A6B'];
-// real recordings (public/art/sound/*.mp3, public domain / CC0 from Wikimedia Commons, see CREDITS.txt there): fetched and decoded once,
+// real recordings (public/art/sound/*.mp3 , public domain / CC0 from Wikimedia Commons, sources in docs/SOUND-CREDITS.txt): fetched and decoded once,
 // played through the same limiter as every other sound; a file that is missing or will not decode falls back to the synthesised sound
 const clipBuf = {};
 function clip(name, fallback) {
@@ -513,7 +513,7 @@ function clip(name, fallback) {
     if (have === false) return play(null);
     if (have && !have.then) return play(have);
     if (!have) {
-      clipBuf[name] = fetch(`/art/sound/${name}.mp3`).then((r) => (r.ok ? r.arrayBuffer() : Promise.reject(new Error(r.status))))
+      clipBuf[name] = fetch(`/art/sound/${name}.mp3`).then((r) => (r.ok && /audio|mpeg/.test(r.headers.get('content-type') || '') ? r.arrayBuffer() : Promise.reject(new Error(r.status))))   // never decode the app page a missing file falls back to
         .then((a) => new Promise((ok, no) => c.decodeAudioData(a, ok, no)))   // the callback form: older Safari has no promise
         .then((b) => { clipBuf[name] = b; return b; }, () => { clipBuf[name] = false; return null; });
     }
