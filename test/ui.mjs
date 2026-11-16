@@ -262,6 +262,34 @@ const T = 'hk-macau-2026';
     await page.goto(`${BASE}/#/t/${t.id}`); await page.waitForSelector('.hubgrid'); await s.shot('snap-hub');
     await page.evaluate((id) => fetch('/api/b/trips/' + id, { method: 'DELETE', headers: { 'x-mb': '1' } }), t.id); await page.evaluate(() => load());
   }
+  // two trips in one pick (docs/SNAP-BOOK.md edge journeys): the same seven photos plus three more in April — the read page says these look
+  // like two trips, the parents pick April first, make it, and come back to the December trip with the other photos still on the phone
+  {
+    await page.goto(`${BASE}/#/snap`); await page.waitForSelector('.snapmode');
+    const fx = ['gps-ii.jpg', 'gps-mm.jpg', 'gps.avif', 'time-only.jpg', 'gps-zero.jpg', 'no-exif.jpg', 'gps-south.jpg', 'trip2-a.jpg', 'trip2-b.jpg', 'trip2-c.jpg'].map((f) => path.resolve('test/fixtures/snap', f));
+    const [fc] = await Promise.all([page.waitForEvent('filechooser'), page.click('[data-a="snappickbook"]')]);
+    await fc.setFiles(fx);
+    await page.waitForSelector('.snapsum', { timeout: 10000 });
+    const cards = await page.$$eval('.snaptrips .tpo', (bs) => bs.map((b) => [b.dataset.v, b.getAttribute('aria-pressed'), b.textContent.replace(/\s+/g, ' ').trim()]));
+    await page.click('.snaptrips .tpo[data-v="2026-04-03"]'); await page.waitForSelector('.snaptrips .tpo[data-v="2026-04-03"][aria-pressed="true"]');
+    const sum = (await page.$$eval('.snapsum li', (ls) => ls.map((l) => l.textContent.replace(/\s+/g, ' ').trim()))).join(' | ');
+    ok(cards.length === 2 && cards[0][1] === 'true' && /5 photos/.test(cards[0][2]) && /2 days · 4 photos/.test(cards[1][2]) && /3 Apr – 4 Apr · 2 days/.test(sum) && /Other trips\s*6, not in this book/.test(sum) && await s.noHScroll(),
+      `book from photos, two trips: the read page offers both (December first, the bigger), April picked shows its own dates, the other six photos (December and one dated only by its file) stay out of it (${JSON.stringify(cards)} · ${sum})`);
+    await s.shot('snap-two-trips');
+    await page.click('.snapfoot a.btn'); await page.waitForSelector('.snapdays');
+    await page.click('[data-a="snapmake"]');
+    await page.waitForFunction(() => /#\/snap\/read$/.test(location.hash) && !!document.querySelector('.notice a'), null, { timeout: 15000 });
+    const after = await page.$$eval('.snaptrips .tpo', (bs) => bs.map((b) => [b.dataset.v, b.disabled, b.getAttribute('aria-pressed')]));
+    await page.click('.snapfoot a.btn'); await page.waitForSelector('.snapdays');
+    await page.click('[data-a="snapmake"]');
+    await page.waitForFunction(() => /\/(book|draft)$/.test(location.hash), null, { timeout: 15000 });
+    await page.waitForFunction(() => queue.length === 0, null, { timeout: 30000 });
+    const books = (await apiState(page)).trips.filter((x) => x.kind === 'snap').map((x) => [x.date_from, x.days.length]).sort();
+    ok(JSON.stringify(after) === JSON.stringify([['2025-12-12', false, 'true'], ['2026-04-03', true, 'false']]) && JSON.stringify(books) === JSON.stringify([['2025-12-12', 3], ['2026-04-03', 2]]),
+      `book from photos, two trips: after April is made the December trip is next and April is marked done; both books exist (${JSON.stringify(after)} · ${JSON.stringify(books)})`);
+    for (const id of (await apiState(page)).trips.filter((x) => x.kind === 'snap').map((x) => x.id)) await page.evaluate((x) => fetch('/api/b/trips/' + x, { method: 'DELETE', headers: { 'x-mb': '1' } }), id);
+    await page.evaluate(() => load());
+  }
   // a book from photos during the trip (docs/SNAP-BOOK.md P2): "we're on the trip" → an open book with today → its own Today page:
   // where we are (a typed name, kept for today), four big actions, photos placed by their own position or by "now around", "we're home".
   // Its own browser session: the phone session's later kid-mode checks read the colouring page right after a tap and must not inherit this one's state

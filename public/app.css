@@ -3069,6 +3069,9 @@ details.emeal[open]>summary .mname{visibility:hidden}
 .snaprun{border-top:1px solid var(--rule);padding:12px 0}
 .snaprun h2{font-size:17px;margin:0 0 4px}
 .snapsum{list-style:none;margin:8px 0;padding:0}
+.snaph2{font-size:1.05rem;margin:18px 0 2px}
+.snaptrips{grid-template-columns:repeat(auto-fill,minmax(min(100%,150px),1fr))}
+.snaptrips .tpo[disabled]{opacity:1;color:var(--muted);background:var(--card)}
 .snapsum li{display:flex;justify-content:space-between;gap:12px;padding:6px 0;border-bottom:1px solid var(--line)}
 .snapscroll{overflow-x:auto;max-width:100%}
 .snapt{border-collapse:collapse;font-size:13px;width:100%}
