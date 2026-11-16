@@ -717,7 +717,9 @@ function router({ pool, media, A, ai, hooks = {} }) {   // hooks.heart(h): set b
         // the town's secret for the adventure map's chest: what the day's picture shows, else where we went
         const art = m.artDays[i] && okItems.find((it) => 'stock:' + it.id === m.artDays[i]);
         const low = (s) => (/^[A-Z][a-z]/.test(s) ? s.charAt(0).toLowerCase() + s.slice(1) : s);
-        const fact = town && art && art.name ? { th: `ที่${town.th} มี${art.name.th}ให้ดูด้วย`, en: `In ${town.en} you can see ${low(art.name.en)}.` }
+        // a picture whose own name already says the town ("ทุ่งทานตะวันปากช่อง") is not told where twice: "ที่นี่ มี…" / "Here you can see …"
+        const says = art && art.name && town && ((town.th && String(art.name.th || '').includes(town.th)) || (town.en && String(art.name.en || '').toLowerCase().includes(town.en.toLowerCase())));
+        const fact = town && art && art.name ? (says ? { th: `ที่นี่ มี${art.name.th}ให้ดูด้วย`, en: `Here you can see ${low(art.name.en)}.` } : { th: `ที่${town.th} มี${art.name.th}ให้ดูด้วย`, en: `In ${town.en} you can see ${low(art.name.en)}.` })
           : town ? { th: `วันนี้เราไป${town.th}`, en: `Today we went to ${town.en}` } : null;
         // a day nobody has named yet is called by its place on the kids' side (the adventure map's town, the map card), and its stamp says where
         const unnamed = /^(Day \d+)?$/.test(String((d.title || {}).en || '').trim()) && /^(วันที่ \d+)?$/.test(String((d.title || {}).th || '').trim());

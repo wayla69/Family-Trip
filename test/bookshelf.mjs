@@ -183,7 +183,7 @@ ok((await fetch(BASE + '/api/b/trips', { method: 'POST', headers: H, body: JSON.
     // a day with no name is called by its place (and its stamp says where), the chest's secret tells what the day's picture shows, a certificate
     const pp = t.passport || {}, art = (t.theme.artDays || []).filter(Boolean);
     ok(new Set(art).size === art.length && /\/stock\/th\/khaoyai\/stamp\./.test(pp.style.crest) && pp.days[0].title.en === 'Pak Chong' && pp.days[0].stamp === 'PAK CHONG'
-      && pp.days[1].title.en === 'Khao Yai' && pp.days[2].title.en === 'Sunflowers' && / you can see /.test(pp.days[0].facts[0].en) && pp.certificate && pp.certificate.text.en.includes('Khao Yai, 3 days'),
+      && pp.days[1].title.en === 'Khao Yai' && pp.days[2].title.en === 'Sunflowers' && / you can see /.test(pp.days[0].facts[0].en) && (pp.days[0].facts[0].en.match(/Pak Chong/g) || []).length <= 1 && (pp.days[0].facts[0].th.match(/ปากช่อง/g) || []).length <= 1 && pp.certificate && pp.certificate.text.en.includes('Khao Yai, 3 days'),
     `snap kids' side: three different pictures, the Khao Yai stamp as the crest, days called by their place, a secret from the picture, a certificate (${art.join(' ')} · ${pp.style.crest} · ${pp.days.map((d) => d.title.en + '/' + d.stamp).join(' ')} · ${pp.days[0].facts[0].en})`);
     const far = await (await post('/api/b/snap', { days: [{ date: '2026-10-01', place: { th: 'ฟาร์มของยาย', en: "Grandma's farm" } }] })).json();
     let f = (await state()).trips.find((x) => x.id === far.id), fp = f.passport || {};
