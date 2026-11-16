@@ -845,11 +845,11 @@ const T = 'hk-macau-2026';
       // the levels start again (owner, Nov 2026: "อันนี้จะล้างยังไง"): a tap on "Level" does nothing, a grown-up's 1.5 s hold goes back to the start
       const rb = await page.locator('.lvbar .lvreset').boundingBox();
       await page.mouse.click(rb.x + rb.width / 2, rb.y + rb.height / 2); await page.waitForTimeout(300);
-      const tapKept = await page.evaluate(() => document.querySelectorAll('.lvbar .lvc').length === 3);
+      const tapKept = await page.evaluate(() => document.querySelectorAll('.lvbar .lvc').length === 3 && /press and hold|กดค้าง/i.test(document.getElementById('toast').textContent));   // a tap says how (owner: "ยังล้างไม่ได้เลย")
       await page.mouse.move(rb.x + rb.width / 2, rb.y + rb.height / 2); await page.mouse.down(); await page.waitForTimeout(1800); await page.mouse.up();
       await page.waitForFunction(() => kg && kg.at === 2, null, { timeout: 3000 }).catch(() => {});
       const rs = await page.evaluate(() => ({ at: kg.at, chips: document.querySelectorAll('.lvbar .lvc').length, saved: JSON.stringify((ls('lv_mimi') || {}).shadow || null) }));
-      ok(tapKept && rs.at === 2 && rs.chips === 2 && /"at":2/.test(rs.saved), `kid levels: a tap on "Level" keeps them, a grown-up's long press starts the game where a new player starts (level 2 for Mimi, two chips) (${JSON.stringify({ tapKept, ...rs })})`);
+      ok(tapKept && rs.at === 2 && rs.chips === 2 && /"at":2/.test(rs.saved), `kid levels: a tap on "Level" keeps them and says to press and hold, a grown-up's long press starts the game where a new player starts (level 2 for Mimi, two chips) (${JSON.stringify({ tapKept, ...rs })})`);
       // every game at once: the hold button at the foot of the adventure map (owner: "ล้างได้ทุกเกมพร้อมกันไหม")
       const lvKeep = await page.evaluate(() => ls('lv_mimi'));
       await page.evaluate(() => ls('lv_mimi', { shadow: { at: 4, best: 3 }, match: { at: 3, best: 2 } }));

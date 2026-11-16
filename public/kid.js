@@ -2171,11 +2171,15 @@ document.addEventListener('pointerdown', (e) => {
 // grown-ups start a game's levels again by pressing and holding the word "Level" 1.5 s (owner, Nov 2026: "อันนี้จะล้างยังไง") — this
 // child, this game, this phone; a tap does nothing, the stars and the adventure map stay. Every game at once: the same hold on the button at
 // the foot of the adventure map (owner: "ล้างได้ทุกเกมพร้อมกันไหม"; data-g="*")
-let lvT = 0;
+// On a phone (owner's Samsung, Nov 2026: "ยังล้างไม่ได้เลย") the hold keeps the finger (pointer capture), kid mode never opens the
+// phone's own long-press menu (which cancels the hold), and a tap that lets go too soon says to press and hold.
+let lvT = 0, lvAt = 0;
 document.addEventListener('pointerdown', (e) => {
   const b = e.target.closest && e.target.closest('.lvreset'); if (!b || !isEditor()) return;
-  b.classList.add('holding');
+  b.classList.add('holding'); lvAt = Date.now();
+  try { b.setPointerCapture(e.pointerId); } catch (_) { /* an older browser */ }
   lvT = setTimeout(() => {
+    lvT = 0; lvAt = 0;
     const k = b.dataset.k, g = b.dataset.g, all = ls('lv_' + k) || {}, t = kidTrip(k);
     if (g === '*') { ls('lv_' + k, null); beep('pop'); toast(L('เริ่มด่านใหม่ทุกเกมแล้ว', 'Every game\'s levels start again')); render(); return; }   // the adventure map's grown-up button: every game at once
     delete all[g]; ls('lv_' + k, all); if (!t) return;
@@ -2183,7 +2187,13 @@ document.addEventListener('pointerdown', (e) => {
     toast(L('เริ่มด่านใหม่แล้ว', 'The levels start again'));
   }, 1500);
 });
-['pointerup', 'pointercancel', 'pointerleave'].forEach((ev) => document.addEventListener(ev, () => { clearTimeout(lvT); const b = $('.lvreset.holding'); if (b) b.classList.remove('holding'); }, true));
+['pointerup', 'pointercancel', 'pointerleave'].forEach((ev) => document.addEventListener(ev, (e) => {
+  const b = $('.lvreset.holding'); if (!b || (ev === 'pointerleave' && e.target !== b)) return;
+  clearTimeout(lvT); b.classList.remove('holding');
+  if (lvT && ev === 'pointerup' && Date.now() - lvAt < 1500) toast(L('กดค้างไว้ให้นับถึงสอง ด่านจะเริ่มใหม่', 'Press and hold until it turns pink — the levels start again'));
+  lvT = 0; lvAt = 0;
+}, true));
+document.addEventListener('contextmenu', (e) => { if (e.target.closest && e.target.closest('.kidwrap')) e.preventDefault(); });   // no long-press menu in kid mode
 // grown-ups leave kid mode by pressing and holding the lock
 let holdT = 0;
 document.addEventListener('pointerdown', (e) => {
