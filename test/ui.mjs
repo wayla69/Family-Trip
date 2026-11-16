@@ -2117,9 +2117,9 @@ const T = 'hk-macau-2026';
     const au = async (iso) => { await page.clock.setFixedTime(new Date(iso)); return page.evaluate(() => / open/.test(bagBlock(trip('big-hop-2027'), 1).slice(0, 60))); };
     const au945 = await au('2027-04-03T09:45:00+11:00'), au1035 = await au('2027-04-03T10:35:00+11:00');
     ok(au945 && !au1035, `Today's bag: where the plan marks the step we leave on, the bag stays open until then (Australia day 2: open at 09:45 with two steps gone ${au945}, folded at 10:35 ${!au1035})`);
-    ok(!noon.open && noon.past >= 2 && early.open && early.past === 0 && one.open && one.past === 1 && !two.open && two.past === 2 && early.h - two.h > 300 && !/\b0\//.test(noon.label + early.label)
+    ok(!noon.open && noon.past >= 2 && early.open && early.past === 0 && !one.open && one.past === 1 && !two.open && two.past === 2 && early.h - one.h > 300 && !/\b0\//.test(noon.label + early.label)
       && seen[0] === `1/${n} packed` && seen[n - 1] === 'All packed ✓' && !done.open && done.label === 'All packed ✓',
-      `Today on the trip: the bag is open in the morning (07:20, and 07:50 with one step gone), one line once the day is under way (08:05, two steps gone — ${early.h - two.h} px shorter) and at noon; a tick counts in place (${seen[0]} → ${seen[n - 1]}) and the last one folds it (${JSON.stringify({ noon, early, one, two, done })})`); }
+      `Today on the trip: the bag is open in the morning (07:20) and one line from the step we leave on (the 07:40 taxi, marked "go": at 07:50 — ${early.h - one.h} px shorter — 08:05 and noon); a tick counts in place (${seen[0]} → ${seen[n - 1]}) and the last one folds it (${JSON.stringify({ noon, early, one, two, done })})`); }
   await page.clock.setFixedTime(new Date('2026-12-06T22:30:00+08:00')); await page.evaluate(() => render());
   const late = await page.evaluate(() => ({ done: document.querySelectorAll('a.nextc.done[href$="/log/1"]').length, past: document.querySelectorAll('#tlbox li.past').length, next: document.querySelectorAll('#tlbox li.next').length }));
   ok(td.time === '12:45' && /Sit-down show/.test(td.head) && /14:30/.test(td.then) && td.next > 0 && td.next < td.facts && td.facts < td.quick && td.quick < td.tl && td.tl < td.bag && td.bag < td.mission && (td.ask < 0 || td.mission < td.ask) && td.rec === 0 && td.h >= 60 && td.qh >= 44 && td.rows >= 44
