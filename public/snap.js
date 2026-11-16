@@ -434,7 +434,7 @@ Object.assign(A, {
     const tz = (() => { try { return Intl.DateTimeFormat().resolvedOptions().timeZone || 'Asia/Bangkok'; } catch (_) { return 'Asia/Bangkok'; } })();
     try {
       const r = await api('POST', '/api/b/snap', { open: true, timezone: tz, title: snapName.trim() ? { th: snapName.trim(), en: snapName.trim() } : undefined });
-      snapName = ''; await load(); nav(`#/t/${encodeURIComponent(r.id)}/log/0`);
+      snapName = ''; await load(); nav(`#/t/${encodeURIComponent(r.id)}/today`);
     } catch (e) { toast(e.code === 401 ? L('เข้าระบบใหม่ก่อน', 'Sign in again') : L('ต้องมีเน็ตเพื่อเริ่มเล่ม', 'You need a connection to start the book')); }
   },
   async snapmake() {
@@ -466,6 +466,104 @@ Object.assign(A, {
     toast(L('สร้างเล่มแล้ว รูปกำลังส่งขึ้น', 'The book is made — the photos are on their way'));
     nav(`#/t/${encodeURIComponent(t.id)}/book`);
   },
+});
+/* ---------- P2: during the trip (docs/SNAP-BOOK.md J2; screen B4) ----------
+   An open book from photos has a page of its own for the day: where we are now (a name only: the live position, asked on a tap,
+   is named and dropped like a photo's), take or pick photos (a new date adds a day by itself), the kids' words and voices on the
+   record page, today's photos, and "we're home" to close the book. */
+const snapHereKey = (t) => 'snapHere_' + t.id;
+function snapHere(t) { const h = ls(snapHereKey(t)); return h && h.date === todayIn(t.timezone) ? h : null; }   // where we are: kept for today only
+let snapDayAsk = {};
+// today's day of an open book: added when the page opens on a new date (after its last day), so the record page, the 21:30 nudge and the kids have it
+function snapEnsureToday(t) {
+  const today = todayIn(t.timezone), last = t.days.length ? t.days[t.days.length - 1].date : '';
+  if (!t.open || !isEditor() || t.days.some((d) => d.date === today) || today < last || snapDayAsk[t.id + today] || offline) return;
+  snapDayAsk[t.id + today] = 1;
+  api('POST', `/api/b/snap/${encodeURIComponent(t.id)}/days`, { days: [{ date: today }] }).then(() => load()).then(() => safeRender()).catch(() => { delete snapDayAsk[t.id + today]; });
+}
+function viewSnapLive(t) {
+  snapEnsureToday(t);
+  const today = todayIn(t.timezone), i = t.days.findIndex((d) => d.date === today), d = t.days[i];
+  if (!t.open) { setTimeout(() => location.replace(`#/t/${encodeURIComponent(t.id)}/book`), 0); return ''; }
+  const here = snapHere(t), ph = i >= 0 ? mediaOf(t.id, i) : [], words = i >= 0 ? entriesOf(t.id, i).filter((e) => e.kind === 'quote').length : 0, clips = i >= 0 ? audioOf(t.id, i).length : 0;
+  const act = (k, icon, th, en, extra) => `<button type="button" class="snapact" data-a="${k}" data-t="${esc(t.id)}"${extra || ''}>${ic(icon)}<b>${L(th, en)}</b></button>`;
+  const lnk = (href, icon, th, en, n) => `<a class="snapact" href="${href}">${ic(icon)}<b>${L(th, en)}</b>${n ? `<small>${n}</small>` : ''}</a>`;
+  return `<h1 class="vh">${L('วันนี้', 'Today')}</h1>
+<p class="snaplivehd"><b>${d ? `${L(`วันที่ ${i + 1}`, `Day ${i + 1}`)} · ${esc(fmtDay(d.date))}` : esc(fmtDay(today))}</b></p>
+<div class="snaphere"><span class="shl">${ic('pin')}</span><span class="sht"><small>${L('ตอนนี้อยู่แถว', 'Now around')}</small>
+<input id="snaphere" class="field" type="text" maxlength="120" list="snapgeo" data-t="${esc(t.id)}" value="${esc(here ? T(here) : '')}" placeholder="${L('ชื่อเมืองหรือที่เที่ยว', 'A town or a place')}"></span>
+<button type="button" class="mini snapgps" data-a="snaphere" data-t="${esc(t.id)}">${L('ใช้ตำแหน่งตอนนี้', 'Use where I am')}</button></div>
+<datalist id="snapgeo">${snapGeoNames()}</datalist>
+<div class="snapacts">
+${act('snapcam', 'camera', 'ถ่ายรูป', 'Take a photo')}
+${act('snapadd', 'image', 'เลือกรูป', 'Pick photos')}
+${i >= 0 ? lnk(`#/t/${encodeURIComponent(t.id)}/log/${i}`, 'quote', 'คำพูดเด็ก', 'The kids’ words', words ? L(`วันนี้ ${words}`, `${words} today`) : '') : ''}
+${i >= 0 ? lnk(`#/t/${encodeURIComponent(t.id)}/log/${i}`, 'mic', 'อัดเสียง', 'Record a voice', clips ? L(`วันนี้ ${clips}`, `${clips} today`) : '') : ''}
+</div>
+${snapNote('รูปที่ถ่ายผ่านปุ่มนี้รู้ว่าถ่ายที่ไหน แอปเก็บไว้แค่ชื่อเมือง ไม่เก็บพิกัด', 'A photo taken with this button knows where it was taken — the app keeps only the town’s name, never the position.')}
+<section class="blk"><h2>${ph.length ? L(`วันนี้ ${ph.length} รูป`, `Today, ${ph.length} photo${ph.length === 1 ? '' : 's'}`) : L('วันนี้', 'Today')}</h2>
+${ph.length ? mosaicByPlace(t, ph) : `<p class="label">${L('รูปแรกของวันรออยู่', 'The day’s first photo is waiting')}</p>`}</section>
+<div class="snapfoot"><button type="button" class="btn ghost wide" data-a="snapclose" data-t="${esc(t.id)}">${L('กลับถึงบ้านแล้ว ปิดเล่ม', 'We’re home — close the book')}</button>
+<small>${L('ปิดแล้วยังเติมรูปและแก้เล่มได้เหมือนเดิม', 'You can still add photos and edit the book after')}</small></div>`;
+}
+let snapGeoCache = '';
+function snapGeoNames() {
+  if (!snapGeoCache) snapGeo().then((g) => { snapGeoCache = [...new Set((g.places || []).map((p) => snapShort(p.name)[lang === 'en' ? 'en' : 'th']))].map((x) => `<option value="${esc(x)}">`).join('') || ' '; const dl = document.getElementById('snapgeo'); if (dl) dl.innerHTML = snapGeoCache; });
+  return snapGeoCache;
+}
+// photos added during the trip: each to the day it was taken (a new date after the last day adds that day), placed by its own
+// position, else by "now around" when it was taken today
+async function snapLiveAdd(t, files) {
+  const geo = await snapGeo(), today = todayIn(t.timezone), here = snapHere(t);
+  const metas = []; for (const f of files) { const m = await snapMeta(f).catch(() => null); const pl = m && m.ll ? snapPlace(m.ll, geo) : null; if (m) m.ll = null; metas.push({ m, pl }); }
+  const dateOf = (x) => (x.m && x.m.src === 'exif' && x.m.at ? x.m.at.slice(0, 10) : today);
+  const last = t.days.length ? t.days[t.days.length - 1].date : '';
+  const newer = [...new Set(metas.map(dateOf))].filter((d) => d > last && !t.days.some((x) => x.date === d));
+  if (newer.length) { try { await api('POST', `/api/b/snap/${encodeURIComponent(t.id)}/days`, { days: newer.map((date) => ({ date })) }); await load(); t = trip(t.id); } catch (_) { /* offline: those photos go on the last day */ } }
+  const groups = {};
+  metas.forEach((x, k) => {
+    const date = dateOf(x); let i = t.days.findIndex((d) => d.date === date);
+    if (i < 0) i = date < t.days[0].date ? 0 : t.days.length - 1;   // a photo from before the book began goes on its first day
+    const pl = x.pl || (date === today && here ? here : null), name = pl ? T(pl) : '';
+    const key = i + '|' + name; (groups[key] = groups[key] || { i, pl, name, files: [], metas: [] }); groups[key].files.push(files[k]); groups[key].metas.push(x.m);
+  });
+  for (const g of Object.values(groups)) {
+    if (g.pl && g.pl.id) { const key = 'snap.' + g.pl.id;
+      if (!S.places.some((x) => x.trip === t.id && x.key === key)) await enqueue({ method: 'PUT', url: '/api/b/places', body: { trip: t.id, key, day: g.i, kind: 'place', name: { th: g.pl.th, en: g.pl.en }, done: true, at: Date.now() },
+        local: { coll: 'places', id: `${t.id}:${key}`, row: { trip: t.id, key, day: g.i, kind: 'place', name: { th: g.pl.th, en: g.pl.en }, at: Date.now() } } }); }
+    await addPhotos(t, g.i, g.files, g.name ? { place: g.name } : null, g.metas);
+  }
+  safeRender();
+}
+function snapLivePick(t, cam) {   // outside #app, like #fpick
+  const id = cam ? 'snapin-cam' : 'snapin-live';
+  let inp = document.getElementById(id);
+  if (!inp) { inp = document.createElement('input'); inp.type = 'file'; inp.id = id; inp.accept = 'image/*'; inp.hidden = true; if (cam) inp.setAttribute('capture', 'environment'); else inp.multiple = true; document.body.append(inp); }
+  inp.dataset.t = t.id; inp.value = ''; inp.click();
+}
+Object.assign(A, {
+  snapcam(b) { const t = trip(b.dataset.t); if (t) snapLivePick(t, true); },
+  snapadd(b) { const t = trip(b.dataset.t); if (t) snapLivePick(t, false); },
+  snaphere(b) {   // the live position → the nearest library town's name, kept for today; the position itself is not kept
+    const t = trip(b.dataset.t); if (!t) return;
+    if (!navigator.geolocation) { toast(L('เครื่องนี้หาตำแหน่งไม่ได้ พิมพ์ชื่อแทนได้', 'This phone has no location — type the place instead')); return; }
+    b.disabled = true;
+    navigator.geolocation.getCurrentPosition(async (p) => {
+      const pl = snapPlace([p.coords.latitude, p.coords.longitude], await snapGeo()); b.disabled = false;
+      if (!pl) { toast(L('ยังไม่รู้จักแถวนี้ พิมพ์ชื่อเองได้เลย', 'This place isn’t in the list yet — type its name')); const f = $('#snaphere'); if (f) f.focus(); return; }
+      ls(snapHereKey(t), { th: pl.th, en: pl.en, id: pl.id, date: todayIn(t.timezone) }); safeRender();
+    }, () => { b.disabled = false; toast(L('ไม่ได้รับอนุญาตให้ใช้ตำแหน่ง พิมพ์ชื่อแทนได้', 'No permission for location — type the place instead')); }, { enableHighAccuracy: false, timeout: 15000, maximumAge: 300000 });
+  },
+  async snapclose(b) {
+    if (!armed(b, L('แตะอีกครั้งเพื่อปิดเล่ม', 'Tap again to close the book'))) return;
+    const t = trip(b.dataset.t); if (!t) return;
+    try { await api('PATCH', `/api/b/trips/${encodeURIComponent(t.id)}`, { open: false }); await load(); toast(L('ปิดเล่มแล้ว ยินดีต้อนรับกลับบ้าน', 'Book closed — welcome home')); nav(`#/t/${encodeURIComponent(t.id)}/book`); }
+    catch (_) { toast(L('ต้องมีเน็ตเพื่อปิดเล่ม', 'You need a connection to close the book')); }
+  },
+});
+if (typeof document !== 'undefined') document.addEventListener('change', (e) => {
+  if (e.target.id === 'snapin-cam' || e.target.id === 'snapin-live') { const t = trip(e.target.dataset.t), fs = [...(e.target.files || [])]; if (t && fs.length) snapLiveAdd(t, fs); return; }
+  if (e.target.id === 'snaphere') { const t = trip(e.target.dataset.t), v = e.target.value.trim(); if (t) ls(snapHereKey(t), v ? { th: v, en: v, date: todayIn(t.timezone) } : null); }   // typed: a name, kept for today
 });
 if (typeof document !== 'undefined') document.addEventListener('input', (e) => {   // typed in place: no redraw under the finger
   if (e.target.id === 'snapname') { snapName = e.target.value; if (snapS) snapS.name = e.target.value; return; }

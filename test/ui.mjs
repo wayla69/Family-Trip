@@ -262,6 +262,35 @@ const T = 'hk-macau-2026';
     await page.goto(`${BASE}/#/t/${t.id}`); await page.waitForSelector('.hubgrid'); await s.shot('snap-hub');
     await page.evaluate((id) => fetch('/api/b/trips/' + id, { method: 'DELETE', headers: { 'x-mb': '1' } }), t.id); await page.evaluate(() => load());
   }
+  // a book from photos during the trip (docs/SNAP-BOOK.md P2): "we're on the trip" → an open book with today → its own Today page:
+  // where we are (a typed name, kept for today), four big actions, photos placed by their own position or by "now around", "we're home".
+  // Its own browser session: the phone session's later kid-mode checks read the colouring page right after a tap and must not inherit this one's state
+  {
+    const s = await session('snaplive'); const { page } = s; await login(page);
+    await page.goto(`${BASE}/#/snap`); await page.waitForSelector('.snapmode');
+    await page.click('.snapmode .tpo[data-v="live"]'); await page.click('[data-a="snaplive"]');
+    await page.waitForSelector('.snapacts', { timeout: 10000 });
+    const id = await page.evaluate(() => decodeURIComponent(location.hash.split('/')[2]));
+    let t = (await apiState(page)).trips.find((x) => x.id === id);
+    ok(t && t.kind === 'snap' && t.open && t.days.length === 1 && await page.locator('.snapacts .snapact').count() === 4 && await page.locator('#snaphere').count() === 1
+      && await s.noHScroll() && await page.evaluate(() => [...document.querySelectorAll('.snapact, .snapgps, #snaphere, [data-a="snapclose"]')].every((e) => e.getBoundingClientRect().height >= 44)),
+    'on the trip: "start the book today" makes an open book and opens its day page — where we are, four big actions, taps 44 px or taller');
+    await s.shot('snap-live');
+    await page.fill('#snaphere', 'Bang Saen'); await page.press('#snaphere', 'Tab');
+    const [fc] = await Promise.all([page.waitForEvent('filechooser'), page.click('[data-a="snapadd"]')]);
+    await fc.setFiles(['gps-ii.jpg', 'no-exif.jpg'].map((f) => path.resolve('test/fixtures/snap', f)));
+    await page.waitForFunction((tid) => S.media.filter((m) => m.trip === tid).length === 2, id, { timeout: 15000 });
+    await page.waitForFunction(() => queue.length === 0, null, { timeout: 30000 });
+    const st = await apiState(page), ms = st.media.filter((m) => m.trip === id).map((m) => m.place).sort().join(',');
+    ok(ms === 'Bang Saen,Khao Yai' && st.places.some((p) => p.trip === id && p.key === 'snap.th-khaoyai'), `on the trip: a photo with a position takes its town, one without takes "now around" (${ms})`);
+    await page.click('[data-a="snapclose"]'); await page.click('[data-a="snapclose"]');
+    await page.waitForFunction(() => /\/book$/.test(location.hash), null, { timeout: 10000 });
+    t = (await apiState(page)).trips.find((x) => x.id === id);
+    await page.goto(`${BASE}/#/t/${id}`); await page.waitForSelector('.hubgrid');
+    ok(t.open === false && await page.locator('.hubgrid a[href$="/today"]').count() === 0, 'on the trip: "we\'re home" (two taps) closes the book; a closed book from photos has no Today tile');
+    await page.evaluate((x) => fetch('/api/b/trips/' + x, { method: 'DELETE', headers: { 'x-mb': '1' } }), id);
+    await s.ctx.close();
+  }
   // #/family without the drawing helper: no character box, no server words, the birth row says what the month is for
   await page.goto(`${BASE}/#/family`); await page.waitForSelector('.famkid');
   const famTx = await page.evaluate(() => document.querySelector('main').textContent);

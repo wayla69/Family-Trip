@@ -1,8 +1,9 @@
 # Snap Book — a book from photos, no plan needed
 
-Status: **P0 and P1 built** (16 Nov 2026): the reader and `#/snaptest`, then the book from photos after the trip (`#/snap`), the
-share target into it, and every upload taking the photo's own time. R3 confirmed by the owner (16 Nov 2026). P2 (during the trip)
-is next; P1 left out the B3 place sheet (a day's place is a text box with the library's names) and the "two trips" split. Written 16 Nov 2026 for handoff; the next session implements from this file.
+Status: **P0, P1 and P2 built** (16 Nov 2026): the reader and `#/snaptest`, the book from photos after the trip (`#/snap`), the
+share target into it, every upload taking the photo's own time, and the open book's day page during the trip (`viewSnapLive`).
+R3 confirmed by the owner (16 Nov 2026). P3 (the helper drafts the book) is next. P2 left out the 21:30 nudge for a day the app
+was never opened on (no day row exists for it) and the offline-day test in test/offline.mjs; P1 left out the B3 place sheet (a day's place is a text box with the library's names) and the "two trips" split. Written 16 Nov 2026 for handoff; the next session implements from this file.
 Owner's ask: "บางครอบครัวไม่ได้วางแผน ให้ทำเล่มเปล่า ถ่ายรูป ใช้ location ในรูป แล้วใช้ AI ร่างเป็นเก็บประวัติ storybook เองได้เลย …
 ทำให้การใช้งานแบบทริปพิเศษ หรือคนไทยเที่ยวใกล้ๆ ยกมือถือมาทำแล้วได้เล่มเลย".
 
