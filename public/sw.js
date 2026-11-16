@@ -1,7 +1,8 @@
 // Memory Bookshelf service worker: app shell + all drawn art offline from the first visit; photos cached as you view them
 // (or all at once with "Keep this book offline"). Data (/api) is cached by the app itself (IndexedDB) and written through its queue.
-const V = 'mbs-v217';
+const V = 'mbs-v218';
 const STOCK = 'mbs-stock';   // the stock art library (/stock/, versioned file names): only a stored book's pictures, kept across shell versions too
+const SHARE = 'mbs-share';   // photos shared to the app from the phone's gallery (manifest share_target), read once by #/snaptest
 const MEDIA = 'mbs-media';   // photos, clips, drawn characters, emoji pictures, drawn book art: kept across shell versions, so a deploy never empties the offline pack
 const SHELL = ['/', '/app.css', '/app-legacy.css', '/core.js', '/views.js', '/sheets.js', '/kid.js', '/snap.js', '/manifest.webmanifest', '/icon-192.png',
   '/fonts/KIRA-UI-Regular.woff2', '/fonts/KIRA-UI-Medium.woff2', '/fonts/KIRA-UI-SemiBold.woff2', '/fonts/KIRA-UI-Bold.woff2',
@@ -66,7 +67,7 @@ const addEach = (c, urls) => Promise.allSettled(urls.map((u) => fetch(u, { cache
 self.addEventListener('install', (e) => {
   e.waitUntil(caches.open(V).then((c) => c.addAll(SHELL).then(() => addEach(c, ART))).then(() => self.skipWaiting()));
 });
-self.addEventListener('activate', (e) => { e.waitUntil(caches.keys().then((ks) => Promise.all(ks.filter((k) => k !== V && k !== MEDIA && k !== STOCK).map((k) => caches.delete(k)))).then(() => self.clients.claim())); });
+self.addEventListener('activate', (e) => { e.waitUntil(caches.keys().then((ks) => Promise.all(ks.filter((k) => k !== V && k !== MEDIA && k !== STOCK && k !== SHARE).map((k) => caches.delete(k)))).then(() => self.clients.claim())); });
 
 // trip reminders from the server (Web Push): show them, and a tap opens that day's page
 self.addEventListener('push', (e) => {
@@ -83,8 +84,22 @@ self.addEventListener('notificationclick', (e) => {
   }));
 });
 const withTimeout = (p, ms) => new Promise((ok, no) => { const t = setTimeout(() => no(new Error('timeout')), ms); p.then((v) => { clearTimeout(t); ok(v); }, (err) => { clearTimeout(t); no(err); }); });
+// photos shared from the gallery: kept on this phone only (nothing is uploaded here), then the check page reads and forgets them
+async function takeShare(r) {
+  let n = 0;
+  try {
+    const fd = await r.formData(), c = await caches.open(SHARE);
+    for (const k of await c.keys()) await c.delete(k);   // one share at a time
+    for (const f of fd.getAll('photos')) {
+      if (!f || typeof f === 'string') continue;
+      await c.put(new Request('/share-in/' + n++), new Response(f, { headers: { 'content-type': f.type || 'application/octet-stream', 'x-name': encodeURIComponent(f.name || ''), 'x-mod': String(f.lastModified || 0) } }));
+    }
+  } catch (_) { /* nothing kept: the page says so */ }
+  return Response.redirect('/#/snaptest?shared=' + n, 303);
+}
 self.addEventListener('fetch', (e) => {
   const r = e.request, u = new URL(r.url);
+  if (r.method === 'POST' && u.origin === location.origin && u.pathname === '/share') { e.respondWith(takeShare(r)); return; }   // the gallery's share sheet → LifeBook
   if (r.method !== 'GET' || u.origin !== location.origin) return;
   if (u.pathname.startsWith('/api/') || u.pathname.startsWith('/v/')) return;
   if (u.pathname === '/stock/index.json') return;   // the phone never needs the index (the server resolves stock: ids)

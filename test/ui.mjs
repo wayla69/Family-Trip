@@ -1212,6 +1212,23 @@ const T = 'hk-macau-2026';
   const have = await cached(want.concat(`/media/${plain.id}`));
   ok(want.every((u) => have[u]), 'service worker cache holds the shell, all art (precached at install), every thumbnail of the book and the full-size favourite' + want.filter((u) => !have[u]).map((u) => ' MISSING ' + u).join(''));
   ok(!have[`/media/${plain.id}`], 'a plain photo is kept as a thumbnail only (full size stays on the server until opened or "with all photos")');
+  // a share from the gallery (manifest share_target, docs/SNAP-BOOK.md P0): the service worker keeps the photos on the phone, the
+  // check page reads them once through the same reader and forgets them; the manifest offers the app in the share sheet
+  {
+    const fx = ['gps-ii.jpg', 'time-only.jpg', 'gps.avif'].map((f) => [f, [...fs.readFileSync(path.resolve('test/fixtures/snap', f))]]);
+    const kept = await page.evaluate(async (list) => { const fd = new FormData(); for (const [n, b] of list) fd.append('photos', new File([new Uint8Array(b)], n, { type: n.endsWith('.avif') ? 'image/avif' : 'image/jpeg' }));
+      const res = await fetch('/share', { method: 'POST', body: fd }); return { ok: res.ok, n: (await (await caches.open('mbs-share')).keys()).length }; }, fx);
+    await page.goto(`${BASE}/#/snaptest?shared=3`);
+    await page.waitForFunction(() => /Read in|อ่านเสร็จใน/.test((document.querySelector('#snapruns') || {}).textContent || ''), null, { timeout: 8000 });   // this session reads Thai
+    const h = await page.textContent('#snapruns h2'), left = await page.evaluate(async () => (await (await caches.open('mbs-share')).keys()).length);
+    const sum = await page.$$eval('.snapsum li', (ls) => ls.map((l) => l.textContent.replace(/\s+/g, ' ').trim()));
+    const man = await (await page.request.get(`${BASE}/manifest.webmanifest`)).json();
+    ok(kept.ok && kept.n === 3 && /(Shared from the gallery|แชร์จากแกลเลอรี) · 3/.test(h) && sum[2].includes('2 ·') && left === 0 && await page.evaluate(() => location.hash) === '#/snaptest'
+      && man.share_target && man.share_target.action === '/share' && man.share_target.params.files[0].name === 'photos', `share from the gallery: kept by the service worker (${kept.n}), read once on the check page (${h} · ${sum[2]}), then forgotten (${left} left)`);
+    const noSw = await (await page.request.post(`${BASE}/share`, { maxRedirects: 0 })).headers();
+    ok(/\/#\/snaptest\?shared=0$/.test(noSw.location || ''), 'share before the service worker is in place: the server sends the phone to the check page');
+    await page.goto(`${BASE}/#/t/${T}/offline`); await page.waitForSelector('#offl');   // back where the offline checks go on
+  }
   ok(await page.evaluate(async (u) => (await caches.keys()).includes('mbs-media') && !!(await (await caches.open('mbs-media')).match(u)) && !(await (await caches.open((await caches.keys()).find((k) => /^mbs-v/.test(k)))).match(u)), `/media/${fave.id}/t`), 'photos live in their own cache, not the versioned shell cache — a deploy must never empty the offline pack');
   await page.click('#offl [data-a="offline"][data-v="all"]');
   await page.waitForFunction((tid) => (ls('offline_' + tid) || {}).all === true, T, { timeout: 30000 });
