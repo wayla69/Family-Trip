@@ -935,9 +935,9 @@ const T = 'hk-macau-2026';
     await page.waitForTimeout(120);
   }
   ok(await page.evaluate(() => gl.done) && glGoHit && await page.evaluate((s0) => stars('mimi') - s0, gl0) === 2, `kid game golight: an animal tapped counts${glNoTapped ? ', a vehicle tapped does not' : ''}; the whole run of level 2 ends with two stars`);
-  // every game with a scene draws it (the sky and the strip are CSS backgrounds: no file to fetch, works with no signal)
+  // every game with a scene draws its painting (public/art/scene, precached by the service worker's ART list, so it works with no signal)
   const scenes = {};
-  for (const v of ['bubbles', 'music', 'shadow', 'feed', 'sort', 'bigsmall', 'wash']) { await page.goto(`${BASE}/#/kid/mimi/${v}`); await page.waitForSelector('.kidwrap'); scenes[v] = await page.evaluate(() => { const w = document.querySelector('.kidwrap'); return [...w.classList].find((c) => c.startsWith('sc-')) + ':' + /data:image\/svg/.test(getComputedStyle(w).backgroundImage); }); }
+  for (const v of ['bubbles', 'music', 'shadow', 'feed', 'sort', 'bigsmall', 'wash']) { await page.goto(`${BASE}/#/kid/mimi/${v}`); await page.waitForSelector('.kidwrap'); scenes[v] = await page.evaluate(() => { const w = document.querySelector('.kidwrap'); return [...w.classList].find((c) => c.startsWith('sc-')) + ':' + /\/art\/scene\/\w+-[pl]\.webp/.test(getComputedStyle(w).backgroundImage); }); }
   ok(Object.values(scenes).every((x) => /^sc-\w+:true$/.test(x)) && (await page.evaluate(() => document.documentElement.scrollWidth - document.documentElement.clientWidth)) <= 1, `kid scenes: each game has its own backdrop (${JSON.stringify(scenes)})`);
   await page.goto(`${BASE}/#/kid/mimi/music`); await page.waitForSelector('.xylo');
   await page.evaluate(() => { navigator.audioSession = { type: 'auto' }; });   // Safari 16.4+ has it; Chromium does not
