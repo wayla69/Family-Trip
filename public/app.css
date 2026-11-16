@@ -3084,3 +3084,7 @@ details.emeal[open]>summary .mname{visibility:hidden}
 .kpal.show{opacity:1}
 /* the colouring page's undo and sponge: the drawing board's pills, side by side under the colours */
 .coltools{margin-top:-2px}.coltools .dclear{height:56px;font-size:24px}.coltools .dclear:disabled{opacity:.45}
+/* the drawing board washes clean like the colouring page (owner, Nov 2026: "ทำหน้าวาดรูปให้ล้างได้แบบนี้ด้วย"): ↶ and the sponge sit under the paper
+   at all times — they used to hide on the paper's corner and inside the colour tray, which tucks itself away while the child draws.
+   On the full-screen paper the corner ↶ and the tray's sponge stay, since the row is under the sheet there. */
+.drawwrap:not(.full) .dpundo,.drawwrap:not(.full) .drawtray .dclear{display:none}
