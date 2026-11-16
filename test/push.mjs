@@ -31,6 +31,17 @@ ok(new Date(PUSH.zoned('2027-04-04', '08:30', 'Australia/Sydney')).toISOString()
   { const x = PUSH.extras([hk], at('2026-11-30', '08:00'))[0]; ok(x.key === 'hk-macau-2026.x.door10' && /5 sleeps to Hong Kong/.test(x.en.body) && /อีก 5 วันไปฮ่องกง/.test(x.th.body), 'door 10 says 5 sleeps to go, in both languages'); }
   ok(keys(atHK('2026-12-05', '21:30')) === 'hk-macau-2026.x.log.d0' && keys(atHK('2026-12-10', '21:30')) === 'hk-macau-2026.x.log.d5' && keys(atHK('2026-12-11', '21:30')) === '' && PUSH.extras([hk], atHK('2026-12-06', '21:31'))[0].url === '/#/t/hk-macau-2026/log/1/ai', 'every trip evening, 21:30 trip time: "record day N" (opens that day’s record page at the evening Claude buttons)');
   ok(PUSH.extras([{ ...hk, doors: 0 }], at('2026-11-21', '08:00')).length === 0, 'a book without countdown doors sends no door mornings');
+  { // a book from photos: its own days (12 and 14 Dec are days 1 and 2 — no evening on the 13th), no store-the-book or doors, and an open
+    // book is nudged on an evening it has no day for yet (the app was never opened that day), on its own page
+    const sn = { trip: 'snap-x', title: { th: 'เขาใหญ่', en: 'Khao Yai' }, tz: 'Asia/Bangkok', from: '2026-12-12', to: '2026-12-14', doors: 0, kind: 'snap', open: true,
+      days: [{ i: 0, date: '2026-12-12' }, { i: 1, date: '2026-12-14' }] };
+    const sk = (now) => PUSH.extras([sn], now).map((x) => x.key).join(), d15 = PUSH.extras([sn], at('2026-12-15', '21:30'))[0];
+    const closed = (now) => PUSH.extras([{ ...sn, open: false }], now).map((x) => x.key).join();
+    ok(sk(at('2026-12-12', '21:30')) === 'snap-x.x.log.d0' && closed(at('2026-12-13', '21:30')) === '' && sk(at('2026-12-14', '21:30')) === 'snap-x.x.log.d1'
+      && sk(at('2026-12-10', '19:00')) === '' && d15 && d15.key === 'snap-x.x.log.2026-12-15' && d15.url === '/#/t/snap-x/today' && d15.day === undefined
+      && closed(at('2026-12-15', '21:30')) === '',
+    `a book from photos: an evening for each of its own days, none for a gap; an open book is nudged on a day it has no page for yet, a closed one is not (${sk(at('2026-12-15', '21:30'))})`);
+  }
   ok(keys(at('2027-12-06', '09:00')) === 'hk-macau-2026.x.ann1.d1' && keys(at('2028-12-10', '09:00')) === 'hk-macau-2026.x.ann2.d5' && keys(at('2026-12-06', '09:00')) === '' && PUSH.extras([hk], at('2027-12-06', '09:00'))[0].url === '/#/t/hk-macau-2026/book/d/1', 'on this day: each trip day\'s anniversary at 09:00 home time, years later — never during the trip'); }
 
 // ---- the seeds: departure-day rows before landing carry Bangkok time
