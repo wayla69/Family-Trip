@@ -1,6 +1,6 @@
 // Memory Bookshelf service worker: app shell + all drawn art offline from the first visit; photos cached as you view them
 // (or all at once with "Keep this book offline"). Data (/api) is cached by the app itself (IndexedDB) and written through its queue.
-const V = 'mbs-v218';
+const V = 'mbs-v219';
 const STOCK = 'mbs-stock';   // the stock art library (/stock/, versioned file names): only a stored book's pictures, kept across shell versions too
 const SHARE = 'mbs-share';   // photos shared to the app from the phone's gallery (manifest share_target), read once by #/snaptest
 const MEDIA = 'mbs-media';   // photos, clips, drawn characters, emoji pictures, drawn book art: kept across shell versions, so a deploy never empties the offline pack
@@ -95,7 +95,7 @@ async function takeShare(r) {
       await c.put(new Request('/share-in/' + n++), new Response(f, { headers: { 'content-type': f.type || 'application/octet-stream', 'x-name': encodeURIComponent(f.name || ''), 'x-mod': String(f.lastModified || 0) } }));
     }
   } catch (_) { /* nothing kept: the page says so */ }
-  return Response.redirect('/#/snaptest?shared=' + n, 303);
+  return Response.redirect('/#/snap?shared=' + n, 303);
 }
 self.addEventListener('fetch', (e) => {
   const r = e.request, u = new URL(r.url);

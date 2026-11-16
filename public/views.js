@@ -92,7 +92,8 @@ function render() {
   else if (p[0] === 'start' && isEditor()) html = viewStart(p);
   else if (p[0] === 'privacy') html = viewPrivacy();
   else if (p[0] === 'emoji' && isEditor()) html = viewEmoji();
-  else if (p[0] === 'snaptest' && isEditor()) html = viewSnapTest();   // P0 of docs/SNAP-BOOK.md: what this phone hands over from its photos (not linked)
+  else if (p[0] === 'snaptest' && isEditor()) html = viewSnapTest();
+  else if (p[0] === 'snap' && isEditor()) html = viewSnap(p);   // a book from photos (docs/SNAP-BOOK.md)   // P0 of docs/SNAP-BOOK.md: what this phone hands over from its photos (not linked)
   else html = viewShelf();
   document.documentElement.style.cssText = t ? themeStyle(t) : themeStyle(curTrip());
   document.body.classList.toggle('serif', !!(t ? t.theme.display === 'serif' : false));
@@ -257,8 +258,9 @@ ${visual}
   }).join('');
   // a new book, both ways in one place: from the trip manual (the helper reads the PDF) or an empty book filled in by hand
   const pdf = S.features.story;
-  const add = isEditor() ? `<div class="spine add"><div class="addhd"><b class="addplus" aria-hidden="true">＋</b><div><h3>${L('เล่มใหม่', 'New book')}</h3><small>${pdf ? L('เริ่มได้ 2 แบบ', 'Two ways to start') : L('ทริปใหม่ เล่มใหม่', 'A new trip, a new book')}</small></div></div>
-${pdf ? `<a class="addway main" href="#/import"><span class="e">${ic('doc')}</span><span><b>${L('จากคู่มือทริป (PDF)', 'From the trip manual (PDF)')}</b><small>${L('ผู้ช่วยอ่านคู่มือแล้วทำแผนรายวัน ร้าน และหน้าของเด็กให้ · ราว 5–10 นาที', 'The helper reads the manual and makes the day plans, places to eat and the kids’ pages · about 5–10 min')}</small></span><i>›</i></a>` : ''}
+  const add = isEditor() ? `<div class="spine add"><div class="addhd"><b class="addplus" aria-hidden="true">＋</b><div><h3>${L('เล่มใหม่', 'New book')}</h3><small>${L('เริ่มได้หลายแบบ', 'Several ways to start')}</small></div></div>
+<a class="addway main" href="#/snap"><span class="e">${ic('camera')}</span><span><b>${L('เล่มจากรูป', 'A book from photos')}</b><small>${L('เลือกรูปของทริป แอปจัดวันและสถานที่ให้ · ไม่ต้องวางแผนก่อน', 'Pick the trip’s photos — the app sorts the days and places · no plan needed')}</small></span><i>›</i></a>
+${pdf ? `<a class="addway" href="#/import"><span class="e">${ic('doc')}</span><span><b>${L('จากคู่มือทริป (PDF)', 'From the trip manual (PDF)')}</b><small>${L('ผู้ช่วยอ่านคู่มือแล้วทำแผนรายวัน ร้าน และหน้าของเด็กให้ · ราว 5–10 นาที', 'The helper reads the manual and makes the day plans, places to eat and the kids’ pages · about 5–10 min')}</small></span><i>›</i></a>` : ''}
 ${S.trips.some((t) => t.id === 'sakura-hop-2028') ? '' : `<button type="button" class="addway" data-a="sample"><span class="e">${ic('book')}</span><span><b>${L('เล่มตัวอย่าง', 'A sample book')}</b><small>${L('ทริปสมมติ 6 วันที่เติมไว้แล้ว ลบได้ทุกเมื่อ', 'A filled-in 6-day trip, delete it any time')}</small></span><i>›</i></button>`}
 <button type="button" class="addway" data-a="newtrip"><span class="e">${ic('log')}</span><span><b>${L('เล่มเปล่า', 'An empty book')}</b><small>${L('ใส่ชื่อทริปกับวันที่ แล้วค่อยเติมเอง', 'Type the trip name and dates, fill it in as you go')}</small></span><i>›</i></button></div>` : '';
   const welcome = isEditor() && !children().length ? `<a class="famwelcome" href="#/start"><span>${ic('family')}</span><div><b>${L('เริ่มที่ครอบครัวของเรา', 'Start with your family')}</b><small>${L('ตั้งชื่อแอป ใส่ชื่อลูก เลือกตัวการ์ตูน — ทุกหน้าจะเป็นของบ้านเรา', "Name the app, add the children and pick each one's character — every page becomes yours")}</small></div></a>` : '';
@@ -595,7 +597,7 @@ function viewHub(t) {
     // the travel notebook and the kids' passports are on the shelf (they span every book), so the menu holds neither
     // the menu never repeats the bar below (owner, Nov 2026): record and eat are on the parents' bar, firsts is a row in the memory book (relatives: on their bar), so relatives alone keep the eat tile
     eatN && !ed ? tile('eat', `#/t/${esc(t.id)}/eat`, esc(L(`${eatN} ร้าน · ${picks} ร้านแนะนำ`, `${eatN} places · ${picks} picks`))) : '',
-    tile('plan', `#/t/${esc(t.id)}/plan`, esc(L(`${t.days.length} วัน · ${stops} จุดแวะ`, `${t.days.length} days · ${stops} stops`))),
+    t.kind === 'snap' ? '' : tile('plan', `#/t/${esc(t.id)}/plan`, esc(L(`${t.days.length} วัน · ${stops} จุดแวะ`, `${t.days.length} days · ${stops} stops`))),   // a book from photos has no plan
     has.stays ? tile('stays', `#/t/${esc(t.id)}/stays`, esc(tonight ? L(`คืนนี้: ${tonight.name}`, `Tonight: ${tonight.name}`) : ((n.stays || []).length ? L(`${n.stays.length} ที่พัก`, `${n.stays.length} stays`) : L('ที่พัก', 'Stays')))) : '',
     has.sos ? tile('sos', `#/t/${esc(t.id)}/sos`, esc(main ? `${String(main.tel).split(' · ')[0]} · ${T(main.label)}` : L('ถ้า…ก็…', 'If… then…')), 'sos') : '',
     has.prep ? tile('prep', `#/t/${esc(t.id)}/prep`, esc([(n.pack || []).length && L('จัดกระเป๋า', 'Packing'), n.visa && L('วีซ่า', 'Visa'), n.bio && L('ด่านกักกัน', 'Biosecurity'), n.car && L('รถเช่า', 'The van'), n.ifthen && n.ifthen.book && L('จองล่วงหน้า', 'Book ahead'), n.prices && L('ค่าเข้า', 'Prices')].filter(Boolean).join(' · '))) : '',
@@ -607,7 +609,8 @@ function viewHub(t) {
   // not topics of the book, so not tiles (owner, Nov 2026: "ควรจะเป็นปุ่มแยก"): keeping the book on the phone and the way back to the shelf are
   // two rows of their own — the offline row comes up under Today while it still needs a tap (not stored yet, or new photos), else it waits at the foot.
   // Kid mode has its button on the bar below, so the menu no longer repeats it.
-  const offWarn = !(off.got && !off.stale), row = (cls, href, k, b, sm) => `<a class="hubrow ${cls}" href="${href}">${hubE(k)}<span class="ht"><b>${b}</b><small>${sm}</small></span>${ic('chev')}</a>`;
+  // (a book from photos made after the trip has no flight to store it before: its row waits at the foot)
+  const offWarn = !(off.got && !off.stale) && !(t.kind === 'snap' && !t.open), row = (cls, href, k, b, sm) => `<a class="hubrow ${cls}" href="${href}">${hubE(k)}<span class="ht"><b>${b}</b><small>${sm}</small></span>${ic('chev')}</a>`;
   const offRow = ed ? row(`t-offline${offWarn ? ' warn' : ''}`, `#/t/${esc(t.id)}/offline`, 'offline', L('เก็บเล่มไว้ใช้ตอนไม่มีเน็ต', 'Keep this book for no signal'), esc(!off.got ? L('ยังไม่ได้เก็บ — กดก่อนขึ้นเครื่อง', 'Not stored yet — tap before the flight')
     : off.stale ? L(`เก็บเมื่อ ${off.when} · มีรูปใหม่ ${off.fresh} รูป กดเก็บเพิ่ม`, `Stored ${off.when} · ${off.fresh} new photo${off.fresh > 1 ? 's' : ''}, tap to top up`) : L(`เก็บไว้ในเครื่องแล้ว · ${off.when}`, `Stored on this phone · ${off.when}`))) : '';
   const shelfRow = row('shelfgo', '#/', 'shelf', L('ชั้นหนังสือ', 'Bookshelf'), L('เปลี่ยนเล่ม', 'Other books'));
@@ -1885,6 +1888,7 @@ ${on ? `<div class="call calm">✓ ${L('เปิดเตือนบนเค�
 <h1 class="h2" style="text-align:center">${L('พร้อมแล้ว มาทำเล่มแรกกัน', 'All set — let’s make the first book')}</h1>
 <p class="lede" style="text-align:center;max-width:none">${S.trips.length ? L('ชั้นหนังสือมีเล่มอยู่แล้ว เปิดดูได้เลย', 'The shelf already has a book — open it.') : L('ชั้นหนังสือยังว่าง เริ่มได้ 2 แบบ', 'The shelf is empty. Two ways to start.')}</p>
 <div class="onbways">${S.features.story ? `<a class="onbway main" href="#/import"><span class="e">${ic('doc')}</span><span><b>${L('จากคู่มือทริป (PDF)', 'From the trip manual (PDF)')}</b><small>${L('ผู้ช่วยอ่านคู่มือแล้วทำแผนรายวัน ร้าน และหน้าของเด็กให้ · ราว 15 นาที', 'The helper reads the manual and makes the day plans, places to eat and the kids’ pages · about 15 min')}</small></span>${ic('chev')}</a>` : ''}
+<a class="onbway main" href="#/snap"><span class="e">${ic('camera')}</span><span><b>${L('เล่มจากรูป', 'A book from photos')}</b><small>${L('เลือกรูปของทริป แอปจัดวันและสถานที่ให้', 'Pick the trip’s photos — the app sorts the days and places')}</small></span>${ic('chev')}</a>
 ${S.trips.some((t) => t.id === 'sakura-hop-2028') ? '' : `<button type="button" class="onbway" data-a="sample"><span class="e">${ic('book')}</span><span><b>${L('ดูเล่มตัวอย่างก่อน', 'Look at a sample book first')}</b><small>${L('ทริปสมมติ 6 วันที่เติมไว้แล้ว ใช้ชื่อลูกของบ้านคุณ ลบได้ทุกเมื่อ', 'A filled-in 6-day trip with your children’s names — delete it any time')}</small></span>${ic('chev')}</button>`}
 <button type="button" class="onbway" data-a="newtrip"><span class="e">${ic('log')}</span><span><b>${L('เล่มเปล่า', 'An empty book')}</b><small>${L('ใส่ชื่อทริปกับวันที่ แล้วค่อยเติมเอง · 1 นาที', 'Type the trip name and dates, fill it in as you go · 1 min')}</small></span>${ic('chev')}</button>
 <a class="onbway" href="#/"><span class="e">${ic('shelf')}</span><span><b>${L('ไปที่ชั้นหนังสือ', 'Go to the bookshelf')}</b><small>${S.trips.length ? L(`มี ${S.trips.length} เล่ม`, `${S.trips.length} book${S.trips.length > 1 ? 's' : ''}`) : L('ว่างอยู่', 'Empty for now')}</small></span>${ic('chev')}</a></div>
