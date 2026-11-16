@@ -334,7 +334,7 @@ if (process.env.BASE) {
 {
   const vm = await import('node:vm');
   const ctx = { A: {}, Blob, File, DataView, Uint8Array, Promise, Math, String, Array, Object, Set, isFinite, navigator: {} };
-  vm.createContext(ctx); vm.runInContext(fs.readFileSync(path.resolve('public/snap.js'), 'utf8') + '\n;this.snapMeta = snapMeta; this.snapRead = snapRead; this.snapNearest = snapNearest; this.snapRound = snapRound;', ctx);
+  vm.createContext(ctx); vm.runInContext(fs.readFileSync(path.resolve('public/snap.js'), 'utf8') + '\n;this.snapMeta = snapMeta; this.snapRead = snapRead; this.snapNearest = snapNearest; this.snapRound = snapRound; this.snapVidAt = snapVidAt;', ctx);
   const fx = (f, mod) => new File([fs.readFileSync(path.resolve('test/fixtures/snap', f))], f, { lastModified: mod || Date.UTC(2030, 0, 2, 3, 4, 5) });
   const near = (ll, a, b) => !!ll && Math.abs(ll[0] - a) < 1e-4 && Math.abs(ll[1] - b) < 1e-4;
   const m1 = await ctx.snapMeta(fx('gps-ii.jpg'));
@@ -382,6 +382,13 @@ if (process.env.BASE) {
   ok(src.split(named).length === 2 && src.split(sent).length === 2 && !/m\.ll\[|\.ll\.join|ll\.toFixed|coords\.(latitude|longitude)/.test(src.replace(named, ''))
     && (src.match(/api\([^)]*\bll\b/g) || []).length === 1 && /if \(ls\('geoOnline'\)/.test(src),
     'snap: a position is never printed or kept — the one live read goes straight into snapWhere; the only position that ever leaves the phone is rounded (snapRound) and only with the family\'s switch on');
+  // a clip's time (owner, Nov 2026: clips in a book from photos): the movie header's creation time, found by walking the boxes — a phone
+  // writes the index ('moov') after the picture data, as ffmpeg does by default here; a clip with no time says so
+  { const { execFileSync } = await import('node:child_process'), dir = fs.mkdtempSync(path.join(os.tmpdir(), 'mbv-')), mk = (f, extra) => { execFileSync('ffmpeg', ['-hide_banner', '-loglevel', 'error', '-y', '-f', 'lavfi', '-i', 'testsrc=size=160x120:rate=10', '-t', '1', ...extra, '-c:v', 'libx264', '-preset', 'ultrafast', path.join(dir, f)]); return new File([fs.readFileSync(path.join(dir, f))], f, { type: f.endsWith('.mov') ? 'video/quicktime' : 'video/mp4' }); };
+    const v1 = await ctx.snapVidAt(mk('a.mp4', ['-metadata', 'creation_time=2025-03-01T10:30:00Z'])), v2 = await ctx.snapVidAt(mk('b.mov', ['-metadata', 'creation_time=2024-07-09T23:05:00Z'])), v3 = await ctx.snapVidAt(mk('c.mp4', ['-fflags', '+bitexact']));
+    fs.rmSync(dir, { recursive: true, force: true });
+    ok(v1 && v1.ms === Date.parse('2025-03-01T10:30:00Z') && /^2025-03-0[12]T/.test(v1.at) && v2 && v2.ms === Date.parse('2024-07-09T23:05:00Z') && v3 === null,
+      `snap: a clip's own time from its movie header, MP4 and QuickTime, the index after the picture data; none written → none (${JSON.stringify([v1, v2, v3])})`); }
   ok(JSON.stringify(ctx.snapRound([13.75049, 100.49171])) === '[13.75,100.49]', 'snap: what leaves the phone is rounded to two decimals (about a kilometre)');
   // the phone's own list of place names (public/geo/<cc>.json, GeoNames): the nearest spot inside its reach, else a town within 8 km
   const geoTh = JSON.parse(fs.readFileSync(path.resolve('public/geo/th.json'), 'utf8'));

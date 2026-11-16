@@ -417,6 +417,8 @@ nav.bar a[aria-current=page]{color:var(--accent)}
 .lb .capbox p{font-size:15px}
 .lb .tagrow{display:grid;grid-template-columns:1fr 1fr;gap:6px;margin-top:6px}
 .lb .tagrow input{width:100%;background:rgba(255,255,255,.1);border:1px solid rgba(255,255,255,.2);border-radius:8px;padding:7px 10px;color:#fff;font-size:13px}
+.lb .lbday{display:flex;align-items:center;gap:8px;margin-top:8px;color:#fff;font-size:14px}.lb .lbday select{flex:1;min-height:44px;background:rgba(255,255,255,.12);border:1px solid rgba(255,255,255,.25);border-radius:8px;padding:6px 10px;color:#fff;font:inherit}.lb .lbday option{color:#111}
+.sedays{list-style:none;margin:16px 0;padding:0;display:grid;gap:12px}.seday{border:1px solid var(--line);border-radius:var(--r);background:var(--card);padding:12px 14px;display:grid;gap:8px}.sehd{display:flex;align-items:center;gap:10px}.sehd b{font-size:16px}.sehd small{color:var(--muted);font-size:13.5px;margin-left:auto}.sehd .seart{width:44px;height:44px;border-radius:50%;object-fit:cover;flex:none}.serow{display:flex;gap:10px}.serow .grow{flex:1;min-width:0}.seemo{width:96px;flex:none}.seday .field{width:100%;margin-top:4px}
 .lb .tags{display:flex;flex-wrap:wrap;gap:6px;margin-top:8px}
 .lb .tagc{font-size:12px;border-radius:999px;padding:3px 9px;background:rgba(255,255,255,.14);color:#fff}
 .phgrp{margin-top:8px}.phgrp>.label{margin-bottom:4px;font-weight:600}
@@ -3170,6 +3172,9 @@ details.emeal[open]>summary .mname{visibility:hidden}
 .snapsteps li.now .ssi{background:var(--accent);color:var(--on-accent,#fff)}.snapsteps li.err .ssi{background:color-mix(in srgb,var(--hot) 18%,var(--paper));color:color-mix(in srgb,var(--hot) 70%,var(--ink))}
 .snapsteps small{color:var(--muted);font-size:13px}
 .snapmoms li b{font-size:14.5px}.snapmoms li small{grid-column:1;color:var(--muted);font-size:13px}.snapmoms li .sdph{grid-row:1/3;grid-column:2}
+.sdph.sdpick{flex-wrap:wrap;gap:6px}.snapmoms li .sdph.sdpick{grid-row:auto;grid-column:1/-1}.sdpt{position:relative;width:48px;height:48px;padding:0;border:2px solid transparent;border-radius:10px;background:none;cursor:pointer}.sdpt img{width:100%;height:100%;object-fit:cover;border-radius:8px;display:block}.sdpt.on{border-color:#E8B100}.sdpt i{position:absolute;right:-6px;top:-8px;font-style:normal;font-size:16px;line-height:1}.sdpt.off img{opacity:.45;filter:grayscale(.6)}.sdpt.kept{border-color:var(--accent)}.sdpt.kept i{right:-4px;top:-6px;background:var(--accent);color:#fff;border-radius:50%;width:18px;height:18px;display:grid;place-items:center;font-size:11px}
+.snapaside{margin-top:10px;border-top:1px dashed var(--line);padding-top:8px}.snapaside summary{display:flex;align-items:center;gap:8px;min-height:44px;cursor:pointer;list-style:none}.snapaside summary span{flex:1;display:flex;flex-direction:column}.snapaside summary small{color:var(--muted);font-size:13px}.snapaside .sdpick{margin-top:6px}
+.snapjoin{margin-top:8px;grid-template-columns:repeat(auto-fill,minmax(min(100%,180px),1fr))}
 /* kid games' painted props (public/art/game2, house style, owner Nov 2026: "ทำหมดเลย"): wicker baskets, a starry card back, a meadow under the maze, a painted cake, coins for the levels, the cheering dragon */
 .basket{background:url(/art/game2/basket.webp) center 38%/auto 58% no-repeat,color-mix(in srgb,var(--bc) 22%,#fff)}
 .basket .in{position:relative;z-index:1}
