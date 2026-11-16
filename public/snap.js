@@ -464,7 +464,7 @@ Object.assign(A, {
     }
     snapForget(); snapName = '';
     toast(L('สร้างเล่มแล้ว รูปกำลังส่งขึ้น', 'The book is made — the photos are on their way'));
-    nav(`#/t/${encodeURIComponent(t.id)}/book`);
+    nav(`#/t/${encodeURIComponent(t.id)}/${S.features.story ? 'draft' : 'book'}`);
   },
 });
 /* ---------- P2: during the trip (docs/SNAP-BOOK.md J2; screen B4) ----------
@@ -557,13 +557,77 @@ Object.assign(A, {
   async snapclose(b) {
     if (!armed(b, L('แตะอีกครั้งเพื่อปิดเล่ม', 'Tap again to close the book'))) return;
     const t = trip(b.dataset.t); if (!t) return;
-    try { await api('PATCH', `/api/b/trips/${encodeURIComponent(t.id)}`, { open: false }); await load(); toast(L('ปิดเล่มแล้ว ยินดีต้อนรับกลับบ้าน', 'Book closed — welcome home')); nav(`#/t/${encodeURIComponent(t.id)}/book`); }
+    try { await api('PATCH', `/api/b/trips/${encodeURIComponent(t.id)}`, { open: false }); await load(); toast(L('ปิดเล่มแล้ว ยินดีต้อนรับกลับบ้าน', 'Book closed — welcome home')); nav(`#/t/${encodeURIComponent(t.id)}/${S.features.story ? 'draft' : 'book'}`); }
     catch (_) { toast(L('ต้องมีเน็ตเพื่อปิดเล่ม', 'You need a connection to close the book')); }
   },
 });
 if (typeof document !== 'undefined') document.addEventListener('change', (e) => {
   if (e.target.id === 'snapin-cam' || e.target.id === 'snapin-live') { const t = trip(e.target.dataset.t), fs = [...(e.target.files || [])]; if (t && fs.length) snapLiveAdd(t, fs); return; }
   if (e.target.id === 'snaphere') { const t = trip(e.target.dataset.t), v = e.target.value.trim(); if (t) ls(snapHereKey(t), v ? { th: v, en: v, date: todayIn(t.timezone) } : null); }   // typed: a name, kept for today
+});
+/* ---------- P3: the helper drafts the book (docs/SNAP-BOOK.md D6; screens C1–C2) ----------
+   #/t/<id>/draft: what to draft (the book's and the days' names, a summary a day, the foreword, a bedtime story a day), how many
+   helper calls that takes, then the job's steps as they go (the job runs on the server: this page can be closed). */
+const snapDraft = { opt: { names: true, sums: true, fore: true, stories: false }, job: null, err: '', timer: 0 };
+const snapDraftCalls = (t, o) => (o.names ? 1 : 0) + (o.sums ? t.days.length : 0) + (o.fore ? 1 : 0) + (o.stories ? t.days.length : 0);
+function snapDraftPoll() {
+  clearTimeout(snapDraft.timer);
+  api('GET', '/api/b/snap/draft').then(async (r) => {
+    const was = snapDraft.job && snapDraft.job.status; snapDraft.job = r.job;
+    if (r.job && r.job.status === 'running') snapDraft.timer = setTimeout(snapDraftPoll, 1500);
+    else if (was === 'running') await load();   // the names and texts the helper wrote
+    safeRender();
+  }).catch(() => { snapDraft.timer = setTimeout(snapDraftPoll, 4000); });
+}
+function viewSnapDraft(t) {
+  // a running job shows on any phone; a finished one only on the phone that started it (a later visit offers the parts again)
+  const job = snapDraft.job && snapDraft.job.trip === t.id && (snapDraft.job.status === 'running' || snapDraft.mine === t.id) ? snapDraft.job : null, o = snapDraft.opt, n = snapDraftCalls(t, o);
+  if (!S.features.story) return emptyCard(t, L('ผู้ช่วยยังไม่ได้เปิดใช้', 'The helper is not switched on'), L('เขียนชื่อวันและเรื่องราวเองได้ในหน้าบันทึกของแต่ละวัน', 'Name the days and write their stories on each day’s record page'), [`#/t/${encodeURIComponent(t.id)}/book`, L('ไปที่เล่ม', 'Go to the book')]);
+  if (!job && !snapDraft.asked) { snapDraft.asked = true; snapDraftPoll(); }   // a job may already be running for this book
+  const stepName = (s) => (s.k === 'names' ? L('ชื่อเล่มและชื่อของแต่ละวัน', 'The book’s and the days’ names') : s.k === 'fore' ? L('คำนำของเล่ม', 'The foreword')
+    : s.k === 'sum' ? L(`สรุปวันที่ ${s.day + 1}`, `Day ${s.day + 1} in a few lines`) : L(`นิทานวันที่ ${s.day + 1}`, `Day ${s.day + 1}’s bedtime story`));
+  const stepSt = (s) => ({ done: ['ok', '✓', L('เสร็จ', 'done')], kept: ['ok', '✓', L('มีอยู่แล้ว ไม่แตะ', 'already written, left alone')], skip: ['wait', '–', L('ยังไม่มีอะไรให้เล่า', 'nothing to go on yet')],
+    now: ['now', '…', L('กำลังเขียน', 'writing')], error: ['err', '!', L('ไม่สำเร็จ', 'did not work')] }[s.st] || ['wait', '', L('รอคิว', 'waiting')]);
+  if (job) {
+    const running = job.status === 'running', doneN = job.steps.filter((s) => s.st !== 'wait' && s.st !== 'now').length;
+    const why = job.error === 'limit' ? L('วันนี้ใช้ผู้ช่วยครบแล้ว ที่เขียนเสร็จเก็บไว้แล้ว พรุ่งนี้กดร่างต่อได้', 'The helper is used up for today — what is written is kept; carry on tomorrow')
+      : job.error === 'refusal' ? L('ผู้ช่วยไม่เขียนส่วนนี้ ที่เขียนเสร็จเก็บไว้แล้ว', 'The helper would not write this part — what is written is kept') : job.error ? L('ร่างไม่สำเร็จ ที่เขียนเสร็จเก็บไว้แล้ว ลองอีกครั้งได้', 'The draft stopped — what is written is kept; try again') : '';
+    return `<h1>${running ? L('ผู้ช่วยกำลังร่างเล่ม', 'The helper is drafting the book') : job.status === 'done' ? L('ร่างเสร็จแล้ว', 'The draft is ready') : L('หยุดร่างแล้ว', 'The draft stopped')}</h1>
+${running ? `<p class="sub">${L(`เสร็จ ${doneN} จาก ${job.steps.length} · ปิดหน้านี้ได้ ผู้ช่วยเขียนต่อเอง`, `${doneN} of ${job.steps.length} done · you can leave this page, the helper carries on`)}</p>` : ''}
+${why ? `<p class="notice">${why}</p>` : ''}
+<ol class="snapsteps">${job.steps.map((s) => { const [c, m, w] = stepSt(s); return `<li class="${c}"><span class="ssi" aria-hidden="true">${m}</span><b>${stepName(s)}</b><small>${w}</small></li>`; }).join('')}</ol>
+<div class="snapfoot">${running ? `<button type="button" class="btn ghost wide" data-a="snapdstop">${L('หยุดร่าง', 'Stop')}</button>`
+    : `<a class="btn wide" href="#/t/${encodeURIComponent(t.id)}/book">${L('อ่านเล่ม', 'Read the book')}</a><small>${L('ทุกบรรทัดแก้ได้ ชื่อวันแก้ที่หน้าวันที่จัดให้ เรื่องของวันแก้ในหน้าบันทึก', 'Every line can be changed — a day’s story on its record page')}</small>`}</div>`;
+  }
+  const row = (k, th, en, sth, sen) => `<label class="snapopt"><span><b>${L(th, en)}</b>${sth ? `<small>${L(sth, sen)}</small>` : ''}</span><input type="checkbox" data-snapopt="${k}"${o[k] ? ' checked' : ''}></label>`;
+  return `<h1>${L('ให้ผู้ช่วยร่างเล่ม', 'Let the helper draft the book')}</h1>
+<p class="sub">${L('ผู้ช่วยเขียนร่างให้ทั้งเล่ม คุณแก้ได้ทุกบรรทัดก่อนพิมพ์', 'The helper drafts the whole book — you can change every line before printing')}</p>
+<div class="snapopts">${row('names', 'ชื่อเล่ม และชื่อของแต่ละวัน', 'The book’s and the days’ names', 'วันที่คุณตั้งชื่อเองแล้วจะไม่ถูกเปลี่ยน', 'A day you named yourself keeps its name')}
+${row('sums', 'สรุปวันละ 2–3 ประโยค', 'Each day in 2–3 sentences', 'จากสถานที่ เวลา และคำที่คุณจดไว้', 'From the places, times and your notes')}
+${row('fore', 'คำนำของเล่ม', 'The foreword')}
+${row('stories', 'นิทานก่อนนอนของแต่ละวัน', 'A bedtime story for each day', 'ให้เด็กฟังในโหมดเด็ก', 'For the children in kid mode')}</div>
+${snapNote('ผู้ช่วยรู้แค่วัน เวลา ชื่อสถานที่ คำที่คุณจด และชื่อเล่นกับอายุของเด็ก ไม่เห็นรูป ไม่รู้พิกัด', 'The helper only gets the dates, times, place names, what you wrote, and the children’s names and ages — no photos, no positions.')}
+${snapDraft.err ? `<p class="notice">${esc(snapDraft.err)}</p>` : ''}
+<div class="snapfoot"><button type="button" class="btn wide" data-a="snapdraft" data-t="${esc(t.id)}"${n ? '' : ' disabled'}>${L('เริ่มร่าง', 'Start the draft')}</button>
+<small>${n ? L(`ใช้ผู้ช่วย ${n} ครั้ง`, `${n} helper call${n === 1 ? '' : 's'}`) : L('เลือกอย่างน้อยหนึ่งอย่าง', 'Pick at least one')}</small>
+<a class="linkbtn" href="#/t/${encodeURIComponent(t.id)}/book">${L('ข้าม เขียนเอง', 'Skip — I’ll write it')}</a></div>`;
+}
+Object.assign(A, {
+  async snapdraft(b) {
+    const t = trip(b.dataset.t); if (!t) return;
+    b.disabled = true; snapDraft.err = '';
+    try { snapDraft.job = await api('POST', `/api/b/snap/${encodeURIComponent(t.id)}/draft`, { ...snapDraft.opt, lang }); snapDraft.mine = t.id; snapDraftPoll(); }
+    catch (e) {
+      snapDraft.err = e.code === 429 ? L(`วันนี้ผู้ช่วยเหลือ ${(e.body && e.body.left) || 0} ครั้ง ต้องใช้ ${(e.body && e.body.need) || ''} ครั้ง ลองเลือกน้อยลง หรือพรุ่งนี้`, `The helper has ${(e.body && e.body.left) || 0} calls left today and this needs ${(e.body && e.body.need) || ''} — pick less, or try tomorrow`)
+        : e.code === 409 ? L('ผู้ช่วยกำลังร่างอีกเล่มอยู่ รอสักครู่', 'The helper is drafting another book — wait a moment') : L('ต้องมีเน็ตเพื่อเริ่มร่าง', 'You need a connection to start');
+      render();
+    }
+  },
+  async snapdstop() { try { await api('DELETE', '/api/b/snap/draft'); } catch (_) { /* polls on */ } snapDraftPoll(); },
+});
+if (typeof document !== 'undefined') document.addEventListener('change', (e) => {
+  if (e.target.dataset && e.target.dataset.snapopt) { snapDraft.opt[e.target.dataset.snapopt] = e.target.checked; const t = trip((route().parts || [])[1]), sm = document.querySelector('.snapfoot small'), go = document.querySelector('[data-a="snapdraft"]');
+    if (t && sm && go) { const n = snapDraftCalls(t, snapDraft.opt); sm.textContent = n ? L(`ใช้ผู้ช่วย ${n} ครั้ง`, `${n} helper call${n === 1 ? '' : 's'}`) : L('เลือกอย่างน้อยหนึ่งอย่าง', 'Pick at least one'); go.disabled = !n; } }   // counted in place
 });
 if (typeof document !== 'undefined') document.addEventListener('input', (e) => {   // typed in place: no redraw under the finger
   if (e.target.id === 'snapname') { snapName = e.target.value; if (snapS) snapS.name = e.target.value; return; }
