@@ -141,18 +141,23 @@ function repack(g, box) {
   const cols = [...g.querySelectorAll(':scope > .ccol')], boxes = [...g.querySelectorAll(':scope > .ccol > section')].sort((a, b) => a._o - b._o);
   const h = boxes.map((b) => b.offsetHeight), all = h.reduce((n, x) => n + x, 0), cur = boxes.map((b) => cols.indexOf(b.parentNode)), k = boxes.indexOf(box);
   const cost = (side) => { const r = h.reduce((n, x, i) => n + (side(i) ? x : 0), 0); return Math.max(r, all - r); };
-  let best = null;
-  for (let m = 0; m < 1 << boxes.length; m++) {
-    if (m & 1 || cur.some((c, i) => i <= k && (m >> i & 1) !== c)) continue;   // the first box stays on the left; up to the tapped one nothing changes sides
-    const c = cost((i) => m >> i & 1); if (!best || c < best.cost) best = { m, cost: c };
-  }
-  if (!best || cost((i) => cur[i]) - best.cost < (k >= 0 ? 100 : 1)) return;
+  const deal = (keep) => { let b = null; for (let m = 0; m < 1 << boxes.length; m += 2) { if (cur.some((c, i) => keep(i) && (m >> i & 1) !== c)) continue; const c = cost((i) => m >> i & 1); if (!b || c < b.cost) b = { m, cost: c }; } return b; };   // the first box stays on the left
+  const now = cost((i) => cur[i]), best = deal((i) => i <= k), free = k >= 0 ? deal((i) => i === k) : null;   // up to the tapped one nothing changes sides · only the tapped one stays
+  const put = (m) => boxes.forEach((b, i) => { const to = cols[m >> i & 1]; if (to !== b.parentNode) to.insertBefore(b, [...to.children].find((x) => x._o > b._o) || null); });
   // Chromium keeps its "scroll anchor" (the first box it sees on the screen) still by scrolling the page: when that anchor is a box that changes
   // column here, the page scrolls with it and the fold just tapped jumps. So the anchoring is off while the boxes move (Safari has none).
-  const root = document.documentElement; root.style.overflowAnchor = 'none';
-  boxes.forEach((b, i) => { const to = cols[best.m >> i & 1]; if (to === b.parentNode) return;
-    to.insertBefore(b, [...to.children].find((x) => x._o > b._o) || null); });
-  void g.offsetHeight; requestAnimationFrame(() => { root.style.overflowAnchor = ''; });
+  const root = document.documentElement, done = () => { void g.offsetHeight; requestAnimationFrame(() => { root.style.overflowAnchor = ''; }); };
+  // A big box written late ("eat along the route · 42 places") cannot be balanced by the boxes after it. Then the boxes above it move too and
+  // the page is scrolled by exactly what the tapped box moved, so it stays where it is on the screen — tried, and taken back when the page
+  // cannot scroll that far (the tapped box would jump): then the careful deal below stands.
+  if (free && best && best.cost - free.cost >= 300) {
+    const at = box.getBoundingClientRect().top, y0 = scrollY; root.style.overflowAnchor = 'none';
+    put(free.m); scrollBy(0, box.getBoundingClientRect().top - at);
+    if (Math.abs(box.getBoundingClientRect().top - at) <= 1) { done(); return; }
+    put(cur.reduce((m, c, i) => m | (c << i), 0)); scrollTo(0, y0);
+  }
+  if (!best || now - best.cost < (k >= 0 ? 100 : 1)) { done(); return; }
+  root.style.overflowAnchor = 'none'; put(best.m); done();
 }
 let packQ = new Map(), packR = 0;   // the folds toggled in this frame, by grid
 document.addEventListener('toggle', (e) => {
@@ -851,7 +856,7 @@ function dayGlance(t, i, pre, split, full) {   // pre (before the trip; never na
   const lk = nl || nq || pl.tale ? infoBlocks(t).meta.learn.findIndex((m) => m.key === 'days') : -1;
   const live = wxLine(t, i), nknow = tips.length + (pl.pick ? 1 : 0);
   const tl = `${daySeg(full)}${rows.length ? `<section class="cbox c-sky" id="tlbox"><h3 class="ch">${ic('clock')}${L('ไทม์ไลน์', 'Timeline')}</h3><ol class="tl plan brief">${rows.map((r, k) => { const cl = [st[k], full && tlMore(r) ? 'open' : ''].filter(Boolean).join(' '); return `<li${cl ? ` class="${cl}"` : ''}><time>${esc(tlTime(r))}</time><div${tlMore(r) ? ` role="button" tabindex="0" aria-expanded="${!!full}"` : ''}>${st[k] === 'next' ? `<span class="nexttag">${L('ถัดไป', 'Next')}</span> ` : ''}${tlBrief(r)}</div></li>`; }).join('')}</ol></section>` : ''}`;
-  const rest = `${live ? `<p class="wxpre">${ic('weather')} <span class="wxlive">${emoIn(esc(live))}</span></p>` : ''}${pre ? `<details class="dmore"${op}><summary><span><b>${L('รายละเอียดวันนี้', 'The rest of the day')}</b><small>${L('เดินทาง · มื้ออาหาร · แผนสำรอง · เงิน · ควรรู้', 'Getting around · meals · plan B · money · good to know')}</small></span>${ic('chev', 'chv')}</summary>` : ''}<div class="cgrid">${go || goMore ? `<section class="cbox c-ind"><h3 class="ch">${ic('route')}${L('เดินทางและที่พัก', 'Getting around & tonight')}</h3>${go}${goMore}</section>` : ''}${box('sun', 'eat', L('มื้ออาหาร', 'Meals'), food, foodMore)}${pl.planB ? `<section class="cbox c-hot"><h3 class="ch">${ic('shuffle')}${L('แผนสำรอง', 'Plan B')}</h3>${pts(T(pl.planB))}</section>` : ''}${money ? fbox('leaf', 'money', L('เงินวันนี้', 'Money today'), `<span class="num">${esc(mm ? mm[0].replace(/^(?:วันนี้|today)\s*/i, '').trim() : brief(money))}</span>`, moneyHtml(money)) : ''}${nknow ? fbox('teal', 'learn', L('ควรรู้วันนี้', 'Good to know today'), esc(L(`${nknow} ข้อ`, `${nknow} tip${nknow === 1 ? '' : 's'}`)), `<ul class="tips">${pl.pick ? `<li class="tk-local"><b class="tkl">${L('เคล็ดลับคนท้องถิ่น', 'Local tip')}</b>${lead(T(pl.pick))}</li>` : ''}${tips.map((x) => `<li${TIPK[x.kind] ? ` class="tk-${x.kind}"` : ''}>${lead(T(x))}</li>`).join('')}</ul>`) : ''}${along}${lk >= 0 ? lbox('rose', 'book', `#/t/${esc(t.id)}/learn/full/${lk}`, L('เรียนรู้ของวันนี้', 'Today’s things to learn'), esc([nl && L(`${nl} เรื่อง`, `${nl} card${nl === 1 ? '' : 's'}`), nq && L(`คำถามในรถ ${nq} ข้อ`, `${nq} car question${nq === 1 ? '' : 's'}`), pl.tale && L('นิทานของไกด์', 'the guide’s story')].filter(Boolean).join(' · '))) : ''}</div><p class="label dfoot"${full ? '' : ' hidden'}>${L('จากคู่มือ · ราคาและเวลาเปิดเช็กซ้ำก่อนไป · เลขจองไม่ได้เก็บที่นี่', 'From the manual · re-check prices and hours before travelling · booking numbers live in the guide app, not here')}</p>${pre ? '</details>' : ''}`;
+  const rest = `${live ? `<p class="wxpre">${ic('weather')} <span class="wxlive">${emoIn(esc(live))}</span></p>` : ''}${pre ? `<details class="dmore"${op}><summary><span><b>${L('รายละเอียดวันนี้', 'The rest of the day')}</b><small>${L('เดินทาง · มื้ออาหาร · แผนสำรอง · เงิน · ควรรู้', 'Getting around · meals · plan B · money · good to know')}</small></span>${ic('chev', 'chv')}</summary>` : ''}<div class="cgrid">${go || goMore ? `<section class="cbox c-ind"><h3 class="ch">${ic('route')}${L('เดินทางและที่พัก', 'Getting around & tonight')}</h3>${go}${goMore}</section>` : ''}${box('sun', 'eat', L('มื้ออาหาร', 'Meals'), food, foodMore)}${pl.planB ? `<section class="cbox c-hot"><h3 class="ch">${ic('shuffle')}${L('แผนสำรอง', 'Plan B')}</h3>${pts(T(pl.planB))}</section>` : ''}${money ? fbox('leaf', 'money', L('เงินวันนี้', 'Money today'), `<span class="num">${esc(mm ? mm[0].replace(/^(?:วันนี้|today)\s*/i, '').trim() : brief(money))}</span>`, moneyHtml(money)) : ''}${nknow ? fbox('teal', 'learn', L('ควรรู้วันนี้', 'Good to know today'), esc(L(`${nknow} ข้อ`, `${nknow} tip${nknow === 1 ? '' : 's'}`)), `<ul class="tips">${pl.pick ? `<li class="tk-local"><b class="tkl">${L('เคล็ดลับคนท้องถิ่น', 'Local tip')}</b>${emph(T(pl.pick))}</li>` : ''}${tips.map((x) => `<li${TIPK[x.kind] ? ` class="tk-${x.kind}"` : ''}>${lead(T(x))}</li>`).join('')}</ul>`) : ''}${along}${lk >= 0 ? lbox('rose', 'book', `#/t/${esc(t.id)}/learn/full/${lk}`, L('เรียนรู้ของวันนี้', 'Today’s things to learn'), esc([nl && L(`${nl} เรื่อง`, `${nl} card${nl === 1 ? '' : 's'}`), nq && L(`คำถามในรถ ${nq} ข้อ`, `${nq} car question${nq === 1 ? '' : 's'}`), pl.tale && L('นิทานของไกด์', 'the guide’s story')].filter(Boolean).join(' · '))) : ''}</div><p class="label dfoot"${full ? '' : ' hidden'}>${L('จากคู่มือ · ราคาและเวลาเปิดเช็กซ้ำก่อนไป · เลขจองไม่ได้เก็บที่นี่', 'From the manual · re-check prices and hours before travelling · booking numbers live in the guide app, not here')}</p>${pre ? '</details>' : ''}`;
   return split ? [tl, rest] : tl + rest;
 }
 // grown-ups switch the trip reminders on per phone (the server pushes 30 min before each timed step of the day);
@@ -917,11 +922,12 @@ function dayBag(t, i) {
 const bagLabel = (got, n) => (got >= n && n ? L('จัดครบแล้ว ✓', 'All packed ✓') : got ? L(`จัดแล้ว ${got}/${n}`, `${got}/${n} packed`) : L(`${n} อย่าง`, `${n} thing${n === 1 ? '' : 's'}`));
 // Today's bag is the morning's job (owner, Nov 2026: Today on a trip day ran to five screens, the open list of eight things sat between the timeline
 // and "getting around" all day): on the day it is open until everything is ticked or the day is under way — the first step is done and the second
-// has begun (two timed steps behind us) — then it is its one line again, a tap away. A tick counts in place and the last one folds it (sheets.js).
+// has begun (two timed steps behind us), or, where the plan marks the step we leave on (`go: true` on a timeline row), once that step's time has come — then it is its one line again, a tap away. A tick counts in place and the last one folds it (sheets.js).
 function bagBlock(t, i) {
   if (!isEditor()) return '';
   const items = dayBag(t, i), ck = ls('ck') || {}, key = (k) => `${t.id}.bag.d${i}.${k}`, got = items.filter((x) => ck[key(x.k)]).length;
-  const under = tlStates(t, i).filter((x) => x === 'past').length >= 2;
+  const st = tlStates(t, i), go = (((t.days[i] || {}).plan || {}).plan || []).findIndex((r) => r.go);   // a step marked "go" in the plan = the one we leave on
+  const under = go >= 0 ? st[go] === 'past' : st.filter((x) => x === 'past').length >= 2;
   return `<details class="bag noprint"${dayNow(t) === i && got < items.length && !under ? ' open' : ''}><summary>${emo('🎒')} ${L('กระเป๋าวันนี้', 'Today’s bag')} <span class="label bagn">${bagLabel(got, items.length)}</span>${ic('chev', 'chv')}</summary>
 <ul class="chk bagl">${items.map((x) => `<li><label><input type="checkbox" data-ck="${esc(key(x.k))}"${ck[key(x.k)] ? ' checked' : ''}><span>${emo(x.e)} ${esc(L(x.th, x.en))}<small>${esc(x.why)}</small></span></label></li>`).join('')}</ul>
 <p class="label">${L('จากแผนของวันนี้ในคู่มือ · ติ๊กเก็บไว้ในเครื่องนี้', 'From today’s plan in the manual · ticks stay on this phone')}</p></details>`;

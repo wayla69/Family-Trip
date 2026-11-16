@@ -3,6 +3,7 @@ import { chromium } from 'playwright';
 import sharp from 'sharp';
 import fs from 'node:fs';
 import path from 'node:path';
+import { todayLost } from './today-lost.mjs';
 
 const BASE = process.env.BASE, CODE = process.env.CODE;
 const OUT = process.env.SHOTS || '/tmp/mb-shots';
@@ -47,15 +48,6 @@ async function login(page) {
 const boxOf = async (page, sel) => { for (let k = 0; k < 30; k++) { const b = await page.locator(sel).first().boundingBox().catch(() => null); if (b) return b; await page.waitForTimeout(100); } throw new Error('no box: ' + sel); };
 const apiState = (page) => page.evaluate(async () => (await fetch('/api/b/state')).json());
 const T = 'hk-macau-2026';
-// What the old full plan of a day said that Today (opened) and the learn page it links to no longer say — run in the page, for the books named.
-// Every piece of text of planHtml(…, {full: true}) must be found; the old page's own headings and buttons are not content.
-const todayLost = (ids) => { const norm = (x) => String(x).toLowerCase().replace(/\s+/g, '').replace(/[↗›‹★·]/g, ''), div = (h) => { const d = document.createElement('div'); d.innerHTML = h; return d; };
-      const CHROME = /^(Plan for the day|· \d+ steps|Local tip|Today's picks|All places|The whole day's route|Timeline|Getting around|Tonight|Map|Plan B|Money today|Good to know today|Backup:|Eat along|More places|Learn on the way|Quiz in the car|For the kids|Directions|Weather)/, out = [];
-      for (const t of S.trips.filter((x) => ids.includes(x.id))) { const learn = norm(div(viewLearn(t, true)).textContent);
-        t.days.forEach((d, i) => { const today = norm(div(viewToday(t, i, true)).textContent), w = document.createTreeWalker(div(planHtml(t, i, true, false, { full: true })), NodeFilter.SHOW_TEXT); let n;
-          while ((n = w.nextNode())) { const leaf = n.nodeValue.trim(); if (leaf.length < 2 || CHROME.test(leaf)) continue;
-            leaf.split(/\s+·\s+|\s+—\s+|\s*\(|\)\s*/).forEach((x) => { const y = norm(x).replace(/^[—–-]+|[.,;:]+$/g, ''); if (y.length >= 3 && !today.includes(y) && !learn.includes(y)) out.push(`${t.id} d${i + 1}: ${x.slice(0, 50)}`); }); } }); }
-      return out; };
 
 // ---------- editor on a phone ----------
 {
@@ -529,6 +521,12 @@ const todayLost = (ids) => { const norm = (x) => String(x).toLowerCase().replace
     await page.click('.dayseg button[data-v="0"]'); await page.evaluate(() => { document.querySelector('details.dmore').open = true; }); await two(); const a4 = await look();   // before the trip "Short" also closes the day's folded glance: open it again to look
     ok(a2.sides === a0.sides && a3.cost === a3.best && a3.sides !== a0.sides && a3.order && a4.sides === a0.sides && await s.noHScroll(),
       `today, wide screen: closing the fold puts the boxes back (${a2.sides}); "Full" deals them all by their open heights — the best split there is (${a3.sides}, taller column ${a3.cost} px of best ${a3.best}) — and "Short" returns to where it began (${a4.sides})`);
+    // a big box written late (42 places to eat along the route): the boxes above it move to the other column and the page is scrolled by what the tapped fold moved
+    const big = (go) => page.evaluate((press) => { const s = [...document.querySelectorAll('.cgrid .cbox.cone details.dfold > summary')].find((x) => /Eat along/.test(x.textContent)); if (press) s.click(); else s.scrollIntoView({ block: 'center' });
+      const cols = [...document.querySelectorAll('.cgrid.packed > .ccol')], col = s.closest('.ccol'); return { top: Math.round(s.getBoundingClientRect().top), alone: col.children.length, h: cols.map((c) => c.offsetHeight), y: Math.round(scrollY) }; }, go);
+    const b0 = await big(false); await big(true); await two(); const b1 = await big(false);
+    ok(b0.alone > 1 && b1.alone === 1 && Math.abs(b1.top - b0.top) <= 1 && Math.min(...b1.h) > Math.min(...b0.h) + 300 && await s.noHScroll(),
+      `today, wide screen: "Eat along today's route" opened on its own takes a column for itself (${b0.alone} → ${b1.alone} box), the other column grows from ${Math.min(...b0.h)} to ${Math.min(...b1.h)} px, and the tapped fold stays where it was on the screen (${b0.top} → ${b1.top} px, the page scrolled ${b0.y} → ${b1.y})`);
   }
   await page.setViewportSize(vp0); await page.waitForFunction(() => !document.querySelector('.cgrid.packed'));
   await page.goto(`${BASE}/#/t/${T}/eat/d/1`); await page.waitForSelector('.eatday');
@@ -2112,6 +2110,10 @@ const todayLost = (ids) => { const norm = (x) => String(x).toLowerCase().replace
     await page.waitForFunction(() => !document.querySelector('details.bag').open, null, { timeout: 5000 }).catch(() => {});
     const done = await page.evaluate(() => ({ open: document.querySelector('details.bag').open, label: document.querySelector('.bag .bagn').textContent }));
     await page.evaluate((x) => ls('ck', x), was);
+    // a step the plan marks as the one we leave on ("go") decides instead of the second step: Australia day 2 leaves at 10:30, the second step is 09:30
+    const au = async (iso) => { await page.clock.setFixedTime(new Date(iso)); return page.evaluate(() => / open/.test(bagBlock(trip('big-hop-2027'), 1).slice(0, 60))); };
+    const au945 = await au('2027-04-03T09:45:00+11:00'), au1035 = await au('2027-04-03T10:35:00+11:00');
+    ok(au945 && !au1035, `Today's bag: where the plan marks the step we leave on, the bag stays open until then (Australia day 2: open at 09:45 with two steps gone ${au945}, folded at 10:35 ${!au1035})`);
     ok(!noon.open && noon.past >= 2 && early.open && early.past === 0 && one.open && one.past === 1 && !two.open && two.past === 2 && early.h - two.h > 300 && !/\b0\//.test(noon.label + early.label)
       && seen[0] === `1/${n} packed` && seen[n - 1] === 'All packed ✓' && !done.open && done.label === 'All packed ✓',
       `Today on the trip: the bag is open in the morning (07:20, and 07:50 with one step gone), one line once the day is under way (08:05, two steps gone — ${early.h - two.h} px shorter) and at noon; a tick counts in place (${seen[0]} → ${seen[n - 1]}) and the last one folds it (${JSON.stringify({ noon, early, one, two, done })})`); }

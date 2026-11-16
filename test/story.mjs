@@ -8,6 +8,7 @@ import path from 'node:path';
 import { createRequire } from 'node:module';
 import { chromium } from 'playwright';
 import yauzl from 'yauzl';
+import { todayLost } from './today-lost.mjs';
 
 const { CODE } = process.env;
 let failures = 0;
@@ -495,6 +496,10 @@ try {
   ok(sv.status === 200 && svj.id === 'test-hop' && svj.art === 'started', 'import: saved as a book, and the page is told its drawings started');
   const stt = await state(), nt = stt.trips.find((t) => t.id === 'test-hop');
   ok(nt && nt.source === 'manual' && nt.days.length === 2 && nt.days[1].plan.plan[1].en === 'Super Fun Zone opens' && nt.days[0].planned[0].th === 'ไทย: Test Square' && nt.days[1].planned[0].th === 'ไทย: Test Square' && nt.firsts.length === 3 && nt.firsts[0].key === 'ferry' && nt.passport.days.length === 2, 'import: the new book is in the state with its days, plans, its own firsts and passport');
+  { // a book that came through the import (extract → kids' pages → extras → Thai → plan-to-seed) loses nothing on the one-page Today either
+    await page.goto(BASE + '/#/t/test-hop/today/0'); await page.reload(); await page.waitForFunction(() => typeof S === 'object' && S && S.trips.some((x) => x.id === 'test-hop' && x.days[0] && x.days[0].plan), null, { timeout: 15000 });
+    const lost = await page.evaluate(todayLost, ['test-hop']);
+    ok(lost.length === 0, `import: Today loses nothing of the imported book's full plan (${lost.slice(0, 4).join(' | ') || 'nothing missing'}${lost.length > 4 ? ` … ${lost.length}` : ''})`); }
   ok((await (await fetch(BASE + '/api/b/import', { headers: { cookie: ck } })).json()).drafts.length === 0, 'import: the draft is gone once saved');
   ok(nt.info.ifthen && Array.isArray(nt.info.ifthen.rows) && nt.info.ifthen.rows.length === 1 && nt.info.ifthen.cols.length === 2 && nt.info.visa && nt.info.visa.groups.length === 1 && !nt.info.visa.flow, 'import: the model\'s {plans:{…}} if-then table is stored in the seeds\' shape ({cols, rows}); a visa without a step list is kept as it came');
   // ---- the book's own pictures (server/bookart.js): saving an imported book starts the drawing by itself — a circle per day, the crest, then the two guides
