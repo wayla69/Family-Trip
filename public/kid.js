@@ -1427,6 +1427,7 @@ ${who ? `<span class="qwho" aria-hidden="true">${who}</span>` : ''}</button>`;
 <ol class="questpath">${towns}</ol>
 ${questPic(t, kid)}
 ${isEditor() && questStarted(t, kid) ? `<button class="qreset" id="qreset" data-t="${esc(t.id)}" data-k="${esc(kid)}">🔄 ${L('ผู้ใหญ่: กดค้างเพื่อเริ่มเส้นทางใหม่', 'Grown-ups: press and hold to start the road again')}</button>` : ''}
+${isEditor() && Object.keys(ls('lv_' + kid) || {}).length ? `<button class="qreset lvreset" data-k="${esc(kid)}" data-g="*">🎮 ${L('ผู้ใหญ่: กดค้างเพื่อเริ่มด่านใหม่ทุกเกม', 'Grown-ups: press and hold to start every game\'s levels again')}</button>` : ''}
 ${end ? `<div class="qend"><span aria-hidden="true">${qImg('trophy')}</span><b>${L('นักผจญภัยตัวจริง!', 'A true adventurer!')}</b><div class="qgems" aria-hidden="true">${t.days.map((_, i) => gemImg(i)).join('')}</div></div>` : ''}`;
 }
 // the treasure picture: one picture of the trip in as many pieces as there are towns; a town's chest uncovers its piece (shown once there is one)
@@ -2158,13 +2159,16 @@ document.addEventListener('pointerdown', (e) => {
 });
 ['pointerup', 'pointercancel', 'pointerleave'].forEach((ev) => document.addEventListener(ev, () => { clearTimeout(jarT); const j = $('.starjar'); if (j) j.classList.remove('holding'); }, true));
 // grown-ups start a game's levels again by pressing and holding the word "Level" 1.5 s (owner, Nov 2026: "อันนี้จะล้างยังไง") — this
-// child, this game, this phone; a tap does nothing, the stars and the adventure map stay
+// child, this game, this phone; a tap does nothing, the stars and the adventure map stay. Every game at once: the same hold on the button at
+// the foot of the adventure map (owner: "ล้างได้ทุกเกมพร้อมกันไหม"; data-g="*")
 let lvT = 0;
 document.addEventListener('pointerdown', (e) => {
   const b = e.target.closest && e.target.closest('.lvreset'); if (!b || !isEditor()) return;
   b.classList.add('holding');
   lvT = setTimeout(() => {
-    const k = b.dataset.k, g = b.dataset.g, all = ls('lv_' + k) || {}, t = kidTrip(k); delete all[g]; ls('lv_' + k, all); if (!t) return;
+    const k = b.dataset.k, g = b.dataset.g, all = ls('lv_' + k) || {}, t = kidTrip(k);
+    if (g === '*') { ls('lv_' + k, null); beep('pop'); toast(L('เริ่มด่านใหม่ทุกเกมแล้ว', 'Every game\'s levels start again')); render(); return; }   // the adventure map's grown-up button: every game at once
+    delete all[g]; ls('lv_' + k, all); if (!t) return;
     A.kglv({ dataset: { g, v: String(lvState(t, k, g).at) } });   // the game starts over at the first level
     toast(L('เริ่มด่านใหม่แล้ว', 'The levels start again'));
   }, 1500);
