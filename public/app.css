@@ -3070,6 +3070,10 @@ details.emeal[open]>summary .mname{visibility:hidden}
 .snaprun h2{font-size:17px;margin:0 0 4px}
 .snapsum{list-style:none;margin:8px 0;padding:0}
 .snaph2{font-size:1.05rem;margin:18px 0 2px}
+.aitag{display:flex;align-items:center;flex-wrap:wrap;gap:6px;margin:2px 0 6px;font-size:.85rem;font-weight:700;color:color-mix(in srgb,var(--accent) 60%,var(--ink))}
+.aitag .ic{width:16px;height:16px}.aitag .linkbtn{min-height:44px;margin-left:auto}
+.rvday summary{display:flex;align-items:center;gap:8px;min-height:44px;cursor:pointer;list-style:none}.rvday summary::-webkit-details-marker{display:none}
+.rvday summary small{color:var(--muted);flex:1;min-width:0;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
 .snappl{display:flex;gap:6px;align-items:stretch}.snappl .field{flex:1;min-width:0}
 .snapplb{display:inline-flex;align-items:center;gap:4px;min-height:44px;padding:0 12px;border:1px solid color-mix(in srgb,var(--accent) 35%,var(--line));border-radius:12px;background:color-mix(in srgb,var(--accent) 10%,var(--card));color:color-mix(in srgb,var(--accent) 60%,var(--ink));font:inherit;font-weight:700;white-space:nowrap}
 .snapplb .ic{width:18px;height:18px}

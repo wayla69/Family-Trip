@@ -742,7 +742,7 @@ ${running ? `<p class="sub">${L(`เสร็จ ${doneN} จาก ${job.steps.
 ${why ? `<p class="notice">${why}</p>` : ''}
 <ol class="snapsteps">${job.steps.map((s) => { const [c, m, w] = stepSt(s); return `<li class="${c}"><span class="ssi" aria-hidden="true">${m}</span><b>${stepName(s)}</b><small>${w}</small></li>`; }).join('')}</ol>
 <div class="snapfoot">${running ? `<button type="button" class="btn ghost wide" data-a="snapdstop">${L('หยุดร่าง', 'Stop')}</button>`
-    : `<a class="btn wide" href="#/t/${encodeURIComponent(t.id)}/book">${L('อ่านเล่ม', 'Read the book')}</a><small>${L('ทุกบรรทัดแก้ได้ ชื่อวันแก้ที่หน้าวันที่จัดให้ เรื่องของวันแก้ในหน้าบันทึก', 'Every line can be changed — a day’s story on its record page')}</small>`}</div>`;
+    : `<a class="btn wide" href="#/t/${encodeURIComponent(t.id)}/draft/review">${L('ตรวจร่างทีละวัน', 'Check the draft, day by day')}</a><a class="linkbtn" href="#/t/${encodeURIComponent(t.id)}/book">${L('อ่านเล่ม', 'Read the book')}</a>`}</div>`;
   }
   const row = (k, th, en, sth, sen) => `<label class="snapopt"><span><b>${L(th, en)}</b>${sth ? `<small>${L(sth, sen)}</small>` : ''}</span><input type="checkbox" data-snapopt="${k}"${o[k] ? ' checked' : ''}></label>`;
   return `<h1>${L('ให้ผู้ช่วยร่างเล่ม', 'Let the helper draft the book')}</h1>
@@ -757,7 +757,34 @@ ${snapDraft.err ? `<p class="notice">${esc(snapDraft.err)}</p>` : ''}
 <small>${n ? L(`ใช้ผู้ช่วย ${n} ครั้ง`, `${n} helper call${n === 1 ? '' : 's'}`) : L('เลือกอย่างน้อยหนึ่งอย่าง', 'Pick at least one')}</small>
 <a class="linkbtn" href="#/t/${encodeURIComponent(t.id)}/book">${L('ข้าม เขียนเอง', 'Skip — I’ll write it')}</a></div>`;
 }
+// C3 (docs/SNAP-BOOK.md): every word the helper drafted on one page — the book's name, the foreword, and each day's name, few lines and
+// bedtime story — each box saves when left (the record page's own blur-save for the texts), a draft not yet kept carries "ร่างโดยผู้ช่วย"
+// with "ใช้ร่างนี้", and "ใช้ร่างทุกอันเลย" keeps them all; changing a text keeps it too (the server clears the mark)
+const snapDrafted = (t) => S.entries.filter((e) => e.trip === t.id && e.src === 'ai' && e.text);
+function viewSnapReview(t) {
+  const ent = (id) => S.entries.find((e) => e.id === id), tag = (e) => (e && e.src === 'ai' && e.text ? `<span class="aitag">${ic('sparkle')}${L('ร่างโดยผู้ช่วย', 'Drafted by the helper')}<button type="button" class="linkbtn" data-a="snapkeep" data-v="${esc(e.id)}">${L('ใช้ร่างนี้', 'Keep this draft')}</button></span>` : '');
+  const box = (kind, d, label, rows) => { const id = d === null ? `${t.id}.${kind}.all` : `${t.id}.${kind}.d${d}`, e = ent(id);
+    return `<label class="flabel" for="rv-${esc(id)}">${label}</label>${tag(e)}<textarea id="rv-${esc(id)}" class="field" rows="${rows}" data-a-blur="${kind}" data-t="${esc(t.id)}"${d === null ? '' : ` data-d="${d}"`} data-draft="rv:${esc(id)}" placeholder="${L('ยังว่าง เขียนเองได้', 'Empty — write your own')}">${esc((e && e.text) || '')}</textarea>`; };
+  const n = snapDrafted(t).length;
+  return `<h1>${L('ตรวจร่าง', 'Check the draft')}</h1>
+<p class="sub">${L('แก้ได้ทุกช่อง ออกจากช่องแล้วบันทึกเอง', 'Change any box — it saves when you leave it')}</p>
+${n ? `<button type="button" class="btn ghost wide" data-a="snapkeepall" data-t="${esc(t.id)}">${L(`ใช้ร่างทุกอันเลย (${n})`, `Keep every draft (${n})`)}</button>` : ''}
+<section class="blk rvbook"><label class="flabel" for="rvtitle">${L('ชื่อเล่ม', 'Book name')}</label>
+<input id="rvtitle" class="field" type="text" maxlength="120" data-snaprt="${esc(t.id)}" value="${esc(T(t.title))}">
+${box('fore', null, L('คำนำ', 'Foreword'), 4)}</section>
+${t.days.map((d, i) => `<details class="blk rvday"${i === 0 ? ' open' : ''}><summary><b>${L(`วันที่ ${i + 1}`, `Day ${i + 1}`)} · ${esc(fmtDay(d.date, { day: 'numeric', month: 'short' }))}</b><small>${esc(T(d.title))}</small>${ic('chev', 'chv')}</summary>
+<label class="flabel" for="rvd${i}">${L('ชื่อวัน', 'The day’s name')}</label><input id="rvd${i}" class="field" type="text" maxlength="80" data-snapdt="${i}" data-t="${esc(t.id)}" value="${esc(T(d.title))}">
+${box('sum', i, L('สรุปวันนี้', 'The day in a few lines'), 3)}${box('story', i, L('นิทานก่อนนอน', 'Bedtime story'), 5)}</details>`).join('')}
+<div class="snapfoot"><a class="btn wide" href="#/t/${encodeURIComponent(t.id)}/book">${L('อ่านเล่ม', 'Read the book')}</a></div>`;
+}
+if (typeof document !== 'undefined') document.addEventListener('focusout', (e) => {   // the review page's names save when left (the texts use saveBlur)
+  const el = e.target, v = (el.value || '').trim(); if (!el.dataset) return;
+  if (el.dataset.snaprt) { const t = trip(el.dataset.snaprt); if (t && v && v !== T(t.title)) api('PATCH', `/api/b/trips/${encodeURIComponent(t.id)}`, { title: { th: v, en: v } }).then(() => load()).catch(() => toast(L('ยังบันทึกไม่ได้ ต้องมีเน็ต', 'Not saved — you need a connection'))); }
+  if (el.dataset.snapdt !== undefined) { const t = trip(el.dataset.t), i = +el.dataset.snapdt, d = t && t.days[i]; if (d && v && v !== T(d.title)) api('PATCH', `/api/b/days/${encodeURIComponent(t.id)}/${i}`, { title: { th: v, en: v } }).then(() => load()).catch(() => toast(L('ยังบันทึกไม่ได้ ต้องมีเน็ต', 'Not saved — you need a connection'))); }
+});
 Object.assign(A, {
+  snapkeep(b) { const e = S.entries.find((x) => x.id === b.dataset.v), t = e && trip(e.trip); if (!t) return; putEntry(t, { day: e.day, kind: e.kind, text: e.text, lang: e.lang, accept: true }, e.id).then(() => safeRender()); },
+  snapkeepall(b) { const t = trip(b.dataset.t); if (!t) return; Promise.all(snapDrafted(t).map((e) => putEntry(t, { day: e.day, kind: e.kind, text: e.text, lang: e.lang, accept: true }, e.id))).then(() => { toast(L('ใช้ร่างทั้งหมดแล้ว', 'Every draft kept')); safeRender(); }); },
   async snapdraft(b) {
     const t = trip(b.dataset.t); if (!t) return;
     b.disabled = true; snapDraft.err = '';

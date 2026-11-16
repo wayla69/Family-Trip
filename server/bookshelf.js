@@ -298,7 +298,7 @@ function router({ pool, media, A, ai, hooks = {} }) {   // hooks.heart(h): set b
         q("SELECT id, slug, legacy_id, title, sub, to_char(date_from,'YYYY-MM-DD') date_from, to_char(date_to,'YYYY-MM-DD') date_to, timezone, theme, cover, stamp, moods, passport, info, source, kind, open FROM trips WHERE family_id=$1 ORDER BY date_from", [FAMILY]),
         q("SELECT d.trip_id, d.day_index, to_char(d.date,'YYYY-MM-DD') date, d.title, d.sleep, d.place, d.emoji, d.gradient, d.planned, d.wx, d.plan, d.done_at FROM trip_days d JOIN trips t ON t.id=d.trip_id WHERE t.family_id=$1 ORDER BY d.trip_id, d.day_index", [FAMILY]),
         q('SELECT f.trip_id, f.key, f.emoji, f.label FROM firsts_catalog f JOIN trips t ON t.id=f.trip_id WHERE t.family_id=$1 ORDER BY f.trip_id, f.pos, f.key', [FAMILY]),
-        q('SELECT id, trip_id, day_index, kind, child, text, tr, mood, first_key, lang, highlight, occurred_at, created_by, created_uid FROM entries WHERE family_id=$1 ORDER BY occurred_at', [FAMILY]),
+        q('SELECT id, trip_id, day_index, kind, child, text, tr, src, mood, first_key, lang, highlight, occurred_at, created_by, created_uid FROM entries WHERE family_id=$1 ORDER BY occurred_at', [FAMILY]),
         q('SELECT id, trip_id, day_index, width, height, caption, highlight, pos, taken_at, created_by, mime, tags, place, ai_at FROM media WHERE family_id=$1 ORDER BY taken_at, pos', [FAMILY]),
         q('SELECT id, trip_id, day_index, key, kind, name, visited_at, created_by FROM places WHERE family_id=$1 ORDER BY visited_at', [FAMILY]),
         q('SELECT id, trip_id, day_index, child, emoji, text, from_name, created_uid, created_at FROM hearts WHERE family_id=$1 ORDER BY created_at', [FAMILY]),
@@ -370,12 +370,13 @@ function router({ pool, media, A, ai, hooks = {} }) {   // hooks.heart(h): set b
       if (['tick', 'field'].includes(b.kind) && !b.first_key) return bad(res, 'key');
       if (b.kind === 'tick' && !['', 'yum', 'yuck', '1', '2', '3'].includes(String(b.text || ''))) return bad(res, 'text');   // plain tick, food yum/yuck, 1–3 stars
       const row = [id, FAMILY, t.id, day, b.kind, child, clip(b.text, 4000), b.mood ? clip(b.mood, 16) : null, b.first_key ? clip(b.first_key, 40) : null,
-        ['th', 'en'].includes(b.lang) ? b.lang : null, !!b.highlight, at(b.at), clip(req.user.name, 40), req.user.uid];
+        ['th', 'en'].includes(b.lang) ? b.lang : null, !!b.highlight, at(b.at), clip(req.user.name, 40), req.user.uid, b.accept === true];
       const out = await q(`INSERT INTO entries (id, family_id, trip_id, day_index, kind, child, text, mood, first_key, lang, highlight, occurred_at, created_by, created_uid)
         VALUES ($1,$2,$3,$4,$5,$6,$7,$8,$9,$10,$11,$12,$13,$14)
         ON CONFLICT (id) DO UPDATE SET day_index=EXCLUDED.day_index, child=EXCLUDED.child, text=EXCLUDED.text, mood=EXCLUDED.mood,
           first_key=EXCLUDED.first_key, lang=EXCLUDED.lang, highlight=EXCLUDED.highlight, updated_at=now(),
-          tr=CASE WHEN entries.text = EXCLUDED.text THEN entries.tr ELSE NULL END   -- an edited text drops its old translation
+          tr=CASE WHEN entries.text = EXCLUDED.text THEN entries.tr ELSE NULL END,   -- an edited text drops its old translation
+          src=CASE WHEN entries.text = EXCLUDED.text AND NOT $15::boolean THEN entries.src ELSE NULL END   -- the helper's draft mark goes once the parents change it or say "use this draft"
         WHERE entries.family_id = EXCLUDED.family_id AND entries.kind = EXCLUDED.kind AND entries.trip_id = EXCLUDED.trip_id
         RETURNING id`, row);
       if (!out.length) return bad(res, 'conflict', 409);   // id taken by another trip/kind/family
@@ -1255,7 +1256,8 @@ function router({ pool, media, A, ai, hooks = {} }) {   // hooks.heart(h): set b
               }
             } else {
               await q(`INSERT INTO entries (id, family_id, trip_id, day_index, kind, text, lang, created_by, created_uid) VALUES ($1,$2,$3,$4,$5,$6,$7,$8,$9)
-                ON CONFLICT (id) DO UPDATE SET text=EXCLUDED.text, lang=EXCLUDED.lang, updated_at=now(), tr=NULL WHERE entries.text=''`, [id, FAMILY, t.id, s.day, s.k, text, lang, 'Claude', req.user.uid]);
+                ON CONFLICT (id) DO UPDATE SET text=EXCLUDED.text, lang=EXCLUDED.lang, updated_at=now(), tr=NULL, src='ai' WHERE entries.text=''`, [id, FAMILY, t.id, s.day, s.k, text, lang, 'Claude', req.user.uid]);
+              await q("UPDATE entries SET src='ai' WHERE id=$1 AND family_id=$2", [id, FAMILY]);   // marked as the helper's draft (C3) until the parents keep or change it
             }
             s.st = 'done';
           }
