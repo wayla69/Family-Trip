@@ -127,6 +127,39 @@ ok((await fetch(BASE + '/media/vc-test-0001', { headers: { cookie: ck } })).stat
 ok((await upA('vc-bad-00001', 'text/plain')).status === 415 && (await upA('vc-view-0001', 'audio/webm', { 'x-mb': '1', cookie: vck })).status === 403, 'not an audio type → 415; viewer cannot record');
 ok((await fetch(BASE + '/api/b/media/vc-test-0001', { method: 'DELETE', headers: H })).ok && !(await state()).media.some((m) => m.id === 'vc-test-0001') && (await fetch(BASE + '/media/vc-test-0001', { headers: { cookie: ck } })).status === 404, 'voice memo deleted, file gone');
 
+// video clips (owner, Nov 2026: up to 30 s): re-encoded by ffmpeg — the first 30 s, ≤ 1280 px, every piece of metadata dropped
+// (a phone writes where it was filmed: QuickTime/ISO 6709 location, make, model) — a poster frame as the thumbnail; byte ranges
+// for Safari; never a photo (not counted, never sent to the helper); deleted with its poster
+{
+  const { execFile } = await import('node:child_process');
+  // made without blocking this script (a long synchronous ffmpeg made the next fetch fail: the server dropped the idle socket — Gotchas)
+  const ff = (cmd, args) => new Promise((ok2, no) => execFile(cmd, args, (e, out) => (e ? no(e) : ok2(out))));
+  const vin = path.join(DATA_DIR, 'clip-in.mov');
+  await ff('ffmpeg', ['-hide_banner', '-loglevel', 'error', '-y', '-f', 'lavfi', '-i', 'testsrc=size=1920x1080:rate=12', '-f', 'lavfi', '-i', 'sine=frequency=440',
+    '-t', '33', '-metadata', 'location=+13.7563+100.5018/', '-metadata', 'com.apple.quicktime.location.ISO6709=+13.7563+100.5018/', '-metadata', 'make=PhoneMaker',
+    '-c:v', 'libx264', '-preset', 'ultrafast', '-c:a', 'aac', '-shortest', vin]);
+  const vbuf = fs.readFileSync(vin);
+  ok(vbuf.includes('100.5018'), 'the test clip carries a place (as a phone writes it)');
+  const upV = (id, type = 'video/quicktime', h = { 'x-mb': '1', cookie: ck }) => fetch(`${BASE}/api/b/media/${id}?trip=${T}&day=1&kind=video&caption=${encodeURIComponent('ม้าหมุน')}`, { method: 'PUT', headers: { ...h, 'content-type': type }, body: vbuf });
+  const vr = await upV('vd-test-0001'), vj = await vr.json();
+  ok(vr.ok && vj.mime === 'video/mp4' && vj.w === 1280 && vj.h === 720, `a clip is made into an mp4 at most 1280 px wide (${vr.status} ${JSON.stringify(vj)})`);
+  const vm = (await state()).media.find((m) => m.id === 'vd-test-0001');
+  ok(vm && vm.mime === 'video/mp4' && vm.caption === 'ม้าหมุน' && vm.day === 1, 'the clip is listed with its mime, caption and day');
+  const vfull = Buffer.from(await (await fetch(BASE + '/media/vd-test-0001', { headers: { cookie: ck } })).arrayBuffer());
+  fs.writeFileSync(path.join(DATA_DIR, 'clip-out.mp4'), vfull);
+  const probe = await ff('ffprobe', ['-v', 'error', '-show_entries', 'format=duration:format_tags:stream_tags', '-of', 'json', path.join(DATA_DIR, 'clip-out.mp4')]);
+  const dur = Number(JSON.parse(probe).format.duration);
+  ok(!vfull.includes('100.5018') && !vfull.includes('PhoneMaker') && !/location|ISO6709|make/i.test(probe) && dur > 29 && dur <= 30.1, `the kept clip has no place, no make and is cut to 30 s (${dur} s)`);
+  const vth = await fetch(BASE + '/media/vd-test-0001/t', { headers: { cookie: ck } });
+  ok(vth.ok && (await sharp(Buffer.from(await vth.arrayBuffer())).metadata()).format === 'jpeg', 'a clip\'s thumbnail is its poster frame (JPEG)');
+  const vrg = await fetch(BASE + '/media/vd-test-0001', { headers: { cookie: ck, range: 'bytes=0-99' } });
+  ok(vrg.status === 206 && (vrg.headers.get('content-type') || '').startsWith('video/mp4'), 'a clip streams with byte ranges (Safari)');
+  ok((await upV('vd-bad-00001', 'text/plain')).status === 415 && (await upV('vd-view-0001', 'video/mp4', { 'x-mb': '1', cookie: vck })).status === 403, 'not a video type → 415; a relative cannot add a clip');
+  ok((await (await upV('vd-test-0001')).json()).dup === true, 'the same clip sent again (the phone\'s queue retrying) is not made twice');
+  ok((await fetch(BASE + '/api/b/media/vd-test-0001', { method: 'DELETE', headers: H })).ok && (await fetch(BASE + '/media/vd-test-0001', { headers: { cookie: ck } })).status === 404
+    && !fs.existsSync(path.join(DATA_DIR, 'media', 'v', T, 'vd-test-0001.mp4')) && !fs.existsSync(path.join(DATA_DIR, 'media', 't', T, 'vd-test-0001.jpg')), 'a clip is deleted with its poster');
+}
+
 // IDOR: a photo row of another family is never served
 const pool = new Pool({ connectionString: process.env.DATABASE_URL });
 await pool.query("INSERT INTO families (id, name) VALUES ('other', 'Other') ON CONFLICT DO NOTHING");

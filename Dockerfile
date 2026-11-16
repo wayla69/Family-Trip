@@ -11,8 +11,8 @@ WORKDIR /app
 COPY --from=deps /app/node_modules node_modules
 # headless Chromium (shell only) for the server-side A4 PDF, same version as playwright-core
 ENV PLAYWRIGHT_BROWSERS_PATH=/ms-playwright
-# + pdftotext (poppler-utils) for "a book from a PDF" (server/bookimport.js)
-RUN node node_modules/playwright-core/cli.js install --with-deps --only-shell chromium && apt-get install -y --no-install-recommends poppler-utils && rm -rf /var/lib/apt/lists/* /tmp/*
+# + pdftotext (poppler-utils) for "a book from a PDF" (server/bookimport.js) + ffmpeg for video clips (server/video.js)
+RUN node node_modules/playwright-core/cli.js install --with-deps --only-shell chromium && apt-get install -y --no-install-recommends poppler-utils ffmpeg && rm -rf /var/lib/apt/lists/* /tmp/*
 COPY package.json ./
 COPY server server
 COPY migrations migrations

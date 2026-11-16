@@ -1283,6 +1283,7 @@ ${dayStory(t, d, route, visited)}
 <div>
 ${sum ? `<p class="daysum">${emoIn(esc(sum.text))}${trLine(sum)}</p>` : ''}
 ${mosaicByPlace(t, ph)}
+${vidsBlock(t, i, false)}
 ${audioOf(t.id, i).length ? `<div class="clips noprint">${audioOf(t.id, i).map((m) => `<div class="clip"><span>${ic('mic')} ${esc(m.caption || L('เสียงจากวันนี้', 'A voice from today'))}</span>${clipPlayer(m)}</div>`).join('')}</div>` : ''}
 ${timeline.length ? `<ol class="tl parts">${timeline.map((x, k) => { const pt = dayPart(x.at, t.timezone), prev = k ? dayPart(timeline[k - 1].at, t.timezone) : ''; return `<li${pt === prev ? ' class="same"' : ''}><time>${pt === prev ? '' : esc(pt)}</time><div>${x.h}</div></li>`; }).join('')}</ol>` : ''}
 ${note ? `<div class="call calm"><span class="lbl">${L('โน้ตพ่อแม่', "Parents' note")}</span>${emoIn(esc(note.text))}${trLine(note)}</div>` : ''}
@@ -1918,7 +1919,7 @@ function viewPrivacy() {
   const who = op.name ? `<p>${L(`ผู้ดูแลระบบนี้คือ <b>${esc(op.name)}</b>`, `This instance is run by <b>${esc(op.name)}</b>`)}${op.email ? ` · <a href="mailto:${esc(op.email)}">${esc(op.email)}</a>` : ''}</p>`
     : `<p class="notice">${L('ยังไม่ได้ระบุชื่อผู้ดูแลระบบ ตั้งได้ในหน้าตั้งค่าของเซิร์ฟเวอร์', 'No operator is named yet — it is set in the server’s settings')}</p>`;
   const erase = !ed ? '' : `<div class="call warn pverase"><span class="lbl">${L('ลบข้อมูลทั้งหมด', 'Delete everything')}</span>
-<p>${L(`ลบทุกเล่ม ทุกรูป ทุกเสียง ทุกข้อความ ลูกๆ ญาติ และการเตือน ออกจากเซิร์ฟเวอร์และที่เก็บไฟล์ทันที กู้คืนไม่ได้ (ยกเว้นจากสำเนาที่คุณดาวน์โหลดไว้เอง) เล่มที่มากับแอปจะกลับมาว่างเปล่า`, `Removes every book, photo, voice clip and word, the children, the relatives’ groups and the reminders from the server and the file store at once. It cannot be undone (except from a copy you downloaded yourself). The books that come with the app return empty.`)}</p>
+<p>${L(`ลบทุกเล่ม ทุกรูป ทุกคลิป ทุกเสียง ทุกข้อความ ลูกๆ ญาติ และการเตือน ออกจากเซิร์ฟเวอร์และที่เก็บไฟล์ทันที กู้คืนไม่ได้ (ยกเว้นจากสำเนาที่คุณดาวน์โหลดไว้เอง) เล่มที่มากับแอปจะกลับมาว่างเปล่า`, `Removes every book, photo, video clip, voice clip and word, the children, the relatives’ groups and the reminders from the server and the file store at once. It cannot be undone (except from a copy you downloaded yourself). The books that come with the app return empty.`)}</p>
 <label class="vgl">${L(`พิมพ์ชื่อแอป “${esc(app)}” เพื่อยืนยัน`, `Type the app’s name, “${esc(app)}”, to confirm`)}<input id="erasetxt" class="field" value="${esc(eraseTyped)}" autocomplete="off" data-draft="erase"></label>
 <p id="erasemsg" class="label"></p>
 <button type="button" class="btn danger" data-a="erase" ${eraseTyped.trim() === app ? '' : 'disabled'}>${L('ลบข้อมูลทั้งหมดของครอบครัวนี้', 'Delete all of this family’s data')}</button></div>`;
@@ -1928,6 +1929,7 @@ ${sec('ใครดูแลข้อมูล', 'Who looks after the data', who
 ${sec('เก็บอะไรบ้าง', 'What is kept', ul([
   ['ชื่อเล่น เดือนและปีเกิดของลูก และตัวการ์ตูนที่เลือก', 'The children’s nicknames, month and year of birth, and the characters chosen for them'],
   ['รูป เสียง และภาพวาดที่พ่อแม่อัปโหลด (ตำแหน่ง GPS และข้อมูลกล้องถูกลบออกก่อนเก็บ)', 'Photos, voice clips and drawings the parents upload (GPS and camera data are stripped before storing)'],
+  ['คลิปวิดีโอ (ไม่เกิน 30 วินาที): ทำเป็นไฟล์ใหม่ขนาดเล็ก ตำแหน่งที่ถ่าย รุ่นโทรศัพท์ และข้อมูลแฝงทั้งหมดถูกลบออกก่อนเก็บ', 'Video clips (up to 30 s): made into a new, smaller file; where it was filmed, the phone model and every other hidden detail are removed before storing'],
   ['ข้อความที่พิมพ์: คำพูดเด็ก โน้ต อารมณ์ ครั้งแรก รีวิว ค่าใช้จ่าย จดหมาย', 'Words the parents type: the kids’ quotes, notes, moods, firsts, reviews, spending, letters'],
   ['หัวใจและข้อความสั้นจากญาติ', 'Hearts and short messages from relatives'],
   ['รหัสของญาติ เก็บเป็นค่าที่อ่านคืนไม่ได้ · รหัสครอบครัวไม่ได้เก็บในฐานข้อมูล', 'Relatives’ PINs, stored only as one-way hashes · the family PIN is not stored in the database'],
@@ -2446,9 +2448,9 @@ function viewLog(t, i, evening) {
 ${planLite(t, i)}
 
 <section class="blk" id="lgphotos"><h3>${ic('camera')} ${L('รูป', 'Photos')}${ph.length ? ` <span class="label">${ph.length}</span>` : ''}</h3>
-<div class="row"><button class="btn" type="button" data-a="pickphotos" data-fpick data-t="${esc(t.id)}" data-d="${i}">＋ ${L('เพิ่มรูป', 'Add photos')}</button><span class="progress" id="prog2"></span></div>
+<div class="row"><button class="btn" type="button" data-a="pickphotos" data-fpick data-t="${esc(t.id)}" data-d="${i}">＋ ${L('เพิ่มรูป', 'Add photos')}</button><button class="btn ghost" type="button" data-a="pickvideo" data-t="${esc(t.id)}" data-d="${i}">＋ ${L('คลิปวิดีโอ', 'Video clip')}</button><span class="progress" id="prog2"></span></div>
 ${photoSpots(t, i, ph)}
-${ph.length ? `<div class="lgmos" style="margin-top:10px">${mosaicByPlace(t, ph)}</div>` : ''}${upBlock()}</section>
+${ph.length ? `<div class="lgmos" style="margin-top:10px">${mosaicByPlace(t, ph)}</div>` : ''}${vidsBlock(t, i, true)}${upBlock()}</section>
 
 <section class="blk" id="lgquotes"><h3>${ic('quote')} ${L('คำพูดน่ารัก', 'Things they said')}</h3>
 <div class="row" role="group">${kids.concat('both').map((k) => `<button class="chip" data-a="who" data-v="${k}" aria-pressed="${quoteWho === k}">${kidFace(k)} ${esc(kidName(k))}</button>`).join('')}</div>
@@ -2505,6 +2507,15 @@ function spendPlaces(t, i) {
 // the kids' voices: a few seconds each, recorded on the phone, kept with the day. Played here, in the book and in kid mode —
 // never in the printed book (paper cannot play them) and never sent anywhere else.
 const clipPlayer = (m) => `<audio controls preload="none" src="${esc(m.local || `/media/${encodeURIComponent(m.id)}`)}"></audio>`;
+// video clips (≤ 30 s, owner, Nov 2026): played where they are, the poster frame first (preload none: a book of clips costs nothing until
+// one is tapped); never printed, never shared as a photo. On the record page each has its caption and a delete.
+const vidPlayer = (m) => `<video controls playsinline preload="none"${m.local ? '' : ` poster="/media/${encodeURIComponent(m.id)}/t"`} src="${esc(m.local || `/media/${encodeURIComponent(m.id)}`)}"></video>`;
+function vidsBlock(t, i, edit) {
+  const vs = videoOf(t.id, i); if (!vs.length) return '';
+  return `<div class="vclips noprint">${vs.map((m) => `<figure class="vclip">${vidPlayer(m)}${edit
+    ? `<div class="row"><input class="field small clipcap" data-v="${esc(m.id)}" value="${esc(m.caption || '')}" placeholder="${L('คลิปนี้คืออะไร', 'What is this clip?')}" maxlength="120"><button class="mini" data-a="delclip" data-v="${esc(m.id)}" aria-label="${L('ลบคลิป', 'Delete clip')}">✕</button></div>${m.pending ? `<small class="label">⏳ ${L('รอส่ง', 'Waiting to send')}</small>` : ''}`
+    : m.caption ? `<figcaption>${emoIn(esc(m.caption))}</figcaption>` : ''}</figure>`).join('')}</div>`;
+}
 function clipsBlock(t, i) {
   const cs = audioOf(t.id, i), can = typeof MediaRecorder !== 'undefined' && navigator.mediaDevices && navigator.mediaDevices.getUserMedia;
   return `<section class="blk clips"><h3>${ic('mic')} ${L('เสียงของเด็กๆ', 'Their voices')} ${cs.length ? `<span class="label">${cs.length}</span>` : ''}</h3>

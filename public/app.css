@@ -2015,6 +2015,10 @@ html[data-fs="1"] main.wrap{zoom:1.1}html[data-fs="2"] main.wrap{zoom:1.2}html[d
 
 /* voice memos: the recorder on the record page, the clips in the book and in kid mode */
 .clips audio{display:block;width:100%;max-width:440px;height:36px;margin-bottom:6px}
+.vclips{display:grid;grid-template-columns:repeat(auto-fill,minmax(min(100%,240px),1fr));gap:10px;margin:10px 0}
+.vclip{margin:0}.vclip video{display:block;width:100%;max-height:60vh;aspect-ratio:16/9;object-fit:contain;background:#000;border-radius:12px}
+.vclip figcaption{font-size:14px;color:var(--muted);margin-top:4px}.vclip .row{margin-top:6px;flex-wrap:nowrap}.vclip .field.small{flex:1;min-width:0;min-height:44px}
+.kidvids{display:grid;gap:12px;margin:14px 0}.kidvids video{width:100%;max-height:50vh;background:#000;border-radius:18px}
 .clips .field.small{padding:6px 10px;font-size:14px}
 .btn.rec{background:var(--accent2);border-color:var(--accent2);color:var(--on-accent2);animation:recpulse 1s ease-in-out infinite}
 @keyframes recpulse{50%{opacity:.7}}

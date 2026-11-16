@@ -372,6 +372,27 @@ const T = 'hk-macau-2026';
   await page.goto(`${BASE}/#/t/${T}/book`); await page.waitForSelector('#d1');
   ok(await page.locator('.fact').count() >= 2 && await page.locator('.fact b').allTextContents().then((xs) => xs.every((x) => +x > 0)), 'cover: counts only for what the book now holds, none of them zero');
   ok(await page.locator('#d1 .clips audio').count() === 1 && /มีมี่ร้องเพลง/.test(await page.locator('#d1 .clips').textContent()) && await page.locator('#d1 .mosaic img').count() === await page.evaluate(() => mediaOf('hk-macau-2026', 1).length), 'book: the clip plays from the day page with its caption; the photo mosaic is photos only');
+  // a video clip (owner, Nov 2026, ≤ 30 s): picked from the gallery, queued like a photo, made small on the server; it plays on the
+  // record page and the book's day page with its poster, never counts as a photo, never prints; kid mode's photos page plays it too
+  {
+    const { execFile } = await import('node:child_process');
+    const vf = path.join(OUT, 'clip-ui.mp4');
+    await new Promise((res, rej) => execFile('ffmpeg', ['-hide_banner', '-loglevel', 'error', '-y', '-f', 'lavfi', '-i', 'testsrc=size=640x360:rate=12', '-f', 'lavfi', '-i', 'sine=frequency=330', '-t', '3', '-c:v', 'libx264', '-preset', 'ultrafast', '-c:a', 'aac', '-shortest', vf], (e) => (e ? rej(e) : res())));
+    await page.goto(`${BASE}/#/t/${T}/log/1`); await page.waitForSelector('[data-a="pickvideo"]');
+    const ph0 = await page.evaluate(() => stats(trip('hk-macau-2026')).photos);
+    const [vc] = await Promise.all([page.waitForEvent('filechooser'), page.click('[data-a="pickvideo"]')]);
+    await vc.setFiles(vf);
+    await page.waitForFunction(() => S.media.some((m) => (m.mime || '').startsWith('video/')), null, { timeout: 15000 });
+    await page.waitForFunction(() => queue.length === 0, null, { timeout: 60000 });
+    const sv = (await apiState(page)).media.find((m) => (m.mime || '').startsWith('video/'));
+    await page.goto(`${BASE}/#/t/${T}/log/1`); await page.waitForSelector('.vclip video');
+    const recOk = await page.evaluate(() => { const v = document.querySelector('.vclip video'); return !!v && /\/media\/.+\/t$/.test(v.getAttribute('poster') || '') && document.querySelector('.vclip .clipcap') && document.querySelector('.vclip [data-a="delclip"]').getBoundingClientRect().height >= 44; });
+    await page.goto(`${BASE}/#/t/${T}/book`); await page.waitForSelector('#d1');
+    const bookOk = await page.locator('#d1 .vclips.noprint video').count() === 1;
+    const posterOk = (await page.request.get(`${BASE}/media/${sv.id}/t`)).headers()['content-type'] === 'image/jpeg';
+    ok(!!sv && sv.mime === 'video/mp4' && sv.day === 1 && recOk && bookOk && posterOk && (await page.evaluate(() => stats(trip('hk-macau-2026')).photos)) === ph0,
+      `video clip: sent, made into an mp4, plays on the record page (poster, caption, delete) and in the book (not printed), not counted as a photo (${JSON.stringify({ sv: !!sv, recOk, bookOk, posterOk })})`);
+  }
   await page.goto(`${BASE}/#/t/${T}/log/1`); await page.waitForSelector('.clips audio');
   let st = await apiState(page);
   const es = st.entries.filter((e) => e.trip === 'hk-macau-2026' && e.day === 1);
@@ -393,7 +414,7 @@ const T = 'hk-macau-2026';
   await page.setInputFiles('#fpick', await Promise.all([0, 1, 2].map(async (i) => ({ name: `p${i}.jpg`, mimeType: 'image/jpeg', buffer: await jpg(i) }))));
   await page.waitForFunction(() => document.querySelectorAll('.mosaic button').length === 3);
   await page.waitForFunction(() => queue.length === 0, null, { timeout: 30000 });
-  ok((await apiState(page)).media.filter((m) => !(m.mime || '').startsWith('audio/')).length === 3, '3 photos uploaded (the voice memo is not a photo)');
+  ok((await apiState(page)).media.filter((m) => (m.mime || 'image/jpeg').startsWith('image/')).length === 3, '3 photos uploaded (the voice memo is not a photo)');
   await page.locator('.mosaic button').first().click(); await page.waitForSelector('#lb:not([hidden]) .stage img');
   ok((await page.textContent('#lb .grow')).trim() === '1 / 3', 'lightbox counter 1 / 3');
   await page.click('#lb [data-lb="next"]');
@@ -411,7 +432,7 @@ const T = 'hk-macau-2026';
   await page.click('#lb [data-lb="close"]');
   await page.waitForFunction(() => queue.length === 0, null, { timeout: 15000 });
   st = await apiState(page);
-  ok(st.media.filter((m) => !(m.mime || '').startsWith('audio/')).length === 2 && st.media.some((m) => m.caption === 'ที่ท่าเรือ' && m.highlight), 'second tap deleted; caption + ⭐ saved');
+  ok(st.media.filter((m) => (m.mime || 'image/jpeg').startsWith('image/')).length === 2 && st.media.some((m) => m.caption === 'ที่ท่าเรือ' && m.highlight), 'second tap deleted; caption + ⭐ saved');
   ok(await s.noHScroll(), 'record page: no horizontal scroll');
   // travel notebook on the record page: rate the stay, tag it, the kids' verdicts, a note
   await page.waitForSelector('#notebook .rev');

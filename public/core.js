@@ -273,8 +273,8 @@ async function flush() {
           break;
         }
         // 4xx: drop this one, keep the rest
-        else if (e.code === 413) toast(L('รูปใหญ่เกินไป (เกิน 40 MB) — ข้ามรูปนี้', 'Photo too large (over 40 MB) — skipped'));
-        else if (e.code === 415) toast(L('ไฟล์นี้ไม่ใช่รูปที่อ่านได้ — ข้ามรูปนี้', 'Not a readable photo — skipped'));
+        else if (e.code === 413) toast(/kind=video/.test(op.url) ? L('คลิปใหญ่เกินไป (เกิน 400 MB) — ข้ามคลิปนี้', 'Clip too large (over 400 MB) — skipped') : L('รูปใหญ่เกินไป (เกิน 40 MB) — ข้ามรูปนี้', 'Photo too large (over 40 MB) — skipped'));
+        else if (e.code === 415) toast(/kind=video/.test(op.url) ? L('เปิดคลิปนี้ไม่ได้ — ข้ามคลิปนี้', 'This clip could not be read — skipped') : L('ไฟล์นี้ไม่ใช่รูปที่อ่านได้ — ข้ามรูปนี้', 'Not a readable photo — skipped'));
         else toast(L('บันทึกไม่สำเร็จ 1 รายการ', 'One change could not be saved') + ` (${e.code})`);
       }
       queue.splice(at, 1); written++; await idb.del(op.qid);
@@ -315,7 +315,9 @@ const kidEmoji = (slug) => (slug === 'both' ? children().map((c) => c.emoji || '
 const entriesOf = (tid, day) => S.entries.filter((e) => e.trip === tid && (day === undefined || e.day === day));
 // photos and voice memos share the media table; mediaOf() is the photos (everything that draws a picture), audioOf() the kids' voices
 const isAudio = (m) => !!m && String(m.mime || '').startsWith('audio/');
-const mediaOf = (tid, day) => S.media.filter((m) => !isAudio(m) && m.trip === tid && (day === undefined || m.day === day)).sort((a, b) => a.at - b.at);
+const isVideo = (m) => !!m && String(m.mime || '').startsWith('video/');   // video clips (≤ 30 s): their own list, never counted, printed or shared as photos
+const mediaOf = (tid, day) => S.media.filter((m) => !isAudio(m) && !isVideo(m) && m.trip === tid && (day === undefined || m.day === day)).sort((a, b) => a.at - b.at);
+const videoOf = (tid, day) => S.media.filter((m) => isVideo(m) && m.trip === tid && (day === undefined || m.day === day)).sort((a, b) => a.at - b.at);
 const audioOf = (tid, day) => S.media.filter((m) => isAudio(m) && m.trip === tid && (day === undefined || m.day === day)).sort((a, b) => a.at - b.at);
 const placesOf = (tid, day) => S.places.filter((p) => p.trip === tid && (day === undefined || p.day === day));
 // photo tags Claude may pick (server/story.js TAGS — the same keys, in the same order) + how the app shows each; a parent's own tag shows as typed
@@ -362,7 +364,7 @@ const dayArt = (t, i) => (t.theme && Array.isArray(t.theme.artDays) && t.theme.a
 // passport: a day's stamp is inked once the day is Done or has anything recorded in it
 const dayStamped = (t, i) => !!t.days[i].done_at || !!dayHasContent(t, i);
 const daysUntil = (t) => Math.round((Date.parse(t.date_from + 'T00:00:00Z') - Date.parse(todayIn(t.timezone) + 'T00:00:00Z')) / 864e5);
-const dayHasContent = (t, i) => entriesOf(t.id, i).some((e) => e.kind !== 'mood' || e.mood) || mediaOf(t.id, i).length || audioOf(t.id, i).length || placesOf(t.id, i).length;
+const dayHasContent = (t, i) => entriesOf(t.id, i).some((e) => e.kind !== 'mood' || e.mood) || mediaOf(t.id, i).length || audioOf(t.id, i).length || videoOf(t.id, i).length || placesOf(t.id, i).length;
 function themeStyle(t) {
   const th = (t && t.theme) || {};
   const keys = { accent: '--accent', accent2: '--accent2', ink: '--ink', muted: '--muted', panel: '--panel', rule: '--rule', pick: '--pick', info: '--info', calm: '--calm', warn: '--warn' };
@@ -402,6 +404,7 @@ const offlineUrls = (t) => {
   (((t.passport || {}).map || {}).stops || []).forEach((s) => s && s.art && urls.add(s.art));   // map pins drawn from the library
   kidArtSlugs().forEach((k) => { urls.add(kidArt(k)); urls.add(kidArt(k, true)); urls.add(kidArt(k, false, t)); urls.add(kidArt(k, true, t)); });
   mediaOf(t.id).forEach((m) => { if (!m.local) { urls.add(`/media/${encodeURIComponent(m.id)}/t`); if (m.highlight || isDrawingId(m.id)) urls.add(`/media/${encodeURIComponent(m.id)}`); } });
+  videoOf(t.id).forEach((m) => { if (!m.local) urls.add(`/media/${encodeURIComponent(m.id)}/t`); });   // a clip's poster; the clip itself only with "everything"
   return [...urls];
 };
 const isDrawingId = (id) => /^dr-/.test(id);
@@ -409,7 +412,7 @@ let packing = null;   // {done, total} while a book is being stored
 async function packOffline(t, all) {
   if (packing) return;
   let urls = offlineUrls(t);
-  if (all) urls = urls.concat(mediaOf(t.id).concat(audioOf(t.id)).filter((m) => !m.local).map((m) => `/media/${encodeURIComponent(m.id)}`));
+  if (all) urls = urls.concat(mediaOf(t.id).concat(audioOf(t.id), videoOf(t.id)).filter((m) => !m.local).map((m) => `/media/${encodeURIComponent(m.id)}`));
   urls = [...new Set(urls)];
   packing = { done: 0, total: urls.length }; let failed = 0;
   renderProgress();

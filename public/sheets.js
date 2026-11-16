@@ -78,6 +78,20 @@ async function startRec(t, day) {
   rec.start(); render();
 }
 function stopRec() { if (recState && recState.rec.state !== 'inactive') recState.rec.stop(); }
+// a video clip from the phone's gallery: sent as it is (the server cuts it to its first 30 s, makes it small and drops where it was
+// filmed — server/video.js), queued like a photo so no signal only means later. The phone reads how long it is first, to say so.
+const VID_MAX = 400e6;
+async function addVideo(t, day, file) {
+  if (!file || !t) return;
+  if (file.size > VID_MAX) { toast(L('คลิปใหญ่เกินไป (เกิน 400 MB) เลือกคลิปที่สั้นกว่านี้', 'This clip is over 400 MB — pick a shorter one')); return; }
+  const secs = await new Promise((res) => { const v = document.createElement('video'), u = URL.createObjectURL(file); v.preload = 'metadata'; v.muted = true;
+    const done = (x) => { URL.revokeObjectURL(u); res(x); }; v.onloadedmetadata = () => done(v.duration); v.onerror = () => done(NaN); setTimeout(() => done(NaN), 8000); v.src = u; });
+  const id = uid('vd'), at = file.lastModified && Math.abs(file.lastModified - Date.now()) < 400 * 864e5 ? Math.min(file.lastModified, Date.now()) : Date.now();
+  const type = ['video/mp4', 'video/quicktime', 'video/webm', 'video/3gpp', 'video/x-m4v'].includes(file.type) ? file.type : 'video/mp4';   // the server reads what it really is
+  await enqueue({ method: 'PUT', url: `/api/b/media/${id}?trip=${encodeURIComponent(t.id)}&day=${day}&at=${at}&kind=video`, blob: file.type === type ? file : new Blob([file], { type }),
+    local: { coll: 'media', id, row: { trip: t.id, day, caption: '', highlight: false, at, w: 0, h: 0, mime: type } } });
+  toast(secs > 31 ? L('เก็บ 30 วินาทีแรกของคลิปนี้', 'The first 30 s of this clip will be kept') : L('เพิ่มคลิปแล้ว', 'Clip added'));
+}
 async function addClip(t, day, blob, secs) {
   const id = uid('vc'), at = Date.now(), type = blob.type || 'audio/webm';
   await enqueue({ method: 'PUT', url: `/api/b/media/${id}?trip=${encodeURIComponent(t.id)}&day=${day}&at=${at}&kind=audio`, blob,
@@ -685,6 +699,7 @@ const A = {
     try { await api('DELETE', `/api/b/import/${encodeURIComponent(b.dataset.v)}`); imp.list = null; if (imp.job && imp.job.draft && imp.job.draft.id === b.dataset.v) imp.job = null; impRefresh(); } catch (_) { toast(L('ลบไม่สำเร็จ', 'Could not delete')); }
   },
   phmore(b) { const r = b.closest('.phsrow'); if (r) r.classList.add('all'); b.remove(); },   // the photo box: show the meals' chips too
+  pickvideo(b) { const vp = $('#vpick'); vp.dataset.t = b.dataset.t; vp.dataset.d = b.dataset.d; vp.value = ''; vp.click(); },
   pickphotos(b) { const fp = $('#fpick'); fp.dataset.t = b.dataset.t; fp.dataset.d = b.dataset.d; fp.dataset.place = b.dataset.place || ''; fp.dataset.key = b.dataset.key || ''; fp.dataset.kind = b.dataset.kind || ''; fp.click(); },   // a "where was it?" chip passes its place
   // full backup zip (editors only on the server too); the browser downloads it in place, the page stays
   backup() {
@@ -1081,6 +1096,7 @@ document.addEventListener('change', (e) => {
       .finally(() => { fam.busyKid = null; render(); });
     return;
   }
+  if (e.target.id === 'vpick') { const el = e.target, f = (el.files || [])[0]; if (f) addVideo(trip(el.dataset.t), +el.dataset.d, f).then(() => safeRender()); el.value = ''; }
   if (e.target.id === 'fpick') { const el = e.target; addPhotos(trip(el.dataset.t), +el.dataset.d, el.files, el.dataset.place ? { place: el.dataset.place, key: el.dataset.key, kind: el.dataset.kind } : null); el.value = ''; el.dataset.place = ''; }   // the place is spent: the next pick starts plain
   if (e.target.id === 'spendplace') { const n = $('#spendnote'); if (n) { if (e.target.value) { n.value = e.target.value; drafts[n.dataset.draft] = n.value; $('#spendamt').focus(); } else n.focus(); } }   // a picked place becomes the note; "other" → type it
 });

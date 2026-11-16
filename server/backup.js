@@ -42,7 +42,10 @@ async function sendZip(res, pool, media) {
   try {
     for (const m of b.tables.media) {
       const buf = await media.get(m.storage_key);
-      if (buf) await add(buf, String(m.mime || '').startsWith('audio/') ? `audio/${m.id}.${AUDIO_EXT[m.mime] || 'webm'}` : `photos/${m.id}.jpg`);
+      if (buf && String(m.mime || '').startsWith('video/')) {   // a clip and its poster frame (made from the clip when it came in)
+        await add(buf, `videos/${m.id}.mp4`);
+        const poster = await media.get(`t/${m.trip_id}/${m.id}.jpg`); if (poster) await add(poster, `videos/${m.id}.jpg`);
+      } else if (buf) await add(buf, String(m.mime || '').startsWith('audio/') ? `audio/${m.id}.${AUDIO_EXT[m.mime] || 'webm'}` : `photos/${m.id}.jpg`);
     }
   for (const k of b.tables.children || []) {   // each child's character drawn from a photo (server/avatar.js), full figure and face
     const ids = new Set([k.avatar, ...(Array.isArray(k.avatars) ? k.avatars.map((d) => d && d.id) : [])].filter(Boolean));
@@ -89,9 +92,19 @@ async function importZip(file, pool, media) {
     const res = { rows: {}, photos: 0, photosSkipped: 0, audio: 0 };
     // photos and voice memos first (async, outside the transaction)
     const isAudio = (m) => String(m.mime || '').startsWith('audio/') && !!AUDIO_EXT[m.mime];
-    const entryOf = (m) => (isAudio(m) ? `audio/${m.id}.${AUDIO_EXT[m.mime]}` : `photos/${m.id}.jpg`);
+    const isVideo = (m) => m.mime === 'video/mp4';
+    const entryOf = (m) => (isAudio(m) ? `audio/${m.id}.${AUDIO_EXT[m.mime]}` : isVideo(m) ? `videos/${m.id}.mp4` : `photos/${m.id}.jpg`);
     const mediaRows = (b.tables.media || []).filter((m) => ID_RE.test(String(m.id)) && SLUG_RE.test(String(m.trip_id)) && out[entryOf(m)]);
     for (const m of mediaRows) {
+      if (isVideo(m)) {   // a clip made by this app (already stripped); its poster is checked to be a JPEG, the key rebuilt
+        m.storage_key = `v/${m.trip_id}/${m.id}.mp4`;
+        if (await media.get(m.storage_key)) { res.photosSkipped++; continue; }
+        const poster = out[`videos/${m.id}.jpg`] ? await readEntry(z, out[`videos/${m.id}.jpg`], 5e6) : null;
+        if (!poster || (await sharp(poster).metadata().catch(() => ({}))).format !== 'jpeg') { res.photosSkipped++; continue; }
+        await media.put(m.storage_key, await readEntry(z, out[entryOf(m)], 120e6), 'video/mp4');
+        await media.put(`t/${m.trip_id}/${m.id}.jpg`, await sharp(poster).jpeg({ quality: 74, mozjpeg: true }).toBuffer());
+        res.videos = (res.videos || 0) + 1; continue;
+      }
       if (isAudio(m)) {   // kept as recorded; the key is rebuilt, never read from the file
         m.storage_key = `a/${m.trip_id}/${m.id}.${AUDIO_EXT[m.mime]}`;
         if (await media.get(m.storage_key)) { res.photosSkipped++; continue; }
