@@ -55,6 +55,7 @@ async function addPhotos(t, day, files, spot, metas) {
     const at = shot && shot <= Date.now() + 864e5 ? shot : f.lastModified && Math.abs(f.lastModified - Date.now()) < 400 * 864e5 ? Math.min(f.lastModified, Date.now()) : Date.now();
     await enqueue({ method: 'PUT', url: `/api/b/media/${id}?trip=${encodeURIComponent(t.id)}&day=${day}&at=${at}${place ? '&place=' + encodeURIComponent(place) : ''}`, blob,
       local: { coll: 'media', id, row: { trip: t.id, day, caption: '', highlight: false, at, w: 0, h: 0, place } } });
+    if (m && m.star) await enqueue({ method: 'PATCH', url: '/api/b/media/' + id, body: { highlight: true }, local: { coll: 'media', id, row: { highlight: true } } });   // a book from photos: the best photo of the day, picked on the phone
   }
 }
 
@@ -82,16 +83,16 @@ function stopRec() { if (recState && recState.rec.state !== 'inactive') recState
 // a video clip from the phone's gallery: sent as it is (the server cuts it to its first 30 s, makes it small and drops where it was
 // filmed — server/video.js), queued like a photo so no signal only means later. The phone reads how long it is first, to say so.
 const VID_MAX = 400e6;
-async function addVideo(t, day, file) {
+async function addVideo(t, day, file, shotAt, quiet) {   // shotAt: when it was filmed (a book from photos reads it from the clip); quiet: the caller says one line for many
   if (!file || !t) return;
   if (file.size > VID_MAX) { toast(L('คลิปใหญ่เกินไป (เกิน 400 MB) เลือกคลิปที่สั้นกว่านี้', 'This clip is over 400 MB — pick a shorter one')); return; }
-  const secs = await new Promise((res) => { const v = document.createElement('video'), u = URL.createObjectURL(file); v.preload = 'metadata'; v.muted = true;
+  const secs = quiet ? NaN : await new Promise((res) => { const v = document.createElement('video'), u = URL.createObjectURL(file); v.preload = 'metadata'; v.muted = true;
     const done = (x) => { URL.revokeObjectURL(u); res(x); }; v.onloadedmetadata = () => done(v.duration); v.onerror = () => done(NaN); setTimeout(() => done(NaN), 8000); v.src = u; });
-  const id = uid('vd'), at = file.lastModified && Math.abs(file.lastModified - Date.now()) < 400 * 864e5 ? Math.min(file.lastModified, Date.now()) : Date.now();
+  const id = uid('vd'), at = shotAt && shotAt <= Date.now() + 864e5 ? shotAt : file.lastModified && Math.abs(file.lastModified - Date.now()) < 400 * 864e5 ? Math.min(file.lastModified, Date.now()) : Date.now();
   const type = ['video/mp4', 'video/quicktime', 'video/webm', 'video/3gpp', 'video/x-m4v'].includes(file.type) ? file.type : 'video/mp4';   // the server reads what it really is
   await enqueue({ method: 'PUT', url: `/api/b/media/${id}?trip=${encodeURIComponent(t.id)}&day=${day}&at=${at}&kind=video`, blob: file.type === type ? file : new Blob([file], { type }),
     local: { coll: 'media', id, row: { trip: t.id, day, caption: '', highlight: false, at, w: 0, h: 0, mime: type } } });
-  toast(secs > 31 ? L('เก็บ 30 วินาทีแรกของคลิปนี้', 'The first 30 s of this clip will be kept') : L('เพิ่มคลิปแล้ว', 'Clip added'));
+  if (!quiet) toast(secs > 31 ? L('เก็บ 30 วินาทีแรกของคลิปนี้', 'The first 30 s of this clip will be kept') : L('เพิ่มคลิปแล้ว', 'Clip added'));
 }
 async function addClip(t, day, blob, secs) {
   const id = uid('vc'), at = Date.now(), type = blob.type || 'audio/webm';
@@ -939,13 +940,14 @@ function openLb(tid, id) {
 }
 function drawLb() {
   const lb = $('#lb'); if (!lbState) { lb.hidden = true; lb.innerHTML = ''; return; }
-  const { list, i } = lbState, m = list[i]; if (!m) { lbState = null; return drawLb(); }
+  const s0 = lbState, { list, i } = lbState, m = list[i]; if (!m) { lbState = null; return drawLb(); }
   const ed = isEditor();
   lb.innerHTML = `<div class="bar"><button data-lb="close" aria-label="${L('ปิด', 'Close')}">✕</button><span class="grow">${i + 1} / ${list.length}</span>
 ${ed ? `<button data-lb="star" aria-pressed="${!!m.highlight}">${m.highlight ? '⭐' : '☆'} ${L('ชอบ', 'Fave')}</button><button data-lb="del">${L('ลบ', 'Delete')}</button>` : ''}</div>
 <div class="stage"><img src="${esc(imgF(m))}" alt="${esc(m.caption)}">${list.length > 1 ? `<button class="nav prev" data-lb="prev" aria-label="prev">‹</button><button class="nav next" data-lb="next" aria-label="next">›</button>` : ''}</div>
 <div class="capbox">${ed ? `<span class="emowrap"><input id="lbcap" value="${esc(m.caption || '')}" placeholder="${L('คำอธิบายรูป', 'Caption')}" maxlength="500">${emoBtn('lbcap')}</span>` : m.caption ? `<p>${emoIn(esc(m.caption))}</p>` : ''}
 ${ed ? `<div class="tagrow"><input id="lbtags" value="${esc(tagsOf(m).join(', '))}" placeholder="${L('แท็ก คั่นด้วยจุลภาค เช่น food, kids', 'Tags, comma-separated, e.g. food, kids')}" maxlength="200"><input id="lbplace" value="${esc(m.place || '')}" placeholder="${L('ที่ไหน (จุดแวะ)', 'Where (the stop)')}" maxlength="120"></div>` : ''}
+${ed && s0.t && s0.t.kind === 'snap' && s0.t.days.length > 1 ? `<label class="lbday">${L('วันของรูปนี้', 'This photo’s day')}<select id="lbday">${s0.t.days.map((d, k) => `<option value="${k}"${k === m.day ? ' selected' : ''}>${esc(L(`วันที่ ${k + 1}`, `Day ${k + 1}`))} · ${esc(fmtDay(d.date))}</option>`).join('')}</select></label>` : ''}
 ${tagsOf(m).length || m.place ? `<div class="tags">${m.place ? `<span class="tagc">📍 ${esc(m.place)}</span>` : ''}${tagsOf(m).map((k) => `<span class="tagc">${tagHtml(k)}</span>`).join('')}</div>` : ''}</div>`;
   lb.hidden = false;
 }
@@ -1072,6 +1074,11 @@ document.addEventListener('focusout', (e) => {   // a voice memo's caption ("who
   if (m && (m.caption || '') !== cap) enqueue({ method: 'PATCH', url: '/api/b/media/' + encodeURIComponent(id), body: { caption: cap }, local: { coll: 'media', id, row: { caption: cap } } });
 });
 document.addEventListener('change', (e) => {
+  if (e.target.id === 'lbday' && lbState) {   // a book from photos: this photo belongs to another day (the queue carries it; the viewer moves on)
+    const m = lbState.list[lbState.i], day = +e.target.value; if (!m || m.day === day) return;
+    enqueue({ method: 'PATCH', url: '/api/b/media/' + encodeURIComponent(m.id), body: { day }, local: { coll: 'media', id: m.id, row: { day } } });
+    toast(L(`ย้ายไปวันที่ ${day + 1} แล้ว`, `Moved to day ${day + 1}`)); return;
+  }
   if (e.target.dataset && e.target.dataset.ck) { const m = ls('ck') || {}; if (e.target.checked) m[e.target.dataset.ck] = 1; else delete m[e.target.dataset.ck]; ls('ck', m);
     const bag = e.target.closest('details.bag');   // today's bag counts in place, and folds itself a moment after the last thing is in
     if (bag) { const n = bag.querySelectorAll('input[data-ck]').length, left = () => bag.querySelectorAll('input[data-ck]:not(:checked)').length, lb = bag.querySelector('.bagn');

@@ -241,8 +241,25 @@ ok((await fetch(BASE + '/api/b/trips', { method: 'POST', headers: H, body: JSON.
   const r3 = await (await post(`/api/b/snap/${id}/days`, { days: [{ date: '2026-12-10' }] })).json();
   t = (await state()).trips.find((x) => x.id === id);
   ok(r3.added === 1 && t.days[0].date === '2026-12-10' && t.days[1].place.th === 'ปากช่อง' && t.days[3].title.en === 'Sunflowers' && t.days[0].title.th === 'วันที่ 1' && t.days[2].title.th === 'วันที่ 3' && t.date_from === '2026-12-10', 'snap: an earlier date on an empty book lays the days out again, each keeping its own name and place');
+  // an earlier date once the book holds memories (owner, Nov 2026: "เพิ่มรูปก่อนวันแรกของเล่ม"): everything a day holds moves with it —
+  // its entries (and the day number inside their ids and keys), photos, check-ins; a day called by its number takes its new number
   await put(`/api/b/entries/${id}.q.0001`, { trip: id, day: 1, kind: 'quote', child: 'mimi', text: 'ลมแรงมาก' });
-  ok((await post(`/api/b/snap/${id}/days`, { days: [{ date: '2026-12-09' }] })).status === 409 && (await post(`/api/b/snap/${T}/days`, { days: [{ date: '2026-12-20' }] })).status === 404, 'snap: once a day holds something, an earlier date is refused (409 order — numbers are in the ids); a planned book takes no snap days');
+  await put(`/api/b/entries/${id}.sum.d1`, { trip: id, day: 1, kind: 'sum', text: 'วันที่ลมแรง' });
+  await put(`/api/b/entries/${id}.tick.stamp.d1.mimi`, { trip: id, day: 1, kind: 'tick', child: 'mimi', first_key: 'stamp.d1', text: '' });
+  await put(`/api/b/entries/${id}.tick.quest.d0.chest.mimi`, { trip: id, day: null, kind: 'tick', child: 'mimi', first_key: 'quest.d0.chest', text: '' });
+  await put('/api/b/places', { trip: id, key: 'snap.test-spot', day: 1, kind: 'place', name: { th: 'ชายหาด', en: 'The beach' } });
+  const jp0 = await sharp({ create: { width: 40, height: 30, channels: 3, background: '#668844' } }).jpeg().toBuffer();
+  await fetch(`${BASE}/api/b/media/ph-snap-renum?trip=${id}&day=1`, { method: 'PUT', headers: { 'x-mb': '1', cookie: ck, 'content-type': 'image/jpeg' }, body: jp0 });
+  const rb = await post(`/api/b/snap/${id}/days`, { days: [{ date: '2026-12-09' }] });
+  { const s2 = await state(), tt = s2.trips.find((x) => x.id === id), es = s2.entries.filter((e) => e.trip === id);
+    const q = es.find((e) => e.text === 'ลมแรงมาก'), sm = es.find((e) => e.kind === 'sum'), st = es.find((e) => e.first_key && e.first_key.startsWith('stamp.')), qu = es.find((e) => e.first_key && e.first_key.startsWith('quest.'));
+    const ph = s2.media.find((m) => m.id === 'ph-snap-renum'), pl = s2.places.find((p) => p.trip === id && p.key === 'snap.test-spot');
+    ok(rb.ok && tt.days.length === 6 && tt.days[0].date === '2026-12-09' && tt.days[0].title.th === 'วันที่ 1' && tt.days[1].title.th === 'วันที่ 2' && tt.days[2].place.th === 'ปากช่อง'
+      && q.day === 2 && sm.id === `${id}.sum.d2` && sm.day === 2 && st.first_key === 'stamp.d2' && st.id === `${id}.tick.stamp.d2.mimi` && st.day === 2 && qu.first_key === 'quest.d1.chest' && qu.id === `${id}.tick.quest.d1.chest.mimi`
+      && ph.day === 2 && pl.day === 2 && !es.some((e) => e.id.startsWith('~renum~')),
+    `snap: an earlier date on a book with memories lays the days out again — every entry, id, key, photo and check-in moves with its day (${JSON.stringify({ status: rb.status, days: tt.days.map((d) => [d.date, d.title.th]), q: q && q.day, sm: sm && sm.id, st: st && st.id, qu: qu && qu.id, ph: ph && ph.day, pl: pl && pl.day })})`); }
+  await fetch(`${BASE}/api/b/media/ph-snap-renum`, { method: 'DELETE', headers: H });
+  ok((await post(`/api/b/snap/${T}/days`, { days: [{ date: '2026-12-20' }] })).status === 404, 'snap: a planned book takes no snap days');
   // the parents name a day, its place, the book, and close it
   ok((await post(`/api/b/days/${id}/0`, { title: { th: 'ออกเดินทาง', en: 'Setting off' }, place: { th: 'บ้าน', en: 'Home' }, emoji: '🚗' }, 'PATCH')).ok
     && (await post(`/api/b/days/${id}/1`, { place: '' }, 'PATCH')).ok && (await post(`/api/b/days/${T}/0`, { title: 'x' }, 'PATCH')).status === 409
@@ -254,7 +271,7 @@ ok((await fetch(BASE + '/api/b/trips', { method: 'POST', headers: H, body: JSON.
   const jp = await sharp({ create: { width: 40, height: 30, channels: 3, background: '#88aa66' } }).jpeg().toBuffer();
   const upS = await fetch(`${BASE}/api/b/media/ph-snap-0001?trip=${id}&day=1`, { method: 'PUT', headers: { 'x-mb': '1', cookie: ck, 'content-type': 'image/jpeg' }, body: jp });
   ok((await post('/api/b/media/ph-snap-0001', { day: 3 }, 'PATCH')).ok && (await state()).media.find((m) => m.id === 'ph-snap-0001').day === 3
-    && (await post('/api/b/media/ph-snap-0001', { day: 5 }, 'PATCH')).status === 404 && (await post('/api/b/media/ph-snap-0001', { day: -1 }, 'PATCH')).status === 400, `snap: a photo moves to another day of its book, never past its last day (upload ${upS.status})`);
+    && (await post('/api/b/media/ph-snap-0001', { day: 6 }, 'PATCH')).status === 404 && (await post('/api/b/media/ph-snap-0001', { day: -1 }, 'PATCH')).status === 400, `snap: a photo moves to another day of its book, never past its last day (upload ${upS.status})`);
   ok((await fetch(BASE + `/api/b/snap`, { method: 'POST', headers: { ...H, cookie: vck }, body: '{}' })).status === 403, 'snap: relatives cannot make a book');
   // "go again" (owner, Nov 2026): a new empty book from this one — the same towns day by day from a new first date (gaps kept),
   // each day's name, place and emoji, the library's pictures and the kids' side; no photo, word or tick of the old trip
@@ -263,7 +280,7 @@ ok((await fetch(BASE + '/api/b/trips', { method: 'POST', headers: H, body: JSON.
   const ag = (await state()).trips.find((x) => x.id === aid);
   const sameDays = ag && ag.days.length === src.days.length && ag.days.every((d, k) => (d.place || {}).th === (src.days[k].place || {}).th && d.emoji === src.days[k].emoji
     && (/^วันที่ \d+$/.test(src.days[k].title.th) ? d.title.th === `วันที่ ${k + 1}` : d.title.th === src.days[k].title.th));
-  ok(ra.ok && ag && ag.kind === 'snap' && ag.open === false && ag.date_from === '2027-12-20' && ag.days[1].date === '2027-12-22' && ag.date_to === '2027-12-25' && sameDays
+  ok(ra.ok && ag && ag.kind === 'snap' && ag.open === false && ag.date_from === '2027-12-20' && ag.days.every((d, k) => (Date.parse(d.date) - Date.parse(ag.days[0].date)) === (Date.parse(src.days[k].date) - Date.parse(src.days[0].date))) && sameDays
     && /อีกครั้ง$/.test(ag.title.th) && / again$/.test(ag.title.en) && !(await state()).media.some((m) => m.trip === aid) && !(await state()).entries.some((e) => e.trip === aid)
     && (ag.theme.artDays || []).filter(Boolean).length === (src.theme.artDays || []).filter(Boolean).length,
   `go again: a new book from ${src.days.length} days (gaps kept, ${ag && ag.days.map((d) => d.date)}), the days' names and places, the library's pictures; nothing recorded is copied (${JSON.stringify({ st: ra.status, same: sameDays, open: ag && ag.open, title: ag && ag.title, art: [(ag && ag.theme.artDays || []).filter(Boolean).length, (src.theme.artDays || []).filter(Boolean).length] })})`);

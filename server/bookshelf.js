@@ -679,8 +679,6 @@ function router({ pool, media, A, ai, hooks = {} }) {   // hooks.heart(h): set b
   const tzToday = (tz) => new Date().toLocaleDateString('en-CA', { timeZone: tz });
   const placeOf = (p) => (p && (typeof p === 'string' ? p.trim() : (p.th || p.en || '').trim()) ? i18n(p, 120) : null);
   const snapTrip = async (id) => (await q("SELECT id, source, kind, open, timezone, to_char(date_from,'YYYY-MM-DD') date_from FROM trips WHERE id=$1 AND family_id=$2", [id, FAMILY]))[0];
-  const hasMemories = async (tid) => (await q(`SELECT 1 FROM entries WHERE trip_id=$1 UNION ALL SELECT 1 FROM media WHERE trip_id=$1 UNION ALL SELECT 1 FROM places WHERE trip_id=$1
-    UNION ALL SELECT 1 FROM hearts WHERE trip_id=$1 UNION ALL SELECT 1 FROM reviews WHERE trip_id=$1 UNION ALL SELECT 1 FROM spend WHERE trip_id=$1 LIMIT 1`, [tid])).length > 0;
   // the pictures and the kids' side of a book from photos (docs/SNAP-BOOK.md D7/D8, P4): the stock library's matcher reads the
   // book's place names (never a position) → day pictures, the crest, the country's two guides, a stamp per town and country;
   // and a small passport so kid mode, the adventure map and the printed book have the trip's towns: a day each with the town's
@@ -854,8 +852,26 @@ function router({ pool, media, A, ai, hooks = {} }) {   // hooks.heart(h): set b
       res.json({ ok: true, id });
     } catch (e) { await c.query('ROLLBACK').catch(() => {}); next(e); } finally { c.release(); }
   });
-  // more days for a book from photos: a date after the last day is added; an earlier one only while the book holds nothing yet —
-  // a day's number is in the ids of what it holds (`<trip>.sum.d<i>`, ticks, the phone's queue), so days are never renumbered
+  // more days for a book from photos: a date after the last day is added at the end; an earlier date, or one in a gap, lays the days
+  // out again in date order (owner, Nov 2026: "เพิ่มรูปก่อนวันแรกของเล่ม"). A day's number lives in what it holds — the day_index of
+  // entries, photos, check-ins, hearts, reviews and spending, and the ids and keys of the day's entries (`<trip>.sum.d<i>`,
+  // `<trip>.mood.d<i>.<kid>`, ticks `stamp.d<i>`, `spot.d<i>.<k>`, the adventure map's `quest.d<i>.<slot>`…) — so all of it moves
+  // with its day in one transaction (renumberDays); the library's match then draws the book's pictures and passport again.
+  const DAY_KEY_RE = /(^|\.)(mood|sum|talk|mquiz|story|note|fav|log|spot|stamp|gift|colour|little|quest)\.d(\d+)(?=\.|$)/g;
+  async function renumberDays(c, tid, map) {   // map: old day index → new day index (an increasing shift)
+    const moves = Object.entries(map).filter(([o, n]) => +o !== n);
+    if (!moves.length) return;
+    const vals = moves.map(([o, n], k) => `($${k * 2 + 2}::int, $${k * 2 + 3}::int)`).join(', '), args = [tid, ...moves.flatMap(([o, n]) => [+o, n])];
+    await c.query('UPDATE trip_days SET day_index = day_index + 100000 WHERE trip_id=$1', [tid]);
+    await c.query(`UPDATE trip_days d SET day_index = m.n FROM (VALUES ${vals}) m(o, n) WHERE d.trip_id=$1 AND d.day_index = m.o + 100000`, args);
+    await c.query('UPDATE trip_days SET day_index = day_index - 100000 WHERE trip_id=$1 AND day_index >= 100000', [tid]);
+    for (const tbl of ['entries', 'media', 'places', 'hearts', 'reviews', 'spend']) await c.query(`UPDATE ${tbl} x SET day_index = m.n FROM (VALUES ${vals}) m(o, n) WHERE x.trip_id=$1 AND x.day_index = m.o`, args);
+    const re = (s) => String(s || '').replace(DAY_KEY_RE, (all, pre, kind, d) => `${pre}${kind}.d${map[d] !== undefined ? map[d] : d}`);
+    const rows = (await c.query('SELECT id, first_key FROM entries WHERE trip_id=$1', [tid])).rows.map((e) => ({ ...e, nid: re(e.id), nkey: e.first_key == null ? null : re(e.first_key) }))
+      .filter((e) => e.nid !== e.id || e.nkey !== e.first_key);
+    for (const e of rows) await c.query('UPDATE entries SET id=$2 WHERE id=$1', [e.id, '~renum~' + e.id]);   // two steps: d0 → d1 while d1 still exists
+    for (const e of rows) await c.query('UPDATE entries SET id=$2, first_key=$3 WHERE id=$1', ['~renum~' + e.id, e.nid, e.nkey]);
+  }
   r.post('/api/b/snap/:trip/days', ...W, async (req, res, next) => {
     const c = await pool.connect();
     try {
@@ -869,17 +885,17 @@ function router({ pool, media, A, ai, hooks = {} }) {   // hooks.heart(h): set b
       if (all.length > 61 || !spanOk(all)) return bad(res, 'dates');
       const last = cur.length ? cur[cur.length - 1].date : '';
       const before = add.some((d) => d < last);
-      if (before && await hasMemories(t.id)) return bad(res, 'order', 409);
       await c.query('BEGIN');
-      if (before) {   // nothing recorded yet: lay the days out again in date order, each keeping its own title and place
-        const old = Object.fromEntries(cur.map((d) => [d.date, d]));
-        await c.query('DELETE FROM trip_days WHERE trip_id=$1', [t.id]);
-        for (const [i, d] of all.entries()) {
-          const o = old[d], x = byDate[d] || {};
-          const auto = !o || /^(วันที่ \d+|Day \d+)$/.test((o.title || {}).en || '') || /^วันที่ \d+$/.test((o.title || {}).th || '');
-          await c.query('INSERT INTO trip_days (trip_id, day_index, date, title, place, emoji) VALUES ($1,$2,$3,$4,$5,$6)',
-            [t.id, i, d, o && !auto ? o.title : x.title && (x.title.th || x.title.en) ? i18n(x.title, 80) : { th: `วันที่ ${i + 1}`, en: `Day ${i + 1}` }, o ? o.place : placeOf(x.place), o ? o.emoji : clip(x.emoji || '', 8)]);
+      if (before) {   // lay the days out again in date order: every day keeps its own name, place and everything it holds
+        const idx = Object.fromEntries(all.map((d, i) => [d, i])), map = Object.fromEntries(cur.map((d) => [d.day_index, idx[d.date]]));
+        await renumberDays(c, t.id, map);
+        for (const d of cur) {   // a day still called by its number takes its new number
+          const auto = /^(วันที่ \d+|Day \d+)$/.test((d.title || {}).en || '') || /^วันที่ \d+$/.test((d.title || {}).th || '');
+          if (auto && map[d.day_index] !== d.day_index) await c.query('UPDATE trip_days SET title=$3 WHERE trip_id=$1 AND day_index=$2', [t.id, map[d.day_index], { th: `วันที่ ${map[d.day_index] + 1}`, en: `Day ${map[d.day_index] + 1}` }]);
         }
+        for (const d of add) { const i = idx[d], x = byDate[d] || {};
+          await c.query('INSERT INTO trip_days (trip_id, day_index, date, title, place, emoji) VALUES ($1,$2,$3,$4,$5,$6)',
+            [t.id, i, d, x.title && (x.title.th || x.title.en) ? i18n(x.title, 80) : { th: `วันที่ ${i + 1}`, en: `Day ${i + 1}` }, placeOf(x.place), clip(x.emoji || '', 8)]); }
       } else {
         for (const [k, d] of add.entries()) { const i = cur.length + k, x = byDate[d] || {};
           await c.query('INSERT INTO trip_days (trip_id, day_index, date, title, place, emoji) VALUES ($1,$2,$3,$4,$5,$6)',

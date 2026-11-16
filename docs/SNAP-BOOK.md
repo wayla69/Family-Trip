@@ -396,7 +396,7 @@ checked-in places; a place not in the library → emoji/day art fallback, no bro
 existing 7-size test) with a snap book; printed PDF has a cover, 3 day pages, no "nothing recorded" text.
 
 ### P5 — Later, only if asked
-Built (Nov 2026, owner: "ชื่อสถานที่ละเอียดขึ้น วิดีโอ และใช้เล่มจากรูปเป็นแผนของทริปหน้า"): finer place names — a GeoNames list per country read on the phone, plus the opt-in online lookup (D2 v2, a position rounded to ~1 km through our server to OpenStreetMap) · video clips up to 30 s (re-encoded, metadata dropped) · "go again" (a new book with the same towns from a new first date). Still open: "ดูเหมือนสองทริป" split UI polish.
+Built (Nov 2026, owner: "ชื่อสถานที่ละเอียดขึ้น วิดีโอ และใช้เล่มจากรูปเป็นแผนของทริปหน้า"): finer place names — a GeoNames list per country read on the phone, plus the opt-in online lookup (D2 v2, a position rounded to ~1 km through our server to OpenStreetMap) · video clips up to 30 s (re-encoded, metadata dropped) · "go again" (a new book with the same towns from a new first date). Second round (Nov 2026, owner: "ทำ 1-5"): edit the book after it is made (names, places, a photo's day), two trips in one pick (either one, a book each, or one book), the best photo of each day starred on the phone, bursts and screenshots set aside (each can come back), and earlier days on a book that holds memories (everything renumbered in one transaction); then clips picked with the photos, each on the day it was filmed (the movie header's time, read on the phone).
 
 Rough size: P1 ≈ 5–7 days of focused work, P2 ≈ 2, P3 ≈ 3–4, P4 ≈ 3. P1 alone is shippable and useful.
 
