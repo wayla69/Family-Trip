@@ -3136,10 +3136,20 @@ details.emeal[open]>summary .mname{visibility:hidden}
 .colpics button img{width:100%;height:100%;object-fit:contain;display:block}
 .colpics button[aria-pressed=true]{box-shadow:0 0 0 4px var(--accent)}
 .colpics button i{position:absolute;right:-4px;bottom:-4px;font-style:normal;font-size:18px;line-height:1}
-/* Segment switches as the book's pills (owner, Nov 2026: "ปรับ UI ให้เข้ากับเล่มหน่อย" — the picked part was a square block clipped by the round track): a soft track in the book's tint, each part its own pill, the picked one tinted and ringed in the book's colour */
-.seg{gap:3px;padding:3px;border-color:color-mix(in srgb,var(--accent) 22%,var(--rule));background:color-mix(in srgb,var(--accent) 5%,var(--card,var(--paper)))}
-.seg button{border-radius:999px;transition:background .15s,color .15s,box-shadow .15s}
-.seg button[aria-pressed=true]{background:color-mix(in srgb,var(--accent) 14%,var(--paper));color:color-mix(in srgb,var(--accent) 62%,var(--ink));box-shadow:inset 0 0 0 1.5px var(--accent),0 1px 2px rgba(0,0,0,.08)}
-.seg button:not([aria-pressed=true]):hover{background:color-mix(in srgb,var(--accent) 8%,transparent)}
-.setlist .setrow .seg{justify-self:stretch;width:100%}
-.setlist .setrow .seg button{flex:1 1 0;min-width:0}
+/* The shelf's "language and text" card in the look of the settings list and the menu-colour cards (owner, Nov 2026: "ปรับ UI ให้เข้ากับเล่มหน่อย" → "สีและรูปแบบไม่ได้"): a drawn picture per row, the choices as option cards with the ✓ badge */
+.setlist .setrow .tpk{grid-column:1/-1;margin:4px 0 0;max-width:none;width:100%}
+.tpk.lgk{grid-template-columns:repeat(2,minmax(0,1fr))}
+.tpk.fsk{grid-template-columns:repeat(4,minmax(0,1fr));gap:7px}
+.dispk .tpo{align-items:center;text-align:center;gap:4px;padding:10px 6px}
+.dispk .tpo[aria-pressed=true]{padding:9px 5px}
+.dispk .tpo .gl{display:flex;align-items:center;justify-content:center;width:44px;height:44px;border-radius:50%;font-weight:700;line-height:1;color:color-mix(in srgb,var(--accent) 70%,var(--ink));background:color-mix(in srgb,var(--accent) 12%,var(--paper))}
+.lgk .tpo:nth-child(1) .gl{background:color-mix(in srgb,#FF6FA8 22%,var(--paper));color:color-mix(in srgb,#C2185B 70%,var(--ink))}
+.lgk .tpo:nth-child(2) .gl{background:color-mix(in srgb,#4F7BFF 22%,var(--paper));color:color-mix(in srgb,#2848B8 70%,var(--ink))}
+.dispk .tpo b{font-size:14px}
+.lgk .gl{font-size:22px}
+.fsk .tpo:nth-child(1) .gl{font-size:14px;background:color-mix(in srgb,#4F7BFF 20%,var(--paper));color:color-mix(in srgb,#2848B8 70%,var(--ink))}
+.fsk .tpo:nth-child(2) .gl{font-size:17px;background:color-mix(in srgb,#2DB38A 20%,var(--paper));color:color-mix(in srgb,#127356 70%,var(--ink))}
+.fsk .tpo:nth-child(3) .gl{font-size:20px;background:color-mix(in srgb,#F2B90C 24%,var(--paper));color:color-mix(in srgb,#8A6400 75%,var(--ink))}
+.fsk .tpo:nth-child(4) .gl{font-size:23px;background:color-mix(in srgb,#FF6FA8 20%,var(--paper));color:color-mix(in srgb,#C2185B 70%,var(--ink))}
+.fsk .tpo b{font-size:12.5px;font-weight:600;color:var(--muted)}.fsk .tpo[aria-pressed=true] b{color:var(--ink);font-weight:700}
+@media (max-width:360px){.tpk.fsk{gap:5px}.fsk .tpo b{font-size:11.5px}}
