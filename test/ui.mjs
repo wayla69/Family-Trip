@@ -791,6 +791,26 @@ const T = 'hk-macau-2026';
       await page.waitForSelector('.lvbar');
       const lv = await page.evaluate(() => ({ at: kg.at, opts: kg.r.opts.length, chips: document.querySelectorAll('.lvbar .lvc').length, on: document.querySelector('.lvc.on').dataset.v, won: document.querySelectorAll('.lvc i').length }));
       ok(hadNext && lv.at === 3 && lv.opts === 4 && lv.chips === 3 && lv.on === '3' && lv.won === 2, `kid levels: a won level opens the next (level 3: four pictures; three chips, a star on the two won) (${JSON.stringify({ hadNext, ...lv })})`);
+      // the levels start again (owner, Nov 2026: "อันนี้จะล้างยังไง"): a tap on "Level" does nothing, a grown-up's 1.5 s hold goes back to the start
+      const rb = await page.locator('.lvbar .lvreset').boundingBox();
+      await page.mouse.click(rb.x + rb.width / 2, rb.y + rb.height / 2); await page.waitForTimeout(300);
+      const tapKept = await page.evaluate(() => document.querySelectorAll('.lvbar .lvc').length === 3);
+      await page.mouse.move(rb.x + rb.width / 2, rb.y + rb.height / 2); await page.mouse.down(); await page.waitForTimeout(1800); await page.mouse.up();
+      await page.waitForFunction(() => kg && kg.at === 2, null, { timeout: 3000 }).catch(() => {});
+      const rs = await page.evaluate(() => ({ at: kg.at, chips: document.querySelectorAll('.lvbar .lvc').length, saved: JSON.stringify((ls('lv_mimi') || {}).shadow || null) }));
+      ok(tapKept && rs.at === 2 && rs.chips === 2 && /"at":2/.test(rs.saved), `kid levels: a tap on "Level" keeps them, a grown-up's long press starts the game where a new player starts (level 2 for Mimi, two chips) (${JSON.stringify({ tapKept, ...rs })})`);
+      // every game at once: the hold button at the foot of the adventure map (owner: "ล้างได้ทุกเกมพร้อมกันไหม")
+      const lvKeep = await page.evaluate(() => ls('lv_mimi'));
+      await page.evaluate(() => ls('lv_mimi', { shadow: { at: 4, best: 3 }, match: { at: 3, best: 2 } }));
+      await page.goto(`${BASE}/#/kid/mimi/quest`); await page.waitForSelector('.lvreset[data-g="*"]');
+      await page.locator('.lvreset[data-g="*"]').scrollIntoViewIfNeeded(); await page.waitForTimeout(200);
+      const ab = await page.locator('.lvreset[data-g="*"]').boundingBox();
+      await page.mouse.move(ab.x + ab.width / 2, ab.y + ab.height / 2); await page.mouse.down(); await page.waitForTimeout(1800); await page.mouse.up();
+      await page.waitForFunction(() => !ls('lv_mimi') && !document.querySelector('.lvreset[data-g="*"]'), null, { timeout: 3000 }).catch(() => {});
+      const ar = await page.evaluate(() => ({ lv: ls('lv_mimi'), btn: !!document.querySelector('.lvreset[data-g="*"]') }));
+      ok(!ar.lv && !ar.btn, `kid levels: the adventure map's grown-up button starts every game's levels again at once (${JSON.stringify(ar)})`);
+      await page.evaluate((v) => ls('lv_mimi', v), lvKeep);
+      await page.goto(`${BASE}/#/kid/mimi/shadow`); await page.waitForSelector('.lvbar');
     }
   }
   // animal sounds (owner, Nov 2026: more games + scenes): every animal taps where it is drawn (a pressed kid button scales — the centring must not

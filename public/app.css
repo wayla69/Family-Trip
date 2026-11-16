@@ -3153,3 +3153,6 @@ details.emeal[open]>summary .mname{visibility:hidden}
 .fsk .tpo:nth-child(4) .gl{font-size:23px;background:color-mix(in srgb,#FF6FA8 20%,var(--paper));color:color-mix(in srgb,#C2185B 70%,var(--ink))}
 .fsk .tpo b{font-size:12.5px;font-weight:600;color:var(--muted)}.fsk .tpo[aria-pressed=true] b{color:var(--ink);font-weight:700}
 @media (max-width:360px){.tpk.fsk{gap:5px}.fsk .tpo b{font-size:11.5px}}
+/* the word "Level" is a grown-up's press-and-hold button: the game's levels start again (like the star jar) */
+.lvbar>.lvreset{font:inherit;font-weight:700;font-size:clamp(16px,1.9vw,20px);padding:8px 14px;min-height:44px;border:0;border-radius:999px;background:rgba(255,255,255,.88);color:var(--ink);transition:transform 1.5s,background 1.5s}
+.lvbar>.lvreset.holding{transform:scale(.88);background:#FFD9D9}
