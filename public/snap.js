@@ -533,6 +533,10 @@ async function snapLiveAdd(t, files) {
         local: { coll: 'places', id: `${t.id}:${key}`, row: { trip: t.id, key, day: g.i, kind: 'place', name: { th: g.pl.th, en: g.pl.en }, at: Date.now() } } }); }
     await addPhotos(t, g.i, g.files, g.name ? { place: g.name } : null, g.metas);
   }
+  // a day with no place yet takes the first place its photos name: the server then finds its library picture, stamp and town
+  const named = {}; for (const g of Object.values(groups)) if (g.pl && !named[g.i] && !(t.days[g.i] || {}).place) named[g.i] = g.pl;
+  for (const [i, pl] of Object.entries(named)) await api('PATCH', `/api/b/days/${encodeURIComponent(t.id)}/${i}`, { place: { th: pl.th, en: pl.en } }).catch(() => {});
+  if (Object.keys(named).length) await load().catch(() => {});
   safeRender();
 }
 function snapLivePick(t, cam) {   // outside #app, like #fpick

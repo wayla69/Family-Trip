@@ -1,6 +1,6 @@
 # Snap Book — a book from photos, no plan needed
 
-Status: **P0–P3 built** (16 Nov 2026): the reader and `#/snaptest`, the book from photos after the trip (`#/snap`), the share
+Status: **P0–P4 built** (16 Nov 2026; P4 = the library's pictures, crest, stamps and the kids' towns for a book from photos): the reader and `#/snaptest`, the book from photos after the trip (`#/snap`), the share
 target into it, every upload taking the photo's own time, the open book's day page during the trip (`viewSnapLive`), and the
 helper's draft of the book (`#/t/<id>/draft`: names, summaries, foreword, stories). R3 confirmed by the owner (16 Nov 2026).
 P4 (pictures and the kids' side) is next. P3 left out photo help inside the job (D6.2; the record page's "look at today's

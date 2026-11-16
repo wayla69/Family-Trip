@@ -640,6 +640,65 @@ function router({ pool, media, A, ai, hooks = {} }) {   // hooks.heart(h): set b
   const snapTrip = async (id) => (await q("SELECT id, source, kind, open, timezone, to_char(date_from,'YYYY-MM-DD') date_from FROM trips WHERE id=$1 AND family_id=$2", [id, FAMILY]))[0];
   const hasMemories = async (tid) => (await q(`SELECT 1 FROM entries WHERE trip_id=$1 UNION ALL SELECT 1 FROM media WHERE trip_id=$1 UNION ALL SELECT 1 FROM places WHERE trip_id=$1
     UNION ALL SELECT 1 FROM hearts WHERE trip_id=$1 UNION ALL SELECT 1 FROM reviews WHERE trip_id=$1 UNION ALL SELECT 1 FROM spend WHERE trip_id=$1 LIMIT 1`, [tid])).length > 0;
+  // the pictures and the kids' side of a book from photos (docs/SNAP-BOOK.md D7/D8, P4): the stock library's matcher reads the
+  // book's place names (never a position) → day pictures, the crest, the country's two guides, a stamp per town and country;
+  // and a small passport so kid mode, the adventure map and the printed book have the trip's towns: a day each with the town's
+  // colours and one line about it, a map of the towns in the order visited. Run again whenever the days or places change; what the
+  // parents or the helper wrote (a day's own facts) stays.
+  const SNAPDEF = '#2C5646';
+  async function snapMatch(tid) {
+    const t = (await q('SELECT id, title, theme, passport, kind FROM trips WHERE id=$1 AND family_id=$2', [tid, FAMILY]))[0];
+    if (!t || t.kind !== 'snap') return null;
+    const ix = STOCK.read(), P = ix.places || {}, theme = t.theme || {};
+    const days = await q('SELECT day_index, title, place, emoji FROM trip_days WHERE trip_id=$1 ORDER BY day_index', [t.id]);
+    const ins = await q('SELECT day_index, name FROM places WHERE trip_id=$1 ORDER BY visited_at', [t.id]);
+    const ids = ((theme.snap || {}).places || []).filter((id) => P[id]);
+    const nm = (x) => (x ? `${x.th || ''} ${x.en || ''}`.trim() : '');
+    const placeText = ids.length ? ids.map((id) => nm(P[id].name)).join(' · ') : days.map((d) => nm(d.place)).filter(Boolean).join(' · ');
+    const MATCH = await import('../scripts/lib/stock-match.mjs');
+    const m = MATCH.stockMatch(days.map((d) => ({ title: d.title, sleep: d.place, planned: ins.filter((p) => p.day_index === d.day_index).map((p) => p.name) })), placeText, ix);
+    // each day's town: the library city the matcher found for it (its colours), else the day's own place words
+    const townOf = days.map((d) => (d.place ? d.place : null));
+    const col = (id) => (P[id] && P[id].colors) || null;
+    const firstCol = col(m.places[0]) || null;
+    const theme2 = { ...theme, artDays: m.filled ? m.artDays : (theme.artDays || []) };
+    if (firstCol && (!theme.accent || theme.accent === SNAPDEF || theme.accentAuto)) Object.assign(theme2, { accent: firstCol.k1, accentAuto: true });
+    const pp0 = t.passport && typeof t.passport === 'object' ? t.passport : {};
+    const half = (s) => String(s || '').split(' · ')[0];
+    const stopsSeen = new Map(), mapDays = days.map(() => []);
+    days.forEach((d, i) => {
+      const names = [...(d.place ? [String(d.place.th || '').split(' · '), String(d.place.en || '').split(' · ')] : [[], []])];
+      const n = Math.max(names[0].length, names[1].length);
+      for (let k = 0; k < n; k++) { const th = (names[0][k] || names[1][k] || '').trim(), en = (names[1][k] || names[0][k] || '').trim(); if (!th) continue;
+        const key = 's' + crypto.createHash('sha1').update(en.toLowerCase()).digest('hex').slice(0, 8);
+        if (!stopsSeen.has(key)) stopsSeen.set(key, { k: key, e: d.emoji || '📍', th, en, q: en });
+        if (!mapDays[i].includes(key)) mapDays[i].push(key); }
+    });
+    const stops = [...stopsSeen.values()].map((s, k, all) => ({ ...s, x: Math.round(all.length > 1 ? 14 + (72 * k) / (all.length - 1) : 50), y: all.length > 1 ? (k % 2 ? 62 : 36) : 50 }));
+    for (const s of stops) { const a = m.mapArt(s); if (a) s.art = a; }
+    const DEF = await import('../scripts/lib/book-defaults.mjs');
+    const towns = [...stopsSeen.values()], ttl = t.title || {};
+    const base = DEF.passportStyle({ slug: t.id, accent: theme2.accent || SNAPDEF, placeTh: towns.map((s) => s.th).join(' · ') || ttl.th || ttl.en || '', placeEn: towns.map((s) => s.en).join(' · ') || ttl.en || ttl.th || '' });
+    const pp = {
+      ...pp0,
+      // the passport's cover as a planned book's (title, colours, the places line), the library's crest when there is one
+      style: { ...base, crest: '', ...(pp0.style || {}), places: base.places, ink: (pp0.style || {}).inkOwn ? pp0.style.ink : base.ink, ...(m.crest ? { crest: m.crest } : {}) },
+      colour: pp0.colour || '',
+      ...(m.guides && !(Array.isArray(pp0.guides) && pp0.guides.length && !pp0.guidesAuto) ? { guides: m.guides, guidesAuto: true } : {}),
+      stamps: m.stamps,
+      days: days.map((d, i) => {
+        const old = (pp0.days || [])[i] || {}, town = townOf[i], c = firstCol || {};
+        const fact = town ? { th: `วันนี้เราไป${half(town.th)}`, en: `Today we went to ${half(town.en)}` } : null;
+        return { ...old, acc: old.acc || c.k1 || '', tint: old.tint || c.k3 || '', facts: old.factsOwn ? old.facts : (fact ? [fact] : old.facts || []) };
+      }),
+      ...(stops.length ? { map: { stops, days: mapDays } } : {}),
+    };
+    await q('UPDATE trips SET theme=$2, passport=$3 WHERE id=$1', [t.id, JSON.stringify(theme2), JSON.stringify(pp)]);
+    return { filled: m.filled, crest: m.crest, places: m.places };
+  }
+  r.post('/api/b/snap/:trip/match', ...W, async (req, res, next) => {
+    try { const out = await snapMatch(req.params.trip); if (!out) return bad(res, 'trip', 404); res.json({ ok: true, ...out }); } catch (e) { next(e); }
+  });
   // the places the phone can name a position with: every library city with its centre (no family data; the index stays on the server)
   r.get('/api/b/geo', A.requireUser, (_req, res) => {
     const ps = Object.entries(STOCK.read().places || {});
@@ -661,13 +720,14 @@ function router({ pool, media, A, ai, hooks = {} }) {   // hooks.heart(h): set b
       await c.query('BEGIN');
       await c.query(`INSERT INTO trips (id, family_id, slug, title, date_from, date_to, timezone, theme, cover, source, kind, open)
         VALUES ($1,$2,$1,$3,$4,$5,$6,$7,$8,'manual','snap',$9)`,
-      [id, FAMILY, title, dates[0], dates[dates.length - 1], tz, { accent: /^#[0-9a-fA-F]{6}$/.test(b.accent) ? b.accent : '#2C5646', display: 'sans', snap: { places: ids } }, { emoji: clip(b.emoji || '📷', 8) }, !!b.open]);
+      [id, FAMILY, title, dates[0], dates[dates.length - 1], tz, { accent: /^#[0-9a-fA-F]{6}$/.test(b.accent) ? b.accent : SNAPDEF, accentAuto: !/^#[0-9a-fA-F]{6}$/.test(b.accent), display: 'sans', snap: { places: ids } }, { emoji: clip(b.emoji || '📷', 8) }, !!b.open]);
       for (const [i, d] of dates.entries()) {
         const x = byDate[d] || {};
         await c.query('INSERT INTO trip_days (trip_id, day_index, date, title, place, emoji) VALUES ($1,$2,$3,$4,$5,$6)',
           [id, i, d, x.title && (x.title.th || x.title.en) ? i18n(x.title, 80) : { th: `วันที่ ${i + 1}`, en: `Day ${i + 1}` }, placeOf(x.place), clip(x.emoji || '', 8)]);
       }
       await c.query('COMMIT');
+      await snapMatch(id).catch((e) => console.error('snap match', e.message));   // the library's pictures and the kids' towns
       res.json({ ok: true, id });
     } catch (e) { await c.query('ROLLBACK').catch(() => {}); next(e); } finally { c.release(); }
   });
@@ -704,6 +764,7 @@ function router({ pool, media, A, ai, hooks = {} }) {   // hooks.heart(h): set b
       }
       await c.query('UPDATE trips SET date_from=$2, date_to=$3 WHERE id=$1', [t.id, all[0], all[all.length - 1]]);
       await c.query('COMMIT');
+      await snapMatch(t.id).catch((e) => console.error('snap match', e.message));
       res.json({ ok: true, added: add.length, days: all });
     } catch (e) { await c.query('ROLLBACK').catch(() => {}); next(e); } finally { c.release(); }
   });
@@ -719,6 +780,7 @@ function router({ pool, media, A, ai, hooks = {} }) {   // hooks.heart(h): set b
       if ('emoji' in b) { args.push(clip(b.emoji || '', 8)); sets.push(`emoji=$${args.length}`); }
       if (!sets.length) return bad(res, 'nothing');
       const out = await q(`UPDATE trip_days SET ${sets.join(', ')} WHERE trip_id=$1 AND day_index=$2 RETURNING day_index`, args);
+      if (out.length && ('place' in b || 'title' in b)) await snapMatch(t.id).catch((e) => console.error('snap match', e.message));   // a new place: new pictures and towns
       res.status(out.length ? 200 : 404).json({ ok: !!out.length });
     } catch (e) { next(e); }
   });
@@ -1074,6 +1136,7 @@ function router({ pool, media, A, ai, hooks = {} }) {   // hooks.heart(h): set b
             }
             s.st = 'done';
           }
+          await snapMatch(t.id).catch((e) => console.error('snap match', e.message));
           job.status = 'done';
         } catch (e) {
           if (job.ctl.signal.aborted) { job.status = 'stopped'; return; }
