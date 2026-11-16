@@ -2256,7 +2256,8 @@ function daySpots(t, i, kid) {
 }
 const kidLists = (t, kid) => ((t.passport || {}).lists || []).filter((l) => !littleOf(t, kid) || !(l.said || l.certificate));
 // the certificate comes by itself on the last day of the trip (and stays after) — nothing to tick, no goal to reach
-const certEarned = (t, kid) => !!(t.passport || {}).certificate && (tripOver(t) || dayNow(t) === t.days.length - 1);
+// a book from photos has no last day while it is open (today is always its last): its certificate comes when the parents close it
+const certEarned = (t, kid) => !!(t.passport || {}).certificate && (t.kind === 'snap' ? !t.open : tripOver(t) || dayNow(t) === t.days.length - 1);
 const certText = (t, kid) => { const l = littleOf(t, kid); return l && l.cert ? T(l.cert) : T((t.passport || {}).certificate.text); };
 // "where we sleep": consecutive nights in the same place, from the days' Sleep line
 function sleepStops(t) {
