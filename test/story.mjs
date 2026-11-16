@@ -8,6 +8,7 @@ import path from 'node:path';
 import { createRequire } from 'node:module';
 import { chromium } from 'playwright';
 import yauzl from 'yauzl';
+import { todayLost } from './today-lost.mjs';
 
 const { CODE } = process.env;
 let failures = 0;
@@ -62,7 +63,7 @@ const mock = http.createServer((req, res) => {
     const IMP = {
       top: () => JSON.stringify({ slug: 'wrong-slug', title: en('The Test Hop · Testland'), from: '2027-03-10', to: '2027-03-11', tz: 'Asia/Tokyo', place: { en: 'Testland', flag: '🏳️' },
         days: [0, 1].map((i) => ({ title: en(`Day ${i + 1} of the test`), sleep: en('Test Inn'), planned: [{ en: 'Test Square', th: i ? null : '', zh: '測試', q: 'Test Square, Testland' }], moving: { en: 'Walk 5 min', th: ' ' },
-          plan: [{ t: '09:00', en: 'Breakfast' }, { t: '11:00', h: { en: '🎈 Super Fun Zone opens' }, en: 'Super Fun Zone opens' }], tips: [en('Show the driver: 測試')], stay: { name: 'Test Inn', addr: '1 Test St', q: 'Test Inn, Testland' } })) }),
+          plan: [{ t: '09:00', en: 'Breakfast' }, { t: '10:30', go: true, h: { en: '🚕 Taxi to the fun zone' }, en: 'Taxi to the fun zone' }, { t: '11:00', go: true, h: { en: '🎈 Super Fun Zone opens' }, en: 'Super Fun Zone opens' }], tips: [en('Show the driver: 測試')], stay: { name: 'Test Inn', addr: '1 Test St', q: 'Test Inn, Testland' } })) }),
       info: () => JSON.stringify({ emergency: [{ label: en('All emergencies'), tel: '999', main: true }], lost: en('Stand still'), ifthen: { plans: { head: en('If… then…'), cols: [en('If'), en('Then')], rows: [[en('Rain'), en('The museum instead')]] } }, visa: { lede: en('Visa-free for Thais'), groups: [{ title: en('Bring'), items: [en('Passport')] }] }, guide: [{ title: en('Clocks'), text: en('One hour ahead') }, { title: en('Front desk'), text: en('Show booking ref KL4PQZ at check-in') }] }),
       restlist: () => JSON.stringify({ areas: [{ area: en('Test town'), kind: 0, names: ['Test Noodles', 'Test Dumplings'] }, { area: en('Test sweets'), kind: 2, names: ['Test Tarts'] }] }),
       // the list overflows once (stop_reason max_tokens below), so the fallback asks for the headings, then the names
@@ -477,7 +478,7 @@ try {
   const d0 = imp.drafts[0] || {};
   ok(d0.seed === undefined && d0.cover && Array.isArray(d0.toc) && d0.toc.length === 2 && d0.peek && d0.peek.stops > 0 && d0.peek.restaurants > 0 && d0.peek.firsts >= 3 && d0.peek.words >= 3 && d0.peek.wild >= 1, `import: the list carries the cover, the contents and the peek counts, never the seed (${JSON.stringify(d0.peek)})`);
   const dr = await (await fetch(BASE + '/api/b/import/' + imp.drafts[0].id, { headers: { cookie: ck } })).json();
-  ok(dr.seed && dr.seed.slug === 'test-hop' && dr.seed.days.length === 2 && dr.seed.days[1].plan[1].t === '11:00' && dr.seed.days[0].title.th === 'ไทย: Day 1 of the test' && dr.seed.days[0].tale.scenes.length === 1 && dr.seed.theme.art === '' && dr.seed.passport.guides[0].art === '/art/guides/kiki.svg', 'import: the seed has the days, the Thai, the kids\' pages, no drawn art and the generic guides');
+  ok(dr.seed && dr.seed.slug === 'test-hop' && dr.seed.days.length === 2 && dr.seed.days[1].plan[2].t === '11:00' && dr.seed.days[0].title.th === 'ไทย: Day 1 of the test' && dr.seed.days[0].tale.scenes.length === 1 && dr.seed.theme.art === '' && dr.seed.passport.guides[0].art === '/art/guides/kiki.svg', 'import: the seed has the days, the Thai, the kids\' pages, no drawn art and the generic guides');
   const rg = dr.seed.info.restaurants.groups;
   ok(rg.length === 2 && rg[0].items.map((x) => x.name).join(',') === 'Test Noodles,Test Dumplings' && rg[0].items[1].what && rg[0].items[1].what.th.startsWith('ไทย:') && rg[1].kind === 2 && rg[1].items[0].name === 'Test Tarts' && dr.seed.info.emergency[0].tel === '999', 'import: every listed restaurant has its row (the missing one came back on the retry), areas and kinds kept, pocket guide in the seed');
   const px = dr.seed.passport, fx = dr.seed.firsts_catalog;
@@ -494,7 +495,13 @@ try {
   const svj = await sv.json();
   ok(sv.status === 200 && svj.id === 'test-hop' && svj.art === 'started', 'import: saved as a book, and the page is told its drawings started');
   const stt = await state(), nt = stt.trips.find((t) => t.id === 'test-hop');
-  ok(nt && nt.source === 'manual' && nt.days.length === 2 && nt.days[1].plan.plan[1].en === 'Super Fun Zone opens' && nt.days[0].planned[0].th === 'ไทย: Test Square' && nt.days[1].planned[0].th === 'ไทย: Test Square' && nt.firsts.length === 3 && nt.firsts[0].key === 'ferry' && nt.passport.days.length === 2, 'import: the new book is in the state with its days, plans, its own firsts and passport');
+  ok(nt && nt.source === 'manual' && nt.days.length === 2 && nt.days[1].plan.plan[2].en === 'Super Fun Zone opens' && nt.days[0].planned[0].th === 'ไทย: Test Square' && nt.days[1].planned[0].th === 'ไทย: Test Square' && nt.firsts.length === 3 && nt.firsts[0].key === 'ferry' && nt.passport.days.length === 2, 'import: the new book is in the state with its days, plans, its own firsts and passport');
+  { const g = nt.days.map((d) => (d.plan.plan || []).map((r, k) => (r.go === true ? k : -1)).filter((k) => k >= 0)), sent = importCalls.map((c) => c.system + c.user).join('\n');
+    ok(g.every((x) => x.length === 1 && x[0] === 1) && /go = true on exactly one row a day/.test(sent), `import: the model is asked to mark the step the family leaves on (go), and a day keeps one mark — the first (${JSON.stringify(g)})`); }
+  { // a book that came through the import (extract → kids' pages → extras → Thai → plan-to-seed) loses nothing on the one-page Today either
+    await page.goto(BASE + '/#/t/test-hop/today/0'); await page.reload(); await page.waitForFunction(() => typeof S === 'object' && S && S.trips.some((x) => x.id === 'test-hop' && x.days[0] && x.days[0].plan), null, { timeout: 15000 });
+    const lost = await page.evaluate(todayLost, ['test-hop']);
+    ok(lost.length === 0, `import: Today loses nothing of the imported book's full plan (${lost.slice(0, 4).join(' | ') || 'nothing missing'}${lost.length > 4 ? ` … ${lost.length}` : ''})`); }
   ok((await (await fetch(BASE + '/api/b/import', { headers: { cookie: ck } })).json()).drafts.length === 0, 'import: the draft is gone once saved');
   ok(nt.info.ifthen && Array.isArray(nt.info.ifthen.rows) && nt.info.ifthen.rows.length === 1 && nt.info.ifthen.cols.length === 2 && nt.info.visa && nt.info.visa.groups.length === 1 && !nt.info.visa.flow, 'import: the model\'s {plans:{…}} if-then table is stored in the seeds\' shape ({cols, rows}); a visa without a step list is kept as it came');
   // ---- the book's own pictures (server/bookart.js): saving an imported book starts the drawing by itself — a circle per day, the crest, then the two guides

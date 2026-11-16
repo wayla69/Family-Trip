@@ -96,6 +96,8 @@ function toSeed(p, notes, opts = {}) {
     });
     const out = { ...D.dayBase(i, date, accent), ...(d.emoji ? { emoji: d.emoji } : {}), title: d.title, sleep: d.sleep || i18n('บ้าน', 'Home'), planned };
     if (d.wx) out.wx = d.wx;
+    // `go` marks the one timeline row the family leaves the bed on (Today's bag stays open until then): a boolean, at most one a day — the first wins
+    if (Array.isArray(d.plan)) { let seen = false; d.plan = d.plan.map((r) => { if (!r || typeof r !== 'object' || !('go' in r)) return r; const { go, ...rest } = r; if (go === true && !seen) { seen = true; return { ...rest, go: true }; } return rest; }); }
     for (const k of ['moving', 'pick', 'planB', 'money', 'plan', 'tips', 'stay', 'route', 'eat', 'learn', 'quiz', 'tale', 'legs', 'picks', 'food']) if (d[k] !== undefined && d[k] !== null) out[k] = d[k];
     if (!out.stay && !D.isHome(out.sleep) && p.info && Array.isArray(p.info.stays)) {
       const st = p.info.stays.find((s) => s.prop && [s.prop.en, s.prop.th].some((n) => n && (out.sleep.en.includes(n) || n.includes(out.sleep.en))));
