@@ -91,6 +91,7 @@ app.use(BS.router({ pool: PG, media: MEDIA, A, ai: STORY, hooks: HOOKS }));
 // reminders on the trip: phones that switched them on get a push 30 min before each timed step of the day
 const REMIND = PUSH.create({ pool: PG, family: BS.FAMILY, A });
 HOOKS.heart = (h) => REMIND.heart(h);   // a relative's heart nudges the parents' phones
+HOOKS.draft = (x) => REMIND.draft(x);   // the helper finished a photo book's draft: "ready to check" on the parents' phones
 app.use(REMIND.router);
 
 // backup / restore (photos included): editors download, the scheduled job uses Bearer BACKUP_TOKEN

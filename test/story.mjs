@@ -656,12 +656,25 @@ try {
     // C3: one page to check the draft — the helper's texts carry their mark, "keep every draft" keeps them, a changed day name saves when left
     await pp.click(`.snapfoot a[href="#/t/${sb.id}/draft/review"]`); await pp.waitForSelector('.rvday');
     const tags0 = await pp.locator('.aitag').count(), boxes = await pp.locator('.rvday textarea, .rvbook textarea').count();
+    // the book itself carries a quiet tag on a draft not yet kept (the parents only, never printed), leading back to this page
+    await pp.goto(`${BASE}/#/t/${sb.id}/book`); await pp.waitForSelector('.daysum');
+    const bookTags = await pp.locator(`a.aitag2[href="#/t/${sb.id}/draft/review"]`).count();
+    await pp.goto(`${BASE}/#/t/${sb.id}/draft/review`); await pp.waitForSelector('.rvday');
     await pp.locator('.rvday').nth(1).locator('summary').click(); await pp.fill('#rvd1', 'Rain and puddles'); await pp.press('#rvd1', 'Tab');
     await pp.click('[data-a="snapkeepall"]'); await pp.waitForFunction(() => !document.querySelector('.aitag'), null, { timeout: 8000 });
     await pp.waitForFunction(() => queue.length === 0, null, { timeout: 8000 });
     const s3 = await state(), left = s3.entries.filter((e) => e.trip === sb.id && e.src === 'ai').length, t3 = s3.trips.find((x) => x.id === sb.id);
     ok(tags0 === 2 && boxes === 5 && left === 0 && t3.days[1].title.en === 'Rain and puddles' && await pp.evaluate(() => document.documentElement.scrollWidth <= innerWidth + 1),
       `snap draft review (C3): the foreword and a summary marked as drafts, "keep every draft" keeps them, a day's name saves when left (${tags0} marked, ${boxes} boxes, ${left} left, ${t3.days[1].title.en})`);
+    ok(bookTags === 2, `snap draft: the book shows "drafted by the helper · check" on the foreword and the summary not yet kept (${bookTags})`);
+    // the helper looks at the photos first, when the parents tick it (PHOTO_AI=1 here): a day with photos is seen, a day without is skipped
+    { const db4 = new Client({ connectionString: u.toString() }); await db4.connect(); await db4.query('UPDATE ai_usage SET calls=0'); await db4.end(); }
+    const nCalls = calls.length;
+    ok((await post(`/api/b/snap/${sb.id}/draft`, { photos: true, names: false, sums: false, fore: false })).status === 202, 'snap draft with photos: started');
+    let jp2; for (let k = 0; k < 80; k++) { jp2 = (await (await fetch(BASE + '/api/b/snap/draft', { headers: { cookie: ck } })).json()).job; if (jp2 && jp2.status !== 'running') break; await new Promise((r) => setTimeout(r, 150)); }
+    const seenNow = (await state()).media.filter((m) => m.trip === sb.id && m.day === 0 && m.ai).length, pcalls = calls.slice(nCalls);
+    ok(jp2 && jp2.status === 'done' && jp2.steps.map((s) => s.k + ':' + s.st).join() === 'photos:done,photos:skip' && seenNow === 2 && pcalls.length === 1 && JSON.stringify(pcalls[0].body).includes('"image"'),
+      `snap draft with photos: the day with photos is looked at (one call, its two thumbnails), the day without is skipped (${jp2 && jp2.steps.map((s) => s.k + ':' + s.st).join()} · ${seenNow} seen · ${pcalls.length} call)`);
     await pc.close();
     await fetch(BASE + `/api/b/trips/${sb.id}`, { method: 'DELETE', headers: H });
   }
