@@ -48,7 +48,7 @@ try {
   await ctx.addInitScript(() => localStorage.setItem('mbs_logall', '1'));   // every record-page box on the page
   const page = await ctx.newPage();
   const errs = []; page.on('pageerror', (e) => errs.push(e.message));
-  await page.goto(BASE + '/'); await page.fill('#lcode', CODE); await page.keyboard.press('Enter'); await page.waitForSelector('.shelf');
+  await page.goto(BASE + '/'); await page.waitForSelector('#lf'); await page.fill('#lname', 'แม่'); await page.fill('#lcode', CODE); await page.keyboard.press('Enter'); await page.waitForSelector('.shelf');   // the name first, as every other test signs in (CLAUDE.md: the login flake)
   await page.goto(`${BASE}/#/t/${T}/offline`); await page.waitForSelector('#offl');
   await page.waitForFunction(() => navigator.serviceWorker && navigator.serviceWorker.controller, null, { timeout: 15000 });
   await page.click('#offl [data-a="offline"]');
@@ -109,6 +109,32 @@ try {
   ok((await fetch(`${BASE}/media/${ph[0].id}/t`, { headers: { cookie: ck } })).status === 200 && (await fetch(`${BASE}/media/${au[0].id}`, { headers: { cookie: ck } })).status === 200, 'back online: the photo has its thumbnail and the clip plays from the server');
   await page.waitForSelector('.notice', { state: 'detached', timeout: 10000 }).catch(() => {});
   ok(await page.locator('.notice').count() === 0, 'back online: the "offline" notice is gone');
+
+  // ---- a book from photos started on the trip, used with no signal (docs/SNAP-BOOK.md D10): its day page opens from the phone,
+  // a photo and the kids' words wait in the queue, survive closing the app, and arrive once when the server is back
+  const sid = await page.evaluate(async () => { const r = await api('POST', '/api/b/snap', { open: true, timezone: 'Asia/Bangkok' }); await load(); return r.id; });
+  await page.goto(`${BASE}/#/t/${sid}/today`); await page.waitForSelector('.snapacts');
+  await down();
+  await page.reload(); const snapOpen = await page.waitForSelector('.snapacts', { timeout: 20000 }).then(() => true, () => false);
+  ok(snapOpen && await page.locator('.snapacts .snapact').count() === 4, 'no server: the open photo book\'s day page opens from the phone with its four actions');
+  const [sfc] = await Promise.all([page.waitForEvent('filechooser'), page.click('[data-a="snapadd"]')]);
+  await sfc.setFiles([{ name: 'today.jpg', mimeType: 'image/jpeg', buffer: await jpg('#2C5646') }]);
+  const snapPhoto = await page.waitForFunction((tid) => queue.some((o) => o.blob && /^image/.test(o.blob.type) && o.url.includes('trip=' + tid)), sid, { timeout: 20000 }).then(() => true, () => false);
+  await page.goto(`${BASE}/#/t/${sid}/log/0`); await page.waitForSelector('#qtext');
+  await page.fill('#qtext', 'เล่มจากรูปจดได้แม้ไม่มีเน็ต'); await page.click('button[data-a="savequote"]');
+  // wait for the phone's stored copy, not the in-memory queue: enqueue() writes IndexedDB a moment after it queues, and a reload in that
+  // moment found only the photo (one run in four, Nov 2026) — no person closes the app within those milliseconds
+  await page.waitForFunction((tid) => idb.all().then((a) => a.filter((o) => (o.url || '').includes(tid) || JSON.stringify(o.body || {}).includes(tid)).length >= 2), sid, { timeout: 5000 });
+  await page.reload(); await page.waitForSelector('#qtext', { timeout: 20000 });
+  const waitList = await page.evaluate((tid) => queue.filter((o) => (o.url || '').includes(tid) || JSON.stringify(o.body || {}).includes(tid)).map((o) => o.method + ' ' + o.url.replace(/\?.*/, '')), sid), waiting = waitList.length;
+  ok(snapPhoto && waiting >= 2, `no server: in the photo book a photo and the kids' words wait on the phone and survive closing the app (${waiting} waiting: ${waitList.join(', ')}; photo queued ${snapPhoto})`);
+  await up();
+  await page.evaluate(() => { offline = false; return flush(); });
+  await page.waitForFunction(() => queue.length === 0, null, { timeout: 30000 });
+  const sst = await page.evaluate(async () => (await fetch('/api/b/state')).json());
+  ok(sst.media.filter((m) => m.trip === sid && m.day === 0).length === 1 && sst.entries.filter((e) => e.trip === sid && e.text === 'เล่มจากรูปจดได้แม้ไม่มีเน็ต').length === 1,
+    'back online: the photo book\'s photo and words arrived once, on its day');
+  await page.evaluate((x) => fetch('/api/b/trips/' + x, { method: 'DELETE', headers: { 'x-mb': '1' } }), sid); await page.evaluate(() => load());
 
   // ---- photos on Wi-Fi only (headless Chromium does not say its network type, like an iPhone: photos wait for "send now")
   await page.goto(`${BASE}/#/t/${T}/log/2`); await page.waitForSelector('#qtext');
