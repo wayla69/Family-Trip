@@ -209,6 +209,22 @@ const T = 'hk-macau-2026';
   ok(await page.locator('.golit .btn[data-a="pickphotos"]').count() === 1 && await page.locator('.golit .phstop').count() >= 3, 'shortcut "photo": the photo box is lit up and in view, with the day\'s places under the add button');
   const man = await (await page.request.get(`${BASE}/manifest.webmanifest`)).json();
   ok(man.shortcuts.length === 4 && man.shortcuts.every((s) => s.url.startsWith('/#/go/') && s.name && s.short_name), 'manifest: four icon shortcuts to #/go/…');
+  // #/snaptest (docs/SNAP-BOOK.md P0): pick photos → the phone reads when and where on the spot, uploads nothing, shows no position
+  {
+    const sent = []; const watch = (r) => { if (r.method() !== 'GET') sent.push(r.url()); }; page.on('request', watch);
+    await page.goto(`${BASE}/#/snaptest`); await page.waitForSelector('.snappicks');
+    const fx = ['gps-ii.jpg', 'gps-mm.jpg', 'time-only.jpg', 'no-exif.jpg', 'gps.avif'].map((f) => path.resolve('test/fixtures/snap', f));
+    const [fc] = await Promise.all([page.waitForEvent('filechooser'), page.click('[data-a="snappick"][data-v="photos"]')]);
+    await fc.setFiles(fx);
+    await page.waitForFunction(() => /Read in/.test(document.querySelector('#snapruns') ? document.querySelector('#snapruns').textContent : ''), null, { timeout: 8000 });
+    const tx = await page.evaluate(() => document.querySelector('main').textContent);
+    const rows = await page.$$eval('.snapsum li', (ls) => ls.map((l) => l.textContent.replace(/\s+/g, ' ').trim()));
+    ok(rows[0].includes('4 · 80%') && rows[2].includes('3 · 60%') && rows[3].endsWith('1'), `photo check: 5 photos → 4 with a time, 3 with a position, 1 HEIF (${rows.join(' | ')})`);
+    ok(!/14\.4|101\.3/.test(tx) && await page.evaluate(() => !document.querySelector('#app #snapin-photos') && !!document.querySelector('body > #snapin-photos')), 'photo check: no position on the page; the file input lives outside the redrawn page');
+    ok(!sent.some((u) => u.includes('/api/b/media') || u.includes('/api/b/photos')) && await s.noHScroll(), `photo check: nothing uploaded, no sideways scroll (${sent.length} writes)`);
+    await s.shot('snaptest');
+    page.off('request', watch);
+  }
   // #/family without the drawing helper: no character box, no server words, the birth row says what the month is for
   await page.goto(`${BASE}/#/family`); await page.waitForSelector('.famkid');
   const famTx = await page.evaluate(() => document.querySelector('main').textContent);

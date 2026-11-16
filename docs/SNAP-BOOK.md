@@ -1,6 +1,7 @@
 # Snap Book — a book from photos, no plan needed
 
-Status: **plan + design, not built.** Written 16 Nov 2026 for handoff; the next session implements from this file.
+Status: **P0 built** (the reader `public/snap.js` + the device check page `#/snaptest`, 16 Nov 2026); P1 onwards waits for the
+P0 results (§11) and the owner's answer on R3. Written 16 Nov 2026 for handoff; the next session implements from this file.
 Owner's ask: "บางครอบครัวไม่ได้วางแผน ให้ทำเล่มเปล่า ถ่ายรูป ใช้ location ในรูป แล้วใช้ AI ร่างเป็นเก็บประวัติ storybook เองได้เลย …
 ทำให้การใช้งานแบบทริปพิเศษ หรือคนไทยเที่ยวใกล้ๆ ยกมือถือมาทำแล้วได้เล่มเลย".
 
@@ -345,6 +346,13 @@ Moving a photo between days: `PATCH /api/b/media/:id {day}` — today the day is
   iPhone and an iPad and sends a screenshot.
 - Decide: D3's Android route; HEIC share; how many photos lack time. Choose the Thai gazetteer source and check its licence.
 - **Exit:** a filled table in this file (§11) and the two decisions written down.
+- **Built** (16 Nov 2026): `public/snap.js` `snapTiff` / `snapJpegTiff` / `snapHeifExif` / `snapMeta` / `snapRead` (the D1 reader,
+  no dependency) and `viewSnapTest`: three pickers (photo library `accept=image/*`, files with no `accept`, the camera with
+  `capture`) + a live-position check that shows only its accuracy; per picker the counts (time, zone, position, HEIC) and a
+  table; "copy the results" gives the device and counts as text, never a position or a file name. The file inputs live
+  outside `#app` (`body > #snapin-<k>`), as `#fpick` does. Tests: test/infra.mjs runs the reader in a vm on
+  `test/fixtures/snap` (synthetic 64×48 pictures: little- and big-endian JPEG, AVIF for the HEIF path, time only, no EXIF,
+  0,0, south); test/ui.mjs picks five through the page and checks counts, no upload, no position on the page.
 
 ### P1 — After the trip, no helper (J1 to "สร้างเล่ม")
 Build: migration 0025 (`kind`, `open`, `trip_days.place`, `entries.src`), `POST /api/b/snap`, days/day/trip PATCH, `media` day

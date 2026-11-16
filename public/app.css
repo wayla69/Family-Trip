@@ -3055,3 +3055,15 @@ details.emeal[open]>summary .mname{visibility:hidden}
 .glit span{font-size:clamp(90px,17vw,160px);line-height:1}.glit.hit{box-shadow:0 0 0 6px #2F9E44,0 12px 24px -14px rgba(0,0,0,.5)}.glit.nope{animation:nope .4s}
 @media (prefers-reduced-motion:no-preference){.glit{animation:glin .25s ease-out}@keyframes glin{from{scale:.5;opacity:0}}.missb.asked{animation:curtain .5s ease-out}@keyframes curtain{from{opacity:.2}}}
 
+
+/* the photo check page (#/snaptest, docs/SNAP-BOOK.md P0): picker buttons, counts per picker, a table that scrolls inside its own box */
+.snappicks{display:flex;flex-wrap:wrap;gap:8px;margin:12px 0}
+.snappicks .btn{min-height:44px}
+.snaprun{border-top:1px solid var(--rule);padding:12px 0}
+.snaprun h2{font-size:17px;margin:0 0 4px}
+.snapsum{list-style:none;margin:8px 0;padding:0}
+.snapsum li{display:flex;justify-content:space-between;gap:12px;padding:6px 0;border-bottom:1px solid var(--line)}
+.snapscroll{overflow-x:auto;max-width:100%}
+.snapt{border-collapse:collapse;font-size:13px;width:100%}
+.snapt th,.snapt td{text-align:left;padding:4px 6px;border-bottom:1px solid var(--line);white-space:nowrap}
+.snapt small{color:var(--muted)}

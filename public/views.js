@@ -92,6 +92,7 @@ function render() {
   else if (p[0] === 'start' && isEditor()) html = viewStart(p);
   else if (p[0] === 'privacy') html = viewPrivacy();
   else if (p[0] === 'emoji' && isEditor()) html = viewEmoji();
+  else if (p[0] === 'snaptest' && isEditor()) html = viewSnapTest();   // P0 of docs/SNAP-BOOK.md: what this phone hands over from its photos (not linked)
   else html = viewShelf();
   document.documentElement.style.cssText = t ? themeStyle(t) : themeStyle(curTrip());
   document.body.classList.toggle('serif', !!(t ? t.theme.display === 'serif' : false));
