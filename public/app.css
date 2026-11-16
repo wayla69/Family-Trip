@@ -3136,3 +3136,10 @@ details.emeal[open]>summary .mname{visibility:hidden}
 .colpics button img{width:100%;height:100%;object-fit:contain;display:block}
 .colpics button[aria-pressed=true]{box-shadow:0 0 0 4px var(--accent)}
 .colpics button i{position:absolute;right:-4px;bottom:-4px;font-style:normal;font-size:18px;line-height:1}
+/* Segment switches as the book's pills (owner, Nov 2026: "ปรับ UI ให้เข้ากับเล่มหน่อย" — the picked part was a square block clipped by the round track): a soft track in the book's tint, each part its own pill, the picked one tinted and ringed in the book's colour */
+.seg{gap:3px;padding:3px;border-color:color-mix(in srgb,var(--accent) 22%,var(--rule));background:color-mix(in srgb,var(--accent) 5%,var(--card,var(--paper)))}
+.seg button{border-radius:999px;transition:background .15s,color .15s,box-shadow .15s}
+.seg button[aria-pressed=true]{background:color-mix(in srgb,var(--accent) 14%,var(--paper));color:color-mix(in srgb,var(--accent) 62%,var(--ink));box-shadow:inset 0 0 0 1.5px var(--accent),0 1px 2px rgba(0,0,0,.08)}
+.seg button:not([aria-pressed=true]):hover{background:color-mix(in srgb,var(--accent) 8%,transparent)}
+.setlist .setrow .seg{justify-self:stretch;width:100%}
+.setlist .setrow .seg button{flex:1 1 0;min-width:0}
