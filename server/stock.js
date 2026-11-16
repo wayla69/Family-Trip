@@ -34,7 +34,12 @@ function load(dir = DIR) {
   const urls = new Map();
   for (const it of idx.items || []) if (it && it.ok && !it.withdrawn && ID_RE.test(it.id) && FILE_RE.test(it.file || '')) urls.set(it.id, '/stock/' + it.file);
   const tag = require('crypto').createHash('sha1').update(JSON.stringify([...urls])).digest('hex').slice(0, 8);
-  return { urls, tag, size: urls.size };
+  // the colouring pages (owner, Nov 2026: "ทำเกมระบายสีให้มีรูปเพิ่มอีก"): every approved SVG marked `colour` — a landmark, a food, an animal,
+  // a vehicle, a custom — with the place it belongs to (its id's scope: a country "hk" or a city "hk-hongkong")
+  const colour = (idx.items || []).filter((it) => it && it.colour && urls.has(it.id) && /\.svg$/.test(it.file)).map((it) => ({ id: it.id, url: urls.get(it.id), name: it.name || {}, cat: it.cat || it.id.split('.')[1], scope: it.id.split('.')[0] }));
+  const places = Object.entries(idx.places || {}).map(([key, p]) => ({ key, country: p.country || key.split('-')[0], home: !!p.home, alias: [...(p.alias || []), (p.name || {}).en, (p.name || {}).th].filter(Boolean),
+    main: [(p.name || {}).en, (p.name || {}).th, ...(p.alias || []).slice(0, 2)].filter(Boolean) }));
+  return { urls, tag, size: urls.size, colour, places };
 }
 let LIB = load();
 const reload = (dir) => { LIB = load(dir); return LIB; };
@@ -46,6 +51,30 @@ function resolve(v) {
   if (Array.isArray(v)) return v.map(resolve);
   if (v && typeof v === 'object') { const o = {}; for (const k of Object.keys(v)) o[k] = resolve(v[k]); return o; }
   return v;
+}
+// an alias names a place in a text by its case (docs/STOCK-ART.md): lower case = a whole word in any case; Capitalised or ALL CAPS = only so
+// written; Thai / Chinese = anywhere in the text
+const esc = (x) => x.replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
+function named(text, a) {
+  if (!a) return false;
+  if (/[^\u0000-\u024F]/.test(a)) return text.includes(a);
+  const lower = a === a.toLowerCase();
+  return new RegExp(`(^|[^A-Za-z0-9])${esc(a)}s?(?![A-Za-z0-9])`, lower ? 'i' : '').test(text);
+}
+// the colouring pictures of the places a book names (its title, sub and day titles): the cities' own first, then their countries', a mix of
+// kinds (a landmark, an animal, a food, …) so the first few are not six towers; a home place (Thailand) only when the title names it
+function colourFor(text, title, max = 36) {
+  // a country by any of its names; a city by its main name, or by a side name (a district, "disneyland") once its country is named too
+  const said = (p, names) => names.some((a) => named(p.home ? title : text, a));
+  const nations = LIB.places.filter((p) => !p.key.includes('-') && said(p, p.alias)), named2 = new Set(nations.map((p) => p.country));
+  const hit = [...nations, ...LIB.places.filter((p) => p.key.includes('-') && (said(p, p.main) || (named2.has(p.country) && said(p, p.alias))))];
+  if (!hit.length) return [];
+  const cities = new Set(hit.filter((p) => p.key.includes('-')).map((p) => p.key)), countries = new Set(hit.map((p) => p.country));
+  const rank = (it) => (cities.has(it.scope) ? 0 : countries.has(it.scope) ? 1 : 9);
+  const pool = LIB.colour.filter((it) => rank(it) < 9).sort((a, b) => rank(a) - rank(b));
+  const kinds = ['animal', 'landmark', 'food', 'transport', 'culture'], byKind = kinds.map((k) => pool.filter((it) => it.cat === k)), out = [];
+  for (let i = 0; out.length < max && byKind.some((l) => l.length > i); i++) byKind.forEach((l) => { if (l[i] && out.length < max) out.push(l[i]); });
+  return out.map(({ id, url: u, name }) => ({ id, url: u, name }));
 }
 // does a value hold any stock reference at all (most books don't: skip the copy)
 const uses = (v) => v != null && JSON.stringify(v).includes('"' + PREFIX);
@@ -143,4 +172,4 @@ async function lint(dir = DIR) {
   return errs;
 }
 
-module.exports = { DIR, ID_RE, FILE_RE, CATS, PREFIX, read, load, reload, url, resolve, uses, maybe, lint, get lib() { return LIB; } };
+module.exports = { DIR, ID_RE, FILE_RE, CATS, PREFIX, read, load, reload, url, resolve, uses, maybe, lint, colourFor, get lib() { return LIB; } };

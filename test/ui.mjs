@@ -1067,6 +1067,20 @@ const T = 'hk-macau-2026';
     ok(/EF5350/.test(two) && /42A5F5/.test(two) && one === '#42A5F5' && none === '' && back === '#42A5F5' && /42A5F5/.test(await saved()) && btn.length === 2 && btn.every((h) => h >= 48) && await s.noHScroll(),
       `colouring: ↶ takes back the last colour, the sponge washes the picture white (saved), ↶ brings the picture back (${JSON.stringify({ two, one, none, back, btn })})`);
   }
+  { // more pictures (owner, Nov 2026: "ทำเกมระบายสีให้มีรูปเพิ่มอีก"): the book's other days and the place's own animals, landmarks and foods
+    const api = await page.evaluate(async () => (await (await fetch('/api/b/colour/hk-macau-2026')).json()).pics || []);
+    await page.waitForFunction(() => document.querySelectorAll('.colpics button').length > 12, null, { timeout: 8000 });
+    const strip = await page.evaluate(() => { const bs = [...document.querySelectorAll('.colpics button')]; return { n: bs.length, first: bs[0].dataset.v, pressed: bs.findIndex((b) => b.getAttribute('aria-pressed') === 'true'), lib: bs.filter((b) => /^colour\.p\./.test(b.dataset.v)).length, h: Math.min(...bs.map((b) => b.getBoundingClientRect().height)), painted: bs[0].querySelector('i') ? 1 : 0 }; });
+    await page.locator('.colpics button[data-v^="colour.p."]').first().click(); await page.waitForSelector('.colourpad[data-key^="colour.p."] svg [data-c]');
+    const src = await page.getAttribute('.colourpad', 'data-src'), key = await page.getAttribute('.colourpad', 'data-key');
+    await page.click('.palette button[data-v="#8BC34A"]'); await page.locator('.colourpad [data-c]').nth(0).click({ force: true });
+    await page.waitForFunction((k) => S.entries.some((e) => e.id === `hk-macau-2026.field.${k}.mimi` && /8BC34A/.test(e.text)), key, { timeout: 5000 });
+    await page.locator('.colpics button[data-v="colour.d1"]').click(); await page.waitForSelector('.colourpad[data-key="colour.d1"] svg [data-c]');
+    const dayKept = await page.evaluate(() => [...document.querySelectorAll('.colourpad [data-c]')].some((x) => x.getAttribute('fill') === '#42A5F5'));
+    ok(api.length >= 20 && api.every((x) => /^(hk|mo)[.-]/.test(x.id) && /^\/stock\/.+\.svg$/.test(x.url)) && strip.first === 'colour.d1' && strip.pressed === 0 && strip.n >= 6 + 20 && strip.lib >= 20 && strip.h >= 64 && strip.painted === 1
+      && /^\/stock\//.test(src) && dayKept && await s.noHScroll(),
+      `colouring: more pictures — today's first, the book's other days, then ${api.length} of Hong Kong's and Macau's own (never another country's); each keeps its own colours (${JSON.stringify({ strip, src, key })})`);
+  }
   await s.shot('08-kid-colour');
   await page.click('.kidback'); await page.click('.kidtiles button[data-v$="/spot"]'); await page.waitForSelector('.kidspots button');
   await page.locator('.kidspots button').nth(1).click();
