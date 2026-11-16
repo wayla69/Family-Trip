@@ -39,7 +39,9 @@ function load(dir = DIR) {
   const colour = (idx.items || []).filter((it) => it && it.colour && urls.has(it.id) && /\.svg$/.test(it.file)).map((it) => ({ id: it.id, url: urls.get(it.id), name: it.name || {}, cat: it.cat || it.id.split('.')[1], scope: it.id.split('.')[0] }));
   const places = Object.entries(idx.places || {}).map(([key, p]) => ({ key, country: p.country || key.split('-')[0], home: !!p.home, alias: [...(p.alias || []), (p.name || {}).en, (p.name || {}).th].filter(Boolean),
     main: [(p.name || {}).en, (p.name || {}).th, ...(p.alias || []).slice(0, 2)].filter(Boolean) }));
-  return { urls, tag, size: urls.size, colour, places };
+  // the day scenes (a harbour, a castle, a plane…) colour too: their fills lift like a day picture's
+  const scenes = (idx.items || []).filter((it) => it && (it.cat || it.id.split('.')[1]) === 'day' && urls.has(it.id) && /\.svg$/.test(it.file)).map((it) => ({ id: it.id, url: urls.get(it.id), name: it.name || {}, cat: 'day', scope: it.id.split('.')[0] }));
+  return { urls, tag, size: urls.size, colour, scenes, places };
 }
 let LIB = load();
 const reload = (dir) => { LIB = load(dir); return LIB; };
@@ -63,18 +65,22 @@ function named(text, a) {
 }
 // the colouring pictures of the places a book names (its title, sub and day titles): the cities' own first, then their countries', a mix of
 // kinds (a landmark, an animal, a food, …) so the first few are not six towers; a home place (Thailand) only when the title names it
-function colourFor(text, title, max = 36) {
+function colourFor(text, title, max = 200) {
   // a country by any of its names; a city by its main name, or by a side name (a district, "disneyland") once its country is named too
   const said = (p, names) => names.some((a) => named(p.home ? title : text, a));
   const nations = LIB.places.filter((p) => !p.key.includes('-') && said(p, p.alias)), named2 = new Set(nations.map((p) => p.country));
   const hit = [...nations, ...LIB.places.filter((p) => p.key.includes('-') && (said(p, p.main) || (named2.has(p.country) && said(p, p.alias))))];
-  if (!hit.length) return [];
   const cities = new Set(hit.filter((p) => p.key.includes('-')).map((p) => p.key)), countries = new Set(hit.map((p) => p.country));
   const rank = (it) => (cities.has(it.scope) ? 0 : countries.has(it.scope) ? 1 : 9);
   const pool = LIB.colour.filter((it) => rank(it) < 9).sort((a, b) => rank(a) - rank(b));
   const kinds = ['animal', 'landmark', 'food', 'transport', 'culture'], byKind = kinds.map((k) => pool.filter((it) => it.cat === k)), out = [];
-  for (let i = 0; out.length < max && byKind.some((l) => l.length > i); i++) byKind.forEach((l) => { if (l[i] && out.length < max) out.push(l[i]); });
-  return out.map(({ id, url: u, name }) => ({ id, url: u, name }));
+  for (let i = 0; byKind.some((l) => l.length > i); i++) byKind.forEach((l) => { if (l[i]) out.push(l[i]); });
+  // second pass (owner, Nov 2026: "เพิ่มรูประบายสีอีก"): the places' day scenes, then the library's own scenes (a beach, a lighthouse, a plane,
+  // a ferry…), then animals from everywhere — every book gets these, even one whose places the library does not know
+  out.push(...LIB.scenes.filter((it) => rank(it) < 9), ...LIB.scenes.filter((it) => it.scope === 't' || it.scope === 'r'));
+  const seen = new Set(out.map((it) => it.id)), world = LIB.colour.filter((it) => it.cat === 'animal' && !seen.has(it.id));
+  for (let k = 0; k < world.length && k < 60; k++) out.push(world[Math.floor(k * world.length / Math.min(60, world.length))]);
+  return [...new Map(out.map((it) => [it.id, it])).values()].slice(0, max).map(({ id, url: u, name }) => ({ id, url: u, name }));
 }
 // does a value hold any stock reference at all (most books don't: skip the copy)
 const uses = (v) => v != null && JSON.stringify(v).includes('"' + PREFIX);

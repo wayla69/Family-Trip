@@ -1106,9 +1106,10 @@ const T = 'hk-macau-2026';
     await page.waitForFunction((k) => S.entries.some((e) => e.id === `hk-macau-2026.field.${k}.mimi` && /8BC34A/.test(e.text)), key, { timeout: 5000 });
     await page.locator('.colpics button[data-v="colour.d1"]').click(); await page.waitForSelector('.colourpad[data-key="colour.d1"] svg [data-c]');
     const dayKept = await page.evaluate(() => [...document.querySelectorAll('.colourpad [data-c]')].some((x) => x.getAttribute('fill') === '#42A5F5'));
-    ok(api.length >= 20 && api.every((x) => /^(hk|mo)[.-]/.test(x.id) && /^\/stock\/.+\.svg$/.test(x.url)) && strip.first === 'colour.d1' && strip.pressed === 0 && strip.n >= 6 + 20 && strip.lib >= 20 && strip.h >= 64 && strip.painted === 1
+    const own = api.filter((x) => /^(hk|mo)[.-]/.test(x.id)), others = api.filter((x) => !/^(hk|mo)[.-]/.test(x.id));
+    ok(own.length >= 60 && api.slice(0, own.length - 2).every((x) => /^(hk|mo)[.-]/.test(x.id)) && others.length >= 60 && others.every((x) => /\.animal\.|^[tr]\.day\./.test(x.id)) && api.every((x) => /^\/stock\/.+\.svg$/.test(x.url)) && strip.first === 'colour.d1' && strip.pressed === 0 && strip.n >= 6 + 120 && strip.lib >= 120 && strip.h >= 64 && strip.painted === 1
       && /^\/stock\//.test(src) && dayKept && await s.noHScroll(),
-      `colouring: more pictures — today's first, the book's other days, then ${api.length} of Hong Kong's and Macau's own (never another country's); each keeps its own colours (${JSON.stringify({ strip, src, key })})`);
+      `colouring: more pictures — today's first, the book's other days, then ${own.length} of Hong Kong's and Macau's own, then scenes and animals from everywhere (${others.length}; never another country's landmark or food); each keeps its own colours (${JSON.stringify({ strip, src, key })})`);
   }
   await s.shot('08-kid-colour');
   await page.click('.kidback'); await page.click('.kidtiles button[data-v$="/spot"]'); await page.waitForSelector('.kidspots button');
