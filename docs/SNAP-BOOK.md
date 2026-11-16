@@ -441,7 +441,7 @@ Design notes that are easy to lose:
 
 | Device / browser | Picker | EXIF time | GPS | HEIC handed as | Notes |
 | --- | --- | --- | --- | --- | --- |
-| Samsung S26 Ultra / Chrome | photo picker | | | | |
+| Samsung S26 Ultra / Chrome (Home-Screen app) | photo picker | 8 of 32 | 0 of 32 | 24 of 32 handed over as HEIC | 16 Nov 2026, first run: 2 with a zone; the UA says "Android 10" (Chrome's frozen value). The 24 without a time are not yet explained — the reader then knew one HEIF layout; v217 reads two more and says why per type |
 | Samsung S26 Ultra / Chrome | "ไฟล์" | | | | |
 | iPhone / Safari (Home-Screen app) | Photos | | | | |
 | iPad Pro 10.5" (iPadOS 17) | Photos | | | | |

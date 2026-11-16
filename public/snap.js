@@ -58,66 +58,107 @@ function snapJpegTiff(u8) {
   return null;
 }
 
-// HEIC / HEIF / AVIF (ISO-BMFF): the 'meta' box names an item of type 'Exif' and 'iloc' says where its bytes are → [offset, length] in the file
-function snapHeifExif(u8) {
-  const dv = new DataView(u8.buffer, u8.byteOffset, u8.byteLength), n = u8.length;
-  const u16 = (o) => dv.getUint16(o), u32 = (o) => dv.getUint32(o);
+// the boxes inside a run of ISO-BMFF bytes → [{t, start, end}] (start = after the box header)
+function snapBoxes(u8, from, to) {
+  const dv = new DataView(u8.buffer, u8.byteOffset, u8.byteLength), r = []; let o = from;
+  while (o + 8 <= to) {
+    let size = dv.getUint32(o), head = 8; const t = String.fromCharCode(u8[o + 4], u8[o + 5], u8[o + 6], u8[o + 7]);
+    if (size === 1) { if (o + 16 > to) break; size = dv.getUint32(o + 8) * 4294967296 + dv.getUint32(o + 12); head = 16; } else if (size === 0) size = to - o;
+    if (size < head || o + size > to) break;
+    r.push({ t, start: o + head, end: o + size }); o += size;
+  }
+  return r;
+}
+// HEIC / HEIF / AVIF: the 'meta' box (its payload, version/flags first) names an item of type 'Exif'; 'iloc' says where its bytes are.
+// → {ext: [[offset, length], …], idat: bool} — offsets in the file, or inside the payload of 'meta' when the item lives in its 'idat' —
+//   or {why} when there is no Exif to read (said on the check page, so a phone's own layout can be told apart from a bug here)
+function snapHeifExif(meta) {
+  const dv = new DataView(meta.buffer, meta.byteOffset, meta.byteLength), n = meta.length;
+  const u16 = (o) => (o + 2 <= n ? dv.getUint16(o) : 0), u32 = (o) => (o + 4 <= n ? dv.getUint32(o) : 0);
   const big = (o, size) => (size === 0 ? 0 : size === 2 ? u16(o) : size === 4 ? u32(o) : size === 8 ? u32(o) * 4294967296 + u32(o + 4) : 0);
-  const type = (o) => String.fromCharCode(u8[o], u8[o + 1], u8[o + 2], u8[o + 3]);
-  const boxes = (from, to) => { const r = []; let o = from;
-    while (o + 8 <= to) { let size = u32(o), head = 8; const t = type(o + 4);
-      if (size === 1) { if (o + 16 > to) break; size = big(o + 8, 8); head = 16; } else if (size === 0) size = to - o;
-      if (size < head || o + size > to) break;
-      r.push({ t, start: o + head, end: o + size }); o += size; }
-    return r; };
-  if (n < 12 || type(4) !== 'ftyp') return null;
-  const meta = boxes(0, n).find((b) => b.t === 'meta'); if (!meta) return null;
-  const kids = boxes(meta.start + 4, meta.end);   // 'meta' is a full box: 4 bytes of version/flags first
-  const iinf = kids.find((b) => b.t === 'iinf'), iloc = kids.find((b) => b.t === 'iloc'); if (!iinf || !iloc) return null;
+  const type = (o) => String.fromCharCode(meta[o], meta[o + 1], meta[o + 2], meta[o + 3]);
+  const kids = snapBoxes(meta, 4, n);   // 'meta' is a full box: 4 bytes of version/flags first
+  const iinf = kids.find((b) => b.t === 'iinf'), iloc = kids.find((b) => b.t === 'iloc'), idat = kids.find((b) => b.t === 'idat');
+  if (!iinf || !iloc) return { why: 'heif-noiinf' };
   let exifId = null;
-  { const v = u8[iinf.start]; const first = iinf.start + 4 + (v === 0 ? 2 : 4);
-    for (const e of boxes(first, iinf.end)) { if (e.t !== 'infe') continue;
-      const ev = u8[e.start]; if (ev < 2) continue;
+  { const v = meta[iinf.start]; const first = iinf.start + 4 + (v === 0 ? 2 : 4);
+    for (const e of snapBoxes(meta, first, iinf.end)) { if (e.t !== 'infe') continue;
+      const ev = meta[e.start]; if (ev < 2) continue;
       const id = ev === 2 ? u16(e.start + 4) : u32(e.start + 4), tOff = e.start + 4 + (ev === 2 ? 2 : 4) + 2;
       if (tOff + 4 <= e.end && type(tOff) === 'Exif') { exifId = id; break; } } }
-  if (exifId == null) return null;
-  const v = u8[iloc.start]; let o = iloc.start + 4;
-  const offSize = u8[o] >> 4, lenSize = u8[o] & 15, baseSize = u8[o + 1] >> 4, idxSize = v === 1 || v === 2 ? u8[o + 1] & 15 : 0; o += 2;
+  if (exifId == null) return { why: 'heif-noexif' };
+  const v = meta[iloc.start]; let o = iloc.start + 4;
+  const offSize = meta[o] >> 4, lenSize = meta[o] & 15, baseSize = meta[o + 1] >> 4, idxSize = v === 1 || v === 2 ? meta[o + 1] & 15 : 0; o += 2;
   const count = v < 2 ? u16(o) : u32(o); o += v < 2 ? 2 : 4;
   for (let i = 0; i < count && o < iloc.end; i++) {
     const id = v < 2 ? u16(o) : u32(o); o += v < 2 ? 2 : 4;
     let method = 0; if (v === 1 || v === 2) { method = u16(o) & 15; o += 2; }
     o += 2;   // data_reference_index
     const base = big(o, baseSize); o += baseSize;
-    const ext = u16(o); o += 2;
-    let first = null;
-    for (let k = 0; k < ext; k++) { if (idxSize) o += idxSize; const eo = big(o, offSize); o += offSize; const el = big(o, lenSize); o += lenSize; if (!first) first = [base + eo, el]; }
-    if (id === exifId) return method === 0 && first ? first : null;   // the Exif item lives in the file (not inside 'idat')
+    const cnt = u16(o); o += 2;
+    const ext = [];
+    for (let k = 0; k < cnt; k++) { if (idxSize) o += idxSize; const eo = big(o, offSize); o += offSize; const el = big(o, lenSize); o += lenSize; ext.push([base + eo, el]); }
+    if (id !== exifId) continue;
+    if (!ext.length) return { why: 'heif-noext' };
+    if (method === 0) return { ext, idat: false };
+    if (method === 1 && idat) return { ext: ext.map(([a, l]) => [idat.start + a, l]), idat: true };   // inside the 'idat' box of 'meta'
+    return { why: 'heif-method' + method };
   }
+  return { why: 'heif-noloc' };
+}
+// an Exif item's bytes → the TIFF block: they start with the offset of the TIFF header (often 6, after "Exif\0\0"); a phone that
+// leaves that out still has "II*\0" / "MM\0*" within the first bytes
+function snapExifItem(ex) {
+  const at = 4 + ((ex[0] << 24) | (ex[1] << 16) | (ex[2] << 8) | ex[3]);
+  const tiffAt = (o) => o >= 0 && o + 4 <= ex.length && ((ex[o] === 0x49 && ex[o + 1] === 0x49 && ex[o + 2] === 42 && ex[o + 3] === 0) || (ex[o] === 0x4D && ex[o + 1] === 0x4D && ex[o + 2] === 0 && ex[o + 3] === 42));
+  if (tiffAt(at)) return ex.subarray(at);
+  for (let o = 0; o < Math.min(64, ex.length - 4); o++) if (tiffAt(o)) return ex.subarray(o);
   return null;
 }
 
-// a picked File → {at, tz, ll, src}. `at` is the wall clock where the photo was taken; with no EXIF time the file's own time
-// (in this phone's zone) stands in, marked src 'file'. Never throws: a file it cannot read gives the file time.
+// a picked File → {at, tz, ll, src, kind, why}. `at` is the wall clock where the photo was taken; with no EXIF time the file's own
+// time (in this phone's zone) stands in, marked src 'file'; `why` names what was missing (for the check page). Never throws.
 async function snapMeta(file) {
   const fileAt = () => { if (!file.lastModified) return null; const d = new Date(file.lastModified), p = (x) => String(x).padStart(2, '0');
     return `${d.getFullYear()}-${p(d.getMonth() + 1)}-${p(d.getDate())}T${p(d.getHours())}:${p(d.getMinutes())}:${p(d.getSeconds())}`; };
-  let r = { at: null, tz: null, ll: null }, kind = '';
+  const bytes = async (a, b) => new Uint8Array(await file.slice(a, b).arrayBuffer());
+  let r = { at: null, tz: null, ll: null }, kind = '', why = '';
   try {
-    const head = new Uint8Array(await file.slice(0, SNAP_HEAD).arrayBuffer());
-    if (head[0] === 0xFF && head[1] === 0xD8) { kind = 'jpeg'; r = snapTiff(snapJpegTiff(head)); }
+    const head = await bytes(0, SNAP_HEAD);
+    if (head[0] === 0xFF && head[1] === 0xD8) { kind = 'jpeg'; const tf = snapJpegTiff(head); if (tf) r = snapTiff(tf); else why = 'jpeg-noexif'; }
+    else if (head[0] === 0x89 && head[1] === 0x50) { kind = 'png'; why = 'png'; }
     else if (head.length > 12 && String.fromCharCode(head[4], head[5], head[6], head[7]) === 'ftyp') {
       kind = 'heif';
-      const at = snapHeifExif(head);
-      if (at && at[1] > 4 && at[1] < 4194304) {
-        const ex = new Uint8Array(await file.slice(at[0], at[0] + at[1]).arrayBuffer());
-        const skip = 4 + ((ex[0] << 24) | (ex[1] << 16) | (ex[2] << 8) | ex[3]);   // the item starts with the offset of the TIFF header
-        r = snapTiff(ex.subarray(skip));
+      // walk the top-level boxes by their headers: 'meta' usually follows 'ftyp', but a file may put the picture data ('mdat') first
+      let o = 0, meta = null;
+      for (let k = 0; k < 64 && o + 8 <= file.size; k++) {
+        const h = o + 16 <= head.length ? head.subarray(o, o + 16) : await bytes(o, o + 16), hv = new DataView(h.buffer, h.byteOffset, h.byteLength);
+        let size = hv.getUint32(0), hd = 8; const t = String.fromCharCode(h[4], h[5], h[6], h[7]);
+        if (size === 1) { size = hv.getUint32(8) * 4294967296 + hv.getUint32(12); hd = 16; } else if (size === 0) size = file.size - o;
+        if (size < hd) break;
+        if (t === 'meta') { meta = { start: o + hd, end: Math.min(file.size, o + size) }; break; }
+        o += size;
       }
-    }
-  } catch (_) { /* unreadable: the file's time below */ }
-  if (r.at) return { at: r.at, tz: r.tz, ll: r.ll, src: 'exif', kind };
-  return { at: fileAt(), tz: null, ll: r.ll, src: 'file', kind };
+      if (!meta) why = 'heif-nometa';
+      else if (meta.end - meta.start > 8388608) why = 'heif-bigmeta';
+      else {
+        const mb = meta.end <= head.length ? head.subarray(meta.start, meta.end) : await bytes(meta.start, meta.end);
+        const loc = snapHeifExif(mb);
+        if (loc.why) why = loc.why;
+        else {
+          const total = loc.ext.reduce((s, x) => s + x[1], 0);
+          if (total < 8 || total > 4194304) why = 'heif-size';
+          else {
+            const parts = []; for (const [a, l] of loc.ext) parts.push(loc.idat ? mb.subarray(a, a + l) : await bytes(a, a + l));
+            const ex = new Uint8Array(total); let p = 0; for (const x of parts) { ex.set(x, p); p += x.length; }
+            const tf = snapExifItem(ex); if (tf) r = snapTiff(tf); else why = 'heif-notiff';
+          }
+        }
+      }
+    } else why = 'other';
+  } catch (_) { why = 'error'; }
+  if (r.at) return { at: r.at, tz: r.tz, ll: r.ll, src: 'exif', kind, why: r.ll ? '' : 'nogps' };
+  return { at: fileAt(), tz: null, ll: r.ll, src: 'file', kind, why: why || 'notime' };
 }
 
 // many files, a few at a time so a phone stays responsive; onEach(i, meta) as each one is read
@@ -140,7 +181,7 @@ const SNAP_PICKS = [
 function snapDevice() {
   const ua = navigator.userAgent;
   const os = /Android ([\d.]+)/.exec(ua), ios = /OS (\d+)_(\d+)/.exec(ua), cr = /Chrome\/(\d+)/.exec(ua), sa = /Version\/([\d.]+).*Safari/.exec(ua), sm = /SamsungBrowser\/([\d.]+)/.exec(ua);
-  const sys = os ? 'Android ' + os[1] : ios ? (/iPad/.test(ua) || (navigator.maxTouchPoints > 1 && /Mac/.test(ua)) ? 'iPadOS ' : 'iOS ') + ios[1] + '.' + ios[2] : /Mac/.test(ua) ? (navigator.maxTouchPoints > 1 ? 'iPadOS (Mac UA)' : 'macOS') : /Windows/.test(ua) ? 'Windows' : 'Linux';
+  const sys = snapT.plat ? snapT.plat : os ? 'Android ' + os[1] : ios ? (/iPad/.test(ua) || (navigator.maxTouchPoints > 1 && /Mac/.test(ua)) ? 'iPadOS ' : 'iOS ') + ios[1] + '.' + ios[2] : /Mac/.test(ua) ? (navigator.maxTouchPoints > 1 ? 'iPadOS (Mac UA)' : 'macOS') : /Windows/.test(ua) ? 'Windows' : 'Linux';
   const br = sm ? 'Samsung Internet ' + sm[1] : cr ? 'Chrome ' + cr[1] : sa ? 'Safari ' + sa[1] : 'browser';
   const app = matchMedia('(display-mode: standalone)').matches || navigator.standalone ? L(' · แอปบนหน้าจอโฮม', ' · Home-Screen app') : '';
   return `${sys} · ${br}${app}`;
@@ -157,7 +198,7 @@ ${done.length < n ? `<p class="label">${L('กำลังอ่าน', 'Readin
 <ul class="snapsum">${line('มีเวลาถ่ายในรูป', 'Time taken (EXIF)', `${exif} · ${pct(exif)}`)}${line('มีเขตเวลา', 'Time zone', `${off} · ${pct(off)}`)}${line('มีตำแหน่ง', 'Position', `${gps} · ${pct(gps)}`)}${line('ไฟล์ HEIC/HEIF', 'HEIC/HEIF files', heif)}</ul>
 <div class="snapscroll"><table class="snapt"><thead><tr><th>#</th><th>${L('ชนิด', 'Type')}</th><th>${L('ขนาด', 'Size')}</th><th>${L('เวลาถ่าย', 'Taken')}</th><th>${L('ตำแหน่ง', 'Position')}</th></tr></thead><tbody>${run.files.map((f, i) => {
     const m = rs[i], ty0 = (f.type || '?').replace('image/', ''), ty = esc(ty0) + (m && m.kind && m.kind !== ty0 ? ` <small>${m.kind}</small>` : '');
-    return `<tr><td>${i + 1}</td><td>${ty}</td><td>${f.size < 1048576 ? Math.max(1, Math.round(f.size / 1024)) + ' KB' : (f.size / 1048576).toFixed(1) + ' MB'}</td><td>${!m ? '…' : m.at ? `${esc(m.at.replace('T', ' '))}${m.tz ? ` <small>${esc(m.tz)}</small>` : ''}${m.src === 'file' ? ` <small>${L('(เวลาไฟล์)', '(file time)')}</small>` : ''}` : '—'}</td><td>${!m ? '…' : m.ll ? L('มี ✓', 'yes ✓') : L('ไม่มี', 'no')}</td></tr>`;
+    return `<tr><td>${i + 1}</td><td>${ty}</td><td>${f.size < 1048576 ? Math.max(1, Math.round(f.size / 1024)) + ' KB' : (f.size / 1048576).toFixed(1) + ' MB'}</td><td>${!m ? '…' : m.at ? `${esc(m.at.replace('T', ' '))}${m.tz ? ` <small>${esc(m.tz)}</small>` : ''}${m.src === 'file' ? ` <small>${L('(เวลาไฟล์', '(file time')}${m.why ? ' · ' + esc(m.why) : ''})</small>` : ''}` : '—'}</td><td>${!m ? '…' : m.ll ? L('มี ✓', 'yes ✓') : L('ไม่มี', 'no')}</td></tr>`;
   }).join('')}</tbody></table></div></section>`;
 }
 function snapText() {   // what the owner pastes back: the device and the counts per picker — never a position, never a file name
@@ -165,11 +206,16 @@ function snapText() {   // what the owner pastes back: the device and the counts
   for (const run of snapT.runs) {
     const done = run.rows.filter(Boolean), c = (f) => done.filter(f).length;
     lines.push(`${run.via}: ${run.files.length} · exif ${c((m) => m.src === 'exif')} · tz ${c((m) => m.tz)} · gps ${c((m) => m.ll)} · types ${[...new Set(run.files.map((f) => f.type || '?'))].join(',')} · ${(run.ms / 1000).toFixed(1)}s`);
+    const by = {}; run.files.forEach((f, i) => { const m = run.rows[i]; if (!m) return; const k = f.type || '?', b = by[k] || (by[k] = { n: 0, exif: 0, gps: 0, why: {} }); b.n++; if (m.src === 'exif') b.exif++; if (m.ll) b.gps++; if (m.why) b.why[m.why] = (b.why[m.why] || 0) + 1; });
+    for (const [k, b] of Object.entries(by)) lines.push(`  ${k} ${b.n}: exif ${b.exif} · gps ${b.gps}${Object.keys(b.why).length ? ' · ' + Object.entries(b.why).map(([w, n]) => `${w}×${n}`).join(' ') : ''}`);
   }
   if (snapT.geo) lines.push('live position: ' + snapT.geo);
   return lines.join('\n');
 }
 function viewSnapTest() {
+  // Chrome on Android always says "Android 10" in its user agent; the real version comes from the client hints, once
+  if (!snapT.platAsked && navigator.userAgentData && navigator.userAgentData.getHighEntropyValues) { snapT.platAsked = true;
+    navigator.userAgentData.getHighEntropyValues(['platformVersion']).then((h) => { const pf = navigator.userAgentData.platform; if (pf && h.platformVersion) { snapT.plat = `${pf} ${h.platformVersion}`; render(); } }).catch(() => {}); }
   return `<h1>${L('ทดสอบรูปบนเครื่องนี้', 'Photo check on this phone')}</h1>
 <p class="notice">${L('หน้านี้ใช้ทดสอบเล่มจากรูป: ดูว่ามือถืออ่านเวลาถ่ายและตำแหน่งจากรูปได้หรือไม่ ไม่มีรูปถูกส่งไปไหน และไม่แสดงพิกัด แสดงแค่ว่ามีหรือไม่มี',
     'A check for the book-from-photos idea: does this phone hand over when and where each photo was taken? Nothing is uploaded and no position is shown — only whether there is one.')}</p>

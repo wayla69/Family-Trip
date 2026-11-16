@@ -333,7 +333,7 @@ if (process.env.BASE) {
 // JPEG and the AVIF (the same ISO-BMFF 'meta'/'iinf'/'iloc' layout an iPhone's HEIC uses).
 {
   const vm = await import('node:vm');
-  const ctx = { A: {}, Blob, File, DataView, Uint8Array, Promise, Math, String, Array, Object, Set, isFinite };
+  const ctx = { A: {}, Blob, File, DataView, Uint8Array, Promise, Math, String, Array, Object, Set, isFinite, navigator: {} };
   vm.createContext(ctx); vm.runInContext(fs.readFileSync(path.resolve('public/snap.js'), 'utf8') + '\n;this.snapMeta = snapMeta; this.snapRead = snapRead;', ctx);
   const fx = (f, mod) => new File([fs.readFileSync(path.resolve('test/fixtures/snap', f))], f, { lastModified: mod || Date.UTC(2030, 0, 2, 3, 4, 5) });
   const near = (ll, a, b) => !!ll && Math.abs(ll[0] - a) < 1e-4 && Math.abs(ll[1] - b) < 1e-4;
@@ -354,6 +354,27 @@ if (process.env.BASE) {
   const m8 = await ctx.snapMeta(new File([new Uint8Array([0xFF, 0xD8, 0xFF, 0xE1, 0xFF, 0xFF, 0x45, 0x78])], 'broken.jpg', { lastModified: Date.UTC(2026, 0, 1) }));
   const m9 = await ctx.snapMeta(new File([new Uint8Array(40)], 'x.bin', { lastModified: Date.UTC(2026, 0, 1) }));
   ok(m8.src === 'file' && m9.src === 'file' && m8.ll === null, 'snap: a cut or unknown file never throws');
+  // HEIF layouts a phone may write that the AVIF above does not: the Exif item inside 'meta' ('idat', iloc method 1) with no offset
+  // prefix, and the picture data ('mdat') before 'meta' with the Exif item 290 KB in (past the first read)
+  {
+    const tiff = Buffer.from(vm.runInContext('snapJpegTiff', ctx)(new Uint8Array(fs.readFileSync(path.resolve('test/fixtures/snap/gps-ii.jpg')))));
+    const u16 = (v) => { const b = Buffer.alloc(2); b.writeUInt16BE(v); return b; }, u32 = (v) => { const b = Buffer.alloc(4); b.writeUInt32BE(v); return b; };
+    const box = (t, ...p) => { const body = Buffer.concat(p); return Buffer.concat([u32(body.length + 8), Buffer.from(t, 'latin1'), body]); };
+    const full = (t, v, ...p) => box(t, Buffer.from([v, 0, 0, 0]), ...p);
+    const ftyp = box('ftyp', Buffer.from('heic', 'latin1'), u32(0), Buffer.from('mif1heic', 'latin1'));
+    const iinf = full('iinf', 0, u16(1), full('infe', 2, u16(7), u16(0), Buffer.from('Exif\0', 'latin1')));
+    const item1 = Buffer.concat([Buffer.from('Exif\0\0', 'latin1'), tiff]);   // no 4-byte offset first
+    const metaA = full('meta', 0, iinf, full('iloc', 1, Buffer.from([0x44, 0x00]), u16(1), u16(7), u16(1), u16(0), u16(1), u32(0), u32(item1.length)), box('idat', item1));
+    const a = await ctx.snapMeta(new File([Buffer.concat([ftyp, metaA])], 'a.heic', { lastModified: Date.UTC(2030, 0, 1) }));
+    ok(a.src === 'exif' && a.at === '2026-12-12T09:15:30' && near(a.ll, 14.44, 101.37), `snap: HEIF with the Exif item inside 'meta' (idat) and no offset prefix (${JSON.stringify(a)})`);
+    const item2 = Buffer.concat([u32(6), Buffer.from('Exif\0\0', 'latin1'), tiff]), pad = 290000;
+    const mdat = box('mdat', Buffer.alloc(pad), item2), at = ftyp.length + 8 + pad;
+    const metaB = full('meta', 0, iinf, full('iloc', 0, Buffer.from([0x44, 0x00]), u16(1), u16(7), u16(0), u16(1), u32(at), u32(item2.length)));
+    const b = await ctx.snapMeta(new File([Buffer.concat([ftyp, mdat, metaB])], 'b.heic', { lastModified: Date.UTC(2030, 0, 1) }));
+    ok(b.src === 'exif' && near(b.ll, 14.44, 101.37), `snap: HEIF with the picture data before 'meta' (${JSON.stringify(b)})`);
+    const c = await ctx.snapMeta(new File([Buffer.concat([ftyp, full('meta', 0, full('iinf', 0, u16(0)), full('iloc', 0, Buffer.from([0x44, 0]), u16(0)))])], 'c.heic', { lastModified: Date.UTC(2030, 0, 1) }));
+    ok(c.src === 'file' && c.why === 'heif-noexif' && m4.why === 'nogps' && m7.why === 'jpeg-noexif' && m9.why === 'other', `snap: the check page is told why a time or a place is missing (${c.why}, ${m4.why}, ${m7.why}, ${m9.why})`);
+  }
   const all = await ctx.snapRead(['gps-ii.jpg', 'time-only.jpg', 'no-exif.jpg', 'gps.avif'].map((f) => fx(f)), null, 2);
   ok(all.length === 4 && all.every(Boolean) && all.filter((m) => m.ll).length === 2, 'snap: many files read a few at a time, in order');
   const src = fs.readFileSync(path.resolve('public/snap.js'), 'utf8');
