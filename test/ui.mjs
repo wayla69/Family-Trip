@@ -1103,7 +1103,10 @@ const T = 'hk-macau-2026';
   { // undo and the sponge (owner, Nov 2026: "ทำให้ล้างได้หน่อย"): a slip goes back one tap at a time, the sponge washes the picture white, ↶ brings it back
     const filled = () => page.evaluate(() => [...document.querySelectorAll('.colourpad [data-c]')].filter((x) => x.getAttribute('fill').toLowerCase() !== '#ffffff').map((x) => x.getAttribute('fill')).join());
     const saved = () => page.evaluate(() => (S.entries.find((e) => e.id === 'hk-macau-2026.field.colour.d1.mimi') || {}).text);
+    await page.waitForFunction(() => queue.length === 0 && document.querySelectorAll('.colourpad [data-c]').length > 0, null, { timeout: 8000 });   // the blue tap's save is back and the picture redrawn
     await page.click('.palette button[data-v="#EF5350"]'); await page.locator('.colourpad [data-c]').nth(0).click({ force: true });
+    // a redraw before the red tap is saved (a state refresh lands within the 500 ms the save waits): the red must stay on the picture
+    await page.evaluate(() => render()); await page.waitForFunction(() => document.querySelectorAll('.colourpad [data-c]').length > 0, null, { timeout: 5000 });
     const two = await filled(); await page.click('[data-a="kidcolundo"]'); const one = await filled();
     await page.click('[data-a="kidcolwipe"]'); const none = await filled(); await page.waitForFunction(() => (S.entries.find((e) => e.id === 'hk-macau-2026.field.colour.d1.mimi') || {}).text === '{}', null, { timeout: 5000 });
     await page.click('[data-a="kidcolundo"]'); const back = await filled(); await page.waitForFunction(() => /42A5F5/.test((S.entries.find((e) => e.id === 'hk-macau-2026.field.colour.d1.mimi') || {}).text || ''), null, { timeout: 5000 });
