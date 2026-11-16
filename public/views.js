@@ -194,10 +194,12 @@ const fsSeg = () => { const n = +ls('fs') || 0; return `<span class="seg fsseg" 
 // the shelf's "language and text" card — for everyone who signs in, relatives included: the one place these settings live (the top bar stays back · title · search)
 function dispCard() {
   const n = +ls('fs') || 0;
+  const lg = [['th', 'ก', 'ไทย'], ['en', 'A', 'English']].map(([v, g, nm]) => `<button type="button" class="tpo" data-a="lang" data-v="${v}" aria-pressed="${lang === v}"><span class="gl" aria-hidden="true">${g}</span><b>${nm}</b><span class="ck" aria-hidden="true">✓</span></button>`).join('');
+  const fs = FS_NAMES.map(([th, en], i) => `<button type="button" class="tpo" data-a="fs" data-v="${i}" aria-pressed="${n === i}"><span class="gl" aria-hidden="true">Aa</span><b>${L(th, en)}</b><span class="ck" aria-hidden="true">✓</span></button>`).join('');
   return `<div class="part">${L('ภาษาและตัวอักษร', 'Language and text')}</div>
 <div class="setlist disp">
-<div class="setrow">${hubE('globe')}<span><b>${L('ภาษา', 'Language')}</b><small>${L('ทั้งแอป เตือนความจำตามภาษานี้ด้วย', 'The whole app; reminders follow it')}</small></span>${langSeg()}</div>
-<div class="setrow"><span class="e fse">Aa</span><span><b>${L('ขนาดตัวอักษร', 'Text size')}</b><small id="fsname">${L(FS_NAMES[n][0], FS_NAMES[n][1])}</small></span>${fsSeg()}</div>
+<div class="setrow">${hubE('lang')}<span><b>${L('ภาษา', 'Language')}</b><small>${L('ทั้งแอป เตือนความจำตามภาษานี้ด้วย', 'The whole app; reminders follow it')}</small></span><div class="tpk dispk lgk" role="group" aria-label="${L('ภาษา', 'Language')}">${lg}</div></div>
+<div class="setrow">${hubE('textsize')}<span><b>${L('ขนาดตัวอักษร', 'Text size')}</b><small id="fsname">${L(FS_NAMES[n][0], FS_NAMES[n][1])}</small></span><div class="tpk dispk fsk fsseg" role="group" aria-label="${L('ขนาดตัวอักษร', 'Text size')}">${fs}</div></div>
 </div>`;
 }
 function tabBar(t, p) {
@@ -554,7 +556,7 @@ const HUB = { book: ['book', 'สมุดความทรงจำ', 'Memory 
   firsts: ['firsts', 'ครั้งแรก', 'Firsts'], photos: ['camera', 'รูปตามแท็ก', 'Photos by tag'], spend: ['money', 'ค่าใช้จ่าย', 'Spending'], hearts: ['hearts', 'หัวใจ', 'Hearts'], offline: ['offline', 'ใช้ตอนไม่มีเน็ต', 'Offline'], log: ['log', 'บันทึกวันนี้', 'Record today'], search: ['search', 'ค้นหา', 'Search'] };
 const secTitle = (k) => (HUB[k] ? L(HUB[k][1], HUB[k][2]) : '');
 // the book menu's glossy pictures (the owner's sets: public/art/hub, the emoji pack, kid mode's passport); a key without one keeps its line icon
-const HUB_PIC = { today: '/art/hub/today.webp', log: '/art/emoji/camera.webp', book: '/art/hub/book.webp', eat: '/art/hub/eat.webp', plan: '/art/emoji/travel-map.webp',
+const HUB_PIC = { lang: '/art/emoji/signpost.webp', textsize: '/art/hub/book.webp', today: '/art/hub/today.webp', log: '/art/emoji/camera.webp', book: '/art/hub/book.webp', eat: '/art/hub/eat.webp', plan: '/art/emoji/travel-map.webp',
   stays: '/art/hub/stays.webp', sos: '/art/hub/sos.webp', prep: '/art/emoji/suitcase.webp', learn: '/art/hub/learn.webp', firsts: '/art/emoji/star.webp',
   hearts: '/art/emoji/heart.webp', offline: '/art/hub/offline.webp', camera: '/art/hub/album.webp', passport: '/art/kidui/bar-passport.webp',
   money: '/art/hub/money.webp', notebook: '/art/hub/notebook.webp', kid: '/art/emoji/joy.webp', shelf: '/art/hub/shelf.webp', home: '/art/kidui/bar-home.webp',
