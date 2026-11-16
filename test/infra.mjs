@@ -377,8 +377,9 @@ if (process.env.BASE) {
   }
   const all = await ctx.snapRead(['gps-ii.jpg', 'time-only.jpg', 'no-exif.jpg', 'gps.avif'].map((f) => fx(f)), null, 2);
   ok(all.length === 4 && all.every(Boolean) && all.filter((m) => m.ll).length === 2, 'snap: many files read a few at a time, in order');
-  const src = fs.readFileSync(path.resolve('public/snap.js'), 'utf8');
-  ok(!/m\.ll\[|\.ll\.join|ll\.toFixed|coords\.(latitude|longitude)/.test(src), 'snap: the check page never prints a position (only yes/no, and the live check only its accuracy)');
+  const src = fs.readFileSync(path.resolve('public/snap.js'), 'utf8'), named = 'snapPlace([p.coords.latitude, p.coords.longitude], await snapGeo())';
+  ok(src.split(named).length === 2 && !/m\.ll\[|\.ll\.join|ll\.toFixed|coords\.(latitude|longitude)/.test(src.replace(named, '')),
+    'snap: a position is never printed or kept — the one live position read ("use where I am") goes straight into snapPlace and is dropped');
 }
 
 // older iPads (iPadOS 15 on an iPad mini 4 / Air 2, early iPadOS 16): Safari before 16.4 refuses a whole script over one regex lookbehind,
