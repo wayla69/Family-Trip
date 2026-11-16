@@ -534,6 +534,7 @@ function router({ pool, media, A, ai, hooks = {} }) {   // hooks.heart(h): set b
       await q(`INSERT INTO places (id, family_id, trip_id, day_index, key, kind, name, visited_at, created_by) VALUES ($1,$2,$3,$4,$5,$6,$7,$8,$9)
         ON CONFLICT (trip_id, key) DO NOTHING`,
       [`${t.id}:${key}`.slice(0, 200), FAMILY, t.id, day, key, b.kind === 'food' ? 'food' : 'place', i18n(b.name || key, 120), at(b.at), clip(req.user.name, 40)]);
+      if (key.startsWith('snap.')) snapMatch(t.id).catch((e) => console.error('snap match', e.message));   // a place a book from photos went to: its picture, crest and town (in the background)
       res.json({ ok: true });
     } catch (e) { next(e); }
   });
@@ -646,7 +647,16 @@ function router({ pool, media, A, ai, hooks = {} }) {   // hooks.heart(h): set b
   // colours and one line about it, a map of the towns in the order visited. Run again whenever the days or places change; what the
   // parents or the helper wrote (a day's own facts) stays.
   const SNAPDEF = '#2C5646';
-  async function snapMatch(tid) {
+  // one run per book at a time: changes that come together (a batch of check-ins) run once more after the run in hand, the last one wins
+  const snapRuns = new Map();
+  function snapMatch(tid) {
+    const cur = snapRuns.get(tid);
+    if (cur) { cur.again = true; return cur.p; }
+    const job = { again: false };
+    job.p = (async () => { try { let out; do { job.again = false; out = await snapMatchNow(tid); } while (job.again); return out; } finally { snapRuns.delete(tid); } })();
+    snapRuns.set(tid, job); return job.p;
+  }
+  async function snapMatchNow(tid) {
     const t = (await q('SELECT id, title, theme, passport, kind FROM trips WHERE id=$1 AND family_id=$2', [tid, FAMILY]))[0];
     if (!t || t.kind !== 'snap') return null;
     const ix = STOCK.read(), P = ix.places || {}, theme = t.theme || {};
@@ -657,6 +667,19 @@ function router({ pool, media, A, ai, hooks = {} }) {   // hooks.heart(h): set b
     const placeText = ids.length ? ids.map((id) => nm(P[id].name)).join(' · ') : days.map((d) => nm(d.place)).filter(Boolean).join(' · ');
     const MATCH = await import('../scripts/lib/stock-match.mjs');
     const m = MATCH.stockMatch(days.map((d) => ({ title: d.title, sleep: d.place, planned: ins.filter((p) => p.day_index === d.day_index).map((p) => p.name) })), placeText, ix);
+    // a photo book's days rarely say what they did, so the matcher falls back to the town's own scene and repeats it: a repeated day
+    // takes another picture of the same town instead (its scenes first, then its landmarks, in the library's order) while one is left
+    const okItems = (ix.items || []).filter((it) => it && it.ok && !it.withdrawn), seenArt = new Set();
+    m.artDays = m.artDays.map((a, i) => {
+      if (a && !seenArt.has(a)) { seenArt.add(a); return a; }
+      const city = (m.cityOf || [])[i]; if (!city) return a;
+      const pick = okItems.filter((it) => it.id.startsWith(city + '.') && (it.cat === 'day' || it.cat === 'landmark')).sort((x, y) => (x.cat === y.cat ? 0 : x.cat === 'day' ? -1 : 1)).find((it) => !seenArt.has('stock:' + it.id));
+      if (!pick) return a; seenArt.add('stock:' + pick.id); return 'stock:' + pick.id;
+    });
+    m.filled = m.artDays.filter(Boolean).length;
+    // a trip at home (every town a home place: Thailand) wears its first town's own stamp — a Khao Yai weekend is about Khao Yai
+    const towns0 = (m.cityOf || []).filter(Boolean);
+    if (towns0.length && towns0.every((c) => P[c] && P[c].home) && okItems.some((it) => it.id === towns0[0] + '.stamp')) m.crest = 'stock:' + towns0[0] + '.stamp';
     // each day's town: the library city the matcher found for it (its colours), else the day's own place words
     const townOf = days.map((d) => (d.place ? d.place : null));
     const col = (id) => (P[id] && P[id].colors) || null;
@@ -687,10 +710,24 @@ function router({ pool, media, A, ai, hooks = {} }) {   // hooks.heart(h): set b
       ...(m.guides && !(Array.isArray(pp0.guides) && pp0.guides.length && !pp0.guidesAuto) ? { guides: m.guides, guidesAuto: true } : {}),
       stamps: m.stamps,
       days: days.map((d, i) => {
-        const old = (pp0.days || [])[i] || {}, town = townOf[i], c = firstCol || {};
-        const fact = town ? { th: `วันนี้เราไป${half(town.th)}`, en: `Today we went to ${half(town.en)}` } : null;
-        return { ...old, acc: old.acc || c.k1 || '', tint: old.tint || c.k3 || '', facts: old.factsOwn ? old.facts : (fact ? [fact] : old.facts || []) };
+        const old = (pp0.days || [])[i] || {}, city = (m.cityOf || [])[i], c = col(city) || firstCol || {};
+        // the day's place: the one the parents gave, else the library town the matcher found (its first name: "Khao Yai", not "Khao Yai and Pak Chong")
+        const lib = city && P[city] ? { th: String(P[city].name.th || '').split(/และ|,/)[0].trim(), en: String(P[city].name.en || '').split(/ and | & |,/)[0].trim() } : null;
+        const town = townOf[i] ? { th: half(townOf[i].th) || half(townOf[i].en), en: half(townOf[i].en) || half(townOf[i].th) } : lib;
+        // the town's secret for the adventure map's chest: what the day's picture shows, else where we went
+        const art = m.artDays[i] && okItems.find((it) => 'stock:' + it.id === m.artDays[i]);
+        const low = (s) => (/^[A-Z][a-z]/.test(s) ? s.charAt(0).toLowerCase() + s.slice(1) : s);
+        const fact = town && art && art.name ? { th: `ที่${town.th} มี${art.name.th}ให้ดูด้วย`, en: `In ${town.en} you can see ${low(art.name.en)}.` }
+          : town ? { th: `วันนี้เราไป${town.th}`, en: `Today we went to ${town.en}` } : null;
+        // a day nobody has named yet is called by its place on the kids' side (the adventure map's town, the map card), and its stamp says where
+        const unnamed = /^(Day \d+)?$/.test(String((d.title || {}).en || '').trim()) && /^(วันที่ \d+)?$/.test(String((d.title || {}).th || '').trim());
+        const stamp = town && town.en && town.en.length <= 16 ? town.en.toUpperCase() : '';
+        return { ...old, ...(unnamed && town ? { title: town } : { title: d.title }), ...(stamp && !old.stampOwn ? { stamp } : {}),
+          acc: old.accOwn ? old.acc : c.k1 || '', tint: old.accOwn ? old.tint : c.k3 || '', facts: old.factsOwn ? old.facts : (fact ? [fact] : old.facts || []) };
       }),
+      // the certificate, earned when the parents close the book ("we're home", views.js certEarned) — never by ticking things off
+      ...(pp0.certOwn ? {} : { certificate: { title: { th: 'นักผจญภัยตัวจริง', en: 'A true adventurer' },
+        text: { th: `เที่ยวจบทริป${ttl.th || ttl.en || ''}${towns.length ? ` — ${towns.map((s) => s.th).join(' ')}` : ''}`, en: `completed ${ttl.en || ttl.th || ''}${towns.length ? ` — ${towns.map((s) => s.en).join(', ')}` : ''}` } } }),
       ...(stops.length ? { map: { stops, days: mapDays } } : {}),
     };
     await q('UPDATE trips SET theme=$2, passport=$3 WHERE id=$1', [t.id, JSON.stringify(theme2), JSON.stringify(pp)]);
@@ -794,6 +831,7 @@ function router({ pool, media, A, ai, hooks = {} }) {   // hooks.heart(h): set b
       if ('open' in b) { args.push(!!b.open); sets.push(`open=$${args.length}`); }
       if (!sets.length) return bad(res, 'nothing');
       await q(`UPDATE trips SET ${sets.join(', ')} WHERE id=$1`, args);
+      if (t.kind === 'snap' && 'title' in b) await snapMatch(t.id).catch((e) => console.error('snap match', e.message));   // the certificate names the book
       res.json({ ok: true });
     } catch (e) { next(e); }
   });

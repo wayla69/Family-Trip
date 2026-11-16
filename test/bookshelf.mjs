@@ -179,6 +179,23 @@ ok((await fetch(BASE + '/api/b/trips', { method: 'POST', headers: H, body: JSON.
       && (pp.days || []).length === 3 && pp.days[0].facts[0].th.includes('ปากช่อง') && pp.days.every((d) => d.acc && d.tint) && t.theme.accent !== '#2C5646'
       && pp.map && pp.map.stops.length === 2 && pp.map.days[0].length === 1 && pp.map.days[1].length === 0 && pp.map.stops.every((s) => s.x >= 0 && s.x <= 100),
     `snap pictures (P4): every day a library picture, the crest and stamps, the town's colours, a passport day each with a line about the town, a map of the towns visited (${art.length} pictures, crest ${(pp.style || {}).crest}, ${(pp.stamps || []).length} stamps, ${pp.map && pp.map.stops.length} map stops)`); }
+  { // the kids' side, second pass: never the same picture twice while the town has more, a trip at home wears its town's own stamp,
+    // a day with no name is called by its place (and its stamp says where), the chest's secret tells what the day's picture shows, a certificate
+    const pp = t.passport || {}, art = (t.theme.artDays || []).filter(Boolean);
+    ok(new Set(art).size === art.length && /\/stock\/th\/khaoyai\/stamp\./.test(pp.style.crest) && pp.days[0].title.en === 'Pak Chong' && pp.days[0].stamp === 'PAK CHONG'
+      && pp.days[1].title.en === 'Khao Yai' && pp.days[2].title.en === 'Sunflowers' && / you can see /.test(pp.days[0].facts[0].en) && pp.certificate && pp.certificate.text.en.includes('Khao Yai, 3 days'),
+    `snap kids' side: three different pictures, the Khao Yai stamp as the crest, days called by their place, a secret from the picture, a certificate (${art.join(' ')} · ${pp.style.crest} · ${pp.days.map((d) => d.title.en + '/' + d.stamp).join(' ')} · ${pp.days[0].facts[0].en})`);
+    const far = await (await post('/api/b/snap', { days: [{ date: '2026-10-01', place: { th: 'ฟาร์มของยาย', en: "Grandma's farm" } }] })).json();
+    let f = (await state()).trips.find((x) => x.id === far.id), fp = f.passport || {};
+    ok((f.theme.artDays || []).every((u) => !u || u.startsWith('/stock/t/')) && !fp.style.crest && fp.days[0].title.th === 'ฟาร์มของยาย' && fp.days[0].facts.length === 1,
+      `snap kids' side: a place the library lacks gets at most a landscape scene its name says, no crest (${JSON.stringify(f.theme.artDays || null)})`);
+    await post('/api/b/places', { trip: far.id, key: 'snap.jp-tokyo', day: 0, name: { th: 'โตเกียว', en: 'Tokyo' } }, 'PUT');
+    for (let k = 0; k < 40 && !/\/stock\/jp\//.test(JSON.stringify(((await state()).trips.find((x) => x.id === far.id).passport || {}).style)); k++) await new Promise((r) => setTimeout(r, 100));
+    f = (await state()).trips.find((x) => x.id === far.id); fp = f.passport;
+    ok(/\/stock\/jp\/stamp\./.test(fp.style.crest) && (fp.guides || []).every((g) => g.art.startsWith('/stock/jp/')) && (f.theme.artDays || [])[0].startsWith('/stock/jp/tokyo/'),
+      `snap kids' side: a library place checked in later brings its picture, the country's crest and guides (${fp.style.crest} · ${(f.theme.artDays || [])[0]})`);
+    await post(`/api/b/trips/${far.id}`, {}, 'DELETE');
+  }
   ok((await post('/api/b/snap', { days: [{ date: '2026-12-01' }, { date: '2027-03-01' }] })).status === 400 && (await post('/api/b/snap', { days: [{ date: '2026-02-30' }] })).status === 400
     && (await post('/api/b/snap', { days: [{ date: '2026-12-01' }], timezone: 'Mars/Base' })).status === 400, 'snap: more than 60 days, an impossible date or an unknown zone is refused');
   const live = await (await post('/api/b/snap', { open: true, timezone: 'Asia/Bangkok' })).json();
