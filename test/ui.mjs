@@ -396,6 +396,35 @@ const T = 'hk-macau-2026';
       const skipped = await page.evaluate(async ([tid, b64]) => addPhotos(trip(tid), 0, [new File([Uint8Array.from(atob(b64), (c) => c.charCodeAt(0))], 'again.jpg', { type: 'image/jpeg' })]), [id, later[0].buffer.toString('base64')]);
       const m2 = (await apiState(page)).media.filter((m) => m.trip === id);
       ok(m2.length === 5 && skipped === 0, `photos found later: a tap brings the receipt in; the record page skips a file the book holds (${m2.length} photos, added ${skipped})`); }
+    // the trip in a film (owner, Nov 2026: "คลิปสรุปทริป"; server/reel.js): made on our server from the book's photos — the cards are
+    // the app's own page photographed by the PDF's Chromium — then played, shared and saved from the memory book page
+    { await page.goto(`${BASE}/#/t/${id}/book`); await page.waitForSelector('[data-a="reelmake"]', { timeout: 15000 });
+      const t0 = Date.now(); await page.click('[data-a="reelmake"]');
+      await page.waitForSelector('#reelpct', { timeout: 10000 }).catch(() => {});
+      const running = await page.locator('#reelpct').count();
+      await page.waitForSelector('video.reelvid', { timeout: 240000 }).catch(() => {});
+      const secs = Math.round((Date.now() - t0) / 1000), st = (await apiState(page)).trips.find((x) => x.id === id);
+      const v = await page.evaluate(async (tid) => { const r = await fetch(`/media/reel/${tid}?v=${trip(tid).reel.v}`), b = new Uint8Array(await r.arrayBuffer());
+        const rg = await fetch(`/media/reel/${tid}?v=${trip(tid).reel.v}`, { headers: { range: 'bytes=0-99' } });
+        return { status: r.status, type: r.headers.get('content-type'), size: b.length, b64: btoa(Array.from(b, (c) => String.fromCharCode(c)).join('')), range: rg.status, rlen: (await rg.arrayBuffer()).byteLength }; }, id).catch((e) => ({ err: e.message }));
+      const { execFileSync } = await import('node:child_process'), vf = path.join(OUT, 'reel.mp4');
+      if (v.b64) fs.writeFileSync(vf, Buffer.from(v.b64, 'base64'));
+      const pr = v.b64 ? JSON.parse(execFileSync('ffprobe', ['-v', 'error', '-show_entries', 'format=duration:format_tags:stream=codec_name,width,height:stream_tags', '-of', 'json', vf]).toString()) : {};
+      const vs = (pr.streams || []).find((x) => x.codec_name === 'h264') || {}, as = (pr.streams || []).find((x) => x.codec_name === 'aac');
+      const tags = JSON.stringify([(pr.format || {}).tags || {}, ...(pr.streams || []).map((x) => x.tags || {})]);
+      // a frame from the title card and one from a photo: the card is the book's colour and words, not an empty frame
+      if (v.b64) { execFileSync('ffmpeg', ['-hide_banner', '-loglevel', 'error', '-y', '-ss', '1.2', '-i', vf, '-frames:v', '1', path.join(OUT, 'reel-title.png')]); execFileSync('ffmpeg', ['-hide_banner', '-loglevel', 'error', '-y', '-ss', '4.6', '-i', vf, '-frames:v', '1', path.join(OUT, 'reel-day.png')]); }
+      const fs0 = v.b64 ? await sharp(path.join(OUT, 'reel-title.png')).stats() : null;
+      ok(running === 1 && v.status === 200 && v.type === 'video/mp4' && v.range === 206 && v.rlen === 100 && vs.width === 720 && vs.height === 1280 && !!as
+        && Number((pr.format || {}).duration) >= 8 && !/location|creation_time|com\.apple|make|model/i.test(tags) && st.reel && st.reel.n >= 3 && fs0 && fs0.channels.some((c) => c.stdev > 20),
+        `the trip film: made in ${secs} s (${st.reel && st.reel.secs} s long, ${st.reel && st.reel.n} photos), portrait 720×1280 H.264/AAC, played in byte ranges, no metadata (${JSON.stringify({ running, status: v.status, type: v.type, range: v.range, w: vs.width, h: vs.height, aac: !!as, dur: (pr.format || {}).duration, tags, err: v.err })})`);
+      await page.evaluate(() => document.getElementById('reelbox').scrollIntoView());
+      await s.shot('reel-book');
+      ok(await page.locator('[data-a="reelshare"]').count() === 1 && await page.locator('#reelbox a[download]').count() === 1 && await page.locator('[data-a="reelmake"]').count() === 1,
+        'the trip film: the memory book plays it, sends it through the phone\'s share sheet, saves it, and the parents can make it again'); }
+    // a book with fewer than three photos has no film to make yet
+    { const r = await page.evaluate(async () => { const t = trips().find((x) => !mediaOf(x.id).length); return t ? (await fetch(`/api/b/reel/${t.id}`, { method: 'POST', headers: { 'x-mb': '1', 'content-type': 'application/json' }, body: '{}' })).json() : null; });
+      ok(!r || r.error === 'few', `the trip film: a book with too few photos is told so (${JSON.stringify(r)})`); }
     // edit the book after it is made (owner, Nov 2026: "แก้เล่มหลังสร้างแล้ว"): the book's name, a day's name and place, saved on leaving
     // the box; a photo on the wrong day moves from its viewer
     await page.goto(`${BASE}/#/t/${id}`); await page.waitForSelector('.snapeditgo'); await page.click('.snapeditgo');

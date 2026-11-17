@@ -41,6 +41,14 @@ function render() {
     hydrateColours(app); hydrateDraw(app); hydrateMap(app); hydratePager(app);
     return;
   }
+  if (p[0] === 'reelcards' && (t = trip(p[1]))) {   // a book's film: its cards, photographed one by one by the server (server/reel.js)
+    if (p[2] === 'en' || p[2] === 'th') lang = p[2];
+    artTrip = t; artDay = null;
+    document.documentElement.style.cssText = themeStyle(t); document.documentElement.lang = lang;
+    document.body.classList.toggle('serif', t.theme.display === 'serif'); document.body.classList.add('reelbook');
+    app.innerHTML = viewReelCards(t, String(p[3] || '').split('.').filter((x) => /^\d+$/.test(x)).map(Number));
+    return;
+  }
   if (p[0] === 'print' && (t = trip(p[1]))) { artTrip = t; artDay = null;   // the memory book: A4 pages for the PDF (and a preview on screen)
     document.documentElement.style.cssText = themeStyle(t); document.documentElement.lang = lang;
     document.body.classList.toggle('serif', t.theme.display === 'serif'); document.body.classList.add('printbook');
@@ -353,6 +361,38 @@ function stampHtml(t, small) {
 }
 
 /* ---------- book ---------- */
+/* A book's film (owner, Nov 2026: "คลิปสรุปทริป"; server/reel.js): the ⭐ photos and a few seconds of the day's clips, day by day, with
+   a little tune — made on our server, kept with the book, watched here by everyone who may see the book; parents make and remake it */
+function reelBlock(t, nDays) {
+  const has = t.reel && t.reel.v, job = typeof reelJob !== 'undefined' && reelJob && reelJob.trip === t.id ? reelJob : null, run = job && job.state === 'run';
+  if (!nDays || !(has || (isEditor() && mediaOf(t.id).length))) return '';
+  const src = has ? `/media/reel/${encodeURIComponent(t.id)}?v=${encodeURIComponent(t.reel.v)}` : '';
+  const mins = has ? `${Math.floor(t.reel.secs / 60)}:${String(t.reel.secs % 60).padStart(2, '0')}` : '';
+  return `<section class="reelbox" id="reelbox"><div class="part">${L('คลิปสรุปทริป', 'The trip in a film')} 🎬</div>
+${has ? `<video class="reelvid" controls playsinline preload="metadata" src="${esc(src)}"></video>
+<div class="row reelrow"><button type="button" class="btn small" data-a="reelshare" data-t="${esc(t.id)}">${ic('share')} ${L('ส่งให้ญาติ', 'Send to family')}</button><a class="btn ghost small" href="${esc(src)}&dl=1" download>${L('เก็บลงเครื่อง', 'Save to phone')}</a><span class="label">${esc(mins)}</span></div>` : ''}
+${run ? `<p class="reelrun">${L('กำลังทำคลิป', 'Making the film')} <b id="reelpct">${job.pct || 0}%</b> · ${L('ปิดหน้านี้ได้ เสร็จแล้วจะอยู่ตรงนี้', 'you can close this page — it will be here when ready')}</p>`
+    : isEditor() ? `${has ? '' : `<p class="sub">${L('รูปเด่น ⭐ และคลิปสั้นของแต่ละวัน ต่อกันเป็นคลิปเดียวพร้อมเพลง ส่งให้ญาติดูได้', 'The best photos ⭐ and a bit of each day’s clips, one film with music, ready to send to family')}</p>`}
+<button type="button" class="${has ? 'linkbtn' : 'btn wide'}" data-a="reelmake" data-t="${esc(t.id)}">${has ? L('ทำคลิปใหม่ (หลังเพิ่มรูปหรือเปลี่ยนรูปเด่น)', 'Make it again (after new photos or stars)') : L('ทำคลิปสรุปทริป', 'Make the trip film')}</button>
+${job && job.state === 'error' ? `<p class="notice">${L('ทำคลิปไม่สำเร็จ ลองอีกครั้ง', 'The film could not be made — try again')}</p>` : ''}
+<p class="snapnote">${ic('lock')}<span>${L('ทำบนเซิร์ฟเวอร์ของเราจากรูปในเล่มนี้ ไม่ส่งไปที่อื่น', 'Made on our own server from this book’s photos — sent nowhere else')}</span></p>` : ''}</section>`;
+}
+// the film's cards (#/reelcards/<trip>/<lang>/<days>): 720×1280 each — the book's title, one a day that has a part, and the end
+function viewReelCards(t, days) {
+  const kids = children().filter((k) => kidArt(k.slug, true, t)), long = { day: 'numeric', month: 'long', year: 'numeric' };
+  const range = esc((() => { const a = new Date(t.date_from + 'T00:00:00'), b = new Date((t.date_to || t.date_from) + 'T00:00:00');   // "17–18 November 2026", the month said once
+    try { return new Intl.DateTimeFormat(LOC(), long).formatRange(a, b); } catch (_) { return fmtDay(t.date_from, long) + (b > a ? ' – ' + fmtDay(t.date_to, long) : ''); } })());
+  const arts = days.map((i) => dayArt(t, i)).filter(Boolean).slice(0, 4);
+  const cast = kids.length ? `<div class="rkids">${kids.map((k) => `<figure><img src="${esc(kidArt(k.slug, true, t))}" alt=""><figcaption>${esc(kidName(k.slug))}</figcaption></figure>`).join('')}</div>` : '';
+  const place = (d) => (d && d.place ? T(d.place) : '');
+  return `<div class="rcard rtitle"><div class="rconf" aria-hidden="true"></div>${arts.length ? `<div class="rarts">${arts.map((a) => `<img src="${esc(a)}" alt="">`).join('')}</div>` : ''}
+<h1>${esc(T(t.title))}</h1><p class="rdate">${range}</p>${cast}</div>
+${days.map((i) => { const d = t.days[i] || {}, art = dayArt(t, i);
+    return `<div class="rcard rday"><div class="rconf" aria-hidden="true"></div><p class="rnum">${L(`วันที่ ${i + 1}`, `Day ${i + 1}`)}</p>
+${art ? `<img class="rart" src="${esc(art)}" alt="">` : `<div class="rart remo">${esc(d.emoji || '📷')}</div>`}
+<h2>${esc(T(d.title) || L(`วันที่ ${i + 1}`, `Day ${i + 1}`))}</h2><p class="rdate">${esc(fmtDay(d.date, long))}${place(d) ? ' · ' + esc(place(d)) : ''}</p></div>`; }).join('')}
+<div class="rcard rend"><div class="rconf" aria-hidden="true"></div>${cast}<h2>${L('แล้วเจอกันทริปหน้านะ!', 'See you on the next trip!')}</h2><p class="rdate">${esc(T(t.title))}</p><p class="rapp">${esc(appName())}</p></div>`;
+}
 function viewBook(t) {
   const st = stats(t), kids = (t.theme.children || []);
   const ages = agesHtml(kids);
@@ -378,6 +418,7 @@ ${(() => { const f = [[L('รูป', 'Photos'), st.photos], [L('คำพูด
 ${days.length ? '' : `<div class="empty bookstart">${castHtml((t.theme.children || []).map((k) => k.slug))}<b>${L('เล่มนี้ยังว่าง', 'This book is still empty')}</b>${edit ? `<p>${L('บันทึกคืนละนิด — รูป คำพูด อารมณ์ — แล้วสมุดจะเต็มเอง', 'A little each night — photos, words, moods — and the book fills itself')}</p><a class="btn" href="#/t/${esc(t.id)}/log/${Math.max(0, dayNow(t))}">${ic('log')} ${L('เริ่มบันทึกวันแรก', 'Record the first day')}</a>` : `<p>${L('รอพ่อแม่บันทึกระหว่างทริป', 'The grown-ups will fill it in during the trip')}</p>`}</div>`}
 ${foreBlock(t, days.length)}
 ${favs ? `<div class="part">${L('ช่วงเวลาที่ชอบที่สุด', 'Favourite moments')} ⭐</div>${favs}` : ''}
+${reelBlock(t, days.length)}
 ${(t.firsts || []).length || firsts.length ? `<a class="learnlink firstsgo" href="#/t/${esc(t.id)}/firsts">${hubE('firsts')}<b>${L('เหรียญครั้งแรก', 'Firsts')}</b><span class="label">${esc(firsts.length ? L(`${firsts.length} ครั้งแรก`, `${firsts.length} first${firsts.length > 1 ? 's' : ''}`) : L('เหรียญรอหนูอยู่', 'Badges waiting'))}</span>${ic('chev')}</a>` : ''}
 ${firsts.length ? `<div class="part">${L('ครั้งแรกของหนู', 'Firsts')}</div><div class="firsts">${firsts.map((e) => { const f = firstLabel(t, e.first_key); return `<div class="first got"><span class="e">${esc(f.e)}</span><span class="t">${esc(e.first_key === 'custom' ? e.text : f.t)}<br><small class="muted">${L('วันที่', 'Day')} ${e.day + 1}</small></span><span class="kids">${kidBadge(e.child)}</span></div>`; }).join('')}</div>` : ''}
 ${drawingsHtml(t)}
@@ -1952,6 +1993,7 @@ ${sec('ใครอื่นเห็นบ้าง', 'Who else ever sees it', 
   ['“ให้ผู้ช่วยดูรูปวันนี้” เฉพาะเมื่อเปิดใช้และกดเอง: ส่งรูปย่อของวันนั้นครั้งเดียว ไม่เก็บ', '“Look at today’s photos”, only when switched on and pressed: that day’s small thumbnails, once, not stored'],
   ['วาดตัวการ์ตูนจากรูปลูก (OpenAI) เฉพาะเมื่อพ่อแม่อัปโหลด: รูปถูกย่อ ส่งครั้งเดียว และไม่เก็บที่ไหน', 'Drawing a character from a child’s photo (OpenAI), only when a parent uploads one: shrunk, sent once, stored nowhere'],
   ['พยากรณ์อากาศ (Open-Meteo): ส่งเฉพาะพิกัดระดับเมืองของที่พักในแผน ไม่ใช่ตำแหน่งโทรศัพท์', 'The weather forecast (Open-Meteo): only the town-level location of the planned stay, never the phone’s position'],
+  ['คลิปสรุปทริป: ทำบนเซิร์ฟเวอร์ของเราจากรูปและคลิปในเล่ม เก็บไว้กับเล่ม ดูได้เฉพาะคนที่เห็นเล่มนี้ ไม่ส่งไปที่อื่น เพลงในคลิปเราแต่งเอง', 'The trip film: made on our own server from the book’s photos and clips, kept with the book, seen only by those who may see the book, sent nowhere else; its tune is our own'],
   ['เล่มจากรูป: เครื่องของคุณดูรูปเองก่อนส่ง แยกภาพซ้ำ ภาพหน้าจอ และรูปใบเสร็จหรือเอกสาร (อาจมีเลขบัตรหรือเลขจอง) พักไว้ ไม่ส่งขึ้นเล่ม เว้นแต่พ่อแม่แตะเอากลับ', 'A book from photos: your phone looks at the photos before anything is sent and sets aside repeats, screenshots and photos of receipts or papers (they may show a card or a booking number) — they are not sent unless a parent brings one back'],
   ['ชื่อสถานที่ของรูป: ตามปกติเครื่องของคุณหาชื่อเองจากรายชื่อสถานที่ (GeoNames) ไม่ส่งตำแหน่งไปไหน · ถ้าพ่อแม่เปิด “ชื่อสถานที่ละเอียดจากแผนที่ออนไลน์” จะส่งตำแหน่งแบบคร่าวๆ (ราวหนึ่งกิโลเมตร) ไปถาม OpenStreetMap ผ่านเซิร์ฟเวอร์ของเรา ไม่ส่งรูปหรือชื่อใคร ไม่เก็บไว้', 'Place names for photos: normally your phone finds the name itself from a list of places (GeoNames) and sends the position nowhere · if a parent turns on “finer place names from an online map”, a rough position (about a kilometre) goes to OpenStreetMap through our server — no photo, no one’s name, nothing kept'],
   ['การเตือน: ผ่านบริการแจ้งเตือนของเครื่อง (Apple, Google) ส่งเฉพาะข้อความจากแผน ไม่มีรูปหรือชื่อ', 'Reminders: through the phone’s own push service (Apple, Google), carrying the plan’s words only, no photos or names']]))}
