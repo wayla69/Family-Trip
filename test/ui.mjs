@@ -2227,10 +2227,18 @@ const T = 'hk-macau-2026';
   ok(await page.locator('.callb.main[href="tel:000"]').count() === 1 && await page.locator('.stayc.tonight').count() === 1 && await s.noHScroll(), 'emergency glance: big call buttons (000 first), tonight\'s address');
   await page.goto(`${BASE}/#/t/big-hop-2027/prep`); await page.waitForSelector('.glg');
   ok(await page.locator('.glg .glc').count() >= 6 && /\d+ things|\d+\/\d+ packed/.test(await page.textContent('.glg')), 'get-ready glance: a card per topic, the packing list named by its size (never “0/27 packed”)');
+  { // the pocket guide in the book's look (owner, Nov 2026: "ส่วนของ Get Ready อ่านยากมาก"): every topic a picture card, a topic's page under a band with
+    // its picture, a table's rows as cards with each label above its words
+    const pics = await page.$$eval('.glg .glc', (cs) => cs.map((c) => (c.querySelector('.gpic img') || {}).src || ''));
+    ok(pics.length >= 6 && pics.every(Boolean) && pics.some((x) => /\/van\.webp$/.test(x)), `get-ready glance: a picture on every topic card (the van has its own) (${pics.map((x) => x.split('/').pop()).join(' ')})`); }
   await page.locator('.glg .glc').nth(2).click(); await page.waitForSelector('#pocket');
   ok(/\/prep\/full\/2$/.test(page.url()) && await page.locator('#pocket details.pg').count() === 0 && await page.locator('.tp.one #pg-prep-2').count() === 1 && await page.locator('.repseg').count() === 0 && await page.locator('.tp.one details.ifold:not([open])').count() === 0
     && await page.locator('.pgnav a.pgn.prev[href$="/prep/full/1"]').count() === 1 && await page.locator('.pgnav a.pgn.next[href$="/prep/full/3"]').count() === 1 && (await page.textContent('.tp.one h1')).trim().length > 2
     && await page.locator('.backsum').count() === 0 && /\/prep$/.test(await page.getAttribute('header.top .ibtn', 'href')) && await s.noHScroll(), 'a glance card opens that topic alone: its title the heading, every detail open, no switch and nothing to unfold, ‹ › to the topics beside it; the top bar\'s back goes to the summary');
+  { await page.goto(`${BASE}/#/t/${T}/prep/full/2`); await page.waitForSelector('.tp.one .tphead');
+    const r = await page.evaluate(() => { const tr = document.querySelector('.tp.one .prices tbody tr'), td = tr.querySelector('td[data-h]'), b = td.getBoundingClientRect(), h = getComputedStyle(td, '::before');
+      return { head: !!document.querySelector('.tp.one .tphead .phpic img'), card: getComputedStyle(tr).display, borderTop: parseFloat(getComputedStyle(tr).borderTopWidth), labelBlock: h.display, w: Math.round(b.width) }; });
+    ok(r.head && r.card === 'grid' && r.borderTop >= 3 && r.labelBlock === 'block' && await s.noHScroll(), `get-ready topic page: a band with the topic's picture, each row of a table a card with its labels above the words (${JSON.stringify(r)})`); }
   { await page.goto(`${BASE}/#/t/${T}/prep`); await page.waitForSelector('.glg');
     ok(await page.locator('.glg').count() === 2 && await page.locator('.glg').nth(1).locator('.glc .gday').count() >= 5 && await page.locator('.glg').first().locator('.gday').count() === 0, 'HK get-ready summary: the whole-trip topics first, the chapters for one day under their own heading with the day as a chip');
     await page.goto(`${BASE}/#/t/${T}/prep/full/0`); await page.waitForSelector('.tp.one .steps');

@@ -1460,7 +1460,41 @@ const brief = (s, n = 110) => {   // a teaser that ends on a whole phrase: the f
 };
 const fullHref = (t, k, j) => `#/t/${esc(t.id)}/${k}/full${j !== undefined ? '/' + j : ''}`;
 const reportBtn = (href, label) => `<a class="reportbtn" href="${href}">${ic('doc')}<b>${label || L('อ่านแบบรายงานเต็ม', 'Read the full report')}</b>${ic('chev')}</a>`;
-const glc = (href, title, sub, cls) => `<a class="glc${cls ? ' ' + cls : ''}" href="${href}"><span class="gt"><b>${title}</b>${sub ? `<small>${sub}</small>` : ''}</span>${ic('chev')}</a>`;
+const glc = (href, title, sub, cls, pic, g) => `<a class="glc${cls ? ' ' + cls : ''}${pic ? ' gpc' : ''}" href="${href}"${g ? ` style="--g1:${g}"` : ''}>${pic ? `<span class="gpic"><img src="${pic}" alt="" loading="lazy" draggable="false"></span>` : ''}<span class="gt"><b>${title}</b>${sub ? `<small>${sub}</small>` : ''}</span>${ic('chev')}</a>`;
+/* each topic of a pocket guide wears a picture of its own (owner, Nov 2026: "ส่วนของ Get Ready อ่านยากมาก … เหลือส่วนนี้ที่ไม่เหมือนในเล่ม"):
+   the menu's sticker pictures, picked by what the topic's title says in either language; the first rule that fits wins */
+const TOPIC_PICS = [
+  [/day bag|กระเป๋าประจำวัน/i, '/art/emoji/backpack.webp'],
+  [/park at a glance|ภาพรวมสวน/i, '/art/hub/map.webp'],
+  [/minute by minute|นาทีต่อนาที/i, '/art/hub/today.webp'],
+  [/christmas|คริสต์มาส/i, '/art/emoji/gift.webp'],
+  [/goes wrong|ผิดแผน/i, '/art/emoji/signpost.webp'],
+  [/disney|ดิสนีย์|สวนสนุก|can ride|เล่นอะไร/i, '/art/emoji/rollercoaster.webp'],
+  [/budget|งบ/i, '/art/emoji/cash.webp'],
+  [/van|รถตู้|odyssey|turo/i, '/art/hub/van.webp'],
+  [/drive|ขับรถ|ช่วงขับ|every leg|ทุกช่วงการเดินทาง/i, '/art/emoji/travel-map.webp'],
+  [/taxi card|บัตรแท็กซี่/i, '/art/emoji/taxi.webp'],
+  [/getting around|ไปไหนมาไหน|เดินทางไปไหน/i, '/art/emoji/bus.webp'],
+  [/pack|จัดกระเป๋า|เตรียมของ/i, '/art/emoji/suitcase.webp'],
+  [/price|ราคา|attraction|ค่าเข้า|ที่เที่ยวเพิ่ม/i, '/art/emoji/ticket.webp'],
+  [/visa|วีซ่า/i, '/art/emoji/passport.webp'],
+  [/biosecurity|customs|never bring|ศุลกากร|ห้ามนำ|ไบโอซีเคียว|กักกัน|ด่านตรวจ|พืช/i, '/art/hub/privacy.webp'],
+  [/casino|คาสิโน/i, '/art/emoji/signpost.webp'],
+  [/arrival|departure|มาถึง|วันกลับ|ขาไป|ขากลับ/i, '/art/emoji/airplane.webp'],
+  [/crowd|on holiday|คนเยอะ|ใครหยุด/i, '/art/emoji/family.webp'],
+  [/book|จอง/i, '/art/hub/today.webp'],
+  [/kitchen|laundry|barbecue|ครัว|ซักผ้า|บาร์บีคิว/i, '/art/emoji/noodles.webp'],
+  [/night by night|คืนต่อคืน|ทีละคืน/i, '/art/emoji/bed.webp'],
+  [/hotel|resort|stay|ที่พัก|โรงแรม|รีสอร์ต|ask the hotels|ถามโรงแรม/i, '/art/hub/stays.webp'],
+  [/emergency|ฉุกเฉิน/i, '/art/hub/sos.webp'],
+  [/tonight|คืนนี้/i, '/art/emoji/bed.webp'],
+  [/if…|if\.\.\.|ถ้า…|ถ้า\.\.\.|goes wrong|ผิดแผน/i, '/art/emoji/signpost.webp'],
+  [/animal|สัตว์/i, '/art/emoji/koala.webp'],
+  [/eating|กิน/i, '/art/emoji/noodles.webp'],
+  [/learn|เรียนรู้|shapes|car|ในรถ/i, '/art/hub/learn.webp'],
+];
+const topicPic = (title) => { const x = String(title || '').replace(/<[^>]+>/g, ' '); const hit = TOPIC_PICS.find(([re]) => re.test(x)); return hit ? hit[1] : '/art/hub/manual.webp'; };
+const TOPIC_COLS = ['#4F7BFF', '#1CC9A4', '#FF9A3C', '#C850F0', '#FF6FA8', '#F2B90C', '#22D3EE', '#9BD82A'];
 const topicHead = (k, lede) => `<h1 class="vh">${secTitle(k)}</h1>${lede ? `<p class="lede">${lede}</p>` : ''}`;
 const emptyTopic = () => `<div class="empty">${L('เล่มนี้ยังไม่มีข้อมูลส่วนนี้', 'This book has nothing here yet')}</div>`;
 /* Two versions, always (owner's rule, Nov 2026): the report reads short — each case, card or row a headline with its detail one tap
@@ -1477,15 +1511,17 @@ const PG_RE = /^<details class="pg" open id="([^"]+)"><summary>([\s\S]*?)<\/summ
 const pgName = (b) => { const m = PG_RE.exec(b || ''); return m ? m[2].replace(/<span class="label">[\s\S]*?<\/span>/g, '').replace(/<[^>]+>/g, '').trim() : ''; };
 const onePage = (t, k, blocks, open) => { const m = PG_RE.exec(blocks[open] || ''); if (!m) return '';
   const nav = (j, cls, lbl) => (pgName(blocks[j]) ? `<a class="pgn ${cls}" href="${fullHref(t, k, j)}"><small>${lbl}</small><b>${pgName(blocks[j])}</b></a>` : '<span></span>');
-  return `<div class="tp tp-${k} one repall"><h1 class="h2">${m[2]}</h1><section class="pocket" id="pocket"><div class="pg1" id="${m[1]}">${m[3].replace(/<details class="ifold([^"]*)">/g, '<details class="ifold$1" open>')}</div></section>
+  const g = TOPIC_COLS[open % TOPIC_COLS.length];
+  return `<div class="tp tp-${k} one repall" style="--g1:${g}"><header class="phead pz tphead"><span class="phpic"><img src="${topicPic(m[2])}" alt="" draggable="false"></span><div class="phtx"><h1 class="h2">${m[2]}</h1></div></header><section class="pocket" id="pocket"><div class="pg1" id="${m[1]}">${m[3].replace(/<details class="ifold([^"]*)">/g, '<details class="ifold$1" open>')}</div></section>
 <nav class="pgnav" aria-label="${L('หัวข้ออื่น', 'Other topics')}">${nav(open - 1, 'prev', L('‹ ก่อนหน้า', '‹ Before'))}${nav(open + 1, 'next', L('ถัดไป ›', 'Next ›'))}</nav></div>`; };
 // the summary's list: the topics for the whole trip first, then the chapters written for one day ("Day 2 · …") under their own heading,
 // the day a chip instead of a prefix repeated on every row (owner, Nov 2026: the HK list was 19 look-alike rows)
 const DAYPG = /^((?:Days?|วันที่)\s*\d+(?:\s*[–-]\s*\d+)?)\s+·\s+(.+)$/;
 const glanceList = (t, k, meta, skip) => { const rows = meta.map((m, j) => ({ m, j, d: DAYPG.exec(m.title) })).filter((x) => !skip.includes(x.m.key));
   const all = rows.filter((x) => !x.d), byDay = rows.filter((x) => x.d), wrap = (ts) => (ts ? `<div class="glg">${ts}</div>` : '');
-  if (byDay.length < 2 || !all.length) return wrap(rows.map((x) => glc(fullHref(t, k, x.j), x.m.title, x.m.sub)).join(''));
-  return `${wrap(all.map((x) => glc(fullHref(t, k, x.j), x.m.title, x.m.sub)).join(''))}<h3 class="gh">${L('เฉพาะบางวัน', 'For one day')}</h3>${wrap(byDay.map((x) => glc(fullHref(t, k, x.j), `<span class="gday">${x.d[1]}</span>${x.d[2]}`, x.m.sub)).join(''))}`; };
+  const card = (x, title) => glc(fullHref(t, k, x.j), title, x.m.sub, '', topicPic(x.m.title), TOPIC_COLS[x.j % TOPIC_COLS.length]);
+  if (byDay.length < 2 || !all.length) return wrap(rows.map((x) => card(x, x.m.title)).join(''));
+  return `${wrap(all.map((x) => card(x, x.m.title)).join(''))}<h3 class="gh">${L('เฉพาะบางวัน', 'For one day')}</h3>${wrap(byDay.map((x) => card(x, `<span class="gday">${x.d[1]}</span>${x.d[2]}`)).join(''))}`; };
 const glancePage = (t, k, B, lede, top, skip) => (B[k].length ? `<div class="tp tp-${k} glance">${topicHead(k, lede)}${top || ''}${glanceList(t, k, B.meta[k], skip)}${reportBtn(fullHref(t, k))}</div>` : `<div class="tp tp-${k}">${topicHead(k, lede)}${emptyTopic()}</div>`);
 function viewStays(t, full, open) {
   const B = infoBlocks(t), n = t.info || {}, lede = L('ทุกที่พักของทริป พร้อมแผนที่และการ์ดที่อยู่ให้คนขับดู', 'Every stay of the trip, with its map and an address card for the driver');
