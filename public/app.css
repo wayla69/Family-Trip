@@ -3225,7 +3225,7 @@ details.emeal[open]>summary .mname{visibility:hidden}
 .lvbar>.lvreset.holding{transform:scale(.88);background:#FFD9D9}
 
 /* a book's film (server/reel.js): the cards the server photographs (#/reelcards), and the film on the memory book page */
-body.reelbook{margin:0;padding:0;background:#111}
+body.reelbook{margin:0;padding:0;background:transparent}
 .rcard{width:720px;height:1280px;position:relative;overflow:hidden;box-sizing:border-box;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:30px;padding:90px 64px;text-align:center;font-family:var(--ui);color:#fff;background:linear-gradient(165deg,color-mix(in srgb,var(--accent) 88%,#fff) 0%,var(--accent) 45%,color-mix(in srgb,var(--accent) 62%,#1F2A3A) 100%)}
 .rcard h1{margin:0;font-size:76px;line-height:1.12;font-weight:700;text-wrap:balance;text-shadow:0 3px 16px rgba(0,0,0,.18)}
 .rcard h2{margin:0;font-size:62px;line-height:1.15;font-weight:700;text-wrap:balance}
@@ -3273,3 +3273,13 @@ body.reelbook{margin:0;padding:0;background:#111}
 .herrs li{background:var(--card);border:1px solid var(--rule);border-left:4px solid var(--accent2);border-radius:10px;padding:8px 12px;display:grid;gap:2px;overflow-wrap:anywhere}
 .herrs small{color:var(--muted);font-size:13px}
 .hok{color:color-mix(in srgb,#2E7D32 70%,var(--ink));font-weight:600}
+/* the film's v2 pieces: the relatives' hearts on the end card, the kids' words as a bubble laid under a photo */
+.rcard.rend .rhearts{display:grid;gap:10px;max-width:600px}
+.rcard.rend .rhn{margin:0;font-size:36px;font-weight:700}
+.rcard.rend .rhx{margin:0;font-size:28px;line-height:1.3;color:color-mix(in srgb,#fff 90%,var(--accent))}
+.rcard.rend .rhx b{font-weight:600;white-space:nowrap}
+.rcapw{width:720px;padding:20px 40px;box-sizing:border-box;background:transparent}
+.rcap{background:#FFFDF7;color:#1F2A3A;border-radius:34px;padding:22px 30px 20px;box-shadow:0 6px 0 color-mix(in srgb,var(--accent) 70%,#1F2A3A);font-family:var(--ui);text-align:center;border:4px solid var(--accent)}
+.rcap p{margin:0;font-size:40px;line-height:1.25;font-weight:700;text-wrap:balance}
+.rcap b{display:block;margin-top:6px;font-size:28px;font-weight:600;color:color-mix(in srgb,var(--accent) 60%,#1F2A3A)}
+.reelmood{margin-bottom:12px}.reelmood .rme{font-size:28px;line-height:1}.reelmood .rme .emi{width:30px;height:30px}

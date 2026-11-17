@@ -88,7 +88,9 @@ app.post('/api/logout', (req, res) => { A.clearCookie(res); res.json({ ok: true 
 const HOOKS = {};   // filled below once the push scheduler exists
 // a book's own film (server/reel.js): its cards are the app's #/reelcards page, photographed by the PDF's Chromium with a read-only session
 const REEL = require('./reel').create({ pool: PG, media: MEDIA, A, family: BS.FAMILY,
-  cards: (trip, lang, days) => PDF.cards({ base: `http://127.0.0.1:${PORT}`, cookie: A.makeToken('viewer', 'REEL', crypto.randomBytes(6).toString('hex')), trip, lang, days }) });
+  cards: (trip, lang, days, caps) => PDF.cards({ base: `http://127.0.0.1:${PORT}`, cookie: A.makeToken('viewer', 'REEL', crypto.randomBytes(6).toString('hex')), trip, lang, days, caps }),
+  done: (x) => HOOKS.reel && HOOKS.reel(x) });
+HOOKS.home = (x) => REEL.home(x);   // "we're home" on a book from photos: its film is made by itself
 app.use(REEL.router);
 // what went wrong on the family's phones, and how much room the books take (server/errors.js)
 app.use(require('./errors').create({ pool: PG, media: MEDIA, A, family: BS.FAMILY, reelKey: REEL.key }).router);
@@ -97,7 +99,8 @@ app.use(BS.router({ pool: PG, media: MEDIA, A, ai: STORY, hooks: HOOKS }));
 // reminders on the trip: phones that switched them on get a push 30 min before each timed step of the day
 const REMIND = PUSH.create({ pool: PG, family: BS.FAMILY, A });
 HOOKS.heart = (h) => REMIND.heart(h);   // a relative's heart nudges the parents' phones
-HOOKS.draft = (x) => REMIND.draft(x);   // the helper finished a photo book's draft: "ready to check" on the parents' phones
+HOOKS.draft = (x) => REMIND.draft(x);
+HOOKS.reel = (x) => REMIND.reel(x);   // the film made by itself is ready: a push to the parents' phones   // the helper finished a photo book's draft: "ready to check" on the parents' phones
 app.use(REMIND.router);
 
 // backup / restore (photos included): editors download, the scheduled job uses Bearer BACKUP_TOKEN

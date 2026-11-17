@@ -237,6 +237,21 @@ const T = 'hk-macau-2026';
     ok(!sent.some((u) => u.includes('/api/b/media') || u.includes('/api/b/photos')), 'phone check: still nothing uploaded');
     page.off('request', watch);
   }
+  // faces for the best photos (owner, Nov 2026: "เลือกรูปเด่นโดยดูหน้าเด็ก"): the face finder loads on the phone and, of two photos of
+  // one afternoon, the one with a face gets the day's star — no photo leaves the phone
+  { const sent = []; const watch = (r) => { if (r.method() !== 'GET') sent.push(r.url()); }; page.on('request', watch);
+    const b64 = (f) => fs.readFileSync(path.resolve('test/fixtures/snap', f)).toString('base64');
+    const r = await page.evaluate(async ([face, lake]) => {
+      const mk = (b, n) => new File([Uint8Array.from(atob(b), (c) => c.charCodeAt(0))], n, { type: 'image/jpeg' });
+      const list = [mk(lake, 'IMG_0001.jpg'), mk(face, 'IMG_0002.jpg')];
+      const metas = [{ at: '2026-12-12T14:00:00', src: 'exif' }, { at: '2026-12-12T15:00:00', src: 'exif' }];
+      const found = await faceLook(list[1]), none = await faceLook(list[0]);
+      const sc = await snapScreen(list, metas, () => true);
+      return { found: found && found.length, none: none && none.length, star: [...sc.star], faces: sc.sift.faces };
+    }, [b64('face-made.jpg'), b64('lake-made.jpg')]);
+    page.off('request', watch);
+    ok(r.found === 1 && r.none === 0 && r.star.length === 1 && r.star[0] === 1 && r.faces === 1 && !sent.length,
+      `best photos: the face finder runs on the phone, and of one afternoon's two photos the one with a face is starred; nothing sent (${JSON.stringify(r)})`); }
   // room and phone problems (#/health, server/errors.js): a script error on this phone reaches the parents' list once, with no data in it
   { const errs = []; const w = (r) => { if (r.url().endsWith('/api/b/err')) errs.push(r.postData() || ''); }; page.on('request', w);
     await page.evaluate(() => { for (let k = 0; k < 3; k++) setTimeout(() => { throw new TypeError("Cannot read properties of undefined (reading 'kids') for \"มีมี่ที่ทะเล\""); }, 10); });
@@ -440,7 +455,19 @@ const T = 'hk-macau-2026';
       ok(m2.length === 8 && skipped === 0, `photos found later: a tap brings the receipt in; the record page skips a file the book holds (${m2.length} photos, added ${skipped})`); }
     // the trip in a film (owner, Nov 2026: "คลิปสรุปทริป"; server/reel.js): made on our server from the book's photos — the cards are
     // the app's own page photographed by the PDF's Chromium — then played, shared and saved from the memory book page
+    // v2 (owner, Nov 2026): a kid's words under a photo of that day, the day's voice memo over its photos, the music the parents pick
+    { const { execFileSync: ex } = await import('node:child_process'), tone = path.join(OUT, 'voice-test.webm');
+      ex('ffmpeg', ['-hide_banner', '-loglevel', 'error', '-y', '-f', 'lavfi', '-i', 'sine=frequency=330:duration=9', '-c:a', 'libopus', '-b:a', '48k', tone]);
+      const day0 = await page.evaluate((tid) => Math.min(...mediaOf(tid).filter((m) => !isVideo(m) && !isAudio(m)).map((m) => m.day)), id);
+      await page.evaluate(async ([tid, d, b64]) => {
+        await putEntry(trip(tid), { day: d, kind: 'quote', child: children()[0].slug, text: 'Look, a giant sunflower!' }, `${tid}.q.reeltest`);
+        await fetch(`/api/b/media/vc-reel-0001?trip=${tid}&day=${d}&kind=audio`, { method: 'PUT', headers: { 'x-mb': '1', 'content-type': 'audio/webm' }, body: Uint8Array.from(atob(b64), (c) => c.charCodeAt(0)) });
+        await load(); render();
+      }, [id, day0, fs.readFileSync(tone).toString('base64')]);
+      await page.waitForFunction(() => queue.length === 0, null, { timeout: 15000 }).catch(() => {}); }
     { await page.goto(`${BASE}/#/t/${id}/book`); await page.waitForSelector('[data-a="reelmake"]', { timeout: 15000 });
+      await page.click('.reelmood [data-v="fun"]');
+      const moodOn = await page.evaluate(() => [...document.querySelectorAll('.reelmood .tpo')].map((b) => b.dataset.v + ':' + b.getAttribute('aria-pressed')).join());
       const t0 = Date.now(); await page.click('[data-a="reelmake"]');
       await page.waitForSelector('#reelpct', { timeout: 10000 }).catch(() => {});
       const running = await page.locator('#reelpct').count();
@@ -449,7 +476,7 @@ const T = 'hk-macau-2026';
       const v = await page.evaluate(async (tid) => { const r = await fetch(`/media/reel/${tid}?v=${trip(tid).reel.v}`), b = new Uint8Array(await r.arrayBuffer());
         const rg = await fetch(`/media/reel/${tid}?v=${trip(tid).reel.v}`, { headers: { range: 'bytes=0-99' } });
         return { status: r.status, type: r.headers.get('content-type'), size: b.length, b64: btoa(Array.from(b, (c) => String.fromCharCode(c)).join('')), range: rg.status, rlen: (await rg.arrayBuffer()).byteLength }; }, id).catch((e) => ({ err: e.message }));
-      const { execFileSync } = await import('node:child_process'), vf = path.join(OUT, 'reel.mp4');
+      const { execFileSync, spawnSync } = await import('node:child_process'), vf = path.join(OUT, 'reel.mp4');
       if (v.b64) fs.writeFileSync(vf, Buffer.from(v.b64, 'base64'));
       const pr = v.b64 ? JSON.parse(execFileSync('ffprobe', ['-v', 'error', '-show_entries', 'format=duration:format_tags:stream=codec_name,width,height:stream_tags', '-of', 'json', vf]).toString()) : {};
       const vs = (pr.streams || []).find((x) => x.codec_name === 'h264') || {}, as = (pr.streams || []).find((x) => x.codec_name === 'aac');
@@ -457,6 +484,15 @@ const T = 'hk-macau-2026';
       // a frame from the title card and one from a photo: the card is the book's colour and words, not an empty frame
       if (v.b64) { execFileSync('ffmpeg', ['-hide_banner', '-loglevel', 'error', '-y', '-ss', '1.2', '-i', vf, '-frames:v', '1', path.join(OUT, 'reel-title.png')]); execFileSync('ffmpeg', ['-hide_banner', '-loglevel', 'error', '-y', '-ss', '4.6', '-i', vf, '-frames:v', '1', path.join(OUT, 'reel-day.png')]); }
       const fs0 = v.b64 ? await sharp(path.join(OUT, 'reel-title.png')).stats() : null;
+      // the voice memo is heard over the first day's card and photos (it starts 0.6 s into the day card, after the 3.2 s title)
+      const vol = (a, b) => { try { const r = spawnSync('ffmpeg', ['-hide_banner', '-nostats', '-ss', String(a), '-t', String(b - a), '-i', vf, '-af', 'volumedetect', '-f', 'null', '-']); const m = /mean_volume: (-?[\d.]+) dB/.exec(String(r.stderr)); return m ? Number(m[1]) : -99; } catch (_) { return -99; } };
+      const voiceDb = v.b64 ? vol(4.2, 7.5) : -99, titleDb = v.b64 ? vol(0.8, 2.6) : -99;
+      // the kid's words: drawn as a bubble by the cards page for this book (what the server photographs)
+      const capOk = await page.evaluate((tid) => { S.hearts.push({ id: 'h-reel-test', trip: tid, day: 0, child: 'both', emoji: '💗', text: 'Miss you both!', from: 'Grandma', at: Date.now() });
+        const h = viewReelCards(trip(tid), [0], [`${tid}.q.reeltest`]); S.hearts.pop();
+        return /class="rcap" data-id="[^"]+q\.reeltest"/.test(h) && /Look, a giant sunflower!/.test(h) && /1 heart from family/.test(h) && /Miss you both!.*Grandma/.test(h); }, id);
+      ok(st.reel && st.reel.mood === 'fun' && /fun:true/.test(moodOn) && voiceDb > titleDb + 6 && capOk,
+        `the trip film v2: the music the parents picked (${st.reel && st.reel.mood}), the day's voice memo heard over its photos (${voiceDb} dB against the title's ${titleDb} dB), the kid's words as a bubble (${capOk})`);
       ok(running === 1 && v.status === 200 && v.type === 'video/mp4' && v.range === 206 && v.rlen === 100 && vs.width === 720 && vs.height === 1280 && !!as
         && Number((pr.format || {}).duration) >= 8 && !/location|creation_time|com\.apple|make|model/i.test(tags) && st.reel && st.reel.n >= 3 && fs0 && fs0.channels.some((c) => c.stdev > 20),
         `the trip film: made in ${secs} s (${st.reel && st.reel.secs} s long, ${st.reel && st.reel.n} photos), portrait 720×1280 H.264/AAC, played in byte ranges, no metadata (${JSON.stringify({ running, status: v.status, type: v.type, range: v.range, w: vs.width, h: vs.height, aac: !!as, dur: (pr.format || {}).duration, tags, err: v.err })})`);

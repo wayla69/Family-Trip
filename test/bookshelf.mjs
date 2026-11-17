@@ -270,6 +270,17 @@ ok((await fetch(BASE + '/api/b/trips', { method: 'POST', headers: H, body: JSON.
     && (await post(`/api/b/days/${id}/1`, { place: '' }, 'PATCH')).ok && (await post(`/api/b/days/${T}/0`, { title: 'x' }, 'PATCH')).status === 409
     && (await post(`/api/b/days/${id}/9`, { title: 'x' }, 'PATCH')).status === 404 && (await post(`/api/b/days/${id}/0`, { title: '' }, 'PATCH')).status === 400, 'snap: a day\'s name, place and picture are the parents\' to type (never a bundled book\'s day)');
   ok((await post(`/api/b/trips/${live.id}`, { title: 'ทะเลวันเดียว', open: false }, 'PATCH')).ok && (await post(`/api/b/trips/${T}`, { open: true }, 'PATCH')).status === 409, 'snap: "we\'re home" closes the book; a bundled book cannot be renamed');
+  ok(!(await (await fetch(BASE + '/api/b/reel', { headers: { cookie: ck } })).json()).job, 'snap: "we\'re home" on a book with no photos makes no film');
+  // "we're home" on a book with photos (owner, Nov 2026: "ทำคลิปให้อัตโนมัติตอนกด ถึงบ้านแล้ว"): its film makes itself
+  { const home = await (await post('/api/b/snap', { open: true, timezone: 'Asia/Bangkok' })).json();
+    for (let k = 0; k < 3; k++) await fetch(`${BASE}/api/b/media/home-ph-000${k}?trip=${home.id}&day=0`, { method: 'PUT', headers: { 'x-mb': '1', cookie: ck, 'content-type': 'image/jpeg' }, body: await sharp({ create: { width: 900, height: 600, channels: 3, background: ['#c84', '#48c', '#4c8'][k] } }).jpeg().toBuffer() });
+    await post(`/api/b/trips/${home.id}`, { open: false }, 'PATCH');
+    let job = (await (await fetch(BASE + '/api/b/reel', { headers: { cookie: ck } })).json()).job;
+    const started = !!(job && job.trip === home.id && job.auto);
+    for (let k = 0; k < 120 && job && job.state === 'run'; k++) { await new Promise((r) => setTimeout(r, 1000)); job = (await (await fetch(BASE + '/api/b/reel', { headers: { cookie: ck } })).json()).job; }
+    const made = (await state()).trips.find((x) => x.id === home.id).reel;
+    ok(started && job.state === 'done' && made && made.v && made.mood === 'warm', `snap: "we're home" on a book with photos makes its film by itself (${JSON.stringify({ started, state: job && job.state, made })})`);
+    await fetch(`${BASE}/api/b/trips/${home.id}`, { method: 'DELETE', headers: H }); }   // out of the way of the counts below
   t = (await state()).trips.find((x) => x.id === id); const l2 = (await state()).trips.find((x) => x.id === live.id);
   ok(t.days[0].title.en === 'Setting off' && t.days[0].place.en === 'Home' && t.days[0].emoji === '🚗' && t.days[1].place === null && l2.open === false && l2.title.th === 'ทะเลวันเดียว', 'snap: the edits are in the state');
   // a photo moves to another day of its book (never past the last)

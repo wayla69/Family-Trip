@@ -204,6 +204,18 @@ function create({ pool, family, A, sender = (sub, payload, opt) => webpush.sendN
     for (const s of subs) if (await send(s, msg(s.lang))) n++;
     return n;
   }
+  // the trip's film made itself when the parents tapped "we're home" (server/reel.js home): one nudge that opens the book
+  async function reel({ trip, title }, now = Date.now()) {
+    const key = `reel.${trip}.${now}`;
+    if (!(await pool.query('INSERT INTO push_sent (key) VALUES ($1) ON CONFLICT DO NOTHING RETURNING key', [key])).rowCount) return 0;
+    const subs = (await pool.query('SELECT * FROM push_subs WHERE family_id=$1', [family])).rows, n0 = title || {};
+    const msg = (lang) => JSON.stringify(lang === 'en'
+      ? { title: 'The trip film is ready 🎬', body: `${n0.en || n0.th || 'Your book'} — watch it and send it to family`, tag: 'reel-' + trip, url: `/#/t/${trip}/book` }
+      : { title: 'คลิปสรุปทริปพร้อมแล้ว 🎬', body: `${n0.th || n0.en || 'เล่มของเรา'} — เปิดดูแล้วส่งให้ญาติได้เลย`, tag: 'reel-' + trip, url: `/#/t/${trip}/book` });
+    let n = 0;
+    for (const s of subs) if (await send(s, msg(s.lang))) n++;
+    return n;
+  }
   let timer = null;
   const start = () => { const run = () => tick().catch((e) => console.error('push tick', e.message)); timer = setInterval(run, 60000); timer.unref(); setTimeout(run, 5000).unref(); };
   const stop = () => clearInterval(timer);
@@ -234,7 +246,7 @@ function create({ pool, family, A, sender = (sub, payload, opt) => webpush.sendN
     const ok = await send(s, JSON.stringify({ title: th ? 'ทดสอบการเตือน' : 'Test reminder', body: th ? `ใช้ได้แล้ว — จะเตือนก่อนทุกกิจกรรม ${LEAD / 60000} นาที` : `Working — you will hear ${LEAD / 60000} min before each step`, tag: 'test', url: '/' }), why);
     res.status(ok ? 200 : 502).json(ok ? { ok } : { ok, status: why.status, reason: why.reason, apple: /push\.apple\.com/.test(s.endpoint) });
   });
-  return { router: r, tick, heart, draft, start, stop };
+  return { router: r, tick, heart, draft, reel, start, stop };
 }
 
 module.exports = { init, create, due, extras, zoned, short, subject, LEAD };

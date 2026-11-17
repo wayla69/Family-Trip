@@ -820,10 +820,11 @@ const A = {
     h.urls.forEach((u) => URL.revokeObjectURL(u));
     toast(L(`เพิ่ม ${h.pick.size} รูปแล้ว`, `${h.pick.size} added`)); safeRender();
   },
+  reelmood(b) { ls('reelMood', b.dataset.v); $$('.reelmood .tpo').forEach((x) => x.setAttribute('aria-pressed', String(x.dataset.v === b.dataset.v))); },
   async reelmake(b) {
     const t = trip(b.dataset.t); if (!t) return;
     b.disabled = true;
-    try { await api('POST', `/api/b/reel/${encodeURIComponent(t.id)}`, { lang }); reelJob = { trip: t.id, state: 'run', pct: 0 }; safeRender(); reelPoll(); }
+    try { await api('POST', `/api/b/reel/${encodeURIComponent(t.id)}`, { lang, mood: reelMood() }); reelJob = { trip: t.id, state: 'run', pct: 0 }; safeRender(); reelPoll(); }
     catch (e) {
       b.disabled = false;
       if (e && e.error === 'busy' && e.body && e.body.trip === t.id) { reelJob = { trip: t.id, state: 'run', pct: 0 }; safeRender(); reelPoll(); return; }   // this book's film is already being made (another phone, or before a reload)

@@ -949,6 +949,7 @@ function router({ pool, media, A, ai, hooks = {} }) {   // hooks.heart(h): set b
       if (!sets.length) return bad(res, 'nothing');
       await q(`UPDATE trips SET ${sets.join(', ')} WHERE id=$1`, args);
       if (t.kind === 'snap' && 'title' in b) await snapMatch(t.id).catch((e) => console.error('snap match', e.message));   // the certificate names the book
+      if (t.kind === 'snap' && b.open === false && t.open && hooks.home) Promise.resolve(hooks.home({ trip: t.id })).catch((e) => console.error('reel home', e.message));   // "we're home": the trip's film makes itself
       res.json({ ok: true });
     } catch (e) { next(e); }
   });

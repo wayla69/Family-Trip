@@ -46,7 +46,7 @@ function render() {
     artTrip = t; artDay = null;
     document.documentElement.style.cssText = themeStyle(t); document.documentElement.lang = lang;
     document.body.classList.toggle('serif', t.theme.display === 'serif'); document.body.classList.add('reelbook');
-    app.innerHTML = viewReelCards(t, String(p[3] || '').split('.').filter((x) => /^\d+$/.test(x)).map(Number));
+    app.innerHTML = viewReelCards(t, String(p[3] || '').split('.').filter((x) => /^\d+$/.test(x)).map(Number), String(p[4] || '').split('~').filter(Boolean));
     return;
   }
   if (p[0] === 'print' && (t = trip(p[1]))) { artTrip = t; artDay = null;   // the memory book: A4 pages for the PDF (and a preview on screen)
@@ -405,13 +405,23 @@ function reelBlock(t, nDays) {
 ${has ? `<video class="reelvid" controls playsinline preload="metadata" src="${esc(src)}"></video>
 <div class="row reelrow"><button type="button" class="btn small" data-a="reelshare" data-t="${esc(t.id)}">${ic('share')} ${L('ส่งให้ญาติ', 'Send to family')}</button><a class="btn ghost small" href="${esc(src)}&dl=1" download>${L('เก็บลงเครื่อง', 'Save to phone')}</a><span class="label">${esc(mins)}</span></div>` : ''}
 ${run ? `<p class="reelrun">${L('กำลังทำคลิป', 'Making the film')} <b id="reelpct">${job.pct || 0}%</b> · ${L('ปิดหน้านี้ได้ เสร็จแล้วจะอยู่ตรงนี้', 'you can close this page — it will be here when ready')}</p>`
-    : isEditor() ? `${has ? '' : `<p class="sub">${L('รูปเด่น ⭐ และคลิปสั้นของแต่ละวัน ต่อกันเป็นคลิปเดียวพร้อมเพลง ส่งให้ญาติดูได้', 'The best photos ⭐ and a bit of each day’s clips, one film with music, ready to send to family')}</p>`}
+    : isEditor() ? `${has ? '' : `<p class="sub">${L('รูปเด่น ⭐ คำพูดของเด็ก เสียงที่อัดไว้ และคลิปสั้นของแต่ละวัน ต่อกันเป็นคลิปเดียวพร้อมเพลง ปิดท้ายด้วยหัวใจจากญาติ', 'The best photos ⭐, the kids’ words, the voice memos and a bit of each day’s clips, one film with music, ending with the family’s hearts')}</p>`}
+${reelMoodPick()}
 <button type="button" class="${has ? 'linkbtn' : 'btn wide'}" data-a="reelmake" data-t="${esc(t.id)}">${has ? L('ทำคลิปใหม่ (หลังเพิ่มรูปหรือเปลี่ยนรูปเด่น)', 'Make it again (after new photos or stars)') : L('ทำคลิปสรุปทริป', 'Make the trip film')}</button>
 ${job && job.state === 'error' ? `<p class="notice">${L('ทำคลิปไม่สำเร็จ ลองอีกครั้ง', 'The film could not be made — try again')}</p>` : ''}
 <p class="snapnote">${ic('lock')}<span>${L('ทำบนเซิร์ฟเวอร์ของเราจากรูปในเล่มนี้ ไม่ส่งไปที่อื่น', 'Made on our own server from this book’s photos — sent nowhere else')}</span></p>` : ''}</section>`;
 }
-// the film's cards (#/reelcards/<trip>/<lang>/<days>): 720×1280 each — the book's title, one a day that has a part, and the end
-function viewReelCards(t, days) {
+// the film's music (owner, Nov 2026: "เลือกอารมณ์เพลงได้"): three option cards, the phone remembers the choice (server/reel.js MOODS)
+const REEL_MOODS = [['fun', '🎈', 'สนุก', 'Fun'], ['warm', '🌤️', 'อบอุ่น', 'Warm'], ['sleep', '🌙', 'ก่อนนอน', 'Bedtime']];
+const reelMood = () => (REEL_MOODS.some(([k]) => k === ls('reelMood')) ? ls('reelMood') : 'warm');
+function reelMoodPick() {
+  const cur = reelMood();
+  return `<div class="part pickh">${L('เพลงประกอบ', 'The music')}</div><div class="tpk reelmood" role="group" aria-label="${L('เพลงประกอบ', 'The music')}">${REEL_MOODS.map(([k, e, th, en]) => `<button type="button" class="tpo" data-a="reelmood" data-v="${k}" aria-pressed="${k === cur}"><span class="rme" aria-hidden="true">${emo(e)}</span><b>${L(th, en)}</b><span class="ck" aria-hidden="true">✓</span></button>`).join('')}</div>`;
+}
+// the film's cards (#/reelcards/<trip>/<lang>/<days>/<words>): 720×1280 each — the book's title, one a day that has a part, and the
+// end with the relatives' hearts (owner, Nov 2026: "ปิดท้ายด้วยหัวใจจากญาติ"); then each of the kids' words as a bubble, photographed
+// on its own over a transparent page and laid under its photo (server/reel.js frame)
+function viewReelCards(t, days, capIds = []) {
   const kids = children().filter((k) => kidArt(k.slug, true, t)), long = { day: 'numeric', month: 'long', year: 'numeric' };
   const range = esc((() => { const a = new Date(t.date_from + 'T00:00:00'), b = new Date((t.date_to || t.date_from) + 'T00:00:00');   // "17–18 November 2026", the month said once
     try { return new Intl.DateTimeFormat(LOC(), long).formatRange(a, b); } catch (_) { return fmtDay(t.date_from, long) + (b > a ? ' – ' + fmtDay(t.date_to, long) : ''); } })());
@@ -424,7 +434,17 @@ ${days.map((i) => { const d = t.days[i] || {}, art = dayArt(t, i);
     return `<div class="rcard rday"><div class="rconf" aria-hidden="true"></div><p class="rnum">${L(`วันที่ ${i + 1}`, `Day ${i + 1}`)}</p>
 ${art ? `<img class="rart" src="${esc(art)}" alt="">` : `<div class="rart remo">${esc(d.emoji || '📷')}</div>`}
 <h2>${esc(T(d.title) || L(`วันที่ ${i + 1}`, `Day ${i + 1}`))}</h2><p class="rdate">${esc(fmtDay(d.date, long))}${place(d) ? ' · ' + esc(place(d)) : ''}</p></div>`; }).join('')}
-<div class="rcard rend"><div class="rconf" aria-hidden="true"></div>${cast}<h2>${L('แล้วเจอกันทริปหน้านะ!', 'See you on the next trip!')}</h2><p class="rdate">${esc(T(t.title))}</p><p class="rapp">${esc(appName())}</p></div>`;
+<div class="rcard rend"><div class="rconf" aria-hidden="true"></div>${cast}${reelHearts(t)}<h2>${L('แล้วเจอกันทริปหน้านะ!', 'See you on the next trip!')}</h2><p class="rdate">${esc(T(t.title))}</p><p class="rapp">${esc(appName())}</p></div>
+${capIds.map((id) => { const e = entriesOf(t.id).find((x) => x.id === id && x.kind === 'quote'); if (!e || !e.text) return '';
+    const who = e.child && e.child !== 'both' ? kidName(e.child) : '';
+    return `<div class="rcapw"><div class="rcap" data-id="${esc(id)}"><p>“${esc(e.text)}”</p>${who ? `<b>— ${esc(who)}</b>` : ''}</div></div>`; }).join('')}`;
+}
+// the end card's hearts: how many the relatives sent this trip, and up to three of their short notes with who sent them
+function reelHearts(t) {
+  const hs = heartsOf(t.id); if (!hs.length) return '';
+  const notes = hs.filter((h) => h.text && h.text.length <= 60).slice(-3);
+  const em = [...new Set(hs.map((h) => h.emoji))].slice(0, 5).map((x) => esc(x)).join(' ');
+  return `<div class="rhearts"><p class="rhn">${em} ${L(`ญาติส่งหัวใจมา ${hs.length} ดวง`, `${hs.length} heart${hs.length > 1 ? 's' : ''} from family`)}</p>${notes.map((h) => `<p class="rhx">“${esc(h.text)}”${h.from ? ` <b>— ${esc(h.from)}</b>` : ''}</p>`).join('')}</div>`;
 }
 function viewBook(t) {
   const st = stats(t), kids = (t.theme.children || []);
@@ -2028,7 +2048,7 @@ ${sec('ใครอื่นเห็นบ้าง', 'Who else ever sees it', 
   ['วาดตัวการ์ตูนจากรูปลูก (OpenAI) เฉพาะเมื่อพ่อแม่อัปโหลด: รูปถูกย่อ ส่งครั้งเดียว และไม่เก็บที่ไหน', 'Drawing a character from a child’s photo (OpenAI), only when a parent uploads one: shrunk, sent once, stored nowhere'],
   ['พยากรณ์อากาศ (Open-Meteo): ส่งเฉพาะพิกัดระดับเมืองของที่พักในแผน ไม่ใช่ตำแหน่งโทรศัพท์', 'The weather forecast (Open-Meteo): only the town-level location of the planned stay, never the phone’s position'],
   ['คลิปสรุปทริป: ทำบนเซิร์ฟเวอร์ของเราจากรูปและคลิปในเล่ม เก็บไว้กับเล่ม ดูได้เฉพาะคนที่เห็นเล่มนี้ ไม่ส่งไปที่อื่น เพลงในคลิปเราแต่งเอง', 'The trip film: made on our own server from the book’s photos and clips, kept with the book, seen only by those who may see the book, sent nowhere else; its tune is our own'],
-  ['เล่มจากรูป: เครื่องของคุณดูรูปเองก่อนส่ง แยกภาพซ้ำ ภาพหน้าจอ และรูปใบเสร็จหรือเอกสาร (อาจมีเลขบัตรหรือเลขจอง) พักไว้ ไม่ส่งขึ้นเล่ม เว้นแต่พ่อแม่แตะเอากลับ', 'A book from photos: your phone looks at the photos before anything is sent and sets aside repeats, screenshots and photos of receipts or papers (they may show a card or a booking number) — they are not sent unless a parent brings one back'],
+  ['เล่มจากรูป: เครื่องของคุณดูรูปเองก่อนส่ง แยกภาพซ้ำ ภาพหน้าจอ และรูปใบเสร็จหรือเอกสาร (อาจมีเลขบัตรหรือเลขจอง) พักไว้ ไม่ส่งขึ้นเล่ม เว้นแต่พ่อแม่แตะเอากลับ · การเลือกรูปเด่นดูว่ามีหน้าคนในรูปไหม บนเครื่องเท่านั้น ไม่จำหน้าใคร', 'A book from photos: your phone looks at the photos before anything is sent and sets aside repeats, screenshots and photos of receipts or papers (they may show a card or a booking number) — they are not sent unless a parent brings one back · picking the best photos looks for faces in them, on the phone only, and recognises no one'],
   ['ชื่อสถานที่ของรูป: ตามปกติเครื่องของคุณหาชื่อเองจากรายชื่อสถานที่ (GeoNames) ไม่ส่งตำแหน่งไปไหน · ถ้าพ่อแม่เปิด “ชื่อสถานที่ละเอียดจากแผนที่ออนไลน์” จะส่งตำแหน่งแบบคร่าวๆ (ราวหนึ่งกิโลเมตร) ไปถาม OpenStreetMap ผ่านเซิร์ฟเวอร์ของเรา ไม่ส่งรูปหรือชื่อใคร ไม่เก็บไว้', 'Place names for photos: normally your phone finds the name itself from a list of places (GeoNames) and sends the position nowhere · if a parent turns on “finer place names from an online map”, a rough position (about a kilometre) goes to OpenStreetMap through our server — no photo, no one’s name, nothing kept'],
   ['การเตือน: ผ่านบริการแจ้งเตือนของเครื่อง (Apple, Google) ส่งเฉพาะข้อความจากแผน ไม่มีรูปหรือชื่อ', 'Reminders: through the phone’s own push service (Apple, Google), carrying the plan’s words only, no photos or names']]))}
 ${sec('ภาพและเสียงในแอป', 'Pictures and sounds in the app', `<p>${L('ภาพวาดในโหมดเด็กวาดขึ้นสำหรับแอปนี้ เสียงสัตว์ในเกมฟาร์มส่วนใหญ่มาจาก Wikimedia Commons (สาธารณสมบัติหรือ CC0)', 'The kid-mode pictures were painted for this app. Most of the farm game’s animal voices come from Wikimedia Commons (public domain or CC0).')}</p>
