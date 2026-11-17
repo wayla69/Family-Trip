@@ -56,12 +56,16 @@ app.get('/v/:token', async (req, res, next) => {
   try {
     const tok = String(req.params.token);
     if (A.VIEW_TOKEN && A.safeEq(tok, A.VIEW_TOKEN)) {
-      A.setCookie(res, A.makeToken('viewer', 'Guest', crypto.randomBytes(6).toString('hex')), isSecure(req));
+      const uid = crypto.randomBytes(6).toString('hex');
+      A.setCookie(res, A.makeToken('viewer', 'Guest', uid), isSecure(req));
+      await A.noteSession({ uid, role: 'viewer', name: 'Guest', ua: req.headers['user-agent'], family: BS.FAMILY });
       return res.redirect('/');
     }
     const g = /^[A-Za-z0-9_-]{24,64}$/.test(tok) && (await PG.query('SELECT id, name FROM viewer_groups WHERE link_token=$1 AND family_id=$2', [tok, BS.FAMILY])).rows[0];
     if (!g) return res.status(404).send('Not found');
-    A.setCookie(res, A.makeToken('viewer', g.name.slice(0, 24), crypto.randomBytes(6).toString('hex'), g.id), isSecure(req));
+    const uid = crypto.randomBytes(6).toString('hex');
+    A.setCookie(res, A.makeToken('viewer', g.name.slice(0, 24), uid, g.id), isSecure(req));
+    await A.noteSession({ uid, role: 'viewer', name: g.name, group: g.id, ua: req.headers['user-agent'], family: BS.FAMILY });
     res.redirect('/');
   } catch (e) { next(e); }
 });
@@ -72,17 +76,24 @@ app.post('/api/login', express.json({ limit: '10kb' }), async (req, res, next) =
   const code = String((req.body && req.body.code) || '');
   const name = clip((req.body && req.body.name) || '', 24).trim() || 'Family';
   // the family PIN writes; the relatives' PIN (VIEW_PIN) and each group's own PIN only read — all share the throttle
-  let role = A.FAMILY_CODE && A.safeEq(code, A.FAMILY_CODE) ? 'editor' : A.VIEW_PIN && A.safeEq(code, A.VIEW_PIN) ? 'viewer' : null, group = null;
+  let role = A.isFamilyCode(code) ? 'editor' : A.VIEW_PIN && A.safeEq(code, A.VIEW_PIN) ? 'viewer' : null, group = null;
   if (!role && /^\d{6,12}$/.test(code)) {
     try { group = (await PG.query('SELECT id, name FROM viewer_groups WHERE pin_hash=$1 AND family_id=$2', [A.pinHash(code), BS.FAMILY])).rows[0] || null; } catch (e) { return next(e); }
     if (group) role = 'viewer';
   }
   if (!role) { A.noteFail(ip); return res.status(401).json({ error: 'wrong-code' }); }
   const who = role === 'viewer' && name === 'Family' ? (group ? group.name.slice(0, 24) : 'Guest') : name;
-  A.setCookie(res, A.makeToken(role, who, crypto.randomBytes(6).toString('hex'), group && group.id), isSecure(req));
+  const uid = crypto.randomBytes(6).toString('hex');
+  A.setCookie(res, A.makeToken(role, who, uid, group && group.id), isSecure(req));
+  await A.noteSession({ uid, role, name: who, group: group && group.id, ua: req.headers['user-agent'], family: BS.FAMILY });
   res.json({ ok: true, role });
 });
-app.post('/api/logout', (req, res) => { A.clearCookie(res); res.json({ ok: true }); });
+app.post('/api/logout', async (req, res) => {   // this phone's row goes too (the parents' list shows only phones still signed in)
+  if (req.user) await PG.query('DELETE FROM sessions WHERE uid=$1', [req.user.uid]).catch(() => {});
+  A.clearCookie(res); res.json({ ok: true });
+});
+// the phones signed in, and the family code (server/devices.js)
+app.use(require('./devices').router({ pool: PG, A, family: BS.FAMILY }));
 
 // bookshelf API (+ /media photo proxy)
 const HOOKS = {};   // filled below once the push scheduler exists
@@ -94,6 +105,10 @@ HOOKS.home = (x) => REEL.home(x);   // "we're home" on a book from photos: its f
 app.use(REEL.router);
 // photos from the relatives, waiting for a parent's yes (server/inbox.js)
 app.use(require('./inbox').router({ pool: PG, media: MEDIA, A, family: BS.FAMILY, hooks: HOOKS }));
+// letters to open in the future (server/capsule.js)
+app.use(require('./capsule').router({ pool: PG, A, family: BS.FAMILY }));
+// a book as one HTML file to keep for ever (server/keep.js)
+app.use(require('./keep').router({ pool: PG, media: MEDIA, A, family: BS.FAMILY, stock: require('./stock') }));
 // the family map: every town of every book the viewer may see (server/famap.js)
 app.use(require('./famap').router({ pool: PG, A, family: BS.FAMILY }));
 // what went wrong on the family's phones, and how much room the books take (server/errors.js)
@@ -107,6 +122,9 @@ HOOKS.draft = (x) => REMIND.draft(x);
 HOOKS.reel = (x) => REMIND.reel(x);
 HOOKS.inbox = (x) => REMIND.inbox(x);   // a relative sent photos: a nudge to the parents' phones   // the film made by itself is ready: a push to the parents' phones   // the helper finished a photo book's draft: "ready to check" on the parents' phones
 app.use(REMIND.router);
+// the owner hears when something goes wrong: problems on the phones, room running out, the nightly copy failing (server/alerts.js)
+const ALERTS = require('./alerts').create({ pool: PG, A, family: BS.FAMILY, push: REMIND, dataDir: DATA_DIR, bucket: MEDIA.kind === 's3' });
+app.use(ALERTS.router);
 
 // backup / restore (photos included): editors download, the scheduled job uses Bearer BACKUP_TOKEN
 app.get('/api/export.zip', A.requireEditor, (req, res, next) => BK.sendZip(res, PG, MEDIA).catch(next));
@@ -260,7 +278,7 @@ if (require.main === module) {
   PGM.ready(PG)
     .then(async (n) => { await A.init(PG); await PUSH.init(PG); const seeds = await BS.syncSeeds(PG); await EMOJI.seed(PG, BS.FAMILY); return [n, seeds]; })
     .then(([n, seeds]) => {
-      REMIND.start();
+      REMIND.start(); ALERTS.start();
       // what older photos look like (migration 0029), filled in the background a few at a time: the "already in the book?" check covers them too
       setTimeout(() => BS.backfillPh(PG, MEDIA).then((k) => { if (k) console.log(`photo look-alike prints filled in: ${k}`); }).catch((e) => console.error('backfill ph', e.message)), 8000).unref();
       const server = app.listen(PORT, () => console.log(`Memory Bookshelf on :${PORT} · postgres ${n} migrations · ${seeds} seeded trips · photos ${MEDIA.kind}`));

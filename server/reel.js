@@ -20,7 +20,10 @@ const FFMPEG = process.env.FFMPEG || 'ffmpeg', FFPROBE = process.env.FFPROBE || 
 const W = 720, H = 1280, FPS = 25;
 const D = { title: 3.2, day: 2.2, photo: 2.6, clip: 6, end: 3.2 };   // seconds a piece
 
-function run(cmd, args, ms = 300e3) {
+const { ffmpegTurn } = require('./heavy');
+// ffmpeg takes its turn with the clips being made (server/heavy.js); ffprobe is light and goes straight away
+function run(cmd, args, ms = 300e3) { return cmd === FFMPEG ? ffmpegTurn(() => runNow(cmd, args, ms)) : runNow(cmd, args, ms); }
+function runNow(cmd, args, ms) {
   return new Promise((resolve, reject) => {
     const p = spawn(cmd, args, { stdio: ['ignore', 'pipe', 'pipe'] });
     let out = '', err = '';

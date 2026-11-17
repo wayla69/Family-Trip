@@ -1,5 +1,6 @@
 'use strict';
 const sharp = require('sharp');
+sharp.cache(false); sharp.concurrency(Math.min(2, sharp.concurrency()));   // a small instance: no cache of decoded pictures, at most two threads (server/heavy.js)
 
 // Re-encode: apply EXIF rotation, strip all metadata (incl. GPS), keep a 2560px display copy + 520px thumbnail.
 async function processImage(buf) {

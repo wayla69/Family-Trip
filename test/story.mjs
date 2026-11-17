@@ -113,7 +113,7 @@ const dbName = 'mb_story_' + Date.now().toString(36); await admin.query(`CREATE 
 const u = new URL(process.env.TEST_DATABASE_URL); u.pathname = '/' + dbName;
 const port = await freePort(), data = fs.mkdtempSync(path.join(os.tmpdir(), 'mb-story-'));
 const srv = spawn(process.execPath, ['server/index.js'], { cwd: process.cwd(), stdio: ['ignore', 'ignore', 'inherit'],
-  env: { ...process.env, PORT: String(port), DATA_DIR: data, DATABASE_URL: u.toString(), ANTHROPIC_API_KEY: 'test-key', ANTHROPIC_BASE_URL: `http://localhost:${mockPort}`, OPENAI_API_KEY: 'test-openai', OPENAI_BASE_URL: `http://localhost:${mockPort}`, STORY_DAILY: '17', PHOTO_AI: '1', ART_RUNS: '2', BACKUP_TOKEN: 'story-backup-token-0123456789' } });
+  env: { ...process.env, PORT: String(port), DATA_DIR: data, DATABASE_URL: u.toString(), ANTHROPIC_API_KEY: 'test-key', ANTHROPIC_BASE_URL: `http://localhost:${mockPort}`, OPENAI_API_KEY: 'test-openai', OPENAI_BASE_URL: `http://localhost:${mockPort}`, STORY_DAILY: '18', PHOTO_AI: '1', ART_RUNS: '2', BACKUP_TOKEN: 'story-backup-token-0123456789' } });
 const BASE = `http://localhost:${port}`;
 try {
   for (let i = 0; i < 80; i++) { try { if ((await fetch(BASE + '/healthz')).ok) break; } catch (_) {} await new Promise((r) => setTimeout(r, 250)); }
@@ -226,8 +226,16 @@ try {
   const saved2 = await (await fetch(BASE + '/api/b/likes', { headers: { cookie: ck } })).json();
   ok(rk.at(-1).ev === 'done' && saved2 && saved2.text && saved2.n === 1 && calls.at(-1).body.messages[0].content.includes('ยัดลก') && calls.at(-1).body.messages[0].content.includes('มีมี่: loved it'), 'likes: the notebook goes to Claude (names, stars, the kids\' verdicts) and the summary is saved');
 
+  // lessons for the next trip (owner, Nov 2026): one book's own reviews, moods and notes → what worked / what did not / try next time, saved for the trip
+  { const bl2 = calls.length;
+    const rles = events(await (await fetch(`${BASE}/api/b/lessons/${T}`, { method: 'POST', headers: H, body: JSON.stringify({ lang: 'th' }) })).text());
+    const les = (await state()).entries.find((e) => e.id === `${T}.lessons.all`), sent = calls.length > bl2 ? calls.at(-1).body : null;
+    ok(rles.at(-1).ev === 'done' && les && les.kind === 'lessons' && les.day === null && les.text && les.src === 'ai' && sent && String(sent.system).includes('ทริปหน้าลอง') && sent.messages[0].content.includes('ยัดลก') && !/media\/|\.jpg/.test(sent.messages[0].content),
+      'lessons: the book\'s own reviews and notes go to the helper (words only), the lessons are saved for the trip');
+    ok((await put(`/api/b/entries/${T}.lessons.all`, { trip: T, day: null, kind: 'lessons', text: 'ได้ผล\n• ยัดลก' })).ok, 'lessons: a hand edit saves'); }
   const vck = (await fetch(BASE + '/v/grandma', { redirect: 'manual' })).headers.get('set-cookie');
   ok(!vck || (await fetch(BASE + '/api/b/story', { method: 'POST', headers: { ...H, cookie: vck.split(';')[0] }, body: '{}' })).status === 403, 'viewer cannot ask for stories');
+  ok(!vck || (await fetch(`${BASE}/api/b/lessons/${T}`, { method: 'POST', headers: { ...H, cookie: vck.split(';')[0] }, body: '{}' })).status === 403, 'relatives cannot ask for a trip\'s lessons');
   ok(!vck || (await fetch(BASE + '/api/b/likes', { headers: { cookie: vck.split(';')[0] } })).status === 403, 'relatives cannot read the family-likes summary (it names places from every trip)');
 
   // browser: the button streams the story into the page and saves it
@@ -308,14 +316,14 @@ try {
   ok(await page.locator('#likesgo').count() === 1, 'notebook: the saved family-likes summary shows, with a button to sum up again');
   ok(errs.length === 0, 'no page errors ' + errs.join(' | '));
 
-  // daily cap (STORY_DAILY=17 here, every Claude button together): the 17th model call goes through, the 18th is refused before Claude is called
-  ok(calls.length === 16 && events(await (await story({ trip: T, day: 1, lang: 'th' })).text()).at(-1).ev === 'done', 'daily cap: 17th call of the day still written');
+  // daily cap (STORY_DAILY=18 here, every Claude button together): the 18th model call goes through, the 19th is refused before Claude is called
+  ok(calls.length === 17 && events(await (await story({ trip: T, day: 1, lang: 'th' })).text()).at(-1).ev === 'done', `daily cap: 18th call of the day still written (${calls.length} before it)`);
   const capped = await story({ trip: T, day: 1, lang: 'th' });
-  ok(capped.status === 429 && (await capped.json()).error === 'limit' && calls.length === 17, 'daily cap: 18th call refused with 429, model not called');
+  ok(capped.status === 429 && (await capped.json()).error === 'limit' && calls.length === 18, 'daily cap: 19th call refused with 429, model not called');
   ok((await story({ trip: T, day: 0, lang: 'th' })).status === 422, 'daily cap: an empty day still answers 422 (nothing counted)');
   // Claude usage card: today's calls (counted in Postgres) and the tokens the finished calls used
   const use = await (await fetch(BASE + '/api/b/ai', { headers: { cookie: ck } })).json();
-  ok(use.limit === 17 && use.today.calls === 17 && use.days30.calls === 17, `usage: today ${use.today.calls}/${use.limit} calls counted`);
+  ok(use.limit === 18 && use.today.calls === 18 && use.days30.calls === 18, `usage: today ${use.today.calls}/${use.limit} calls counted`);
   ok(use.today.tout > 0 && use.today.tin > 0 && use.usd30 === null, 'usage: tokens added from each finished call; no price guessed when none is set');
   ok(!vck || (await fetch(BASE + '/api/b/ai', { headers: { cookie: vck.split(';')[0] } })).status === 403, 'usage: relatives cannot see it');
 
@@ -542,7 +550,7 @@ try {
       && (await fetch(BASE + st2.theme.art.replace('{n}', '1'), { headers: { cookie: ck } })).status === 404 && artDirs() === 1,
       `bookart: the redraw drew everything again under a new version and the old one is gone (${artCalls.length - n1} calls)`);
     ok((await fetch(BASE + '/api/b/art/test-hop', { method: 'POST', headers: H, body: '{}' })).status === 429, 'bookart: ART_RUNS full drawings per book, then no more');
-    { const db = new Client({ connectionString: u.toString() }); await db.connect(); await db.query('UPDATE ai_usage SET calls=16'); await db.end(); }
+    { const db = new Client({ connectionString: u.toString() }); await db.connect(); await db.query('UPDATE ai_usage SET calls=17'); await db.end(); }
     const sv2 = await fetch(BASE + '/api/b/art/test-hop', { method: 'POST', headers: H, body: '{}' });   // runs are used up, but the allowance check comes first
     ok(sv2.status === 429 && ['runs', 'limit'].includes((await sv2.json()).error), 'bookart: a book is never started on an allowance that cannot carry it');
     { const db = new Client({ connectionString: u.toString() }); await db.connect(); await db.query('UPDATE ai_usage SET calls=0'); await db.end(); }
@@ -612,7 +620,7 @@ try {
   // ---- the helper drafts a book from photos (docs/SNAP-BOOK.md P3): names, a summary a day, the foreword — from text facts only
   // (the days' places and photo moments, the family's words); what the parents wrote stays; one call a step on the daily cap
   {
-    const db = new Client({ connectionString: u.toString() }); await db.connect(); await db.query('UPDATE ai_usage SET calls=12'); await db.end();   // 5 left of 17
+    const db = new Client({ connectionString: u.toString() }); await db.connect(); await db.query('UPDATE ai_usage SET calls=13'); await db.end();   // 5 left of 18
     const post = (u2, b, m = 'POST') => fetch(BASE + u2, { method: m, headers: H, body: JSON.stringify(b) });
     const sb = await (await post('/api/b/snap', { days: [{ date: '2025-12-12', place: { th: 'ปากช่อง', en: 'Pak Chong' } }, { date: '2025-12-13', title: { th: 'วันฝนตก', en: 'The rainy day' } }] })).json();
     const sharp = createRequire(import.meta.url)('sharp'), jp = await sharp({ create: { width: 64, height: 48, channels: 3, background: '#88aa66' } }).jpeg().toBuffer();

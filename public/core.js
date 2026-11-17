@@ -264,6 +264,9 @@ function wxLine(t, i) {
    op: {qid, seq, method, url, body?, blob?, local} — `local` describes the optimistic change so it can be re-applied after reload */
 let seq = Date.now();
 let flushing = false;
+// the texts two parents may both edit (server/bookshelf.js TEXTY) and the conflicts waiting for a parent's answer (kept on this phone)
+const TEXTY = ['quote', 'note', 'fav', 'sum', 'fore', 'letter'];
+let conflicts = (() => { try { const c = ls('conflicts'); return Array.isArray(c) ? c : []; } catch (_) { return []; } })();
 async function enqueue(op) {
   op.qid = op.qid || uid('q'); op.seq = ++seq;
   queue.push(op); applyLocal(op);
@@ -275,6 +278,7 @@ async function enqueue(op) {
 }
 function applyLocal(op) {
   const l = op.local; if (!l || !S) return;
+  idxTick++;   // the per-book lists (rowsIdx) are built again on the next ask
   const list = S[l.coll];
   const i = list.findIndex((x) => x.id === l.id);
   if (l.del) { if (i >= 0) list.splice(i, 1); return; }
@@ -319,6 +323,12 @@ async function flush() {
         await api(op.method, op.url, op.body, op.blob);
       } catch (e) {
         if (e.code === 401) break;
+        if (e.code === 409 && e.body && e.body.error === 'conflict' && e.body.current) {   // the other parent's phone changed this text: ask (sheets.js conflictSheet)
+          conflicts.push({ op: { method: op.method, url: op.url, body: op.body, local: op.local }, current: e.body.current }); ls('conflicts', conflicts);
+          queue.splice(at, 1); written++; await idb.del(op.qid);
+          if (typeof conflictSheet === 'function') setTimeout(conflictSheet, 0);
+          continue;
+        }
         if (e.code === 429 && op.limit) toast(L('วันนี้ส่งหัวใจครบแล้ว พรุ่งนี้ส่งใหม่ได้นะ', 'That’s all the hearts for today — send more tomorrow'));   // a daily cap: retrying won't help
         else if (!e.code || e.code === 408 || e.code === 429 || e.code >= 500) {   // offline / server busy: keep it, try later
           offline = !e.code; if (e.code === 429) toast(L('อัปโหลดถี่เกินไป จะลองใหม่อีกครั้ง', 'Too many uploads — will retry'));
@@ -364,14 +374,39 @@ function toThb(rows) {
 const thbLine = (rows) => { const r = toThb(rows); return !r.missing.length && rows.some((s) => s.cur !== 'THB') ? `≈ ${fmtMoney(Math.round(r.thb), 'THB')}` : ''; };
 const kidName = (slug) => { if (slug === 'both') return L('ทั้งคู่', 'Both'); const k = children().find((c) => c.slug === slug); return k ? (lang === 'th' ? k.name_th : k.name_en) : ''; };
 const kidEmoji = (slug) => (slug === 'both' ? children().map((c) => c.emoji || '🧒').join('') : (children().find((c) => c.slug === slug) || {}).emoji || '');
-const entriesOf = (tid, day) => S.entries.filter((e) => e.trip === tid && (day === undefined || e.day === day));
+/* The family's rows by book and by day, built once per state (owner, Nov 2026: "ทดสอบกับข้อมูลเยอะ" — with 12 books, 6,000 photos and
+   4,000 words, the shelf drew in 600 ms on a slow phone, most of it filtering and sorting every list for every book, day and stamp).
+   Rebuilt when the state is replaced (load), a write is laid on top (applyLocal → idxTick) or a list changes its length. Each list a
+   caller gets is a fresh copy, so a caller that sorts or splices it never changes the index. */
+let idxTick = 0, IDX = null;
+function rowsIdx(tid) {
+  const k = S && [S, idxTick, S.entries.length, S.media.length, S.places.length];
+  if (!IDX || !k || IDX.k.some((x, i) => x !== k[i])) {
+    const by = new Map(), get = (t) => { let b = by.get(t); if (!b) by.set(t, (b = { entries: [], photos: [], videos: [], audios: [], places: [], day: new Map() })); return b; };
+    if (S) {
+      for (const e of S.entries) get(e.trip).entries.push(e);
+      for (const m of S.media) get(m.trip)[isAudio(m) ? 'audios' : isVideo(m) ? 'videos' : 'photos'].push(m);
+      for (const p of S.places) get(p.trip).places.push(p);
+      for (const b of by.values()) for (const l of [b.photos, b.videos, b.audios]) l.sort((x, y) => x.at - y.at);
+    }
+    IDX = { k: k || [], by };
+  }
+  return IDX.by.get(tid) || { entries: [], photos: [], videos: [], audios: [], places: [], day: new Map() };
+}
+const idxOf = (tid, kind, day) => {
+  const b = rowsIdx(tid); if (day === undefined) return b[kind].slice();
+  const key = kind + '|' + day; let l = b.day.get(key);
+  if (!l) { l = b[kind].filter((x) => x.day === day); b.day.set(key, l); }
+  return l.slice();
+};
+const entriesOf = (tid, day) => idxOf(tid, 'entries', day);
 // photos and voice memos share the media table; mediaOf() is the photos (everything that draws a picture), audioOf() the kids' voices
 const isAudio = (m) => !!m && String(m.mime || '').startsWith('audio/');
 const isVideo = (m) => !!m && String(m.mime || '').startsWith('video/');   // video clips (≤ 30 s): their own list, never counted, printed or shared as photos
-const mediaOf = (tid, day) => S.media.filter((m) => !isAudio(m) && !isVideo(m) && m.trip === tid && (day === undefined || m.day === day)).sort((a, b) => a.at - b.at);
-const videoOf = (tid, day) => S.media.filter((m) => isVideo(m) && m.trip === tid && (day === undefined || m.day === day)).sort((a, b) => a.at - b.at);
-const audioOf = (tid, day) => S.media.filter((m) => isAudio(m) && m.trip === tid && (day === undefined || m.day === day)).sort((a, b) => a.at - b.at);
-const placesOf = (tid, day) => S.places.filter((p) => p.trip === tid && (day === undefined || p.day === day));
+const mediaOf = (tid, day) => idxOf(tid, 'photos', day);
+const videoOf = (tid, day) => idxOf(tid, 'videos', day);
+const audioOf = (tid, day) => idxOf(tid, 'audios', day);
+const placesOf = (tid, day) => idxOf(tid, 'places', day);
 // photo tags Claude may pick (server/story.js TAGS — the same keys, in the same order) + how the app shows each; a parent's own tag shows as typed
 const PHOTO_TAGS = [['kids', '🧒', 'เด็กๆ', 'Kids'], ['family', '👨‍👩‍👧‍👦', 'ครอบครัว', 'Family'], ['food', '🍜', 'อาหาร', 'Food'], ['dessert', '🍦', 'ของหวาน', 'Sweets'],
   ['animals', '🐨', 'สัตว์', 'Animals'], ['nature', '🌳', 'ธรรมชาติ', 'Nature'], ['beach', '🏖️', 'ชายหาด', 'Beach'], ['water', '💦', 'เล่นน้ำ', 'Water'],
@@ -395,7 +430,13 @@ function fmtRange(t) {
 function fmtTime(ms, tz) { try { return new Date(ms).toLocaleTimeString('en-GB', { hour: '2-digit', minute: '2-digit', timeZone: tz }); } catch (_) { return new Date(ms).toLocaleTimeString('en-GB', { hour: '2-digit', minute: '2-digit' }); } }
 // today's date in the trip's own time zone → day index or -1
 function hourIn(tz) { try { return +new Intl.DateTimeFormat('en-GB', { hour: 'numeric', hourCycle: 'h23', timeZone: tz }).format(new Date()); } catch (_) { return new Date().getHours(); } }
-function todayIn(tz) { try { return new Date().toLocaleDateString('en-CA', { timeZone: tz }); } catch (_) { return new Date().toISOString().slice(0, 10); } }
+// today's date in a zone, worked out at most once a second per zone (a formatter is costly, and the shelf asks for every book and day)
+const TODAY = {};
+function todayIn(tz) {
+  const now = Date.now(), c = TODAY[tz]; if (c && Math.abs(now - c.at) < 1000) return c.d;   // a clock set back (a phone's own, or a test's) is asked again
+  let d; try { d = new Date(now).toLocaleDateString('en-CA', { timeZone: tz }); } catch (_) { d = new Date(now).toISOString().slice(0, 10); }
+  TODAY[tz] = { at: now, d }; return d;
+}
 function dayNow(t) { const i = t.days.findIndex((d) => d.date === todayIn(t.timezone)); return i; }
 // stamp: every day Done, or the trip is over
 const tripOver = (t) => todayIn(t.timezone) > t.date_to;

@@ -3331,3 +3331,33 @@ body:not(.printbook) .yrbook section.pg{min-height:0}body:not(.printbook) .yrboo
 .ibit img{width:100%;aspect-ratio:1;object-fit:cover;border-radius:10px}
 .ibmeta{display:grid;gap:6px}.ibmeta small{color:var(--muted)}.ibmeta select{min-height:44px}
 .ibcard{border-color:var(--accent)}
+/* two parents, one text (sheets.js conflictSheet) */
+.cflist{display:grid;gap:10px;margin:10px 0 14px}
+.cfv{border:1px solid var(--rule);border-radius:14px;padding:10px 12px;background:var(--card);display:grid;gap:4px}
+.cfv.mine{border-color:var(--accent);box-shadow:inset 0 0 0 1px var(--accent)}
+.cfv small{color:var(--muted)}.cfv p{margin:0;white-space:pre-wrap;overflow-wrap:anywhere}
+/* the phones signed in (views.js viewDevices) */
+.devs{list-style:none;padding:0;margin:0 0 12px;display:grid;gap:10px}
+.devs li{display:flex;gap:10px;align-items:center;justify-content:space-between;background:var(--card);border:1px solid var(--rule);border-radius:14px;padding:10px 12px}
+.devs li.me{border-color:var(--accent);box-shadow:inset 0 0 0 1px var(--accent)}
+.devs li>div{display:grid;gap:2px;min-width:0}.devs small{color:var(--muted)}
+.codeblk .field{min-height:44px}.ckrow{display:flex;gap:8px;align-items:center;min-height:44px}
+/* letters for the future (views.js viewCapsules) */
+.caps{list-style:none;padding:0;margin:0 0 14px;display:grid;gap:10px}
+.caps li{background:var(--card);border:1px solid var(--rule);border-radius:14px;padding:12px;display:grid;gap:8px}
+.caps li.sealed{background:color-mix(in srgb,var(--accent) 8%,var(--card))}.caps li.open{border-color:var(--accent)}
+.caps small{display:block;color:var(--muted)}.captext{white-space:pre-wrap;margin:6px 0 0}
+.capform textarea{min-height:180px}
+/* search every book (views.js viewFind) */
+.findbook{margin:14px 0}.findbook h3{margin:0 0 8px}.findbook .mosaic{margin-bottom:8px}
+/* the child tells a photo's story (kid.js kidTell) and the trip's audiobook (views.js tellBook) */
+.kidtell{display:flex;gap:10px;justify-content:center;flex-wrap:wrap;margin-top:10px}.tellrec.on{background:#E53935;color:#fff}
+.tellstrip{display:flex;gap:10px;overflow-x:auto;padding:4px 2px 10px;scroll-snap-type:x mandatory}
+.tellcard{position:relative;flex:none;width:120px;height:120px;border-radius:16px;overflow:hidden;border:3px solid transparent;padding:0;scroll-snap-align:center}
+.tellcard img{width:100%;height:100%;object-fit:cover;display:block}.tellcard span{position:absolute;right:6px;bottom:6px;font-size:22px}
+.tellcard.on{border-color:var(--accent)}
+.lessonbook{border:1px solid var(--rule);border-radius:14px;padding:6px 12px;margin:8px 0;background:var(--card)}.lessonbook summary{min-height:44px;display:flex;align-items:center;gap:8px;cursor:pointer}
+.lessontxt{width:100%;margin:6px 0}
+.hwatch{list-style:none;padding:0;margin:0;display:grid;gap:6px}
+.hcost{width:100%;border-collapse:collapse;font-size:14px}.hcost th,.hcost td{text-align:left;padding:6px 4px;border-bottom:1px solid var(--rule)}.hcost small{color:var(--muted)}
+.hbarm{display:block;height:6px;width:var(--w);border-radius:4px;background:var(--accent);margin-bottom:3px}

@@ -16,7 +16,9 @@ const MAX_IN = 400e6;   // what a phone may send (a 30 s 4K clip can be 200 MB+)
 const MIMES = { 'video/mp4': 'mp4', 'video/quicktime': 'mov', 'video/webm': 'webm', 'video/3gpp': '3gp', 'video/x-m4v': 'm4v' };
 const FFMPEG = process.env.FFMPEG || 'ffmpeg';
 
-function run(args, ms = 240e3) {
+const { ffmpegTurn } = require('./heavy');
+function run(args, ms = 240e3) { return ffmpegTurn(() => runNow(args, ms)); }   // one ffmpeg at a time across clips and films (server/heavy.js)
+function runNow(args, ms) {
   return new Promise((resolve, reject) => {
     const p = spawn(FFMPEG, args, { stdio: ['ignore', 'ignore', 'pipe'] });
     let err = '';

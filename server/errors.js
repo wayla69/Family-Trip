@@ -90,6 +90,29 @@ function create({ pool, media, A, family, reelKey }) {
       res.json({ books, all, total: books.reduce((s, b) => s + b.total, 0) });
     } catch (e) { next(e); }
   });
+  /* Month by month (owner, Nov 2026: "ค่าใช้จ่ายรายเดือน"): the room the photos, clips and voices take at each month's end (added up from when
+     each was kept) and the helper's calls and words read/written that month (ai_usage). Money only from the owner's own prices:
+     AI_USD_PER_MTOK_IN/_OUT for the helper, STORAGE_USD_PER_GB_MONTH for the room, SERVER_USD_MONTH for the server — never guessed. */
+  r.get('/api/b/health/costs', A.requireEditor, async (req, res, next) => {
+    try {
+      res.setHeader('Cache-Control', 'no-store');
+      const added = await q("SELECT to_char(date_trunc('month', created_at),'YYYY-MM') m, sum(bytes)::bigint b FROM media WHERE family_id=$1 GROUP BY 1", [family]);
+      const ai = await q("SELECT to_char(date_trunc('month', day),'YYYY-MM') m, sum(calls)::int calls, sum(tokens_in)::bigint tin, sum(tokens_cached)::bigint tcache, sum(tokens_out)::bigint tout FROM ai_usage WHERE family_id=$1 GROUP BY 1", [family]);
+      const now = new Date(), months = [];
+      for (let k = 11; k >= 0; k--) { const d = new Date(Date.UTC(now.getUTCFullYear(), now.getUTCMonth() - k, 1)); months.push(d.toISOString().slice(0, 7)); }
+      const before = added.filter((x) => x.m < months[0]).reduce((s, x) => s + Number(x.b), 0);
+      const pin = Number(process.env.AI_USD_PER_MTOK_IN) || 0, pout = Number(process.env.AI_USD_PER_MTOK_OUT) || 0, pgb = Number(process.env.STORAGE_USD_PER_GB_MONTH) || 0, psrv = Number(process.env.SERVER_USD_MONTH) || 0;
+      let run = before;
+      const rows = months.map((m) => {
+        const add = Number((added.find((x) => x.m === m) || {}).b || 0); run += add;
+        const a = ai.find((x) => x.m === m) || { calls: 0, tin: 0, tcache: 0, tout: 0 };
+        const usdAi = pin || pout ? (Number(a.tin) * pin + Number(a.tcache) * pin * 0.1 + Number(a.tout) * pout) / 1e6 : null;
+        const usdStore = pgb ? (run / 1073741824) * pgb : null;
+        return { month: m, stored: run, added: add, calls: a.calls, tin: Number(a.tin), tcache: Number(a.tcache), tout: Number(a.tout), usdAi, usdStore, usdServer: psrv || null };
+      });
+      res.json({ months: rows, priced: { ai: !!(pin || pout), store: !!pgb, server: !!psrv } });
+    } catch (e) { next(e); }
+  });
   return { router: r };
 }
 module.exports = { create, scrub };

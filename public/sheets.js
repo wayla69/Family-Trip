@@ -6,6 +6,7 @@ function putEntry(t, row, id) {
   const body = { trip: t.id, day: row.day, kind: row.kind, child: row.child || null, text: row.text || '', mood: row.mood || null, first_key: row.first_key || null, lang: row.lang || null, highlight: !!row.highlight, at: row.at || Date.now(), ...(row.accept ? { accept: true } : {}) };
   const cur = S.entries.find((e) => e.id === id), same = cur && cur.text === body.text, tr = same ? cur.tr || null : null;   // an edited text drops its translation (the server does the same)
   const src = same && !row.accept ? cur.src || null : null;   // the helper's draft mark: gone once the text changes or the parents keep the draft
+  if (TEXTY.includes(body.kind) && cur && cur.v) body.base = cur.v;   // the version this phone edits from: a change from the other parent's phone since is told, not written over
   return enqueue({ method: 'PUT', url: '/api/b/entries/' + encodeURIComponent(id), body, local: { coll: 'entries', id, row: { ...body, tr, src, created_by: S.me.name, mine: true } } });
 }
 const delEntry = (id) => enqueue({ method: 'DELETE', url: '/api/b/entries/' + encodeURIComponent(id), local: { coll: 'entries', id, del: true } });
@@ -116,6 +117,19 @@ async function addPhotos(t, day, files, spot, metas) {
 /* "This looks like a photo already in the book": each held photo beside the one it looks like; a tap picks it, "add anyway" sends
    those picked, "no thanks" leaves them on the phone */
 let nearHeld = null;
+/* Two parents, one text (owner, Nov 2026: "พ่อแม่แก้พร้อมกันสองเครื่อง"; migration 0032): when the other phone changed a kid's words,
+   a note, a summary, the foreword, the letter or a caption since this phone started editing, the server answers 409 conflict with that
+   version (core.js flush keeps it in `conflicts`); this sheet shows both, one at a time — keep mine (sent again with force) or theirs. */
+function conflictSheet() {
+  const c = conflicts[0]; if (!c) return;
+  const mine = c.op.body.text !== undefined ? c.op.body.text : c.op.body.caption, when = c.current.at ? new Date(c.current.at).toLocaleString(LOC(), { day: 'numeric', month: 'short', hour: '2-digit', minute: '2-digit' }) : '';
+  openSheet(`<h3>${L('ข้อความนี้ถูกแก้จากอีกเครื่อง', 'This was changed on another phone')}</h3>
+<p class="sub">${L('เก็บอันไหนไว้ดี อีกอันจะหายไป', 'Which one stays? The other goes')}${conflicts.length > 1 ? L(` · อีก ${conflicts.length - 1} ข้อความ`, ` · ${conflicts.length - 1} more`) : ''}</p>
+<div class="cflist"><div class="cfv"><b>${L('ของอีกเครื่อง', 'The other phone')}${c.current.by ? ` · ${esc(c.current.by)}` : ''}</b>${when ? `<small>${esc(when)}</small>` : ''}<p>${esc(c.current.text) || `<i>${L('(ว่าง)', '(empty)')}</i>`}</p></div>
+<div class="cfv mine"><b>${L('ของเครื่องนี้', 'This phone')}</b><p>${esc(mine) || `<i>${L('(ว่าง)', '(empty)')}</i>`}</p></div></div>
+<button type="button" class="btn wide" data-a="cfkeep" data-v="mine">${L('เก็บของเครื่องนี้', 'Keep this phone’s')}</button>
+<button type="button" class="btn ghost wide" data-a="cfkeep" data-v="theirs">${L('เก็บของอีกเครื่อง', 'Keep the other phone’s')}</button>`);
+}
 function nearSheet(t, held, send) {
   if (nearHeld) nearHeld.urls.forEach((u) => URL.revokeObjectURL(u));
   const urls = [], src = (b) => { const u = URL.createObjectURL(b); urls.push(u); return u; };
@@ -131,7 +145,7 @@ function nearSheet(t, held, send) {
 /* ---------- voice memos: a few seconds of the kids' own voices, recorded on the phone (MediaRecorder) and queued exactly like a
    photo (blob upload, retried offline). 30 s cap. The clip stays in our bucket; it never goes to Claude or anywhere else. */
 let recState = null, kidAudioEl = null;
-async function startRec(t, day) {
+async function startRec(t, day, about) {   // about: the photo a child is telling the story of (kid mode)
   let stream;
   try { stream = await navigator.mediaDevices.getUserMedia({ audio: true }); } catch (_) { toast(L('ไม่ได้รับอนุญาตให้ใช้ไมค์', 'Microphone not allowed')); return; }
   const mime = ['audio/webm;codecs=opus', 'audio/webm', 'audio/mp4'].find((m) => MediaRecorder.isTypeSupported(m)) || '';
@@ -143,7 +157,7 @@ async function startRec(t, day) {
     const secs = Math.round((Date.now() - st.started) / 1000), type = (rec.mimeType || mime || 'audio/webm').split(';')[0];
     const blob = new Blob(chunks, { type });
     if (blob.size < 1000 || secs < 1) { toast(L('สั้นเกินไป ลองอัดใหม่', 'Too short — try again')); safeRender(); return; }
-    await addClip(t, day, blob, secs); safeRender();   // never over a field being typed in (the 30 s cap stops the recorder by itself)
+    await addClip(t, day, blob, secs, about); safeRender();   // never over a field being typed in (the 30 s cap stops the recorder by itself)
   };
   recState = { rec, stream, started: Date.now(), timer: setInterval(() => { const el = $('#rectime'), sec = Math.round((Date.now() - recState.started) / 1000); if (el) el.textContent = `0:${String(sec).padStart(2, '0')}`; if (sec >= 30) stopRec(); }, 250) };
   rec.start(); render();
@@ -166,11 +180,11 @@ async function addVideo(t, day, file, shotAt, quiet) {   // shotAt: when it was 
   if (!quiet) toast(secs > 31 ? L('เก็บ 30 วินาทีแรกของคลิปนี้', 'The first 30 s of this clip will be kept') : L('เพิ่มคลิปแล้ว', 'Clip added'));
   return true;
 }
-async function addClip(t, day, blob, secs) {
+async function addClip(t, day, blob, secs, about) {
   const id = uid('vc'), at = Date.now(), type = blob.type || 'audio/webm';
-  await enqueue({ method: 'PUT', url: `/api/b/media/${id}?trip=${encodeURIComponent(t.id)}&day=${day}&at=${at}&kind=audio`, blob,
-    local: { coll: 'media', id, row: { trip: t.id, day, caption: '', highlight: false, at, w: 0, h: 0, mime: type } } });
-  toast(L(`เก็บเสียง ${secs} วินาทีแล้ว`, `${secs} s of voice saved`));
+  await enqueue({ method: 'PUT', url: `/api/b/media/${id}?trip=${encodeURIComponent(t.id)}&day=${day}&at=${at}&kind=audio${about ? '&about=' + encodeURIComponent(about) : ''}`, blob,
+    local: { coll: 'media', id, row: { trip: t.id, day, caption: '', highlight: false, at, w: 0, h: 0, mime: type, place: about ? 'photo:' + about : '' } } });
+  if (!about) toast(L(`เก็บเสียง ${secs} วินาทีแล้ว`, `${secs} s of voice saved`));
 }
 
 /* ---------- a book from a PDF (#/import): page state, polling, upload ---------- */
@@ -241,6 +255,8 @@ const A = {
     $$('.tp.full').forEach((x) => x.classList.toggle('repall', f));
     $$('.repseg button').forEach((x) => x.setAttribute('aria-pressed', String((x.dataset.v === '1') === f)));
   },
+  findwho(b) { findWho = b.dataset.v; $$('[data-a="findwho"]').forEach((x) => x.setAttribute('aria-pressed', String(x.dataset.v === findWho))); const r = $('#findres'); if (r) r.innerHTML = findResults(); },
+  findfirst(b) { findFirsts = !findFirsts; b.setAttribute('aria-pressed', String(findFirsts)); const r = $('#findres'); if (r) r.innerHTML = findResults(); },
   sq(b) { bookQ = b.dataset.v; const i = $('#bookq'), r = $('#bookres'), t = trip(route().parts[1]); if (i) i.value = bookQ; if (r && t) r.innerHTML = bookResults(t); },   // a suggestion chip
   eatgo(b) { eatTrip = b.dataset.t; eatQ = b.dataset.v; eatKind = -1; eatPick = false; location.hash = `#/t/${encodeURIComponent(b.dataset.t)}/eat/all`; },   // a place found by the search: open the list filtered to it
   async remind() {
@@ -393,7 +409,7 @@ const A = {
     if (queue.length) { toast(L('ยังมีบันทึกรอส่ง — ต่อเน็ตให้ส่งเสร็จก่อนออกจากระบบ', 'Some records are still waiting to upload — connect first')); return; }
     if (!armed(b, L('แตะอีกครั้งเพื่อออกจากระบบ', 'Tap again to sign out'))) return;
     try { await api('POST', '/api/logout'); } catch (_) {}
-    await idb.set('state', null); ls('state', null); ls('lostTel', null);   // the parents' numbers for the lost-child card go too
+    await idb.set('state', null); ls('state', null); ls('lostTel', null); ls('conflicts', null); conflicts = [];   // the parents' numbers for the lost-child card go too, and any text waiting to be settled
     S = null; location.hash = '#/'; render();
   },
   delentry(b) { if (armed(b)) delEntry(b.dataset.v); },
@@ -567,6 +583,32 @@ const A = {
     finally { b.disabled = false; b.removeAttribute('aria-busy'); }
   },
   // what our family likes: the notebook of every trip → Claude → saved for both parents (settings), streamed into #likestext
+  async lessonsgo(b) {   // the helper writes one trip's lessons into its box, streamed, then saved by the server
+    if (storyCtl) return;
+    if (!navigator.onLine) { toast(L('ต้องต่อเน็ตก่อน ผู้ช่วยจึงทำงานได้', 'The helper needs a connection')); return; }
+    const t = trip(b.dataset.t), box = document.getElementById('lessons-' + b.dataset.t); if (!t || !box) return;
+    const before = box.value; box.value = ''; box.rows = 9; b.disabled = true; storyCtl = new AbortController(); let text = '';
+    try {
+      const r = await fetch(`/api/b/lessons/${encodeURIComponent(t.id)}`, { method: 'POST', credentials: 'same-origin', signal: storyCtl.signal, headers: { 'x-mb': '1', 'content-type': 'application/json' }, body: JSON.stringify({ lang }) });
+      if (r.status === 422) { box.value = before; toast(L('เล่มนี้ยังมีบันทึกน้อยเกินไป', 'This book has too few notes yet')); return; }
+      if (r.status === 429) { box.value = before; toast(L('วันนี้ผู้ช่วยทำงานครบจำนวนแล้ว — พรุ่งนี้ใช้ต่อได้', 'That’s all the helper can do today — more tomorrow')); return; }
+      if (!r.ok) throw new Error('http ' + r.status);
+      const rd = r.body.getReader(), dec = new TextDecoder(); let buf = '';
+      for (;;) {
+        const { done, value } = await rd.read(); if (done) break;
+        buf += dec.decode(value, { stream: true }); let i;
+        while ((i = buf.indexOf('\n\n')) >= 0) {
+          const chunk = buf.slice(0, i); buf = buf.slice(i + 2); let ev = null, data = '';
+          chunk.split('\n').forEach((l) => { if (l.startsWith('event: ')) ev = l.slice(7); else if (l.startsWith('data: ')) data += l.slice(6); });
+          const d = JSON.parse(data || '{}');
+          if (!ev) { text += d.t; box.value = text; }
+          else if (ev === 'done') { storyCtl = null; await load().catch(() => {}); toast(L('เก็บบทเรียนไว้แล้ว', 'Saved')); }
+          else if (ev === 'error') { box.value = before; toast(L('ไม่สำเร็จ ลองใหม่อีกครั้ง', 'That didn’t work — try again')); }
+        }
+      }
+    } catch (e) { box.value = before; if (e.name !== 'AbortError') toast(L('ไม่สำเร็จ ลองใหม่อีกครั้ง', 'That didn’t work — try again')); }
+    finally { storyCtl = null; b.disabled = false; safeRender(); }
+  },
   async likes(b) {
     if (storyCtl) return;
     if (!navigator.onLine) { toast(L('ต้องต่อเน็ตก่อน ผู้ช่วยจึงทำงานได้', 'The helper needs a connection')); return; }
@@ -886,7 +928,7 @@ async function saveBlur(el) {
   }
   const t = trip(el.dataset.t);
   // passport Explorer ID answers are per child, not per day
-  const field = kind === 'field', whole = kind === 'letter' || kind === 'fore', d = field || whole ? null : +el.dataset.d;   // the letter and the foreword belong to the whole trip
+  const field = kind === 'field', whole = kind === 'letter' || kind === 'fore' || kind === 'lessons', d = field || whole ? null : +el.dataset.d;   // the letter and the foreword belong to the whole trip
   const id = field ? `${t.id}.field.${el.dataset.v}.${el.dataset.k}` : whole ? `${t.id}.${kind}.all` : `${t.id}.${kind}.d${d}`, cur = S.entries.find((e) => e.id === id);
   delete drafts[el.dataset.draft];
   if (!text) { if (cur) await delEntry(id); return; }
@@ -901,6 +943,58 @@ function putReview(card, patch) {
   return enqueue({ method: 'PUT', url: '/api/b/reviews/' + encodeURIComponent(id), body, local: { coll: 'reviews', id, row: { ...body, at: Date.now(), created_by: S.me.name } } });
 }
 Object.assign(A, {
+  capto(b) { capKeep(); CAP.edit.child = b.dataset.v; safeRender(); },
+  capage(b) { capKeep(); CAP.edit.open_on = b.dataset.v; safeRender(); },
+  capedit(b) { const c = (CAP.list || []).find((x) => x.id === b.dataset.v); if (!c) return; CAP.edit = { id: c.id, child: c.child, title: c.title, text: c.text || '', open_on: c.open_on }; safeRender(); setTimeout(() => { const el = $('#captext'); if (el) el.focus(); }, 0); },
+  async capsave(b) {
+    capKeep(); const e = CAP.edit, say = (t) => { const m = $('#capmsg'); if (m) m.textContent = t; };
+    if (!e.text.trim()) return say(L('ยังไม่ได้เขียนจดหมาย', 'The letter is empty'));
+    if (!e.open_on) return say(L('เลือกวันที่จะเปิด', 'Pick the day it opens'));
+    b.disabled = true;
+    try { await api('PUT', `/api/b/capsules/${encodeURIComponent(e.id)}`, e); CAP.edit = null; toast(L('บันทึกแล้ว ปิดผนึกเมื่อพร้อม', 'Saved — seal it when it is ready')); capLoad(true); }
+    catch (x) { say(x && x.error === 'past' ? L('วันที่เปิดต้องเป็นวันในอนาคต', 'The day must be in the future') : x && x.error === 'sealed' ? L('ฉบับนี้ปิดผนึกแล้ว แก้ไม่ได้', 'This one is sealed') : L('บันทึกไม่ได้ ต้องมีเน็ต', 'Could not save — you need a connection')); }
+    finally { b.disabled = false; }
+  },
+  async capseal(b) {
+    if (!b.dataset.armed) { b.dataset.armed = '1'; b.textContent = L('แตะอีกครั้ง หลังจากนี้แก้และอ่านไม่ได้จนถึงวันเปิด', 'Tap again — after this it cannot be read or changed until its day'); return; }
+    b.disabled = true;
+    try { await api('POST', `/api/b/capsules/${encodeURIComponent(b.dataset.v)}/seal`); toast(L('ปิดผนึกแล้ว 🔒', 'Sealed 🔒')); } catch (_) { toast(L('ปิดผนึกไม่ได้ ลองอีกครั้ง', 'Could not seal — try again')); }
+    capLoad(true);
+  },
+  async capdel(b) {
+    if (!b.dataset.armed) { b.dataset.armed = '1'; b.textContent = L('แตะอีกครั้งเพื่อลบ', 'Tap again to delete'); return; }
+    b.disabled = true;
+    try { await api('DELETE', `/api/b/capsules/${encodeURIComponent(b.dataset.v)}`); } catch (_) {}
+    if (CAP.edit && CAP.edit.id === b.dataset.v) CAP.edit = null;
+    capLoad(true);
+  },
+  async devout(b) {
+    if (!b.dataset.armed) { b.dataset.armed = '1'; b.textContent = L('แตะอีกครั้ง', 'Tap again'); return; }
+    b.disabled = true;
+    try { await api('POST', `/api/b/devices/${encodeURIComponent(b.dataset.v)}/out`); toast(L('เครื่องนั้นออกจากระบบแล้ว', 'That phone is signed out')); } catch (_) { toast(L('ทำไม่ได้ ลองอีกครั้ง', 'Could not — try again')); }
+    devLoad(true);
+  },
+  async devoutall(b) {
+    if (!b.dataset.armed) { b.dataset.armed = '1'; b.textContent = L('แตะอีกครั้งเพื่อให้ทุกเครื่องออก', 'Tap again to sign them all out'); return; }
+    b.disabled = true;
+    try { const r = await api('POST', '/api/b/devices/out-others'); toast(L(`ให้ออกแล้ว ${r.out} เครื่อง`, `${r.out} signed out`)); } catch (_) { toast(L('ทำไม่ได้ ลองอีกครั้ง', 'Could not — try again')); }
+    devLoad(true);
+  },
+  async codesave(b) {
+    const v = (id) => ($('#' + id) || {}).value || '', msg = $('#codemsg'), say = (t) => { if (msg) msg.textContent = t; };
+    const old = v('codeold'), code = v('codenew');
+    if (!/^\d{6,12}$/.test(code)) return say(L('รหัสใหม่ต้องเป็นตัวเลข 6–12 หลัก', 'The new code is 6–12 digits'));
+    if (code !== v('codenew2')) return say(L('รหัสใหม่สองช่องไม่ตรงกัน', 'The two new codes differ'));
+    b.disabled = true;
+    try {
+      const r = await api('PUT', '/api/b/family/code', { old, code, others: !!($('#codeothers') || {}).checked });
+      ['codeold', 'codenew', 'codenew2'].forEach((id) => { const el = $('#' + id); if (el) el.value = ''; });
+      say(L('เปลี่ยนรหัสแล้ว ใช้รหัสใหม่ตอนเข้าระบบครั้งต่อไป', 'Changed — use the new code at the next sign-in') + (r.out ? L(` · ให้ออก ${r.out} เครื่อง`, ` · ${r.out} signed out`) : ''));
+      devLoad(true);
+    } catch (e) {
+      say(e && e.error === 'old' ? L('รหัสเดิมไม่ถูก', 'The current code is wrong') : e && e.error === 'pin-taken' ? L('รหัสนี้ใช้กับญาติอยู่ เลือกรหัสอื่น', 'The relatives use that code — pick another') : e && e.error === 'same' ? L('รหัสใหม่เหมือนรหัสเดิม', 'That is the current code') : e && e.code === 429 ? L('ลองผิดหลายครั้ง รอ 10 นาที', 'Too many tries — wait 10 minutes') : L('เปลี่ยนไม่ได้ ลองอีกครั้ง', 'Could not change it — try again'));
+    } finally { b.disabled = false; }
+  },
   inboxpick(b) {   // a relative picks photos to send for a book
     const from = (($('#hfrom') || {}).value || ls('heartfrom') || '').trim();
     if (!from) { const f = $('#hfrom'); if (f) f.focus(); toast(L('ใส่ชื่อผู้ส่งก่อน เช่น ยาย', 'Type who it is from first, e.g. Grandma')); return; }
@@ -925,6 +1019,17 @@ Object.assign(A, {
     const id = b.dataset.v; b.disabled = true;
     try { await api('DELETE', `/api/b/inbox/${encodeURIComponent(id)}`); INBOX.items = (INBOX.items || []).filter((x) => x.id !== id); } catch (_) { toast(L('ลบไม่ได้ ลองอีกครั้ง', 'Could not delete — try again')); }
     safeRender();
+  },
+  async cfkeep(b) {   // a conflict settled: this phone's text again with force, or the other phone's kept (the state is read again)
+    const c = conflicts.shift(); ls('conflicts', conflicts); if (!c) return closeSheet();
+    if (b.dataset.v === 'mine') await enqueue({ ...c.op, qid: undefined, body: { ...c.op.body, force: true } });
+    else await load().catch(() => {});
+    if (conflicts.length) conflictSheet(); else { closeSheet(); safeRender(); }
+  },
+  tellplay(b) {   // the audiobook: play this telling, then the next card's
+    const au = $('#tellaudio'), cards = $$('.tellcard'); if (!au) return;
+    const go = (k) => { const c = cards[k]; if (!c) { cards.forEach((x) => x.classList.remove('on')); return; } cards.forEach((x) => x.classList.toggle('on', x === c)); c.scrollIntoView({ block: 'nearest', inline: 'center' }); const m = S.media.find((x) => x.id === c.dataset.v); au.src = (m && m.local) || `/media/${encodeURIComponent(c.dataset.v)}`; au.onended = () => go(k + 1); au.play().catch(() => {}); };
+    go(+b.dataset.k);
   },
   famzoom(b) { const r = route().parts, tid = r[0] === 'map' ? r[1] || '' : ''; FM.zoom = b.dataset.v ? { tid, ids: b.dataset.v.split('~') } : null; FM.pick = null; if (typeof kidWorldAt !== 'undefined') kidWorldAt = null; if (typeof beep === 'function' && r[0] === 'kid') beep('tap'); safeRender(); },
   fampin(b) { const tid = route().parts[1] || ''; FM.pick = FM.pick && FM.pick.tid === tid && FM.pick.k === +b.dataset.v ? null : { tid, k: +b.dataset.v }; safeRender(); },
@@ -1128,7 +1233,7 @@ function lbAct(k, btn) {
 function saveCaption(inp) {
   const m = lbState && lbState.list[lbState.i]; if (!m || m.caption === inp.value) return;
   m.caption = inp.value;
-  enqueue({ method: 'PATCH', url: '/api/b/media/' + encodeURIComponent(m.id), body: { caption: inp.value }, local: { coll: 'media', id: m.id, row: { caption: inp.value } } });
+  enqueue({ method: 'PATCH', url: '/api/b/media/' + encodeURIComponent(m.id), body: { caption: inp.value, ...(m.v ? { base: m.v } : {}) }, local: { coll: 'media', id: m.id, row: { caption: inp.value } } });
 }
 // the lightbox's tags ("food, kids" → ['food','kids'], at most 10) and place: saved like a caption when the box is left
 function saveTags(inp) {
@@ -1228,12 +1333,12 @@ document.addEventListener('click', (e) => {
   const tl = e.target.closest('.tl.plan > li'); if (tl && !e.target.closest('a')) { tlToggle(tl); return; }   // a long timeline row shows two lines (Today: its first clause); a tap shows it all
   if (e.target.id === 'scrim') closeSheet();
 });
-document.addEventListener('input', (e) => { const el = e.target; if (el.id === 'erasetxt') { eraseTyped = el.value; const bt = document.querySelector('[data-a="erase"]'); if (bt) bt.disabled = el.value.trim() !== appName(); } if (el.dataset && el.dataset.emf) emoForm[el.dataset.emf] = el.value; if (el.dataset && el.dataset.fx) { const fx = ls('fx') || {}, v = parseFloat(String(el.value).replace(',', '.')); if (v > 0 && v < 100000) fx[el.dataset.fx] = v; else delete fx[el.dataset.fx]; ls('fx', fx); const t = trip(route().parts[1]), r = $('#fxres'); if (t && r) r.innerHTML = fxResult(t); document.querySelectorAll('.fxa').forEach((x) => { const rows = spendOf(t.id).filter((s2) => s2.cur === x.dataset.fxc); x.textContent = thbLine(rows); }); } if (el.dataset && el.dataset.lc) { const v = ls('lostTel') || ['', '']; v[+el.dataset.lc] = el.value.slice(0, 40); ls('lostTel', v); } if (el.dataset && el.dataset.draft) drafts[el.dataset.draft] = el.value; if (el.dataset && el.dataset.fam && fam) { const [i, f] = el.dataset.fam.split(':'), k = fam.kids[+i]; if (k) { k[f] = el.value; const tag = el.closest('.famkid') && el.closest('.famkid').querySelector('.famtag b'); if (tag && (f === 'name_th' || f === 'name_en')) tag.textContent = L(k.name_th || k.name_en, k.name_en || k.name_th) || L('ลูกคนใหม่', 'New child'); } } if (el.dataset && el.dataset.famp && fam) { const [o, l] = el.dataset.famp.split(':'); fam[o][l] = el.value; const pv = $('.fampreview'), b = famBuilt(); if (pv) { pv.querySelector('b').textContent = L(fam.app.th, fam.app.en) || L(b.app.th, b.app.en); pv.querySelector('small').textContent = L(fam.kicker.th, fam.kicker.en) || L(b.kicker.th, b.kicker.en); } } if (el.id === 'eatq') { eatQ = el.value.trim(); eatFilter(); } if (el.id === 'bookq') { bookQ = el.value; const r = $('#bookres'), t = trip(route().parts[1]); if (r && t) r.innerHTML = bookResults(t); } });
+document.addEventListener('input', (e) => { const el = e.target; if (el.id === 'erasetxt') { eraseTyped = el.value; const bt = document.querySelector('[data-a="erase"]'); if (bt) bt.disabled = el.value.trim() !== appName(); } if (el.dataset && el.dataset.emf) emoForm[el.dataset.emf] = el.value; if (el.dataset && el.dataset.fx) { const fx = ls('fx') || {}, v = parseFloat(String(el.value).replace(',', '.')); if (v > 0 && v < 100000) fx[el.dataset.fx] = v; else delete fx[el.dataset.fx]; ls('fx', fx); const t = trip(route().parts[1]), r = $('#fxres'); if (t && r) r.innerHTML = fxResult(t); document.querySelectorAll('.fxa').forEach((x) => { const rows = spendOf(t.id).filter((s2) => s2.cur === x.dataset.fxc); x.textContent = thbLine(rows); }); } if (el.dataset && el.dataset.lc) { const v = ls('lostTel') || ['', '']; v[+el.dataset.lc] = el.value.slice(0, 40); ls('lostTel', v); } if (el.dataset && el.dataset.draft) drafts[el.dataset.draft] = el.value; if (el.dataset && el.dataset.fam && fam) { const [i, f] = el.dataset.fam.split(':'), k = fam.kids[+i]; if (k) { k[f] = el.value; const tag = el.closest('.famkid') && el.closest('.famkid').querySelector('.famtag b'); if (tag && (f === 'name_th' || f === 'name_en')) tag.textContent = L(k.name_th || k.name_en, k.name_en || k.name_th) || L('ลูกคนใหม่', 'New child'); } } if (el.dataset && el.dataset.famp && fam) { const [o, l] = el.dataset.famp.split(':'); fam[o][l] = el.value; const pv = $('.fampreview'), b = famBuilt(); if (pv) { pv.querySelector('b').textContent = L(fam.app.th, fam.app.en) || L(b.app.th, b.app.en); pv.querySelector('small').textContent = L(fam.kicker.th, fam.kicker.en) || L(b.kicker.th, b.kicker.en); } } if (el.id === 'eatq') { eatQ = el.value.trim(); eatFilter(); } if (el.id === 'findq') { findQ = el.value; const r = $('#findres'); if (r) r.innerHTML = findResults(); } if (el.id === 'bookq') { bookQ = el.value; const r = $('#bookres'), t = trip(route().parts[1]); if (r && t) r.innerHTML = bookResults(t); } });
 document.addEventListener('focusout', (e) => { const el = e.target; if (el.dataset && el.dataset.aBlur) saveBlur(el); if (el.id === 'lbcap') saveCaption(el); if (el.id === 'lbtags' || el.id === 'lbplace') saveTags(el); });
 document.addEventListener('focusout', (e) => {   // a voice memo's caption ("who said what") saves when the box is left, like a photo caption
   const el = e.target; if (!el.classList || !el.classList.contains('clipcap')) return;
   const id = el.dataset.v, m = S && S.media.find((x) => x.id === id), cap = el.value.trim();
-  if (m && (m.caption || '') !== cap) enqueue({ method: 'PATCH', url: '/api/b/media/' + encodeURIComponent(id), body: { caption: cap }, local: { coll: 'media', id, row: { caption: cap } } });
+  if (m && (m.caption || '') !== cap) enqueue({ method: 'PATCH', url: '/api/b/media/' + encodeURIComponent(id), body: { caption: cap, ...(m.v ? { base: m.v } : {}) }, local: { coll: 'media', id, row: { caption: cap } } });
 });
 document.addEventListener('change', (e) => {
   if (e.target.id === 'lbday' && lbState) {   // a book from photos: this photo belongs to another day (the queue carries it; the viewer moves on)
@@ -1361,3 +1466,7 @@ document.addEventListener('change', async (e) => {
   INBOX.sending = 0; inboxLoad(true);
   toast(ok ? L(`ส่งแล้ว ${ok} รูป รอพ่อแม่ดู`, `${ok} sent — waiting for the parents`) : L('ส่งไม่ได้ ต้องมีเน็ต', 'Not sent — you need a connection'));
 });
+
+// the letter being written keeps what was typed over a redraw (a chip tap, the list coming back)
+function capKeep() { if (!CAP.edit) return; const v = (id) => { const el = $('#' + id); return el ? el.value : null; }; const t = v('captitle'), x = v('captext'), d = v('capdate'); if (t !== null) CAP.edit.title = t; if (x !== null) CAP.edit.text = x; if (d !== null && d) CAP.edit.open_on = d; }
+document.addEventListener('input', (e) => { if (['captitle', 'captext', 'capdate'].includes(e.target.id)) capKeep(); });

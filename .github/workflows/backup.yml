@@ -79,6 +79,7 @@ jobs:
           for i in $(seq 1 60); do curl -fs http://localhost:3100/healthz > /dev/null && break; sleep 1; done
           DRILL_BASE=http://localhost:3100 node scripts/restore-drill.mjs memory-book-backup.zip
       - name: Encrypt the backup
+        id: encrypt
         if: always() && steps.due.outputs.run == 'yes'
         env:
           MB_BACKUP_PASSPHRASE: ${{ secrets.MB_BACKUP_PASSPHRASE }}
@@ -99,6 +100,16 @@ jobs:
           retention-days: ${{ steps.due.outputs.keep }}
           if-no-files-found: error
           compression-level: 0
+      - name: Tell the app how the copy went (it pushes the owner's phones when it failed)
+        if: always() && steps.due.outputs.run == 'yes'
+        env:
+          MB_URL: ${{ secrets.MB_URL }}
+          MB_BACKUP_TOKEN: ${{ secrets.MB_BACKUP_TOKEN }}
+          COPY_OK: ${{ steps.encrypt.outcome == 'success' }}
+          DRILL: ${{ steps.drill.outcome == 'success' && 'ok' || steps.drill.outcome == 'failure' && 'failed' || 'skipped' }}
+        run: |
+          curl -fsS -o /dev/null -X POST "$MB_URL/api/backup/report" -H "Authorization: Bearer $MB_BACKUP_TOKEN" -H 'content-type: application/json' \
+            -d "{\"ok\":$COPY_OK,\"drill\":\"$DRILL\"}" || echo "the app could not be told (it alerts on a late copy by itself)"
       - name: The restore drill failed
         if: steps.drill.outcome == 'failure'
         run: |
