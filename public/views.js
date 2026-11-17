@@ -1377,8 +1377,10 @@ function infoBlocks(t) {
   // a long opening paragraph: its first point stays, the rest folds under "อ่านต่อ"
   const lede = (x) => { if (!(x && T(x))) return ''; if (T(x).length <= 150) return `<p class="lede">${esc(T(x))}</p>`;
     const p = points(T(x)); return p.length > 1 ? `<p class="lede">${pt(p[0])}</p>${fold(`<span class="more">${L('อ่านต่อ', 'Read more')}</span>`, pts(p.slice(1).join(' · '), 'lede'), 'ledemore')}` : pts(T(x), 'lede'); };
-  const list = (items) => { const xs = items.flatMap((x) => { const p = points(T(x)); return p.length >= 3 && p.every((y) => y.length < 40) ? p : [T(x)]; });
-    if (xs.length > 1 && xs.every((x) => /^\d+\.\s/.test(x))) return `<ol class="tips nums">${xs.map((x) => `<li>${lead(x.replace(/^\d+\.\s+/, ''))}</li>`).join('')}</ol>`;
+  // numbered steps ("1. 08:45 …") stay one step each: cut into short points first, a step's pieces became bullets among the numbers
+  const list = (items) => { const raw = items.map((x) => T(x));
+    if (raw.length > 1 && raw.every((x) => /^\d+\.\s/.test(x))) return `<ol class="tips nums">${raw.map((x) => `<li>${lead(x.replace(/^\d+\.\s+/, ''))}</li>`).join('')}</ol>`;
+    const xs = raw.flatMap((x) => { const p = points(x); return p.length >= 3 && p.every((y) => y.length < 40) ? p : [x]; });
     return `<ul class="tips">${xs.map((x) => `<li>${lead(x)}</li>`).join('')}</ul>`; };
   // tickable checklist, like the manual's boxes — ticks are a per-phone convenience (localStorage), nothing is sent
   const ckDone = ls('ck') || {};
@@ -1387,9 +1389,9 @@ function infoBlocks(t) {
   const cols = (blocks) => `<div class="cols2">${blocks.join('')}</div>`;
   const CJK = /[\u3400-\u9FFF]/;
   const dl = (rows) => (rows.length > 2 && rows.every((r) => /^(\d{1,2}[:.]\d{2}|.{1,3})$/.test(T(r.t).trim()))
-    ? `<ol class="tl plan mtl">${rows.map((r) => `<li><time>${esc(T(r.t))}</time><div>${pts(T(r.x), 'tight')}</div></li>`).join('')}</ol>`   // "10:00 → …" rows, or stops 1…9
+    ? `<ol class="tl plan mtl">${rows.map((r) => `<li><time>${esc(T(r.t))}</time><div>${lead(T(r.x))}</div></li>`).join('')}</ol>`   // "10:00 → …" rows, or stops 1…9
     : `<dl class="gl">${rows.map((r) => { const x = T(r.x), p = points(x);
-      return `<div><dt>${esc(T(r.t))}</dt><dd>${CJK.test(x) ? `<span class="cjk">${x.split(/\s+·\s+/).map((y) => `<span${CJK.test(y) ? ' class="zh"' : ''}>${esc(y)}</span>`).join('')}</span>` : p.length > 2 ? fold(pt(p[0]), pts(p.slice(1).join(' · '), 'tight'), 'ddf') : lead(x)}</dd></div>`; }).join('')}</dl>`);
+      return `<div><dt>${esc(T(r.t))}</dt><dd>${CJK.test(x) ? `<span class="cjk">${x.split(/\s+·\s+/).map((y) => `<span${(y.match(/[\u3400-\u9FFF]/g) || []).length * 2 >= y.replace(/[\s()（）·,-]/g, '').length ? ' class="zh"' : ''}>${esc(y)}</span>`).join('')}</span>` : p.length > 2 ? fold(pt(p[0]), pts(p.slice(1).join(' · '), 'tight'), 'ddf') : lead(x)}</dd></div>`; }).join('')}</dl>`);
   // stays — laid out like the manual's "Where we sleep": a night-by-night strip in each stay's colour, then one card per stay
   const SC = ['#B5486F', '#3E7EA6', '#B98535', '#5E6FA8', '#5B8A6A', '#2E8C8C', '#C9704F', '#2F4E6E', '#8A5A9E', '#A0623A'];
   const nights = t.days.map((d, i) => ({ i, d, s: (d.plan || {}).stay })).filter((x) => x.s || (x.d.sleep && !isHome(x.d.sleep)));

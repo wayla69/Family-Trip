@@ -2279,7 +2279,7 @@ h1 .h1pic{display:inline-block;width:1.15em;height:1.15em;vertical-align:-.2em;o
 .prices tr.grp{display:block;padding:10px 0 2px;border-bottom:0}.prices tr.grp th{display:block;padding:0 8px;font-size:13px;color:var(--accent);text-transform:none;letter-spacing:0}}
 .prices tr.grp th{background:var(--soft);font-weight:700}
 .tips.nums{list-style:decimal;padding-left:1.4em}.tips.nums>li::before{content:none}
-.mtl{margin:6px 0 4px}.mtl>li{font-size:14px}
+.mtl{margin:6px 0 4px}.mtl>li{font-size:14px}.mtl li>div>small:not(.tsub){display:block;font-size:13px;color:var(--muted)}
 .cjk>span{display:block}.cjk>span.zh{font-size:17px;line-height:1.35;font-weight:600}
 .tl.plan.mtl li>div{display:block;-webkit-line-clamp:unset;overflow:visible;cursor:auto}.mtl time{color:var(--accent);font-weight:600}
 .call.info .cdsub{display:block;font-size:14px;margin-top:2px}
@@ -3495,3 +3495,49 @@ textarea.field.paper{min-height:230px;line-height:30px;padding:8px 14px;backgrou
 .tp.one .pg1>ol.tips{padding-left:38px}
 .tp.one .pg1 .tips>li{font-size:15px;line-height:1.5;margin:6px 0}
 .tp.one .pg1>h5+ul.tips,.tp.one .pg1>h5+ol.tips{margin-top:0}
+
+/* numbered steps in a topic page (owner, Nov 2026: "UI ต้องสวยงาม เห็นแล้วสบายตา"): a round number in the topic's colour, airy rows */
+.tp.one ol.tips.nums{list-style:none;counter-reset:st;padding-left:0}
+.tp.one ol.tips.nums>li{counter-increment:st;position:relative;padding:10px 0 10px 42px;min-height:30px;border-bottom:1px solid var(--line)}
+.tp.one ol.tips.nums>li:last-child{border-bottom:0}
+.tp.one ol.tips.nums>li::before{content:counter(st);position:absolute;left:0;top:9px;width:28px;height:28px;border-radius:50%;background:color-mix(in srgb,var(--cc,var(--g1,var(--accent))) 70%,var(--ink));color:#fff;font-size:14px;font-weight:700;line-height:28px;text-align:center}
+@media (prefers-color-scheme:dark){:root:not([data-theme=light]) .tp.one ol.tips.nums>li::before{color:#0F1722}}
+:root[data-theme=dark] .tp.one ol.tips.nums>li::before{color:#0F1722}
+
+/* every inner page in one look (owner, Nov 2026: "ตรวจหน้าข้างในหมด … ไม่เอา format ที่ไม่ตรงกับ app"): the learn page's topic cards, the
+   if-then cases, "who carries what", the notes at a page's foot and a table's group rows are the same cards as the rest of the pocket guide */
+.tp.one .gcards{gap:12px}
+.tp.one .gcard,.tp.one .ifts details.ifold,.tp.one .pg1>.call.info,.tp.one .pg1>.call.calm,.tp.one .pg1>.call.pick{margin:0;padding:14px 16px 16px;border:1px solid var(--line);border-top:4px solid var(--cc,var(--g1,var(--accent)));border-radius:18px;background:var(--card);box-shadow:0 8px 18px -16px rgba(16,24,32,.5);font-size:15px}
+.tp.one .gcard:nth-child(4n+2),.tp.one .ifts details.ifold:nth-child(4n+2){--cc:#1CC9A4}.tp.one .gcard:nth-child(4n+3),.tp.one .ifts details.ifold:nth-child(4n+3){--cc:#FF9A3C}.tp.one .gcard:nth-child(4n+4),.tp.one .ifts details.ifold:nth-child(4n+4){--cc:#C850F0}
+.tp.one .gcard summary b,.tp.one .ifts details.ifold>summary b{display:block;margin:0 0 2px;font-family:var(--ui);font-size:17px;font-weight:700;line-height:1.3;color:color-mix(in srgb,var(--cc,var(--g1,var(--accent))) 50%,var(--ink))}
+.tp.one .gcard .gsub{font-size:13.5px;color:color-mix(in srgb,var(--cc,var(--g1,var(--accent))) 60%,var(--ink))}
+.tp.one .gcard b.kf,.tp.one .ifts .fb b{display:inline;margin:0;font-family:inherit;font-size:inherit;line-height:inherit;color:inherit}
+.tp.one .gcard .pts,.tp.one .ifts .pts,.tp.one .gcard p,.tp.one .ifts p{font-size:15px;line-height:1.5}
+.tp.one .ifts{display:grid;gap:12px;border-top:0}
+.tp.one .ifts details.ifold{border-bottom:1px solid var(--line)}
+.tp.one .ifts .fb .label{margin:10px 0 2px;font-size:13px;font-weight:700;color:color-mix(in srgb,var(--cc,var(--g1,var(--accent))) 60%,var(--ink))}
+.tp.one .pg1>.call{margin:12px 0}
+.tp.one .pg1>.call .lbl{display:block;margin:0 0 6px;font-family:var(--ui);font-style:normal;font-size:17px;font-weight:700;letter-spacing:0;text-transform:none;color:color-mix(in srgb,var(--cc,var(--g1,var(--accent))) 50%,var(--ink))}
+.tp.one .pg1>.call.calm{--cc:#1CC9A4}.tp.one .pg1>.call.pick{--cc:#F2B90C}
+.tp.one tr.grp th,.tp.one tr.grp td{padding:16px 2px 4px;border:0;background:none;font-family:var(--ui);font-size:16px;font-weight:700;letter-spacing:0;text-transform:none;color:color-mix(in srgb,var(--g1,var(--accent)) 55%,var(--ink))}
+.tp.one tr.grp th::before,.tp.one tr.grp td::before{content:"";display:inline-block;width:6px;height:16px;margin-right:8px;border-radius:3px;vertical-align:-2px;background:var(--g1,var(--accent))}
+.tp.one .pts.nums>li::before{background:color-mix(in srgb,var(--cc,var(--g1,var(--accent))) 70%,var(--ink));color:#fff}
+@media (prefers-color-scheme:dark){:root:not([data-theme=light]) .tp.one .pts.nums>li::before{color:#0F1722}}
+:root[data-theme=dark] .tp.one .pts.nums>li::before{color:#0F1722}
+
+/* second pass (owner, Nov 2026: "ปรับได้อีกไหม"): the learn page's days are cards with their picture, the ‹ › to the topics beside
+   it wear the topic's colour */
+.tp.one details.sub{margin:0 0 12px;padding:0;border:1px solid var(--line);border-top:4px solid var(--cc,var(--g1,var(--accent)));border-radius:18px;background:var(--card);box-shadow:0 8px 18px -16px rgba(16,24,32,.5);overflow:hidden}
+.tp.one details.sub:nth-of-type(4n+2){--cc:#1CC9A4}.tp.one details.sub:nth-of-type(4n+3){--cc:#FF9A3C}.tp.one details.sub:nth-of-type(4n+4){--cc:#C850F0}
+.tp.one details.sub>summary{display:flex;align-items:center;gap:12px;min-height:64px;padding:10px 14px;font-size:16px;font-weight:600;line-height:1.3;cursor:pointer;list-style:none}
+.tp.one details.sub>summary::-webkit-details-marker{display:none}
+.tp.one details.sub>summary .art{flex:none;width:48px;height:48px;margin:0;border-radius:50%;background:#fff;box-shadow:0 0 0 2px color-mix(in srgb,var(--cc,var(--g1,var(--accent))) 35%,#fff)}
+.tp.one details.sub>summary b{color:color-mix(in srgb,var(--cc,var(--g1,var(--accent))) 55%,var(--ink))}
+.tp.one details.sub>summary::after{content:"";flex:none;width:9px;height:9px;margin:0 6px 0 auto;border-right:2px solid currentColor;border-bottom:2px solid currentColor;transform:rotate(45deg);opacity:.55;transition:transform .2s}
+.tp.one details.sub[open]>summary::after{transform:rotate(-135deg)}
+.tp.one details.sub>:not(summary){margin-inline:16px}
+.tp.one details.sub>:last-child{margin-bottom:14px}
+.tp.one details.sub .learn{padding:12px 0;border-top:1px solid var(--line);font-size:15px;line-height:1.5}
+.tp.one details.sub .learn>b{font-family:var(--ui);font-size:17px;font-weight:700;color:color-mix(in srgb,var(--cc,var(--g1,var(--accent))) 50%,var(--ink))}
+.tp.one .pgn{border-color:color-mix(in srgb,var(--g1,var(--accent)) 35%,var(--line));background:color-mix(in srgb,var(--g1,var(--accent)) 10%,var(--card))}
+.tp.one .pgn small{color:color-mix(in srgb,var(--g1,var(--accent)) 60%,var(--ink))}
