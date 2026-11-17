@@ -83,6 +83,11 @@ const T = 'hk-macau-2026';
     'shelf: every way to a new book sits in the new-book tile; family and relatives in one settings list; sign out on its own');
   ok(await page.locator('.setlist > a .e.pic img').count() === await page.locator('.setlist > a').count() && await page.locator('.setlist a[href="#/family"] img[src$="/art/hub/family.webp"]').count() === 1
     && await page.locator('.setlist a[href="#/viewers"] img[src$="/art/hub/relatives.webp"]').count() === 1, 'settings list: each row has its own picture (family, emoji, relatives)');
+  { // owner, Nov 2026: four rows wore the same gear — every settings row, shelf card and new-book way has a picture of its own
+    const pics = await page.$$eval('.setlist:not(.disp) > a .e.pic img', (xs) => xs.map((x) => x.getAttribute('src')));
+    const cards = await page.$$eval('a.nbcard .emb', (xs) => xs.map((x) => !!x.querySelector('img')));
+    const ways = await page.$$eval('.spine.add .addway', (xs) => xs.map((x) => !!x.querySelector('.e.pic img')));
+    ok(pics.length >= 4 && new Set(pics).size === pics.length && cards.length && cards.every(Boolean) && ways.length && ways.every(Boolean), `shelf: pictures of their own (settings ${pics.join(', ')} · cards ${cards} · ways ${ways})`); }
   ok((await page.locator('.spine').first().textContent()).includes('DOLPHIN'), 'HK spine shows the manual kicker');
   ok(await s.noHScroll(), 'shelf: no horizontal scroll at 390 px');
   await s.shot('02-shelf');
@@ -272,9 +277,9 @@ const T = 'hk-macau-2026';
     await s.shot('find');
     ok(fr.n >= 1 && /ปลาอยู่ในน้ำ/.test(fr.txt) && /Words/.test(fr.txt) && await s.noHScroll(), `search every book: the kids' words found across the books, with when and in which book (${fr.n} hits)`);
     await page.goto(`${BASE}/#/devices`); await page.waitForSelector('.devs li', { timeout: 8000 }).catch(() => {});
-    const dv = await page.evaluate(() => ({ me: document.querySelectorAll('.devs li.me').length, n: document.querySelectorAll('.devs li').length }));
+    const dv = await page.evaluate(() => ({ me: document.querySelectorAll('.devs li.me').length, n: document.querySelectorAll('.devs li').length, head: !!document.querySelector('.phead .phpic img[src$="devices.webp"]'), cards: document.querySelectorAll('.pcard .pch .pcpic img').length }));
     await s.shot('devices');
-    ok(dv.me === 1 && dv.n >= 1 && await s.noHScroll(), `phones signed in: this phone is listed and marked (${JSON.stringify(dv)})`);
+    ok(dv.me === 1 && dv.n >= 1 && dv.head && dv.cards === 2 && await s.noHScroll(), `phones signed in: this phone is listed and marked (${JSON.stringify(dv)})`);
     await page.goto(`${BASE}/#/capsules`); await page.waitForSelector('#captext');
     await page.fill('#captext', 'Dear Mimi, the fish were huge.'); await page.fill('#capdate', `${new Date().getFullYear() + 15}-05-01`);
     await page.click('[data-a="capsave"]'); await page.waitForSelector('.caps li [data-a="capseal"]', { timeout: 8000 }).catch(() => {});

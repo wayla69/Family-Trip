@@ -320,11 +320,10 @@ function viewSnapTest() {
   // Chrome on Android always says "Android 10" in its user agent; the real version comes from the client hints, once
   if (!snapT.platAsked && navigator.userAgentData && navigator.userAgentData.getHighEntropyValues) { snapT.platAsked = true;
     navigator.userAgentData.getHighEntropyValues(['platformVersion']).then((h) => { const pf = navigator.userAgentData.platform; if (pf && h.platformVersion) { snapT.plat = `${pf} ${h.platformVersion}`; render(); } }).catch(() => {}); }
-  return `<h1>${L('ตรวจเครื่องนี้', 'Check this phone')}</h1>
-<p class="sub">${L('กดตรวจ แล้วลองทำตามรายการด้านล่าง เสร็จแล้วกด "คัดลอกผล" ส่งให้ผู้พัฒนา ไม่มีรูปหรือตำแหน่งออกจากเครื่อง', 'Run the check, try the list below, then "copy the results" and send them to the developer — no photo or position leaves the phone')}</p>
+  return `${pageHead('checkphone', PG.teal, L('ตั้งค่า', 'Settings'), L('ตรวจเครื่องนี้', 'Check this phone'), L('กดตรวจ แล้วลองทำตามรายการด้านล่าง เสร็จแล้วกด "คัดลอกผล" ส่งให้ผู้พัฒนา ไม่มีรูปหรือตำแหน่งออกจากเครื่อง', 'Run the check, try the list below, then "copy the results" and send them to the developer — no photo or position leaves the phone'))}
 <button type="button" class="btn wide" data-a="devcheck"${snapT.devBusy ? ' disabled' : ''}>${snapT.devBusy ? L('กำลังตรวจ…', 'Checking…') : L('ตรวจเครื่องนี้', 'Check this phone')}</button>
 ${devHtml()}
-<h2 class="snaph2">${L('ทดสอบรูปบนเครื่องนี้', 'Photo check on this phone')}</h2>
+<h2 class="snaph2 pch"><span class="pcpic">${hubIc('snapcam')}</span><span>${L('ทดสอบรูปบนเครื่องนี้', 'Photo check on this phone')}</span></h2>
 <p class="notice">${L('หน้านี้ใช้ทดสอบเล่มจากรูป: ดูว่ามือถืออ่านเวลาถ่ายและตำแหน่งจากรูปได้หรือไม่ ไม่มีรูปถูกส่งไปไหน และไม่แสดงพิกัด แสดงแค่ว่ามีหรือไม่มี',
     'A check for the book-from-photos idea: does this phone hand over when and where each photo was taken? Nothing is uploaded and no position is shown — only whether there is one.')}</p>
 <p class="label">${esc(snapDevice())}</p>
@@ -352,7 +351,7 @@ const devHand = () => { try { return ls('devHand') || {}; } catch (_) { return {
 function devHtml() {
   const d = snapT.dev, hand = devHand(), mark = (s) => (s === 'ok' ? '✓' : s === 'no' ? '✗' : s === 'warn' ? '!' : '—');
   return `${d ? `<ul class="devlist">${d.rows.map(([lab, st, det]) => `<li class="dv-${st}"><b aria-hidden="true">${mark(st)}</b><span>${esc(lab)}${det ? `<small>${esc(det)}</small>` : ''}</span></li>`).join('')}</ul>` : ''}
-<h2 class="snaph2">${L('ลองด้วยมือ', 'Try by hand')}</h2><p class="sub">${L('แตะเพื่อบอกผล: ได้ ✓ · ไม่ได้ ✗', 'Tap to say how it went: works ✓ · does not ✗')}</p>
+<h2 class="snaph2 pch"><span class="pcpic">${hubIc('pencil')}</span><span>${L('ลองด้วยมือ', 'Try by hand')}</span></h2><p class="sub">${L('แตะเพื่อบอกผล: ได้ ✓ · ไม่ได้ ✗', 'Tap to say how it went: works ✓ · does not ✗')}</p>
 <div class="devhand">${DEV_HAND.map(([k, th, en]) => `<button type="button" class="devh dv-${hand[k] || 'none'}" data-a="devhand" data-v="${k}" aria-pressed="${!!hand[k]}"><b aria-hidden="true">${mark(hand[k])}</b><span>${L(th, en)}</span></button>`).join('')}</div>`;
 }
 async function devCheck() {
