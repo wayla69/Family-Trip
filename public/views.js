@@ -1391,7 +1391,7 @@ function infoBlocks(t) {
   const dl = (rows) => (rows.length > 2 && rows.every((r) => /^(\d{1,2}[:.]\d{2}|.{1,3})$/.test(T(r.t).trim()))
     ? `<ol class="tl plan mtl">${rows.map((r) => `<li><time>${esc(T(r.t))}</time><div>${lead(T(r.x))}</div></li>`).join('')}</ol>`   // "10:00 → …" rows, or stops 1…9
     : `<dl class="gl">${rows.map((r) => { const x = T(r.x), p = points(x);
-      return `<div><dt>${esc(T(r.t))}</dt><dd>${CJK.test(x) ? `<span class="cjk">${x.split(/\s+·\s+/).map((y) => `<span${CJK.test(y) ? ' class="zh"' : ''}>${esc(y)}</span>`).join('')}</span>` : p.length > 2 ? fold(pt(p[0]), pts(p.slice(1).join(' · '), 'tight'), 'ddf') : lead(x)}</dd></div>`; }).join('')}</dl>`);
+      return `<div><dt>${esc(T(r.t))}</dt><dd>${CJK.test(x) ? `<span class="cjk">${x.split(/\s+·\s+/).map((y) => `<span${(y.match(/[\u3400-\u9FFF]/g) || []).length * 2 >= y.replace(/[\s()（）·,-]/g, '').length ? ' class="zh"' : ''}>${esc(y)}</span>`).join('')}</span>` : p.length > 2 ? fold(pt(p[0]), pts(p.slice(1).join(' · '), 'tight'), 'ddf') : lead(x)}</dd></div>`; }).join('')}</dl>`);
   // stays — laid out like the manual's "Where we sleep": a night-by-night strip in each stay's colour, then one card per stay
   const SC = ['#B5486F', '#3E7EA6', '#B98535', '#5E6FA8', '#5B8A6A', '#2E8C8C', '#C9704F', '#2F4E6E', '#8A5A9E', '#A0623A'];
   const nights = t.days.map((d, i) => ({ i, d, s: (d.plan || {}).stay })).filter((x) => x.s || (x.d.sleep && !isHome(x.d.sleep)));

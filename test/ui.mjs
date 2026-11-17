@@ -2254,7 +2254,7 @@ const T = 'hk-macau-2026';
     const sosLinks = await page.$$eval('.glg a.glc', (as) => as.map((a) => a.getAttribute('href').replace(/^#\/t\//, '')));
     let ift = null; for (const r of sosLinks) { await page.goto(`${BASE}/#/t/${r}`); await page.waitForSelector('.tp.one'); if (await page.locator('.tp.one .ifts details.ifold').count()) { ift = r; break; } }
     ok(!!ift, `an if-then page among the emergency topics (${sosLinks.join(' ')})`);
-    for (const [r, sel] of [[`${T}/learn/full/0`, '.tp.one .gcard'], [ift, '.tp.one .ifts details.ifold'], ['big-hop-2027/prep/full/7', '.tp.one .pg1>.call.info']]) {
+    for (const [r, sel] of [[`${T}/learn/full/0`, '.tp.one .gcard'], [`${T}/learn/full/1`, '.tp.one details.sub'], [ift, '.tp.one .ifts details.ifold'], ['big-hop-2027/prep/full/7', '.tp.one .pg1>.call.info']]) {
       await page.goto(`${BASE}/#/t/${r}`); await page.waitForSelector(sel, { state: 'attached' });
       const c = await page.$$eval(sel, (es) => es.map((e) => ({ top: parseFloat(getComputedStyle(e).borderTopWidth), r: parseFloat(getComputedStyle(e).borderTopLeftRadius), kf: [...e.querySelectorAll('b.kf')].every((b) => getComputedStyle(b).display === 'inline') })));
       ok(c.length && c.every((x) => x.top >= 3 && x.r >= 12 && x.kf), `${r}: every ${sel.split(' ').pop()} a card with a coloured top edge, bold times inside their sentence (${JSON.stringify(c.slice(0, 3))})`); }
