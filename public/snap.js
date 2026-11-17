@@ -471,45 +471,56 @@ async function snapLook(file) {
   } catch (_) { return null; }   // a file this browser cannot draw (HEIC on Chrome): kept, never starred by guess
 }
 const snapHam = (a, b) => { let n = 0; for (let k = 0; k < 64; k++) if (a[k] !== b[k]) n++; return n; };
-async function snapSift(list) {
-  const s = snapS; if (!s || s.files !== list) return;
-  const t = (i) => Date.parse(s.metas[i].at + 'Z');
-  list.forEach((f, i) => { const m = s.metas[i]; if (m && m.src !== 'exif' && (f.type === 'image/png' || SNAP_SHOT_RE.test(f.name || ''))) s.aside[i] = 'shot'; });
+// what to set aside in picked photos, and the best ones (owner, Nov 2026: the first build, then "เพิ่มรูปทีหลัง" too): metas[i] =
+// snapMeta's answer; alive() says the page still wants the answer. → {aside: {i: 'dup'|'shot'|'doc'}, star: Set, sift} or null
+async function snapScreen(list, metas, alive, stars = true) {
+  const aside = {}, star = new Set(), sift = { preview: 0, full: 0, read: 0 };   // how each photo was looked at (the tests read it)
+  const t = (i) => Date.parse(metas[i].at + 'Z');
+  list.forEach((f, i) => { const m = metas[i]; if (m && m.src !== 'exif' && (f.type === 'image/png' || SNAP_SHOT_RE.test(f.name || ''))) aside[i] = 'shot'; });
   const looks = {}; let budget = 700;
   const look = async (i) => { if (!(i in looks) && budget-- > 0) looks[i] = await snapLook(list[i]); return looks[i]; };
   // receipts and papers: every photo not yet set aside, the 320 px read only after the gate
-  let shown = 0, next = 0, done = 0; s.sift = { preview: 0, full: 0, read: 0 };   // how each photo was looked at (the tests read it)
+  let shown = 0, next = 0, done = 0;
   const lane = async () => { while (next < list.length) {
-    const i = next++, f = list[i]; if (snapS !== s || s.files !== list) return;
-    if (!s.aside[i]) {
-      const th = s.metas[i] && s.metas[i].th; let gate = th ? await snapThumbGate(f, th) : null;
-      if (gate !== null) s.sift.preview++; else { const lk = await look(i); gate = !!(lk && lk.paper); s.sift.full++; }
-      if (gate) s.sift.read++;
-      if (gate && await snapDocLook(f)) s.aside[i] = 'doc';
+    const i = next++, f = list[i]; if (!alive()) return;
+    if (!aside[i]) {
+      const th = metas[i] && metas[i].th; let gate = th ? await snapThumbGate(f, th, metas[i].thk) : null;
+      if (gate !== null) sift.preview++; else { const lk = await look(i); gate = !!(lk && lk.paper); sift.full++; }
+      if (gate) sift.read++;
+      if (gate && await snapDocLook(f)) aside[i] = 'doc';
     }
     done++; const now = performance.now(); if (now - shown > 200) { shown = now; const el = document.getElementById('snapprog'); if (el) el.textContent = `${done}/${list.length}`; }
   } };
   await Promise.all([lane(), lane(), lane()]);
-  if (snapS !== s || s.files !== list) return;
+  if (!alive()) return null;
   // bursts: camera-timed photos four seconds apart or less
-  const timed = list.map((_, i) => i).filter((i) => s.metas[i] && s.metas[i].src === 'exif' && s.metas[i].at && !s.aside[i]).sort((a, b) => t(a) - t(b));
+  const timed = list.map((_, i) => i).filter((i) => metas[i] && metas[i].src === 'exif' && metas[i].at && !aside[i]).sort((x, y) => t(x) - t(y));
   const bursts = []; for (const i of timed) { const b = bursts[bursts.length - 1]; if (b && t(i) - t(b[b.length - 1]) <= 4000) b.push(i); else bursts.push([i]); }
   for (const b of bursts.filter((x) => x.length > 1)) {
     for (const i of b) await look(i);
     const ok = b.filter((i) => looks[i]); if (ok.length < 2) continue;
-    const best = ok.reduce((a, i) => (looks[i].sharp > looks[a].sharp ? i : a), ok[0]);
-    for (const i of ok) if (i !== best && snapHam(looks[i].hash, looks[best].hash) <= 12) s.aside[i] = 'dup';
+    const best = ok.reduce((x, i) => (looks[i].sharp > looks[x].sharp ? i : x), ok[0]);
+    for (const i of ok) if (i !== best && snapHam(looks[i].hash, looks[best].hash) <= 12) aside[i] = 'dup';
   }
   // stars: per date, up to eight photos spread through the day, the sharpest well-lit ones of different moments
-  const byDate = {}; for (const i of timed) if (!s.aside[i]) (byDate[s.metas[i].at.slice(0, 10)] = byDate[s.metas[i].at.slice(0, 10)] || []).push(i);
-  for (const ids of Object.values(byDate)) {
-    const step = Math.max(1, Math.floor(ids.length / 8)), cand = ids.filter((_, k) => k % step === 0).slice(0, 8);
-    for (const i of cand) await look(i);
-    const score = (i) => (looks[i] ? looks[i].sharp * (looks[i].light < 45 || looks[i].light > 225 ? 0.35 : 1) : -1);
-    const ranked = cand.filter((i) => looks[i]).sort((a, b) => score(b) - score(a)), want = ids.length >= 10 ? 2 : 1, got = [];
-    for (const i of ranked) { if (got.length >= want) break; if (got.every((j) => Math.abs(t(i) - t(j)) > 20 * 6e4)) got.push(i); }
-    got.forEach((i) => s.star.add(i));
+  if (stars) {
+    const byDate = {}; for (const i of timed) if (!aside[i]) (byDate[metas[i].at.slice(0, 10)] = byDate[metas[i].at.slice(0, 10)] || []).push(i);
+    for (const ids of Object.values(byDate)) {
+      const step = Math.max(1, Math.floor(ids.length / 8)), cand = ids.filter((_, k) => k % step === 0).slice(0, 8);
+      for (const i of cand) await look(i);
+      const score = (i) => (looks[i] ? looks[i].sharp * (looks[i].light < 45 || looks[i].light > 225 ? 0.35 : 1) : -1);
+      const ranked = cand.filter((i) => looks[i]).sort((x, y) => score(y) - score(x)), want = ids.length >= 10 ? 2 : 1, got = [];
+      for (const i of ranked) { if (got.length >= want) break; if (got.every((j) => Math.abs(t(i) - t(j)) > 20 * 6e4)) got.push(i); }
+      got.forEach((i) => star.add(i));
+    }
   }
+  return alive() ? { aside, star, sift } : null;
+}
+async function snapSift(list) {
+  const s = snapS; if (!s || s.files !== list) return;
+  const r = await snapScreen(list, s.metas, () => snapS === s && s.files === list);
+  if (!r) return;
+  Object.assign(s.aside, r.aside); r.star.forEach((i) => s.star.add(i)); s.sift = r.sift;
 }
 // the reasons photos were set aside, in words: "ภาพซ้ำ · ใบเสร็จและเอกสาร"
 const SNAP_WHY = { dup: ['ภาพซ้ำ', 'repeats'], shot: ['ภาพหน้าจอ', 'screenshots'], doc: ['ใบเสร็จและเอกสาร', 'receipts and papers'] };
@@ -866,11 +877,25 @@ function snapMoreDates(have, cand) {
 // ทีหลัง"): only photos whose date the camera wrote; a new date at either end or in a gap adds its day (once the book holds memories
 // the server adds days after the last one only — day numbers live in the ids — so an earlier date is left out and said so);
 // what has no day is left out, never piled on day 1
-async function snapLiveAdd(t, files0, live = true) {
+async function snapLiveAdd(t, files0, live = true, screen = true) {
   const geo = await snapGeo(), today = todayIn(t.timezone), here = live ? snapHere(t) : null;
-  const clips = []; for (const f of files0.filter(snapIsVid)) { const v = await snapVidAt(f); clips.push({ file: f, at: v ? v.at : '', ms: v ? v.ms : null }); }
-  const files = files0.filter((f) => !snapIsVid(f));
-  const metas = []; for (const f of files) { const m = await snapMeta(f).catch(() => null); const pl = m && m.ll ? await snapWhere(m.ll, geo).catch(() => null) : null; if (m) m.ll = null; metas.push({ m, pl }); }
+  // the same file the book already holds (or picked twice now) is not sent again
+  const seen = new Set(), fresh = []; let already = 0;
+  for (const f of files0) { const fp = await fileFp(f); if (fp && (seen.has(fp) || fpIn(t, fp))) { already++; continue; } if (fp) seen.add(fp); fresh.push([f, fp]); }
+  const fpOfFile = new Map(fresh);
+  const clips = []; for (const [f] of fresh.filter(([f]) => snapIsVid(f))) { const v = await snapVidAt(f); clips.push({ file: f, at: v ? v.at : '', ms: v ? v.ms : null }); }
+  let files = fresh.map(([f]) => f).filter((f) => !snapIsVid(f));
+  let metas = []; for (const f of files) { const m = await snapMeta(f).catch(() => null); const pl = m && m.ll ? await snapWhere(m.ll, geo).catch(() => null) : null; if (m) { m.ll = null; m.fp = fpOfFile.get(f) || ''; } metas.push({ m, pl }); }
+  // repeats, screenshots, receipts and papers wait aside (owner, Nov 2026: "เพิ่มรูปทีหลัง" the same as the first build)
+  let held = [];
+  if (screen && files.length) {
+    const r = await snapScreen(files, metas.map((x) => x.m), () => true, false);
+    if (r && Object.keys(r.aside).length) {
+      held = files.map((f, k) => (r.aside[k] ? { file: f, why: r.aside[k] } : null)).filter(Boolean);
+      const keep = files.map((f, k) => !r.aside[k]); files = files.filter((f, k) => keep[k]); metas = metas.filter((x, k) => keep[k]);
+    }
+  }
+  if (!files.length && !clips.length) { snapHeldSheet(t, held, live, already); return; }
   const dateOf = (x) => (x.m && x.m.src === 'exif' && x.m.at ? x.m.at.slice(0, 10) : live ? today : '');
   const last = t.days.length ? t.days[t.days.length - 1].date : '', tid = encodeURIComponent(t.id);
   const dates = metas.map(dateOf).concat(clips.map((c) => c.at.slice(0, 10) || (live ? today : ''))).filter(Boolean);
@@ -895,6 +920,7 @@ async function snapLiveAdd(t, files0, live = true) {
     for (const p of g.pl && g.pl.id ? [g.pl, g.pl.spot].filter(Boolean) : []) { const key = 'snap.' + p.id;
       if (!S.places.some((x) => x.trip === t.id && x.key === key)) await enqueue({ method: 'PUT', url: '/api/b/places', body: { trip: t.id, key, day: g.i, kind: 'place', name: { th: p.th, en: p.en }, done: true, at: Date.now() },
         local: { coll: 'places', id: `${t.id}:${key}`, row: { trip: t.id, key, day: g.i, kind: 'place', name: { th: p.th, en: p.en }, at: Date.now() } } }); }
+    g.metas.quiet = true;   // one line below says it all
     await addPhotos(t, g.i, g.files, g.name ? { place: g.name } : null, g.metas);
   }
   let vout = 0;   // the clips, each on the day it was filmed (during the trip one with no time goes on today)
@@ -908,12 +934,41 @@ async function snapLiveAdd(t, files0, live = true) {
   const named = {}; for (const g of Object.values(groups)) if (g.pl && !named[g.i] && !(t.days[g.i] || {}).place) named[g.i] = g.pl;
   for (const [i, pl] of Object.entries(named)) await api('PATCH', `/api/b/days/${encodeURIComponent(t.id)}/${i}`, { place: { th: pl.th, en: pl.en } }).catch(() => {});
   if (Object.keys(named).length) await load().catch(() => {});
-  const vn = clips.length - vout;
-  if (!live) { const n = files.length - out;
-    toast([n && L(`เติม ${n} รูปลงเล่มแล้ว`, `${n} photo${n > 1 ? 's' : ''} added`), vn && L(`${vn} คลิป`, `${vn} clip${vn > 1 ? 's' : ''}`), out + vout && L(`${out + vout} รูปหรือคลิปไม่รู้วันที่หรืออยู่นอกช่วงทริป ไม่ได้ใส่`, `${out + vout} with no date or from outside the trip — left out`)].filter(Boolean).join(' · ')); }
-  else if (vn) toast(L(`เพิ่ม ${vn} คลิปแล้ว`, `${vn} clip${vn > 1 ? 's' : ''} added`));
+  const vn = clips.length - vout, n = files.length - out;
+  const said = [n && L(`เติม ${n} รูปลงเล่มแล้ว`, `${n} photo${n > 1 ? 's' : ''} added`), vn && L(`${vn} คลิป`, `${vn} clip${vn > 1 ? 's' : ''}`),
+    out + vout && L(`${out + vout} รูปหรือคลิปไม่รู้วันที่หรืออยู่นอกช่วงทริป ไม่ได้ใส่`, `${out + vout} with no date or from outside the trip — left out`),
+    already && L(`ข้าม ${already} ที่มีในเล่มแล้ว`, `${already} already in the book`)].filter(Boolean).join(' · ');
+  if (said) toast(said);
   safeRender();
+  if (held.length) snapHeldSheet(t, held, live, 0);
 }
+/* What the screen set aside from photos added later or during the trip waits here, never sent: a tap picks one, "add the ones picked"
+   sends those (not screened again); "no thanks" leaves them on the phone. */
+let snapHeld = null;
+function snapHeldSheet(t, held, live, already) {
+  if (!held.length) { if (already) toast(L(`รูปที่เลือกมีในเล่มแล้วทั้งหมด`, 'Every photo picked is already in the book')); return; }
+  if (snapHeld) snapHeld.urls.forEach((u) => URL.revokeObjectURL(u));
+  const urls = held.map((h) => URL.createObjectURL(h.file));
+  snapHeld = { t: t.id, live, held, urls, pick: new Set() };
+  openSheet(`<h3>${L(`พักไว้ ${held.length} รูป ยังไม่ได้ส่งขึ้นเล่ม`, `${held.length} set aside — not sent`)}</h3>
+<p class="sub">${esc(snapWhy(held.map((h) => h.why)).replace(/^./, (c) => c.toUpperCase()))} · ${L('แตะรูปที่จะเอาเข้าเล่ม', 'tap the ones to put in the book')}</p>
+<span class="sdph sdpick snapheld">${held.map((h, k) => `<button type="button" class="sdpt off" data-a="snapheldpick" data-k="${k}" aria-pressed="false" aria-label="${esc(snapWhy([h.why]))}"><img src="${urls[k]}" alt="" loading="lazy"></button>`).join('')}</span>
+<button type="button" class="btn wide" id="snapheldgo" data-a="snapheldadd" disabled>${L('เพิ่มรูปที่เลือก', 'Add the ones picked')}</button>
+<button type="button" class="btn ghost wide" data-a="closesheet">${L('ไม่ต้อง', 'No thanks')}</button>`);
+}
+Object.assign(A, {
+  snapheldpick(b) {   // in place: the sheet stays as it is
+    if (!snapHeld) return; const k = +b.dataset.k, on = !snapHeld.pick.has(k); if (on) snapHeld.pick.add(k); else snapHeld.pick.delete(k);
+    b.classList.toggle('kept', on); b.classList.toggle('off', !on); b.setAttribute('aria-pressed', String(on));
+    const badge = b.querySelector('i'); if (on && !badge) b.insertAdjacentHTML('beforeend', '<i>✓</i>'); else if (!on && badge) badge.remove();
+    const go = document.getElementById('snapheldgo'); if (go) { go.disabled = !snapHeld.pick.size; go.textContent = snapHeld.pick.size ? L(`เพิ่ม ${snapHeld.pick.size} รูปที่เลือก`, `Add the ${snapHeld.pick.size} picked`) : L('เพิ่มรูปที่เลือก', 'Add the ones picked'); }
+  },
+  snapheldadd() {
+    const h = snapHeld; if (!h || !h.pick.size) return; const t = trip(h.t), files = [...h.pick].map((k) => h.held[k].file);
+    closeSheet(); h.urls.forEach((u) => URL.revokeObjectURL(u)); snapHeld = null;
+    if (t) snapLiveAdd(t, files, h.live, false);
+  },
+});
 function snapLivePick(t, cam) {   // outside #app, like #fpick
   const id = cam ? 'snapin-cam' : 'snapin-live';
   let inp = document.getElementById(id);
@@ -964,7 +1019,7 @@ Object.assign(A, {
   },
 });
 if (typeof document !== 'undefined') document.addEventListener('change', (e) => {
-  if (e.target.id === 'snapin-cam' || e.target.id === 'snapin-live') { const t = trip(e.target.dataset.t), fs = [...(e.target.files || [])]; if (t && fs.length) snapLiveAdd(t, fs); return; }
+  if (e.target.id === 'snapin-cam' || e.target.id === 'snapin-live') { const t = trip(e.target.dataset.t), fs = [...(e.target.files || [])]; if (t && fs.length) snapLiveAdd(t, fs, true, e.target.id === 'snapin-live'); return; }   // the camera's photo was taken just now, on purpose: not screened
   if (e.target.id === 'sebook' || (e.target.classList && e.target.classList.contains('sedt'))) { snapEditSave(e.target); return; }
   if (e.target.id === 'snapin-more') { const t = trip(e.target.dataset.t), fs = [...(e.target.files || [])]; if (t && fs.length) { toast(L(`กำลังอ่าน ${fs.length} รูป…`, `Reading ${fs.length} photos…`)); snapLiveAdd(t, fs, false); } return; }
   if (e.target.id === 'snaphere') { const t = trip(e.target.dataset.t), v = e.target.value.trim(); if (t) ls(snapHereKey(t), v ? { th: v, en: v, date: todayIn(t.timezone) } : null); }   // typed: a name, kept for today

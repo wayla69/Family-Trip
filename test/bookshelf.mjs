@@ -272,6 +272,11 @@ ok((await fetch(BASE + '/api/b/trips', { method: 'POST', headers: H, body: JSON.
   const upS = await fetch(`${BASE}/api/b/media/ph-snap-0001?trip=${id}&day=1`, { method: 'PUT', headers: { 'x-mb': '1', cookie: ck, 'content-type': 'image/jpeg' }, body: jp });
   ok((await post('/api/b/media/ph-snap-0001', { day: 3 }, 'PATCH')).ok && (await state()).media.find((m) => m.id === 'ph-snap-0001').day === 3
     && (await post('/api/b/media/ph-snap-0001', { day: 6 }, 'PATCH')).status === 404 && (await post('/api/b/media/ph-snap-0001', { day: -1 }, 'PATCH')).status === 400, `snap: a photo moves to another day of its book, never past its last day (upload ${upS.status})`);
+  // the original file's fingerprint (migration 0027): kept and sent back, so the phone never sends the same file twice; a mangled one is dropped
+  const upF = await fetch(`${BASE}/api/b/media/ph-snap-fp01?trip=${id}&day=0&fp=0123456789abcdef01234567`, { method: 'PUT', headers: { 'x-mb': '1', cookie: ck, 'content-type': 'image/jpeg' }, body: jp });
+  const upG = await fetch(`${BASE}/api/b/media/ph-snap-fp02?trip=${id}&day=0&fp=${encodeURIComponent("x'); drop table media;--")}`, { method: 'PUT', headers: { 'x-mb': '1', cookie: ck, 'content-type': 'image/jpeg' }, body: jp });
+  { const sm = (await state()).media; ok(upF.ok && upG.ok && sm.find((m) => m.id === 'ph-snap-fp01').fp === '0123456789abcdef01234567' && sm.find((m) => m.id === 'ph-snap-fp02').fp === null && sm.find((m) => m.id === 'ph-snap-0001').fp === null,
+    'snap: a photo keeps the fingerprint of the file it came from (none sent → none; a mangled one is dropped)'); }
   ok((await fetch(BASE + `/api/b/snap`, { method: 'POST', headers: { ...H, cookie: vck }, body: '{}' })).status === 403, 'snap: relatives cannot make a book');
   // "go again" (owner, Nov 2026): a new empty book from this one — the same towns day by day from a new first date (gaps kept),
   // each day's name, place and emoji, the library's pictures and the kids' side; no photo, word or tick of the old trip

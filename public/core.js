@@ -74,6 +74,19 @@ let lang = ls('lang') || ((navigator.language || '').startsWith('en') ? 'en' : '
 const L = (th, en) => (lang === 'th' ? th : en);
 const T = (o) => (o == null ? '' : typeof o === 'string' ? o : o[lang] || o.en || o.th || '');
 const uid = (p) => p + '-' + Date.now().toString(36) + Math.random().toString(36).slice(2, 7);
+/* The fingerprint of an original photo or clip (owner, Nov 2026: "ไม่ให้รูปเดิมขึ้นซ้ำ"): SHA-256 of its size, first and last 64 KB,
+   taken before shrink() re-encodes it — the same file picked again gives the same print, so a book never holds it twice (media.fp,
+   migration 0027). '' where the browser has no crypto.subtle (an insecure page): nothing is skipped then. */
+async function fileFp(f) {
+  try {
+    if (!f || typeof crypto === 'undefined' || !crypto.subtle) return '';
+    const n = f.size, a = new Uint8Array(await f.slice(0, 65536).arrayBuffer()), b = n > 131072 ? new Uint8Array(await f.slice(n - 65536).arrayBuffer()) : new Uint8Array(0);
+    const head = new TextEncoder().encode(n + ':'), buf = new Uint8Array(head.length + a.length + b.length);
+    buf.set(head, 0); buf.set(a, head.length); buf.set(b, head.length + a.length);
+    return Array.from(new Uint8Array(await crypto.subtle.digest('SHA-256', buf)).slice(0, 12), (x) => x.toString(16).padStart(2, '0')).join('');
+  } catch (_) { return ''; }
+}
+const fpIn = (t, fp) => !!fp && S.media.some((m) => m.trip === t.id && m.fp === fp);   // the book already holds this file (sent or still queued)
 
 let S = null;          // server state (+ optimistic local changes)
 let offline = false;
