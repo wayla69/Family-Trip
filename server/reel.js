@@ -324,8 +324,9 @@ function create({ pool, media, A, family, cards, done }) {
   // "we're home" on a book from photos (bookshelf.js hooks.home): the film is made by itself when the book has none yet and enough
   // photos; nothing happens while another film is being made
   async function home({ trip }) {
-    const t = (await q('SELECT reel FROM trips WHERE id=$1 AND family_id=$2', [trip, family]))[0];
+    const t = (await q("SELECT reel, (SELECT count(*)::int FROM media WHERE trip_id=$1 AND mime LIKE 'image/%') AS n FROM trips WHERE id=$1 AND family_id=$2", [trip, family]))[0];
     if (!t || (t.reel && t.reel.v)) return { code: 409, error: 'has' };
+    if (t.n < 3) return { code: 400, error: 'few' };   // asked before anything is claimed: a book of two photos never shows a film being made, even for a moment
     return start(trip, { lang: 'th', mood: 'warm', auto: true });
   }
   return { router: r, key, start, home, startYear };
