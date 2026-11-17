@@ -10,7 +10,7 @@ the trip for this book; after it is made the phone keeps the rest and comes back
 (`#/t/<id>/draft/review`, `viewSnapReview`; migration 0026 `entries.src` = 'ai' on the helper's drafts, cleared by a changed text
 or "keep this draft"), the 21:30 nudge on an open book's day never opened (push.js `extras`: a snap book's own days, gaps kept,
 no store-the-book or doors; key `<trip>.x.log.<date>`, opens its Today page) and the no-signal day in test/offline.mjs.
-Still left out: photo help inside the job (D6.2; the record page's "look at today's photos" still works per day). Written 16 Nov 2026 for handoff; the next session implements from this file.
+Second round (16–17 Nov 2026): edit after it is made, a book each / all in one, best photos ⭐ and the photos set aside on the phone (repeats, screenshots and — owner: "ตรวจจับใบเสร็จ" — receipts and papers: `snapDocGate` on the camera's own EXIF preview (IFD1, ~3 ms a photo) or a 96 px look, then `snapDocOf` at 320 px for lines of print, straight or slanted to 12°), earlier days on a book with memories, clips with the photos. Still left out: photo help inside the job (D6.2; the record page's "look at today's photos" still works per day). Written 16 Nov 2026 for handoff; the next session implements from this file.
 Owner's ask: "บางครอบครัวไม่ได้วางแผน ให้ทำเล่มเปล่า ถ่ายรูป ใช้ location ในรูป แล้วใช้ AI ร่างเป็นเก็บประวัติ storybook เองได้เลย …
 ทำให้การใช้งานแบบทริปพิเศษ หรือคนไทยเที่ยวใกล้ๆ ยกมือถือมาทำแล้วได้เล่มเลย".
 

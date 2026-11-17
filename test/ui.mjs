@@ -414,15 +414,17 @@ const T = 'hk-macau-2026';
       { const { execFile } = await import('node:child_process'), vf = path.join(OUT, 'snap-clip.mp4');   // a clip filmed on the first trip's first day (its own time)
         await new Promise((res, rej) => execFile('ffmpeg', ['-hide_banner', '-loglevel', 'error', '-y', '-f', 'lavfi', '-i', 'testsrc=size=320x240:rate=12', '-t', '2', '-metadata', 'creation_time=2025-03-01T12:00:00Z', '-c:v', 'libx264', '-preset', 'ultrafast', vf], (e) => (e ? rej(e) : res())));
         files.push({ name: 'VID_20250301.mp4', mimeType: 'video/mp4', buffer: fs.readFileSync(vf) }); }
+      { const { cameraJpeg, receiptSvg } = await import('./snap-jpeg.mjs');   // with the camera's own preview, as a phone writes it
+        files.push({ name: 'IMG_RECEIPT.jpg', mimeType: 'image/jpeg', buffer: (await cameraJpeg(receiptSvg(), '2025:03:01 13:30:00')).buffer }); }   // a café receipt on the first day: set aside, never sent
       files.push({ name: 'Screenshot_20250301.png', mimeType: 'image/png', buffer: await sharp({ create: { width: 200, height: 400, channels: 3, background: '#eee' } }).png().toBuffer() });
       await page.goto(`${BASE}/#/snap`); await page.waitForSelector('.snapmode');
       await page.click('.snapmode .tpo[data-v="after"]');
       const [fb] = await Promise.all([page.waitForEvent('filechooser'), page.click('[data-a="snappickbook"]')]);
       await fb.setFiles(files);
       await page.waitForSelector('.snapjoin', { timeout: 30000 }).catch(() => {});
-      const rd = await page.evaluate(() => ({ two: document.querySelectorAll('.snaptrips .tpo').length, join: [...document.querySelectorAll('.snapjoin .tpo')].map((b) => b.dataset.v).join(), sum: document.querySelector('.snapsum') ? document.querySelector('.snapsum').textContent : '', aside: { ...snapS.aside }, stars: snapS.star.size }));
-      ok(rd.two === 2 && rd.join === 'both' && /set aside/i.test(rd.sum) && /best photos/i.test(rd.sum) && Object.values(rd.aside).filter((v) => v === 'dup').length === 1 && Object.values(rd.aside).filter((v) => v === 'shot').length === 1 && rd.stars >= 2,
-        `two trips: the read page offers either trip or a book each (not one book: March to May is over 60 days); one of the burst and the screenshot set aside; a star a day (${JSON.stringify(rd)})`);
+      const rd = await page.evaluate(() => ({ two: document.querySelectorAll('.snaptrips .tpo').length, join: [...document.querySelectorAll('.snapjoin .tpo')].map((b) => b.dataset.v).join(), sum: document.querySelector('.snapsum') ? document.querySelector('.snapsum').textContent : '', aside: { ...snapS.aside }, sift: snapS.sift, stars: snapS.star.size }));
+      ok(rd.two === 2 && rd.join === 'both' && /set aside/i.test(rd.sum) && /best photos/i.test(rd.sum) && Object.values(rd.aside).filter((v) => v === 'dup').length === 1 && Object.values(rd.aside).filter((v) => v === 'shot').length === 1 && Object.values(rd.aside).filter((v) => v === 'doc').length === 1 && rd.sift.preview >= 1 && rd.sift.read >= 1 && /receipts and papers/.test(rd.sum) && rd.stars >= 2,
+        `two trips: the read page offers either trip or a book each (not one book: March to May is over 60 days); one of the burst, the screenshot and the café receipt set aside; a star a day (${JSON.stringify(rd)})`);
       await page.click('.snapjoin .tpo[data-v="both"]');
       await page.goto(`${BASE}/#/snap/days`); await page.waitForSelector('[data-a="snapmake"]');
       const daysOk = await page.evaluate(() => document.querySelectorAll('.sdpt.on').length >= 1 && document.querySelectorAll('.snapaside').length >= 1 && [...document.querySelectorAll('.sdpt')].every((e) => e.getBoundingClientRect().height >= 44));
@@ -433,7 +435,7 @@ const T = 'hk-macau-2026';
       const st2 = await apiState(page), made = st2.trips.filter((x) => x.kind === 'snap' && !before.includes(x.id)).sort((a, b) => (a.date_from < b.date_from ? -1 : 1));
       const per = made.map((x) => { const ms = st2.media.filter((m) => m.trip === x.id); return { from: x.date_from, n: ms.filter((m) => !(m.mime || '').startsWith('video/')).length, clips: ms.filter((m) => (m.mime || '').startsWith('video/')).map((m) => m.day), stars: ms.filter((m) => m.highlight).length }; });
       ok(daysOk && made.length === 2 && per[0].from === '2025-03-01' && per[0].n === 7 && per[1].from === '2025-05-10' && per[1].n === 5 && per.every((x) => x.stars >= 1) && JSON.stringify(per[0].clips) === '[0]' && !per[1].clips.length,
-        `two trips: "a book each" makes two books; the burst sends one photo, the screenshot none; each book has its best photo starred; the clip goes to the first trip's first day (${JSON.stringify({ daysOk, per })})`);
+        `two trips: "a book each" makes two books; the burst sends one photo, the screenshot and the receipt none; each book has its best photo starred; the clip goes to the first trip's first day (${JSON.stringify({ daysOk, per })})`);
       await page.evaluate((xs) => Promise.all(xs.map((x) => fetch('/api/b/trips/' + x, { method: 'DELETE', headers: { 'x-mb': '1' } }))), made.map((x) => x.id));
     }
     await s.ctx.close();
