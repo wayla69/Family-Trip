@@ -124,6 +124,11 @@ ok((await (await upA('vc-test-0001')).json()).ok && (await state()).media.some((
 const ar = await fetch(BASE + '/media/vc-test-0001', { headers: { cookie: ck, range: 'bytes=0-1023' } });
 ok(ar.status === 206 && (ar.headers.get('content-type') || '').startsWith('audio/webm') && ar.headers.get('content-range') === 'bytes 0-1023/4096' && (await ar.arrayBuffer()).byteLength === 1024, 'voice memo streams with byte ranges (206 + Content-Range)');
 ok((await fetch(BASE + '/media/vc-test-0001', { headers: { cookie: ck } })).status === 200 && (await fetch(BASE + '/media/vc-test-0001/t', { headers: { cookie: ck } })).status === 404, 'whole clip → 200; a clip has no thumbnail');
+{ // only the bytes asked for are read from storage (server/ranged.js): a middle piece, the last bytes, past the end
+  const rg = async (range) => { const r = await fetch(BASE + '/media/vc-test-0001', { headers: { cookie: ck, range } }); return { s: r.status, cr: r.headers.get('content-range'), n: r.status === 416 ? 0 : (await r.arrayBuffer()).byteLength }; };
+  const mid = await rg('bytes=1000-1999'), tail = await rg('bytes=-100'), open = await rg('bytes=4000-'), past = await rg('bytes=5000-6000');
+  ok(mid.s === 206 && mid.cr === 'bytes 1000-1999/4096' && mid.n === 1000 && tail.cr === 'bytes 3996-4095/4096' && tail.n === 100 && open.n === 96 && past.s === 416 && past.cr === 'bytes */4096',
+    `byte ranges: a middle piece, the last bytes, to the end, past the end → 416 (${JSON.stringify({ mid, tail, open, past })})`); }
 ok((await upA('vc-bad-00001', 'text/plain')).status === 415 && (await upA('vc-view-0001', 'audio/webm', { 'x-mb': '1', cookie: vck })).status === 403, 'not an audio type → 415; viewer cannot record');
 ok((await fetch(BASE + '/api/b/media/vc-test-0001', { method: 'DELETE', headers: H })).ok && !(await state()).media.some((m) => m.id === 'vc-test-0001') && (await fetch(BASE + '/media/vc-test-0001', { headers: { cookie: ck } })).status === 404, 'voice memo deleted, file gone');
 
@@ -265,6 +270,26 @@ ok((await fetch(BASE + '/api/b/trips', { method: 'POST', headers: H, body: JSON.
     && (await post(`/api/b/days/${id}/1`, { place: '' }, 'PATCH')).ok && (await post(`/api/b/days/${T}/0`, { title: 'x' }, 'PATCH')).status === 409
     && (await post(`/api/b/days/${id}/9`, { title: 'x' }, 'PATCH')).status === 404 && (await post(`/api/b/days/${id}/0`, { title: '' }, 'PATCH')).status === 400, 'snap: a day\'s name, place and picture are the parents\' to type (never a bundled book\'s day)');
   ok((await post(`/api/b/trips/${live.id}`, { title: 'ทะเลวันเดียว', open: false }, 'PATCH')).ok && (await post(`/api/b/trips/${T}`, { open: true }, 'PATCH')).status === 409, 'snap: "we\'re home" closes the book; a bundled book cannot be renamed');
+  ok(!(await (await fetch(BASE + '/api/b/reel', { headers: { cookie: ck } })).json()).job, 'snap: "we\'re home" on a book with no photos makes no film');
+  // "we're home" on a book with photos (owner, Nov 2026: "ทำคลิปให้อัตโนมัติตอนกด ถึงบ้านแล้ว"): its film makes itself
+  { const home = await (await post('/api/b/snap', { open: true, timezone: 'Asia/Bangkok' })).json();
+    for (let k = 0; k < 3; k++) await fetch(`${BASE}/api/b/media/home-ph-000${k}?trip=${home.id}&day=0`, { method: 'PUT', headers: { 'x-mb': '1', cookie: ck, 'content-type': 'image/jpeg' }, body: await sharp({ create: { width: 900, height: 600, channels: 3, background: ['#c84', '#48c', '#4c8'][k] } }).jpeg().toBuffer() });
+    await post(`/api/b/trips/${home.id}`, { open: false }, 'PATCH');
+    let job = (await (await fetch(BASE + '/api/b/reel', { headers: { cookie: ck } })).json()).job;
+    const started = !!(job && job.trip === home.id && job.auto);
+    for (let k = 0; k < 120 && job && job.state === 'run'; k++) { await new Promise((r) => setTimeout(r, 1000)); job = (await (await fetch(BASE + '/api/b/reel', { headers: { cookie: ck } })).json()).job; }
+    const made = (await state()).trips.find((x) => x.id === home.id).reel;
+    ok(started && job.state === 'done' && made && made.v && made.mood === 'warm', `snap: "we're home" on a book with photos makes its film by itself (${JSON.stringify({ started, state: job && job.state, made })})`);
+    // the year's film (server/reel.js startYear): every book of 2026 — here the one just made — its best photos, the year's cards
+    const yr0 = await fetch(`${BASE}/api/b/reel-year/${new Date().getFullYear()}`, { method: 'POST', headers: H, body: JSON.stringify({ mood: 'fun' }) });
+    let yj = (await (await fetch(BASE + '/api/b/reel', { headers: { cookie: ck } })).json()).job;
+    for (let k = 0; k < 120 && yj && yj.state === 'run'; k++) { await new Promise((r) => setTimeout(r, 1000)); yj = (await (await fetch(BASE + '/api/b/reel', { headers: { cookie: ck } })).json()).job; }
+    const ys = (await (await fetch(BASE + '/api/b/reel-year', { headers: { cookie: ck } })).json()).years, yv = ys[new Date().getFullYear()];
+    const yrg = yv ? await fetch(`${BASE}/media/reel-year/${new Date().getFullYear()}?v=${yv.v}`, { headers: { cookie: ck, range: 'bytes=0-99' } }) : null;
+    ok(yr0.status === 202 && yj && yj.state === 'done' && yv && yv.mood === 'fun' && yv.n >= 3 && yrg && yrg.status === 206
+      && (await fetch(`${BASE}/media/reel-year/${new Date().getFullYear()}?v=${yv.v}`, { headers: { cookie: vck } })).status === 403 && (await fetch(`${BASE}/api/b/reel-year/1999`, { method: 'POST', headers: H, body: '{}' })).status === 400,
+      `the year's film: made from the year's books, played in ranges; relatives cannot fetch it; a year with no photos is told so (${JSON.stringify({ s: yr0.status, state: yj && yj.state, yv })})`);
+    await fetch(`${BASE}/api/b/trips/${home.id}`, { method: 'DELETE', headers: H }); }   // out of the way of the counts below
   t = (await state()).trips.find((x) => x.id === id); const l2 = (await state()).trips.find((x) => x.id === live.id);
   ok(t.days[0].title.en === 'Setting off' && t.days[0].place.en === 'Home' && t.days[0].emoji === '🚗' && t.days[1].place === null && l2.open === false && l2.title.th === 'ทะเลวันเดียว', 'snap: the edits are in the state');
   // a photo moves to another day of its book (never past the last)
@@ -394,6 +419,46 @@ const stored = path.join(DATA_DIR, 'media', 'p', T, 'ph-test-0001.jpg');
 ok(fs.existsSync(stored), 'photo object in storage');
 ok((await fetch(BASE + '/api/b/media/ph-test-0001', { method: 'DELETE', headers: H })).ok && !fs.existsSync(stored)
   && !fs.existsSync(path.join(DATA_DIR, 'media', 't', T, 'ph-test-0001.jpg')), 'deleting a photo removes the stored files too');
+
+// ---- photos from the relatives (server/inbox.js, migration 0031): they wait apart until a parent puts one in or turns it away
+{ const pic = await sharp({ create: { width: 1200, height: 900, channels: 3, background: '#7a9' } }).jpeg().withExif({ IFD0: { Make: 'PhoneCo', Model: 'X1' }, GPS: { GPSLatitudeRef: 'N', GPSLatitude: '13/1 45/1 0/1', GPSLongitudeRef: 'E', GPSLongitude: '100/1 30/1 0/1' } }).toBuffer();
+  const send = (id, c, q = `trip=${T}&day=1&from=${encodeURIComponent('ยาย')}`) => fetch(`${BASE}/api/b/inbox/${id}?${q}`, { method: 'PUT', headers: { 'x-mb': '1', cookie: c, 'content-type': 'image/jpeg' }, body: pic });
+  const a = await send('ib-test-0001', vck), b2 = await send('ib-test-0002', vck), noname = await send('ib-test-0003', vck, `trip=${T}&day=1`);
+  const st0 = await state(), mineV = (await (await fetch(BASE + '/api/b/inbox', { headers: { cookie: vck } })).json()).items, allE = (await (await fetch(BASE + '/api/b/inbox', { headers: { cookie: ck } })).json()).items;
+  ok(a.ok && b2.ok && noname.status === 400 && !st0.media.some((m) => /^ib-test/.test(m.id)) && mineV.length === 2 && allE.length === 2 && allE[0].from === 'ยาย' && allE[0].day === 1,
+    `relatives' photos: a relative sends two (a name is needed); they wait apart — not in the book's state — the sender and the parents see them (${JSON.stringify({ a: a.status, n: noname.status, mineV: mineV.length, allE: allE.length })})`);
+  const stored = path.join(DATA_DIR, 'media', 'i', T, 'ib-test-0001.jpg'), meta = await sharp(fs.readFileSync(stored)).metadata();
+  ok(!meta.exif && fs.existsSync(path.join(DATA_DIR, 'media', 'i', T, 't', 'ib-test-0001.jpg')) && (await fetch(BASE + '/media/inbox/ib-test-0001/t', { headers: { cookie: vck } })).status === 200,
+    'relatives\' photos: kept with no metadata or position, a thumbnail beside it; the sender can look at their own');
+  ok((await fetch(BASE + '/api/b/inbox/ib-test-0001/ok', { method: 'POST', headers: { ...H, cookie: vck }, body: '{}' })).status === 403, 'relatives\' photos: a relative cannot put one in the book');
+  const okr = await (await fetch(BASE + '/api/b/inbox/ib-test-0001/ok', { method: 'POST', headers: H, body: JSON.stringify({ day: 0 }) })).json();
+  const st1 = await state(), m1 = st1.media.find((m) => m.id === 'ib-test-0001');
+  ok(okr.ok && m1 && m1.day === 0 && (await fetch(BASE + '/media/ib-test-0001', { headers: { cookie: ck } })).status === 200 && !fs.existsSync(stored),
+    `relatives' photos: a parent puts one in the day they pick — a photo of the book like any other, the waiting copy gone (${JSON.stringify(m1 && { day: m1.day, by: m1.created_by })})`);
+  const del = await fetch(BASE + '/api/b/inbox/ib-test-0002', { method: 'DELETE', headers: H });
+  ok(del.ok && !fs.existsSync(path.join(DATA_DIR, 'media', 'i', T, 'ib-test-0002.jpg')) && !(await (await fetch(BASE + '/api/b/inbox', { headers: { cookie: ck } })).json()).items.length,
+    'relatives\' photos: turned away, its files are deleted at once');
+  await fetch(BASE + '/api/b/media/ib-test-0001', { method: 'DELETE', headers: H }); }   // out of the way of the counts below
+// ---- what went wrong on the phones (server/errors.js, migration 0030): scrubbed, counted once a day, editors read and clear
+{ const err = (b, c = ck) => fetch(BASE + '/api/b/err', { method: 'POST', headers: { ...H, cookie: c }, body: JSON.stringify(b) });
+  const one = { msg: `TypeError: Cannot read properties of undefined (reading 'title') "มีมี่ไปทะเล" mail@example.com 0812345678 https://x.example/views.js?v=1#/kid/mimi`, src: '/views.js', line: 812, col: 9, ver: 'mbs-v239-abcd12', route: 'kid/colour', device: 'ipad safari 17 app' };
+  const r1 = await err(one), r2 = await err(one, vck), r3 = await err({ ...one, src: 'https://evil.example/x.js', route: '#/t/hk/log/2', device: 'Mimi’s iPad', ver: '<b>' });
+  ok(r1.ok && r2.ok && r3.ok && (await err({ msg: '' })).status === 400 && (await fetch(BASE + '/api/b/err', { method: 'POST', headers: { 'x-mb': '1', 'content-type': 'application/json' }, body: JSON.stringify(one) })).status === 401,
+    'phone problems: a signed-in phone (a parent or a relative) reports one; an empty one is refused, a signed-out one too');
+  const list = await (await fetch(BASE + '/api/b/health/errors', { headers: { cookie: ck } })).json(), e = list.errors.find((x) => x.src === '/views.js'), odd = list.errors.find((x) => x.src === '');
+  const blob = JSON.stringify(list);
+  ok(e && e.n === 2 && e.line === 812 && e.route === 'kid/colour' && e.device === 'ipad safari 17 app' && /reading 'title'/.test(e.msg) && odd && odd.route === '' && odd.ver === '' && odd.device === 'other other 0'
+    && !/มีมี่|mail@|0812345678|example|mimi|Mimi|evil|<b>/.test(blob),
+    `phone problems: the same one twice is one row counted twice; a name, a text, an address, a number, a URL and a foreign file never stored (${blob.slice(0, 400)})`);
+  ok((await fetch(BASE + '/api/b/health/errors', { headers: { cookie: vck } })).status === 403 && (await fetch(BASE + '/api/b/health/storage', { headers: { cookie: vck } })).status === 403, 'phone problems and room: relatives cannot read them');
+  await fetch(`${BASE}/api/b/media/vc-room-0001?trip=${T}&day=1&kind=audio`, { method: 'PUT', headers: { 'x-mb': '1', cookie: ck, 'content-type': 'audio/webm' }, body: Buffer.alloc(5000, 3) });
+  const room = await (await fetch(BASE + '/api/b/health/storage', { headers: { cookie: ck } })).json();
+  const bk = room.books.find((b) => b.id === T);
+  ok(bk && bk.kinds.voices && bk.kinds.voices.n === 1 && bk.kinds.voices.bytes === 5000 && bk.total >= 5000 && room.total === room.books.reduce((s, b) => s + b.total, 0) && room.total > 0,
+    `room: each book's photos, clips and voice memos counted in bytes, the family's total adds up (${JSON.stringify(bk && bk.kinds)})`);
+  ok((await fetch(BASE + '/api/b/health/errors', { method: 'DELETE', headers: H })).ok && !(await (await fetch(BASE + '/api/b/health/errors', { headers: { cookie: ck } })).json()).errors.length, 'phone problems: the parents can clear the list');
+  let slow = 0; for (let k = 0; k < 25; k++) if ((await err({ ...one, line: 1000 + k })).status === 429) slow++;
+  ok(slow >= 1, `phone problems: a phone sending in a loop is slowed (${slow} of 25 refused)`); }
 await pool.end();
 
 console.log(failures ? `\n${failures} FAILED` : '\nALL PASSED');

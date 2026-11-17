@@ -602,6 +602,78 @@ async function snapDocLook(file) {   // the 320 px read, only for a photo that p
     return snapDocOf(g.getImageData(0, 0, w, h).data, w, h);
   } catch (_) { return false; }
 }
+/* Faces (owner, Nov 2026: "เลือกรูปเด่นโดยดูหน้าเด็ก"): a photo where faces are seen, big enough and sharp, is a better pick than
+   the same moment without them, and a bigger face better than a far-off one. On the phone only: the pixel-intensity-comparison
+   cascade of N. Markuš's pico (MIT; its trained face finder, /geo/facefinder.bin, 234 KB, fetched once and kept for no signal) run on
+   a 320 px grey copy, about 30 ms a photo. Eyes shut are not judged: two simple reads of the eye (dark band, white of the eye) could
+   not tell a blink from a smile on test photos, so a guess is not made. Nothing leaves the phone, and nothing about a face is kept:
+   the answer is only "how many faces, how big". */
+let faceFind = null, faceAsk = null;
+function faceCascade(bytes) {   // the trees of the cascade file: depth, count, then per tree its pixel pairs, leaf values and threshold
+  const dv = new DataView(bytes.buffer, bytes.byteOffset, bytes.byteLength);
+  const depth = dv.getInt32(8, true), n = dv.getInt32(12, true), leaves = 1 << depth;
+  let p = 16; const codes = new Int8Array(n * 4 * leaves), preds = new Float32Array(n * leaves), thresh = new Float32Array(n);
+  for (let t = 0; t < n; t++) {
+    codes.set(new Int8Array(bytes.buffer, bytes.byteOffset + p, 4 * leaves - 4), t * 4 * leaves + 4); p += 4 * leaves - 4;
+    for (let k = 0; k < leaves; k++) { preds[t * leaves + k] = dv.getFloat32(p, true); p += 4; }
+    thresh[t] = dv.getFloat32(p, true); p += 4;
+  }
+  return (r, c, s, px, w) => {   // > 0: a face centred at (r, c), size s
+    r *= 256; c *= 256; let o = 0, root = 0;
+    for (let t = 0; t < n; t++) {
+      let idx = 1;
+      for (let j = 0; j < depth; j++) {
+        const q = root + 4 * idx;
+        idx = 2 * idx + (px[((r + codes[q] * s) >> 8) * w + ((c + codes[q + 1] * s) >> 8)] <= px[((r + codes[q + 2] * s) >> 8) * w + ((c + codes[q + 3] * s) >> 8)] ? 1 : 0);
+      }
+      o += preds[t * leaves + idx - leaves];
+      if (o <= thresh[t]) return -1;
+      root += 4 * leaves;
+    }
+    return o - thresh[n - 1];
+  };
+}
+function faceRun(classify, px, w, h) {   // every place and size a face may be, then the overlapping answers merged
+  const dets = []; let s = Math.max(16, Math.round(Math.min(w, h) * 0.07));
+  while (s <= Math.min(w, h)) {
+    const step = Math.max(1, Math.round(s * 0.1)), off = (s / 2 + 1) | 0;
+    for (let r = off; r <= h - off; r += step) for (let c = off; c <= w - off; c += step) { const q = classify(r, c, s, px, w); if (q > 0) dets.push([r, c, s, q]); }
+    s = Math.round(s * 1.1) + (s < 20 ? 1 : 0);
+  }
+  dets.sort((a, b) => b[3] - a[3]);
+  const iou = (a, b) => { const or = Math.max(0, Math.min(a[0] + a[2] / 2, b[0] + b[2] / 2) - Math.max(a[0] - a[2] / 2, b[0] - b[2] / 2)), oc = Math.max(0, Math.min(a[1] + a[2] / 2, b[1] + b[2] / 2) - Math.max(a[1] - a[2] / 2, b[1] - b[2] / 2)); return (or * oc) / (a[2] * a[2] + b[2] * b[2] - or * oc); };
+  const used = new Uint8Array(dets.length), out = [];
+  for (let i = 0; i < dets.length; i++) {
+    if (used[i]) continue; let r = 0, c = 0, s2 = 0, q = 0, k = 0;
+    for (let j = i; j < dets.length; j++) if (!used[j] && iou(dets[i], dets[j]) > 0.2) { used[j] = 1; r += dets[j][0]; c += dets[j][1]; s2 += dets[j][2]; q += dets[j][3]; k++; }
+    out.push([r / k, c / k, s2 / k, q]);
+  }
+  return out.filter((d) => d[3] >= 30);   // a weak answer is a pattern in a wall or a tree, not a face
+}
+async function faceReady() {
+  if (faceFind) return faceFind;
+  if (!faceAsk) faceAsk = fetch('/geo/facefinder.bin').then((r) => (r.ok ? r.arrayBuffer() : null)).then((b) => (b && b.byteLength > 1000 ? (faceFind = faceCascade(new Uint8Array(b))) : null)).catch(() => null);
+  const f = await faceAsk; if (!f) faceAsk = null; return f;
+}
+// a photo's faces: [{size (share of the photo's short side)}], biggest first; null when it cannot be looked at
+async function faceLook(file) {
+  try {
+    const classify = await faceReady(); if (!classify) return null;
+    let bmp; try { bmp = await createImageBitmap(file, { resizeWidth: 320, resizeQuality: 'medium' }); } catch (_) { bmp = await createImageBitmap(file); }
+    const w = 320, h = Math.max(8, Math.round(320 * bmp.height / bmp.width)), cv = document.createElement('canvas'); cv.width = w; cv.height = h;
+    const g = cv.getContext('2d', { willReadFrequently: true }); g.drawImage(bmp, 0, 0, w, h); if (bmp.close) bmp.close();
+    return faceOf(g.getImageData(0, 0, w, h).data, w, h, classify);
+  } catch (_) { return null; }
+}
+function faceOf(rgba, w, h, classify) {
+  const px = new Uint8Array(w * h); for (let k = 0; k < w * h; k++) px[k] = (rgba[k * 4] * 77 + rgba[k * 4 + 1] * 150 + rgba[k * 4 + 2] * 29) >> 8;
+  return faceRun(classify, px, w, h).sort((a, b) => b[2] - a[2]).slice(0, 8).map((d) => ({ size: d[2] / Math.min(w, h) }));
+}
+// how much the faces add to a photo's pick: none → 1; a face → 1.5 for a far-off one up to 2.2 for a close one; more faces a little more
+function faceBonus(faces) {
+  if (!faces || !faces.length) return 1;
+  return 1 + Math.min(1.2, 0.5 + faces[0].size * 2.5) + Math.min(0.3, (faces.length - 1) * 0.1);
+}
 const SNAP_SHOT_RE = /screen ?shot|screen[_-]?shot|screen[_-]?cap|capture|สกรีน|ภาพหน้าจอ/i;
 async function snapLook(file) {
   try {
@@ -624,7 +696,7 @@ const snapHam = (a, b) => { let n = 0; for (let k = 0; k < 64; k++) if (a[k] !==
 // what to set aside in picked photos, and the best ones (owner, Nov 2026: the first build, then "เพิ่มรูปทีหลัง" too): metas[i] =
 // snapMeta's answer; alive() says the page still wants the answer. → {aside: {i: 'dup'|'shot'|'doc'}, star: Set, sift} or null
 async function snapScreen(list, metas, alive, stars = true) {
-  const aside = {}, star = new Set(), sift = { preview: 0, full: 0, read: 0 };   // how each photo was looked at (the tests read it)
+  const aside = {}, star = new Set(), sift = { preview: 0, full: 0, read: 0, faces: 0 }, faces = {}; let faceBudget = 160;   // how each photo was looked at (the tests read it)
   const t = (i) => Date.parse(metas[i].at + 'Z');
   list.forEach((f, i) => { const m = metas[i]; if (m && m.src !== 'exif' && (f.type === 'image/png' || SNAP_SHOT_RE.test(f.name || ''))) aside[i] = 'shot'; });
   const looks = {}; let budget = 700;
@@ -657,8 +729,8 @@ async function snapScreen(list, metas, alive, stars = true) {
     const byDate = {}; for (const i of timed) if (!aside[i]) (byDate[metas[i].at.slice(0, 10)] = byDate[metas[i].at.slice(0, 10)] || []).push(i);
     for (const ids of Object.values(byDate)) {
       const step = Math.max(1, Math.floor(ids.length / 8)), cand = ids.filter((_, k) => k % step === 0).slice(0, 8);
-      for (const i of cand) await look(i);
-      const score = (i) => (looks[i] ? looks[i].sharp * (looks[i].light < 45 || looks[i].light > 225 ? 0.35 : 1) : -1);
+      for (const i of cand) { await look(i); if (looks[i] && !(i in faces) && faceBudget-- > 0) { faces[i] = await faceLook(list[i]); if (faces[i] && faces[i].length) sift.faces++; } }
+      const score = (i) => (looks[i] ? looks[i].sharp * (looks[i].light < 45 || looks[i].light > 225 ? 0.35 : 1) * faceBonus(faces[i]) : -1);
       const ranked = cand.filter((i) => looks[i]).sort((x, y) => score(y) - score(x)), want = ids.length >= 10 ? 2 : 1, got = [];
       for (const i of ranked) { if (got.length >= want) break; if (got.every((j) => Math.abs(t(i) - t(j)) > 20 * 6e4)) got.push(i); }
       got.forEach((i) => star.add(i));

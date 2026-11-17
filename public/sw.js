@@ -1,6 +1,6 @@
 // Memory Bookshelf service worker: app shell + all drawn art offline from the first visit; photos cached as you view them
 // (or all at once with "Keep this book offline"). Data (/api) is cached by the app itself (IndexedDB) and written through its queue.
-const V = 'mbs-v238';
+const V = 'mbs-v241';
 const GEO = 'mbs-geo';   // each country's place names (/geo/<cc>.json, read on the phone): kept across shell versions, like the stock pictures
 const STOCK = 'mbs-stock';   // the stock art library (/stock/, versioned file names): only a stored book's pictures, kept across shell versions too
 const SHARE = 'mbs-share';   // photos shared to the app from the phone's gallery (manifest share_target), read once by #/snaptest
@@ -92,7 +92,7 @@ async function takeShare(r) {
     const fd = await r.formData(), c = await caches.open(SHARE);
     for (const k of await c.keys()) await c.delete(k);   // one share at a time
     for (const f of fd.getAll('photos')) {
-      if (!f || typeof f === 'string') continue;
+      if (!f || typeof f === 'string' || !/^(image|video)\//.test(f.type || '') || n >= 300) continue;   // photos and clips only, a pick's worth
       await c.put(new Request('/share-in/' + n++), new Response(f, { headers: { 'content-type': f.type || 'application/octet-stream', 'x-name': encodeURIComponent(f.name || ''), 'x-mod': String(f.lastModified || 0) } }));
     }
   } catch (_) { /* nothing kept: the page says so */ }

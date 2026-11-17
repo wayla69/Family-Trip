@@ -32,6 +32,7 @@ const HEART_EMOJI = ['💗', '😍', '👏', '🙏', '⭐', '🎉', '🤗', '�
 const REVIEW_KINDS = ['stay', 'food', 'place'], KID_VERDICT = ['love', 'ok', 'no'];
 const HEARTS_PER_DAY = { sender: 40, family: 400 };   // the view link is shared: cap what one phone, and everyone together, can send
 const clip = (s, n) => String(s == null ? '' : s).slice(0, n);
+const { sendRanged } = require('./ranged');
 const fpOf = (s) => (/^[0-9a-f]{16,64}$/.test(String(s || '')) ? String(s) : null);   // the original file's fingerprint, from the phone (media.fp, migration 0027)
 // photo tags: up to 10 short words (the fixed keys from Claude, or the parents' own); null when the shape is wrong
 const tagList = (v) => (Array.isArray(v) && v.length <= 10 && v.every((x) => typeof x === 'string') ? [...new Set(v.map((x) => x.trim().toLowerCase().slice(0, 24)).filter(Boolean))] : null);
@@ -158,11 +159,14 @@ function router({ pool, media, A, ai, hooks = {} }) {   // hooks.heart(h): set b
       }
       for (const e of await q('SELECT storage_key FROM emoji WHERE family_id=$1 AND storage_key IS NOT NULL', [FAMILY])) keys.push(e.storage_key);
       for (const t of await q("SELECT id, reel->>'v' v FROM trips WHERE family_id=$1 AND reel IS NOT NULL", [FAMILY])) if (/^[0-9a-f]{12}$/.test(t.v || '')) keys.push(`r/${t.id}/${t.v}.mp4`);   // the books' films
+      { const yr = (await q("SELECT value FROM settings WHERE key='year_reels'"))[0]; let ys = {}; try { ys = yr ? JSON.parse(yr.value) : {}; } catch (_) {}
+        for (const [y, x] of Object.entries(ys)) if (/^\d{4}$/.test(y) && x && /^[0-9a-f]{12}$/.test(x.v || '')) keys.push(`r/year-${y}/${x.v}.mp4`); }   // the years' films
       for (const t of await q("SELECT id, theme, (SELECT count(*)::int FROM trip_days WHERE trip_id=t.id) AS days FROM trips t WHERE family_id=$1 AND theme->>'artV' IS NOT NULL", [FAMILY])) keys.push(...artKeys(t.id, artV(t.theme), t.days));
+      keys.push(...(await require('./inbox').keysOf(pool, FAMILY)));   // the relatives' photos still waiting
       let gone = 0;
       for (const k of new Set(keys)) { try { await media.del(k); gone++; } catch (_) { /* a file already missing is fine */ } }
       await q('DELETE FROM families WHERE id=$1', [FAMILY]);
-      await q("DELETE FROM settings WHERE key IN ('family_likes', 'emoji_seeded', 'emoji_offered', 'emoji_stock_offered')");
+      await q("DELETE FROM settings WHERE key IN ('family_likes', 'emoji_seeded', 'emoji_offered', 'emoji_stock_offered', 'year_reels')");
       await q('INSERT INTO families (id, name) VALUES ($1, $2) ON CONFLICT (id) DO NOTHING', [FAMILY, 'Family']);
       await syncSeeds(pool); await EMOJI.seed(pool, FAMILY); A.groupsChanged();
       console.log(`family erased on request: ${gone} files, every row`);   // no names, no codes
@@ -505,17 +509,12 @@ function router({ pool, media, A, ai, hooks = {} }) {   // hooks.heart(h): set b
       if (!m || !A.canSee(req.user, m.trip_id)) return res.sendStatus(404);   // a group never sees another book's photos
       const audio = isAud(m), video = isVid(m) && !thumb;   // a clip's thumbnail is its poster frame, a JPEG like a photo's
       if (audio && thumb) return res.sendStatus(404);   // a voice memo has no thumbnail
-      const buf = await media.get(audio || video ? m.storage_key : thumb ? keyThumb(m.trip_id, req.params.id) : keyFull(m.trip_id, req.params.id));
-      if (!buf) return res.sendStatus(404);
       res.setHeader('Cache-Control', 'private, max-age=31536000, immutable');
-      if (!audio && !video) return res.type('image/jpeg').send(buf);
-      // a voice memo or a clip: Safari's <audio>/<video> asks for byte ranges and only plays a 206 answer
-      res.setHeader('Accept-Ranges', 'bytes'); res.type(m.mime);
-      const r = /^bytes=(\d*)-(\d*)$/.exec(req.headers.range || '');
-      if (!r || (r[1] === '' && r[2] === '')) return res.send(buf);
-      const a = r[1] === '' ? Math.max(0, buf.length - Number(r[2])) : Number(r[1]), b = r[1] !== '' && r[2] !== '' ? Math.min(Number(r[2]), buf.length - 1) : buf.length - 1;
-      if (!(a <= b) || a >= buf.length) { res.setHeader('Content-Range', `bytes */${buf.length}`); return res.sendStatus(416); }
-      res.status(206); res.setHeader('Content-Range', `bytes ${a}-${b}/${buf.length}`); res.send(buf.subarray(a, b + 1));
+      // a voice memo or a clip: byte ranges, read from storage piece by piece (server/ranged.js)
+      if (audio || video) return await sendRanged(req, res, media, m.storage_key, m.mime);
+      const buf = await media.get(thumb ? keyThumb(m.trip_id, req.params.id) : keyFull(m.trip_id, req.params.id));
+      if (!buf) { res.removeHeader('Cache-Control'); return res.sendStatus(404); }
+      return res.type('image/jpeg').send(buf);
     } catch (e) { next(e); }
   };
   r.get('/media/:id', A.requireUser, send(false));
@@ -658,6 +657,7 @@ function router({ pool, media, A, ai, hooks = {} }) {   // hooks.heart(h): set b
       }
       { const rl = (await q('SELECT reel FROM trips WHERE id=$1', [t.id]))[0]; if (rl && rl.reel && /^[0-9a-f]{12}$/.test(rl.reel.v || '')) await media.del(`r/${t.id}/${rl.reel.v}.mp4`).catch(() => {}); }   // its film (server/reel.js)
       { const tt = (await q('SELECT theme, (SELECT count(*)::int FROM trip_days WHERE trip_id=t.id) AS days FROM trips t WHERE id=$1', [t.id]))[0]; for (const k of artKeys(t.id, artV(tt && tt.theme), (tt && tt.days) || 0)) await media.del(k).catch(() => {}); }   // its drawn pictures (server/bookart.js)
+      for (const k of await require('./inbox').keysOf(pool, FAMILY, t.id)) await media.del(k).catch(() => {});   // the relatives' photos still waiting for it
       await q('DELETE FROM trips WHERE id=$1 AND family_id=$2', [t.id, FAMILY]);   // its days, entries, media rows, places, hearts, reviews and spending go with it
       res.json({ ok: true });
     } catch (e) { next(e); }
@@ -953,6 +953,9 @@ function router({ pool, media, A, ai, hooks = {} }) {   // hooks.heart(h): set b
       if (!sets.length) return bad(res, 'nothing');
       await q(`UPDATE trips SET ${sets.join(', ')} WHERE id=$1`, args);
       if (t.kind === 'snap' && 'title' in b) await snapMatch(t.id).catch((e) => console.error('snap match', e.message));   // the certificate names the book
+      // "we're home": the trip's film makes itself — awaited only until the job is claimed (the film itself is made after the answer),
+      // so the phone that closed the book already sees it being made
+      if (t.kind === 'snap' && b.open === false && t.open && hooks.home) await Promise.resolve(hooks.home({ trip: t.id })).catch((e) => console.error('reel home', e.message));
       res.json({ ok: true });
     } catch (e) { next(e); }
   });

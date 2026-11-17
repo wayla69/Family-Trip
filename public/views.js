@@ -46,7 +46,20 @@ function render() {
     artTrip = t; artDay = null;
     document.documentElement.style.cssText = themeStyle(t); document.documentElement.lang = lang;
     document.body.classList.toggle('serif', t.theme.display === 'serif'); document.body.classList.add('reelbook');
-    app.innerHTML = viewReelCards(t, String(p[3] || '').split('.').filter((x) => /^\d+$/.test(x)).map(Number));
+    app.innerHTML = viewReelCards(t, String(p[3] || '').split('.').filter((x) => /^\d+$/.test(x)).map(Number), String(p[4] || '').split('~').filter(Boolean));
+    return;
+  }
+  if (p[0] === 'printyear' && /^\d{4}$/.test(p[1] || '')) {   // the year's book, A4 pages for the PDF (server: GET /api/b/pdf-year/:y)
+    const ts = yearTrips(+p[1]); artTrip = ts[0] || null; artDay = null;
+    document.documentElement.style.cssText = ts[0] ? themeStyle(ts[0]) : ''; document.documentElement.lang = lang; document.body.classList.add('printbook');
+    app.innerHTML = viewYearBook(+p[1], true);
+    return;
+  }
+  if (p[0] === 'reelyear' && /^\d{4}$/.test(p[1] || '')) {   // the year's film: its cards (server/reel.js startYear)
+    if (p[2] === 'en' || p[2] === 'th') lang = p[2];
+    const ts = String(p[3] || '').split('.').map(trip).filter(Boolean); artTrip = ts[0] || null; artDay = null;
+    document.documentElement.style.cssText = ts[0] ? themeStyle(ts[0]) : ''; document.documentElement.lang = lang; document.body.classList.add('reelbook');
+    app.innerHTML = viewYearCards(+p[1], ts);
     return;
   }
   if (p[0] === 'print' && (t = trip(p[1]))) { artTrip = t; artDay = null;   // the memory book: A4 pages for the PDF (and a preview on screen)
@@ -104,6 +117,10 @@ function render() {
   else if (p[0] === 'privacy') html = viewPrivacy();
   else if (p[0] === 'emoji' && isEditor()) html = viewEmoji();
   else if (p[0] === 'snaptest' && isEditor()) html = viewSnapTest();
+  else if (p[0] === 'health' && isEditor()) html = viewHealth();
+  else if (p[0] === 'map') html = viewFamMap(p[1] || '');
+  else if (p[0] === 'year') html = viewYear(p[1] || '');
+  else if (p[0] === 'inbox' && isEditor()) html = viewInbox();
   else if (p[0] === 'snap' && isEditor()) html = viewSnap(p);   // a book from photos (docs/SNAP-BOOK.md)   // P0 of docs/SNAP-BOOK.md: what this phone hands over from its photos (not linked)
   else html = viewShelf();
   document.documentElement.style.cssText = t ? themeStyle(t) : themeStyle(curTrip());
@@ -282,6 +299,10 @@ ${S.trips.some((t) => t.id === 'sakura-hop-2028') ? '' : `<button type="button" 
 <div class="shelf">${books}${add}</div>
 <div class="part">${L('พาสปอร์ตนักผจญภัย', 'The kids’ passports')} 🛂</div>
 <div class="ppmini">${children().map((k) => { const n = passportStamps(k.slug); return `<a class="ppc s kid-${esc(k.slug)}" href="#/passport/${esc(k.slug)}"><span class="emb">${kidArt(k.slug) ? `<img src="${kidArt(k.slug)}" alt="">` : '🌏'}</span><b>${L('พาสปอร์ตนักผจญภัย', 'Adventure passport')}</b><span class="nm">${esc(kidName(k.slug))}</span><small>${n ? `${n} ${L('ตราประทับ', n === 1 ? 'stamp' : 'stamps')}` : L('ตราประทับรอหนูอยู่', 'Stamps are waiting')}</small></a>`; }).join('')}</div>
+${isEditor() && (inboxLoad(), (INBOX.items || []).length) ? `<a class="nbcard ibcard" href="#/inbox"><span class="emb">📷</span><div><b>${L(`ญาติส่งรูปมา ${INBOX.items.length} รูป`, `${INBOX.items.length} photo${INBOX.items.length > 1 ? 's' : ''} from the family`)}</b><small>${L('ดูก่อนว่าจะใส่ในเล่มไหม', 'Look before they go in a book')}</small></div><span class="arrow">›</span></a>` : ''}
+${S.trips.length ? `<div class="part">${L('ทุกเล่มรวมกัน', 'All our books')} 🌏</div>
+<a class="nbcard" href="#/map"><span class="emb">🗺️</span><div><b>${L('แผนที่ของครอบครัว', 'Our family map')}</b><small>${L('ทุกที่ที่เคยไป และตอนนั้นลูกอายุเท่าไร', 'Everywhere we have been, and how old the children were')}</small></div><span class="arrow">›</span></a>
+<a class="nbcard" href="#/year/${yearOfNow()}"><span class="emb">🎉</span><div><b>${L(`ปี ${yearOfNow()} ของเรา`, `Our ${yearOfNow()}`)}</b><small>${L('ทุกทริปของปีเป็นเล่มเดียว เห็นลูกโตขึ้นทีละทริป', 'Every trip of the year in one book — the children growing trip by trip')}</small></div><span class="arrow">›</span></a>` : ''}
 <div class="part">${L('สำหรับทริปหน้า', 'For the next trip')} 📓</div>
 <a class="nbcard" href="#/notebook"><span class="emb">📓</span><div><b>${L('สมุดโน้ตนักเดินทาง', 'Travel notebook')}</b><small>${S.reviews.length ? L(`${S.reviews.length} รีวิว · ที่พัก ร้านอาหาร สถานที่ — ไว้วางแผนทริปหน้า`, `${S.reviews.length} reviews · stays, food, places — for planning the next trip`) : L('ให้ดาว ติดแท็ก จดว่าอะไรที่ครอบครัวเราชอบ — ไว้วางแผนทริปหน้า', 'Stars, tags and notes on what worked for our family — for planning the next trip')}</small></div><span class="arrow">›</span></a>
 ${isEditor() ? backupCard() : ''}
@@ -292,6 +313,7 @@ ${isEditor() ? `<div class="part">${L('ตั้งค่า', 'Settings')} <img
 <a href="#/emoji">${hubE('kid')}<span><b>${L('อีโมจิของเรา', 'Our emoji')}</b><small>${L(`${emoRows().length} รูป เพิ่มหรือลบได้`, `${emoRows().length} pictures, add or delete`)}</small></span><i>›</i></a>
 <a href="#/viewers">${hubE('relatives')}<span><b>${L('ญาติที่ดูได้', 'Who can see the books')}</b><small>${L('รหัสและลิงก์ของแต่ละกลุ่มญาติ', 'A code and a link for each group of relatives')}</small></span><i>›</i></a>
 <a href="#/snaptest">${hubE('settings')}<span><b>${L('ตรวจเครื่องนี้', 'Check this phone')}</b><small>${L('ลองว่ารูป คลิป และการส่งต่อ ใช้ได้บนเครื่องนี้ไหม', 'Do photos, clips and sharing work on this phone?')}</small></span><i>›</i></a>
+<a href="#/health">${hubE('settings')}<span><b>${L('พื้นที่และปัญหาบนมือถือ', 'Room and phone problems')}</b><small>${L('รูปและคลิปใช้ที่ไปเท่าไร มีอะไรพังบนเครื่องไหนไหม', 'How much room photos and clips take, anything that broke on a phone')}</small></span><i>›</i></a>
 <a href="#/privacy">${hubE('settings')}<span><b>${L('ความเป็นส่วนตัวและข้อมูล', 'Privacy and your data')}</b><small>${L('เก็บอะไร ใครเห็น ขอสำเนา หรือลบทั้งหมด', 'What is kept, who sees it, take a copy or delete everything')}</small></span></a>
 ${aiCard()}</nav>` : ''}
 <div class="row end setout"><button class="btn ghost small" data-a="logout">⎋ ${L('ออกจากระบบ', 'Sign out')}</button></div>`;
@@ -307,6 +329,182 @@ function aiUsage() {
 }
 const aiToday = () => { const u = aiUsage(); return u && u.today.calls ? L(`ผู้ช่วยวันนี้ ${u.today.calls}/${u.limit} ครั้ง`, `Helper today ${u.today.calls}/${u.limit}`) : ''; };
 const tok = (n) => (n >= 1e6 ? (n / 1e6).toFixed(1) + 'M' : n >= 1e3 ? Math.round(n / 1e3) + 'k' : String(Math.round(n)));
+/* The year (owner, Nov 2026: "สรุปทั้งปี … ทั้งแบบคลิปและหนังสือรวมทุกทริป พร้อมตัวการ์ตูนเด็กที่โตขึ้นตามอายุในแต่ละทริป"): every
+   book that starts in a year, as one book — a cover, the year in numbers with the children as they were on each trip (the drawing of
+   that book's time: kidArt(slug, full, t) picks the drawing made before the trip ended), a page per trip (its best photos, a kid's
+   words, its firsts) and an end. #/year/<y> shows it in the app (the same A4 pages, like the print preview), #/printyear/<y> is what
+   the server prints (GET /api/b/pdf-year/:y, editors) and #/reelyear/<y>/… the cards of the year's film (POST /api/b/reel-year/:y). */
+const yearTrips = (y) => S.trips.filter((t) => String(t.date_from || '').slice(0, 4) === String(y)).sort((a, b) => String(a.date_from).localeCompare(String(b.date_from)));
+const yearList = () => [...new Set(S.trips.map((t) => String(t.date_from || '').slice(0, 4)).filter((x) => /^\d{4}$/.test(x)))].sort();
+const yearOfNow = () => { const ys = yearList(), now = String(new Date().getFullYear()); return ys.includes(now) ? now : ys[ys.length - 1] || now; };
+const yearShots = (t, n) => { const ph = mediaOf(t.id).filter((m) => !/^dr-/.test(m.id)); const fav = ph.filter((m) => m.highlight); return fav.concat(ph.filter((m) => !m.highlight)).slice(0, n); };
+const yearQuote = (t) => entriesOf(t.id).filter((e) => e.kind === 'quote' && e.text).sort((a, b) => (b.highlight ? 1 : 0) - (a.highlight ? 1 : 0) || a.at - b.at)[0];
+function yearAges(t) {   // the children on that trip: their drawing of the time, and how old they were when it started
+  const kids = (t.theme.children || []).map((k) => k.slug).filter((k) => children().some((c) => c.slug === k));
+  return kids.map((k) => { const c = children().find((x) => x.slug === k), art = kidArt(k, true, t);
+    let age = ''; if (c && /^\d{4}-\d{2}$/.test(c.birth_ym || '') && t.date_from) { const [y, m] = t.date_from.split('-').map(Number), [by, bm] = c.birth_ym.split('-').map(Number), mo = (y - by) * 12 + m - bm; if (mo >= 0) age = famAgeM(mo); }
+    return `<figure class="ygrow">${art ? `<img src="${esc(art)}" alt="">` : ''}<figcaption><b>${esc(kidName(k))}</b>${age ? `<small>${esc(age)}</small>` : ''}</figcaption></figure>`; }).join('');
+}
+function viewYearBook(y, print) {
+  const ts = yearTrips(y); if (!ts.length) return emptyCard(null, L(`ปี ${y} ยังไม่มีเล่ม`, `No books in ${y} yet`), '');
+  let pgn = 0; const pg = (cls, inner) => `<section class="pg ${cls}" style="--ph:var(--k${(pgn++ % 6) + 1})">${inner}</section>`;
+  const head = (kicker, title, e) => `<header class="pghd">${e ? `<span class="pge" aria-hidden="true">${e}</span>` : ''}<div><div class="kicker">${kicker}</div><h2>${title}</h2></div></header>`;
+  const slugs = [...new Set(ts.flatMap((t) => (t.theme.children || []).map((k) => k.slug)))];
+  const sum = (f) => ts.reduce((s, t) => s + f(t), 0), st = ts.map(stats);
+  const towns = new Set(famPins('').filter((p) => ts.some((t) => t.id === p.trip)).map((p) => T(p.name))).size;
+  const facts = [[L('เล่ม', 'Books'), ts.length], [L('วันเดินทาง', 'Days away'), sum((t) => t.days.length)], [L('รูป', 'Photos'), st.reduce((s, x) => s + x.photos, 0)], [L('คำพูด', 'Quotes'), st.reduce((s, x) => s + x.quotes, 0)], [L('ครั้งแรก', 'Firsts'), st.reduce((s, x) => s + x.firsts, 0)], [L('เมือง', 'Towns'), towns], [L('หัวใจจากญาติ', 'Hearts'), sum((t) => heartsOf(t.id).length)]].filter(([, v]) => v);
+  const cover = pg('cover yrcover', `<div class="yrc"><div class="kicker">${esc(appName())}</div><h1>${L(`ปี ${y}`, String(y))}</h1><p class="yrsub">${esc(L(`ของ${kidsNames()}`, `with ${kidsNames()}`))}</p>
+<div class="yrarts">${ts.map((t) => `<figure>${artImg(t, 0)}<figcaption>${esc(T(t.title).split(' · ')[0])}</figcaption></figure>`).join('')}</div>${castHtml(slugs)}</div>`);
+  const numbers = pg('yrnum', `${head(L('ปีนี้ในตัวเลข', 'The year in numbers'), L(`ปี ${y}`, String(y)), '🎉')}
+<div class="facts">${facts.map(([l, v]) => `<div class="fact"><span class="label">${l}</span><b>${v}</b></div>`).join('')}</div>
+<h3 class="yrh">${L('เราโตขึ้นทุกทริป', 'We grew trip by trip')}</h3>
+<div class="yrgrowl">${ts.map((t) => `<div class="yrgrow"><p><b>${esc(T(t.title).split(' · ')[0])}</b><small>${esc(fmtRange(t))}</small></p><div class="ygrows">${yearAges(t)}</div></div>`).join('')}</div>`);
+  const trips = ts.map((t) => { const ph = yearShots(t, 4), q = yearQuote(t), fs = entriesOf(t.id).filter((e) => e.kind === 'first').slice(0, 6);
+    return pg('yrtrip', `${head(esc(fmtRange(t)), esc(T(t.title).split(' · ')[0]), '📖')}
+${ph.length ? `<div class="yrph n${ph.length}">${ph.map((m, k) => `<figure style="--r:${[-2, 1.5, -1, 2][k]}deg"><img src="${esc(print ? imgF(m) : imgT(m))}" alt=""></figure>`).join('')}</div>` : `<div class="yrarts one">${artImg(t, 0)}</div>`}
+${q ? `<blockquote class="yrq">“${esc(q.text)}”${q.child && q.child !== 'both' ? `<cite>— ${esc(kidName(q.child))}</cite>` : ''}</blockquote>` : ''}
+${fs.length ? `<ul class="yrfirst">${fs.map((e) => { const f = firstLabel(t, e.first_key); return `<li>${esc(f.e)} ${esc(e.text || f.t)}</li>`; }).join('')}</ul>` : ''}
+${print ? '' : `<p><a class="linkbtn" href="#/t/${esc(t.id)}/book">${L('เปิดเล่มนี้', 'Open this book')} ›</a></p>`}`); }).join('');
+  const end = pg('yrend', `<div class="yrc">${castHtml(slugs)}<h2>${L('แล้วเจอกันปีหน้านะ!', 'See you next year!')}</h2><p class="yrsub">${esc(appName())}</p></div>`);
+  return `<div class="kbook age-${esc(bookAgeAuto(ts[ts.length - 1]))} yrbook">${cover}${numbers}${trips}${end}</div>`;
+}
+function viewYear(y0) {
+  famLoad();
+  const ys = yearList(), y = /^\d{4}$/.test(y0) && ys.includes(y0) ? y0 : yearOfNow(), ts = yearTrips(y);
+  const chips = ys.length > 1 ? `<div class="chips fmchips" role="group" aria-label="${L('ปี', 'Year')}">${ys.map((x) => `<a class="chip" href="#/year/${x}" aria-pressed="${x === y}">${L(`ปี ${x}`, x)}</a>`).join('')}</div>` : '';
+  const ed = isEditor(), yr = (YEAR.reels || {})[y], job = typeof reelJob !== 'undefined' && reelJob && reelJob.trip === 'year:' + y ? reelJob : null;
+  const film = !ed || !ts.length ? '' : `<section class="reelbox yrfilm"><div class="part">${L('คลิปทั้งปี', 'The year in a film')} 🎬</div>
+${yr ? `<video class="reelvid" controls playsinline preload="metadata" src="/media/reel-year/${y}?v=${esc(yr.v)}"></video><div class="row reelrow"><a class="btn ghost small" href="/media/reel-year/${y}?v=${esc(yr.v)}&dl=1" download>${L('เก็บลงเครื่อง', 'Save to phone')}</a></div>` : ''}
+${job && job.state === 'run' ? `<p class="reelrun">${L('กำลังทำคลิป', 'Making the film')} <b id="reelpct">${job.pct || 0}%</b></p>` : `${reelMoodPick()}<button type="button" class="${yr ? 'linkbtn' : 'btn wide'}" data-a="yearreel" data-v="${y}">${yr ? L('ทำคลิปทั้งปีใหม่', 'Make it again') : L('ทำคลิปทั้งปี', 'Make the year’s film')}</button>`}
+${job && job.state === 'error' ? `<p class="notice">${L('ทำคลิปไม่สำเร็จ ลองอีกครั้ง', 'The film could not be made — try again')}</p>` : ''}</section>`;
+  const pdf = ed && ts.length ? `<div class="row"><a class="btn" href="/api/b/pdf-year/${y}" download>${ic('book')} ${L('หนังสือทั้งปี (PDF)', 'The year’s book (PDF)')}</a></div>` : '';
+  if (ed && !YEAR.at) yearLoad();
+  return `<h1 class="h2">${L(`ปี ${y} ของเรา`, `Our ${y}`)}</h1>${chips}${film}${pdf}${viewYearBook(y, false)}`;
+}
+const YEAR = { reels: null, at: 0 };
+function yearLoad() { YEAR.at = Date.now(); api('GET', '/api/b/reel-year').then((r) => { YEAR.reels = r.years || {}; if (route().parts[0] === 'year') safeRender(); }).catch(() => {}); }
+// the year film's cards: the year, a card per book (its picture, its name, the children as they were), the end
+function viewYearCards(y, ts) {
+  const slugs = [...new Set(ts.flatMap((t) => (t.theme.children || []).map((k) => k.slug)))];
+  const cast = (t) => { const ks = slugs.filter((k) => kidArt(k, true, t)); return ks.length ? `<div class="rkids">${ks.map((k) => `<figure><img src="${esc(kidArt(k, true, t))}" alt=""><figcaption>${esc(kidName(k))}</figcaption></figure>`).join('')}</div>` : ''; };
+  return `<div class="rcard rtitle"><div class="rconf" aria-hidden="true"></div><div class="rarts">${ts.slice(0, 4).map((t) => (dayArt(t, 0) ? `<img src="${esc(dayArt(t, 0))}" alt="">` : '')).join('')}</div>
+<h1>${L(`ปี ${y} ของเรา`, `Our ${y}`)}</h1><p class="rdate">${esc(L(`${ts.length} ทริปของ${kidsNames()}`, `${ts.length} trip${ts.length > 1 ? 's' : ''} with ${kidsNames()}`))}</p></div>
+${ts.map((t) => `<div class="rcard rday"><div class="rconf" aria-hidden="true"></div><p class="rnum">${esc(fmtRange(t))}</p>${dayArt(t, 0) ? `<img class="rart" src="${esc(dayArt(t, 0))}" alt="">` : ''}<h2>${esc(T(t.title).split(' · ')[0])}</h2>${cast(t)}</div>`).join('')}
+<div class="rcard rend"><div class="rconf" aria-hidden="true"></div>${cast(ts[ts.length - 1] || null)}<h2>${L('แล้วเจอกันปีหน้านะ!', 'See you next year!')}</h2><p class="rapp">${esc(appName())}</p></div>`;
+}
+/* The family map (owner, Nov 2026: "แผนที่ของครอบครัว"; server/famap.js): every town of every book on one drawn map — the land is
+   Natural Earth's (public/geo/land.json, scripts/geo/land.mjs), drawn on the phone, no map service. A pin per town per book in
+   the book's colour, with the town's stamp from the library; a tap shows the town, the book, when, and how old each child was then.
+   Chips pick one book (the map fits it) or every book. The kids open it from their own map page too (kid.js, view "world"). */
+const FM = { pins: null, land: null, busy: false, at: 0, pick: null };
+function famLoad() {
+  if (FM.busy || (FM.pins && Date.now() - FM.at < 300e3)) return;
+  FM.busy = true; FM.at = Date.now();   // asked now: no signal must not mean asking again on every redraw
+  if (!FM.pins) { const c = ls('famap'); if (c && Array.isArray(c.pins)) FM.pins = c.pins; }
+  Promise.all([
+    api('GET', '/api/b/famap').then((r) => { FM.pins = r.pins || []; ls('famap', { pins: FM.pins }); }).catch(() => { if (!FM.pins) FM.pins = []; }),
+    FM.land ? null : fetch('/geo/land.json').then((r) => (r.ok ? r.json() : null)).then((j) => { if (j && Array.isArray(j.r)) FM.land = j; }).catch(() => {}),
+  ]).finally(() => { FM.busy = false; const r = route().parts; if (r[0] === 'map' || (r[0] === 'kid' && r[2] === 'world')) safeRender(); });
+}
+// the pins a map shows: one book's, or every book's the viewer can see
+const famPins = (tid) => (FM.pins || []).filter((p) => trip(p.trip) && (!tid || p.trip === tid));
+// what a map shows: a book's pins (or all), and inside them the bubble the child or parent zoomed into
+const famShown = (tid) => { const all = famPins(tid), z = FM.zoom; if (!z || z.tid !== tid) return all; const sub = all.filter((p) => z.ids.includes(p.trip + '|' + p.id)); return sub.length ? sub : all; };
+// "มีมี่ 3 ขวบ · มีก้า 1 ขวบครึ่ง" on a date (YYYY-MM-DD) from each child's month of birth
+function famAgesOn(date) {
+  if (!/^\d{4}-\d{2}/.test(date || '')) return '';
+  const [y, m] = date.split('-').map(Number);
+  return children().map((k) => { if (!/^\d{4}-\d{2}$/.test(k.birth_ym || '')) return ''; const [by, bm] = k.birth_ym.split('-').map(Number), mo = (y - by) * 12 + m - bm; return mo >= 0 ? `<span class="nowrap">${esc(kidName(k.slug))} ${esc(famAgeM(mo))}</span>` : ''; }).filter(Boolean).join(' · ');
+}
+// the map itself: an SVG fitted to the pins (equirectangular, squeezed by the middle latitude), the land rings that touch it
+function famSvg(pins, sel, big) {
+  const land = FM.land;
+  let la0 = 90, la1 = -90, lo0 = 180, lo1 = -180;
+  for (const p of pins) { la0 = Math.min(la0, p.ll[0]); la1 = Math.max(la1, p.ll[0]); lo0 = Math.min(lo0, p.ll[1]); lo1 = Math.max(lo1, p.ll[1]); }
+  if (!pins.length) { la0 = -10; la1 = 40; lo0 = 90; lo1 = 155; }
+  const mid = (la0 + la1) / 2, kx = Math.cos(mid * Math.PI / 180);
+  let w = Math.max(3, (lo1 - lo0) * kx), h = Math.max(3, la1 - la0);
+  const pad = Math.max(w, h) * 0.18 + 1.2; w += 2 * pad; h += 2 * pad;
+  if (h / w > 1.25) w = h / 1.25; if (h / w < 0.62) h = w * 0.62;
+  const cx = ((lo0 + lo1) / 2) * kx, cy = -mid, W = 1000, H = Math.round(1000 * h / w), sc = W / w;
+  const X = (lon) => ((lon * kx - cx) * sc + W / 2), Y = (lat) => ((-lat - cy) * sc + H / 2);
+  const box = [lo0 - pad / kx - 2, lo1 + pad / kx + 2, la0 - pad - 2, la1 + pad + 2];
+  let paths = '';
+  if (land) for (const r of land.r) {
+    let x = r[0], y = r[1], minx = x, maxx = x, miny = y, maxy = y; const pts = [[x, y]];
+    for (let k = 2; k < r.length; k += 2) { x += r[k]; y += r[k + 1]; pts.push([x, y]); if (x < minx) minx = x; if (x > maxx) maxx = x; if (y < miny) miny = y; if (y > maxy) maxy = y; }
+    const q = land.q; if (maxx / q < box[0] || minx / q > box[1] || maxy / q < box[2] || miny / q > box[3]) continue;
+    paths += 'M' + pts.map(([a, b]) => `${X(a / q).toFixed(1)} ${Y(b / q).toFixed(1)}`).join('L') + 'Z';
+  }
+  const R = big ? 34 : 24;
+  // pins closer than two pins' width on this map become one bubble with a number: a tap zooms into them (famzoom), so no pin hides
+  // another; a label is drawn only where it has room
+  const at = pins.map((p) => [X(p.ll[1]), Y(p.ll[0])]), groups = [];
+  pins.forEach((p, k) => { const g = groups.find((x) => Math.hypot(at[x[0]][0] - at[k][0], at[x[0]][1] - at[k][1]) < R * 2.4); if (g) g.push(k); else groups.push([k]); });
+  const labels = [];
+  const dots = groups.map((g) => {
+    if (g.length > 1) {
+      const x = g.reduce((s, k) => s + at[k][0], 0) / g.length, y = g.reduce((s, k) => s + at[k][1], 0) / g.length, t = trip(pins[g[0]].trip), col = (t && t.theme && t.theme.accent) || '#E8467F';
+      return `<g class="fmpin fmgrp" data-a="famzoom" data-v="${esc(g.map((k) => pins[k].trip + '|' + pins[k].id).join('~'))}" role="button" tabindex="0" aria-label="${L(`${g.length} เมือง แตะเพื่อขยาย`, `${g.length} towns, tap to zoom in`)}" transform="translate(${x.toFixed(1)} ${y.toFixed(1)})">
+<circle r="${R + 8}" fill="${esc(col)}" stroke="#fff" stroke-width="6"/><text class="fmn" dy="0.36em" text-anchor="middle">${g.length}</text></g>`;
+    }
+    const k = g[0], p = pins[k], t = trip(p.trip), col = (t && t.theme && t.theme.accent) || '#E8467F', on = sel === k, [x, y] = at[k];
+    const lw = T(p.name).length * 12 + 10, room = !big && !labels.some(([lx, ly]) => Math.abs(lx - x) < lw && Math.abs(ly - y) < 34);
+    if (room) labels.push([x, y]);
+    return `<g class="fmpin${on ? ' on' : ''}" data-a="${big ? 'kidworld' : 'fampin'}" data-v="${k}" role="button" tabindex="0" aria-label="${esc(T(p.name))}" transform="translate(${x.toFixed(1)} ${y.toFixed(1)})">
+<circle r="${on ? R + 6 : R}" fill="#fff" stroke="${esc(col)}" stroke-width="${on ? 8 : 6}"/>${p.art ? `<image href="${esc(p.art)}" x="${-R + 4}" y="${-R + 4}" width="${2 * R - 8}" height="${2 * R - 8}" clip-path="circle(${R - 4}px)"/>` : `<circle r="${R * 0.42}" fill="${esc(col)}"/>`}
+${room ? `<text y="${R + 26}" text-anchor="middle">${esc(T(p.name))}</text>` : ''}</g>`; }).join('');
+  return `<svg class="fmsvg${big ? ' big' : ''}" viewBox="0 0 ${W} ${H}" role="img" aria-label="${L('แผนที่ที่ครอบครัวเคยไป', 'Where our family has been')}"><rect width="${W}" height="${H}" class="fmsea"/><path class="fmland" d="${paths}"/>${dots}</svg>`;
+}
+function famCard(p) {
+  if (!p) return '';
+  const t = trip(p.trip), when = p.from ? (p.to && p.to !== p.from ? `${fmtDay(p.from, { day: 'numeric', month: 'short' })} – ${fmtDay(p.to, { day: 'numeric', month: 'short', year: 'numeric' })}` : fmtDay(p.from, { day: 'numeric', month: 'short', year: 'numeric' })) : '';
+  const ages = famAgesOn(p.from);
+  return `<div class="fmcard" id="fmcard">${p.art ? `<img src="${esc(p.art)}" alt="">` : ''}<div><b>${esc(T(p.name))}</b><small>${esc(T(t.title))}${when ? ' · ' + esc(when) : ''}</small>${ages ? `<small>${L('ตอนนั้น', 'Then')}: ${ages}</small>` : ''}<a class="linkbtn" href="#/t/${esc(t.id)}/book">${L('เปิดเล่มนี้', 'Open this book')} ›</a></div></div>`;
+}
+function viewFamMap(tid) {
+  famLoad();
+  if (tid && !trip(tid)) tid = '';
+  const pins = famShown(tid), zoomed = pins.length < famPins(tid).length, books = [...new Set(famPins('').map((p) => p.trip))].map(trip).filter(Boolean).sort((a, b) => String(a.date_from).localeCompare(String(b.date_from)));
+  const sel = FM.pick && FM.pick.tid === tid ? FM.pick.k : -1;
+  const towns = new Set(famPins('').map((p) => T(p.name))).size;
+  const chips = books.length > 1 ? `<div class="chips fmchips" role="group" aria-label="${L('เล่ม', 'Books')}"><a class="chip" href="#/map" aria-pressed="${!tid}">${L('ทุกเล่ม', 'Every book')}</a>${books.map((t) => `<a class="chip" href="#/map/${esc(t.id)}" aria-pressed="${t.id === tid}"><i class="fmdot" style="background:${esc(t.theme.accent || '#E8467F')}"></i>${esc(T(t.title).split(' · ')[0])} <small>${esc(String(t.date_from || '').slice(0, 4))}</small></a>`).join('')}</div>` : '';
+  const body = FM.pins === null ? `<p class="muted">${L('กำลังโหลดแผนที่…', 'Loading the map…')}</p>`
+    : !famPins('').length ? emptyCard(null, L('ยังไม่มีหมุดบนแผนที่', 'No pins on the map yet'), L('เมื่อเล่มมีเมืองที่พักหรือชื่อสถานที่ หมุดจะขึ้นเอง', 'Pins appear once a book has towns to stay in or place names'))
+    : `${chips}${zoomed ? `<button type="button" class="linkbtn fmout" data-a="famzoom" data-v="">‹ ${L('ดูทั้งแผนที่', 'The whole map')}</button>` : ''}<div class="fmwrap">${famSvg(pins, sel, false)}</div>${sel >= 0 ? famCard(pins[sel]) : `<p class="muted fmhint">${L('แตะหมุดเพื่อดูว่าไปที่ไหน ตอนไหน และตอนนั้นลูกอายุเท่าไร', 'Tap a pin: where, when, and how old the children were')}</p>`}`;
+  return `<h1 class="h2">${L('แผนที่ของครอบครัว', 'Our family map')}</h1>${towns ? `<p class="lede">${L(`${books.length} เล่ม · ${towns} เมือง`, `${books.length} book${books.length > 1 ? 's' : ''} · ${towns} town${towns > 1 ? 's' : ''}`)}</p>` : ''}${body}
+<p class="muted small fmsrc">${L('แผนที่จาก Natural Earth · หมุดจากเมืองที่พักและชื่อสถานที่ในเล่ม ไม่ใช่ตำแหน่งของโทรศัพท์', 'Map from Natural Earth · pins from the books’ towns and place names, never a phone’s position')}</p>`;
+}
+// room and phone problems (owner, Nov 2026: "รู้เมื่อมีอะไรพังบนมือถือ … หน้าดูพื้นที่"; server/errors.js): how much each book takes, by
+// kind (clips and films grow fastest), and the script errors the family's phones reported in the last 30 days, counted
+const HEALTH = { at: 0, busy: false, storage: null, errors: null };
+function healthLoad(force) {
+  if (HEALTH.busy || (!force && Date.now() - HEALTH.at < 60e3)) return;
+  HEALTH.busy = true; HEALTH.at = Date.now();
+  Promise.all([api('GET', '/api/b/health/storage').catch(() => null), api('GET', '/api/b/health/errors').catch(() => null)]).then(([s, e]) => {
+    HEALTH.storage = s; HEALTH.errors = e ? e.errors : null; HEALTH.at = Date.now();
+  }).finally(() => { HEALTH.busy = false; if (route().parts[0] === 'health') safeRender(); });
+}
+const bytesTxt = (b) => (b >= 1073741824 ? `${(b / 1073741824).toFixed(1)} GB` : b >= 1048576 ? `${(b / 1048576).toFixed(b >= 104857600 ? 0 : 1)} MB` : `${Math.max(1, Math.round(b / 1024))} KB`);
+const HEALTH_KINDS = [['photos', '📷', 'รูป', 'Photos'], ['clips', '🎬', 'คลิป', 'Clips'], ['films', '🎞️', 'คลิปสรุปทริป', 'Trip films'], ['voices', '🎙️', 'เสียงอัด', 'Voice memos'], ['drawings', '🖍️', 'ภาพวาดของเด็ก', 'The kids’ drawings']];
+function viewHealth() {
+  healthLoad();
+  const st = HEALTH.storage, er = HEALTH.errors;
+  const when = (ms) => new Date(ms).toLocaleString(lang === 'th' ? 'th-TH' : 'en-GB', { day: 'numeric', month: 'short', hour: '2-digit', minute: '2-digit' });
+  const kindsLine = (k) => HEALTH_KINDS.filter(([key]) => k[key] && k[key].n).map(([key, e, th, en]) => `<span>${e} ${L(th, en)} ${k[key].n} · <b>${bytesTxt(k[key].bytes)}</b></span>`).join('');
+  const room = !st ? `<p class="muted">${L('กำลังดู…', 'Looking…')}</p>` : !st.total ? `<p class="muted">${L('ยังไม่มีรูปหรือคลิปในเล่มไหน', 'No book holds photos or clips yet')}</p>`
+    : `<p class="hbig"><b>${bytesTxt(st.total)}</b> ${L('ทั้งหมด', 'in all')}</p>
+<div class="hbars">${HEALTH_KINDS.filter(([k]) => st.all[k] && st.all[k].bytes).map(([k, e, th, en]) => `<div class="hbar"><span>${e} ${L(th, en)}</span><i style="width:${Math.max(2, Math.round((st.all[k].bytes / st.total) * 100))}%"></i><b>${bytesTxt(st.all[k].bytes)}</b></div>`).join('')}</div>
+<ul class="hbooks">${st.books.filter((b) => b.total).sort((a, b) => b.total - a.total).map((b) => `<li><b>${esc(T(b.title))}</b> <span class="hsz">${bytesTxt(b.total)}</span><div class="hk">${kindsLine(b.kinds)}</div></li>`).join('')}</ul>
+<p class="muted small">${L('ขนาดไฟล์เต็มที่เก็บไว้ · รูปย่อเพิ่มอีกราว 5% · คลิปและคลิปสรุปทริปกินที่เร็วที่สุด', 'The stored full files · thumbnails add about 5% · clips and films grow fastest')}</p>`;
+  const errs = er == null ? `<p class="muted">${L('กำลังดู…', 'Looking…')}</p>` : !er.length ? `<p class="hok">✓ ${L('30 วันนี้ไม่มีมือถือเครื่องไหนรายงานปัญหา', 'No phone reported a problem in the last 30 days')}</p>`
+    : `<ul class="herrs">${er.map((x) => `<li><b>${esc(x.msg)}</b><small>${[x.src ? `${x.src}:${x.line}` : '', x.route, x.device, x.ver].filter(Boolean).map(esc).join(' · ')}</small><small>${x.n > 1 ? L(`${x.n} ครั้ง · `, `${x.n} times · `) : ''}${L('ล่าสุด', 'last')} ${when(x.last_at)}</small></li>`).join('')}</ul>
+<div class="row"><button class="btn ghost small" data-a="healthclear">${L('ล้างรายการ', 'Clear the list')}</button></div>`;
+  return `<h1 class="h2">${L('พื้นที่และปัญหาบนมือถือ', 'Room and phone problems')}</h1>
+<section class="blk hcard"><h3>${L('พื้นที่ที่เล่มใช้', 'Room the books take')}</h3>${room}</section>
+<section class="blk hcard"><h3>${L('ปัญหาที่มือถือรายงาน', 'Problems the phones reported')}</h3>
+<p class="muted small">${L('เมื่อแอปสะดุดบนมือถือ เครื่องจะส่งแค่ข้อความของปัญหา ไฟล์และบรรทัด รุ่นแอป ชนิดหน้า และชนิดเครื่อง มาเก็บไว้ 30 วัน — ไม่มีชื่อ ข้อความที่เขียน รูป หรือตำแหน่ง', 'When the app trips on a phone, the phone sends only the problem’s message, the file and line, the app version, the kind of page and of phone — kept 30 days; no names, nothing written, no photos, no position')}</p>${errs}</section>`;
+}
 function aiCard() {
   const u = aiUsage(); if (!u) return '';
   const d = u.days30;
@@ -373,13 +571,23 @@ function reelBlock(t, nDays) {
 ${has ? `<video class="reelvid" controls playsinline preload="metadata" src="${esc(src)}"></video>
 <div class="row reelrow"><button type="button" class="btn small" data-a="reelshare" data-t="${esc(t.id)}">${ic('share')} ${L('ส่งให้ญาติ', 'Send to family')}</button><a class="btn ghost small" href="${esc(src)}&dl=1" download>${L('เก็บลงเครื่อง', 'Save to phone')}</a><span class="label">${esc(mins)}</span></div>` : ''}
 ${run ? `<p class="reelrun">${L('กำลังทำคลิป', 'Making the film')} <b id="reelpct">${job.pct || 0}%</b> · ${L('ปิดหน้านี้ได้ เสร็จแล้วจะอยู่ตรงนี้', 'you can close this page — it will be here when ready')}</p>`
-    : isEditor() ? `${has ? '' : `<p class="sub">${L('รูปเด่น ⭐ และคลิปสั้นของแต่ละวัน ต่อกันเป็นคลิปเดียวพร้อมเพลง ส่งให้ญาติดูได้', 'The best photos ⭐ and a bit of each day’s clips, one film with music, ready to send to family')}</p>`}
+    : isEditor() ? `${has ? '' : `<p class="sub">${L('รูปเด่น ⭐ คำพูดของเด็ก เสียงที่อัดไว้ และคลิปสั้นของแต่ละวัน ต่อกันเป็นคลิปเดียวพร้อมเพลง ปิดท้ายด้วยหัวใจจากญาติ', 'The best photos ⭐, the kids’ words, the voice memos and a bit of each day’s clips, one film with music, ending with the family’s hearts')}</p>`}
+${reelMoodPick()}
 <button type="button" class="${has ? 'linkbtn' : 'btn wide'}" data-a="reelmake" data-t="${esc(t.id)}">${has ? L('ทำคลิปใหม่ (หลังเพิ่มรูปหรือเปลี่ยนรูปเด่น)', 'Make it again (after new photos or stars)') : L('ทำคลิปสรุปทริป', 'Make the trip film')}</button>
 ${job && job.state === 'error' ? `<p class="notice">${L('ทำคลิปไม่สำเร็จ ลองอีกครั้ง', 'The film could not be made — try again')}</p>` : ''}
 <p class="snapnote">${ic('lock')}<span>${L('ทำบนเซิร์ฟเวอร์ของเราจากรูปในเล่มนี้ ไม่ส่งไปที่อื่น', 'Made on our own server from this book’s photos — sent nowhere else')}</span></p>` : ''}</section>`;
 }
-// the film's cards (#/reelcards/<trip>/<lang>/<days>): 720×1280 each — the book's title, one a day that has a part, and the end
-function viewReelCards(t, days) {
+// the film's music (owner, Nov 2026: "เลือกอารมณ์เพลงได้"): three option cards, the phone remembers the choice (server/reel.js MOODS)
+const REEL_MOODS = [['fun', '🎈', 'สนุก', 'Fun'], ['warm', '🌤️', 'อบอุ่น', 'Warm'], ['sleep', '🌙', 'ก่อนนอน', 'Bedtime']];
+const reelMood = () => (REEL_MOODS.some(([k]) => k === ls('reelMood')) ? ls('reelMood') : 'warm');
+function reelMoodPick() {
+  const cur = reelMood();
+  return `<div class="part pickh">${L('เพลงประกอบ', 'The music')}</div><div class="tpk reelmood" role="group" aria-label="${L('เพลงประกอบ', 'The music')}">${REEL_MOODS.map(([k, e, th, en]) => `<button type="button" class="tpo" data-a="reelmood" data-v="${k}" aria-pressed="${k === cur}"><span class="rme" aria-hidden="true">${emo(e)}</span><b>${L(th, en)}</b><span class="ck" aria-hidden="true">✓</span></button>`).join('')}</div>`;
+}
+// the film's cards (#/reelcards/<trip>/<lang>/<days>/<words>): 720×1280 each — the book's title, one a day that has a part, and the
+// end with the relatives' hearts (owner, Nov 2026: "ปิดท้ายด้วยหัวใจจากญาติ"); then each of the kids' words as a bubble, photographed
+// on its own over a transparent page and laid under its photo (server/reel.js frame)
+function viewReelCards(t, days, capIds = []) {
   const kids = children().filter((k) => kidArt(k.slug, true, t)), long = { day: 'numeric', month: 'long', year: 'numeric' };
   const range = esc((() => { const a = new Date(t.date_from + 'T00:00:00'), b = new Date((t.date_to || t.date_from) + 'T00:00:00');   // "17–18 November 2026", the month said once
     try { return new Intl.DateTimeFormat(LOC(), long).formatRange(a, b); } catch (_) { return fmtDay(t.date_from, long) + (b > a ? ' – ' + fmtDay(t.date_to, long) : ''); } })());
@@ -392,7 +600,17 @@ ${days.map((i) => { const d = t.days[i] || {}, art = dayArt(t, i);
     return `<div class="rcard rday"><div class="rconf" aria-hidden="true"></div><p class="rnum">${L(`วันที่ ${i + 1}`, `Day ${i + 1}`)}</p>
 ${art ? `<img class="rart" src="${esc(art)}" alt="">` : `<div class="rart remo">${esc(d.emoji || '📷')}</div>`}
 <h2>${esc(T(d.title) || L(`วันที่ ${i + 1}`, `Day ${i + 1}`))}</h2><p class="rdate">${esc(fmtDay(d.date, long))}${place(d) ? ' · ' + esc(place(d)) : ''}</p></div>`; }).join('')}
-<div class="rcard rend"><div class="rconf" aria-hidden="true"></div>${cast}<h2>${L('แล้วเจอกันทริปหน้านะ!', 'See you on the next trip!')}</h2><p class="rdate">${esc(T(t.title))}</p><p class="rapp">${esc(appName())}</p></div>`;
+<div class="rcard rend"><div class="rconf" aria-hidden="true"></div>${cast}${reelHearts(t)}<h2>${L('แล้วเจอกันทริปหน้านะ!', 'See you on the next trip!')}</h2><p class="rdate">${esc(T(t.title))}</p><p class="rapp">${esc(appName())}</p></div>
+${capIds.map((id) => { const e = entriesOf(t.id).find((x) => x.id === id && x.kind === 'quote'); if (!e || !e.text) return '';
+    const who = e.child && e.child !== 'both' ? kidName(e.child) : '';
+    return `<div class="rcapw"><div class="rcap" data-id="${esc(id)}"><p>“${esc(e.text)}”</p>${who ? `<b>— ${esc(who)}</b>` : ''}</div></div>`; }).join('')}`;
+}
+// the end card's hearts: how many the relatives sent this trip, and up to three of their short notes with who sent them
+function reelHearts(t) {
+  const hs = heartsOf(t.id); if (!hs.length) return '';
+  const notes = hs.filter((h) => h.text && h.text.length <= 60).slice(-3);
+  const em = [...new Set(hs.map((h) => h.emoji))].slice(0, 5).map((x) => esc(x)).join(' ');
+  return `<div class="rhearts"><p class="rhn">${em} ${L(`ญาติส่งหัวใจมา ${hs.length} ดวง`, `${hs.length} heart${hs.length > 1 ? 's' : ''} from family`)}</p>${notes.map((h) => `<p class="rhx">“${esc(h.text)}”${h.from ? ` <b>— ${esc(h.from)}</b>` : ''}</p>`).join('')}</div>`;
 }
 function viewBook(t) {
   const st = stats(t), kids = (t.theme.children || []);
@@ -1382,8 +1600,42 @@ function heartsHtml(t) {
 <div class="row emo" role="group" aria-label="${L('เลือกหัวใจ', 'Pick a heart')}">${HEARTS.map((e) => `<button data-a="heartemo" data-v="${e}" aria-pressed="${e === heartEmoji}" aria-label="${e}">${emo(e)}</button>`).join('')}</div>
 <div class="row"><input class="field" id="hfrom" data-draft="hfrom" value="${esc(drafts.hfrom ?? (ls('heartfrom') || ''))}" placeholder="${L('ชื่อผู้ส่ง เช่น ยาย, ปู่', 'From, e.g. Grandma')}" maxlength="24" style="flex:1;min-width:120px">
 <span class="emowrap" style="flex:3;min-width:180px"><input class="field" id="htext" data-draft="htext" value="${esc(drafts.htext || '')}" placeholder="${L('ข้อความสั้นๆ (ไม่ใส่ก็ได้)', 'A short note (optional)')}" maxlength="140">${emoBtn('htext')}</span></div>
-<button class="btn small" data-a="sendheart" data-t="${esc(t.id)}">${L('ส่ง', 'Send')} ${emo(heartEmoji)}</button></div>
+<button class="btn small" data-a="sendheart" data-t="${esc(t.id)}">${L('ส่ง', 'Send')} ${emo(heartEmoji)}</button></div>${inboxSendHtml(t)}
 ${hs.length ? `<ul class="hlist">${hs.slice(0, 40).map((h) => `<li><span class="he">${emo(h.emoji)}</span><div class="grow"><b>${esc(h.from)}</b> → ${kidFace(h.child)} ${esc(kidName(h.child))}${h.pending ? ' ⏳' : ''}${h.text ? `<p>${emoIn(esc(h.text))}</p>` : ''}<small class="label">${esc(new Date(h.at).toLocaleDateString(LOC(), { day: 'numeric', month: 'short' }))}${h.day !== null && h.day !== undefined ? ` · ${L('วันที่', 'Day')} ${h.day + 1}` : ''}</small></div>${isEditor() || h.mine ? `<button class="mini noprint" data-a="delheart" data-v="${esc(h.id)}">${L('ลบ', 'Delete')}</button>` : ''}</li>`).join('')}</ul>` : ''}</section>`;
+}
+/* Photos from the relatives (owner, Nov 2026: "ญาติส่งรูปเข้าเล่มได้ แต่ต้องรอพ่อแม่กดอนุมัติก่อน"; server/inbox.js): a relative sends
+   photos for a book from its hearts box; they wait for the parents (#/inbox), who put each one in the book or turn it away. */
+const INBOX = { items: null, at: 0, busy: false, sending: 0 };
+function inboxLoad(force) {
+  if (INBOX.busy || (!force && Date.now() - INBOX.at < 60e3)) return;
+  INBOX.busy = true; INBOX.at = Date.now();   // asked now, answered or not: a failed ask (no signal) must not redraw and ask again in a loop
+  api('GET', '/api/b/inbox').then((r) => { INBOX.items = r.items || []; }).catch(() => {}).finally(() => { INBOX.busy = false; safeRender(); });
+}
+function inboxSendHtml(t) {
+  if (isEditor()) return '';
+  inboxLoad();
+  const mine = (INBOX.items || []).filter((x) => x.trip === t.id).length;
+  return `<div class="hform ibsend noprint"><p class="label">${L('มีรูปของทริปนี้ไหม ส่งให้พ่อแม่ได้ พ่อแม่จะเลือกใส่ในเล่มเอง', 'Have photos of this trip? Send them — the parents choose what goes in the book')}</p>
+<div class="row"><button type="button" class="btn small" data-a="inboxpick" data-t="${esc(t.id)}"${INBOX.sending ? ' disabled' : ''}>${ic('camera')} ${INBOX.sending ? L(`กำลังส่ง ${INBOX.sending} รูป…`, `Sending ${INBOX.sending}…`) : L('ส่งรูปให้พ่อแม่', 'Send photos to the parents')}</button>
+${mine ? `<span class="label">${L(`รอพ่อแม่ดู ${mine} รูป`, `${mine} waiting for the parents`)} ⏳</span>` : ''}</div></div>`;
+}
+function viewInbox() {
+  inboxLoad();
+  const items = INBOX.items;
+  if (items === null) return `<h1 class="h2">${L('รูปจากญาติ', 'Photos from the family')}</h1><p class="muted">${L('กำลังดู…', 'Looking…')}</p>`;
+  if (!items.length) return `<h1 class="h2">${L('รูปจากญาติ', 'Photos from the family')}</h1>${emptyCard(null, L('ไม่มีรูปรออยู่', 'No photos waiting'), L('เมื่อญาติส่งรูปมา จะรออยู่ที่นี่ให้พ่อแม่เลือกก่อน', 'When the family sends photos, they wait here for you to choose'))}`;
+  const by = {}; for (const x of items) (by[x.trip] = by[x.trip] || []).push(x);
+  const dayOpts = (t, d) => `<option value="">${L('ไม่ระบุวัน', 'No day')}</option>${t.days.map((dd, i) => `<option value="${i}"${d === i ? ' selected' : ''}>${L(`วันที่ ${i + 1}`, `Day ${i + 1}`)} · ${esc(fmtDay(dd.date, { day: 'numeric', month: 'short' }))}</option>`).join('')}`;
+  const dayGuess = (t, x) => { if (x.day != null) return x.day; if (!x.at) return null; const d = new Date(x.at).toLocaleDateString('en-CA', { timeZone: t.timezone || 'Asia/Bangkok' }); const k = t.days.findIndex((dd) => dd.date === d); return k >= 0 ? k : null; };
+  return `<h1 class="h2">${L('รูปจากญาติ', 'Photos from the family')}</h1><p class="lede">${L('ดูก่อน แล้วเลือกว่ารูปไหนจะใส่ในเล่ม', 'Look first, then choose what goes in the book')}</p>
+${Object.entries(by).map(([tid, xs]) => { const t = trip(tid); if (!t) return '';
+    return `<section class="blk ibbook"><h3>${esc(T(t.title).split(' · ')[0])} <span class="label">· ${xs.length}</span></h3>
+<ul class="iblist">${xs.map((x) => `<li class="ibit" id="ib-${esc(x.id)}"><img src="/media/inbox/${encodeURIComponent(x.id)}/t" alt="" loading="lazy">
+<div class="ibmeta"><b>${L('จาก', 'From')} ${esc(x.from)}</b><small>${esc(new Date(x.sent).toLocaleDateString(LOC(), { day: 'numeric', month: 'short' }))}${x.caption ? ' · ' + esc(x.caption) : ''}</small>
+<label class="vgl">${L('ใส่ในวัน', 'Put in')}<select class="field" id="ibday-${esc(x.id)}">${dayOpts(t, dayGuess(t, x))}</select></label>
+<div class="row"><button type="button" class="btn small" data-a="inboxok" data-v="${esc(x.id)}">${L('ใส่ในเล่ม', 'Put in the book')}</button><button type="button" class="btn ghost small" data-a="inboxno" data-v="${esc(x.id)}">${L('ไม่เอา', 'Not this one')}</button></div></div></li>`).join('')}</ul>
+${xs.length > 1 ? `<button type="button" class="linkbtn" data-a="inboxall" data-t="${esc(tid)}">${L(`ใส่ทั้ง ${xs.length} รูป`, `Put all ${xs.length} in`)}</button>` : ''}</section>`; }).join('')}
+<p class="snapnote">${ic('lock')}<span>${L('รูปที่รออยู่ไม่อยู่ในเล่ม ไม่อยู่ในสำเนา และไม่ไปที่ผู้ช่วย จนกว่าพ่อแม่จะกดใส่', 'A photo waiting is not in the book, a copy or the helper until you put it in')}</span></p>`;
 }
 // the kids' finger drawings, all together (pre-trip ones have no day)
 function drawingsHtml(t) {
@@ -1981,6 +2233,8 @@ ${sec('เก็บอะไรบ้าง', 'What is kept', ul([
   ['ข้อความที่พิมพ์: คำพูดเด็ก โน้ต อารมณ์ ครั้งแรก รีวิว ค่าใช้จ่าย จดหมาย', 'Words the parents type: the kids’ quotes, notes, moods, firsts, reviews, spending, letters'],
   ['หัวใจและข้อความสั้นจากญาติ', 'Hearts and short messages from relatives'],
   ['รหัสของญาติ เก็บเป็นค่าที่อ่านคืนไม่ได้ · รหัสครอบครัวไม่ได้เก็บในฐานข้อมูล', 'Relatives’ PINs, stored only as one-way hashes · the family PIN is not stored in the database'],
+  ['รูปที่ญาติส่งมา: เก็บแยกไว้ (ลบข้อมูลกล้องและตำแหน่งแล้ว) จนกว่าพ่อแม่จะเลือกใส่ในเล่ม ถ้าไม่เอาจะลบทิ้งทันที', 'Photos the relatives send: kept apart (camera data and position removed) until a parent puts one in the book; turned away, they are deleted at once'],
+  ['ปัญหาที่แอปสะดุดบนมือถือ: ข้อความของปัญหา ไฟล์และบรรทัด รุ่นแอป ชนิดหน้า และชนิดเครื่อง เก็บ 30 วัน ไม่มีชื่อ ข้อความที่เขียน รูป หรือตำแหน่ง', 'When the app trips on a phone: the problem’s message, the file and line, the app version, the kind of page and of phone — kept 30 days, with no names, nothing written, no photos or position'],
   ['ที่อยู่สำหรับส่งการเตือนของเครื่องที่เปิดเตือน และจำนวนครั้งที่ใช้ผู้ช่วยต่อวัน', 'The push address of each phone that turned reminders on, and how many times a day the helper was used'],
   ['ไม่เก็บ: ตำแหน่งของโทรศัพท์ รายชื่อผู้ติดต่อ ข้อมูลการจอง เลขหนังสือเดินทาง หรือประวัติการใช้งาน', 'Not kept: the phone’s location, contacts, booking details, passport numbers, or usage analytics']]))}
 ${sec('เก็บไว้ที่ไหน นานแค่ไหน', 'Where, and for how long', ul([
@@ -1995,11 +2249,11 @@ ${sec('ใครอื่นเห็นบ้าง', 'Who else ever sees it', 
   ['วาดตัวการ์ตูนจากรูปลูก (OpenAI) เฉพาะเมื่อพ่อแม่อัปโหลด: รูปถูกย่อ ส่งครั้งเดียว และไม่เก็บที่ไหน', 'Drawing a character from a child’s photo (OpenAI), only when a parent uploads one: shrunk, sent once, stored nowhere'],
   ['พยากรณ์อากาศ (Open-Meteo): ส่งเฉพาะพิกัดระดับเมืองของที่พักในแผน ไม่ใช่ตำแหน่งโทรศัพท์', 'The weather forecast (Open-Meteo): only the town-level location of the planned stay, never the phone’s position'],
   ['คลิปสรุปทริป: ทำบนเซิร์ฟเวอร์ของเราจากรูปและคลิปในเล่ม เก็บไว้กับเล่ม ดูได้เฉพาะคนที่เห็นเล่มนี้ ไม่ส่งไปที่อื่น เพลงในคลิปเราแต่งเอง', 'The trip film: made on our own server from the book’s photos and clips, kept with the book, seen only by those who may see the book, sent nowhere else; its tune is our own'],
-  ['เล่มจากรูป: เครื่องของคุณดูรูปเองก่อนส่ง แยกภาพซ้ำ ภาพหน้าจอ และรูปใบเสร็จหรือเอกสาร (อาจมีเลขบัตรหรือเลขจอง) พักไว้ ไม่ส่งขึ้นเล่ม เว้นแต่พ่อแม่แตะเอากลับ', 'A book from photos: your phone looks at the photos before anything is sent and sets aside repeats, screenshots and photos of receipts or papers (they may show a card or a booking number) — they are not sent unless a parent brings one back'],
+  ['เล่มจากรูป: เครื่องของคุณดูรูปเองก่อนส่ง แยกภาพซ้ำ ภาพหน้าจอ และรูปใบเสร็จหรือเอกสาร (อาจมีเลขบัตรหรือเลขจอง) พักไว้ ไม่ส่งขึ้นเล่ม เว้นแต่พ่อแม่แตะเอากลับ · การเลือกรูปเด่นดูว่ามีหน้าคนในรูปไหม บนเครื่องเท่านั้น ไม่จำหน้าใคร', 'A book from photos: your phone looks at the photos before anything is sent and sets aside repeats, screenshots and photos of receipts or papers (they may show a card or a booking number) — they are not sent unless a parent brings one back · picking the best photos looks for faces in them, on the phone only, and recognises no one'],
   ['ชื่อสถานที่ของรูป: ตามปกติเครื่องของคุณหาชื่อเองจากรายชื่อสถานที่ (GeoNames) ไม่ส่งตำแหน่งไปไหน · ถ้าพ่อแม่เปิด “ชื่อสถานที่ละเอียดจากแผนที่ออนไลน์” จะส่งตำแหน่งแบบคร่าวๆ (ราวหนึ่งกิโลเมตร) ไปถาม OpenStreetMap ผ่านเซิร์ฟเวอร์ของเรา ไม่ส่งรูปหรือชื่อใคร ไม่เก็บไว้', 'Place names for photos: normally your phone finds the name itself from a list of places (GeoNames) and sends the position nowhere · if a parent turns on “finer place names from an online map”, a rough position (about a kilometre) goes to OpenStreetMap through our server — no photo, no one’s name, nothing kept'],
   ['การเตือน: ผ่านบริการแจ้งเตือนของเครื่อง (Apple, Google) ส่งเฉพาะข้อความจากแผน ไม่มีรูปหรือชื่อ', 'Reminders: through the phone’s own push service (Apple, Google), carrying the plan’s words only, no photos or names']]))}
 ${sec('ภาพและเสียงในแอป', 'Pictures and sounds in the app', `<p>${L('ภาพวาดในโหมดเด็กวาดขึ้นสำหรับแอปนี้ เสียงสัตว์ในเกมฟาร์มส่วนใหญ่มาจาก Wikimedia Commons (สาธารณสมบัติหรือ CC0)', 'The kid-mode pictures were painted for this app. Most of the farm game’s animal voices come from Wikimedia Commons (public domain or CC0).')}</p>
-<ul class="pvl"><li>${L('ชื่อสถานที่: จาก', 'Place names: from')} <a href="https://www.geonames.org/" target="_blank" rel="noopener">GeoNames</a> ${L('สัญญาอนุญาต', 'licensed')} <a href="https://creativecommons.org/licenses/by/4.0/" target="_blank" rel="noopener">CC BY 4.0</a></li><li>${L('เสียงหมา: ตัดจาก', 'The dog’s bark: cut from')} <a href="https://commons.wikimedia.org/wiki/File:Barking_of_a_dog.ogg" target="_blank" rel="noopener">“Barking of a dog”</a> ${L('โดย Amada44 สัญญาอนุญาต', 'by Amada44, licensed')} <a href="https://creativecommons.org/licenses/by-sa/3.0/" target="_blank" rel="noopener">CC BY-SA 3.0</a> ${L('คลิปที่ตัดแล้วเผยแพร่ภายใต้สัญญาอนุญาตเดียวกัน', '— the trimmed clip is shared under the same licence')}</li></ul>`)}
+<ul class="pvl"><li>${L('ชื่อสถานที่: จาก', 'Place names: from')} <a href="https://www.geonames.org/" target="_blank" rel="noopener">GeoNames</a> ${L('สัญญาอนุญาต', 'licensed')} <a href="https://creativecommons.org/licenses/by/4.0/" target="_blank" rel="noopener">CC BY 4.0</a></li><li>${L('แผนที่ของครอบครัว: แผ่นดินจาก', 'The family map: the land from')} <a href="https://www.naturalearthdata.com/" target="_blank" rel="noopener">Natural Earth</a> ${L('(สาธารณสมบัติ)', '(public domain)')}</li><li>${L('การหาหน้าในรูป: ', 'Finding faces in photos: ')}<a href="https://github.com/nenadmarkus/pico" target="_blank" rel="noopener">pico</a> (MIT, Nenad Markuš)</li><li>${L('เสียงหมา: ตัดจาก', 'The dog’s bark: cut from')} <a href="https://commons.wikimedia.org/wiki/File:Barking_of_a_dog.ogg" target="_blank" rel="noopener">“Barking of a dog”</a> ${L('โดย Amada44 สัญญาอนุญาต', 'by Amada44, licensed')} <a href="https://creativecommons.org/licenses/by-sa/3.0/" target="_blank" rel="noopener">CC BY-SA 3.0</a> ${L('คลิปที่ตัดแล้วเผยแพร่ภายใต้สัญญาอนุญาตเดียวกัน', '— the trimmed clip is shared under the same licence')}</li></ul>`)}
 ${sec('คุกกี้', 'Cookies', `<p>${L('ใช้คุกกี้ 1 ตัวสำหรับจำว่าเข้าสู่ระบบแล้ว ไม่มีคุกกี้โฆษณาหรือวิเคราะห์ และไม่มีสคริปต์ของบุคคลที่สาม', 'One cookie remembers that you are signed in. There are no advertising or analytics cookies and no third-party scripts.')}</p>`)}
 ${sec('สิทธิ์ของคุณ', 'Your rights', `<ul class="pvl">
 <li>${L('ดูและแก้ไข: ทุกอย่างแก้ได้ในแอป', 'See and correct: everything can be edited in the app')}</li>

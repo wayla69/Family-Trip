@@ -439,6 +439,16 @@ if (process.env.BASE) {
   const stockCcs = [...new Set(Object.values(JSON.parse(fs.readFileSync(path.resolve('public/stock/index.json'), 'utf8')).places).map((x) => x.country))];
   const geoBad = stockCcs.filter((cc) => { try { const g = JSON.parse(fs.readFileSync(path.resolve(`public/geo/${cc}.json`), 'utf8')); return !(g.v === 1 && g.cc === cc && Array.isArray(g.t) && Array.isArray(g.s) && g.t.length + g.s.length > 20 && fs.statSync(path.resolve(`public/geo/${cc}.json`)).size < 600e3 && g.s.every((x) => x.length === 6 && typeof x[3] === 'number' && (g.r || {})[x[5]] > 0)); } catch (_) { return true; } });
   ok(!geoBad.length, `snap: every country of the library has its list of place names, in shape and under 600 KB (${geoBad.join(' ') || 'all ' + stockCcs.length})`);
+  // faces for the best photos (pico's face finder on the phone): a made-up person's face is found, a lake and the library's drawn
+  // scenes (kawaii faces on things) are not; a face lifts a photo's pick, a closer one more
+  { const fdet = vm.runInContext('faceCascade', ctx)(new Uint8Array(fs.readFileSync(path.resolve('public/geo/facefinder.bin'))));
+    const faceIn = async (src, density) => { const { data, info } = await sharp(src, density ? { density } : {}).resize(320, 240, { fit: 'cover' }).flatten({ background: '#fff' }).ensureAlpha().raw().toBuffer({ resolveWithObject: true }); return vm.runInContext('faceOf', ctx)(data, info.width, info.height, fdet); };
+    const face = await faceIn(path.resolve('test/fixtures/snap/face-made.jpg')), lake = await faceIn(path.resolve('test/fixtures/snap/lake-made.jpg'));
+    const scenes = fs.readdirSync(path.resolve('public/stock/th/khaoyai')).filter((f) => f.endsWith('.svg')).slice(0, 12);
+    let drawn = 0; for (const f of scenes) if ((await faceIn(path.resolve('public/stock/th/khaoyai', f), 150)).length) drawn++;
+    const fb = vm.runInContext('faceBonus', ctx);
+    ok(face.length === 1 && face[0].size > 0.3 && !lake.length && !drawn && fb([]) === 1 && fb([{ size: 0.1 }]) > 1.4 && fb([{ size: 0.5 }]) > fb([{ size: 0.1 }]),
+      `snap: the face finder finds a face (${JSON.stringify(face)}), none on a lake or ${scenes.length} drawn scenes (${drawn}); a closer face lifts a photo more`); }
 }
 // the online place-name lookup (server/nearname.js, opt-in): the position rounded again, a generic User-Agent, the names in
 // Thai and English, one request a second, an in-memory cache; bad input never reaches the network

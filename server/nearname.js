@@ -7,7 +7,8 @@
 const BASE = () => process.env.NOMINATIM_URL || 'https://nominatim.openstreetmap.org';
 const UA = 'family-photo-book/1.0 (self-hosted; place names for a private family album)';
 const cache = new Map();   // "13.75,100.49" → {name, id} | null
-let turn = Promise.resolve(), lastAt = 0;
+let turn = Promise.resolve(), lastAt = 0, waiting = 0;
+const MAX_WAITING = 30;   // a phone sending many positions at once queues at most 30 (half a minute); the rest answer "no name" at once
 const pick = (j, lang) => {
   const n = (j && j.namedetails) || {}, a = (j && j.address) || {};
   return String(n[`name:${lang}`] || (lang === 'en' ? n.name : '') || a.tourism || a.leisure || a.amenity || a.suburb || a.village || a.town || a.city_district || a.city || '').trim().slice(0, 80);
@@ -27,13 +28,15 @@ async function near(ll) {
   if (!Number.isFinite(lat) || !Number.isFinite(lon) || Math.abs(lat) > 90 || Math.abs(lon) > 180) return null;
   const key = `${lat},${lon}`;
   if (cache.has(key)) return cache.get(key);
+  if (waiting >= MAX_WAITING) return null;
+  waiting++;
   const job = turn.then(async () => {
     const wait = lastAt + 1100 - Date.now(); if (wait > 0) await new Promise((r) => setTimeout(r, wait));
     lastAt = Date.now();
     try { return await ask(lat, lon); } catch (_) { return undefined; }   // undefined: not cached, the phone's own list answers
   });
   turn = job.catch(() => {});
-  const out = await job;
+  const out = await job.finally(() => { waiting--; });
   if (out !== undefined) { if (cache.size > 5000) cache.delete(cache.keys().next().value); cache.set(key, out); }
   return out || null;
 }

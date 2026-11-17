@@ -1,4 +1,5 @@
 'use strict';
+const { sendRanged } = require('./ranged');
 /* A book's own short film (owner, Nov 2026: "คลิปสรุปทริป"): the trip in a minute or two, made on our server from what the book
    already holds — a title card, then day by day a card (the day's picture, its name, where we were), up to three of its photos (⭐
    first, then spread through the day) with a slow zoom, a few seconds of one of its clips with the kids' own voices, and an end card;
@@ -39,17 +40,25 @@ async function probe(file) {
 
 /* The tune: our own little music box over I–V–vi–IV in C, an arpeggio in eighths, a melody of chord tones an octave up, a soft bass
    note a bar, a touch of echo. Written sample by sample (mono, 32 kHz, 16-bit WAV). */
-let tuneCycle = null;   // the 8-bar cycle, written once
-function musicWav(secs) {
+/* Three moods the parents pick (owner, Nov 2026: "เลือกอารมณ์เพลงได้"): warm = the first tune (92 a minute); fun = quicker (120), up a
+   tone, a bouncier melody; bedtime = slow (66), soft, the melody without its octave jump, the notes ringing longer, I–vi–IV–V. */
+const MOODS = {
+  warm: { bpm: 92, up: 0, mel: 0.2, arp: 0.13, decay: 1, CH: [[60, 64, 67], [59, 62, 67], [57, 60, 64], [57, 60, 65]], MEL: [[2, 1, 0, 1], [0, 1, 2, 0], [1, 2, 1, 0], [2, 0, 1, 2]], oct: 12 },
+  fun: { bpm: 120, up: 2, mel: 0.22, arp: 0.12, decay: 1.3, CH: [[60, 64, 67], [55, 59, 62], [57, 60, 64], [53, 57, 60]], MEL: [[0, 1, 2, 2], [2, 1, 0, 1], [0, 2, 1, 2], [1, 2, 0, 0]], oct: 12 },
+  sleep: { bpm: 66, up: -3, mel: 0.15, arp: 0.1, decay: 0.55, CH: [[60, 64, 67], [57, 60, 64], [53, 57, 60], [55, 59, 62]], MEL: [[2, 1, 0, 1], [1, 0, 1, 2], [0, 1, 2, 1], [1, 0, 0, 2]], oct: 0 },
+};
+const moodOf = (m) => (MOODS[m] ? m : 'warm');
+const tuneCycles = {};   // each mood's 8-bar cycle, written once
+function musicWav(secs, mood = 'warm') {
   // one 8-bar cycle (about 20 s) is written note by note once, then repeated: the tune repeats every 8 bars, and writing it all
   // would keep the server busy for seconds
-  const sr = 32000, beat = 60 / 92, e8 = beat / 2, cyc = Math.round(8 * 8 * e8 * sr), tail = 2 * sr, n = cyc + tail;
-  const buf = tuneCycle || (tuneCycle = tuneOf(sr, beat, e8, n));
+  const M = MOODS[moodOf(mood)], sr = 32000, beat = 60 / M.bpm, e8 = beat / 2, cyc = Math.round(8 * 8 * e8 * sr), tail = 2 * sr, n = cyc + tail;
+  const buf = tuneCycles[moodOf(mood)] || (tuneCycles[moodOf(mood)] = tuneOf(sr, beat, e8, n, M));
   return wavOf(buf, secs, sr, cyc, tail);
 }
-function tuneOf(sr, beat, e8, n) {
+function tuneOf(sr, beat, e8, n, M = MOODS.warm) {
   const buf = new Float32Array(n);
-  const CH = [[60, 64, 67], [59, 62, 67], [57, 60, 64], [57, 60, 65]], ARP = [0, 1, 2, 1, 0, 1, 2, 1], MEL = [[2, 1, 0, 1], [0, 1, 2, 0], [1, 2, 1, 0], [2, 0, 1, 2]];
+  const CH = M.CH.map((c) => c.map((x) => x + M.up)), ARP = [0, 1, 2, 1, 0, 1, 2, 1], MEL = M.MEL;
   const note = (t0, midi, amp, decay) => {
     const f = 440 * Math.pow(2, (midi - 69) / 12), a = Math.floor(t0 * sr), len = Math.min(n - a, Math.floor(2 * sr));
     for (let k = 0; k < len; k++) {
@@ -59,9 +68,9 @@ function tuneOf(sr, beat, e8, n) {
   };
   for (let bar = 0, t = 0; bar < 8; bar++, t += 8 * e8) {
     const c = CH[bar % 4], m = MEL[bar % 4];
-    note(t, c[0] - 12, 0.22, 1.2);
-    for (let k = 0; k < 8; k++) note(t + k * e8, c[ARP[k]], 0.13, 3.4);
-    for (let k = 0; k < 4; k++) if (!(bar % 8 === 7 && k === 3)) note(t + k * beat + (k % 2 ? e8 : 0), c[m[k]] + 12, 0.2, 2.6);
+    note(t, c[0] - 12, 0.22, 1.2 * M.decay);
+    for (let k = 0; k < 8; k++) note(t + k * e8, c[ARP[k]], M.arp, 3.4 * M.decay);
+    for (let k = 0; k < 4; k++) if (!(bar % 8 === 7 && k === 3)) note(t + k * beat + (k % 2 ? e8 : 0), c[m[k]] + M.oct, M.mel, 2.6 * M.decay);
   }
   return buf;
 }
@@ -81,28 +90,39 @@ function wavOf(buf, secs, sr, cyc, tail) {
 /* What goes in: rows = the book's media ({id, day, mime, highlight, at}). Per day (in order): up to three photos — ⭐ first, then
    spread evenly through the day, shown in the order they were taken — and one clip (a ⭐ one, else the first). Long books take two
    photos a day and at most eight clips, so the film stays near two minutes. A kid's drawing comes in only when starred. */
-function plan(rows, nDays) {
-  const isImg = (m) => /^image\//.test(m.mime || 'image/jpeg'), isVid = (m) => /^video\//.test(m.mime || '');
+// quotes = the kids' words ({id, day, highlight, at}): a day's ⭐ ones first, one under each of its photos (owner, Nov 2026: "ใส่คำพูดเด็ก
+// เป็นซับไตเติล"); a day's voice memo (⭐ first, else the first) is heard over its card and photos ("ใส่เสียงที่อัดไว้เป็นเสียงบรรยาย")
+function plan(rows, nDays, quotes = []) {
+  const isImg = (m) => /^image\//.test(m.mime || 'image/jpeg'), isVid = (m) => /^video\//.test(m.mime || ''), isAud = (m) => /^audio\//.test(m.mime || '');
   const days = [];
   for (let d = 0; d < nDays; d++) {
     const ph = rows.filter((m) => m.day === d && isImg(m) && (!/^dr-/.test(m.id) || m.highlight)).sort((a, b) => a.at - b.at);
     const vids = rows.filter((m) => m.day === d && isVid(m)).sort((a, b) => (b.highlight - a.highlight) || (a.at - b.at));
-    if (ph.length || vids.length) days.push({ day: d, ph, vids });
+    const auds = rows.filter((m) => m.day === d && isAud(m)).sort((a, b) => (b.highlight - a.highlight) || (a.at - b.at));
+    if (ph.length || vids.length) days.push({ day: d, ph, vids, auds });
   }
   const k = days.length > 8 ? 2 : 3; let clips = 0;
-  return days.map(({ day, ph, vids }) => {
+  return days.map(({ day, ph, vids, auds }) => {
     const pick = ph.filter((m) => m.highlight).slice(0, k), rest = ph.filter((m) => !pick.includes(m)), need = Math.min(k - pick.length, rest.length);
     for (let i = 0; i < need; i++) pick.push(rest[Math.floor((i + 0.5) * rest.length / need)]);   // spread through the day
     const clip = vids[0] && clips < 8 ? (clips++, vids[0]) : null;
-    return { day, photos: pick.sort((a, b) => a.at - b.at).map((m) => m.id), clip: clip ? clip.id : null };
+    const photos = pick.sort((a, b) => a.at - b.at).map((m) => m.id);
+    const qs = quotes.filter((e) => e.day === day).sort((a, b) => (b.highlight - a.highlight) || (a.at - b.at)).slice(0, photos.length).map((e) => e.id);
+    return { day, photos, clip: clip ? clip.id : null, caps: photos.map((_, j) => qs[j] || null), voice: photos.length && auds[0] ? auds[0].id : null };
   }).filter((x) => x.photos.length || x.clip);
 }
 
 // a picture filling the portrait frame: the photo whole, over a blurred, dimmed copy of itself (2× for a smooth zoom)
-async function frame(buf) {
+// cap = the kid's words as a bubble (a PNG of the cards page, 2×, transparent around it), set low in the frame, inside what the zoom keeps
+async function frame(buf, cap) {
   const bg = await sharp(buf).rotate().resize(W * 2, H * 2, { fit: 'cover' }).blur(28).modulate({ brightness: 0.82 }).jpeg().toBuffer();
   const fg = await sharp(buf).rotate().resize(W * 2 - 80, H * 2 - 160, { fit: 'inside' }).jpeg({ quality: 92 }).toBuffer();
-  return sharp(bg).composite([{ input: fg, gravity: 'center' }]).jpeg({ quality: 90 }).toBuffer();
+  const over = [{ input: fg, gravity: 'center' }];
+  if (cap) {
+    const m = await sharp(cap).metadata(), cw = Math.min(W * 2 - 120, m.width || W * 2), c = await sharp(cap).resize({ width: cw, withoutEnlargement: true }).png().toBuffer(), ch = (await sharp(c).metadata()).height;
+    over.push({ input: c, left: Math.round((W * 2 - cw) / 2), top: Math.max(0, H * 2 - ch - 320) });
+  }
+  return sharp(bg).composite(over).jpeg({ quality: 90 }).toBuffer();
 }
 const ENC = ['-c:v', 'libx264', '-preset', 'veryfast', '-crf', '23', '-pix_fmt', 'yuv420p', '-r', String(FPS), '-c:a', 'aac', '-b:a', '128k', '-ar', '44100', '-ac', '2'];
 // a still with a slow zoom (in, or out when `out`)
@@ -122,21 +142,35 @@ async function clipSeg(src, file) {
   return { secs, voice: p.audio };
 }
 
-/* The whole film. cards: [title, day…, end] PNGs (2×); get(key) reads a stored file. → {mp4: Buffer, secs} */
-async function make({ picks, cards, get, keyOf, step }) {
+/* The whole film. cards: [title, day…, end] PNGs (2×); caps: {entry id: PNG} the kids' words; get(key) reads a stored file.
+   → {mp4: Buffer, secs} */
+async function make({ picks, cards, caps = {}, get, keyOf, step, mood = 'warm' }) {
   const dir = fs.mkdtempSync(path.join(os.tmpdir(), 'mbr-'));
   try {
-    const segs = [], quiet = []; let t = 0, n = 0;
+    const segs = [], quiet = [], voices = []; let t = 0, n = 0;
     const total = 2 + picks.reduce((s, d) => s + 1 + d.photos.length + (d.clip ? 1 : 0), 0);
     const add = (f, secs) => { segs.push(f); t += secs; step(++n / total); };
     const card = async (png, secs) => { const f = path.join(dir, `c${n}.png`); fs.writeFileSync(f, png); const o = path.join(dir, `s${n}.mp4`); await stillSeg(f, secs, o, false, 0.03); add(o, secs); };
     await card(cards[0], D.title);
     for (const [k, d] of picks.entries()) {
+      // the day's voice memo starts a moment into its card; its photos stay up long enough to carry it (at most 6 s each)
+      let per = D.photo;
+      if (d.voice) {
+        const vb = await get(keyOf(d.voice));
+        if (vb) {
+          const vf = path.join(dir, `a${k}`); fs.writeFileSync(vf, vb);
+          const vs = Math.min(20, (await probe(vf).catch(() => ({ secs: 0 }))).secs || 0);
+          if (vs >= 0.5) {
+            voices.push({ file: vf, at: t + 0.6, secs: vs }); quiet.push([t + 0.6, t + 0.6 + vs]);
+            if (d.photos.length) per = Math.min(6, Math.max(D.photo, (vs + 1 - D.day) / d.photos.length));
+          }
+        }
+      }
       await card(cards[k + 1], D.day);
       for (const [j, id] of d.photos.entries()) {
         const buf = await get(keyOf(id)); if (!buf) continue;
-        const f = path.join(dir, `p${n}.jpg`); fs.writeFileSync(f, await frame(buf));
-        const o = path.join(dir, `s${n}.mp4`); await stillSeg(f, D.photo, o, j % 2 === 1); add(o, D.photo);
+        const f = path.join(dir, `p${n}.jpg`); fs.writeFileSync(f, await frame(buf, d.caps && d.caps[j] ? caps[d.caps[j]] : null));
+        const o = path.join(dir, `s${n}.mp4`); await stillSeg(f, per, o, j % 2 === 1); add(o, per);
       }
       if (d.clip) {
         const buf = await get(keyOf(d.clip)); if (buf) {
@@ -149,48 +183,65 @@ async function make({ picks, cards, get, keyOf, step }) {
     const list = path.join(dir, 'list.txt'); fs.writeFileSync(list, segs.map((f) => `file '${f}'`).join('\n'));
     const joined = path.join(dir, 'joined.mp4'); await run(FFMPEG, ['-hide_banner', '-loglevel', 'error', '-y', '-f', 'concat', '-safe', '0', '-i', list, '-c', 'copy', joined]);
     const secs = (await probe(joined)).secs || t;
-    const wav = path.join(dir, 'music.wav'); fs.writeFileSync(wav, musicWav(secs + 1));
+    const wav = path.join(dir, 'music.wav'); fs.writeFileSync(wav, musicWav(secs + 1, mood));
     const duck = quiet.length ? quiet.map(([a, b]) => `between(t,${a.toFixed(2)},${b.toFixed(2)})`).join('+') : '0';
     const out = path.join(dir, 'reel.mp4');
-    await run(FFMPEG, ['-hide_banner', '-loglevel', 'error', '-y', '-i', joined, '-i', wav, '-filter_complex',
-      `[1:a]aresample=44100,aformat=channel_layouts=stereo,volume='if(${duck},0.08,0.3)':eval=frame,afade=t=in:d=1,afade=t=out:st=${Math.max(0, secs - 2.5).toFixed(2)}:d=2.5[m];[0:a][m]amix=inputs=2:duration=first:normalize=0[a]`,
+    const vin = voices.flatMap((v) => ['-i', v.file]);
+    const vf = voices.map((v, i) => { const ms = Math.round(v.at * 1000); return `[${i + 2}:a]aresample=44100,aformat=channel_layouts=stereo,atrim=0:${v.secs.toFixed(2)},afade=t=out:st=${Math.max(0, v.secs - 0.3).toFixed(2)}:d=0.3,adelay=${ms}|${ms},volume=1.6[v${i}];`; }).join('');
+    await run(FFMPEG, ['-hide_banner', '-loglevel', 'error', '-y', '-i', joined, '-i', wav, ...vin, '-filter_complex',
+      `${vf}[1:a]aresample=44100,aformat=channel_layouts=stereo,volume='if(${duck},0.08,0.3)':eval=frame,afade=t=in:d=1,afade=t=out:st=${Math.max(0, secs - 2.5).toFixed(2)}:d=2.5[m];[0:a][m]${voices.map((_, i) => `[v${i}]`).join('')}amix=inputs=${2 + voices.length}:duration=first:normalize=0[a]`,
       '-map', '0:v', '-map', '[a]', '-c:v', 'copy', '-c:a', 'aac', '-b:a', '128k', '-movflags', '+faststart', '-map_metadata', '-1', '-map_chapters', '-1', '-t', secs.toFixed(2), out]);
     return { mp4: fs.readFileSync(out), secs: Math.round(secs) };
   } finally { fs.rmSync(dir, { recursive: true, force: true }); }
 }
 
-/* The routes. cards(trip, lang, days) → [PNG…] (server/pdf.js, the app's own #/reelcards page) */
-function create({ pool, media, A, family, cards }) {
+/* The routes. cards(trip, lang, days, caps) → {cards: [PNG…], caps: {id: PNG}} (server/pdf.js, the app's own #/reelcards page);
+   done(x) (optional) hears of a film made by itself ("we're home") — the parents' phones get a push */
+function create({ pool, media, A, family, cards, done }) {
   const r = express.Router(), q = async (s, a) => (await pool.query(s, a)).rows;
   const key = (tid, v) => `r/${tid}/${v}.mp4`;
-  let job = null;   // {trip, state: 'run'|'done'|'error', pct, step, err, at}
+  let job = null;   // {trip, state: 'run'|'done'|'error', pct, step, err, at, auto}
   const mediaKey = (rows) => (id) => { const m = rows.find((x) => x.id === id); return m && m.storage_key; };
-  r.post('/api/b/reel/:trip', A.requireEditor, express.json({ limit: '4kb' }), async (req, res, next) => {
+  /* make a book's film: → {code: 202} once it runs, else {code, error}. The job is claimed before the first await (one at a time). */
+  async function start(tripId, { lang = 'th', mood = 'warm', auto = false } = {}) {
+    if (job && job.state === 'run') return { code: 409, error: 'busy', trip: job.trip };
+    const mine = job = { trip: tripId, state: 'run', pct: 0, step: 'cards', at: Date.now(), auto };
+    const drop = (code, error) => { if (job === mine) job = null; return { code, error }; };
     try {
-      if (job && job.state === 'run') return res.status(409).json({ error: 'busy', trip: job.trip });
-      const mine = job = { trip: req.params.trip, state: 'run', pct: 0, step: 'cards', at: Date.now() };   // claimed before the first await
-      const drop = (code, error) => { job = null; return res.status(code).json({ error }); };
-      const t = (await q('SELECT id, reel, (SELECT count(*)::int FROM trip_days WHERE trip_id=t.id) AS days FROM trips t WHERE id=$1 AND family_id=$2', [req.params.trip, family]))[0];
+      const t = (await q('SELECT id, title, reel, (SELECT count(*)::int FROM trip_days WHERE trip_id=t.id) AS days FROM trips t WHERE id=$1 AND family_id=$2', [tripId, family]))[0];
       if (!t) return drop(404, 'trip');
       const rows = (await q('SELECT id, day_index, mime, highlight, taken_at, storage_key FROM media WHERE trip_id=$1 AND family_id=$2', [t.id, family]))
         .map((m) => ({ id: m.id, day: m.day_index, mime: m.mime, highlight: !!m.highlight, at: m.taken_at ? new Date(m.taken_at).getTime() : 0, storage_key: m.storage_key }));
-      const picks = plan(rows, t.days);
+      const quotes = (await q("SELECT id, day_index, highlight, occurred_at FROM entries WHERE trip_id=$1 AND family_id=$2 AND kind='quote' AND day_index IS NOT NULL AND length(text) BETWEEN 1 AND 140", [t.id, family]))
+        .map((e) => ({ id: e.id, day: e.day_index, highlight: !!e.highlight, at: new Date(e.occurred_at).getTime() }));
+      const picks = plan(rows, t.days, quotes);
       if (picks.reduce((s, d) => s + d.photos.length, 0) < 3) return drop(400, 'few');
-      const lang = req.body && req.body.lang === 'en' ? 'en' : 'th';
-      res.status(202).json({ ok: true });
-      try {
-        const png = await cards(t.id, lang, picks.map((d) => d.day));
-        if (!Array.isArray(png) || png.length !== picks.length + 2) throw new Error('cards');
-        mine.step = 'film';
-        const out = await make({ picks, cards: png, get: (k) => media.get(k), keyOf: mediaKey(rows), step: (p) => { mine.pct = Math.round(p * 95); } });
-        const v = crypto.randomBytes(6).toString('hex');
-        await media.put(key(t.id, v), out.mp4, 'video/mp4');
-        const reel = { v, at: Date.now(), secs: out.secs, n: picks.reduce((s, d) => s + d.photos.length, 0), lang };
-        await q('UPDATE trips SET reel=$2 WHERE id=$1 AND family_id=$3', [t.id, JSON.stringify(reel), family]);
-        if (t.reel && t.reel.v) await media.del(key(t.id, t.reel.v)).catch(() => {});   // the film it replaces
-        Object.assign(mine, { state: 'done', pct: 100, step: 'done', reel });
-      } catch (e) { console.error('reel', e.message, e.detail || ''); Object.assign(mine, { state: 'error', err: e.message === 'cards' ? 'cards' : 'film' }); }
-    } catch (e) { if (!res.headersSent) { job = null; next(e); } }
+      lang = lang === 'en' ? 'en' : 'th'; mood = moodOf(mood);
+      (async () => {
+        try {
+          const capIds = picks.flatMap((d) => d.caps || []).filter(Boolean);
+          const shot = await cards(t.id, lang, picks.map((d) => d.day), capIds);
+          if (!shot || !Array.isArray(shot.cards) || shot.cards.length !== picks.length + 2) throw new Error('cards');
+          mine.step = 'film';
+          const out = await make({ picks, cards: shot.cards, caps: shot.caps || {}, mood, get: (k) => media.get(k), keyOf: mediaKey(rows), step: (p) => { mine.pct = Math.round(p * 95); } });
+          const v = crypto.randomBytes(6).toString('hex');
+          await media.put(key(t.id, v), out.mp4, 'video/mp4');
+          const reel = { v, at: Date.now(), secs: out.secs, bytes: out.mp4.length, n: picks.reduce((s, d) => s + d.photos.length, 0), lang, mood };
+          await q('UPDATE trips SET reel=$2 WHERE id=$1 AND family_id=$3', [t.id, JSON.stringify(reel), family]);
+          if (t.reel && t.reel.v) await media.del(key(t.id, t.reel.v)).catch(() => {});   // the film it replaces
+          Object.assign(mine, { state: 'done', pct: 100, step: 'done', reel });
+          if (auto && done) Promise.resolve(done({ trip: t.id, title: t.title })).catch((e) => console.error('reel push', e.message));
+        } catch (e) { console.error('reel', e.message, e.detail || ''); Object.assign(mine, { state: 'error', err: e.message === 'cards' ? 'cards' : 'film' }); }
+      })();
+      return { code: 202 };
+    } catch (e) { drop(500, 'error'); throw e; }
+  }
+  r.post('/api/b/reel/:trip', A.requireEditor, express.json({ limit: '4kb' }), async (req, res, next) => {
+    try {
+      const b = req.body || {}, out = await start(req.params.trip, { lang: b.lang, mood: b.mood });
+      if (out.code === 202) return res.status(202).json({ ok: true });
+      res.status(out.code).json({ error: out.error, ...(out.trip ? { trip: out.trip } : {}) });
+    } catch (e) { next(e); }
   });
   r.get('/api/b/reel', A.requireEditor, (req, res) => { res.setHeader('Cache-Control', 'no-store'); res.json({ job }); });
   r.delete('/api/b/reel/:trip', A.requireEditor, async (req, res, next) => {
@@ -198,7 +249,7 @@ function create({ pool, media, A, family, cards }) {
       const t = (await q('SELECT id, reel FROM trips WHERE id=$1 AND family_id=$2', [req.params.trip, family]))[0];
       if (!t) return res.status(404).json({ error: 'trip' });
       if (t.reel && t.reel.v) await media.del(key(t.id, t.reel.v)).catch(() => {});
-      await q('UPDATE trips SET reel=NULL WHERE id=$1', [t.id]);
+      await q('UPDATE trips SET reel=NULL WHERE id=$1 AND family_id=$2', [t.id, family]);
       res.json({ ok: true });
     } catch (e) { next(e); }
   });
@@ -207,18 +258,78 @@ function create({ pool, media, A, family, cards }) {
     try {
       if (!A.canSee(req.user, req.params.trip)) return res.sendStatus(404);
       const t = (await q('SELECT id, reel FROM trips WHERE id=$1 AND family_id=$2', [req.params.trip, family]))[0];
-      const buf = t && t.reel && t.reel.v ? await media.get(key(t.id, t.reel.v)) : null;
-      if (!buf) return res.sendStatus(404);
-      res.setHeader('Cache-Control', 'private, max-age=31536000, immutable'); res.setHeader('Accept-Ranges', 'bytes'); res.type('video/mp4');
+      if (!(t && t.reel && t.reel.v)) return res.sendStatus(404);
+      res.setHeader('Cache-Control', 'private, max-age=31536000, immutable');
       if (req.query.dl) res.setHeader('Content-Disposition', 'attachment; filename="trip.mp4"');
-      const m = /^bytes=(\d*)-(\d*)$/.exec(req.headers.range || '');
-      if (!m || (m[1] === '' && m[2] === '')) return res.send(buf);
-      const a = m[1] === '' ? Math.max(0, buf.length - Number(m[2])) : Number(m[1]), b = m[1] !== '' && m[2] !== '' ? Math.min(Number(m[2]), buf.length - 1) : buf.length - 1;
-      if (!(a <= b) || a >= buf.length) { res.setHeader('Content-Range', `bytes */${buf.length}`); return res.sendStatus(416); }
-      res.status(206); res.setHeader('Content-Range', `bytes ${a}-${b}/${buf.length}`); res.send(buf.subarray(a, b + 1));
+      await sendRanged(req, res, media, key(t.id, t.reel.v), 'video/mp4');
     } catch (e) { next(e); }
   });
-  return { router: r, key };
+  /* The year's film (owner, Nov 2026: "สรุปทั้งปี … ทั้งแบบคลิป"): every book that starts in the year, in order — per book its card
+     and up to four photos (⭐ first, spread through the trip; three when the year has more than five books), no clips, the year's own
+     title and end cards (#/reelyear/<y>/<lang>/<ids>). Kept as r/year-<y>/<v>.mp4, named in settings 'year_reels' {y: {v, at, secs, bytes, n}}. */
+  const yearKey = (y, v) => `r/year-${y}/${v}.mp4`;
+  const years = async () => { const r = (await q("SELECT value FROM settings WHERE key='year_reels'"))[0]; try { return r ? JSON.parse(r.value) : {}; } catch (_) { return {}; } };
+  async function startYear(y, { lang = 'th', mood = 'warm' } = {}) {
+    if (!/^\d{4}$/.test(String(y))) return { code: 404, error: 'year' };
+    if (job && job.state === 'run') return { code: 409, error: 'busy', trip: job.trip };
+    const mine = job = { trip: 'year:' + y, state: 'run', pct: 0, step: 'cards', at: Date.now() };
+    const drop = (code, error) => { if (job === mine) job = null; return { code, error }; };
+    try {
+      const ts = await q("SELECT id FROM trips WHERE family_id=$1 AND extract(year FROM date_from)=$2 ORDER BY date_from", [family, +y]);
+      const rows = (await q('SELECT id, trip_id, day_index, mime, highlight, taken_at, storage_key FROM media WHERE family_id=$1 AND trip_id = ANY($2) AND mime LIKE $3', [family, ts.map((t) => t.id), 'image/%']))
+        .filter((m) => !/^dr-/.test(m.id) || m.highlight).map((m) => ({ id: m.id, trip: m.trip_id, highlight: !!m.highlight, at: m.taken_at ? new Date(m.taken_at).getTime() : 0, storage_key: m.storage_key }));
+      const k = ts.length > 5 ? 3 : 4;
+      const picks = ts.map((t, i) => {
+        const ph = rows.filter((m) => m.trip === t.id).sort((a, b) => a.at - b.at), pick = ph.filter((m) => m.highlight).slice(0, k), rest = ph.filter((m) => !pick.includes(m)), need = Math.min(k - pick.length, rest.length);
+        for (let j = 0; j < need; j++) pick.push(rest[Math.floor((j + 0.5) * rest.length / need)]);
+        return { day: i, trip: t.id, photos: pick.sort((a, b) => a.at - b.at).map((m) => m.id), clip: null, caps: [], voice: null };
+      }).filter((d) => d.photos.length);
+      if (picks.reduce((s, d) => s + d.photos.length, 0) < 3) return drop(400, 'few');
+      lang = lang === 'en' ? 'en' : 'th'; mood = moodOf(mood);
+      (async () => {
+        try {
+          const shot = await cards(null, lang, [], [], `reelyear/${y}/${lang}/${picks.map((d) => encodeURIComponent(d.trip)).join('.')}`);
+          if (!shot || !Array.isArray(shot.cards) || shot.cards.length !== picks.length + 2) throw new Error('cards');
+          mine.step = 'film';
+          const out = await make({ picks, cards: shot.cards, mood, get: (kk) => media.get(kk), keyOf: mediaKey(rows), step: (p) => { mine.pct = Math.round(p * 95); } });
+          const v = crypto.randomBytes(6).toString('hex');
+          await media.put(yearKey(y, v), out.mp4, 'video/mp4');
+          const all = await years(), old = all[y];
+          all[y] = { v, at: Date.now(), secs: out.secs, bytes: out.mp4.length, n: picks.reduce((s, d) => s + d.photos.length, 0), lang, mood };
+          await q("INSERT INTO settings (key, value) VALUES ('year_reels', $1) ON CONFLICT (key) DO UPDATE SET value=EXCLUDED.value", [JSON.stringify(all)]);
+          if (old && old.v) await media.del(yearKey(y, old.v)).catch(() => {});
+          Object.assign(mine, { state: 'done', pct: 100, step: 'done', reel: all[y] });
+        } catch (e) { console.error('reel year', e.message, e.detail || ''); Object.assign(mine, { state: 'error', err: e.message === 'cards' ? 'cards' : 'film' }); }
+      })();
+      return { code: 202 };
+    } catch (e) { drop(500, 'error'); throw e; }
+  }
+  r.post('/api/b/reel-year/:y', A.requireEditor, express.json({ limit: '4kb' }), async (req, res, next) => {
+    try {
+      const b = req.body || {}, out = await startYear(req.params.y, { lang: b.lang, mood: b.mood });
+      if (out.code === 202) return res.status(202).json({ ok: true });
+      res.status(out.code).json({ error: out.error, ...(out.trip ? { trip: out.trip } : {}) });
+    } catch (e) { next(e); }
+  });
+  r.get('/api/b/reel-year', A.requireEditor, async (req, res, next) => { try { res.setHeader('Cache-Control', 'no-store'); res.json({ years: await years() }); } catch (e) { next(e); } });
+  r.get('/media/reel-year/:y', A.requireEditor, async (req, res, next) => {
+    try {
+      const x = /^\d{4}$/.test(req.params.y) ? (await years())[req.params.y] : null;
+      if (!x || !/^[0-9a-f]{12}$/.test(x.v || '')) return res.sendStatus(404);
+      res.setHeader('Cache-Control', 'private, max-age=31536000, immutable');
+      if (req.query.dl) res.setHeader('Content-Disposition', `attachment; filename="year-${req.params.y}.mp4"`);
+      await sendRanged(req, res, media, yearKey(req.params.y, x.v), 'video/mp4');
+    } catch (e) { next(e); }
+  });
+  // "we're home" on a book from photos (bookshelf.js hooks.home): the film is made by itself when the book has none yet and enough
+  // photos; nothing happens while another film is being made
+  async function home({ trip }) {
+    const t = (await q("SELECT reel, (SELECT count(*)::int FROM media WHERE trip_id=$1 AND mime LIKE 'image/%') AS n FROM trips WHERE id=$1 AND family_id=$2", [trip, family]))[0];
+    if (!t || (t.reel && t.reel.v)) return { code: 409, error: 'has' };
+    if (t.n < 3) return { code: 400, error: 'few' };   // asked before anything is claimed: a book of two photos never shows a film being made, even for a moment
+    return start(trip, { lang: 'th', mood: 'warm', auto: true });
+  }
+  return { router: r, key, start, home, startYear };
 }
 
-module.exports = { create, plan, musicWav, make, D };
+module.exports = { create, plan, musicWav, make, D, MOODS };

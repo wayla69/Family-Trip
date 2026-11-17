@@ -15,12 +15,15 @@ function fsStore(root) {
     async put(k, buf) { const f = file(k); await fs.promises.mkdir(path.dirname(f), { recursive: true }); await fs.promises.writeFile(f, buf); },
     async get(k) { try { return await fs.promises.readFile(file(k)); } catch (e) { if (e.code === 'ENOENT') return null; throw e; } },
     async del(k) { await fs.promises.rm(file(k), { force: true }); },
+    // a part of an object (a film or a clip asked for by byte range): only those bytes are read — never the whole file per request
+    async size(k) { try { return (await fs.promises.stat(file(k))).size; } catch (e) { if (e.code === 'ENOENT') return null; throw e; } },
+    stream(k, a, b) { return fs.createReadStream(file(k), { start: a, end: b }); },
     async ping() { await fs.promises.mkdir(root, { recursive: true }); await fs.promises.access(root, fs.constants.W_OK); },
   };
 }
 
 function s3Store(env) {
-  const { S3Client, PutObjectCommand, GetObjectCommand, DeleteObjectCommand, HeadBucketCommand } = require('@aws-sdk/client-s3');
+  const { S3Client, PutObjectCommand, GetObjectCommand, DeleteObjectCommand, HeadBucketCommand, HeadObjectCommand } = require('@aws-sdk/client-s3');
   const Bucket = env.BUCKET;
   const s3 = new S3Client({
     region: env.REGION || 'auto',
@@ -40,6 +43,11 @@ function s3Store(env) {
       } catch (e) { if (e.name === 'NoSuchKey' || e.$metadata?.httpStatusCode === 404) return null; throw e; }
     },
     async del(k) { await s3.send(new DeleteObjectCommand({ Bucket, Key: checkKey(k) })); },
+    async size(k) {
+      try { return Number((await s3.send(new HeadObjectCommand({ Bucket, Key: checkKey(k) }))).ContentLength); }
+      catch (e) { if (e.name === 'NotFound' || e.name === 'NoSuchKey' || e.$metadata?.httpStatusCode === 404) return null; throw e; }
+    },
+    async stream(k, a, b) { return (await s3.send(new GetObjectCommand({ Bucket, Key: checkKey(k), Range: `bytes=${a}-${b}` }))).Body; },
     async ping() { await s3.send(new HeadBucketCommand({ Bucket })); },
   };
 }
