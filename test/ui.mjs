@@ -2249,6 +2249,15 @@ const T = 'hk-macau-2026';
     ok(dep.ol === 6 && dep.ul === 0 && !dep.num, `departure routine: six numbered steps, no bullets among them, no "1." written twice (${JSON.stringify(dep)})`);
     await page.goto(`${BASE}/#/t/${T}/prep/full/8`); await page.waitForSelector('.mtl');
     ok(await page.locator('.mtl li ul, .mtl li .pts').count() === 0, 'park map stops: each stop one line, never a list inside a stop');
+    // every inner page in one look (owner, Nov 2026: "ไม่เอา format ที่ไม่ตรงกับ app"): learn cards, if-then cases and notes are cards; a bold time stays in its sentence
+    await page.goto(`${BASE}/#/t/${T}/sos`); await page.waitForSelector('.glg');
+    const sosLinks = await page.$$eval('.glg a.glc', (as) => as.map((a) => a.getAttribute('href').replace(/^#\/t\//, '')));
+    let ift = null; for (const r of sosLinks) { await page.goto(`${BASE}/#/t/${r}`); await page.waitForSelector('.tp.one'); if (await page.locator('.tp.one .ifts details.ifold').count()) { ift = r; break; } }
+    ok(!!ift, `an if-then page among the emergency topics (${sosLinks.join(' ')})`);
+    for (const [r, sel] of [[`${T}/learn/full/0`, '.tp.one .gcard'], [ift, '.tp.one .ifts details.ifold'], ['big-hop-2027/prep/full/7', '.tp.one .pg1>.call.info']]) {
+      await page.goto(`${BASE}/#/t/${r}`); await page.waitForSelector(sel, { state: 'attached' });
+      const c = await page.$$eval(sel, (es) => es.map((e) => ({ top: parseFloat(getComputedStyle(e).borderTopWidth), r: parseFloat(getComputedStyle(e).borderTopLeftRadius), kf: [...e.querySelectorAll('b.kf')].every((b) => getComputedStyle(b).display === 'inline') })));
+      ok(c.length && c.every((x) => x.top >= 3 && x.r >= 12 && x.kf), `${r}: every ${sel.split(' ').pop()} a card with a coloured top edge, bold times inside their sentence (${JSON.stringify(c.slice(0, 3))})`); }
     await page.goto(`${BASE}/#/t/${T}`); await page.waitForSelector('.hubgrid .tile.today small');
     await page.evaluate(() => document.querySelectorAll('.hubgrid').forEach((g) => { g.className = g.className.replace(/tl-\w+/, 'tl-pastel'); }));   // the colourful look, whatever an earlier step chose
     const c = await page.evaluate(`(${CONTRAST})(document.querySelectorAll('.hubgrid .tile small'), (e) => { const g = document.createElement('i'); g.style.backgroundColor = getComputedStyle(e.closest('.tile')).borderTopColor; document.body.appendChild(g); return g; })`);
