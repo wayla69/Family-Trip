@@ -237,6 +237,19 @@ const T = 'hk-macau-2026';
     ok(!sent.some((u) => u.includes('/api/b/media') || u.includes('/api/b/photos')), 'phone check: still nothing uploaded');
     page.off('request', watch);
   }
+  // room and phone problems (#/health, server/errors.js): a script error on this phone reaches the parents' list once, with no data in it
+  { const errs = []; const w = (r) => { if (r.url().endsWith('/api/b/err')) errs.push(r.postData() || ''); }; page.on('request', w);
+    await page.evaluate(() => { for (let k = 0; k < 3; k++) setTimeout(() => { throw new TypeError("Cannot read properties of undefined (reading 'kids') for \"มีมี่ที่ทะเล\""); }, 10); });
+    await page.waitForTimeout(800); page.off('request', w);
+    for (let k = s.errs.length - 1; k >= 0; k--) if (/reading 'kids'/.test(s.errs[k])) s.errs.splice(k, 1);   // thrown on purpose: not a page error of the app
+    await page.goto(`${BASE}/#/`); await page.waitForSelector('.setlist a[href="#/health"]'); await page.click('.setlist a[href="#/health"]');
+    await page.waitForFunction(() => document.querySelectorAll('.herrs li').length >= 1 && document.querySelectorAll('.hbars .hbar, .hcard p.muted').length >= 1, null, { timeout: 10000 }).catch(() => {});
+    const h = await page.evaluate(() => ({ errs: [...document.querySelectorAll('.herrs li b')].map((b) => b.textContent), page: document.querySelector('main').textContent }));
+    await s.shot('health');
+    ok(errs.length === 1 && h.errs.some((x) => /reading 'kids'/.test(x)) && !/มีมี่ที่ทะเล/.test(h.page + errs.join()) && /Room the books take/.test(h.page) && await s.noHScroll(),
+      `room and phone problems: a script error is sent once (three throws), listed for the parents without the text it carried (${JSON.stringify({ sent: errs.length, h: h.errs })})`);
+    await page.click('[data-a="healthclear"]'); await page.click('[data-a="healthclear"]'); await page.waitForFunction(() => /No phone reported/.test(document.querySelector('main').textContent), null, { timeout: 5000 }).catch(() => {});
+    ok(/No phone reported/.test(await page.textContent('main')), 'room and phone problems: two taps clear the list'); }
   // #/snap — a book from photos (docs/SNAP-BOOK.md P1): pick → read on the phone → days and places → make the book. Seven synthetic
   // photos: three on 12 Dec near Khao Yai (two JPEGs and a HEIF), one on 13 Dec with no position, one on 14 Dec with an empty 0,0 one,
   // one dated by its file only (today) and one in Sydney in April — the last two fall outside the trip and stay out
@@ -1368,12 +1381,13 @@ const T = 'hk-macau-2026';
     await page.click('.palette button[data-v="#EF5350"]'); await page.locator('.colourpad [data-c]').nth(0).click({ force: true });
     // a redraw before the red tap is saved (a state refresh lands within the 500 ms the save waits): the red must stay on the picture
     await page.evaluate(() => render()); await page.waitForFunction(() => document.querySelectorAll('.colourpad [data-c]').length > 0, null, { timeout: 5000 });
-    const two = await filled(); await page.click('[data-a="kidcolundo"]'); const one = await filled();
+    const two = await filled(), why = await page.evaluate(() => ({ pend: Object.values(colPend), fill: (document.querySelector('.colourpad') || {}).dataset.fill, saved: (S.entries.find((e) => e.id === 'hk-macau-2026.field.colour.d1.mimi') || {}).text, hist: colHist.length, q: queue.length }));
+    await page.click('[data-a="kidcolundo"]'); const one = await filled();
     await page.click('[data-a="kidcolwipe"]'); const none = await filled(); await page.waitForFunction(() => (S.entries.find((e) => e.id === 'hk-macau-2026.field.colour.d1.mimi') || {}).text === '{}', null, { timeout: 5000 });
     await page.click('[data-a="kidcolundo"]'); const back = await filled(); await page.waitForFunction(() => /42A5F5/.test((S.entries.find((e) => e.id === 'hk-macau-2026.field.colour.d1.mimi') || {}).text || ''), null, { timeout: 5000 });
     const btn = await page.evaluate(() => [...document.querySelectorAll('.coltools button')].map((b) => Math.round(b.getBoundingClientRect().height)));
     ok(/EF5350/.test(two) && /42A5F5/.test(two) && one === '#42A5F5' && none === '' && back === '#42A5F5' && /42A5F5/.test(await saved()) && btn.length === 2 && btn.every((h) => h >= 48) && await s.noHScroll(),
-      `colouring: ↶ takes back the last colour, the sponge washes the picture white (saved), ↶ brings the picture back (${JSON.stringify({ two, one, none, back, btn })})`);
+      `colouring: ↶ takes back the last colour, the sponge washes the picture white (saved), ↶ brings the picture back (${JSON.stringify({ two, one, none, back, btn, ...(/EF5350/.test(two) ? {} : { why }) })})`);
   }
   { // more pictures (owner, Nov 2026: "ทำเกมระบายสีให้มีรูปเพิ่มอีก"): the book's other days and the place's own animals, landmarks and foods
     const api = await page.evaluate(async () => (await (await fetch('/api/b/colour/hk-macau-2026')).json()).pics || []);

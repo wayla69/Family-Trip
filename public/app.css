@@ -3260,3 +3260,16 @@ body.reelbook{margin:0;padding:0;background:#111}
 .devhand{display:grid;gap:8px;margin:8px 0 18px}
 .devh{display:flex;gap:10px;align-items:center;min-height:48px;padding:8px 12px;border-radius:12px;border:1px solid var(--line);background:var(--card);color:var(--ink);font:inherit;text-align:left;cursor:pointer}
 .devh.dv-ok{border-color:color-mix(in srgb,#2E9E5B 60%,var(--line))}.devh.dv-no{border-color:color-mix(in srgb,#D6362A 60%,var(--line))}
+/* room and phone problems (#/health, views.js viewHealth) */
+.hcard .hbig{font-size:18px;margin:4px 0 10px}.hcard .hbig b{font-size:26px}
+.hbars{display:grid;gap:8px;margin-bottom:12px}
+.hbar{display:grid;grid-template-columns:minmax(0,9em) 1fr auto;align-items:center;gap:8px;font-size:14px}
+.hbar i{display:block;height:10px;border-radius:6px;background:var(--accent)}
+.hbooks{list-style:none;padding:0;margin:0 0 8px;display:grid;gap:10px}
+.hbooks li{background:var(--card);border:1px solid var(--rule);border-radius:12px;padding:10px 12px}
+.hbooks .hsz{float:right;font-weight:600}
+.hbooks .hk{display:flex;flex-wrap:wrap;gap:4px 12px;font-size:13px;color:var(--muted);margin-top:4px}
+.herrs{list-style:none;padding:0;margin:0 0 10px;display:grid;gap:8px}
+.herrs li{background:var(--card);border:1px solid var(--rule);border-left:4px solid var(--accent2);border-radius:10px;padding:8px 12px;display:grid;gap:2px;overflow-wrap:anywhere}
+.herrs small{color:var(--muted);font-size:13px}
+.hok{color:color-mix(in srgb,#2E7D32 70%,var(--ink));font-weight:600}

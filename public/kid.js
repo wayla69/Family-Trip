@@ -2156,8 +2156,9 @@ function colourSet(pad, fills) {
   clearTimeout(colourSaveT);
   colourSaveT = setTimeout(() => {
     const t = trip(t0), text = colPend[pk]; if (!t || text === undefined) return;
-    // forgotten once the phone's state holds it (and only if no newer tap came meanwhile)
-    Promise.resolve(putEntry(t, { day: null, kind: 'field', child: kid0, first_key: key0, text }, `${t.id}.field.${key0}.${kid0}`)).finally(() => { if (colPend[pk] === text) delete colPend[pk]; });
+    // forgotten a while after it is saved (and only if no newer tap came meanwhile): a state read that left before the save and lands
+    // after it still holds the older colours, and a redraw from it took the newest colour off the picture (a flaky CI test of Nov 2026)
+    Promise.resolve(putEntry(t, { day: null, kind: 'field', child: kid0, first_key: key0, text }, `${t.id}.field.${key0}.${kid0}`)).finally(() => setTimeout(() => { if (colPend[pk] === text) delete colPend[pk]; }, 10000));
   }, 500);
 }
 // grown-ups empty the star jar (and its friends) by pressing and holding it 1.5 s — a test run's stars, a fresh start; nothing on the server

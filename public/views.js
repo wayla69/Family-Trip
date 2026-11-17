@@ -104,6 +104,7 @@ function render() {
   else if (p[0] === 'privacy') html = viewPrivacy();
   else if (p[0] === 'emoji' && isEditor()) html = viewEmoji();
   else if (p[0] === 'snaptest' && isEditor()) html = viewSnapTest();
+  else if (p[0] === 'health' && isEditor()) html = viewHealth();
   else if (p[0] === 'snap' && isEditor()) html = viewSnap(p);   // a book from photos (docs/SNAP-BOOK.md)   // P0 of docs/SNAP-BOOK.md: what this phone hands over from its photos (not linked)
   else html = viewShelf();
   document.documentElement.style.cssText = t ? themeStyle(t) : themeStyle(curTrip());
@@ -292,6 +293,7 @@ ${isEditor() ? `<div class="part">${L('ตั้งค่า', 'Settings')} <img
 <a href="#/emoji">${hubE('kid')}<span><b>${L('อีโมจิของเรา', 'Our emoji')}</b><small>${L(`${emoRows().length} รูป เพิ่มหรือลบได้`, `${emoRows().length} pictures, add or delete`)}</small></span><i>›</i></a>
 <a href="#/viewers">${hubE('relatives')}<span><b>${L('ญาติที่ดูได้', 'Who can see the books')}</b><small>${L('รหัสและลิงก์ของแต่ละกลุ่มญาติ', 'A code and a link for each group of relatives')}</small></span><i>›</i></a>
 <a href="#/snaptest">${hubE('settings')}<span><b>${L('ตรวจเครื่องนี้', 'Check this phone')}</b><small>${L('ลองว่ารูป คลิป และการส่งต่อ ใช้ได้บนเครื่องนี้ไหม', 'Do photos, clips and sharing work on this phone?')}</small></span><i>›</i></a>
+<a href="#/health">${hubE('settings')}<span><b>${L('พื้นที่และปัญหาบนมือถือ', 'Room and phone problems')}</b><small>${L('รูปและคลิปใช้ที่ไปเท่าไร มีอะไรพังบนเครื่องไหนไหม', 'How much room photos and clips take, anything that broke on a phone')}</small></span><i>›</i></a>
 <a href="#/privacy">${hubE('settings')}<span><b>${L('ความเป็นส่วนตัวและข้อมูล', 'Privacy and your data')}</b><small>${L('เก็บอะไร ใครเห็น ขอสำเนา หรือลบทั้งหมด', 'What is kept, who sees it, take a copy or delete everything')}</small></span></a>
 ${aiCard()}</nav>` : ''}
 <div class="row end setout"><button class="btn ghost small" data-a="logout">⎋ ${L('ออกจากระบบ', 'Sign out')}</button></div>`;
@@ -307,6 +309,36 @@ function aiUsage() {
 }
 const aiToday = () => { const u = aiUsage(); return u && u.today.calls ? L(`ผู้ช่วยวันนี้ ${u.today.calls}/${u.limit} ครั้ง`, `Helper today ${u.today.calls}/${u.limit}`) : ''; };
 const tok = (n) => (n >= 1e6 ? (n / 1e6).toFixed(1) + 'M' : n >= 1e3 ? Math.round(n / 1e3) + 'k' : String(Math.round(n)));
+// room and phone problems (owner, Nov 2026: "รู้เมื่อมีอะไรพังบนมือถือ … หน้าดูพื้นที่"; server/errors.js): how much each book takes, by
+// kind (clips and films grow fastest), and the script errors the family's phones reported in the last 30 days, counted
+const HEALTH = { at: 0, busy: false, storage: null, errors: null };
+function healthLoad(force) {
+  if (HEALTH.busy || (!force && Date.now() - HEALTH.at < 60e3)) return;
+  HEALTH.busy = true;
+  Promise.all([api('GET', '/api/b/health/storage').catch(() => null), api('GET', '/api/b/health/errors').catch(() => null)]).then(([s, e]) => {
+    HEALTH.storage = s; HEALTH.errors = e ? e.errors : null; HEALTH.at = Date.now();
+  }).finally(() => { HEALTH.busy = false; if (route().parts[0] === 'health') safeRender(); });
+}
+const bytesTxt = (b) => (b >= 1073741824 ? `${(b / 1073741824).toFixed(1)} GB` : b >= 1048576 ? `${(b / 1048576).toFixed(b >= 104857600 ? 0 : 1)} MB` : `${Math.max(1, Math.round(b / 1024))} KB`);
+const HEALTH_KINDS = [['photos', '📷', 'รูป', 'Photos'], ['clips', '🎬', 'คลิป', 'Clips'], ['films', '🎞️', 'คลิปสรุปทริป', 'Trip films'], ['voices', '🎙️', 'เสียงอัด', 'Voice memos'], ['drawings', '🖍️', 'ภาพวาดของเด็ก', 'The kids’ drawings']];
+function viewHealth() {
+  healthLoad();
+  const st = HEALTH.storage, er = HEALTH.errors;
+  const when = (ms) => new Date(ms).toLocaleString(lang === 'th' ? 'th-TH' : 'en-GB', { day: 'numeric', month: 'short', hour: '2-digit', minute: '2-digit' });
+  const kindsLine = (k) => HEALTH_KINDS.filter(([key]) => k[key] && k[key].n).map(([key, e, th, en]) => `<span>${e} ${L(th, en)} ${k[key].n} · <b>${bytesTxt(k[key].bytes)}</b></span>`).join('');
+  const room = !st ? `<p class="muted">${L('กำลังดู…', 'Looking…')}</p>` : !st.total ? `<p class="muted">${L('ยังไม่มีรูปหรือคลิปในเล่มไหน', 'No book holds photos or clips yet')}</p>`
+    : `<p class="hbig"><b>${bytesTxt(st.total)}</b> ${L('ทั้งหมด', 'in all')}</p>
+<div class="hbars">${HEALTH_KINDS.filter(([k]) => st.all[k] && st.all[k].bytes).map(([k, e, th, en]) => `<div class="hbar"><span>${e} ${L(th, en)}</span><i style="width:${Math.max(2, Math.round((st.all[k].bytes / st.total) * 100))}%"></i><b>${bytesTxt(st.all[k].bytes)}</b></div>`).join('')}</div>
+<ul class="hbooks">${st.books.filter((b) => b.total).sort((a, b) => b.total - a.total).map((b) => `<li><b>${esc(T(b.title))}</b> <span class="hsz">${bytesTxt(b.total)}</span><div class="hk">${kindsLine(b.kinds)}</div></li>`).join('')}</ul>
+<p class="muted small">${L('ขนาดไฟล์เต็มที่เก็บไว้ · รูปย่อเพิ่มอีกราว 5% · คลิปและคลิปสรุปทริปกินที่เร็วที่สุด', 'The stored full files · thumbnails add about 5% · clips and films grow fastest')}</p>`;
+  const errs = er == null ? `<p class="muted">${L('กำลังดู…', 'Looking…')}</p>` : !er.length ? `<p class="hok">✓ ${L('30 วันนี้ไม่มีมือถือเครื่องไหนรายงานปัญหา', 'No phone reported a problem in the last 30 days')}</p>`
+    : `<ul class="herrs">${er.map((x) => `<li><b>${esc(x.msg)}</b><small>${[x.src ? `${x.src}:${x.line}` : '', x.route, x.device, x.ver].filter(Boolean).map(esc).join(' · ')}</small><small>${x.n > 1 ? L(`${x.n} ครั้ง · `, `${x.n} times · `) : ''}${L('ล่าสุด', 'last')} ${when(x.last_at)}</small></li>`).join('')}</ul>
+<div class="row"><button class="btn ghost small" data-a="healthclear">${L('ล้างรายการ', 'Clear the list')}</button></div>`;
+  return `<h1 class="h2">${L('พื้นที่และปัญหาบนมือถือ', 'Room and phone problems')}</h1>
+<section class="blk hcard"><h3>${L('พื้นที่ที่เล่มใช้', 'Room the books take')}</h3>${room}</section>
+<section class="blk hcard"><h3>${L('ปัญหาที่มือถือรายงาน', 'Problems the phones reported')}</h3>
+<p class="muted small">${L('เมื่อแอปสะดุดบนมือถือ เครื่องจะส่งแค่ข้อความของปัญหา ไฟล์และบรรทัด รุ่นแอป ชนิดหน้า และชนิดเครื่อง มาเก็บไว้ 30 วัน — ไม่มีชื่อ ข้อความที่เขียน รูป หรือตำแหน่ง', 'When the app trips on a phone, the phone sends only the problem’s message, the file and line, the app version, the kind of page and of phone — kept 30 days; no names, nothing written, no photos, no position')}</p>${errs}</section>`;
+}
 function aiCard() {
   const u = aiUsage(); if (!u) return '';
   const d = u.days30;
@@ -1981,6 +2013,7 @@ ${sec('เก็บอะไรบ้าง', 'What is kept', ul([
   ['ข้อความที่พิมพ์: คำพูดเด็ก โน้ต อารมณ์ ครั้งแรก รีวิว ค่าใช้จ่าย จดหมาย', 'Words the parents type: the kids’ quotes, notes, moods, firsts, reviews, spending, letters'],
   ['หัวใจและข้อความสั้นจากญาติ', 'Hearts and short messages from relatives'],
   ['รหัสของญาติ เก็บเป็นค่าที่อ่านคืนไม่ได้ · รหัสครอบครัวไม่ได้เก็บในฐานข้อมูล', 'Relatives’ PINs, stored only as one-way hashes · the family PIN is not stored in the database'],
+  ['ปัญหาที่แอปสะดุดบนมือถือ: ข้อความของปัญหา ไฟล์และบรรทัด รุ่นแอป ชนิดหน้า และชนิดเครื่อง เก็บ 30 วัน ไม่มีชื่อ ข้อความที่เขียน รูป หรือตำแหน่ง', 'When the app trips on a phone: the problem’s message, the file and line, the app version, the kind of page and of phone — kept 30 days, with no names, nothing written, no photos or position'],
   ['ที่อยู่สำหรับส่งการเตือนของเครื่องที่เปิดเตือน และจำนวนครั้งที่ใช้ผู้ช่วยต่อวัน', 'The push address of each phone that turned reminders on, and how many times a day the helper was used'],
   ['ไม่เก็บ: ตำแหน่งของโทรศัพท์ รายชื่อผู้ติดต่อ ข้อมูลการจอง เลขหนังสือเดินทาง หรือประวัติการใช้งาน', 'Not kept: the phone’s location, contacts, booking details, passport numbers, or usage analytics']]))}
 ${sec('เก็บไว้ที่ไหน นานแค่ไหน', 'Where, and for how long', ul([

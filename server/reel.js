@@ -1,4 +1,5 @@
 'use strict';
+const { sendRanged } = require('./ranged');
 /* A book's own short film (owner, Nov 2026: "คลิปสรุปทริป"): the trip in a minute or two, made on our server from what the book
    already holds — a title card, then day by day a card (the day's picture, its name, where we were), up to three of its photos (⭐
    first, then spread through the day) with a slow zoom, a few seconds of one of its clips with the kids' own voices, and an end card;
@@ -185,7 +186,7 @@ function create({ pool, media, A, family, cards }) {
         const out = await make({ picks, cards: png, get: (k) => media.get(k), keyOf: mediaKey(rows), step: (p) => { mine.pct = Math.round(p * 95); } });
         const v = crypto.randomBytes(6).toString('hex');
         await media.put(key(t.id, v), out.mp4, 'video/mp4');
-        const reel = { v, at: Date.now(), secs: out.secs, n: picks.reduce((s, d) => s + d.photos.length, 0), lang };
+        const reel = { v, at: Date.now(), secs: out.secs, bytes: out.mp4.length, n: picks.reduce((s, d) => s + d.photos.length, 0), lang };
         await q('UPDATE trips SET reel=$2 WHERE id=$1 AND family_id=$3', [t.id, JSON.stringify(reel), family]);
         if (t.reel && t.reel.v) await media.del(key(t.id, t.reel.v)).catch(() => {});   // the film it replaces
         Object.assign(mine, { state: 'done', pct: 100, step: 'done', reel });
@@ -198,7 +199,7 @@ function create({ pool, media, A, family, cards }) {
       const t = (await q('SELECT id, reel FROM trips WHERE id=$1 AND family_id=$2', [req.params.trip, family]))[0];
       if (!t) return res.status(404).json({ error: 'trip' });
       if (t.reel && t.reel.v) await media.del(key(t.id, t.reel.v)).catch(() => {});
-      await q('UPDATE trips SET reel=NULL WHERE id=$1', [t.id]);
+      await q('UPDATE trips SET reel=NULL WHERE id=$1 AND family_id=$2', [t.id, family]);
       res.json({ ok: true });
     } catch (e) { next(e); }
   });
@@ -207,15 +208,10 @@ function create({ pool, media, A, family, cards }) {
     try {
       if (!A.canSee(req.user, req.params.trip)) return res.sendStatus(404);
       const t = (await q('SELECT id, reel FROM trips WHERE id=$1 AND family_id=$2', [req.params.trip, family]))[0];
-      const buf = t && t.reel && t.reel.v ? await media.get(key(t.id, t.reel.v)) : null;
-      if (!buf) return res.sendStatus(404);
-      res.setHeader('Cache-Control', 'private, max-age=31536000, immutable'); res.setHeader('Accept-Ranges', 'bytes'); res.type('video/mp4');
+      if (!(t && t.reel && t.reel.v)) return res.sendStatus(404);
+      res.setHeader('Cache-Control', 'private, max-age=31536000, immutable');
       if (req.query.dl) res.setHeader('Content-Disposition', 'attachment; filename="trip.mp4"');
-      const m = /^bytes=(\d*)-(\d*)$/.exec(req.headers.range || '');
-      if (!m || (m[1] === '' && m[2] === '')) return res.send(buf);
-      const a = m[1] === '' ? Math.max(0, buf.length - Number(m[2])) : Number(m[1]), b = m[1] !== '' && m[2] !== '' ? Math.min(Number(m[2]), buf.length - 1) : buf.length - 1;
-      if (!(a <= b) || a >= buf.length) { res.setHeader('Content-Range', `bytes */${buf.length}`); return res.sendStatus(416); }
-      res.status(206); res.setHeader('Content-Range', `bytes ${a}-${b}/${buf.length}`); res.send(buf.subarray(a, b + 1));
+      await sendRanged(req, res, media, key(t.id, t.reel.v), 'video/mp4');
     } catch (e) { next(e); }
   });
   return { router: r, key };

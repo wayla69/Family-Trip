@@ -90,6 +90,8 @@ const HOOKS = {};   // filled below once the push scheduler exists
 const REEL = require('./reel').create({ pool: PG, media: MEDIA, A, family: BS.FAMILY,
   cards: (trip, lang, days) => PDF.cards({ base: `http://127.0.0.1:${PORT}`, cookie: A.makeToken('viewer', 'REEL', crypto.randomBytes(6).toString('hex')), trip, lang, days }) });
 app.use(REEL.router);
+// what went wrong on the family's phones, and how much room the books take (server/errors.js)
+app.use(require('./errors').create({ pool: PG, media: MEDIA, A, family: BS.FAMILY, reelKey: REEL.key }).router);
 app.use(BS.router({ pool: PG, media: MEDIA, A, ai: STORY, hooks: HOOKS }));
 
 // reminders on the trip: phones that switched them on get a push 30 min before each timed step of the day

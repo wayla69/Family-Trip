@@ -3,6 +3,45 @@
 // an older iPad/iPhone (Safari before 16.2: iPadOS 15 on an iPad mini 4 / Air 2) drops every colour written with color-mix() — swap in
 // the copy the server makes with those colours resolved, before the first render
 try { if (window.CSS && CSS.supports && !CSS.supports('color', 'color-mix(in srgb, red 50%, blue)')) { const l = document.querySelector('link[href="/app.css"]'); if (l) l.href = '/app-legacy.css'; } } catch (_) { /* keep app.css */ }
+// what went wrong on this phone (owner, Nov 2026: "รู้เมื่อมีอะไรพังบนมือถือ"): a script error of our own files goes to our server
+// (server/errors.js) — the message, which file and line, the app version, the kind of page and of phone. Never the book, a child's
+// name, a text, a position, the address or a cookie. At most five a visit, each once; nothing while signed out or with no signal.
+const errSeen = new Set();
+function errDevice() {
+  const u = navigator.userAgent || '', ipad = /iPad/.test(u) || (/Macintosh/.test(u) && navigator.maxTouchPoints > 1);
+  const os = ipad ? 'ipad' : /iPhone|iPod/.test(u) ? 'iphone' : /Android/.test(u) ? 'android' : /Mac OS X/.test(u) ? 'mac' : /Windows/.test(u) ? 'windows' : /Linux/.test(u) ? 'linux' : 'other';
+  const b = /SamsungBrowser\/(\d+)/.exec(u) || /Edg\/(\d+)/.exec(u) || /Firefox\/(\d+)/.exec(u) || /(?:Chrome|CriOS)\/(\d+)/.exec(u) || /Version\/(\d+)[\d.]* .*Safari/.exec(u);
+  const name = !b ? 'other' : /Samsung/.test(b[0]) ? 'samsung' : /Edg/.test(b[0]) ? 'edge' : /Firefox/.test(b[0]) ? 'firefox' : /Chrome|CriOS/.test(b[0]) ? 'chrome' : 'safari';
+  const app = (window.matchMedia && matchMedia('(display-mode: standalone)').matches) || navigator.standalone;
+  return `${os} ${name} ${b ? Math.min(999, +b[1]) : 0}${app ? ' app' : ''}`;
+}
+// the message keeps its shape, not its data — the same masks as the server's (server/errors.js scrub), done here so nothing leaves the phone
+function errScrub(m) {
+  return String(m || '').slice(0, 600).replace(/[^\x20-\x7E\u0E00-\u0E7F]/g, ' ')
+    .replace(/https?:\/\/[^\s'")]+/g, (u) => { try { return new URL(u).pathname.replace(/\/[^/]*\d[^/]*/g, '/…'); } catch (_) { return '…'; } })
+    .replace(/[\w.+-]+@[\w-]+\.[\w.-]+/g, '…@…').replace(/#\/\S*/g, '#/…')
+    .replace(/(["'`])((?:(?!\1).){1,200})\1/g, (x, q, w) => (/^[A-Za-z_$][\w$.]{0,40}$/.test(w) ? x : `${q}…${q}`))
+    .replace(/\d{5,}/g, '…').replace(/\s+/g, ' ').trim().slice(0, 300);
+}
+async function errReport(msg, src, line, col) {
+  try {
+    msg = errScrub(msg); if (!msg || /ResizeObserver loop|^Script error\.?$/i.test(msg)) return;
+    let file = ''; try { const u = new URL(src || '', location.href); if (u.origin !== location.origin) return; file = u.pathname; } catch (_) { if (src) return; }   // a browser add-on's error is not ours
+    const key = `${msg}|${file}|${line}`; if (errSeen.has(key) || errSeen.size >= 5 || !navigator.onLine || typeof S === 'undefined' || !S) return;
+    errSeen.add(key);
+    const p = String(location.hash || '').replace(/^#\/?/, '').split('/');
+    const route = /^[a-z]+$/.test(p[0] || '') ? (p[0] === 't' ? 't/' + (/^[a-z]+$/.test(p[2] || '') ? p[2] : 'menu') : p[0] === 'kid' ? 'kid/' + (/^[a-z]+$/.test(p[2] || '') ? p[2] : 'home') : p[0]) : 'shelf';
+    let ver = ''; try { ver = ((await caches.keys()).find((k) => /^mbs-v\d+(-[0-9a-f]+)?$/.test(k)) || ''); } catch (_) {}
+    fetch('/api/b/err', { method: 'POST', credentials: 'same-origin', keepalive: true, headers: { 'content-type': 'application/json', 'x-mb': '1' },
+      body: JSON.stringify({ msg, src: file, line: line | 0, col: col | 0, ver, route, device: errDevice() }) }).catch(() => {});
+  } catch (_) { /* reporting must never break the page */ }
+}
+window.addEventListener('error', (e) => { if (e && e.message) errReport(e.message, e.filename, e.lineno, e.colno); });
+window.addEventListener('unhandledrejection', (e) => {
+  const r = e && e.reason; if (!r || !(r instanceof Error) || r.name === 'AbortError' || /Failed to fetch|NetworkError|Load failed|network/i.test(r.message)) return;   // no signal is not a fault
+  const at = /(\/[a-z0-9-]+\.js):(\d+):(\d+)/.exec(String(r.stack || ''));
+  errReport(`${r.name}: ${r.message}`, at ? location.origin + at[1] : '', at ? +at[2] : 0, at ? +at[3] : 0);
+});
 const $ = (s, r = document) => r.querySelector(s);
 const $$ = (s, r = document) => Array.from(r.querySelectorAll(s));
 const esc = (s) => String(s == null ? '' : s).replace(/[&<>"']/g, (c) => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' }[c]));

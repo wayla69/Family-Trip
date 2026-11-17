@@ -32,6 +32,7 @@ const HEART_EMOJI = ['💗', '😍', '👏', '🙏', '⭐', '🎉', '🤗', '�
 const REVIEW_KINDS = ['stay', 'food', 'place'], KID_VERDICT = ['love', 'ok', 'no'];
 const HEARTS_PER_DAY = { sender: 40, family: 400 };   // the view link is shared: cap what one phone, and everyone together, can send
 const clip = (s, n) => String(s == null ? '' : s).slice(0, n);
+const { sendRanged } = require('./ranged');
 const fpOf = (s) => (/^[0-9a-f]{16,64}$/.test(String(s || '')) ? String(s) : null);   // the original file's fingerprint, from the phone (media.fp, migration 0027)
 // photo tags: up to 10 short words (the fixed keys from Claude, or the parents' own); null when the shape is wrong
 const tagList = (v) => (Array.isArray(v) && v.length <= 10 && v.every((x) => typeof x === 'string') ? [...new Set(v.map((x) => x.trim().toLowerCase().slice(0, 24)).filter(Boolean))] : null);
@@ -505,17 +506,12 @@ function router({ pool, media, A, ai, hooks = {} }) {   // hooks.heart(h): set b
       if (!m || !A.canSee(req.user, m.trip_id)) return res.sendStatus(404);   // a group never sees another book's photos
       const audio = isAud(m), video = isVid(m) && !thumb;   // a clip's thumbnail is its poster frame, a JPEG like a photo's
       if (audio && thumb) return res.sendStatus(404);   // a voice memo has no thumbnail
-      const buf = await media.get(audio || video ? m.storage_key : thumb ? keyThumb(m.trip_id, req.params.id) : keyFull(m.trip_id, req.params.id));
-      if (!buf) return res.sendStatus(404);
       res.setHeader('Cache-Control', 'private, max-age=31536000, immutable');
-      if (!audio && !video) return res.type('image/jpeg').send(buf);
-      // a voice memo or a clip: Safari's <audio>/<video> asks for byte ranges and only plays a 206 answer
-      res.setHeader('Accept-Ranges', 'bytes'); res.type(m.mime);
-      const r = /^bytes=(\d*)-(\d*)$/.exec(req.headers.range || '');
-      if (!r || (r[1] === '' && r[2] === '')) return res.send(buf);
-      const a = r[1] === '' ? Math.max(0, buf.length - Number(r[2])) : Number(r[1]), b = r[1] !== '' && r[2] !== '' ? Math.min(Number(r[2]), buf.length - 1) : buf.length - 1;
-      if (!(a <= b) || a >= buf.length) { res.setHeader('Content-Range', `bytes */${buf.length}`); return res.sendStatus(416); }
-      res.status(206); res.setHeader('Content-Range', `bytes ${a}-${b}/${buf.length}`); res.send(buf.subarray(a, b + 1));
+      // a voice memo or a clip: byte ranges, read from storage piece by piece (server/ranged.js)
+      if (audio || video) return await sendRanged(req, res, media, m.storage_key, m.mime);
+      const buf = await media.get(thumb ? keyThumb(m.trip_id, req.params.id) : keyFull(m.trip_id, req.params.id));
+      if (!buf) { res.removeHeader('Cache-Control'); return res.sendStatus(404); }
+      return res.type('image/jpeg').send(buf);
     } catch (e) { next(e); }
   };
   r.get('/media/:id', A.requireUser, send(false));

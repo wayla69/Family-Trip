@@ -124,6 +124,11 @@ ok((await (await upA('vc-test-0001')).json()).ok && (await state()).media.some((
 const ar = await fetch(BASE + '/media/vc-test-0001', { headers: { cookie: ck, range: 'bytes=0-1023' } });
 ok(ar.status === 206 && (ar.headers.get('content-type') || '').startsWith('audio/webm') && ar.headers.get('content-range') === 'bytes 0-1023/4096' && (await ar.arrayBuffer()).byteLength === 1024, 'voice memo streams with byte ranges (206 + Content-Range)');
 ok((await fetch(BASE + '/media/vc-test-0001', { headers: { cookie: ck } })).status === 200 && (await fetch(BASE + '/media/vc-test-0001/t', { headers: { cookie: ck } })).status === 404, 'whole clip → 200; a clip has no thumbnail');
+{ // only the bytes asked for are read from storage (server/ranged.js): a middle piece, the last bytes, past the end
+  const rg = async (range) => { const r = await fetch(BASE + '/media/vc-test-0001', { headers: { cookie: ck, range } }); return { s: r.status, cr: r.headers.get('content-range'), n: r.status === 416 ? 0 : (await r.arrayBuffer()).byteLength }; };
+  const mid = await rg('bytes=1000-1999'), tail = await rg('bytes=-100'), open = await rg('bytes=4000-'), past = await rg('bytes=5000-6000');
+  ok(mid.s === 206 && mid.cr === 'bytes 1000-1999/4096' && mid.n === 1000 && tail.cr === 'bytes 3996-4095/4096' && tail.n === 100 && open.n === 96 && past.s === 416 && past.cr === 'bytes */4096',
+    `byte ranges: a middle piece, the last bytes, to the end, past the end → 416 (${JSON.stringify({ mid, tail, open, past })})`); }
 ok((await upA('vc-bad-00001', 'text/plain')).status === 415 && (await upA('vc-view-0001', 'audio/webm', { 'x-mb': '1', cookie: vck })).status === 403, 'not an audio type → 415; viewer cannot record');
 ok((await fetch(BASE + '/api/b/media/vc-test-0001', { method: 'DELETE', headers: H })).ok && !(await state()).media.some((m) => m.id === 'vc-test-0001') && (await fetch(BASE + '/media/vc-test-0001', { headers: { cookie: ck } })).status === 404, 'voice memo deleted, file gone');
 
@@ -394,6 +399,27 @@ const stored = path.join(DATA_DIR, 'media', 'p', T, 'ph-test-0001.jpg');
 ok(fs.existsSync(stored), 'photo object in storage');
 ok((await fetch(BASE + '/api/b/media/ph-test-0001', { method: 'DELETE', headers: H })).ok && !fs.existsSync(stored)
   && !fs.existsSync(path.join(DATA_DIR, 'media', 't', T, 'ph-test-0001.jpg')), 'deleting a photo removes the stored files too');
+
+// ---- what went wrong on the phones (server/errors.js, migration 0030): scrubbed, counted once a day, editors read and clear
+{ const err = (b, c = ck) => fetch(BASE + '/api/b/err', { method: 'POST', headers: { ...H, cookie: c }, body: JSON.stringify(b) });
+  const one = { msg: `TypeError: Cannot read properties of undefined (reading 'title') "มีมี่ไปทะเล" mail@example.com 0812345678 https://x.example/views.js?v=1#/kid/mimi`, src: '/views.js', line: 812, col: 9, ver: 'mbs-v239-abcd12', route: 'kid/colour', device: 'ipad safari 17 app' };
+  const r1 = await err(one), r2 = await err(one, vck), r3 = await err({ ...one, src: 'https://evil.example/x.js', route: '#/t/hk/log/2', device: 'Mimi’s iPad', ver: '<b>' });
+  ok(r1.ok && r2.ok && r3.ok && (await err({ msg: '' })).status === 400 && (await fetch(BASE + '/api/b/err', { method: 'POST', headers: { 'x-mb': '1', 'content-type': 'application/json' }, body: JSON.stringify(one) })).status === 401,
+    'phone problems: a signed-in phone (a parent or a relative) reports one; an empty one is refused, a signed-out one too');
+  const list = await (await fetch(BASE + '/api/b/health/errors', { headers: { cookie: ck } })).json(), e = list.errors.find((x) => x.src === '/views.js'), odd = list.errors.find((x) => x.src === '');
+  const blob = JSON.stringify(list);
+  ok(e && e.n === 2 && e.line === 812 && e.route === 'kid/colour' && e.device === 'ipad safari 17 app' && /reading 'title'/.test(e.msg) && odd && odd.route === '' && odd.ver === '' && odd.device === 'other other 0'
+    && !/มีมี่|mail@|0812345678|example|mimi|Mimi|evil|<b>/.test(blob),
+    `phone problems: the same one twice is one row counted twice; a name, a text, an address, a number, a URL and a foreign file never stored (${blob.slice(0, 400)})`);
+  ok((await fetch(BASE + '/api/b/health/errors', { headers: { cookie: vck } })).status === 403 && (await fetch(BASE + '/api/b/health/storage', { headers: { cookie: vck } })).status === 403, 'phone problems and room: relatives cannot read them');
+  await fetch(`${BASE}/api/b/media/vc-room-0001?trip=${T}&day=1&kind=audio`, { method: 'PUT', headers: { 'x-mb': '1', cookie: ck, 'content-type': 'audio/webm' }, body: Buffer.alloc(5000, 3) });
+  const room = await (await fetch(BASE + '/api/b/health/storage', { headers: { cookie: ck } })).json();
+  const bk = room.books.find((b) => b.id === T);
+  ok(bk && bk.kinds.voices && bk.kinds.voices.n === 1 && bk.kinds.voices.bytes === 5000 && bk.total >= 5000 && room.total === room.books.reduce((s, b) => s + b.total, 0) && room.total > 0,
+    `room: each book's photos, clips and voice memos counted in bytes, the family's total adds up (${JSON.stringify(bk && bk.kinds)})`);
+  ok((await fetch(BASE + '/api/b/health/errors', { method: 'DELETE', headers: H })).ok && !(await (await fetch(BASE + '/api/b/health/errors', { headers: { cookie: ck } })).json()).errors.length, 'phone problems: the parents can clear the list');
+  let slow = 0; for (let k = 0; k < 25; k++) if ((await err({ ...one, line: 1000 + k })).status === 429) slow++;
+  ok(slow >= 1, `phone problems: a phone sending in a loop is slowed (${slow} of 25 refused)`); }
 await pool.end();
 
 console.log(failures ? `\n${failures} FAILED` : '\nALL PASSED');

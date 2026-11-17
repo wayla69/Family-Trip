@@ -891,6 +891,12 @@ function putReview(card, patch) {
   return enqueue({ method: 'PUT', url: '/api/b/reviews/' + encodeURIComponent(id), body, local: { coll: 'reviews', id, row: { ...body, at: Date.now(), created_by: S.me.name } } });
 }
 Object.assign(A, {
+  async healthclear(b) {
+    if (!b.dataset.armed) { b.dataset.armed = '1'; b.textContent = L('แตะอีกครั้งเพื่อล้าง', 'Tap again to clear'); return; }
+    b.disabled = true;
+    try { await api('DELETE', '/api/b/health/errors'); HEALTH.errors = []; } catch (_) { toast(L('ล้างไม่ได้ ลองใหม่อีกครั้ง', 'Could not clear, try again')); }
+    safeRender();
+  },
   rate(b) { const card = b.closest('.rev'), n = +b.dataset.v, cur = reviewFrom(card); if (n && n >= 4) burst(b, ['⭐', '✨']); putReview(card, { rating: n === 0 || cur.rating === n ? null : n }); },
   rtag(b) { const card = b.closest('.rev'), cur = reviewFrom(card), k = b.dataset.v, tags = (cur.tags || []).includes(k) ? cur.tags.filter((x) => x !== k) : [...(cur.tags || []), k]; putReview(card, { tags }); },
   rkid(b) { const card = b.closest('.rev'), cur = reviewFrom(card), kids = { ...(cur.kids || {}) }; if (kids[b.dataset.k] === b.dataset.v) delete kids[b.dataset.k]; else kids[b.dataset.k] = b.dataset.v; if (b.dataset.v === 'love') burst(b, ['😍', '💕']); putReview(card, { kids }); },
