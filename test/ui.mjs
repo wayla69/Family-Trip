@@ -385,6 +385,13 @@ const T = 'hk-macau-2026';
       await page.click('#sheet .snapheld .sdpt'); await page.click('#snapheldgo');
       await page.waitForFunction((tid) => S.media.filter((m) => m.trip === tid).length === 5, id, { timeout: 15000 }).catch(() => {});
       await page.waitForFunction(() => queue.length === 0, null, { timeout: 30000 }).catch(() => {});
+      // an iPhone's HEIC: the gate reads its own preview item (here an AVIF of the same layout, which Chromium decodes) — a receipt is
+      // paper, a beach is not, and neither needed the whole photo
+      { const { avifWithPreview } = await import('./snap-jpeg.mjs');
+        const beach = '<svg xmlns="http://www.w3.org/2000/svg" width="640" height="480"><rect width="640" height="480" fill="#87ceeb"/><rect y="300" width="640" height="180" fill="#e8d8a8"/><circle cx="250" cy="260" r="60" fill="#f2c39a"/></svg>';
+        const g = await page.evaluate(async (bs) => Promise.all(bs.map(async (b64) => { const f = new File([Uint8Array.from(atob(b64), (c) => c.charCodeAt(0))], 'IMG.heic', { type: 'image/avif' }), m = await snapMeta(f);
+          return { blob: m.th instanceof Blob, gate: m.th ? await snapThumbGate(f, m.th) : null }; })), [(await avifWithPreview(receiptSvg())).buffer.toString('base64'), (await avifWithPreview(beach)).buffer.toString('base64')]);
+        ok(g[0].blob && g[0].gate === true && g[1].blob && g[1].gate === false, `book from photos: an iPhone-style photo's own preview item is read by the receipt gate — paper yes, a beach no (${JSON.stringify(g)})`); }
       // the record page's own picker skips it too (any page of the book: the print is the book's)
       const skipped = await page.evaluate(async ([tid, b64]) => addPhotos(trip(tid), 0, [new File([Uint8Array.from(atob(b64), (c) => c.charCodeAt(0))], 'again.jpg', { type: 'image/jpeg' })]), [id, later[0].buffer.toString('base64')]);
       const m2 = (await apiState(page)).media.filter((m) => m.trip === id);

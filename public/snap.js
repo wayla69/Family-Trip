@@ -67,7 +67,7 @@ function snapBoxes(u8, from, to) {
     let size = dv.getUint32(o), head = 8; const t = String.fromCharCode(u8[o + 4], u8[o + 5], u8[o + 6], u8[o + 7]);
     if (size === 1) { if (o + 16 > to) break; size = dv.getUint32(o + 8) * 4294967296 + dv.getUint32(o + 12); head = 16; } else if (size === 0) size = to - o;
     if (size < head || o + size > to) break;
-    r.push({ t, start: o + head, end: o + size }); o += size;
+    r.push({ t, start: o + head, end: o + size, at: o }); o += size;
   }
   return r;
 }
@@ -108,6 +108,70 @@ function snapHeifExif(meta) {
   }
   return { why: 'heif-noloc' };
 }
+/* The small preview inside a HEIC/HEIF/AVIF (owner, Nov 2026: "รูปจาก iPhone เร็วขึ้น"): the camera stores it as an item of its own,
+   pointed at the main picture by an 'iref' 'thmb'. It is cut out with its own properties (the codec's setup, its size) and wrapped as
+   a little file of one picture, which the browser decodes in a few ms instead of the whole 12 MP photo (Safari for HEIC; any browser
+   for AVIF). → {type, ext: [[offset, length]…], idat, props: [{box, ess}]} or null */
+function snapHeifThumb(meta) {
+  const dv = new DataView(meta.buffer, meta.byteOffset, meta.byteLength), n = meta.length;
+  const u16 = (o) => (o + 2 <= n ? dv.getUint16(o) : 0), u32 = (o) => (o + 4 <= n ? dv.getUint32(o) : 0);
+  const type = (o) => String.fromCharCode(meta[o], meta[o + 1], meta[o + 2], meta[o + 3]);
+  const kids = snapBoxes(meta, 4, n), get = (t) => kids.find((b) => b.t === t);
+  const pitm = get('pitm'), iinf = get('iinf'), iloc = get('iloc'), iref = get('iref'), iprp = get('iprp'), idat = get('idat');
+  if (!pitm || !iinf || !iloc || !iref || !iprp) return null;
+  const primary = meta[pitm.start] === 0 ? u16(pitm.start + 4) : u32(pitm.start + 4);
+  const types = {};
+  { const v = meta[iinf.start];
+    for (const e of snapBoxes(meta, iinf.start + 4 + (v === 0 ? 2 : 4), iinf.end)) { if (e.t !== 'infe') continue;
+      const ev = meta[e.start]; if (ev < 2) continue;
+      const id = ev === 2 ? u16(e.start + 4) : u32(e.start + 4), tOff = e.start + 4 + (ev === 2 ? 2 : 4) + 2; if (tOff + 4 <= e.end) types[id] = type(tOff); } }
+  let thumb = null;
+  { const sz = meta[iref.start] === 0 ? 2 : 4, rd = (o) => (sz === 2 ? u16(o) : u32(o));
+    for (const b of snapBoxes(meta, iref.start + 4, iref.end)) { if (b.t !== 'thmb' || thumb != null) continue;
+      let o = b.start; const from = rd(o); o += sz; const c = u16(o); o += 2;
+      for (let k = 0; k < c && o + sz <= b.end; k++, o += sz) if (rd(o) === primary) { thumb = from; break; } } }
+  if (thumb == null || !types[thumb] || types[thumb] === 'grid') return null;   // a tiled preview is not worth putting together
+  // where its bytes are
+  let loc = null;
+  { const v = meta[iloc.start]; let o = iloc.start + 4;
+    const big = (q, size) => (size === 0 ? 0 : size === 2 ? u16(q) : size === 4 ? u32(q) : size === 8 ? u32(q) * 4294967296 + u32(q + 4) : 0);
+    const offSize = meta[o] >> 4, lenSize = meta[o] & 15, baseSize = meta[o + 1] >> 4, idxSize = v === 1 || v === 2 ? meta[o + 1] & 15 : 0; o += 2;
+    const count = v < 2 ? u16(o) : u32(o); o += v < 2 ? 2 : 4;
+    for (let i = 0; i < count && o < iloc.end; i++) {
+      const id = v < 2 ? u16(o) : u32(o); o += v < 2 ? 2 : 4;
+      let method = 0; if (v === 1 || v === 2) { method = u16(o) & 15; o += 2; }
+      o += 2; const base = big(o, baseSize); o += baseSize; const cnt = u16(o); o += 2; const ext = [];
+      for (let k = 0; k < cnt; k++) { if (idxSize) o += idxSize; const eo = big(o, offSize); o += offSize; const el = big(o, lenSize); o += lenSize; ext.push([base + eo, el]); }
+      if (id === thumb) { loc = { method, ext }; break; }
+    } }
+  if (!loc || !loc.ext.length || (loc.method === 1 && !idat) || loc.method > 1) return null;
+  // its properties: ipma names them (1-based) in ipco
+  const ip = snapBoxes(meta, iprp.start, iprp.end), ipco = ip.find((b) => b.t === 'ipco'), ipma = ip.find((b) => b.t === 'ipma');
+  if (!ipco || !ipma) return null;
+  const all = snapBoxes(meta, ipco.start, ipco.end), props = [];
+  { const v = meta[ipma.start], wide = meta[ipma.start + 3] & 1; let o = ipma.start + 4; const cnt = u32(o); o += 4;
+    for (let i = 0; i < cnt && o < ipma.end; i++) {
+      const id = v < 1 ? u16(o) : u32(o); o += v < 1 ? 2 : 4; const ac = meta[o]; o += 1;
+      for (let k = 0; k < ac; k++) { const x = wide ? u16(o) : meta[o]; o += wide ? 2 : 1;
+        if (id !== thumb) continue; const ess = wide ? !!(x & 0x8000) : !!(x & 0x80), idx = wide ? x & 0x7FFF : x & 0x7F, b = all[idx - 1];
+        if (b) props.push({ box: meta.subarray(b.at, b.end), ess }); }
+    } }
+  if (!props.length || props.length > 120) return null;
+  return { type: types[thumb], ext: loc.method === 1 ? loc.ext.map(([a, l]) => [idat.start + a, l]) : loc.ext, idat: loc.method === 1, props };
+}
+// one picture → a file of its own: the original ftyp, a meta of one item (hdlr, pitm, iloc, iinf, iprp) and its bytes in mdat
+function snapHeifPack(ftyp, itype, props, data) {
+  const enc = (s) => Uint8Array.from(s, (c) => c.charCodeAt(0)), u16 = (x) => Uint8Array.of((x >> 8) & 255, x & 255), u32 = (x) => Uint8Array.of((x >>> 24) & 255, (x >> 16) & 255, (x >> 8) & 255, x & 255);
+  const cat = (parts) => { const out = new Uint8Array(parts.reduce((s, x) => s + x.length, 0)); let o = 0; for (const x of parts) { out.set(x, o); o += x.length; } return out; };
+  const box = (t, ...parts) => { const body = cat(parts); return cat([u32(body.length + 8), enc(t), body]); };
+  const full = (t, v, ...parts) => box(t, Uint8Array.of(v, 0, 0, 0), ...parts);
+  const iloc = (off) => full('iloc', 0, Uint8Array.of(0x44, 0x00), u16(1), u16(1), u16(0), u16(1), u32(off), u32(data.length));
+  const rest = [full('hdlr', 0, u32(0), enc('pict'), new Uint8Array(12), Uint8Array.of(0)), full('pitm', 0, u16(1))];
+  const tail = [full('iinf', 0, u16(1), full('infe', 2, u16(1), u16(0), enc(itype), Uint8Array.of(0))),
+    box('iprp', box('ipco', ...props.map((p) => p.box)), full('ipma', 0, u32(1), u16(1), Uint8Array.of(props.length), Uint8Array.from(props.map((p, k) => (p.ess ? 128 : 0) | (k + 1)))))];
+  const metaLen = full('meta', 0, ...rest, iloc(0), ...tail).length;   // the same length whatever the offset says
+  return cat([ftyp, full('meta', 0, ...rest, iloc(ftyp.length + metaLen + 8), ...tail), box('mdat', data)]);
+}
 // an Exif item's bytes → the TIFF block: they start with the offset of the TIFF header (often 6, after "Exif\0\0"); a phone that
 // leaves that out still has "II*\0" / "MM\0*" within the first bytes
 function snapExifItem(ex) {
@@ -124,7 +188,7 @@ async function snapMeta(file) {
   const fileAt = () => { if (!file.lastModified) return null; const d = new Date(file.lastModified), p = (x) => String(x).padStart(2, '0');
     return `${d.getFullYear()}-${p(d.getMonth() + 1)}-${p(d.getDate())}T${p(d.getHours())}:${p(d.getMinutes())}:${p(d.getSeconds())}`; };
   const bytes = async (a, b) => new Uint8Array(await file.slice(a, b).arrayBuffer());
-  let r = { at: null, tz: null, ll: null }, kind = '', why = '';
+  let r = { at: null, tz: null, ll: null }, kind = '', why = '', heifTh = null;
   try {
     const head = await bytes(0, SNAP_HEAD);
     if (head[0] === 0xFF && head[1] === 0xD8) { kind = 'jpeg'; const tf = snapJpegTiff(head); if (tf) { r = snapTiff(tf); if (r.th) r.th = [tf.byteOffset - head.byteOffset + r.th[0], r.th[1]]; } else why = 'jpeg-noexif'; }
@@ -145,6 +209,15 @@ async function snapMeta(file) {
       else if (meta.end - meta.start > 8388608) why = 'heif-bigmeta';
       else {
         const mb = meta.end <= head.length ? head.subarray(meta.start, meta.end) : await bytes(meta.start, meta.end);
+        try {   // the camera's small preview, wrapped as a file of its own (for the receipt gate)
+          const th = snapHeifThumb(mb), tot = th ? th.ext.reduce((s, x) => s + x[1], 0) : 0;
+          if (th && tot > 100 && tot < 524288) {
+            const parts = []; for (const [a, l] of th.ext) parts.push(th.idat ? mb.subarray(a, a + l) : await bytes(a, a + l));
+            const data = new Uint8Array(tot); let q = 0; for (const x of parts) { data.set(x, q); q += x.length; }
+            const fsz = (head[0] << 24 | head[1] << 16 | head[2] << 8 | head[3]) >>> 0, brand = String.fromCharCode(head[8], head[9], head[10], head[11]);
+            if (fsz >= 16 && fsz <= 256) heifTh = new Blob([snapHeifPack(head.slice(0, fsz), th.type, th.props, data)], { type: /^avi/.test(brand) ? 'image/avif' : 'image/heic' });
+          }
+        } catch (_) { heifTh = null; }
         const loc = snapHeifExif(mb);
         if (loc.why) why = loc.why;
         else {
@@ -159,8 +232,8 @@ async function snapMeta(file) {
       }
     } else why = 'other';
   } catch (_) { why = 'error'; }
-  if (r.at) return { at: r.at, tz: r.tz, ll: r.ll, th: r.th || null, src: 'exif', kind, why: r.ll ? '' : 'nogps' };
-  return { at: fileAt(), tz: null, ll: r.ll, th: r.th || null, src: 'file', kind, why: why || 'notime' };
+  if (r.at) return { at: r.at, tz: r.tz, ll: r.ll, th: r.th || heifTh || null, src: 'exif', kind, why: r.ll ? '' : 'nogps' };
+  return { at: fileAt(), tz: null, ll: r.ll, th: r.th || heifTh || null, src: 'file', kind, why: why || 'notime' };
 }
 
 // many files, a few at a time so a phone stays responsive; onEach(i, meta) as each one is read
@@ -438,7 +511,7 @@ function snapDocOf(px, w, h) {
 }
 async function snapThumbGate(file, th) {   // the gate on the camera's preview: a tiny decode instead of the whole photo
   try {
-    const bmp = await createImageBitmap(new Blob([file.slice(th[0], th[0] + th[1])], { type: 'image/jpeg' }));
+    const bmp = await createImageBitmap(th instanceof Blob ? th : new Blob([file.slice(th[0], th[0] + th[1])], { type: 'image/jpeg' }));   // a HEIF's preview comes as its own file
     const w = bmp.width, h = bmp.height; if (w < 32 || h < 24) { if (bmp.close) bmp.close(); return null; }
     const c = document.createElement('canvas'); c.width = w; c.height = h; const g = c.getContext('2d', { willReadFrequently: true }); g.drawImage(bmp, 0, 0); if (bmp.close) bmp.close();
     return snapDocGate(g.getImageData(0, 0, w, h).data, w, h);
@@ -484,7 +557,7 @@ async function snapScreen(list, metas, alive, stars = true) {
   const lane = async () => { while (next < list.length) {
     const i = next++, f = list[i]; if (!alive()) return;
     if (!aside[i]) {
-      const th = metas[i] && metas[i].th; let gate = th ? await snapThumbGate(f, th, metas[i].thk) : null;
+      const th = metas[i] && metas[i].th; let gate = th ? await snapThumbGate(f, th) : null;
       if (gate !== null) sift.preview++; else { const lk = await look(i); gate = !!(lk && lk.paper); sift.full++; }
       if (gate) sift.read++;
       if (gate && await snapDocLook(f)) aside[i] = 'doc';
