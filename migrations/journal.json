@@ -27,6 +27,7 @@
     { "id": "0024", "file": "0024_book_age.sql" },
     { "id": "0025", "file": "0025_snap.sql" },
     { "id": "0026", "file": "0026_entry_src.sql" },
-    { "id": "0027", "file": "0027_media_fp.sql" }
+    { "id": "0027", "file": "0027_media_fp.sql" },
+    { "id": "0028", "file": "0028_trip_reel.sql" }
   ]
 }

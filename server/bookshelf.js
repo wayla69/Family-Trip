@@ -157,6 +157,7 @@ function router({ pool, media, A, ai, hooks = {} }) {   // hooks.heart(h): set b
         for (const id of ids) for (const kind of ['full', 'face']) keys.push(avatarKey(k.slug, id, kind));
       }
       for (const e of await q('SELECT storage_key FROM emoji WHERE family_id=$1 AND storage_key IS NOT NULL', [FAMILY])) keys.push(e.storage_key);
+      for (const t of await q("SELECT id, reel->>'v' v FROM trips WHERE family_id=$1 AND reel IS NOT NULL", [FAMILY])) if (/^[0-9a-f]{12}$/.test(t.v || '')) keys.push(`r/${t.id}/${t.v}.mp4`);   // the books' films
       for (const t of await q("SELECT id, theme, (SELECT count(*)::int FROM trip_days WHERE trip_id=t.id) AS days FROM trips t WHERE family_id=$1 AND theme->>'artV' IS NOT NULL", [FAMILY])) keys.push(...artKeys(t.id, artV(t.theme), t.days));
       let gone = 0;
       for (const k of new Set(keys)) { try { await media.del(k); gone++; } catch (_) { /* a file already missing is fine */ } }
@@ -296,7 +297,7 @@ function router({ pool, media, A, ai, hooks = {} }) {   // hooks.heart(h): set b
     try {
       const [children, trips, days, firsts, entries, mediaRows, places, hearts, reviews, spendRows, emojiRows] = await Promise.all([
         q('SELECT slug, name_th, name_en, emoji, color, birth_ym, look, avatar, avatars FROM children WHERE family_id=$1 ORDER BY pos', [FAMILY]),
-        q("SELECT id, slug, legacy_id, title, sub, to_char(date_from,'YYYY-MM-DD') date_from, to_char(date_to,'YYYY-MM-DD') date_to, timezone, theme, cover, stamp, moods, passport, info, source, kind, open FROM trips WHERE family_id=$1 ORDER BY date_from", [FAMILY]),
+        q("SELECT id, slug, legacy_id, title, sub, to_char(date_from,'YYYY-MM-DD') date_from, to_char(date_to,'YYYY-MM-DD') date_to, timezone, theme, cover, stamp, moods, passport, info, source, kind, open, reel FROM trips WHERE family_id=$1 ORDER BY date_from", [FAMILY]),
         q("SELECT d.trip_id, d.day_index, to_char(d.date,'YYYY-MM-DD') date, d.title, d.sleep, d.place, d.emoji, d.gradient, d.planned, d.wx, d.plan, d.done_at FROM trip_days d JOIN trips t ON t.id=d.trip_id WHERE t.family_id=$1 ORDER BY d.trip_id, d.day_index", [FAMILY]),
         q('SELECT f.trip_id, f.key, f.emoji, f.label FROM firsts_catalog f JOIN trips t ON t.id=f.trip_id WHERE t.family_id=$1 ORDER BY f.trip_id, f.pos, f.key', [FAMILY]),
         q('SELECT id, trip_id, day_index, kind, child, text, tr, src, mood, first_key, lang, highlight, occurred_at, created_by, created_uid FROM entries WHERE family_id=$1 ORDER BY occurred_at', [FAMILY]),
@@ -639,6 +640,7 @@ function router({ pool, media, A, ai, hooks = {} }) {   // hooks.heart(h): set b
         await media.del(m.storage_key).catch(() => {});
         if (!String(m.mime || '').startsWith('audio/')) await media.del(keyThumb(t.id, m.id)).catch(() => {});
       }
+      { const rl = (await q('SELECT reel FROM trips WHERE id=$1', [t.id]))[0]; if (rl && rl.reel && /^[0-9a-f]{12}$/.test(rl.reel.v || '')) await media.del(`r/${t.id}/${rl.reel.v}.mp4`).catch(() => {}); }   // its film (server/reel.js)
       { const tt = (await q('SELECT theme, (SELECT count(*)::int FROM trip_days WHERE trip_id=t.id) AS days FROM trips t WHERE id=$1', [t.id]))[0]; for (const k of artKeys(t.id, artV(tt && tt.theme), (tt && tt.days) || 0)) await media.del(k).catch(() => {}); }   // its drawn pictures (server/bookart.js)
       await q('DELETE FROM trips WHERE id=$1 AND family_id=$2', [t.id, FAMILY]);   // its days, entries, media rows, places, hearts, reviews and spending go with it
       res.json({ ok: true });

@@ -41,6 +41,29 @@ async function render({ base, cookie, trip, footer }) {
   return run;
 }
 
+// the cards of a book's film (server/reel.js): #/reelcards/<trip>/<lang>/<days> draws them 720×1280 each; each is photographed at 2×
+async function cards({ base, cookie, trip, lang, days }) {
+  const run = busy.then(async () => {
+    const b = await browser();
+    const ctx = await b.newContext({ viewport: { width: 720, height: 1280 }, deviceScaleFactor: 2, locale: lang === 'en' ? 'en-GB' : 'th-TH' });
+    try {
+      const u = new URL(base);
+      await ctx.addCookies([{ name: 'mb', value: cookie, domain: u.hostname, path: '/', httpOnly: true }]);
+      const page = await ctx.newPage();
+      await page.goto(`${base}/#/reelcards/${encodeURIComponent(trip)}/${lang}/${days.join('.')}`, { waitUntil: 'networkidle', timeout: 60000 });
+      await page.waitForSelector('.rcard', { timeout: 30000 });
+      await page.evaluate(() => document.querySelectorAll('img[loading]').forEach((i) => { i.loading = 'eager'; }));
+      await page.waitForFunction(() => Array.from(document.images).every((i) => i.complete), null, { timeout: 60000 });
+      await page.evaluate(() => document.fonts.ready);
+      const out = [];
+      for (const el of await page.$$('.rcard')) out.push(await el.screenshot({ type: 'png' }));
+      return out;
+    } finally { await ctx.close(); }
+  });
+  busy = run.catch(() => {});
+  return run;
+}
+
 async function close() { if (browserP) { const b = await browserP.catch(() => null); browserP = null; if (b) await b.close().catch(() => {}); } }
 
-module.exports = { render, close };
+module.exports = { render, cards, close };

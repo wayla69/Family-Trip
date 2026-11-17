@@ -1,6 +1,6 @@
 // Memory Bookshelf service worker: app shell + all drawn art offline from the first visit; photos cached as you view them
 // (or all at once with "Keep this book offline"). Data (/api) is cached by the app itself (IndexedDB) and written through its queue.
-const V = 'mbs-v236';
+const V = 'mbs-v237';
 const GEO = 'mbs-geo';   // each country's place names (/geo/<cc>.json, read on the phone): kept across shell versions, like the stock pictures
 const STOCK = 'mbs-stock';   // the stock art library (/stock/, versioned file names): only a stored book's pictures, kept across shell versions too
 const SHARE = 'mbs-share';   // photos shared to the app from the phone's gallery (manifest share_target), read once by #/snaptest
@@ -98,12 +98,24 @@ async function takeShare(r) {
   } catch (_) { /* nothing kept: the page says so */ }
   return Response.redirect('/#/snap?shared=' + n, 303);
 }
+// a part of a clip or a film (Safari's <video> asks for byte ranges and plays only a 206 answer): from the copy this phone keeps, cut to
+// the range asked — so a clip kept for no signal plays, and a cached one is never handed back whole as a 200; else the network
+async function rangeOf(r) {
+  const hit = await caches.open(MEDIA).then((c) => c.match(r.url)).catch(() => null);
+  const m = /^bytes=(\d*)-(\d*)$/.exec(r.headers.get('range') || '');
+  if (!hit || !m) return fetch(r);
+  const buf = await hit.arrayBuffer(), n = buf.byteLength;
+  const a = m[1] === '' ? Math.max(0, n - Number(m[2])) : Number(m[1]), b = m[1] !== '' && m[2] !== '' ? Math.min(Number(m[2]), n - 1) : n - 1;
+  if (!(a <= b) || a >= n) return new Response(null, { status: 416, headers: { 'Content-Range': `bytes */${n}` } });
+  return new Response(buf.slice(a, b + 1), { status: 206, headers: { 'Content-Range': `bytes ${a}-${b}/${n}`, 'Content-Length': String(b - a + 1), 'Content-Type': hit.headers.get('content-type') || 'application/octet-stream', 'Accept-Ranges': 'bytes' } });
+}
 self.addEventListener('fetch', (e) => {
   const r = e.request, u = new URL(r.url);
   if (r.method === 'POST' && u.origin === location.origin && u.pathname === '/share') { e.respondWith(takeShare(r)); return; }   // the gallery's share sheet → LifeBook
   if (r.method !== 'GET' || u.origin !== location.origin) return;
   if (u.pathname.startsWith('/api/') || u.pathname.startsWith('/v/')) return;
   if (u.pathname === '/stock/index.json') return;   // the phone never needs the index (the server resolves stock: ids)
+  if (u.pathname.startsWith('/media/') && r.headers.has('range')) { e.respondWith(rangeOf(r)); return; }
   if (u.pathname.startsWith('/media/') || u.pathname.startsWith('/fonts/') || u.pathname.startsWith('/art/') || u.pathname.startsWith('/stock/') || u.pathname.startsWith('/geo/')) {   // immutable: cache first (media, stock and place names in their own caches that outlive the shell version)
     e.respondWith(caches.open(u.pathname.startsWith('/media/') ? MEDIA : u.pathname.startsWith('/stock/') ? STOCK : u.pathname.startsWith('/geo/') ? GEO : V).then(async (c) => {
       const hit = await c.match(r); if (hit) return hit;

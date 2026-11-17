@@ -86,6 +86,10 @@ app.post('/api/logout', (req, res) => { A.clearCookie(res); res.json({ ok: true 
 
 // bookshelf API (+ /media photo proxy)
 const HOOKS = {};   // filled below once the push scheduler exists
+// a book's own film (server/reel.js): its cards are the app's #/reelcards page, photographed by the PDF's Chromium with a read-only session
+const REEL = require('./reel').create({ pool: PG, media: MEDIA, A, family: BS.FAMILY,
+  cards: (trip, lang, days) => PDF.cards({ base: `http://127.0.0.1:${PORT}`, cookie: A.makeToken('viewer', 'REEL', crypto.randomBytes(6).toString('hex')), trip, lang, days }) });
+app.use(REEL.router);
 app.use(BS.router({ pool: PG, media: MEDIA, A, ai: STORY, hooks: HOOKS }));
 
 // reminders on the trip: phones that switched them on get a push 30 min before each timed step of the day

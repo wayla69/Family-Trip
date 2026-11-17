@@ -113,6 +113,19 @@ async function addClip(t, day, blob, secs) {
 
 /* ---------- a book from a PDF (#/import): page state, polling, upload ---------- */
 let imp = { list: null, job: null, slug: '', err: '', file: null, timer: null };
+/* a book's film (server/reel.js): one at a time on the server; this phone follows the one it started */
+let reelJob = null, reelTimer = null;
+function reelPoll() {
+  clearTimeout(reelTimer);
+  reelTimer = setTimeout(async () => {
+    let j = null; try { j = (await api('GET', '/api/b/reel')).job; } catch (_) { reelPoll(); return; }
+    reelJob = j;
+    if (j && j.state === 'run') { const el = document.getElementById('reelpct'); if (el) el.textContent = `${j.pct || 0}%`; reelPoll(); return; }
+    if (j && j.state === 'done') { await load().catch(() => {}); toast(L('คลิปสรุปทริปเสร็จแล้ว 🎬', 'The trip film is ready 🎬')); }
+    else if (j && j.state === 'error') toast(L('ทำคลิปไม่สำเร็จ ลองอีกครั้ง', 'The film could not be made — try again'));
+    safeRender();
+  }, 2500);
+}
 let artTimer = null, artWant = null;   // the book this phone asked for (the server has one job at a time, maybe another book's)
 // why a drawing did not start, in the parents' words
 const artWhy = (code, err) => (code === 409 && err === 'own' ? L('เล่มนี้มีรูปวาดของตัวเองแล้ว', 'This book has its own drawings')
@@ -733,6 +746,28 @@ const A = {
     } catch (err) { $('#nterr').textContent = err.code === 409 ? L('มีเล่มชื่อนี้แล้ว', 'A book with this id exists') : L('ตรวจวันที่อีกครั้ง (ไม่เกิน 60 วัน)', 'Check the dates (60 days max)'); }
   },
   closesheet() { closeSheet(); },
+  async reelmake(b) {
+    const t = trip(b.dataset.t); if (!t) return;
+    b.disabled = true;
+    try { await api('POST', `/api/b/reel/${encodeURIComponent(t.id)}`, { lang }); reelJob = { trip: t.id, state: 'run', pct: 0 }; safeRender(); reelPoll(); }
+    catch (e) {
+      b.disabled = false;
+      if (e && e.error === 'busy' && e.body && e.body.trip === t.id) { reelJob = { trip: t.id, state: 'run', pct: 0 }; safeRender(); reelPoll(); return; }   // this book's film is already being made (another phone, or before a reload)
+      toast(e && e.error === 'few' ? L('ต้องมีรูปในเล่มอย่างน้อย 3 รูป', 'The book needs at least 3 photos') : e && e.error === 'busy' ? L('กำลังทำคลิปของอีกเล่มอยู่ รอสักครู่', 'Another book’s film is being made — try in a moment')
+        : L('ต้องมีเน็ตเพื่อทำคลิป', 'You need a connection to make the film'));
+    }
+  },
+  async reelshare(b) {   // the phone's share sheet with the film itself (LINE, messages…); else it is saved
+    const t = trip(b.dataset.t); if (!t || !t.reel) return;
+    const url = `/media/reel/${encodeURIComponent(t.id)}?v=${encodeURIComponent(t.reel.v)}`;
+    b.disabled = true;
+    try {
+      const blob = await (await fetch(url, { credentials: 'same-origin' })).blob(), file = new File([blob], `${(T(t.title) || 'trip').replace(/[\\/:*?"<>|]+/g, ' ').trim().slice(0, 60)}.mp4`, { type: 'video/mp4' });
+      if (navigator.canShare && navigator.canShare({ files: [file] })) await navigator.share({ files: [file], title: T(t.title) }).catch(() => {});
+      else { const a = document.createElement('a'); a.href = URL.createObjectURL(file); a.download = file.name; document.body.append(a); a.click(); setTimeout(() => { URL.revokeObjectURL(a.href); a.remove(); }, 4000); }
+    } catch (_) { toast(L('ต้องมีเน็ตเพื่อส่งคลิป', 'You need a connection to send the film')); }
+    finally { b.disabled = false; }
+  },
   eatk(b) { eatKind = +b.dataset.v; $$('[data-a="eatk"]').forEach((c) => c.setAttribute('aria-pressed', c.dataset.v === b.dataset.v)); eatFilter(); },
   eatpick(b) { eatPick = !eatPick; b.setAttribute('aria-pressed', eatPick); eatFilter(); },
   driver(b) {   // big-print address card to hand a taxi driver (works offline: it's in the book's state)

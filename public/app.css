@@ -3223,3 +3223,22 @@ details.emeal[open]>summary .mname{visibility:hidden}
 .lvreset{touch-action:none;-webkit-touch-callout:none}
 .lvbar>.lvreset{font:inherit;font-weight:700;font-size:clamp(16px,1.9vw,20px);padding:8px 14px;min-height:44px;border:0;border-radius:999px;background:rgba(255,255,255,.88);color:var(--ink);transition:transform 1.5s,background 1.5s}
 .lvbar>.lvreset.holding{transform:scale(.88);background:#FFD9D9}
+
+/* a book's film (server/reel.js): the cards the server photographs (#/reelcards), and the film on the memory book page */
+body.reelbook{margin:0;padding:0;background:#111}
+.rcard{width:720px;height:1280px;position:relative;overflow:hidden;box-sizing:border-box;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:30px;padding:90px 64px;text-align:center;font-family:var(--ui);color:#fff;background:linear-gradient(165deg,color-mix(in srgb,var(--accent) 88%,#fff) 0%,var(--accent) 45%,color-mix(in srgb,var(--accent) 62%,#1F2A3A) 100%)}
+.rcard h1{margin:0;font-size:76px;line-height:1.12;font-weight:700;text-wrap:balance;text-shadow:0 3px 16px rgba(0,0,0,.18)}
+.rcard h2{margin:0;font-size:62px;line-height:1.15;font-weight:700;text-wrap:balance}
+.rcard .rdate{margin:0;font-size:34px;font-weight:600;opacity:1;color:color-mix(in srgb,#fff 88%,var(--accent))}
+.rconf{position:absolute;inset:0;pointer-events:none;background:radial-gradient(circle at 8% 7%,#FFD54A 0 14px,transparent 15px),radial-gradient(circle at 90% 11%,#FF8FB8 0 11px,transparent 12px),radial-gradient(circle at 15% 92%,#7FE0C4 0 12px,transparent 13px),radial-gradient(circle at 86% 88%,#FFD54A 0 16px,transparent 17px),radial-gradient(circle at 94% 52%,#fff 0 7px,transparent 8px),radial-gradient(circle at 5% 48%,#fff 0 6px,transparent 7px)}
+.rarts{display:grid;grid-template-columns:repeat(2,230px);gap:22px}.rarts img{width:230px;height:230px;border-radius:50%;object-fit:cover;background:#fff;border:10px solid #fff;box-shadow:0 10px 30px rgba(0,0,0,.18)}
+.rarts img:only-child{grid-column:1/-1;justify-self:center;width:420px;height:420px}
+.rkids{display:flex;gap:30px;justify-content:center;align-items:flex-end}.rkids figure{margin:0;display:flex;flex-direction:column;align-items:center;gap:6px}.rkids img{height:300px;width:auto;filter:drop-shadow(0 8px 18px rgba(0,0,0,.2))}.rkids figcaption{font-size:34px;font-weight:700}
+.rcard.rday{color:#1F2A3A;background:linear-gradient(180deg,#FFF9EF 0%,color-mix(in srgb,var(--accent) 16%,#FFF9EF) 100%)}
+.rcard.rday .rdate{color:color-mix(in srgb,var(--accent) 55%,#1F2A3A)}
+.rnum{margin:0;padding:12px 40px;border-radius:999px;background:var(--accent);color:#fff;font-size:42px;font-weight:700;box-shadow:0 6px 18px color-mix(in srgb,var(--accent) 35%,transparent)}
+.rart{width:520px;height:520px;border-radius:50%;object-fit:cover;background:#fff;border:14px solid #fff;box-shadow:0 0 0 8px var(--accent),0 18px 40px rgba(0,0,0,.16)}
+.rart.remo{display:flex;align-items:center;justify-content:center;font-size:230px;line-height:1}
+.rcard.rend .rapp{margin:0;font-size:28px;font-weight:600;letter-spacing:.08em;text-transform:uppercase;color:color-mix(in srgb,#fff 80%,var(--accent))}
+.reelbox .reelvid{display:block;width:100%;max-width:420px;aspect-ratio:9/16;max-height:70vh;margin:6px auto 10px;border-radius:18px;background:#111}
+.reelbox .reelrow{justify-content:center;align-items:center;gap:10px}.reelbox .reelrun{margin:8px 0;font-weight:600}.reelbox .snapnote{margin-top:10px}

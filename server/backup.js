@@ -56,6 +56,10 @@ async function sendZip(res, pool, media) {
     const n = (b.tables.trip_days || []).filter((d) => d.trip_id === t.id).length;
     for (const f of [...Array.from({ length: n }, (_, i) => `day-${i + 1}.svg`), 'crest.svg', 'guide-1.svg', 'guide-2.svg']) { const buf = await media.get(`d/${t.id}/${v}/${f}`); if (buf) z.append(buf, { name: `art/${t.id}/${f}` }); }
   }
+  for (const t of b.tables.trips || []) {   // a book's film (server/reel.js)
+    const v = String((t.reel || {}).v || ''); if (!/^[0-9a-f]{12}$/.test(v)) continue;
+    const buf = await media.get(`r/${t.id}/${v}.mp4`); if (buf) await add(buf, `reels/${t.id}.mp4`);
+  }
   for (const e of b.tables.emoji || []) {   // the family's own emoji pictures (the bundled ones come with the app)
     if (!e.storage_key) continue;
     const buf = await media.get(e.storage_key); if (buf) z.append(buf, { name: `emoji/${e.id}.png` });
@@ -202,6 +206,13 @@ async function importZip(file, pool, media) {
       }
       await c.query('COMMIT');
     } catch (e) { await c.query('ROLLBACK'); throw e; } finally { c.release(); }
+    // a book's film comes back under the name its row gives it; a row whose film is in neither the zip nor the storage forgets it
+    for (const t of b.tables.trips || []) {
+      const v = String((t.reel || {}).v || ''); if (!v || !SLUG_RE.test(String(t.id))) continue;
+      const k = `r/${t.id}/${v}.mp4`, ok = /^[0-9a-f]{12}$/.test(v);
+      if (ok && out[`reels/${t.id}.mp4`] && !(await media.get(k))) { await media.put(k, await readEntry(z, out[`reels/${t.id}.mp4`], 200e6), 'video/mp4'); res.reels = (res.reels || 0) + 1; }
+      else if (!ok || !(await media.get(k))) await pool.query("UPDATE trips SET reel=NULL WHERE id=$1 AND reel->>'v'=$2", [t.id, v]);
+    }
     return res;
   } finally { z.close(); }
 }
