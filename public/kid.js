@@ -811,7 +811,7 @@ ${pics.length > 1 ? `<div class="colpics" role="group" aria-label="${L('เล�
 <button class="dclear" data-a="kidclear" aria-label="${L('ล้างแล้ววาดใหม่', 'Wipe and start again')}">🧽 <b>${L('วาดใหม่', 'Start again')}</b></button></div></div></div>
 <div class="drawtools coltools drawrow"><button class="dclear" data-a="kidundo" aria-label="${L('ย้อนกลับ', 'Undo')}">↶ <b>${L('ย้อน', 'Undo')}</b></button><button class="dclear" data-a="kidclear" aria-label="${L('ล้างแล้ววาดใหม่', 'Wipe and start again')}">🧽 <b>${L('ล้างภาพ', 'Wipe')}</b></button></div>
 <button class="kidbig" data-a="kiddrawdone" data-t="${esc(t.id)}" data-d="${day === null ? '' : day}" data-k="${esc(kid)}">${L('เก็บรูปนี้! ✨', 'Keep it! ✨')}</button>
-${mine.length ? `<div class="drawn">${mine.map((m) => `<img src="${esc(imgT(m))}" alt="">`).join('')}</div>` : ''}`;
+${mine.length ? `<div class="drawn">${mine.map((m) => isEditor() ? `<button type="button" class="drdel" data-v="${esc(m.id)}" aria-label="${L('ภาพที่วาด · ผู้ใหญ่กดค้างเพื่อลบ', 'A drawing · grown-ups press and hold to delete')}"><img src="${esc(imgT(m))}" alt=""></button>` : `<img src="${esc(imgT(m))}" alt="">`).join('')}</div>` : ''}`;
   } else if (view === 'spot') {
     const spots = daySpots(t, i, kid), lit = littleOf(t, kid);
     body = `<div class="kidguide">${guideImg(1)}<p>${lit ? L(`${name} ชี้ให้ดูหน่อย!`, `${name}, can you point to it?`) : L(`${T((g[1] || {}).name)}: หาให้เจอนะ!`, `${T((g[1] || {}).name)}: can you find them?`)}</p></div>
@@ -2227,6 +2227,26 @@ document.addEventListener('pointerdown', (e) => {
   clearTimeout(lvT); b.classList.remove('holding');
   if (lvT && ev === 'pointerup' && Date.now() - lvAt < 1500) toast(L('กดค้างไว้ให้นับถึงสอง ด่านจะเริ่มใหม่', 'Press and hold until it turns pink — the levels start again'));
   lvT = 0; lvAt = 0;
+}, true));
+// grown-ups delete a kept drawing from the drawing page by pressing and holding its picture 1.5 s (owner, Nov 2026: "ลบรูปยังไง" → "เอา ทำเลย");
+// a child's tap does nothing but say so — the same hold as the star jar and the levels
+let drT = 0, drAt = 0;
+document.addEventListener('pointerdown', (e) => {
+  const b = e.target.closest && e.target.closest('.drdel'); if (!b || !isEditor()) return;
+  b.classList.add('holding'); drAt = Date.now();
+  try { b.setPointerCapture(e.pointerId); } catch (_) { /* an older browser */ }
+  drT = setTimeout(() => {
+    drT = 0; drAt = 0;
+    const id = b.dataset.v;
+    enqueue({ method: 'DELETE', url: '/api/b/media/' + encodeURIComponent(id), local: { coll: 'media', id, del: true } });
+    beep('pop'); toast(L('ลบภาพแล้ว', 'Drawing deleted')); render();
+  }, 1500);
+});
+['pointerup', 'pointercancel', 'pointerleave'].forEach((ev) => document.addEventListener(ev, (e) => {
+  const b = $('.drdel.holding'); if (!b || (ev === 'pointerleave' && e.target !== b)) return;
+  clearTimeout(drT); b.classList.remove('holding');
+  if (drT && ev === 'pointerup' && Date.now() - drAt < 1500) toast(L('ผู้ใหญ่กดค้างไว้ที่ภาพเพื่อลบ', 'Grown-ups: press and hold a drawing to delete it'));
+  drT = 0; drAt = 0;
 }, true));
 document.addEventListener('contextmenu', (e) => { if (e.target.closest && e.target.closest('.kidwrap')) e.preventDefault(); });   // no long-press menu in kid mode
 // grown-ups leave kid mode by pressing and holding the lock

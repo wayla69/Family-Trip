@@ -2030,6 +2030,27 @@ const T = 'hk-macau-2026';
   ok(dr && dr.day === null && dr.w === 1200 && dr.h > 2000 && dr.h <= 2560 && dr.caption.includes('Mimi'), `draw: saved as a private picture of the trip (no day before we go), in the tall shape the full-screen paper took (${dr && dr.w}×${dr && dr.h})`);
   ok(st.entries.some((e) => e.id === `${T}.tick.cd.4.mimi`) && st.entries.some((e) => e.id === `${T}.tick.pack.toy.mimi`), 'server: door 4 opened + toy packed, for Mimi only');
   ok((await page.evaluate(async (id) => (await fetch('/media/' + id)).headers.get('content-type'), dr.id)) === 'image/jpeg', 'draw: the drawing is served like a photo (signed-in only)');
+  {   // a second drawing, then a grown-up deletes it from the drawing page by pressing and holding its picture; a tap does nothing
+    await page.click('.kidtiles button[data-v$="/draw"]'); await page.waitForSelector('#kidcanvas');
+    const b2 = await page.locator('#kidcanvas').boundingBox();
+    await page.mouse.move(b2.x + 60, b2.y + 60); await page.mouse.down(); await page.mouse.move(b2.x + 200, b2.y + 120); await page.mouse.up();
+    await page.click('.kidbig[data-a="kiddrawdone"]'); await page.waitForSelector('.kidtiles');
+    await page.waitForFunction(() => queue.length === 0, null, { timeout: 15000 });
+    await page.click('.kidtiles button[data-v$="/draw"]'); await page.waitForSelector('.drawn .drdel');
+    const n0 = await page.locator('.drawn .drdel').count();
+    await page.evaluate(() => document.querySelector('.drawn').scrollIntoView({ block: 'center' })); const tb = await page.locator('.drawn .drdel').last().boundingBox();
+    await page.mouse.move(tb.x + tb.width / 2, tb.y + tb.height / 2); await page.mouse.down(); await page.waitForTimeout(300); await page.mouse.up();
+    const n1 = await page.locator('.drawn .drdel').count();
+    const gone = await page.locator('.drawn .drdel').last().getAttribute('data-v');
+    await page.mouse.move(tb.x + tb.width / 2, tb.y + tb.height / 2); await page.mouse.down();
+    await page.waitForFunction((n) => document.querySelectorAll('.drawn .drdel').length === n - 1, n0, { timeout: 5000 }).catch(() => {});
+    await page.mouse.up();
+    const n2 = await page.locator('.drawn .drdel').count();
+    await page.waitForFunction(() => queue.length === 0, null, { timeout: 15000 });
+    const st2 = await apiState(page), left = st2.media.filter((m) => m.id.startsWith('dr-mimi-')).map((m) => m.id);
+    ok(n0 === 2 && n1 === 2 && n2 === 1 && !left.includes(gone) && left.includes(dr.id), `draw: a grown-up deletes a kept drawing by pressing and holding it; a short tap keeps it (${n0} → tap ${n1} → hold ${n2}, server keeps ${left.join(',')})`);
+    await page.click('.kidbar button[data-v="#/kid/mimi"]'); await page.waitForSelector('.kidtiles');
+  }
 
   // leave kid mode; the drawing is in the book, then a bedtime story read aloud with turning pages
   const lock = await page.locator('#kidexit').boundingBox();
