@@ -23,16 +23,42 @@ function shareText(t, i) {
 }
 
 // shrink on the phone before upload (saves mobile data); EXIF is stripped again on the server anyway
-async function shrink(file) {
+/* What a photo looks like, coarsely — the server's images.js phOf, worked out the same way on the phone: a 64×64 grey copy (drawn
+   through 256 px so it is averaged, not sampled), the mean of each 4×4 block → 16×16 bytes as hex. Copies of one picture correlate
+   above PH_NEAR; the server is asked before a photo is sent (POST /api/b/media/near). */
+const PH_NEAR = 0.985;
+function phOfBitmap(bmp) {
   try {
-    const bmp = await createImageBitmap(file, { imageOrientation: 'from-image' });
-    const s = Math.min(1, 2560 / Math.max(bmp.width, bmp.height));
-    if (s === 1 && file.type === 'image/jpeg' && file.size < 4e6) return file;
+    const a = document.createElement('canvas'); a.width = 256; a.height = 256; const g = a.getContext('2d'); g.imageSmoothingQuality = 'high'; g.drawImage(bmp, 0, 0, 256, 256);
+    const c = document.createElement('canvas'); c.width = 64; c.height = 64; const h = c.getContext('2d', { willReadFrequently: true }); h.imageSmoothingQuality = 'high'; h.drawImage(a, 0, 0, 64, 64);
+    const d = h.getImageData(0, 0, 64, 64).data, L = (i) => 0.2126 * d[i * 4] + 0.7152 * d[i * 4 + 1] + 0.0722 * d[i * 4 + 2]; let out = '';
+    for (let by = 0; by < 16; by++) for (let bx = 0; bx < 16; bx++) {
+      let s = 0; for (let y = 0; y < 4; y++) for (let x = 0; x < 4; x++) s += L((by * 4 + y) * 64 + bx * 4 + x);
+      out += Math.round(s / 16).toString(16).padStart(2, '0');
+    }
+    return out;
+  } catch (_) { return ''; }
+}
+function phCorr(a, b) {   // the same as images.js phCorr
+  if (!/^[0-9a-f]{512}$/.test(a || '') || !/^[0-9a-f]{512}$/.test(b || '')) return 0;
+  const x = [], y = []; let mx = 0, my = 0;
+  for (let i = 0; i < 256; i++) { x[i] = parseInt(a.substr(i * 2, 2), 16); y[i] = parseInt(b.substr(i * 2, 2), 16); mx += x[i]; my += y[i]; }
+  mx /= 256; my /= 256; let sxy = 0, sxx = 0, syy = 0;
+  for (let i = 0; i < 256; i++) { const dx = x[i] - mx, dy = y[i] - my; sxy += dx * dy; sxx += dx * dx; syy += dy * dy; }
+  return sxx > 256 && syy > 256 ? sxy / Math.sqrt(sxx * syy) : 0;
+}
+async function shrinkPh(file) {   // → {blob: what is sent (≤ 2560 px JPEG), ph: what it looks like ('' when this browser cannot draw it)}
+  let bmp;
+  try { bmp = await createImageBitmap(file, { imageOrientation: 'from-image' }); } catch (_) { return { blob: file, ph: '' }; }   // e.g. HEIC the browser can't decode — the server converts it
+  try {
+    const ph = phOfBitmap(bmp), s = Math.min(1, 2560 / Math.max(bmp.width, bmp.height));
+    if (s === 1 && file.type === 'image/jpeg' && file.size < 4e6) return { blob: file, ph };
     const c = document.createElement('canvas'); c.width = Math.round(bmp.width * s); c.height = Math.round(bmp.height * s);
     c.getContext('2d').drawImage(bmp, 0, 0, c.width, c.height);
-    return await new Promise((res) => c.toBlob((b) => res(b || file), 'image/jpeg', 0.86));
-  } catch (_) { return file; }   // e.g. HEIC the browser can't decode — the server converts it
+    return { blob: await new Promise((res) => c.toBlob((b) => res(b || file), 'image/jpeg', 0.86)), ph };
+  } catch (_) { return { blob: file, ph: '' }; } finally { if (bmp.close) bmp.close(); }
 }
+const shrink = async (file) => (await shrinkPh(file)).blob;
 // spot (the record page's "where was it?" chips): { place: the stop's name, key + kind: the planned stop } — the photos carry the place,
 // and a planned stop not yet checked in is checked in (a photo taken there says we went)
 async function addPhotos(t, day, files, spot, metas) {
@@ -50,20 +76,56 @@ async function addPhotos(t, day, files, spot, metas) {
       local: { coll: 'places', id: `${t.id}:${p.key}`, row: { trip: t.id, key: p.key, day, kind: p.kind || 'place', name: { en: p.en, th: p.th }, at: Date.now() } } });
   }
   if (!(metas && metas.quiet)) toast(L(`เตรียมรูป ${list.length} รูป…`, `Preparing ${list.length} photos…`));
-  for (const f of list) {
-    // when it was taken: the photo's own clock (EXIF, read here before shrink() re-encodes it; snap.js), else the file's time
-    const m = (metas && metas[all.indexOf(f)]) || (typeof snapMeta === 'function' ? await snapMeta(f).catch(() => null) : null);
-    const shot = m && m.src === 'exif' ? snapWallMs(m.at, m.tz, t.timezone) : null;
-    if (m) m.ll = null;   // a position is never used here
-    const blob = await shrink(f);
-    const id = uid('ph');
-    const at = shot && shot <= Date.now() + 864e5 ? shot : f.lastModified && Math.abs(f.lastModified - Date.now()) < 400 * 864e5 ? Math.min(f.lastModified, Date.now()) : Date.now();
-    const fp = fps.get(f) || '';
-    await enqueue({ method: 'PUT', url: `/api/b/media/${id}?trip=${encodeURIComponent(t.id)}&day=${day}&at=${at}${place ? '&place=' + encodeURIComponent(place) : ''}${fp ? '&fp=' + fp : ''}`, blob,
+  const send = async (x) => {
+    const id = uid('ph'), f = x.f, m = x.m, fp = fps.get(f) || '';
+    const at = x.shot && x.shot <= Date.now() + 864e5 ? x.shot : f.lastModified && Math.abs(f.lastModified - Date.now()) < 400 * 864e5 ? Math.min(f.lastModified, Date.now()) : Date.now();
+    await enqueue({ method: 'PUT', url: `/api/b/media/${id}?trip=${encodeURIComponent(t.id)}&day=${day}&at=${at}${place ? '&place=' + encodeURIComponent(place) : ''}${fp ? '&fp=' + fp : ''}`, blob: x.blob,
       local: { coll: 'media', id, row: { trip: t.id, day, caption: '', highlight: false, at, w: 0, h: 0, place, fp } } });
     if (m && m.star) await enqueue({ method: 'PATCH', url: '/api/b/media/' + id, body: { highlight: true }, local: { coll: 'media', id, row: { highlight: true } } });   // a book from photos: the best photo of the day, picked on the phone
+    return id;
+  };
+  // twelve at a time: made small (and what each looks like worked out from the same drawing), then the server is asked which look like a
+  // photo the book already holds — the same picture from the other parent's phone or over LINE (owner, Nov 2026) — and this pick's own
+  // photos are compared too; a look-alike waits in a sheet ("add anyway"), the rest go. With no signal nothing is asked: all go.
+  const check = !(metas && metas.near === false), mine = [], held = []; let sent = 0;
+  for (let k = 0; k < list.length; k += 12) {
+    const chunk = [];
+    for (const f of list.slice(k, k + 12)) {
+      // when it was taken: the photo's own clock (EXIF, read here before shrink() re-encodes it; snap.js), else the file's time
+      const m = (metas && metas[all.indexOf(f)]) || (typeof snapMeta === 'function' ? await snapMeta(f).catch(() => null) : null);
+      const shot = m && m.src === 'exif' ? snapWallMs(m.at, m.tz, t.timezone) : null;
+      if (m) m.ll = null;   // a position is never used here
+      const s = await shrinkPh(f); chunk.push({ f, m, shot, blob: s.blob, ph: s.ph });
+    }
+    const twin = new Map();
+    if (check && chunk.some((x) => x.ph) && navigator.onLine !== false) {
+      try { const r = await api('POST', '/api/b/media/near', { trip: t.id, ph: chunk.map((x) => x.ph || '') }); for (const n of r.near || []) twin.set(n.i, { id: n.id }); } catch (_) { /* not asked: they go */ }
+    }
+    for (const [i, x] of chunk.entries()) {
+      if (check && !twin.has(i) && x.ph) { const o = mine.find((y) => phCorr(y.ph, x.ph) >= PH_NEAR); if (o) twin.set(i, { id: o.id, blob: o.blob }); }   // twice in this very pick
+      if (twin.has(i)) { held.push({ ...x, twin: twin.get(i) }); continue; }
+      const id = await send(x); sent++; if (x.ph) mine.push({ ph: x.ph, id, blob: x.blob });
+    }
   }
-  return list.length;
+  if (held.length) {
+    if (metas && metas.quiet) { if (Array.isArray(metas.nearOut)) metas.nearOut.push(...held.map((h) => ({ file: h.f, why: 'near' }))); }   // the caller has its own sheet
+    else nearSheet(t, held, send);
+  }
+  return sent;
+}
+/* "This looks like a photo already in the book": each held photo beside the one it looks like; a tap picks it, "add anyway" sends
+   those picked, "no thanks" leaves them on the phone */
+let nearHeld = null;
+function nearSheet(t, held, send) {
+  if (nearHeld) nearHeld.urls.forEach((u) => URL.revokeObjectURL(u));
+  const urls = [], src = (b) => { const u = URL.createObjectURL(b); urls.push(u); return u; };
+  const rows = held.map((h, k) => `<button type="button" class="nearpair off" data-a="nearpick" data-k="${k}" aria-pressed="false"><img src="${src(h.blob)}" alt="${L('รูปใหม่', 'New photo')}"><span aria-hidden="true">≈</span><img src="${h.twin.blob ? src(h.twin.blob) : `/media/${encodeURIComponent(h.twin.id)}/t`}" alt="${L('รูปที่มีในเล่ม', 'Photo in the book')}"></button>`).join('');
+  nearHeld = { t: t.id, held, send, urls, pick: new Set() };
+  openSheet(`<h3>${L(`${held.length} รูปเหมือนรูปที่มีในเล่มแล้ว`, `${held.length} look${held.length === 1 ? 's' : ''} like a photo already in the book`)}</h3>
+<p class="sub">${L('อาจเป็นรูปเดียวกันจากอีกเครื่อง หรือที่ส่งต่อทาง LINE ยังไม่ได้ส่งขึ้นเล่ม แตะคู่ที่ไม่ใช่รูปเดียวกันเพื่อเพิ่ม', 'Perhaps the same picture from the other phone, or sent over LINE — not sent yet. Tap a pair that is not the same picture to add it')}</p>
+<div class="nearlist">${rows}</div>
+<button type="button" class="btn wide" id="neargo" data-a="nearadd" disabled>${L('เพิ่มอยู่ดี', 'Add anyway')}</button>
+<button type="button" class="btn ghost wide" data-a="closesheet">${L('ไม่ต้อง', 'No thanks')}</button>`);
 }
 
 /* ---------- voice memos: a few seconds of the kids' own voices, recorded on the phone (MediaRecorder) and queued exactly like a
@@ -746,6 +808,18 @@ const A = {
     } catch (err) { $('#nterr').textContent = err.code === 409 ? L('มีเล่มชื่อนี้แล้ว', 'A book with this id exists') : L('ตรวจวันที่อีกครั้ง (ไม่เกิน 60 วัน)', 'Check the dates (60 days max)'); }
   },
   closesheet() { closeSheet(); },
+  nearpick(b) {   // in place: the sheet stays as it is
+    if (!nearHeld) return; const k = +b.dataset.k, on = !nearHeld.pick.has(k); if (on) nearHeld.pick.add(k); else nearHeld.pick.delete(k);
+    b.classList.toggle('kept', on); b.classList.toggle('off', !on); b.setAttribute('aria-pressed', String(on));
+    const go = document.getElementById('neargo'); if (go) { go.disabled = !nearHeld.pick.size; go.textContent = nearHeld.pick.size ? L(`เพิ่ม ${nearHeld.pick.size} รูปอยู่ดี`, `Add ${nearHeld.pick.size} anyway`) : L('เพิ่มอยู่ดี', 'Add anyway'); }
+  },
+  async nearadd() {
+    const h = nearHeld; if (!h || !h.pick.size) return;
+    closeSheet(); nearHeld = null;
+    for (const k of h.pick) await h.send(h.held[k]);
+    h.urls.forEach((u) => URL.revokeObjectURL(u));
+    toast(L(`เพิ่ม ${h.pick.size} รูปแล้ว`, `${h.pick.size} added`)); safeRender();
+  },
   async reelmake(b) {
     const t = trip(b.dataset.t); if (!t) return;
     b.disabled = true;

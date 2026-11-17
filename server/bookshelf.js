@@ -453,10 +453,26 @@ function router({ pool, media, A, ai, hooks = {} }) {   // hooks.heart(h): set b
       await media.put(keyThumb(t.id, id), img.thumb);
       const pos = (await q('SELECT count(*)::int n FROM media WHERE trip_id=$1 AND day_index IS NOT DISTINCT FROM $2', [t.id, day]))[0].n;
       // place: the stop the parents added the photo under (the record page's "where was it?" chips) — one of the day's names, or ''
-      await q(`INSERT INTO media (id, family_id, trip_id, day_index, storage_key, bytes, width, height, caption, pos, taken_at, created_by, created_uid, place, fp)
-        VALUES ($1,$2,$3,$4,$5,$6,$7,$8,$9,$10,$11,$12,$13,$14,$15) ON CONFLICT (id) DO NOTHING`,
-      [id, FAMILY, t.id, day, keyFull(t.id, id), img.full.length, img.w, img.h, clip(req.query.caption, 500), pos, at(req.query.at), clip(req.user.name, 40), req.user.uid, clip(req.query.place, 120).trim(), fpOf(req.query.fp)]);
+      await q(`INSERT INTO media (id, family_id, trip_id, day_index, storage_key, bytes, width, height, caption, pos, taken_at, created_by, created_uid, place, fp, ph)
+        VALUES ($1,$2,$3,$4,$5,$6,$7,$8,$9,$10,$11,$12,$13,$14,$15,$16) ON CONFLICT (id) DO NOTHING`,
+      [id, FAMILY, t.id, day, keyFull(t.id, id), img.full.length, img.w, img.h, clip(req.query.caption, 500), pos, at(req.query.at), clip(req.user.name, 40), req.user.uid, clip(req.query.place, 120).trim(), fpOf(req.query.fp), img.ph || null]);
       res.json({ ok: true, id, w: img.w, h: img.h });
+    } catch (e) { next(e); }
+  });
+  // "does this look like a photo the book already holds?" (owner, Nov 2026: the same picture from the other parent's phone or over LINE):
+  // the phone sends what each photo it is about to send looks like (images.js phOf, ≤ 24 at a time) and hears which are copies of which
+  r.post('/api/b/media/near', ...W, async (req, res, next) => {
+    try {
+      const b = req.body || {}, t = await trip(String(b.trip || '')); if (!t) return bad(res, 'trip');
+      const phs = Array.isArray(b.ph) ? b.ph.slice(0, 24) : [];
+      const rows = await q("SELECT id, ph FROM media WHERE trip_id=$1 AND family_id=$2 AND ph IS NOT NULL AND ph <> '' AND (mime IS NULL OR mime LIKE 'image/%')", [t.id, FAMILY]);
+      const near = [];
+      phs.forEach((ph, i) => {
+        if (!IMG.PH_RE.test(String(ph || ''))) return;
+        let best = null, c = 0; for (const m of rows) { const k = IMG.phCorr(ph, m.ph); if (k > c) { c = k; best = m.id; } }
+        if (best && c >= IMG.NEAR) near.push({ i, id: best, c: Math.round(c * 1000) / 1000 });
+      });
+      res.json({ near });
     } catch (e) { next(e); }
   });
   r.patch('/api/b/media/:id', ...W, async (req, res, next) => {
@@ -1503,4 +1519,22 @@ async function brand(pool) {
   const prof = FAM.profile(((await pool.query('SELECT profile FROM families WHERE id=$1', [FAMILY])).rows[0] || {}).profile, kids);
   return { ...prof, kids: kids.map((k) => ({ slug: k.slug, v: FAM.lookVersion(k.look), ...(k.avatar ? { a: 1 } : {}) })) };
 }
-module.exports = { router, syncSeeds, brand, FAMILY, AUDIO_EXT };
+/* What each photo uploaded before migration 0029 looks like (images.js phOf, from its thumbnail): filled in once, in the background,
+   a few at a time after the server has started, so the "already in the book?" check covers the older photos too. A photo whose
+   thumbnail is gone gets '' (never tried again). */
+async function backfillPh(pool, media) {
+  const q = async (s, a) => (await pool.query(s, a)).rows;
+  let n = 0;
+  for (;;) {
+    const rows = await q("SELECT id, trip_id FROM media WHERE family_id=$1 AND ph IS NULL AND (mime IS NULL OR mime LIKE 'image/%') LIMIT 20", [FAMILY]);
+    if (!rows.length) break;
+    for (const m of rows) {
+      let ph = '';
+      try { const buf = await media.get(`t/${m.trip_id}/${m.id}.jpg`); if (buf) ph = await IMG.phOf(buf); } catch (_) { ph = ''; }
+      await q('UPDATE media SET ph=$2 WHERE id=$1', [m.id, ph]); n++;
+    }
+    await new Promise((r) => setTimeout(r, 200));   // the server stays free for the family between batches
+  }
+  return n;
+}
+module.exports = { router, syncSeeds, brand, FAMILY, AUDIO_EXT, backfillPh };

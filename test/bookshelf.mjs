@@ -277,6 +277,25 @@ ok((await fetch(BASE + '/api/b/trips', { method: 'POST', headers: H, body: JSON.
   const upG = await fetch(`${BASE}/api/b/media/ph-snap-fp02?trip=${id}&day=0&fp=${encodeURIComponent("x'); drop table media;--")}`, { method: 'PUT', headers: { 'x-mb': '1', cookie: ck, 'content-type': 'image/jpeg' }, body: jp });
   { const sm = (await state()).media; ok(upF.ok && upG.ok && sm.find((m) => m.id === 'ph-snap-fp01').fp === '0123456789abcdef01234567' && sm.find((m) => m.id === 'ph-snap-fp02').fp === null && sm.find((m) => m.id === 'ph-snap-0001').fp === null,
     'snap: a photo keeps the fingerprint of the file it came from (none sent → none; a mangled one is dropped)'); }
+  // the same picture from another phone or over LINE (migration 0029): the server keeps what each photo looks like and says which of the
+  // phone's photos look like one the book holds — a re-encoded, smaller copy yes; another picture, a frame a moment later or a flat one no
+  { const IMG = createRequire(import.meta.url)('../server/images.js');
+    const pic = (f, extra = {}) => sharp(fs.readFileSync(f), { density: 300 }).resize(1600, 1200, { fit: 'cover' }).flatten({ background: '#fff' }).jpeg({ quality: 90, ...extra }).toBuffer();
+    const orig = await pic('public/stock/th/khaoyai/day-sunflowers.v1.svg'), other = await pic('public/stock/th/khaoyai/day-park.v1.svg');
+    const copy = await sharp(orig).resize(900).jpeg({ quality: 55 }).toBuffer(), burst = await sharp(orig).extract({ left: 90, top: 60, width: 1510, height: 1140 }).resize(1600, 1200).jpeg().toBuffer();
+    const up = await fetch(`${BASE}/api/b/media/ph-near-0001?trip=${id}&day=0`, { method: 'PUT', headers: { 'x-mb': '1', cookie: ck, 'content-type': 'image/jpeg' }, body: orig });
+    const phs = [await IMG.phOf(copy), await IMG.phOf(other), await IMG.phOf(burst), await IMG.phOf(jp), 'not-a-print'];
+    const r = await (await post('/api/b/media/near', { trip: id, ph: phs })).json();
+    ok(up.ok && Array.isArray(r.near) && r.near.length === 1 && r.near[0].i === 0 && r.near[0].id === 'ph-near-0001' && r.near[0].c >= IMG.NEAR,
+      `snap: "already in the book?" — the LINE copy of a photo yes, another picture, a frame a moment later, a flat picture and a mangled print no (${JSON.stringify(r)})`);
+    ok((await fetch(BASE + '/api/b/media/near', { method: 'POST', headers: { ...H, cookie: vck }, body: JSON.stringify({ trip: id, ph: phs }) })).status === 403, 'snap: relatives cannot ask what photos look like');
+    // photos sent before migration 0029: filled in from their thumbnails once the server is up; one whose thumbnail is gone gets ''
+    { const pool = new Pool({ connectionString: process.env.DATABASE_URL }), thumb = await sharp(orig).resize(520).jpeg().toBuffer();
+      await pool.query("UPDATE media SET ph=NULL WHERE id IN ('ph-near-0001','ph-snap-0001')");
+      const n = await BS.backfillPh(pool, { get: async (k) => (k.endsWith('/ph-near-0001.jpg') ? thumb : null) });
+      const rows = (await pool.query("SELECT id, ph FROM media WHERE id IN ('ph-near-0001','ph-snap-0001') ORDER BY id")).rows; await pool.end();
+      ok(n >= 2 && /^[0-9a-f]{512}$/.test(rows.find((x) => x.id === 'ph-near-0001').ph) && rows.find((x) => x.id === 'ph-snap-0001').ph === '',
+        `snap: older photos get their look-alike print from their thumbnail once; a missing thumbnail is not tried again (${n} filled)`); } }
   ok((await fetch(BASE + `/api/b/snap`, { method: 'POST', headers: { ...H, cookie: vck }, body: '{}' })).status === 403, 'snap: relatives cannot make a book');
   // "go again" (owner, Nov 2026): a new empty book from this one — the same towns day by day from a new first date (gaps kept),
   // each day's name, place and emoji, the library's pictures and the kids' side; no photo, word or tick of the old trip

@@ -218,11 +218,23 @@ const T = 'hk-macau-2026';
     await fc.setFiles(fx);
     await page.waitForFunction(() => /Read in/.test(document.querySelector('#snapruns') ? document.querySelector('#snapruns').textContent : ''), null, { timeout: 8000 });
     const tx = await page.evaluate(() => document.querySelector('main').textContent);
-    const rows = await page.$$eval('.snapsum li', (ls) => ls.map((l) => l.textContent.replace(/\s+/g, ' ').trim()));
+    const rows = await page.$$eval('.snapsum:not(.devspeed) li', (ls) => ls.map((l) => l.textContent.replace(/\s+/g, ' ').trim()));
     ok(rows[0].includes('4 · 80%') && rows[2].includes('3 · 60%') && rows[3].endsWith('1'), `photo check: 5 photos → 4 with a time, 3 with a position, 1 HEIF (${rows.join(' | ')})`);
     ok(!/14\.4|101\.3/.test(tx) && await page.evaluate(() => !document.querySelector('#app #snapin-photos') && !!document.querySelector('body > #snapin-photos')), 'photo check: no position on the page; the file input lives outside the redrawn page');
     ok(!sent.some((u) => u.includes('/api/b/media') || u.includes('/api/b/photos')) && await s.noHScroll(), `photo check: nothing uploaded, no sideways scroll (${sent.length} writes)`);
-    await s.shot('snaptest');
+    // the phone check (owner, Nov 2026: "ลองกับมือถือจริง"): the phone's own answers, each picked photo's preview and speed, the hand
+    // checks the owner ticks — all in the text they copy; still nothing uploaded
+    await page.waitForFunction(() => /A preview inside the file/.test(document.querySelector('#snapruns').textContent) && !document.querySelector('[data-a="devcheck"][disabled]'), null, { timeout: 15000 }).catch(() => {});
+    const speed = await page.$$eval('.snapsum.devspeed li', (ls) => ls.map((l) => l.textContent.replace(/\s+/g, ' ').trim()));
+    await page.click('[data-a="devcheck"]'); await page.waitForFunction(() => document.querySelectorAll('.devlist li').length >= 8, null, { timeout: 20000 }).catch(() => {});
+    const dev = await page.$$eval('.devlist li', (ls) => ls.map((l) => [l.className, l.textContent.replace(/\s+/g, ' ').trim()]));
+    await page.click('[data-a="devhand"][data-v="film"]'); await page.click('[data-a="devhand"][data-v="share"]'); await page.click('[data-a="devhand"][data-v="share"]');
+    const copied = await page.evaluate(() => snapText());
+    ok(speed.length === 4 && /jpeg \d+ · heif \d+/.test(speed[0]) && dev.length >= 8 && dev.some(([c, x]) => c === 'dv-ok' && /File print/.test(x)) && dev.some(([c, x]) => c === 'dv-ok' && /Quick small decodes/.test(x))
+      && /✓ The trip film plays/.test(copied) && /✗ "Send to family"/.test(copied) && /File print/.test(copied) && /preview jpeg/.test(copied) && !/14\.4|101\.3/.test(copied),
+      `phone check: the phone's own answers, each photo's preview and speed, the hand checks — all in the copied text, no position (${JSON.stringify({ speed, dev: dev.map((d) => d[0] + ' ' + d[1].slice(0, 30)) })})`);
+    await s.shot('devcheck');
+    ok(!sent.some((u) => u.includes('/api/b/media') || u.includes('/api/b/photos')), 'phone check: still nothing uploaded');
     page.off('request', watch);
   }
   // #/snap — a book from photos (docs/SNAP-BOOK.md P1): pick → read on the phone → days and places → make the book. Seven synthetic
@@ -392,10 +404,27 @@ const T = 'hk-macau-2026';
         const g = await page.evaluate(async (bs) => Promise.all(bs.map(async (b64) => { const f = new File([Uint8Array.from(atob(b64), (c) => c.charCodeAt(0))], 'IMG.heic', { type: 'image/avif' }), m = await snapMeta(f);
           return { blob: m.th instanceof Blob, gate: m.th ? await snapThumbGate(f, m.th) : null }; })), [(await avifWithPreview(receiptSvg())).buffer.toString('base64'), (await avifWithPreview(beach)).buffer.toString('base64')]);
         ok(g[0].blob && g[0].gate === true && g[1].blob && g[1].gate === false, `book from photos: an iPhone-style photo's own preview item is read by the receipt gate — paper yes, a beach no (${JSON.stringify(g)})`); }
+      // the same picture again from another phone or over LINE (re-encoded, smaller — another file): it waits in a sheet beside the book's
+      // photo it looks like, never sent unless a tap says it is not the same; a different picture goes straight in
+      { const pic = (f) => sharp(fs.readFileSync(f), { density: 300 }).resize(1600, 1200, { fit: 'cover' }).flatten({ background: '#fff' }).jpeg({ quality: 90 }).toBuffer();
+        const orig = await pic('public/stock/th/khaoyai/day-sunflowers.v1.svg'), copy = await sharp(orig).resize(900).jpeg({ quality: 55 }).toBuffer(), other = await pic('public/stock/th/khaoyai/day-park.v1.svg');
+        const addB64 = (b64s, names) => page.evaluate(async ([tid, bs, ns]) => addPhotos(trip(tid), 0, bs.map((b, k) => new File([Uint8Array.from(atob(b), (c) => c.charCodeAt(0))], ns[k], { type: 'image/jpeg' }))), [id, b64s, names]);
+        const n0 = (await apiState(page)).media.filter((m) => m.trip === id).length;
+        await addB64([orig.toString('base64')], ['IMG_SUN.jpg']); await page.waitForFunction(() => queue.length === 0, null, { timeout: 30000 }).catch(() => {});
+        const sent = await addB64([copy.toString('base64'), other.toString('base64')], ['LINE_SUN.jpg', 'IMG_PARK.jpg']);
+        await page.waitForSelector('#sheet .nearlist .nearpair', { timeout: 10000 }).catch(() => {});
+        const pairs = await page.locator('#sheet .nearpair').count();
+        await page.waitForFunction(() => queue.length === 0, null, { timeout: 30000 }).catch(() => {});
+        const n1 = (await apiState(page)).media.filter((m) => m.trip === id).length;
+        await s.shot('near-sheet');
+        await page.click('#sheet .nearpair'); await page.click('#neargo');
+        await page.waitForFunction(() => queue.length === 0, null, { timeout: 30000 }).catch(() => {});
+        const n2 = (await apiState(page)).media.filter((m) => m.trip === id).length;
+        ok(sent === 1 && pairs === 1 && n1 === n0 + 2 && n2 === n0 + 3, `the same picture from another phone waits beside the book's photo it looks like; another picture goes in; a tap adds it anyway (sent ${sent}, pairs ${pairs}, photos ${n0} → ${n1} → ${n2})`); }
       // the record page's own picker skips it too (any page of the book: the print is the book's)
       const skipped = await page.evaluate(async ([tid, b64]) => addPhotos(trip(tid), 0, [new File([Uint8Array.from(atob(b64), (c) => c.charCodeAt(0))], 'again.jpg', { type: 'image/jpeg' })]), [id, later[0].buffer.toString('base64')]);
       const m2 = (await apiState(page)).media.filter((m) => m.trip === id);
-      ok(m2.length === 5 && skipped === 0, `photos found later: a tap brings the receipt in; the record page skips a file the book holds (${m2.length} photos, added ${skipped})`); }
+      ok(m2.length === 8 && skipped === 0, `photos found later: a tap brings the receipt in; the record page skips a file the book holds (${m2.length} photos, added ${skipped})`); }
     // the trip in a film (owner, Nov 2026: "คลิปสรุปทริป"; server/reel.js): made on our server from the book's photos — the cards are
     // the app's own page photographed by the PDF's Chromium — then played, shared and saved from the memory book page
     { await page.goto(`${BASE}/#/t/${id}/book`); await page.waitForSelector('[data-a="reelmake"]', { timeout: 15000 });
@@ -1563,7 +1592,7 @@ const T = 'hk-macau-2026';
     await page.goto(`${BASE}/#/snaptest?shared=3`);
     await page.waitForFunction(() => /Read in|อ่านเสร็จใน/.test((document.querySelector('#snapruns') || {}).textContent || ''), null, { timeout: 8000 });   // this session reads Thai
     const h = await page.textContent('#snapruns h2'), left = await page.evaluate(async () => (await (await caches.open('mbs-share')).keys()).length);
-    const sum = await page.$$eval('.snapsum li', (ls) => ls.map((l) => l.textContent.replace(/\s+/g, ' ').trim()));
+    const sum = await page.$$eval('.snapsum:not(.devspeed) li', (ls) => ls.map((l) => l.textContent.replace(/\s+/g, ' ').trim()));
     const man = await (await page.request.get(`${BASE}/manifest.webmanifest`)).json();
     ok(kept.ok && kept.n === 3 && /(Shared from the gallery|แชร์จากแกลเลอรี) · 3/.test(h) && sum[2].includes('2 ·') && left === 0 && await page.evaluate(() => location.hash) === '#/snaptest'
       && man.share_target && man.share_target.action === '/share' && man.share_target.params.files[0].name === 'photos', `share from the gallery: kept by the service worker (${kept.n}), read once on the check page (${h} · ${sum[2]}), then forgotten (${left} left)`);

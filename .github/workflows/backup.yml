@@ -3,6 +3,9 @@ name: Backup
 # kept 30 days) and weekly always (kept 90 days): an off-site copy of the whole memory book (data + full photos, incl. sealed letters) as an Actions artifact.
 # Opt-in: needs repo secrets MB_URL (https://<domain>), MB_BACKUP_TOKEN (same value as Railway's BACKUP_TOKEN) and
 # MB_BACKUP_PASSPHRASE (a long random passphrase kept outside GitHub too — without it the backup cannot be opened).
+# Every backup is also restored once, here on the runner, into a fresh Postgres and a fresh copy of the app, and everything it holds is
+# looked for there (scripts/restore-drill.mjs): a backup that would not come back fails the run — after it has been kept all the same.
+# The drill prints counts only; the plain zip never leaves the runner.
 # The zip is encrypted (gpg, AES-256) before it leaves the runner: artifacts of a PUBLIC repo are downloadable by any
 # signed-in GitHub user, so only ciphertext is ever uploaded. Restore: gpg -d memory-book-backup.zip.gpg > backup.zip
 on:
@@ -18,6 +21,14 @@ jobs:
   backup:
     runs-on: ubuntu-latest
     timeout-minutes: 60
+    services:
+      postgres:   # the restore drill's empty database
+        image: postgres:16-alpine
+        env:
+          POSTGRES_PASSWORD: drill
+        ports: ['5432:5432']
+        options: >-
+          --health-cmd "pg_isready -U postgres" --health-interval 2s --health-timeout 5s --health-retries 20
     steps:
       - name: Is a trip on? (nightly run only)
         id: due
@@ -32,7 +43,14 @@ jobs:
           due=$(curl -fsS --retry 3 -H "Authorization: Bearer $MB_BACKUP_TOKEN" "${MB_URL%/}/api/backup/due" | python3 -c "import json,sys; print('yes' if json.load(sys.stdin)['due'] else 'no')")
           echo "a trip is on: $due"
           echo "run=$due" >> "$GITHUB_OUTPUT"; echo "keep=30" >> "$GITHUB_OUTPUT"
-      - name: Download, check and encrypt backup.zip
+      - uses: actions/checkout@v5   # first: checkout cleans the folder, so the zip comes after it
+        if: steps.due.outputs.run == 'yes'
+      - uses: actions/setup-node@v5
+        if: steps.due.outputs.run == 'yes'
+        with:
+          node-version-file: .nvmrc
+          cache: npm
+      - name: Download and check backup.zip
         if: steps.due.outputs.run == 'yes'
         env:
           MB_URL: ${{ secrets.MB_URL }}
@@ -49,6 +67,23 @@ jobs:
           unzip -tq memory-book-backup.zip
           unzip -p memory-book-backup.zip backup.json | python3 -c "import json,sys; b=json.load(sys.stdin); assert b['complete']; print({k: len(v) for k, v in b['tables'].items()})"
           echo "photos: $(unzip -l memory-book-backup.zip | grep -c 'photos/')  size: $(du -h memory-book-backup.zip | cut -f1)"
+      - name: Restore drill — the backup into a fresh server, everything looked for
+        id: drill
+        if: steps.due.outputs.run == 'yes'
+        continue-on-error: true
+        run: |
+          npm ci --no-audit --no-fund
+          export DRILL_CODE=$(openssl rand -hex 12)
+          DATA_DIR=$(mktemp -d) PORT=3100 DATABASE_URL=postgres://postgres:drill@localhost:5432/postgres FAMILY_CODE=$DRILL_CODE \
+            SESSION_SECRET=$(openssl rand -hex 24) node server/index.js > drill-server.log 2>&1 &
+          for i in $(seq 1 60); do curl -fs http://localhost:3100/healthz > /dev/null && break; sleep 1; done
+          DRILL_BASE=http://localhost:3100 node scripts/restore-drill.mjs memory-book-backup.zip
+      - name: Encrypt the backup
+        if: always() && steps.due.outputs.run == 'yes'
+        env:
+          MB_BACKUP_PASSPHRASE: ${{ secrets.MB_BACKUP_PASSPHRASE }}
+        run: |
+          umask 077
           printf '%s' "$MB_BACKUP_PASSPHRASE" | gpg --batch --yes --quiet --pinentry-mode loopback --passphrase-fd 0 \
             --symmetric --cipher-algo AES256 --compress-algo none -o memory-book-backup.zip.gpg memory-book-backup.zip
           shred -u memory-book-backup.zip
@@ -57,10 +92,15 @@ jobs:
           unzip -tq check.zip && shred -u check.zip
           echo "encrypted: $(du -h memory-book-backup.zip.gpg | cut -f1)"
       - uses: actions/upload-artifact@v6
-        if: steps.due.outputs.run == 'yes'
+        if: always() && steps.due.outputs.run == 'yes'
         with:
           name: memory-book-backup-${{ github.run_number }}
           path: memory-book-backup.zip.gpg
           retention-days: ${{ steps.due.outputs.keep }}
           if-no-files-found: error
           compression-level: 0
+      - name: The restore drill failed
+        if: steps.drill.outcome == 'failure'
+        run: |
+          echo "::error::the backup was kept (encrypted), but restoring it on a fresh server left something out — see the drill step's counts"
+          exit 1
