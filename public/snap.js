@@ -8,7 +8,7 @@ const SNAP_HEAD = 262144;   // the first 256 KB of a JPEG hold its EXIF (APP1 si
 
 // a TIFF block (the body of EXIF) → {at: 'YYYY-MM-DDTHH:MM:SS', tz: '+07:00', ll: [lat, lon]} (each null when absent)
 function snapTiff(u8) {
-  const out = { at: null, tz: null, ll: null };
+  const out = { at: null, tz: null, ll: null, th: null };
   if (!u8 || u8.length < 8) return out;
   const le = u8[0] === 0x49 && u8[1] === 0x49, be = u8[0] === 0x4D && u8[1] === 0x4D;
   if (!le && !be) return out;
@@ -28,6 +28,8 @@ function snapTiff(u8) {
   };
   const ascii = (t) => { if (!t || t.type !== 2) return ''; let s = ''; for (let i = 0; i < t.count && t.at + i < n; i++) { const c = u8[t.at + i]; if (!c) break; s += String.fromCharCode(c); } return s.trim(); };
   const rats = (t) => { if (!t || (t.type !== 5 && t.type !== 10) || t.at + t.count * 8 > n) return null; const r = []; for (let i = 0; i < t.count; i++) { const a = u32(t.at + i * 8), b = u32(t.at + i * 8 + 4); r.push(b ? a / b : 0); } return r; };
+  { const o0 = u32(4), c0 = o0 && o0 + 2 <= n ? u16(o0) : 0, i1 = c0 ? ifd(u32(o0 + 2 + c0 * 12)) : {};   // the camera's own small preview (about 160 px)
+    const ta = i1[0x0201] ? u32(i1[0x0201].at) : 0, tl = i1[0x0202] ? u32(i1[0x0202].at) : 0; if (ta > 8 && tl > 100 && tl < 131072) out.th = [ta, tl]; }
   const ifd0 = ifd(u32(4)), ex = ifd0[0x8769] ? ifd(u32(ifd0[0x8769].at)) : {}, gps = ifd0[0x8825] ? ifd(u32(ifd0[0x8825].at)) : {};
   const when = ascii(ex[0x9003]) || ascii(ex[0x9004]) || ascii(ifd0[0x0132]);   // DateTimeOriginal, else Digitized, else the file's DateTime
   const m = /^(\d{4}):(\d{2}):(\d{2})[ T](\d{2}):(\d{2}):(\d{2})/.exec(when);
@@ -125,7 +127,7 @@ async function snapMeta(file) {
   let r = { at: null, tz: null, ll: null }, kind = '', why = '';
   try {
     const head = await bytes(0, SNAP_HEAD);
-    if (head[0] === 0xFF && head[1] === 0xD8) { kind = 'jpeg'; const tf = snapJpegTiff(head); if (tf) r = snapTiff(tf); else why = 'jpeg-noexif'; }
+    if (head[0] === 0xFF && head[1] === 0xD8) { kind = 'jpeg'; const tf = snapJpegTiff(head); if (tf) { r = snapTiff(tf); if (r.th) r.th = [tf.byteOffset - head.byteOffset + r.th[0], r.th[1]]; } else why = 'jpeg-noexif'; }
     else if (head[0] === 0x89 && head[1] === 0x50) { kind = 'png'; why = 'png'; }
     else if (head.length > 12 && String.fromCharCode(head[4], head[5], head[6], head[7]) === 'ftyp') {
       kind = 'heif';
@@ -157,8 +159,8 @@ async function snapMeta(file) {
       }
     } else why = 'other';
   } catch (_) { why = 'error'; }
-  if (r.at) return { at: r.at, tz: r.tz, ll: r.ll, src: 'exif', kind, why: r.ll ? '' : 'nogps' };
-  return { at: fileAt(), tz: null, ll: r.ll, src: 'file', kind, why: why || 'notime' };
+  if (r.at) return { at: r.at, tz: r.tz, ll: r.ll, th: r.th || null, src: 'exif', kind, why: r.ll ? '' : 'nogps' };
+  return { at: fileAt(), tz: null, ll: r.ll, th: r.th || null, src: 'file', kind, why: why || 'notime' };
 }
 
 // many files, a few at a time so a phone stays responsive; onEach(i, meta) as each one is read
@@ -391,7 +393,7 @@ function snapStartRead(files) {
     return snapRead(list, (i, m) => {
       if (!snapS || snapS.files !== list) return;
       if (m.ll) naming.push(snapWhere(m.ll, geo).then((pl) => { if (snapS && snapS.files === list) snapS.pl[i] = pl; }, () => {}));
-      snapS.metas[i] = { at: m.at, tz: m.tz, src: m.src, pos: !!m.ll };   // the position is named and dropped here
+      snapS.metas[i] = { at: m.at, tz: m.tz, src: m.src, pos: !!m.ll, th: m.th };   // th = where the file's own small preview sits (for the receipt gate)   // the position is named and dropped here
       m.ll = null; snapS.read++;
       const now = performance.now(); if (now - last > 200) { last = now; const el = document.getElementById('snapprog'); if (el) el.textContent = `${snapS.read}/${list.length}`; }
     });
@@ -403,6 +405,53 @@ function snapStartRead(files) {
    seconds apart — keeps its sharpest and sets aside the ones that look the same; a screenshot (a PNG or a file named so, with no
    camera time) is set aside; each day gets one star (two on a day of ten photos or more), the sharpest, well-lit photos of different
    moments. Nothing leaves the phone; the parents bring back or star any photo on the days page. */
+/* Receipts and papers (owner, Nov 2026: "ตรวจจับใบเสร็จ"): a photo of a receipt, a ticket or a printed page is set aside like a
+   screenshot — it may carry a card's last digits or a booking, and it is not a memory. Two looks, on the phone: at 96 px a gate (a
+   good share of white paper, little colour), then for the few that pass a 320 px read for lines of print = rows of many thin dark
+   marks on the paper, with clean rows between them, read straight and slanted up to 12° (a receipt is rarely held straight). A row of
+   windows (wide marks), snow or sand (no clean rows) and polka dots or a grille (every line the same) are not print. */
+function snapDocGate(px, w, h) {
+  const n = w * h; let P = 0, C = 0;
+  for (let k = 0; k < n; k++) { const r = px[k * 4], g = px[k * 4 + 1], b = px[k * 4 + 2], l = 0.299 * r + 0.587 * g + 0.114 * b, sat = Math.max(r, g, b) - Math.min(r, g, b); if (l > 150 && sat < 50) P++; if (sat > 80) C++; }
+  return P / n >= 0.2 && C / n < 0.25;
+}
+function snapDocOf(px, w, h) {
+  const n = w * h, Lm = new Float32Array(n), Sa = new Uint8Array(n);
+  for (let k = 0; k < n; k++) { const r = px[k * 4], g = px[k * 4 + 1], b = px[k * 4 + 2]; Lm[k] = 0.299 * r + 0.587 * g + 0.114 * b; Sa[k] = Math.max(r, g, b) - Math.min(r, g, b); }
+  const hist = new Uint32Array(256), lum = new Float32Array(w); let best = 0;
+  for (const deg of [0, -4, 4, -8, 8, -12, 12]) {
+    const tn = Math.tan(deg * Math.PI / 180), off = Math.ceil(Math.abs(tn) * w); let lines = 0, band = false, clean = 0; const per = [];
+    for (let y0 = -off; y0 < h + off; y0++) {
+      hist.fill(0); let m = 0, cnt = 0;
+      for (let x = 0; x < w; x++) { const y = Math.round(y0 + x * tn); if (y < 0 || y >= h) { lum[x] = -1; continue; } const k = y * w + x; lum[x] = Lm[k]; cnt++; if (Sa[k] < 50) { hist[Lm[k] | 0]++; m++; } }
+      if (cnt < w * 0.5) { band = false; continue; }
+      let paper = 0; if (m > w * 0.2) { let c = 0; for (let v = 255; v >= 0; v--) { c += hist[v]; if (c >= m * 0.25) { paper = v; break; } } }   // the row's paper: its brightest quarter
+      let marks = 0, run = 0;
+      if (paper >= 150) for (let x = 0; x <= w; x++) { const dark = x < w && lum[x] >= 0 && lum[x] < paper - 45; if (dark) run++; else { if (run >= 1 && run <= 6) marks++; run = 0; } }
+      if (marks >= 8) { if (!band && clean >= 1) { lines++; per.push(marks); } else if (band && per.length) per[per.length - 1] = Math.max(per[per.length - 1], marks); band = true; clean = 0; }
+      else { band = false; if (marks <= 2 && paper >= 150) clean++; }
+    }
+    const mean = per.reduce((a, v) => a + v, 0) / (per.length || 1), cv = per.length ? Math.sqrt(per.reduce((a, v) => a + (v - mean) * (v - mean), 0) / per.length) / mean : 0;
+    if (cv >= 0.12 && lines > best) best = lines;
+  }
+  return best >= 6;
+}
+async function snapThumbGate(file, th) {   // the gate on the camera's preview: a tiny decode instead of the whole photo
+  try {
+    const bmp = await createImageBitmap(new Blob([file.slice(th[0], th[0] + th[1])], { type: 'image/jpeg' }));
+    const w = bmp.width, h = bmp.height; if (w < 32 || h < 24) { if (bmp.close) bmp.close(); return null; }
+    const c = document.createElement('canvas'); c.width = w; c.height = h; const g = c.getContext('2d', { willReadFrequently: true }); g.drawImage(bmp, 0, 0); if (bmp.close) bmp.close();
+    return snapDocGate(g.getImageData(0, 0, w, h).data, w, h);
+  } catch (_) { return null; }   // no usable preview: the photo itself is looked at
+}
+async function snapDocLook(file) {   // the 320 px read, only for a photo that passed the gate
+  try {
+    let bmp; try { bmp = await createImageBitmap(file, { resizeWidth: 320, resizeQuality: 'medium' }); } catch (_) { bmp = await createImageBitmap(file); }
+    const w = 320, h = Math.max(8, Math.round(320 * bmp.height / bmp.width)), c = document.createElement('canvas'); c.width = w; c.height = h;
+    const g = c.getContext('2d', { willReadFrequently: true }); g.drawImage(bmp, 0, 0, w, h); if (bmp.close) bmp.close();
+    return snapDocOf(g.getImageData(0, 0, w, h).data, w, h);
+  } catch (_) { return false; }
+}
 const SNAP_SHOT_RE = /screen ?shot|screen[_-]?shot|screen[_-]?cap|capture|สกรีน|ภาพหน้าจอ/i;
 async function snapLook(file) {
   try {
@@ -418,7 +467,7 @@ async function snapLook(file) {
     const hp = hg.getImageData(0, 0, 9, 8).data; let hash = '';
     for (let y = 0; y < 8; y++) for (let x = 0; x < 8; x++) { const a = (y * 9 + x) * 4, b = a + 4; hash += (hp[a] + hp[a + 1] + hp[a + 2] > hp[b] + hp[b + 1] + hp[b + 2]) ? '1' : '0'; }
     if (bmp.close) bmp.close();
-    return { sharp: lv / (ln || 1), light: sum / (w * h), hash };
+    return { sharp: lv / (ln || 1), light: sum / (w * h), hash, paper: snapDocGate(px, w, h) };
   } catch (_) { return null; }   // a file this browser cannot draw (HEIC on Chrome): kept, never starred by guess
 }
 const snapHam = (a, b) => { let n = 0; for (let k = 0; k < 64; k++) if (a[k] !== b[k]) n++; return n; };
@@ -426,8 +475,22 @@ async function snapSift(list) {
   const s = snapS; if (!s || s.files !== list) return;
   const t = (i) => Date.parse(s.metas[i].at + 'Z');
   list.forEach((f, i) => { const m = s.metas[i]; if (m && m.src !== 'exif' && (f.type === 'image/png' || SNAP_SHOT_RE.test(f.name || ''))) s.aside[i] = 'shot'; });
-  const looks = {}; let budget = 260;
+  const looks = {}; let budget = 700;
   const look = async (i) => { if (!(i in looks) && budget-- > 0) looks[i] = await snapLook(list[i]); return looks[i]; };
+  // receipts and papers: every photo not yet set aside, the 320 px read only after the gate
+  let shown = 0, next = 0, done = 0; s.sift = { preview: 0, full: 0, read: 0 };   // how each photo was looked at (the tests read it)
+  const lane = async () => { while (next < list.length) {
+    const i = next++, f = list[i]; if (snapS !== s || s.files !== list) return;
+    if (!s.aside[i]) {
+      const th = s.metas[i] && s.metas[i].th; let gate = th ? await snapThumbGate(f, th) : null;
+      if (gate !== null) s.sift.preview++; else { const lk = await look(i); gate = !!(lk && lk.paper); s.sift.full++; }
+      if (gate) s.sift.read++;
+      if (gate && await snapDocLook(f)) s.aside[i] = 'doc';
+    }
+    done++; const now = performance.now(); if (now - shown > 200) { shown = now; const el = document.getElementById('snapprog'); if (el) el.textContent = `${done}/${list.length}`; }
+  } };
+  await Promise.all([lane(), lane(), lane()]);
+  if (snapS !== s || s.files !== list) return;
   // bursts: camera-timed photos four seconds apart or less
   const timed = list.map((_, i) => i).filter((i) => s.metas[i] && s.metas[i].src === 'exif' && s.metas[i].at && !s.aside[i]).sort((a, b) => t(a) - t(b));
   const bursts = []; for (const i of timed) { const b = bursts[bursts.length - 1]; if (b && t(i) - t(b[b.length - 1]) <= 4000) b.push(i); else bursts.push([i]); }
@@ -448,6 +511,9 @@ async function snapSift(list) {
     got.forEach((i) => s.star.add(i));
   }
 }
+// the reasons photos were set aside, in words: "ภาพซ้ำ · ใบเสร็จและเอกสาร"
+const SNAP_WHY = { dup: ['ภาพซ้ำ', 'repeats'], shot: ['ภาพหน้าจอ', 'screenshots'], doc: ['ใบเสร็จและเอกสาร', 'receipts and papers'] };
+const snapWhy = (kinds) => ['dup', 'shot', 'doc'].filter((k) => kinds.includes(k)).map((k) => L(SNAP_WHY[k][0], SNAP_WHY[k][1])).join(' · ');
 const snapIn = (s, i) => !s.aside[i] || s.keep.has(i);   // a photo set aside stays out until the parents bring it back
 // the runs of dates in the picked photos (gaps under three days), in date order, each with how many photos it holds (a photo set aside
 // does not count), the towns it names most and whether it is already a book
@@ -484,7 +550,7 @@ function snapPlan(only) {
   });
   const out = items.filter((x) => !inRun.has(x.m.at.slice(0, 10))).length, none = s.files.filter((f, i) => !(s.metas[i] && s.metas[i].at)).length;
   return { days, out, none, span: run.length ? (Date.parse(run[run.length - 1]) - Date.parse(run[0])) / 864e5 : 0, pos: s.metas.filter((m) => m && m.pos).length,
-    aside: Object.keys(s.aside).filter((i) => !s.keep.has(+i)).length, stars: [...s.star].filter((i) => snapIn(s, i)).length };
+    aside: Object.keys(s.aside).filter((i) => !s.keep.has(+i)).length, asideWhy: snapWhy(Object.keys(s.aside).filter((i) => !s.keep.has(+i)).map((i) => s.aside[i])), stars: [...s.star].filter((i) => snapIn(s, i)).length };
 }
 const snapDayPlace = (d) => { const typed = snapS.typed[d.date]; if (typed !== undefined) return typed.trim() ? { th: typed.trim(), en: typed.trim() } : null; return d.top[0] ? { th: d.top.slice(0, 3).map((p) => p.th).join(' · '), en: d.top.slice(0, 3).map((p) => p.en).join(' · ') } : null; };
 function snapTitle(plan) {
@@ -550,7 +616,7 @@ ${snapGeoSwitch()}
   }
   const s = snapS;
   if (step === 'read') {
-    if (!s.done) return `<h1>${s.sifting ? L('กำลังเลือกรูปเด่น', 'Picking the best photos') : L('กำลังอ่านรูป', 'Reading the photos')}</h1><p class="snapbig"><b id="snapprog">${s.read}/${s.files.length}</b></p>${snapNote('ทั้งหมดนี้ทำบนเครื่องของคุณ รูปยังไม่ได้ส่งไปไหน', 'All of this happens on your phone — no photo has been sent anywhere.')}`;
+    if (!s.done) return `<h1>${s.sifting ? L('กำลังเลือกรูปเด่น แยกใบเสร็จ', 'Picking the best photos, setting receipts aside') : L('กำลังอ่านรูป', 'Reading the photos')}</h1><p class="snapbig"><b id="snapprog">${s.read}/${s.files.length}</b></p>${snapNote('ทั้งหมดนี้ทำบนเครื่องของคุณ รูปยังไม่ได้ส่งไปไหน', 'All of this happens on your phone — no photo has been sent anywhere.')}`;
     const plan = snapPlan(), n = s.files.length;
     if (!plan.days.length) return `<h1>${L('ไม่พบวันที่ในรูป', 'No dates in these photos')}</h1><p>${L('รูปที่เลือกไม่มีวันเวลาที่ถ่าย ลองเลือกรูปจากกล้องโดยตรง หรือเริ่มเป็นเล่มเปล่า', 'These photos carry no time taken. Pick photos straight from the camera, or start an empty book.')}</p><div class="snapfoot"><a class="btn wide" href="#/snap">${L('เลือกใหม่', 'Pick again')}</a></div>`;
     if (plan.span > 60) return `<h1>${L('รูปยาวเกิน 60 วัน', 'More than 60 days of photos')}</h1><p>${L('เลือกเฉพาะรูปของทริปเดียว', 'Pick one trip’s photos only')}</p><div class="snapfoot"><a class="btn wide" href="#/snap">${L('เลือกใหม่', 'Pick again')}</a></div>`;
@@ -573,7 +639,7 @@ ${allSpan <= 60 ? `<button type="button" class="tpo" data-a="snaprun" data-v="al
 ${plan.out ? `<li class="pz" style="--g1:#FF9A3C"><span>${L(trips.length > 1 ? 'รูปของทริปอื่น' : 'รูปนอกช่วงทริป', trips.length > 1 ? 'Other trips' : 'Outside the trip')}</span><b>${trips.length > 1 ? L(`${plan.out} รูป ไม่ใส่ในเล่มนี้`, `${plan.out}, not in this book`) : L(`${plan.out} รูป ไม่ใส่ในเล่ม`, `${plan.out}, left out`)}</b></li>` : ''}
 ${plan.none ? `<li class="pz" style="--g1:#FF6FA8"><span>${L('ไม่รู้วันที่ถ่าย', 'No date')}</span><b>${L(`${plan.none} รูป ไม่ใส่ในเล่ม`, `${plan.none}, left out`)}</b></li>` : ''}
 ${(s.vids || []).length ? `<li class="pz" style="--g1:#22D3EE"><span>${L('คลิปวิดีโอ', 'Video clips')}</span><b>${((n2, rest) => L(`${n2} คลิปลงวันที่ถ่าย`, `${n2} go on the day they were filmed`) + (rest ? L(` · ${rest} คลิปไม่รู้วันหรืออยู่นอกทริป`, ` · ${rest} with no date or outside the trip`) : ''))(plan.days.reduce((a, d) => a + d.vids.length, 0), s.vids.length - plan.days.reduce((a, d) => a + d.vids.length, 0))}</b></li>` : ''}
-${plan.aside ? `<li class="pz" style="--g1:#C850F0"><span>${L('พักไว้ก่อน', 'Set aside')}</span><b>${L(`${plan.aside} รูป (ภาพซ้ำ ภาพหน้าจอ) เอากลับได้`, `${plan.aside} (repeats, screenshots) — bring back any`)}</b></li>` : ''}
+${plan.aside ? `<li class="pz" style="--g1:#C850F0"><span>${L('พักไว้ก่อน', 'Set aside')}</span><b>${L(`${plan.aside} รูป (${plan.asideWhy}) เอากลับได้`, `${plan.aside} (${plan.asideWhy}) — bring back any`)}</b></li>` : ''}
 ${plan.stars ? `<li class="pz" style="--g1:#F2B90C"><span>${L('รูปเด่น ⭐', 'Best photos ⭐')}</span><b>${L(`เลือกให้ ${plan.stars} รูป เปลี่ยนได้`, `${plan.stars} picked — change any`)}</b></li>` : ''}
 </ul>${pick}${joinRow}
 ${few ? `<p>${L('รูปส่วนใหญ่ไม่บอกตำแหน่ง (มือถือ Android ตัดออก) ขั้นต่อไปบอกสถานที่ของแต่ละวันได้เลย', 'Most photos don’t say where they were taken (Android takes it out) — the next step asks each day’s place.')}</p>` : ''}
@@ -609,12 +675,12 @@ ${plan.out + plan.none ? `<p class="label">${L(`${plan.out + plan.none} รู�
 <div class="snapfoot"><button type="button" class="btn wide" data-a="snapmake"${s.making ? ' disabled' : ''}>${s.making ? L('กำลังสร้างเล่ม…', 'Making the book…') : L('สร้างเล่ม', 'Make the book')}</button>
 <small>${L('รูปจะถูกย่อและส่งขึ้นเล่มทีละรูป ไม่ต้องรอ', 'The photos are made smaller and sent up one by one — no need to wait')}</small></div>`;
 }
-// the photos of a date set aside (repeats, screenshots): a tap brings one back into the book, a second sets it aside again
+// the photos of a date set aside (repeats, screenshots, receipts and papers): a tap brings one back into the book, a second sets it aside again
 function snapAsideHtml(date) {
   const s = snapS, ids = Object.keys(s.aside).map(Number).filter((i) => s.metas[i] && String(s.metas[i].at || '').slice(0, 10) === date);
   if (!ids.length) return '';
-  return `<details class="snapaside" data-fold="a${date}"${s.folds && s.folds.has('a' + date) ? ' open' : ''}><summary><span>${L(`พักไว้ ${ids.length} รูป`, `${ids.length} set aside`)}<small>${L('ภาพซ้ำและภาพหน้าจอ แตะรูปเพื่อเอากลับเข้าเล่ม', 'Repeats and screenshots — tap one to put it back')}</small></span>${ic('chev', 'chv')}</summary>
-<span class="sdph sdpick">${ids.map((i) => `<button type="button" class="sdpt${s.keep.has(i) ? ' kept' : ' off'}" data-a="snapback" data-i="${i}" aria-pressed="${s.keep.has(i)}"><img src="${snapThumb(i)}" alt="" loading="lazy">${s.keep.has(i) ? '<i>✓</i>' : ''}</button>`).join('')}</span></details>`;
+  return `<details class="snapaside" data-fold="a${date}"${s.folds && s.folds.has('a' + date) ? ' open' : ''}><summary><span>${L(`พักไว้ ${ids.length} รูป`, `${ids.length} set aside`)}<small>${L(`${snapWhy(ids.map((i) => s.aside[i]))} แตะรูปเพื่อเอากลับเข้าเล่ม`, `${snapWhy(ids.map((i) => s.aside[i])).replace(/^./, (c) => c.toUpperCase())} — tap one to put it back`)}</small></span>${ic('chev', 'chv')}</summary>
+<span class="sdph sdpick">${ids.map((i) => `<button type="button" class="sdpt${s.keep.has(i) ? ' kept' : ' off'}" data-a="snapback" data-i="${i}" aria-pressed="${s.keep.has(i)}" aria-label="${esc(snapWhy([s.aside[i]]))}"><img src="${snapThumb(i)}" alt="" loading="lazy">${s.keep.has(i) ? '<i>✓</i>' : ''}</button>`).join('')}</span></details>`;
 }
 // which day and set-aside folds are open on the days page, so a redraw (a photo brought back) leaves them as they were
 if (typeof document !== 'undefined') document.addEventListener('toggle', (e) => {

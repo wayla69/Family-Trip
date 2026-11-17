@@ -334,7 +334,7 @@ if (process.env.BASE) {
 {
   const vm = await import('node:vm');
   const ctx = { A: {}, Blob, File, DataView, Uint8Array, Promise, Math, String, Array, Object, Set, isFinite, navigator: {} };
-  vm.createContext(ctx); vm.runInContext(fs.readFileSync(path.resolve('public/snap.js'), 'utf8') + '\n;this.snapMeta = snapMeta; this.snapRead = snapRead; this.snapNearest = snapNearest; this.snapRound = snapRound; this.snapVidAt = snapVidAt;', ctx);
+  vm.createContext(ctx); vm.runInContext(fs.readFileSync(path.resolve('public/snap.js'), 'utf8') + '\n;this.snapMeta = snapMeta; this.snapRead = snapRead; this.snapNearest = snapNearest; this.snapRound = snapRound; this.snapVidAt = snapVidAt; this.snapDocGate = snapDocGate; this.snapDocOf = snapDocOf;', ctx);
   const fx = (f, mod) => new File([fs.readFileSync(path.resolve('test/fixtures/snap', f))], f, { lastModified: mod || Date.UTC(2030, 0, 2, 3, 4, 5) });
   const near = (ll, a, b) => !!ll && Math.abs(ll[0] - a) < 1e-4 && Math.abs(ll[1] - b) < 1e-4;
   const m1 = await ctx.snapMeta(fx('gps-ii.jpg'));
@@ -389,6 +389,40 @@ if (process.env.BASE) {
     fs.rmSync(dir, { recursive: true, force: true });
     ok(v1 && v1.ms === Date.parse('2025-03-01T10:30:00Z') && /^2025-03-0[12]T/.test(v1.at) && v2 && v2.ms === Date.parse('2024-07-09T23:05:00Z') && v3 === null,
       `snap: a clip's own time from its movie header, MP4 and QuickTime, the index after the picture data; none written → none (${JSON.stringify([v1, v2, v3])})`); }
+  // receipts and papers (owner, Nov 2026: "ตรวจจับใบเสร็จ"): synthetic pictures drawn here — three receipts (on a table, straight, tilted
+  // 12°, blurred) are papers; snow, a white facade with rows of windows, a big sign, a colourful scene, grey gravel, thin stripes and
+  // polka dots are not. The gate reads 96 px, the lines of print 320 px, as on the phone.
+  { const receipt = (bg, lines, tilt, wide) => { const words = ['TOTAL', 'Lamington x2', 'Flat white', 'Juice 300ml', 'Sub-total', 'Ice cream', 'VISA ****', 'Thank you!']; let t = '';
+      for (let i = 0; i < lines; i++) t += `<text x="80" y="${90 + i * 22}" font-family="monospace" font-size="15" fill="#222">${words[i % words.length]}</text><text x="${10 + wide}" y="${90 + i * 22}" font-family="monospace" font-size="15" fill="#222">${((i * 7.31) % 40).toFixed(2)}</text>`;
+      return `<svg xmlns="http://www.w3.org/2000/svg" width="480" height="720"><rect width="480" height="720" fill="${bg}"/><g transform="rotate(${tilt} 240 360)"><rect x="60" y="40" width="${wide + 40}" height="${lines * 22 + 90}" fill="#f6f4ee"/><text x="120" y="70" font-family="sans-serif" font-size="22" font-weight="bold" fill="#111">CAFE EXAMPLE</text>${t}</g></svg>`; };
+    const svg = (body, bg = '#f4f4f4') => `<svg xmlns="http://www.w3.org/2000/svg" width="640" height="480"><rect width="640" height="480" fill="${bg}"/>${body}</svg>`;
+    let win = '', st = '', dots = ''; for (let r = 0; r < 7; r++) for (let c = 0; c < 6; c++) win += `<rect x="${60 + c * 90}" y="${50 + r * 60}" width="40" height="34" fill="#334"/>`;
+    for (let i = 0; i < 40; i++) st += `<rect y="${i * 12}" width="640" height="5" fill="#222"/>`;
+    for (let r = 0; r < 20; r++) for (let c = 0; c < 40; c++) dots += `<circle cx="${8 + c * 16}" cy="${10 + r * 24}" r="3" fill="#222"/>`;
+    const cases = [
+      ['receipt on a table', sharp(Buffer.from(receipt('#7a5a40', 26, 0, 280))), true],
+      ['receipt held at 12°', sharp(Buffer.from(receipt('#3d6a8a', 22, 12, 240))).resize({ width: 3000 }), true],
+      ['receipt blurred', sharp(await sharp(Buffer.from(receipt('#30343a', 30, 4, 280))).resize({ width: 1600 }).blur(3).jpeg({ quality: 70 }).toBuffer()), true],
+      ['snow', sharp(Buffer.from(svg('<rect width="640" height="200" fill="#bcd4ee"/>' + [80, 200, 330, 470, 560].map((x) => `<polygon points="${x},120 ${x - 30},230 ${x + 30},230" fill="#2f4a3a"/>`).join('') + '<circle cx="300" cy="360" r="30" fill="#e44"/>', '#f2f4f6'))), false],
+      ['facade of windows', sharp(Buffer.from(svg(win, '#f1f0ec'))), false],
+      ['a big sign', sharp(Buffer.from(svg('<rect x="120" y="120" width="400" height="200" fill="#fafafa"/><text x="150" y="240" font-family="sans-serif" font-size="70" font-weight="bold" fill="#111">EXIT 3</text>', '#6a9a5a'))), false],
+      ['a beach day', sharp(Buffer.from(svg('<rect y="300" width="640" height="180" fill="#e8d8a8"/><circle cx="250" cy="260" r="60" fill="#f2c39a"/><rect x="200" y="320" width="100" height="120" fill="#e05a8a"/>', '#87ceeb'))), false],
+      ['grey gravel', sharp(await sharp({ create: { width: 800, height: 600, channels: 3, noise: { type: 'gaussian', mean: 175, sigma: 45 } } }).greyscale().png().toBuffer()), false],
+      ['thin stripes', sharp(Buffer.from(svg(st))), false],
+      ['polka dots', sharp(Buffer.from(svg(dots))), false]];
+    const got = [];
+    for (const [name, img, want] of cases) {
+      const g = await img.clone().resize({ width: 96 }).ensureAlpha().raw().toBuffer({ resolveWithObject: true }), d = await img.clone().resize({ width: 320 }).ensureAlpha().raw().toBuffer({ resolveWithObject: true });
+      const is = ctx.snapDocGate(g.data, g.info.width, g.info.height) && ctx.snapDocOf(d.data, d.info.width, d.info.height);
+      got.push([name, is, want]);
+    }
+    // the camera's own preview inside the EXIF (IFD1), found where it sits in the file: the receipt gate reads it instead of the photo
+    const { cameraJpeg, receiptSvg } = await import('./snap-jpeg.mjs'), cj = await cameraJpeg(receiptSvg(), '2025:03:01 13:30:00');
+    const mt = await ctx.snapMeta(new File([cj.buffer], 'IMG_1.jpg')), tb = mt.th ? cj.buffer.subarray(mt.th[0], mt.th[0] + mt.th[1]) : null;
+    ok(mt.at === '2025-03-01T13:30:00' && mt.src === 'exif' && mt.th && mt.th[0] === cj.thAt && mt.th[1] === cj.thLen && tb[0] === 0xFF && tb[1] === 0xD8 && tb[tb.length - 2] === 0xFF && tb[tb.length - 1] === 0xD9,
+      `snap: the camera's small preview is found in the EXIF (IFD1) — where it sits and how long (${JSON.stringify({ at: mt.at, th: mt.th, want: [cj.thAt, cj.thLen] })})`);
+    ok(!(await ctx.snapMeta(fx('gps-ii.jpg'))).th, 'snap: a JPEG with no preview says so (the photo itself is looked at)');
+    ok(got.every(([, is, want]) => is === want), `snap: a receipt is told from a photo on the phone — straight, tilted or blurred; not snow, windows, a sign, gravel, stripes or dots (${JSON.stringify(got.filter(([, is, want]) => is !== want))})`); }
   ok(JSON.stringify(ctx.snapRound([13.75049, 100.49171])) === '[13.75,100.49]', 'snap: what leaves the phone is rounded to two decimals (about a kilometre)');
   // the phone's own list of place names (public/geo/<cc>.json, GeoNames): the nearest spot inside its reach, else a town within 8 km
   const geoTh = JSON.parse(fs.readFileSync(path.resolve('public/geo/th.json'), 'utf8'));
