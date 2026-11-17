@@ -1239,8 +1239,10 @@ function router({ pool, media, A, ai, hooks = {} }) {   // hooks.heart(h): set b
       if (!ai || !ai.enabled()) { giveBack(); return bad(res, 'no-key', 501); }
       const t0 = await snapTrip(req.params.trip); if (!t0 || t0.kind !== 'snap') { giveBack(); return bad(res, 'trip', 404); }
       const t = await trip(t0.id), b = req.body || {}, lang = b.lang === 'en' ? 'en' : 'th';
-      const parts = { names: b.names !== false, sums: b.sums !== false, fore: b.fore !== false, stories: b.stories === true };
+      const parts = { photos: b.photos === true && !!(ai.photoEnabled && ai.photoEnabled()), names: b.names !== false, sums: b.sums !== false, fore: b.fore !== false, stories: b.stories === true };
       const steps = [];
+      // first the photos (only with the owner's PHOTO_AI switch and the parents' tick): their captions and places then feed the names and the words
+      if (parts.photos) for (let i = 0; i < t.days; i++) steps.push({ k: 'photos', day: i });
       if (parts.names) steps.push({ k: 'names', day: null });
       if (parts.sums) for (let i = 0; i < t.days; i++) steps.push({ k: 'sum', day: i });
       if (parts.fore) steps.push({ k: 'fore', day: null });
@@ -1256,6 +1258,12 @@ function router({ pool, media, A, ai, hooks = {} }) {   // hooks.heart(h): set b
           for (const s of job.steps) {
             if (job.ctl.signal.aborted) { job.status = 'stopped'; return; }
             s.st = 'now';
+            if (s.k === 'photos') {   // one call a day, the day's photos the helper has not seen yet (≤ 12), as on the record page
+              const out = await photoLook(t, s.day, lang, false);
+              if (out.code === 'empty') { s.st = 'skip'; continue; }
+              if (out.code) throw Object.assign(new Error(out.code), { code: out.code === 'limit' ? 'limit' : out.code === 'refusal' ? 'refusal' : 'failed' });
+              s.st = 'done'; continue;
+            }
             const id = s.day === null ? `${t.id}.${s.k}.all` : `${t.id}.${s.k}.d${s.day}`;
             if (s.k !== 'names' && (await q("SELECT 1 FROM entries WHERE id=$1 AND text<>''", [id])).length) { s.st = 'kept'; continue; }   // the family's own words stay
             const facts = await storyFacts(t, s.day, lang);
@@ -1279,6 +1287,7 @@ function router({ pool, media, A, ai, hooks = {} }) {   // hooks.heart(h): set b
           }
           await snapMatch(t.id).catch((e) => console.error('snap match', e.message));
           job.status = 'done';
+          if (hooks.draft) Promise.resolve(hooks.draft({ trip: t.id, title: (await q('SELECT title FROM trips WHERE id=$1', [t.id]))[0].title })).catch((e) => console.error('draft push', e.message));   // "the draft is ready" on the parents' phones
         } catch (e) {
           if (job.ctl.signal.aborted) { job.status = 'stopped'; return; }
           job.status = 'error'; job.error = e.code === 'refusal' ? 'refusal' : e.code === 'limit' ? 'limit' : 'failed';
@@ -1327,40 +1336,49 @@ function router({ pool, media, A, ai, hooks = {} }) {   // hooks.heart(h): set b
   // go with the day's title and stop names; back come a caption (kept only where the parents wrote none), tags from the fixed list and the
   // stop the photo belongs to. One model call per press; {all: true} sends the day's photos again. Nothing else about the family travels.
   const PHOTOS_PER_CALL = 12;
+  // the helper looks at one day's photos (≤ 12 thumbnails, never the full files): captions where the parents wrote none, tags, the
+  // stop each was taken at, and its two best picks starred while the day has no ⭐ — the button on the record page and the draft job's
+  // "photos" step both call it; {code} when it did not run (no-key | empty | limit | refusal | failed)
+  async function photoLook(t, day, lang, all) {
+    if (!ai || !ai.photoEnabled || !ai.photoEnabled()) return { code: 'no-key' };
+    const rows = await q(`SELECT id, caption FROM media WHERE trip_id=$1 AND day_index=$2 AND mime LIKE 'image/%' ${all ? '' : 'AND ai_at IS NULL'} ORDER BY taken_at, pos LIMIT $3`, [t.id, day, PHOTOS_PER_CALL]);
+    if (!rows.length) return { code: 'empty' };   // nothing new to look at → don't call the model
+    const d = (await q('SELECT title, planned, plan, place FROM trip_days WHERE trip_id=$1 AND day_index=$2', [t.id, day]))[0] || {};
+    const nm = (x) => (x && typeof x === 'object' ? x[lang] || x.en || x.th : x);
+    const stops = [...new Set([...(d.planned || []).map(nm), ...(await q('SELECT name FROM places WHERE trip_id=$1 AND day_index=$2 ORDER BY visited_at', [t.id, day])).map((p) => nm(p.name)),
+      (d.plan && d.plan.stay && nm(d.plan.stay.name || d.plan.stay)), nm(d.place)].map((x) => clip(x, 120).trim()).filter(Boolean))].slice(0, 30);
+    const photos = [];
+    for (const m of rows) { const jpeg = await media.get(keyThumb(t.id, m.id)); if (jpeg) photos.push({ id: m.id, jpeg }); }
+    if (!photos.length) return { code: 'empty' };
+    if (!(await aiTake())) return { code: 'limit' };
+    let seen;
+    try { seen = await ai.describePhotos({ lang, photos, context: { title: nm(d.title) || '', stops } }); }
+    catch (e) { console.error('photos', e.code || e.status || e.message); return { code: e.code === 'refusal' ? 'refusal' : 'failed' }; }
+    let n = 0;
+    for (const m of rows) {
+      const x = seen[m.id]; if (!x) continue;
+      await q(`UPDATE media SET caption = CASE WHEN caption = '' THEN $3 ELSE caption END, tags=$4, place = CASE WHEN place = '' THEN $5 ELSE place END, ai_at=now() WHERE id=$1 AND trip_id=$2`, [m.id, t.id, clip(x.cap, 500), x.tags, x.place]);
+      n++;
+    }
+    // the day's best photos: Claude's picks get the ⭐ only while the day has none yet (the parents' own stars always win;
+    // a drawing is never picked); at most two, and the parents change them in the photo viewer like any star
+    let starred = 0;
+    const picks = rows.filter((m) => seen[m.id] && seen[m.id].best && !m.id.startsWith('dr-')).slice(0, 2).map((m) => m.id);
+    if (picks.length && !(await q("SELECT 1 FROM media WHERE trip_id=$1 AND day_index=$2 AND highlight AND mime LIKE 'image/%' AND id NOT LIKE 'dr-%' LIMIT 1", [t.id, day])).length) {
+      starred = (await pool.query('UPDATE media SET highlight=true WHERE trip_id=$1 AND id = ANY($2)', [t.id, picks])).rowCount;
+    }
+    const left = (await q("SELECT count(*)::int n FROM media WHERE trip_id=$1 AND day_index=$2 AND mime LIKE 'image/%' AND ai_at IS NULL", [t.id, day]))[0].n;
+    return { n, left, starred };
+  }
   r.post('/api/b/photos/ai', ...W, async (req, res, next) => {
     try {
       if (!ai || !ai.photoEnabled || !ai.photoEnabled()) return bad(res, 'no-key', 501);
       const b = req.body || {}, lang = b.lang === 'en' ? 'en' : 'th';
       const t = await trip(String(b.trip || '')); if (!t) return bad(res, 'trip');
       const day = dayArg(b.day); if (day === null || !dayOk(t, day)) return bad(res, 'day');
-      const rows = await q(`SELECT id, caption FROM media WHERE trip_id=$1 AND day_index=$2 AND mime LIKE 'image/%' ${b.all ? '' : 'AND ai_at IS NULL'} ORDER BY taken_at, pos LIMIT $3`, [t.id, day, PHOTOS_PER_CALL]);
-      if (!rows.length) return bad(res, 'empty', 422);   // nothing new to look at → don't call the model
-      const d = (await q('SELECT title, planned, plan FROM trip_days WHERE trip_id=$1 AND day_index=$2', [t.id, day]))[0] || {};
-      const nm = (x) => (x && typeof x === 'object' ? x[lang] || x.en || x.th : x);
-      const stops = [...new Set([...(d.planned || []).map(nm), ...(await q('SELECT name FROM places WHERE trip_id=$1 AND day_index=$2 ORDER BY visited_at', [t.id, day])).map((p) => nm(p.name)),
-        (d.plan && d.plan.stay && nm(d.plan.stay.name || d.plan.stay))].map((x) => clip(x, 120).trim()).filter(Boolean))].slice(0, 30);
-      const photos = [];
-      for (const m of rows) { const jpeg = await media.get(keyThumb(t.id, m.id)); if (jpeg) photos.push({ id: m.id, jpeg }); }
-      if (!photos.length) return bad(res, 'empty', 422);
-      if (!(await aiTake())) return bad(res, 'limit', 429);
-      let seen;
-      try { seen = await ai.describePhotos({ lang, photos, context: { title: nm(d.title) || '', stops } }); }
-      catch (e) { console.error('photos', e.code || e.status || e.message); return bad(res, e.code === 'refusal' ? 'refusal' : 'failed', 502); }
-      let n = 0;
-      for (const m of rows) {
-        const x = seen[m.id]; if (!x) continue;
-        await q(`UPDATE media SET caption = CASE WHEN caption = '' THEN $3 ELSE caption END, tags=$4, place = CASE WHEN place = '' THEN $5 ELSE place END, ai_at=now() WHERE id=$1 AND trip_id=$2`, [m.id, t.id, clip(x.cap, 500), x.tags, x.place]);
-        n++;
-      }
-      // the day's best photos: Claude's picks get the ⭐ only while the day has none yet (the parents' own stars always win;
-      // a drawing is never picked); at most two, and the parents change them in the photo viewer like any star
-      let starred = 0;
-      const picks = rows.filter((m) => seen[m.id] && seen[m.id].best && !m.id.startsWith('dr-')).slice(0, 2).map((m) => m.id);
-      if (picks.length && !(await q("SELECT 1 FROM media WHERE trip_id=$1 AND day_index=$2 AND highlight AND mime LIKE 'image/%' AND id NOT LIKE 'dr-%' LIMIT 1", [t.id, day])).length) {
-        starred = (await pool.query('UPDATE media SET highlight=true WHERE trip_id=$1 AND id = ANY($2)', [t.id, picks])).rowCount;
-      }
-      const left = (await q("SELECT count(*)::int n FROM media WHERE trip_id=$1 AND day_index=$2 AND mime LIKE 'image/%' AND ai_at IS NULL", [t.id, day]))[0].n;
-      res.json({ ok: true, n, left, starred });
+      const out = await photoLook(t, day, lang, !!b.all);
+      if (out.code) return bad(res, out.code, { empty: 422, limit: 429, refusal: 502, failed: 502, 'no-key': 501 }[out.code]);
+      res.json({ ok: true, ...out });
     } catch (e) { next(e); }
   });
 
