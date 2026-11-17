@@ -420,6 +420,63 @@ ok(fs.existsSync(stored), 'photo object in storage');
 ok((await fetch(BASE + '/api/b/media/ph-test-0001', { method: 'DELETE', headers: H })).ok && !fs.existsSync(stored)
   && !fs.existsSync(path.join(DATA_DIR, 'media', 't', T, 'ph-test-0001.jpg')), 'deleting a photo removes the stored files too');
 
+// ---- the owner's alerts and the month-by-month page (server/alerts.js, server/errors.js costs)
+{ const rep = (body, auth = 'Bearer test-backup-token-0123456789abcdef') => fetch(BASE + '/api/backup/report', { method: 'POST', headers: { authorization: auth, 'content-type': 'application/json' }, body: JSON.stringify(body) });
+  const noAuth = await rep({ ok: true }, 'Bearer wrong'), bad = await rep({ ok: false, drill: 'skipped' });
+  const al1 = await (await fetch(BASE + '/api/b/health/alerts', { headers: { cookie: ck } })).json();
+  const good = await rep({ ok: true, drill: 'failed' }), al2 = await (await fetch(BASE + '/api/b/health/alerts', { headers: { cookie: ck } })).json();
+  ok(noAuth.status === 401 && bad.ok && al1.backup.ok === false && al1.log.some((x) => x.kind === 'backup') && good.ok && al2.backup.ok === true && al2.backup.drill === 'failed' && al2.log.length >= 2 && al2.disk && al2.disk.total > 0
+    && (await fetch(BASE + '/api/b/health/alerts', { headers: { cookie: vck } })).status === 403,
+    `owner alerts: the Backup workflow reports each run; a failed copy and a failed restore drill are told and listed; the disk is watched (${JSON.stringify({ b1: al1.backup, log: al2.log.length })})`);
+  const cs = await (await fetch(BASE + '/api/b/health/costs', { headers: { cookie: ck } })).json(), last = cs.months[cs.months.length - 1];
+  ok(cs.months.length === 12 && last.stored >= 0 && cs.priced && cs.priced.ai === false && last.usdAi === null, `month by month: twelve months of room and helper use, no money unless the owner set prices (${JSON.stringify(last)})`); }
+// ---- letters for the future (server/capsule.js, migration 0034): sealed, the text stays on the server until its day
+{ const put = (id, body, c = ck) => fetch(`${BASE}/api/b/capsules/${id}`, { method: 'PUT', headers: { ...H, cookie: c }, body: JSON.stringify(body) });
+  const get = async () => (await (await fetch(BASE + '/api/b/capsules', { headers: { cookie: ck } })).json());
+  const future = `${new Date().getFullYear() + 15}-05-01`;
+  const past = await put('cap-test-0001', { child: 'mimi', text: 'x', open_on: '2001-01-01' });
+  const a = await put('cap-test-0001', { child: 'mimi', title: 'For your 18th', text: 'Dear Mimi, you loved the big fish.', open_on: future });
+  const l0 = (await get()).list.find((c) => c.id === 'cap-test-0001');
+  const seal = await fetch(`${BASE}/api/b/capsules/cap-test-0001/seal`, { method: 'POST', headers: H });
+  const l1 = (await get()).list.find((c) => c.id === 'cap-test-0001'), raw = JSON.stringify(await get());
+  const again = await put('cap-test-0001', { child: 'mimi', text: 'changed', open_on: future });
+  ok(past.status === 400 && a.ok && l0.text.startsWith('Dear Mimi') && !l0.sealed && seal.ok && l1.sealed && l1.text === undefined && !raw.includes('big fish') && again.status === 409
+    && (await fetch(BASE + '/api/b/capsules', { headers: { cookie: vck } })).status === 403,
+    'letters for the future: written and changed while open; sealed, its text never leaves the server before its day; relatives see none');
+  await pool.query("UPDATE capsules SET open_on = (now() AT TIME ZONE 'Asia/Bangkok')::date WHERE id='cap-test-0001'");
+  const l2 = (await get()).list.find((c) => c.id === 'cap-test-0001');
+  ok(l2.open && l2.text.startsWith('Dear Mimi'), 'letters for the future: on its day it opens');
+  await fetch(`${BASE}/api/b/capsules/cap-test-0001`, { method: 'DELETE', headers: H }); }
+// ---- a book to keep for ever (server/keep.js): one HTML file with everything inside, nothing to fetch, no script
+{ await fetch(`${BASE}/api/b/media/ph-keep-0001?trip=${T}&day=1&caption=${encodeURIComponent('ที่ท่าเรือ')}`, { method: 'PUT', headers: { 'x-mb': '1', cookie: ck, 'content-type': 'image/jpeg' }, body: await sharp({ create: { width: 2000, height: 1500, channels: 3, background: '#4a8' } }).jpeg().toBuffer() });
+  await fetch(`${BASE}/api/b/entries/${T}.q.keep`, { method: 'PUT', headers: H, body: JSON.stringify({ trip: T, day: 1, kind: 'quote', child: 'mimi', text: 'Look, <b>a ship</b>!' }) });
+  const r = await fetch(`${BASE}/api/b/keep/${T}?lang=en`, { headers: { cookie: ck } }), html = await r.text();
+  const pics = (html.match(/<img[^>]+src="data:image\/jpeg;base64,/g) || []).length, outside = html.match(/(src|href)="(?!data:)[^"]*"/g) || [];
+  ok(r.ok && /attachment; filename=".+-en\.html"/.test(r.headers.get('content-disposition')) && pics >= 1 && html.includes('Look, &lt;b&gt;a ship&lt;/b&gt;!') && html.includes('ที่ท่าเรือ') && !outside.length && !/<script/i.test(html),
+    `a book to keep: one HTML file — the photos and pictures inside it, the words escaped, nothing fetched from outside, no script (${pics} photos, ${Math.round(html.length / 1024)} KB, outside: ${outside.slice(0, 3).join(' ')})`);
+  ok((await fetch(`${BASE}/api/b/keep/${T}`, { headers: { cookie: vck } })).ok && (await fetch(`${BASE}/api/b/keep/${T}`)).status === 401, 'a book to keep: a relative may keep it too; a stranger may not');
+  await fetch(`${BASE}/api/b/media/ph-keep-0001`, { method: 'DELETE', headers: H }); await fetch(`${BASE}/api/b/entries/${T}.q.keep`, { method: 'DELETE', headers: H }); }
+// ---- two parents, one text (migration 0032): a change from the other phone since this one started editing is told, never written over
+{ const ck2 = await login(), put = (c, body) => fetch(`${BASE}/api/b/entries/${T}.q.conflict`, { method: 'PUT', headers: { ...H, cookie: c }, body: JSON.stringify({ trip: T, day: 1, kind: 'quote', child: 'mimi', ...body }) });
+  const ent = async () => (await state()).entries.find((e) => e.id === `${T}.q.conflict`);
+  await put(ck, { text: 'Big fish!' }); const v0 = (await ent()).v;
+  const b1 = await put(ck2, { text: 'Big fish, Daddy!', base: v0 });          // the other parent edits from the same version: fine
+  const a2 = await put(ck, { text: 'Huge fish!', base: v0 });                  // this phone, still on the old version: told
+  const a2j = await a2.json();
+  const b2 = await put(ck2, { text: 'Big fish, Daddy!!', base: v0 });         // the same phone again, from its own old version: no conflict with itself
+  const a3 = await put(ck, { text: 'Huge fish!', base: v0, force: true });     // "keep mine"
+  ok(b1.ok && a2.status === 409 && a2j.error === 'conflict' && a2j.current.text === 'Big fish, Daddy!' && b2.ok && a3.ok && (await ent()).text === 'Huge fish!',
+    `two phones: the other parent's change is told (409 with their text), a phone never conflicts with itself, "keep mine" writes (${JSON.stringify({ b1: b1.status, a2: a2.status, cur: a2j.current, b2: b2.status, a3: a3.status })})`);
+  const tick = await fetch(`${BASE}/api/b/entries/${T}.tick.conflict.mimi`, { method: 'PUT', headers: H, body: JSON.stringify({ trip: T, day: 1, kind: 'tick', child: 'mimi', first_key: 'x', text: '1', base: 1 }) });
+  ok(tick.ok, 'two phones: a tick or a colour (not a text) never asks — the last tap wins');
+  // a caption the same way
+  await fetch(`${BASE}/api/b/media/ph-conf-0001?trip=${T}&day=1`, { method: 'PUT', headers: { 'x-mb': '1', cookie: ck, 'content-type': 'image/jpeg' }, body: await sharp({ create: { width: 300, height: 200, channels: 3, background: '#a85' } }).jpeg().toBuffer() });
+  const pm = (c, body) => fetch(`${BASE}/api/b/media/ph-conf-0001`, { method: 'PATCH', headers: { ...H, cookie: c }, body: JSON.stringify(body) });
+  await pm(ck, { caption: 'At the pier' }); const mv = (await state()).media.find((m) => m.id === 'ph-conf-0001').v;
+  const c1 = await pm(ck2, { caption: 'At the pier at sunset', base: mv }), c2 = await pm(ck, { caption: 'Pier!', base: mv }), c2j = await c2.json();
+  ok(mv && c1.ok && c2.status === 409 && c2j.current.text === 'At the pier at sunset', `two phones: a photo's caption too (${JSON.stringify({ mv: !!mv, c1: c1.status, c2: c2.status })})`);
+  await fetch(`${BASE}/api/b/media/ph-conf-0001`, { method: 'DELETE', headers: H });
+  await fetch(`${BASE}/api/b/entries/${T}.q.conflict`, { method: 'DELETE', headers: H }); await fetch(`${BASE}/api/b/entries/${T}.tick.conflict.mimi`, { method: 'DELETE', headers: H }); }   // out of the way of the counts below
 // ---- photos from the relatives (server/inbox.js, migration 0031): they wait apart until a parent puts one in or turns it away
 { const pic = await sharp({ create: { width: 1200, height: 900, channels: 3, background: '#7a9' } }).jpeg().withExif({ IFD0: { Make: 'PhoneCo', Model: 'X1' }, GPS: { GPSLatitudeRef: 'N', GPSLatitude: '13/1 45/1 0/1', GPSLongitudeRef: 'E', GPSLongitude: '100/1 30/1 0/1' } }).toBuffer();
   const send = (id, c, q = `trip=${T}&day=1&from=${encodeURIComponent('ยาย')}`) => fetch(`${BASE}/api/b/inbox/${id}?${q}`, { method: 'PUT', headers: { 'x-mb': '1', cookie: c, 'content-type': 'image/jpeg' }, body: pic });

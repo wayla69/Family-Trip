@@ -31,6 +31,10 @@
     { "id": "0028", "file": "0028_trip_reel.sql" },
     { "id": "0029", "file": "0029_media_ph.sql" },
     { "id": "0030", "file": "0030_client_errors.sql" },
-    { "id": "0031", "file": "0031_photo_inbox.sql" }
+    { "id": "0031", "file": "0031_photo_inbox.sql" },
+    { "id": "0032", "file": "0032_edit_marks.sql" },
+    { "id": "0033", "file": "0033_sessions.sql" },
+    { "id": "0034", "file": "0034_capsules.sql" },
+    { "id": "0035", "file": "0035_lessons.sql" }
   ]
 }

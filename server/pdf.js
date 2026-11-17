@@ -3,6 +3,10 @@
 // The image installs Playwright's chromium headless shell; CHROMIUM_PATH overrides (tests in sandboxes).
 let browserP = null;
 let busy = Promise.resolve();   // one PDF at a time keeps memory flat on a small Railway instance
+// Chromium holds a few hundred MB while it lives: it is closed after two minutes with nothing to print (the next PDF starts it again, ~1 s)
+let idleT = null, inUse = 0;
+const IDLE_MS = +process.env.CHROMIUM_IDLE_MS || 120e3;
+function idleLater() { clearTimeout(idleT); idleT = setTimeout(() => { if (!inUse) close().catch(() => {}); }, IDLE_MS); if (idleT.unref) idleT.unref(); }
 
 function browser() {
   if (!browserP) {
@@ -17,6 +21,7 @@ function browser() {
 // route: the page to print (default the book's #/print/<trip>; the year's book is printyear/<y>)
 async function render({ base, cookie, trip, footer, route }) {
   const run = busy.then(async () => {
+    inUse++; clearTimeout(idleT);
     const b = await browser();
     const ctx = await b.newContext({ viewport: { width: 1000, height: 1400 }, locale: 'th-TH' });
     try {
@@ -36,7 +41,7 @@ async function render({ base, cookie, trip, footer, route }) {
         headerTemplate: '<span></span>',
         footerTemplate: `<div style="width:100%;font:8px sans-serif;color:#666D79;padding:0 14mm;display:flex;justify-content:space-between"><span>${esc(footer)}</span><span>LifeBook · <span class="pageNumber"></span></span></div>`,
       });
-    } finally { await ctx.close(); }
+    } finally { await ctx.close(); inUse--; idleLater(); }
   });
   busy = run.catch(() => {});
   return run;
@@ -47,6 +52,7 @@ async function render({ base, cookie, trip, footer, route }) {
 // caps = entry ids of the kids' words: each drawn as a bubble (.rcap) and photographed on its own, transparent around it
 async function cards({ base, cookie, trip, lang, days, caps = [], path: at }) {
   const run = busy.then(async () => {
+    inUse++; clearTimeout(idleT);
     const b = await browser();
     const ctx = await b.newContext({ viewport: { width: 720, height: 1280 }, deviceScaleFactor: 2, locale: lang === 'en' ? 'en-GB' : 'th-TH' });
     try {
@@ -62,7 +68,7 @@ async function cards({ base, cookie, trip, lang, days, caps = [], path: at }) {
       for (const el of await page.$$('.rcard')) out.push(await el.screenshot({ type: 'png' }));
       for (const el of await page.$$('.rcap[data-id]')) cap[await el.getAttribute('data-id')] = await el.screenshot({ type: 'png', omitBackground: true });
       return { cards: out, caps: cap };
-    } finally { await ctx.close(); }
+    } finally { await ctx.close(); inUse--; idleLater(); }
   });
   busy = run.catch(() => {});
   return run;

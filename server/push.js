@@ -167,6 +167,12 @@ function create({ pool, family, A, sender = (sub, payload, opt) => webpush.sendN
       }
       list.push({ key: x.key, msg: (lang) => JSON.stringify({ ...(lang === 'en' ? x.en : x.th), tag: x.key, url: x.url }) });
     }
+    // a letter to the future may be opened today (server/capsule.js): at 09:00 home time, to whom only — never its text
+    for (const c of (await pool.query("SELECT c.id, c.child, to_char(c.open_on,'YYYY-MM-DD') d, k.name_th, k.name_en FROM capsules c LEFT JOIN children k ON k.family_id=c.family_id AND k.slug=c.child WHERE c.family_id=$1 AND c.sealed_at IS NOT NULL AND c.open_on BETWEEN $2::date - 1 AND $2::date", [family, new Date(now).toISOString().slice(0, 10)])).rows) {
+      if (now < zoned(c.d, ANN_AT, HOME_TZ) || now > zoned(c.d, ANN_AT, HOME_TZ) + 36e5 * 12) continue;
+      const th = c.name_th || 'ลูก', en = c.name_en || 'the children';
+      list.push({ key: `capsule.${c.id}`, msg: (lang) => JSON.stringify({ ...(lang === 'en' ? { title: 'A letter may be opened today 📬', body: `The letter to ${c.child === 'both' ? 'the children' : en} you sealed long ago` } : { title: 'วันนี้เปิดจดหมายได้แล้ว 📬', body: `จดหมายถึง${c.child === 'both' ? 'ลูกๆ' : th}ที่ปิดผนึกไว้` }), tag: `capsule.${c.id}`, url: '/#/capsules' }) });
+    }
     if (!list.length) return 0;
     const subs = (await pool.query('SELECT * FROM push_subs WHERE family_id=$1', [family])).rows;
     let n = 0;
@@ -189,6 +195,14 @@ function create({ pool, family, A, sender = (sub, payload, opt) => webpush.sendN
       : { title: 'ญาติส่งหัวใจมาให้เด็กๆ 💗', body: `เปิดดูด้วยกันกับ${kids.th}ก่อนนอนนะ`, tag: 'heart', url: `/#/t/${trip}/hearts` });
     let n = 0;
     for (const s of subs) if (await send(s, msg(s.lang))) n++;
+    return n;
+  }
+  // the owner's alerts (server/alerts.js): sent once per key, to every grown-up's phone; th/en = {title, body}, url = the page that explains it
+  async function alert({ key, th, en, url }) {
+    if (!(await pool.query('INSERT INTO push_sent (key) VALUES ($1) ON CONFLICT DO NOTHING RETURNING key', [key])).rowCount) return 0;
+    const subs = (await pool.query('SELECT * FROM push_subs WHERE family_id=$1', [family])).rows;
+    let n = 0;
+    for (const s of subs) if (await send(s, JSON.stringify({ ...(s.lang === 'en' ? en : th), tag: key, url }))) n++;
     return n;
   }
   // a relative sent photos for a book (server/inbox.js): one nudge per ten minutes, no name, no photo; opens the photos waiting
@@ -258,7 +272,7 @@ function create({ pool, family, A, sender = (sub, payload, opt) => webpush.sendN
     const ok = await send(s, JSON.stringify({ title: th ? 'ทดสอบการเตือน' : 'Test reminder', body: th ? `ใช้ได้แล้ว — จะเตือนก่อนทุกกิจกรรม ${LEAD / 60000} นาที` : `Working — you will hear ${LEAD / 60000} min before each step`, tag: 'test', url: '/' }), why);
     res.status(ok ? 200 : 502).json(ok ? { ok } : { ok, status: why.status, reason: why.reason, apple: /push\.apple\.com/.test(s.endpoint) });
   });
-  return { router: r, tick, heart, draft, reel, inbox, start, stop };
+  return { router: r, tick, heart, draft, reel, inbox, alert, start, stop };
 }
 
 module.exports = { init, create, due, extras, zoned, short, subject, LEAD };

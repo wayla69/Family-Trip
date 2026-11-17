@@ -1006,7 +1006,8 @@ ${mapHtml(t, i, [kid].concat((t.theme.children || []).map((c) => c.slug).filter(
     const ph = kidPhotos(t, i); if (kidPhoto >= ph.length) kidPhoto = 0; const m = ph[kidPhoto];
     body = m ? `<div class="kidguide">${guideImg(0)}<p>${m.caption ? esc(m.caption) : L(`รูปวันที่ ${m.day + 1}`, `A photo from day ${m.day + 1}`)}</p></div>
 <button class="kidphoto" data-a="kidphoto" data-v="1" aria-label="${L('รูปถัดไป', 'Next photo')}"><img src="${esc(imgT(m))}" alt=""></button>
-<div class="kpnav"><button class="kidbig ghost" data-a="kidphoto" data-v="-1" aria-label="${L('รูปก่อนหน้า', 'Previous')}">‹</button><span class="kpn">${kidPhoto + 1} / ${ph.length}</span><button class="kidbig ghost" data-a="kidphoto" data-v="1" aria-label="${L('รูปถัดไป', 'Next')}">›</button></div>`
+<div class="kpnav"><button class="kidbig ghost" data-a="kidphoto" data-v="-1" aria-label="${L('รูปก่อนหน้า', 'Previous')}">‹</button><span class="kpn">${kidPhoto + 1} / ${ph.length}</span><button class="kidbig ghost" data-a="kidphoto" data-v="1" aria-label="${L('รูปถัดไป', 'Next')}">›</button></div>
+${kidTell(t, m)}`
       : `<div class="kidguide">${guideImg(0)}<p>${L('ยังไม่มีรูปเลย', 'No photos yet')}</p></div>`;
     body += kidVids(t, i) + kidAudio(t, i);
   } else if (view === 'match') {
@@ -1193,6 +1194,11 @@ Object.assign(A, {
     beep('pop'); mapFrom = cur; mapAt = j; kidDay = mm.seq[j].day; render(); sayUi(T(mm.at[mm.seq[j].k]));
   },
   mapsay(b) { beep('tap'); burst(b, ['✨']); sayUi(b.dataset.say); },
+  kidtell(b) {   // start or stop the child's telling of this photo
+    if (recState) { stopRec(); return; }
+    beep('tap'); if (b.dataset.say) sayUi(b.dataset.say);
+    setTimeout(() => { startRec(trip(b.dataset.t), +b.dataset.d, b.dataset.v).then(() => { if (recState) recState.about = b.dataset.v; render(); }); }, 900);   // after the prompt is read, so it is not recorded
+  },
   kidworld(b) { beep('tap'); kidWorldAt = +b.dataset.v; render(); const p = famShown('')[kidWorldAt]; if (p) sayUi(kidWorldLine(p, kidNow())); },
   mapgo(b) { beep('tap'); kidDay = +b.dataset.d; kidPhoto = 0; nav(b.dataset.v); },
   mapquest(b) {   // this place's town on the adventure map (a town not reached yet: the road opens where the child stands)
@@ -2135,6 +2141,16 @@ function playSong(n, kid) {
     songT = setTimeout(step, 400);
   };
   step();
+}
+/* The child tells the story of a photo (owner, Nov 2026: "เด็กอัดเสียงเล่านิทานเอง … รวมเป็นหนังสือเสียงของทริป"): under the big photo a round
+   🎙️ button records up to 30 s (the record page's recorder, sheets.js startRec with the photo's id → the clip's place 'photo:<id>'),
+   ▶️ plays what was told; the book page's audiobook plays every told photo in order (views.js tellBook). Only grown-ups' phones record. */
+const tellsOf = (t, mid) => audioOf(t.id).filter((a) => a.place === 'photo:' + mid);
+function kidTell(t, m) {
+  if (!isEditor() || typeof MediaRecorder === 'undefined') { const told = tellsOf(t, m.id); return told.length ? `<div class="kidtell"><button class="kidbig" data-a="kidplay" data-v="${esc(told[told.length - 1].id)}">▶️ ${L('ฟังที่เล่าไว้', 'Listen')}</button></div>` : ''; }
+  const told = tellsOf(t, m.id), on = recState && recState.about === m.id;
+  return `<div class="kidtell"><button class="kidbig tellrec${on ? ' on' : ''}" data-a="kidtell" data-t="${esc(t.id)}" data-d="${m.day}" data-v="${esc(m.id)}" data-say="${esc(L('เล่าเรื่องรูปนี้ให้ฟังหน่อย', 'Tell me about this photo'))}">${on ? `⏹️ ${L('เสร็จแล้ว', 'Done')} <span id="rectime">0:00</span>` : `🎙️ ${L('เล่าเรื่องรูปนี้', 'Tell its story')}`}</button>
+${told.length ? `<button class="kidbig ghost" data-a="kidplay" data-v="${esc(told[told.length - 1].id)}">▶️ ${L('ฟังที่เล่าไว้', 'Listen')}</button>` : ''}</div>`;
 }
 // the kids' family map: which pin is open, and its line read aloud — "เราไปฮ่องกง ตอนมีมี่ 3 ขวบ"
 let kidWorldAt = null;

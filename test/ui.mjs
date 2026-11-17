@@ -265,6 +265,41 @@ const T = 'hk-macau-2026';
       `room and phone problems: a script error is sent once (three throws), listed for the parents without the text it carried (${JSON.stringify({ sent: errs.length, h: h.errs })})`);
     await page.click('[data-a="healthclear"]'); await page.click('[data-a="healthclear"]'); await page.waitForFunction(() => /No phone reported/.test(document.querySelector('main').textContent), null, { timeout: 5000 }).catch(() => {});
     ok(/No phone reported/.test(await page.textContent('main')), 'room and phone problems: two taps clear the list'); }
+  // the deep list, round three: search every book, the phones signed in, letters for the future, a book kept as one file, the kids telling a photo
+  { await page.goto(`${BASE}/#/`); await page.click('.nbcard[href="#/find"]'); await page.waitForSelector('#findq');
+    await page.fill('#findq', 'ปลา'); await page.waitForSelector('#findres .sres li, #findres .mosaic', { timeout: 5000 }).catch(() => {});
+    const fr = await page.evaluate(() => ({ n: document.querySelectorAll('#findres .sres li').length, txt: (document.querySelector('#findres') || {}).textContent || '' }));
+    await s.shot('find');
+    ok(fr.n >= 1 && /ปลาอยู่ในน้ำ/.test(fr.txt) && /Words/.test(fr.txt) && await s.noHScroll(), `search every book: the kids' words found across the books, with when and in which book (${fr.n} hits)`);
+    await page.goto(`${BASE}/#/devices`); await page.waitForSelector('.devs li', { timeout: 8000 }).catch(() => {});
+    const dv = await page.evaluate(() => ({ me: document.querySelectorAll('.devs li.me').length, n: document.querySelectorAll('.devs li').length }));
+    await s.shot('devices');
+    ok(dv.me === 1 && dv.n >= 1 && await s.noHScroll(), `phones signed in: this phone is listed and marked (${JSON.stringify(dv)})`);
+    await page.goto(`${BASE}/#/capsules`); await page.waitForSelector('#captext');
+    await page.fill('#captext', 'Dear Mimi, the fish were huge.'); await page.fill('#capdate', `${new Date().getFullYear() + 15}-05-01`);
+    await page.click('[data-a="capsave"]'); await page.waitForSelector('.caps li [data-a="capseal"]', { timeout: 8000 }).catch(() => {});
+    await page.click('.caps li [data-a="capseal"]'); await page.click('.caps li [data-a="capseal"]');
+    await page.waitForFunction(() => document.querySelector('.caps li.sealed'), null, { timeout: 8000 }).catch(() => {});
+    const cp = await page.evaluate(() => ({ sealed: document.querySelectorAll('.caps li.sealed').length, text: (document.querySelector('.caps') || {}).textContent || '' }));
+    await s.shot('capsules');
+    ok(cp.sealed === 1 && !/fish were huge/.test(cp.text) && /🔒/.test(cp.text), `letters for the future: written, sealed with two taps, then only to whom and when shows (${cp.text.replace(/\s+/g, ' ').slice(0, 80)})`);
+    const kp = await page.evaluate(() => { const t = trips()[0]; return t ? { keep: viewBook(t).includes('keepbtn'), tell: kidTell(t, { id: 'ph-any-0001', day: 0 }).includes('data-a="kidtell"') } : null; });
+    ok(kp && kp.keep && kp.tell, `the book page offers "keep as one file"; the kids' photo viewer offers "tell its story" (${JSON.stringify(kp)})`);
+    await page.goto(`${BASE}/#/health`); await page.waitForFunction(() => /Month by month/.test(document.body.textContent) && /Copies and alerts/.test(document.body.textContent), null, { timeout: 8000 }).catch(() => {});
+    ok(/Month by month/.test(await page.textContent('main')) && /Copies and alerts/.test(await page.textContent('main')), 'room page: the copies and alerts, and month by month'); }
+  // two parents, one text (migration 0032): the other phone changed a quote since this one read it — the sheet shows both, "keep mine" wins
+  { const e0 = await page.evaluate(() => { const e = S.entries.find((x) => x.kind === 'quote' && x.text && x.v); return e && { id: e.id, trip: e.trip, day: e.day, child: e.child }; });
+    const lg = await fetch(BASE + '/api/login', { method: 'POST', headers: { 'x-mb': '1', 'content-type': 'application/json' }, body: JSON.stringify({ code: CODE, name: 'พ่อ' }) }), ck2 = lg.headers.get('set-cookie').split(';')[0];
+    const other = await fetch(`${BASE}/api/b/entries/${encodeURIComponent(e0.id)}`, { method: 'PUT', headers: { 'x-mb': '1', cookie: ck2, 'content-type': 'application/json' }, body: JSON.stringify({ trip: e0.trip, day: e0.day, kind: 'quote', child: e0.child, text: 'Daddy wrote this one' }) });
+    await page.evaluate((id) => { const e = S.entries.find((x) => x.id === id); putEntry(trip(e.trip), { ...e, text: 'Mummy wrote this one' }, id); }, e0.id);
+    await page.waitForSelector('#sheet .cflist', { timeout: 10000 }).catch(() => {});
+    const sheet = await page.textContent('#sheet').catch(() => '');
+    await s.shot('conflict');
+    await page.click('[data-a="cfkeep"][data-v="mine"]').catch(() => {});
+    await page.waitForFunction(() => queue.length === 0 && !conflicts.length, null, { timeout: 10000 }).catch(() => {});
+    const now = (await apiState(page)).entries.find((x) => x.id === e0.id);
+    ok(other.ok && /Daddy wrote this one/.test(sheet) && /Mummy wrote this one/.test(sheet) && /พ่อ/.test(sheet) && now.text === 'Mummy wrote this one',
+      `two phones: the other parent's change is shown beside this phone's, and "keep this phone's" writes it (${JSON.stringify({ other: other.status, sheet: sheet.replace(/\s+/g, ' ').slice(0, 160), now: now && now.text })})`); }
   // the family map (server/famap.js, views.js viewFamMap): every book's towns on one drawn map; a pin tells where, when and how old
   { await page.goto(`${BASE}/#/`); await page.waitForSelector('.nbcard[href="#/map"]'); await page.click('.nbcard[href="#/map"]');
     await page.waitForFunction(() => document.querySelectorAll('.fmsvg .fmpin').length >= 2 && document.querySelector('.fmland') && document.querySelector('.fmland').getAttribute('d').length > 200, null, { timeout: 15000 }).catch(() => {});

@@ -83,6 +83,18 @@ function likesPrompt(lang) {
     + 'แบ่งหัวข้อสั้นๆ บรรทัดละหัวข้อ: ที่พัก · อาหาร · สถานที่ · สิ่งที่ควรเลี่ยง · ไอเดียทริปหน้า ใต้หัวข้อขึ้นบรรทัดด้วย "• " '
     + 'ยกชื่อที่จริงจากสมุดเป็นตัวอย่าง ใช้เฉพาะที่สมุดบอก ห้ามแต่งเพิ่ม ไม่เกิน 220 คำ ไม่ใช้ markdown นอกจาก "• "';
 }
+// 'lessons': one trip's own notebook, moods, notes and summaries → what worked, what did not, what to try next time (owner, Nov 2026)
+function lessonsPrompt(lang) {
+  if (lang === 'en') {
+    return 'From this one trip\'s notes (the family\'s own ratings and notes on stays, food and places, the children\'s moods day by day, the parents\' notes and day summaries, what was spent), '
+      + 'write the lessons for planning their next trip. Three short sections, each with a plain heading line: What worked · What did not · Try next time. '
+      + 'Under each, 2–5 short lines starting with "• ". Be concrete: name the real places, the times of day the children were tired or happy, the kinds of days that went well. '
+      + 'Use only what the notes say — never invent. At most 200 words. No markdown symbols other than "• ".';
+  }
+  return 'จากบันทึกของทริปนี้ (ดาวและโน้ตเรื่องที่พัก อาหาร สถานที่ อารมณ์ของเด็กแต่ละวัน โน้ตของพ่อแม่ สรุปวัน และค่าใช้จ่าย) สรุปบทเรียนไว้วางแผนทริปหน้า '
+    + 'แบ่ง 3 หัวข้อ บรรทัดละหัวข้อ: ได้ผล · ไม่ค่อยได้ผล · ทริปหน้าลอง ใต้แต่ละหัวข้อ 2–5 บรรทัดขึ้นต้นด้วย "• " '
+    + 'ให้เจาะจง ยกชื่อสถานที่จริง ช่วงเวลาที่เด็กเหนื่อยหรือสนุก และแบบของวันที่ไปได้ดี ใช้เฉพาะที่บันทึกบอก ห้ามแต่งเพิ่ม ไม่เกิน 200 คำ ไม่ใช้ markdown นอกจาก "• "';
+}
 // 'next': tomorrow in five lines, for the parents the evening before — from tomorrow's plan, the forecast and how today went; never saved
 function nextPrompt(lang) {
   if (lang === 'en') {
@@ -145,6 +157,7 @@ function basePrompt({ lang, whole, mode, kids: k }) {
   if (mode === 'talk') return talkPrompt(lang, k);
   if (mode === 'letter') return letterPrompt(lang, k);
   if (mode === 'likes') return likesPrompt(lang);
+  if (mode === 'lessons') return lessonsPrompt(lang);
   if (mode === 'msg') return msgPrompt(lang, k);
   if (mode === 'next') return nextPrompt(lang);
   if (mode === 'mquiz') return mquizPrompt(lang, k);
@@ -187,7 +200,7 @@ const clean = (s) => s.replace(/^#+\s*/gm, '').replace(/\*\*|__|`/g, '').replace
 async function writeStory({ lang, whole, mode, facts, kids, onText, signal }) {
   const stream = api().beta.messages.stream({
     model: MODEL(),
-    max_tokens: !mode || mode === 'story' || mode === 'letter' ? 4000 : mode === 'likes' || mode === 'fore' || mode === 'snapnames' ? 2000 : 1000,
+    max_tokens: !mode || mode === 'story' || mode === 'letter' ? 4000 : mode === 'likes' || mode === 'lessons' || mode === 'fore' || mode === 'snapnames' ? 2000 : 1000,
     betas: ['server-side-fallback-2026-07-01'],
     fallbacks: 'default',                  // a policy decline is re-run server-side on Anthropic's recommended fallback
     output_config: { effort: 'low' },      // a short story from given facts needs little reasoning

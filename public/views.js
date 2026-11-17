@@ -121,6 +121,9 @@ function render() {
   else if (p[0] === 'map') html = viewFamMap(p[1] || '');
   else if (p[0] === 'year') html = viewYear(p[1] || '');
   else if (p[0] === 'inbox' && isEditor()) html = viewInbox();
+  else if (p[0] === 'devices' && isEditor()) html = viewDevices();
+  else if (p[0] === 'capsules' && isEditor()) html = viewCapsules();
+  else if (p[0] === 'find') html = viewFind();
   else if (p[0] === 'snap' && isEditor()) html = viewSnap(p);   // a book from photos (docs/SNAP-BOOK.md)   // P0 of docs/SNAP-BOOK.md: what this phone hands over from its photos (not linked)
   else html = viewShelf();
   document.documentElement.style.cssText = t ? themeStyle(t) : themeStyle(curTrip());
@@ -301,6 +304,8 @@ ${S.trips.some((t) => t.id === 'sakura-hop-2028') ? '' : `<button type="button" 
 <div class="ppmini">${children().map((k) => { const n = passportStamps(k.slug); return `<a class="ppc s kid-${esc(k.slug)}" href="#/passport/${esc(k.slug)}"><span class="emb">${kidArt(k.slug) ? `<img src="${kidArt(k.slug)}" alt="">` : '🌏'}</span><b>${L('พาสปอร์ตนักผจญภัย', 'Adventure passport')}</b><span class="nm">${esc(kidName(k.slug))}</span><small>${n ? `${n} ${L('ตราประทับ', n === 1 ? 'stamp' : 'stamps')}` : L('ตราประทับรอหนูอยู่', 'Stamps are waiting')}</small></a>`; }).join('')}</div>
 ${isEditor() && (inboxLoad(), (INBOX.items || []).length) ? `<a class="nbcard ibcard" href="#/inbox"><span class="emb">📷</span><div><b>${L(`ญาติส่งรูปมา ${INBOX.items.length} รูป`, `${INBOX.items.length} photo${INBOX.items.length > 1 ? 's' : ''} from the family`)}</b><small>${L('ดูก่อนว่าจะใส่ในเล่มไหม', 'Look before they go in a book')}</small></div><span class="arrow">›</span></a>` : ''}
 ${S.trips.length ? `<div class="part">${L('ทุกเล่มรวมกัน', 'All our books')} 🌏</div>
+<a class="nbcard findcard" href="#/find"><span class="emb">🔎</span><div><b>${L('ค้นความทรงจำทุกเล่ม', 'Search every book')}</b><small>${L('เช่น "หิมะครั้งแรก" "ช้าง" "ทะเล" — คำพูด ครั้งแรก รูป และบันทึก', 'e.g. "first snow", "elephant", "beach" — words, firsts, photos and notes')}</small></div><span class="arrow">›</span></a>
+${isEditor() ? `<a class="nbcard" href="#/capsules"><span class="emb">📬</span><div><b>${L('จดหมายเปิดในอนาคต', 'Letters for the future')}</b><small>${L('เขียนถึงลูก ปิดผนึก แล้วแอปเตือนให้เปิดในวันที่ตั้งไว้', 'Write to the children, seal it, and the app tells you when it may be opened')}</small></div><span class="arrow">›</span></a>` : ''}
 <a class="nbcard" href="#/map"><span class="emb">🗺️</span><div><b>${L('แผนที่ของครอบครัว', 'Our family map')}</b><small>${L('ทุกที่ที่เคยไป และตอนนั้นลูกอายุเท่าไร', 'Everywhere we have been, and how old the children were')}</small></div><span class="arrow">›</span></a>
 <a class="nbcard" href="#/year/${yearOfNow()}"><span class="emb">🎉</span><div><b>${L(`ปี ${yearOfNow()} ของเรา`, `Our ${yearOfNow()}`)}</b><small>${L('ทุกทริปของปีเป็นเล่มเดียว เห็นลูกโตขึ้นทีละทริป', 'Every trip of the year in one book — the children growing trip by trip')}</small></div><span class="arrow">›</span></a>` : ''}
 <div class="part">${L('สำหรับทริปหน้า', 'For the next trip')} 📓</div>
@@ -313,6 +318,7 @@ ${isEditor() ? `<div class="part">${L('ตั้งค่า', 'Settings')} <img
 <a href="#/emoji">${hubE('kid')}<span><b>${L('อีโมจิของเรา', 'Our emoji')}</b><small>${L(`${emoRows().length} รูป เพิ่มหรือลบได้`, `${emoRows().length} pictures, add or delete`)}</small></span><i>›</i></a>
 <a href="#/viewers">${hubE('relatives')}<span><b>${L('ญาติที่ดูได้', 'Who can see the books')}</b><small>${L('รหัสและลิงก์ของแต่ละกลุ่มญาติ', 'A code and a link for each group of relatives')}</small></span><i>›</i></a>
 <a href="#/snaptest">${hubE('settings')}<span><b>${L('ตรวจเครื่องนี้', 'Check this phone')}</b><small>${L('ลองว่ารูป คลิป และการส่งต่อ ใช้ได้บนเครื่องนี้ไหม', 'Do photos, clips and sharing work on this phone?')}</small></span><i>›</i></a>
+<a href="#/devices">${hubE('settings')}<span><b>${L('มือถือที่เข้าระบบ', 'Phones signed in')}</b><small>${L('ดูว่าเครื่องไหนเปิดเล่มได้ ให้เครื่องที่หายออก เปลี่ยนรหัส', 'See which phones hold the books, sign a lost one out, change the code')}</small></span><i>›</i></a>
 <a href="#/health">${hubE('settings')}<span><b>${L('พื้นที่และปัญหาบนมือถือ', 'Room and phone problems')}</b><small>${L('รูปและคลิปใช้ที่ไปเท่าไร มีอะไรพังบนเครื่องไหนไหม', 'How much room photos and clips take, anything that broke on a phone')}</small></span><i>›</i></a>
 <a href="#/privacy">${hubE('settings')}<span><b>${L('ความเป็นส่วนตัวและข้อมูล', 'Privacy and your data')}</b><small>${L('เก็บอะไร ใครเห็น ขอสำเนา หรือลบทั้งหมด', 'What is kept, who sees it, take a copy or delete everything')}</small></span></a>
 ${aiCard()}</nav>` : ''}
@@ -477,12 +483,12 @@ function viewFamMap(tid) {
 }
 // room and phone problems (owner, Nov 2026: "รู้เมื่อมีอะไรพังบนมือถือ … หน้าดูพื้นที่"; server/errors.js): how much each book takes, by
 // kind (clips and films grow fastest), and the script errors the family's phones reported in the last 30 days, counted
-const HEALTH = { at: 0, busy: false, storage: null, errors: null };
+const HEALTH = { at: 0, busy: false, storage: null, errors: null, costs: null, alerts: null };
 function healthLoad(force) {
   if (HEALTH.busy || (!force && Date.now() - HEALTH.at < 60e3)) return;
   HEALTH.busy = true; HEALTH.at = Date.now();
-  Promise.all([api('GET', '/api/b/health/storage').catch(() => null), api('GET', '/api/b/health/errors').catch(() => null)]).then(([s, e]) => {
-    HEALTH.storage = s; HEALTH.errors = e ? e.errors : null; HEALTH.at = Date.now();
+  Promise.all([api('GET', '/api/b/health/storage').catch(() => null), api('GET', '/api/b/health/errors').catch(() => null), api('GET', '/api/b/health/costs').catch(() => null), api('GET', '/api/b/health/alerts').catch(() => null)]).then(([s, e, c, a]) => {
+    HEALTH.storage = s; HEALTH.errors = e ? e.errors : null; HEALTH.costs = c; HEALTH.alerts = a; HEALTH.at = Date.now();
   }).finally(() => { HEALTH.busy = false; if (route().parts[0] === 'health') safeRender(); });
 }
 const bytesTxt = (b) => (b >= 1073741824 ? `${(b / 1073741824).toFixed(1)} GB` : b >= 1048576 ? `${(b / 1048576).toFixed(b >= 104857600 ? 0 : 1)} MB` : `${Math.max(1, Math.round(b / 1024))} KB`);
@@ -500,8 +506,22 @@ function viewHealth() {
   const errs = er == null ? `<p class="muted">${L('กำลังดู…', 'Looking…')}</p>` : !er.length ? `<p class="hok">✓ ${L('30 วันนี้ไม่มีมือถือเครื่องไหนรายงานปัญหา', 'No phone reported a problem in the last 30 days')}</p>`
     : `<ul class="herrs">${er.map((x) => `<li><b>${esc(x.msg)}</b><small>${[x.src ? `${x.src}:${x.line}` : '', x.route, x.device, x.ver].filter(Boolean).map(esc).join(' · ')}</small><small>${x.n > 1 ? L(`${x.n} ครั้ง · `, `${x.n} times · `) : ''}${L('ล่าสุด', 'last')} ${when(x.last_at)}</small></li>`).join('')}</ul>
 <div class="row"><button class="btn ghost small" data-a="healthclear">${L('ล้างรายการ', 'Clear the list')}</button></div>`;
+  // the copy and the alerts (server/alerts.js): when the last nightly copy was made and whether its restore drill passed, the disk, what was told lately
+  const al = HEALTH.alerts, bk = al && al.backup, whenD = (ms) => new Date(ms).toLocaleString(LOC(), { day: 'numeric', month: 'short', hour: '2-digit', minute: '2-digit' });
+  const watch = !al ? '' : `<section class="blk hcard"><h3>${L('สำเนาและการแจ้งเตือน', 'Copies and alerts')}</h3><ul class="hwatch">
+<li>${bk && bk.at ? `${bk.ok === false ? '⚠️' : '✓'} ${L('สำเนาล่าสุด', 'Last copy')} ${esc(whenD(bk.at))}${bk.drill === 'ok' ? ` · ${L('ซ้อมกู้ผ่าน', 'restore drill passed')}` : bk.drill === 'failed' ? ` · ⚠️ ${L('ซ้อมกู้ไม่ผ่าน', 'restore drill failed')}` : ''}${bk.ok === false && bk.tried ? ` · ⚠️ ${L('ครั้งล่าสุดล้มเหลว', 'the last try failed')} ${esc(whenD(bk.tried))}` : ''}` : L('ยังไม่มีรายงานจากการทำสำเนา (ตั้งค่า workflow Backup บน GitHub)', 'No report from the copies yet (the Backup workflow on GitHub)')}</li>
+${al.disk ? `<li>${al.disk.free / al.disk.total < 0.15 ? '⚠️' : '✓'} ${L('ที่ว่างบนเซิร์ฟเวอร์', 'Free on the server')} ${bytesTxt(al.disk.free)} ${L('จาก', 'of')} ${bytesTxt(al.disk.total)}</li>` : ''}
+<li>${L('แจ้งเตือนเข้ามือถือพ่อแม่เมื่อ: มือถือรายงานปัญหาถี่ · ที่เก็บใกล้เต็ม · สำเนาหรือการซ้อมกู้ล้มเหลว', 'The parents’ phones are told when: phones report many problems · storage is nearly full · a copy or its restore drill fails')}</li>
+${(al.log || []).slice(0, 5).map((x) => `<li class="muted small">🔔 ${esc(whenD(x.at))} · ${esc(x.en)}</li>`).join('')}</ul></section>`;
+  // month by month: the room and the helper (server/errors.js costs) — money only where the owner set prices
+  const cs = HEALTH.costs, cm = cs ? cs.months.filter((m) => m.stored || m.calls) : [], maxGb = Math.max(1, ...cm.map((m) => m.stored)), usd = (x) => (x == null ? '' : `$${x < 10 ? x.toFixed(2) : Math.round(x)}`);
+  const costs = !cs ? '' : `<section class="blk hcard"><h3>${L('รายเดือน', 'Month by month')}</h3>${!cm.length ? `<p class="muted">${L('ยังไม่มีข้อมูล', 'Nothing yet')}</p>` : `<table class="hcost"><thead><tr><th>${L('เดือน', 'Month')}</th><th>${L('พื้นที่', 'Room')}</th><th>${L('ผู้ช่วย', 'Helper')}</th>${cs.priced.ai || cs.priced.store || cs.priced.server ? `<th>${L('ประมาณ', 'About')}</th>` : ''}</tr></thead><tbody>
+${cm.map((m) => { const tot = [m.usdAi, m.usdStore, m.usdServer].filter((x) => x != null), sum = tot.length ? tot.reduce((a, b) => a + b, 0) : null;
+    return `<tr><td>${esc(new Date(m.month + '-01T00:00:00').toLocaleDateString(LOC(), { month: 'short', year: '2-digit' }))}</td><td><span class="hbarm" style="--w:${Math.max(3, Math.round((m.stored / maxGb) * 100))}%"></span>${bytesTxt(m.stored || 1)}${m.added ? ` <small>+${bytesTxt(m.added)}</small>` : ''}</td><td>${m.calls ? L(`${m.calls} ครั้ง`, `${m.calls} ×`) : '—'}</td>${cs.priced.ai || cs.priced.store || cs.priced.server ? `<td>${esc(usd(sum))}</td>` : ''}</tr>`; }).join('')}</tbody></table>`}
+<p class="muted small">${cs.priced.ai || cs.priced.store || cs.priced.server ? L('เงินประมาณจากราคาที่ตั้งไว้ในเซิร์ฟเวอร์ ยอดจริงดูในบัญชี Railway และผู้ให้บริการผู้ช่วย', 'Money estimated from the prices set on the server — the real bills are in the Railway and helper accounts') : L('ตั้งราคาในเซิร์ฟเวอร์ได้ ถ้าอยากเห็นเงินประมาณ (ยอดจริงอยู่ในบัญชี Railway และผู้ให้บริการผู้ช่วย)', 'Set prices on the server to see money estimates (the real bills are in the Railway and helper accounts)')}</p></section>`;
   return `<h1 class="h2">${L('พื้นที่และปัญหาบนมือถือ', 'Room and phone problems')}</h1>
 <section class="blk hcard"><h3>${L('พื้นที่ที่เล่มใช้', 'Room the books take')}</h3>${room}</section>
+${watch}${costs}
 <section class="blk hcard"><h3>${L('ปัญหาที่มือถือรายงาน', 'Problems the phones reported')}</h3>
 <p class="muted small">${L('เมื่อแอปสะดุดบนมือถือ เครื่องจะส่งแค่ข้อความของปัญหา ไฟล์และบรรทัด รุ่นแอป ชนิดหน้า และชนิดเครื่อง มาเก็บไว้ 30 วัน — ไม่มีชื่อ ข้อความที่เขียน รูป หรือตำแหน่ง', 'When the app trips on a phone, the phone sends only the problem’s message, the file and line, the app version, the kind of page and of phone — kept 30 days; no names, nothing written, no photos, no position')}</p>${errs}</section>`;
 }
@@ -612,6 +632,16 @@ function reelHearts(t) {
   const em = [...new Set(hs.map((h) => h.emoji))].slice(0, 5).map((x) => esc(x)).join(' ');
   return `<div class="rhearts"><p class="rhn">${em} ${L(`ญาติส่งหัวใจมา ${hs.length} ดวง`, `${hs.length} heart${hs.length > 1 ? 's' : ''} from family`)}</p>${notes.map((h) => `<p class="rhx">“${esc(h.text)}”${h.from ? ` <b>— ${esc(h.from)}</b>` : ''}</p>`).join('')}</div>`;
 }
+// the trip's audiobook (owner, Nov 2026): every photo a child told the story of, in the order taken, its voice under it — a tap plays the
+// first and each one goes on to the next (sheets.js tellplay)
+function tellBook(t) {
+  const told = mediaOf(t.id).map((m) => ({ m, a: audioOf(t.id).filter((x) => x.place === 'photo:' + m.id).pop() })).filter((x) => x.a);
+  if (!told.length) return '';
+  return `<section class="tellbook noprint" id="tellbook"><div class="part">${L('หนังสือเสียงของทริป', 'The trip’s audiobook')} 🎙️</div>
+<p class="sub">${L(`ลูกเล่าเรื่องไว้ ${told.length} รูป แตะเพื่อฟังต่อกันทีละรูป`, `${told.length} photo${told.length > 1 ? 's' : ''} told by the kids — tap to hear them one after another`)}</p>
+<div class="tellstrip">${told.map(({ m, a }, k) => `<button type="button" class="tellcard" data-a="tellplay" data-k="${k}" data-v="${esc(a.id)}"><img src="${esc(imgT(m))}" alt="" loading="lazy"><span>▶️</span></button>`).join('')}</div>
+<audio id="tellaudio" preload="none"></audio></section>`;
+}
 function viewBook(t) {
   const st = stats(t), kids = (t.theme.children || []);
   const ages = agesHtml(kids);
@@ -638,6 +668,7 @@ ${days.length ? '' : `<div class="empty bookstart">${castHtml((t.theme.children 
 ${foreBlock(t, days.length)}
 ${favs ? `<div class="part">${L('ช่วงเวลาที่ชอบที่สุด', 'Favourite moments')} ⭐</div>${favs}` : ''}
 ${reelBlock(t, days.length)}
+${tellBook(t)}
 ${(t.firsts || []).length || firsts.length ? `<a class="learnlink firstsgo" href="#/t/${esc(t.id)}/firsts">${hubE('firsts')}<b>${L('เหรียญครั้งแรก', 'Firsts')}</b><span class="label">${esc(firsts.length ? L(`${firsts.length} ครั้งแรก`, `${firsts.length} first${firsts.length > 1 ? 's' : ''}`) : L('เหรียญรอหนูอยู่', 'Badges waiting'))}</span>${ic('chev')}</a>` : ''}
 ${firsts.length ? `<div class="part">${L('ครั้งแรกของหนู', 'Firsts')}</div><div class="firsts">${firsts.map((e) => { const f = firstLabel(t, e.first_key); return `<div class="first got"><span class="e">${esc(f.e)}</span><span class="t">${esc(e.first_key === 'custom' ? e.text : f.t)}<br><small class="muted">${L('วันที่', 'Day')} ${e.day + 1}</small></span><span class="kids">${kidBadge(e.child)}</span></div>`; }).join('')}</div>` : ''}
 ${drawingsHtml(t)}
@@ -646,7 +677,8 @@ ${isEditor() && S.features.story && days.length ? storyBlock(t, null)
 ${letterBlock(t, days.length)}
 ${days.map((i) => dayPage(t, i)).join('')}
 ${days.length ? printSet(t) : ''}<div class="row noprint" style="margin:28px 0 8px"${days.length ? '' : ' hidden'}><a class="btn small" href="/api/b/pdf/${esc(t.id)}" download data-a="pdf">📕 ${L('สมุดความทรงจำ (PDF A4)', 'Memory book (PDF A4)')}</a><a class="btn ghost small" href="#/print/${esc(t.id)}">👀 ${L('ดูตัวอย่างเล่ม', 'Preview the book')}</a></div>
-<div class="row noprint bookmore"${days.length ? '' : ' hidden'}><button class="linkbtn" data-a="print">${L('พิมพ์หน้านี้', 'Print this page')}</button><span class="label">·</span><button class="linkbtn" data-a="copytext">${L('คัดลอกเป็นข้อความ', 'Copy as text')}</button></div></div>`;
+<div class="row noprint bookmore"${days.length ? '' : ' hidden'}><button class="linkbtn" data-a="print">${L('พิมพ์หน้านี้', 'Print this page')}</button><span class="label">·</span><button class="linkbtn" data-a="copytext">${L('คัดลอกเป็นข้อความ', 'Copy as text')}</button><span class="label">·</span><a class="linkbtn keepbtn" href="/api/b/keep/${esc(t.id)}?lang=${lang}" download>${L('เก็บเล่มเป็นไฟล์เดียว', 'Keep the book as one file')}</a></div>
+${days.length ? `<p class="muted small noprint keepnote">${L('ไฟล์เดียวที่มีทุกรูป คำพูด และเสียงของเล่มนี้ เปิดในเบราว์เซอร์ได้โดยไม่ต้องมีแอป เก็บไว้ได้นาน', 'One file with every photo, word and voice of this book — opens in any browser without the app, to keep for years')}</p>` : ''}</div>`;
 }
 // the whole plan, day by day, like the manual's day list: every day (recorded or not), where we sleep, the planned stops
 function itinerary(t) {
@@ -995,6 +1027,72 @@ function photoFind(t, q) {
     const hay = [m.caption, m.place, ...tags].join(' ').toLowerCase();
     return alts.every((a) => a.some((w) => wHas(hay, w)));
   });
+}
+/* Search every book (owner, Nov 2026: "ค้นข้ามทุกเล่ม เช่น มีมี่เห็นหิมะครั้งแรกเมื่อไร หรือ รูปที่มีช้าง"): the family's own memories —
+   the kids' words, notes and favourites, the firsts (their own words and their badge names), each day's summary and bedtime story,
+   the day's name and place, the photos' captions, places and tags, the relatives' hearts — across every book, on the phone (the state
+   holds them all; it works with no signal). Every word must match, through the book search's synonyms; a hit says when, in which book
+   and how old the children were then. Chips narrow it to one child or to the firsts. */
+const MEM_SYN = [['หิมะ', 'snow', 'snowman', 'ตุ๊กตาหิมะ'], ['ช้าง', 'elephant', 'elephants'], ['ทะเล', 'sea', 'beach', 'ชายหาด', 'หาด'], ['ปลา', 'fish', 'aquarium', 'อควาเรียม'],
+  ['เครื่องบิน', 'plane', 'flight', 'airport', 'สนามบิน'], ['รถไฟ', 'train', 'mtr', 'tram'], ['เรือ', 'boat', 'ferry'], ['สวนสนุก', 'theme park', 'disney', 'disneyland'],
+  ['ไอติม', 'ไอศกรีม', 'ice cream', 'gelato'], ['ฝน', 'rain', 'umbrella'], ['ภูเขา', 'mountain', 'hill', 'hike'], ['สวนสัตว์', 'zoo', 'animals', 'สัตว์'], ['นก', 'bird', 'birds'],
+  ['ครั้งแรก', 'first', 'firsts'], ['ร้องไห้', 'cried', 'cry', 'tears'], ['หัวเราะ', 'laugh', 'laughed', 'giggle'], ['นอน', 'sleep', 'slept', 'nap'], ['ว่ายน้ำ', 'swim', 'pool', 'สระ']];
+const memAlts = (w) => { const set = new Set(termAlts(w)); MEM_SYN.forEach((g) => { if (g.some((x) => x === w || (w.length >= 3 && x.startsWith(w)))) g.forEach((x) => set.add(x)); }); return [...set]; };
+let findQ = '', findWho = '', findFirsts = false;
+function memIndex() {
+  const out = [];
+  for (const t of S.trips) {
+    const day = (i) => (i === null || i === undefined ? null : t.days[i] || null);
+    for (const e of entriesOf(t.id)) {
+      if (!['quote', 'note', 'fav', 'first', 'sum', 'story'].includes(e.kind)) continue;
+      let text = e.text || '';
+      if (e.kind === 'first') { const f = firstLabel(t, e.first_key); text = `${f.e} ${f.t}${e.text ? ' — ' + e.text : ''}`; }
+      if (!text.trim()) continue;
+      const d = day(e.day);
+      out.push({ t, kind: e.kind, child: e.child, day: e.day, date: d ? d.date : t.date_from, text, extra: [d && T(d.title), d && d.place && T(d.place), e.tr].filter(Boolean).join(' ') });
+    }
+    for (const m of mediaOf(t.id)) {
+      const tags = tagsOf(m).flatMap((k) => { const x = PHOTO_TAGS.find((p) => p[0] === k); return x ? [k, x[2], x[3]] : [k]; });
+      const d = day(m.day), hay = [m.caption, m.place, ...tags].filter(Boolean).join(' ');
+      if (hay) out.push({ t, kind: 'photo', m, day: m.day, date: d ? d.date : t.date_from, text: m.caption || '', extra: hay + ' ' + [d && T(d.title), d && d.place && T(d.place)].filter(Boolean).join(' ') });
+    }
+    for (const h of heartsOf(t.id)) if (h.text) out.push({ t, kind: 'heart', child: h.child, day: h.day, date: (day(h.day) || {}).date || t.date_from, text: `${h.emoji} ${h.text} — ${h.from}`, extra: '' });
+  }
+  return out;
+}
+function memFind(q) {
+  const terms = q.toLowerCase().split(/\s+/).filter(Boolean); if (!terms.length) return { list: [], alts: [] };
+  const alts = terms.map(memAlts), list = [];
+  for (const x of memIndex()) {
+    if (findWho && x.child && x.child !== findWho && x.child !== 'both') continue;
+    if (findWho && !x.child && x.kind !== 'photo') continue;
+    if (findFirsts && x.kind !== 'first') continue;
+    const hay = (x.text + ' ' + x.extra).toLowerCase();
+    if (alts.every((a) => a.some((w) => wHas(hay, w)))) list.push(x);
+  }
+  list.sort((a, b) => String(a.date).localeCompare(String(b.date)));
+  return { list, alts: [...new Set(alts.flat())] };
+}
+function findResults() {
+  const q = findQ.trim();
+  if (!q) return `<p class="empty">${L('พิมพ์สิ่งที่อยากหา เช่น หิมะ ช้าง ทะเล ไอติม — ไทยหรืออังกฤษก็ได้', 'Type what you remember — snow, elephant, beach, ice cream. Thai or English')}</p>`;
+  const { list, alts } = memFind(q);
+  if (!list.length) return `<p class="empty">${L(`ไม่พบ “${esc(q)}” ในเล่มไหนเลย ลองคำอื่น`, `Nothing for “${esc(q)}” in any book — try another word`)}</p>`;
+  const kindName = { quote: ['คำพูด', 'Words'], note: ['โน้ตพ่อแม่', 'Parents’ note'], fav: ['ของโปรด', 'Favourite'], first: ['ครั้งแรก', 'A first'], sum: ['สรุปวัน', 'The day'], story: ['นิทาน', 'Story'], photo: ['รูป', 'Photo'], heart: ['หัวใจจากญาติ', 'A heart'] };
+  const mark = (tx) => { const re = new RegExp(`(${[...alts].sort((a, b) => b.length - a.length).map((w) => wre(w).source).join('|')})`, 'gi'); const s = String(tx).slice(0, 220); return s.split(re).map((part, k) => (k % 2 ? `<mark>${esc(part)}</mark>` : esc(part))).join('') + (String(tx).length > 220 ? ' …' : ''); };
+  const books = [...new Set(list.map((x) => x.t))];
+  return `<p class="label" id="findn">${L(`พบ ${list.length} รายการ ใน ${books.length} เล่ม`, `${list.length} found in ${books.length} book${books.length > 1 ? 's' : ''}`)}</p>
+${books.map((t) => { const xs = list.filter((x) => x.t === t), ph = xs.filter((x) => x.kind === 'photo'), rest = xs.filter((x) => x.kind !== 'photo');
+    return `<section class="findbook"><h3>${esc(T(t.title).split(' · ')[0])} <span class="label">· ${esc(fmtRange(t))}</span></h3>
+${ph.length ? `<div class="mosaic">${ph.slice(0, 12).map((x) => photoBtn(t, x.m)).join('')}</div>` : ''}
+<ul class="sres">${rest.slice(0, 40).map((x) => { const ages = famAgesOn(x.date), href = x.day !== null && x.day !== undefined ? `#/t/${esc(t.id)}/book/d/${x.day}` : `#/t/${esc(t.id)}/book`;
+      return `<li><a href="${href}"><span class="stopic">${esc(L(kindName[x.kind][0], kindName[x.kind][1]))}${x.child && x.child !== 'both' ? ' · ' + esc(kidName(x.child)) : ''}</span><b>${mark(x.text)}</b><span class="label">${esc(fmtDay(x.date, { day: 'numeric', month: 'short', year: 'numeric' }))}${ages ? ` · ${L('ตอน', 'then')} ${ages}` : ''}</span></a></li>`; }).join('')}</ul></section>`; }).join('')}`;
+}
+function viewFind() {
+  return `<section class="tp tp-search"><h1 class="h2">${L('ค้นความทรงจำทุกเล่ม', 'Search every book')}</h1>
+<div class="bookbar"><input id="findq" class="field" type="search" enterkeyhint="search" autocomplete="off" value="${esc(findQ)}" placeholder="${L('เช่น หิมะ ช้าง ทะเล…', 'e.g. snow, elephant, beach…')}" aria-label="${L('ค้นความทรงจำทุกเล่ม', 'Search every book')}"></div>
+<div class="row chips" role="group">${[''].concat(children().map((k) => k.slug)).map((s) => `<button type="button" class="chip" data-a="findwho" data-v="${esc(s)}" aria-pressed="${findWho === s}">${s ? esc(kidName(s)) : L('ทุกคน', 'Everyone')}</button>`).join('')}<button type="button" class="chip" data-a="findfirst" aria-pressed="${findFirsts}">⭐ ${L('เฉพาะครั้งแรก', 'Firsts only')}</button></div>
+<div id="findres">${findResults()}</div></section>`;
 }
 let bookQ = '', bookTrip = '';
 // the last three searches that led somewhere, on this phone only
@@ -1517,8 +1615,10 @@ function dayStory(t, d, route, visited) {
   return `<aside class="route dstory">${hl.length ? `<span class="label">${L('วันนี้ของเรา', 'Our day')}</span><ol>${hl.map((h) => `<li><b>${emoIn(esc(h))}</b></li>`).join('')}</ol>` : ''}${went.length ? `<span class="label">${L('ไปมาแล้ว', 'Where we went')}</span><ol class="went">${went.map((n) => `<li class="done"><b>📍 ${esc(n)}</b><small>✓</small></li>`).join('')}</ol>` : ''}</aside>`;
 }
 // a memory is told by the part of the day, not the clock (owner, Nov 2026: "เช้า / บ่าย / เย็น" reads like a children's book)
+const HOUR_FMT = {};   // one formatter per zone: making one per memory cost a book of 500 words a quarter of a second on a slow phone
 function dayPart(at, tz) {
-  let h = 12; try { h = Number(new Date(at).toLocaleString('en-GB', { hour: '2-digit', hourCycle: 'h23', timeZone: tz || undefined })) % 24; } catch { /* a bad zone reads as midday */ }
+  let h = 12;
+  try { const f = HOUR_FMT[tz || ''] || (HOUR_FMT[tz || ''] = new Intl.DateTimeFormat('en-GB', { hour: '2-digit', hourCycle: 'h23', timeZone: tz || undefined })); h = Number(f.format(new Date(at))) % 24; } catch { /* a bad zone reads as midday */ }
   return h >= 5 && h < 11 ? L('ช่วงเช้า', 'Morning') : h >= 11 && h < 13 ? L('ตอนกลางวัน', 'Midday') : h >= 13 && h < 17 ? L('ช่วงบ่าย', 'Afternoon') : h >= 17 && h < 20 ? L('ตอนเย็น', 'Evening') : L('ตอนค่ำ', 'Night');
 }
 function dayPage(t, i) {
@@ -1602,6 +1702,66 @@ function heartsHtml(t) {
 <span class="emowrap" style="flex:3;min-width:180px"><input class="field" id="htext" data-draft="htext" value="${esc(drafts.htext || '')}" placeholder="${L('ข้อความสั้นๆ (ไม่ใส่ก็ได้)', 'A short note (optional)')}" maxlength="140">${emoBtn('htext')}</span></div>
 <button class="btn small" data-a="sendheart" data-t="${esc(t.id)}">${L('ส่ง', 'Send')} ${emo(heartEmoji)}</button></div>${inboxSendHtml(t)}
 ${hs.length ? `<ul class="hlist">${hs.slice(0, 40).map((h) => `<li><span class="he">${emo(h.emoji)}</span><div class="grow"><b>${esc(h.from)}</b> → ${kidFace(h.child)} ${esc(kidName(h.child))}${h.pending ? ' ⏳' : ''}${h.text ? `<p>${emoIn(esc(h.text))}</p>` : ''}<small class="label">${esc(new Date(h.at).toLocaleDateString(LOC(), { day: 'numeric', month: 'short' }))}${h.day !== null && h.day !== undefined ? ` · ${L('วันที่', 'Day')} ${h.day + 1}` : ''}</small></div>${isEditor() || h.mine ? `<button class="mini noprint" data-a="delheart" data-v="${esc(h.id)}">${L('ลบ', 'Delete')}</button>` : ''}</li>`).join('')}</ul>` : ''}</section>`;
+}
+/* Letters for the future (owner, Nov 2026: "จดหมายเปิดในอนาคต"; server/capsule.js): write to a child, pick the day (their 10th, 15th or
+   18th birthday from the month of birth, or any date), change it while it is open, seal it — then even this page shows only to whom and
+   when, until the day comes and the phones say it may be opened. */
+const CAP = { list: null, at: 0, busy: false, edit: null };
+function capLoad(force) {
+  if (CAP.busy || (!force && Date.now() - CAP.at < 30e3)) return;
+  CAP.busy = true; CAP.at = Date.now();
+  api('GET', '/api/b/capsules').then((r) => { CAP.list = r.list || []; CAP.today = r.today; }).catch(() => {}).finally(() => { CAP.busy = false; if (route().parts[0] === 'capsules') safeRender(); });
+}
+const capAt = (slug, age) => { const k = children().find((x) => x.slug === slug); if (!k || !/^\d{4}-\d{2}$/.test(k.birth_ym || '')) return ''; const [y, m] = k.birth_ym.split('-').map(Number); return `${y + age}-${String(m).padStart(2, '0')}-01`; };
+function viewCapsules() {
+  capLoad();
+  const fmt = (d) => fmtDay(d, { day: 'numeric', month: 'long', year: 'numeric' }), to = (c) => (c === 'both' ? L('ลูกๆ', 'the children') : kidName(c));
+  const e = CAP.edit || (CAP.edit = { id: uid('cap').replace(/[^A-Za-z0-9_-]/g, ''), child: (children()[0] || { slug: 'both' }).slug, title: '', text: '', open_on: '' });
+  const ages = e.child !== 'both' ? [10, 15, 18].map((a) => [a, capAt(e.child, a)]).filter(([, d]) => d && d > (CAP.today || '')) : [];
+  const list = CAP.list === null ? `<p class="muted">${L('กำลังดู…', 'Looking…')}</p>` : !CAP.list.length ? '' : `<ul class="caps">${CAP.list.map((c) => `<li class="${c.sealed ? 'sealed' : ''}${c.open ? ' open' : ''}"><div><b>${c.sealed && !c.open ? '🔒' : c.open ? '📬' : '✏️'} ${L('ถึง', 'To')} ${esc(to(c.child))}${c.title ? ` · ${esc(c.title)}` : ''}</b><small>${c.open ? L('เปิดได้แล้วตั้งแต่', 'May be opened since') : L('เปิดได้วันที่', 'Opens on')} ${esc(fmt(c.open_on))}</small>
+${c.text !== undefined && (c.open || !c.sealed) ? `<p class="captext">${esc(c.text)}</p>` : ''}</div>
+<div class="row">${!c.sealed ? `<button type="button" class="btn ghost small" data-a="capedit" data-v="${esc(c.id)}">${L('แก้', 'Edit')}</button><button type="button" class="btn small" data-a="capseal" data-v="${esc(c.id)}">${L('ปิดผนึก', 'Seal')}</button>` : ''}<button type="button" class="btn ghost small" data-a="capdel" data-v="${esc(c.id)}">${L('ลบ', 'Delete')}</button></div></li>`).join('')}</ul>`;
+  return `<h1 class="h2">${L('จดหมายเปิดในอนาคต', 'Letters for the future')}</h1>
+<p class="lede">${L('เขียนถึงลูกวันนี้ ปิดผนึกไว้ แล้วแอปจะเตือนให้เปิดในวันที่ตั้งไว้ ก่อนถึงวันนั้นไม่มีใครอ่านได้ แม้แต่ในแอป', 'Write to the children today and seal it: the app tells you when it may be opened, and until then no one can read it — not even here')}</p>
+${list}
+<section class="blk capform"><h3>${CAP.list && CAP.list.some((c) => c.id === e.id) ? L('แก้จดหมาย', 'Change the letter') : L('จดหมายฉบับใหม่', 'A new letter')}</h3>
+<div class="row" role="group" aria-label="${L('ถึง', 'To')}">${children().map((k) => k.slug).concat(children().length > 1 ? ['both'] : []).map((s) => `<button type="button" class="chip" data-a="capto" data-v="${esc(s)}" aria-pressed="${s === e.child}">${esc(to(s))}</button>`).join('')}</div>
+<label class="vgl">${L('ชื่อจดหมาย (ไม่ใส่ก็ได้)', 'A title (optional)')}<input class="field" id="captitle" maxlength="120" value="${esc(e.title)}"></label>
+<label class="vgl">${L('จดหมาย', 'The letter')}<textarea class="field" id="captext" rows="8" maxlength="20000">${esc(e.text)}</textarea></label>
+${ages.length ? `<div class="row" role="group" aria-label="${L('เปิดได้เมื่อ', 'Opens')}">${ages.map(([a, d]) => `<button type="button" class="chip" data-a="capage" data-v="${d}" aria-pressed="${e.open_on === d}">${L(`อายุ ${a} ขวบ`, `At ${a}`)}</button>`).join('')}</div>` : ''}
+<label class="vgl">${L('เปิดได้วันที่', 'Opens on')}<input class="field" id="capdate" type="date" value="${esc(e.open_on)}" min="${esc(CAP.today || '')}"></label>
+<p id="capmsg" class="label" role="status"></p>
+<button type="button" class="btn" data-a="capsave">${L('บันทึก (ยังแก้ได้)', 'Save (still open to change)')}</button></section>`;
+}
+/* The phones signed in (owner, Nov 2026: "มือถือหาย"; server/devices.js, migration 0033): every phone that holds the books — who, which
+   kind, last used — and a two-tap sign-out for one or all others; then the family code, changed without signing anyone out unless asked. */
+const DEV = { list: null, me: '', at: 0, busy: false };
+function devLoad(force) {
+  if (DEV.busy || (!force && Date.now() - DEV.at < 30e3)) return;
+  DEV.busy = true; DEV.at = Date.now();
+  api('GET', '/api/b/devices').then((r) => { DEV.list = r.list || []; DEV.me = r.me; }).catch(() => {}).finally(() => { DEV.busy = false; if (route().parts[0] === 'devices') safeRender(); });
+}
+const DEV_KIND = { iphone: ['ไอโฟน', 'iPhone'], ipad: ['ไอแพด', 'iPad'], android: ['แอนดรอยด์', 'Android'], mac: ['แมค', 'Mac'], windows: ['วินโดวส์', 'Windows'], linux: ['ลินุกซ์', 'Linux'], other: ['เครื่องอื่น', 'Another device'] };
+const devKind = (d) => { const [os, br] = String(d || 'other other').split(' '); const k = DEV_KIND[os] || DEV_KIND.other; return `${L(k[0], k[1])}${br && br !== 'other' ? ' · ' + br[0].toUpperCase() + br.slice(1) : ''}`; };
+function viewDevices() {
+  devLoad();
+  const when = (ms) => new Date(ms).toLocaleString(LOC(), { day: 'numeric', month: 'short', hour: '2-digit', minute: '2-digit' });
+  const list = DEV.list, others = (list || []).filter((x) => !x.me).length;
+  const rows = list === null ? `<p class="muted">${L('กำลังดู…', 'Looking…')}</p>` : !list.length ? `<p class="muted">${L('ยังไม่มีรายการ เครื่องที่เข้าระบบก่อนหน้านี้จะขึ้นเมื่อเข้าใหม่', 'Nothing listed yet — phones that signed in before this list appear when they sign in again')}</p>`
+    : `<ul class="devs">${list.map((x) => `<li${x.me ? ' class="me"' : ''}><div><b>${esc(x.name || L('ไม่มีชื่อ', 'No name'))}</b>${x.me ? ` <span class="pill">${L('เครื่องนี้', 'This phone')}</span>` : ''}<small>${x.role === 'editor' ? L('พ่อแม่', 'Parent') : L('ญาติ', 'Relative')}${x.group ? ' · ' + esc(x.group) : ''} · ${esc(devKind(x.device))}</small><small>${L('ใช้ล่าสุด', 'Last used')} ${esc(when(x.seen))} · ${L('เข้าเมื่อ', 'signed in')} ${esc(when(x.since))}</small></div>
+${x.me ? '' : `<button type="button" class="btn ghost small" data-a="devout" data-v="${esc(x.uid)}">${L('ให้ออก', 'Sign out')}</button>`}</li>`).join('')}</ul>
+${others ? `<button type="button" class="btn ghost wide" data-a="devoutall">${L(`ให้ทุกเครื่องออก ยกเว้นเครื่องนี้ (${others})`, `Sign out every other phone (${others})`)}</button>` : ''}`;
+  return `<h1 class="h2">${L('มือถือที่เข้าระบบ', 'Phones signed in')}</h1>
+<p class="lede">${L('มือถือหายหรือให้คนอื่นยืม แตะ "ให้ออก" เครื่องนั้นจะเปิดเล่มไม่ได้ทันที', 'A phone lost or lent? Tap "Sign out" and it can no longer open the books')}</p>
+<section class="blk">${rows}</section>
+<section class="blk codeblk"><h3>${L('เปลี่ยนรหัสครอบครัว', 'Change the family code')}</h3>
+<p class="muted small">${L('รหัสใหม่ใช้ตอนเข้าระบบครั้งต่อไป เครื่องที่เข้าอยู่แล้วไม่หลุด เว้นแต่เลือกให้ออกด้วย', 'The new code is for the next sign-in; phones signed in now stay, unless you choose to sign them out too')}</p>
+<label class="vgl">${L('รหัสเดิม', 'Current code')}<input class="field" id="codeold" type="password" inputmode="numeric" autocomplete="current-password" maxlength="12"></label>
+<label class="vgl">${L('รหัสใหม่ (ตัวเลข 6–12 หลัก)', 'New code (6–12 digits)')}<input class="field" id="codenew" type="password" inputmode="numeric" autocomplete="new-password" maxlength="12"></label>
+<label class="vgl">${L('รหัสใหม่อีกครั้ง', 'The new code again')}<input class="field" id="codenew2" type="password" inputmode="numeric" autocomplete="new-password" maxlength="12"></label>
+<label class="ckrow"><input type="checkbox" id="codeothers"> ${L('ให้เครื่องอื่นออกด้วย', 'Sign the other phones out too')}</label>
+<p id="codemsg" class="label" role="status"></p>
+<button type="button" class="btn" data-a="codesave">${L('เปลี่ยนรหัส', 'Change the code')}</button></section>`;
 }
 /* Photos from the relatives (owner, Nov 2026: "ญาติส่งรูปเข้าเล่มได้ แต่ต้องรอพ่อแม่กดอนุมัติก่อน"; server/inbox.js): a relative sends
    photos for a book from its hearts box; they wait for the parents (#/inbox), who put each one in the book or turn it away. */
@@ -2234,6 +2394,8 @@ ${sec('เก็บอะไรบ้าง', 'What is kept', ul([
   ['หัวใจและข้อความสั้นจากญาติ', 'Hearts and short messages from relatives'],
   ['รหัสของญาติ เก็บเป็นค่าที่อ่านคืนไม่ได้ · รหัสครอบครัวไม่ได้เก็บในฐานข้อมูล', 'Relatives’ PINs, stored only as one-way hashes · the family PIN is not stored in the database'],
   ['รูปที่ญาติส่งมา: เก็บแยกไว้ (ลบข้อมูลกล้องและตำแหน่งแล้ว) จนกว่าพ่อแม่จะเลือกใส่ในเล่ม ถ้าไม่เอาจะลบทิ้งทันที', 'Photos the relatives send: kept apart (camera data and position removed) until a parent puts one in the book; turned away, they are deleted at once'],
+  ['มือถือที่เข้าระบบ: ชื่อที่พิมพ์ตอนเข้า ชนิดเครื่องสองคำ (เช่น ไอโฟน ซาฟารี) และเวลาที่ใช้ล่าสุด เพื่อให้พ่อแม่สั่งเครื่องที่หายให้ออกได้', 'Phones signed in: the name typed at sign-in, the kind of phone in two words (e.g. iPhone Safari) and when it was last used, so the parents can sign a lost one out'],
+  ['จดหมายเปิดในอนาคต: เก็บบนเซิร์ฟเวอร์ ปิดผนึกแล้วไม่ส่งไปที่ไหนจนถึงวันเปิด อยู่ในสำเนาของครอบครัว', 'Letters for the future: kept on the server; once sealed they go nowhere until their day; in the family’s copy'],
   ['ปัญหาที่แอปสะดุดบนมือถือ: ข้อความของปัญหา ไฟล์และบรรทัด รุ่นแอป ชนิดหน้า และชนิดเครื่อง เก็บ 30 วัน ไม่มีชื่อ ข้อความที่เขียน รูป หรือตำแหน่ง', 'When the app trips on a phone: the problem’s message, the file and line, the app version, the kind of page and of phone — kept 30 days, with no names, nothing written, no photos or position'],
   ['ที่อยู่สำหรับส่งการเตือนของเครื่องที่เปิดเตือน และจำนวนครั้งที่ใช้ผู้ช่วยต่อวัน', 'The push address of each phone that turned reminders on, and how many times a day the helper was used'],
   ['ไม่เก็บ: ตำแหน่งของโทรศัพท์ รายชื่อผู้ติดต่อ ข้อมูลการจอง เลขหนังสือเดินทาง หรือประวัติการใช้งาน', 'Not kept: the phone’s location, contacts, booking details, passport numbers, or usage analytics']]))}
@@ -2360,6 +2522,18 @@ ${f.id && f.hasLink ? `<label class="vgck"><input type="checkbox" data-a="vgnewl
 <div class="row" style="margin-top:10px"><button class="btn" data-a="vgsave">${f.id ? L('บันทึก', 'Save') : L('สร้างกลุ่ม', 'Make the group')}</button>${f.id ? `<button class="btn ghost" data-a="vgcancel">${L('ยกเลิก', 'Cancel')}</button>` : ''}<span class="label" id="vgmsg"></span></div></section>`;
 }
 
+// lessons from each trip (owner, Nov 2026: "บทเรียนสำหรับทริปหน้า"; POST /api/b/lessons/:trip): what worked, what did not, what to try next
+// time — written by the helper from the book's own notes, kept as entry kind 'lessons', changed like any text (blur saves)
+function tripLessons() {
+  if (!isEditor()) return '';
+  const ai = S.features.story, rows = S.trips.filter((t) => tripOver(t) || entriesOf(t.id).some((e) => e.kind === 'lessons')).sort((a, b) => String(b.date_from).localeCompare(String(a.date_from)));
+  const items = rows.map((t) => { const e = entriesOf(t.id).find((x) => x.kind === 'lessons'), has = e && e.text;
+    if (!has && !ai) return '';
+    return `<details class="lessonbook"${has ? ' open' : ''}><summary><b>${esc(T(t.title).split(' · ')[0])}</b> <span class="label">${esc(fmtRange(t))}</span>${ic('chev', 'chv')}</summary>
+<textarea class="field lessontxt" id="lessons-${esc(t.id)}" rows="${has ? 9 : 3}" data-a-blur="lessons" data-t="${esc(t.id)}" placeholder="${L('ยังไม่มีบทเรียนของทริปนี้', 'No lessons for this trip yet')}">${esc(has ? e.text : '')}</textarea>
+${ai ? `<div class="row"><button type="button" class="btn small" data-a="lessonsgo" data-t="${esc(t.id)}">✨ ${has ? L('ให้ผู้ช่วยสรุปใหม่', 'Ask the helper again') : L('ให้ผู้ช่วยสรุปบทเรียน', 'Ask the helper for the lessons')}</button><span class="label">${L('ส่งเฉพาะข้อความ ไม่ส่งรูป', 'Words only — never photos')}</span></div>` : ''}</details>`; }).join('');
+  return items ? `<section class="blk lessonsblk"><h3>${ic('sparkle')} ${L('บทเรียนจากแต่ละทริป', 'Lessons from each trip')}</h3><p class="muted small">${L('ได้ผล · ไม่ค่อยได้ผล · ทริปหน้าลอง — จากรีวิว อารมณ์ของเด็ก และโน้ตในเล่มนั้น', 'What worked · what did not · try next time — from that book’s reviews, moods and notes')}</p>${items}</section>` : '';
+}
 function viewNotebook() {
   const rs = S.reviews.slice(), byTrip = (r) => trip(r.trip);
   const where = (r) => { const t = byTrip(r); return t ? `${flagsOf(t)} ${esc(T(t.title).split(' · ')[0])}${r.day !== null && r.day !== undefined ? ` · ${L('วันที่', 'Day')} ${r.day + 1}` : ''}` : ''; };
@@ -2375,6 +2549,7 @@ function viewNotebook() {
   return `<div class="part">${L('สมุดโน้ตนักเดินทาง', 'Travel notebook')}</div><h1 class="h2">${L('อะไรที่ครอบครัวเราชอบ', 'What works for our family')}</h1>
 <p class="lede">${L('รีวิวที่พัก ร้าน และสถานที่จากทุกเล่ม — ให้ดาวจากหน้าบันทึก แล้วใช้วางแผนทริปหน้า', 'Stays, food and places from every trip — rate them on each day’s Record page, then plan the next trip from here')}</p>
 ${likesBlock(rs.length)}
+${tripLessons()}
 ${rs.length ? `<div class="nbsum"><div><h4>👍 ${L('สิ่งที่ชอบ', 'What worked')}</h4><div class="row">${good.map(chip).join('') || `<span class="label">${L('ยังไม่มี', 'nothing yet')}</span>`}</div></div>
 <div><h4>👎 ${L('ครั้งหน้าเลี่ยง', 'Avoid next time')}</h4><div class="row">${bad.map(chip).join('') || `<span class="label">${L('ยังไม่มี', 'nothing yet')}</span>`}</div></div></div>
 ${sections}

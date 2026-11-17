@@ -26,13 +26,14 @@ const ID_RE = /^[A-Za-z0-9_.:-]{4,80}$/;
 // voice memos arrive as the phone's recorder made them: Chrome/Android webm-opus, iPhone mp4-aac; stored under a/<trip>/<id>.<ext>
 const AUDIO_EXT = { 'audio/webm': 'webm', 'audio/mp4': 'm4a', 'audio/x-m4a': 'm4a', 'audio/aac': 'aac', 'audio/mpeg': 'mp3', 'audio/ogg': 'ogg' };
 const SLUG_RE = /^[a-z0-9-]{2,60}$/;
-const KINDS = ['quote', 'mood', 'fav', 'note', 'first', 'story', 'tick', 'field', 'sum', 'talk', 'letter', 'mquiz', 'fore', 'cover', 'bookage'];   // bookage = the printed book's style by age: text 'auto' | 'little' | 'kid' | 'big'   // cover = the printed book's cover: text 'art' | 'photo'   // mquiz = the morning memory game (kid mode) · fore = the book's foreword   // sum = the day in a few lines (book + PDF) · talk = bedtime questions (kid mode)
-const TRIP_WIDE = ['story', 'tick', 'field', 'letter', 'fore', 'cover', 'bookage'];   // kinds that may have no day (whole-trip story, passport checklists, Explorer ID, the letter to the kids)
+const KINDS = ['quote', 'mood', 'fav', 'note', 'first', 'story', 'tick', 'field', 'sum', 'talk', 'letter', 'mquiz', 'fore', 'cover', 'bookage', 'lessons'];   // lessons = what worked, for the next trip (migration 0035)   // bookage = the printed book's style by age: text 'auto' | 'little' | 'kid' | 'big'   // cover = the printed book's cover: text 'art' | 'photo'   // mquiz = the morning memory game (kid mode) · fore = the book's foreword   // sum = the day in a few lines (book + PDF) · talk = bedtime questions (kid mode)
+const TRIP_WIDE = ['story', 'tick', 'field', 'letter', 'fore', 'cover', 'bookage', 'lessons'];   // kinds that may have no day (whole-trip story, passport checklists, Explorer ID, the letter to the kids)
 const HEART_EMOJI = ['💗', '😍', '👏', '🙏', '⭐', '🎉', '🤗', '😘', '🎈'];   // the picker's six (views.js HEARTS) + the older ones, still accepted
 const REVIEW_KINDS = ['stay', 'food', 'place'], KID_VERDICT = ['love', 'ok', 'no'];
 const HEARTS_PER_DAY = { sender: 40, family: 400 };   // the view link is shared: cap what one phone, and everyone together, can send
 const clip = (s, n) => String(s == null ? '' : s).slice(0, n);
 const { sendRanged } = require('./ranged');
+const TEXTY = ['quote', 'note', 'fav', 'sum', 'fore', 'letter', 'lessons'];   // the texts two parents may both edit: a change from the other phone is never written over silently
 const fpOf = (s) => (/^[0-9a-f]{16,64}$/.test(String(s || '')) ? String(s) : null);   // the original file's fingerprint, from the phone (media.fp, migration 0027)
 // photo tags: up to 10 short words (the fixed keys from Claude, or the parents' own); null when the shape is wrong
 const tagList = (v) => (Array.isArray(v) && v.length <= 10 && v.every((x) => typeof x === 'string') ? [...new Set(v.map((x) => x.trim().toLowerCase().slice(0, 24)).filter(Boolean))] : null);
@@ -138,7 +139,7 @@ function router({ pool, media, A, ai, hooks = {} }) {   // hooks.heart(h): set b
   // the pad signs in by itself at the last digit; open = a group PIN of unknown length exists (saved before migration 0021)
   async function pinLens() {
     const g = await q('SELECT pin_len FROM viewer_groups WHERE family_id=$1 AND pin_hash IS NOT NULL', [FAMILY]);
-    const lens = new Set([A.FAMILY_CODE.length, A.VIEW_PIN.length, ...g.map((x) => x.pin_len)].filter((n) => n > 0));
+    const lens = new Set([A.familyCodeLen(), A.VIEW_PIN.length, ...g.map((x) => x.pin_len)].filter((n) => n > 0));
     return { lens: [...lens].sort((a, b) => a - b), open: g.some((x) => !x.pin_len) };
   }
   // erase everything this family has (the privacy page's "delete all data", PDPA right to erasure): every file the rows name
@@ -304,8 +305,8 @@ function router({ pool, media, A, ai, hooks = {} }) {   // hooks.heart(h): set b
         q("SELECT id, slug, legacy_id, title, sub, to_char(date_from,'YYYY-MM-DD') date_from, to_char(date_to,'YYYY-MM-DD') date_to, timezone, theme, cover, stamp, moods, passport, info, source, kind, open, reel FROM trips WHERE family_id=$1 ORDER BY date_from", [FAMILY]),
         q("SELECT d.trip_id, d.day_index, to_char(d.date,'YYYY-MM-DD') date, d.title, d.sleep, d.place, d.emoji, d.gradient, d.planned, d.wx, d.plan, d.done_at FROM trip_days d JOIN trips t ON t.id=d.trip_id WHERE t.family_id=$1 ORDER BY d.trip_id, d.day_index", [FAMILY]),
         q('SELECT f.trip_id, f.key, f.emoji, f.label FROM firsts_catalog f JOIN trips t ON t.id=f.trip_id WHERE t.family_id=$1 ORDER BY f.trip_id, f.pos, f.key', [FAMILY]),
-        q('SELECT id, trip_id, day_index, kind, child, text, tr, src, mood, first_key, lang, highlight, occurred_at, created_by, created_uid FROM entries WHERE family_id=$1 ORDER BY occurred_at', [FAMILY]),
-        q('SELECT id, trip_id, day_index, width, height, caption, highlight, pos, taken_at, created_by, mime, tags, place, ai_at, fp FROM media WHERE family_id=$1 ORDER BY taken_at, pos', [FAMILY]),
+        q('SELECT id, trip_id, day_index, kind, child, text, tr, src, mood, first_key, lang, highlight, occurred_at, created_by, created_uid, updated_at FROM entries WHERE family_id=$1 ORDER BY occurred_at', [FAMILY]),
+        q('SELECT id, trip_id, day_index, width, height, caption, highlight, pos, taken_at, created_by, mime, tags, place, ai_at, fp, edited_at FROM media WHERE family_id=$1 ORDER BY taken_at, pos', [FAMILY]),
         q('SELECT id, trip_id, day_index, key, kind, name, visited_at, created_by FROM places WHERE family_id=$1 ORDER BY visited_at', [FAMILY]),
         q('SELECT id, trip_id, day_index, child, emoji, text, from_name, created_uid, created_at FROM hearts WHERE family_id=$1 ORDER BY created_at', [FAMILY]),
         q('SELECT id, trip_id, day_index, kind, key, name, rating, tags, kids, again, note, created_by, updated_at FROM reviews WHERE family_id=$1 ORDER BY updated_at', [FAMILY]),
@@ -332,8 +333,8 @@ function router({ pool, media, A, ai, hooks = {} }) {   // hooks.heart(h): set b
           const g = seedOf(t, td);
           return { ...out, info: undefined, passport: undefined, days: td.map(({ plan, ...d }) => d), seed: g.hash };
         }),
-        entries: entries.map(({ trip_id, day_index, occurred_at, created_uid, ...e }) => ({ ...e, trip: trip_id, day: day_index, at: ms(occurred_at), mine: created_uid === req.user.uid })),
-        media: mediaRows.map(({ trip_id, day_index, taken_at, width, height, ai_at, ...m }) => ({ ...m, trip: trip_id, day: day_index, w: width, h: height, at: ms(taken_at), ai: !!ai_at })),
+        entries: entries.map(({ trip_id, day_index, occurred_at, created_uid, updated_at, ...e }) => ({ ...e, trip: trip_id, day: day_index, at: ms(occurred_at), mine: created_uid === req.user.uid, v: ms(updated_at) })),   // v: the version a phone edits from (a conflict is told by it)
+        media: mediaRows.map(({ trip_id, day_index, taken_at, width, height, ai_at, edited_at, ...m }) => ({ ...m, trip: trip_id, day: day_index, w: width, h: height, at: ms(taken_at), ai: !!ai_at, v: ms(edited_at) })),
         places: places.map(({ trip_id, day_index, visited_at, ...p }) => ({ ...p, trip: trip_id, day: day_index, at: ms(visited_at) })),
         hearts: hearts.map(({ trip_id, day_index, created_uid, created_at, from_name, ...h }) => ({ ...h, trip: trip_id, day: day_index, from: from_name, at: ms(created_at), mine: created_uid === req.user.uid })),
         reviews: reviews.map(({ trip_id, day_index, updated_at, ...r }) => ({ ...r, trip: trip_id, day: day_index, at: ms(updated_at) })),
@@ -375,12 +376,19 @@ function router({ pool, media, A, ai, hooks = {} }) {   // hooks.heart(h): set b
       if (['mood', 'tick', 'field'].includes(b.kind) && (!child || child === 'both')) return bad(res, 'child');
       if (['tick', 'field'].includes(b.kind) && !b.first_key) return bad(res, 'key');
       if (b.kind === 'tick' && !['', 'yum', 'yuck', '1', '2', '3'].includes(String(b.text || ''))) return bad(res, 'text');   // plain tick, food yum/yuck, 1–3 stars
+      // two parents, one text (migration 0032): a phone that says which version it edited from (base = the state's v) is told when the
+      // other phone changed the text since — 409 conflict with that version — unless it asked to keep its own (force)
+      if (TEXTY.includes(b.kind) && b.base !== null && b.base !== undefined && Number.isFinite(Number(b.base)) && !b.force) {
+        const cur = (await q('SELECT text, updated_at, edited_uid, edited_by, created_uid, created_by FROM entries WHERE id=$1 AND family_id=$2', [id, FAMILY]))[0];
+        if (cur && new Date(cur.updated_at).getTime() > Number(b.base) + 1 && (cur.edited_uid || cur.created_uid) !== req.user.uid && cur.text !== clip(b.text, 4000))
+          return res.status(409).json({ error: 'conflict', current: { text: cur.text, by: cur.edited_by || cur.created_by || '', at: new Date(cur.updated_at).getTime() } });
+      }
       const row = [id, FAMILY, t.id, day, b.kind, child, clip(b.text, 4000), b.mood ? clip(b.mood, 16) : null, b.first_key ? clip(b.first_key, 40) : null,
         ['th', 'en'].includes(b.lang) ? b.lang : null, !!b.highlight, at(b.at), clip(req.user.name, 40), req.user.uid, b.accept === true];
-      const out = await q(`INSERT INTO entries (id, family_id, trip_id, day_index, kind, child, text, mood, first_key, lang, highlight, occurred_at, created_by, created_uid)
-        VALUES ($1,$2,$3,$4,$5,$6,$7,$8,$9,$10,$11,$12,$13,$14)
+      const out = await q(`INSERT INTO entries (id, family_id, trip_id, day_index, kind, child, text, mood, first_key, lang, highlight, occurred_at, created_by, created_uid, edited_uid, edited_by)
+        VALUES ($1,$2,$3,$4,$5,$6,$7,$8,$9,$10,$11,$12,$13,$14,$14,$13)
         ON CONFLICT (id) DO UPDATE SET day_index=EXCLUDED.day_index, child=EXCLUDED.child, text=EXCLUDED.text, mood=EXCLUDED.mood,
-          first_key=EXCLUDED.first_key, lang=EXCLUDED.lang, highlight=EXCLUDED.highlight, updated_at=now(),
+          first_key=EXCLUDED.first_key, lang=EXCLUDED.lang, highlight=EXCLUDED.highlight, updated_at=now(), edited_uid=EXCLUDED.edited_uid, edited_by=EXCLUDED.edited_by,
           tr=CASE WHEN entries.text = EXCLUDED.text THEN entries.tr ELSE NULL END,   -- an edited text drops its old translation
           src=CASE WHEN entries.text = EXCLUDED.text AND NOT $15::boolean THEN entries.src ELSE NULL END   -- the helper's draft mark goes once the parents change it or say "use this draft"
         WHERE entries.family_id = EXCLUDED.family_id AND entries.kind = EXCLUDED.kind AND entries.trip_id = EXCLUDED.trip_id
@@ -446,9 +454,11 @@ function router({ pool, media, A, ai, hooks = {} }) {   // hooks.heart(h): set b
         const key = keyAudio(t.id, id, ext);
         await media.put(key, req.body, mime);
         const pos = (await q('SELECT count(*)::int n FROM media WHERE trip_id=$1 AND day_index IS NOT DISTINCT FROM $2', [t.id, day]))[0].n;
-        await q(`INSERT INTO media (id, family_id, trip_id, day_index, storage_key, mime, bytes, width, height, caption, pos, taken_at, created_by, created_uid)
-          VALUES ($1,$2,$3,$4,$5,$6,$7,0,0,$8,$9,$10,$11,$12) ON CONFLICT (id) DO NOTHING`,
-        [id, FAMILY, t.id, day, key, mime, req.body.length, clip(req.query.caption, 500), pos, at(req.query.at), clip(req.user.name, 40), req.user.uid]);
+        // ?about=<photo id>: the child told this photo's story in kid mode (owner, Nov 2026: "เด็กอัดเสียงเล่านิทานเอง") — kept as the clip's place
+        const about = /^[A-Za-z0-9_.:-]{4,80}$/.test(String(req.query.about || '')) ? `photo:${req.query.about}` : '';
+        await q(`INSERT INTO media (id, family_id, trip_id, day_index, storage_key, mime, bytes, width, height, caption, pos, taken_at, created_by, created_uid, place)
+          VALUES ($1,$2,$3,$4,$5,$6,$7,0,0,$8,$9,$10,$11,$12,$13) ON CONFLICT (id) DO NOTHING`,
+        [id, FAMILY, t.id, day, key, mime, req.body.length, clip(req.query.caption, 500), pos, at(req.query.at), clip(req.user.name, 40), req.user.uid, about]);
         return res.json({ ok: true, id, w: 0, h: 0, mime });
       }
       let img;
@@ -482,7 +492,16 @@ function router({ pool, media, A, ai, hooks = {} }) {   // hooks.heart(h): set b
   r.patch('/api/b/media/:id', ...W, async (req, res, next) => {
     try {
       const b = req.body || {}, sets = [], args = [req.params.id, FAMILY];
-      if ('caption' in b) { args.push(clip(b.caption, 500)); sets.push(`caption=$${args.length}`); }
+      if ('caption' in b) {
+        // a caption edited on both parents' phones: the same check as a text (migration 0032)
+        if (b.base !== null && b.base !== undefined && Number.isFinite(Number(b.base)) && !b.force) {
+          const cur = (await q('SELECT caption, edited_at, edited_uid, edited_by FROM media WHERE id=$1 AND family_id=$2', [req.params.id, FAMILY]))[0];
+          if (cur && cur.edited_at && new Date(cur.edited_at).getTime() > Number(b.base) + 1 && cur.edited_uid !== req.user.uid && cur.caption !== clip(b.caption, 500))
+            return res.status(409).json({ error: 'conflict', current: { text: cur.caption, by: cur.edited_by || '', at: new Date(cur.edited_at).getTime() } });
+        }
+        args.push(clip(b.caption, 500)); sets.push(`caption=$${args.length}`);
+        args.push(req.user.uid); sets.push(`edited_uid=$${args.length}`, 'edited_at=now()'); args.push(clip(req.user.name, 40)); sets.push(`edited_by=$${args.length}`);
+      }
       if ('highlight' in b) { args.push(!!b.highlight); sets.push(`highlight=$${args.length}`); }
       if ('tags' in b) { const tags = tagList(b.tags); if (!tags) return bad(res, 'tags'); args.push(tags); sets.push(`tags=$${args.length}`); }
       if ('place' in b) { args.push(clip(b.place, 120).trim()); sets.push(`place=$${args.length}`); }
@@ -1432,6 +1451,49 @@ function router({ pool, media, A, ai, hooks = {} }) {   // hooks.heart(h): set b
   r.get('/api/b/likes', A.requireEditor, async (_req, res, next) => {
     try { const v = (await q("SELECT value FROM settings WHERE key='family_likes'"))[0]; res.setHeader('Cache-Control', 'no-store'); res.json(v ? JSON.parse(v.value) : null); } catch (e) { next(e); }
   });
+  /* Lessons for the next trip (owner, Nov 2026: "บทเรียนสำหรับทริปหน้า"): one trip's own notebook rows, the children's moods day by day,
+     the parents' notes and the day summaries, what was spent by kind — words only, never a photo — and the helper writes what worked,
+     what did not and what to try next time; saved as entry kind 'lessons' (`<trip>.lessons.all`) and shown in the travel notebook. */
+  r.post('/api/b/lessons/:trip', ...W, async (req, res, next) => {
+    try {
+      if (!ai || !ai.enabled()) return bad(res, 'no-key', 501);
+      const t = (await q("SELECT id, title, to_char(date_from,'YYYY-MM-DD') date_from, to_char(date_to,'YYYY-MM-DD') date_to FROM trips WHERE id=$1 AND family_id=$2", [req.params.trip, FAMILY]))[0];
+      if (!t) return bad(res, 'trip', 404);
+      const lang = (req.body || {}).lang === 'en' ? 'en' : 'th', tx = (x) => (x && typeof x === 'object' ? x[lang] || x.en || x.th : x) || '';
+      const kids = Object.fromEntries((await q('SELECT slug, name_th, name_en FROM children WHERE family_id=$1', [FAMILY])).map((k) => [k.slug, lang === 'en' ? k.name_en : k.name_th]));
+      const days = await q('SELECT day_index, title FROM trip_days WHERE trip_id=$1 ORDER BY day_index', [t.id]);
+      const revs = await q('SELECT kind, name, rating, tags, kids, again, note FROM reviews WHERE trip_id=$1 AND family_id=$2', [t.id, FAMILY]);
+      const ents = await q("SELECT day_index, kind, child, text, mood FROM entries WHERE trip_id=$1 AND family_id=$2 AND kind IN ('mood','note','sum','fav') ORDER BY day_index, occurred_at", [t.id, FAMILY]);
+      const spend = await q('SELECT cat, cur, sum(amount)::float total FROM spend WHERE trip_id=$1 AND family_id=$2 GROUP BY cat, cur', [t.id, FAMILY]);
+      const lines = [`${lang === 'en' ? 'Trip' : 'ทริป'}: ${tx(t.title)} · ${t.date_from} – ${t.date_to}`];
+      for (const r of revs) lines.push(`${r.kind}: ${tx(r.name)}${r.rating ? ` · ${r.rating}/5` : ''}${(r.tags || []).length ? ` · ${r.tags.join(', ')}` : ''}${Object.entries(r.kids || {}).map(([k, v]) => ` · ${kids[k] || k}: ${VERDICT[v] || v}`).join('')}${r.again === true ? ' · would go again' : r.again === false ? ' · would not go again' : ''}${r.note ? ` · ${r.note}` : ''}`);
+      for (const d of days) {
+        const de = ents.filter((e) => e.day_index === d.day_index), bits = [];
+        for (const e of de) bits.push(e.kind === 'mood' ? `${kids[e.child] || e.child} ${e.mood || ''}${e.text ? ' ' + e.text : ''}` : `${e.kind}: ${String(e.text || '').slice(0, 400)}`);
+        if (bits.length) lines.push(`Day ${d.day_index + 1} (${tx(d.title)}): ${bits.join(' · ')}`);
+      }
+      if (spend.length) lines.push(`Spent: ${spend.map((s) => `${s.cat} ${Math.round(s.total)} ${s.cur}`).join(', ')}`);
+      if (lines.length < 3) return bad(res, 'empty', 422);
+      if (!(await aiTake())) return bad(res, 'limit', 429);
+      const ctl = new AbortController(); let done = false;
+      res.on('close', () => { if (!done) ctl.abort(); });
+      res.writeHead(200, { 'Content-Type': 'text/event-stream; charset=utf-8', 'Cache-Control': 'no-store', 'X-Accel-Buffering': 'no' });
+      const send = (ev, data) => res.write(`${ev ? `event: ${ev}\n` : ''}data: ${JSON.stringify(data)}\n\n`);
+      try {
+        const text = await ai.writeStory({ lang, whole: true, mode: 'lessons', facts: lines.join('\n').slice(0, 14000), kids: await kidsFor(t), signal: ctl.signal, onText: (x) => send(null, { t: x }) });
+        const id = `${t.id}.lessons.all`;
+        await q(`INSERT INTO entries (id, family_id, trip_id, day_index, kind, text, created_by, created_uid, edited_uid, edited_by, src) VALUES ($1,$2,$3,NULL,'lessons',$4,$5,$6,$6,$5,'ai')
+          ON CONFLICT (id) DO UPDATE SET text=EXCLUDED.text, updated_at=now(), edited_uid=EXCLUDED.edited_uid, edited_by=EXCLUDED.edited_by, src='ai'`, [id, FAMILY, t.id, text, clip(req.user.name, 40), req.user.uid]);
+        done = true; send('done', { text, id });
+      } catch (e) {
+        done = true;
+        if (ctl.signal.aborted) return res.end();
+        console.error('lessons', e.code || e.status || e.message);
+        send('error', { error: e.code === 'refusal' ? 'refusal' : 'failed' });
+      }
+      res.end();
+    } catch (e) { next(e); }
+  });
   r.post('/api/b/likes', ...W, async (req, res, next) => {
     try {
       if (!ai || !ai.enabled()) return bad(res, 'no-key', 501);
@@ -1484,7 +1546,7 @@ function router({ pool, media, A, ai, hooks = {} }) {   // hooks.heart(h): set b
       else if (b.pin !== undefined && String(b.pin) !== '') {
         const code = String(b.pin);
         if (!/^\d{6,12}$/.test(code)) return bad(res, 'pin');   // the login pad is digits; at least 6 so a group PIN is not guessable in the throttle window
-        if ((A.FAMILY_CODE && A.safeEq(code, A.FAMILY_CODE)) || (A.VIEW_PIN && A.safeEq(code, A.VIEW_PIN))) return bad(res, 'pin-taken', 409);
+        if (A.isFamilyCode(code) || (A.VIEW_PIN && A.safeEq(code, A.VIEW_PIN))) return bad(res, 'pin-taken', 409);
         pin = A.pinHash(code); pinLen = code.length;   // only the length is kept beside the hash: the sign-in pad opens by itself at the last digit
         if ((await q('SELECT 1 FROM viewer_groups WHERE pin_hash=$1 AND id<>$2', [pin, id])).length) return bad(res, 'pin-taken', 409);
       }
