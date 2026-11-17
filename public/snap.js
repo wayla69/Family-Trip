@@ -320,11 +320,10 @@ function viewSnapTest() {
   // Chrome on Android always says "Android 10" in its user agent; the real version comes from the client hints, once
   if (!snapT.platAsked && navigator.userAgentData && navigator.userAgentData.getHighEntropyValues) { snapT.platAsked = true;
     navigator.userAgentData.getHighEntropyValues(['platformVersion']).then((h) => { const pf = navigator.userAgentData.platform; if (pf && h.platformVersion) { snapT.plat = `${pf} ${h.platformVersion}`; render(); } }).catch(() => {}); }
-  return `<h1>${L('ตรวจเครื่องนี้', 'Check this phone')}</h1>
-<p class="sub">${L('กดตรวจ แล้วลองทำตามรายการด้านล่าง เสร็จแล้วกด "คัดลอกผล" ส่งให้ผู้พัฒนา ไม่มีรูปหรือตำแหน่งออกจากเครื่อง', 'Run the check, try the list below, then "copy the results" and send them to the developer — no photo or position leaves the phone')}</p>
+  return `${pageHead('checkphone', PG.teal, L('ตั้งค่า', 'Settings'), L('ตรวจเครื่องนี้', 'Check this phone'), L('กดตรวจ แล้วลองทำตามรายการด้านล่าง เสร็จแล้วกด "คัดลอกผล" ส่งให้ผู้พัฒนา ไม่มีรูปหรือตำแหน่งออกจากเครื่อง', 'Run the check, try the list below, then "copy the results" and send them to the developer — no photo or position leaves the phone'))}
 <button type="button" class="btn wide" data-a="devcheck"${snapT.devBusy ? ' disabled' : ''}>${snapT.devBusy ? L('กำลังตรวจ…', 'Checking…') : L('ตรวจเครื่องนี้', 'Check this phone')}</button>
 ${devHtml()}
-<h2 class="snaph2">${L('ทดสอบรูปบนเครื่องนี้', 'Photo check on this phone')}</h2>
+<h2 class="snaph2 pch"><span class="pcpic">${hubIc('snapcam')}</span><span>${L('ทดสอบรูปบนเครื่องนี้', 'Photo check on this phone')}</span></h2>
 <p class="notice">${L('หน้านี้ใช้ทดสอบเล่มจากรูป: ดูว่ามือถืออ่านเวลาถ่ายและตำแหน่งจากรูปได้หรือไม่ ไม่มีรูปถูกส่งไปไหน และไม่แสดงพิกัด แสดงแค่ว่ามีหรือไม่มี',
     'A check for the book-from-photos idea: does this phone hand over when and where each photo was taken? Nothing is uploaded and no position is shown — only whether there is one.')}</p>
 <p class="label">${esc(snapDevice())}</p>
@@ -352,7 +351,7 @@ const devHand = () => { try { return ls('devHand') || {}; } catch (_) { return {
 function devHtml() {
   const d = snapT.dev, hand = devHand(), mark = (s) => (s === 'ok' ? '✓' : s === 'no' ? '✗' : s === 'warn' ? '!' : '—');
   return `${d ? `<ul class="devlist">${d.rows.map(([lab, st, det]) => `<li class="dv-${st}"><b aria-hidden="true">${mark(st)}</b><span>${esc(lab)}${det ? `<small>${esc(det)}</small>` : ''}</span></li>`).join('')}</ul>` : ''}
-<h2 class="snaph2">${L('ลองด้วยมือ', 'Try by hand')}</h2><p class="sub">${L('แตะเพื่อบอกผล: ได้ ✓ · ไม่ได้ ✗', 'Tap to say how it went: works ✓ · does not ✗')}</p>
+<h2 class="snaph2 pch"><span class="pcpic">${hubIc('pencil')}</span><span>${L('ลองด้วยมือ', 'Try by hand')}</span></h2><p class="sub">${L('แตะเพื่อบอกผล: ได้ ✓ · ไม่ได้ ✗', 'Tap to say how it went: works ✓ · does not ✗')}</p>
 <div class="devhand">${DEV_HAND.map(([k, th, en]) => `<button type="button" class="devh dv-${hand[k] || 'none'}" data-a="devhand" data-v="${k}" aria-pressed="${!!hand[k]}"><b aria-hidden="true">${mark(hand[k])}</b><span>${L(th, en)}</span></button>`).join('')}</div>`;
 }
 async function devCheck() {
@@ -836,8 +835,7 @@ function viewSnap(p) {
     const shq = route().q.get('shared');
     if (shq !== null) { history.replaceState(null, '', '#/snap'); snapTakeShared().then((fs) => { if (fs.length) snapStartRead(fs); else toast(L('การแชร์ไม่มีรูปติดมา', 'The share came without photos')); }).catch(() => {}); }
     const mode = (snapS && snapS.mode) || snapMode;
-    return `<h1>${L('เล่มจากรูป', 'A book from photos')}</h1>
-<p class="sub">${L('เลือกรูปของทริป แอปจัดวันและสถานที่ให้ แล้วค่อยแก้สิ่งที่ไม่ตรง', 'Pick the trip’s photos — the app sorts them into days and places, you fix what is off')}</p>
+    return `${pageHead('snapcam', PG.pink, L('เล่มใหม่', 'New book'), L('เล่มจากรูป', 'A book from photos'), L('เลือกรูปของทริป แอปจัดวันและสถานที่ให้ แล้วค่อยแก้สิ่งที่ไม่ตรง', 'Pick the trip’s photos — the app sorts them into days and places, you fix what is off'))}
 <div class="tpk snapmode" role="group" aria-label="${L('ทริปนี้', 'This trip')}">${[['after', L('กลับมาแล้ว', 'We’re back'), L('เลือกรูปทั้งทริปทีเดียว', 'Pick the whole trip’s photos at once')], ['live', L('กำลังเที่ยวอยู่', 'We’re on the trip'), L('เล่มเริ่มวันนี้ แล้วค่อยเติมทุกวัน', 'The book starts today, add to it each day')]]
     .map(([k, h, sm]) => `<button type="button" class="tpo" data-a="snapmode" data-v="${k}" aria-pressed="${mode === k}"><b>${h}</b><small>${sm}</small><span class="ck" aria-hidden="true">✓</span></button>`).join('')}</div>
 <label class="flabel" for="snapname">${L('ชื่อเล่ม (ไม่ใส่ก็ได้ แอปตั้งให้)', 'Book name (optional — the app names it)')}</label>
@@ -1020,8 +1018,7 @@ const snapLive = (t) => !!t && t.kind === 'snap' && (!!t.open || (!!((t.theme ||
    brings its picture, crest and town). A typed name is the book's in both languages: the family named it. */
 function viewSnapEdit(t) {
   const field = (cls, data, val, ph, max, extra) => `<input class="field ${cls}" type="text" ${data} maxlength="${max}" value="${esc(val || '')}" placeholder="${esc(ph)}"${extra || ''}>`;
-  return `<h1>${L('แก้เล่ม', 'Edit the book')}</h1>
-<p class="sub">${L('แก้แล้วบันทึกเองเมื่อออกจากช่อง สถานที่ใหม่จะได้รูปจากคลังให้ด้วย', 'Saved when you leave a box — a new place brings its picture from the library')}</p>
+  return `${pageHead('pencil', PG.teal, L('เล่มจากรูป', 'A book from photos'), L('แก้เล่ม', 'Edit the book'), L('แก้แล้วบันทึกเองเมื่อออกจากช่อง สถานที่ใหม่จะได้รูปจากคลังให้ด้วย', 'Saved when you leave a box — a new place brings its picture from the library'))}
 <label class="flabel" for="sebook">${L('ชื่อเล่ม', 'Book name')}</label>
 ${field('sebook', `id="sebook" data-t="${esc(t.id)}"`, T(t.title), L('ชื่อเล่ม', 'Book name'), 120)}
 <datalist id="snapgeo">${snapGeoNames()}</datalist>
@@ -1287,8 +1284,7 @@ ${why ? `<p class="notice">${why}</p>` : ''}
     : `<a class="btn wide" href="#/t/${encodeURIComponent(t.id)}/draft/review">${L('ตรวจร่างทีละวัน', 'Check the draft, day by day')}</a><a class="linkbtn" href="#/t/${encodeURIComponent(t.id)}/book">${L('อ่านเล่ม', 'Read the book')}</a>`}</div>`;
   }
   const row = (k, th, en, sth, sen) => `<label class="snapopt"><span><b>${L(th, en)}</b>${sth ? `<small>${L(sth, sen)}</small>` : ''}</span><input type="checkbox" data-snapopt="${k}"${o[k] ? ' checked' : ''}></label>`;
-  return `<h1>${L('ให้ผู้ช่วยร่างเล่ม', 'Let the helper draft the book')}</h1>
-<p class="sub">${L('ผู้ช่วยเขียนร่างให้ทั้งเล่ม คุณแก้ได้ทุกบรรทัดก่อนพิมพ์', 'The helper drafts the whole book — you can change every line before printing')}</p>
+  return `${pageHead('helper', PG.gold, L('เล่มจากรูป', 'A book from photos'), L('ให้ผู้ช่วยร่างเล่ม', 'Let the helper draft the book'), L('ผู้ช่วยเขียนร่างให้ทั้งเล่ม คุณแก้ได้ทุกบรรทัดก่อนพิมพ์', 'The helper drafts the whole book — you can change every line before printing'))}
 <div class="snapopts">${S.features.photoAi ? row('photos', 'ให้ผู้ช่วยดูรูปก่อน', 'Let the helper look at the photos first', 'คำบรรยายรูป แท็ก และรูปโปรด ⭐ ของแต่ละวัน แล้วเขียนจากที่เห็น', 'Captions, tags and each day’s ⭐ — then it writes from what it saw') : ''}
 ${row('names', 'ชื่อเล่ม และชื่อของแต่ละวัน', 'The book’s and the days’ names', 'วันที่คุณตั้งชื่อเองแล้วจะไม่ถูกเปลี่ยน', 'A day you named yourself keeps its name')}
 ${row('sums', 'สรุปวันละ 2–3 ประโยค', 'Each day in 2–3 sentences', 'จากสถานที่ เวลา และคำที่คุณจดไว้', 'From the places, times and your notes')}
@@ -1309,8 +1305,7 @@ function viewSnapReview(t) {
   const box = (kind, d, label, rows) => { const id = d === null ? `${t.id}.${kind}.all` : `${t.id}.${kind}.d${d}`, e = ent(id);
     return `<label class="flabel" for="rv-${esc(id)}">${label}</label>${tag(e)}<textarea id="rv-${esc(id)}" class="field" rows="${rows}" data-a-blur="${kind}" data-t="${esc(t.id)}"${d === null ? '' : ` data-d="${d}"`} data-draft="rv:${esc(id)}" placeholder="${L('ยังว่าง เขียนเองได้', 'Empty — write your own')}">${esc((e && e.text) || '')}</textarea>`; };
   const n = snapDrafted(t).length;
-  return `<h1>${L('ตรวจร่าง', 'Check the draft')}</h1>
-<p class="sub">${L('แก้ได้ทุกช่อง ออกจากช่องแล้วบันทึกเอง', 'Change any box — it saves when you leave it')}</p>
+  return `${pageHead('review', PG.orange, L('เล่มจากรูป', 'A book from photos'), L('ตรวจร่าง', 'Check the draft'), L('แก้ได้ทุกช่อง ออกจากช่องแล้วบันทึกเอง', 'Change any box — it saves when you leave it'))}
 ${n ? `<button type="button" class="btn ghost wide" data-a="snapkeepall" data-t="${esc(t.id)}">${L(`ใช้ร่างทุกอันเลย (${n})`, `Keep every draft (${n})`)}</button>` : ''}
 <section class="rvbook pz" style="--g1:${esc(t.theme.accent || '#4F7BFF')}">${((t.passport || {}).style || {}).crest ? `<img class="rvcrest" src="${esc(t.passport.style.crest)}" alt="">` : ''}<label class="flabel" for="rvtitle">${L('ชื่อเล่ม', 'Book name')}</label>
 <input id="rvtitle" class="field" type="text" maxlength="120" data-snaprt="${esc(t.id)}" value="${esc(T(t.title))}">
