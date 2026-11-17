@@ -264,6 +264,63 @@ function create({ pool, media, A, family, cards, done }) {
       await sendRanged(req, res, media, key(t.id, t.reel.v), 'video/mp4');
     } catch (e) { next(e); }
   });
+  /* The year's film (owner, Nov 2026: "สรุปทั้งปี … ทั้งแบบคลิป"): every book that starts in the year, in order — per book its card
+     and up to four photos (⭐ first, spread through the trip; three when the year has more than five books), no clips, the year's own
+     title and end cards (#/reelyear/<y>/<lang>/<ids>). Kept as r/year-<y>/<v>.mp4, named in settings 'year_reels' {y: {v, at, secs, bytes, n}}. */
+  const yearKey = (y, v) => `r/year-${y}/${v}.mp4`;
+  const years = async () => { const r = (await q("SELECT value FROM settings WHERE key='year_reels'"))[0]; try { return r ? JSON.parse(r.value) : {}; } catch (_) { return {}; } };
+  async function startYear(y, { lang = 'th', mood = 'warm' } = {}) {
+    if (!/^\d{4}$/.test(String(y))) return { code: 404, error: 'year' };
+    if (job && job.state === 'run') return { code: 409, error: 'busy', trip: job.trip };
+    const mine = job = { trip: 'year:' + y, state: 'run', pct: 0, step: 'cards', at: Date.now() };
+    const drop = (code, error) => { if (job === mine) job = null; return { code, error }; };
+    try {
+      const ts = await q("SELECT id FROM trips WHERE family_id=$1 AND extract(year FROM date_from)=$2 ORDER BY date_from", [family, +y]);
+      const rows = (await q('SELECT id, trip_id, day_index, mime, highlight, taken_at, storage_key FROM media WHERE family_id=$1 AND trip_id = ANY($2) AND mime LIKE $3', [family, ts.map((t) => t.id), 'image/%']))
+        .filter((m) => !/^dr-/.test(m.id) || m.highlight).map((m) => ({ id: m.id, trip: m.trip_id, highlight: !!m.highlight, at: m.taken_at ? new Date(m.taken_at).getTime() : 0, storage_key: m.storage_key }));
+      const k = ts.length > 5 ? 3 : 4;
+      const picks = ts.map((t, i) => {
+        const ph = rows.filter((m) => m.trip === t.id).sort((a, b) => a.at - b.at), pick = ph.filter((m) => m.highlight).slice(0, k), rest = ph.filter((m) => !pick.includes(m)), need = Math.min(k - pick.length, rest.length);
+        for (let j = 0; j < need; j++) pick.push(rest[Math.floor((j + 0.5) * rest.length / need)]);
+        return { day: i, trip: t.id, photos: pick.sort((a, b) => a.at - b.at).map((m) => m.id), clip: null, caps: [], voice: null };
+      }).filter((d) => d.photos.length);
+      if (picks.reduce((s, d) => s + d.photos.length, 0) < 3) return drop(400, 'few');
+      lang = lang === 'en' ? 'en' : 'th'; mood = moodOf(mood);
+      (async () => {
+        try {
+          const shot = await cards(null, lang, [], [], `reelyear/${y}/${lang}/${picks.map((d) => encodeURIComponent(d.trip)).join('.')}`);
+          if (!shot || !Array.isArray(shot.cards) || shot.cards.length !== picks.length + 2) throw new Error('cards');
+          mine.step = 'film';
+          const out = await make({ picks, cards: shot.cards, mood, get: (kk) => media.get(kk), keyOf: mediaKey(rows), step: (p) => { mine.pct = Math.round(p * 95); } });
+          const v = crypto.randomBytes(6).toString('hex');
+          await media.put(yearKey(y, v), out.mp4, 'video/mp4');
+          const all = await years(), old = all[y];
+          all[y] = { v, at: Date.now(), secs: out.secs, bytes: out.mp4.length, n: picks.reduce((s, d) => s + d.photos.length, 0), lang, mood };
+          await q("INSERT INTO settings (key, value) VALUES ('year_reels', $1) ON CONFLICT (key) DO UPDATE SET value=EXCLUDED.value", [JSON.stringify(all)]);
+          if (old && old.v) await media.del(yearKey(y, old.v)).catch(() => {});
+          Object.assign(mine, { state: 'done', pct: 100, step: 'done', reel: all[y] });
+        } catch (e) { console.error('reel year', e.message, e.detail || ''); Object.assign(mine, { state: 'error', err: e.message === 'cards' ? 'cards' : 'film' }); }
+      })();
+      return { code: 202 };
+    } catch (e) { drop(500, 'error'); throw e; }
+  }
+  r.post('/api/b/reel-year/:y', A.requireEditor, express.json({ limit: '4kb' }), async (req, res, next) => {
+    try {
+      const b = req.body || {}, out = await startYear(req.params.y, { lang: b.lang, mood: b.mood });
+      if (out.code === 202) return res.status(202).json({ ok: true });
+      res.status(out.code).json({ error: out.error, ...(out.trip ? { trip: out.trip } : {}) });
+    } catch (e) { next(e); }
+  });
+  r.get('/api/b/reel-year', A.requireEditor, async (req, res, next) => { try { res.setHeader('Cache-Control', 'no-store'); res.json({ years: await years() }); } catch (e) { next(e); } });
+  r.get('/media/reel-year/:y', A.requireEditor, async (req, res, next) => {
+    try {
+      const x = /^\d{4}$/.test(req.params.y) ? (await years())[req.params.y] : null;
+      if (!x || !/^[0-9a-f]{12}$/.test(x.v || '')) return res.sendStatus(404);
+      res.setHeader('Cache-Control', 'private, max-age=31536000, immutable');
+      if (req.query.dl) res.setHeader('Content-Disposition', `attachment; filename="year-${req.params.y}.mp4"`);
+      await sendRanged(req, res, media, yearKey(req.params.y, x.v), 'video/mp4');
+    } catch (e) { next(e); }
+  });
   // "we're home" on a book from photos (bookshelf.js hooks.home): the film is made by itself when the book has none yet and enough
   // photos; nothing happens while another film is being made
   async function home({ trip }) {
@@ -271,7 +328,7 @@ function create({ pool, media, A, family, cards, done }) {
     if (!t || (t.reel && t.reel.v)) return { code: 409, error: 'has' };
     return start(trip, { lang: 'th', mood: 'warm', auto: true });
   }
-  return { router: r, key, start, home };
+  return { router: r, key, start, home, startYear };
 }
 
 module.exports = { create, plan, musicWav, make, D, MOODS };

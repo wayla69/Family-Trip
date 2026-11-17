@@ -191,6 +191,18 @@ function create({ pool, family, A, sender = (sub, payload, opt) => webpush.sendN
     for (const s of subs) if (await send(s, msg(s.lang))) n++;
     return n;
   }
+  // a relative sent photos for a book (server/inbox.js): one nudge per ten minutes, no name, no photo; opens the photos waiting
+  async function inbox({ trip }, now = Date.now()) {
+    const key = `inbox.${Math.floor(now / HEART_GAP)}`;
+    if (!(await pool.query('INSERT INTO push_sent (key) VALUES ($1) ON CONFLICT DO NOTHING RETURNING key', [key])).rowCount) return 0;
+    const subs = (await pool.query('SELECT * FROM push_subs WHERE family_id=$1', [family])).rows;
+    const msg = (lang) => JSON.stringify(lang === 'en'
+      ? { title: 'Photos from the family 📷', body: 'Someone sent photos for a book — have a look before they go in', tag: 'inbox', url: '/#/inbox' }
+      : { title: 'ญาติส่งรูปมาให้ 📷', body: 'เปิดดูก่อนว่าจะใส่ในเล่มไหม', tag: 'inbox', url: '/#/inbox' });
+    let n = 0;
+    for (const s of subs) if (await send(s, msg(s.lang))) n++;
+    return n;
+  }
   // the helper finished drafting a book from photos: one nudge to the grown-ups' phones that opens the page to check it (the book's name
   // only — never a draft's words); sent once per finished job
   async function draft({ trip, title }, now = Date.now()) {
@@ -246,7 +258,7 @@ function create({ pool, family, A, sender = (sub, payload, opt) => webpush.sendN
     const ok = await send(s, JSON.stringify({ title: th ? 'ทดสอบการเตือน' : 'Test reminder', body: th ? `ใช้ได้แล้ว — จะเตือนก่อนทุกกิจกรรม ${LEAD / 60000} นาที` : `Working — you will hear ${LEAD / 60000} min before each step`, tag: 'test', url: '/' }), why);
     res.status(ok ? 200 : 502).json(ok ? { ok } : { ok, status: why.status, reason: why.reason, apple: /push\.apple\.com/.test(s.endpoint) });
   });
-  return { router: r, tick, heart, draft, reel, start, stop };
+  return { router: r, tick, heart, draft, reel, inbox, start, stop };
 }
 
 module.exports = { init, create, due, extras, zoned, short, subject, LEAD };

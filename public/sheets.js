@@ -183,7 +183,7 @@ function reelPoll() {
     let j = null; try { j = (await api('GET', '/api/b/reel')).job; } catch (_) { reelPoll(); return; }
     reelJob = j;
     if (j && j.state === 'run') { const el = document.getElementById('reelpct'); if (el) el.textContent = `${j.pct || 0}%`; reelPoll(); return; }
-    if (j && j.state === 'done') { await load().catch(() => {}); toast(L('คลิปสรุปทริปเสร็จแล้ว 🎬', 'The trip film is ready 🎬')); }
+    if (j && j.state === 'done') { await load().catch(() => {}); if (/^year:/.test(j.trip)) { YEAR.reels = { ...(YEAR.reels || {}), [j.trip.slice(5)]: j.reel }; } toast(/^year:/.test(j.trip) ? L('คลิปทั้งปีเสร็จแล้ว 🎬', 'The year’s film is ready 🎬') : L('คลิปสรุปทริปเสร็จแล้ว 🎬', 'The trip film is ready 🎬')); }
     else if (j && j.state === 'error') toast(L('ทำคลิปไม่สำเร็จ ลองอีกครั้ง', 'The film could not be made — try again'));
     safeRender();
   }, 2500);
@@ -820,6 +820,15 @@ const A = {
     h.urls.forEach((u) => URL.revokeObjectURL(u));
     toast(L(`เพิ่ม ${h.pick.size} รูปแล้ว`, `${h.pick.size} added`)); safeRender();
   },
+  async yearreel(b) {   // the year's film (server/reel.js startYear)
+    const y = b.dataset.v; b.disabled = true;
+    try { await api('POST', `/api/b/reel-year/${encodeURIComponent(y)}`, { lang, mood: reelMood() }); reelJob = { trip: 'year:' + y, state: 'run', pct: 0 }; safeRender(); reelPoll(); }
+    catch (e) {
+      b.disabled = false;
+      if (e && e.error === 'busy' && e.body && e.body.trip === 'year:' + y) { reelJob = { trip: 'year:' + y, state: 'run', pct: 0 }; safeRender(); reelPoll(); return; }
+      toast(e && e.error === 'few' ? L('ต้องมีรูปในเล่มของปีนี้อย่างน้อย 3 รูป', 'The year’s books need at least 3 photos') : e && e.error === 'busy' ? L('กำลังทำคลิปอื่นอยู่ รอสักครู่', 'Another film is being made — try in a moment') : L('ต้องมีเน็ตเพื่อทำคลิป', 'You need a connection to make the film'));
+    }
+  },
   reelmood(b) { ls('reelMood', b.dataset.v); $$('.reelmood .tpo').forEach((x) => x.setAttribute('aria-pressed', String(x.dataset.v === b.dataset.v))); },
   async reelmake(b) {
     const t = trip(b.dataset.t); if (!t) return;
@@ -892,6 +901,33 @@ function putReview(card, patch) {
   return enqueue({ method: 'PUT', url: '/api/b/reviews/' + encodeURIComponent(id), body, local: { coll: 'reviews', id, row: { ...body, at: Date.now(), created_by: S.me.name } } });
 }
 Object.assign(A, {
+  inboxpick(b) {   // a relative picks photos to send for a book
+    const from = (($('#hfrom') || {}).value || ls('heartfrom') || '').trim();
+    if (!from) { const f = $('#hfrom'); if (f) f.focus(); toast(L('ใส่ชื่อผู้ส่งก่อน เช่น ยาย', 'Type who it is from first, e.g. Grandma')); return; }
+    ls('heartfrom', from);
+    let inp = document.getElementById('inboxin');
+    if (!inp) { inp = document.createElement('input'); inp.type = 'file'; inp.id = 'inboxin'; inp.accept = 'image/*'; inp.multiple = true; inp.hidden = true; document.body.append(inp); }
+    inp.dataset.t = b.dataset.t; inp.value = ''; inp.click();
+  },
+  async inboxok(b) {
+    const id = b.dataset.v, sel = document.getElementById('ibday-' + id), day = sel && sel.value !== '' ? +sel.value : null; b.disabled = true;
+    try { await api('POST', `/api/b/inbox/${encodeURIComponent(id)}/ok`, { day }); INBOX.items = (INBOX.items || []).filter((x) => x.id !== id); toast(L('ใส่ในเล่มแล้ว', 'In the book')); await load().catch(() => {}); }
+    catch (_) { toast(L('ใส่ไม่ได้ ลองอีกครั้ง', 'Could not add it — try again')); }
+    safeRender();
+  },
+  async inboxall(b) {
+    const ids = (INBOX.items || []).filter((x) => x.trip === b.dataset.t).map((x) => x.id); b.disabled = true; let n = 0;
+    for (const id of ids) { const sel = document.getElementById('ibday-' + id), day = sel && sel.value !== '' ? +sel.value : null; try { await api('POST', `/api/b/inbox/${encodeURIComponent(id)}/ok`, { day }); n++; INBOX.items = INBOX.items.filter((x) => x.id !== id); } catch (_) {} }
+    toast(L(`ใส่ในเล่มแล้ว ${n} รูป`, `${n} in the book`)); await load().catch(() => {}); safeRender();
+  },
+  async inboxno(b) {
+    if (!b.dataset.armed) { b.dataset.armed = '1'; b.textContent = L('แตะอีกครั้งเพื่อลบ', 'Tap again to delete'); return; }
+    const id = b.dataset.v; b.disabled = true;
+    try { await api('DELETE', `/api/b/inbox/${encodeURIComponent(id)}`); INBOX.items = (INBOX.items || []).filter((x) => x.id !== id); } catch (_) { toast(L('ลบไม่ได้ ลองอีกครั้ง', 'Could not delete — try again')); }
+    safeRender();
+  },
+  famzoom(b) { const r = route().parts, tid = r[0] === 'map' ? r[1] || '' : ''; FM.zoom = b.dataset.v ? { tid, ids: b.dataset.v.split('~') } : null; FM.pick = null; if (typeof kidWorldAt !== 'undefined') kidWorldAt = null; if (typeof beep === 'function' && r[0] === 'kid') beep('tap'); safeRender(); },
+  fampin(b) { const tid = route().parts[1] || ''; FM.pick = FM.pick && FM.pick.tid === tid && FM.pick.k === +b.dataset.v ? null : { tid, k: +b.dataset.v }; safeRender(); },
   async healthclear(b) {
     if (!b.dataset.armed) { b.dataset.armed = '1'; b.textContent = L('แตะอีกครั้งเพื่อล้าง', 'Tap again to clear'); return; }
     b.disabled = true;
@@ -1304,3 +1340,24 @@ async function refresh() {
   setInterval(() => { if (queue.length && !(allHeld && holdMedia())) flush(); else refresh(); }, 30000);
   if (S) flush();
 })();
+
+// a relative's photos for a book: made small on the phone (shrinkPh), sent one by one to wait for the parents (server/inbox.js)
+document.addEventListener('change', async (e) => {
+  if (e.target.id !== 'inboxin') return;
+  const t = trip(e.target.dataset.t), files = [...(e.target.files || [])].slice(0, 40), from = (ls('heartfrom') || '').trim();
+  if (!t || !files.length || !from) return;
+  INBOX.sending = files.length; safeRender(); let ok = 0;
+  const today = dayNow(t);
+  for (const f of files) {
+    try {
+      let at = 0; try { const m = await snapMeta(f); if (m && m.src === 'exif') at = snapWallMs(m.at, m.tz, t.timezone) || 0; } catch (_) {}
+      const { blob } = await shrinkPh(f), id = uid('ib').replace(/[^A-Za-z0-9_-]/g, '');
+      const u = `/api/b/inbox/${id}?trip=${encodeURIComponent(t.id)}&from=${encodeURIComponent(from)}${today >= 0 ? `&day=${today}` : ''}${at ? `&at=${at}` : ''}`;
+      const r = await fetch(u, { method: 'PUT', credentials: 'same-origin', headers: { 'x-mb': '1', 'content-type': 'image/jpeg' }, body: blob });
+      if (r.ok) ok++; else if (r.status === 429) { toast(L('วันนี้ส่งครบจำนวนแล้ว พรุ่งนี้ส่งต่อได้', 'That is enough for today — send more tomorrow')); break; }
+    } catch (_) { /* no signal: that one is not sent */ }
+    INBOX.sending = Math.max(0, INBOX.sending - 1); safeRender();
+  }
+  INBOX.sending = 0; inboxLoad(true);
+  toast(ok ? L(`ส่งแล้ว ${ok} รูป รอพ่อแม่ดู`, `${ok} sent — waiting for the parents`) : L('ส่งไม่ได้ ต้องมีเน็ต', 'Not sent — you need a connection'));
+});

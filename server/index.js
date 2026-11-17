@@ -88,10 +88,14 @@ app.post('/api/logout', (req, res) => { A.clearCookie(res); res.json({ ok: true 
 const HOOKS = {};   // filled below once the push scheduler exists
 // a book's own film (server/reel.js): its cards are the app's #/reelcards page, photographed by the PDF's Chromium with a read-only session
 const REEL = require('./reel').create({ pool: PG, media: MEDIA, A, family: BS.FAMILY,
-  cards: (trip, lang, days, caps) => PDF.cards({ base: `http://127.0.0.1:${PORT}`, cookie: A.makeToken('viewer', 'REEL', crypto.randomBytes(6).toString('hex')), trip, lang, days, caps }),
+  cards: (trip, lang, days, caps, at) => PDF.cards({ base: `http://127.0.0.1:${PORT}`, cookie: A.makeToken('viewer', 'REEL', crypto.randomBytes(6).toString('hex')), trip, lang, days, caps, path: at }),
   done: (x) => HOOKS.reel && HOOKS.reel(x) });
 HOOKS.home = (x) => REEL.home(x);   // "we're home" on a book from photos: its film is made by itself
 app.use(REEL.router);
+// photos from the relatives, waiting for a parent's yes (server/inbox.js)
+app.use(require('./inbox').router({ pool: PG, media: MEDIA, A, family: BS.FAMILY, hooks: HOOKS }));
+// the family map: every town of every book the viewer may see (server/famap.js)
+app.use(require('./famap').router({ pool: PG, A, family: BS.FAMILY }));
 // what went wrong on the family's phones, and how much room the books take (server/errors.js)
 app.use(require('./errors').create({ pool: PG, media: MEDIA, A, family: BS.FAMILY, reelKey: REEL.key }).router);
 app.use(BS.router({ pool: PG, media: MEDIA, A, ai: STORY, hooks: HOOKS }));
@@ -100,7 +104,8 @@ app.use(BS.router({ pool: PG, media: MEDIA, A, ai: STORY, hooks: HOOKS }));
 const REMIND = PUSH.create({ pool: PG, family: BS.FAMILY, A });
 HOOKS.heart = (h) => REMIND.heart(h);   // a relative's heart nudges the parents' phones
 HOOKS.draft = (x) => REMIND.draft(x);
-HOOKS.reel = (x) => REMIND.reel(x);   // the film made by itself is ready: a push to the parents' phones   // the helper finished a photo book's draft: "ready to check" on the parents' phones
+HOOKS.reel = (x) => REMIND.reel(x);
+HOOKS.inbox = (x) => REMIND.inbox(x);   // a relative sent photos: a nudge to the parents' phones   // the film made by itself is ready: a push to the parents' phones   // the helper finished a photo book's draft: "ready to check" on the parents' phones
 app.use(REMIND.router);
 
 // backup / restore (photos included): editors download, the scheduled job uses Bearer BACKUP_TOKEN
@@ -122,15 +127,33 @@ app.get('/api/backup/due', async (req, res, next) => {
 });
 app.post('/api/import', A.requireEditor, async (req, res, next) => {
   let file;
+  // the uploaded zip is removed before the answer goes out (a test read the folder right after a refused upload and found it)
+  const drop = async () => { if (file) { await fs.promises.rm(file, { force: true }).catch(() => {}); file = null; } };
   try {
     file = await BK.receive(req, DATA_DIR, 8e9);
-    res.json({ ok: true, ...(await BK.importZip(file, PG, MEDIA)) });
+    const out = await BK.importZip(file, PG, MEDIA);
+    await drop(); res.json({ ok: true, ...out });
   } catch (e) {
+    await drop();
     if (e.status) return res.status(e.status).json({ error: e.message });
     next(e);
-  } finally { if (file) fs.rm(file, { force: true }, () => {}); }
+  }
 });
 
+// A4 PDF of a year's books (views.js viewYearBook; editors — a relatives' group may not see every book of the year)
+app.get('/api/b/pdf-year/:y', A.requireEditor, async (req, res, next) => {
+  try {
+    if (!/^\d{4}$/.test(req.params.y)) return res.status(404).json({ error: 'year' });
+    const n = (await PG.query('SELECT count(*)::int n FROM trips WHERE family_id=$1 AND extract(year FROM date_from)=$2', [BS.FAMILY, +req.params.y])).rows[0].n;
+    if (!n) return res.status(404).json({ error: 'year' });
+    const cookie = A.makeToken('viewer', 'PDF', crypto.randomBytes(6).toString('hex'));
+    const pdf = await PDF.render({ base: `http://127.0.0.1:${PORT}`, cookie, route: `printyear/${req.params.y}`, footer: `${req.params.y} · ${new Date().toISOString().slice(0, 10)}` });
+    res.setHeader('Content-Type', 'application/pdf');
+    res.setHeader('Content-Disposition', `attachment; filename="year-${req.params.y}.pdf"`);
+    res.setHeader('Cache-Control', 'no-store');
+    res.end(pdf);
+  } catch (e) { next(e); }
+});
 // A4 PDF of a book, rendered by the server (relatives may download it too)
 app.get('/api/b/pdf/:trip', A.requireUser, async (req, res, next) => {
   try {

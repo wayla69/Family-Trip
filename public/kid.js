@@ -986,7 +986,13 @@ ${door.art !== undefined ? artImg(t, Math.min(door.art, t.days.length - 1), 'big
     if (mapFrom === null && kidEnter && !pre && i > 0 && mapModel(t)) mapFrom = mapPos(mapModel(t), Math.max(0, i - 1));   // walk in from yesterday's stop
     const mAt = mapAt !== null ? mapAt : pre ? 0 : null, mc = mapCard(t, kid, i, mAt);
     body = `<div class="kidguide">${guideImg(0)}<p>${mc.line}</p></div>
-${mapHtml(t, i, [kid].concat((t.theme.children || []).map((c) => c.slug).filter((s) => s !== kid)), mAt)}${mc.html}`;
+${mapHtml(t, i, [kid].concat((t.theme.children || []).map((c) => c.slug).filter((s) => s !== kid)), mAt)}${mc.html}
+<button class="kidbig mapworld" data-a="kidnav" data-v="#/kid/${esc(kid)}/world" data-say="${esc(L('ทุกที่ที่เราเคยไป', 'Everywhere we have been'))}">🌏 ${L('ทุกที่ที่เราเคยไป', 'Everywhere we have been')}</button>`;
+  } else if (view === 'world') {   // the family map for the kids (views.js famSvg): big pins, a tap says the town and how old they were
+    famLoad();
+    const pins = famShown(''), k = kidWorldAt !== null && pins[kidWorldAt] ? kidWorldAt : -1, p = pins[k], zoomed = pins.length < famPins('').length;
+    const line = p ? kidWorldLine(p, kid) : pins.length ? L('แตะหมุดดูสิ ว่าเราเคยไปที่ไหน', 'Tap a pin to see where we went') : L('ยังไม่มีหมุดเลย', 'No pins yet');
+    body = `<div class="kidguide">${guideImg(0)}<p>${esc(line)}</p></div>${pins.length || FM.pins === null ? `<div class="fmwrap kid">${famSvg(pins, k, true)}</div>` : ''}${p ? `<button class="kidbig" data-a="mapsay" data-say="${esc(line)}">🔊 ${L('ฟังอีกที', 'Say it again')}</button>` : ''}${zoomed ? `<button class="kidbig" data-a="famzoom" data-v="">🌏 ${L('ดูทั้งโลก', 'The whole world')}</button>` : ''}`;
   } else if (view === 'quiz' && ((d.plan || {}).quiz || []).length) {
     body = `<div class="kidguide">${guideImg(1)}<p>${L('แตะการ์ดเพื่อดูคำตอบ!', 'Tap a card to see the answer!')}</p></div>
 <div class="kidquiz">${d.plan.quiz.map((q, n) => `<button class="qcard" data-a="kidquiz" data-v="${n}" data-q="${esc(T(q.q))}" data-ans="${esc(T(q.a))}" aria-pressed="false"><small>${L('คำถาม', 'Question')} ${n + 1}</small><b>${esc(T(q.q))}</b><span class="ans" hidden>${esc(T(q.a))}</span></button>`).join('')}</div>`;
@@ -1187,6 +1193,7 @@ Object.assign(A, {
     beep('pop'); mapFrom = cur; mapAt = j; kidDay = mm.seq[j].day; render(); sayUi(T(mm.at[mm.seq[j].k]));
   },
   mapsay(b) { beep('tap'); burst(b, ['✨']); sayUi(b.dataset.say); },
+  kidworld(b) { beep('tap'); kidWorldAt = +b.dataset.v; render(); const p = famShown('')[kidWorldAt]; if (p) sayUi(kidWorldLine(p, kidNow())); },
   mapgo(b) { beep('tap'); kidDay = +b.dataset.d; kidPhoto = 0; nav(b.dataset.v); },
   mapquest(b) {   // this place's town on the adventure map (a town not reached yet: the road opens where the child stands)
     const kid = kidNow(), t = kidTrip(kid), i = +b.dataset.d; if (!t) return;
@@ -2128,6 +2135,17 @@ function playSong(n, kid) {
     songT = setTimeout(step, 400);
   };
   step();
+}
+// the kids' family map: which pin is open, and its line read aloud — "เราไปฮ่องกง ตอนมีมี่ 3 ขวบ"
+let kidWorldAt = null;
+function kidWorldLine(p, kid) {
+  const k = children().find((x) => x.slug === kid), town = T(p.name);
+  let age = '';
+  if (k && /^\d{4}-\d{2}$/.test(k.birth_ym || '') && /^\d{4}-\d{2}/.test(p.from || '')) {
+    const [y, m] = p.from.split('-').map(Number), [by, bm] = k.birth_ym.split('-').map(Number), mo = (y - by) * 12 + m - bm;
+    if (mo >= 0) age = mo < 12 ? L(`ตอน${kidName(kid)}ยังเป็นเบบี๋`, `when ${kidName(kid)} was a baby`) : L(`ตอน${kidName(kid)} ${famAgeM(mo)}`, `when ${kidName(kid)} was ${Math.floor(mo / 12)}`);
+  }
+  return age ? L(`เราไป${town} ${age}`, `We went to ${town} ${age}`) : L(`เราไป${town}มาแล้ว`, `We went to ${town}`);
 }
 // tap a shape on the colouring page
 document.addEventListener('click', (e) => {

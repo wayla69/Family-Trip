@@ -265,6 +265,41 @@ const T = 'hk-macau-2026';
       `room and phone problems: a script error is sent once (three throws), listed for the parents without the text it carried (${JSON.stringify({ sent: errs.length, h: h.errs })})`);
     await page.click('[data-a="healthclear"]'); await page.click('[data-a="healthclear"]'); await page.waitForFunction(() => /No phone reported/.test(document.querySelector('main').textContent), null, { timeout: 5000 }).catch(() => {});
     ok(/No phone reported/.test(await page.textContent('main')), 'room and phone problems: two taps clear the list'); }
+  // the family map (server/famap.js, views.js viewFamMap): every book's towns on one drawn map; a pin tells where, when and how old
+  { await page.goto(`${BASE}/#/`); await page.waitForSelector('.nbcard[href="#/map"]'); await page.click('.nbcard[href="#/map"]');
+    await page.waitForFunction(() => document.querySelectorAll('.fmsvg .fmpin').length >= 2 && document.querySelector('.fmland') && document.querySelector('.fmland').getAttribute('d').length > 200, null, { timeout: 15000 }).catch(() => {});
+    // the whole map: towns too close to tell apart are one numbered bubble; a tap zooms into them and their names show
+    const g0 = await page.evaluate(() => ({ groups: [...document.querySelectorAll('.fmgrp .fmn')].map((x) => +x.textContent), land: (document.querySelector('.fmland') || { getAttribute: () => '' }).getAttribute('d').length, chips: document.querySelectorAll('.fmchips .chip').length }));
+    await s.shot('family-map-all');
+    for (let k = 0; k < 3 && await page.locator('.fmpin', { hasText: 'Macau' }).count() === 0 && await page.locator('.fmgrp[data-v*="hk-macau"]').count(); k++) await page.locator('.fmgrp[data-v*="hk-macau"]').first().click({ force: true });
+    await page.waitForSelector('.fmout', { timeout: 3000 }).catch(() => {});
+    const m0 = await page.evaluate(() => ({ pins: document.querySelectorAll('.fmsvg .fmpin').length, names: [...document.querySelectorAll('.fmpin text')].map((x) => x.textContent), out: !!document.querySelector('.fmout') }));
+    Object.assign(m0, g0);
+    await page.evaluate(() => { S.children.forEach((k, i) => { if (!k.birth_ym) k.birth_ym = ['2023-05', '2025-02'][i] || '2022-01'; }); });   // this test family has no birth months yet
+    await page.locator('.fmpin', { hasText: 'Macau' }).first().click({ force: true }); await page.waitForSelector('#fmcard', { timeout: 5000 }).catch(() => {});
+    const card = await page.textContent('#fmcard').catch(() => '');
+    await s.shot('family-map');
+    ok(m0.groups.length >= 1 && m0.groups.every((n) => n >= 2) && m0.out && m0.names.includes('Hong Kong') && m0.names.includes('Macau') && m0.land > 1000 && m0.chips >= 3 && /Macau/.test(card) && /Then: .*Mimi \d/.test(card) && await s.noHScroll(),
+      `family map: every book's towns as pins on drawn land; a pin says the town, the book, when, and the children's ages then (${JSON.stringify({ ...m0, card })})`);
+    await page.click('.fmout'); await page.click('.fmchips .chip:nth-child(3)');
+    await page.waitForFunction(() => /#\/map\/./.test(location.hash) && document.querySelector('.fmsvg'), null, { timeout: 5000 }).catch(() => {}); await page.waitForTimeout(300);
+    const one = await page.evaluate(() => { const tid = location.hash.split('/')[2]; return { n: [...document.querySelectorAll('.fmsvg .fmpin:not(.fmgrp)')].length + [...document.querySelectorAll('.fmgrp .fmn')].reduce((s, x) => s + +x.textContent, 0), all: famPins(tid).length, labels: document.querySelectorAll('.fmpin text:not(.fmn)').length }; });
+    await s.shot('family-map-book');
+    ok(one.n >= 3 && one.n === one.all && one.labels >= 2, `family map: a book's chip fits the map to that book's towns, every town a pin or in a bubble (${JSON.stringify(one)})`);
+    const kidLine = await page.evaluate(() => { const p = famPins('').find((x) => x.name.en === 'Macau'); return p ? kidWorldLine(p, 'mimi') : ''; });
+    ok(/^We went to Macau when Mimi was \d/.test(kidLine), `family map in kid mode: the line read aloud says where and how old (${kidLine})`); }
+  // the year (views.js viewYear): every book of the year as one book, the children as they were on each trip; its PDF and its film
+  { await page.goto(`${BASE}/#/`); await page.click('.nbcard[href^="#/year/"]'); await page.waitForSelector('.yrbook section.pg', { timeout: 10000 });
+    const yb = await page.evaluate(() => ({ y: location.hash.split('/')[2], pages: document.querySelectorAll('.yrbook section.pg').length, trips: yearTrips(location.hash.split('/')[2]).length, grow: document.querySelectorAll('.ygrow img').length, facts: document.querySelectorAll('.yrnum .fact').length }));
+    await s.shot('year');
+    ok(yb.pages === yb.trips + 3 && yb.grow >= 2 && yb.facts >= 2 && await s.noHScroll(), `the year: a cover, the numbers with the children on each trip, a page per book and an end (${JSON.stringify(yb)})`);
+    const pdf = await page.evaluate(async (y) => { const r = await fetch(`/api/b/pdf-year/${y}`); const b = new Uint8Array(await r.arrayBuffer()); return { s: r.status, t: r.headers.get('content-type'), head: String.fromCharCode(...b.slice(0, 5)), n: b.length }; }, yb.y);
+    ok(pdf.s === 200 && pdf.t === 'application/pdf' && pdf.head === '%PDF-' && pdf.n > 20000, `the year: its book prints as one PDF (${JSON.stringify(pdf)})`);
+    const fr = await page.evaluate(async (y) => (await fetch(`/api/b/reel-year/${y}`, { method: 'POST', headers: { 'x-mb': '1', 'content-type': 'application/json' }, body: JSON.stringify({ lang: 'en', mood: 'sleep' }) })).status, yb.y);
+    let yj = null; for (let k = 0; k < 150 && fr === 202; k++) { yj = (await page.evaluate(async () => (await (await fetch('/api/b/reel')).json()).job)); if (!yj || yj.state !== 'run') break; await page.waitForTimeout(1000); }
+    const yr = fr === 202 ? (await page.evaluate(async () => (await (await fetch('/api/b/reel-year')).json()).years)) : {};
+    const got = yr[yb.y], vid = got ? await page.evaluate(async ([y, v]) => { const r = await fetch(`/media/reel-year/${y}?v=${v}`, { headers: { range: 'bytes=0-99' } }); return r.status; }, [yb.y, got.v]) : 0;
+    ok((fr === 400) || (got && got.mood === 'sleep' && vid === 206 && yj && yj.state === 'done'), `the year: its film made from every book's best photos, played in ranges (${JSON.stringify({ fr, state: yj && yj.state, got, vid })})`); }
   // #/snap — a book from photos (docs/SNAP-BOOK.md P1): pick → read on the phone → days and places → make the book. Seven synthetic
   // photos: three on 12 Dec near Khao Yai (two JPEGs and a HEIF), one on 13 Dec with no position, one on 14 Dec with an empty 0,0 one,
   // one dated by its file only (today) and one in Sydney in April — the last two fall outside the trip and stay out
@@ -1573,7 +1608,7 @@ const T = 'hk-macau-2026';
   ok(await page.locator('.mapsec .tmap .pin').count() === 7 && await page.locator('.stkpage #stkboard .stk.on').count() === 1 && await page.locator('.stkpage #stktray').count() === 0, 'passport: the map, and the sticker page (read-only) Mimi made');
   await page.goto(BASE + '/#/'); await page.waitForSelector('.shelf');
   ok(await page.locator('.ppmini .ppc').count() === 2, 'shelf: passport covers for both kids');
-  ok(/1 (รีวิว|review)/.test(await page.textContent('a.nbcard')), 'shelf: travel notebook card counts the review');
+  ok(/1 (รีวิว|review)/.test(await page.textContent('a.nbcard[href="#/notebook"]')), 'shelf: travel notebook card counts the review');
   // backup: never done on this phone → the card nags; one tap downloads the full zip, then it reads up to date
   ok(await page.locator('.nbcard.backup.warn').count() === 1 && /ยังไม่เคย|Never backed up/.test(await page.textContent('.nbcard.backup')), 'shelf: backup card warns that this phone never backed up');
   const [dl] = await Promise.all([page.waitForEvent('download'), page.click('.nbcard.backup')]);
@@ -1582,7 +1617,7 @@ const T = 'hk-macau-2026';
   await page.waitForSelector('.nbcard.backup:not(.warn)');
   ok(/ครบแล้ว|up to date/.test(await page.textContent('.nbcard.backup')) && await page.locator('.shelf').count() === 1, 'backup: the card reads up to date and the shelf stays open');
   await s.shot('15b-shelf-backup', false);
-  await page.click('a.nbcard'); await page.waitForSelector('.nblist');
+  await page.click('a.nbcard[href="#/notebook"]'); await page.waitForSelector('.nblist');
   ok(await page.locator('.nbrow').count() === 1 && (await page.textContent('.nbrow')).includes('★★★★☆') && /เด็กนอนดี|kids slept well/.test(await page.textContent('.nbsum')), 'notebook page: the stay with its stars; "what worked" lists the tag');
   ok(await s.noHScroll(), 'notebook page fits the phone');
   await s.shot('13-notebook');
@@ -1817,8 +1852,25 @@ const T = 'hk-macau-2026';
   ok(await page.locator('.hlist li').count() === 1 && (await page.textContent('.hlist li')).includes('Big hug') && await page.locator('.hlist [data-a="delheart"]').count() === 1, 'heart: sent, listed in the book, grandma may take back her own');
   ok(await page.evaluate(() => ls('heartfrom')) === 'Grandma' && await page.inputValue('#hfrom') === 'Grandma' && await page.inputValue('#htext') === '', 'heart: name remembered on this phone, note cleared');
   await s.shot('21-viewer-heart');
+  // grandma sends a photo for the book (server/inbox.js): it waits for the parents, who put it in from #/inbox
+  { const [fc] = await Promise.all([page.waitForEvent('filechooser'), page.click('[data-a="inboxpick"]')]);
+    await fc.setFiles([{ name: 'grandma.jpg', mimeType: 'image/jpeg', buffer: await jpg(2, 1600, 1200) }]);
+    await page.waitForFunction(() => /1 waiting for the parents/.test((document.querySelector('.ibsend') || {}).textContent || ''), null, { timeout: 15000 }).catch(() => {});
+    const waiting = await page.textContent('.ibsend').catch(() => '');
+    await s.shot('21b-viewer-send-photo');
+    ok(/1 waiting for the parents/.test(waiting) && !(await apiState(page)).media.some((m) => m.created_by === 'Grandma'), `relatives' photos: grandma sends one from the hearts box; it waits, not in the book (${waiting.replace(/\s+/g, ' ').trim()})`); }
   ok(s.errs.length === 0, 'viewer: no console errors ' + s.errs.join(' | '));
   await s.ctx.close();
+  { const e = await session('inbox'); await login(e.page);
+    await e.page.goto(`${BASE}/#/`); await e.page.waitForSelector('.ibcard', { timeout: 10000 }).catch(() => {});
+    const card = await e.page.textContent('.ibcard').catch(() => '');
+    await e.page.click('.ibcard'); await e.page.waitForSelector('.ibit');
+    await e.shot('inbox');
+    await e.page.click('.ibit [data-a="inboxok"]');
+    await e.page.waitForFunction(() => !document.querySelector('.ibit') && S.media.some((m) => m.created_by === 'Grandma'), null, { timeout: 10000 }).catch(() => {});
+    const st = await apiState(e.page);
+    ok(/1 photo from the family/.test(card) && st.media.some((m) => m.created_by === 'Grandma') && await e.noHScroll(), `relatives' photos: the parents see "1 photo from the family", look, and put it in the book (${card.replace(/\s+/g, ' ').trim()})`);
+    await e.ctx.close(); }
 }
 
 // ---------- before the trip: countdown doors, packing, finger drawing, hearts, bedtime story ----------

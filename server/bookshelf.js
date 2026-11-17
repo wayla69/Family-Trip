@@ -159,11 +159,14 @@ function router({ pool, media, A, ai, hooks = {} }) {   // hooks.heart(h): set b
       }
       for (const e of await q('SELECT storage_key FROM emoji WHERE family_id=$1 AND storage_key IS NOT NULL', [FAMILY])) keys.push(e.storage_key);
       for (const t of await q("SELECT id, reel->>'v' v FROM trips WHERE family_id=$1 AND reel IS NOT NULL", [FAMILY])) if (/^[0-9a-f]{12}$/.test(t.v || '')) keys.push(`r/${t.id}/${t.v}.mp4`);   // the books' films
+      { const yr = (await q("SELECT value FROM settings WHERE key='year_reels'"))[0]; let ys = {}; try { ys = yr ? JSON.parse(yr.value) : {}; } catch (_) {}
+        for (const [y, x] of Object.entries(ys)) if (/^\d{4}$/.test(y) && x && /^[0-9a-f]{12}$/.test(x.v || '')) keys.push(`r/year-${y}/${x.v}.mp4`); }   // the years' films
       for (const t of await q("SELECT id, theme, (SELECT count(*)::int FROM trip_days WHERE trip_id=t.id) AS days FROM trips t WHERE family_id=$1 AND theme->>'artV' IS NOT NULL", [FAMILY])) keys.push(...artKeys(t.id, artV(t.theme), t.days));
+      keys.push(...(await require('./inbox').keysOf(pool, FAMILY)));   // the relatives' photos still waiting
       let gone = 0;
       for (const k of new Set(keys)) { try { await media.del(k); gone++; } catch (_) { /* a file already missing is fine */ } }
       await q('DELETE FROM families WHERE id=$1', [FAMILY]);
-      await q("DELETE FROM settings WHERE key IN ('family_likes', 'emoji_seeded', 'emoji_offered', 'emoji_stock_offered')");
+      await q("DELETE FROM settings WHERE key IN ('family_likes', 'emoji_seeded', 'emoji_offered', 'emoji_stock_offered', 'year_reels')");
       await q('INSERT INTO families (id, name) VALUES ($1, $2) ON CONFLICT (id) DO NOTHING', [FAMILY, 'Family']);
       await syncSeeds(pool); await EMOJI.seed(pool, FAMILY); A.groupsChanged();
       console.log(`family erased on request: ${gone} files, every row`);   // no names, no codes
@@ -654,6 +657,7 @@ function router({ pool, media, A, ai, hooks = {} }) {   // hooks.heart(h): set b
       }
       { const rl = (await q('SELECT reel FROM trips WHERE id=$1', [t.id]))[0]; if (rl && rl.reel && /^[0-9a-f]{12}$/.test(rl.reel.v || '')) await media.del(`r/${t.id}/${rl.reel.v}.mp4`).catch(() => {}); }   // its film (server/reel.js)
       { const tt = (await q('SELECT theme, (SELECT count(*)::int FROM trip_days WHERE trip_id=t.id) AS days FROM trips t WHERE id=$1', [t.id]))[0]; for (const k of artKeys(t.id, artV(tt && tt.theme), (tt && tt.days) || 0)) await media.del(k).catch(() => {}); }   // its drawn pictures (server/bookart.js)
+      for (const k of await require('./inbox').keysOf(pool, FAMILY, t.id)) await media.del(k).catch(() => {});   // the relatives' photos still waiting for it
       await q('DELETE FROM trips WHERE id=$1 AND family_id=$2', [t.id, FAMILY]);   // its days, entries, media rows, places, hearts, reviews and spending go with it
       res.json({ ok: true });
     } catch (e) { next(e); }
