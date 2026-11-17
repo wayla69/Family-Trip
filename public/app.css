@@ -2279,7 +2279,7 @@ h1 .h1pic{display:inline-block;width:1.15em;height:1.15em;vertical-align:-.2em;o
 .prices tr.grp{display:block;padding:10px 0 2px;border-bottom:0}.prices tr.grp th{display:block;padding:0 8px;font-size:13px;color:var(--accent);text-transform:none;letter-spacing:0}}
 .prices tr.grp th{background:var(--soft);font-weight:700}
 .tips.nums{list-style:decimal;padding-left:1.4em}.tips.nums>li::before{content:none}
-.mtl{margin:6px 0 4px}.mtl>li{font-size:14px}
+.mtl{margin:6px 0 4px}.mtl>li{font-size:14px}.mtl li>div>small:not(.tsub){display:block;font-size:13px;color:var(--muted)}
 .cjk>span{display:block}.cjk>span.zh{font-size:17px;line-height:1.35;font-weight:600}
 .tl.plan.mtl li>div{display:block;-webkit-line-clamp:unset;overflow:visible;cursor:auto}.mtl time{color:var(--accent);font-weight:600}
 .call.info .cdsub{display:block;font-size:14px;margin-top:2px}
@@ -3495,3 +3495,11 @@ textarea.field.paper{min-height:230px;line-height:30px;padding:8px 14px;backgrou
 .tp.one .pg1>ol.tips{padding-left:38px}
 .tp.one .pg1 .tips>li{font-size:15px;line-height:1.5;margin:6px 0}
 .tp.one .pg1>h5+ul.tips,.tp.one .pg1>h5+ol.tips{margin-top:0}
+
+/* numbered steps in a topic page (owner, Nov 2026: "UI ต้องสวยงาม เห็นแล้วสบายตา"): a round number in the topic's colour, airy rows */
+.tp.one ol.tips.nums{list-style:none;counter-reset:st;padding-left:0}
+.tp.one ol.tips.nums>li{counter-increment:st;position:relative;padding:10px 0 10px 42px;min-height:30px;border-bottom:1px solid var(--line)}
+.tp.one ol.tips.nums>li:last-child{border-bottom:0}
+.tp.one ol.tips.nums>li::before{content:counter(st);position:absolute;left:0;top:9px;width:28px;height:28px;border-radius:50%;background:color-mix(in srgb,var(--cc,var(--g1,var(--accent))) 70%,var(--ink));color:#fff;font-size:14px;font-weight:700;line-height:28px;text-align:center}
+@media (prefers-color-scheme:dark){:root:not([data-theme=light]) .tp.one ol.tips.nums>li::before{color:#0F1722}}
+:root[data-theme=dark] .tp.one ol.tips.nums>li::before{color:#0F1722}
