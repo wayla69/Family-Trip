@@ -1686,6 +1686,7 @@ button.tile.kid{border:1px solid var(--line);text-align:left;justify-items:start
 .mday>summary b{color:var(--accent)}
 .mday .dsheet{margin-top:6px}
 .mapimg{display:block;margin:6px 0 10px;border-radius:var(--r);overflow:hidden;border:1px solid var(--line)}.mapimg img{width:100%;height:auto;display:block}
+.mapstops{list-style:none;margin:0;padding:0;display:grid;gap:6px}.mapstops li{display:flex;gap:10px;align-items:flex-start;min-height:28px}.mapstops b{flex:none;width:26px;height:26px;border-radius:50%;background:#D9473B;color:#fff;font-size:13px;display:grid;place-items:center}.mapstops span{padding-top:3px}
 .pocket details.pg{scroll-margin-top:68px}
 /* every meal: a day row with its stamp and meal chips, then one card per meal (colour = which meal) */
 .mk-bf{--mk:#D98A12}.mk-lu{--mk:#2B9A62}.mk-di{--mk:#4F63C9}.mk-sn{--mk:#D8457B}
