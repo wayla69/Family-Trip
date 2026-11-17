@@ -1220,7 +1220,10 @@ function dayGlance(t, i, pre, split, full) {   // pre (before the trip; never na
   const maps = ((t.info || {}).more || []).filter((m) => m.img && new RegExp(`^Day ${i + 1}\\b`).test((m.title || {}).en || ''));
   const goRows = [...(legs.length ? legs.map(legRow) : mv && !mvShort ? [`<li><span class="dli" aria-hidden="true">${ic('route')}</span><span class="dlt">${pts(mv, 'tight')}</span></li>`] : []),
     pl.stay && `<li class="dlbed"><span class="dli" aria-hidden="true">${emoIn('🛏️')}</span><span class="dlt"><small>${L('คืนนี้', 'Tonight')}</small><b>${esc(pl.stay.name)}</b></span>${navB(pl.stay.q || pl.stay.addr, pl.stay.name)}</li>`,
-    ...maps.map((m) => `<li><span class="dli" aria-hidden="true">${ic('image')}</span><span class="dlt"><small>${L('แผนที่', 'Map')}</small><a href="${esc(m.img)}" target="_blank" rel="noopener">${esc(T(m.title).replace(/^[^·]*·\s*/, ''))} ↗</a></span></li>`)].filter(Boolean).join('');
+].filter(Boolean).join('');
+  // the day's own map (HK day 2: the park at a glance) is a box of its own with the picture itself — it was one small link inside "Getting
+  // around" that nobody found (owner, Nov 2026: "ใส่แผนที่ดิสนีให้ด้วย"); a tap opens it full size, the numbered stops fold under it
+  const mapBox = maps.map((m) => `<section class="cbox c-rose dmap"><h3 class="ch">${ic('image')}${esc(T(m.title).replace(/^[^·]*·\s*/, ''))}</h3><a class="mapimg" href="${esc(m.img)}" target="_blank" rel="noopener" aria-label="${L('เปิดแผนที่เต็มจอ', 'Open the map full size')}"><img src="${esc(m.img)}" alt="${esc(T(m.title))}" loading="lazy"></a>${(m.rows || []).length ? more(L(`ลำดับจุดแวะ · ${m.rows.length} จุด`, `Our stops in order · ${m.rows.length}`), `<ol class="mapstops">${m.rows.map((r) => `<li><b>${esc(T(r.t))}</b><span>${esc(T(r.x))}</span></li>`).join('')}</ol>`) : ''}</section>`).join('');
   const go = `${mvShort ? `<p class="dlsum">${esc(mv)}</p>` : ''}${goRows ? `<ol class="dlegs">${goRows}</ol>` : ''}`;
   const goSum = [mvFold && L('รายละเอียดการเดินทาง', 'more about getting around'), addr && L('ที่อยู่ที่พัก', 'tonight’s address')].filter(Boolean).join(' · ');
   const goMore = goSum ? more(goSum.charAt(0).toUpperCase() + goSum.slice(1), `${mvFold ? pts(mv, 'tight') : ''}${addr ? stayLine(pl) : ''}`) : '';
@@ -1235,7 +1238,7 @@ function dayGlance(t, i, pre, split, full) {   // pre (before the trip; never na
   const lk = nl || nq || pl.tale ? infoBlocks(t).meta.learn.findIndex((m) => m.key === 'days') : -1;
   const live = wxLine(t, i), nknow = tips.length + (pl.pick ? 1 : 0);
   const tl = `${daySeg(full)}${rows.length ? `<section class="cbox c-sky" id="tlbox"><h3 class="ch">${ic('clock')}${L('ไทม์ไลน์', 'Timeline')}</h3><ol class="tl plan brief">${rows.map((r, k) => { const cl = [st[k], full && tlMore(r) ? 'open' : ''].filter(Boolean).join(' '); return `<li${cl ? ` class="${cl}"` : ''}><time>${esc(tlTime(r))}</time><div${tlMore(r) ? ` role="button" tabindex="0" aria-expanded="${!!full}"` : ''}>${st[k] === 'next' ? `<span class="nexttag">${L('ถัดไป', 'Next')}</span> ` : ''}${tlBrief(r)}</div></li>`; }).join('')}</ol></section>` : ''}`;
-  const rest = `${live ? `<p class="wxpre">${ic('weather')} <span class="wxlive">${emoIn(esc(live))}</span></p>` : ''}${pre ? `<details class="dmore"${op}><summary><span><b>${L('รายละเอียดวันนี้', 'The rest of the day')}</b><small>${L('เดินทาง · มื้ออาหาร · แผนสำรอง · เงิน · ควรรู้', 'Getting around · meals · plan B · money · good to know')}</small></span>${ic('chev', 'chv')}</summary>` : ''}<div class="cgrid">${go || goMore ? `<section class="cbox c-ind"><h3 class="ch">${ic('route')}${L('เดินทางและที่พัก', 'Getting around & tonight')}</h3>${go}${goMore}</section>` : ''}${box('sun', 'eat', L('มื้ออาหาร', 'Meals'), food, foodMore)}${pl.planB ? `<section class="cbox c-hot"><h3 class="ch">${ic('shuffle')}${L('แผนสำรอง', 'Plan B')}</h3>${pts(T(pl.planB))}</section>` : ''}${money ? fbox('leaf', 'money', L('เงินวันนี้', 'Money today'), `<span class="num">${esc(mm ? mm[0].replace(/^(?:วันนี้|today)\s*/i, '').trim() : brief(money))}</span>`, moneyHtml(money)) : ''}${nknow ? fbox('teal', 'learn', L('ควรรู้วันนี้', 'Good to know today'), esc(L(`${nknow} ข้อ`, `${nknow} tip${nknow === 1 ? '' : 's'}`)), `<ul class="tips">${pl.pick ? `<li class="tk-local"><b class="tkl">${L('เคล็ดลับคนท้องถิ่น', 'Local tip')}</b>${emph(T(pl.pick))}</li>` : ''}${tips.map((x) => `<li${TIPK[x.kind] ? ` class="tk-${x.kind}"` : ''}>${lead(T(x))}</li>`).join('')}</ul>`) : ''}${along}${lk >= 0 ? lbox('rose', 'book', `#/t/${esc(t.id)}/learn/full/${lk}`, L('เรียนรู้ของวันนี้', 'Today’s things to learn'), esc([nl && L(`${nl} เรื่อง`, `${nl} card${nl === 1 ? '' : 's'}`), nq && L(`คำถามในรถ ${nq} ข้อ`, `${nq} car question${nq === 1 ? '' : 's'}`), pl.tale && L('นิทานของไกด์', 'the guide’s story')].filter(Boolean).join(' · '))) : ''}</div><p class="label dfoot"${full ? '' : ' hidden'}>${L('จากคู่มือ · ราคาและเวลาเปิดเช็กซ้ำก่อนไป · เลขจองไม่ได้เก็บที่นี่', 'From the manual · re-check prices and hours before travelling · booking numbers live in the guide app, not here')}</p>${pre ? '</details>' : ''}`;
+  const rest = `${live ? `<p class="wxpre">${ic('weather')} <span class="wxlive">${emoIn(esc(live))}</span></p>` : ''}${pre ? `<details class="dmore"${op}><summary><span><b>${L('รายละเอียดวันนี้', 'The rest of the day')}</b><small>${L('เดินทาง · มื้ออาหาร · แผนสำรอง · เงิน · ควรรู้', 'Getting around · meals · plan B · money · good to know')}</small></span>${ic('chev', 'chv')}</summary>` : ''}<div class="cgrid">${mapBox}${go || goMore ? `<section class="cbox c-ind"><h3 class="ch">${ic('route')}${L('เดินทางและที่พัก', 'Getting around & tonight')}</h3>${go}${goMore}</section>` : ''}${box('sun', 'eat', L('มื้ออาหาร', 'Meals'), food, foodMore)}${pl.planB ? `<section class="cbox c-hot"><h3 class="ch">${ic('shuffle')}${L('แผนสำรอง', 'Plan B')}</h3>${pts(T(pl.planB))}</section>` : ''}${money ? fbox('leaf', 'money', L('เงินวันนี้', 'Money today'), `<span class="num">${esc(mm ? mm[0].replace(/^(?:วันนี้|today)\s*/i, '').trim() : brief(money))}</span>`, moneyHtml(money)) : ''}${nknow ? fbox('teal', 'learn', L('ควรรู้วันนี้', 'Good to know today'), esc(L(`${nknow} ข้อ`, `${nknow} tip${nknow === 1 ? '' : 's'}`)), `<ul class="tips">${pl.pick ? `<li class="tk-local"><b class="tkl">${L('เคล็ดลับคนท้องถิ่น', 'Local tip')}</b>${emph(T(pl.pick))}</li>` : ''}${tips.map((x) => `<li${TIPK[x.kind] ? ` class="tk-${x.kind}"` : ''}>${lead(T(x))}</li>`).join('')}</ul>`) : ''}${along}${lk >= 0 ? lbox('rose', 'book', `#/t/${esc(t.id)}/learn/full/${lk}`, L('เรียนรู้ของวันนี้', 'Today’s things to learn'), esc([nl && L(`${nl} เรื่อง`, `${nl} card${nl === 1 ? '' : 's'}`), nq && L(`คำถามในรถ ${nq} ข้อ`, `${nq} car question${nq === 1 ? '' : 's'}`), pl.tale && L('นิทานของไกด์', 'the guide’s story')].filter(Boolean).join(' · '))) : ''}</div><p class="label dfoot"${full ? '' : ' hidden'}>${L('จากคู่มือ · ราคาและเวลาเปิดเช็กซ้ำก่อนไป · เลขจองไม่ได้เก็บที่นี่', 'From the manual · re-check prices and hours before travelling · booking numbers live in the guide app, not here')}</p>${pre ? '</details>' : ''}`;
   return split ? [tl, rest] : tl + rest;
 }
 // grown-ups switch the trip reminders on per phone (the server pushes 30 min before each timed step of the day);
@@ -1457,7 +1460,41 @@ const brief = (s, n = 110) => {   // a teaser that ends on a whole phrase: the f
 };
 const fullHref = (t, k, j) => `#/t/${esc(t.id)}/${k}/full${j !== undefined ? '/' + j : ''}`;
 const reportBtn = (href, label) => `<a class="reportbtn" href="${href}">${ic('doc')}<b>${label || L('อ่านแบบรายงานเต็ม', 'Read the full report')}</b>${ic('chev')}</a>`;
-const glc = (href, title, sub, cls) => `<a class="glc${cls ? ' ' + cls : ''}" href="${href}"><span class="gt"><b>${title}</b>${sub ? `<small>${sub}</small>` : ''}</span>${ic('chev')}</a>`;
+const glc = (href, title, sub, cls, pic, g) => `<a class="glc${cls ? ' ' + cls : ''}${pic ? ' gpc' : ''}" href="${href}"${g ? ` style="--g1:${g}"` : ''}>${pic ? `<span class="gpic"><img src="${pic}" alt="" loading="lazy" draggable="false"></span>` : ''}<span class="gt"><b>${title}</b>${sub ? `<small>${sub}</small>` : ''}</span>${ic('chev')}</a>`;
+/* each topic of a pocket guide wears a picture of its own (owner, Nov 2026: "ส่วนของ Get Ready อ่านยากมาก … เหลือส่วนนี้ที่ไม่เหมือนในเล่ม"):
+   the menu's sticker pictures, picked by what the topic's title says in either language; the first rule that fits wins */
+const TOPIC_PICS = [
+  [/day bag|กระเป๋าประจำวัน/i, '/art/emoji/backpack.webp'],
+  [/park at a glance|ภาพรวมสวน/i, '/art/hub/map.webp'],
+  [/minute by minute|นาทีต่อนาที/i, '/art/hub/today.webp'],
+  [/christmas|คริสต์มาส/i, '/art/emoji/gift.webp'],
+  [/goes wrong|ผิดแผน/i, '/art/emoji/signpost.webp'],
+  [/disney|ดิสนีย์|สวนสนุก|can ride|เล่นอะไร/i, '/art/emoji/rollercoaster.webp'],
+  [/budget|งบ/i, '/art/emoji/cash.webp'],
+  [/van|รถตู้|odyssey|turo/i, '/art/hub/van.webp'],
+  [/drive|ขับรถ|ช่วงขับ|every leg|ทุกช่วงการเดินทาง/i, '/art/emoji/travel-map.webp'],
+  [/taxi card|บัตรแท็กซี่/i, '/art/emoji/taxi.webp'],
+  [/getting around|ไปไหนมาไหน|เดินทางไปไหน/i, '/art/emoji/bus.webp'],
+  [/pack|จัดกระเป๋า|เตรียมของ/i, '/art/emoji/suitcase.webp'],
+  [/price|ราคา|attraction|ค่าเข้า|ที่เที่ยวเพิ่ม/i, '/art/emoji/ticket.webp'],
+  [/visa|วีซ่า/i, '/art/emoji/passport.webp'],
+  [/biosecurity|customs|never bring|ศุลกากร|ห้ามนำ|ไบโอซีเคียว|กักกัน|ด่านตรวจ|พืช/i, '/art/hub/privacy.webp'],
+  [/casino|คาสิโน/i, '/art/emoji/signpost.webp'],
+  [/arrival|departure|มาถึง|วันกลับ|ขาไป|ขากลับ/i, '/art/emoji/airplane.webp'],
+  [/crowd|on holiday|คนเยอะ|ใครหยุด/i, '/art/emoji/family.webp'],
+  [/book|จอง/i, '/art/hub/today.webp'],
+  [/kitchen|laundry|barbecue|ครัว|ซักผ้า|บาร์บีคิว/i, '/art/emoji/noodles.webp'],
+  [/night by night|คืนต่อคืน|ทีละคืน/i, '/art/emoji/bed.webp'],
+  [/hotel|resort|stay|ที่พัก|โรงแรม|รีสอร์ต|ask the hotels|ถามโรงแรม/i, '/art/hub/stays.webp'],
+  [/emergency|ฉุกเฉิน/i, '/art/hub/sos.webp'],
+  [/tonight|คืนนี้/i, '/art/emoji/bed.webp'],
+  [/if…|if\.\.\.|ถ้า…|ถ้า\.\.\.|goes wrong|ผิดแผน/i, '/art/emoji/signpost.webp'],
+  [/animal|สัตว์/i, '/art/emoji/koala.webp'],
+  [/eating|กิน/i, '/art/emoji/noodles.webp'],
+  [/learn|เรียนรู้|shapes|car|ในรถ/i, '/art/hub/learn.webp'],
+];
+const topicPic = (title) => { const x = String(title || '').replace(/<[^>]+>/g, ' '); const hit = TOPIC_PICS.find(([re]) => re.test(x)); return hit ? hit[1] : '/art/hub/manual.webp'; };
+const TOPIC_COLS = ['#4F7BFF', '#1CC9A4', '#FF9A3C', '#C850F0', '#FF6FA8', '#F2B90C', '#22D3EE', '#9BD82A'];
 const topicHead = (k, lede) => `<h1 class="vh">${secTitle(k)}</h1>${lede ? `<p class="lede">${lede}</p>` : ''}`;
 const emptyTopic = () => `<div class="empty">${L('เล่มนี้ยังไม่มีข้อมูลส่วนนี้', 'This book has nothing here yet')}</div>`;
 /* Two versions, always (owner's rule, Nov 2026): the report reads short — each case, card or row a headline with its detail one tap
@@ -1474,15 +1511,17 @@ const PG_RE = /^<details class="pg" open id="([^"]+)"><summary>([\s\S]*?)<\/summ
 const pgName = (b) => { const m = PG_RE.exec(b || ''); return m ? m[2].replace(/<span class="label">[\s\S]*?<\/span>/g, '').replace(/<[^>]+>/g, '').trim() : ''; };
 const onePage = (t, k, blocks, open) => { const m = PG_RE.exec(blocks[open] || ''); if (!m) return '';
   const nav = (j, cls, lbl) => (pgName(blocks[j]) ? `<a class="pgn ${cls}" href="${fullHref(t, k, j)}"><small>${lbl}</small><b>${pgName(blocks[j])}</b></a>` : '<span></span>');
-  return `<div class="tp tp-${k} one repall"><h1 class="h2">${m[2]}</h1><section class="pocket" id="pocket"><div class="pg1" id="${m[1]}">${m[3].replace(/<details class="ifold([^"]*)">/g, '<details class="ifold$1" open>')}</div></section>
+  const g = TOPIC_COLS[open % TOPIC_COLS.length];
+  return `<div class="tp tp-${k} one repall" style="--g1:${g}"><header class="phead pz tphead"><span class="phpic"><img src="${topicPic(m[2])}" alt="" draggable="false"></span><div class="phtx"><h1 class="h2">${m[2]}</h1></div></header><section class="pocket" id="pocket"><div class="pg1" id="${m[1]}">${m[3].replace(/<details class="ifold([^"]*)">/g, '<details class="ifold$1" open>')}</div></section>
 <nav class="pgnav" aria-label="${L('หัวข้ออื่น', 'Other topics')}">${nav(open - 1, 'prev', L('‹ ก่อนหน้า', '‹ Before'))}${nav(open + 1, 'next', L('ถัดไป ›', 'Next ›'))}</nav></div>`; };
 // the summary's list: the topics for the whole trip first, then the chapters written for one day ("Day 2 · …") under their own heading,
 // the day a chip instead of a prefix repeated on every row (owner, Nov 2026: the HK list was 19 look-alike rows)
 const DAYPG = /^((?:Days?|วันที่)\s*\d+(?:\s*[–-]\s*\d+)?)\s+·\s+(.+)$/;
 const glanceList = (t, k, meta, skip) => { const rows = meta.map((m, j) => ({ m, j, d: DAYPG.exec(m.title) })).filter((x) => !skip.includes(x.m.key));
   const all = rows.filter((x) => !x.d), byDay = rows.filter((x) => x.d), wrap = (ts) => (ts ? `<div class="glg">${ts}</div>` : '');
-  if (byDay.length < 2 || !all.length) return wrap(rows.map((x) => glc(fullHref(t, k, x.j), x.m.title, x.m.sub)).join(''));
-  return `${wrap(all.map((x) => glc(fullHref(t, k, x.j), x.m.title, x.m.sub)).join(''))}<h3 class="gh">${L('เฉพาะบางวัน', 'For one day')}</h3>${wrap(byDay.map((x) => glc(fullHref(t, k, x.j), `<span class="gday">${x.d[1]}</span>${x.d[2]}`, x.m.sub)).join(''))}`; };
+  const card = (x, title) => glc(fullHref(t, k, x.j), title, x.m.sub, '', topicPic(x.m.title), TOPIC_COLS[x.j % TOPIC_COLS.length]);
+  if (byDay.length < 2 || !all.length) return wrap(rows.map((x) => card(x, x.m.title)).join(''));
+  return `${wrap(all.map((x) => card(x, x.m.title)).join(''))}<h3 class="gh">${L('เฉพาะบางวัน', 'For one day')}</h3>${wrap(byDay.map((x) => card(x, `<span class="gday">${x.d[1]}</span>${x.d[2]}`)).join(''))}`; };
 const glancePage = (t, k, B, lede, top, skip) => (B[k].length ? `<div class="tp tp-${k} glance">${topicHead(k, lede)}${top || ''}${glanceList(t, k, B.meta[k], skip)}${reportBtn(fullHref(t, k))}</div>` : `<div class="tp tp-${k}">${topicHead(k, lede)}${emptyTopic()}</div>`);
 function viewStays(t, full, open) {
   const B = infoBlocks(t), n = t.info || {}, lede = L('ทุกที่พักของทริป พร้อมแผนที่และการ์ดที่อยู่ให้คนขับดู', 'Every stay of the trip, with its map and an address card for the driver');

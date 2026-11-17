@@ -494,8 +494,10 @@ async function snapWhere(ll, geo) {
   return city;
 }
 // the family's switch for the online lookup (this phone; off unless a parent turns it on)
-const snapGeoSwitch = () => `<div class="snapgeosw"><button type="button" class="chip" data-a="snapgeoon" aria-pressed="${!!ls('geoOnline')}">${ls('geoOnline') ? '✓ ' : ''}${L('ชื่อสถานที่ละเอียดจากแผนที่ออนไลน์', 'Finer place names from an online map')}</button>
-<small>${L('เปิดแล้ว: ส่งตำแหน่งแบบคร่าวๆ (ราวหนึ่งกิโลเมตร) ไปถาม OpenStreetMap ผ่านเซิร์ฟเวอร์ของเรา ไม่ส่งรูป ไม่เก็บไว้ ปิดอยู่: ใช้รายชื่อสถานที่ในเครื่อง', 'On: a rough position (about a kilometre) goes to OpenStreetMap through our server — no photo, nothing kept. Off: the list on this phone names it.')}</small></div>`;
+const snapGeoSwitch = () => `<label class="ckrow snapgeosw"><input type="checkbox" data-a="snapgeoon"${ls('geoOnline') ? ' checked' : ''}><span><b>${L('ชื่อสถานที่ละเอียดจากแผนที่ออนไลน์', 'Finer place names from an online map')}</b><small>${L('เปิดแล้ว: ส่งตำแหน่งแบบคร่าวๆ (ราวหนึ่งกิโลเมตร) ไปถาม OpenStreetMap ผ่านเซิร์ฟเวอร์ของเรา ไม่ส่งรูป ไม่เก็บไว้ ปิดอยู่: ใช้รายชื่อสถานที่ในเครื่อง', 'On: a rough position (about a kilometre) goes to OpenStreetMap through our server — no photo, nothing kept. Off: the list on this phone names it.')}</small></span></label>`;
+// where a photo was taken, said once in a card of its own (owner, Nov 2026: "ปรับ UI ส่วนนี้ด้วย" — a grey note and a long chip
+// under it): the privacy line and the online-names switch together, in the look of the settings pages (views.js pcard)
+const snapWhereCard = (th, en) => pcard('privacy', PG.blue, L('ที่ถ่ายรูป', 'Where each photo was taken'), `<p class="pcsub">${L(th, en)}</p>${snapGeoSwitch()}`, 'snapwhere');
 const snapNameOf = (pl) => (pl ? pl.spot || pl : null);   // what a photo is labelled with: the spot, else the town
 /* Clips in a book from photos (owner, Nov 2026: "วิดีโอในเล่มจากรูป"): a video picked with the photos goes to the day it was
    filmed. Its time is the movie header's creation time ('moov' → 'mvhd', seconds since 1904 in UTC), found by walking the file's
@@ -836,12 +838,10 @@ function viewSnap(p) {
     if (shq !== null) { history.replaceState(null, '', '#/snap'); snapTakeShared().then((fs) => { if (fs.length) snapStartRead(fs); else toast(L('การแชร์ไม่มีรูปติดมา', 'The share came without photos')); }).catch(() => {}); }
     const mode = (snapS && snapS.mode) || snapMode;
     return `${pageHead('snapcam', PG.pink, L('เล่มใหม่', 'New book'), L('เล่มจากรูป', 'A book from photos'), L('เลือกรูปของทริป แอปจัดวันและสถานที่ให้ แล้วค่อยแก้สิ่งที่ไม่ตรง', 'Pick the trip’s photos — the app sorts them into days and places, you fix what is off'))}
-<div class="tpk snapmode" role="group" aria-label="${L('ทริปนี้', 'This trip')}">${[['after', L('กลับมาแล้ว', 'We’re back'), L('เลือกรูปทั้งทริปทีเดียว', 'Pick the whole trip’s photos at once')], ['live', L('กำลังเที่ยวอยู่', 'We’re on the trip'), L('เล่มเริ่มวันนี้ แล้วค่อยเติมทุกวัน', 'The book starts today, add to it each day')]]
-    .map(([k, h, sm]) => `<button type="button" class="tpo" data-a="snapmode" data-v="${k}" aria-pressed="${mode === k}"><b>${h}</b><small>${sm}</small><span class="ck" aria-hidden="true">✓</span></button>`).join('')}</div>
-<label class="flabel" for="snapname">${L('ชื่อเล่ม (ไม่ใส่ก็ได้ แอปตั้งให้)', 'Book name (optional — the app names it)')}</label>
-<input id="snapname" class="field" type="text" maxlength="120" value="${esc(snapName)}" placeholder="${L('เช่น เขาใหญ่ปลายปี', 'e.g. Khao Yai at New Year')}">
-${snapNote('แอปอ่านวันเวลาและตำแหน่งจากรูปบนเครื่องนี้ แล้วเก็บไว้แค่ชื่อเมือง ย่าน หรือที่เที่ยว ไม่เก็บพิกัด', 'The app reads when and where each photo was taken on this phone and keeps only the name of the town or place — never the position.')}
-${snapGeoSwitch()}
+<div class="tpk snapmode" role="group" aria-label="${L('ทริปนี้', 'This trip')}">${[['after', '/art/hub/album.webp', PG.orange, L('กลับมาแล้ว', 'We’re back'), L('เลือกรูปทั้งทริปทีเดียว', 'Pick the whole trip’s photos at once')], ['live', HUB_PIC.plan, PG.teal, L('กำลังเที่ยวอยู่', 'We’re on the trip'), L('เล่มเริ่มวันนี้ แล้วค่อยเติมทุกวัน', 'The book starts today, add to it each day')]]
+    .map(([k, pic, g, h, sm]) => `<button type="button" class="tpo pz" style="--g1:${g}" data-a="snapmode" data-v="${k}" aria-pressed="${mode === k}"><span class="smpic"><img src="${pic}" alt="" draggable="false"></span><span class="smtx"><b>${h}</b><small>${sm}</small></span><span class="ck" aria-hidden="true">✓</span></button>`).join('')}</div>
+${pcard('pencil', PG.gold, `<label for="snapname">${L('ชื่อเล่ม', 'The book’s name')}</label>`, `<input id="snapname" class="field" type="text" maxlength="120" value="${esc(snapName)}" placeholder="${L('เช่น เขาใหญ่ปลายปี', 'e.g. Khao Yai at New Year')}"><p class="pcsub snapnmh">${L('ไม่ใส่ก็ได้ แอปตั้งชื่อให้จากที่เที่ยว', 'Optional — the app names it after the places')}</p>`, 'snapnamec')}
+${snapWhereCard('แอปอ่านวันเวลาและตำแหน่งจากรูปบนเครื่องนี้ แล้วเก็บไว้แค่ชื่อเมือง ย่าน หรือที่เที่ยว ไม่เก็บพิกัด', 'The app reads when and where each photo was taken on this phone and keeps only the name of the town or place — never the position.')}
 <div class="snapfoot">${mode === 'live' ? `<button type="button" class="btn wide" data-a="snaplive">${L('เริ่มเล่มวันนี้', 'Start the book today')}</button>`
     : `<button type="button" class="btn wide" data-a="snappickbook">${L('เลือกรูปจากเครื่อง', 'Pick photos')}</button><small>${L('หรือเปิดแกลเลอรี เลือกรูป กดแชร์ แล้วเลือกแอปนี้', 'Or in the gallery: pick photos, Share, then this app')}</small>`}</div>`;
   }
@@ -1068,8 +1068,7 @@ ${act('snapadd', 'image', 'เลือกรูป', 'Pick photos')}
 ${i >= 0 ? lnk(`#/t/${encodeURIComponent(t.id)}/log/${i}`, 'quote', 'คำพูดเด็ก', 'The kids’ words', words ? L(`วันนี้ ${words}`, `${words} today`) : '') : ''}
 ${i >= 0 ? lnk(`#/t/${encodeURIComponent(t.id)}/log/${i}`, 'mic', 'อัดเสียง', 'Record a voice', clips ? L(`วันนี้ ${clips}`, `${clips} today`) : '') : ''}
 </div>
-${snapNote('รูปที่ถ่ายผ่านปุ่มนี้รู้ว่าถ่ายที่ไหน แอปเก็บไว้แค่ชื่อสถานที่ ไม่เก็บพิกัด', 'A photo taken with this button knows where it was taken — the app keeps only the place’s name, never the position.')}
-${snapGeoSwitch()}
+${snapWhereCard('รูปที่ถ่ายผ่านปุ่มนี้รู้ว่าถ่ายที่ไหน แอปเก็บไว้แค่ชื่อสถานที่ ไม่เก็บพิกัด', 'A photo taken with this button knows where it was taken — the app keeps only the place’s name, never the position.')}
 <section class="blk"><h2>${ph.length ? L(`วันนี้ ${ph.length} รูป`, `Today, ${ph.length} photo${ph.length === 1 ? '' : 's'}`) : L('วันนี้', 'Today')}</h2>
 ${ph.length ? mosaicByPlace(t, ph) : `<p class="label">${L('รูปแรกของวันรออยู่', 'The day’s first photo is waiting')}</p>`}</section>
 <div class="snapfoot"><button type="button" class="btn ghost wide" data-a="snapclose" data-t="${esc(t.id)}">${L('กลับถึงบ้านแล้ว ปิดเล่ม', 'We’re home — close the book')}</button>
