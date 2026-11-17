@@ -36,15 +36,20 @@ async function shrink(file) {
 // spot (the record page's "where was it?" chips): { place: the stop's name, key + kind: the planned stop } — the photos carry the place,
 // and a planned stop not yet checked in is checked in (a photo taken there says we went)
 async function addPhotos(t, day, files, spot, metas) {
-  const all = Array.from(files), list = all.filter((f) => f.type.startsWith('image/') || /\.(heic|heif)$/i.test(f.name));
-  if (!list.length) return;
+  const all = Array.from(files), pics = all.filter((f) => f.type.startsWith('image/') || /\.(heic|heif)$/i.test(f.name));
+  if (!pics.length) return 0;
+  // the same file picked again (today, or on another page of the book): skipped — the book holds it already
+  const fps = new Map(), seen = new Set(), list = [];
+  for (const f of pics) { const m = metas && metas[all.indexOf(f)], fp = (m && m.fp) || await fileFp(f); if (fp && (seen.has(fp) || fpIn(t, fp))) continue; if (fp) seen.add(fp); fps.set(f, fp); list.push(f); }
+  if (list.length < pics.length && !(metas && metas.quiet)) toast(L(`ข้าม ${pics.length - list.length} รูปที่มีในเล่มแล้ว`, `${pics.length - list.length} photo${pics.length - list.length > 1 ? 's are' : ' is'} already in the book`));
+  if (!list.length) return 0;
   const place = String((spot && spot.place) || '').trim().slice(0, 120);
   if (place && spot.key && !S.places.some((x) => x.trip === t.id && x.key === spot.key)) {   // a chip with a key is a planned stop (a sight, a meal, a planned airport or hotel)
     const p = ((t.days[day] || {}).planned || []).find((x) => x.key === spot.key);
     if (p) await enqueue({ method: 'PUT', url: '/api/b/places', body: { trip: t.id, key: p.key, day, kind: p.kind || 'place', name: { en: p.en, th: p.th, zh: p.zh }, done: true, at: Date.now() },
       local: { coll: 'places', id: `${t.id}:${p.key}`, row: { trip: t.id, key: p.key, day, kind: p.kind || 'place', name: { en: p.en, th: p.th }, at: Date.now() } } });
   }
-  toast(L(`เตรียมรูป ${list.length} รูป…`, `Preparing ${list.length} photos…`));
+  if (!(metas && metas.quiet)) toast(L(`เตรียมรูป ${list.length} รูป…`, `Preparing ${list.length} photos…`));
   for (const f of list) {
     // when it was taken: the photo's own clock (EXIF, read here before shrink() re-encodes it; snap.js), else the file's time
     const m = (metas && metas[all.indexOf(f)]) || (typeof snapMeta === 'function' ? await snapMeta(f).catch(() => null) : null);
@@ -53,10 +58,12 @@ async function addPhotos(t, day, files, spot, metas) {
     const blob = await shrink(f);
     const id = uid('ph');
     const at = shot && shot <= Date.now() + 864e5 ? shot : f.lastModified && Math.abs(f.lastModified - Date.now()) < 400 * 864e5 ? Math.min(f.lastModified, Date.now()) : Date.now();
-    await enqueue({ method: 'PUT', url: `/api/b/media/${id}?trip=${encodeURIComponent(t.id)}&day=${day}&at=${at}${place ? '&place=' + encodeURIComponent(place) : ''}`, blob,
-      local: { coll: 'media', id, row: { trip: t.id, day, caption: '', highlight: false, at, w: 0, h: 0, place } } });
+    const fp = fps.get(f) || '';
+    await enqueue({ method: 'PUT', url: `/api/b/media/${id}?trip=${encodeURIComponent(t.id)}&day=${day}&at=${at}${place ? '&place=' + encodeURIComponent(place) : ''}${fp ? '&fp=' + fp : ''}`, blob,
+      local: { coll: 'media', id, row: { trip: t.id, day, caption: '', highlight: false, at, w: 0, h: 0, place, fp } } });
     if (m && m.star) await enqueue({ method: 'PATCH', url: '/api/b/media/' + id, body: { highlight: true }, local: { coll: 'media', id, row: { highlight: true } } });   // a book from photos: the best photo of the day, picked on the phone
   }
+  return list.length;
 }
 
 /* ---------- voice memos: a few seconds of the kids' own voices, recorded on the phone (MediaRecorder) and queued exactly like a
@@ -85,14 +92,17 @@ function stopRec() { if (recState && recState.rec.state !== 'inactive') recState
 const VID_MAX = 400e6;
 async function addVideo(t, day, file, shotAt, quiet) {   // shotAt: when it was filmed (a book from photos reads it from the clip); quiet: the caller says one line for many
   if (!file || !t) return;
-  if (file.size > VID_MAX) { toast(L('คลิปใหญ่เกินไป (เกิน 400 MB) เลือกคลิปที่สั้นกว่านี้', 'This clip is over 400 MB — pick a shorter one')); return; }
+  if (file.size > VID_MAX) { toast(L('คลิปใหญ่เกินไป (เกิน 400 MB) เลือกคลิปที่สั้นกว่านี้', 'This clip is over 400 MB — pick a shorter one')); return false; }
+  const fp = await fileFp(file);
+  if (fpIn(t, fp)) { if (!quiet) toast(L('คลิปนี้มีในเล่มแล้ว', 'This clip is already in the book')); return false; }
   const secs = quiet ? NaN : await new Promise((res) => { const v = document.createElement('video'), u = URL.createObjectURL(file); v.preload = 'metadata'; v.muted = true;
     const done = (x) => { URL.revokeObjectURL(u); res(x); }; v.onloadedmetadata = () => done(v.duration); v.onerror = () => done(NaN); setTimeout(() => done(NaN), 8000); v.src = u; });
   const id = uid('vd'), at = shotAt && shotAt <= Date.now() + 864e5 ? shotAt : file.lastModified && Math.abs(file.lastModified - Date.now()) < 400 * 864e5 ? Math.min(file.lastModified, Date.now()) : Date.now();
   const type = ['video/mp4', 'video/quicktime', 'video/webm', 'video/3gpp', 'video/x-m4v'].includes(file.type) ? file.type : 'video/mp4';   // the server reads what it really is
-  await enqueue({ method: 'PUT', url: `/api/b/media/${id}?trip=${encodeURIComponent(t.id)}&day=${day}&at=${at}&kind=video`, blob: file.type === type ? file : new Blob([file], { type }),
-    local: { coll: 'media', id, row: { trip: t.id, day, caption: '', highlight: false, at, w: 0, h: 0, mime: type } } });
+  await enqueue({ method: 'PUT', url: `/api/b/media/${id}?trip=${encodeURIComponent(t.id)}&day=${day}&at=${at}&kind=video${fp ? '&fp=' + fp : ''}`, blob: file.type === type ? file : new Blob([file], { type }),
+    local: { coll: 'media', id, row: { trip: t.id, day, caption: '', highlight: false, at, w: 0, h: 0, mime: type, fp } } });
   if (!quiet) toast(secs > 31 ? L('เก็บ 30 วินาทีแรกของคลิปนี้', 'The first 30 s of this clip will be kept') : L('เพิ่มคลิปแล้ว', 'Clip added'));
+  return true;
 }
 async function addClip(t, day, blob, secs) {
   const id = uid('vc'), at = Date.now(), type = blob.type || 'audio/webm';

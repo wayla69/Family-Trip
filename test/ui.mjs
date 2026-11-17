@@ -368,6 +368,34 @@ const T = 'hk-macau-2026';
     const toastTx = await page.evaluate(() => document.getElementById('toast').textContent);
     ok(tl.days.length === 2 && tl.days[1].date === nextDay && ml.length === 3 && ml.filter((m) => m.day === 1).length === 1 && /left out/.test(toastTx),
       `photos found later: the next day was added and holds its photo; the old and the undated ones left out, and said (days ${tl.days.map((d) => d.date)}, media ${ml.map((m) => m.day)}, toast "${toastTx}")`);
+    // the same file picked again is skipped (owner, Nov 2026: "ไม่ให้รูปเดิมขึ้นซ้ำ"), and photos found later are screened like the first
+    // build (owner: "แยกรูปซ้ำและใบเสร็จตอนเพิ่มรูปทีหลัง"): a café receipt waits in a sheet, unsent, until a tap brings it in
+    { const { cameraJpeg, receiptSvg } = await import('./snap-jpeg.mjs'), wd = nextDay.replace(/-/g, ':');
+      const again = [later[0], { name: 'IMG_RECEIPT2.jpg', mimeType: 'image/jpeg', buffer: (await cameraJpeg(receiptSvg('#30343a', 26, 5), wd + ' 13:10:00')).buffer },
+        { name: 'more.jpg', mimeType: 'image/jpeg', buffer: await sharp({ create: { width: 40, height: 30, channels: 3, background: '#2a5' } }).jpeg().withExif({ IFD0: { DateTime: wd + ' 16:00:00' }, IFD2: { DateTimeOriginal: wd + ' 16:00:00' } }).toBuffer() }];
+      const [fa] = await Promise.all([page.waitForEvent('filechooser'), page.click('.snapmorego')]);
+      await fa.setFiles(again);
+      await page.waitForSelector('#sheet .snapheld .sdpt', { timeout: 20000 }).catch(() => {});
+      const held = await page.evaluate(() => ({ n: document.querySelectorAll('#sheet .snapheld .sdpt').length, sub: (document.querySelector('#sheet .sub') || {}).textContent || '', toast: document.getElementById('toast').textContent }));
+      await page.waitForFunction(() => queue.length === 0, null, { timeout: 30000 }).catch(() => {});
+      const m1 = (await apiState(page)).media.filter((m) => m.trip === id);
+      ok(held.n === 1 && /Receipts and papers/.test(held.sub) && /1 already in the book/.test(held.toast) && m1.length === 4 && m1.filter((m) => m.fp).length === 4,
+        `photos found later: the same file again is skipped, the receipt waits aside unsent, the new photo goes in — every one with its fingerprint (${JSON.stringify({ ...held, media: m1.length, fps: m1.filter((m) => m.fp).length })})`);
+      await s.shot('snap-held-sheet');
+      await page.click('#sheet .snapheld .sdpt'); await page.click('#snapheldgo');
+      await page.waitForFunction((tid) => S.media.filter((m) => m.trip === tid).length === 5, id, { timeout: 15000 }).catch(() => {});
+      await page.waitForFunction(() => queue.length === 0, null, { timeout: 30000 }).catch(() => {});
+      // an iPhone's HEIC: the gate reads its own preview item (here an AVIF of the same layout, which Chromium decodes) — a receipt is
+      // paper, a beach is not, and neither needed the whole photo
+      { const { avifWithPreview } = await import('./snap-jpeg.mjs');
+        const beach = '<svg xmlns="http://www.w3.org/2000/svg" width="640" height="480"><rect width="640" height="480" fill="#87ceeb"/><rect y="300" width="640" height="180" fill="#e8d8a8"/><circle cx="250" cy="260" r="60" fill="#f2c39a"/></svg>';
+        const g = await page.evaluate(async (bs) => Promise.all(bs.map(async (b64) => { const f = new File([Uint8Array.from(atob(b64), (c) => c.charCodeAt(0))], 'IMG.heic', { type: 'image/avif' }), m = await snapMeta(f);
+          return { blob: m.th instanceof Blob, gate: m.th ? await snapThumbGate(f, m.th) : null }; })), [(await avifWithPreview(receiptSvg())).buffer.toString('base64'), (await avifWithPreview(beach)).buffer.toString('base64')]);
+        ok(g[0].blob && g[0].gate === true && g[1].blob && g[1].gate === false, `book from photos: an iPhone-style photo's own preview item is read by the receipt gate — paper yes, a beach no (${JSON.stringify(g)})`); }
+      // the record page's own picker skips it too (any page of the book: the print is the book's)
+      const skipped = await page.evaluate(async ([tid, b64]) => addPhotos(trip(tid), 0, [new File([Uint8Array.from(atob(b64), (c) => c.charCodeAt(0))], 'again.jpg', { type: 'image/jpeg' })]), [id, later[0].buffer.toString('base64')]);
+      const m2 = (await apiState(page)).media.filter((m) => m.trip === id);
+      ok(m2.length === 5 && skipped === 0, `photos found later: a tap brings the receipt in; the record page skips a file the book holds (${m2.length} photos, added ${skipped})`); }
     // edit the book after it is made (owner, Nov 2026: "แก้เล่มหลังสร้างแล้ว"): the book's name, a day's name and place, saved on leaving
     // the box; a photo on the wrong day moves from its viewer
     await page.goto(`${BASE}/#/t/${id}`); await page.waitForSelector('.snapeditgo'); await page.click('.snapeditgo');

@@ -32,6 +32,7 @@ const HEART_EMOJI = ['💗', '😍', '👏', '🙏', '⭐', '🎉', '🤗', '�
 const REVIEW_KINDS = ['stay', 'food', 'place'], KID_VERDICT = ['love', 'ok', 'no'];
 const HEARTS_PER_DAY = { sender: 40, family: 400 };   // the view link is shared: cap what one phone, and everyone together, can send
 const clip = (s, n) => String(s == null ? '' : s).slice(0, n);
+const fpOf = (s) => (/^[0-9a-f]{16,64}$/.test(String(s || '')) ? String(s) : null);   // the original file's fingerprint, from the phone (media.fp, migration 0027)
 // photo tags: up to 10 short words (the fixed keys from Claude, or the parents' own); null when the shape is wrong
 const tagList = (v) => (Array.isArray(v) && v.length <= 10 && v.every((x) => typeof x === 'string') ? [...new Set(v.map((x) => x.trim().toLowerCase().slice(0, 24)).filter(Boolean))] : null);
 const i18n = (o, n = 200) => (o && typeof o === 'object' ? { th: clip(o.th, n), en: clip(o.en, n), ...(o.zh ? { zh: clip(o.zh, n) } : {}) } : { th: clip(o, n), en: clip(o, n) });
@@ -299,7 +300,7 @@ function router({ pool, media, A, ai, hooks = {} }) {   // hooks.heart(h): set b
         q("SELECT d.trip_id, d.day_index, to_char(d.date,'YYYY-MM-DD') date, d.title, d.sleep, d.place, d.emoji, d.gradient, d.planned, d.wx, d.plan, d.done_at FROM trip_days d JOIN trips t ON t.id=d.trip_id WHERE t.family_id=$1 ORDER BY d.trip_id, d.day_index", [FAMILY]),
         q('SELECT f.trip_id, f.key, f.emoji, f.label FROM firsts_catalog f JOIN trips t ON t.id=f.trip_id WHERE t.family_id=$1 ORDER BY f.trip_id, f.pos, f.key', [FAMILY]),
         q('SELECT id, trip_id, day_index, kind, child, text, tr, src, mood, first_key, lang, highlight, occurred_at, created_by, created_uid FROM entries WHERE family_id=$1 ORDER BY occurred_at', [FAMILY]),
-        q('SELECT id, trip_id, day_index, width, height, caption, highlight, pos, taken_at, created_by, mime, tags, place, ai_at FROM media WHERE family_id=$1 ORDER BY taken_at, pos', [FAMILY]),
+        q('SELECT id, trip_id, day_index, width, height, caption, highlight, pos, taken_at, created_by, mime, tags, place, ai_at, fp FROM media WHERE family_id=$1 ORDER BY taken_at, pos', [FAMILY]),
         q('SELECT id, trip_id, day_index, key, kind, name, visited_at, created_by FROM places WHERE family_id=$1 ORDER BY visited_at', [FAMILY]),
         q('SELECT id, trip_id, day_index, child, emoji, text, from_name, created_uid, created_at FROM hearts WHERE family_id=$1 ORDER BY created_at', [FAMILY]),
         q('SELECT id, trip_id, day_index, kind, key, name, rating, tags, kids, again, note, created_by, updated_at FROM reviews WHERE family_id=$1 ORDER BY updated_at', [FAMILY]),
@@ -414,9 +415,9 @@ function router({ pool, media, A, ai, hooks = {} }) {   // hooks.heart(h): set b
         await media.put(keyVideo(t.id, id), v.video, 'video/mp4');
         await media.put(keyThumb(t.id, id), v.thumb);
         const pos = (await q('SELECT count(*)::int n FROM media WHERE trip_id=$1 AND day_index IS NOT DISTINCT FROM $2', [t.id, day]))[0].n;
-        await q(`INSERT INTO media (id, family_id, trip_id, day_index, storage_key, mime, bytes, width, height, caption, pos, taken_at, created_by, created_uid, place)
-          VALUES ($1,$2,$3,$4,$5,'video/mp4',$6,$7,$8,$9,$10,$11,$12,$13,$14) ON CONFLICT (id) DO NOTHING`,
-        [id, FAMILY, t.id, day, keyVideo(t.id, id), v.video.length, v.w, v.h, clip(req.query.caption, 500), pos, at(req.query.at), clip(req.user.name, 40), req.user.uid, clip(req.query.place, 120).trim()]);
+        await q(`INSERT INTO media (id, family_id, trip_id, day_index, storage_key, mime, bytes, width, height, caption, pos, taken_at, created_by, created_uid, place, fp)
+          VALUES ($1,$2,$3,$4,$5,'video/mp4',$6,$7,$8,$9,$10,$11,$12,$13,$14,$15) ON CONFLICT (id) DO NOTHING`,
+        [id, FAMILY, t.id, day, keyVideo(t.id, id), v.video.length, v.w, v.h, clip(req.query.caption, 500), pos, at(req.query.at), clip(req.user.name, 40), req.user.uid, clip(req.query.place, 120).trim(), fpOf(req.query.fp)]);
         res.json({ ok: true, id, w: v.w, h: v.h, mime: 'video/mp4' });
       } finally { vidBusy.delete(id); }
     } catch (e) { next(e); } finally { if (tmp) fs.rm(tmp.file, { force: true }, () => {}); }
@@ -451,9 +452,9 @@ function router({ pool, media, A, ai, hooks = {} }) {   // hooks.heart(h): set b
       await media.put(keyThumb(t.id, id), img.thumb);
       const pos = (await q('SELECT count(*)::int n FROM media WHERE trip_id=$1 AND day_index IS NOT DISTINCT FROM $2', [t.id, day]))[0].n;
       // place: the stop the parents added the photo under (the record page's "where was it?" chips) — one of the day's names, or ''
-      await q(`INSERT INTO media (id, family_id, trip_id, day_index, storage_key, bytes, width, height, caption, pos, taken_at, created_by, created_uid, place)
-        VALUES ($1,$2,$3,$4,$5,$6,$7,$8,$9,$10,$11,$12,$13,$14) ON CONFLICT (id) DO NOTHING`,
-      [id, FAMILY, t.id, day, keyFull(t.id, id), img.full.length, img.w, img.h, clip(req.query.caption, 500), pos, at(req.query.at), clip(req.user.name, 40), req.user.uid, clip(req.query.place, 120).trim()]);
+      await q(`INSERT INTO media (id, family_id, trip_id, day_index, storage_key, bytes, width, height, caption, pos, taken_at, created_by, created_uid, place, fp)
+        VALUES ($1,$2,$3,$4,$5,$6,$7,$8,$9,$10,$11,$12,$13,$14,$15) ON CONFLICT (id) DO NOTHING`,
+      [id, FAMILY, t.id, day, keyFull(t.id, id), img.full.length, img.w, img.h, clip(req.query.caption, 500), pos, at(req.query.at), clip(req.user.name, 40), req.user.uid, clip(req.query.place, 120).trim(), fpOf(req.query.fp)]);
       res.json({ ok: true, id, w: img.w, h: img.h });
     } catch (e) { next(e); }
   });

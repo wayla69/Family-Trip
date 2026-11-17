@@ -422,6 +422,13 @@ if (process.env.BASE) {
     ok(mt.at === '2025-03-01T13:30:00' && mt.src === 'exif' && mt.th && mt.th[0] === cj.thAt && mt.th[1] === cj.thLen && tb[0] === 0xFF && tb[1] === 0xD8 && tb[tb.length - 2] === 0xFF && tb[tb.length - 1] === 0xD9,
       `snap: the camera's small preview is found in the EXIF (IFD1) — where it sits and how long (${JSON.stringify({ at: mt.at, th: mt.th, want: [cj.thAt, cj.thLen] })})`);
     ok(!(await ctx.snapMeta(fx('gps-ii.jpg'))).th, 'snap: a JPEG with no preview says so (the photo itself is looked at)');
+    // an iPhone's HEIC keeps its preview as an item of its own ('iref' 'thmb'): cut out and wrapped as a file of one picture that a
+    // decoder opens as it is (here an AVIF of the same layout — libheif reads it back at the preview's own 160 px)
+    { const { avifWithPreview } = await import('./snap-jpeg.mjs'), av = await avifWithPreview(receiptSvg());
+      const mh = await ctx.snapMeta(new File([av.buffer], 'IMG_2.avif')), blob = mh.th && typeof mh.th.arrayBuffer === 'function' ? Buffer.from(await mh.th.arrayBuffer()) : null;
+      const md = blob ? await sharp(blob).metadata().catch((e) => ({ err: e.message })) : null;
+      ok(md && md.width === 160 && mh.th.type === 'image/avif' && blob.length < av.thumbBytes + 1200 && !(await ctx.snapMeta(fx('gps.avif'))).th,
+        `snap: a HEIF's own preview item is cut out as a file of its own (decodes at 160 px, a few hundred bytes of boxes around it); one with no preview says so (${JSON.stringify({ w: md && md.width, h: md && md.height, err: md && md.err, size: blob && blob.length, thumb: av.thumbBytes })})`); }
     ok(got.every(([, is, want]) => is === want), `snap: a receipt is told from a photo on the phone — straight, tilted or blurred; not snow, windows, a sign, gravel, stripes or dots (${JSON.stringify(got.filter(([, is, want]) => is !== want))})`); }
   ok(JSON.stringify(ctx.snapRound([13.75049, 100.49171])) === '[13.75,100.49]', 'snap: what leaves the phone is rounded to two decimals (about a kilometre)');
   // the phone's own list of place names (public/geo/<cc>.json, GeoNames): the nearest spot inside its reach, else a town within 8 km
