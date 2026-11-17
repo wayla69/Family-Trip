@@ -1485,7 +1485,10 @@ const T = 'hk-macau-2026';
     const filled = () => page.evaluate(() => [...document.querySelectorAll('.colourpad [data-c]')].filter((x) => x.getAttribute('fill').toLowerCase() !== '#ffffff').map((x) => x.getAttribute('fill')).join());
     const saved = () => page.evaluate(() => (S.entries.find((e) => e.id === 'hk-macau-2026.field.colour.d1.mimi') || {}).text);
     await page.waitForFunction(() => queue.length === 0 && document.querySelectorAll('.colourpad [data-c]').length > 0, null, { timeout: 8000 });   // the blue tap's save is back and the picture redrawn
-    await page.click('.palette button[data-v="#EF5350"]'); await page.locator('.colourpad [data-c]').nth(0).click({ force: true });
+    // every redraw empties the pad and fills its picture back from the SVG a moment later (kid.js hydrateColours): after the blue tap's save
+    // the state refresh redraws, so wait for the shape to be on screen again before tapping (a CI failure of Nov 2026: "Element is not visible")
+    const shape0 = page.locator('.colourpad [data-c]').nth(0);
+    await page.click('.palette button[data-v="#EF5350"]'); await shape0.waitFor({ state: 'visible', timeout: 8000 }); await shape0.click({ force: true });
     // a redraw before the red tap is saved (a state refresh lands within the 500 ms the save waits): the red must stay on the picture
     await page.evaluate(() => render()); await page.waitForFunction(() => document.querySelectorAll('.colourpad [data-c]').length > 0, null, { timeout: 5000 });
     const two = await filled(), why = await page.evaluate(() => ({ pend: Object.values(colPend), fill: (document.querySelector('.colourpad') || {}).dataset.fill, saved: (S.entries.find((e) => e.id === 'hk-macau-2026.field.colour.d1.mimi') || {}).text, hist: colHist.length, q: queue.length }));
@@ -1502,7 +1505,7 @@ const T = 'hk-macau-2026';
     const strip = await page.evaluate(() => { const bs = [...document.querySelectorAll('.colpics button')]; return { n: bs.length, first: bs[0].dataset.v, pressed: bs.findIndex((b) => b.getAttribute('aria-pressed') === 'true'), lib: bs.filter((b) => /^colour\.p\./.test(b.dataset.v)).length, h: Math.min(...bs.map((b) => b.getBoundingClientRect().height)), painted: bs[0].querySelector('i') ? 1 : 0 }; });
     await page.locator('.colpics button[data-v^="colour.p."]').first().click(); await page.waitForSelector('.colourpad[data-key^="colour.p."] svg [data-c]');
     const src = await page.getAttribute('.colourpad', 'data-src'), key = await page.getAttribute('.colourpad', 'data-key');
-    await page.click('.palette button[data-v="#8BC34A"]'); await page.locator('.colourpad [data-c]').nth(0).click({ force: true });
+    await page.click('.palette button[data-v="#8BC34A"]'); await page.locator('.colourpad [data-c]').nth(0).waitFor({ state: 'visible', timeout: 8000 }); await page.locator('.colourpad [data-c]').nth(0).click({ force: true });
     await page.waitForFunction((k) => S.entries.some((e) => e.id === `hk-macau-2026.field.${k}.mimi` && /8BC34A/.test(e.text)), key, { timeout: 5000 });
     await page.locator('.colpics button[data-v="colour.d1"]').click(); await page.waitForSelector('.colourpad[data-key="colour.d1"] svg [data-c]');
     const dayKept = await page.evaluate(() => [...document.querySelectorAll('.colourpad [data-c]')].some((x) => x.getAttribute('fill') === '#42A5F5'));
@@ -1738,7 +1741,7 @@ const T = 'hk-macau-2026';
   await page.goto(`${BASE}/#/passport/mimi/${T}`); await page.waitForSelector('.pp .advc img.crest');
   await page.click('.kidgo'); await page.waitForSelector('.kidtiles');
   await page.click('.kidtiles button[data-v$="/colour"]'); await page.waitForSelector('.colourpad svg [data-c]', { timeout: 10000 });
-  await page.locator('.colourpad [data-c]').nth(0).click({ force: true });
+  await page.locator('.colourpad [data-c]').nth(0).waitFor({ state: 'visible', timeout: 8000 }); await page.locator('.colourpad [data-c]').nth(0).click({ force: true });
   await page.waitForFunction(() => queue.length >= 1, null, { timeout: 5000 });
   const lock2 = await boxOf(page, '#kidexit');
   await page.mouse.move(lock2.x + lock2.width / 2, lock2.y + lock2.height / 2); await page.mouse.down(); await page.waitForTimeout(1500); await page.mouse.up();
