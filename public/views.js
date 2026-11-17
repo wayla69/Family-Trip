@@ -315,7 +315,7 @@ ${dispCard()}
 ${isEditor() ? `<div class="part">${L('ตั้งค่า', 'Settings')} <img class="partpic" src="/art/hub/settings.webp" alt=""></div>
 <nav class="setlist">
 <a href="#/family">${hubE('family')}<span><b>${L('ครอบครัวของเรา', 'Our family')}</b><small>${L('ชื่อแอป ชื่อลูก และเดือนเกิด', 'App name, the children and their birth months')}</small></span><i>›</i></a>
-<a href="#/emoji">${hubE('kid')}<span><b>${L('อีโมจิของเรา', 'Our emoji')}</b><small>${L(`${emoRows().length} รูป เพิ่มหรือลบได้`, `${emoRows().length} pictures, add or delete`)}</small></span><i>›</i></a>
+<a href="#/emoji">${hubE('emoji')}<span><b>${L('อีโมจิของเรา', 'Our emoji')}</b><small>${L(`${emoRows().length} รูป เพิ่มหรือลบได้`, `${emoRows().length} pictures, add or delete`)}</small></span><i>›</i></a>
 <a href="#/viewers">${hubE('relatives')}<span><b>${L('ญาติที่ดูได้', 'Who can see the books')}</b><small>${L('รหัสและลิงก์ของแต่ละกลุ่มญาติ', 'A code and a link for each group of relatives')}</small></span><i>›</i></a>
 <a href="#/snaptest">${hubE('checkphone')}<span><b>${L('ตรวจเครื่องนี้', 'Check this phone')}</b><small>${L('ลองว่ารูป คลิป และการส่งต่อ ใช้ได้บนเครื่องนี้ไหม', 'Do photos, clips and sharing work on this phone?')}</small></span><i>›</i></a>
 <a href="#/devices">${hubE('devices')}<span><b>${L('มือถือที่เข้าระบบ', 'Phones signed in')}</b><small>${L('ดูว่าเครื่องไหนเปิดเล่มได้ ให้เครื่องที่หายออก เปลี่ยนรหัส', 'See which phones hold the books, sign a lost one out, change the code')}</small></span><i>›</i></a>
@@ -385,7 +385,7 @@ ${job && job.state === 'run' ? `<p class="reelrun">${L('กำลังทำค
 ${job && job.state === 'error' ? `<p class="notice">${L('ทำคลิปไม่สำเร็จ ลองอีกครั้ง', 'The film could not be made — try again')}</p>` : ''}</section>`;
   const pdf = ed && ts.length ? `<div class="row"><a class="btn" href="/api/b/pdf-year/${y}" download>${ic('book')} ${L('หนังสือทั้งปี (PDF)', 'The year’s book (PDF)')}</a></div>` : '';
   if (ed && !YEAR.at) yearLoad();
-  return `<h1 class="h2">${L(`ปี ${y} ของเรา`, `Our ${y}`)}</h1>${chips}${film}${pdf}${viewYearBook(y, false)}`;
+  return `${pageHead('year', PG.purple, L('ทุกเล่มรวมกัน', 'All our books'), L(`ปี ${y} ของเรา`, `Our ${y}`), L('ทุกทริปของปีเป็นเล่มเดียว เห็นลูกโตขึ้นทีละทริป', 'Every trip of the year in one book — the children growing trip by trip'))}${chips}${film}${pdf}${viewYearBook(y, false)}`;
 }
 const YEAR = { reels: null, at: 0 };
 function yearLoad() { YEAR.at = Date.now(); api('GET', '/api/b/reel-year').then((r) => { YEAR.reels = r.years || {}; if (route().parts[0] === 'year') safeRender(); }).catch(() => {}); }
@@ -478,7 +478,7 @@ function viewFamMap(tid) {
   const body = FM.pins === null ? `<p class="muted">${L('กำลังโหลดแผนที่…', 'Loading the map…')}</p>`
     : !famPins('').length ? emptyCard(null, L('ยังไม่มีหมุดบนแผนที่', 'No pins on the map yet'), L('เมื่อเล่มมีเมืองที่พักหรือชื่อสถานที่ หมุดจะขึ้นเอง', 'Pins appear once a book has towns to stay in or place names'))
     : `${chips}${zoomed ? `<button type="button" class="linkbtn fmout" data-a="famzoom" data-v="">‹ ${L('ดูทั้งแผนที่', 'The whole map')}</button>` : ''}<div class="fmwrap">${famSvg(pins, sel, false)}</div>${sel >= 0 ? famCard(pins[sel]) : `<p class="muted fmhint">${L('แตะหมุดเพื่อดูว่าไปที่ไหน ตอนไหน และตอนนั้นลูกอายุเท่าไร', 'Tap a pin: where, when, and how old the children were')}</p>`}`;
-  return `<h1 class="h2">${L('แผนที่ของครอบครัว', 'Our family map')}</h1>${towns ? `<p class="lede">${L(`${books.length} เล่ม · ${towns} เมือง`, `${books.length} book${books.length > 1 ? 's' : ''} · ${towns} town${towns > 1 ? 's' : ''}`)}</p>` : ''}${body}
+  return `${pageHead('famap', PG.teal, L('ทุกเล่มรวมกัน', 'All our books'), L('แผนที่ของครอบครัว', 'Our family map'), towns ? L(`${books.length} เล่ม · ${towns} เมือง`, `${books.length} book${books.length > 1 ? 's' : ''} · ${towns} town${towns > 1 ? 's' : ''}`) : '')}${towns ? '' : ''}${body}
 <p class="muted small fmsrc">${L('แผนที่จาก Natural Earth · หมุดจากเมืองที่พักและชื่อสถานที่ในเล่ม ไม่ใช่ตำแหน่งของโทรศัพท์', 'Map from Natural Earth · pins from the books’ towns and place names, never a phone’s position')}</p>`;
 }
 // room and phone problems (owner, Nov 2026: "รู้เมื่อมีอะไรพังบนมือถือ … หน้าดูพื้นที่"; server/errors.js): how much each book takes, by
@@ -849,7 +849,7 @@ const HUB = { book: ['book', 'สมุดความทรงจำ', 'Memory 
   firsts: ['firsts', 'ครั้งแรก', 'Firsts'], photos: ['camera', 'รูปตามแท็ก', 'Photos by tag'], spend: ['money', 'ค่าใช้จ่าย', 'Spending'], hearts: ['hearts', 'หัวใจ', 'Hearts'], offline: ['offline', 'ใช้ตอนไม่มีเน็ต', 'Offline'], log: ['log', 'บันทึกวันนี้', 'Record today'], search: ['search', 'ค้นหา', 'Search'] };
 const secTitle = (k) => (HUB[k] ? L(HUB[k][1], HUB[k][2]) : '');
 // the book menu's glossy pictures (the owner's sets: public/art/hub, the emoji pack, kid mode's passport); a key without one keeps its line icon
-const HUB_PIC = { lang: '/art/emoji/signpost.webp', textsize: '/art/hub/book.webp', today: '/art/hub/today.webp', log: '/art/emoji/camera.webp', book: '/art/hub/book.webp', eat: '/art/hub/eat.webp', plan: '/art/emoji/travel-map.webp',
+const HUB_PIC = { lang: '/art/hub/lang.webp', textsize: '/art/hub/textsize.webp', emoji: '/art/hub/emoji.webp', review: '/art/hub/review.webp', today: '/art/hub/today.webp', log: '/art/emoji/camera.webp', book: '/art/hub/book.webp', eat: '/art/hub/eat.webp', plan: '/art/emoji/travel-map.webp',
   stays: '/art/hub/stays.webp', sos: '/art/hub/sos.webp', prep: '/art/emoji/suitcase.webp', learn: '/art/hub/learn.webp', firsts: '/art/emoji/star.webp',
   hearts: '/art/emoji/heart.webp', offline: '/art/hub/offline.webp', camera: '/art/hub/album.webp', passport: '/art/kidui/bar-passport.webp',
   money: '/art/hub/money.webp', notebook: '/art/hub/notebook.webp', kid: '/art/emoji/joy.webp', shelf: '/art/hub/shelf.webp', home: '/art/kidui/bar-home.webp',
@@ -2217,9 +2217,8 @@ function viewEmoji() {
   const rows = emoRows(), f = emoForm;
   const card = (e) => `<li class="emocard"><img src="${esc(e.src)}" alt=""><b>${esc(L(e.th || e.en, e.en || e.th))}</b><small>${esc(e.ch)}${(e.alt || []).length ? ` ${esc(e.alt.slice(0, 4).join(' '))}` : ''}</small>
 <button type="button" class="mini emodel" data-a="emodel" data-v="${esc(e.id)}" aria-label="${esc(L(`ลบ ${e.th || e.en}`, `Delete ${e.en || e.th}`))}">${L('ลบ', 'Delete')}</button></li>`;
-  return `<div class="part">${L('ตั้งค่า', 'Settings')}</div><h1 class="h2">${emo('😄')} ${L('อีโมจิของเรา', 'Our emoji')}</h1>
-<p class="lede">${L('รูปที่ใช้แทนอีโมจิในอารมณ์ หัวใจ คำพูด โน้ต และคำบรรยายรูป · เพิ่มของบ้านเราเอง หรือลบที่ไม่ใช้', 'The pictures the app draws for each emoji — in moods, hearts, quotes, notes and captions. Add your own, or delete the ones you don’t use.')}</p>
-<section class="blk emoadd"><h3>＋ ${L('เพิ่มอีโมจิ', 'Add an emoji')}</h3>
+  return `${pageHead('emoji', PG.gold, L('ตั้งค่า', 'Settings'), L('อีโมจิของเรา', 'Our emoji'), L('รูปที่ใช้แทนอีโมจิในอารมณ์ หัวใจ คำพูด โน้ต และคำบรรยายรูป · เพิ่มของบ้านเราเอง หรือลบที่ไม่ใช้', 'The pictures the app draws for each emoji — in moods, hearts, quotes, notes and captions. Add your own, or delete the ones you don’t use.'))}
+<section class="pcard emoadd" style="--g1:${PG.gold}"><h3 class="pch"><span class="pcpic">${hubIc('emoji')}</span><span>${L('เพิ่มอีโมจิ', 'Add an emoji')}</span></h3>
 <div class="emoaddrow"><label class="emopic${f.url ? ' on' : ''}">${f.url ? `<img id="emprev" src="${esc(f.url)}" alt="">` : `<span>🖼️</span><small>${L('เลือกรูป', 'Pick a picture')}</small>`}<input type="file" id="emfile" accept="image/*"></label>
 <div class="emofields"><label>${L('อีโมจิที่จะให้รูปนี้แทน', 'The emoji it stands for')}<input class="field emoch" data-emf="ch" value="${esc(f.ch)}" maxlength="16" placeholder="🦘" inputmode="text"></label>
 <div class="famrow"><label>${L('ชื่อ (ไทย)', 'Name (Thai)')}<input class="field" data-emf="th" value="${esc(f.th)}" maxlength="30" placeholder="${L('จิงโจ้', 'จิงโจ้')}"></label><label>${L('ชื่อ (อังกฤษ)', 'Name (English)')}<input class="field" data-emf="en" value="${esc(f.en)}" maxlength="30" placeholder="Kangaroo"></label></div></div></div>
@@ -2520,11 +2519,10 @@ function viewViewers() {
 <div class="row">${g.link ? `<button class="btn small" data-a="vgshare" data-v="${esc(g.link)}" data-n="${esc(g.name)}">${navigator.share ? '📤 ' + L('ส่งลิงก์', 'Send the link') : '📋 ' + L('คัดลอกลิงก์', 'Copy the link')}</button>` : ''}
 <button class="btn ghost small" data-a="vgedit" data-v="${esc(g.id)}">✏️ ${L('แก้ไข', 'Edit')}</button>
 <button class="mini" data-a="vgdel" data-v="${esc(g.id)}">${L('ลบกลุ่ม', 'Delete group')}</button></div></div>`;
-  return `<div class="part">${L('ญาติที่ดูได้', 'Who can see the books')}</div><h1 class="h2"><img class="h1pic" src="/art/hub/relatives.webp" alt=""> ${L('กลุ่มญาติ', 'Family groups')}</h1>
-<p class="lede">${L('แต่ละกลุ่มมีรหัสหรือลิงก์ของตัวเอง เห็นเฉพาะเล่มที่ติ๊ก ดูอย่างเดียว ส่งหัวใจได้ · ลบกลุ่ม = ออกจากระบบทันที', 'Each group gets its own PIN or link and sees only the books ticked for it — read-only, hearts allowed · delete a group and its phones are signed out')}</p>
+  return `${pageHead('relatives', PG.pink, L('ญาติที่ดูได้', 'Who can see the books'), L('กลุ่มญาติ', 'Family groups'), L('แต่ละกลุ่มมีรหัสหรือลิงก์ของตัวเอง เห็นเฉพาะเล่มที่ติ๊ก ดูอย่างเดียว ส่งหัวใจได้ · ลบกลุ่ม = ออกจากระบบทันที', 'Each group gets its own PIN or link and sees only the books ticked for it — read-only, hearts allowed · delete a group and its phones are signed out'))}
 ${vgJust ? `<div class="call pick vgjust"><span>🔢 ${L('รหัสของกลุ่ม', 'PIN for')} <b>${esc(vgJust.name)}</b></span><span class="vgpin">${esc(vgJust.pin)}</span><small>${L('จดไว้ส่งให้ญาติตอนนี้ — แอปจะไม่แสดงรหัสนี้อีก', 'Note it down and send it now — the app will not show it again')}</small></div>` : ''}
 ${vg === 'loading' ? `<div class="empty">${L('กำลังโหลด…', 'Loading…')}</div>` : list.length ? `<div class="vglist">${list.map(card).join('')}</div>` : `<div class="empty">${L('ยังไม่มีกลุ่ม — สร้างกลุ่มแรกด้านล่าง', 'No groups yet — make the first one below')}</div>`}
-<section class="blk vgform"><h3>${f.id ? `✏️ ${L('แก้ไขกลุ่ม', 'Edit group')}` : `＋ ${L('สร้างกลุ่มใหม่', 'New group')}`}</h3>
+<section class="pcard vgform" style="--g1:${PG.pink}"><h3 class="pch"><span class="pcpic">${hubIc(f.id ? 'pencil' : 'relatives')}</span><span>${f.id ? L('แก้ไขกลุ่ม', 'Edit group') : L('สร้างกลุ่มใหม่', 'New group')}</span></h3>
 <label class="vgl">${L('ชื่อกลุ่ม', 'Group name')}<input id="vgname" class="field" maxlength="40" data-draft="vg:name" value="${esc(drafts['vg:name'] ?? f.name)}" placeholder="${L('เช่น ฝั่งคุณยาย', 'e.g. Grandma’s side')}"></label>
 <label class="vgl">${f.id ? L('รหัสใหม่ (ไม่ใส่ = ใช้รหัสเดิม)', 'New PIN (leave empty to keep it)') : L('รหัส 6–12 ตัวเลข (ไม่ใส่ = ญาติเข้าทางลิงก์อย่างเดียว)', 'PIN, 6–12 digits (empty = link only)')}<input id="vgpin" class="field" inputmode="numeric" maxlength="12" autocomplete="off" data-draft="vg:pin" value="${esc(drafts['vg:pin'] || '')}"></label>
 <div class="vgl">${L('เห็นสมุดเล่มไหน', 'Books this group sees')}<div class="vgchecks">${trips.map((t) => `<label class="vgck"><input type="checkbox" data-a="vgtrip" data-v="${esc(t.id)}"${f.trips.includes(t.id) ? ' checked' : ''}> ${esc(T(t.title).split(' · ')[0])}</label>`).join('')}</div></div>
@@ -2557,8 +2555,7 @@ function viewNotebook() {
   const sections = ['stay', 'food', 'place'].map((kind) => { const list = rs.filter((r) => r.kind === kind).sort(sortBy); return list.length ? `<div class="part">${RKIND[kind][0]} ${L(RKIND[kind][1], RKIND[kind][2])} <span class="label">· ${list.length}</span></div><ul class="nblist">${list.map(row).join('')}</ul>` : ''; }).join('');
   const lessons = rs.filter((r) => r.note && ((r.rating && r.rating <= 2) || r.again === false)).sort((a, b) => b.at - a.at);
   const live = curTrip();
-  return `<div class="part">${L('สมุดโน้ตนักเดินทาง', 'Travel notebook')}</div><h1 class="h2">${L('อะไรที่ครอบครัวเราชอบ', 'What works for our family')}</h1>
-<p class="lede">${L('รีวิวที่พัก ร้าน และสถานที่จากทุกเล่ม — ให้ดาวจากหน้าบันทึก แล้วใช้วางแผนทริปหน้า', 'Stays, food and places from every trip — rate them on each day’s Record page, then plan the next trip from here')}</p>
+  return `${pageHead('notebook', PG.orange, L('สมุดโน้ตนักเดินทาง', 'Travel notebook'), L('อะไรที่ครอบครัวเราชอบ', 'What works for our family'), L('รีวิวที่พัก ร้าน และสถานที่จากทุกเล่ม — ให้ดาวจากหน้าบันทึก แล้วใช้วางแผนทริปหน้า', 'Stays, food and places from every trip — rate them on each day’s Record page, then plan the next trip from here'))}
 ${likesBlock(rs.length)}
 ${tripLessons()}
 ${rs.length ? `<div class="nbsum"><div><h4>👍 ${L('สิ่งที่ชอบ', 'What worked')}</h4><div class="row">${good.map(chip).join('') || `<span class="label">${L('ยังไม่มี', 'nothing yet')}</span>`}</div></div>
