@@ -3133,12 +3133,25 @@ details.emeal[open]>summary .mname{visibility:hidden}
 .snapt th,.snapt td{text-align:left;padding:4px 6px;border-bottom:1px solid var(--line);white-space:nowrap}
 .snapt small{color:var(--muted)}
 /* a book from photos (#/snap): the two rhythms, the reading count, a day a fold with its moments, the main button at the foot */
-.tpk.snapmode{grid-template-columns:repeat(auto-fit,minmax(min(100%,150px),1fr));margin:14px 0 16px}
+.tpk.snapmode{grid-template-columns:repeat(auto-fit,minmax(min(100%,300px),1fr));max-width:none;margin:14px 0 16px}
 .snapmode .tpo{align-items:flex-start;text-align:left;min-height:72px}.snapmode .tpo small{color:var(--muted);font-size:13px;line-height:1.35}
 .flabel{display:block;font-size:13.5px;font-weight:600;margin:12px 0 6px;color:color-mix(in srgb,var(--ink) 80%,var(--paper))}
 .snapnote{display:flex;gap:10px;align-items:flex-start;margin:16px 0;padding:12px 14px;border-radius:12px;background:color-mix(in srgb,var(--accent) 7%,var(--paper));font-size:14px;line-height:1.45}
 .snapnote .ic{width:20px;height:20px;flex:none;color:var(--accent);margin-top:1px}
-.snapgeosw{display:grid;gap:6px;justify-items:start;margin:-4px 0 16px}.snapgeosw .chip{max-width:100%;text-align:start}.snapgeosw small{display:block;font-size:13.5px;line-height:1.45;color:var(--muted)}
+/* the start page of a book from photos (owner, Nov 2026: "ปรับ UI ส่วนนี้ด้วย"): the two ways as picture cards in their own colours,
+   the chosen one ringed in its colour; the name and the place in the settings pages' cards */
+.snapmode .tpo.pz{flex-direction:row;align-items:center;gap:12px;padding:14px;border-radius:18px;border-width:1px;border-style:solid}
+.snapmode .tpo.pz[aria-pressed=true]{padding:13px;border:2px solid color-mix(in srgb,var(--g1) 75%,#1F2A3A)!important;box-shadow:0 10px 20px -16px var(--g1)}
+.snapmode .tpo.pz .ck{background:color-mix(in srgb,var(--g1) 75%,#1F2A3A);color:#fff}
+.smpic{flex:none;display:grid;place-items:center;width:54px;height:54px;border-radius:50%;background:#fff;box-shadow:0 0 0 2px color-mix(in srgb,var(--g1) 35%,#fff)}
+.smpic img{width:42px;height:42px;object-fit:contain}
+.smtx{display:grid;gap:3px;min-width:0}.smtx b{font-size:17px;line-height:1.25}
+.snapmode .tpo.pz small{color:color-mix(in srgb,#1F2A3A 78%,var(--g1))}
+@media (prefers-color-scheme:dark){:root:not([data-theme=light]) .snapmode .tpo.pz small{color:color-mix(in srgb,var(--ink) 80%,var(--g1))}}
+:root[data-theme=dark] .snapmode .tpo.pz small{color:color-mix(in srgb,var(--ink) 80%,var(--g1))}
+.snapnamec .pch label{font:inherit;color:inherit}.snapnamec .field{width:100%}.snapnamec .pcsub.snapnmh{margin:10px 0 0}
+.snapwhere .pcsub{margin:0 0 12px}
+.snapgeosw{margin:0}.snapgeosw small{margin-top:2px}
 .snapfoot{display:flex;flex-direction:column;align-items:stretch;gap:8px;margin:20px 0 8px}.snapfoot small{color:var(--muted);font-size:13px;text-align:center}
 .snapfoot .linkbtn{align-self:center;min-height:44px}
 .snapbig{font-size:40px;font-weight:700;margin:24px 0;color:var(--accent)}

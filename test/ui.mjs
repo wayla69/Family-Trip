@@ -347,7 +347,12 @@ const T = 'hk-macau-2026';
     const bodies = []; const watch = (r) => { if (r.method() !== 'GET') bodies.push(r.url() + ' ' + (r.postData() || '')); }; page.on('request', watch);
     await page.goto(`${BASE}/#/`); await page.waitForSelector('.spine.add a.addway.main[href="#/snap"]');
     await page.click('.spine.add a.addway.main[href="#/snap"]'); await page.waitForSelector('.snapmode');
-    ok(await page.locator('.snapmode .tpo[aria-pressed="true"][data-v="after"]').count() === 1 && /never the position/.test(await page.textContent('.snapnote')) && await s.noHScroll(), 'book from photos: the new-book tile leads to it; "we\'re back" chosen, the privacy line said up front');
+    ok(await page.locator('.snapmode .tpo[aria-pressed="true"][data-v="after"]').count() === 1 && /never the position/.test(await page.textContent('.snapwhere')) && await page.locator('.snapmode .tpo.pz .smpic img').count() === 2 && await page.locator('.snapwhere .ckrow input[data-a="snapgeoon"]').count() === 1 && await s.noHScroll(), 'book from photos: the new-book tile leads to it; "we\'re back" chosen, the privacy line said up front');
+    await s.shot('snap-start');
+    { // the online-names switch is a tick row in the place card: a tap turns it on, another off (this phone only)
+      await page.click('.snapwhere .ckrow'); const on = await page.evaluate(() => [ls('geoOnline'), document.querySelector('.snapwhere input').checked]);
+      await page.click('.snapwhere .ckrow'); const off = await page.evaluate(() => [ls('geoOnline'), document.querySelector('.snapwhere input').checked]);
+      ok(on[0] && on[1] && !off[0] && !off[1], `book from photos: the place card's switch turns the online names on and off (${JSON.stringify({ on, off })})`); }
     const fx = ['gps-ii.jpg', 'gps-mm.jpg', 'gps.avif', 'time-only.jpg', 'gps-zero.jpg', 'no-exif.jpg', 'gps-south.jpg'].map((f) => path.resolve('test/fixtures/snap', f));
     const [fc] = await Promise.all([page.waitForEvent('filechooser'), page.click('[data-a="snappickbook"]')]);
     await fc.setFiles(fx);
