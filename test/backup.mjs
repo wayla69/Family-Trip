@@ -80,6 +80,19 @@ try {
   if (aid) ok((await fetch(`${B2}/media/${aid}`, { headers: { cookie: ck2 } })).headers.get('content-type').startsWith('audio/'), 'restored voice memo streams with its mime');
   { const vid = dst.media.find((m) => (m.mime || '').startsWith('video/')).id, [vf, vt] = await Promise.all([fetch(`${B2}/media/${vid}`, { headers: { cookie: ck2 } }), fetch(`${B2}/media/${vid}/t`, { headers: { cookie: ck2 } })]);
     ok(vf.ok && vf.headers.get('content-type').startsWith('video/mp4') && vt.ok && vt.headers.get('content-type') === 'image/jpeg', 'restored video clip plays, with its poster'); }
+  // the restore drill (scripts/restore-drill.mjs, run by the Backup workflow on every real backup): everything the zip holds is looked for
+  // on the restored server — and a photo that did not come back is named; run as a command it prints counts only, never an id
+  { const D = await import('../scripts/restore-drill.mjs'), { backup, entries } = await D.readBackup(zip);
+    const v = await D.verify({ base: B2, cookie: ck2, backup, entries });
+    ok(!v.problems.length && v.lines.some((l) => /^photos (\d+)\/\1$/.test(l)) && v.lines.some((l) => /^clips (\d+)\/\1$/.test(l)), `restore drill: ${v.lines.join(' · ')}`);
+    const m0 = backup.tables.media[0], ghost = { ...backup, tables: { ...backup.tables, media: [...backup.tables.media, { id: 'ph-ghost-0001', trip_id: m0.trip_id, mime: 'image/jpeg' }] } };
+    const g = await D.verify({ base: B2, cookie: ck2, backup: ghost, entries: new Set([...entries, 'photos/ph-ghost-0001.jpg']) });
+    ok(g.problems.some((p) => /^photos (\d+)\/(\d+)$/.test(p) && p !== 'photos 0/0'), `restore drill: a photo that did not come back is named (${g.problems.join(' · ')})`);
+    const zf = path.join(data, 'drill.zip'); fs.writeFileSync(zf, zip);
+    const out = await new Promise((res) => { const p = spawn(process.execPath, ['scripts/restore-drill.mjs', zf], { cwd: root, env: { ...process.env, DRILL_BASE: B2, DRILL_CODE: CODE } }); let o = ''; p.stdout.on('data', (d) => { o += d; }); p.stderr.on('data', (d) => { o += d; }); p.on('exit', (c) => res({ c, o })); });
+    fs.rmSync(zf, { force: true });
+    const named = [...backup.tables.trips.map((t) => t.id), ...backup.tables.media.map((m) => m.id), ...backup.tables.entries.slice(0, 20).map((e) => e.text).filter((x) => x && x.length > 3)];
+    ok(out.c === 0 && /everything in the backup came back/.test(out.o) && !named.some((x) => out.o.includes(x)), `restore drill as a command: passes and prints counts only (${out.o.trim().split('\n').slice(-2).join(' / ')})`); }
   const r2 = await (await fetch(B2 + '/api/import', { method: 'POST', headers: { 'x-mb': '1', cookie: ck2 }, body: zip })).json();
   ok(r2.photos === 0 && Object.values(r2.rows).every((n) => n === 0) && counts(await state(B2, ck2)) === counts(src), 'second import is a no-op (idempotent)');
   const bad = await fetch(B2 + '/api/import', { method: 'POST', headers: { 'x-mb': '1', cookie: ck2 }, body: Buffer.from('not a zip at all, just text padding padding padding padding padding') });

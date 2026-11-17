@@ -233,6 +233,8 @@ if (require.main === module) {
     .then(async (n) => { await A.init(PG); await PUSH.init(PG); const seeds = await BS.syncSeeds(PG); await EMOJI.seed(PG, BS.FAMILY); return [n, seeds]; })
     .then(([n, seeds]) => {
       REMIND.start();
+      // what older photos look like (migration 0029), filled in the background a few at a time: the "already in the book?" check covers them too
+      setTimeout(() => BS.backfillPh(PG, MEDIA).then((k) => { if (k) console.log(`photo look-alike prints filled in: ${k}`); }).catch((e) => console.error('backfill ph', e.message)), 8000).unref();
       const server = app.listen(PORT, () => console.log(`Memory Bookshelf on :${PORT} · postgres ${n} migrations · ${seeds} seeded trips · photos ${MEDIA.kind}`));
       // Railway sends SIGTERM on every redeploy: stop taking requests, close Chromium + the pool, exit
       const stop = () => {

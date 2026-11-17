@@ -264,7 +264,8 @@ function snapRun(via, files) {
   snapT.runs.push(run); snapT.busy = true; render();
   let last = 0;
   return snapRead(files, (i, m) => { run.rows[i] = m; const now = performance.now(); if (now - last > 250) { last = now; snapDraw(); } })
-    .then(() => { run.ms = performance.now() - t0; snapT.busy = false; render(); });
+    .then(() => { run.ms = performance.now() - t0; render(); return devSpeed(run); })
+    .then(() => { snapT.busy = false; render(); });
 }
 const SNAP_PICKS = [
   ['photos', 'image/*', false, 'คลังรูป', 'Photo library'],
@@ -289,6 +290,7 @@ function snapRunHtml(run) {
   const pick = SNAP_PICKS.concat([SNAP_SHARE]).find((p) => p[0] === run.via) || SNAP_PICKS[0];
   return `<section class="snaprun"><h2>${L(pick[3], pick[4])} · ${L(`${n} รูป`, `${n} photo${n === 1 ? '' : 's'}`)}</h2>
 ${done.length < n ? `<p class="label">${L('กำลังอ่าน', 'Reading')} ${done.length}/${n}</p>` : `<p class="label">${L('อ่านเสร็จใน', 'Read in')} ${(run.ms / 1000).toFixed(1)} ${L('วินาที', 's')}</p>`}
+${((d) => (d ? `<ul class="snapsum devspeed">${line('รูปตัวอย่างในไฟล์', 'A preview inside the file', d.pv)}${line('ตรวจใบเสร็จต่อรูป', 'Receipt check a photo', `${d.avg} ms`)}${line('เครื่องนี้เปิดไม่ได้', 'This phone cannot open', String(d.bad))}${line('เจอใบเสร็จหรือเอกสาร', 'Receipts or papers found', String(d.doc))}</ul>` : ''))(devSpeedLine(run))}
 <ul class="snapsum">${line('มีเวลาถ่ายในรูป', 'Time taken (EXIF)', `${exif} · ${pct(exif)}`)}${line('มีเขตเวลา', 'Time zone', `${off} · ${pct(off)}`)}${line('มีตำแหน่ง', 'Position', `${gps} · ${pct(gps)}`)}${line('ไฟล์ HEIC/HEIF', 'HEIC/HEIF files', heif)}</ul>
 <div class="snapscroll"><table class="snapt"><thead><tr><th>#</th><th>${L('ชนิด', 'Type')}</th><th>${L('ขนาด', 'Size')}</th><th>${L('เวลาถ่าย', 'Taken')}</th><th>${L('ตำแหน่ง', 'Position')}</th></tr></thead><tbody>${run.files.map((f, i) => {
     const m = rs[i], ty0 = (f.type || '?').replace('image/', ''), ty = esc(ty0) + (m && m.kind && m.kind !== ty0 ? ` <small>${m.kind}</small>` : '');
@@ -296,12 +298,15 @@ ${done.length < n ? `<p class="label">${L('กำลังอ่าน', 'Readin
   }).join('')}</tbody></table></div></section>`;
 }
 function snapText() {   // what the owner pastes back: the device and the counts per picker — never a position, never a file name
-  const lines = [snapDevice()];
+  const lines = [snapDevice()], hand = devHand();
+  if (snapT.dev) for (const [lab, st, det] of snapT.dev.rows) lines.push(`${st === 'ok' ? '✓' : st === 'no' ? '✗' : st === 'warn' ? '!' : '—'} ${lab}${det ? ' · ' + det : ''}`);
+  for (const [k, th, en] of DEV_HAND) if (hand[k]) lines.push(`${hand[k] === 'ok' ? '✓' : '✗'} ${L(th, en)}`);
   for (const run of snapT.runs) {
     const done = run.rows.filter(Boolean), c = (f) => done.filter(f).length;
     lines.push(`${run.via}: ${run.files.length} · exif ${c((m) => m.src === 'exif')} · tz ${c((m) => m.tz)} · gps ${c((m) => m.ll)} · types ${[...new Set(run.files.map((f) => f.type || '?'))].join(',')} · ${(run.ms / 1000).toFixed(1)}s`);
     const by = {}; run.files.forEach((f, i) => { const m = run.rows[i]; if (!m) return; const k = f.type || '?', b = by[k] || (by[k] = { n: 0, exif: 0, gps: 0, why: {} }); b.n++; if (m.src === 'exif') b.exif++; if (m.ll) b.gps++; if (m.why) b.why[m.why] = (b.why[m.why] || 0) + 1; });
     for (const [k, b] of Object.entries(by)) lines.push(`  ${k} ${b.n}: exif ${b.exif} · gps ${b.gps}${Object.keys(b.why).length ? ' · ' + Object.entries(b.why).map(([w, n]) => `${w}×${n}`).join(' ') : ''}`);
+    const d = devSpeedLine(run); if (d) lines.push(`  preview ${d.pv} · gate ${d.avg} ms · cannot open ${d.bad} · papers ${d.doc}`);
   }
   if (snapT.geo) lines.push('live position: ' + snapT.geo);
   return lines.join('\n');
@@ -315,7 +320,11 @@ function viewSnapTest() {
   // Chrome on Android always says "Android 10" in its user agent; the real version comes from the client hints, once
   if (!snapT.platAsked && navigator.userAgentData && navigator.userAgentData.getHighEntropyValues) { snapT.platAsked = true;
     navigator.userAgentData.getHighEntropyValues(['platformVersion']).then((h) => { const pf = navigator.userAgentData.platform; if (pf && h.platformVersion) { snapT.plat = `${pf} ${h.platformVersion}`; render(); } }).catch(() => {}); }
-  return `<h1>${L('ทดสอบรูปบนเครื่องนี้', 'Photo check on this phone')}</h1>
+  return `<h1>${L('ตรวจเครื่องนี้', 'Check this phone')}</h1>
+<p class="sub">${L('กดตรวจ แล้วลองทำตามรายการด้านล่าง เสร็จแล้วกด "คัดลอกผล" ส่งให้ผู้พัฒนา ไม่มีรูปหรือตำแหน่งออกจากเครื่อง', 'Run the check, try the list below, then "copy the results" and send them to the developer — no photo or position leaves the phone')}</p>
+<button type="button" class="btn wide" data-a="devcheck"${snapT.devBusy ? ' disabled' : ''}>${snapT.devBusy ? L('กำลังตรวจ…', 'Checking…') : L('ตรวจเครื่องนี้', 'Check this phone')}</button>
+${devHtml()}
+<h2 class="snaph2">${L('ทดสอบรูปบนเครื่องนี้', 'Photo check on this phone')}</h2>
 <p class="notice">${L('หน้านี้ใช้ทดสอบเล่มจากรูป: ดูว่ามือถืออ่านเวลาถ่ายและตำแหน่งจากรูปได้หรือไม่ ไม่มีรูปถูกส่งไปไหน และไม่แสดงพิกัด แสดงแค่ว่ามีหรือไม่มี',
     'A check for the book-from-photos idea: does this phone hand over when and where each photo was taken? Nothing is uploaded and no position is shown — only whether there is one.')}</p>
 <p class="label">${esc(snapDevice())}</p>
@@ -325,7 +334,73 @@ ${snapT.shareNone ? `<p class="notice">${L('การแชร์มาถึง
 <button type="button" class="btn ghost" data-a="snapgeo">${L('ตำแหน่งตอนนี้', 'Position now')}</button></div>
 ${snapT.geo ? `<p class="label">${L('ตำแหน่งตอนนี้', 'Position now')}: ${esc(snapT.geo)}</p>` : ''}
 <div id="snapruns">${snapT.runs.slice().reverse().map(snapRunHtml).join('')}</div>
-${snapT.runs.length ? `<div class="row"><button type="button" class="btn" data-a="snapcopy">${L('คัดลอกผลไว้ส่งให้ผู้พัฒนา', 'Copy the results')}</button><button type="button" class="linkbtn" data-a="snapclear">${L('ล้าง', 'Clear')}</button></div>` : ''}`;
+${snapT.runs.length || snapT.dev ? `<div class="row"><button type="button" class="btn" data-a="snapcopy">${L('คัดลอกผลไว้ส่งให้ผู้พัฒนา', 'Copy the results')}</button><button type="button" class="linkbtn" data-a="snapclear">${L('ล้าง', 'Clear')}</button></div>` : ''}`;
+}
+/* The phone check (owner, Nov 2026: "ลองกับมือถือจริง"): what this phone can do for the app, asked of the phone itself — the
+   Home-Screen app, the offline helper and its space, the file print, small decodes, sharing a film, playing a clip in parts (206),
+   the voice recorder, reminders — then a short list to try by hand. Nothing leaves the phone but what the owner copies. */
+const DEV_HAND = [
+  ['film', 'เล่นคลิปสรุปทริปในหน้าสมุด มีภาพและเสียง', 'The trip film plays on the memory book page, with sound'],
+  ['share', 'กด "ส่งให้ญาติ" แล้วส่งทาง LINE ได้', '"Send to family" sends it through LINE'],
+  ['clip', 'คลิปของลูกในวันที่บันทึกเล่นได้', "A kid's clip plays on the record page"],
+  ['offclip', 'โหมดเครื่องบิน: คลิปที่เคยเปิดแล้วยังเล่นได้', 'Airplane mode: a clip played before still plays'],
+  ['receipt', 'เล่มจากรูปที่มีใบเสร็จ 1 ใบ: ใบเสร็จถูกพักไว้', 'A book from photos with one receipt: the receipt is set aside'],
+  ['twice', 'เลือกรูปเดิมซ้ำ: ขึ้นว่ามีในเล่มแล้ว', 'The same photo picked again: "already in the book"'],
+  ['remind', 'กดทดสอบการเตือนในหน้าไม่มีเน็ต: เตือนเด้งขึ้นมา', 'The test reminder on the no-signal page arrives'],
+];
+const devHand = () => { try { return ls('devHand') || {}; } catch (_) { return {}; } };
+function devHtml() {
+  const d = snapT.dev, hand = devHand(), mark = (s) => (s === 'ok' ? '✓' : s === 'no' ? '✗' : s === 'warn' ? '!' : '—');
+  return `${d ? `<ul class="devlist">${d.rows.map(([lab, st, det]) => `<li class="dv-${st}"><b aria-hidden="true">${mark(st)}</b><span>${esc(lab)}${det ? `<small>${esc(det)}</small>` : ''}</span></li>`).join('')}</ul>` : ''}
+<h2 class="snaph2">${L('ลองด้วยมือ', 'Try by hand')}</h2><p class="sub">${L('แตะเพื่อบอกผล: ได้ ✓ · ไม่ได้ ✗', 'Tap to say how it went: works ✓ · does not ✗')}</p>
+<div class="devhand">${DEV_HAND.map(([k, th, en]) => `<button type="button" class="devh dv-${hand[k] || 'none'}" data-a="devhand" data-v="${k}" aria-pressed="${!!hand[k]}"><b aria-hidden="true">${mark(hand[k])}</b><span>${L(th, en)}</span></button>`).join('')}</div>`;
+}
+async function devCheck() {
+  const rows = [], add = (th, en, st, det) => rows.push([L(th, en), st, det || '']), time = async (fn) => { const t0 = performance.now(); const r = await fn(); return [r, Math.round(performance.now() - t0)]; };
+  const app = matchMedia('(display-mode: standalone)').matches || navigator.standalone;
+  add('เปิดจากไอคอนบนหน้าจอโฮม', 'Opened from the Home-Screen icon', app ? 'ok' : 'warn', app ? '' : L('iPhone เตือนได้เฉพาะเมื่อเปิดจากไอคอน', 'an iPhone reminds only from the icon'));
+  try {
+    const reg = navigator.serviceWorker && await navigator.serviceWorker.getRegistration(), keys = 'caches' in self ? await caches.keys() : [];
+    add('ตัวช่วยตอนไม่มีเน็ต', 'The offline helper', reg && reg.active ? 'ok' : 'no', (keys.find((k) => /^mbs-v\d/.test(k)) || '').replace(/-[0-9a-f]+$/, ''));
+  } catch (_) { add('ตัวช่วยตอนไม่มีเน็ต', 'The offline helper', 'no'); }
+  try { const e = await navigator.storage.estimate(), per = navigator.storage.persisted ? await navigator.storage.persisted() : false;
+    add('พื้นที่ในเครื่อง', 'Space on the phone', e.quota > 500e6 ? 'ok' : 'warn', `${Math.round((e.usage || 0) / 1e6)} / ${Math.round((e.quota || 0) / 1e6)} MB${per ? L(' · เก็บถาวร', ' · kept') : ''}`); } catch (_) { add('พื้นที่ในเครื่อง', 'Space on the phone', 'none'); }
+  add('ลายนิ้วมือไฟล์ (กันรูปซ้ำ)', 'File print (no photo twice)', typeof crypto !== 'undefined' && crypto.subtle ? 'ok' : 'no');
+  try { const c = document.createElement('canvas'); c.width = 400; c.height = 300; c.getContext('2d').fillRect(0, 0, 400, 300);
+    const blob = await new Promise((r) => c.toBlob(r, 'image/jpeg', 0.8)), [bmp, ms] = await time(() => createImageBitmap(blob, { resizeWidth: 96, resizeQuality: 'low' }));
+    add('ย่อรูปเร็ว', 'Quick small decodes', bmp && bmp.width === 96 ? 'ok' : 'warn', `${ms} ms`); if (bmp && bmp.close) bmp.close(); } catch (e) { add('ย่อรูปเร็ว', 'Quick small decodes', 'no', e.name); }
+  const tryShare = (type, name) => { try { return !!(navigator.canShare && navigator.canShare({ files: [new File([new Uint8Array(16)], name, { type })] })); } catch (_) { return false; } };
+  add('ส่งคลิปผ่านหน้าแชร์', 'Share a film', tryShare('video/mp4', 'trip.mp4') ? 'ok' : 'no', tryShare('image/jpeg', 'x.jpg') ? L('ส่งรูปได้', 'photos too') : '');
+  // a clip or film of the family's own: plays here, and in parts (206)
+  const tr = trips().find((x) => x.reel && x.reel.v), vid = S.media.find((m) => isVideo(m) && !m.local && !m.pending);
+  const src = tr ? `/media/reel/${encodeURIComponent(tr.id)}?v=${encodeURIComponent(tr.reel.v)}` : vid ? `/media/${encodeURIComponent(vid.id)}` : '';
+  if (!src) add('เล่นคลิป', 'Play a clip', 'none', L('ยังไม่มีคลิปในเล่ม', 'no clip in the books yet'));
+  else {
+    try { const r = await fetch(src, { headers: { range: 'bytes=0-99' }, credentials: 'same-origin' }); add('ส่งคลิปเป็นช่วง (206)', 'Clip in parts (206)', r.status === 206 ? 'ok' : 'no', String(r.status)); } catch (e) { add('ส่งคลิปเป็นช่วง (206)', 'Clip in parts (206)', 'no', e.name); }
+    const [res, ms] = await time(() => new Promise((ok) => { const v = document.createElement('video'); v.muted = true; v.playsInline = true; v.preload = 'metadata';
+      const done = (x) => { v.removeAttribute('src'); v.load(); ok(x); }; v.onloadedmetadata = () => done(v.duration); v.onerror = () => done(-1); setTimeout(() => done(0), 10000); v.src = src; }));
+    add('เล่นคลิป', 'Play a clip', res > 0 ? 'ok' : 'no', res > 0 ? `${Math.round(res)} s · ${ms} ms` : res < 0 ? L('เปิดไม่ได้', 'cannot open') : L('ช้าเกิน 10 วินาที', 'over 10 s'));
+  }
+  const rec = typeof MediaRecorder !== 'undefined' ? ['audio/webm;codecs=opus', 'audio/mp4'].filter((m) => MediaRecorder.isTypeSupported(m)) : [];
+  add('อัดเสียงลูก', "Record the kids' voices", rec.length ? 'ok' : 'no', rec.join(', '));
+  add('การเตือน', 'Reminders', typeof Notification === 'undefined' || !('PushManager' in self) ? 'no' : Notification.permission === 'granted' ? 'ok' : 'warn', typeof Notification === 'undefined' ? '' : Notification.permission);
+  return { rows, at: Date.now() };
+}
+// each picked photo: does it carry its own small preview (JPEG / HEIF), how long the receipt gate took, can this phone open it, is it a paper
+async function devSpeed(run) {
+  run.speed = [];
+  for (const [i, f] of run.files.slice(0, 40).entries()) {
+    const m = run.rows[i]; if (!m) continue; const t0 = performance.now(); let pv = 'none', dec = false, gate = null;
+    if (m.th) { pv = m.th instanceof Blob ? 'heif' : 'jpeg'; gate = await snapThumbGate(f, m.th); dec = gate !== null; }
+    if (gate === null) { const lk = await snapLook(f); dec = dec || !!lk; gate = !!(lk && lk.paper); }
+    const ms = Math.round(performance.now() - t0), doc = gate ? await snapDocLook(f) : false;
+    run.speed[i] = { pv, ms, dec, doc };
+  }
+}
+function devSpeedLine(run) {
+  const sp = (run.speed || []).filter(Boolean); if (!sp.length) return '';
+  const c = (f) => sp.filter(f).length, avg = Math.round(sp.reduce((s, x) => s + x.ms, 0) / sp.length);
+  return { pv: `jpeg ${c((x) => x.pv === 'jpeg')} · heif ${c((x) => x.pv === 'heif')} · ${L('ไม่มี', 'none')} ${c((x) => x.pv === 'none')}`, avg, bad: c((x) => !x.dec), doc: c((x) => x.doc), n: sp.length };
 }
 function snapDraw() { const el = document.getElementById('snapruns'); if (el) el.innerHTML = snapT.runs.slice().reverse().map(snapRunHtml).join(''); }
 Object.assign(A, {
@@ -344,7 +419,9 @@ Object.assign(A, {
       { enableHighAccuracy: false, timeout: 15000, maximumAge: 60000 });
   },
   snapcopy() { const s = snapText(); (navigator.clipboard ? navigator.clipboard.writeText(s) : Promise.reject()).then(() => toast(L('คัดลอกแล้ว', 'Copied'))).catch(() => { prompt(L('คัดลอกข้อความนี้', 'Copy this'), s); }); },
-  snapclear() { snapT.runs = []; snapT.geo = null; snapT.shareNone = false; render(); },
+  snapclear() { snapT.runs = []; snapT.geo = null; snapT.shareNone = false; snapT.dev = null; render(); },
+  async devcheck() { if (snapT.devBusy) return; snapT.devBusy = true; render(); try { snapT.dev = await devCheck(); } finally { snapT.devBusy = false; render(); } },
+  devhand(b) { const k = b.dataset.v, h = devHand(); h[k] = h[k] === 'ok' ? 'no' : h[k] === 'no' ? undefined : 'ok'; if (!h[k]) delete h[k]; try { ls('devHand', h); } catch (_) {} render(); },
 });
 if (typeof document !== 'undefined') document.addEventListener('change', (e) => {
   if (e.target.id === 'snapin-book') { const fs = [...(e.target.files || [])]; if (fs.length) snapStartRead(fs); return; }
@@ -596,8 +673,8 @@ async function snapSift(list) {
   Object.assign(s.aside, r.aside); r.star.forEach((i) => s.star.add(i)); s.sift = r.sift;
 }
 // the reasons photos were set aside, in words: "ภาพซ้ำ · ใบเสร็จและเอกสาร"
-const SNAP_WHY = { dup: ['ภาพซ้ำ', 'repeats'], shot: ['ภาพหน้าจอ', 'screenshots'], doc: ['ใบเสร็จและเอกสาร', 'receipts and papers'] };
-const snapWhy = (kinds) => ['dup', 'shot', 'doc'].filter((k) => kinds.includes(k)).map((k) => L(SNAP_WHY[k][0], SNAP_WHY[k][1])).join(' · ');
+const SNAP_WHY = { dup: ['ภาพซ้ำ', 'repeats'], shot: ['ภาพหน้าจอ', 'screenshots'], doc: ['ใบเสร็จและเอกสาร', 'receipts and papers'], near: ['เหมือนรูปที่มีในเล่มแล้ว', 'like a photo already in the book'] };
+const snapWhy = (kinds) => ['dup', 'shot', 'doc', 'near'].filter((k) => kinds.includes(k)).map((k) => L(SNAP_WHY[k][0], SNAP_WHY[k][1])).join(' · ');
 const snapIn = (s, i) => !s.aside[i] || s.keep.has(i);   // a photo set aside stays out until the parents bring it back
 // the runs of dates in the picked photos (gaps under three days), in date order, each with how many photos it holds (a photo set aside
 // does not count), the towns it names most and whether it is already a book
@@ -848,7 +925,7 @@ async function snapMakeOne(s, plan, several) {
           if (!S.places.some((x) => x.trip === t.id && x.key === key)) await enqueue({ method: 'PUT', url: '/api/b/places', body: { trip: t.id, key, day: i, kind: 'place', name: { th: p.th, en: p.en }, done: true, at: at0 },
             local: { coll: 'places', id: `${t.id}:${key}`, row: { trip: t.id, key, day: i, kind: 'place', name: { th: p.th, en: p.en }, at: at0 } } });
         }
-        await addPhotos(t, i, m.items.map((x) => s.files[x.i]), name ? { place: name } : null, m.items.map((x) => (s.metas[x.i] ? { ...s.metas[x.i], star: s.star.has(x.i) } : null)));
+        await addPhotos(t, i, m.items.map((x) => s.files[x.i]), name ? { place: name } : null, Object.assign(m.items.map((x) => (s.metas[x.i] ? { ...s.metas[x.i], star: s.star.has(x.i) } : null)), { near: false }));   // a new book: the read page already sifted the pick
       }
       for (const v of d.vids) await addVideo(t, i, v.file, v.ms, true);   // the day's clips, each with the time it was filmed
     }
@@ -981,7 +1058,7 @@ async function snapLiveAdd(t, files0, live = true, screen = true) {
     }
     await load().catch(() => {}); t = trip(t.id);
   }
-  const groups = {}; let out = 0;
+  const groups = {}, nearOut = []; let out = 0;
   metas.forEach((x, k) => {
     const date = dateOf(x); let i = t.days.findIndex((d) => d.date === date);
     if (i < 0 && !live) { out++; return; }
@@ -994,6 +1071,7 @@ async function snapLiveAdd(t, files0, live = true, screen = true) {
       if (!S.places.some((x) => x.trip === t.id && x.key === key)) await enqueue({ method: 'PUT', url: '/api/b/places', body: { trip: t.id, key, day: g.i, kind: 'place', name: { th: p.th, en: p.en }, done: true, at: Date.now() },
         local: { coll: 'places', id: `${t.id}:${key}`, row: { trip: t.id, key, day: g.i, kind: 'place', name: { th: p.th, en: p.en }, at: Date.now() } } }); }
     g.metas.quiet = true;   // one line below says it all
+    g.metas.nearOut = nearOut; if (!screen) g.metas.near = false;   // a look-alike waits in the same sheet; one brought back from it is sent as it is
     await addPhotos(t, g.i, g.files, g.name ? { place: g.name } : null, g.metas);
   }
   let vout = 0;   // the clips, each on the day it was filmed (during the trip one with no time goes on today)
@@ -1007,12 +1085,13 @@ async function snapLiveAdd(t, files0, live = true, screen = true) {
   const named = {}; for (const g of Object.values(groups)) if (g.pl && !named[g.i] && !(t.days[g.i] || {}).place) named[g.i] = g.pl;
   for (const [i, pl] of Object.entries(named)) await api('PATCH', `/api/b/days/${encodeURIComponent(t.id)}/${i}`, { place: { th: pl.th, en: pl.en } }).catch(() => {});
   if (Object.keys(named).length) await load().catch(() => {});
-  const vn = clips.length - vout, n = files.length - out;
+  const vn = clips.length - vout, n = files.length - out - nearOut.length;   // a look-alike held in the sheet is not "added"
   const said = [n && L(`เติม ${n} รูปลงเล่มแล้ว`, `${n} photo${n > 1 ? 's' : ''} added`), vn && L(`${vn} คลิป`, `${vn} clip${vn > 1 ? 's' : ''}`),
     out + vout && L(`${out + vout} รูปหรือคลิปไม่รู้วันที่หรืออยู่นอกช่วงทริป ไม่ได้ใส่`, `${out + vout} with no date or from outside the trip — left out`),
     already && L(`ข้าม ${already} ที่มีในเล่มแล้ว`, `${already} already in the book`)].filter(Boolean).join(' · ');
   if (said) toast(said);
   safeRender();
+  held = held.concat(nearOut);
   if (held.length) snapHeldSheet(t, held, live, 0);
 }
 /* What the screen set aside from photos added later or during the trip waits here, never sent: a tap picks one, "add the ones picked"
