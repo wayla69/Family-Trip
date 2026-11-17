@@ -346,7 +346,7 @@ ok(s.trips[0].days[0].done_at > 0 && s.trips.some((t) => t.slug === 'chiang-mai-
 // ---- the day's plan from the seed (manual's day card) is in the state, never bookings
 {
   const hk = (await state()).trips.find((t) => t.id === T), p3 = hk.days[3].plan;
-  ok(p3.plan.length === 10 && p3.plan[2].t === '11:00' && /teamLab/.test(p3.plan[2].en) && p3.pick && p3.planB && /MOP 784/.test(p3.money.en), 'day 4 plan (manual card): 10 timed steps, teamLab at 11:00, local pick, plan B, money');
+  ok(p3.plan.length === 10 && p3.plan[2].t === '11:00' && /teamLab/.test(p3.plan[2].en) && p3.pick && p3.planB && /teamLab ×4 \(3 adults \+ Mimi\) MOP 1,072/.test(p3.money.en), 'day 4 plan (manual card): 10 timed steps, teamLab at 11:00, local pick, plan B, money');
   ok(hk.days.every((d) => d.plan && d.plan.plan && d.plan.plan.length) && hk.days.every((d) => !/(booking|PNR|confirmation)[^"]{0,20}\b(?=[A-Z]*\d)[A-Z0-9]{6}\b|\b(?=[A-Z]*\d)[A-Z0-9]{6}\b[^"]{0,20}(booking|PNR|confirmation)/i.test(JSON.stringify(d.plan))), 'every HK day has a plan; no booking references');
   ok(hk.days[0].plan.stay && /Pak Yan Road/.test(hk.days[0].plan.stay.addr) && hk.info.emergency[0].tel === '999' && hk.info.stays.length === 2 && hk.info.prices.rows.length >= 5, 'HK: tonight\'s stay with address, pocket guide (999, 2 stays, prices)');
   // Australia, imported from the owner's trip artifact: every day planned, nearby food, learn cards, quiz, pocket guide, Aussie words
