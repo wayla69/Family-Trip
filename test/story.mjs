@@ -95,7 +95,8 @@ const mock = http.createServer((req, res) => {
       planned: [{ th: 'พิพิธภัณฑ์ทดสอบ', en: 'Test Museum', q: 'Test Museum, Testland', kind: 'place' }], legs: [{ from: 'Test Inn', to: 'Test Museum', by: L2('แท็กซี่', 'Taxi'), min: 10 }],
       planB: L2('ถ้าฝนหยุด เดินเล่นที่จัตุรัส', 'If it stops raining, the square'), tips: [L2('พกร่ม', 'Bring an umbrella')] });
     const VF = () => JSON.stringify({ places: [{ i: 1, st: 'closed', hours: '10:00–18:00', note: L2('ปิดถาวรตั้งแต่ปี 2026', 'Closed for good since 2026'), url: 'https://example.com/test-square' }] });
-    const parts = vf ? [VF()] : dayCh ? [DAYCH()] : planRoute ? [ROUTE()] : art ? [ARTA[art]()] : imp ? [badJson ? '{"days":[{"learn":[{"name":{"th":"x" "en":"x"}}]}]}' : IMP[imp]()] : photo ? [JSON.stringify(pids.map((id, k) => (k === 0 ? { id, cap: '## เด็กๆ **ยิ้ม** หน้าปราสาท', tags: ['kids', 'Character', 'bogus', 'kids'], place: stop0, best: true } : { id, cap: 'เรากินติ่มซำ', tags: ['food'], place: 'Narnia', best: 'yes' })))]
+    const two = planRoute && facts.includes('Give TWO different routes');
+    const parts = two ? [JSON.stringify({ routes: [{ ...JSON.parse(ROUTE()), label: L2('เมืองเดียว', 'One base'), why: L2('ไม่ต้องย้ายกระเป๋า', 'No packing up') }, { ...JSON.parse(ROUTE()), label: L2('สองเมือง', 'Two towns'), why: L2('ได้เห็นมากขึ้น', 'See more'), days: [] }, 'junk'] })] : vf ? [VF()] : dayCh ? [DAYCH()] : planRoute ? [ROUTE()] : art ? [ARTA[art]()] : imp ? [badJson ? '{"days":[{"learn":[{"name":{"th":"x" "en":"x"}}]}]}' : IMP[imp]()] : photo ? [JSON.stringify(pids.map((id, k) => (k === 0 ? { id, cap: '## เด็กๆ **ยิ้ม** หน้าปราสาท', tags: ['kids', 'Character', 'bogus', 'kids'], place: stop0, best: true } : { id, cap: 'เรากินติ่มซำ', tags: ['food'], place: 'Narnia', best: 'yes' })))]
       : snapn ? ['```json\n' + JSON.stringify({ title: { th: 'เขาใหญ่ทุ่งดอกไม้', en: 'Khao Yai in bloom' }, days: [{ day: 1, th: 'ทานตะวันยามเช้า', en: 'Sunflowers at breakfast', emoji: '🌻' }, { day: 2, th: 'ฝนพรำ', en: 'Drizzle', emoji: '🌧️' }, { day: 9, th: 'x', en: 'x' }] }) + '\n```']
       : quiz ? ['```json\n[{"q":"เมื่อวานมีมี่บอกว่าปลาอยู่ที่ไหน","a":[{"e":"💧","t":"ในน้ำ"},{"e":"🌳","t":"บนต้นไม้"},{"e":"🚌","t":"บนรถบัส"}],"ok":0},',
       '{"q":"ไปไหนมา","a":[{"e":"🏰","t":"ดิสนีย์"},{"e":"🏖️","t":"ทะเล"},{"e":"🏔️","t":"ภูเขา"}],"ok":0},{"q":"bad","a":[{"t":"x"}],"ok":3}]\n```']
@@ -711,9 +712,12 @@ try {
     `planner: the route comes back cleaned — the family's dates laid out again, a bad country code dropped (${rr.status} ${JSON.stringify(rj).slice(0, 300)})`);
   const routeCall = calls[c0], rsent = JSON.stringify(routeCall && routeCall.body);
   ok(calls.length === c0 + 1 && /Where: Tokyo with the kids/.test(rsent) && /Ueno Zoo/.test(rsent) && !/junk/.test(rsent), 'planner: one call for the route, carrying the answers (unknown fields dropped)');
+  { const c2 = calls.length, tr = await pl('/api/b/planner/route', { answers, two: true }), tj = await tr.json();
+    ok(tr.status === 200 && calls.length === c2 + 1 && Array.isArray(tj.routes) && tj.routes.length === 1 && tj.routes[0].label.en === 'One base' && tj.routes[0].why.th === 'ไม่ต้องย้ายกระเป๋า' && tj.routes[0].days.length === 3,
+      `planner: two routes to compare in one call — a route that does not read is left out, each keeps its name and who it suits (${tr.status} ${JSON.stringify(tj).slice(0, 160)})`); }
   const edited = { ...rt, days: rt.days.slice(0, 2) };
-  const er = await (await pl('/api/b/planner/route', { answers, route: edited })).json();
-  ok(calls.length === c0 + 1 && er.route.days.length === 2 && er.route.to === '2027-04-02', 'planner: a route edited by hand is only cleaned — no call');
+  const cE = calls.length, er = await (await pl('/api/b/planner/route', { answers, route: edited })).json();
+  ok(calls.length === cE && er.route.days.length === 2 && er.route.to === '2027-04-02', 'planner: a route edited by hand is only cleaned — no call');
   const c1 = calls.length, dr0 = await pl('/api/b/planner/draft', { answers, route: rt }), dj = await dr0.json();
   ok(dr0.status === 202 && dj.slug === 'sakura-test-hop-2027', `planner: the book starts as an import job (${dr0.status} ${JSON.stringify(dj)})`);
   let pj; for (let i = 0; i < 160; i++) { pj = await (await fetch(BASE + '/api/b/import', { headers: { cookie: ck } })).json(); if (pj.job.status !== 'running') break; await new Promise((r) => setTimeout(r, 250)); }
@@ -745,6 +749,19 @@ try {
     const nday = await pp.locator('.plday').count(), wide = await pp.evaluate(() => document.documentElement.scrollWidth <= innerWidth + 1);
     const btn = await pp.locator('[data-a="planbook"]').count(), full = await pp.textContent('.plfoot');
     ok(nday === 3 && wide && btn === 0 && /next month|เดือนหน้า/i.test(full), `planner page: the route day by day, no sideways scroll; with the month used, the book waits (${nday} days · ${full.trim().slice(0, 80)})`);
+    // two to compare: the button only before a route is chosen; the cards side by side; "pick this one" makes it the route
+    await pp.evaluate(() => { localStorage.removeItem('mbs_planRoute'); pln.route = null; pln.alts = null; render(); });
+    await pp.click('[data-a="planroute2"]'); await pp.waitForSelector('.plalt', { timeout: 15000 });
+    const alts = await pp.locator('.plalt').count();
+    await pp.click('.plalt [data-a="planpick"]'); await pp.waitForSelector('.plday');
+    ok(alts === 1 && await pp.locator('.plalt').count() === 0 && await pp.locator('.plday').count() === 3, `planner page: two to compare, then the one picked becomes the route (${alts} card)`);
+    // a book from photos as the start of the next plan: its towns and day names fill the answers
+    const sb2 = await (await fetch(BASE + '/api/b/snap', { method: 'POST', headers: PH, body: JSON.stringify({ days: [{ date: '2025-12-12', place: { th: 'ปากช่อง', en: 'Pak Chong' } }, { date: '2025-12-13', title: { th: 'ทุ่งดอกไม้', en: 'The flower fields' } }] }) })).json();
+    await pp.goto(BASE + '/#/'); await pp.evaluate(() => load().then(render)); await pp.goto(`${BASE}/#/t/${sb2.id}`); await pp.waitForSelector('.hubrow.snapplango');
+    await pp.click('.hubrow.snapplango'); await pp.waitForSelector('#pldest');
+    const dest = await pp.inputValue('#pldest'), want = await pp.inputValue('#plwant');
+    ok(/Pak Chong/.test(dest) && /flower fields/i.test(want) && !/Day 1/.test(want), `planner from a photo book: its towns and its days start the answers (${dest} · ${want.slice(0, 60)})`);
+    await fetch(BASE + `/api/b/trips/${sb2.id}`, { method: 'DELETE', headers: PH });
     await pc.close(); }
   await fetch(BASE + '/api/b/import/' + pd.id, { method: 'DELETE', headers: PH });
   }
