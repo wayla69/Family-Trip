@@ -3595,3 +3595,16 @@ b.kf.kd,.tp.one .gcard b.kf.kd{--kc:#C9780E}
 .dchcmp ol{margin:0;padding-left:18px;display:grid;gap:4px;font-size:14px}.dchcmp .dchold{opacity:1;color:color-mix(in srgb,var(--ink) 70%,var(--paper))}
 .dchd{display:flex;flex-wrap:wrap;gap:6px 12px;align-items:center;justify-content:space-between;margin:8px 0}
 :root[data-theme=dark] .dchcmp .lbl{color:color-mix(in srgb,var(--accent) 60%,#fff)}
+/* check the places on the web: a card a day, each place a row with its state; a place that may be gone is ringed */
+.vfgo{margin:14px 0 8px;align-items:center;gap:12px;flex-wrap:wrap}.vfsum{margin:10px 0 4px}
+.vfl{list-style:none;padding:0;margin:0 0 10px;display:grid;gap:8px}
+.vfp{padding:10px 12px;border:1px solid var(--line);border-radius:12px;background:var(--card);display:grid;gap:4px}
+.vfp small{color:var(--muted)}.vfp p{margin:0;font-size:14px}
+.vfh{display:flex;justify-content:space-between;gap:10px;align-items:baseline;flex-wrap:wrap}
+.vfs{font-size:13px;font-weight:700;padding:2px 10px;border-radius:999px;background:color-mix(in srgb,#1CC9A4 16%,var(--card));color:color-mix(in srgb,#1CC9A4 55%,var(--ink))}
+.vfp.st-closed,.vfp.st-moved{border:2px solid color-mix(in srgb,#FF6FA8 70%,var(--line))}
+.vfp.st-closed .vfs,.vfp.st-moved .vfs{background:color-mix(in srgb,#FF6FA8 16%,var(--card));color:color-mix(in srgb,#FF6FA8 55%,var(--ink))}
+.vfp.st-unsure .vfs{background:color-mix(in srgb,var(--muted) 14%,var(--card));color:var(--ink)}
+.vfwarn{display:flex;flex-wrap:wrap;gap:8px 12px;align-items:center;justify-content:space-between;margin:8px 0}
+:root[data-theme=dark] .vfs{color:color-mix(in srgb,#1CC9A4 55%,#fff)}
+:root[data-theme=dark] .vfp.st-closed .vfs,:root[data-theme=dark] .vfp.st-moved .vfs{color:color-mix(in srgb,#FF6FA8 55%,#fff)}

@@ -10,6 +10,7 @@ const IMG = require('./images');
 const GUIDE = require('./guide');
 const IMPORT = require('./bookimport');
 const PLANNER = require('./planner');
+const VERIFY = require('./verify');
 const FAM = require('./family');
 const AVATAR = require('./avatar');
 const ART = require('./bookart');
@@ -1251,6 +1252,42 @@ function router({ pool, media, A, ai, hooks = {} }) {   // hooks.heart(h): set b
       await q('UPDATE trip_days SET title=$3, emoji=$4, planned=$5, plan=$6 WHERE trip_id=$1 AND day_index=$2', [t.id, d.day_index, pv.title, pv.emoji || '', JSON.stringify(pv.planned || []), pv.plan || {}]);
       res.json({ ok: true });
     } catch (e) { next(e); }
+  });
+
+  // ----- check the book's places on the web (phase 3, server/verify.js): one job at a time; a batch of 8 places a call (one of the day's
+  // calls each, refused up front when today's allowance cannot carry the book); the answers saved in trips.theme.verify. A bundled
+  // book is not checked here (its next boot writes its theme back).
+  let vfJob = null;   // { trip, status, done, total, error, started }
+  const vfView = () => (vfJob ? { trip: vfJob.trip, status: vfJob.status, done: vfJob.done, total: vfJob.total, error: vfJob.error || null, started: vfJob.started } : { status: 'idle' });
+  r.get('/api/b/planner/verify', A.requireEditor, (_req, res) => { res.setHeader('Cache-Control', 'no-store'); res.json(vfView()); });
+  r.post('/api/b/planner/verify/:trip', ...W, async (req, res, next) => {
+    let held = null;
+    try {
+      if (!(ai && ai.enabled())) return bad(res, 'ai', 503);
+      if (vfJob && vfJob.status === 'running') return bad(res, 'busy', 409);
+      const prev = vfJob; vfJob = { trip: req.params.trip, status: 'running', done: 0, total: 0, started: Date.now() }; held = () => { vfJob = prev; };   // claimed before the first await
+      const t = (await q('SELECT id, source, theme FROM trips WHERE id=$1 AND family_id=$2', [req.params.trip, FAMILY]))[0];
+      if (!t) { held(); return bad(res, 'trip', 404); }
+      if (t.source === 'seed') { held(); return bad(res, 'seed', 409); }
+      const days = await q('SELECT day_index, planned, plan FROM trip_days WHERE trip_id=$1 ORDER BY day_index', [t.id]);
+      const places = VERIFY.placesOf(days);
+      if (!places.length) { held(); return bad(res, 'none', 422); }
+      const need = VERIFY.calls(places.length);
+      const used = Number(((await q("SELECT calls FROM ai_usage WHERE family_id=$1 AND day=(now() AT TIME ZONE 'UTC')::date", [FAMILY]))[0] || {}).calls || 0);
+      if (STORY_DAILY - used < need) { held(); return res.status(429).json({ error: 'limit', left: Math.max(0, STORY_DAILY - used), need }); }
+      vfJob.total = places.length; held = null;
+      res.status(202).json({ total: places.length, calls: need });
+      const job = vfJob, rows = [];
+      try {
+        for (let i = 0; i < places.length; i += VERIFY.BATCH) {
+          const out = await VERIFY.checkBatch({ client: new ai.SDK(), model: IMPORT.WRITE(), list: places.slice(i, i + VERIFY.BATCH), take: aiTake, onUsage: addUsage });
+          rows.push(...out.rows); job.done = rows.length;
+        }
+        const verify = { at: Date.now(), by: clip(req.user.name, 40), places: rows };
+        await q("UPDATE trips SET theme = jsonb_set(COALESCE(theme, '{}'::jsonb), '{verify}', $2::jsonb) WHERE id=$1", [t.id, JSON.stringify(verify)]);
+        job.status = 'done';
+      } catch (e) { job.status = 'error'; job.error = e.code || 'failed'; console.error('verify', e.message); }
+    } catch (e) { if (held) held(); next(e); }
   });
 
   // ---------- the book's own pictures (server/bookart.js): Claude draws a circle per day, the passport crest and the two guides as SVG ----------

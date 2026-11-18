@@ -47,6 +47,7 @@ const mock = http.createServer((req, res) => {
     const snapn = String(b.system).includes('photo book of a trip');   // a book from photos: its name and its days' names as JSON
     const quiz = String(b.system).includes('"ok":');   // the memory game answers JSON (once with a bad item, which must be dropped)   // translate: answer JSON [{id, tr}] for the items it was given
     const sysText = JSON.stringify(b.system);   // the import sends system as blocks (the redacted manual cached in the second one)
+    const vf = String(b.system).startsWith('You check places for a family trip');   // the web check (phase 3)
     const dayCh = String(b.system).startsWith('You change one day of a family trip');   // change this day (phase 2)
     const planRoute = String(b.system).startsWith('You plan family trips for Thai');   // plan with the helper: the route, as JSON
     const imp = sysText.includes('Trip Operations Manual') || sysText.includes('You plan a family trip and write') ? (facts.includes('top level and its days') ? 'top' : facts.includes('pocket guide') ? 'info' : facts.startsWith('Suggest places to eat') ? 'restsug' : facts.startsWith('List EVERY restaurant') ? 'restlist' : facts.startsWith('List only the area headings') ? 'restareas' : facts.startsWith('For these areas') ? 'restnames' : facts.startsWith('For each of these places') ? 'rest' : 'other')
@@ -93,7 +94,8 @@ const mock = http.createServer((req, res) => {
       plan: [{ t: '09:00', h: L2('🥐 มื้อเช้าสบายๆ', '🥐 Slow breakfast'), th: 'มื้อเช้าที่โรงแรม', en: 'Breakfast at the inn' }, { t: '10:00', go: true, h: L2('🚕 แท็กซี่ไปพิพิธภัณฑ์', '🚕 Taxi to the museum'), th: 'แท็กซี่ 10 นาที', en: 'Taxi 10 min' }, { t: '12:00', go: true, h: L2('🍜 มื้อกลางวัน', '🍜 Lunch'), th: 'บะหมี่', en: 'Noodles' }],
       planned: [{ th: 'พิพิธภัณฑ์ทดสอบ', en: 'Test Museum', q: 'Test Museum, Testland', kind: 'place' }], legs: [{ from: 'Test Inn', to: 'Test Museum', by: L2('แท็กซี่', 'Taxi'), min: 10 }],
       planB: L2('ถ้าฝนหยุด เดินเล่นที่จัตุรัส', 'If it stops raining, the square'), tips: [L2('พกร่ม', 'Bring an umbrella')] });
-    const parts = dayCh ? [DAYCH()] : planRoute ? [ROUTE()] : art ? [ARTA[art]()] : imp ? [badJson ? '{"days":[{"learn":[{"name":{"th":"x" "en":"x"}}]}]}' : IMP[imp]()] : photo ? [JSON.stringify(pids.map((id, k) => (k === 0 ? { id, cap: '## เด็กๆ **ยิ้ม** หน้าปราสาท', tags: ['kids', 'Character', 'bogus', 'kids'], place: stop0, best: true } : { id, cap: 'เรากินติ่มซำ', tags: ['food'], place: 'Narnia', best: 'yes' })))]
+    const VF = () => JSON.stringify({ places: [{ i: 1, st: 'closed', hours: '10:00–18:00', note: L2('ปิดถาวรตั้งแต่ปี 2026', 'Closed for good since 2026'), url: 'https://example.com/test-square' }] });
+    const parts = vf ? [VF()] : dayCh ? [DAYCH()] : planRoute ? [ROUTE()] : art ? [ARTA[art]()] : imp ? [badJson ? '{"days":[{"learn":[{"name":{"th":"x" "en":"x"}}]}]}' : IMP[imp]()] : photo ? [JSON.stringify(pids.map((id, k) => (k === 0 ? { id, cap: '## เด็กๆ **ยิ้ม** หน้าปราสาท', tags: ['kids', 'Character', 'bogus', 'kids'], place: stop0, best: true } : { id, cap: 'เรากินติ่มซำ', tags: ['food'], place: 'Narnia', best: 'yes' })))]
       : snapn ? ['```json\n' + JSON.stringify({ title: { th: 'เขาใหญ่ทุ่งดอกไม้', en: 'Khao Yai in bloom' }, days: [{ day: 1, th: 'ทานตะวันยามเช้า', en: 'Sunflowers at breakfast', emoji: '🌻' }, { day: 2, th: 'ฝนพรำ', en: 'Drizzle', emoji: '🌧️' }, { day: 9, th: 'x', en: 'x' }] }) + '\n```']
       : quiz ? ['```json\n[{"q":"เมื่อวานมีมี่บอกว่าปลาอยู่ที่ไหน","a":[{"e":"💧","t":"ในน้ำ"},{"e":"🌳","t":"บนต้นไม้"},{"e":"🚌","t":"บนรถบัส"}],"ok":0},',
       '{"q":"ไปไหนมา","a":[{"e":"🏰","t":"ดิสนีย์"},{"e":"🏖️","t":"ทะเล"},{"e":"🏔️","t":"ภูเขา"}],"ok":0},{"q":"bad","a":[{"t":"x"}],"ok":3}]\n```']
@@ -787,6 +789,29 @@ try {
     ok(await pp.evaluate(() => !document.querySelector('#dchblk') || true) && (await pp.goto(BASE + '/#/t/hk-macau-2026/today/0'), await pp.waitForSelector('.daystrip'), await pp.locator('#dchblk').count()) === 0, 'change a day page: not offered on a bundled book');
     await pc.close();
     await call('POST', '/api/b/planner/day/test-hop/0/undo'); }
+  // ---- check the places on the web (phase 3): name + map address only, the web search tool on, the answers kept on the book
+  { const db = new Client({ connectionString: u.toString() }); await db.connect(); await db.query('UPDATE ai_usage SET calls=0'); await db.end(); }
+  { const PH3 = { ...H, cookie: ck }, call = (m, p, body) => fetch(BASE + p, { method: m, headers: PH3, body: JSON.stringify(body || {}) });
+    ok((await call('POST', '/api/b/planner/verify/hk-macau-2026')).status === 409, 'web check: a bundled book is not checked here (409)');
+    ok((await fetch(BASE + '/api/b/planner/verify/test-hop', { method: 'POST', headers: { ...PH3, cookie: vck.split(';')[0] }, body: '{}' })).status === 403, 'web check: relatives cannot');
+    const c0 = calls.length, st = await call('POST', '/api/b/planner/verify/test-hop'), sj = await st.json();
+    ok(st.status === 202 && sj.total >= 1, `web check: starts (${st.status} ${JSON.stringify(sj)})`);
+    let vj; for (let k = 0; k < 60; k++) { vj = await (await fetch(BASE + '/api/b/planner/verify', { headers: { cookie: ck } })).json(); if (vj.status !== 'running') break; await new Promise((r) => setTimeout(r, 200)); }
+    const sent = calls.slice(c0), body = JSON.stringify(sent.map((c) => c.body));
+    ok(vj.status === 'done' && sent.length === 1 && sent[0].body.tools && sent[0].body.tools[0].type === 'web_search_20260209' && sent[0].body.tools[0].max_uses >= 1,
+      `web check: one call with the web search tool (${vj.status} · ${sent.length} call)`);
+    ok(/Test Square — Test Square, Testland/.test(body) && !/Mimi|Mika|มีมี่|มีก้า|Test Inn|Mum/.test(body), 'web check: only the place\'s name and map address are sent — no family, no hotel');
+    const tv = (await state()).trips.find((x) => x.id === 'test-hop').theme.verify;
+    ok(tv && tv.places.length === 1 && tv.places[0].st === 'closed' && tv.places[0].url === 'https://example.com/test-square' && tv.places[0].day === 0, `web check: kept on the book (${JSON.stringify(tv && tv.places)})`);
+    const pc = await browser.newContext({ viewport: { width: 390, height: 844 } }), pp = await pc.newPage();
+    await pp.goto(BASE + '/'); await pp.waitForSelector('#lf'); await pp.fill('#lname', 'Mum'); await pp.fill('#lcode', CODE); await pp.keyboard.press('Enter'); await pp.waitForSelector('.shelf');
+    await pp.goto(BASE + '/#/t/test-hop'); await pp.waitForSelector('.hubrow.checkgo');
+    await pp.click('.hubrow.checkgo'); await pp.waitForSelector('.vfp');
+    const closed = await pp.locator('.vfp.st-closed').count(), wide = await pp.evaluate(() => document.documentElement.scrollWidth <= innerWidth + 1);
+    await pp.goto(BASE + '/#/t/test-hop/today/0'); await pp.waitForSelector('.vfwarn');
+    await pp.click('.vfwarn [data-a="dchfill"]'); const asked = await pp.inputValue('#dchask');
+    ok(closed === 1 && wide && /Test Square/.test(asked), `web check page: the closed place ringed, no sideways scroll; Today warns and fills the change box (${closed} · ${asked})`);
+    await pc.close(); }
   await browser.close();
 } finally {
   srv.kill(); await new Promise((r) => srv.on('exit', r)); mock.close();
