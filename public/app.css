@@ -3557,3 +3557,21 @@ b.kf.kd,.tp.one .gcard b.kf.kd{--kc:#C9780E}
 @media (prefers-color-scheme:dark){:root:not([data-theme=light]) b.kf.km,:root:not([data-theme=light]) b.kf.kt,:root:not([data-theme=light]) b.kf.kp,:root:not([data-theme=light]) b.kf.kd,:root:not([data-theme=light]) .tp.one .gcard b.kf.km,:root:not([data-theme=light]) .tp.one .gcard b.kf.kt,:root:not([data-theme=light]) .tp.one .gcard b.kf.kp,:root:not([data-theme=light]) .tp.one .gcard b.kf.kd{background:color-mix(in srgb,var(--kc) 24%,transparent);color:color-mix(in srgb,var(--kc) 45%,#fff)}}
 :root[data-theme=dark] b.kf.km,:root[data-theme=dark] b.kf.kt,:root[data-theme=dark] b.kf.kp,:root[data-theme=dark] b.kf.kd,:root[data-theme=dark] .tp.one .gcard b.kf.km,:root[data-theme=dark] .tp.one .gcard b.kf.kt,:root[data-theme=dark] .tp.one .gcard b.kf.kp,:root[data-theme=dark] .tp.one .gcard b.kf.kd{background:color-mix(in srgb,var(--kc) 24%,transparent);color:color-mix(in srgb,var(--kc) 45%,#fff)}
 @media print{b.kf.km,b.kf.kt,b.kf.kp,b.kf.kd{padding:0;background:none;box-shadow:none;color:inherit}}
+
+/* a topic page's opening paragraph is a soft card in the topic's colour, its "read more" points inside it (all open on its own page) */
+.tp.one .pg1>.ledebox{margin:2px 0 16px;padding:12px 16px;border-radius:16px;border:1px solid color-mix(in srgb,var(--g1,var(--accent)) 24%,var(--line));background:color-mix(in srgb,var(--g1,var(--accent)) 9%,var(--card))}
+.tp.one .pg1>.ledebox .lede{margin:0;max-width:none;font-size:15.5px;line-height:1.55;color:var(--ink)}
+.tp.one .pg1>.ledebox details.ledemore{margin:6px 0 0;border:0}
+.tp.one .pg1>.ledebox details.ledemore>summary{display:none}
+.tp.one .pg1>.ledebox details.ledemore>.fb{padding:0}
+.tp.one .pg1>.ledebox .pts.lede{margin:0;max-width:none;color:var(--ink)}
+.tp.one .pg1>.ledebox .pts.lede>li::before{background:color-mix(in srgb,var(--g1,var(--accent)) 70%,var(--ink))}
+/* a label → answer row of several pieces: a dotted list; a Chinese piece keeps its size */
+.gl dd ul.cpts{margin:2px 0 0}.gl dd ul.cpts>li.zh{font-size:17px;font-weight:600}
+/* on a wide screen a table keeps the topic's card look: one card, the rows larger */
+@media (min-width:641px){
+  .tp.one .tblwrap{margin:0 0 14px;padding:6px 16px 10px;border:1px solid var(--line);border-top:4px solid var(--g1,var(--accent));border-radius:18px;background:var(--card);box-shadow:0 8px 18px -16px rgba(16,24,32,.5)}
+  .tp.one .prices td{font-size:15px;line-height:1.5;padding-top:10px;padding-bottom:10px}
+  .tp.one .prices td.nm{font-weight:700}
+  .tp.one .prices thead th{font-size:12.5px;color:color-mix(in srgb,var(--g1,var(--accent)) 55%,var(--ink))}
+}

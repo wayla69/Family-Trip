@@ -157,10 +157,15 @@ function lineArt(text) {
   svg.removeAttribute('width'); svg.removeAttribute('height');
   return svg;
 }
+// a picture made ready once is kept (colArt): a redraw puts it back in the same instant, so a tap that lands just after a state refresh still
+// finds the shape (it used to wait for the fetch again, and the pad sat empty for a moment — a lost tap, and a CI failure of Nov 2026)
+const colArt = {};
 async function hydrateColours(root) {
   for (const box of $$('.colsvg:not([data-done])', root || document)) {
     box.dataset.done = '1';
-    const svg = lineArt(await fetchSvg(box.dataset.src)); if (!svg) continue;
+    const src = box.dataset.src;
+    if (!colArt[src]) { const a = lineArt(await fetchSvg(src)); if (!a) continue; colArt[src] = a; }
+    const svg = colArt[src].cloneNode(true);
     let fills = {}; try { fills = JSON.parse(box.dataset.fill || '{}'); } catch (_) {}
     Object.entries(fills).forEach(([k, c]) => { const el = svg.querySelector(`[data-c="${k}"]`); if (el) el.setAttribute('fill', c); });
     box.replaceChildren(document.importNode(svg, true));
