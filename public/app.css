@@ -3541,3 +3541,9 @@ textarea.field.paper{min-height:230px;line-height:30px;padding:8px 14px;backgrou
 .tp.one details.sub .learn>b{font-family:var(--ui);font-size:17px;font-weight:700;color:color-mix(in srgb,var(--cc,var(--g1,var(--accent))) 50%,var(--ink))}
 .tp.one .pgn{border-color:color-mix(in srgb,var(--g1,var(--accent)) 35%,var(--line));background:color-mix(in srgb,var(--g1,var(--accent)) 10%,var(--card))}
 .tp.one .pgn small{color:color-mix(in srgb,var(--g1,var(--accent)) 60%,var(--ink))}
+
+/* a long table cell as lines (owner, Nov 2026: "ยังอ่านยากเลย") */
+.cpts{margin:2px 0 0;padding:0;list-style:none;display:grid;gap:6px}
+.cpts>li{position:relative;padding-left:16px;line-height:1.5}
+.cpts>li::before{content:"";position:absolute;left:2px;top:.62em;width:6px;height:6px;border-radius:50%;background:color-mix(in srgb,var(--rc,var(--g1,var(--accent))) 70%,var(--ink))}
+.cpts .clb{color:color-mix(in srgb,var(--rc,var(--g1,var(--accent))) 55%,var(--ink))}

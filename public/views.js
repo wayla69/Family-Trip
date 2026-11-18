@@ -765,7 +765,7 @@ const points = (s) => {
 };
 // what a parent acts on stands out in a report line (owner's review, Nov 2026): times, prices and phone numbers in bold — colour stays
 // on the headings. Match the raw text, escape each piece (never decorate escaped text: "Cook's" → &#39; → "39").
-const KEYFACT = /\b\d{1,2}:\d{2}(?:\s?[–-]\s?\d{1,2}:\d{2})?\b|(?:HK\$|MOP ?|A\$|AU\$|NZ\$|US\$|AUD ?|HKD ?|\$|฿|¥|€|£)\d[\d,]*(?:\.\d+)?(?:\s?[–-]\s?\d[\d,]*(?:\.\d+)?)?|(?:\+\d{1,3} )?(?:\(\d{2,3}\) )?\b\d{3,4}(?: \d{3,4}){1,2}\b|(?:^|[^\d,.])(?<em>999|000|911|112)(?![\d,.])/g;   // no lookbehind (old Safari): the char before an emergency number is matched, emph bolds only the number
+const KEYFACT = /\b\d{1,2}:\d{2}(?:\s?[–-]\s?\d{1,2}:\d{2})?\b|(?:HK\$|MOP ?|A\$|AU\$|NZ\$|US\$|AUD ?|HKD ?|\$|฿|¥|€|£)\d(?:[\d,]*\d)?(?:\.\d+)?(?:\s?[–-]\s?\d(?:[\d,]*\d)?(?:\.\d+)?)?|(?:\+\d{1,3} )?(?:\(\d{2,3}\) )?\b\d{3,4}(?: \d{3,4}){1,2}\b|(?:^|[^\d,.])(?<em>999|000|911|112)(?![\d,.])/g;   // no lookbehind (old Safari): the char before an emergency number is matched, emph bolds only the number
 const emph = (x) => { const t = String(x || ''); let out = '', at = 0; for (const m of t.matchAll(KEYFACT)) { const hit = m.groups && m.groups.em ? m.groups.em : m[0], i = m.index + m[0].length - hit.length; out += esc(t.slice(at, i)) + `<b class="kf">${esc(hit)}</b>`; at = m.index + m[0].length; } return out + esc(t.slice(at)); };
 const pt = (x) => { const m = x.match(/^(.*?)\s*\(([^()]{45,})\)\s*(.*)$/); return m ? `${emph(m[1] + (m[3] ? ' ' + m[3] : ''))}<small>${emph(m[2])}</small>` : emph(x); };   // a long bracket drops to a small line
 const lead = (s) => ((p) => `${pt(p[0] || '')}${p.slice(1).map((y) => `<small class="tsub">${pt(y)}</small>`).join('')}`)(points(s));
@@ -1361,9 +1361,21 @@ function infoBlocks(t) {
   const tel = (x) => `<a href="tel:${esc(String(x).split('·')[0].replace(/[^+\d]/g, ''))}">${esc(x)}</a>`;   // "number · address" → dial the number only
   const cellS = (c) => (c && typeof c === 'object' ? T(c) : String(c == null ? '' : c)).trim(), noVal = (x) => !x || /^[—–-]$/.test(x);
   const hLbl = (c) => T(c).split(/\s+·\s+|\s*\(/)[0].trim();   // a stacked cell's label: the header's first words, not its whole note
+  // a long cell reads as lines, not a paragraph (owner, Nov 2026: "ยังอ่านยากเลย" on Getting around): one line a sentence, a list of fares
+  // ("A ↔ B about HK$160, B ↔ C about HK$150") one line a fare, a "Day 1:" label in bold, times and prices bold (emph)
+  const cellRest = (x) => { const bits = x.split(/\s+·\s+/); return bits.length > 2 || (bits.length > 1 && x.length > 60) ? `${emph(bits[0])}<small class="tsub">${bits.slice(1).map(emph).join(' · ')}</small>` : emph(x); };
+  const cellLine = (x) => { const m = x.match(/^([^:·]{2,22}):\s+(.+)$/); return m && !(/\d$/.test(m[1]) && /^\d{2}/.test(m[2])) ? `<b class="clb">${esc(m[1])}:</b> ${cellRest(m[2])}` : cellRest(x); };
+  const cellHtml = (x) => { if (x.length <= 70) return emph(x);
+    let ls = x.replace(/([a-z0-9)%])\.\s+(?=[A-Z(])/g, '$1.\u0007').split('\u0007').map((y) => dropEndStop(y.trim())).filter(Boolean);
+    ls = ls.flatMap((y) => ((y.match(/[↔→]/g) || []).length >= 2 && /,\s/.test(y) ? y.split(/,\s+(?=[^,]*[↔→])/) : [y]));
+    if (ls.length < 2) {   // Thai has no full stops: a piece with a label or of some length starts a line, the short ones after it are its detail
+      const g = []; points(x).forEach((y) => { if (!g.length || /^[^:·]{2,22}:\s/.test(y) || y.length >= 30) g.push([y]); else g[g.length - 1].push(y); });
+      ls = g.map((z) => z.join(' · '));
+      if (ls.length < 2) return pts(x, 'tight'); }
+    return `<ul class="cpts">${ls.map((y) => `<li>${cellLine(y)}</li>`).join('')}</ul>`; };
   const tbl = (cols, rows, cls) => `<div class="tblwrap"><table class="prices ${cls || ''}">${cols ? `<thead><tr>${cols.map((c) => `<th>${esc(T(c))}</th>`).join('')}</tr></thead>` : ''}<tbody>${rows.map((r) => { const v = r.map(cellS);
     if (v.length > 1 && v.slice(1).every(noVal)) return `<tr class="grp"><th colspan="${v.length}">${esc(v[0])}</th></tr>`;   // a heading row ("Fantasyland — first")
-    return `<tr>${v.map((x, k) => (k === 0 ? `<td class="nm">${/^\d{1,2}$/.test(x) && cols && cols[0] ? `${esc(hLbl(cols[0]))} ${esc(x)}` : esc(x)}</td>` : noVal(x) ? '<td class="nv"></td>' : `<td${x.length <= 14 ? ' class="s"' : ''}${cols && cols[k] ? ` data-h="${esc(hLbl(cols[k]))}"` : ''}>${esc(x)}</td>`)).join('')}</tr>`; }).join('')}</tbody></table></div>`;   // phones stack each row into a card, every value labelled by its column (app.css)
+    return `<tr>${v.map((x, k) => (k === 0 ? `<td class="nm">${/^\d{1,2}$/.test(x) && cols && cols[0] ? `${esc(hLbl(cols[0]))} ${esc(x)}` : esc(x)}</td>` : noVal(x) ? '<td class="nv"></td>' : `<td${x.length <= 14 ? ' class="s"' : ''}${cols && cols[k] ? ` data-h="${esc(hLbl(cols[k]))}"` : ''}>${cellHtml(x)}</td>`)).join('')}</tr>`; }).join('')}</tbody></table></div>`;   // phones stack each row into a card, every value labelled by its column (app.css)
   // a to-do table (when · task · action, or what · for · when/how) as cards: the date as a chip, the task bold, the action as short points
   const steps = (cols, rows) => { const c = (cols || []).map((x) => (x.en || T(x)).toLowerCase()), w = c[0] === 'when' ? [0, 1, 2] : [1, 0, 2];
     if ((cols || []).length !== 3) return tbl(cols, rows);
