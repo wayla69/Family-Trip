@@ -3575,3 +3575,13 @@ b.kf.kd,.tp.one .gcard b.kf.kd{--kc:#C9780E}
   .tp.one .prices td.nm{font-weight:700}
   .tp.one .prices thead th{font-size:12.5px;color:color-mix(in srgb,var(--g1,var(--accent)) 55%,var(--ink))}
 }
+/* plan with the helper (#/planner): the questions as the settings cards, the route a card a day in the photo book's palette */
+.tpk.plopts{margin:6px 0 4px;max-width:none}.plopts .tpo small{color:var(--muted);font-size:12.5px;line-height:1.3}
+.plgo{margin:14px 0 6px}.plerr{margin:6px 0 12px}
+.pldays{list-style:none;padding:0;margin:12px 0;display:grid;grid-template-columns:repeat(auto-fill,minmax(min(100%,260px),1fr));gap:12px}
+.plday{display:grid;gap:10px;padding:14px;border-radius:16px;border:1px solid var(--line);border-top:4px solid var(--tc);background:color-mix(in srgb,var(--tc) 7%,var(--card))}
+.plday .vgl{display:grid;gap:5px;margin:0;font-weight:600;font-size:13.5px}.plday .cpts{margin:0}
+.pldh{display:flex;align-items:center;gap:10px}.pldh .ple{width:44px;height:44px;border-radius:50%;display:grid;place-items:center;font-size:24px;background:var(--card);box-shadow:0 0 0 2px var(--tc)}
+.pldh b{display:block;color:color-mix(in srgb,var(--tc) 60%,var(--ink))}.pldh small{color:var(--muted)}
+.plfoot{display:grid;gap:8px;margin-top:16px;padding-top:14px;border-top:1px dashed var(--line)}.plfoot .btn{justify-self:start}.plfoot small{color:var(--muted)}
+:root[data-theme=dark] .pldh b{color:color-mix(in srgb,var(--tc) 60%,#fff)}

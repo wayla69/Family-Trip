@@ -9,6 +9,7 @@ const crypto = require('crypto');
 const IMG = require('./images');
 const GUIDE = require('./guide');
 const IMPORT = require('./bookimport');
+const PLANNER = require('./planner');
 const FAM = require('./family');
 const AVATAR = require('./avatar');
 const ART = require('./bookart');
@@ -1127,6 +1128,70 @@ function router({ pool, media, A, ai, hooks = {} }) {   // hooks.heart(h): set b
   });
   r.delete('/api/b/import/:id', A.requireEditor, async (req, res, next) => {
     try { await q('DELETE FROM book_drafts WHERE id=$1 AND family_id=$2', [req.params.id, FAMILY]); res.json({ ok: true }); } catch (e) { next(e); }
+  });
+
+  // ----- plan with the helper (docs/AI-PLANNER.md, server/planner.js): the answers → the route (one call) → the whole book from a brief,
+  // through the import's pipeline and job (one at a time). A planned book counts against its own allowance (owner, 18 Nov 2026:
+  // PLANNER_MONTHLY books a month, default 3), not the daily one the stories use; the route and its changes are ordinary daily calls.
+  const PLANNER_MONTHLY = Math.max(1, parseInt(process.env.PLANNER_MONTHLY, 10) || 3);
+  const monthNow = () => new Date().toISOString().slice(0, 7);
+  const plannerUsed = async () => { const v = (await q("SELECT value FROM settings WHERE key='planner_month'"))[0]; try { const o = JSON.parse(v.value); return o.m === monthNow() ? (o.n | 0) : 0; } catch (_) { return 0; } };
+  const plannerCount = async () => { const n = (await plannerUsed()) + 1; await q("INSERT INTO settings (key, value) VALUES ('planner_month', $1) ON CONFLICT (key) DO UPDATE SET value = EXCLUDED.value", [JSON.stringify({ m: monthNow(), n })]); };
+  r.get('/api/b/planner', A.requireEditor, async (_req, res, next) => {
+    try { res.setHeader('Cache-Control', 'no-store'); res.json({ on: !!(ai && ai.enabled()), left: Math.max(0, PLANNER_MONTHLY - (await plannerUsed())), max: PLANNER_MONTHLY, busy: !!(job && job.status === 'running') }); } catch (e) { next(e); }
+  });
+  // the route: drafted from the answers, or changed as asked ({prev, ask}); a route the parents edited by hand ({route}, no ask) is only cleaned
+  r.post('/api/b/planner/route', ...W, async (req, res, next) => {
+    try {
+      const b = req.body || {}, answers = PLANNER.cleanAnswers(b.answers);
+      if (b.route && !b.ask) { try { return res.json({ route: PLANNER.cleanRoute(b.route, answers) }); } catch (_) { return bad(res, 'route'); } }
+      if (!(ai && ai.enabled())) return bad(res, 'ai', 503);
+      if (!answers.dest) return bad(res, 'dest');
+      if (answers.from && PLANNER.daysOf(answers) > 31) return bad(res, 'days');
+      const who = PLANNER.whoLine(await kidRows(), answers.from);
+      const route = await PLANNER.route({ client: new ai.SDK(), model: IMPORT.WRITE(), answers, who, prev: b.ask && b.route ? b.route : null, ask: b.ask, take: aiTake, onUsage: addUsage });
+      res.json({ route });
+    } catch (e) {
+      if (e.code === 'limit') return res.status(429).json({ error: 'limit' });
+      if (['route', 'json', 'refusal'].includes(e.code)) return bad(res, e.code, 502);
+      next(e);
+    }
+  });
+  r.post('/api/b/planner/draft', ...W, async (req, res, next) => {
+    let held = null;
+    try {
+      if (!(ai && ai.enabled())) return bad(res, 'ai', 503);
+      if (job && job.status === 'running') return bad(res, 'busy', 409);
+      const b = req.body || {}, answers = PLANNER.cleanAnswers(b.answers);
+      let rt; try { rt = PLANNER.cleanRoute(b.route, answers); } catch (_) { return bad(res, 'route'); }
+      const prevJob = job; job = { id: '', slug: '', status: 'running', log: [], started: Date.now() };   // claimed before the first await, like the import
+      const giveBack = () => { job = prevJob; }; held = giveBack;
+      const used = await plannerUsed();
+      if (used >= PLANNER_MONTHLY) { giveBack(); return res.status(429).json({ error: 'month', left: 0, max: PLANNER_MONTHLY }); }
+      let slug = PLANNER.slugOf(rt);
+      if (!SLUG_RE.test(slug)) slug = `trip-${String(rt.from).slice(0, 4)}`;
+      if ((await q('SELECT 1 FROM trips WHERE family_id=$1 AND slug=$2', [FAMILY, slug])).length) slug = `${slug.slice(0, 50)}-${crypto.randomBytes(2).toString('hex')}`;
+      const kids = await kidRows();
+      const id = crypto.randomBytes(8).toString('hex'), who = req.user.name || '';
+      job = { id, slug, status: 'running', log: [], started: Date.now(), kind: 'planner' };
+      const log = (line) => { job.log.push(`${new Date().toISOString().slice(11, 19)} ${line}`); if (job.log.length > 60) job.log.shift(); };
+      res.status(202).json({ job: id, slug }); held = null;
+      try {
+        // the book's calls count against the monthly allowance, not today's: the daily row only collects the tokens
+        const take = async () => { await q("INSERT INTO ai_usage (family_id, day, calls) VALUES ($1, (now() AT TIME ZONE 'UTC')::date, 0) ON CONFLICT (family_id, day) DO NOTHING", [FAMILY]); return true; };
+        const out = await IMPORT.run({ brief: PLANNER.brief(answers, rt, PLANNER.whoLine(kids, rt.from)), slug, client: new ai.SDK(), take, onUsage: addUsage, log, dir: DATA_TMP });
+        if (kids.length) out.seed.children = FAM.seedChildren(kids, out.seed.date_from);
+        out.seed.theme = { ...(out.seed.theme || {}), planner: { answers, made: new Date().toISOString().slice(0, 10) } };   // no child's name in it: kept for "change this day" (phase 2)
+        out.report.planner = true;
+        await q('INSERT INTO book_drafts (id, family_id, slug, seed, report, cost, created_by) VALUES ($1,$2,$3,$4,$5,$6,$7)', [id, FAMILY, slug, out.seed, out.report, out.cost, who]);
+        await plannerCount();
+        job.draft = { id, slug, title: out.seed.title, days: out.seed.days.length, report: out.report, cost: out.cost };
+        job.status = 'done'; log('done — review the draft, then save it as a book');
+        if (hooks.draft) Promise.resolve(hooks.draft({ trip: slug, title: out.seed.title, url: '/#/import' })).catch(() => {});
+      } catch (e) {
+        job.status = 'error'; job.error = e.code || 'failed'; log(`failed: ${e.message}`); console.error('planner', e.message);
+      }
+    } catch (e) { if (held) held(); next(e); }   // a failure before the 202 never leaves the job claimed
   });
 
   // ---------- the book's own pictures (server/bookart.js): Claude draws a circle per day, the passport crest and the two guides as SVG ----------
