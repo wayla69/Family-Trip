@@ -2257,6 +2257,11 @@ const T = 'hk-macau-2026';
         const q = await page.evaluate(() => ({ li: Math.max(0, ...[...document.querySelectorAll('.tp.one .prices td ul.cpts')].map((u) => u.children.length)), plain: [...document.querySelectorAll('.tp.one .prices td')].filter((x) => !x.querySelector('ul,li') && x.textContent.length > 160).length, comma: [...document.querySelectorAll('.tp.one b.kf')].filter((b) => /,$/.test(b.textContent)).length }));
         r.li = Math.max(r.li, q.li); r.plain += q.plain; r.comma += q.comma; }
       ok(r.li >= 3 && r.plain === 0 && r.comma === 0, `a long table cell is lines, not a paragraph; no bold price ends in a comma (${JSON.stringify(r)})`); }
+      // key facts in colour stay readable in dark mode inside every card (the learn page's cards once kept the light-mode navy on a dark card)
+      await page.emulateMedia({ colorScheme: 'dark' }); await page.goto(`${BASE}/#/t/${T}/learn/full/0`); await page.waitForSelector('.tp.one .gcard b.kf');
+      const lum = await page.$$eval('.tp.one .gcard b.kf', (bs) => bs.map((b) => { const n = (getComputedStyle(b).color.match(/[\d.]+/g) || []).map(Number); const v = n.slice(0, 3).map((x) => (x > 1 ? x / 255 : x)); return +(0.2126 * v[0] + 0.7152 * v[1] + 0.0722 * v[2]).toFixed(2); }));
+      await page.emulateMedia({ colorScheme: null });
+      ok(lum.length && Math.min(...lum) >= 0.4, `dark mode: every coloured key fact in a learn card is light enough to read (${lum.slice(0, 8).join(' ')})`);
     await page.goto(`${BASE}/#/t/${T}/sos`); await page.waitForSelector('.glg');
     const sosLinks = await page.$$eval('.glg a.glc', (as) => as.map((a) => a.getAttribute('href').replace(/^#\/t\//, '')));
     let ift = null; for (const r of sosLinks) { await page.goto(`${BASE}/#/t/${r}`); await page.waitForSelector('.tp.one'); if (await page.locator('.tp.one .ifts details.ifold').count()) { ift = r; break; } }
