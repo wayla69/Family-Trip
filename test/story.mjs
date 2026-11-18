@@ -47,6 +47,7 @@ const mock = http.createServer((req, res) => {
     const snapn = String(b.system).includes('photo book of a trip');   // a book from photos: its name and its days' names as JSON
     const quiz = String(b.system).includes('"ok":');   // the memory game answers JSON (once with a bad item, which must be dropped)   // translate: answer JSON [{id, tr}] for the items it was given
     const sysText = JSON.stringify(b.system);   // the import sends system as blocks (the redacted manual cached in the second one)
+    const dayCh = String(b.system).startsWith('You change one day of a family trip');   // change this day (phase 2)
     const planRoute = String(b.system).startsWith('You plan family trips for Thai');   // plan with the helper: the route, as JSON
     const imp = sysText.includes('Trip Operations Manual') || sysText.includes('You plan a family trip and write') ? (facts.includes('top level and its days') ? 'top' : facts.includes('pocket guide') ? 'info' : facts.startsWith('Suggest places to eat') ? 'restsug' : facts.startsWith('List EVERY restaurant') ? 'restlist' : facts.startsWith('List only the area headings') ? 'restareas' : facts.startsWith('For these areas') ? 'restnames' : facts.startsWith('For each of these places') ? 'rest' : 'other')
       : sysText.includes("children's pages") ? 'kids' : sysText.includes('playful pages') ? 'extras' : sysText.includes('You translate a family trip guide') ? 'thai' : null;
@@ -88,7 +89,11 @@ const mock = http.createServer((req, res) => {
     const ROUTE = () => JSON.stringify({ title: L2('ซากุระทดสอบ', 'Sakura test hop'), place: L2('โตเกียว', 'Tokyo'), countries: ['JP', 'xx1'], tz: 'Asia/Tokyo', from: '2030-01-01',
       days: [0, 1, 2].map((i) => ({ date: '2030-01-0' + (i + 1), town: L2('โตเกียว', 'Tokyo'), title: L2(`วันที่ ${i + 1}`, `Day ${i + 1} in Tokyo`), emoji: '🗼', stops: [L2('สวนอุเอโนะ', 'Ueno Park')], sleep: L2('อุเอโนะ', 'Ueno') })) });
     const badJson = imp === 'kids' && importCalls.filter((c) => c.step === 'kids').length === 1;   // the first kids' answer is broken JSON (a missing comma), as a live run once got
-    const parts = planRoute ? [ROUTE()] : art ? [ARTA[art]()] : imp ? [badJson ? '{"days":[{"learn":[{"name":{"th":"x" "en":"x"}}]}]}' : IMP[imp]()] : photo ? [JSON.stringify(pids.map((id, k) => (k === 0 ? { id, cap: '## เด็กๆ **ยิ้ม** หน้าปราสาท', tags: ['kids', 'Character', 'bogus', 'kids'], place: stop0, best: true } : { id, cap: 'เรากินติ่มซำ', tags: ['food'], place: 'Narnia', best: 'yes' })))]
+    const DAYCH = () => JSON.stringify({ why: L2('ฝนตก เลยไปพิพิธภัณฑ์ในร่ม', 'Rain, so an indoor museum'), title: L2('วันฝนตกในพิพิธภัณฑ์', 'A rainy day at the museum'), emoji: '☔',
+      plan: [{ t: '09:00', h: L2('🥐 มื้อเช้าสบายๆ', '🥐 Slow breakfast'), th: 'มื้อเช้าที่โรงแรม', en: 'Breakfast at the inn' }, { t: '10:00', go: true, h: L2('🚕 แท็กซี่ไปพิพิธภัณฑ์', '🚕 Taxi to the museum'), th: 'แท็กซี่ 10 นาที', en: 'Taxi 10 min' }, { t: '12:00', go: true, h: L2('🍜 มื้อกลางวัน', '🍜 Lunch'), th: 'บะหมี่', en: 'Noodles' }],
+      planned: [{ th: 'พิพิธภัณฑ์ทดสอบ', en: 'Test Museum', q: 'Test Museum, Testland', kind: 'place' }], legs: [{ from: 'Test Inn', to: 'Test Museum', by: L2('แท็กซี่', 'Taxi'), min: 10 }],
+      planB: L2('ถ้าฝนหยุด เดินเล่นที่จัตุรัส', 'If it stops raining, the square'), tips: [L2('พกร่ม', 'Bring an umbrella')] });
+    const parts = dayCh ? [DAYCH()] : planRoute ? [ROUTE()] : art ? [ARTA[art]()] : imp ? [badJson ? '{"days":[{"learn":[{"name":{"th":"x" "en":"x"}}]}]}' : IMP[imp]()] : photo ? [JSON.stringify(pids.map((id, k) => (k === 0 ? { id, cap: '## เด็กๆ **ยิ้ม** หน้าปราสาท', tags: ['kids', 'Character', 'bogus', 'kids'], place: stop0, best: true } : { id, cap: 'เรากินติ่มซำ', tags: ['food'], place: 'Narnia', best: 'yes' })))]
       : snapn ? ['```json\n' + JSON.stringify({ title: { th: 'เขาใหญ่ทุ่งดอกไม้', en: 'Khao Yai in bloom' }, days: [{ day: 1, th: 'ทานตะวันยามเช้า', en: 'Sunflowers at breakfast', emoji: '🌻' }, { day: 2, th: 'ฝนพรำ', en: 'Drizzle', emoji: '🌧️' }, { day: 9, th: 'x', en: 'x' }] }) + '\n```']
       : quiz ? ['```json\n[{"q":"เมื่อวานมีมี่บอกว่าปลาอยู่ที่ไหน","a":[{"e":"💧","t":"ในน้ำ"},{"e":"🌳","t":"บนต้นไม้"},{"e":"🚌","t":"บนรถบัส"}],"ok":0},',
       '{"q":"ไปไหนมา","a":[{"e":"🏰","t":"ดิสนีย์"},{"e":"🏖️","t":"ทะเล"},{"e":"🏔️","t":"ภูเขา"}],"ok":0},{"q":"bad","a":[{"t":"x"}],"ok":3}]\n```']
@@ -741,6 +746,47 @@ try {
     await pc.close(); }
   await fetch(BASE + '/api/b/import/' + pd.id, { method: 'DELETE', headers: PH });
   }
+  // ---- change this day (phase 2): the helper writes the day again; the proposal is unsaved; "use" saves it with one undo; check-ins keep their keys
+  { const db = new Client({ connectionString: u.toString() }); await db.connect(); await db.query('UPDATE ai_usage SET calls=0'); await db.end(); }
+  { const PH2 = { ...H, cookie: ck }, call = (m, p, body) => fetch(BASE + p, { method: m, headers: PH2, body: JSON.stringify(body || {}) });
+    ok((await call('POST', '/api/b/planner/day/hk-macau-2026/0', { ask: 'rain' })).status === 409, 'change a day: a bundled book is not changed here (409 seed)');
+    ok((await call('POST', '/api/b/planner/day/test-hop/0', { ask: '' })).status === 400, 'change a day: nothing asked → 400');
+    ok((await fetch(BASE + '/api/b/planner/day/test-hop/0', { method: 'POST', headers: { ...PH2, cookie: vck.split(';')[0] }, body: '{"ask":"rain"}' })).status === 403, 'change a day: relatives cannot');
+    const c0 = calls.length, before = (await state()).trips.find((t) => t.id === 'test-hop').days[0];
+    const sqKey = before.planned[0].key;
+    await put('/api/b/places', { trip: 'test-hop', key: sqKey, day: 0, kind: 'place', name: { en: 'Test Square', th: 'จัตุรัส' } });
+    const pr = await call('POST', '/api/b/planner/day/test-hop/0', { ask: 'ฝนตก ขอที่ในร่ม · booking ref QZ8PLN' }), pj = await pr.json(), pd0 = pj.day || {};
+    const sent = JSON.stringify(calls.slice(c0).map((c) => c.body));
+    ok(pr.status === 200 && calls.length === c0 + 1 && /ฝนตก ขอที่ในร่ม/.test(sent) && /Test Inn/.test(sent) && /Test Inn/.test(sent) && !/QZ8PLN/.test(sent) && !/Mimi|Mika|มีมี่|มีก้า/.test(sent),
+      `change a day: one call with the day, tonight's bed and the ask — no booking number, no child's name (${pr.status})`);
+    const go = (pd0.plan && pd0.plan.plan || []).filter((r) => r.go).length, keys = (pd0.planned || []).map((p) => p.key);
+    ok(go === 1 && keys.includes('Test Museum') && keys.includes(sqKey) && pd0.plan.legs[0].url.includes('maps/dir') && pd0.plan.stay && pd0.why.en === 'Rain, so an indoor museum',
+      `change a day: one "go" row, the checked-in stop kept under its key, legs with directions, tonight's bed unchanged (${JSON.stringify(keys)})`);
+    const after0 = (await state()).trips.find((t) => t.id === 'test-hop').days[0];
+    ok(JSON.stringify(after0.title) === JSON.stringify(before.title), 'change a day: the proposal is not saved');
+    ok((await call('PUT', '/api/b/planner/day/test-hop/0', { day: pd0 })).status === 200, 'change a day: "use this" saves it');
+    let s1 = (await state()).trips.find((t) => t.id === 'test-hop').days[0];
+    ok(s1.title.en === 'A rainy day at the museum' && s1.plan.changed && s1.plan.prev && s1.plan.prev.title.en === before.title.en && !s1.plan.prev.prev, 'change a day: saved with what changed and the old day for one undo');
+    ok((await call('POST', '/api/b/planner/day/test-hop/0/undo')).status === 200, 'change a day: undo');
+    s1 = (await state()).trips.find((t) => t.id === 'test-hop').days[0];
+    ok(s1.title.en === before.title.en && !s1.plan.changed && !s1.plan.prev && JSON.stringify(s1.plan.plan) === JSON.stringify(before.plan.plan), 'change a day: undo brings the old day back exactly');
+    ok((await call('POST', '/api/b/planner/day/test-hop/0/undo')).status === 409, 'change a day: one undo only');
+    const bad = JSON.parse(JSON.stringify(pd0)); bad.plan.plan[0].en = 'Booking reference: KL4PQZ9';
+    ok((await call('PUT', '/api/b/planner/day/test-hop/0', { day: bad })).status === 400, 'change a day: a booking reference in the plan is refused');
+    // the page: chips, the two plans side by side, use, then the line with undo
+    const pc = await browser.newContext({ viewport: { width: 390, height: 844 } }), pp = await pc.newPage();
+    await pp.goto(BASE + '/'); await pp.waitForSelector('#lf'); await pp.fill('#lname', 'Mum'); await pp.fill('#lcode', CODE); await pp.keyboard.press('Enter'); await pp.waitForSelector('.shelf');
+    const dchWait = (sel) => pp.waitForSelector(sel, { timeout: 15000 }).catch(async (e) => { console.log('  waited for', sel, '·', await pp.evaluate(() => ((document.querySelector('#dchblk') || {}).innerText || 'no box').slice(0, 300))); throw e; });
+    await pp.goto(BASE + '/#/t/test-hop/today/0'); await pp.waitForSelector('.daystrip'); await pp.waitForSelector('#dchblk', { timeout: 8000 }).catch(async () => console.log('  no #dchblk:', await pp.evaluate(() => JSON.stringify({ src: (S.trips.find((x) => x.id === 'test-hop') || {}).source, story: S.features.story, h: location.hash }))));
+    await pp.click('.dchchips .chip >> nth=0'); await pp.click('[data-a="dchgo"]'); await dchWait('.dchcmp');
+    const cols = await pp.locator('.dchcmp ol').count(), wide = await pp.evaluate(() => document.documentElement.scrollWidth <= innerWidth + 1);
+    await pp.click('[data-a="dchuse"]'); await dchWait('.dchd');
+    const line = await pp.textContent('.dchd');
+    ok(cols === 2 && wide && /rainy day|museum/i.test(await pp.textContent('main h3')) && /changed today/i.test(line) && await pp.locator('[data-a="dchundo"]').count() === 1,
+      `change a day page: the two plans side by side, then the new day with "changed" and an undo (${cols} · ${line.trim().slice(0, 80)})`);
+    ok(await pp.evaluate(() => !document.querySelector('#dchblk') || true) && (await pp.goto(BASE + '/#/t/hk-macau-2026/today/0'), await pp.waitForSelector('.daystrip'), await pp.locator('#dchblk').count()) === 0, 'change a day page: not offered on a bundled book');
+    await pc.close();
+    await call('POST', '/api/b/planner/day/test-hop/0/undo'); }
   await browser.close();
 } finally {
   srv.kill(); await new Promise((r) => srv.on('exit', r)); mock.close();

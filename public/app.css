@@ -3585,3 +3585,13 @@ b.kf.kd,.tp.one .gcard b.kf.kd{--kc:#C9780E}
 .pldh b{display:block;color:color-mix(in srgb,var(--tc) 60%,var(--ink))}.pldh small{color:var(--muted)}
 .plfoot{display:grid;gap:8px;margin-top:16px;padding-top:14px;border-top:1px dashed var(--line)}.plfoot .btn{justify-self:start}.plfoot small{color:var(--muted)}
 :root[data-theme=dark] .pldh b{color:color-mix(in srgb,var(--tc) 60%,#fff)}
+/* change this day (Today, a book the family made): chips, then the two plans side by side, the new one tinted */
+.dchchips{display:flex;flex-wrap:wrap;gap:8px;margin:8px 0}.dchrow{gap:8px;flex-wrap:nowrap}.dchrow .field{flex:1;min-width:0}
+.dchwhy{margin:12px 0 8px;font-weight:600}.dchwhy small{display:block;font-weight:400;color:var(--muted);margin-top:2px}
+.dchcmp{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,240px),1fr));gap:10px;margin-bottom:10px}
+.dchcmp>div{border:1px solid var(--line);border-radius:14px;padding:10px 12px;background:var(--card)}
+.dchcmp .dchnew{border:2px solid var(--accent);background:color-mix(in srgb,var(--accent) 6%,var(--card))}
+.dchcmp .lbl{font-weight:700;font-size:13px;color:color-mix(in srgb,var(--accent) 60%,var(--ink));margin-bottom:4px}
+.dchcmp ol{margin:0;padding-left:18px;display:grid;gap:4px;font-size:14px}.dchcmp .dchold{opacity:1;color:color-mix(in srgb,var(--ink) 70%,var(--paper))}
+.dchd{display:flex;flex-wrap:wrap;gap:6px 12px;align-items:center;justify-content:space-between;margin:8px 0}
+:root[data-theme=dark] .dchcmp .lbl{color:color-mix(in srgb,var(--accent) 60%,#fff)}

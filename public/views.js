@@ -1341,12 +1341,12 @@ function viewToday(t, j, full) {
   return `<div class="daystrip" role="tablist">${strip}</div>
 <article class="day today" style="border:0;margin-top:0;padding-top:6px"><div class="hd"><div class="no">${String(i + 1).padStart(2, '0')}</div><div class="dl">${L('วันที่', 'Day')} ${i + 1} · ${esc(fmtDay(d.date))}${i === dn ? ` <span class="tag">${L('วันนี้', 'Today')}</span>` : ''}</div><div></div><h3>${esc(T(d.title))}</h3>${artImg(t, i, 'hdart')}
 </div></article>
-${nextCard(t, i)}${dayFacts(d)}
+${nextCard(t, i)}${changedLine(t, i)}${dayFacts(d)}
 ${banner}
 <div class="row quick">${pl.route ? extA(pl.route, ic('route') + ' ' + L('เส้นทางวันนี้', "Today's route"), 'qlink') : ''}${pl.stay ? extA(mapsUrl(pl.stay.q || pl.stay.addr), ic('stays') + ' ' + L('ไปที่พัก', 'To the stay'), 'qlink') : ''}</div>
 ${((g) => (g ? `${g[0]}${isEditor() && (dn >= 0 || until > 0) ? remindLine(t) : ''}${bagBlock(t, i)}${g[1]}` : `${isEditor() && (dn >= 0 || until > 0) ? remindLine(t) : ''}${bagBlock(t, i)}${nop}`))(dayGlance(t, i, pre, true, full))}
 ${!pre && mission && (mission.facts || []).length ? `<div class="part kidm">${L('ภารกิจของเด็กๆ วันนี้', "The kids' mission today")}</div><div class="call pick mission"><b>${esc(T(mission.title))}</b><ul class="tips">${mission.facts.map((f) => `<li>${esc(T(f))}</li>`).join('')}</ul></div>` : ''}
-${nextBlock(t, i)}${askBlock(t, i)}`;
+${changeBlock(t, i)}${nextBlock(t, i)}${askBlock(t, i)}`;
 }
 // the whole trip: one line per day (tap → that day); the road book with every plan is the full report
 function viewPlan(t, full) {
@@ -2131,6 +2131,30 @@ function trBlock(t, i) {
 /* ---------- tomorrow in five lines (Today page, editors, the evening before): Claude reads tomorrow's plan, the forecast and how
    today went; streamed into the box, never saved (nextAns keeps it while the page is open) ---------- */
 let nextAns = null;   // {t, i, text}
+/* ---------- change this day (phase 2 of plan with the helper, docs/AI-PLANNER.md §4.6): rain, a tired or unwell child, a place that is
+   shut → the helper writes the day again (one call, the live forecast and tonight's bed in it), the two versions side by side, "use this"
+   saves it, the old day kept for one undo. Not on a bundled book: its next deploy would write the seed back over the change. */
+let dch = null;   // { t, i, ask, busy, prop, err }
+const DCH_CHIPS = [['🌧️', 'ฝนตก ขอที่ในร่ม', 'It rains — indoor places, please'], ['🤒', 'ลูกไม่ค่อยสบาย อยากอยู่ใกล้ที่พัก', 'A child is unwell — stay near the bed'], ['😴', 'เหนื่อย ขอวันเบาๆ', 'Tired — an easy day, please'], ['🚫', 'ที่ที่จะไปปิด', 'The place we planned is shut']];
+const dchOn = (t) => isEditor() && S.features.story && t.source !== 'seed';
+function changedLine(t, i) {
+  const c = ((t.days[i] || {}).plan || {}).changed;
+  if (!c) return '';
+  return `<div class="call calm dchd noprint"><span>✨ ${L('ผู้ช่วยเปลี่ยนแผนวันนี้แล้ว', 'The helper changed today’s plan')}${T(c.why) ? ` — ${esc(T(c.why))}` : ''}</span>${isEditor() && t.source !== 'seed' && ((t.days[i] || {}).plan || {}).prev ? `<button type="button" class="linkbtn" data-a="dchundo" data-t="${esc(t.id)}" data-d="${i}">${L('กลับไปแผนเดิม', 'Back to the old plan')}</button>` : ''}</div>`;
+}
+function changeBlock(t, i) {
+  if (!dchOn(t)) return '';
+  const st = dch && dch.t === t.id && dch.i === i ? dch : { ask: '' }, pr = st.prop;
+  const rows = (pl) => ((pl && pl.plan) || []).map((r) => `<li>${r.t ? `<b>${esc(r.t)}</b> ` : ''}${esc(T(r.h) || T(r))}</li>`).join('');
+  const cmp = !pr ? '' : `<div class="dchwhy">✨ ${esc(T(pr.why) || L('แผนใหม่ของวันนี้', 'A new plan for today'))}${st.fc ? `<small>${L('พยากรณ์', 'Forecast')}: ${esc(st.fc)}</small>` : ''}</div>
+<div class="dchcmp"><div class="dchold"><div class="lbl">${L('แผนเดิม', 'Now')}</div><ol>${rows(t.days[i].plan)}</ol></div><div class="dchnew"><div class="lbl">${L('แผนใหม่', 'New')}</div><ol>${rows(pr.plan)}</ol></div></div>
+<div class="row"><button type="button" class="btn" data-a="dchuse" data-t="${esc(t.id)}" data-d="${i}"${st.busy ? ' disabled' : ''}>✓ ${L('ใช้แผนใหม่', 'Use the new plan')}</button><button type="button" class="btn ghost" data-a="dchdrop">${L('ไม่เอา', 'No, thanks')}</button></div>`;
+  return `<section class="blk noprint dchblk" id="dchblk"><h3>${ic('sparkle')} ${L('ขอเปลี่ยนวันนี้', 'Change this day')} <span class="label">${L('ผู้ช่วยเขียนวันใหม่ ดูก่อนใช้', 'the helper rewrites it — you look first')}</span></h3>
+<div class="chips dchchips">${DCH_CHIPS.map(([e, th, en]) => `<button type="button" class="chip" data-a="dchchip" data-v="${esc(L(th, en))}">${emo(e)} ${L(th, en)}</button>`).join('')}</div>
+<div class="row dchrow"><input class="field" id="dchask" maxlength="400" value="${esc(st.ask || '')}" placeholder="${L('หรือพิมพ์เอง เช่น อยากไปสวนสัตว์แทน', 'or type it, e.g. the zoo instead')}"><button type="button" class="btn" data-a="dchgo" data-t="${esc(t.id)}" data-d="${i}"${st.busy ? ' disabled' : ''}>${st.busy === 'ask' ? L('กำลังเขียน…', 'Writing…') : '✨ ' + L('ขอแผนใหม่', 'Ask')}</button></div>
+${st.err ? `<div class="err" style="color:var(--accent2)">${esc(st.err)}</div>` : ''}${cmp}
+<p class="label">${L('ส่งแผนของวันนี้ ที่พักคืนนี้ พยากรณ์อากาศ และอายุของเด็ก · ไม่ส่งชื่อหรือรูป · ที่เช็กอินแล้วยังอยู่ในแผน', 'Sends today’s plan, tonight’s bed, the forecast and the children’s ages · never names or photos · places already checked in stay')}</p></section>`;
+}
 function nextBlock(t, i) {
   if (!isEditor() || !S.features.story || i + 1 >= t.days.length) return '';
   const a = nextAns && nextAns.t === t.id && nextAns.i === i ? nextAns.text : '';

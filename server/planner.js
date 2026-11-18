@@ -90,4 +90,75 @@ function brief(answers, rt, who) {
 // a slug for the new book: the title's words + the year, made unique by the caller
 const slugOf = (rt) => `${String(rt.title.en || rt.place.en || 'trip').toLowerCase().normalize('NFKD').replace(/[^a-z0-9]+/g, '-').replace(/^-+|-+$/g, '').slice(0, 40) || 'trip'}-${String(rt.from).slice(0, 4)}`;
 
-module.exports = { cleanAnswers, whoLine, route, cleanRoute: cleanEdited, brief, slugOf, daysOf };
+// ---------- phase 2: change one day of a book already made ("it rains", "the little one is unwell", "the place is shut")
+// One call writes the day again in both languages from: the day's plan as it stands, tonight's bed (never changed — it is booked),
+// the live forecast, the children's ages and what the parents typed. Nothing is saved until the parents press "use this".
+const I18 = (x, n = 600) => (x && typeof x === 'object' ? { th: one(x.th || x.en, n), en: one(x.en || x.th, n) } : null);
+const DAY_SYS = () => {
+  const IMP = require('./bookimport');
+  return 'You change one day of a family trip that is already planned, for Thai parents travelling with small children. Keep the date and keep tonight\'s bed exactly (it is booked). '
+    + 'Change only what the parents ask for, and what that forces; keep the rest of the day as it was. Prefer places near the day\'s route or tonight\'s bed. '
+    + `${IMP.PLAN_RULES} ${IMP.THAI_STYLE} ${IMP.EN_STYLE} Every text is {"th": "…", "en": "…"}.`;
+};
+function dayUser({ day, place, forecast, ask, who, tz }) {
+  const pl = day.plan || {};
+  const now = { title: day.title, planned: (day.planned || []).map((p) => ({ en: p.en, th: p.th, q: p.q, kind: p.kind })), timeline: pl.plan || [], legs: (pl.legs || []).map((l) => ({ from: l.from, to: l.to, by: l.by, min: l.min })),
+    picks: (pl.picks || []).map((k) => ({ meal: k.meal, name: k.name, what: k.what, q: k.q, alt: k.alt && { name: k.alt.name, q: k.alt.q } })), planB: pl.planB, moving: pl.moving, money: pl.money, tips: pl.tips };
+  return `The trip: ${place || '(a family trip)'}, time zone ${tz}. Who: ${who}.
+The day as planned now (${day.date}, day ${day.day_index + 1}):
+${JSON.stringify(now).slice(0, 14000)}
+Tonight's bed (keep it): ${JSON.stringify(pl.stay ? { name: pl.stay.name, addr: pl.stay.addr } : day.sleep || null)}
+${forecast ? `Live forecast for this day: ${forecast}` : 'No live forecast for this day.'}
+What the parents ask: ${askClean(ask)}
+
+Return the whole day again as JSON: {"why": {th,en} (one short line: what you changed and why), "title": {th,en}, "emoji": "one emoji",
+"plan": [{"t": "HH:MM", "h": {th,en} (one emoji + at most 6 fun words), "th": "…", "en": "…" (the details, " · " between pieces), "go": true on exactly one row (the step the family leaves the bed on)}],
+"planned": [{"th","en","q" (a full Google Maps query),"kind": "place"|"food"}], "legs": [{"from","to","by": {th,en},"min": number}],
+"picks": [{"meal": {th,en},"name","what": {th,en},"q","alt": {"name","q"}}], "planB": {th,en}, "moving": {th,en}, "money": {th,en} (prices as ranges with ≈), "tips": [{th,en}]}`;
+}
+// the ask goes through the import's redaction piece by piece, so a typed booking number drops only its own piece, not the whole ask
+const askClean = (ask) => require('./bookimport').redact(one(ask, 400).split(/\s+[·,;|]\s+|\s*\n\s*/).join('\n')).text.split('\n').filter(Boolean).join(' · ');
+const MAPS = (q) => `https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(q)}`;
+const DIR = (a, b) => `https://www.google.com/maps/dir/?api=1&origin=${encodeURIComponent(a)}&destination=${encodeURIComponent(b)}`;
+// the helper's answer → a day the app can show; the checked-in stops keep their keys (a check-in names its key: never renamed),
+// a stop the family already checked in at stays in the day even when the new plan leaves it out
+function cleanDay(a, old, checked = new Set()) {
+  if (!a || typeof a !== 'object' || !Array.isArray(a.plan) || !a.plan.length) throw Object.assign(new Error('day'), { code: 'day' });
+  const op = old.plan || {}, oldPl = Array.isArray(old.planned) ? old.planned : [];
+  const norm = (x) => String(x || '').toLowerCase().replace(/[^a-z0-9฀-๿一-鿿]+/g, '');
+  let go = false;
+  const rows = a.plan.slice(0, 24).map((r) => {
+    const row = { ...(/^\d{1,2}:\d{2}$/.test(String(r && r.t || '')) ? { t: String(r.t).padStart(5, '0') } : {}), ...(I18(r && r.h, 60) ? { h: I18(r.h, 60) } : {}), th: one(r && (r.th || r.en), 600), en: one(r && (r.en || r.th), 600) };
+    if (r && r.go === true && !go) { row.go = true; go = true; }
+    return row;
+  }).filter((r) => r.en || r.th);
+  const keys = new Set(), keyOf = (en) => { let k = one(en, 80) || 'stop', n = 2; while (keys.has(k)) k = `${one(en, 76)} ${n++}`; keys.add(k); return k; };
+  const planned = (Array.isArray(a.planned) ? a.planned : []).slice(0, 16).filter((p) => p && (p.en || p.th)).map((p) => {
+    const was = oldPl.find((o) => norm(o.en) === norm(p.en) || (p.th && norm(o.th) === norm(p.th)));
+    const key = was && !keys.has(was.key) ? (keys.add(was.key), was.key) : keyOf(p.en || p.th);
+    return { key, kind: p.kind === 'food' ? 'food' : 'place', q: one(p.q || p.en, 200), en: one(p.en || p.th, 120), th: one(p.th || p.en, 120), ...(was && was.zh ? { zh: was.zh } : {}) };
+  });
+  for (const o of oldPl) if (checked.has(o.key) && !planned.some((p) => p.key === o.key)) planned.push(o);   // where we already were stays
+  const legs = (Array.isArray(a.legs) ? a.legs : []).slice(0, 10).filter((l) => l && l.from && l.to).map((l) => ({ from: one(l.from, 160), to: one(l.to, 160), by: I18(l.by, 200) || { th: '', en: '' }, min: Math.max(0, Math.min(600, parseInt(l.min, 10) || 0)), url: DIR(one(l.from, 160), one(l.to, 160)) }));
+  const picks = (Array.isArray(a.picks) ? a.picks : []).slice(0, 6).filter((k) => k && k.name && I18(k.meal, 60)).map((k) => ({ meal: I18(k.meal, 60), name: one(k.name, 120), ...(I18(k.what, 300) ? { what: I18(k.what, 300) } : {}), q: one(k.q || k.name, 200),
+    ...(k.alt && k.alt.name ? { alt: { name: one(k.alt.name, 120), q: one(k.alt.q || k.alt.name, 200) } } : {}) }));
+  const plan = { ...op, plan: rows };
+  if (legs.length) plan.legs = legs; else delete plan.legs;
+  if (picks.length) plan.picks = picks;
+  for (const k of ['planB', 'moving', 'money']) { const v = I18(a[k], 1500); if (v && (v.th || v.en)) plan[k] = v; }
+  const tips = (Array.isArray(a.tips) ? a.tips : []).map((x) => I18(x, 500)).filter((x) => x && (x.en || x.th)).slice(0, 8);
+  if (tips.length) plan.tips = tips;
+  delete plan.prev;
+  return { title: I18(a.title, 120) || old.title, emoji: one(a.emoji, 8) || old.emoji || '', planned, plan, why: I18(a.why, 240) || { th: '', en: '' } };
+}
+async function dayAsk({ client, model, day, place, forecast, ask, who, tz, take, onUsage }) {
+  if (take && !(await take())) throw Object.assign(new Error('limit'), { code: 'limit' });
+  const { text } = require('./bookimport').redact(dayUser({ day, place, forecast, ask, who, tz }));   // a booking number typed into the ask never leaves
+  const msg = await client.messages.stream({ model, max_tokens: 16000, system: DAY_SYS(), messages: [{ role: 'user', content: text }] }).finalMessage();
+  if (onUsage) { try { onUsage(msg.usage || {}); } catch (_) { /* counting never breaks planning */ } }
+  if (msg.stop_reason === 'refusal') throw Object.assign(new Error('refused'), { code: 'refusal' });
+  const t = msg.content.filter((b) => b.type === 'text').map((b) => b.text).join('').replace(/^```(?:json)?\s*/m, '').replace(/```\s*$/m, '').trim();
+  try { return JSON.parse(t.slice(t.indexOf('{'))); } catch (e) { throw Object.assign(new Error('day json'), { code: 'json' }); }
+}
+
+module.exports = { cleanAnswers, whoLine, route, cleanRoute: cleanEdited, brief, slugOf, daysOf, dayAsk, cleanDay, MAPS };
