@@ -3541,3 +3541,19 @@ textarea.field.paper{min-height:230px;line-height:30px;padding:8px 14px;backgrou
 .tp.one details.sub .learn>b{font-family:var(--ui);font-size:17px;font-weight:700;color:color-mix(in srgb,var(--cc,var(--g1,var(--accent))) 50%,var(--ink))}
 .tp.one .pgn{border-color:color-mix(in srgb,var(--g1,var(--accent)) 35%,var(--line));background:color-mix(in srgb,var(--g1,var(--accent)) 10%,var(--card))}
 .tp.one .pgn small{color:color-mix(in srgb,var(--g1,var(--accent)) 60%,var(--ink))}
+
+/* a long table cell as lines (owner, Nov 2026: "ยังอ่านยากเลย") */
+.cpts{margin:2px 0 0;padding:0;list-style:none;display:grid;gap:6px}
+.cpts>li{position:relative;padding-left:16px;line-height:1.5}
+.cpts>li::before{content:"";position:absolute;left:2px;top:.62em;width:6px;height:6px;border-radius:50%;background:color-mix(in srgb,var(--rc,var(--g1,var(--accent))) 70%,var(--ink))}
+.cpts .clb{color:color-mix(in srgb,var(--rc,var(--g1,var(--accent))) 55%,var(--ink))}
+
+/* key facts in colour (owner, Nov 2026: "เพิ่มมิติในการใส่สีราคา และส่วนอื่นๆที่เน้น"): a soft pill per kind — money green, times blue,
+   a number to call rose — so the eye finds them in a line; the text stays dark enough to read (4.5:1) */
+b.kf.km,b.kf.kt,b.kf.kp,b.kf.kd,.tp.one .gcard b.kf.kd,.tp.one .gcard b.kf.km,.tp.one .gcard b.kf.kt,.tp.one .gcard b.kf.kp{--kc:#1E9E6A;display:inline;margin:0 1px;padding:1px 6px;border-radius:7px;background:color-mix(in srgb,var(--kc) 13%,transparent);box-shadow:inset 0 0 0 1px color-mix(in srgb,var(--kc) 22%,transparent);color:color-mix(in srgb,var(--kc) 62%,#10202A);font-weight:700;white-space:nowrap;-webkit-box-decoration-break:clone;box-decoration-break:clone}
+b.kf.kt,.tp.one .gcard b.kf.kt{--kc:#3E6FE0}
+b.kf.kp,.tp.one .gcard b.kf.kp{--kc:#D9467A}
+b.kf.kd,.tp.one .gcard b.kf.kd{--kc:#C9780E}
+@media (prefers-color-scheme:dark){:root:not([data-theme=light]) b.kf.km,:root:not([data-theme=light]) b.kf.kt,:root:not([data-theme=light]) b.kf.kp,:root:not([data-theme=light]) b.kf.kd{background:color-mix(in srgb,var(--kc) 24%,transparent);color:color-mix(in srgb,var(--kc) 45%,#fff)}}
+:root[data-theme=dark] b.kf.km,:root[data-theme=dark] b.kf.kt,:root[data-theme=dark] b.kf.kp,:root[data-theme=dark] b.kf.kd{background:color-mix(in srgb,var(--kc) 24%,transparent);color:color-mix(in srgb,var(--kc) 45%,#fff)}
+@media print{b.kf.km,b.kf.kt,b.kf.kp,b.kf.kd{padding:0;background:none;box-shadow:none;color:inherit}}

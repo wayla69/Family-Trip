@@ -2250,6 +2250,13 @@ const T = 'hk-macau-2026';
     await page.goto(`${BASE}/#/t/${T}/prep/full/8`); await page.waitForSelector('.mtl');
     ok(await page.locator('.mtl li ul, .mtl li .pts').count() === 0, 'park map stops: each stop one line, never a list inside a stop');
     // every inner page in one look (owner, Nov 2026: "ไม่เอา format ที่ไม่ตรงกับ app"): learn cards, if-then cases and notes are cards; a bold time stays in its sentence
+    { // a long table cell reads as lines (owner, Nov 2026: "ยังอ่านยากเลย" on Getting around): one line a sentence or fare, bold labels and prices, no comma inside the bold
+      await page.goto(`${BASE}/#/t/${T}/prep`); await page.waitForSelector('.glg');
+      const links = await page.$$eval('.glg a.glc', (as) => as.map((a) => a.getAttribute('href')));
+      const r = { li: 0, plain: 0, comma: 0 }; for (const h of links) { await page.goto(`${BASE}/${h}`); await page.waitForSelector('.tp.one');
+        const q = await page.evaluate(() => ({ li: Math.max(0, ...[...document.querySelectorAll('.tp.one .prices td ul.cpts')].map((u) => u.children.length)), plain: [...document.querySelectorAll('.tp.one .prices td')].filter((x) => !x.querySelector('ul,li') && x.textContent.length > 160).length, comma: [...document.querySelectorAll('.tp.one b.kf')].filter((b) => /,$/.test(b.textContent)).length }));
+        r.li = Math.max(r.li, q.li); r.plain += q.plain; r.comma += q.comma; }
+      ok(r.li >= 3 && r.plain === 0 && r.comma === 0, `a long table cell is lines, not a paragraph; no bold price ends in a comma (${JSON.stringify(r)})`); }
     await page.goto(`${BASE}/#/t/${T}/sos`); await page.waitForSelector('.glg');
     const sosLinks = await page.$$eval('.glg a.glc', (as) => as.map((a) => a.getAttribute('href').replace(/^#\/t\//, '')));
     let ift = null; for (const r of sosLinks) { await page.goto(`${BASE}/#/t/${r}`); await page.waitForSelector('.tp.one'); if (await page.locator('.tp.one .ifts details.ifold').count()) { ift = r; break; } }
