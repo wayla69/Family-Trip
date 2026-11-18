@@ -3554,6 +3554,6 @@ b.kf.km,b.kf.kt,b.kf.kp,b.kf.kd,.tp.one .gcard b.kf.kd,.tp.one .gcard b.kf.km,.t
 b.kf.kt,.tp.one .gcard b.kf.kt{--kc:#3E6FE0}
 b.kf.kp,.tp.one .gcard b.kf.kp{--kc:#D9467A}
 b.kf.kd,.tp.one .gcard b.kf.kd{--kc:#C9780E}
-@media (prefers-color-scheme:dark){:root:not([data-theme=light]) b.kf.km,:root:not([data-theme=light]) b.kf.kt,:root:not([data-theme=light]) b.kf.kp,:root:not([data-theme=light]) b.kf.kd{background:color-mix(in srgb,var(--kc) 24%,transparent);color:color-mix(in srgb,var(--kc) 45%,#fff)}}
-:root[data-theme=dark] b.kf.km,:root[data-theme=dark] b.kf.kt,:root[data-theme=dark] b.kf.kp,:root[data-theme=dark] b.kf.kd{background:color-mix(in srgb,var(--kc) 24%,transparent);color:color-mix(in srgb,var(--kc) 45%,#fff)}
+@media (prefers-color-scheme:dark){:root:not([data-theme=light]) b.kf.km,:root:not([data-theme=light]) b.kf.kt,:root:not([data-theme=light]) b.kf.kp,:root:not([data-theme=light]) b.kf.kd,:root:not([data-theme=light]) .tp.one .gcard b.kf.km,:root:not([data-theme=light]) .tp.one .gcard b.kf.kt,:root:not([data-theme=light]) .tp.one .gcard b.kf.kp,:root:not([data-theme=light]) .tp.one .gcard b.kf.kd{background:color-mix(in srgb,var(--kc) 24%,transparent);color:color-mix(in srgb,var(--kc) 45%,#fff)}}
+:root[data-theme=dark] b.kf.km,:root[data-theme=dark] b.kf.kt,:root[data-theme=dark] b.kf.kp,:root[data-theme=dark] b.kf.kd,:root[data-theme=dark] .tp.one .gcard b.kf.km,:root[data-theme=dark] .tp.one .gcard b.kf.kt,:root[data-theme=dark] .tp.one .gcard b.kf.kp,:root[data-theme=dark] .tp.one .gcard b.kf.kd{background:color-mix(in srgb,var(--kc) 24%,transparent);color:color-mix(in srgb,var(--kc) 45%,#fff)}
 @media print{b.kf.km,b.kf.kt,b.kf.kp,b.kf.kd{padding:0;background:none;box-shadow:none;color:inherit}}
