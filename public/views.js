@@ -106,6 +106,7 @@ function render() {
     else if (sec === 'offline') html = isEditor() ? viewOffline(t) : viewHub(t);
     else if (sec === 'firsts') html = viewFirsts(t);
     else if (sec === 'spend') html = isEditor() ? viewSpend(t) : viewHub(t);
+    else if (sec === 'check') html = isEditor() ? viewCheck(t) : viewHub(t);
     else if (sec === 'photos') html = viewPhotos(t);
     else html = viewHub(t);
   } else if (p[0] === 'passport') html = viewPassport(p[1], p[2]);
@@ -925,7 +926,7 @@ function viewHub(t) {
   const moreRow = (ed && t.kind === 'snap' ? row('snapeditgo', `#/t/${esc(t.id)}/days`, 'doc', L('แก้ชื่อเล่ม ชื่อวัน และสถานที่', 'Rename the book, its days and places'), L('ย้ายรูปไปวันอื่นได้ในหน้าดูรูป', 'Move a photo to another day from its viewer')) : '')
     + (ed && t.kind === 'snap' ? `<button type="button" class="hubrow snapagaingo" data-a="snapagain" data-t="${esc(t.id)}">${hubE('plan')}<span class="ht"><b>${L('ไปที่นี่อีกครั้ง', 'Go here again')}</b><small>${L('เล่มใหม่ เมืองเดิมทีละวัน เลือกวันไปได้', 'A new book, the same towns day by day')}</small></span>${ic('chev')}</button>` : '')
     + (ed && t.kind === 'snap' && !snapLive(t) ? `<button type="button" class="hubrow snapmorego" data-a="snapmore" data-t="${esc(t.id)}">${hubE('camera')}<span class="ht"><b>${L('เติมรูปที่เจอทีหลัง', 'Add photos found later')}</b><small>${L('รูปลงวันที่ถ่ายเอง วันใหม่ต่อท้ายให้', 'Each goes to the day it was taken')}</small></span>${ic('chev')}</button>` : '');
-  const shelfRow = moreRow + row('shelfgo', '#/', 'shelf', L('ชั้นหนังสือ', 'Bookshelf'), L('เปลี่ยนเล่ม', 'Other books'))
+  const shelfRow = moreRow + (vfOn(t) ? row('checkgo', `#/t/${esc(t.id)}/check`, 'find', L('เช็กร้านและที่เที่ยวบนเว็บ', 'Check the places on the web'), esc(vfSub(t))) : '') + row('shelfgo', '#/', 'shelf', L('ชั้นหนังสือ', 'Bookshelf'), L('เปลี่ยนเล่ม', 'Other books'))
     + (ed && t.kind === 'snap' && S.features.story ? row('snapdraftgo', `#/t/${esc(t.id)}/draft`, 'sparkle', L('ให้ผู้ช่วยร่างเล่ม', 'Let the helper draft the book'), L('ชื่อวัน สรุปวัน คำนำ นิทาน', 'Day names, summaries, foreword, stories')) : '');
   // the tiles in three named groups, the group the family needs now first: on the trip "during the trip", before it "get ready",
   // after it "memories" — so a parent reads one heading, not fifteen tiles (the Today tile stays on top by itself)
@@ -1341,12 +1342,12 @@ function viewToday(t, j, full) {
   return `<div class="daystrip" role="tablist">${strip}</div>
 <article class="day today" style="border:0;margin-top:0;padding-top:6px"><div class="hd"><div class="no">${String(i + 1).padStart(2, '0')}</div><div class="dl">${L('วันที่', 'Day')} ${i + 1} · ${esc(fmtDay(d.date))}${i === dn ? ` <span class="tag">${L('วันนี้', 'Today')}</span>` : ''}</div><div></div><h3>${esc(T(d.title))}</h3>${artImg(t, i, 'hdart')}
 </div></article>
-${nextCard(t, i)}${dayFacts(d)}
+${nextCard(t, i)}${changedLine(t, i)}${checkLine(t, i)}${dayFacts(d)}
 ${banner}
 <div class="row quick">${pl.route ? extA(pl.route, ic('route') + ' ' + L('เส้นทางวันนี้', "Today's route"), 'qlink') : ''}${pl.stay ? extA(mapsUrl(pl.stay.q || pl.stay.addr), ic('stays') + ' ' + L('ไปที่พัก', 'To the stay'), 'qlink') : ''}</div>
 ${((g) => (g ? `${g[0]}${isEditor() && (dn >= 0 || until > 0) ? remindLine(t) : ''}${bagBlock(t, i)}${g[1]}` : `${isEditor() && (dn >= 0 || until > 0) ? remindLine(t) : ''}${bagBlock(t, i)}${nop}`))(dayGlance(t, i, pre, true, full))}
 ${!pre && mission && (mission.facts || []).length ? `<div class="part kidm">${L('ภารกิจของเด็กๆ วันนี้', "The kids' mission today")}</div><div class="call pick mission"><b>${esc(T(mission.title))}</b><ul class="tips">${mission.facts.map((f) => `<li>${esc(T(f))}</li>`).join('')}</ul></div>` : ''}
-${nextBlock(t, i)}${askBlock(t, i)}`;
+${changeBlock(t, i)}${nextBlock(t, i)}${askBlock(t, i)}`;
 }
 // the whole trip: one line per day (tap → that day); the road book with every plan is the full report
 function viewPlan(t, full) {
@@ -2131,6 +2132,73 @@ function trBlock(t, i) {
 /* ---------- tomorrow in five lines (Today page, editors, the evening before): Claude reads tomorrow's plan, the forecast and how
    today went; streamed into the box, never saved (nextAns keeps it while the page is open) ---------- */
 let nextAns = null;   // {t, i, text}
+/* ---------- check the places on the web (phase 3 of plan with the helper, server/verify.js): the helper searches the web for each
+   restaurant and sight of a book the family made — still open, its hours, moved or closed; only a place's name and map address go.
+   The answers are kept on the book (theme.verify); a place that may be closed shows on its day's Today page with a way to change it. */
+let vfState = null;   // the job as the server reports it (GET /api/b/planner/verify)
+const vfOn = (t) => isEditor() && S.features.story && t.source !== 'seed' && t.kind !== 'snap';
+const vfOf = (t) => (t.theme && t.theme.verify && Array.isArray(t.theme.verify.places) ? t.theme.verify : null);
+const vfBad = (p) => p.st === 'closed' || p.st === 'moved';
+const VF_ST = { open: ['✓', 'เปิดอยู่', 'Open'], closed: ['⚠', 'อาจปิดแล้ว', 'May be closed'], moved: ['↪', 'ย้ายที่', 'Moved'], unsure: ['?', 'ไม่แน่ใจ', 'Not sure'] };
+function vfSub(t) {
+  const v = vfOf(t);
+  if (!v) return L('ผู้ช่วยค้นเว็บว่าร้านยังเปิดไหม เวลาเปิด ย้ายไปไหม', 'The helper looks up whether each place is still open, its hours, if it moved');
+  const bad = v.places.filter(vfBad).length;
+  return bad ? L(`ควรดู ${bad} ที่ · เช็กเมื่อ ${fmtDay(new Date(v.at).toISOString().slice(0, 10), { day: 'numeric', month: 'short' })}`, `${bad} to look at · checked ${fmtDay(new Date(v.at).toISOString().slice(0, 10), { day: 'numeric', month: 'short' })}`)
+    : L(`เช็กแล้ว ${v.places.length} ที่ ไม่มีที่ต้องห่วง`, `${v.places.length} places checked, nothing to worry about`);
+}
+function checkLine(t, i) {
+  const v = vfOf(t); if (!v) return '';
+  const bad = v.places.filter((p) => p.day === i && vfBad(p));
+  if (!bad.length) return '';
+  const ask = L(`${bad.map((p) => p.name).join(', ')} อาจปิดหรือย้ายแล้ว ขอที่อื่นแทน`, `${bad.map((p) => p.name).join(', ')} may be closed or moved — another place, please`);
+  return `<div class="call warn vfwarn noprint"><span>⚠ ${L('จากการเช็กบนเว็บ', 'From the web check')}: ${bad.map((p) => `<b>${esc(p.name)}</b> ${L(VF_ST[p.st][1], VF_ST[p.st][2].toLowerCase())}${T(p.note) ? ` — ${esc(T(p.note))}` : ''}`).join(' · ')}</span>
+${dchOn(t) ? `<button type="button" class="btn small" data-a="dchfill" data-v="${esc(ask)}">${L('ขอเปลี่ยนวันนี้', 'Change this day')}</button>` : ''}</div>`;
+}
+function viewCheck(t) {
+  if (!vfOn(t)) return viewHub(t);
+  if (vfState === null) { vfState = 'loading'; api('GET', '/api/b/planner/verify').then((r) => { vfState = r; if (r.status === 'running' && r.trip === t.id) vfPoll(); safeRender(); }, () => { vfState = { status: 'idle' }; safeRender(); }); }
+  const v = vfOf(t), j = vfState && typeof vfState === 'object' && vfState.trip === t.id ? vfState : { status: 'idle' }, run = j.status === 'running';
+  const card = (p) => { const [e, th, en] = VF_ST[p.st] || VF_ST.unsure;
+    return `<li class="vfp st-${p.st}"><div class="vfh"><b>${esc(p.name)}</b><span class="vfs">${e} ${L(th, en)}</span></div>${p.hours ? `<small>🕘 ${esc(p.hours)}</small>` : ''}${T(p.note) ? `<p>${esc(T(p.note))}</p>` : ''}${p.url ? extA(p.url, L('แหล่งที่มา', 'Source'), 'linkbtn') : ''}</li>`; };
+  const byDay = v ? [...new Set(v.places.map((p) => p.day))].sort((a, b) => a - b).map((d) => {
+    const ps = v.places.filter((p) => p.day === d).sort((a, b) => Number(vfBad(b)) - Number(vfBad(a)));
+    return pcard('today', snapPal(d), `${L(`วันที่ ${d + 1}`, `Day ${d + 1}`)} · ${esc(T((t.days[d] || {}).title))}`, `<ul class="vfl">${ps.map(card).join('')}</ul>${ps.some(vfBad) && dchOn(t) ? `<a class="btn small" href="#/t/${esc(t.id)}/today/${d}">${L('ไปขอเปลี่ยนวันนี้', 'Go and change this day')}</a>` : ''}`);
+  }).join('') : '';
+  const bad = v ? v.places.filter(vfBad).length : 0;
+  return `${pageHead('find', PG.cyan, esc(T(t.title)), L('เช็กร้านและที่เที่ยว', 'Check the places'), L('ผู้ช่วยค้นเว็บทีละที่ ว่ายังเปิดอยู่ไหม เวลาเปิด หรือย้ายไปแล้ว — ใช้เวลาไม่กี่นาที', 'The helper searches the web for each place — still open, its hours, moved — a few minutes'))}
+${run ? `<section class="impjob running"><div class="impjobhd"><span class="e">🔎</span><div><b>${L('ผู้ช่วยกำลังค้นเว็บ', 'The helper is searching')}</b><small>${L(`${j.done || 0} จาก ${j.total || '…'} ที่`, `${j.done || 0} of ${j.total || '…'} places`)}</small></div></div>
+<div class="impbar"><i style="width:${Math.max(4, Math.round(((j.done || 0) / (j.total || 1)) * 100))}%"></i></div></section>`
+    : `<div class="row vfgo"><button type="button" class="btn" data-a="vfstart" data-t="${esc(t.id)}">🔎 ${v ? L('เช็กอีกครั้ง', 'Check again') : L('ให้ผู้ช่วยเช็กบนเว็บ', 'Ask the helper to check')}</button>${j.status === 'error' ? `<span class="err" style="color:var(--accent2)">${esc(vfErr(j.error))}</span>` : ''}</div>`}
+${v ? `<p class="vfsum">${bad ? L(`ควรดู <b>${bad}</b> ที่`, `<b>${bad}</b> to look at`) : L('ไม่มีที่ต้องห่วง', 'Nothing to worry about')} · ${L(`เช็กแล้ว ${v.places.length} ที่ เมื่อ ${esc(fmtDay(new Date(v.at).toISOString().slice(0, 10)))}`, `${v.places.length} places checked on ${esc(fmtDay(new Date(v.at).toISOString().slice(0, 10)))}`)}</p>${byDay}`
+    : run ? '' : emptyCard(t, L('ยังไม่ได้เช็ก', 'Not checked yet'), L('ร้านเปิด-ปิดเปลี่ยนบ่อย เช็กก่อนไปสักสัปดาห์', 'Places change — check a week or so before you go'))}
+<p class="impnote">🔒 ${L('ส่งให้ผู้ช่วยแค่ชื่อร้านหรือที่เที่ยวกับที่อยู่บนแผนที่ ไม่มีชื่อลูกหรือข้อมูลครอบครัว · ผลจากเว็บอาจไม่ล่าสุด เช็กกับร้านอีกทีถ้าสำคัญ', 'Only each place’s name and map address go to the helper — nothing about the family · what the web says may be out of date; call the place if it matters')}</p>`;
+}
+const vfErr = (e) => ({ limit: L('ผู้ช่วยใช้ครบโควตาวันนี้แล้ว ลองพรุ่งนี้', "Today's helper allowance is used up — try tomorrow"), json: L('คำตอบอ่านไม่ได้ ลองอีกครั้ง', 'Unreadable answer — try again'), refusal: L('ผู้ช่วยเช็กไม่ได้', 'The helper could not check') }[e] || L('ไม่สำเร็จ ลองอีกครั้ง', 'Did not work — try again'));
+/* ---------- change this day (phase 2 of plan with the helper, docs/AI-PLANNER.md §4.6): rain, a tired or unwell child, a place that is
+   shut → the helper writes the day again (one call, the live forecast and tonight's bed in it), the two versions side by side, "use this"
+   saves it, the old day kept for one undo. Not on a bundled book: its next deploy would write the seed back over the change. */
+let dch = null;   // { t, i, ask, busy, prop, err }
+const DCH_CHIPS = [['🌧️', 'ฝนตก ขอที่ในร่ม', 'It rains — indoor places, please'], ['🤒', 'ลูกไม่ค่อยสบาย อยากอยู่ใกล้ที่พัก', 'A child is unwell — stay near the bed'], ['😴', 'เหนื่อย ขอวันเบาๆ', 'Tired — an easy day, please'], ['🚫', 'ที่ที่จะไปปิด', 'The place we planned is shut']];
+const dchOn = (t) => isEditor() && S.features.story && t.source !== 'seed';
+function changedLine(t, i) {
+  const c = ((t.days[i] || {}).plan || {}).changed;
+  if (!c) return '';
+  return `<div class="call calm dchd noprint"><span>✨ ${L('ผู้ช่วยเปลี่ยนแผนวันนี้แล้ว', 'The helper changed today’s plan')}${T(c.why) ? ` — ${esc(T(c.why))}` : ''}</span>${isEditor() && t.source !== 'seed' && ((t.days[i] || {}).plan || {}).prev ? `<button type="button" class="linkbtn" data-a="dchundo" data-t="${esc(t.id)}" data-d="${i}">${L('กลับไปแผนเดิม', 'Back to the old plan')}</button>` : ''}</div>`;
+}
+function changeBlock(t, i) {
+  if (!dchOn(t)) return '';
+  const st = dch && dch.t === t.id && dch.i === i ? dch : { ask: '' }, pr = st.prop;
+  const rows = (pl) => ((pl && pl.plan) || []).map((r) => `<li>${r.t ? `<b>${esc(r.t)}</b> ` : ''}${esc(T(r.h) || T(r))}</li>`).join('');
+  const cmp = !pr ? '' : `<div class="dchwhy">✨ ${esc(T(pr.why) || L('แผนใหม่ของวันนี้', 'A new plan for today'))}${st.fc ? `<small>${L('พยากรณ์', 'Forecast')}: ${esc(st.fc)}</small>` : ''}</div>
+<div class="dchcmp"><div class="dchold"><div class="lbl">${L('แผนเดิม', 'Now')}</div><ol>${rows(t.days[i].plan)}</ol></div><div class="dchnew"><div class="lbl">${L('แผนใหม่', 'New')}</div><ol>${rows(pr.plan)}</ol></div></div>
+<div class="row"><button type="button" class="btn" data-a="dchuse" data-t="${esc(t.id)}" data-d="${i}"${st.busy ? ' disabled' : ''}>✓ ${L('ใช้แผนใหม่', 'Use the new plan')}</button><button type="button" class="btn ghost" data-a="dchdrop">${L('ไม่เอา', 'No, thanks')}</button></div>`;
+  return `<section class="blk noprint dchblk" id="dchblk"><h3>${ic('sparkle')} ${L('ขอเปลี่ยนวันนี้', 'Change this day')} <span class="label">${L('ผู้ช่วยเขียนวันใหม่ ดูก่อนใช้', 'the helper rewrites it — you look first')}</span></h3>
+<div class="chips dchchips">${DCH_CHIPS.map(([e, th, en]) => `<button type="button" class="chip" data-a="dchchip" data-v="${esc(L(th, en))}">${emo(e)} ${L(th, en)}</button>`).join('')}</div>
+<div class="row dchrow"><input class="field" id="dchask" maxlength="400" value="${esc(st.ask || '')}" placeholder="${L('หรือพิมพ์เอง เช่น อยากไปสวนสัตว์แทน', 'or type it, e.g. the zoo instead')}"><button type="button" class="btn" data-a="dchgo" data-t="${esc(t.id)}" data-d="${i}"${st.busy ? ' disabled' : ''}>${st.busy === 'ask' ? L('กำลังเขียน…', 'Writing…') : '✨ ' + L('ขอแผนใหม่', 'Ask')}</button></div>
+${st.err ? `<div class="err" style="color:var(--accent2)">${esc(st.err)}</div>` : ''}${cmp}
+<p class="label">${L('ส่งแผนของวันนี้ ที่พักคืนนี้ พยากรณ์อากาศ และอายุของเด็ก · ไม่ส่งชื่อหรือรูป · ที่เช็กอินแล้วยังอยู่ในแผน', 'Sends today’s plan, tonight’s bed, the forecast and the children’s ages · never names or photos · places already checked in stay')}</p></section>`;
+}
 function nextBlock(t, i) {
   if (!isEditor() || !S.features.story || i + 1 >= t.days.length) return '';
   const a = nextAns && nextAns.t === t.id && nextAns.i === i ? nextAns.text : '';
@@ -2479,6 +2547,7 @@ ${sec('ใครอื่นเห็นบ้าง', 'Who else ever sees it', 
   ['ญาติที่พ่อแม่ให้รหัสหรือลิงก์: เห็นเฉพาะเล่มที่ติ๊กไว้ ดูอย่างเดียว ส่งหัวใจได้', 'Relatives the parents give a PIN or link: only the books ticked for them, read-only, hearts allowed'],
   ['ผู้ช่วย (Anthropic) เฉพาะเมื่อพ่อแม่กดขอ เช่น นิทาน สรุปวัน แปลภาษา: ส่งเฉพาะข้อความ ไม่ส่งรูป ไม่เก็บไว้ฝึกโมเดล', 'The helper (Anthropic), only when a parent presses for it — a story, the day in brief, a translation: words only, never photos, not used to train models'],
   ['“วางแผนกับผู้ช่วย” เฉพาะเมื่อพ่อแม่กดเอง: ส่งคำตอบในหน้านั้น เส้นทาง และอายุของลูก ไม่ส่งชื่อลูก รูป หรือความทรงจำ เลขจองที่พิมพ์มาถูกตัดออกก่อน · เบอร์ฉุกเฉินและวีซ่ามาจากตารางที่ตรวจแล้วของแอป', '“Plan with the helper”, only when a parent presses for it: the answers on that page, the route and the children’s ages — never their names, photos or memories; a booking number typed in is removed first · emergency numbers and visa rules come from the app’s checked table'],
+  ['“เช็กร้านและที่เที่ยวบนเว็บ” เฉพาะเมื่อพ่อแม่กดเอง: ส่งแค่ชื่อร้านหรือที่เที่ยวกับที่อยู่บนแผนที่ ให้ผู้ช่วยค้นเว็บ ไม่มีชื่อลูก ที่พัก หรือข้อมูลครอบครัว', '“Check the places on the web”, only when a parent presses for it: each place’s name and map address go to the helper, which searches the web — never the children’s names, the stays or anything about the family'],
   ['“ให้ผู้ช่วยดูรูปวันนี้” เฉพาะเมื่อเปิดใช้และกดเอง: ส่งรูปย่อของวันนั้นครั้งเดียว ไม่เก็บ', '“Look at today’s photos”, only when switched on and pressed: that day’s small thumbnails, once, not stored'],
   ['วาดตัวการ์ตูนจากรูปลูก (OpenAI) เฉพาะเมื่อพ่อแม่อัปโหลด: รูปถูกย่อ ส่งครั้งเดียว และไม่เก็บที่ไหน', 'Drawing a character from a child’s photo (OpenAI), only when a parent uploads one: shrunk, sent once, stored nowhere'],
   ['พยากรณ์อากาศ (Open-Meteo): ส่งเฉพาะพิกัดระดับเมืองของที่พักในแผน ไม่ใช่ตำแหน่งโทรศัพท์', 'The weather forecast (Open-Meteo): only the town-level location of the planned stay, never the phone’s position'],

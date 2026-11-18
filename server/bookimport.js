@@ -379,4 +379,4 @@ Trip: ${JSON.stringify({ title: top.title, place: top.place, from: top.from, to:
   return { seed, plan, report, cost: { usd: ledger.some((r) => r.usd === null) ? null : cost, calls: ledger } };
 }
 
-module.exports = { run, redact, pdfText, EXTRACT, WRITE };
+module.exports = { run, redact, pdfText, EXTRACT, WRITE, PLAN_RULES, THAI_STYLE, EN_STYLE };

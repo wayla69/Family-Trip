@@ -199,6 +199,18 @@ async function planCall(body) {
   finally { pln.busy = ''; safeRender(); }
   const el = $('#plroute'); if (el && pln.route && !pln.err) el.scrollIntoView({ behavior: 'smooth', block: 'start' });
 }
+// the web check's job: asked every 3 s while it runs on this page; when it ends the state is loaded again (the answers live on the book)
+let vfTimer = null;
+function vfPoll() {
+  if (vfTimer) return;
+  vfTimer = setInterval(async () => {
+    let r; try { r = await api('GET', '/api/b/planner/verify'); } catch (_) { return; }
+    vfState = r;
+    if (r.status !== 'running') { clearInterval(vfTimer); vfTimer = null; if (r.status === 'done') { await load(); toast(L('เช็กเสร็จแล้ว', 'The check is done')); } }
+    if (route().parts[2] === 'check') safeRender();
+  }, 3000);
+}
+const dchErr = (e) => ({ limit: L('ผู้ช่วยใช้ครบโควตาวันนี้แล้ว ลองพรุ่งนี้', "Today's helper allowance is used up — try tomorrow"), seed: L('เล่มนี้มากับแอป เปลี่ยนแผนในแอปไม่ได้', 'This book came with the app — its plan cannot be changed here'), privacy: L('แผนใหม่มีข้อมูลส่วนตัว จึงไม่ใช้ ลองอีกครั้ง', 'The new plan held private details — not used, try again'), json: L('คำตอบอ่านไม่ได้ ลองอีกครั้ง', 'Unreadable answer — try again'), day: L('แผนใหม่อ่านไม่ได้ ลองอีกครั้ง', 'The new plan could not be read — try again'), refusal: L('ผู้ช่วยเปลี่ยนวันนี้ไม่ได้', 'The helper could not change this day'), none: L('ไม่มีแผนเดิมให้กลับไป', 'No old plan to go back to') }[e && e.error] || L('ส่งไม่สำเร็จ ลองอีกครั้ง', 'Could not send — try again'));
 const planErr = (e) => ({ limit: L('ผู้ช่วยใช้ครบโควตาวันนี้แล้ว ลองพรุ่งนี้', "Today's helper allowance is used up — try tomorrow"), month: L('เดือนนี้เขียนครบแล้ว เขียนได้อีกเดือนหน้า', "This month's books are written — next month"), busy: L('ผู้ช่วยกำลังเขียนอีกเล่มอยู่ รอให้เสร็จก่อน', 'The helper is writing another book — wait for it to finish'), dest: L('บอกก่อนว่าอยากไปที่ไหน', 'Say where to first'), days: L('ทริปยาวได้ไม่เกิน 31 วัน', 'A trip can be 31 days at most'), route: L('เส้นทางอ่านไม่ได้ ลองให้ผู้ช่วยร่างใหม่', 'The route could not be read — ask for a new one'), json: L('คำตอบอ่านไม่ได้ ลองอีกครั้ง', 'Unreadable answer — try again'), refusal: L('ผู้ช่วยวางแผนทริปนี้ไม่ได้', 'The helper could not plan this trip'), ai: L('ผู้ช่วยยังไม่ได้เปิดใช้', 'The helper is not switched on') }[e && e.error] || L('ส่งไม่สำเร็จ ลองอีกครั้ง', 'Could not send — try again'));
 /* a book's film (server/reel.js): one at a time on the server; this phone follows the one it started */
 let reelJob = null, reelTimer = null;
@@ -837,6 +849,33 @@ const A = {
   async impdel(b) {
     if (!armed(b, L('แตะอีกครั้งเพื่อทิ้ง', 'Tap again to discard'))) return;
     try { await api('DELETE', `/api/b/import/${encodeURIComponent(b.dataset.v)}`); imp.list = null; if (imp.job && imp.job.draft && imp.job.draft.id === b.dataset.v) imp.job = null; impRefresh(); } catch (_) { toast(L('ลบไม่สำเร็จ', 'Could not delete')); }
+  },
+  dchfill(b) { const f = $('#dchask'), el = $('#dchblk'); if (f) f.value = b.dataset.v; if (el) el.scrollIntoView({ behavior: 'smooth', block: 'start' }); },
+  async vfstart(b) {
+    try { const r = await api('POST', `/api/b/planner/verify/${encodeURIComponent(b.dataset.t)}`, {}); vfState = { trip: b.dataset.t, status: 'running', done: 0, total: r.total, started: Date.now() }; safeRender(); vfPoll(); }
+    catch (e) { toast(e.error === 'limit' && e.body ? L(`โควตาวันนี้เหลือ ${e.body.left} ต้องใช้ ${e.body.need} ลองพรุ่งนี้`, `${e.body.left} of today's calls left, ${e.body.need} needed — try tomorrow`) : e.error === 'busy' ? L('ผู้ช่วยกำลังเช็กอีกเล่มอยู่', 'The helper is checking another book') : e.error === 'none' ? L('เล่มนี้ยังไม่มีร้านหรือที่เที่ยวให้เช็ก', 'This book has no places to check yet') : vfErr(e.error)); }
+  },
+  dchchip(b) { const f = $('#dchask'); if (f) { f.value = b.dataset.v; f.focus(); } },
+  dchdrop() { if (dch) { dch.prop = null; dch.err = ''; } safeRender(); },
+  async dchgo(b) {
+    const t = trip(b.dataset.t), i = +b.dataset.d, ask = (($('#dchask') || {}).value || '').trim();
+    dch = { t: b.dataset.t, i, ask, busy: '', prop: null, err: '' };
+    if (!ask) { dch.err = L('เลือกหรือพิมพ์ก่อนว่าอยากเปลี่ยนอะไร', 'Pick or type what should change first'); safeRender(); return; }
+    dch.busy = 'ask'; safeRender();
+    try { const r = await api('POST', `/api/b/planner/day/${encodeURIComponent(t.id)}/${i}`, { ask }); if (dch && dch.t === t.id && dch.i === i) { dch.prop = r.day; dch.fc = r.forecast || ''; } }
+    catch (e) { if (dch) dch.err = dchErr(e); }
+    finally { if (dch) dch.busy = ''; safeRender(); const el = $('#dchblk'); if (el) el.scrollIntoView({ behavior: 'smooth', block: 'start' }); }
+  },
+  async dchuse(b) {
+    if (!dch || !dch.prop) return;
+    dch.busy = 'use'; safeRender();
+    try { await api('PUT', `/api/b/planner/day/${encodeURIComponent(b.dataset.t)}/${+b.dataset.d}`, { day: dch.prop }); dch = null; await load(); render(); toast(L('ใช้แผนใหม่แล้ว', 'The new plan is in')); scrollTo(0, 0); }
+    catch (e) { if (dch) { dch.err = dchErr(e); dch.busy = ''; } safeRender(); }
+  },
+  async dchundo(b) {
+    if (!armed(b, L('แตะอีกครั้งเพื่อกลับไปแผนเดิม', 'Tap again to go back'))) return;
+    try { await api('POST', `/api/b/planner/day/${encodeURIComponent(b.dataset.t)}/${+b.dataset.d}/undo`, {}); await load(); render(); toast(L('กลับไปแผนเดิมแล้ว', 'Back to the old plan')); }
+    catch (e) { toast(dchErr(e)); }
   },
   planopt(b) { pln.a[b.dataset.k] = b.dataset.v; ls('plan', pln.a); b.closest('.plopts').querySelectorAll('.tpo').forEach((x) => x.setAttribute('aria-pressed', x === b ? 'true' : 'false')); },
   planseniors(b) { pln.a.seniors = !!b.checked; ls('plan', pln.a); },

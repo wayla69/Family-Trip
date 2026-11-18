@@ -10,6 +10,7 @@ const IMG = require('./images');
 const GUIDE = require('./guide');
 const IMPORT = require('./bookimport');
 const PLANNER = require('./planner');
+const VERIFY = require('./verify');
 const FAM = require('./family');
 const AVATAR = require('./avatar');
 const ART = require('./bookart');
@@ -1192,6 +1193,101 @@ function router({ pool, media, A, ai, hooks = {} }) {   // hooks.heart(h): set b
         job.status = 'error'; job.error = e.code || 'failed'; log(`failed: ${e.message}`); console.error('planner', e.message);
       }
     } catch (e) { if (held) held(); next(e); }   // a failure before the 202 never leaves the job claimed
+  });
+
+  // ----- change one day (phase 2, docs/AI-PLANNER.md §4.6): the helper writes the day again for rain, a tired or unwell child, a place
+  // that is shut; the proposal comes back unsaved, "use this" saves it with the old day kept for one undo. A bundled book is never
+  // changed here (the next deploy would write its seed back over the change).
+  const dayRow = (tid, i) => q("SELECT day_index, to_char(date,'YYYY-MM-DD') date, title, sleep, emoji, planned, plan FROM trip_days WHERE trip_id=$1 AND day_index=$2", [tid, i]);
+  const dayBook = async (req, res) => {
+    const t = (await q('SELECT id, title, timezone, source FROM trips WHERE id=$1 AND family_id=$2', [req.params.trip, FAMILY]))[0];
+    if (!t) { bad(res, 'trip', 404); return null; }
+    if (t.source === 'seed') { bad(res, 'seed', 409); return null; }
+    const d = (await dayRow(t.id, Number(req.params.day)))[0];
+    if (!d) { bad(res, 'day', 404); return null; }
+    return { t, d };
+  };
+  const checkedKeys = async (tid, i) => new Set((await q('SELECT key FROM places WHERE trip_id=$1 AND day_index=$2', [tid, i])).map((p) => p.key));
+  // a proposal as the page holds it → the shape the cleaner reads (the same cleaning as the helper's own answer)
+  const asAnswer = (p) => ({ title: p.title, emoji: p.emoji, planned: p.planned, why: p.why, ...((p && p.plan) || {}), plan: ((p && p.plan) || {}).plan });
+  r.post('/api/b/planner/day/:trip/:day', ...W, async (req, res, next) => {
+    try {
+      if (!(ai && ai.enabled())) return bad(res, 'ai', 503);
+      const ask = String((req.body || {}).ask || '').trim().slice(0, 400);
+      if (!ask) return bad(res, 'ask');
+      const got = await dayBook(req, res); if (!got) return;
+      const { t, d } = got, pl = d.plan || {};
+      let forecast = '';
+      try {
+        const [f] = await require('./weather').forecast([{ date: d.date, ll: pl.stay && pl.stay.ll }], t.timezone);
+        if (f) forecast = `${Math.round(f.tmin)}–${Math.round(f.tmax)}°C${f.pop != null ? `, rain chance ${f.pop}%` : ''}`;
+      } catch (_) { /* the forecast is a nice-to-have */ }
+      const raw = await PLANNER.dayAsk({ client: new ai.SDK(), model: IMPORT.WRITE(), day: d, place: (t.title && t.title.en) || '', forecast, ask, who: PLANNER.whoLine(await kidRows(), d.date), tz: t.timezone, take: aiTake, onUsage: addUsage });
+      const day = PLANNER.cleanDay(raw, d, await checkedKeys(t.id, d.day_index));
+      if (CORE.scan(day).hits.length) return bad(res, 'privacy', 502);
+      res.json({ day, forecast: forecast || null });
+    } catch (e) {
+      if (e.code === 'limit') return res.status(429).json({ error: 'limit' });
+      if (['day', 'json', 'refusal'].includes(e.code)) return bad(res, e.code, 502);
+      next(e);
+    }
+  });
+  r.put('/api/b/planner/day/:trip/:day', ...W, async (req, res, next) => {
+    try {
+      const got = await dayBook(req, res); if (!got) return;
+      const { t, d } = got;
+      let day; try { day = PLANNER.cleanDay(asAnswer((req.body || {}).day || {}), d, await checkedKeys(t.id, d.day_index)); } catch (_) { return bad(res, 'day'); }
+      if (CORE.scan(day).hits.length) return bad(res, 'privacy', 400);
+      const { prev, changed, ...was } = d.plan || {};
+      const plan = { ...day.plan, prev: { title: d.title, emoji: d.emoji, planned: d.planned, plan: was }, changed: { at: Date.now(), why: day.why } };
+      await q('UPDATE trip_days SET title=$3, emoji=$4, planned=$5, plan=$6 WHERE trip_id=$1 AND day_index=$2', [t.id, d.day_index, day.title, day.emoji, JSON.stringify(day.planned), plan]);
+      res.json({ ok: true });
+    } catch (e) { next(e); }
+  });
+  r.post('/api/b/planner/day/:trip/:day/undo', ...W, async (req, res, next) => {
+    try {
+      const got = await dayBook(req, res); if (!got) return;
+      const { t, d } = got, pv = (d.plan || {}).prev;
+      if (!pv) return bad(res, 'none', 409);
+      await q('UPDATE trip_days SET title=$3, emoji=$4, planned=$5, plan=$6 WHERE trip_id=$1 AND day_index=$2', [t.id, d.day_index, pv.title, pv.emoji || '', JSON.stringify(pv.planned || []), pv.plan || {}]);
+      res.json({ ok: true });
+    } catch (e) { next(e); }
+  });
+
+  // ----- check the book's places on the web (phase 3, server/verify.js): one job at a time; a batch of 8 places a call (one of the day's
+  // calls each, refused up front when today's allowance cannot carry the book); the answers saved in trips.theme.verify. A bundled
+  // book is not checked here (its next boot writes its theme back).
+  let vfJob = null;   // { trip, status, done, total, error, started }
+  const vfView = () => (vfJob ? { trip: vfJob.trip, status: vfJob.status, done: vfJob.done, total: vfJob.total, error: vfJob.error || null, started: vfJob.started } : { status: 'idle' });
+  r.get('/api/b/planner/verify', A.requireEditor, (_req, res) => { res.setHeader('Cache-Control', 'no-store'); res.json(vfView()); });
+  r.post('/api/b/planner/verify/:trip', ...W, async (req, res, next) => {
+    let held = null;
+    try {
+      if (!(ai && ai.enabled())) return bad(res, 'ai', 503);
+      if (vfJob && vfJob.status === 'running') return bad(res, 'busy', 409);
+      const prev = vfJob; vfJob = { trip: req.params.trip, status: 'running', done: 0, total: 0, started: Date.now() }; held = () => { vfJob = prev; };   // claimed before the first await
+      const t = (await q('SELECT id, source, theme FROM trips WHERE id=$1 AND family_id=$2', [req.params.trip, FAMILY]))[0];
+      if (!t) { held(); return bad(res, 'trip', 404); }
+      if (t.source === 'seed') { held(); return bad(res, 'seed', 409); }
+      const days = await q('SELECT day_index, planned, plan FROM trip_days WHERE trip_id=$1 ORDER BY day_index', [t.id]);
+      const places = VERIFY.placesOf(days);
+      if (!places.length) { held(); return bad(res, 'none', 422); }
+      const need = VERIFY.calls(places.length);
+      const used = Number(((await q("SELECT calls FROM ai_usage WHERE family_id=$1 AND day=(now() AT TIME ZONE 'UTC')::date", [FAMILY]))[0] || {}).calls || 0);
+      if (STORY_DAILY - used < need) { held(); return res.status(429).json({ error: 'limit', left: Math.max(0, STORY_DAILY - used), need }); }
+      vfJob.total = places.length; held = null;
+      res.status(202).json({ total: places.length, calls: need });
+      const job = vfJob, rows = [];
+      try {
+        for (let i = 0; i < places.length; i += VERIFY.BATCH) {
+          const out = await VERIFY.checkBatch({ client: new ai.SDK(), model: IMPORT.WRITE(), list: places.slice(i, i + VERIFY.BATCH), take: aiTake, onUsage: addUsage });
+          rows.push(...out.rows); job.done = rows.length;
+        }
+        const verify = { at: Date.now(), by: clip(req.user.name, 40), places: rows };
+        await q("UPDATE trips SET theme = jsonb_set(COALESCE(theme, '{}'::jsonb), '{verify}', $2::jsonb) WHERE id=$1", [t.id, JSON.stringify(verify)]);
+        job.status = 'done';
+      } catch (e) { job.status = 'error'; job.error = e.code || 'failed'; console.error('verify', e.message); }
+    } catch (e) { if (held) held(); next(e); }
   });
 
   // ---------- the book's own pictures (server/bookart.js): Claude draws a circle per day, the passport crest and the two guides as SVG ----------
