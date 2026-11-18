@@ -3608,3 +3608,9 @@ b.kf.kd,.tp.one .gcard b.kf.kd{--kc:#C9780E}
 .vfwarn{display:flex;flex-wrap:wrap;gap:8px 12px;align-items:center;justify-content:space-between;margin:8px 0}
 :root[data-theme=dark] .vfs{color:color-mix(in srgb,#1CC9A4 55%,#fff)}
 :root[data-theme=dark] .vfp.st-closed .vfs,:root[data-theme=dark] .vfp.st-moved .vfs{color:color-mix(in srgb,#FF6FA8 55%,#fff)}
+/* two routes to compare: two cards side by side (stacked on a phone), each in its own colour */
+.plalts{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,300px),1fr));gap:12px;margin:8px 0 16px}
+.plalt{padding:14px;border-radius:16px;border:1px solid var(--line);border-top:5px solid var(--tc);background:color-mix(in srgb,var(--tc) 7%,var(--card));display:grid;gap:8px;align-content:start}
+.plalt h3{margin:0;color:color-mix(in srgb,var(--tc) 60%,var(--ink))}.plalt .btn{justify-self:start}
+.plalt ol{list-style:none;margin:0;padding:0;display:grid;gap:6px}.plalt li{font-size:14px}.plalt li small{display:block;color:var(--muted)}
+:root[data-theme=dark] .plalt h3{color:color-mix(in srgb,var(--tc) 60%,#fff)}

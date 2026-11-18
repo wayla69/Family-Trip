@@ -1150,8 +1150,9 @@ function router({ pool, media, A, ai, hooks = {} }) {   // hooks.heart(h): set b
       if (!answers.dest) return bad(res, 'dest');
       if (answers.from && PLANNER.daysOf(answers) > 31) return bad(res, 'days');
       const who = PLANNER.whoLine(await kidRows(), answers.from);
-      const route = await PLANNER.route({ client: new ai.SDK(), model: IMPORT.WRITE(), answers, who, prev: b.ask && b.route ? b.route : null, ask: b.ask, take: aiTake, onUsage: addUsage });
-      res.json({ route });
+      const two = !!b.two && !b.ask;
+      const route = await PLANNER.route({ client: new ai.SDK(), model: IMPORT.WRITE(), answers, who, prev: b.ask && b.route ? b.route : null, ask: b.ask, take: aiTake, onUsage: addUsage, two });
+      res.json(two ? { routes: route } : { route });
     } catch (e) {
       if (e.code === 'limit') return res.status(429).json({ error: 'limit' });
       if (['route', 'json', 'refusal'].includes(e.code)) return bad(res, e.code, 502);

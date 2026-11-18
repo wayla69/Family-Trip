@@ -46,6 +46,8 @@ function answersText(a, who) {
 const ROUTE_SYS = 'You plan family trips for Thai families with small children. You draft only the route: where the family sleeps each night and the one-line plan of each day. '
   + 'Keep the children\'s naps, an easy arrival and departure day, few hotel changes (a town at least two nights when you can), short legs. Real, well-known places only. '
   + 'Never name the children. Answer with JSON only, no prose, no code fence.';
+// two routes to compare (phase 3): one call, two real choices the family can feel the difference between
+const TWO = '\n\nGive TWO different routes to choose between — really different (one base and day trips vs moving towns, slower vs fuller, sea vs mountains), both good for small children. Return {"routes":[route, route]} where each route is the object above plus "label":{"th","en"} (2–4 words naming the choice) and "why":{"th","en"} (one line: who it suits).';
 const routeUser = (a, who, prev, ask) => `${answersText(a, who)}
 ${prev ? `\nThe route so far (change it as asked, keep what was not asked about):\n${JSON.stringify(prev)}\nAsked: ${one(ask, 400)}` : ''}
 Return {"title":{"th","en"} (short, fun, the place's name in it), "place":{"th","en"}, "countries":["2-letter codes in the order visited"], "tz":"IANA zone of the main place", "from":"YYYY-MM-DD", "to":"YYYY-MM-DD",
@@ -62,21 +64,27 @@ function cleanRoute(r, a) {
   const from = a.from || (DATE_RE.test(r.from) ? r.from : days[0].date), tz = /^[A-Za-z_]+\/[A-Za-z_+-]+(\/[A-Za-z_+-]+)?$/.test(r.tz || '') ? r.tz : 'Asia/Bangkok';
   // the dates are the family's: day i is from + i, whatever the helper wrote
   if (DATE_RE.test(from)) days.forEach((d, i) => { d.date = new Date(Date.parse(from) + i * 864e5).toISOString().slice(0, 10); });
-  return { title: i18n(r.title, 80), place: i18n(r.place, 80), countries: (Array.isArray(r.countries) ? r.countries : []).map((c) => String(c).toLowerCase()).filter((c) => /^[a-z]{2}$/.test(c)).slice(0, 6),
+  const opt = (x, n) => (x && (x.th || x.en) ? { [x === r.label ? 'label' : 'why']: i18n(x, n) } : {});
+  return { ...opt(r.label, 40), ...opt(r.why, 160), title: i18n(r.title, 80), place: i18n(r.place, 80), countries: (Array.isArray(r.countries) ? r.countries : []).map((c) => String(c).toLowerCase()).filter((c) => /^[a-z]{2}$/.test(c)).slice(0, 6),
     tz, from: days[0].date, to: days[days.length - 1].date, days };
 }
 // the parents' edits come back from the page: the same cleaning, the dates laid out again from the first day
 const cleanEdited = (r, a) => cleanRoute(r, { ...a, from: (r && DATE_RE.test(r.from) ? r.from : a.from) });
 
-async function route({ client, model, answers, who, prev, ask, take, onUsage }) {
+async function route({ client, model, answers, who, prev, ask, take, onUsage, two }) {
   if (take && !(await take())) throw Object.assign(new Error('limit'), { code: 'limit' });
   // the import's redaction runs on the answers too: a booking number typed into "flights" never leaves the server
-  const { text } = require('./bookimport').redact(routeUser(answers, who, prev, ask));
+  const { text } = require('./bookimport').redact(routeUser(answers, who, prev, ask) + (two && !prev ? TWO : ''));
   const msg = await client.messages.stream({ model, max_tokens: 8000, system: ROUTE_SYS, messages: [{ role: 'user', content: text }] }).finalMessage();
   if (onUsage) { try { onUsage(msg.usage || {}); } catch (_) { /* counting never breaks planning */ } }
   if (msg.stop_reason === 'refusal') throw Object.assign(new Error('refused'), { code: 'refusal' });
   const t = msg.content.filter((b) => b.type === 'text').map((b) => b.text).join('').replace(/^```(?:json)?\s*/m, '').replace(/```\s*$/m, '').trim();
   let r; try { r = JSON.parse(t.slice(t.indexOf('{'))); } catch (e) { throw Object.assign(new Error('route json'), { code: 'json' }); }
+  if (two && !prev) {   // two routes to choose between: both cleaned the same way; one that does not read is left out, none → an error
+    const list = (Array.isArray(r.routes) ? r.routes : []).slice(0, 2).map((x) => { try { return cleanRoute(x, answers); } catch (_) { return null; } }).filter(Boolean);
+    if (!list.length) throw Object.assign(new Error('route'), { code: 'route' });
+    return list;
+  }
   return cleanRoute(r, answers);
 }
 

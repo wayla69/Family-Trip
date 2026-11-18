@@ -194,10 +194,10 @@ async function planCall(body) {
   if (pln.busy) return;
   if (!String(pln.a.dest || '').trim()) { pln.err = L('บอกก่อนว่าอยากไปที่ไหน', 'Say where to first'); safeRender(); return; }
   pln.busy = 'route'; pln.err = ''; safeRender();
-  try { const r = await api('POST', '/api/b/planner/route', body); pln.route = r.route; pln.ask = ''; ls('planRoute', pln.route); }
+  try { const r = await api('POST', '/api/b/planner/route', body); if (r.routes) { pln.alts = r.routes; pln.route = null; } else { pln.route = r.route; pln.alts = null; ls('planRoute', pln.route); } pln.ask = ''; }
   catch (e) { pln.err = planErr(e); }
   finally { pln.busy = ''; safeRender(); }
-  const el = $('#plroute'); if (el && pln.route && !pln.err) el.scrollIntoView({ behavior: 'smooth', block: 'start' });
+  const el = $(pln.alts ? '.plalts' : '#plroute'); if (el && (pln.route || pln.alts) && !pln.err) el.scrollIntoView({ behavior: 'smooth', block: 'start' });
 }
 // the web check's job: asked every 3 s while it runs on this page; when it ends the state is loaded again (the answers live on the book)
 let vfTimer = null;
@@ -879,7 +879,16 @@ const A = {
   },
   planopt(b) { pln.a[b.dataset.k] = b.dataset.v; ls('plan', pln.a); b.closest('.plopts').querySelectorAll('.tpo').forEach((x) => x.setAttribute('aria-pressed', x === b ? 'true' : 'false')); },
   planseniors(b) { pln.a.seniors = !!b.checked; ls('plan', pln.a); },
-  async planroute() { await planCall({ answers: pln.a }); },
+  async planroute() { pln.alts = null; await planCall({ answers: pln.a }); },
+  async planroute2() { await planCall({ answers: pln.a, two: true }); },
+  planpick(b) { const r = (pln.alts || [])[+b.dataset.v]; if (!r) return; pln.route = r; pln.alts = null; ls('planRoute', r); safeRender(); const el = $('#plroute'); if (el) el.scrollIntoView({ behavior: 'smooth', block: 'start' }); },
+  snapplan(b) {   // a book from photos as the start of the next plan: its towns as where, its days as wishes, no dates (a new trip)
+    const t = trip(b.dataset.t); if (!t) return;
+    const towns = [...new Set(t.days.map((d) => T(d.place)).filter(Boolean).flatMap((x) => x.split(' · ')))].slice(0, 6);
+    const wish = t.days.map((d) => T(d.title)).filter((x) => x && !/^(วันที่|Day) \d+$/.test(x)).slice(0, 8).join(' · ');
+    pln.a = { dest: towns.join(', ') || T(t.title), from: '', to: '', approx: L(`${t.days.length} วัน`, `${t.days.length} days`), adults: 2, seniors: false, pace: 'slow', move: 'mix', budget: 'mid', stays: '', flights: '', want: L(`แบบทริป "${T(t.title)}"`, `Like our trip "${T(t.title)}"`) + (wish ? ` — ${wish}` : ''), avoid: '' };
+    pln.route = null; pln.alts = null; ls('plan', pln.a); ls('planRoute', null); location.hash = '#/planner';
+  },
   async planask() { const ask = (($('#plask') || {}).value || '').trim(); if (!ask) { toast(L('พิมพ์ก่อนว่าอยากเปลี่ยนอะไร', 'Type what should change first')); return; } await planCall({ answers: pln.a, route: pln.route, ask }); },
   async planbook() {
     if (pln.busy) return;
