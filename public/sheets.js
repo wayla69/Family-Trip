@@ -189,6 +189,17 @@ async function addClip(t, day, blob, secs, about) {
 
 /* ---------- a book from a PDF (#/import): page state, polling, upload ---------- */
 let imp = { list: null, job: null, slug: '', err: '', file: null, timer: null };
+// plan with the helper: the route call (a draft, or a change asked in words); the route stays on this phone until a book is written
+async function planCall(body) {
+  if (pln.busy) return;
+  if (!String(pln.a.dest || '').trim()) { pln.err = L('บอกก่อนว่าอยากไปที่ไหน', 'Say where to first'); safeRender(); return; }
+  pln.busy = 'route'; pln.err = ''; safeRender();
+  try { const r = await api('POST', '/api/b/planner/route', body); pln.route = r.route; pln.ask = ''; ls('planRoute', pln.route); }
+  catch (e) { pln.err = planErr(e); }
+  finally { pln.busy = ''; safeRender(); }
+  const el = $('#plroute'); if (el && pln.route && !pln.err) el.scrollIntoView({ behavior: 'smooth', block: 'start' });
+}
+const planErr = (e) => ({ limit: L('ผู้ช่วยใช้ครบโควตาวันนี้แล้ว ลองพรุ่งนี้', "Today's helper allowance is used up — try tomorrow"), month: L('เดือนนี้เขียนครบแล้ว เขียนได้อีกเดือนหน้า', "This month's books are written — next month"), busy: L('ผู้ช่วยกำลังเขียนอีกเล่มอยู่ รอให้เสร็จก่อน', 'The helper is writing another book — wait for it to finish'), dest: L('บอกก่อนว่าอยากไปที่ไหน', 'Say where to first'), days: L('ทริปยาวได้ไม่เกิน 31 วัน', 'A trip can be 31 days at most'), route: L('เส้นทางอ่านไม่ได้ ลองให้ผู้ช่วยร่างใหม่', 'The route could not be read — ask for a new one'), json: L('คำตอบอ่านไม่ได้ ลองอีกครั้ง', 'Unreadable answer — try again'), refusal: L('ผู้ช่วยวางแผนทริปนี้ไม่ได้', 'The helper could not plan this trip'), ai: L('ผู้ช่วยยังไม่ได้เปิดใช้', 'The helper is not switched on') }[e && e.error] || L('ส่งไม่สำเร็จ ลองอีกครั้ง', 'Could not send — try again'));
 /* a book's film (server/reel.js): one at a time on the server; this phone follows the one it started */
 let reelJob = null, reelTimer = null;
 function reelPoll() {
@@ -827,6 +838,17 @@ const A = {
     if (!armed(b, L('แตะอีกครั้งเพื่อทิ้ง', 'Tap again to discard'))) return;
     try { await api('DELETE', `/api/b/import/${encodeURIComponent(b.dataset.v)}`); imp.list = null; if (imp.job && imp.job.draft && imp.job.draft.id === b.dataset.v) imp.job = null; impRefresh(); } catch (_) { toast(L('ลบไม่สำเร็จ', 'Could not delete')); }
   },
+  planopt(b) { pln.a[b.dataset.k] = b.dataset.v; ls('plan', pln.a); b.closest('.plopts').querySelectorAll('.tpo').forEach((x) => x.setAttribute('aria-pressed', x === b ? 'true' : 'false')); },
+  planseniors(b) { pln.a.seniors = !!b.checked; ls('plan', pln.a); },
+  async planroute() { await planCall({ answers: pln.a }); },
+  async planask() { const ask = (($('#plask') || {}).value || '').trim(); if (!ask) { toast(L('พิมพ์ก่อนว่าอยากเปลี่ยนอะไร', 'Type what should change first')); return; } await planCall({ answers: pln.a, route: pln.route, ask }); },
+  async planbook() {
+    if (pln.busy) return;
+    pln.busy = 'book'; pln.err = ''; safeRender();
+    try { await api('POST', '/api/b/planner/draft', { answers: pln.a, route: pln.route }); imp.list = null; imp.job = { status: 'running', slug: '', log: [], started: Date.now() }; pln.info = null; ls('planRoute', null); location.hash = '#/import'; impRefresh(); }
+    catch (e) { pln.err = planErr(e); }
+    finally { pln.busy = ''; safeRender(); }
+  },
   phmore(b) { const r = b.closest('.phsrow'); if (r) r.classList.add('all'); b.remove(); },   // the photo box: show the meals' chips too
   pickvideo(b) { const vp = $('#vpick'); vp.dataset.t = b.dataset.t; vp.dataset.d = b.dataset.d; vp.value = ''; vp.click(); },
   pickphotos(b) { const fp = $('#fpick'); fp.dataset.t = b.dataset.t; fp.dataset.d = b.dataset.d; fp.dataset.place = b.dataset.place || ''; fp.dataset.key = b.dataset.key || ''; fp.dataset.kind = b.dataset.kind || ''; fp.click(); },   // a "where was it?" chip passes its place
@@ -1361,6 +1383,9 @@ document.addEventListener('change', (e) => {
   if (e.target.id === 'lcfile') { const f = e.target.files && e.target.files[0]; if (f) { if (lostPhoto) URL.revokeObjectURL(lostPhoto); lostPhoto = URL.createObjectURL(f); render(); } return; }   // this morning's photo: in memory only
   if (e.target.id === 'impfile') { imp.file = (e.target.files || [])[0] || null; const sl = $('#impslug'); if (imp.file && sl && !sl.value) { sl.value = imp.file.name.replace(/\.pdf$/i, '').normalize('NFKD').toLowerCase().replace(/[^a-z0-9]+/g, '-').replace(/^-+|-+$/g, '').slice(0, 40); } return; }
   if (e.target.id === 'impslug') { imp.slug = e.target.value; return; }
+  if (e.target.dataset && e.target.dataset.pl && pln.a) { const k = e.target.dataset.pl; pln.a[k] = k === 'adults' ? Math.max(1, Math.min(8, parseInt(e.target.value, 10) || 2)) : e.target.value; ls('plan', pln.a); if (k === 'from') safeRender(); return; }
+  if (e.target.dataset && e.target.dataset.pr && pln.route) { const [i, f] = e.target.dataset.pr.split('.'), d = pln.route.days[+i]; if (d) { d[f] = { ...(d[f] || {}), [lang]: e.target.value.slice(0, 120) }; ls('planRoute', pln.route); } return; }
+  if (e.target.id === 'plask') { pln.ask = e.target.value; return; }
   if (e.target.dataset && e.target.dataset.famavatar !== undefined && fam) {   // a photo of the child → the AI draws their character, used at once
     const f = (e.target.files || [])[0], i = +e.target.dataset.famavatar, k = fam.kids[i]; if (!f || !k) return;
     fam.busyKid = i; fam.err = ''; render();

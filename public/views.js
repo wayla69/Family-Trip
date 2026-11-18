@@ -112,6 +112,7 @@ function render() {
   else if (p[0] === 'notebook') html = viewNotebook();
   else if (p[0] === 'viewers' && isEditor()) html = viewViewers();
   else if (p[0] === 'import' && isEditor()) html = viewImport();
+  else if (p[0] === 'planner' && isEditor()) html = viewPlanner();
   else if (p[0] === 'family' && isEditor()) html = viewFamily();
   else if (p[0] === 'start' && isEditor()) html = viewStart(p);
   else if (p[0] === 'privacy') html = viewPrivacy();
@@ -293,6 +294,7 @@ ${visual}
   const pdf = S.features.story;
   const add = isEditor() ? `<div class="spine add"><div class="addhd"><b class="addplus" aria-hidden="true">＋</b><div><h3>${L('เล่มใหม่', 'New book')}</h3><small>${L('เริ่มได้หลายแบบ', 'Several ways to start')}</small></div></div>
 <a class="addway main pz" style="--g1:${PG.pink}" href="#/snap">${hubE('snapcam')}<span><b>${L('เล่มจากรูป', 'A book from photos')}</b><small>${L('เลือกรูปของทริป แอปจัดวันและสถานที่ให้ · ไม่ต้องวางแผนก่อน', 'Pick the trip’s photos — the app sorts the days and places · no plan needed')}</small></span><i>›</i></a>
+${pdf ? `<a class="addway pz plango" style="--g1:${PG.purple}" href="#/planner">${hubE('famap')}<span><b>${L('วางแผนกับผู้ช่วย', 'Plan with the helper')}</b><small>${L('ตอบไม่กี่ข้อ ผู้ช่วยร่างเส้นทางแล้วเขียนทั้งเล่มให้ · ยังไม่ต้องมีแผน', 'Answer a few questions — the helper drafts the route, then writes the whole book · no plan needed yet')}</small></span><i>›</i></a>` : ''}
 ${pdf ? `<a class="addway pz" style="--g1:${PG.blue}" href="#/import">${hubE('manual')}<span><b>${L('จากคู่มือทริป (PDF)', 'From the trip manual (PDF)')}</b><small>${L('ผู้ช่วยอ่านคู่มือแล้วทำแผนรายวัน ร้าน และหน้าของเด็กให้ · ราว 5–10 นาที', 'The helper reads the manual and makes the day plans, places to eat and the kids’ pages · about 5–10 min')}</small></span><i>›</i></a>` : ''}
 ${S.trips.some((t) => t.id === 'sakura-hop-2028') ? '' : `<button type="button" class="addway pz" style="--g1:${PG.gold}" data-a="sample">${hubE('book')}<span><b>${L('เล่มตัวอย่าง', 'A sample book')}</b><small>${L('ทริปสมมติ 6 วันที่เติมไว้แล้ว ลบได้ทุกเมื่อ', 'A filled-in 6-day trip, delete it any time')}</small></span><i>›</i></button>`}
 <button type="button" class="addway pz" style="--g1:${PG.teal}" data-a="newtrip">${hubE('pencil')}<span><b>${L('เล่มเปล่า', 'An empty book')}</b><small>${L('ใส่ชื่อทริปกับวันที่ แล้วค่อยเติมเอง', 'Type the trip name and dates, fill it in as you go')}</small></span><i>›</i></button></div>` : '';
@@ -2425,7 +2427,7 @@ ${on ? `<div class="call calm">✓ ${L('เปิดเตือนบนเค�
     body = `<div class="onbart">${castHtml(kids.map((k) => k.slug))}</div><div class="kicker" style="text-align:center">${esc(kicker())}</div>
 <h1 class="h2" style="text-align:center">${L('พร้อมแล้ว มาทำเล่มแรกกัน', 'All set — let’s make the first book')}</h1>
 <p class="lede" style="text-align:center;max-width:none">${S.trips.length ? L('ชั้นหนังสือมีเล่มอยู่แล้ว เปิดดูได้เลย', 'The shelf already has a book — open it.') : L('ชั้นหนังสือยังว่าง เริ่มได้ 2 แบบ', 'The shelf is empty. Two ways to start.')}</p>
-<div class="onbways">${S.features.story ? `<a class="onbway main" href="#/import"><span class="e">${ic('doc')}</span><span><b>${L('จากคู่มือทริป (PDF)', 'From the trip manual (PDF)')}</b><small>${L('ผู้ช่วยอ่านคู่มือแล้วทำแผนรายวัน ร้าน และหน้าของเด็กให้ · ราว 15 นาที', 'The helper reads the manual and makes the day plans, places to eat and the kids’ pages · about 15 min')}</small></span>${ic('chev')}</a>` : ''}
+<div class="onbways">${S.features.story ? `<a class="onbway main" href="#/planner"><span class="e">${ic('route')}</span><span><b>${L('วางแผนกับผู้ช่วย', 'Plan with the helper')}</b><small>${L('ตอบไม่กี่ข้อ ผู้ช่วยร่างเส้นทางแล้วเขียนทั้งเล่มให้', 'Answer a few questions — the helper drafts the route and writes the book')}</small></span>${ic('chev')}</a><a class="onbway" href="#/import"><span class="e">${ic('doc')}</span><span><b>${L('จากคู่มือทริป (PDF)', 'From the trip manual (PDF)')}</b><small>${L('ผู้ช่วยอ่านคู่มือแล้วทำแผนรายวัน ร้าน และหน้าของเด็กให้ · ราว 15 นาที', 'The helper reads the manual and makes the day plans, places to eat and the kids’ pages · about 15 min')}</small></span>${ic('chev')}</a>` : ''}
 <a class="onbway main" href="#/snap"><span class="e">${ic('camera')}</span><span><b>${L('เล่มจากรูป', 'A book from photos')}</b><small>${L('เลือกรูปของทริป แอปจัดวันและสถานที่ให้', 'Pick the trip’s photos — the app sorts the days and places')}</small></span>${ic('chev')}</a>
 ${S.trips.some((t) => t.id === 'sakura-hop-2028') ? '' : `<button type="button" class="onbway" data-a="sample"><span class="e">${ic('book')}</span><span><b>${L('ดูเล่มตัวอย่างก่อน', 'Look at a sample book first')}</b><small>${L('ทริปสมมติ 6 วันที่เติมไว้แล้ว ใช้ชื่อลูกของบ้านคุณ ลบได้ทุกเมื่อ', 'A filled-in 6-day trip with your children’s names — delete it any time')}</small></span>${ic('chev')}</button>`}
 <button type="button" class="onbway" data-a="newtrip"><span class="e">${ic('log')}</span><span><b>${L('เล่มเปล่า', 'An empty book')}</b><small>${L('ใส่ชื่อทริปกับวันที่ แล้วค่อยเติมเอง · 1 นาที', 'Type the trip name and dates, fill it in as you go · 1 min')}</small></span>${ic('chev')}</button>
@@ -2476,6 +2478,7 @@ ${sec('เก็บไว้ที่ไหน นานแค่ไหน', 'Wh
 ${sec('ใครอื่นเห็นบ้าง', 'Who else ever sees it', ul([
   ['ญาติที่พ่อแม่ให้รหัสหรือลิงก์: เห็นเฉพาะเล่มที่ติ๊กไว้ ดูอย่างเดียว ส่งหัวใจได้', 'Relatives the parents give a PIN or link: only the books ticked for them, read-only, hearts allowed'],
   ['ผู้ช่วย (Anthropic) เฉพาะเมื่อพ่อแม่กดขอ เช่น นิทาน สรุปวัน แปลภาษา: ส่งเฉพาะข้อความ ไม่ส่งรูป ไม่เก็บไว้ฝึกโมเดล', 'The helper (Anthropic), only when a parent presses for it — a story, the day in brief, a translation: words only, never photos, not used to train models'],
+  ['“วางแผนกับผู้ช่วย” เฉพาะเมื่อพ่อแม่กดเอง: ส่งคำตอบในหน้านั้น เส้นทาง และอายุของลูก ไม่ส่งชื่อลูก รูป หรือความทรงจำ เลขจองที่พิมพ์มาถูกตัดออกก่อน · เบอร์ฉุกเฉินและวีซ่ามาจากตารางที่ตรวจแล้วของแอป', '“Plan with the helper”, only when a parent presses for it: the answers on that page, the route and the children’s ages — never their names, photos or memories; a booking number typed in is removed first · emergency numbers and visa rules come from the app’s checked table'],
   ['“ให้ผู้ช่วยดูรูปวันนี้” เฉพาะเมื่อเปิดใช้และกดเอง: ส่งรูปย่อของวันนั้นครั้งเดียว ไม่เก็บ', '“Look at today’s photos”, only when switched on and pressed: that day’s small thumbnails, once, not stored'],
   ['วาดตัวการ์ตูนจากรูปลูก (OpenAI) เฉพาะเมื่อพ่อแม่อัปโหลด: รูปถูกย่อ ส่งครั้งเดียว และไม่เก็บที่ไหน', 'Drawing a character from a child’s photo (OpenAI), only when a parent uploads one: shrunk, sent once, stored nowhere'],
   ['พยากรณ์อากาศ (Open-Meteo): ส่งเฉพาะพิกัดระดับเมืองของที่พักในแผน ไม่ใช่ตำแหน่งโทรศัพท์', 'The weather forecast (Open-Meteo): only the town-level location of the planned stay, never the phone’s position'],
@@ -2566,6 +2569,54 @@ ${running ? `<p class="impnote">${L('ส่งได้ทีละเล่ม 
 ${!running ? jobCard : ''}
 ${list.length ? `<h2 class="h3 imph3">${L('ร่างที่รอขึ้นชั้น', 'Drafts waiting for the shelf')}</h2>${list.map(draftCard).join('')}` : ''}
 <p class="impnote">🔒 ${L('ไฟล์ PDF ถูกอ่านแล้วลบทันทีบนเซิร์ฟเวอร์ · บรรทัดที่มีเลขจอง ตั๋ว หนังสือเดินทาง วันเกิด หรือยอดเงินบาท ถูกตัดออกก่อนส่งให้ผู้ช่วย · รูปใน PDF ไม่ถูกส่ง · เล่มถูกตรวจอีกครั้งก่อนเก็บ', 'The PDF is read and deleted on the server at once · lines with booking numbers, e-tickets, passports, birthdays or baht amounts are removed before anything reaches the helper · images are never sent · the book is scanned again before it is kept')}<br>${L('เล่มที่นำเข้ายังไม่มีภาพวาดประจำวัน ใช้สีของเล่มและไกด์กีกี้กับรูไปก่อน', 'An imported book has no drawings of its own yet: its colours and the guides Kiki and Roo stand in.')}</p>`;
+}
+/* ---------- plan with the helper (#/planner, docs/AI-PLANNER.md): a few questions → the route (one call, read and changed here) →
+   "write the whole book" runs the import's job from a brief; the draft is checked and shelved on #/import like an imported one.
+   Only the answers, the route and the children's ages go to the helper (server/planner.js). */
+let pln = { a: null, route: null, info: null, busy: '', err: '', ask: '' };
+const PL_OPTS = {
+  pace: [['slow', '🐢', 'สบายๆ', 'Slow', 'วันละที่หลัก พักกลางวันได้', 'One main thing a day, room for naps'], ['normal', '🚶', 'ปกติ', 'Normal', 'ที่หลักกับที่เล็กอีกหนึ่ง', 'A main thing and a small one'], ['full', '🏃', 'เต็มวัน', 'Full', 'เที่ยวเยอะ แต่ยังให้งีบได้', 'Busy days, naps still fit']],
+  move: [['transit', '🚆', 'รถสาธารณะ', 'Transit', 'รถไฟ รถเมล์ แท็กซี่', 'Trains, buses, taxis'], ['car', '🚗', 'เช่ารถ', 'A hire car', 'ขับเองทั้งทริป', 'We drive ourselves'], ['mix', '🔀', 'ผสม', 'A mix', 'ส่วนใหญ่รถสาธารณะ', 'Mostly transit']],
+  budget: [['low', '🪙', 'ประหยัด', 'Careful', 'ที่ฟรีและราคาย่อมเยา', 'Free and low-cost'], ['mid', '💳', 'กลางๆ', 'Middle', 'ตามสบาย ไม่หรูมาก', 'Comfortable, not lavish'], ['high', '💎', 'สบายเต็มที่', 'Comfortable', 'จ่ายเพื่อความง่าย', 'Pay for ease']],
+};
+function viewPlanner() {
+  if (!pln.a) { pln.a = { dest: '', from: '', to: '', approx: '', adults: 2, seniors: false, pace: 'slow', move: 'mix', budget: 'mid', stays: '', flights: '', want: '', avoid: '', ...(ls('plan') || {}) }; pln.route = pln.route || ls('planRoute') || null; }
+  if (pln.info === null) { pln.info = 'loading'; api('GET', '/api/b/planner').then((r) => { pln.info = r; safeRender(); }, () => { pln.info = { on: false, left: 0, max: 0 }; safeRender(); }); }
+  const a = pln.a, info = pln.info && typeof pln.info === 'object' ? pln.info : null, on = info ? info.on : !!S.features.story;
+  const f = (k, th, en, ph, type = 'text', max = 200) => `<label class="vgl">${L(th, en)}<input class="field" id="pl${k}" data-pl="${k}" type="${type}" maxlength="${max}" value="${esc(a[k] == null ? '' : a[k])}"${ph ? ` placeholder="${esc(ph)}"` : ''}></label>`;
+  const tx = (k, th, en, ph, max) => `<label class="vgl">${L(th, en)}<textarea class="field" id="pl${k}" data-pl="${k}" rows="2" maxlength="${max}" placeholder="${esc(ph)}">${esc(a[k] || '')}</textarea></label>`;
+  const opts = (k) => `<div class="tpk plopts" role="group">${PL_OPTS[k].map(([v, e, th, en, dth, den]) => `<button type="button" class="tpo" data-a="planopt" data-k="${k}" data-v="${v}" aria-pressed="${a[k] === v}"><span class="rme" aria-hidden="true">${emo(e)}</span><b>${L(th, en)}</b><small>${L(dth, den)}</small><span class="ck" aria-hidden="true">✓</span></button>`).join('')}</div>`;
+  const kids = (S.children || []).length;
+  const q1 = pcard('famap', PG.purple, L('ไปไหน เมื่อไร', 'Where and when'), `<div class="pform">${f('dest', 'อยากไปที่ไหน', 'Where to', L('เช่น โตเกียว หรือ ฮอกไกโด 2 เมือง', 'e.g. Tokyo, or two towns in Hokkaido'))}
+<div class="pform2">${f('from', 'วันแรก', 'First day', '', 'date', 10)}${f('to', 'วันสุดท้าย', 'Last day', '', 'date', 10)}</div>
+${a.from ? '' : f('approx', 'ยังไม่รู้วัน? บอกคร่าวๆ', 'No dates yet? Roughly when', L('เช่น ปลายมีนาคม 6 วัน', 'e.g. late March, 6 days'), 'text', 80)}
+<div class="pform2">${f('adults', 'ผู้ใหญ่กี่คน', 'Adults', '', 'number', 1)}<label class="ckrow"><input type="checkbox" data-a="planseniors"${a.seniors ? ' checked' : ''}> ${L('มีผู้สูงอายุไปด้วย', 'An older grown-up comes too')}</label></div>
+<p class="label">${kids ? L(`เด็กๆ ${kids} คน — ผู้ช่วยรู้แค่อายุ ไม่รู้ชื่อ`, `${kids} ${kids > 1 ? 'children' : 'child'} — the helper is told their ages, never their names`) : L('ใส่ลูกๆ ในหน้าครอบครัวก่อน ผู้ช่วยจะวางแผนตามอายุ', 'Add the children on the family page first — the plan follows their ages')}</p></div>`);
+  const q2 = pcard('plan', PG.teal, L('เที่ยวแบบไหน', 'How we travel'), `<div class="part pickh">${L('จังหวะ', 'Pace')}</div>${opts('pace')}<div class="part pickh">${L('การเดินทาง', 'Getting around')}</div>${opts('move')}<div class="part pickh">${L('งบ', 'Budget')}</div>${opts('budget')}`);
+  const q3 = pcard('notebook', PG.gold, L('ที่จองแล้วและที่อยากทำ', 'Booked already, and wishes'), `<div class="pform">${tx('stays', 'ที่พักที่จองแล้ว (ถ้ามี)', 'Stays already booked (if any)', L('เช่น 3 คืนแรกแถวอุเอโนะ', 'e.g. the first 3 nights near Ueno'), 400)}
+${tx('flights', 'เที่ยวบิน (ถ้ามี)', 'Flights (if any)', L('เช่น ถึง 08:00 วันแรก กลับ 18:00 วันสุดท้าย', 'e.g. land 08:00 on day 1, leave 18:00 on the last day'), 200)}
+${tx('want', 'ต้องไปให้ได้', 'Must do', L('เช่น สวนสัตว์ อควาเรียม หิมะ', 'e.g. a zoo, an aquarium, snow'), 500)}
+${tx('avoid', 'ไม่เอา / ข้อจำกัด', 'Avoid / needs', L('เช่น ไม่ขับรถเกิน 2 ชม. ใช้รถเข็น', 'e.g. no drive over 2 h, a pram'), 300)}
+<p class="label">🔒 ${L('ไม่ต้องใส่เลขจอง — ถ้าพิมพ์มา จะถูกตัดออกก่อนถึงผู้ช่วย', 'No booking numbers needed — any typed in are removed before the helper sees them')}</p></div>`);
+  const rt = pln.route;
+  const dayCard = (d, i) => `<li class="plday" style="--tc:${snapPal(i)}"><div class="pldh"><span class="ple">${emo(d.emoji || '📍')}</span><div><b>${L(`วันที่ ${i + 1}`, `Day ${i + 1}`)}</b><small>${esc(fmtDay(d.date, { weekday: 'short', day: 'numeric', month: 'short' }))}</small></div></div>
+<label class="vgl">${L('วันนี้', 'The day')}<input class="field" data-pr="${i}.title" maxlength="120" value="${esc(T(d.title))}"></label>
+<label class="vgl">${L('นอนที่', 'Sleep in')}<input class="field" data-pr="${i}.sleep" maxlength="120" value="${esc(T(d.sleep) || T(d.town))}"></label>
+${d.stops && d.stops.length ? `<ul class="cpts">${d.stops.map((x) => `<li>${esc(T(x))}</li>`).join('')}</ul>` : ''}</li>`;
+  const left = info ? info.left : 0, max = info ? info.max : 0;
+  const foot = !rt ? '' : `<div class="plfoot">${!on ? '' : left > 0 ? `<button type="button" class="btn" data-a="planbook"${pln.busy ? ' disabled' : ''}>✨ ${L('ให้ผู้ช่วยเขียนทั้งเล่ม', 'Ask the helper to write the whole book')}</button><small>${L(`เดือนนี้เขียนได้อีก ${left} จาก ${max} เล่ม · ราว 5–10 นาที ได้ร่างให้ตรวจก่อนวางบนชั้น`, `${left} of ${max} books left this month · about 5–10 min, a draft to check before it goes on the shelf`)}</small>`
+    : `<small>${L(`เดือนนี้เขียนครบ ${max} เล่มแล้ว — เขียนเล่มนี้ได้เดือนหน้า เส้นทางเก็บไว้ในเครื่องนี้`, `This month's ${max} books are written — this one can be written next month; the route stays on this phone`)}</small>`}</div>`;
+  const routeHtml = !rt ? '' : pcard('today', PG.blue, `${esc(T(rt.title))} <small class="label">${esc(fmtRange({ date_from: rt.from, date_to: rt.to }))}</small>`, `<p class="label">${L('อ่านแล้วแก้ได้เลย: ชื่อวันและที่นอน หรือบอกผู้ช่วยให้เปลี่ยน', 'Read it and change it: a day’s name and where we sleep, or ask the helper to change it')}</p>
+<ol class="pldays">${rt.days.map(dayCard).join('')}</ol>
+<div class="pform"><label class="vgl">${L('อยากให้เปลี่ยนอะไร', 'What should change')}<input class="field" id="plask" maxlength="400" value="${esc(pln.ask)}" placeholder="${L('เช่น อยู่เกียวโตเพิ่มอีกคืน', 'e.g. one more night in Kyoto')}"></label>
+<button type="button" class="btn ghost" data-a="planask"${pln.busy ? ' disabled' : ''}>🔁 ${L('ให้ผู้ช่วยปรับเส้นทาง', 'Ask the helper to change the route')}</button></div>${foot}`, 'plroute', 'plroute');
+  return `${pageHead('famap', PG.purple, L('เล่มใหม่', 'New book'), L('วางแผนกับผู้ช่วย', 'Plan with the helper'), L('ตอบไม่กี่ข้อ ผู้ช่วยร่างเส้นทางให้ดูก่อน แก้ได้ แล้วค่อยเขียนทั้งเล่ม: แผนรายวัน คู่มือพกพา ร้าน และหน้าของเด็ก สองภาษา', 'Answer a few questions; the helper drafts the route first for you to change, then writes the whole book: day plans, pocket guide, places to eat and the kids’ pages, in both languages'))}
+${!on ? `<div class="notice">${L('ผู้ช่วยยังไม่ได้เปิดใช้สำหรับครอบครัวนี้', 'The helper is not switched on for this family')}</div>` : ''}
+${q1}${q2}${q3}
+<div class="row plgo"><button type="button" class="btn" data-a="planroute"${!on || pln.busy ? ' disabled' : ''}>${pln.busy === 'route' ? L('ผู้ช่วยกำลังร่าง…', 'The helper is drafting…') : rt ? `🔁 ${L('ร่างเส้นทางใหม่จากคำตอบ', 'Draft the route again from the answers')}` : `✨ ${L('ให้ผู้ช่วยร่างเส้นทาง', 'Ask the helper for a route')}`}</button></div>
+${pln.err ? `<div class="err plerr" style="color:var(--accent2)">${esc(pln.err)}</div>` : ''}
+${routeHtml}
+<p class="impnote">🔒 ${L('ส่งให้ผู้ช่วย: คำตอบในหน้านี้ เส้นทาง และอายุของเด็ก — ไม่ส่งชื่อลูก รูป หรือความทรงจำ · เบอร์ฉุกเฉินและวีซ่ามาจากตารางที่ตรวจแล้วของแอป ไม่ได้มาจากผู้ช่วย', 'Sent to the helper: the answers on this page, the route and the children’s ages — never their names, photos or memories · emergency numbers and visa rules come from the app’s checked table, not from the helper')}</p>`;
 }
 const impErr = (e) => ({ limit: L('ผู้ช่วยใช้ครบโควตาวันนี้แล้ว ลองพรุ่งนี้', "Today's helper allowance is used up — try tomorrow"), privacy: L('พบข้อมูลส่วนตัวในเล่ม จึงไม่บันทึก', 'Private data found in the book — not kept'), text: L('อ่านข้อความจาก PDF ไม่ได้ (สแกนเป็นรูป?)', 'No text in the PDF (a scanned image?)'), pdftotext: L('เซิร์ฟเวอร์นี้ยังอ่าน PDF ไม่ได้ แจ้งผู้ดูแลระบบ', 'This server cannot read PDFs yet — tell the operator'), refusal: L('ผู้ช่วยเขียนเล่มนี้ไม่ได้', 'The helper could not write this book'), json: L('คำตอบอ่านไม่ได้ ลองอีกครั้ง', 'Unreadable answer — try again') }[e] || e);
 function viewViewers() {
