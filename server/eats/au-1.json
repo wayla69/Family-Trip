@@ -792,31 +792,6 @@
           "q": "Lune Croissanterie, Rose Street, Fitzroy, Melbourne"
         },
         {
-          "name": "The Tea Rooms 1892",
-          "kind": 2,
-          "area": {
-            "th": "บล็อกอาร์เคด ถนนคอลลินส์",
-            "en": "Block Arcade, Collins Street"
-          },
-          "tag": {
-            "th": "เค้กและชายามบ่าย",
-            "en": "Cakes and afternoon tea"
-          },
-          "what": {
-            "th": "ห้องน้ำชาเก่าแก่ในบล็อกอาร์เคด เดิมชื่อโฮปทูนทีรูมส์ ตู้เค้กหน้าร้านเป็นภาพที่คนถ่ายรูปกันมาก",
-            "en": "The historic tearoom in the Block Arcade, formerly the Hopetoun Tea Rooms, with a much-photographed window of cakes"
-          },
-          "why": {
-            "th": "เด็กเลือกเค้กจากตู้หน้าร้านได้ มีสโคนและแซนด์วิช ร้านเล็ก ควรพับรถเข็น",
-            "en": "A child can choose a cake from the window, there are scones and sandwiches, and the room is small so fold the pram"
-          },
-          "pr": {
-            "th": "≈ A$15–40",
-            "en": "≈ A$15–40"
-          },
-          "q": "The Tea Rooms 1892, Block Arcade, 282 Collins Street, Melbourne"
-        },
-        {
           "name": "Great Ocean Road Chocolaterie & Ice Creamery",
           "kind": 2,
           "area": {
