@@ -3775,3 +3775,18 @@ a.plchip{text-decoration:none}a.plchip .label{font-weight:700}a.plchip[aria-curr
 .dishpic.got{box-shadow:inset 0 0 0 6px #2B8A3E}
 .dishopts{display:grid;gap:12px}.dishopt{display:flex;flex-direction:column;align-items:center;gap:2px;font-size:24px}.dishopt small{font-size:17px;font-weight:600;opacity:.9}
 .dishopt.on{background:#2B8A3E}.dishopt.nope{animation:nope .4s}
+
+/* what our family likes (#/taste) and "our style" on the eat cards — docs/PLACES-ECOSYSTEM.md F3 */
+.etag.fitb{background:color-mix(in srgb,#F2B90C 18%,var(--card));color:color-mix(in srgb,#B07D00 70%,var(--ink));box-shadow:inset 0 0 0 1px color-mix(in srgb,#F2B90C 45%,transparent);font-weight:700}
+.chip.ours{box-shadow:inset 0 0 0 1px color-mix(in srgb,#F2B90C 55%,transparent)}
+.tastepage{display:grid;gap:14px}
+.tastechips{flex-wrap:wrap;gap:8px}
+.tastechip{position:relative}
+.tastechip .tsm{font-style:normal;margin-left:2px}
+.tastechip[data-st=like]{background:color-mix(in srgb,#F2B90C 20%,var(--card));border-color:color-mix(in srgb,#F2B90C 70%,var(--line));color:color-mix(in srgb,#B07D00 55%,var(--ink));font-weight:700}
+.tastechip[data-st=avoid]{background:color-mix(in srgb,var(--muted) 12%,var(--card));border-color:color-mix(in srgb,var(--muted) 45%,var(--line));color:var(--muted);text-decoration:line-through;text-decoration-thickness:1px}
+.tastekid{display:grid;gap:8px;padding:10px 0;border-top:1px solid var(--rule)}.tastekid:first-of-type{border-top:0;padding-top:0}
+.tastekid .tkh{display:flex;align-items:center;gap:10px;min-height:52px;cursor:pointer;list-style:none}.tastekid .tkh::-webkit-details-marker{display:none}.tastekid .tkh .face{width:40px;height:40px;border-radius:50%;flex:none}
+.tastekid .tkn{display:grid;gap:2px;flex:1;min-width:0}.tastekid .tkn small{color:var(--muted);font-size:13px}.tastekid .chv{margin-left:auto}.tastekid[open] .tastechips{margin-top:8px}
+.tasteuse{margin:0}
+:root[data-theme=dark] .etag.fitb,:root[data-theme=dark] .tastechip[data-st=like]{color:color-mix(in srgb,#F2B90C 70%,var(--ink))}

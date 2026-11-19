@@ -5,7 +5,7 @@ const GEO = 'mbs-geo';   // each country's place names (/geo/<cc>.json, read on 
 const STOCK = 'mbs-stock';   // the stock art library (/stock/, versioned file names): only a stored book's pictures, kept across shell versions too
 const SHARE = 'mbs-share';   // photos shared to the app from the phone's gallery (manifest share_target), read once by #/snaptest
 const MEDIA = 'mbs-media';   // photos, clips, drawn characters, emoji pictures, drawn book art: kept across shell versions, so a deploy never empties the offline pack
-const SHELL = ['/', '/app.css', '/app-legacy.css', '/core.js', '/views.js', '/sheets.js', '/kid.js', '/snap.js', '/manifest.webmanifest', '/icon-192.png',
+const SHELL = ['/', '/app.css', '/app-legacy.css', '/tags.js', '/core.js', '/views.js', '/sheets.js', '/kid.js', '/snap.js', '/manifest.webmanifest', '/icon-192.png',
   '/fonts/KIRA-UI-Regular.woff2', '/fonts/KIRA-UI-Medium.woff2', '/fonts/KIRA-UI-SemiBold.woff2', '/fonts/KIRA-UI-Bold.woff2',
   '/fonts/CormorantGaramond-SemiBold.woff2', '/fonts/CormorantGaramond-MediumItalic.woff2'];
 // every file under public/art (test/infra.mjs checks this list is complete): day stamps, colouring pages, guides, crests, the kids

@@ -14,6 +14,7 @@ const CF = require('./countryfacts');
 const EATLIB = require('./eatlib');
 const CARE = require('./care');   // hospitals, pharmacies, play and baby rooms per library town (server/care/*.json)
 const VERIFY = require('./verify');
+const TAGS = require('../public/tags.js');
 const FAM = require('./family');
 const AVATAR = require('./avatar');
 const ART = require('./bookart');
@@ -190,8 +191,10 @@ function router({ pool, media, A, ai, hooks = {} }) {   // hooks.heart(h): set b
     try {
       const b = req.body || {};
       if (b.tiles !== undefined && !FAM.TILES.includes(b.tiles)) return bad(res, 'tiles');
+      if (b.taste !== undefined && (!b.taste || typeof b.taste !== 'object' || JSON.stringify(b.taste).length > 4000)) return bad(res, 'taste');
       const cur = (await q('SELECT profile FROM families WHERE id=$1', [FAMILY]))[0], prof = FAM.cleanProfile(cur ? cur.profile : null);
       if (b.tiles !== undefined) prof.tiles = b.tiles;
+      if (b.taste !== undefined) { const t = TAGS.cleanTaste(b.taste); prof.taste = TAGS.tasteEmpty(t) ? undefined : t; }
       await q('UPDATE families SET profile=$2 WHERE id=$1', [FAMILY, JSON.stringify(prof)]);
       res.json({ ok: true, family: FAM.profile(prof, await kidRows()) });
     } catch (e) { next(e); }
@@ -199,7 +202,7 @@ function router({ pool, media, A, ai, hooks = {} }) {   // hooks.heart(h): set b
   r.put('/api/b/family', ...W, async (req, res, next) => {
     try {
       const b = req.body || {}, prof = FAM.cleanProfile(b.profile);
-      if (!prof.tiles) prof.tiles = FAM.cleanProfile((await q('SELECT profile FROM families WHERE id=$1', [FAMILY]))[0]?.profile).tiles;   // the form sends no tile look: keep the one chosen on the menu
+      { const was = FAM.cleanProfile((await q('SELECT profile FROM families WHERE id=$1', [FAMILY]))[0]?.profile); if (!prof.tiles) prof.tiles = was.tiles; if (!prof.taste) prof.taste = was.taste; }   // the form sends no tile look or taste: keep the ones chosen on the menu and on #/taste
       const kids = (Array.isArray(b.children) ? b.children : []).slice(0, 6).map(FAM.cleanKid).filter(Boolean);
       if (new Set(kids.map((k) => k.slug)).size !== kids.length) return bad(res, 'slug');
       if (kids.some((k) => !k.birth_ym)) return bad(res, 'birth');   // the age at each trip (and the age a character is drawn at) comes from it
@@ -1297,7 +1300,8 @@ function router({ pool, media, A, ai, hooks = {} }) {   // hooks.heart(h): set b
     const likes = (await q("SELECT value FROM settings WHERE key='family_likes'"))[0];
     let lk = ''; if (likes) { try { const v = JSON.parse(likes.value); lk = typeof v === 'string' ? v : v && (v.text || v.th || v.en) ? String(v.text || v.th || v.en) : JSON.stringify(v); } catch (_) { lk = String(likes.value); } }
     const ls = await q("SELECT e.text, t.title FROM entries e JOIN trips t ON t.id=e.trip_id WHERE e.family_id=$1 AND e.kind='lessons' AND e.text <> '' ORDER BY t.date_from DESC LIMIT 6", [FAMILY]);
-    const out = [lk ? `What our family likes: ${lk.slice(0, 2000)}` : '', ...ls.map((l) => `Lessons from ${(l.title && (l.title.en || l.title.th)) || 'a past trip'}: ${String(l.text).slice(0, 1000)}`)].filter(Boolean).join('\n');
+    const prof = FAM.cleanProfile(((await q('SELECT profile FROM families WHERE id=$1', [FAMILY]))[0] || {}).profile), tw = prof.taste ? TAGS.tasteWords(prof.taste, (await kidRows()).map((k) => k.slug)) : '';
+    const out = [tw ? `The styles our family chose: ${tw}` : '', lk ? `What our family likes: ${lk.slice(0, 2000)}` : '', ...ls.map((l) => `Lessons from ${(l.title && (l.title.en || l.title.th)) || 'a past trip'}: ${String(l.text).slice(0, 1000)}`)].filter(Boolean).join('\n');
     // the planner never sends a child's name (only their ages): each name the family gave becomes "the child" / "ลูก"
     let txt = out.slice(0, 5000);
     for (const k of await kidRows()) for (const [nm, w] of [[k.name_th, 'ลูก'], [k.name_en, 'the child']]) if (nm && nm.trim().length > 1) txt = txt.split(nm.trim()).join(w);
