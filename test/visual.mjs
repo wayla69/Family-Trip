@@ -8,13 +8,14 @@ import { chromium } from 'playwright';
 import sharp from 'sharp';
 import fs from 'node:fs';
 import path from 'node:path';
+import os from 'node:os';
 import { fileURLToPath } from 'node:url';
 
 const { BASE, CODE } = process.env;
 const DIR = path.join(path.dirname(fileURLToPath(import.meta.url)), 'visual');
-const OUT = process.env.SHOTS || '/tmp/mb-shots';
+const OUT = process.env.SHOTS || fs.mkdtempSync(path.join(os.tmpdir(), 'mb-visual-'));   // a folder of our own when none is given
 const UPDATE = process.env.UPDATE_VISUAL === '1', LIMIT = 0.05;
-fs.mkdirSync(DIR, { recursive: true }); fs.mkdirSync(OUT, { recursive: true });
+fs.mkdirSync(DIR, { recursive: true }); if (process.env.SHOTS) fs.mkdirSync(OUT, { recursive: true });
 const exe = process.env.CHROME || (fs.existsSync(chromium.executablePath()) ? undefined : '/opt/pw-browsers/chromium-1194/chrome-linux/chrome');
 let failures = 0;
 const ok = (c, m) => { if (!c) { failures++; console.log('  FAIL', m); } else console.log('  ok  ', m); };

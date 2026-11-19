@@ -475,6 +475,12 @@ ok(!(await state()).comments.some((c) => c.media === 'ph-test-0001'), 'a photo d
     && (await fetch(BASE + '/api/b/health/orphans', { headers: { cookie: vck } })).status === 403,
   `stray files: counted, then removed — only the old one no row names; the fresh one and the book's own photos stay (${JSON.stringify({ g, p, owned: owned.length })})`);
   fs.rmSync(fresh, { force: true }); }
+// ---- one ceiling for the API per address (express-rate-limit): far above a family's use; a flood from one address gets 429, others go on
+{ const hit = (ip) => fetch(BASE + '/api/brand', { headers: { 'x-forwarded-for': ip } });
+  let last = null;
+  for (let i = 0; i < 1210; i += 110) { const rs = await Promise.all(Array.from({ length: 110 }, () => hit('10.77.0.9'))); last = rs[rs.length - 1]; }
+  const other = await hit('10.77.0.10');
+  ok(last.status === 429 && other.ok && /q=1200/.test(other.headers.get('ratelimit-policy') || ''), `rate limit: one address past 1200 a minute gets 429, another address is served (${last.status} · ${other.headers.get('ratelimit-policy')})`); }
 // ---- the lite state's hash follows the guide text: a changed guide gives a new hash, and that hash serves the new text
 { const pool4 = new Pool({ connectionString: process.env.DATABASE_URL });
   const lite = async () => (await (await fetch(BASE + '/api/b/state?lite=1', { headers: { cookie: ck } })).json()).trips.find((t) => t.id === T).seed;

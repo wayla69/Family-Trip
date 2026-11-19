@@ -28,6 +28,12 @@ app.set('trust proxy', 1);
 // what went wrong on the server and what was slow, counted per kind of request (server/watch.js) — the first thing every request passes
 const WATCH = require('./watch').create({ pool: PG, A });
 app.use(WATCH.mw);
+// one ceiling for the whole API per address (a stolen cookie or a stuck phone cannot hammer the database or the storage); far above a
+// family's use — a phone polls every 30 s, a big photo upload is one request a photo. The server's own Chromium (PDF, film cards) and
+// the tests come from this machine and are not counted. The sign-in has its own, stricter throttle (auth.js).
+const { rateLimit } = require('express-rate-limit');
+app.use(['/api', '/media', '/v'], rateLimit({ windowMs: 60e3, limit: +process.env.API_RATE_PER_MIN || 1200, standardHeaders: 'draft-8', legacyHeaders: false,
+  skip: (req) => ['127.0.0.1', '::1', '::ffff:127.0.0.1'].includes(req.ip), handler: (_req, res) => res.status(429).json({ error: 'too-many' }) }));
 
 // CSP: only our own origin. No inline scripts exist; style 'unsafe-inline' is for the style="" attributes the views render;
 // blob:/data: images are queued photos and drawings shown before upload. Maps open as plain links (no frames).
