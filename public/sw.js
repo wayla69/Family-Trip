@@ -1,6 +1,6 @@
 // Memory Bookshelf service worker: app shell + all drawn art offline from the first visit; photos cached as you view them
 // (or all at once with "Keep this book offline"). Data (/api) is cached by the app itself (IndexedDB) and written through its queue.
-const V = 'mbs-v266';
+const V = 'mbs-v267';
 const GEO = 'mbs-geo';   // each country's place names (/geo/<cc>.json, read on the phone): kept across shell versions, like the stock pictures
 const STOCK = 'mbs-stock';   // the stock art library (/stock/, versioned file names): only a stored book's pictures, kept across shell versions too
 const SHARE = 'mbs-share';   // photos shared to the app from the phone's gallery (manifest share_target), read once by #/snaptest
