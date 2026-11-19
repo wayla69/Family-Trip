@@ -1279,6 +1279,19 @@ function router({ pool, media, A, ai, hooks = {} }) {   // hooks.heart(h): set b
   r.delete('/api/b/eatlib/:id', ...W, async (req, res, next) => {
     try { await q('UPDATE eat_lib SET gone=true WHERE family_id=$1 AND id=$2', [FAMILY, String(req.params.id)]); res.json({ ok: true }); } catch (e) { next(e); }
   });
+  /* What this family learned on its past trips (owner, Nov 2026: "ให้หน้าวางแผนอ่านบทเรียนจากทุกเล่มและสิ่งที่ครอบครัวชอบด้วย"): the travel
+     notebook's summary (settings.family_likes) and the last six books' lessons (entry kind 'lessons') — words the parents kept, never a
+     photo, at most 5,000 letters — go with the planner's route ask, so the plan keeps the naps, the short drives, the food that worked. */
+  async function familyLessons() {
+    const likes = (await q("SELECT value FROM settings WHERE key='family_likes'"))[0];
+    let lk = ''; if (likes) { try { const v = JSON.parse(likes.value); lk = typeof v === 'string' ? v : v && (v.text || v.th || v.en) ? String(v.text || v.th || v.en) : JSON.stringify(v); } catch (_) { lk = String(likes.value); } }
+    const ls = await q("SELECT e.text, t.title FROM entries e JOIN trips t ON t.id=e.trip_id WHERE e.family_id=$1 AND e.kind='lessons' AND e.text <> '' ORDER BY t.date_from DESC LIMIT 6", [FAMILY]);
+    const out = [lk ? `What our family likes: ${lk.slice(0, 2000)}` : '', ...ls.map((l) => `Lessons from ${(l.title && (l.title.en || l.title.th)) || 'a past trip'}: ${String(l.text).slice(0, 1000)}`)].filter(Boolean).join('\n');
+    // the planner never sends a child's name (only their ages): each name the family gave becomes "the child" / "ลูก"
+    let txt = out.slice(0, 5000);
+    for (const k of await kidRows()) for (const [nm, w] of [[k.name_th, 'ลูก'], [k.name_en, 'the child']]) if (nm && nm.trim().length > 1) txt = txt.split(nm.trim()).join(w);
+    return txt;
+  }
   // the route: drafted from the answers, or changed as asked ({prev, ask}); a route the parents edited by hand ({route}, no ask) is only cleaned
   r.post('/api/b/planner/route', ...W, async (req, res, next) => {
     try {
@@ -1289,7 +1302,7 @@ function router({ pool, media, A, ai, hooks = {} }) {   // hooks.heart(h): set b
       if (answers.from && PLANNER.daysOf(answers) > 31) return bad(res, 'days');
       const who = PLANNER.whoLine(await kidRows(), answers.from);
       const two = !!b.two && !b.ask;
-      const route = await PLANNER.route({ client: new ai.SDK(), model: IMPORT.WRITE(), answers, who, prev: b.ask && b.route ? b.route : null, ask: b.ask, take: aiTake, onUsage: addUsage, two });
+      const route = await PLANNER.route({ client: new ai.SDK(), model: IMPORT.WRITE(), answers, who, prev: b.ask && b.route ? b.route : null, ask: b.ask, take: aiTake, onUsage: addUsage, two, family: await familyLessons() });
       res.json(two ? { routes: route.map(withFacts) } : { route: withFacts(route) });
     } catch (e) {
       if (e.code === 'limit') return res.status(429).json({ error: 'limit' });

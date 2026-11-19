@@ -717,6 +717,7 @@ try {
     `planner: the route comes back cleaned — the family's dates laid out again, a bad country code dropped (${rr.status} ${JSON.stringify(rj).slice(0, 300)})`);
   const routeCall = calls[c0], rsent = JSON.stringify(routeCall && routeCall.body);
   ok(calls.length === c0 + 1 && /Where: Tokyo with the kids/.test(rsent) && /Ueno Zoo/.test(rsent) && !/junk/.test(rsent), 'planner: one call for the route, carrying the answers (unknown fields dropped)');
+  ok(/learned on past trips/.test(rsent) && /ยัดลก/.test(rsent) && !/\.jpg|media\//.test(rsent), 'planner: the family\'s lessons from past books go with the route (words only, never a photo)');
   { const c2 = calls.length, tr = await pl('/api/b/planner/route', { answers, two: true }), tj = await tr.json();
     ok(tr.status === 200 && calls.length === c2 + 1 && Array.isArray(tj.routes) && tj.routes.length === 1 && tj.routes[0].label.en === 'One base' && tj.routes[0].why.th === 'ไม่ต้องย้ายกระเป๋า' && tj.routes[0].days.length === 3,
       `planner: two routes to compare in one call — a route that does not read is left out, each keeps its name and who it suits (${tr.status} ${JSON.stringify(tj).slice(0, 160)})`); }
