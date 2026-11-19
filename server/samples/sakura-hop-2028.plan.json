@@ -513,12 +513,12 @@
       { "k": "baibai", "e": "👋", "th": "ไบไบ", "en": "Bai bai", "note": { "th": "บ๊ายบาย", "en": "Bye bye" }, "speak": { "text": "バイバイ", "lang": "ja-JP" } }
     ],
     "food": [
-      { "k": "ramen", "e": "🍜", "th": "ราเมง", "en": "Ramen" },
-      { "k": "onigiri", "e": "🍙", "th": "โอนิกิริ", "en": "Onigiri" },
-      { "k": "mochi", "e": "🍡", "th": "โมจิ", "en": "Mochi" },
-      { "k": "sushi", "e": "🍣", "th": "ซูชิ", "en": "Sushi" },
-      { "k": "gyoza", "e": "🥟", "art": "food/gyoza", "th": "เกี๊ยวซ่า", "en": "Gyoza" },
-      { "k": "curry", "e": "🍛", "th": "แกงกะหรี่ญี่ปุ่น", "en": "Japanese curry" }
+      { "k": "ramen", "e": "🍜", "th": "ราเมง", "en": "Ramen", "speak": { "text": "ラーメン", "lang": "ja-JP" } },
+      { "k": "onigiri", "e": "🍙", "th": "โอนิกิริ", "en": "Onigiri", "speak": { "text": "おにぎり", "lang": "ja-JP" } },
+      { "k": "mochi", "e": "🍡", "th": "โมจิ", "en": "Mochi", "speak": { "text": "おもち", "lang": "ja-JP" } },
+      { "k": "sushi", "e": "🍣", "th": "ซูชิ", "en": "Sushi", "speak": { "text": "おすし", "lang": "ja-JP" } },
+      { "k": "gyoza", "e": "🥟", "art": "food/gyoza", "th": "เกี๊ยวซ่า", "en": "Gyoza", "speak": { "text": "ぎょうざ", "lang": "ja-JP" } },
+      { "k": "curry", "e": "🍛", "th": "แกงกะหรี่ญี่ปุ่น", "en": "Japanese curry", "speak": { "text": "カレーライス", "lang": "ja-JP" } }
     ],
     "countdown": {
       "doors": [

@@ -199,6 +199,14 @@ if (process.env.BASE) {
   ok(bk.length >= 12 && bk[0].town === 'Bangkok' && /[\u0E00-\u0E7F]/.test(bk[0].town_th) && bk.every((x) => x.row.what && x.row.what.th && x.row.q && !x.row.hours && !x.row.pick),
     `eats: a file's rows go under the picture library's own name for the town (${bk.length} in ${bk[0] && bk[0].town} / ${bk[0] && bk[0].town_th})`); }
 
+// CI runs the test groups in parallel parts (.github/workflows/ci.yml matrix): every group of test/run.mjs must fall in a part,
+// or it would never run on CI
+{ const run = fs.readFileSync(path.resolve('test/run.mjs'), 'utf8'), ci = fs.readFileSync(path.resolve('.github/workflows/ci.yml'), 'utf8');
+  const groups = [...(run.match(/const GROUPS = (\[\[.*?\]\])/) || [])[1].matchAll(/\[([^\[\]]+)\]/g)].map((m) => m[1].match(/test\/[\w-]+\.mjs/g));
+  const parts = [...ci.matchAll(/only: '([^']+)'/g)].map((m) => m[1].split(','));
+  const lost = groups.filter((g) => !parts.some((p) => p.some((o) => g.some((f) => f.includes(o))))).map((g) => g[0]);
+  ok(groups.length > 10 && parts.length >= 2 && !lost.length, `CI: every test group runs in one of the ${parts.length} parallel parts (${groups.length} groups)${lost.length ? ' — missing: ' + lost.join(', ') : ''}`); }
+
 // help and play near a stay (server/care, scripts/care-lint.mjs): every file reads, every row is confirmed (ok), names no opening hours
 // or phone number; the server answers only the towns asked for
 { const { lintCare } = await import('../scripts/care-lint.mjs');

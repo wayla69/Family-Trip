@@ -897,8 +897,27 @@ function router({ pool, media, A, ai, hooks = {} }) {   // hooks.heart(h): set b
   // help and play near a stay (server/care.js): ?ids=<place id>,… → the built-in rows of those library towns (no family data)
   r.get('/api/b/care', A.requireUser, (req, res) => {
     const ids = String(req.query.ids || '').split(',').map((x) => x.trim()).filter((x) => SLUG_RE.test(x));
-    res.setHeader('Cache-Control', 'private, max-age=86400');
-    res.json({ places: CARE.forPlaces(ids) });
+    // the built-in rows, then the family's own places of those towns (care_own, own: true) — the own ones are why this is not cached long
+    const out = CARE.forPlaces(ids);
+    q('SELECT id, place, name, kind, note FROM care_own WHERE family_id=$1 AND place = ANY($2) ORDER BY created_at', [FAMILY, ids.slice(0, 20)]).then((rows) => {
+      for (const r of rows) (out[r.place] = out[r.place] || []).push({ id: r.id, own: true, name: r.name, kind: r.kind, area: { th: '', en: '' }, what: { th: r.note, en: r.note }, q: r.name });
+      res.setHeader('Cache-Control', 'private, no-cache');
+      res.json({ places: out });
+    }, (e) => res.status(500).json({ error: e.message }));
+  });
+  // a place the family knows (editors): name ≤ 90, one of the four kinds, a note ≤ 160 — never hours or a phone number (refused)
+  r.put('/api/b/care/own/:id', ...W, async (req, res, next) => {
+    try {
+      const id = String(req.params.id), b = req.body || {}, name = String(b.name || '').trim().slice(0, 90), note = String(b.note || '').trim().slice(0, 160), place = String(b.place || '');
+      if (!/^co-[a-z0-9]{6,32}$/.test(id) || !SLUG_RE.test(place) || name.length < 2 || !Object.keys(CARE.ORDER).includes(b.kind)) return bad(res, 'bad');
+      if (/\+?\d[\d ()-]{7,}\d/.test(name + ' ' + note)) return bad(res, 'phone');
+      await q(`INSERT INTO care_own (id, family_id, place, name, kind, note, created_by) VALUES ($1,$2,$3,$4,$5,$6,$7)
+        ON CONFLICT (id) DO UPDATE SET name=EXCLUDED.name, kind=EXCLUDED.kind, note=EXCLUDED.note WHERE care_own.family_id = EXCLUDED.family_id`, [id, FAMILY, place, name, b.kind, note, String((req.user && req.user.name) || '').slice(0, 24)]);
+      res.json({ ok: true });
+    } catch (e) { next(e); }
+  });
+  r.delete('/api/b/care/own/:id', ...W, async (req, res, next) => {
+    try { await q('DELETE FROM care_own WHERE family_id=$1 AND id=$2', [FAMILY, String(req.params.id)]); res.json({ ok: true }); } catch (e) { next(e); }
   });
   // the online place-name lookup (editors; the phone sends it only with the family's switch on): a position rounded to ~1 km in,
   // the names out — never stored, never logged (server/nearname.js)

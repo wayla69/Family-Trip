@@ -578,6 +578,20 @@ ok(!(await state()).comments.some((c) => c.media === 'ph-test-0001'), 'a photo d
   ok(slow >= 1, `phone problems: a phone sending in a loop is slowed (${slow} of 25 refused)`); }
 // the library of places to eat with the app's built-in list (server/eats): the towns carry their country; a built-in place says so;
 // a place of our own book wins over a built-in one of the same name
+// the family's own places in the help-and-play list (care_own, migration 0040): a parent adds one under a library town, it comes back
+// with the built-in rows marked own; a phone number is refused, a relative cannot add, a parent removes it
+{ const care = async (c = ck) => (await (await fetch(BASE + '/api/b/care?ids=th-nan', { headers: { cookie: c } })).json()).places['th-nan'] || [];
+  const before = (await care()).length;
+  const add = await put('/api/b/care/own/co-test0001', { place: 'th-nan', name: 'Our test clinic', kind: 'hospital', note: 'Ground floor, kind staff' });
+  const got = await care(), mine = got.find((x) => x.id === 'co-test0001');
+  const phone = await put('/api/b/care/own/co-test0002', { place: 'th-nan', name: 'Call us', kind: 'pharmacy', note: '+66 81 234 5678' });
+  const rel = await put('/api/b/care/own/co-test0003', { place: 'th-nan', name: 'Relative place', kind: 'play', note: '' }, { ...H, cookie: vck });
+  const relSees = (await care(vck)).some((x) => x.id === 'co-test0001');
+  await fetch(BASE + '/api/b/care/own/co-test0001', { method: 'DELETE', headers: H });
+  const after = (await care()).length;
+  ok(add.status === 200 && mine && mine.own && mine.kind === 'hospital' && mine.what.en === 'Ground floor, kind staff' && got.length === before + 1 && phone.status === 400 && rel.status === 403 && relSees && after === before,
+    `care: a parent adds a place we know (own: ${!!(mine && mine.own)}), a phone number is refused (${phone.status}), a relative cannot add (${rel.status}) but sees it, a parent removes it (${before} → ${got.length} → ${after})`); }
+
 { const lib = await (await fetch(BASE + '/api/b/eatlib', { headers: { cookie: ck } })).json();
   const tok = (lib.towns || []).find((t) => t.tkey === 'tokyo'), mac = (lib.towns || []).find((t) => t.tkey === 'macau');
   ok(lib.towns.length > 100 && tok && tok.n >= 12 && !tok.own && tok.country && tok.country.cc === 'jp' && mac && mac.own > 100 && mac.n >= mac.own, `eat library: the built-in list fills the towns of the picture library, each with its country; our own books' towns count their own (${lib.towns.length} towns · Tokyo ${tok && tok.n} · Macau ${mac && mac.n}/${mac && mac.own} ours)`);
