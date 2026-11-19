@@ -1245,7 +1245,7 @@ function dayGlance(t, i, pre, split, full) {   // pre (before the trip; never na
   const lk = nl || nq || pl.tale ? infoBlocks(t).meta.learn.findIndex((m) => m.key === 'days') : -1;
   const live = wxLine(t, i), nknow = tips.length + (pl.pick ? 1 : 0);
   const tl = `${daySeg(full)}${rows.length ? `<section class="cbox c-sky" id="tlbox"><h3 class="ch">${ic('clock')}${L('ไทม์ไลน์', 'Timeline')}</h3><ol class="tl plan brief">${rows.map((r, k) => { const cl = [st[k], full && tlMore(r) ? 'open' : ''].filter(Boolean).join(' '); return `<li${cl ? ` class="${cl}"` : ''}><time>${esc(tlTime(r))}</time><div${tlMore(r) ? ` role="button" tabindex="0" aria-expanded="${!!full}"` : ''}>${st[k] === 'next' ? `<span class="nexttag">${L('ถัดไป', 'Next')}</span> ` : ''}${tlBrief(r)}</div></li>`; }).join('')}</ol></section>` : ''}`;
-  const rest = `${live ? `<p class="wxpre">${ic('weather')} <span class="wxlive">${emoIn(esc(live))}</span></p>` : ''}${pre ? `<details class="dmore"${op}><summary><span><b>${L('รายละเอียดวันนี้', 'The rest of the day')}</b><small>${L('เดินทาง · มื้ออาหาร · แผนสำรอง · เงิน · ควรรู้', 'Getting around · meals · plan B · money · good to know')}</small></span>${ic('chev', 'chv')}</summary>` : ''}<div class="cgrid">${mapBox}${go || goMore ? `<section class="cbox c-ind"><h3 class="ch">${ic('route')}${L('เดินทางและที่พัก', 'Getting around & tonight')}</h3>${go}${goMore}</section>` : ''}${box('sun', 'eat', L('มื้ออาหาร', 'Meals'), food, foodMore)}${pl.planB ? `<section class="cbox c-hot"><h3 class="ch">${ic('shuffle')}${L('แผนสำรอง', 'Plan B')}</h3>${pts(T(pl.planB))}</section>` : ''}${money ? fbox('leaf', 'money', L('เงินวันนี้', 'Money today'), `<span class="num">${esc(mm ? mm[0].replace(/^(?:วันนี้|today)\s*/i, '').trim() : brief(money))}</span>`, moneyHtml(money)) : ''}${nknow ? fbox('teal', 'learn', L('ควรรู้วันนี้', 'Good to know today'), esc(L(`${nknow} ข้อ`, `${nknow} tip${nknow === 1 ? '' : 's'}`)), `<ul class="tips">${pl.pick ? `<li class="tk-local"><b class="tkl">${L('เคล็ดลับคนท้องถิ่น', 'Local tip')}</b>${emph(T(pl.pick))}</li>` : ''}${tips.map((x) => `<li${TIPK[x.kind] ? ` class="tk-${x.kind}"` : ''}>${lead(T(x))}</li>`).join('')}</ul>`) : ''}${along}${lk >= 0 ? lbox('rose', 'book', `#/t/${esc(t.id)}/learn/full/${lk}`, L('เรียนรู้ของวันนี้', 'Today’s things to learn'), esc([nl && L(`${nl} เรื่อง`, `${nl} card${nl === 1 ? '' : 's'}`), nq && L(`คำถามในรถ ${nq} ข้อ`, `${nq} car question${nq === 1 ? '' : 's'}`), pl.tale && L('นิทานของไกด์', 'the guide’s story')].filter(Boolean).join(' · '))) : ''}</div><p class="label dfoot"${full ? '' : ' hidden'}>${L('จากคู่มือ · ราคาและเวลาเปิดเช็กซ้ำก่อนไป · เลขจองไม่ได้เก็บที่นี่', 'From the manual · re-check prices and hours before travelling · booking numbers live in the guide app, not here')}</p>${pre ? '</details>' : ''}`;
+  const rest = `${live ? `<p class="wxpre">${ic('weather')} <span class="wxlive">${emoIn(esc(live))}</span></p>` : ''}${pre ? `<details class="dmore"${op}><summary><span><b>${L('รายละเอียดวันนี้', 'The rest of the day')}</b><small>${L('เดินทาง · มื้ออาหาร · แผนสำรอง · เงิน · ควรรู้', 'Getting around · meals · plan B · money · good to know')}</small></span>${ic('chev', 'chv')}</summary>` : ''}<div class="cgrid">${mapBox}${go || goMore ? `<section class="cbox c-ind"><h3 class="ch">${ic('route')}${L('เดินทางและที่พัก', 'Getting around & tonight')}</h3>${go}${goMore}</section>` : ''}${box('sun', 'eat', L('มื้ออาหาร', 'Meals'), food, foodMore)}${pl.planB ? `<section class="cbox c-hot"><h3 class="ch">${ic('shuffle')}${L('แผนสำรอง', 'Plan B')}</h3>${pts(T(pl.planB))}</section>` : ''}${money ? fbox('leaf', 'money', L('เงินวันนี้', 'Money today'), `<span class="num">${esc(mm ? mm[0].replace(/^(?:วันนี้|today)\s*/i, '').trim() : brief(money))}</span>`, moneyHtml(money)) : ''}${nknow ? fbox('teal', 'learn', L('ควรรู้วันนี้', 'Good to know today'), esc(L(`${nknow} ข้อ`, `${nknow} tip${nknow === 1 ? '' : 's'}`)), `<ul class="tips">${pl.pick ? `<li class="tk-local"><b class="tkl">${L('เคล็ดลับคนท้องถิ่น', 'Local tip')}</b>${emph(T(pl.pick))}</li>` : ''}${tips.map((x) => `<li${TIPK[x.kind] ? ` class="tk-${x.kind}"` : ''}>${lead(T(x))}</li>`).join('')}</ul>`) : ''}${along}${bedEats(t, i, fbox)}${lk >= 0 ? lbox('rose', 'book', `#/t/${esc(t.id)}/learn/full/${lk}`, L('เรียนรู้ของวันนี้', 'Today’s things to learn'), esc([nl && L(`${nl} เรื่อง`, `${nl} card${nl === 1 ? '' : 's'}`), nq && L(`คำถามในรถ ${nq} ข้อ`, `${nq} car question${nq === 1 ? '' : 's'}`), pl.tale && L('นิทานของไกด์', 'the guide’s story')].filter(Boolean).join(' · '))) : ''}</div><p class="label dfoot"${full ? '' : ' hidden'}>${L('จากคู่มือ · ราคาและเวลาเปิดเช็กซ้ำก่อนไป · เลขจองไม่ได้เก็บที่นี่', 'From the manual · re-check prices and hours before travelling · booking numbers live in the guide app, not here')}</p>${pre ? '</details>' : ''}`;
   return split ? [tl, rest] : tl + rest;
 }
 // grown-ups switch the trip reminders on per phone (the server pushes 30 min before each timed step of the day);
@@ -2779,20 +2779,83 @@ ${altsHtml}${routeHtml}
    name is sent). The planner reads the same library for a route's towns (eatRoute). */
 let eatLib = { towns: null, on: false, town: '', places: null, busy: '', err: '', add: '' };
 let eatRoute = { key: '', list: null };   // the library's places for the planner's route: [{en, th, places}]
+// What makes a place easy with a small child, read only from the place's own words (its "why" and "what") — never guessed
+// (owner, Nov 2026: "ป้ายเด็กเล็กโอเค … กรองร้านในคลังได้"). A tap on a chip keeps the places that say it; chips filter in place.
+const KID_TAGS = [
+  ['chair', '🪑', 'เก้าอี้เด็ก', 'High chairs', /high ?chairs?|booster|เก้าอี้เด็ก/i],
+  ['change', '🚼', 'ที่เปลี่ยนผ้าอ้อม', 'Baby changing', /chang(ing|e) (table|room|mat)|baby room|nursing|เปลี่ยนผ้าอ้อม|ห้องให้นม/i],
+  ['play', '🧸', 'มุมเล่น', 'Play area', /play ?(area|ground|corner|room|zone)|playground|soft play|indoor play|มุมเล่น|สนามเด็กเล่น/i],
+  ['pram', '👶', 'รถเข็นเข้าได้', 'Pram-friendly', /\b(pram|stroller|buggy|pushchair)s?\b|step-free|\blifts?\b|รถเข็นเด็ก/i],
+  ['menu', '🍽️', 'เมนูเด็ก', 'Kids’ menu', /kids'? menu|children'?s menu|child(ren)?'?s? portions?|kids'? portions?|small portions?|half portions?|เมนูเด็ก/i],
+  ['mild', '🌿', 'ไม่เผ็ด', 'Mild food', /\bmild\b|not spicy|no chilli|without chilli|ไม่เผ็ด/i],
+];
+const kidTagsOf = (x) => { const s = [x.why, x.what].map((v) => `${(v && v.en) || ''} ${(v && v.th) || ''}`).join(' '); return KID_TAGS.filter((k) => k[4].test(s)).map((k) => k[0]); };
+let eatTags = new Set();
+const eatTagOk = (tags) => ![...eatTags].some((k) => !tags.includes(k));
+const kidTagChips = (x) => ((ks) => (ks.length ? `<span class="ektags">${ks.map((k) => ((g) => `<span class="ektag">${emo(g[1])} ${L(g[2], g[3])}</span>`)(KID_TAGS.find((y) => y[0] === k))).join('')}</span>` : ''))(kidTagsOf(x));
+const kidTagBar = (places) => ((have) => (have.length ? `<div class="row chips ektagbar" role="group" aria-label="${L('เหมาะกับเด็กเล็ก', 'Easy with little ones')}"><span class="label">${L('เหมาะกับเด็กเล็ก', 'Easy with little ones')}</span>${have.map((g) => `<button class="chip" data-a="eattag" data-v="${g[0]}" aria-pressed="${eatTags.has(g[0])}">${emo(g[1])} ${L(g[2], g[3])}</button>`).join('')}</div>` : ''))(KID_TAGS.filter((g) => places.some((x) => kidTagsOf(x).includes(g[0]))));
+
+// roughly in baht beside a place's price (owner, Nov 2026: "ราคาเป็นบาทโดยประมาณ"): the place's country gives its currency, the rate is
+// the one the parents typed on this phone for the trip's spending (ls('fx')) — never fetched; no rate, nothing is shown
+const CC_CUR = { ae: 'AED', ar: 'ARS', at: 'EUR', au: 'AUD', be: 'EUR', br: 'BRL', bt: 'BTN', ca: 'CAD', ch: 'CHF', cl: 'CLP', cn: 'CNY', cz: 'CZK', de: 'EUR', dk: 'DKK', ee: 'EUR', eg: 'EGP', es: 'EUR', fi: 'EUR', fj: 'FJD', fr: 'EUR', gb: 'GBP', ge: 'GEL', gr: 'EUR', hk: 'HKD', hr: 'EUR', hu: 'HUF', id: 'IDR', ie: 'EUR', in: 'INR', is: 'ISK', it: 'EUR', jo: 'JOD', jp: 'JPY', ke: 'KES', kh: 'USD', kr: 'KRW', kz: 'KZT', la: 'LAK', lk: 'LKR', lu: 'EUR', ma: 'MAD', mm: 'MMK', mn: 'MNT', mo: 'MOP', mt: 'EUR', mv: 'MVR', mx: 'MXN', my: 'MYR', nl: 'EUR', no: 'NOK', np: 'NPR', nz: 'NZD', pe: 'PEN', ph: 'PHP', pl: 'PLN', pt: 'EUR', se: 'SEK', sg: 'SGD', si: 'EUR', sk: 'EUR', th: 'THB', tr: 'TRY', tw: 'TWD', us: 'USD', uz: 'UZS', vn: 'VND', za: 'ZAR' };
+function prThb(x) {
+  const cur = CC_CUR[x.cc], rate = +(fxRates()[cur] || 0), en = (x.pr && x.pr.en) || '';
+  if (!cur || cur === 'THB' || !(rate > 0)) return '';
+  const n = (en.match(/\d[\d,]*(?:\.\d+)?/g) || []).map((v) => +v.replace(/,/g, '')).filter((v) => v > 0).slice(0, 2);
+  if (!n.length) return '';
+  const r = (v) => { const b = v * rate; return b >= 1000 ? Math.round(b / 50) * 50 : b >= 100 ? Math.round(b / 10) * 10 : Math.round(b); };
+  return `<span class="prthb">≈ ${fmtMoney(r(n[0]), 'THB')}${n[1] ? `–${r(n[1]).toLocaleString(lang === 'th' ? 'th-TH' : 'en-GB')}` : ''}</span>`;
+}
+
+// the library's places in the town where we sleep tonight (owner, Nov 2026: "ร้านใกล้ที่พักคืนนี้"): the stay's town-level position →
+// the nearest library town (snapPlace, on the phone) → its places, minus the ones the book already names for the day. Editors only
+// (the library is the parents'); nothing about the family is sent — the town's name only.
+let eatBed = { key: '', town: null, list: null };
+function bedEats(t, i, fbox) {
+  const pl = t.days[i].plan || {}, ll = pl.stay && pl.stay.ll;
+  if (!isEditor() || !Array.isArray(ll) || ll.length !== 2) return '';
+  const key = `${t.id}:${i}:${ll.join(',')}`;
+  if (eatBed.key !== key) {
+    eatBed = { key, town: null, list: null };
+    snapGeo().then((geo) => {
+      const town = snapPlace(ll, geo); if (eatBed.key !== key) return;
+      if (!town) { eatBed.list = []; return; }
+      eatBed.town = town;
+      api('GET', `/api/b/eatlib?for=${encodeURIComponent(JSON.stringify([[town.en, town.th]]))}`).then((r) => {
+        if (eatBed.key !== key) return; eatBed.list = ((r.for || [])[0] || {}).places || [];
+        // filled in place, never by drawing the page again: a late redraw would close the folds the parent has opened
+        const slot = document.querySelector(`section.bedslot[data-k="${CSS.escape(key)}"]`), html = eatBed.fbox && bedEats(t, i, eatBed.fbox);
+        if (!slot || !html) return;
+        const tmp = document.createElement('div'); tmp.innerHTML = html; const box = tmp.firstElementChild;
+        slot.className = box.className; slot.innerHTML = box.innerHTML; slot.hidden = false;
+        const g = slot.closest('.cgrid'); if (g) packBoxes(g.parentNode || document);
+      }, () => { if (eatBed.key === key) eatBed.list = []; });
+    });
+  }
+  eatBed.fbox = fbox;
+  const slot = `<section class="cbox bedslot" data-k="${esc(key)}" hidden><h3 class="ch"></h3></section>`;   // filled in place once the list arrives
+  if (!eatBed.list) return slot;
+  const own = new Set([...(pl.picks || []).flatMap((p) => [p.name, p.alt && p.alt.name]), ...(pl.food || []).flatMap((f) => f.items.map((x) => x.name))].filter(Boolean).map((n) => String(n).toLowerCase()));
+  const list = (eatBed.list || []).filter((x) => !own.has(String(x.name).toLowerCase()) && x.st !== 'closed');
+  if (!list.length || !eatBed.town) return '';
+  const tk = list[0].tkey, row = (x) => `<li class="nmrow"><span class="plen"><b>${esc(x.name)}</b><small>${[T(x.tag), T(x.pr)].filter(Boolean).map(esc).join(' · ')}${prThb(x) ? ` ${prThb(x)}` : ''}</small>${kidTagChips(x)}</span>${eatSt(x)}${navB(x.q || x.name, x.name)}</li>`;
+  return fbox('teal', 'eat', L(`ร้านในคลังแถวที่พัก · ${eatBed.town.th}`, `Places near tonight’s bed · ${eatBed.town.en}`), esc(L(`${list.length} ร้าน`, `${list.length} place${list.length === 1 ? '' : 's'}`)),
+    `<ul class="bedeats">${list.slice(0, 8).map(row).join('')}</ul><p class="label">${L('จากคลังร้านอาหารของครอบครัว · เช็กเวลาเปิดก่อนไป', 'From the family’s library of places to eat · check the hours before you go')} · <a href="#/eats/${esc(tk)}">${L(`ดูทั้ง ${list.length} ร้าน`, `See all ${list.length}`)} ›</a></p>`);
+}
 const eatSrc = (x) => (x.src === 'starter' ? (x.checked ? `${L('จากคลังของแอป · เช็กกับเว็บ', 'From the app’s built-in list · web check')} ${esc(fmtDay(x.checked, { month: 'short', year: '2-digit' }))}` : L('จากคลังของแอป · ยังไม่ได้เช็กวันนี้ เช็กก่อนไป', 'From the app’s built-in list · not checked today — check before you go')) : x.src === 'helper' ? `${L('ผู้ช่วยหา · เช็กกับเว็บ', 'Found by the helper · web check')}${x.checked ? ` ${esc(fmtDay(x.checked, { day: 'numeric', month: 'short', year: '2-digit' }))}` : ''}` : (() => { const t = x.trip && trip(x.trip); return t ? `${L('จากเล่ม', 'From')} ${esc(T(t.title))}` : L('จากเล่มของเรา', 'From our books'); })());
 const eatSt = (x) => (x.st === 'closed' ? `<span class="etag st-closed">${L('ปิดแล้ว', 'Closed')}</span>` : x.st === 'moved' ? `<span class="etag st-closed">${L('ย้ายร้าน', 'Moved')}</span>` : x.st === 'open' ? `<span class="etag st-open">✓ ${L('ยังเปิดอยู่', 'Open')}</span>` : '');
 // one place as the book's own card (views.js viewEat): name + pin + kind of food, where, a line about it, price / hours, directions
-const eatLibCard = (g, x, del) => `<li class="eatc" data-s="${esc(eatText(g, x))}" data-k="${x.kind}" data-p="0"${eatShow(g, x) ? '' : ' hidden'}>
+const eatLibCard = (g, x, del) => `<li class="eatc" data-s="${esc(eatText(g, x))}" data-k="${x.kind}" data-p="0" data-t="${kidTagsOf(x).join(' ')}"${eatShow(g, x) && eatTagOk(kidTagsOf(x)) ? '' : ' hidden'}>
 <div class="et"><b class="en">${mapA(x.q || x.name, esc(x.name))}</b>${extA(mapsUrl(x.q || x.name), `<span class="mpin" aria-hidden="true"></span><span class="vh">${L('แผนที่', 'Map')}</span>`, 'pinlink')}${T(x.tag) ? `<span class="etag t-${esc(x.tk || 'x')}">${esc(T(x.tag))}</span>` : ''}${eatSt(x)}</div>
 ${x.zh || x.where ? `<div class="ew">${x.zh ? `<span class="zh">${esc(x.zh)}</span>` : ''}${x.where ? `<span>${esc(T(x.where))}</span>` : ''}</div>` : ''}
-${T(x.what) ? `<p class="ed">${esc(T(x.what))}</p>` : ''}${T(x.why) ? `<p class="why"><b>${L('เหมาะกับเด็ก', 'For the kids')}</b> ${esc(T(x.why))}</p>` : ''}
-<div class="ef"><span class="echips">${T(x.pr) ? `<span class="pr">${esc(T(x.pr))}</span>` : ''}${T(x.hours) ? `<span class="hr">${esc(T(x.hours))}</span>` : ''}</span>${extA(`https://www.google.com/maps/dir/?api=1&destination=${encodeURIComponent(x.q || x.name)}`, ic('route') + ' ' + L('นำทาง', 'Go'), 'go')}</div>
+${T(x.what) ? `<p class="ed">${esc(T(x.what))}</p>` : ''}${T(x.why) ? `<p class="why"><b>${L('เหมาะกับเด็ก', 'For the kids')}</b> ${esc(T(x.why))}</p>` : ''}${kidTagChips(x)}
+<div class="ef"><span class="echips">${T(x.pr) ? `<span class="pr">${esc(T(x.pr))}</span>${prThb(x)}` : ''}${T(x.hours) ? `<span class="hr">${esc(T(x.hours))}</span>` : ''}</span>${extA(`https://www.google.com/maps/dir/?api=1&destination=${encodeURIComponent(x.q || x.name)}`, ic('route') + ' ' + L('นำทาง', 'Go'), 'go')}</div>
 <div class="elsrc"><small>${eatSrc(x)}</small>${del ? `<button type="button" class="mini" data-a="eatlibdel" data-v="${esc(x.id)}">${L('เอาออก', 'Take out')}</button>` : ''}</div></li>`;
 function viewEats(tk) {
   const el = eatLib;
   if (el.towns === null) { el.towns = 'loading'; api('GET', '/api/b/eatlib').then((r) => { el.towns = r.towns || []; el.on = !!r.on; safeRender(); }, () => { el.towns = []; safeRender(); }); }
   tk = tk || '';
-  if (el.town !== tk) { el.town = tk; el.places = null; el.err = ''; eatQ = ''; eatKind = -1; eatPick = false; eatTrip = 'lib'; if (tk) api('GET', `/api/b/eatlib?town=${encodeURIComponent(tk)}`).then((r) => { if (el.town === tk) { el.places = r.places || []; safeRender(); } }, () => { if (el.town === tk) { el.places = []; safeRender(); } }); }
+  if (el.town !== tk) { el.town = tk; el.places = null; el.err = ''; eatQ = ''; eatKind = -1; eatPick = false; eatTrip = 'lib'; eatTags = new Set(); if (tk) api('GET', `/api/b/eatlib?town=${encodeURIComponent(tk)}`).then((r) => { if (el.town === tk) { el.places = r.places || []; safeRender(); } }, () => { if (el.town === tk) { el.places = []; safeRender(); } }); }
   const towns = Array.isArray(el.towns) ? el.towns : [], cur = towns.find((t) => t.tkey === tk), total = towns.reduce((n, t) => n + t.n, 0);
   const tname = (t) => L(t.town_th || t.town, t.town);
   const wait = el.busy ? `<div class="plwait" role="status"><span class="plspin" aria-hidden="true"></span><div><b>${L('ผู้ช่วยกำลังหาร้านและเช็กกับเว็บ…', 'The helper is finding places and checking them on the web…')}</b><small>${L('ราวหนึ่งนาที ส่งไปแค่ชื่อเมือง', 'About a minute — only the town’s name is sent')}</small></div></div>` : '';
@@ -2815,13 +2878,14 @@ ${groups.map(([name, list], k) => `<section class="elgrp" style="--g1:${snapPal(
   const places = el.places || [], kinds = [L('ร้านอาหาร', 'Restaurants'), L('ศูนย์อาหารและของกินเร็ว', 'Food courts & quick bites'), L('คาเฟ่ ขนม ของหวาน', 'Cafés & sweets')];
   // a town's places under the areas its book (or the helper) put them in, in the order they came
   const areas = []; for (const x of places) { const k = T(x.area) || ''; let g = areas.find((a) => a.k === k); if (!g) areas.push(g = { k, area: x.area, items: [] }); g.items.push(x); }
-  const shown = places.filter((x) => eatShow({ area: x.area }, x)).length;
+  const shown = places.filter((x) => eatShow({ area: x.area }, x) && eatTagOk(kidTagsOf(x))).length;
   return `${head}${chips}
 <section class="eatpage ellist"><div class="part">${esc(cur ? tname(cur) : tk)} <span class="label">· ${L(`${places.length} ร้าน`, `${places.length} places`)}</span></div>
 ${el.places === null ? `<p class="label">${L('กำลังเปิด…', 'Opening…')}</p>` : `<div class="eatbar"><input id="eatq" class="field" type="search" enterkeyhint="search" autocomplete="off" value="${esc(eatQ)}" placeholder="${L('ค้นชื่อร้าน ย่าน หรือประเภท', 'Search a name, area or kind of food')}" aria-label="${L('ค้นร้าน', 'Search')}">
 <div class="row chips" role="group"><button class="chip" data-a="eatk" data-v="-1" aria-pressed="${eatKind < 0}">${L('ทั้งหมด', 'All')}</button>${kinds.map((k, i) => (places.some((x) => x.kind === i) ? `<button class="chip" data-a="eatk" data-v="${i}" aria-pressed="${eatKind === i}">${k}</button>` : '')).join('')}</div>
+${kidTagBar(places)}
 <p class="label" id="eatn">${L(`แสดง ${shown} จาก ${places.length} ร้าน`, `Showing ${shown} of ${places.length}`)}</p></div>
-${areas.map((g) => `<section class="eatg"${g.items.some((x) => eatShow(g, x)) ? '' : ' hidden'}><h3>${esc(T(g.area) || (cur ? tname(cur) : ''))}</h3><ul class="eatl">${g.items.map((x) => eatLibCard(g, x, true)).join('')}</ul></section>`).join('')}
+${areas.map((g) => `<section class="eatg"${g.items.some((x) => eatShow(g, x) && eatTagOk(kidTagsOf(x))) ? '' : ' hidden'}><h3>${esc(T(g.area) || (cur ? tname(cur) : ''))}</h3><ul class="eatl">${g.items.map((x) => eatLibCard(g, x, true)).join('')}</ul></section>`).join('')}
 <p class="empty" id="eatnone"${shown || !places.length ? ' hidden' : ''}>${L('ไม่พบร้านที่ตรงกับคำค้น', 'No place matches')}</p>`}
 ${wait}${err}${el.on && cur ? `<div class="row elmore"><button type="button" class="btn ghost" data-a="eatlibfill" data-v="${esc(cur.town)}" data-th="${esc(cur.town_th)}"${el.busy ? ' disabled' : ''}>${ic('search')} ${L('ให้ผู้ช่วยหาร้านเพิ่มในเมืองนี้', 'Ask the helper for more places here')}</button></div>` : ''}
 <p class="label">${L('ราคาและเวลาเปิดเปลี่ยนได้ เช็กซ้ำก่อนไป · แตะหมุดเพื่อเปิดแผนที่', 'Hours and prices change — check before you go · tap the pin for the map')}</p></section>`;
@@ -3007,7 +3071,7 @@ ${nearHtml}
 ${allBtn('wide')}</section>`;
 }
 function viewEat(t) {
-  if (eatTrip !== t.id) { eatTrip = t.id; eatQ = ''; eatKind = -1; eatPick = false; }   // filters belong to one book
+  if (eatTrip !== t.id) { eatTrip = t.id; eatQ = ''; eatKind = -1; eatPick = false; eatTags = new Set(); }   // filters belong to one book
   const r = eatData(t), all = eatCount(t), kinds = r.kinds || [];
   // one entry, laid out like the manual's "Where to eat" page: name · pin · address · type tag, a line, then price + when
   // one place as a small card: name + type on top, where it is, a line about it, then price / when + directions at the foot
@@ -3015,8 +3079,8 @@ function viewEat(t) {
 ${(x.pick || []).length ? `<div class="epk">${x.pick.map((k) => `<span>★ ${esc(T(k))}</span>`).join('')}</div>` : ''}
 <div class="et"><b class="en">${mapA(x.q || x.name, esc(x.name))}</b>${extA(mapsUrl(x.q || x.name), `<span class="mpin" aria-hidden="true"></span><span class="vh">${L('แผนที่', 'Map')}</span>`, 'pinlink')}${T(x.tag) ? `<span class="etag t-${esc(x.tk || 'x')}">${esc(T(x.tag))}</span>` : ''}${x.tour ? `<span class="etag tour">${L('สายนักท่องเที่ยว', 'Tourist spot')}</span>` : ''}</div>
 ${x.zh || x.where ? `<div class="ew">${x.zh ? `<span class="zh">${esc(x.zh)}</span>` : ''}${x.where ? `<span>${esc(x.where)}</span>` : ''}</div>` : ''}
-${T(x.what) ? `<p class="ed">${esc(T(x.what))}</p>` : ''}${T(x.why) ? `<p class="why"><b>${L('เหมาะกับเด็ก', 'For the kids')}</b> ${esc(T(x.why))}</p>` : ''}
-<div class="ef"><span class="echips">${T(x.pr) ? `<span class="pr">${esc(T(x.pr))}</span>` : ''}${T(x.note) ? `<span class="nt">${esc(T(x.note))}</span>` : ''}${T(x.hours) ? `<span class="hr">${esc(T(x.hours))}</span>` : ''}</span>${extA(`https://www.google.com/maps/dir/?api=1&destination=${encodeURIComponent(x.q || x.name)}`, ic('route') + ' ' + L('นำทาง', 'Go'), 'go')}</div></li>`;
+${T(x.what) ? `<p class="ed">${esc(T(x.what))}</p>` : ''}${T(x.why) ? `<p class="why"><b>${L('เหมาะกับเด็ก', 'For the kids')}</b> ${esc(T(x.why))}</p>` : ''}${kidTagChips(x)}
+<div class="ef"><span class="echips">${T(x.pr) ? `<span class="pr">${esc(T(x.pr))}</span>${prThb(x)}` : ''}${T(x.note) ? `<span class="nt">${esc(T(x.note))}</span>` : ''}${T(x.hours) ? `<span class="hr">${esc(T(x.hours))}</span>` : ''}</span>${extA(`https://www.google.com/maps/dir/?api=1&destination=${encodeURIComponent(x.q || x.name)}`, ic('route') + ' ' + L('นำทาง', 'Go'), 'go')}</div></li>`;
   const shown = r.groups.reduce((n, g) => n + g.items.filter((x) => eatShow(g, x)).length, 0);
   return `<section class="eatpage"><div class="part">${L('ร้านอาหารทั้งหมด', 'All places to eat')} <span class="label">· ${esc(T(t.title))}</span></div>
 
@@ -3033,7 +3097,7 @@ function eatFilter() {
   const q = eatQ.toLowerCase(); let n = 0;
   $$('.eatg').forEach((sec) => {
     let any = false;
-    sec.querySelectorAll('.eatc').forEach((li) => { const ok = (eatKind < 0 || +li.dataset.k === eatKind) && (!eatPick || li.dataset.p === '1') && (!q || li.dataset.s.includes(q)); li.hidden = !ok; if (ok) { any = true; n++; } });
+    sec.querySelectorAll('.eatc').forEach((li) => { const ok = (eatKind < 0 || +li.dataset.k === eatKind) && (!eatPick || li.dataset.p === '1') && (!q || li.dataset.s.includes(q)) && eatTagOk((li.dataset.t || '').split(' ').filter(Boolean)); li.hidden = !ok; if (ok) { any = true; n++; } });
     sec.hidden = !any;
   });
   const all = $$('.eatc').length, c = $('#eatn'), none = $('#eatnone');

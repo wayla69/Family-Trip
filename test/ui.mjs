@@ -970,6 +970,14 @@ const T = 'hk-macau-2026';
   const vp0 = page.viewportSize(); await page.setViewportSize({ width: 1440, height: 900 }); await page.waitForSelector('.cgrid.packed');
   const colH = await page.$$eval('.cgrid.packed > .ccol', (cs) => cs.map((c) => c.offsetHeight));
   ok(colH.length === 2 && Math.abs(colH[0] - colH[1]) < 260 && await page.locator('.cgrid .cbox').count() >= 5 && await page.locator('.cgrid .cbox.cone').count() >= 3, `HK today, wide screen: the boxes (four answer boxes and the one-line ones under them) packed into two columns of near-equal height (${colH.join(' / ')})`);
+  { // the eat library: what makes a place easy with a little one is read from its own words and filters in place; a typed rate shows its price roughly in baht
+    await page.evaluate(() => localStorage.setItem('mbs_fx', JSON.stringify({ JPY: 0.23 })));
+    await page.goto(`${BASE}/#/eats/tokyo`); await page.waitForSelector('.eatc');
+    const e0 = await page.evaluate(() => ({ all: document.querySelectorAll('.eatc').length, thb: document.querySelectorAll('.eatc .prthb').length, chips: [...document.querySelectorAll('.ektagbar .chip')].map((b) => b.dataset.v) }));
+    await page.locator('.ektagbar .chip').first().click();
+    const e1 = await page.evaluate((k) => { const shown = [...document.querySelectorAll('.eatc')].filter((li) => !li.hidden); return { n: shown.length, ok: shown.every((li) => li.dataset.t.split(' ').includes(k)), line: document.querySelector('#eatn').textContent }; }, e0.chips[0]);
+    ok(e0.chips.length >= 1 && e1.n >= 1 && e1.n < e0.all && e1.ok && e1.line.includes(String(e1.n)) && e0.thb >= e0.all - 2, `eat library: a "easy with little ones" chip keeps only the places that say so, in place; prices show roughly in baht from the rate typed on this phone (${e0.chips.join(',')} · ${e0.all} → ${e1.n} · ${e0.thb} in baht)`);
+    await page.evaluate(() => localStorage.removeItem('mbs_fx')); }
   { // a fold opened on a wide screen: the boxes after it change sides so the columns stay near each other; the tapped fold and everything before it stay put
     await page.goto(`${BASE}/#/t/big-hop-2027/today/1`); await page.waitForSelector('details.dmore'); await page.evaluate(() => { document.querySelector('details.dmore').open = true; }); await page.waitForSelector('.cgrid.packed');
     const two = () => page.evaluate(() => new Promise((r) => requestAnimationFrame(() => requestAnimationFrame(() => setTimeout(r, 60)))));

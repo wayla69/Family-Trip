@@ -197,4 +197,4 @@ function groupsFor(byTown, per = 12) {
   return groups.length ? { lede: { th: 'ร้านจากคลังของครอบครัว: ร้านในเล่มก่อนๆ และร้านที่ผู้ช่วยหาและเช็กกับเว็บ · ราคาและเวลาเปิดเปลี่ยนได้ เช็กซ้ำก่อนไป', en: 'From the family’s library: places from our earlier books and ones the helper found and checked on the web. Hours and prices change — check before you go.' }, kinds: KINDS, groups } : null;
 }
 
-module.exports = { rowsOfBook, syncBooks, syncStarter, starterRows, starterFiles, countryOf, put, all, out, towns, forTown, fill, cleanFill, groupsFor, norm, KINDS };
+module.exports = { idOf, rowsOfBook, syncBooks, syncStarter, starterRows, starterFiles, countryOf, put, all, out, towns, forTown, fill, cleanFill, groupsFor, norm, KINDS };

@@ -39,6 +39,15 @@ ok((await fetch(BASE + '/api/backup/due')).status === 401, 'backup/due without t
   ok(due.due === want && Object.keys(due).join() === 'due', `backup/due answers only yes/no, and right (${want})`);
 }
 ok((await fetch(BASE + '/api/backup.zip', { headers: { authorization: 'Bearer wrong-token-wrong-token-wrong' } })).status === 401, 'backup.zip wrong token → 401');
+// the library of places to eat: a place the helper found and a built-in place the parents took out are the family's own part
+const { Pool: SrcPool } = createRequire(import.meta.url)('pg');
+const srcPool = new SrcPool({ connectionString: process.env.DATABASE_URL });
+const EL = createRequire(import.meta.url)('../server/eatlib.js');
+const fam0 = (await srcPool.query('SELECT id FROM families LIMIT 1')).rows[0].id;
+await EL.put(srcPool, fam0, [{ town: 'Testtown', town_th: 'เทสต์ทาวน์', tkey: 'testtown', nkey: 'helperfind', area: { th: 'ใจกลาง', en: 'Centre' }, kind: 0, name: 'Helper Find', row: { what: { th: 'ร้าน', en: 'A place' } }, st: 'open', url: 'https://example.org/x', checked: '2026-11-01' }], 'helper', null);
+const goneRow = (await srcPool.query("SELECT tkey, nkey FROM eat_lib WHERE family_id=$1 AND src='starter' ORDER BY tkey, nkey LIMIT 1", [fam0])).rows[0];
+if (goneRow) await srcPool.query('UPDATE eat_lib SET gone = true WHERE family_id=$1 AND tkey=$2 AND nkey=$3', [fam0, goneRow.tkey, goneRow.nkey]);
+await srcPool.end();
 const zr = await fetch(BASE + '/api/backup.zip', { headers: { authorization: 'Bearer ' + BACKUP_TOKEN.trim() } });
 ok(zr.status === 200, 'backup.zip with the token → 200, even when the server variable was pasted with a trailing newline/space');
 const zip = Buffer.from(await zr.arrayBuffer());
@@ -73,6 +82,12 @@ try {
   const dst = await state(B2, ck2);
   ok(counts(dst) === counts(src), `restored counts match: entries/photos/places/hearts/reviews/trips/done = ${counts(dst)}`);
   ok(JSON.stringify(dst.children.map((k) => [k.slug, k.birth_ym, k.avatar, JSON.stringify(k.look || null)]).sort()) === JSON.stringify(src.children.map((k) => [k.slug, k.birth_ym, k.avatar, JSON.stringify(k.look || null)]).sort()), 'restore: the children\'s birth months, looks and drawn characters come back even though the seeds made the rows first');
+  { const dp = new SrcPool({ connectionString: u.toString() });
+    const got = (await dp.query("SELECT tkey, nkey, src, st, gone FROM eat_lib WHERE (tkey='testtown' AND nkey='helperfind') OR (tkey=$1 AND nkey=$2)", [goneRow ? goneRow.tkey : '', goneRow ? goneRow.nkey : ''])).rows;
+    const helper = got.find((r) => r.nkey === 'helperfind'), gone = goneRow && got.find((r) => r.nkey === goneRow.nkey);
+    ok(json.tables.eat_lib && json.tables.eat_lib.every((r) => r.src === 'helper' || r.gone) && helper && helper.src === 'helper' && helper.st === 'open' && !!goneRow && gone && gone.gone,
+      `restore: the helper's place comes back and a built-in place the parents took out stays out (${(json.tables.eat_lib || []).length} rows in the backup — only the family's own)`);
+    await dp.end(); }
   ok(JSON.stringify(dst.entries.map((e) => [e.id, e.text, e.highlight]).sort()) === JSON.stringify(src.entries.map((e) => [e.id, e.text, e.highlight]).sort()), 'restored entries identical (text, ⭐)');
   const pid = dst.media.find((m) => (m.mime || 'image/jpeg').startsWith('image/')).id, aid = (dst.media.find((m) => (m.mime || '').startsWith('audio/')) || {}).id;
   const [f, t] = await Promise.all([fetch(`${B2}/media/${pid}`, { headers: { cookie: ck2 } }), fetch(`${B2}/media/${pid}/t`, { headers: { cookie: ck2 } })]);

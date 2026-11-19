@@ -527,6 +527,7 @@ ok((await fetch(BASE + '/api/b/media/ph-test-0001', { method: 'DELETE', headers:
   const okNames = new Set(E0.starterFiles().flatMap((f) => E0.starterRows(f, idx0)).filter((x) => x.tkey === 'tokyo' && x.st === 'open').map((x) => x.name));
   ok(tk.every((x) => x.src === 'starter' && x.what && x.pr && x.q && (okNames.has(x.name) ? x.st === 'open' && /^20\d\d-\d\d-01$/.test(x.checked) : !x.st && !x.checked)),
     `eat library: a built-in place is marked as one — not checked, unless its file says a web search confirmed it (${okNames.size} of ${tk.length} in Tokyo confirmed)`);
+  ok(tk.length && tk.every((x) => x.cc === 'jp'), `eat library: each place carries its country, so the phone can show its price roughly in baht (${[...new Set(tk.map((x) => x.cc))].join(',')})`);
   const dup = (await pool.query("SELECT name, count(*)::int n FROM eat_lib WHERE tkey='macau' GROUP BY nkey, name HAVING count(*) > 1")).rows;
   // the names our Hong Kong–Macau book and the built-in Macau file both hold: each is one row, and it is the book's
   const E = createRequire(import.meta.url)('../server/eatlib.js'), idx = JSON.parse(fs.readFileSync('public/stock/index.json', 'utf8')), seed = JSON.parse(fs.readFileSync('server/seeds/hk-macau-2026.json', 'utf8'));

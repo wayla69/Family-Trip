@@ -3710,3 +3710,15 @@ a.plchip{text-decoration:none}a.plchip .label{font-weight:700}a.plchip[aria-curr
 :root[data-theme=dark] .elgrp>h3{color:color-mix(in srgb,var(--g1) 55%,#fff)}
 :root[data-theme=dark] .etag.st-open{color:color-mix(in srgb,var(--leaf) 55%,#fff)}
 :root[data-theme=dark] .etag.st-closed{color:color-mix(in srgb,var(--accent2) 55%,#fff)}
+/* the eat library: what makes a place easy with a little one (read from its own words), roughly in baht, and the places near tonight's bed */
+.ektags{display:flex;flex-wrap:wrap;gap:4px;margin:6px 0 2px}
+.ektag{font-size:12px;padding:2px 8px;border-radius:999px;background:color-mix(in srgb,var(--accent) 12%,var(--paper));color:color-mix(in srgb,var(--accent) 60%,var(--ink));font-weight:600}
+.ektag .emi{width:1.1em;height:1.1em;vertical-align:-.2em}
+.ektagbar{align-items:center;margin-top:4px}.ektagbar>.label{flex-basis:100%;margin:0 0 2px}
+.eatc .echips .prthb,.prthb{white-space:nowrap;background:color-mix(in srgb,var(--sun,#f2b33d) 16%,var(--paper));color:color-mix(in srgb,var(--sun,#f2b33d) 45%,var(--ink));font-weight:700;font-size:12px;padding:2px 8px;border-radius:999px}
+.bedeats{list-style:none;margin:0 0 6px;padding:0}
+.bedeats li{display:flex;align-items:center;gap:8px;min-height:48px;padding:6px 0;border-top:1px solid var(--line)}
+.bedeats li:first-child{border-top:0}
+.bedeats .plen{flex:1;min-width:0;display:flex;flex-direction:column;gap:2px}
+.bedeats .plen small{color:var(--muted)}
+.bedeats .etag{flex:none}

@@ -1092,6 +1092,7 @@ const A = {
     } catch (_) { toast(L('ต้องมีเน็ตเพื่อส่งคลิป', 'You need a connection to send the film')); }
     finally { b.disabled = false; }
   },
+  eattag(b) { const k = b.dataset.v; if (eatTags.has(k)) eatTags.delete(k); else eatTags.add(k); b.setAttribute('aria-pressed', eatTags.has(k)); eatFilter(); },
   eatk(b) { eatKind = +b.dataset.v; $$('[data-a="eatk"]').forEach((c) => c.setAttribute('aria-pressed', c.dataset.v === b.dataset.v)); eatFilter(); },
   eatpick(b) { eatPick = !eatPick; b.setAttribute('aria-pressed', eatPick); eatFilter(); },
   driver(b) {   // big-print address card to hand a taxi driver (works offline: it's in the book's state)

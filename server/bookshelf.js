@@ -1193,10 +1193,10 @@ function router({ pool, media, A, ai, hooks = {} }) {   // hooks.heart(h): set b
   r.get('/api/b/eatlib', A.requireEditor, async (req, res, next) => {
     try {
       res.setHeader('Cache-Control', 'no-store');
-      const rows = await EATLIB.all(pool, FAMILY);
-      if (req.query.for) return res.json({ for: eatFor(rows, eatPairs(String(req.query.for))) });
-      if (req.query.town) return res.json({ places: rows.filter((x) => x.tkey === String(req.query.town)).map(EATLIB.out) });
-      const cof = EATLIB.countryOf(STOCK.read());
+      const rows = await EATLIB.all(pool, FAMILY), cof = EATLIB.countryOf(STOCK.read());
+      const withCc = (x) => ({ ...x, cc: (cof.get(x.tkey) || {}).cc || '' });   // the place's country: the phone reads its currency for ≈ ฿
+      if (req.query.for) return res.json({ for: eatFor(rows, eatPairs(String(req.query.for))).map((t) => ({ ...t, places: t.places.map(withCc) })) });
+      if (req.query.town) return res.json({ places: rows.filter((x) => x.tkey === String(req.query.town)).map(EATLIB.out).map(withCc) });
       res.json({ towns: EATLIB.towns(rows).map((t) => ({ ...t, country: cof.get(t.tkey) || null })), total: rows.length, on: !!(ai && ai.enabled()) });
     } catch (e) { next(e); }
   });
