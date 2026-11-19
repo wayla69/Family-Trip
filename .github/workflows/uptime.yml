@@ -24,7 +24,7 @@ jobs:
     runs-on: ubuntu-latest
     timeout-minutes: 5
     steps:
-      - uses: actions/checkout@v5
+      - uses: actions/checkout@v7
         with:
           fetch-depth: 100
           sparse-checkout: public/sw.js
@@ -61,7 +61,7 @@ jobs:
 
       - name: Open or close the alert issue
         if: steps.probe.outputs.skip != '1'
-        uses: actions/github-script@v8
+        uses: actions/github-script@v9
         env:
           DOWN: ${{ steps.probe.outputs.down }}
           WHY: ${{ steps.probe.outputs.why }}
