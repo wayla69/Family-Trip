@@ -3790,3 +3790,16 @@ a.plchip{text-decoration:none}a.plchip .label{font-weight:700}a.plchip[aria-curr
 .tastekid .tkn{display:grid;gap:2px;flex:1;min-width:0}.tastekid .tkn small{color:var(--muted);font-size:13px}.tastekid .chv{margin-left:auto}.tastekid[open] .tastechips{margin-top:8px}
 .tasteuse{margin:0}
 :root[data-theme=dark] .etag.fitb,:root[data-theme=dark] .tastechip[data-st=like]{color:color-mix(in srgb,#F2B90C 70%,var(--ink))}
+
+/* the planner's questions, a page each (#/planner/<step>) */
+.plqs{display:grid;grid-template-columns:repeat(5,1fr);gap:4px;margin:4px 0 12px}
+.plqd{display:grid;justify-items:center;gap:3px;min-height:52px;padding:4px 0;color:var(--muted);font-size:12px;font-weight:600;text-decoration:none;text-align:center}
+.plqd i{font-style:normal;display:grid;place-items:center;width:30px;height:30px;border-radius:50%;background:color-mix(in srgb,var(--muted) 12%,var(--card));box-shadow:inset 0 0 0 1px var(--line);font-size:14px}
+.plqd.done i{background:color-mix(in srgb,var(--accent) 16%,var(--card));color:color-mix(in srgb,var(--accent) 70%,var(--ink));box-shadow:inset 0 0 0 1px color-mix(in srgb,var(--accent) 40%,transparent)}
+.plqd.now{color:var(--ink)}.plqd.now i{background:var(--accent);color:var(--on-accent,#fff);box-shadow:0 0 0 3px color-mix(in srgb,var(--accent) 25%,transparent)}
+.plnav{display:flex;justify-content:space-between;align-items:center;gap:10px;margin:14px 0 6px}
+.plnav .btn{min-height:52px;min-width:120px;justify-content:center}
+.plnav .plnext{flex:1;max-width:260px;font-size:17px}
+.plskip{display:block;margin:4px auto 10px;min-height:44px}
+.plhint{margin:8px 0 0}.plhint a{font-weight:700}
+.plhist{margin-top:12px}

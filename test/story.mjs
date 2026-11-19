@@ -807,7 +807,9 @@ try {
     await pp.goto(BASE + '/'); await pp.waitForSelector('#lf'); await pp.fill('#lname', 'Mum'); await pp.fill('#lcode', CODE); await pp.keyboard.press('Enter'); await pp.waitForSelector('.shelf');
     ok(await pp.locator('.plango').count() === 1, 'planner page: the shelf offers "plan with the helper"');
     await pp.goto(BASE + '/#/planner'); await pp.waitForSelector('#pldest');
-    await pp.fill('#pldest', 'Tokyo'); await pp.fill('#plfrom', '2027-04-01'); await pp.fill('#plto', '2027-04-03');
+    { const qd = await pp.locator('.plqs .plqd').count(), nx = await pp.locator('.plnav .plnext').count(); ok(qd === 5 && nx === 1, `planner page: the questions come a page each — five dots and a big "next" (${qd} · ${nx})`); }
+    await pp.fill('#pldest', 'Tokyo'); await pp.click('.plnav .plnext'); await pp.waitForSelector('#plfrom');
+    await pp.fill('#plfrom', '2027-04-01'); await pp.fill('#plto', '2027-04-03');
     await pp.click('[data-a="planroute"]'); await pp.waitForSelector('.plday', { timeout: 15000 });
     const nday = await pp.locator('.plday').count(), wide = await pp.evaluate(() => document.documentElement.scrollWidth <= innerWidth + 1);
     const btn = await pp.locator('[data-a="planbook"]').count(), full = await pp.textContent('.plfoot');
@@ -858,9 +860,13 @@ try {
           `planner page: "where to" finds a country by its other names and brings its towns, a tap puts the name in place of what was typed, a country outside the picture library is offered too (${usa.join(' | ')} · ${picked} · ${cuba.join(' | ')} · ${th.join(' | ')})`);
         await pp.fill('#pldest', d1); await pp.dispatchEvent('#pldest', 'input');
       }
+      await pp.goto(BASE + '/#/planner/when'); await pp.waitForSelector('#plfrom');
       await pp.fill('#plfrom', '2027-05-01'); await pp.keyboard.press('Tab'); await pp.click('.pllens .plchip[data-v="5"]');
+      const span = await pp.textContent('#plspan');
+      await pp.goto(BASE + '/#/planner/style'); await pp.waitForSelector('.plchip[data-k="likes"]');
       await pp.click('.plchip[data-k="likes"][data-v="sea"]');
-      const a1 = await pp.evaluate(() => ({ to: pln.a.to, likes: pln.a.likes.join(), span: document.querySelector('#plspan').textContent, pressed: document.querySelector('.plchip[data-v="sea"]').getAttribute('aria-pressed') }));
+      const a1 = await pp.evaluate((sp) => ({ to: pln.a.to, likes: pln.a.likes.join(), span: sp, pressed: document.querySelector('.plchip[data-v="sea"]').getAttribute('aria-pressed') }), span);
+      await pp.goto(BASE + '/#/planner/where'); await pp.waitForSelector('#pldest');
       ok(/Tokyo/i.test(d1) && a1.to === '2027-05-05' && a1.likes === 'animals,sea' && /5 days, 4 nights/.test(a1.span) && a1.pressed === 'true', `planner page: a suggested place fills "where to", a length chip sets the last day, a like is ticked in place beside the one #/taste chose (${d1} · ${JSON.stringify(a1)})`);
       await pp.click('[data-a="planideas"]'); await pp.waitForSelector('.plidea', { timeout: 15000 });
       await pp.click('.plidea >> nth=0');
@@ -869,6 +875,7 @@ try {
       await pp.evaluate(() => { pln.plans = null; render(); }); }
     // two to compare: the button only before a route is chosen; the cards side by side; "pick this one" makes it the route
     await pp.evaluate(() => { localStorage.removeItem('mbs_planRoute'); pln.route = null; pln.alts = null; render(); });
+    await pp.goto(BASE + '/#/planner/more'); await pp.waitForSelector('[data-a="planroute2"]');
     await pp.click('[data-a="planroute2"]'); await pp.waitForSelector('.plalt', { timeout: 15000 });
     const alts = await pp.locator('.plalt').count();
     await pp.click('.plalt [data-a="planpick"]'); await pp.waitForSelector('.plday');
@@ -877,7 +884,7 @@ try {
     const sb2 = await (await fetch(BASE + '/api/b/snap', { method: 'POST', headers: PH, body: JSON.stringify({ days: [{ date: '2025-12-12', place: { th: 'ปากช่อง', en: 'Pak Chong' } }, { date: '2025-12-13', title: { th: 'ทุ่งดอกไม้', en: 'The flower fields' } }] }) })).json();
     await pp.goto(BASE + '/#/'); await pp.evaluate(() => load().then(render)); await pp.goto(`${BASE}/#/t/${sb2.id}`); await pp.waitForSelector('.hubrow.snapplango');
     await pp.click('.hubrow.snapplango'); await pp.waitForSelector('#pldest');
-    const dest = await pp.inputValue('#pldest'), want = await pp.inputValue('#plwant');
+    const dest = await pp.inputValue('#pldest'); await pp.goto(BASE + '/#/planner/more'); await pp.waitForSelector('#plwant'); const want = await pp.inputValue('#plwant');
     ok(/Pak Chong/.test(dest) && /flower fields/i.test(want) && !/Day 1/.test(want), `planner from a photo book: its towns and its days start the answers (${dest} · ${want.slice(0, 60)})`);
     // the library's own page: the towns, a town's places as the book's cards, search in place, "take out" in two taps
     await pp.goto(BASE + '/#/'); await pp.waitForSelector('.eatlibcard'); await pp.click('.eatlibcard'); await pp.waitForSelector('.eltowns .plchip');
@@ -897,12 +904,15 @@ try {
       ok(fs.fit > 0 && fs.bar >= 2 && fs.ours && fs.lead && fl, `taste: places of our style say so and lead their area; the kinds of food filter in place (${JSON.stringify(fs)} · ${fl})`); }
     { // #/taste: the page the shelf leads to; a tap loves, a second skips, saved without a redraw
       await pp.goto(BASE + '/#/'); await pp.waitForSelector('.tastecard'); await pp.click('.tastecard'); await pp.waitForSelector('.tastepage');
+      const steps = await pp.locator('.tasteqs .plqd').count();
+      await pp.click('.plnext'); await pp.waitForSelector('.tastepage[data-q="food"]');
       const sea = '.tastechip[data-g="food"][data-v="sweet"]';
       await pp.click(sea); const st1 = await pp.getAttribute(sea, 'data-st'); await pp.click(sea); const st2 = await pp.getAttribute(sea, 'data-st');
       await pp.waitForTimeout(1200);
-      const kept = (await state()).family.taste, small = await pp.evaluate(() => [...document.querySelectorAll('.tastepage .chip, .tastekid summary')].filter((b) => { const r = b.getBoundingClientRect(); return r.width && r.height < 43.5; }).length);
-      ok(st1 === 'like' && st2 === 'avoid' && kept.food.avoid.includes('sweet') && !kept.food.like.includes('sweet') && kept.food.like.includes('noodle') && small === 0 && await pp.locator('.tastekid').count() >= 1,
-        `taste page: one tap loves a style, a second skips it, kept for both parents; each child has favourites; taps are 44 px (${st1} ${st2} ${JSON.stringify(kept.food)} small ${small})`); }
+      const kept = (await state()).family.taste, small = await pp.evaluate(() => [...document.querySelectorAll('.tastepage .chip, .tastepage .btn, .plqd')].filter((b) => { const r = b.getBoundingClientRect(); return r.width && r.height < 43.5; }).length);
+      await pp.goto(BASE + '/#/taste/kids'); await pp.waitForSelector('.tastekid');
+      ok(steps === 4 && st1 === 'like' && st2 === 'avoid' && kept.food.avoid.includes('sweet') && !kept.food.like.includes('sweet') && kept.food.like.includes('noodle') && small === 0 && await pp.locator('.tastekid').count() >= 1,
+        `taste page: four pages a topic each; one tap loves a style, a second skips it, kept for both parents; each child has favourites; taps are 44 px (${steps} ${st1} ${st2} ${JSON.stringify(kept.food)} small ${small})`); }
     await pp.goto(BASE + '/#/eats/tokyo'); await pp.waitForSelector('.eatc');
     ok(/web check/.test(await pp.textContent('.eatc .elsrc')) && await pp.locator('.eatc .etag.st-open').count() === 1, 'eat library page: a place the helper found says so, with the day it was checked and that it is open');
     await pp.click('.eatc [data-a="eatlibdel"]'); ok(await pp.locator('.eatc').count() === 1, 'eat library page: taking a place out takes two taps');
