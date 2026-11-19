@@ -1,0 +1,6 @@
+{"cc":"mt","towns":[
+ {"place":"mt-valletta","places":[
+  {"name":"Mater Dei Hospital","kind":"hospital","area":{"th":"มซีดา (ใกล้วัลเลตตา)","en":"Msida (near Valletta)"},"what":{"th":"โรงพยาบาลรัฐหลักของมอลตา มีห้องฉุกเฉิน","en":"Malta's main public hospital with an emergency department"},"why":{"th":"ห้องฉุกเฉินมีโซนสำหรับทารกและเด็ก ห่างวัลเลตตาราว 5 กม.","en":"Its emergency department has an area for babies and children; about 5 km from Valletta"},"q":"Mater Dei Hospital, Msida, Malta","ok":"2026-11"},
+  {"name":"Gozo General Hospital","kind":"hospital","area":{"th":"วิกตอเรีย เกาะโกโซ","en":"Victoria, Gozo"},"what":{"th":"โรงพยาบาลรัฐของเกาะโกโซ มีห้องฉุกเฉิน","en":"Gozo's public hospital with an emergency department"},"why":{"th":"โรงพยาบาลที่ใกล้ที่สุดเมื่ออยู่บนเกาะโกโซ มีแผนกกุมารเวช","en":"The nearest hospital when on Gozo; it has a paediatrics service"},"q":"Gozo General Hospital, Victoria, Gozo, Malta","ok":"2026-11"}
+ ]}
+]}

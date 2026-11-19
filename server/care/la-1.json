@@ -1,0 +1,6 @@
+{"cc":"la","towns":[
+ {"place":"la-luangprabang","places":[
+  {"name":"Luang Prabang Provincial Hospital","kind":"hospital","area":{"th":"หลวงพระบาง","en":"Luang Prabang"},"what":{"th":"โรงพยาบาลประจำแขวงของรัฐ","en":"Public provincial hospital"},"why":{"th":"โรงพยาบาลหลักของเมือง อยู่ที่เดียวกับโรงพยาบาลเด็ก","en":"The town's main hospital, on the same site as the children's hospital"},"q":"Luang Prabang Provincial Hospital, Luang Prabang, Laos","ok":"2026-11"},
+  {"name":"Lao Friends Hospital for Children","kind":"hospital","area":{"th":"หลวงพระบาง","en":"Luang Prabang"},"what":{"th":"โรงพยาบาลเด็กการกุศล ในบริเวณโรงพยาบาลประจำแขวง","en":"Charity children's hospital on the provincial hospital's site"},"why":{"th":"รักษาเด็กโดยเฉพาะ ตั้งขึ้นเพื่อเด็กลาว ควรถามก่อนว่ารับเด็กต่างชาติไหม","en":"Only for children; set up for Lao children, so ask whether it sees visitors"},"q":"Lao Friends Hospital for Children, Luang Prabang Provincial Hospital, Luang Prabang, Laos","ok":"2026-11"}
+ ]}
+]}

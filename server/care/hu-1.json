@@ -1,0 +1,6 @@
+{"cc":"hu","towns":[
+ {"place":"hu-budapest","places":[
+  {"name":"Heim Pál National Pediatric Institute","kind":"hospital","area":{"th":"เขต 8 โยเซฟวาโรช","en":"District VIII, Józsefváros"},"what":{"th":"โรงพยาบาลเด็กแห่งชาติ มีห้องฉุกเฉินเด็ก","en":"National children's hospital with a children's emergency department"},"why":{"th":"รับเฉพาะเด็ก อยู่ใจกลางเมือง","en":"Only for children, central Budapest"},"q":"Heim Pál National Pediatric Institute, Üllői út, District VIII, Budapest","ok":"2026-11"},
+  {"name":"Bethesda Children's Hospital","kind":"hospital","area":{"th":"เขต 14 ซุกโล","en":"District XIV, Zugló"},"what":{"th":"โรงพยาบาลเด็ก ห้องฉุกเฉินเด็กเพิ่งปรับปรุงใหม่ปี 2025","en":"Children's hospital, its children's emergency department renewed in 2025"},"why":{"th":"รับเฉพาะเด็ก","en":"Only for children"},"q":"Bethesda Children's Hospital, Bethesda utca 3-5, District XIV, Budapest","ok":"2026-11"}
+ ]}
+]}

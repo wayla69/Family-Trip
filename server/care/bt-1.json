@@ -1,0 +1,6 @@
+{"cc":"bt","towns":[
+ {"place":"bt-paro","places":[
+  {"name":"Jigme Dorji Wangchuck National Referral Hospital","kind":"hospital","area":{"th":"ทิมพู","en":"Thimphu"},"what":{"th":"โรงพยาบาลใหญ่ที่สุดของประเทศ มีห้องฉุกเฉิน","en":"The country's main hospital, with an emergency department"},"why":{"th":"รายที่หนักจากทุกเมืองถูกส่งมาที่นี่ การรักษาฉุกเฉินพื้นฐานฟรีแม้นักท่องเที่ยว","en":"Where serious cases from every town go; basic emergency care is free, tourists included"},"q":"Jigme Dorji Wangchuck National Referral Hospital, Thimphu","ok":"2026-11"},
+  {"name":"Paro District Hospital","kind":"hospital","area":{"th":"พาโร","en":"Paro"},"what":{"th":"โรงพยาบาลประจำอำเภอพาโร","en":"Paro's district hospital"},"why":{"th":"ที่รักษาในพาโรเอง รายที่หนักจะส่งต่อไปทิมพู","en":"Care in Paro itself; serious cases go on to Thimphu"},"q":"Paro District Hospital, Paro","ok":"2026-11"}
+ ]}
+]}

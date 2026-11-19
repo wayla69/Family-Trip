@@ -1,0 +1,5 @@
+{"cc":"fj","towns":[
+ {"place":"fj-islands","places":[
+  {"name":"Nadi Hospital","kind":"hospital","area":{"th":"ตัวเมืองนาดี","en":"Nadi Town"},"what":{"th":"โรงพยาบาลรัฐ มีหน่วยอุบัติเหตุและฉุกเฉิน และหอผู้ป่วยเด็ก","en":"Public hospital with an accident and emergency unit and a children's ward"},"why":{"th":"โรงพยาบาลรัฐของเมืองนาดี ใกล้สนามบินและเดนาเรา","en":"Nadi's public hospital, the one for the airport and Denarau area"},"q":"Nadi Hospital, Nadi Town, Fiji","ok":"2026-11"}
+ ]}
+]}

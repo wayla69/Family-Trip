@@ -1,0 +1,7 @@
+{"cc":"pe","towns":[
+ {"place":"pe-cusco","places":[
+  {"name":"Clínica Pardo","kind":"hospital","area":{"th":"กุสโก","en":"Cusco"},"what":{"th":"คลินิกเอกชน รับเคสฉุกเฉินแบบไม่ต้องนัด","en":"Private clinic with walk-in emergency care"},"why":{"th":"นักท่องเที่ยวนิยมใช้ รวมถึงอาการแพ้ที่สูง","en":"Popular with visitors, including for altitude sickness"},"q":"Clínica Pardo, Avenida de la Cultura 710, Cusco","ok":"2026-11"},
+  {"name":"Coney Park Cusco","kind":"play","area":{"th":"กุสโก","en":"Cusco"},"what":{"th":"สวนสนุกในร่ม มีโซนเด็กเล็ก Coney Kids บ่อบอลและสไลเดอร์","en":"Indoor amusement centre with a toddler zone, Coney Kids: ball pool and slides"},"why":{"th":"เล่นในร่มได้ตอนอากาศหนาวหรือฝนตก","en":"Indoor play when it is cold or raining"},"q":"Coney Park, Cusco","ok":"2026-11"},
+  {"name":"Parque Urpicha","kind":"play","area":{"th":"กุสโก","en":"Cusco"},"what":{"th":"สวนสาธารณะมีสไลเดอร์ ชิงช้า และเครื่องเล่น","en":"Park with slides, swings and small rides"},"why":{"th":"เหมาะกับเด็กเล็ก","en":"Good for small children"},"q":"Parque Urpicha, Cusco","ok":"2026-11"}
+ ]}
+]}

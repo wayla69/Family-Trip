@@ -1,0 +1,6 @@
+{"cc":"si","towns":[
+ {"place":"si-bled","places":[
+  {"name":"Splošna bolnišnica Jesenice","kind":"hospital","area":{"th":"เยเซนิตเซ","en":"Jesenice"},"what":{"th":"โรงพยาบาลทั่วไป มีแผนกเด็กและศูนย์ฉุกเฉิน","en":"General hospital with a children's ward and an emergency centre"},"why":{"th":"โรงพยาบาลใหญ่ที่ใกล้เบลดที่สุด ขับรถราว 15–20 นาที","en":"The nearest larger hospital, about 15–20 min drive from Bled"},"q":"Splošna bolnišnica Jesenice, Cesta maršala Tita 112, Jesenice","ok":"2026-11"},
+  {"name":"Grajsko kopališče Bled","kind":"play","area":{"th":"ริมทะเลสาบเบลด ใต้ปราสาท","en":"Lake Bled, below the castle"},"what":{"th":"ที่เล่นน้ำริมทะเลสาบ มีสระเด็ก สนามเด็กเล่น และบ่อทราย","en":"Lakeside lido with a children's pool, playground and sandpit"},"why":{"th":"สระเด็กล้อมรั้ว เปิดเฉพาะหน้าร้อน","en":"Fenced children's pool; summer season only"},"q":"Grajsko kopališče, Bled","ok":"2026-11"}
+ ]}
+]}

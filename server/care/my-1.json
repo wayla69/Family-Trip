@@ -1,0 +1,16 @@
+{"cc":"my","towns":[
+ {"place":"my-kualalumpur","places":[
+  {"name":"Sunway Medical Centre","kind":"hospital","area":{"th":"บันดาร์ซันเวย์ สลังงอร์","en":"Bandar Sunway, Selangor"},"what":{"th":"โรงพยาบาลเอกชน มีห้องฉุกเฉินเด็กโดยเฉพาะ","en":"Private hospital with a dedicated children's emergency department"},"why":{"th":"ห้องฉุกเฉินเด็กแห่งแรกของโรงพยาบาลเอกชนในมาเลเซีย ห่างใจกลางกัวลาลัมเปอร์ราว 20 กม.","en":"Malaysia's first private children's emergency department; about 20 km from central Kuala Lumpur"},"q":"Sunway Medical Centre, Bandar Sunway, Selangor, Malaysia","ok":"2026-11"}
+ ]},
+ {"place":"my-penang","places":[
+  {"name":"Gleneagles Hospital Penang","kind":"hospital","area":{"th":"จอร์จทาวน์ ปีนัง","en":"George Town, Penang"},"what":{"th":"โรงพยาบาลเอกชน มีห้องฉุกเฉินและคลินิกกุมารเวช","en":"Private hospital with an emergency department and children's clinics"},"why":{"th":"โรงพยาบาลเอกชนในเมือง มีกุมารแพทย์","en":"A private hospital in town with paediatricians"},"q":"Gleneagles Hospital Penang, George Town, Penang","ok":"2026-11"},
+  {"name":"Penang Hospital","kind":"hospital","area":{"th":"จอร์จทาวน์ ปีนัง","en":"George Town, Penang"},"what":{"th":"โรงพยาบาลรัฐ มีห้องฉุกเฉินและแผนกกุมารเวช","en":"Public hospital with an emergency department and paediatrics"},"why":{"th":"โรงพยาบาลรัฐหลักของปีนัง ห้องฉุกเฉินมักคนแน่น","en":"Penang's main public hospital; its emergency department is often busy"},"q":"Penang Hospital (Hospital Pulau Pinang), George Town, Penang","ok":"2026-11"}
+ ]},
+ {"place":"my-langkawi","places":[
+  {"name":"Hospital Sultanah Maliha","kind":"hospital","area":{"th":"ลังกาวี","en":"Langkawi"},"what":{"th":"โรงพยาบาลรัฐแห่งเดียวบนเกาะลังกาวี","en":"The island's public hospital"},"why":{"th":"โรงพยาบาลบนเกาะ เคสหนักส่งต่อไปฝั่งแผ่นดินใหญ่ทางเรือ","en":"The hospital on the island; serious cases are moved to the mainland by boat"},"q":"Hospital Sultanah Maliha, Langkawi, Kedah, Malaysia","ok":"2026-11"}
+ ]},
+ {"place":"my-borneo","places":[
+  {"name":"Hospital Wanita dan Kanak-Kanak Sabah","kind":"hospital","area":{"th":"ลิกัส โกตากินาบาลู","en":"Likas, Kota Kinabalu"},"what":{"th":"โรงพยาบาลรัฐสำหรับผู้หญิงและเด็ก มีห้องฉุกเฉิน","en":"Public women's and children's hospital with an emergency unit"},"why":{"th":"โรงพยาบาลเด็กของรัฐซาบาห์ ห่างใจกลางเมืองราว 8 กม.","en":"Sabah's children's hospital; about 8 km from the city centre"},"q":"Hospital Wanita dan Kanak-Kanak Sabah, Likas, Kota Kinabalu, Sabah","ok":"2026-11"},
+  {"name":"Gleneagles Hospital Kota Kinabalu","kind":"hospital","area":{"th":"โกตากินาบาลู","en":"Kota Kinabalu"},"what":{"th":"โรงพยาบาลเอกชน มีห้องฉุกเฉิน","en":"Private hospital with an accident and emergency department"},"why":{"th":"โรงพยาบาลเอกชนแห่งเดียวในซาบาห์ที่มีแพทย์ดูแลทารกแรกเกิดประจำ","en":"The only private hospital in Sabah with an in-house neonatologist"},"q":"Gleneagles Hospital Kota Kinabalu, Kota Kinabalu, Sabah","ok":"2026-11"}
+ ]}
+]}

@@ -1,0 +1,5 @@
+{"cc":"mo","towns":[
+ {"place":"mo-macau","places":[
+  {"name":"Centro Hospitalar Conde de São Januário","zh":"仁伯爵綜合醫院","kind":"hospital","area":{"th":"คาบสมุทรมาเก๊า","en":"Macau Peninsula"},"what":{"th":"โรงพยาบาลรัฐ มีห้องฉุกเฉินเด็ก","en":"Public hospital with a children's emergency department"},"why":{"th":"เด็กอายุต่ำกว่า 13 ปี เข้าห้องฉุกเฉินเด็กโดยเฉพาะ","en":"Children under 13 are seen in its own paediatric emergency"},"q":"Centro Hospitalar Conde de São Januário, Macau","ok":"2026-11"}
+ ]}
+]}

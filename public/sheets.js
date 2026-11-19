@@ -418,7 +418,7 @@ const A = {
       const r = await fetch(b.getAttribute('href'), { credentials: 'same-origin' });
       if (!r.ok || !/pdf/.test(r.headers.get('content-type') || '')) throw new Error(String(r.status));
       const url = URL.createObjectURL(await r.blob()), a = document.createElement('a');
-      a.href = url; a.download = (b.getAttribute('href').split('/').pop() || 'memory-book') + '.pdf'; document.body.append(a); a.click();
+      a.href = url; a.download = ((b.getAttribute('href').split('?')[0].split('/').pop() || 'memory-book') + (b.dataset.sfx || '')) + '.pdf'; document.body.append(a); a.click();
       setTimeout(() => { URL.revokeObjectURL(url); a.remove(); }, 10000);
       toast(L('ได้ไฟล์ PDF แล้ว ✓', 'PDF ready ✓'));
     } catch (_) { toast(L('สร้าง PDF ไม่สำเร็จ ลองอีกครั้งในอีกสักครู่', 'Could not make the PDF — try again in a moment')); }

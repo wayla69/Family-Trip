@@ -1,0 +1,6 @@
+{"cc":"mx","towns":[
+ {"place":"mx-yucatan","places":[
+  {"name":"Hospiten Cancún","kind":"hospital","area":{"th":"แคนคูน","en":"Cancún"},"what":{"th":"โรงพยาบาลเอกชนนานาชาติ มีห้องฉุกเฉิน","en":"Private international hospital with an emergency department"},"why":{"th":"เครือโรงพยาบาลนานาชาติ มีกุมารแพทย์เฉพาะทาง","en":"An international hospital group with paediatric specialists"},"q":"Hospiten Cancún, Cancún, Quintana Roo, Mexico","ok":"2026-11"},
+  {"name":"Hospital Galenia","kind":"hospital","area":{"th":"แคนคูน","en":"Cancún"},"what":{"th":"โรงพยาบาลเอกชน มีห้องฉุกเฉิน","en":"Private hospital with an emergency department"},"why":{"th":"โรงพยาบาลที่นักท่องเที่ยวในแคนคูนนิยมใช้","en":"A hospital many visitors to Cancún use"},"q":"Hospital Galenia, Cancún, Quintana Roo, Mexico","ok":"2026-11"}
+ ]}
+]}

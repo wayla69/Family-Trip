@@ -1,0 +1,7 @@
+{"cc":"lk","towns":[
+ {"place":"lk-hills","places":[
+  {"name":"Asiri Hospital Kandy","kind":"hospital","area":{"th":"แคนดี","en":"Kandy"},"what":{"th":"โรงพยาบาลเอกชน มีแผนกเด็ก","en":"Private hospital with a children's unit"},"why":{"th":"โรงพยาบาลเอกชนใหญ่ของแคนดี มีหมอเด็ก","en":"Kandy's large private hospital, with children's doctors"},"q":"Asiri Hospital Kandy, Peradeniya Road, Kandy, Sri Lanka","ok":"2026-11"},
+  {"name":"Teaching Hospital Kandy","kind":"hospital","area":{"th":"แคนดี","en":"Kandy"},"what":{"th":"โรงพยาบาลสอนของรัฐ","en":"Public teaching hospital"},"why":{"th":"โรงพยาบาลรัฐหลักของแคนดี","en":"Kandy's main public hospital"},"q":"Teaching Hospital Kandy, Kandy, Sri Lanka","ok":"2026-11"},
+  {"name":"Provincial General Hospital Badulla","kind":"hospital","area":{"th":"บาดุลลา (ใกล้เอลลา)","en":"Badulla (near Ella)"},"what":{"th":"โรงพยาบาลประจำจังหวัดของรัฐ","en":"Public provincial general hospital"},"why":{"th":"โรงพยาบาลใหญ่ที่ใกล้เอลลาที่สุด ห่างราว 15 กม.","en":"The nearest large hospital to Ella, about 15 km away"},"q":"Provincial General Hospital, Badulla, Sri Lanka","ok":"2026-11"}
+ ]}
+]}

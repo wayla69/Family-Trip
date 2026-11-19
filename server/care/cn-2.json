@@ -1,0 +1,29 @@
+{"cc":"cn","towns":[
+ {"place":"cn-shanghai","places":[
+  {"name":"Shanghai Children's Medical Center","zh":"上海儿童医学中心","kind":"hospital","area":{"th":"ผู่ตง","en":"Pudong"},"what":{"th":"โรงพยาบาลเด็กของรัฐขนาดใหญ่","en":"Large public children's hospital"},"why":{"th":"รับเด็กโดยเฉพาะ","en":"Only for children"},"q":"Shanghai Children's Medical Center, 1678 Dongfang Road, Pudong, Shanghai","ok":"2026-11"},
+  {"name":"Shanghai United Family Hospital","zh":"上海和睦家医院","kind":"hospital","area":{"th":"ฉางหนิง","en":"Changning"},"what":{"th":"โรงพยาบาลนานาชาติ มีห้องฉุกเฉินเด็ก","en":"International hospital with a children's emergency"},"why":{"th":"หมอพูดอังกฤษได้","en":"English-speaking doctors"},"q":"Shanghai United Family Hospital, 699 Pingtang Road, Changning, Shanghai","ok":"2026-11"},
+  {"name":"Shanghai Natural History Museum","zh":"上海自然博物馆","kind":"play","area":{"th":"จิ้งอาน","en":"Jing'an"},"what":{"th":"พิพิธภัณฑ์ธรรมชาติในสวนประติมากรรมจิ้งอาน","en":"Natural history museum in Jing'an Sculpture Park"},"why":{"th":"โครงกระดูกไดโนเสาร์ตัวใหญ่ เด็กเล็กเข้าฟรี","en":"A giant dinosaur skeleton; small children go free"},"q":"Shanghai Natural History Museum, 510 West Beijing Road, Jing'an Sculpture Park, Shanghai","ok":"2026-11"}
+ ]},
+ {"place":"cn-chengdu","places":[
+  {"name":"Chengdu Women's and Children's Central Hospital","zh":"成都市妇女儿童中心医院","kind":"hospital","area":{"th":"ชิงหยาง ฝั่งตะวันตก","en":"West Chengdu, Riyue Avenue"},"what":{"th":"โรงพยาบาลแม่และเด็ก มีห้องฉุกเฉินเด็ก","en":"Women's and children's hospital with a children's emergency"},"why":{"th":"รับเด็กโดยเฉพาะ","en":"Made for children"},"q":"Chengdu Women's and Children's Central Hospital, 1617 Riyue Avenue, Chengdu","ok":"2026-11"}
+ ]},
+ {"place":"cn-chongqing","places":[
+  {"name":"Children's Hospital of Chongqing Medical University","zh":"重庆医科大学附属儿童医院","kind":"hospital","area":{"th":"อวี๋จง (เหลี่ยงลู่โข่ว)","en":"Yuzhong (Lianglukou)"},"what":{"th":"โรงพยาบาลเด็กของรัฐขนาดใหญ่","en":"Large public children's hospital"},"why":{"th":"รับเด็กโดยเฉพาะ อยู่กลางเมือง","en":"Only for children, in the city centre"},"q":"Children's Hospital of Chongqing Medical University, 136 Zhongshan 2nd Road, Yuzhong, Chongqing","ok":"2026-11"}
+ ]},
+ {"place":"cn-yunnan","places":[
+  {"name":"Kunming Children's Hospital","zh":"昆明市儿童医院","kind":"hospital","area":{"th":"คุนหมิง ซีซาน","en":"Kunming, Xishan"},"what":{"th":"โรงพยาบาลเด็กของรัฐ วิทยาเขตเฉียนซิงลู่","en":"Public children's hospital, Qianxing Road campus"},"why":{"th":"รับเด็กโดยเฉพาะ","en":"Only for children"},"q":"Kunming Children's Hospital, 288 Qianxing Road, Xishan, Kunming","ok":"2026-11"}
+ ]},
+ {"place":"cn-guilin","places":[
+  {"name":"Affiliated Hospital of Guilin Medical University","zh":"桂林医学院附属医院","kind":"hospital","area":{"th":"กุ้ยหลิน ตัวเมือง","en":"Guilin city"},"what":{"th":"โรงพยาบาลมหาวิทยาลัยขนาดใหญ่ มีแผนกเด็ก","en":"Large university hospital with a children's department"},"why":{"th":"โรงพยาบาลใหญ่ใกล้หยางซั่วที่สุด","en":"The big hospital nearest to Yangshuo"},"q":"Affiliated Hospital of Guilin Medical University, 95 Lequn Road, Guilin","ok":"2026-11"}
+ ]},
+ {"place":"cn-xian","places":[
+  {"name":"Xi'an Children's Hospital","zh":"西安市儿童医院","kind":"hospital","area":{"th":"เหลียนหู ใกล้ประตูตะวันตก","en":"Lianhu, inside the West Gate"},"what":{"th":"โรงพยาบาลเด็กของรัฐ","en":"Public children's hospital"},"why":{"th":"รับเด็กโดยเฉพาะ อยู่ในกำแพงเมือง","en":"Only for children, inside the city wall"},"q":"Xi'an Children's Hospital, Lianhu District, Xi'an","ok":"2026-11"}
+ ]},
+ {"place":"cn-zhangjiajie","places":[
+  {"name":"Zhangjiajie People's Hospital","zh":"张家界市人民医院","kind":"hospital","area":{"th":"หย่งติ้ง ตัวเมืองจางเจียเจี้ย","en":"Yongding, Zhangjiajie city"},"what":{"th":"โรงพยาบาลประจำเมือง","en":"The city hospital"},"why":{"th":"โรงพยาบาลหลักของเมือง","en":"The town's main hospital"},"q":"Zhangjiajie People's Hospital, 192 Guyong Road, Yongding, Zhangjiajie","ok":"2026-11"}
+ ]},
+ {"place":"cn-harbin","places":[
+  {"name":"Harbin Children's Hospital","zh":"哈尔滨市儿童医院","kind":"hospital","area":{"th":"เต้าหลี่","en":"Daoli"},"what":{"th":"โรงพยาบาลเด็กของรัฐ","en":"Public children's hospital"},"why":{"th":"รับเด็กโดยเฉพาะ","en":"Only for children"},"q":"Harbin Children's Hospital, 57 Youyi Road, Daoli, Harbin","ok":"2026-11"},
+  {"name":"Harbin Children's Park","zh":"哈尔滨儿童公园","kind":"play","area":{"th":"หนานกั่ง","en":"Nangang"},"what":{"th":"สวนสาธารณะของเด็ก มีรถไฟเล็กให้เด็กนั่ง","en":"Children's park with a little railway"},"why":{"th":"รถไฟเด็กสายแรกของจีน เด็กเล็กชอบ","en":"China's first children's railway"},"q":"Harbin Children's Park, Nangang District, Harbin","ok":"2026-11"}
+ ]}
+]}

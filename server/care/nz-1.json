@@ -1,0 +1,11 @@
+{"cc":"nz","towns":[
+ {"place":"nz-auckland","places":[
+  {"name":"Starship Children's Emergency Department","kind":"hospital","area":{"th":"กราฟตัน โอ๊คแลนด์","en":"Grafton, Auckland"},"what":{"th":"แผนกฉุกเฉินเด็กของโรงพยาบาลเด็กสตาร์ชิป","en":"Children's emergency department of Starship Children's Hospital"},"why":{"th":"รับเด็กโดยเฉพาะ เดินจากสถานีกราฟตันราว 8 นาที","en":"Only for children, about 8 minutes' walk from Grafton Station"},"q":"Starship Children's Hospital, 2 Park Road, Grafton, Auckland","ok":"2026-11"}
+ ]},
+ {"place":"nz-rotorua","places":[
+  {"name":"Rotorua Hospital Emergency Department","kind":"hospital","area":{"th":"โรโตรัว","en":"Rotorua"},"what":{"th":"แผนกฉุกเฉินของโรงพยาบาลรัฐ รับผู้ป่วยเด็กด้วย","en":"Public hospital emergency department that also treats children"},"why":{"th":"ทางเข้าแผนกฉุกเฉินอยู่ถนนพูเคโรอา มีจุดส่งคนหน้าประตู","en":"The emergency entrance is on Pukeroa Street, with a drop-off right outside"},"q":"Rotorua Hospital Emergency Department, Pukeroa Street, Rotorua","ok":"2026-11"}
+ ]},
+ {"place":"nz-queenstown","places":[
+  {"name":"Lakes District Hospital","kind":"hospital","area":{"th":"แฟรงก์ตัน ควีนส์ทาวน์","en":"Frankton, Queenstown"},"what":{"th":"โรงพยาบาลรัฐขนาดเล็ก มีแผนกฉุกเฉิน","en":"Small public hospital with an emergency department"},"why":{"th":"โรงพยาบาลที่ใกล้ที่สุดของควีนส์ทาวน์ เข้าแผนกฉุกเฉินทางด้านข้าง ไม่ใช่ประตูหน้า","en":"The nearest hospital to Queenstown; the emergency entrance is round the side, not the front doors"},"q":"Lakes District Hospital, 20 Douglas Street, Frankton, Queenstown","ok":"2026-11"}
+ ]}
+]}

@@ -1,0 +1,6 @@
+{"cc":"np","towns":[
+ {"place":"np-kathmandu","places":[
+  {"name":"CIWEC Hospital","kind":"hospital","area":{"th":"ลาซิมพัต กาฐมาณฑุ","en":"Lazimpat, Kathmandu"},"what":{"th":"โรงพยาบาลเอกชนสำหรับนักเดินทาง มีห้องฉุกเฉิน","en":"Private hospital for travellers with an emergency room"},"why":{"th":"ดูแลนักท่องเที่ยวและชาวต่างชาติ พูดภาษาอังกฤษ","en":"Used to treating travellers and expats, English-speaking"},"q":"CIWEC Hospital, Kapurdhara Marg, Lazimpat, Kathmandu","ok":"2026-11"},
+  {"name":"Kanti Children's Hospital","kind":"hospital","area":{"th":"กาฐมาณฑุ","en":"Kathmandu"},"what":{"th":"โรงพยาบาลเด็กของรัฐ","en":"Public children's hospital"},"why":{"th":"โรงพยาบาลเด็กหลักของเนปาล","en":"Nepal's main hospital for children"},"q":"Kanti Children's Hospital, Kathmandu","ok":"2026-11"}
+ ]}
+]}

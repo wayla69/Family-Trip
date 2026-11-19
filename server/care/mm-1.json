@@ -1,0 +1,8 @@
+{"cc":"mm","towns":[
+ {"place":"mm-yangon","places":[
+  {"name":"Pun Hlaing Hospital","kind":"hospital","area":{"th":"หล่ายตาหย่า ย่างกุ้ง","en":"Hlaing Tharyar, Yangon"},"what":{"th":"โรงพยาบาลเอกชน มีห้องฉุกเฉิน","en":"Private hospital with an emergency department"},"why":{"th":"ห้องฉุกเฉินตามมาตรฐานสากล มีทีมหมอหัวใจเด็ก","en":"Emergency care to international standards; children's heart specialists"},"q":"Pun Hlaing Hospital, Hlaing Tharyar, Yangon","ok":"2026-11"},
+  {"name":"Asia Royal Hospital","kind":"hospital","area":{"th":"ซานชอง ย่างกุ้ง","en":"Sanchaung, Yangon"},"what":{"th":"โรงพยาบาลเอกชน มีห้องฉุกเฉินและรถพยาบาล","en":"Private hospital with an emergency department and ambulance"},"why":{"th":"อยู่ใกล้ใจกลางเมือง โทรไปมีพนักงานพูดภาษาอังกฤษ","en":"Close to the centre; English-speaking reception on the phone"},"q":"Asia Royal Hospital, Sanchaung, Yangon","ok":"2026-11"},
+  {"name":"People's Park","kind":"play","area":{"th":"ย่างกุ้ง ใกล้เจดีย์ชเวดากอง","en":"Yangon, by Shwedagon Pagoda"},"what":{"th":"สวนสาธารณะมีรั้ว มีน้ำพุและสนามเด็กเล่นมุมตะวันออกเฉียงใต้","en":"Fenced park with fountains and a playground in its south-east corner"},"why":{"th":"มีรั้วรอบ ไม่ต้องกลัวเด็กวิ่งออกถนน","en":"Fenced in, so no running into traffic"},"q":"People's Park, Dhammazedi Road, Yangon","ok":"2026-11"},
+  {"name":"Kandawgyi Park","kind":"play","area":{"th":"ย่างกุ้ง","en":"Yangon"},"what":{"th":"สวนริมทะเลสาบ มีสนามเด็กเล่นชิงช้าและสไลเดอร์","en":"Lakeside park with a playground of swings and slides"},"why":{"th":"ช่วงบ่ายแก่ครอบครัวคนท้องถิ่นมาปิกนิก","en":"Local families picnic there in the late afternoon"},"q":"Kandawgyi Park, Kandawgyi Lake, Yangon","ok":"2026-11"}
+ ]}
+]}

@@ -86,6 +86,14 @@ function extras(trips, now, kids = { th: 'เด็กๆ', en: 'the kids' }) {
     if (live(pack) && !snap) out.push({ key: `${x.trip}.x.pack`, at: pack, url: `/#/t/${x.trip}/offline`,
       th: { title: `อีก 2 วันออกเดินทาง · ${nTh}`, body: 'กด "เก็บเล่มนี้ไว้ในเครื่อง" ก่อนขึ้นเครื่อง ถ้ายังไม่ได้เก็บ — เปิดได้แม้ไม่มีสัญญาณ' },
       en: { title: `2 days to go · ${nEn}`, body: 'Tap "Keep this book on the phone" before the flight, if you haven’t yet — it opens without signal' } });
+    // a month and a week before (owner, Nov 2026: "เตือนจองล่วงหน้า"): 09:00 home time, opens the prep page — what to book ahead
+    // (the manual's book-ahead list, a planner book's "ahead") and the papers to have ready; never a booking or a place's name
+    for (const [n, k] of [[30, 'ahead30'], [7, 'ahead7']]) {
+      const at = zoned(addDays(x.from, -n), ANN_AT, home);
+      if (live(at) && !snap) out.push({ key: `${x.trip}.x.${k}`, at, url: `/#/t/${x.trip}/prep`,
+        th: { title: `อีก ${n} วันออกเดินทาง · ${nTh}`, body: n > 7 ? 'ถึงเวลาจองสิ่งที่ต้องจองล่วงหน้า และเช็กหนังสือเดินทางกับประกันของทุกคน' : 'เช็กของที่จองไว้และเอกสารให้ครบ ก่อนสัปดาห์สุดท้าย' },
+        en: { title: `${n} days to go · ${nEn}`, body: n > 7 ? 'Time to book what needs booking ahead, and check everyone’s passports and insurance' : 'Check the bookings and the papers before the last week' } });
+    }
     // the countdown doors: door k opens when N-k+1 sleeps are left (kid.js doorOpen), one morning each
     for (let left = snap ? 0 : x.doors || 0; left >= 1; left--) {
       const k = (x.doors || 0) - left + 1, at = zoned(addDays(x.from, -left), DOOR_AT, home);
@@ -160,7 +168,7 @@ function create({ pool, family, A, sender = (sub, payload, opt) => webpush.sendN
     const trips = (await pool.query(`SELECT id trip, title, timezone tz, to_char(date_from,'YYYY-MM-DD') "from", to_char(date_to,'YYYY-MM-DD') "to",
         coalesce(jsonb_array_length(passport->'countdown'->'doors'), 0) doors, kind, open,
         CASE WHEN kind = 'snap' THEN (SELECT json_agg(json_build_object('i', day_index, 'date', to_char(date,'YYYY-MM-DD')) ORDER BY day_index) FROM trip_days WHERE trip_id=trips.id) END days
-      FROM trips WHERE family_id=$1 AND ($2::date BETWEEN date_from - 16 AND date_to + 1 OR date_to < $2::date OR (kind = 'snap' AND open))`, [family, new Date(now).toISOString().slice(0, 10)])).rows;   // past trips too: their days come back on the anniversary
+      FROM trips WHERE family_id=$1 AND ($2::date BETWEEN date_from - 31 AND date_to + 1 OR date_to < $2::date OR (kind = 'snap' AND open))`, [family, new Date(now).toISOString().slice(0, 10)])).rows;   // past trips too: their days come back on the anniversary
     const list = due(days.filter((d) => tzOk(d.tz) && (d.rows || []).every((r) => !r || !r.tz || tzOk(r.tz))), now).map((r) => ({ ...r, msg: (lang) => message(r, lang, now) }));
     for (const x of extras(trips.filter((t) => tzOk(t.tz)), now, await kidNames())) {
       if (x.day !== undefined) {

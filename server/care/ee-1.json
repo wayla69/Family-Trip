@@ -1,0 +1,8 @@
+{"cc":"ee","towns":[
+ {"place":"ee-tallinn","places":[
+  {"name":"Tallinn Children's Hospital","zh":"Tallinna Lastehaigla","kind":"hospital","area":{"th":"ทาลลินน์","en":"Tallinn"},"what":{"th":"โรงพยาบาลเด็กของเมือง มีห้องฉุกเฉินเด็ก","en":"The city's children's hospital with a children's emergency department"},"why":{"th":"โรงพยาบาลใหญ่ในทาลลินน์ส่งเด็กมาที่นี่","en":"Tallinn's adult hospitals send children here"},"q":"Tallinn Children's Hospital, Tervise 28, Tallinn","ok":"2026-11"},
+  {"name":"Mängu Saar Rocca al Mare","kind":"play","area":{"th":"รอกกา อัล มาเร ทาลลินน์","en":"Rocca al Mare, Tallinn"},"what":{"th":"ห้องเล่นในร่มสำหรับเด็กเล็ก","en":"Indoor playroom for young children"},"why":{"th":"ทำมาสำหรับเด็ก 0–7 ขวบ เล่นได้ทั้งวันฝนตกและหน้าหนาว","en":"Made for ages 0–7, good on a rainy or cold day"},"q":"Mängu Saar, Rocca al Mare, Tallinn","ok":"2026-11"},
+  {"name":"Super Skypark","kind":"play","area":{"th":"ห้างที วัน ทาลลินน์","en":"T1 Mall, Tallinn"},"what":{"th":"ศูนย์แทรมโพลีนและเครื่องเล่นในร่ม","en":"Indoor trampoline and play centre"},"why":{"th":"อยู่ในห้าง มีร้านอาหารและที่จอดรถ","en":"Inside a mall with food and parking"},"q":"Super Skypark, T1 Mall, Tallinn","ok":"2026-11"},
+  {"name":"Kadriorg Park playground","kind":"play","area":{"th":"คาดริออร์ก ทาลลินน์","en":"Kadriorg, Tallinn"},"what":{"th":"สนามเด็กเล่นในสวนคาดริออร์ก","en":"Playground in Kadriorg Park"},"why":{"th":"มีรั้วรอบ ดูเด็กง่าย","en":"Fenced, so easy to keep an eye on little ones"},"q":"Kadriorg Park playground, Kadriorg, Tallinn","ok":"2026-11"}
+ ]}
+]}

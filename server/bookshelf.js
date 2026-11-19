@@ -12,6 +12,7 @@ const IMPORT = require('./bookimport');
 const PLANNER = require('./planner');
 const CF = require('./countryfacts');
 const EATLIB = require('./eatlib');
+const CARE = require('./care');   // hospitals, pharmacies, play and baby rooms per library town (server/care/*.json)
 const VERIFY = require('./verify');
 const FAM = require('./family');
 const AVATAR = require('./avatar');
@@ -887,6 +888,12 @@ function router({ pool, media, A, ai, hooks = {} }) {   // hooks.heart(h): set b
     res.setHeader('Cache-Control', 'private, max-age=86400');
     res.json({ places: ps.filter(([, p]) => Array.isArray(p.ll)).map(([id, p]) => ({ id, name: p.name, ll: p.ll, tz: p.tz, cc: p.country, home: !!p.home, art: STOCK.url(id + '.stamp'), c: (p.colors || {}).k1 || '' })),   // art + c: the town's own stamp and colour for the photo-book screens
       countries: ps.filter(([id, p]) => id === p.country).map(([id, p]) => ({ cc: id, name: p.name, tz: p.tz || null })) });
+  });
+  // help and play near a stay (server/care.js): ?ids=<place id>,… → the built-in rows of those library towns (no family data)
+  r.get('/api/b/care', A.requireUser, (req, res) => {
+    const ids = String(req.query.ids || '').split(',').map((x) => x.trim()).filter((x) => SLUG_RE.test(x));
+    res.setHeader('Cache-Control', 'private, max-age=86400');
+    res.json({ places: CARE.forPlaces(ids) });
   });
   // the online place-name lookup (editors; the phone sends it only with the family's switch on): a position rounded to ~1 km in,
   // the names out — never stored, never logged (server/nearname.js)

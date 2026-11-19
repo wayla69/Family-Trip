@@ -1,0 +1,6 @@
+{"cc":"hr","towns":[
+ {"place":"hr-dubrovnik","places":[
+  {"name":"General Hospital Dubrovnik","zh":"Opća bolnica Dubrovnik","kind":"hospital","area":{"th":"ลาปัด","en":"Lapad"},"what":{"th":"โรงพยาบาลรัฐ ห้องฉุกเฉิน มีแผนกเด็ก","en":"Public hospital with an emergency department and a paediatrics department"},"why":{"th":"โรงพยาบาลหลักของเมือง","en":"The town's main hospital"},"q":"Opća bolnica Dubrovnik, Dr. Roka Mišetića 2, Dubrovnik","ok":"2026-11"},
+  {"name":"Gradac Park","kind":"play","area":{"th":"ใกล้ประตูปีเล","en":"Near Pile Gate"},"what":{"th":"สวนสาธารณะ มีสนามเด็กเล่นที่เพิ่งปรับปรุงใหม่","en":"Park with a newly rebuilt playground"},"why":{"th":"ร่มรื่น เดินจากเมืองเก่าได้ (เช็กก่อนไปว่างานปรับปรุงเสร็จแล้ว)","en":"Shady, a walk from the Old Town (check the works are finished)"},"q":"Park Gradac, Dubrovnik","ok":"2026-11"}
+ ]}
+]}

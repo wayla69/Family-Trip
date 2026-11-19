@@ -1,0 +1,6 @@
+{"cc":"pl","towns":[
+ {"place":"pl-krakow","places":[
+  {"name":"Uniwersytecki Szpital Dziecięcy w Krakowie","kind":"hospital","area":{"th":"โปรโกชิม","en":"Prokocim"},"what":{"th":"โรงพยาบาลเด็กของมหาวิทยาลัย มีห้องฉุกเฉินเด็ก","en":"University children's hospital with a children's emergency department"},"why":{"th":"ห้องฉุกเฉินของที่นี่รับเฉพาะเด็ก ไม่ต้องมีใบส่งตัว","en":"Its emergency department is for children only, no referral needed"},"q":"Uniwersytecki Szpital Dziecięcy, Wielicka 265, Prokocim, Kraków","ok":"2026-11"},
+  {"name":"Park Jordana","kind":"play","area":{"th":"ใกล้สวนบวอเนีย","en":"By the Błonia meadow"},"what":{"th":"สวนสาธารณะมีสนามเด็กเล่นใหญ่สามแห่ง","en":"Park with three large playgrounds"},"why":{"th":"มีโซนเครื่องเล่นแยกสำหรับเด็กเล็ก และบ่อทรายให้เล่น","en":"Separate toddler areas and sandpits"},"q":"Park Jordana, Kraków","ok":"2026-11"}
+ ]}
+]}

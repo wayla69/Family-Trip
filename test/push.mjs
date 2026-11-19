@@ -30,6 +30,9 @@ ok(new Date(PUSH.zoned('2027-04-04', '08:30', 'Australia/Sydney')).toISOString()
   ok(keys(atHK('2026-11-21', '08:00')) === '', 'a door is not sent at 08:00 Hong Kong time (07:00 at home)');
   { const x = PUSH.extras([hk], at('2026-11-30', '08:00'))[0]; ok(x.key === 'hk-macau-2026.x.door10' && /5 sleeps to Hong Kong/.test(x.en.body) && /อีก 5 วันไปฮ่องกง/.test(x.th.body), 'door 10 says 5 sleeps to go, in both languages'); }
   ok(keys(atHK('2026-12-05', '21:30')) === 'hk-macau-2026.x.log.d0' && keys(atHK('2026-12-10', '21:30')) === 'hk-macau-2026.x.log.d5' && keys(atHK('2026-12-11', '21:30')) === '' && PUSH.extras([hk], atHK('2026-12-06', '21:31'))[0].url === '/#/t/hk-macau-2026/log/1/ai', 'every trip evening, 21:30 trip time: "record day N" (opens that day’s record page at the evening Claude buttons)');
+  { const a = PUSH.extras([hk], at('2026-11-05', '09:00')), b = PUSH.extras([hk], at('2026-11-28', '09:05'));
+    ok(a.map((x) => x.key).join() === 'hk-macau-2026.x.ahead30' && a[0].url === '/#/t/hk-macau-2026/prep' && /อีก 30 วัน/.test(a[0].th.title) && b.some((x) => x.key === 'hk-macau-2026.x.ahead7') && keys(at('2026-11-05', '08:59')) === '',
+      'book ahead: 30 and 7 days before, 09:00 home time, opens the prep page'); }
   ok(PUSH.extras([{ ...hk, doors: 0 }], at('2026-11-21', '08:00')).length === 0, 'a book without countdown doors sends no door mornings');
   { // a book from photos: its own days (12 and 14 Dec are days 1 and 2 — no evening on the 13th), no store-the-book or doors, and an open
     // book is nudged on an evening it has no day for yet (the app was never opened that day), on its own page

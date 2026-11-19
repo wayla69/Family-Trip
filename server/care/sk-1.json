@@ -1,0 +1,7 @@
+{"cc":"sk","towns":[
+ {"place":"sk-bratislava","places":[
+  {"name":"Národný ústav detských chorôb (NÚDCH)","kind":"hospital","area":{"th":"กรามาเร โนเวเมสโต","en":"Kramáre, Nové Mesto"},"what":{"th":"สถาบันโรงพยาบาลเด็กแห่งชาติ มีห้องฉุกเฉินเด็ก","en":"National children's hospital with a children's emergency department"},"why":{"th":"ห้องฉุกเฉินเด็กแห่งเดียวของบราติสลาวา","en":"The only children's emergency department in Bratislava"},"q":"Národný ústav detských chorôb, Limbová 2643/1, Kramáre, Bratislava","ok":"2026-11"},
+  {"name":"Medická záhrada","kind":"play","area":{"th":"เมืองเก่า","en":"Old Town"},"what":{"th":"สวนกลางเมือง มีสนามเด็กเล่นที่เพิ่งปรับปรุงใหม่","en":"Old Town garden with a renewed playground"},"why":{"th":"เข้าฟรี ใกล้ย่านเมืองเก่า","en":"Free, close to the Old Town"},"q":"Medická záhrada, Staré Mesto, Bratislava","ok":"2026-11"},
+  {"name":"Adventica Eurovea","kind":"play","area":{"th":"ยูโรเวีย ริมแม่น้ำดานูบ","en":"Eurovea, by the Danube"},"what":{"th":"สนามเด็กเล่นในร่ม มีโซนเด็กเล็กและบ่อบอล","en":"Indoor play centre with a toddler area and ball pit"},"why":{"th":"เหมาะวันฝนตก มีพื้นที่สำหรับเด็กเล็กโดยเฉพาะ","en":"For rainy days, with a space just for toddlers"},"q":"Adventica, Eurovea, Pribinova 8, Bratislava","ok":"2026-11"}
+ ]}
+]}

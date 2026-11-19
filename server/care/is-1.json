@@ -1,0 +1,6 @@
+{"cc":"is","towns":[
+ {"place":"is-reykjavik","places":[
+  {"name":"Barnaspítali Hringsins","kind":"hospital","area":{"th":"เรคยาวิก","en":"Reykjavík"},"what":{"th":"โรงพยาบาลเด็กของรัฐ มีห้องฉุกเฉินเด็กชั้นล่าง","en":"Public children's hospital with a children's emergency department on the ground floor"},"why":{"th":"รับเฉพาะเด็ก ส่วนเด็กที่ได้รับบาดเจ็บไปห้องฉุกเฉินฟอสวอกูร์","en":"Only for children; injured children go to the Fossvogur ER"},"q":"Barnaspítali Hringsins, Hringbraut, Reykjavík","ok":"2026-11"},
+  {"name":"Landspítali Emergency Department Fossvogur","kind":"hospital","area":{"th":"ฟอสวอกูร์ เรคยาวิก","en":"Fossvogur, Reykjavík"},"what":{"th":"ห้องฉุกเฉินใหญ่ที่สุดของประเทศ","en":"The country's largest emergency department"},"why":{"th":"รับเด็กที่ได้รับบาดเจ็บจากอุบัติเหตุ","en":"Where children with injuries are treated"},"q":"Landspítali Fossvogur, Áland 6, 108 Reykjavík","ok":"2026-11"}
+ ]}
+]}

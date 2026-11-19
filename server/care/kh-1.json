@@ -1,0 +1,8 @@
+{"cc":"kh","towns":[
+ {"place":"kh-siemreap","places":[
+  {"name":"Angkor Hospital for Children","kind":"hospital","area":{"th":"เสียมเรียบ","en":"Siem Reap"},"what":{"th":"โรงพยาบาลเด็ก มีห้องฉุกเฉิน","en":"Children's hospital with an emergency department"},"why":{"th":"รับเฉพาะเด็ก","en":"Only for children"},"q":"Angkor Hospital for Children, Tep Vong (Achamean) Road and Oum Chhay Street, Siem Reap","ok":"2026-11"},
+  {"name":"Royal Angkor International Hospital","kind":"hospital","area":{"th":"ถนนสนามบิน เสียมเรียบ","en":"Airport Road, Siem Reap"},"what":{"th":"โรงพยาบาลเอกชนนานาชาติ มีห้องฉุกเฉินและรถพยาบาล","en":"Private international hospital with emergency care and an ambulance"},"why":{"th":"สื่อสารภาษาอังกฤษได้ · ค่ารักษาสูง เช็กประกันก่อน","en":"English spoken · costly, check your insurance"},"q":"Royal Angkor International Hospital, National Road 6 (Airport Road), Siem Reap","ok":"2026-11"},
+  {"name":"Kids Park, Heritage Mall","kind":"play","area":{"th":"เสียมเรียบ","en":"Siem Reap"},"what":{"th":"ลานเล่นนุ่มในร่ม ในห้าง","en":"Indoor soft play in a mall"},"why":{"th":"เหมาะกับเด็กถึงราว 6 ขวบ","en":"Suits children up to about 6"},"q":"Kids Park, Heritage Mall, Siem Reap","ok":"2026-11"},
+  {"name":"Asia Plaza Playground","kind":"play","area":{"th":"เสียมเรียบ","en":"Siem Reap"},"what":{"th":"ลานเล่นนุ่มในร่ม ชั้นบนสุดของห้างเอเชียพลาซ่า","en":"Indoor soft play on the top floor of Asia Plaza mall"},"why":{"th":"สำหรับเด็ก 1–6 ขวบ","en":"For children aged 1–6"},"q":"Asia Plaza Mall playground, Siem Reap","ok":"2026-11"}
+ ]}
+]}

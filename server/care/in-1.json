@@ -1,0 +1,7 @@
+{"cc":"in","towns":[
+ {"place":"in-golden","places":[
+  {"name":"Indraprastha Apollo Hospitals","kind":"hospital","area":{"th":"นิวเดลี","en":"New Delhi"},"what":{"th":"โรงพยาบาลเอกชนใหญ่ มีห้องฉุกเฉินเด็กโดยเฉพาะ","en":"Large private hospital with a children's emergency department"},"why":{"th":"มีแพทย์ฉุกเฉินเด็ก รับคนไข้ต่างชาติบ่อย","en":"Children's emergency specialists, used to foreign patients"},"q":"Indraprastha Apollo Hospitals, New Delhi","ok":"2026-11"},
+  {"name":"Fortis Escorts Hospital Jaipur","kind":"hospital","area":{"th":"มัลวิยานาการ์ ชัยปุระ","en":"Malviya Nagar, Jaipur"},"what":{"th":"โรงพยาบาลเอกชน มีห้องฉุกเฉินและกุมารแพทย์","en":"Private hospital with an emergency department and paediatricians"},"why":{"th":"มีห้องฉุกเฉินและรถพยาบาล","en":"Emergency department with ambulance service"},"q":"Fortis Escorts Hospital, Jawaharlal Nehru Marg, Malviya Nagar, Jaipur","ok":"2026-11"},
+  {"name":"National Bal Bhavan","kind":"play","area":{"th":"ใกล้ ITO นิวเดลี","en":"Near ITO, New Delhi"},"what":{"th":"ศูนย์กิจกรรมเด็ก มีสวนสัตว์เล็ก ลานเล่น และงานศิลปะ","en":"Children's activity centre with a mini zoo, play areas and art"},"why":{"th":"เด็กเล็กเดินเล่นดูกระต่าย เป็ด นกแก้วได้","en":"Little ones can see rabbits, ducks and parrots"},"q":"National Bal Bhavan, near ITO, New Delhi","ok":"2026-11"}
+ ]}
+]}

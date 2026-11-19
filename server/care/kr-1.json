@@ -1,0 +1,9 @@
+{"cc":"kr","towns":[
+ {"place":"kr-seoul","places":[
+  {"name":"Severance Children's Hospital","zh":"세브란스 어린이병원","kind":"hospital","area":{"th":"ซินชน · ซอแดมุน","en":"Sinchon, Seodaemun"},"what":{"th":"โรงพยาบาลเด็กของโรงพยาบาลเซเวอรานซ์","en":"Children's hospital of Severance Hospital"},"why":{"th":"มีศูนย์ดูแลผู้ป่วยต่างชาติและล่ามภาษาอังกฤษ","en":"International health care centre with English-speaking help and interpreters"},"q":"Severance Children's Hospital, Sinchon, Seodaemun-gu, Seoul","ok":"2026-11"},
+  {"name":"Seoul St. Mary's Hospital","zh":"가톨릭대학교 서울성모병원","kind":"hospital","area":{"th":"ซอโช · ฝั่งใต้แม่น้ำฮัน","en":"Seocho, south of the Han"},"what":{"th":"โรงพยาบาลมหาวิทยาลัยคาทอลิก มีศูนย์ฉุกเฉินเด็ก","en":"Catholic university hospital with a children's emergency centre"},"why":{"th":"รัฐบาลเกาหลีให้เป็นศูนย์ฉุกเฉินเฉพาะเด็ก","en":"Named a specialist children's emergency centre by the Korean health ministry"},"q":"Seoul St. Mary's Hospital, Banpo-dong, Seocho-gu, Seoul","ok":"2026-11"}
+ ]},
+ {"place":"kr-busan","places":[
+  {"name":"Pusan National University Children's Hospital","zh":"양산부산대학교병원 어린이병원","kind":"hospital","area":{"th":"ยังซัน (นอกเมืองปูซาน)","en":"Yangsan, outside Busan"},"what":{"th":"โรงพยาบาลเด็ก มีศูนย์ฉุกเฉินเฉพาะเด็ก","en":"Children's hospital with a specialist children's emergency centre"},"why":{"th":"ศูนย์ฉุกเฉินเด็กที่คนปูซานใช้มากที่สุด","en":"The children's emergency centre most Busan families use"},"q":"Pusan National University Yangsan Hospital Children's Hospital, Yangsan, Gyeongsangnam-do","ok":"2026-11"}
+ ]}
+]}
