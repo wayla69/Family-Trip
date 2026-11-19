@@ -3842,6 +3842,8 @@ a.plchip{text-decoration:none}a.plchip .label{font-weight:700}a.plchip[aria-curr
 .xpmore>summary::-webkit-details-marker{display:none}
 .xpmore[open]>summary .chv{transform:rotate(90deg)}
 .xpmore>.row.chips{padding:0 10px 10px;margin-top:0}
+.pldstops li.lib{background:color-mix(in srgb,#1CC9A4 14%,var(--card));border-color:color-mix(in srgb,#1CC9A4 55%,var(--line))}
+.pldstops li.lib>span{color:color-mix(in srgb,#1CC9A4 60%,var(--ink));font-weight:700}
 /* explore a town: a day built on the phone */
 .bday li{min-height:48px}.bday .tb{display:grid}.bday small{color:var(--muted)}
 .bdayb{gap:10px;margin-top:10px}.bdayb .btn{flex:1;min-height:48px;justify-content:center}

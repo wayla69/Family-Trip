@@ -88,7 +88,7 @@ const mock = http.createServer((req, res) => {
       restsug: () => JSON.stringify({ areas: [{ area: en('Near the inn'), kind: 0, items: [{ name: 'Test Ramen', what: en('Ramen'), pr: '≈ ¥1,000', q: 'Test Ramen, Testland' }] }] }),
     };
     const ROUTE = () => JSON.stringify({ title: L2('ซากุระทดสอบ', 'Sakura test hop'), place: L2('โตเกียว', 'Tokyo'), countries: ['JP', 'xx1'], tz: 'Asia/Tokyo', from: '2030-01-01', why: L2('ฐานเดียว', 'One base'), season: L2('มักเย็นสบาย', 'Usually mild'), cost: L2('≈ ¥12,000 ต่อวัน', '≈ ¥12,000 a day'), ahead: [L2('ตั๋วรถไฟ', 'Train seats'), '', null],
-      days: [0, 1, 2].map((i) => ({ date: '2030-01-0' + (i + 1), town: i < 2 ? L2('โตเกียว', 'Tokyo') : L2('ฮาโกเนะ', 'Hakone'), title: L2(`วันที่ ${i + 1}`, `Day ${i + 1} in Tokyo`), emoji: '🗼', stops: [L2('สวนอุเอโนะ', 'Ueno Park')], sleep: L2('อุเอโนะ', 'Ueno'), kid: L2('เป็ดในสระ', 'Ducks on the pond'), move: i ? '' : L2('รถไฟ ≈ 45 นาที', 'Train ≈ 45 min'), junk: 'x' })) });
+      days: [0, 1, 2].map((i) => ({ date: '2030-01-0' + (i + 1), town: i < 2 ? L2('โตเกียว', 'Tokyo') : L2('ฮาโกเนะ', 'Hakone'), title: L2(`วันที่ ${i + 1}`, `Day ${i + 1} in Tokyo`), emoji: '🗼', stops: [L2('สวนอุเอโนะ', 'Ueno Park'), { ...L2('ชื่อที่ผู้ช่วยเขียน', 'As the helper wrote it'), id: 's1' }, ...(i ? [] : [{ ...L2('มุมลับ', 'A secret corner'), new: true }])], sleep: L2('อุเอโนะ', 'Ueno'), kid: L2('เป็ดในสระ', 'Ducks on the pond'), move: i ? '' : L2('รถไฟ ≈ 45 นาที', 'Train ≈ 45 min'), junk: 'x' })) });
     const eatFill = String(b.system).startsWith('You find places to eat');   // the eat library: a town's places, as JSON (with junk to clean)
     const EATS = () => JSON.stringify({ places: [{ name: 'Ichiran Test', zh: '一蘭', kind: 0, area: L2('อุเอโนะ', 'Ueno'), tag: L2('ราเมน', 'Ramen'), what: L2('ราเมน', 'Ramen in booths'), why: L2('เสิร์ฟเร็ว', 'Fast'), pr: L2('≈ ¥1,000', '≈ ¥1,000'), hours: L2('เปิดถึงดึก', 'Open late'), q: 'Ichiran Test, Ueno, Tokyo', st: 'open', url: 'https://example.com/i' },
       { name: 'ichiran test' }, { name: '' }, { name: 'Zoo Court', kind: 7, st: 'probably', url: 'javascript:alert(1)', pick: ['Day 1 · Lunch'] }] });
@@ -730,6 +730,11 @@ try {
   ok(/learned on past trips/.test(rsent) && /ยัดลก/.test(rsent) && !/\.jpg|media\//.test(rsent), 'planner: the family\'s lessons from past books go with the route (words only, never a photo)');
   ok(rsent.includes('Places we would love to go to') && rsent.includes(globalThis.__wishName), `planner: the wish list goes with the route (${globalThis.__wishName})`);
   ok(/The styles our family chose/.test(rsent) && /Food we avoid: Seafood/.test(rsent) && /Child 1 especially loves: Aquariums/.test(rsent) && !/Mimi|มีมี่/.test(rsent), 'planner: the family\'s chosen styles go with the route as words, a child as "child 1", never a name');
+  { const s1 = rt.days[0].stops[1] || {}, lines = (rsent.match(/\\ns\d+ /g) || []).length;
+    ok(/family's library of things to do/.test(rsent) && /\\ns1 /.test(rsent) && lines >= 15 && lines <= 25 && /^[0-9a-f]{20}$/.test(s1.lib || '') && s1.en !== 'As the helper wrote it' && !s1.k && rt.days[0].stops[2].new === true && !rt.days[0].stops[0].lib && rt.lib.lib === 3 && rt.lib.fresh === 1,
+      `planner (E4): the route ask carries the library's menu for Tokyo (${lines} sights by key), a stop taken from it comes back with the library's id and name, one outside it is marked new (${JSON.stringify(rt.days[0].stops)} · ${JSON.stringify(rt.lib)})`);
+    const ed = await (await pl('/api/b/planner/route', { answers, route: rt })).json();
+    ok(ed.route.days[0].stops[1].lib === s1.lib && ed.route.days[0].stops[2].new === true, 'planner (E4): the library id and the new mark survive an edit by hand'); }
   { const c2 = calls.length, tr = await pl('/api/b/planner/route', { answers, two: true }), tj = await tr.json();
     ok(tr.status === 200 && calls.length === c2 + 1 && Array.isArray(tj.routes) && tj.routes.length === 1 && tj.routes[0].label.en === 'One base' && tj.routes[0].why.th === 'ไม่ต้องย้ายกระเป๋า' && tj.routes[0].days.length === 3,
       `planner: two routes to compare in one call — a route that does not read is left out, each keeps its name and who it suits (${tr.status} ${JSON.stringify(tj).slice(0, 160)})`); }
@@ -792,6 +797,9 @@ try {
   { const m = /.{60}(?:Mimi|Mika|มีมี่|มีก้า).{60}/.exec(psent);
     ok(!m && /never name them/.test(psent), `planner: no child's name in any call — only their ages ("the children") (${m ? m[0] : 'none'})`); }
   ok(!/QZ8PLN/.test(psent), 'planner: a booking number typed in the answers never reaches the helper');
+  { const topCall = importCalls.filter((c) => c.step === 'top').pop() || {}, topSent = `${topCall.system || ''} ${topCall.user || ''}`;
+    ok(/stops taken from the family's library/.test(topSent) && /price: /.test(topSent) && (pj.job.log || []).some((l) => /stops: from the library 1 · new 1/.test(l)),
+      `planner (E4): the book's brief carries the checked facts of the stops from the library, and the job log counts them (${(pj.job.log || []).filter((l) => /stops:/.test(l)).join(' | ') || 'no line'})`); }
   const steps = importCalls.slice(-8).map((c) => c.step).join();
   ok(/top,info,restsug,kids,extras,thai/.test(steps) && !/restlist|restareas/.test(steps), `planner: structure, guide, places to eat suggested, kids, extras, Thai — no manual's restaurant list (${steps})`);
   const pd = pj.drafts.find((d) => d.slug === dj.slug), pdr = await (await fetch(BASE + '/api/b/import/' + pd.id, { headers: { cookie: ck } })).json(), ps = pdr.seed;
@@ -987,6 +995,14 @@ try {
       const t = (await db.query("SELECT date_to::text AS d FROM trips WHERE id='test-hop'")).rows[0], today = new Date().toISOString().slice(0, 10);
       let sentKey = [];
       for (let k = 0; k < 20; k++) { sentKey = (await db.query("SELECT key FROM push_sent WHERE key LIKE 'closed.test-hop.%'")).rows.map((r) => r.key); if (sentKey.length || t.d < today) break; await new Promise((r) => setTimeout(r, 150)); }
+      { const fam = (await db.query("SELECT family_id FROM trips WHERE id='test-hop'")).rows[0].family_id, keepV = (await db.query("SELECT theme->'verify' AS v FROM trips WHERE id='test-hop'")).rows[0].v;
+        await db.query("INSERT INTO sight_lib (id, family_id, place, town, town_th, tkey, nkey, kind, name, row, src, url, checked) VALUES ('e4testsquare00000000', $1, 'jp-tokyo', 'Testland', 'Testland', 'testland', 'testsquare', 'park', 'Test Square', '{}'::jsonb, 'starter', 'https://example.com/ts', now()::date)", [fam]);
+        const c5 = calls.length, s5 = await call('POST', '/api/b/planner/verify/test-hop'), j5 = await s5.json();
+        let v5; for (let k = 0; k < 40; k++) { v5 = await (await fetch(BASE + '/api/b/planner/verify', { headers: { cookie: ck } })).json(); if (v5.status !== 'running') break; await new Promise((r) => setTimeout(r, 150)); }
+        const tv5 = (await state()).trips.find((x) => x.id === 'test-hop').theme.verify;
+        ok(s5.status === 202 && j5.lib === 1 && j5.calls === 0 && calls.length === c5 && v5.status === 'done' && tv5.places[0].st === 'open' && tv5.places[0].lib === true && /checked on the web/.test(tv5.places[0].note.en),
+          `web check (E4): a place the library confirmed on the web this year is not searched again (${s5.status} ${JSON.stringify(j5)} · ${calls.length - c5} calls · ${JSON.stringify(tv5.places[0]).slice(0, 160)})`);
+        await db.query("DELETE FROM sight_lib WHERE id='e4testsquare00000000'"); await db.query("UPDATE trips SET theme = jsonb_set(theme, '{verify}', $1::jsonb) WHERE id='test-hop'", [JSON.stringify(keepV)]); }
       ok(t.d >= today ? sentKey.length === 1 : sentKey.length === 0, `web check: a closed place in a book still to come nudges the parents' phones once a day; a past book never (${t.d} · ${sentKey.join(',') || 'none'})`);
       await db.end(); }
     const pc = await browser.newContext({ viewport: { width: 390, height: 844 } }), pp = await pc.newPage();

@@ -20,7 +20,9 @@ jobs:
   # check that branch protection and the merge flow read keeps its name
   test-part:
     runs-on: ubuntu-latest
-    timeout-minutes: 25
+    # setup can be slow when Ubuntu's package mirror is (Nov 2026: 18–24 min of apt downloads left the tests a minute and the part was
+    # cancelled); the packages are cached below and the tests have their own limit, so a slow mirror no longer eats the test time
+    timeout-minutes: 45
     strategy:
       fail-fast: false
       matrix:
@@ -44,15 +46,33 @@ jobs:
           node-version-file: .nvmrc
           cache: npm
       - run: npm ci
+      # the Debian packages (Chromium's libraries, poppler, ffmpeg) and the browser are kept between runs: apt then reads them from
+      # disk instead of the mirror; a new runner image or a new Playwright makes a fresh cache
+      - name: Restore the downloaded packages and the browser
+        uses: actions/cache@v4
+        with:
+          path: |
+            ~/apt-debs
+            ~/.cache/ms-playwright
+          key: setup-${{ runner.os }}-${{ hashFiles('package-lock.json') }}-ffmpeg-poppler-v1
+      - name: Put the cached packages where apt looks
+        run: |
+          echo 'Acquire::Retries "3";' | sudo tee /etc/apt/apt.conf.d/80-retries >/dev/null
+          echo 'Binary::apt::APT::Keep-Downloaded-Packages "true";' | sudo tee /etc/apt/apt.conf.d/81-keep >/dev/null
+          sudo rm -f /etc/apt/apt.conf.d/docker-clean
+          if ls ~/apt-debs/*.deb >/dev/null 2>&1; then sudo cp ~/apt-debs/*.deb /var/cache/apt/archives/; fi
       - run: npx playwright install --with-deps chromium
       - name: pdftotext for the PDF-import test and ffmpeg for video clips (as in the production image)
         run: sudo apt-get install -y --no-install-recommends poppler-utils ffmpeg
+      - name: Keep the packages for the next run
+        run: mkdir -p ~/apt-debs && cp /var/cache/apt/archives/*.deb ~/apt-debs/ 2>/dev/null || true
       - name: S3 emulator for the bucket adapter
         run: |
           mkdir -p "$RUNNER_TEMP/s3"
           npx s3rver -d "$RUNNER_TEMP/s3" -p 4569 --configure-bucket mb-test --silent &
           for i in $(seq 1 20); do curl -s -o /dev/null localhost:4569 && break; sleep 0.5; done
       - name: End-to-end + infra tests (${{ matrix.part.name }})
+        timeout-minutes: 20
         run: npm test
         env:
           TEST_ONLY: ${{ matrix.part.only }}

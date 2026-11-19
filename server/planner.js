@@ -66,43 +66,68 @@ Return {"title":{"th","en"} (short, fun, the place's name in it), "place":{"th",
 "kid":{"th","en"} (the children's best bit of the day, a few words), "move":{"th","en"} (only on a day we change towns or arrive or leave: how and about how long, e.g. "Shinkansen ≈ 2 h 15"; else ""), "rain":{"th","en"} (a nearby indoor swap for a wet day, a few words)}]}.
 One day per date${a.from ? ` from ${a.from} to ${a.to}` : ' (pick sensible dates in the month asked)'}. Thai is natural Thai a Thai parent says (place names the way Thais say them).`;
 
+// E4 (docs/PLACES-ECOSYSTEM.md F5): the family's library of things to do for the towns this plan names, as a short menu the helper
+// builds the days from — a short key each ("s3"), not the facts (those stay on the server and go into the book later). ♥ = the
+// family's wish list (#/explore), fitted in first. A stop outside the menu is allowed only marked "new".
+const AGEW = ['0–2', '3–5', '6–9', '10+'];
+function menuText(menu) {
+  if (!Array.isArray(menu) || !menu.length) return '';
+  const io = { in: 'indoors', out: 'outdoors', both: 'in and out' };
+  const line = (x) => { const best = (x.ages || []).map((a, i) => (a === 2 ? AGEW[i] : '')).filter(Boolean).join(', '), no = (x.ages || []).map((a, i) => (a === 0 ? AGEW[i] : '')).filter(Boolean).join(', ');
+    return `${x.k}${x.wish ? ' ♥' : ''} ${x.name.en} (${x.kind}${best ? `; best for ${best}` : ''}${no ? `; not for ${no}` : ''}; ${io[x.io] || 'outdoors'}; ≈ ${x.hrs} h)`; };
+  return `\n\nThe family's library of things to do in these towns (each checked on the web). Build each day's stops from it: give every stop the menu key as "id" (e.g. {"th","en","id":"s3"}), and use the name as written. ♥ = on the family's wish list — fit those in first. Add a place that is not in the menu only when nothing in it fits that day, and mark it "new": true.\n${menu.map((t) => `${t.town.en}:\n${t.sights.map(line).join('\n')}`).join('\n')}`;
+}
+// the menu's keys → the library's ids; a stop the helper took from the menu carries the library's id and its names
+function libStops(days, keys) {
+  let lib = 0, fresh = 0;
+  for (const d of days) d.stops = d.stops.map((s) => {
+    const m = s.k && keys && keys.get(s.k);
+    if (m) { lib++; return { th: m.name.th || s.th, en: m.name.en || s.en, lib: m.id }; }
+    if (s.lib) { lib++; return { th: s.th, en: s.en, lib: s.lib }; }
+    if (s.new) fresh++;
+    return s.new ? { th: s.th, en: s.en, new: true } : { th: s.th, en: s.en };
+  });
+  return { lib, fresh };
+}
 // optional lines of a route or a day: kept only when they say something
 const more = (o, keys) => Object.fromEntries(Object.entries(keys).map(([k, n]) => [k, o && o[k] ? i18n(o[k], n) : null]).filter(([, v]) => v && (v.th || v.en)));
 // the helper's answer → a route the page can show and edit; anything malformed is dropped, the days are one per date
-function cleanRoute(r, a) {
+function cleanRoute(r, a, keys) {
   if (!r || typeof r !== 'object' || !Array.isArray(r.days) || !r.days.length) throw Object.assign(new Error('route'), { code: 'route' });
   const days = r.days.slice(0, 31).map((d) => ({
     date: DATE_RE.test(d && d.date) ? d.date : '', town: i18n(d && d.town, 80), title: i18n(d && d.title, 120), emoji: one(d && d.emoji, 8) || '📍',
-    stops: (Array.isArray(d && d.stops) ? d.stops : []).slice(0, 4).map((s) => i18n(s, 80)).filter((s) => s.en || s.th), sleep: i18n(d && d.sleep, 120),
+    stops: (Array.isArray(d && d.stops) ? d.stops : []).slice(0, 4).map((s) => ({ ...i18n(s, 80), ...(s && /^s\d{1,3}$/.test(s.id || '') ? { k: s.id } : {}), ...(s && /^[0-9a-f]{20}$/.test(s.lib || '') ? { lib: s.lib } : {}), ...(s && s.new === true ? { new: true } : {}) })).filter((s) => s.en || s.th), sleep: i18n(d && d.sleep, 120),
     ...more(d, { kid: 120, move: 120, rain: 120 }),
   }));
   const from = a.from || (DATE_RE.test(r.from) ? r.from : days[0].date), tz = /^[A-Za-z_]+\/[A-Za-z_+-]+(\/[A-Za-z_+-]+)?$/.test(r.tz || '') ? r.tz : 'Asia/Bangkok';
   // the dates are the family's: day i is from + i, whatever the helper wrote
   if (DATE_RE.test(from)) days.forEach((d, i) => { d.date = new Date(Date.parse(from) + i * 864e5).toISOString().slice(0, 10); });
+  const lib = libStops(days, keys);
   const ahead = (Array.isArray(r.ahead) ? r.ahead : []).slice(0, 5).map((x) => i18n(x, 120)).filter((x) => x.en || x.th);
   return { ...more(r, { label: 40, why: 200, season: 200, cost: 200 }), ...(ahead.length ? { ahead } : {}), title: i18n(r.title, 80), place: i18n(r.place, 80), countries: (Array.isArray(r.countries) ? r.countries : []).map((c) => String(c).toLowerCase()).filter((c) => /^[a-z]{2}$/.test(c)).slice(0, 6),
-    tz, from: days[0].date, to: days[days.length - 1].date, days };
+    tz, from: days[0].date, to: days[days.length - 1].date, days, ...(lib.lib || lib.fresh ? { lib } : {}) };
 }
 // the parents' edits come back from the page: the same cleaning, the dates laid out again from the first day
 const cleanEdited = (r, a) => cleanRoute(r, { ...a, from: (r && DATE_RE.test(r.from) ? r.from : a.from) });
 
-async function route({ client, model, answers, who, prev, ask, take, onUsage, two, family }) {
+async function route({ client, model, answers, who, prev, ask, take, onUsage, two, family, menu }) {
+  const keys = new Map(); for (const t of menu || []) for (const x of t.sights) keys.set(x.k, x);
   if (take && !(await take())) throw Object.assign(new Error('limit'), { code: 'limit' });
   // the import's redaction runs on the answers too: a booking number typed into "flights" never leaves the server
   // what this family learned on past trips (bookshelf.js familyLessons): follow it — the children's rest, short travel days, the food that worked
   const past = family ? `\n\nWhat this family learned on past trips (follow it where it fits this trip):\n${family}` : '';
-  const { text } = require('./bookimport').redact(routeUser(answers, who, prev, ask) + past + (two && !prev ? TWO : ''));
+  const { text } = require('./bookimport').redact(routeUser(answers, who, prev, ask) + past + menuText(menu) + (two && !prev ? TWO : ''));
   const msg = await client.messages.stream({ model, max_tokens: 8000, system: ROUTE_SYS, messages: [{ role: 'user', content: text }] }).finalMessage();
   if (onUsage) { try { onUsage(msg.usage || {}); } catch (_) { /* counting never breaks planning */ } }
   if (msg.stop_reason === 'refusal') throw Object.assign(new Error('refused'), { code: 'refusal' });
   const t = msg.content.filter((b) => b.type === 'text').map((b) => b.text).join('').replace(/^```(?:json)?\s*/m, '').replace(/```\s*$/m, '').trim();
   let r; try { r = JSON.parse(t.slice(t.indexOf('{'))); } catch (e) { throw Object.assign(new Error('route json'), { code: 'json' }); }
   if (two && !prev) {   // two routes to choose between: both cleaned the same way; one that does not read is left out, none → an error
-    const list = (Array.isArray(r.routes) ? r.routes : []).slice(0, 2).map((x) => { try { return cleanRoute(x, answers); } catch (_) { return null; } }).filter(Boolean);
+    const list = (Array.isArray(r.routes) ? r.routes : []).slice(0, 2).map((x) => { try { return cleanRoute(x, answers, keys); } catch (_) { return null; } }).filter(Boolean);
     if (!list.length) throw Object.assign(new Error('route'), { code: 'route' });
     return list;
   }
-  return cleanRoute(r, answers);
+  return cleanRoute(r, answers, keys);
 }
 
 // "where shall we go?": a few places that suit this family, before there is a destination (one call). Flight times are from Bangkok and
@@ -138,10 +163,18 @@ function keepAnswers(a) {
   return c;
 }
 
+// the facts the library holds for the route's stops (E4): the book takes them as they are — no other hours or prices invented
+function sightFacts(rt, sights) {
+  if (!sights || !sights.size) return '';
+  const seen = new Set(), rows = [];
+  for (const d of rt.days) for (const st of d.stops) { const x = st.lib && sights.get(st.lib); if (!x || seen.has(x.id)) continue; seen.add(x.id);
+    rows.push(`${x.name.en}${x.local ? ` (${x.local})` : ''} — ${(x.what && x.what.en) || ''}; for the children: ${(x.why && x.why.en) || ''}${x.tip && x.tip.en ? `; tip: ${x.tip.en}` : ''}; ${{ in: 'indoors', out: 'outdoors', both: 'in and out' }[x.io] || 'outdoors'}; ≈ ${x.hrs} h; price: ${(x.price && x.price.en) || '—'}${x.book === 'req' ? '; book ahead' : x.book === 'rec' ? '; booking advised' : ''}; map: ${x.q || x.name.en}`); }
+  return rows.length ? `\n\nThe stops taken from the family's library, with facts checked on the web — use these facts for those stops (do not invent other hours or prices), and the map query as the stop's address:\n${rows.join('\n')}` : '';
+}
 // the brief the book is written from: the answers, then the agreed route day by day
-function brief(answers, rt, who, eats) {
+function brief(answers, rt, who, eats, sights) {
   const days = rt.days.map((d, i) => `Day ${i + 1} (${d.date}) — ${d.title.en}; town: ${d.town.en}; main stops: ${d.stops.map((s) => s.en).join(', ') || '—'}; sleep: ${d.sleep.en || d.town.en}${d.move ? `; getting there: ${d.move.en}` : ''}${d.kid ? `; the children's best bit: ${d.kid.en}` : ''}${d.rain ? `; if it rains: ${d.rain.en}` : ''}`).join('\n');
-  return { text: `${answersText(answers, who)}\n\nTrip: ${rt.title.en} — ${rt.place.en}, ${rt.from} to ${rt.to}, time zone ${rt.tz}\nThe agreed route:\n${days}${eats ? `\n\nPlaces to eat already in the family's library — use them (the name exactly) for the days' meal picks where they fit the day's area:\n${eats.groups.map((g) => `${g.area.en}: ${g.items.map((x) => `${x.name}${x.tag ? ` (${x.tag.en || x.tag})` : ''}`).join('; ')}`).join('\n')}` : ''}`,
+  return { text: `${answersText(answers, who)}\n\nTrip: ${rt.title.en} — ${rt.place.en}, ${rt.from} to ${rt.to}, time zone ${rt.tz}\nThe agreed route:\n${days}${eats ? `\n\nPlaces to eat already in the family's library — use them (the name exactly) for the days' meal picks where they fit the day's area:\n${eats.groups.map((g) => `${g.area.en}: ${g.items.map((x) => `${x.name}${x.tag ? ` (${x.tag.en || x.tag})` : ''}`).join('; ')}`).join('\n')}` : ''}${sightFacts(rt, sights)}`,
     facts: CF.factsFor(rt.countries), who };
 }
 
@@ -219,4 +252,4 @@ async function dayAsk({ client, model, day, place, forecast, ask, who, tz, take,
   try { return JSON.parse(t.slice(t.indexOf('{'))); } catch (e) { throw Object.assign(new Error('day json'), { code: 'json' }); }
 }
 
-module.exports = { cleanAnswers, keepAnswers, whoLine, route, ideas, cleanRoute: cleanEdited, brief, slugOf, daysOf, dayAsk, cleanDay, MAPS, LIKES, NEEDS };
+module.exports = { cleanAnswers, keepAnswers, whoLine, route, ideas, cleanRoute: cleanEdited, menuText, libStops, brief, slugOf, daysOf, dayAsk, cleanDay, MAPS, LIKES, NEEDS };
