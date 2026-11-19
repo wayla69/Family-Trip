@@ -114,8 +114,11 @@ async function syncStarter(pool, family, index) {
   const ver = `${family}:${h.digest('hex')}`;
   const was = (await pool.query("SELECT value FROM settings WHERE key='eat_starter'")).rows[0];
   if (was && was.value === ver) return 0;
-  let n = 0;
-  for (const f of files) n += await put(pool, family, starterRows(f, index), 'starter', null);
+  let n = 0; const keep = [];
+  for (const f of files) { const rows = starterRows(f, index); for (const r of rows) keep.push(idOf(family, r.tkey, r.nkey)); n += await put(pool, family, rows, 'starter', null); }
+  // a built-in place the files no longer hold (a later check found it closed) leaves the library too — never a book's or the helper's row,
+  // and a place the parents took out keeps its mark, so it stays out if a later list names it again
+  if (keep.length) await pool.query("DELETE FROM eat_lib WHERE family_id=$1 AND src='starter' AND NOT gone AND NOT (id = ANY($2::text[]))", [family, keep]);
   await pool.query("INSERT INTO settings (key, value) VALUES ('eat_starter', $1) ON CONFLICT (key) DO UPDATE SET value = EXCLUDED.value", [ver]);
   return n;
 }
