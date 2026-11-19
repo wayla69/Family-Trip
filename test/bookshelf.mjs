@@ -516,6 +516,19 @@ ok((await fetch(BASE + '/api/b/media/ph-test-0001', { method: 'DELETE', headers:
   ok((await fetch(BASE + '/api/b/health/errors', { method: 'DELETE', headers: H })).ok && !(await (await fetch(BASE + '/api/b/health/errors', { headers: { cookie: ck } })).json()).errors.length, 'phone problems: the parents can clear the list');
   let slow = 0; for (let k = 0; k < 25; k++) if ((await err({ ...one, line: 1000 + k })).status === 429) slow++;
   ok(slow >= 1, `phone problems: a phone sending in a loop is slowed (${slow} of 25 refused)`); }
+// the library of places to eat with the app's built-in list (server/eats): the towns carry their country; a built-in place says so;
+// a place of our own book wins over a built-in one of the same name
+{ const lib = await (await fetch(BASE + '/api/b/eatlib', { headers: { cookie: ck } })).json();
+  const tok = (lib.towns || []).find((t) => t.tkey === 'tokyo'), mac = (lib.towns || []).find((t) => t.tkey === 'macau');
+  ok(lib.towns.length > 100 && tok && tok.n >= 12 && !tok.own && tok.country && tok.country.cc === 'jp' && mac && mac.own > 100 && mac.n >= mac.own, `eat library: the built-in list fills the towns of the picture library, each with its country; our own books' towns count their own (${lib.towns.length} towns · Tokyo ${tok && tok.n} · Macau ${mac && mac.n}/${mac && mac.own} ours)`);
+  const tk = (await (await fetch(BASE + '/api/b/eatlib?town=tokyo', { headers: { cookie: ck } })).json()).places;
+  ok(tk.every((x) => x.src === 'starter' && !x.st && !x.checked && x.what && x.pr && x.q), 'eat library: a built-in place is marked as one — not checked, no day');
+  const dup = (await pool.query("SELECT name, count(*)::int n FROM eat_lib WHERE tkey='macau' GROUP BY nkey, name HAVING count(*) > 1")).rows;
+  // the names our Hong Kong–Macau book and the built-in Macau file both hold: each is one row, and it is the book's
+  const E = createRequire(import.meta.url)('../server/eatlib.js'), idx = JSON.parse(fs.readFileSync('public/stock/index.json', 'utf8')), seed = JSON.parse(fs.readFileSync('server/seeds/hk-macau-2026.json', 'utf8'));
+  const mine = new Set(E.rowsOfBook(seed.info.restaurants, idx).filter((x) => x.tkey === 'macau').map((x) => x.nkey)), shared = E.starterRows('mo-1.json', idx).filter((x) => mine.has(x.nkey)).map((x) => x.nkey);
+  const both = shared.length ? (await pool.query("SELECT src FROM eat_lib WHERE tkey='macau' AND nkey = ANY($1)", [shared])).rows : [];
+  ok(!dup.length && both.length === shared.length && both.every((x) => x.src === 'book'), `eat library: a place in both our book and the built-in list is kept once, as the book's (${shared.length} shared: ${shared.slice(0, 4).join(', ')})`); }
 await pool.end();
 
 console.log(failures ? `\n${failures} FAILED` : '\nALL PASSED');

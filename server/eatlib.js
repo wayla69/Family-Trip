@@ -107,6 +107,7 @@ function starterRows(file, index) {
   return rows;
 }
 async function syncStarter(pool, family, index) {
+  if (process.env.EATS_STARTER === '0') return 0;   // a server that wants only its own books' places (the tests of the library itself)
   const files = starterFiles(); if (!files.length) return 0;
   const h = crypto.createHash('sha1'); for (const f of files) h.update(f).update(fs.readFileSync(path.join(EATS_DIR, f)));
   const ver = `${family}:${h.digest('hex')}`;

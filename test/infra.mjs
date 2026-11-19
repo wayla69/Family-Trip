@@ -175,6 +175,16 @@ if (process.env.BASE) {
   const a = await health(pgUp, stDown, false), b = await health(pgUp, stDown, true), c = await health(pgDown, stUp, false), d = await health(pgUp, stUp, true);
   ok(a.ok && !b.ok && /storage/.test(b.why) && !c.ok && /postgres/.test(c.why) && d.ok, 'health: storage down → deploy check ok, full check fails; Postgres down → both fail'); }
 
+// the built-in list of places to eat (server/eats, scripts/eats-lint.mjs): every file reads, every row has the book's shape in both
+// languages, and the checker catches what it should
+{ const { lintEats } = await import('../scripts/eats-lint.mjs');
+  const r = lintEats();
+  ok(!r.errs.length && r.rows > 1000, `eats: the built-in list is clean (${r.rows} places in ${r.towns} towns)` + (r.errs.length ? ' — ' + r.errs.slice(0, 6).join(' · ') : ''));
+  const E = require('../server/eatlib.js'), idx = JSON.parse(fs.readFileSync(path.resolve('public/stock/index.json'), 'utf8'));
+  const rows = E.starterRows('th-1.json', idx), bk = rows.filter((x) => x.tkey === 'bangkok');
+  ok(bk.length >= 12 && bk[0].town === 'Bangkok' && /[\u0E00-\u0E7F]/.test(bk[0].town_th) && bk.every((x) => x.row.what && x.row.what.th && x.row.q && !x.row.hours && !x.row.pick),
+    `eats: a file's rows go under the picture library's own name for the town (${bk.length} in ${bk[0] && bk[0].town} / ${bk[0] && bk[0].town_th})`); }
+
 // the stock art library (docs/STOCK-ART.md): the shipped index is clean, the lint catches what §6.3 says, stock: ids resolve only when approved
 { const STOCK = require('../server/stock.js');
   const errs = await STOCK.lint();

@@ -130,7 +130,7 @@ const dbName = 'mb_story_' + Date.now().toString(36); await admin.query(`CREATE 
 const u = new URL(process.env.TEST_DATABASE_URL); u.pathname = '/' + dbName;
 const port = await freePort(), data = fs.mkdtempSync(path.join(os.tmpdir(), 'mb-story-'));
 const srv = spawn(process.execPath, ['server/index.js'], { cwd: process.cwd(), stdio: ['ignore', 'ignore', 'inherit'],
-  env: { ...process.env, PORT: String(port), DATA_DIR: data, DATABASE_URL: u.toString(), ANTHROPIC_API_KEY: 'test-key', ANTHROPIC_BASE_URL: `http://localhost:${mockPort}`, OPENAI_API_KEY: 'test-openai', OPENAI_BASE_URL: `http://localhost:${mockPort}`, STORY_DAILY: '18', PLANNER_MONTHLY: '1', PHOTO_AI: '1', ART_RUNS: '2', BACKUP_TOKEN: 'story-backup-token-0123456789' } });
+  env: { ...process.env, PORT: String(port), DATA_DIR: data, DATABASE_URL: u.toString(), ANTHROPIC_API_KEY: 'test-key', ANTHROPIC_BASE_URL: `http://localhost:${mockPort}`, OPENAI_API_KEY: 'test-openai', OPENAI_BASE_URL: `http://localhost:${mockPort}`, STORY_DAILY: '18', PLANNER_MONTHLY: '1', EATS_STARTER: '0', PHOTO_AI: '1', ART_RUNS: '2', BACKUP_TOKEN: 'story-backup-token-0123456789' } });
 const BASE = `http://localhost:${port}`;
 try {
   for (let i = 0; i < 80; i++) { try { if ((await fetch(BASE + '/healthz')).ok) break; } catch (_) {} await new Promise((r) => setTimeout(r, 250)); }
