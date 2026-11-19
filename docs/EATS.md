@@ -9,7 +9,7 @@ Owner, 19 Nov 2026: "ร้านอาหารด้วย แนวเดี�
 |---|---|---|
 | `helper` | A parent pressed "ask the helper to find and check places" for a town: one call with web search | Yes, on the day shown on the card |
 | `book` | The "where to eat" of a book the family has (the two bundled books: 506 places) | As the book's manual was — by the owner |
-| `starter` | The app's built-in list, `server/eats/<cc>-<n>.json`: 3,139 places in all 207 cities of the picture library | **Partly** — 648 places carry the month a web search confirmed them open; see below |
+| `starter` | The app's built-in list, `server/eats/<cc>-<n>.json`: 3,089 places in all 207 cities of the picture library | **Partly** — 648 places carry the month a web search confirmed them open; see below |
 
 A helper row replaces a book row of the same name, a book row replaces a built-in one; never the other way round. A place the parents
 take out stays out. The web check of a book (planner phase 3) writes what it found on the library's row of the same name.
@@ -25,7 +25,7 @@ did run it usually showed that a place exists and where it is, rarely that it is
 
 - Every built-in place is shown as "from the app's built-in list · not checked today — check before you go", with no opening hours.
 - A row may carry `"ok": "YYYY-MM"` = the month a web search showed it trading (its own site, a tourism office, a dated 2025–2026
-  listing or review). Only then the card says "open" and "web check <month>". 648 rows have it (in 206 of the 207 towns).
+  listing or review). Only then the card says "open" and "web check <month>". 648 rows have it (in 206 of the 207 towns); every row the checks left in doubt was taken out.
 - Prices are rough ranges from memory. The least reliable: Argentine pesos, Turkish lira, Myanmar kyat (inflation).
 - Street names and numbers inside the map queries are from memory; the name, district and town are the reliable part.
 - About 30 places the workers had planned were dropped because a search showed them closed or moved.
@@ -76,6 +76,22 @@ had not reached — so every town has now had a web check. Page fetches were sti
 - Rows worth one more look: The Empire Cafe (Kandy), Bear's Paw Bakery (Jasper), Pandeli (Istanbul), Al Dhafra (Abu Dhabi),
   Plage Café (Rio), Fortín Cataratas (Iguazú), Petit Royal (Zermatt), Pantarul (Dubrovnik), Kaffee Mayer (Bratislava),
   Vechnoe Nebo (Astana), Bilig Vegan Bistro (Ulaanbaatar, new address unknown), Mr Shi's Dumplings (Beijing).
+
+### Doubtful rows taken out (19 Nov 2026)
+
+Owner: "อะไรที่ไม่แน่ใจเอาออกก่อนได้". Every row the five passes left in doubt and could not confirm was removed — 50 places, 3,139 →
+3,089: a sign of closing or reports that disagree (Rangoon Tea House, Bear's Paw Bakery, Pandeli, Hearts Café, Live Dim Sum House,
+Hôtel Heintz, Les Trois Sifflets), the wrong town (Mojsa, which is in Puno), no trace when searched for by name (the eight Thai
+places put back earlier and still not found in Thai — Ban Phleng, Dee Amnuay Choke, Doppio, King Ocha, Lab Nua, Peng Duck Noodles,
+both Rabieng/Rabiang Pa — plus Flour Power Bakery, Khao Soi Omar, Leng Kee, Jep's, Star Night Bazaar, Sharky's, Vechnoe Nebo,
+Gula Gula, Delírio Tropical, Mr Shi's, Wenyu, Cocottes, Kuldse Notsu, Reel Dingle Fish, Heaven Restaurant, Kihei Caffe, Ovejitas,
+two Gobi rows, Raven, Prašná Bašta, Taman Laut Handayani, Can Majó, Conesa, La Paradeta, The Tea Rooms 1892, the Matsumoto Karaage
+Center station branch, El Buen Pastor, Nabataean Tent), a place only a few years old or last reviewed in 2024 (Il Pescato
+Cucinato, Marina Piccola), and the rows the checkers added from an undated listing (Captain's in Aqaba, Reem Baladi, A Gan,
+Pizzeria Marcello). A row with `ok` was never touched. Rows that are long-running and well known but have no dated source this
+year stay, marked as not checked.
+
+The lint now allows 8–18 places a town (was 10–18): Yangon, Bagan/Inle and the Gobi have 9, Petra 11 — an honest short list.
 
 ### The fifth pass (19 Nov 2026)
 
