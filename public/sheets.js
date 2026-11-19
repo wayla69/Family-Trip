@@ -958,7 +958,7 @@ const A = {
   planadults(b) { pln.a.adults = Math.max(1, Math.min(8, (parseInt(pln.a.adults, 10) || 2) + (+b.dataset.v))); planKeepA(); const el = $('#pladults'); if (el) el.textContent = pln.a.adults; },
   plansug(b) {   // a suggested place: it finishes the word being typed, else it is added to the list
     const parts = String(pln.a.dest || '').split(',').map((x) => x.trim()).filter(Boolean), name = b.dataset.v, last = parts[parts.length - 1] || '';
-    if (last && plNorm(name).includes(plNorm(last)) && plNorm(last).length >= 2) parts[parts.length - 1] = name; else parts.push(name);
+    if (last && plNorm(last).length >= 2 && (b.dataset.r || plNorm(name).includes(plNorm(last)))) parts[parts.length - 1] = name; else parts.push(name);   // data-r: offered for what is being typed (USA → The United States)
     pln.a.dest = parts.join(', ').slice(0, 200); planKeepA();
     const el = $('#pldest'); if (el) el.value = pln.a.dest; const sg = $('#plsug'); if (sg) sg.innerHTML = plSugHtml(pln.a.dest);
   },
