@@ -9,7 +9,7 @@ Owner, 19 Nov 2026: "ร้านอาหารด้วย แนวเดี�
 |---|---|---|
 | `helper` | A parent pressed "ask the helper to find and check places" for a town: one call with web search | Yes, on the day shown on the card |
 | `book` | The "where to eat" of a book the family has (the two bundled books: 506 places) | As the book's manual was — by the owner |
-| `starter` | The app's built-in list, `server/eats/<cc>-<n>.json`: 3,124 places in all 207 cities of the picture library | **Partly** — 513 places carry the month a web search confirmed them open; see below |
+| `starter` | The app's built-in list, `server/eats/<cc>-<n>.json`: 3,141 places in all 207 cities of the picture library | **Partly** — 632 places carry the month a web search confirmed them open; see below |
 
 A helper row replaces a book row of the same name, a book row replaces a built-in one; never the other way round. A place the parents
 take out stays out. The web check of a book (planner phase 3) writes what it found on the library's row of the same name.
@@ -25,7 +25,7 @@ did run it usually showed that a place exists and where it is, rarely that it is
 
 - Every built-in place is shown as "from the app's built-in list · not checked today — check before you go", with no opening hours.
 - A row may carry `"ok": "YYYY-MM"` = the month a web search showed it trading (its own site, a tourism office, a dated 2025–2026
-  listing or review). Only then the card says "open" and "web check <month>". 513 rows have it (in 174 of the 207 towns).
+  listing or review). Only then the card says "open" and "web check <month>". 632 rows have it (in 200 of the 207 towns).
 - Prices are rough ranges from memory. The least reliable: Argentine pesos, Turkish lira, Myanmar kyat (inflation).
 - Street names and numbers inside the map queries are from memory; the name, district and town are the reliable part.
 - About 30 places the workers had planned were dropped because a search showed them closed or moved.
@@ -77,6 +77,33 @@ had not reached — so every town has now had a web check. Page fetches were sti
   Plage Café (Rio), Fortín Cataratas (Iguazú), Petit Royal (Zermatt), Pantarul (Dubrovnik), Kaffee Mayer (Bratislava),
   Vechnoe Nebo (Astana), Bilig Vegan Bistro (Ulaanbaatar, new address unknown), Mr Shi's Dumplings (Beijing).
 
+### The fourth pass (19 Nov 2026)
+
+Owner: "ตรวจให้หมดอีกที และอันไหนที่ยังไม่มีเพิ่มได้เลย". Nine workers, 19 searches each, **searching in the local language**, on
+the 33 towns with nothing confirmed, the short lists, the fourteen Thai places put back, and single rows earlier passes doubted.
+
+- `ok` 513 → 632 rows; towns with nothing confirmed 33 → **7**: Cinque Terre, Nagano, Yangon, Bagan/Inle, Cusco, Lampang, Rayong
+  (search summaries gave only undated pages — these need a tool that opens Google Maps, Wongnai or Tabelog pages).
+- Filled: Mae Hong Son 12 → 16 (four cafés from the provincial commerce office's list), Guilin 11 → 14, Langkawi, Hue, Nagasaki,
+  Koh Chang, Agra (+2), the High Tatras (+3), Jordan (+2), Nuwara Eliya (+2, it had none). Still short: Yangon 11, the Gobi 11,
+  Bagan/Inle 12 — nothing there could be confirmed, so nothing was added.
+- Removed: Plage Café (Rio — Parque Lage shut for restoration until 2027), Uoyo (Nikko, closed → a yuba soba shop near Toshogu),
+  Pradeep (Sigiriya), a rooftop café-bar in Langkawi, Bilig (Ulaanbaatar — reports conflict on whether it trades).
+- Kruger's camp rows carry the restaurants' names after the Oct 2026 change of operators: Cattle Baron Skukuza, Sabie River Café
+  (Lower Sabie), Tindlovu at Satara and Olifants (the last two unmarked: the source's date was not shown).
+- The fourteen Thai places put back: found in Thai and re-addressed — Jae Lek (a Thai cook shop on Niphat Uthit 2, not seafood;
+  renamed "Jae Lek Thai Restaurant"), Nai Wan, Roti Mina, Pa Sri Bua, Guang Tang Noodles (Michelin listing → `ok`). A Thai search
+  still found **no trace** of Ban Phleng, Dee Amnuay Choke, King Ocha, Lab Nua, Peng Duck Noodles, Rabieng Pa (Korat), Rabiang Pa
+  (Khao Yai); Flour Power Bakery only on Wikivoyage; Doppio's listing showed it shut at the time. They stay, unmarked, on the
+  owner's word.
+- Settled as trading: Petit Royal (Zermatt), The Empire Cafe (Kandy), Pantarul (Dubrovnik), Pizzeria Libretto (University Ave),
+  Country Terrace (Gozo), Al Dhafra (Abu Dhabi, re-addressed), Artomoro (Labuan Bajo — rewritten: grilled fish, not Italian).
+- Still unknown: Bear's Paw Bakery (Jasper), Pandeli (Istanbul), Vechnoe Nebo (Astana), Hôtel Heintz (Vianden, shut Nov–Mar),
+  Les Trois Sifflets (Vevey), Kuay Tiew Kang Ban Phe (a listing says closed until May 2027), Sharky's (Yangon), Sanon (Bagan),
+  La Tablita's street (El Calafate), "The Tea Rooms 1892" (Melbourne).
+- **A place taken out of the files now leaves every family's library** on the next boot (`syncStarter`); before, the built-in
+  list was only ever added to. A book's or the helper's row is never removed, and a place the parents took out stays out.
+
 ### What had a web check in the first pass
 
 | Region | Checked | Not checked |
@@ -96,9 +123,8 @@ had not reached — so every town has now had a web check. Page fetches were sti
 
 ### The weakest towns (check these first)
 
-After the third pass: Myanmar (Yangon, Bagan/Inle) · the Gobi · Hue · Patagonia · Kruger · Bhutan · Sri Lanka's hills · Cusco ·
-the Japanese towns with no `ok` (Takayama, Kanazawa, Nagano, Nagasaki, Kumamoto) · the High Tatras part of Bratislava's list
-(three places left) · Agra (two places left).
+After the fourth pass: Myanmar (Yangon, Bagan/Inle) · the Gobi · Cusco · Cinque Terre · Nagano · Lampang · Rayong · Bhutan (one
+place confirmed) · Hue · Patagonia.
 
 ### Entries that are not one named restaurant
 
