@@ -67,6 +67,9 @@ Prices and hours change; the card still says "check before you go". British spel
 - at least two free ones;
 - a playground or park, and a food market or street.
 
+A small or remote town where an honest web check finds fewer than 15 places it can confirm (a current page showing it open and its
+price) carries `"thin": true` on the town: it needs 4 or more and the rainy-day rule does not apply. Never pad a town to reach 15.
+
 Left out: anything closed, under renovation for the coming year, adults-only or with no web page newer than 2025. Also left out: casinos,
 nightlife, and religious sites that ask visitors to keep away.
 
@@ -75,3 +78,18 @@ nightlife, and religious sites that ask visitors to keep away.
 - **Nov 2026, E2:** 29 towns, 459 sights (Japan, Korea, Taiwan, Hong Kong, Macau, Singapore, Thailand, Vietnam, Malaysia, Indonesia, Australia, New Zealand, Switzerland, Paris, London).
 - **19 Nov 2026, E6:** 8 more towns, 128 sights — Okinawa 16, Jeju 15, Ho Chi Minh City 15, Phu Quoc 16, Penang 16, Koh Samui 16, Dubai 17, Shanghai 16 (37 towns, 587 sights). Every row was confirmed by a web search that session, but the official sites themselves could not be opened from the session's network, so most `src` are dated 2025–2026 guides, tourism offices or news pages the search showed. Weakest prices, kept with "≈" and a "check" note: Eco Land (Jeju, sources ₩14,000–21,000), Aqua Planet Jeju (online prices lower), Dubai Safari Park (new season's price not out), the Shanghai Science and Technology and Natural History museums (adult price on the booking page only), ESCAPE Penang, Paradise Park Farm (Samui). Left out for want of a current, dated source: Nago Pineapple Park, Bios no Oka, JUNGLIA, Ryukyu Mura (Okinawa); Teddy Bear Museum, Camellia Hill (Jeju); VinWonders Grand Park, tiNiWorld, Saigon Skydeck, the city museums (Ho Chi Minh City); Tropical Spice Garden (Penang); Coco Splash, the Samui Aquarium, Butterfly Hill (closed), Secret Buddha Garden (Samui); Haichang Ocean Park (Shanghai). The twice-yearly re-check (1 January, 1 July) now covers this list too.
 - **19 Nov 2026, E2 round 3:** 8 more towns — Disneyland Paris 10 (a resort: 10 or more), Rome 16, Barcelona 15, Munich 15, Amsterdam 15, New York 16, California 15, Orlando 15. Checked the same way (web search, official sites not reachable from the session). Softer prices to re-check first: Disneyland Paris (the gate price only; less online by date); Rome — the Zoology Museum (€7 or €7.50), Casina di Raffaello (a spring 2026 notice); Barcelona — Park Güell (official tables disagree), Tibidabo's winter days, the Aquarium's adult price; Munich — SEA LIFE, BMW Museum, Bavaria Filmstadt (2026 listings), Deutsches Museum single tickets; Amsterdam — the Maritime Museum's child price, the Blue Boat adult fare, Ridammerhoeve (free or €3.25); New York — the Natural History Museum's out-of-state price; California — Universal's child price; Orlando — the Disney World ranges, Epic Universe "from". Left out: La Brea Tar Pits (reported closed for work), Brooklyn Children's Museum (no 2026 price), the Olympic Tower (Munich, closed until 2027), Technotown (Rome, 12+), Davy Crockett's Adventure and Aqua Mundo (no price).
+- **19 Nov 2026, every town ("ทำข้อ 1 ให้ครบเลย"):** the remaining 170 towns, about 2,000 sights (207 towns, 2,600 in all), written by
+  Sonnet agents three at a time (the web search allowance is shared by every agent; twenty at once spent it in minutes). Rules learned on
+  the way and now in the agents' brief: a seasonal place stays in with its season in `tip`; a price no page showed is "Check the price"
+  (never a guess, a currency conversion, a group rate or an "older guides say"); one named place per row; a town that honest searching
+  cannot fill is `"thin": true` (4 or more). 99 towns are thin — mostly small Thai towns, remote regions (the Gobi, Uluru, the Atacama,
+  Plitvice) and places whose official sites never appeared in search results. Most `src` are tourism offices, dated guides and ticket
+  sellers: the official sites could not be opened from the session's network.
+  **Review:** four reviewers read every new row (no searches) and six spot-checked 336 rows on the web (two a town). Every finding was
+  checked before fixing: temples, cathedrals, pagodas and a mosque made the subject of a row were taken out (Giant Wild Goose Pagoda,
+  Chongsheng, Cologne and Strasbourg cathedrals, Wat Phra That Lampang Luang, Wat Phumin, Wat Si Chum, Phra Mahathat Kaen Nakhon,
+  Islamic Center NTB); riding animals out (Tromsø reindeer sledding, a Bruges carriage, Farm Chokchai's pony rides); the National
+  Museum of Finland (closed until April 2027) and a Yellowstone booklet out; prices the web check corrected (Terracotta Army ¥120,
+  Nymphenburg €16, Arctic Snow Hotel €35/€17 from 15 December, Gullfoss free, Lake Braies 2026 parking); 75 prices that rested on old
+  or undated pages became "Check the price". Most "wrong town" flags were false: the library's towns are regions (Heidelberg and the
+  Black Forest, Buenos Aires and Iguazú, Toronto and Niagara, Santiago and Valparaíso, Seville and Granada, Paro–Thimphu–Punakha).

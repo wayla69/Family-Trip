@@ -155,7 +155,7 @@ Migration numbers: the next free on `main` at build time.
 | E3 | `#/explore/<town>` + wish list — **built** (Nov 2026) | M |
 | E4 | Planner uses the library first (menus, ids, `new`, the draft carries facts, fewer web checks) + job log counts — **built** (Nov 2026; the route's menu holds the things to do — places to eat already reach the book through the eat library's `groupsFor`) | M |
 | E5 | Today: indoor plan B, "กินอะไรดี" near the bed; check-ins/reviews write back; next-plan "เคยไปแล้วชอบ" — **built** (Nov 2026) | M |
-| E6 | Taste learning from reviews; style pictures drawn where missing; the remaining cities' sights; second web-check pass  — **built** (Nov 2026; the remaining cities' sights keep arriving in rounds) | M |
+| E6 | Taste learning from reviews; style pictures drawn where missing; the remaining cities' sights; second web-check pass  — **built** (Nov 2026; every library town has its list — 207 towns, 99 of them thin) | M |
 
 ## 6. Risks
 - **Data accuracy.** Sights written from memory can be closed or moved. Mitigation: the same honest labels as the eats, the book's

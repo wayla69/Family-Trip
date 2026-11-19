@@ -1,1860 +1,870 @@
 {
- "cc": "us",
- "towns": [
-  {
-   "place": "us-newyork",
-   "sights": [
+  "cc": "us",
+  "towns": [
     {
-     "name": {
-      "en": "Central Park Zoo",
-      "th": "สวนสัตว์เซ็นทรัลพาร์ก"
-     },
-     "kind": "zoo",
-     "area": {
-      "en": "Central Park, Midtown",
-      "th": "เซ็นทรัลพาร์ก มิดทาวน์"
-     },
-     "what": {
-      "en": "A small zoo in the park with sea lions, penguins, snow leopards and a children's zoo where little ones can touch goats",
-      "th": "สวนสัตว์เล็กในสวนสาธารณะ มีสิงโตทะเล เพนกวิน เสือดาวหิมะ และสวนสัตว์เด็กที่ให้ลูบแพะได้"
-     },
-     "why": {
-      "en": "Small enough to walk round in two hours, with a pram on flat paths and the sea lion feeding as a highlight",
-      "th": "เดินครบได้ในสองชั่วโมง ทางเรียบเข็นรถเข็นได้ และการให้อาหารสิงโตทะเลเด็กๆ ชอบมาก"
-     },
-     "tip": {
-      "en": "Tickets are for a date and sold online only, not at the gate",
-      "th": "ตั๋วระบุวัน ซื้อออนไลน์เท่านั้น ไม่ขายหน้าประตู"
-     },
-     "ages": [
-      2,
-      2,
-      2,
-      1
-     ],
-     "hrs": 2,
-     "io": "out",
-     "pram": "yes",
-     "price": {
-      "en": "≈ US$23 adults · ≈ US$17 children 3–12 · 2 and under free",
-      "th": "≈ US$23 ผู้ใหญ่ · ≈ US$17 เด็ก 3–12 ปี · เด็ก 2 ขวบลงมาฟรี"
-     },
-     "book": "req",
-     "q": "Central Park Zoo, Central Park, New York",
-     "ok": "2026-11",
-     "src": "https://centralparkzoo.com/admission-tickets"
+      "place": "us-california",
+      "sights": [
+        {
+          "name": { "en": "Disneyland Park", "th": "ดิสนีย์แลนด์พาร์ก" },
+          "kind": "themepark",
+          "area": { "en": "Disneyland Resort, Anaheim", "th": "ดิสนีย์แลนด์รีสอร์ต แอนะไฮม์" },
+          "what": { "en": "Walt Disney's first park: Sleeping Beauty Castle, Fantasyland rides, parades and Toontown", "th": "สวนสนุกแห่งแรกของวอลต์ ดิสนีย์ มีปราสาทเจ้าหญิงนิทรา เครื่องเล่นแฟนตาซีแลนด์ ขบวนพาเหรด และตูนทาวน์" },
+          "why": { "en": "Many gentle rides take toddlers, and Toontown has play areas made for the smallest", "th": "เครื่องเล่นเบาๆ หลายอย่างเด็กเล็กขึ้นได้ และตูนทาวน์มีมุมเล่นสำหรับเด็กเล็กที่สุด" },
+          "tip": { "en": "Prices go by the date's tier; under-3s need no ticket", "th": "ราคาตามระดับของวัน เด็กต่ำกว่า 3 ขวบไม่ต้องใช้ตั๋ว" },
+          "ages": [2, 2, 2, 2],
+          "hrs": 10,
+          "io": "out",
+          "pram": "yes",
+          "price": { "en": "≈ US$104–224 ages 10+ · ≈ US$98–214 children 3–9 · under 3 free (by date)", "th": "≈ US$104–224 อายุ 10 ปีขึ้นไป · ≈ US$98–214 เด็ก 3–9 ปี · ต่ำกว่า 3 ขวบฟรี (ตามวัน)" },
+          "book": "req",
+          "q": "Disneyland Park, Anaheim, California",
+          "ok": "2026-11",
+          "src": "https://disneyparknerds.com/disneyland-ticket-prices/"
+        },
+        {
+          "name": { "en": "Disney California Adventure", "th": "ดิสนีย์แคลิฟอร์เนียแอดเวนเจอร์" },
+          "kind": "themepark",
+          "area": { "en": "Disneyland Resort, Anaheim", "th": "ดิสนีย์แลนด์รีสอร์ต แอนะไฮม์" },
+          "what": { "en": "Disney's second park in Anaheim: Cars Land, Pixar Pier, Avengers Campus and the Little Mermaid ride", "th": "สวนสนุกแห่งที่สองของดิสนีย์ที่แอนะไฮม์ มีคาร์สแลนด์ พิกซาร์เพียร์ อเวนเจอร์สแคมปัส และเครื่องเล่นเงือกน้อย" },
+          "why": { "en": "Cars Land and the Pixar rides suit children who know the films; some rides need height", "th": "คาร์สแลนด์และเครื่องเล่นพิกซาร์เหมาะกับเด็กที่รู้จักหนัง บางเครื่องเล่นมีเกณฑ์ส่วนสูง" },
+          "tip": { "en": "A one-park ticket costs the same as Disneyland Park; hopping between the two costs extra", "th": "ตั๋วหนึ่งสวนราคาเท่าดิสนีย์แลนด์พาร์ก ถ้าจะข้ามไปมาสองสวนจ่ายเพิ่ม" },
+          "ages": [1, 2, 2, 2],
+          "hrs": 8,
+          "io": "out",
+          "pram": "yes",
+          "price": { "en": "≈ US$104–224 ages 10+ · ≈ US$98–214 children 3–9 · under 3 free (by date)", "th": "≈ US$104–224 อายุ 10 ปีขึ้นไป · ≈ US$98–214 เด็ก 3–9 ปี · ต่ำกว่า 3 ขวบฟรี (ตามวัน)" },
+          "book": "req",
+          "q": "Disney California Adventure Park, Anaheim, California",
+          "ok": "2026-11",
+          "src": "https://disneyparknerds.com/disneyland-ticket-prices/"
+        },
+        {
+          "name": { "en": "Universal Studios Hollywood", "th": "ยูนิเวอร์แซลสตูดิโอส์ฮอลลีวูด" },
+          "kind": "themepark",
+          "area": { "en": "Universal City, Los Angeles", "th": "ยูนิเวอร์แซลซิตี ลอสแอนเจลิส" },
+          "what": { "en": "A working film studio and theme park: the studio tram tour, Super Nintendo World, Minions and Harry Potter", "th": "สตูดิโอหนังจริงและสวนสนุก มีรถทัวร์สตูดิโอ ซูเปอร์นินเทนโดเวิลด์ มินเนียน และแฮร์รี่ พอตเตอร์" },
+          "why": { "en": "The studio tour and Minion land suit small children; many big rides are for older ones", "th": "ทัวร์สตูดิโอและโซนมินเนียนเหมาะกับเด็กเล็ก เครื่องเล่นใหญ่หลายอย่างเหมาะกับเด็กโต" },
+          "tip": { "en": "Prices change by day; buying online is cheaper than at the gate", "th": "ราคาเปลี่ยนตามวัน ซื้อออนไลน์ถูกกว่าหน้าประตู" },
+          "ages": [1, 2, 2, 2],
+          "hrs": 8,
+          "io": "out",
+          "pram": "yes",
+          "price": { "en": "≈ from US$109 adults · ≈ from US$95 children 3–9 · under 3 free (by date)", "th": "≈ เริ่ม US$109 ผู้ใหญ่ · ≈ เริ่ม US$95 เด็ก 3–9 ปี · ต่ำกว่า 3 ขวบฟรี (ตามวัน)" },
+          "book": "rec",
+          "q": "Universal Studios Hollywood, Universal City, Los Angeles",
+          "ok": "2026-11",
+          "src": "https://www.universalstudioshollywood.com/web/en/us/theme-park-ticket-deals"
+        },
+        {
+          "name": { "en": "San Diego Zoo", "th": "สวนสัตว์ซานดิเอโก" },
+          "kind": "zoo",
+          "area": { "en": "Balboa Park, San Diego", "th": "บัลโบอาพาร์ก ซานดิเอโก" },
+          "what": { "en": "A famous hillside zoo with koalas, elephants, polar bears and a children's zoo", "th": "สวนสัตว์ชื่อดังบนเนินเขา มีโคอาลา ช้าง หมีขั้วโลก และสวนสัตว์เด็ก" },
+          "why": { "en": "The guided bus tour and the Skyfari cable car save little legs on the hills", "th": "รถบัสนำชมและกระเช้าสกายฟารีช่วยให้ขาเล็กๆ ไม่ต้องเดินขึ้นเนิน" },
+          "tip": { "en": "Parking costs extra since January 2026; arrive at opening for the bus tour", "th": "ค่าจอดรถจ่ายแยกตั้งแต่ ม.ค. 2026 มาตอนเปิดเพื่อขึ้นรถบัสนำชม" },
+          "ages": [2, 2, 2, 2],
+          "hrs": 5,
+          "io": "out",
+          "pram": "part",
+          "price": { "en": "≈ US$78 adults · ≈ US$68 children 3–11 · 2 and under free", "th": "≈ US$78 ผู้ใหญ่ · ≈ US$68 เด็ก 3–11 ปี · เด็ก 2 ขวบลงมาฟรี" },
+          "book": "rec",
+          "q": "San Diego Zoo, Balboa Park, San Diego",
+          "ok": "2026-11",
+          "src": "https://lajollamom.com/how-to-buy-discounted-tickets-to-the-san-diego-zoo/"
+        },
+        {
+          "name": { "en": "LEGOLAND California", "th": "เลโกแลนด์แคลิฟอร์เนีย" },
+          "kind": "themepark",
+          "area": { "en": "Carlsbad, north of San Diego", "th": "คาร์ลสแบด ทางเหนือของซานดิเอโก" },
+          "what": { "en": "A theme park built for children aged 2 to 12, with LEGO cities, driving school, gentle rides and a SEA LIFE aquarium", "th": "สวนสนุกสำหรับเด็ก 2–12 ปี มีเมืองเลโก โรงเรียนสอนขับรถ เครื่องเล่นเบาๆ และพิพิธภัณฑ์สัตว์น้ำซีไลฟ์" },
+          "why": { "en": "Almost every ride takes small children, and the queues are shorter than at the big parks", "th": "เครื่องเล่นเกือบทุกอย่างเด็กเล็กขึ้นได้ และคิวสั้นกว่าสวนสนุกใหญ่" },
+          "tip": { "en": "Buy online ahead for the cheapest price; the water park is seasonal and costs extra", "th": "ซื้อออนไลน์ล่วงหน้าถูกที่สุด สวนน้ำเปิดตามฤดูและจ่ายเพิ่ม" },
+          "ages": [1, 2, 2, 1],
+          "hrs": 7,
+          "io": "out",
+          "pram": "yes",
+          "price": { "en": "≈ US$94–139 ages 2+ by date · under 2 free", "th": "≈ US$94–139 อายุ 2 ปีขึ้นไป ตามวัน · ต่ำกว่า 2 ขวบฟรี" },
+          "book": "rec",
+          "q": "LEGOLAND California, Carlsbad, California",
+          "ok": "2026-11",
+          "src": "https://www.legoland.com/california/legoland-california/buy-tickets/tickets/walk-up-pricing/"
+        },
+        {
+          "name": { "en": "SeaWorld San Diego", "th": "ซีเวิลด์ซานดิเอโก" },
+          "kind": "themepark",
+          "area": { "en": "Mission Bay, San Diego", "th": "มิชชันเบย์ ซานดิเอโก" },
+          "what": { "en": "A marine park with dolphins, sea lions, penguins, shows and Sesame Street rides", "th": "สวนสัตว์ทะเลมีโลมา สิงโตทะเล เพนกวิน โชว์ และเครื่องเล่นเซซามีสตรีต" },
+          "why": { "en": "The Sesame Street area has rides for toddlers, and the penguin house is indoors and cool", "th": "โซนเซซามีสตรีตมีเครื่องเล่นเด็กเล็ก และบ้านเพนกวินอยู่ในร่มเย็นสบาย" },
+          "tip": { "en": "Online sale prices change often; buy before you go, as discounts are not sold at the gate", "th": "ราคาลดออนไลน์เปลี่ยนบ่อย ซื้อก่อนไปเพราะหน้าประตูไม่มีส่วนลด" },
+          "ages": [2, 2, 2, 2],
+          "hrs": 7,
+          "io": "both",
+          "pram": "yes",
+          "price": { "en": "≈ US$70–127 ages 3+ by date · under 3 free", "th": "≈ US$70–127 อายุ 3 ปีขึ้นไป ตามวัน · ต่ำกว่า 3 ขวบฟรี" },
+          "book": "rec",
+          "q": "SeaWorld San Diego, Mission Bay, San Diego",
+          "ok": "2026-11",
+          "src": "https://seaworld.com/san-diego/tickets/limited-time-offers/"
+        },
+        {
+          "name": { "en": "California Science Center", "th": "แคลิฟอร์เนียไซเอนซ์เซ็นเตอร์" },
+          "kind": "museumkid",
+          "area": { "en": "Exposition Park, Los Angeles", "th": "เอกซ์โปซิชันพาร์ก ลอสแอนเจลิส" },
+          "what": { "en": "A free science museum with the space shuttle Endeavour standing upright in its new air and space centre", "th": "พิพิธภัณฑ์วิทยาศาสตร์เข้าฟรี มีกระสวยอวกาศเอนเดฟเวอร์ตั้งตรงในศูนย์อากาศและอวกาศแห่งใหม่" },
+          "why": { "en": "Hands-on galleries and a real shuttle, all indoors and free", "th": "ห้องจัดแสดงให้ลงมือทำ และกระสวยของจริง อยู่ในร่มและฟรี" },
+          "tip": { "en": "The air and space centre opened on 13 Nov 2026 with timed tickets; book ahead", "th": "ศูนย์อากาศและอวกาศเปิด 13 พ.ย. 2026 ใช้ตั๋วตามรอบ ควรจองก่อน" },
+          "ages": [1, 2, 2, 2],
+          "hrs": 3,
+          "io": "in",
+          "pram": "yes",
+          "price": { "en": "Free · ≈ US$4 booking fee for the shuttle centre", "th": "ฟรี · ค่าจองศูนย์กระสวยอวกาศ ≈ US$4" },
+          "book": "req",
+          "q": "California Science Center, Exposition Park, Los Angeles",
+          "ok": "2026-11",
+          "src": "https://generalaviationnews.com/2026/11/17/samuel-oschin-air-and-space-center-opens-in-los-angeles/"
+        },
+        {
+          "name": { "en": "Natural History Museum of Los Angeles County", "th": "พิพิธภัณฑ์ประวัติศาสตร์ธรรมชาติลอสแอนเจลิส" },
+          "kind": "museum",
+          "area": { "en": "Exposition Park, Los Angeles", "th": "เอกซ์โปซิชันพาร์ก ลอสแอนเจลิส" },
+          "what": { "en": "A dinosaur hall with a T. rex growth series, animal halls and a garden, next door to the science centre", "th": "ห้องไดโนเสาร์ที่มีทีเร็กซ์ตั้งแต่เล็กจนโต ห้องสัตว์ และสวน อยู่ติดศูนย์วิทยาศาสตร์" },
+          "why": { "en": "Dinosaurs for every age, and easy to pair with the free science centre next door", "th": "ไดโนเสาร์ถูกใจทุกวัย และไปต่อศูนย์วิทยาศาสตร์ฟรีข้างๆ ได้ง่าย" },
+          "tip": { "en": "Closed on the first Tuesday of each month; children under 3 still need a free ticket", "th": "ปิดวันอังคารแรกของทุกเดือน เด็กต่ำกว่า 3 ขวบต้องรับตั๋วฟรี" },
+          "ages": [1, 2, 2, 2],
+          "hrs": 2.5,
+          "io": "in",
+          "pram": "yes",
+          "price": { "en": "≈ US$18 adults · ≈ US$7 children · 2 and under free", "th": "≈ US$18 ผู้ใหญ่ · ≈ US$7 เด็ก · เด็ก 2 ขวบลงมาฟรี" },
+          "book": "rec",
+          "q": "Natural History Museum of Los Angeles County, Exposition Park, Los Angeles",
+          "ok": "2026-11",
+          "src": "https://www.trvlogue.com/en/natural-history-museum-la-review"
+        },
+        {
+          "name": { "en": "Griffith Observatory", "th": "หอดูดาวกริฟฟิท" },
+          "kind": "views",
+          "area": { "en": "Griffith Park, Los Angeles", "th": "กริฟฟิทพาร์ก ลอสแอนเจลิส" },
+          "what": { "en": "A hilltop observatory with space exhibits, free telescopes and the best view of the Hollywood sign", "th": "หอดูดาวบนเขา มีนิทรรศการอวกาศ กล้องโทรทรรศน์ให้ส่องฟรี และวิวป้ายฮอลลีวูดที่ดีที่สุด" },
+          "why": { "en": "Free to enter, with a Foucault pendulum and a Tesla coil that small children watch in wonder", "th": "เข้าฟรี มีลูกตุ้มฟูโกและขดลวดเทสลาที่เด็กเล็กดูแล้วทึ่ง" },
+          "tip": { "en": "Closed on Mondays; the planetarium show is sold on the day only, so arrive early", "th": "ปิดวันจันทร์ ตั๋วท้องฟ้าจำลองขายเฉพาะวันนั้น มาแต่เช้า" },
+          "ages": [1, 1, 2, 2],
+          "hrs": 2,
+          "io": "both",
+          "pram": "yes",
+          "price": { "en": "Free · planetarium ≈ US$10 adults · parking extra", "th": "ฟรี · ท้องฟ้าจำลอง ≈ US$10 ผู้ใหญ่ · ค่าจอดรถแยก" },
+          "book": "none",
+          "q": "Griffith Observatory, Griffith Park, Los Angeles",
+          "ok": "2026-11",
+          "src": "https://griffithobservatory.lacity.gov/visit/getting-here/"
+        },
+        {
+          "name": { "en": "Aquarium of the Pacific", "th": "อควาเรียมออฟเดอะแปซิฟิก" },
+          "kind": "aquarium",
+          "area": { "en": "Rainbow Harbor, Long Beach", "th": "เรนโบว์ฮาร์เบอร์ ลองบีช" },
+          "what": { "en": "A big aquarium with sea otters, sharks to touch, jellyfish and a lorikeet aviary to feed", "th": "พิพิธภัณฑ์สัตว์น้ำใหญ่ มีนากทะเล ฉลามให้ลูบ แมงกะพรุน และกรงนกลอรีคีตให้ป้อนอาหาร" },
+          "why": { "en": "Touch pools at child height and sea otters that keep small children watching", "th": "บ่อสัมผัสอยู่ระดับเด็ก และนากทะเลที่ทำให้เด็กเล็กดูได้นาน" },
+          "tip": { "en": "Reservations are needed at weekends and holidays", "th": "วันหยุดสุดสัปดาห์และวันหยุดต้องจองก่อน" },
+          "ages": [2, 2, 2, 1],
+          "hrs": 3,
+          "io": "both",
+          "pram": "yes",
+          "price": { "en": "≈ US$50 adults · ≈ US$35 children 3–11 · under 3 free", "th": "≈ US$50 ผู้ใหญ่ · ≈ US$35 เด็ก 3–11 ปี · ต่ำกว่า 3 ขวบฟรี" },
+          "book": "rec",
+          "q": "Aquarium of the Pacific, Long Beach, California",
+          "ok": "2026-11",
+          "src": "https://www.aquariumofpacific.org/visit/adults"
+        },
+        {
+          "name": { "en": "Los Angeles Zoo", "th": "สวนสัตว์ลอสแอนเจลิส" },
+          "kind": "zoo",
+          "area": { "en": "Griffith Park, Los Angeles", "th": "กริฟฟิทพาร์ก ลอสแอนเจลิส" },
+          "what": { "en": "The city zoo in Griffith Park, with chimpanzees, elephants, giraffes and a children's discovery area", "th": "สวนสัตว์ของเมืองในกริฟฟิทพาร์ก มีชิมแปนซี ช้าง ยีราฟ และโซนค้นพบสำหรับเด็ก" },
+          "why": { "en": "Cheaper and calmer than the big parks, with goats to pet in the children's area", "th": "ถูกกว่าและสงบกว่าสวนสนุกใหญ่ มีแพะให้ลูบในโซนเด็ก" },
+          "tip": { "en": "The paths climb in places; a pram with good wheels helps", "th": "บางช่วงทางเป็นเนิน รถเข็นล้อดีจะช่วยได้" },
+          "ages": [2, 2, 2, 1],
+          "hrs": 3,
+          "io": "out",
+          "pram": "yes",
+          "price": { "en": "≈ US$27–29 adults · ≈ US$22–24 children 2–12 · under 2 free", "th": "≈ US$27–29 ผู้ใหญ่ · ≈ US$22–24 เด็ก 2–12 ปี · ต่ำกว่า 2 ขวบฟรี" },
+          "book": "none",
+          "q": "Los Angeles Zoo, Griffith Park, Los Angeles",
+          "ok": "2026-11",
+          "src": "https://secretlosangeles.com/la-zoo-raises-ticket-prices/"
+        },
+        {
+          "name": { "en": "Santa Monica Pier", "th": "ท่าเรือซานตาโมนิกา" },
+          "kind": "beach",
+          "area": { "en": "Santa Monica", "th": "ซานตาโมนิกา" },
+          "what": { "en": "The old pier over the beach, with Pacific Park's Ferris wheel, small rides and an old carousel", "th": "ท่าเรือเก่าเหนือหาด มีชิงช้าสวรรค์ของแปซิฟิกพาร์ก เครื่องเล่นเล็กๆ และม้าหมุนเก่า" },
+          "why": { "en": "Free to walk on, with sand below for digging and rides you pay for one at a time", "th": "เดินเล่นฟรี มีทรายด้านล่างให้ขุด และเครื่องเล่นจ่ายทีละอย่าง" },
+          "tip": { "en": "An unlimited ride wristband costs less for children 7 and under", "th": "สายรัดข้อมือเล่นไม่อั้นถูกกว่าสำหรับเด็ก 7 ขวบลงมา" },
+          "ages": [2, 2, 2, 2],
+          "hrs": 2.5,
+          "io": "out",
+          "pram": "yes",
+          "price": { "en": "Free entry · ride wristband ≈ US$40 ages 8+ · ≈ US$20 ages 7 and under", "th": "เข้าฟรี · สายรัดเครื่องเล่น ≈ US$40 อายุ 8 ปีขึ้นไป · ≈ US$20 อายุ 7 ปีลงมา" },
+          "book": "none",
+          "q": "Santa Monica Pier, Santa Monica, California",
+          "ok": "2026-11",
+          "src": "https://santamonicanext.org/2026/05/pacific-park-continues-30th-anniversary-celebration-with-special-ride-offers-through-june-11/"
+        },
+        {
+          "name": { "en": "The Original Farmers Market", "th": "ดิออริจินัลฟาร์เมอร์สมาร์เก็ต" },
+          "kind": "market",
+          "area": { "en": "Fairfax, Los Angeles", "th": "แฟร์แฟกซ์ ลอสแอนเจลิส" },
+          "what": { "en": "A 1930s market of food stalls and grocers: doughnuts, ice cream, tacos, gumbo and fresh fruit", "th": "ตลาดตั้งแต่ปี 1930 มีร้านอาหารและของสด โดนัท ไอศกรีม ทาโก้ กัมโบ และผลไม้สด" },
+          "why": { "en": "Casual, with tables everywhere, so each child can pick their own lunch", "th": "สบายๆ มีโต๊ะทุกที่ เด็กแต่ละคนเลือกมื้อกลางวันเองได้" },
+          "tip": { "en": "Open daily; stalls keep their own hours, so lunchtime is the safest bet", "th": "เปิดทุกวัน แต่ละร้านมีเวลาของตัวเอง มาช่วงกลางวันแน่นอนที่สุด" },
+          "ages": [1, 2, 2, 2],
+          "hrs": 1.5,
+          "io": "both",
+          "pram": "yes",
+          "price": { "en": "Free entry", "th": "เข้าฟรี" },
+          "book": "none",
+          "q": "The Original Farmers Market, 3rd Street and Fairfax, Los Angeles",
+          "ok": "2026-11",
+          "src": "https://farmersmarketla.com/"
+        },
+        {
+          "name": { "en": "Balboa Park", "th": "บัลโบอาพาร์ก" },
+          "kind": "park",
+          "area": { "en": "Balboa Park, San Diego", "th": "บัลโบอาพาร์ก ซานดิเอโก" },
+          "what": { "en": "San Diego's big park of gardens, museums and Spanish-style buildings, with a carousel and a miniature train", "th": "สวนใหญ่ของซานดิเอโก มีสวนดอกไม้ พิพิธภัณฑ์ อาคารสไตล์สเปน ม้าหมุน และรถไฟจิ๋ว" },
+          "why": { "en": "Free to wander, with lawns and a little train ride for toddlers next to the zoo", "th": "เดินเล่นฟรี มีสนามหญ้าและรถไฟจิ๋วสำหรับเด็กเล็กติดกับสวนสัตว์" },
+          "tip": { "en": "The miniature train runs from Wednesday to Sunday and costs a few dollars", "th": "รถไฟจิ๋ววิ่งวันพุธถึงอาทิตย์ ค่าโดยสารไม่กี่ดอลลาร์" },
+          "ages": [2, 2, 2, 2],
+          "hrs": 3,
+          "io": "out",
+          "pram": "yes",
+          "price": { "en": "Free · miniature train ≈ US$4", "th": "ฟรี · รถไฟจิ๋ว ≈ US$4" },
+          "book": "none",
+          "q": "Balboa Park, San Diego, California",
+          "ok": "2026-11",
+          "src": "https://www.sandiego.org/plan-your-trip/article/balboa-park-family-guide"
+        },
+        {
+          "name": { "en": "USS Midway Museum", "th": "พิพิธภัณฑ์ยูเอสเอสมิดเวย์" },
+          "kind": "museum",
+          "area": { "en": "Downtown waterfront, San Diego", "th": "ริมน้ำดาวน์ทาวน์ ซานดิเอโก" },
+          "what": { "en": "An aircraft carrier with planes on the flight deck, cockpits to sit in and an audio tour for families", "th": "เรือบรรทุกเครื่องบิน มีเครื่องบินบนดาดฟ้า ห้องนักบินให้นั่ง และเสียงนำชมสำหรับครอบครัว" },
+          "why": { "en": "Children can climb into real cockpits; the hangar deck is indoors", "th": "เด็กๆ ได้ปีนเข้าห้องนักบินจริง ชั้นโรงเก็บเครื่องบินอยู่ในร่ม" },
+          "tip": { "en": "Steep ship ladders between decks; leave the pram on the hangar deck", "th": "บันไดเรือระหว่างชั้นชัน ทิ้งรถเข็นไว้ที่ชั้นโรงเก็บเครื่องบิน" },
+          "ages": [1, 1, 2, 2],
+          "hrs": 3,
+          "io": "both",
+          "pram": "part",
+          "price": { "en": "≈ US$39–41 adults · ≈ US$26–31 children · 3 and under free", "th": "≈ US$39–41 ผู้ใหญ่ · ≈ US$26–31 เด็ก · เด็ก 3 ขวบลงมาฟรี" },
+          "book": "rec",
+          "q": "USS Midway Museum, Navy Pier, San Diego",
+          "ok": "2026-11",
+          "src": "https://www.midway.org/visit/student-youth-group-visits"
+        }
+      ]
     },
     {
-     "name": {
-      "en": "Bronx Zoo",
-      "th": "สวนสัตว์บรองซ์"
-     },
-     "kind": "zoo",
-     "area": {
-      "en": "Bronx Park, the Bronx",
-      "th": "บรองซ์พาร์ก เดอะบรองซ์"
-     },
-     "what": {
-      "en": "One of the biggest city zoos in America, with gorillas, tigers, giraffes, a children's zoo and a monorail over Wild Asia",
-      "th": "สวนสัตว์ในเมืองที่ใหญ่ที่สุดแห่งหนึ่งของอเมริกา มีกอริลลา เสือ ยีราฟ สวนสัตว์เด็ก และโมโนเรลผ่านโซนเอเชีย"
-     },
-     "why": {
-      "en": "A whole day of animals; the children's zoo and the butterfly garden suit the youngest best",
-      "th": "ดูสัตว์ได้ทั้งวัน สวนสัตว์เด็กและสวนผีเสื้อเหมาะกับเด็กเล็กที่สุด"
-     },
-     "tip": {
-      "en": "Wednesdays are free for the basic ticket, booked online ahead; the gorillas, children's zoo and monorail cost extra",
-      "th": "วันพุธเข้าฟรีแบบตั๋วพื้นฐาน ต้องจองออนไลน์ก่อน กอริลลา สวนสัตว์เด็ก และโมโนเรลจ่ายเพิ่ม"
-     },
-     "ages": [
-      2,
-      2,
-      2,
-      2
-     ],
-     "hrs": 5,
-     "io": "out",
-     "pram": "yes",
-     "price": {
-      "en": "≈ US$29 adults · ≈ US$21 children 3–12 · 2 and under free (winter prices)",
-      "th": "≈ US$29 ผู้ใหญ่ · ≈ US$21 เด็ก 3–12 ปี · เด็ก 2 ขวบลงมาฟรี (ราคาช่วงหน้าหนาว)"
-     },
-     "book": "rec",
-     "q": "Bronx Zoo, Bronx, New York",
-     "ok": "2026-11",
-     "src": "https://bronxzoo.com/tickets"
+      "place": "us-newyork",
+      "sights": [
+        {
+          "name": { "en": "Central Park Zoo", "th": "สวนสัตว์เซ็นทรัลพาร์ก" },
+          "kind": "zoo",
+          "area": { "en": "Central Park, Midtown", "th": "เซ็นทรัลพาร์ก มิดทาวน์" },
+          "what": { "en": "A small zoo in the park with sea lions, penguins, snow leopards and a children's zoo where little ones can touch goats", "th": "สวนสัตว์เล็กในสวนสาธารณะ มีสิงโตทะเล เพนกวิน เสือดาวหิมะ และสวนสัตว์เด็กที่ให้ลูบแพะได้" },
+          "why": { "en": "Small enough to walk round in two hours, with a pram on flat paths and the sea lion feeding as a highlight", "th": "เดินครบได้ในสองชั่วโมง ทางเรียบเข็นรถเข็นได้ และการให้อาหารสิงโตทะเลเด็กๆ ชอบมาก" },
+          "tip": { "en": "Tickets are for a date and sold online only, not at the gate", "th": "ตั๋วระบุวัน ซื้อออนไลน์เท่านั้น ไม่ขายหน้าประตู" },
+          "ages": [2, 2, 2, 1],
+          "hrs": 2,
+          "io": "out",
+          "pram": "yes",
+          "price": { "en": "≈ US$23 adults · ≈ US$17 children 3–12 · 2 and under free", "th": "≈ US$23 ผู้ใหญ่ · ≈ US$17 เด็ก 3–12 ปี · เด็ก 2 ขวบลงมาฟรี" },
+          "book": "req",
+          "q": "Central Park Zoo, Central Park, New York",
+          "ok": "2026-11",
+          "src": "https://centralparkzoo.com/admission-tickets"
+        },
+        {
+          "name": { "en": "Bronx Zoo", "th": "สวนสัตว์บรองซ์" },
+          "kind": "zoo",
+          "area": { "en": "Bronx Park, the Bronx", "th": "บรองซ์พาร์ก เดอะบรองซ์" },
+          "what": { "en": "One of the biggest city zoos in America, with gorillas, tigers, giraffes, a children's zoo and a monorail over Wild Asia", "th": "สวนสัตว์ในเมืองที่ใหญ่ที่สุดแห่งหนึ่งของอเมริกา มีกอริลลา เสือ ยีราฟ สวนสัตว์เด็ก และโมโนเรลผ่านโซนเอเชีย" },
+          "why": { "en": "A whole day of animals; the children's zoo and the butterfly garden suit the youngest best", "th": "ดูสัตว์ได้ทั้งวัน สวนสัตว์เด็กและสวนผีเสื้อเหมาะกับเด็กเล็กที่สุด" },
+          "tip": { "en": "Wednesdays are free for the basic ticket, booked online ahead; the gorillas, children's zoo and monorail cost extra", "th": "วันพุธเข้าฟรีแบบตั๋วพื้นฐาน ต้องจองออนไลน์ก่อน กอริลลา สวนสัตว์เด็ก และโมโนเรลจ่ายเพิ่ม" },
+          "ages": [2, 2, 2, 2],
+          "hrs": 5,
+          "io": "out",
+          "pram": "yes",
+          "price": { "en": "≈ US$29 adults · ≈ US$21 children 3–12 · 2 and under free (winter prices)", "th": "≈ US$29 ผู้ใหญ่ · ≈ US$21 เด็ก 3–12 ปี · เด็ก 2 ขวบลงมาฟรี (ราคาช่วงหน้าหนาว)" },
+          "book": "rec",
+          "q": "Bronx Zoo, Bronx, New York",
+          "ok": "2026-11",
+          "src": "https://bronxzoo.com/tickets"
+        },
+        {
+          "name": { "en": "American Museum of Natural History", "th": "พิพิธภัณฑ์ประวัติศาสตร์ธรรมชาติอเมริกัน" },
+          "kind": "museum",
+          "area": { "en": "Upper West Side", "th": "อัปเปอร์เวสต์ไซด์" },
+          "what": { "en": "Dinosaur skeletons, the giant blue whale, animal dioramas and a planetarium in one of the world's great museums", "th": "โครงกระดูกไดโนเสาร์ วาฬสีน้ำเงินตัวยักษ์ ฉากสัตว์จำลอง และท้องฟ้าจำลอง ในพิพิธภัณฑ์ระดับโลก" },
+          "why": { "en": "Dinosaurs and the whale win over every age, and it is a whole indoor day for rain or cold", "th": "ไดโนเสาร์กับวาฬถูกใจทุกวัย และเที่ยวในร่มได้ทั้งวันตอนฝนตกหรืออากาศหนาว" },
+          "tip": { "en": "Book a timed ticket online; head to the fourth-floor dinosaurs first, before the crowds", "th": "จองตั๋วตามรอบออนไลน์ ไปชั้น 4 ดูไดโนเสาร์ก่อนคนเยอะ" },
+          "ages": [1, 2, 2, 2],
+          "hrs": 4,
+          "io": "in",
+          "pram": "yes",
+          "price": { "en": "≈ US$37 adults · ≈ US$22 children 3–12 · under 3 free (New York State residents pay what they wish)", "th": "≈ US$37 ผู้ใหญ่ · ≈ US$22 เด็ก 3–12 ปี · ต่ำกว่า 3 ขวบฟรี (คนรัฐนิวยอร์กจ่ายตามใจ)" },
+          "book": "rec",
+          "q": "American Museum of Natural History, Upper West Side, New York",
+          "ok": "2026-11",
+          "src": "https://www.amnh.org/plan-your-visit/admission"
+        },
+        {
+          "name": { "en": "Children's Museum of Manhattan", "th": "พิพิธภัณฑ์เด็กแมนแฮตตัน" },
+          "kind": "museumkid",
+          "area": { "en": "Upper West Side", "th": "อัปเปอร์เวสต์ไซด์" },
+          "what": { "en": "Floors of hands-on play: water tables, a toddler zone, dress-up and art studios", "th": "หลายชั้นของการเล่นลงมือทำ โต๊ะเล่นน้ำ โซนเด็กเล็ก แต่งตัว และห้องศิลปะ" },
+          "why": { "en": "Made for children under eight, with a soft play area for babies and toddlers", "th": "ทำมาเพื่อเด็กต่ำกว่าแปดขวบ มีมุมนุ่มสำหรับเด็กทารกและเด็กวัยเตาะแตะ" },
+          "tip": { "en": "Open Tuesday to Sunday; buying online is a dollar cheaper than at the door", "th": "เปิดวันอังคารถึงอาทิตย์ ซื้อออนไลน์ถูกกว่าหน้าประตูหนึ่งดอลลาร์" },
+          "ages": [2, 2, 1, 0],
+          "hrs": 2,
+          "io": "in",
+          "pram": "yes",
+          "price": { "en": "≈ US$17 online, adults and children alike · under 1 free", "th": "≈ US$17 ออนไลน์ ผู้ใหญ่และเด็กราคาเดียวกัน · ต่ำกว่า 1 ขวบฟรี" },
+          "book": "rec",
+          "q": "Children's Museum of Manhattan, Upper West Side, New York",
+          "ok": "2026-11",
+          "src": "https://visit.cmom.org/"
+        },
+        {
+          "name": { "en": "New York Aquarium", "th": "นิวยอร์กอควาเรียม" },
+          "kind": "aquarium",
+          "area": { "en": "Coney Island, Brooklyn", "th": "โคนีย์ไอแลนด์ บรุกลิน" },
+          "what": { "en": "The city's aquarium by the beach, with sea lions, sharks, sea turtles and penguins", "th": "พิพิธภัณฑ์สัตว์น้ำริมหาดของเมือง มีสิงโตทะเล ฉลาม เต่าทะเล และเพนกวิน" },
+          "why": { "en": "Short walks between tanks and a sea lion show that small children love", "th": "เดินระหว่างตู้ไม่ไกล และโชว์สิงโตทะเลที่เด็กเล็กชอบมาก" },
+          "tip": { "en": "Wednesday afternoons from 3 pm are free with a timed ticket booked ahead", "th": "บ่ายวันพุธตั้งแต่ 15:00 เข้าฟรี ต้องจองตั๋วตามรอบก่อน" },
+          "ages": [2, 2, 2, 1],
+          "hrs": 2.5,
+          "io": "both",
+          "pram": "yes",
+          "price": { "en": "≈ US$30 adults · ≈ US$26 children 3–12 · under 3 free", "th": "≈ US$30 ผู้ใหญ่ · ≈ US$26 เด็ก 3–12 ปี · ต่ำกว่า 3 ขวบฟรี" },
+          "book": "rec",
+          "q": "New York Aquarium, Coney Island, Brooklyn",
+          "ok": "2026-11",
+          "src": "https://nyaquarium.com/visitor-info/faqs"
+        },
+        {
+          "name": { "en": "Statue of Liberty and Ellis Island", "th": "เทพีเสรีภาพและเกาะเอลลิส" },
+          "kind": "culture",
+          "area": { "en": "New York Harbor, from Battery Park", "th": "อ่าวนิวยอร์ก ขึ้นเรือที่แบตเตอรีพาร์ก" },
+          "what": { "en": "The ferry to Liberty Island to walk round the statue, then on to the immigration museum on Ellis Island", "th": "นั่งเรือไปเกาะลิเบอร์ตีเดินรอบเทพีเสรีภาพ แล้วต่อไปพิพิธภัณฑ์ผู้อพยพบนเกาะเอลลิส" },
+          "why": { "en": "The boat ride and the giant statue are the treat for children; the grounds are enough for little ones", "th": "การนั่งเรือและรูปปั้นยักษ์คือของขวัญของเด็กๆ สำหรับเด็กเล็กเดินรอบเกาะก็พอ" },
+          "tip": { "en": "Buy only from Statue City Cruises, the one official ferry; expect airport-style security at the pier", "th": "ซื้อตั๋วจากสแตชูซิตีครูซส์ซึ่งเป็นเรือทางการเจ้าเดียว ที่ท่าเรือมีตรวจความปลอดภัยแบบสนามบิน" },
+          "ages": [1, 2, 2, 2],
+          "hrs": 4,
+          "io": "both",
+          "pram": "yes",
+          "price": { "en": "≈ US$25.50 adults · ≈ US$16.50 children 4–12 · under 4 free", "th": "≈ US$25.50 ผู้ใหญ่ · ≈ US$16.50 เด็ก 4–12 ปี · ต่ำกว่า 4 ขวบฟรี" },
+          "book": "rec",
+          "q": "Statue City Cruises, Battery Park, New York",
+          "ok": "2026-11",
+          "src": "https://www.nps.gov/stli/planyourvisit/fees.htm"
+        },
+        {
+          "name": { "en": "Staten Island Ferry", "th": "เรือสเตเทนไอแลนด์" },
+          "kind": "ride",
+          "area": { "en": "Whitehall Terminal, Lower Manhattan", "th": "ท่าเรือไวต์ฮอลล์ โลเวอร์แมนแฮตตัน" },
+          "what": { "en": "The big orange commuter ferry across the harbour, passing the Statue of Liberty and the Manhattan skyline", "th": "เรือส้มลำใหญ่ข้ามอ่าว ผ่านเทพีเสรีภาพและตึกระฟ้าแมนแฮตตัน" },
+          "why": { "en": "A free 25-minute boat ride with a view of the statue, no booking and room for a pram", "th": "นั่งเรือฟรี 25 นาที เห็นเทพีเสรีภาพ ไม่ต้องจอง และมีที่วางรถเข็น" },
+          "tip": { "en": "Sit on the right side going out for the statue; anyone selling tickets for it is a scam", "th": "ขาไปนั่งฝั่งขวาจะเห็นเทพีเสรีภาพ ใครขายตั๋วเรือนี้คือมิจฉาชีพ" },
+          "ages": [2, 2, 2, 2],
+          "hrs": 1.5,
+          "io": "both",
+          "pram": "yes",
+          "price": { "en": "Free", "th": "ฟรี" },
+          "book": "none",
+          "q": "Whitehall Terminal, Lower Manhattan, New York",
+          "ok": "2026-11",
+          "src": "https://nyctourism.com/articles/guide-to-the-staten-island-ferry"
+        },
+        {
+          "name": { "en": "Intrepid Museum", "th": "พิพิธภัณฑ์อินเทรพิด" },
+          "kind": "museum",
+          "area": { "en": "Pier 86, Hell's Kitchen", "th": "ท่าเรือ 86 เฮลส์คิตเชน" },
+          "what": { "en": "An aircraft carrier turned museum, with jets on deck, the space shuttle Enterprise and a submarine", "th": "เรือบรรทุกเครื่องบินที่กลายเป็นพิพิธภัณฑ์ มีเครื่องบินรบบนดาดฟ้า กระสวยอวกาศเอนเทอร์ไพรส์ และเรือดำน้ำ" },
+          "why": { "en": "Planes and a real shuttle thrill children; the hangar deck is indoors for a grey day", "th": "เครื่องบินและกระสวยของจริงทำให้เด็กตื่นเต้น ชั้นโรงเก็บเครื่องบินอยู่ในร่มเหมาะวันฟ้าครึ้ม" },
+          "tip": { "en": "The submarine has narrow hatches and no room for a pram", "th": "เรือดำน้ำมีช่องแคบ เข็นรถเข็นเข้าไม่ได้" },
+          "ages": [1, 1, 2, 2],
+          "hrs": 3,
+          "io": "both",
+          "pram": "part",
+          "price": { "en": "≈ US$38 adults · ≈ US$28 children 5–12 · under 5 free", "th": "≈ US$38 ผู้ใหญ่ · ≈ US$28 เด็ก 5–12 ปี · ต่ำกว่า 5 ขวบฟรี" },
+          "book": "rec",
+          "q": "Intrepid Museum, Pier 86, New York",
+          "ok": "2026-11",
+          "src": "https://intrepidmuseum.org/plan-your-visit/group-visits/adult-groups"
+        },
+        {
+          "name": { "en": "Top of the Rock", "th": "ท็อปออฟเดอะร็อก" },
+          "kind": "views",
+          "area": { "en": "Rockefeller Center, Midtown", "th": "ร็อกกีเฟลเลอร์เซ็นเตอร์ มิดทาวน์" },
+          "what": { "en": "Open-air decks on the 70th floor with Central Park on one side and the Empire State Building on the other", "th": "ชั้นชมวิวกลางแจ้งชั้น 70 เห็นเซ็นทรัลพาร์กด้านหนึ่งและตึกเอ็มไพร์สเตตอีกด้าน" },
+          "why": { "en": "Glass walls on the open decks let small children see out safely, and the lift ride is quick", "th": "ชั้นกลางแจ้งมีผนังกระจกให้เด็กเล็กมองได้ปลอดภัย และลิฟต์ขึ้นเร็ว" },
+          "tip": { "en": "Timed tickets cost more at sunset; a morning slot is cheaper and quieter", "th": "ตั๋วตามรอบช่วงพระอาทิตย์ตกแพงกว่า รอบเช้าถูกและคนน้อยกว่า" },
+          "ages": [1, 1, 2, 2],
+          "hrs": 1.5,
+          "io": "both",
+          "pram": "yes",
+          "price": { "en": "≈ US$40–60 adults · ≈ US$34–53 children 6–12 · young children free (price by time)", "th": "≈ US$40–60 ผู้ใหญ่ · ≈ US$34–53 เด็ก 6–12 ปี · เด็กเล็กฟรี (ราคาตามรอบ)" },
+          "book": "req",
+          "q": "Top of the Rock, Rockefeller Center, New York",
+          "ok": "2026-11",
+          "src": "https://www.rockefellercenter.com/it-it/buy-tickets/families-and-kids/locals"
+        },
+        {
+          "name": { "en": "New York Hall of Science", "th": "นิวยอร์กฮอลล์ออฟไซเอนซ์" },
+          "kind": "museumkid",
+          "area": { "en": "Flushing Meadows Corona Park, Queens", "th": "ฟลัชชิงเมโดวส์โคโรนาพาร์ก ควีนส์" },
+          "what": { "en": "A hands-on science centre with hundreds of exhibits, a preschool area and an outdoor science playground", "th": "ศูนย์วิทยาศาสตร์ลงมือทำ มีนิทรรศการหลายร้อยชิ้น โซนเด็กก่อนวัยเรียน และสนามเด็กเล่นวิทยาศาสตร์กลางแจ้ง" },
+          "why": { "en": "Everything is meant to be touched, with a space for under-sixes to build and splash", "th": "ทุกอย่างให้จับได้ และมีพื้นที่ให้เด็กต่ำกว่าหกขวบต่อและเล่นน้ำ" },
+          "tip": { "en": "Free hours on some Friday afternoons and Sunday mornings outside summer, booked ahead", "th": "มีช่วงเข้าฟรีบ่ายวันศุกร์และเช้าวันอาทิตย์นอกหน้าร้อน ต้องจองก่อน" },
+          "ages": [1, 2, 2, 1],
+          "hrs": 3,
+          "io": "both",
+          "pram": "yes",
+          "price": { "en": "≈ US$22 adults · ≈ US$19 children", "th": "≈ US$22 ผู้ใหญ่ · ≈ US$19 เด็ก" },
+          "book": "rec",
+          "q": "New York Hall of Science, Corona, Queens",
+          "ok": "2026-11",
+          "src": "https://www.nyctourism.com/events/nn-new-york-hall-of-science/"
+        },
+        {
+          "name": { "en": "New York Transit Museum", "th": "พิพิธภัณฑ์การขนส่งนิวยอร์ก" },
+          "kind": "museumkid",
+          "area": { "en": "Downtown Brooklyn", "th": "ดาวน์ทาวน์บรุกลิน" },
+          "what": { "en": "Old subway cars to climb into, down in a 1930s station under the street", "th": "ตู้รถไฟใต้ดินรุ่นเก่าให้ขึ้นไปนั่ง ในสถานีปี 1930 ใต้ถนน" },
+          "why": { "en": "Train-mad children can sit in a hundred years of subway cars and turn a real bus steering wheel", "th": "เด็กที่ชอบรถไฟได้นั่งตู้รถไฟร้อยปี และหมุนพวงมาลัยรถบัสของจริง" },
+          "tip": { "en": "Open Wednesday to Sunday; book ahead, as only a few tickets are sold at the door", "th": "เปิดวันพุธถึงอาทิตย์ จองล่วงหน้า หน้าประตูขายตั๋วน้อย" },
+          "ages": [1, 2, 2, 1],
+          "hrs": 1.5,
+          "io": "in",
+          "pram": "part",
+          "price": { "en": "≈ US$10–15 adults · ≈ US$5–10 ages 2–17 · under 2 free", "th": "≈ US$10–15 ผู้ใหญ่ · ≈ US$5–10 อายุ 2–17 ปี · ต่ำกว่า 2 ขวบฟรี" },
+          "book": "rec",
+          "q": "New York Transit Museum, Schermerhorn Street, Brooklyn",
+          "ok": "2026-11",
+          "src": "https://www.nytransitmuseum.org/visit"
+        },
+        {
+          "name": { "en": "Brooklyn Bridge Park and Jane's Carousel", "th": "บรุกลินบริดจ์พาร์กและม้าหมุนเจนส์" },
+          "kind": "park",
+          "area": { "en": "DUMBO, Brooklyn", "th": "ดัมโบ บรุกลิน" },
+          "what": { "en": "A riverside park under the Brooklyn Bridge with playgrounds and a 1922 carousel in a glass box", "th": "สวนริมแม่น้ำใต้สะพานบรุกลิน มีสนามเด็กเล่นและม้าหมุนปี 1922 ในกล่องกระจก" },
+          "why": { "en": "Playgrounds, open lawns and a carousel that runs all year, with the skyline across the water", "th": "สนามเด็กเล่น สนามหญ้ากว้าง และม้าหมุนที่เปิดทั้งปี มองเห็นตึกระฟ้าฝั่งตรงข้าม" },
+          "tip": { "en": "The carousel's hours change by season; check its website before going", "th": "เวลาเปิดม้าหมุนเปลี่ยนตามฤดู เช็กเว็บก่อนไป" },
+          "ages": [2, 2, 2, 1],
+          "hrs": 2,
+          "io": "out",
+          "pram": "yes",
+          "price": { "en": "Free · carousel ≈ US$3 a ride", "th": "ฟรี · ม้าหมุน ≈ US$3 ต่อรอบ" },
+          "book": "none",
+          "q": "Jane's Carousel, Brooklyn Bridge Park, Brooklyn",
+          "ok": "2026-11",
+          "src": "https://brooklynbridgepark.org/places-to-see/janes-carousel/"
+        },
+        {
+          "name": { "en": "Winter Village at Bryant Park", "th": "วินเทอร์วิลเลจที่ไบรอันต์พาร์ก" },
+          "kind": "play",
+          "area": { "en": "Bryant Park, Midtown", "th": "ไบรอันต์พาร์ก มิดทาวน์" },
+          "what": { "en": "A free ice rink with holiday market stalls around it, from late October to the end of February", "th": "ลานสเก็ตน้ำแข็งฟรี มีร้านตลาดคริสต์มาสรอบๆ ตั้งแต่ปลายตุลาคมถึงปลายกุมภาพันธ์" },
+          "why": { "en": "Skating is free with your own skates, and the stalls and tree are fun even for those who just watch", "th": "สเก็ตฟรีถ้ามีรองเท้าเอง ร้านและต้นคริสต์มาสสนุกแม้แค่ยืนดู" },
+          "tip": { "en": "Open 28 Oct 2026 to the end of Feb 2027; the holiday shops close on 3 Jan, and skate hire costs extra", "th": "เปิด 28 ต.ค. 2026 ถึงปลาย ก.พ. 2027 ร้านคริสต์มาสปิด 3 ม.ค. เช่ารองเท้าสเก็ตจ่ายเพิ่ม" },
+          "ages": [1, 2, 2, 2],
+          "hrs": 2,
+          "io": "out",
+          "pram": "yes",
+          "price": { "en": "Free · skate hire extra", "th": "ฟรี · เช่ารองเท้าสเก็ตจ่ายเพิ่ม" },
+          "book": "none",
+          "q": "Bank of America Winter Village, Bryant Park, New York",
+          "ok": "2026-11",
+          "src": "https://bryantpark.org/amenities/bank-of-america-winter-village-at-bryant-park"
+        },
+        {
+          "name": { "en": "Chelsea Market", "th": "เชลซีมาร์เก็ต" },
+          "kind": "market",
+          "area": { "en": "Chelsea, Manhattan", "th": "เชลซี แมนแฮตตัน" },
+          "what": { "en": "An old biscuit factory turned food hall, with tacos, dumplings, doughnuts, bakeries and food shops", "th": "โรงงานบิสกิตเก่าที่กลายเป็นฟู้ดฮอลล์ มีทาโก้ เกี๊ยว โดนัท เบเกอรี และร้านของกิน" },
+          "why": { "en": "Indoors and easy with a pram, and everyone finds something to eat", "th": "อยู่ในร่ม เข็นรถเข็นง่าย และทุกคนหาของกินที่ชอบได้" },
+          "tip": { "en": "Weekday mornings are quiet; the High Line's 16th Street stairs are just outside", "th": "เช้าวันธรรมดาคนน้อย ทางขึ้นไฮไลน์ถนน 16 อยู่หน้าตลาด" },
+          "ages": [1, 2, 2, 2],
+          "hrs": 1.5,
+          "io": "in",
+          "pram": "yes",
+          "price": { "en": "Free entry", "th": "เข้าฟรี" },
+          "book": "none",
+          "q": "Chelsea Market, Ninth Avenue, New York",
+          "ok": "2026-11",
+          "src": "https://www.theemptynestexplorers.com/blog/what-to-see-and-do-in-chelsea-new-york-city"
+        },
+        {
+          "name": { "en": "The High Line", "th": "เดอะไฮไลน์" },
+          "kind": "park",
+          "area": { "en": "Meatpacking District to Hudson Yards", "th": "มีตแพ็กกิงดิสทริกต์ถึงฮัดสันยาร์ดส์" },
+          "what": { "en": "A park on an old elevated railway, with gardens, art and views over the streets", "th": "สวนบนทางรถไฟลอยฟ้าเก่า มีสวนดอกไม้ งานศิลปะ และวิวถนนด้านล่าง" },
+          "why": { "en": "A traffic-free walk for a pram, with lifts at several entrances and benches all along", "th": "ทางเดินไม่มีรถ เข็นรถเข็นได้ มีลิฟต์หลายทางขึ้นและม้านั่งตลอดทาง" },
+          "tip": { "en": "Walk it north to south and finish with lunch at Chelsea Market", "th": "เดินจากเหนือลงใต้ แล้วจบด้วยมื้อกลางวันที่เชลซีมาร์เก็ต" },
+          "ages": [1, 1, 1, 2],
+          "hrs": 1.5,
+          "io": "out",
+          "pram": "yes",
+          "price": { "en": "Free", "th": "ฟรี" },
+          "book": "none",
+          "q": "The High Line, Gansevoort Street, New York",
+          "ok": "2026-11",
+          "src": "https://www.theemptynestexplorers.com/blog/what-to-see-and-do-in-chelsea-new-york-city"
+        },
+        {
+          "name": { "en": "Central Park and Heckscher Playground", "th": "เซ็นทรัลพาร์กและสนามเด็กเล่นเฮกเชอร์" },
+          "kind": "park",
+          "area": { "en": "Central Park, Manhattan", "th": "เซ็นทรัลพาร์ก แมนแฮตตัน" },
+          "what": { "en": "The city's great park; Heckscher is its biggest playground, with rocks to climb, slides and water play in summer", "th": "สวนสาธารณะใหญ่ของเมือง เฮกเชอร์คือสนามเด็กเล่นที่ใหญ่ที่สุดในสวน มีหินให้ปีน สไลเดอร์ และเล่นน้ำหน้าร้อน" },
+          "why": { "en": "Room to run between museums, with 21 playgrounds across the park", "th": "มีที่ให้วิ่งเล่นระหว่างพิพิธภัณฑ์ และมีสนามเด็กเล่น 21 แห่งทั่วสวน" },
+          "tip": { "en": "Heckscher is near the south end, a short walk from the zoo", "th": "เฮกเชอร์อยู่ทางใต้ของสวน เดินจากสวนสัตว์ไม่ไกล" },
+          "ages": [2, 2, 2, 1],
+          "hrs": 2,
+          "io": "out",
+          "pram": "yes",
+          "price": { "en": "Free", "th": "ฟรี" },
+          "book": "none",
+          "q": "Heckscher Playground, Central Park, New York",
+          "ok": "2026-11",
+          "src": "https://www.centralparknyc.org/locations/heckscher-playground"
+        }
+      ]
     },
     {
-     "name": {
-      "en": "American Museum of Natural History",
-      "th": "พิพิธภัณฑ์ประวัติศาสตร์ธรรมชาติอเมริกัน"
-     },
-     "kind": "museum",
-     "area": {
-      "en": "Upper West Side",
-      "th": "อัปเปอร์เวสต์ไซด์"
-     },
-     "what": {
-      "en": "Dinosaur skeletons, the giant blue whale, animal dioramas and a planetarium in one of the world's great museums",
-      "th": "โครงกระดูกไดโนเสาร์ วาฬสีน้ำเงินตัวยักษ์ ฉากสัตว์จำลอง และท้องฟ้าจำลอง ในพิพิธภัณฑ์ระดับโลก"
-     },
-     "why": {
-      "en": "Dinosaurs and the whale win over every age, and it is a whole indoor day for rain or cold",
-      "th": "ไดโนเสาร์กับวาฬถูกใจทุกวัย และเที่ยวในร่มได้ทั้งวันตอนฝนตกหรืออากาศหนาว"
-     },
-     "tip": {
-      "en": "Book a timed ticket online; head to the fourth-floor dinosaurs first, before the crowds",
-      "th": "จองตั๋วตามรอบออนไลน์ ไปชั้น 4 ดูไดโนเสาร์ก่อนคนเยอะ"
-     },
-     "ages": [
-      1,
-      2,
-      2,
-      2
-     ],
-     "hrs": 4,
-     "io": "in",
-     "pram": "yes",
-     "price": {
-      "en": "≈ US$37 adults · ≈ US$22 children 3–12 · under 3 free (New York State residents pay what they wish)",
-      "th": "≈ US$37 ผู้ใหญ่ · ≈ US$22 เด็ก 3–12 ปี · ต่ำกว่า 3 ขวบฟรี (คนรัฐนิวยอร์กจ่ายตามใจ)"
-     },
-     "book": "rec",
-     "q": "American Museum of Natural History, Upper West Side, New York",
-     "ok": "2026-11",
-     "src": "https://www.amnh.org/plan-your-visit/admission"
-    },
-    {
-     "name": {
-      "en": "Children's Museum of Manhattan",
-      "th": "พิพิธภัณฑ์เด็กแมนแฮตตัน"
-     },
-     "kind": "museumkid",
-     "area": {
-      "en": "Upper West Side",
-      "th": "อัปเปอร์เวสต์ไซด์"
-     },
-     "what": {
-      "en": "Floors of hands-on play: water tables, a toddler zone, dress-up and art studios",
-      "th": "หลายชั้นของการเล่นลงมือทำ โต๊ะเล่นน้ำ โซนเด็กเล็ก แต่งตัว และห้องศิลปะ"
-     },
-     "why": {
-      "en": "Made for children under eight, with a soft play area for babies and toddlers",
-      "th": "ทำมาเพื่อเด็กต่ำกว่าแปดขวบ มีมุมนุ่มสำหรับเด็กทารกและเด็กวัยเตาะแตะ"
-     },
-     "tip": {
-      "en": "Open Tuesday to Sunday; buying online is a dollar cheaper than at the door",
-      "th": "เปิดวันอังคารถึงอาทิตย์ ซื้อออนไลน์ถูกกว่าหน้าประตูหนึ่งดอลลาร์"
-     },
-     "ages": [
-      2,
-      2,
-      1,
-      0
-     ],
-     "hrs": 2,
-     "io": "in",
-     "pram": "yes",
-     "price": {
-      "en": "≈ US$17 online, adults and children alike · under 1 free",
-      "th": "≈ US$17 ออนไลน์ ผู้ใหญ่และเด็กราคาเดียวกัน · ต่ำกว่า 1 ขวบฟรี"
-     },
-     "book": "rec",
-     "q": "Children's Museum of Manhattan, Upper West Side, New York",
-     "ok": "2026-11",
-     "src": "https://visit.cmom.org/"
-    },
-    {
-     "name": {
-      "en": "New York Aquarium",
-      "th": "นิวยอร์กอควาเรียม"
-     },
-     "kind": "aquarium",
-     "area": {
-      "en": "Coney Island, Brooklyn",
-      "th": "โคนีย์ไอแลนด์ บรุกลิน"
-     },
-     "what": {
-      "en": "The city's aquarium by the beach, with sea lions, sharks, sea turtles and penguins",
-      "th": "พิพิธภัณฑ์สัตว์น้ำริมหาดของเมือง มีสิงโตทะเล ฉลาม เต่าทะเล และเพนกวิน"
-     },
-     "why": {
-      "en": "Short walks between tanks and a sea lion show that small children love",
-      "th": "เดินระหว่างตู้ไม่ไกล และโชว์สิงโตทะเลที่เด็กเล็กชอบมาก"
-     },
-     "tip": {
-      "en": "Wednesday afternoons from 3 pm are free with a timed ticket booked ahead",
-      "th": "บ่ายวันพุธตั้งแต่ 15:00 เข้าฟรี ต้องจองตั๋วตามรอบก่อน"
-     },
-     "ages": [
-      2,
-      2,
-      2,
-      1
-     ],
-     "hrs": 2.5,
-     "io": "both",
-     "pram": "yes",
-     "price": {
-      "en": "≈ US$30 adults · ≈ US$26 children 3–12 · under 3 free",
-      "th": "≈ US$30 ผู้ใหญ่ · ≈ US$26 เด็ก 3–12 ปี · ต่ำกว่า 3 ขวบฟรี"
-     },
-     "book": "rec",
-     "q": "New York Aquarium, Coney Island, Brooklyn",
-     "ok": "2026-11",
-     "src": "https://nyaquarium.com/visitor-info/faqs"
-    },
-    {
-     "name": {
-      "en": "Statue of Liberty and Ellis Island",
-      "th": "เทพีเสรีภาพและเกาะเอลลิส"
-     },
-     "kind": "culture",
-     "area": {
-      "en": "New York Harbor, from Battery Park",
-      "th": "อ่าวนิวยอร์ก ขึ้นเรือที่แบตเตอรีพาร์ก"
-     },
-     "what": {
-      "en": "The ferry to Liberty Island to walk round the statue, then on to the immigration museum on Ellis Island",
-      "th": "นั่งเรือไปเกาะลิเบอร์ตีเดินรอบเทพีเสรีภาพ แล้วต่อไปพิพิธภัณฑ์ผู้อพยพบนเกาะเอลลิส"
-     },
-     "why": {
-      "en": "The boat ride and the giant statue are the treat for children; the grounds are enough for little ones",
-      "th": "การนั่งเรือและรูปปั้นยักษ์คือของขวัญของเด็กๆ สำหรับเด็กเล็กเดินรอบเกาะก็พอ"
-     },
-     "tip": {
-      "en": "Buy only from Statue City Cruises, the one official ferry; expect airport-style security at the pier",
-      "th": "ซื้อตั๋วจากสแตชูซิตีครูซส์ซึ่งเป็นเรือทางการเจ้าเดียว ที่ท่าเรือมีตรวจความปลอดภัยแบบสนามบิน"
-     },
-     "ages": [
-      1,
-      2,
-      2,
-      2
-     ],
-     "hrs": 4,
-     "io": "both",
-     "pram": "yes",
-     "price": {
-      "en": "≈ US$25.50 adults · ≈ US$16.50 children 4–12 · under 4 free",
-      "th": "≈ US$25.50 ผู้ใหญ่ · ≈ US$16.50 เด็ก 4–12 ปี · ต่ำกว่า 4 ขวบฟรี"
-     },
-     "book": "rec",
-     "q": "Statue City Cruises, Battery Park, New York",
-     "ok": "2026-11",
-     "src": "https://www.nps.gov/stli/planyourvisit/fees.htm"
-    },
-    {
-     "name": {
-      "en": "Staten Island Ferry",
-      "th": "เรือสเตเทนไอแลนด์"
-     },
-     "kind": "ride",
-     "area": {
-      "en": "Whitehall Terminal, Lower Manhattan",
-      "th": "ท่าเรือไวต์ฮอลล์ โลเวอร์แมนแฮตตัน"
-     },
-     "what": {
-      "en": "The big orange commuter ferry across the harbour, passing the Statue of Liberty and the Manhattan skyline",
-      "th": "เรือส้มลำใหญ่ข้ามอ่าว ผ่านเทพีเสรีภาพและตึกระฟ้าแมนแฮตตัน"
-     },
-     "why": {
-      "en": "A free 25-minute boat ride with a view of the statue, no booking and room for a pram",
-      "th": "นั่งเรือฟรี 25 นาที เห็นเทพีเสรีภาพ ไม่ต้องจอง และมีที่วางรถเข็น"
-     },
-     "tip": {
-      "en": "Sit on the right side going out for the statue; anyone selling tickets for it is a scam",
-      "th": "ขาไปนั่งฝั่งขวาจะเห็นเทพีเสรีภาพ ใครขายตั๋วเรือนี้คือมิจฉาชีพ"
-     },
-     "ages": [
-      2,
-      2,
-      2,
-      2
-     ],
-     "hrs": 1.5,
-     "io": "both",
-     "pram": "yes",
-     "price": {
-      "en": "Free",
-      "th": "ฟรี"
-     },
-     "book": "none",
-     "q": "Whitehall Terminal, Lower Manhattan, New York",
-     "ok": "2026-11",
-     "src": "https://nyctourism.com/articles/guide-to-the-staten-island-ferry"
-    },
-    {
-     "name": {
-      "en": "Intrepid Museum",
-      "th": "พิพิธภัณฑ์อินเทรพิด"
-     },
-     "kind": "museum",
-     "area": {
-      "en": "Pier 86, Hell's Kitchen",
-      "th": "ท่าเรือ 86 เฮลส์คิตเชน"
-     },
-     "what": {
-      "en": "An aircraft carrier turned museum, with jets on deck, the space shuttle Enterprise and a submarine",
-      "th": "เรือบรรทุกเครื่องบินที่กลายเป็นพิพิธภัณฑ์ มีเครื่องบินรบบนดาดฟ้า กระสวยอวกาศเอนเทอร์ไพรส์ และเรือดำน้ำ"
-     },
-     "why": {
-      "en": "Planes and a real shuttle thrill children; the hangar deck is indoors for a grey day",
-      "th": "เครื่องบินและกระสวยของจริงทำให้เด็กตื่นเต้น ชั้นโรงเก็บเครื่องบินอยู่ในร่มเหมาะวันฟ้าครึ้ม"
-     },
-     "tip": {
-      "en": "The submarine has narrow hatches and no room for a pram",
-      "th": "เรือดำน้ำมีช่องแคบ เข็นรถเข็นเข้าไม่ได้"
-     },
-     "ages": [
-      1,
-      1,
-      2,
-      2
-     ],
-     "hrs": 3,
-     "io": "both",
-     "pram": "part",
-     "price": {
-      "en": "≈ US$38 adults · ≈ US$28 children 5–12 · under 5 free",
-      "th": "≈ US$38 ผู้ใหญ่ · ≈ US$28 เด็ก 5–12 ปี · ต่ำกว่า 5 ขวบฟรี"
-     },
-     "book": "rec",
-     "q": "Intrepid Museum, Pier 86, New York",
-     "ok": "2026-11",
-     "src": "https://intrepidmuseum.org/plan-your-visit/group-visits/adult-groups"
-    },
-    {
-     "name": {
-      "en": "Top of the Rock",
-      "th": "ท็อปออฟเดอะร็อก"
-     },
-     "kind": "views",
-     "area": {
-      "en": "Rockefeller Center, Midtown",
-      "th": "ร็อกกีเฟลเลอร์เซ็นเตอร์ มิดทาวน์"
-     },
-     "what": {
-      "en": "Open-air decks on the 70th floor with Central Park on one side and the Empire State Building on the other",
-      "th": "ชั้นชมวิวกลางแจ้งชั้น 70 เห็นเซ็นทรัลพาร์กด้านหนึ่งและตึกเอ็มไพร์สเตตอีกด้าน"
-     },
-     "why": {
-      "en": "Glass walls on the open decks let small children see out safely, and the lift ride is quick",
-      "th": "ชั้นกลางแจ้งมีผนังกระจกให้เด็กเล็กมองได้ปลอดภัย และลิฟต์ขึ้นเร็ว"
-     },
-     "tip": {
-      "en": "Timed tickets cost more at sunset; a morning slot is cheaper and quieter",
-      "th": "ตั๋วตามรอบช่วงพระอาทิตย์ตกแพงกว่า รอบเช้าถูกและคนน้อยกว่า"
-     },
-     "ages": [
-      1,
-      1,
-      2,
-      2
-     ],
-     "hrs": 1.5,
-     "io": "both",
-     "pram": "yes",
-     "price": {
-      "en": "≈ US$40–60 adults · ≈ US$34–53 children 6–12 · young children free (price by time)",
-      "th": "≈ US$40–60 ผู้ใหญ่ · ≈ US$34–53 เด็ก 6–12 ปี · เด็กเล็กฟรี (ราคาตามรอบ)"
-     },
-     "book": "req",
-     "q": "Top of the Rock, Rockefeller Center, New York",
-     "ok": "2026-11",
-     "src": "https://www.rockefellercenter.com/it-it/buy-tickets/families-and-kids/locals"
-    },
-    {
-     "name": {
-      "en": "New York Hall of Science",
-      "th": "นิวยอร์กฮอลล์ออฟไซเอนซ์"
-     },
-     "kind": "museumkid",
-     "area": {
-      "en": "Flushing Meadows Corona Park, Queens",
-      "th": "ฟลัชชิงเมโดวส์โคโรนาพาร์ก ควีนส์"
-     },
-     "what": {
-      "en": "A hands-on science centre with hundreds of exhibits, a preschool area and an outdoor science playground",
-      "th": "ศูนย์วิทยาศาสตร์ลงมือทำ มีนิทรรศการหลายร้อยชิ้น โซนเด็กก่อนวัยเรียน และสนามเด็กเล่นวิทยาศาสตร์กลางแจ้ง"
-     },
-     "why": {
-      "en": "Everything is meant to be touched, with a space for under-sixes to build and splash",
-      "th": "ทุกอย่างให้จับได้ และมีพื้นที่ให้เด็กต่ำกว่าหกขวบต่อและเล่นน้ำ"
-     },
-     "tip": {
-      "en": "Free hours on some Friday afternoons and Sunday mornings outside summer, booked ahead",
-      "th": "มีช่วงเข้าฟรีบ่ายวันศุกร์และเช้าวันอาทิตย์นอกหน้าร้อน ต้องจองก่อน"
-     },
-     "ages": [
-      1,
-      2,
-      2,
-      1
-     ],
-     "hrs": 3,
-     "io": "both",
-     "pram": "yes",
-     "price": {
-      "en": "≈ US$22 adults · ≈ US$19 children",
-      "th": "≈ US$22 ผู้ใหญ่ · ≈ US$19 เด็ก"
-     },
-     "book": "rec",
-     "q": "New York Hall of Science, Corona, Queens",
-     "ok": "2026-11",
-     "src": "https://www.nyctourism.com/events/nn-new-york-hall-of-science/"
-    },
-    {
-     "name": {
-      "en": "New York Transit Museum",
-      "th": "พิพิธภัณฑ์การขนส่งนิวยอร์ก"
-     },
-     "kind": "museumkid",
-     "area": {
-      "en": "Downtown Brooklyn",
-      "th": "ดาวน์ทาวน์บรุกลิน"
-     },
-     "what": {
-      "en": "Old subway cars to climb into, down in a 1930s station under the street",
-      "th": "ตู้รถไฟใต้ดินรุ่นเก่าให้ขึ้นไปนั่ง ในสถานีปี 1930 ใต้ถนน"
-     },
-     "why": {
-      "en": "Train-mad children can sit in a hundred years of subway cars and turn a real bus steering wheel",
-      "th": "เด็กที่ชอบรถไฟได้นั่งตู้รถไฟร้อยปี และหมุนพวงมาลัยรถบัสของจริง"
-     },
-     "tip": {
-      "en": "Open Wednesday to Sunday; book ahead, as only a few tickets are sold at the door",
-      "th": "เปิดวันพุธถึงอาทิตย์ จองล่วงหน้า หน้าประตูขายตั๋วน้อย"
-     },
-     "ages": [
-      1,
-      2,
-      2,
-      1
-     ],
-     "hrs": 1.5,
-     "io": "in",
-     "pram": "part",
-     "price": {
-      "en": "≈ US$10–15 adults · ≈ US$5–10 ages 2–17 · under 2 free",
-      "th": "≈ US$10–15 ผู้ใหญ่ · ≈ US$5–10 อายุ 2–17 ปี · ต่ำกว่า 2 ขวบฟรี"
-     },
-     "book": "rec",
-     "q": "New York Transit Museum, Schermerhorn Street, Brooklyn",
-     "ok": "2026-11",
-     "src": "https://www.nytransitmuseum.org/visit"
-    },
-    {
-     "name": {
-      "en": "Brooklyn Bridge Park and Jane's Carousel",
-      "th": "บรุกลินบริดจ์พาร์กและม้าหมุนเจนส์"
-     },
-     "kind": "park",
-     "area": {
-      "en": "DUMBO, Brooklyn",
-      "th": "ดัมโบ บรุกลิน"
-     },
-     "what": {
-      "en": "A riverside park under the Brooklyn Bridge with playgrounds and a 1922 carousel in a glass box",
-      "th": "สวนริมแม่น้ำใต้สะพานบรุกลิน มีสนามเด็กเล่นและม้าหมุนปี 1922 ในกล่องกระจก"
-     },
-     "why": {
-      "en": "Playgrounds, open lawns and a carousel that runs all year, with the skyline across the water",
-      "th": "สนามเด็กเล่น สนามหญ้ากว้าง และม้าหมุนที่เปิดทั้งปี มองเห็นตึกระฟ้าฝั่งตรงข้าม"
-     },
-     "tip": {
-      "en": "The carousel's hours change by season; check its website before going",
-      "th": "เวลาเปิดม้าหมุนเปลี่ยนตามฤดู เช็กเว็บก่อนไป"
-     },
-     "ages": [
-      2,
-      2,
-      2,
-      1
-     ],
-     "hrs": 2,
-     "io": "out",
-     "pram": "yes",
-     "price": {
-      "en": "Free · carousel ≈ US$3 a ride",
-      "th": "ฟรี · ม้าหมุน ≈ US$3 ต่อรอบ"
-     },
-     "book": "none",
-     "q": "Jane's Carousel, Brooklyn Bridge Park, Brooklyn",
-     "ok": "2026-11",
-     "src": "https://brooklynbridgepark.org/places-to-see/janes-carousel/"
-    },
-    {
-     "name": {
-      "en": "Winter Village at Bryant Park",
-      "th": "วินเทอร์วิลเลจที่ไบรอันต์พาร์ก"
-     },
-     "kind": "play",
-     "area": {
-      "en": "Bryant Park, Midtown",
-      "th": "ไบรอันต์พาร์ก มิดทาวน์"
-     },
-     "what": {
-      "en": "A free ice rink with holiday market stalls around it, from late October to the end of February",
-      "th": "ลานสเก็ตน้ำแข็งฟรี มีร้านตลาดคริสต์มาสรอบๆ ตั้งแต่ปลายตุลาคมถึงปลายกุมภาพันธ์"
-     },
-     "why": {
-      "en": "Skating is free with your own skates, and the stalls and tree are fun even for those who just watch",
-      "th": "สเก็ตฟรีถ้ามีรองเท้าเอง ร้านและต้นคริสต์มาสสนุกแม้แค่ยืนดู"
-     },
-     "tip": {
-      "en": "Open 28 Oct 2026 to the end of Feb 2027; the holiday shops close on 3 Jan, and skate hire costs extra",
-      "th": "เปิด 28 ต.ค. 2026 ถึงปลาย ก.พ. 2027 ร้านคริสต์มาสปิด 3 ม.ค. เช่ารองเท้าสเก็ตจ่ายเพิ่ม"
-     },
-     "ages": [
-      1,
-      2,
-      2,
-      2
-     ],
-     "hrs": 2,
-     "io": "out",
-     "pram": "yes",
-     "price": {
-      "en": "Free · skate hire extra",
-      "th": "ฟรี · เช่ารองเท้าสเก็ตจ่ายเพิ่ม"
-     },
-     "book": "none",
-     "q": "Bank of America Winter Village, Bryant Park, New York",
-     "ok": "2026-11",
-     "src": "https://bryantpark.org/amenities/bank-of-america-winter-village-at-bryant-park"
-    },
-    {
-     "name": {
-      "en": "Chelsea Market",
-      "th": "เชลซีมาร์เก็ต"
-     },
-     "kind": "market",
-     "area": {
-      "en": "Chelsea, Manhattan",
-      "th": "เชลซี แมนแฮตตัน"
-     },
-     "what": {
-      "en": "An old biscuit factory turned food hall, with tacos, dumplings, doughnuts, bakeries and food shops",
-      "th": "โรงงานบิสกิตเก่าที่กลายเป็นฟู้ดฮอลล์ มีทาโก้ เกี๊ยว โดนัท เบเกอรี และร้านของกิน"
-     },
-     "why": {
-      "en": "Indoors and easy with a pram, and everyone finds something to eat",
-      "th": "อยู่ในร่ม เข็นรถเข็นง่าย และทุกคนหาของกินที่ชอบได้"
-     },
-     "tip": {
-      "en": "Weekday mornings are quiet; the High Line's 16th Street stairs are just outside",
-      "th": "เช้าวันธรรมดาคนน้อย ทางขึ้นไฮไลน์ถนน 16 อยู่หน้าตลาด"
-     },
-     "ages": [
-      1,
-      2,
-      2,
-      2
-     ],
-     "hrs": 1.5,
-     "io": "in",
-     "pram": "yes",
-     "price": {
-      "en": "Free entry",
-      "th": "เข้าฟรี"
-     },
-     "book": "none",
-     "q": "Chelsea Market, Ninth Avenue, New York",
-     "ok": "2026-11",
-     "src": "https://www.theemptynestexplorers.com/blog/what-to-see-and-do-in-chelsea-new-york-city"
-    },
-    {
-     "name": {
-      "en": "The High Line",
-      "th": "เดอะไฮไลน์"
-     },
-     "kind": "park",
-     "area": {
-      "en": "Meatpacking District to Hudson Yards",
-      "th": "มีตแพ็กกิงดิสทริกต์ถึงฮัดสันยาร์ดส์"
-     },
-     "what": {
-      "en": "A park on an old elevated railway, with gardens, art and views over the streets",
-      "th": "สวนบนทางรถไฟลอยฟ้าเก่า มีสวนดอกไม้ งานศิลปะ และวิวถนนด้านล่าง"
-     },
-     "why": {
-      "en": "A traffic-free walk for a pram, with lifts at several entrances and benches all along",
-      "th": "ทางเดินไม่มีรถ เข็นรถเข็นได้ มีลิฟต์หลายทางขึ้นและม้านั่งตลอดทาง"
-     },
-     "tip": {
-      "en": "Walk it north to south and finish with lunch at Chelsea Market",
-      "th": "เดินจากเหนือลงใต้ แล้วจบด้วยมื้อกลางวันที่เชลซีมาร์เก็ต"
-     },
-     "ages": [
-      1,
-      1,
-      1,
-      2
-     ],
-     "hrs": 1.5,
-     "io": "out",
-     "pram": "yes",
-     "price": {
-      "en": "Free",
-      "th": "ฟรี"
-     },
-     "book": "none",
-     "q": "The High Line, Gansevoort Street, New York",
-     "ok": "2026-11",
-     "src": "https://www.theemptynestexplorers.com/blog/what-to-see-and-do-in-chelsea-new-york-city"
-    },
-    {
-     "name": {
-      "en": "Central Park and Heckscher Playground",
-      "th": "เซ็นทรัลพาร์กและสนามเด็กเล่นเฮกเชอร์"
-     },
-     "kind": "park",
-     "area": {
-      "en": "Central Park, Manhattan",
-      "th": "เซ็นทรัลพาร์ก แมนแฮตตัน"
-     },
-     "what": {
-      "en": "The city's great park; Heckscher is its biggest playground, with rocks to climb, slides and water play in summer",
-      "th": "สวนสาธารณะใหญ่ของเมือง เฮกเชอร์คือสนามเด็กเล่นที่ใหญ่ที่สุดในสวน มีหินให้ปีน สไลเดอร์ และเล่นน้ำหน้าร้อน"
-     },
-     "why": {
-      "en": "Room to run between museums, with 21 playgrounds across the park",
-      "th": "มีที่ให้วิ่งเล่นระหว่างพิพิธภัณฑ์ และมีสนามเด็กเล่น 21 แห่งทั่วสวน"
-     },
-     "tip": {
-      "en": "Heckscher is near the south end, a short walk from the zoo",
-      "th": "เฮกเชอร์อยู่ทางใต้ของสวน เดินจากสวนสัตว์ไม่ไกล"
-     },
-     "ages": [
-      2,
-      2,
-      2,
-      1
-     ],
-     "hrs": 2,
-     "io": "out",
-     "pram": "yes",
-     "price": {
-      "en": "Free",
-      "th": "ฟรี"
-     },
-     "book": "none",
-     "q": "Heckscher Playground, Central Park, New York",
-     "ok": "2026-11",
-     "src": "https://www.centralparknyc.org/locations/heckscher-playground"
+      "place": "p-orlando",
+      "sights": [
+        {
+          "name": { "en": "Magic Kingdom", "th": "เมจิกคิงดอม" },
+          "kind": "themepark",
+          "area": { "en": "Walt Disney World", "th": "วอลต์ดิสนีย์เวิลด์" },
+          "what": { "en": "The classic Disney park with Cinderella Castle, Fantasyland rides, parades and fireworks", "th": "สวนสนุกดิสนีย์แบบดั้งเดิม มีปราสาทซินเดอเรลลา เครื่องเล่นแฟนตาซีแลนด์ ขบวนพาเหรดและพลุ" },
+          "why": { "en": "Many gentle rides for toddlers and characters to meet; strollers can be rented", "th": "มีเครื่องเล่นเบาๆ สำหรับเด็กเล็กและมีตัวการ์ตูนให้ถ่ายรูปด้วย เช่ารถเข็นเด็กได้" },
+          "tip": { "en": "Go at opening time and rest at the hotel midday; prices change by date", "th": "ไปตอนเปิดและพักที่โรงแรมช่วงกลางวัน ราคาเปลี่ยนตามวัน" },
+          "ages": [1, 2, 2, 1],
+          "hrs": 8,
+          "io": "out",
+          "pram": "yes",
+          "price": { "en": "≈ $139–$209 adults, by date · check the child price", "th": "≈ $139–$209 ผู้ใหญ่ ตามวัน · เช็กราคาเด็ก" },
+          "book": "rec",
+          "q": "Magic Kingdom Park, Bay Lake, Florida",
+          "ok": "2026-11",
+          "src": "https://wdwmagic.com/other/magic-your-way-ticket/news/22apr2025-disney-world-2026-one-day-ticket-prices-announced-heres-what-youll-pay-to-visit-each-park.htm"
+        },
+        {
+          "name": { "en": "EPCOT", "th": "เอปคอต" },
+          "kind": "themepark",
+          "area": { "en": "Walt Disney World", "th": "วอลต์ดิสนีย์เวิลด์" },
+          "what": { "en": "Future-world rides and a walk around eleven country pavilions, with an aquarium and Frozen and Nemo rides", "th": "เครื่องเล่นโลกอนาคตและเดินชมศาลาของ 11 ประเทศ มีตู้ปลาและเครื่องเล่นโฟรเซนกับนีโม" },
+          "why": { "en": "Lots of shade, snacks and indoor rides; the Seas with Nemo suits small children", "th": "มีที่ร่ม ของกิน และเครื่องเล่นในร่มเยอะ เครื่องเล่นนีโมเหมาะกับเด็กเล็ก" },
+          "tip": { "en": "Start in World Showcase's countries after lunch when it is cooler", "th": "เดินศาลาประเทศต่างๆ ช่วงบ่ายเมื่ออากาศเย็นลง" },
+          "ages": [1, 2, 2, 2],
+          "hrs": 7,
+          "io": "both",
+          "pram": "yes",
+          "price": { "en": "≈ $129–$199 adults, by date · check the child price", "th": "≈ $129–$199 ผู้ใหญ่ ตามวัน · เช็กราคาเด็ก" },
+          "book": "rec",
+          "q": "EPCOT, Bay Lake, Florida",
+          "ok": "2026-11",
+          "src": "https://wdwmagic.com/other/magic-your-way-ticket/news/22apr2025-disney-world-2026-one-day-ticket-prices-announced-heres-what-youll-pay-to-visit-each-park.htm"
+        },
+        {
+          "name": { "en": "Disney's Animal Kingdom", "th": "ดิสนีย์แอนิมอลคิงดอม" },
+          "kind": "themepark",
+          "area": { "en": "Walt Disney World", "th": "วอลต์ดิสนีย์เวิลด์" },
+          "what": { "en": "A park of animals and rides: safari trucks, Pandora, the Tree of Life and live shows", "th": "สวนสนุกที่มีสัตว์และเครื่องเล่น นั่งรถซาฟารี แพนดอร่า ต้นไม้แห่งชีวิตและการแสดงสด" },
+          "why": { "en": "The Kilimanjaro safari and animal trails keep small children busy; some of it is shaded", "th": "ซาฟารีและเส้นทางชมสัตว์ทำให้เด็กเล็กสนุก มีร่มบางส่วน" },
+          "tip": { "en": "Do the safari first thing, when the animals are most active", "th": "ขึ้นซาฟารีตอนเช้า สัตว์จะกระฉับกระเฉงที่สุด" },
+          "ages": [1, 2, 2, 2],
+          "hrs": 7,
+          "io": "out",
+          "pram": "yes",
+          "price": { "en": "≈ $119–$184 adults, by date · check the child price", "th": "≈ $119–$184 ผู้ใหญ่ ตามวัน · เช็กราคาเด็ก" },
+          "book": "rec",
+          "q": "Disney's Animal Kingdom, Bay Lake, Florida",
+          "ok": "2026-11",
+          "src": "https://wdwmagic.com/other/magic-your-way-ticket/news/22apr2025-disney-world-2026-one-day-ticket-prices-announced-heres-what-youll-pay-to-visit-each-park.htm"
+        },
+        {
+          "name": { "en": "Disney's Hollywood Studios", "th": "ดิสนีย์ฮอลลีวูดสตูดิโอส์" },
+          "kind": "themepark",
+          "area": { "en": "Walt Disney World", "th": "วอลต์ดิสนีย์เวิลด์" },
+          "what": { "en": "Toy Story Land, Star Wars Galaxy's Edge, Mickey and Minnie's Runaway Railway and stage shows", "th": "ทอยสตอรี่แลนด์ สตาร์วอร์สกาแลกซีส์เอดจ์ รถไฟมิกกี้และมินนี่ และโชว์บนเวที" },
+          "why": { "en": "Toy Story Land and the shows work for small children; several shows are indoors and air-conditioned", "th": "ทอยสตอรี่แลนด์และโชว์เหมาะกับเด็กเล็ก โชว์หลายอย่างอยู่ในร่มและมีแอร์" },
+          "tip": { "en": "Some thrill rides have height limits; check them before queueing", "th": "เครื่องเล่นแรงมีเกณฑ์ความสูง เช็กก่อนต่อคิว" },
+          "ages": [1, 2, 2, 2],
+          "hrs": 7,
+          "io": "both",
+          "pram": "yes",
+          "price": { "en": "≈ $139–$204 adults, by date · check the child price", "th": "≈ $139–$204 ผู้ใหญ่ ตามวัน · เช็กราคาเด็ก" },
+          "book": "rec",
+          "q": "Disney's Hollywood Studios, Bay Lake, Florida",
+          "ok": "2026-11",
+          "src": "https://wdwmagic.com/other/magic-your-way-ticket/news/22apr2025-disney-world-2026-one-day-ticket-prices-announced-heres-what-youll-pay-to-visit-each-park.htm"
+        },
+        {
+          "name": { "en": "Universal Studios Florida", "th": "ยูนิเวอร์แซลสตูดิโอส์ ฟลอริดา" },
+          "kind": "themepark",
+          "area": { "en": "Universal Orlando Resort", "th": "ยูนิเวอร์แซลออร์แลนโดรีสอร์ต" },
+          "what": { "en": "A movie-themed park with Minions, Diagon Alley, Jimmy Neutron and Springfield", "th": "สวนสนุกธีมภาพยนตร์ มีมินเนียน ไดแอกอน อัลลีย์ และโซนซิมป์สันส์" },
+          "why": { "en": "Several shows and character areas suit toddlers; many rides have height limits", "th": "มีโชว์และโซนตัวการ์ตูนที่เหมาะกับเด็กเล็ก เครื่องเล่นหลายอย่างมีเกณฑ์ความสูง" },
+          "tip": { "en": "Use the rider-swap service so both parents can ride", "th": "ใช้บริการสลับผู้ปกครองเพื่อให้พ่อแม่ได้ขึ้นเครื่องเล่นทั้งคู่" },
+          "ages": [1, 2, 2, 2],
+          "hrs": 7,
+          "io": "both",
+          "pram": "yes",
+          "price": { "en": "from ≈ $124 · check the child price", "th": "เริ่มที่ ≈ $124 · เช็กราคาเด็ก" },
+          "book": "rec",
+          "q": "Universal Studios Florida, Orlando",
+          "ok": "2026-11",
+          "src": "https://www.universalorlando.com/web/en/us/tickets-packages/park-tickets/flr"
+        },
+        {
+          "name": { "en": "Universal's Islands of Adventure", "th": "ยูนิเวอร์แซลส์ ไอแลนด์ออฟแอดเวนเจอร์" },
+          "kind": "themepark",
+          "area": { "en": "Universal Orlando Resort", "th": "ยูนิเวอร์แซลออร์แลนโดรีสอร์ต" },
+          "what": { "en": "Dr. Seuss Landing, Jurassic Park, Marvel and Hogsmeade in one island park", "th": "ดร.ซูสส์แลนดิ้ง จูราสสิคพาร์ก มาร์เวล และฮอกส์มี้ด ในสวนสนุกเดียว" },
+          "why": { "en": "Seuss Landing has gentle rides and splash play built for small children", "th": "ดร.ซูสส์แลนดิ้งมีเครื่องเล่นเบาๆ และลานเล่นน้ำสำหรับเด็กเล็ก" },
+          "tip": { "en": "Bring spare clothes: some rides soak you", "th": "เตรียมเสื้อผ้าสำรอง บางเครื่องเล่นทำให้เปียก" },
+          "ages": [1, 2, 2, 2],
+          "hrs": 7,
+          "io": "out",
+          "pram": "yes",
+          "price": { "en": "from ≈ $124 · check the child price", "th": "เริ่มที่ ≈ $124 · เช็กราคาเด็ก" },
+          "book": "rec",
+          "q": "Universal's Islands of Adventure, Orlando",
+          "ok": "2026-11",
+          "src": "https://www.universalorlando.com/web/en/us/tickets-packages/park-tickets/flr"
+        },
+        {
+          "name": { "en": "Universal Epic Universe", "th": "ยูนิเวอร์แซลเอปิกยูนิเวิร์ส" },
+          "kind": "themepark",
+          "area": { "en": "Universal Orlando Resort", "th": "ยูนิเวอร์แซลออร์แลนโดรีสอร์ต" },
+          "what": { "en": "The newest Universal park, with Super Nintendo World, How to Train Your Dragon and Wizarding World lands", "th": "สวนสนุกใหม่ล่าสุดของยูนิเวอร์แซล มีซูเปอร์นินเทนโดเวิลด์ โซนฮาวทูเทรนยัวร์ดราก้อน และโลกพ่อมด" },
+          "why": { "en": "Fun for older children; toddlers fit fewer rides, so allow for height limits", "th": "สนุกสำหรับเด็กโต เด็กเล็กขึ้นได้น้อยกว่า ควรเผื่อเกณฑ์ความสูง" },
+          "tip": { "en": "Pick a quieter weekday; the highest single-day price is late December", "th": "เลือกวันธรรมดาที่คนน้อย ราคาสูงสุดอยู่ปลายธันวาคม" },
+          "ages": [0, 1, 2, 2],
+          "hrs": 8,
+          "io": "out",
+          "pram": "yes",
+          "price": { "en": "from ≈ $139, up to ≈ $199 · check the child price", "th": "เริ่มที่ ≈ $139 สูงสุด ≈ $199 · เช็กราคาเด็ก" },
+          "book": "rec",
+          "q": "Universal Epic Universe, Orlando",
+          "ok": "2026-11",
+          "src": "https://www.universalorlando.com/web/en/us/tickets-packages/park-tickets/flr"
+        },
+        {
+          "name": { "en": "LEGOLAND Florida", "th": "เลโก้แลนด์ ฟลอริดา" },
+          "kind": "themepark",
+          "area": { "en": "Winter Haven", "th": "วินเทอร์เฮเวน" },
+          "what": { "en": "A theme park for ages 2–12 with gentle rides, building zones, Miniland and a SEA LIFE aquarium", "th": "สวนสนุกสำหรับเด็ก 2–12 ปี มีเครื่องเล่นเบาๆ โซนต่อเลโก้ มินิแลนด์ และตู้ปลา SEA LIFE" },
+          "why": { "en": "Built for children, most rides take small ones; about an hour from Orlando", "th": "ออกแบบมาเพื่อเด็ก เครื่องเล่นส่วนใหญ่เด็กเล็กขึ้นได้ ห่างออร์แลนโดราว 1 ชั่วโมง" },
+          "tip": { "en": "The water park has seasonal hours and is closed in winter; check the calendar", "th": "สวนน้ำเปิดตามฤดูกาลและปิดช่วงหนาว เช็กปฏิทินก่อนไป" },
+          "ages": [1, 2, 2, 1],
+          "hrs": 7,
+          "io": "out",
+          "pram": "yes",
+          "price": { "en": "≈ $80–$85 online, higher at the gate (guides) · check the price", "th": "≈ $80–$85 ออนไลน์ หน้างานแพงกว่า (จากเว็บแนะนำ) · เช็กราคา" },
+          "book": "rec",
+          "q": "LEGOLAND Florida Resort, Winter Haven",
+          "ok": "2026-11",
+          "src": "https://www.legoland.com/florida/blog/legoland-florida-prices-tickets-costs/"
+        },
+        {
+          "name": { "en": "SeaWorld Orlando", "th": "ซีเวิลด์ ออร์แลนโด" },
+          "kind": "aquarium",
+          "area": { "en": "International Drive", "th": "อินเตอร์เนชั่นแนลไดรฟ์" },
+          "what": { "en": "Marine park with shows, aquariums, a Sesame Street area and family rides", "th": "สวนสัตว์น้ำที่มีโชว์ ตู้ปลา โซนเซซามีสตรีท และเครื่องเล่นสำหรับครอบครัว" },
+          "why": { "en": "Gentle rides and Sesame Street Land for small children; some shows are indoors", "th": "มีเครื่องเล่นเบาๆ และเซซามีสตรีทแลนด์สำหรับเด็กเล็ก โชว์บางอย่างอยู่ในร่ม" },
+          "tip": { "en": "Children aged 2 and under enter free", "th": "เด็กอายุ 2 ปีและต่ำกว่าเข้าฟรี" },
+          "ages": [1, 2, 2, 1],
+          "hrs": 6,
+          "io": "both",
+          "pram": "yes",
+          "price": { "en": "≈ $70–$95 online (a guide), gate price higher · under 3 free · check the price", "th": "≈ $70–$95 ออนไลน์ (จากเว็บแนะนำ) หน้างานแพงกว่า · ต่ำกว่า 3 ปีฟรี · เช็กราคา" },
+          "book": "rec",
+          "q": "SeaWorld Orlando, 7007 Sea World Dr, Orlando",
+          "ok": "2026-11",
+          "src": "https://seaworld.com/Orlando/tickets/"
+        },
+        {
+          "name": { "en": "Aquatica Orlando", "th": "อควาติกา ออร์แลนโด" },
+          "kind": "themepark",
+          "area": { "en": "International Drive", "th": "อินเตอร์เนชั่นแนลไดรฟ์" },
+          "what": { "en": "A water park with slides, a lazy river, a wave pool and a kids' splash area", "th": "สวนน้ำที่มีสไลเดอร์ แม่น้ำวน สระคลื่น และโซนเล่นน้ำของเด็ก" },
+          "why": { "en": "Shallow splash areas for toddlers and life jackets provided; shade is limited", "th": "มีโซนน้ำตื้นสำหรับเด็กเล็กและให้เสื้อชูชีพ ที่ร่มมีจำกัด" },
+          "tip": { "en": "Hours change week to week; check the calendar for the day", "th": "เวลาเปิดเปลี่ยนทุกสัปดาห์ เช็กปฏิทินของวันนั้น" },
+          "ages": [1, 2, 2, 2],
+          "hrs": 6,
+          "io": "out",
+          "pram": "part",
+          "price": { "en": "a pricing guide lists ≈ $75 online, ≈ $115 at the gate (may be dated) · check the price", "th": "เว็บราคาระบุ ≈ $75 ออนไลน์ ≈ $115 หน้างาน · เช็กราคา" },
+          "book": "rec",
+          "q": "Aquatica Orlando, 5800 Water Play Way, Orlando",
+          "ok": "2026-11",
+          "src": "https://aquatica.com/pricing-guide-to-aquatica/"
+        },
+        {
+          "name": { "en": "Kennedy Space Center Visitor Complex", "th": "เคนเนดีสเปซเซ็นเตอร์ วิสิเตอร์คอมเพล็กซ์" },
+          "kind": "museum",
+          "area": { "en": "Merritt Island", "th": "เมอร์ริตต์ไอส์แลนด์" },
+          "what": { "en": "NASA's launch site: rockets, the Space Shuttle Atlantis, bus tours and a launch simulator", "th": "ฐานปล่อยจรวดของนาซา จรวด กระสวยอวกาศแอตแลนติส ทัวร์รถบัส และเครื่องจำลองการปล่อยจรวด" },
+          "why": { "en": "A kids' play dome and big rockets to look at; indoors and out, about an hour from Orlando", "th": "มีโซนเล่นสำหรับเด็กและจรวดใหญ่ให้ดู มีทั้งในร่มกลางแจ้ง ห่างออร์แลนโดราว 1 ชั่วโมง" },
+          "tip": { "en": "Parking is paid; check launch days, which can change the schedule", "th": "ที่จอดรถเสียเงิน เช็กวันปล่อยจรวดที่อาจเปลี่ยนตารางเปิด" },
+          "ages": [1, 2, 2, 2],
+          "hrs": 6,
+          "io": "both",
+          "pram": "yes",
+          "price": { "en": "≈ $77 adults · $67 children 3–11 · under 3 free (a guide) · check the price", "th": "≈ $77 ผู้ใหญ่ · $67 เด็ก 3–11 ปี · ต่ำกว่า 3 ปีฟรี (จากเว็บแนะนำ) · เช็กราคา" },
+          "book": "rec",
+          "q": "Kennedy Space Center Visitor Complex, Merritt Island, Florida",
+          "ok": "2026-11",
+          "src": "https://www.kennedyspacecenter.com/info/tickets?r=66350947"
+        },
+        {
+          "name": { "en": "Gatorland", "th": "เกเตอร์แลนด์" },
+          "kind": "zoo",
+          "area": { "en": "South Orlando", "th": "ทางใต้ของออร์แลนโด" },
+          "what": { "en": "An old-style alligator park with feeding shows, a splash area and a zip line", "th": "สวนจระเข้สไตล์ดั้งเดิม มีโชว์ให้อาหาร โซนเล่นน้ำ และซิปไลน์" },
+          "why": { "en": "Small and easy to walk; a splash park and a petting zoo keep younger children busy", "th": "ไม่ใหญ่ เดินง่าย มีโซนเล่นน้ำและสวนสัตว์ให้ลูบสัตว์สำหรับเด็กเล็ก" },
+          "tip": { "en": "See the alligator feeding show, then cool down at the splash pad", "th": "ดูโชว์ให้อาหารจระเข้ แล้วไปเล่นน้ำคลายร้อน" },
+          "ages": [1, 2, 2, 1],
+          "hrs": 4,
+          "io": "out",
+          "pram": "yes",
+          "price": { "en": "≈ $32 adults · $22 children 3–12 online · under 2 free", "th": "≈ $32 ผู้ใหญ่ · $22 เด็ก 3–12 ปี ออนไลน์ · ต่ำกว่า 2 ปีฟรี" },
+          "book": "none",
+          "q": "Gatorland, 14501 S Orange Blossom Trail, Orlando",
+          "ok": "2026-11",
+          "src": "https://thebettervacation.com/orlando/gatorland-orlando-tickets/amp/"
+        },
+        {
+          "name": { "en": "Orlando Science Center", "th": "ออร์แลนโดไซเอนซ์เซ็นเตอร์" },
+          "kind": "museumkid",
+          "area": { "en": "Loch Haven Park", "th": "ล็อกเฮเวนพาร์ก" },
+          "what": { "en": "A hands-on science museum with a KidsTown area for under-sixes, a planetarium and live shows", "th": "พิพิธภัณฑ์วิทยาศาสตร์ให้ลงมือเล่น มีโซนคิดส์ทาวน์สำหรับเด็กต่ำกว่า 6 ปี ท้องฟ้าจำลองและโชว์สด" },
+          "why": { "en": "A good rainy-day option with a room made for toddlers and preschoolers", "th": "เหมาะวันฝนตก มีห้องที่ทำมาสำหรับเด็กเล็กและก่อนวัยเรียน" },
+          "tip": { "en": "Open 10–5; closed Thanksgiving, Christmas Eve and Christmas Day; book timed entry online", "th": "เปิด 10:00–17:00 ปิดวันขอบคุณพระเจ้า วันคริสต์มาสอีฟและวันคริสต์มาส จองเวลาเข้าออนไลน์" },
+          "ages": [1, 2, 2, 1],
+          "hrs": 3,
+          "io": "in",
+          "pram": "yes",
+          "price": { "en": "≈ $30 adults at the door · online is cheaper · check the child price", "th": "≈ $30 ผู้ใหญ่หน้างาน · ออนไลน์ถูกกว่า · เช็กราคาเด็ก" },
+          "book": "rec",
+          "q": "Orlando Science Center, 777 E Princeton St, Orlando",
+          "ok": "2026-11",
+          "src": "https://osc.org/visit"
+        },
+        {
+          "name": { "en": "Crayola Experience Orlando", "th": "เครยอลาเอ็กซ์พีเรียนซ์ ออร์แลนโด" },
+          "kind": "museumkid",
+          "area": { "en": "The Florida Mall", "th": "เดอะฟลอริดามอลล์" },
+          "what": { "en": "An indoor crayon-themed play centre: colouring, drawing, a melting crayon show and a splash area", "th": "ศูนย์เล่นในร่มธีมสีเครยอง มีโซนระบายสี วาดรูป โชว์เทียนสี และโซนเล่นน้ำ" },
+          "why": { "en": "Indoors and air-conditioned, hands-on for little ones; about three to four hours", "th": "อยู่ในร่มมีแอร์ ให้เด็กเล็กลงมือทำ ใช้เวลา 3–4 ชั่วโมง" },
+          "tip": { "en": "Children aged 2 and under enter free", "th": "เด็กอายุ 2 ปีและต่ำกว่าเข้าฟรี" },
+          "ages": [1, 2, 2, 1],
+          "hrs": 3.5,
+          "io": "in",
+          "pram": "yes",
+          "price": { "en": "≈ $30 (resellers) · under 3 free · check the price", "th": "≈ $30 (จากตัวแทนขาย) · ต่ำกว่า 3 ปีฟรี · เช็กราคา" },
+          "book": "rec",
+          "q": "Crayola Experience, The Florida Mall, Orlando",
+          "ok": "2026-11",
+          "src": "https://tickets.crayolaexperience.com/mainstore?vid=1"
+        },
+        {
+          "name": { "en": "SEA LIFE Orlando Aquarium", "th": "ซีไลฟ์ ออร์แลนโด อควาเรียม" },
+          "kind": "aquarium",
+          "area": { "en": "ICON Park", "th": "ไอคอนพาร์ก" },
+          "what": { "en": "An indoor aquarium at ICON Park with a ray touch pool, a tunnel and a seahorse area", "th": "พิพิธภัณฑ์สัตว์น้ำในร่มที่ไอคอนพาร์ก มีบ่อลูบปลากระเบน อุโมงค์ และโซนม้าน้ำ" },
+          "why": { "en": "Short, air-conditioned and low to the ground for small children", "th": "ใช้เวลาไม่นาน มีแอร์ และเตี้ยพอให้เด็กเล็กดูได้" },
+          "tip": { "en": "The Wheel next door is a short ride; the Madame Tussauds combo saves money", "th": "ล้อยักษ์ The Wheel อยู่ข้างๆ ใช้เวลาไม่นาน ตั๋วคอมโบกับมาดามทุสโซถูกกว่า" },
+          "ages": [1, 2, 2, 1],
+          "hrs": 2,
+          "io": "in",
+          "pram": "yes",
+          "price": { "en": "≈ $43.99–$49.99 for the Madame Tussauds + SEA LIFE combo · check the single price", "th": "≈ $43.99–$49.99 ตั๋วคอมโบมาดามทุสโซ + SEA LIFE · เช็กราคาตั๋วเดี่ยว" },
+          "book": "none",
+          "q": "SEA LIFE Orlando Aquarium, ICON Park, 8449 International Dr, Orlando",
+          "ok": "2026-11",
+          "src": "https://www.madametussauds.com/orlando/tickets/gttd-pages/mt-sl-combo"
+        },
+        {
+          "name": { "en": "Wild Florida Gator Park and airboats", "th": "ไวลด์ฟลอริดา เกเตอร์พาร์กและเรือแอร์โบ๊ต" },
+          "kind": "nature",
+          "area": { "en": "Kenansville, near Kissimmee", "th": "เคนแนสวิลล์ ใกล้คิสซิมมี" },
+          "what": { "en": "A wildlife park with alligators and a walkway, plus airboat rides across a lake and marsh", "th": "สวนสัตว์ป่ามีจระเข้และทางเดิน พร้อมเรือแอร์โบ๊ตวิ่งข้ามทะเลสาบและป่าชื้น" },
+          "why": { "en": "Airboats are loud, so bring ear protection for small children; the park is flat and easy to walk", "th": "เรือแอร์โบ๊ตเสียงดัง ควรเตรียมที่ครอบหูสำหรับเด็กเล็ก ตัวสวนเดินง่ายและราบเรียบ" },
+          "tip": { "en": "Open Monday–Saturday 9:00–18:00; closed Sundays, Thanksgiving and Christmas", "th": "เปิดจันทร์–เสาร์ 9:00–18:00 ปิดวันอาทิตย์ วันขอบคุณพระเจ้า และวันคริสต์มาส" },
+          "ages": [0, 1, 2, 2],
+          "hrs": 3,
+          "io": "out",
+          "pram": "yes",
+          "price": { "en": "park ≈ $15 adults · $12 children; 30-minute airboat ≈ $36 adults · $32 children (a guide)", "th": "สวน ≈ $15 ผู้ใหญ่ · $12 เด็ก; เรือแอร์โบ๊ต 30 นาที ≈ $36 ผู้ใหญ่ · $32 เด็ก (จากเว็บแนะนำ)" },
+          "book": "rec",
+          "q": "Wild Florida, 3301 Lake Cypress Rd, Kenansville, Florida",
+          "ok": "2026-11",
+          "src": "https://www.experiencekissimmee.com/article/wild-florida-adventure-park-wildlife-adventures"
+        },
+        {
+          "name": { "en": "Disney Springs", "th": "ดิสนีย์สปริงส์" },
+          "kind": "shop",
+          "area": { "en": "Lake Buena Vista", "th": "เลคบวนาวิสตา" },
+          "what": { "en": "An open-air waterside district of shops and restaurants with free entry and free parking", "th": "ย่านกลางแจ้งริมน้ำที่มีร้านค้าและร้านอาหาร เข้าฟรีและจอดรถฟรี" },
+          "why": { "en": "A free, flat stroll with a LEGO area and snack stops, good for an evening between park days", "th": "เดินสบายราบเรียบและไม่เสียค่าเข้า มีมุมเลโก้และร้านของกิน เหมาะช่วงเย็นระหว่างวันเที่ยวสวนสนุก" },
+          "tip": { "en": "Parking is free but garages fill on weekend evenings; the app shows spaces", "th": "จอดรถฟรีแต่ที่จอดเต็มช่วงเย็นวันหยุด แอปบอกที่ว่างได้" },
+          "ages": [1, 2, 2, 2],
+          "hrs": 3,
+          "io": "out",
+          "pram": "yes",
+          "price": { "en": "Free", "th": "ฟรี" },
+          "book": "none",
+          "q": "Disney Springs, Lake Buena Vista, Florida",
+          "ok": "2026-11",
+          "src": "https://www.wdwmagic.com/attractions/disney-springs/news/12jan2026-lime-garage-at-disney-springs-now-closed-for-month-long-maintenance.htm"
+        },
+        {
+          "name": { "en": "Lake Eola Park", "th": "เลคอีโอลาพาร์ก" },
+          "kind": "park",
+          "area": { "en": "Downtown Orlando", "th": "ใจกลางเมืองออร์แลนโด" },
+          "what": { "en": "A downtown lake park with a path round the water, a playground and swan boats", "th": "สวนสาธารณะริมทะเลสาบกลางเมือง มีทางเดินรอบน้ำ สนามเด็กเล่น และเรือหงส์" },
+          "why": { "en": "A free, pram-friendly walk where small children feed the ducks and ride the swan boats", "th": "เดินสบายใช้รถเข็นได้และไม่เสียค่าเข้า เด็กเล็กให้อาหารเป็ดและนั่งเรือหงส์ได้" },
+          "tip": { "en": "Swan boats run Tuesday–Sunday 10:00–19:00, 30 minutes for about $15", "th": "เรือหงส์วิ่งอังคาร–อาทิตย์ 10:00–19:00 ครึ่งชั่วโมงราว $15" },
+          "ages": [2, 2, 2, 1],
+          "hrs": 2,
+          "io": "out",
+          "pram": "yes",
+          "price": { "en": "Free · swan boats ≈ $15 for 30 minutes", "th": "ฟรี · เรือหงส์ ≈ $15 ต่อ 30 นาที" },
+          "book": "none",
+          "q": "Lake Eola Park, 512 E Washington St, Orlando",
+          "ok": "2026-11",
+          "src": "https://www.orlando.gov/News/Press-Releases/2026-Press-Releases/A-Colorful-Symbol-of-Unity-Sets-Sail-at-Lake-Eola-Park-Commissioner-Patty-Sheehan-to-Unveil-New-Rainbow-Swan-Boat-at-Signature-Park"
+        },
+        {
+          "name": { "en": "Orlando Farmers Market at Lake Eola", "th": "ตลาดเกษตรออร์แลนโดที่เลคอีโอลา" },
+          "kind": "market",
+          "area": { "en": "Downtown Orlando", "th": "ใจกลางเมืองออร์แลนโด" },
+          "what": { "en": "A Sunday market in the park's south-east corner with produce, baked goods and street food", "th": "ตลาดวันอาทิตย์ที่มุมตะวันออกเฉียงใต้ของสวน มีผลผลิต ขนมอบ และอาหารริมทาง" },
+          "why": { "en": "Free to enter, easy to graze at and next to the lake and its playground", "th": "เข้าฟรี ชิมของกินง่าย และอยู่ติดทะเลสาบกับสนามเด็กเล่น" },
+          "tip": { "en": "Sundays 10:00–15:00 by the city's page; check the date", "th": "วันอาทิตย์ 10:00–15:00 ตามหน้าของเมือง เช็กวันก่อนไป" },
+          "ages": [1, 2, 2, 1],
+          "hrs": 1.5,
+          "io": "out",
+          "pram": "yes",
+          "price": { "en": "Free", "th": "ฟรี" },
+          "book": "none",
+          "q": "Orlando Farmers Market, Lake Eola Park, Eola Dr and Central Blvd, Orlando",
+          "ok": "2026-11",
+          "src": "https://www.orlando.gov/Events/Orlando-Farmers-Market"
+        }
+      ]
     }
-   ]
-  },
-  {
-   "place": "us-california",
-   "sights": [
-    {
-     "name": {
-      "en": "Disneyland Park",
-      "th": "ดิสนีย์แลนด์พาร์ก"
-     },
-     "kind": "themepark",
-     "area": {
-      "en": "Disneyland Resort, Anaheim",
-      "th": "ดิสนีย์แลนด์รีสอร์ต แอนะไฮม์"
-     },
-     "what": {
-      "en": "Walt Disney's first park: Sleeping Beauty Castle, Fantasyland rides, parades and Toontown",
-      "th": "สวนสนุกแห่งแรกของวอลต์ ดิสนีย์ มีปราสาทเจ้าหญิงนิทรา เครื่องเล่นแฟนตาซีแลนด์ ขบวนพาเหรด และตูนทาวน์"
-     },
-     "why": {
-      "en": "Many gentle rides take toddlers, and Toontown has play areas made for the smallest",
-      "th": "เครื่องเล่นเบาๆ หลายอย่างเด็กเล็กขึ้นได้ และตูนทาวน์มีมุมเล่นสำหรับเด็กเล็กที่สุด"
-     },
-     "tip": {
-      "en": "Prices go by the date's tier; under-3s need no ticket",
-      "th": "ราคาตามระดับของวัน เด็กต่ำกว่า 3 ขวบไม่ต้องใช้ตั๋ว"
-     },
-     "ages": [
-      2,
-      2,
-      2,
-      2
-     ],
-     "hrs": 10,
-     "io": "out",
-     "pram": "yes",
-     "price": {
-      "en": "≈ US$104–224 ages 10+ · ≈ US$98–214 children 3–9 · under 3 free (by date)",
-      "th": "≈ US$104–224 อายุ 10 ปีขึ้นไป · ≈ US$98–214 เด็ก 3–9 ปี · ต่ำกว่า 3 ขวบฟรี (ตามวัน)"
-     },
-     "book": "req",
-     "q": "Disneyland Park, Anaheim, California",
-     "ok": "2026-11",
-     "src": "https://disneyparknerds.com/disneyland-ticket-prices/"
-    },
-    {
-     "name": {
-      "en": "Disney California Adventure",
-      "th": "ดิสนีย์แคลิฟอร์เนียแอดเวนเจอร์"
-     },
-     "kind": "themepark",
-     "area": {
-      "en": "Disneyland Resort, Anaheim",
-      "th": "ดิสนีย์แลนด์รีสอร์ต แอนะไฮม์"
-     },
-     "what": {
-      "en": "Disney's second park in Anaheim: Cars Land, Pixar Pier, Avengers Campus and the Little Mermaid ride",
-      "th": "สวนสนุกแห่งที่สองของดิสนีย์ที่แอนะไฮม์ มีคาร์สแลนด์ พิกซาร์เพียร์ อเวนเจอร์สแคมปัส และเครื่องเล่นเงือกน้อย"
-     },
-     "why": {
-      "en": "Cars Land and the Pixar rides suit children who know the films; some rides need height",
-      "th": "คาร์สแลนด์และเครื่องเล่นพิกซาร์เหมาะกับเด็กที่รู้จักหนัง บางเครื่องเล่นมีเกณฑ์ส่วนสูง"
-     },
-     "tip": {
-      "en": "A one-park ticket costs the same as Disneyland Park; hopping between the two costs extra",
-      "th": "ตั๋วหนึ่งสวนราคาเท่าดิสนีย์แลนด์พาร์ก ถ้าจะข้ามไปมาสองสวนจ่ายเพิ่ม"
-     },
-     "ages": [
-      1,
-      2,
-      2,
-      2
-     ],
-     "hrs": 8,
-     "io": "out",
-     "pram": "yes",
-     "price": {
-      "en": "≈ US$104–224 ages 10+ · ≈ US$98–214 children 3–9 · under 3 free (by date)",
-      "th": "≈ US$104–224 อายุ 10 ปีขึ้นไป · ≈ US$98–214 เด็ก 3–9 ปี · ต่ำกว่า 3 ขวบฟรี (ตามวัน)"
-     },
-     "book": "req",
-     "q": "Disney California Adventure Park, Anaheim, California",
-     "ok": "2026-11",
-     "src": "https://disneyparknerds.com/disneyland-ticket-prices/"
-    },
-    {
-     "name": {
-      "en": "Universal Studios Hollywood",
-      "th": "ยูนิเวอร์แซลสตูดิโอส์ฮอลลีวูด"
-     },
-     "kind": "themepark",
-     "area": {
-      "en": "Universal City, Los Angeles",
-      "th": "ยูนิเวอร์แซลซิตี ลอสแอนเจลิส"
-     },
-     "what": {
-      "en": "A working film studio and theme park: the studio tram tour, Super Nintendo World, Minions and Harry Potter",
-      "th": "สตูดิโอหนังจริงและสวนสนุก มีรถทัวร์สตูดิโอ ซูเปอร์นินเทนโดเวิลด์ มินเนียน และแฮร์รี่ พอตเตอร์"
-     },
-     "why": {
-      "en": "The studio tour and Minion land suit small children; many big rides are for older ones",
-      "th": "ทัวร์สตูดิโอและโซนมินเนียนเหมาะกับเด็กเล็ก เครื่องเล่นใหญ่หลายอย่างเหมาะกับเด็กโต"
-     },
-     "tip": {
-      "en": "Prices change by day; buying online is cheaper than at the gate",
-      "th": "ราคาเปลี่ยนตามวัน ซื้อออนไลน์ถูกกว่าหน้าประตู"
-     },
-     "ages": [
-      1,
-      2,
-      2,
-      2
-     ],
-     "hrs": 8,
-     "io": "out",
-     "pram": "yes",
-     "price": {
-      "en": "≈ from US$109 adults · ≈ from US$95 children 3–9 · under 3 free (by date)",
-      "th": "≈ เริ่ม US$109 ผู้ใหญ่ · ≈ เริ่ม US$95 เด็ก 3–9 ปี · ต่ำกว่า 3 ขวบฟรี (ตามวัน)"
-     },
-     "book": "rec",
-     "q": "Universal Studios Hollywood, Universal City, Los Angeles",
-     "ok": "2026-11",
-     "src": "https://www.universalstudioshollywood.com/web/en/us/theme-park-ticket-deals"
-    },
-    {
-     "name": {
-      "en": "San Diego Zoo",
-      "th": "สวนสัตว์ซานดิเอโก"
-     },
-     "kind": "zoo",
-     "area": {
-      "en": "Balboa Park, San Diego",
-      "th": "บัลโบอาพาร์ก ซานดิเอโก"
-     },
-     "what": {
-      "en": "A famous hillside zoo with koalas, elephants, polar bears and a children's zoo",
-      "th": "สวนสัตว์ชื่อดังบนเนินเขา มีโคอาลา ช้าง หมีขั้วโลก และสวนสัตว์เด็ก"
-     },
-     "why": {
-      "en": "The guided bus tour and the Skyfari cable car save little legs on the hills",
-      "th": "รถบัสนำชมและกระเช้าสกายฟารีช่วยให้ขาเล็กๆ ไม่ต้องเดินขึ้นเนิน"
-     },
-     "tip": {
-      "en": "Parking costs extra since January 2026; arrive at opening for the bus tour",
-      "th": "ค่าจอดรถจ่ายแยกตั้งแต่ ม.ค. 2026 มาตอนเปิดเพื่อขึ้นรถบัสนำชม"
-     },
-     "ages": [
-      2,
-      2,
-      2,
-      2
-     ],
-     "hrs": 5,
-     "io": "out",
-     "pram": "part",
-     "price": {
-      "en": "≈ US$78 adults · ≈ US$68 children 3–11 · 2 and under free",
-      "th": "≈ US$78 ผู้ใหญ่ · ≈ US$68 เด็ก 3–11 ปี · เด็ก 2 ขวบลงมาฟรี"
-     },
-     "book": "rec",
-     "q": "San Diego Zoo, Balboa Park, San Diego",
-     "ok": "2026-11",
-     "src": "https://lajollamom.com/how-to-buy-discounted-tickets-to-the-san-diego-zoo/"
-    },
-    {
-     "name": {
-      "en": "LEGOLAND California",
-      "th": "เลโกแลนด์แคลิฟอร์เนีย"
-     },
-     "kind": "themepark",
-     "area": {
-      "en": "Carlsbad, north of San Diego",
-      "th": "คาร์ลสแบด ทางเหนือของซานดิเอโก"
-     },
-     "what": {
-      "en": "A theme park built for children aged 2 to 12, with LEGO cities, driving school, gentle rides and a SEA LIFE aquarium",
-      "th": "สวนสนุกสำหรับเด็ก 2–12 ปี มีเมืองเลโก โรงเรียนสอนขับรถ เครื่องเล่นเบาๆ และพิพิธภัณฑ์สัตว์น้ำซีไลฟ์"
-     },
-     "why": {
-      "en": "Almost every ride takes small children, and the queues are shorter than at the big parks",
-      "th": "เครื่องเล่นเกือบทุกอย่างเด็กเล็กขึ้นได้ และคิวสั้นกว่าสวนสนุกใหญ่"
-     },
-     "tip": {
-      "en": "Buy online ahead for the cheapest price; the water park is seasonal and costs extra",
-      "th": "ซื้อออนไลน์ล่วงหน้าถูกที่สุด สวนน้ำเปิดตามฤดูและจ่ายเพิ่ม"
-     },
-     "ages": [
-      1,
-      2,
-      2,
-      1
-     ],
-     "hrs": 7,
-     "io": "out",
-     "pram": "yes",
-     "price": {
-      "en": "≈ US$94–139 ages 2+ by date · under 2 free",
-      "th": "≈ US$94–139 อายุ 2 ปีขึ้นไป ตามวัน · ต่ำกว่า 2 ขวบฟรี"
-     },
-     "book": "rec",
-     "q": "LEGOLAND California, Carlsbad, California",
-     "ok": "2026-11",
-     "src": "https://www.legoland.com/california/legoland-california/buy-tickets/tickets/walk-up-pricing/"
-    },
-    {
-     "name": {
-      "en": "SeaWorld San Diego",
-      "th": "ซีเวิลด์ซานดิเอโก"
-     },
-     "kind": "themepark",
-     "area": {
-      "en": "Mission Bay, San Diego",
-      "th": "มิชชันเบย์ ซานดิเอโก"
-     },
-     "what": {
-      "en": "A marine park with dolphins, sea lions, penguins, shows and Sesame Street rides",
-      "th": "สวนสัตว์ทะเลมีโลมา สิงโตทะเล เพนกวิน โชว์ และเครื่องเล่นเซซามีสตรีต"
-     },
-     "why": {
-      "en": "The Sesame Street area has rides for toddlers, and the penguin house is indoors and cool",
-      "th": "โซนเซซามีสตรีตมีเครื่องเล่นเด็กเล็ก และบ้านเพนกวินอยู่ในร่มเย็นสบาย"
-     },
-     "tip": {
-      "en": "Online sale prices change often; buy before you go, as discounts are not sold at the gate",
-      "th": "ราคาลดออนไลน์เปลี่ยนบ่อย ซื้อก่อนไปเพราะหน้าประตูไม่มีส่วนลด"
-     },
-     "ages": [
-      2,
-      2,
-      2,
-      2
-     ],
-     "hrs": 7,
-     "io": "both",
-     "pram": "yes",
-     "price": {
-      "en": "≈ US$70–127 ages 3+ by date · under 3 free",
-      "th": "≈ US$70–127 อายุ 3 ปีขึ้นไป ตามวัน · ต่ำกว่า 3 ขวบฟรี"
-     },
-     "book": "rec",
-     "q": "SeaWorld San Diego, Mission Bay, San Diego",
-     "ok": "2026-11",
-     "src": "https://seaworld.com/san-diego/tickets/limited-time-offers/"
-    },
-    {
-     "name": {
-      "en": "California Science Center",
-      "th": "แคลิฟอร์เนียไซเอนซ์เซ็นเตอร์"
-     },
-     "kind": "museumkid",
-     "area": {
-      "en": "Exposition Park, Los Angeles",
-      "th": "เอกซ์โปซิชันพาร์ก ลอสแอนเจลิส"
-     },
-     "what": {
-      "en": "A free science museum with the space shuttle Endeavour standing upright in its new air and space centre",
-      "th": "พิพิธภัณฑ์วิทยาศาสตร์เข้าฟรี มีกระสวยอวกาศเอนเดฟเวอร์ตั้งตรงในศูนย์อากาศและอวกาศแห่งใหม่"
-     },
-     "why": {
-      "en": "Hands-on galleries and a real shuttle, all indoors and free",
-      "th": "ห้องจัดแสดงให้ลงมือทำ และกระสวยของจริง อยู่ในร่มและฟรี"
-     },
-     "tip": {
-      "en": "The air and space centre opened on 13 Nov 2026 with timed tickets; book ahead",
-      "th": "ศูนย์อากาศและอวกาศเปิด 13 พ.ย. 2026 ใช้ตั๋วตามรอบ ควรจองก่อน"
-     },
-     "ages": [
-      1,
-      2,
-      2,
-      2
-     ],
-     "hrs": 3,
-     "io": "in",
-     "pram": "yes",
-     "price": {
-      "en": "Free · ≈ US$4 booking fee for the shuttle centre",
-      "th": "ฟรี · ค่าจองศูนย์กระสวยอวกาศ ≈ US$4"
-     },
-     "book": "req",
-     "q": "California Science Center, Exposition Park, Los Angeles",
-     "ok": "2026-11",
-     "src": "https://generalaviationnews.com/2026/11/17/samuel-oschin-air-and-space-center-opens-in-los-angeles/"
-    },
-    {
-     "name": {
-      "en": "Natural History Museum of Los Angeles County",
-      "th": "พิพิธภัณฑ์ประวัติศาสตร์ธรรมชาติลอสแอนเจลิส"
-     },
-     "kind": "museum",
-     "area": {
-      "en": "Exposition Park, Los Angeles",
-      "th": "เอกซ์โปซิชันพาร์ก ลอสแอนเจลิส"
-     },
-     "what": {
-      "en": "A dinosaur hall with a T. rex growth series, animal halls and a garden, next door to the science centre",
-      "th": "ห้องไดโนเสาร์ที่มีทีเร็กซ์ตั้งแต่เล็กจนโต ห้องสัตว์ และสวน อยู่ติดศูนย์วิทยาศาสตร์"
-     },
-     "why": {
-      "en": "Dinosaurs for every age, and easy to pair with the free science centre next door",
-      "th": "ไดโนเสาร์ถูกใจทุกวัย และไปต่อศูนย์วิทยาศาสตร์ฟรีข้างๆ ได้ง่าย"
-     },
-     "tip": {
-      "en": "Closed on the first Tuesday of each month; children under 3 still need a free ticket",
-      "th": "ปิดวันอังคารแรกของทุกเดือน เด็กต่ำกว่า 3 ขวบต้องรับตั๋วฟรี"
-     },
-     "ages": [
-      1,
-      2,
-      2,
-      2
-     ],
-     "hrs": 2.5,
-     "io": "in",
-     "pram": "yes",
-     "price": {
-      "en": "≈ US$18 adults · ≈ US$7 children · 2 and under free",
-      "th": "≈ US$18 ผู้ใหญ่ · ≈ US$7 เด็ก · เด็ก 2 ขวบลงมาฟรี"
-     },
-     "book": "rec",
-     "q": "Natural History Museum of Los Angeles County, Exposition Park, Los Angeles",
-     "ok": "2026-11",
-     "src": "https://www.trvlogue.com/en/natural-history-museum-la-review"
-    },
-    {
-     "name": {
-      "en": "Griffith Observatory",
-      "th": "หอดูดาวกริฟฟิท"
-     },
-     "kind": "views",
-     "area": {
-      "en": "Griffith Park, Los Angeles",
-      "th": "กริฟฟิทพาร์ก ลอสแอนเจลิส"
-     },
-     "what": {
-      "en": "A hilltop observatory with space exhibits, free telescopes and the best view of the Hollywood sign",
-      "th": "หอดูดาวบนเขา มีนิทรรศการอวกาศ กล้องโทรทรรศน์ให้ส่องฟรี และวิวป้ายฮอลลีวูดที่ดีที่สุด"
-     },
-     "why": {
-      "en": "Free to enter, with a Foucault pendulum and a Tesla coil that small children watch in wonder",
-      "th": "เข้าฟรี มีลูกตุ้มฟูโกและขดลวดเทสลาที่เด็กเล็กดูแล้วทึ่ง"
-     },
-     "tip": {
-      "en": "Closed on Mondays; the planetarium show is sold on the day only, so arrive early",
-      "th": "ปิดวันจันทร์ ตั๋วท้องฟ้าจำลองขายเฉพาะวันนั้น มาแต่เช้า"
-     },
-     "ages": [
-      1,
-      1,
-      2,
-      2
-     ],
-     "hrs": 2,
-     "io": "both",
-     "pram": "yes",
-     "price": {
-      "en": "Free · planetarium ≈ US$10 adults · parking extra",
-      "th": "ฟรี · ท้องฟ้าจำลอง ≈ US$10 ผู้ใหญ่ · ค่าจอดรถแยก"
-     },
-     "book": "none",
-     "q": "Griffith Observatory, Griffith Park, Los Angeles",
-     "ok": "2026-11",
-     "src": "https://griffithobservatory.lacity.gov/visit/getting-here/"
-    },
-    {
-     "name": {
-      "en": "Aquarium of the Pacific",
-      "th": "อควาเรียมออฟเดอะแปซิฟิก"
-     },
-     "kind": "aquarium",
-     "area": {
-      "en": "Rainbow Harbor, Long Beach",
-      "th": "เรนโบว์ฮาร์เบอร์ ลองบีช"
-     },
-     "what": {
-      "en": "A big aquarium with sea otters, sharks to touch, jellyfish and a lorikeet aviary to feed",
-      "th": "พิพิธภัณฑ์สัตว์น้ำใหญ่ มีนากทะเล ฉลามให้ลูบ แมงกะพรุน และกรงนกลอรีคีตให้ป้อนอาหาร"
-     },
-     "why": {
-      "en": "Touch pools at child height and sea otters that keep small children watching",
-      "th": "บ่อสัมผัสอยู่ระดับเด็ก และนากทะเลที่ทำให้เด็กเล็กดูได้นาน"
-     },
-     "tip": {
-      "en": "Reservations are needed at weekends and holidays",
-      "th": "วันหยุดสุดสัปดาห์และวันหยุดต้องจองก่อน"
-     },
-     "ages": [
-      2,
-      2,
-      2,
-      1
-     ],
-     "hrs": 3,
-     "io": "both",
-     "pram": "yes",
-     "price": {
-      "en": "≈ US$50 adults · ≈ US$35 children 3–11 · under 3 free",
-      "th": "≈ US$50 ผู้ใหญ่ · ≈ US$35 เด็ก 3–11 ปี · ต่ำกว่า 3 ขวบฟรี"
-     },
-     "book": "rec",
-     "q": "Aquarium of the Pacific, Long Beach, California",
-     "ok": "2026-11",
-     "src": "https://www.aquariumofpacific.org/visit/adults"
-    },
-    {
-     "name": {
-      "en": "Los Angeles Zoo",
-      "th": "สวนสัตว์ลอสแอนเจลิส"
-     },
-     "kind": "zoo",
-     "area": {
-      "en": "Griffith Park, Los Angeles",
-      "th": "กริฟฟิทพาร์ก ลอสแอนเจลิส"
-     },
-     "what": {
-      "en": "The city zoo in Griffith Park, with chimpanzees, elephants, giraffes and a children's discovery area",
-      "th": "สวนสัตว์ของเมืองในกริฟฟิทพาร์ก มีชิมแปนซี ช้าง ยีราฟ และโซนค้นพบสำหรับเด็ก"
-     },
-     "why": {
-      "en": "Cheaper and calmer than the big parks, with goats to pet in the children's area",
-      "th": "ถูกกว่าและสงบกว่าสวนสนุกใหญ่ มีแพะให้ลูบในโซนเด็ก"
-     },
-     "tip": {
-      "en": "The paths climb in places; a pram with good wheels helps",
-      "th": "บางช่วงทางเป็นเนิน รถเข็นล้อดีจะช่วยได้"
-     },
-     "ages": [
-      2,
-      2,
-      2,
-      1
-     ],
-     "hrs": 3,
-     "io": "out",
-     "pram": "yes",
-     "price": {
-      "en": "≈ US$27–29 adults · ≈ US$22–24 children 2–12 · under 2 free",
-      "th": "≈ US$27–29 ผู้ใหญ่ · ≈ US$22–24 เด็ก 2–12 ปี · ต่ำกว่า 2 ขวบฟรี"
-     },
-     "book": "none",
-     "q": "Los Angeles Zoo, Griffith Park, Los Angeles",
-     "ok": "2026-11",
-     "src": "https://secretlosangeles.com/la-zoo-raises-ticket-prices/"
-    },
-    {
-     "name": {
-      "en": "Santa Monica Pier",
-      "th": "ท่าเรือซานตาโมนิกา"
-     },
-     "kind": "beach",
-     "area": {
-      "en": "Santa Monica",
-      "th": "ซานตาโมนิกา"
-     },
-     "what": {
-      "en": "The old pier over the beach, with Pacific Park's Ferris wheel, small rides and an old carousel",
-      "th": "ท่าเรือเก่าเหนือหาด มีชิงช้าสวรรค์ของแปซิฟิกพาร์ก เครื่องเล่นเล็กๆ และม้าหมุนเก่า"
-     },
-     "why": {
-      "en": "Free to walk on, with sand below for digging and rides you pay for one at a time",
-      "th": "เดินเล่นฟรี มีทรายด้านล่างให้ขุด และเครื่องเล่นจ่ายทีละอย่าง"
-     },
-     "tip": {
-      "en": "An unlimited ride wristband costs less for children 7 and under",
-      "th": "สายรัดข้อมือเล่นไม่อั้นถูกกว่าสำหรับเด็ก 7 ขวบลงมา"
-     },
-     "ages": [
-      2,
-      2,
-      2,
-      2
-     ],
-     "hrs": 2.5,
-     "io": "out",
-     "pram": "yes",
-     "price": {
-      "en": "Free entry · ride wristband ≈ US$40 ages 8+ · ≈ US$20 ages 7 and under",
-      "th": "เข้าฟรี · สายรัดเครื่องเล่น ≈ US$40 อายุ 8 ปีขึ้นไป · ≈ US$20 อายุ 7 ปีลงมา"
-     },
-     "book": "none",
-     "q": "Santa Monica Pier, Santa Monica, California",
-     "ok": "2026-11",
-     "src": "https://santamonicanext.org/2026/05/pacific-park-continues-30th-anniversary-celebration-with-special-ride-offers-through-june-11/"
-    },
-    {
-     "name": {
-      "en": "The Original Farmers Market",
-      "th": "ดิออริจินัลฟาร์เมอร์สมาร์เก็ต"
-     },
-     "kind": "market",
-     "area": {
-      "en": "Fairfax, Los Angeles",
-      "th": "แฟร์แฟกซ์ ลอสแอนเจลิส"
-     },
-     "what": {
-      "en": "A 1930s market of food stalls and grocers: doughnuts, ice cream, tacos, gumbo and fresh fruit",
-      "th": "ตลาดตั้งแต่ปี 1930 มีร้านอาหารและของสด โดนัท ไอศกรีม ทาโก้ กัมโบ และผลไม้สด"
-     },
-     "why": {
-      "en": "Casual, with tables everywhere, so each child can pick their own lunch",
-      "th": "สบายๆ มีโต๊ะทุกที่ เด็กแต่ละคนเลือกมื้อกลางวันเองได้"
-     },
-     "tip": {
-      "en": "Open daily; stalls keep their own hours, so lunchtime is the safest bet",
-      "th": "เปิดทุกวัน แต่ละร้านมีเวลาของตัวเอง มาช่วงกลางวันแน่นอนที่สุด"
-     },
-     "ages": [
-      1,
-      2,
-      2,
-      2
-     ],
-     "hrs": 1.5,
-     "io": "both",
-     "pram": "yes",
-     "price": {
-      "en": "Free entry",
-      "th": "เข้าฟรี"
-     },
-     "book": "none",
-     "q": "The Original Farmers Market, 3rd Street and Fairfax, Los Angeles",
-     "ok": "2026-11",
-     "src": "https://farmersmarketla.com/"
-    },
-    {
-     "name": {
-      "en": "Balboa Park",
-      "th": "บัลโบอาพาร์ก"
-     },
-     "kind": "park",
-     "area": {
-      "en": "Balboa Park, San Diego",
-      "th": "บัลโบอาพาร์ก ซานดิเอโก"
-     },
-     "what": {
-      "en": "San Diego's big park of gardens, museums and Spanish-style buildings, with a carousel and a miniature train",
-      "th": "สวนใหญ่ของซานดิเอโก มีสวนดอกไม้ พิพิธภัณฑ์ อาคารสไตล์สเปน ม้าหมุน และรถไฟจิ๋ว"
-     },
-     "why": {
-      "en": "Free to wander, with lawns and a little train ride for toddlers next to the zoo",
-      "th": "เดินเล่นฟรี มีสนามหญ้าและรถไฟจิ๋วสำหรับเด็กเล็กติดกับสวนสัตว์"
-     },
-     "tip": {
-      "en": "The miniature train runs from Wednesday to Sunday and costs a few dollars",
-      "th": "รถไฟจิ๋ววิ่งวันพุธถึงอาทิตย์ ค่าโดยสารไม่กี่ดอลลาร์"
-     },
-     "ages": [
-      2,
-      2,
-      2,
-      2
-     ],
-     "hrs": 3,
-     "io": "out",
-     "pram": "yes",
-     "price": {
-      "en": "Free · miniature train ≈ US$4",
-      "th": "ฟรี · รถไฟจิ๋ว ≈ US$4"
-     },
-     "book": "none",
-     "q": "Balboa Park, San Diego, California",
-     "ok": "2026-11",
-     "src": "https://www.sandiego.org/plan-your-trip/article/balboa-park-family-guide"
-    },
-    {
-     "name": {
-      "en": "USS Midway Museum",
-      "th": "พิพิธภัณฑ์ยูเอสเอสมิดเวย์"
-     },
-     "kind": "museum",
-     "area": {
-      "en": "Downtown waterfront, San Diego",
-      "th": "ริมน้ำดาวน์ทาวน์ ซานดิเอโก"
-     },
-     "what": {
-      "en": "An aircraft carrier with planes on the flight deck, cockpits to sit in and an audio tour for families",
-      "th": "เรือบรรทุกเครื่องบิน มีเครื่องบินบนดาดฟ้า ห้องนักบินให้นั่ง และเสียงนำชมสำหรับครอบครัว"
-     },
-     "why": {
-      "en": "Children can climb into real cockpits; the hangar deck is indoors",
-      "th": "เด็กๆ ได้ปีนเข้าห้องนักบินจริง ชั้นโรงเก็บเครื่องบินอยู่ในร่ม"
-     },
-     "tip": {
-      "en": "Steep ship ladders between decks; leave the pram on the hangar deck",
-      "th": "บันไดเรือระหว่างชั้นชัน ทิ้งรถเข็นไว้ที่ชั้นโรงเก็บเครื่องบิน"
-     },
-     "ages": [
-      1,
-      1,
-      2,
-      2
-     ],
-     "hrs": 3,
-     "io": "both",
-     "pram": "part",
-     "price": {
-      "en": "≈ US$39–41 adults · ≈ US$26–31 children · 3 and under free",
-      "th": "≈ US$39–41 ผู้ใหญ่ · ≈ US$26–31 เด็ก · เด็ก 3 ขวบลงมาฟรี"
-     },
-     "book": "rec",
-     "q": "USS Midway Museum, Navy Pier, San Diego",
-     "ok": "2026-11",
-     "src": "https://www.midway.org/visit/student-youth-group-visits"
-    }
-   ]
-  },
-  {
-   "place": "p-orlando",
-   "sights": [
-    {
-     "name": {
-      "en": "Magic Kingdom",
-      "th": "เมจิกคิงดอม"
-     },
-     "kind": "themepark",
-     "area": {
-      "en": "Walt Disney World, Lake Buena Vista",
-      "th": "วอลต์ดิสนีย์เวิลด์ เลกบัวนาวิสตา"
-     },
-     "what": {
-      "en": "Cinderella Castle, Fantasyland, parades and fireworks in Disney's classic park",
-      "th": "ปราสาทซินเดอเรลลา แฟนตาซีแลนด์ ขบวนพาเหรด และพลุ ในสวนสนุกคลาสสิกของดิสนีย์"
-     },
-     "why": {
-      "en": "The Disney park for the youngest: most Fantasyland rides take toddlers",
-      "th": "สวนดิสนีย์สำหรับเด็กเล็กที่สุด เครื่องเล่นแฟนตาซีแลนด์ส่วนใหญ่เด็กเล็กขึ้นได้"
-     },
-     "tip": {
-      "en": "Tickets are for a date and the price moves by day; children 3–9 pay about US$5 less",
-      "th": "ตั๋วระบุวัน ราคาขึ้นลงตามวัน เด็ก 3–9 ปีถูกกว่าราว US$5"
-     },
-     "ages": [
-      2,
-      2,
-      2,
-      2
-     ],
-     "hrs": 10,
-     "io": "out",
-     "pram": "yes",
-     "price": {
-      "en": "≈ US$139–209 ages 10+ · children 3–9 a little less · under 3 free (by date)",
-      "th": "≈ US$139–209 อายุ 10 ปีขึ้นไป · เด็ก 3–9 ปีถูกลงเล็กน้อย · ต่ำกว่า 3 ขวบฟรี (ตามวัน)"
-     },
-     "book": "req",
-     "q": "Magic Kingdom Park, Walt Disney World, Orlando",
-     "ok": "2026-11",
-     "src": "https://touringplans.com/blog/every-regular-disney-world-ticket-price-in-2022/"
-    },
-    {
-     "name": {
-      "en": "Disney's Animal Kingdom",
-      "th": "ดิสนีย์แอนิมอลคิงดอม"
-     },
-     "kind": "themepark",
-     "area": {
-      "en": "Walt Disney World, Lake Buena Vista",
-      "th": "วอลต์ดิสนีย์เวิลด์ เลกบัวนาวิสตา"
-     },
-     "what": {
-      "en": "A zoo and theme park in one: the Kilimanjaro safari truck ride, the Tree of Life and Pandora",
-      "th": "สวนสัตว์และสวนสนุกในที่เดียว มีรถซาฟารีคิลิมันจาโร ต้นไม้แห่งชีวิต และแพนดอรา"
-     },
-     "why": {
-      "en": "The safari ride shows real giraffes and elephants with no height limit",
-      "th": "รถซาฟารีพาดูยีราฟและช้างจริง ไม่มีเกณฑ์ส่วนสูง"
-     },
-     "tip": {
-      "en": "The animals are most awake in the morning; do the safari first",
-      "th": "สัตว์ตื่นตัวที่สุดตอนเช้า ขึ้นซาฟารีก่อน"
-     },
-     "ages": [
-      2,
-      2,
-      2,
-      2
-     ],
-     "hrs": 7,
-     "io": "out",
-     "pram": "yes",
-     "price": {
-      "en": "≈ US$119–199 ages 10+ · children 3–9 a little less · under 3 free (by date)",
-      "th": "≈ US$119–199 อายุ 10 ปีขึ้นไป · เด็ก 3–9 ปีถูกลงเล็กน้อย · ต่ำกว่า 3 ขวบฟรี (ตามวัน)"
-     },
-     "book": "req",
-     "q": "Disney's Animal Kingdom, Walt Disney World, Orlando",
-     "ok": "2026-11",
-     "src": "https://touringplans.com/blog/every-regular-disney-world-ticket-price-in-2022/"
-    },
-    {
-     "name": {
-      "en": "EPCOT",
-      "th": "เอปคอต"
-     },
-     "kind": "themepark",
-     "area": {
-      "en": "Walt Disney World, Lake Buena Vista",
-      "th": "วอลต์ดิสนีย์เวิลด์ เลกบัวนาวิสตา"
-     },
-     "what": {
-      "en": "Disney's park of science and the world: an aquarium with Nemo, Frozen in Norway and pavilions of eleven countries",
-      "th": "สวนดิสนีย์ด้านวิทยาศาสตร์และโลก มีอควาเรียมนีโม โฟรเซนที่นอร์เวย์ และศาลาของสิบเอ็ดประเทศ"
-     },
-     "why": {
-      "en": "The Seas with Nemo is indoors and gentle; many rides are air-conditioned for a hot or wet day",
-      "th": "โซนทะเลกับนีโมอยู่ในร่มและเบาๆ เครื่องเล่นหลายอย่างมีแอร์ เหมาะวันร้อนหรือฝนตก"
-     },
-     "tip": {
-      "en": "The country pavilions are a long walk; bring the pram even for a five-year-old",
-      "th": "ศาลาประเทศต่างๆ เดินไกล พารถเข็นไปแม้ลูกห้าขวบแล้ว"
-     },
-     "ages": [
-      1,
-      2,
-      2,
-      2
-     ],
-     "hrs": 8,
-     "io": "both",
-     "pram": "yes",
-     "price": {
-      "en": "≈ US$119–199 ages 10+ · children 3–9 a little less · under 3 free (by date)",
-      "th": "≈ US$119–199 อายุ 10 ปีขึ้นไป · เด็ก 3–9 ปีถูกลงเล็กน้อย · ต่ำกว่า 3 ขวบฟรี (ตามวัน)"
-     },
-     "book": "req",
-     "q": "EPCOT, Walt Disney World, Orlando",
-     "ok": "2026-11",
-     "src": "https://touringplans.com/blog/every-regular-disney-world-ticket-price-in-2022/"
-    },
-    {
-     "name": {
-      "en": "Disney's Hollywood Studios",
-      "th": "ดิสนีย์ฮอลลีวูดสตูดิโอส์"
-     },
-     "kind": "themepark",
-     "area": {
-      "en": "Walt Disney World, Lake Buena Vista",
-      "th": "วอลต์ดิสนีย์เวิลด์ เลกบัวนาวิสตา"
-     },
-     "what": {
-      "en": "Toy Story Land, Star Wars: Galaxy's Edge and big shows in Disney's film park",
-      "th": "ทอยสตอรีแลนด์ สตาร์วอร์สกาแล็กซีส์เอดจ์ และโชว์ใหญ่ ในสวนหนังของดิสนีย์"
-     },
-     "why": {
-      "en": "Toy Story Land and the shows suit small children; the big coasters are for older ones",
-      "th": "ทอยสตอรีแลนด์และโชว์เหมาะกับเด็กเล็ก รถไฟเหาะใหญ่สำหรับเด็กโต"
-     },
-     "tip": {
-      "en": "Shows are indoors and seated, a good break in the afternoon heat or rain",
-      "th": "โชว์อยู่ในร่มมีที่นั่ง พักได้ดีตอนบ่ายร้อนหรือฝนตก"
-     },
-     "ages": [
-      1,
-      2,
-      2,
-      2
-     ],
-     "hrs": 7,
-     "io": "both",
-     "pram": "yes",
-     "price": {
-      "en": "≈ US$119–199 ages 10+ · children 3–9 a little less · under 3 free (by date)",
-      "th": "≈ US$119–199 อายุ 10 ปีขึ้นไป · เด็ก 3–9 ปีถูกลงเล็กน้อย · ต่ำกว่า 3 ขวบฟรี (ตามวัน)"
-     },
-     "book": "req",
-     "q": "Disney's Hollywood Studios, Walt Disney World, Orlando",
-     "ok": "2026-11",
-     "src": "https://touringplans.com/blog/every-regular-disney-world-ticket-price-in-2022/"
-    },
-    {
-     "name": {
-      "en": "Universal Studios Florida",
-      "th": "ยูนิเวอร์แซลสตูดิโอส์ฟลอริดา"
-     },
-     "kind": "themepark",
-     "area": {
-      "en": "Universal Orlando Resort",
-      "th": "ยูนิเวอร์แซลออร์แลนโดรีสอร์ต"
-     },
-     "what": {
-      "en": "Film rides and Diagon Alley, with DreamWorks Land for the youngest",
-      "th": "เครื่องเล่นจากหนังและตรอกไดแอกอน มีดรีมเวิร์กส์แลนด์สำหรับเด็กเล็ก"
-     },
-     "why": {
-      "en": "DreamWorks Land has Shrek, Trolls and Kung Fu Panda play areas made for small children",
-      "th": "ดรีมเวิร์กส์แลนด์มีมุมเล่นเชร็ก โทรลล์ส และกังฟูแพนด้าสำหรับเด็กเล็ก"
-     },
-     "tip": {
-      "en": "A one-park ticket does not include the train to Hogsmeade in the other park",
-      "th": "ตั๋วหนึ่งสวนไม่รวมรถไฟไปฮอกส์มีดในอีกสวน"
-     },
-     "ages": [
-      1,
-      2,
-      2,
-      2
-     ],
-     "hrs": 8,
-     "io": "out",
-     "pram": "yes",
-     "price": {
-      "en": "≈ US$127 adults · ≈ US$122 children 3–9 · under 3 free (by date)",
-      "th": "≈ US$127 ผู้ใหญ่ · ≈ US$122 เด็ก 3–9 ปี · ต่ำกว่า 3 ขวบฟรี (ตามวัน)"
-     },
-     "book": "rec",
-     "q": "Universal Studios Florida, Universal Orlando Resort, Orlando",
-     "ok": "2026-11",
-     "src": "https://www.shadesofgreen.org/experiences/attractions/universal-orlando-resort"
-    },
-    {
-     "name": {
-      "en": "Universal Islands of Adventure",
-      "th": "ยูนิเวอร์แซลไอแลนด์สออฟแอดเวนเจอร์"
-     },
-     "kind": "themepark",
-     "area": {
-      "en": "Universal Orlando Resort",
-      "th": "ยูนิเวอร์แซลออร์แลนโดรีสอร์ต"
-     },
-     "what": {
-      "en": "Hogsmeade, Jurassic Park and Seuss Landing with its Cat in the Hat ride and carousel",
-      "th": "ฮอกส์มีด จูราสสิกพาร์ก และซูสแลนดิงที่มีเครื่องเล่นแมวในหมวกและม้าหมุน"
-     },
-     "why": {
-      "en": "Seuss Landing and Camp Jurassic's play area are made for small children",
-      "th": "ซูสแลนดิงและสนามเด็กเล่นแคมป์จูราสสิกทำมาเพื่อเด็กเล็ก"
-     },
-     "tip": {
-      "en": "Many big rides here have height limits; start in Seuss Landing with little ones",
-      "th": "เครื่องเล่นใหญ่หลายอย่างมีเกณฑ์ส่วนสูง เริ่มที่ซูสแลนดิงกับเด็กเล็ก"
-     },
-     "ages": [
-      1,
-      2,
-      2,
-      2
-     ],
-     "hrs": 8,
-     "io": "out",
-     "pram": "yes",
-     "price": {
-      "en": "≈ US$127 adults · ≈ US$122 children 3–9 · under 3 free (by date)",
-      "th": "≈ US$127 ผู้ใหญ่ · ≈ US$122 เด็ก 3–9 ปี · ต่ำกว่า 3 ขวบฟรี (ตามวัน)"
-     },
-     "book": "rec",
-     "q": "Universal Islands of Adventure, Universal Orlando Resort, Orlando",
-     "ok": "2026-11",
-     "src": "https://www.shadesofgreen.org/experiences/attractions/universal-orlando-resort"
-    },
-    {
-     "name": {
-      "en": "Universal Epic Universe",
-      "th": "ยูนิเวอร์แซลเอพิกยูนิเวิร์ส"
-     },
-     "kind": "themepark",
-     "area": {
-      "en": "Universal Orlando Resort, south of the main parks",
-      "th": "ยูนิเวอร์แซลออร์แลนโดรีสอร์ต ทางใต้ของสวนหลัก"
-     },
-     "what": {
-      "en": "Universal's newest park: Super Nintendo World, How to Train Your Dragon and the wizarding Ministry of Magic",
-      "th": "สวนสนุกใหม่ล่าสุดของยูนิเวอร์แซล มีซูเปอร์นินเทนโดเวิลด์ อภินิหารไวกิ้งพิชิตมังกร และกระทรวงเวทมนตร์"
-     },
-     "why": {
-      "en": "The dragon island has gentle rides and play areas for small children",
-      "th": "เกาะมังกรมีเครื่องเล่นเบาๆ และมุมเล่นสำหรับเด็กเล็ก"
-     },
-     "tip": {
-      "en": "Needs its own ticket, sold by Universal; buy ahead, as days sell out",
-      "th": "ต้องใช้ตั๋วแยก ซื้อกับยูนิเวอร์แซล ซื้อล่วงหน้าเพราะบางวันเต็ม"
-     },
-     "ages": [
-      1,
-      2,
-      2,
-      2
-     ],
-     "hrs": 8,
-     "io": "out",
-     "pram": "yes",
-     "price": {
-      "en": "≈ from US$134 children 3–9 · adults a little more · under 3 free (by date)",
-      "th": "≈ เริ่ม US$134 เด็ก 3–9 ปี · ผู้ใหญ่แพงกว่าเล็กน้อย · ต่ำกว่า 3 ขวบฟรี (ตามวัน)"
-     },
-     "book": "req",
-     "q": "Universal Epic Universe, Orlando, Florida",
-     "ok": "2026-11",
-     "src": "https://orlando-themeparks.com/universal-orlando/epic-universe/tickets-epic-universe/"
-    },
-    {
-     "name": {
-      "en": "SeaWorld Orlando",
-      "th": "ซีเวิลด์ออร์แลนโด"
-     },
-     "kind": "themepark",
-     "area": {
-      "en": "International Drive area",
-      "th": "ย่านอินเตอร์แนชันแนลไดรฟ์"
-     },
-     "what": {
-      "en": "Dolphins, penguins, manatees and sea lion shows, with Sesame Street Land for little ones",
-      "th": "โลมา เพนกวิน พะยูน และโชว์สิงโตทะเล มีเซซามีสตรีตแลนด์สำหรับเด็กเล็ก"
-     },
-     "why": {
-      "en": "Sesame Street Land has rides for toddlers and the penguin area is indoors",
-      "th": "เซซามีสตรีตแลนด์มีเครื่องเล่นเด็กเล็ก และโซนเพนกวินอยู่ในร่ม"
-     },
-     "tip": {
-      "en": "Buy online before you go; discounts are not sold at the gate",
-      "th": "ซื้อออนไลน์ก่อนไป หน้าประตูไม่มีส่วนลด"
-     },
-     "ages": [
-      2,
-      2,
-      2,
-      2
-     ],
-     "hrs": 7,
-     "io": "both",
-     "pram": "yes",
-     "price": {
-      "en": "≈ US$60–107 ages 3+ online, by date · 2 and under free",
-      "th": "≈ US$60–107 อายุ 3 ปีขึ้นไป ออนไลน์ ตามวัน · เด็ก 2 ขวบลงมาฟรี"
-     },
-     "book": "rec",
-     "q": "SeaWorld Orlando, International Drive, Orlando",
-     "ok": "2026-11",
-     "src": "https://seaworld.com/Orlando/tickets/"
-    },
-    {
-     "name": {
-      "en": "Gatorland",
-      "th": "เกเตอร์แลนด์"
-     },
-     "kind": "zoo",
-     "area": {
-      "en": "South Orange Blossom Trail, Orlando",
-      "th": "เซาท์ออเรนจ์บลอสซัมเทรล ออร์แลนโด"
-     },
-     "what": {
-      "en": "An old-style Florida park of alligators and crocodiles, with shows, a boardwalk, a petting zoo and a small train",
-      "th": "สวนฟลอริดาแบบดั้งเดิม มีจระเข้ โชว์ ทางเดินไม้ สวนสัตว์ให้ลูบ และรถไฟเล็ก"
-     },
-     "why": {
-      "en": "Cheap, relaxed and close to the animals, a calm half-day between theme parks",
-      "th": "ถูก สบายๆ และได้ใกล้สัตว์ เที่ยวครึ่งวันสงบๆ ระหว่างสวนสนุก"
-     },
-     "tip": {
-      "en": "Online prices are a few dollars below the gate",
-      "th": "ราคาออนไลน์ถูกกว่าหน้าประตูไม่กี่ดอลลาร์"
-     },
-     "ages": [
-      2,
-      2,
-      2,
-      1
-     ],
-     "hrs": 3,
-     "io": "out",
-     "pram": "yes",
-     "price": {
-      "en": "≈ US$35 adults · ≈ US$25 children 3–12 · under 2 free (gate prices)",
-      "th": "≈ US$35 ผู้ใหญ่ · ≈ US$25 เด็ก 3–12 ปี · ต่ำกว่า 2 ขวบฟรี (ราคาหน้าประตู)"
-     },
-     "book": "none",
-     "q": "Gatorland, South Orange Blossom Trail, Orlando",
-     "ok": "2026-11",
-     "src": "https://www.orlandoattractions.com/tickets/gatorland-orlando-discount-tickets"
-    },
-    {
-     "name": {
-      "en": "SEA LIFE Orlando Aquarium",
-      "th": "ซีไลฟ์ออร์แลนโดอควาเรียม"
-     },
-     "kind": "aquarium",
-     "area": {
-      "en": "ICON Park, International Drive",
-      "th": "ไอคอนพาร์ก อินเตอร์แนชันแนลไดรฟ์"
-     },
-     "what": {
-      "en": "A compact aquarium with a 360° ocean tunnel, sea turtles, sharks and rock pools to touch",
-      "th": "พิพิธภัณฑ์สัตว์น้ำขนาดย่อม มีอุโมงค์ใต้ทะเล 360° เต่าทะเล ฉลาม และบ่อหินให้สัมผัส"
-     },
-     "why": {
-      "en": "Small, cool and indoors, about an hour, which suits toddlers on a rainy afternoon",
-      "th": "เล็ก เย็น และอยู่ในร่ม ใช้เวลาราวชั่วโมง เหมาะเด็กเล็กตอนบ่ายฝนตก"
-     },
-     "tip": {
-      "en": "Online tickets are cheaper than the gate; combo tickets with the Orlando Eye save more",
-      "th": "ตั๋วออนไลน์ถูกกว่าหน้าประตู ตั๋วรวมกับออร์แลนโดอายประหยัดกว่า"
-     },
-     "ages": [
-      2,
-      2,
-      1,
-      1
-     ],
-     "hrs": 1,
-     "io": "in",
-     "pram": "yes",
-     "price": {
-      "en": "≈ from US$29 adults online · ≈ from US$24 children 2–12 · 1 and under free",
-      "th": "≈ เริ่ม US$29 ผู้ใหญ่ออนไลน์ · ≈ เริ่ม US$24 เด็ก 2–12 ปี · เด็ก 1 ขวบลงมาฟรี"
-     },
-     "book": "rec",
-     "q": "SEA LIFE Orlando Aquarium, ICON Park, Orlando",
-     "ok": "2026-11",
-     "src": "https://orlando-support.visitsealife.com/hc/en-us/articles/115003193851-How-much-does-a-SEA-LIFE-Orlando-Aquarium-ticket-cost"
-    },
-    {
-     "name": {
-      "en": "The Orlando Eye",
-      "th": "ออร์แลนโดอาย"
-     },
-     "kind": "views",
-     "area": {
-      "en": "ICON Park, International Drive",
-      "th": "ไอคอนพาร์ก อินเตอร์แนชันแนลไดรฟ์"
-     },
-     "what": {
-      "en": "A giant observation wheel with closed, air-conditioned pods over International Drive",
-      "th": "ชิงช้าสวรรค์ยักษ์ กระเช้าปิดมีแอร์ มองเห็นอินเตอร์แนชันแนลไดรฟ์"
-     },
-     "why": {
-      "en": "A slow, cool ride of about 20 minutes, fine in rain, with views to the theme parks",
-      "th": "นั่งช้าๆ เย็นสบายราว 20 นาที ฝนตกก็ขึ้นได้ มองเห็นสวนสนุก"
-     },
-     "tip": {
-      "en": "Formerly called The Wheel; ride at dusk for the lights",
-      "th": "เดิมชื่อเดอะวีล ขึ้นช่วงพลบค่ำจะเห็นแสงไฟ"
-     },
-     "ages": [
-      1,
-      2,
-      2,
-      2
-     ],
-     "hrs": 0.5,
-     "io": "in",
-     "pram": "yes",
-     "price": {
-      "en": "≈ US$27 adults · ≈ US$23 children · 2 and under free",
-      "th": "≈ US$27 ผู้ใหญ่ · ≈ US$23 เด็ก · เด็ก 2 ขวบลงมาฟรี"
-     },
-     "book": "none",
-     "q": "The Orlando Eye, ICON Park, Orlando",
-     "ok": "2026-11",
-     "src": "https://orlandoattractions.com/tickets/orlando-eye-icon-park-tickets"
-    },
-    {
-     "name": {
-      "en": "Crayola Experience Orlando",
-      "th": "เครโยลาเอกซ์พีเรียนซ์ออร์แลนโด"
-     },
-     "kind": "museumkid",
-     "area": {
-      "en": "The Florida Mall, Orlando",
-      "th": "เดอะฟลอริดามอลล์ ออร์แลนโด"
-     },
-     "what": {
-      "en": "An indoor play centre of colour: name your own crayon, melt wax, colour pages that come to life and a soft play area",
-      "th": "ศูนย์เล่นในร่มเรื่องสี ตั้งชื่อสีเทียนเอง หลอมเทียน ระบายภาพที่ขยับได้ และมุมเล่นนุ่มๆ"
-     },
-     "why": {
-      "en": "Made for children aged 3 to 10 and a good rain plan, with crafts to take home",
-      "th": "ทำมาเพื่อเด็ก 3–10 ปี เป็นแผนวันฝนตกที่ดี ได้งานประดิษฐ์กลับบ้าน"
-     },
-     "tip": {
-      "en": "A ticket is good for a year from purchase; all sales are final",
-      "th": "ตั๋วใช้ได้หนึ่งปีนับจากวันซื้อ ซื้อแล้วคืนไม่ได้"
-     },
-     "ages": [
-      1,
-      2,
-      2,
-      1
-     ],
-     "hrs": 3,
-     "io": "in",
-     "pram": "yes",
-     "price": {
-      "en": "≈ US$30 a person, ages 3+ · 2 and under free",
-      "th": "≈ US$30 ต่อคน อายุ 3 ปีขึ้นไป · เด็ก 2 ขวบลงมาฟรี"
-     },
-     "book": "rec",
-     "q": "Crayola Experience, The Florida Mall, Orlando",
-     "ok": "2026-11",
-     "src": "https://orlandoattractions.com/tickets/crayola-orlando-general-admission"
-    },
-    {
-     "name": {
-      "en": "Orlando Science Center",
-      "th": "ออร์แลนโดไซเอนซ์เซ็นเตอร์"
-     },
-     "kind": "museumkid",
-     "area": {
-      "en": "Loch Haven Park, Orlando",
-      "th": "ลอคเฮเวนพาร์ก ออร์แลนโด"
-     },
-     "what": {
-      "en": "Four floors of hands-on science, a dinosaur hall, a giant-screen theatre and KidsTown for the under-eights",
-      "th": "สี่ชั้นของวิทยาศาสตร์ลงมือทำ ห้องไดโนเสาร์ โรงภาพยนตร์จอยักษ์ และคิดส์ทาวน์สำหรับเด็กต่ำกว่าแปดขวบ"
-     },
-     "why": {
-      "en": "KidsTown has water play and a small town to role-play in, all indoors",
-      "th": "คิดส์ทาวน์มีเล่นน้ำและเมืองเล็กให้เล่นบทบาท อยู่ในร่มทั้งหมด"
-     },
-     "tip": {
-      "en": "Online tickets are cheaper than at the door",
-      "th": "ตั๋วออนไลน์ถูกกว่าหน้าประตู"
-     },
-     "ages": [
-      2,
-      2,
-      2,
-      1
-     ],
-     "hrs": 3,
-     "io": "in",
-     "pram": "yes",
-     "price": {
-      "en": "≈ US$30 adults online · less for children 2–11 · under 2 free",
-      "th": "≈ US$30 ผู้ใหญ่ออนไลน์ · เด็ก 2–11 ปีถูกกว่า · ต่ำกว่า 2 ขวบฟรี"
-     },
-     "book": "rec",
-     "q": "Orlando Science Center, Loch Haven Park, Orlando",
-     "ok": "2026-11",
-     "src": "https://osc.org/visit"
-    },
-    {
-     "name": {
-      "en": "Disney Springs",
-      "th": "ดิสนีย์สปริงส์"
-     },
-     "kind": "shop",
-     "area": {
-      "en": "Walt Disney World, Lake Buena Vista",
-      "th": "วอลต์ดิสนีย์เวิลด์ เลกบัวนาวิสตา"
-     },
-     "what": {
-      "en": "Disney's free shopping and dining quarter by the lake, with a huge LEGO store, street music and splash pads",
-      "th": "ย่านช็อปปิงและร้านอาหารริมทะเลสาบของดิสนีย์ เข้าฟรี มีร้านเลโกใหญ่ ดนตรีข้างทาง และลานน้ำพุ"
-     },
-     "why": {
-      "en": "No ticket needed: the LEGO models and splash pads keep children busy while parents eat",
-      "th": "ไม่ต้องใช้ตั๋ว โมเดลเลโกและลานน้ำพุให้เด็กเล่นขณะพ่อแม่กินข้าว"
-     },
-     "tip": {
-      "en": "Parking in the garages is free; come in the daytime, as evenings and weekends are crowded",
-      "th": "จอดรถในอาคารฟรี มาตอนกลางวันเพราะเย็นและเสาร์อาทิตย์คนเยอะ"
-     },
-     "ages": [
-      1,
-      2,
-      2,
-      2
-     ],
-     "hrs": 2.5,
-     "io": "both",
-     "pram": "yes",
-     "price": {
-      "en": "Free",
-      "th": "ฟรี"
-     },
-     "book": "none",
-     "q": "Disney Springs, Lake Buena Vista, Florida",
-     "ok": "2026-11",
-     "src": "https://magicguides.com/is-disney-springs-free/"
-    },
-    {
-     "name": {
-      "en": "Lake Eola Park",
-      "th": "สวนเลกอีโอลา"
-     },
-     "kind": "park",
-     "area": {
-      "en": "Downtown Orlando",
-      "th": "ดาวน์ทาวน์ออร์แลนโด"
-     },
-     "what": {
-      "en": "A downtown lake with a fountain, a path all round, playgrounds and swan-shaped pedal boats",
-      "th": "ทะเลสาบกลางเมือง มีน้ำพุ ทางเดินรอบ สนามเด็กเล่น และเรือถีบรูปหงส์"
-     },
-     "why": {
-      "en": "Free playgrounds and real swans, and a swan boat holds a family of five",
-      "th": "สนามเด็กเล่นฟรีและหงส์ตัวจริง เรือหงส์นั่งได้ครอบครัวห้าคน"
-     },
-     "tip": {
-      "en": "Swan boats are rented from Tuesday to Sunday at the dock on East Washington Street",
-      "th": "เช่าเรือหงส์ได้วันอังคารถึงอาทิตย์ ที่ท่าเรือถนนอีสต์วอชิงตัน"
-     },
-     "ages": [
-      2,
-      2,
-      2,
-      1
-     ],
-     "hrs": 1.5,
-     "io": "out",
-     "pram": "yes",
-     "price": {
-      "en": "Free · swan boat ≈ US$15 for 30 minutes",
-      "th": "ฟรี · เรือหงส์ ≈ US$15 ต่อ 30 นาที"
-     },
-     "book": "none",
-     "q": "Lake Eola Park, Downtown Orlando, Florida",
-     "ok": "2026-11",
-     "src": "https://www.orlando.gov/Parks-the-Environment/Directory/Lake-Eola-Park/Rent-a-Swan-Boat-at-Lake-Eola"
-    }
-   ]
-  }
- ]
+  ]
 }

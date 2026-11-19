@@ -1,625 +1,280 @@
 {
- "cc": "nl",
- "towns": [
-  {
-   "place": "nl-amsterdam",
-   "sights": [
+  "cc": "nl",
+  "towns": [
     {
-     "name": {
-      "en": "NEMO Science Museum",
-      "th": "พิพิธภัณฑ์วิทยาศาสตร์นีโม"
-     },
-     "local": "NEMO Science Museum",
-     "kind": "museumkid",
-     "area": {
-      "en": "Oosterdok",
-      "th": "โอสเตอร์ด็อก"
-     },
-     "what": {
-      "en": "A green ship-shaped science centre by the water, five floors of experiments to push, pull and build",
-      "th": "ศูนย์วิทยาศาสตร์รูปเรือสีเขียวริมน้ำ ห้าชั้นเต็มไปด้วยการทดลองให้กด ดึง และต่อเอง"
-     },
-     "why": {
-      "en": "Everything is meant to be touched; the chain-reaction show and the water area hold small children for hours",
-      "th": "ทุกอย่างให้จับเล่นได้ การแสดงปฏิกิริยาลูกโซ่และโซนน้ำทำให้เด็กเล็กอยู่ได้หลายชั่วโมง"
-     },
-     "tip": {
-      "en": "Book a time slot online; the sloping roof terrace outside is free and has a view of the harbour",
-      "th": "จองรอบเวลาออนไลน์ ดาดฟ้าลาดเอียงด้านนอกขึ้นฟรีและเห็นวิวท่าเรือ"
-     },
-     "ages": [
-      1,
-      2,
-      2,
-      2
-     ],
-     "hrs": 3.5,
-     "io": "in",
-     "pram": "yes",
-     "price": {
-      "en": "≈ €21.50 ages 4 and up · under 4 free",
-      "th": "≈ €21.50 อายุ 4 ปีขึ้นไป · ต่ำกว่า 4 ขวบฟรี"
-     },
-     "book": "rec",
-     "q": "NEMO Science Museum, Oosterdok, Amsterdam",
-     "ok": "2026-11",
-     "src": "https://www.artvisitguide.com/nemo-science-museum-amsterdam-tickets-guide/"
-    },
-    {
-     "name": {
-      "en": "ARTIS Zoo",
-      "th": "สวนสัตว์อาร์ทิส"
-     },
-     "local": "ARTIS",
-     "kind": "zoo",
-     "area": {
-      "en": "Plantage",
-      "th": "พลานทาเคอ"
-     },
-     "what": {
-      "en": "A leafy 19th-century zoo in the city centre, with elephants, giraffes, a butterfly house and a planetarium",
-      "th": "สวนสัตว์ร่มรื่นจากศตวรรษที่ 19 กลางเมือง มีช้าง ยีราฟ บ้านผีเสื้อ และท้องฟ้าจำลอง"
-     },
-     "why": {
-      "en": "Compact and shady with playgrounds, and many warm indoor houses for a wet day",
-      "th": "ไม่ใหญ่ ร่มรื่น มีสนามเด็กเล่น และมีอาคารในร่มอุ่นๆ หลายหลังสำหรับวันฝนตก"
-     },
-     "tip": {
-      "en": "Prices change by the day and are lower online; Micropia next door has a combined ticket",
-      "th": "ราคาเปลี่ยนตามวัน ซื้อออนไลน์ถูกกว่า มีตั๋วรวมกับไมโครเปียที่อยู่ติดกัน"
-     },
-     "ages": [
-      2,
-      2,
-      2,
-      1
-     ],
-     "hrs": 3.5,
-     "io": "both",
-     "pram": "yes",
-     "price": {
-      "en": "≈ €29.50 ages 13 and up online · €25.50 ages 3–12 · under 3 free",
-      "th": "≈ €29.50 อายุ 13 ปีขึ้นไปซื้อออนไลน์ · €25.50 อายุ 3–12 ปี · ต่ำกว่า 3 ขวบฟรี"
-     },
-     "book": "rec",
-     "q": "ARTIS, Plantage Kerklaan, Amsterdam",
-     "ok": "2026-11",
-     "src": "https://www.amsterdamtourism.org/artis-zoo-amsterdam/"
-    },
-    {
-     "name": {
-      "en": "Micropia",
-      "th": "ไมโครเปีย"
-     },
-     "local": "Micropia",
-     "kind": "museumkid",
-     "area": {
-      "en": "Plantage",
-      "th": "พลานทาเคอ"
-     },
-     "what": {
-      "en": "The world's first museum of microbes, with giant microscopes and a body scanner that shows the germs on you",
-      "th": "พิพิธภัณฑ์จุลินทรีย์แห่งแรกของโลก มีกล้องจุลทรรศน์ยักษ์และเครื่องสแกนที่โชว์เชื้อโรคบนตัวเรา"
-     },
-     "why": {
-      "en": "Short, indoors and free for children under 13; best for curious children of five and up",
-      "th": "ใช้เวลาไม่นาน อยู่ในร่ม เด็กต่ำกว่า 13 ปีเข้าฟรี เหมาะกับเด็กห้าขวบขึ้นไปที่ช่างสงสัย"
-     },
-     "tip": {
-      "en": "Every visitor needs a booked ticket, children too, even though theirs is free",
-      "th": "ทุกคนต้องจองตั๋ว รวมเด็กด้วยแม้จะฟรี"
-     },
-     "ages": [
-      0,
-      1,
-      2,
-      2
-     ],
-     "hrs": 1.5,
-     "io": "in",
-     "pram": "yes",
-     "price": {
-      "en": "≈ €17.50 ages 13 and up · under 13 free",
-      "th": "≈ €17.50 อายุ 13 ปีขึ้นไป · ต่ำกว่า 13 ปีฟรี"
-     },
-     "book": "req",
-     "q": "Micropia, Plantage Kerklaan, Amsterdam",
-     "ok": "2026-11",
-     "src": "https://www.amsterdamtourism.org/artis-zoo-amsterdam/"
-    },
-    {
-     "name": {
-      "en": "Rijksmuseum",
-      "th": "ไรก์สมิวเซียม"
-     },
-     "local": "Rijksmuseum",
-     "kind": "museum",
-     "area": {
-      "en": "Museumplein",
-      "th": "มิวเซียมเพลน"
-     },
-     "what": {
-      "en": "The Dutch national museum: Rembrandt's Night Watch, model ships, doll's houses and a passage you can cycle through",
-      "th": "พิพิธภัณฑ์แห่งชาติของเนเธอร์แลนด์ มีภาพเดอะไนท์วอทช์ของแรมแบรนดท์ เรือจำลอง บ้านตุ๊กตา และทางลอดที่ปั่นจักรยานผ่านได้"
-     },
-     "why": {
-      "en": "Under-18s go free; the model ships and the 17th-century doll's houses are the children's favourites",
-      "th": "เด็กต่ำกว่า 18 ปีเข้าฟรี เด็กๆ ชอบเรือจำลองกับบ้านตุ๊กตาจากศตวรรษที่ 17 ที่สุด"
-     },
-     "tip": {
-      "en": "Tickets are sold online only; keep the visit short and pick three rooms with little ones",
-      "th": "ขายตั๋วออนไลน์เท่านั้น พาเด็กเล็กไปไม่นาน เลือกดูสักสามห้อง"
-     },
-     "ages": [
-      1,
-      1,
-      2,
-      2
-     ],
-     "hrs": 2,
-     "io": "in",
-     "pram": "yes",
-     "price": {
-      "en": "≈ €25 adults · under 18 free",
-      "th": "≈ €25 ผู้ใหญ่ · ต่ำกว่า 18 ปีฟรี"
-     },
-     "book": "req",
-     "q": "Rijksmuseum, Museumplein, Amsterdam",
-     "ok": "2026-11",
-     "src": "https://rijksmuseum.nl/en/visit/faq"
-    },
-    {
-     "name": {
-      "en": "Van Gogh Museum",
-      "th": "พิพิธภัณฑ์แวนโก๊ะ"
-     },
-     "local": "Van Gogh Museum",
-     "kind": "museum",
-     "area": {
-      "en": "Museumplein",
-      "th": "มิวเซียมเพลน"
-     },
-     "what": {
-      "en": "The largest collection of Van Gogh's paintings, from the sunflowers to his bedroom",
-      "th": "คอลเลกชันภาพวาดแวนโก๊ะที่ใหญ่ที่สุด ตั้งแต่ดอกทานตะวันจนถึงห้องนอนของเขา"
-     },
-     "why": {
-      "en": "Under-18s go free and there is a family audio tour; best for children who like to draw",
-      "th": "เด็กต่ำกว่า 18 ปีเข้าฟรี มีออดิโอทัวร์สำหรับครอบครัว เหมาะกับเด็กที่ชอบวาดรูป"
-     },
-     "tip": {
-      "en": "Every visitor needs a timed ticket booked online, children included; none are sold at the door",
-      "th": "ทุกคนต้องจองตั๋วรอบเวลาออนไลน์ รวมเด็กด้วย ไม่ขายหน้างาน"
-     },
-     "ages": [
-      0,
-      1,
-      1,
-      2
-     ],
-     "hrs": 1.5,
-     "io": "in",
-     "pram": "yes",
-     "price": {
-      "en": "≈ €25 adults · under 18 free",
-      "th": "≈ €25 ผู้ใหญ่ · ต่ำกว่า 18 ปีฟรี"
-     },
-     "book": "req",
-     "q": "Van Gogh Museum, Museumplein, Amsterdam",
-     "ok": "2026-11",
-     "src": "https://www.vangoghmuseum.nl/en/plan-your-visit/ticket-prices"
-    },
-    {
-     "name": {
-      "en": "National Maritime Museum",
-      "th": "พิพิธภัณฑ์การเดินเรือแห่งชาติ"
-     },
-     "local": "Het Scheepvaartmuseum",
-     "kind": "museum",
-     "area": {
-      "en": "Kattenburg",
-      "th": "คัทเทนบวร์ค"
-     },
-     "what": {
-      "en": "A museum of the sea in an old naval storehouse, with a full-size replica of an East India ship moored outside",
-      "th": "พิพิธภัณฑ์ทางทะเลในโกดังเก่าของกองทัพเรือ มีเรือจำลองขนาดจริงของบริษัทอินเดียตะวันออกจอดอยู่ด้านหน้า"
-     },
-     "why": {
-      "en": "Children climb aboard the big ship, see the cannons and the cabins, and there are play exhibitions inside",
-      "th": "เด็กๆ ได้ขึ้นเรือใหญ่ ดูปืนใหญ่และห้องนอนลูกเรือ ข้างในมีนิทรรศการให้เล่น"
-     },
-     "tip": {
-      "en": "The ship's decks have steep ladders, so leave the pram at the entrance",
-      "th": "บนเรือมีบันไดชัน จอดรถเข็นไว้ที่ทางเข้า"
-     },
-     "ages": [
-      1,
-      2,
-      2,
-      2
-     ],
-     "hrs": 2.5,
-     "io": "both",
-     "pram": "part",
-     "price": {
-      "en": "≈ €18.50 adults · €8.50 children · under 4 free",
-      "th": "≈ €18.50 ผู้ใหญ่ · €8.50 เด็ก · ต่ำกว่า 4 ขวบฟรี"
-     },
-     "book": "none",
-     "q": "Het Scheepvaartmuseum, Kattenburgerplein, Amsterdam",
-     "ok": "2026-11",
-     "src": "https://hetscheepvaartmuseum.com/visit/opening-hours-and-admission"
-    },
-    {
-     "name": {
-      "en": "A'DAM Lookout",
-      "th": "อาดัม ลุคเอาท์"
-     },
-     "local": "A'DAM Lookout",
-     "kind": "views",
-     "area": {
-      "en": "Amsterdam-Noord",
-      "th": "อัมสเตอร์ดัม-นอร์ด"
-     },
-     "what": {
-      "en": "A viewing deck on top of the A'DAM Tower across the river from Central Station, with a swing over the edge",
-      "th": "จุดชมวิวบนยอดหอ A'DAM ฝั่งตรงข้ามสถานีกลาง มีชิงช้าแกว่งออกนอกขอบตึก"
-     },
-     "why": {
-      "en": "A fast lift and a wide view over the harbour and the old town; the swing is for 1.20 m and taller only",
-      "th": "ลิฟต์ขึ้นเร็ว เห็นท่าเรือและเมืองเก่ากว้างไกล ชิงช้าสำหรับคนสูง 1.20 ม. ขึ้นไปเท่านั้น"
-     },
-     "tip": {
-      "en": "Take the free ferry from behind Central Station; online tickets are cheaper than at the door",
-      "th": "นั่งเรือข้ามฟากฟรีจากหลังสถานีกลาง ซื้อออนไลน์ถูกกว่าหน้างาน"
-     },
-     "ages": [
-      1,
-      2,
-      2,
-      2
-     ],
-     "hrs": 1,
-     "io": "both",
-     "pram": "yes",
-     "price": {
-      "en": "≈ €16.50 adults online · €10.50 ages 4–12 · swing ≈ €7.50 extra",
-      "th": "≈ €16.50 ผู้ใหญ่ซื้อออนไลน์ · €10.50 อายุ 4–12 ปี · ชิงช้าเพิ่ม ≈ €7.50"
-     },
-     "book": "rec",
-     "q": "A'DAM Lookout, Overhoeksplein, Amsterdam",
-     "ok": "2026-11",
-     "src": "https://www.amsterdamtourism.org/?p=1763"
-    },
-    {
-     "name": {
-      "en": "Free ferries across the IJ",
-      "th": "เรือข้ามฟากฟรีข้ามแม่น้ำไอ"
-     },
-     "local": "GVB pont",
-     "kind": "ride",
-     "area": {
-      "en": "Central Station to Noord",
-      "th": "สถานีกลางไปฝั่งนอร์ด"
-     },
-     "what": {
-      "en": "City ferries that shuttle from behind Central Station to Amsterdam-Noord and the NDSM wharf",
-      "th": "เรือข้ามฟากของเมืองที่วิ่งจากหลังสถานีกลางไปอัมสเตอร์ดัม-นอร์ดและท่าเรือ NDSM"
-     },
-     "why": {
-      "en": "A real boat ride for nothing: five minutes to Buiksloterweg or a quarter of an hour to NDSM",
-      "th": "ได้นั่งเรือจริงฟรีๆ ห้านาทีไปบุยส์โลเทอร์เวค หรือราว 15 นาทีไป NDSM"
-     },
-     "tip": {
-      "en": "Walk straight on with the pram, no ticket needed; stand away from the cyclists at the ramp",
-      "th": "เข็นรถเข็นขึ้นได้เลยไม่ต้องใช้ตั๋ว ยืนห่างจากคนปั่นจักรยานตรงทางขึ้น"
-     },
-     "ages": [
-      2,
-      2,
-      2,
-      2
-     ],
-     "hrs": 0.5,
-     "io": "out",
-     "pram": "yes",
-     "price": {
-      "en": "Free",
-      "th": "ฟรี"
-     },
-     "book": "none",
-     "q": "Pont Buiksloterweg, Amsterdam Centraal, Amsterdam",
-     "ok": "2026-11",
-     "src": "https://www.amsterdamtourism.org/amsterdam-free-ferry-noord/"
-    },
-    {
-     "name": {
-      "en": "Canal cruise with a children's audio tour",
-      "th": "ล่องเรือคลองพร้อมออดิโอทัวร์สำหรับเด็ก"
-     },
-     "local": "Blue Boat Company",
-     "kind": "ride",
-     "area": {
-      "en": "Leidseplein",
-      "th": "ไลด์เซอเพลน"
-     },
-     "what": {
-      "en": "A 75-minute glass-roofed boat trip along the canal ring, with a children's audio story and activity pack",
-      "th": "ล่องเรือหลังคากระจก 75 นาทีรอบวงคลอง มีออดิโอนิทานสำหรับเด็กและชุดกิจกรรม"
-     },
-     "why": {
-      "en": "The covered boat works in any weather, and the children's story keeps them looking out of the window",
-      "th": "เรือมีหลังคา ไปได้ทุกสภาพอากาศ นิทานสำหรับเด็กทำให้เด็กๆ คอยมองออกนอกหน้าต่าง"
-     },
-     "tip": {
-      "en": "Pick the kids' audio when you board; book a morning boat for fewer crowds",
-      "th": "เลือกออดิโอสำหรับเด็กตอนขึ้นเรือ จองรอบเช้าคนน้อยกว่า"
-     },
-     "ages": [
-      1,
-      2,
-      2,
-      2
-     ],
-     "hrs": 1.5,
-     "io": "both",
-     "pram": "part",
-     "price": {
-      "en": "≈ €13.50 a child · adults pay more · age 4 and under free",
-      "th": "≈ €13.50 ต่อเด็ก · ผู้ใหญ่แพงกว่า · อายุ 4 ขวบลงมาฟรี"
-     },
-     "book": "rec",
-     "q": "Blue Boat Company, Stadhouderskade 30, Amsterdam",
-     "ok": "2026-11",
-     "src": "https://www.blueboat.nl/en/canal-cruise-amsterdam/kids-cruise/"
-    },
-    {
-     "name": {
-      "en": "Wereldmuseum Amsterdam",
-      "th": "พิพิธภัณฑ์เวเรลด์มิวเซียม อัมสเตอร์ดัม"
-     },
-     "local": "Wereldmuseum Amsterdam",
-     "kind": "museum",
-     "area": {
-      "en": "Oost",
-      "th": "โอสต์"
-     },
-     "what": {
-      "en": "A museum of world cultures in a grand old building, with masks, music, costumes and a junior section",
-      "th": "พิพิธภัณฑ์วัฒนธรรมโลกในอาคารเก่าสง่างาม มีหน้ากาก ดนตรี เครื่องแต่งกาย และส่วนสำหรับเด็ก"
-     },
-     "why": {
-      "en": "Children up to five go free and the junior activities come with the ticket; good on a wet afternoon",
-      "th": "เด็กถึงห้าขวบเข้าฟรี กิจกรรมเด็กรวมในตั๋ว เหมาะกับบ่ายวันฝนตก"
-     },
-     "tip": {
-      "en": "Children under 12 must come with an adult; Oosterpark next door has a playground",
-      "th": "เด็กต่ำกว่า 12 ปีต้องมากับผู้ใหญ่ สวนโอสเตอร์พาร์กข้างๆ มีสนามเด็กเล่น"
-     },
-     "ages": [
-      1,
-      1,
-      2,
-      2
-     ],
-     "hrs": 2,
-     "io": "in",
-     "pram": "yes",
-     "price": {
-      "en": "≈ €18 adults online · €7.50 ages 6–18 · under 6 free",
-      "th": "≈ €18 ผู้ใหญ่ซื้อออนไลน์ · €7.50 อายุ 6–18 ปี · ต่ำกว่า 6 ขวบฟรี"
-     },
-     "book": "none",
-     "q": "Wereldmuseum Amsterdam, Linnaeusstraat 2, Amsterdam",
-     "ok": "2026-11",
-     "src": "https://amsterdam.wereldmuseum.nl/en/node/38"
-    },
-    {
-     "name": {
-      "en": "Albert Cuyp Market",
-      "th": "ตลาดอัลแบร์ทเกาป์"
-     },
-     "local": "Albert Cuypmarkt",
-     "kind": "market",
-     "area": {
-      "en": "De Pijp",
-      "th": "เดอไปป์"
-     },
-     "what": {
-      "en": "Amsterdam's biggest street market, some 260 stalls of fruit, cheese, fish and fresh stroopwafels",
-      "th": "ตลาดริมถนนที่ใหญ่ที่สุดของอัมสเตอร์ดัม ราว 260 แผง มีผลไม้ ชีส ปลา และสโตรปวาเฟิลอบใหม่"
-     },
-     "why": {
-      "en": "A warm stroopwafel made in front of you and poffertjes, the tiny pancakes children love",
-      "th": "สโตรปวาเฟิลอุ่นๆ ทำต่อหน้า และพอฟเฟอร์เจส แพนเค้กจิ๋วที่เด็กชอบ"
-     },
-     "tip": {
-      "en": "Open Monday to Saturday, closed on Sundays; the street is narrow, so hold small hands at busy times",
-      "th": "เปิดจันทร์ถึงเสาร์ ปิดวันอาทิตย์ ถนนแคบ ช่วงคนเยอะจับมือเด็กไว้"
-     },
-     "ages": [
-      1,
-      2,
-      2,
-      2
-     ],
-     "hrs": 1,
-     "io": "out",
-     "pram": "part",
-     "price": {
-      "en": "Free to wander · snacks ≈ €3–8",
-      "th": "เดินชมฟรี · ของว่าง ≈ €3–8"
-     },
-     "book": "none",
-     "q": "Albert Cuypmarkt, De Pijp, Amsterdam",
-     "ok": "2026-11",
-     "src": "https://www.iamsterdam.com/en/see-and-do/shopping/amsterdam-markets/albert-cuypmarkt"
-    },
-    {
-     "name": {
-      "en": "Vondelpark",
-      "th": "ฟอนเดิลพาร์ก"
-     },
-     "local": "Vondelpark",
-     "kind": "park",
-     "area": {
-      "en": "Oud-Zuid",
-      "th": "เอาด์-ไซด์"
-     },
-     "what": {
-      "en": "The city's favourite park, with ponds, wide paths, playgrounds and an open-air theatre",
-      "th": "สวนสาธารณะยอดนิยมของเมือง มีบ่อน้ำ ทางเดินกว้าง สนามเด็กเล่น และโรงละครกลางแจ้ง"
-     },
-     "why": {
-      "en": "Flat paths for a pram, ducks to watch, and a big nature playground near the south end",
-      "th": "ทางเรียบเข็นรถเข็นสบาย มีเป็ดให้ดู และมีสนามเด็กเล่นธรรมชาติขนาดใหญ่ทางใต้ของสวน"
-     },
-     "tip": {
-      "en": "Watch for fast cyclists on the main path; it is a short walk from the Rijksmuseum",
-      "th": "ระวังจักรยานที่ปั่นเร็วบนทางหลัก เดินจากไรก์สมิวเซียมไม่ไกล"
-     },
-     "ages": [
-      2,
-      2,
-      2,
-      1
-     ],
-     "hrs": 2,
-     "io": "out",
-     "pram": "yes",
-     "price": {
-      "en": "Free",
-      "th": "ฟรี"
-     },
-     "book": "none",
-     "q": "Vondelpark, Oud-Zuid, Amsterdam",
-     "ok": "2026-11",
-     "src": "https://www.iamsterdam.com/nl/zien-en-doen/parken-en-natuur/natuurgebieden/vondelpark"
-    },
-    {
-     "name": {
-      "en": "Het Woeste Westen nature playground",
-      "th": "สนามเด็กเล่นธรรมชาติเฮทโวสเทอเวสเทิน"
-     },
-     "local": "Natuurspeeltuin Het Woeste Westen",
-     "kind": "play",
-     "area": {
-      "en": "Westerpark",
-      "th": "เวสเทอร์พาร์ก"
-     },
-     "what": {
-      "en": "A wild playground in Westerpark with water, sand, logs, rope bridges and huts to build",
-      "th": "สนามเด็กเล่นธรรมชาติในเวสเทอร์พาร์ก มีน้ำ ทราย ขอนไม้ สะพานเชือก และกระท่อมให้สร้าง"
-     },
-     "why": {
-      "en": "Children get muddy and build freely; free for children up to 13",
-      "th": "เด็กๆ ได้เลอะโคลนและสร้างของอย่างอิสระ เด็กถึง 13 ปีเข้าฟรี"
-     },
-     "tip": {
-      "en": "Bring boots and a change of clothes; Westerpark around it has cafés and more lawns",
-      "th": "พกรองเท้าบูตและเสื้อผ้าสำรอง รอบๆ ในเวสเทอร์พาร์กมีคาเฟ่และสนามหญ้าอีก"
-     },
-     "ages": [
-      1,
-      2,
-      2,
-      1
-     ],
-     "hrs": 2,
-     "io": "out",
-     "pram": "part",
-     "price": {
-      "en": "Free",
-      "th": "ฟรี"
-     },
-     "book": "none",
-     "q": "Het Woeste Westen, Overbrakerpad 3, Amsterdam",
-     "ok": "2026-11",
-     "src": "https://www.kidsproof.nl/amsterdam/uitje/natuurspeeltuin-het-woeste-westen-het-woeste-westen-speeltuin-kinderen"
-    },
-    {
-     "name": {
-      "en": "Amsterdamse Bos",
-      "th": "อัมสเตอร์ดัมเซอบอส"
-     },
-     "local": "Amsterdamse Bos",
-     "kind": "nature",
-     "area": {
-      "en": "Amstelveen",
-      "th": "อัมสเติลเฟน"
-     },
-     "what": {
-      "en": "A huge forest park south of the city with lakes, play islands reached by a hand ferry and a rope bridge, and canoes to hire",
-      "th": "สวนป่าขนาดใหญ่ทางใต้ของเมือง มีทะเลสาบ เกาะเล่นที่ไปด้วยแพดึงเองและสะพานเชือก และมีเรือแคนูให้เช่า"
-     },
-     "why": {
-      "en": "Space to roam, a play meadow for children from four, and bikes to hire at the main entrance",
-      "th": "มีพื้นที่ให้เดินเล่นกว้าง ทุ่งเล่นสำหรับเด็กสี่ขวบขึ้นไป และเช่าจักรยานได้ที่ทางเข้าหลัก"
-     },
-     "tip": {
-      "en": "Start at the Boswinkel visitor centre by the main entrance for maps; combine it with the goat farm",
-      "th": "เริ่มที่ศูนย์บอสวิงเคิลตรงทางเข้าหลักเพื่อรับแผนที่ แล้วไปต่อฟาร์มแพะ"
-     },
-     "ages": [
-      1,
-      2,
-      2,
-      2
-     ],
-     "hrs": 3,
-     "io": "out",
-     "pram": "part",
-     "price": {
-      "en": "Free · canoe and bike hire extra",
-      "th": "ฟรี · เช่าแคนูและจักรยานจ่ายเพิ่ม"
-     },
-     "book": "none",
-     "q": "Amsterdamse Bos, Bosbaanweg, Amstelveen",
-     "ok": "2026-11",
-     "src": "https://www.iamsterdam.com/nl/zien-en-doen/parken-en-natuur/natuurgebieden/het-amsterdamse-bos"
-    },
-    {
-     "name": {
-      "en": "Ridammerhoeve goat farm",
-      "th": "ฟาร์มแพะริดัมเมอร์ฮูเฟอ"
-     },
-     "local": "Geitenboerderij Ridammerhoeve",
-     "kind": "farm",
-     "area": {
-      "en": "Amsterdamse Bos",
-      "th": "อัมสเตอร์ดัมเซอบอส"
-     },
-     "what": {
-      "en": "An organic goat farm in the forest park where children feed and stroke the kids, with chickens, pigs and a pony",
-      "th": "ฟาร์มแพะออร์แกนิกในสวนป่า เด็กๆ ได้ป้อนอาหารและลูบลูกแพะ มีไก่ หมู และม้าแคระ"
-     },
-     "why": {
-      "en": "Gentle animals at toddler height, a terrace for parents and goat's-milk ice cream",
-      "th": "สัตว์เชื่อง ความสูงพอดีเด็กเล็ก มีระเบียงให้พ่อแม่นั่ง และไอศกรีมนมแพะ"
-     },
-     "tip": {
-      "en": "Open daily 10:00–17:00; spring brings the newborn kids",
-      "th": "เปิดทุกวัน 10:00–17:00 ช่วงใบไม้ผลิมีลูกแพะเกิดใหม่"
-     },
-     "ages": [
-      2,
-      2,
-      2,
-      1
-     ],
-     "hrs": 1.5,
-     "io": "out",
-     "pram": "part",
-     "price": {
-      "en": "Free",
-      "th": "ฟรี"
-     },
-     "book": "none",
-     "q": "Geitenboerderij Ridammerhoeve, Nieuwe Meerlaan 4, Amstelveen",
-     "ok": "2026-11",
-     "src": "https://www.iamsterdam.com/en/see-and-do/things-to-do/families-and-children/petting-zoos/geitenboerderij-ridammerhoeve-goat-farm"
+      "place": "nl-amsterdam",
+      "sights": [
+        {
+          "name": { "en": "NEMO Science Museum", "th": "พิพิธภัณฑ์วิทยาศาสตร์นีโม" },
+          "local": "NEMO Science Museum",
+          "kind": "museumkid",
+          "area": { "en": "Oosterdok", "th": "โอสเตอร์ด็อก" },
+          "what": { "en": "A green ship-shaped science centre by the water, five floors of experiments to push, pull and build", "th": "ศูนย์วิทยาศาสตร์รูปเรือสีเขียวริมน้ำ ห้าชั้นเต็มไปด้วยการทดลองให้กด ดึง และต่อเอง" },
+          "why": { "en": "Everything is meant to be touched; the chain-reaction show and the water area hold small children for hours", "th": "ทุกอย่างให้จับเล่นได้ การแสดงปฏิกิริยาลูกโซ่และโซนน้ำทำให้เด็กเล็กอยู่ได้หลายชั่วโมง" },
+          "tip": { "en": "Book a time slot online; the sloping roof terrace outside is free and has a view of the harbour", "th": "จองรอบเวลาออนไลน์ ดาดฟ้าลาดเอียงด้านนอกขึ้นฟรีและเห็นวิวท่าเรือ" },
+          "ages": [1, 2, 2, 2],
+          "hrs": 3.5,
+          "io": "in",
+          "pram": "yes",
+          "price": { "en": "≈ €21.50 ages 4 and up · under 4 free", "th": "≈ €21.50 อายุ 4 ปีขึ้นไป · ต่ำกว่า 4 ขวบฟรี" },
+          "book": "rec",
+          "q": "NEMO Science Museum, Oosterdok, Amsterdam",
+          "ok": "2026-11",
+          "src": "https://www.artvisitguide.com/nemo-science-museum-amsterdam-tickets-guide/"
+        },
+        {
+          "name": { "en": "ARTIS Zoo", "th": "สวนสัตว์อาร์ทิส" },
+          "local": "ARTIS",
+          "kind": "zoo",
+          "area": { "en": "Plantage", "th": "พลานทาเคอ" },
+          "what": { "en": "A leafy 19th-century zoo in the city centre, with elephants, giraffes, a butterfly house and a planetarium", "th": "สวนสัตว์ร่มรื่นจากศตวรรษที่ 19 กลางเมือง มีช้าง ยีราฟ บ้านผีเสื้อ และท้องฟ้าจำลอง" },
+          "why": { "en": "Compact and shady with playgrounds, and many warm indoor houses for a wet day", "th": "ไม่ใหญ่ ร่มรื่น มีสนามเด็กเล่น และมีอาคารในร่มอุ่นๆ หลายหลังสำหรับวันฝนตก" },
+          "tip": { "en": "Prices change by the day and are lower online; Micropia next door has a combined ticket", "th": "ราคาเปลี่ยนตามวัน ซื้อออนไลน์ถูกกว่า มีตั๋วรวมกับไมโครเปียที่อยู่ติดกัน" },
+          "ages": [2, 2, 2, 1],
+          "hrs": 3.5,
+          "io": "both",
+          "pram": "yes",
+          "price": { "en": "≈ €29.50 ages 13 and up online · €25.50 ages 3–12 · under 3 free", "th": "≈ €29.50 อายุ 13 ปีขึ้นไปซื้อออนไลน์ · €25.50 อายุ 3–12 ปี · ต่ำกว่า 3 ขวบฟรี" },
+          "book": "rec",
+          "q": "ARTIS, Plantage Kerklaan, Amsterdam",
+          "ok": "2026-11",
+          "src": "https://www.amsterdamtourism.org/artis-zoo-amsterdam/"
+        },
+        {
+          "name": { "en": "Micropia", "th": "ไมโครเปีย" },
+          "local": "Micropia",
+          "kind": "museumkid",
+          "area": { "en": "Plantage", "th": "พลานทาเคอ" },
+          "what": { "en": "The world's first museum of microbes, with giant microscopes and a body scanner that shows the germs on you", "th": "พิพิธภัณฑ์จุลินทรีย์แห่งแรกของโลก มีกล้องจุลทรรศน์ยักษ์และเครื่องสแกนที่โชว์เชื้อโรคบนตัวเรา" },
+          "why": { "en": "Short, indoors and free for children under 13; best for curious children of five and up", "th": "ใช้เวลาไม่นาน อยู่ในร่ม เด็กต่ำกว่า 13 ปีเข้าฟรี เหมาะกับเด็กห้าขวบขึ้นไปที่ช่างสงสัย" },
+          "tip": { "en": "Every visitor needs a booked ticket, children too, even though theirs is free", "th": "ทุกคนต้องจองตั๋ว รวมเด็กด้วยแม้จะฟรี" },
+          "ages": [0, 1, 2, 2],
+          "hrs": 1.5,
+          "io": "in",
+          "pram": "yes",
+          "price": { "en": "≈ €17.50 ages 13 and up · under 13 free", "th": "≈ €17.50 อายุ 13 ปีขึ้นไป · ต่ำกว่า 13 ปีฟรี" },
+          "book": "req",
+          "q": "Micropia, Plantage Kerklaan, Amsterdam",
+          "ok": "2026-11",
+          "src": "https://www.amsterdamtourism.org/artis-zoo-amsterdam/"
+        },
+        {
+          "name": { "en": "Rijksmuseum", "th": "ไรก์สมิวเซียม" },
+          "local": "Rijksmuseum",
+          "kind": "museum",
+          "area": { "en": "Museumplein", "th": "มิวเซียมเพลน" },
+          "what": { "en": "The Dutch national museum: Rembrandt's Night Watch, model ships, doll's houses and a passage you can cycle through", "th": "พิพิธภัณฑ์แห่งชาติของเนเธอร์แลนด์ มีภาพเดอะไนท์วอทช์ของแรมแบรนดท์ เรือจำลอง บ้านตุ๊กตา และทางลอดที่ปั่นจักรยานผ่านได้" },
+          "why": { "en": "Under-18s go free; the model ships and the 17th-century doll's houses are the children's favourites", "th": "เด็กต่ำกว่า 18 ปีเข้าฟรี เด็กๆ ชอบเรือจำลองกับบ้านตุ๊กตาจากศตวรรษที่ 17 ที่สุด" },
+          "tip": { "en": "Tickets are sold online only; keep the visit short and pick three rooms with little ones", "th": "ขายตั๋วออนไลน์เท่านั้น พาเด็กเล็กไปไม่นาน เลือกดูสักสามห้อง" },
+          "ages": [1, 1, 2, 2],
+          "hrs": 2,
+          "io": "in",
+          "pram": "yes",
+          "price": { "en": "≈ €25 adults · under 18 free", "th": "≈ €25 ผู้ใหญ่ · ต่ำกว่า 18 ปีฟรี" },
+          "book": "req",
+          "q": "Rijksmuseum, Museumplein, Amsterdam",
+          "ok": "2026-11",
+          "src": "https://rijksmuseum.nl/en/visit/faq"
+        },
+        {
+          "name": { "en": "Van Gogh Museum", "th": "พิพิธภัณฑ์แวนโก๊ะ" },
+          "local": "Van Gogh Museum",
+          "kind": "museum",
+          "area": { "en": "Museumplein", "th": "มิวเซียมเพลน" },
+          "what": { "en": "The largest collection of Van Gogh's paintings, from the sunflowers to his bedroom", "th": "คอลเลกชันภาพวาดแวนโก๊ะที่ใหญ่ที่สุด ตั้งแต่ดอกทานตะวันจนถึงห้องนอนของเขา" },
+          "why": { "en": "Under-18s go free and there is a family audio tour; best for children who like to draw", "th": "เด็กต่ำกว่า 18 ปีเข้าฟรี มีออดิโอทัวร์สำหรับครอบครัว เหมาะกับเด็กที่ชอบวาดรูป" },
+          "tip": { "en": "Every visitor needs a timed ticket booked online, children included; none are sold at the door", "th": "ทุกคนต้องจองตั๋วรอบเวลาออนไลน์ รวมเด็กด้วย ไม่ขายหน้างาน" },
+          "ages": [0, 1, 1, 2],
+          "hrs": 1.5,
+          "io": "in",
+          "pram": "yes",
+          "price": { "en": "≈ €25 adults · under 18 free", "th": "≈ €25 ผู้ใหญ่ · ต่ำกว่า 18 ปีฟรี" },
+          "book": "req",
+          "q": "Van Gogh Museum, Museumplein, Amsterdam",
+          "ok": "2026-11",
+          "src": "https://www.vangoghmuseum.nl/en/plan-your-visit/ticket-prices"
+        },
+        {
+          "name": { "en": "National Maritime Museum", "th": "พิพิธภัณฑ์การเดินเรือแห่งชาติ" },
+          "local": "Het Scheepvaartmuseum",
+          "kind": "museum",
+          "area": { "en": "Kattenburg", "th": "คัทเทนบวร์ค" },
+          "what": { "en": "A museum of the sea in an old naval storehouse, with a full-size replica of an East India ship moored outside", "th": "พิพิธภัณฑ์ทางทะเลในโกดังเก่าของกองทัพเรือ มีเรือจำลองขนาดจริงของบริษัทอินเดียตะวันออกจอดอยู่ด้านหน้า" },
+          "why": { "en": "Children climb aboard the big ship, see the cannons and the cabins, and there are play exhibitions inside", "th": "เด็กๆ ได้ขึ้นเรือใหญ่ ดูปืนใหญ่และห้องนอนลูกเรือ ข้างในมีนิทรรศการให้เล่น" },
+          "tip": { "en": "The ship's decks have steep ladders, so leave the pram at the entrance", "th": "บนเรือมีบันไดชัน จอดรถเข็นไว้ที่ทางเข้า" },
+          "ages": [1, 2, 2, 2],
+          "hrs": 2.5,
+          "io": "both",
+          "pram": "part",
+          "price": { "en": "≈ €18.50 adults · €8.50 children · under 4 free", "th": "≈ €18.50 ผู้ใหญ่ · €8.50 เด็ก · ต่ำกว่า 4 ขวบฟรี" },
+          "book": "none",
+          "q": "Het Scheepvaartmuseum, Kattenburgerplein, Amsterdam",
+          "ok": "2026-11",
+          "src": "https://hetscheepvaartmuseum.com/visit/opening-hours-and-admission"
+        },
+        {
+          "name": { "en": "A'DAM Lookout", "th": "อาดัม ลุคเอาท์" },
+          "local": "A'DAM Lookout",
+          "kind": "views",
+          "area": { "en": "Amsterdam-Noord", "th": "อัมสเตอร์ดัม-นอร์ด" },
+          "what": { "en": "A viewing deck on top of the A'DAM Tower across the river from Central Station, with a swing over the edge", "th": "จุดชมวิวบนยอดหอ A'DAM ฝั่งตรงข้ามสถานีกลาง มีชิงช้าแกว่งออกนอกขอบตึก" },
+          "why": { "en": "A fast lift and a wide view over the harbour and the old town; the swing is for 1.20 m and taller only", "th": "ลิฟต์ขึ้นเร็ว เห็นท่าเรือและเมืองเก่ากว้างไกล ชิงช้าสำหรับคนสูง 1.20 ม. ขึ้นไปเท่านั้น" },
+          "tip": { "en": "Take the free ferry from behind Central Station; online tickets are cheaper than at the door", "th": "นั่งเรือข้ามฟากฟรีจากหลังสถานีกลาง ซื้อออนไลน์ถูกกว่าหน้างาน" },
+          "ages": [1, 2, 2, 2],
+          "hrs": 1,
+          "io": "both",
+          "pram": "yes",
+          "price": { "en": "≈ €16.50 adults online · €10.50 ages 4–12 · swing ≈ €7.50 extra", "th": "≈ €16.50 ผู้ใหญ่ซื้อออนไลน์ · €10.50 อายุ 4–12 ปี · ชิงช้าเพิ่ม ≈ €7.50" },
+          "book": "rec",
+          "q": "A'DAM Lookout, Overhoeksplein, Amsterdam",
+          "ok": "2026-11",
+          "src": "https://www.amsterdamtourism.org/?p=1763"
+        },
+        {
+          "name": { "en": "Free ferries across the IJ", "th": "เรือข้ามฟากฟรีข้ามแม่น้ำไอ" },
+          "local": "GVB pont",
+          "kind": "ride",
+          "area": { "en": "Central Station to Noord", "th": "สถานีกลางไปฝั่งนอร์ด" },
+          "what": { "en": "City ferries that shuttle from behind Central Station to Amsterdam-Noord and the NDSM wharf", "th": "เรือข้ามฟากของเมืองที่วิ่งจากหลังสถานีกลางไปอัมสเตอร์ดัม-นอร์ดและท่าเรือ NDSM" },
+          "why": { "en": "A real boat ride for nothing: five minutes to Buiksloterweg or a quarter of an hour to NDSM", "th": "ได้นั่งเรือจริงฟรีๆ ห้านาทีไปบุยส์โลเทอร์เวค หรือราว 15 นาทีไป NDSM" },
+          "tip": { "en": "Walk straight on with the pram, no ticket needed; stand away from the cyclists at the ramp", "th": "เข็นรถเข็นขึ้นได้เลยไม่ต้องใช้ตั๋ว ยืนห่างจากคนปั่นจักรยานตรงทางขึ้น" },
+          "ages": [2, 2, 2, 2],
+          "hrs": 0.5,
+          "io": "out",
+          "pram": "yes",
+          "price": { "en": "Free", "th": "ฟรี" },
+          "book": "none",
+          "q": "Pont Buiksloterweg, Amsterdam Centraal, Amsterdam",
+          "ok": "2026-11",
+          "src": "https://www.amsterdamtourism.org/amsterdam-free-ferry-noord/"
+        },
+        {
+          "name": { "en": "Canal cruise with a children's audio tour", "th": "ล่องเรือคลองพร้อมออดิโอทัวร์สำหรับเด็ก" },
+          "local": "Blue Boat Company",
+          "kind": "ride",
+          "area": { "en": "Leidseplein", "th": "ไลด์เซอเพลน" },
+          "what": { "en": "A 75-minute glass-roofed boat trip along the canal ring, with a children's audio story and activity pack", "th": "ล่องเรือหลังคากระจก 75 นาทีรอบวงคลอง มีออดิโอนิทานสำหรับเด็กและชุดกิจกรรม" },
+          "why": { "en": "The covered boat works in any weather, and the children's story keeps them looking out of the window", "th": "เรือมีหลังคา ไปได้ทุกสภาพอากาศ นิทานสำหรับเด็กทำให้เด็กๆ คอยมองออกนอกหน้าต่าง" },
+          "tip": { "en": "Pick the kids' audio when you board; book a morning boat for fewer crowds", "th": "เลือกออดิโอสำหรับเด็กตอนขึ้นเรือ จองรอบเช้าคนน้อยกว่า" },
+          "ages": [1, 2, 2, 2],
+          "hrs": 1.5,
+          "io": "both",
+          "pram": "part",
+          "price": { "en": "≈ €13.50 a child · adults pay more · age 4 and under free", "th": "≈ €13.50 ต่อเด็ก · ผู้ใหญ่แพงกว่า · อายุ 4 ขวบลงมาฟรี" },
+          "book": "rec",
+          "q": "Blue Boat Company, Stadhouderskade 30, Amsterdam",
+          "ok": "2026-11",
+          "src": "https://www.blueboat.nl/en/canal-cruise-amsterdam/kids-cruise/"
+        },
+        {
+          "name": { "en": "Wereldmuseum Amsterdam", "th": "พิพิธภัณฑ์เวเรลด์มิวเซียม อัมสเตอร์ดัม" },
+          "local": "Wereldmuseum Amsterdam",
+          "kind": "museum",
+          "area": { "en": "Oost", "th": "โอสต์" },
+          "what": { "en": "A museum of world cultures in a grand old building, with masks, music, costumes and a junior section", "th": "พิพิธภัณฑ์วัฒนธรรมโลกในอาคารเก่าสง่างาม มีหน้ากาก ดนตรี เครื่องแต่งกาย และส่วนสำหรับเด็ก" },
+          "why": { "en": "Children up to five go free and the junior activities come with the ticket; good on a wet afternoon", "th": "เด็กถึงห้าขวบเข้าฟรี กิจกรรมเด็กรวมในตั๋ว เหมาะกับบ่ายวันฝนตก" },
+          "tip": { "en": "Children under 12 must come with an adult; Oosterpark next door has a playground", "th": "เด็กต่ำกว่า 12 ปีต้องมากับผู้ใหญ่ สวนโอสเตอร์พาร์กข้างๆ มีสนามเด็กเล่น" },
+          "ages": [1, 1, 2, 2],
+          "hrs": 2,
+          "io": "in",
+          "pram": "yes",
+          "price": { "en": "≈ €18 adults online · €7.50 ages 6–18 · under 6 free", "th": "≈ €18 ผู้ใหญ่ซื้อออนไลน์ · €7.50 อายุ 6–18 ปี · ต่ำกว่า 6 ขวบฟรี" },
+          "book": "none",
+          "q": "Wereldmuseum Amsterdam, Linnaeusstraat 2, Amsterdam",
+          "ok": "2026-11",
+          "src": "https://amsterdam.wereldmuseum.nl/en/node/38"
+        },
+        {
+          "name": { "en": "Albert Cuyp Market", "th": "ตลาดอัลแบร์ทเกาป์" },
+          "local": "Albert Cuypmarkt",
+          "kind": "market",
+          "area": { "en": "De Pijp", "th": "เดอไปป์" },
+          "what": { "en": "Amsterdam's biggest street market, some 260 stalls of fruit, cheese, fish and fresh stroopwafels", "th": "ตลาดริมถนนที่ใหญ่ที่สุดของอัมสเตอร์ดัม ราว 260 แผง มีผลไม้ ชีส ปลา และสโตรปวาเฟิลอบใหม่" },
+          "why": { "en": "A warm stroopwafel made in front of you and poffertjes, the tiny pancakes children love", "th": "สโตรปวาเฟิลอุ่นๆ ทำต่อหน้า และพอฟเฟอร์เจส แพนเค้กจิ๋วที่เด็กชอบ" },
+          "tip": { "en": "Open Monday to Saturday, closed on Sundays; the street is narrow, so hold small hands at busy times", "th": "เปิดจันทร์ถึงเสาร์ ปิดวันอาทิตย์ ถนนแคบ ช่วงคนเยอะจับมือเด็กไว้" },
+          "ages": [1, 2, 2, 2],
+          "hrs": 1,
+          "io": "out",
+          "pram": "part",
+          "price": { "en": "Free to wander · snacks ≈ €3–8", "th": "เดินชมฟรี · ของว่าง ≈ €3–8" },
+          "book": "none",
+          "q": "Albert Cuypmarkt, De Pijp, Amsterdam",
+          "ok": "2026-11",
+          "src": "https://www.iamsterdam.com/en/see-and-do/shopping/amsterdam-markets/albert-cuypmarkt"
+        },
+        {
+          "name": { "en": "Vondelpark", "th": "ฟอนเดิลพาร์ก" },
+          "local": "Vondelpark",
+          "kind": "park",
+          "area": { "en": "Oud-Zuid", "th": "เอาด์-ไซด์" },
+          "what": { "en": "The city's favourite park, with ponds, wide paths, playgrounds and an open-air theatre", "th": "สวนสาธารณะยอดนิยมของเมือง มีบ่อน้ำ ทางเดินกว้าง สนามเด็กเล่น และโรงละครกลางแจ้ง" },
+          "why": { "en": "Flat paths for a pram, ducks to watch, and a big nature playground near the south end", "th": "ทางเรียบเข็นรถเข็นสบาย มีเป็ดให้ดู และมีสนามเด็กเล่นธรรมชาติขนาดใหญ่ทางใต้ของสวน" },
+          "tip": { "en": "Watch for fast cyclists on the main path; it is a short walk from the Rijksmuseum", "th": "ระวังจักรยานที่ปั่นเร็วบนทางหลัก เดินจากไรก์สมิวเซียมไม่ไกล" },
+          "ages": [2, 2, 2, 1],
+          "hrs": 2,
+          "io": "out",
+          "pram": "yes",
+          "price": { "en": "Free", "th": "ฟรี" },
+          "book": "none",
+          "q": "Vondelpark, Oud-Zuid, Amsterdam",
+          "ok": "2026-11",
+          "src": "https://www.iamsterdam.com/nl/zien-en-doen/parken-en-natuur/natuurgebieden/vondelpark"
+        },
+        {
+          "name": { "en": "Het Woeste Westen nature playground", "th": "สนามเด็กเล่นธรรมชาติเฮทโวสเทอเวสเทิน" },
+          "local": "Natuurspeeltuin Het Woeste Westen",
+          "kind": "play",
+          "area": { "en": "Westerpark", "th": "เวสเทอร์พาร์ก" },
+          "what": { "en": "A wild playground in Westerpark with water, sand, logs, rope bridges and huts to build", "th": "สนามเด็กเล่นธรรมชาติในเวสเทอร์พาร์ก มีน้ำ ทราย ขอนไม้ สะพานเชือก และกระท่อมให้สร้าง" },
+          "why": { "en": "Children get muddy and build freely; free for children up to 13", "th": "เด็กๆ ได้เลอะโคลนและสร้างของอย่างอิสระ เด็กถึง 13 ปีเข้าฟรี" },
+          "tip": { "en": "Bring boots and a change of clothes; Westerpark around it has cafés and more lawns", "th": "พกรองเท้าบูตและเสื้อผ้าสำรอง รอบๆ ในเวสเทอร์พาร์กมีคาเฟ่และสนามหญ้าอีก" },
+          "ages": [1, 2, 2, 1],
+          "hrs": 2,
+          "io": "out",
+          "pram": "part",
+          "price": { "en": "Free", "th": "ฟรี" },
+          "book": "none",
+          "q": "Het Woeste Westen, Overbrakerpad 3, Amsterdam",
+          "ok": "2026-11",
+          "src": "https://www.kidsproof.nl/amsterdam/uitje/natuurspeeltuin-het-woeste-westen-het-woeste-westen-speeltuin-kinderen"
+        },
+        {
+          "name": { "en": "Amsterdamse Bos", "th": "อัมสเตอร์ดัมเซอบอส" },
+          "local": "Amsterdamse Bos",
+          "kind": "nature",
+          "area": { "en": "Amstelveen", "th": "อัมสเติลเฟน" },
+          "what": { "en": "A huge forest park south of the city with lakes, play islands reached by a hand ferry and a rope bridge, and canoes to hire", "th": "สวนป่าขนาดใหญ่ทางใต้ของเมือง มีทะเลสาบ เกาะเล่นที่ไปด้วยแพดึงเองและสะพานเชือก และมีเรือแคนูให้เช่า" },
+          "why": { "en": "Space to roam, a play meadow for children from four, and bikes to hire at the main entrance", "th": "มีพื้นที่ให้เดินเล่นกว้าง ทุ่งเล่นสำหรับเด็กสี่ขวบขึ้นไป และเช่าจักรยานได้ที่ทางเข้าหลัก" },
+          "tip": { "en": "Start at the Boswinkel visitor centre by the main entrance for maps; combine it with the goat farm", "th": "เริ่มที่ศูนย์บอสวิงเคิลตรงทางเข้าหลักเพื่อรับแผนที่ แล้วไปต่อฟาร์มแพะ" },
+          "ages": [1, 2, 2, 2],
+          "hrs": 3,
+          "io": "out",
+          "pram": "part",
+          "price": { "en": "Free · canoe and bike hire extra", "th": "ฟรี · เช่าแคนูและจักรยานจ่ายเพิ่ม" },
+          "book": "none",
+          "q": "Amsterdamse Bos, Bosbaanweg, Amstelveen",
+          "ok": "2026-11",
+          "src": "https://www.iamsterdam.com/nl/zien-en-doen/parken-en-natuur/natuurgebieden/het-amsterdamse-bos"
+        },
+        {
+          "name": { "en": "Ridammerhoeve goat farm", "th": "ฟาร์มแพะริดัมเมอร์ฮูเฟอ" },
+          "local": "Geitenboerderij Ridammerhoeve",
+          "kind": "farm",
+          "area": { "en": "Amsterdamse Bos", "th": "อัมสเตอร์ดัมเซอบอส" },
+          "what": { "en": "An organic goat farm in the forest park where children feed and stroke the kids, with chickens, pigs and a pony", "th": "ฟาร์มแพะออร์แกนิกในสวนป่า เด็กๆ ได้ป้อนอาหารและลูบลูกแพะ มีไก่ หมู และม้าแคระ" },
+          "why": { "en": "Gentle animals at toddler height, a terrace for parents and goat's-milk ice cream", "th": "สัตว์เชื่อง ความสูงพอดีเด็กเล็ก มีระเบียงให้พ่อแม่นั่ง และไอศกรีมนมแพะ" },
+          "tip": { "en": "Open daily 10:00–17:00; spring brings the newborn kids", "th": "เปิดทุกวัน 10:00–17:00 ช่วงใบไม้ผลิมีลูกแพะเกิดใหม่" },
+          "ages": [2, 2, 2, 1],
+          "hrs": 1.5,
+          "io": "out",
+          "pram": "part",
+          "price": { "en": "Free", "th": "ฟรี" },
+          "book": "none",
+          "q": "Geitenboerderij Ridammerhoeve, Nieuwe Meerlaan 4, Amstelveen",
+          "ok": "2026-11",
+          "src": "https://www.iamsterdam.com/en/see-and-do/things-to-do/families-and-children/petting-zoos/geitenboerderij-ridammerhoeve-goat-farm"
+        }
+      ]
     }
-   ]
-  }
- ]
+  ]
 }
