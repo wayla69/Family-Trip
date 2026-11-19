@@ -595,15 +595,19 @@ function heroHtml() {
   const kids = (t.theme.children || []).map((k) => `${kidFace(k.slug)} ${esc(kidName(k.slug))}${k.age ? ' ' + esc(T(k.age)) : ''}`).join(' · ');
   const big = dn >= 0 ? `<b>${dn + 1}</b><small>/ ${t.days.length}</small>` : `<b>${until}</b>`;
   const lbl = dn >= 0 ? L('วันที่ของทริป', 'day of the trip') : L(until === 1 ? 'พรุ่งนี้ออกเดินทาง!' : 'วันก่อนออกเดินทาง', until === 1 ? 'day to go — tomorrow!' : 'days to go');
-  const go = (dn >= 0 && isEditor() ? `<a class="btn" href="#/t/${esc(t.id)}/log/${dn}">${ic('log')} ${L('บันทึกวันนี้', 'Record today')}</a>` : `<a class="btn" href="#/t/${esc(t.id)}">${ic('book')} ${L('เปิดเล่มนี้', 'Open the book')}</a>`)
-    + (dn < 0 && isEditor() && (t.passport || {}).countdown ? ` <button class="btn ghost" data-a="kidmode" data-v="">${ic('gift')} ${L('เด็กๆ เปิดเซอร์ไพรส์วันนี้', "Today's surprise for the kids")}</button>` : '');
+  // the hero's actions (owner, Nov 2026: "ทำให้สวยงาม"): a row each with the app's own painted picture, a name and one quiet line —
+  // the main one solid white, the extra one see-through on the hero's colour
+  const hb = (tag, attrs, cls, pic, name, sub) => `<${tag} class="hbtn${cls}" ${attrs}><span class="hbpic"><img src="${pic}" alt="" draggable="false"></span><span class="hbt"><b>${name}</b><small>${sub}</small></span><span class="hbgo" aria-hidden="true">›</span></${tag}>`;
+  const go = (dn >= 0 && isEditor() ? hb('a', `href="#/t/${esc(t.id)}/log/${dn}"`, '', '/art/hub/pencil.webp', L('บันทึกวันนี้', 'Record today'), L('รูป คำพูด และอารมณ์ของวันนี้', 'Photos, words and moods'))
+    : hb('a', `href="#/t/${esc(t.id)}"`, '', '/art/hub/book.webp', L('เปิดเล่มนี้', 'Open the book'), L('แผน คู่มือ และความทรงจำ', 'The plan, the guide and the memories')))
+    + (dn < 0 && isEditor() && (t.passport || {}).countdown ? hb('button', 'type="button" data-a="kidmode" data-v=""', ' alt', '/art/kidui/surprise.webp', L('เซอร์ไพรส์ของวันนี้', "Today's surprise"), L('ให้เด็กๆ เปิดประตูนับถอยหลัง', 'The kids open a countdown door')) : '');
   // the day circles: before the trip up to six (evenly through the book — the owner missed the days between); on it today and tomorrow
   const all = t.days.map((_, i) => i), art = dn < 0 ? (all.length <= 6 ? all : Array.from({ length: 6 }, (_, k) => Math.round(k * (all.length - 1) / 5))) : all.filter((i) => i === dn || i === dn + 1).slice(0, 2);
   return `<section class="hero${t.theme.display === 'serif' ? ' serif' : ''}" style="${themeStyle(t)};--hero:${esc(t.theme.accent || '#1F3A5F')}">
 <div class="txt"><div class="kicker">${dn >= 0 ? L('ตอนนี้กำลังเที่ยว', 'On the road now') : L('การผจญภัยครั้งต่อไป', 'Next adventure')} ${flagsOf(t)}</div>
 <h2>${esc(dn >= 0 ? `${t.days[dn].emoji || ''} ${T(t.days[dn].title)}` : T(t.title).split(' · ')[0])}</h2>
 <div class="count">${big}<span>${lbl}</span></div>
-${kids ? `<p class="kids">${kids}</p>` : ''}${go}</div>
+${kids ? `<p class="kids">${kids}</p>` : ''}<div class="heroacts">${go}</div></div>
 <div class="float">${art.slice(0, 6).map((i, j) => artImg(t, i, 'f' + j)).join('')}${castHtml((t.theme.children || []).map((k) => k.slug))}</div></section>`;
 }
 // stamp text is sized to its longest word, so a long place name never breaks mid-word or spills out of the circle
@@ -2839,7 +2843,22 @@ const plDays = (a) => (a.from && a.to && a.to >= a.from ? Math.round((Date.parse
 const plSpan = (n) => (n > 1 ? L(`${n} วัน ${n - 1} คืน`, `${n} days, ${n - 1} nights`) : n === 1 ? L('ไปเช้าเย็นกลับ', 'A day trip') : '');
 const plNorm = (x) => String(x || '').toLowerCase().replace(/[^a-z0-9฀-๿一-鿿]+/g, '');
 // the library's towns and countries (GET /api/b/geo): pictures and colours for the places the plan names
-function plGeo() { if (pln.geo === null) { pln.geo = false; snapGeo().then((g) => { pln.geo = g && (g.places || []).length ? g : false; if (pln.geo && route().parts[0] === 'planner') safeRender(); }); } return pln.geo || null; }
+// the library's places for the planner's suggestions: asked once; an empty answer (no signal, a failed ask) is asked again a few
+// seconds later (it used to stay empty for the whole visit — owner's Samsung, Nov 2026: "ทำไม USA ยังไม่ขึ้น"); when it arrives the
+// suggestion row is filled in place, because the parent is usually typing in "where to" and a render would be skipped (safeRender)
+function plGeo() {
+  if (pln.geo === null) {
+    pln.geo = false;
+    snapGeo().then((g) => {
+      if (g && (g.places || []).length) {
+        pln.geo = g;
+        const sg = document.getElementById('plsug'); if (sg) sg.innerHTML = plSugHtml((pln.a || {}).dest || '');
+        if (route().parts[0] === 'planner') safeRender();
+      } else if ((pln.geoTry = (pln.geoTry || 0) + 1) < 5) setTimeout(() => { if (pln.geo === false) { pln.geo = null; if (route().parts[0] === 'planner') plGeo(); } }, 3000 * pln.geoTry);
+    });
+  }
+  return pln.geo || null;
+}
 function plPlaceOf(name) {
   const g = plGeo(); if (!g) return null;
   const en = plNorm(name && name.en !== undefined ? name.en : name), th = plNorm(name && name.th !== undefined ? name.th : name);

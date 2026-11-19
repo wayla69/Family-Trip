@@ -886,6 +886,16 @@ try {
           `planner page: "where to" finds a country by its other names and brings its towns, a tap puts the name in place of what was typed, a country outside the picture library is offered too (${usa.join(' | ')} · ${picked} · ${cuba.join(' | ')} · ${th.join(' | ')})`);
         await pp.fill('#pldest', d1); await pp.dispatchEvent('#pldest', 'input');
       }
+      { // the place list fails once (no signal) while the parent is already typing: it is asked again and the row fills in place (owner's Samsung: "USA" offered nothing)
+        const gc = await browser.newContext({ viewport: { width: 412, height: 915 } }), gp = await gc.newPage(); let n = 0;
+        await gp.route('**/api/b/geo', (r) => (n++ === 0 ? r.abort() : r.continue()));
+        await gp.goto(BASE + '/'); await gp.waitForSelector('#lf'); await gp.fill('#lname', 'Dad'); await gp.fill('#lcode', CODE); await gp.keyboard.press('Enter'); await gp.waitForSelector('.shelf');
+        await gp.goto(BASE + '/#/planner/where'); await gp.waitForSelector('#pldest'); await gp.click('#pldest'); await gp.keyboard.type('USA');
+        const got = await gp.waitForFunction(() => [...document.querySelectorAll('#plsug .plsg')].some((e) => /United States/.test(e.textContent)), null, { timeout: 12000 }).then(() => true, () => false);
+        const focused = await gp.evaluate(() => document.activeElement && document.activeElement.id);
+        ok(got && n >= 2 && focused === 'pldest', `planner page: a failed place list is asked again and "USA" is offered while the box keeps the focus (${n} asks · ${got} · focus ${focused})`);
+        await gc.close();
+      }
       await pp.goto(BASE + '/#/planner/when'); await pp.waitForSelector('#plfrom');
       await pp.fill('#plfrom', '2027-05-01'); await pp.keyboard.press('Tab'); await pp.click('.pllens .plchip[data-v="5"]');
       const span = await pp.textContent('#plspan');

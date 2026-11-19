@@ -2019,6 +2019,8 @@ const T = 'hk-macau-2026';
   await login(page);
   await page.click('button[data-a="lang"][data-v="en"]');
   ok(await page.locator('.hero [data-a="kidmode"]').count() === 1, "shelf: before the trip grown-ups get a “today's surprise” button");
+  { const hb = await page.evaluate(() => [...document.querySelectorAll('.hero .heroacts .hbtn')].map((x) => { const r = x.getBoundingClientRect(); return [Math.round(r.left), Math.round(r.width)]; }));
+    ok(hb.length === 2 && hb[0][0] === hb[1][0] && hb[0][1] === hb[1][1], `shelf: the hero's two buttons are one width, one under the other (owner's Samsung: two widths) (${JSON.stringify(hb)})`); }
   await page.click('.hero [data-a="kidmode"]'); await page.waitForSelector('.kidpick');
   ok(await page.evaluate(() => new Set([...document.querySelectorAll('.kidpick button')].map((b) => Math.round(b.getBoundingClientRect().width))).size === 1), 'kid picker: every child\'s card the same width (Mimi\'s wagon no longer widens hers)');
   await page.click('.kidpick button[data-v="mimi"]'); await page.waitForSelector('.kidtiles');
