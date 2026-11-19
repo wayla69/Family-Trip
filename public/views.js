@@ -595,8 +595,12 @@ function heroHtml() {
   const kids = (t.theme.children || []).map((k) => `${kidFace(k.slug)} ${esc(kidName(k.slug))}${k.age ? ' ' + esc(T(k.age)) : ''}`).join(' · ');
   const big = dn >= 0 ? `<b>${dn + 1}</b><small>/ ${t.days.length}</small>` : `<b>${until}</b>`;
   const lbl = dn >= 0 ? L('วันที่ของทริป', 'day of the trip') : L(until === 1 ? 'พรุ่งนี้ออกเดินทาง!' : 'วันก่อนออกเดินทาง', until === 1 ? 'day to go — tomorrow!' : 'days to go');
-  const go = (dn >= 0 && isEditor() ? `<a class="btn" href="#/t/${esc(t.id)}/log/${dn}">${ic('log')} ${L('บันทึกวันนี้', 'Record today')}</a>` : `<a class="btn" href="#/t/${esc(t.id)}">${ic('book')} ${L('เปิดเล่มนี้', 'Open the book')}</a>`)
-    + (dn < 0 && isEditor() && (t.passport || {}).countdown ? `<button class="btn ghost" data-a="kidmode" data-v="">${ic('gift')} ${L('เด็กๆ เปิดเซอร์ไพรส์วันนี้', "Today's surprise for the kids")}</button>` : '');
+  // the hero's actions (owner, Nov 2026: "ทำให้สวยงาม"): a row each with the app's own painted picture, a name and one quiet line —
+  // the main one solid white, the extra one see-through on the hero's colour
+  const hb = (tag, attrs, cls, pic, name, sub) => `<${tag} class="hbtn${cls}" ${attrs}><span class="hbpic"><img src="${pic}" alt="" draggable="false"></span><span class="hbt"><b>${name}</b><small>${sub}</small></span><span class="hbgo" aria-hidden="true">›</span></${tag}>`;
+  const go = (dn >= 0 && isEditor() ? hb('a', `href="#/t/${esc(t.id)}/log/${dn}"`, '', '/art/hub/pencil.webp', L('บันทึกวันนี้', 'Record today'), L('รูป คำพูด และอารมณ์ของวันนี้', 'Photos, words and moods'))
+    : hb('a', `href="#/t/${esc(t.id)}"`, '', '/art/hub/book.webp', L('เปิดเล่มนี้', 'Open the book'), L('แผน คู่มือ และความทรงจำ', 'The plan, the guide and the memories')))
+    + (dn < 0 && isEditor() && (t.passport || {}).countdown ? hb('button', 'type="button" data-a="kidmode" data-v=""', ' alt', '/art/kidui/surprise.webp', L('เซอร์ไพรส์ของวันนี้', "Today's surprise"), L('ให้เด็กๆ เปิดประตูนับถอยหลัง', 'The kids open a countdown door')) : '');
   // the day circles: before the trip up to six (evenly through the book — the owner missed the days between); on it today and tomorrow
   const all = t.days.map((_, i) => i), art = dn < 0 ? (all.length <= 6 ? all : Array.from({ length: 6 }, (_, k) => Math.round(k * (all.length - 1) / 5))) : all.filter((i) => i === dn || i === dn + 1).slice(0, 2);
   return `<section class="hero${t.theme.display === 'serif' ? ' serif' : ''}" style="${themeStyle(t)};--hero:${esc(t.theme.accent || '#1F3A5F')}">
