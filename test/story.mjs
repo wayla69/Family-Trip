@@ -884,6 +884,10 @@ try {
         const cuba = await sug('Cub'), th = await sug('อเมริกา');
         ok(/United States/.test(usa[0]) && !usa.some((x) => /Busan/.test(x)) && usa.some((x) => /New York/.test(x)) && picked === 'The United States' && /Cuba/.test(cuba[0]) && /United States/.test(th[0]),
           `planner page: "where to" finds a country by its other names and brings its towns, a tap puts the name in place of what was typed, a country outside the picture library is offered too (${usa.join(' | ')} · ${picked} · ${cuba.join(' | ')} · ${th.join(' | ')})`);
+        // flexible (owner: "ทำการค้นหาให้ flexible"): a slip of a letter, a name written together, a Thai name typed short, one letter
+        const tk = await sug('tokio'), hk = await sug('hokaido'), ny = await sug('newyork'), so = await sug('seol'), sy = await sug('ซิดนี'), one = await sug('b');
+        ok(/Tokyo/.test(tk[0]) && /Hokkaido/.test(hk[0]) && /New York/.test(ny[0]) && /Seoul/.test(so[0]) && /Sydney/.test(sy[0]) && one.length >= 3 && one.every((x) => x.replace(/[^A-Za-z]/g, '').startsWith('B')),
+          `planner page: "where to" forgives a slip and spacing, and one letter brings the places that start with it (${[tk[0], hk[0], ny[0], so[0], sy[0]].join(' · ')} · ${one.join(' | ')})`);
         await pp.fill('#pldest', d1); await pp.dispatchEvent('#pldest', 'input');
       }
       { // the place list fails once (no signal) while the parent is already typing: it is asked again and the row fills in place (owner's Samsung: "USA" offered nothing)

@@ -2841,7 +2841,7 @@ const PL_POP = ['Tokyo', 'Osaka', 'Hokkaido', 'Seoul', 'Taipei', 'Hong Kong', 'S
 const plAdd = (iso, n) => new Date(Date.parse(iso) + n * 864e5).toISOString().slice(0, 10);
 const plDays = (a) => (a.from && a.to && a.to >= a.from ? Math.round((Date.parse(a.to) - Date.parse(a.from)) / 864e5) + 1 : 0);
 const plSpan = (n) => (n > 1 ? L(`${n} วัน ${n - 1} คืน`, `${n} days, ${n - 1} nights`) : n === 1 ? L('ไปเช้าเย็นกลับ', 'A day trip') : '');
-const plNorm = (x) => String(x || '').toLowerCase().replace(/[^a-z0-9฀-๿一-鿿]+/g, '');
+const plNorm = (x) => String(x || '').normalize('NFD').replace(/[\u0300-\u036f]/g, '').toLowerCase().replace(/[^a-z0-9฀-๿一-鿿]+/g, '');   // accents and spaces never count (zurich = Zürich, newyork = New York)
 // the library's towns and countries (GET /api/b/geo): pictures and colours for the places the plan names
 // the library's places for the planner's suggestions: asked once; an empty answer (no signal, a failed ask) is asked again a few
 // seconds later (it used to stay empty for the whole visit — owner's Samsung, Nov 2026: "ทำไม USA ยังไม่ขึ้น"); when it arrives the
@@ -2882,14 +2882,40 @@ function plWorld() {
   return plWorldC;
 }
 // how well a typed piece fits a list of names: 0 the whole name, 1 its start, 2 the start of one of its words, 3 inside Thai (no spaces); -1 no
+// how far apart two short words are: insertions, deletions, changes and a swap of two letters side by side each cost 1 (tokio, hokaido)
+function plEdit(a, b, max) {
+  if (Math.abs(a.length - b.length) > max) return max + 1;
+  let p2 = null, p1 = Array.from({ length: b.length + 1 }, (_, j) => j);
+  for (let i = 1; i <= a.length; i++) {
+    const cur = [i]; let low = i;
+    for (let j = 1; j <= b.length; j++) {
+      let v = Math.min(p1[j] + 1, cur[j - 1] + 1, p1[j - 1] + (a[i - 1] === b[j - 1] ? 0 : 1));
+      if (p2 && i > 1 && j > 1 && a[i - 1] === b[j - 2] && a[i - 2] === b[j - 1]) v = Math.min(v, p2[j - 2] + 1);
+      cur.push(v); if (v < low) low = v;
+    }
+    if (low > max) return max + 1;
+    p2 = p1; p1 = cur;
+  }
+  return p1[b.length];
+}
+/* how well what is typed fits a place's names (owner, Nov 2026: "ทำการค้นหาให้ flexible"): 0 the whole name, 1 its start, 2 the start of
+   one of its words, 3 inside a Thai/Chinese name, 4–5 a slip of a letter or two (tokio, hokaido, barcellona, ซิดนีน) — accents and spaces
+   never count (plNorm). Never the middle of an English word ("Usa" offered Busan). One letter only finds names that start with it. */
 function plFit(q, names) {
   let best = -1;
+  const slack = q.length >= 7 ? 2 : q.length >= 4 ? 1 : 0;
   for (const raw of names) {
-    const low = String(raw || '').toLowerCase(), n = plNorm(low); if (!n) continue;
+    const low = String(raw || '').normalize('NFD').replace(/[\u0300-\u036f]/g, '').toLowerCase(), n = plNorm(low); if (!n) continue;
     let s = -1;
+    const words = low.split(/[\s\-–'’.,()&/]+/).filter(Boolean);
     if (n === q) s = 0; else if (n.startsWith(q)) s = 1;
-    else if (low.split(/[\s\-–'’.,()&]+/).some((w) => plNorm(w).startsWith(q) || plNorm(low.slice(low.indexOf(w))).startsWith(q))) s = 2;
-    else if (/[\u0E00-\u0E7F\u4E00-\u9FFF]/.test(low) && n.includes(q)) s = 3;
+    else if (q.length >= 2 && words.some((w) => plNorm(w).startsWith(q) || plNorm(low.slice(low.indexOf(w))).startsWith(q))) s = 2;
+    else if (q.length >= 2 && /[\u0E00-\u0E7F\u4E00-\u9FFF]/.test(low) && n.includes(q)) s = 3;
+    else if (slack) {
+      // a slip: against the whole name, the name's start of the same length, or a word's start
+      const d0 = plEdit(q, n, slack), d1 = Math.min(...[n.slice(0, q.length), ...words.map((w) => plNorm(w)).filter((w) => w.length >= 3).map((w) => w.slice(0, q.length))].map((t) => plEdit(q, t, slack)));
+      if (d0 <= slack && d0 <= d1) s = 3 + d0; else if (d1 <= slack) s = 3.5 + d1;   // the whole name before a start of a word (seol → Seoul before Seogwipo)
+    }
     if (s >= 0 && (best < 0 || s < best)) best = s;
   }
   return best;
@@ -2900,19 +2926,22 @@ function plSugHtml(v) {
   const towns = g.places.map((p) => ({ n: snapShort(p.name), art: p.art, c: p.c, cc: p.cc, al: p.al || [], home: p.home }));
   const libC = (g.countries || []).map((p) => ({ n: snapShort(p.name), art: p.art, c: p.c, cc: p.cc, al: p.al || [], land: 1 }));
   let list;
-  if (last.length >= 2) {
+  if (last.length >= 1) {
     const inLib = new Set(libC.map((p) => p.cc)), hits = [];
     const add = (p, s, o) => { if (s >= 0) hits.push({ p, s, o }); };
-    libC.forEach((p) => { const s = plFit(last, [p.n.en, p.n.th, ...p.al]); add(p, s, 0); if (s >= 0 && s <= 1) towns.filter((t) => t.cc === p.cc && !t.home).slice(0, 6).forEach((t, k) => add(t, s + 0.5, k + 1)); });
-    towns.forEach((p) => add(p, plFit(last, [p.n.en, p.n.th, ...p.al]), 1));
-    plWorld().forEach((p) => { if (!inLib.has(p.cc)) add({ ...p, land: 1 }, plFit(last, [p.n.en, p.n.th]), 0); });
+    const nm = (p, al) => (last.length === 1 ? [p.n.en, p.n.th] : [p.n.en, p.n.th, ...(al || [])]);   // one letter: the shown names only
+    libC.forEach((p) => { const s = plFit(last, nm(p, p.al)); add(p, s, 0); if (s >= 0 && s <= 1) towns.filter((t) => t.cc === p.cc && !t.home).slice(0, 6).forEach((t, k) => add(t, s + 0.5, k + 1)); });
+    towns.forEach((p) => add(p, plFit(last, nm(p, p.al)), 1));
+    plWorld().forEach((p) => { if (!inLib.has(p.cc)) add({ ...p, land: 1 }, plFit(last, [p.n.en, p.n.th]), 2); });   // the library's places first
     const seen = new Set();
-    list = hits.sort((a, b) => a.s - b.s || a.o - b.o || a.p.n.en.length - b.p.n.en.length).map((h) => h.p).filter((p) => { const k = (p.land ? 'c:' : 't:') + plNorm(p.n.en); if (seen.has(k)) return false; seen.add(k); return true; });
-    list = list.filter((p) => plNorm(p.n[side]) !== last || !has.includes(plNorm(p.n[side])));
+    list = hits.sort((a, b) => a.s - b.s || a.o - b.o || a.p.n.en.length - b.p.n.en.length).map((h) => h.p).filter((p) => { const k = plNorm(p.n.en); if (seen.has(k)) return false; seen.add(k); return true; });   // one name once (Singapore the country and the town)
+    // a place already written exactly as shown is not offered again; "newyork" still offers "New York" (a tap writes it properly)
+    const raw = String(v || '').split(/[,،、]/).pop().trim().toLowerCase();
+    list = list.filter((p) => String(p.n[side] || '').toLowerCase() !== raw);
   } else {
     list = PL_POP.map((x) => towns.find((p) => plNorm(p.n.en) === plNorm(x))).filter(Boolean).filter((p) => !has.includes(plNorm(p.n.en)) && !has.includes(plNorm(p.n.th)));
   }
-  const typed = last.length >= 2 ? ' data-r="1"' : '';
+  const typed = last.length >= 1 ? ' data-r="1"' : '';
   return list.slice(0, 10).map((p) => `<button type="button" class="plsg${p.land ? ' land' : ''}" data-a="plansug" data-v="${esc(p.n[side])}"${typed}${p.c ? ` style="--tc:${esc(p.c)}"` : ''}>${p.art ? `<img src="${esc(p.art)}" alt="" loading="lazy" draggable="false">` : p.flag ? `<span class="plflag" aria-hidden="true">${p.flag}</span>` : ''}<span>${esc(p.n[side])}</span></button>`).join('');
 }
 // the towns of a route in the order slept in: [{town, days, from}] — the same town twice in a row is one stay
