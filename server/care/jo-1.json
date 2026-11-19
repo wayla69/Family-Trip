@@ -1,5 +1,7 @@
 {"cc":"jo","towns":[
  {"place":"jo-petra","places":[
-  {"name":"Queen Rania Hospital","zh":"مستشفى الملكة رانيا","kind":"hospital","area":{"th":"วาดีมูซา (เปตรา)","en":"Wadi Musa (Petra)"},"what":{"th":"โรงพยาบาลรัฐ รักษาทุกแผนก","en":"Public hospital, all specialities"},"why":{"th":"โรงพยาบาลในเมืองหน้าเปตรา ใกล้ที่พักที่สุด","en":"The hospital in Petra's own town, close to the hotels"},"q":"Queen Rania Hospital, Wadi Musa, Jordan","ok":"2026-11"}
+  {"name":"Queen Rania Hospital","zh":"مستشفى الملكة رانيا","kind":"hospital","area":{"th":"วาดีมูซา (เปตรา)","en":"Wadi Musa (Petra)"},"what":{"th":"โรงพยาบาลรัฐ รักษาทุกแผนก","en":"Public hospital, all specialities"},"why":{"th":"โรงพยาบาลในเมืองหน้าเปตรา ใกล้ที่พักที่สุด","en":"The hospital in Petra's own town, close to the hotels"},"q":"Queen Rania Hospital, Wadi Musa, Jordan","ok":"2026-11"},
+  {"name":"Wadi Musa Park","kind":"play","area":{"th":"วาดีมูซา","en":"Wadi Musa"},"what":{"th":"สวนเล็กริมถนนมีสนามเด็กเล่น","en":"Small roadside park with a playground"},"why":{"th":"มีห้องน้ำ และวิวเมืองกับเพตรา","en":"Toilets on site and a view over the town towards Petra"},"q":"Wadi Musa Park, Wadi Musa","ok":"2026-11"},
+  {"name":"Saraya Aqaba Waterpark","kind":"play","area":{"th":"อะกาบา","en":"Aqaba"},"what":{"th":"สวนน้ำมีโซนเด็กเล็ก Aqua Jerash","en":"Water park with a little ones' zone, Aqua Jerash"},"why":{"th":"สระตื้นและสไลเดอร์เล็กสำหรับเด็ก บางช่วงปิดตามฤดู เช็กก่อนไป","en":"Shallow pools and mini slides; closes some seasons, check first"},"q":"Saraya Aqaba Waterpark, Aqaba","ok":"2026-11"}
  ]}
 ]}

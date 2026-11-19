@@ -9,6 +9,7 @@
  ]},
  {"place":"ar-patagonia","places":[
   {"name":"Hospital SAMIC El Calafate","kind":"hospital","area":{"th":"เอลกาลาฟาเต","en":"El Calafate"},"what":{"th":"โรงพยาบาลรัฐของเมือง","en":"The town's public hospital"},"why":{"th":"โรงพยาบาลหลักใกล้ธารน้ำแข็งเปริโตโมเรโน","en":"The main hospital near the Perito Moreno glacier"},"q":"Hospital SAMIC El Calafate, El Calafate, Santa Cruz","ok":"2026-11"},
-  {"name":"Hospital Regional Ushuaia","kind":"hospital","area":{"th":"อุชัวยา","en":"Ushuaia"},"what":{"th":"โรงพยาบาลรัฐ มีหอผู้ป่วยเด็กและไอซียูเด็ก","en":"Public hospital with a children's ward and children's intensive care"},"why":{"th":"ดูแลเด็กได้ครบที่สุดในปลายทวีป","en":"The fullest children's care at the end of the continent"},"q":"Hospital Regional Ushuaia, Ushuaia, Tierra del Fuego","ok":"2026-11"}
+  {"name":"Hospital Regional Ushuaia","kind":"hospital","area":{"th":"อุชัวยา","en":"Ushuaia"},"what":{"th":"โรงพยาบาลรัฐ มีหอผู้ป่วยเด็กและไอซียูเด็ก","en":"Public hospital with a children's ward and children's intensive care"},"why":{"th":"ดูแลเด็กได้ครบที่สุดในปลายทวีป","en":"The fullest children's care at the end of the continent"},"q":"Hospital Regional Ushuaia, Ushuaia, Tierra del Fuego","ok":"2026-11"},
+  {"name":"Plaza Belgrano","kind":"play","area":{"th":"อูซัวยา ริมทะเล","en":"Ushuaia waterfront"},"what":{"th":"สวนสาธารณะของเทศบาล มีเครื่องเล่นเด็ก","en":"Municipal plaza with a playground"},"why":{"th":"มีเครื่องเล่นสำหรับเด็กเล็กและชิงช้าที่ผู้ใหญ่นั่งด้วยได้","en":"Play equipment for little ones and swings to ride with a grown-up"},"q":"Plaza Belgrano, Avenida Maipú y Don Bosco, Ushuaia","ok":"2026-11"}
  ]}
 ]}
