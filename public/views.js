@@ -3911,7 +3911,30 @@ ${words.length && !lit ? `<section class="pp-page"><header><div><div class="kick
 }
 
 /* ---------- record a day (editors) ---------- */
-function viewLog(t, i, evening) {
+/* The record page in the app's look (owner, Nov 2026: "ปรับ UI ส่วนนี้ด้วยได้ไหม หลุด theme app"): each of its sections is a card like the
+   settings pages' (`pcard`: a coloured top edge, the app's own painted picture beside the heading, the UI face — not the book's
+   display serif and a line icon). Done on the page's finished HTML, so every block the page holds (photos, words, moods, voices,
+   favourite, note, firsts, check-ins, spending, reviews, the helper's boxes) follows without each one being rewritten; the printed
+   memory book keeps its own look. */
+const LG_PIC = { camera: ['/art/hub/camera.webp', PG.pink], quote: ['/art/hub/comment.webp', PG.purple], kid: ['/art/kidui/mood.webp', PG.gold],
+  hearts: ['/art/kidui/t-heart.webp', PG.pink], log: ['/art/hub/pencil.webp', PG.blue], firsts: ['/art/kidui/t-medal.webp', PG.gold], pin: ['/art/hub/map.webp', PG.teal],
+  mic: ['/art/kidui/say.webp', PG.purple], money: ['/art/hub/money.webp', PG.lime], exchange: ['/art/hub/money.webp', PG.cyan], book: ['/art/hub/book.webp', PG.blue],
+  mail: ['/art/hub/letter.webp', PG.orange], eye: ['/art/hub/helper.webp', PG.purple], globe: ['/art/hub/lang.webp', PG.cyan], sparkle: ['/art/hub/helper.webp', PG.purple],
+  moon: ['/art/kidui/moon.webp', PG.blue], learn: ['/art/hub/learn.webp', PG.teal], today: ['/art/hub/today.webp', PG.blue], up: ['/art/hub/offline.webp', PG.cyan],
+  wifi: ['/art/hub/offline.webp', PG.cyan], review: ['/art/hub/review.webp', PG.orange], star: ['/art/hub/review.webp', PG.orange], notebook: ['/art/hub/notebook.webp', PG.orange] };
+let lgIcons = null;
+function lgCards(html) {
+  if (!lgIcons) lgIcons = Object.keys(ICONS).map((k) => [ic(k), k]);
+  return html.replace(/<section class="blk([^"]*)"([^>]*)>(\s*<h3>\s*(<svg class="ic"[\s\S]*?<\/svg>)?)?/g, (m, cls, attrs, head, svg) => {
+    if (/style=/.test(attrs)) return m;
+    const k = svg ? (lgIcons.find((x) => x[0] === svg) || [])[1] : '', pic = LG_PIC[k];
+    const g = pic ? pic[1] : 'var(--accent)';
+    const lead = pic ? `<span class="pcpic"><img src="${pic[0]}" alt="" draggable="false"></span>` : svg ? `<span class="pcpic">${svg}</span>` : '';
+    return `<section class="blk lgc${cls}"${attrs} style="--g1:${g}">${head ? `<h3>${lead}` : ''}`;
+  });
+}
+function viewLog(t, i, evening) { return lgCards(viewLogRaw(t, i, evening)); }
+function viewLogRaw(t, i, evening) {
   const d = t.days[i], es = entriesOf(t.id, i), ph = mediaOf(t.id, i), now = dayNow(t);
   const dk = `${t.id}:${i}`;
   const strip = t.days.map((x, j) => {

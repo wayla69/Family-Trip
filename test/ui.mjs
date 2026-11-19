@@ -109,7 +109,7 @@ const T = 'hk-macau-2026';
     const f = await session('fold', { logall: false }); await login(f.page);
     await f.page.goto(`${BASE}/#/t/${T}/log/0`); await f.page.waitForSelector('details.more');
     const y = (q) => f.page.evaluate((q) => document.querySelector(q).getBoundingClientRect().top, q);
-    ok(await f.page.locator('details.planblk:not([open])').count() === 1 && (await y('#lgphotos')) - (await y('.logprog')) < 140, 'record page: with the plan folded, the photo box sits right under the strip');
+    ok(await f.page.locator('details.planblk:not([open])').count() === 1 && (await y('#lgphotos')) - (await y('.logprog')) < 140, `record page: with the plan folded, the photo box sits right under the strip (${(await y('#lgphotos')) - (await y('.logprog'))} px)`);
     ok(!(await f.page.locator('details.more').evaluate((d) => d.open)) && (await y('#qtext')) < (await y('[data-a="done"]')) && (await y('[data-a="done"]')) < (await y('details.more')) && !(await f.page.locator('#favtext').isVisible()), 'record page: quotes → mood → day done above the fold; favourite/note/firsts folded on a fresh day');
     await f.page.click('details.more .linkbtn[data-a="logall"]'); await f.page.waitForSelector('#favtext');
     ok(await f.page.locator('#favtext').isVisible() && await f.page.evaluate(() => localStorage.getItem('mbs_logall') === '1'), 'record page: "keep open" shows every box and is remembered on this phone');
