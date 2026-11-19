@@ -102,6 +102,7 @@
     if (styles.some((k) => learned.avoid.includes(k))) return -0.5;
     return styles.some((k) => learned.like.includes(k)) ? 0.5 : 0;
   }
-  const api = { TASTE_FOOD, TASTE_OUT, TASTE_NEED, foodStylesOf, outStylesOf, cleanTaste, tasteEmpty, tasteFit, tasteWords, learnTaste, tasteFitLearned };
+  const CC_CUR = { ae: 'AED', ar: 'ARS', at: 'EUR', au: 'AUD', be: 'EUR', br: 'BRL', bt: 'BTN', ca: 'CAD', ch: 'CHF', cl: 'CLP', cn: 'CNY', cz: 'CZK', de: 'EUR', dk: 'DKK', ee: 'EUR', eg: 'EGP', es: 'EUR', fi: 'EUR', fj: 'FJD', fr: 'EUR', gb: 'GBP', ge: 'GEL', gr: 'EUR', hk: 'HKD', hr: 'EUR', hu: 'HUF', id: 'IDR', ie: 'EUR', in: 'INR', is: 'ISK', it: 'EUR', jo: 'JOD', jp: 'JPY', ke: 'KES', kh: 'USD', kr: 'KRW', kz: 'KZT', la: 'LAK', lk: 'LKR', lu: 'EUR', ma: 'MAD', mm: 'MMK', mn: 'MNT', mo: 'MOP', mt: 'EUR', mv: 'MVR', mx: 'MXN', my: 'MYR', nl: 'EUR', no: 'NOK', np: 'NPR', nz: 'NZD', pe: 'PEN', ph: 'PHP', pl: 'PLN', pt: 'EUR', se: 'SEK', sg: 'SGD', si: 'EUR', sk: 'EUR', th: 'THB', tr: 'TRY', tw: 'TWD', us: 'USD', uz: 'UZS', vn: 'VND', za: 'ZAR' };
+  const api = { CC_CUR, TASTE_FOOD, TASTE_OUT, TASTE_NEED, foodStylesOf, outStylesOf, cleanTaste, tasteEmpty, tasteFit, tasteWords, learnTaste, tasteFitLearned };
   if (typeof module !== 'undefined' && module.exports) module.exports = api; else Object.assign(root, api);
 })(typeof self !== 'undefined' ? self : this);

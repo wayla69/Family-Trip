@@ -189,6 +189,27 @@ if (process.env.BASE) {
   ok(/ok = the month/.test(e) && /src = the https page/.test(e) && /1 sights \(15 or more\)/.test(e) && row.styles.includes('aquarium') && row.styles.includes('sea') && S.fitOf(row, null, 1) === 1 && S.fitOf({ ages: [0, 2, 2, 2] }, null, 1) === -9 && S.fitOf(row, { out: { like: ['aquarium'] } }, 4) === 4,
     `sights: a row with no web check is refused, a town needs 15; a sight's kind and words give its outing styles; the fit reads the youngest child's age and the taste (${e.slice(0, 160)} · ${row.styles})`); }
 
+// the rough budget (docs/BUDGET.md B1): a sight's price text read by pieces — adults, a child price, "under N free", a range, free,
+// "check the price" = unknown; the money a text is in; the helper's three numbers cleaned; a whole estimate with two children
+{ const B = require('../server/budget.js');
+  const p1 = B.priceOf('≈ €22 adults · ≈ €17 children 3–12 · under 3 free'), p2 = B.priceOf('≈ CHF 34 adults · CHF 21 children 6–15 · ages 0–5 free'),
+    p3 = B.priceOf('≈ ¥2,200–2,600 per person, by day · under 1 free (check)'), p4 = B.priceOf('Check the price · under 6 free'), p5 = B.priceOf('Free · lockers extra');
+  ok(p1.adult.lo === 22 && p1.child.lo === 17 && p1.freeUnder === 3 && p2.freeUnder === 6 && p3.adult.lo === 2200 && p3.adult.hi === 2600 && p4.unknown && p5.free
+    && B.ticketFor(p1, 2, [3.5, 1.5]).lo === 61 && B.ticketFor(p2, 2, [3.5, 1.5]).lo === 68 && B.ticketFor(p4, 2, [3]) === null,
+    `budget: a price text is read by its pieces and each child counts by age (${JSON.stringify([p1, p2, p3])})`);
+  ok(B.curOf('≈ ¥600 adults', 'jp') === 'JPY' && B.curOf('≈ ¥260 adults', 'cn') === 'CNY' && B.curOf('resellers from US$26', 'kh') === 'USD' && B.curOf('≈ 50 JD adults', 'jo') === 'JOD' && B.curOf('≈ NZ$42', 'nz') === 'NZD'
+    && B.cleanMoney({ cur: 'jpy', stay: ['30,000', 18000], move: [-5], flights: 'x' }).stay.join() === '18000,30000' && B.cleanMoney({ cur: 'JPY' }) === null && B.cleanMoney(null) === null,
+    'budget: the money of a price text, and the helper\'s numbers cleaned (sorted, plain numbers, junk dropped)');
+  const sight = { id: 's', place: 'fr-paris', price: { en: '≈ €22 adults · ≈ €17 children 3–12 · under 3 free' } };
+  const eats = [{ kind: 0, pr: { en: '≈ €20–30' }, cc: 'fr' }, { kind: 1, pr: { en: '≈ €10–14' }, cc: 'fr' }, { kind: 2, pr: { en: '≈ €6–8' }, cc: 'fr' }];
+  const route = { from: '2027-04-01', days: [0, 1, 2].map((i) => ({ town: { en: i < 2 ? 'Paris' : 'Nowhere' }, stops: [{ lib: 's' }] })), money: { cur: 'EUR', stay: [150, 200], move: [60, 90], flights: [70000, 90000] } };
+  const est = B.estimate({ route, answers: { adults: 2, budget: 'mid' }, kids: [{ birth_ym: '2023-10' }, { birth_ym: '2025-10' }], sightById: (id) => (id === 's' ? sight : null), ccOfPlace: () => 'fr', eatsOfTown: (t) => (t.en === 'Paris' ? eats : []) });
+  const L = (k) => est.lines.find((l) => l.k === k) || {};
+  ok(L('tickets').lo === 61 && L('tickets').n === 1 && L('stay').lo === 300 && L('stay').hi === 400 && L('flights').cur === 'THB' && L('food').cur === 'EUR' && L('food').lo === 2 * 36 * 2.5 && est.unknown.food === 1 && est.totals.length === 2 && est.lines[0].k === 'flights',
+    `budget: an estimate — the sight once, two nights, food for the two days with prices (2½ eaters: two adults and a child of 3; the baby eats off the bill), a day with none counted as unknown (${JSON.stringify(est)})`);
+  const low = B.estimate({ route, answers: { adults: 2, budget: 'low', flights: 'booked' }, kids: [], sightById: () => sight, ccOfPlace: () => 'fr', eatsOfTown: () => eats });
+  ok(!low.lines.some((l) => l.k === 'flights') && low.lines.find((l) => l.k === 'stay').hi === 350, 'budget: a careful budget keeps the low half of each range; flights the family typed are not estimated'); }
+
 // the built-in list of places to eat (server/eats, scripts/eats-lint.mjs): every file reads, every row has the book's shape in both
 // languages, and the checker catches what it should
 { const { lintEats } = await import('../scripts/eats-lint.mjs');

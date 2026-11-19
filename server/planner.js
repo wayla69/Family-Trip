@@ -61,7 +61,9 @@ const routeUser = (a, who, prev, ask) => `${answersText(a, who)}
 ${prev ? `\nThe route so far (change it as asked, keep what was not asked about):\n${JSON.stringify(prev)}\nAsked: ${one(ask, 400)}` : ''}
 Return {"title":{"th","en"} (short, fun, the place's name in it), "place":{"th","en"}, "countries":["2-letter codes in the order visited"], "tz":"IANA zone of the main place", "from":"YYYY-MM-DD", "to":"YYYY-MM-DD",
 "why":{"th","en"} (one line: why this route suits this family), "season":{"th","en"} (one line: the usual weather and crowds at that time of year — say "usually", it is not a forecast),
-"cost":{"th","en"} (one line: a rough daily spend for the family on food, getting around and tickets, as a range with ≈ in the local currency — no flights, no hotels), "ahead":[{"th","en"}] (up to 5 things worth booking ahead, a short phrase each; [] when none),
+"cost":{"th","en"} (one line: a rough daily spend for the family on food, getting around and tickets, as a range with ≈ in the local currency — no flights, no hotels),
+"money":{"cur":"ISO code of the main local currency","stay":[low,high] (one night for the whole family in the kind of place that suits this budget, in that currency),"move":[low,high] (getting around for the whole trip in that currency — trains, taxis, transfers, a hire car if any; no flights),"flights":[low,high] (return flights from Bangkok for the whole family, in THB; [] when the family named their flights)} (plain numbers, a usual range, not a quote),
+"ahead":[{"th","en"}] (up to 5 things worth booking ahead, a short phrase each; [] when none),
 "days":[{"date":"YYYY-MM-DD","town":{"th","en"},"title":{"th","en"} (one short line),"emoji":"one emoji","stops":[{"th","en"}] (2–3 main stops),"sleep":{"th","en"} (the town or area we sleep in; a hotel only if the family named it),
 "kid":{"th","en"} (the children's best bit of the day, a few words), "move":{"th","en"} (only on a day we change towns or arrive or leave: how and about how long, e.g. "Shinkansen ≈ 2 h 15"; else ""), "rain":{"th","en"} (a nearby indoor swap for a wet day, a few words)}]}.
 One day per date${a.from ? ` from ${a.from} to ${a.to}` : ' (pick sensible dates in the month asked)'}. Thai is natural Thai a Thai parent says (place names the way Thais say them).`;
@@ -104,7 +106,8 @@ function cleanRoute(r, a, keys) {
   if (DATE_RE.test(from)) days.forEach((d, i) => { d.date = new Date(Date.parse(from) + i * 864e5).toISOString().slice(0, 10); });
   const lib = libStops(days, keys);
   const ahead = (Array.isArray(r.ahead) ? r.ahead : []).slice(0, 5).map((x) => i18n(x, 120)).filter((x) => x.en || x.th);
-  return { ...more(r, { label: 40, why: 200, season: 200, cost: 200 }), ...(ahead.length ? { ahead } : {}), title: i18n(r.title, 80), place: i18n(r.place, 80), countries: (Array.isArray(r.countries) ? r.countries : []).map((c) => String(c).toLowerCase()).filter((c) => /^[a-z]{2}$/.test(c)).slice(0, 6),
+  const money = require('./budget').cleanMoney(r.money);
+  return { ...more(r, { label: 40, why: 200, season: 200, cost: 200 }), ...(ahead.length ? { ahead } : {}), ...(money ? { money } : {}), title: i18n(r.title, 80), place: i18n(r.place, 80), countries: (Array.isArray(r.countries) ? r.countries : []).map((c) => String(c).toLowerCase()).filter((c) => /^[a-z]{2}$/.test(c)).slice(0, 6),
     tz, from: days[0].date, to: days[days.length - 1].date, days, ...(lib.lib || lib.fresh ? { lib } : {}) };
 }
 // the parents' edits come back from the page: the same cleaning, the dates laid out again from the first day

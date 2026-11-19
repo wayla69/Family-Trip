@@ -14,6 +14,7 @@ const CF = require('./countryfacts');
 const EATLIB = require('./eatlib');
 const CARE = require('./care');   // hospitals, pharmacies, play and baby rooms per library town (server/care/*.json)
 const SIGHTLIB = require('./sightlib');
+const BUDGET = require('./budget');
 const VERIFY = require('./verify');
 const TAGS = require('../public/tags.js');
 const FAM = require('./family');
@@ -1233,6 +1234,19 @@ function router({ pool, media, A, ai, hooks = {} }) {   // hooks.heart(h): set b
   // what the app itself knows about the route's countries (server/countryfacts.js, the checked table — never the helper): shown on the
   // page as "before you go"; the page sends it back with the route, where the cleaning drops it
   const withFacts = (rt) => ({ ...rt, facts: CF.factsFor(rt.countries) });
+  /* the rough budget (docs/BUDGET.md B1): tickets from the library's sight prices, food from the eat library's prices of each day's town,
+     a night's stay, getting around and flights from the helper's numbers in the same answer — worked out again on every answer */
+  async function withBudget(rt, answers) {
+    const out = withFacts(rt);
+    try {
+      const idx = STOCK.read(), cof = EATLIB.countryOf(idx), sights = new Map((await SIGHTLIB.all(pool, FAMILY)).map((r) => [r.id, SIGHTLIB.out(r)])), eats = await EATLIB.all(pool, FAMILY);
+      const ccOfPlace = (pl) => { const p = idx.places && idx.places[pl]; return (p && p.country) || String(pl || '').slice(0, 2); };
+      const b = BUDGET.estimate({ route: rt, answers: answers || {}, kids: await kidRows(), sightById: (id) => sights.get(id), ccOfPlace,
+        eatsOfTown: (tw) => EATLIB.forTown(eats, [tw.en, tw.th].filter(Boolean)).map((r) => ({ ...EATLIB.out(r), cc: (cof.get(r.tkey) || {}).cc || '' })) });
+      if (b) out.budget = b;
+    } catch (e) { console.warn('budget:', e.message); }
+    return out;
+  }
   // "where shall we go?": a few places that fit the family, before there is a destination (one daily call)
   r.post('/api/b/planner/ideas', ...W, async (req, res, next) => {
     try {
@@ -1253,7 +1267,7 @@ function router({ pool, media, A, ai, hooks = {} }) {   // hooks.heart(h): set b
   const plansRead = async () => { const v = (await q("SELECT value FROM settings WHERE key='planner_plans'"))[0]; try { const l = JSON.parse(v.value); return Array.isArray(l) ? l : []; } catch (_) { return []; } };
   const plansWrite = (fn) => { const run = plansLock.then(async () => { const l = fn(await plansRead()); await q("INSERT INTO settings (key, value) VALUES ('planner_plans', $1) ON CONFLICT (key) DO UPDATE SET value = EXCLUDED.value", [JSON.stringify(l.slice(0, PLANS_MAX))]); return l; }); plansLock = run.catch(() => {}); return run; };
   r.get('/api/b/planner/plans', A.requireEditor, async (_req, res, next) => {
-    try { res.setHeader('Cache-Control', 'no-store'); res.json({ plans: (await plansRead()).map((p) => ({ ...p, route: withFacts(p.route) })) }); } catch (e) { next(e); }
+    try { res.setHeader('Cache-Control', 'no-store'); res.json({ plans: await Promise.all((await plansRead()).map(async (p) => ({ ...p, route: p.route ? await withBudget(p.route, p.answers) : p.route }))) }); } catch (e) { next(e); }
   });
   r.put('/api/b/planner/plans/:id', ...W, async (req, res, next) => {
     try {
@@ -1388,14 +1402,14 @@ function router({ pool, media, A, ai, hooks = {} }) {   // hooks.heart(h): set b
   r.post('/api/b/planner/route', ...W, async (req, res, next) => {
     try {
       const b = req.body || {}, answers = PLANNER.cleanAnswers(b.answers);
-      if (b.route && !b.ask) { try { return res.json({ route: withFacts(PLANNER.cleanRoute(b.route, answers)) }); } catch (_) { return bad(res, 'route'); } }
+      if (b.route && !b.ask) { let rt; try { rt = PLANNER.cleanRoute(b.route, answers); } catch (_) { return bad(res, 'route'); } return res.json({ route: await withBudget(rt, answers) }); }
       if (!(ai && ai.enabled())) return bad(res, 'ai', 503);
       if (!answers.dest) return bad(res, 'dest');
       if (answers.from && PLANNER.daysOf(answers) > 31) return bad(res, 'days');
       const who = PLANNER.whoLine(await kidRows(), answers.from);
       const two = !!b.two && !b.ask;
       const route = await PLANNER.route({ client: new ai.SDK(), model: IMPORT.WRITE(), answers, who, prev: b.ask && b.route ? b.route : null, ask: b.ask, take: aiTake, onUsage: addUsage, two, family: await familyLessons(), menu: await planMenu(answers, b.ask ? b.route : null) });
-      res.json(two ? { routes: route.map(withFacts) } : { route: withFacts(route) });
+      res.json(two ? { routes: await Promise.all(route.map((x) => withBudget(x, answers))) } : { route: await withBudget(route, answers) });
     } catch (e) {
       if (e.code === 'limit') return res.status(429).json({ error: 'limit' });
       if (['route', 'json', 'refusal'].includes(e.code)) return bad(res, e.code, 502);

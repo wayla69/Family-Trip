@@ -202,7 +202,7 @@ async function eatFill(town, th, where) {
 // plan with the helper: the plan lives on this phone (ls plan / planRoute) and, once it has a route, on the family's server too
 // (PUT /api/b/planner/plans/:id, 1.5 s after the last change) so the other parent's phone can open it
 let planSaveT = null;
-const planBare = () => { if (!pln.route) return null; const { facts, ...r } = pln.route; return r; };   // the app's own facts never travel back
+const planBare = () => { if (!pln.route) return null; const { facts, budget, ...r } = pln.route; return r; };   // the app's own facts and budget never travel back
 function planKeepA() { ls('plan', pln.a); planSaveSoon(); }
 function planKeep() { ls('plan', pln.a); ls('planRoute', pln.route); planSaveSoon(); }
 function planSaveSoon() {
