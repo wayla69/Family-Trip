@@ -18,7 +18,7 @@ jobs:
 
   test:
     runs-on: ubuntu-latest
-    timeout-minutes: 15
+    timeout-minutes: 25   # the suite ran 12.5 min on main (Nov 2026) and grows with every feature
     services:
       postgres:
         image: postgres:16-alpine
