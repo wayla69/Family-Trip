@@ -16,6 +16,7 @@
     "stock:lint": "node scripts/stock-lint.mjs",
     "eats:lint": "node scripts/eats-lint.mjs",
     "care:lint": "node scripts/care-lint.mjs",
+    "sights:lint": "node scripts/sights-lint.mjs",
     "stock:sheet": "node scripts/stock-sheet.mjs",
     "s3": "s3rver -d ./data/s3 -p 4569 --configure-bucket mb-test --silent"
   },

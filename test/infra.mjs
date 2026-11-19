@@ -175,6 +175,20 @@ if (process.env.BASE) {
   const a = await health(pgUp, stDown, false), b = await health(pgUp, stDown, true), c = await health(pgDown, stUp, false), d = await health(pgUp, stUp, true);
   ok(a.ok && !b.ok && /storage/.test(b.why) && !c.ok && /postgres/.test(c.why) && d.ok, 'health: storage down → deploy check ok, full check fails; Postgres down → both fail'); }
 
+// the built-in things to do (server/sights, docs/SIGHTS.md, scripts/sights-lint.mjs): every row web-checked (ok + src), both languages,
+// ≥ 15 a town with three for a rainy day; the checker refuses a row without its check; the library reads a row's kind into an outing style
+{ const { lintAll, lintFile } = await import('../scripts/sights-lint.mjs');
+  const r = lintAll();
+  ok(!r.errs.length && r.files >= 1, `sights: the built-in things to do are clean (${r.files} files, ${r.towns} towns)` + (r.errs.length ? ' — ' + r.errs.slice(0, 6).join(' · ') : ''));
+  const tmpd = fs.mkdtempSync(path.join(os.tmpdir(), 'sights-')), tmp = path.join(tmpd, 'jp-9.json'),   // a folder of our own (CodeQL: no predictable file in the shared temp dir)
+    idx = JSON.parse(fs.readFileSync(path.resolve('public/stock/index.json'), 'utf8'));
+  fs.writeFileSync(tmp, JSON.stringify({ cc: 'jp', towns: [{ place: 'jp-tokyo', sights: [{ name: { en: 'Made Up Zoo', th: 'สวนสัตว์สมมุติ' }, kind: 'zoo', area: { en: 'Ueno', th: 'อุเอโนะ' }, what: { en: 'x', th: 'ก' }, why: { en: 'x', th: 'ก' }, ages: [2, 2, 2, 1], hrs: 3, io: 'out', pram: 'yes', price: { en: 'Free', th: 'ฟรี' }, book: 'none', q: 'Made Up Zoo, Tokyo' }] }] }));
+  const e = lintFile(tmp, idx.places).join(' ');
+  const S = require('../server/sightlib.js'), row = S.rowOf({ name: { en: 'Tokyo Sea Life Park', th: 'สวนสัตว์ทะเล' }, kind: 'aquarium', what: { en: 'Penguins and a big tuna tank by the beach', th: 'เพนกวิน' }, ages: [1, 2, 2, 2] });
+  fs.rmSync(tmpd, { recursive: true, force: true });
+  ok(/ok = the month/.test(e) && /src = the https page/.test(e) && /1 sights \(15 or more\)/.test(e) && row.styles.includes('aquarium') && row.styles.includes('sea') && S.fitOf(row, null, 1) === 1 && S.fitOf({ ages: [0, 2, 2, 2] }, null, 1) === -9 && S.fitOf(row, { out: { like: ['aquarium'] } }, 4) === 4,
+    `sights: a row with no web check is refused, a town needs 15; a sight's kind and words give its outing styles; the fit reads the youngest child's age and the taste (${e.slice(0, 160)} · ${row.styles})`); }
+
 // the built-in list of places to eat (server/eats, scripts/eats-lint.mjs): every file reads, every row has the book's shape in both
 // languages, and the checker catches what it should
 { const { lintEats } = await import('../scripts/eats-lint.mjs');
