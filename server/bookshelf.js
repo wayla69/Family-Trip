@@ -10,6 +10,7 @@ const IMG = require('./images');
 const GUIDE = require('./guide');
 const IMPORT = require('./bookimport');
 const PLANNER = require('./planner');
+const CF = require('./countryfacts');
 const VERIFY = require('./verify');
 const FAM = require('./family');
 const AVATAR = require('./avatar');
@@ -169,7 +170,7 @@ function router({ pool, media, A, ai, hooks = {} }) {   // hooks.heart(h): set b
       let gone = 0;
       for (const k of new Set(keys)) { try { await media.del(k); gone++; } catch (_) { /* a file already missing is fine */ } }
       await q('DELETE FROM families WHERE id=$1', [FAMILY]);
-      await q("DELETE FROM settings WHERE key IN ('family_likes', 'emoji_seeded', 'emoji_offered', 'emoji_stock_offered', 'year_reels')");
+      await q("DELETE FROM settings WHERE key IN ('family_likes', 'emoji_seeded', 'emoji_offered', 'emoji_stock_offered', 'year_reels', 'planner_plans')");
       await q('INSERT INTO families (id, name) VALUES ($1, $2) ON CONFLICT (id) DO NOTHING', [FAMILY, 'Family']);
       await syncSeeds(pool); await EMOJI.seed(pool, FAMILY); A.groupsChanged();
       console.log(`family erased on request: ${gone} files, every row`);   // no names, no codes
@@ -1141,18 +1142,57 @@ function router({ pool, media, A, ai, hooks = {} }) {   // hooks.heart(h): set b
   r.get('/api/b/planner', A.requireEditor, async (_req, res, next) => {
     try { res.setHeader('Cache-Control', 'no-store'); res.json({ on: !!(ai && ai.enabled()), left: Math.max(0, PLANNER_MONTHLY - (await plannerUsed())), max: PLANNER_MONTHLY, busy: !!(job && job.status === 'running') }); } catch (e) { next(e); }
   });
+  // what the app itself knows about the route's countries (server/countryfacts.js, the checked table — never the helper): shown on the
+  // page as "before you go"; the page sends it back with the route, where the cleaning drops it
+  const withFacts = (rt) => ({ ...rt, facts: CF.factsFor(rt.countries) });
+  // "where shall we go?": a few places that fit the family, before there is a destination (one daily call)
+  r.post('/api/b/planner/ideas', ...W, async (req, res, next) => {
+    try {
+      if (!(ai && ai.enabled())) return bad(res, 'ai', 503);
+      const answers = PLANNER.cleanAnswers({ ...(req.body || {}).answers, dest: '' });
+      const list = await PLANNER.ideas({ client: new ai.SDK(), model: IMPORT.WRITE(), answers, who: PLANNER.whoLine(await kidRows(), answers.from), take: aiTake, onUsage: addUsage });
+      res.json({ ideas: list });
+    } catch (e) {
+      if (e.code === 'limit') return res.status(429).json({ error: 'limit' });
+      if (['route', 'json', 'refusal'].includes(e.code)) return bad(res, e.code, 502);
+      next(e);
+    }
+  });
+  // plans kept for both parents' phones (settings.planner_plans, at most 8, newest first; not in backups — a plan becomes a book):
+  // the answers and the route as the page holds them, cleaned; a booking number typed into the answers is not kept
+  const PLAN_ID = /^[a-z0-9]{6,24}$/, PLANS_MAX = 8;
+  let plansLock = Promise.resolve();
+  const plansRead = async () => { const v = (await q("SELECT value FROM settings WHERE key='planner_plans'"))[0]; try { const l = JSON.parse(v.value); return Array.isArray(l) ? l : []; } catch (_) { return []; } };
+  const plansWrite = (fn) => { const run = plansLock.then(async () => { const l = fn(await plansRead()); await q("INSERT INTO settings (key, value) VALUES ('planner_plans', $1) ON CONFLICT (key) DO UPDATE SET value = EXCLUDED.value", [JSON.stringify(l.slice(0, PLANS_MAX))]); return l; }); plansLock = run.catch(() => {}); return run; };
+  r.get('/api/b/planner/plans', A.requireEditor, async (_req, res, next) => {
+    try { res.setHeader('Cache-Control', 'no-store'); res.json({ plans: (await plansRead()).map((p) => ({ ...p, route: withFacts(p.route) })) }); } catch (e) { next(e); }
+  });
+  r.put('/api/b/planner/plans/:id', ...W, async (req, res, next) => {
+    try {
+      const id = String(req.params.id || ''), b = req.body || {};
+      if (!PLAN_ID.test(id)) return bad(res, 'id');
+      const answers = PLANNER.keepAnswers(b.answers);
+      let rt; try { rt = PLANNER.cleanRoute(b.route, answers); } catch (_) { return bad(res, 'route'); }
+      const plan = { id, at: Date.now(), by: clip(req.user.name || '', 40), answers, route: rt };
+      await plansWrite((l) => [plan, ...l.filter((p) => p.id !== id)]);
+      res.json({ ok: true, at: plan.at });
+    } catch (e) { next(e); }
+  });
+  r.delete('/api/b/planner/plans/:id', ...W, async (req, res, next) => {
+    try { await plansWrite((l) => l.filter((p) => p.id !== String(req.params.id))); res.json({ ok: true }); } catch (e) { next(e); }
+  });
   // the route: drafted from the answers, or changed as asked ({prev, ask}); a route the parents edited by hand ({route}, no ask) is only cleaned
   r.post('/api/b/planner/route', ...W, async (req, res, next) => {
     try {
       const b = req.body || {}, answers = PLANNER.cleanAnswers(b.answers);
-      if (b.route && !b.ask) { try { return res.json({ route: PLANNER.cleanRoute(b.route, answers) }); } catch (_) { return bad(res, 'route'); } }
+      if (b.route && !b.ask) { try { return res.json({ route: withFacts(PLANNER.cleanRoute(b.route, answers)) }); } catch (_) { return bad(res, 'route'); } }
       if (!(ai && ai.enabled())) return bad(res, 'ai', 503);
       if (!answers.dest) return bad(res, 'dest');
       if (answers.from && PLANNER.daysOf(answers) > 31) return bad(res, 'days');
       const who = PLANNER.whoLine(await kidRows(), answers.from);
       const two = !!b.two && !b.ask;
       const route = await PLANNER.route({ client: new ai.SDK(), model: IMPORT.WRITE(), answers, who, prev: b.ask && b.route ? b.route : null, ask: b.ask, take: aiTake, onUsage: addUsage, two });
-      res.json(two ? { routes: route } : { route });
+      res.json(two ? { routes: route.map(withFacts) } : { route: withFacts(route) });
     } catch (e) {
       if (e.code === 'limit') return res.status(429).json({ error: 'limit' });
       if (['route', 'json', 'refusal'].includes(e.code)) return bad(res, e.code, 502);
@@ -1187,6 +1227,7 @@ function router({ pool, media, A, ai, hooks = {} }) {   // hooks.heart(h): set b
         out.report.planner = true;
         await q('INSERT INTO book_drafts (id, family_id, slug, seed, report, cost, created_by) VALUES ($1,$2,$3,$4,$5,$6,$7)', [id, FAMILY, slug, out.seed, out.report, out.cost, who]);
         await plannerCount();
+        if (PLAN_ID.test(String(b.plan || ''))) await plansWrite((l) => l.filter((p) => p.id !== b.plan)).catch(() => {});   // the plan is a book's draft now
         job.draft = { id, slug, title: out.seed.title, days: out.seed.days.length, report: out.report, cost: out.cost };
         job.status = 'done'; log('done — review the draft, then save it as a book');
         if (hooks.draft) Promise.resolve(hooks.draft({ trip: slug, title: out.seed.title, url: '/#/import' })).catch(() => {});

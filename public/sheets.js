@@ -189,14 +189,59 @@ async function addClip(t, day, blob, secs, about) {
 
 /* ---------- a book from a PDF (#/import): page state, polling, upload ---------- */
 let imp = { list: null, job: null, slug: '', err: '', file: null, timer: null };
-// plan with the helper: the route call (a draft, or a change asked in words); the route stays on this phone until a book is written
+// plan with the helper: the plan lives on this phone (ls plan / planRoute) and, once it has a route, on the family's server too
+// (PUT /api/b/planner/plans/:id, 1.5 s after the last change) so the other parent's phone can open it
+let planSaveT = null;
+const planBare = () => { if (!pln.route) return null; const { facts, ...r } = pln.route; return r; };   // the app's own facts never travel back
+function planKeepA() { ls('plan', pln.a); planSaveSoon(); }
+function planKeep() { ls('plan', pln.a); ls('planRoute', pln.route); planSaveSoon(); }
+function planSaveSoon() {
+  if (!pln.route) return;
+  if (!pln.id) { pln.id = `pl${Math.random().toString(36).slice(2, 12)}00000`.slice(0, 12); ls('planId', pln.id); }
+  clearTimeout(planSaveT); planSaveT = setTimeout(() => { planSaveT = null; planSave(); }, 1500);
+}
+async function planSave() {
+  if (!pln.route || !pln.id) return;
+  const id = pln.id, row = { id, by: '', answers: pln.a, route: pln.route };
+  try {
+    const r = await api('PUT', `/api/b/planner/plans/${id}`, { answers: pln.a, route: planBare() });
+    if (pln.id === id) { pln.at = r.at; ls('planAt', r.at); }
+    row.at = r.at; pln.plans = [row, ...(pln.plans || []).filter((p) => p.id !== id)];
+  } catch (_) { /* no signal: the plan is still on this phone, the next change saves it */ }
+}
+// the other parent changed this plan on their phone: take theirs, unless this phone has a change still waiting to be sent
+function planAdopt() {
+  const p = (pln.plans || []).find((x) => x.id === pln.id);
+  if (!p || planSaveT || !(p.at > (pln.at || 0))) return;
+  pln.a = { ...pln.a, ...p.answers }; pln.route = p.route; pln.at = p.at; ls('plan', pln.a); ls('planRoute', pln.route); ls('planAt', p.at);
+}
+function planSpan() {   // the "6 days, 5 nights" line and the length chips, in place
+  const a = pln.a, n = plDays(a) || (a.from ? 0 : a.len), el = $('#plspan'); if (el) el.textContent = plSpan(n);
+  $$('.pllens .plchip').forEach((x) => x.setAttribute('aria-pressed', +x.dataset.v === n ? 'true' : 'false'));
+}
+// a change made by hand to the route's days (move, add, remove): the old route is kept for one undo, the dates laid out again
+function planEdit(fn) {
+  if (!pln.route || pln.busy) return;
+  pln.prev = JSON.parse(JSON.stringify(pln.route));
+  const rt = pln.route; fn(rt.days);
+  rt.days.forEach((d, i) => { d.date = plAdd(rt.from, i); }); rt.to = rt.days[rt.days.length - 1].date;
+  if (pln.a.from) pln.a.to = rt.to;
+  pln.edit = -1; planKeep(); render();
+}
+// the route call (a draft, two to compare, or a change asked in words); a change keeps the old route for one undo
 async function planCall(body) {
   if (pln.busy) return;
-  if (!String(pln.a.dest || '').trim()) { pln.err = L('บอกก่อนว่าอยากไปที่ไหน', 'Say where to first'); safeRender(); return; }
-  pln.busy = 'route'; pln.err = ''; safeRender();
-  try { const r = await api('POST', '/api/b/planner/route', body); if (r.routes) { pln.alts = r.routes; pln.route = null; } else { pln.route = r.route; pln.alts = null; ls('planRoute', pln.route); } pln.ask = ''; }
+  if (!String(pln.a.dest || '').trim()) { pln.err = L('บอกก่อนว่าอยากไปที่ไหน', 'Say where to first'); render(); const d = $('#pldest'); if (d) d.focus(); return; }
+  const old = pln.route;
+  pln.busy = 'route'; pln.err = ''; render();
+  try {
+    const r = await api('POST', '/api/b/planner/route', body);
+    if (r.routes) { pln.alts = r.routes; pln.route = null; ls('planRoute', null); }
+    else { pln.route = r.route; pln.alts = null; pln.prev = body.ask && old ? old : null; pln.open = false; pln.edit = -1; planKeep(); }
+    pln.ask = '';
+  }
   catch (e) { pln.err = planErr(e); }
-  finally { pln.busy = ''; safeRender(); }
+  finally { pln.busy = ''; render(); }
   const el = $(pln.alts ? '.plalts' : '#plroute'); if (el && (pln.route || pln.alts) && !pln.err) el.scrollIntoView({ behavior: 'smooth', block: 'start' });
 }
 // the web check's job: asked every 3 s while it runs on this page; when it ends the state is loaded again (the answers live on the book)
@@ -877,23 +922,82 @@ const A = {
     try { await api('POST', `/api/b/planner/day/${encodeURIComponent(b.dataset.t)}/${+b.dataset.d}/undo`, {}); await load(); render(); toast(L('กลับไปแผนเดิมแล้ว', 'Back to the old plan')); }
     catch (e) { toast(dchErr(e)); }
   },
-  planopt(b) { pln.a[b.dataset.k] = b.dataset.v; ls('plan', pln.a); b.closest('.plopts').querySelectorAll('.tpo').forEach((x) => x.setAttribute('aria-pressed', x === b ? 'true' : 'false')); },
-  planseniors(b) { pln.a.seniors = !!b.checked; ls('plan', pln.a); },
+  planopt(b) { pln.a[b.dataset.k] = b.dataset.v; planKeepA(); b.closest('.plopts').querySelectorAll('.tpo').forEach((x) => x.setAttribute('aria-pressed', x === b ? 'true' : 'false')); },
+  planseniors(b) { pln.a.seniors = !!b.checked; planKeepA(); },
+  planchip(b) { const k = b.dataset.k, v = b.dataset.v, l = pln.a[k] = Array.isArray(pln.a[k]) ? pln.a[k] : []; const i = l.indexOf(v); if (i >= 0) l.splice(i, 1); else l.push(v); planKeepA(); b.setAttribute('aria-pressed', i < 0 ? 'true' : 'false'); },
+  planlen(b) {   // how long: with a first day it sets the last day, without one it is kept as a number of days
+    const n = +b.dataset.v, a = pln.a;
+    if (a.from) { a.to = plAdd(a.from, n - 1); const el = $('#plto'); if (el) el.value = a.to; } else a.len = a.len === n ? 0 : n;
+    planKeepA(); planSpan();
+  },
+  planmon(b) { const a = pln.a; a.approx = a.approx === b.dataset.v ? '' : b.dataset.v; planKeepA(); b.closest('.plmons').querySelectorAll('.plchip').forEach((x) => x.setAttribute('aria-pressed', x.dataset.v === a.approx ? 'true' : 'false')); const el = $('#plapprox'); if (el) el.value = a.approx; },
+  planadults(b) { pln.a.adults = Math.max(1, Math.min(8, (parseInt(pln.a.adults, 10) || 2) + (+b.dataset.v))); planKeepA(); const el = $('#pladults'); if (el) el.textContent = pln.a.adults; },
+  plansug(b) {   // a suggested place: it finishes the word being typed, else it is added to the list
+    const parts = String(pln.a.dest || '').split(',').map((x) => x.trim()).filter(Boolean), name = b.dataset.v, last = parts[parts.length - 1] || '';
+    if (last && plNorm(name).includes(plNorm(last)) && plNorm(last).length >= 2) parts[parts.length - 1] = name; else parts.push(name);
+    pln.a.dest = parts.join(', ').slice(0, 200); planKeepA();
+    const el = $('#pldest'); if (el) el.value = pln.a.dest; const sg = $('#plsug'); if (sg) sg.innerHTML = plSugHtml(pln.a.dest);
+  },
+  async planideas() {
+    if (pln.busy) return;
+    pln.busy = 'ideas'; pln.err = ''; render();
+    try { pln.ideas = (await api('POST', '/api/b/planner/ideas', { answers: pln.a })).ideas || []; }
+    catch (e) { pln.err = planErr(e); }
+    finally { pln.busy = ''; render(); }
+    const el = $('#plideas'); if (el && !pln.err) el.scrollIntoView({ behavior: 'smooth', block: 'start' });
+  },
+  planidea(b) {
+    const x = (pln.ideas || [])[+b.dataset.v]; if (!x) return;
+    const a = pln.a; a.dest = T(x.place); if (a.from) a.to = plAdd(a.from, x.days - 1); else a.len = x.days;
+    pln.ideas = null; planKeepA(); render(); const el = $('#pldest'); if (el) el.scrollIntoView({ behavior: 'smooth', block: 'center' });
+  },
+  planopen() { pln.open = !pln.open; render(); const el = $('#plq'); if (el) el.scrollIntoView({ behavior: 'smooth', block: 'start' }); },
   async planroute() { pln.alts = null; await planCall({ answers: pln.a }); },
   async planroute2() { await planCall({ answers: pln.a, two: true }); },
-  planpick(b) { const r = (pln.alts || [])[+b.dataset.v]; if (!r) return; pln.route = r; pln.alts = null; ls('planRoute', r); safeRender(); const el = $('#plroute'); if (el) el.scrollIntoView({ behavior: 'smooth', block: 'start' }); },
+  planpick(b) { const r = (pln.alts || [])[+b.dataset.v]; if (!r) return; pln.route = r; pln.alts = null; pln.prev = null; pln.open = false; planKeep(); render(); const el = $('#plroute'); if (el) el.scrollIntoView({ behavior: 'smooth', block: 'start' }); },
+  planmove(b) { const i = +b.dataset.i, j = i + (+b.dataset.v); planEdit((d) => { if (d[j]) [d[i], d[j]] = [d[j], d[i]]; }); },
+  planadd(b) { const i = +b.dataset.i; if (pln.route && pln.route.days.length >= 31) { toast(planErr({ message: 'days' })); return; } planEdit((d) => { const o = d[i]; d.splice(i + 1, 0, { date: o.date, town: o.town, title: { th: 'วันสบายๆ ไม่มีแผน', en: 'An easy day, nothing planned' }, emoji: '🌿', stops: [], sleep: o.sleep }); }); },
+  plandel(b) { if (!armed(b, L('แตะอีกครั้งเพื่อลบวันนี้', 'Tap again to remove this day'))) return; const i = +b.dataset.i; planEdit((d) => { if (d.length > 1) d.splice(i, 1); }); },
+  planedit(b) { const i = +b.dataset.i; pln.edit = pln.edit === i ? -1 : i; render(); if (pln.edit === i) { const el = $(`[data-pr="${i}.title"]`); if (el) el.focus(); } },
+  planday(b) { pln.ask = L(`วันที่ ${+b.dataset.i + 1}: `, `Day ${+b.dataset.i + 1}: `); render(); const el = $('#plask'); if (el) { el.scrollIntoView({ behavior: 'smooth', block: 'center' }); el.focus(); el.setSelectionRange(el.value.length, el.value.length); } },
+  planundo() { if (!pln.prev || pln.busy) return; [pln.route, pln.prev] = [pln.prev, pln.route]; pln.edit = -1; planKeep(); render(); toast(L('ย้อนกลับแล้ว', 'Undone')); },
+  async planquick(b) { await planCall({ answers: pln.a, route: planBare(), ask: b.dataset.v }); },
+  async planask() { const ask = (($('#plask') || {}).value || '').trim(); if (!ask || /^(วันที่|Day) \d+:$/.test(ask)) { toast(L('พิมพ์ก่อนว่าอยากเปลี่ยนอะไร', 'Type what should change first')); return; } await planCall({ answers: pln.a, route: planBare(), ask }); },
+  async planshare() {
+    if (!pln.route) return; const text = plText(pln.route);
+    if (navigator.share) { try { await navigator.share({ text }); } catch (e) { if (e.name !== 'AbortError') toast(L('แชร์ไม่สำเร็จ', 'Could not share')); } return; }
+    try { await navigator.clipboard.writeText(text); toast(L('คัดลอกข้อความแล้ว — วางใน LINE ได้เลย', 'Copied — paste it into LINE')); } catch (_) { toast(L('คัดลอกไม่ได้ในเบราว์เซอร์นี้', 'Could not copy in this browser')); }
+  },
+  plannew(b) {   // a clean page: the kept plan stays in the list, the family's way of travelling stays ticked
+    if (!armed(b, L('แตะอีกครั้งเพื่อเริ่มแผนใหม่', 'Tap again to start a new plan'))) return;
+    clearTimeout(planSaveT); planSaveT = null; planSave();
+    pln.a = { ...pln.a, dest: '', from: '', to: '', approx: '', len: 0, stays: '', flights: '', want: '', avoid: '' };
+    pln.route = null; pln.alts = null; pln.ideas = null; pln.prev = null; pln.id = ''; pln.at = 0; pln.open = false; pln.err = '';
+    ls('plan', pln.a); ls('planRoute', null); ls('planId', null); ls('planAt', null); render(); scrollTo(0, 0);
+  },
+  planload(b) {
+    const p = (pln.plans || []).find((x) => x.id === b.dataset.v); if (!p) return;
+    clearTimeout(planSaveT); planSaveT = null; planSave();
+    pln.a = { ...pln.a, ...p.answers }; pln.route = p.route; pln.id = p.id; pln.at = p.at; pln.alts = null; pln.ideas = null; pln.prev = null; pln.open = false; pln.err = '';
+    ls('plan', pln.a); ls('planRoute', pln.route); ls('planId', pln.id); ls('planAt', pln.at); render(); const el = $('#plroute'); if (el) el.scrollIntoView({ behavior: 'smooth', block: 'start' });
+  },
+  async plandrop(b) {
+    if (!armed(b, L('แตะอีกครั้งเพื่อลบ', 'Tap again to delete'))) return;
+    const id = b.dataset.v;
+    try { await api('DELETE', `/api/b/planner/plans/${encodeURIComponent(id)}`); pln.plans = (pln.plans || []).filter((p) => p.id !== id); if (pln.id === id) { pln.id = ''; ls('planId', null); } render(); }
+    catch (_) { toast(L('ลบไม่ได้ ลองอีกครั้ง', 'Could not delete — try again')); }
+  },
   snapplan(b) {   // a book from photos as the start of the next plan: its towns as where, its days as wishes, no dates (a new trip)
     const t = trip(b.dataset.t); if (!t) return;
     const towns = [...new Set(t.days.map((d) => T(d.place)).filter(Boolean).flatMap((x) => x.split(' · ')))].slice(0, 6);
     const wish = t.days.map((d) => T(d.title)).filter((x) => x && !/^(วันที่|Day) \d+$/.test(x)).slice(0, 8).join(' · ');
-    pln.a = { dest: towns.join(', ') || T(t.title), from: '', to: '', approx: L(`${t.days.length} วัน`, `${t.days.length} days`), adults: 2, seniors: false, pace: 'slow', move: 'mix', budget: 'mid', stays: '', flights: '', want: L(`แบบทริป "${T(t.title)}"`, `Like our trip "${T(t.title)}"`) + (wish ? ` — ${wish}` : ''), avoid: '' };
-    pln.route = null; pln.alts = null; ls('plan', pln.a); ls('planRoute', null); location.hash = '#/planner';
+    pln.a = { dest: towns.join(', ') || T(t.title), from: '', to: '', approx: '', len: Math.min(31, t.days.length), adults: 2, seniors: false, pace: 'slow', move: 'mix', budget: 'mid', likes: [], needs: [], stays: '', flights: '', want: L(`แบบทริป "${T(t.title)}"`, `Like our trip "${T(t.title)}"`) + (wish ? ` — ${wish}` : ''), avoid: '' };
+    pln.route = null; pln.alts = null; pln.id = ''; pln.at = 0; ls('plan', pln.a); ls('planRoute', null); ls('planId', null); ls('planAt', null); location.hash = '#/planner';
   },
-  async planask() { const ask = (($('#plask') || {}).value || '').trim(); if (!ask) { toast(L('พิมพ์ก่อนว่าอยากเปลี่ยนอะไร', 'Type what should change first')); return; } await planCall({ answers: pln.a, route: pln.route, ask }); },
   async planbook() {
     if (pln.busy) return;
     pln.busy = 'book'; pln.err = ''; safeRender();
-    try { await api('POST', '/api/b/planner/draft', { answers: pln.a, route: pln.route }); imp.list = null; imp.job = { status: 'running', slug: '', log: [], started: Date.now() }; pln.info = null; ls('planRoute', null); location.hash = '#/import'; impRefresh(); }
+    try { clearTimeout(planSaveT); planSaveT = null; await api('POST', '/api/b/planner/draft', { answers: pln.a, route: planBare(), plan: pln.id }); pln.route = null; pln.prev = null; pln.id = ''; pln.plans = null; ls('planId', null); ls('planAt', null); imp.list = null; imp.job = { status: 'running', slug: '', log: [], started: Date.now() }; pln.info = null; ls('planRoute', null); location.hash = '#/import'; impRefresh(); }
     catch (e) { pln.err = planErr(e); }
     finally { pln.busy = ''; safeRender(); }
   },
@@ -1431,8 +1535,9 @@ document.addEventListener('change', (e) => {
   if (e.target.id === 'lcfile') { const f = e.target.files && e.target.files[0]; if (f) { if (lostPhoto) URL.revokeObjectURL(lostPhoto); lostPhoto = URL.createObjectURL(f); render(); } return; }   // this morning's photo: in memory only
   if (e.target.id === 'impfile') { imp.file = (e.target.files || [])[0] || null; const sl = $('#impslug'); if (imp.file && sl && !sl.value) { sl.value = imp.file.name.replace(/\.pdf$/i, '').normalize('NFKD').toLowerCase().replace(/[^a-z0-9]+/g, '-').replace(/^-+|-+$/g, '').slice(0, 40); } return; }
   if (e.target.id === 'impslug') { imp.slug = e.target.value; return; }
-  if (e.target.dataset && e.target.dataset.pl && pln.a) { const k = e.target.dataset.pl; pln.a[k] = k === 'adults' ? Math.max(1, Math.min(8, parseInt(e.target.value, 10) || 2)) : e.target.value; ls('plan', pln.a); if (k === 'from') safeRender(); return; }
-  if (e.target.dataset && e.target.dataset.pr && pln.route) { const [i, f] = e.target.dataset.pr.split('.'), d = pln.route.days[+i]; if (d) { d[f] = { ...(d[f] || {}), [lang]: e.target.value.slice(0, 120) }; ls('planRoute', pln.route); } return; }
+  if (e.target.id === 'plask') { pln.ask = e.target.value; return; }
+  if (e.target.dataset && e.target.dataset.pl && pln.a) { const k = e.target.dataset.pl; pln.a[k] = e.target.value; if (k === 'from' && pln.a.from && pln.a.len) { pln.a.to = plAdd(pln.a.from, pln.a.len - 1); pln.a.len = 0; } planKeepA(); if (k === 'from') safeRender(); if (k === 'to') planSpan(); return; }
+  if (e.target.dataset && e.target.dataset.pr && pln.route) { const [i, f] = e.target.dataset.pr.split('.'), d = pln.route.days[+i]; if (d) { d[f] = { ...(d[f] || {}), [lang]: e.target.value.slice(0, 120) }; planKeep(); } return; }
   if (e.target.id === 'plask') { pln.ask = e.target.value; return; }
   if (e.target.dataset && e.target.dataset.famavatar !== undefined && fam) {   // a photo of the child → the AI draws their character, used at once
     const f = (e.target.files || [])[0], i = +e.target.dataset.famavatar, k = fam.kids[i]; if (!f || !k) return;
@@ -1543,3 +1648,9 @@ document.addEventListener('change', async (e) => {
 // the letter being written keeps what was typed over a redraw (a chip tap, the list coming back)
 function capKeep() { if (!CAP.edit) return; const v = (id) => { const el = $('#' + id); return el ? el.value : null; }; const t = v('captitle'), x = v('captext'), d = v('capdate'); if (t !== null) CAP.edit.title = t; if (x !== null) CAP.edit.text = x; if (d !== null && d) CAP.edit.open_on = d; }
 document.addEventListener('input', (e) => { if (['captitle', 'captext', 'capdate'].includes(e.target.id)) capKeep(); });
+// the planner: what is typed is kept as it is typed (a redraw after a tap never loses it); "where to" filters its suggestions in place
+document.addEventListener('input', (e) => {
+  const el = e.target; if (!el || !pln.a) return;
+  if (el.id === 'plask') { pln.ask = el.value; return; }
+  if (el.dataset && el.dataset.pl && el.type !== 'date') { pln.a[el.dataset.pl] = el.value; ls('plan', pln.a); if (el.id === 'pldest') { const sg = $('#plsug'); if (sg) sg.innerHTML = plSugHtml(el.value); } }
+});

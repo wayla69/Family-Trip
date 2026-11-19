@@ -9,6 +9,12 @@ const one = (v, n) => String(v == null ? '' : v).replace(/[\u0000-\u001f]+/g, ' 
 const pick = (v, ok, d) => (ok.includes(v) ? v : d);
 const i18n = (x, n = 120) => (x && typeof x === 'object' ? { th: one(x.th || x.en, n), en: one(x.en || x.th, n) } : { th: one(x, n), en: one(x, n) });
 
+// what the family likes and needs, picked as chips on the page (the keys are the page's; the words are what the helper reads)
+const LIKES = { animals: 'animals and zoos', aquarium: 'aquariums', sea: 'beach and sea', nature: 'nature and easy walks', park: 'theme parks', play: 'playgrounds and play centres', museum: 'hands-on museums',
+  train: 'trains and vehicles', snow: 'snow', farm: 'farms and fruit picking', food: 'local food', shop: 'shopping', culture: 'temples and culture', onsen: 'hot springs' };
+const NEEDS = { pram: 'we bring a pram — step-free ways', nap: 'a midday nap back at the hotel', walk: 'little walking', drive: 'no drive over two hours', mild: 'mild food for the children', crowd: 'avoid crowds and queues', early: 'early nights' };
+const keysOf = (v, table) => [...new Set((Array.isArray(v) ? v : []).map(String).filter((k) => Object.prototype.hasOwnProperty.call(table, k)))];
+
 // the answers as the server keeps and sends them: every field trimmed and bounded, unknown keys dropped
 function cleanAnswers(a) {
   a = a && typeof a === 'object' ? a : {};
@@ -19,6 +25,8 @@ function cleanAnswers(a) {
     pace: pick(a.pace, ['slow', 'normal', 'full'], 'slow'), move: pick(a.move, ['transit', 'car', 'mix'], 'mix'),
     budget: pick(a.budget, ['low', 'mid', 'high'], 'mid'),
     stays: one(a.stays, 400), flights: one(a.flights, 200), want: one(a.want, 500), avoid: one(a.avoid, 300),
+    len: from ? 0 : Math.min(31, Math.max(0, parseInt(a.len, 10) || 0)),   // how many days, while there are no dates yet
+    likes: keysOf(a.likes, LIKES), needs: keysOf(a.needs, NEEDS),
   };
 }
 const daysOf = (a) => (a.from && a.to ? Math.round((Date.parse(a.to) - Date.parse(a.from)) / 864e5) + 1 : 0);
@@ -36,14 +44,15 @@ const PACE = { slow: 'slow — one main thing a day, a long nap, home early', no
 const MOVE = { transit: 'public transport and taxis', car: 'a hire car', mix: 'public transport mostly, a car or taxi where it helps' };
 const BUDGET = { low: 'careful with money', mid: 'a middle budget', high: 'comfortable' };
 function answersText(a, who) {
-  return [`Where: ${a.dest || '(not given)'}`, a.from ? `Dates: ${a.from} to ${a.to || '?'} (${daysOf(a)} days)` : `When: ${a.approx || '(not given)'}`,
+  return [`Where: ${a.dest || '(not given)'}`, a.from ? `Dates: ${a.from} to ${a.to || '?'} (${daysOf(a)} days)` : `When: ${a.approx || '(not given)'}${a.len ? ` — ${a.len} days` : ''}`,
     `Who: ${a.adults} adult${a.adults > 1 ? 's' : ''}${a.seniors ? ' (one is older, walks slowly)' : ''} and ${who}`,
     `Pace: ${PACE[a.pace]}`, `Getting around: ${MOVE[a.move]}`, `Budget: ${BUDGET[a.budget]}`,
     a.stays ? `Where we sleep (as typed): ${a.stays}` : 'Where we sleep: not booked yet — suggest areas', a.flights ? `Flights (as typed): ${a.flights}` : '',
+    a.likes.length ? `We like: ${a.likes.map((k) => LIKES[k]).join(', ')}` : '', a.needs.length ? `We need: ${a.needs.map((k) => NEEDS[k]).join('; ')}` : '',
     a.want ? `Must do: ${a.want}` : '', a.avoid ? `Avoid / needs: ${a.avoid}` : ''].filter(Boolean).join('\n');
 }
 
-const ROUTE_SYS = 'You plan family trips for Thai families with small children. You draft only the route: where the family sleeps each night and the one-line plan of each day. '
+const ROUTE_SYS = 'You plan family trips for Thai families with small children. You draft only the route: where the family sleeps each night and the one-line plan of each day, with what a parent wants to know before saying yes. '
   + 'Keep the children\'s naps, an easy arrival and departure day, few hotel changes (a town at least two nights when you can), short legs. Real, well-known places only. '
   + 'Never name the children. Answer with JSON only, no prose, no code fence.';
 // two routes to compare (phase 3): one call, two real choices the family can feel the difference between
@@ -51,21 +60,27 @@ const TWO = '\n\nGive TWO different routes to choose between — really differen
 const routeUser = (a, who, prev, ask) => `${answersText(a, who)}
 ${prev ? `\nThe route so far (change it as asked, keep what was not asked about):\n${JSON.stringify(prev)}\nAsked: ${one(ask, 400)}` : ''}
 Return {"title":{"th","en"} (short, fun, the place's name in it), "place":{"th","en"}, "countries":["2-letter codes in the order visited"], "tz":"IANA zone of the main place", "from":"YYYY-MM-DD", "to":"YYYY-MM-DD",
-"days":[{"date":"YYYY-MM-DD","town":{"th","en"},"title":{"th","en"} (one short line),"emoji":"one emoji","stops":[{"th","en"}] (2–3 main stops),"sleep":{"th","en"} (the town or area we sleep in; a hotel only if the family named it)}]}.
+"why":{"th","en"} (one line: why this route suits this family), "season":{"th","en"} (one line: the usual weather and crowds at that time of year — say "usually", it is not a forecast),
+"cost":{"th","en"} (one line: a rough daily spend for the family on food, getting around and tickets, as a range with ≈ in the local currency — no flights, no hotels), "ahead":[{"th","en"}] (up to 5 things worth booking ahead, a short phrase each; [] when none),
+"days":[{"date":"YYYY-MM-DD","town":{"th","en"},"title":{"th","en"} (one short line),"emoji":"one emoji","stops":[{"th","en"}] (2–3 main stops),"sleep":{"th","en"} (the town or area we sleep in; a hotel only if the family named it),
+"kid":{"th","en"} (the children's best bit of the day, a few words), "move":{"th","en"} (only on a day we change towns or arrive or leave: how and about how long, e.g. "Shinkansen ≈ 2 h 15"; else ""), "rain":{"th","en"} (a nearby indoor swap for a wet day, a few words)}]}.
 One day per date${a.from ? ` from ${a.from} to ${a.to}` : ' (pick sensible dates in the month asked)'}. Thai is natural Thai a Thai parent says (place names the way Thais say them).`;
 
+// optional lines of a route or a day: kept only when they say something
+const more = (o, keys) => Object.fromEntries(Object.entries(keys).map(([k, n]) => [k, o && o[k] ? i18n(o[k], n) : null]).filter(([, v]) => v && (v.th || v.en)));
 // the helper's answer → a route the page can show and edit; anything malformed is dropped, the days are one per date
 function cleanRoute(r, a) {
   if (!r || typeof r !== 'object' || !Array.isArray(r.days) || !r.days.length) throw Object.assign(new Error('route'), { code: 'route' });
   const days = r.days.slice(0, 31).map((d) => ({
     date: DATE_RE.test(d && d.date) ? d.date : '', town: i18n(d && d.town, 80), title: i18n(d && d.title, 120), emoji: one(d && d.emoji, 8) || '📍',
     stops: (Array.isArray(d && d.stops) ? d.stops : []).slice(0, 4).map((s) => i18n(s, 80)).filter((s) => s.en || s.th), sleep: i18n(d && d.sleep, 120),
+    ...more(d, { kid: 120, move: 120, rain: 120 }),
   }));
   const from = a.from || (DATE_RE.test(r.from) ? r.from : days[0].date), tz = /^[A-Za-z_]+\/[A-Za-z_+-]+(\/[A-Za-z_+-]+)?$/.test(r.tz || '') ? r.tz : 'Asia/Bangkok';
   // the dates are the family's: day i is from + i, whatever the helper wrote
   if (DATE_RE.test(from)) days.forEach((d, i) => { d.date = new Date(Date.parse(from) + i * 864e5).toISOString().slice(0, 10); });
-  const opt = (x, n) => (x && (x.th || x.en) ? { [x === r.label ? 'label' : 'why']: i18n(x, n) } : {});
-  return { ...opt(r.label, 40), ...opt(r.why, 160), title: i18n(r.title, 80), place: i18n(r.place, 80), countries: (Array.isArray(r.countries) ? r.countries : []).map((c) => String(c).toLowerCase()).filter((c) => /^[a-z]{2}$/.test(c)).slice(0, 6),
+  const ahead = (Array.isArray(r.ahead) ? r.ahead : []).slice(0, 5).map((x) => i18n(x, 120)).filter((x) => x.en || x.th);
+  return { ...more(r, { label: 40, why: 200, season: 200, cost: 200 }), ...(ahead.length ? { ahead } : {}), title: i18n(r.title, 80), place: i18n(r.place, 80), countries: (Array.isArray(r.countries) ? r.countries : []).map((c) => String(c).toLowerCase()).filter((c) => /^[a-z]{2}$/.test(c)).slice(0, 6),
     tz, from: days[0].date, to: days[days.length - 1].date, days };
 }
 // the parents' edits come back from the page: the same cleaning, the dates laid out again from the first day
@@ -88,9 +103,42 @@ async function route({ client, model, answers, who, prev, ask, take, onUsage, tw
   return cleanRoute(r, answers);
 }
 
+// "where shall we go?": a few places that suit this family, before there is a destination (one call). Flight times are from Bangkok and
+// rough ("≈"); nothing here is a fact the book will print — an idea only fills the "where" box.
+const IDEAS_SYS = 'You suggest where a Thai family with small children could travel, flying from Bangkok. Real, well-known, family-friendly places only; an easy flight for the children\'s ages; right for the time of year asked. '
+  + 'Never name the children. Answer with JSON only, no prose, no code fence.';
+const ideasUser = (a, who) => `${answersText({ ...a, dest: a.dest || '(open — suggest)' }, who)}
+
+Suggest 4 different places (mix near and far, a city and nature or sea) that fit. Return {"ideas":[{"place":{"th","en"} (a city or region, the way Thais say it), "cc":"2-letter country code", "emoji":"one emoji",
+"why":{"th","en"} (one line: why it suits these children), "fly":{"th","en"} (e.g. "≈ 6 h direct"), "best":{"th","en"} (a few words: the weather then, usually), "days": number (a good length)}]}.`;
+function cleanIdeas(r) {
+  return (Array.isArray(r && r.ideas) ? r.ideas : []).slice(0, 4).map((x) => ({ place: i18n(x && x.place, 60), cc: /^[a-z]{2}$/i.test(String(x && x.cc || '')) ? String(x.cc).toLowerCase() : '', emoji: one(x && x.emoji, 8) || '🧭',
+    ...more(x, { why: 160, fly: 60, best: 80 }), days: Math.min(21, Math.max(2, parseInt(x && x.days, 10) || 5)) })).filter((x) => x.place.en || x.place.th);
+}
+async function ideas({ client, model, answers, who, take, onUsage }) {
+  if (take && !(await take())) throw Object.assign(new Error('limit'), { code: 'limit' });
+  const { text } = require('./bookimport').redact(ideasUser(answers, who));
+  const msg = await client.messages.stream({ model, max_tokens: 3000, system: IDEAS_SYS, messages: [{ role: 'user', content: text }] }).finalMessage();
+  if (onUsage) { try { onUsage(msg.usage || {}); } catch (_) { /* counting never breaks planning */ } }
+  if (msg.stop_reason === 'refusal') throw Object.assign(new Error('refused'), { code: 'refusal' });
+  const t = msg.content.filter((b) => b.type === 'text').map((b) => b.text).join('').replace(/^```(?:json)?\s*/m, '').replace(/```\s*$/m, '').trim();
+  let r; try { r = JSON.parse(t.slice(t.indexOf('{'))); } catch (e) { throw Object.assign(new Error('ideas json'), { code: 'json' }); }
+  const list = cleanIdeas(r);
+  if (!list.length) throw Object.assign(new Error('ideas'), { code: 'route' });
+  return list;
+}
+
+// a plan kept on the server for both parents' phones: the free text goes through the import's redaction piece by piece first,
+// so a booking number typed into "stays" or "flights" is not kept
+function keepAnswers(a) {
+  const c = cleanAnswers(a);
+  for (const k of ['dest', 'approx', 'stays', 'flights', 'want', 'avoid']) if (c[k]) c[k] = askClean(c[k]).slice(0, 500);
+  return c;
+}
+
 // the brief the book is written from: the answers, then the agreed route day by day
 function brief(answers, rt, who) {
-  const days = rt.days.map((d, i) => `Day ${i + 1} (${d.date}) — ${d.title.en}; town: ${d.town.en}; main stops: ${d.stops.map((s) => s.en).join(', ') || '—'}; sleep: ${d.sleep.en || d.town.en}`).join('\n');
+  const days = rt.days.map((d, i) => `Day ${i + 1} (${d.date}) — ${d.title.en}; town: ${d.town.en}; main stops: ${d.stops.map((s) => s.en).join(', ') || '—'}; sleep: ${d.sleep.en || d.town.en}${d.move ? `; getting there: ${d.move.en}` : ''}${d.kid ? `; the children's best bit: ${d.kid.en}` : ''}${d.rain ? `; if it rains: ${d.rain.en}` : ''}`).join('\n');
   return { text: `${answersText(answers, who)}\n\nTrip: ${rt.title.en} — ${rt.place.en}, ${rt.from} to ${rt.to}, time zone ${rt.tz}\nThe agreed route:\n${days}`,
     facts: CF.factsFor(rt.countries), who };
 }
@@ -169,4 +217,4 @@ async function dayAsk({ client, model, day, place, forecast, ask, who, tz, take,
   try { return JSON.parse(t.slice(t.indexOf('{'))); } catch (e) { throw Object.assign(new Error('day json'), { code: 'json' }); }
 }
 
-module.exports = { cleanAnswers, whoLine, route, cleanRoute: cleanEdited, brief, slugOf, daysOf, dayAsk, cleanDay, MAPS };
+module.exports = { cleanAnswers, keepAnswers, whoLine, route, ideas, cleanRoute: cleanEdited, brief, slugOf, daysOf, dayAsk, cleanDay, MAPS, LIKES, NEEDS };
