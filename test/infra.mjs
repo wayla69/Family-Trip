@@ -521,6 +521,12 @@ for (const f of ['core.js', 'views.js', 'sheets.js', 'kid.js', 'snap.js', 'sw.js
   const split = (x) => { const out = []; let d = 0, cur = ''; for (const ch of x) { if (ch === '(') d++; if (ch === ')') d--; if (ch === ',' && !d) { out.push(cur); cur = ''; } else cur += ch; } out.push(cur); return out.map((y) => y.trim()); };
   for (const m of css.matchAll(/(?:^|[{}])\s*([^{}@]*(?::root\[data-theme=dark\]|:root:not\(\[data-theme=light\]\))[^{}]*)\{/g)) bad.push(...split(m[1]).filter((x) => !/^:root(\[data-theme=dark\]|:not\(\[data-theme=light\]\))/.test(x)));
   ok(!bad.length, `app.css: every selector of a dark-mode rule carries the dark scope${bad.length ? ' — ' + bad.slice(0, 3).join(' | ') : ''}`); }
+{ // every style the family can pick (public/tags.js) has its painted picture on disk (views.js TASTE_PIC)
+  const { createRequire } = await import('node:module'), fs = await import('node:fs'), TG = createRequire(import.meta.url)('../public/tags.js');
+  const src = fs.readFileSync(new URL('../public/views.js', import.meta.url), 'utf8'), m = src.match(/const TASTE_PIC = \{([\s\S]*?)\};/), pic = {};
+  for (const [, k, v] of (m ? m[1] : '').matchAll(/(\w+): '([^']+)'/g)) pic[k] = v;
+  const keys = [...TG.TASTE_FOOD, ...TG.TASTE_OUT, ...TG.TASTE_NEED].map((r) => r[0]), bad = keys.filter((k) => !pic[k] || !fs.existsSync(new URL(`../public/art/${pic[k]}.webp`, import.meta.url)));
+  ok(keys.length > 30 && !bad.length, `every taste style has its picture (${keys.length})${bad.length ? ' — missing: ' + bad.join(', ') : ''}`); }
 if (process.env.BASE) { const r = await fetch(process.env.BASE + '/app-legacy.css'); ok(r.ok && /text\/css/.test(r.headers.get('content-type')) && !(await r.text()).includes('color-mix('), '/app-legacy.css is served, resolved'); }
 
 console.log(failures ? `\n${failures} FAILED` : '\nALL PASSED');
