@@ -916,7 +916,8 @@
             "th": "≈ A$18–28",
             "en": "≈ A$18–28"
           },
-          "q": "Betty's Burgers Surfers Paradise, Chevron Renaissance, Surfers Paradise, Gold Coast"
+          "q": "Betty's Burgers Surfers Paradise, Chevron Renaissance, Surfers Paradise, Gold Coast",
+          "ok": "2026-11"
         },
         {
           "name": "Currumbin Beach Vikings Surf Life Saving Club",
@@ -941,14 +942,14 @@
             "th": "≈ A$25–45",
             "en": "≈ A$25–45"
           },
-          "q": "Currumbin Beach Vikings Surf Life Saving Club, Pacific Parade, Currumbin, Gold Coast"
+          "q": "Currumbin Beach Vikings Surf Life Saving Club, 741 Pacific Parade, Currumbin, Gold Coast"
         },
         {
-          "name": "Cav's Steakhouse",
+          "name": "Cavill's Steakhouse",
           "kind": 0,
           "area": {
-            "th": "โกลด์โคสต์ แลบราดอร์",
-            "en": "Gold Coast, Labrador"
+            "th": "โกลด์โคสต์ รันอะเวย์เบย์",
+            "en": "Gold Coast, Runaway Bay"
           },
           "tag": {
             "th": "สเต๊ก",
@@ -966,7 +967,8 @@
             "th": "≈ A$40–70",
             "en": "≈ A$40–70"
           },
-          "q": "Cav's Steakhouse, Frank Street, Labrador, Gold Coast"
+          "q": "Cavill's Steakhouse, 6 Bayview Street, Runaway Bay, Gold Coast",
+          "ok": "2026-11"
         },
         {
           "name": "Julius Pizzeria",
@@ -1091,7 +1093,8 @@
             "th": "≈ A$15–30",
             "en": "≈ A$15–30"
           },
-          "q": "Miami Marketta, Hillcrest Parade, Miami, Gold Coast"
+          "q": "Miami Marketta, 23 Hillcrest Parade, Miami, Gold Coast",
+          "ok": "2026-11"
         },
         {
           "name": "Eat Street Northshore",
@@ -1141,7 +1144,7 @@
             "th": "≈ A$12–28",
             "en": "≈ A$12–28"
           },
-          "q": "Paddock Bakery, Hibiscus Haven, Miami, Gold Coast"
+          "q": "Paddock Bakery, 20 Hibiscus Haven, Miami, Gold Coast"
         },
         {
           "name": "Gelato Messina South Brisbane",
@@ -1191,7 +1194,8 @@
             "th": "≈ A$8–18",
             "en": "≈ A$8–18"
           },
-          "q": "Lune Croissanterie, Manning Street, South Brisbane"
+          "q": "Lune Croissanterie, 15 Manning Street, South Brisbane",
+          "ok": "2026-11"
         }
       ]
     },
@@ -1577,8 +1581,8 @@
           "name": "Gelocchio",
           "kind": 2,
           "area": {
-            "th": "แคนส์ ใกล้เอสพลานาด",
-            "en": "Cairns, near the Esplanade"
+            "th": "แคนส์ เอสพลานาด",
+            "en": "Cairns Esplanade"
           },
           "tag": {
             "th": "เจลาโต",
@@ -1596,7 +1600,8 @@
             "th": "≈ A$7–15",
             "en": "≈ A$7–15"
           },
-          "q": "Gelocchio, Shields Street, Cairns"
+          "q": "Gelocchio, 93 Esplanade, Cairns",
+          "ok": "2026-11"
         }
       ]
     },
@@ -1626,32 +1631,8 @@
             "th": "≈ A$80–100",
             "en": "≈ A$80–100"
           },
-          "q": "Ilkari Restaurant, Sails in the Desert, Yulara, Northern Territory"
-        },
-        {
-          "name": "Arnguli Grill",
-          "kind": 0,
-          "area": {
-            "th": "ยูลารา โรงแรมเดสเสิร์ตการ์เดนส์",
-            "en": "Yulara, Desert Gardens Hotel"
-          },
-          "tag": {
-            "th": "สเต๊ก อาหารออสเตรเลีย",
-            "en": "Grill, Australian"
-          },
-          "what": {
-            "th": "ห้องอาหารมื้อเย็นของโรงแรมเดสเสิร์ตการ์เดนส์ เสิร์ฟเนื้อย่างและจานที่ใช้วัตถุดิบพื้นถิ่นออสเตรเลีย",
-            "en": "The dinner restaurant of the Desert Gardens Hotel, serving grills and dishes built on Australian native ingredients"
-          },
-          "why": {
-            "th": "ห้องอาหารโรงแรมที่รับครอบครัว มีเมนูเด็ก จองรอบแรกของมื้อเย็นได้",
-            "en": "A hotel dining room that takes families, with a children's menu and an early first sitting to book"
-          },
-          "pr": {
-            "th": "≈ A$60–90",
-            "en": "≈ A$60–90"
-          },
-          "q": "Arnguli Grill, Desert Gardens Hotel, Yulara, Northern Territory"
+          "q": "Ilkari Restaurant, Sails in the Desert, Yulara, Northern Territory",
+          "ok": "2026-11"
         },
         {
           "name": "Geckos Cafe",
@@ -1726,7 +1707,8 @@
             "th": "≈ A$30–55",
             "en": "≈ A$30–55"
           },
-          "q": "Outback BBQ & Bar, Outback Hotel, Yulara, Northern Territory"
+          "q": "Outback BBQ & Bar, Outback Hotel, Yulara, Northern Territory",
+          "ok": "2026-11"
         },
         {
           "name": "Carmichael's Restaurant",

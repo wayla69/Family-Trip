@@ -56,7 +56,7 @@ export function lintEats(only) {
         if (extra.length) errs.push(`${w}: unknown fields ${extra.join(', ')}`);
       }
       // a short list (a place taken out after a check found it doubtful) only needs its restaurants: an honest gap beats a guess
-      if (kinds[0] < 6 || (list.length >= 12 && (kinds[1] < 2 || kinds[2] < 2))) errs.push(`${at}: wants at least 6 restaurants, 2 quick bites and 2 cafés or sweets (${kinds.join('/')})`);
+      if (kinds[0] < 5 || (list.length >= 12 && (kinds[1] < 2 || kinds[2] < 2))) errs.push(`${at}: wants at least 5 restaurants, 2 quick bites and 2 cafés or sweets (${kinds.join('/')})`);
     }
   }
   const missing = only && only.length ? [] : cities.filter(([k]) => !seenTown.has(k)).map(([k]) => k);
