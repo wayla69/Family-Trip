@@ -49,12 +49,12 @@ if (v.errs.length) { console.log(`plan ${files[0]} is not valid:`); for (const e
 const notes = [];
 const seed = toSeed(plan, notes);
 const out = flags.out ? path.resolve(flags.out) : path.join(root, 'server', 'seeds', `${seed.slug}.json`);
-if (fs.existsSync(out) && !flags.force) { console.error(`${out} exists — pass --force to overwrite`); process.exit(1); }
 const code = finish(`plan → seed ${rel(out)} (format 2)`, seed, v.warns, rel(out));
 if (code === 2) process.exit(2);
 for (const m of notes) console.log(`  default: ${m}`);
 fs.mkdirSync(path.dirname(out), { recursive: true });
-fs.writeFileSync(out, JSON.stringify(seed, null, 1) + '\n');
+try { fs.writeFileSync(out, JSON.stringify(seed, null, 1) + '\n', { flag: flags.force ? 'w' : 'wx' }); }   // 'wx': refuses an existing file in the same step that writes
+catch (e) { if (e.code !== 'EEXIST') throw e; console.error(`${out} exists — pass --force to overwrite`); process.exit(1); }
 console.log(`  wrote ${rel(out)}
 next:
   [ ] art: ${artList(seed)} → add each to ART in public/sw.js and bump mbs-vN

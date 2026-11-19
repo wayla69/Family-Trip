@@ -24,7 +24,8 @@ for (const f of files) {
   for (const { svg, ...it } of mod.items) {
     const out = path.join(DIR, it.file);
     fs.mkdirSync(path.dirname(out), { recursive: true });
-    const changed = !fs.existsSync(out) || fs.readFileSync(out, 'utf8') !== svg;
+    let was = null; try { was = fs.readFileSync(out, 'utf8'); } catch (_) { /* a new picture */ }
+    const changed = was !== svg;
     fs.writeFileSync(out, svg);
     const old = byId.get(it.id);
     const approved = old && old.ok && !old.review && !changed && old.file === it.file;
