@@ -1046,7 +1046,8 @@ const T = 'hk-macau-2026';
   ok(await page.locator('.advc img.crest[src="/art/crest/hk.svg"]').count() === 1 && (await page.textContent('.advc')).includes('DOLPHIN-2026-MIMI'), 'passport cover as printed: crest, title, passport no. per child');
   ok(await page.evaluate(() => getComputedStyle(document.querySelector('#m1 header')).backgroundColor) === 'rgb(252, 231, 241)', 'day 2 mission in the printed pink (#FCE7F1)');
   ok((await page.textContent('.guides')).includes('Captain Pinky') && await page.locator('#pl-words .tick').count() === 10 && await page.locator('#pl-dimsum .stars').count() === 10, 'Captain Pinky, Say It Like a Local (10), Dim Sum Tasting Card (stars)');
-  { // a lazy picture may still be on its way: wait for every one (a few seconds), then name any that did not arrive
+  { // a lazy picture loads only near the screen: bring each into view in turn, wait for every one, then name any that did not arrive
+    await page.evaluate(async () => { for (const i of document.querySelectorAll('img[src^="/art/"]')) { i.scrollIntoView({ block: 'center' }); await new Promise((r) => setTimeout(r, 30)); } scrollTo(0, 0); });
     await page.waitForFunction(() => Array.from(document.querySelectorAll('img[src^="/art/"]')).every((i) => i.complete && i.naturalWidth > 0), null, { timeout: 8000 }).catch(() => {});
     const bad = await page.evaluate(() => Array.from(document.querySelectorAll('img[src^="/art/"]')).filter((i) => !(i.complete && i.naturalWidth > 0)).map((i) => i.getAttribute('src')));
     ok(!bad.length, `character, guide and stamp drawings load${bad.length ? ` (not loaded: ${bad.slice(0, 5).join(', ')})` : ''}`); }
