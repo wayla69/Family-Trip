@@ -11,7 +11,7 @@ const i18n = (x, n = 120) => (x && typeof x === 'object' ? { th: one(x.th || x.e
 
 // what the family likes and needs, picked as chips on the page (the keys are the page's; the words are what the helper reads)
 const LIKES = { animals: 'animals and zoos', aquarium: 'aquariums', sea: 'beach and sea', nature: 'nature and easy walks', park: 'theme parks', play: 'playgrounds and play centres', museum: 'hands-on museums',
-  train: 'trains and vehicles', snow: 'snow', farm: 'farms and fruit picking', food: 'local food', shop: 'shopping', culture: 'temples and culture', onsen: 'hot springs' };
+  train: 'trains and vehicles', snow: 'snow', farm: 'farms and fruit picking', food: 'local food', shop: 'shopping', culture: 'temples and culture', onsen: 'hot springs', views: 'viewpoints and towers', show: 'shows and parades' };
 const NEEDS = { pram: 'we bring a pram — step-free ways', nap: 'a midday nap back at the hotel', walk: 'little walking', drive: 'no drive over two hours', mild: 'mild food for the children', crowd: 'avoid crowds and queues', early: 'early nights' };
 const keysOf = (v, table) => [...new Set((Array.isArray(v) ? v : []).map(String).filter((k) => Object.prototype.hasOwnProperty.call(table, k)))];
 

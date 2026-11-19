@@ -113,8 +113,9 @@ function render() {
   else if (p[0] === 'notebook') html = viewNotebook();
   else if (p[0] === 'viewers' && isEditor()) html = viewViewers();
   else if (p[0] === 'import' && isEditor()) html = viewImport();
-  else if (p[0] === 'planner' && isEditor()) html = viewPlanner();
+  else if (p[0] === 'planner' && isEditor()) html = viewPlanner(p[1]);
   else if (p[0] === 'eats' && isEditor()) html = viewEats(p[1]);
+  else if (p[0] === 'taste' && isEditor()) html = viewTaste(p[1]);
   else if (p[0] === 'family' && isEditor()) html = viewFamily();
   else if (p[0] === 'start' && isEditor()) html = viewStart(p);
   else if (p[0] === 'privacy') html = viewPrivacy();
@@ -317,6 +318,7 @@ ${isEditor() ? `<a class="nbcard" href="#/capsules"><span class="emb">${hubIc('l
 <a class="nbcard" href="#/year/${yearOfNow()}"><span class="emb">${hubIc('year')}</span><div><b>${L(`ปี ${yearOfNow()} ของเรา`, `Our ${yearOfNow()}`)}</b><small>${L('ทุกทริปของปีเป็นเล่มเดียว เห็นลูกโตขึ้นทีละทริป', 'Every trip of the year in one book — the children growing trip by trip')}</small></div><span class="arrow">›</span></a>` : ''}
 <div class="part">${L('สำหรับทริปหน้า', 'For the next trip')}</div>
 <a class="nbcard" href="#/notebook"><span class="emb">${hubIc('notebook')}</span><div><b>${L('สมุดโน้ตนักเดินทาง', 'Travel notebook')}</b><small>${S.reviews.length ? L(`${S.reviews.length} รีวิว · ที่พัก ร้านอาหาร สถานที่ — ไว้วางแผนทริปหน้า`, `${S.reviews.length} reviews · stays, food, places — for planning the next trip`) : L('ให้ดาว ติดแท็ก จดว่าอะไรที่ครอบครัวเราชอบ — ไว้วางแผนทริปหน้า', 'Stars, tags and notes on what worked for our family — for planning the next trip')}</small></div><span class="arrow">›</span></a>
+${isEditor() ? tasteCard() : ''}
 ${isEditor() ? `<a class="nbcard eatlibcard" href="#/eats"><span class="emb">${hubIc('eat')}</span><div><b>${L('คลังร้านอาหาร', 'Places to eat — our library')}</b><small>${L('ร้านจากทุกเล่ม และร้านที่ผู้ช่วยหาแล้วเช็กกับเว็บ — ไว้วางแผนทริปหน้า', 'The places from every book, and ones the helper found and checked — for planning the next trip')}</small></div><span class="arrow">›</span></a>` : ''}
 ${isEditor() ? backupCard() : ''}
 ${dispCard()}
@@ -888,7 +890,7 @@ const HUB_PIC = { lang: '/art/hub/lang.webp', textsize: '/art/hub/textsize.webp'
   money: '/art/hub/money.webp', notebook: '/art/hub/notebook.webp', kid: '/art/emoji/joy.webp', shelf: '/art/hub/shelf.webp', home: '/art/kidui/bar-home.webp',
   family: '/art/hub/family.webp', relatives: '/art/hub/relatives.webp', helper: '/art/hub/helper.webp', settings: '/art/hub/settings.webp',
   checkphone: '/art/hub/checkphone.webp', devices: '/art/hub/devices.webp', room: '/art/hub/room.webp', privacy: '/art/hub/privacy.webp', find: '/art/hub/find.webp',
-  passkey: '/art/hub/passkey.webp', comment: '/art/hub/comment.webp', growth: '/art/hub/growth.webp', bell: '/art/hub/bell.webp', famap: '/art/hub/map.webp', year: '/art/hub/year.webp', letter: '/art/hub/letter.webp', manual: '/art/hub/manual.webp', pencil: '/art/hub/pencil.webp', snapcam: '/art/hub/camera.webp' };
+  passkey: '/art/hub/passkey.webp', taste: '/art/emoji/heart.webp', comment: '/art/hub/comment.webp', growth: '/art/hub/growth.webp', bell: '/art/hub/bell.webp', famap: '/art/hub/map.webp', year: '/art/hub/year.webp', letter: '/art/hub/letter.webp', manual: '/art/hub/manual.webp', pencil: '/art/hub/pencil.webp', snapcam: '/art/hub/camera.webp' };
 /* The settings-type pages wear the menu's look (owner, Nov 2026: "ปรับ UI ให้เข้ากับส่วนอื่นของเล่ม ทำให้สวยงาม"): a head band in the
    page's own pastel with its picture in a ringed circle, and each part a card whose heading carries its picture. Colours = the menu's brights. */
 const PG = { blue: '#4F7BFF', orange: '#FF9A3C', teal: '#1CC9A4', purple: '#C850F0', pink: '#FF6FA8', gold: '#F2B90C', cyan: '#22D3EE', lime: '#9BD82A' };
@@ -2802,9 +2804,9 @@ const PL_OPTS = {
   budget: [['low', '🪙', 'ประหยัด', 'Careful', 'ที่ฟรีและราคาย่อมเยา', 'Free and low-cost'], ['mid', '💳', 'กลางๆ', 'Middle', 'ตามสบาย ไม่หรูมาก', 'Comfortable, not lavish'], ['high', '💎', 'สบายเต็มที่', 'Comfortable', 'จ่ายเพื่อความง่าย', 'Pay for ease']],
 };
 // what the family likes and needs: chips instead of typing (the keys are server/planner.js LIKES / NEEDS)
-const PL_LIKES = [['animals', '🐘', 'สัตว์', 'Animals'], ['aquarium', '🐠', 'อควาเรียม', 'Aquariums'], ['sea', '🏖️', 'ทะเล', 'The sea'], ['nature', '🌲', 'ธรรมชาติ', 'Nature'], ['park', '🎢', 'สวนสนุก', 'Theme parks'], ['play', '🎈', 'สนามเด็กเล่น', 'Playgrounds'], ['museum', '🔬', 'พิพิธภัณฑ์เด็ก', 'Kids’ museums'],
-  ['train', '🚂', 'รถไฟ', 'Trains'], ['snow', '❄️', 'หิมะ', 'Snow'], ['farm', '🍓', 'ฟาร์ม', 'Farms'], ['food', '🍜', 'ของกิน', 'Food'], ['shop', '🛍️', 'ช้อปปิ้ง', 'Shopping'], ['culture', '⛩️', 'วัดและวัฒนธรรม', 'Culture'], ['onsen', '♨️', 'ออนเซ็น', 'Hot springs']];
-const PL_NEEDS = [['pram', '👶', 'ใช้รถเข็น', 'A pram'], ['nap', '😴', 'งีบกลางวัน', 'A midday nap'], ['walk', '🚶', 'เดินน้อย', 'Little walking'], ['drive', '🚗', 'ไม่นั่งรถนาน', 'No long drives'], ['mild', '🥣', 'อาหารไม่เผ็ด', 'Mild food'], ['crowd', '🌿', 'เลี่ยงคนแน่น', 'Avoid crowds'], ['early', '🌙', 'นอนเร็ว', 'Early nights']];
+// the planner's likes and needs are the family's style table (public/tags.js), so a plan, #/taste and the libraries speak one language
+const PL_LIKES = TASTE_OUT.map((r) => r.slice(0, 4));
+const PL_NEEDS = TASTE_NEED;
 // changes parents ask for most, one tap each (the words go to the helper as the ask)
 const PL_ASKS = [['ช้าลงอีก', 'Slower', 'ทำให้ทั้งทริปช้าลง วันละที่หลักที่เดียว', 'Make the whole trip slower: one main thing a day'], ['เพิ่มวันพัก', 'A rest day', 'เพิ่มวันพักสบายๆ ตรงกลางทริป', 'Add an easy rest day in the middle'], ['ย้ายที่พักน้อยลง', 'Fewer hotel moves', 'ย้ายที่พักให้น้อยลง', 'Fewer hotel changes'],
   ['เพิ่มที่สำหรับเด็กเล็ก', 'More for little ones', 'เพิ่มที่ที่เด็กเล็กสนุก', 'More places small children enjoy'], ['ประหยัดลง', 'Cheaper', 'ทำให้ประหยัดลง', 'Make it cheaper'], ['เดินทางสั้นลง', 'Shorter legs', 'ทำให้การเดินทางแต่ละช่วงสั้นลง', 'Make each leg shorter']];
@@ -2882,8 +2884,42 @@ const plTownCol = (rt) => { const seen = {}; let n = 0; return rt.days.map((d) =
 function plText(rt) {
   return [`${T(rt.title)} · ${fmtRange({ date_from: rt.from, date_to: rt.to })}`, ...rt.days.map((d, i) => `${L(`วันที่ ${i + 1}`, `Day ${i + 1}`)} (${fmtDay(d.date, { weekday: 'short', day: 'numeric', month: 'short' })}) ${d.emoji || ''} ${T(d.title)}${d.stops && d.stops.length ? ` — ${d.stops.map((x) => T(x)).join(', ')}` : ''} · ${L('นอน', 'sleep')}: ${T(d.sleep) || T(d.town)}`)].join('\n');
 }
-function viewPlanner() {
-  if (!pln.a) { pln.a = { dest: '', from: '', to: '', approx: '', len: 0, adults: 2, seniors: false, pace: 'slow', move: 'mix', budget: 'mid', stays: '', flights: '', want: '', avoid: '', likes: [], needs: [], ...(ls('plan') || {}) }; pln.route = pln.route || ls('planRoute') || null; pln.id = ls('planId') || ''; pln.at = ls('planAt') || 0; }
+// the planner's questions as pages (owner, Nov 2026: "UIUX แบบนี้จะยาวและใช้งานยาก … แยกเป็นหลายหน้า"): one question a page, a row of
+// numbered dots on top (each a link), "back" and a big "next"; the last page holds the buttons that ask for the route. A jump to the
+// route is offered from the second page on, once the family has said where.
+const PL_Q = [['where', '📍', 'ไปไหน', 'Where'], ['when', '📅', 'เมื่อไร', 'When'], ['who', '👨‍👩‍👧', 'ใครไป', 'Who'], ['style', '🎒', 'แบบไหน', 'How'], ['more', '📝', 'เพิ่มเติม', 'Extras']];
+function plWizard(qs, pages, go, hasDest) {
+  const k = Math.max(0, PL_Q.findIndex((q) => q[0] === qs)), q = PL_Q[k], last = k === PL_Q.length - 1;
+  const dots = `<nav class="plqs" aria-label="${L('คำถาม', 'Questions')}">${PL_Q.map((x, j) => `<a class="plqd${j === k ? ' now' : j < k ? ' done' : ''}" href="#/planner/${x[0]}"${j === k ? ' aria-current="step"' : ''}><i>${j < k ? '✓' : j + 1}</i><span>${L(x[2], x[3])}</span></a>`).join('')}</nav>`;
+  const prev = k ? `<a class="btn ghost plback" href="#/planner/${PL_Q[k - 1][0]}">‹ ${L('ย้อน', 'Back')}</a>` : '<span></span>';
+  const next = last ? '' : `<a class="btn plnext" href="#/planner/${PL_Q[k + 1][0]}">${L('ถัดไป', 'Next')} ›</a>`;
+  const skip = !last && k && hasDest ? `<button type="button" class="linkbtn plskip" data-a="planroute">${L('ข้ามไปขอเส้นทางเลย', 'Skip to the route')} ›</button>` : '';
+  return `${dots}<div class="plqpage" data-q="${q[0]}">${pages[q[0]]}</div>${last ? go : `<div class="row plnav">${prev}${next}</div>${skip}`}${last ? `<div class="row plnav">${prev}<span></span></div>` : ''}`;
+}
+// what our past books suggest for the next plan: the towns we went to (again), other towns of the countries we went to, how long
+// our trips ran and the month we usually go — read on the phone from the books' titles and dates, nothing is sent
+function plHist() {
+  const g = plGeo(), trips = (S && S.trips || []).filter((t) => t.date_from && t.date_to);
+  const out = { html: '', len: 0, mon: null };
+  if (!trips.length) return out;
+  const days = trips.map((t) => Math.round((Date.parse(t.date_to) - Date.parse(t.date_from)) / 864e5) + 1).filter((n) => n > 0 && n < 40).sort((x, y) => x - y);
+  if (days.length) out.len = days[Math.floor((days.length - 1) / 2)];   // the lower middle: two trips of 6 and 16 days say 6
+  const mc = {}; for (const t of trips) { const m = +t.date_from.slice(5, 7); mc[m] = (mc[m] || 0) + 1; }
+  const top = Object.entries(mc).sort((x, y) => y[1] - x[1])[0];
+  if (top && top[1] >= 2) { const d = new Date(2030, +top[0] - 1, 1); out.mon = { th: d.toLocaleDateString('th-TH', { month: 'long' }), en: d.toLocaleDateString('en-GB', { month: 'long' }) }; }
+  if (!g) return out;
+  const text = trips.map((t) => [T(t.title), t.title && t.title.en, t.title && t.title.th, t.sub && (t.sub.en || ''), t.sub && (t.sub.th || ''), ...(((t.theme || {}).snap || {}).places || []).map((p) => (p && (p.en || p.th)) || p)].filter(Boolean).join(' ')).join(' | ').toLowerCase();
+  const seen = (p) => [snapShort(p.name).en, snapShort(p.name).th, ...(p.al || [])].some((n) => String(n || '').length >= 4 && text.includes(String(n).toLowerCase()));
+  const been = g.places.filter((p) => !p.home && seen(p)), ccs = new Set(been.map((p) => p.cc));
+  const fresh = g.places.filter((p) => !p.home && ccs.has(p.cc) && !been.includes(p)).slice(0, 6);
+  const chip = (p) => { const n = snapShort(p.name)[lang === 'en' ? 'en' : 'th']; return `<button type="button" class="plsg" data-a="plansug" data-v="${esc(n)}"${p.c ? ` style="--tc:${esc(p.c)}"` : ''}>${p.art ? `<img src="${esc(p.art)}" alt="" loading="lazy" draggable="false">` : ''}<span>${esc(n)}</span></button>`; };
+  const part = (h, list) => (list.length ? `<div class="part pickh plhist">${h}</div><div class="plsug">${list.map(chip).join('')}</div>` : '');
+  out.html = part(L('ไปที่เดิมอีกครั้ง', 'Somewhere we loved, again'), been.slice(0, 6)) + part(L('ที่ใหม่ในประเทศที่เคยไป', 'New towns in countries we know'), fresh);
+  return out;
+}
+function viewPlanner(qs) {
+  // a new plan starts from what the family chose on #/taste (likes and needs), then what this phone kept of the plan in hand
+  if (!pln.a) { const ft = famTaste(); pln.a = { dest: '', from: '', to: '', approx: '', len: 0, adults: 2, seniors: false, pace: 'slow', move: 'mix', budget: 'mid', stays: '', flights: '', want: '', avoid: '', likes: [...ft.out.like], needs: [...ft.needs], ...(ls('plan') || {}) }; pln.route = pln.route || ls('planRoute') || null; pln.id = ls('planId') || ''; pln.at = ls('planAt') || 0; }
   if (pln.info === null) { pln.info = 'loading'; api('GET', '/api/b/planner').then((r) => { pln.info = r; safeRender(); }, () => { pln.info = { on: false, left: 0, max: 0 }; safeRender(); }); }
   if (pln.plans === null) { pln.plans = []; api('GET', '/api/b/planner/plans').then((r) => { pln.plans = r.plans || []; planAdopt(); safeRender(); }, () => {}); }
   const a = pln.a, info = pln.info && typeof pln.info === 'object' ? pln.info : null, on = info ? info.on : !!S.features.story;
@@ -2897,18 +2933,23 @@ function viewPlanner() {
   const lens = `<div class="plchips pllens" role="group" aria-label="${L('กี่วัน', 'How many days')}">${[3, 4, 5, 6, 7, 10, 14].map((n) => `<button type="button" class="plchip" data-a="planlen" data-v="${n}" aria-pressed="${nd === n}">${n} ${L('วัน', 'days')}</button>`).join('')}</div>`;
   const now = new Date(), months = Array.from({ length: 9 }, (_, i) => { const d = new Date(now.getFullYear(), now.getMonth() + 1 + i, 1); return d.toLocaleDateString(LOC(), { month: 'long', year: 'numeric' }); });
   const ages = a.from ? famAgesOn(a.from) : '';
-  const q1 = pcard('famap', PG.purple, L('ไปไหน เมื่อไร ใครไป', 'Where, when and who'), `<div class="pform">${f('dest', 'อยากไปที่ไหน', 'Where to', L('เช่น โตเกียว หรือ ฮอกไกโด 2 เมือง', 'e.g. Tokyo, or two towns in Hokkaido'))}
+  // the questions, a page each (owner, Nov 2026: "แยกเป็นหลายหน้า … เรียนรู้จากประวัติเดิมเพื่อเป็น suggestion"): where · when · who · how · more,
+  // each with what our past books suggest (plHist); #/planner/<step>, the phone's back goes a step back
+  const hist = plHist();
+  const qWhere = pcard('famap', PG.purple, L('อยากไปที่ไหน', 'Where to'), `<div class="pform">${f('dest', 'อยากไปที่ไหน', 'Where to', L('เช่น โตเกียว หรือ ฮอกไกโด 2 เมือง', 'e.g. Tokyo, or two towns in Hokkaido'))}
 <div class="plsug" id="plsug">${plSugHtml(a.dest)}</div>
 ${on ? `<button type="button" class="linkbtn plidgo" data-a="planideas"${pln.busy ? ' disabled' : ''}>💡 ${L('ยังไม่รู้จะไปไหน ให้ผู้ช่วยเสนอ', 'Not sure where? Ask the helper for ideas')}</button>` : ''}
-<div class="pform2">${f('from', 'วันแรก', 'First day', '', 'date', 10)}${f('to', 'วันสุดท้าย', 'Last day', '', 'date', 10)}</div>
+${hist.html}</div>`);
+  const qWhen = pcard('year', PG.teal, L('ไปเมื่อไร กี่วัน', 'When, and how long'), `<div class="pform"><div class="pform2">${f('from', 'วันแรก', 'First day', '', 'date', 10)}${f('to', 'วันสุดท้าย', 'Last day', '', 'date', 10)}</div>
 <div class="pllenrow"><span class="label">${a.from ? L('หรือแตะจำนวนวัน', 'Or tap how long') : L('ยังไม่รู้วัน? แตะจำนวนวันกับเดือนคร่าวๆ', 'No dates yet? Tap how long and roughly when')}</span>${lens}<b class="plspan" id="plspan">${esc(plSpan(nd))}</b></div>
 ${a.from ? '' : `<div class="plchips plmons" role="group">${months.map((m) => `<button type="button" class="plchip" data-a="planmon" data-v="${esc(m)}" aria-pressed="${a.approx === m}">${esc(m)}</button>`).join('')}</div>${f('approx', 'หรือพิมพ์เอง', 'Or type it', L('เช่น ปลายมีนาคม', 'e.g. late March'), 'text', 80)}`}
-<div class="plwho"><div class="plstep" role="group" aria-label="${L('ผู้ใหญ่กี่คน', 'Adults')}"><span>${L('ผู้ใหญ่', 'Adults')}</span><button type="button" data-a="planadults" data-v="-1" aria-label="${L('ลด', 'Fewer')}">−</button><b id="pladults">${a.adults}</b><button type="button" data-a="planadults" data-v="1" aria-label="${L('เพิ่ม', 'More')}">＋</button></div>
+${hist.len ? `<p class="label plhint">⭐ ${L(`ทริปที่ผ่านมาเราไปราว ${hist.len} วัน`, `Our past trips ran about ${hist.len} days`)}${hist.mon ? L(` · มักไปช่วง${hist.mon.th}`, ` · usually in ${hist.mon.en}`) : ''}</p>` : ''}</div>`);
+  const qWho = pcard('family', PG.pink, L('ใครไปบ้าง', 'Who is coming'), `<div class="pform"><div class="plwho"><div class="plstep" role="group" aria-label="${L('ผู้ใหญ่กี่คน', 'Adults')}"><span>${L('ผู้ใหญ่', 'Adults')}</span><button type="button" data-a="planadults" data-v="-1" aria-label="${L('ลด', 'Fewer')}">−</button><b id="pladults">${a.adults}</b><button type="button" data-a="planadults" data-v="1" aria-label="${L('เพิ่ม', 'More')}">＋</button></div>
 <label class="ckrow"><input type="checkbox" data-a="planseniors"${a.seniors ? ' checked' : ''}> ${L('มีผู้สูงอายุไปด้วย', 'An older grown-up comes too')}</label></div>
 ${kids.length ? `<div class="plkids">${kids.map((k) => { const src = kidArt(k.slug); return `<span class="plkid">${src ? `<img src="${esc(src)}" alt="" draggable="false">` : `<span class="plke">${emo(k.emoji || '🧒')}</span>`}<b>${esc(kidName(k.slug))}</b></span>`; }).join('')}${ages ? `<small>${L('ตอนไป', 'On the trip')}: ${ages}</small>` : ''}</div>` : ''}
 <p class="label">${kids.length ? `🔒 ${L('ผู้ช่วยรู้แค่อายุของเด็กๆ ไม่รู้ชื่อ', 'The helper is told the children’s ages, never their names')}` : L('ใส่ลูกๆ ในหน้าครอบครัวก่อน ผู้ช่วยจะวางแผนตามอายุ', 'Add the children on the family page first — the plan follows their ages')}</p></div>`);
   const q2 = pcard('plan', PG.teal, L('เที่ยวแบบไหน', 'How we travel'), `<div class="part pickh">${L('จังหวะ', 'Pace')}</div>${opts('pace')}<div class="part pickh">${L('การเดินทาง', 'Getting around')}</div>${opts('move')}<div class="part pickh">${L('งบ', 'Budget')}</div>${opts('budget')}
-<div class="part pickh">${L('เด็กๆ ชอบอะไร (แตะได้หลายอย่าง)', 'What the children like (tap any)')}</div>${chips('likes', PL_LIKES)}<div class="part pickh">${L('สิ่งที่ต้องคิดถึง', 'Things to allow for')}</div>${chips('needs', PL_NEEDS)}`);
+<div class="part pickh">${L('เด็กๆ ชอบอะไร (แตะได้หลายอย่าง)', 'What the children like (tap any)')}</div>${chips('likes', PL_LIKES)}${famTaste().out.like.length || famTaste().needs.length ? `<p class="label plhint">💛 ${L('เลือกไว้ให้จาก', 'Filled in from')} <a href="#/taste">${L('สิ่งที่ครอบครัวเราชอบ', 'what our family likes')}</a></p>` : ''}<div class="part pickh">${L('สิ่งที่ต้องคิดถึง', 'Things to allow for')}</div>${chips('needs', PL_NEEDS)}`);
   const q3 = pcard('notebook', PG.gold, L('ที่จองแล้วและที่อยากทำ', 'Booked already, and wishes'), `<div class="pform">${tx('want', 'ต้องไปให้ได้', 'Must do', L('เช่น สวนสัตว์อุเอโนะ ดูหิมะ', 'e.g. Ueno Zoo, seeing snow'), 500)}
 ${tx('stays', 'ที่พักที่จองแล้ว (ถ้ามี)', 'Stays already booked (if any)', L('เช่น 3 คืนแรกแถวอุเอโนะ', 'e.g. the first 3 nights near Ueno'), 400)}
 ${tx('flights', 'เที่ยวบิน (ถ้ามี)', 'Flights (if any)', L('เช่น ถึง 08:00 วันแรก กลับ 18:00 วันสุดท้าย', 'e.g. land 08:00 on day 1, leave 18:00 on the last day'), 200)}
@@ -2959,7 +3000,7 @@ ${planEatHtml(rt, on)}
 <nav class="plsteps" aria-label="${L('ขั้นตอน', 'Steps')}">${step(1, 'ตอบคำถาม', 'Answer', s1, !s2, '#plq')}${step(2, 'ดูและแก้เส้นทาง', 'Shape the route', s2, s2, s2 ? '#plroute' : '#plq')}${step(3, 'เขียนทั้งเล่ม', 'Write the book', false, false, s2 ? '#plfoot' : '#plq')}</nav>
 ${!on ? `<div class="notice">${L('ผู้ช่วยยังไม่ได้เปิดใช้สำหรับครอบครัวนี้', 'The helper is not switched on for this family')}</div>` : ''}
 ${saved}
-<div id="plq">${form ? `${q1}${ideasHtml}${q2}${q3}${go}` : sum}</div>
+<div id="plq">${form ? plWizard(qs, { where: `${qWhere}${ideasHtml}`, when: qWhen, who: qWho, style: q2, more: q3 }, go, !!String(a.dest || '').trim()) : sum}</div>
 ${wait}${pln.err ? `<div class="err plerr" role="alert">${esc(pln.err)}</div>` : ''}
 ${altsHtml}${routeHtml}
 <p class="impnote">🔒 ${L('ส่งให้ผู้ช่วย: คำตอบในหน้านี้ เส้นทาง และอายุของเด็ก — ไม่ส่งชื่อลูก รูป หรือความทรงจำ · เบอร์ฉุกเฉินและวีซ่ามาจากตารางที่ตรวจแล้วของแอป ไม่ได้มาจากผู้ช่วย · แผนเก็บไว้บนเซิร์ฟเวอร์ของครอบครัวให้พ่อแม่เปิดได้ทั้งสองเครื่อง', 'Sent to the helper: the answers on this page, the route and the children’s ages — never their names, photos or memories · emergency numbers and visa rules come from the app’s checked table, not from the helper · the plan is kept on the family’s server so both parents can open it')}</p>`;
@@ -2981,6 +3022,24 @@ const KID_TAGS = [
 ];
 const kidTagsOf = (x) => { const s = [x.why, x.what].map((v) => `${(v && v.en) || ''} ${(v && v.th) || ''}`).join(' '); return KID_TAGS.filter((k) => k[4].test(s)).map((k) => k[0]); };
 let eatTags = new Set();
+// the family's taste (#/taste, families.profile.taste — docs/PLACES-ECOSYSTEM.md F3): read from S.family, empty when none was chosen
+const famTaste = () => cleanTaste(S && S.family && S.family.taste);
+// a place to eat's own styles (read from its words, public/tags.js) and its child-friendly tags — one list for the cards' filters
+const placeTags = (x) => [...kidTagsOf(x), ...foodStylesOf(x)];
+// 1 = one of our styles and none we avoid, -1 = a style we avoid, 0 = neither; "mild food" as a need counts a mild place as ours
+function tasteFitEat(x) {
+  const t = famTaste(), st = foodStylesOf(x), f = tasteFit(st, t.food);
+  if (f) return f;
+  return t.needs.includes('mild') && kidTagsOf(x).includes('mild') ? 1 : 0;
+}
+const fitBadge = (x) => (tasteFitEat(x) > 0 ? `<span class="etag fitb">💛 ${L('ตรงใจเรา', 'Our style')}</span>` : '');
+// the styles the town's places have, as filter chips — the family's own styles first, marked with a heart
+const foodStyleBar = (places) => {
+  const t = famTaste(), have = TASTE_FOOD.filter((g) => places.some((x) => foodStylesOf(x).includes(g[0])));
+  if (have.length < 2) return '';
+  have.sort((a, b) => (t.food.like.includes(b[0]) ? 1 : 0) - (t.food.like.includes(a[0]) ? 1 : 0));
+  return `<div class="row chips ektagbar fstyles" role="group" aria-label="${L('แนวอาหาร', 'Kind of food')}"><span class="label">${L('แนวอาหาร', 'Kind of food')}</span>${have.map((g) => `<button class="chip${t.food.like.includes(g[0]) ? ' ours' : ''}" data-a="eattag" data-v="${g[0]}" aria-pressed="${eatTags.has(g[0])}">${emo(g[1])} ${L(g[2], g[3])}${t.food.like.includes(g[0]) ? ' 💛' : ''}</button>`).join('')}</div>`;
+};
 // our own verdict from the travel notebook on a place of the same name (any book): stars, or "we would not go again"
 const famStar = (x) => (!x.fam ? '' : x.fam.again === false ? `<span class="etag famno">${L('เราไม่ไปซ้ำ', 'We wouldn’t go again')}</span>` : x.fam.r ? `<span class="etag famstar">${'★'.repeat(x.fam.r)} ${L('ของเรา', 'ours')}</span>` : x.fam.again ? `<span class="etag famstar">♥ ${L('อยากไปซ้ำ', 'We’d go again')}</span>` : '');
 const famRank = (x) => (!x.fam ? 0 : x.fam.again === false ? -1 : (x.fam.r || 0) + (x.fam.again ? 0.5 : 0));
@@ -3029,21 +3088,64 @@ function bedEats(t, i, fbox) {
   const slot = `<section class="cbox bedslot" data-k="${esc(key)}" hidden><h3 class="ch"></h3></section>`;   // filled in place once the list arrives
   if (!eatBed.list) return slot;
   const own = new Set([...(pl.picks || []).flatMap((p) => [p.name, p.alt && p.alt.name]), ...(pl.food || []).flatMap((f) => f.items.map((x) => x.name))].filter(Boolean).map((n) => String(n).toLowerCase()));
-  const list = (eatBed.list || []).filter((x) => !own.has(String(x.name).toLowerCase()) && x.st !== 'closed' && famRank(x) >= 0).map((x, k) => [x, k]).sort((a, b) => famRank(b[0]) - famRank(a[0]) || a[1] - b[1]).map((p) => p[0]);   // the places we loved first, the ones we would not go back to left out
+  const list = (eatBed.list || []).filter((x) => !own.has(String(x.name).toLowerCase()) && x.st !== 'closed' && famRank(x) >= 0).map((x, k) => [x, k]).sort((a, b) => famRank(b[0]) - famRank(a[0]) || tasteFitEat(b[0]) - tasteFitEat(a[0]) || a[1] - b[1]).map((p) => p[0]);   // the places we loved first, the ones we would not go back to left out
   if (!list.length || !eatBed.town) return '';
-  const tk = list[0].tkey, row = (x) => `<li class="nmrow"><span class="plen"><b>${esc(x.name)}</b><small>${[T(x.tag), T(x.pr)].filter(Boolean).map(esc).join(' · ')}${prThb(x) ? ` ${prThb(x)}` : ''}</small>${kidTagChips(x)}</span>${eatSt(x)}${famStar(x)}${navB(x.q || x.name, x.name)}</li>`;
+  const tk = list[0].tkey, row = (x) => `<li class="nmrow"><span class="plen"><b>${esc(x.name)}</b><small>${[T(x.tag), T(x.pr)].filter(Boolean).map(esc).join(' · ')}${prThb(x) ? ` ${prThb(x)}` : ''}</small>${kidTagChips(x)}</span>${eatSt(x)}${famStar(x)}${fitBadge(x)}${navB(x.q || x.name, x.name)}</li>`;
   return fbox('teal', 'eat', L(`ร้านในคลังแถวที่พัก · ${eatBed.town.th}`, `Places near tonight’s bed · ${eatBed.town.en}`), esc(L(`${list.length} ร้าน`, `${list.length} place${list.length === 1 ? '' : 's'}`)),
     `<ul class="bedeats">${list.slice(0, 8).map(row).join('')}</ul><p class="label">${L('จากคลังร้านอาหารของครอบครัว · เช็กเวลาเปิดก่อนไป', 'From the family’s library of places to eat · check the hours before you go')} · <a href="#/eats/${esc(tk)}">${L(`ดูทั้ง ${list.length} ร้าน`, `See all ${list.length}`)} ›</a></p>`);
 }
 const eatSrc = (x) => (x.src === 'starter' ? (x.checked ? `${L('จากคลังของแอป · เช็กกับเว็บ', 'From the app’s built-in list · web check')} ${esc(fmtDay(x.checked, { month: 'short', year: '2-digit' }))}` : L('จากคลังของแอป · ยังไม่ได้เช็กวันนี้ เช็กก่อนไป', 'From the app’s built-in list · not checked today — check before you go')) : x.src === 'helper' ? `${L('ผู้ช่วยหา · เช็กกับเว็บ', 'Found by the helper · web check')}${x.checked ? ` ${esc(fmtDay(x.checked, { day: 'numeric', month: 'short', year: '2-digit' }))}` : ''}` : (() => { const t = x.trip && trip(x.trip); return t ? `${L('จากเล่ม', 'From')} ${esc(T(t.title))}` : L('จากเล่มของเรา', 'From our books'); })());
 const eatSt = (x) => (x.st === 'closed' ? `<span class="etag st-closed">${L('ปิดแล้ว', 'Closed')}</span>` : x.st === 'moved' ? `<span class="etag st-closed">${L('ย้ายร้าน', 'Moved')}</span>` : x.st === 'open' ? `<span class="etag st-open">✓ ${L('ยังเปิดอยู่', 'Open')}</span>` : '');
 // one place as the book's own card (views.js viewEat): name + pin + kind of food, where, a line about it, price / hours, directions
-const eatLibCard = (g, x, del) => `<li class="eatc" data-s="${esc(eatText(g, x))}" data-k="${x.kind}" data-p="0" data-t="${kidTagsOf(x).join(' ')}"${eatShow(g, x) && eatTagOk(kidTagsOf(x)) ? '' : ' hidden'}>
-<div class="et"><b class="en">${mapA(x.q || x.name, esc(x.name))}</b>${extA(mapsUrl(x.q || x.name), `<span class="mpin" aria-hidden="true"></span><span class="vh">${L('แผนที่', 'Map')}</span>`, 'pinlink')}${T(x.tag) ? `<span class="etag t-${esc(x.tk || 'x')}">${esc(T(x.tag))}</span>` : ''}${eatSt(x)}${famStar(x)}</div>
+const eatLibCard = (g, x, del) => `<li class="eatc${tasteFitEat(x) > 0 ? ' fit' : ''}" data-s="${esc(eatText(g, x))}" data-k="${x.kind}" data-p="0" data-t="${placeTags(x).join(' ')}"${eatShow(g, x) && eatTagOk(placeTags(x)) ? '' : ' hidden'}>
+<div class="et"><b class="en">${mapA(x.q || x.name, esc(x.name))}</b>${extA(mapsUrl(x.q || x.name), `<span class="mpin" aria-hidden="true"></span><span class="vh">${L('แผนที่', 'Map')}</span>`, 'pinlink')}${T(x.tag) ? `<span class="etag t-${esc(x.tk || 'x')}">${esc(T(x.tag))}</span>` : ''}${eatSt(x)}${famStar(x)}${fitBadge(x)}</div>
 ${x.zh || x.where ? `<div class="ew">${x.zh ? `<span class="zh">${esc(x.zh)}</span>` : ''}${x.where ? `<span>${esc(T(x.where))}</span>` : ''}</div>` : ''}
 ${T(x.what) ? `<p class="ed">${esc(T(x.what))}</p>` : ''}${T(x.why) ? `<p class="why"><b>${L('เหมาะกับเด็ก', 'For the kids')}</b> ${esc(T(x.why))}</p>` : ''}${kidTagChips(x)}
 <div class="ef"><span class="echips">${T(x.pr) ? `<span class="pr">${esc(T(x.pr))}</span>${prThb(x)}` : ''}${T(x.hours) ? `<span class="hr">${esc(T(x.hours))}</span>` : ''}</span>${extA(`https://www.google.com/maps/dir/?api=1&destination=${encodeURIComponent(x.q || x.name)}`, ic('route') + ' ' + L('นำทาง', 'Go'), 'go')}</div>
 <div class="elsrc"><small>${eatSrc(x)}</small>${del ? `<button type="button" class="mini" data-a="eatlibdel" data-v="${esc(x.id)}">${L('เอาออก', 'Take out')}</button>` : ''}</div></li>`;
+/* ---------- what our family likes (#/taste, editors; docs/PLACES-ECOSYSTEM.md F3; owner, Nov 2026: "ร้านอาหารและสถานที่ท่องเที่ยว
+   ให้เลือกแนวที่ชอบได้"): the kinds of food and outings the family loves or skips, what to allow for, and each child's own favourites.
+   Kept in the family's profile (families.profile.taste, both parents, in backups); the planner starts a new plan from it and sends it
+   to the helper as words, the eat pages put the places of our style first with "ตรงใจเรา". Chips save in place, never a redraw. */
+const tasteState = (side, k) => { const t = famTaste()[side]; return t.like.includes(k) ? 'like' : t.avoid.includes(k) ? 'avoid' : ''; };
+const tasteChip = (side, r) => { const st = tasteState(side, r[0]); return `<button type="button" class="chip tastechip" data-a="taste" data-g="${side}" data-v="${r[0]}" data-st="${st}" aria-pressed="${!!st}"><span aria-hidden="true">${emo(r[1])}</span> ${L(r[2], r[3])}<i class="tsm" aria-hidden="true">${st === 'like' ? '💛' : st === 'avoid' ? '🚫' : ''}</i></button>`; };
+function tasteCard() {
+  const t = famTaste(), n = t.food.like.length + t.out.like.length;
+  const sub = n ? [...TASTE_OUT, ...TASTE_FOOD].filter((r) => t.out.like.includes(r[0]) || t.food.like.includes(r[0])).slice(0, 5).map((r) => `${r[1]} ${L(r[2], r[3])}`).join(' · ') : L('เลือกแนวอาหารและที่เที่ยวที่เราชอบ — ผู้ช่วยวางแผนและคลังร้านจะเรียงตามนี้', 'Pick the food and outings we love — the planner and the libraries follow it');
+  return `<a class="nbcard tastecard" href="#/taste"><span class="emb">${hubIc('taste')}</span><div><b>${L('สิ่งที่ครอบครัวเราชอบ', 'What our family likes')}</b><small>${esc(sub)}</small></div><span class="arrow">›</span></a>`;
+}
+// what the stars we gave suggest (the travel notebook: a place or a meal of 4–5 ★ or "would go again"), read from its name and our
+// note — styles not chosen yet, most named first
+function tasteHints(side) {
+  const t = famTaste(), have = new Set([...t[side].like, ...t[side].avoid]), n = {};
+  for (const r of (S && S.reviews) || []) {
+    if (!(r.rating >= 4 || r.again === true) || r.kind !== (side === 'food' ? 'food' : 'place')) continue;
+    const x = { name: r.name, what: { en: r.note || '', th: r.note || '' }, tag: { en: (r.tags || []).join(' '), th: '' } };
+    for (const k of side === 'food' ? foodStylesOf(x) : outStylesOf(x)) if (!have.has(k)) n[k] = (n[k] || 0) + 1;
+  }
+  return Object.entries(n).sort((x, y) => y[1] - x[1]).slice(0, 5).map((e) => (side === 'food' ? TASTE_FOOD : TASTE_OUT).find((r) => r[0] === e[0])).filter(Boolean);
+}
+// #/taste in pages (owner, Nov 2026: "แยกเป็นหลายหน้า … เรียนรู้จากประวัติเดิม"): outings · food · always allow for · each child
+const TASTE_Q = [['out', '🎒', 'ที่เที่ยว', 'Outings'], ['food', '🍜', 'อาหาร', 'Food'], ['need', '🧳', 'ต้องคิดถึง', 'Allow for'], ['kids', '🧒', 'ลูกแต่ละคน', 'Each child']];
+function viewTaste(qs) {
+  const t = famTaste(), kids = children(), qsl = kids.length ? TASTE_Q : TASTE_Q.slice(0, 3);
+  const k = Math.max(0, qsl.findIndex((q) => q[0] === qs)), q = qsl[k], last = k === qsl.length - 1;
+  const how = `<p class="label">${L('แตะหนึ่งครั้ง = ชอบ 💛 · แตะอีกครั้ง = ไม่เอา 🚫 · แตะอีกครั้ง = เฉยๆ', 'Tap once = we love it 💛 · again = we skip it 🚫 · again = no view')}</p>`;
+  const hints = (side) => { const h = tasteHints(side); return h.length ? `<div class="part pickh plhist">⭐ ${L('จากที่เคยให้ดาวสูง แตะเพื่อเพิ่ม', 'From the places we starred — tap to add')}</div><div class="row chips tastechips tastehints">${h.map((r) => `<button type="button" class="chip" data-a="tasteadd" data-g="${side}" data-v="${r[0]}">＋ <span aria-hidden="true">${emo(r[1])}</span> ${L(r[2], r[3])}</button>`).join('')}</div>` : ''; };
+  const kidSum = (c) => { const ks = t.kids[c.slug] || [], rows = [...TASTE_OUT, ...TASTE_FOOD].filter((r) => ks.includes(r[0])); return rows.length ? rows.slice(0, 6).map((r) => `${r[1]} ${L(r[2], r[3])}`).join(' · ') + (rows.length > 6 ? ' …' : '') : L('แตะเพื่อเลือก (ไม่ใส่ก็ได้)', 'Tap to choose (optional)'); };
+  const kid = (c) => `<details class="tastekid"><summary class="tkh">${kidFace(c.slug)}<span class="tkn"><b>${esc(kidName(c.slug))}</b><small class="tks" data-k="${esc(c.slug)}">${esc(kidSum(c))}</small></span>${ic('chev', 'chv')}</summary><div class="row chips tastechips" role="group">${[...TASTE_OUT, ...TASTE_FOOD].map((r) => `<button type="button" class="chip" data-a="tastekid" data-k="${esc(c.slug)}" data-v="${r[0]}" aria-pressed="${(t.kids[c.slug] || []).includes(r[0])}"><span aria-hidden="true">${emo(r[1])}</span> ${L(r[2], r[3])}</button>`).join('')}</div></details>`;
+  const pages = {
+    out: pcard('plan', PG.teal, L('แนวที่เที่ยว', 'Outings'), `${how}<div class="row chips tastechips" role="group">${TASTE_OUT.map((r) => tasteChip('out', r)).join('')}</div>${hints('out')}`),
+    food: pcard('eat', PG.orange, L('แนวอาหาร', 'Food'), `${how}<div class="row chips tastechips" role="group">${TASTE_FOOD.map((r) => tasteChip('food', r)).join('')}</div>${hints('food')}`),
+    need: pcard('family', PG.purple, L('สิ่งที่ต้องคิดถึงทุกทริป', 'Always allow for'), `<div class="row chips tastechips" role="group">${TASTE_NEED.map((r) => `<button type="button" class="chip" data-a="tasteneed" data-v="${r[0]}" aria-pressed="${t.needs.includes(r[0])}"><span aria-hidden="true">${emo(r[1])}</span> ${L(r[2], r[3])}</button>`).join('')}</div>`),
+    kids: kids.length ? pcard('kid', PG.pink, L('ของโปรดของลูกแต่ละคน', 'Each child’s favourites'), kids.map(kid).join('')) : '',
+  };
+  const dots = `<nav class="plqs tasteqs" style="grid-template-columns:repeat(${qsl.length},1fr)" aria-label="${L('หัวข้อ', 'Topics')}">${qsl.map((x, j) => `<a class="plqd${j === k ? ' now' : j < k ? ' done' : ''}" href="#/taste/${x[0]}"${j === k ? ' aria-current="step"' : ''}><i>${j + 1}</i><span>${L(x[2], x[3])}</span></a>`).join('')}</nav>`;
+  const nav = `<div class="row plnav">${k ? `<a class="btn ghost plback" href="#/taste/${qsl[k - 1][0]}">‹ ${L('ย้อน', 'Back')}</a>` : '<span></span>'}${last ? `<a class="btn plnext" href="#/">${L('เสร็จ', 'Done')} ✓</a>` : `<a class="btn plnext" href="#/taste/${qsl[k + 1][0]}">${L('ถัดไป', 'Next')} ›</a>`}</div>`;
+  const uses = `<p class="label tasteuse">🔒 ${L('บันทึกเองทุกครั้งที่แตะ · ใช้ในเครื่องมือวางแผน (บอกผู้ช่วยเป็นคำ ไม่มีชื่อลูก) และคลังร้านอาหาร (ร้านที่ตรงแนวขึ้นก่อน) · พ่อแม่เห็นเหมือนกันทั้งสองเครื่อง', 'Saved as you tap · used by the planner (the helper gets it as words, never the children’s names) and the libraries (our style first) · both parents see the same')}</p>`;
+  return `${pageHead('taste', PG.pink, L('ครอบครัวของเรา', 'Our family'), L('สิ่งที่ครอบครัวเราชอบ', 'What our family likes'), L('เลือกแนวที่ชอบหรือไม่ชอบ แล้วผู้ช่วยกับคลังข้อมูลจะเลือกให้ตรงใจเรา', 'Choose what we love or skip; the helper and the libraries then pick what suits us'))}
+${dots}<div class="tastepage" data-q="${q[0]}">${pages[q[0]]}${nav}${uses}</div>`;
+}
 function viewEats(tk) {
   const el = eatLib;
   if (el.towns === null) { el.towns = 'loading'; api('GET', '/api/b/eatlib').then((r) => { el.towns = r.towns || []; el.on = !!r.on; safeRender(); }, () => { el.towns = []; safeRender(); }); }
@@ -3071,14 +3173,15 @@ ${groups.map(([name, list], k) => `<section class="elgrp" style="--g1:${snapPal(
   const places = el.places || [], kinds = [L('ร้านอาหาร', 'Restaurants'), L('ศูนย์อาหารและของกินเร็ว', 'Food courts & quick bites'), L('คาเฟ่ ขนม ของหวาน', 'Cafés & sweets')];
   // a town's places under the areas its book (or the helper) put them in, in the order they came
   const areas = []; for (const x of places) { const k = T(x.area) || ''; let g = areas.find((a) => a.k === k); if (!g) areas.push(g = { k, area: x.area, items: [] }); g.items.push(x); }
-  const shown = places.filter((x) => eatShow({ area: x.area }, x) && eatTagOk(kidTagsOf(x))).length;
+  const shown = places.filter((x) => eatShow({ area: x.area }, x) && eatTagOk(placeTags(x))).length;
+  for (const g of areas) g.items = g.items.map((x, k) => [x, k]).sort((a, b) => tasteFitEat(b[0]) - tasteFitEat(a[0]) || a[1] - b[1]).map((p) => p[0]);   // our style first, the styles we avoid last
   return `${head}${chips}
 <section class="eatpage ellist"><div class="part">${esc(cur ? tname(cur) : tk)} <span class="label">· ${L(`${places.length} ร้าน`, `${places.length} places`)}</span></div>
 ${el.places === null ? `<p class="label">${L('กำลังเปิด…', 'Opening…')}</p>` : `<div class="eatbar"><input id="eatq" class="field" type="search" enterkeyhint="search" autocomplete="off" value="${esc(eatQ)}" placeholder="${L('ค้นชื่อร้าน ย่าน หรือประเภท', 'Search a name, area or kind of food')}" aria-label="${L('ค้นร้าน', 'Search')}">
 <div class="row chips" role="group"><button class="chip" data-a="eatk" data-v="-1" aria-pressed="${eatKind < 0}">${L('ทั้งหมด', 'All')}</button>${kinds.map((k, i) => (places.some((x) => x.kind === i) ? `<button class="chip" data-a="eatk" data-v="${i}" aria-pressed="${eatKind === i}">${k}</button>` : '')).join('')}</div>
-${kidTagBar(places)}
+${foodStyleBar(places)}${kidTagBar(places)}
 <p class="label" id="eatn">${L(`แสดง ${shown} จาก ${places.length} ร้าน`, `Showing ${shown} of ${places.length}`)}</p></div>
-${areas.map((g) => `<section class="eatg"${g.items.some((x) => eatShow(g, x) && eatTagOk(kidTagsOf(x))) ? '' : ' hidden'}><h3>${esc(T(g.area) || (cur ? tname(cur) : ''))}</h3><ul class="eatl">${g.items.map((x) => eatLibCard(g, x, true)).join('')}</ul></section>`).join('')}
+${areas.map((g) => `<section class="eatg"${g.items.some((x) => eatShow(g, x) && eatTagOk(placeTags(x))) ? '' : ' hidden'}><h3>${esc(T(g.area) || (cur ? tname(cur) : ''))}</h3><ul class="eatl">${g.items.map((x) => eatLibCard(g, x, true)).join('')}</ul></section>`).join('')}
 <p class="empty" id="eatnone"${shown || !places.length ? ' hidden' : ''}>${L('ไม่พบร้านที่ตรงกับคำค้น', 'No place matches')}</p>`}
 ${wait}${err}${el.on && cur ? `<div class="row elmore"><button type="button" class="btn ghost" data-a="eatlibfill" data-v="${esc(cur.town)}" data-th="${esc(cur.town_th)}"${el.busy ? ' disabled' : ''}>${ic('search')} ${L('ให้ผู้ช่วยหาร้านเพิ่มในเมืองนี้', 'Ask the helper for more places here')}</button></div>` : ''}
 <p class="label">${L('ราคาและเวลาเปิดเปลี่ยนได้ เช็กซ้ำก่อนไป · แตะหมุดเพื่อเปิดแผนที่', 'Hours and prices change — check before you go · tap the pin for the map')}</p></section>`;

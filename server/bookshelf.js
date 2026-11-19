@@ -13,7 +13,9 @@ const PLANNER = require('./planner');
 const CF = require('./countryfacts');
 const EATLIB = require('./eatlib');
 const CARE = require('./care');   // hospitals, pharmacies, play and baby rooms per library town (server/care/*.json)
+const SIGHTLIB = require('./sightlib');
 const VERIFY = require('./verify');
+const TAGS = require('../public/tags.js');
 const FAM = require('./family');
 const AVATAR = require('./avatar');
 const ART = require('./bookart');
@@ -159,7 +161,7 @@ function router({ pool, media, A, ai, hooks = {} }) {   // hooks.heart(h): set b
       let gone = 0;
       for (const k of new Set(keys)) { try { await media.del(k); gone++; } catch (_) { /* a file already missing is fine */ } }
       await q('DELETE FROM families WHERE id=$1', [FAMILY]);
-      await q("DELETE FROM settings WHERE key IN ('family_likes', 'emoji_seeded', 'emoji_offered', 'emoji_stock_offered', 'year_reels', 'planner_plans', 'eat_starter', 'orphans_last')");
+      await q("DELETE FROM settings WHERE key IN ('family_likes', 'emoji_seeded', 'emoji_offered', 'emoji_stock_offered', 'year_reels', 'planner_plans', 'eat_starter', 'sight_starter', 'orphans_last')");
       await q('INSERT INTO families (id, name) VALUES ($1, $2) ON CONFLICT (id) DO NOTHING', [FAMILY, 'Family']);
       await syncSeeds(pool); await EMOJI.seed(pool, FAMILY); await eatSyncAll(pool); A.groupsChanged();
       console.log(`family erased on request: ${gone} files, every row`);   // no names, no codes
@@ -190,8 +192,10 @@ function router({ pool, media, A, ai, hooks = {} }) {   // hooks.heart(h): set b
     try {
       const b = req.body || {};
       if (b.tiles !== undefined && !FAM.TILES.includes(b.tiles)) return bad(res, 'tiles');
+      if (b.taste !== undefined && (!b.taste || typeof b.taste !== 'object' || JSON.stringify(b.taste).length > 4000)) return bad(res, 'taste');
       const cur = (await q('SELECT profile FROM families WHERE id=$1', [FAMILY]))[0], prof = FAM.cleanProfile(cur ? cur.profile : null);
       if (b.tiles !== undefined) prof.tiles = b.tiles;
+      if (b.taste !== undefined) { const t = TAGS.cleanTaste(b.taste); prof.taste = TAGS.tasteEmpty(t) ? undefined : t; }
       await q('UPDATE families SET profile=$2 WHERE id=$1', [FAMILY, JSON.stringify(prof)]);
       res.json({ ok: true, family: FAM.profile(prof, await kidRows()) });
     } catch (e) { next(e); }
@@ -199,7 +203,7 @@ function router({ pool, media, A, ai, hooks = {} }) {   // hooks.heart(h): set b
   r.put('/api/b/family', ...W, async (req, res, next) => {
     try {
       const b = req.body || {}, prof = FAM.cleanProfile(b.profile);
-      if (!prof.tiles) prof.tiles = FAM.cleanProfile((await q('SELECT profile FROM families WHERE id=$1', [FAMILY]))[0]?.profile).tiles;   // the form sends no tile look: keep the one chosen on the menu
+      { const was = FAM.cleanProfile((await q('SELECT profile FROM families WHERE id=$1', [FAMILY]))[0]?.profile); if (!prof.tiles) prof.tiles = was.tiles; if (!prof.taste) prof.taste = was.taste; }   // the form sends no tile look or taste: keep the ones chosen on the menu and on #/taste
       const kids = (Array.isArray(b.children) ? b.children : []).slice(0, 6).map(FAM.cleanKid).filter(Boolean);
       if (new Set(kids.map((k) => k.slug)).size !== kids.length) return bad(res, 'slug');
       if (kids.some((k) => !k.birth_ym)) return bad(res, 'birth');   // the age at each trip (and the age a character is drawn at) comes from it
@@ -1290,6 +1294,28 @@ function router({ pool, media, A, ai, hooks = {} }) {   // hooks.heart(h): set b
   r.delete('/api/b/eatlib/:id', ...W, async (req, res, next) => {
     try { await q('UPDATE eat_lib SET gone=true WHERE family_id=$1 AND id=$2', [FAMILY, String(req.params.id)]); res.json({ ok: true }); } catch (e) { next(e); }
   });
+  /* The library of things to do (docs/PLACES-ECOSYSTEM.md E2; server/sightlib.js), editors: GET = the towns with how many sights (and how
+     many for a rainy day); ?town=<tkey> or ?place=<place id> = a town's sights, each with how well it suits this family (`fit`: the
+     youngest child's age, the outing styles of #/taste, the needs; -9 = not for the youngest); ?for=[[en, th], …] = a route's towns.
+     DELETE takes a sight out for good; PUT …/wish {on} keeps it on the family's wish list. */
+  const sightKids = async () => { const ys = (await kidRows()).map((k) => (k.birth_ym ? (Date.now() - Date.parse(k.birth_ym + '-15')) / (365.25 * 864e5) : null)).filter((y) => y != null && y >= 0); return ys.length ? Math.min(...ys) : null; };
+  const sightTaste = async () => FAM.cleanProfile(((await q('SELECT profile FROM families WHERE id=$1', [FAMILY]))[0] || {}).profile).taste || null;
+  r.get('/api/b/sights', A.requireEditor, async (req, res, next) => {
+    try {
+      res.setHeader('Cache-Control', 'no-store');
+      const rows = await SIGHTLIB.all(pool, FAMILY), cof = EATLIB.countryOf(STOCK.read()), y = await sightKids(), taste = await sightTaste();
+      const full = (x) => { const o = SIGHTLIB.out(x); return { ...o, cc: (cof.get(x.tkey) || {}).cc || '', fit: SIGHTLIB.fitOf(o, taste, y) }; };
+      if (req.query.for) return res.json({ for: eatPairs(String(req.query.for)).map(([en, th]) => ({ en, th: th || en, sights: SIGHTLIB.forTown(rows, [en, th].filter(Boolean)).map(full) })) });
+      if (req.query.town || req.query.place) { const k = String(req.query.town || ''), p = String(req.query.place || ''); return res.json({ sights: rows.filter((x) => (k && x.tkey === k) || (p && x.place === p)).map(full) }); }
+      res.json({ towns: SIGHTLIB.towns(rows).map((t) => ({ ...t, country: cof.get(t.tkey) || null })), total: rows.length });
+    } catch (e) { next(e); }
+  });
+  r.delete('/api/b/sights/:id', ...W, async (req, res, next) => {
+    try { await q('UPDATE sight_lib SET gone=true, wish=false WHERE family_id=$1 AND id=$2', [FAMILY, String(req.params.id)]); res.json({ ok: true }); } catch (e) { next(e); }
+  });
+  r.put('/api/b/sights/:id/wish', ...W, async (req, res, next) => {
+    try { const on = !!(req.body || {}).on, r2 = await q('UPDATE sight_lib SET wish=$3 WHERE family_id=$1 AND id=$2 AND NOT gone RETURNING id', [FAMILY, String(req.params.id), on]); if (!r2.length) return bad(res, 'id', 404); res.json({ ok: true, wish: on }); } catch (e) { next(e); }
+  });
   /* What this family learned on its past trips (owner, Nov 2026: "ให้หน้าวางแผนอ่านบทเรียนจากทุกเล่มและสิ่งที่ครอบครัวชอบด้วย"): the travel
      notebook's summary (settings.family_likes) and the last six books' lessons (entry kind 'lessons') — words the parents kept, never a
      photo, at most 5,000 letters — go with the planner's route ask, so the plan keeps the naps, the short drives, the food that worked. */
@@ -1297,7 +1323,8 @@ function router({ pool, media, A, ai, hooks = {} }) {   // hooks.heart(h): set b
     const likes = (await q("SELECT value FROM settings WHERE key='family_likes'"))[0];
     let lk = ''; if (likes) { try { const v = JSON.parse(likes.value); lk = typeof v === 'string' ? v : v && (v.text || v.th || v.en) ? String(v.text || v.th || v.en) : JSON.stringify(v); } catch (_) { lk = String(likes.value); } }
     const ls = await q("SELECT e.text, t.title FROM entries e JOIN trips t ON t.id=e.trip_id WHERE e.family_id=$1 AND e.kind='lessons' AND e.text <> '' ORDER BY t.date_from DESC LIMIT 6", [FAMILY]);
-    const out = [lk ? `What our family likes: ${lk.slice(0, 2000)}` : '', ...ls.map((l) => `Lessons from ${(l.title && (l.title.en || l.title.th)) || 'a past trip'}: ${String(l.text).slice(0, 1000)}`)].filter(Boolean).join('\n');
+    const prof = FAM.cleanProfile(((await q('SELECT profile FROM families WHERE id=$1', [FAMILY]))[0] || {}).profile), tw = prof.taste ? TAGS.tasteWords(prof.taste, (await kidRows()).map((k) => k.slug)) : '';
+    const out = [tw ? `The styles our family chose: ${tw}` : '', lk ? `What our family likes: ${lk.slice(0, 2000)}` : '', ...ls.map((l) => `Lessons from ${(l.title && (l.title.en || l.title.th)) || 'a past trip'}: ${String(l.text).slice(0, 1000)}`)].filter(Boolean).join('\n');
     // the planner never sends a child's name (only their ages): each name the family gave becomes "the child" / "ลูก"
     let txt = out.slice(0, 5000);
     for (const k of await kidRows()) for (const [nm, w] of [[k.name_th, 'ลูก'], [k.name_en, 'the child']]) if (nm && nm.trim().length > 1) txt = txt.split(nm.trim()).join(w);
@@ -1958,5 +1985,8 @@ async function backfillPh(pool, media) {
   }
   return n;
 }
-const eatSyncAll = async (pool) => { try { await EATLIB.syncStarter(pool, FAMILY, STOCK.read()); return await EATLIB.syncBooks(pool, FAMILY, STOCK.read()); } catch (e) { console.error('eatlib sync', e.message); return 0; } };
+const eatSyncAll = async (pool) => {
+  try { await SIGHTLIB.syncStarter(pool, FAMILY, STOCK.read(), (id) => STOCK.url(id)); } catch (e) { console.error('sightlib sync', e.message); }   // the things-to-do library (E2) with the eat library
+  try { await EATLIB.syncStarter(pool, FAMILY, STOCK.read()); return await EATLIB.syncBooks(pool, FAMILY, STOCK.read()); } catch (e) { console.error('eatlib sync', e.message); return 0; }
+};
 module.exports = { router, syncSeeds, brand, FAMILY, AUDIO_EXT, backfillPh, eatSyncAll };

@@ -309,6 +309,13 @@ async function impRefresh() {
   if (route().parts[0] === 'import') safeRender();
 }
 /* ---------- actions ---------- */
+// the family's taste (#/taste): kept on S.family at once, sent 700 ms after the last tap (one save for a run of taps)
+let tasteT = 0;
+function tasteSave(t) {
+  if (S && S.family) S.family.taste = cleanTaste(t);
+  clearTimeout(tasteT);
+  tasteT = setTimeout(() => api('PATCH', '/api/b/family/profile', { taste: S.family.taste }).then((r) => { if (r && r.family && S.family) S.family.taste = r.family.taste; }, () => toast(L('บันทึกไม่สำเร็จ ลองใหม่', 'Could not save — try again'))), 700);
+}
 const A = {
   lang(b) { lang = b.dataset.v; ls('lang', lang); render(); if (ls('remind')) pushSub().then((s) => s && api('POST', '/api/b/push/sub', { ...s.toJSON(), lang })).catch(() => {}); },   // reminders follow the language
   fs(b) {   // text size: normal → large → larger → largest (the page content zooms; the bars stay put) — a value from the shelf's four Aa, else the sign-in page's one Aa cycles
@@ -997,7 +1004,9 @@ const A = {
     clearTimeout(planSaveT); planSaveT = null; planSave();
     pln.a = { ...pln.a, dest: '', from: '', to: '', approx: '', len: 0, stays: '', flights: '', want: '', avoid: '' };
     pln.route = null; pln.alts = null; pln.ideas = null; pln.prev = null; pln.id = ''; pln.at = 0; pln.open = false; pln.err = '';
-    ls('plan', pln.a); ls('planRoute', null); ls('planId', null); ls('planAt', null); render(); scrollTo(0, 0);
+    ls('plan', pln.a); ls('planRoute', null); ls('planId', null); ls('planAt', null);
+    if (location.hash !== '#/planner/where') location.hash = '#/planner/where'; else render();   // a new plan starts on its first question
+    scrollTo(0, 0);
   },
   planload(b) {
     const p = (pln.plans || []).find((x) => x.id === b.dataset.v); if (!p) return;
@@ -1092,6 +1101,23 @@ const A = {
     } catch (_) { toast(L('ต้องมีเน็ตเพื่อส่งคลิป', 'You need a connection to send the film')); }
     finally { b.disabled = false; }
   },
+  taste(b) {   // a style chip on #/taste: none → love → skip → none, saved in place
+    const side = b.dataset.g, k = b.dataset.v, t = famTaste(), s = t[side], st = tasteState(side, k);
+    s.like = s.like.filter((x) => x !== k); s.avoid = s.avoid.filter((x) => x !== k);
+    const next = st === '' ? 'like' : st === 'like' ? 'avoid' : '';
+    if (next) s[next].push(k);
+    b.dataset.st = next; b.setAttribute('aria-pressed', !!next); const m = b.querySelector('.tsm'); if (m) m.textContent = next === 'like' ? '💛' : next === 'avoid' ? '🚫' : '';
+    tasteSave(t);
+  },
+  tasteadd(b) {   // a style the stars suggest: loved, the chip above shows it, the suggestion goes
+    const side = b.dataset.g, k = b.dataset.v, t = famTaste(), sd = t[side];
+    sd.avoid = sd.avoid.filter((x) => x !== k); if (!sd.like.includes(k)) sd.like.push(k);
+    tasteSave(t);
+    const c = document.querySelector(`.tastechip[data-g="${side}"][data-v="${k}"]`); if (c) { c.dataset.st = 'like'; c.setAttribute('aria-pressed', 'true'); const m = c.querySelector('.tsm'); if (m) m.textContent = '💛'; }
+    b.remove();
+  },
+  tasteneed(b) { const t = famTaste(), k = b.dataset.v; t.needs = t.needs.includes(k) ? t.needs.filter((x) => x !== k) : [...t.needs, k]; b.setAttribute('aria-pressed', t.needs.includes(k)); tasteSave(t); },
+  tastekid(b) { const t = famTaste(), k = b.dataset.v, s = b.dataset.k, cur = t.kids[s] || []; t.kids[s] = cur.includes(k) ? cur.filter((x) => x !== k) : [...cur, k]; b.setAttribute('aria-pressed', t.kids[s].includes(k)); tasteSave(t); const sm = document.querySelector(`.tks[data-k="${CSS.escape(s)}"]`); if (sm) { const rows = [...TASTE_OUT, ...TASTE_FOOD].filter((r) => t.kids[s].includes(r[0])); sm.textContent = rows.length ? rows.slice(0, 6).map((r) => `${r[1]} ${L(r[2], r[3])}`).join(' · ') + (rows.length > 6 ? ' …' : '') : L('แตะเพื่อเลือก (ไม่ใส่ก็ได้)', 'Tap to choose (optional)'); } },
   eattag(b) { const k = b.dataset.v; if (eatTags.has(k)) eatTags.delete(k); else eatTags.add(k); b.setAttribute('aria-pressed', eatTags.has(k)); eatFilter(); },
   eatk(b) { eatKind = +b.dataset.v; $$('[data-a="eatk"]').forEach((c) => c.setAttribute('aria-pressed', c.dataset.v === b.dataset.v)); eatFilter(); },
   eatpick(b) { eatPick = !eatPick; b.setAttribute('aria-pressed', eatPick); eatFilter(); },
