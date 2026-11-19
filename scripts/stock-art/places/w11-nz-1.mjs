@@ -50,7 +50,7 @@ const items = [
   G('nz', 'kiri', 'คีรี', 'Kiri', 'เคีย โอรา {name}! คีรีพาเที่ยวนิวซีแลนด์เอง', 'Kia ora, {name}! Kiri will show you New Zealand', ['kiwi', 'กีวี', 'kiwi bird', 'นกกีวี', 'flightless bird', 'นกบินไม่ได้', 'national bird'],
     // a round, fuzzy brown kiwi: a ball of hair-like feathers, a long thin curved beak with whiskers, strong little feet
     ring(18, (k) => { const a = (k / 18) * Math.PI * 2; return P(`M${f1(120 + Math.cos(a) * 74)} ${f1(130 + Math.sin(a) * 64)}l${f1(Math.cos(a + 0.4) * 14)} ${f1(Math.sin(a + 0.4) * 14)}`, 'none', 4); }).replace(/fill="none"/g, 'fill="none" stroke="#6D4C41"')
-      + E(120, 130, 74, 64, '#A1887F') + ring(10, (k) => Lc(`M${78 + (k % 5) * 20} ${100 + Math.floor(k / 5) * 40}q4 6 0 12`, '#6D4C41', 3)).replace(/q4 6/g, 'q4 6')
+      + E(120, 130, 74, 64, '#A1887F') + ring(10, (k) => Lc(`M${78 + (k % 5) * 20} ${100 + Math.floor(k / 5) * 40}q4 6 0 12`, '#6D4C41', 3))
       + Lc('M58 124c-22 10-36 38-42 76', INK, 13) + Lc('M58 124c-22 10-36 38-42 76', '#E6C27A', 8)
       + Lc('M60 118l-16-10M58 126l-18-2', '#5D4037', 2) + [[100, 190], [140, 190]].map(([x, y]) => Lc(`M${x} ${y}v20M${x} ${y + 20}l-10 6M${x} ${y + 20}l10 6M${x} ${y + 20}v8`, '#BCAAA4', 6)).join('')
       + face(100, 110, 0.9)) ,
@@ -65,7 +65,7 @@ const items = [
     E(120, 200, 92, 14, '#CFD8DC') + R(108, 180, 24, 20, '#ECEFF1', 3) + E(120, 178, 86, 12, '#ECEFF1')
       + P('M44 168c-6-30 0-60 8-72h136c8 12 14 42 8 72-30 10-122 10-152 0z', '#FFF8E1') + ring(7, (k) => Lc(`M${60 + k * 20} 168c-4-20-2-48 2-68`, '#F3E5AB', 2.5))
       + P('M48 100c-8-20 20-34 40-26 10-16 54-16 64 0 20-8 48 6 40 26-40 10-104 10-144 0z', '#FFFFFF')
-      + [[74, 82], [120, 74], [166, 82]].map(([x, y]) => C(x, y, 15, '#9CCC65') + C(x, y, 6, '#F1F8E9', 0) + ring(8, (k) => C(x + Math.cos(k * 0.785) * 10, y + Math.sin(k * 0.785) * 10, 1.4, INK, 0)).replace(/stroke="none"/g, 'stroke="none"')).join('')
+      + [[74, 82], [120, 74], [166, 82]].map(([x, y]) => C(x, y, 15, '#9CCC65') + C(x, y, 6, '#F1F8E9', 0) + ring(8, (k) => C(x + Math.cos(k * 0.785) * 10, y + Math.sin(k * 0.785) * 10, 1.4, INK, 0))).join('')
       + [[96, 70], [146, 68]].map(([x, y]) => P(`M${x} ${y + 12}c-12-6-12-22 0-24 12 2 12 18 0 24z`, '#E53935', 3) + Lc(`M${x - 4} ${y - 10}l4 -4 4 4`, '#43A047', 3)).join('')
       + ring(9, (k) => C(64 + k * 14, 98 + (k % 2) * 4, 2.2, '#5D4037', 0)) + face(120, 130, 0.6)),
   K('nz.food.hokeypokey', 'ไอศกรีมโฮกี้โพกี้', 'Hokey pokey ice cream', ['hokey pokey', 'โฮกี้โพกี้', 'ice cream', 'ไอศกรีม', 'honeycomb toffee', 'ทอฟฟี่รังผึ้ง', 'vanilla', 'วานิลลา', 'dairy', 'ร้านไอศกรีม'],
@@ -77,7 +77,7 @@ const items = [
   K('nz.food.kumara', 'มันหวานคูมาราทอด', 'Kūmara chips', ['kumara', 'คูมารา', 'kumara chips', 'มันหวานทอด', 'sweet potato', 'มันหวาน', 'chips', 'ของทอด', 'fish and chip shop', 'ร้านฟิชแอนด์ชิปส์'],
     // a paper cone of thick orange kūmara chips, and beside it a whole purple-skinned kūmara with a smiling face
     P('M60 108h80l-20 104h-40z', '#FFFFFF') + Lc('M66 128h68', '#64B5F6', 4) + Lc('M70 146h60', '#64B5F6', 4)
-      + ring(7, (k) => g(68 + k * 11, 108, 1, R(-5, -52 + (k % 3) * 10, 11, 60, ['#FB8C00', '#FFA726'][k % 2], 3, 2.5), (k - 3) * 5)).replace(/^/, '')
+      + ring(7, (k) => g(68 + k * 11, 108, 1, R(-5, -52 + (k % 3) * 10, 11, 60, ['#FB8C00', '#FFA726'][k % 2], 3, 2.5), (k - 3) * 5))
       + P('M60 108h80l-20 104h-40z', 'none')
       + P('M150 196c-10-30 4-62 30-76 14-6 28 2 30 16 4 30-20 64-48 68-6 0-10-2-12-8z', '#8E5A9F') + Lc('M196 122c4-8 10-12 16-12', '#6D4C41', 3) + ring(3, (k) => Lc(`M${164 + k * 12} ${150 + k * 8}q4 2 8 0`, '#6A1B9A', 2))
       + C(168, 196, 7, '#FB8C00', 2.5) + face(180, 160, 0.42)),
@@ -156,7 +156,7 @@ const items = [
     E(120, 214, 110, 14, '#9CCC65', 0) + P('M30 206V120l90-74 90 74v86z', '#8D6E63') + P('M44 206v-78l76-62 76 62v78z', '#EFEBE9')
       + P('M20 128l100-88 100 88-12 8-88-76-88 76z', '#C62828') + P('M112 44l8-16 8 16z', '#C62828', 2.5)
       + R(44, 196, 152, 10, '#A1887F', 0) + R(78, 140, 30, 56, '#5D4037', 3) + R(132, 140, 34, 26, '#B3E5FC', 3, 3) + Lc('M149 140v26M132 153h34', INK, 2)
-      + ring(5, (k) => Lc(`M${52 + k * 34} 128v68`, '#BCAAA4', 2.5)).replace(/^/, '')),
+      + ring(5, (k) => Lc(`M${52 + k * 34} 128v68`, '#BCAAA4', 2.5))),
 ];
 
 export default {

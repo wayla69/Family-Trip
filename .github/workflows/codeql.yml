@@ -24,3 +24,22 @@ jobs:
       - uses: github/codeql-action/analyze@v3
         with:
           category: /language:javascript
+          output: sarif-results
+      # The findings in the log too (rule · file:line · the rule's short text — code locations only, no data): the Security tab is not
+      # readable from every tool that works on this repo.
+      - name: List the findings
+        if: always()
+        run: |
+          node -e '
+            const fs = require("fs"), path = require("path");
+            const dir = "sarif-results"; let n = 0, out = [];
+            for (const f of fs.existsSync(dir) ? fs.readdirSync(dir) : []) {
+              const s = JSON.parse(fs.readFileSync(path.join(dir, f), "utf8"));
+              for (const run of s.runs || []) for (const r of run.results || []) {
+                const loc = ((r.locations || [])[0] || {}).physicalLocation || {};
+                out.push(`${r.ruleId} · ${(loc.artifactLocation || {}).uri}:${(loc.region || {}).startLine} · ${String((r.message || {}).text || "").split("\n")[0].slice(0, 160)}`); n++;
+              }
+            }
+            console.log(out.sort().join("\n")); console.log(`${n} findings`);
+            fs.appendFileSync(process.env.GITHUB_STEP_SUMMARY, "```\n" + out.sort().join("\n") + "\n" + n + " findings\n```\n");
+          '

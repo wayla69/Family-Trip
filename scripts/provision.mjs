@@ -96,7 +96,8 @@ await gql(`mutation serviceInstanceDeployV2($serviceId: String!, $environmentId:
 
 // 7. the registry line for scripts/fleet.mjs (name, url, backup token — the family's codes are NOT kept here)
 if (!DRY) {
-  const reg = fs.existsSync(REG) ? JSON.parse(fs.readFileSync(REG, 'utf8')) : [];
+  let reg = [];   // read it if it is there (no check-then-read)
+  try { reg = JSON.parse(fs.readFileSync(REG, 'utf8')); } catch (e) { if (e.code !== 'ENOENT') throw e; }
   reg.push({ name, url, token: backupToken, project: P.id, created: new Date().toISOString().slice(0, 10) });
   fs.writeFileSync(REG, JSON.stringify(reg, null, 1) + '\n');
 }

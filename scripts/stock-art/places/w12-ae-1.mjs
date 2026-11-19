@@ -144,7 +144,7 @@ const items = [
     // a giant golden picture frame standing on end, a glass bridge across its top, little old and new buildings seen through the middle
     R(62, 18, 116, 196, '#E0B040', 6) + R(86, 44, 68, 160, '#B3E5FC', 0) + R(86, 18, 68, 26, '#81D4FA', 0) + Lc('M88 31h64', '#FFFFFF', 2) + R(62, 18, 116, 196, 'none', 6) + R(86, 44, 68, 160, 'none', 0)
     + [[92, 160, 14], [110, 120, 10], [124, 140, 12], [140, 104, 10]].map(([x, y, w]) => R(x, y, w, 204 - y, '#90A4AE', 0, 2.5)).join('') + R(90, 180, 16, 24, '#E6C9A0', 0, 2.5) + Array.from({ length: 8 }, (_, k) => Lc(`M66 ${56 + k * 20}h16M158 ${56 + k * 20}h16`, '#B8860B', 2.5)).join('')
-    + E(120, 218, 96, 8, '#AED581') + face(120, 192, 0.3).replace(/cy="192"/g, 'cy="192"')),
+    + E(120, 218, 96, 8, '#AED581') + face(120, 192, 0.3)),
   LM('museumfuture', 'พิพิธภัณฑ์แห่งอนาคตรูปวงแหวน', 'The Museum of the Future, a silver ring', ['museum of the future', 'พิพิธภัณฑ์แห่งอนาคต', 'silver ring building', 'ตึกวงแหวนสีเงิน', 'torus', 'future', 'อนาคต', 'robots', 'หุ่นยนต์', 'sheikh zayed road'],
     nm('หาตึกสีเงินรูปไข่ที่มีรูโหว่ตรงกลาง', 'Find the silver egg-shaped building with a hole in the middle'),
     // a shining silver oval ring of a building with a big hole through it, dotted window patterns all over, sitting on a green grassy hill
