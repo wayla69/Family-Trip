@@ -717,12 +717,18 @@ try {
     ok(tp.status === 200 && tj.family.taste.out.like.join() === 'animals' && tj.family.taste.food.avoid.join() === 'seafood' && tj.family.taste.kids.mimi.join() === 'aquarium' && (await state()).family.taste.needs.join() === 'pram',
       `taste: the family's styles are kept in the profile and cleaned (${JSON.stringify(tj.family && tj.family.taste)})`);
     ok((await fetch(BASE + '/api/b/family/profile', { method: 'PATCH', headers: { ...PH, cookie: vck.split(';')[0] }, body: JSON.stringify({ taste: {} }) })).status === 403, 'taste: relatives cannot change it'); }
+  // the things-to-do library: a heart on a sight keeps it, and the planner sends the wish list with the route ask
+  { const tk = await (await fetch(BASE + '/api/b/sights?town=tokyo', { headers: { cookie: ck } })).json(), s0 = (tk.sights || [])[0] || {};
+    const wsh = await fetch(BASE + `/api/b/sights/${s0.id}/wish`, { method: 'PUT', headers: PH, body: JSON.stringify({ on: true }) });
+    ok(wsh.status === 200 && tk.sights.length >= 15, `sights: a heart keeps a sight on the family's wish list (${tk.sights.length} in Tokyo)`);
+    globalThis.__wishName = s0.name && s0.name.en; }
   const c0 = calls.length, rr = await pl('/api/b/planner/route', { answers }), rj = await rr.json(), rt = rj.route || {};
   ok(rr.status === 200 && rt.days && rt.days.length === 3 && rt.days.map((d) => d.date).join() === '2027-04-01,2027-04-02,2027-04-03' && rt.countries.join() === 'jp' && rt.title.en === 'Sakura test hop',
     `planner: the route comes back cleaned — the family's dates laid out again, a bad country code dropped (${rr.status} ${JSON.stringify(rj).slice(0, 300)})`);
   const routeCall = calls[c0], rsent = JSON.stringify(routeCall && routeCall.body);
   ok(calls.length === c0 + 1 && /Where: Tokyo with the kids/.test(rsent) && /Ueno Zoo/.test(rsent) && !/junk/.test(rsent), 'planner: one call for the route, carrying the answers (unknown fields dropped)');
   ok(/learned on past trips/.test(rsent) && /ยัดลก/.test(rsent) && !/\.jpg|media\//.test(rsent), 'planner: the family\'s lessons from past books go with the route (words only, never a photo)');
+  ok(rsent.includes('Places we would love to go to') && rsent.includes(globalThis.__wishName), `planner: the wish list goes with the route (${globalThis.__wishName})`);
   ok(/The styles our family chose/.test(rsent) && /Food we avoid: Seafood/.test(rsent) && /Child 1 especially loves: Aquariums/.test(rsent) && !/Mimi|มีมี่/.test(rsent), 'planner: the family\'s chosen styles go with the route as words, a child as "child 1", never a name');
   { const c2 = calls.length, tr = await pl('/api/b/planner/route', { answers, two: true }), tj = await tr.json();
     ok(tr.status === 200 && calls.length === c2 + 1 && Array.isArray(tj.routes) && tj.routes.length === 1 && tj.routes[0].label.en === 'One base' && tj.routes[0].why.th === 'ไม่ต้องย้ายกระเป๋า' && tj.routes[0].days.length === 3,

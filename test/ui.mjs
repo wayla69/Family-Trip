@@ -998,11 +998,18 @@ const T = 'hk-macau-2026';
     await page.fill('#sightq', 'zzzz-nothing'); const none = await page.evaluate(() => !document.querySelector('#sightnone').hidden && [...document.querySelectorAll('.sightc')].every((li) => li.hidden)); await page.fill('#sightq', ''); await page.evaluate(() => { document.querySelector('#sightq').dispatchEvent(new Event('input', { bubbles: true })); });
     const id = await page.$eval('.sightc .sheart', (b) => { b.click(); return b.dataset.v; });
     await page.waitForFunction((v) => document.querySelector(`.sheart[data-v="${v}"]`) && document.querySelector(`.sheart[data-v="${v}"]`).getAttribute('aria-pressed') === 'true', id);
-    const kept = await page.evaluate(async (v) => { const r = await fetch('/api/b/sights?town=tokyo').then((x) => x.json()); return r.sights.find((x) => x.id === v).wish; }, id);
+    // the heart turns on before the server has it (the PUT is still on its way): wait for the server, never one look
+    const kept = await page.waitForFunction(async (v) => { const r = await fetch('/api/b/sights?town=tokyo').then((x) => x.json()); return r.sights.find((x) => x.id === v).wish === true; }, id, { timeout: 8000, polling: 250 }).then(() => true, () => false);
     await page.$eval(`.sheart[data-v="${id}"]`, (b) => b.click()); await page.waitForFunction((v) => document.querySelector(`.sheart[data-v="${v}"]`).getAttribute('aria-pressed') === 'false', id);
     await page.goto(`${BASE}/#/explore/tokyo/eat`); await page.waitForSelector('.eatc'); const eats = await page.$$eval('.eatc', (l) => l.length);
-    ok(x0.n >= 15 && x0.ages === x0.n * 4 && x1 >= 3 && x1 < x0.n && x2 <= x0.n && none && kept === true && eats >= 5 && x0.back === '#/explore' && x0.sx <= 0, `explore Tokyo: ${x0.n} things to do with their ages, ${x1} indoors for a rainy day, ${x2} for one child, the search empties in place, ♥ kept on the server, ${eats} places to eat in the tab, back goes to every town (${x0.back})`);
-    await page.screenshot({ path: `${OUT}/explore-tokyo.png` }).catch(() => {}); }
+    ok(x0.n >= 15 && x0.ages === x0.n * 4 && x1 >= 3 && x1 < x0.n && x2 <= x0.n && none && kept === true && eats >= 5 && x0.back === '#/explore' && x0.sx <= 0, `explore Tokyo: ${x0.n} things to do with their ages, ${x1} indoors for a rainy day, ${x2} for one child, the search empties in place, ♥ kept on the server, ${eats} places to eat in the tab, back goes to every town (${JSON.stringify({ x0, none, kept })})`);
+    await page.screenshot({ path: `${OUT}/explore-tokyo.png` }).catch(() => {});
+    // plan a day: built on the phone from the library (a long sight, lunch, a shorter sight, dinner), then carried into the planner
+    await page.goto(`${BASE}/#/explore/tokyo/day`); await page.waitForSelector('.bday li');
+    const dr = await page.evaluate(() => ({ rows: document.querySelectorAll('.bday li').length, small: [...document.querySelectorAll('.bdayb .btn, .xptabs a')].filter((b) => b.getBoundingClientRect().height < 43.5).length, sx: document.documentElement.scrollWidth - innerWidth }));
+    await page.click('[data-a="dayplan"]'); await page.waitForFunction(() => location.hash.startsWith('#/planner'));
+    const dp = await page.evaluate(() => ({ dest: pln.a.dest, want: pln.a.want }));
+    ok(dr.rows >= 3 && !dr.small && dr.sx <= 0 && /Tokyo|โตเกียว/.test(dp.dest) && dp.want.length > 3, `explore Tokyo, plan a day: ${dr.rows} rows built on the phone, taps 44 px, the day's sights become the plan's "must do" (${JSON.stringify(dp).slice(0, 140)})`); }
   { // today's bag reads the live forecast too: rain → umbrella, a cold morning → a jacket, a hot day → sunscreen, each with its own reason
     const bag = await page.evaluate(() => { const t = S.trips.find((x) => x.id === 'hk-macau-2026'), keep = WX[t.id]; WX[t.id] = { at: Date.now(), days: [null, null, { tmin: 11, tmax: 33, code: 61, pop: 70 }] };
       const r = dayBag(t, 2).filter((x) => ['rain', 'warm', 'sun'].includes(x.k)).map((x) => [x.k, x.why]); WX[t.id] = keep; return r; });
