@@ -1,615 +1,838 @@
 {
- "cc": "es",
- "towns": [
-  {
-   "place": "es-barcelona",
-   "sights": [
+  "cc": "es",
+  "towns": [
     {
-     "name": {
-      "en": "Sagrada Família",
-      "th": "ซากราดาฟามีเลีย"
-     },
-     "kind": "culture",
-     "area": {
-      "en": "Eixample",
-      "th": "แอชัมปลา"
-     },
-     "what": {
-      "en": "Gaudí's great basilica, a forest of stone columns lit by coloured windows",
-      "th": "มหาวิหารของเกาดี เสาหินเหมือนป่าต้นไม้ แสงสีลอดจากหน้าต่างกระจก"
-     },
-     "why": {
-      "en": "The rainbow light inside amazes children, and under 11s go free; the towers are not for under 6s",
-      "th": "แสงสีรุ้งข้างในทำให้เด็กตื่นตา เด็กต่ำกว่า 11 ปีเข้าฟรี แต่หอคอยห้ามเด็กต่ำกว่า 6 ขวบ"
-     },
-     "tip": {
-      "en": "Timed tickets sell out; book days ahead and go in the morning sun",
-      "th": "ตั๋วรอบเวลาขายหมดเร็ว จองล่วงหน้าหลายวันและไปช่วงเช้าที่แดดส่อง"
-     },
-     "ages": [
-      1,
-      1,
-      2,
-      2
-     ],
-     "hrs": 1.5,
-     "io": "in",
-     "pram": "yes",
-     "price": {
-      "en": "≈ €26 adults · under 11 free",
-      "th": "≈ €26 ผู้ใหญ่ · ต่ำกว่า 11 ปีฟรี"
-     },
-     "book": "req",
-     "q": "Sagrada Família, Carrer de Mallorca 401, Barcelona",
-     "ok": "2026-11",
-     "src": "https://sagradafamilia.org/en/prices"
+      "place": "es-barcelona",
+      "sights": [
+        {
+          "name": { "en": "Sagrada Família", "th": "ซากราดาฟามีเลีย" },
+          "kind": "culture",
+          "area": { "en": "Eixample", "th": "แอชัมปลา" },
+          "what": { "en": "Gaudí's great basilica, a forest of stone columns lit by coloured windows", "th": "มหาวิหารของเกาดี เสาหินเหมือนป่าต้นไม้ แสงสีลอดจากหน้าต่างกระจก" },
+          "why": { "en": "The rainbow light inside amazes children, and under 11s go free; the towers are not for under 6s", "th": "แสงสีรุ้งข้างในทำให้เด็กตื่นตา เด็กต่ำกว่า 11 ปีเข้าฟรี แต่หอคอยห้ามเด็กต่ำกว่า 6 ขวบ" },
+          "tip": { "en": "Timed tickets sell out; book days ahead and go in the morning sun", "th": "ตั๋วรอบเวลาขายหมดเร็ว จองล่วงหน้าหลายวันและไปช่วงเช้าที่แดดส่อง" },
+          "ages": [1, 1, 2, 2],
+          "hrs": 1.5,
+          "io": "in",
+          "pram": "yes",
+          "price": { "en": "≈ €26 adults · under 11 free", "th": "≈ €26 ผู้ใหญ่ · ต่ำกว่า 11 ปีฟรี" },
+          "book": "req",
+          "q": "Sagrada Família, Carrer de Mallorca 401, Barcelona",
+          "ok": "2026-11",
+          "src": "https://sagradafamilia.org/en/prices"
+        },
+        {
+          "name": { "en": "Park Güell", "th": "ปาร์กกูเอลล์" },
+          "kind": "park",
+          "area": { "en": "Gràcia", "th": "กราเซีย" },
+          "what": { "en": "Gaudí's hillside garden of mosaic benches, gingerbread houses and the dragon on the steps", "th": "สวนบนเนินของเกาดี มีม้านั่งโมเสก บ้านเหมือนขนมปังขิง และมังกรบนบันได" },
+          "why": { "en": "The mosaic dragon and fairy-tale houses feel made for children; under 7s go free", "th": "มังกรโมเสกกับบ้านแบบนิทานเหมือนทำมาเพื่อเด็ก เด็กต่ำกว่า 7 ขวบฟรี" },
+          "tip": { "en": "Every child needs a ticket, even a free one; the hill is steep, so come by taxi", "th": "เด็กทุกคนต้องมีตั๋วแม้จะฟรี เนินชัน นั่งแท็กซี่ไปจะสบายกว่า" },
+          "ages": [1, 2, 2, 2],
+          "hrs": 1.5,
+          "io": "out",
+          "pram": "part",
+          "price": { "en": "≈ €18 adults · €13.50 ages 7–12 · under 7 free", "th": "≈ €18 ผู้ใหญ่ · €13.50 อายุ 7–12 ปี · ต่ำกว่า 7 ขวบฟรี" },
+          "book": "req",
+          "q": "Park Güell, Carrer d'Olot, Barcelona",
+          "ok": "2026-11",
+          "src": "https://parkguell.barcelona/en/planning-your-visit/prices-and-times"
+        },
+        {
+          "name": { "en": "L'Aquàrium de Barcelona", "th": "ลากวาริอุมเดบาร์เซโลนา" },
+          "kind": "aquarium",
+          "area": { "en": "Port Vell", "th": "พอร์ตเบลล์" },
+          "what": { "en": "A big aquarium on the old harbour with a glass tunnel under the sharks", "th": "อะควาเรียมใหญ่ที่ท่าเรือเก่า มีอุโมงค์กระจกลอดใต้ฉลาม" },
+          "why": { "en": "Indoors, step-free and close to the beach: an easy rainy-day choice", "th": "อยู่ในร่ม ไม่มีขั้นบันได ใกล้ชายหาด เป็นตัวเลือกง่ายสำหรับวันฝนตก" },
+          "tip": { "en": "The 2 + 2 family pack is cheaper than four tickets", "th": "แพ็กครอบครัว 2 ผู้ใหญ่ 2 เด็กถูกกว่าซื้อแยกสี่ใบ" },
+          "ages": [2, 2, 2, 1],
+          "hrs": 2,
+          "io": "in",
+          "pram": "yes",
+          "price": { "en": "≈ €23 ages 5–10 · €15 ages 3–4 · under 3 free · family 2 + 2 €88", "th": "≈ €23 อายุ 5–10 ปี · €15 อายุ 3–4 ปี · ต่ำกว่า 3 ขวบฟรี · ครอบครัว 2+2 €88" },
+          "book": "rec",
+          "q": "L'Aquàrium de Barcelona, Moll d'Espanya, Barcelona",
+          "ok": "2026-11",
+          "src": "https://www.aquariumbcn.com/en/visit/prices/"
+        },
+        {
+          "name": { "en": "Barcelona Zoo", "th": "สวนสัตว์บาร์เซโลนา" },
+          "kind": "zoo",
+          "area": { "en": "Ciutadella", "th": "ซิวตาเดยา" },
+          "what": { "en": "The city zoo in Ciutadella park, with gorillas, elephants, giraffes and a farm corner", "th": "สวนสัตว์ของเมืองในสวนซิวตาเดยา มีกอริลลา ช้าง ยีราฟ และมุมฟาร์ม" },
+          "why": { "en": "Flat paths, playgrounds inside and an easy half day; under 3s go free", "th": "ทางเรียบ มีสนามเด็กเล่นข้างใน ใช้เวลาครึ่งวันสบายๆ เด็กต่ำกว่า 3 ขวบฟรี" },
+          "tip": { "en": "Combine with a rowing boat on the park's lake", "th": "ไปพร้อมกับพายเรือในทะเลสาบของสวน" },
+          "ages": [2, 2, 2, 1],
+          "hrs": 3,
+          "io": "out",
+          "pram": "yes",
+          "price": { "en": "≈ €23 adults · €13.90 ages 3–12 · under 3 free", "th": "≈ €23 ผู้ใหญ่ · €13.90 อายุ 3–12 ปี · ต่ำกว่า 3 ขวบฟรี" },
+          "book": "none",
+          "q": "Zoo de Barcelona, Parc de la Ciutadella, Barcelona",
+          "ok": "2026-11",
+          "src": "https://zoobarcelona.cat/en/plan-your-visit/tickets-and-subscriptions"
+        },
+        {
+          "name": { "en": "CosmoCaixa", "th": "คอสโมไคชา" },
+          "kind": "museumkid",
+          "area": { "en": "Sant Gervasi", "th": "ซันต์เจร์บาซี" },
+          "what": { "en": "A science museum with a flooded Amazon rainforest, a planetarium and hands-on rooms", "th": "พิพิธภัณฑ์วิทยาศาสตร์ มีป่าแอมะซอนจำลองที่น้ำท่วม ท้องฟ้าจำลอง และห้องให้ลองเล่น" },
+          "why": { "en": "Huge, indoors and step-free, with fish, frogs and buttons to press", "th": "ใหญ่ อยู่ในร่ม ไม่มีขั้นบันได มีปลา กบ และปุ่มให้เด็กกด" },
+          "tip": { "en": "Workshops and the planetarium cost a little more; book them with the ticket", "th": "เวิร์กช็อปและท้องฟ้าจำลองจ่ายเพิ่มเล็กน้อย จองพร้อมตั๋วเข้า" },
+          "ages": [1, 2, 2, 2],
+          "hrs": 3,
+          "io": "in",
+          "pram": "yes",
+          "price": { "en": "≈ €8 museum ticket · extras €3–6", "th": "≈ €8 ตั๋วพิพิธภัณฑ์ · กิจกรรมเสริม €3–6" },
+          "book": "rec",
+          "q": "CosmoCaixa, Carrer d'Isaac Newton 26, Barcelona",
+          "ok": "2026-11",
+          "src": "https://cosmocaixa.org/es/info-centro"
+        },
+        {
+          "name": { "en": "Tibidabo amusement park", "th": "สวนสนุกทิบิดาโบ" },
+          "kind": "themepark",
+          "area": { "en": "Tibidabo", "th": "ทิบิดาโบ" },
+          "what": { "en": "An old-fashioned fairground on the city's highest hill, with a little plane ride and views to the sea", "th": "สวนสนุกแบบดั้งเดิมบนเนินสูงสุดของเมือง มีเครื่องบินเล็กให้นั่งและวิวถึงทะเล" },
+          "why": { "en": "Gentle rides for small children and free under 90 cm", "th": "เครื่องเล่นเบาๆ สำหรับเด็กเล็ก เด็กสูงไม่ถึง 90 ซม. ฟรี" },
+          "tip": { "en": "Not open every day in winter; check the calendar before you go up", "th": "หน้าหนาวไม่ได้เปิดทุกวัน เช็กปฏิทินก่อนขึ้นไป" },
+          "ages": [1, 2, 2, 2],
+          "hrs": 4,
+          "io": "out",
+          "pram": "part",
+          "price": { "en": "≈ €39 over 120 cm · €15.50 90–120 cm · under 90 cm free", "th": "≈ €39 สูงเกิน 120 ซม. · €15.50 สูง 90–120 ซม. · ต่ำกว่า 90 ซม. ฟรี" },
+          "book": "rec",
+          "q": "Tibidabo amusement park, Plaça del Tibidabo, Barcelona",
+          "ok": "2026-11",
+          "src": "https://tibidabo.cat/en/plan-the-visit/rates"
+        },
+        {
+          "name": { "en": "Magic Fountain of Montjuïc", "th": "น้ำพุฟอนต์มาจิกา มอนต์จูอิก" },
+          "local": "Font Màgica",
+          "kind": "show",
+          "area": { "en": "Montjuïc", "th": "มอนต์จูอิก" },
+          "what": { "en": "A free evening show of dancing water, light and music below the national museum", "th": "โชว์น้ำพุเต้นรำกับแสงและเพลงตอนค่ำฟรี ใต้พิพิธภัณฑ์แห่งชาติ" },
+          "why": { "en": "Short, free and dazzling for children; the early show suits little ones", "th": "สั้น ฟรี และตื่นตาสำหรับเด็ก รอบแรกเหมาะกับเด็กเล็ก" },
+          "tip": { "en": "Winter shows run Thursday to Saturday evenings only", "th": "หน้าหนาวมีโชว์เฉพาะคืนวันพฤหัสถึงวันเสาร์" },
+          "ages": [2, 2, 2, 2],
+          "hrs": 1,
+          "io": "out",
+          "pram": "yes",
+          "price": { "en": "Free", "th": "ฟรี" },
+          "book": "none",
+          "q": "Font Màgica de Montjuïc, Plaça de Carles Buïgas, Barcelona",
+          "ok": "2026-11",
+          "src": "https://www.barcelona.cat/en/what-to-do-in-bcn/magic-fountain/magic-fountains-show-times"
+        },
+        {
+          "name": { "en": "Montjuïc cable car", "th": "กระเช้ามอนต์จูอิก" },
+          "local": "Telefèric de Montjuïc",
+          "kind": "ride",
+          "area": { "en": "Montjuïc", "th": "มอนต์จูอิก" },
+          "what": { "en": "Little cabins gliding up to Montjuïc castle over the port and the city", "th": "กระเช้าเล็กลอยขึ้นไปปราสาทมอนต์จูอิก มองเห็นท่าเรือและเมือง" },
+          "why": { "en": "A short, exciting ride; under 4s go free", "th": "นั่งไม่นานแต่ตื่นเต้น เด็กต่ำกว่า 4 ขวบฟรี" },
+          "tip": { "en": "Buy the return online for 10% off; one-way tickets are sold only at the station", "th": "ซื้อไปกลับออนไลน์ลด 10% ตั๋วเที่ยวเดียวขายที่สถานีเท่านั้น" },
+          "ages": [1, 2, 2, 2],
+          "hrs": 1,
+          "io": "out",
+          "pram": "part",
+          "price": { "en": "≈ €19 adults return · €13 ages 4–12 · under 4 free", "th": "≈ €19 ผู้ใหญ่ไปกลับ · €13 อายุ 4–12 ปี · ต่ำกว่า 4 ขวบฟรี" },
+          "book": "none",
+          "q": "Telefèric de Montjuïc, Avinguda de Miramar, Barcelona",
+          "ok": "2026-11",
+          "src": "https://www.telefericdemontjuic.cat/en/teleferic-fares-and-prices"
+        },
+        {
+          "name": { "en": "Poble Espanyol", "th": "ปอเบลเอสปัญญอล" },
+          "kind": "oldtown",
+          "area": { "en": "Montjuïc", "th": "มอนต์จูอิก" },
+          "what": { "en": "A walled 'Spanish village' of streets and squares copied from all over Spain, with craft workshops", "th": "หมู่บ้านสเปนจำลองมีกำแพงล้อม ถนนและลานจำลองจากทั่วสเปน มีโรงงานงานฝีมือ" },
+          "why": { "en": "Car-free lanes to explore and craftsmen to watch; under 4s go free", "th": "ตรอกไม่มีรถให้เด็กเดินสำรวจ มีช่างฝีมือให้ดู เด็กต่ำกว่า 4 ขวบฟรี" },
+          "tip": { "en": "Online tickets a day ahead are cheaper; a 2 + 2 family pack is offered", "th": "ซื้อออนไลน์ล่วงหน้าถูกกว่า มีแพ็กครอบครัว 2+2" },
+          "ages": [1, 2, 2, 1],
+          "hrs": 2,
+          "io": "both",
+          "pram": "part",
+          "price": { "en": "≈ €14.40 adults online · €9 ages 4–12 · under 4 free · 2 + 2 €42", "th": "≈ €14.40 ผู้ใหญ่ออนไลน์ · €9 อายุ 4–12 ปี · ต่ำกว่า 4 ขวบฟรี · 2+2 €42" },
+          "book": "none",
+          "q": "Poble Espanyol, Avinguda de Francesc Ferrer i Guàrdia 13, Barcelona",
+          "ok": "2026-11",
+          "src": "https://poble-espanyol.com/en/tickets-prices/"
+        },
+        {
+          "name": { "en": "Casa Batlló", "th": "กาซาบัตโย" },
+          "kind": "culture",
+          "area": { "en": "Passeig de Gràcia", "th": "ปาซเซจเดกราเซีย" },
+          "what": { "en": "Gaudí's dragon-backed house of wavy walls, shown with a tablet that brings the rooms to life", "th": "บ้านของเกาดีที่หลังคาเหมือนหลังมังกร ผนังเป็นคลื่น มีแท็บเล็ตทำให้ห้องดูมีชีวิต" },
+          "why": { "en": "Under 12s go free, and the moving pictures on the tablet keep children curious", "th": "เด็กต่ำกว่า 12 ปีฟรี ภาพเคลื่อนไหวบนแท็บเล็ตทำให้เด็กสนใจ" },
+          "tip": { "en": "Book a time online; the rooftop dragon is the children's favourite", "th": "จองเวลาออนไลน์ หลังคามังกรเป็นจุดที่เด็กชอบที่สุด" },
+          "ages": [1, 1, 2, 2],
+          "hrs": 1.5,
+          "io": "in",
+          "pram": "part",
+          "price": { "en": "≈ from €29 adults · under 12 free", "th": "≈ €29 ขึ้นไป ผู้ใหญ่ · ต่ำกว่า 12 ปีฟรี" },
+          "book": "rec",
+          "q": "Casa Batlló, Passeig de Gràcia 43, Barcelona",
+          "ok": "2026-11",
+          "src": "https://www.casabatllo.es/en/visit-with-children/"
+        },
+        {
+          "name": { "en": "Museu Blau natural sciences museum", "th": "พิพิธภัณฑ์มูเซวบลาว" },
+          "local": "Museu Blau",
+          "kind": "museum",
+          "area": { "en": "Fòrum", "th": "ฟอรุม" },
+          "what": { "en": "A blue triangle of a building full of whale skeletons, minerals and the story of life", "th": "อาคารสามเหลี่ยมสีน้ำเงิน มีโครงกระดูกวาฬ แร่ และเรื่องราวของสิ่งมีชีวิต" },
+          "why": { "en": "Under 16s go free and the big skeletons wow small children; indoors for a rainy day", "th": "อายุต่ำกว่า 16 ปีฟรี โครงกระดูกใหญ่ทำให้เด็กเล็กตื่นเต้น อยู่ในร่มสำหรับวันฝนตก" },
+          "tip": { "en": "Family activities must be booked, even when entry is free", "th": "กิจกรรมครอบครัวต้องจองแม้จะเข้าฟรี" },
+          "ages": [1, 2, 2, 2],
+          "hrs": 2,
+          "io": "in",
+          "pram": "yes",
+          "price": { "en": "≈ €6.50 adults · under 16 free", "th": "≈ €6.50 ผู้ใหญ่ · อายุต่ำกว่า 16 ปีฟรี" },
+          "book": "none",
+          "q": "Museu Blau, Plaça de Leonardo da Vinci 4-5, Barcelona",
+          "ok": "2026-11",
+          "src": "https://museuciencies.cat/en/the-nat/venues/natural-sciences-museum-of-barcelona/useful-information/"
+        },
+        {
+          "name": { "en": "Chocolate Museum", "th": "มูเซวเดลาโชโกลาตา" },
+          "local": "Museu de la Xocolata",
+          "kind": "museum",
+          "area": { "en": "El Born", "th": "เอลบอร์น" },
+          "what": { "en": "A small museum of chocolate history with sculptures made of chocolate", "th": "พิพิธภัณฑ์เล็กๆ เรื่องประวัติช็อกโกแลต มีประติมากรรมทำจากช็อกโกแลต" },
+          "why": { "en": "Short, indoors and sweet; the ticket is a chocolate bar, and under 6s go free", "th": "ใช้เวลาไม่นาน อยู่ในร่ม ตั๋วเข้าคือช็อกโกแลตแท่ง เด็กต่ำกว่า 6 ขวบฟรี" },
+          "tip": { "en": "Children's chocolate workshops run on set days and must be booked", "th": "เวิร์กช็อปช็อกโกแลตสำหรับเด็กมีบางวันและต้องจองก่อน" },
+          "ages": [1, 2, 2, 1],
+          "hrs": 1,
+          "io": "in",
+          "pram": "yes",
+          "price": { "en": "≈ €7 adults · under 6 free · workshops ≈ €9", "th": "≈ €7 ผู้ใหญ่ · ต่ำกว่า 6 ขวบฟรี · เวิร์กช็อป ≈ €9" },
+          "book": "none",
+          "q": "Museu de la Xocolata, Carrer del Comerç 36, Barcelona",
+          "ok": "2026-11",
+          "src": "https://museuxocolata.cat/en/prepare-the-visit/"
+        },
+        {
+          "name": { "en": "La Boqueria market", "th": "ตลาดบูเกเรีย" },
+          "local": "Mercat de la Boqueria",
+          "kind": "market",
+          "area": { "en": "La Rambla", "th": "ลารัมบลา" },
+          "what": { "en": "Barcelona's famous covered market of fruit juices, ham, sweets and tapas bars", "th": "ตลาดในร่มชื่อดังของบาร์เซโลนา มีน้ำผลไม้ แฮม ขนม และบาร์ทาปาส" },
+          "why": { "en": "Colourful fruit cups and juices that children love; tight aisles at midday", "th": "ถ้วยผลไม้และน้ำผลไม้สีสวยที่เด็กชอบ ช่วงเที่ยงทางเดินแน่น" },
+          "tip": { "en": "Go in the morning before the crowds; closed on Sundays", "th": "ไปช่วงเช้าก่อนคนเยอะ ปิดวันอาทิตย์" },
+          "ages": [1, 1, 2, 2],
+          "hrs": 1,
+          "io": "in",
+          "pram": "part",
+          "price": { "en": "Free", "th": "ฟรี" },
+          "book": "none",
+          "q": "Mercat de la Boqueria, La Rambla 91, Barcelona",
+          "ok": "2026-11",
+          "src": "https://www.boqueria.barcelona/contacto"
+        },
+        {
+          "name": { "en": "Parc de la Ciutadella", "th": "สวนซิวตาเดยา" },
+          "kind": "park",
+          "area": { "en": "Ciutadella", "th": "ซิวตาเดยา" },
+          "what": { "en": "The old town's green park, with a rowing-boat lake, a giant stone mammoth and play areas", "th": "สวนเขียวข้างเมืองเก่า มีทะเลสาบพายเรือ แมมมอธหินยักษ์ และลานเด็กเล่น" },
+          "why": { "en": "Playgrounds, a free play space for under 5s and a mammoth to climb at", "th": "มีสนามเด็กเล่น ที่เล่นฟรีสำหรับเด็กต่ำกว่า 5 ขวบ และแมมมอธให้ดู" },
+          "tip": { "en": "Rowing boats cost a few euros a boat", "th": "เรือพายราคาไม่กี่ยูโรต่อลำ" },
+          "ages": [2, 2, 2, 1],
+          "hrs": 1.5,
+          "io": "out",
+          "pram": "yes",
+          "price": { "en": "Free", "th": "ฟรี" },
+          "book": "none",
+          "q": "Parc de la Ciutadella, Passeig de Picasso 21, Barcelona",
+          "ok": "2026-11",
+          "src": "https://www.barcelona.cat/en/what-to-do-in-bcn/parks-and-gardens/parc-de-la-ciutadella-92086011921"
+        },
+        {
+          "name": { "en": "Barceloneta beach", "th": "หาดบาร์เซโลเนตา" },
+          "kind": "beach",
+          "area": { "en": "La Barceloneta", "th": "ลาบาร์เซโลเนตา" },
+          "what": { "en": "The city beach by the old fishermen's quarter, with showers, toilets and a children's play area", "th": "หาดของเมืองข้างย่านชาวประมงเก่า มีฝักบัว ห้องน้ำ และลานเด็กเล่น" },
+          "why": { "en": "Sand to dig in the middle of the city, a short walk from the metro", "th": "มีทรายให้ขุดเล่นกลางเมือง เดินจากรถไฟใต้ดินไม่ไกล" },
+          "tip": { "en": "The park behind the beach has another playground and toilets", "th": "สวนด้านหลังหาดมีสนามเด็กเล่นและห้องน้ำอีกแห่ง" },
+          "ages": [2, 2, 2, 2],
+          "hrs": 2,
+          "io": "out",
+          "pram": "part",
+          "price": { "en": "Free", "th": "ฟรี" },
+          "book": "none",
+          "q": "Platja de la Barceloneta, Barcelona",
+          "ok": "2026-11",
+          "src": "https://www.barcelona.cat/en/what-to-do-in-bcn/bathing-and-beaches/barceloneta-beach"
+        }
+      ]
     },
     {
-     "name": {
-      "en": "Park Güell",
-      "th": "ปาร์กกูเอลล์"
-     },
-     "kind": "park",
-     "area": {
-      "en": "Gràcia",
-      "th": "กราเซีย"
-     },
-     "what": {
-      "en": "Gaudí's hillside garden of mosaic benches, gingerbread houses and the dragon on the steps",
-      "th": "สวนบนเนินของเกาดี มีม้านั่งโมเสก บ้านเหมือนขนมปังขิง และมังกรบนบันได"
-     },
-     "why": {
-      "en": "The mosaic dragon and fairy-tale houses feel made for children; under 7s go free",
-      "th": "มังกรโมเสกกับบ้านแบบนิทานเหมือนทำมาเพื่อเด็ก เด็กต่ำกว่า 7 ขวบฟรี"
-     },
-     "tip": {
-      "en": "Every child needs a ticket, even a free one; the hill is steep, so come by taxi",
-      "th": "เด็กทุกคนต้องมีตั๋วแม้จะฟรี เนินชัน นั่งแท็กซี่ไปจะสบายกว่า"
-     },
-     "ages": [
-      1,
-      2,
-      2,
-      2
-     ],
-     "hrs": 1.5,
-     "io": "out",
-     "pram": "part",
-     "price": {
-      "en": "≈ €18 adults · €13.50 ages 7–12 · under 7 free",
-      "th": "≈ €18 ผู้ใหญ่ · €13.50 อายุ 7–12 ปี · ต่ำกว่า 7 ขวบฟรี"
-     },
-     "book": "req",
-     "q": "Park Güell, Carrer d'Olot, Barcelona",
-     "ok": "2026-11",
-     "src": "https://parkguell.barcelona/en/planning-your-visit/prices-and-times"
+      "place": "es-madrid",
+      "sights": [
+        {
+          "name": { "en": "Zoo Aquarium Madrid", "th": "สวนสัตว์และอควาเรียมมาดริด" },
+          "local": "Zoo Aquarium de Madrid",
+          "kind": "zoo",
+          "area": { "en": "Casa de Campo", "th": "กาซาเดกัมโป" },
+          "what": { "en": "A big zoo and aquarium in Casa de Campo with pandas, dolphins and an aquarium under one ticket", "th": "สวนสัตว์และอควาเรียมใหญ่ในกาซาเดกัมโป มีแพนด้า โลมา และอควาเรียมในบัตรเดียว" },
+          "why": { "en": "Wide paths for a pram, shows and a children's farm area; under-3s enter free", "th": "ทางกว้างเข็นรถเข็นได้ มีโชว์และมุมฟาร์มสำหรับเด็ก ต่ำกว่า 3 ปีเข้าฟรี" },
+          "tip": { "en": "Opens at 11:00 and the closing time depends on the season; prices change by day", "th": "เปิด 11:00 เวลาปิดขึ้นกับฤดู ราคาเปลี่ยนตามวัน" },
+          "ages": [2, 2, 2, 1],
+          "hrs": 5,
+          "io": "out",
+          "pram": "yes",
+          "price": { "en": "From ≈ €16.90 children 3–7 · from ≈ €19.90 adults · under 3 free (price varies by day)", "th": "เริ่มต้น ≈ €16.90 เด็ก 3–7 ปี · เริ่มต้น ≈ €19.90 ผู้ใหญ่ · ต่ำกว่า 3 ปีฟรี (ราคาเปลี่ยนตามวัน)" },
+          "book": "rec",
+          "q": "Zoo Aquarium de Madrid, Casa de Campo",
+          "ok": "2026-11",
+          "src": "https://www.taquilla.com/entradas/zoo-aquarium-de-madrid"
+        },
+        {
+          "name": { "en": "Parque de Atracciones de Madrid", "th": "สวนสนุกปาร์เกเดอาตรักซิโอเนส" },
+          "local": "Parque de Atracciones de Madrid",
+          "kind": "themepark",
+          "area": { "en": "Casa de Campo", "th": "กาซาเดกัมโป" },
+          "what": { "en": "The city's amusement park with more than 30 rides, including baby cars for the smallest", "th": "สวนสนุกของเมืองมีเครื่องเล่นกว่า 30 อย่าง รวมถึงรถเด็กเล็ก" },
+          "why": { "en": "Children under 1 metre enter free and there are gentle rides for toddlers", "th": "เด็กสูงต่ำกว่า 1 เมตรเข้าฟรี และมีเครื่องเล่นเบาๆ สำหรับเด็กเล็ก" },
+          "tip": { "en": "In the cold months it mostly opens at weekends and for events such as Halloween and Christmas (early December to early January)", "th": "ช่วงอากาศหนาวมักเปิดเฉพาะวันหยุดสุดสัปดาห์และงานพิเศษ เช่น ฮาโลวีนและคริสต์มาส (ต้นธันวาคมถึงต้นมกราคม)" },
+          "ages": [1, 2, 2, 2],
+          "hrs": 5,
+          "io": "out",
+          "pram": "yes",
+          "price": { "en": "≈ €23.90 online children 100–140 cm · under 1 m free · check the adult price", "th": "≈ €23.90 ออนไลน์ เด็ก 100–140 ซม. · ต่ำกว่า 1 ม.ฟรี · เช็กราคาผู้ใหญ่ก่อนไป" },
+          "book": "rec",
+          "q": "Parque de Atracciones de Madrid, Casa de Campo",
+          "ok": "2026-11",
+          "src": "https://www.taquilla.com/entradas/parque-de-atracciones-de-madrid"
+        },
+        {
+          "name": { "en": "Faunia", "th": "ฟาวเนีย" },
+          "local": "Faunia",
+          "kind": "zoo",
+          "area": { "en": "Valdebernardo", "th": "บัลเดเบร์นาร์โด" },
+          "what": { "en": "A nature park built around themed habitats, with a polar area, a tropical forest and bird shows", "th": "สวนธรรมชาติที่แบ่งเป็นแหล่งที่อยู่อาศัย มีโซนขั้วโลก ป่าเขตร้อน และโชว์นก" },
+          "why": { "en": "Much of it is under cover, so it works on a cold day; under-3s enter free", "th": "หลายส่วนมีหลังคา ไปได้แม้วันหนาว ต่ำกว่า 3 ปีเข้าฟรี" },
+          "tip": { "en": "Usually opens at 11:00 and closes around 18:00 in winter; a combined ticket with the Zoo Aquarium exists", "th": "ปกติเปิด 11:00 ปิดราว 18:00 ในฤดูหนาว มีบัตรรวมกับซูอควาเรียม" },
+          "ages": [2, 2, 2, 1],
+          "hrs": 4,
+          "io": "both",
+          "pram": "yes",
+          "price": { "en": "From ≈ €22.95 adults · €18.95 children 3–7 · under 3 free", "th": "เริ่มต้น ≈ €22.95 ผู้ใหญ่ · €18.95 เด็ก 3–7 ปี · ต่ำกว่า 3 ปีฟรี" },
+          "book": "rec",
+          "q": "Faunia, Avenida de las Comunidades, Madrid",
+          "ok": "2026-11",
+          "src": "https://www.taquilla.com/entradas/faunia?t10id=1112"
+        },
+        {
+          "name": { "en": "National Museum of Natural Sciences", "th": "พิพิธภัณฑ์วิทยาศาสตร์ธรรมชาติแห่งชาติ" },
+          "local": "Museo Nacional de Ciencias Naturales",
+          "kind": "museumkid",
+          "area": { "en": "Chamberí", "th": "ชามเบรี" },
+          "what": { "en": "A natural history museum with a dinosaur skeleton, minerals and animals", "th": "พิพิธภัณฑ์ประวัติศาสตร์ธรรมชาติ มีโครงกระดูกไดโนเสาร์ แร่ และสัตว์" },
+          "why": { "en": "Dinosaurs and big animals hold children's interest; step-free and indoors", "th": "ไดโนเสาร์และสัตว์ตัวใหญ่ดึงดูดเด็ก ทางเรียบและอยู่ในอาคาร" },
+          "tip": { "en": "Reported open Tuesday–Friday 10:00–17:00 and weekends 10:00–20:00; free on Sunday evenings, but sources differ on the time", "th": "มีรายงานเปิดอังคาร–ศุกร์ 10:00–17:00 และเสาร์–อาทิตย์ 10:00–20:00 ฟรีเย็นวันอาทิตย์ แต่แหล่งข้อมูลให้เวลาไม่ตรงกัน" },
+          "ages": [1, 2, 2, 2],
+          "hrs": 2,
+          "io": "in",
+          "pram": "yes",
+          "price": { "en": "≈ €7 adults · €3.50 children 4–16 · under 4 free", "th": "≈ €7 ผู้ใหญ่ · €3.50 เด็ก 4–16 ปี · ต่ำกว่า 4 ปีฟรี" },
+          "book": "none",
+          "q": "Museo Nacional de Ciencias Naturales, Calle de José Gutiérrez Abascal, Madrid",
+          "ok": "2026-11",
+          "src": "https://www.madridhappypeople.com/ocio-madrid/museo-de-ciencias-naturales-madrid/"
+        },
+        {
+          "name": { "en": "Retiro Park and the boat lake", "th": "สวนเรติโรและทะเลสาบพายเรือ" },
+          "local": "Parque del Retiro",
+          "kind": "park",
+          "area": { "en": "Retiro", "th": "เรติโร" },
+          "what": { "en": "The city's great park with a lake of rowing boats, playgrounds and puppet shows", "th": "สวนใหญ่ของเมือง มีทะเลสาบเรือพาย สนามเด็กเล่น และโชว์หุ่นกระบอก" },
+          "why": { "en": "Flat paths and room to run; a rowing boat is a favourite for children and boats take two to five people", "th": "ทางเรียบและมีที่วิ่งเล่น เรือพายเป็นที่โปรดของเด็ก นั่งได้สองถึงห้าคน" },
+          "tip": { "en": "The park is open until 22:00 from October to March; the Crystal Palace is closed for works in 2026, and the boat centre shuts on 24, 25 and 31 December and 1 January", "th": "สวนเปิดถึง 22:00 ตุลาคมถึงมีนาคม พระราชวังแก้วปิดซ่อมในปี 2026 และท่าเรือพายปิด 24 25 31 ธันวาคมกับ 1 มกราคม" },
+          "ages": [2, 2, 2, 2],
+          "hrs": 3,
+          "io": "out",
+          "pram": "yes",
+          "price": { "en": "Free · ≈ €6–8 per boat for 45 minutes", "th": "ฟรี · ≈ €6–8 ต่อลำ 45 นาที" },
+          "book": "none",
+          "q": "Parque del Retiro, Madrid",
+          "ok": "2026-11",
+          "src": "https://www.madridhappypeople.com/ocio-madrid/barcas-del-parque-del-retiro/"
+        },
+        {
+          "name": { "en": "Railway Museum", "th": "พิพิธภัณฑ์รถไฟ" },
+          "local": "Museo del Ferrocarril",
+          "kind": "museumkid",
+          "area": { "en": "Delicias", "th": "เดลิเซียส" },
+          "what": { "en": "A museum in an old station with steam and electric trains you can walk beside and into", "th": "พิพิธภัณฑ์ในสถานีเก่า มีรถไฟไอน้ำและรถไฟฟ้าให้เดินเข้าไปดู" },
+          "why": { "en": "Trains are big and close, which children love; a Christmas train runs in December", "th": "รถไฟขนาดใหญ่ใกล้ตัว เด็กชอบ และมีรถไฟคริสต์มาสในเดือนธันวาคม" },
+          "tip": { "en": "Opening hours are reported as about 09:30–15:00 on weekdays; check before you go", "th": "มีรายงานเวลาเปิดราว 09:30–15:00 วันธรรมดา เช็กก่อนไป" },
+          "ages": [1, 2, 2, 2],
+          "hrs": 2,
+          "io": "in",
+          "pram": "yes",
+          "price": { "en": "≈ €7 adults · €4 children 4–12 · under 4 free", "th": "≈ €7 ผู้ใหญ่ · €4 เด็ก 4–12 ปี · ต่ำกว่า 4 ปีฟรี" },
+          "book": "none",
+          "q": "Museo del Ferrocarril, Paseo de las Delicias, Madrid",
+          "ok": "2026-11",
+          "src": "https://www.timeout.es/madrid/es/museos-e-instituciones/museo-del-ferrocarril"
+        },
+        {
+          "name": { "en": "Madrid Planetarium", "th": "ท้องฟ้าจำลองมาดริด" },
+          "local": "Planetario de Madrid",
+          "kind": "museumkid",
+          "area": { "en": "Arganzuela", "th": "อาร์กันซูเอลา" },
+          "what": { "en": "A city planetarium with sessions for young children, such as a 35-minute show for ages up to 6", "th": "ท้องฟ้าจำลองของเมือง มีรอบสำหรับเด็กเล็ก เช่น โชว์ 35 นาทีสำหรับเด็กถึง 6 ปี" },
+          "why": { "en": "Short seated shows in the dark, which suit three- to six-year-olds", "th": "โชว์สั้นๆ นั่งดูในห้องมืด เหมาะกับเด็ก 3–6 ปี" },
+          "tip": { "en": "Sessions change by date, so check the calendar and book", "th": "รอบเปลี่ยนตามวัน เช็กปฏิทินและจอง" },
+          "ages": [0, 2, 2, 1],
+          "hrs": 1,
+          "io": "in",
+          "pram": "yes",
+          "price": { "en": "≈ €3.60 adults · €1.65 under 14", "th": "≈ €3.60 ผู้ใหญ่ · €1.65 ต่ำกว่า 14 ปี" },
+          "book": "rec",
+          "q": "Planetario de Madrid, Parque Tierno Galván, Madrid",
+          "ok": "2026-11",
+          "src": "https://madrid.es/planetario"
+        },
+        {
+          "name": { "en": "Royal Palace of Madrid", "th": "พระราชวังหลวงมาดริด" },
+          "local": "Palacio Real de Madrid",
+          "kind": "culture",
+          "area": { "en": "Centro", "th": "เซนโตร" },
+          "what": { "en": "The huge royal palace with a throne room, an armoury and a gardens-and-square setting", "th": "พระราชวังหลวงขนาดใหญ่ มีห้องพระที่นั่ง คลังอาวุธ และสวนกับจัตุรัส" },
+          "why": { "en": "The armoury with real suits of armour holds children's interest; under-5s enter free", "th": "คลังอาวุธที่มีชุดเกราะจริงดึงดูดเด็ก ต่ำกว่า 5 ปีเข้าฟรี" },
+          "tip": { "en": "Winter hours reported Monday–Saturday 10:00–18:00 and Sunday 10:00–16:00; closed for official events without warning", "th": "ฤดูหนาวมีรายงานเปิดจันทร์–เสาร์ 10:00–18:00 อาทิตย์ 10:00–16:00 อาจปิดกะทันหันเมื่อมีพิธี" },
+          "ages": [0, 1, 2, 2],
+          "hrs": 2,
+          "io": "in",
+          "pram": "yes",
+          "price": { "en": "≈ €18 adults (other sources €14) · €9 ages 5–16 · under 5 free", "th": "≈ €18 ผู้ใหญ่ (บางแหล่ง €14) · €9 อายุ 5–16 ปี · ต่ำกว่า 5 ปีฟรี" },
+          "book": "rec",
+          "q": "Palacio Real de Madrid, Calle de Bailén",
+          "ok": "2026-11",
+          "src": "https://lamaletainquieta.com/?p=4752"
+        },
+        {
+          "name": { "en": "Santiago Bernabéu stadium tour", "th": "ทัวร์สนามซานเตียโก เบร์นาเบว" },
+          "local": "Tour Santiago Bernabéu",
+          "kind": "museum",
+          "area": { "en": "Chamartín", "th": "ชามาร์ติน" },
+          "what": { "en": "A tour of Real Madrid's stadium with the trophy room, pitch-side views and the changing rooms", "th": "ทัวร์สนามเรอัลมาดริด มีห้องถ้วยรางวัล วิวข้างสนาม และห้องแต่งตัว" },
+          "why": { "en": "Big and flat with lifts, best for children who like football; under-5s enter free", "th": "ใหญ่และเรียบ มีลิฟต์ เหมาะกับเด็กที่ชอบฟุตบอล ต่ำกว่า 5 ปีเข้าฟรี" },
+          "tip": { "en": "The tour stops 5½ hours before a match, and closes on 25 December and 1 January", "th": "ทัวร์หยุด 5 ชั่วโมงครึ่งก่อนแข่ง และปิด 25 ธันวาคมกับ 1 มกราคม" },
+          "ages": [0, 1, 2, 2],
+          "hrs": 2,
+          "io": "both",
+          "pram": "yes",
+          "price": { "en": "≈ €19–29 children 5–13 · under 5 free (price varies by day)", "th": "≈ €19–29 เด็ก 5–13 ปี · ต่ำกว่า 5 ปีฟรี (ราคาเปลี่ยนตามวัน)" },
+          "book": "rec",
+          "q": "Tour Santiago Bernabéu, Madrid",
+          "ok": "2026-11",
+          "src": "https://lamaletainquieta.com/?p=4762"
+        },
+        {
+          "name": { "en": "Parque Warner Madrid", "th": "พาร์กวอร์เนอร์มาดริด" },
+          "local": "Parque Warner Madrid",
+          "kind": "themepark",
+          "area": { "en": "San Martín de la Vega", "th": "ซานมาร์ตินเดลาเบกา" },
+          "what": { "en": "A film-themed park with Looney Tunes and superhero areas, about 40 minutes from the city", "th": "สวนสนุกธีมภาพยนตร์ มีโซนลูนี่ทูนส์และซูเปอร์ฮีโร่ ห่างจากเมืองราว 40 นาที" },
+          "why": { "en": "Children under 100 cm enter free and the Looney Tunes area has gentle rides", "th": "เด็กสูงต่ำกว่า 100 ซม. เข้าฟรี และโซนลูนี่ทูนส์มีเครื่องเล่นเบาๆ" },
+          "tip": { "en": "A seasonal park: open at weekends all year and daily in school holidays; check the calendar", "th": "เป็นสวนตามฤดู เปิดวันหยุดสุดสัปดาห์ทั้งปีและทุกวันช่วงปิดเทอม เช็กปฏิทิน" },
+          "ages": [1, 2, 2, 2],
+          "hrs": 6,
+          "io": "out",
+          "pram": "yes",
+          "price": { "en": "≈ €32.90–35 children 100–140 cm · under 100 cm free", "th": "≈ €32.90–35 เด็ก 100–140 ซม. · ต่ำกว่า 100 ซม.ฟรี" },
+          "book": "rec",
+          "q": "Parque Warner Madrid, San Martín de la Vega",
+          "ok": "2026-11",
+          "src": "https://www.taquilla.com/entradas/parque-warner-madrid"
+        },
+        {
+          "name": { "en": "San Miguel Market", "th": "ตลาดซานมิเกล" },
+          "local": "Mercado de San Miguel",
+          "kind": "market",
+          "area": { "en": "Plaza Mayor", "th": "จัตุรัสมายอร์" },
+          "what": { "en": "A glass-and-iron covered market of small stalls with tapas, fruit and sweets, reopened in February 2026", "th": "ตลาดกระจกและเหล็กมีหลังคา แผงเล็กๆ ขายทาปาส ผลไม้ และขนม เปิดใหม่เดือนกุมภาพันธ์ 2026" },
+          "why": { "en": "Fruit and small bites suit children at an off-peak hour; it is very crowded at lunch and in the evening", "th": "ผลไม้และของว่างเหมาะกับเด็กช่วงคนน้อย ช่วงเที่ยงและเย็นแน่นมาก" },
+          "tip": { "en": "Open daily 10:00–24:00 (Friday and Saturday to 01:00)", "th": "เปิดทุกวัน 10:00–24:00 (ศุกร์และเสาร์ถึง 01:00)" },
+          "ages": [1, 1, 2, 2],
+          "hrs": 1,
+          "io": "in",
+          "pram": "part",
+          "price": { "en": "Free to walk in", "th": "เข้าชมฟรี" },
+          "book": "none",
+          "q": "Mercado de San Miguel, Plaza de San Miguel, Madrid",
+          "ok": "2026-11",
+          "src": "https://lamaletainquieta.com/?p=4763"
+        },
+        {
+          "name": { "en": "Casa de Campo lake", "th": "ทะเลสาบกาซาเดกัมโป" },
+          "local": "Lago de la Casa de Campo",
+          "kind": "park",
+          "area": { "en": "Casa de Campo", "th": "กาซาเดกัมโป" },
+          "what": { "en": "The lake in Madrid's biggest park with cafés around it and boat rides", "th": "ทะเลสาบในสวนที่ใหญ่ที่สุดของมาดริด มีร้านกาแฟรอบๆ และเรือล่องทะเลสาบ" },
+          "why": { "en": "Open space to run and a paved path around the water; the park is shared with the zoo and the amusement park", "th": "พื้นที่โล่งให้วิ่งเล่นและทางลาดยางรอบน้ำ ใกล้กับสวนสัตว์และสวนสนุก" },
+          "tip": { "en": "The Casa de Campo cable car is closed for a technical review until the end of 2026", "th": "กระเช้าไปกาซาเดกัมโปปิดตรวจสภาพจนสิ้นปี 2026" },
+          "ages": [2, 2, 2, 2],
+          "hrs": 2,
+          "io": "out",
+          "pram": "yes",
+          "price": { "en": "Free", "th": "ฟรี" },
+          "book": "none",
+          "q": "Lago de la Casa de Campo, Madrid",
+          "ok": "2026-11",
+          "src": "https://www.esmadrid.com/pt/informacao-turistica/lago-de-la-casa-de-campo"
+        },
+        {
+          "name": { "en": "Prado Museum", "th": "พิพิธภัณฑ์ปราโด" },
+          "local": "Museo del Prado",
+          "kind": "museum",
+          "area": { "en": "Paseo del Prado", "th": "ปาเซโอเดลปราโด" },
+          "what": { "en": "Spain's great art museum, easiest with children on a short visit to a few famous paintings", "th": "พิพิธภัณฑ์ศิลปะใหญ่ของสเปน เหมาะกับเด็กถ้าเลือกชมสั้นๆ ไม่กี่ภาพดัง" },
+          "why": { "en": "Under-18s enter free; keep it to an hour of the big, colourful rooms", "th": "ต่ำกว่า 18 ปีเข้าฟรี ควรชมราวหนึ่งชั่วโมงในห้องใหญ่ที่มีสีสัน" },
+          "tip": { "en": "Open on Sundays and holidays 10:00–19:00; free for everyone in the last two hours of the day", "th": "เปิดวันอาทิตย์และวันหยุด 10:00–19:00 ฟรีสำหรับทุกคนช่วงสองชั่วโมงสุดท้ายของวัน" },
+          "ages": [0, 1, 1, 2],
+          "hrs": 1.5,
+          "io": "in",
+          "pram": "yes",
+          "price": { "en": "Under 18 free · check the adult price (≈ €15–18 reported)", "th": "ต่ำกว่า 18 ปีฟรี · เช็กราคาผู้ใหญ่ (มีรายงาน ≈ €15–18)" },
+          "book": "rec",
+          "q": "Museo del Prado, Madrid",
+          "ok": "2026-11",
+          "src": "https://lamaletainquieta.com/?p=4753"
+        },
+        {
+          "name": { "en": "Templo de Debod", "th": "วิหารเดบอด" },
+          "local": "Templo de Debod",
+          "kind": "culture",
+          "area": { "en": "Parque del Oeste", "th": "ปาร์เกเดลโออีสเต" },
+          "what": { "en": "A real ancient Egyptian temple rebuilt in a hilltop park, with a pool in front and views over western Madrid", "th": "วิหารอียิปต์โบราณของจริงที่ย้ายมาตั้งในสวนบนเนิน มีสระน้ำด้านหน้าและวิวฝั่งตะวันตกของมาดริด" },
+          "why": { "en": "Open space to run, a pool of reflections and a short, free look inside; small children enjoy the 'Egypt in Madrid' surprise", "th": "มีที่โล่งให้วิ่งเล่น เข้าชมข้างในสั้นๆ ได้ฟรี เด็กเล็กสนุกกับวิหารอียิปต์กลางเมือง" },
+          "tip": { "en": "Closed Mondays; free entry inside but places are limited, so book a free slot online at weekends; go before sunset", "th": "ปิดวันจันทร์ เข้าชมข้างในฟรีแต่จำกัดจำนวน ช่วงสุดสัปดาห์ควรจองคิวฟรีออนไลน์ ไปก่อนพระอาทิตย์ตก" },
+          "ages": [1, 2, 2, 2],
+          "hrs": 1,
+          "io": "both",
+          "pram": "yes",
+          "price": { "en": "Free", "th": "ฟรี" },
+          "book": "rec",
+          "q": "Templo de Debod, Calle Ferraz, Madrid",
+          "ok": "2026-11",
+          "src": "https://www.esmadrid.com/node/69340"
+        },
+        {
+          "name": { "en": "Thyssen-Bornemisza Museum", "th": "พิพิธภัณฑ์ติสเซน-บอร์เนมิสซา" },
+          "local": "Museo Thyssen-Bornemisza",
+          "kind": "museum",
+          "area": { "en": "Paseo del Prado", "th": "ปาเซโอเดลปราโด" },
+          "what": { "en": "A palace of paintings that runs from medieval art to pop art, one of Madrid's three big art museums", "th": "พิพิธภัณฑ์ภาพวาดที่เล่าเรื่องตั้งแต่ยุคกลางจนถึงป๊อปอาร์ต หนึ่งในสามพิพิธภัณฑ์ศิลปะใหญ่ของมาดริด" },
+          "why": { "en": "Under 18s go in free and the rooms are calm and step-free; keep it short and let children pick favourite colours and animals", "th": "เด็กอายุต่ำกว่า 18 ปีเข้าฟรี ห้องเงียบและไม่มีขั้นบันได ให้เด็กเลือกสีหรือสัตว์ที่ชอบแล้วเดินสั้นๆ" },
+          "tip": { "en": "Free on Mondays 12:00–16:00 for the permanent collection; sources differ on the adult price, so check it", "th": "วันจันทร์ 12:00–16:00 ชมคอลเลกชันถาวรฟรี ราคาผู้ใหญ่แต่ละแหล่งไม่ตรงกัน ควรเช็ก" },
+          "ages": [0, 1, 1, 2],
+          "hrs": 1.5,
+          "io": "in",
+          "pram": "yes",
+          "price": { "en": "≈ €13–14 adults · under 18 free", "th": "≈ €13–14 ผู้ใหญ่ · ต่ำกว่า 18 ปีฟรี" },
+          "book": "rec",
+          "q": "Museo Thyssen-Bornemisza, Paseo del Prado 8, Madrid",
+          "ok": "2026-11",
+          "src": "https://lamaletainquieta.com/museo-thyssen/"
+        },
+        {
+          "name": { "en": "CaixaForum Madrid", "th": "ไกซาฟอรุมมาดริด" },
+          "local": "CaixaForum Madrid",
+          "kind": "museumkid",
+          "area": { "en": "Paseo del Prado", "th": "ปาเซโอเดลปราโด" },
+          "what": { "en": "A striking arts centre beside a famous vertical garden, with changing exhibitions and family programmes", "th": "ศูนย์ศิลปะดีไซน์เด่นข้างสวนแนวตั้งชื่อดัง มีนิทรรศการหมุนเวียนและกิจกรรมสำหรับครอบครัว" },
+          "why": { "en": "Under 16s go in free, it is open every day and the lifts and wide halls suit prams; a good rainy-day stop", "th": "เด็กอายุต่ำกว่า 16 ปีเข้าฟรี เปิดทุกวัน มีลิฟต์และห้องกว้าง เหมาะกับรถเข็น เป็นที่หลบฝนที่ดี" },
+          "tip": { "en": "Open daily 10:00–20:00; check which exhibition is on and whether it suits the children's ages", "th": "เปิดทุกวัน 10:00–20:00 เช็กว่านิทรรศการที่จัดอยู่เหมาะกับอายุเด็กหรือไม่" },
+          "ages": [0, 1, 2, 2],
+          "hrs": 1.5,
+          "io": "in",
+          "pram": "yes",
+          "price": { "en": "≈ €6 adults · under 16 free", "th": "≈ €6 ผู้ใหญ่ · ต่ำกว่า 16 ปีฟรี" },
+          "book": "none",
+          "q": "CaixaForum Madrid, Paseo del Prado 36, Madrid",
+          "ok": "2026-11",
+          "src": "https://www.esmadrid.com/informacion-turistica/caixaforum-madrid"
+        }
+      ]
     },
     {
-     "name": {
-      "en": "L'Aquàrium de Barcelona",
-      "th": "ลากวาริอุมเดบาร์เซโลนา"
-     },
-     "kind": "aquarium",
-     "area": {
-      "en": "Port Vell",
-      "th": "พอร์ตเบลล์"
-     },
-     "what": {
-      "en": "A big aquarium on the old harbour with a glass tunnel under the sharks",
-      "th": "อะควาเรียมใหญ่ที่ท่าเรือเก่า มีอุโมงค์กระจกลอดใต้ฉลาม"
-     },
-     "why": {
-      "en": "Indoors, step-free and close to the beach: an easy rainy-day choice",
-      "th": "อยู่ในร่ม ไม่มีขั้นบันได ใกล้ชายหาด เป็นตัวเลือกง่ายสำหรับวันฝนตก"
-     },
-     "tip": {
-      "en": "The 2 + 2 family pack is cheaper than four tickets",
-      "th": "แพ็กครอบครัว 2 ผู้ใหญ่ 2 เด็กถูกกว่าซื้อแยกสี่ใบ"
-     },
-     "ages": [
-      2,
-      2,
-      2,
-      1
-     ],
-     "hrs": 2,
-     "io": "in",
-     "pram": "yes",
-     "price": {
-      "en": "≈ €23 ages 5–10 · €15 ages 3–4 · under 3 free · family 2 + 2 €88",
-      "th": "≈ €23 อายุ 5–10 ปี · €15 อายุ 3–4 ปี · ต่ำกว่า 3 ขวบฟรี · ครอบครัว 2+2 €88"
-     },
-     "book": "rec",
-     "q": "L'Aquàrium de Barcelona, Moll d'Espanya, Barcelona",
-     "ok": "2026-11",
-     "src": "https://www.aquariumbcn.com/en/visit/prices/"
-    },
-    {
-     "name": {
-      "en": "Barcelona Zoo",
-      "th": "สวนสัตว์บาร์เซโลนา"
-     },
-     "kind": "zoo",
-     "area": {
-      "en": "Ciutadella",
-      "th": "ซิวตาเดยา"
-     },
-     "what": {
-      "en": "The city zoo in Ciutadella park, with gorillas, elephants, giraffes and a farm corner",
-      "th": "สวนสัตว์ของเมืองในสวนซิวตาเดยา มีกอริลลา ช้าง ยีราฟ และมุมฟาร์ม"
-     },
-     "why": {
-      "en": "Flat paths, playgrounds inside and an easy half day; under 3s go free",
-      "th": "ทางเรียบ มีสนามเด็กเล่นข้างใน ใช้เวลาครึ่งวันสบายๆ เด็กต่ำกว่า 3 ขวบฟรี"
-     },
-     "tip": {
-      "en": "Combine with a rowing boat on the park's lake",
-      "th": "ไปพร้อมกับพายเรือในทะเลสาบของสวน"
-     },
-     "ages": [
-      2,
-      2,
-      2,
-      1
-     ],
-     "hrs": 3,
-     "io": "out",
-     "pram": "yes",
-     "price": {
-      "en": "≈ €23 adults · €13.90 ages 3–12 · under 3 free",
-      "th": "≈ €23 ผู้ใหญ่ · €13.90 อายุ 3–12 ปี · ต่ำกว่า 3 ขวบฟรี"
-     },
-     "book": "none",
-     "q": "Zoo de Barcelona, Parc de la Ciutadella, Barcelona",
-     "ok": "2026-11",
-     "src": "https://zoobarcelona.cat/en/plan-your-visit/tickets-and-subscriptions"
-    },
-    {
-     "name": {
-      "en": "CosmoCaixa",
-      "th": "คอสโมไคชา"
-     },
-     "kind": "museumkid",
-     "area": {
-      "en": "Sant Gervasi",
-      "th": "ซันต์เจร์บาซี"
-     },
-     "what": {
-      "en": "A science museum with a flooded Amazon rainforest, a planetarium and hands-on rooms",
-      "th": "พิพิธภัณฑ์วิทยาศาสตร์ มีป่าแอมะซอนจำลองที่น้ำท่วม ท้องฟ้าจำลอง และห้องให้ลองเล่น"
-     },
-     "why": {
-      "en": "Huge, indoors and step-free, with fish, frogs and buttons to press",
-      "th": "ใหญ่ อยู่ในร่ม ไม่มีขั้นบันได มีปลา กบ และปุ่มให้เด็กกด"
-     },
-     "tip": {
-      "en": "Workshops and the planetarium cost a little more; book them with the ticket",
-      "th": "เวิร์กช็อปและท้องฟ้าจำลองจ่ายเพิ่มเล็กน้อย จองพร้อมตั๋วเข้า"
-     },
-     "ages": [
-      1,
-      2,
-      2,
-      2
-     ],
-     "hrs": 3,
-     "io": "in",
-     "pram": "yes",
-     "price": {
-      "en": "≈ €8 museum ticket · extras €3–6",
-      "th": "≈ €8 ตั๋วพิพิธภัณฑ์ · กิจกรรมเสริม €3–6"
-     },
-     "book": "rec",
-     "q": "CosmoCaixa, Carrer d'Isaac Newton 26, Barcelona",
-     "ok": "2026-11",
-     "src": "https://cosmocaixa.org/es/info-centro"
-    },
-    {
-     "name": {
-      "en": "Tibidabo amusement park",
-      "th": "สวนสนุกทิบิดาโบ"
-     },
-     "kind": "themepark",
-     "area": {
-      "en": "Tibidabo",
-      "th": "ทิบิดาโบ"
-     },
-     "what": {
-      "en": "An old-fashioned fairground on the city's highest hill, with a little plane ride and views to the sea",
-      "th": "สวนสนุกแบบดั้งเดิมบนเนินสูงสุดของเมือง มีเครื่องบินเล็กให้นั่งและวิวถึงทะเล"
-     },
-     "why": {
-      "en": "Gentle rides for small children and free under 90 cm",
-      "th": "เครื่องเล่นเบาๆ สำหรับเด็กเล็ก เด็กสูงไม่ถึง 90 ซม. ฟรี"
-     },
-     "tip": {
-      "en": "Not open every day in winter; check the calendar before you go up",
-      "th": "หน้าหนาวไม่ได้เปิดทุกวัน เช็กปฏิทินก่อนขึ้นไป"
-     },
-     "ages": [
-      1,
-      2,
-      2,
-      2
-     ],
-     "hrs": 4,
-     "io": "out",
-     "pram": "part",
-     "price": {
-      "en": "≈ €39 over 120 cm · €15.50 90–120 cm · under 90 cm free",
-      "th": "≈ €39 สูงเกิน 120 ซม. · €15.50 สูง 90–120 ซม. · ต่ำกว่า 90 ซม. ฟรี"
-     },
-     "book": "rec",
-     "q": "Tibidabo amusement park, Plaça del Tibidabo, Barcelona",
-     "ok": "2026-11",
-     "src": "https://tibidabo.cat/en/plan-the-visit/rates"
-    },
-    {
-     "name": {
-      "en": "Magic Fountain of Montjuïc",
-      "th": "น้ำพุฟอนต์มาจิกา มอนต์จูอิก"
-     },
-     "local": "Font Màgica",
-     "kind": "show",
-     "area": {
-      "en": "Montjuïc",
-      "th": "มอนต์จูอิก"
-     },
-     "what": {
-      "en": "A free evening show of dancing water, light and music below the national museum",
-      "th": "โชว์น้ำพุเต้นรำกับแสงและเพลงตอนค่ำฟรี ใต้พิพิธภัณฑ์แห่งชาติ"
-     },
-     "why": {
-      "en": "Short, free and dazzling for children; the early show suits little ones",
-      "th": "สั้น ฟรี และตื่นตาสำหรับเด็ก รอบแรกเหมาะกับเด็กเล็ก"
-     },
-     "tip": {
-      "en": "Winter shows run Thursday to Saturday evenings only",
-      "th": "หน้าหนาวมีโชว์เฉพาะคืนวันพฤหัสถึงวันเสาร์"
-     },
-     "ages": [
-      2,
-      2,
-      2,
-      2
-     ],
-     "hrs": 1,
-     "io": "out",
-     "pram": "yes",
-     "price": {
-      "en": "Free",
-      "th": "ฟรี"
-     },
-     "book": "none",
-     "q": "Font Màgica de Montjuïc, Plaça de Carles Buïgas, Barcelona",
-     "ok": "2026-11",
-     "src": "https://www.barcelona.cat/en/what-to-do-in-bcn/magic-fountain/magic-fountains-show-times"
-    },
-    {
-     "name": {
-      "en": "Montjuïc cable car",
-      "th": "กระเช้ามอนต์จูอิก"
-     },
-     "local": "Telefèric de Montjuïc",
-     "kind": "ride",
-     "area": {
-      "en": "Montjuïc",
-      "th": "มอนต์จูอิก"
-     },
-     "what": {
-      "en": "Little cabins gliding up to Montjuïc castle over the port and the city",
-      "th": "กระเช้าเล็กลอยขึ้นไปปราสาทมอนต์จูอิก มองเห็นท่าเรือและเมือง"
-     },
-     "why": {
-      "en": "A short, exciting ride; under 4s go free",
-      "th": "นั่งไม่นานแต่ตื่นเต้น เด็กต่ำกว่า 4 ขวบฟรี"
-     },
-     "tip": {
-      "en": "Buy the return online for 10% off; one-way tickets are sold only at the station",
-      "th": "ซื้อไปกลับออนไลน์ลด 10% ตั๋วเที่ยวเดียวขายที่สถานีเท่านั้น"
-     },
-     "ages": [
-      1,
-      2,
-      2,
-      2
-     ],
-     "hrs": 1,
-     "io": "out",
-     "pram": "part",
-     "price": {
-      "en": "≈ €19 adults return · €13 ages 4–12 · under 4 free",
-      "th": "≈ €19 ผู้ใหญ่ไปกลับ · €13 อายุ 4–12 ปี · ต่ำกว่า 4 ขวบฟรี"
-     },
-     "book": "none",
-     "q": "Telefèric de Montjuïc, Avinguda de Miramar, Barcelona",
-     "ok": "2026-11",
-     "src": "https://www.telefericdemontjuic.cat/en/teleferic-fares-and-prices"
-    },
-    {
-     "name": {
-      "en": "Poble Espanyol",
-      "th": "ปอเบลเอสปัญญอล"
-     },
-     "kind": "oldtown",
-     "area": {
-      "en": "Montjuïc",
-      "th": "มอนต์จูอิก"
-     },
-     "what": {
-      "en": "A walled 'Spanish village' of streets and squares copied from all over Spain, with craft workshops",
-      "th": "หมู่บ้านสเปนจำลองมีกำแพงล้อม ถนนและลานจำลองจากทั่วสเปน มีโรงงานงานฝีมือ"
-     },
-     "why": {
-      "en": "Car-free lanes to explore and craftsmen to watch; under 4s go free",
-      "th": "ตรอกไม่มีรถให้เด็กเดินสำรวจ มีช่างฝีมือให้ดู เด็กต่ำกว่า 4 ขวบฟรี"
-     },
-     "tip": {
-      "en": "Online tickets a day ahead are cheaper; a 2 + 2 family pack is offered",
-      "th": "ซื้อออนไลน์ล่วงหน้าถูกกว่า มีแพ็กครอบครัว 2+2"
-     },
-     "ages": [
-      1,
-      2,
-      2,
-      1
-     ],
-     "hrs": 2,
-     "io": "both",
-     "pram": "part",
-     "price": {
-      "en": "≈ €14.40 adults online · €9 ages 4–12 · under 4 free · 2 + 2 €42",
-      "th": "≈ €14.40 ผู้ใหญ่ออนไลน์ · €9 อายุ 4–12 ปี · ต่ำกว่า 4 ขวบฟรี · 2+2 €42"
-     },
-     "book": "none",
-     "q": "Poble Espanyol, Avinguda de Francesc Ferrer i Guàrdia 13, Barcelona",
-     "ok": "2026-11",
-     "src": "https://poble-espanyol.com/en/tickets-prices/"
-    },
-    {
-     "name": {
-      "en": "Casa Batlló",
-      "th": "กาซาบัตโย"
-     },
-     "kind": "culture",
-     "area": {
-      "en": "Passeig de Gràcia",
-      "th": "ปาซเซจเดกราเซีย"
-     },
-     "what": {
-      "en": "Gaudí's dragon-backed house of wavy walls, shown with a tablet that brings the rooms to life",
-      "th": "บ้านของเกาดีที่หลังคาเหมือนหลังมังกร ผนังเป็นคลื่น มีแท็บเล็ตทำให้ห้องดูมีชีวิต"
-     },
-     "why": {
-      "en": "Under 12s go free, and the moving pictures on the tablet keep children curious",
-      "th": "เด็กต่ำกว่า 12 ปีฟรี ภาพเคลื่อนไหวบนแท็บเล็ตทำให้เด็กสนใจ"
-     },
-     "tip": {
-      "en": "Book a time online; the rooftop dragon is the children's favourite",
-      "th": "จองเวลาออนไลน์ หลังคามังกรเป็นจุดที่เด็กชอบที่สุด"
-     },
-     "ages": [
-      1,
-      1,
-      2,
-      2
-     ],
-     "hrs": 1.5,
-     "io": "in",
-     "pram": "part",
-     "price": {
-      "en": "≈ from €29 adults · under 12 free",
-      "th": "≈ €29 ขึ้นไป ผู้ใหญ่ · ต่ำกว่า 12 ปีฟรี"
-     },
-     "book": "rec",
-     "q": "Casa Batlló, Passeig de Gràcia 43, Barcelona",
-     "ok": "2026-11",
-     "src": "https://www.casabatllo.es/en/visit-with-children/"
-    },
-    {
-     "name": {
-      "en": "Museu Blau natural sciences museum",
-      "th": "พิพิธภัณฑ์มูเซวบลาว"
-     },
-     "local": "Museu Blau",
-     "kind": "museum",
-     "area": {
-      "en": "Fòrum",
-      "th": "ฟอรุม"
-     },
-     "what": {
-      "en": "A blue triangle of a building full of whale skeletons, minerals and the story of life",
-      "th": "อาคารสามเหลี่ยมสีน้ำเงิน มีโครงกระดูกวาฬ แร่ และเรื่องราวของสิ่งมีชีวิต"
-     },
-     "why": {
-      "en": "Under 16s go free and the big skeletons wow small children; indoors for a rainy day",
-      "th": "อายุต่ำกว่า 16 ปีฟรี โครงกระดูกใหญ่ทำให้เด็กเล็กตื่นเต้น อยู่ในร่มสำหรับวันฝนตก"
-     },
-     "tip": {
-      "en": "Family activities must be booked, even when entry is free",
-      "th": "กิจกรรมครอบครัวต้องจองแม้จะเข้าฟรี"
-     },
-     "ages": [
-      1,
-      2,
-      2,
-      2
-     ],
-     "hrs": 2,
-     "io": "in",
-     "pram": "yes",
-     "price": {
-      "en": "≈ €6.50 adults · under 16 free",
-      "th": "≈ €6.50 ผู้ใหญ่ · อายุต่ำกว่า 16 ปีฟรี"
-     },
-     "book": "none",
-     "q": "Museu Blau, Plaça de Leonardo da Vinci 4-5, Barcelona",
-     "ok": "2026-11",
-     "src": "https://museuciencies.cat/en/the-nat/venues/natural-sciences-museum-of-barcelona/useful-information/"
-    },
-    {
-     "name": {
-      "en": "Chocolate Museum",
-      "th": "มูเซวเดลาโชโกลาตา"
-     },
-     "local": "Museu de la Xocolata",
-     "kind": "museum",
-     "area": {
-      "en": "El Born",
-      "th": "เอลบอร์น"
-     },
-     "what": {
-      "en": "A small museum of chocolate history with sculptures made of chocolate",
-      "th": "พิพิธภัณฑ์เล็กๆ เรื่องประวัติช็อกโกแลต มีประติมากรรมทำจากช็อกโกแลต"
-     },
-     "why": {
-      "en": "Short, indoors and sweet; the ticket is a chocolate bar, and under 6s go free",
-      "th": "ใช้เวลาไม่นาน อยู่ในร่ม ตั๋วเข้าคือช็อกโกแลตแท่ง เด็กต่ำกว่า 6 ขวบฟรี"
-     },
-     "tip": {
-      "en": "Children's chocolate workshops run on set days and must be booked",
-      "th": "เวิร์กช็อปช็อกโกแลตสำหรับเด็กมีบางวันและต้องจองก่อน"
-     },
-     "ages": [
-      1,
-      2,
-      2,
-      1
-     ],
-     "hrs": 1,
-     "io": "in",
-     "pram": "yes",
-     "price": {
-      "en": "≈ €7 adults · under 6 free · workshops ≈ €9",
-      "th": "≈ €7 ผู้ใหญ่ · ต่ำกว่า 6 ขวบฟรี · เวิร์กช็อป ≈ €9"
-     },
-     "book": "none",
-     "q": "Museu de la Xocolata, Carrer del Comerç 36, Barcelona",
-     "ok": "2026-11",
-     "src": "https://museuxocolata.cat/en/prepare-the-visit/"
-    },
-    {
-     "name": {
-      "en": "La Boqueria market",
-      "th": "ตลาดบูเกเรีย"
-     },
-     "local": "Mercat de la Boqueria",
-     "kind": "market",
-     "area": {
-      "en": "La Rambla",
-      "th": "ลารัมบลา"
-     },
-     "what": {
-      "en": "Barcelona's famous covered market of fruit juices, ham, sweets and tapas bars",
-      "th": "ตลาดในร่มชื่อดังของบาร์เซโลนา มีน้ำผลไม้ แฮม ขนม และบาร์ทาปาส"
-     },
-     "why": {
-      "en": "Colourful fruit cups and juices that children love; tight aisles at midday",
-      "th": "ถ้วยผลไม้และน้ำผลไม้สีสวยที่เด็กชอบ ช่วงเที่ยงทางเดินแน่น"
-     },
-     "tip": {
-      "en": "Go in the morning before the crowds; closed on Sundays",
-      "th": "ไปช่วงเช้าก่อนคนเยอะ ปิดวันอาทิตย์"
-     },
-     "ages": [
-      1,
-      1,
-      2,
-      2
-     ],
-     "hrs": 1,
-     "io": "in",
-     "pram": "part",
-     "price": {
-      "en": "Free",
-      "th": "ฟรี"
-     },
-     "book": "none",
-     "q": "Mercat de la Boqueria, La Rambla 91, Barcelona",
-     "ok": "2026-11",
-     "src": "https://www.boqueria.barcelona/contacto"
-    },
-    {
-     "name": {
-      "en": "Parc de la Ciutadella",
-      "th": "สวนซิวตาเดยา"
-     },
-     "kind": "park",
-     "area": {
-      "en": "Ciutadella",
-      "th": "ซิวตาเดยา"
-     },
-     "what": {
-      "en": "The old town's green park, with a rowing-boat lake, a giant stone mammoth and play areas",
-      "th": "สวนเขียวข้างเมืองเก่า มีทะเลสาบพายเรือ แมมมอธหินยักษ์ และลานเด็กเล่น"
-     },
-     "why": {
-      "en": "Playgrounds, a free play space for under 5s and a mammoth to climb at",
-      "th": "มีสนามเด็กเล่น ที่เล่นฟรีสำหรับเด็กต่ำกว่า 5 ขวบ และแมมมอธให้ดู"
-     },
-     "tip": {
-      "en": "Rowing boats cost a few euros a boat",
-      "th": "เรือพายราคาไม่กี่ยูโรต่อลำ"
-     },
-     "ages": [
-      2,
-      2,
-      2,
-      1
-     ],
-     "hrs": 1.5,
-     "io": "out",
-     "pram": "yes",
-     "price": {
-      "en": "Free",
-      "th": "ฟรี"
-     },
-     "book": "none",
-     "q": "Parc de la Ciutadella, Passeig de Picasso 21, Barcelona",
-     "ok": "2026-11",
-     "src": "https://www.barcelona.cat/en/what-to-do-in-bcn/parks-and-gardens/parc-de-la-ciutadella-92086011921"
-    },
-    {
-     "name": {
-      "en": "Barceloneta beach",
-      "th": "หาดบาร์เซโลเนตา"
-     },
-     "kind": "beach",
-     "area": {
-      "en": "La Barceloneta",
-      "th": "ลาบาร์เซโลเนตา"
-     },
-     "what": {
-      "en": "The city beach by the old fishermen's quarter, with showers, toilets and a children's play area",
-      "th": "หาดของเมืองข้างย่านชาวประมงเก่า มีฝักบัว ห้องน้ำ และลานเด็กเล่น"
-     },
-     "why": {
-      "en": "Sand to dig in the middle of the city, a short walk from the metro",
-      "th": "มีทรายให้ขุดเล่นกลางเมือง เดินจากรถไฟใต้ดินไม่ไกล"
-     },
-     "tip": {
-      "en": "The park behind the beach has another playground and toilets",
-      "th": "สวนด้านหลังหาดมีสนามเด็กเล่นและห้องน้ำอีกแห่ง"
-     },
-     "ages": [
-      2,
-      2,
-      2,
-      2
-     ],
-     "hrs": 2,
-     "io": "out",
-     "pram": "part",
-     "price": {
-      "en": "Free",
-      "th": "ฟรี"
-     },
-     "book": "none",
-     "q": "Platja de la Barceloneta, Barcelona",
-     "ok": "2026-11",
-     "src": "https://www.barcelona.cat/en/what-to-do-in-bcn/bathing-and-beaches/barceloneta-beach"
+      "place": "es-seville",
+      "sights": [
+        {
+          "name": { "en": "Royal Alcázar of Seville", "th": "พระราชวังอัลกาซาร์แห่งเซบียา" },
+          "local": "Real Alcázar de Sevilla",
+          "kind": "culture",
+          "area": { "en": "Santa Cruz", "th": "ซานตาครูซ" },
+          "what": { "en": "A royal palace of tiled halls and courtyards, with big gardens, fountains and ponds with fish", "th": "พระราชวังที่มีห้องและลานปูกระเบื้อง สวนใหญ่ น้ำพุ และบ่อปลา" },
+          "why": { "en": "The gardens give children space to run and look for the fish; under-14s are reported to enter free with an adult", "th": "สวนกว้างให้เด็กวิ่งเล่นและดูปลา มีรายงานว่าเด็กต่ำกว่า 14 ปีเข้าฟรีเมื่อมากับผู้ใหญ่" },
+          "tip": { "en": "Winter hours reported 09:30–17:00 (1 October–31 March); closed 1 and 6 January, Good Friday and 25 December", "th": "ฤดูหนาวมีรายงานเปิด 09:30–17:00 (1 ตุลาคม–31 มีนาคม) ปิด 1 และ 6 มกราคม วันศุกร์ประเสริฐ และ 25 ธันวาคม" },
+          "ages": [1, 2, 2, 2],
+          "hrs": 2.5,
+          "io": "both",
+          "pram": "part",
+          "price": { "en": "≈ €15.50 adults (resellers show €14.50) · check the age for free entry (14 reported)", "th": "≈ €15.50 ผู้ใหญ่ (ผู้ขายต่อบางเจ้า €14.50) · เช็กอายุเข้าฟรี (มีรายงาน 14 ปี)" },
+          "book": "rec",
+          "q": "Real Alcázar de Sevilla, Patio de Banderas",
+          "ok": "2026-11",
+          "src": "https://guias-viajar.com/turismo-espana/visitar-andalucia/sevilla-real-alcazar-horarios-entradas/?p=29446"
+        },
+        {
+          "name": { "en": "Alhambra and Generalife", "th": "อัลฮัมบราและเฮเนราลิเฟ" },
+          "local": "La Alhambra y Generalife",
+          "kind": "culture",
+          "area": { "en": "Granada", "th": "กรานาดา" },
+          "what": { "en": "The hilltop palace-fortress above Granada, with courts, water channels and the Generalife gardens", "th": "พระราชวังป้อมบนเนินเหนือกรานาดา มีลานกลาง ทางน้ำ และสวนเฮเนราลิเฟ" },
+          "why": { "en": "Under-12s enter free but need a booked ticket; the gardens and channels are easier for children than the palace rooms, and the site is a long walk with steps", "th": "เด็กต่ำกว่า 12 ปีเข้าฟรีแต่ต้องจองบัตร สวนและทางน้ำง่ายกับเด็กกว่าห้องในวัง และต้องเดินไกลมีบันได" },
+          "tip": { "en": "Winter (15 October–31 March) palaces close at 18:00 according to one guide; book timed tickets well ahead", "th": "ฤดูหนาว (15 ตุลาคม–31 มีนาคม) พระราชวังปิด 18:00 ตามคู่มือหนึ่ง ควรจองบัตรตามเวลาไว้ล่วงหน้า" },
+          "ages": [0, 1, 2, 2],
+          "hrs": 4,
+          "io": "both",
+          "pram": "part",
+          "price": { "en": "≈ €21 adults (€22.27 online) · ≈ €14.85 ages 12–15 · under 12 free with a booked ticket", "th": "≈ €21 ผู้ใหญ่ (€22.27 ออนไลน์) · ≈ €14.85 อายุ 12–15 ปี · ต่ำกว่า 12 ปีฟรีต้องจองบัตร" },
+          "book": "req",
+          "q": "Alhambra, Calle Real de la Alhambra, Granada",
+          "ok": "2026-11",
+          "src": "https://www.granadadirect.com/alhambra/precios/"
+        },
+        {
+          "name": { "en": "Isla Mágica", "th": "อิสลามาฆิกา" },
+          "local": "Isla Mágica",
+          "kind": "themepark",
+          "area": { "en": "Isla de la Cartuja", "th": "เกาะการ์ตูฆา" },
+          "what": { "en": "A themed amusement park on the old Expo island, with a water park, Agua Mágica, on its own ticket in 2026", "th": "สวนสนุกธีมบนเกาะเอกซ์โปเก่า มีสวนน้ำอากวามาฆิกาที่ขายบัตรแยกในปี 2026" },
+          "why": { "en": "Children under 3 enter free and there are rides for smaller children", "th": "เด็กต่ำกว่า 3 ปีเข้าฟรี มีเครื่องเล่นสำหรับเด็กเล็ก" },
+          "tip": { "en": "Seasonal: the 2026 season opened on 11 April, and a third-party list shows it closed from November to March; check the calendar", "th": "เปิดตามฤดู ปี 2026 เปิด 11 เมษายน และรายการของแหล่งอื่นว่าปิดพฤศจิกายนถึงมีนาคม เช็กปฏิทิน" },
+          "ages": [1, 2, 2, 2],
+          "hrs": 6,
+          "io": "out",
+          "pram": "yes",
+          "price": { "en": "From ≈ €25.90 children 90–130 cm · under 3 free (one seller)", "th": "เริ่มต้น ≈ €25.90 เด็ก 90–130 ซม. · ต่ำกว่า 3 ปีฟรี (ผู้ขายรายหนึ่ง)" },
+          "book": "rec",
+          "q": "Isla Mágica, Camino de los Descubrimientos, Sevilla",
+          "ok": "2026-11",
+          "src": "https://www.taquilla.com/entradas/isla-magica-sevilla?t10cityorder=Sevilla"
+        },
+        {
+          "name": { "en": "Seville Aquarium", "th": "อควาเรียมเซบียา" },
+          "local": "Acuario de Sevilla",
+          "kind": "aquarium",
+          "area": { "en": "Muelle de las Delicias", "th": "ท่าเรือเดลิเซียส" },
+          "what": { "en": "A riverside aquarium with tanks of fish from the world's rivers and seas, a visit of about 90 minutes", "th": "อควาเรียมริมแม่น้ำ มีตู้ปลาจากแม่น้ำและทะเลทั่วโลก ใช้เวลาชมราว 90 นาที" },
+          "why": { "en": "Indoors and compact, which suits a hot or wet day; under-4s enter free", "th": "อยู่ในอาคารและไม่ใหญ่ เหมาะกับวันร้อนหรือฝนตก ต่ำกว่า 4 ปีเข้าฟรี" },
+          "tip": { "en": "Usually open 10:00–18:00 on weekdays and to 19:00 at weekends; hours change on holidays", "th": "ปกติเปิด 10:00–18:00 วันธรรมดา ถึง 19:00 วันหยุดสุดสัปดาห์ เวลาเปลี่ยนในวันหยุดเทศกาล" },
+          "ages": [2, 2, 2, 1],
+          "hrs": 1.5,
+          "io": "in",
+          "pram": "yes",
+          "price": { "en": "≈ €17 adults · €12 children 4–14 · under 4 free", "th": "≈ €17 ผู้ใหญ่ · €12 เด็ก 4–14 ปี · ต่ำกว่า 4 ปีฟรี" },
+          "book": "none",
+          "q": "Acuario de Sevilla, Muelle de las Delicias",
+          "ok": "2026-11",
+          "src": "https://www.taquilla.com/entradas/acuario-de-sevilla"
+        },
+        {
+          "name": { "en": "Parque de las Ciencias", "th": "พิพิธภัณฑ์วิทยาศาสตร์ปาร์เกเดลาสเซียนเซียส" },
+          "local": "Parque de las Ciencias",
+          "kind": "museumkid",
+          "area": { "en": "Granada", "th": "กรานาดา" },
+          "what": { "en": "A big hands-on science museum in Granada with exhibition halls, a planetarium and gardens", "th": "พิพิธภัณฑ์วิทยาศาสตร์ขนาดใหญ่ในกรานาดา มีห้องนิทรรศการ ท้องฟ้าจำลอง และสวน" },
+          "why": { "en": "Hands-on exhibits for children; step-free and indoors, with outdoor space too", "th": "นิทรรศการให้เล่นได้จริง ทางเรียบและอยู่ในอาคาร มีพื้นที่กลางแจ้งด้วย" },
+          "tip": { "en": "Reported open Tuesday–Saturday 10:00–19:00 and Sunday 10:00–15:00, closed Mondays and on 1 and 6 January and 25 December", "th": "มีรายงานเปิดอังคาร–เสาร์ 10:00–19:00 อาทิตย์ 10:00–15:00 ปิดวันจันทร์ และ 1 กับ 6 มกราคม และ 25 ธันวาคม" },
+          "ages": [1, 2, 2, 2],
+          "hrs": 3.5,
+          "io": "both",
+          "pram": "yes",
+          "price": { "en": "Check the price", "th": "เช็กราคาก่อนไป" },
+          "book": "none",
+          "q": "Parque de las Ciencias, Avenida de la Ciencia, Granada",
+          "ok": "2026-11",
+          "src": "https://www.granadadirect.com/museos/parque-ciencias-granada/"
+        },
+        {
+          "name": { "en": "Metropol Parasol (the Setas)", "th": "เมโทรโพลพาราซอล (เซตัส)" },
+          "local": "Metropol Parasol",
+          "kind": "views",
+          "area": { "en": "Encarnación", "th": "เอนการ์นาซิออน" },
+          "what": { "en": "A giant wooden canopy over the Encarnación square with a walkway on top, a small museum below and a light show at night", "th": "โครงไม้ขนาดยักษ์คลุมจัตุรัสเอนการ์นาซิออน มีทางเดินด้านบน พิพิธภัณฑ์เล็กด้านล่าง และโชว์แสงตอนกลางคืน" },
+          "why": { "en": "Short visit with lift access and wide views; the square below has shade and space to run about", "th": "ใช้เวลาสั้น มีลิฟต์และวิวกว้าง จัตุรัสด้านล่างมีร่มเงาและที่ให้เด็กวิ่ง" },
+          "tip": { "en": "The terrace café is reported open about 09:30–23:00; the light show times follow sunset", "th": "ร้านกาแฟบนระเบียงมีรายงานเปิดราว 09:30–23:00 โชว์แสงตามเวลาพระอาทิตย์ตก" },
+          "ages": [1, 2, 2, 2],
+          "hrs": 1,
+          "io": "both",
+          "pram": "yes",
+          "price": { "en": "≈ €16 adults (one reseller) · check the child price", "th": "≈ €16 ผู้ใหญ่ (ผู้ขายต่อรายหนึ่ง) · เช็กราคาเด็กก่อนไป" },
+          "book": "none",
+          "q": "Metropol Parasol, Plaza de la Encarnación, Sevilla",
+          "ok": "2026-11",
+          "src": "https://www.andalucia.com/?p=2973"
+        },
+        {
+          "name": { "en": "María Luisa Park and Plaza de España", "th": "สวนมาเรียลุยซาและจัตุรัสเอสปัญญา" },
+          "local": "Parque de María Luisa",
+          "kind": "park",
+          "area": { "en": "Parque de María Luisa", "th": "ปาร์เกเดมาเรียลุยซา" },
+          "what": { "en": "A big shady park with a semicircular tiled plaza, a canal and playgrounds", "th": "สวนใหญ่ร่มรื่น มีจัตุรัสครึ่งวงกลมปูกระเบื้อง คลอง และสนามเด็กเล่น" },
+          "why": { "en": "Free, flat and shaded, with play areas; boats can be hired on the plaza's canal", "th": "ฟรี ทางเรียบและร่มรื่น มีสนามเด็กเล่น และเช่าเรือพายในคลองของจัตุรัสได้" },
+          "tip": { "en": "Boat hire prices and times are not confirmed, so check on the spot", "th": "ราคาและเวลาเช่าเรือยังไม่ยืนยัน เช็กที่หน้างาน" },
+          "ages": [2, 2, 2, 2],
+          "hrs": 2.5,
+          "io": "out",
+          "pram": "yes",
+          "price": { "en": "Free · boat hire extra", "th": "ฟรี · ค่าเช่าเรือแยก" },
+          "book": "none",
+          "q": "Plaza de España, Parque de María Luisa, Sevilla",
+          "ok": "2026-11",
+          "src": "https://www.picuco.com/es-es/attractions/parque-de-maria-luisa"
+        },
+        {
+          "name": { "en": "Guadalquivir river cruise", "th": "ล่องเรือแม่น้ำกวาดัลกิบีร์" },
+          "local": "Cruceros Torre del Oro",
+          "kind": "ride",
+          "area": { "en": "Torre del Oro", "th": "ตอร์เรเดลโอโร" },
+          "what": { "en": "A boat trip on the river from beside the Torre del Oro, with sights of the city from the water", "th": "ล่องเรือในแม่น้ำจากข้างหอทองคำ ชมเมืองจากน้ำ" },
+          "why": { "en": "A seated, shaded ride that suits tired legs; under-6s ride free", "th": "นั่งสบายมีร่มเงา เหมาะกับขาที่เหนื่อย เด็กต่ำกว่า 6 ปีนั่งฟรี" },
+          "tip": { "en": "Departures reported hourly 11:00–19:00 from October to April and to 22:00 from May to September", "th": "มีรายงานออกทุกชั่วโมง 11:00–19:00 ตุลาคมถึงเมษายน และถึง 22:00 พฤษภาคมถึงกันยายน" },
+          "ages": [1, 2, 2, 2],
+          "hrs": 1,
+          "io": "out",
+          "pram": "part",
+          "price": { "en": "≈ €17–20 adults · ≈ €6 children 6–12 · under 6 free", "th": "≈ €17–20 ผู้ใหญ่ · ≈ €6 เด็ก 6–12 ปี · ต่ำกว่า 6 ปีฟรี" },
+          "book": "rec",
+          "q": "Cruceros Torre del Oro, Paseo de Cristóbal Colón, Sevilla",
+          "ok": "2026-11",
+          "src": "https://www.yumping.com/paseos-en-barco/cruceros-torre-del-oro--e14376"
+        },
+        {
+          "name": { "en": "Aquaola water park", "th": "สวนน้ำอาควาโอลา" },
+          "local": "Aquaola",
+          "kind": "themepark",
+          "area": { "en": "Granada", "th": "กรานาดา" },
+          "what": { "en": "A water park just outside Granada with slides and pools, open in summer", "th": "สวนน้ำนอกเมืองกรานาดาเล็กน้อย มีสไลเดอร์และสระ เปิดหน้าร้อน" },
+          "why": { "en": "Children under 95 cm enter free and the pools suit small ones on a hot day", "th": "เด็กสูงต่ำกว่า 95 ซม. เข้าฟรี และสระเหมาะกับเด็กเล็กในวันร้อน" },
+          "tip": { "en": "Open about June to September; the exact 2026 dates were not confirmed", "th": "เปิดราวมิถุนายนถึงกันยายน ยังไม่ยืนยันวันที่ปี 2026" },
+          "ages": [1, 2, 2, 2],
+          "hrs": 5,
+          "io": "out",
+          "pram": "yes",
+          "price": { "en": "≈ €17 adults · €11.50 children 95–140 cm · under 95 cm free", "th": "≈ €17 ผู้ใหญ่ · €11.50 เด็ก 95–140 ซม. · ต่ำกว่า 95 ซม.ฟรี" },
+          "book": "none",
+          "q": "Aquaola, Granada",
+          "ok": "2026-11",
+          "src": "https://www.taquilla.com/entradas/aquaola"
+        },
+        {
+          "name": { "en": "Casa de Pilatos", "th": "คาซาเดปิลาโตส" },
+          "local": "Casa de Pilatos",
+          "kind": "culture",
+          "area": { "en": "Old town", "th": "เมืองเก่า" },
+          "what": { "en": "A noble palace with Mudejar tiles, a fountain courtyard and gardens, a quieter alternative to the Alcázar", "th": "วังขุนนางที่มีกระเบื้องลายมูเดฆาร์ ลานน้ำพุและสวน เงียบกว่าอัลคาซาร์" },
+          "why": { "en": "Children up to 11 go in free and the courtyards are easy to wander; the upper floor has stairs, so prams stay below", "th": "เด็กถึง 11 ปีเข้าฟรี ลานกว้างเดินสบาย ชั้นบนมีบันได ควรทิ้งรถเข็นไว้ชั้นล่าง" },
+          "tip": { "en": "The ground floor is the main visit and the upper floor costs extra; sources differ on hours, so check them", "th": "ชมชั้นล่างเป็นหลัก ชั้นบนเสียเพิ่ม เวลาเปิดแต่ละแหล่งไม่ตรงกัน ควรเช็ก" },
+          "ages": [0, 1, 1, 2],
+          "hrs": 1,
+          "io": "both",
+          "pram": "part",
+          "price": { "en": "≈ €12 adults ground floor (+ €6 upper floor) · up to 11 free", "th": "≈ €12 ผู้ใหญ่ชั้นล่าง (+ €6 ชั้นบน) · ถึง 11 ปีฟรี" },
+          "book": "none",
+          "q": "Casa de Pilatos, Plaza de Pilatos 1, Sevilla",
+          "ok": "2026-11",
+          "src": "https://www.ticketlens.com/es/p22237213/sevilla/casa-de-pilatos"
+        },
+        {
+          "name": { "en": "Torre del Oro", "th": "หอคอยทองคำ" },
+          "local": "Torre del Oro",
+          "kind": "museum",
+          "area": { "en": "Riverside", "th": "ริมแม่น้ำ" },
+          "what": { "en": "A twelve-sided riverside tower that now holds a small maritime museum, with a view from the top", "th": "หอคอยสิบสองเหลี่ยมริมแม่น้ำ ปัจจุบันเป็นพิพิธภัณฑ์ทางทะเลเล็กๆ มีวิวจากด้านบน" },
+          "why": { "en": "A short stop on the riverside walk; the tower stairs are narrow, so it suits older children better than prams", "th": "แวะสั้นๆ ระหว่างเดินริมแม่น้ำ บันไดแคบ เหมาะกับเด็กโตมากกว่าพารถเข็น" },
+          "tip": { "en": "Run by the Ministry of Defence; sources differ on price and hours, so check them first", "th": "ดูแลโดยกระทรวงกลาโหม ราคาและเวลาแต่ละแหล่งไม่ตรงกัน เช็กก่อนไป" },
+          "ages": [0, 1, 1, 2],
+          "hrs": 0.5,
+          "io": "in",
+          "pram": "no",
+          "price": { "en": "Check the price before you go", "th": "เช็กราคาก่อนไป" },
+          "book": "none",
+          "q": "Torre del Oro, Paseo de Cristóbal Colón, Sevilla",
+          "ok": "2026-11",
+          "src": "https://patrimoniocultural.defensa.gob.es/sites/default/files/2024-05/Pdf%40MUSEO%20TORRE%20DEL%20ORO%20triptico_0.pdf"
+        },
+        {
+          "name": { "en": "Triana Market", "th": "ตลาดตรีอานา" },
+          "local": "Mercado de Triana",
+          "kind": "market",
+          "area": { "en": "Triana", "th": "ตรีอานา" },
+          "what": { "en": "A covered market by the Triana bridge with fresh produce stalls, tapas bars and Andalusian food", "th": "ตลาดในร่มข้างสะพานตรีอานา มีแผงของสด บาร์ทาปาส และอาหารอันดาลูเซีย" },
+          "why": { "en": "Flat, shaded and easy for prams; children can watch fish and fruit stalls while the family shares small plates", "th": "พื้นเรียบ ร่มรื่น รถเข็นสะดวก เด็กดูแผงปลาและผลไม้ได้ขณะที่ครอบครัวแบ่งกินจานเล็ก" },
+          "tip": { "en": "Produce stalls and bars keep different hours, with bars open later Monday–Saturday and Sunday food 12:00–17:00; check first", "th": "แผงของสดกับบาร์เปิดไม่พร้อมกัน บาร์เปิดดึกกว่าวันจันทร์–เสาร์ วันอาทิตย์เสิร์ฟอาหาร 12:00–17:00 เช็กก่อนไป" },
+          "ages": [1, 2, 2, 2],
+          "hrs": 1,
+          "io": "in",
+          "pram": "yes",
+          "price": { "en": "Check the price before you go", "th": "เช็กราคาก่อนไป" },
+          "book": "none",
+          "q": "Mercado de Triana, Calle San Jorge 6, Sevilla",
+          "ok": "2026-11",
+          "src": "https://feverup.com/en/seville/venue/mercado-de-triana"
+        },
+        {
+          "name": { "en": "Albaicín and Mirador de San Nicolás (Granada)", "th": "อัลไบซินและจุดชมวิวซานนิโกลัส (กรานาดา)" },
+          "local": "Albaicín",
+          "kind": "views",
+          "area": { "en": "Granada", "th": "กรานาดา" },
+          "what": { "en": "Granada's old Moorish hill quarter of white houses and cobbled lanes, ending at a square facing the Alhambra", "th": "ย่านเนินเมืองเก่าสไตล์มัวร์ของกรานาดา บ้านสีขาวและตรอกปูหิน สิ้นสุดที่ลานหันหน้าไปทางอัลฮัมบรา" },
+          "why": { "en": "Free and open any time, but steep and cobbled, so take the small C31 bus up with prams and walk down", "th": "ฟรีและเข้าได้ทุกเวลา แต่ชันและปูหิน พารถเข็นให้นั่งรถบัสเล็ก C31 ขึ้นแล้วเดินลง" },
+          "tip": { "en": "A day trip from Seville; roadworks may change where the bus stops, so check the stops; best in spring or autumn", "th": "เที่ยวแบบไปเช้าเย็นกลับจากเซบียา งานซ่อมถนนอาจเปลี่ยนจุดจอดรถบัส เช็กก่อน ช่วงที่ดีคือฤดูใบไม้ผลิหรือใบไม้ร่วง" },
+          "ages": [0, 1, 2, 2],
+          "hrs": 2.5,
+          "io": "out",
+          "pram": "no",
+          "price": { "en": "Free", "th": "ฟรี" },
+          "book": "none",
+          "q": "Mirador de San Nicolás, Albaicín, Granada",
+          "ok": "2026-11",
+          "src": "https://www.granadadirect.com/rincones/mirador-san-nicolas/"
+        },
+        {
+          "name": { "en": "Itálica Roman ruins", "th": "ซากเมืองโรมันอิตาลิกา" },
+          "local": "Conjunto Arqueológico de Itálica",
+          "kind": "culture",
+          "area": { "en": "Santiponce", "th": "ซันติปอนเซ" },
+          "what": { "en": "A Roman city just outside Seville with a large amphitheatre, mosaics and streets you can walk", "th": "เมืองโรมันนอกเมืองเซบียาไม่ไกล มีสนามกลางแจ้งขนาดใหญ่ โมเสก และถนนให้เดิน" },
+          "why": { "en": "Wide open paths and a big arena for children to run in; little shade, so go in the morning or the cool months", "th": "ทางกว้างและสนามใหญ่ให้เด็กวิ่ง มีร่มน้อย ควรไปตอนเช้าหรือช่วงอากาศเย็น" },
+          "tip": { "en": "Hours change by season and holiday; check them first, and note it is free for EU citizens", "th": "เวลาเปิดเปลี่ยนตามฤดูกาลและวันหยุด เช็กก่อนไป พลเมืองสหภาพยุโรปเข้าฟรี" },
+          "ages": [0, 1, 2, 2],
+          "hrs": 2,
+          "io": "out",
+          "pram": "part",
+          "price": { "en": "≈ €1.50 non-EU visitors · free for EU citizens", "th": "≈ €1.50 ผู้มาจากนอกสหภาพยุโรป · พลเมืองสหภาพยุโรปฟรี" },
+          "book": "none",
+          "q": "Conjunto Arqueológico de Itálica, Santiponce, Sevilla",
+          "ok": "2026-11",
+          "src": "https://www.upo.es/patio-colorado/2024/05/26/conjunto-arqueologico-de-italica-ruinas-romanas-en-sevilla"
+        },
+        {
+          "name": { "en": "Alamillo Park", "th": "สวนอาลามีโย" },
+          "local": "Parque del Alamillo",
+          "kind": "park",
+          "area": { "en": "Isla de la Cartuja", "th": "เกาะลาการ์ตูฆา" },
+          "what": { "en": "A big riverside park beside the Alamillo bridge, with lawns, cycling paths and play areas", "th": "สวนใหญ่ริมแม่น้ำข้างสะพานอาลามีโย มีสนามหญ้า ทางจักรยาน และพื้นที่เล่น" },
+          "why": { "en": "Lots of room to run and play areas for young children; a small train runs on some Sundays", "th": "พื้นที่กว้างให้วิ่ง มีมุมเล่นสำหรับเด็กเล็ก และมีรถไฟเล็กวิ่งบางวันอาทิตย์" },
+          "tip": { "en": "Open dawn to dusk; the small train ran Sundays in the 2025 programme, so check it; little shade in summer", "th": "เปิดตั้งแต่เช้าถึงค่ำ รถไฟเล็กวิ่งวันอาทิตย์ในโปรแกรมปี 2025 เช็กก่อน ฤดูร้อนมีร่มน้อย" },
+          "ages": [2, 2, 2, 1],
+          "hrs": 2,
+          "io": "out",
+          "pram": "yes",
+          "price": { "en": "Free", "th": "ฟรี" },
+          "book": "none",
+          "q": "Parque del Alamillo, Isla de la Cartuja, Sevilla",
+          "ok": "2026-11",
+          "src": "https://www.timeout.com/es/sevilla/que-hacer/parque-del-alamillo"
+        }
+      ]
     }
-   ]
-  }
- ]
+  ]
 }
