@@ -1,0 +1,657 @@
+{
+ "cc": "it",
+ "towns": [
+  {
+   "place": "it-rome",
+   "sights": [
+    {
+     "name": {
+      "en": "Colosseum, Roman Forum and Palatine Hill",
+      "th": "โคลอสเซียม โรมันฟอรัม และเนินพาลาไทน์"
+     },
+     "local": "Colosseo",
+     "kind": "culture",
+     "area": {
+      "en": "Colosseo, Monti",
+      "th": "โกลอสเซโอ มอนตี"
+     },
+     "what": {
+      "en": "The great Roman arena, with the ruins of the Forum and the Palatine on one ticket",
+      "th": "สนามกีฬาโรมันขนาดใหญ่ ตั๋วใบเดียวเข้าซากโรมันฟอรัมและเนินพาลาไทน์ได้ด้วย"
+     },
+     "why": {
+      "en": "Children see a real gladiators' arena; under 18s go free, but the Forum's gravel and steps are hard work for a pram",
+      "th": "เด็กได้เห็นสนามนักสู้กลาดิเอเตอร์ของจริง อายุต่ำกว่า 18 เข้าฟรี แต่ทางกรวดและบันไดในฟอรัมเข็นรถเข็นลำบาก"
+     },
+     "tip": {
+      "en": "Book a timed slot on the official site, even for the free children's tickets; bring ID for each child",
+      "th": "จองรอบเวลาบนเว็บทางการก่อน แม้ตั๋วเด็กจะฟรี และพกเอกสารแสดงอายุของเด็กไปด้วย"
+     },
+     "ages": [
+      1,
+      1,
+      2,
+      2
+     ],
+     "hrs": 3,
+     "io": "out",
+     "pram": "part",
+     "price": {
+      "en": "≈ €18 adults · under 18 free",
+      "th": "≈ €18 ผู้ใหญ่ · อายุต่ำกว่า 18 ปีฟรี"
+     },
+     "book": "req",
+     "q": "Colosseum, Piazza del Colosseo, Rome",
+     "ok": "2026-11",
+     "src": "https://colosseo.it/en/free-entry-to-the-colosseum-archaeological-park-and-italian-museums/"
+    },
+    {
+     "name": {
+      "en": "Explora children's museum",
+      "th": "พิพิธภัณฑ์เด็กเอ็กซ์ปลอรา"
+     },
+     "local": "Explora – Il museo dei bambini di Roma",
+     "kind": "museumkid",
+     "area": {
+      "en": "Flaminio",
+      "th": "ฟลามินีโอ"
+     },
+     "what": {
+      "en": "A hands-on museum for children up to 11: a pretend town, water play, a supermarket and a new moon lab",
+      "th": "พิพิธภัณฑ์ให้เด็กถึง 11 ขวบได้ลงมือเล่น มีเมืองจำลอง เล่นน้ำ ซูเปอร์มาร์เก็ต และห้องทดลองดวงจันทร์ใหม่"
+     },
+     "why": {
+      "en": "Made for small children, indoors and step-free: a perfect rainy morning",
+      "th": "ทำมาเพื่อเด็กเล็กโดยเฉพาะ อยู่ในร่มและไม่มีขั้นบันได เหมาะกับเช้าวันฝนตก"
+     },
+     "tip": {
+      "en": "Visits run in slots of 1 h 45; book online, and Thursday tickets are cheaper",
+      "th": "เข้าเป็นรอบ รอบละ 1 ชม. 45 นาที จองออนไลน์ไว้ และวันพฤหัสบดีตั๋วถูกกว่า"
+     },
+     "ages": [
+      2,
+      2,
+      2,
+      0
+     ],
+     "hrs": 2,
+     "io": "in",
+     "pram": "yes",
+     "price": {
+      "en": "≈ €12 adults and children 3+ · €8 ages 1–2 · under 1 free · €8 on Thursdays",
+      "th": "≈ €12 ผู้ใหญ่และเด็ก 3 ขวบขึ้นไป · €8 เด็ก 1–2 ขวบ · ต่ำกว่า 1 ขวบฟรี · วันพฤหัส €8"
+     },
+     "book": "rec",
+     "q": "Explora Museo dei Bambini, Via Flaminia 80, Rome",
+     "ok": "2026-11",
+     "src": "https://mdbr.it/en/visit/"
+    },
+    {
+     "name": {
+      "en": "Bioparco di Roma",
+      "th": "ไบโอปาร์โกดีโรมา"
+     },
+     "kind": "zoo",
+     "area": {
+      "en": "Villa Borghese",
+      "th": "วิลลาบอร์เกเซ"
+     },
+     "what": {
+      "en": "Rome's zoo inside the Villa Borghese park, with big cats, giraffes, elephants and a reptile house",
+      "th": "สวนสัตว์ของโรมในสวนวิลลาบอร์เกเซ มีแมวใหญ่ ยีราฟ ช้าง และบ้านสัตว์เลื้อยคลาน"
+     },
+     "why": {
+      "en": "Shady paths and a gentle size for little legs; children under one metre go free",
+      "th": "ทางเดินร่มรื่น ขนาดไม่ใหญ่เกินไปสำหรับขาเล็กๆ เด็กสูงไม่ถึง 1 เมตรเข้าฟรี"
+     },
+     "tip": {
+      "en": "Online prices move by the day; staff measure small children at the gate",
+      "th": "ราคาออนไลน์เปลี่ยนตามวัน เจ้าหน้าที่จะวัดส่วนสูงเด็กที่ประตู"
+     },
+     "ages": [
+      2,
+      2,
+      2,
+      1
+     ],
+     "hrs": 3,
+     "io": "out",
+     "pram": "yes",
+     "price": {
+      "en": "≈ €20 adults · €16 children over 1 m to 10 · under 1 m free",
+      "th": "≈ €20 ผู้ใหญ่ · €16 เด็กสูงเกิน 1 ม. ถึง 10 ขวบ · สูงไม่ถึง 1 ม. ฟรี"
+     },
+     "book": "none",
+     "q": "Bioparco di Roma, Viale del Giardino Zoologico 20, Rome",
+     "ok": "2026-11",
+     "src": "https://ecommerce.bioparco.it/it/shop/biglietti"
+    },
+    {
+     "name": {
+      "en": "Civic Zoology Museum",
+      "th": "พิพิธภัณฑ์ซิวิโกดีซโอโลเจีย"
+     },
+     "local": "Museo Civico di Zoologia",
+     "kind": "museum",
+     "area": {
+      "en": "Villa Borghese",
+      "th": "วิลลาบอร์เกเซ"
+     },
+     "what": {
+      "en": "Rooms of stuffed animals, skeletons and dioramas right next to the zoo",
+      "th": "ห้องจัดแสดงสัตว์สตัฟฟ์ โครงกระดูก และฉากจำลองธรรมชาติ อยู่ติดสวนสัตว์"
+     },
+     "why": {
+      "en": "An indoor animal fix when it rains, and a short walk from the zoo's gate",
+      "th": "ได้ดูสัตว์ในร่มตอนฝนตก เดินจากประตูสวนสัตว์ไปไม่ไกล"
+     },
+     "tip": {
+      "en": "Pair it with the zoo on the same morning",
+      "th": "ไปคู่กับสวนสัตว์ในเช้าเดียวกัน"
+     },
+     "ages": [
+      1,
+      2,
+      2,
+      1
+     ],
+     "hrs": 1.5,
+     "io": "in",
+     "pram": "yes",
+     "price": {
+      "en": "≈ €7 adults · €5.50 reduced",
+      "th": "≈ €7 ผู้ใหญ่ · €5.50 ตั๋วลดราคา"
+     },
+     "book": "none",
+     "q": "Museo Civico di Zoologia, Via Ulisse Aldrovandi 18, Rome",
+     "ok": "2026-11",
+     "src": "https://www.museiincomuneroma.it/it/infopage/museo-civico-di-zoologia"
+    },
+    {
+     "name": {
+      "en": "Villa Borghese",
+      "th": "สวนวิลลาบอร์เกเซ"
+     },
+     "kind": "park",
+     "area": {
+      "en": "Pinciano",
+      "th": "ปินชาโน"
+     },
+     "what": {
+      "en": "Rome's big central park, with a playground, bike and pedal-car hire, a small train and a lake",
+      "th": "สวนใหญ่กลางกรุงโรม มีสนามเด็กเล่น เช่าจักรยานและรถถีบ รถไฟเล็ก และทะเลสาบ"
+     },
+     "why": {
+      "en": "Space to run between the sights, with swings and slides near Porta Pinciana",
+      "th": "มีที่ให้วิ่งเล่นระหว่างเที่ยว มีชิงช้าและสไลเดอร์ใกล้ประตูปอร์ตาปินชานา"
+     },
+     "tip": {
+      "en": "Walk up from Piazza del Popolo to the Pincio terrace for the view",
+      "th": "เดินขึ้นจากปิอัซซาเดลโปโปโลไปลานปินโชเพื่อชมวิว"
+     },
+     "ages": [
+      2,
+      2,
+      2,
+      1
+     ],
+     "hrs": 2,
+     "io": "out",
+     "pram": "yes",
+     "price": {
+      "en": "Free",
+      "th": "ฟรี"
+     },
+     "book": "none",
+     "q": "Villa Borghese, Rome",
+     "ok": "2026-11",
+     "src": "https://www.turismoroma.it/en/node/18592"
+    },
+    {
+     "name": {
+      "en": "Casina di Raffaello",
+      "th": "กาซินาดีราฟฟาเอลโล"
+     },
+     "kind": "play",
+     "area": {
+      "en": "Villa Borghese",
+      "th": "วิลลาบอร์เกเซ"
+     },
+     "what": {
+      "en": "A city-run playhouse in Villa Borghese with art and play workshops and a fenced garden",
+      "th": "บ้านเล่นของเมืองในสวนวิลลาบอร์เกเซ มีเวิร์กช็อปศิลปะและการเล่น และสวนมีรั้วรอบ"
+     },
+     "why": {
+      "en": "Indoor play made for children from 3, a rain plan close to the zoo",
+      "th": "ที่เล่นในร่มสำหรับเด็กตั้งแต่ 3 ขวบ เป็นแผนวันฝนตกใกล้สวนสัตว์"
+     },
+     "tip": {
+      "en": "Activities must be booked and paid ahead through Rome's 060608 line or the website",
+      "th": "ต้องจองและจ่ายเงินล่วงหน้าทางสายด่วน 060608 หรือเว็บไซต์"
+     },
+     "ages": [
+      0,
+      2,
+      2,
+      1
+     ],
+     "hrs": 1.5,
+     "io": "both",
+     "pram": "yes",
+     "price": {
+      "en": "≈ €6 a child · longer workshops €8",
+      "th": "≈ €6 ต่อเด็ก · เวิร์กช็อปยาว €8"
+     },
+     "book": "req",
+     "q": "Casina di Raffaello, Piazza di Siena, Villa Borghese, Rome",
+     "ok": "2026-11",
+     "src": "https://www.casinadiraffaello.it/wp-content/uploads/2026/03/CS-CASINA-RAFFAELLO-attivita-11-aprile-10-maggio-2026.pdf"
+    },
+    {
+     "name": {
+      "en": "Pantheon",
+      "th": "แพนธีออน"
+     },
+     "kind": "culture",
+     "area": {
+      "en": "Centro Storico",
+      "th": "เขตเมืองเก่า"
+     },
+     "what": {
+      "en": "A 2,000-year-old temple with a round hole in the roof that lets in the sun and the rain",
+      "th": "วิหารอายุ 2,000 ปี มีช่องกลมบนหลังคาให้แสงแดดและฝนลอดลงมา"
+     },
+     "why": {
+      "en": "Quick, flat and indoors, and the hole in the dome wows children; under 18s go free",
+      "th": "ใช้เวลาไม่นาน พื้นเรียบ อยู่ในร่ม เด็กตื่นเต้นกับช่องบนโดม อายุต่ำกว่า 18 เข้าฟรี"
+     },
+     "tip": {
+      "en": "Go early; a church, so cover shoulders and keep voices low",
+      "th": "ไปแต่เช้า ที่นี่เป็นโบสถ์ ควรแต่งกายปิดไหล่และพูดเบาๆ"
+     },
+     "ages": [
+      1,
+      1,
+      2,
+      2
+     ],
+     "hrs": 0.5,
+     "io": "in",
+     "pram": "yes",
+     "price": {
+      "en": "≈ €7 adults · under 18 free",
+      "th": "≈ €7 ผู้ใหญ่ · อายุต่ำกว่า 18 ปีฟรี"
+     },
+     "book": "rec",
+     "q": "Pantheon, Piazza della Rotonda, Rome",
+     "ok": "2026-11",
+     "src": "https://cultura.gov.it/luogo/pantheon"
+    },
+    {
+     "name": {
+      "en": "Trevi Fountain",
+      "th": "น้ำพุเทรวี"
+     },
+     "local": "Fontana di Trevi",
+     "kind": "culture",
+     "area": {
+      "en": "Trevi",
+      "th": "เทรวี"
+     },
+     "what": {
+      "en": "Rome's grandest fountain, where you throw a coin to come back one day",
+      "th": "น้ำพุที่ยิ่งใหญ่ที่สุดของโรม โยนเหรียญเพื่อจะได้กลับมาอีก"
+     },
+     "why": {
+      "en": "Throwing a coin is pure fun for children; the paid basin area keeps the crowd in order",
+      "th": "เด็กสนุกกับการโยนเหรียญ ลานติดน้ำพุเก็บค่าเข้าทำให้คนไม่แออัดเกินไป"
+     },
+     "tip": {
+      "en": "Cards only at the entrance; the square behind the rail is free to stand in",
+      "th": "ที่ทางเข้ารับแต่บัตร ยืนดูจากลานด้านหลังรั้วได้ฟรี"
+     },
+     "ages": [
+      1,
+      2,
+      2,
+      2
+     ],
+     "hrs": 0.5,
+     "io": "out",
+     "pram": "part",
+     "price": {
+      "en": "≈ €2 for the basin area · young children free",
+      "th": "≈ €2 เข้าลานติดน้ำพุ · เด็กเล็กฟรี"
+     },
+     "book": "none",
+     "q": "Trevi Fountain, Piazza di Trevi, Rome",
+     "ok": "2026-11",
+     "src": "https://www.turismoroma.it/en/news/trevi-fountain-new-entry-fee-one-romes-symbols"
+    },
+    {
+     "name": {
+      "en": "Piazza Navona",
+      "th": "ปิอัซซานาโวนา"
+     },
+     "kind": "oldtown",
+     "area": {
+      "en": "Centro Storico",
+      "th": "เขตเมืองเก่า"
+     },
+     "what": {
+      "en": "A long baroque square with three fountains, street artists and painters",
+      "th": "ลานยาวแบบบาโรก มีน้ำพุสามแห่ง นักแสดงข้างถนนและจิตรกร"
+     },
+     "why": {
+      "en": "Traffic-free space to roam, with fountains and buskers to watch",
+      "th": "ไม่มีรถวิ่ง เด็กเดินเล่นได้ มีน้ำพุและนักแสดงให้ดู"
+     },
+     "tip": {
+      "en": "Walk on to Campo de' Fiori for the morning market",
+      "th": "เดินต่อไปกัมโปเดฟีโอรีเพื่อดูตลาดเช้า"
+     },
+     "ages": [
+      2,
+      2,
+      2,
+      2
+     ],
+     "hrs": 1,
+     "io": "out",
+     "pram": "yes",
+     "price": {
+      "en": "Free",
+      "th": "ฟรี"
+     },
+     "book": "none",
+     "q": "Piazza Navona, Rome",
+     "ok": "2026-11",
+     "src": "https://www.turismoroma.it/en/places/navona-square"
+    },
+    {
+     "name": {
+      "en": "Vatican Museums",
+      "th": "พิพิธภัณฑ์วาติกัน"
+     },
+     "local": "Musei Vaticani",
+     "kind": "museum",
+     "area": {
+      "en": "Vatican City",
+      "th": "นครรัฐวาติกัน"
+     },
+     "what": {
+      "en": "Huge papal collections ending in the Sistine Chapel ceiling",
+      "th": "คอลเลกชันใหญ่ของพระสันตะปาปา ปิดท้ายด้วยเพดานโบสถ์ซิสทีน"
+     },
+     "why": {
+      "en": "Long, crowded and quiet in places: best for children over six, with a short route planned",
+      "th": "ทางยาว คนเยอะ และบางห้องต้องเงียบ เหมาะกับเด็กโตกว่า 6 ขวบ วางเส้นทางสั้นไว้ก่อน"
+     },
+     "tip": {
+      "en": "Buy only on tickets.museivaticani.va; the skip-the-line slot is worth the €5",
+      "th": "ซื้อตั๋วที่ tickets.museivaticani.va เท่านั้น จ่ายเพิ่ม €5 จองรอบไม่ต้องต่อคิวคุ้มค่า"
+     },
+     "ages": [
+      0,
+      1,
+      1,
+      2
+     ],
+     "hrs": 3,
+     "io": "in",
+     "pram": "part",
+     "price": {
+      "en": "≈ €20 adults · €10 ages 7–18 · under 6 free · +€5 booked online",
+      "th": "≈ €20 ผู้ใหญ่ · €10 อายุ 7–18 ปี · ต่ำกว่า 6 ขวบฟรี · จองออนไลน์เพิ่ม €5"
+     },
+     "book": "rec",
+     "q": "Vatican Museums, Viale Vaticano, Rome",
+     "ok": "2026-11",
+     "src": "https://www.museivaticani.va/content/museivaticani/en/organizza-visita/tariffe-e-biglietti.html"
+    },
+    {
+     "name": {
+      "en": "Castel Sant'Angelo",
+      "th": "ปราสาทซานตันเจโล"
+     },
+     "kind": "culture",
+     "area": {
+      "en": "Prati, by the Tiber",
+      "th": "ปราตี ริมแม่น้ำไทเบอร์"
+     },
+     "what": {
+      "en": "A round fortress on the river with ramps, cannons and a rooftop terrace over Rome",
+      "th": "ป้อมทรงกลมริมแม่น้ำ มีทางลาด ปืนใหญ่ และดาดฟ้ามองเห็นกรุงโรม"
+     },
+     "why": {
+      "en": "A real castle for children to climb, with a view at the top; under 18s go free",
+      "th": "ปราสาทจริงให้เด็กเดินขึ้น ข้างบนมีวิวสวย อายุต่ำกว่า 18 เข้าฟรี"
+     },
+     "tip": {
+      "en": "Cross the angel bridge, Ponte Sant'Angelo, on the way in",
+      "th": "เดินข้ามสะพานเทวดา ปอนเตซานตันเจโล ไปทางเข้า"
+     },
+     "ages": [
+      1,
+      1,
+      2,
+      2
+     ],
+     "hrs": 1.5,
+     "io": "both",
+     "pram": "part",
+     "price": {
+      "en": "≈ €18 adults · under 18 free",
+      "th": "≈ €18 ผู้ใหญ่ · อายุต่ำกว่า 18 ปีฟรี"
+     },
+     "book": "rec",
+     "q": "Castel Sant'Angelo, Lungotevere Castello 50, Rome",
+     "ok": "2026-11",
+     "src": "https://direzionemuseiroma.cultura.gov.it/modifica-importo-del-titolo-di-accesso-a-castel-santangelo-dal-1-luglio-2026/"
+    },
+    {
+     "name": {
+      "en": "Testaccio Market",
+      "th": "ตลาดเทสตัชโช"
+     },
+     "local": "Mercato di Testaccio",
+     "kind": "market",
+     "area": {
+      "en": "Testaccio",
+      "th": "เทสตัชโช"
+     },
+     "what": {
+      "en": "A covered neighbourhood market of fruit, cheese and street-food stalls",
+      "th": "ตลาดในร่มของชุมชน มีผลไม้ ชีส และร้านอาหารริมทาง"
+     },
+     "why": {
+      "en": "Under one roof with step-free aisles, and easy bites for picky eaters",
+      "th": "อยู่ใต้หลังคาเดียว ทางเดินเรียบ มีของกินง่ายๆ สำหรับเด็กเลือกกิน"
+     },
+     "tip": {
+      "en": "Closed on Sundays and in the late afternoon; go for lunch",
+      "th": "ปิดวันอาทิตย์และช่วงบ่ายแก่ ไปตอนกลางวัน"
+     },
+     "ages": [
+      1,
+      1,
+      2,
+      2
+     ],
+     "hrs": 1,
+     "io": "in",
+     "pram": "yes",
+     "price": {
+      "en": "Free",
+      "th": "ฟรี"
+     },
+     "book": "none",
+     "q": "Mercato di Testaccio, Via Aldo Manuzio, Rome",
+     "ok": "2026-11",
+     "src": "https://www.mercatoditestaccio.it/info/"
+    },
+    {
+     "name": {
+      "en": "Appian Way and Caffarella Valley",
+      "th": "ถนนอัปเปียอันติกาและหุบคัฟฟาเรลลา"
+     },
+     "local": "Parco dell'Appia Antica",
+     "kind": "nature",
+     "area": {
+      "en": "Appia Antica",
+      "th": "อัปเปียอันติกา"
+     },
+     "what": {
+      "en": "The old Roman road and a green valley of meadows, sheep and aqueduct ruins",
+      "th": "ถนนโรมันโบราณกับหุบเขาเขียว มีทุ่งหญ้า แกะ และซากท่อส่งน้ำ"
+     },
+     "why": {
+      "en": "No cars in the Caffarella, so children can run and cycle in the open",
+      "th": "ในหุบคัฟฟาเรลลาไม่มีรถยนต์ เด็กวิ่งและปั่นจักรยานได้กว้างๆ"
+     },
+     "tip": {
+      "en": "Bus 118 to Appia Antica; old cobbles are bumpy for a pram",
+      "th": "นั่งรถเมล์สาย 118 ไปอัปเปียอันติกา หินปูถนนเก่าเข็นรถเข็นลำบาก"
+     },
+     "ages": [
+      1,
+      2,
+      2,
+      2
+     ],
+     "hrs": 2.5,
+     "io": "out",
+     "pram": "part",
+     "price": {
+      "en": "Free",
+      "th": "ฟรี"
+     },
+     "book": "none",
+     "q": "Parco della Caffarella, Via della Caffarella, Rome",
+     "ok": "2026-11",
+     "src": "https://www.parcoappiaantica.it/visitare-il-parco/comearrivare/"
+    },
+    {
+     "name": {
+      "en": "Bocca della Verità",
+      "th": "บอกกาเดลลาเวริตา"
+     },
+     "kind": "culture",
+     "area": {
+      "en": "Forum Boarium",
+      "th": "ฟอรุมโบอาริอุม"
+     },
+     "what": {
+      "en": "The 'Mouth of Truth', a stone face where you put your hand in and tell the truth",
+      "th": "หน้าหินปากแห่งความจริง ยื่นมือเข้าไปแล้วต้องพูดความจริง"
+     },
+     "why": {
+      "en": "A two-minute legend that children love acting out",
+      "th": "ตำนานสั้นๆ ที่เด็กชอบเล่นตาม"
+     },
+     "tip": {
+      "en": "A short queue in the church porch; closed for a midday break",
+      "th": "ต่อคิวสั้นๆ ที่ระเบียงโบสถ์ ปิดพักช่วงเที่ยง"
+     },
+     "ages": [
+      1,
+      2,
+      2,
+      2
+     ],
+     "hrs": 0.5,
+     "io": "out",
+     "pram": "yes",
+     "price": {
+      "en": "Free",
+      "th": "ฟรี"
+     },
+     "book": "none",
+     "q": "Bocca della Verità, Piazza della Bocca della Verità, Rome",
+     "ok": "2026-11",
+     "src": "https://www.turismoroma.it/it/luoghi/bocca-della-verita"
+    },
+    {
+     "name": {
+      "en": "Villa Doria Pamphilj",
+      "th": "วิลลาโดเรียปัมฟิลี"
+     },
+     "kind": "park",
+     "area": {
+      "en": "Monteverde",
+      "th": "มอนเตแวร์เด"
+     },
+     "what": {
+      "en": "Rome's largest park, with pine woods, lakes, a children's playground and cycle paths",
+      "th": "สวนสาธารณะที่ใหญ่ที่สุดในโรม มีป่าสน ทะเลสาบ สนามเด็กเล่น และทางจักรยาน"
+     },
+     "why": {
+      "en": "Room to picnic and play away from the crowds of the centre",
+      "th": "มีที่ปิกนิกและเล่นห่างจากฝูงคนในเมือง"
+     },
+     "tip": {
+      "en": "Enter from Via di Porta San Pancrazio, near the Gianicolo",
+      "th": "เข้าทางถนนปอร์ตาซานปันกราซีโอ ใกล้เนินจานิโกโล"
+     },
+     "ages": [
+      2,
+      2,
+      2,
+      1
+     ],
+     "hrs": 2,
+     "io": "out",
+     "pram": "yes",
+     "price": {
+      "en": "Free",
+      "th": "ฟรี"
+     },
+     "book": "none",
+     "q": "Villa Doria Pamphilj, Via di Porta San Pancrazio, Rome",
+     "ok": "2026-11",
+     "src": "https://www.turismoroma.it/en/places/villa-doria-pamphilj"
+    },
+    {
+     "name": {
+      "en": "Gianicolo terrace",
+      "th": "ลานชมวิวจานิโกโล"
+     },
+     "kind": "views",
+     "area": {
+      "en": "Gianicolo, Trastevere",
+      "th": "จานิโกโล ทราสเตเวเร"
+     },
+     "what": {
+      "en": "A hilltop terrace over Rome's domes, with the big Acqua Paola fountain on the way up",
+      "th": "ลานบนเนินมองเห็นโดมทั่วกรุงโรม ระหว่างทางมีน้ำพุใหญ่อักกวาปาโอลา"
+     },
+     "why": {
+      "en": "The best free view of the city, with space for children to stretch their legs",
+      "th": "วิวเมืองที่ดีที่สุดแบบไม่เสียเงิน มีที่ให้เด็กเดินยืดขา"
+     },
+     "tip": {
+      "en": "A taxi or bus up spares tired legs; walk down into Trastevere",
+      "th": "นั่งแท็กซี่หรือรถเมล์ขึ้นไปจะไม่เหนื่อย แล้วเดินลงไปทราสเตเวเร"
+     },
+     "ages": [
+      1,
+      1,
+      2,
+      2
+     ],
+     "hrs": 1,
+     "io": "out",
+     "pram": "yes",
+     "price": {
+      "en": "Free",
+      "th": "ฟรี"
+     },
+     "book": "none",
+     "q": "Terrazza del Gianicolo, Piazzale Giuseppe Garibaldi, Rome",
+     "ok": "2026-11",
+     "src": "https://www.turismoroma.it/en/node/31553"
+    }
+   ]
+  }
+ ]
+}

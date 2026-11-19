@@ -1,0 +1,625 @@
+{
+ "cc": "jp",
+ "towns": [
+  {
+   "place": "jp-okinawa",
+   "sights": [
+    {
+     "name": {
+      "en": "Okinawa Churaumi Aquarium",
+      "th": "พิพิธภัณฑ์สัตว์น้ำชูราอุมิ"
+     },
+     "local": "沖縄美ら海水族館",
+     "kind": "aquarium",
+     "area": {
+      "en": "Ocean Expo Park, Motobu",
+      "th": "โอเชียนเอ็กซ์โปพาร์ก โมโตบุ"
+     },
+     "what": {
+      "en": "One of the world's great aquariums, with whale sharks and manta rays in the huge Kuroshio Sea tank",
+      "th": "พิพิธภัณฑ์สัตว์น้ำชื่อดังระดับโลก มีฉลามวาฬและกระเบนราหูในตู้คุโรชิโอะขนาดยักษ์"
+     },
+     "why": {
+      "en": "Step-free, cool indoors and the giant tank holds small children for a long time",
+      "th": "ทางเรียบเข็นรถเข็นได้ เย็นสบายในร่ม เด็กเล็กยืนดูตู้ยักษ์ได้นาน"
+     },
+     "tip": {
+      "en": "It is about two hours' drive from Naha; arrive early and see the free dolphin show outside",
+      "th": "ขับรถจากนาฮะราว 2 ชั่วโมง ไปแต่เช้า และดูโชว์โลมาฟรีด้านนอก"
+     },
+     "ages": [
+      2,
+      2,
+      2,
+      2
+     ],
+     "hrs": 3,
+     "io": "in",
+     "pram": "yes",
+     "price": {
+      "en": "≈ ¥2,180 adults · ¥1,440 high school · ¥710 ages 6–15 · under 6 free",
+      "th": "≈ ¥2,180 ผู้ใหญ่ · ¥1,440 ม.ปลาย · ¥710 อายุ 6–15 ปี · ต่ำกว่า 6 ปีฟรี"
+     },
+     "book": "none",
+     "q": "Okinawa Churaumi Aquarium, Motobu, Okinawa",
+     "ok": "2026-11",
+     "src": "https://churaumi.okinawa/en/guide/info/"
+    },
+    {
+     "name": {
+      "en": "Ocean Expo Park and Emerald Beach",
+      "th": "โอเชียนเอ็กซ์โปพาร์กและหาดเอเมอรัลด์"
+     },
+     "local": "海洋博公園",
+     "kind": "beach",
+     "area": {
+      "en": "Motobu",
+      "th": "โมโตบุ"
+     },
+     "what": {
+      "en": "The big seaside park around the aquarium, with lawns, play areas and a calm, netted beach",
+      "th": "สวนริมทะเลรอบพิพิธภัณฑ์สัตว์น้ำ มีสนามหญ้า ที่เล่น และหาดน้ำนิ่งมีตาข่ายกั้น"
+     },
+     "why": {
+      "en": "Free to enter, with shallow, sheltered water for small swimmers",
+      "th": "เข้าฟรี น้ำตื้นและสงบ เหมาะกับเด็กเล็กเล่นน้ำ"
+     },
+     "tip": {
+      "en": "Swimming is allowed only from April to October; in winter it is a walk and a picnic",
+      "th": "ลงเล่นน้ำได้เฉพาะเม.ย.–ต.ค. หน้าหนาวมาเดินเล่นและปิกนิก"
+     },
+     "ages": [
+      2,
+      2,
+      2,
+      2
+     ],
+     "hrs": 2,
+     "io": "out",
+     "pram": "yes",
+     "price": {
+      "en": "Free",
+      "th": "ฟรี"
+     },
+     "book": "none",
+     "q": "Emerald Beach, Ocean Expo Park, Motobu, Okinawa",
+     "ok": "2026-11",
+     "src": "https://www.japan-guide.com/e/e7111.html"
+    },
+    {
+     "name": {
+      "en": "Okinawa World",
+      "th": "โอกินาวาเวิลด์"
+     },
+     "local": "おきなわワールド",
+     "kind": "culture",
+     "area": {
+      "en": "Nanjo",
+      "th": "นันโจ"
+     },
+     "what": {
+      "en": "A park built over Gyokusendo, a long lit limestone cave, with an old Ryukyu village and craft workshops",
+      "th": "สวนที่สร้างเหนือถ้ำหินปูนเกียวคุเซ็นโดยาวมีไฟส่อง พร้อมหมู่บ้านริวกิวแบบเก่าและงานฝีมือ"
+     },
+     "why": {
+      "en": "The cave walk is cool and dry on a hot or wet day, and the village has dance shows",
+      "th": "เดินในถ้ำเย็นสบาย ใช้ได้ทั้งวันร้อนและวันฝนตก ในหมู่บ้านมีโชว์ระบำ"
+     },
+     "tip": {
+      "en": "The cave path has steps and wet patches; carry little ones in a sling, not a pram",
+      "th": "ทางในถ้ำมีบันไดและพื้นเปียก ใช้เป้อุ้มแทนรถเข็น"
+     },
+     "ages": [
+      1,
+      2,
+      2,
+      2
+     ],
+     "hrs": 3,
+     "io": "both",
+     "pram": "part",
+     "price": {
+      "en": "≈ ¥2,000 adults · ¥1,000 ages 4–14 · under 4 free",
+      "th": "≈ ¥2,000 ผู้ใหญ่ · ¥1,000 อายุ 4–14 ปี · ต่ำกว่า 4 ปีฟรี"
+     },
+     "book": "none",
+     "q": "Okinawa World, Nanjo, Okinawa",
+     "ok": "2026-11",
+     "src": "https://en.gyokusendo.co.jp/okinawaworld/?p=635"
+    },
+    {
+     "name": {
+      "en": "Okinawa Zoo & Museum",
+      "th": "สวนสัตว์และพิพิธภัณฑ์โอกินาวา"
+     },
+     "local": "沖縄こどもの国",
+     "kind": "zoo",
+     "area": {
+      "en": "Okinawa City",
+      "th": "เมืองโอกินาวา"
+     },
+     "what": {
+      "en": "A zoo of tropical and local animals, with a farm corner and the hands-on Wonder Museum",
+      "th": "สวนสัตว์เขตร้อนและสัตว์ท้องถิ่น มีมุมฟาร์มและวันเดอร์มิวเซียมที่ให้เด็กลงมือเล่น"
+     },
+     "why": {
+      "en": "Children up to 15 get in free, the paths are flat and the museum is indoors for rain",
+      "th": "เด็กถึงอายุ 15 ปีเข้าฟรี ทางเดินเรียบ และพิพิธภัณฑ์อยู่ในร่มเผื่อฝนตก"
+     },
+     "tip": {
+      "en": "The Wonder Museum has its own small ticket; pay at the gate",
+      "th": "วันเดอร์มิวเซียมเก็บค่าเข้าแยกเล็กน้อย จ่ายที่หน้าประตู"
+     },
+     "ages": [
+      2,
+      2,
+      2,
+      1
+     ],
+     "hrs": 3,
+     "io": "both",
+     "pram": "yes",
+     "price": {
+      "en": "≈ ¥1,000 ages 16 and over · students ¥500 · 15 and under free",
+      "th": "≈ ¥1,000 อายุ 16 ปีขึ้นไป · นักศึกษา ¥500 · อายุ 15 ปีลงไปฟรี"
+     },
+     "book": "none",
+     "q": "Okinawa Zoo & Museum, Okinawa City, Okinawa",
+     "ok": "2026-11",
+     "src": "https://en.kozaweb.jp/events/show/26161"
+    },
+    {
+     "name": {
+      "en": "DMM Kariyushi Aquarium",
+      "th": "พิพิธภัณฑ์สัตว์น้ำดีเอ็มเอ็ม คาริยูชิ"
+     },
+     "local": "DMMかりゆし水族館",
+     "kind": "aquarium",
+     "area": {
+      "en": "iias Okinawa Toyosaki, Tomigusuku",
+      "th": "อีอัส โอกินาวา โทโยซากิ โทมิกุสุกุ"
+     },
+     "what": {
+      "en": "A modern aquarium with screens and light shows, sloths and penguins, and a new outdoor area with mini pigs and ponies",
+      "th": "พิพิธภัณฑ์สัตว์น้ำทันสมัย มีจอและแสงสี สลอธ เพนกวิน และโซนกลางแจ้งใหม่ที่มีหมูแคระกับม้าแคระ"
+     },
+     "why": {
+      "en": "Close to the airport and inside a mall, so it suits a rainy day or the last afternoon",
+      "th": "ใกล้สนามบินและอยู่ในห้าง เหมาะกับวันฝนตกหรือบ่ายวันสุดท้าย"
+     },
+     "tip": {
+      "en": "Prices changed on 15 October 2026; web tickets are cheaper than at the door",
+      "th": "ราคาเปลี่ยนเมื่อ 15 ต.ค. 2026 ซื้อตั๋วออนไลน์ถูกกว่าหน้างาน"
+     },
+     "ages": [
+      2,
+      2,
+      2,
+      1
+     ],
+     "hrs": 2,
+     "io": "in",
+     "pram": "yes",
+     "price": {
+      "en": "≈ ¥2,800 adults · ≈ ¥1,700 ages 4–12 · 3 and under free",
+      "th": "≈ ¥2,800 ผู้ใหญ่ · ≈ ¥1,700 อายุ 4–12 ปี · 3 ปีลงไปฟรี"
+     },
+     "book": "rec",
+     "q": "DMM Kariyushi Aquarium, Tomigusuku, Okinawa",
+     "ok": "2026-11",
+     "src": "https://ryukyushimpo.jp/prtimes/entry-5271742.html"
+    },
+    {
+     "name": {
+      "en": "Neo Park Okinawa",
+      "th": "นีโอพาร์ก โอกินาวา"
+     },
+     "local": "ネオパークオキナワ",
+     "kind": "zoo",
+     "area": {
+      "en": "Nago",
+      "th": "นาโกะ"
+     },
+     "what": {
+      "en": "A walk-through nature zoo where flamingos and lemurs roam free, with a little steam train round the park",
+      "th": "สวนสัตว์ธรรมชาติแบบเดินผ่าน ฟลามิงโกและลีเมอร์เดินอิสระ มีรถไฟเล็กวิ่งรอบสวน"
+     },
+     "why": {
+      "en": "Animals come close and the train ride is a favourite with small children",
+      "th": "สัตว์เข้ามาใกล้ และเด็กเล็กชอบนั่งรถไฟ"
+     },
+     "tip": {
+      "en": "The train and the animal-feeding corner cost extra; prices are lower from late September to April",
+      "th": "รถไฟและมุมให้อาหารสัตว์จ่ายเพิ่ม ช่วงปลายก.ย.–เม.ย. ราคาถูกลง"
+     },
+     "ages": [
+      2,
+      2,
+      2,
+      1
+     ],
+     "hrs": 2.5,
+     "io": "out",
+     "pram": "part",
+     "price": {
+      "en": "≈ ¥1,600–1,800 adults · ≈ ¥800–1,000 ages 4–12 · under 4 free",
+      "th": "≈ ¥1,600–1,800 ผู้ใหญ่ · ≈ ¥800–1,000 อายุ 4–12 ปี · ต่ำกว่า 4 ปีฟรี"
+     },
+     "book": "none",
+     "q": "Neo Park Okinawa, Nago, Okinawa",
+     "ok": "2026-11",
+     "src": "https://www.gltjp.com/en/article/item/21465/"
+    },
+    {
+     "name": {
+      "en": "Shurijo Castle Park",
+      "th": "สวนปราสาทชูริ"
+     },
+     "local": "首里城公園",
+     "kind": "culture",
+     "area": {
+      "en": "Shuri, Naha",
+      "th": "ชูริ นาฮะ"
+     },
+     "what": {
+      "en": "The red royal castle of the Ryukyu kings on its hill, its rebuilt main hall opening to visitors on 23 November 2026",
+      "th": "ปราสาทสีแดงของกษัตริย์ริวกิวบนเนินเขา ตำหนักหลักที่สร้างใหม่เปิดให้ชม 23 พ.ย. 2026"
+     },
+     "why": {
+      "en": "Big gates, stone walls and views over Naha; the outer park is free to walk",
+      "th": "มีประตูใหญ่ กำแพงหิน และวิวเมืองนาฮะ เดินในเขตสวนด้านนอกได้ฟรี"
+     },
+     "tip": {
+      "en": "The main hall may need a timed booking at first; check the park's site before you go",
+      "th": "ช่วงแรกตำหนักหลักอาจต้องจองรอบ เช็กเว็บไซต์ก่อนไป"
+     },
+     "ages": [
+      1,
+      1,
+      2,
+      2
+     ],
+     "hrs": 2,
+     "io": "out",
+     "pram": "part",
+     "price": {
+      "en": "Outer park free · paid area ≈ ¥400 adults, ≈ ¥1,000 from 23 Nov 2026 · under 6 free",
+      "th": "สวนด้านนอกฟรี · เขตเสียเงิน ≈ ¥400 ผู้ใหญ่ ≈ ¥1,000 ตั้งแต่ 23 พ.ย. 2026 · ต่ำกว่า 6 ปีฟรี"
+     },
+     "book": "rec",
+     "q": "Shurijo Castle Park, Shuri, Naha, Okinawa",
+     "ok": "2026-11",
+     "src": "https://unseen-japan.com/shuri-castle-main-hall-reopens/"
+    },
+    {
+     "name": {
+      "en": "Kokusai Street",
+      "th": "ถนนโคคุไซ"
+     },
+     "local": "国際通り",
+     "kind": "shop",
+     "area": {
+      "en": "Central Naha",
+      "th": "ใจกลางนาฮะ"
+     },
+     "what": {
+      "en": "Naha's main street of souvenir shops, snacks and covered arcades running off it",
+      "th": "ถนนสายหลักของนาฮะ มีร้านของฝาก ของกินเล่น และตลาดหลังคาคลุมแยกออกไป"
+     },
+     "why": {
+      "en": "Free to stroll, with blue-seal ice cream and sweet potato tarts to keep children going",
+      "th": "เดินเล่นฟรี มีไอศกรีมบลูซีลและทาร์ตมันม่วงให้เด็กๆ เติมพลัง"
+     },
+     "tip": {
+      "en": "Walk the whole street in about 20 minutes, then dip into the covered arcades off it",
+      "th": "เดินสุดถนนราว 20 นาที แล้วแวะตลาดหลังคาคลุมที่แยกออกไป"
+     },
+     "ages": [
+      1,
+      2,
+      2,
+      2
+     ],
+     "hrs": 2,
+     "io": "out",
+     "pram": "yes",
+     "price": {
+      "en": "Free",
+      "th": "ฟรี"
+     },
+     "book": "none",
+     "q": "Kokusai Street, Naha, Okinawa",
+     "ok": "2026-11",
+     "src": "https://japanactivity.com/attractions/naha/kokusai-street"
+    },
+    {
+     "name": {
+      "en": "Makishi Public Market",
+      "th": "ตลาดสาธารณะมาคิชิ"
+     },
+     "local": "第一牧志公設市場",
+     "kind": "market",
+     "area": {
+      "en": "Central Naha",
+      "th": "ใจกลางนาฮะ"
+     },
+     "what": {
+      "en": "Naha's food market of bright tropical fish, fruit and pork, rebuilt in 2023, with cafeterias upstairs",
+      "th": "ตลาดอาหารของนาฮะ มีปลาเขตร้อนสีสด ผลไม้ และหมู สร้างใหม่ปี 2023 ชั้นบนมีโรงอาหาร"
+     },
+     "why": {
+      "en": "Indoors and lively; children love the colourful fish, and lunch is cooked from what you buy",
+      "th": "อยู่ในร่มและคึกคัก เด็กชอบดูปลาสีสวย ซื้อของสดแล้วให้ชั้นบนทำให้กินได้"
+     },
+     "tip": {
+      "en": "Stalls keep their own hours; go before lunch for the best choice",
+      "th": "แต่ละร้านเปิดปิดไม่เท่ากัน ไปก่อนเที่ยงจะมีของให้เลือกเยอะ"
+     },
+     "ages": [
+      1,
+      2,
+      2,
+      2
+     ],
+     "hrs": 1.5,
+     "io": "in",
+     "pram": "yes",
+     "price": {
+      "en": "Free to enter",
+      "th": "เข้าฟรี"
+     },
+     "book": "none",
+     "q": "Makishi Public Market, Naha, Okinawa",
+     "ok": "2026-11",
+     "src": "https://japanactivity.com/attractions/naha/makishi-public-market"
+    },
+    {
+     "name": {
+      "en": "Mihama American Village",
+      "th": "มิฮามะ อเมริกันวิลเลจ"
+     },
+     "local": "美浜アメリカンビレッジ",
+     "kind": "shop",
+     "area": {
+      "en": "Chatan",
+      "th": "ชาตัน"
+     },
+     "what": {
+      "en": "A colourful seaside quarter of shops, cafés and places to eat, next to Sunset Beach",
+      "th": "ย่านริมทะเลสีสันสดใส มีร้านค้าและคาเฟ่ ติดกับหาดซันเซ็ต"
+     },
+     "why": {
+      "en": "Free to wander, the beach is netted and has lifeguards in summer, and sunsets are lovely",
+      "th": "เดินเล่นฟรี หาดมีตาข่ายกั้นและมีไลฟ์การ์ดช่วงหน้าร้อน พระอาทิตย์ตกสวย"
+     },
+     "tip": {
+      "en": "Come in the late afternoon, play on the beach, then eat as the lights come on",
+      "th": "มาช่วงบ่ายแก่ๆ เล่นที่หาด แล้วกินข้าวตอนไฟเปิด"
+     },
+     "ages": [
+      1,
+      2,
+      2,
+      2
+     ],
+     "hrs": 3,
+     "io": "out",
+     "pram": "yes",
+     "price": {
+      "en": "Free",
+      "th": "ฟรี"
+     },
+     "book": "none",
+     "q": "Mihama American Village, Chatan, Okinawa",
+     "ok": "2026-11",
+     "src": "https://thatmumtravellife.com/2026/06/24/american-village-okinawa-with-kids-is-it-worth-adding-to-your-itinerary/"
+    },
+    {
+     "name": {
+      "en": "Araha Beach Park pirate ship playground",
+      "th": "สนามเด็กเล่นเรือโจรสลัด สวนหาดอาราฮะ"
+     },
+     "local": "安良波公園",
+     "kind": "play",
+     "area": {
+      "en": "Chatan",
+      "th": "ชาตัน"
+     },
+     "what": {
+      "en": "A big pirate ship climbing frame and slides in a park beside a sandy beach",
+      "th": "เครื่องเล่นปีนป่ายรูปเรือโจรสลัดลำใหญ่และสไลเดอร์ ในสวนติดหาดทราย"
+     },
+     "why": {
+      "en": "Free, with sand, shade and the sea all in one place",
+      "th": "ฟรี มีทราย ร่มเงา และทะเลในที่เดียว"
+     },
+     "tip": {
+      "en": "Watch for rip currents when the waves are up; swim only in the netted area",
+      "th": "ระวังกระแสน้ำย้อนกลับตอนคลื่นแรง เล่นน้ำในเขตตาข่ายเท่านั้น"
+     },
+     "ages": [
+      1,
+      2,
+      2,
+      1
+     ],
+     "hrs": 1.5,
+     "io": "out",
+     "pram": "part",
+     "price": {
+      "en": "Free",
+      "th": "ฟรี"
+     },
+     "book": "none",
+     "q": "Araha Beach Park, Chatan, Okinawa",
+     "ok": "2026-11",
+     "src": "https://visitokinawajapan.com/travel-inspiration/family-fun-chatan/"
+    },
+    {
+     "name": {
+      "en": "Okinawa Comprehensive Park",
+      "th": "สวนโอกินาวาคอมพรีเฮนซีฟ"
+     },
+     "local": "沖縄県総合運動公園",
+     "kind": "park",
+     "area": {
+      "en": "Okinawa City",
+      "th": "เมืองโอกินาวา"
+     },
+     "what": {
+      "en": "A huge seaside park of lawns, playgrounds, cycle paths and, in summer, a water park",
+      "th": "สวนริมทะเลขนาดใหญ่ มีสนามหญ้า สนามเด็กเล่น ทางจักรยาน และสวนน้ำช่วงหน้าร้อน"
+     },
+     "why": {
+      "en": "Free to enter and plenty of room to run about after a car ride",
+      "th": "เข้าฟรี มีที่ให้วิ่งเล่นเยอะหลังนั่งรถนาน"
+     },
+     "tip": {
+      "en": "Boats, bike hire and the water park cost a little extra",
+      "th": "เรือ เช่าจักรยาน และสวนน้ำเสียเงินเพิ่มเล็กน้อย"
+     },
+     "ages": [
+      2,
+      2,
+      2,
+      1
+     ],
+     "hrs": 2,
+     "io": "out",
+     "pram": "yes",
+     "price": {
+      "en": "Free",
+      "th": "ฟรี"
+     },
+     "book": "none",
+     "q": "Okinawa Comprehensive Athletic Park, Okinawa City, Okinawa",
+     "ok": "2026-11",
+     "src": "https://en.kozaweb.jp/plays/show/352"
+    },
+    {
+     "name": {
+      "en": "Okinawa Prefectural Museum & Art Museum",
+      "th": "พิพิธภัณฑ์และหอศิลป์จังหวัดโอกินาวา"
+     },
+     "local": "沖縄県立博物館・美術館",
+     "kind": "museum",
+     "area": {
+      "en": "Omoromachi, Naha",
+      "th": "โอโมโรมาจิ นาฮะ"
+     },
+     "what": {
+      "en": "The islands' nature, history and culture under one roof, from sea creatures to Ryukyu kings",
+      "th": "ธรรมชาติ ประวัติศาสตร์ และวัฒนธรรมของหมู่เกาะในที่เดียว ตั้งแต่สัตว์ทะเลถึงกษัตริย์ริวกิว"
+     },
+     "why": {
+      "en": "A cool, quiet rain plan; the natural history rooms and hands-on corner suit school-age children",
+      "th": "เป็นแผนวันฝนที่เย็นและเงียบ ห้องธรรมชาติและมุมลงมือเล่นเหมาะกับเด็กวัยเรียน"
+     },
+     "tip": {
+      "en": "Closed on Mondays; the special exhibition room is included in the museum ticket",
+      "th": "ปิดวันจันทร์ ห้องนิทรรศการพิเศษรวมอยู่ในตั๋วพิพิธภัณฑ์"
+     },
+     "ages": [
+      1,
+      1,
+      2,
+      2
+     ],
+     "hrs": 2,
+     "io": "in",
+     "pram": "yes",
+     "price": {
+      "en": "≈ ¥530 adults museum · ≈ ¥400 art museum · pre-school children free",
+      "th": "≈ ¥530 ผู้ใหญ่ พิพิธภัณฑ์ · ≈ ¥400 หอศิลป์ · เด็กก่อนวัยเรียนฟรี"
+     },
+     "book": "none",
+     "q": "Okinawa Prefectural Museum & Art Museum, Naha, Okinawa",
+     "ok": "2026-11",
+     "src": "https://www.pref.okinawa.jp/bunkakoryu/bunkageijutsu/1023582/1017924.html"
+    },
+    {
+     "name": {
+      "en": "Bios no Oka",
+      "th": "ไบออส โนะ โอกะ"
+     },
+     "local": "ビオスの丘",
+     "kind": "nature",
+     "area": {
+      "en": "Uruma",
+      "th": "อุรุมะ"
+     },
+     "what": {
+      "en": "A subtropical forest garden with a lake boat ride, goats to meet and open lawns",
+      "th": "สวนป่ากึ่งเขตร้อน มีล่องเรือในทะเลสาบ แพะให้ทักทาย และสนามหญ้ากว้าง"
+     },
+     "why": {
+      "en": "A gentle boat ride and animals to pat make an easy half day for small children",
+      "th": "ล่องเรือเบาๆ และสัตว์ให้ลูบ เป็นครึ่งวันสบายๆ สำหรับเด็กเล็ก"
+     },
+     "tip": {
+      "en": "The boat is in the ticket; other rides and activities cost extra",
+      "th": "ล่องเรือรวมในตั๋วแล้ว กิจกรรมอื่นจ่ายเพิ่ม"
+     },
+     "ages": [
+      2,
+      2,
+      2,
+      1
+     ],
+     "hrs": 2.5,
+     "io": "out",
+     "pram": "part",
+     "price": {
+      "en": "≈ ¥2,200 adults · ≈ ¥1,100 ages 4–12 · under 4 free",
+      "th": "≈ ¥2,200 ผู้ใหญ่ · ≈ ¥1,100 อายุ 4–12 ปี · ต่ำกว่า 4 ปีฟรี"
+     },
+     "book": "none",
+     "q": "Bios no Oka, Uruma, Okinawa",
+     "ok": "2026-11",
+     "src": "https://www.walkerplus.com/spot/ar1047s336496/price.html"
+    },
+    {
+     "name": {
+      "en": "Nago Pineapple Park",
+      "th": "นาโกะ ไพน์แอปเปิลพาร์ก"
+     },
+     "local": "ナゴパイナップルパーク",
+     "kind": "farm",
+     "area": {
+      "en": "Nago",
+      "th": "นาโกะ"
+     },
+     "what": {
+      "en": "Ride a self-driving pineapple cart through the fields, then taste pineapple sweets in the shop",
+      "th": "นั่งรถรูปสับปะรดวิ่งผ่านไร่ แล้วชิมขนมสับปะรดในร้าน"
+     },
+     "why": {
+      "en": "The pineapple cart is a hit with small children, and the shop and greenhouse are under cover",
+      "th": "เด็กเล็กชอบรถสับปะรดมาก ร้านและเรือนกระจกมีหลังคา"
+     },
+     "tip": {
+      "en": "Tickets are a little cheaper booked online",
+      "th": "จองตั๋วออนไลน์ถูกกว่าเล็กน้อย"
+     },
+     "ages": [
+      2,
+      2,
+      2,
+      1
+     ],
+     "hrs": 1.5,
+     "io": "both",
+     "pram": "part",
+     "price": {
+      "en": "≈ ¥1,500 ages 16 and over · ≈ ¥800 ages 4–15 · under 4 free",
+      "th": "≈ ¥1,500 อายุ 16 ปีขึ้นไป · ≈ ¥800 อายุ 4–15 ปี · ต่ำกว่า 4 ปีฟรี"
+     },
+     "book": "none",
+     "q": "Nago Pineapple Park, Nago, Okinawa",
+     "ok": "2026-11",
+     "src": "https://japanuncharted.com/okinawa/theme-park/pineapple-park-guide"
+    }
+   ]
+  }
+ ]
+}

@@ -1,0 +1,625 @@
+{
+ "cc": "vn",
+ "towns": [
+  {
+   "place": "vn-saigon",
+   "sights": [
+    {
+     "name": {
+      "en": "Saigon Zoo and Botanical Gardens",
+      "th": "สวนสัตว์และสวนพฤกษศาสตร์ไซ่ง่อน"
+     },
+     "local": "Thảo Cầm Viên Sài Gòn",
+     "kind": "zoo",
+     "area": {
+      "en": "Saigon centre, near the river",
+      "th": "ใจกลางไซ่ง่อน ใกล้แม่น้ำ"
+     },
+     "what": {
+      "en": "One of the world's oldest zoos, with elephants, giraffes and big shady old trees",
+      "th": "หนึ่งในสวนสัตว์เก่าแก่ที่สุดในโลก มีช้าง ยีราฟ และต้นไม้ใหญ่ร่มรื่น"
+     },
+     "why": {
+      "en": "Shade, flat paths and a small fairground corner; tickets go by height, so small children are free",
+      "th": "ร่มรื่น ทางเรียบ มีมุมเครื่องเล่นเล็กๆ ตั๋วคิดตามส่วนสูง เด็กเล็กเข้าฟรี"
+     },
+     "tip": {
+      "en": "Go in the cool of the morning; feeding times draw the crowds",
+      "th": "ไปช่วงเช้าที่อากาศเย็น ช่วงให้อาหารสัตว์คนจะเยอะ"
+     },
+     "ages": [
+      2,
+      2,
+      2,
+      1
+     ],
+     "hrs": 2.5,
+     "io": "out",
+     "pram": "yes",
+     "price": {
+      "en": "≈ ₫60,000 over 1.3 m · ₫40,000 1–1.3 m · under 1 m free",
+      "th": "≈ ₫60,000 สูงเกิน 1.3 ม. · ₫40,000 สูง 1–1.3 ม. · ต่ำกว่า 1 ม. ฟรี"
+     },
+     "book": "none",
+     "q": "Saigon Zoo and Botanical Gardens, Ho Chi Minh City",
+     "ok": "2026-11",
+     "src": "https://www.vietnamairlines.com/en/useful-information/travel-guide/zoo-and-botnical-gardens-hcm"
+    },
+    {
+     "name": {
+      "en": "Golden Dragon Water Puppet Theatre",
+      "th": "โรงละครหุ่นกระบอกน้ำโกลเด้นดรากอน"
+     },
+     "local": "Nhà hát Múa rối nước Rồng Vàng",
+     "kind": "show",
+     "area": {
+      "en": "Saigon centre",
+      "th": "ใจกลางไซ่ง่อน"
+     },
+     "what": {
+      "en": "Vietnam's water puppet show: dragons, ducks and farmers dance on a pool to live music",
+      "th": "การแสดงหุ่นกระบอกน้ำของเวียดนาม มังกร เป็ด และชาวนาเต้นบนสระน้ำประกอบดนตรีสด"
+     },
+     "why": {
+      "en": "Under an hour, colourful and needs no words; small children are spellbound",
+      "th": "ไม่ถึงชั่วโมง สีสันสดใส ไม่ต้องเข้าใจภาษา เด็กเล็กดูเพลิน"
+     },
+     "tip": {
+      "en": "Arrive about 15 minutes before the evening show for good seats",
+      "th": "ไปก่อนรอบค่ำราว 15 นาทีเพื่อได้ที่นั่งดี"
+     },
+     "ages": [
+      1,
+      2,
+      2,
+      2
+     ],
+     "hrs": 1,
+     "io": "in",
+     "pram": "part",
+     "price": {
+      "en": "≈ ₫350,000 a seat",
+      "th": "≈ ₫350,000 ต่อที่นั่ง"
+     },
+     "book": "rec",
+     "q": "Golden Dragon Water Puppet Theatre, Ho Chi Minh City",
+     "ok": "2026-11",
+     "src": "https://wanderon.in/international-trips/vietnam/water-puppet-show-in-ho-chi-minh"
+    },
+    {
+     "name": {
+      "en": "Independence Palace",
+      "th": "ทำเนียบเอกราช"
+     },
+     "local": "Dinh Độc Lập",
+     "kind": "culture",
+     "area": {
+      "en": "Saigon centre",
+      "th": "ใจกลางไซ่ง่อน"
+     },
+     "what": {
+      "en": "The 1960s presidential palace kept as it was, with a rooftop helipad, a bunker and tanks on the lawn",
+      "th": "ทำเนียบประธานาธิบดียุค 1960 ที่คงสภาพเดิม มีลานจอดเฮลิคอปเตอร์บนหลังคา บังเกอร์ และรถถังบนสนาม"
+     },
+     "why": {
+      "en": "Older children like the tanks, the helicopter and the secret bunker; the rooms are cool indoors",
+      "th": "เด็กโตชอบรถถัง เฮลิคอปเตอร์ และบังเกอร์ลับ ห้องข้างในเย็นสบาย"
+     },
+     "tip": {
+      "en": "There are many stairs inside; go in the morning before the heat",
+      "th": "ข้างในมีบันไดเยอะ ไปช่วงเช้าก่อนอากาศร้อน"
+     },
+     "ages": [
+      1,
+      1,
+      2,
+      2
+     ],
+     "hrs": 1.5,
+     "io": "both",
+     "pram": "part",
+     "price": {
+      "en": "≈ ₫65,000 adults · less for children",
+      "th": "≈ ₫65,000 ผู้ใหญ่ · เด็กถูกกว่า"
+     },
+     "book": "none",
+     "q": "Independence Palace, Ho Chi Minh City",
+     "ok": "2026-11",
+     "src": "https://lasiestahotels.com/saigon/?p=7402"
+    },
+    {
+     "name": {
+      "en": "Landmark 81 SkyView",
+      "th": "แลนด์มาร์ก 81 สกายวิว"
+     },
+     "local": "Landmark 81 SkyView",
+     "kind": "views",
+     "area": {
+      "en": "Binh Thanh",
+      "th": "บิ่ญถั่ญ"
+     },
+     "what": {
+      "en": "The viewing floors at the top of Vietnam's tallest tower, looking over the river and the whole city",
+      "th": "ชั้นชมวิวบนยอดตึกสูงที่สุดของเวียดนาม มองเห็นแม่น้ำและทั้งเมือง"
+     },
+     "why": {
+      "en": "Air-conditioned, quick and thrilling for children; the mall below has a play area and food",
+      "th": "ติดแอร์ ใช้เวลาไม่นาน เด็กๆ ตื่นเต้น ห้างด้านล่างมีที่เล่นและของกิน"
+     },
+     "tip": {
+      "en": "Child tickets go by height; VR games are for children over 4",
+      "th": "ตั๋วเด็กคิดตามส่วนสูง เกมวีอาร์สำหรับเด็กอายุเกิน 4 ปี"
+     },
+     "ages": [
+      1,
+      2,
+      2,
+      2
+     ],
+     "hrs": 1.5,
+     "io": "in",
+     "pram": "yes",
+     "price": {
+      "en": "≈ ₫420,000 adults on weekdays (about US$16) · less for 100–140 cm · under 100 cm free",
+      "th": "≈ ₫420,000 ผู้ใหญ่ วันธรรมดา (ราว US$16) · สูง 100–140 ซม. ถูกกว่า · ต่ำกว่า 100 ซม. ฟรี"
+     },
+     "book": "rec",
+     "q": "Landmark 81, Binh Thanh, Ho Chi Minh City",
+     "ok": "2026-11",
+     "src": "https://www.pelago.com/en/activity/pu3hc-landmark-81-saigon-skyview-ticket-in-ho-chi-minh-city-ho-chi-minh-city/"
+    },
+    {
+     "name": {
+      "en": "Saigon Waterbus",
+      "th": "เรือบัสไซ่ง่อน"
+     },
+     "local": "Buýt đường sông",
+     "kind": "ride",
+     "area": {
+      "en": "Bach Dang pier, Saigon centre",
+      "th": "ท่าเรือบั่กดั่ง ใจกลางไซ่ง่อน"
+     },
+     "what": {
+      "en": "The city's river bus from Bach Dang pier up the Saigon River, a cheap cruise past the skyline",
+      "th": "เรือโดยสารประจำทางจากท่าบั่กดั่งตามแม่น้ำไซ่ง่อน ล่องชมเส้นขอบฟ้าเมืองราคาถูก"
+     },
+     "why": {
+      "en": "A real boat ride for the price of a bus fare, with air conditioning and big windows",
+      "th": "ได้นั่งเรือจริงในราคาค่ารถเมล์ มีแอร์และหน้าต่างบานใหญ่"
+     },
+     "tip": {
+      "en": "Ride to Linh Dong and back, about 40 minutes each way; go at sunset",
+      "th": "นั่งไปลิญดงแล้วกลับ ราว 40 นาทีต่อเที่ยว ไปช่วงพระอาทิตย์ตก"
+     },
+     "ages": [
+      2,
+      2,
+      2,
+      2
+     ],
+     "hrs": 1.5,
+     "io": "both",
+     "pram": "part",
+     "price": {
+      "en": "≈ ₫15,000 a ride",
+      "th": "≈ ₫15,000 ต่อเที่ยว"
+     },
+     "book": "none",
+     "q": "Bach Dang Waterbus Station, Ho Chi Minh City",
+     "ok": "2026-11",
+     "src": "https://vinwonders.com/en/wonderpedia/news/saigon-water-bus/"
+    },
+    {
+     "name": {
+      "en": "Ben Thanh Market",
+      "th": "ตลาดเบ๊นถั่ญ"
+     },
+     "local": "Chợ Bến Thành",
+     "kind": "market",
+     "area": {
+      "en": "Saigon centre",
+      "th": "ใจกลางไซ่ง่อน"
+     },
+     "what": {
+      "en": "Saigon's famous covered market of food stalls, fruit, sweets and souvenirs, with a night market outside",
+      "th": "ตลาดหลังคาคลุมชื่อดังของไซ่ง่อน มีร้านอาหาร ผลไม้ ขนม ของฝาก และตลาดกลางคืนด้านนอก"
+     },
+     "why": {
+      "en": "Under cover from sun and rain, with fresh fruit and smoothies for children",
+      "th": "มีหลังคากันแดดกันฝน มีผลไม้สดและน้ำปั่นให้เด็กๆ"
+     },
+     "tip": {
+      "en": "The aisles are tight and busy; a carrier works better than a pram",
+      "th": "ทางเดินแคบและคนเยอะ ใช้เป้อุ้มดีกว่ารถเข็น"
+     },
+     "ages": [
+      1,
+      2,
+      2,
+      2
+     ],
+     "hrs": 1,
+     "io": "both",
+     "pram": "no",
+     "price": {
+      "en": "Free to enter",
+      "th": "เข้าฟรี"
+     },
+     "book": "none",
+     "q": "Ben Thanh Market, Ho Chi Minh City",
+     "ok": "2026-11",
+     "src": "https://www.nomadotravel.app/en/attractions/ben-thanh-market"
+    },
+    {
+     "name": {
+      "en": "Nguyen Hue Walking Street",
+      "th": "ถนนคนเดินเหงียนเว้"
+     },
+     "local": "Phố đi bộ Nguyễn Huệ",
+     "kind": "oldtown",
+     "area": {
+      "en": "Saigon centre",
+      "th": "ใจกลางไซ่ง่อน"
+     },
+     "what": {
+      "en": "A wide car-free boulevard from the old city hall to the river, busy with street performers in the evening",
+      "th": "ถนนกว้างปลอดรถจากศาลาว่าการเก่าถึงริมแม่น้ำ ตอนค่ำมีนักแสดงเปิดหมวก"
+     },
+     "why": {
+      "en": "Free, open all the time and roomy enough for children to run and blow bubbles",
+      "th": "ฟรี เปิดตลอด และกว้างพอให้เด็กวิ่งเล่นเป่าฟองสบู่"
+     },
+     "tip": {
+      "en": "Come after sunset when it is cooler and the fountains and lights are on",
+      "th": "มาหลังพระอาทิตย์ตก อากาศเย็นลง น้ำพุและไฟเปิดแล้ว"
+     },
+     "ages": [
+      2,
+      2,
+      2,
+      2
+     ],
+     "hrs": 1,
+     "io": "out",
+     "pram": "yes",
+     "price": {
+      "en": "Free",
+      "th": "ฟรี"
+     },
+     "book": "none",
+     "q": "Nguyen Hue Walking Street, Ho Chi Minh City",
+     "ok": "2026-11",
+     "src": "https://www.vietnamtourism.com/en/nguyen-hue-walking-street-the-complete-guide-to-saigon-s-pedestrian-boulevard"
+    },
+    {
+     "name": {
+      "en": "Saigon Central Post Office",
+      "th": "ที่ทำการไปรษณีย์กลางไซ่ง่อน"
+     },
+     "local": "Bưu điện Trung tâm Sài Gòn",
+     "kind": "culture",
+     "area": {
+      "en": "Saigon centre",
+      "th": "ใจกลางไซ่ง่อน"
+     },
+     "what": {
+      "en": "A grand French-era hall that is still a working post office, under a big painted map",
+      "th": "อาคารใหญ่ยุคฝรั่งเศสที่ยังเป็นที่ทำการไปรษณีย์ ใต้แผนที่ภาพวาดขนาดใหญ่"
+     },
+     "why": {
+      "en": "Free, short and a lovely place for children to post a postcard home",
+      "th": "ฟรี ใช้เวลาไม่นาน ให้เด็กๆ ส่งโปสการ์ดกลับบ้านได้"
+     },
+     "tip": {
+      "en": "Buy a postcard and stamps inside; pair it with Nguyen Hue nearby",
+      "th": "ซื้อโปสการ์ดและแสตมป์ข้างใน แล้วไปต่อถนนเหงียนเว้ที่อยู่ใกล้ๆ"
+     },
+     "ages": [
+      1,
+      1,
+      2,
+      2
+     ],
+     "hrs": 0.5,
+     "io": "in",
+     "pram": "yes",
+     "price": {
+      "en": "Free",
+      "th": "ฟรี"
+     },
+     "book": "none",
+     "q": "Saigon Central Post Office, Ho Chi Minh City",
+     "ok": "2026-11",
+     "src": "https://www.lonelyplanet.com/articles/top-free-things-to-do-in-ho-chi-minh-city"
+    },
+    {
+     "name": {
+      "en": "Tao Dan Park",
+      "th": "สวนเต๋าด่าน"
+     },
+     "local": "Công viên Tao Đàn",
+     "kind": "park",
+     "area": {
+      "en": "Saigon centre",
+      "th": "ใจกลางไซ่ง่อน"
+     },
+     "what": {
+      "en": "A shady old park with a children's playground, lawns and, early in the morning, songbirds in cages",
+      "th": "สวนเก่าร่มรื่น มีสนามเด็กเล่น สนามหญ้า และนกร้องเพลงในกรงช่วงเช้าตรู่"
+     },
+     "why": {
+      "en": "Free green space in the middle of the city where children can let off steam",
+      "th": "พื้นที่สีเขียวฟรีกลางเมืองให้เด็กวิ่งเล่นปล่อยพลัง"
+     },
+     "tip": {
+      "en": "Go early: the birds sing until about 8:00; avoid the park after dark",
+      "th": "ไปแต่เช้า นกร้องถึงราว 8:00 เลี่ยงไปหลังมืด"
+     },
+     "ages": [
+      2,
+      2,
+      1,
+      1
+     ],
+     "hrs": 1,
+     "io": "out",
+     "pram": "yes",
+     "price": {
+      "en": "Free",
+      "th": "ฟรี"
+     },
+     "book": "none",
+     "q": "Tao Dan Park, Ho Chi Minh City",
+     "ok": "2026-11",
+     "src": "https://vietnamdrive.com/tao-dan-park"
+    },
+    {
+     "name": {
+      "en": "Mekong Delta day trip: My Tho and Ben Tre",
+      "th": "เที่ยวสามเหลี่ยมปากแม่น้ำโขงหนึ่งวัน หมี่ทอและเบ๊นแจ"
+     },
+     "local": "Mỹ Tho – Bến Tre",
+     "kind": "nature",
+     "area": {
+      "en": "Mekong Delta, about 2 hours from Saigon",
+      "th": "สามเหลี่ยมปากแม่น้ำโขง ห่างไซ่ง่อนราว 2 ชั่วโมง"
+     },
+     "what": {
+      "en": "Boats along the delta's palm-lined canals, a coconut candy workshop, fruit and a horse cart",
+      "th": "นั่งเรือตามคลองทิวมะพร้าว ดูการทำลูกอมมะพร้าว ชิมผลไม้ และนั่งรถม้า"
+     },
+     "why": {
+      "en": "Lots of short rides and tastes keep children busy; a private tour lets you go at their pace",
+      "th": "มีนั่งเรือและชิมของสั้นๆ หลายอย่าง เด็กไม่เบื่อ ทัวร์ส่วนตัวไปตามจังหวะเด็กได้"
+     },
+     "tip": {
+      "en": "Ask the tour for children's life jackets before you book",
+      "th": "ถามบริษัททัวร์เรื่องเสื้อชูชีพเด็กก่อนจอง"
+     },
+     "ages": [
+      1,
+      2,
+      2,
+      2
+     ],
+     "hrs": 9,
+     "io": "out",
+     "pram": "no",
+     "price": {
+      "en": "≈ ₫500,000–1,800,000 per adult on a tour (about US$20–70) · children less",
+      "th": "≈ ₫500,000–1,800,000 ต่อผู้ใหญ่ ไปกับทัวร์ (ราว US$20–70) · เด็กถูกกว่า"
+     },
+     "book": "req",
+     "q": "My Tho, Tien Giang, Vietnam",
+     "ok": "2026-11",
+     "src": "https://www.bestpricetravel.com/en-eu/mekong-delta-tours"
+    },
+    {
+     "name": {
+      "en": "Dam Sen Water Park",
+      "th": "สวนน้ำดัมเซน"
+     },
+     "local": "Công viên nước Đầm Sen",
+     "kind": "play",
+     "area": {
+      "en": "District 11",
+      "th": "เขต 11"
+     },
+     "what": {
+      "en": "The city's best-known water park, with a lazy river, wave pool and children's splash area",
+      "th": "สวนน้ำที่รู้จักมากที่สุดของเมือง มีแม่น้ำเทียม สระคลื่น และโซนเด็กเล่นน้ำ"
+     },
+     "why": {
+      "en": "A splash zone for small children and tickets by height, so the smallest go free",
+      "th": "มีโซนเล่นน้ำสำหรับเด็กเล็ก ตั๋วคิดตามส่วนสูง เด็กตัวเล็กเข้าฟรี"
+     },
+     "tip": {
+      "en": "Lockers cost extra; its ticket is separate from Dam Sen Cultural Park next door",
+      "th": "ตู้ล็อกเกอร์จ่ายเพิ่ม ตั๋วแยกกับสวนวัฒนธรรมดัมเซนที่อยู่ข้างกัน"
+     },
+     "ages": [
+      1,
+      2,
+      2,
+      2
+     ],
+     "hrs": 4,
+     "io": "out",
+     "pram": "part",
+     "price": {
+      "en": "≈ ₫220,000 1.4 m and over · ₫180,000 0.8–1.4 m · under 0.8 m free",
+      "th": "≈ ₫220,000 สูง 1.4 ม. ขึ้นไป · ₫180,000 สูง 0.8–1.4 ม. · ต่ำกว่า 0.8 ม. ฟรี"
+     },
+     "book": "none",
+     "q": "Dam Sen Water Park, District 11, Ho Chi Minh City",
+     "ok": "2026-11",
+     "src": "https://www.gtrip.vn/travel-blogs/water-parks-in-ho-chi-minh-city"
+    },
+    {
+     "name": {
+      "en": "Dam Sen Cultural Park",
+      "th": "สวนวัฒนธรรมดัมเซน"
+     },
+     "local": "Công viên Văn hóa Đầm Sen",
+     "kind": "themepark",
+     "area": {
+      "en": "District 11",
+      "th": "เขต 11"
+     },
+     "what": {
+      "en": "An old-style amusement park round a lake, with gentle rides, gardens and a small zoo corner",
+      "th": "สวนสนุกแบบเก่ารอบทะเลสาบ มีเครื่องเล่นเบาๆ สวน และมุมสวนสัตว์เล็กๆ"
+     },
+     "why": {
+      "en": "Many rides suit small children, and the lake gardens give shade",
+      "th": "เครื่องเล่นหลายอย่างเหมาะกับเด็กเล็ก สวนรอบทะเลสาบร่มรื่น"
+     },
+     "tip": {
+      "en": "Ticket sales stop in mid-afternoon; arrive by late morning",
+      "th": "ช่องขายตั๋วปิดช่วงบ่ายกลางๆ ไปก่อนเที่ยง"
+     },
+     "ages": [
+      2,
+      2,
+      2,
+      1
+     ],
+     "hrs": 4,
+     "io": "out",
+     "pram": "yes",
+     "price": {
+      "en": "≈ ₫200,000 adults · ≈ ₫160,000 children",
+      "th": "≈ ₫200,000 ผู้ใหญ่ · ≈ ₫160,000 เด็ก"
+     },
+     "book": "none",
+     "q": "Dam Sen Cultural Park, District 11, Ho Chi Minh City",
+     "ok": "2026-11",
+     "src": "https://localvietnam.com/ho-chi-minh-city/dam-sen-park-water-park/"
+    },
+    {
+     "name": {
+      "en": "Dream Kids at AEON Mall Tan Phu Celadon",
+      "th": "ดรีมคิดส์ ที่อิออนมอลล์ เติ้นฟู้ เซลาดอน"
+     },
+     "local": "Dream Kids – AEON Mall Tân Phú Celadon",
+     "kind": "play",
+     "area": {
+      "en": "Tan Phu",
+      "th": "เติ้นฟู้"
+     },
+     "what": {
+      "en": "A big indoor play area of climbing frames, slides and ball pits inside a shopping mall",
+      "th": "ที่เล่นในร่มขนาดใหญ่ มีเครื่องปีนป่าย สไลเดอร์ และบ่อบอล ในห้างสรรพสินค้า"
+     },
+     "why": {
+      "en": "Air-conditioned and built for small children; the mall has food and baby rooms",
+      "th": "ติดแอร์ ทำมาสำหรับเด็กเล็ก ในห้างมีของกินและห้องแม่และเด็ก"
+     },
+     "tip": {
+      "en": "Children need socks; a grown-up stays with the little ones",
+      "th": "เด็กต้องใส่ถุงเท้า ผู้ใหญ่ต้องอยู่กับเด็กเล็ก"
+     },
+     "ages": [
+      2,
+      2,
+      1,
+      0
+     ],
+     "hrs": 1.5,
+     "io": "in",
+     "pram": "yes",
+     "price": {
+      "en": "≈ ₫80,000 a child",
+      "th": "≈ ₫80,000 ต่อเด็ก 1 คน"
+     },
+     "book": "none",
+     "q": "AEON Mall Tan Phu Celadon, Tan Phu, Ho Chi Minh City",
+     "ok": "2026-11",
+     "src": "https://aeonmall-tanphuceladon-en.com/tin-tuc/dream-kids-khu-vui-choi-tuyet-voi-cho-be.html"
+    },
+    {
+     "name": {
+      "en": "Ho Chi Minh City Museum",
+      "th": "พิพิธภัณฑ์นครโฮจิมินห์"
+     },
+     "local": "Bảo tàng Thành phố Hồ Chí Minh",
+     "kind": "museum",
+     "area": {
+      "en": "Saigon centre (Gia Long Palace)",
+      "th": "ใจกลางไซ่ง่อน (วังซาลอง)"
+     },
+     "what": {
+      "en": "The city's story in a white colonial palace, with old boats, coins and wedding dresses",
+      "th": "เรื่องราวของเมืองในวังสีขาวยุคอาณานิคม มีเรือเก่า เหรียญ และชุดแต่งงาน"
+     },
+     "why": {
+      "en": "Cheap, quiet and indoors; the garden and old vehicles out front suit restless children",
+      "th": "ราคาถูก เงียบ อยู่ในร่ม สวนและยานพาหนะเก่าด้านหน้าเหมาะกับเด็กที่อยู่นิ่งไม่ได้"
+     },
+     "tip": {
+      "en": "The building is popular for wedding photos, so expect to share the stairs",
+      "th": "ที่นี่นิยมถ่ายรูปแต่งงาน บันไดอาจมีคนเยอะ"
+     },
+     "ages": [
+      1,
+      1,
+      1,
+      2
+     ],
+     "hrs": 1,
+     "io": "both",
+     "pram": "part",
+     "price": {
+      "en": "≈ ₫30,000 adults · ₫15,000 students",
+      "th": "≈ ₫30,000 ผู้ใหญ่ · ₫15,000 นักเรียน"
+     },
+     "book": "none",
+     "q": "Ho Chi Minh City Museum, 65 Ly Tu Trong, Ho Chi Minh City",
+     "ok": "2026-11",
+     "src": "https://gtrip.vn/travel-blogs/ho-chi-minh-city-museum"
+    },
+    {
+     "name": {
+      "en": "Saigon Skydeck",
+      "th": "ไซ่ง่อนสกายเด็ค"
+     },
+     "local": "Saigon Skydeck – Bitexco",
+     "kind": "views",
+     "area": {
+      "en": "Bitexco Tower, Saigon centre",
+      "th": "ตึกบิเท็กซ์โก ใจกลางไซ่ง่อน"
+     },
+     "what": {
+      "en": "A viewing floor on the 49th floor of the lotus-shaped Bitexco tower, right over the river bend",
+      "th": "ชั้นชมวิวชั้น 49 ของตึกบิเท็กซ์โกรูปดอกบัว มองเห็นโค้งแม่น้ำ"
+     },
+     "why": {
+      "en": "Cheaper and more central than Landmark 81, a short air-conditioned stop",
+      "th": "ถูกกว่าและอยู่ใจกลางกว่าแลนด์มาร์ก 81 แวะสั้นๆ ในห้องแอร์"
+     },
+     "tip": {
+      "en": "Last entry is 45 minutes before closing; go at dusk for day and night views",
+      "th": "เข้าได้ถึง 45 นาทีก่อนปิด ไปตอนโพล้เพล้ได้วิวทั้งกลางวันและกลางคืน"
+     },
+     "ages": [
+      1,
+      2,
+      2,
+      2
+     ],
+     "hrs": 1,
+     "io": "in",
+     "pram": "yes",
+     "price": {
+      "en": "≈ ₫240,000 adults (about US$9) · less for ages 4–12 · under 4 free",
+      "th": "≈ ₫240,000 ผู้ใหญ่ (ราว US$9) · อายุ 4–12 ปีถูกกว่า · ต่ำกว่า 4 ปีฟรี"
+     },
+     "book": "none",
+     "q": "Saigon Skydeck, Bitexco Financial Tower, Ho Chi Minh City",
+     "ok": "2026-11",
+     "src": "https://www.pelago.com/en-US/activity/pj6385iif-saigon-skydeck-admission-ticket-ho-chi-minh-city/"
+    }
+   ]
+  }
+ ]
+}

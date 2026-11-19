@@ -1,0 +1,410 @@
+{
+ "cc": "fr",
+ "towns": [
+  {
+   "place": "p-disney-paris",
+   "sights": [
+    {
+     "name": {
+      "en": "Disneyland Park",
+      "th": "ดิสนีย์แลนด์พาร์ก"
+     },
+     "kind": "themepark",
+     "area": {
+      "en": "Marne-la-Vallée",
+      "th": "มาร์น-ลา-วาเล"
+     },
+     "what": {
+      "en": "The castle park: Fantasyland rides, Main Street parades and the night show over Sleeping Beauty's castle",
+      "th": "สวนสนุกปราสาท มีเครื่องเล่นแฟนตาซีแลนด์ ขบวนพาเหรดเมนสตรีท และโชว์กลางคืนที่ปราสาทเจ้าหญิงนิทรา"
+     },
+     "why": {
+      "en": "Fantasyland has many rides with no height limit; under 3s go free",
+      "th": "แฟนตาซีแลนด์มีเครื่องเล่นหลายอย่างที่ไม่จำกัดส่วนสูง เด็กต่ำกว่า 3 ขวบเข้าฟรี"
+     },
+     "tip": {
+      "en": "Buy dated tickets online a day or more ahead: cheaper than at the gate",
+      "th": "ซื้อตั๋วระบุวันออนไลน์ล่วงหน้าอย่างน้อยหนึ่งวัน ถูกกว่าซื้อหน้าประตู"
+     },
+     "ages": [
+      2,
+      2,
+      2,
+      2
+     ],
+     "hrs": 9,
+     "io": "both",
+     "pram": "yes",
+     "price": {
+      "en": "≈ €139 adults · €129 ages 3–11 at the gate, less online by date · under 3 free",
+      "th": "≈ €139 ผู้ใหญ่ · €129 อายุ 3–11 ปี ราคาหน้าประตู ออนไลน์ถูกกว่าตามวัน · ต่ำกว่า 3 ขวบฟรี"
+     },
+     "book": "req",
+     "q": "Disneyland Park, Marne-la-Vallée, Chessy",
+     "ok": "2026-11",
+     "src": "https://www.disneylandparis.com/en-int/faq/tickets-and-vacation-packages/buy-tickets-at-parks-entrance-ticket-counters"
+    },
+    {
+     "name": {
+      "en": "Disney Adventure World",
+      "th": "ดิสนีย์แอดเวนเจอร์เวิลด์"
+     },
+     "kind": "themepark",
+     "area": {
+      "en": "Marne-la-Vallée",
+      "th": "มาร์น-ลา-วาเล"
+     },
+     "what": {
+      "en": "The second park, the old Studios, with World of Frozen, the Pixar rides and a show on Adventure Bay",
+      "th": "สวนที่สอง เดิมชื่อสตูดิโอ มีเวิลด์ออฟโฟรเซน เครื่องเล่นพิกซาร์ และโชว์ที่อ่าวแอดเวนเจอร์"
+     },
+     "why": {
+      "en": "Frozen's Arendelle and gentle Pixar rides suit small children; the same ticket rules as the castle park",
+      "th": "เมืองอาเรนเดลล์จากโฟรเซนและเครื่องเล่นพิกซาร์แบบเบาเหมาะกับเด็กเล็ก ใช้กติกาตั๋วเดียวกับสวนปราสาท"
+     },
+     "tip": {
+      "en": "A one-park ticket covers only one park a day; take two parks to hop",
+      "th": "ตั๋วหนึ่งสวนเข้าได้สวนเดียวต่อวัน ถ้าจะข้ามสวนให้ซื้อแบบสองสวน"
+     },
+     "ages": [
+      2,
+      2,
+      2,
+      2
+     ],
+     "hrs": 6,
+     "io": "both",
+     "pram": "yes",
+     "price": {
+      "en": "≈ €139 adults · €129 ages 3–11 at the gate, less online by date · under 3 free",
+      "th": "≈ €139 ผู้ใหญ่ · €129 อายุ 3–11 ปี ราคาหน้าประตู ออนไลน์ถูกกว่าตามวัน · ต่ำกว่า 3 ขวบฟรี"
+     },
+     "book": "req",
+     "q": "Disney Adventure World, Marne-la-Vallée, Chessy",
+     "ok": "2026-11",
+     "src": "https://www.disneylandparis.com/en-int/destinations/disney-adventure-world/world-of-frozen"
+    },
+    {
+     "name": {
+      "en": "Disney Village",
+      "th": "ดิสนีย์วิลเลจ"
+     },
+     "kind": "shop",
+     "area": {
+      "en": "Marne-la-Vallée",
+      "th": "มาร์น-ลา-วาเล"
+     },
+     "what": {
+      "en": "The free street between the parks and the station: themed restaurants, Disney shops and a cinema",
+      "th": "ถนนฟรีระหว่างสวนสนุกกับสถานี มีร้านอาหารธีม ร้านดิสนีย์ และโรงหนัง"
+     },
+     "why": {
+      "en": "No ticket needed, easy for a meal on arrival or departure day",
+      "th": "ไม่ต้องมีตั๋ว สะดวกกินข้าววันมาถึงหรือวันกลับ"
+     },
+     "tip": {
+      "en": "Parts are being rebuilt in phases, so some shops may have moved",
+      "th": "บางส่วนกำลังปรับปรุงเป็นช่วงๆ ร้านบางร้านอาจย้ายที่"
+     },
+     "ages": [
+      2,
+      2,
+      2,
+      2
+     ],
+     "hrs": 1.5,
+     "io": "both",
+     "pram": "yes",
+     "price": {
+      "en": "Free",
+      "th": "ฟรี"
+     },
+     "book": "none",
+     "q": "Disney Village, Marne-la-Vallée, Chessy",
+     "ok": "2026-11",
+     "src": "https://www.visitparisregion.com/en/inspiration/itineraries/disneyland-paris-and-surrounding-area"
+    },
+    {
+     "name": {
+      "en": "Sea Life Paris Val d'Europe",
+      "th": "ซีไลฟ์ปารีส วาลเดอโรป"
+     },
+     "kind": "aquarium",
+     "area": {
+      "en": "Val d'Europe, Serris",
+      "th": "วาลเดอโรป แซร์ริส"
+     },
+     "what": {
+      "en": "An aquarium inside the shopping centre with sharks, rays and turtles you can watch being fed",
+      "th": "อะควาเรียมในศูนย์การค้า มีฉลาม ปลากระเบน และเต่าที่ดูตอนให้อาหารได้"
+     },
+     "why": {
+      "en": "Indoors, small and step-free: a calm rainy-day break from the parks; under 2s go free",
+      "th": "อยู่ในร่ม ไม่ใหญ่ ไม่มีขั้นบันได พักจากสวนสนุกในวันฝนตก เด็กต่ำกว่า 2 ขวบฟรี"
+     },
+     "tip": {
+      "en": "Online prices change by date; the adult-plus-small-child ticket covers ages 2–5",
+      "th": "ราคาออนไลน์เปลี่ยนตามวัน ตั๋วผู้ใหญ่คู่เด็กเล็กใช้กับเด็กอายุ 2–5 ปี"
+     },
+     "ages": [
+      2,
+      2,
+      2,
+      1
+     ],
+     "hrs": 1.5,
+     "io": "in",
+     "pram": "yes",
+     "price": {
+      "en": "≈ €20 online · €24 at the door · under 2 free",
+      "th": "≈ €20 ออนไลน์ · €24 หน้าประตู · ต่ำกว่า 2 ขวบฟรี"
+     },
+     "book": "rec",
+     "q": "Sea Life Paris, Centre commercial Val d'Europe, Serris",
+     "ok": "2026-11",
+     "src": "https://www.visitsealife.com/paris/billets-pass-annuels/billets/billets-standards/"
+    },
+    {
+     "name": {
+      "en": "Val d'Europe shopping centre",
+      "th": "ศูนย์การค้าวาลเดอโรป"
+     },
+     "kind": "shop",
+     "area": {
+      "en": "Val d'Europe, Serris",
+      "th": "วาลเดอโรป แซร์ริส"
+     },
+     "what": {
+      "en": "A big glass-roofed mall by the RER station with a supermarket, food court and the aquarium",
+      "th": "ห้างใหญ่หลังคากระจกข้างสถานีรถไฟ RER มีซูเปอร์มาร์เก็ต ศูนย์อาหาร และอะควาเรียม"
+     },
+     "why": {
+      "en": "Dry, step-free and handy for nappies, snacks and a cheaper meal than the parks",
+      "th": "ไม่เปียกฝน ไม่มีขั้นบันได สะดวกซื้อผ้าอ้อม ขนม และกินข้าวถูกกว่าในสวนสนุก"
+     },
+     "tip": {
+      "en": "One RER stop from the parks, at Val d'Europe",
+      "th": "นั่ง RER จากสวนสนุกไปหนึ่งสถานี ลงที่วาลเดอโรป"
+     },
+     "ages": [
+      1,
+      1,
+      1,
+      1
+     ],
+     "hrs": 1.5,
+     "io": "in",
+     "pram": "yes",
+     "price": {
+      "en": "Free",
+      "th": "ฟรี"
+     },
+     "book": "none",
+     "q": "Centre commercial Val d'Europe, Serris",
+     "ok": "2026-11",
+     "src": "https://tourisme.seine-et-marne-attractivite.fr/en/895973-centre-commercial-val-deurope"
+    },
+    {
+     "name": {
+      "en": "La Vallée Village",
+      "th": "ลาวาเลวิลเลจ"
+     },
+     "kind": "shop",
+     "area": {
+      "en": "Serris",
+      "th": "แซร์ริส"
+     },
+     "what": {
+      "en": "An open-air outlet village of about 110 shops, with ice-cream stops and a play area",
+      "th": "เอาต์เล็ตกลางแจ้งราว 110 ร้าน มีร้านไอศกรีมและลานเด็กเล่น"
+     },
+     "why": {
+      "en": "Car-free lanes and a play area keep children happy while parents browse",
+      "th": "ทางเดินไม่มีรถและมีลานเด็กเล่น เด็กสนุกระหว่างพ่อแม่เดินดูของ"
+     },
+     "tip": {
+      "en": "Six minutes' walk from the aquarium; closed only on 25 December and 1 May",
+      "th": "เดินจากอะควาเรียม 6 นาที ปิดเฉพาะ 25 ธันวาคมและ 1 พฤษภาคม"
+     },
+     "ages": [
+      1,
+      1,
+      1,
+      1
+     ],
+     "hrs": 2,
+     "io": "out",
+     "pram": "yes",
+     "price": {
+      "en": "Free",
+      "th": "ฟรี"
+     },
+     "book": "none",
+     "q": "La Vallée Village, 3 Cours de la Garonne, Serris",
+     "ok": "2026-11",
+     "src": "https://www.thebicestercollection.com/la-vallee-village/fr/visite/"
+    },
+    {
+     "name": {
+      "en": "Lumigny Safari Réserve (Parc des Félins)",
+      "th": "ลูมินญีซาฟารีเรแซร์ฟ (ปาร์กเดเฟแล็ง)"
+     },
+     "kind": "zoo",
+     "area": {
+      "en": "Lumigny-Nesles-Ormeaux",
+      "th": "ลูมินญี-แนล-ออร์โม"
+     },
+     "what": {
+      "en": "A big-cat park in the woods with lions, tigers, lynx and snow leopards, plus a second animal park",
+      "th": "สวนแมวใหญ่ในป่า มีสิงโต เสือ ลิงซ์ และเสือดาวหิมะ และมีสวนสัตว์อีกแห่ง"
+     },
+     "why": {
+      "en": "Wide woodland paths and cats up close; under 3s go free",
+      "th": "ทางเดินกว้างในป่า ได้เห็นแมวใหญ่ใกล้ๆ เด็กต่ำกว่า 3 ขวบฟรี"
+     },
+     "tip": {
+      "en": "About 40 minutes south by car; closed in December",
+      "th": "ขับรถลงใต้ราว 40 นาที ปิดเดือนธันวาคม"
+     },
+     "ages": [
+      1,
+      2,
+      2,
+      2
+     ],
+     "hrs": 4,
+     "io": "out",
+     "pram": "yes",
+     "price": {
+      "en": "≈ €22.50 adults · €16 ages 3–10 · under 3 free",
+      "th": "≈ €22.50 ผู้ใหญ่ · €16 อายุ 3–10 ปี · ต่ำกว่า 3 ขวบฟรี"
+     },
+     "book": "rec",
+     "q": "Parc des Félins, Lumigny-Nesles-Ormeaux",
+     "ok": "2026-11",
+     "src": "https://www.sortiraparis.com/en/what-to-visit-in-paris/walks/articles/195452-from-the-arctic-to-the-savannah-discover-wild-animals-at-lumigny-safari-reserve-77"
+    },
+    {
+     "name": {
+      "en": "Château de Champs-sur-Marne",
+      "th": "ปราสาทชองป์-ซูร์-มาร์น"
+     },
+     "kind": "culture",
+     "area": {
+      "en": "Champs-sur-Marne",
+      "th": "ชองป์-ซูร์-มาร์น"
+     },
+     "what": {
+      "en": "An 18th-century château with furnished rooms and a large formal park",
+      "th": "ปราสาทศตวรรษที่ 18 มีห้องตกแต่งครบ และสวนแบบฝรั่งเศสขนาดใหญ่"
+     },
+     "why": {
+      "en": "A quiet, real château near the parks with lawns to run on; under 18s go free",
+      "th": "ปราสาทจริงที่เงียบสงบใกล้สวนสนุก มีสนามหญ้าให้วิ่ง อายุต่ำกว่า 18 เข้าฟรี"
+     },
+     "tip": {
+      "en": "Closed on Tuesdays; family storytelling visits run on some dates",
+      "th": "ปิดวันอังคาร บางวันมีรอบเล่านิทานสำหรับครอบครัว"
+     },
+     "ages": [
+      1,
+      1,
+      2,
+      1
+     ],
+     "hrs": 2,
+     "io": "both",
+     "pram": "part",
+     "price": {
+      "en": "≈ €7.50–9 adults · under 18 free",
+      "th": "≈ €7.50–9 ผู้ใหญ่ · อายุต่ำกว่า 18 ปีฟรี"
+     },
+     "book": "none",
+     "q": "Château de Champs-sur-Marne, 31 Rue de Paris, Champs-sur-Marne",
+     "ok": "2026-11",
+     "src": "https://www.chateau-champs-sur-marne.fr/en/adult-groups-and-tourism-professionals/associations-clubs-and-independent-groups/self-guided-tour"
+    },
+    {
+     "name": {
+      "en": "Île de loisirs de Vaires-Torcy",
+      "th": "อีลเดอลัวซีร์ แวร์-ตอร์ซี"
+     },
+     "kind": "nature",
+     "area": {
+      "en": "Torcy",
+      "th": "ตอร์ซี"
+     },
+     "what": {
+      "en": "A lakeside leisure park with walking paths and, in summer, a bathing beach and inflatable aquapark",
+      "th": "สวนพักผ่อนริมทะเลสาบ มีทางเดิน และหน้าร้อนมีชายหาดว่ายน้ำและสวนน้ำเป่าลม"
+     },
+     "why": {
+      "en": "Free open space by the water, about 20 minutes from the parks",
+      "th": "พื้นที่โล่งริมน้ำฟรี ห่างจากสวนสนุกราว 20 นาที"
+     },
+     "tip": {
+      "en": "The beach opens only in summer; mini golf and pony rides cost extra",
+      "th": "ชายหาดเปิดเฉพาะหน้าร้อน มินิกอล์ฟและขี่ม้าโพนี่จ่ายเพิ่ม"
+     },
+     "ages": [
+      1,
+      2,
+      2,
+      2
+     ],
+     "hrs": 2,
+     "io": "out",
+     "pram": "yes",
+     "price": {
+      "en": "Free · activities extra",
+      "th": "ฟรี · กิจกรรมจ่ายเพิ่ม"
+     },
+     "book": "none",
+     "q": "Île de loisirs de Vaires-Torcy, Route de Lagny, Torcy",
+     "ok": "2026-11",
+     "src": "https://www.visitparisregion.com/fr/ile-de-loisirs-de-vaires-torcy"
+    },
+    {
+     "name": {
+      "en": "Château de Vaux-le-Vicomte",
+      "th": "ปราสาทโว-เลอ-วีกงต์"
+     },
+     "kind": "culture",
+     "area": {
+      "en": "Maincy, near Melun",
+      "th": "แมงซี ใกล้เมอเลิง"
+     },
+     "what": {
+      "en": "A grand château and gardens; from mid-November to early January it is dressed for its Grand Noël",
+      "th": "ปราสาทและสวนอันยิ่งใหญ่ ตั้งแต่กลางพฤศจิกายนถึงต้นมกราคมตกแต่งเป็นงานกร็องโนเอล"
+     },
+     "why": {
+      "en": "The Christmas rooms and lights feel like a fairy tale for children; under 3s go free",
+      "th": "ห้องคริสต์มาสและแสงไฟเหมือนในนิทานสำหรับเด็ก เด็กต่ำกว่า 3 ขวบฟรี"
+     },
+     "tip": {
+      "en": "Book online; about 45 minutes by car from the Disney parks",
+      "th": "จองออนไลน์ ขับรถจากสวนดิสนีย์ราว 45 นาที"
+     },
+     "ages": [
+      1,
+      2,
+      2,
+      2
+     ],
+     "hrs": 3,
+     "io": "both",
+     "pram": "part",
+     "price": {
+      "en": "≈ €25.90 adults · €20.90 ages 3–17 on weekdays · under 3 free",
+      "th": "≈ €25.90 ผู้ใหญ่ · €20.90 อายุ 3–17 ปี วันธรรมดา · ต่ำกว่า 3 ขวบฟรี"
+     },
+     "book": "req",
+     "q": "Château de Vaux-le-Vicomte, Maincy",
+     "ok": "2026-11",
+     "src": "https://vaux-le-vicomte.com/en/events/the-grand-noel-at-chateau-de-vaux-le-vicomte/"
+    }
+   ]
+  }
+ ]
+}
