@@ -1324,7 +1324,10 @@ function router({ pool, media, A, ai, hooks = {} }) {   // hooks.heart(h): set b
     let lk = ''; if (likes) { try { const v = JSON.parse(likes.value); lk = typeof v === 'string' ? v : v && (v.text || v.th || v.en) ? String(v.text || v.th || v.en) : JSON.stringify(v); } catch (_) { lk = String(likes.value); } }
     const ls = await q("SELECT e.text, t.title FROM entries e JOIN trips t ON t.id=e.trip_id WHERE e.family_id=$1 AND e.kind='lessons' AND e.text <> '' ORDER BY t.date_from DESC LIMIT 6", [FAMILY]);
     const prof = FAM.cleanProfile(((await q('SELECT profile FROM families WHERE id=$1', [FAMILY]))[0] || {}).profile), tw = prof.taste ? TAGS.tasteWords(prof.taste, (await kidRows()).map((k) => k.slug)) : '';
-    const out = [tw ? `The styles our family chose: ${tw}` : '', lk ? `What our family likes: ${lk.slice(0, 2000)}` : '', ...ls.map((l) => `Lessons from ${(l.title && (l.title.en || l.title.th)) || 'a past trip'}: ${String(l.text).slice(0, 1000)}`)].filter(Boolean).join('\n');
+    // the family's wish list of things to do (#/explore ♥): their names and towns, so a route through those towns puts them in
+    const wish = await q("SELECT name, town FROM sight_lib WHERE family_id=$1 AND wish AND NOT gone ORDER BY town, name LIMIT 30", [FAMILY]);
+    const ww = wish.length ? `Places we would love to go to (put them in when the route passes their town): ${wish.map((w) => `${w.name} (${w.town})`).join('; ')}.` : '';
+    const out = [tw ? `The styles our family chose: ${tw}` : '', ww, lk ? `What our family likes: ${lk.slice(0, 2000)}` : '', ...ls.map((l) => `Lessons from ${(l.title && (l.title.en || l.title.th)) || 'a past trip'}: ${String(l.text).slice(0, 1000)}`)].filter(Boolean).join('\n');
     // the planner never sends a child's name (only their ages): each name the family gave becomes "the child" / "ลูก"
     let txt = out.slice(0, 5000);
     for (const k of await kidRows()) for (const [nm, w] of [[k.name_th, 'ลูก'], [k.name_en, 'the child']]) if (nm && nm.trim().length > 1) txt = txt.split(nm.trim()).join(w);
