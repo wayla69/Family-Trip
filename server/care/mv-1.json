@@ -1,0 +1,6 @@
+{"cc":"mv","towns":[
+ {"place":"mv-atolls","places":[
+  {"name":"Indira Gandhi Memorial Hospital (IGMH)","kind":"hospital","area":{"th":"มาเล","en":"Malé"},"what":{"th":"โรงพยาบาลรัฐที่ใหญ่ที่สุดของมัลดีฟส์ มีห้องฉุกเฉินเด็ก","en":"The Maldives' largest public hospital, with a children's emergency room"},"why":{"th":"ห้องฉุกเฉินเด็กแยกต่างหาก (ต่ำกว่า 16 ปี) อยู่ที่เมืองหลวง ไปจากรีสอร์ตทางเรือหรือเครื่องบินน้ำ","en":"A separate ER for under-16s, in the capital; reached from the resorts by boat or seaplane"},"q":"Indira Gandhi Memorial Hospital, Malé, Maldives","ok":"2026-11"},
+  {"name":"ADK Hospital","kind":"hospital","area":{"th":"มาเล","en":"Malé"},"what":{"th":"โรงพยาบาลเอกชน มีห้องฉุกเฉินและแผนกกุมารเวช","en":"Private hospital with an emergency department and paediatrics"},"why":{"th":"โรงพยาบาลเอกชนที่นักท่องเที่ยวนิยมใช้ อยู่ที่เมืองหลวง","en":"A private hospital many visitors use, in the capital"},"q":"ADK Hospital, Malé, Maldives","ok":"2026-11"}
+ ]}
+]}

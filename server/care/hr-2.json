@@ -1,0 +1,6 @@
+{"cc":"hr","towns":[
+ {"place":"hr-plitvice","places":[
+  {"name":"Emergency Medical Service Korenica","kind":"hospital","area":{"th":"โคเรนิตซา","en":"Korenica"},"what":{"th":"หน่วยแพทย์ฉุกเฉินประจำเมืองโคเรนิตซา","en":"Emergency medical service station in Korenica"},"why":{"th":"จุดฉุกเฉินที่ใกล้อุทยานที่สุด ห่างราว 20 กม.","en":"Closest emergency care to the park, about 20 km away"},"q":"Emergency Medical Service, Zagrebačka 41, Korenica","ok":"2026-11"},
+  {"name":"Gospić General Hospital","zh":"Opća bolnica Gospić","kind":"hospital","area":{"th":"กอสปิช","en":"Gospić"},"what":{"th":"โรงพยาบาลทั่วไปของจังหวัด มีแผนกรับผู้ป่วยฉุกเฉิน","en":"County general hospital with emergency admissions"},"why":{"th":"โรงพยาบาลใหญ่ที่ใกล้ที่สุด อยู่อีกเมือง ไกลกว่าโคเรนิตซา","en":"Nearest full hospital, in another town, farther than Korenica"},"q":"Opća bolnica Gospić, Kaniška 111, Gospić","ok":"2026-11"}
+ ]}
+]}

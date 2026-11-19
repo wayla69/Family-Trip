@@ -185,6 +185,15 @@ if (process.env.BASE) {
   ok(bk.length >= 12 && bk[0].town === 'Bangkok' && /[\u0E00-\u0E7F]/.test(bk[0].town_th) && bk.every((x) => x.row.what && x.row.what.th && x.row.q && !x.row.hours && !x.row.pick),
     `eats: a file's rows go under the picture library's own name for the town (${bk.length} in ${bk[0] && bk[0].town} / ${bk[0] && bk[0].town_th})`); }
 
+// help and play near a stay (server/care, scripts/care-lint.mjs): every file reads, every row is confirmed (ok), names no opening hours
+// or phone number; the server answers only the towns asked for
+{ const { lintCare } = await import('../scripts/care-lint.mjs');
+  const r = lintCare();
+  ok(!r.errs.length && r.rows > 300 && r.kinds.hospital > 150 && r.kinds.play > 80, `care: the built-in list is clean (${r.rows} places in ${r.towns} towns)` + (r.errs.length ? ' — ' + r.errs.slice(0, 6).join(' · ') : ''));
+  const CARE = require('../server/care.js'), got = CARE.forPlaces(['hk-hongkong', 'zz-nowhere', 'th-bangkok']);
+  ok(Object.keys(got).sort().join() === 'hk-hongkong,th-bangkok' && got['hk-hongkong'][0].kind === 'hospital' && got['hk-hongkong'].every((x) => x.q && x.ok && x.area.th),
+    `care: forPlaces gives the asked towns only, hospitals first (${Object.keys(got).join(', ')})`);}
+
 // the stock art library (docs/STOCK-ART.md): the shipped index is clean, the lint catches what §6.3 says, stock: ids resolve only when approved
 { const STOCK = require('../server/stock.js');
   const errs = await STOCK.lint();

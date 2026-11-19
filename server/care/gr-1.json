@@ -1,0 +1,11 @@
+{"cc":"gr","towns":[
+ {"place":"gr-santorini","places":[
+  {"name":"General Hospital of Santorini","kind":"hospital","area":{"th":"ใกล้ฟีรา","en":"Near Fira"},"what":{"th":"โรงพยาบาลรัฐของเกาะ มีห้องฉุกเฉิน","en":"The island's public hospital with an emergency department"},"why":{"th":"โรงพยาบาลหลักแห่งเดียวบนเกาะ เคสหนักอาจส่งต่อไปเอเธนส์","en":"The island's main hospital; serious cases may be flown to Athens"},"q":"General Hospital of Santorini, Thira, Santorini","ok":"2026-11"}
+ ]},
+ {"place":"gr-athens","places":[
+  {"name":"Agia Sofia Children's Hospital","zh":"Νοσοκομείο Παίδων Η Αγία Σοφία","kind":"hospital","area":{"th":"กูดี","en":"Goudi"},"what":{"th":"โรงพยาบาลเด็กของรัฐ มีห้องฉุกเฉินเด็ก","en":"Public children's hospital with children's emergency care"},"why":{"th":"โรงพยาบาลเด็กที่ใหญ่ที่สุดในกรีซ","en":"Greece's largest children's hospital"},"q":"Agia Sofia Children's Hospital, Thivon & Papadiamantopoulou, Goudi, Athens","ok":"2026-11"},
+  {"name":"P. & A. Kyriakou Children's Hospital","zh":"Νοσοκομείο Παίδων Π. & Α. Κυριακού","kind":"hospital","area":{"th":"กูดี","en":"Goudi"},"what":{"th":"โรงพยาบาลเด็กของรัฐ มีห้องฉุกเฉินเด็ก","en":"Public children's hospital with children's emergency care"},"why":{"th":"อยู่ติดโรงพยาบาลอายาโซเฟีย","en":"Right next to Agia Sofia"},"q":"P. & A. Kyriakou Children's Hospital, Thivon, Goudi, Athens","ok":"2026-11"},
+  {"name":"National Garden playground","kind":"play","area":{"th":"ซินทักมา","en":"Syntagma"},"what":{"th":"สนามเด็กเล่นมีรั้วในสวนแห่งชาติ","en":"Fenced playground in the National Garden"},"why":{"th":"ร่มรื่น มีโซนเด็กก่อนวัยเรียน มีบ่อเป็ด","en":"Shady, a pre-school section and duck ponds"},"q":"National Garden playground, Athens","ok":"2026-11"},
+  {"name":"Stavros Niarchos Park playground","kind":"play","area":{"th":"คัลลิเธีย","en":"Kallithea"},"what":{"th":"สนามเด็กเล่นใหญ่ในสวนศูนย์วัฒนธรรมสตาฟรอส นีอาร์โคส","en":"Large playground in the Stavros Niarchos Foundation Cultural Center park"},"why":{"th":"มีน้ำพุให้เด็กเล่นน้ำ ไปช่วงเช้าหรือเย็นเลี่ยงแดดร้อน","en":"Water jets to play in; go early or late to avoid the heat"},"q":"Stavros Niarchos Park playground, SNFCC, Kallithea, Athens","ok":"2026-11"}
+ ]}
+]}

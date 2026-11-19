@@ -1816,6 +1816,19 @@ const T = 'hk-macau-2026';
     pages: (pb.toString('latin1').match(/\/Type\s*\/Page[^s]/g) || []).length };
   ok(pdf.status === 200 && pdf.type === 'application/pdf' && pdf.head === '%PDF-', `server PDF: ${Math.round(pdf.size / 1024)} KB, ${pdf.pages} A4 pages`);
   ok(pdf.pages >= 7 && pdf.size > 40000, 'memory book PDF: cover, numbers, contents, day pages, firsts, words, a passport spread per child, back cover');
+  { const r5 = await s.page.request.get(`${BASE}/api/b/pdf/hk-macau-2026?size=a5`, { timeout: 120000 }), b5 = (await r5.body()).toString('latin1');
+    const p5 = (b5.match(/\/Type\s*\/Page[^s]/g) || []).length, box = (b5.match(/\/MediaBox\s*\[\s*0 0 ([\d.]+) ([\d.]+)/) || []).slice(1).map(Number);
+    ok(r5.status() === 200 && /-a5\.pdf/.test(r5.headers()['content-disposition'] || '') && Math.round(box[0]) === 420 && p5 === pdf.pages, `the A5 book: A4's pages scaled whole, none spill (${p5} pages vs ${pdf.pages}, ${box.join('×')} pt)`); }
+  // help and play near where we sleep (views.js careBlock, server/care.js): Hong Kong's hospitals first, a pin each, no hours or phone
+  await s.page.goto(`${BASE}/#/t/hk-macau-2026/sos`);
+  await s.page.waitForSelector('#carelib:not([hidden]) .cfold[open] ul.carel li', { timeout: 20000 });
+  { const c = await s.page.evaluate(() => { const b = document.getElementById('carelib'); return { first: b.querySelector('.cfold[open] h5').textContent, n: b.querySelectorAll('.cfold[open] li').length, pins: b.querySelectorAll('.cfold[open] li .navb').length, text: b.textContent }; });
+    ok(/hospital|โรงพยาบาล/i.test(c.first) && c.n >= 3 && c.pins === c.n && !/24[- ]hour|\+852/.test(c.text), `SOS: hospitals and play near the stay (${c.n} places, the first group "${c.first.trim()}")`); }
+  // what dish is this? (kid.js dishFor): the book's tasting card, a right pick says the dish and its Cantonese name
+  await s.page.goto(`${BASE}/#/kid/mimi/dish`); await s.page.waitForSelector('.dishpic', { timeout: 15000 });
+  { const k = await s.page.evaluate(() => dsh.r.want.k); await s.page.click(`.dishopt[data-v="${k}"]`);
+    const d = await s.page.evaluate(() => ({ got: dsh.got, opts: document.querySelectorAll('.dishopt').length, zh: [...document.querySelectorAll('.dishopt small')].map((x) => x.textContent) }));
+    ok(d.got && d.opts >= 2 && d.zh.some((x) => /[\u4e00-\u9fff]/.test(x)), `kid mode: what dish is this — ${d.opts} names, the local word under them (${d.zh.join(' ')})`); }
   // the memory book preview on screen (what the PDF prints)
   await s.page.goto(`${BASE}/#/print/hk-macau-2026`); await s.page.waitForSelector('.pg.cover');
   const pgs = await s.page.locator('.pg').evaluateAll((els) => els.map((e) => e.className.replace('pg ', '').split(' ')[0]));

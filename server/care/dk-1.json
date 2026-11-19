@@ -1,0 +1,6 @@
+{"cc":"dk","towns":[
+ {"place":"dk-copenhagen","places":[
+  {"name":"Hvidovre Hospital","kind":"hospital","area":{"th":"ฮวีโดเออ","en":"Hvidovre"},"what":{"th":"โรงพยาบาลรัฐ มีหน่วยรับเด็กและวัยรุ่นฉุกเฉิน","en":"Public hospital with a children's and young people's acute unit"},"why":{"th":"หนึ่งในโรงพยาบาลที่รับเด็กเล็กป่วยเฉียบพลันของโคเปนเฮเกน","en":"One of the hospitals Copenhagen sends acutely ill young children to"},"q":"Hvidovre Hospital, Børne- og Ungemodtagelsen, Hvidovre","ok":"2026-11"},
+  {"name":"Kongens Have playground","kind":"play","area":{"th":"ข้างปราสาทโรเซนบอร์ก","en":"By Rosenborg Castle"},"what":{"th":"สนามเด็กเล่นในสวนหลวง มีเครื่องปีนป่ายและบ่อทราย","en":"Playground in the King's Garden with climbing frames and sandpits"},"why":{"th":"กลางเมือง มีสนามหญ้าให้วิ่งเล่น ช่วงบ่ายคนน้อยกว่า","en":"Central, with lawns to run on; quieter after lunch"},"q":"Kongens Have playground, Øster Voldgade, Copenhagen","ok":"2026-11"}
+ ]}
+]}

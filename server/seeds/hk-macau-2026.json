@@ -1442,6 +1442,7 @@
       "items": [
        {
         "k": "hargau",
+        "speak": {"text": "蝦餃", "lang": "zh-HK"},
         "art": "food/hargau",
         "e": "🥟",
         "th": "ฮะเก๋า",
@@ -1453,6 +1454,7 @@
        },
        {
         "k": "siumai",
+        "speak": {"text": "燒賣", "lang": "zh-HK"},
         "art": "food/siumai",
         "e": "🥟",
         "th": "ขนมจีบ",
@@ -1464,6 +1466,7 @@
        },
        {
         "k": "charsiubao",
+        "speak": {"text": "叉燒包", "lang": "zh-HK"},
         "art": "food/charsiubao",
         "e": "🍞",
         "th": "ซาลาเปาหมูแดง",
@@ -1475,6 +1478,7 @@
        },
        {
         "k": "eggtart",
+        "speak": {"text": "蛋撻", "lang": "zh-HK"},
         "e": "🥧",
         "th": "ทาร์ตไข่",
         "en": "Egg tart",
@@ -1485,6 +1489,7 @@
        },
        {
         "k": "wonton",
+        "speak": {"text": "雲吞麵", "lang": "zh-HK"},
         "e": "🍜",
         "th": "บะหมี่เกี๊ยว",
         "en": "Wonton noodles",
@@ -1495,6 +1500,7 @@
        },
        {
         "k": "springroll",
+        "speak": {"text": "春卷", "lang": "zh-HK"},
         "e": "🌯",
         "th": "ปอเปี๊ยะ",
         "en": "Spring roll",
@@ -1505,6 +1511,7 @@
        },
        {
         "k": "pineapplebun",
+        "speak": {"text": "菠蘿包", "lang": "zh-HK"},
         "art": "food/pineapplebun",
         "e": "🍍",
         "th": "ขนมปังสับปะรด",
@@ -1516,6 +1523,7 @@
        },
        {
         "k": "milktea",
+        "speak": {"text": "奶茶", "lang": "zh-HK"},
         "art": "food/hkmilktea",
         "e": "🧋",
         "th": "ชานม",
@@ -1537,6 +1545,7 @@
        },
        {
         "k": "porkchopbun",
+        "speak": {"text": "豬扒包", "lang": "zh-HK"},
         "art": "food/porkchopbun",
         "e": "🍔",
         "th": "ขนมปังหมูชอป",

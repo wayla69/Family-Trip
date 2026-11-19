@@ -707,6 +707,7 @@ ${isEditor() && S.features.story && days.length ? storyBlock(t, null)
 ${letterBlock(t, days.length)}
 ${days.map((i) => dayPage(t, i)).join('')}
 ${days.length ? printSet(t) : ''}<div class="row noprint" style="margin:28px 0 8px"${days.length ? '' : ' hidden'}><a class="btn small" href="/api/b/pdf/${esc(t.id)}" download data-a="pdf">📕 ${L('สมุดความทรงจำ (PDF A4)', 'Memory book (PDF A4)')}</a><a class="btn ghost small" href="#/print/${esc(t.id)}">👀 ${L('ดูตัวอย่างเล่ม', 'Preview the book')}</a></div>
+<div class="row noprint bookmore pdfsizes"${days.length ? '' : ' hidden'}><span class="label">${L('ขนาดอื่น', 'Other sizes')}</span><a class="linkbtn" href="/api/b/pdf/${esc(t.id)}?size=a5" download data-a="pdf" data-sfx="-a5">${L('A5 เล่มเล็ก', 'A5, a small book')}</a><span class="label">·</span><a class="linkbtn" href="/api/b/pdf/${esc(t.id)}?shop=1" download data-a="pdf" data-sfx="-print">${L('A4 ส่งร้านพิมพ์ (ไม่มีเลขหน้า)', 'A4 for a print shop (no page numbers)')}</a></div>
 <div class="row noprint bookmore"${days.length ? '' : ' hidden'}><button class="linkbtn" data-a="print">${L('พิมพ์หน้านี้', 'Print this page')}</button><span class="label">·</span><button class="linkbtn" data-a="copytext">${L('คัดลอกเป็นข้อความ', 'Copy as text')}</button><span class="label">·</span><a class="linkbtn keepbtn" href="/api/b/keep/${esc(t.id)}?lang=${lang}" download>${L('เก็บเล่มเป็นไฟล์เดียว', 'Keep the book as one file')}</a></div>
 ${days.length ? `<p class="muted small noprint keepnote">${L('ไฟล์เดียวที่มีทุกรูป คำพูด และเสียงของเล่มนี้ เปิดในเบราว์เซอร์ได้โดยไม่ต้องมีแอป เก็บไว้ได้นาน', 'One file with every photo, word and voice of this book — opens in any browser without the app, to keep for years')}</p>` : ''}</div>`;
 }
@@ -1601,7 +1602,7 @@ function viewSos(t, full, open) {
   if (full) return topicPage(t, 'sos', B.sos, lede, open);
   const dial = (x) => String(x).split('·')[0].replace(/[^+\d]/g, '');
   const top = `${(n.emergency || []).length ? `<div class="calls">${n.emergency.map((e) => `<a class="callb${e.main ? ' main' : ''}" href="tel:${esc(dial(e.tel))}"><span class="ce">${ic('phone')}</span><span class="ct"><b>${esc(T(e.label))}</b><small>${esc(e.tel)}</small></span></a>`).join('')}</div>` : ''}
-${B.tonight ? `<h3 class="gh">${L('คืนนี้นอนที่', 'Tonight we sleep at')}</h3>${B.tonight}` : ''}${n.lost ? `<div class="call warn lostc">${pts(T(n.lost), 'tight')}</div>` : ''}${lostBlock(t)}`;
+${B.tonight ? `<h3 class="gh">${L('คืนนี้นอนที่', 'Tonight we sleep at')}</h3>${B.tonight}` : ''}${n.lost ? `<div class="call warn lostc">${pts(T(n.lost), 'tight')}</div>` : ''}${lostBlock(t)}${careBlock(t)}`;
   return glancePage(t, 'sos', B, lede, top, ['tonight']);
 }
 /* ---------- lost-child card (SOS page, editors): drawn on the phone (sheets.js drawLostCard) as a lock-screen picture — the child,
@@ -1621,6 +1622,46 @@ ${lostPhoto ? `<img class="lcthumb" src="${esc(lostPhoto)}" alt="">` : `<span cl
 <button class="btn small" data-a="lostcard" data-t="${esc(t.id)}" data-v="${esc(k)}">🪪 ${L('ทำการ์ด', 'Make the card')}</button></div>
 <p class="label">🔒 ${L('รูปและเบอร์อยู่ในเครื่องนี้เท่านั้น ไม่อัปโหลด', 'The photo and numbers stay on this phone — nothing is uploaded')}</p>
 <img class="lcprev" id="lcprev" alt="" hidden></section>`;
+}
+/* ---------- help and play near where we sleep (owner, Nov 2026: "โรงพยาบาลเด็ก ร้านยา สนามเด็กเล่น ห้องให้นม"; server/care.js): each
+   stay's town-level position (plan.stay.ll) → the nearest library town on the phone (snapPlace) — a book from photos names its towns
+   (theme.snap.places) — → GET /api/b/care?ids= (the towns' ids only). Kept in ls('care') for no signal; tonight's town opens first.
+   Never opening hours or a phone number: the emergency numbers sit at the top of this page. */
+const CARE_KINDS = [['hospital', '🏥', 'โรงพยาบาลที่รับเด็ก', 'Hospitals that see children'], ['pharmacy', '💊', 'ร้านยา', 'Pharmacy'],
+  ['play', '🛝', 'ที่ให้เด็กๆ เล่น', 'Places to play'], ['baby', '🚼', 'ห้องให้นมและเปลี่ยนผ้าอ้อม', 'Baby rooms']];
+let careAsk = '';
+// the book's towns in order — tonight's first during the trip — from what was stored: {days: [place id per day], extra: [ids], names, rows}
+function careOrder(t, c) {
+  const ids = [], add = (id) => { if (id && (c.rows[id] || []).length && !ids.includes(id)) ids.push(id); }, at = dayNow(t);
+  if (at >= 0) add(c.days[at]);
+  c.days.forEach(add); (c.extra || []).forEach(add);
+  return ids;
+}
+function careBlock(t) {
+  if (careAsk !== t.id) {
+    careAsk = t.id;
+    snapGeo().then((g) => {
+      const pid = (d) => { const ll = d && d.plan && d.plan.stay && d.plan.stay.ll; return Array.isArray(ll) && ll.length === 2 ? (snapPlace(ll, g) || {}).id || '' : ''; };
+      const days = t.days.map(pid), extra = (((t.theme || {}).snap || {}).places || []).filter((x) => typeof x === 'string'), ids = [...new Set([...days, ...extra].filter(Boolean))];
+      if (!ids.length) return;
+      api('GET', `/api/b/care?ids=${encodeURIComponent(ids.slice(0, 20).join(','))}`).then((r) => {
+        const names = {}; ids.forEach((id) => { const p = (g.places || []).find((x) => x.id === id); if (p) names[id] = snapShort(p.name); });
+        ls('care_' + t.id, { days, extra, names, rows: (r && r.places) || {} });
+        const box = document.getElementById('carelib'); if (box && careAsk === t.id) box.outerHTML = careBlock(t);
+      }, () => {});
+    });
+  }
+  const c = ls('care_' + t.id), towns = c && c.rows ? careOrder(t, c) : [];
+  if (!towns.length) return '<section class="blk carelib noprint" id="carelib" hidden></section>';
+  const nameOf = (id) => ((n) => (n ? n[lang === 'en' ? 'en' : 'th'] || n.th : id))(c.names[id]);
+  const row = (x) => `<li class="nmrow"><span class="plen"><b>${esc(x.name)}</b>${x.zh ? ` <span class="zh">${esc(x.zh)}</span>` : ''}<small>${[T(x.what), T(x.area)].filter(Boolean).map(esc).join(' · ')}</small>${x.why ? `<small class="cwhy">${esc(T(x.why))}</small>` : ''}</span>${navB(x.q, x.name)}</li>`;
+  const town = (id, i) => { const rows = c.rows[id];
+    return `<details class="cfold"${i ? '' : ' open'}><summary>${esc(nameOf(id))}${ic('chev', 'chv')}</summary>
+${CARE_KINDS.map(([k, e, th, en]) => ((xs) => (xs.length ? `<h5>${emo(e)} ${L(th, en)}</h5><ul class="carel">${xs.map(row).join('')}</ul>` : ''))(rows.filter((x) => x.kind === k))).join('')}</details>`; };
+  const when = (towns.flatMap((id) => c.rows[id]).map((x) => x.ok).sort().pop() || '').split('-');
+  return `<section class="blk carelib noprint" id="carelib"><h3>${emo('🏥')} ${L('โรงพยาบาลเด็กและที่เล่นใกล้ที่พัก', 'Hospitals and play near where we sleep')}</h3>
+${towns.map(town).join('')}
+<p class="label">${L('ฉุกเฉินโทรเบอร์ด้านบนก่อนเสมอ', 'In an emergency call the number at the top first')}${when.length === 2 ? ` · ${L('เช็กจากเว็บเมื่อ', 'checked on the web')} ${esc(fmtDay(`${when[0]}-${when[1]}-01`, { month: 'short', year: 'numeric' }))}` : ''} · ${L('ไม่มีเวลาเปิดปิด เช็กก่อนไป', 'no opening hours — check before you go')}</p></section>`;
 }
 // the papers and the things on the phone to have ready before we leave (owner, Nov 2026: "ประกันเดินทางและเอกสารเด็ก"): a fixed list, ticked
 // on this phone (data-ck, the bag's own tick), shown until the trip is over — never a document number, nothing goes to the server
@@ -3340,7 +3381,7 @@ ${spots.length ? `<div class="spot${lit ? ' little' : ''}"><div class="spothd">$
     const rated = l.yum || l.stars, note = (it) => `${it.note ? `<small>${esc(T(it.note))}</small>` : ''}${it.say ? `<small class="say">“${esc(it.say)}”</small>` : ''}`;
     const GC = [['#2E7D32', '#E6F6EA'], ['#1565C0', '#E3F2FD'], ['#A16207', '#FFF6D6']];   // Spotted / Rides / Yummy columns, as printed
     const body = l.groups.map((gr, gi) => `<div class="grp"${l.groups.length > 1 ? ` style="--ma:${GC[gi % 3][0]};--mt:${GC[gi % 3][1]}"` : ''}>${gr.title ? `<h5>${esc(gr.e || '')} ${esc(T(gr.title))}</h5>` : ''}<div class="ticks${rated || l.said ? ' food' : ''}">${gr.items.map((it) => rated
-      ? `<div class="tick${ticked(t, `${l.key}.${it.k}`, kid) ? ' on' : ''}"><span class="e">${typeof gFood === 'function' ? gFood(it.e, it.art) : esc(it.e || '')}</span><span class="t">${esc(T(it))}${note(it)}</span>${l.stars ? starBtns(t, kid, `${l.key}.${it.k}`) : yumBtns(t, kid, `${l.key}.${it.k}`)}</div>`
+      ? `<div class="tick${ticked(t, `${l.key}.${it.k}`, kid) ? ' on' : ''}"><span class="e">${typeof gFood === 'function' ? gFood(it.e, it.art) : esc(it.e || '')}</span><span class="t">${esc(T(it))}${it.speak ? ` <span class="zh">${esc(it.speak.text)}</span>` : ''}${note(it)}</span>${it.speak ? `<button class="hearbtn round" data-a="hear" data-v="${esc(it.speak.text)}" data-lang="${esc(it.speak.lang)}" aria-label="🔊 ${esc(it.en)}">🔊</button>` : ''}${l.stars ? starBtns(t, kid, `${l.key}.${it.k}`) : yumBtns(t, kid, `${l.key}.${it.k}`)}</div>`
       : l.said && it.speak ? `<div class="sayrow">${tickBtn(t, kid, `${l.key}.${it.k}`, null, T(it), it.e, note(it))}<button class="hearbtn round" data-a="hear" data-v="${esc(it.speak.text)}" data-lang="${esc(it.speak.lang)}" aria-label="🔊 ${esc(it.en)}">🔊</button></div>`
       : tickBtn(t, kid, `${l.key}.${it.k}`, null, T(it), it.e, note(it))).join('')}</div></div>`).join('');
     return `<section class="pp-page plist${l.groups.length > 1 ? ' wide' : ''}" id="pl-${esc(l.key)}"><header><div><div class="kicker">${esc(l.e || '')} ${esc(T(l.sub))}</div><h3>${esc(T(l.title))}</h3></div>${n ? `<span class="count">⭐${n}</span>` : ''}</header>

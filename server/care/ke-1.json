@@ -1,0 +1,7 @@
+{"cc":"ke","towns":[
+ {"place":"ke-mara","places":[
+  {"name":"Gertrude's Children's Hospital","kind":"hospital","area":{"th":"มูไทกา ไนโรบี","en":"Muthaiga, Nairobi"},"what":{"th":"โรงพยาบาลเด็กเอกชน มีห้องฉุกเฉินเด็ก","en":"Private children's hospital with a children's emergency department"},"why":{"th":"รับเด็กโดยเฉพาะ พาเด็กมาห้องฉุกเฉินได้โดยไม่ต้องนัด จากมาไซมาราต้องบินหรือขับรถหลายชั่วโมง","en":"Only for children, walk in without an appointment; from the Mara it is a flight or a long drive"},"q":"Gertrude's Children's Hospital, Muthaiga Road, Muthaiga, Nairobi","ok":"2026-11"},
+  {"name":"Karura Forest","kind":"play","area":{"th":"ไนโรบี","en":"Nairobi"},"what":{"th":"ป่าในเมือง มีทางเดิน น้ำตก และสนามเด็กเล่นข้างร้านริเวอร์คาเฟ่","en":"City forest with trails, a waterfall and a playground by the River Café"},"why":{"th":"ได้วิ่งเล่นกลางธรรมชาติ ผู้ใหญ่นั่งพักที่ร้านได้","en":"Room to run in nature while the grown-ups sit at the café"},"q":"Karura Forest, Limuru Road, Nairobi","ok":"2026-11"},
+  {"name":"The Village Market","kind":"play","area":{"th":"กิกิรี ไนโรบี","en":"Gigiri, Nairobi"},"what":{"th":"ศูนย์การค้า มีที่เล่นแบบนุ่ม แทรมโพลีน และร้านอาหารสำหรับครอบครัว","en":"Shopping centre with a soft play area, trampolines and family restaurants"},"why":{"th":"ที่เล่นในร่มสำหรับวันฝนตก","en":"Indoor play for a rainy day"},"q":"The Village Market, Limuru Road, Gigiri, Nairobi","ok":"2026-11"}
+ ]}
+]}

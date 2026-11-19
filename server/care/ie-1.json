@@ -1,0 +1,6 @@
+{"cc":"ie","towns":[
+ {"place":"ie-ireland","places":[
+  {"name":"Children's Health Ireland at Temple Street","kind":"hospital","area":{"th":"ดับลินตอนเหนือ","en":"Dublin 1"},"what":{"th":"โรงพยาบาลเด็กของรัฐ มีห้องฉุกเฉินเด็ก","en":"Public children's hospital with a children's emergency department"},"why":{"th":"รับเฉพาะเด็ก ใกล้ใจกลางเมือง","en":"Only for children, close to the city centre"},"q":"Children's Health Ireland at Temple Street, Temple Street, Dublin 1","ok":"2026-11"},
+  {"name":"Children's Health Ireland at Crumlin","kind":"hospital","area":{"th":"ครัมลิน ดับลิน","en":"Crumlin, Dublin 12"},"what":{"th":"โรงพยาบาลเด็กของรัฐ มีห้องฉุกเฉินเด็ก","en":"Public children's hospital with a children's emergency department"},"why":{"th":"รับเฉพาะเด็ก ทางใต้ของเมือง","en":"Only for children, south side of the city"},"q":"Children's Health Ireland at Crumlin, Crumlin, Dublin 12","ok":"2026-11"}
+ ]}
+]}

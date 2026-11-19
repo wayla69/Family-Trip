@@ -3760,3 +3760,17 @@ a.plchip{text-decoration:none}a.plchip .label{font-weight:700}a.plchip[aria-curr
 .docsck summary{cursor:pointer;font-weight:700;min-height:44px;display:flex;align-items:center;gap:8px;list-style:none}
 .docsck summary::-webkit-details-marker{display:none}
 .docsck summary .chv{margin-left:auto}
+/* help and play near where we sleep (views.js careBlock) */
+.carelib .cfold{border:1px solid var(--line);border-radius:14px;background:var(--card);margin:8px 0;padding:0 12px}
+.carelib .cfold>summary{min-height:48px;display:flex;align-items:center;gap:8px;font-weight:700;cursor:pointer;list-style:none}
+.carelib .cfold>summary::-webkit-details-marker{display:none}.carelib .cfold>summary .chv{margin-left:auto}
+.carelib h5{margin:10px 0 4px;font-family:var(--ui);font-size:14px;color:color-mix(in srgb,var(--accent) 65%,var(--ink))}
+.carelib ul.carel{list-style:none;margin:0 0 8px;padding:0}.carelib ul.carel li{display:flex;align-items:center;gap:8px;padding:6px 0;border-top:1px solid var(--line)}
+.carelib ul.carel li:first-child{border-top:0}.carelib .plen{flex:1;min-width:0;display:flex;flex-direction:column}.carelib .plen small{color:var(--muted)}
+.carelib .zh{font-size:13px;color:var(--muted)}.carelib .cwhy{font-style:normal}
+/* what dish is this? (kid.js dishFor): the book's food big, two or three names to pick */
+.kidq{text-align:center;font-size:24px;font-weight:700;margin:6px 0}.kidsub{text-align:center;font-size:22px;min-height:1.4em}
+.dishpic{display:grid;place-items:center;height:clamp(180px,32vh,340px);margin:6px 0 14px;border-radius:28px;background:radial-gradient(circle at 50% 60%,#FFF8E6,#FFE2B8);font-size:clamp(110px,22vh,220px);line-height:1}
+.dishpic.got{box-shadow:inset 0 0 0 6px #2B8A3E}
+.dishopts{display:grid;gap:12px}.dishopt{display:flex;flex-direction:column;align-items:center;gap:2px;font-size:24px}.dishopt small{font-size:17px;font-weight:600;opacity:.9}
+.dishopt.on{background:#2B8A3E}.dishopt.nope{animation:nope .4s}

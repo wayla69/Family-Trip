@@ -1,0 +1,8 @@
+{"cc":"no","towns":[
+ {"place":"no-tromso","places":[
+  {"name":"University Hospital of North Norway (UNN Tromsø)","zh":"Universitetssykehuset Nord-Norge","kind":"hospital","area":{"th":"ทรอมเซอ","en":"Tromsø"},"what":{"th":"โรงพยาบาลมหาวิทยาลัยของรัฐ มีแผนกฉุกเฉินและแผนกเด็ก","en":"Public university hospital with an emergency department and a children's clinic"},"why":{"th":"โรงพยาบาลหลักของนอร์เวย์ตอนเหนือ มีแผนกเด็กโดยเฉพาะ","en":"The main hospital of northern Norway, with its own children's department"},"q":"Universitetssykehuset Nord-Norge, Sykehusvegen 38, Tromsø","ok":"2026-11"}
+ ]},
+ {"place":"no-bergen","places":[
+  {"name":"Haukeland University Hospital","zh":"Haukeland universitetssjukehus","kind":"hospital","area":{"th":"แบร์เกน","en":"Bergen"},"what":{"th":"โรงพยาบาลมหาวิทยาลัยของรัฐ มีแผนกฉุกเฉินเด็ก","en":"Public university hospital with a children's emergency department"},"why":{"th":"มีโรงพยาบาลเด็กและสตรี Glasblokkene อยู่ในบริเวณเดียวกัน","en":"Its children's and women's hospital, Glasblokkene, is on the same site"},"q":"Haukeland universitetssjukehus, Bergen","ok":"2026-11"}
+ ]}
+]}

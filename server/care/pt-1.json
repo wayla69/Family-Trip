@@ -1,0 +1,11 @@
+{"cc":"pt","towns":[
+ {"place":"pt-lisbon","places":[
+  {"name":"Hospital Dona Estefânia","kind":"hospital","area":{"th":"อาร์โรยอส ลิสบอน","en":"Arroios, Lisbon"},"what":{"th":"โรงพยาบาลเด็กของรัฐ มีห้องฉุกเฉินเด็ก","en":"Public children's hospital with a children's emergency department"},"why":{"th":"หนึ่งในห้องฉุกเฉินเด็กหลักของลิสบอน คนเยอะ อาจต้องรอนาน","en":"One of Lisbon's main children's emergency departments; often busy"},"q":"Hospital Dona Estefânia, Arroios, Lisboa","ok":"2026-11"},
+  {"name":"Jardim da Estrela","kind":"play","area":{"th":"เอชเตรลา","en":"Estrela"},"what":{"th":"สวนมีสนามเด็กเล่นล้อมรั้ว มีคาเฟ่ใกล้ ๆ","en":"Garden with fenced playgrounds and a café nearby"},"why":{"th":"มีสไลเดอร์สำหรับเด็กเล็ก ห้องน้ำ และบ่อเป็ด","en":"Toddler slides, toilets and a duck pond"},"q":"Jardim da Estrela, Estrela, Lisboa","ok":"2026-11"},
+  {"name":"Pavilhão do Conhecimento","kind":"play","area":{"th":"ปาร์ก ดาส นาโซยช์","en":"Parque das Nações"},"what":{"th":"พิพิธภัณฑ์วิทยาศาสตร์ในร่ม ลองเล่นได้","en":"Hands-on indoor science museum"},"why":{"th":"หลบร้อนหรือฝนได้ เหมาะกับเด็กโตกว่าเด็กเล็ก","en":"Indoors for hot or rainy days; best for older children"},"q":"Pavilhão do Conhecimento, Parque das Nações, Lisboa","ok":"2026-11"}
+ ]},
+ {"place":"pt-porto","places":[
+  {"name":"Hospital de São João (Urgência Pediátrica do Porto)","kind":"hospital","area":{"th":"ปารานยอส ปอร์โต","en":"Paranhos, Porto"},"what":{"th":"โรงพยาบาลมหาวิทยาลัย มีห้องฉุกเฉินเด็กที่เพิ่งสร้างใหม่","en":"University hospital with a newly rebuilt children's emergency department"},"why":{"th":"โรงพยาบาลหลักของภาคเหนือสำหรับเด็กป่วยหนัก","en":"The north's reference hospital for seriously ill children"},"q":"Urgência Pediátrica, Hospital de São João, Paranhos, Porto","ok":"2026-11"},
+  {"name":"Jardins do Palácio de Cristal","kind":"play","area":{"th":"มัสซาเรลอส","en":"Massarelos"},"what":{"th":"สวนบนเนิน มีสนามเด็กเล่นและนกยูงเดินเล่น","en":"Hilltop gardens with a playground and roaming peacocks"},"why":{"th":"ร่มรื่น มีที่นั่ง และวิวแม่น้ำดอรู","en":"Shady benches and views over the Douro"},"q":"Jardins do Palácio de Cristal, Rua de Dom Manuel II, Porto","ok":"2026-11"}
+ ]}
+]}

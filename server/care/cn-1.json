@@ -1,0 +1,7 @@
+{"cc":"cn","towns":[
+ {"place":"cn-beijing","places":[
+  {"name":"Beijing United Family Hospital","zh":"北京和睦家医院","kind":"hospital","area":{"th":"เจียงไถ เขตเฉาหยาง","en":"Jiangtai, Chaoyang"},"what":{"th":"โรงพยาบาลนานาชาติ มีฉุกเฉินเด็ก","en":"International hospital with children's emergency care"},"why":{"th":"พูดภาษาอังกฤษได้ ไม่ต้องนัด ใกล้สถานีรถไฟใต้ดินเจียงไถ สาย 14","en":"English-speaking, no appointment needed, near Jiangtai station (Line 14)"},"q":"Beijing United Family Hospital, 2 Jiangtai Road, Chaoyang District, Beijing","ok":"2026-11"},
+  {"name":"Chaoyang Park","zh":"朝阳公园","kind":"play","area":{"th":"เขตเฉาหยาง","en":"Chaoyang"},"what":{"th":"สวนสาธารณะใหญ่ที่สุดของปักกิ่ง มีสนามเด็กเล่น","en":"Beijing's biggest park, with a children's playground"},"why":{"th":"เข้าฟรี มีเรือถีบ ใกล้สถานีรถไฟใต้ดินสาย 14","en":"Free to enter, pedal boats, near a Line 14 station"},"q":"Chaoyang Park, Chaoyang District, Beijing","ok":"2026-11"},
+  {"name":"Beixiaohe Park","zh":"北小河公园","kind":"play","area":{"th":"เขตเฉาหยาง","en":"Chaoyang"},"what":{"th":"สวนสาธารณะ มีโซนเด็กเล่น ปรับปรุงใหม่ปี 2025","en":"Park with a children's play zone, renovated in 2025"},"why":{"th":"สวนเพิ่งปรับปรุงใหม่ มีที่ให้เด็กวิ่งเล่น","en":"Freshly renovated park with room for children to run"},"q":"Beixiaohe Park, Chaoyang District, Beijing","ok":"2026-11"}
+ ]}
+]}

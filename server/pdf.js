@@ -19,7 +19,9 @@ function browser() {
 }
 
 // route: the page to print (default the book's #/print/<trip>; the year's book is printyear/<y>)
-async function render({ base, cookie, trip, footer, route }) {
+// size: 'a4' (default) or 'a5' — the A4 pages scaled down whole, so every page keeps its layout; shop: no page footer (a print shop
+// adds its own marks and numbers)
+async function render({ base, cookie, trip, footer, route, size, shop }) {
   const run = busy.then(async () => {
     inUse++; clearTimeout(idleT);
     const b = await browser();
@@ -36,8 +38,10 @@ async function render({ base, cookie, trip, footer, route }) {
       await page.evaluate(() => document.fonts.ready);
       await page.emulateMedia({ media: 'print' });
       const esc = (s) => String(s).replace(/[&<>"]/g, (c) => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;' }[c]));
+      const a5 = size === 'a5';
+      if (a5) await page.addStyleTag({ content: '@page{size:A5;margin:9.9mm 8.5mm}' });   // the print margins (14 × 12 mm) × 0.707
       return await page.pdf({
-        format: 'A4', printBackground: true, preferCSSPageSize: true, displayHeaderFooter: true,
+        format: a5 ? 'A5' : 'A4', printBackground: true, preferCSSPageSize: !a5, ...(a5 ? { scale: 0.707 } : {}), displayHeaderFooter: !shop,
         headerTemplate: '<span></span>',
         footerTemplate: `<div style="width:100%;font:8px sans-serif;color:#666D79;padding:0 14mm;display:flex;justify-content:space-between"><span>${esc(footer)}</span><span>LifeBook · <span class="pageNumber"></span></span></div>`,
       });

@@ -1,0 +1,6 @@
+{"cc":"lu","towns":[
+ {"place":"lu-luxembourg","places":[
+  {"name":"CHL KannerKlinik","kind":"hospital","area":{"th":"ลักเซมเบิร์ก","en":"Luxembourg City"},"what":{"th":"โรงพยาบาลเด็กของ CHL มีห้องฉุกเฉินเด็ก","en":"CHL's children's hospital with a children's emergency department"},"why":{"th":"ศูนย์ฉุกเฉินเด็กหลักของประเทศ รับเด็กถึงอายุ 15 ปี","en":"The country's main children's emergency centre, up to age 15"},"q":"CHL KannerKlinik, 4 Rue Ernest Barblé, Luxembourg","ok":"2026-11"},
+  {"name":"Maison Médicale Pédiatrique","kind":"hospital","area":{"th":"ลักเซมเบิร์ก","en":"Luxembourg City"},"what":{"th":"คลินิกหมอเด็กนอกเวลา เดินเข้าได้ ในบริเวณ KannerKlinik","en":"Walk-in out-of-hours children's doctors at the KannerKlinik"},"why":{"th":"สำหรับเด็กป่วยไม่หนักตอนคลินิกทั่วไปปิด","en":"For a child who is unwell but not in danger when surgeries are shut"},"q":"Maison Médicale Pédiatrique, CHL KannerKlinik, 4 Rue Ernest Barblé, Luxembourg","ok":"2026-11"}
+ ]}
+]}

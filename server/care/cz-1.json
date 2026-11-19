@@ -1,0 +1,8 @@
+{"cc":"cz","towns":[
+ {"place":"cz-prague","places":[
+  {"name":"Motol University Hospital","zh":"Fakultní nemocnice v Motole","kind":"hospital","area":{"th":"โมโทล ปราก 5","en":"Motol, Prague 5"},"what":{"th":"โรงพยาบาลมหาวิทยาลัย มีห้องฉุกเฉินเด็ก","en":"University hospital with a children's emergency"},"why":{"th":"ศูนย์เด็กที่ใหญ่ที่สุดของเมือง ทางเข้าห้องฉุกเฉินเด็กอยู่ข้างที่จอดรถ P4","en":"The city's biggest children's centre; children's emergency by car park P4"},"q":"Fakultní nemocnice v Motole, V Úvalu 84, Praha 5","ok":"2026-11"},
+  {"name":"Riegrovy sady","kind":"play","area":{"th":"วินอฮราดี","en":"Vinohrady"},"what":{"th":"สวนสาธารณะ มีสนามเด็กเล่นสองชั้น","en":"Park with a two-level playground"},"why":{"th":"สนามเด็กเล่นยอดนิยมใกล้ตัวเมือง","en":"A favourite playground near the centre"},"q":"Riegrovy sady playground, Vinohrady, Praha 2","ok":"2026-11"},
+  {"name":"Stromovka","kind":"play","area":{"th":"ฮอเลโชวิตเซ","en":"Holešovice"},"what":{"th":"สวนสาธารณะใหญ่ มีสนามเด็กเล่นหลายจุด","en":"Big park with several playgrounds"},"why":{"th":"ที่กว้าง วิ่งเล่นได้ทั้งวัน","en":"Plenty of room to run"},"q":"Stromovka park, Holešovice, Praha 7","ok":"2026-11"},
+  {"name":"Dětský ostrov","kind":"play","area":{"th":"ริมแม่น้ำวัลตาวา สมีชอฟ","en":"Vltava river, Smíchov"},"what":{"th":"เกาะเด็ก มีสนามเด็กเล่น","en":"Children's island with playgrounds"},"why":{"th":"ทั้งเกาะทำไว้ให้เด็กเล่น","en":"A whole island made for children's play"},"q":"Dětský ostrov, Praha 5","ok":"2026-11"}
+ ]}
+]}

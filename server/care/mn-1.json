@@ -1,0 +1,7 @@
+{"cc":"mn","towns":[
+ {"place":"mn-ulaanbaatar","places":[
+  {"name":"National Center for Maternal and Child Health","kind":"hospital","area":{"th":"อูลานบาตอร์","en":"Ulaanbaatar"},"what":{"th":"โรงพยาบาลเด็กหลักของประเทศ","en":"The country's leading children's hospital"},"why":{"th":"รับเด็กโดยเฉพาะ อาจต้องมีคนช่วยแปล","en":"Only for children; you may need someone to translate"},"q":"National Center for Maternal and Child Health, Ulaanbaatar","ok":"2026-11"},
+  {"name":"National Amusement Park","kind":"play","area":{"th":"ซุคบาตอร์ อูลานบาตอร์","en":"Sükhbaatar, Ulaanbaatar"},"what":{"th":"สวนสนุกสำหรับเด็ก มีเรือถีบ และสวนสัตว์กับอควาเรียม","en":"Children's amusement park with paddle boats, a zoo and an aquarium"},"why":{"th":"เครื่องเล่นราคาไม่แพง เหมาะกับเด็กเล็ก","en":"Cheap rides, good for young children"},"q":"National Amusement Park, Chinggis Avenue, Sükhbaatar, Ulaanbaatar","ok":"2026-11"},
+  {"name":"Adventure Zone, Shangri-La Centre","kind":"play","area":{"th":"ใจกลางอูลานบาตอร์","en":"Central Ulaanbaatar"},"what":{"th":"สนามเด็กเล่นในร่ม สำหรับเด็กไม่เกิน 12 ขวบ","en":"Indoor playground for children under 12"},"why":{"th":"เล่นในร่มได้ตอนอากาศหนาว","en":"Indoor play when it is cold outside"},"q":"Shangri-La Centre, Ulaanbaatar","ok":"2026-11"}
+ ]}
+]}

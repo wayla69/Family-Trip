@@ -1,0 +1,7 @@
+{"cc":"ca","towns":[
+ {"place":"ca-toronto","places":[
+  {"name":"SickKids (The Hospital for Sick Children)","kind":"hospital","area":{"th":"ดาวน์ทาวน์โทรอนโต","en":"Downtown Toronto"},"what":{"th":"โรงพยาบาลเด็ก มีห้องฉุกเฉินสำหรับเด็ก","en":"Children's hospital with a children's emergency department"},"why":{"th":"รับเฉพาะเด็กและวัยรุ่น ใกล้สถานีรถไฟใต้ดิน Queen's Park","en":"Only for children and teens, near Queen's Park subway station"},"q":"The Hospital for Sick Children, 555 University Avenue, Toronto, ON","ok":"2026-11"},
+  {"name":"Niagara Health – Greater Niagara General Site","kind":"hospital","area":{"th":"น้ำตกไนแอการา","en":"Niagara Falls"},"what":{"th":"โรงพยาบาลรัฐ มีห้องฉุกเฉิน","en":"Public hospital with an emergency department"},"why":{"th":"โรงพยาบาลหลักของเมืองน้ำตกไนแอการา","en":"The main hospital in Niagara Falls"},"q":"Greater Niagara General Hospital, 5546 Portage Road, Niagara Falls, ON","ok":"2026-11"},
+  {"name":"Centreville Amusement Park","kind":"play","area":{"th":"เกาะเซ็นเตอร์ ไอส์แลนด์","en":"Centre Island"},"what":{"th":"สวนสนุกเล็กสำหรับเด็ก มีสนามเด็กเล่นฟรีข้างกัน","en":"Small amusement park for children, free playground next to it"},"why":{"th":"เครื่องเล่นเหมาะกับเด็ก 2–10 ขวบ เปิดช่วงฤดูร้อน นั่งเรือข้ามฟากไป","en":"Rides for ages 2–10, summer season only, reached by ferry"},"q":"Centreville Amusement Park, Centre Island, Toronto Islands, Toronto, ON","ok":"2026-11"}
+ ]}
+]}
