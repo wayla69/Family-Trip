@@ -2791,6 +2791,9 @@ const KID_TAGS = [
 ];
 const kidTagsOf = (x) => { const s = [x.why, x.what].map((v) => `${(v && v.en) || ''} ${(v && v.th) || ''}`).join(' '); return KID_TAGS.filter((k) => k[4].test(s)).map((k) => k[0]); };
 let eatTags = new Set();
+// our own verdict from the travel notebook on a place of the same name (any book): stars, or "we would not go again"
+const famStar = (x) => (!x.fam ? '' : x.fam.again === false ? `<span class="etag famno">${L('เราไม่ไปซ้ำ', 'We wouldn’t go again')}</span>` : x.fam.r ? `<span class="etag famstar">${'★'.repeat(x.fam.r)} ${L('ของเรา', 'ours')}</span>` : x.fam.again ? `<span class="etag famstar">♥ ${L('อยากไปซ้ำ', 'We’d go again')}</span>` : '');
+const famRank = (x) => (!x.fam ? 0 : x.fam.again === false ? -1 : (x.fam.r || 0) + (x.fam.again ? 0.5 : 0));
 const eatTagOk = (tags) => ![...eatTags].some((k) => !tags.includes(k));
 const kidTagChips = (x) => ((ks) => (ks.length ? `<span class="ektags">${ks.map((k) => ((g) => `<span class="ektag">${emo(g[1])} ${L(g[2], g[3])}</span>`)(KID_TAGS.find((y) => y[0] === k))).join('')}</span>` : ''))(kidTagsOf(x));
 const kidTagBar = (places) => ((have) => (have.length ? `<div class="row chips ektagbar" role="group" aria-label="${L('เหมาะกับเด็กเล็ก', 'Easy with little ones')}"><span class="label">${L('เหมาะกับเด็กเล็ก', 'Easy with little ones')}</span>${have.map((g) => `<button class="chip" data-a="eattag" data-v="${g[0]}" aria-pressed="${eatTags.has(g[0])}">${emo(g[1])} ${L(g[2], g[3])}</button>`).join('')}</div>` : ''))(KID_TAGS.filter((g) => places.some((x) => kidTagsOf(x).includes(g[0]))));
@@ -2836,9 +2839,9 @@ function bedEats(t, i, fbox) {
   const slot = `<section class="cbox bedslot" data-k="${esc(key)}" hidden><h3 class="ch"></h3></section>`;   // filled in place once the list arrives
   if (!eatBed.list) return slot;
   const own = new Set([...(pl.picks || []).flatMap((p) => [p.name, p.alt && p.alt.name]), ...(pl.food || []).flatMap((f) => f.items.map((x) => x.name))].filter(Boolean).map((n) => String(n).toLowerCase()));
-  const list = (eatBed.list || []).filter((x) => !own.has(String(x.name).toLowerCase()) && x.st !== 'closed');
+  const list = (eatBed.list || []).filter((x) => !own.has(String(x.name).toLowerCase()) && x.st !== 'closed' && famRank(x) >= 0).map((x, k) => [x, k]).sort((a, b) => famRank(b[0]) - famRank(a[0]) || a[1] - b[1]).map((p) => p[0]);   // the places we loved first, the ones we would not go back to left out
   if (!list.length || !eatBed.town) return '';
-  const tk = list[0].tkey, row = (x) => `<li class="nmrow"><span class="plen"><b>${esc(x.name)}</b><small>${[T(x.tag), T(x.pr)].filter(Boolean).map(esc).join(' · ')}${prThb(x) ? ` ${prThb(x)}` : ''}</small>${kidTagChips(x)}</span>${eatSt(x)}${navB(x.q || x.name, x.name)}</li>`;
+  const tk = list[0].tkey, row = (x) => `<li class="nmrow"><span class="plen"><b>${esc(x.name)}</b><small>${[T(x.tag), T(x.pr)].filter(Boolean).map(esc).join(' · ')}${prThb(x) ? ` ${prThb(x)}` : ''}</small>${kidTagChips(x)}</span>${eatSt(x)}${famStar(x)}${navB(x.q || x.name, x.name)}</li>`;
   return fbox('teal', 'eat', L(`ร้านในคลังแถวที่พัก · ${eatBed.town.th}`, `Places near tonight’s bed · ${eatBed.town.en}`), esc(L(`${list.length} ร้าน`, `${list.length} place${list.length === 1 ? '' : 's'}`)),
     `<ul class="bedeats">${list.slice(0, 8).map(row).join('')}</ul><p class="label">${L('จากคลังร้านอาหารของครอบครัว · เช็กเวลาเปิดก่อนไป', 'From the family’s library of places to eat · check the hours before you go')} · <a href="#/eats/${esc(tk)}">${L(`ดูทั้ง ${list.length} ร้าน`, `See all ${list.length}`)} ›</a></p>`);
 }
@@ -2846,7 +2849,7 @@ const eatSrc = (x) => (x.src === 'starter' ? (x.checked ? `${L('จากคล�
 const eatSt = (x) => (x.st === 'closed' ? `<span class="etag st-closed">${L('ปิดแล้ว', 'Closed')}</span>` : x.st === 'moved' ? `<span class="etag st-closed">${L('ย้ายร้าน', 'Moved')}</span>` : x.st === 'open' ? `<span class="etag st-open">✓ ${L('ยังเปิดอยู่', 'Open')}</span>` : '');
 // one place as the book's own card (views.js viewEat): name + pin + kind of food, where, a line about it, price / hours, directions
 const eatLibCard = (g, x, del) => `<li class="eatc" data-s="${esc(eatText(g, x))}" data-k="${x.kind}" data-p="0" data-t="${kidTagsOf(x).join(' ')}"${eatShow(g, x) && eatTagOk(kidTagsOf(x)) ? '' : ' hidden'}>
-<div class="et"><b class="en">${mapA(x.q || x.name, esc(x.name))}</b>${extA(mapsUrl(x.q || x.name), `<span class="mpin" aria-hidden="true"></span><span class="vh">${L('แผนที่', 'Map')}</span>`, 'pinlink')}${T(x.tag) ? `<span class="etag t-${esc(x.tk || 'x')}">${esc(T(x.tag))}</span>` : ''}${eatSt(x)}</div>
+<div class="et"><b class="en">${mapA(x.q || x.name, esc(x.name))}</b>${extA(mapsUrl(x.q || x.name), `<span class="mpin" aria-hidden="true"></span><span class="vh">${L('แผนที่', 'Map')}</span>`, 'pinlink')}${T(x.tag) ? `<span class="etag t-${esc(x.tk || 'x')}">${esc(T(x.tag))}</span>` : ''}${eatSt(x)}${famStar(x)}</div>
 ${x.zh || x.where ? `<div class="ew">${x.zh ? `<span class="zh">${esc(x.zh)}</span>` : ''}${x.where ? `<span>${esc(T(x.where))}</span>` : ''}</div>` : ''}
 ${T(x.what) ? `<p class="ed">${esc(T(x.what))}</p>` : ''}${T(x.why) ? `<p class="why"><b>${L('เหมาะกับเด็ก', 'For the kids')}</b> ${esc(T(x.why))}</p>` : ''}${kidTagChips(x)}
 <div class="ef"><span class="echips">${T(x.pr) ? `<span class="pr">${esc(T(x.pr))}</span>${prThb(x)}` : ''}${T(x.hours) ? `<span class="hr">${esc(T(x.hours))}</span>` : ''}</span>${extA(`https://www.google.com/maps/dir/?api=1&destination=${encodeURIComponent(x.q || x.name)}`, ic('route') + ' ' + L('นำทาง', 'Go'), 'go')}</div>

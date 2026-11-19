@@ -527,6 +527,13 @@ ok((await fetch(BASE + '/api/b/media/ph-test-0001', { method: 'DELETE', headers:
   const okNames = new Set(E0.starterFiles().flatMap((f) => E0.starterRows(f, idx0)).filter((x) => x.tkey === 'tokyo' && x.st === 'open').map((x) => x.name));
   ok(tk.every((x) => x.src === 'starter' && x.what && x.pr && x.q && (okNames.has(x.name) ? x.st === 'open' && /^20\d\d-\d\d-01$/.test(x.checked) : !x.st && !x.checked)),
     `eat library: a built-in place is marked as one — not checked, unless its file says a web search confirmed it (${okNames.size} of ${tk.length} in Tokyo confirmed)`);
+  { // our own verdict from the travel notebook rides on the library place of the same name
+    const fam1 = (await pool.query('SELECT id FROM families LIMIT 1')).rows[0].id, trip1 = (await pool.query('SELECT id FROM trips LIMIT 1')).rows[0].id;
+    await pool.query("INSERT INTO reviews (id, family_id, trip_id, kind, key, name, rating, again) VALUES ($1, $2, $3, 'food', 'x', $4, 5, true) ON CONFLICT DO NOTHING", [`${trip1}.rev.food.libtest`, fam1, trip1, JSON.stringify({ en: tk[0].name, th: tk[0].name })]);
+    const again = (await (await fetch(BASE + '/api/b/eatlib?town=tokyo', { headers: { cookie: ck } })).json()).places;
+    const hit = again.find((x) => x.name === tk[0].name), others = again.filter((x) => x.fam);
+    ok(hit && hit.fam && hit.fam.r === 5 && hit.fam.again === true && others.length === 1, `eat library: a place we rated in the travel notebook carries our stars (${JSON.stringify(hit && hit.fam)} · ${others.length} rated)`);
+    await pool.query("DELETE FROM reviews WHERE id=$1", [`${trip1}.rev.food.libtest`]); }
   ok(tk.length && tk.every((x) => x.cc === 'jp'), `eat library: each place carries its country, so the phone can show its price roughly in baht (${[...new Set(tk.map((x) => x.cc))].join(',')})`);
   const dup = (await pool.query("SELECT name, count(*)::int n FROM eat_lib WHERE tkey='macau' GROUP BY nkey, name HAVING count(*) > 1")).rows;
   // the names our Hong Kong–Macau book and the built-in Macau file both hold: each is one row, and it is the book's

@@ -120,6 +120,7 @@ const REMIND = PUSH.create({ pool: PG, family: BS.FAMILY, A });
 HOOKS.heart = (h) => REMIND.heart(h);   // a relative's heart nudges the parents' phones
 HOOKS.draft = (x) => REMIND.draft(x);
 HOOKS.reel = (x) => REMIND.reel(x);
+HOOKS.closed = (x) => REMIND.closed(x);   // the web check of a coming book found a place closed or moved
 HOOKS.inbox = (x) => REMIND.inbox(x);   // a relative sent photos: a nudge to the parents' phones   // the film made by itself is ready: a push to the parents' phones   // the helper finished a photo book's draft: "ready to check" on the parents' phones
 app.use(REMIND.router);
 // the owner hears when something goes wrong: problems on the phones, room running out, the nightly copy failing (server/alerts.js)

@@ -242,6 +242,19 @@ function create({ pool, family, A, sender = (sub, payload, opt) => webpush.sendN
     for (const s of subs) if (await send(s, msg(s.lang))) n++;
     return n;
   }
+  // the web check of a book found places that closed or moved, in a book whose trip is still to come (owner, Nov 2026: "แจ้งเตือนเมื่อร้านในเล่มปิด"):
+  // the book's name and how many — never a place's name on the lock screen; it opens the book's check page with "change this day"
+  async function closed({ trip, title, n }, now = Date.now()) {
+    const key = `closed.${trip}.${new Date(now).toISOString().slice(0, 10)}`;   // at most once a day a book
+    if (!(n > 0) || !(await pool.query('INSERT INTO push_sent (key) VALUES ($1) ON CONFLICT DO NOTHING RETURNING key', [key])).rowCount) return 0;
+    const subs = (await pool.query('SELECT * FROM push_subs WHERE family_id=$1', [family])).rows, n0 = title || {};
+    const msg = (lang) => JSON.stringify(lang === 'en'
+      ? { title: `${n} place${n > 1 ? 's' : ''} in the plan closed or moved`, body: `${n0.en || n0.th || 'Your book'} — have a look and change the day`, tag: 'closed-' + trip, url: `/#/t/${trip}/check` }
+      : { title: `ร้านหรือที่เที่ยวในแผน ${n} แห่งปิดหรือย้ายแล้ว`, body: `${n0.th || n0.en || 'เล่มของเรา'} — เปิดดูแล้วเปลี่ยนวันได้เลย`, tag: 'closed-' + trip, url: `/#/t/${trip}/check` });
+    let k = 0;
+    for (const s of subs) if (await send(s, msg(s.lang))) k++;
+    return k;
+  }
   let timer = null;
   const start = () => { const run = () => tick().catch((e) => console.error('push tick', e.message)); timer = setInterval(run, 60000); timer.unref(); setTimeout(run, 5000).unref(); };
   const stop = () => clearInterval(timer);
@@ -272,7 +285,7 @@ function create({ pool, family, A, sender = (sub, payload, opt) => webpush.sendN
     const ok = await send(s, JSON.stringify({ title: th ? 'ทดสอบการเตือน' : 'Test reminder', body: th ? `ใช้ได้แล้ว — จะเตือนก่อนทุกกิจกรรม ${LEAD / 60000} นาที` : `Working — you will hear ${LEAD / 60000} min before each step`, tag: 'test', url: '/' }), why);
     res.status(ok ? 200 : 502).json(ok ? { ok } : { ok, status: why.status, reason: why.reason, apple: /push\.apple\.com/.test(s.endpoint) });
   });
-  return { router: r, tick, heart, draft, reel, inbox, alert, start, stop };
+  return { router: r, tick, heart, draft, reel, inbox, alert, closed, start, stop };
 }
 
 module.exports = { init, create, due, extras, zoned, short, subject, LEAD };

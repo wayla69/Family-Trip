@@ -937,6 +937,12 @@ try {
     ok(/Test Square — Test Square, Testland/.test(body) && !/Mimi|Mika|มีมี่|มีก้า|Test Inn|Mum/.test(body), 'web check: only the place\'s name and map address are sent — no family, no hotel');
     const tv = (await state()).trips.find((x) => x.id === 'test-hop').theme.verify;
     ok(tv && tv.places.length === 1 && tv.places[0].st === 'closed' && tv.places[0].url === 'https://example.com/test-square' && tv.places[0].day === 0, `web check: kept on the book (${JSON.stringify(tv && tv.places)})`);
+    { const db = new Client({ connectionString: u.toString() }); await db.connect();
+      const t = (await db.query("SELECT date_to::text AS d FROM trips WHERE id='test-hop'")).rows[0], today = new Date().toISOString().slice(0, 10);
+      let sentKey = [];
+      for (let k = 0; k < 20; k++) { sentKey = (await db.query("SELECT key FROM push_sent WHERE key LIKE 'closed.test-hop.%'")).rows.map((r) => r.key); if (sentKey.length || t.d < today) break; await new Promise((r) => setTimeout(r, 150)); }
+      ok(t.d >= today ? sentKey.length === 1 : sentKey.length === 0, `web check: a closed place in a book still to come nudges the parents' phones once a day; a past book never (${t.d} · ${sentKey.join(',') || 'none'})`);
+      await db.end(); }
     const pc = await browser.newContext({ viewport: { width: 390, height: 844 } }), pp = await pc.newPage();
     await pp.goto(BASE + '/'); await pp.waitForSelector('#lf'); await pp.fill('#lname', 'Mum'); await pp.fill('#lcode', CODE); await pp.keyboard.press('Enter'); await pp.waitForSelector('.shelf');
     await pp.goto(BASE + '/#/t/test-hop'); await pp.waitForSelector('.hubrow.checkgo');
