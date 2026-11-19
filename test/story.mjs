@@ -44,6 +44,11 @@ const mock = http.createServer((req, res) => {
     const trans = String(b.system).startsWith('Translate');
     const photo = String(b.system).includes('"cap"');   // look at today's photos: JSON per id; a stop from the STOPS line, plus junk that must be dropped
     const pids = [...facts.matchAll(/^id: (\S+)$/gm)].map((m) => m[1]), stop0 = (/STOPS: "([^"]*)"/.exec(facts) || [])[1] || '';
+    const plannx = String(b.system).includes('Plan the next family trip');   // the next trip: a plan as JSON, one day per day asked (+ a stray field that must be dropped)
+    const PLANX = () => { const n = +((/Days: (\d+)/.exec(facts) || [])[1] || 3); return JSON.stringify({ title: { th: 'โตเกียวครั้งหน้า', en: 'Tokyo next time' }, sub: { th: 'ทริปครอบครัว', en: 'A family trip' }, tz: 'Asia/Tokyo', place: { th: 'โตเกียว', en: 'Tokyo', flag: '🇯🇵' }, budget: 'drop me',
+      days: Array.from({ length: n + 1 }, (_, i) => ({ title: { th: `วันที่สนุก ${i + 1}`, en: `A fun day ${i + 1}` }, emoji: '🌸', price: 'drop me',
+        plan: [{ t: '09:30', go: true, th: 'ออกจากที่พัก', en: 'Leave the stay', h: { th: '🚶 ออกเดินทาง', en: '🚶 Off we go' } }, { t: '13:00', th: 'พักงีบ', en: 'Nap time', h: { th: '😴 งีบหลังมื้อกลางวัน', en: '😴 Nap after lunch' } }],
+        planned: [{ th: 'สวนอุเอโนะ', en: 'Ueno Park', kind: 'place' }], tips: [{ th: 'พักบ่ายทุกวัน', en: 'Rest every afternoon' }] })) }); };
     const snapn = String(b.system).includes('photo book of a trip');   // a book from photos: its name and its days' names as JSON
     const quiz = String(b.system).includes('"ok":');   // the memory game answers JSON (once with a bad item, which must be dropped)   // translate: answer JSON [{id, tr}] for the items it was given
     const sysText = JSON.stringify(b.system);   // the import sends system as blocks (the redacted manual cached in the second one)
@@ -85,6 +90,7 @@ const mock = http.createServer((req, res) => {
     };
     const badJson = imp === 'kids' && importCalls.filter((c) => c.step === 'kids').length === 1;   // the first kids' answer is broken JSON (a missing comma), as a live run once got
     const parts = art ? [ARTA[art]()] : imp ? [badJson ? '{"days":[{"learn":[{"name":{"th":"x" "en":"x"}}]}]}' : IMP[imp]()] : photo ? [JSON.stringify(pids.map((id, k) => (k === 0 ? { id, cap: '## เด็กๆ **ยิ้ม** หน้าปราสาท', tags: ['kids', 'Character', 'bogus', 'kids'], place: stop0, best: true } : { id, cap: 'เรากินติ่มซำ', tags: ['food'], place: 'Narnia', best: 'yes' })))]
+      : plannx ? [PLANX()]
       : snapn ? ['```json\n' + JSON.stringify({ title: { th: 'เขาใหญ่ทุ่งดอกไม้', en: 'Khao Yai in bloom' }, days: [{ day: 1, th: 'ทานตะวันยามเช้า', en: 'Sunflowers at breakfast', emoji: '🌻' }, { day: 2, th: 'ฝนพรำ', en: 'Drizzle', emoji: '🌧️' }, { day: 9, th: 'x', en: 'x' }] }) + '\n```']
       : quiz ? ['```json\n[{"q":"เมื่อวานมีมี่บอกว่าปลาอยู่ที่ไหน","a":[{"e":"💧","t":"ในน้ำ"},{"e":"🌳","t":"บนต้นไม้"},{"e":"🚌","t":"บนรถบัส"}],"ok":0},',
       '{"q":"ไปไหนมา","a":[{"e":"🏰","t":"ดิสนีย์"},{"e":"🏖️","t":"ทะเล"},{"e":"🏔️","t":"ภูเขา"}],"ok":0},{"q":"bad","a":[{"t":"x"}],"ok":3}]\n```']
@@ -233,6 +239,20 @@ try {
     ok(rles.at(-1).ev === 'done' && les && les.kind === 'lessons' && les.day === null && les.text && les.src === 'ai' && sent && String(sent.system).includes('ทริปหน้าลอง') && sent.messages[0].content.includes('ยัดลก') && !/media\/|\.jpg/.test(sent.messages[0].content),
       'lessons: the book\'s own reviews and notes go to the helper (words only), the lessons are saved for the trip');
     ok((await put(`/api/b/entries/${T}.lessons.all`, { trip: T, day: null, kind: 'lessons', text: 'ได้ผล\n• ยัดลก' })).ok, 'lessons: a hand edit saves'); }
+  // the next trip, drafted by the helper (owner, Nov 2026): the family's lessons go (words only), the plan becomes a new app-made book
+  { const bp = calls.length;
+    const bad = await fetch(BASE + '/api/b/plannext', { method: 'POST', headers: H, body: JSON.stringify({ place: 'Tokyo', days: 30, from: '2027-10-01' }) });
+    const rp = events(await (await fetch(BASE + '/api/b/plannext', { method: 'POST', headers: H, body: JSON.stringify({ place: 'Tokyo', days: 3, from: '2027-10-01', notes: 'we want snow' }) })).text());
+    const sent = calls.length > bp ? calls.at(-1).body : null, done = rp.find((e) => e.ev === 'done'), st = await state();
+    const nt = done && st.trips.find((t) => t.id === done.data.id);
+    ok(bad.status === 400 && done && nt && nt.days.length === 3 && nt.date_from === '2027-10-01' && nt.date_to === '2027-10-03' && nt.source === 'manual' && /^next-2027-10-01-/.test(nt.id)
+      && sent && String(sent.system).includes('Plan the next family trip') && sent.messages[0].content.includes('ยัดลก') && sent.messages[0].content.includes('we want snow') && !/\.jpg|media\//.test(sent.messages[0].content),
+      `plan the next trip: the family's lessons go to the helper (words only); its plan becomes a new book of exactly the days asked (${done && done.data.id})`);
+    const seed = nt && await (await fetch(`${BASE}/api/b/seed/${nt.id}/${(await (await fetch(BASE + '/api/b/state?lite=1', { headers: { cookie: H.cookie } })).json()).trips.find((t) => t.id === nt.id).seed}`, { headers: { cookie: H.cookie } })).json();
+    ok(seed && seed.plans[0] && seed.plans[0].plan && seed.plans[0].plan.some((r) => r.go && r.h) && !JSON.stringify(seed).includes('drop me'), 'plan the next trip: its days carry headlines and the leaving step; fields that are not a plan are dropped');
+    ok((await fetch(`${BASE}/api/b/trips/${nt.id}`, { method: 'DELETE', headers: H })).ok, 'plan the next trip: the new book can be deleted like any book the family made');
+    calls.splice(bp, 1);   // the daily-cap count below is about the other buttons: this call is handed back
+    { const db = new Client({ connectionString: u.toString() }); await db.connect(); await db.query('UPDATE ai_usage SET calls = calls - 1'); await db.end(); } }
   const vck = (await fetch(BASE + '/v/grandma', { redirect: 'manual' })).headers.get('set-cookie');
   ok(!vck || (await fetch(BASE + '/api/b/story', { method: 'POST', headers: { ...H, cookie: vck.split(';')[0] }, body: '{}' })).status === 403, 'viewer cannot ask for stories');
   ok(!vck || (await fetch(`${BASE}/api/b/lessons/${T}`, { method: 'POST', headers: { ...H, cookie: vck.split(';')[0] }, body: '{}' })).status === 403, 'relatives cannot ask for a trip\'s lessons');

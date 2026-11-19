@@ -35,6 +35,9 @@
     { "id": "0032", "file": "0032_edit_marks.sql" },
     { "id": "0033", "file": "0033_sessions.sql" },
     { "id": "0034", "file": "0034_capsules.sql" },
-    { "id": "0035", "file": "0035_lessons.sql" }
+    { "id": "0035", "file": "0035_lessons.sql" },
+    { "id": "0036", "file": "0036_server_events.sql" },
+    { "id": "0037", "file": "0037_passkeys.sql" },
+    { "id": "0038", "file": "0038_relatives.sql" }
   ]
 }

@@ -1007,7 +1007,7 @@ ${mapHtml(t, i, [kid].concat((t.theme.children || []).map((c) => c.slug).filter(
     body = m ? `<div class="kidguide">${guideImg(0)}<p>${m.caption ? esc(m.caption) : L(`รูปวันที่ ${m.day + 1}`, `A photo from day ${m.day + 1}`)}</p></div>
 <button class="kidphoto" data-a="kidphoto" data-v="1" aria-label="${L('รูปถัดไป', 'Next photo')}"><img src="${esc(imgT(m))}" alt=""></button>
 <div class="kpnav"><button class="kidbig ghost" data-a="kidphoto" data-v="-1" aria-label="${L('รูปก่อนหน้า', 'Previous')}">‹</button><span class="kpn">${kidPhoto + 1} / ${ph.length}</span><button class="kidbig ghost" data-a="kidphoto" data-v="1" aria-label="${L('รูปถัดไป', 'Next')}">›</button></div>
-${kidTell(t, m)}`
+${kidTell(t, m)}${kidNotes(m)}`
       : `<div class="kidguide">${guideImg(0)}<p>${L('ยังไม่มีรูปเลย', 'No photos yet')}</p></div>`;
     body += kidVids(t, i) + kidAudio(t, i);
   } else if (view === 'match') {
@@ -1051,6 +1051,7 @@ let colourSaveT = 0;
 Object.assign(A, {
   kidmode(b) { ls('kidmode', b.dataset.v || 'pick'); nav(b.dataset.v ? `#/kid/${b.dataset.v}` : '#/kid'); },
   kidpick(b) { beep('hello'); ls('kidmode', b.dataset.v); kidDay = null; nav(`#/kid/${b.dataset.v}`); setTimeout(() => palPop('wave'), 350); },
+  kidnotes(b) { beep('tap'); sayUi(b.dataset.say); },
   kidnav(b) { beep('tap'); kidDoor = null; if (!/\/bubbles$/.test(b.dataset.v || '')) { clearInterval(bubT); bubT = null; bubN = 0; } nav(b.dataset.v); if (b.dataset.say) sayUi(b.dataset.say); },
   kidday(b) { beep('pop'); kidDay = +b.dataset.v; mapAt = null; kidPhoto = 0; render(); },
   kidpage(b) { beep('tap'); const pg = $('#kidpager'); if (pg) pg.scrollBy({ left: +b.dataset.v * pg.clientWidth, behavior: reduced() ? 'auto' : 'smooth' }); },
@@ -2146,6 +2147,13 @@ function playSong(n, kid) {
    🎙️ button records up to 30 s (the record page's recorder, sheets.js startRec with the photo's id → the clip's place 'photo:<id>'),
    ▶️ plays what was told; the book page's audiobook plays every told photo in order (views.js tellBook). Only grown-ups' phones record. */
 const tellsOf = (t, mid) => audioOf(t.id).filter((a) => a.place === 'photo:' + mid);
+// the family's lines under this photo (comments), read aloud to the child: "ยายเขียนว่า …" — a button with the paper of notes
+function kidNotes(m) {
+  const cs = typeof commentsOf === 'function' ? commentsOf(m.id) : [];
+  if (!cs.length) return '';
+  const line = cs.map((c) => L(`${c.from} เขียนว่า ${c.text}`, `${c.from} wrote: ${c.text}`)).join('. ');
+  return `<div class="kidtell"><button class="kidbig kidnotes" data-a="kidnotes" data-say="${esc(line)}"><img src="/art/hub/comment.webp" alt="">${L(`มีคนเขียนถึงรูปนี้ ${cs.length}`, `${cs.length} note${cs.length > 1 ? 's' : ''} for this photo`)}</button></div>`;
+}
 function kidTell(t, m) {
   if (!isEditor() || typeof MediaRecorder === 'undefined') { const told = tellsOf(t, m.id); return told.length ? `<div class="kidtell"><button class="kidbig" data-a="kidplay" data-v="${esc(told[told.length - 1].id)}">▶️ ${L('ฟังที่เล่าไว้', 'Listen')}</button></div>` : ''; }
   const told = tellsOf(t, m.id), on = recState && recState.about === m.id;

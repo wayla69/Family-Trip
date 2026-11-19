@@ -133,7 +133,7 @@ function router({ pool, media, A, ai, hooks = {} }) {   // hooks.heart(h): set b
   const kidsFor = async (t) => FAM.kidsFor(await kidRows(), t && t.date_from ? new Date(t.date_from) : new Date());   // for prompts: names and ages at the trip
   // before login the app shows only the family's app name and the drawings — never the children's names
   r.get('/api/brand', async (_req, res, next) => {
-    try { res.setHeader('Cache-Control', 'no-store'); res.json({ ...(await brand(pool)), pin: await pinLens(), operator: OPERATOR }); } catch (e) { next(e); }
+    try { res.setHeader('Cache-Control', 'no-store'); res.json({ ...(await brand(pool)), pin: await pinLens(), operator: OPERATOR, passkey: hooks.passkeys ? (await hooks.passkeys()) > 0 : false }); } catch (e) { next(e); }
   });
   // the lengths a sign-in code can have (the family's, the relatives' shared PIN, each group's) — never a digit of any of them — so
   // the pad signs in by itself at the last digit; open = a group PIN of unknown length exists (saved before migration 0021)
@@ -150,6 +150,19 @@ function router({ pool, media, A, ai, hooks = {} }) {   // hooks.heart(h): set b
     try {
       const want = String((req.body || {}).confirm || '').trim(), b = await brand(pool);
       if (!want || ![b.app.th, b.app.en].some((n) => n && n.trim() === want)) return bad(res, 'confirm');
+      const keys = await familyKeys();
+      let gone = 0;
+      for (const k of new Set(keys)) { try { await media.del(k); gone++; } catch (_) { /* a file already missing is fine */ } }
+      await q('DELETE FROM families WHERE id=$1', [FAMILY]);
+      await q("DELETE FROM settings WHERE key IN ('family_likes', 'emoji_seeded', 'emoji_offered', 'emoji_stock_offered', 'year_reels')");
+      await q('INSERT INTO families (id, name) VALUES ($1, $2) ON CONFLICT (id) DO NOTHING', [FAMILY, 'Family']);
+      await syncSeeds(pool); await EMOJI.seed(pool, FAMILY); A.groupsChanged();
+      console.log(`family erased on request: ${gone} files, every row`);   // no names, no codes
+      res.json({ ok: true, files: gone });
+    } catch (e) { next(e); }
+  });
+  // every file the family's rows name — "delete everything" removes them, the stray-file sweep (server/orphans.js) keeps them
+  async function familyKeys() {
       const keys = [];
       for (const m of await q('SELECT id, trip_id, storage_key, mime FROM media WHERE family_id=$1', [FAMILY])) {
         keys.push(m.storage_key); if (!String(m.mime || '').startsWith('audio/')) keys.push(keyThumb(m.trip_id, m.id));
@@ -164,16 +177,9 @@ function router({ pool, media, A, ai, hooks = {} }) {   // hooks.heart(h): set b
         for (const [y, x] of Object.entries(ys)) if (/^\d{4}$/.test(y) && x && /^[0-9a-f]{12}$/.test(x.v || '')) keys.push(`r/year-${y}/${x.v}.mp4`); }   // the years' films
       for (const t of await q("SELECT id, theme, (SELECT count(*)::int FROM trip_days WHERE trip_id=t.id) AS days FROM trips t WHERE family_id=$1 AND theme->>'artV' IS NOT NULL", [FAMILY])) keys.push(...artKeys(t.id, artV(t.theme), t.days));
       keys.push(...(await require('./inbox').keysOf(pool, FAMILY)));   // the relatives' photos still waiting
-      let gone = 0;
-      for (const k of new Set(keys)) { try { await media.del(k); gone++; } catch (_) { /* a file already missing is fine */ } }
-      await q('DELETE FROM families WHERE id=$1', [FAMILY]);
-      await q("DELETE FROM settings WHERE key IN ('family_likes', 'emoji_seeded', 'emoji_offered', 'emoji_stock_offered', 'year_reels')");
-      await q('INSERT INTO families (id, name) VALUES ($1, $2) ON CONFLICT (id) DO NOTHING', [FAMILY, 'Family']);
-      await syncSeeds(pool); await EMOJI.seed(pool, FAMILY); A.groupsChanged();
-      console.log(`family erased on request: ${gone} files, every row`);   // no names, no codes
-      res.json({ ok: true, files: gone });
-    } catch (e) { next(e); }
-  });
+      return keys;
+  }
+  hooks.keys = familyKeys;
   // one look setting at a time (the menu's tile colours), merged into the stored profile; the rest of the profile stays
   r.patch('/api/b/family/profile', ...W, async (req, res, next) => {
     try {
@@ -300,10 +306,13 @@ function router({ pool, media, A, ai, hooks = {} }) {   // hooks.heart(h): set b
   // ----- everything in one payload (cached by the app for offline use)
   r.get('/api/b/state', A.requireUser, async (req, res, next) => {
     try {
-      const [children, trips, days, firsts, entries, mediaRows, places, hearts, reviews, spendRows, emojiRows] = await Promise.all([
+      // ?lite=1 (the app, every 30 s): the guide text (~1 MB for two books) is neither read nor hashed — Postgres hands over a short
+      // fingerprint of it per book and the hash the phone needs is remembered for that fingerprint (seedHash)
+      const lite = req.query.lite === '1', G = lite ? '' : ', passport, info', P = lite ? '' : ', d.plan';
+      const [children, trips, days, firsts, entries, mediaRows, places, hearts, reviews, spendRows, emojiRows, prints, comments] = await Promise.all([
         q('SELECT slug, name_th, name_en, emoji, color, birth_ym, look, avatar, avatars FROM children WHERE family_id=$1 ORDER BY pos', [FAMILY]),
-        q("SELECT id, slug, legacy_id, title, sub, to_char(date_from,'YYYY-MM-DD') date_from, to_char(date_to,'YYYY-MM-DD') date_to, timezone, theme, cover, stamp, moods, passport, info, source, kind, open, reel FROM trips WHERE family_id=$1 ORDER BY date_from", [FAMILY]),
-        q("SELECT d.trip_id, d.day_index, to_char(d.date,'YYYY-MM-DD') date, d.title, d.sleep, d.place, d.emoji, d.gradient, d.planned, d.wx, d.plan, d.done_at FROM trip_days d JOIN trips t ON t.id=d.trip_id WHERE t.family_id=$1 ORDER BY d.trip_id, d.day_index", [FAMILY]),
+        q(`SELECT id, slug, legacy_id, title, sub, to_char(date_from,'YYYY-MM-DD') date_from, to_char(date_to,'YYYY-MM-DD') date_to, timezone, theme, cover, stamp, moods${G}, source, kind, open, reel FROM trips WHERE family_id=$1 ORDER BY date_from`, [FAMILY]),
+        q(`SELECT d.trip_id, d.day_index, to_char(d.date,'YYYY-MM-DD') date, d.title, d.sleep, d.place, d.emoji, d.gradient, d.planned, d.wx${P}, d.done_at FROM trip_days d JOIN trips t ON t.id=d.trip_id WHERE t.family_id=$1 ORDER BY d.trip_id, d.day_index`, [FAMILY]),
         q('SELECT f.trip_id, f.key, f.emoji, f.label FROM firsts_catalog f JOIN trips t ON t.id=f.trip_id WHERE t.family_id=$1 ORDER BY f.trip_id, f.pos, f.key', [FAMILY]),
         q('SELECT id, trip_id, day_index, kind, child, text, tr, src, mood, first_key, lang, highlight, occurred_at, created_by, created_uid, updated_at FROM entries WHERE family_id=$1 ORDER BY occurred_at', [FAMILY]),
         q('SELECT id, trip_id, day_index, width, height, caption, highlight, pos, taken_at, created_by, mime, tags, place, ai_at, fp, edited_at FROM media WHERE family_id=$1 ORDER BY taken_at, pos', [FAMILY]),
@@ -312,15 +321,17 @@ function router({ pool, media, A, ai, hooks = {} }) {   // hooks.heart(h): set b
         q('SELECT id, trip_id, day_index, kind, key, name, rating, tags, kids, again, note, created_by, updated_at FROM reviews WHERE family_id=$1 ORDER BY updated_at', [FAMILY]),
         q('SELECT id, trip_id, day_index, amount, cur, cat, note, created_by, updated_at FROM spend WHERE family_id=$1 ORDER BY updated_at', [FAMILY]),
         EMOJI.rows(q, FAMILY),
+        lite ? q(`SELECT t.id, md5(coalesce(t.info::text, '') || '|' || coalesce(t.passport::text, '') || '|' || coalesce((SELECT string_agg(coalesce(d.plan::text, ''), '|' ORDER BY d.day_index) FROM trip_days d WHERE d.trip_id = t.id), '')) AS m FROM trips t WHERE t.family_id=$1`, [FAMILY]) : [],
+        q('SELECT id, trip_id, media_id, from_name, text, created_uid, created_at FROM comments WHERE family_id=$1 ORDER BY created_at', [FAMILY]),
       ]);
       const ms = (d) => (d ? new Date(d).getTime() : null);
+      const hashes = lite ? await seedHashes(prints) : {};
       // a relatives' group sees only its ticked books — everything tied to another book is left out here, at the source
       const see = (x) => A.canSee(req.user, x.trip_id === undefined ? x.id : x.trip_id);
-      if (req.user.group) for (const list of [trips, days, firsts, entries, mediaRows, places, hearts, reviews, spendRows]) list.splice(0, list.length, ...list.filter(see));
+      if (req.user.group) for (const list of [trips, days, firsts, entries, mediaRows, places, hearts, reviews, spendRows, comments]) list.splice(0, list.length, ...list.filter(see));
       if (req.user.role !== 'editor') spendRows.length = 0;   // what the family spent is the parents' own ledger (the spend page is editors-only; the state must be too)
       // ?lite=1 (the app): each book's guide text (info, passport, day plans — ~95% of the bytes, changes only with a new seed)
       // is left out and named by a hash; the app keeps the copy it has or fetches /api/b/seed/<trip>/<hash> once
-      const lite = req.query.lite === '1';
       res.setHeader('Cache-Control', 'no-store');
       sendJson(req, res, {
         me: { role: req.user.role, name: req.user.name, uid: req.user.uid, group: req.user.groupName || null },
@@ -330,13 +341,13 @@ function router({ pool, media, A, ai, hooks = {} }) {   // hooks.heart(h): set b
           const td = days.filter((d) => d.trip_id === t.id).map(({ trip_id, ...d }) => ({ ...d, done_at: ms(d.done_at) }));
           const out = { ...t, theme: STOCK.maybe(t.theme), passport: STOCK.maybe(t.passport), info: STOCK.maybe(t.info), days: td.map((d) => ({ ...d, plan: STOCK.maybe(d.plan) })), firsts: firsts.filter((f) => f.trip_id === t.id).map(({ trip_id, ...f }) => f) };
           if (!lite) return out;
-          const g = seedOf(t, td);
-          return { ...out, info: undefined, passport: undefined, days: td.map(({ plan, ...d }) => d), seed: g.hash };
+          return { ...out, info: undefined, passport: undefined, days: td.map(({ plan, ...d }) => d), seed: hashes[t.id] };
         }),
         entries: entries.map(({ trip_id, day_index, occurred_at, created_uid, updated_at, ...e }) => ({ ...e, trip: trip_id, day: day_index, at: ms(occurred_at), mine: created_uid === req.user.uid, v: ms(updated_at) })),   // v: the version a phone edits from (a conflict is told by it)
         media: mediaRows.map(({ trip_id, day_index, taken_at, width, height, ai_at, edited_at, ...m }) => ({ ...m, trip: trip_id, day: day_index, w: width, h: height, at: ms(taken_at), ai: !!ai_at, v: ms(edited_at) })),
         places: places.map(({ trip_id, day_index, visited_at, ...p }) => ({ ...p, trip: trip_id, day: day_index, at: ms(visited_at) })),
         hearts: hearts.map(({ trip_id, day_index, created_uid, created_at, from_name, ...h }) => ({ ...h, trip: trip_id, day: day_index, from: from_name, at: ms(created_at), mine: created_uid === req.user.uid })),
+        comments: comments.map(({ trip_id, media_id, created_uid, created_at, from_name, ...c }) => ({ ...c, trip: trip_id, media: media_id, from: from_name, at: ms(created_at), mine: created_uid === req.user.uid })),
         reviews: reviews.map(({ trip_id, day_index, updated_at, ...r }) => ({ ...r, trip: trip_id, day: day_index, at: ms(updated_at) })),
         emoji: EMOJI.outAll(emojiRows),   // the family's emoji library: each emoji's picture (core.js emo)
         spend: spendRows.map(({ trip_id, day_index, updated_at, amount, ...s }) => ({ ...s, trip: trip_id, day: day_index, amount: Number(amount), at: ms(updated_at) })),
@@ -348,6 +359,24 @@ function router({ pool, media, A, ai, hooks = {} }) {   // hooks.heart(h): set b
   // one book's guide text by its hash: never changes for that hash, so the phone (and its HTTP cache) keeps it
   // (stock pictures resolved first: a redrawn library picture changes the body, so the hash too)
   const seedOf = (t, td) => { const body = JSON.stringify({ info: STOCK.maybe(t.info), passport: STOCK.maybe(t.passport), plans: td.map((d) => STOCK.maybe(d.plan)) }); return { body, hash: sha(body) }; };
+  // the hash of a book's guide text, remembered by Postgres' fingerprint of the raw text (md5 of info · passport · plans): the same raw
+  // text always gives the same hash within one run of the server (the stock library, which the hash also covers, changes only with a deploy)
+  const SEEDH = new Map();
+  async function seedHashes(prints) {
+    const out = {};
+    for (const p of prints) {
+      let h = SEEDH.get(p.m);
+      if (!h) {
+        const t = (await q('SELECT id, passport, info FROM trips WHERE id=$1', [p.id]))[0];
+        const td = await q('SELECT plan FROM trip_days WHERE trip_id=$1 ORDER BY day_index', [p.id]);
+        h = seedOf(t, td).hash;
+        if (SEEDH.size > 500) SEEDH.clear();
+        SEEDH.set(p.m, h);
+      }
+      out[p.id] = h;
+    }
+    return out;
+  }
   r.get('/api/b/seed/:trip/:hash', A.requireUser, async (req, res, next) => {
     try {
       if (!A.canSee(req.user, req.params.trip)) return bad(res, 'trip', 404);
@@ -595,6 +624,32 @@ function router({ pool, media, A, ai, hooks = {} }) {   // hooks.heart(h): set b
   r.delete('/api/b/hearts/:id', A.requireUser, sameSite, async (req, res, next) => {
     try {
       const out = await q('DELETE FROM hearts WHERE id=$1 AND family_id=$2 AND ($3 OR created_uid=$4) RETURNING id', [req.params.id, FAMILY, req.user.role === 'editor', req.user.uid]);
+      res.status(out.length ? 200 : 404).json({ ok: !!out.length });
+    } catch (e) { next(e); }
+  });
+
+  // ----- a line under a photo (migration 0038): anyone who may see the book writes one (≤ 200 letters, the sender's own name, 40 a day
+  // per phone); a relative's line nudges the parents' phones; parents remove any, a sender their own. Never on a clip or a voice memo.
+  r.put('/api/b/comments/:id', A.requireUser, sameSite, json, async (req, res, next) => {
+    try {
+      const id = req.params.id, b = req.body || {};
+      if (!ID_RE.test(id)) return bad(res, 'id');
+      const m = (await q('SELECT id, trip_id, mime FROM media WHERE id=$1 AND family_id=$2', [String(b.media || ''), FAMILY]))[0];
+      if (!m || !A.canSee(req.user, m.trip_id) || !(m.mime == null || /^image\//.test(m.mime))) return bad(res, 'media');
+      const from = clip(b.from, 24).trim(); if (!from) return bad(res, 'from');
+      const text = clip(b.text, 200).trim(); if (!text) return bad(res, 'text');
+      const ex = (await q('SELECT family_id FROM comments WHERE id=$1', [id]))[0];
+      if (ex) return ex.family_id === FAMILY ? res.json({ ok: true, dup: true }) : bad(res, 'conflict', 409);
+      const [n] = await q("SELECT count(*)::int n FROM comments WHERE family_id=$1 AND created_uid=$2 AND created_at > now() - interval '1 day'", [FAMILY, req.user.uid]);
+      if (n.n >= 40) return bad(res, 'too-many', 429);
+      await q('INSERT INTO comments (id, family_id, trip_id, media_id, from_name, text, created_uid) VALUES ($1,$2,$3,$4,$5,$6,$7) ON CONFLICT (id) DO NOTHING', [id, FAMILY, m.trip_id, m.id, from, text, req.user.uid]);
+      if (req.user.role === 'viewer' && hooks.comment) Promise.resolve(hooks.comment({ trip: m.trip_id })).catch((e) => console.error('comment push', e.message));
+      res.json({ ok: true });
+    } catch (e) { next(e); }
+  });
+  r.delete('/api/b/comments/:id', A.requireUser, sameSite, async (req, res, next) => {
+    try {
+      const out = await q('DELETE FROM comments WHERE id=$1 AND family_id=$2 AND ($3 OR created_uid=$4) RETURNING id', [req.params.id, FAMILY, req.user.role === 'editor', req.user.uid]);
       res.status(out.length ? 200 : 404).json({ ok: !!out.length });
     } catch (e) { next(e); }
   });
@@ -1451,6 +1506,61 @@ function router({ pool, media, A, ai, hooks = {} }) {   // hooks.heart(h): set b
   r.get('/api/b/likes', A.requireEditor, async (_req, res, next) => {
     try { const v = (await q("SELECT value FROM settings WHERE key='family_likes'"))[0]; res.setHeader('Cache-Control', 'no-store'); res.json(v ? JSON.parse(v.value) : null); } catch (e) { next(e); }
   });
+  /* The next trip, drafted by the helper (owner, Nov 2026: "ผู้ช่วยวางแผนทริปหน้า"): where, how many days (2–14) and the first date,
+     typed by a parent, plus what this family likes (the notebook's summary) and every book's lessons — words only — go to the helper
+     (story.js mode 'plannext'), whose plan (plan.schema.json shape) is checked and built like the sample book (plan-to-seed: no drawn
+     art, the stock library's pictures, the privacy scan) into a new app-made book the parents change as they like. One call on the
+     daily allowance; streamed as SSE so the page shows it working (n = letters written so far), then 'done' {id}. */
+  let planBusy = false;
+  r.post('/api/b/plannext', ...W, async (req, res, next) => {
+    if (planBusy) return bad(res, 'busy', 409);
+    planBusy = true;
+    try {
+      if (!ai || !ai.enabled()) return bad(res, 'no-key', 501);
+      const b = req.body || {}, where = clip(b.place, 80).trim(), days = Math.floor(Number(b.days)), from = String(b.from || ''), notes = clip(b.notes, 600).trim();
+      if (!where) return bad(res, 'place');
+      if (!(days >= 2 && days <= 14)) return bad(res, 'days');
+      if (!/^\d{4}-\d{2}-\d{2}$/.test(from) || Number.isNaN(Date.parse(from + 'T00:00:00Z'))) return bad(res, 'from');
+      const to = new Date(Date.parse(from + 'T00:00:00Z') + (days - 1) * 864e5).toISOString().slice(0, 10);
+      const likes = (await q("SELECT value FROM settings WHERE key='family_likes'"))[0];
+      const lessons = await q("SELECT e.text, t.title FROM entries e JOIN trips t ON t.id=e.trip_id WHERE e.family_id=$1 AND e.kind='lessons' AND e.text <> '' ORDER BY t.date_from DESC LIMIT 6", [FAMILY]);
+      const facts = [`Place: ${where}`, `Days: ${days}, from ${from} to ${to}`, notes ? `The parents add: ${notes}` : '',
+        likes ? `What our family likes: ${String(likes.value).slice(0, 4000)}` : '',
+        ...lessons.map((l) => `Lessons from ${(l.title && (l.title.en || l.title.th)) || 'a past trip'}: ${String(l.text).slice(0, 1500)}`)].filter(Boolean).join('\n');
+      if (!(await aiTake())) return bad(res, 'limit', 429);
+      const ctl = new AbortController(); let done = false, n = 0, last = 0;
+      res.on('close', () => { if (!done) ctl.abort(); });
+      res.writeHead(200, { 'Content-Type': 'text/event-stream; charset=utf-8', 'Cache-Control': 'no-store', 'X-Accel-Buffering': 'no' });
+      const send = (ev, data) => res.write(`${ev ? `event: ${ev}\n` : ''}data: ${JSON.stringify(data)}\n\n`);
+      try {
+        const text = await ai.writeStory({ lang: 'en', whole: true, mode: 'plannext', facts, kids: await kidsFor({ date_from: from }), signal: ctl.signal,
+          onText: (x) => { n += x.length; if (n - last > 400) { last = n; send(null, { n }); } } });
+        const plan = ai.parsePlan(text);
+        if (!plan) { done = true; send('error', { error: 'answer' }); return res.end(); }
+        plan.days = plan.days.slice(0, days);
+        if (plan.days.length !== days) { done = true; send('error', { error: 'answer' }); return res.end(); }
+        plan.slug = `next-${from}-${crypto.randomBytes(2).toString('hex')}`; plan.from = from; plan.to = to;
+        if (!plan.place || typeof plan.place.th !== 'string') plan.place = { th: where, en: where };
+        for (const d of plan.days) { for (const k of Object.keys(d)) if (!['title', 'emoji', 'plan', 'planned', 'tips', 'wx', 'moving'].includes(k)) delete d[k]; }
+        for (const k of Object.keys(plan)) if (!['slug', 'title', 'sub', 'from', 'to', 'tz', 'place', 'days'].includes(k)) delete plan[k];
+        const v = CORE.validate(plan);
+        if (v.errs.length) { done = true; send('error', { error: 'answer', why: v.errs.slice(0, 3) }); return res.end(); }
+        const seed = CORE.toSeed(plan, [], { art: false, stock: STOCK.read() });
+        if (CORE.scan(seed).hits.length) { done = true; send('error', { error: 'privacy' }); return res.end(); }
+        seed.children = FAM.seedChildren(await kidRows(), seed.date_from);
+        const c = await pool.connect();
+        try { await c.query('BEGIN'); await putSeed(c, seed, 'manual'); await c.query('COMMIT'); }
+        catch (e) { await c.query('ROLLBACK').catch(() => {}); throw e; } finally { c.release(); }
+        await EMOJI.stockPack(pool, FAMILY).catch(() => {});
+        done = true; send('done', { id: seed.slug, title: seed.title }); res.end();
+      } catch (e) {
+        done = true;
+        if (e.name === 'AbortError' || ctl.signal.aborted) return res.end();
+        console.error('plannext', e.message);
+        send('error', { error: e.code === 'refusal' ? 'refused' : 'failed' }); res.end();
+      }
+    } catch (e) { next(e); } finally { planBusy = false; }
+  });
   /* Lessons for the next trip (owner, Nov 2026: "บทเรียนสำหรับทริปหน้า"): one trip's own notebook rows, the children's moods day by day,
      the parents' notes and the day summaries, what was spent by kind — words only, never a photo — and the helper writes what worked,
      what did not and what to try next time; saved as entry kind 'lessons' (`<trip>.lessons.all`) and shown in the travel notebook. */
@@ -1567,7 +1677,7 @@ function router({ pool, media, A, ai, hooks = {} }) {   // hooks.heart(h): set b
   r.get('/api/b/export.json', A.requireEditor, async (_req, res, next) => {
     try {
       const out = {};
-      for (const t of ['children', 'trips', 'entries', 'media', 'places', 'hearts', 'reviews']) out[t] = await q(`SELECT * FROM ${t} WHERE family_id=$1`, [FAMILY]);
+      for (const t of ['children', 'trips', 'entries', 'media', 'places', 'hearts', 'reviews', 'comments']) out[t] = await q(`SELECT * FROM ${t} WHERE family_id=$1`, [FAMILY]);
       out.trip_days = await q('SELECT d.* FROM trip_days d JOIN trips t ON t.id=d.trip_id WHERE t.family_id=$1', [FAMILY]);
       out.firsts_catalog = await q('SELECT f.* FROM firsts_catalog f JOIN trips t ON t.id=f.trip_id WHERE t.family_id=$1', [FAMILY]);
       res.setHeader('Content-Disposition', 'attachment; filename="memory-bookshelf.json"');

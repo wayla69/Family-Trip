@@ -410,6 +410,19 @@ let capped = 0;
 for (let n = 0; n < 41 && !capped; n++) { const r = await put(`/api/b/hearts/h-cap-${String(n).padStart(4, '0')}`, heart, { ...VH, cookie: vck2 }); if (r.status === 429) capped = n; }
 ok(capped === 40, 'one phone can send 40 hearts a day, then 429');
 
+// ---- a line under a photo (migration 0038): a relative writes one, sees it as theirs; a parent removes any; never on a clip; it goes with its photo
+{ const cm = { media: 'ph-test-0001', from: 'ยาย', text: 'น่ารักมาก "Mimi" 💗' };
+  const a = await put('/api/b/comments/cm-test-0001', cm, VH), dup = await put('/api/b/comments/cm-test-0001', cm, VH);
+  const noFrom = await put('/api/b/comments/cm-test-0002', { ...cm, from: ' ' }, VH), noText = await put('/api/b/comments/cm-test-0002', { ...cm, text: ' ' }, VH);
+  const noMedia = await put('/api/b/comments/cm-test-0002', { ...cm, media: 'nope-0001' }, VH), csrf = await put('/api/b/comments/cm-test-0002', cm, { ...VH, 'x-mb': '' });
+  const c1 = (await state(vck)).comments.find((c) => c.id === 'cm-test-0001'), c2 = (await state()).comments.find((c) => c.id === 'cm-test-0001');
+  ok(a.ok && (await dup.json()).dup === true && [noFrom, noText, noMedia, csrf].every((r) => r.status === 400) && c1 && c1.mine === true && c1.media === 'ph-test-0001' && c1.from === 'ยาย' && !('created_uid' in c1) && c2 && c2.mine === false,
+    `comments: a relative writes under a photo (name and text needed, a photo the book has), it is theirs in the state; the parents see it too (${[a.status, noFrom.status, noText.status, noMedia.status, csrf.status].join(' ')})`);
+  ok((await put('/api/b/comments/cm-test-0003', { ...cm, text: 'x'.repeat(500) })).ok && (await state()).comments.find((c) => c.id === 'cm-test-0003').text.length === 200, 'comments: a parent writes too; a line is at most 200 letters');
+  const vck3 = (await fetch(BASE + '/v/grandma', { redirect: 'manual' })).headers.get('set-cookie').split(';')[0];
+  ok((await fetch(BASE + '/api/b/comments/cm-test-0001', { method: 'DELETE', headers: { ...VH, cookie: vck3 } })).status === 404 && (await fetch(BASE + '/api/b/comments/cm-test-0003', { method: 'DELETE', headers: H })).ok,
+    "comments: another relative's phone cannot remove grandma's line; a parent removes any"); }
+
 // ---- PDPA export + real delete
 const ex = await (await fetch(BASE + '/api/b/export.json', { headers: { cookie: ck } })).json();
 ok(ex.hearts.length >= 41 && ex.reviews.length === 1, 'export includes the hearts and the reviews');
@@ -419,6 +432,7 @@ const stored = path.join(DATA_DIR, 'media', 'p', T, 'ph-test-0001.jpg');
 ok(fs.existsSync(stored), 'photo object in storage');
 ok((await fetch(BASE + '/api/b/media/ph-test-0001', { method: 'DELETE', headers: H })).ok && !fs.existsSync(stored)
   && !fs.existsSync(path.join(DATA_DIR, 'media', 't', T, 'ph-test-0001.jpg')), 'deleting a photo removes the stored files too');
+ok(!(await state()).comments.some((c) => c.media === 'ph-test-0001'), 'a photo deleted takes its lines with it');
 
 // ---- the owner's alerts and the month-by-month page (server/alerts.js, server/errors.js costs)
 { const rep = (body, auth = 'Bearer test-backup-token-0123456789abcdef') => fetch(BASE + '/api/backup/report', { method: 'POST', headers: { authorization: auth, 'content-type': 'application/json' }, body: JSON.stringify(body) });
@@ -430,6 +444,46 @@ ok((await fetch(BASE + '/api/b/media/ph-test-0001', { method: 'DELETE', headers:
     `owner alerts: the Backup workflow reports each run; a failed copy and a failed restore drill are told and listed; the disk is watched (${JSON.stringify({ b1: al1.backup, log: al2.log.length })})`);
   const cs = await (await fetch(BASE + '/api/b/health/costs', { headers: { cookie: ck } })).json(), last = cs.months[cs.months.length - 1];
   ok(cs.months.length === 12 && last.stored >= 0 && cs.priced && cs.priced.ai === false && last.usdAi === null, `month by month: twelve months of room and helper use, no money unless the owner set prices (${JSON.stringify(last)})`); }
+// ---- the server's own problems (server/watch.js, migration 0036): a failed answer is counted by the kind of request, every id masked
+{ const express = require('express'), WATCH = require('../server/watch.js');
+  const pool2 = new Pool({ connectionString: process.env.DATABASE_URL });
+  const w = WATCH.create({ pool: pool2, A: { requireEditor: (q, s, n) => n() } }), app = express();
+  app.use(w.mw);
+  app.get('/api/b/media/:id', () => { throw new Error('boom near "Mimi at the beach" 0812345678'); });
+  app.use((err, _req, res, _next) => { w.error(err, res); res.status(500).json({ error: 'server' }); });
+  const srv = app.listen(0); await new Promise((r) => srv.once('listening', r));
+  const r5 = await fetch(`http://localhost:${srv.address().port}/api/b/media/ph-secret-0001?trip=hk`);
+  await new Promise((r) => setTimeout(r, 300)); srv.close();
+  const ev = (await (await fetch(BASE + '/api/b/health/server', { headers: { cookie: ck } })).json()).events.find((x) => x.kind === 'error');
+  ok(r5.status === 500 && ev && ev.route === 'GET /api/b/media/:' && ev.status === 500 && /boom near/.test(ev.msg) && !/Mimi|0812345678|ph-secret|hk/.test(JSON.stringify(ev))
+    && (await fetch(BASE + '/api/b/health/server', { headers: { cookie: vck } })).status === 403,
+  `server problems: a 500 is kept by the kind of request, the id, the query, a quoted text and a phone number masked; relatives may not read it (${JSON.stringify(ev)})`);
+  const del = await fetch(BASE + '/api/b/health/server', { method: 'DELETE', headers: H });
+  ok(del.ok && !(await (await fetch(BASE + '/api/b/health/server', { headers: { cookie: ck } })).json()).events.length, 'server problems: the list clears');
+  ok(WATCH.label('PUT', '/api/b/trips/hk-macau-2026/days') === 'PUT /api/b/trips/:' && WATCH.label('GET', '/v/token123') === 'GET /v/:' && WATCH.label('GET', '/app.css') === 'GET static', 'server problems: the path keeps its kind and loses every id');
+  await pool2.end(); }
+// ---- stray files (server/orphans.js): a file in the photo folders that no row names and is over two days old goes; a fresh one stays
+{ const dir = path.join(DATA_DIR, 'media', 'p', T); fs.mkdirSync(dir, { recursive: true });
+  const old = path.join(dir, 'stray-old-0001.jpg'), fresh = path.join(dir, 'stray-new-0001.jpg'), oldT = new Date(Date.now() - 3 * 864e5);
+  fs.writeFileSync(old, Buffer.alloc(5000, 1)); fs.utimesSync(old, oldT, oldT); fs.writeFileSync(fresh, Buffer.alloc(3000, 1));
+  const owned = fs.readdirSync(dir).filter((f) => !/^stray-/.test(f));
+  for (const f of owned) fs.utimesSync(path.join(dir, f), oldT, oldT);   // the book's own photos are old too, and must stay
+  const pool3 = new Pool({ connectionString: process.env.DATABASE_URL }); await pool3.query("DELETE FROM settings WHERE key='orphans_last'"); await pool3.end();
+  const g = await (await fetch(BASE + '/api/b/health/orphans', { headers: { cookie: ck } })).json();
+  const p = await (await fetch(BASE + '/api/b/health/orphans', { method: 'POST', headers: H, body: '{}' })).json();
+  ok(g.n === 1 && g.bytes === 5000 && p.removed === 1 && p.n === 0 && !fs.existsSync(old) && fs.existsSync(fresh) && owned.every((f) => fs.existsSync(path.join(dir, f)))
+    && (await fetch(BASE + '/api/b/health/orphans', { headers: { cookie: vck } })).status === 403,
+  `stray files: counted, then removed — only the old one no row names; the fresh one and the book's own photos stay (${JSON.stringify({ g, p, owned: owned.length })})`);
+  fs.rmSync(fresh, { force: true }); }
+// ---- the lite state's hash follows the guide text: a changed guide gives a new hash, and that hash serves the new text
+{ const pool4 = new Pool({ connectionString: process.env.DATABASE_URL });
+  const lite = async () => (await (await fetch(BASE + '/api/b/state?lite=1', { headers: { cookie: ck } })).json()).trips.find((t) => t.id === T).seed;
+  const h1 = await lite();
+  await pool4.query("UPDATE trips SET info = jsonb_set(info, '{zzTest}', '\"one\"') WHERE id=$1", [T]);
+  const h2 = await lite(), g2 = await (await fetch(`${BASE}/api/b/seed/${T}/${h2}`, { headers: { cookie: ck } })).json();
+  await pool4.query("UPDATE trips SET info = info - 'zzTest' WHERE id=$1", [T]); await pool4.end();
+  const h3 = await lite();
+  ok(h1 && h2 && h2 !== h1 && g2.info && g2.info.zzTest === 'one' && h3 === h1, `the lite state's hash moves with the guide text and comes back with it (${[h1, h2, h3].map((x) => String(x).slice(0, 6)).join(' → ')})`); }
 // ---- letters for the future (server/capsule.js, migration 0034): sealed, the text stays on the server until its day
 { const put = (id, body, c = ck) => fetch(`${BASE}/api/b/capsules/${id}`, { method: 'PUT', headers: { ...H, cookie: c }, body: JSON.stringify(body) });
   const get = async () => (await (await fetch(BASE + '/api/b/capsules', { headers: { cookie: ck } })).json());

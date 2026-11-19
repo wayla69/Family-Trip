@@ -1,0 +1,27 @@
+# Patches without asking (owner, Nov 2026: "Patch & Updates"): every Monday Dependabot looks for newer packages and opens one PR
+# for the small updates (CI must be green before anyone merges it); a security fix comes as its own PR as soon as it is published.
+version: 2
+updates:
+  - package-ecosystem: npm
+    directory: /
+    schedule: { interval: weekly, day: monday, time: "02:13", timezone: Asia/Bangkok }
+    open-pull-requests-limit: 5
+    groups:
+      small:
+        update-types: [minor, patch]
+    ignore:
+      # playwright and playwright-core move together (the image installs the browser that playwright-core expects): one PR by hand
+      - dependency-name: playwright*
+        update-types: [version-update:semver-major, version-update:semver-minor]
+  - package-ecosystem: github-actions
+    directory: /
+    schedule: { interval: monthly }
+    groups:
+      actions:
+        patterns: ["*"]
+  - package-ecosystem: docker
+    directory: /
+    schedule: { interval: monthly }
+    ignore:
+      - dependency-name: node   # Node 22 is the line the app is built for (package.json engines); a new major is a decision, not a patch
+        update-types: [version-update:semver-major]
