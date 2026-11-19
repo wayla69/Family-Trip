@@ -2853,6 +2853,7 @@ function plGeo() {
       if (g && (g.places || []).length) {
         pln.geo = g;
         const sg = document.getElementById('plsug'); if (sg) sg.innerHTML = plSugHtml((pln.a || {}).dest || '');
+        const pw = document.getElementById('plwhere'); if (pw && pln.a) pw.innerHTML = plWhereHtml(pln.a);
         if (route().parts[0] === 'planner') safeRender();
       } else if ((pln.geoTry = (pln.geoTry || 0) + 1) < 5) setTimeout(() => { if (pln.geo === false) { pln.geo = null; if (route().parts[0] === 'planner') plGeo(); } }, 3000 * pln.geoTry);
     });
@@ -2942,7 +2943,7 @@ function plSugHtml(v) {
     list = PL_POP.map((x) => towns.find((p) => plNorm(p.n.en) === plNorm(x))).filter(Boolean).filter((p) => !has.includes(plNorm(p.n.en)) && !has.includes(plNorm(p.n.th)));
   }
   const typed = last.length >= 1 ? ' data-r="1"' : '';
-  return list.slice(0, 10).map((p) => `<button type="button" class="plsg${p.land ? ' land' : ''}" data-a="plansug" data-v="${esc(p.n[side])}"${typed}${p.c ? ` style="--tc:${esc(p.c)}"` : ''}>${p.art ? `<img src="${esc(p.art)}" alt="" loading="lazy" draggable="false">` : p.flag ? `<span class="plflag" aria-hidden="true">${p.flag}</span>` : ''}<span>${esc(p.n[side])}</span></button>`).join('');
+  return list.slice(0, 10).map((p) => `<button type="button" class="plsg${p.land ? ' land' : ''}" data-a="plansug" data-v="${esc(p.n[side])}"${p.cc ? ` data-cc="${esc(p.cc)}"` : ''}${typed}${p.c ? ` style="--tc:${esc(p.c)}"` : ''}>${p.art ? `<img src="${esc(p.art)}" alt="" loading="lazy" draggable="false">` : p.flag ? `<span class="plflag" aria-hidden="true">${p.flag}</span>` : ''}<span>${esc(p.n[side])}</span></button>`).join('');
 }
 // the towns of a route in the order slept in: [{town, days, from}] — the same town twice in a row is one stay
 function plStays(rt) {
@@ -2969,6 +2970,41 @@ function plWizard(qs, pages, go, hasDest) {
 }
 // what our past books suggest for the next plan: the towns we went to (again), other towns of the countries we went to, how long
 // our trips ran and the month we usually go — read on the phone from the books' titles and dates, nothing is sent
+/* "where to", country first (owner, Nov 2026: "เลือกประเทศก่อนได้ไหม แล้วค่อยเป็นเมือง"): the library's countries as cards (ours first,
+   then the popular ones, the rest behind "every country"); a tap opens that country's towns as cards — several may be ticked —
+   and "the whole country, the helper picks the towns". Typing still works under it, and a typed town opens its country. The
+   answer stays the one text in "where to" (pln.a.dest), so the route, the plans kept and the helper read it as before. */
+const PL_CC_POP = ['jp', 'kr', 'tw', 'hk', 'mo', 'sg', 'my', 'vn', 'th', 'id', 'au', 'nz', 'cn', 'ae', 'gb', 'fr', 'ch', 'it', 'es', 'de', 'nl', 'us'];
+function plParts(dest) { return String(dest || '').split(/[,،、]/).map((x) => plNorm(x)).filter(Boolean); }
+function plBeenCc() {   // the countries of our own books (titles, places of a book from photos), by the library's town names
+  const g = plGeo(); if (!g) return new Set();
+  const text = (S && S.trips || []).map((t) => [t.title && t.title.en, t.title && t.title.th, ...(((t.theme || {}).snap || {}).places || []).map((x) => (x && (x.en || x.th)) || x)].filter(Boolean).join(' ')).join(' | ').toLowerCase();
+  const set = new Set();
+  for (const p of g.places) if (!p.home && [snapShort(p.name).en, snapShort(p.name).th, ...(p.al || [])].some((n) => String(n || '').length >= 4 && text.includes(String(n).toLowerCase()))) set.add(p.cc);
+  return set;
+}
+function plWhereHtml(a) {
+  const g = plGeo(); if (!g) return '';
+  const side = lang === 'en' ? 'en' : 'th', parts = plParts(a.dest), been = plBeenCc();
+  const inDest = (n) => [plNorm(n.en), plNorm(n.th)].some((k) => k && parts.includes(k));
+  const cs = (g.countries || []).map((c) => ({ ...c, n: snapShort(c.name), towns: g.places.filter((p) => p.cc === c.cc) })).filter((c) => c.cc && c.towns.length);
+  const picked = new Set(cs.filter((c) => inDest(c.n) || c.towns.some((p) => inDest(snapShort(p.name)))).map((c) => c.cc));
+  const rank = (c) => (picked.has(c.cc) ? 0 : been.has(c.cc) ? 1 : PL_CC_POP.includes(c.cc) ? 2 + PL_CC_POP.indexOf(c.cc) / 100 : 3);
+  cs.sort((x, y) => rank(x) - rank(y) || x.n[side].localeCompare(y.n[side], side));
+  if (pln.cc === undefined && picked.size === 1) pln.cc = [...picked][0];   // a plan that already names towns of one country opens on them
+  const cur = cs.find((c) => c.cc === pln.cc);
+  const card = (attrs, pic, c, name, sub, on, cls = '') => `<button type="button" class="plcard${cls}" ${attrs} aria-pressed="${!!on}"${c ? ` style="--tc:${esc(c)}"` : ''}><span class="plcp">${pic ? `<img src="${esc(pic)}" alt="" loading="lazy" draggable="false">` : '🧭'}</span><b>${esc(name)}</b>${sub ? `<small>${esc(sub)}</small>` : ''}</button>`;
+  if (!cur) {
+    const show = pln.allcc ? cs : cs.slice(0, 12);
+    return `<div class="part pickh">${L('1 · เลือกประเทศ', '1 · Pick a country')}</div>
+<div class="plcards">${show.map((c) => card(`data-a="plancc" data-v="${esc(c.cc)}"`, c.art, c.c, c.n[side], picked.has(c.cc) ? L('เลือกไว้แล้ว', 'Picked') : been.has(c.cc) ? L('เคยไป', 'We have been') : L(`${c.towns.length} เมือง`, `${c.towns.length} town${c.towns.length === 1 ? '' : 's'}`), picked.has(c.cc))).join('')}</div>
+${cs.length > 12 ? `<button type="button" class="linkbtn plallcc" data-a="planallcc">${pln.allcc ? L('ย่อรายการ', 'Fewer') : L(`ดูทุกประเทศ (${cs.length})`, `Every country (${cs.length})`)}</button>` : ''}`;
+  }
+  const whole = inDest(cur.n);
+  return `<div class="plcty"><button type="button" class="plback" data-a="plancc" data-v="">‹ ${L('ประเทศอื่น', 'Other countries')}</button><span class="plctyn">${cur.art ? `<img src="${esc(cur.art)}" alt="" draggable="false">` : ''}<b>${esc(cur.n[side])}</b></span></div>
+<div class="part pickh">${L('2 · เลือกเมือง เลือกได้หลายเมือง', '2 · Pick towns — as many as you like')}</div>
+<div class="plcards">${card(`data-a="plantown" data-v="${esc(cur.n[side])}" data-whole="1"`, cur.art, cur.c, L(`ทั่ว${cur.n.th}`, `All of ${cur.n.en}`), L('ให้ผู้ช่วยเลือกเมืองให้', 'The helper picks the towns'), whole, ' whole')}${cur.towns.map((p) => { const n = snapShort(p.name); return card(`data-a="plantown" data-v="${esc(n[side])}" data-cc="${esc(cur.cc)}"`, p.art, p.c || cur.c, n[side], '', inDest(n)); }).join('')}</div>`;
+}
 function plHist() {
   const g = plGeo(), trips = (S && S.trips || []).filter((t) => t.date_from && t.date_to);
   const out = { html: '', len: 0, mon: null };
@@ -3007,7 +3043,7 @@ function viewPlanner(qs) {
   // the questions, a page each (owner, Nov 2026: "แยกเป็นหลายหน้า … เรียนรู้จากประวัติเดิมเพื่อเป็น suggestion"): where · when · who · how · more,
   // each with what our past books suggest (plHist); #/planner/<step>, the phone's back goes a step back
   const hist = plHist();
-  const qWhere = pcard('famap', PG.purple, L('อยากไปที่ไหน', 'Where to'), `<div class="pform">${f('dest', 'อยากไปที่ไหน', 'Where to', L('เช่น โตเกียว หรือ ฮอกไกโด 2 เมือง', 'e.g. Tokyo, or two towns in Hokkaido'))}
+  const qWhere = pcard('famap', PG.purple, L('อยากไปที่ไหน', 'Where to'), `<div class="pform"><div id="plwhere">${plWhereHtml(a)}</div>${f('dest', 'ที่เลือกไว้ หรือพิมพ์เอง', 'Picked so far — or type it', L('เช่น ญี่ปุ่น หรือ โตเกียว, เกียวโต', 'e.g. Japan, or Tokyo, Kyoto'))}
 <div class="plsug" id="plsug">${plSugHtml(a.dest)}</div>
 ${on ? `<button type="button" class="linkbtn plidgo" data-a="planideas"${pln.busy ? ' disabled' : ''}>💡 ${L('ยังไม่รู้จะไปไหน ให้ผู้ช่วยเสนอ', 'Not sure where? Ask the helper for ideas')}</button>` : ''}
 ${hist.html}</div>`);

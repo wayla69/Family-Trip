@@ -3871,3 +3871,19 @@ a.plchip{text-decoration:none}a.plchip .label{font-weight:700}a.plchip[aria-curr
 .tastelo{margin-top:6px}
 /* E6: the styles' painted pictures on chips */
 img.tpic{width:28px;height:28px;vertical-align:middle;margin:-4px 0;object-fit:contain}
+/* "where to", country first: cards of countries, then of the towns of the one opened (several ticked) */
+.plcards{display:grid;grid-template-columns:repeat(auto-fill,minmax(min(100%,96px),1fr));gap:8px;margin:2px 0 6px}
+.plcard{display:flex;flex-direction:column;align-items:center;gap:4px;min-height:100px;padding:10px 6px 8px;border-radius:16px;font:inherit;cursor:pointer;text-align:center;
+  border:1px solid color-mix(in srgb,var(--tc,var(--g1,var(--accent))) 35%,var(--line));background:color-mix(in srgb,var(--tc,var(--g1,var(--accent))) 8%,var(--card));color:var(--ink);position:relative}
+.plcard .plcp{width:50px;height:50px;border-radius:50%;background:#fff;display:grid;place-items:center;font-size:30px;box-shadow:0 2px 6px rgba(0,0,0,.08)}
+.plcard .plcp img{width:45px;height:45px;object-fit:contain}
+.plcard b{font-size:14px;line-height:1.2}.plcard small{font-size:12.5px;color:var(--muted);line-height:1.2}
+.plcard[aria-pressed=true]{border:2px solid color-mix(in srgb,var(--tc,var(--accent)) 75%,var(--ink));background:color-mix(in srgb,var(--tc,var(--accent)) 18%,var(--card))}
+.plcard[aria-pressed=true]::after{content:"✓";position:absolute;top:6px;right:8px;width:22px;height:22px;border-radius:50%;display:grid;place-items:center;font-size:13px;font-weight:700;color:#fff;background:color-mix(in srgb,var(--tc,var(--accent)) 75%,var(--ink))}
+.plcard.whole{border-style:dashed}
+.plcty{display:flex;align-items:center;gap:10px;flex-wrap:wrap;margin:0 0 4px}
+.plcty .plback{min-height:44px;padding:0 14px;border-radius:999px;border:1px solid var(--line);background:var(--card);font:inherit;font-weight:600;color:var(--ink);cursor:pointer}
+.plctyn{display:inline-flex;align-items:center;gap:8px;font-size:18px}.plctyn img{width:40px;height:40px;border-radius:50%;background:#fff;object-fit:contain}
+.plallcc{min-height:44px}
+:root[data-theme=dark] .plcard .plcp,:root[data-theme=dark] .plctyn img{background:#F4F1EA}
+
