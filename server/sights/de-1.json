@@ -278,6 +278,7 @@
     },
     {
       "place": "de-cologne",
+      "thin": true,
       "sights": [
         {
           "name": { "en": "Cologne Zoo", "th": "สวนสัตว์โคโลญ" },
@@ -295,23 +296,6 @@
           "q": "Kölner Zoo, Riehler Straße, Köln",
           "ok": "2026-11",
           "src": "https://www.koeln.de/?p=46959"
-        },
-        {
-          "name": { "en": "Cologne Cathedral south tower climb", "th": "ขึ้นหอคอยใต้มหาวิหารโคโลญ" },
-          "kind": "views",
-          "area": { "en": "Old town", "th": "เมืองเก่า" },
-          "what": { "en": "A climb up the spiral stairs of the cathedral's tower for a view over the Rhine and the city", "th": "ปีนบันไดวนของหอคอยมหาวิหารเพื่อชมวิวแม่น้ำไรน์และเมือง" },
-          "why": { "en": "Only for walkers: hundreds of narrow steps and no lift, so children need to be sturdy, and no prams; children up to 13 enter free", "th": "เหมาะกับเด็กที่เดินเก่ง ขั้นบันไดแคบหลายร้อยขั้นและไม่มีลิฟต์ ห้ามรถเข็น เด็กถึง 13 ปีเข้าฟรี" },
-          "tip": { "en": "Since July 2026 the tower costs €8, reduced €4; hours vary with the season, so check", "th": "ตั้งแต่กรกฎาคม 2026 หอคอยราคา €8 ลดแล้ว €4 เวลาเปิดเปลี่ยนตามฤดูกาล ควรเช็ก" },
-          "ages": [0, 0, 1, 2],
-          "hrs": 1.5,
-          "io": "out",
-          "pram": "no",
-          "price": { "en": "≈ €8 adults · ≈ €4 reduced · children up to 13 free", "th": "≈ €8 ผู้ใหญ่ · ≈ €4 ราคาลด · เด็กถึง 13 ปีฟรี" },
-          "book": "none",
-          "q": "Kölner Dom, Domkloster, Köln",
-          "ok": "2026-11",
-          "src": "https://api.koelner-dom.de/uploads/Dom_Ticket_Flyer_05_ON_5b22f02690.pdf"
         },
         {
           "name": { "en": "Chocolate Museum", "th": "พิพิธภัณฑ์ช็อกโกแลต" },
@@ -1219,7 +1203,7 @@
           "area": { "en": "Englischer Garten", "th": "เอนกลิชการ์เทน" },
           "what": { "en": "A lake in the park with rowing and pedal boats and a lakeside beer garden", "th": "ทะเลสาบในสวน มีเรือพายและเรือถีบ และเบียร์การ์เดนริมทะเลสาบ" },
           "why": { "en": "A gentle outing for children who sit still in a boat; no swimming allowed", "th": "ทริปสบายๆ สำหรับเด็กที่นั่งนิ่งในเรือได้ ห้ามว่ายน้ำ" },
-          "tip": { "en": "Boat hire is for the warm months; I found no current price, so ask at the hire", "th": "เช่าเรือเฉพาะหน้าอบอุ่น ไม่พบราคาปัจจุบัน ให้ถามที่จุดเช่า" },
+          "tip": { "en": "Boat hire is for the warm months; ask the price at the hire", "th": "เช่าเรือเฉพาะหน้าอบอุ่น ไม่พบราคาปัจจุบัน ให้ถามที่จุดเช่า" },
           "ages": [1, 2, 2, 2],
           "hrs": 1.5,
           "io": "out",
@@ -1292,7 +1276,7 @@
           "hrs": 2.5,
           "io": "both",
           "pram": "yes",
-          "price": { "en": "Park free · palace and museums ≈ €12 adults (winter combined ticket) · under 18 free", "th": "สวนฟรี · พระราชวังและพิพิธภัณฑ์ ≈ €12 ผู้ใหญ่ (ตั๋วรวมหน้าหนาว) · ต่ำกว่า 18 ปีฟรี" },
+          "price": { "en": "Park free · palace and museums winter combined ticket ≈ €16 adults · €14 reduced · under 18 free", "th": "สวนฟรี · ตั๋วรวมพระราชวังและพิพิธภัณฑ์หน้าหนาว ≈ €16 ผู้ใหญ่ · €14 ลดราคา · ต่ำกว่า 18 ปีฟรี" },
           "book": "none",
           "q": "Schloss Nymphenburg, Munich",
           "ok": "2026-11",

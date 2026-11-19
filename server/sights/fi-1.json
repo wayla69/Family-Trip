@@ -3,6 +3,7 @@
   "towns": [
     {
       "place": "fi-helsinki",
+      "thin": true,
       "sights": [
         {
           "name": { "en": "Linnanmäki Amusement Park", "th": "สวนสนุกลินนันมากิ" },
@@ -111,24 +112,6 @@
           "q": "Oodi Helsinki Central Library, Töölönlahdenkatu 4",
           "ok": "2026-11",
           "src": "https://www.oodihelsinki.fi/en/arrival/"
-        },
-        {
-          "name": { "en": "National Museum of Finland", "th": "พิพิธภัณฑ์แห่งชาติฟินแลนด์" },
-          "local": "Kansallismuseo",
-          "kind": "museum",
-          "area": { "en": "Töölö", "th": "เติลเลิ" },
-          "what": { "en": "Finland's story from the Stone Age to today in a castle-like building, with a hands-on children's area", "th": "เรื่องราวฟินแลนด์ตั้งแต่ยุคหินถึงปัจจุบันในอาคารคล้ายปราสาท มีมุมให้เด็กลงมือเล่น" },
-          "why": { "en": "Under-18s go in free and the dressing-up and touch corners keep young children busy", "th": "อายุต่ำกว่า 18 ปีเข้าฟรี และมุมแต่งตัวกับมุมสัมผัสทำให้เด็กเล็กไม่เบื่อ" },
-          "tip": { "en": "Pick two or three rooms rather than the whole museum", "th": "เลือกดูสองสามห้องพอ ไม่ต้องดูทั้งพิพิธภัณฑ์" },
-          "ages": [1, 2, 2, 1],
-          "hrs": 2,
-          "io": "in",
-          "pram": "yes",
-          "price": { "en": "≈ €12 adults · under 18 free", "th": "≈ €12 ผู้ใหญ่ · ต่ำกว่า 18 ปีฟรี" },
-          "book": "none",
-          "q": "National Museum of Finland, Mannerheimintie 34, Helsinki",
-          "ok": "2026-11",
-          "src": "https://www.kansallismuseo.fi/en"
         },
         {
           "name": { "en": "Helsinki City Museum and Children's Town", "th": "พิพิธภัณฑ์เมืองเฮลซิงกิและเมืองของเด็ก" },
@@ -395,12 +378,12 @@
           "area": { "en": "Near Rovaniemi", "th": "ใกล้โรวาเนียมี" },
           "what": { "en": "A hotel made of snow and ice that day visitors can tour, with a sleigh ride that can be added if there is enough snow", "th": "โรงแรมที่สร้างจากหิมะและน้ำแข็ง ผู้มาเยือนตอนกลางวันเข้าชมได้ และเพิ่มรถเลื่อนได้ถ้าหิมะพอ" },
           "why": { "en": "A short, memorable visit for children, but the ice rooms are very cold", "th": "ชมสั้นๆ น่าจดจำสำหรับเด็ก แต่ห้องน้ำแข็งหนาวมาก" },
-          "tip": { "en": "Check the season and opening dates before you plan", "th": "เช็กฤดูกาลและวันเปิดก่อนวางแผน" },
+          "tip": { "en": "Built fresh each winter: it opens about 15 December; check the dates", "th": "สร้างใหม่ทุกหน้าหนาว เปิดราว 15 ธันวาคม เช็กวันก่อนไป" },
           "ages": [0, 1, 2, 2],
           "hrs": 1.5,
           "io": "in",
           "pram": "no",
-          "price": { "en": "≈ €79 adults · €39 children 2–12 · under 2 free", "th": "≈ €79 ผู้ใหญ่ · €39 เด็ก 2–12 ปี · ต่ำกว่า 2 ขวบฟรี" },
+          "price": { "en": "≈ €35 adults · €17 children", "th": "≈ €35 ผู้ใหญ่ · €17 เด็ก" },
           "book": "rec",
           "q": "Arctic Snow Hotel, Rovaniemi",
           "ok": "2026-11",

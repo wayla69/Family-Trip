@@ -3,6 +3,7 @@
   "towns": [
     {
       "place": "be-bruges",
+      "thin": true,
       "sights": [
         {
           "name": { "en": "Boudewijn Seapark", "th": "บูเดอไวน์ซีพาร์ก" },
@@ -209,23 +210,6 @@
           "q": "Sint-Janshuismolen, Kruisvest, Bruges",
           "ok": "2026-11",
           "src": "https://www.museabrugge.be/en/visit/locations/sint-janshuismolen"
-        },
-        {
-          "name": { "en": "Horse-drawn carriage ride", "th": "นั่งรถม้าชมเมือง" },
-          "kind": "ride",
-          "area": { "en": "Markt", "th": "มาร์กต์" },
-          "what": { "en": "A short carriage ride through the old town from the Markt, led by a coachman", "th": "นั่งรถม้าสั้นๆ ผ่านเมืองเก่าจากมาร์กต์ มีคนขับรถม้านำทาง" },
-          "why": { "en": "Children enjoy the horses and it rests tired legs; the price is per carriage, not per person", "th": "เด็กๆ ชอบม้าและช่วยให้ขาที่เหนื่อยได้พัก ราคาคิดต่อคันไม่ใช่ต่อคน" },
-          "tip": { "en": "Sources give very different prices (about €35–70 for 30–35 minutes), so confirm before boarding", "th": "แหล่งข้อมูลให้ราคาต่างกันมาก (ราว €35–70 สำหรับ 30–35 นาที) ยืนยันก่อนขึ้น" },
-          "ages": [1, 2, 2, 1],
-          "hrs": 0.5,
-          "io": "out",
-          "pram": "no",
-          "price": { "en": "Check the price (per carriage, about 5 people)", "th": "เช็กราคาก่อนไป (คิดต่อคัน ราว 5 คน)" },
-          "book": "none",
-          "q": "Markt, Bruges",
-          "ok": "2026-11",
-          "src": "https://bezoekers.brugge.be/en/bruges-by-horse-drawn-carriage-2"
         },
         {
           "name": { "en": "Astridpark playground", "th": "สนามเด็กเล่นแอสตริดพาร์ก" },
