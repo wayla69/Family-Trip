@@ -29,7 +29,7 @@ function load() {
 // the places of up to 20 library towns: { <place id>: [row, …] } — a town with none is left out
 function forPlaces(ids) {
   const m = load(), out = {};
-  for (const id of [...new Set((ids || []).map(String))].slice(0, 20)) if (m.has(id)) out[id] = m.get(id);
+  for (const id of [...new Set((ids || []).map(String))].slice(0, 20)) if (m.has(id)) out[id] = m.get(id).slice();   // a copy: the route adds the family's own rows to it
   return out;
 }
 

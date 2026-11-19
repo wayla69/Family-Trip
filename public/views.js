@@ -1632,7 +1632,7 @@ const CARE_KINDS = [['hospital', '🏥', 'โรงพยาบาลที่�
 let careAsk = '';
 // the book's towns in order — tonight's first during the trip — from what was stored: {days: [place id per day], extra: [ids], names, rows}
 function careOrder(t, c) {
-  const ids = [], add = (id) => { if (id && (c.rows[id] || []).length && !ids.includes(id)) ids.push(id); }, at = dayNow(t);
+  const ids = [], add = (id) => { if (id && ((c.rows[id] || []).length || (isEditor() && c.names[id])) && !ids.includes(id)) ids.push(id); }, at = dayNow(t);   // a town with nothing yet still shows for the parents: they can add a place they know
   if (at >= 0) add(c.days[at]);
   c.days.forEach(add); (c.extra || []).forEach(add);
   return ids;
@@ -1654,11 +1654,12 @@ function careBlock(t) {
   const c = ls('care_' + t.id), towns = c && c.rows ? careOrder(t, c) : [];
   if (!towns.length) return '<section class="blk carelib noprint" id="carelib" hidden></section>';
   const nameOf = (id) => ((n) => (n ? n[lang === 'en' ? 'en' : 'th'] || n.th : id))(c.names[id]);
-  const row = (x) => `<li class="nmrow"><span class="plen"><b>${esc(x.name)}</b>${x.zh ? ` <span class="zh">${esc(x.zh)}</span>` : ''}<small>${[T(x.what), T(x.area)].filter(Boolean).map(esc).join(' · ')}</small>${x.why ? `<small class="cwhy">${esc(T(x.why))}</small>` : ''}</span>${navB(x.q, x.name)}</li>`;
-  const town = (id, i) => { const rows = c.rows[id];
+  const row = (x) => `<li class="nmrow${x.own ? ' cown' : ''}"><span class="plen"><b>${esc(x.name)}</b>${x.zh ? ` <span class="zh">${esc(x.zh)}</span>` : ''}${x.own ? ` <span class="etag">${L('ที่เรารู้จัก', 'Our own')}</span>` : ''}<small>${[T(x.what), T(x.area)].filter(Boolean).map(esc).join(' · ')}</small>${x.why ? `<small class="cwhy">${esc(T(x.why))}</small>` : ''}${x.own && isEditor() ? `<button class="linkbtn" data-a="caredel" data-v="${esc(x.id)}">${L('เอาออก', 'Remove')}</button>` : ''}</span>${navB(x.q + (x.own && c.names[x.place] ? `, ${c.names[x.place].en}` : ''), x.name)}</li>`;
+  const town = (id, i) => { const rows = (c.rows[id] || []).map((x) => ({ ...x, place: id }));
     return `<details class="cfold"${i ? '' : ' open'}><summary>${esc(nameOf(id))}${ic('chev', 'chv')}</summary>
-${CARE_KINDS.map(([k, e, th, en]) => ((xs) => (xs.length ? `<h5>${emo(e)} ${L(th, en)}</h5><ul class="carel">${xs.map(row).join('')}</ul>` : ''))(rows.filter((x) => x.kind === k))).join('')}</details>`; };
-  const when = (towns.flatMap((id) => c.rows[id]).map((x) => x.ok).sort().pop() || '').split('-');
+${CARE_KINDS.map(([k, e, th, en]) => ((xs) => (xs.length ? `<h5>${emo(e)} ${L(th, en)}</h5><ul class="carel">${xs.map(row).join('')}</ul>` : ''))(rows.filter((x) => x.kind === k))).join('')}
+${isEditor() ? `<p><button class="btn ghost small" data-a="careadd" data-v="${esc(id)}" data-n="${esc(nameOf(id))}">＋ ${L('เพิ่มที่ที่เรารู้จัก', 'Add a place we know')}</button></p>` : ''}</details>`; };
+  const when = (towns.flatMap((id) => c.rows[id] || []).map((x) => x.ok).filter(Boolean).sort().pop() || '').split('-');
   return `<section class="blk carelib noprint" id="carelib"><h3>${emo('🏥')} ${L('โรงพยาบาลเด็กและที่เล่นใกล้ที่พัก', 'Hospitals and play near where we sleep')}</h3>
 ${towns.map(town).join('')}
 <p class="label">${L('ฉุกเฉินโทรเบอร์ด้านบนก่อนเสมอ', 'In an emergency call the number at the top first')}${when.length === 2 ? ` · ${L('เช็กจากเว็บเมื่อ', 'checked on the web')} ${esc(fmtDay(`${when[0]}-${when[1]}-01`, { month: 'short', year: 'numeric' }))}` : ''} · ${L('ไม่มีเวลาเปิดปิด เช็กก่อนไป', 'no opening hours — check before you go')}</p></section>`;

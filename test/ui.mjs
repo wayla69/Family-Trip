@@ -1827,6 +1827,15 @@ const T = 'hk-macau-2026';
   await s.page.waitForSelector('#carelib:not([hidden]) .cfold[open] ul.carel li', { timeout: 20000 });
   { const c = await s.page.evaluate(() => { const b = document.getElementById('carelib'); return { first: b.querySelector('.cfold[open] h5').textContent, n: b.querySelectorAll('.cfold[open] li').length, pins: b.querySelectorAll('.cfold[open] li .navb').length, text: b.textContent }; });
     ok(/hospital|โรงพยาบาล/i.test(c.first) && c.n >= 3 && c.pins === c.n && !/24[- ]hour|\+852/.test(c.text), `SOS: hospitals and play near the stay (${c.n} places, the first group "${c.first.trim()}")`); }
+  // a place the family knows (care_own): the town's "add" sheet, a kind chip, saved — it shows under its kind with "our own" and a pin
+  await s.page.click('#carelib .cfold[open] [data-a="careadd"]');
+  await s.page.fill('#coname', 'Our UI test playground');
+  await s.page.click('[data-a="carekind"][data-v="play"]');
+  await s.page.fill('#conote', 'Shady, soft ground');
+  await s.page.click('[data-a="careaddgo"]');
+  await s.page.waitForFunction(() => [...document.querySelectorAll('#carelib .cown')].some((li) => li.textContent.includes('Our UI test playground')), null, { timeout: 15000 });
+  { const own = await s.page.evaluate(() => { const li = [...document.querySelectorAll('#carelib .cown')].find((x) => x.textContent.includes('Our UI test playground')); return { pin: !!li.querySelector('.navb'), del: !!li.querySelector('[data-a="caredel"]'), under: li.closest('ul').previousElementSibling.textContent }; });
+    ok(own.pin && own.del && /play|เล่น/i.test(own.under), `SOS: a place we know is added under its kind with a pin and a remove button (${own.under.trim()})`); }
   // what dish is this? (kid.js dishFor): the book's tasting card, a right pick says the dish and its Cantonese name
   await s.page.goto(`${BASE}/#/kid/mimi/dish`); await s.page.waitForSelector('.dishpic', { timeout: 15000 });
   { const k = await s.page.evaluate(() => dsh.r.want.k); await s.page.click(`.dishopt[data-v="${k}"]`);

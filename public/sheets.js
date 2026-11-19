@@ -932,6 +932,28 @@ const A = {
     try { await api('POST', `/api/b/planner/day/${encodeURIComponent(b.dataset.t)}/${+b.dataset.d}/undo`, {}); await load(); render(); toast(L('กลับไปแผนเดิมแล้ว', 'Back to the old plan')); }
     catch (e) { toast(dchErr(e)); }
   },
+  careadd(b) {   // the SOS page: a place this family knows in a town of the list (a clinic, a playground, a baby room) — no hours, no phone
+    openSheet(`<h3>${L('เพิ่มที่ที่เรารู้จัก', 'Add a place we know')} · ${esc(b.dataset.n)}</h3>
+<div class="pform"><input class="field" id="coname" maxlength="90" placeholder="${L('ชื่อสถานที่', 'The place’s name')}">
+<div class="row chips" role="group">${CARE_KINDS.map(([k, e, th, en], i) => `<button class="chip" data-a="carekind" data-v="${k}" aria-pressed="${i === 0}">${emo(e)} ${L(th, en)}</button>`).join('')}</div>
+<input class="field" id="conote" maxlength="160" placeholder="${L('โน้ตสั้นๆ เช่น ชั้นไหน ทำไมดี (ไม่ต้องใส่เบอร์โทรหรือเวลาเปิด)', 'A short note — which floor, why it is good (no phone number or hours)')}">
+<div class="row"><button class="btn" data-a="careaddgo" data-v="${esc(b.dataset.v)}">${L('บันทึก', 'Save')}</button><button class="btn ghost" data-a="closesheet">${L('ยกเลิก', 'Cancel')}</button></div></div>`);
+  },
+  carekind(b) { $$('[data-a="carekind"]').forEach((x) => x.setAttribute('aria-pressed', String(x === b))); },
+  async careaddgo(b) {
+    const name = (($('#coname') || {}).value || '').trim(), note = (($('#conote') || {}).value || '').trim(), pick = $('[data-a="carekind"][aria-pressed="true"]'), kind = (pick && pick.dataset.v) || 'hospital';
+    if (name.length < 2) { toast(L('ใส่ชื่อสถานที่ก่อน', 'Type the place’s name first')); return; }
+    const id = 'co-' + Math.random().toString(36).slice(2, 12);
+    try {
+      await api('PUT', `/api/b/care/own/${id}`, { place: b.dataset.v, name, kind, note });
+      closeSheet(); careAsk = ''; toast(L('เพิ่มแล้ว', 'Added')); render();
+    } catch (e) { toast(e && e.error === 'phone' ? L('ไม่ต้องใส่เบอร์โทร', 'Leave the phone number out') : L('เพิ่มไม่ได้ ลองอีกครั้ง', 'Could not add it — try again')); }
+  },
+  async caredel(b) {
+    if (!armed(b, L('แตะอีกครั้งเพื่อเอาออก', 'Tap again to remove'))) return;
+    try { await api('DELETE', `/api/b/care/own/${encodeURIComponent(b.dataset.v)}`); careAsk = ''; render(); }
+    catch (_) { toast(L('เอาออกไม่ได้ ลองอีกครั้ง', 'Could not remove it — try again')); }
+  },
   async eatlibdel(b) {   // a place the parents do not want in the library: two taps, it stays out
     if (!armed(b, L('แตะอีกครั้งเพื่อเอาออก', 'Tap again to take it out'))) return;
     const id = b.dataset.v;

@@ -17,7 +17,7 @@ const admin = new Client({ connectionString: process.env.TEST_DATABASE_URL });
 await admin.connect();
 
 const GROUPS = [['test/infra.mjs', 'test/provision.mjs'], ['test/bookshelf.mjs', 'test/push.mjs'], ['test/family.mjs', 'test/emoji.mjs'], ['test/import.mjs'], ['test/story.mjs'], ['test/weather.mjs'], ['test/auth.mjs'], ['test/devices.mjs'], ['test/passkey.mjs'], ['test/visual.mjs'], ['test/viewers.mjs'], ['test/offline.mjs'], ['test/ui.mjs', 'test/backup.mjs']]
-  .filter((g) => !process.env.TEST_ONLY || g.some((f) => f.includes(process.env.TEST_ONLY)));   // e.g. TEST_ONLY=ui
+  .filter((g) => !process.env.TEST_ONLY || process.env.TEST_ONLY.split(',').some((o) => o.trim() && g.some((f) => f.includes(o.trim()))));   // e.g. TEST_ONLY=ui, or a list: TEST_ONLY=story,offline (CI runs the groups in parallel parts)
 const freePort = () => new Promise((res) => { const s = net.createServer().listen(0, () => { const p = s.address().port; s.close(() => res(p)); }); });
 
 async function group(suites) {
