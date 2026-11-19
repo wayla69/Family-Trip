@@ -532,7 +532,16 @@ ok((await fetch(BASE + '/api/b/media/ph-test-0001', { method: 'DELETE', headers:
   const E = createRequire(import.meta.url)('../server/eatlib.js'), idx = JSON.parse(fs.readFileSync('public/stock/index.json', 'utf8')), seed = JSON.parse(fs.readFileSync('server/seeds/hk-macau-2026.json', 'utf8'));
   const mine = new Set(E.rowsOfBook(seed.info.restaurants, idx).filter((x) => x.tkey === 'macau').map((x) => x.nkey)), shared = E.starterRows('mo-1.json', idx).filter((x) => mine.has(x.nkey)).map((x) => x.nkey);
   const both = shared.length ? (await pool.query("SELECT src FROM eat_lib WHERE tkey='macau' AND nkey = ANY($1)", [shared])).rows : [];
-  ok(!dup.length && both.length === shared.length && both.every((x) => x.src === 'book'), `eat library: a place in both our book and the built-in list is kept once, as the book's (${shared.length} shared: ${shared.slice(0, 4).join(', ')})`); }
+  ok(!dup.length && both.length === shared.length && both.every((x) => x.src === 'book'), `eat library: a place in both our book and the built-in list is kept once, as the book's (${shared.length} shared: ${shared.slice(0, 4).join(', ')})`);
+  // a built-in place the files no longer hold leaves the library on the next read of the files; one the parents took out keeps its mark
+  const fam = (await pool.query("SELECT family_id FROM eat_lib LIMIT 1")).rows[0].family_id, mk = (name) => ({ ...E.starterRows('jp-1.json', idx)[0], name, nkey: E.norm(name) });
+  await E.put(pool, fam, [mk('Closed Last Year Diner'), mk('Parents Took This Out')], 'starter', null);
+  await pool.query("UPDATE eat_lib SET gone = true WHERE nkey = $1", [E.norm('Parents Took This Out')]);
+  const nBefore = (await pool.query("SELECT count(*)::int n FROM eat_lib WHERE NOT gone")).rows[0].n;
+  await pool.query("DELETE FROM settings WHERE key='eat_starter'"); await E.syncStarter(pool, fam, idx);
+  const left = (await pool.query("SELECT nkey, gone FROM eat_lib WHERE nkey = ANY($1)", [[E.norm('Closed Last Year Diner'), E.norm('Parents Took This Out')]])).rows;
+  const nAfter = (await pool.query("SELECT count(*)::int n FROM eat_lib WHERE NOT gone")).rows[0].n, ours = (await pool.query("SELECT count(*)::int n FROM eat_lib WHERE src='book'")).rows[0].n;
+  ok(left.length === 1 && left[0].gone && nAfter === nBefore - 1 && ours > 400, `eat library: a built-in place no longer in the files leaves the library; the parents' removal and our books' places stay (${nBefore} → ${nAfter}, ${ours} from books, left ${JSON.stringify(left)})`); }
 await pool.end();
 
 console.log(failures ? `\n${failures} FAILED` : '\nALL PASSED');

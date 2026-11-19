@@ -459,7 +459,8 @@
             "th": "≈ A$25–40",
             "en": "≈ A$25–40"
           },
-          "q": "Stalactites Restaurant, Lonsdale Street, Melbourne"
+          "q": "Stalactites Restaurant, Lonsdale Street, Melbourne",
+          "ok": "2026-11"
         },
         {
           "name": "HuTong Dumpling Bar",
@@ -485,7 +486,8 @@
             "th": "≈ A$30–45",
             "en": "≈ A$30–45"
           },
-          "q": "HuTong Dumpling Bar, Market Lane, Melbourne"
+          "q": "HuTong Dumpling Bar, Market Lane, Melbourne",
+          "ok": "2026-11"
         },
         {
           "name": "Pellegrini's Espresso Bar",
@@ -586,7 +588,8 @@
             "th": "≈ A$18–30",
             "en": "≈ A$18–30"
           },
-          "q": "ShanDong MaMa, Mid City Arcade, 200 Bourke Street, Melbourne"
+          "q": "ShanDong MaMa, Mid City Arcade, 200 Bourke Street, Melbourne",
+          "ok": "2026-11"
         },
         {
           "name": "The Hardware Société",
@@ -836,7 +839,8 @@
             "th": "≈ A$8–25",
             "en": "≈ A$8–25"
           },
-          "q": "Great Ocean Road Chocolaterie & Ice Creamery, Bellbrae, Victoria"
+          "q": "Great Ocean Road Chocolaterie & Ice Creamery, Bellbrae, Victoria",
+          "ok": "2026-11"
         }
       ]
     },
