@@ -88,7 +88,10 @@ const mock = http.createServer((req, res) => {
       restsug: () => JSON.stringify({ areas: [{ area: en('Near the inn'), kind: 0, items: [{ name: 'Test Ramen', what: en('Ramen'), pr: '≈ ¥1,000', q: 'Test Ramen, Testland' }] }] }),
     };
     const ROUTE = () => JSON.stringify({ title: L2('ซากุระทดสอบ', 'Sakura test hop'), place: L2('โตเกียว', 'Tokyo'), countries: ['JP', 'xx1'], tz: 'Asia/Tokyo', from: '2030-01-01', why: L2('ฐานเดียว', 'One base'), season: L2('มักเย็นสบาย', 'Usually mild'), cost: L2('≈ ¥12,000 ต่อวัน', '≈ ¥12,000 a day'), ahead: [L2('ตั๋วรถไฟ', 'Train seats'), '', null],
-      days: [0, 1, 2].map((i) => ({ date: '2030-01-0' + (i + 1), town: L2('โตเกียว', 'Tokyo'), title: L2(`วันที่ ${i + 1}`, `Day ${i + 1} in Tokyo`), emoji: '🗼', stops: [L2('สวนอุเอโนะ', 'Ueno Park')], sleep: L2('อุเอโนะ', 'Ueno'), kid: L2('เป็ดในสระ', 'Ducks on the pond'), move: i ? '' : L2('รถไฟ ≈ 45 นาที', 'Train ≈ 45 min'), junk: 'x' })) });
+      days: [0, 1, 2].map((i) => ({ date: '2030-01-0' + (i + 1), town: i < 2 ? L2('โตเกียว', 'Tokyo') : L2('ฮาโกเนะ', 'Hakone'), title: L2(`วันที่ ${i + 1}`, `Day ${i + 1} in Tokyo`), emoji: '🗼', stops: [L2('สวนอุเอโนะ', 'Ueno Park')], sleep: L2('อุเอโนะ', 'Ueno'), kid: L2('เป็ดในสระ', 'Ducks on the pond'), move: i ? '' : L2('รถไฟ ≈ 45 นาที', 'Train ≈ 45 min'), junk: 'x' })) });
+    const eatFill = String(b.system).startsWith('You find places to eat');   // the eat library: a town's places, as JSON (with junk to clean)
+    const EATS = () => JSON.stringify({ places: [{ name: 'Ichiran Test', zh: '一蘭', kind: 0, area: L2('อุเอโนะ', 'Ueno'), tag: L2('ราเมน', 'Ramen'), what: L2('ราเมน', 'Ramen in booths'), why: L2('เสิร์ฟเร็ว', 'Fast'), pr: L2('≈ ¥1,000', '≈ ¥1,000'), hours: L2('เปิดถึงดึก', 'Open late'), q: 'Ichiran Test, Ueno, Tokyo', st: 'open', url: 'https://example.com/i' },
+      { name: 'ichiran test' }, { name: '' }, { name: 'Zoo Court', kind: 7, st: 'probably', url: 'javascript:alert(1)', pick: ['Day 1 · Lunch'] }] });
     const planIdeas = String(b.system).startsWith('You suggest where');   // "where shall we go?"
     const IDEAS = () => JSON.stringify({ ideas: [{ place: L2('ดานัง', 'Da Nang'), cc: 'VN', emoji: '🏖️', why: L2('ทะเลตื้น', 'A shallow sea'), fly: L2('≈ 1 ชม. 45', '≈ 1 h 45'), days: 4 }, { place: '', cc: 'jp' }, { place: L2('ซิดนีย์', 'Sydney'), cc: 'australia', days: 99 }] });
     const badJson = imp === 'kids' && importCalls.filter((c) => c.step === 'kids').length === 1;   // the first kids' answer is broken JSON (a missing comma), as a live run once got
@@ -98,7 +101,7 @@ const mock = http.createServer((req, res) => {
       planB: L2('ถ้าฝนหยุด เดินเล่นที่จัตุรัส', 'If it stops raining, the square'), tips: [L2('พกร่ม', 'Bring an umbrella')] });
     const VF = () => JSON.stringify({ places: [{ i: 1, st: 'closed', hours: '10:00–18:00', note: L2('ปิดถาวรตั้งแต่ปี 2026', 'Closed for good since 2026'), url: 'https://example.com/test-square' }] });
     const two = planRoute && facts.includes('Give TWO different routes');
-    const parts = planIdeas ? [IDEAS()] : two ? [JSON.stringify({ routes: [{ ...JSON.parse(ROUTE()), label: L2('เมืองเดียว', 'One base'), why: L2('ไม่ต้องย้ายกระเป๋า', 'No packing up') }, { ...JSON.parse(ROUTE()), label: L2('สองเมือง', 'Two towns'), why: L2('ได้เห็นมากขึ้น', 'See more'), days: [] }, 'junk'] })] : vf ? [VF()] : dayCh ? [DAYCH()] : planRoute ? [ROUTE()] : art ? [ARTA[art]()] : imp ? [badJson ? '{"days":[{"learn":[{"name":{"th":"x" "en":"x"}}]}]}' : IMP[imp]()] : photo ? [JSON.stringify(pids.map((id, k) => (k === 0 ? { id, cap: '## เด็กๆ **ยิ้ม** หน้าปราสาท', tags: ['kids', 'Character', 'bogus', 'kids'], place: stop0, best: true } : { id, cap: 'เรากินติ่มซำ', tags: ['food'], place: 'Narnia', best: 'yes' })))]
+    const parts = eatFill ? [EATS()] : planIdeas ? [IDEAS()] : two ? [JSON.stringify({ routes: [{ ...JSON.parse(ROUTE()), label: L2('เมืองเดียว', 'One base'), why: L2('ไม่ต้องย้ายกระเป๋า', 'No packing up') }, { ...JSON.parse(ROUTE()), label: L2('สองเมือง', 'Two towns'), why: L2('ได้เห็นมากขึ้น', 'See more'), days: [] }, 'junk'] })] : vf ? [VF()] : dayCh ? [DAYCH()] : planRoute ? [ROUTE()] : art ? [ARTA[art]()] : imp ? [badJson ? '{"days":[{"learn":[{"name":{"th":"x" "en":"x"}}]}]}' : IMP[imp]()] : photo ? [JSON.stringify(pids.map((id, k) => (k === 0 ? { id, cap: '## เด็กๆ **ยิ้ม** หน้าปราสาท', tags: ['kids', 'Character', 'bogus', 'kids'], place: stop0, best: true } : { id, cap: 'เรากินติ่มซำ', tags: ['food'], place: 'Narnia', best: 'yes' })))]
       : snapn ? ['```json\n' + JSON.stringify({ title: { th: 'เขาใหญ่ทุ่งดอกไม้', en: 'Khao Yai in bloom' }, days: [{ day: 1, th: 'ทานตะวันยามเช้า', en: 'Sunflowers at breakfast', emoji: '🌻' }, { day: 2, th: 'ฝนพรำ', en: 'Drizzle', emoji: '🌧️' }, { day: 9, th: 'x', en: 'x' }] }) + '\n```']
       : quiz ? ['```json\n[{"q":"เมื่อวานมีมี่บอกว่าปลาอยู่ที่ไหน","a":[{"e":"💧","t":"ในน้ำ"},{"e":"🌳","t":"บนต้นไม้"},{"e":"🚌","t":"บนรถบัส"}],"ok":0},',
       '{"q":"ไปไหนมา","a":[{"e":"🏰","t":"ดิสนีย์"},{"e":"🏖️","t":"ทะเล"},{"e":"🏔️","t":"ภูเขา"}],"ok":0},{"q":"bad","a":[{"t":"x"}],"ok":3}]\n```']
@@ -747,6 +750,27 @@ try {
     for (const p of (await plist()).slice(1)) await fetch(BASE + '/api/b/planner/plans/' + p.id, { method: 'DELETE', headers: PH });
     ok((await plist()).map((p) => p.id).join() === 'plfill0008', 'kept plans: deleted on request');
     await fetch(BASE + '/api/b/planner/plans/plfill0008', { method: 'DELETE', headers: PH }); }
+  // ---- the family's library of places to eat: every book's places under their towns; the helper fills a town with a web check
+  { const eg = async (qs = '', h = { cookie: ck }) => { const r0 = await fetch(BASE + '/api/b/eatlib' + qs, { headers: h }); return { status: r0.status, j: r0.status === 200 ? await r0.json() : {} }; };
+    const l0 = (await eg()).j, tw = Object.fromEntries((l0.towns || []).map((t) => [t.town, t.n]));
+    ok(l0.total > 400 && tw.Macau > 100 && tw['Hong Kong'] > 10 && tw.Sydney > 50 && l0.towns.find((t) => t.town === 'Sydney').town_th === 'ซิดนีย์' && l0.on === true,
+      `eat library: the two books' places are in it under their towns (${l0.total} places · Macau ${tw.Macau} · Hong Kong ${tw['Hong Kong']} · Sydney ${tw.Sydney})`);
+    ok((await eg('', { cookie: vck.split(';')[0] })).status === 403, 'eat library: relatives cannot read it');
+    const f0 = (await eg('?for=' + encodeURIComponent(JSON.stringify([['Sydney', 'ซิดนีย์'], ['Tokyo', 'โตเกียว'], ['Macau', '']])))).j.for || [];
+    ok(f0.length === 3 && f0[0].places.length > 50 && f0[1].places.length === 0 && f0[2].places.some((x) => x.name === 'Spotlight' && x.what && x.pr && x.q && x.src === 'book' && x.trip === 'hk-macau-2026' && !x.pick),
+      `eat library: a route's towns get their places in the book's own shape, never a day's pick (${f0.map((t) => t.places.length).join(' · ')})`);
+    ok((await pl('/api/b/eatlib/fill', { town: ' ' })).status === 400 && (await pl('/api/b/eatlib/fill', { town: 'Tokyo' }, { ...PH, cookie: vck.split(';')[0] })).status === 403, 'eat library: no town → 400; relatives cannot ask');
+    const cF = calls.length, fr = await pl('/api/b/eatlib/fill', { town: 'Tokyo', town_th: 'โตเกียว', where: 'Japan' }), fj = await fr.json(), fsent = JSON.stringify(calls[cF] && calls[cF].body);
+    ok(fr.status === 200 && fj.added === 2 && fj.tkey === 'tokyo' && calls.length === cF + 1 && /Town: Tokyo \(Japan\)/.test(fsent) && /web_search/.test(fsent) && !/Mimi|Mika|มีมี่|มีก้า|Ueno Zoo|QZ8PLN/.test(fsent),
+      `eat library: the helper fills a town in one call with web search — only the town's name goes (${fr.status} ${JSON.stringify(fj)})`);
+    const tk = ((await eg('?town=tokyo')).j.places || []), today = new Date().toISOString().slice(0, 10);
+    ok(tk.length === 2 && tk[0].name === 'Ichiran Test' && tk[0].src === 'helper' && tk[0].st === 'open' && tk[0].checked === today && tk[0].url === 'https://example.com/i' && tk[0].what.th === 'ราเมน' && tk[1].kind === 0 && tk[1].st === 'unsure' && tk[1].url === '' && tk[1].q === 'Zoo Court, Tokyo',
+      `eat library: the answer is cleaned and kept with the day it was checked — a repeat and a nameless one dropped, a bad kind, state and link put right (${tk.map((x) => x.name).join(', ')})`);
+    const cG = calls.length; await pl('/api/b/eatlib/fill', { town: 'tokyo' });
+    ok(/do not repeat\): Ichiran Test, Zoo Court/.test(JSON.stringify(calls[cG].body)) && (await eg('?town=tokyo')).j.places.length === 2, 'eat library: asking again names what is already there, and a place is never kept twice');
+    ok((await fetch(BASE + '/api/b/eatlib/' + tk[1].id, { method: 'DELETE', headers: PH })).status === 200 && (await eg('?town=tokyo')).j.places.length === 1, 'eat library: a place taken out is gone');
+    await pl('/api/b/eatlib/fill', { town: 'Tokyo' });
+    ok((await eg('?town=tokyo')).j.places.length === 1, 'eat library: a place the parents took out stays out, even when the helper names it again'); }
   const c1 = calls.length, dr0 = await pl('/api/b/planner/draft', { answers, route: rt }), dj = await dr0.json();
   ok(dr0.status === 202 && dj.slug === 'sakura-test-hop-2027', `planner: the book starts as an import job (${dr0.status} ${JSON.stringify(dj)})`);
   let pj; for (let i = 0; i < 160; i++) { pj = await (await fetch(BASE + '/api/b/import', { headers: { cookie: ck } })).json(); if (pj.job.status !== 'running') break; await new Promise((r) => setTimeout(r, 250)); }
@@ -760,7 +784,10 @@ try {
   const pd = pj.drafts.find((d) => d.slug === dj.slug), pdr = await (await fetch(BASE + '/api/b/import/' + pd.id, { headers: { cookie: ck } })).json(), ps = pdr.seed;
   ok(ps.info.emergency.map((e) => e.tel).join() === '110,119' && /15 days/.test(ps.info.visa.lede.en) && ps.info.guide[0].title.en === 'Power, money, roads',
     `planner: emergency numbers, the visa line and the power/money card come from the checked table, never the helper (${JSON.stringify(ps.info.emergency)})`);
-  ok(ps.info.restaurants && ps.info.restaurants.groups[0].items[0].name === 'Test Ramen' && ps.theme.planner && ps.theme.planner.answers.dest === 'Tokyo with the kids' && pdr.report.planner === true,
+  { const g0 = ps.info.restaurants.groups[0], it0 = g0.items[0], topCall = importCalls.filter((c) => c.step === 'top').pop() || {}, topSent = `${topCall.system || ''} ${topCall.user || ''}`;
+    ok(g0.area.en === 'Tokyo' && g0.area.th === 'โตเกียว' && it0.name === 'Ichiran Test' && it0.what.th === 'ราเมน' && it0.q === 'Ichiran Test, Ueno, Tokyo' && !it0.src && !it0.id && g0.items.length === 1 && /family's library[^]*Tokyo: Ichiran Test \(Ramen\)/.test(topSent),
+      `planner: the library's places for the route's towns lead the book's "where to eat" and are named in the brief for the days' meals (${g0.area.en}/${g0.area.th}: ${g0.items.map((x) => x.name).join(', ')} · ${JSON.stringify(it0).slice(0, 200)} · brief ${/family's library/.test(topSent)})`); }
+  ok(ps.info.restaurants && ps.info.restaurants.groups[1].items[0].name === 'Test Ramen' && ps.theme.planner && ps.theme.planner.answers.dest === 'Tokyo with the kids' && pdr.report.planner === true,
     'planner: the suggested places to eat, and the answers kept with the book for later changes');
   ok(!JSON.stringify(ps.theme.planner).match(/Mimi|Mika/), 'planner: the kept answers name no child');
   { const db = new Client({ connectionString: u.toString() }); await db.connect(); await db.query('UPDATE ai_usage SET calls=0'); await db.end(); }
@@ -781,8 +808,11 @@ try {
     // second round: steps, the answers folded to one card, the journey, "before you say yes", day actions with one undo, the plan kept for the other phone
     { const st = await pp.evaluate(() => ({ steps: document.querySelectorAll('.plsteps .plst').length, done: document.querySelectorAll('.plsteps .plst.done').length, sum: !!document.querySelector('.plsum'), form: !!document.querySelector('#pldest'),
         jour: document.querySelectorAll('.pljour .pljt').length, facts: [...document.querySelectorAll('.plfact h4')].map((h) => h.textContent.trim()).length, tel: (document.querySelector('.plfacts') || {}).textContent.includes('119'), kid: document.querySelector('.plday .pldx').textContent }));
-      ok(st.steps === 3 && st.done === 2 && st.sum && !st.form && st.jour === 1 && st.facts === 6 && st.tel && /Ducks on the pond/.test(st.kid),
+      ok(st.steps === 3 && st.done === 2 && st.sum && !st.form && st.jour === 2 && st.facts === 6 && st.tel && /Ducks on the pond/.test(st.kid),
         `planner page: three steps, the answers folded to one card, the journey strip, six "before you say yes" tiles with the app's emergency number, each day's best bit (${JSON.stringify(st).slice(0, 200)})`);
+      await pp.waitForSelector('.pleatt');
+      const pe = await pp.evaluate(() => [...document.querySelectorAll('.pleatt')].map((d) => ({ t: d.querySelector('summary b').textContent, rows: [...d.querySelectorAll('.plel b')].map((b) => b.textContent).join(), find: !!d.querySelector('button[data-a="planeat"]') })));
+      ok(pe.length === 2 && pe[0].t === 'Tokyo' && pe[0].rows === 'Ichiran Test' && pe[1].t === 'Hakone' && !pe[1].rows && pe[1].find, `planner page: where to eat along the route — the library's places for a town, "find places" for a town it does not know (${JSON.stringify(pe)})`);
       const small = await pp.evaluate(() => [...document.querySelectorAll('#plroute button, .plsteps button, .plsum button')].filter((b) => { const r = b.getBoundingClientRect(); return r.width && (r.height < 43.5 || (r.width < 43.5)); }).map((b) => `${b.dataset.a}:${Math.round(b.getBoundingClientRect().width)}x${Math.round(b.getBoundingClientRect().height)}`));
       ok(!small.length, `planner page: every button on the route is 44 px or taller (${small.slice(0, 5).join(' ')})`);
       const titles = () => pp.evaluate(() => [...document.querySelectorAll('.plday .pldt')].map((h) => h.textContent)), dates = () => pp.evaluate(() => pln.route.days.map((d) => d.date).join());
@@ -834,6 +864,20 @@ try {
     await pp.click('.hubrow.snapplango'); await pp.waitForSelector('#pldest');
     const dest = await pp.inputValue('#pldest'), want = await pp.inputValue('#plwant');
     ok(/Pak Chong/.test(dest) && /flower fields/i.test(want) && !/Day 1/.test(want), `planner from a photo book: its towns and its days start the answers (${dest} · ${want.slice(0, 60)})`);
+    // the library's own page: the towns, a town's places as the book's cards, search in place, "take out" in two taps
+    await pp.goto(BASE + '/#/'); await pp.waitForSelector('.eatlibcard'); await pp.click('.eatlibcard'); await pp.waitForSelector('.eltowns .plchip');
+    const lt = await pp.evaluate(() => ({ towns: document.querySelectorAll('.eltowns .plchip').length, macau: [...document.querySelectorAll('.eltowns .plchip')].some((a) => /Macau/.test(a.textContent)), add: !!document.querySelector('#eltown'), wide: document.documentElement.scrollWidth <= innerWidth + 1 }));
+    ok(lt.towns > 10 && lt.macau && lt.add && lt.wide, `eat library page: the shelf leads to it; the towns as chips, a box for a town not in it yet, no sideways scroll (${JSON.stringify(lt)})`);
+    await pp.click('.eltowns .plchip[href="#/eats/macau"]'); await pp.waitForSelector('.eatc');
+    const lm0 = await pp.locator('.eatc:not([hidden])').count();
+    await pp.fill('#eatq', 'spotlight'); const lm1 = await pp.locator('.eatc:not([hidden])').count();
+    const small2 = await pp.evaluate(() => [...document.querySelectorAll('.eatc:not([hidden]) .elsrc button, .eltowns .plchip, .ellist .chip')].filter((b) => { const r = b.getBoundingClientRect(); return r.width && r.height < 43.5; }).length);
+    ok(lm0 > 100 && lm1 >= 1 && lm1 < 5 && /From Harbour Hop|From /.test(await pp.textContent('.eatc:not([hidden]) .elsrc')) && small2 === 0, `eat library page: a town's places as the book's cards, each saying where it came from; the search filters in place; taps are 44 px (${lm0} → ${lm1})`);
+    await pp.goto(BASE + '/#/eats/tokyo'); await pp.waitForSelector('.eatc');
+    ok(/web check/.test(await pp.textContent('.eatc .elsrc')) && await pp.locator('.eatc .etag.st-open').count() === 1, 'eat library page: a place the helper found says so, with the day it was checked and that it is open');
+    await pp.click('.eatc [data-a="eatlibdel"]'); ok(await pp.locator('.eatc').count() === 1, 'eat library page: taking a place out takes two taps');
+    await pp.click('.eatc [data-a="eatlibdel"]'); await pp.waitForFunction(() => !document.querySelector('.eatc'), null, { timeout: 8000 });
+    ok(((await (await fetch(BASE + '/api/b/eatlib?town=tokyo', { headers: { cookie: ck } })).json()).places || []).length === 0, 'eat library page: the place is out of the library');
     await fetch(BASE + `/api/b/trips/${sb2.id}`, { method: 'DELETE', headers: PH });
     await pc.close(); }
   await fetch(BASE + '/api/b/import/' + pd.id, { method: 'DELETE', headers: PH });

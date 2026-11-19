@@ -276,7 +276,7 @@ if (require.main === module) {
   if (process.env.NODE_ENV === 'production' && MEDIA.kind !== 's3') console.warn('WARNING: BUCKET is not set — photos go to local disk and are lost on the next deploy unless /data is a Railway volume.');
   if (!PG) { console.error('DATABASE_URL is not set — add Railway Postgres and reference ${{Postgres.DATABASE_URL}} (locally: see CLAUDE.md)'); process.exit(1); }
   PGM.ready(PG)
-    .then(async (n) => { await A.init(PG); await PUSH.init(PG); const seeds = await BS.syncSeeds(PG); await EMOJI.seed(PG, BS.FAMILY); return [n, seeds]; })
+    .then(async (n) => { await A.init(PG); await PUSH.init(PG); const seeds = await BS.syncSeeds(PG); await EMOJI.seed(PG, BS.FAMILY); await BS.eatSyncAll(PG); return [n, seeds]; })
     .then(([n, seeds]) => {
       REMIND.start(); ALERTS.start();
       // what older photos look like (migration 0029), filled in the background a few at a time: the "already in the book?" check covers them too

@@ -3689,3 +3689,22 @@ b.kf.kd,.tp.one .gcard b.kf.kd{--kc:#C9780E}
 :root[data-theme=dark] .plspan,:root[data-theme=dark] .plfact h4,:root[data-theme=dark] .plstep button{color:color-mix(in srgb,var(--g1) 55%,#fff)}
 :root[data-theme=dark] .pldtown,:root[data-theme=dark] .pldact button,:root[data-theme=dark] .pldmv button,:root[data-theme=dark] .pljt small{color:color-mix(in srgb,var(--tc) 50%,#fff)}
 :root[data-theme=dark] .plerr,:root[data-theme=dark] .plwarn{color:color-mix(in srgb,var(--accent2) 55%,#fff)}
+/* the library of places to eat (#/eats) and its part of the planner's route card */
+a.plchip{text-decoration:none}a.plchip .label{font-weight:700}a.plchip[aria-current=true]{border-color:var(--g1);box-shadow:0 0 0 1px var(--g1);background:color-mix(in srgb,var(--g1) 16%,var(--card));font-weight:700}
+.eltowns{margin:8px 0 14px}.eltowns.one{flex-wrap:nowrap;overflow-x:auto;margin:8px -16px 10px;padding:2px 16px 6px;scrollbar-width:none}.eltowns.one::-webkit-scrollbar{display:none}.eltowns.one .plchip{flex:none;white-space:nowrap}.ellist .eatbar{margin-top:8px}.elmore{margin:14px 0 6px}
+.elsrc{display:flex;align-items:center;justify-content:space-between;gap:8px;margin-top:6px;padding-top:6px;border-top:1px dashed var(--line)}.elsrc small{color:var(--muted);font-size:12px;line-height:1.35}
+.elsrc .mini{min-height:44px;min-width:44px}
+.etag.st-open{background:color-mix(in srgb,var(--leaf) 14%,var(--card));color:color-mix(in srgb,var(--leaf) 60%,var(--ink))}
+.etag.st-closed{background:color-mix(in srgb,var(--accent2) 14%,var(--card));color:color-mix(in srgb,var(--accent2) 60%,var(--ink))}
+.pleat{display:grid;grid-template-columns:repeat(auto-fill,minmax(min(100%,300px),1fr));gap:10px;margin:8px 0 6px;align-items:start}
+.pleatt{border:1px solid var(--line);border-radius:14px;background:var(--card);padding:0 12px 12px}
+.pleatt>summary{display:flex;align-items:center;gap:10px;min-height:56px;cursor:pointer;list-style:none;margin:0 -2px}.pleatt>summary::-webkit-details-marker{display:none}
+.pleatt>summary>span:nth-child(2){flex:1;min-width:0}.pleatt>summary b{display:block;font-size:15.5px;line-height:1.25}.pleatt>summary small{display:block;color:var(--muted);font-size:12.5px}
+.plee{flex:none;width:38px;height:38px;border-radius:50%;display:grid;place-items:center;font-size:20px;background:color-mix(in srgb,#FF9A3C 16%,var(--card))}
+.pleatt:not([open]){padding-bottom:0}.pleatt[open]>summary .chv{transform:rotate(90deg)}
+.plel{list-style:none;margin:0 0 6px;padding:0}.plel li{display:flex;align-items:center;gap:8px;min-height:48px;padding:4px 0;border-top:1px solid var(--line)}
+.plen{flex:1;min-width:0}.plen b{display:block;font-size:14.5px;line-height:1.3;overflow-wrap:anywhere}.plen small{display:block;color:var(--muted);font-size:12.5px;line-height:1.35}
+.plel .pinlink{flex:none;min-width:44px;min-height:44px;display:grid;place-items:center}.plel .etag{flex:none}
+.plem{gap:6px 18px;flex-wrap:wrap}.plem .linkbtn{min-height:44px;display:inline-flex;align-items:center}
+:root[data-theme=dark] .etag.st-open{color:color-mix(in srgb,var(--leaf) 55%,#fff)}
+:root[data-theme=dark] .etag.st-closed{color:color-mix(in srgb,var(--accent2) 55%,#fff)}
