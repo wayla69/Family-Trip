@@ -1,0 +1,100 @@
+{
+  "cc": "jo",
+  "towns": [
+    {
+      "place": "jo-petra",
+      "thin": true,
+      "sights": [
+        {
+          "name": { "en": "Petra Archaeological Park", "th": "อุทยานโบราณคดีเพตรา" },
+          "local": "البتراء",
+          "kind": "culture",
+          "area": { "en": "Wadi Musa", "th": "วาดีมูซา" },
+          "what": { "en": "The rose-red Nabataean city reached on foot through the Siq, a narrow canyon that opens onto the Treasury", "th": "เมืองหินสีชมพูของชาวนาบาเทียน เดินผ่านช่องเขาแคบ ๆ ที่เรียกว่าซีกไปจนถึงอาคารคลังสมบัติ" },
+          "why": { "en": "Children under 12 are free in daylight, and little ones can walk part of the way in and turn back", "th": "เด็กต่ำกว่า 12 ปีเข้าฟรีตอนกลางวัน เด็กเล็กเดินเข้าไปบางช่วงแล้วเดินกลับได้" },
+          "tip": { "en": "Go early and take water and hats; the way in is on foot over uneven ground, so a pram is hard", "th": "ไปแต่เช้าและพกน้ำกับหมวก ทางเข้าต้องเดินบนพื้นไม่เรียบ รถเข็นเด็กเข็นลำบาก" },
+          "ages": [1, 2, 2, 2],
+          "hrs": 5,
+          "io": "out",
+          "pram": "no",
+          "price": { "en": "≈ 50 JD adults for one day (staying overnight in Jordan) · children under 12 free in daylight", "th": "≈ 50 JD ผู้ใหญ่ต่อหนึ่งวัน (พักค้างคืนในจอร์แดน) · เด็กต่ำกว่า 12 ปีฟรีตอนกลางวัน" },
+          "book": "none",
+          "q": "Petra Archaeological Park, Wadi Musa, Jordan",
+          "ok": "2026-11",
+          "src": "https://international.visitjordan.com/blog/external/7626/how-much-does-it-cost-to-go-to-petra-jordan/"
+        },
+        {
+          "name": { "en": "Little Petra (Siq al-Barid)", "th": "ลิตเติลเพตรา (ซีกอัลบาริด)" },
+          "local": "سيق البارد",
+          "kind": "culture",
+          "area": { "en": "Beidha, north of Wadi Musa", "th": "ไบดา ทางเหนือของวาดีมูซา" },
+          "what": { "en": "A small Nabataean canyon of carved rooms and steps, a quieter taste of Petra", "th": "หุบเขาเล็ก ๆ ของชาวนาบาเทียนที่มีห้องและบันไดสลักในหิน เงียบสงบกว่าเพตราใหญ่" },
+          "why": { "en": "Short and low-key, and entry is free, so a family can stop for as long as the children like", "th": "ใช้เวลาไม่นาน เข้าฟรี ครอบครัวแวะนานเท่าที่เด็กสนุก" },
+          "tip": { "en": "Allow about an hour and bring water", "th": "ใช้เวลาราวหนึ่งชั่วโมง พกน้ำไปด้วย" },
+          "ages": [1, 2, 2, 2],
+          "hrs": 1.5,
+          "io": "out",
+          "pram": "part",
+          "price": { "en": "Free", "th": "ฟรี" },
+          "book": "none",
+          "q": "Little Petra, Siq al-Barid, Beidha, Jordan",
+          "ok": "2026-11",
+          "src": "https://aqaba.jo/Pages/Details/Attraction/225/Siq_Al-Barid"
+        },
+        {
+          "name": { "en": "Petra Kitchen cooking workshop", "th": "เวิร์กช็อปทำอาหารเพตราคิทเช่น" },
+          "kind": "culture",
+          "area": { "en": "Wadi Musa", "th": "วาดีมูซา" },
+          "what": { "en": "An evening class where visitors cook Jordanian dishes together and then eat them", "th": "คลาสช่วงเย็นที่ผู้เข้าร่วมช่วยกันทำอาหารจอร์แดนแล้วนั่งกินด้วยกัน" },
+          "why": { "en": "A seated, indoor evening plan after a long walking day; children can help wash and mix", "th": "เป็นกิจกรรมในร่มนั่งทำตอนเย็นหลังเดินมาทั้งวัน เด็กช่วยล้างและผสมได้" },
+          "tip": { "en": "Book ahead and ask the organiser about children's places; the price shown on the official page is undated, so check it", "th": "จองล่วงหน้าและถามผู้จัดเรื่องที่นั่งสำหรับเด็ก ราคาในหน้าทางการไม่ระบุวันที่ ควรเช็กอีกครั้ง" },
+          "ages": [0, 1, 2, 2],
+          "hrs": 3,
+          "io": "in",
+          "pram": "yes",
+          "price": { "en": "≈ 35 JD per person (undated listing, check the price)", "th": "≈ 35 JD ต่อคน (ข้อมูลไม่ระบุวันที่ เช็กราคาอีกครั้ง)" },
+          "book": "req",
+          "q": "Petra Kitchen, Wadi Musa, Jordan",
+          "ok": "2026-11",
+          "src": "https://visitpetra.jo/en/Thingstodo/15"
+        },
+        {
+          "name": { "en": "Wadi Rum Protected Area", "th": "เขตอนุรักษ์วาดีรัม" },
+          "local": "وادي رم",
+          "kind": "nature",
+          "area": { "en": "Wadi Rum, about 1.5 hours south of Wadi Musa", "th": "วาดีรัม ห่างจากวาดีมูซาไปทางใต้ราว 1.5 ชั่วโมง" },
+          "what": { "en": "A red-sand desert of rock towers, usually seen on a short jeep tour with a stop for Bedouin tea", "th": "ทะเลทรายทรายแดงที่มีเสาหินสูง มักนั่งรถจี๊ปทัวร์สั้น ๆ แวะดื่มชาเบดูอิน" },
+          "why": { "en": "A short jeep loop keeps a small child's day manageable", "th": "ทัวร์รถจี๊ปรอบสั้นช่วยให้วันของเด็กเล็กไม่เหนื่อยเกินไป" },
+          "tip": { "en": "Choose the length of jeep tour to suit the children (2-hour loops exist); wear hats and sun cream", "th": "เลือกความยาวของทัวร์รถจี๊ปให้เหมาะกับเด็ก (มีรอบสองชั่วโมง) ใส่หมวกและทาครีมกันแดด" },
+          "ages": [1, 2, 2, 2],
+          "hrs": 3,
+          "io": "out",
+          "pram": "no",
+          "price": { "en": "Entrance and jeep rates differ by source, check the price", "th": "ค่าเข้าและค่ารถจี๊ปต่างกันตามแหล่งข้อมูล เช็กราคาอีกครั้ง" },
+          "book": "rec",
+          "q": "Wadi Rum Visitor Centre, Jordan",
+          "ok": "2026-11",
+          "src": "https://travelcostcalculator.org/unesco/wadi-rum-protected-area"
+        },
+        {
+          "name": { "en": "Amman Beach, Dead Sea", "th": "แอมมานบีช ทะเลเดดซี" },
+          "local": "شاطئ عمان السياحي",
+          "kind": "beach",
+          "area": { "en": "Dead Sea shore, far north of Petra (a long day trip)", "th": "ชายฝั่งทะเลเดดซี ไกลทางเหนือของเพตรา (เป็นทริปวันเดียวที่ยาว)" },
+          "what": { "en": "The public Dead Sea beach with showers, pools and a mud station, reopened after refurbishment in 2025", "th": "หาดสาธารณะริมทะเลเดดซี มีที่อาบน้ำ สระว่ายน้ำ และมุมโคลน เปิดใหม่หลังปรับปรุงในปี 2025" },
+          "why": { "en": "Government material describes the beach as a family venue with pools, showers and family seating", "th": "เอกสารของรัฐระบุว่าเป็นหาดสำหรับครอบครัว มีสระ ที่อาบน้ำ และที่นั่งสำหรับครอบครัว" },
+          "tip": { "en": "It is far from Petra, so fit it in on the way to or from Amman", "th": "อยู่ไกลจากเพตรา ควรแวะระหว่างทางไปหรือกลับอัมมาน" },
+          "ages": [0, 1, 2, 2],
+          "hrs": 3,
+          "io": "out",
+          "pram": "part",
+          "price": { "en": "≈ 10–15 JOD per person (a 2026 roundup, check the price)", "th": "≈ 10–15 JOD ต่อคน (สรุปปี 2026 เช็กราคาอีกครั้ง)" },
+          "book": "none",
+          "q": "Amman Beach, Dead Sea, Jordan",
+          "ok": "2026-11",
+          "src": "https://wowjordan.com/dead-sea-day-pass-prices"
+        }
+      ]
+    }
+  ]
+}
