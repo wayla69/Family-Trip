@@ -87,7 +87,7 @@ const mock = http.createServer((req, res) => {
       thai: () => JSON.stringify(JSON.parse(facts).map((x) => `ไทย: ${x}`)),
       restsug: () => JSON.stringify({ areas: [{ area: en('Near the inn'), kind: 0, items: [{ name: 'Test Ramen', what: en('Ramen'), pr: '≈ ¥1,000', q: 'Test Ramen, Testland' }] }] }),
     };
-    const ROUTE = () => JSON.stringify({ title: L2('ซากุระทดสอบ', 'Sakura test hop'), place: L2('โตเกียว', 'Tokyo'), countries: ['JP', 'xx1'], tz: 'Asia/Tokyo', from: '2030-01-01', why: L2('ฐานเดียว', 'One base'), season: L2('มักเย็นสบาย', 'Usually mild'), cost: L2('≈ ¥12,000 ต่อวัน', '≈ ¥12,000 a day'), ahead: [L2('ตั๋วรถไฟ', 'Train seats'), '', null],
+    const ROUTE = () => JSON.stringify({ title: L2('ซากุระทดสอบ', 'Sakura test hop'), place: L2('โตเกียว', 'Tokyo'), countries: ['JP', 'xx1'], tz: 'Asia/Tokyo', from: '2030-01-01', why: L2('ฐานเดียว', 'One base'), season: L2('มักเย็นสบาย', 'Usually mild'), cost: L2('≈ ¥12,000 ต่อวัน', '≈ ¥12,000 a day'), money: { cur: 'jpy', stay: [18000, '30,000'], move: [20000], flights: [60000, 90000], junk: 1 }, ahead: [L2('ตั๋วรถไฟ', 'Train seats'), '', null],
       days: [0, 1, 2].map((i) => ({ date: '2030-01-0' + (i + 1), town: i < 2 ? L2('โตเกียว', 'Tokyo') : L2('ฮาโกเนะ', 'Hakone'), title: L2(`วันที่ ${i + 1}`, `Day ${i + 1} in Tokyo`), emoji: '🗼', stops: [L2('สวนอุเอโนะ', 'Ueno Park'), { ...L2('ชื่อที่ผู้ช่วยเขียน', 'As the helper wrote it'), id: 's1' }, ...(i ? [] : [{ ...L2('มุมลับ', 'A secret corner'), new: true }])], sleep: L2('อุเอโนะ', 'Ueno'), kid: L2('เป็ดในสระ', 'Ducks on the pond'), move: i ? '' : L2('รถไฟ ≈ 45 นาที', 'Train ≈ 45 min'), junk: 'x' })) });
     const eatFill = String(b.system).startsWith('You find places to eat');   // the eat library: a town's places, as JSON (with junk to clean)
     const EATS = () => JSON.stringify({ places: [{ name: 'Ichiran Test', zh: '一蘭', kind: 0, area: L2('อุเอโนะ', 'Ueno'), tag: L2('ราเมน', 'Ramen'), what: L2('ราเมน', 'Ramen in booths'), why: L2('เสิร์ฟเร็ว', 'Fast'), pr: L2('≈ ¥1,000', '≈ ¥1,000'), hours: L2('เปิดถึงดึก', 'Open late'), q: 'Ichiran Test, Ueno, Tokyo', st: 'open', url: 'https://example.com/i' },
@@ -734,6 +734,11 @@ try {
   ok(rr.status === 200 && rt.days && rt.days.length === 3 && rt.days.map((d) => d.date).join() === '2027-04-01,2027-04-02,2027-04-03' && rt.countries.join() === 'jp' && rt.title.en === 'Sakura test hop',
     `planner: the route comes back cleaned — the family's dates laid out again, a bad country code dropped (${rr.status} ${JSON.stringify(rj).slice(0, 300)})`);
   const routeCall = calls[c0], rsent = JSON.stringify(routeCall && routeCall.body);
+  { const bg = rt.budget || {}, line = (k) => (bg.lines || []).find((l) => l.k === k) || {};
+    ok(rt.money && rt.money.cur === 'JPY' && rt.money.stay.join() === '18000,30000' && rt.money.move.join() === '20000,20000' && !rt.money.junk
+      && line('stay').cur === 'JPY' && line('stay').lo === 36000 && line('stay').hi === 60000 && line('stay').src === 'helper' && line('move').lo === 20000
+      && !line('flights').k && line('tickets').src === 'lib' && line('tickets').cur === 'JPY' && (bg.totals || []).some((x) => x.cur === 'JPY') && /money.{0,8}cur.{0,8}ISO code/.test(JSON.stringify(calls[c0].body)),
+      `planner (budget B1): the route ask asks for the helper's three numbers; the answer carries a budget — two nights' stay, getting around, tickets from the library's prices, no flights when the family typed theirs (${JSON.stringify(bg)})`); }
   ok(calls.length === c0 + 1 && /Where: Tokyo with the kids/.test(rsent) && /Ueno Zoo/.test(rsent) && !/junk/.test(rsent), 'planner: one call for the route, carrying the answers (unknown fields dropped)');
   ok(/learned on past trips/.test(rsent) && /ยัดลก/.test(rsent) && !/\.jpg|media\//.test(rsent), 'planner: the family\'s lessons from past books go with the route (words only, never a photo)');
   ok(rsent.includes('Places we would love to go to') && rsent.includes(globalThis.__wishName), `planner: the wish list goes with the route (${globalThis.__wishName})`);
