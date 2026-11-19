@@ -1,565 +1,1984 @@
-{ "cc": "au", "towns": [
-  { "place": "au-sydney", "places": [
-    { "name": "Chat Thai Haymarket", "kind": 0,
-      "area": { "th": "เฮย์มาร์เก็ต ไทยทาวน์", "en": "Haymarket, Thai Town" },
-      "tag": { "th": "อาหารไทย", "en": "Thai" },
-      "what": { "th": "ร้านไทยเจ้าดังของซิดนีย์ มีก๋วยเตี๋ยว ข้าวมันไก่ ส้มตำ และขนมไทย รสชาติใกล้เคียงที่บ้าน", "en": "Sydney's best-known Thai restaurant: noodle soups, chicken rice, som tam and Thai sweets that taste close to home" },
-      "why": { "th": "เด็กได้กินข้าวและแกงจืดที่คุ้นปาก อาหารออกเร็ว ไปก่อนหกโมงเย็นคิวสั้น", "en": "Rice and mild soups a Thai child already knows, food comes fast, and the queue is short before six" },
-      "pr": { "th": "≈ A$20–35", "en": "≈ A$20–35" },
-      "q": "Chat Thai Haymarket, Campbell Street, Haymarket, Sydney" },
-    { "name": "Mamak Haymarket", "kind": 0,
-      "area": { "th": "เฮย์มาร์เก็ต ไชน่าทาวน์", "en": "Haymarket, Chinatown" },
-      "tag": { "th": "อาหารมาเลเซีย", "en": "Malaysian" },
-      "what": { "th": "โรตีจาไนแผ่นบางกรอบทำสดหน้าร้าน สะเต๊ะ และนาซิเลอมัก", "en": "Thin, crisp roti canai made at the window, satay and nasi lemak" },
-      "why": { "th": "เด็กยืนดูคนตีแป้งโรตีได้ โรตีจิ้มแกงถั่วไม่เผ็ด ราคาเบา", "en": "Children can watch the roti being stretched; plain roti with dhal is mild and cheap" },
-      "pr": { "th": "≈ A$20–30", "en": "≈ A$20–30" },
-      "q": "Mamak Haymarket, Goulburn Street, Haymarket, Sydney" },
-    { "name": "Din Tai Fung World Square", "zh": "鼎泰豐", "kind": 0,
-      "area": { "th": "เวิลด์สแควร์ ใจกลางเมือง", "en": "World Square, city centre" },
-      "tag": { "th": "เสี่ยวหลงเปา", "en": "Dumplings" },
-      "what": { "th": "เสี่ยวหลงเปา ข้าวผัดไข่ และบะหมี่จากเครือดังของไต้หวัน มองเห็นครัวห่อเกี๊ยวผ่านกระจก", "en": "Xiao long bao, egg fried rice and noodles from the Taiwanese chain, with the dumpling kitchen behind glass" },
-      "why": { "th": "มีเก้าอี้เด็ก ข้าวผัดและซุปไก่รสอ่อน สั่งแล้วทยอยมาเร็ว", "en": "High chairs, mild fried rice and chicken soup, and dishes arrive quickly one by one" },
-      "pr": { "th": "≈ A$30–45", "en": "≈ A$30–45" },
-      "q": "Din Tai Fung World Square, George Street, Sydney" },
-    { "name": "Doyles on the Beach", "kind": 0,
-      "area": { "th": "วัตสันส์เบย์", "en": "Watsons Bay" },
-      "tag": { "th": "ฟิชแอนด์ชิปส์ ซีฟู้ด", "en": "Fish and chips, seafood" },
-      "what": { "th": "ร้านซีฟู้ดของครอบครัวดอยล์ เปิดมาตั้งแต่ปี 1885 ฟิชแอนด์ชิปส์ริมหาด มองเห็นตึกในเมืองข้ามอ่าว", "en": "The Doyle family's seafood restaurant since 1885: fish and chips on the sand with the city skyline across the harbour" },
-      "why": { "th": "นั่งเรือเฟอร์รีมาได้ เด็กเล่นทรายหน้าร้านระหว่างรอ มีเมนูเด็ก", "en": "You arrive by ferry, children play on the beach in front while you wait, and there is a children's menu" },
-      "pr": { "th": "≈ A$40–65", "en": "≈ A$40–65" },
-      "q": "Doyles on the Beach, Marine Parade, Watsons Bay, Sydney" },
-    { "name": "Pancakes on the Rocks", "kind": 0,
-      "area": { "th": "เดอะร็อกส์", "en": "The Rocks" },
-      "tag": { "th": "แพนเค้ก ซี่โครง", "en": "Pancakes, ribs" },
-      "what": { "th": "ร้านแพนเค้กเก่าแก่ตั้งแต่ปี 1975 มีทั้งแพนเค้กหวาน เครป ซี่โครงหมู และพิซซ่า", "en": "A pancake house since 1975, with sweet pancakes, crêpes, pork ribs and pizza" },
-      "why": { "th": "เมนูที่เด็กชอบ โต๊ะบูธกว้าง เดินจากท่าเรือเซอร์คูลาร์คีย์ได้", "en": "Food children like, roomy booths, and a short walk from Circular Quay" },
-      "pr": { "th": "≈ A$25–40", "en": "≈ A$25–40" },
-      "q": "Pancakes on the Rocks, Hickson Road, The Rocks, Sydney" },
-    { "name": "Bills Bondi", "kind": 0,
-      "area": { "th": "หาดบอนได", "en": "Bondi Beach" },
-      "tag": { "th": "บรันช์ออสเตรเลีย", "en": "Australian brunch" },
-      "what": { "th": "ร้านของบิล แกรนเจอร์ ดังเรื่องฮอตเค้กริคอตตาและไข่คนเนื้อนุ่ม เปิดตั้งแต่เช้าถึงมื้อเย็น", "en": "Bill Granger's restaurant, known for ricotta hotcakes and soft scrambled eggs, open from breakfast to dinner" },
-      "why": { "th": "เปิดเช้า เหมาะกับเด็กตื่นไว ฮอตเค้กแบ่งกันได้ ห่างหาดไม่กี่ก้าว", "en": "Opens early for small early risers, hotcakes are easy to share, and the beach is a few steps away" },
-      "pr": { "th": "≈ A$30–45", "en": "≈ A$30–45" },
-      "q": "Bills Bondi, Hall Street, Bondi Beach, Sydney" },
-    { "name": "The Grounds of Alexandria", "kind": 0,
-      "area": { "th": "อเล็กซานเดรีย", "en": "Alexandria" },
-      "tag": { "th": "คาเฟ่ในสวน", "en": "Garden café" },
-      "what": { "th": "โรงงานเก่าที่กลายเป็นคาเฟ่ ร้านขนมอบ และสวน มีมุมสัตว์เลี้ยงในฟาร์มให้เด็กดู", "en": "An old factory turned café, bakery and garden, with a corner of farm animals for children to see" },
-      "why": { "th": "มีที่ให้เด็กเดินเล่นและดูสัตว์ โต๊ะกลางแจ้งเข็นรถเข็นเข้าได้ วันธรรมดาคนน้อยกว่า", "en": "Space to wander and animals to look at, outdoor tables that take a pram, and quieter on weekdays" },
-      "pr": { "th": "≈ A$25–45", "en": "≈ A$25–45" },
-      "q": "The Grounds of Alexandria, Huntley Street, Alexandria, Sydney" },
-    { "name": "The Boathouse Shelly Beach", "kind": 0,
-      "area": { "th": "แมนลี หาดเชลลี", "en": "Manly, Shelly Beach" },
-      "tag": { "th": "อาหารเช้าและกลางวันริมหาด", "en": "Beach breakfast and lunch" },
-      "what": { "th": "ร้านริมหาดเชลลี เสิร์ฟอาหารเช้า ฟิชแอนด์ชิปส์ และสลัด สั่งที่เคาน์เตอร์ ไม่ต้องจอง", "en": "A beach kiosk and dining room on Shelly Beach serving breakfast, fish and chips and salads; order at the counter, no booking" },
-      "why": { "th": "หาดคลื่นเบาอยู่ติดร้าน เดินเลียบทะเลจากแมนลีด้วยรถเข็นได้ นั่งกลางแจ้งได้", "en": "A calm beach beside the tables, a flat seaside walk from Manly with a pram, and outdoor seating" },
-      "pr": { "th": "≈ A$25–40", "en": "≈ A$25–40" },
-      "q": "The Boathouse Shelly Beach, Marine Parade, Manly, Sydney" },
-    { "name": "Aunty Ed's Restaurant and Bar", "kind": 0,
-      "area": { "th": "บลูเมาน์เทนส์ คาทูมบา", "en": "Blue Mountains, Katoomba" },
-      "tag": { "th": "เบอร์เกอร์ มิลก์เชก", "en": "Burgers, milkshakes" },
-      "what": { "th": "ร้านอาหารชั้นใต้ดินตกแต่งย้อนยุคบนถนนคาทูมบา มีเบอร์เกอร์ ไก่ทอด มิลก์เชก และน้ำอัดลมใส่ไอศกรีม", "en": "A retro basement restaurant on Katoomba Street with burgers, fried chicken, milkshakes and ice cream sodas" },
-      "why": { "th": "ร้านเป็นกันเองสำหรับครอบครัว เด็กชอบมิลก์เชกและของตกแต่งย้อนยุค เปิดเฉพาะบางวัน ควรเช็กก่อนไป", "en": "A relaxed family room, children like the milkshakes and the retro decor; open only some days, so check first" },
-      "pr": { "th": "≈ A$25–40", "en": "≈ A$25–40" },
-      "q": "Aunty Ed's Restaurant and Bar, 122 Katoomba Street, Katoomba, Blue Mountains", "ok": "2026-11" },
-    { "name": "Station Bar & Woodfired Pizza", "kind": 0,
-      "area": { "th": "บลูเมาน์เทนส์ คาทูมบา", "en": "Blue Mountains, Katoomba" },
-      "tag": { "th": "พิซซ่าเตาฟืน", "en": "Wood-fired pizza" },
-      "what": { "th": "พิซซ่าเตาฟืนข้างสถานีรถไฟคาทูมบา มีสลัดและของกินเล่นด้วย", "en": "Wood-fired pizza beside Katoomba railway station, with salads and small plates" },
-      "why": { "th": "ลงรถไฟแล้วถึงเลย พิซซ่าแบ่งกันกินง่าย ไปมื้อกลางวันหรือหัวค่ำก่อนร้านคึกคัก", "en": "Right off the train, pizza is easy to share; go for lunch or early evening before it gets lively" },
-      "pr": { "th": "≈ A$25–40", "en": "≈ A$25–40" },
-      "q": "Station Bar & Woodfired Pizza, Katoomba Station, Katoomba, Blue Mountains" },
-    { "name": "Sydney Fish Market", "kind": 1,
-      "area": { "th": "แบล็กวัตเทิลเบย์ ย่านกลีบ", "en": "Blackwattle Bay, Glebe" },
-      "tag": { "th": "ตลาดซีฟู้ด", "en": "Seafood market" },
-      "what": { "th": "ตลาดปลาใหญ่ของซิดนีย์ในอาคารใหม่ริมอ่าว มีหอยนางรม ซาชิมิ กุ้งย่าง และฟิชแอนด์ชิปส์หลายร้าน", "en": "Sydney's big fish market in its new waterfront building: oysters, sashimi, grilled prawns and fish and chips from many stalls" },
-      "why": { "th": "เลือกซื้อทีละอย่างแล้วนั่งกินริมน้ำ เด็กได้ดูปลาและปูตัวใหญ่ ไปช่วงสายคนน้อยกว่าเที่ยง", "en": "Buy a little from each stall and eat by the water; children see big fish and crabs, and mid-morning is quieter than noon" },
-      "pr": { "th": "≈ A$20–45", "en": "≈ A$20–45" },
-      "q": "Sydney Fish Market, 1 Bridge Road, Glebe, Sydney" },
-    { "name": "Harry's Cafe de Wheels", "kind": 1,
-      "area": { "th": "วูลลูมูลู", "en": "Woolloomooloo" },
-      "tag": { "th": "พายเนื้อ", "en": "Meat pies" },
-      "what": { "th": "รถเข็นขายพายริมท่าเรือที่เปิดมาตั้งแต่ทศวรรษ 1930 พายเนื้อราดถั่วบดและมันบดที่เรียกว่าไทเกอร์", "en": "A harbourside pie cart since the 1930s; the Tiger is a beef pie topped with mashed peas, mash and gravy" },
-      "why": { "th": "ได้ของเร็ว ถือกินริมน้ำได้ พายเนื้อและฮอตดอกไม่เผ็ด", "en": "Served in a minute and eaten by the water; the beef pie and hot dog are not spicy" },
-      "pr": { "th": "≈ A$8–15", "en": "≈ A$8–15" },
-      "q": "Harry's Cafe de Wheels, Cowper Wharf Roadway, Woolloomooloo, Sydney" },
-    { "name": "Spice Alley", "kind": 1,
-      "area": { "th": "ชิปเพนเดล ใกล้สถานีเซ็นทรัล", "en": "Chippendale, near Central Station" },
-      "tag": { "th": "ศูนย์อาหารเอเชีย", "en": "Asian hawker lane" },
-      "what": { "th": "ตรอกเล็กประดับโคมไฟ รวมร้านอาหารไทย มาเลเซีย เวียดนาม ญี่ปุ่น และฮ่องกง", "en": "A lantern-lit lane of Thai, Malaysian, Vietnamese, Japanese and Hong Kong stalls" },
-      "why": { "th": "แต่ละคนเลือกร้านของตัวเอง โต๊ะกลางแจ้ง ข้าวมันไก่และบะหมี่น้ำเหมาะกับเด็ก", "en": "Everyone picks their own stall, tables are outdoors, and chicken rice or noodle soup suits a child" },
-      "pr": { "th": "≈ A$15–25", "en": "≈ A$15–25" },
-      "q": "Spice Alley, Kensington Street, Chippendale, Sydney" },
-    { "name": "Mountain High Pies", "kind": 1,
-      "area": { "th": "บลูเมาน์เทนส์ เวนต์เวิร์ทฟอลส์", "en": "Blue Mountains, Wentworth Falls" },
-      "tag": { "th": "พายอบสด", "en": "Fresh pies" },
-      "what": { "th": "ร้านพายริมทางหลวงเกรทเวสเทิร์น มีพายเนื้อ พายไก่ และพายหวาน คนขับรถขึ้นเขาแวะกันประจำ", "en": "A pie shop on the Great Western Highway with beef, chicken and sweet pies, a regular stop on the drive up the mountains" },
-      "why": { "th": "แวะง่ายระหว่างขับรถ จอดหน้าร้าน ได้ของทันที มีโต๊ะนั่งกิน", "en": "An easy stop on the drive with parking outside, served at once, and tables to sit at" },
-      "pr": { "th": "≈ A$8–15", "en": "≈ A$8–15" },
-      "q": "Mountain High Pies, Great Western Highway, Wentworth Falls, Blue Mountains" },
-    { "name": "Gelato Messina Darlinghurst", "kind": 2,
-      "area": { "th": "ดาร์ลิงเฮิร์สต์", "en": "Darlinghurst" },
-      "tag": { "th": "เจลาโต", "en": "Gelato" },
-      "what": { "th": "สาขาแรกของร้านเจลาโตชื่อดังของออสเตรเลีย มีหลายสิบรส และรสพิเศษเปลี่ยนทุกสัปดาห์", "en": "The first shop of Australia's best-known gelato maker, with dozens of flavours and weekly specials" },
-      "why": { "th": "ขอชิมก่อนเลือกได้ มีถ้วยเล็กสำหรับเด็ก ซื้อแล้วเดินกินได้", "en": "You can taste before choosing, there is a small cup for a child, and you can walk on with it" },
-      "pr": { "th": "≈ A$7–12", "en": "≈ A$7–12" },
-      "q": "Gelato Messina Darlinghurst, Victoria Street, Darlinghurst, Sydney" },
-    { "name": "Bourke Street Bakery", "kind": 2,
-      "area": { "th": "เซอร์รีฮิลส์", "en": "Surry Hills" },
-      "tag": { "th": "เบเกอรี่", "en": "Bakery" },
-      "what": { "th": "เบเกอรี่หัวมุมถนนที่คนต่อแถวซื้อไส้กรอกโรล ทาร์ตครีมบรูเลขิง และขนมปังซาวร์โด", "en": "A corner bakery people queue at for sausage rolls, ginger brûlée tarts and sourdough" },
-      "why": { "th": "ของว่างถือกินง่ายสำหรับมือเล็ก เปิดเช้า มีสวนสาธารณะใกล้ๆ ให้นั่งกิน", "en": "Snacks that fit small hands, an early opening, and a park nearby to sit and eat" },
-      "pr": { "th": "≈ A$8–18", "en": "≈ A$8–18" },
-      "q": "Bourke Street Bakery, 633 Bourke Street, Surry Hills, Sydney" },
-    { "name": "Bygone Beautys Treasured Teapot Museum & Tearooms", "kind": 2,
-      "area": { "th": "บลูเมาน์เทนส์ ลูรา", "en": "Blue Mountains, Leura" },
-      "tag": { "th": "ชายามบ่าย สโคน", "en": "Afternoon tea, scones" },
-      "what": { "th": "ห้องน้ำชาแบบอังกฤษกับพิพิธภัณฑ์กาน้ำชาหลายพันใบ เสิร์ฟสโคนกับแยมและครีม และชุดน้ำชายามบ่าย", "en": "An English-style tearoom with a museum of thousands of teapots, serving scones with jam and cream and a full afternoon tea" },
-      "why": { "th": "สโคนและแซนด์วิชกินง่าย เด็กโตชอบดูกาน้ำชารูปแปลกๆ ต้องดูแลเด็กเล็กใกล้ของแตกง่าย", "en": "Scones and sandwiches are easy food, older children like the odd teapots, and little ones need watching near the china" },
-      "pr": { "th": "≈ A$15–60", "en": "≈ A$15–60" },
-      "q": "Bygone Beautys Treasured Teapot Museum & Tearooms, Grose Street, Leura, Blue Mountains" },
-    { "name": "Blue Mountains Chocolate Company", "kind": 2,
-      "area": { "th": "บลูเมาน์เทนส์ คาทูมบา", "en": "Blue Mountains, Katoomba" },
-      "tag": { "th": "ช็อกโกแลตร้อน", "en": "Hot chocolate" },
-      "what": { "th": "ร้านช็อกโกแลตทำมือใกล้จุดชมวิวเอคโคพอยต์ มีช็อกโกแลตร้อนเสิร์ฟบนเตาเทียนอุ่น ไอศกรีม และฟองดู", "en": "A handmade chocolate shop near Echo Point with hot chocolate kept warm over a candle, ice cream and fondue" },
-      "why": { "th": "ที่พักอุ่นๆ หลังดูทรีซิสเตอร์ส เด็กดูช่างทำช็อกโกแลตผ่านกระจกได้", "en": "A warm stop after the Three Sisters, and children can watch chocolate being made through a window" },
-      "pr": { "th": "≈ A$8–18", "en": "≈ A$8–18" },
-      "q": "Blue Mountains Chocolate Company, Lurline Street, Katoomba, Blue Mountains" }
-  ] },
-  { "place": "au-melbourne", "places": [
-    { "name": "Stalactites", "kind": 0,
-      "area": { "th": "ถนนลอนส์เดล ใจกลางเมือง", "en": "Lonsdale Street, city centre" },
-      "tag": { "th": "อาหารกรีก", "en": "Greek" },
-      "what": { "th": "ร้านกรีกของครอบครัวเดียวกันตั้งแต่ปี 1978 ดังเรื่องซูฟลากีเนื้อแกะ ไก่ย่าง และดิปกับขนมปังพิตา", "en": "A Greek restaurant run by one family since 1978, known for lamb souvlaki, grilled chicken and dips with pita" },
-      "why": { "th": "เนื้อย่างกับข้าวและขนมปังแบ่งกันกินง่าย อาหารมาเร็ว เปิดยาวทั้งวัน", "en": "Grilled meat with rice and bread is easy to share, food comes fast, and it is open all day" },
-      "pr": { "th": "≈ A$25–40", "en": "≈ A$25–40" },
-      "q": "Stalactites Restaurant, Lonsdale Street, Melbourne" },
-    { "name": "HuTong Dumpling Bar", "zh": "胡同", "kind": 0,
-      "area": { "th": "ไชน่าทาวน์ มาร์เก็ตเลน", "en": "Chinatown, Market Lane" },
-      "tag": { "th": "เสี่ยวหลงเปา", "en": "Dumplings" },
-      "what": { "th": "ร้านเกี๊ยวชื่อดังของไชน่าทาวน์ มีเสี่ยวหลงเปา เกี๊ยวซ่าทอด และอาหารเซี่ยงไฮ้ มองเห็นคนห่อเกี๊ยวที่ชั้นล่าง", "en": "Chinatown's well-known dumpling house: xiao long bao, pan-fried dumplings and Shanghai dishes, with the makers at work downstairs" },
-      "why": { "th": "เด็กดูคนห่อเกี๊ยวได้ เกี๊ยวนึ่งและข้าวผัดไม่เผ็ด ควรจองมื้อเย็นรอบแรก", "en": "Children can watch the dumplings being folded; steamed dumplings and fried rice are mild, and the first dinner sitting is worth booking" },
-      "pr": { "th": "≈ A$30–45", "en": "≈ A$30–45" },
-      "q": "HuTong Dumpling Bar, Market Lane, Melbourne" },
-    { "name": "Pellegrini's Espresso Bar", "kind": 0,
-      "area": { "th": "ถนนเบิร์ก ใจกลางเมือง", "en": "Bourke Street, city centre" },
-      "tag": { "th": "พาสต้าอิตาเลียน", "en": "Italian pasta" },
-      "what": { "th": "บาร์กาแฟอิตาเลียนตั้งแต่ปี 1954 ไม่มีเมนูกระดาษ มีพาสต้าจานใหญ่แบบทำกินที่บ้าน และน้ำแตงโมปั่น", "en": "An Italian espresso bar since 1954 with no printed menu, big plates of home-style pasta and watermelon granita" },
-      "why": { "th": "พาสต้ามาในไม่กี่นาที จานใหญ่แบ่งกับเด็กได้ ที่นั่งเป็นเคาน์เตอร์ จึงเหมาะกับเด็กที่นั่งเก้าอี้สูงได้", "en": "Pasta arrives in minutes and one plate feeds a child too; seating is at a counter, so it suits a child who can sit on a stool" },
-      "pr": { "th": "≈ A$20–30", "en": "≈ A$20–30" },
-      "q": "Pellegrini's Espresso Bar, 66 Bourke Street, Melbourne" },
-    { "name": "Tiamo", "kind": 0,
-      "area": { "th": "คาร์ลตัน ถนนไลกอน", "en": "Carlton, Lygon Street" },
-      "tag": { "th": "อิตาเลียน", "en": "Italian" },
-      "what": { "th": "ร้านเก่าแก่ของย่านลิตเติลอิตาลี เสิร์ฟพาสต้า พิซซ่า และกาแฟมากว่าสี่สิบปี", "en": "A Little Italy fixture that has served pasta, pizza and coffee for more than forty years" },
-      "why": { "th": "สปาเกตตีซอสมะเขือเทศและพิซซ่าที่เด็กกินได้ บรรยากาศเสียงดังเป็นกันเอง มีโต๊ะริมทางเท้า", "en": "Spaghetti in tomato sauce and pizza a child will eat, a noisy friendly room, and pavement tables" },
-      "pr": { "th": "≈ A$25–40", "en": "≈ A$25–40" },
-      "q": "Tiamo, 303 Lygon Street, Carlton, Melbourne" },
-    { "name": "D.O.C Pizza & Mozzarella Bar", "kind": 0,
-      "area": { "th": "คาร์ลตัน", "en": "Carlton" },
-      "tag": { "th": "พิซซ่า", "en": "Pizza" },
-      "what": { "th": "พิซซ่าแป้งบางแบบอิตาลีกับมอซซาเรลลาสด ร้านที่คนเมลเบิร์นรู้จักดีในย่านคาร์ลตัน", "en": "Thin Italian pizza with fresh mozzarella, a Carlton favourite among Melburnians" },
-      "why": { "th": "พิซซ่ามาร์เกริตาแบ่งกันได้ทั้งโต๊ะ เปิดมื้อเย็นเร็ว เดินจากพิพิธภัณฑ์เมลเบิร์นได้", "en": "A margherita feeds the whole table, dinner starts early, and Melbourne Museum is a walk away" },
-      "pr": { "th": "≈ A$25–40", "en": "≈ A$25–40" },
-      "q": "D.O.C Pizza & Mozzarella Bar, Drummond Street, Carlton, Melbourne" },
-    { "name": "ShanDong MaMa", "zh": "山东妈妈", "kind": 0,
-      "area": { "th": "ถนนเบิร์ก มิดซิตีอาร์เคด", "en": "Bourke Street, Mid City Arcade" },
-      "tag": { "th": "เกี๊ยวซานตง", "en": "Shandong dumplings" },
-      "what": { "th": "ร้านเล็กในอาร์เคด ดังเรื่องเกี๊ยวไส้ปลาแมกเคอเรลเนื้อฟู ทั้งแบบต้มและทอด ราคาไม่แพง", "en": "A small arcade restaurant known for light mackerel dumplings, boiled or fried, at low prices" },
-      "why": { "th": "เกี๊ยวต้มนุ่มไม่เผ็ด เสิร์ฟเร็ว ไปก่อนเที่ยงหรือห้าโมงเย็นมีที่นั่ง", "en": "Boiled dumplings are soft and mild, service is quick, and there are seats before noon or at five" },
-      "pr": { "th": "≈ A$18–30", "en": "≈ A$18–30" },
-      "q": "ShanDong MaMa, Mid City Arcade, 200 Bourke Street, Melbourne" },
-    { "name": "The Hardware Société", "kind": 0,
-      "area": { "th": "ใจกลางเมือง ใกล้ถนนฮาร์ดแวร์", "en": "City centre, near Hardware Street" },
-      "tag": { "th": "บรันช์", "en": "Brunch" },
-      "what": { "th": "ร้านบรันช์แนวฝรั่งเศสที่คนต่อแถวกินไข่อบ เฟรนช์โทสต์บริยอช และกาแฟ", "en": "A French-leaning brunch spot people queue at for baked eggs, brioche French toast and coffee" },
-      "why": { "th": "เปิดเช้า เฟรนช์โทสต์หวานนุ่มถูกปากเด็ก วันธรรมดาคิวสั้นกว่าเสาร์อาทิตย์", "en": "Opens in the morning, the French toast is soft and sweet for a child, and weekdays have shorter queues" },
-      "pr": { "th": "≈ A$25–40", "en": "≈ A$25–40" },
-      "q": "The Hardware Société, Katherine Place, Melbourne" },
-    { "name": "12 Rocks Beach Bar Cafe", "kind": 0,
-      "area": { "th": "เกรทโอเชียนโรด พอร์ตแคมป์เบลล์", "en": "Great Ocean Road, Port Campbell" },
-      "tag": { "th": "ฟิชแอนด์ชิปส์ เบอร์เกอร์", "en": "Fish and chips, burgers" },
-      "what": { "th": "ร้านหน้าอ่าวพอร์ตแคมป์เบลล์ ใกล้ทเวลฟ์อะพอสเซิลส์ที่สุด มีฟิชแอนด์ชิปส์ เบอร์เกอร์ และอาหารเช้า", "en": "A café facing Port Campbell bay, the nearest town to the Twelve Apostles, with fish and chips, burgers and breakfast" },
-      "why": { "th": "หาดเล็กคลื่นเบาอยู่ตรงข้ามร้าน อาหารง่ายๆ ที่เด็กกินได้ จอดรถในเมืองสะดวก", "en": "A small sheltered beach across the road, plain food a child will eat, and easy parking in town" },
-      "pr": { "th": "≈ A$25–40", "en": "≈ A$25–40" },
-      "q": "12 Rocks Beach Bar Cafe, Lord Street, Port Campbell, Victoria" },
-    { "name": "The Bottle of Milk", "kind": 0,
-      "area": { "th": "เกรทโอเชียนโรด ลอร์น", "en": "Great Ocean Road, Lorne" },
-      "tag": { "th": "เบอร์เกอร์", "en": "Burgers" },
-      "what": { "th": "ร้านเบอร์เกอร์บนถนนหลักของลอร์น มีเบอร์เกอร์เนื้อ ไก่ และผัก กับมันฝรั่งทอดและมิลก์เชก", "en": "A burger shop on Lorne's main street with beef, chicken and vegetable burgers, chips and milkshakes" },
-      "why": { "th": "อาหารที่เด็กคุ้น ได้เร็ว อยู่ตรงข้ามหาดและสนามเด็กเล่นริมทะเลของลอร์น", "en": "Familiar food served fast, across the road from Lorne's beach and foreshore playground" },
-      "pr": { "th": "≈ A$18–30", "en": "≈ A$18–30" },
-      "q": "The Bottle of Milk, Mountjoy Parade, Lorne, Victoria" },
-    { "name": "Queen Victoria Market", "kind": 1,
-      "area": { "th": "ทางเหนือของใจกลางเมือง", "en": "North edge of the city centre" },
-      "tag": { "th": "ตลาดและของกินเล่น", "en": "Market and snacks" },
-      "what": { "th": "ตลาดเก่าแก่ที่สุดของเมลเบิร์น มีโดนัทแยมร้อนจากรถตู้ บูเรก ไส้กรอกบราทเวิร์สต์ และผลไม้สด", "en": "Melbourne's oldest market, with hot jam doughnuts from the van, börek, bratwurst and fresh fruit" },
-      "why": { "th": "เดินเลือกของกินทีละอย่าง ทางเดินกว้างเข็นรถเข็นได้ ตลาดปิดบางวัน ควรเช็กวันเปิดก่อนไป", "en": "Graze from stall to stall along wide aisles that take a pram; the market closes some days, so check before going" },
-      "pr": { "th": "≈ A$10–25", "en": "≈ A$10–25" },
-      "q": "Queen Victoria Market, Queen Street, Melbourne" },
-    { "name": "South Melbourne Market", "kind": 1,
-      "area": { "th": "เซาท์เมลเบิร์น", "en": "South Melbourne" },
-      "tag": { "th": "ตลาดและติ่มซำ", "en": "Market and dim sims" },
-      "what": { "th": "ตลาดในร่มที่ดังเรื่องดิมซิมลูกโตแบบเซาท์เมลเบิร์น หอยนางรมสด ปาเอญา และร้านขนมอบ", "en": "A covered market known for big South Melbourne dim sims, fresh oysters, paella and bakeries" },
-      "why": { "th": "ดิมซิมนึ่งลูกเดียวก็อิ่มสำหรับเด็ก มีโต๊ะนั่งรวม นั่งรถรางมาจากในเมืองได้", "en": "One steamed dim sim fills a child, there are shared tables, and a tram runs from the city" },
-      "pr": { "th": "≈ A$10–25", "en": "≈ A$10–25" },
-      "q": "South Melbourne Market, Coventry Street, South Melbourne" },
-    { "name": "Apollo Bay Fishermen's Co-op", "kind": 1,
-      "area": { "th": "เกรทโอเชียนโรด อะพอลโลเบย์", "en": "Great Ocean Road, Apollo Bay" },
-      "tag": { "th": "ฟิชแอนด์ชิปส์", "en": "Fish and chips" },
-      "what": { "th": "สหกรณ์ชาวประมงที่ท่าเรืออะพอลโลเบย์ ขายปลาจากเรือและฟิชแอนด์ชิปส์ทอดใหม่ กุ้งล็อบสเตอร์ตามฤดู", "en": "The fishermen's co-operative on Apollo Bay harbour sells the boats' catch and fresh fish and chips, with rock lobster in season" },
-      "why": { "th": "นั่งกินโต๊ะกลางแจ้งดูเรือประมง เด็กวิ่งเล่นริมท่าได้ ราคาไม่แรง", "en": "Eat at outdoor tables watching the fishing boats, with room for children to run about, at fair prices" },
-      "pr": { "th": "≈ A$15–30", "en": "≈ A$15–30" },
-      "q": "Apollo Bay Fishermen's Co-op, Breakwater Road, Apollo Bay, Victoria" },
-    { "name": "Brunetti Classico", "kind": 2,
-      "area": { "th": "คาร์ลตัน ถนนไลกอน", "en": "Carlton, Lygon Street" },
-      "tag": { "th": "ขนมอิตาเลียน เจลาโต", "en": "Italian cakes, gelato" },
-      "what": { "th": "ร้านขนมอิตาเลียนขนาดใหญ่ ตู้กระจกยาวเต็มไปด้วยเค้ก คันโนลี บิสกิต และเจลาโต", "en": "A large Italian pasticceria with long glass counters of cakes, cannoli, biscuits and gelato" },
-      "why": { "th": "เด็กชี้เลือกขนมจากตู้ได้ ร้านกว้าง เข็นรถเข็นเข้าได้ เปิดถึงค่ำ", "en": "A child can point at a cake in the counter, the room is big enough for a pram, and it stays open into the evening" },
-      "pr": { "th": "≈ A$8–20", "en": "≈ A$8–20" },
-      "q": "Brunetti Classico, 380 Lygon Street, Carlton, Melbourne" },
-    { "name": "Lune Croissanterie", "kind": 2,
-      "area": { "th": "ฟิตซ์รอย", "en": "Fitzroy" },
-      "tag": { "th": "ครัวซองต์", "en": "Croissants" },
-      "what": { "th": "ร้านครัวซองต์ที่คนเดินทางมาต่อแถว อบในห้องกระจกกลางโกดังเก่า มีทั้งครัวซองต์เนยและครัวซองต์อัลมอนด์", "en": "A croissant bakery people travel to queue for, baking in a glass room inside an old warehouse; plain and almond croissants" },
-      "why": { "th": "เด็กดูคนพับแป้งผ่านกระจกได้ ครัวซองต์เนยกินง่าย ไปเช้าวันธรรมดาคิวสั้น", "en": "Children watch the pastry being rolled through the glass, a plain croissant is easy food, and weekday mornings have short queues" },
-      "pr": { "th": "≈ A$8–18", "en": "≈ A$8–18" },
-      "q": "Lune Croissanterie, Rose Street, Fitzroy, Melbourne" },
-    { "name": "The Tea Rooms 1892", "kind": 2,
-      "area": { "th": "บล็อกอาร์เคด ถนนคอลลินส์", "en": "Block Arcade, Collins Street" },
-      "tag": { "th": "เค้กและชายามบ่าย", "en": "Cakes and afternoon tea" },
-      "what": { "th": "ห้องน้ำชาเก่าแก่ในบล็อกอาร์เคด เดิมชื่อโฮปทูนทีรูมส์ ตู้เค้กหน้าร้านเป็นภาพที่คนถ่ายรูปกันมาก", "en": "The historic tearoom in the Block Arcade, formerly the Hopetoun Tea Rooms, with a much-photographed window of cakes" },
-      "why": { "th": "เด็กเลือกเค้กจากตู้หน้าร้านได้ มีสโคนและแซนด์วิช ร้านเล็ก ควรพับรถเข็น", "en": "A child can choose a cake from the window, there are scones and sandwiches, and the room is small so fold the pram" },
-      "pr": { "th": "≈ A$15–40", "en": "≈ A$15–40" },
-      "q": "The Tea Rooms 1892, Block Arcade, 282 Collins Street, Melbourne" },
-    { "name": "Great Ocean Road Chocolaterie & Ice Creamery", "kind": 2,
-      "area": { "th": "เกรทโอเชียนโรด เบลล์เบร ใกล้ทอร์คีย์", "en": "Great Ocean Road, Bellbrae near Torquay" },
-      "tag": { "th": "ช็อกโกแลต ไอศกรีม", "en": "Chocolate, ice cream" },
-      "what": { "th": "โรงช็อกโกแลตขนาดใหญ่ช่วงต้นเกรทโอเชียนโรด มีช็อกโกแลตให้ชิม ไอศกรีมทำเอง และคาเฟ่", "en": "A big chocolate works near the start of the Great Ocean Road with tastings, house-made ice cream and a café" },
-      "why": { "th": "มีสนามหญ้าและสนามเด็กเล่นกลางแจ้ง ที่จอดรถกว้าง เด็กดูช่างทำช็อกโกแลตผ่านกระจกได้", "en": "Lawns and an outdoor playground, plenty of parking, and children watch the chocolatiers through glass" },
-      "pr": { "th": "≈ A$8–25", "en": "≈ A$8–25" },
-      "q": "Great Ocean Road Chocolaterie & Ice Creamery, Bellbrae, Victoria" }
-  ] },
-  { "place": "au-goldcoast", "places": [
-    { "name": "Hard Rock Cafe Surfers Paradise", "kind": 0,
-      "area": { "th": "โกลด์โคสต์ เซิร์ฟเฟอร์สพาราไดซ์", "en": "Gold Coast, Surfers Paradise" },
-      "tag": { "th": "เบอร์เกอร์อเมริกัน", "en": "American burgers" },
-      "what": { "th": "สาขาโกลด์โคสต์ของเครือฮาร์ดร็อก มีเบอร์เกอร์ ซี่โครง และของสะสมนักดนตรีบนผนัง อยู่ตรงถนนคาวิลล์", "en": "The Gold Coast branch of the chain, with burgers, ribs and music memorabilia on the walls, on Cavill Avenue" },
-      "why": { "th": "มีเมนูเด็กและเก้าอี้เด็ก ร้านเสียงดังอยู่แล้ว เด็กส่งเสียงได้ไม่ต้องเกรงใจ", "en": "A children's menu and high chairs, and a room already loud enough that a noisy child bothers nobody" },
-      "pr": { "th": "≈ A$30–50", "en": "≈ A$30–50" },
-      "q": "Hard Rock Cafe Surfers Paradise, Cavill Avenue, Surfers Paradise, Gold Coast" },
-    { "name": "Pancakes in Paradise", "kind": 0,
-      "area": { "th": "โกลด์โคสต์ เซิร์ฟเฟอร์สพาราไดซ์", "en": "Gold Coast, Surfers Paradise" },
-      "tag": { "th": "แพนเค้ก", "en": "Pancakes" },
-      "what": { "th": "ร้านแพนเค้กที่เปิดมาตั้งแต่ปี 1994 มีแพนเค้กหวาน เครปคาว และอาหารเช้าจานใหญ่", "en": "A pancake restaurant open since 1994 with sweet pancakes, savoury crêpes and big breakfasts" },
-      "why": { "th": "เปิดเช้า มีเมนูเด็ก แพนเค้กแบ่งกันได้ อยู่ไม่ไกลหาด", "en": "Opens in the morning, has a children's menu, pancakes are easy to share, and the beach is close" },
-      "pr": { "th": "≈ A$20–35", "en": "≈ A$20–35" },
-      "q": "Pancakes in Paradise, 3046 Surfers Paradise Boulevard, Surfers Paradise, Gold Coast" },
-    { "name": "Betty's Burgers Surfers Paradise", "kind": 0,
-      "area": { "th": "โกลด์โคสต์ เซิร์ฟเฟอร์สพาราไดซ์", "en": "Gold Coast, Surfers Paradise" },
-      "tag": { "th": "เบอร์เกอร์ คัสตาร์ดแช่แข็ง", "en": "Burgers, frozen custard" },
-      "what": { "th": "เครือเบอร์เกอร์จากควีนส์แลนด์ มีเบอร์เกอร์เนื้อ ไก่ทอด มันฝรั่งทอด และคัสตาร์ดแช่แข็งที่เรียกว่าคอนครีต", "en": "A Queensland-born burger chain with beef and fried chicken burgers, chips and frozen custard called concretes" },
-      "why": { "th": "สั่งที่เคาน์เตอร์ ได้เร็ว มีชุดเด็ก นั่งได้ทั้งในร้านและนอกร้าน", "en": "Order at the counter and eat within minutes; there is a children's meal and seating inside and out" },
-      "pr": { "th": "≈ A$18–28", "en": "≈ A$18–28" },
-      "q": "Betty's Burgers Surfers Paradise, Chevron Renaissance, Surfers Paradise, Gold Coast" },
-    { "name": "Currumbin Beach Vikings Surf Life Saving Club", "kind": 0,
-      "area": { "th": "โกลด์โคสต์ เคอร์รัมบิน", "en": "Gold Coast, Currumbin" },
-      "tag": { "th": "บิสโทรริมหาด", "en": "Surf club bistro" },
-      "what": { "th": "ห้องอาหารของสโมสรไลฟ์การ์ดที่ตั้งอยู่บนโขดหินริมทะเล มีฟิชแอนด์ชิปส์ สเต๊ก และซีฟู้ด", "en": "The dining room of a surf lifesaving club built on the rocks above the sea, with fish and chips, steak and seafood" },
-      "why": { "th": "สโมสรเซิร์ฟต้อนรับครอบครัว มีเมนูเด็ก เห็นทะเลรอบด้าน อยู่ใกล้สวนสัตว์เคอร์รัมบิน", "en": "Surf clubs welcome families and have children's menus; sea on every side, and close to Currumbin Wildlife Sanctuary" },
-      "pr": { "th": "≈ A$25–45", "en": "≈ A$25–45" },
-      "q": "Currumbin Beach Vikings Surf Life Saving Club, Pacific Parade, Currumbin, Gold Coast" },
-    { "name": "Cav's Steakhouse", "kind": 0,
-      "area": { "th": "โกลด์โคสต์ แลบราดอร์", "en": "Gold Coast, Labrador" },
-      "tag": { "th": "สเต๊ก", "en": "Steak" },
-      "what": { "th": "ร้านสเต๊กเก่าแก่ของโกลด์โคสต์ มีร้านเนื้อของตัวเอง บ่มเนื้อเอง เลือกชิ้นเนื้อจากตู้ได้", "en": "A long-running Gold Coast steakhouse with its own butchery, ageing its beef in-house; you can pick your cut from the cabinet" },
-      "why": { "th": "เปิดมื้อเย็นเร็ว ร้านครอบครัวแบบดั้งเดิม เนื้อกับมันฝรั่งที่เด็กแบ่งกินได้", "en": "Dinner starts early in an old-style family room, and steak with potatoes is easy to share with a child" },
-      "pr": { "th": "≈ A$40–70", "en": "≈ A$40–70" },
-      "q": "Cav's Steakhouse, Frank Street, Labrador, Gold Coast" },
-    { "name": "Julius Pizzeria", "kind": 0,
-      "area": { "th": "บริสเบน เซาท์บริสเบน", "en": "Brisbane, South Brisbane" },
-      "tag": { "th": "พิซซ่า พาสต้า", "en": "Pizza, pasta" },
-      "what": { "th": "พิซซ่าเตาฟืนและพาสต้าทำเองในย่านวัฒนธรรมของบริสเบน ใกล้หอศิลป์และพิพิธภัณฑ์", "en": "Wood-fired pizza and house-made pasta in Brisbane's cultural precinct, near the galleries and museum" },
-      "why": { "th": "พิซซ่าแบ่งกันได้ เปิดมื้อเย็นเร็ว เดินจากเซาท์แบงก์ได้ ควรจองหรือไปตอนร้านเปิด", "en": "Pizza to share, an early dinner service, and a walk from South Bank; book or arrive at opening" },
-      "pr": { "th": "≈ A$30–45", "en": "≈ A$30–45" },
-      "q": "Julius Pizzeria, 77 Grey Street, South Brisbane" },
-    { "name": "Pancake Manor", "kind": 0,
-      "area": { "th": "บริสเบน ใจกลางเมือง", "en": "Brisbane city centre" },
-      "tag": { "th": "แพนเค้ก", "en": "Pancakes" },
-      "what": { "th": "ร้านแพนเค้กในโบสถ์อิฐเก่า เปิดมาตั้งแต่ปี 1979 มีแพนเค้ก เครป และอาหารจานหลัก", "en": "A pancake house inside an old brick church, open since 1979, with pancakes, crêpes and main dishes" },
-      "why": { "th": "เปิดทุกช่วงเวลา มีเมนูเด็ก โต๊ะบูธกว้าง เด็กชอบเพดานโบสถ์สูง", "en": "Open at any hour with a children's menu and roomy booths, and children like the high church ceiling" },
-      "pr": { "th": "≈ A$20–35", "en": "≈ A$20–35" },
-      "q": "Pancake Manor, 18 Charlotte Street, Brisbane" },
-    { "name": "Harajuku Gyoza South Bank", "kind": 0,
-      "area": { "th": "บริสเบน เซาท์แบงก์", "en": "Brisbane, South Bank" },
-      "tag": { "th": "เกี๊ยวซ่า", "en": "Gyoza" },
-      "what": { "th": "ร้านเกี๊ยวซ่าสีสันสดใส มีเกี๊ยวซ่าทอดและนึ่ง ราเมน และเกี๊ยวซ่าของหวาน พนักงานร้องทักเสียงดัง", "en": "A bright gyoza restaurant with fried and steamed gyoza, ramen and dessert gyoza, and staff who shout a welcome" },
-      "why": { "th": "จานเล็กมาเร็ว เด็กหยิบกินเองได้ อยู่ติดสวนเซาท์แบงก์และสระน้ำเด็ก", "en": "Small plates come fast and suit little hands, right by the South Bank parklands and water play" },
-      "pr": { "th": "≈ A$25–40", "en": "≈ A$25–40" },
-      "q": "Harajuku Gyoza South Bank, 184 Grey Street, South Brisbane" },
-    { "name": "Charis Seafoods", "kind": 1,
-      "area": { "th": "โกลด์โคสต์ แลบราดอร์", "en": "Gold Coast, Labrador" },
-      "tag": { "th": "ฟิชแอนด์ชิปส์ ซีฟู้ด", "en": "Fish and chips, seafood" },
-      "what": { "th": "ร้านขายซีฟู้ดริมบรอดวอเตอร์ มีกุ้งสด หอยนางรม และฟิชแอนด์ชิปส์ ช่วงบ่ายมีการให้อาหารนกพีลิแคนหน้าร้าน", "en": "A seafood shop on the Broadwater with fresh prawns, oysters and fish and chips; pelicans are fed outside in the early afternoon" },
-      "why": { "th": "เด็กได้ดูนกพีลิแคนฝูงใหญ่ใกล้ๆ นั่งกินในสวนริมน้ำ มีสนามเด็กเล่นใกล้ร้าน", "en": "Children see a crowd of pelicans up close, you eat in the waterside park, and a playground is nearby" },
-      "pr": { "th": "≈ A$15–30", "en": "≈ A$15–30" },
-      "q": "Charis Seafoods, 371 Marine Parade, Labrador, Gold Coast" },
-    { "name": "Miami Marketta", "kind": 1,
-      "area": { "th": "โกลด์โคสต์ ไมอามี", "en": "Gold Coast, Miami" },
-      "tag": { "th": "ตลาดอาหารกลางคืน", "en": "Night food market" },
-      "what": { "th": "ตลาดสตรีทฟู้ดในโกดังเก่า มีร้านอาหารนานาชาติ ของหวาน และดนตรีสด เปิดเฉพาะบางเย็นของสัปดาห์", "en": "A street food market in an old warehouse with stalls from many countries, desserts and live music, open on certain evenings only" },
-      "why": { "th": "แต่ละคนเลือกของตัวเอง โต๊ะยาวนั่งรวม ไปตอนเปิดคนยังไม่แน่น ควรเช็กวันเปิดก่อน", "en": "Everyone chooses their own food at long shared tables; go at opening before the crowd, and check the opening days first" },
-      "pr": { "th": "≈ A$15–30", "en": "≈ A$15–30" },
-      "q": "Miami Marketta, Hillcrest Parade, Miami, Gold Coast" },
-    { "name": "Eat Street Northshore", "kind": 1,
-      "area": { "th": "บริสเบน แฮมิลตัน ริมแม่น้ำ", "en": "Brisbane, Hamilton riverside" },
-      "tag": { "th": "ตลาดอาหารกลางคืน", "en": "Night food market" },
-      "what": { "th": "ตลาดอาหารริมแม่น้ำบริสเบนที่สร้างจากตู้คอนเทนเนอร์ มีร้านของกินนับร้อยและไฟประดับ เปิดช่วงเย็นวันสุดสัปดาห์", "en": "A riverside market built from shipping containers with scores of food stalls and fairy lights, open on weekend evenings" },
-      "why": { "th": "เด็กชอบไฟและดนตรี ของกินเล่นหลากหลาย ไปตั้งแต่ตลาดเปิดจะหาโต๊ะง่าย มีค่าเข้าเล็กน้อย", "en": "Children like the lights and music and there is plenty to nibble; arrive at opening for a table, and there is a small entry fee" },
-      "pr": { "th": "≈ A$20–35", "en": "≈ A$20–35" },
-      "q": "Eat Street Northshore, MacArthur Avenue, Hamilton, Brisbane" },
-    { "name": "Paddock Bakery", "kind": 2,
-      "area": { "th": "โกลด์โคสต์ ไมอามี", "en": "Gold Coast, Miami" },
-      "tag": { "th": "เบเกอรี่ คาเฟ่", "en": "Bakery café" },
-      "what": { "th": "เบเกอรี่ในบ้านไม้เก่า อบขนมปังซาวร์โดด้วยเตาฟืน มีโดนัทไส้ครีม ครัวซองต์ และอาหารเช้า", "en": "A bakery in an old timber cottage baking sourdough in a wood oven, with filled doughnuts, croissants and breakfast" },
-      "why": { "th": "นั่งในสวนหน้าบ้านได้ เปิดเช้า ขนมอบหลายอย่างให้เด็กเลือก", "en": "Garden seating out the front, an early opening, and plenty of baked things for a child to choose from" },
-      "pr": { "th": "≈ A$12–28", "en": "≈ A$12–28" },
-      "q": "Paddock Bakery, Hibiscus Haven, Miami, Gold Coast" },
-    { "name": "Gelato Messina South Brisbane", "kind": 2,
-      "area": { "th": "บริสเบน เซาท์บริสเบน", "en": "Brisbane, South Brisbane" },
-      "tag": { "th": "เจลาโต", "en": "Gelato" },
-      "what": { "th": "สาขาบริสเบนของร้านเจลาโตดังจากซิดนีย์ มีหลายสิบรสและรสพิเศษประจำสัปดาห์", "en": "The Brisbane shop of the Sydney gelato maker, with dozens of flavours and weekly specials" },
-      "why": { "th": "ขอชิมก่อนได้ มีถ้วยเล็ก เดินไปกินที่สวนเซาท์แบงก์ได้", "en": "Tastes before you choose, a small cup for a child, and the South Bank parklands are a walk away" },
-      "pr": { "th": "≈ A$7–12", "en": "≈ A$7–12" },
-      "q": "Gelato Messina South Brisbane, Melbourne Street, South Brisbane" },
-    { "name": "Lune Croissanterie South Brisbane", "kind": 2,
-      "area": { "th": "บริสเบน เซาท์บริสเบน", "en": "Brisbane, South Brisbane" },
-      "tag": { "th": "ครัวซองต์", "en": "Croissants" },
-      "what": { "th": "สาขาบริสเบนของร้านครัวซองต์ดังจากเมลเบิร์น อบในห้องกระจกกลางร้านให้ลูกค้าเห็น", "en": "The Brisbane branch of Melbourne's well-known croissant bakery, baking in a glass room in the middle of the shop" },
-      "why": { "th": "ครัวซองต์เนยกินง่าย เด็กดูคนทำผ่านกระจกได้ ไปเช้าของยังครบ", "en": "A plain croissant is easy food, children watch the bakers through glass, and mornings have the full range" },
-      "pr": { "th": "≈ A$8–18", "en": "≈ A$8–18" },
-      "q": "Lune Croissanterie, Manning Street, South Brisbane" }
-  ] },
-  { "place": "au-cairns", "places": [
-    { "name": "Prawn Star", "kind": 0,
-      "area": { "th": "แคนส์ ท่าเรือมาร์ลินมารีนา", "en": "Cairns, Marlin Marina" },
-      "tag": { "th": "ซีฟู้ดบนเรือ", "en": "Seafood on a boat" },
-      "what": { "th": "เรือประมงที่จอดในมารีนา เสิร์ฟกุ้งต้ม หอยนางรม ปู และกั้งเป็นถาดรวม กินกันบนดาดฟ้าเรือ", "en": "Fishing trawlers moored in the marina serving platters of cooked prawns, oysters, crab and bugs, eaten on deck" },
-      "why": { "th": "เด็กตื่นเต้นที่ได้กินบนเรือ กุ้งต้มไม่ปรุงรส แกะให้เด็กกินได้ ไม่รับจอง ไปเร็วได้ที่นั่ง", "en": "Eating on a boat is an adventure for a child and plain cooked prawns are easy to peel for them; no bookings, so go early" },
-      "pr": { "th": "≈ A$30–55", "en": "≈ A$30–55" },
-      "q": "Prawn Star, Marlin Marina, Pier Point Road, Cairns" },
-    { "name": "Dundee's Restaurant on the Waterfront", "kind": 0,
-      "area": { "th": "แคนส์ ริมมารีนา", "en": "Cairns waterfront" },
-      "tag": { "th": "ซีฟู้ด สเต๊ก", "en": "Seafood, steak" },
-      "what": { "th": "ร้านริมทางเดินเลียบมารีนา มีปลากะพงขาว ซีฟู้ด สเต๊ก และเนื้อพื้นถิ่นออสเตรเลียอย่างจิงโจ้และจระเข้", "en": "A boardwalk restaurant by the marina with barramundi, seafood, steak and Australian meats such as kangaroo and crocodile" },
-      "why": { "th": "มีเมนูเด็ก โต๊ะกลางแจ้งริมน้ำ เปิดมื้อเย็นเร็ว เดินจากลากูนของแคนส์ได้", "en": "A children's menu, outdoor tables by the water, early dinner, and a walk from the Cairns lagoon" },
-      "pr": { "th": "≈ A$40–65", "en": "≈ A$40–65" },
-      "q": "Dundee's Restaurant on the Waterfront, Harbour Lights, Cairns" },
-    { "name": "Ochre Restaurant", "kind": 0,
-      "area": { "th": "แคนส์ ริมมารีนา", "en": "Cairns waterfront" },
-      "tag": { "th": "อาหารออสเตรเลียพื้นถิ่น", "en": "Australian native food" },
-      "what": { "th": "ร้านที่ใช้วัตถุดิบพื้นถิ่นออสเตรเลียมานาน เช่น วอตเทิลซีด เลมอนเมอร์เทิล เนื้อจิงโจ้ และปลากะพงขาว", "en": "A long-running restaurant built on Australian native ingredients such as wattleseed, lemon myrtle, kangaroo and barramundi" },
-      "why": { "th": "มีเมนูเด็ก นั่งริมน้ำได้ เหมาะกับมื้อเย็นรอบแรกที่ร้านยังเงียบ", "en": "A children's menu and waterside seating; best at the first dinner sitting while the room is quiet" },
-      "pr": { "th": "≈ A$45–75", "en": "≈ A$45–75" },
-      "q": "Ochre Restaurant, Harbour Lights, Marlin Parade, Cairns" },
-    { "name": "Perrotta's at the Gallery", "kind": 0,
-      "area": { "th": "แคนส์ ใจกลางเมือง", "en": "Cairns city centre" },
-      "tag": { "th": "อิตาเลียน บรันช์", "en": "Italian, brunch" },
-      "what": { "th": "ร้านโปร่งโล่งติดหอศิลป์แคนส์ เปิดตั้งแต่อาหารเช้า มีพาสต้า พิซซ่า และกาแฟ", "en": "An open-air restaurant beside the Cairns Art Gallery, open from breakfast, with pasta, pizza and coffee" },
-      "why": { "th": "นั่งบนระเบียงโล่ง เข็นรถเข็นเข้าได้ เปิดเช้า พาสต้าและพิซซ่าที่เด็กกินได้", "en": "A breezy deck that takes a pram, an early opening, and pasta and pizza a child will eat" },
-      "pr": { "th": "≈ A$25–45", "en": "≈ A$25–45" },
-      "q": "Perrotta's at the Gallery, Abbott Street, Cairns" },
-    { "name": "Bayleaf Balinese Restaurant", "kind": 0,
-      "area": { "th": "แคนส์ ทางเหนือของใจกลางเมือง", "en": "Cairns, north of the centre" },
-      "tag": { "th": "อาหารบาหลี", "en": "Balinese" },
-      "what": { "th": "ร้านอาหารบาหลีที่เปิดมานาน มีสะเต๊ะ นาซิโกเร็ง เป็ดกรอบ และชุดไรซ์ทาเฟิลหลายจานเล็ก", "en": "A long-running Balinese restaurant with satay, nasi goreng, crisp duck and a rijsttafel of many small dishes" },
-      "why": { "th": "ข้าวผัดและสะเต๊ะคุ้นปากเด็กไทย ขอไม่เผ็ดได้ นั่งในสวนได้", "en": "Fried rice and satay are familiar to a Thai child, dishes can be made mild, and there is garden seating" },
-      "pr": { "th": "≈ A$35–55", "en": "≈ A$35–55" },
-      "q": "Bayleaf Balinese Restaurant, Lake Street, Cairns" },
-    { "name": "Salt House", "kind": 0,
-      "area": { "th": "แคนส์ ท่าเรือมาร์ลินมารีนา", "en": "Cairns, Marlin Marina" },
-      "tag": { "th": "ซีฟู้ด พิซซ่า", "en": "Seafood, pizza" },
-      "what": { "th": "ร้านกลางแจ้งขนาดใหญ่ปลายมารีนา มีซีฟู้ดย่าง พิซซ่าเตาฟืน และเนื้อย่างไฟ มองเห็นเรือและภูเขา", "en": "A large open-air venue at the end of the marina with grilled seafood, wood-fired pizza and meat off the fire, facing boats and hills" },
-      "why": { "th": "พื้นที่โล่ง เข็นรถเข็นได้ มีเมนูเด็ก ไปมื้อกลางวันหรือเย็นเร็วก่อนโซนบาร์คึกคัก", "en": "Open space that takes a pram and a children's menu; go for lunch or an early dinner before the bar side gets busy" },
-      "pr": { "th": "≈ A$35–60", "en": "≈ A$35–60" },
-      "q": "Salt House, Marina Point, Pier Point Road, Cairns" },
-    { "name": "Salsa Bar & Grill", "kind": 0,
-      "area": { "th": "พอร์ตดักลาส", "en": "Port Douglas" },
-      "tag": { "th": "อาหารออสเตรเลียร่วมสมัย", "en": "Modern Australian" },
-      "what": { "th": "ร้านในบ้านไม้ควีนส์แลนเดอร์ที่เปิดมากว่าสามสิบปี ดังเรื่องซีฟู้ดท้องถิ่นและจานผสมรสเขตร้อน", "en": "A restaurant in a timber Queenslander open for more than thirty years, known for local seafood and tropical flavours" },
-      "why": { "th": "มีเมนูเด็ก นั่งบนระเบียงโล่ง สวนสาธารณะริมน้ำอยู่ฝั่งตรงข้าม ควรจองล่วงหน้า", "en": "A children's menu, a breezy verandah, and the waterfront park across the road; book ahead" },
-      "pr": { "th": "≈ A$45–75", "en": "≈ A$45–75" },
-      "q": "Salsa Bar & Grill, 26 Wharf Street, Port Douglas" },
-    { "name": "The Tin Shed", "kind": 0,
-      "area": { "th": "พอร์ตดักลาส ริมอ่าว", "en": "Port Douglas, on the inlet" },
-      "tag": { "th": "บิสโทรริมน้ำ", "en": "Waterfront bistro" },
-      "what": { "th": "สโมสรชุมชนริมอ่าวดิกคินสัน ขายฟิชแอนด์ชิปส์ กุ้ง และสเต๊กในราคาคนท้องถิ่น ดูพระอาทิตย์ตกเหนือภูเขา", "en": "The community club on Dickson Inlet selling fish and chips, prawns and steak at locals' prices, with sunset over the ranges" },
-      "why": { "th": "ระเบียงกว้างริมน้ำ มีเมนูเด็ก สั่งที่เคาน์เตอร์ เด็กดูเรือเข้าออกได้ ต้องลงชื่อเข้าที่ประตู", "en": "A wide waterside deck, a children's menu and counter ordering; children watch the boats come in, and visitors sign in at the door" },
-      "pr": { "th": "≈ A$25–40", "en": "≈ A$25–40" },
-      "q": "The Tin Shed, Ashford Avenue, Port Douglas" },
-    { "name": "Vivo Palm Cove", "kind": 0,
-      "area": { "th": "ปาล์มโคฟ", "en": "Palm Cove" },
-      "tag": { "th": "อาหารนานาชาติริมหาด", "en": "Beachfront dining" },
-      "what": { "th": "ร้านแบบเปิดโล่งบนถนนเลียบหาดปาล์มโคฟ ใต้ต้นเมลาลูคาเก่าแก่ เปิดตั้งแต่อาหารเช้าถึงมื้อเย็น", "en": "An open-sided restaurant on Palm Cove's esplanade under old melaleuca trees, open from breakfast to dinner" },
-      "why": { "th": "หาดและสนามเด็กเล่นอยู่ฝั่งตรงข้ามถนน นั่งกลางแจ้งได้ มีเมนูเด็ก", "en": "The beach and a playground are across the road, there is outdoor seating, and a children's menu" },
-      "pr": { "th": "≈ A$30–55", "en": "≈ A$30–55" },
-      "q": "Vivo Palm Cove, 49 Williams Esplanade, Palm Cove" },
-    { "name": "Rusty's Markets", "kind": 1,
-      "area": { "th": "แคนส์ ใจกลางเมือง", "en": "Cairns city centre" },
-      "tag": { "th": "ตลาดผลไม้เขตร้อน", "en": "Tropical fruit market" },
-      "what": { "th": "ตลาดสดของแคนส์ เปิดวันศุกร์ถึงอาทิตย์ มีผลไม้เขตร้อน น้ำอ้อยคั้นสด ขนมอบ และร้านอาหารเอเชีย", "en": "Cairns' produce market, open Friday to Sunday, with tropical fruit, fresh cane juice, baked goods and Asian food stalls" },
-      "why": { "th": "ผลไม้หั่นพร้อมกินและน้ำผลไม้ปั่นสำหรับเด็ก เดินดูสนุก ไปช่วงเช้าอากาศยังไม่ร้อน", "en": "Cut fruit and smoothies for a child and plenty to look at; go in the morning before the heat" },
-      "pr": { "th": "≈ A$8–20", "en": "≈ A$8–20" },
-      "q": "Rusty's Markets, Grafton Street, Cairns" },
-    { "name": "Cairns Night Markets", "kind": 1,
-      "area": { "th": "แคนส์ เอสพลานาด", "en": "Cairns Esplanade" },
-      "tag": { "th": "ศูนย์อาหาร", "en": "Food court" },
-      "what": { "th": "ตลาดกลางคืนติดเอสพลานาด ด้านหน้าเป็นศูนย์อาหาร มีอาหารเอเชียแบบตักขาย ซีฟู้ด และไอศกรีม", "en": "The night market off the Esplanade, with a food court at the front selling Asian dishes by the plate, seafood and ice cream" },
-      "why": { "th": "ราคาถูก ได้อาหารทันที มีข้าวและบะหมี่ที่เด็กไทยคุ้น เปิดทุกเย็น", "en": "Cheap and immediate, with rice and noodles a Thai child knows, and open every evening" },
-      "pr": { "th": "≈ A$12–22", "en": "≈ A$12–22" },
-      "q": "Cairns Night Markets, 71-75 The Esplanade, Cairns" },
-    { "name": "Mocka's Pies", "kind": 1,
-      "area": { "th": "พอร์ตดักลาส", "en": "Port Douglas" },
-      "tag": { "th": "พายอบสด", "en": "Fresh pies" },
-      "what": { "th": "ร้านพายที่อยู่คู่พอร์ตดักลาสมาตั้งแต่ปี 1969 อบที่ร้านทุกวัน มีพายเนื้อ พายไก่ และพายเนื้อจระเข้", "en": "A Port Douglas pie shop since 1969, baking on the premises each day: beef, chicken and crocodile pies" },
-      "why": { "th": "ได้ของทันที ถือไปกินที่สวนริมน้ำได้ พายเนื้อธรรมดาเหมาะกับเด็ก", "en": "Served at once and easy to carry to the waterfront park; the plain beef pie suits a child" },
-      "pr": { "th": "≈ A$8–15", "en": "≈ A$8–15" },
-      "q": "Mocka's Pies, Grant Street, Port Douglas" },
-    { "name": "Muddy's Cafe", "kind": 2,
-      "area": { "th": "แคนส์ เอสพลานาด", "en": "Cairns Esplanade" },
-      "tag": { "th": "คาเฟ่ข้างสนามเด็กเล่น", "en": "Playground café" },
-      "what": { "th": "คาเฟ่ติดสนามเด็กเล่นมัดดีส์ริมเอสพลานาด มีอาหารเช้า แซนด์วิช กาแฟ และไอศกรีม", "en": "The café beside Muddy's Playground on the Esplanade, with breakfast, sandwiches, coffee and ice cream" },
-      "why": { "th": "พ่อแม่นั่งดื่มกาแฟแล้วมองเห็นเด็กเล่นน้ำและเครื่องเล่นได้ เปิดเช้า", "en": "Parents drink coffee within sight of the water play and climbing frames, and it opens early" },
-      "pr": { "th": "≈ A$10–25", "en": "≈ A$10–25" },
-      "q": "Muddy's Cafe, 174 Esplanade, Cairns" },
-    { "name": "Petit Cafe Kuranda", "kind": 2,
-      "area": { "th": "คูรันดา", "en": "Kuranda" },
-      "tag": { "th": "เครป", "en": "Crêpes" },
-      "what": { "th": "ร้านเครปในตลาดคูรันดากลางป่าฝน มีเครปหวานและเครปคาวหลายสิบแบบ ทำสดต่อหน้า", "en": "A crêperie in Kuranda's rainforest market with dozens of sweet and savoury crêpes made in front of you" },
-      "why": { "th": "เครปหวานแบ่งกันได้ นั่งกลางแจ้งใต้ร่มไม้ แวะระหว่างเที่ยวรถไฟและกระเช้าคูรันดา", "en": "A sweet crêpe to share at outdoor tables under the trees, between the Kuranda train and the cableway" },
-      "pr": { "th": "≈ A$12–22", "en": "≈ A$12–22" },
-      "q": "Petit Cafe Kuranda, Original Rainforest Markets, Kuranda" },
-    { "name": "Daintree Ice Cream Company", "kind": 2,
-      "area": { "th": "เดนทรี เคปทริบิวเลชัน", "en": "Daintree, Cape Tribulation road" },
-      "tag": { "th": "ไอศกรีมผลไม้เขตร้อน", "en": "Tropical fruit ice cream" },
-      "what": { "th": "สวนผลไม้ในป่าฝนเดนทรี ขายไอศกรีมถ้วยรวมสี่รสจากผลไม้ในสวน รสเปลี่ยนทุกวัน", "en": "A fruit orchard in the Daintree rainforest selling one cup of four ice creams made from its own fruit, changing daily" },
-      "why": { "th": "จุดพักระหว่างขับรถไปเคปทริบิวเลชัน เด็กเดินดูต้นผลไม้แปลกๆ ในสวนได้", "en": "A break on the drive to Cape Tribulation, and children can walk among the unusual fruit trees" },
-      "pr": { "th": "≈ A$8–12", "en": "≈ A$8–12" },
-      "q": "Daintree Ice Cream Company, Cape Tribulation Road, Diwan, Queensland" },
-    { "name": "Gelocchio", "kind": 2,
-      "area": { "th": "แคนส์ ใกล้เอสพลานาด", "en": "Cairns, near the Esplanade" },
-      "tag": { "th": "เจลาโต", "en": "Gelato" },
-      "what": { "th": "ร้านเจลาโตและของหวานใกล้เอสพลานาด มีเจลาโตทำเอง วาฟเฟิล และเครป", "en": "A gelato and dessert shop near the Esplanade with house-made gelato, waffles and crêpes" },
-      "why": { "th": "ของหวานหลังมื้อเย็น ซื้อแล้วเดินไปกินริมลากูนได้ มีถ้วยเล็กสำหรับเด็ก", "en": "Dessert after dinner that you can carry to the lagoon, with a small cup for a child" },
-      "pr": { "th": "≈ A$7–15", "en": "≈ A$7–15" },
-      "q": "Gelocchio, Shields Street, Cairns" }
-  ] },
-  { "place": "au-uluru", "places": [
-    { "name": "Ilkari Restaurant", "kind": 0,
-      "area": { "th": "ยูลารา โรงแรมเซลส์อินเดอะเดสเสิร์ต", "en": "Yulara, Sails in the Desert" },
-      "tag": { "th": "บุฟเฟต์", "en": "Buffet" },
-      "what": { "th": "ห้องอาหารบุฟเฟต์ของโรงแรมเซลส์อินเดอะเดสเสิร์ต มีสถานีอาหารหลายแบบ ซีฟู้ด เนื้อย่าง และของหวาน", "en": "The buffet restaurant of Sails in the Desert, with several cooking stations, seafood, roasts and desserts" },
-      "why": { "th": "บุฟเฟต์ทำให้เด็กเลือกของที่กินได้เอง ไม่ต้องรออาหาร มีเก้าอี้เด็ก ควรจองล่วงหน้า", "en": "A buffet lets a child pick what they will eat with no waiting; high chairs, and worth booking ahead" },
-      "pr": { "th": "≈ A$80–100", "en": "≈ A$80–100" },
-      "q": "Ilkari Restaurant, Sails in the Desert, Yulara, Northern Territory" },
-    { "name": "Arnguli Grill", "kind": 0,
-      "area": { "th": "ยูลารา โรงแรมเดสเสิร์ตการ์เดนส์", "en": "Yulara, Desert Gardens Hotel" },
-      "tag": { "th": "สเต๊ก อาหารออสเตรเลีย", "en": "Grill, Australian" },
-      "what": { "th": "ห้องอาหารมื้อเย็นของโรงแรมเดสเสิร์ตการ์เดนส์ เสิร์ฟเนื้อย่างและจานที่ใช้วัตถุดิบพื้นถิ่นออสเตรเลีย", "en": "The dinner restaurant of the Desert Gardens Hotel, serving grills and dishes built on Australian native ingredients" },
-      "why": { "th": "ห้องอาหารโรงแรมที่รับครอบครัว มีเมนูเด็ก จองรอบแรกของมื้อเย็นได้", "en": "A hotel dining room that takes families, with a children's menu and an early first sitting to book" },
-      "pr": { "th": "≈ A$60–90", "en": "≈ A$60–90" },
-      "q": "Arnguli Grill, Desert Gardens Hotel, Yulara, Northern Territory" },
-    { "name": "Geckos Cafe", "kind": 0,
-      "area": { "th": "ยูลารา ทาวน์สแควร์", "en": "Yulara, Town Square" },
-      "tag": { "th": "พิซซ่า พาสต้า", "en": "Pizza, pasta" },
-      "what": { "th": "ร้านสบายๆ กลางทาวน์สแควร์ของรีสอร์ต มีพิซซ่า พาสต้า เบอร์เกอร์ และอาหารเช้า", "en": "The casual restaurant in the resort's Town Square, with pizza, pasta, burgers and breakfast" },
-      "why": { "th": "ตัวเลือกที่ง่ายและถูกที่สุดแบบนั่งโต๊ะในรีสอร์ต พิซซ่าแบ่งกันได้ มีโต๊ะกลางแจ้ง", "en": "The easiest and cheapest sit-down meal at the resort; pizza to share and outdoor tables" },
-      "pr": { "th": "≈ A$25–40", "en": "≈ A$25–40" },
-      "q": "Geckos Cafe, Town Square, Yulara, Northern Territory" },
-    { "name": "Mangata Bistro & Bar", "kind": 0,
-      "area": { "th": "ยูลารา โรงแรมเดสเสิร์ตการ์เดนส์", "en": "Yulara, Desert Gardens Hotel" },
-      "tag": { "th": "บิสโทรทั้งวัน", "en": "All-day bistro" },
-      "what": { "th": "บิสโทรของโรงแรมเดสเสิร์ตการ์เดนส์ มีบุฟเฟต์อาหารเช้าและอาหารจานเดียวตลอดวัน", "en": "The bistro of the Desert Gardens Hotel, with a breakfast buffet and plates served through the day" },
-      "why": { "th": "เปิดเช้าตรู่ เหมาะกับวันที่ตื่นไปดูพระอาทิตย์ขึ้น กินได้ทุกช่วงเวลาตามตารางนอนของเด็ก", "en": "Opens very early for sunrise days, and all-day service fits around a small child's naps" },
-      "pr": { "th": "≈ A$30–50", "en": "≈ A$30–50" },
-      "q": "Mangata Bistro & Bar, Desert Gardens Hotel, Yulara, Northern Territory" },
-    { "name": "Outback BBQ & Bar", "kind": 0,
-      "area": { "th": "ยูลารา โรงแรมเอาต์แบ็ก", "en": "Yulara, Outback Hotel" },
-      "tag": { "th": "บาร์บีคิวย่างเอง", "en": "Cook-your-own barbecue" },
-      "what": { "th": "ลานบาร์บีคิวที่ลูกค้าเลือกเนื้อดิบ เช่น สเต๊ก ไส้กรอก จิงโจ้ แล้วย่างเองบนเตา พร้อมสลัดบาร์", "en": "An outdoor barbecue where you choose raw steak, sausages or kangaroo and grill it yourself, with a salad bar" },
-      "why": { "th": "บรรยากาศกลางแจ้งเสียงดังสบายๆ เด็กดูพ่อแม่ย่างเนื้อ มีดนตรีสดช่วงเย็น ระวังเด็กใกล้เตาร้อน", "en": "A loud, relaxed outdoor yard where children watch the grilling, with live music in the evening; keep little ones back from the hotplates" },
-      "pr": { "th": "≈ A$30–55", "en": "≈ A$30–55" },
-      "q": "Outback BBQ & Bar, Outback Hotel, Yulara, Northern Territory" },
-    { "name": "Carmichael's Restaurant", "kind": 0,
-      "area": { "th": "คิงส์แคนยอน", "en": "Kings Canyon" },
-      "tag": { "th": "ห้องอาหารรีสอร์ต", "en": "Resort restaurant" },
-      "what": { "th": "ห้องอาหารของรีสอร์ตคิงส์แคนยอน เสิร์ฟอาหารเช้าและมื้อเย็นที่ใช้วัตถุดิบท้องถิ่น เปิดตามฤดูท่องเที่ยว", "en": "The restaurant of the Kings Canyon resort, serving breakfast and dinner built on local produce, open in the visitor season" },
-      "why": { "th": "ที่กินแบบนั่งโต๊ะที่ใกล้คิงส์แคนยอนที่สุด นอกฤดูให้ใช้บาร์แอนด์กริลล์ของรีสอร์ตแทน", "en": "The nearest sit-down meal to Kings Canyon; out of season the resort's bar and grill serves instead" },
-      "pr": { "th": "≈ A$40–70", "en": "≈ A$40–70" },
-      "q": "Carmichael's Restaurant, Discovery Resorts Kings Canyon, Petermann, Northern Territory" },
-    { "name": "Hanuman Alice Springs", "kind": 0,
-      "area": { "th": "อลิซสปริงส์", "en": "Alice Springs" },
-      "tag": { "th": "อาหารไทยและอินเดีย", "en": "Thai and Indian" },
-      "what": { "th": "ร้านอาหารไทย อินเดีย และนอนยาในโรงแรมดับเบิลทรีบายฮิลตัน ดังเรื่องหอยนางรมซอสตะไคร้และแกงต่างๆ", "en": "A Thai, Indian and Nonya restaurant in the DoubleTree by Hilton, known for oysters in lemongrass sauce and its curries" },
-      "why": { "th": "มีข้าวสวยและแกงที่เด็กไทยคุ้น ขอรสอ่อนได้ ห้องอาหารโรงแรมมีเก้าอี้เด็ก", "en": "Steamed rice and curries a Thai child knows, made mild on request, in a hotel dining room with high chairs" },
-      "pr": { "th": "≈ A$40–65", "en": "≈ A$40–65" },
-      "q": "Hanuman Alice Springs, DoubleTree by Hilton, Barrett Drive, Alice Springs" },
-    { "name": "Bella Alice", "kind": 0,
-      "area": { "th": "อลิซสปริงส์", "en": "Alice Springs" },
-      "tag": { "th": "พิซซ่าเตาฟืน", "en": "Wood-fired pizza" },
-      "what": { "th": "ร้านพิซซ่าเตาฟืนและอาหารยุโรปในบรรยากาศสบายๆ ของอลิซสปริงส์", "en": "Wood-fired pizza and European dishes in a relaxed room in Alice Springs" },
-      "why": { "th": "พิซซ่าและพาสต้าที่เด็กกินได้ แบ่งกันทั้งโต๊ะ เหมาะกับมื้อเย็นเร็ว", "en": "Pizza and pasta a child will eat, shared across the table, and suited to an early dinner" },
-      "pr": { "th": "≈ A$25–45", "en": "≈ A$25–45" },
-      "q": "Bella Alice, Alice Springs, Northern Territory" },
-    { "name": "Ayers Wok Noodle Bar", "kind": 1,
-      "area": { "th": "ยูลารา ทาวน์สแควร์", "en": "Yulara, Town Square" },
-      "tag": { "th": "ก๋วยเตี๋ยวผัดสั่งกลับ", "en": "Takeaway noodles" },
-      "what": { "th": "เคาน์เตอร์อาหารเอเชียแบบสั่งกลับในทาวน์สแควร์ มีบะหมี่ผัด ข้าวผัด และแกงในกล่อง", "en": "A takeaway Asian counter in the Town Square with stir-fried noodles, fried rice and curries in a box" },
-      "why": { "th": "ข้าวและเส้นที่เด็กไทยคุ้น ราคาถูกสุดในรีสอร์ต ถือกลับไปกินที่ห้องได้เมื่อเด็กเหนื่อย", "en": "Rice and noodles a Thai child knows at the resort's lowest prices, easy to carry back to the room when a child is tired" },
-      "pr": { "th": "≈ A$18–28", "en": "≈ A$18–28" },
-      "q": "Ayers Wok Noodle Bar, Town Square, Yulara, Northern Territory" },
-    { "name": "Kings Creek Station", "kind": 1,
-      "area": { "th": "ถนนลูริตยา ใกล้คิงส์แคนยอน", "en": "Luritja Road, near Kings Canyon" },
-      "tag": { "th": "เบอร์เกอร์อูฐ", "en": "Camel burgers" },
-      "what": { "th": "ฟาร์มวัวและอูฐที่ยังทำงานจริง ห่างคิงส์แคนยอนราว 36 กม. คาเฟ่ขายเบอร์เกอร์เนื้ออูฐ อาหารร้อน และของว่าง", "en": "A working cattle and camel station about 36 km from Kings Canyon; its café sells camel burgers, hot meals and snacks" },
-      "why": { "th": "จุดพักรถกลางทางยาว เด็กได้ลงมายืดขาและดูอูฐ มีห้องน้ำและน้ำมัน", "en": "A break on a long drive where children stretch their legs and see camels; toilets and fuel too" },
-      "pr": { "th": "≈ A$18–30", "en": "≈ A$18–30" },
-      "q": "Kings Creek Station, Luritja Road, Petermann, Northern Territory" },
-    { "name": "Erldunda Roadhouse", "kind": 1,
-      "area": { "th": "แยกสจวร์ตไฮเวย์กับลาสเซเตอร์ไฮเวย์", "en": "Stuart Highway and Lasseter Highway junction" },
-      "tag": { "th": "จุดพักรถ", "en": "Roadhouse" },
-      "what": { "th": "จุดพักรถตรงทางแยกไปอูลูรู ระหว่างอลิซสปริงส์กับยูลารา มีเบอร์เกอร์ พาย อาหารจานร้อน และฟาร์มนกอีมู", "en": "The roadhouse at the turn-off to Uluru between Alice Springs and Yulara, with burgers, pies, hot plates and an emu enclosure" },
-      "why": { "th": "จุดแวะกลางทางขับรถหลายชั่วโมง เด็กดูนกอีมูได้ มีห้องน้ำ น้ำมัน และของว่าง", "en": "The halfway stop on a drive of several hours; children can see the emus, and there are toilets, fuel and snacks" },
-      "pr": { "th": "≈ A$15–30", "en": "≈ A$15–30" },
-      "q": "Erldunda Roadhouse, Stuart Highway, Ghan, Northern Territory" },
-    { "name": "Kulata Academy Cafe", "kind": 2,
-      "area": { "th": "ยูลารา ทาวน์สแควร์", "en": "Yulara, Town Square" },
-      "tag": { "th": "คาเฟ่ แซนด์วิช", "en": "Café, sandwiches" },
-      "what": { "th": "คาเฟ่ในทาวน์สแควร์ที่เป็นที่ฝึกงานของนักเรียนชนพื้นเมืองของรีสอร์ต ขายกาแฟ แซนด์วิช พาย และขนมอบ", "en": "A Town Square café staffed by the resort's Indigenous trainees, selling coffee, sandwiches, pies and pastries" },
-      "why": { "th": "ซื้อเร็ว เปิดเช้า เหมาะซื้ออาหารกลางวันติดตัวไปอุทยาน", "en": "Quick counter service and an early opening, good for a packed lunch to take into the park" },
-      "pr": { "th": "≈ A$10–20", "en": "≈ A$10–20" },
-      "q": "Kulata Academy Cafe, Town Square, Yulara, Northern Territory" },
-    { "name": "Ininti Cafe & Souvenirs", "kind": 2,
-      "area": { "th": "อุทยานอูลูรู ศูนย์วัฒนธรรม", "en": "Uluru-Kata Tjuta Cultural Centre" },
-      "tag": { "th": "คาเฟ่ในอุทยาน", "en": "Park café" },
-      "what": { "th": "คาเฟ่แห่งเดียวในเขตอุทยาน อยู่ที่ศูนย์วัฒนธรรมใกล้อูลูรู มีแซนด์วิช อาหารร้อนง่ายๆ ไอศกรีม และเครื่องดื่มเย็น", "en": "The only café inside the national park, at the Cultural Centre near Uluru, with sandwiches, simple hot food, ice cream and cold drinks" },
-      "why": { "th": "ที่พักหลบแดดกลางวันระหว่างเดินรอบอูลูรู มีที่นั่งในร่มและห้องน้ำ", "en": "A shaded midday stop between walks at Uluru, with covered seating and toilets" },
-      "pr": { "th": "≈ A$10–22", "en": "≈ A$10–22" },
-      "q": "Ininti Cafe & Souvenirs, Uluru-Kata Tjuta Cultural Centre, Northern Territory" },
-    { "name": "Page 27 Cafe", "kind": 2,
-      "area": { "th": "อลิซสปริงส์ ท็อดด์มอลล์", "en": "Alice Springs, Todd Mall" },
-      "tag": { "th": "คาเฟ่ อาหารเช้า", "en": "Café, breakfast" },
-      "what": { "th": "คาเฟ่ในตรอกเล็กข้างท็อดด์มอลล์ คนท้องถิ่นมากินอาหารเช้า กาแฟ และน้ำผลไม้ปั่น", "en": "A café in an arcade off Todd Mall where locals come for breakfast, coffee and smoothies" },
-      "why": { "th": "เปิดเช้า มีโต๊ะกลางแจ้งในตรอกไม่มีรถ ไข่และขนมปังปิ้งสำหรับเด็ก", "en": "Opens early with outdoor tables in a car-free arcade, and eggs on toast for a child" },
-      "pr": { "th": "≈ A$15–28", "en": "≈ A$15–28" },
-      "q": "Page 27 Cafe, Fan Arcade, Todd Mall, Alice Springs" },
-    { "name": "Bean Tree Cafe", "kind": 2,
-      "area": { "th": "อลิซสปริงส์ สวนพฤกษศาสตร์โอลิฟพิงก์", "en": "Alice Springs, Olive Pink Botanic Garden" },
-      "tag": { "th": "คาเฟ่ในสวน", "en": "Garden café" },
-      "what": { "th": "คาเฟ่กลางแจ้งในสวนพฤกษศาสตร์พืชทะเลทราย มีอาหารเช้า อาหารกลางวัน เค้ก และกาแฟ", "en": "An outdoor café in a garden of desert plants, with breakfast, lunch, cakes and coffee" },
-      "why": { "th": "โต๊ะใต้ร่มไม้ เด็กเดินเล่นในสวนได้ มักมีวัลลาบีและนกมาให้เห็น เปิดถึงช่วงบ่ายเท่านั้น", "en": "Tables under the trees and a garden to wander, often with wallabies and birds about; open until early afternoon only" },
-      "pr": { "th": "≈ A$15–28", "en": "≈ A$15–28" },
-      "q": "Bean Tree Cafe, Olive Pink Botanic Garden, Tuncks Road, Alice Springs" }
-  ] }
-] }
+{
+  "cc": "au",
+  "towns": [
+    {
+      "place": "au-sydney",
+      "places": [
+        {
+          "name": "Chat Thai Haymarket",
+          "kind": 0,
+          "area": {
+            "th": "เฮย์มาร์เก็ต ไทยทาวน์",
+            "en": "Haymarket, Thai Town"
+          },
+          "tag": {
+            "th": "อาหารไทย",
+            "en": "Thai"
+          },
+          "what": {
+            "th": "ร้านไทยเจ้าดังของซิดนีย์ มีก๋วยเตี๋ยว ข้าวมันไก่ ส้มตำ และขนมไทย รสชาติใกล้เคียงที่บ้าน",
+            "en": "Sydney's best-known Thai restaurant: noodle soups, chicken rice, som tam and Thai sweets that taste close to home"
+          },
+          "why": {
+            "th": "เด็กได้กินข้าวและแกงจืดที่คุ้นปาก อาหารออกเร็ว ไปก่อนหกโมงเย็นคิวสั้น",
+            "en": "Rice and mild soups a Thai child already knows, food comes fast, and the queue is short before six"
+          },
+          "pr": {
+            "th": "≈ A$20–35",
+            "en": "≈ A$20–35"
+          },
+          "q": "Chat Thai Haymarket, Campbell Street, Haymarket, Sydney"
+        },
+        {
+          "name": "Mamak Haymarket",
+          "kind": 0,
+          "area": {
+            "th": "เฮย์มาร์เก็ต ไชน่าทาวน์",
+            "en": "Haymarket, Chinatown"
+          },
+          "tag": {
+            "th": "อาหารมาเลเซีย",
+            "en": "Malaysian"
+          },
+          "what": {
+            "th": "โรตีจาไนแผ่นบางกรอบทำสดหน้าร้าน สะเต๊ะ และนาซิเลอมัก",
+            "en": "Thin, crisp roti canai made at the window, satay and nasi lemak"
+          },
+          "why": {
+            "th": "เด็กยืนดูคนตีแป้งโรตีได้ โรตีจิ้มแกงถั่วไม่เผ็ด ราคาเบา",
+            "en": "Children can watch the roti being stretched; plain roti with dhal is mild and cheap"
+          },
+          "pr": {
+            "th": "≈ A$20–30",
+            "en": "≈ A$20–30"
+          },
+          "q": "Mamak Haymarket, Goulburn Street, Haymarket, Sydney"
+        },
+        {
+          "name": "Din Tai Fung World Square",
+          "zh": "鼎泰豐",
+          "kind": 0,
+          "area": {
+            "th": "เวิลด์สแควร์ ใจกลางเมือง",
+            "en": "World Square, city centre"
+          },
+          "tag": {
+            "th": "เสี่ยวหลงเปา",
+            "en": "Dumplings"
+          },
+          "what": {
+            "th": "เสี่ยวหลงเปา ข้าวผัดไข่ และบะหมี่จากเครือดังของไต้หวัน มองเห็นครัวห่อเกี๊ยวผ่านกระจก",
+            "en": "Xiao long bao, egg fried rice and noodles from the Taiwanese chain, with the dumpling kitchen behind glass"
+          },
+          "why": {
+            "th": "มีเก้าอี้เด็ก ข้าวผัดและซุปไก่รสอ่อน สั่งแล้วทยอยมาเร็ว",
+            "en": "High chairs, mild fried rice and chicken soup, and dishes arrive quickly one by one"
+          },
+          "pr": {
+            "th": "≈ A$30–45",
+            "en": "≈ A$30–45"
+          },
+          "q": "Din Tai Fung World Square, George Street, Sydney"
+        },
+        {
+          "name": "Doyles on the Beach",
+          "kind": 0,
+          "area": {
+            "th": "วัตสันส์เบย์",
+            "en": "Watsons Bay"
+          },
+          "tag": {
+            "th": "ฟิชแอนด์ชิปส์ ซีฟู้ด",
+            "en": "Fish and chips, seafood"
+          },
+          "what": {
+            "th": "ร้านซีฟู้ดของครอบครัวดอยล์ เปิดมาตั้งแต่ปี 1885 ฟิชแอนด์ชิปส์ริมหาด มองเห็นตึกในเมืองข้ามอ่าว",
+            "en": "The Doyle family's seafood restaurant since 1885: fish and chips on the sand with the city skyline across the harbour"
+          },
+          "why": {
+            "th": "นั่งเรือเฟอร์รีมาได้ เด็กเล่นทรายหน้าร้านระหว่างรอ มีเมนูเด็ก",
+            "en": "You arrive by ferry, children play on the beach in front while you wait, and there is a children's menu"
+          },
+          "pr": {
+            "th": "≈ A$40–65",
+            "en": "≈ A$40–65"
+          },
+          "q": "Doyles on the Beach, Marine Parade, Watsons Bay, Sydney"
+        },
+        {
+          "name": "Pancakes on the Rocks",
+          "kind": 0,
+          "area": {
+            "th": "เดอะร็อกส์",
+            "en": "The Rocks"
+          },
+          "tag": {
+            "th": "แพนเค้ก ซี่โครง",
+            "en": "Pancakes, ribs"
+          },
+          "what": {
+            "th": "ร้านแพนเค้กเก่าแก่ตั้งแต่ปี 1975 มีทั้งแพนเค้กหวาน เครป ซี่โครงหมู และพิซซ่า",
+            "en": "A pancake house since 1975, with sweet pancakes, crêpes, pork ribs and pizza"
+          },
+          "why": {
+            "th": "เมนูที่เด็กชอบ โต๊ะบูธกว้าง เดินจากท่าเรือเซอร์คูลาร์คีย์ได้",
+            "en": "Food children like, roomy booths, and a short walk from Circular Quay"
+          },
+          "pr": {
+            "th": "≈ A$25–40",
+            "en": "≈ A$25–40"
+          },
+          "q": "Pancakes on the Rocks, Hickson Road, The Rocks, Sydney"
+        },
+        {
+          "name": "Bills Bondi",
+          "kind": 0,
+          "area": {
+            "th": "หาดบอนได",
+            "en": "Bondi Beach"
+          },
+          "tag": {
+            "th": "บรันช์ออสเตรเลีย",
+            "en": "Australian brunch"
+          },
+          "what": {
+            "th": "ร้านของบิล แกรนเจอร์ ดังเรื่องฮอตเค้กริคอตตาและไข่คนเนื้อนุ่ม เปิดตั้งแต่เช้าถึงมื้อเย็น",
+            "en": "Bill Granger's restaurant, known for ricotta hotcakes and soft scrambled eggs, open from breakfast to dinner"
+          },
+          "why": {
+            "th": "เปิดเช้า เหมาะกับเด็กตื่นไว ฮอตเค้กแบ่งกันได้ ห่างหาดไม่กี่ก้าว",
+            "en": "Opens early for small early risers, hotcakes are easy to share, and the beach is a few steps away"
+          },
+          "pr": {
+            "th": "≈ A$30–45",
+            "en": "≈ A$30–45"
+          },
+          "q": "Bills Bondi, Hall Street, Bondi Beach, Sydney"
+        },
+        {
+          "name": "The Grounds of Alexandria",
+          "kind": 0,
+          "area": {
+            "th": "อเล็กซานเดรีย",
+            "en": "Alexandria"
+          },
+          "tag": {
+            "th": "คาเฟ่ในสวน",
+            "en": "Garden café"
+          },
+          "what": {
+            "th": "โรงงานเก่าที่กลายเป็นคาเฟ่ ร้านขนมอบ และสวน มีมุมสัตว์เลี้ยงในฟาร์มให้เด็กดู",
+            "en": "An old factory turned café, bakery and garden, with a corner of farm animals for children to see"
+          },
+          "why": {
+            "th": "มีที่ให้เด็กเดินเล่นและดูสัตว์ โต๊ะกลางแจ้งเข็นรถเข็นเข้าได้ วันธรรมดาคนน้อยกว่า",
+            "en": "Space to wander and animals to look at, outdoor tables that take a pram, and quieter on weekdays"
+          },
+          "pr": {
+            "th": "≈ A$25–45",
+            "en": "≈ A$25–45"
+          },
+          "q": "The Grounds of Alexandria, Huntley Street, Alexandria, Sydney"
+        },
+        {
+          "name": "The Boathouse Shelly Beach",
+          "kind": 0,
+          "area": {
+            "th": "แมนลี หาดเชลลี",
+            "en": "Manly, Shelly Beach"
+          },
+          "tag": {
+            "th": "อาหารเช้าและกลางวันริมหาด",
+            "en": "Beach breakfast and lunch"
+          },
+          "what": {
+            "th": "ร้านริมหาดเชลลี เสิร์ฟอาหารเช้า ฟิชแอนด์ชิปส์ และสลัด สั่งที่เคาน์เตอร์ ไม่ต้องจอง",
+            "en": "A beach kiosk and dining room on Shelly Beach serving breakfast, fish and chips and salads; order at the counter, no booking"
+          },
+          "why": {
+            "th": "หาดคลื่นเบาอยู่ติดร้าน เดินเลียบทะเลจากแมนลีด้วยรถเข็นได้ นั่งกลางแจ้งได้",
+            "en": "A calm beach beside the tables, a flat seaside walk from Manly with a pram, and outdoor seating"
+          },
+          "pr": {
+            "th": "≈ A$25–40",
+            "en": "≈ A$25–40"
+          },
+          "q": "The Boathouse Shelly Beach, Marine Parade, Manly, Sydney"
+        },
+        {
+          "name": "Aunty Ed's Restaurant and Bar",
+          "kind": 0,
+          "area": {
+            "th": "บลูเมาน์เทนส์ คาทูมบา",
+            "en": "Blue Mountains, Katoomba"
+          },
+          "tag": {
+            "th": "เบอร์เกอร์ มิลก์เชก",
+            "en": "Burgers, milkshakes"
+          },
+          "what": {
+            "th": "ร้านอาหารชั้นใต้ดินตกแต่งย้อนยุคบนถนนคาทูมบา มีเบอร์เกอร์ ไก่ทอด มิลก์เชก และน้ำอัดลมใส่ไอศกรีม",
+            "en": "A retro basement restaurant on Katoomba Street with burgers, fried chicken, milkshakes and ice cream sodas"
+          },
+          "why": {
+            "th": "ร้านเป็นกันเองสำหรับครอบครัว เด็กชอบมิลก์เชกและของตกแต่งย้อนยุค เปิดเฉพาะบางวัน ควรเช็กก่อนไป",
+            "en": "A relaxed family room, children like the milkshakes and the retro decor; open only some days, so check first"
+          },
+          "pr": {
+            "th": "≈ A$25–40",
+            "en": "≈ A$25–40"
+          },
+          "q": "Aunty Ed's Restaurant and Bar, 122 Katoomba Street, Katoomba, Blue Mountains",
+          "ok": "2026-11"
+        },
+        {
+          "name": "Sydney Fish Market",
+          "kind": 1,
+          "area": {
+            "th": "แบล็กวัตเทิลเบย์ ย่านกลีบ",
+            "en": "Blackwattle Bay, Glebe"
+          },
+          "tag": {
+            "th": "ตลาดซีฟู้ด",
+            "en": "Seafood market"
+          },
+          "what": {
+            "th": "ตลาดปลาใหญ่ของซิดนีย์ในอาคารใหม่ริมอ่าว มีหอยนางรม ซาชิมิ กุ้งย่าง และฟิชแอนด์ชิปส์หลายร้าน",
+            "en": "Sydney's big fish market in its new waterfront building: oysters, sashimi, grilled prawns and fish and chips from many stalls"
+          },
+          "why": {
+            "th": "เลือกซื้อทีละอย่างแล้วนั่งกินริมน้ำ เด็กได้ดูปลาและปูตัวใหญ่ ไปช่วงสายคนน้อยกว่าเที่ยง",
+            "en": "Buy a little from each stall and eat by the water; children see big fish and crabs, and mid-morning is quieter than noon"
+          },
+          "pr": {
+            "th": "≈ A$20–45",
+            "en": "≈ A$20–45"
+          },
+          "q": "Sydney Fish Market, 1 Bridge Road, Glebe, Sydney"
+        },
+        {
+          "name": "Harry's Cafe de Wheels",
+          "kind": 1,
+          "area": {
+            "th": "วูลลูมูลู",
+            "en": "Woolloomooloo"
+          },
+          "tag": {
+            "th": "พายเนื้อ",
+            "en": "Meat pies"
+          },
+          "what": {
+            "th": "รถเข็นขายพายริมท่าเรือที่เปิดมาตั้งแต่ทศวรรษ 1930 พายเนื้อราดถั่วบดและมันบดที่เรียกว่าไทเกอร์",
+            "en": "A harbourside pie cart since the 1930s; the Tiger is a beef pie topped with mashed peas, mash and gravy"
+          },
+          "why": {
+            "th": "ได้ของเร็ว ถือกินริมน้ำได้ พายเนื้อและฮอตดอกไม่เผ็ด",
+            "en": "Served in a minute and eaten by the water; the beef pie and hot dog are not spicy"
+          },
+          "pr": {
+            "th": "≈ A$8–15",
+            "en": "≈ A$8–15"
+          },
+          "q": "Harry's Cafe de Wheels, Cowper Wharf Roadway, Woolloomooloo, Sydney"
+        },
+        {
+          "name": "Spice Alley",
+          "kind": 1,
+          "area": {
+            "th": "ชิปเพนเดล ใกล้สถานีเซ็นทรัล",
+            "en": "Chippendale, near Central Station"
+          },
+          "tag": {
+            "th": "ศูนย์อาหารเอเชีย",
+            "en": "Asian hawker lane"
+          },
+          "what": {
+            "th": "ตรอกเล็กประดับโคมไฟ รวมร้านอาหารไทย มาเลเซีย เวียดนาม ญี่ปุ่น และฮ่องกง",
+            "en": "A lantern-lit lane of Thai, Malaysian, Vietnamese, Japanese and Hong Kong stalls"
+          },
+          "why": {
+            "th": "แต่ละคนเลือกร้านของตัวเอง โต๊ะกลางแจ้ง ข้าวมันไก่และบะหมี่น้ำเหมาะกับเด็ก",
+            "en": "Everyone picks their own stall, tables are outdoors, and chicken rice or noodle soup suits a child"
+          },
+          "pr": {
+            "th": "≈ A$15–25",
+            "en": "≈ A$15–25"
+          },
+          "q": "Spice Alley, Kensington Street, Chippendale, Sydney"
+        },
+        {
+          "name": "Mountain High Pies",
+          "kind": 1,
+          "area": {
+            "th": "บลูเมาน์เทนส์ เวนต์เวิร์ทฟอลส์",
+            "en": "Blue Mountains, Wentworth Falls"
+          },
+          "tag": {
+            "th": "พายอบสด",
+            "en": "Fresh pies"
+          },
+          "what": {
+            "th": "ร้านพายริมทางหลวงเกรทเวสเทิร์น มีพายเนื้อ พายไก่ และพายหวาน คนขับรถขึ้นเขาแวะกันประจำ",
+            "en": "A pie shop on the Great Western Highway with beef, chicken and sweet pies, a regular stop on the drive up the mountains"
+          },
+          "why": {
+            "th": "แวะง่ายระหว่างขับรถ จอดหน้าร้าน ได้ของทันที มีโต๊ะนั่งกิน",
+            "en": "An easy stop on the drive with parking outside, served at once, and tables to sit at"
+          },
+          "pr": {
+            "th": "≈ A$8–15",
+            "en": "≈ A$8–15"
+          },
+          "q": "Mountain High Pies, Great Western Highway, Wentworth Falls, Blue Mountains"
+        },
+        {
+          "name": "Gelato Messina Darlinghurst",
+          "kind": 2,
+          "area": {
+            "th": "ดาร์ลิงเฮิร์สต์",
+            "en": "Darlinghurst"
+          },
+          "tag": {
+            "th": "เจลาโต",
+            "en": "Gelato"
+          },
+          "what": {
+            "th": "สาขาแรกของร้านเจลาโตชื่อดังของออสเตรเลีย มีหลายสิบรส และรสพิเศษเปลี่ยนทุกสัปดาห์",
+            "en": "The first shop of Australia's best-known gelato maker, with dozens of flavours and weekly specials"
+          },
+          "why": {
+            "th": "ขอชิมก่อนเลือกได้ มีถ้วยเล็กสำหรับเด็ก ซื้อแล้วเดินกินได้",
+            "en": "You can taste before choosing, there is a small cup for a child, and you can walk on with it"
+          },
+          "pr": {
+            "th": "≈ A$7–12",
+            "en": "≈ A$7–12"
+          },
+          "q": "Gelato Messina Darlinghurst, Victoria Street, Darlinghurst, Sydney"
+        },
+        {
+          "name": "Bourke Street Bakery",
+          "kind": 2,
+          "area": {
+            "th": "เซอร์รีฮิลส์",
+            "en": "Surry Hills"
+          },
+          "tag": {
+            "th": "เบเกอรี่",
+            "en": "Bakery"
+          },
+          "what": {
+            "th": "เบเกอรี่หัวมุมถนนที่คนต่อแถวซื้อไส้กรอกโรล ทาร์ตครีมบรูเลขิง และขนมปังซาวร์โด",
+            "en": "A corner bakery people queue at for sausage rolls, ginger brûlée tarts and sourdough"
+          },
+          "why": {
+            "th": "ของว่างถือกินง่ายสำหรับมือเล็ก เปิดเช้า มีสวนสาธารณะใกล้ๆ ให้นั่งกิน",
+            "en": "Snacks that fit small hands, an early opening, and a park nearby to sit and eat"
+          },
+          "pr": {
+            "th": "≈ A$8–18",
+            "en": "≈ A$8–18"
+          },
+          "q": "Bourke Street Bakery, 633 Bourke Street, Surry Hills, Sydney"
+        },
+        {
+          "name": "Bygone Beautys Treasured Teapot Museum & Tearooms",
+          "kind": 2,
+          "area": {
+            "th": "บลูเมาน์เทนส์ ลูรา",
+            "en": "Blue Mountains, Leura"
+          },
+          "tag": {
+            "th": "ชายามบ่าย สโคน",
+            "en": "Afternoon tea, scones"
+          },
+          "what": {
+            "th": "ห้องน้ำชาแบบอังกฤษกับพิพิธภัณฑ์กาน้ำชาหลายพันใบ เสิร์ฟสโคนกับแยมและครีม และชุดน้ำชายามบ่าย",
+            "en": "An English-style tearoom with a museum of thousands of teapots, serving scones with jam and cream and a full afternoon tea"
+          },
+          "why": {
+            "th": "สโคนและแซนด์วิชกินง่าย เด็กโตชอบดูกาน้ำชารูปแปลกๆ ต้องดูแลเด็กเล็กใกล้ของแตกง่าย",
+            "en": "Scones and sandwiches are easy food, older children like the odd teapots, and little ones need watching near the china"
+          },
+          "pr": {
+            "th": "≈ A$15–60",
+            "en": "≈ A$15–60"
+          },
+          "q": "Bygone Beautys Treasured Teapot Museum & Tearooms, Grose Street, Leura, Blue Mountains"
+        },
+        {
+          "name": "Blue Mountains Chocolate Company",
+          "kind": 2,
+          "area": {
+            "th": "บลูเมาน์เทนส์ คาทูมบา",
+            "en": "Blue Mountains, Katoomba"
+          },
+          "tag": {
+            "th": "ช็อกโกแลตร้อน",
+            "en": "Hot chocolate"
+          },
+          "what": {
+            "th": "ร้านช็อกโกแลตทำมือใกล้จุดชมวิวเอคโคพอยต์ มีช็อกโกแลตร้อนเสิร์ฟบนเตาเทียนอุ่น ไอศกรีม และฟองดู",
+            "en": "A handmade chocolate shop near Echo Point with hot chocolate kept warm over a candle, ice cream and fondue"
+          },
+          "why": {
+            "th": "ที่พักอุ่นๆ หลังดูทรีซิสเตอร์ส เด็กดูช่างทำช็อกโกแลตผ่านกระจกได้",
+            "en": "A warm stop after the Three Sisters, and children can watch chocolate being made through a window"
+          },
+          "pr": {
+            "th": "≈ A$8–18",
+            "en": "≈ A$8–18"
+          },
+          "q": "Blue Mountains Chocolate Company, Lurline Street, Katoomba, Blue Mountains"
+        }
+      ]
+    },
+    {
+      "place": "au-melbourne",
+      "places": [
+        {
+          "name": "Stalactites",
+          "kind": 0,
+          "area": {
+            "th": "ถนนลอนส์เดล ใจกลางเมือง",
+            "en": "Lonsdale Street, city centre"
+          },
+          "tag": {
+            "th": "อาหารกรีก",
+            "en": "Greek"
+          },
+          "what": {
+            "th": "ร้านกรีกของครอบครัวเดียวกันตั้งแต่ปี 1978 ดังเรื่องซูฟลากีเนื้อแกะ ไก่ย่าง และดิปกับขนมปังพิตา",
+            "en": "A Greek restaurant run by one family since 1978, known for lamb souvlaki, grilled chicken and dips with pita"
+          },
+          "why": {
+            "th": "เนื้อย่างกับข้าวและขนมปังแบ่งกันกินง่าย อาหารมาเร็ว เปิดยาวทั้งวัน",
+            "en": "Grilled meat with rice and bread is easy to share, food comes fast, and it is open all day"
+          },
+          "pr": {
+            "th": "≈ A$25–40",
+            "en": "≈ A$25–40"
+          },
+          "q": "Stalactites Restaurant, Lonsdale Street, Melbourne"
+        },
+        {
+          "name": "HuTong Dumpling Bar",
+          "zh": "胡同",
+          "kind": 0,
+          "area": {
+            "th": "ไชน่าทาวน์ มาร์เก็ตเลน",
+            "en": "Chinatown, Market Lane"
+          },
+          "tag": {
+            "th": "เสี่ยวหลงเปา",
+            "en": "Dumplings"
+          },
+          "what": {
+            "th": "ร้านเกี๊ยวชื่อดังของไชน่าทาวน์ มีเสี่ยวหลงเปา เกี๊ยวซ่าทอด และอาหารเซี่ยงไฮ้ มองเห็นคนห่อเกี๊ยวที่ชั้นล่าง",
+            "en": "Chinatown's well-known dumpling house: xiao long bao, pan-fried dumplings and Shanghai dishes, with the makers at work downstairs"
+          },
+          "why": {
+            "th": "เด็กดูคนห่อเกี๊ยวได้ เกี๊ยวนึ่งและข้าวผัดไม่เผ็ด ควรจองมื้อเย็นรอบแรก",
+            "en": "Children can watch the dumplings being folded; steamed dumplings and fried rice are mild, and the first dinner sitting is worth booking"
+          },
+          "pr": {
+            "th": "≈ A$30–45",
+            "en": "≈ A$30–45"
+          },
+          "q": "HuTong Dumpling Bar, Market Lane, Melbourne"
+        },
+        {
+          "name": "Pellegrini's Espresso Bar",
+          "kind": 0,
+          "area": {
+            "th": "ถนนเบิร์ก ใจกลางเมือง",
+            "en": "Bourke Street, city centre"
+          },
+          "tag": {
+            "th": "พาสต้าอิตาเลียน",
+            "en": "Italian pasta"
+          },
+          "what": {
+            "th": "บาร์กาแฟอิตาเลียนตั้งแต่ปี 1954 ไม่มีเมนูกระดาษ มีพาสต้าจานใหญ่แบบทำกินที่บ้าน และน้ำแตงโมปั่น",
+            "en": "An Italian espresso bar since 1954 with no printed menu, big plates of home-style pasta and watermelon granita"
+          },
+          "why": {
+            "th": "พาสต้ามาในไม่กี่นาที จานใหญ่แบ่งกับเด็กได้ ที่นั่งเป็นเคาน์เตอร์ จึงเหมาะกับเด็กที่นั่งเก้าอี้สูงได้",
+            "en": "Pasta arrives in minutes and one plate feeds a child too; seating is at a counter, so it suits a child who can sit on a stool"
+          },
+          "pr": {
+            "th": "≈ A$20–30",
+            "en": "≈ A$20–30"
+          },
+          "q": "Pellegrini's Espresso Bar, 66 Bourke Street, Melbourne"
+        },
+        {
+          "name": "Tiamo",
+          "kind": 0,
+          "area": {
+            "th": "คาร์ลตัน ถนนไลกอน",
+            "en": "Carlton, Lygon Street"
+          },
+          "tag": {
+            "th": "อิตาเลียน",
+            "en": "Italian"
+          },
+          "what": {
+            "th": "ร้านเก่าแก่ของย่านลิตเติลอิตาลี เสิร์ฟพาสต้า พิซซ่า และกาแฟมากว่าสี่สิบปี",
+            "en": "A Little Italy fixture that has served pasta, pizza and coffee for more than forty years"
+          },
+          "why": {
+            "th": "สปาเกตตีซอสมะเขือเทศและพิซซ่าที่เด็กกินได้ บรรยากาศเสียงดังเป็นกันเอง มีโต๊ะริมทางเท้า",
+            "en": "Spaghetti in tomato sauce and pizza a child will eat, a noisy friendly room, and pavement tables"
+          },
+          "pr": {
+            "th": "≈ A$25–40",
+            "en": "≈ A$25–40"
+          },
+          "q": "Tiamo, 303 Lygon Street, Carlton, Melbourne"
+        },
+        {
+          "name": "D.O.C Pizza & Mozzarella Bar",
+          "kind": 0,
+          "area": {
+            "th": "คาร์ลตัน",
+            "en": "Carlton"
+          },
+          "tag": {
+            "th": "พิซซ่า",
+            "en": "Pizza"
+          },
+          "what": {
+            "th": "พิซซ่าแป้งบางแบบอิตาลีกับมอซซาเรลลาสด ร้านที่คนเมลเบิร์นรู้จักดีในย่านคาร์ลตัน",
+            "en": "Thin Italian pizza with fresh mozzarella, a Carlton favourite among Melburnians"
+          },
+          "why": {
+            "th": "พิซซ่ามาร์เกริตาแบ่งกันได้ทั้งโต๊ะ เปิดมื้อเย็นเร็ว เดินจากพิพิธภัณฑ์เมลเบิร์นได้",
+            "en": "A margherita feeds the whole table, dinner starts early, and Melbourne Museum is a walk away"
+          },
+          "pr": {
+            "th": "≈ A$25–40",
+            "en": "≈ A$25–40"
+          },
+          "q": "D.O.C Pizza & Mozzarella Bar, Drummond Street, Carlton, Melbourne"
+        },
+        {
+          "name": "ShanDong MaMa",
+          "zh": "山东妈妈",
+          "kind": 0,
+          "area": {
+            "th": "ถนนเบิร์ก มิดซิตีอาร์เคด",
+            "en": "Bourke Street, Mid City Arcade"
+          },
+          "tag": {
+            "th": "เกี๊ยวซานตง",
+            "en": "Shandong dumplings"
+          },
+          "what": {
+            "th": "ร้านเล็กในอาร์เคด ดังเรื่องเกี๊ยวไส้ปลาแมกเคอเรลเนื้อฟู ทั้งแบบต้มและทอด ราคาไม่แพง",
+            "en": "A small arcade restaurant known for light mackerel dumplings, boiled or fried, at low prices"
+          },
+          "why": {
+            "th": "เกี๊ยวต้มนุ่มไม่เผ็ด เสิร์ฟเร็ว ไปก่อนเที่ยงหรือห้าโมงเย็นมีที่นั่ง",
+            "en": "Boiled dumplings are soft and mild, service is quick, and there are seats before noon or at five"
+          },
+          "pr": {
+            "th": "≈ A$18–30",
+            "en": "≈ A$18–30"
+          },
+          "q": "ShanDong MaMa, Mid City Arcade, 200 Bourke Street, Melbourne"
+        },
+        {
+          "name": "The Hardware Société",
+          "kind": 0,
+          "area": {
+            "th": "ใจกลางเมือง ใกล้ถนนฮาร์ดแวร์",
+            "en": "City centre, near Hardware Street"
+          },
+          "tag": {
+            "th": "บรันช์",
+            "en": "Brunch"
+          },
+          "what": {
+            "th": "ร้านบรันช์แนวฝรั่งเศสที่คนต่อแถวกินไข่อบ เฟรนช์โทสต์บริยอช และกาแฟ",
+            "en": "A French-leaning brunch spot people queue at for baked eggs, brioche French toast and coffee"
+          },
+          "why": {
+            "th": "เปิดเช้า เฟรนช์โทสต์หวานนุ่มถูกปากเด็ก วันธรรมดาคิวสั้นกว่าเสาร์อาทิตย์",
+            "en": "Opens in the morning, the French toast is soft and sweet for a child, and weekdays have shorter queues"
+          },
+          "pr": {
+            "th": "≈ A$25–40",
+            "en": "≈ A$25–40"
+          },
+          "q": "The Hardware Société, Katherine Place, Melbourne"
+        },
+        {
+          "name": "12 Rocks Beach Bar Cafe",
+          "kind": 0,
+          "area": {
+            "th": "เกรทโอเชียนโรด พอร์ตแคมป์เบลล์",
+            "en": "Great Ocean Road, Port Campbell"
+          },
+          "tag": {
+            "th": "ฟิชแอนด์ชิปส์ เบอร์เกอร์",
+            "en": "Fish and chips, burgers"
+          },
+          "what": {
+            "th": "ร้านหน้าอ่าวพอร์ตแคมป์เบลล์ ใกล้ทเวลฟ์อะพอสเซิลส์ที่สุด มีฟิชแอนด์ชิปส์ เบอร์เกอร์ และอาหารเช้า",
+            "en": "A café facing Port Campbell bay, the nearest town to the Twelve Apostles, with fish and chips, burgers and breakfast"
+          },
+          "why": {
+            "th": "หาดเล็กคลื่นเบาอยู่ตรงข้ามร้าน อาหารง่ายๆ ที่เด็กกินได้ จอดรถในเมืองสะดวก",
+            "en": "A small sheltered beach across the road, plain food a child will eat, and easy parking in town"
+          },
+          "pr": {
+            "th": "≈ A$25–40",
+            "en": "≈ A$25–40"
+          },
+          "q": "12 Rocks Beach Bar Cafe, Lord Street, Port Campbell, Victoria"
+        },
+        {
+          "name": "The Bottle of Milk",
+          "kind": 0,
+          "area": {
+            "th": "เกรทโอเชียนโรด ลอร์น",
+            "en": "Great Ocean Road, Lorne"
+          },
+          "tag": {
+            "th": "เบอร์เกอร์",
+            "en": "Burgers"
+          },
+          "what": {
+            "th": "ร้านเบอร์เกอร์บนถนนหลักของลอร์น มีเบอร์เกอร์เนื้อ ไก่ และผัก กับมันฝรั่งทอดและมิลก์เชก",
+            "en": "A burger shop on Lorne's main street with beef, chicken and vegetable burgers, chips and milkshakes"
+          },
+          "why": {
+            "th": "อาหารที่เด็กคุ้น ได้เร็ว อยู่ตรงข้ามหาดและสนามเด็กเล่นริมทะเลของลอร์น",
+            "en": "Familiar food served fast, across the road from Lorne's beach and foreshore playground"
+          },
+          "pr": {
+            "th": "≈ A$18–30",
+            "en": "≈ A$18–30"
+          },
+          "q": "The Bottle of Milk, Mountjoy Parade, Lorne, Victoria"
+        },
+        {
+          "name": "Queen Victoria Market",
+          "kind": 1,
+          "area": {
+            "th": "ทางเหนือของใจกลางเมือง",
+            "en": "North edge of the city centre"
+          },
+          "tag": {
+            "th": "ตลาดและของกินเล่น",
+            "en": "Market and snacks"
+          },
+          "what": {
+            "th": "ตลาดเก่าแก่ที่สุดของเมลเบิร์น มีโดนัทแยมร้อนจากรถตู้ บูเรก ไส้กรอกบราทเวิร์สต์ และผลไม้สด",
+            "en": "Melbourne's oldest market, with hot jam doughnuts from the van, börek, bratwurst and fresh fruit"
+          },
+          "why": {
+            "th": "เดินเลือกของกินทีละอย่าง ทางเดินกว้างเข็นรถเข็นได้ ตลาดปิดบางวัน ควรเช็กวันเปิดก่อนไป",
+            "en": "Graze from stall to stall along wide aisles that take a pram; the market closes some days, so check before going"
+          },
+          "pr": {
+            "th": "≈ A$10–25",
+            "en": "≈ A$10–25"
+          },
+          "q": "Queen Victoria Market, Queen Street, Melbourne"
+        },
+        {
+          "name": "South Melbourne Market",
+          "kind": 1,
+          "area": {
+            "th": "เซาท์เมลเบิร์น",
+            "en": "South Melbourne"
+          },
+          "tag": {
+            "th": "ตลาดและติ่มซำ",
+            "en": "Market and dim sims"
+          },
+          "what": {
+            "th": "ตลาดในร่มที่ดังเรื่องดิมซิมลูกโตแบบเซาท์เมลเบิร์น หอยนางรมสด ปาเอญา และร้านขนมอบ",
+            "en": "A covered market known for big South Melbourne dim sims, fresh oysters, paella and bakeries"
+          },
+          "why": {
+            "th": "ดิมซิมนึ่งลูกเดียวก็อิ่มสำหรับเด็ก มีโต๊ะนั่งรวม นั่งรถรางมาจากในเมืองได้",
+            "en": "One steamed dim sim fills a child, there are shared tables, and a tram runs from the city"
+          },
+          "pr": {
+            "th": "≈ A$10–25",
+            "en": "≈ A$10–25"
+          },
+          "q": "South Melbourne Market, Coventry Street, South Melbourne"
+        },
+        {
+          "name": "Apollo Bay Fishermen's Co-op",
+          "kind": 1,
+          "area": {
+            "th": "เกรทโอเชียนโรด อะพอลโลเบย์",
+            "en": "Great Ocean Road, Apollo Bay"
+          },
+          "tag": {
+            "th": "ฟิชแอนด์ชิปส์",
+            "en": "Fish and chips"
+          },
+          "what": {
+            "th": "สหกรณ์ชาวประมงที่ท่าเรืออะพอลโลเบย์ ขายปลาจากเรือและฟิชแอนด์ชิปส์ทอดใหม่ กุ้งล็อบสเตอร์ตามฤดู",
+            "en": "The fishermen's co-operative on Apollo Bay harbour sells the boats' catch and fresh fish and chips, with rock lobster in season"
+          },
+          "why": {
+            "th": "นั่งกินโต๊ะกลางแจ้งดูเรือประมง เด็กวิ่งเล่นริมท่าได้ ราคาไม่แรง",
+            "en": "Eat at outdoor tables watching the fishing boats, with room for children to run about, at fair prices"
+          },
+          "pr": {
+            "th": "≈ A$15–30",
+            "en": "≈ A$15–30"
+          },
+          "q": "Apollo Bay Fishermen's Co-op, Breakwater Road, Apollo Bay, Victoria"
+        },
+        {
+          "name": "Brunetti Classico",
+          "kind": 2,
+          "area": {
+            "th": "คาร์ลตัน ถนนไลกอน",
+            "en": "Carlton, Lygon Street"
+          },
+          "tag": {
+            "th": "ขนมอิตาเลียน เจลาโต",
+            "en": "Italian cakes, gelato"
+          },
+          "what": {
+            "th": "ร้านขนมอิตาเลียนขนาดใหญ่ ตู้กระจกยาวเต็มไปด้วยเค้ก คันโนลี บิสกิต และเจลาโต",
+            "en": "A large Italian pasticceria with long glass counters of cakes, cannoli, biscuits and gelato"
+          },
+          "why": {
+            "th": "เด็กชี้เลือกขนมจากตู้ได้ ร้านกว้าง เข็นรถเข็นเข้าได้ เปิดถึงค่ำ",
+            "en": "A child can point at a cake in the counter, the room is big enough for a pram, and it stays open into the evening"
+          },
+          "pr": {
+            "th": "≈ A$8–20",
+            "en": "≈ A$8–20"
+          },
+          "q": "Brunetti Classico, 380 Lygon Street, Carlton, Melbourne"
+        },
+        {
+          "name": "Lune Croissanterie",
+          "kind": 2,
+          "area": {
+            "th": "ฟิตซ์รอย",
+            "en": "Fitzroy"
+          },
+          "tag": {
+            "th": "ครัวซองต์",
+            "en": "Croissants"
+          },
+          "what": {
+            "th": "ร้านครัวซองต์ที่คนเดินทางมาต่อแถว อบในห้องกระจกกลางโกดังเก่า มีทั้งครัวซองต์เนยและครัวซองต์อัลมอนด์",
+            "en": "A croissant bakery people travel to queue for, baking in a glass room inside an old warehouse; plain and almond croissants"
+          },
+          "why": {
+            "th": "เด็กดูคนพับแป้งผ่านกระจกได้ ครัวซองต์เนยกินง่าย ไปเช้าวันธรรมดาคิวสั้น",
+            "en": "Children watch the pastry being rolled through the glass, a plain croissant is easy food, and weekday mornings have short queues"
+          },
+          "pr": {
+            "th": "≈ A$8–18",
+            "en": "≈ A$8–18"
+          },
+          "q": "Lune Croissanterie, Rose Street, Fitzroy, Melbourne"
+        },
+        {
+          "name": "The Tea Rooms 1892",
+          "kind": 2,
+          "area": {
+            "th": "บล็อกอาร์เคด ถนนคอลลินส์",
+            "en": "Block Arcade, Collins Street"
+          },
+          "tag": {
+            "th": "เค้กและชายามบ่าย",
+            "en": "Cakes and afternoon tea"
+          },
+          "what": {
+            "th": "ห้องน้ำชาเก่าแก่ในบล็อกอาร์เคด เดิมชื่อโฮปทูนทีรูมส์ ตู้เค้กหน้าร้านเป็นภาพที่คนถ่ายรูปกันมาก",
+            "en": "The historic tearoom in the Block Arcade, formerly the Hopetoun Tea Rooms, with a much-photographed window of cakes"
+          },
+          "why": {
+            "th": "เด็กเลือกเค้กจากตู้หน้าร้านได้ มีสโคนและแซนด์วิช ร้านเล็ก ควรพับรถเข็น",
+            "en": "A child can choose a cake from the window, there are scones and sandwiches, and the room is small so fold the pram"
+          },
+          "pr": {
+            "th": "≈ A$15–40",
+            "en": "≈ A$15–40"
+          },
+          "q": "The Tea Rooms 1892, Block Arcade, 282 Collins Street, Melbourne"
+        },
+        {
+          "name": "Great Ocean Road Chocolaterie & Ice Creamery",
+          "kind": 2,
+          "area": {
+            "th": "เกรทโอเชียนโรด เบลล์เบร ใกล้ทอร์คีย์",
+            "en": "Great Ocean Road, Bellbrae near Torquay"
+          },
+          "tag": {
+            "th": "ช็อกโกแลต ไอศกรีม",
+            "en": "Chocolate, ice cream"
+          },
+          "what": {
+            "th": "โรงช็อกโกแลตขนาดใหญ่ช่วงต้นเกรทโอเชียนโรด มีช็อกโกแลตให้ชิม ไอศกรีมทำเอง และคาเฟ่",
+            "en": "A big chocolate works near the start of the Great Ocean Road with tastings, house-made ice cream and a café"
+          },
+          "why": {
+            "th": "มีสนามหญ้าและสนามเด็กเล่นกลางแจ้ง ที่จอดรถกว้าง เด็กดูช่างทำช็อกโกแลตผ่านกระจกได้",
+            "en": "Lawns and an outdoor playground, plenty of parking, and children watch the chocolatiers through glass"
+          },
+          "pr": {
+            "th": "≈ A$8–25",
+            "en": "≈ A$8–25"
+          },
+          "q": "Great Ocean Road Chocolaterie & Ice Creamery, Bellbrae, Victoria"
+        }
+      ]
+    },
+    {
+      "place": "au-goldcoast",
+      "places": [
+        {
+          "name": "Hard Rock Cafe Surfers Paradise",
+          "kind": 0,
+          "area": {
+            "th": "โกลด์โคสต์ เซิร์ฟเฟอร์สพาราไดซ์",
+            "en": "Gold Coast, Surfers Paradise"
+          },
+          "tag": {
+            "th": "เบอร์เกอร์อเมริกัน",
+            "en": "American burgers"
+          },
+          "what": {
+            "th": "สาขาโกลด์โคสต์ของเครือฮาร์ดร็อก มีเบอร์เกอร์ ซี่โครง และของสะสมนักดนตรีบนผนัง อยู่ตรงถนนคาวิลล์",
+            "en": "The Gold Coast branch of the chain, with burgers, ribs and music memorabilia on the walls, on Cavill Avenue"
+          },
+          "why": {
+            "th": "มีเมนูเด็กและเก้าอี้เด็ก ร้านเสียงดังอยู่แล้ว เด็กส่งเสียงได้ไม่ต้องเกรงใจ",
+            "en": "A children's menu and high chairs, and a room already loud enough that a noisy child bothers nobody"
+          },
+          "pr": {
+            "th": "≈ A$30–50",
+            "en": "≈ A$30–50"
+          },
+          "q": "Hard Rock Cafe Surfers Paradise, Cavill Avenue, Surfers Paradise, Gold Coast"
+        },
+        {
+          "name": "Pancakes in Paradise",
+          "kind": 0,
+          "area": {
+            "th": "โกลด์โคสต์ เซิร์ฟเฟอร์สพาราไดซ์",
+            "en": "Gold Coast, Surfers Paradise"
+          },
+          "tag": {
+            "th": "แพนเค้ก",
+            "en": "Pancakes"
+          },
+          "what": {
+            "th": "ร้านแพนเค้กที่เปิดมาตั้งแต่ปี 1994 มีแพนเค้กหวาน เครปคาว และอาหารเช้าจานใหญ่",
+            "en": "A pancake restaurant open since 1994 with sweet pancakes, savoury crêpes and big breakfasts"
+          },
+          "why": {
+            "th": "เปิดเช้า มีเมนูเด็ก แพนเค้กแบ่งกันได้ อยู่ไม่ไกลหาด",
+            "en": "Opens in the morning, has a children's menu, pancakes are easy to share, and the beach is close"
+          },
+          "pr": {
+            "th": "≈ A$20–35",
+            "en": "≈ A$20–35"
+          },
+          "q": "Pancakes in Paradise, 3046 Surfers Paradise Boulevard, Surfers Paradise, Gold Coast"
+        },
+        {
+          "name": "Betty's Burgers Surfers Paradise",
+          "kind": 0,
+          "area": {
+            "th": "โกลด์โคสต์ เซิร์ฟเฟอร์สพาราไดซ์",
+            "en": "Gold Coast, Surfers Paradise"
+          },
+          "tag": {
+            "th": "เบอร์เกอร์ คัสตาร์ดแช่แข็ง",
+            "en": "Burgers, frozen custard"
+          },
+          "what": {
+            "th": "เครือเบอร์เกอร์จากควีนส์แลนด์ มีเบอร์เกอร์เนื้อ ไก่ทอด มันฝรั่งทอด และคัสตาร์ดแช่แข็งที่เรียกว่าคอนครีต",
+            "en": "A Queensland-born burger chain with beef and fried chicken burgers, chips and frozen custard called concretes"
+          },
+          "why": {
+            "th": "สั่งที่เคาน์เตอร์ ได้เร็ว มีชุดเด็ก นั่งได้ทั้งในร้านและนอกร้าน",
+            "en": "Order at the counter and eat within minutes; there is a children's meal and seating inside and out"
+          },
+          "pr": {
+            "th": "≈ A$18–28",
+            "en": "≈ A$18–28"
+          },
+          "q": "Betty's Burgers Surfers Paradise, Chevron Renaissance, Surfers Paradise, Gold Coast"
+        },
+        {
+          "name": "Currumbin Beach Vikings Surf Life Saving Club",
+          "kind": 0,
+          "area": {
+            "th": "โกลด์โคสต์ เคอร์รัมบิน",
+            "en": "Gold Coast, Currumbin"
+          },
+          "tag": {
+            "th": "บิสโทรริมหาด",
+            "en": "Surf club bistro"
+          },
+          "what": {
+            "th": "ห้องอาหารของสโมสรไลฟ์การ์ดที่ตั้งอยู่บนโขดหินริมทะเล มีฟิชแอนด์ชิปส์ สเต๊ก และซีฟู้ด",
+            "en": "The dining room of a surf lifesaving club built on the rocks above the sea, with fish and chips, steak and seafood"
+          },
+          "why": {
+            "th": "สโมสรเซิร์ฟต้อนรับครอบครัว มีเมนูเด็ก เห็นทะเลรอบด้าน อยู่ใกล้สวนสัตว์เคอร์รัมบิน",
+            "en": "Surf clubs welcome families and have children's menus; sea on every side, and close to Currumbin Wildlife Sanctuary"
+          },
+          "pr": {
+            "th": "≈ A$25–45",
+            "en": "≈ A$25–45"
+          },
+          "q": "Currumbin Beach Vikings Surf Life Saving Club, Pacific Parade, Currumbin, Gold Coast"
+        },
+        {
+          "name": "Cav's Steakhouse",
+          "kind": 0,
+          "area": {
+            "th": "โกลด์โคสต์ แลบราดอร์",
+            "en": "Gold Coast, Labrador"
+          },
+          "tag": {
+            "th": "สเต๊ก",
+            "en": "Steak"
+          },
+          "what": {
+            "th": "ร้านสเต๊กเก่าแก่ของโกลด์โคสต์ มีร้านเนื้อของตัวเอง บ่มเนื้อเอง เลือกชิ้นเนื้อจากตู้ได้",
+            "en": "A long-running Gold Coast steakhouse with its own butchery, ageing its beef in-house; you can pick your cut from the cabinet"
+          },
+          "why": {
+            "th": "เปิดมื้อเย็นเร็ว ร้านครอบครัวแบบดั้งเดิม เนื้อกับมันฝรั่งที่เด็กแบ่งกินได้",
+            "en": "Dinner starts early in an old-style family room, and steak with potatoes is easy to share with a child"
+          },
+          "pr": {
+            "th": "≈ A$40–70",
+            "en": "≈ A$40–70"
+          },
+          "q": "Cav's Steakhouse, Frank Street, Labrador, Gold Coast"
+        },
+        {
+          "name": "Julius Pizzeria",
+          "kind": 0,
+          "area": {
+            "th": "บริสเบน เซาท์บริสเบน",
+            "en": "Brisbane, South Brisbane"
+          },
+          "tag": {
+            "th": "พิซซ่า พาสต้า",
+            "en": "Pizza, pasta"
+          },
+          "what": {
+            "th": "พิซซ่าเตาฟืนและพาสต้าทำเองในย่านวัฒนธรรมของบริสเบน ใกล้หอศิลป์และพิพิธภัณฑ์",
+            "en": "Wood-fired pizza and house-made pasta in Brisbane's cultural precinct, near the galleries and museum"
+          },
+          "why": {
+            "th": "พิซซ่าแบ่งกันได้ เปิดมื้อเย็นเร็ว เดินจากเซาท์แบงก์ได้ ควรจองหรือไปตอนร้านเปิด",
+            "en": "Pizza to share, an early dinner service, and a walk from South Bank; book or arrive at opening"
+          },
+          "pr": {
+            "th": "≈ A$30–45",
+            "en": "≈ A$30–45"
+          },
+          "q": "Julius Pizzeria, 77 Grey Street, South Brisbane"
+        },
+        {
+          "name": "Pancake Manor",
+          "kind": 0,
+          "area": {
+            "th": "บริสเบน ใจกลางเมือง",
+            "en": "Brisbane city centre"
+          },
+          "tag": {
+            "th": "แพนเค้ก",
+            "en": "Pancakes"
+          },
+          "what": {
+            "th": "ร้านแพนเค้กในโบสถ์อิฐเก่า เปิดมาตั้งแต่ปี 1979 มีแพนเค้ก เครป และอาหารจานหลัก",
+            "en": "A pancake house inside an old brick church, open since 1979, with pancakes, crêpes and main dishes"
+          },
+          "why": {
+            "th": "เปิดทุกช่วงเวลา มีเมนูเด็ก โต๊ะบูธกว้าง เด็กชอบเพดานโบสถ์สูง",
+            "en": "Open at any hour with a children's menu and roomy booths, and children like the high church ceiling"
+          },
+          "pr": {
+            "th": "≈ A$20–35",
+            "en": "≈ A$20–35"
+          },
+          "q": "Pancake Manor, 18 Charlotte Street, Brisbane"
+        },
+        {
+          "name": "Harajuku Gyoza South Bank",
+          "kind": 0,
+          "area": {
+            "th": "บริสเบน เซาท์แบงก์",
+            "en": "Brisbane, South Bank"
+          },
+          "tag": {
+            "th": "เกี๊ยวซ่า",
+            "en": "Gyoza"
+          },
+          "what": {
+            "th": "ร้านเกี๊ยวซ่าสีสันสดใส มีเกี๊ยวซ่าทอดและนึ่ง ราเมน และเกี๊ยวซ่าของหวาน พนักงานร้องทักเสียงดัง",
+            "en": "A bright gyoza restaurant with fried and steamed gyoza, ramen and dessert gyoza, and staff who shout a welcome"
+          },
+          "why": {
+            "th": "จานเล็กมาเร็ว เด็กหยิบกินเองได้ อยู่ติดสวนเซาท์แบงก์และสระน้ำเด็ก",
+            "en": "Small plates come fast and suit little hands, right by the South Bank parklands and water play"
+          },
+          "pr": {
+            "th": "≈ A$25–40",
+            "en": "≈ A$25–40"
+          },
+          "q": "Harajuku Gyoza South Bank, 184 Grey Street, South Brisbane"
+        },
+        {
+          "name": "Charis Seafoods",
+          "kind": 1,
+          "area": {
+            "th": "โกลด์โคสต์ แลบราดอร์",
+            "en": "Gold Coast, Labrador"
+          },
+          "tag": {
+            "th": "ฟิชแอนด์ชิปส์ ซีฟู้ด",
+            "en": "Fish and chips, seafood"
+          },
+          "what": {
+            "th": "ร้านขายซีฟู้ดริมบรอดวอเตอร์ มีกุ้งสด หอยนางรม และฟิชแอนด์ชิปส์ ช่วงบ่ายมีการให้อาหารนกพีลิแคนหน้าร้าน",
+            "en": "A seafood shop on the Broadwater with fresh prawns, oysters and fish and chips; pelicans are fed outside in the early afternoon"
+          },
+          "why": {
+            "th": "เด็กได้ดูนกพีลิแคนฝูงใหญ่ใกล้ๆ นั่งกินในสวนริมน้ำ มีสนามเด็กเล่นใกล้ร้าน",
+            "en": "Children see a crowd of pelicans up close, you eat in the waterside park, and a playground is nearby"
+          },
+          "pr": {
+            "th": "≈ A$15–30",
+            "en": "≈ A$15–30"
+          },
+          "q": "Charis Seafoods, 371 Marine Parade, Labrador, Gold Coast"
+        },
+        {
+          "name": "Miami Marketta",
+          "kind": 1,
+          "area": {
+            "th": "โกลด์โคสต์ ไมอามี",
+            "en": "Gold Coast, Miami"
+          },
+          "tag": {
+            "th": "ตลาดอาหารกลางคืน",
+            "en": "Night food market"
+          },
+          "what": {
+            "th": "ตลาดสตรีทฟู้ดในโกดังเก่า มีร้านอาหารนานาชาติ ของหวาน และดนตรีสด เปิดเฉพาะบางเย็นของสัปดาห์",
+            "en": "A street food market in an old warehouse with stalls from many countries, desserts and live music, open on certain evenings only"
+          },
+          "why": {
+            "th": "แต่ละคนเลือกของตัวเอง โต๊ะยาวนั่งรวม ไปตอนเปิดคนยังไม่แน่น ควรเช็กวันเปิดก่อน",
+            "en": "Everyone chooses their own food at long shared tables; go at opening before the crowd, and check the opening days first"
+          },
+          "pr": {
+            "th": "≈ A$15–30",
+            "en": "≈ A$15–30"
+          },
+          "q": "Miami Marketta, Hillcrest Parade, Miami, Gold Coast"
+        },
+        {
+          "name": "Eat Street Northshore",
+          "kind": 1,
+          "area": {
+            "th": "บริสเบน แฮมิลตัน ริมแม่น้ำ",
+            "en": "Brisbane, Hamilton riverside"
+          },
+          "tag": {
+            "th": "ตลาดอาหารกลางคืน",
+            "en": "Night food market"
+          },
+          "what": {
+            "th": "ตลาดอาหารริมแม่น้ำบริสเบนที่สร้างจากตู้คอนเทนเนอร์ มีร้านของกินนับร้อยและไฟประดับ เปิดช่วงเย็นวันสุดสัปดาห์",
+            "en": "A riverside market built from shipping containers with scores of food stalls and fairy lights, open on weekend evenings"
+          },
+          "why": {
+            "th": "เด็กชอบไฟและดนตรี ของกินเล่นหลากหลาย ไปตั้งแต่ตลาดเปิดจะหาโต๊ะง่าย มีค่าเข้าเล็กน้อย",
+            "en": "Children like the lights and music and there is plenty to nibble; arrive at opening for a table, and there is a small entry fee"
+          },
+          "pr": {
+            "th": "≈ A$20–35",
+            "en": "≈ A$20–35"
+          },
+          "q": "Eat Street Northshore, MacArthur Avenue, Hamilton, Brisbane"
+        },
+        {
+          "name": "Paddock Bakery",
+          "kind": 2,
+          "area": {
+            "th": "โกลด์โคสต์ ไมอามี",
+            "en": "Gold Coast, Miami"
+          },
+          "tag": {
+            "th": "เบเกอรี่ คาเฟ่",
+            "en": "Bakery café"
+          },
+          "what": {
+            "th": "เบเกอรี่ในบ้านไม้เก่า อบขนมปังซาวร์โดด้วยเตาฟืน มีโดนัทไส้ครีม ครัวซองต์ และอาหารเช้า",
+            "en": "A bakery in an old timber cottage baking sourdough in a wood oven, with filled doughnuts, croissants and breakfast"
+          },
+          "why": {
+            "th": "นั่งในสวนหน้าบ้านได้ เปิดเช้า ขนมอบหลายอย่างให้เด็กเลือก",
+            "en": "Garden seating out the front, an early opening, and plenty of baked things for a child to choose from"
+          },
+          "pr": {
+            "th": "≈ A$12–28",
+            "en": "≈ A$12–28"
+          },
+          "q": "Paddock Bakery, Hibiscus Haven, Miami, Gold Coast"
+        },
+        {
+          "name": "Gelato Messina South Brisbane",
+          "kind": 2,
+          "area": {
+            "th": "บริสเบน เซาท์บริสเบน",
+            "en": "Brisbane, South Brisbane"
+          },
+          "tag": {
+            "th": "เจลาโต",
+            "en": "Gelato"
+          },
+          "what": {
+            "th": "สาขาบริสเบนของร้านเจลาโตดังจากซิดนีย์ มีหลายสิบรสและรสพิเศษประจำสัปดาห์",
+            "en": "The Brisbane shop of the Sydney gelato maker, with dozens of flavours and weekly specials"
+          },
+          "why": {
+            "th": "ขอชิมก่อนได้ มีถ้วยเล็ก เดินไปกินที่สวนเซาท์แบงก์ได้",
+            "en": "Tastes before you choose, a small cup for a child, and the South Bank parklands are a walk away"
+          },
+          "pr": {
+            "th": "≈ A$7–12",
+            "en": "≈ A$7–12"
+          },
+          "q": "Gelato Messina South Brisbane, Melbourne Street, South Brisbane"
+        },
+        {
+          "name": "Lune Croissanterie South Brisbane",
+          "kind": 2,
+          "area": {
+            "th": "บริสเบน เซาท์บริสเบน",
+            "en": "Brisbane, South Brisbane"
+          },
+          "tag": {
+            "th": "ครัวซองต์",
+            "en": "Croissants"
+          },
+          "what": {
+            "th": "สาขาบริสเบนของร้านครัวซองต์ดังจากเมลเบิร์น อบในห้องกระจกกลางร้านให้ลูกค้าเห็น",
+            "en": "The Brisbane branch of Melbourne's well-known croissant bakery, baking in a glass room in the middle of the shop"
+          },
+          "why": {
+            "th": "ครัวซองต์เนยกินง่าย เด็กดูคนทำผ่านกระจกได้ ไปเช้าของยังครบ",
+            "en": "A plain croissant is easy food, children watch the bakers through glass, and mornings have the full range"
+          },
+          "pr": {
+            "th": "≈ A$8–18",
+            "en": "≈ A$8–18"
+          },
+          "q": "Lune Croissanterie, Manning Street, South Brisbane"
+        }
+      ]
+    },
+    {
+      "place": "au-cairns",
+      "places": [
+        {
+          "name": "Prawn Star",
+          "kind": 0,
+          "area": {
+            "th": "แคนส์ ท่าเรือมาร์ลินมารีนา",
+            "en": "Cairns, Marlin Marina"
+          },
+          "tag": {
+            "th": "ซีฟู้ดบนเรือ",
+            "en": "Seafood on a boat"
+          },
+          "what": {
+            "th": "เรือประมงที่จอดในมารีนา เสิร์ฟกุ้งต้ม หอยนางรม ปู และกั้งเป็นถาดรวม กินกันบนดาดฟ้าเรือ",
+            "en": "Fishing trawlers moored in the marina serving platters of cooked prawns, oysters, crab and bugs, eaten on deck"
+          },
+          "why": {
+            "th": "เด็กตื่นเต้นที่ได้กินบนเรือ กุ้งต้มไม่ปรุงรส แกะให้เด็กกินได้ ไม่รับจอง ไปเร็วได้ที่นั่ง",
+            "en": "Eating on a boat is an adventure for a child and plain cooked prawns are easy to peel for them; no bookings, so go early"
+          },
+          "pr": {
+            "th": "≈ A$30–55",
+            "en": "≈ A$30–55"
+          },
+          "q": "Prawn Star, Marlin Marina, Pier Point Road, Cairns"
+        },
+        {
+          "name": "Dundee's Restaurant on the Waterfront",
+          "kind": 0,
+          "area": {
+            "th": "แคนส์ ริมมารีนา",
+            "en": "Cairns waterfront"
+          },
+          "tag": {
+            "th": "ซีฟู้ด สเต๊ก",
+            "en": "Seafood, steak"
+          },
+          "what": {
+            "th": "ร้านริมทางเดินเลียบมารีนา มีปลากะพงขาว ซีฟู้ด สเต๊ก และเนื้อพื้นถิ่นออสเตรเลียอย่างจิงโจ้และจระเข้",
+            "en": "A boardwalk restaurant by the marina with barramundi, seafood, steak and Australian meats such as kangaroo and crocodile"
+          },
+          "why": {
+            "th": "มีเมนูเด็ก โต๊ะกลางแจ้งริมน้ำ เปิดมื้อเย็นเร็ว เดินจากลากูนของแคนส์ได้",
+            "en": "A children's menu, outdoor tables by the water, early dinner, and a walk from the Cairns lagoon"
+          },
+          "pr": {
+            "th": "≈ A$40–65",
+            "en": "≈ A$40–65"
+          },
+          "q": "Dundee's Restaurant on the Waterfront, Harbour Lights, Cairns"
+        },
+        {
+          "name": "Ochre Restaurant",
+          "kind": 0,
+          "area": {
+            "th": "แคนส์ ริมมารีนา",
+            "en": "Cairns waterfront"
+          },
+          "tag": {
+            "th": "อาหารออสเตรเลียพื้นถิ่น",
+            "en": "Australian native food"
+          },
+          "what": {
+            "th": "ร้านที่ใช้วัตถุดิบพื้นถิ่นออสเตรเลียมานาน เช่น วอตเทิลซีด เลมอนเมอร์เทิล เนื้อจิงโจ้ และปลากะพงขาว",
+            "en": "A long-running restaurant built on Australian native ingredients such as wattleseed, lemon myrtle, kangaroo and barramundi"
+          },
+          "why": {
+            "th": "มีเมนูเด็ก นั่งริมน้ำได้ เหมาะกับมื้อเย็นรอบแรกที่ร้านยังเงียบ",
+            "en": "A children's menu and waterside seating; best at the first dinner sitting while the room is quiet"
+          },
+          "pr": {
+            "th": "≈ A$45–75",
+            "en": "≈ A$45–75"
+          },
+          "q": "Ochre Restaurant, Harbour Lights, Marlin Parade, Cairns"
+        },
+        {
+          "name": "Perrotta's at the Gallery",
+          "kind": 0,
+          "area": {
+            "th": "แคนส์ ใจกลางเมือง",
+            "en": "Cairns city centre"
+          },
+          "tag": {
+            "th": "อิตาเลียน บรันช์",
+            "en": "Italian, brunch"
+          },
+          "what": {
+            "th": "ร้านโปร่งโล่งติดหอศิลป์แคนส์ เปิดตั้งแต่อาหารเช้า มีพาสต้า พิซซ่า และกาแฟ",
+            "en": "An open-air restaurant beside the Cairns Art Gallery, open from breakfast, with pasta, pizza and coffee"
+          },
+          "why": {
+            "th": "นั่งบนระเบียงโล่ง เข็นรถเข็นเข้าได้ เปิดเช้า พาสต้าและพิซซ่าที่เด็กกินได้",
+            "en": "A breezy deck that takes a pram, an early opening, and pasta and pizza a child will eat"
+          },
+          "pr": {
+            "th": "≈ A$25–45",
+            "en": "≈ A$25–45"
+          },
+          "q": "Perrotta's at the Gallery, Abbott Street, Cairns"
+        },
+        {
+          "name": "Bayleaf Balinese Restaurant",
+          "kind": 0,
+          "area": {
+            "th": "แคนส์ ทางเหนือของใจกลางเมือง",
+            "en": "Cairns, north of the centre"
+          },
+          "tag": {
+            "th": "อาหารบาหลี",
+            "en": "Balinese"
+          },
+          "what": {
+            "th": "ร้านอาหารบาหลีที่เปิดมานาน มีสะเต๊ะ นาซิโกเร็ง เป็ดกรอบ และชุดไรซ์ทาเฟิลหลายจานเล็ก",
+            "en": "A long-running Balinese restaurant with satay, nasi goreng, crisp duck and a rijsttafel of many small dishes"
+          },
+          "why": {
+            "th": "ข้าวผัดและสะเต๊ะคุ้นปากเด็กไทย ขอไม่เผ็ดได้ นั่งในสวนได้",
+            "en": "Fried rice and satay are familiar to a Thai child, dishes can be made mild, and there is garden seating"
+          },
+          "pr": {
+            "th": "≈ A$35–55",
+            "en": "≈ A$35–55"
+          },
+          "q": "Bayleaf Balinese Restaurant, Lake Street, Cairns"
+        },
+        {
+          "name": "Salt House",
+          "kind": 0,
+          "area": {
+            "th": "แคนส์ ท่าเรือมาร์ลินมารีนา",
+            "en": "Cairns, Marlin Marina"
+          },
+          "tag": {
+            "th": "ซีฟู้ด พิซซ่า",
+            "en": "Seafood, pizza"
+          },
+          "what": {
+            "th": "ร้านกลางแจ้งขนาดใหญ่ปลายมารีนา มีซีฟู้ดย่าง พิซซ่าเตาฟืน และเนื้อย่างไฟ มองเห็นเรือและภูเขา",
+            "en": "A large open-air venue at the end of the marina with grilled seafood, wood-fired pizza and meat off the fire, facing boats and hills"
+          },
+          "why": {
+            "th": "พื้นที่โล่ง เข็นรถเข็นได้ มีเมนูเด็ก ไปมื้อกลางวันหรือเย็นเร็วก่อนโซนบาร์คึกคัก",
+            "en": "Open space that takes a pram and a children's menu; go for lunch or an early dinner before the bar side gets busy"
+          },
+          "pr": {
+            "th": "≈ A$35–60",
+            "en": "≈ A$35–60"
+          },
+          "q": "Salt House, Marina Point, Pier Point Road, Cairns"
+        },
+        {
+          "name": "Salsa Bar & Grill",
+          "kind": 0,
+          "area": {
+            "th": "พอร์ตดักลาส",
+            "en": "Port Douglas"
+          },
+          "tag": {
+            "th": "อาหารออสเตรเลียร่วมสมัย",
+            "en": "Modern Australian"
+          },
+          "what": {
+            "th": "ร้านในบ้านไม้ควีนส์แลนเดอร์ที่เปิดมากว่าสามสิบปี ดังเรื่องซีฟู้ดท้องถิ่นและจานผสมรสเขตร้อน",
+            "en": "A restaurant in a timber Queenslander open for more than thirty years, known for local seafood and tropical flavours"
+          },
+          "why": {
+            "th": "มีเมนูเด็ก นั่งบนระเบียงโล่ง สวนสาธารณะริมน้ำอยู่ฝั่งตรงข้าม ควรจองล่วงหน้า",
+            "en": "A children's menu, a breezy verandah, and the waterfront park across the road; book ahead"
+          },
+          "pr": {
+            "th": "≈ A$45–75",
+            "en": "≈ A$45–75"
+          },
+          "q": "Salsa Bar & Grill, 26 Wharf Street, Port Douglas"
+        },
+        {
+          "name": "The Tin Shed",
+          "kind": 0,
+          "area": {
+            "th": "พอร์ตดักลาส ริมอ่าว",
+            "en": "Port Douglas, on the inlet"
+          },
+          "tag": {
+            "th": "บิสโทรริมน้ำ",
+            "en": "Waterfront bistro"
+          },
+          "what": {
+            "th": "สโมสรชุมชนริมอ่าวดิกคินสัน ขายฟิชแอนด์ชิปส์ กุ้ง และสเต๊กในราคาคนท้องถิ่น ดูพระอาทิตย์ตกเหนือภูเขา",
+            "en": "The community club on Dickson Inlet selling fish and chips, prawns and steak at locals' prices, with sunset over the ranges"
+          },
+          "why": {
+            "th": "ระเบียงกว้างริมน้ำ มีเมนูเด็ก สั่งที่เคาน์เตอร์ เด็กดูเรือเข้าออกได้ ต้องลงชื่อเข้าที่ประตู",
+            "en": "A wide waterside deck, a children's menu and counter ordering; children watch the boats come in, and visitors sign in at the door"
+          },
+          "pr": {
+            "th": "≈ A$25–40",
+            "en": "≈ A$25–40"
+          },
+          "q": "The Tin Shed, Ashford Avenue, Port Douglas"
+        },
+        {
+          "name": "Vivo Palm Cove",
+          "kind": 0,
+          "area": {
+            "th": "ปาล์มโคฟ",
+            "en": "Palm Cove"
+          },
+          "tag": {
+            "th": "อาหารนานาชาติริมหาด",
+            "en": "Beachfront dining"
+          },
+          "what": {
+            "th": "ร้านแบบเปิดโล่งบนถนนเลียบหาดปาล์มโคฟ ใต้ต้นเมลาลูคาเก่าแก่ เปิดตั้งแต่อาหารเช้าถึงมื้อเย็น",
+            "en": "An open-sided restaurant on Palm Cove's esplanade under old melaleuca trees, open from breakfast to dinner"
+          },
+          "why": {
+            "th": "หาดและสนามเด็กเล่นอยู่ฝั่งตรงข้ามถนน นั่งกลางแจ้งได้ มีเมนูเด็ก",
+            "en": "The beach and a playground are across the road, there is outdoor seating, and a children's menu"
+          },
+          "pr": {
+            "th": "≈ A$30–55",
+            "en": "≈ A$30–55"
+          },
+          "q": "Vivo Palm Cove, 49 Williams Esplanade, Palm Cove"
+        },
+        {
+          "name": "Rusty's Markets",
+          "kind": 1,
+          "area": {
+            "th": "แคนส์ ใจกลางเมือง",
+            "en": "Cairns city centre"
+          },
+          "tag": {
+            "th": "ตลาดผลไม้เขตร้อน",
+            "en": "Tropical fruit market"
+          },
+          "what": {
+            "th": "ตลาดสดของแคนส์ เปิดวันศุกร์ถึงอาทิตย์ มีผลไม้เขตร้อน น้ำอ้อยคั้นสด ขนมอบ และร้านอาหารเอเชีย",
+            "en": "Cairns' produce market, open Friday to Sunday, with tropical fruit, fresh cane juice, baked goods and Asian food stalls"
+          },
+          "why": {
+            "th": "ผลไม้หั่นพร้อมกินและน้ำผลไม้ปั่นสำหรับเด็ก เดินดูสนุก ไปช่วงเช้าอากาศยังไม่ร้อน",
+            "en": "Cut fruit and smoothies for a child and plenty to look at; go in the morning before the heat"
+          },
+          "pr": {
+            "th": "≈ A$8–20",
+            "en": "≈ A$8–20"
+          },
+          "q": "Rusty's Markets, Grafton Street, Cairns"
+        },
+        {
+          "name": "Cairns Night Markets",
+          "kind": 1,
+          "area": {
+            "th": "แคนส์ เอสพลานาด",
+            "en": "Cairns Esplanade"
+          },
+          "tag": {
+            "th": "ศูนย์อาหาร",
+            "en": "Food court"
+          },
+          "what": {
+            "th": "ตลาดกลางคืนติดเอสพลานาด ด้านหน้าเป็นศูนย์อาหาร มีอาหารเอเชียแบบตักขาย ซีฟู้ด และไอศกรีม",
+            "en": "The night market off the Esplanade, with a food court at the front selling Asian dishes by the plate, seafood and ice cream"
+          },
+          "why": {
+            "th": "ราคาถูก ได้อาหารทันที มีข้าวและบะหมี่ที่เด็กไทยคุ้น เปิดทุกเย็น",
+            "en": "Cheap and immediate, with rice and noodles a Thai child knows, and open every evening"
+          },
+          "pr": {
+            "th": "≈ A$12–22",
+            "en": "≈ A$12–22"
+          },
+          "q": "Cairns Night Markets, 71-75 The Esplanade, Cairns"
+        },
+        {
+          "name": "Mocka's Pies",
+          "kind": 1,
+          "area": {
+            "th": "พอร์ตดักลาส",
+            "en": "Port Douglas"
+          },
+          "tag": {
+            "th": "พายอบสด",
+            "en": "Fresh pies"
+          },
+          "what": {
+            "th": "ร้านพายที่อยู่คู่พอร์ตดักลาสมาตั้งแต่ปี 1969 อบที่ร้านทุกวัน มีพายเนื้อ พายไก่ และพายเนื้อจระเข้",
+            "en": "A Port Douglas pie shop since 1969, baking on the premises each day: beef, chicken and crocodile pies"
+          },
+          "why": {
+            "th": "ได้ของทันที ถือไปกินที่สวนริมน้ำได้ พายเนื้อธรรมดาเหมาะกับเด็ก",
+            "en": "Served at once and easy to carry to the waterfront park; the plain beef pie suits a child"
+          },
+          "pr": {
+            "th": "≈ A$8–15",
+            "en": "≈ A$8–15"
+          },
+          "q": "Mocka's Pies, Grant Street, Port Douglas"
+        },
+        {
+          "name": "Muddy's Cafe",
+          "kind": 2,
+          "area": {
+            "th": "แคนส์ เอสพลานาด",
+            "en": "Cairns Esplanade"
+          },
+          "tag": {
+            "th": "คาเฟ่ข้างสนามเด็กเล่น",
+            "en": "Playground café"
+          },
+          "what": {
+            "th": "คาเฟ่ติดสนามเด็กเล่นมัดดีส์ริมเอสพลานาด มีอาหารเช้า แซนด์วิช กาแฟ และไอศกรีม",
+            "en": "The café beside Muddy's Playground on the Esplanade, with breakfast, sandwiches, coffee and ice cream"
+          },
+          "why": {
+            "th": "พ่อแม่นั่งดื่มกาแฟแล้วมองเห็นเด็กเล่นน้ำและเครื่องเล่นได้ เปิดเช้า",
+            "en": "Parents drink coffee within sight of the water play and climbing frames, and it opens early"
+          },
+          "pr": {
+            "th": "≈ A$10–25",
+            "en": "≈ A$10–25"
+          },
+          "q": "Muddy's Cafe, 174 Esplanade, Cairns"
+        },
+        {
+          "name": "Petit Cafe Kuranda",
+          "kind": 2,
+          "area": {
+            "th": "คูรันดา",
+            "en": "Kuranda"
+          },
+          "tag": {
+            "th": "เครป",
+            "en": "Crêpes"
+          },
+          "what": {
+            "th": "ร้านเครปในตลาดคูรันดากลางป่าฝน มีเครปหวานและเครปคาวหลายสิบแบบ ทำสดต่อหน้า",
+            "en": "A crêperie in Kuranda's rainforest market with dozens of sweet and savoury crêpes made in front of you"
+          },
+          "why": {
+            "th": "เครปหวานแบ่งกันได้ นั่งกลางแจ้งใต้ร่มไม้ แวะระหว่างเที่ยวรถไฟและกระเช้าคูรันดา",
+            "en": "A sweet crêpe to share at outdoor tables under the trees, between the Kuranda train and the cableway"
+          },
+          "pr": {
+            "th": "≈ A$12–22",
+            "en": "≈ A$12–22"
+          },
+          "q": "Petit Cafe Kuranda, Original Rainforest Markets, Kuranda"
+        },
+        {
+          "name": "Daintree Ice Cream Company",
+          "kind": 2,
+          "area": {
+            "th": "เดนทรี เคปทริบิวเลชัน",
+            "en": "Daintree, Cape Tribulation road"
+          },
+          "tag": {
+            "th": "ไอศกรีมผลไม้เขตร้อน",
+            "en": "Tropical fruit ice cream"
+          },
+          "what": {
+            "th": "สวนผลไม้ในป่าฝนเดนทรี ขายไอศกรีมถ้วยรวมสี่รสจากผลไม้ในสวน รสเปลี่ยนทุกวัน",
+            "en": "A fruit orchard in the Daintree rainforest selling one cup of four ice creams made from its own fruit, changing daily"
+          },
+          "why": {
+            "th": "จุดพักระหว่างขับรถไปเคปทริบิวเลชัน เด็กเดินดูต้นผลไม้แปลกๆ ในสวนได้",
+            "en": "A break on the drive to Cape Tribulation, and children can walk among the unusual fruit trees"
+          },
+          "pr": {
+            "th": "≈ A$8–12",
+            "en": "≈ A$8–12"
+          },
+          "q": "Daintree Ice Cream Company, Cape Tribulation Road, Diwan, Queensland"
+        },
+        {
+          "name": "Gelocchio",
+          "kind": 2,
+          "area": {
+            "th": "แคนส์ ใกล้เอสพลานาด",
+            "en": "Cairns, near the Esplanade"
+          },
+          "tag": {
+            "th": "เจลาโต",
+            "en": "Gelato"
+          },
+          "what": {
+            "th": "ร้านเจลาโตและของหวานใกล้เอสพลานาด มีเจลาโตทำเอง วาฟเฟิล และเครป",
+            "en": "A gelato and dessert shop near the Esplanade with house-made gelato, waffles and crêpes"
+          },
+          "why": {
+            "th": "ของหวานหลังมื้อเย็น ซื้อแล้วเดินไปกินริมลากูนได้ มีถ้วยเล็กสำหรับเด็ก",
+            "en": "Dessert after dinner that you can carry to the lagoon, with a small cup for a child"
+          },
+          "pr": {
+            "th": "≈ A$7–15",
+            "en": "≈ A$7–15"
+          },
+          "q": "Gelocchio, Shields Street, Cairns"
+        }
+      ]
+    },
+    {
+      "place": "au-uluru",
+      "places": [
+        {
+          "name": "Ilkari Restaurant",
+          "kind": 0,
+          "area": {
+            "th": "ยูลารา โรงแรมเซลส์อินเดอะเดสเสิร์ต",
+            "en": "Yulara, Sails in the Desert"
+          },
+          "tag": {
+            "th": "บุฟเฟต์",
+            "en": "Buffet"
+          },
+          "what": {
+            "th": "ห้องอาหารบุฟเฟต์ของโรงแรมเซลส์อินเดอะเดสเสิร์ต มีสถานีอาหารหลายแบบ ซีฟู้ด เนื้อย่าง และของหวาน",
+            "en": "The buffet restaurant of Sails in the Desert, with several cooking stations, seafood, roasts and desserts"
+          },
+          "why": {
+            "th": "บุฟเฟต์ทำให้เด็กเลือกของที่กินได้เอง ไม่ต้องรออาหาร มีเก้าอี้เด็ก ควรจองล่วงหน้า",
+            "en": "A buffet lets a child pick what they will eat with no waiting; high chairs, and worth booking ahead"
+          },
+          "pr": {
+            "th": "≈ A$80–100",
+            "en": "≈ A$80–100"
+          },
+          "q": "Ilkari Restaurant, Sails in the Desert, Yulara, Northern Territory"
+        },
+        {
+          "name": "Arnguli Grill",
+          "kind": 0,
+          "area": {
+            "th": "ยูลารา โรงแรมเดสเสิร์ตการ์เดนส์",
+            "en": "Yulara, Desert Gardens Hotel"
+          },
+          "tag": {
+            "th": "สเต๊ก อาหารออสเตรเลีย",
+            "en": "Grill, Australian"
+          },
+          "what": {
+            "th": "ห้องอาหารมื้อเย็นของโรงแรมเดสเสิร์ตการ์เดนส์ เสิร์ฟเนื้อย่างและจานที่ใช้วัตถุดิบพื้นถิ่นออสเตรเลีย",
+            "en": "The dinner restaurant of the Desert Gardens Hotel, serving grills and dishes built on Australian native ingredients"
+          },
+          "why": {
+            "th": "ห้องอาหารโรงแรมที่รับครอบครัว มีเมนูเด็ก จองรอบแรกของมื้อเย็นได้",
+            "en": "A hotel dining room that takes families, with a children's menu and an early first sitting to book"
+          },
+          "pr": {
+            "th": "≈ A$60–90",
+            "en": "≈ A$60–90"
+          },
+          "q": "Arnguli Grill, Desert Gardens Hotel, Yulara, Northern Territory"
+        },
+        {
+          "name": "Geckos Cafe",
+          "kind": 0,
+          "area": {
+            "th": "ยูลารา ทาวน์สแควร์",
+            "en": "Yulara, Town Square"
+          },
+          "tag": {
+            "th": "พิซซ่า พาสต้า",
+            "en": "Pizza, pasta"
+          },
+          "what": {
+            "th": "ร้านสบายๆ กลางทาวน์สแควร์ของรีสอร์ต มีพิซซ่า พาสต้า เบอร์เกอร์ และอาหารเช้า",
+            "en": "The casual restaurant in the resort's Town Square, with pizza, pasta, burgers and breakfast"
+          },
+          "why": {
+            "th": "ตัวเลือกที่ง่ายและถูกที่สุดแบบนั่งโต๊ะในรีสอร์ต พิซซ่าแบ่งกันได้ มีโต๊ะกลางแจ้ง",
+            "en": "The easiest and cheapest sit-down meal at the resort; pizza to share and outdoor tables"
+          },
+          "pr": {
+            "th": "≈ A$25–40",
+            "en": "≈ A$25–40"
+          },
+          "q": "Geckos Cafe, Town Square, Yulara, Northern Territory"
+        },
+        {
+          "name": "Mangata Bistro & Bar",
+          "kind": 0,
+          "area": {
+            "th": "ยูลารา โรงแรมเดสเสิร์ตการ์เดนส์",
+            "en": "Yulara, Desert Gardens Hotel"
+          },
+          "tag": {
+            "th": "บิสโทรทั้งวัน",
+            "en": "All-day bistro"
+          },
+          "what": {
+            "th": "บิสโทรของโรงแรมเดสเสิร์ตการ์เดนส์ มีบุฟเฟต์อาหารเช้าและอาหารจานเดียวตลอดวัน",
+            "en": "The bistro of the Desert Gardens Hotel, with a breakfast buffet and plates served through the day"
+          },
+          "why": {
+            "th": "เปิดเช้าตรู่ เหมาะกับวันที่ตื่นไปดูพระอาทิตย์ขึ้น กินได้ทุกช่วงเวลาตามตารางนอนของเด็ก",
+            "en": "Opens very early for sunrise days, and all-day service fits around a small child's naps"
+          },
+          "pr": {
+            "th": "≈ A$30–50",
+            "en": "≈ A$30–50"
+          },
+          "q": "Mangata Bistro & Bar, Desert Gardens Hotel, Yulara, Northern Territory"
+        },
+        {
+          "name": "Outback BBQ & Bar",
+          "kind": 0,
+          "area": {
+            "th": "ยูลารา โรงแรมเอาต์แบ็ก",
+            "en": "Yulara, Outback Hotel"
+          },
+          "tag": {
+            "th": "บาร์บีคิวย่างเอง",
+            "en": "Cook-your-own barbecue"
+          },
+          "what": {
+            "th": "ลานบาร์บีคิวที่ลูกค้าเลือกเนื้อดิบ เช่น สเต๊ก ไส้กรอก จิงโจ้ แล้วย่างเองบนเตา พร้อมสลัดบาร์",
+            "en": "An outdoor barbecue where you choose raw steak, sausages or kangaroo and grill it yourself, with a salad bar"
+          },
+          "why": {
+            "th": "บรรยากาศกลางแจ้งเสียงดังสบายๆ เด็กดูพ่อแม่ย่างเนื้อ มีดนตรีสดช่วงเย็น ระวังเด็กใกล้เตาร้อน",
+            "en": "A loud, relaxed outdoor yard where children watch the grilling, with live music in the evening; keep little ones back from the hotplates"
+          },
+          "pr": {
+            "th": "≈ A$30–55",
+            "en": "≈ A$30–55"
+          },
+          "q": "Outback BBQ & Bar, Outback Hotel, Yulara, Northern Territory"
+        },
+        {
+          "name": "Carmichael's Restaurant",
+          "kind": 0,
+          "area": {
+            "th": "คิงส์แคนยอน",
+            "en": "Kings Canyon"
+          },
+          "tag": {
+            "th": "ห้องอาหารรีสอร์ต",
+            "en": "Resort restaurant"
+          },
+          "what": {
+            "th": "ห้องอาหารของรีสอร์ตคิงส์แคนยอน เสิร์ฟอาหารเช้าและมื้อเย็นที่ใช้วัตถุดิบท้องถิ่น เปิดตามฤดูท่องเที่ยว",
+            "en": "The restaurant of the Kings Canyon resort, serving breakfast and dinner built on local produce, open in the visitor season"
+          },
+          "why": {
+            "th": "ที่กินแบบนั่งโต๊ะที่ใกล้คิงส์แคนยอนที่สุด นอกฤดูให้ใช้บาร์แอนด์กริลล์ของรีสอร์ตแทน",
+            "en": "The nearest sit-down meal to Kings Canyon; out of season the resort's bar and grill serves instead"
+          },
+          "pr": {
+            "th": "≈ A$40–70",
+            "en": "≈ A$40–70"
+          },
+          "q": "Carmichael's Restaurant, Discovery Resorts Kings Canyon, Petermann, Northern Territory"
+        },
+        {
+          "name": "Hanuman Alice Springs",
+          "kind": 0,
+          "area": {
+            "th": "อลิซสปริงส์",
+            "en": "Alice Springs"
+          },
+          "tag": {
+            "th": "อาหารไทยและอินเดีย",
+            "en": "Thai and Indian"
+          },
+          "what": {
+            "th": "ร้านอาหารไทย อินเดีย และนอนยาในโรงแรมดับเบิลทรีบายฮิลตัน ดังเรื่องหอยนางรมซอสตะไคร้และแกงต่างๆ",
+            "en": "A Thai, Indian and Nonya restaurant in the DoubleTree by Hilton, known for oysters in lemongrass sauce and its curries"
+          },
+          "why": {
+            "th": "มีข้าวสวยและแกงที่เด็กไทยคุ้น ขอรสอ่อนได้ ห้องอาหารโรงแรมมีเก้าอี้เด็ก",
+            "en": "Steamed rice and curries a Thai child knows, made mild on request, in a hotel dining room with high chairs"
+          },
+          "pr": {
+            "th": "≈ A$40–65",
+            "en": "≈ A$40–65"
+          },
+          "q": "Hanuman Alice Springs, DoubleTree by Hilton, Barrett Drive, Alice Springs"
+        },
+        {
+          "name": "Bella Alice",
+          "kind": 0,
+          "area": {
+            "th": "อลิซสปริงส์",
+            "en": "Alice Springs"
+          },
+          "tag": {
+            "th": "พิซซ่าเตาฟืน",
+            "en": "Wood-fired pizza"
+          },
+          "what": {
+            "th": "ร้านพิซซ่าเตาฟืนและอาหารยุโรปในบรรยากาศสบายๆ ของอลิซสปริงส์",
+            "en": "Wood-fired pizza and European dishes in a relaxed room in Alice Springs"
+          },
+          "why": {
+            "th": "พิซซ่าและพาสต้าที่เด็กกินได้ แบ่งกันทั้งโต๊ะ เหมาะกับมื้อเย็นเร็ว",
+            "en": "Pizza and pasta a child will eat, shared across the table, and suited to an early dinner"
+          },
+          "pr": {
+            "th": "≈ A$25–45",
+            "en": "≈ A$25–45"
+          },
+          "q": "Bella Alice, Alice Springs, Northern Territory"
+        },
+        {
+          "name": "Ayers Wok Noodle Bar",
+          "kind": 1,
+          "area": {
+            "th": "ยูลารา ทาวน์สแควร์",
+            "en": "Yulara, Town Square"
+          },
+          "tag": {
+            "th": "ก๋วยเตี๋ยวผัดสั่งกลับ",
+            "en": "Takeaway noodles"
+          },
+          "what": {
+            "th": "เคาน์เตอร์อาหารเอเชียแบบสั่งกลับในทาวน์สแควร์ มีบะหมี่ผัด ข้าวผัด และแกงในกล่อง",
+            "en": "A takeaway Asian counter in the Town Square with stir-fried noodles, fried rice and curries in a box"
+          },
+          "why": {
+            "th": "ข้าวและเส้นที่เด็กไทยคุ้น ราคาถูกสุดในรีสอร์ต ถือกลับไปกินที่ห้องได้เมื่อเด็กเหนื่อย",
+            "en": "Rice and noodles a Thai child knows at the resort's lowest prices, easy to carry back to the room when a child is tired"
+          },
+          "pr": {
+            "th": "≈ A$18–28",
+            "en": "≈ A$18–28"
+          },
+          "q": "Ayers Wok Noodle Bar, Town Square, Yulara, Northern Territory"
+        },
+        {
+          "name": "Kings Creek Station",
+          "kind": 1,
+          "area": {
+            "th": "ถนนลูริตยา ใกล้คิงส์แคนยอน",
+            "en": "Luritja Road, near Kings Canyon"
+          },
+          "tag": {
+            "th": "เบอร์เกอร์อูฐ",
+            "en": "Camel burgers"
+          },
+          "what": {
+            "th": "ฟาร์มวัวและอูฐที่ยังทำงานจริง ห่างคิงส์แคนยอนราว 36 กม. คาเฟ่ขายเบอร์เกอร์เนื้ออูฐ อาหารร้อน และของว่าง",
+            "en": "A working cattle and camel station about 36 km from Kings Canyon; its café sells camel burgers, hot meals and snacks"
+          },
+          "why": {
+            "th": "จุดพักรถกลางทางยาว เด็กได้ลงมายืดขาและดูอูฐ มีห้องน้ำและน้ำมัน",
+            "en": "A break on a long drive where children stretch their legs and see camels; toilets and fuel too"
+          },
+          "pr": {
+            "th": "≈ A$18–30",
+            "en": "≈ A$18–30"
+          },
+          "q": "Kings Creek Station, Luritja Road, Petermann, Northern Territory"
+        },
+        {
+          "name": "Erldunda Roadhouse",
+          "kind": 1,
+          "area": {
+            "th": "แยกสจวร์ตไฮเวย์กับลาสเซเตอร์ไฮเวย์",
+            "en": "Stuart Highway and Lasseter Highway junction"
+          },
+          "tag": {
+            "th": "จุดพักรถ",
+            "en": "Roadhouse"
+          },
+          "what": {
+            "th": "จุดพักรถตรงทางแยกไปอูลูรู ระหว่างอลิซสปริงส์กับยูลารา มีเบอร์เกอร์ พาย อาหารจานร้อน และฟาร์มนกอีมู",
+            "en": "The roadhouse at the turn-off to Uluru between Alice Springs and Yulara, with burgers, pies, hot plates and an emu enclosure"
+          },
+          "why": {
+            "th": "จุดแวะกลางทางขับรถหลายชั่วโมง เด็กดูนกอีมูได้ มีห้องน้ำ น้ำมัน และของว่าง",
+            "en": "The halfway stop on a drive of several hours; children can see the emus, and there are toilets, fuel and snacks"
+          },
+          "pr": {
+            "th": "≈ A$15–30",
+            "en": "≈ A$15–30"
+          },
+          "q": "Erldunda Roadhouse, Stuart Highway, Ghan, Northern Territory"
+        },
+        {
+          "name": "Kulata Academy Cafe",
+          "kind": 2,
+          "area": {
+            "th": "ยูลารา ทาวน์สแควร์",
+            "en": "Yulara, Town Square"
+          },
+          "tag": {
+            "th": "คาเฟ่ แซนด์วิช",
+            "en": "Café, sandwiches"
+          },
+          "what": {
+            "th": "คาเฟ่ในทาวน์สแควร์ที่เป็นที่ฝึกงานของนักเรียนชนพื้นเมืองของรีสอร์ต ขายกาแฟ แซนด์วิช พาย และขนมอบ",
+            "en": "A Town Square café staffed by the resort's Indigenous trainees, selling coffee, sandwiches, pies and pastries"
+          },
+          "why": {
+            "th": "ซื้อเร็ว เปิดเช้า เหมาะซื้ออาหารกลางวันติดตัวไปอุทยาน",
+            "en": "Quick counter service and an early opening, good for a packed lunch to take into the park"
+          },
+          "pr": {
+            "th": "≈ A$10–20",
+            "en": "≈ A$10–20"
+          },
+          "q": "Kulata Academy Cafe, Town Square, Yulara, Northern Territory"
+        },
+        {
+          "name": "Ininti Cafe & Souvenirs",
+          "kind": 2,
+          "area": {
+            "th": "อุทยานอูลูรู ศูนย์วัฒนธรรม",
+            "en": "Uluru-Kata Tjuta Cultural Centre"
+          },
+          "tag": {
+            "th": "คาเฟ่ในอุทยาน",
+            "en": "Park café"
+          },
+          "what": {
+            "th": "คาเฟ่แห่งเดียวในเขตอุทยาน อยู่ที่ศูนย์วัฒนธรรมใกล้อูลูรู มีแซนด์วิช อาหารร้อนง่ายๆ ไอศกรีม และเครื่องดื่มเย็น",
+            "en": "The only café inside the national park, at the Cultural Centre near Uluru, with sandwiches, simple hot food, ice cream and cold drinks"
+          },
+          "why": {
+            "th": "ที่พักหลบแดดกลางวันระหว่างเดินรอบอูลูรู มีที่นั่งในร่มและห้องน้ำ",
+            "en": "A shaded midday stop between walks at Uluru, with covered seating and toilets"
+          },
+          "pr": {
+            "th": "≈ A$10–22",
+            "en": "≈ A$10–22"
+          },
+          "q": "Ininti Cafe & Souvenirs, Uluru-Kata Tjuta Cultural Centre, Northern Territory"
+        },
+        {
+          "name": "Page 27 Cafe",
+          "kind": 2,
+          "area": {
+            "th": "อลิซสปริงส์ ท็อดด์มอลล์",
+            "en": "Alice Springs, Todd Mall"
+          },
+          "tag": {
+            "th": "คาเฟ่ อาหารเช้า",
+            "en": "Café, breakfast"
+          },
+          "what": {
+            "th": "คาเฟ่ในตรอกเล็กข้างท็อดด์มอลล์ คนท้องถิ่นมากินอาหารเช้า กาแฟ และน้ำผลไม้ปั่น",
+            "en": "A café in an arcade off Todd Mall where locals come for breakfast, coffee and smoothies"
+          },
+          "why": {
+            "th": "เปิดเช้า มีโต๊ะกลางแจ้งในตรอกไม่มีรถ ไข่และขนมปังปิ้งสำหรับเด็ก",
+            "en": "Opens early with outdoor tables in a car-free arcade, and eggs on toast for a child"
+          },
+          "pr": {
+            "th": "≈ A$15–28",
+            "en": "≈ A$15–28"
+          },
+          "q": "Page 27 Cafe, Fan Arcade, Todd Mall, Alice Springs"
+        },
+        {
+          "name": "Bean Tree Cafe",
+          "kind": 2,
+          "area": {
+            "th": "อลิซสปริงส์ สวนพฤกษศาสตร์โอลิฟพิงก์",
+            "en": "Alice Springs, Olive Pink Botanic Garden"
+          },
+          "tag": {
+            "th": "คาเฟ่ในสวน",
+            "en": "Garden café"
+          },
+          "what": {
+            "th": "คาเฟ่กลางแจ้งในสวนพฤกษศาสตร์พืชทะเลทราย มีอาหารเช้า อาหารกลางวัน เค้ก และกาแฟ",
+            "en": "An outdoor café in a garden of desert plants, with breakfast, lunch, cakes and coffee"
+          },
+          "why": {
+            "th": "โต๊ะใต้ร่มไม้ เด็กเดินเล่นในสวนได้ มักมีวัลลาบีและนกมาให้เห็น เปิดถึงช่วงบ่ายเท่านั้น",
+            "en": "Tables under the trees and a garden to wander, often with wallabies and birds about; open until early afternoon only"
+          },
+          "pr": {
+            "th": "≈ A$15–28",
+            "en": "≈ A$15–28"
+          },
+          "q": "Bean Tree Cafe, Olive Pink Botanic Garden, Tuncks Road, Alice Springs"
+        }
+      ]
+    }
+  ]
+}
