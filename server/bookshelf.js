@@ -1248,10 +1248,13 @@ function router({ pool, media, A, ai, hooks = {} }) {   // hooks.heart(h): set b
   r.get('/api/b/eatlib', A.requireEditor, async (req, res, next) => {
     try {
       res.setHeader('Cache-Control', 'no-store');
-      const rows = await EATLIB.all(pool, FAMILY);
-      if (req.query.for) return res.json({ for: eatFor(rows, eatPairs(String(req.query.for))) });
-      if (req.query.town) return res.json({ places: rows.filter((x) => x.tkey === String(req.query.town)).map(EATLIB.out) });
-      const cof = EATLIB.countryOf(STOCK.read());
+      const rows = await EATLIB.all(pool, FAMILY), cof = EATLIB.countryOf(STOCK.read());
+      // the family's own verdict from the travel notebook (a food review of the same name, any book): its stars and "would go again"
+      const fam = new Map();
+      for (const r of await q("SELECT name, rating, again FROM reviews WHERE family_id=$1 AND kind='food' AND (rating IS NOT NULL OR again IS NOT NULL) ORDER BY updated_at", [FAMILY])) for (const n of [r.name && r.name.en, r.name && r.name.th]) if (n && EATLIB.norm(n).length >= 2) fam.set(EATLIB.norm(n), { r: r.rating || 0, again: r.again });
+      const withCc = (x) => ({ ...x, cc: (cof.get(x.tkey) || {}).cc || '', ...(fam.has(EATLIB.norm(x.name)) ? { fam: fam.get(EATLIB.norm(x.name)) } : {}) });   // the place's country (≈ ฿ on the phone) and our own verdict
+      if (req.query.for) return res.json({ for: eatFor(rows, eatPairs(String(req.query.for))).map((t) => ({ ...t, places: t.places.map(withCc) })) });
+      if (req.query.town) return res.json({ places: rows.filter((x) => x.tkey === String(req.query.town)).map(EATLIB.out).map(withCc) });
       res.json({ towns: EATLIB.towns(rows).map((t) => ({ ...t, country: cof.get(t.tkey) || null })), total: rows.length, on: !!(ai && ai.enabled()) });
     } catch (e) { next(e); }
   });
@@ -1416,37 +1419,63 @@ function router({ pool, media, A, ai, hooks = {} }) {   // hooks.heart(h): set b
   let vfJob = null;   // { trip, status, done, total, error, started }
   const vfView = () => (vfJob ? { trip: vfJob.trip, status: vfJob.status, done: vfJob.done, total: vfJob.total, error: vfJob.error || null, started: vfJob.started } : { status: 'idle' });
   r.get('/api/b/planner/verify', A.requireEditor, (_req, res) => { res.setHeader('Cache-Control', 'no-store'); res.json(vfView()); });
-  r.post('/api/b/planner/verify/:trip', ...W, async (req, res, next) => {
-    let held = null;
+  // one check of a book (the route and the check made by itself before a trip): claimed before the first await; answers what happened
+  async function startVerify(tripId, by) {
+    if (!(ai && ai.enabled())) return { code: 'ai', status: 503 };
+    if (vfJob && vfJob.status === 'running') return { code: 'busy', status: 409 };
+    const prev = vfJob; vfJob = { trip: tripId, status: 'running', done: 0, total: 0, started: Date.now() }; let held = () => { vfJob = prev; };
     try {
-      if (!(ai && ai.enabled())) return bad(res, 'ai', 503);
-      if (vfJob && vfJob.status === 'running') return bad(res, 'busy', 409);
-      const prev = vfJob; vfJob = { trip: req.params.trip, status: 'running', done: 0, total: 0, started: Date.now() }; held = () => { vfJob = prev; };   // claimed before the first await
-      const t = (await q('SELECT id, source, theme FROM trips WHERE id=$1 AND family_id=$2', [req.params.trip, FAMILY]))[0];
-      if (!t) { held(); return bad(res, 'trip', 404); }
-      if (t.source === 'seed') { held(); return bad(res, 'seed', 409); }
+      const t = (await q('SELECT id, source, theme, title, date_to FROM trips WHERE id=$1 AND family_id=$2', [tripId, FAMILY]))[0];
+      if (!t) { held(); return { code: 'trip', status: 404 }; }
+      if (t.source === 'seed') { held(); return { code: 'seed', status: 409 }; }
       const days = await q('SELECT day_index, planned, plan FROM trip_days WHERE trip_id=$1 ORDER BY day_index', [t.id]);
       const places = VERIFY.placesOf(days);
-      if (!places.length) { held(); return bad(res, 'none', 422); }
+      if (!places.length) { held(); return { code: 'none', status: 422 }; }
       const need = VERIFY.calls(places.length);
       const used = Number(((await q("SELECT calls FROM ai_usage WHERE family_id=$1 AND day=(now() AT TIME ZONE 'UTC')::date", [FAMILY]))[0] || {}).calls || 0);
-      if (STORY_DAILY - used < need) { held(); return res.status(429).json({ error: 'limit', left: Math.max(0, STORY_DAILY - used), need }); }
+      if (STORY_DAILY - used < need) { held(); return { code: 'limit', status: 429, left: Math.max(0, STORY_DAILY - used), need }; }
       vfJob.total = places.length; held = null;
-      res.status(202).json({ total: places.length, calls: need });
       const job = vfJob, rows = [];
-      try {
-        for (let i = 0; i < places.length; i += VERIFY.BATCH) {
-          const out = await VERIFY.checkBatch({ client: new ai.SDK(), model: IMPORT.WRITE(), list: places.slice(i, i + VERIFY.BATCH), take: aiTake, onUsage: addUsage });
-          rows.push(...out.rows); job.done = rows.length;
-        }
-        const verify = { at: Date.now(), by: clip(req.user.name, 40), places: rows };
-        await q("UPDATE trips SET theme = jsonb_set(COALESCE(theme, '{}'::jsonb), '{verify}', $2::jsonb) WHERE id=$1", [t.id, JSON.stringify(verify)]);
-        // what the check found also marks the family's library of places to eat (the place by its name, wherever it is kept)
-        for (const pl of verify.places || []) if (pl.kind === 'food' && pl.st && pl.st !== 'unsure') await q('UPDATE eat_lib SET st=$3, checked=$4::date, url=CASE WHEN $5 <> \'\' THEN $5 ELSE url END WHERE family_id=$1 AND nkey=$2', [FAMILY, EATLIB.norm(pl.name), pl.st, new Date(verify.at).toISOString().slice(0, 10), pl.url || '']).catch(() => {});
-        job.status = 'done';
-      } catch (e) { job.status = 'error'; job.error = e.code || 'failed'; console.error('verify', e.message); }
-    } catch (e) { if (held) held(); next(e); }
+      const run = (async () => {
+        try {
+          for (let i = 0; i < places.length; i += VERIFY.BATCH) {
+            const out = await VERIFY.checkBatch({ client: new ai.SDK(), model: IMPORT.WRITE(), list: places.slice(i, i + VERIFY.BATCH), take: aiTake, onUsage: addUsage });
+            rows.push(...out.rows); job.done = rows.length;
+          }
+          const verify = { at: Date.now(), by: clip(by, 40), places: rows };
+          await q("UPDATE trips SET theme = jsonb_set(COALESCE(theme, '{}'::jsonb), '{verify}', $2::jsonb) WHERE id=$1", [t.id, JSON.stringify(verify)]);
+          // what the check found also marks the family's library of places to eat (the place by its name, wherever it is kept)
+          for (const pl of verify.places || []) if (pl.kind === 'food' && pl.st && pl.st !== 'unsure') await q('UPDATE eat_lib SET st=$3, checked=$4::date, url=CASE WHEN $5 <> \'\' THEN $5 ELSE url END WHERE family_id=$1 AND nkey=$2', [FAMILY, EATLIB.norm(pl.name), pl.st, new Date(verify.at).toISOString().slice(0, 10), pl.url || '']).catch(() => {});
+          job.status = 'done';
+          // a place closed or moved in a book whose trip is still to come: the parents' phones are told (the book's name and how many only)
+          const n = rows.filter((x) => x.st === 'closed' || x.st === 'moved').length;
+          if (n && hooks.closed && String(t.date_to || '') >= new Date().toISOString().slice(0, 10)) Promise.resolve(hooks.closed({ trip: t.id, title: t.title, n })).catch((e) => console.error('closed push', e.message));
+        } catch (e) { job.status = 'error'; job.error = e.code || 'failed'; console.error('verify', e.message); }
+      })();
+      return { status: 202, total: places.length, calls: need, run };
+    } catch (e) { if (held) held(); throw e; }
+  }
+  r.post('/api/b/planner/verify/:trip', ...W, async (req, res, next) => {
+    try {
+      const v = await startVerify(req.params.trip, req.user.name);
+      if (v.status === 202) return res.status(202).json({ total: v.total, calls: v.calls });
+      if (v.code === 'limit') return res.status(429).json({ error: 'limit', left: v.left, need: v.need });
+      return bad(res, v.code, v.status);
+    } catch (e) { next(e); }
   });
+  // the check made by itself (owner, Nov 2026: "แจ้งเตือนเมื่อร้านในเล่มที่กำลังจะไปปิด"): a book the family made, starting within ten days,
+  // not checked in the last two weeks, is checked once — only with the helper on and when today's allowance carries it (startVerify asks)
+  async function autoVerify(now = Date.now()) {
+    if (!(ai && ai.enabled()) || (vfJob && vfJob.status === 'running')) return null;
+    const today = new Date(now).toISOString().slice(0, 10), soon = new Date(now + 10 * 864e5).toISOString().slice(0, 10);
+    const books = await q("SELECT id, theme FROM trips WHERE family_id=$1 AND source <> 'seed' AND date_from >= $2 AND date_from <= $3 ORDER BY date_from", [FAMILY, today, soon]);
+    const due = books.find((t) => !((t.theme || {}).verify && (t.theme.verify.at || 0) > now - 14 * 864e5));
+    if (!due) return null;
+    const v = await startVerify(due.id, 'auto');
+    return { trip: due.id, ...v };
+  }
+  if (!process.env.VERIFY_AUTO_OFF) { const tk = setInterval(() => autoVerify().catch((e) => console.error('auto verify', e.message)), 6 * 36e5); tk.unref(); }
+  r.autoVerify = autoVerify;   // for the tests
 
   // ---------- the book's own pictures (server/bookart.js): Claude draws a circle per day, the passport crest and the two guides as SVG ----------
   const artKeys = (id, v, days) => (v ? [...Array.from({ length: days }, (_, n) => ART.dayKey(id, v, n + 1)), ART.crestKey(id, v), ART.guideKey(id, v, 1), ART.guideKey(id, v, 2)] : []);

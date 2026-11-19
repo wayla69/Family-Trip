@@ -825,7 +825,7 @@ const T = 'hk-macau-2026';
   const bagKeys = await page.$$eval('.bag input[data-ck]', (els) => els.map((e) => e.dataset.ck));
   ok(['kidpp', 'sun', 'pram', 'spare'].every((k) => bagKeys.includes(`${T}.bag.d1.${k}`)) && !bagKeys.includes(`${T}.bag.d1.passports`) && /\d\d:\d\d · /.test(await page.textContent('.bag')), "today page: today's bag lists what the day's plan needs, with the reason (and not the passports on a city day)");
   ok(await page.locator('details.bag:not([open])').count() === 1 && !/0\//.test(await page.textContent('.bag summary')), 'today page before the trip: the bag is one closed line and names how many things, never “0/n packed”');
-  await page.click('.bag summary'); await page.check(`.bag input[data-ck="${T}.bag.d1.sun"]`); await page.reload(); await page.waitForSelector('.bag');
+  await page.click('.bag summary'); await page.check(`.bag input[data-ck="${T}.bag.d1.sun"]`); await page.reload(); await page.waitForSelector('.bag').catch(async (e) => { console.log('DEBUG after reload:', await page.evaluate(() => `${location.hash} · ${document.querySelectorAll('.bag').length} bag · ${(document.querySelector('main') || document.body).innerText.slice(0, 400).replace(/\s+/g, ' ')}`)); await page.screenshot({ path: `${OUT}/debug-bag.png` }); throw e; });
   ok(await page.isChecked(`.bag input[data-ck="${T}.bag.d1.sun"]`), "today page: a tick in today's bag stays after a reload");
   ok(await page.locator('.remind.line [data-a="remind"]').count() === 1 && await page.locator('.remind:not(.line)').count() === 0 && /30/.test(await page.textContent('.remind')), 'today page: one line with a “turn on” button — not a second reminder card (the ask lives on the shelf)');
   const tlRows = await page.$$eval('.tl.plan.brief li div', (els) => els.map((e) => e.textContent));
@@ -978,6 +978,24 @@ const T = 'hk-macau-2026';
   const vp0 = page.viewportSize(); await page.setViewportSize({ width: 1440, height: 900 }); await page.waitForSelector('.cgrid.packed');
   const colH = await page.$$eval('.cgrid.packed > .ccol', (cs) => cs.map((c) => c.offsetHeight));
   ok(colH.length === 2 && Math.abs(colH[0] - colH[1]) < 260 && await page.locator('.cgrid .cbox').count() >= 5 && await page.locator('.cgrid .cbox.cone').count() >= 3, `HK today, wide screen: the boxes (four answer boxes and the one-line ones under them) packed into two columns of near-equal height (${colH.join(' / ')})`);
+  { // the eat library: what makes a place easy with a little one is read from its own words and filters in place; a typed rate shows its price roughly in baht
+    await page.evaluate(() => localStorage.setItem('mbs_fx', JSON.stringify({ JPY: 0.23 })));
+    await page.goto(`${BASE}/#/eats/tokyo`); await page.waitForSelector('.eatc');
+    const e0 = await page.evaluate(() => ({ all: document.querySelectorAll('.eatc').length, thb: document.querySelectorAll('.eatc .prthb').length, chips: [...document.querySelectorAll('.ektagbar .chip')].map((b) => b.dataset.v) }));
+    await page.locator('.ektagbar .chip').first().click();
+    const e1 = await page.evaluate((k) => { const shown = [...document.querySelectorAll('.eatc')].filter((li) => !li.hidden); return { n: shown.length, ok: shown.every((li) => li.dataset.t.split(' ').includes(k)), line: document.querySelector('#eatn').textContent }; }, e0.chips[0]);
+    ok(e0.chips.length >= 1 && e1.n >= 1 && e1.n < e0.all && e1.ok && e1.line.includes(String(e1.n)) && e0.thb >= e0.all - 2, `eat library: a "easy with little ones" chip keeps only the places that say so, in place; prices show roughly in baht from the rate typed on this phone (${e0.chips.join(',')} · ${e0.all} → ${e1.n} · ${e0.thb} in baht)`);
+    await page.evaluate(() => localStorage.removeItem('mbs_fx')); }
+  { // today's bag reads the live forecast too: rain → umbrella, a cold morning → a jacket, a hot day → sunscreen, each with its own reason
+    const bag = await page.evaluate(() => { const t = S.trips.find((x) => x.id === 'hk-macau-2026'), keep = WX[t.id]; WX[t.id] = { at: Date.now(), days: [null, null, { tmin: 11, tmax: 33, code: 61, pop: 70 }] };
+      const r = dayBag(t, 2).filter((x) => ['rain', 'warm', 'sun'].includes(x.k)).map((x) => [x.k, x.why]); WX[t.id] = keep; return r; });
+    const why = Object.fromEntries(bag);
+    await page.goto(`${BASE}/#/t/hk-macau-2026/prep`); await page.waitForSelector('.docsck');
+    await page.locator('.docsck input').first().check(); await page.reload(); await page.waitForSelector('.docsck');
+    const dk = await page.evaluate(() => ({ n: document.querySelectorAll('.docsck li').length, on: document.querySelectorAll('.docsck input:checked').length, said: document.querySelector('.docsck summary .label').textContent }));
+    ok(dk.n === 8 && dk.on === 1 && /1\/8/.test(dk.said), `prep: the papers to have ready are ticked on this phone and stay ticked (${dk.on}/${dk.n} · ${dk.said})`);
+    await page.locator('.docsck input').first().uncheck();
+    ok(bag.length === 3 && /70%/.test(why.rain) && /11°C/.test(why.warm) && /33°C/.test(why.sun), `today's bag: the live forecast adds an umbrella, a jacket and sunscreen, each saying why (${bag.map((x) => x.join(': ')).join(' · ')})`); }
   { // a fold opened on a wide screen: the boxes after it change sides so the columns stay near each other; the tapped fold and everything before it stay put
     await page.goto(`${BASE}/#/t/big-hop-2027/today/1`); await page.waitForSelector('details.dmore'); await page.evaluate(() => { document.querySelector('details.dmore').open = true; }); await page.waitForSelector('.cgrid.packed');
     const two = () => page.evaluate(() => new Promise((r) => requestAnimationFrame(() => requestAnimationFrame(() => setTimeout(r, 60)))));
@@ -2736,7 +2754,7 @@ const T = 'hk-macau-2026';
   ok(true, 'memory game: two questions, then a well-done and "play again"');
   await page.evaluate(() => ls('kidmode', null));
   await page.clock.setFixedTime(new Date('2026-12-10T03:00:00Z'));   // the last day: the certificate comes by itself, for both
-  for (const k of ['mimi', 'mika']) { await page.goto(`${BASE}/#/passport/${k}/${T}`); await page.reload(); await page.waitForSelector('#cert'); }
+  for (const k of ['mimi', 'mika']) { await page.goto(`${BASE}/#/passport/${k}/${T}`); await page.reload(); await page.waitForSelector('#cert').catch(async (e) => { console.log('DEBUG cert after reload:', await page.evaluate(() => `${location.hash} · ${document.querySelectorAll('#cert').length} cert · ${(document.querySelector('main') || document.body).innerText.slice(0, 400).replace(/\s+/g, ' ')}`)); await page.screenshot({ path: `${OUT}/debug-cert.png` }); throw e; }); }
   ok(await page.locator('#cert.earned').count() === 1 && (await page.textContent('#cert')).includes('pointed, touched'), 'on the last day the certificate is there without any ticking (Mika gets her own words)');
   await page.clock.setFixedTime(new Date('2026-12-07T03:00:00Z'));
   await page.goto(`${BASE}/#/kid/mimi/numbers`); await page.waitForSelector('.cnt');
