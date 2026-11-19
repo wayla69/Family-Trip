@@ -12,6 +12,8 @@
  ]},
  {"place":"tr-pamukkale","places":[
   {"name":"Pamukkale Üniversitesi Hastanesi","kind":"hospital","area":{"th":"เดนิซลี","en":"Denizli"},"what":{"th":"โรงพยาบาลมหาวิทยาลัย รับเคสฉุกเฉิน","en":"University hospital that takes emergency cases"},"why":{"th":"โรงพยาบาลใหญ่ของภูมิภาค อยู่ในเมืองเดนิซลี ห่างปามุคคาเลราว 20 กม.","en":"A large regional hospital in Denizli, about 20 km from Pamukkale"},"q":"Pamukkale Üniversitesi Hastanesi, Denizli","ok":"2026-11"},
-  {"name":"Özel Tekden Denizli Hastanesi","kind":"hospital","area":{"th":"เดนิซลี","en":"Denizli"},"what":{"th":"โรงพยาบาลเอกชนมีแผนกฉุกเฉิน","en":"Private hospital with an emergency department"},"why":{"th":"โรงพยาบาลเอกชนในเมืองเดนิซลี ห่างปามุคคาเลราว 20 กม.","en":"Private hospital in Denizli, about 20 km from Pamukkale"},"q":"Özel Tekden Denizli Hastanesi, 29 Ekim Bulvarı, Denizli","ok":"2026-11"}
+  {"name":"Özel Tekden Denizli Hastanesi","kind":"hospital","area":{"th":"เดนิซลี","en":"Denizli"},"what":{"th":"โรงพยาบาลเอกชนมีแผนกฉุกเฉิน","en":"Private hospital with an emergency department"},"why":{"th":"โรงพยาบาลเอกชนในเมืองเดนิซลี ห่างปามุคคาเลราว 20 กม.","en":"Private hospital in Denizli, about 20 km from Pamukkale"},"q":"Özel Tekden Denizli Hastanesi, 29 Ekim Bulvarı, Denizli","ok":"2026-11"},
+  {"name":"Çamlık Park","kind":"play","area":{"th":"เดนิซลี","en":"Denizli"},"what":{"th":"สวนสาธารณะใหญ่มีลานเด็กเล่น","en":"Big city park with play areas"},"why":{"th":"มีลานเด็กเล่นหลายจุด สวนสัตว์เล็ก และที่ปิกนิก","en":"Several playgrounds, a small zoo and picnic spots"},"q":"Çamlık Park, Denizli","ok":"2026-11"},
+  {"name":"Adalet Parkı (Justice Park)","kind":"play","area":{"th":"ใจกลางเมืองเดนิซลี","en":"Denizli city centre"},"what":{"th":"สวนสาธารณะกลางเมืองมีเครื่องเล่นเด็ก","en":"Central park with playgrounds"},"why":{"th":"อยู่กลางเมือง แวะให้ลูกวิ่งเล่นได้ง่าย","en":"In the centre, easy to stop and let the children run"},"q":"Adalet Parkı, Denizli","ok":"2026-11"}
  ]}
 ]}

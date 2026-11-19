@@ -1,5 +1,7 @@
 {"cc":"fj","towns":[
  {"place":"fj-islands","places":[
-  {"name":"Nadi Hospital","kind":"hospital","area":{"th":"ตัวเมืองนาดี","en":"Nadi Town"},"what":{"th":"โรงพยาบาลรัฐ มีหน่วยอุบัติเหตุและฉุกเฉิน และหอผู้ป่วยเด็ก","en":"Public hospital with an accident and emergency unit and a children's ward"},"why":{"th":"โรงพยาบาลรัฐของเมืองนาดี ใกล้สนามบินและเดนาเรา","en":"Nadi's public hospital, the one for the airport and Denarau area"},"q":"Nadi Hospital, Nadi Town, Fiji","ok":"2026-11"}
+  {"name":"Nadi Hospital","kind":"hospital","area":{"th":"ตัวเมืองนาดี","en":"Nadi Town"},"what":{"th":"โรงพยาบาลรัฐ มีหน่วยอุบัติเหตุและฉุกเฉิน และหอผู้ป่วยเด็ก","en":"Public hospital with an accident and emergency unit and a children's ward"},"why":{"th":"โรงพยาบาลรัฐของเมืองนาดี ใกล้สนามบินและเดนาเรา","en":"Nadi's public hospital, the one for the airport and Denarau area"},"q":"Nadi Hospital, Nadi Town, Fiji","ok":"2026-11"},
+  {"name":"Medirite Pharmacy","kind":"pharmacy","area":{"th":"ตัวเมืองนาดี","en":"Nadi Town"},"what":{"th":"ร้านยาบนถนนเมนสตรีท","en":"Pharmacy on Main Street"},"q":"Medirite Pharmacy, 347 Main Street, Nadi, Fiji","ok":"2026-11"},
+  {"name":"Big Bula Waterpark","kind":"play","area":{"th":"เกาะเดนาเรา","en":"Denarau Island"},"what":{"th":"สวนน้ำเป่าลมและสไลเดอร์","en":"Inflatable waterpark with slides"},"why":{"th":"มีโซนล้อมรั้วสำหรับเด็กเล็กโดยเฉพาะ นั่งบูลาบัสไปได้","en":"Gated area just for little ones; the Bula Bus stops there"},"q":"Big Bula Waterpark, Denarau Island, Nadi, Fiji","ok":"2026-11"}
  ]}
 ]}
