@@ -69,3 +69,8 @@ Prices and hours change; the card still says "check before you go". British spel
 
 Left out: anything closed, under renovation for the coming year, adults-only or with no web page newer than 2025. Also left out: casinos,
 nightlife, and religious sites that ask visitors to keep away.
+
+## Passes
+
+- **Nov 2026, E2:** 29 towns, 459 sights (Japan, Korea, Taiwan, Hong Kong, Macau, Singapore, Thailand, Vietnam, Malaysia, Indonesia, Australia, New Zealand, Switzerland, Paris, London).
+- **19 Nov 2026, E6:** 8 more towns, 128 sights — Okinawa 16, Jeju 15, Ho Chi Minh City 15, Phu Quoc 16, Penang 16, Koh Samui 16, Dubai 17, Shanghai 16 (37 towns, 587 sights). Every row was confirmed by a web search that session, but the official sites themselves could not be opened from the session's network, so most `src` are dated 2025–2026 guides, tourism offices or news pages the search showed. Weakest prices, kept with "≈" and a "check" note: Eco Land (Jeju, sources ₩14,000–21,000), Aqua Planet Jeju (online prices lower), Dubai Safari Park (new season's price not out), the Shanghai Science and Technology and Natural History museums (adult price on the booking page only), ESCAPE Penang, Paradise Park Farm (Samui). Left out for want of a current, dated source: Nago Pineapple Park, Bios no Oka, JUNGLIA, Ryukyu Mura (Okinawa); Teddy Bear Museum, Camellia Hill (Jeju); VinWonders Grand Park, tiNiWorld, Saigon Skydeck, the city museums (Ho Chi Minh City); Tropical Spice Garden (Penang); Coco Splash, the Samui Aquarium, Butterfly Hill (closed), Secret Buddha Garden (Samui); Haichang Ocean Park (Shanghai). The twice-yearly re-check (1 January, 1 July) now covers this list too.
