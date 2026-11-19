@@ -1012,11 +1012,34 @@ const A = {
   },
   planmon(b) { const a = pln.a; a.approx = a.approx === b.dataset.v ? '' : b.dataset.v; planKeepA(); b.closest('.plmons').querySelectorAll('.plchip').forEach((x) => x.setAttribute('aria-pressed', x.dataset.v === a.approx ? 'true' : 'false')); const el = $('#plapprox'); if (el) el.value = a.approx; },
   planadults(b) { pln.a.adults = Math.max(1, Math.min(8, (parseInt(pln.a.adults, 10) || 2) + (+b.dataset.v))); planKeepA(); const el = $('#pladults'); if (el) el.textContent = pln.a.adults; },
+  plancc(b) {   // where to, country first: open a country's towns ('' = back to the countries)
+    pln.cc = b.dataset.v || ''; const w = $('#plwhere'); if (w) { w.innerHTML = plWhereHtml(pln.a); w.scrollIntoView({ block: 'nearest' }); }
+  },
+  planallcc() { pln.allcc = !pln.allcc; const w = $('#plwhere'); if (w) w.innerHTML = plWhereHtml(pln.a); },
+  plantown(b) {   // a town of the open country (or the whole country) in or out of "where to"
+    const name = b.dataset.v, k = plNorm(name), g = plGeo(), cur = g && (g.countries || []).find((c) => c.cc === pln.cc);
+    let parts = String(pln.a.dest || '').split(/[,،、]/).map((x) => x.trim()).filter(Boolean);
+    const has = parts.some((x) => plNorm(x) === k);
+    if (has) parts = parts.filter((x) => plNorm(x) !== k);
+    else {
+      // a town replaces "the whole country" and the whole country replaces its towns: one or the other
+      const cn = cur ? [plNorm(snapShort(cur.name).en), plNorm(snapShort(cur.name).th)] : [];
+      const towns = cur ? g.places.filter((p) => p.cc === cur.cc).flatMap((p) => [plNorm(snapShort(p.name).en), plNorm(snapShort(p.name).th)]) : [];
+      parts = parts.filter((x) => !(b.dataset.whole ? towns : cn).includes(plNorm(x)));
+      parts.push(name);
+    }
+    pln.a.dest = parts.join(', ').slice(0, 200); planKeepA();
+    const el = $('#pldest'); if (el) el.value = pln.a.dest;
+    const w = $('#plwhere'); if (w) w.innerHTML = plWhereHtml(pln.a);
+    const sg = $('#plsug'); if (sg) sg.innerHTML = plSugHtml(pln.a.dest);
+  },
   plansug(b) {   // a suggested place: it finishes the word being typed, else it is added to the list
     const parts = String(pln.a.dest || '').split(',').map((x) => x.trim()).filter(Boolean), name = b.dataset.v, last = parts[parts.length - 1] || '';
     if (last && plNorm(last).length >= 2 && (b.dataset.r || plNorm(name).includes(plNorm(last)))) parts[parts.length - 1] = name; else parts.push(name);   // data-r: offered for what is being typed (USA → The United States)
     pln.a.dest = parts.join(', ').slice(0, 200); planKeepA();
     const el = $('#pldest'); if (el) el.value = pln.a.dest; const sg = $('#plsug'); if (sg) sg.innerHTML = plSugHtml(pln.a.dest);
+    if (b.dataset.cc) pln.cc = b.dataset.cc;   // a typed town opens its country's towns above
+    const w = $('#plwhere'); if (w) w.innerHTML = plWhereHtml(pln.a);
   },
   async planideas() {
     if (pln.busy) return;

@@ -2841,7 +2841,7 @@ const PL_POP = ['Tokyo', 'Osaka', 'Hokkaido', 'Seoul', 'Taipei', 'Hong Kong', 'S
 const plAdd = (iso, n) => new Date(Date.parse(iso) + n * 864e5).toISOString().slice(0, 10);
 const plDays = (a) => (a.from && a.to && a.to >= a.from ? Math.round((Date.parse(a.to) - Date.parse(a.from)) / 864e5) + 1 : 0);
 const plSpan = (n) => (n > 1 ? L(`${n} วัน ${n - 1} คืน`, `${n} days, ${n - 1} nights`) : n === 1 ? L('ไปเช้าเย็นกลับ', 'A day trip') : '');
-const plNorm = (x) => String(x || '').toLowerCase().replace(/[^a-z0-9฀-๿一-鿿]+/g, '');
+const plNorm = (x) => String(x || '').normalize('NFD').replace(/[\u0300-\u036f]/g, '').toLowerCase().replace(/[^a-z0-9฀-๿一-鿿]+/g, '');   // accents and spaces never count (zurich = Zürich, newyork = New York)
 // the library's towns and countries (GET /api/b/geo): pictures and colours for the places the plan names
 // the library's places for the planner's suggestions: asked once; an empty answer (no signal, a failed ask) is asked again a few
 // seconds later (it used to stay empty for the whole visit — owner's Samsung, Nov 2026: "ทำไม USA ยังไม่ขึ้น"); when it arrives the
@@ -2853,6 +2853,7 @@ function plGeo() {
       if (g && (g.places || []).length) {
         pln.geo = g;
         const sg = document.getElementById('plsug'); if (sg) sg.innerHTML = plSugHtml((pln.a || {}).dest || '');
+        const pw = document.getElementById('plwhere'); if (pw && pln.a) pw.innerHTML = plWhereHtml(pln.a);
         if (route().parts[0] === 'planner') safeRender();
       } else if ((pln.geoTry = (pln.geoTry || 0) + 1) < 5) setTimeout(() => { if (pln.geo === false) { pln.geo = null; if (route().parts[0] === 'planner') plGeo(); } }, 3000 * pln.geoTry);
     });
@@ -2882,14 +2883,40 @@ function plWorld() {
   return plWorldC;
 }
 // how well a typed piece fits a list of names: 0 the whole name, 1 its start, 2 the start of one of its words, 3 inside Thai (no spaces); -1 no
+// how far apart two short words are: insertions, deletions, changes and a swap of two letters side by side each cost 1 (tokio, hokaido)
+function plEdit(a, b, max) {
+  if (Math.abs(a.length - b.length) > max) return max + 1;
+  let p2 = null, p1 = Array.from({ length: b.length + 1 }, (_, j) => j);
+  for (let i = 1; i <= a.length; i++) {
+    const cur = [i]; let low = i;
+    for (let j = 1; j <= b.length; j++) {
+      let v = Math.min(p1[j] + 1, cur[j - 1] + 1, p1[j - 1] + (a[i - 1] === b[j - 1] ? 0 : 1));
+      if (p2 && i > 1 && j > 1 && a[i - 1] === b[j - 2] && a[i - 2] === b[j - 1]) v = Math.min(v, p2[j - 2] + 1);
+      cur.push(v); if (v < low) low = v;
+    }
+    if (low > max) return max + 1;
+    p2 = p1; p1 = cur;
+  }
+  return p1[b.length];
+}
+/* how well what is typed fits a place's names (owner, Nov 2026: "ทำการค้นหาให้ flexible"): 0 the whole name, 1 its start, 2 the start of
+   one of its words, 3 inside a Thai/Chinese name, 4–5 a slip of a letter or two (tokio, hokaido, barcellona, ซิดนีน) — accents and spaces
+   never count (plNorm). Never the middle of an English word ("Usa" offered Busan). One letter only finds names that start with it. */
 function plFit(q, names) {
   let best = -1;
+  const slack = q.length >= 7 ? 2 : q.length >= 4 ? 1 : 0;
   for (const raw of names) {
-    const low = String(raw || '').toLowerCase(), n = plNorm(low); if (!n) continue;
+    const low = String(raw || '').normalize('NFD').replace(/[\u0300-\u036f]/g, '').toLowerCase(), n = plNorm(low); if (!n) continue;
     let s = -1;
+    const words = low.split(/[\s\-–'’.,()&/]+/).filter(Boolean);
     if (n === q) s = 0; else if (n.startsWith(q)) s = 1;
-    else if (low.split(/[\s\-–'’.,()&]+/).some((w) => plNorm(w).startsWith(q) || plNorm(low.slice(low.indexOf(w))).startsWith(q))) s = 2;
-    else if (/[\u0E00-\u0E7F\u4E00-\u9FFF]/.test(low) && n.includes(q)) s = 3;
+    else if (q.length >= 2 && words.some((w) => plNorm(w).startsWith(q) || plNorm(low.slice(low.indexOf(w))).startsWith(q))) s = 2;
+    else if (q.length >= 2 && /[\u0E00-\u0E7F\u4E00-\u9FFF]/.test(low) && n.includes(q)) s = 3;
+    else if (slack) {
+      // a slip: against the whole name, the name's start of the same length, or a word's start
+      const d0 = plEdit(q, n, slack), d1 = Math.min(...[n.slice(0, q.length), ...words.map((w) => plNorm(w)).filter((w) => w.length >= 3).map((w) => w.slice(0, q.length))].map((t) => plEdit(q, t, slack)));
+      if (d0 <= slack && d0 <= d1) s = 3 + d0; else if (d1 <= slack) s = 3.5 + d1;   // the whole name before a start of a word (seol → Seoul before Seogwipo)
+    }
     if (s >= 0 && (best < 0 || s < best)) best = s;
   }
   return best;
@@ -2900,20 +2927,23 @@ function plSugHtml(v) {
   const towns = g.places.map((p) => ({ n: snapShort(p.name), art: p.art, c: p.c, cc: p.cc, al: p.al || [], home: p.home }));
   const libC = (g.countries || []).map((p) => ({ n: snapShort(p.name), art: p.art, c: p.c, cc: p.cc, al: p.al || [], land: 1 }));
   let list;
-  if (last.length >= 2) {
+  if (last.length >= 1) {
     const inLib = new Set(libC.map((p) => p.cc)), hits = [];
     const add = (p, s, o) => { if (s >= 0) hits.push({ p, s, o }); };
-    libC.forEach((p) => { const s = plFit(last, [p.n.en, p.n.th, ...p.al]); add(p, s, 0); if (s >= 0 && s <= 1) towns.filter((t) => t.cc === p.cc && !t.home).slice(0, 6).forEach((t, k) => add(t, s + 0.5, k + 1)); });
-    towns.forEach((p) => add(p, plFit(last, [p.n.en, p.n.th, ...p.al]), 1));
-    plWorld().forEach((p) => { if (!inLib.has(p.cc)) add({ ...p, land: 1 }, plFit(last, [p.n.en, p.n.th]), 0); });
+    const nm = (p, al) => (last.length === 1 ? [p.n.en, p.n.th] : [p.n.en, p.n.th, ...(al || [])]);   // one letter: the shown names only
+    libC.forEach((p) => { const s = plFit(last, nm(p, p.al)); add(p, s, 0); if (s >= 0 && s <= 1) towns.filter((t) => t.cc === p.cc && !t.home).slice(0, 6).forEach((t, k) => add(t, s + 0.5, k + 1)); });
+    towns.forEach((p) => add(p, plFit(last, nm(p, p.al)), 1));
+    plWorld().forEach((p) => { if (!inLib.has(p.cc)) add({ ...p, land: 1 }, plFit(last, [p.n.en, p.n.th]), 2); });   // the library's places first
     const seen = new Set();
-    list = hits.sort((a, b) => a.s - b.s || a.o - b.o || a.p.n.en.length - b.p.n.en.length).map((h) => h.p).filter((p) => { const k = (p.land ? 'c:' : 't:') + plNorm(p.n.en); if (seen.has(k)) return false; seen.add(k); return true; });
-    list = list.filter((p) => plNorm(p.n[side]) !== last || !has.includes(plNorm(p.n[side])));
+    list = hits.sort((a, b) => a.s - b.s || a.o - b.o || a.p.n.en.length - b.p.n.en.length).map((h) => h.p).filter((p) => { const k = plNorm(p.n.en); if (seen.has(k)) return false; seen.add(k); return true; });   // one name once (Singapore the country and the town)
+    // a place already written exactly as shown is not offered again; "newyork" still offers "New York" (a tap writes it properly)
+    const raw = String(v || '').split(/[,،、]/).pop().trim().toLowerCase();
+    list = list.filter((p) => String(p.n[side] || '').toLowerCase() !== raw);
   } else {
     list = PL_POP.map((x) => towns.find((p) => plNorm(p.n.en) === plNorm(x))).filter(Boolean).filter((p) => !has.includes(plNorm(p.n.en)) && !has.includes(plNorm(p.n.th)));
   }
-  const typed = last.length >= 2 ? ' data-r="1"' : '';
-  return list.slice(0, 10).map((p) => `<button type="button" class="plsg${p.land ? ' land' : ''}" data-a="plansug" data-v="${esc(p.n[side])}"${typed}${p.c ? ` style="--tc:${esc(p.c)}"` : ''}>${p.art ? `<img src="${esc(p.art)}" alt="" loading="lazy" draggable="false">` : p.flag ? `<span class="plflag" aria-hidden="true">${p.flag}</span>` : ''}<span>${esc(p.n[side])}</span></button>`).join('');
+  const typed = last.length >= 1 ? ' data-r="1"' : '';
+  return list.slice(0, 10).map((p) => `<button type="button" class="plsg${p.land ? ' land' : ''}" data-a="plansug" data-v="${esc(p.n[side])}"${p.cc ? ` data-cc="${esc(p.cc)}"` : ''}${typed}${p.c ? ` style="--tc:${esc(p.c)}"` : ''}>${p.art ? `<img src="${esc(p.art)}" alt="" loading="lazy" draggable="false">` : p.flag ? `<span class="plflag" aria-hidden="true">${p.flag}</span>` : ''}<span>${esc(p.n[side])}</span></button>`).join('');
 }
 // the towns of a route in the order slept in: [{town, days, from}] — the same town twice in a row is one stay
 function plStays(rt) {
@@ -2940,6 +2970,41 @@ function plWizard(qs, pages, go, hasDest) {
 }
 // what our past books suggest for the next plan: the towns we went to (again), other towns of the countries we went to, how long
 // our trips ran and the month we usually go — read on the phone from the books' titles and dates, nothing is sent
+/* "where to", country first (owner, Nov 2026: "เลือกประเทศก่อนได้ไหม แล้วค่อยเป็นเมือง"): the library's countries as cards (ours first,
+   then the popular ones, the rest behind "every country"); a tap opens that country's towns as cards — several may be ticked —
+   and "the whole country, the helper picks the towns". Typing still works under it, and a typed town opens its country. The
+   answer stays the one text in "where to" (pln.a.dest), so the route, the plans kept and the helper read it as before. */
+const PL_CC_POP = ['jp', 'kr', 'tw', 'hk', 'mo', 'sg', 'my', 'vn', 'th', 'id', 'au', 'nz', 'cn', 'ae', 'gb', 'fr', 'ch', 'it', 'es', 'de', 'nl', 'us'];
+function plParts(dest) { return String(dest || '').split(/[,،、]/).map((x) => plNorm(x)).filter(Boolean); }
+function plBeenCc() {   // the countries of our own books (titles, places of a book from photos), by the library's town names
+  const g = plGeo(); if (!g) return new Set();
+  const text = (S && S.trips || []).map((t) => [t.title && t.title.en, t.title && t.title.th, ...(((t.theme || {}).snap || {}).places || []).map((x) => (x && (x.en || x.th)) || x)].filter(Boolean).join(' ')).join(' | ').toLowerCase();
+  const set = new Set();
+  for (const p of g.places) if (!p.home && [snapShort(p.name).en, snapShort(p.name).th, ...(p.al || [])].some((n) => String(n || '').length >= 4 && text.includes(String(n).toLowerCase()))) set.add(p.cc);
+  return set;
+}
+function plWhereHtml(a) {
+  const g = plGeo(); if (!g) return '';
+  const side = lang === 'en' ? 'en' : 'th', parts = plParts(a.dest), been = plBeenCc();
+  const inDest = (n) => [plNorm(n.en), plNorm(n.th)].some((k) => k && parts.includes(k));
+  const cs = (g.countries || []).map((c) => ({ ...c, n: snapShort(c.name), towns: g.places.filter((p) => p.cc === c.cc) })).filter((c) => c.cc && c.towns.length);
+  const picked = new Set(cs.filter((c) => inDest(c.n) || c.towns.some((p) => inDest(snapShort(p.name)))).map((c) => c.cc));
+  const rank = (c) => (picked.has(c.cc) ? 0 : been.has(c.cc) ? 1 : PL_CC_POP.includes(c.cc) ? 2 + PL_CC_POP.indexOf(c.cc) / 100 : 3);
+  cs.sort((x, y) => rank(x) - rank(y) || x.n[side].localeCompare(y.n[side], side));
+  if (pln.cc === undefined && picked.size === 1) pln.cc = [...picked][0];   // a plan that already names towns of one country opens on them
+  const cur = cs.find((c) => c.cc === pln.cc);
+  const card = (attrs, pic, c, name, sub, on, cls = '') => `<button type="button" class="plcard${cls}" ${attrs} aria-pressed="${!!on}"${c ? ` style="--tc:${esc(c)}"` : ''}><span class="plcp">${pic ? `<img src="${esc(pic)}" alt="" loading="lazy" draggable="false">` : '🧭'}</span><b>${esc(name)}</b>${sub ? `<small>${esc(sub)}</small>` : ''}</button>`;
+  if (!cur) {
+    const show = pln.allcc ? cs : cs.slice(0, 12);
+    return `<div class="part pickh">${L('1 · เลือกประเทศ', '1 · Pick a country')}</div>
+<div class="plcards">${show.map((c) => card(`data-a="plancc" data-v="${esc(c.cc)}"`, c.art, c.c, c.n[side], picked.has(c.cc) ? L('เลือกไว้แล้ว', 'Picked') : been.has(c.cc) ? L('เคยไป', 'We have been') : L(`${c.towns.length} เมือง`, `${c.towns.length} town${c.towns.length === 1 ? '' : 's'}`), picked.has(c.cc))).join('')}</div>
+${cs.length > 12 ? `<button type="button" class="linkbtn plallcc" data-a="planallcc">${pln.allcc ? L('ย่อรายการ', 'Fewer') : L(`ดูทุกประเทศ (${cs.length})`, `Every country (${cs.length})`)}</button>` : ''}`;
+  }
+  const whole = inDest(cur.n);
+  return `<div class="plcty"><button type="button" class="plback" data-a="plancc" data-v="">‹ ${L('ประเทศอื่น', 'Other countries')}</button><span class="plctyn">${cur.art ? `<img src="${esc(cur.art)}" alt="" draggable="false">` : ''}<b>${esc(cur.n[side])}</b></span></div>
+<div class="part pickh">${L('2 · เลือกเมือง เลือกได้หลายเมือง', '2 · Pick towns — as many as you like')}</div>
+<div class="plcards">${card(`data-a="plantown" data-v="${esc(cur.n[side])}" data-whole="1"`, cur.art, cur.c, L(`ทั่ว${cur.n.th}`, `All of ${cur.n.en}`), L('ให้ผู้ช่วยเลือกเมืองให้', 'The helper picks the towns'), whole, ' whole')}${cur.towns.map((p) => { const n = snapShort(p.name); return card(`data-a="plantown" data-v="${esc(n[side])}" data-cc="${esc(cur.cc)}"`, p.art, p.c || cur.c, n[side], '', inDest(n)); }).join('')}</div>`;
+}
 function plHist() {
   const g = plGeo(), trips = (S && S.trips || []).filter((t) => t.date_from && t.date_to);
   const out = { html: '', len: 0, mon: null };
@@ -2978,7 +3043,7 @@ function viewPlanner(qs) {
   // the questions, a page each (owner, Nov 2026: "แยกเป็นหลายหน้า … เรียนรู้จากประวัติเดิมเพื่อเป็น suggestion"): where · when · who · how · more,
   // each with what our past books suggest (plHist); #/planner/<step>, the phone's back goes a step back
   const hist = plHist();
-  const qWhere = pcard('famap', PG.purple, L('อยากไปที่ไหน', 'Where to'), `<div class="pform">${f('dest', 'อยากไปที่ไหน', 'Where to', L('เช่น โตเกียว หรือ ฮอกไกโด 2 เมือง', 'e.g. Tokyo, or two towns in Hokkaido'))}
+  const qWhere = pcard('famap', PG.purple, L('อยากไปที่ไหน', 'Where to'), `<div class="pform"><div id="plwhere">${plWhereHtml(a)}</div>${f('dest', 'ที่เลือกไว้ หรือพิมพ์เอง', 'Picked so far — or type it', L('เช่น ญี่ปุ่น หรือ โตเกียว, เกียวโต', 'e.g. Japan, or Tokyo, Kyoto'))}
 <div class="plsug" id="plsug">${plSugHtml(a.dest)}</div>
 ${on ? `<button type="button" class="linkbtn plidgo" data-a="planideas"${pln.busy ? ' disabled' : ''}>💡 ${L('ยังไม่รู้จะไปไหน ให้ผู้ช่วยเสนอ', 'Not sure where? Ask the helper for ideas')}</button>` : ''}
 ${hist.html}</div>`);
