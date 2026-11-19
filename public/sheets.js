@@ -971,6 +971,17 @@ const A = {
     try { await api('PUT', `/api/b/sights/${encodeURIComponent(x.id)}/wish`, { on }); toast(on ? L('เก็บไว้ในที่อยากไปแล้ว ♥', 'On our wish list ♥') : L('เอาออกจากที่อยากไปแล้ว', 'Off the wish list')); }
     catch (_) { x.wish = !on; render(); toast(L('บันทึกไม่ได้ ต้องมีเน็ต', 'Not saved — you need a connection')); }
   },
+  dayagain() { SIGHT.seed++; SIGHT.day = buildDay(SIGHT.list || [], Array.isArray(SIGHT.eats) ? SIGHT.eats : [], SIGHT.seed); render(); },
+  dayplan() {   // the day's sights become the plan's "must do" and its town "where to"
+    const d = SIGHT.day; if (!d) return;
+    const cur = (Array.isArray(SIGHT.towns) ? SIGHT.towns : []).find((t) => t.tkey === SIGHT.town), town = cur ? L(cur.town_th || cur.town, cur.town) : '';
+    if (!pln.a) pln.a = { dest: '', want: '', likes: [], needs: [], ...(ls('plan') || {}) };
+    const parts = String(pln.a.dest || '').split(',').map((x) => x.trim()).filter(Boolean); if (town && !parts.some((x) => plNorm(x) === plNorm(town))) parts.push(town);
+    pln.a.dest = parts.join(', ');
+    const want = String(pln.a.want || '').split(/,\s*/).filter(Boolean); for (const x of d.cost) { const n = T(x.name); if (!want.includes(n)) want.push(n); }
+    pln.a.want = want.join(', ').slice(0, 500); planKeepA();
+    location.hash = '#/planner/where';
+  },
   async sightdel(b) {   // a sight the parents do not want: two taps, it stays out
     if (!armed(b, L('แตะอีกครั้งเพื่อเอาออก', 'Tap again to take it out'))) return;
     const id = b.dataset.v;
