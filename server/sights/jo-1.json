@@ -52,7 +52,7 @@
           "hrs": 3,
           "io": "in",
           "pram": "yes",
-          "price": { "en": "≈ 35 JD per person (undated listing, check the price)", "th": "≈ 35 JD ต่อคน (ข้อมูลไม่ระบุวันที่ เช็กราคาอีกครั้ง)" },
+          "price": { "en": "Check the price", "th": "เช็กราคา" },
           "book": "req",
           "q": "Petra Kitchen, Wadi Musa, Jordan",
           "ok": "2026-11",

@@ -34,7 +34,7 @@
           "hrs": 2,
           "io": "out",
           "pram": "yes",
-          "price": { "en": "≈ CHF 2 adults · CHF 1 children (beach, undated listing) · check the price", "th": "≈ CHF 2 ผู้ใหญ่ · CHF 1 เด็ก (หาด ข้อมูลไม่ระบุวันที่) · เช็กราคา" },
+          "price": { "en": "Check the price", "th": "เช็กราคา" },
           "book": "none",
           "q": "Bains des Pâquis, Quai du Mont-Blanc 30, Geneva",
           "ok": "2026-11",

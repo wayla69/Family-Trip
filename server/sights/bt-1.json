@@ -71,7 +71,7 @@
           "hrs": 1,
           "io": "both",
           "pram": "no",
-          "price": { "en": "≈ Nu. 300 (one fee list, undated) · check the price", "th": "≈ 300 งุลตรัม (ตารางหนึ่ง ไม่ระบุวันที่) · เช็กราคา" },
+          "price": { "en": "Check the price", "th": "เช็กราคา" },
           "book": "none",
           "q": "Folk Heritage Museum, Kawajangsa, Thimphu",
           "ok": "2026-11",

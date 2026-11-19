@@ -173,7 +173,7 @@
           "area": { "en": "Vistula boulevards, below Wawel", "th": "ทางเดินริมแม่น้ำวิสตูลา ใต้เนินวาเวล" },
           "what": { "en": "A one-hour sightseeing boat trip on the Vistula past Wawel Hill and the Old Town", "th": "ล่องเรือชมเมืองหนึ่งชั่วโมงบนแม่น้ำวิสตูลาผ่านเนินวาเวลและเมืองเก่า" },
           "why": { "en": "Sitting still on a boat suits small children; the operator offers discounted children's tickets up to age 12", "th": "นั่งนิ่งบนเรือเหมาะกับเด็กเล็ก ผู้ให้บริการมีตั๋วเด็กลดราคาถึงอายุ 12 ปี" },
-          "tip": { "en": "I found no confirmed winter timetable, so check that cruises run on your dates", "th": "ยังไม่พบตารางเวลาหน้าหนาวที่ยืนยัน เช็กว่ามีรอบเรือในวันที่ไป" },
+          "tip": { "en": "Check that cruises run on your dates in winter", "th": "หน้าหนาวเช็กก่อนว่ามีรอบล่องเรือในวันที่ไป" },
           "ages": [1, 2, 2, 2],
           "hrs": 1,
           "io": "out",

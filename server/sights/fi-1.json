@@ -347,7 +347,7 @@
           "hrs": 1.5,
           "io": "in",
           "pram": "yes",
-          "price": { "en": "≈ €7 adults · €5 ages 7–15 · under 7 free (an undated page, check the price)", "th": "≈ €7 ผู้ใหญ่ · €5 อายุ 7–15 ปี · ต่ำกว่า 7 ขวบฟรี (หน้าไม่ระบุวันที่ เช็กราคา)" },
+          "price": { "en": "Check the price · under 7 free", "th": "เช็กราคา · ต่ำกว่า 7 ปีฟรี" },
           "book": "none",
           "q": "Science Centre Pilke, Rovaniemi",
           "ok": "2026-11",

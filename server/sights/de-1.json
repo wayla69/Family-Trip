@@ -1310,7 +1310,7 @@
           "hrs": 3,
           "io": "both",
           "pram": "part",
-          "price": { "en": "≈ €24 adults · €21 aged 6–17 · under 6 free (an undated listing, check)", "th": "≈ €24 ผู้ใหญ่ · €21 อายุ 6–17 ปี · ต่ำกว่า 6 ขวบฟรี (ข้อมูลไม่ระบุวันที่ เช็กอีกครั้ง)" },
+          "price": { "en": "Check the price · under 6 free", "th": "เช็กราคา · ต่ำกว่า 6 ปีฟรี" },
           "book": "none",
           "q": "Bavaria Filmstadt, Bavariafilmplatz 7, Geiselgasteig",
           "ok": "2026-11",

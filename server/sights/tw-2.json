@@ -35,7 +35,7 @@
           "hrs": 6,
           "io": "both",
           "pram": "part",
-          "price": { "en": "≈ NT$980 adults · NT$780 children (age rules not confirmed) · weak, check", "th": "≈ NT$980 ผู้ใหญ่ · NT$780 เด็ก (ยังไม่ยืนยันเกณฑ์อายุ) · ไม่แน่ใจ ควรเช็ก" },
+          "price": { "en": "Check the price", "th": "เช็กราคา" },
           "book": "rec",
           "q": "Formosan Aboriginal Culture Village, Yuchi, Nantou",
           "ok": "2026-11",

@@ -209,7 +209,7 @@
           "hrs": 1.5,
           "io": "in",
           "pram": "yes",
-          "price": { "en": "≈ RM38 adults · RM28 children (foreign rate on one undated guide; check the price)", "th": "≈ RM38 ผู้ใหญ่ · RM28 เด็ก (อัตราต่างชาติจากเว็บไม่ระบุวันที่ เช็กราคาอีกครั้ง)" },
+          "price": { "en": "Check the price", "th": "เช็กราคา" },
           "book": "none",
           "q": "Art in Paradise 3D Museum, Oriental Village, Langkawi",
           "ok": "2026-11",

@@ -158,7 +158,7 @@
           "hrs": 3,
           "io": "out",
           "pram": "no",
-          "price": { "en": "≈ IDR 20,000 per person (blogs, undated: check the price)", "th": "≈ 20,000 รูเปียห์ต่อคน (จากบล็อกที่ไม่ลงวันที่ เช็กราคาอีกครั้ง)" },
+          "price": { "en": "Check the price", "th": "เช็กราคา" },
           "book": "none",
           "q": "Sendang Gile Waterfall, Senaru, North Lombok",
           "ok": "2026-11",
@@ -265,23 +265,6 @@
           "q": "Gili Meno Turtle Sanctuary, Gili Meno",
           "ok": "2026-11",
           "src": "https://www.villa-bali.com/en-sg/poi/gili-meno-sea-turtle-sanctuary"
-        },
-        {
-          "name": { "en": "Islamic Center NTB (Hubbul Wathan Great Mosque)", "th": "อิสลามิกเซ็นเตอร์ NTB (มัสยิดใหญ่ฮุบบุลวาตัน)" },
-          "kind": "views",
-          "area": { "en": "Mataram", "th": "มาตาราม" },
-          "what": { "en": "A green-and-gold mosque with a tall minaret and views over Mataram", "th": "มัสยิดสีเขียวทองมียอดหอคอยสูง ชมวิวเมืองมาตารามได้" },
-          "why": { "en": "Wide courtyards for children to walk; visit outside prayer times and dress modestly", "th": "ลานกว้างให้เด็กเดินเล่น ควรไปนอกเวลาละหมาดและแต่งกายสุภาพ" },
-          "tip": { "en": "Doors are open daily; avoid communal prayer times", "th": "เปิดทุกวัน หลีกเลี่ยงเวลาละหมาดรวม" },
-          "ages": [1, 1, 2, 2],
-          "hrs": 1,
-          "io": "both",
-          "pram": "part",
-          "price": { "en": "Check the price", "th": "เช็กราคาอีกครั้ง" },
-          "book": "none",
-          "q": "Islamic Center NTB, Mataram, Lombok",
-          "ok": "2026-11",
-          "src": "https://uk.trip.com/moments/poi-islamic-center-ntb-hubbul-wathan-great-mosque-141070992"
         },
         {
           "name": { "en": "Mayura Water Palace", "th": "พระราชวังน้ำมายูรา" },

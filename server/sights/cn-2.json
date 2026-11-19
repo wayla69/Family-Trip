@@ -623,7 +623,7 @@
           "hrs": 1.5,
           "io": "out",
           "pram": "part",
-          "price": { "en": "Check the price (a student price of ≈ ¥15 was noted, undated)", "th": "เช็กราคาอีกครั้ง (มีบันทึกราคานักเรียน ≈ ¥15 ไม่ระบุปี)" },
+          "price": { "en": "Check the price", "th": "เช็กราคา" },
           "book": "none",
           "q": "Nanshan One Tree Viewing Platform, Nan'an, Chongqing",
           "ok": "2026-11",

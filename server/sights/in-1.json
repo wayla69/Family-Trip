@@ -203,7 +203,7 @@
           "hrs": 1.5,
           "io": "in",
           "pram": "part",
-          "price": { "en": "Foreign visitors ≈ ₹600 (a 2026 guide; older guides say ₹300, check the price)", "th": "ชาวต่างชาติ ≈ ₹600 (คู่มือปี 2026 คู่มือเก่าบอก ₹300 เช็กราคาอีกครั้ง)" },
+          "price": { "en": "Check the price", "th": "เช็กราคา" },
           "book": "none",
           "q": "Albert Hall Museum, Ram Niwas Garden, Jaipur",
           "ok": "2026-11",

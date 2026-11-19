@@ -100,7 +100,7 @@
           "hrs": 4,
           "io": "in",
           "pram": "no",
-          "price": { "en": "children ≈ €15.50 with the first cable car section and the tour (an undated listing, check the price)", "th": "เด็ก ≈ €15.50 รวมกระเช้าช่วงแรกและทัวร์ (ข้อมูลไม่ระบุวันที่ เช็กราคาอีกครั้ง)" },
+          "price": { "en": "Check the price", "th": "เช็กราคา" },
           "book": "rec",
           "q": "Dachstein Rieseneishöhle, Obertraun",
           "ok": "2026-11",

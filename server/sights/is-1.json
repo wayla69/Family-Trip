@@ -232,7 +232,7 @@
           "hrs": 1,
           "io": "out",
           "pram": "part",
-          "price": { "en": "Free to walk in · car park ≈ ISK 1,000", "th": "เดินเข้าฟรี · ที่จอดรถ ≈ ISK 1,000" },
+          "price": { "en": "Free (parking free)", "th": "ฟรี (ที่จอดรถฟรี)" },
           "book": "none",
           "q": "Gullfoss, Hvítá, Iceland",
           "ok": "2026-11",
