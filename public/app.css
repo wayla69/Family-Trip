@@ -3724,3 +3724,7 @@ a.plchip{text-decoration:none}a.plchip .label{font-weight:700}a.plchip[aria-curr
 .bedeats .etag{flex:none}
 .etag.famstar{background:color-mix(in srgb,var(--sun) 18%,var(--paper));color:color-mix(in srgb,var(--sun) 45%,var(--ink));font-weight:700;white-space:nowrap}
 .etag.famno{background:color-mix(in srgb,var(--ink) 8%,var(--paper));color:var(--muted);white-space:nowrap}
+.docsck{border:1px solid var(--rule);border-radius:14px;padding:10px 14px;margin:12px 0;background:var(--card)}
+.docsck summary{cursor:pointer;font-weight:700;min-height:44px;display:flex;align-items:center;gap:8px;list-style:none}
+.docsck summary::-webkit-details-marker{display:none}
+.docsck summary .chv{margin-left:auto}

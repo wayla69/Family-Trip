@@ -1591,11 +1591,30 @@ ${lostPhoto ? `<img class="lcthumb" src="${esc(lostPhoto)}" alt="">` : `<span cl
 <p class="label">🔒 ${L('รูปและเบอร์อยู่ในเครื่องนี้เท่านั้น ไม่อัปโหลด', 'The photo and numbers stay on this phone — nothing is uploaded')}</p>
 <img class="lcprev" id="lcprev" alt="" hidden></section>`;
 }
+// the papers and the things on the phone to have ready before we leave (owner, Nov 2026: "ประกันเดินทางและเอกสารเด็ก"): a fixed list, ticked
+// on this phone (data-ck, the bag's own tick), shown until the trip is over — never a document number, nothing goes to the server
+const DOCS = [
+  ['pp', '📕', 'หนังสือเดินทางทุกคน อายุเหลือเกิน 6 เดือนนับจากวันกลับ', 'Everyone’s passports, valid 6 months past the day we come home'],
+  ['visa', '🛂', 'วีซ่าหรือการลงทะเบียนเข้าประเทศ ถ้าประเทศนั้นต้องมี', 'A visa or entry registration, where the country asks for one'],
+  ['ins', '🩺', 'ประกันเดินทางที่คุ้มครองเด็กๆ ด้วย', 'Travel insurance that covers the children'],
+  ['tix', '🎟️', 'ตั๋วเครื่องบินและใบจองที่พักในโทรศัพท์ และพิมพ์เก็บไว้หนึ่งชุด', 'Flights and stays on the phone, and one printed set'],
+  ['copy', '📄', 'สำเนาหนังสือเดินทาง เก็บแยกจากตัวจริง', 'Copies of the passports, kept apart from the real ones'],
+  ['meds', '💊', 'ยาประจำตัวของเด็กๆ กับใบสั่งยาภาษาอังกฤษ', 'The children’s own medicines and an English prescription'],
+  ['cards', '💳', 'บัตรที่ใช้ต่างประเทศได้ และแจ้งธนาคารแล้ว', 'Cards that work abroad, and the bank told'],
+  ['sim', '📶', 'ซิมหรือ eSIM สำหรับต่างประเทศ', 'A SIM or eSIM for abroad'],
+];
+function docsBlock(t) {
+  if (!isEditor() || tripOver(t)) return '';
+  const ck = ls('ck') || {}, key = (k) => `${t.id}.docs.${k}`, got = DOCS.filter((d) => ck[key(d[0])]).length;
+  return `<details class="docsck noprint"${got < DOCS.length && daysUntil(t) > 0 ? ' open' : ''}><summary>${emo('🗂️')} ${L('เอกสารและของที่ต้องพร้อม', 'Papers and things to have ready')} <span class="label">${got >= DOCS.length ? L('พร้อมครบ ✓', 'All ready ✓') : got ? L(`พร้อมแล้ว ${got}/${DOCS.length}`, `${got}/${DOCS.length} ready`) : L(`${DOCS.length} อย่าง`, `${DOCS.length} things`)}</span>${ic('chev', 'chv')}</summary>
+<ul class="chk bagl">${DOCS.map(([k, e, th, en]) => `<li><label><input type="checkbox" data-ck="${esc(key(k))}"${ck[key(k)] ? ' checked' : ''}><span>${emo(e)} ${esc(L(th, en))}</span></label></li>`).join('')}</ul>
+<p class="label">${L('ติ๊กเก็บไว้ในเครื่องนี้ · ไม่เก็บเลขเอกสารใดๆ', 'Ticks stay on this phone · no document number is kept')}</p></details>`;
+}
 function viewPrep(t, full, open) {
   const B = infoBlocks(t), lede = L('ก่อนออกเดินทางและระหว่างทาง', 'Before we leave and on the way');
   if (full) return topicPage(t, 'prep', B.prep, lede, open);
   const until = daysUntil(t);
-  return glancePage(t, 'prep', B, L('แตะหัวข้อเพื่อเปิดรายละเอียด', 'Tap a topic for its detail'), until > 0 ? `<div class="call info">${L(`อีก ${until} วันออกเดินทาง`, `${until} days to go`)}</div>` : '', []);
+  return glancePage(t, 'prep', B, L('แตะหัวข้อเพื่อเปิดรายละเอียด', 'Tap a topic for its detail'), `${until > 0 ? `<div class="call info">${L(`อีก ${until} วันออกเดินทาง`, `${until} days to go`)}</div>` : ''}${docsBlock(t)}`, []);
 }
 function viewLearn(t, full, open) {
   const B = infoBlocks(t), lede = L('เรื่องเล่าในรถ คำศัพท์ สัตว์ และคำถามสำหรับเด็กๆ', 'Stories for the car, words, animals and questions for the kids');

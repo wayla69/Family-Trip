@@ -982,6 +982,11 @@ const T = 'hk-macau-2026';
     const bag = await page.evaluate(() => { const t = S.trips.find((x) => x.id === 'hk-macau-2026'), keep = WX[t.id]; WX[t.id] = { at: Date.now(), days: [null, null, { tmin: 11, tmax: 33, code: 61, pop: 70 }] };
       const r = dayBag(t, 2).filter((x) => ['rain', 'warm', 'sun'].includes(x.k)).map((x) => [x.k, x.why]); WX[t.id] = keep; return r; });
     const why = Object.fromEntries(bag);
+    await page.goto(`${BASE}/#/t/hk-macau-2026/prep`); await page.waitForSelector('.docsck');
+    await page.locator('.docsck input').first().check(); await page.reload(); await page.waitForSelector('.docsck');
+    const dk = await page.evaluate(() => ({ n: document.querySelectorAll('.docsck li').length, on: document.querySelectorAll('.docsck input:checked').length, said: document.querySelector('.docsck summary .label').textContent }));
+    ok(dk.n === 8 && dk.on === 1 && /1\/8/.test(dk.said), `prep: the papers to have ready are ticked on this phone and stay ticked (${dk.on}/${dk.n} · ${dk.said})`);
+    await page.locator('.docsck input').first().uncheck();
     ok(bag.length === 3 && /70%/.test(why.rain) && /11°C/.test(why.warm) && /33°C/.test(why.sun), `today's bag: the live forecast adds an umbrella, a jacket and sunscreen, each saying why (${bag.map((x) => x.join(': ')).join(' · ')})`); }
   { // a fold opened on a wide screen: the boxes after it change sides so the columns stay near each other; the tapped fold and everything before it stay put
     await page.goto(`${BASE}/#/t/big-hop-2027/today/1`); await page.waitForSelector('details.dmore'); await page.evaluate(() => { document.querySelector('details.dmore').open = true; }); await page.waitForSelector('.cgrid.packed');
