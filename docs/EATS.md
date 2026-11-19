@@ -9,7 +9,7 @@ Owner, 19 Nov 2026: "ร้านอาหารด้วย แนวเดี�
 |---|---|---|
 | `helper` | A parent pressed "ask the helper to find and check places" for a town: one call with web search | Yes, on the day shown on the card |
 | `book` | The "where to eat" of a book the family has (the two bundled books: 506 places) | As the book's manual was — by the owner |
-| `starter` | The app's built-in list, `server/eats/<cc>-<n>.json`: 3,089 places in all 207 cities of the picture library | **Partly** — 648 places carry the month a web search confirmed them open; see below |
+| `starter` | The app's built-in list, `server/eats/<cc>-<n>.json`: 3,046 places in all 207 cities of the picture library | **Mostly** — 2,617 places carry the month a web search confirmed them open; see below |
 
 A helper row replaces a book row of the same name, a book row replaces a built-in one; never the other way round. A place the parents
 take out stays out. The web check of a book (planner phase 3) writes what it found on the library's row of the same name.
@@ -25,7 +25,7 @@ did run it usually showed that a place exists and where it is, rarely that it is
 
 - Every built-in place is shown as "from the app's built-in list · not checked today — check before you go", with no opening hours.
 - A row may carry `"ok": "YYYY-MM"` = the month a web search showed it trading (its own site, a tourism office, a dated 2025–2026
-  listing or review). Only then the card says "open" and "web check <month>". 648 rows have it (in 206 of the 207 towns); every row the checks left in doubt was taken out.
+  listing or review). Only then the card says "open" and "web check <month>". 2,617 rows have it, at least one in every town (the full pass below).
 - Prices are rough ranges from memory. The least reliable: Argentine pesos, Turkish lira, Myanmar kyat (inflation).
 - Street names and numbers inside the map queries are from memory; the name, district and town are the reliable part.
 - About 30 places the workers had planned were dropped because a search showed them closed or moved.
@@ -166,6 +166,24 @@ bazaar, the "Central … food court" rows in six Thai towns, the Antique Pool's 
 ### Taken out after my own look (19 Nov 2026)
 
 Din Tai Fung Xintiandi (a listing says closed) · Luckin Coffee and Mixue in Wulingyuan (branches assumed, never confirmed).
+
+### The full pass (19 Nov 2026)
+
+Owner: "เช็กร้านอาหารในรายการตั้งต้นกับเว็บ". Every row not yet confirmed (2,441) went through in 41 lists of 60, one search per place,
+by workers that wrote a verdict and the full address of the result that showed it — one link per place, never one note for many (two
+lists that copied one note for all were done again; an "open" with no link or a link shared with another place counts as not checked).
+- **open** → `ok: "2026-11"`: its own site, a booking page or a listing with current hours or recent reviews, nothing saying closed.
+- **closed** → taken out: a listing or news item saying permanently closed, moved to another town, renamed, closed for a rebuild into
+  2027, or sources that disagree on whether it still trades (the owner: "อะไรที่ไม่แน่ใจเอาออกก่อนได้") — 43 places, 3,089 → 3,046.
+  Kept unchecked instead where taking it out would break a town's minimum: 7 Sisters (Bagan), Tracy's King Crab Shack (Juneau, moved).
+- **unsure** → unchanged (the card still says "not checked"): nothing current either way, a branch or address that does not match,
+  or a page about another place of the same name — 429 places.
+- Map queries fixed where the result showed the place moved within its town: Kai Kai Dessert (Parkes St), Glacier des Alpes (16 rue
+  Perrière), Au Fidèle Berger, Pasticceria Alverà (Piazza Fratelli Ghedina 14), Namur (28 rue Philippe II), Full Steam Tromsø
+  (Søndre Tollbodgate 3), Moo's (155 Center St), Bup (108 Đường 30/4), Phu Quoc Bee Farm (Cửa Cạn), Petit Cafe (Kuranda Heritage
+  Markets).
+- Most "open" verdicts rest on a live listing rather than a dated 2025–2026 page — search results rarely show a date. The twice-yearly
+  re-check takes the oldest towns first.
 
 ## Adding or changing the built-in list
 
