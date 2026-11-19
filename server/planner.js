@@ -57,23 +57,43 @@ const ROUTE_SYS = 'You plan family trips for Thai families with small children. 
   + 'Never name the children. Answer with JSON only, no prose, no code fence.';
 // two routes to compare (phase 3): one call, two real choices the family can feel the difference between
 const TWO = '\n\nGive TWO different routes to choose between — really different (one base and day trips vs moving towns, slower vs fuller, sea vs mountains), both good for small children. Return {"routes":[route, route]} where each route is the object above plus "label":{"th","en"} (2–4 words naming the choice) and "why":{"th","en"} (one line: who it suits).';
-const routeUser = (a, who, prev, ask) => `${answersText(a, who)}
+/* E4 (docs/PLACES-ECOSYSTEM.md F5): the library first. The route ask carries, per town the family names, a short menu of things to do
+   from the family's library (web-checked, fitted to the youngest child's age, the taste and the needs): a short code each, so the prompt
+   stays small. The helper builds the stops from the menu ("id"); a stop from outside it is marked "new". The codes become the library's
+   ids again on the way back (`route`), so the book's draft can carry each stop's checked facts and the web check skips them. */
+function menuText(menu) {
+  if (!menu || !menu.length) return '';
+  return `\n\nThings to do from the family's library — every one checked on the web, fitted to these children. Build each day's stops from this list where it fits the day's town, and give the stop its "id"; a stop from outside the list is fine only when nothing here fits, and then it carries "new": true.
+${menu.map((m) => `${m.town.en}:\n${m.items.map((x) => `${x.code} ${x.name.en} (${x.kind}${x.io !== 'out' ? ', indoors' : ''}${x.wish ? ', the family wishes for it' : ''}, about ${x.hrs} h)`).join('\n')}`).join('\n')}`;
+}
+const routeUser = (a, who, prev, ask, menu) => `${answersText(a, who)}${menuText(menu)}
 ${prev ? `\nThe route so far (change it as asked, keep what was not asked about):\n${JSON.stringify(prev)}\nAsked: ${one(ask, 400)}` : ''}
 Return {"title":{"th","en"} (short, fun, the place's name in it), "place":{"th","en"}, "countries":["2-letter codes in the order visited"], "tz":"IANA zone of the main place", "from":"YYYY-MM-DD", "to":"YYYY-MM-DD",
 "why":{"th","en"} (one line: why this route suits this family), "season":{"th","en"} (one line: the usual weather and crowds at that time of year — say "usually", it is not a forecast),
 "cost":{"th","en"} (one line: a rough daily spend for the family on food, getting around and tickets, as a range with ≈ in the local currency — no flights, no hotels), "ahead":[{"th","en"}] (up to 5 things worth booking ahead, a short phrase each; [] when none),
-"days":[{"date":"YYYY-MM-DD","town":{"th","en"},"title":{"th","en"} (one short line),"emoji":"one emoji","stops":[{"th","en"}] (2–3 main stops),"sleep":{"th","en"} (the town or area we sleep in; a hotel only if the family named it),
+"days":[{"date":"YYYY-MM-DD","town":{"th","en"},"title":{"th","en"} (one short line),"emoji":"one emoji","stops":[{"th","en"${menu && menu.length ? ',"id" (the library code, when the stop is from the list),"new" (true when it is not)' : ''}}] (2–3 main stops),"sleep":{"th","en"} (the town or area we sleep in; a hotel only if the family named it),
 "kid":{"th","en"} (the children's best bit of the day, a few words), "move":{"th","en"} (only on a day we change towns or arrive or leave: how and about how long, e.g. "Shinkansen ≈ 2 h 15"; else ""), "rain":{"th","en"} (a nearby indoor swap for a wet day, a few words)}]}.
 One day per date${a.from ? ` from ${a.from} to ${a.to}` : ' (pick sensible dates in the month asked)'}. Thai is natural Thai a Thai parent says (place names the way Thais say them).`;
 
 // optional lines of a route or a day: kept only when they say something
 const more = (o, keys) => Object.fromEntries(Object.entries(keys).map(([k, n]) => [k, o && o[k] ? i18n(o[k], n) : null]).filter(([, v]) => v && (v.th || v.en)));
+const LIB_ID = /^[0-9a-f]{20}$/;   // a library sight's id (sightlib.idOf)
+// the menu's short codes in the helper's answer → the library's ids (an unknown code is dropped, the stop stays as a name)
+function libIds(r, menu) {
+  const byCode = new Map((menu || []).flatMap((m) => m.items.map((x) => [x.code, x.id])));
+  const fix = (rt) => { for (const d of (rt && Array.isArray(rt.days) ? rt.days : [])) for (const st of (Array.isArray(d && d.stops) ? d.stops : [])) {
+    if (!st || typeof st !== 'object') continue;
+    const id = byCode.get(String(st.id || '').trim()); delete st.id; if (id) { st.lib = id; delete st.new; } };
+  };
+  if (r && Array.isArray(r.routes)) r.routes.forEach(fix); else fix(r);
+  return r;
+}
 // the helper's answer → a route the page can show and edit; anything malformed is dropped, the days are one per date
 function cleanRoute(r, a) {
   if (!r || typeof r !== 'object' || !Array.isArray(r.days) || !r.days.length) throw Object.assign(new Error('route'), { code: 'route' });
   const days = r.days.slice(0, 31).map((d) => ({
     date: DATE_RE.test(d && d.date) ? d.date : '', town: i18n(d && d.town, 80), title: i18n(d && d.title, 120), emoji: one(d && d.emoji, 8) || '📍',
-    stops: (Array.isArray(d && d.stops) ? d.stops : []).slice(0, 4).map((s) => i18n(s, 80)).filter((s) => s.en || s.th), sleep: i18n(d && d.sleep, 120),
+    stops: (Array.isArray(d && d.stops) ? d.stops : []).slice(0, 4).map((s) => ({ ...i18n(s, 80), ...(LIB_ID.test(String(s && s.lib || '')) ? { lib: s.lib } : {}), ...(s && s.new === true ? { new: true } : {}) })).filter((s) => s.en || s.th), sleep: i18n(d && d.sleep, 120),
     ...more(d, { kid: 120, move: 120, rain: 120 }),
   }));
   const from = a.from || (DATE_RE.test(r.from) ? r.from : days[0].date), tz = /^[A-Za-z_]+\/[A-Za-z_+-]+(\/[A-Za-z_+-]+)?$/.test(r.tz || '') ? r.tz : 'Asia/Bangkok';
@@ -86,17 +106,18 @@ function cleanRoute(r, a) {
 // the parents' edits come back from the page: the same cleaning, the dates laid out again from the first day
 const cleanEdited = (r, a) => cleanRoute(r, { ...a, from: (r && DATE_RE.test(r.from) ? r.from : a.from) });
 
-async function route({ client, model, answers, who, prev, ask, take, onUsage, two, family }) {
+async function route({ client, model, answers, who, prev, ask, take, onUsage, two, family, menu }) {
   if (take && !(await take())) throw Object.assign(new Error('limit'), { code: 'limit' });
   // the import's redaction runs on the answers too: a booking number typed into "flights" never leaves the server
   // what this family learned on past trips (bookshelf.js familyLessons): follow it — the children's rest, short travel days, the food that worked
   const past = family ? `\n\nWhat this family learned on past trips (follow it where it fits this trip):\n${family}` : '';
-  const { text } = require('./bookimport').redact(routeUser(answers, who, prev, ask) + past + (two && !prev ? TWO : ''));
+  const { text } = require('./bookimport').redact(routeUser(answers, who, prev, ask, menu) + past + (two && !prev ? TWO : ''));
   const msg = await client.messages.stream({ model, max_tokens: 8000, system: ROUTE_SYS, messages: [{ role: 'user', content: text }] }).finalMessage();
   if (onUsage) { try { onUsage(msg.usage || {}); } catch (_) { /* counting never breaks planning */ } }
   if (msg.stop_reason === 'refusal') throw Object.assign(new Error('refused'), { code: 'refusal' });
   const t = msg.content.filter((b) => b.type === 'text').map((b) => b.text).join('').replace(/^```(?:json)?\s*/m, '').replace(/```\s*$/m, '').trim();
   let r; try { r = JSON.parse(t.slice(t.indexOf('{'))); } catch (e) { throw Object.assign(new Error('route json'), { code: 'json' }); }
+  libIds(r, menu);
   if (two && !prev) {   // two routes to choose between: both cleaned the same way; one that does not read is left out, none → an error
     const list = (Array.isArray(r.routes) ? r.routes : []).slice(0, 2).map((x) => { try { return cleanRoute(x, answers); } catch (_) { return null; } }).filter(Boolean);
     if (!list.length) throw Object.assign(new Error('route'), { code: 'route' });
@@ -139,9 +160,15 @@ function keepAnswers(a) {
 }
 
 // the brief the book is written from: the answers, then the agreed route day by day
-function brief(answers, rt, who, eats) {
+// the library's facts of the route's stops (E4): the import writes the days from them instead of asking for them again
+function sightFacts(rows) {
+  if (!rows || !rows.length) return '';
+  const io = { in: 'indoors', out: 'outdoors', both: 'indoors and out' };
+  return `\n\nThings to do from the family's library, checked on the web — use these facts for the stops of the same name (the name exactly):\n${rows.map((x) => `${x.name.en}${x.area && x.area.en ? ` (${x.area.en})` : ''} — about ${x.hrs} h; ${io[x.io] || 'outdoors'}; ${x.price && x.price.en ? `${x.price.en}; ` : ''}${x.book === 'req' ? 'book ahead; ' : x.book === 'rec' ? 'booking advised; ' : ''}${x.tip && x.tip.en ? `tip: ${x.tip.en}; ` : ''}map: ${x.q}`).join('\n')}`;
+}
+function brief(answers, rt, who, eats, sights) {
   const days = rt.days.map((d, i) => `Day ${i + 1} (${d.date}) — ${d.title.en}; town: ${d.town.en}; main stops: ${d.stops.map((s) => s.en).join(', ') || '—'}; sleep: ${d.sleep.en || d.town.en}${d.move ? `; getting there: ${d.move.en}` : ''}${d.kid ? `; the children's best bit: ${d.kid.en}` : ''}${d.rain ? `; if it rains: ${d.rain.en}` : ''}`).join('\n');
-  return { text: `${answersText(answers, who)}\n\nTrip: ${rt.title.en} — ${rt.place.en}, ${rt.from} to ${rt.to}, time zone ${rt.tz}\nThe agreed route:\n${days}${eats ? `\n\nPlaces to eat already in the family's library — use them (the name exactly) for the days' meal picks where they fit the day's area:\n${eats.groups.map((g) => `${g.area.en}: ${g.items.map((x) => `${x.name}${x.tag ? ` (${x.tag.en || x.tag})` : ''}`).join('; ')}`).join('\n')}` : ''}`,
+  return { text: `${answersText(answers, who)}${sightFacts(sights)}\n\nTrip: ${rt.title.en} — ${rt.place.en}, ${rt.from} to ${rt.to}, time zone ${rt.tz}\nThe agreed route:\n${days}${eats ? `\n\nPlaces to eat already in the family's library — use them (the name exactly) for the days' meal picks where they fit the day's area:\n${eats.groups.map((g) => `${g.area.en}: ${g.items.map((x) => `${x.name}${x.tag ? ` (${x.tag.en || x.tag})` : ''}`).join('; ')}`).join('\n')}` : ''}`,
     facts: CF.factsFor(rt.countries), who };
 }
 
@@ -219,4 +246,4 @@ async function dayAsk({ client, model, day, place, forecast, ask, who, tz, take,
   try { return JSON.parse(t.slice(t.indexOf('{'))); } catch (e) { throw Object.assign(new Error('day json'), { code: 'json' }); }
 }
 
-module.exports = { cleanAnswers, keepAnswers, whoLine, route, ideas, cleanRoute: cleanEdited, brief, slugOf, daysOf, dayAsk, cleanDay, MAPS, LIKES, NEEDS };
+module.exports = { cleanAnswers, keepAnswers, whoLine, route, ideas, cleanRoute: cleanEdited, brief, slugOf, daysOf, dayAsk, cleanDay, MAPS, LIKES, NEEDS, menuText, libIds, sightFacts, LIB_ID };

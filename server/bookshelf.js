@@ -1352,6 +1352,23 @@ function router({ pool, media, A, ai, hooks = {} }) {   // hooks.heart(h): set b
     for (const k of await kidRows()) for (const [nm, w] of [[k.name_th, 'ลูก'], [k.name_en, 'the child']]) if (nm && nm.trim().length > 1) txt = txt.split(nm.trim()).join(w);
     return txt;
   }
+  /* E4: the library's menu for the route ask — the towns the family names ("where to", or the route's own towns on a change), each with
+     at most 25 things to do that suit the youngest child (fit > 0), wished ones first, then by fit; at most 4 towns. Codes s1, s2, … keep
+     the prompt short; `route` turns them back into ids. */
+  async function sightMenu(answers, prev) {
+    const rows = await SIGHTLIB.all(pool, FAMILY); if (!rows.length) return [];
+    const names = prev && Array.isArray(prev.days) ? prev.days.flatMap((d) => [d && d.town && d.town.en, d && d.town && d.town.th]) : String(answers.dest || '').split(/[,،、/·]|\s+(?:and|และ|then|แล้ว)\s+/);
+    const keys = [...new Set(names.map((x) => SIGHTLIB.norm(x)).filter((k) => k.length >= 2))];
+    const y = await sightKids(), taste = await sightTaste(), menu = []; let n = 0;
+    const towns = SIGHTLIB.towns(rows).filter((t) => keys.some((k) => k === t.tkey || k === SIGHTLIB.norm(t.town_th) || k.includes(t.tkey) || (SIGHTLIB.norm(t.town_th).length >= 3 && k.includes(SIGHTLIB.norm(t.town_th)))));
+    for (const t of towns.slice(0, 4)) {
+      const items = rows.filter((x) => x.tkey === t.tkey).map((x) => { const o = SIGHTLIB.out(x); return { ...o, fit: SIGHTLIB.fitOf(o, taste, y) }; })
+        .filter((x) => x.fit > 0).sort((a, b) => (b.wish ? 1 : 0) - (a.wish ? 1 : 0) || b.fit - a.fit).slice(0, 25)
+        .map((x) => ({ code: `s${++n}`, id: x.id, name: x.name, kind: x.kind, io: x.io, hrs: x.hrs, wish: x.wish }));
+      if (items.length) menu.push({ town: { en: t.town, th: t.town_th }, items });
+    }
+    return menu;
+  }
   // the route: drafted from the answers, or changed as asked ({prev, ask}); a route the parents edited by hand ({route}, no ask) is only cleaned
   r.post('/api/b/planner/route', ...W, async (req, res, next) => {
     try {
@@ -1362,7 +1379,8 @@ function router({ pool, media, A, ai, hooks = {} }) {   // hooks.heart(h): set b
       if (answers.from && PLANNER.daysOf(answers) > 31) return bad(res, 'days');
       const who = PLANNER.whoLine(await kidRows(), answers.from);
       const two = !!b.two && !b.ask;
-      const route = await PLANNER.route({ client: new ai.SDK(), model: IMPORT.WRITE(), answers, who, prev: b.ask && b.route ? b.route : null, ask: b.ask, take: aiTake, onUsage: addUsage, two, family: await familyLessons() });
+      const prev = b.ask && b.route ? b.route : null;
+      const route = await PLANNER.route({ client: new ai.SDK(), model: IMPORT.WRITE(), answers, who, prev, ask: b.ask, take: aiTake, onUsage: addUsage, two, family: await familyLessons(), menu: await sightMenu(answers, prev) });
       res.json(two ? { routes: route.map(withFacts) } : { route: withFacts(route) });
     } catch (e) {
       if (e.code === 'limit') return res.status(429).json({ error: 'limit' });
@@ -1395,7 +1413,11 @@ function router({ pool, media, A, ai, hooks = {} }) {   // hooks.heart(h): set b
         const townPairs = [...new Map(rt.days.map((d) => [EATLIB.norm(d.town.en), [d.town.en, d.town.th]])).values()].filter((x) => x[0]);
         const eatTowns = eatFor(await EATLIB.all(pool, FAMILY), townPairs), eats = EATLIB.groupsFor(eatTowns);
         if (eats) log(`places to eat: ${eats.groups.reduce((n, g) => n + g.items.length, 0)} from the family's library (${eats.groups.map((g) => g.area.en).join(', ')})`);
-        const out = await IMPORT.run({ brief: { ...PLANNER.brief(answers, rt, PLANNER.whoLine(kids, rt.from), eats), eats, eatsAll: !!eats && eatTowns.every((t) => t.places.length) }, slug, client: new ai.SDK(), take, onUsage: addUsage, log, dir: DATA_TMP });
+        // E4: the stops the route took from the library carry their checked facts into the brief; the log says how many came from it
+        const stops = rt.days.flatMap((d) => d.stops), libIds = [...new Set(stops.map((x) => x.lib).filter(Boolean))];
+        const libRows = libIds.length ? (await q('SELECT * FROM sight_lib WHERE family_id=$1 AND id = ANY($2::text[]) AND NOT gone', [FAMILY, libIds])).map(SIGHTLIB.out) : [];
+        if (stops.length) log(`things to do: from the library ${stops.filter((x) => x.lib).length} · new ${stops.filter((x) => !x.lib).length}`);
+        const out = await IMPORT.run({ brief: { ...PLANNER.brief(answers, rt, PLANNER.whoLine(kids, rt.from), eats, libRows), eats, eatsAll: !!eats && eatTowns.every((t) => t.places.length) }, slug, client: new ai.SDK(), take, onUsage: addUsage, log, dir: DATA_TMP });
         if (kids.length) out.seed.children = FAM.seedChildren(kids, out.seed.date_from);
         out.seed.theme = { ...(out.seed.theme || {}), planner: { answers, made: new Date().toISOString().slice(0, 10) } };   // no child's name in it: kept for "change this day" (phase 2)
         out.report.planner = true;
@@ -1486,13 +1508,17 @@ function router({ pool, media, A, ai, hooks = {} }) {   // hooks.heart(h): set b
       if (!t) { held(); return { code: 'trip', status: 404 }; }
       if (t.source === 'seed') { held(); return { code: 'seed', status: 409 }; }
       const days = await q('SELECT day_index, planned, plan FROM trip_days WHERE trip_id=$1 ORDER BY day_index', [t.id]);
-      const places = VERIFY.placesOf(days);
-      if (!places.length) { held(); return { code: 'none', status: 422 }; }
+      const all = VERIFY.placesOf(days);
+      // E4: a place the family's library checked on the web in the last 12 months is not searched again — it is reported from the library
+      const fresh = new Map((await q("SELECT nkey, url, to_char(checked,'YYYY-MM-DD') checked FROM sight_lib WHERE family_id=$1 AND NOT gone AND checked >= (now() - interval '12 months')::date", [FAMILY])).map((x) => [x.nkey, x]));
+      const libRows = [], places = [];
+      for (const p of all) { const f = p.kind === 'place' && fresh.get(SIGHTLIB.norm(p.name)); if (f) libRows.push({ key: VERIFY.norm(p.name), name: p.name, day: p.day, kind: p.kind, st: 'open', hours: '', note: { th: `อยู่ในคลังที่เที่ยว เช็กกับเว็บแล้ว ${f.checked.slice(0, 7)}`, en: `In the library, checked on the web ${f.checked.slice(0, 7)}` }, url: f.url || '', lib: true }); else places.push(p); }
+      if (!places.length && !libRows.length) { held(); return { code: 'none', status: 422 }; }
       const need = VERIFY.calls(places.length);
       const used = Number(((await q("SELECT calls FROM ai_usage WHERE family_id=$1 AND day=(now() AT TIME ZONE 'UTC')::date", [FAMILY]))[0] || {}).calls || 0);
       if (STORY_DAILY - used < need) { held(); return { code: 'limit', status: 429, left: Math.max(0, STORY_DAILY - used), need }; }
-      vfJob.total = places.length; held = null;
-      const job = vfJob, rows = [];
+      vfJob.total = places.length + libRows.length; vfJob.done = libRows.length; held = null;
+      const job = vfJob, rows = [...libRows];
       const run = (async () => {
         try {
           for (let i = 0; i < places.length; i += VERIFY.BATCH) {
@@ -1509,13 +1535,13 @@ function router({ pool, media, A, ai, hooks = {} }) {   // hooks.heart(h): set b
           if (n && hooks.closed && String(t.date_to || '') >= new Date().toISOString().slice(0, 10)) Promise.resolve(hooks.closed({ trip: t.id, title: t.title, n })).catch((e) => console.error('closed push', e.message));
         } catch (e) { job.status = 'error'; job.error = e.code || 'failed'; console.error('verify', e.message); }
       })();
-      return { status: 202, total: places.length, calls: need, run };
+      return { status: 202, total: places.length + libRows.length, calls: need, lib: libRows.length, run };
     } catch (e) { if (held) held(); throw e; }
   }
   r.post('/api/b/planner/verify/:trip', ...W, async (req, res, next) => {
     try {
       const v = await startVerify(req.params.trip, req.user.name);
-      if (v.status === 202) return res.status(202).json({ total: v.total, calls: v.calls });
+      if (v.status === 202) return res.status(202).json({ total: v.total, calls: v.calls, lib: v.lib });
       if (v.code === 'limit') return res.status(429).json({ error: 'limit', left: v.left, need: v.need });
       return bad(res, v.code, v.status);
     } catch (e) { next(e); }

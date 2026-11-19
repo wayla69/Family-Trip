@@ -3845,3 +3845,5 @@ a.plchip{text-decoration:none}a.plchip .label{font-weight:700}a.plchip[aria-curr
 /* explore a town: a day built on the phone */
 .bday li{min-height:48px}.bday .tb{display:grid}.bday small{color:var(--muted)}
 .bdayb{gap:10px;margin-top:10px}.bdayb .btn{flex:1;min-height:48px;justify-content:center}
+/* E4: a route stop from the library of things to do */
+.pldstops .libt{display:inline-block;margin-left:4px;padding:1px 8px;border-radius:999px;font-size:12px;font-weight:600;background:color-mix(in srgb,var(--accent) 14%,var(--card));color:color-mix(in srgb,var(--accent) 65%,var(--ink))}
