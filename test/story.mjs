@@ -844,6 +844,14 @@ try {
       // chips instead of typing: a suggested place with its picture, how long, what the children like
       await pp.fill('#pldest', 'tok'); await pp.waitForSelector('.plsg');
       await pp.click('.plsg >> nth=0'); const d1 = await pp.inputValue('#pldest');
+      { // another name of a country finds it, never a town that merely holds the letters ("Usa" offered Busan); any country of the world is offered
+        const sug = async (q) => { await pp.fill('#pldest', q); await pp.waitForFunction(() => document.querySelector('#plsug .plsg'), null, { timeout: 4000 }).catch(() => {}); return pp.$$eval('#plsug .plsg', (x) => x.map((e) => e.textContent.trim())); };
+        const usa = await sug('Usa'); await pp.click('#plsug .plsg >> nth=0'); const picked = await pp.inputValue('#pldest');
+        const cuba = await sug('Cub'), th = await sug('อเมริกา');
+        ok(/United States/.test(usa[0]) && !usa.some((x) => /Busan/.test(x)) && usa.some((x) => /New York/.test(x)) && picked === 'The United States' && /Cuba/.test(cuba[0]) && /United States/.test(th[0]),
+          `planner page: "where to" finds a country by its other names and brings its towns, a tap puts the name in place of what was typed, a country outside the picture library is offered too (${usa.join(' | ')} · ${picked} · ${cuba.join(' | ')} · ${th.join(' | ')})`);
+        await pp.fill('#pldest', d1); await pp.dispatchEvent('#pldest', 'input');
+      }
       await pp.fill('#plfrom', '2027-05-01'); await pp.keyboard.press('Tab'); await pp.click('.pllens .plchip[data-v="5"]');
       await pp.click('.plchip[data-k="likes"][data-v="sea"]');
       const a1 = await pp.evaluate(() => ({ to: pln.a.to, likes: pln.a.likes.join(), span: document.querySelector('#plspan').textContent, pressed: document.querySelector('.plchip[data-v="sea"]').getAttribute('aria-pressed') }));

@@ -883,11 +883,12 @@ function router({ pool, media, A, ai, hooks = {} }) {   // hooks.heart(h): set b
     res.setHeader('Cache-Control', 'private, max-age=86400');
     res.json({ landmarks: (ix.items || []).filter((it) => it && it.ok && !it.withdrawn && it.cat === 'landmark' && it.id.startsWith(id + '.')).map((it) => ({ id: it.id, name: it.name, art: STOCK.url(it.id) })) });
   });
+  const alOf = (p) => (Array.isArray(p.alias) ? p.alias : []).filter((x) => typeof x === 'string' && x.length >= 2 && x.length <= 40).slice(0, 14);
   r.get('/api/b/geo', A.requireUser, (_req, res) => {
     const ps = Object.entries(STOCK.read().places || {});
     res.setHeader('Cache-Control', 'private, max-age=86400');
-    res.json({ places: ps.filter(([, p]) => Array.isArray(p.ll)).map(([id, p]) => ({ id, name: p.name, ll: p.ll, tz: p.tz, cc: p.country, home: !!p.home, art: STOCK.url(id + '.stamp'), c: (p.colors || {}).k1 || '' })),   // art + c: the town's own stamp and colour for the photo-book screens
-      countries: ps.filter(([id, p]) => id === p.country).map(([id, p]) => ({ cc: id, name: p.name, tz: p.tz || null })) });
+    res.json({ places: ps.filter(([, p]) => Array.isArray(p.ll)).map(([id, p]) => ({ id, name: p.name, ll: p.ll, tz: p.tz, cc: p.country, home: !!p.home, art: STOCK.url(id + '.stamp'), c: (p.colors || {}).k1 || '', al: alOf(p) })),   // art + c: the town's own stamp and colour for the photo-book screens; al: its other names (the planner's suggestions)
+      countries: ps.filter(([id, p]) => id === p.country).map(([id, p]) => ({ cc: id, name: p.name, tz: p.tz || null, home: !!p.home, art: STOCK.url(id + '.stamp'), c: (p.colors || {}).k1 || '', al: alOf(p) })) });
   });
   // help and play near a stay (server/care.js): ?ids=<place id>,… → the built-in rows of those library towns (no family data)
   r.get('/api/b/care', A.requireUser, (req, res) => {

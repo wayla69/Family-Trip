@@ -1046,7 +1046,10 @@ const T = 'hk-macau-2026';
   ok(await page.locator('.advc img.crest[src="/art/crest/hk.svg"]').count() === 1 && (await page.textContent('.advc')).includes('DOLPHIN-2026-MIMI'), 'passport cover as printed: crest, title, passport no. per child');
   ok(await page.evaluate(() => getComputedStyle(document.querySelector('#m1 header')).backgroundColor) === 'rgb(252, 231, 241)', 'day 2 mission in the printed pink (#FCE7F1)');
   ok((await page.textContent('.guides')).includes('Captain Pinky') && await page.locator('#pl-words .tick').count() === 10 && await page.locator('#pl-dimsum .stars').count() === 10, 'Captain Pinky, Say It Like a Local (10), Dim Sum Tasting Card (stars)');
-  ok(await page.evaluate(() => Array.from(document.querySelectorAll('img[src^="/art/"]')).every((i) => i.complete && i.naturalWidth > 0)), 'character, guide and stamp drawings load');
+  { // a lazy picture may still be on its way: wait for every one (a few seconds), then name any that did not arrive
+    await page.waitForFunction(() => Array.from(document.querySelectorAll('img[src^="/art/"]')).every((i) => i.complete && i.naturalWidth > 0), null, { timeout: 8000 }).catch(() => {});
+    const bad = await page.evaluate(() => Array.from(document.querySelectorAll('img[src^="/art/"]')).filter((i) => !(i.complete && i.naturalWidth > 0)).map((i) => i.getAttribute('src')));
+    ok(!bad.length, `character, guide and stamp drawings load${bad.length ? ` (not loaded: ${bad.slice(0, 5).join(', ')})` : ''}`); }
   ok(await page.locator('.pp-page.visa').count() === 1 && await page.locator('.dstamp').count() === 6, 'passport: HK visa page, a stamp slot per day');
   ok(await page.locator('.dstamp.on').count() === 1 && await page.locator('.dstamp.new').count() === 1, 'passport: recorded day is stamped (with the stamp animation the first time)');
   { await page.click('.mapdays [data-v="3"]'); await page.waitForFunction(() => document.querySelector('.mapsec .kicker').textContent.includes('4'));
