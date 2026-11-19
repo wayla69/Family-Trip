@@ -39,7 +39,9 @@ export function lintFile(file, places) {
       if (!/^https:\/\/[^\s"<>]{4,300}$/.test(x.src || '')) bad(`${at}: src = the https page that confirmed it`);
       if (/ค่ะ|ครับ|เช็ค/.test(JSON.stringify(x))) bad(`${at}: Thai style (no ค่ะ/ครับ, spell เช็ก)`);
     }
-    if ((t.sights || []).length < 15) bad(`${t.place}: ${(t.sights || []).length} sights (15 or more)`);
+    // a city holds 15 or more; one resort (a place id p-…: Disneyland Paris, Orlando) 10 or more — never padded with what was not checked
+    const min = /^p-/.test(t.place || '') ? 10 : 15;
+    if ((t.sights || []).length < min) bad(`${t.place}: ${(t.sights || []).length} sights (${min} or more)`);
     const s = t.sights || [];
     if (s.filter((x) => x.io === 'in' || x.io === 'both').length < 3) bad(`${t.place}: fewer than three for a rainy day (io in/both)`);
   }

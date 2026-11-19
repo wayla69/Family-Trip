@@ -61,7 +61,7 @@ Prices and hours change; the card still says "check before you go". British spel
 
 ## What a city should hold
 
-15–20 sights a city, mixed kinds, chosen for a family with children 1–8:
+15–20 sights a city (10 or more for one resort, a place id `p-…`, such as Disneyland Paris — never padded with what could not be checked), mixed kinds, chosen for a family with children 1–8:
 - the city's big ones;
 - at least three that are indoors or both, for a rain plan;
 - at least two free ones;
@@ -69,3 +69,24 @@ Prices and hours change; the card still says "check before you go". British spel
 
 Left out: anything closed, under renovation for the coming year, adults-only or with no web page newer than 2025. Also left out: casinos,
 nightlife, and religious sites that ask visitors to keep away.
+
+## What is in it (Nov 2026)
+
+40 towns, every row checked on the web in November 2026: Tokyo, Osaka, Kyoto, Hokkaido, Fukuoka, Okinawa · Seoul, Busan, Jeju · Taipei ·
+Hong Kong · Macau · Singapore · Kuala Lumpur · Bangkok, Chiang Mai, Phuket, Pattaya, Hua Hin, Krabi · Da Nang, Hanoi, Ho Chi Minh City ·
+Bali · Sydney, Melbourne, Gold Coast · Auckland, Queenstown · London · Paris, Disneyland Paris · Lucerne · Rome · Barcelona · Munich ·
+Amsterdam · New York, California, Orlando.
+
+The last round (Okinawa, Jeju, Saigon, Disneyland Paris, Rome, Barcelona, Munich, Amsterdam, New York, California, Orlando) could not
+open the official sites from the session (blocked fetches), so each row was confirmed from web search results: an official page where the
+search showed one, else the tourism office or a dated 2025–2026 listing. The softer prices to look at first in the next re-check:
+- Okinawa: Shurijo (the main hall reopens 23 Nov 2026 — ¥400 or ¥1,000), DMM Kariyushi (new prices from 15 Oct 2026 not found), Neo Park (a range).
+- Jeju: Camellia Hill (converted from US$), Hallasan Eorimok (a hiking guide; booking rules on visithalla.jeju.go.kr).
+- Saigon: Landmark 81, Saigon Skydeck and the Mekong day trip (converted from US$).
+- Disneyland Paris: the gate price only (less online by date); 10 sights (a resort).
+- Rome: the Zoology Museum (€7 or €7.50), Casina di Raffaello (a spring 2026 notice).
+- Barcelona: Park Güell (official tables disagree), Tibidabo's winter days, the Aquarium's adult price.
+- Munich: SEA LIFE, BMW Museum, Bavaria Filmstadt (2026 listings); Deutsches Museum single tickets.
+- Amsterdam: the Maritime Museum's child price, the Blue Boat adult fare, Ridammerhoeve (free or €3.25).
+- New York: the Natural History Museum's out-of-state price; California: Universal's child price; Orlando: the Disney World ranges, Epic Universe "from".
+
