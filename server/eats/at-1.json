@@ -1,0 +1,1151 @@
+{
+  "cc": "at",
+  "towns": [
+    {
+      "place": "at-vienna",
+      "places": [
+        {
+          "name": "Figlmüller Wollzeile",
+          "kind": 0,
+          "area": {
+            "th": "เขต 1 ใกล้มหาวิหารเซนต์สตีเฟน",
+            "en": "1st district, near St Stephen's"
+          },
+          "tag": {
+            "th": "ชนิทเซล",
+            "en": "Schnitzel"
+          },
+          "what": {
+            "th": "ร้านชนิทเซลชื่อดังที่สุดของเวียนนา หมูชุบเกล็ดขนมปังทอดแผ่นบางใหญ่ล้นจาน กับสลัดมันฝรั่ง",
+            "en": "Vienna's most famous schnitzel house: a thin pork schnitzel wider than the plate, with potato salad"
+          },
+          "why": {
+            "th": "ชนิทเซลแผ่นเดียวแบ่งได้ทั้งครอบครัว รสอ่อน ควรจองหรือมาตั้งแต่ร้านเปิด",
+            "en": "One schnitzel feeds the family and is mild; book or come at opening time"
+          },
+          "pr": {
+            "th": "≈ €20–32",
+            "en": "≈ €20–32"
+          },
+          "q": "Figlmüller Wollzeile, Wollzeile 5, 1010 Vienna"
+        },
+        {
+          "name": "Plachutta Wollzeile",
+          "kind": 0,
+          "area": {
+            "th": "เขต 1",
+            "en": "1st district"
+          },
+          "tag": {
+            "th": "เนื้อต้มทาเฟลชปิทซ์",
+            "en": "Tafelspitz boiled beef"
+          },
+          "what": {
+            "th": "ร้านที่ขึ้นชื่อเรื่องทาเฟลชปิทซ์ เนื้อวัวต้มในหม้อทองแดง กินน้ำซุปก่อน แล้วกินเนื้อกับซอสแอปเปิลและมันทอด",
+            "en": "Known for Tafelspitz: beef simmered in a copper pot, the broth eaten first, then the meat with apple sauce and fried potatoes"
+          },
+          "why": {
+            "th": "น้ำซุปใสกับเส้นและเนื้อนุ่มเหมาะกับเด็กเล็ก หม้อเดียวแบ่งกันได้ มีเก้าอี้เด็ก",
+            "en": "Clear broth with noodles and soft beef suit a small child, one pot is shared, and there are high chairs"
+          },
+          "pr": {
+            "th": "≈ €30–45",
+            "en": "≈ €30–45"
+          },
+          "q": "Plachutta Wollzeile, Wollzeile 38, 1010 Vienna"
+        },
+        {
+          "name": "Schweizerhaus",
+          "kind": 0,
+          "area": {
+            "th": "สวนสนุกพราเทอร์",
+            "en": "The Prater"
+          },
+          "tag": {
+            "th": "สวนเบียร์ ขาหมู",
+            "en": "Beer garden, pork knuckle"
+          },
+          "what": {
+            "th": "สวนเบียร์ขนาดใหญ่ในพราเทอร์ ขึ้นชื่อเรื่องขาหมูย่างหนังกรอบชิ้นโตและแพนเค้กมันฝรั่ง เปิดเฉพาะช่วงมีนาคมถึงตุลาคม",
+            "en": "A huge beer garden in the Prater known for its crisp roast pork knuckle and potato pancakes; open March to October only"
+          },
+          "why": {
+            "th": "มีสนามเด็กเล่นในสวน อยู่ติดชิงช้าสวรรค์และเครื่องเล่น ขาหมูชิ้นเดียวแบ่งกันได้",
+            "en": "A playground in the garden, next to the Ferris wheel and rides, and one knuckle is shared"
+          },
+          "pr": {
+            "th": "≈ €18–30",
+            "en": "≈ €18–30"
+          },
+          "q": "Schweizerhaus, Prater 116, 1020 Vienna"
+        },
+        {
+          "name": "Luftburg - Kolarik im Prater",
+          "kind": 0,
+          "area": {
+            "th": "สวนสนุกพราเทอร์",
+            "en": "The Prater"
+          },
+          "tag": {
+            "th": "อาหารออสเตรียออร์แกนิก",
+            "en": "Organic Austrian"
+          },
+          "what": {
+            "th": "ร้านอาหารออร์แกนิกขนาดใหญ่ในพราเทอร์ ขาหมู ชนิทเซล และไก่ทอด มีปราสาทเป่าลมให้เด็กเล่น",
+            "en": "A large organic restaurant in the Prater: pork knuckle, schnitzel and fried chicken, with bouncy castles for children"
+          },
+          "why": {
+            "th": "มีปราสาทเป่าลมและที่เล่นของเด็กติดกับโต๊ะ มีเมนูเด็กและเก้าอี้เด็ก เปิดทั้งปี",
+            "en": "Bouncy castles and a play area beside the tables, a children's menu and high chairs, open all year"
+          },
+          "pr": {
+            "th": "≈ €18–30",
+            "en": "≈ €18–30"
+          },
+          "q": "Luftburg Kolarik im Prater, Waldsteingartenstraße 128, 1020 Vienna"
+        },
+        {
+          "name": "Salm Bräu",
+          "kind": 0,
+          "area": {
+            "th": "เขต 3 ข้างพระราชวังเบลเวเดียร์",
+            "en": "3rd district, beside the Belvedere"
+          },
+          "tag": {
+            "th": "โรงเบียร์ อาหารออสเตรีย",
+            "en": "Brewery restaurant"
+          },
+          "what": {
+            "th": "โรงเบียร์ต้มเองข้างพระราชวังเบลเวเดียร์ ซี่โครงหมู ขาหมู ชนิทเซล และเกี๊ยวก้อน",
+            "en": "A brewery next to the Belvedere: spare ribs, pork knuckle, schnitzel and dumplings"
+          },
+          "why": {
+            "th": "กินต่อจากเที่ยวเบลเวเดียร์ได้เลย เปิดต่อเนื่องทั้งวัน มีสวนนั่งกลางแจ้ง",
+            "en": "Straight after the Belvedere, serving all day, with a garden to sit in"
+          },
+          "pr": {
+            "th": "≈ €16–28",
+            "en": "≈ €16–28"
+          },
+          "q": "Salm Bräu, Rennweg 8, 1030 Vienna"
+        },
+        {
+          "name": "Griechenbeisl",
+          "kind": 0,
+          "area": {
+            "th": "เขต 1 ถนนไฟลช์มาร์คท์",
+            "en": "1st district, Fleischmarkt"
+          },
+          "tag": {
+            "th": "อาหารเวียนนา",
+            "en": "Viennese"
+          },
+          "what": {
+            "th": "โรงเตี๊ยมเก่าแก่ที่สุดแห่งหนึ่งของเวียนนา ตั้งแต่ศตวรรษที่ 15 ชนิทเซล ทาเฟลชปิทซ์ และกูลาช",
+            "en": "One of Vienna's oldest inns, from the 15th century: schnitzel, Tafelspitz and goulash"
+          },
+          "why": {
+            "th": "มีลานนั่งด้านนอกช่วงฤดูร้อน เปิดต่อเนื่องทั้งวัน ห้องเล็กหลายห้องเงียบสงบ",
+            "en": "A terrace in summer, serving all day, and several small quiet rooms"
+          },
+          "pr": {
+            "th": "≈ €22–36",
+            "en": "≈ €22–36"
+          },
+          "q": "Griechenbeisl, Fleischmarkt 11, 1010 Vienna"
+        },
+        {
+          "name": "Glacis Beisl",
+          "kind": 0,
+          "area": {
+            "th": "มิวเซียมสควอเทียร์ เขต 7",
+            "en": "MuseumsQuartier, 7th district"
+          },
+          "tag": {
+            "th": "อาหารเวียนนา",
+            "en": "Viennese"
+          },
+          "what": {
+            "th": "ร้านอาหารเวียนนาในสวนซ่อนอยู่หลังย่านพิพิธภัณฑ์ ชนิทเซล กูลาช และของหวานแบบออสเตรีย",
+            "en": "A Viennese restaurant with a hidden garden behind the museum quarter: schnitzel, goulash and Austrian desserts"
+          },
+          "why": {
+            "th": "สวนร่มรื่นนั่งสบายกับเด็ก ใกล้พิพิธภัณฑ์เด็กซูม เปิดต่อเนื่องตั้งแต่เที่ยง",
+            "en": "A shady garden that is easy with children, close to the ZOOM children's museum, serving from midday"
+          },
+          "pr": {
+            "th": "≈ €18–30",
+            "en": "≈ €18–30"
+          },
+          "q": "Glacis Beisl, Breite Gasse 4, 1070 Vienna"
+        },
+        {
+          "name": "Mayer am Pfarrplatz",
+          "kind": 0,
+          "area": {
+            "th": "ไฮลิเกินชตัดท์ เขต 19",
+            "en": "Heiligenstadt, 19th district"
+          },
+          "tag": {
+            "th": "ร้านไวน์ชานเมืองฮอยริเกอร์",
+            "en": "Heuriger wine tavern"
+          },
+          "what": {
+            "th": "ฮอยริเกอร์เก่าแก่ในบ้านที่เบโธเฟนเคยพัก มีบุฟเฟต์อาหารเย็นและอาหารร้อน หมูอบ ไก่ทอด และสลัด",
+            "en": "An old Heuriger in a house where Beethoven once stayed, with a buffet of cold and hot dishes: roast pork, fried chicken and salads"
+          },
+          "why": {
+            "th": "ลานสวนกว้าง เลือกอาหารจากบุฟเฟต์ได้เอง มีน้ำองุ่นให้เด็ก",
+            "en": "A wide garden courtyard, food chosen at the buffet, and grape juice for children"
+          },
+          "pr": {
+            "th": "≈ €18–32",
+            "en": "≈ €18–32"
+          },
+          "q": "Mayer am Pfarrplatz, Pfarrplatz 2, 1190 Vienna"
+        },
+        {
+          "name": "Zwölf Apostelkeller",
+          "kind": 0,
+          "area": {
+            "th": "เขต 1",
+            "en": "1st district"
+          },
+          "tag": {
+            "th": "อาหารเวียนนา",
+            "en": "Viennese"
+          },
+          "what": {
+            "th": "ร้านในห้องใต้ดินเก่าหลายชั้นใต้บ้านบาโรก อาหารเวียนนาแบบบ้านๆ ชนิทเซล กูลาช และจานรวมเนื้อ",
+            "en": "A restaurant in old cellars several floors deep under a baroque house: homely Viennese food, schnitzel, goulash and meat platters"
+          },
+          "why": {
+            "th": "เด็กตื่นเต้นกับการเดินลงห้องใต้ดิน เปิดต่อเนื่องทั้งวัน ร้านใหญ่ มีบันไดจึงควรพับรถเข็น",
+            "en": "Children enjoy going down into the cellars; it serves all day and is large, but the stairs mean folding the pram"
+          },
+          "pr": {
+            "th": "≈ €16–28",
+            "en": "≈ €16–28"
+          },
+          "q": "Zwölf Apostelkeller, Sonnenfelsgasse 3, 1010 Vienna"
+        },
+        {
+          "name": "Naschmarkt",
+          "kind": 1,
+          "area": {
+            "th": "ระหว่างเขต 4 กับเขต 6",
+            "en": "Between the 4th and 6th districts"
+          },
+          "tag": {
+            "th": "ตลาดและแผงอาหาร",
+            "en": "Market and food stalls"
+          },
+          "what": {
+            "th": "ตลาดกลางแจ้งใหญ่ที่สุดของเวียนนา แผงผลไม้ ชีส ฟาลาเฟล ร้านอาหารเล็กๆ ทั้งออสเตรีย ตะวันออกกลาง และเอเชีย",
+            "en": "Vienna's largest open-air market: fruit and cheese stalls, falafel and small restaurants, Austrian, Middle Eastern and Asian"
+          },
+          "why": {
+            "th": "มีอาหารเอเชียและข้าวให้เด็ก เลือกกินทีละอย่างได้ ปิดวันอาทิตย์",
+            "en": "Asian food and rice for a child, and you can eat a little at a time; closed on Sundays"
+          },
+          "pr": {
+            "th": "≈ €8–20",
+            "en": "≈ €8–20"
+          },
+          "q": "Naschmarkt, 1060 Vienna"
+        },
+        {
+          "name": "Bitzinger Würstelstand Albertina",
+          "kind": 1,
+          "area": {
+            "th": "เขต 1 หลังโรงอุปรากร",
+            "en": "1st district, behind the Opera"
+          },
+          "tag": {
+            "th": "แผงไส้กรอก",
+            "en": "Sausage stand"
+          },
+          "what": {
+            "th": "แผงไส้กรอกชื่อดังระหว่างโรงอุปรากรกับพิพิธภัณฑ์อัลแบร์ตินา ไส้กรอกชีสเคเซอไครเนอร์ และฮอตดอก",
+            "en": "The well-known sausage stand between the Opera and the Albertina: cheese-filled Käsekrainer and hot dogs"
+          },
+          "why": {
+            "th": "ได้ของภายในไม่กี่นาที ขอไส้กรอกธรรมดาใส่ขนมปังให้เด็กได้ ยืนกินที่โต๊ะสูง",
+            "en": "Ready in minutes, a plain sausage in a roll is possible for a child, eaten at standing tables"
+          },
+          "pr": {
+            "th": "≈ €5–10",
+            "en": "≈ €5–10"
+          },
+          "q": "Bitzinger Würstelstand Albertina, Albertinaplatz, 1010 Vienna"
+        },
+        {
+          "name": "Trzesniewski",
+          "kind": 1,
+          "area": {
+            "th": "เขต 1 ใกล้ถนนกราเบิน",
+            "en": "1st district, off the Graben"
+          },
+          "tag": {
+            "th": "ขนมปังหน้าต่างๆ",
+            "en": "Open sandwiches"
+          },
+          "what": {
+            "th": "ร้านเก่ากว่าร้อยปีที่ขายขนมปังชิ้นเล็กทาหน้าต่างๆ กว่ายี่สิบแบบ ไข่ ปลา ผัก เลือกจากตู้",
+            "en": "A shop over a hundred years old selling small open sandwiches with more than twenty spreads, egg, fish and vegetables, chosen at the counter"
+          },
+          "why": {
+            "th": "ชิ้นเล็กพอดีมือเด็ก ชี้เลือกจากตู้ได้ ราคาต่อชิ้นถูก กินเสร็จเร็ว",
+            "en": "Pieces sized for small hands, pointed at through the glass, cheap by the piece and quick"
+          },
+          "pr": {
+            "th": "≈ €5–10",
+            "en": "≈ €5–10"
+          },
+          "q": "Trzesniewski, Dorotheergasse 1, 1010 Vienna"
+        },
+        {
+          "name": "Café Central",
+          "kind": 2,
+          "area": {
+            "th": "เขต 1 ถนนแฮร์เรินกัสเซอ",
+            "en": "1st district, Herrengasse"
+          },
+          "tag": {
+            "th": "คาเฟ่เวียนนาคลาสสิก",
+            "en": "Viennese coffee house"
+          },
+          "what": {
+            "th": "คาเฟ่เวียนนาในห้องโถงเพดานโค้งสูง เค้กหลายสิบแบบ อัพเฟิลชตรูเดิล และอาหารเวียนนาจานร้อน",
+            "en": "A Viennese coffee house under high vaulted ceilings: dozens of cakes, apple strudel and hot Viennese dishes"
+          },
+          "why": {
+            "th": "เด็กเลือกเค้กจากตู้ได้ มีเปียโนเล่นช่วงบ่าย มักมีคิว มาเช้าจะเร็วกว่า",
+            "en": "Children choose from the cake counter and a piano plays in the afternoon; there is often a queue, shorter in the morning"
+          },
+          "pr": {
+            "th": "≈ €10–22",
+            "en": "≈ €10–22"
+          },
+          "q": "Café Central, Herrengasse 14, 1010 Vienna"
+        },
+        {
+          "name": "Demel",
+          "kind": 2,
+          "area": {
+            "th": "เขต 1 ถนนโคลมาร์คท์",
+            "en": "1st district, Kohlmarkt"
+          },
+          "tag": {
+            "th": "ร้านเค้กและขนม",
+            "en": "Cake shop"
+          },
+          "what": {
+            "th": "ร้านขนมราชสำนักเก่าแก่ ซาเคอร์ทอร์เทอ อัพเฟิลชตรูเดิล และไคเซอร์ชมาร์นที่ทำให้เห็นหลังกระจก",
+            "en": "The old imperial court confectioner: Sachertorte, apple strudel and Kaiserschmarrn made in view behind glass"
+          },
+          "why": {
+            "th": "เด็กดูคนทำขนมผ่านกระจกได้ มีช่องขายไคเซอร์ชมาร์นแบบซื้อกลับ ไม่ต้องรอโต๊ะ",
+            "en": "Children watch the pastry cooks through the glass, and Kaiserschmarrn is sold to take away with no wait for a table"
+          },
+          "pr": {
+            "th": "≈ €8–18",
+            "en": "≈ €8–18"
+          },
+          "q": "Demel, Kohlmarkt 14, 1010 Vienna"
+        },
+        {
+          "name": "Aida Stephansplatz",
+          "kind": 2,
+          "area": {
+            "th": "เขต 1 หน้ามหาวิหารเซนต์สตีเฟน",
+            "en": "1st district, by St Stephen's"
+          },
+          "tag": {
+            "th": "ร้านเค้กและกาแฟ",
+            "en": "Café and cake shop"
+          },
+          "what": {
+            "th": "ร้านเค้กสีชมพูของเวียนนาที่มีสาขาทั่วเมือง เค้กชิ้น ครัวซองต์ พุนช์คราพเฟิน และกาแฟแบบเวียนนา",
+            "en": "Vienna's pink cake shop chain: slices of cake, croissants, Punschkrapfen and Viennese coffee"
+          },
+          "why": {
+            "th": "ราคาถูกกว่าคาเฟ่ดัง ไม่ต้องรอคิว มีที่นั่งชั้นบนมองเห็นมหาวิหาร",
+            "en": "Cheaper than the famous cafés, no queue, and seats upstairs looking at the cathedral"
+          },
+          "pr": {
+            "th": "≈ €5–10",
+            "en": "≈ €5–10"
+          },
+          "q": "Aida Café-Konditorei, Singerstraße 1, Stephansplatz, 1010 Vienna"
+        },
+        {
+          "name": "Zanoni & Zanoni",
+          "kind": 2,
+          "area": {
+            "th": "เขต 1 ถนนลูเกค",
+            "en": "1st district, Lugeck"
+          },
+          "tag": {
+            "th": "เจลาโต",
+            "en": "Gelato"
+          },
+          "what": {
+            "th": "ร้านไอศกรีมอิตาเลียนที่คนเวียนนารู้จักดี เจลาโตหลายสิบรส ถ้วยไอศกรีมแต่งหน้า และวาฟเฟิล",
+            "en": "The Italian ice cream parlour every Viennese knows: dozens of gelato flavours, sundaes and waffles"
+          },
+          "why": {
+            "th": "ร้านใหญ่ มีที่นั่งทั้งในและนอกร้าน เปิดถึงดึก ใกล้มหาวิหาร",
+            "en": "A big parlour with seats inside and out, open late, near the cathedral"
+          },
+          "pr": {
+            "th": "≈ €3–9",
+            "en": "≈ €3–9"
+          },
+          "q": "Zanoni & Zanoni, Lugeck 7, 1010 Vienna"
+        }
+      ]
+    },
+    {
+      "place": "at-hallstatt",
+      "places": [
+        {
+          "name": "Restaurant zum Salzbaron",
+          "kind": 0,
+          "area": {
+            "th": "จัตุรัสตลาดฮัลล์สตัทท์ ริมทะเลสาบ",
+            "en": "Hallstatt market square, on the lake"
+          },
+          "tag": {
+            "th": "ปลาทะเลสาบและอาหารออสเตรีย",
+            "en": "Lake fish, Austrian"
+          },
+          "what": {
+            "th": "ร้านอาหารของโรงแรมเซโฮเทลกรือเนอร์เบาม์ มีระเบียงยื่นเหนือทะเลสาบ ปลาเทราต์และปลาชาร์จากทะเลสาบ",
+            "en": "The restaurant of the Seehotel Grüner Baum with a terrace over the water: trout and char from the lake"
+          },
+          "why": {
+            "th": "นั่งระเบียงให้เด็กดูหงส์และเรือ ปลาย่างเนื้อนุ่มรสอ่อน ราคาสูงกว่าร้านอื่น",
+            "en": "Swans and boats to watch from the terrace and soft, mild grilled fish; dearer than the other places"
+          },
+          "pr": {
+            "th": "≈ €25–40",
+            "en": "≈ €25–40"
+          },
+          "q": "Restaurant zum Salzbaron, Seehotel Grüner Baum, Marktplatz 104, Hallstatt",
+          "ok": "2026-11"
+        },
+        {
+          "name": "Bräugasthof Hallstatt",
+          "kind": 0,
+          "area": {
+            "th": "ฮัลล์สตัทท์ ริมทะเลสาบ",
+            "en": "Hallstatt, on the lake"
+          },
+          "tag": {
+            "th": "อาหารออสเตรีย",
+            "en": "Austrian"
+          },
+          "what": {
+            "th": "โรงเตี๊ยมในอาคารโรงเบียร์เก่าริมน้ำ ปลาทะเลสาบ ชนิทเซล กูลาช และเกี๊ยวก้อน",
+            "en": "An inn in an old brewery building by the water: lake fish, schnitzel, goulash and dumplings"
+          },
+          "why": {
+            "th": "มีสวนริมทะเลสาบใต้ต้นไม้ เด็กนั่งดูน้ำได้ อาหารบ้านๆ รสอ่อน",
+            "en": "A lakeside garden under trees where children can watch the water, with mild home-style food"
+          },
+          "pr": {
+            "th": "≈ €18–32",
+            "en": "≈ €18–32"
+          },
+          "q": "Bräugasthof Hallstatt, Seestraße 120, Hallstatt"
+        },
+        {
+          "name": "Gasthof Zauner",
+          "kind": 0,
+          "area": {
+            "th": "จัตุรัสตลาดฮัลล์สตัทท์",
+            "en": "Hallstatt market square"
+          },
+          "tag": {
+            "th": "ปลาย่างและอาหารออสเตรีย",
+            "en": "Grilled fish, Austrian"
+          },
+          "what": {
+            "th": "โรงเตี๊ยมครอบครัวบนจัตุรัสตลาด ขึ้นชื่อเรื่องปลาทะเลสาบย่าง และเนื้อย่างบนเตาไม้",
+            "en": "A family inn on the market square known for grilled lake fish and meat from a wood grill"
+          },
+          "why": {
+            "th": "อยู่กลางหมู่บ้าน เดินถึงง่าย ชนิทเซลและมันทอดสำหรับเด็ก",
+            "en": "In the middle of the village, easy to reach, with schnitzel and chips for children"
+          },
+          "pr": {
+            "th": "≈ €20–35",
+            "en": "≈ €20–35"
+          },
+          "q": "Gasthof Zauner, Marktplatz 51, Hallstatt"
+        },
+        {
+          "name": "Gasthof Simony Restaurant am See",
+          "kind": 0,
+          "area": {
+            "th": "ฮัลล์สตัทท์ ริมทะเลสาบ",
+            "en": "Hallstatt, on the lake"
+          },
+          "tag": {
+            "th": "อาหารออสเตรีย",
+            "en": "Austrian"
+          },
+          "what": {
+            "th": "ร้านอาหารของโรงเตี๊ยมเก่าติดจัตุรัสตลาด มีสวนริมทะเลสาบ ปลา ชนิทเซล และสลัด",
+            "en": "The restaurant of an old inn by the market square with a garden on the lake: fish, schnitzel and salads"
+          },
+          "why": {
+            "th": "สวนริมน้ำมีพื้นที่ให้เด็กขยับตัว มองเห็นทะเลสาบและภูเขา",
+            "en": "A waterside garden with room for a child to move, looking over the lake and mountains"
+          },
+          "pr": {
+            "th": "≈ €18–32",
+            "en": "≈ €18–32"
+          },
+          "q": "Gasthof Simony Restaurant am See, Wolfengasse 105, Hallstatt"
+        },
+        {
+          "name": "Rudolfsturm",
+          "kind": 0,
+          "area": {
+            "th": "บนเขาเหนือฮัลล์สตัทท์ ที่เหมืองเกลือ",
+            "en": "Above Hallstatt, at the salt mine"
+          },
+          "tag": {
+            "th": "ร้านบนเขาชมวิว",
+            "en": "Mountain restaurant with a view"
+          },
+          "what": {
+            "th": "ร้านอาหารในหอคอยเก่าที่สถานีบนของรถรางขึ้นเขา ข้างจุดชมวิวสกายวอล์ก อาหารออสเตรียและเค้ก",
+            "en": "A restaurant in an old tower at the top of the funicular, beside the Skywalk viewpoint: Austrian dishes and cake"
+          },
+          "why": {
+            "th": "ขึ้นรถรางถึงได้เลย ระเบียงมองลงเห็นทั้งทะเลสาบ กินก่อนหรือหลังเที่ยวเหมืองเกลือ",
+            "en": "Reached by the funicular, with a terrace over the whole lake, before or after the salt mine"
+          },
+          "pr": {
+            "th": "≈ €16–28",
+            "en": "≈ €16–28"
+          },
+          "q": "Rudolfsturm, Salzberg 1, Hallstatt"
+        },
+        {
+          "name": "Restaurant Seeauer",
+          "kind": 0,
+          "area": {
+            "th": "ฮัลล์สตัทท์ ใกล้ท่าเรือ",
+            "en": "Hallstatt, near the boat landing"
+          },
+          "tag": {
+            "th": "อาหารออสเตรีย",
+            "en": "Austrian"
+          },
+          "what": {
+            "th": "ร้านอาหารของโรงแรมเฮอริเทจตรงท่าเรือ ปลาทะเลสาบ อาหารออสเตรีย และของหวาน",
+            "en": "The Heritage Hotel's restaurant by the boat landing: lake fish, Austrian dishes and desserts"
+          },
+          "why": {
+            "th": "อยู่ติดท่าเรือข้ามฟากจากสถานีรถไฟ ห้องอาหารเงียบ บริการใจเย็น",
+            "en": "Right by the ferry from the railway station, with a quiet dining room and unhurried service"
+          },
+          "pr": {
+            "th": "≈ €22–38",
+            "en": "≈ €22–38"
+          },
+          "q": "Restaurant Seeauer, Heritage Hotel Hallstatt, Landungsplatz 101, Hallstatt",
+          "ok": "2026-11"
+        },
+        {
+          "name": "Gasthof Höllwirt",
+          "kind": 0,
+          "area": {
+            "th": "โอเบอร์เทราน์",
+            "en": "Obertraun"
+          },
+          "tag": {
+            "th": "อาหารออสเตรีย",
+            "en": "Austrian"
+          },
+          "what": {
+            "th": "โรงเตี๊ยมครอบครัวในหมู่บ้านโอเบอร์เทราน์ฝั่งตรงข้ามทะเลสาบ อาหารบ้านๆ ชนิทเซล ปลา และเกี๊ยวก้อน",
+            "en": "A family inn in Obertraun across the lake: home cooking, schnitzel, fish and dumplings"
+          },
+          "why": {
+            "th": "ราคาถูกกว่าในฮัลล์สตัทท์ มีสวนและที่จอดรถ เหมาะหลังเที่ยวถ้ำน้ำแข็งดัคชไตน์",
+            "en": "Cheaper than Hallstatt, with a garden and parking, good after the Dachstein ice cave"
+          },
+          "pr": {
+            "th": "≈ €15–26",
+            "en": "≈ €15–26"
+          },
+          "q": "Gasthof Höllwirt, Obertraun 329, Obertraun"
+        },
+        {
+          "name": "Gasthof Gosausee",
+          "kind": 0,
+          "area": {
+            "th": "ทะเลสาบโกเซา",
+            "en": "Lake Gosau"
+          },
+          "tag": {
+            "th": "อาหารออสเตรีย",
+            "en": "Austrian"
+          },
+          "what": {
+            "th": "โรงเตี๊ยมริมทะเลสาบโกเซาตอนหน้า มองเห็นธารน้ำแข็งดัคชไตน์ อาหารออสเตรีย ปลา และไคเซอร์ชมาร์น",
+            "en": "An inn on the front Gosau lake facing the Dachstein glacier: Austrian dishes, fish and Kaiserschmarrn"
+          },
+          "why": {
+            "th": "ระเบียงกว้างมองเห็นทะเลสาบ ทางเดินรอบทะเลสาบราบเข็นรถเข็นได้",
+            "en": "A wide terrace over the lake, and the path around it is flat enough for a pram"
+          },
+          "pr": {
+            "th": "≈ €15–28",
+            "en": "≈ €15–28"
+          },
+          "q": "Gasthof Gosausee, Gosauseestraße 157, Gosau"
+        },
+        {
+          "name": "Karmez Kebap",
+          "kind": 1,
+          "area": {
+            "th": "ฮัลล์สตัทท์ ที่ท่าเรือ",
+            "en": "Hallstatt, at the boat landing"
+          },
+          "tag": {
+            "th": "เคบับ ของกินเร็ว",
+            "en": "Kebab, quick bites"
+          },
+          "what": {
+            "th": "ซุ้มเคบับเล็กๆ ที่ลานท่าเรือ เคบับ ดูรุม ไส้กรอก และเฟรนช์ฟรายส์ ราคาถูกที่สุดในหมู่บ้าน",
+            "en": "A small kebab stand on the boat landing square: kebabs, wraps, sausages and chips, the cheapest meal in the village"
+          },
+          "why": {
+            "th": "ได้ของเร็ว ถือไปกินริมทะเลสาบได้ เฟรนช์ฟรายส์และไส้กรอกสำหรับเด็ก",
+            "en": "Quick, easy to carry to the lakeside, with chips and sausages for children"
+          },
+          "pr": {
+            "th": "≈ €6–12",
+            "en": "≈ €6–12"
+          },
+          "q": "Karmez Kebap, Landungsplatz 101, Hallstatt"
+        },
+        {
+          "name": "Lodge am Krippenstein",
+          "kind": 1,
+          "area": {
+            "th": "ยอดคริพเพินชไตน์ โอเบอร์เทราน์",
+            "en": "Krippenstein summit, Obertraun"
+          },
+          "tag": {
+            "th": "ร้านบนเขา",
+            "en": "Mountain lodge"
+          },
+          "what": {
+            "th": "ร้านอาหารที่สถานีบนของกระเช้าดัคชไตน์ ใกล้จุดชมวิวห้านิ้ว ซุป ไส้กรอก พาสต้า และของหวาน",
+            "en": "The lodge at the top of the Dachstein cable car, near the 5 Fingers viewpoint: soup, sausages, pasta and desserts"
+          },
+          "why": {
+            "th": "อาหารร้อนง่ายๆ บนเขา มีระเบียงอาบแดด ทางเดินไปจุดชมวิวไม่ไกล",
+            "en": "Simple hot food on the mountain, a sun terrace, and a short walk to the viewpoint"
+          },
+          "pr": {
+            "th": "≈ €12–22",
+            "en": "≈ €12–22"
+          },
+          "q": "Lodge am Krippenstein, Dachstein Krippenstein, Obertraun"
+        },
+        {
+          "name": "Café Derbl",
+          "kind": 2,
+          "area": {
+            "th": "จัตุรัสตลาดฮัลล์สตัทท์",
+            "en": "Hallstatt market square"
+          },
+          "tag": {
+            "th": "คาเฟ่และอาหารจานเบา",
+            "en": "Café, light meals"
+          },
+          "what": {
+            "th": "คาเฟ่บนจัตุรัสตลาด อาหารเช้า เค้กทำเอง ไอศกรีม พิซซ่า และอาหารจานเบา",
+            "en": "A café on the market square: breakfast, home-made cake, ice cream, pizza and light meals"
+          },
+          "why": {
+            "th": "โต๊ะกลางแจ้งบนจัตุรัส เด็กวิ่งเล่นรอบน้ำพุได้ พิซซ่าและไอศกรีมกินง่าย",
+            "en": "Outdoor tables on the square where children can run around the fountain, with easy pizza and ice cream"
+          },
+          "pr": {
+            "th": "≈ €7–18",
+            "en": "≈ €7–18"
+          },
+          "q": "Café Derbl, Marktplatz 61, Hallstatt",
+          "ok": "2026-11"
+        },
+        {
+          "name": "Bäckerei Konditorei Maislinger",
+          "kind": 2,
+          "area": {
+            "th": "ฮัลล์สตัทท์ ถนนเซชตราเซอ",
+            "en": "Hallstatt, Seestraße"
+          },
+          "tag": {
+            "th": "เบเกอรี",
+            "en": "Bakery"
+          },
+          "what": {
+            "th": "เบเกอรีของท้องถิ่น ขนมปังอบใหม่ แซนด์วิช ชตรูเดิล และเค้กชิ้น",
+            "en": "The local bakery: fresh bread, sandwiches, strudel and slices of cake"
+          },
+          "why": {
+            "th": "เปิดเช้า ซื้ออาหารเช้าและของว่างติดมือก่อนนักท่องเที่ยวมาถึง ราคาถูก",
+            "en": "Opens early for breakfast and snacks to carry before the day visitors arrive, at low prices"
+          },
+          "pr": {
+            "th": "≈ €3–8",
+            "en": "≈ €3–8"
+          },
+          "q": "Bäckerei Konditorei Maislinger, Seestraße 156, Hallstatt",
+          "ok": "2026-11"
+        },
+        {
+          "name": "Konditorei Zauner",
+          "kind": 2,
+          "area": {
+            "th": "บาดอิชล์",
+            "en": "Bad Ischl"
+          },
+          "tag": {
+            "th": "ร้านเค้ก",
+            "en": "Cake shop and café"
+          },
+          "what": {
+            "th": "ร้านขนมราชสำนักเก่าแก่ตั้งแต่ปี 1832 ขึ้นชื่อเรื่องเซาเนอร์ชโตลเลิน ขนมเฮเซลนัทเคลือบช็อกโกแลต และเค้กนานาชนิด",
+            "en": "The imperial court confectioner since 1832, known for Zaunerstollen, a hazelnut wafer confection in chocolate, and many cakes"
+          },
+          "why": {
+            "th": "ร้านกว้าง เด็กเลือกเค้กจากตู้ยาวได้ แวะระหว่างทางไปหรือกลับจากฮัลล์สตัทท์",
+            "en": "A roomy café with a long cake counter to choose from, on the way to or from Hallstatt"
+          },
+          "pr": {
+            "th": "≈ €6–14",
+            "en": "≈ €6–14"
+          },
+          "q": "Konditorei Zauner, Pfarrgasse 7, Bad Ischl"
+        },
+        {
+          "name": "Muk's Schmankerl",
+          "kind": 1,
+          "area": {
+            "th": "ฮัลล์สตัทท์ ถนนเซชตราเซอ",
+            "en": "Hallstatt, Seestraße"
+          },
+          "tag": {
+            "th": "พิซซ่าและของว่าง",
+            "en": "Pizza and snacks"
+          },
+          "what": {
+            "th": "คาเฟ่เล็กๆ บนถนนริมทะเลสาบ พิซซ่า ของว่าง กาแฟ ของกินท้องถิ่น และไอศกรีมในหน้าร้อน",
+            "en": "A small café on the lakeside street: pizza, snacks, coffee, local bites and ice cream in summer"
+          },
+          "why": {
+            "th": "มื้อเร็วราคาไม่แพงกลางหมู่บ้าน พิซซ่าแบ่งกันได้ หน้าร้อนมีโต๊ะกลางแจ้ง",
+            "en": "A quick, modest meal in the middle of the village, pizza to share and outdoor tables in summer"
+          },
+          "pr": {
+            "th": "≈ €8–16",
+            "en": "≈ €8–16"
+          },
+          "q": "Muk's Schmankerl, Seestraße 139, Hallstatt",
+          "ok": "2026-11"
+        },
+        {
+          "name": "Rührwerk Hallstatt",
+          "kind": 2,
+          "area": {
+            "th": "ฮัลล์สตัทท์ ถนนเซชตราเซอ",
+            "en": "Hallstatt, Seestraße"
+          },
+          "tag": {
+            "th": "ขนมอบซื้อกลับ",
+            "en": "Take-away pastries"
+          },
+          "what": {
+            "th": "หน้าต่างขายขนมอบสดใหม่ ขึ้นชื่อเรื่องเชาม์โรลเลอ ขนมแป้งพัฟม้วนไส้ครีมเมอแรงก์ มีครัวซองต์ เพรตเซล และกาแฟ",
+            "en": "A sales window for oven-fresh pastries, known for Schaumrollen, puff pastry rolls filled with meringue cream, plus croissants, pretzels and coffee"
+          },
+          "why": {
+            "th": "ซื้อแล้วเดินกินริมทะเลสาบได้เลย ไม่ต้องรอโต๊ะ ขนมหวานชิ้นเล็กถูกใจเด็ก",
+            "en": "Bought at the window and eaten on a walk by the lake with no wait for a table; small sweet pastries suit children"
+          },
+          "pr": {
+            "th": "≈ €3–8",
+            "en": "≈ €3–8"
+          },
+          "q": "Rührwerk Hallstatt, Seestraße 179, Hallstatt",
+          "ok": "2026-11"
+        }
+      ]
+    },
+    {
+      "place": "at-salzburg",
+      "places": [
+        {
+          "name": "Bärenwirt",
+          "kind": 0,
+          "area": {
+            "th": "มึลน์ ริมแม่น้ำซัลซัค",
+            "en": "Mülln, by the Salzach"
+          },
+          "tag": {
+            "th": "ไก่ทอดและอาหารออสเตรีย",
+            "en": "Fried chicken, Austrian"
+          },
+          "what": {
+            "th": "โรงเตี๊ยมตั้งแต่ปี 1663 ขึ้นชื่อเรื่องไก่ทอดชุบเกล็ดขนมปัง กูลาช และอาหารซาลซ์บวร์กแบบบ้านๆ",
+            "en": "An inn since 1663 known for breaded fried chicken, goulash and homely Salzburg dishes"
+          },
+          "why": {
+            "th": "ไก่ทอดกรอบเด็กชอบ มีระเบียงมองเห็นแม่น้ำ เปิดต่อเนื่องตั้งแต่ก่อนเที่ยง",
+            "en": "Children like the crisp fried chicken, there is a terrace over the river, and it serves from late morning"
+          },
+          "pr": {
+            "th": "≈ €18–30",
+            "en": "≈ €18–30"
+          },
+          "q": "Bärenwirt, Müllner Hauptstraße 8, Salzburg"
+        },
+        {
+          "name": "Sternbräu",
+          "kind": 0,
+          "area": {
+            "th": "เมืองเก่า ระหว่างถนนเกไทรเดอกัสเซอกับแม่น้ำ",
+            "en": "Old town, between Getreidegasse and the river"
+          },
+          "tag": {
+            "th": "อาหารออสเตรีย",
+            "en": "Austrian"
+          },
+          "what": {
+            "th": "ร้านใหญ่หลายห้องกับลานสวนกลางเมืองเก่า ชนิทเซล หมูอบ กูลาช และซาลซ์บวร์กเกอร์น็อกเคิร์ล",
+            "en": "A big restaurant of many rooms and garden courtyards in the old town: schnitzel, roast pork, goulash and Salzburger Nockerl"
+          },
+          "why": {
+            "th": "ลานสวนกว้าง มีเมนูเด็กและเก้าอี้เด็ก เปิดต่อเนื่องทั้งวัน",
+            "en": "Wide garden courtyards, a children's menu and high chairs, serving all day"
+          },
+          "pr": {
+            "th": "≈ €18–32",
+            "en": "≈ €18–32"
+          },
+          "q": "Sternbräu, Griesgasse 23, Salzburg"
+        },
+        {
+          "name": "Stiegl-Keller",
+          "kind": 0,
+          "area": {
+            "th": "ทางขึ้นป้อมโฮเอินซาลซ์บวร์ก",
+            "en": "On the way up to the fortress"
+          },
+          "tag": {
+            "th": "โรงเบียร์ อาหารออสเตรีย",
+            "en": "Brewery restaurant"
+          },
+          "what": {
+            "th": "ร้านของโรงเบียร์ชตีเกิลบนเนินใต้ป้อม มีระเบียงมองเห็นหลังคาเมืองเก่า ขาหมู ไส้กรอก และชนิทเซล",
+            "en": "The Stiegl brewery's restaurant on the slope below the fortress, with terraces over the old town roofs: pork knuckle, sausages and schnitzel"
+          },
+          "why": {
+            "th": "ระเบียงกว้างวิวดี แวะหลังลงจากป้อม ทางขึ้นชันเล็กน้อย",
+            "en": "Wide terraces with a view, a stop after the fortress; the lane up is a little steep"
+          },
+          "pr": {
+            "th": "≈ €16–28",
+            "en": "≈ €16–28"
+          },
+          "q": "Stiegl-Keller, Festungsgasse 10, Salzburg"
+        },
+        {
+          "name": "Zwettler's",
+          "kind": 0,
+          "area": {
+            "th": "เมืองเก่า ถนนไคกัสเซอ",
+            "en": "Old town, Kaigasse"
+          },
+          "tag": {
+            "th": "อาหารออสเตรีย",
+            "en": "Austrian"
+          },
+          "what": {
+            "th": "ร้านอาหารพื้นบ้านในเมืองเก่า ชนิทเซล กูลาชเนื้อ เคเซอชเปทซ์เลอ และของหวานแบบออสเตรีย",
+            "en": "A traditional inn in the old town: schnitzel, beef goulash, cheese Spätzle and Austrian desserts"
+          },
+          "why": {
+            "th": "ราคาเป็นมิตร จานใหญ่ เส้นชีสเด็กกินง่าย มีโต๊ะนอกร้านบนถนนคนเดิน",
+            "en": "Fair prices, large plates, cheesy noodles for children and tables out on the pedestrian street"
+          },
+          "pr": {
+            "th": "≈ €15–26",
+            "en": "≈ €15–26"
+          },
+          "q": "Zwettler's Wirtshaus, Kaigasse 3, Salzburg"
+        },
+        {
+          "name": "Die Weisse",
+          "kind": 0,
+          "area": {
+            "th": "ชัลล์โมส ฝั่งเมืองใหม่",
+            "en": "Schallmoos, new town side"
+          },
+          "tag": {
+            "th": "โรงเบียร์ อาหารออสเตรีย",
+            "en": "Brewery restaurant"
+          },
+          "what": {
+            "th": "โรงเบียร์ข้าวสาลีเก่าแก่ที่คนท้องถิ่นมากิน หมูอบ ไส้กรอกขาว ไก่ทอด และเกี๊ยวก้อน",
+            "en": "An old wheat-beer brewery where locals eat: roast pork, white sausages, fried chicken and dumplings"
+          },
+          "why": {
+            "th": "มีสวนเบียร์ร่มรื่น นักท่องเที่ยวน้อยกว่าเมืองเก่า จานใหญ่แบ่งกันได้",
+            "en": "A shady beer garden, fewer tourists than the old town, and plates big enough to share"
+          },
+          "pr": {
+            "th": "≈ €16–28",
+            "en": "≈ €16–28"
+          },
+          "q": "Die Weisse, Rupertgasse 10, Salzburg"
+        },
+        {
+          "name": "Gasthaus Wilder Mann",
+          "kind": 0,
+          "area": {
+            "th": "เมืองเก่า ถนนเกไทรเดอกัสเซอ",
+            "en": "Old town, off Getreidegasse"
+          },
+          "tag": {
+            "th": "อาหารออสเตรีย",
+            "en": "Austrian"
+          },
+          "what": {
+            "th": "โรงเตี๊ยมเรียบง่ายในตรอกจากถนนเกไทรเดอกัสเซอ จานใหญ่ราคาถูก ชนิทเซล หมูอบ และกูลาช",
+            "en": "A plain inn in a passage off Getreidegasse with big, cheap plates: schnitzel, roast pork and goulash"
+          },
+          "why": {
+            "th": "โต๊ะไม้นั่งรวมกัน เสิร์ฟเร็ว ราคาเป็นมิตรกับครอบครัว ปิดวันอาทิตย์",
+            "en": "Shared wooden tables, quick service and family-friendly prices; closed on Sundays"
+          },
+          "pr": {
+            "th": "≈ €13–22",
+            "en": "≈ €13–22"
+          },
+          "q": "Gasthaus Wilder Mann, Getreidegasse 20, Salzburg"
+        },
+        {
+          "name": "Stiegl-Brauwelt",
+          "kind": 0,
+          "area": {
+            "th": "มักซ์กลาน ทางตะวันตกของเมือง",
+            "en": "Maxglan, west of the centre"
+          },
+          "tag": {
+            "th": "โรงเบียร์ อาหารออสเตรีย",
+            "en": "Brewery restaurant"
+          },
+          "what": {
+            "th": "ร้านอาหารและพิพิธภัณฑ์ของโรงเบียร์ชตีเกิล อาหารออสเตรีย ชนิทเซล ซี่โครง และขนมปังอบเอง",
+            "en": "The restaurant and museum of the Stiegl brewery: Austrian dishes, schnitzel, ribs and house-baked bread"
+          },
+          "why": {
+            "th": "มีสวนเบียร์กว้างและที่เล่นสำหรับเด็ก ร้านใหญ่ มีที่จอดรถ",
+            "en": "A wide beer garden with a play area, a large restaurant and parking"
+          },
+          "pr": {
+            "th": "≈ €16–28",
+            "en": "≈ €16–28"
+          },
+          "q": "Stiegl-Brauwelt, Bräuhausstraße 9, Salzburg"
+        },
+        {
+          "name": "Zum Zirkelwirt",
+          "kind": 0,
+          "area": {
+            "th": "เมืองเก่า ใกล้จัตุรัสโมสาร์ท",
+            "en": "Old town, near Mozartplatz"
+          },
+          "tag": {
+            "th": "อาหารออสเตรีย",
+            "en": "Austrian"
+          },
+          "what": {
+            "th": "โรงเตี๊ยมเก่าแก่ในตรอกเงียบ อาหารซาลซ์บวร์กแบบบ้านๆ เกี๊ยวชีสคาสน็อกเคิน ชนิทเซล และกูลาช",
+            "en": "An old inn on a quiet lane with homely Salzburg cooking: Kasnocken cheese dumplings, schnitzel and goulash"
+          },
+          "why": {
+            "th": "เกี๊ยวชีสเสิร์ฟในกระทะแบ่งกันได้ มีโต๊ะนอกร้านบนลานเล็ก เปิดต่อเนื่องตั้งแต่ก่อนเที่ยง",
+            "en": "Cheese dumplings come in a pan to share, there are tables on a small square, and it serves from late morning"
+          },
+          "pr": {
+            "th": "≈ €15–26",
+            "en": "≈ €15–26"
+          },
+          "q": "Zum Zirkelwirt, Pfeifergasse 14, Salzburg"
+        },
+        {
+          "name": "Augustiner Bräu Kloster Mülln",
+          "kind": 1,
+          "area": {
+            "th": "มึลน์",
+            "en": "Mülln"
+          },
+          "tag": {
+            "th": "โรงเบียร์อาราม ซุ้มอาหาร",
+            "en": "Monastery brewery, food stalls"
+          },
+          "what": {
+            "th": "โรงเบียร์ของอารามที่มีสวนเบียร์ใหญ่ ซื้ออาหารจากซุ้มในทางเดิน ไก่ย่าง ไส้กรอก หัวไชเท้าฝาน เพรทเซล",
+            "en": "A monastery brewery with a huge beer garden, where food is bought from stalls in the arcade: roast chicken, sausages, sliced radish and pretzels"
+          },
+          "why": {
+            "th": "สวนใต้ต้นเกาลัดกว้างมาก เด็กวิ่งเล่นได้ เลือกของกินจากซุ้มได้เอง เปิดช่วงบ่ายถึงค่ำ",
+            "en": "A very large garden under chestnut trees to run about in, food chosen from the stalls; open afternoons to evening"
+          },
+          "pr": {
+            "th": "≈ €10–20",
+            "en": "≈ €10–20"
+          },
+          "q": "Augustiner Bräu Kloster Mülln, Lindhofstraße 7, Salzburg"
+        },
+        {
+          "name": "Balkan Grill Walter",
+          "kind": 1,
+          "area": {
+            "th": "เมืองเก่า ตรอกจากถนนเกไทรเดอกัสเซอ",
+            "en": "Old town, a passage off Getreidegasse"
+          },
+          "tag": {
+            "th": "บอสนา ฮอตดอกซาลซ์บวร์ก",
+            "en": "Bosna sausage roll"
+          },
+          "what": {
+            "th": "ช่องขายบอสนาต้นตำรับ ไส้กรอกย่างสองชิ้นในขนมปังกับหัวหอมและผงเครื่องเทศ ขายมาตั้งแต่ปี 1950",
+            "en": "The original Bosna window: two grilled sausages in a roll with onion and a spice mix, sold here since 1950"
+          },
+          "why": {
+            "th": "ได้ของเร็ว ถือกินได้ ขอแบบไม่ใส่เครื่องเทศและหัวหอมให้เด็กได้",
+            "en": "Quick and eaten in the hand; ask for one without the spice and onion for a child"
+          },
+          "pr": {
+            "th": "≈ €4–7",
+            "en": "≈ €4–7"
+          },
+          "q": "Balkan Grill Walter, Getreidegasse 33, Salzburg"
+        },
+        {
+          "name": "Grünmarkt",
+          "kind": 1,
+          "area": {
+            "th": "เมืองเก่า จัตุรัสมหาวิทยาลัย",
+            "en": "Old town, Universitätsplatz"
+          },
+          "tag": {
+            "th": "ตลาดสด ของกินเล่น",
+            "en": "Market stalls"
+          },
+          "what": {
+            "th": "ตลาดกลางแจ้งหลังบ้านเกิดโมสาร์ท แผงผลไม้ ชีส ไส้กรอกร้อน เพรทเซลชิ้นโต และขนมอบ",
+            "en": "The open-air market behind Mozart's birthplace: fruit, cheese, hot sausages, giant pretzels and pastries"
+          },
+          "why": {
+            "th": "ซื้อเพรทเซลและผลไม้ให้เด็กถือกินได้ เปิดช่วงกลางวัน ปิดวันอาทิตย์",
+            "en": "Pretzels and fruit for a child to carry; open in the daytime, closed on Sundays"
+          },
+          "pr": {
+            "th": "≈ €4–12",
+            "en": "≈ €4–12"
+          },
+          "q": "Grünmarkt, Universitätsplatz, Salzburg"
+        },
+        {
+          "name": "Café Tomaselli",
+          "kind": 2,
+          "area": {
+            "th": "เมืองเก่า จัตุรัสอัลเทอร์มาร์คท์",
+            "en": "Old town, Alter Markt"
+          },
+          "tag": {
+            "th": "คาเฟ่เก่าแก่",
+            "en": "Historic coffee house"
+          },
+          "what": {
+            "th": "คาเฟ่เก่าแก่ที่สุดของออสเตรีย พนักงานถือถาดเค้กมาให้เลือกที่โต๊ะ ชตรูเดิล เค้ก และไข่เจียวอาหารเช้า",
+            "en": "Austria's oldest coffee house, where a cake tray is brought to the table: strudel, cakes and omelettes for breakfast"
+          },
+          "why": {
+            "th": "เด็กเลือกเค้กจากถาดที่ยกมาถึงโต๊ะ มีระเบียงชั้นบนและโต๊ะบนจัตุรัส",
+            "en": "Children choose from the tray brought to the table, and there is an upstairs terrace and tables on the square"
+          },
+          "pr": {
+            "th": "≈ €8–16",
+            "en": "≈ €8–16"
+          },
+          "q": "Café Tomaselli, Alter Markt 9, Salzburg"
+        },
+        {
+          "name": "Café Konditorei Fürst",
+          "kind": 2,
+          "area": {
+            "th": "เมืองเก่า จัตุรัสอัลเทอร์มาร์คท์",
+            "en": "Old town, Alter Markt"
+          },
+          "tag": {
+            "th": "โมสาร์ทคูเกิล",
+            "en": "Mozartkugel and cakes"
+          },
+          "what": {
+            "th": "ร้านต้นตำรับโมสาร์ทคูเกิล ช็อกโกแลตก้อนกลมไส้มาร์ซิปันพิสตาชิโอห่อฟอยล์สีเงินน้ำเงิน และเค้กนานาชนิด",
+            "en": "The shop that invented the Mozartkugel, a chocolate ball with pistachio marzipan in silver and blue foil, with many cakes"
+          },
+          "why": {
+            "th": "ซื้อช็อกโกแลตเป็นของฝากและให้เด็กชิม มีโต๊ะบนจัตุรัสสำหรับพักกินเค้ก",
+            "en": "Chocolates to take home and for a child to try, with tables on the square for cake"
+          },
+          "pr": {
+            "th": "≈ €5–12",
+            "en": "≈ €5–12"
+          },
+          "q": "Café Konditorei Fürst, Brodgasse 13, Salzburg"
+        },
+        {
+          "name": "Café Bazar",
+          "kind": 2,
+          "area": {
+            "th": "ฝั่งเมืองใหม่ ริมแม่น้ำซัลซัค",
+            "en": "New town side, on the Salzach"
+          },
+          "tag": {
+            "th": "คาเฟ่ริมแม่น้ำ",
+            "en": "Riverside coffee house"
+          },
+          "what": {
+            "th": "คาเฟ่เก่าแก่ริมแม่น้ำ มีระเบียงมองเห็นเมืองเก่าและป้อม อาหารเช้า เค้ก และอาหารจานเบา",
+            "en": "An old coffee house on the river with a terrace facing the old town and fortress: breakfast, cake and light meals"
+          },
+          "why": {
+            "th": "ระเบียงริมน้ำนั่งสบาย เปิดเช้า ใกล้สวนมิราเบล",
+            "en": "An easy riverside terrace, open early, near the Mirabell gardens"
+          },
+          "pr": {
+            "th": "≈ €8–18",
+            "en": "≈ €8–18"
+          },
+          "q": "Café Bazar, Schwarzstraße 3, Salzburg"
+        }
+      ]
+    }
+  ]
+}

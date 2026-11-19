@@ -137,9 +137,9 @@ function keepAnswers(a) {
 }
 
 // the brief the book is written from: the answers, then the agreed route day by day
-function brief(answers, rt, who) {
+function brief(answers, rt, who, eats) {
   const days = rt.days.map((d, i) => `Day ${i + 1} (${d.date}) — ${d.title.en}; town: ${d.town.en}; main stops: ${d.stops.map((s) => s.en).join(', ') || '—'}; sleep: ${d.sleep.en || d.town.en}${d.move ? `; getting there: ${d.move.en}` : ''}${d.kid ? `; the children's best bit: ${d.kid.en}` : ''}${d.rain ? `; if it rains: ${d.rain.en}` : ''}`).join('\n');
-  return { text: `${answersText(answers, who)}\n\nTrip: ${rt.title.en} — ${rt.place.en}, ${rt.from} to ${rt.to}, time zone ${rt.tz}\nThe agreed route:\n${days}`,
+  return { text: `${answersText(answers, who)}\n\nTrip: ${rt.title.en} — ${rt.place.en}, ${rt.from} to ${rt.to}, time zone ${rt.tz}\nThe agreed route:\n${days}${eats ? `\n\nPlaces to eat already in the family's library — use them (the name exactly) for the days' meal picks where they fit the day's area:\n${eats.groups.map((g) => `${g.area.en}: ${g.items.map((x) => `${x.name}${x.tag ? ` (${x.tag.en || x.tag})` : ''}`).join('; ')}`).join('\n')}` : ''}`,
     facts: CF.factsFor(rt.countries), who };
 }
 

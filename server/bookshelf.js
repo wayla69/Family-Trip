@@ -11,6 +11,7 @@ const GUIDE = require('./guide');
 const IMPORT = require('./bookimport');
 const PLANNER = require('./planner');
 const CF = require('./countryfacts');
+const EATLIB = require('./eatlib');
 const VERIFY = require('./verify');
 const FAM = require('./family');
 const AVATAR = require('./avatar');
@@ -170,9 +171,9 @@ function router({ pool, media, A, ai, hooks = {} }) {   // hooks.heart(h): set b
       let gone = 0;
       for (const k of new Set(keys)) { try { await media.del(k); gone++; } catch (_) { /* a file already missing is fine */ } }
       await q('DELETE FROM families WHERE id=$1', [FAMILY]);
-      await q("DELETE FROM settings WHERE key IN ('family_likes', 'emoji_seeded', 'emoji_offered', 'emoji_stock_offered', 'year_reels', 'planner_plans')");
+      await q("DELETE FROM settings WHERE key IN ('family_likes', 'emoji_seeded', 'emoji_offered', 'emoji_stock_offered', 'year_reels', 'planner_plans', 'eat_starter')");
       await q('INSERT INTO families (id, name) VALUES ($1, $2) ON CONFLICT (id) DO NOTHING', [FAMILY, 'Family']);
-      await syncSeeds(pool); await EMOJI.seed(pool, FAMILY); A.groupsChanged();
+      await syncSeeds(pool); await EMOJI.seed(pool, FAMILY); await eatSyncAll(pool); A.groupsChanged();
       console.log(`family erased on request: ${gone} files, every row`);   // no names, no codes
       res.json({ ok: true, files: gone });
     } catch (e) { next(e); }
@@ -1122,6 +1123,7 @@ function router({ pool, media, A, ai, hooks = {} }) {   // hooks.heart(h): set b
       try { await putSeed(c, d.seed, 'manual'); } catch (e) { await c.query('ROLLBACK'); if (e.code === 'exists') return bad(res, 'exists', 409); throw e; }
       await c.query('DELETE FROM book_drafts WHERE id=$1', [req.params.id]);
       await c.query('COMMIT');
+      eatSync();   // the new book's places to eat join the family's library
       await EMOJI.stockPack(pool, FAMILY).catch((e) => console.error('emoji pack', e.message));
       let art = 'off';   // a book without drawings gets its circles, crest and guides drawn now; the page is told whether that started
       if (ART.enabled()) { try { await startArt(d.seed.slug); art = 'started'; } catch (e) { art = e.code || 'failed'; console.error('bookart', d.seed.slug, e.message); } }
@@ -1181,6 +1183,47 @@ function router({ pool, media, A, ai, hooks = {} }) {   // hooks.heart(h): set b
   r.delete('/api/b/planner/plans/:id', ...W, async (req, res, next) => {
     try { await plansWrite((l) => l.filter((p) => p.id !== String(req.params.id))); res.json({ ok: true }); } catch (e) { next(e); }
   });
+  // ----- the family's library of places to eat (server/eatlib.js, migration 0036): filled from every book and, for a town with none,
+  // by the helper with a web check. GET lists the towns, or the places of one town (?town=<key>), or of a route's towns
+  // (?for=<JSON [[en, th], …]>: a town's own rows and rows whose area or map address names it).
+  let eatBusy = false;
+  const eatSync = () => EATLIB.syncBooks(pool, FAMILY, STOCK.read()).catch((e) => { console.error('eatlib sync', e.message); return 0; });
+  const eatFor = (rows, pairs) => pairs.map(([en, th]) => ({ en, th: th || en, places: EATLIB.forTown(rows, [en, th].filter(Boolean)).map(EATLIB.out) }));
+  const eatPairs = (v) => { let a; try { a = JSON.parse(v); } catch (_) { a = []; } return (Array.isArray(a) ? a : []).slice(0, 12).map((x) => [clip(Array.isArray(x) ? x[0] : x, 80).trim(), clip(Array.isArray(x) ? x[1] : '', 80).trim()]).filter((x) => x[0]); };
+  r.get('/api/b/eatlib', A.requireEditor, async (req, res, next) => {
+    try {
+      res.setHeader('Cache-Control', 'no-store');
+      const rows = await EATLIB.all(pool, FAMILY);
+      if (req.query.for) return res.json({ for: eatFor(rows, eatPairs(String(req.query.for))) });
+      if (req.query.town) return res.json({ places: rows.filter((x) => x.tkey === String(req.query.town)).map(EATLIB.out) });
+      const cof = EATLIB.countryOf(STOCK.read());
+      res.json({ towns: EATLIB.towns(rows).map((t) => ({ ...t, country: cof.get(t.tkey) || null })), total: rows.length, on: !!(ai && ai.enabled()) });
+    } catch (e) { next(e); }
+  });
+  // the helper fills a town: one call with web search, only the town's name (and the country or region typed with it) is sent
+  r.post('/api/b/eatlib/fill', ...W, async (req, res, next) => {
+    if (!(ai && ai.enabled())) return bad(res, 'ai', 503);
+    if (eatBusy) return bad(res, 'busy', 409);
+    const b = req.body || {}, town = { en: clip(b.town, 80).trim(), th: clip(b.town_th || b.town, 80).trim() };
+    if (EATLIB.norm(town.en).length < 2) return bad(res, 'town');
+    eatBusy = true;   // claimed before the first await: one search at a time
+    try {
+      const have = EATLIB.forTown(await EATLIB.all(pool, FAMILY), [town.en, town.th]);
+      const known = have.find((x) => x.tkey === EATLIB.norm(town.en)) || have[0];   // a town the library already names keeps its name
+      const t = known ? { en: known.town, th: known.town_th } : town;
+      const rows = await EATLIB.fill({ client: new ai.SDK(), model: IMPORT.WRITE(), town: t, where: clip(b.where, 80), have: have.map((x) => x.name), take: aiTake, onUsage: addUsage });
+      await EATLIB.put(pool, FAMILY, rows, 'helper', null, { checked: new Date().toISOString().slice(0, 10) });
+      res.json({ ok: true, added: rows.length, tkey: EATLIB.norm(t.en) });
+    } catch (e) {
+      if (e.code === 'limit') return res.status(429).json({ error: 'limit' });
+      if (['json', 'refusal'].includes(e.code)) return bad(res, e.code, 502);
+      next(e);
+    } finally { eatBusy = false; }
+  });
+  // a place the parents do not want: it stays out (the next boot does not bring it back from its book)
+  r.delete('/api/b/eatlib/:id', ...W, async (req, res, next) => {
+    try { await q('UPDATE eat_lib SET gone=true WHERE family_id=$1 AND id=$2', [FAMILY, String(req.params.id)]); res.json({ ok: true }); } catch (e) { next(e); }
+  });
   // the route: drafted from the answers, or changed as asked ({prev, ask}); a route the parents edited by hand ({route}, no ask) is only cleaned
   r.post('/api/b/planner/route', ...W, async (req, res, next) => {
     try {
@@ -1221,7 +1264,10 @@ function router({ pool, media, A, ai, hooks = {} }) {   // hooks.heart(h): set b
       try {
         // the book's calls count against the monthly allowance, not today's: the daily row only collects the tokens
         const take = async () => { await q("INSERT INTO ai_usage (family_id, day, calls) VALUES ($1, (now() AT TIME ZONE 'UTC')::date, 0) ON CONFLICT (family_id, day) DO NOTHING", [FAMILY]); return true; };
-        const out = await IMPORT.run({ brief: PLANNER.brief(answers, rt, PLANNER.whoLine(kids, rt.from)), slug, client: new ai.SDK(), take, onUsage: addUsage, log, dir: DATA_TMP });
+        const townPairs = [...new Map(rt.days.map((d) => [EATLIB.norm(d.town.en), [d.town.en, d.town.th]])).values()].filter((x) => x[0]);
+        const eatTowns = eatFor(await EATLIB.all(pool, FAMILY), townPairs), eats = EATLIB.groupsFor(eatTowns);
+        if (eats) log(`places to eat: ${eats.groups.reduce((n, g) => n + g.items.length, 0)} from the family's library (${eats.groups.map((g) => g.area.en).join(', ')})`);
+        const out = await IMPORT.run({ brief: { ...PLANNER.brief(answers, rt, PLANNER.whoLine(kids, rt.from), eats), eats, eatsAll: !!eats && eatTowns.every((t) => t.places.length) }, slug, client: new ai.SDK(), take, onUsage: addUsage, log, dir: DATA_TMP });
         if (kids.length) out.seed.children = FAM.seedChildren(kids, out.seed.date_from);
         out.seed.theme = { ...(out.seed.theme || {}), planner: { answers, made: new Date().toISOString().slice(0, 10) } };   // no child's name in it: kept for "change this day" (phase 2)
         out.report.planner = true;
@@ -1327,6 +1373,8 @@ function router({ pool, media, A, ai, hooks = {} }) {   // hooks.heart(h): set b
         }
         const verify = { at: Date.now(), by: clip(req.user.name, 40), places: rows };
         await q("UPDATE trips SET theme = jsonb_set(COALESCE(theme, '{}'::jsonb), '{verify}', $2::jsonb) WHERE id=$1", [t.id, JSON.stringify(verify)]);
+        // what the check found also marks the family's library of places to eat (the place by its name, wherever it is kept)
+        for (const pl of verify.places || []) if (pl.kind === 'food' && pl.st && pl.st !== 'unsure') await q('UPDATE eat_lib SET st=$3, checked=$4::date, url=CASE WHEN $5 <> \'\' THEN $5 ELSE url END WHERE family_id=$1 AND nkey=$2', [FAMILY, EATLIB.norm(pl.name), pl.st, new Date(verify.at).toISOString().slice(0, 10), pl.url || '']).catch(() => {});
         job.status = 'done';
       } catch (e) { job.status = 'error'; job.error = e.code || 'failed'; console.error('verify', e.message); }
     } catch (e) { if (held) held(); next(e); }
@@ -1805,4 +1853,5 @@ async function backfillPh(pool, media) {
   }
   return n;
 }
-module.exports = { router, syncSeeds, brand, FAMILY, AUDIO_EXT, backfillPh };
+const eatSyncAll = async (pool) => { try { await EATLIB.syncStarter(pool, FAMILY, STOCK.read()); return await EATLIB.syncBooks(pool, FAMILY, STOCK.read()); } catch (e) { console.error('eatlib sync', e.message); return 0; } };
+module.exports = { router, syncSeeds, brand, FAMILY, AUDIO_EXT, backfillPh, eatSyncAll };

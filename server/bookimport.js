@@ -173,7 +173,8 @@ async function run({ buf, brief, slug, client, take, onUsage, log = () => {}, di
   const normA = (x) => String((x && (x.en || x)) || '').toLowerCase().replace(/[^a-z0-9฀-๿一-鿿]+/g, '');
   // a planned trip has no restaurant guide to copy: one call suggests a few areas near the stays and the day's sights, well-known places only
   let restBrief = null;
-  if (brief) {
+  if (brief && brief.eats && brief.eatsAll) { restBrief = brief.eats; log('restaurants: every town of the route is in the family\'s library — no suggestions asked'); }
+  else if (brief) {
     const sug = await ask('restaurants: suggest', WRITE(), {
       system: sys,
       user: `Suggest places to eat for this trip with small children: 2–5 areas near where we sleep and the days' main sights, 3–6 places each, only long-running, well-known places you are sure exist (a food court or a family chain is fine). Return {"areas":[{"area":{"en":"…"},"kind":0|1|2,"items":[row, …]}]} — kind 0 restaurants · 1 food courts and quick bites · 2 cafés and sweets. Row schema: ${JSON.stringify(S.properties.restaurants.properties.groups.items.properties.items.items)} — "pr" as a range with ≈, "hours" only when you are sure (else "check before you go"), "q" a full Google Maps query, "pick" (["<Day n> · <Meal>"]) when it suits a day's meal.\n${EN_ONLY}`,
@@ -186,6 +187,7 @@ async function run({ buf, brief, slug, client, take, onUsage, log = () => {}, di
       groups: ar.map((a) => ({ area: { en: String((a.area && (a.area.en || a.area)) || 'Places to eat') }, kind: [0, 1, 2].includes(a.kind) ? a.kind : 0, items: a.items.filter((it) => it && it.name).slice(0, 8).map((it) => ({ ...it, name: String(it.name).slice(0, 120) })) })),
     };
     log(`restaurants: ${ar.reduce((n, a) => n + a.items.length, 0)} places in ${ar.length} areas suggested`);
+    if (brief.eats) restBrief = restBrief ? { ...restBrief, groups: [...brief.eats.groups, ...restBrief.groups] } : brief.eats;   // the library's towns lead, the helper's suggestions follow
   }
   let index = { areas: [] };
   if (!brief) try {

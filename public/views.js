@@ -114,6 +114,7 @@ function render() {
   else if (p[0] === 'viewers' && isEditor()) html = viewViewers();
   else if (p[0] === 'import' && isEditor()) html = viewImport();
   else if (p[0] === 'planner' && isEditor()) html = viewPlanner();
+  else if (p[0] === 'eats' && isEditor()) html = viewEats(p[1]);
   else if (p[0] === 'family' && isEditor()) html = viewFamily();
   else if (p[0] === 'start' && isEditor()) html = viewStart(p);
   else if (p[0] === 'privacy') html = viewPrivacy();
@@ -313,6 +314,7 @@ ${isEditor() ? `<a class="nbcard" href="#/capsules"><span class="emb">${hubIc('l
 <a class="nbcard" href="#/year/${yearOfNow()}"><span class="emb">${hubIc('year')}</span><div><b>${L(`ปี ${yearOfNow()} ของเรา`, `Our ${yearOfNow()}`)}</b><small>${L('ทุกทริปของปีเป็นเล่มเดียว เห็นลูกโตขึ้นทีละทริป', 'Every trip of the year in one book — the children growing trip by trip')}</small></div><span class="arrow">›</span></a>` : ''}
 <div class="part">${L('สำหรับทริปหน้า', 'For the next trip')}</div>
 <a class="nbcard" href="#/notebook"><span class="emb">${hubIc('notebook')}</span><div><b>${L('สมุดโน้ตนักเดินทาง', 'Travel notebook')}</b><small>${S.reviews.length ? L(`${S.reviews.length} รีวิว · ที่พัก ร้านอาหาร สถานที่ — ไว้วางแผนทริปหน้า`, `${S.reviews.length} reviews · stays, food, places — for planning the next trip`) : L('ให้ดาว ติดแท็ก จดว่าอะไรที่ครอบครัวเราชอบ — ไว้วางแผนทริปหน้า', 'Stars, tags and notes on what worked for our family — for planning the next trip')}</small></div><span class="arrow">›</span></a>
+${isEditor() ? `<a class="nbcard eatlibcard" href="#/eats"><span class="emb">${hubIc('eat')}</span><div><b>${L('คลังร้านอาหาร', 'Places to eat — our library')}</b><small>${L('ร้านจากทุกเล่ม และร้านที่ผู้ช่วยหาแล้วเช็กกับเว็บ — ไว้วางแผนทริปหน้า', 'The places from every book, and ones the helper found and checked — for planning the next trip')}</small></div><span class="arrow">›</span></a>` : ''}
 ${isEditor() ? backupCard() : ''}
 ${dispCard()}
 ${isEditor() ? `<div class="part">${L('ตั้งค่า', 'Settings')} <img class="partpic" src="/art/hub/settings.webp" alt=""></div>
@@ -2548,6 +2550,7 @@ ${sec('ใครอื่นเห็นบ้าง', 'Who else ever sees it', 
   ['ผู้ช่วย (Anthropic) เฉพาะเมื่อพ่อแม่กดขอ เช่น นิทาน สรุปวัน แปลภาษา: ส่งเฉพาะข้อความ ไม่ส่งรูป ไม่เก็บไว้ฝึกโมเดล', 'The helper (Anthropic), only when a parent presses for it — a story, the day in brief, a translation: words only, never photos, not used to train models'],
   ['“วางแผนกับผู้ช่วย” เฉพาะเมื่อพ่อแม่กดเอง: ส่งคำตอบในหน้านั้น เส้นทาง และอายุของลูก ไม่ส่งชื่อลูก รูป หรือความทรงจำ เลขจองที่พิมพ์มาถูกตัดออกก่อน · เบอร์ฉุกเฉินและวีซ่ามาจากตารางที่ตรวจแล้วของแอป · แผนที่ยังไม่ได้เขียนเป็นเล่ม (ไม่เกิน 8 แผน) เก็บไว้บนเซิร์ฟเวอร์ของครอบครัวให้พ่อแม่เปิดได้ทั้งสองเครื่อง ลบได้จากหน้านั้น', '“Plan with the helper”, only when a parent presses for it: the answers on that page, the route and the children’s ages — never their names, photos or memories; a booking number typed in is removed first · emergency numbers and visa rules come from the app’s checked table · plans not yet written as a book (eight at most) are kept on the family’s server so both parents can open them, and can be deleted on that page'],
   ['“เช็กร้านและที่เที่ยวบนเว็บ” เฉพาะเมื่อพ่อแม่กดเอง: ส่งแค่ชื่อร้านหรือที่เที่ยวกับที่อยู่บนแผนที่ ให้ผู้ช่วยค้นเว็บ ไม่มีชื่อลูก ที่พัก หรือข้อมูลครอบครัว', '“Check the places on the web”, only when a parent presses for it: each place’s name and map address go to the helper, which searches the web — never the children’s names, the stays or anything about the family'],
+  ['“คลังร้านอาหาร”: ร้านจากเล่มของครอบครัวเก็บไว้ที่เซิร์ฟเวอร์ของครอบครัวเอง · “ให้ผู้ช่วยหาร้าน” เฉพาะเมื่อพ่อแม่กดเอง: ส่งแค่ชื่อเมือง ให้ผู้ช่วยค้นเว็บ ไม่มีข้อมูลครอบครัว', 'The library of places to eat: the places from the family’s own books, kept on the family’s server · “ask the helper to find places”, only when a parent presses for it: just the town’s name, for a web search — nothing about the family'],
   ['“ให้ผู้ช่วยดูรูปวันนี้” เฉพาะเมื่อเปิดใช้และกดเอง: ส่งรูปย่อของวันนั้นครั้งเดียว ไม่เก็บ', '“Look at today’s photos”, only when switched on and pressed: that day’s small thumbnails, once, not stored'],
   ['วาดตัวการ์ตูนจากรูปลูก (OpenAI) เฉพาะเมื่อพ่อแม่อัปโหลด: รูปถูกย่อ ส่งครั้งเดียว และไม่เก็บที่ไหน', 'Drawing a character from a child’s photo (OpenAI), only when a parent uploads one: shrunk, sent once, stored nowhere'],
   ['พยากรณ์อากาศ (Open-Meteo): ส่งเฉพาะพิกัดระดับเมืองของที่พักในแผน ไม่ใช่ตำแหน่งโทรศัพท์', 'The weather forecast (Open-Meteo): only the town-level location of the planned stay, never the phone’s position'],
@@ -2753,6 +2756,7 @@ ${d.stops && d.stops.length ? `<ul class="pldstops">${d.stops.map((x) => `<li>${
   const jour = !rt ? '' : `<div class="pljour">${stays.map((s, k) => { const p = plPlaceOf(s.town), nights = k === stays.length - 1 ? s.n - 1 : s.n; return `<button type="button" class="pljt" data-a="jump" data-v="#pld${s.i}" style="--tc:${cols[s.i]}"><span class="pljp">${p && p.art ? `<img src="${esc(p.art)}" alt="" draggable="false">` : emo(rt.days[s.i].emoji || '📍')}</span><b>${esc(T(s.town))}</b><small>${nights > 0 ? L(`${nights} คืน`, `${nights} ${nights > 1 ? 'nights' : 'night'}`) : L('วันกลับ', 'Last day')}</small></button>`; }).join('<i aria-hidden="true">›</i>')}</div>`;
   const routeHtml = !rt ? '' : pcard('today', PG.blue, `${esc(T(rt.title))} <small class="label">${esc(fmtRange({ date_from: rt.from, date_to: rt.to }))} · ${esc(plSpan(rt.days.length))}</small>`, `${jour}${rt.why ? `<p class="plwhy">${esc(T(rt.why))}</p>` : ''}
 <div class="part pickh">${L('ก่อนตัดสินใจ', 'Before you say yes')}</div>${factsHtml}
+${planEatHtml(rt, on)}
 <div class="part pickh">${L('วันต่อวัน', 'Day by day')}</div><p class="label">${L('เลื่อนวัน เพิ่ม ลบ หรือแก้ชื่อได้เลย หรือบอกผู้ช่วยให้เปลี่ยน', 'Move, add or remove a day, rename it — or ask the helper to change it')}</p>
 <ol class="pldays">${rt.days.map(dayCard).join('')}</ol>
 <div class="plaskc"><div class="part pickh">${L('อยากให้เปลี่ยนอะไร', 'What should change')}</div><div class="plchips">${PL_ASKS.map(([th, en, ath, aen]) => `<button type="button" class="plchip" data-a="planquick" data-v="${esc(L(ath, aen))}"${pln.busy ? ' disabled' : ''}>${L(th, en)}</button>`).join('')}</div>
@@ -2769,6 +2773,73 @@ ${saved}
 ${wait}${pln.err ? `<div class="err plerr" role="alert">${esc(pln.err)}</div>` : ''}
 ${altsHtml}${routeHtml}
 <p class="impnote">🔒 ${L('ส่งให้ผู้ช่วย: คำตอบในหน้านี้ เส้นทาง และอายุของเด็ก — ไม่ส่งชื่อลูก รูป หรือความทรงจำ · เบอร์ฉุกเฉินและวีซ่ามาจากตารางที่ตรวจแล้วของแอป ไม่ได้มาจากผู้ช่วย · แผนเก็บไว้บนเซิร์ฟเวอร์ของครอบครัวให้พ่อแม่เปิดได้ทั้งสองเครื่อง', 'Sent to the helper: the answers on this page, the route and the children’s ages — never their names, photos or memories · emergency numbers and visa rules come from the app’s checked table, not from the helper · the plan is kept on the family’s server so both parents can open it')}</p>`;
+}
+/* ---------- the family's library of places to eat (#/eats[/<town key>], editors; server/eatlib.js): the towns it knows, a town's
+   places as the books' own cards, a search box, and "ask the helper for this town" (one call with a web check — only the town's
+   name is sent). The planner reads the same library for a route's towns (eatRoute). */
+let eatLib = { towns: null, on: false, town: '', places: null, busy: '', err: '', add: '' };
+let eatRoute = { key: '', list: null };   // the library's places for the planner's route: [{en, th, places}]
+const eatSrc = (x) => (x.src === 'starter' ? (x.checked ? `${L('จากคลังของแอป · เช็กกับเว็บ', 'From the app’s built-in list · web check')} ${esc(fmtDay(x.checked, { month: 'short', year: '2-digit' }))}` : L('จากคลังของแอป · ยังไม่ได้เช็กวันนี้ เช็กก่อนไป', 'From the app’s built-in list · not checked today — check before you go')) : x.src === 'helper' ? `${L('ผู้ช่วยหา · เช็กกับเว็บ', 'Found by the helper · web check')}${x.checked ? ` ${esc(fmtDay(x.checked, { day: 'numeric', month: 'short', year: '2-digit' }))}` : ''}` : (() => { const t = x.trip && trip(x.trip); return t ? `${L('จากเล่ม', 'From')} ${esc(T(t.title))}` : L('จากเล่มของเรา', 'From our books'); })());
+const eatSt = (x) => (x.st === 'closed' ? `<span class="etag st-closed">${L('ปิดแล้ว', 'Closed')}</span>` : x.st === 'moved' ? `<span class="etag st-closed">${L('ย้ายร้าน', 'Moved')}</span>` : x.st === 'open' ? `<span class="etag st-open">✓ ${L('ยังเปิดอยู่', 'Open')}</span>` : '');
+// one place as the book's own card (views.js viewEat): name + pin + kind of food, where, a line about it, price / hours, directions
+const eatLibCard = (g, x, del) => `<li class="eatc" data-s="${esc(eatText(g, x))}" data-k="${x.kind}" data-p="0"${eatShow(g, x) ? '' : ' hidden'}>
+<div class="et"><b class="en">${mapA(x.q || x.name, esc(x.name))}</b>${extA(mapsUrl(x.q || x.name), `<span class="mpin" aria-hidden="true"></span><span class="vh">${L('แผนที่', 'Map')}</span>`, 'pinlink')}${T(x.tag) ? `<span class="etag t-${esc(x.tk || 'x')}">${esc(T(x.tag))}</span>` : ''}${eatSt(x)}</div>
+${x.zh || x.where ? `<div class="ew">${x.zh ? `<span class="zh">${esc(x.zh)}</span>` : ''}${x.where ? `<span>${esc(T(x.where))}</span>` : ''}</div>` : ''}
+${T(x.what) ? `<p class="ed">${esc(T(x.what))}</p>` : ''}${T(x.why) ? `<p class="why"><b>${L('เหมาะกับเด็ก', 'For the kids')}</b> ${esc(T(x.why))}</p>` : ''}
+<div class="ef"><span class="echips">${T(x.pr) ? `<span class="pr">${esc(T(x.pr))}</span>` : ''}${T(x.hours) ? `<span class="hr">${esc(T(x.hours))}</span>` : ''}</span>${extA(`https://www.google.com/maps/dir/?api=1&destination=${encodeURIComponent(x.q || x.name)}`, ic('route') + ' ' + L('นำทาง', 'Go'), 'go')}</div>
+<div class="elsrc"><small>${eatSrc(x)}</small>${del ? `<button type="button" class="mini" data-a="eatlibdel" data-v="${esc(x.id)}">${L('เอาออก', 'Take out')}</button>` : ''}</div></li>`;
+function viewEats(tk) {
+  const el = eatLib;
+  if (el.towns === null) { el.towns = 'loading'; api('GET', '/api/b/eatlib').then((r) => { el.towns = r.towns || []; el.on = !!r.on; safeRender(); }, () => { el.towns = []; safeRender(); }); }
+  tk = tk || '';
+  if (el.town !== tk) { el.town = tk; el.places = null; el.err = ''; eatQ = ''; eatKind = -1; eatPick = false; eatTrip = 'lib'; if (tk) api('GET', `/api/b/eatlib?town=${encodeURIComponent(tk)}`).then((r) => { if (el.town === tk) { el.places = r.places || []; safeRender(); } }, () => { if (el.town === tk) { el.places = []; safeRender(); } }); }
+  const towns = Array.isArray(el.towns) ? el.towns : [], cur = towns.find((t) => t.tkey === tk), total = towns.reduce((n, t) => n + t.n, 0);
+  const tname = (t) => L(t.town_th || t.town, t.town);
+  const wait = el.busy ? `<div class="plwait" role="status"><span class="plspin" aria-hidden="true"></span><div><b>${L('ผู้ช่วยกำลังหาร้านและเช็กกับเว็บ…', 'The helper is finding places and checking them on the web…')}</b><small>${L('ราวหนึ่งนาที ส่งไปแค่ชื่อเมือง', 'About a minute — only the town’s name is sent')}</small></div></div>` : '';
+  const head = `${pageHead('eat', PG.orange, L('สำหรับทริปหน้า', 'For the next trip'), L('คลังร้านอาหาร', 'Places to eat — our library'), L('ร้านจากทุกเล่มของเรา ร้านที่ผู้ช่วยหาแล้วเช็กกับเว็บ และคลังของแอปสำหรับเมืองยอดนิยมทั่วโลก เก็บไว้ใช้ตอนวางแผนทริปหน้า', 'The places from every book of ours, ones the helper found and checked on the web, and the app’s built-in list for popular towns around the world — kept for planning the next trip'))}`;
+  // the towns: ours first (from our books and the helper's searches), then every country of the built-in list; a box filters in place
+  const chip = (t) => `<a class="plchip" href="#/eats/${esc(t.tkey)}" data-s="${esc(`${t.town} ${t.town_th} ${t.country ? `${t.country.en} ${t.country.th}` : ''}`.toLowerCase())}" aria-current="${t.tkey === tk}"><b>${esc(tname(t))}</b><span class="label">${t.n}</span></a>`;
+  const own = towns.filter((t) => t.own > 0), rest = towns.filter((t) => !t.own), byC = new Map();
+  for (const t of rest) { const k = t.country ? L(t.country.th, t.country.en) : L('อื่นๆ', 'Elsewhere'); if (!byC.has(k)) byC.set(k, []); byC.get(k).push(t); }
+  const groups = [...byC.entries()].sort((a, b) => a[0].localeCompare(b[0], lang === 'en' ? 'en' : 'th'));
+  const chips = !towns.length ? '' : tk ? `<div class="plchips eltowns one" style="--g1:${PG.orange}"><a class="plchip" href="#/eats">‹ ${L('ทุกเมือง', 'All towns')}</a>${[...((cur && cur.country) ? rest.filter((t) => t.country && t.country.cc === cur.country.cc) : []), ...own].map(chip).join('')}</div>`
+    : `<div class="elfind"><input id="eltq" class="field" type="search" enterkeyhint="search" autocomplete="off" placeholder="${L('ค้นเมืองหรือประเทศ เช่น โอซาก้า อิตาลี', 'Search a town or country — Osaka, Italy')}" aria-label="${L('ค้นเมือง', 'Search towns')}"></div>
+${own.length ? `<section class="elgrp" style="--g1:${PG.orange}"><h3>${L('ของเรา', 'Ours')} <span class="label">${L('จากเล่มของเราและที่ผู้ช่วยหาให้', 'from our books and the helper’s searches')}</span></h3><div class="plchips eltowns">${own.map(chip).join('')}</div></section>` : ''}
+${groups.map(([name, list], k) => `<section class="elgrp" style="--g1:${snapPal(k)}"><h3>${esc(name)}</h3><div class="plchips eltowns">${list.map(chip).join('')}</div></section>`).join('')}
+<p class="empty" id="eltnone" hidden>${L('ไม่พบเมืองนี้ในคลัง — ให้ผู้ช่วยหาได้ด้านล่าง', 'Not in the library — the helper can find it below')}</p>`;
+  const addCard = !el.on ? '' : pcard('find', PG.teal, L('เมืองที่ยังไม่มีในคลัง', 'A town not in the library yet'), `<div class="pform"><label class="vgl">${L('ชื่อเมือง (ใส่ประเทศด้วยก็ได้)', 'The town (add the country if you like)')}<input class="field" id="eltown" maxlength="80" value="${esc(el.add)}" placeholder="${L('เช่น โอซาก้า ญี่ปุ่น', 'e.g. Osaka, Japan')}"></label>
+<button type="button" class="btn" data-a="eatlibfill"${el.busy ? ' disabled' : ''}>${ic('search')} ${L('ให้ผู้ช่วยหาร้านและเช็กกับเว็บ', 'Ask the helper to find and check places')}</button>
+<p class="label">🔒 ${L('ส่งไปแค่ชื่อเมือง ไม่มีข้อมูลครอบครัว · ใช้ผู้ช่วย 1 ครั้งต่อเมือง', 'Only the town’s name is sent, nothing about the family · one helper call a town')}</p></div>`);
+  const err = el.err ? `<div class="err plerr" role="alert">${esc(el.err)}</div>` : '';
+  if (!tk) return `${head}${el.towns === 'loading' ? `<p class="label">${L('กำลังเปิดคลัง…', 'Opening the library…')}</p>` : towns.length ? `<div class="part pickh">${L(`${towns.length} เมือง · ${total.toLocaleString()} ร้าน — แตะเมืองเพื่อดู`, `${towns.length} towns · ${total.toLocaleString()} places — tap a town`)}</div>${chips}` : emptyCard(null, L('คลังยังว่าง', 'The library is empty'), L('ร้านจากเล่มของเราจะมาอยู่ที่นี่เอง', 'The places from our books will appear here by themselves'))}${wait}${err}${addCard}`;
+  const places = el.places || [], kinds = [L('ร้านอาหาร', 'Restaurants'), L('ศูนย์อาหารและของกินเร็ว', 'Food courts & quick bites'), L('คาเฟ่ ขนม ของหวาน', 'Cafés & sweets')];
+  // a town's places under the areas its book (or the helper) put them in, in the order they came
+  const areas = []; for (const x of places) { const k = T(x.area) || ''; let g = areas.find((a) => a.k === k); if (!g) areas.push(g = { k, area: x.area, items: [] }); g.items.push(x); }
+  const shown = places.filter((x) => eatShow({ area: x.area }, x)).length;
+  return `${head}${chips}
+<section class="eatpage ellist"><div class="part">${esc(cur ? tname(cur) : tk)} <span class="label">· ${L(`${places.length} ร้าน`, `${places.length} places`)}</span></div>
+${el.places === null ? `<p class="label">${L('กำลังเปิด…', 'Opening…')}</p>` : `<div class="eatbar"><input id="eatq" class="field" type="search" enterkeyhint="search" autocomplete="off" value="${esc(eatQ)}" placeholder="${L('ค้นชื่อร้าน ย่าน หรือประเภท', 'Search a name, area or kind of food')}" aria-label="${L('ค้นร้าน', 'Search')}">
+<div class="row chips" role="group"><button class="chip" data-a="eatk" data-v="-1" aria-pressed="${eatKind < 0}">${L('ทั้งหมด', 'All')}</button>${kinds.map((k, i) => (places.some((x) => x.kind === i) ? `<button class="chip" data-a="eatk" data-v="${i}" aria-pressed="${eatKind === i}">${k}</button>` : '')).join('')}</div>
+<p class="label" id="eatn">${L(`แสดง ${shown} จาก ${places.length} ร้าน`, `Showing ${shown} of ${places.length}`)}</p></div>
+${areas.map((g) => `<section class="eatg"${g.items.some((x) => eatShow(g, x)) ? '' : ' hidden'}><h3>${esc(T(g.area) || (cur ? tname(cur) : ''))}</h3><ul class="eatl">${g.items.map((x) => eatLibCard(g, x, true)).join('')}</ul></section>`).join('')}
+<p class="empty" id="eatnone"${shown || !places.length ? ' hidden' : ''}>${L('ไม่พบร้านที่ตรงกับคำค้น', 'No place matches')}</p>`}
+${wait}${err}${el.on && cur ? `<div class="row elmore"><button type="button" class="btn ghost" data-a="eatlibfill" data-v="${esc(cur.town)}" data-th="${esc(cur.town_th)}"${el.busy ? ' disabled' : ''}>${ic('search')} ${L('ให้ผู้ช่วยหาร้านเพิ่มในเมืองนี้', 'Ask the helper for more places here')}</button></div>` : ''}
+<p class="label">${L('ราคาและเวลาเปิดเปลี่ยนได้ เช็กซ้ำก่อนไป · แตะหมุดเพื่อเปิดแผนที่', 'Hours and prices change — check before you go · tap the pin for the map')}</p></section>`;
+}
+// the planner's route card: the library's places for each town we sleep in — a few to read, the rest one tap away, and "find
+// places" for a town the library does not know yet. What is here goes into the book when it is written.
+function planEatHtml(rt, on) {
+  const stays = plStays(rt), pairs = [...new Map(stays.map((s) => [plNorm(s.town.en), [s.town.en, s.town.th]])).values()].filter((x) => x[0]), key = JSON.stringify(pairs);
+  if (eatRoute.key !== key) { eatRoute = { key, list: null }; api('GET', `/api/b/eatlib?for=${encodeURIComponent(key)}`).then((r) => { if (eatRoute.key === key) { eatRoute.list = r.for || []; if (route().parts[0] === 'planner') safeRender(); } }, () => { if (eatRoute.key === key) eatRoute.list = []; }); }
+  const list = eatRoute.list;
+  if (!list) return '';
+  const row = (x) => `<li><span class="plen"><b>${esc(x.name)}</b>${T(x.tag) ? `<small>${esc(T(x.tag))}${T(x.pr) ? ` · ${esc(T(x.pr))}` : ''}</small>` : ''}</span>${eatSt(x)}${extA(mapsUrl(x.q || x.name), `<span class="mpin" aria-hidden="true"></span><span class="vh">${L('แผนที่', 'Map')}</span>`, 'pinlink')}</li>`;
+  return `<div class="part pickh">${L('ที่กินตามเส้นทาง', 'Where to eat along the route')}</div><div class="pleat">${list.map((t) => { const n = t.places.length, tk = n ? t.places[0].tkey : '';
+    return `<details class="pleatt" open><summary><span class="plee" aria-hidden="true">${emo('🍜')}</span><span><b>${esc(L(t.th || t.en, t.en))}</b><small>${n ? L(`${n} ร้านในคลัง`, `${n} ${n > 1 ? 'places' : 'place'} in the library`) : L('ยังไม่มีร้านในคลัง', 'Not in the library yet')}</small></span>${ic('chev', 'chv')}</summary>
+${n ? `<ul class="plel">${t.places.slice(0, 5).map(row).join('')}</ul><div class="row plem">${n > 5 ? `<a class="linkbtn" href="#/eats/${esc(tk)}">${L(`ดูทั้ง ${n} ร้าน`, `See all ${n}`)} ›</a>` : ''}${on ? `<button type="button" class="linkbtn" data-a="planeat" data-v="${esc(t.en)}" data-th="${esc(t.th)}"${eatLib.busy ? ' disabled' : ''}>${L('หาร้านเพิ่ม', 'Find more')}</button>` : ''}</div>`
+    : on ? `<button type="button" class="btn ghost" data-a="planeat" data-v="${esc(t.en)}" data-th="${esc(t.th)}"${eatLib.busy ? ' disabled' : ''}>${ic('search')} ${L('ให้ผู้ช่วยหาร้านและเช็กกับเว็บ', 'Ask the helper to find and check places')}</button>` : ''}</details>`; }).join('')}</div>
+${eatLib.busy ? `<div class="plwait" role="status"><span class="plspin" aria-hidden="true"></span><div><b>${L('ผู้ช่วยกำลังหาร้านและเช็กกับเว็บ…', 'The helper is finding places and checking them on the web…')}</b><small>${L('ราวหนึ่งนาที ส่งไปแค่ชื่อเมือง', 'About a minute — only the town’s name is sent')}</small></div></div>` : ''}
+<p class="label">${L('ร้านในคลังของเมืองเหล่านี้จะถูกใส่ในเล่มให้ ·', 'The library’s places for these towns go into the book ·')} <a href="#/eats">${L('เปิดคลังร้านอาหาร', 'Open the library')}</a></p>`;
 }
 const impErr = (e) => ({ limit: L('ผู้ช่วยใช้ครบโควตาวันนี้แล้ว ลองพรุ่งนี้', "Today's helper allowance is used up — try tomorrow"), privacy: L('พบข้อมูลส่วนตัวในเล่ม จึงไม่บันทึก', 'Private data found in the book — not kept'), text: L('อ่านข้อความจาก PDF ไม่ได้ (สแกนเป็นรูป?)', 'No text in the PDF (a scanned image?)'), pdftotext: L('เซิร์ฟเวอร์นี้ยังอ่าน PDF ไม่ได้ แจ้งผู้ดูแลระบบ', 'This server cannot read PDFs yet — tell the operator'), refusal: L('ผู้ช่วยเขียนเล่มนี้ไม่ได้', 'The helper could not write this book'), json: L('คำตอบอ่านไม่ได้ ลองอีกครั้ง', 'Unreadable answer — try again') }[e] || e);
 function viewViewers() {
