@@ -717,12 +717,22 @@ try {
     ok(tp.status === 200 && tj.family.taste.out.like.join() === 'animals' && tj.family.taste.food.avoid.join() === 'seafood' && tj.family.taste.kids.mimi.join() === 'aquarium' && (await state()).family.taste.needs.join() === 'pram',
       `taste: the family's styles are kept in the profile and cleaned (${JSON.stringify(tj.family && tj.family.taste)})`);
     ok((await fetch(BASE + '/api/b/family/profile', { method: 'PATCH', headers: { ...PH, cookie: vck.split(';')[0] }, body: JSON.stringify({ taste: {} }) })).status === 403, 'taste: relatives cannot change it'); }
+  // the things-to-do library (E2/E3): web-checked towns, each sight with its fit for this family; a heart keeps it, two taps take it out
+  { const sg = async (qs, h = { cookie: ck }) => fetch(BASE + '/api/b/sights' + qs, { headers: h });
+    const tw = await (await sg('')).json(), tk = await (await sg('?town=tokyo')).json(), s0 = (tk.sights || [])[0] || {};
+    ok((tw.towns || []).some((t) => t.tkey === 'tokyo' && t.n >= 15) && tk.sights.length >= 15 && tk.sights.every((x) => /^https:/.test(x.url) && x.checked && typeof x.fit === 'number' && x.ages.length === 4 && x.styles.length),
+      `sights: the library's towns; a town's sights each carry the page that confirmed it, the month, the ages and a fit for this family (${(tw.towns || []).length} towns · ${tk.sights.length} in Tokyo)`);
+    ok((await sg('', { cookie: vck.split(';')[0] })).status === 403, 'sights: the parents\' library, not for relatives');
+    const wsh = await fetch(BASE + `/api/b/sights/${s0.id}/wish`, { method: 'PUT', headers: PH, body: JSON.stringify({ on: true }) });
+    ok(wsh.status === 200 && (await (await sg('?town=tokyo')).json()).sights.find((x) => x.id === s0.id).wish === true, 'sights: a heart keeps a sight on the family\'s wish list');
+    globalThis.__wishName = s0.name && s0.name.en; }
   const c0 = calls.length, rr = await pl('/api/b/planner/route', { answers }), rj = await rr.json(), rt = rj.route || {};
   ok(rr.status === 200 && rt.days && rt.days.length === 3 && rt.days.map((d) => d.date).join() === '2027-04-01,2027-04-02,2027-04-03' && rt.countries.join() === 'jp' && rt.title.en === 'Sakura test hop',
     `planner: the route comes back cleaned — the family's dates laid out again, a bad country code dropped (${rr.status} ${JSON.stringify(rj).slice(0, 300)})`);
   const routeCall = calls[c0], rsent = JSON.stringify(routeCall && routeCall.body);
   ok(calls.length === c0 + 1 && /Where: Tokyo with the kids/.test(rsent) && /Ueno Zoo/.test(rsent) && !/junk/.test(rsent), 'planner: one call for the route, carrying the answers (unknown fields dropped)');
   ok(/learned on past trips/.test(rsent) && /ยัดลก/.test(rsent) && !/\.jpg|media\//.test(rsent), 'planner: the family\'s lessons from past books go with the route (words only, never a photo)');
+  ok(rsent.includes(`Places we would love to go to`) && rsent.includes(globalThis.__wishName), `planner: the wish list goes with the route (${globalThis.__wishName})`);
   ok(/The styles our family chose/.test(rsent) && /Food we avoid: Seafood/.test(rsent) && /Child 1 especially loves: Aquariums/.test(rsent) && !/Mimi|มีมี่/.test(rsent), 'planner: the family\'s chosen styles go with the route as words, a child as "child 1", never a name');
   { const c2 = calls.length, tr = await pl('/api/b/planner/route', { answers, two: true }), tj = await tr.json();
     ok(tr.status === 200 && calls.length === c2 + 1 && Array.isArray(tj.routes) && tj.routes.length === 1 && tj.routes[0].label.en === 'One base' && tj.routes[0].why.th === 'ไม่ต้องย้ายกระเป๋า' && tj.routes[0].days.length === 3,
@@ -913,6 +923,18 @@ try {
       await pp.goto(BASE + '/#/taste/kids'); await pp.waitForSelector('.tastekid');
       ok(steps === 4 && st1 === 'like' && st2 === 'avoid' && kept.food.avoid.includes('sweet') && !kept.food.like.includes('sweet') && kept.food.like.includes('noodle') && small === 0 && await pp.locator('.tastekid').count() >= 1,
         `taste page: four pages a topic each; one tap loves a style, a second skips it, kept for both parents; each child has favourites; taps are 44 px (${steps} ${st1} ${st2} ${JSON.stringify(kept.food)} small ${small})`); }
+    { // explore a town: the sights for our children, a heart, a day built on the phone that goes into a plan
+      await pp.goto(BASE + '/#/'); await pp.waitForSelector('.explorecard'); await pp.click('.explorecard'); await pp.waitForSelector('.eltowns .plchip');
+      await pp.goto(BASE + '/#/explore/tokyo/do'); await pp.waitForSelector('.sightc');
+      const ex = await pp.evaluate(() => ({ n: document.querySelectorAll('.sightc').length, hearts: document.querySelectorAll('.swish[aria-pressed="true"]').length, wide: document.documentElement.scrollWidth <= innerWidth + 1,
+        small: [...document.querySelectorAll('.explore button, .explore .chip, .exptabs a')].filter((b) => { const r = b.getBoundingClientRect(); return r.width && r.height < 43.5; }).length }));
+      await pp.click('[data-a="sightf"][data-v="indoor"]'); const ind = await pp.evaluate(() => [...document.querySelectorAll('.sightc:not([hidden])')].every((li) => li.dataset.io !== 'out'));
+      await pp.goto(BASE + '/#/explore/tokyo/day'); await pp.waitForSelector('.bday li');
+      const rows = await pp.locator('.bday li').count();
+      await pp.click('[data-a="dayplan"]'); await pp.waitForSelector('#pldest');
+      const dp = await pp.evaluate(() => ({ dest: pln.a.dest, want: pln.a.want }));
+      ok(ex.n >= 15 && ex.hearts >= 1 && ex.wide && !ex.small && ind && rows >= 3 && /Tokyo|โตเกียว/.test(dp.dest) && dp.want.length > 3,
+        `explore: a town's sights with the wished one marked, the indoor filter for a rainy day, a day built on the phone that becomes a plan's "must do" (${JSON.stringify(ex)} · ${rows} rows · ${JSON.stringify(dp).slice(0, 120)})`); }
     await pp.goto(BASE + '/#/eats/tokyo'); await pp.waitForSelector('.eatc');
     ok(/web check/.test(await pp.textContent('.eatc .elsrc')) && await pp.locator('.eatc .etag.st-open').count() === 1, 'eat library page: a place the helper found says so, with the day it was checked and that it is open');
     await pp.click('.eatc [data-a="eatlibdel"]'); ok(await pp.locator('.eatc').count() === 1, 'eat library page: taking a place out takes two taps');

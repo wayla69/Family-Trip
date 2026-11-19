@@ -3803,3 +3803,29 @@ a.plchip{text-decoration:none}a.plchip .label{font-weight:700}a.plchip[aria-curr
 .plskip{display:block;margin:4px auto 10px;min-height:44px}
 .plhint{margin:8px 0 0}.plhint a{font-weight:700}
 .plhist{margin-top:12px}
+
+/* explore a town (#/explore): sight cards, the wish heart, the ages row, the day built for us */
+.exptabs{margin:6px 0 12px}
+.sightl{display:grid;gap:10px}
+.sightc{padding:12px;border:1px solid var(--line);border-radius:14px;background:var(--card);display:grid;gap:6px;font-size:13.5px;line-height:1.45}
+.sightc[hidden]{display:none}
+.sch{display:flex;align-items:center;gap:10px}
+.spic{flex:none;width:48px;height:48px;border-radius:50%;background:#fff;display:grid;place-items:center;font-size:26px;box-shadow:inset 0 0 0 1px var(--line);overflow:hidden}
+.spic img{width:100%;height:100%;object-fit:contain}
+.stt{flex:1;min-width:0;display:grid}.stt b{font-size:15.5px}.stt small{color:var(--muted)}
+.swish{flex:none;width:44px;height:44px;border-radius:50%;border:1px solid var(--line);background:var(--card);font-size:22px;color:#E0457B;line-height:1}
+.swish[aria-pressed=true]{background:color-mix(in srgb,#E0457B 14%,var(--card));border-color:color-mix(in srgb,#E0457B 45%,var(--line))}
+.sages{display:flex;gap:4px;flex-wrap:wrap}
+.sage{font-size:12px;font-weight:700;padding:2px 8px;border-radius:999px;background:color-mix(in srgb,var(--muted) 10%,var(--card));color:var(--muted)}
+.sage.a2{background:color-mix(in srgb,#1CC9A4 18%,var(--card));color:color-mix(in srgb,#0E8F74 75%,var(--ink))}
+.sage.a1{background:color-mix(in srgb,#4F7BFF 12%,var(--card));color:color-mix(in srgb,#3557C9 70%,var(--ink))}
+.sage.a0{text-decoration:line-through}
+.sfacts{display:flex;gap:6px 12px;flex-wrap:wrap;color:color-mix(in srgb,var(--ink) 80%,var(--muted));font-size:13px}
+.sbook{font-weight:700}.sbook.req{color:color-mix(in srgb,#E07A1F 70%,var(--ink))}
+.etag.okage{background:color-mix(in srgb,#4F7BFF 12%,var(--card));color:color-mix(in srgb,#3557C9 70%,var(--ink));font-weight:700}
+.stip{margin:0}
+.bday li{min-height:48px}.bday .tb{display:grid}.bday small{color:var(--muted)}
+.bdayb{gap:10px;margin-top:10px}.bdayb .btn{flex:1;min-height:48px;justify-content:center}
+:root[data-theme=dark] .spic{background:#F4F1EA}
+.exptabs a{flex:1;display:grid;place-items:center;min-height:44px;padding:5px 8px;font-size:14px;font-weight:600;color:var(--muted);text-decoration:none;text-align:center}
+.exptabs a[aria-selected=true]{background:color-mix(in srgb,var(--accent) 12%,var(--paper));color:color-mix(in srgb,var(--accent) 70%,var(--ink));box-shadow:inset 0 0 0 1px var(--accent)}
