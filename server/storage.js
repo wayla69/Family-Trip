@@ -18,12 +18,25 @@ function fsStore(root) {
     // a part of an object (a film or a clip asked for by byte range): only those bytes are read — never the whole file per request
     async size(k) { try { return (await fs.promises.stat(file(k))).size; } catch (e) { if (e.code === 'ENOENT') return null; throw e; } },
     stream(k, a, b) { return fs.createReadStream(file(k), { start: a, end: b }); },
+    // every object under a folder ('p/'): {key, size, at} — the stray-file sweep's view of what is stored
+    async *list(prefix) {
+      const base = path.join(root, prefix);
+      async function* walk(d) {
+        let ents; try { ents = await fs.promises.readdir(d, { withFileTypes: true }); } catch (e) { if (e.code === 'ENOENT') return; throw e; }
+        for (const e of ents) {
+          const f = path.join(d, e.name);
+          if (e.isDirectory()) yield* walk(f);
+          else if (e.isFile()) { const st = await fs.promises.stat(f); yield { key: path.relative(root, f).split(path.sep).join('/'), size: st.size, at: st.mtimeMs }; }
+        }
+      }
+      yield* walk(base);
+    },
     async ping() { await fs.promises.mkdir(root, { recursive: true }); await fs.promises.access(root, fs.constants.W_OK); },
   };
 }
 
 function s3Store(env) {
-  const { S3Client, PutObjectCommand, GetObjectCommand, DeleteObjectCommand, HeadBucketCommand, HeadObjectCommand } = require('@aws-sdk/client-s3');
+  const { S3Client, PutObjectCommand, GetObjectCommand, DeleteObjectCommand, HeadBucketCommand, HeadObjectCommand, ListObjectsV2Command } = require('@aws-sdk/client-s3');
   const Bucket = env.BUCKET;
   const s3 = new S3Client({
     region: env.REGION || 'auto',
@@ -48,6 +61,14 @@ function s3Store(env) {
       catch (e) { if (e.name === 'NotFound' || e.name === 'NoSuchKey' || e.$metadata?.httpStatusCode === 404) return null; throw e; }
     },
     async stream(k, a, b) { return (await s3.send(new GetObjectCommand({ Bucket, Key: checkKey(k), Range: `bytes=${a}-${b}` }))).Body; },
+    async *list(prefix) {
+      let token;
+      do {
+        const r = await s3.send(new ListObjectsV2Command({ Bucket, Prefix: prefix, ContinuationToken: token, MaxKeys: 1000 }));
+        for (const o of r.Contents || []) yield { key: o.Key, size: Number(o.Size) || 0, at: o.LastModified ? new Date(o.LastModified).getTime() : 0 };
+        token = r.IsTruncated ? r.NextContinuationToken : undefined;
+      } while (token);
+    },
     async ping() { await s3.send(new HeadBucketCommand({ Bucket })); },
   };
 }

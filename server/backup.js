@@ -12,7 +12,7 @@ const { FAMILY, AUDIO_EXT } = require('./bookshelf');
 const EMOJI = require('./emoji');
 
 // restore order follows foreign keys
-const TABLES = ['children', 'trips', 'trip_days', 'firsts_catalog', 'entries', 'media', 'places', 'hearts', 'reviews', 'spend', 'emoji', 'capsules'];   // capsules: letters to open in the future (migration 0034)
+const TABLES = ['children', 'trips', 'trip_days', 'firsts_catalog', 'entries', 'media', 'places', 'hearts', 'reviews', 'spend', 'emoji', 'capsules', 'comments'];   // capsules: letters to open in the future (migration 0034); comments: lines under photos (0038, after media)
 const ID_RE = /^[A-Za-z0-9_.:-]{4,80}$/;
 const SLUG_RE = /^[a-z0-9-]{2,60}$/;
 const thumbKey = (k) => k.replace(/^p\//, 't/');

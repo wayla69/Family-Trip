@@ -353,7 +353,7 @@ const A = {
       const { key } = await api('GET', '/api/b/push/key'), reg = await navigator.serviceWorker.ready;
       const s = (await reg.pushManager.getSubscription()) || (await reg.pushManager.subscribe({ userVisibleOnly: true, applicationServerKey: b64u(key) }));
       await api('POST', '/api/b/push/sub', { ...s.toJSON(), lang });
-      ls('remind', 1); render(); toast(L('เปิดการเตือนแล้ว ✓ จะเด้งก่อนทุกกิจกรรม 30 นาที · ทดสอบหรือปิดได้ที่หน้า "ใช้ตอนไม่มีเน็ต"', 'Reminders on ✓ — 30 min before each step · test or turn off on the Offline page'));
+      ls('remind', 1); render(); if (!isEditor()) { toast(L('เปิดแล้ว ✓ ตอนค่ำของวันที่มีรูปใหม่ จะมีแจ้งเตือน', 'On ✓ — you will hear in the evening of a day with new photos')); return; } toast(L('เปิดการเตือนแล้ว ✓ จะเด้งก่อนทุกกิจกรรม 30 นาที · ทดสอบหรือปิดได้ที่หน้า "ใช้ตอนไม่มีเน็ต"', 'Reminders on ✓ — 30 min before each step · test or turn off on the Offline page'));
     } catch (_) { toast(L('เปิดการเตือนไม่สำเร็จ ลองอีกครั้ง', 'Could not turn reminders on — try again')); }
   },
   // the setup steps: skip them for good (the shelf's welcome card still leads back) · "not now" on the reminders step
@@ -488,7 +488,7 @@ const A = {
     if (!armed(b, L('แตะอีกครั้งเพื่อออกจากระบบ', 'Tap again to sign out'))) return;
     try { await api('POST', '/api/logout'); } catch (_) {}
     await idb.set('state', null); ls('state', null); ls('lostTel', null); ls('conflicts', null); conflicts = [];   // the parents' numbers for the lost-child card go too, and any text waiting to be settled
-    S = null; location.hash = '#/'; render();
+    S = null; location.hash = '#/'; render(); brandLoad();
   },
   delentry(b) { if (armed(b)) delEntry(b.dataset.v); },
   mood(b) {
@@ -1231,6 +1231,18 @@ Object.assign(A, {
   },
   famzoom(b) { const r = route().parts, tid = r[0] === 'map' ? r[1] || '' : ''; FM.zoom = b.dataset.v ? { tid, ids: b.dataset.v.split('~') } : null; FM.pick = null; if (typeof kidWorldAt !== 'undefined') kidWorldAt = null; if (typeof beep === 'function' && r[0] === 'kid') beep('tap'); safeRender(); },
   fampin(b) { const tid = route().parts[1] || ''; FM.pick = FM.pick && FM.pick.tid === tid && FM.pick.k === +b.dataset.v ? null : { tid, k: +b.dataset.v }; safeRender(); },
+  async healthsrvclear(b) {
+    if (!b.dataset.armed) { b.dataset.armed = '1'; b.textContent = L('แตะอีกครั้งเพื่อล้าง', 'Tap again to clear'); return; }
+    b.disabled = true;
+    try { await api('DELETE', '/api/b/health/server'); if (HEALTH.server) HEALTH.server.events = []; } catch (_) { toast(L('ล้างไม่ได้ ลองใหม่อีกครั้ง', 'Could not clear, try again')); }
+    safeRender();
+  },
+  async orphansgo(b) {
+    if (!b.dataset.armed) { b.dataset.armed = '1'; b.textContent = L('แตะอีกครั้งเพื่อลบ', 'Tap again to remove'); return; }
+    b.disabled = true;
+    try { const r = await api('POST', '/api/b/health/orphans', {}); HEALTH.orphans = r; toast(L(`ลบแล้ว ${r.removed || 0} ไฟล์`, `Removed ${r.removed || 0} file${r.removed === 1 ? '' : 's'}`)); } catch (_) { toast(L('ลบไม่ได้ ลองใหม่อีกครั้ง', 'Could not remove, try again')); }
+    safeRender();
+  },
   async healthclear(b) {
     if (!b.dataset.armed) { b.dataset.armed = '1'; b.textContent = L('แตะอีกครั้งเพื่อล้าง', 'Tap again to clear'); return; }
     b.disabled = true;
@@ -1413,12 +1425,37 @@ ${ed ? `<button data-lb="star" aria-pressed="${!!m.highlight}">${m.highlight ? '
 <div class="capbox">${ed ? `<span class="emowrap"><input id="lbcap" value="${esc(m.caption || '')}" placeholder="${L('คำอธิบายรูป', 'Caption')}" maxlength="500">${emoBtn('lbcap')}</span>` : m.caption ? `<p>${emoIn(esc(m.caption))}</p>` : ''}
 ${ed ? `<div class="tagrow"><input id="lbtags" value="${esc(tagsOf(m).join(', '))}" placeholder="${L('แท็ก คั่นด้วยจุลภาค เช่น food, kids', 'Tags, comma-separated, e.g. food, kids')}" maxlength="200"><input id="lbplace" value="${esc(m.place || '')}" placeholder="${L('ที่ไหน (จุดแวะ)', 'Where (the stop)')}" maxlength="120"></div>` : ''}
 ${ed && s0.t && s0.t.kind === 'snap' && s0.t.days.length > 1 ? `<label class="lbday">${L('วันของรูปนี้', 'This photo’s day')}<select id="lbday">${s0.t.days.map((d, k) => `<option value="${k}"${k === m.day ? ' selected' : ''}>${esc(L(`วันที่ ${k + 1}`, `Day ${k + 1}`))} · ${esc(fmtDay(d.date))}</option>`).join('')}</select></label>` : ''}
-${tagsOf(m).length || m.place ? `<div class="tags">${m.place ? `<span class="tagc">📍 ${esc(m.place)}</span>` : ''}${tagsOf(m).map((k) => `<span class="tagc">${tagHtml(k)}</span>`).join('')}</div>` : ''}</div>`;
+${tagsOf(m).length || m.place ? `<div class="tags">${m.place ? `<span class="tagc">📍 ${esc(m.place)}</span>` : ''}${tagsOf(m).map((k) => `<span class="tagc">${tagHtml(k)}</span>`).join('')}</div>` : ''}${lbComments(m)}</div>`;
   lb.hidden = false;
+}
+/* Lines under a photo (server: comments, migration 0038): everyone who may see the book reads them and writes one — the name is the
+   one the hearts use (ls heartfrom, else the sign-in name); a parent removes any line, a sender their own (two taps). */
+const commentsOf = (mid) => (S.comments || []).filter((c) => c.media === mid).sort((a, b) => (a.at || 0) - (b.at || 0));
+function lbComments(m) {
+  if (isVideo(m) || isAudio(m) || m.local) return '';
+  const cs = commentsOf(m.id), ed = isEditor(), from = ls('heartfrom') || ls('name') || '';
+  return `<div class="lbcom"><b class="lbch"><img src="/art/hub/comment.webp" alt="">${cs.length ? L(`ข้อความถึงรูปนี้ · ${cs.length}`, `Notes on this photo · ${cs.length}`) : L('เขียนถึงรูปนี้', 'Write about this photo')}</b>
+${cs.length ? `<ul>${cs.map((c) => `<li><span><b>${esc(c.from)}</b> ${emoIn(esc(c.text))}</span>${ed || c.mine ? `<button class="mini" data-lb="uncomment" data-v="${esc(c.id)}" aria-label="${L('ลบข้อความ', 'Remove the note')}">✕</button>` : ''}</li>`).join('')}</ul>` : ''}
+<div class="lbcin">${from ? '' : `<input id="lbfrom" maxlength="24" placeholder="${L('ชื่อผู้เขียน เช่น ยาย', 'Your name, e.g. Grandma')}">`}<input id="lbcomm" maxlength="200" enterkeyhint="send" placeholder="${L('เขียนสั้นๆ ถึงรูปนี้', 'A short note about this photo')}"><button class="btn small" data-lb="comment">${L('ส่ง', 'Send')}</button></div></div>`;
 }
 function lbAct(k, btn) {
   const s = lbState; if (!s) return;
   const m = s.list[s.i];
+  if (k === 'comment') {
+    const inp = $('#lbcomm'), fromIn = $('#lbfrom'), text = (inp && inp.value || '').trim();
+    const from = ((fromIn && fromIn.value) || ls('heartfrom') || ls('name') || '').trim();
+    if (!text) return;
+    if (!from) { if (fromIn) fromIn.focus(); toast(L('ใส่ชื่อผู้เขียนก่อน', 'Type your name first')); return; }
+    if (fromIn) ls('heartfrom', from);
+    const id = uid('cm').replace(/[^A-Za-z0-9_-]/g, '');
+    enqueue({ method: 'PUT', url: '/api/b/comments/' + id, body: { media: m.id, from, text }, local: { coll: 'comments', id, row: { media: m.id, trip: m.trip, from, text, at: Date.now(), mine: true } } });
+    drawLb(); return;
+  }
+  if (k === 'uncomment') {
+    if (!armed(btn)) return;
+    enqueue({ method: 'DELETE', url: '/api/b/comments/' + encodeURIComponent(btn.dataset.v), local: { coll: 'comments', id: btn.dataset.v, del: true } });
+    drawLb(); return;
+  }
   if (k === 'close') { lbState = null; drawLb(); render(); return; }
   if (k === 'prev' || k === 'next') { s.i = (s.i + (k === 'next' ? 1 : -1) + s.list.length) % s.list.length; drawLb(); return; }
   if (k === 'star') { m.highlight = !m.highlight; enqueue({ method: 'PATCH', url: '/api/b/media/' + encodeURIComponent(m.id), body: { highlight: m.highlight }, local: { coll: 'media', id: m.id, row: { highlight: m.highlight } } }); drawLb(); return; }
@@ -1532,7 +1569,15 @@ document.addEventListener('click', (e) => {
   if (e.target.id === 'scrim') closeSheet();
 });
 document.addEventListener('input', (e) => { const el = e.target; if (el.id === 'erasetxt') { eraseTyped = el.value; const bt = document.querySelector('[data-a="erase"]'); if (bt) bt.disabled = el.value.trim() !== appName(); } if (el.dataset && el.dataset.emf) emoForm[el.dataset.emf] = el.value; if (el.dataset && el.dataset.fx) { const fx = ls('fx') || {}, v = parseFloat(String(el.value).replace(',', '.')); if (v > 0 && v < 100000) fx[el.dataset.fx] = v; else delete fx[el.dataset.fx]; ls('fx', fx); const t = trip(route().parts[1]), r = $('#fxres'); if (t && r) r.innerHTML = fxResult(t); document.querySelectorAll('.fxa').forEach((x) => { const rows = spendOf(t.id).filter((s2) => s2.cur === x.dataset.fxc); x.textContent = thbLine(rows); }); } if (el.dataset && el.dataset.lc) { const v = ls('lostTel') || ['', '']; v[+el.dataset.lc] = el.value.slice(0, 40); ls('lostTel', v); } if (el.dataset && el.dataset.draft) drafts[el.dataset.draft] = el.value; if (el.dataset && el.dataset.fam && fam) { const [i, f] = el.dataset.fam.split(':'), k = fam.kids[+i]; if (k) { k[f] = el.value; const tag = el.closest('.famkid') && el.closest('.famkid').querySelector('.famtag b'); if (tag && (f === 'name_th' || f === 'name_en')) tag.textContent = L(k.name_th || k.name_en, k.name_en || k.name_th) || L('ลูกคนใหม่', 'New child'); } } if (el.dataset && el.dataset.famp && fam) { const [o, l] = el.dataset.famp.split(':'); fam[o][l] = el.value; const pv = $('.fampreview'), b = famBuilt(); if (pv) { pv.querySelector('b').textContent = L(fam.app.th, fam.app.en) || L(b.app.th, b.app.en); pv.querySelector('small').textContent = L(fam.kicker.th, fam.kicker.en) || L(b.kicker.th, b.kicker.en); } } if (el.id === 'eatq') { eatQ = el.value.trim(); eatFilter(); } if (el.id === 'findq') { findQ = el.value; const r = $('#findres'); if (r) r.innerHTML = findResults(); } if (el.id === 'bookq') { bookQ = el.value; const r = $('#bookres'), t = trip(route().parts[1]); if (r && t) r.innerHTML = bookResults(t); } });
-document.addEventListener('focusout', (e) => { const el = e.target; if (el.dataset && el.dataset.aBlur) saveBlur(el); if (el.id === 'lbcap') saveCaption(el); if (el.id === 'lbtags' || el.id === 'lbplace') saveTags(el); });
+// a child's height on a trip (#/grow): a book-wide field entry, saved when the box is left (an empty box removes it)
+function saveHeight(el) {
+  const t = trip(el.dataset.t), kid = el.dataset.k; if (!t || !kid) return;
+  const v = parseFloat(el.value), id = `${t.id}.field.height.${kid}`, cur = S.entries.find((x) => x.id === id);
+  if (!(v > 30 && v < 220)) { if (cur && !el.value) delEntry(id); return; }
+  const text = String(Math.round(v * 10) / 10); if (cur && cur.text === text) return;
+  putEntry(t, { day: null, kind: 'field', child: kid, first_key: 'height', text }, id);
+}
+document.addEventListener('focusout', (e) => { const el = e.target; if (el.classList && el.classList.contains('ghinp')) saveHeight(el); if (el.dataset && el.dataset.aBlur) saveBlur(el); if (el.id === 'lbcap') saveCaption(el); if (el.id === 'lbtags' || el.id === 'lbplace') saveTags(el); });
 document.addEventListener('focusout', (e) => {   // a voice memo's caption ("who said what") saves when the box is left, like a photo caption
   const el = e.target; if (!el.classList || !el.classList.contains('clipcap')) return;
   const id = el.dataset.v, m = S && S.media.find((x) => x.id === id), cap = el.value.trim();
@@ -1583,7 +1628,8 @@ window.addEventListener('beforeprint', () => { $$('details.ifold:not([open]), de
 window.addEventListener('afterprint', () => { $$('details.ifold[data-print-opened], details.dfold[data-print-opened]').forEach((d) => { d.open = false; delete d.dataset.printOpened; }); });
 document.addEventListener('keydown', (e) => {
   if ((e.key === 'Enter' || e.key === ' ') && e.target.matches && e.target.matches('.tl.plan > li > [role="button"]')) { e.preventDefault(); tlToggle(e.target.parentElement); return; }
-  if (lbState) { if (/^(INPUT|TEXTAREA)$/.test((e.target && e.target.tagName) || '')) return;   // arrows inside the caption box move the cursor, not the photo
+  if (lbState) { if (e.key === 'Enter' && e.target && e.target.id === 'lbcomm') { e.preventDefault(); lbAct('comment'); return; }
+    if (/^(INPUT|TEXTAREA)$/.test((e.target && e.target.tagName) || '')) return;   // arrows inside the caption box move the cursor, not the photo
     if (e.key === 'Escape') lbAct('close'); if (e.key === 'ArrowRight') lbAct('next'); if (e.key === 'ArrowLeft') lbAct('prev'); return; }
   if (e.key === 'Escape') closeSheet();
   if (e.key === 'Enter' && e.target.id === 'askq') { e.preventDefault(); const b = $('#askgo'); if (b && !b.disabled) A.ask(b); }   // Enter = ask the guide
@@ -1602,6 +1648,61 @@ function pinAuto() {
 }
 document.addEventListener('input', (e) => { if (e.target && e.target.id === 'lcode') { $('#lerr').textContent = ''; pinAuto(); } });   // typed on a keyboard too
 let loginBusy = false;
+/* Passkeys (server/passkey.js): the phone's Face ID or fingerprint in place of the family code. The browser's own API, no library:
+   the options come as JSON with base64url strings, the answer goes back the same way. */
+const pkb64 = {
+  dec: (s) => { const b = atob(String(s).replace(/-/g, '+').replace(/_/g, '/') + '==='.slice((String(s).length + 3) % 4)); const u = new Uint8Array(b.length); for (let i = 0; i < b.length; i++) u[i] = b.charCodeAt(i); return u.buffer; },
+  enc: (buf) => { const u = new Uint8Array(buf); let s = ''; for (let i = 0; i < u.length; i++) s += String.fromCharCode(u[i]); return btoa(s).replace(/\+/g, '-').replace(/\//g, '_').replace(/=+$/, ''); },
+};
+const pkOk = () => !!(window.PublicKeyCredential && navigator.credentials && navigator.credentials.get);
+const pkJson = (c) => {
+  const r = c.response, o = { id: c.id, rawId: pkb64.enc(c.rawId), type: c.type, clientExtensionResults: (c.getClientExtensionResults && c.getClientExtensionResults()) || {}, authenticatorAttachment: c.authenticatorAttachment || undefined, response: { clientDataJSON: pkb64.enc(r.clientDataJSON) } };
+  if (r.attestationObject) { o.response.attestationObject = pkb64.enc(r.attestationObject); o.response.transports = r.getTransports ? r.getTransports() : []; }
+  if (r.authenticatorData) { o.response.authenticatorData = pkb64.enc(r.authenticatorData); o.response.signature = pkb64.enc(r.signature); o.response.userHandle = r.userHandle ? pkb64.enc(r.userHandle) : undefined; }
+  return o;
+};
+async function pkPost(url, body) { return fetch(url, { method: 'POST', credentials: 'same-origin', headers: { 'x-mb': '1', 'content-type': 'application/json' }, body: JSON.stringify(body || {}) }); }
+Object.assign(A, {
+  async pkadd(b) {
+    if (!pkOk()) return;
+    b.disabled = true;
+    try {
+      const or = await pkPost('/api/passkey/register/options'); if (!or.ok) throw new Error('options');
+      const o = await or.json();
+      const cred = await navigator.credentials.create({ publicKey: { ...o, challenge: pkb64.dec(o.challenge), user: { ...o.user, id: pkb64.dec(o.user.id) }, excludeCredentials: (o.excludeCredentials || []).map((x) => ({ ...x, id: pkb64.dec(x.id) })) } });
+      const r = await pkPost('/api/passkey/register', { response: pkJson(cred) }); if (!r.ok) throw new Error('verify');
+      toast(L('เพิ่มแล้ว ครั้งหน้าเข้าด้วยลายนิ้วมือหรือใบหน้าได้เลย', 'Added — next time sign in with your fingerprint or face'));
+      DEV.at = 0; devLoad(true);
+    } catch (e) {
+      if (!(e && e.name === 'NotAllowedError')) toast(e && e.name === 'InvalidStateError' ? L('เครื่องนี้เพิ่มไว้แล้ว', 'This phone is already added') : L('เพิ่มไม่ได้ ลองใหม่อีกครั้ง', 'Could not add it, try again'));
+    } finally { b.disabled = false; }
+  },
+  async pkdel(b) {
+    if (!armed(b)) return;
+    b.disabled = true;
+    try { await api('DELETE', '/api/b/passkeys/' + encodeURIComponent(b.dataset.v)); DEV.keys = (DEV.keys || []).filter((k) => k.id !== b.dataset.v); } catch (_) { toast(L('ลบไม่ได้ ลองใหม่อีกครั้ง', 'Could not remove, try again')); }
+    safeRender();
+  },
+  async pklogin(b) {
+    if (loginBusy || !pkOk()) return;
+    loginBusy = true; b.disabled = true; $('#lerr').textContent = '';
+    try {
+      const or = await pkPost('/api/passkey/login/options');
+      if (!or.ok) throw new Error(or.status === 429 ? 'many' : 'none');
+      const o = await or.json();
+      const cred = await navigator.credentials.get({ publicKey: { ...o, challenge: pkb64.dec(o.challenge), allowCredentials: (o.allowCredentials || []).map((x) => ({ ...x, id: pkb64.dec(x.id) })) } });
+      const name = ($('#lname') && $('#lname').value.trim()) || ls('name') || '';
+      const r = await pkPost('/api/passkey/login', { response: pkJson(cred), name });
+      if (!r.ok) throw new Error(r.status === 429 ? 'many' : 'verify');
+      if (name) ls('name', name);
+      try { await load(); render(); } finally { loginBusy = false; } flush(); return;
+    } catch (e) {
+      loginBusy = false; b.disabled = false;
+      if (e && e.name === 'NotAllowedError') return;   // the person closed the phone's own prompt
+      $('#lerr').textContent = e && e.message === 'many' ? L('ลองหลายครั้งเกินไป รอ 10 นาทีแล้วลองใหม่', 'Too many tries — wait 10 minutes') : L('เข้าด้วยลายนิ้วมือหรือใบหน้าไม่ได้ ใส่รหัสแทนได้', 'Could not sign in with the fingerprint or face — use the code instead');
+    }
+  },
+});
 document.addEventListener('submit', async (e) => {
   if (e.target.id === 'ntf') { e.preventDefault(); A.createtrip(null, e); return; }
   if (e.target.id !== 'lf') return;
@@ -1623,10 +1724,14 @@ async function refresh() {
   if (document.hidden || sheetOpen() || flushing || (queue.length && !(allHeld && holdMedia()))) return;
   if ((await load()) === 'ok') safeRender();   // 'ok' = the state changed on the server (a 304 is 'same'): the other parent's caption, ⭐ or mood shows up too
 }
+// the app's name, the children's drawings and the ways in (the code lengths, a passkey) for the sign-in page — at the start and on sign-out
+function brandLoad() {
+  fetch('/api/brand', { credentials: 'same-origin', cache: 'no-store' }).then((r) => (r.ok ? r.json() : null)).then((b) => { if (!b) return; const changed = JSON.stringify(b) !== JSON.stringify(BRAND); BRAND = b; ls('brand', b); const pin = $('#lcode'); if (!S && changed && !(pin && pin.value)) render(); }).catch(() => {});   // never redraw the login form under someone typing
+}
 (async function boot() {
   if ('serviceWorker' in navigator) navigator.serviceWorker.register('/sw.js').catch(() => {});
   // the app's name and the children's drawings for the login page (kept on the phone for the next cold start)
-  fetch('/api/brand', { credentials: 'same-origin', cache: 'no-store' }).then((r) => (r.ok ? r.json() : null)).then((b) => { if (!b) return; const changed = JSON.stringify(b) !== JSON.stringify(BRAND); BRAND = b; ls('brand', b); const pin = $('#lcode'); if (!S && changed && !(pin && pin.value)) render(); }).catch(() => {});   // never redraw the login form under someone typing
+  brandLoad();
   queue = await idb.all();
   seq = Math.max(seq, ...queue.map((o) => o.seq || 0));
   // open from the phone's own copy at once, then ask the server (a 304 when nothing changed) and redraw only if something did

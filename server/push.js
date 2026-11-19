@@ -173,8 +173,9 @@ function create({ pool, family, A, sender = (sub, payload, opt) => webpush.sendN
       const th = c.name_th || 'ลูก', en = c.name_en || 'the children';
       list.push({ key: `capsule.${c.id}`, msg: (lang) => JSON.stringify({ ...(lang === 'en' ? { title: 'A letter may be opened today 📬', body: `The letter to ${c.child === 'both' ? 'the children' : en} you sealed long ago` } : { title: 'วันนี้เปิดจดหมายได้แล้ว 📬', body: `จดหมายถึง${c.child === 'both' ? 'ลูกๆ' : th}ที่ปิดผนึกไว้` }), tag: `capsule.${c.id}`, url: '/#/capsules' }) });
     }
-    if (!list.length) return 0;
-    const subs = (await pool.query('SELECT * FROM push_subs WHERE family_id=$1', [family])).rows;
+    const nRel = await relatives(trips, now);
+    if (!list.length) return nRel;
+    const subs = (await pool.query("SELECT * FROM push_subs WHERE family_id=$1 AND role='editor'", [family])).rows;
     let n = 0;
     for (const r of list) {
       const claimed = (await pool.query('INSERT INTO push_sent (key) VALUES ($1) ON CONFLICT DO NOTHING RETURNING key', [r.key])).rowCount;
@@ -183,13 +184,54 @@ function create({ pool, family, A, sender = (sub, payload, opt) => webpush.sendN
     }
     return n;
   }
+  /* Today's new photos, for the relatives (owner, Nov 2026: "ญาติได้แจ้งเตือนเมื่อมีรูปวันนี้"): at 20:30 in the book's own time, each
+     book that got photos since that morning tells the relatives' phones whose group may see it — once a day per book: the book's name
+     and how many, never a photo, a caption or a child's name; it opens the memory book. A relatives' phone hears nothing else. */
+  const REL_AT = process.env.PUSH_RELATIVES_AT || '20:30';
+  async function relatives(trips, now = Date.now()) {
+    const subs = (await pool.query("SELECT s.*, g.trips g_trips FROM push_subs s LEFT JOIN viewer_groups g ON g.id = s.group_id WHERE s.family_id=$1 AND s.role='viewer'", [family])).rows;
+    if (!subs.length) return 0;
+    let n = 0;
+    for (const t of trips) {
+      if (!tzOk(t.tz)) continue;
+      const date = new Intl.DateTimeFormat('en-CA', { timeZone: t.tz, year: 'numeric', month: '2-digit', day: '2-digit' }).format(now);
+      const at = zoned(date, REL_AT, t.tz);
+      if (now < at || now > at + 3 * 36e5) continue;
+      const since = new Date(zoned(date, '00:00', t.tz));
+      const c = (await pool.query("SELECT count(*)::int n FROM media WHERE trip_id=$1 AND (mime IS NULL OR mime LIKE 'image/%') AND id NOT LIKE 'dr-%' AND created_at >= $2", [t.trip, since])).rows[0].n;
+      if (!c) continue;
+      const who = subs.filter((s) => !s.group_id ? true : Array.isArray(s.g_trips) && s.g_trips.includes(t.trip));   // a deleted group's phone (no row) hears nothing
+      if (!who.length) continue;
+      if (!(await pool.query('INSERT INTO push_sent (key) VALUES ($1) ON CONFLICT DO NOTHING RETURNING key', [`${t.trip}.rel.${date}`])).rowCount) continue;
+      const name = t.title || {};
+      for (const s of who) {
+        if (s.group_id && !s.g_trips) continue;
+        const msg = s.lang === 'en'
+          ? { title: 'New photos today 📷', body: `${name.en || name.th || 'Our book'}: ${c} new photo${c > 1 ? 's' : ''} — tap to see them`, tag: `rel.${t.trip}`, url: `/#/t/${t.trip}/book` }
+          : { title: 'รูปใหม่ของวันนี้ 📷', body: `${name.th || name.en || 'เล่มของเรา'} มีรูปใหม่ ${c} รูป แตะเพื่อดู`, tag: `rel.${t.trip}`, url: `/#/t/${t.trip}/book` };
+        if (await send(s, JSON.stringify(msg))) n++;
+      }
+    }
+    return n;
+  }
+  // a relative wrote under a photo: the grown-ups' phones hear about it — like a heart, at most one push per 10 minutes, no name, no text
+  async function comment({ trip }, now = Date.now()) {
+    const key = `comment.${Math.floor(now / HEART_GAP)}`;
+    if (!(await pool.query('INSERT INTO push_sent (key) VALUES ($1) ON CONFLICT DO NOTHING RETURNING key', [key])).rowCount) return 0;
+    const subs = (await pool.query("SELECT * FROM push_subs WHERE family_id=$1 AND role='editor'", [family])).rows;
+    let n = 0;
+    for (const s of subs) if (await send(s, JSON.stringify(s.lang === 'en'
+      ? { title: 'A note under a photo 💬', body: 'Someone in the family wrote under one of the photos', tag: 'comment', url: `/#/t/${trip}/book` }
+      : { title: 'ญาติเขียนถึงรูปของเด็กๆ 💬', body: 'มีข้อความใหม่ใต้รูปในเล่ม แตะเพื่ออ่าน', tag: 'comment', url: `/#/t/${trip}/book` }))) n++;
+    return n;
+  }
   // a relative sent a heart: the grown-ups' phones hear about it (at most one push per 10 minutes, so a burst of hearts is one
   // nudge). Like every push here it carries no names and no heart text — only that one arrived — and opens the book's hearts page.
   const HEART_GAP = 10 * 60000;
   async function heart({ trip }, now = Date.now()) {
     const key = `heart.${Math.floor(now / HEART_GAP)}`;
     if (!(await pool.query('INSERT INTO push_sent (key) VALUES ($1) ON CONFLICT DO NOTHING RETURNING key', [key])).rowCount) return 0;
-    const subs = (await pool.query('SELECT * FROM push_subs WHERE family_id=$1', [family])).rows, kids = await kidNames();
+    const subs = (await pool.query("SELECT * FROM push_subs WHERE family_id=$1 AND role='editor'", [family])).rows, kids = await kidNames();
     const msg = (lang) => JSON.stringify(lang === 'en'
       ? { title: 'A heart for the kids 💗', body: `Someone in the family sent one — open it with ${kids.en} at bedtime`, tag: 'heart', url: `/#/t/${trip}/hearts` }
       : { title: 'ญาติส่งหัวใจมาให้เด็กๆ 💗', body: `เปิดดูด้วยกันกับ${kids.th}ก่อนนอนนะ`, tag: 'heart', url: `/#/t/${trip}/hearts` });
@@ -200,7 +242,7 @@ function create({ pool, family, A, sender = (sub, payload, opt) => webpush.sendN
   // the owner's alerts (server/alerts.js): sent once per key, to every grown-up's phone; th/en = {title, body}, url = the page that explains it
   async function alert({ key, th, en, url }) {
     if (!(await pool.query('INSERT INTO push_sent (key) VALUES ($1) ON CONFLICT DO NOTHING RETURNING key', [key])).rowCount) return 0;
-    const subs = (await pool.query('SELECT * FROM push_subs WHERE family_id=$1', [family])).rows;
+    const subs = (await pool.query("SELECT * FROM push_subs WHERE family_id=$1 AND role='editor'", [family])).rows;
     let n = 0;
     for (const s of subs) if (await send(s, JSON.stringify({ ...(s.lang === 'en' ? en : th), tag: key, url }))) n++;
     return n;
@@ -209,7 +251,7 @@ function create({ pool, family, A, sender = (sub, payload, opt) => webpush.sendN
   async function inbox({ trip }, now = Date.now()) {
     const key = `inbox.${Math.floor(now / HEART_GAP)}`;
     if (!(await pool.query('INSERT INTO push_sent (key) VALUES ($1) ON CONFLICT DO NOTHING RETURNING key', [key])).rowCount) return 0;
-    const subs = (await pool.query('SELECT * FROM push_subs WHERE family_id=$1', [family])).rows;
+    const subs = (await pool.query("SELECT * FROM push_subs WHERE family_id=$1 AND role='editor'", [family])).rows;
     const msg = (lang) => JSON.stringify(lang === 'en'
       ? { title: 'Photos from the family 📷', body: 'Someone sent photos for a book — have a look before they go in', tag: 'inbox', url: '/#/inbox' }
       : { title: 'ญาติส่งรูปมาให้ 📷', body: 'เปิดดูก่อนว่าจะใส่ในเล่มไหม', tag: 'inbox', url: '/#/inbox' });
@@ -222,7 +264,7 @@ function create({ pool, family, A, sender = (sub, payload, opt) => webpush.sendN
   async function draft({ trip, title, url }, now = Date.now()) {   // url: a planned book's draft opens the drafts page (no book yet)
     const key = `draft.${trip}.${now}`;
     if (!(await pool.query('INSERT INTO push_sent (key) VALUES ($1) ON CONFLICT DO NOTHING RETURNING key', [key])).rowCount) return 0;
-    const subs = (await pool.query('SELECT * FROM push_subs WHERE family_id=$1', [family])).rows, n0 = title || {};
+    const subs = (await pool.query("SELECT * FROM push_subs WHERE family_id=$1 AND role='editor'", [family])).rows, n0 = title || {};
     const msg = (lang) => JSON.stringify(lang === 'en'
       ? { title: 'The draft is ready ✨', body: `${n0.en || n0.th || 'Your book'} — check it day by day`, tag: 'draft-' + trip, url: url || `/#/t/${trip}/draft/review` }
       : { title: 'ร่างเล่มพร้อมแล้ว ✨', body: `${n0.th || n0.en || 'เล่มของเรา'} — เปิดมาตรวจทีละวันได้เลย`, tag: 'draft-' + trip, url: url || `/#/t/${trip}/draft/review` });
@@ -234,7 +276,7 @@ function create({ pool, family, A, sender = (sub, payload, opt) => webpush.sendN
   async function reel({ trip, title }, now = Date.now()) {
     const key = `reel.${trip}.${now}`;
     if (!(await pool.query('INSERT INTO push_sent (key) VALUES ($1) ON CONFLICT DO NOTHING RETURNING key', [key])).rowCount) return 0;
-    const subs = (await pool.query('SELECT * FROM push_subs WHERE family_id=$1', [family])).rows, n0 = title || {};
+    const subs = (await pool.query("SELECT * FROM push_subs WHERE family_id=$1 AND role='editor'", [family])).rows, n0 = title || {};
     const msg = (lang) => JSON.stringify(lang === 'en'
       ? { title: 'The trip film is ready 🎬', body: `${n0.en || n0.th || 'Your book'} — watch it and send it to family`, tag: 'reel-' + trip, url: `/#/t/${trip}/book` }
       : { title: 'คลิปสรุปทริปพร้อมแล้ว 🎬', body: `${n0.th || n0.en || 'เล่มของเรา'} — เปิดดูแล้วส่งให้ญาติได้เลย`, tag: 'reel-' + trip, url: `/#/t/${trip}/book` });
@@ -248,31 +290,33 @@ function create({ pool, family, A, sender = (sub, payload, opt) => webpush.sendN
 
   const r = express.Router();
   const json = express.json({ limit: '10kb' });
-  r.get('/api/b/push/key', A.requireEditor, (_req, res) => res.json({ key: KEYS.publicKey, lead: LEAD / 60000 }));
-  r.post('/api/b/push/sub', A.requireEditor, json, async (req, res) => {
+  // a relative's phone may switch reminders on too: it is kept with its role and group and hears only today's new photos
+  r.get('/api/b/push/key', A.requireUser, (_req, res) => res.json({ key: KEYS.publicKey, lead: LEAD / 60000 }));
+  r.post('/api/b/push/sub', A.requireUser, json, async (req, res) => {
     const s = req.body || {}, k = s.keys || {};
     if (!PUSH_HOST.test(String(s.endpoint || '')) || !k.p256dh || !k.auth || String(k.p256dh).length > 200 || String(k.auth).length > 100) return res.status(400).json({ error: 'bad-sub' });
     const id = crypto.createHash('sha256').update(s.endpoint).digest('hex'), lang = s.lang === 'en' ? 'en' : 'th';
-    await pool.query(`INSERT INTO push_subs (id, family_id, endpoint, p256dh, auth, lang) VALUES ($1,$2,$3,$4,$5,$6)
-      ON CONFLICT (id) DO UPDATE SET p256dh=EXCLUDED.p256dh, auth=EXCLUDED.auth, lang=EXCLUDED.lang`, [id, family, s.endpoint, k.p256dh, k.auth, lang]);
+    const role = req.user.role === 'editor' ? 'editor' : 'viewer';
+    await pool.query(`INSERT INTO push_subs (id, family_id, endpoint, p256dh, auth, lang, role, group_id) VALUES ($1,$2,$3,$4,$5,$6,$7,$8)
+      ON CONFLICT (id) DO UPDATE SET p256dh=EXCLUDED.p256dh, auth=EXCLUDED.auth, lang=EXCLUDED.lang, role=EXCLUDED.role, group_id=EXCLUDED.group_id`, [id, family, s.endpoint, k.p256dh, k.auth, lang, role, role === 'viewer' ? req.user.group || null : null]);
     res.json({ ok: true });
   });
-  r.post('/api/b/push/unsub', A.requireEditor, json, async (req, res) => {
+  r.post('/api/b/push/unsub', A.requireUser, json, async (req, res) => {
     const e = String((req.body || {}).endpoint || '');
     await pool.query('DELETE FROM push_subs WHERE id=$1 AND family_id=$2', [crypto.createHash('sha256').update(e).digest('hex'), family]);
     res.json({ ok: true });
   });
   // "send me a test" — only to the phone that asks
-  r.post('/api/b/push/test', A.requireEditor, json, async (req, res) => {
+  r.post('/api/b/push/test', A.requireUser, json, async (req, res) => {
     const e = String((req.body || {}).endpoint || '');
     const s = (await pool.query('SELECT * FROM push_subs WHERE id=$1 AND family_id=$2', [crypto.createHash('sha256').update(e).digest('hex'), family])).rows[0];
     if (!s) return res.status(404).json({ error: 'not-subscribed' });
     const th = s.lang === 'th';
     const why = {};
-    const ok = await send(s, JSON.stringify({ title: th ? 'ทดสอบการเตือน' : 'Test reminder', body: th ? `ใช้ได้แล้ว — จะเตือนก่อนทุกกิจกรรม ${LEAD / 60000} นาที` : `Working — you will hear ${LEAD / 60000} min before each step`, tag: 'test', url: '/' }), why);
+    const ok = await send(s, JSON.stringify({ title: th ? 'ทดสอบการเตือน' : 'Test reminder', body: s.role === 'viewer' ? (th ? `ใช้ได้แล้ว — จะเตือนตอนค่ำเมื่อมีรูปใหม่ของวันนั้น` : 'Working — you will hear in the evening when there are new photos that day') : th ? `ใช้ได้แล้ว — จะเตือนก่อนทุกกิจกรรม ${LEAD / 60000} นาที` : `Working — you will hear ${LEAD / 60000} min before each step`, tag: 'test', url: '/' }), why);
     res.status(ok ? 200 : 502).json(ok ? { ok } : { ok, status: why.status, reason: why.reason, apple: /push\.apple\.com/.test(s.endpoint) });
   });
-  return { router: r, tick, heart, draft, reel, inbox, alert, start, stop };
+  return { router: r, tick, heart, draft, reel, inbox, alert, relatives, comment, start, stop };
 }
 
 module.exports = { init, create, due, extras, zoned, short, subject, LEAD };

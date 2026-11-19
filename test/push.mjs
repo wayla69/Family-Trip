@@ -55,7 +55,9 @@ const post = (u, b, c = ck) => fetch(BASE + u, { method: 'POST', headers: { 'x-m
 const key = await (await fetch(BASE + '/api/b/push/key', { headers: { cookie: ck } })).json();
 ok(/^[A-Za-z0-9_-]{80,}$/.test(key.key) && key.lead === 30, 'the phone gets the server’s public key and the 30-minute lead');
 const sub = { endpoint: 'https://fcm.googleapis.com/fcm/send/abc123', keys: { p256dh: 'BOr8Z1aQ0Vb7Z_qX8kJd3oWwz0x6hQZ0bX4rjQ0L6lE5gP9kq8nV2u3T1yR0wS7aZ', auth: 'kq1F0v8wQ2mZ7xY3cR5tNg' }, lang: 'en' };
-ok((await post('/api/b/push/sub', sub, vck)).status === 403 && (await fetch(BASE + '/api/b/push/key', { headers: { cookie: vck } })).status === 403, 'relatives (view-only) cannot switch reminders on');
+// a relative's phone may switch reminders on (migration 0038): it is kept as a relative's and hears only today's new photos
+const vsub = { ...sub, endpoint: 'https://fcm.googleapis.com/fcm/send/rel456' };
+ok((await post('/api/b/push/sub', vsub, vck)).ok && (await fetch(BASE + '/api/b/push/key', { headers: { cookie: vck } })).ok && (await post('/api/b/push/unsub', { endpoint: vsub.endpoint }, vck)).ok, 'relatives may switch reminders on (and off)');
 ok((await post('/api/b/push/sub', { ...sub, endpoint: 'http://fcm.googleapis.com/fcm/send/x' })).status === 400 && (await post('/api/b/push/sub', { endpoint: sub.endpoint })).status === 400, 'only an https endpoint with its keys is accepted');
 ok((await post('/api/b/push/sub', { ...sub, endpoint: 'https://internal.example/fcm.googleapis.com/x' })).status === 400 && (await post('/api/b/push/sub', { ...sub, endpoint: 'https://web.push.apple.com/QAbc-123' })).ok && (await post('/api/b/push/unsub', { endpoint: 'https://web.push.apple.com/QAbc-123' })).ok, 'only the browsers’ push services (Google, Apple, Mozilla, Microsoft) — never another address'); 
 ok((await post('/api/b/push/sub', sub)).ok && (await post('/api/b/push/sub', { ...sub, lang: 'th' })).ok, 'a grown-up’s phone subscribes (again = update, e.g. the language)');
@@ -93,6 +95,22 @@ ok((await pool.query("SELECT count(*)::int n FROM push_sent WHERE key LIKE 'hear
   ok(await R.heart({ trip: 'hk-macau-2026' }, t0) === 1 && sent[n0].p.url === '/#/t/hk-macau-2026/hearts' && sent[n0].p.tag === 'heart', 'heart: the parents\' phone hears a heart arrived (opens the hearts page)');
   ok(!/มีมี่ได้|คุณยาย|from|💗.*:/.test(sent[n0].p.body) && sent[n0].p.body.length <= 140, 'heart: no sender name or heart text on the lock screen');
   ok(await R.heart({ trip: 'hk-macau-2026' }, t0 + 5 * 60000) === 0 && await R.heart({ trip: 'hk-macau-2026' }, t0 + 11 * 60000) === 1, 'heart: a burst within 10 minutes is one nudge'); }
+// today's new photos, for the relatives: 20:30 in the book's time, once a day per book, the book's name and how many — only to a
+// relative's phone, and the parents' nudges never reach a relative's phone
+{ ok((await post('/api/b/push/sub', vsub, vck)).ok, 'a relative turns the evening photo note on');
+  const tz = 'Asia/Hong_Kong', today = new Intl.DateTimeFormat('en-CA', { timeZone: tz, year: 'numeric', month: '2-digit', day: '2-digit' }).format(Date.now());
+  await pool.query("INSERT INTO media (id, family_id, trip_id, day_index, storage_key, mime) VALUES ('ph-rel-0001','family','hk-macau-2026',1,'p/hk-macau-2026/ph-rel-0001.jpg','image/jpeg') ON CONFLICT DO NOTHING");
+  const t2030 = PUSH.zoned(today, '20:30', tz), trips = [{ trip: 'hk-macau-2026', tz, title: { th: 'ฮ่องกง', en: 'Hong Kong' } }];
+  const n0 = sent.length;
+  ok(await R.relatives(trips, t2030 - 60000) === 0, 'relatives: nothing before 20:30 in the book’s time');
+  const got = await R.relatives(trips, t2030 + 60000), msg = sent[n0];
+  ok(got === 1 && msg && msg.s.endpoint === vsub.endpoint && msg.p.url === '/#/t/hk-macau-2026/book' && /Hong Kong: \d+ new photo/.test(msg.p.body) && !/ph-rel|caption/i.test(JSON.stringify(msg.p)),
+    `relatives: at 20:30 a relative's phone hears how many new photos the book got, once (${msg && msg.p.body})`);
+  ok(await R.relatives(trips, t2030 + 5 * 60000) === 0, 'relatives: …once a day');
+  const n1 = sent.length; await R.heart({ trip: 'hk-macau-2026' }, Date.UTC(2026, 11, 7, 12, 0));
+  ok(sent.slice(n1).every((x) => x.s.endpoint !== vsub.endpoint) && sent.length > n1, 'relatives: a heart nudge goes to the parents’ phones only, never a relative’s');
+  const n2 = sent.length; ok(await R.comment({ trip: 'hk-macau-2026' }, Date.UTC(2026, 11, 7, 13, 0)) >= 1 && sent[n2].p.tag === 'comment' && sent[n2].s.endpoint !== vsub.endpoint, 'comment: a relative’s line under a photo nudges the parents’ phones, no name or text');
+  await pool.query("DELETE FROM media WHERE id='ph-rel-0001'"); await post('/api/b/push/unsub', { endpoint: vsub.endpoint }, vck); }
 // the helper finished a photo book's draft: one nudge that opens the page to check it, the book's name only
 { const n0 = sent.length, t0 = Date.UTC(2026, 11, 6, 13, 0);
   ok(await R.draft({ trip: 'snap-x', title: { th: 'เขาใหญ่ 3 วัน', en: 'Khao Yai, 3 days' } }, t0) >= 1 && sent[n0].p.url === '/#/t/snap-x/draft/review' && /เขาใหญ่ 3 วัน|Khao Yai, 3 days/.test(sent[n0].p.body) && sent[n0].p.body.length <= 140,
