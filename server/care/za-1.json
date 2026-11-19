@@ -6,6 +6,7 @@
  ]},
  {"place":"za-kruger","places":[
   {"name":"Mediclinic Nelspruit","kind":"hospital","area":{"th":"เนลสพรุต (เอ็มบอมเบลา)","en":"Nelspruit (Mbombela)"},"what":{"th":"โรงพยาบาลเอกชน มีห้องฉุกเฉิน","en":"Private hospital with an emergency department"},"why":{"th":"โรงพยาบาลเอกชนเต็มรูปแบบที่ใกล้ครูเกอร์ตอนใต้ ขับรถราวหนึ่งชั่วโมงขึ้นไป","en":"The nearest full private hospital to southern Kruger, an hour or more by road"},"q":"Mediclinic Nelspruit, 1 Weir Street, West Acres, Mbombela","ok":"2026-11"},
-  {"name":"Rob Ferreira Hospital","kind":"hospital","area":{"th":"เนลสพรุต (เอ็มบอมเบลา)","en":"Nelspruit (Mbombela)"},"what":{"th":"โรงพยาบาลรัฐส่งต่อประจำภูมิภาค มีห้องฉุกเฉิน","en":"Regional public referral hospital with an emergency department"},"why":{"th":"ไกลจากอุทยานพอๆ กับมีดิคลินิก","en":"About as far from the park as Mediclinic"},"q":"Rob Ferreira Hospital, Mbombela","ok":"2026-11"}
+  {"name":"Rob Ferreira Hospital","kind":"hospital","area":{"th":"เนลสพรุต (เอ็มบอมเบลา)","en":"Nelspruit (Mbombela)"},"what":{"th":"โรงพยาบาลรัฐส่งต่อประจำภูมิภาค มีห้องฉุกเฉิน","en":"Regional public referral hospital with an emergency department"},"why":{"th":"ไกลจากอุทยานพอๆ กับมีดิคลินิก","en":"About as far from the park as Mediclinic"},"q":"Rob Ferreira Hospital, Mbombela","ok":"2026-11"},
+  {"name":"Lowveld National Botanical Garden","kind":"play","area":{"th":"มบอมเบลา (เนลสปรุต)","en":"Mbombela (Nelspruit)"},"what":{"th":"สวนพฤกษศาสตร์แห่งชาติ มีลานเด็กเล่นและที่ปิกนิก","en":"National botanical garden with a children's play area and picnic lawns"},"why":{"th":"สนามหญ้ากว้าง มีร้านอาหารในสวน","en":"Wide lawns and a restaurant inside the garden"},"q":"Lowveld National Botanical Garden, Mbombela, South Africa","ok":"2026-11"}
  ]}
 ]}
