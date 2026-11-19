@@ -138,25 +138,6 @@ function snapNamesPrompt(k) {
     + 'Thai: natural Thai a parent would write, at most 30 Thai letters, place names in Thai script, no ค่ะ/ครับ. One fitting emoji per day. '
     + 'Reply with JSON only — no prose, no code fence: {"title":{"th":"…","en":"…"},"days":[{"day":1,"th":"…","en":"…","emoji":"🌻"}]} with one entry for every day in the facts.';
 }
-// 'plannext' (owner, Nov 2026: "ผู้ช่วยวางแผนทริปหน้า"): a gentle first plan for the next trip, from what this family likes and the
-// lessons of their past trips (words only) — JSON in the shape of docs/handoff/plan.schema.json, which plan-to-seed turns into a book
-function planNextPrompt(k) {
-  return `Plan the next family trip for these parents and their children (${k.who.en}). The facts give the place, how many days, the first date, `
-    + 'what this family likes and the lessons from their past trips — follow them (the children\'s rest, short travel days, the food they enjoy). '
-    + 'A gentle, child-paced plan: 4–7 timeline steps a day, each with its time HH:MM, the first step of each day marked "go": true when the family leaves for the day. '
-    + 'Only real, well-known public places you are sure of — leave out anything you are not sure of. No prices, no bookings, no hotel names, no phone numbers. '
-    + 'English: British spelling, sentence case. Thai: natural Thai a parent would write, place names in Thai script (transliterated), no ค่ะ/ครับ. '
-    + 'Each step\'s headline h: one emoji, then at most 6 short, fun words. A day\'s title: at most 5 words. '
-    + 'Reply with JSON only — no prose, no code fence: {"title":{"th":"…","en":"…"},"sub":{"th":"…","en":"…"},"tz":"Asia/Tokyo","place":{"th":"…","en":"…","flag":"🇯🇵"},'
-    + '"days":[{"title":{"th":"…","en":"…"},"emoji":"🌸","plan":[{"t":"09:00","th":"…","en":"…","h":{"th":"…","en":"…"},"go":true}],'
-    + '"planned":[{"th":"…","en":"…","kind":"place"}],"tips":[{"th":"…","en":"…"}]}]} with exactly one entry in days for every day asked.';
-}
-// its answer → the plan object (days and the fields above), or null
-function parsePlan(text) {
-  const a = text.indexOf('{'), b = text.lastIndexOf('}'); if (a < 0 || b < a) return null;
-  let j; try { j = JSON.parse(text.slice(a, b + 1)); } catch (_) { return null; }
-  return j && typeof j === 'object' && Array.isArray(j.days) && j.days.length ? j : null;
-}
 // its answer → {title, days: {<day number>: {th, en, emoji}}}, or null
 function parseNames(text) {
   const a = text.indexOf('{'), b = text.lastIndexOf('}'); if (a < 0 || b < a) return null;
@@ -169,10 +150,9 @@ function parseNames(text) {
 }
 // the memory game is JSON for the app, not words for the family: it skips the "sound like the parents" tail
 const NOBODY = { n: 0, who: { en: 'the children', th: 'เด็กๆ' }, names: { en: 'the children', th: 'ลูกๆ' }, first: null, pairs: 'The children' };
-function prompt({ lang, whole, mode, kids }) { return basePrompt({ lang, whole, mode, kids: kids || NOBODY }) + (mode === 'mquiz' || mode === 'snapnames' || mode === 'plannext' ? '' : NATURAL[lang === 'en' ? 'en' : 'th']); }
+function prompt({ lang, whole, mode, kids }) { return basePrompt({ lang, whole, mode, kids: kids || NOBODY }) + (mode === 'mquiz' || mode === 'snapnames' ? '' : NATURAL[lang === 'en' ? 'en' : 'th']); }
 function basePrompt({ lang, whole, mode, kids: k }) {
   if (mode === 'snapnames') return snapNamesPrompt(k);
-  if (mode === 'plannext') return planNextPrompt(k);
   if (mode === 'sum') return sumPrompt(lang, k);
   if (mode === 'talk') return talkPrompt(lang, k);
   if (mode === 'letter') return letterPrompt(lang, k);
@@ -220,7 +200,7 @@ const clean = (s) => s.replace(/^#+\s*/gm, '').replace(/\*\*|__|`/g, '').replace
 async function writeStory({ lang, whole, mode, facts, kids, onText, signal }) {
   const stream = api().beta.messages.stream({
     model: MODEL(),
-    max_tokens: mode === 'plannext' ? 12000 : !mode || mode === 'story' || mode === 'letter' ? 4000 : mode === 'likes' || mode === 'lessons' || mode === 'fore' || mode === 'snapnames' ? 2000 : 1000,
+    max_tokens: !mode || mode === 'story' || mode === 'letter' ? 4000 : mode === 'likes' || mode === 'lessons' || mode === 'fore' || mode === 'snapnames' ? 2000 : 1000,
     betas: ['server-side-fallback-2026-07-01'],
     fallbacks: 'default',                  // a policy decline is re-run server-side on Anthropic's recommended fallback
     output_config: { effort: 'low' },      // a short story from given facts needs little reasoning
@@ -364,4 +344,4 @@ STOPS: ${stops.length ? stops.map((s) => `"${s}"`).join(', ') : '(none)'}`;
   return out;
 }
 
-module.exports = { prompt, askPrompt, parseQuiz, parseNames, parsePlan, enabled, photoEnabled, writeStory, askGuide, translate, describePhotos, TAGS, clean, onUsage, SDK };
+module.exports = { prompt, askPrompt, parseQuiz, parseNames, enabled, photoEnabled, writeStory, askGuide, translate, describePhotos, TAGS, clean, onUsage, SDK };

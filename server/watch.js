@@ -21,7 +21,7 @@ function label(method, url) {
   return `${method} /${out.join('/').replace(/(\/:)+$/, '/:')}`;
 }
 // long on purpose: streams and big jobs are never "slow"
-const LONG = /^(GET|POST|PUT) \/(api\/b\/(story|ask|lessons|translate|likes|pdf|pdf-year|keep|photos|import|plannext|reel|reel-year|snap|art|backup)|api\/(backup|import|export)|media)\b|^PUT \/api\/b\/(media|inbox)\//;
+const LONG = /^(GET|POST|PUT) \/(api\/b\/(story|ask|lessons|translate|likes|pdf|pdf-year|keep|photos|import|planner|reel|reel-year|snap|art|backup)|api\/(backup|import|export)|media)\b|^PUT \/api\/b\/(media|inbox)\//;
 
 function create({ pool, A }) {
   const q = async (s, a) => (await pool.query(s, a)).rows;

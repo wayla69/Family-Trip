@@ -570,6 +570,32 @@ ok(!(await state()).comments.some((c) => c.media === 'ph-test-0001'), 'a photo d
   ok((await fetch(BASE + '/api/b/health/errors', { method: 'DELETE', headers: H })).ok && !(await (await fetch(BASE + '/api/b/health/errors', { headers: { cookie: ck } })).json()).errors.length, 'phone problems: the parents can clear the list');
   let slow = 0; for (let k = 0; k < 25; k++) if ((await err({ ...one, line: 1000 + k })).status === 429) slow++;
   ok(slow >= 1, `phone problems: a phone sending in a loop is slowed (${slow} of 25 refused)`); }
+// the library of places to eat with the app's built-in list (server/eats): the towns carry their country; a built-in place says so;
+// a place of our own book wins over a built-in one of the same name
+{ const lib = await (await fetch(BASE + '/api/b/eatlib', { headers: { cookie: ck } })).json();
+  const tok = (lib.towns || []).find((t) => t.tkey === 'tokyo'), mac = (lib.towns || []).find((t) => t.tkey === 'macau');
+  ok(lib.towns.length > 100 && tok && tok.n >= 12 && !tok.own && tok.country && tok.country.cc === 'jp' && mac && mac.own > 100 && mac.n >= mac.own, `eat library: the built-in list fills the towns of the picture library, each with its country; our own books' towns count their own (${lib.towns.length} towns · Tokyo ${tok && tok.n} · Macau ${mac && mac.n}/${mac && mac.own} ours)`);
+  const tk = (await (await fetch(BASE + '/api/b/eatlib?town=tokyo', { headers: { cookie: ck } })).json()).places;
+  // a built-in place is marked as one; only a row whose file says a web search confirmed it ("ok": "YYYY-MM") carries "open" and that month
+  const E0 = createRequire(import.meta.url)('../server/eatlib.js'), idx0 = JSON.parse(fs.readFileSync('public/stock/index.json', 'utf8'));
+  const okNames = new Set(E0.starterFiles().flatMap((f) => E0.starterRows(f, idx0)).filter((x) => x.tkey === 'tokyo' && x.st === 'open').map((x) => x.name));
+  ok(tk.every((x) => x.src === 'starter' && x.what && x.pr && x.q && (okNames.has(x.name) ? x.st === 'open' && /^20\d\d-\d\d-01$/.test(x.checked) : !x.st && !x.checked)),
+    `eat library: a built-in place is marked as one — not checked, unless its file says a web search confirmed it (${okNames.size} of ${tk.length} in Tokyo confirmed)`);
+  const dup = (await pool.query("SELECT name, count(*)::int n FROM eat_lib WHERE tkey='macau' GROUP BY nkey, name HAVING count(*) > 1")).rows;
+  // the names our Hong Kong–Macau book and the built-in Macau file both hold: each is one row, and it is the book's
+  const E = createRequire(import.meta.url)('../server/eatlib.js'), idx = JSON.parse(fs.readFileSync('public/stock/index.json', 'utf8')), seed = JSON.parse(fs.readFileSync('server/seeds/hk-macau-2026.json', 'utf8'));
+  const mine = new Set(E.rowsOfBook(seed.info.restaurants, idx).filter((x) => x.tkey === 'macau').map((x) => x.nkey)), shared = E.starterRows('mo-1.json', idx).filter((x) => mine.has(x.nkey)).map((x) => x.nkey);
+  const both = shared.length ? (await pool.query("SELECT src FROM eat_lib WHERE tkey='macau' AND nkey = ANY($1)", [shared])).rows : [];
+  ok(!dup.length && both.length === shared.length && both.every((x) => x.src === 'book'), `eat library: a place in both our book and the built-in list is kept once, as the book's (${shared.length} shared: ${shared.slice(0, 4).join(', ')})`);
+  // a built-in place the files no longer hold leaves the library on the next read of the files; one the parents took out keeps its mark
+  const fam = (await pool.query("SELECT family_id FROM eat_lib LIMIT 1")).rows[0].family_id, mk = (name) => ({ ...E.starterRows('jp-1.json', idx)[0], name, nkey: E.norm(name) });
+  await E.put(pool, fam, [mk('Closed Last Year Diner'), mk('Parents Took This Out')], 'starter', null);
+  await pool.query("UPDATE eat_lib SET gone = true WHERE nkey = $1", [E.norm('Parents Took This Out')]);
+  const nBefore = (await pool.query("SELECT count(*)::int n FROM eat_lib WHERE NOT gone")).rows[0].n;
+  await pool.query("DELETE FROM settings WHERE key='eat_starter'"); await E.syncStarter(pool, fam, idx);
+  const left = (await pool.query("SELECT nkey, gone FROM eat_lib WHERE nkey = ANY($1)", [[E.norm('Closed Last Year Diner'), E.norm('Parents Took This Out')]])).rows;
+  const nAfter = (await pool.query("SELECT count(*)::int n FROM eat_lib WHERE NOT gone")).rows[0].n, ours = (await pool.query("SELECT count(*)::int n FROM eat_lib WHERE src='book'")).rows[0].n;
+  ok(left.length === 1 && left[0].gone && nAfter === nBefore - 1 && ours > 400, `eat library: a built-in place no longer in the files leaves the library; the parents' removal and our books' places stay (${nBefore} → ${nAfter}, ${ours} from books, left ${JSON.stringify(left)})`); }
 await pool.end();
 
 console.log(failures ? `\n${failures} FAILED` : '\nALL PASSED');

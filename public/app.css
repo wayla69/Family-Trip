@@ -1686,6 +1686,7 @@ button.tile.kid{border:1px solid var(--line);text-align:left;justify-items:start
 .mday>summary b{color:var(--accent)}
 .mday .dsheet{margin-top:6px}
 .mapimg{display:block;margin:6px 0 10px;border-radius:var(--r);overflow:hidden;border:1px solid var(--line)}.mapimg img{width:100%;height:auto;display:block}
+.mapstops{list-style:none;margin:0;padding:0;display:grid;gap:6px}.mapstops li{display:flex;gap:10px;align-items:flex-start;min-height:28px}.mapstops b{flex:none;width:26px;height:26px;border-radius:50%;background:#D9473B;color:#fff;font-size:13px;display:grid;place-items:center}.mapstops span{padding-top:3px}
 .pocket details.pg{scroll-margin-top:68px}
 /* every meal: a day row with its stamp and meal chips, then one card per meal (colour = which meal) */
 .mk-bf{--mk:#D98A12}.mk-lu{--mk:#2B9A62}.mk-di{--mk:#4F63C9}.mk-sn{--mk:#D8457B}
@@ -2278,7 +2279,7 @@ h1 .h1pic{display:inline-block;width:1.15em;height:1.15em;vertical-align:-.2em;o
 .prices tr.grp{display:block;padding:10px 0 2px;border-bottom:0}.prices tr.grp th{display:block;padding:0 8px;font-size:13px;color:var(--accent);text-transform:none;letter-spacing:0}}
 .prices tr.grp th{background:var(--soft);font-weight:700}
 .tips.nums{list-style:decimal;padding-left:1.4em}.tips.nums>li::before{content:none}
-.mtl{margin:6px 0 4px}.mtl>li{font-size:14px}
+.mtl{margin:6px 0 4px}.mtl>li{font-size:14px}.mtl li>div>small:not(.tsub){display:block;font-size:13px;color:var(--muted)}
 .cjk>span{display:block}.cjk>span.zh{font-size:17px;line-height:1.35;font-weight:600}
 .tl.plan.mtl li>div{display:block;-webkit-line-clamp:unset;overflow:visible;cursor:auto}.mtl time{color:var(--accent);font-weight:600}
 .call.info .cdsub{display:block;font-size:14px;margin-top:2px}
@@ -3132,12 +3133,25 @@ details.emeal[open]>summary .mname{visibility:hidden}
 .snapt th,.snapt td{text-align:left;padding:4px 6px;border-bottom:1px solid var(--line);white-space:nowrap}
 .snapt small{color:var(--muted)}
 /* a book from photos (#/snap): the two rhythms, the reading count, a day a fold with its moments, the main button at the foot */
-.tpk.snapmode{grid-template-columns:repeat(auto-fit,minmax(min(100%,150px),1fr));margin:14px 0 16px}
+.tpk.snapmode{grid-template-columns:repeat(auto-fit,minmax(min(100%,300px),1fr));max-width:none;margin:14px 0 16px}
 .snapmode .tpo{align-items:flex-start;text-align:left;min-height:72px}.snapmode .tpo small{color:var(--muted);font-size:13px;line-height:1.35}
 .flabel{display:block;font-size:13.5px;font-weight:600;margin:12px 0 6px;color:color-mix(in srgb,var(--ink) 80%,var(--paper))}
 .snapnote{display:flex;gap:10px;align-items:flex-start;margin:16px 0;padding:12px 14px;border-radius:12px;background:color-mix(in srgb,var(--accent) 7%,var(--paper));font-size:14px;line-height:1.45}
 .snapnote .ic{width:20px;height:20px;flex:none;color:var(--accent);margin-top:1px}
-.snapgeosw{display:grid;gap:6px;justify-items:start;margin:-4px 0 16px}.snapgeosw .chip{max-width:100%;text-align:start}.snapgeosw small{display:block;font-size:13.5px;line-height:1.45;color:var(--muted)}
+/* the start page of a book from photos (owner, Nov 2026: "ปรับ UI ส่วนนี้ด้วย"): the two ways as picture cards in their own colours,
+   the chosen one ringed in its colour; the name and the place in the settings pages' cards */
+.snapmode .tpo.pz{flex-direction:row;align-items:center;gap:12px;padding:14px;border-radius:18px;border-width:1px;border-style:solid}
+.snapmode .tpo.pz[aria-pressed=true]{padding:13px;border:2px solid color-mix(in srgb,var(--g1) 75%,#1F2A3A)!important;box-shadow:0 10px 20px -16px var(--g1)}
+.snapmode .tpo.pz .ck{background:color-mix(in srgb,var(--g1) 75%,#1F2A3A);color:#fff}
+.smpic{flex:none;display:grid;place-items:center;width:54px;height:54px;border-radius:50%;background:#fff;box-shadow:0 0 0 2px color-mix(in srgb,var(--g1) 35%,#fff)}
+.smpic img{width:42px;height:42px;object-fit:contain}
+.smtx{display:grid;gap:3px;min-width:0}.smtx b{font-size:17px;line-height:1.25}
+.snapmode .tpo.pz small{color:color-mix(in srgb,#1F2A3A 78%,var(--g1))}
+@media (prefers-color-scheme:dark){:root:not([data-theme=light]) .snapmode .tpo.pz small{color:color-mix(in srgb,var(--ink) 80%,var(--g1))}}
+:root[data-theme=dark] .snapmode .tpo.pz small{color:color-mix(in srgb,var(--ink) 80%,var(--g1))}
+.snapnamec .pch label{font:inherit;color:inherit}.snapnamec .field{width:100%}.snapnamec .pcsub.snapnmh{margin:10px 0 0}
+.snapwhere .pcsub{margin:0 0 12px}
+.snapgeosw{margin:0}.snapgeosw small{margin-top:2px}
 .snapfoot{display:flex;flex-direction:column;align-items:stretch;gap:8px;margin:20px 0 8px}.snapfoot small{color:var(--muted);font-size:13px;text-align:center}
 .snapfoot .linkbtn{align-self:center;min-height:44px}
 .snapbig{font-size:40px;font-weight:700;margin:24px 0;color:var(--accent)}
@@ -3458,3 +3472,273 @@ textarea.field.paper{min-height:230px;line-height:30px;padding:8px 14px;backgrou
 @media (prefers-color-scheme:dark){:root:not([data-theme=light]) .grbook small{color:color-mix(in srgb,var(--ink) 75%,var(--g1))}:root:not([data-theme=light]) .grq{color:var(--ink)}}
 :root[data-theme=dark] .grbook small{color:color-mix(in srgb,var(--ink) 75%,var(--g1))}:root[data-theme=dark] .grq{color:var(--ink)}
 .grchips .chip{text-decoration:none;color:inherit}
+
+/* the pocket guide in the book's look (owner, Nov 2026: "ส่วนของ Get Ready อ่านยากมาก ปรับ UIUX ของทั้งฮ่องกงและออสเตรเลีย"):
+   the summary's topics are picture cards in their own colours; a topic's page opens under a band with its picture, a table's rows
+   are cards whose labels sit above their words (a narrow label column beside a long answer was hard to read), a label → answer list
+   is one card with the labels in the topic's colour */
+.glg>.glc.gpc{gap:12px;margin:0 0 10px;padding:12px 12px 12px 12px;border:1px solid color-mix(in srgb,var(--g1) 30%,var(--line));border-radius:18px;background:linear-gradient(135deg,color-mix(in srgb,var(--g1) 9%,var(--card)),color-mix(in srgb,var(--g1) 18%,var(--card)))}
+.glg{border-top:0}
+.glc.gpc .gt>b::before{content:none}
+.gpic{flex:none;display:grid;place-items:center;width:54px;height:54px;border-radius:50%;background:#fff;box-shadow:0 0 0 2px color-mix(in srgb,var(--g1) 35%,#fff)}
+.gpic img{width:42px;height:42px;object-fit:contain}
+.glc.gpc b{font-size:17px;line-height:1.3;color:color-mix(in srgb,var(--g1) 45%,var(--ink))}
+.glc.gpc small{color:color-mix(in srgb,var(--ink) 80%,var(--g1));font-size:14px;line-height:1.4}
+.glc.gpc>.ic{color:color-mix(in srgb,var(--g1) 60%,var(--ink))}
+@media (min-width:760px){.glg{column-gap:12px}.glg>.glc.gpc{margin:0 0 12px}}
+.tp-prep>.call.info{display:flex;align-items:center;gap:12px;margin:12px 0 14px;padding:12px 16px;border-radius:18px;border:1px solid color-mix(in srgb,#FF9A3C 32%,var(--line));background:linear-gradient(135deg,color-mix(in srgb,#FF9A3C 12%,var(--card)),color-mix(in srgb,#F2B90C 18%,var(--card)));font-size:17px;font-weight:700}
+.tp-prep>.call.info::before{content:"";flex:none;width:46px;height:46px;background:url(/art/hub/today.webp) center/contain no-repeat}
+.tp.one>.tphead{margin-top:6px}
+.tp.one>.tphead h1.h2{font-family:var(--ui);font-size:clamp(21px,6vw,28px)}
+.tp.one .pocket .lede{font-size:15.5px;line-height:1.55;color:var(--ink)}
+.tp.one .prices{min-width:0}
+.tp.one .tblwrap{overflow:visible}
+@media (max-width:640px){
+  .tp.one .prices thead{display:none}
+  .tp.one .prices tbody{display:grid;gap:12px}
+  .tp.one .prices tr{display:grid;grid-template-columns:repeat(auto-fill,minmax(130px,1fr));gap:10px 14px;padding:14px 16px 16px;border:1px solid var(--line);border-top:4px solid var(--rc,var(--g1,var(--accent)));border-radius:18px;background:var(--card);box-shadow:0 8px 18px -16px rgba(16,24,32,.5)}
+  .tp.one .prices tr:nth-child(4n+2){--rc:#1CC9A4}.tp.one .prices tr:nth-child(4n+3){--rc:#FF9A3C}.tp.one .prices tr:nth-child(4n+4){--rc:#C850F0}
+  .tp.one .prices td{display:block;padding:0;border:0;grid-column:1/-1;font-size:15.5px;line-height:1.5}
+  .tp.one .prices td.s{grid-column:auto;display:block;padding:0}
+  .tp.one .prices td.nm{font-size:17px;font-weight:700;line-height:1.3;color:var(--ink)}
+  .tp.one .prices td[data-h]::before{content:attr(data-h);display:block;margin-bottom:2px;font-size:13px;font-weight:700;letter-spacing:0;text-transform:none;color:color-mix(in srgb,var(--rc,var(--g1,var(--accent))) 60%,var(--ink))}
+  .tp.one .prices td.nv,.tp.one .prices td:empty{display:none}
+  .tp.one .prices tr.grp{display:block;padding:6px 2px 0;border:0;background:none;box-shadow:none}
+}
+.tp.one .gl{gap:0;padding:4px 16px;border:1px solid var(--line);border-top:4px solid var(--g1,var(--accent));border-radius:18px;background:var(--card);box-shadow:0 8px 18px -16px rgba(16,24,32,.5)}
+.tp.one .gl>div{display:block;padding:12px 0;border-bottom:1px solid var(--line);font-size:15.5px}
+.tp.one .gl>div:last-child{border-bottom:0}
+.tp.one .gl dt{margin-bottom:3px;font-size:13.5px;font-weight:700;color:color-mix(in srgb,var(--g1,var(--accent)) 60%,var(--ink))}
+.tp.one .gl dd{font-size:15.5px;line-height:1.5;color:var(--ink)}
+.tp.one .gl dd small.tsub{display:block;margin-top:2px;font-size:14px;color:var(--muted)}
+.tp.one .pg1>h3,.tp.one .pg1>h4{margin:22px 0 8px;font-family:var(--ui);color:color-mix(in srgb,var(--g1,var(--accent)) 55%,var(--ink))}
+@media (prefers-color-scheme:dark){:root:not([data-theme=light]) .glc.gpc b{color:color-mix(in srgb,var(--g1) 50%,#fff)}:root:not([data-theme=light]) .gpic{background:color-mix(in srgb,var(--g1) 12%,#fff)}}
+:root[data-theme=dark] .glc.gpc b{color:color-mix(in srgb,var(--g1) 50%,#fff)}:root[data-theme=dark] .gpic{background:color-mix(in srgb,var(--g1) 12%,#fff)}
+/* inside a topic's page (owner, Nov 2026: "ดูด้านในด้วยนะครับ ไม่เอาแบบนี้"): each group of a page is a card — a checklist group, a list under its
+   heading, a numbered flow — its heading in the UI face and the topic's colour (HK's display serif at 14 px was hard to read) */
+.tp.one .pocket h5{display:flex;align-items:center;gap:8px;margin:20px 0 8px;font-family:var(--ui);font-size:17px;font-weight:700;line-height:1.3;color:color-mix(in srgb,var(--cc,var(--g1,var(--accent))) 55%,var(--ink))}
+.tp.one .pocket h5::before{content:"";flex:none;width:6px;height:18px;border-radius:3px;background:var(--cc,var(--g1,var(--accent)))}
+.tp.one .cols2{display:grid;grid-template-columns:repeat(auto-fill,minmax(min(100%,320px),1fr));gap:12px;margin:14px 0}
+.tp.one .cols2>div,.tp.one .pg1>ul.tips,.tp.one .pg1>ol.tips{margin:0 0 12px;padding:12px 16px 14px;border:1px solid var(--line);border-top:4px solid var(--cc,var(--g1,var(--accent)));border-radius:18px;background:var(--card);box-shadow:0 8px 18px -16px rgba(16,24,32,.5)}
+.tp.one .cols2>div{margin:0}
+.tp.one .cols2>div:nth-child(4n+2){--cc:#1CC9A4}.tp.one .cols2>div:nth-child(4n+3){--cc:#FF9A3C}.tp.one .cols2>div:nth-child(4n+4){--cc:#C850F0}
+.tp.one .cols2>div>h5:first-child{margin-top:2px}
+.tp.one .pg1>ul.tips,.tp.one .pg1>ol.tips{padding-left:34px}
+.tp.one .pg1>ol.tips{padding-left:38px}
+.tp.one .pg1 .tips>li{font-size:15px;line-height:1.5;margin:6px 0}
+.tp.one .pg1>h5+ul.tips,.tp.one .pg1>h5+ol.tips{margin-top:0}
+
+/* numbered steps in a topic page (owner, Nov 2026: "UI ต้องสวยงาม เห็นแล้วสบายตา"): a round number in the topic's colour, airy rows */
+.tp.one ol.tips.nums{list-style:none;counter-reset:st;padding-left:0}
+.tp.one ol.tips.nums>li{counter-increment:st;position:relative;padding:10px 0 10px 42px;min-height:30px;border-bottom:1px solid var(--line)}
+.tp.one ol.tips.nums>li:last-child{border-bottom:0}
+.tp.one ol.tips.nums>li::before{content:counter(st);position:absolute;left:0;top:9px;width:28px;height:28px;border-radius:50%;background:color-mix(in srgb,var(--cc,var(--g1,var(--accent))) 70%,var(--ink));color:#fff;font-size:14px;font-weight:700;line-height:28px;text-align:center}
+@media (prefers-color-scheme:dark){:root:not([data-theme=light]) .tp.one ol.tips.nums>li::before{color:#0F1722}}
+:root[data-theme=dark] .tp.one ol.tips.nums>li::before{color:#0F1722}
+
+/* every inner page in one look (owner, Nov 2026: "ตรวจหน้าข้างในหมด … ไม่เอา format ที่ไม่ตรงกับ app"): the learn page's topic cards, the
+   if-then cases, "who carries what", the notes at a page's foot and a table's group rows are the same cards as the rest of the pocket guide */
+.tp.one .gcards{gap:12px}
+.tp.one .gcard,.tp.one .ifts details.ifold,.tp.one .pg1>.call.info,.tp.one .pg1>.call.calm,.tp.one .pg1>.call.pick{margin:0;padding:14px 16px 16px;border:1px solid var(--line);border-top:4px solid var(--cc,var(--g1,var(--accent)));border-radius:18px;background:var(--card);box-shadow:0 8px 18px -16px rgba(16,24,32,.5);font-size:15px}
+.tp.one .gcard:nth-child(4n+2),.tp.one .ifts details.ifold:nth-child(4n+2){--cc:#1CC9A4}.tp.one .gcard:nth-child(4n+3),.tp.one .ifts details.ifold:nth-child(4n+3){--cc:#FF9A3C}.tp.one .gcard:nth-child(4n+4),.tp.one .ifts details.ifold:nth-child(4n+4){--cc:#C850F0}
+.tp.one .gcard summary b,.tp.one .ifts details.ifold>summary b{display:block;margin:0 0 2px;font-family:var(--ui);font-size:17px;font-weight:700;line-height:1.3;color:color-mix(in srgb,var(--cc,var(--g1,var(--accent))) 50%,var(--ink))}
+.tp.one .gcard .gsub{font-size:13.5px;color:color-mix(in srgb,var(--cc,var(--g1,var(--accent))) 60%,var(--ink))}
+.tp.one .gcard b.kf,.tp.one .ifts .fb b{display:inline;margin:0;font-family:inherit;font-size:inherit;line-height:inherit;color:inherit}
+.tp.one .gcard .pts,.tp.one .ifts .pts,.tp.one .gcard p,.tp.one .ifts p{font-size:15px;line-height:1.5}
+.tp.one .ifts{display:grid;gap:12px;border-top:0}
+.tp.one .ifts details.ifold{border-bottom:1px solid var(--line)}
+.tp.one .ifts .fb .label{margin:10px 0 2px;font-size:13px;font-weight:700;color:color-mix(in srgb,var(--cc,var(--g1,var(--accent))) 60%,var(--ink))}
+.tp.one .pg1>.call{margin:12px 0}
+.tp.one .pg1>.call .lbl{display:block;margin:0 0 6px;font-family:var(--ui);font-style:normal;font-size:17px;font-weight:700;letter-spacing:0;text-transform:none;color:color-mix(in srgb,var(--cc,var(--g1,var(--accent))) 50%,var(--ink))}
+.tp.one .pg1>.call.calm{--cc:#1CC9A4}.tp.one .pg1>.call.pick{--cc:#F2B90C}
+.tp.one tr.grp th,.tp.one tr.grp td{padding:16px 2px 4px;border:0;background:none;font-family:var(--ui);font-size:16px;font-weight:700;letter-spacing:0;text-transform:none;color:color-mix(in srgb,var(--g1,var(--accent)) 55%,var(--ink))}
+.tp.one tr.grp th::before,.tp.one tr.grp td::before{content:"";display:inline-block;width:6px;height:16px;margin-right:8px;border-radius:3px;vertical-align:-2px;background:var(--g1,var(--accent))}
+.tp.one .pts.nums>li::before{background:color-mix(in srgb,var(--cc,var(--g1,var(--accent))) 70%,var(--ink));color:#fff}
+@media (prefers-color-scheme:dark){:root:not([data-theme=light]) .tp.one .pts.nums>li::before{color:#0F1722}}
+:root[data-theme=dark] .tp.one .pts.nums>li::before{color:#0F1722}
+
+/* second pass (owner, Nov 2026: "ปรับได้อีกไหม"): the learn page's days are cards with their picture, the ‹ › to the topics beside
+   it wear the topic's colour */
+.tp.one details.sub{margin:0 0 12px;padding:0;border:1px solid var(--line);border-top:4px solid var(--cc,var(--g1,var(--accent)));border-radius:18px;background:var(--card);box-shadow:0 8px 18px -16px rgba(16,24,32,.5);overflow:hidden}
+.tp.one details.sub:nth-of-type(4n+2){--cc:#1CC9A4}.tp.one details.sub:nth-of-type(4n+3){--cc:#FF9A3C}.tp.one details.sub:nth-of-type(4n+4){--cc:#C850F0}
+.tp.one details.sub>summary{display:flex;align-items:center;gap:12px;min-height:64px;padding:10px 14px;font-size:16px;font-weight:600;line-height:1.3;cursor:pointer;list-style:none}
+.tp.one details.sub>summary::-webkit-details-marker{display:none}
+.tp.one details.sub>summary .art{flex:none;width:48px;height:48px;margin:0;border-radius:50%;background:#fff;box-shadow:0 0 0 2px color-mix(in srgb,var(--cc,var(--g1,var(--accent))) 35%,#fff)}
+.tp.one details.sub>summary b{color:color-mix(in srgb,var(--cc,var(--g1,var(--accent))) 55%,var(--ink))}
+.tp.one details.sub>summary::after{content:"";flex:none;width:9px;height:9px;margin:0 6px 0 auto;border-right:2px solid currentColor;border-bottom:2px solid currentColor;transform:rotate(45deg);opacity:.55;transition:transform .2s}
+.tp.one details.sub[open]>summary::after{transform:rotate(-135deg)}
+.tp.one details.sub>:not(summary){margin-inline:16px}
+.tp.one details.sub>:last-child{margin-bottom:14px}
+.tp.one details.sub .learn{padding:12px 0;border-top:1px solid var(--line);font-size:15px;line-height:1.5}
+.tp.one details.sub .learn>b{font-family:var(--ui);font-size:17px;font-weight:700;color:color-mix(in srgb,var(--cc,var(--g1,var(--accent))) 50%,var(--ink))}
+.tp.one .pgn{border-color:color-mix(in srgb,var(--g1,var(--accent)) 35%,var(--line));background:color-mix(in srgb,var(--g1,var(--accent)) 10%,var(--card))}
+.tp.one .pgn small{color:color-mix(in srgb,var(--g1,var(--accent)) 60%,var(--ink))}
+
+/* a long table cell as lines (owner, Nov 2026: "ยังอ่านยากเลย") */
+.cpts{margin:2px 0 0;padding:0;list-style:none;display:grid;gap:6px}
+.cpts>li{position:relative;padding-left:16px;line-height:1.5}
+.cpts>li::before{content:"";position:absolute;left:2px;top:.62em;width:6px;height:6px;border-radius:50%;background:color-mix(in srgb,var(--rc,var(--g1,var(--accent))) 70%,var(--ink))}
+.cpts .clb{color:color-mix(in srgb,var(--rc,var(--g1,var(--accent))) 55%,var(--ink))}
+
+/* key facts in colour (owner, Nov 2026: "เพิ่มมิติในการใส่สีราคา และส่วนอื่นๆที่เน้น"): a soft pill per kind — money green, times blue,
+   a number to call rose — so the eye finds them in a line; the text stays dark enough to read (4.5:1) */
+b.kf.km,b.kf.kt,b.kf.kp,b.kf.kd,.tp.one .gcard b.kf.kd,.tp.one .gcard b.kf.km,.tp.one .gcard b.kf.kt,.tp.one .gcard b.kf.kp{--kc:#1E9E6A;display:inline;margin:0 1px;padding:1px 6px;border-radius:7px;background:color-mix(in srgb,var(--kc) 13%,transparent);box-shadow:inset 0 0 0 1px color-mix(in srgb,var(--kc) 22%,transparent);color:color-mix(in srgb,var(--kc) 62%,#10202A);font-weight:700;white-space:nowrap;-webkit-box-decoration-break:clone;box-decoration-break:clone}
+b.kf.kt,.tp.one .gcard b.kf.kt{--kc:#3E6FE0}
+b.kf.kp,.tp.one .gcard b.kf.kp{--kc:#D9467A}
+b.kf.kd,.tp.one .gcard b.kf.kd{--kc:#C9780E}
+@media (prefers-color-scheme:dark){:root:not([data-theme=light]) b.kf.km,:root:not([data-theme=light]) b.kf.kt,:root:not([data-theme=light]) b.kf.kp,:root:not([data-theme=light]) b.kf.kd,:root:not([data-theme=light]) .tp.one .gcard b.kf.km,:root:not([data-theme=light]) .tp.one .gcard b.kf.kt,:root:not([data-theme=light]) .tp.one .gcard b.kf.kp,:root:not([data-theme=light]) .tp.one .gcard b.kf.kd{background:color-mix(in srgb,var(--kc) 24%,transparent);color:color-mix(in srgb,var(--kc) 45%,#fff)}}
+:root[data-theme=dark] b.kf.km,:root[data-theme=dark] b.kf.kt,:root[data-theme=dark] b.kf.kp,:root[data-theme=dark] b.kf.kd,:root[data-theme=dark] .tp.one .gcard b.kf.km,:root[data-theme=dark] .tp.one .gcard b.kf.kt,:root[data-theme=dark] .tp.one .gcard b.kf.kp,:root[data-theme=dark] .tp.one .gcard b.kf.kd{background:color-mix(in srgb,var(--kc) 24%,transparent);color:color-mix(in srgb,var(--kc) 45%,#fff)}
+@media print{b.kf.km,b.kf.kt,b.kf.kp,b.kf.kd{padding:0;background:none;box-shadow:none;color:inherit}}
+
+/* a topic page's opening paragraph is a soft card in the topic's colour, its "read more" points inside it (all open on its own page) */
+.tp.one .pg1>.ledebox{margin:2px 0 16px;padding:12px 16px;border-radius:16px;border:1px solid color-mix(in srgb,var(--g1,var(--accent)) 24%,var(--line));background:color-mix(in srgb,var(--g1,var(--accent)) 9%,var(--card))}
+.tp.one .pg1>.ledebox .lede{margin:0;max-width:none;font-size:15.5px;line-height:1.55;color:var(--ink)}
+.tp.one .pg1>.ledebox details.ledemore{margin:6px 0 0;border:0}
+.tp.one .pg1>.ledebox details.ledemore>summary{display:none}
+.tp.one .pg1>.ledebox details.ledemore>.fb{padding:0}
+.tp.one .pg1>.ledebox .pts.lede{margin:0;max-width:none;color:var(--ink)}
+.tp.one .pg1>.ledebox .pts.lede>li::before{background:color-mix(in srgb,var(--g1,var(--accent)) 70%,var(--ink))}
+/* a label → answer row of several pieces: a dotted list; a Chinese piece keeps its size */
+.gl dd ul.cpts{margin:2px 0 0}.gl dd ul.cpts>li.zh{font-size:17px;font-weight:600}
+/* on a wide screen a table keeps the topic's card look: one card, the rows larger */
+@media (min-width:641px){
+  .tp.one .tblwrap{margin:0 0 14px;padding:6px 16px 10px;border:1px solid var(--line);border-top:4px solid var(--g1,var(--accent));border-radius:18px;background:var(--card);box-shadow:0 8px 18px -16px rgba(16,24,32,.5)}
+  .tp.one .prices td{font-size:15px;line-height:1.5;padding-top:10px;padding-bottom:10px}
+  .tp.one .prices td.nm{font-weight:700}
+  .tp.one .prices thead th{font-size:12.5px;color:color-mix(in srgb,var(--g1,var(--accent)) 55%,var(--ink))}
+}
+/* plan with the helper (#/planner): the questions as the settings cards, the route a card a day in the photo book's palette */
+.tpk.plopts{margin:6px 0 4px;max-width:none}.plopts .tpo small{color:var(--muted);font-size:12.5px;line-height:1.3}
+.plgo{margin:14px 0 6px;flex-wrap:wrap;gap:8px}
+.pldays{list-style:none;padding:0;margin:12px 0;display:grid;grid-template-columns:repeat(auto-fill,minmax(min(100%,260px),1fr));gap:12px}
+.plday{display:grid;gap:10px;padding:14px;border-radius:16px;border:1px solid var(--line);border-top:4px solid var(--tc);background:color-mix(in srgb,var(--tc) 7%,var(--card))}
+.plday .vgl{display:grid;gap:5px;margin:0;font-weight:600;font-size:13.5px}.plday .cpts{margin:0}
+.pldh{display:flex;align-items:center;gap:10px}.pldh .ple{width:44px;height:44px;border-radius:50%;display:grid;place-items:center;font-size:24px;background:var(--card);box-shadow:0 0 0 2px var(--tc)}
+.pldh b{display:block;color:color-mix(in srgb,var(--tc) 60%,var(--ink))}.pldh small{color:var(--muted)}
+.plfoot{display:grid;gap:8px;margin-top:16px;padding-top:14px;border-top:1px dashed var(--line)}.plfoot .btn{justify-self:start}.plfoot small{color:var(--muted)}
+:root[data-theme=dark] .pldh b{color:color-mix(in srgb,var(--tc) 60%,#fff)}
+/* change this day (Today, a book the family made): chips, then the two plans side by side, the new one tinted */
+.dchchips{display:flex;flex-wrap:wrap;gap:8px;margin:8px 0}.dchrow{gap:8px;flex-wrap:nowrap}.dchrow .field{flex:1;min-width:0}
+.dchwhy{margin:12px 0 8px;font-weight:600}.dchwhy small{display:block;font-weight:400;color:var(--muted);margin-top:2px}
+.dchcmp{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,240px),1fr));gap:10px;margin-bottom:10px}
+.dchcmp>div{border:1px solid var(--line);border-radius:14px;padding:10px 12px;background:var(--card)}
+.dchcmp .dchnew{border:2px solid var(--accent);background:color-mix(in srgb,var(--accent) 6%,var(--card))}
+.dchcmp .lbl{font-weight:700;font-size:13px;color:color-mix(in srgb,var(--accent) 60%,var(--ink));margin-bottom:4px}
+.dchcmp ol{margin:0;padding-left:18px;display:grid;gap:4px;font-size:14px}.dchcmp .dchold{opacity:1;color:color-mix(in srgb,var(--ink) 70%,var(--paper))}
+.dchd{display:flex;flex-wrap:wrap;gap:6px 12px;align-items:center;justify-content:space-between;margin:8px 0}
+:root[data-theme=dark] .dchcmp .lbl{color:color-mix(in srgb,var(--accent) 60%,#fff)}
+/* check the places on the web: a card a day, each place a row with its state; a place that may be gone is ringed */
+.vfgo{margin:14px 0 8px;align-items:center;gap:12px;flex-wrap:wrap}.vfsum{margin:10px 0 4px}
+.vfl{list-style:none;padding:0;margin:0 0 10px;display:grid;gap:8px}
+.vfp{padding:10px 12px;border:1px solid var(--line);border-radius:12px;background:var(--card);display:grid;gap:4px}
+.vfp small{color:var(--muted)}.vfp p{margin:0;font-size:14px}
+.vfh{display:flex;justify-content:space-between;gap:10px;align-items:baseline;flex-wrap:wrap}
+.vfs{font-size:13px;font-weight:700;padding:2px 10px;border-radius:999px;background:color-mix(in srgb,#1CC9A4 16%,var(--card));color:color-mix(in srgb,#1CC9A4 55%,var(--ink))}
+.vfp.st-closed,.vfp.st-moved{border:2px solid color-mix(in srgb,#FF6FA8 70%,var(--line))}
+.vfp.st-closed .vfs,.vfp.st-moved .vfs{background:color-mix(in srgb,#FF6FA8 16%,var(--card));color:color-mix(in srgb,#FF6FA8 55%,var(--ink))}
+.vfp.st-unsure .vfs{background:color-mix(in srgb,var(--muted) 14%,var(--card));color:var(--ink)}
+.vfwarn{display:flex;flex-wrap:wrap;gap:8px 12px;align-items:center;justify-content:space-between;margin:8px 0}
+:root[data-theme=dark] .vfs{color:color-mix(in srgb,#1CC9A4 55%,#fff)}
+:root[data-theme=dark] .vfp.st-closed .vfs,:root[data-theme=dark] .vfp.st-moved .vfs{color:color-mix(in srgb,#FF6FA8 55%,#fff)}
+/* two routes to compare: two cards side by side (stacked on a phone), each in its own colour */
+.plalts{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,300px),1fr));gap:12px;margin:8px 0 16px}
+.plalt{padding:14px;border-radius:16px;border:1px solid var(--line);border-top:5px solid var(--tc);background:color-mix(in srgb,var(--tc) 7%,var(--card));display:grid;gap:8px;align-content:start}
+.plalt h3{margin:0;color:color-mix(in srgb,var(--tc) 60%,var(--ink))}.plalt .btn{justify-self:start}
+.plalt ol{list-style:none;margin:0;padding:0;display:grid;gap:6px}.plalt li{font-size:14px}.plalt li small{display:block;color:var(--muted)}
+:root[data-theme=dark] .plalt h3{color:color-mix(in srgb,var(--tc) 60%,#fff)}
+/* the planner, second round (owner, Nov 2026: beautiful, easy to really use): steps, suggestions, chips, the journey, before-you-say-yes tiles, day actions */
+.plsteps{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:6px;margin:0 0 14px}
+.plst{display:flex;align-items:center;gap:8px;min-height:48px;padding:6px 10px;border:1px solid var(--line);border-radius:14px;background:var(--card);font-size:13.5px;font-weight:600;line-height:1.2;text-align:left;color:var(--muted)}
+.plst i{flex:none;width:26px;height:26px;border-radius:50%;display:grid;place-items:center;font-style:normal;font-size:13px;font-weight:700;background:color-mix(in srgb,var(--muted) 14%,var(--card));color:var(--muted)}
+@media (max-width:480px){.plst{flex-direction:column;justify-content:center;gap:4px;padding:8px 4px;text-align:center;font-size:12.5px;overflow-wrap:anywhere}}
+.plst.now{border-color:#C850F0;box-shadow:0 0 0 1px #C850F0;background:color-mix(in srgb,#C850F0 8%,var(--card));color:var(--ink)}
+.plst.now i{background:#C850F0;color:#fff}
+.plst.done i{background:color-mix(in srgb,var(--leaf) 80%,var(--ink));color:#fff}.plst.done{color:var(--ink)}
+.plsug{display:flex;gap:8px;overflow-x:auto;margin:-6px -16px 0;padding:2px 16px 6px;scrollbar-width:none}.plsug::-webkit-scrollbar{display:none}.plsug:empty{display:none}
+.plsg{flex:none;display:inline-flex;align-items:center;gap:8px;min-height:44px;padding:4px 14px 4px 5px;border:1px solid color-mix(in srgb,var(--tc,var(--g1)) 40%,var(--line));border-radius:999px;background:color-mix(in srgb,var(--tc,var(--g1)) 8%,var(--card));font-size:14.5px;font-weight:600;white-space:nowrap}
+.plsg img{width:34px;height:34px;border-radius:50%;background:#fff;object-fit:contain}.plsg:not(:has(img)){padding-left:14px}
+.plidgo{justify-self:start;min-height:44px;text-align:left}
+.plchips{display:flex;flex-wrap:wrap;gap:8px;margin:6px 0 2px}
+.plchip{display:inline-flex;align-items:center;gap:6px;min-height:44px;padding:6px 14px;border:1px solid var(--line);border-radius:999px;background:var(--card);font-size:14.5px;font-weight:500;line-height:1.2;color:var(--ink)}
+.plchip .emi{width:1.25em;height:1.25em}
+.plchip[aria-pressed=true]{border-color:var(--g1);box-shadow:0 0 0 1px var(--g1);background:color-mix(in srgb,var(--g1) 16%,var(--card));font-weight:700}
+.plchip:disabled{opacity:.55}
+.pllens,.plmons{flex-wrap:nowrap;overflow-x:auto;margin:0 -16px;padding:2px 16px 4px;scrollbar-width:none}.pllens::-webkit-scrollbar,.plmons::-webkit-scrollbar{display:none}.pllens .plchip,.plmons .plchip{flex:none;white-space:nowrap}
+.pllenrow{display:grid;gap:6px;min-width:0}.plspan{font-size:15px;color:color-mix(in srgb,var(--g1) 62%,var(--ink))}.plspan:empty{display:none}
+.plwho{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,220px),1fr));gap:10px;align-items:stretch}
+.plstep{display:flex;align-items:center;gap:10px;min-height:56px;padding:6px 8px 6px 14px;border:1px solid var(--line);border-radius:14px;background:color-mix(in srgb,var(--g1) 6%,var(--card))}
+.plstep span{flex:1;font-weight:600;font-size:14.5px}.plstep b{min-width:22px;text-align:center;font-size:19px;font-variant-numeric:tabular-nums}
+.plstep button{width:44px;height:44px;border-radius:50%;border:1px solid color-mix(in srgb,var(--g1) 45%,var(--line));background:var(--card);font-size:20px;font-weight:700;line-height:1;color:color-mix(in srgb,var(--g1) 62%,var(--ink))}
+.plkids{display:flex;flex-wrap:wrap;align-items:center;gap:8px 12px}.plkid{display:inline-flex;align-items:center;gap:8px;padding:4px 12px 4px 4px;border-radius:999px;background:color-mix(in srgb,var(--g1) 9%,var(--card));font-size:14.5px}
+.plkid img,.plkid .plke{width:36px;height:36px;border-radius:50%;object-fit:cover;background:#fff;display:grid;place-items:center;font-size:20px}.plkids small{color:var(--muted);font-size:13px;flex-basis:100%}
+.plsum{display:flex;flex-wrap:wrap;align-items:center;gap:10px 12px;margin:14px 0;padding:12px 14px;border:1px solid;border-radius:18px}
+.plsumt{flex:1 1 170px;min-width:0;display:grid;gap:3px}.plsumt b{font-size:16.5px;line-height:1.25;overflow-wrap:anywhere}.plsumt span{font-size:13.5px;line-height:1.45;color:color-mix(in srgb,#1F2A3A 80%,var(--g1))}
+.plsum .mini{flex:none;min-height:44px;display:inline-flex;align-items:center;gap:6px;padding:6px 12px;border-radius:999px;background:rgba(255,255,255,.7);color:#1F2A3A;font-size:13.5px}.plsum .mini .ic{width:16px;height:16px}
+.plwait{display:flex;align-items:center;gap:14px;margin:12px 0;padding:14px 16px;border-radius:18px;border:1px solid color-mix(in srgb,#C850F0 35%,var(--line));background:color-mix(in srgb,#C850F0 8%,var(--card))}
+.plwait b{display:block;font-size:15.5px}.plwait small{display:block;color:var(--muted);font-size:13px;line-height:1.4}
+.plspin{flex:none;width:30px;height:30px;border-radius:50%;border:3px solid color-mix(in srgb,#C850F0 25%,transparent);border-top-color:#C850F0;animation:plspin .9s linear infinite}
+@keyframes plspin{to{transform:rotate(360deg)}}
+@media (prefers-reduced-motion:reduce){.plspin{animation-duration:2.4s}}
+.plerr{margin:8px 0 12px;padding:10px 14px;border-radius:12px;background:color-mix(in srgb,var(--accent2) 10%,var(--card));color:color-mix(in srgb,var(--accent2) 60%,var(--ink));font-weight:600}
+.plideas{display:grid;grid-template-columns:repeat(auto-fill,minmax(min(100%,230px),1fr));gap:10px;margin:8px 0}
+.plidea{display:grid;grid-template-columns:52px minmax(0,1fr);gap:4px 12px;align-items:center;padding:12px;border:1px solid;border-radius:16px;text-align:left;font-size:14px;line-height:1.4}
+.plidea .plie{grid-row:1/3;width:52px;height:52px;border-radius:50%;background:#fff;display:grid;place-items:center;font-size:28px;box-shadow:0 0 0 2px color-mix(in srgb,var(--g1) 55%,#fff)}.plidea .plie img{width:46px;height:46px;border-radius:50%;object-fit:contain}
+.plidea b{font-size:17px;line-height:1.2}.plidea>span:not(.plie){grid-column:2}.plidea small{grid-column:1/-1;font-size:12.5px;color:color-mix(in srgb,#1F2A3A 74%,var(--g1))}
+.plsaved{list-style:none;margin:0 0 8px;padding:0;display:grid;gap:8px}.plsaved li{display:flex;flex-wrap:wrap;justify-content:flex-end;align-items:center;gap:2px 6px}
+.plsv{flex:1 1 200px;min-width:0;display:flex;align-items:center;gap:12px;min-height:56px;padding:8px 12px;border:1px solid var(--line);border-radius:14px;background:color-mix(in srgb,var(--g1) 6%,var(--card));text-align:left}
+.plsv .ple{flex:none;width:40px;height:40px;border-radius:50%;display:grid;place-items:center;font-size:22px;background:var(--card);box-shadow:0 0 0 2px color-mix(in srgb,var(--g1) 50%,var(--card))}
+.plsv b{display:block;font-size:15.5px;line-height:1.25;overflow-wrap:anywhere}.plsv small{display:block;color:var(--muted);font-size:12.5px;line-height:1.35}.plsaved .mini{min-height:44px;min-width:44px}
+.pljour{display:flex;align-items:flex-start;gap:4px;overflow-x:auto;margin:4px -16px 10px;padding:6px 16px 4px;scrollbar-width:none}.pljour::-webkit-scrollbar{display:none}
+.pljour>i{flex:none;align-self:center;margin-top:-22px;font-style:normal;font-size:22px;color:var(--muted)}
+.pljt{flex:none;display:grid;justify-items:center;gap:2px;min-width:76px;max-width:120px;padding:0 4px;background:none;border:0;text-align:center}
+.pljp{width:60px;height:60px;border-radius:50%;display:grid;place-items:center;font-size:28px;background:var(--card);box-shadow:0 0 0 3px var(--tc),0 6px 12px -8px rgba(16,24,32,.5);margin-bottom:4px}.pljp img{width:54px;height:54px;border-radius:50%;object-fit:contain;background:#fff}
+.pljt b{font-size:14px;line-height:1.2;overflow-wrap:anywhere}.pljt small{font-size:12.5px;color:color-mix(in srgb,var(--tc) 58%,var(--ink));font-weight:600}
+.pljour.sm{margin:0;padding:0;gap:6px;flex-wrap:wrap;overflow:visible}.pljour.sm>i{margin:0;font-size:16px}.pljour.sm .pljt{min-width:0;max-width:none;display:inline-flex;gap:6px;align-items:baseline;padding:4px 10px;border-radius:999px;background:color-mix(in srgb,var(--tc) 14%,var(--card))}
+.plwhy{margin:0 0 4px;padding:12px 14px;border-radius:14px;background:color-mix(in srgb,var(--g1) 9%,var(--card));font-size:15px;line-height:1.5}
+.plfacts{display:grid;grid-template-columns:repeat(auto-fill,minmax(min(100%,235px),1fr));gap:10px;margin:8px 0 4px}
+.plfact{padding:12px 14px;border:1px solid var(--line);border-radius:14px;background:var(--card);font-size:14px;line-height:1.5;display:grid;gap:4px;align-content:start}
+.plfact h4{margin:0;display:flex;align-items:center;gap:8px;font-family:var(--ui,inherit);font-size:13.5px;font-weight:700;color:color-mix(in srgb,var(--g1) 62%,var(--ink))}
+.plfact p,.plfact ul{margin:0}.plfact ul{padding-left:18px}.plfact small{color:var(--muted);font-size:11.5px}.plwarn{color:color-mix(in srgb,var(--accent2) 60%,var(--ink));font-weight:600}
+.pldays{grid-template-columns:repeat(auto-fill,minmax(min(100%,300px),1fr))}
+.plday{align-content:start;scroll-margin-top:76px}.plday.ed{box-shadow:0 0 0 2px var(--tc)}
+.pldh>div{flex:1;min-width:0}.pldtown{font-weight:700;color:color-mix(in srgb,var(--tc) 55%,var(--ink))}
+.pldmv{flex:none;display:flex;gap:6px}
+.pldmv button,.pldt{margin:0;font-family:var(--ui,inherit);font-size:17px;line-height:1.3;font-weight:700}
+.pldstops{list-style:none;margin:0;padding:0;display:flex;flex-wrap:wrap;gap:6px}.pldstops li{padding:4px 10px;border-radius:999px;background:var(--card);border:1px solid color-mix(in srgb,var(--tc) 30%,var(--line));font-size:13.5px;line-height:1.3}
+.pldx{list-style:none;margin:0;padding:0;display:grid;gap:6px}.pldx li{display:grid;grid-template-columns:22px minmax(0,1fr);gap:8px;font-size:14px;line-height:1.4}.pldx small{display:block;font-size:11.5px;color:var(--muted);line-height:1.2}
+.pldact{display:flex;flex-wrap:wrap;gap:6px;margin-top:2px;padding-top:10px;border-top:1px dashed color-mix(in srgb,var(--tc) 35%,var(--line))}
+.pldmv button,.pldact button{min-width:44px;min-height:44px;padding:4px 12px;border-radius:12px;border:1px solid color-mix(in srgb,var(--tc) 30%,var(--line));background:var(--card);font-size:13.5px;font-weight:600;color:color-mix(in srgb,var(--tc) 50%,var(--ink))}
+.pldmv button:disabled,.pldact button:disabled{opacity:.35}.pldact button[aria-pressed=true]{background:color-mix(in srgb,var(--tc) 18%,var(--card));box-shadow:0 0 0 1px var(--tc)}
+.pldact button:not(:first-child):not(:nth-child(2)){margin-left:0}.pldact button[data-armed]{background:var(--accent2);border-color:var(--accent2);color:var(--on-accent2)}
+.plaskc{margin-top:8px;padding:2px 14px 14px;border-radius:16px;background:color-mix(in srgb,var(--g1) 6%,var(--card));border:1px solid color-mix(in srgb,var(--g1) 22%,var(--line))}.plaskc .part.pickh{margin-top:12px}
+.plaskb{gap:8px;flex-wrap:wrap}.plmore{gap:6px 18px;flex-wrap:wrap;margin-top:12px}.plmore .linkbtn{min-height:44px;display:inline-flex;align-items:center;gap:6px}.plmore .ic{width:17px;height:17px}
+.plmore .linkbtn[data-armed]{color:color-mix(in srgb,var(--accent2) 60%,var(--ink));font-weight:700}
+.plfh{font-size:16px}.plgets{list-style:none;margin:0;padding:0;display:flex;flex-wrap:wrap;gap:6px 14px;font-size:14px;color:color-mix(in srgb,var(--ink) 80%,var(--paper))}
+:root[data-theme=dark] .plsumt span,:root[data-theme=dark] .plidea small{color:color-mix(in srgb,#fff 78%,var(--g1))}
+:root[data-theme=dark] .plsum .mini{background:rgba(255,255,255,.14);color:#fff}
+:root[data-theme=dark] .plsg img,:root[data-theme=dark] .pljp img,:root[data-theme=dark] .plidea .plie,:root[data-theme=dark] .plkid img{background:#F4F1EA}
+:root[data-theme=dark] .plst.done i{background:color-mix(in srgb,var(--leaf) 70%,#000)}
+:root[data-theme=dark] .plspan,:root[data-theme=dark] .plfact h4,:root[data-theme=dark] .plstep button{color:color-mix(in srgb,var(--g1) 55%,#fff)}
+:root[data-theme=dark] .pldtown,:root[data-theme=dark] .pldact button,:root[data-theme=dark] .pldmv button,:root[data-theme=dark] .pljt small{color:color-mix(in srgb,var(--tc) 50%,#fff)}
+:root[data-theme=dark] .plerr,:root[data-theme=dark] .plwarn{color:color-mix(in srgb,var(--accent2) 55%,#fff)}
+/* the library of places to eat (#/eats) and its part of the planner's route card */
+a.plchip{text-decoration:none}a.plchip .label{font-weight:700}a.plchip[aria-current=true]{border-color:var(--g1);box-shadow:0 0 0 1px var(--g1);background:color-mix(in srgb,var(--g1) 16%,var(--card));font-weight:700}
+.elfind{margin:8px 0 4px}.elgrp{margin:12px 0 0}.elgrp>h3{margin:0 0 2px;font-family:var(--ui,inherit);font-size:15px;font-weight:700;color:color-mix(in srgb,var(--g1) 58%,var(--ink));display:flex;flex-wrap:wrap;align-items:baseline;gap:4px 8px}.elgrp>h3::before{content:'';width:4px;height:14px;border-radius:2px;background:var(--g1);align-self:center}.elgrp .label{font-weight:400}.elgrp .eltowns{margin:6px 0 4px}.plchip[hidden]{display:none}
+.eltowns{margin:8px 0 14px}.eltowns.one{flex-wrap:nowrap;overflow-x:auto;margin:8px -16px 10px;padding:2px 16px 6px;scrollbar-width:none}.eltowns.one::-webkit-scrollbar{display:none}.eltowns.one .plchip{flex:none;white-space:nowrap}.ellist .eatbar{margin-top:8px}.elmore{margin:14px 0 6px}
+.elsrc{display:flex;align-items:center;justify-content:space-between;gap:8px;margin-top:6px;padding-top:6px;border-top:1px dashed var(--line)}.elsrc small{color:var(--muted);font-size:12px;line-height:1.35}
+.elsrc .mini{min-height:44px;min-width:44px}
+.etag.st-open{background:color-mix(in srgb,var(--leaf) 14%,var(--card));color:color-mix(in srgb,var(--leaf) 60%,var(--ink))}
+.etag.st-closed{background:color-mix(in srgb,var(--accent2) 14%,var(--card));color:color-mix(in srgb,var(--accent2) 60%,var(--ink))}
+.pleat{display:grid;grid-template-columns:repeat(auto-fill,minmax(min(100%,300px),1fr));gap:10px;margin:8px 0 6px;align-items:start}
+.pleatt{border:1px solid var(--line);border-radius:14px;background:var(--card);padding:0 12px 12px}
+.pleatt>summary{display:flex;align-items:center;gap:10px;min-height:56px;cursor:pointer;list-style:none;margin:0 -2px}.pleatt>summary::-webkit-details-marker{display:none}
+.pleatt>summary>span:nth-child(2){flex:1;min-width:0}.pleatt>summary b{display:block;font-size:15.5px;line-height:1.25}.pleatt>summary small{display:block;color:var(--muted);font-size:12.5px}
+.plee{flex:none;width:38px;height:38px;border-radius:50%;display:grid;place-items:center;font-size:20px;background:color-mix(in srgb,#FF9A3C 16%,var(--card))}
+.pleatt:not([open]){padding-bottom:0}.pleatt[open]>summary .chv{transform:rotate(90deg)}
+.plel{list-style:none;margin:0 0 6px;padding:0}.plel li{display:flex;align-items:center;gap:8px;min-height:48px;padding:4px 0;border-top:1px solid var(--line)}
+.plen{flex:1;min-width:0}.plen b{display:block;font-size:14.5px;line-height:1.3;overflow-wrap:anywhere}.plen small{display:block;color:var(--muted);font-size:12.5px;line-height:1.35}
+.plel .pinlink{flex:none;min-width:44px;min-height:44px;display:grid;place-items:center}.plel .etag{flex:none}
+.plem{gap:6px 18px;flex-wrap:wrap}.plem .linkbtn{min-height:44px;display:inline-flex;align-items:center}
+:root[data-theme=dark] .elgrp>h3{color:color-mix(in srgb,var(--g1) 55%,#fff)}
+:root[data-theme=dark] .etag.st-open{color:color-mix(in srgb,var(--leaf) 55%,#fff)}
+:root[data-theme=dark] .etag.st-closed{color:color-mix(in srgb,var(--accent2) 55%,#fff)}

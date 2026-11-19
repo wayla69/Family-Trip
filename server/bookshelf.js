@@ -9,6 +9,10 @@ const crypto = require('crypto');
 const IMG = require('./images');
 const GUIDE = require('./guide');
 const IMPORT = require('./bookimport');
+const PLANNER = require('./planner');
+const CF = require('./countryfacts');
+const EATLIB = require('./eatlib');
+const VERIFY = require('./verify');
 const FAM = require('./family');
 const AVATAR = require('./avatar');
 const ART = require('./bookart');
@@ -154,9 +158,9 @@ function router({ pool, media, A, ai, hooks = {} }) {   // hooks.heart(h): set b
       let gone = 0;
       for (const k of new Set(keys)) { try { await media.del(k); gone++; } catch (_) { /* a file already missing is fine */ } }
       await q('DELETE FROM families WHERE id=$1', [FAMILY]);
-      await q("DELETE FROM settings WHERE key IN ('family_likes', 'emoji_seeded', 'emoji_offered', 'emoji_stock_offered', 'year_reels')");
+      await q("DELETE FROM settings WHERE key IN ('family_likes', 'emoji_seeded', 'emoji_offered', 'emoji_stock_offered', 'year_reels', 'planner_plans', 'eat_starter', 'orphans_last')");
       await q('INSERT INTO families (id, name) VALUES ($1, $2) ON CONFLICT (id) DO NOTHING', [FAMILY, 'Family']);
-      await syncSeeds(pool); await EMOJI.seed(pool, FAMILY); A.groupsChanged();
+      await syncSeeds(pool); await EMOJI.seed(pool, FAMILY); await eatSyncAll(pool); A.groupsChanged();
       console.log(`family erased on request: ${gone} files, every row`);   // no names, no codes
       res.json({ ok: true, files: gone });
     } catch (e) { next(e); }
@@ -1174,6 +1178,7 @@ function router({ pool, media, A, ai, hooks = {} }) {   // hooks.heart(h): set b
       try { await putSeed(c, d.seed, 'manual'); } catch (e) { await c.query('ROLLBACK'); if (e.code === 'exists') return bad(res, 'exists', 409); throw e; }
       await c.query('DELETE FROM book_drafts WHERE id=$1', [req.params.id]);
       await c.query('COMMIT');
+      eatSync();   // the new book's places to eat join the family's library
       await EMOJI.stockPack(pool, FAMILY).catch((e) => console.error('emoji pack', e.message));
       let art = 'off';   // a book without drawings gets its circles, crest and guides drawn now; the page is told whether that started
       if (ART.enabled()) { try { await startArt(d.seed.slug); art = 'started'; } catch (e) { art = e.code || 'failed'; console.error('bookart', d.seed.slug, e.message); } }
@@ -1182,6 +1187,252 @@ function router({ pool, media, A, ai, hooks = {} }) {   // hooks.heart(h): set b
   });
   r.delete('/api/b/import/:id', A.requireEditor, async (req, res, next) => {
     try { await q('DELETE FROM book_drafts WHERE id=$1 AND family_id=$2', [req.params.id, FAMILY]); res.json({ ok: true }); } catch (e) { next(e); }
+  });
+
+  // ----- plan with the helper (docs/AI-PLANNER.md, server/planner.js): the answers → the route (one call) → the whole book from a brief,
+  // through the import's pipeline and job (one at a time). A planned book counts against its own allowance (owner, 18 Nov 2026:
+  // PLANNER_MONTHLY books a month, default 3), not the daily one the stories use; the route and its changes are ordinary daily calls.
+  const PLANNER_MONTHLY = Math.max(1, parseInt(process.env.PLANNER_MONTHLY, 10) || 3);
+  const monthNow = () => new Date().toISOString().slice(0, 7);
+  const plannerUsed = async () => { const v = (await q("SELECT value FROM settings WHERE key='planner_month'"))[0]; try { const o = JSON.parse(v.value); return o.m === monthNow() ? (o.n | 0) : 0; } catch (_) { return 0; } };
+  const plannerCount = async () => { const n = (await plannerUsed()) + 1; await q("INSERT INTO settings (key, value) VALUES ('planner_month', $1) ON CONFLICT (key) DO UPDATE SET value = EXCLUDED.value", [JSON.stringify({ m: monthNow(), n })]); };
+  r.get('/api/b/planner', A.requireEditor, async (_req, res, next) => {
+    try { res.setHeader('Cache-Control', 'no-store'); res.json({ on: !!(ai && ai.enabled()), left: Math.max(0, PLANNER_MONTHLY - (await plannerUsed())), max: PLANNER_MONTHLY, busy: !!(job && job.status === 'running') }); } catch (e) { next(e); }
+  });
+  // what the app itself knows about the route's countries (server/countryfacts.js, the checked table — never the helper): shown on the
+  // page as "before you go"; the page sends it back with the route, where the cleaning drops it
+  const withFacts = (rt) => ({ ...rt, facts: CF.factsFor(rt.countries) });
+  // "where shall we go?": a few places that fit the family, before there is a destination (one daily call)
+  r.post('/api/b/planner/ideas', ...W, async (req, res, next) => {
+    try {
+      if (!(ai && ai.enabled())) return bad(res, 'ai', 503);
+      const answers = PLANNER.cleanAnswers({ ...(req.body || {}).answers, dest: '' });
+      const list = await PLANNER.ideas({ client: new ai.SDK(), model: IMPORT.WRITE(), answers, who: PLANNER.whoLine(await kidRows(), answers.from), take: aiTake, onUsage: addUsage });
+      res.json({ ideas: list });
+    } catch (e) {
+      if (e.code === 'limit') return res.status(429).json({ error: 'limit' });
+      if (['route', 'json', 'refusal'].includes(e.code)) return bad(res, e.code, 502);
+      next(e);
+    }
+  });
+  // plans kept for both parents' phones (settings.planner_plans, at most 8, newest first; not in backups — a plan becomes a book):
+  // the answers and the route as the page holds them, cleaned; a booking number typed into the answers is not kept
+  const PLAN_ID = /^[a-z0-9]{6,24}$/, PLANS_MAX = 8;
+  let plansLock = Promise.resolve();
+  const plansRead = async () => { const v = (await q("SELECT value FROM settings WHERE key='planner_plans'"))[0]; try { const l = JSON.parse(v.value); return Array.isArray(l) ? l : []; } catch (_) { return []; } };
+  const plansWrite = (fn) => { const run = plansLock.then(async () => { const l = fn(await plansRead()); await q("INSERT INTO settings (key, value) VALUES ('planner_plans', $1) ON CONFLICT (key) DO UPDATE SET value = EXCLUDED.value", [JSON.stringify(l.slice(0, PLANS_MAX))]); return l; }); plansLock = run.catch(() => {}); return run; };
+  r.get('/api/b/planner/plans', A.requireEditor, async (_req, res, next) => {
+    try { res.setHeader('Cache-Control', 'no-store'); res.json({ plans: (await plansRead()).map((p) => ({ ...p, route: withFacts(p.route) })) }); } catch (e) { next(e); }
+  });
+  r.put('/api/b/planner/plans/:id', ...W, async (req, res, next) => {
+    try {
+      const id = String(req.params.id || ''), b = req.body || {};
+      if (!PLAN_ID.test(id)) return bad(res, 'id');
+      const answers = PLANNER.keepAnswers(b.answers);
+      let rt; try { rt = PLANNER.cleanRoute(b.route, answers); } catch (_) { return bad(res, 'route'); }
+      const plan = { id, at: Date.now(), by: clip(req.user.name || '', 40), answers, route: rt };
+      await plansWrite((l) => [plan, ...l.filter((p) => p.id !== id)]);
+      res.json({ ok: true, at: plan.at });
+    } catch (e) { next(e); }
+  });
+  r.delete('/api/b/planner/plans/:id', ...W, async (req, res, next) => {
+    try { await plansWrite((l) => l.filter((p) => p.id !== String(req.params.id))); res.json({ ok: true }); } catch (e) { next(e); }
+  });
+  // ----- the family's library of places to eat (server/eatlib.js, migration 0036): filled from every book and, for a town with none,
+  // by the helper with a web check. GET lists the towns, or the places of one town (?town=<key>), or of a route's towns
+  // (?for=<JSON [[en, th], …]>: a town's own rows and rows whose area or map address names it).
+  let eatBusy = false;
+  const eatSync = () => EATLIB.syncBooks(pool, FAMILY, STOCK.read()).catch((e) => { console.error('eatlib sync', e.message); return 0; });
+  const eatFor = (rows, pairs) => pairs.map(([en, th]) => ({ en, th: th || en, places: EATLIB.forTown(rows, [en, th].filter(Boolean)).map(EATLIB.out) }));
+  const eatPairs = (v) => { let a; try { a = JSON.parse(v); } catch (_) { a = []; } return (Array.isArray(a) ? a : []).slice(0, 12).map((x) => [clip(Array.isArray(x) ? x[0] : x, 80).trim(), clip(Array.isArray(x) ? x[1] : '', 80).trim()]).filter((x) => x[0]); };
+  r.get('/api/b/eatlib', A.requireEditor, async (req, res, next) => {
+    try {
+      res.setHeader('Cache-Control', 'no-store');
+      const rows = await EATLIB.all(pool, FAMILY);
+      if (req.query.for) return res.json({ for: eatFor(rows, eatPairs(String(req.query.for))) });
+      if (req.query.town) return res.json({ places: rows.filter((x) => x.tkey === String(req.query.town)).map(EATLIB.out) });
+      const cof = EATLIB.countryOf(STOCK.read());
+      res.json({ towns: EATLIB.towns(rows).map((t) => ({ ...t, country: cof.get(t.tkey) || null })), total: rows.length, on: !!(ai && ai.enabled()) });
+    } catch (e) { next(e); }
+  });
+  // the helper fills a town: one call with web search, only the town's name (and the country or region typed with it) is sent
+  r.post('/api/b/eatlib/fill', ...W, async (req, res, next) => {
+    if (!(ai && ai.enabled())) return bad(res, 'ai', 503);
+    if (eatBusy) return bad(res, 'busy', 409);
+    const b = req.body || {}, town = { en: clip(b.town, 80).trim(), th: clip(b.town_th || b.town, 80).trim() };
+    if (EATLIB.norm(town.en).length < 2) return bad(res, 'town');
+    eatBusy = true;   // claimed before the first await: one search at a time
+    try {
+      const have = EATLIB.forTown(await EATLIB.all(pool, FAMILY), [town.en, town.th]);
+      const known = have.find((x) => x.tkey === EATLIB.norm(town.en)) || have[0];   // a town the library already names keeps its name
+      const t = known ? { en: known.town, th: known.town_th } : town;
+      const rows = await EATLIB.fill({ client: new ai.SDK(), model: IMPORT.WRITE(), town: t, where: clip(b.where, 80), have: have.map((x) => x.name), take: aiTake, onUsage: addUsage });
+      await EATLIB.put(pool, FAMILY, rows, 'helper', null, { checked: new Date().toISOString().slice(0, 10) });
+      res.json({ ok: true, added: rows.length, tkey: EATLIB.norm(t.en) });
+    } catch (e) {
+      if (e.code === 'limit') return res.status(429).json({ error: 'limit' });
+      if (['json', 'refusal'].includes(e.code)) return bad(res, e.code, 502);
+      next(e);
+    } finally { eatBusy = false; }
+  });
+  // a place the parents do not want: it stays out (the next boot does not bring it back from its book)
+  r.delete('/api/b/eatlib/:id', ...W, async (req, res, next) => {
+    try { await q('UPDATE eat_lib SET gone=true WHERE family_id=$1 AND id=$2', [FAMILY, String(req.params.id)]); res.json({ ok: true }); } catch (e) { next(e); }
+  });
+  // the route: drafted from the answers, or changed as asked ({prev, ask}); a route the parents edited by hand ({route}, no ask) is only cleaned
+  r.post('/api/b/planner/route', ...W, async (req, res, next) => {
+    try {
+      const b = req.body || {}, answers = PLANNER.cleanAnswers(b.answers);
+      if (b.route && !b.ask) { try { return res.json({ route: withFacts(PLANNER.cleanRoute(b.route, answers)) }); } catch (_) { return bad(res, 'route'); } }
+      if (!(ai && ai.enabled())) return bad(res, 'ai', 503);
+      if (!answers.dest) return bad(res, 'dest');
+      if (answers.from && PLANNER.daysOf(answers) > 31) return bad(res, 'days');
+      const who = PLANNER.whoLine(await kidRows(), answers.from);
+      const two = !!b.two && !b.ask;
+      const route = await PLANNER.route({ client: new ai.SDK(), model: IMPORT.WRITE(), answers, who, prev: b.ask && b.route ? b.route : null, ask: b.ask, take: aiTake, onUsage: addUsage, two });
+      res.json(two ? { routes: route.map(withFacts) } : { route: withFacts(route) });
+    } catch (e) {
+      if (e.code === 'limit') return res.status(429).json({ error: 'limit' });
+      if (['route', 'json', 'refusal'].includes(e.code)) return bad(res, e.code, 502);
+      next(e);
+    }
+  });
+  r.post('/api/b/planner/draft', ...W, async (req, res, next) => {
+    let held = null;
+    try {
+      if (!(ai && ai.enabled())) return bad(res, 'ai', 503);
+      if (job && job.status === 'running') return bad(res, 'busy', 409);
+      const b = req.body || {}, answers = PLANNER.cleanAnswers(b.answers);
+      let rt; try { rt = PLANNER.cleanRoute(b.route, answers); } catch (_) { return bad(res, 'route'); }
+      const prevJob = job; job = { id: '', slug: '', status: 'running', log: [], started: Date.now() };   // claimed before the first await, like the import
+      const giveBack = () => { job = prevJob; }; held = giveBack;
+      const used = await plannerUsed();
+      if (used >= PLANNER_MONTHLY) { giveBack(); return res.status(429).json({ error: 'month', left: 0, max: PLANNER_MONTHLY }); }
+      let slug = PLANNER.slugOf(rt);
+      if (!SLUG_RE.test(slug)) slug = `trip-${String(rt.from).slice(0, 4)}`;
+      if ((await q('SELECT 1 FROM trips WHERE family_id=$1 AND slug=$2', [FAMILY, slug])).length) slug = `${slug.slice(0, 50)}-${crypto.randomBytes(2).toString('hex')}`;
+      const kids = await kidRows();
+      const id = crypto.randomBytes(8).toString('hex'), who = req.user.name || '';
+      job = { id, slug, status: 'running', log: [], started: Date.now(), kind: 'planner' };
+      const log = (line) => { job.log.push(`${new Date().toISOString().slice(11, 19)} ${line}`); if (job.log.length > 60) job.log.shift(); };
+      res.status(202).json({ job: id, slug }); held = null;
+      try {
+        // the book's calls count against the monthly allowance, not today's: the daily row only collects the tokens
+        const take = async () => { await q("INSERT INTO ai_usage (family_id, day, calls) VALUES ($1, (now() AT TIME ZONE 'UTC')::date, 0) ON CONFLICT (family_id, day) DO NOTHING", [FAMILY]); return true; };
+        const townPairs = [...new Map(rt.days.map((d) => [EATLIB.norm(d.town.en), [d.town.en, d.town.th]])).values()].filter((x) => x[0]);
+        const eatTowns = eatFor(await EATLIB.all(pool, FAMILY), townPairs), eats = EATLIB.groupsFor(eatTowns);
+        if (eats) log(`places to eat: ${eats.groups.reduce((n, g) => n + g.items.length, 0)} from the family's library (${eats.groups.map((g) => g.area.en).join(', ')})`);
+        const out = await IMPORT.run({ brief: { ...PLANNER.brief(answers, rt, PLANNER.whoLine(kids, rt.from), eats), eats, eatsAll: !!eats && eatTowns.every((t) => t.places.length) }, slug, client: new ai.SDK(), take, onUsage: addUsage, log, dir: DATA_TMP });
+        if (kids.length) out.seed.children = FAM.seedChildren(kids, out.seed.date_from);
+        out.seed.theme = { ...(out.seed.theme || {}), planner: { answers, made: new Date().toISOString().slice(0, 10) } };   // no child's name in it: kept for "change this day" (phase 2)
+        out.report.planner = true;
+        await q('INSERT INTO book_drafts (id, family_id, slug, seed, report, cost, created_by) VALUES ($1,$2,$3,$4,$5,$6,$7)', [id, FAMILY, slug, out.seed, out.report, out.cost, who]);
+        await plannerCount();
+        if (PLAN_ID.test(String(b.plan || ''))) await plansWrite((l) => l.filter((p) => p.id !== b.plan)).catch(() => {});   // the plan is a book's draft now
+        job.draft = { id, slug, title: out.seed.title, days: out.seed.days.length, report: out.report, cost: out.cost };
+        job.status = 'done'; log('done — review the draft, then save it as a book');
+        if (hooks.draft) Promise.resolve(hooks.draft({ trip: slug, title: out.seed.title, url: '/#/import' })).catch(() => {});
+      } catch (e) {
+        job.status = 'error'; job.error = e.code || 'failed'; log(`failed: ${e.message}`); console.error('planner', e.message);
+      }
+    } catch (e) { if (held) held(); next(e); }   // a failure before the 202 never leaves the job claimed
+  });
+
+  // ----- change one day (phase 2, docs/AI-PLANNER.md §4.6): the helper writes the day again for rain, a tired or unwell child, a place
+  // that is shut; the proposal comes back unsaved, "use this" saves it with the old day kept for one undo. A bundled book is never
+  // changed here (the next deploy would write its seed back over the change).
+  const dayRow = (tid, i) => q("SELECT day_index, to_char(date,'YYYY-MM-DD') date, title, sleep, emoji, planned, plan FROM trip_days WHERE trip_id=$1 AND day_index=$2", [tid, i]);
+  const dayBook = async (req, res) => {
+    const t = (await q('SELECT id, title, timezone, source FROM trips WHERE id=$1 AND family_id=$2', [req.params.trip, FAMILY]))[0];
+    if (!t) { bad(res, 'trip', 404); return null; }
+    if (t.source === 'seed') { bad(res, 'seed', 409); return null; }
+    const d = (await dayRow(t.id, Number(req.params.day)))[0];
+    if (!d) { bad(res, 'day', 404); return null; }
+    return { t, d };
+  };
+  const checkedKeys = async (tid, i) => new Set((await q('SELECT key FROM places WHERE trip_id=$1 AND day_index=$2', [tid, i])).map((p) => p.key));
+  // a proposal as the page holds it → the shape the cleaner reads (the same cleaning as the helper's own answer)
+  const asAnswer = (p) => ({ title: p.title, emoji: p.emoji, planned: p.planned, why: p.why, ...((p && p.plan) || {}), plan: ((p && p.plan) || {}).plan });
+  r.post('/api/b/planner/day/:trip/:day', ...W, async (req, res, next) => {
+    try {
+      if (!(ai && ai.enabled())) return bad(res, 'ai', 503);
+      const ask = String((req.body || {}).ask || '').trim().slice(0, 400);
+      if (!ask) return bad(res, 'ask');
+      const got = await dayBook(req, res); if (!got) return;
+      const { t, d } = got, pl = d.plan || {};
+      let forecast = '';
+      try {
+        const [f] = await require('./weather').forecast([{ date: d.date, ll: pl.stay && pl.stay.ll }], t.timezone);
+        if (f) forecast = `${Math.round(f.tmin)}–${Math.round(f.tmax)}°C${f.pop != null ? `, rain chance ${f.pop}%` : ''}`;
+      } catch (_) { /* the forecast is a nice-to-have */ }
+      const raw = await PLANNER.dayAsk({ client: new ai.SDK(), model: IMPORT.WRITE(), day: d, place: (t.title && t.title.en) || '', forecast, ask, who: PLANNER.whoLine(await kidRows(), d.date), tz: t.timezone, take: aiTake, onUsage: addUsage });
+      const day = PLANNER.cleanDay(raw, d, await checkedKeys(t.id, d.day_index));
+      if (CORE.scan(day).hits.length) return bad(res, 'privacy', 502);
+      res.json({ day, forecast: forecast || null });
+    } catch (e) {
+      if (e.code === 'limit') return res.status(429).json({ error: 'limit' });
+      if (['day', 'json', 'refusal'].includes(e.code)) return bad(res, e.code, 502);
+      next(e);
+    }
+  });
+  r.put('/api/b/planner/day/:trip/:day', ...W, async (req, res, next) => {
+    try {
+      const got = await dayBook(req, res); if (!got) return;
+      const { t, d } = got;
+      let day; try { day = PLANNER.cleanDay(asAnswer((req.body || {}).day || {}), d, await checkedKeys(t.id, d.day_index)); } catch (_) { return bad(res, 'day'); }
+      if (CORE.scan(day).hits.length) return bad(res, 'privacy', 400);
+      const { prev, changed, ...was } = d.plan || {};
+      const plan = { ...day.plan, prev: { title: d.title, emoji: d.emoji, planned: d.planned, plan: was }, changed: { at: Date.now(), why: day.why } };
+      await q('UPDATE trip_days SET title=$3, emoji=$4, planned=$5, plan=$6 WHERE trip_id=$1 AND day_index=$2', [t.id, d.day_index, day.title, day.emoji, JSON.stringify(day.planned), plan]);
+      res.json({ ok: true });
+    } catch (e) { next(e); }
+  });
+  r.post('/api/b/planner/day/:trip/:day/undo', ...W, async (req, res, next) => {
+    try {
+      const got = await dayBook(req, res); if (!got) return;
+      const { t, d } = got, pv = (d.plan || {}).prev;
+      if (!pv) return bad(res, 'none', 409);
+      await q('UPDATE trip_days SET title=$3, emoji=$4, planned=$5, plan=$6 WHERE trip_id=$1 AND day_index=$2', [t.id, d.day_index, pv.title, pv.emoji || '', JSON.stringify(pv.planned || []), pv.plan || {}]);
+      res.json({ ok: true });
+    } catch (e) { next(e); }
+  });
+
+  // ----- check the book's places on the web (phase 3, server/verify.js): one job at a time; a batch of 8 places a call (one of the day's
+  // calls each, refused up front when today's allowance cannot carry the book); the answers saved in trips.theme.verify. A bundled
+  // book is not checked here (its next boot writes its theme back).
+  let vfJob = null;   // { trip, status, done, total, error, started }
+  const vfView = () => (vfJob ? { trip: vfJob.trip, status: vfJob.status, done: vfJob.done, total: vfJob.total, error: vfJob.error || null, started: vfJob.started } : { status: 'idle' });
+  r.get('/api/b/planner/verify', A.requireEditor, (_req, res) => { res.setHeader('Cache-Control', 'no-store'); res.json(vfView()); });
+  r.post('/api/b/planner/verify/:trip', ...W, async (req, res, next) => {
+    let held = null;
+    try {
+      if (!(ai && ai.enabled())) return bad(res, 'ai', 503);
+      if (vfJob && vfJob.status === 'running') return bad(res, 'busy', 409);
+      const prev = vfJob; vfJob = { trip: req.params.trip, status: 'running', done: 0, total: 0, started: Date.now() }; held = () => { vfJob = prev; };   // claimed before the first await
+      const t = (await q('SELECT id, source, theme FROM trips WHERE id=$1 AND family_id=$2', [req.params.trip, FAMILY]))[0];
+      if (!t) { held(); return bad(res, 'trip', 404); }
+      if (t.source === 'seed') { held(); return bad(res, 'seed', 409); }
+      const days = await q('SELECT day_index, planned, plan FROM trip_days WHERE trip_id=$1 ORDER BY day_index', [t.id]);
+      const places = VERIFY.placesOf(days);
+      if (!places.length) { held(); return bad(res, 'none', 422); }
+      const need = VERIFY.calls(places.length);
+      const used = Number(((await q("SELECT calls FROM ai_usage WHERE family_id=$1 AND day=(now() AT TIME ZONE 'UTC')::date", [FAMILY]))[0] || {}).calls || 0);
+      if (STORY_DAILY - used < need) { held(); return res.status(429).json({ error: 'limit', left: Math.max(0, STORY_DAILY - used), need }); }
+      vfJob.total = places.length; held = null;
+      res.status(202).json({ total: places.length, calls: need });
+      const job = vfJob, rows = [];
+      try {
+        for (let i = 0; i < places.length; i += VERIFY.BATCH) {
+          const out = await VERIFY.checkBatch({ client: new ai.SDK(), model: IMPORT.WRITE(), list: places.slice(i, i + VERIFY.BATCH), take: aiTake, onUsage: addUsage });
+          rows.push(...out.rows); job.done = rows.length;
+        }
+        const verify = { at: Date.now(), by: clip(req.user.name, 40), places: rows };
+        await q("UPDATE trips SET theme = jsonb_set(COALESCE(theme, '{}'::jsonb), '{verify}', $2::jsonb) WHERE id=$1", [t.id, JSON.stringify(verify)]);
+        // what the check found also marks the family's library of places to eat (the place by its name, wherever it is kept)
+        for (const pl of verify.places || []) if (pl.kind === 'food' && pl.st && pl.st !== 'unsure') await q('UPDATE eat_lib SET st=$3, checked=$4::date, url=CASE WHEN $5 <> \'\' THEN $5 ELSE url END WHERE family_id=$1 AND nkey=$2', [FAMILY, EATLIB.norm(pl.name), pl.st, new Date(verify.at).toISOString().slice(0, 10), pl.url || '']).catch(() => {});
+        job.status = 'done';
+      } catch (e) { job.status = 'error'; job.error = e.code || 'failed'; console.error('verify', e.message); }
+    } catch (e) { if (held) held(); next(e); }
   });
 
   // ---------- the book's own pictures (server/bookart.js): Claude draws a circle per day, the passport crest and the two guides as SVG ----------
@@ -1506,61 +1757,6 @@ function router({ pool, media, A, ai, hooks = {} }) {   // hooks.heart(h): set b
   r.get('/api/b/likes', A.requireEditor, async (_req, res, next) => {
     try { const v = (await q("SELECT value FROM settings WHERE key='family_likes'"))[0]; res.setHeader('Cache-Control', 'no-store'); res.json(v ? JSON.parse(v.value) : null); } catch (e) { next(e); }
   });
-  /* The next trip, drafted by the helper (owner, Nov 2026: "ผู้ช่วยวางแผนทริปหน้า"): where, how many days (2–14) and the first date,
-     typed by a parent, plus what this family likes (the notebook's summary) and every book's lessons — words only — go to the helper
-     (story.js mode 'plannext'), whose plan (plan.schema.json shape) is checked and built like the sample book (plan-to-seed: no drawn
-     art, the stock library's pictures, the privacy scan) into a new app-made book the parents change as they like. One call on the
-     daily allowance; streamed as SSE so the page shows it working (n = letters written so far), then 'done' {id}. */
-  let planBusy = false;
-  r.post('/api/b/plannext', ...W, async (req, res, next) => {
-    if (planBusy) return bad(res, 'busy', 409);
-    planBusy = true;
-    try {
-      if (!ai || !ai.enabled()) return bad(res, 'no-key', 501);
-      const b = req.body || {}, where = clip(b.place, 80).trim(), days = Math.floor(Number(b.days)), from = String(b.from || ''), notes = clip(b.notes, 600).trim();
-      if (!where) return bad(res, 'place');
-      if (!(days >= 2 && days <= 14)) return bad(res, 'days');
-      if (!/^\d{4}-\d{2}-\d{2}$/.test(from) || Number.isNaN(Date.parse(from + 'T00:00:00Z'))) return bad(res, 'from');
-      const to = new Date(Date.parse(from + 'T00:00:00Z') + (days - 1) * 864e5).toISOString().slice(0, 10);
-      const likes = (await q("SELECT value FROM settings WHERE key='family_likes'"))[0];
-      const lessons = await q("SELECT e.text, t.title FROM entries e JOIN trips t ON t.id=e.trip_id WHERE e.family_id=$1 AND e.kind='lessons' AND e.text <> '' ORDER BY t.date_from DESC LIMIT 6", [FAMILY]);
-      const facts = [`Place: ${where}`, `Days: ${days}, from ${from} to ${to}`, notes ? `The parents add: ${notes}` : '',
-        likes ? `What our family likes: ${String(likes.value).slice(0, 4000)}` : '',
-        ...lessons.map((l) => `Lessons from ${(l.title && (l.title.en || l.title.th)) || 'a past trip'}: ${String(l.text).slice(0, 1500)}`)].filter(Boolean).join('\n');
-      if (!(await aiTake())) return bad(res, 'limit', 429);
-      const ctl = new AbortController(); let done = false, n = 0, last = 0;
-      res.on('close', () => { if (!done) ctl.abort(); });
-      res.writeHead(200, { 'Content-Type': 'text/event-stream; charset=utf-8', 'Cache-Control': 'no-store', 'X-Accel-Buffering': 'no' });
-      const send = (ev, data) => res.write(`${ev ? `event: ${ev}\n` : ''}data: ${JSON.stringify(data)}\n\n`);
-      try {
-        const text = await ai.writeStory({ lang: 'en', whole: true, mode: 'plannext', facts, kids: await kidsFor({ date_from: from }), signal: ctl.signal,
-          onText: (x) => { n += x.length; if (n - last > 400) { last = n; send(null, { n }); } } });
-        const plan = ai.parsePlan(text);
-        if (!plan) { done = true; send('error', { error: 'answer' }); return res.end(); }
-        plan.days = plan.days.slice(0, days);
-        if (plan.days.length !== days) { done = true; send('error', { error: 'answer' }); return res.end(); }
-        plan.slug = `next-${from}-${crypto.randomBytes(2).toString('hex')}`; plan.from = from; plan.to = to;
-        if (!plan.place || typeof plan.place.th !== 'string') plan.place = { th: where, en: where };
-        for (const d of plan.days) { for (const k of Object.keys(d)) if (!['title', 'emoji', 'plan', 'planned', 'tips', 'wx', 'moving'].includes(k)) delete d[k]; }
-        for (const k of Object.keys(plan)) if (!['slug', 'title', 'sub', 'from', 'to', 'tz', 'place', 'days'].includes(k)) delete plan[k];
-        const v = CORE.validate(plan);
-        if (v.errs.length) { done = true; send('error', { error: 'answer', why: v.errs.slice(0, 3) }); return res.end(); }
-        const seed = CORE.toSeed(plan, [], { art: false, stock: STOCK.read() });
-        if (CORE.scan(seed).hits.length) { done = true; send('error', { error: 'privacy' }); return res.end(); }
-        seed.children = FAM.seedChildren(await kidRows(), seed.date_from);
-        const c = await pool.connect();
-        try { await c.query('BEGIN'); await putSeed(c, seed, 'manual'); await c.query('COMMIT'); }
-        catch (e) { await c.query('ROLLBACK').catch(() => {}); throw e; } finally { c.release(); }
-        await EMOJI.stockPack(pool, FAMILY).catch(() => {});
-        done = true; send('done', { id: seed.slug, title: seed.title }); res.end();
-      } catch (e) {
-        done = true;
-        if (e.name === 'AbortError' || ctl.signal.aborted) return res.end();
-        console.error('plannext', e.message);
-        send('error', { error: e.code === 'refusal' ? 'refused' : 'failed' }); res.end();
-      }
-    } catch (e) { next(e); } finally { planBusy = false; }
-  });
   /* Lessons for the next trip (owner, Nov 2026: "บทเรียนสำหรับทริปหน้า"): one trip's own notebook rows, the children's moods day by day,
      the parents' notes and the day summaries, what was spent by kind — words only, never a photo — and the helper writes what worked,
      what did not and what to try next time; saved as entry kind 'lessons' (`<trip>.lessons.all`) and shown in the travel notebook. */
@@ -1712,4 +1908,5 @@ async function backfillPh(pool, media) {
   }
   return n;
 }
-module.exports = { router, syncSeeds, brand, FAMILY, AUDIO_EXT, backfillPh };
+const eatSyncAll = async (pool) => { try { await EATLIB.syncStarter(pool, FAMILY, STOCK.read()); return await EATLIB.syncBooks(pool, FAMILY, STOCK.read()); } catch (e) { console.error('eatlib sync', e.message); return 0; } };
+module.exports = { router, syncSeeds, brand, FAMILY, AUDIO_EXT, backfillPh, eatSyncAll };

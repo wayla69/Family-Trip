@@ -355,7 +355,12 @@ const T = 'hk-macau-2026';
     const bodies = []; const watch = (r) => { if (r.method() !== 'GET') bodies.push(r.url() + ' ' + (r.postData() || '')); }; page.on('request', watch);
     await page.goto(`${BASE}/#/`); await page.waitForSelector('.spine.add a.addway.main[href="#/snap"]');
     await page.click('.spine.add a.addway.main[href="#/snap"]'); await page.waitForSelector('.snapmode');
-    ok(await page.locator('.snapmode .tpo[aria-pressed="true"][data-v="after"]').count() === 1 && /never the position/.test(await page.textContent('.snapnote')) && await s.noHScroll(), 'book from photos: the new-book tile leads to it; "we\'re back" chosen, the privacy line said up front');
+    ok(await page.locator('.snapmode .tpo[aria-pressed="true"][data-v="after"]').count() === 1 && /never the position/.test(await page.textContent('.snapwhere')) && await page.locator('.snapmode .tpo.pz .smpic img').count() === 2 && await page.locator('.snapwhere .ckrow input[data-a="snapgeoon"]').count() === 1 && await s.noHScroll(), 'book from photos: the new-book tile leads to it; "we\'re back" chosen, the privacy line said up front');
+    await s.shot('snap-start');
+    { // the online-names switch is a tick row in the place card: a tap turns it on, another off (this phone only)
+      await page.click('.snapwhere .ckrow'); const on = await page.evaluate(() => [ls('geoOnline'), document.querySelector('.snapwhere input').checked]);
+      await page.click('.snapwhere .ckrow'); const off = await page.evaluate(() => [ls('geoOnline'), document.querySelector('.snapwhere input').checked]);
+      ok(on[0] && on[1] && !off[0] && !off[1], `book from photos: the place card's switch turns the online names on and off (${JSON.stringify({ on, off })})`); }
     const fx = ['gps-ii.jpg', 'gps-mm.jpg', 'gps.avif', 'time-only.jpg', 'gps-zero.jpg', 'no-exif.jpg', 'gps-south.jpg'].map((f) => path.resolve('test/fixtures/snap', f));
     const [fc] = await Promise.all([page.waitForEvent('filechooser'), page.click('[data-a="snappickbook"]')]);
     await fc.setFiles(fx);
@@ -968,7 +973,8 @@ const T = 'hk-macau-2026';
       return { bad, days, withTip, row: [...document.querySelectorAll('.dsheet dt')].some((x) => /Local pick|ร้านเด็ด/.test(x.textContent)), op: cs && cs.opacity, pin: bk && getComputedStyle(bk.querySelector('.navb')).opacity }; });
     ok(tip.bad.length === 0 && tip.withTip >= 20 && !tip.row, `today: the manual's local tip of the day leads "Good to know today" under its own name and is counted there — never a row of the Meals box (${tip.withTip} of ${tip.days} days ${tip.bad.slice(0, 3).join(' | ') || 'all right'})`);
     ok(tip.op === '1' && tip.pin === '1', `today: a meal's backup line is a colour, not faded with opacity — its navigate pin is as strong as the pick's (opacity ${tip.op} / ${tip.pin})`); }
-  ok(await page.locator('.dsheet .meal').count() === 4 && /Hoi Lin Tea House/.test(await page.textContent('.cgrid')) && /Plaza Inn/.test(await page.locator('.dsheet .meal').nth(3).textContent()) && await page.locator('.cbox.c-ind .dlegs a[href="/art/hk/disney-map.svg"]').count() === 1, 'HK today, Disney day: four meals each with a pick and a backup, and the park map');
+  ok(await page.locator('.dsheet .meal').count() === 4 && /Hoi Lin Tea House/.test(await page.textContent('.cgrid')) && /Plaza Inn/.test(await page.locator('.dsheet .meal').nth(3).textContent()) && await page.locator('.cgrid > .cbox.dmap:first-child .mapimg img[src="/art/hk/disney-map.svg"]').count() === 1 && await page.locator('.dmap .mapstops li').count() >= 9 && await page.evaluate(() => document.querySelector('.dmap img').getBoundingClientRect().width > 250), 'HK today, Disney day: four meals each with a pick and a backup, and the park map shown as a picture of its own (first box) with our numbered stops');
+  await page.locator('.dmap').screenshot({ path: `${OUT}/hk-today-disney-map.png` }).catch(() => {});
   const vp0 = page.viewportSize(); await page.setViewportSize({ width: 1440, height: 900 }); await page.waitForSelector('.cgrid.packed');
   const colH = await page.$$eval('.cgrid.packed > .ccol', (cs) => cs.map((c) => c.offsetHeight));
   ok(colH.length === 2 && Math.abs(colH[0] - colH[1]) < 260 && await page.locator('.cgrid .cbox').count() >= 5 && await page.locator('.cgrid .cbox.cone').count() >= 3, `HK today, wide screen: the boxes (four answer boxes and the one-line ones under them) packed into two columns of near-equal height (${colH.join(' / ')})`);
@@ -1497,7 +1503,10 @@ const T = 'hk-macau-2026';
     const filled = () => page.evaluate(() => [...document.querySelectorAll('.colourpad [data-c]')].filter((x) => x.getAttribute('fill').toLowerCase() !== '#ffffff').map((x) => x.getAttribute('fill')).join());
     const saved = () => page.evaluate(() => (S.entries.find((e) => e.id === 'hk-macau-2026.field.colour.d1.mimi') || {}).text);
     await page.waitForFunction(() => queue.length === 0 && document.querySelectorAll('.colourpad [data-c]').length > 0, null, { timeout: 8000 });   // the blue tap's save is back and the picture redrawn
-    await page.click('.palette button[data-v="#EF5350"]'); await page.locator('.colourpad [data-c]').nth(0).click({ force: true });
+    // every redraw empties the pad and fills its picture back from the SVG a moment later (kid.js hydrateColours): after the blue tap's save
+    // the state refresh redraws, so wait for the shape to be on screen again before tapping (a CI failure of Nov 2026: "Element is not visible")
+    const shape0 = page.locator('.colourpad [data-c]').nth(0);
+    await page.click('.palette button[data-v="#EF5350"]'); await shape0.waitFor({ state: 'visible', timeout: 8000 }); await shape0.click({ force: true });
     // a redraw before the red tap is saved (a state refresh lands within the 500 ms the save waits): the red must stay on the picture
     await page.evaluate(() => render()); await page.waitForFunction(() => document.querySelectorAll('.colourpad [data-c]').length > 0, null, { timeout: 5000 });
     const two = await filled(), why = await page.evaluate(() => ({ pend: Object.values(colPend), fill: (document.querySelector('.colourpad') || {}).dataset.fill, saved: (S.entries.find((e) => e.id === 'hk-macau-2026.field.colour.d1.mimi') || {}).text, hist: colHist.length, q: queue.length }));
@@ -1514,7 +1523,7 @@ const T = 'hk-macau-2026';
     const strip = await page.evaluate(() => { const bs = [...document.querySelectorAll('.colpics button')]; return { n: bs.length, first: bs[0].dataset.v, pressed: bs.findIndex((b) => b.getAttribute('aria-pressed') === 'true'), lib: bs.filter((b) => /^colour\.p\./.test(b.dataset.v)).length, h: Math.min(...bs.map((b) => b.getBoundingClientRect().height)), painted: bs[0].querySelector('i') ? 1 : 0 }; });
     await page.locator('.colpics button[data-v^="colour.p."]').first().click(); await page.waitForSelector('.colourpad[data-key^="colour.p."] svg [data-c]');
     const src = await page.getAttribute('.colourpad', 'data-src'), key = await page.getAttribute('.colourpad', 'data-key');
-    await page.click('.palette button[data-v="#8BC34A"]'); await page.locator('.colourpad [data-c]').nth(0).click({ force: true });
+    await page.click('.palette button[data-v="#8BC34A"]'); await page.locator('.colourpad [data-c]').nth(0).waitFor({ state: 'visible', timeout: 8000 }); await page.locator('.colourpad [data-c]').nth(0).click({ force: true });
     await page.waitForFunction((k) => S.entries.some((e) => e.id === `hk-macau-2026.field.${k}.mimi` && /8BC34A/.test(e.text)), key, { timeout: 5000 });
     await page.locator('.colpics button[data-v="colour.d1"]').click(); await page.waitForSelector('.colourpad[data-key="colour.d1"] svg [data-c]');
     const dayKept = await page.evaluate(() => [...document.querySelectorAll('.colourpad [data-c]')].some((x) => x.getAttribute('fill') === '#42A5F5'));
@@ -1750,7 +1759,7 @@ const T = 'hk-macau-2026';
   await page.goto(`${BASE}/#/passport/mimi/${T}`); await page.waitForSelector('.pp .advc img.crest');
   await page.click('.kidgo'); await page.waitForSelector('.kidtiles');
   await page.click('.kidtiles button[data-v$="/colour"]'); await page.waitForSelector('.colourpad svg [data-c]', { timeout: 10000 });
-  await page.locator('.colourpad [data-c]').nth(0).click({ force: true });
+  await page.locator('.colourpad [data-c]').nth(0).waitFor({ state: 'visible', timeout: 8000 }); await page.locator('.colourpad [data-c]').nth(0).click({ force: true });
   await page.waitForFunction(() => queue.length >= 1, null, { timeout: 5000 });
   const lock2 = await boxOf(page, '#kidexit');
   await page.mouse.move(lock2.x + lock2.width / 2, lock2.y + lock2.height / 2); await page.mouse.down(); await page.waitForTimeout(1500); await page.mouse.up();
@@ -2236,14 +2245,53 @@ const T = 'hk-macau-2026';
   ok(await page.locator('.callb.main[href="tel:000"]').count() === 1 && await page.locator('.stayc.tonight').count() === 1 && await s.noHScroll(), 'emergency glance: big call buttons (000 first), tonight\'s address');
   await page.goto(`${BASE}/#/t/big-hop-2027/prep`); await page.waitForSelector('.glg');
   ok(await page.locator('.glg .glc').count() >= 6 && /\d+ things|\d+\/\d+ packed/.test(await page.textContent('.glg')), 'get-ready glance: a card per topic, the packing list named by its size (never “0/27 packed”)');
+  { // the pocket guide in the book's look (owner, Nov 2026: "ส่วนของ Get Ready อ่านยากมาก"): every topic a picture card, a topic's page under a band with
+    // its picture, a table's rows as cards with each label above its words
+    const pics = await page.$$eval('.glg .glc', (cs) => cs.map((c) => (c.querySelector('.gpic img') || {}).src || ''));
+    ok(pics.length >= 6 && pics.every(Boolean) && pics.some((x) => /\/van\.webp$/.test(x)), `get-ready glance: a picture on every topic card (the van has its own) (${pics.map((x) => x.split('/').pop()).join(' ')})`); }
   await page.locator('.glg .glc').nth(2).click(); await page.waitForSelector('#pocket');
   ok(/\/prep\/full\/2$/.test(page.url()) && await page.locator('#pocket details.pg').count() === 0 && await page.locator('.tp.one #pg-prep-2').count() === 1 && await page.locator('.repseg').count() === 0 && await page.locator('.tp.one details.ifold:not([open])').count() === 0
     && await page.locator('.pgnav a.pgn.prev[href$="/prep/full/1"]').count() === 1 && await page.locator('.pgnav a.pgn.next[href$="/prep/full/3"]').count() === 1 && (await page.textContent('.tp.one h1')).trim().length > 2
     && await page.locator('.backsum').count() === 0 && /\/prep$/.test(await page.getAttribute('header.top .ibtn', 'href')) && await s.noHScroll(), 'a glance card opens that topic alone: its title the heading, every detail open, no switch and nothing to unfold, ‹ › to the topics beside it; the top bar\'s back goes to the summary');
+  { await page.goto(`${BASE}/#/t/${T}/prep/full/2`); await page.waitForSelector('.tp.one .tphead');
+    const r = await page.evaluate(() => { const tr = document.querySelector('.tp.one .prices tbody tr'), td = tr.querySelector('td[data-h]'), b = td.getBoundingClientRect(), h = getComputedStyle(td, '::before');
+      return { head: !!document.querySelector('.tp.one .tphead .phpic img'), card: getComputedStyle(tr).display, borderTop: parseFloat(getComputedStyle(tr).borderTopWidth), labelBlock: h.display, w: Math.round(b.width) }; });
+    ok(r.head && r.card === 'grid' && r.borderTop >= 3 && r.labelBlock === 'block' && await s.noHScroll(), `get-ready topic page: a band with the topic's picture, each row of a table a card with its labels above the words (${JSON.stringify(r)})`); }
   { await page.goto(`${BASE}/#/t/${T}/prep`); await page.waitForSelector('.glg');
     ok(await page.locator('.glg').count() === 2 && await page.locator('.glg').nth(1).locator('.glc .gday').count() >= 5 && await page.locator('.glg').first().locator('.gday').count() === 0, 'HK get-ready summary: the whole-trip topics first, the chapters for one day under their own heading with the day as a chip');
     await page.goto(`${BASE}/#/t/${T}/prep/full/0`); await page.waitForSelector('.tp.one .steps');
     ok(await page.$$eval('.steps .pts b', (bs) => bs.length > 0 && bs.every((b) => getComputedStyle(b).display === 'inline')), 'booking timeline: a bold time or price stays inside its sentence (never a line of its own)');
+    // numbered steps stay one numbered list (step 4's three short pieces once became bullets between the numbers), a map's stop reads as one line
+    await page.goto(`${BASE}/#/t/${T}/prep/full/14`); await page.waitForSelector('.tp.one .tphead');
+    const dep = await page.evaluate(() => ({ ol: document.querySelectorAll('.tp.one ol.tips.nums>li').length, ul: document.querySelectorAll('.tp.one ul.tips').length, num: /^\d+\.\s/.test(document.querySelector('.tp.one ol.tips.nums>li')?.textContent || '') }));
+    ok(dep.ol === 6 && dep.ul === 0 && !dep.num, `departure routine: six numbered steps, no bullets among them, no "1." written twice (${JSON.stringify(dep)})`);
+    await page.goto(`${BASE}/#/t/${T}/prep/full/8`); await page.waitForSelector('.mtl');
+    ok(await page.locator('.mtl li ul, .mtl li .pts').count() === 0, 'park map stops: each stop one line, never a list inside a stop');
+    // every inner page in one look (owner, Nov 2026: "ไม่เอา format ที่ไม่ตรงกับ app"): learn cards, if-then cases and notes are cards; a bold time stays in its sentence
+    { // a long table cell reads as lines (owner, Nov 2026: "ยังอ่านยากเลย" on Getting around): one line a sentence or fare, bold labels and prices, no comma inside the bold
+      await page.goto(`${BASE}/#/t/${T}/prep`); await page.waitForSelector('.glg');
+      const links = await page.$$eval('.glg a.glc', (as) => as.map((a) => a.getAttribute('href')));
+      const r = { li: 0, plain: 0, comma: 0 }; for (const h of links) { await page.goto(`${BASE}/${h}`); await page.waitForSelector('.tp.one');
+        const q = await page.evaluate(() => ({ li: Math.max(0, ...[...document.querySelectorAll('.tp.one .prices td ul.cpts')].map((u) => u.children.length)), plain: [...document.querySelectorAll('.tp.one .prices td')].filter((x) => !x.querySelector('ul,li') && x.textContent.length > 160).length, comma: [...document.querySelectorAll('.tp.one b.kf')].filter((b) => /,$/.test(b.textContent)).length }));
+        r.li = Math.max(r.li, q.li); r.plain += q.plain; r.comma += q.comma; }
+      ok(r.li >= 3 && r.plain === 0 && r.comma === 0, `a long table cell is lines, not a paragraph; no bold price ends in a comma (${JSON.stringify(r)})`); }
+      // the opening paragraph is a card; a row of several short pieces (Apps) is a list (owner, Nov 2026: "ทำ 1-4")
+      await page.goto(`${BASE}/#/t/big-hop-2027/prep/full/4`); await page.waitForSelector('.tp.one .ledebox');
+      const lb = await page.evaluate(() => { const e = document.querySelector('.tp.one .pg1>.ledebox'); const c = getComputedStyle(e); return { r: parseFloat(c.borderTopLeftRadius), bg: c.backgroundColor !== 'rgba(0, 0, 0, 0)', pts: e.querySelectorAll('.pts.lede>li').length, sum: getComputedStyle(e.querySelector('summary') || e).display }; });
+      ok(lb.r >= 12 && lb.bg && lb.pts >= 2 && lb.sum === 'none', `a topic's opening paragraph and its points are one soft card (${JSON.stringify(lb)})`);
+      // key facts in colour stay readable in dark mode inside every card (the learn page's cards once kept the light-mode navy on a dark card)
+      await page.emulateMedia({ colorScheme: 'dark' }); await page.goto(`${BASE}/#/t/${T}/learn/full/0`); await page.waitForSelector('.tp.one .gcard b.kf');
+      const lum = await page.$$eval('.tp.one .gcard b.kf', (bs) => bs.map((b) => { const n = (getComputedStyle(b).color.match(/[\d.]+/g) || []).map(Number); const v = n.slice(0, 3).map((x) => (x > 1 ? x / 255 : x)); return +(0.2126 * v[0] + 0.7152 * v[1] + 0.0722 * v[2]).toFixed(2); }));
+      await page.emulateMedia({ colorScheme: null });
+      ok(lum.length && Math.min(...lum) >= 0.4, `dark mode: every coloured key fact in a learn card is light enough to read (${lum.slice(0, 8).join(' ')})`);
+    await page.goto(`${BASE}/#/t/${T}/sos`); await page.waitForSelector('.glg');
+    const sosLinks = await page.$$eval('.glg a.glc', (as) => as.map((a) => a.getAttribute('href').replace(/^#\/t\//, '')));
+    let ift = null; for (const r of sosLinks) { await page.goto(`${BASE}/#/t/${r}`); await page.waitForSelector('.tp.one'); if (await page.locator('.tp.one .ifts details.ifold').count()) { ift = r; break; } }
+    ok(!!ift, `an if-then page among the emergency topics (${sosLinks.join(' ')})`);
+    for (const [r, sel] of [[`${T}/learn/full/0`, '.tp.one .gcard'], [`${T}/learn/full/1`, '.tp.one details.sub'], [ift, '.tp.one .ifts details.ifold'], ['big-hop-2027/prep/full/7', '.tp.one .pg1>.call.info']]) {
+      await page.goto(`${BASE}/#/t/${r}`); await page.waitForSelector(sel, { state: 'attached' });
+      const c = await page.$$eval(sel, (es) => es.map((e) => ({ top: parseFloat(getComputedStyle(e).borderTopWidth), r: parseFloat(getComputedStyle(e).borderTopLeftRadius), kf: [...e.querySelectorAll('b.kf')].every((b) => getComputedStyle(b).display === 'inline') })));
+      ok(c.length && c.every((x) => x.top >= 3 && x.r >= 12 && x.kf), `${r}: every ${sel.split(' ').pop()} a card with a coloured top edge, bold times inside their sentence (${JSON.stringify(c.slice(0, 3))})`); }
     await page.goto(`${BASE}/#/t/${T}`); await page.waitForSelector('.hubgrid .tile.today small');
     await page.evaluate(() => document.querySelectorAll('.hubgrid').forEach((g) => { g.className = g.className.replace(/tl-\w+/, 'tl-pastel'); }));   // the colourful look, whatever an earlier step chose
     const c = await page.evaluate(`(${CONTRAST})(document.querySelectorAll('.hubgrid .tile small'), (e) => { const g = document.createElement('i'); g.style.backgroundColor = getComputedStyle(e.closest('.tile')).borderTopColor; document.body.appendChild(g); return g; })`);

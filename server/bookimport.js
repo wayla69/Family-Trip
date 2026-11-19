@@ -78,7 +78,8 @@ const parseJSON = (s) => {
 };
 let schema = null;
 const SCHEMA = () => (schema = schema || JSON.parse(fs.readFileSync(path.join(ROOT, 'docs/handoff/plan.schema.json'), 'utf8')));
-const SAMPLE = () => fs.readFileSync(path.join(ROOT, 'docs/handoff/plan.sample.json'), 'utf8');
+// the format example names the owner's children: they never travel in a prompt (a planned trip sends no child's name at all)
+const SAMPLE = () => fs.readFileSync(path.join(ROOT, 'docs/handoff/plan.sample.json'), 'utf8').replace(/Mimi|Mika/g, 'the little one').replace(/มีมี่|มีก้า/g, 'น้อง');
 const RULES = 'Copy times, names, prices, hours, phone numbers and addresses exactly as the manual writes them; never invent one. '
   + 'Leave out anything private: booking references, confirmation numbers, e-tickets, passport numbers, what the family paid in baht, e-mails, personal phone numbers, travellers\' full names. '
   + 'Masked values like [number] were removed on purpose — never guess them. Answer with JSON only, no prose, no code fence.';
@@ -92,13 +93,24 @@ const EN_STYLE = 'English style: British spelling (colour, centre, kilometre, fa
 const EN_ONLY = `Wherever the schema asks for an {th, en} object, write {"en": "…"} only — the Thai is added later. ${EN_STYLE}`;
 
 // ---------- 3–5. the import itself. client = an Anthropic SDK instance; take() = the daily cap (false → stop); log(line) = progress
-async function run({ buf, slug, client, take, onUsage, log = () => {}, dir, kids }) {
-  const raw = await pdfText(buf, dir);
-  if (raw.replace(/\s+/g, '').length < 2000) throw Object.assign(new Error('too little text (a scanned PDF?)'), { code: 'text' });
-  const { text, dropped, masked } = redact(raw);
-  log(`text ${raw.length} chars → ${text.length} after redaction (${dropped} lines dropped, ${masked} values masked)`);
+// A planned trip (docs/AI-PLANNER.md, server/planner.js) runs the same pipeline from a brief instead of a manual: the family's answers
+// and the day-by-day route they agreed, as text (brief.text); the countries' checked facts (brief.facts, server/countryfacts.js) replace
+// whatever the helper writes for emergency numbers and visas; brief.who names the children only by their ages.
+const PLAN_RULES = 'Plan for small children first: keep their naps (no leg over 80 minutes at nap time), dinner by 18:30, one main sight per half day at a slow pace (two at a full one), an easy arrival day and departure day. '
+  + 'Every stop is a real, well-known place you are sure exists, with a full Google Maps query. Never invent an exact price, opening hour or height limit: give prices as a range with ≈, and where you are not sure of hours or a rule write "check before you go". '
+  + 'Never name the children — say "the children" (or "the little one" for the youngest). No booking references, no flight numbers you were not given, no e-mails or phone numbers of people. Answer with JSON only, no prose, no code fence.';
+async function run({ buf, brief, slug, client, take, onUsage, log = () => {}, dir, kids }) {
+  let text, dropped = 0, masked = 0;
+  if (brief) { ({ text, dropped, masked } = redact(String(brief.text || ''))); log(`text brief ${text.length} chars (a planned trip; ${dropped} lines dropped, ${masked} values masked)`); }   // a typed booking number never leaves either
+  else {
+    const raw = await pdfText(buf, dir);
+    if (raw.replace(/\s+/g, '').length < 2000) throw Object.assign(new Error('too little text (a scanned PDF?)'), { code: 'text' });
+    ({ text, dropped, masked } = redact(raw));
+    log(`text ${raw.length} chars → ${text.length} after redaction (${dropped} lines dropped, ${masked} values masked)`);
+  }
+  const SRC = brief ? 'the brief (and what you know well of the place)' : 'the manual';
   const ledger = [];
-  const manualBlock = { type: 'text', text: `<manual>\n${text}\n</manual>`, cache_control: { type: 'ephemeral' } };
+  const manualBlock = { type: 'text', text: brief ? `<brief>\n${text}\n</brief>` : `<manual>\n${text}\n</manual>`, cache_control: { type: 'ephemeral' } };
   // a model call; an answer that isn't readable JSON (a missing comma killed a live import) is asked once more before giving up
   async function ask(step, model, opts) {
     try { return await askOnce(step, model, opts); } catch (e) {
@@ -126,26 +138,59 @@ async function run({ buf, slug, client, take, onUsage, log = () => {}, dir, kids
     return parseJSON(msg.content.filter((b) => b.type === 'text').map((b) => b.text).join(''));
   }
   const S = SCHEMA();
-  const sys = `You turn a family's Trip Operations Manual into the plan.json of a memory-book app. ${RULES}`;
-  const top = await ask('structure', EXTRACT(), {
+  const sys = brief ? `You plan a family trip and write it as the plan.json of a memory-book app, from the family's brief: their answers and the day-by-day route they agreed (keep its towns, dates and days). ${PLAN_RULES} ${EN_STYLE}`
+    : `You turn a family's Trip Operations Manual into the plan.json of a memory-book app. ${RULES}`;
+  const top = await ask('structure', brief ? WRITE() : EXTRACT(), {
     system: sys,
-    user: `Write the plan's top level and its days from the manual: {slug, title, sub, from, to, tz, place, places, kicker, display, emoji, days}. `
+    user: `Write the plan's top level and its days from ${SRC}: {slug, title, sub, from, to, tz, place, places, kicker, display, emoji, days}. `
       + `slug = "${slug}". One day per date from the first to the last day. For each day fill title, sleep, wx, planned (every stop, with a FULL Google Maps query q and a local-script name zh when the manual gives one), moving, pick, planB, money (prices only), plan (the timeline: t = HH:MM; h = the step's headline for the trip itself — one emoji, then at most 6 short, fun, concrete words a parent reads at a glance, never a bare noun list ("🏰 Off to Disneyland!", "🌉 Golden bus over the sea"); en = every detail of the step, ' · ' between the pieces, opened with a tap; go = true on exactly one row a day: the step the family leaves the bed on with the day bag (the taxi, the van, the shuttle, the walk out; on a flight day the first row; a day spent at the stay has none)), tips (include the "show the driver" names), legs (every move with from/to/by/min), picks (each meal: the pick, with alt = the backup), stay {name, addr, q}. `
       + `Day item schema: ${JSON.stringify(S.properties.days.items)}\nExample of a whole plan (format only): ${SAMPLE()}\n${EN_ONLY}`,
     max: 48000,
   });
-  const info = await ask('info', EXTRACT(), {
+  const info = await ask('info', brief ? WRITE() : EXTRACT(), {
     system: sys,
-    user: `Write the pocket guide "info" from the manual's chapters (key facts → guide; where we sleep → stays; emergency card → emergency + lost; prices/attractions → prices; packing → pack; entry & documents → visa as {lede, groups:[{title, items}]}; contingency plans → ifthen as {plans:{head, cols, rows}}; anything else worth keeping, e.g. getting around, customs, a park touring plan → more). Schema: ${JSON.stringify(S.properties.info)}\n${EN_ONLY}`,
+    user: brief
+      ? `Write the pocket guide "info" for this trip: guide (6–10 key facts a parent needs: getting around with small children, money and cards, tipping, what the children will find different), stays (where we sleep, night by night, from the brief), lost (what to do if a child is lost), prices (the main sights' entry as ranges with ≈, children's free ages where you are sure), pack (what to pack for this place, this season and these ages), visa as {lede, groups:[{title, items}]} (documents to bring — the visa rule itself is added by the app), ifthen as {plans:{head, cols, rows}} (rain, a tired or sick child, a closed sight, a missed connection), more (getting around this place with a stroller). Leave emergency out — the app adds checked numbers. Schema: ${JSON.stringify(S.properties.info)}\n${EN_ONLY}`
+      : `Write the pocket guide "info" from the manual's chapters (key facts → guide; where we sleep → stays; emergency card → emergency + lost; prices/attractions → prices; packing → pack; entry & documents → visa as {lede, groups:[{title, items}]}; contingency plans → ifthen as {plans:{head, cols, rows}}; anything else worth keeping, e.g. getting around, customs, a park touring plan → more). Schema: ${JSON.stringify(S.properties.info)}\n${EN_ONLY}`,
     max: 48000,
   });
+  // a planned trip: the facts that must be right come from our own table, never from the helper (docs/AI-PLANNER.md §6)
+  if (brief && info && typeof info === 'object') {
+    const F = brief.facts;
+    if (F) {
+      info.emergency = F.emergency;
+      info.visa = { ...(info.visa && typeof info.visa === 'object' ? info.visa : {}), lede: F.visa.length === 1 ? F.visa[0] : { en: F.visa.map((v) => v.en).join(' · '), th: F.visa.map((v) => v.th).join(' · ') } };
+      info.guide = [...F.guide, ...(Array.isArray(info.guide) ? info.guide : [])];
+    } else {
+      info.emergency = [{ label: { en: 'Emergency — check the local number before you go', th: 'ฉุกเฉิน — เช็กเบอร์ของประเทศนี้ก่อนไป' }, tel: '112', main: true }];
+    }
+    log(`facts: ${F ? `${F.countries.join(', ')} from the checked table${F.unsure.length ? ` (${F.unsure.join(', ')} not yet confirmed)` : ''}` : 'no country in the table — emergency says to check'}`);
+  }
   // restaurants in two passes, so a long guide (200+ places) comes through complete: first every name by area (cheap), then the
   // rows for 25 names at a time (halved again when an answer runs too long); names still missing after that are asked for once more
   const restSchema = JSON.stringify(S.properties.restaurants);
   // every name by area in one answer; a guide too long for one answer (it happened live) is asked again as the area headings, then the names four areas at a time
   const normA = (x) => String((x && (x.en || x)) || '').toLowerCase().replace(/[^a-z0-9฀-๿一-鿿]+/g, '');
-  let index;
-  try {
+  // a planned trip has no restaurant guide to copy: one call suggests a few areas near the stays and the day's sights, well-known places only
+  let restBrief = null;
+  if (brief && brief.eats && brief.eatsAll) { restBrief = brief.eats; log('restaurants: every town of the route is in the family\'s library — no suggestions asked'); }
+  else if (brief) {
+    const sug = await ask('restaurants: suggest', WRITE(), {
+      system: sys,
+      user: `Suggest places to eat for this trip with small children: 2–5 areas near where we sleep and the days' main sights, 3–6 places each, only long-running, well-known places you are sure exist (a food court or a family chain is fine). Return {"areas":[{"area":{"en":"…"},"kind":0|1|2,"items":[row, …]}]} — kind 0 restaurants · 1 food courts and quick bites · 2 cafés and sweets. Row schema: ${JSON.stringify(S.properties.restaurants.properties.groups.items.properties.items.items)} — "pr" as a range with ≈, "hours" only when you are sure (else "check before you go"), "q" a full Google Maps query, "pick" (["<Day n> · <Meal>"]) when it suits a day's meal.\n${EN_ONLY}`,
+      max: 24000,
+    });
+    const ar = (sug && Array.isArray(sug.areas) ? sug.areas : []).filter((a) => a && Array.isArray(a.items) && a.items.length);
+    if (ar.length) restBrief = {
+      lede: { en: 'Places near where we sleep and the day’s sights, picked by the helper. Hours and prices change — check before you go.' },
+      kinds: [{ en: 'Restaurants' }, { en: 'Food courts & quick bites' }, { en: 'Cafés & sweets' }],
+      groups: ar.map((a) => ({ area: { en: String((a.area && (a.area.en || a.area)) || 'Places to eat') }, kind: [0, 1, 2].includes(a.kind) ? a.kind : 0, items: a.items.filter((it) => it && it.name).slice(0, 8).map((it) => ({ ...it, name: String(it.name).slice(0, 120) })) })),
+    };
+    log(`restaurants: ${ar.reduce((n, a) => n + a.items.length, 0)} places in ${ar.length} areas suggested`);
+    if (brief.eats) restBrief = restBrief ? { ...restBrief, groups: [...brief.eats.groups, ...restBrief.groups] } : brief.eats;   // the library's towns lead, the helper's suggestions follow
+  }
+  let index = { areas: [] };
+  if (!brief) try {
     index = await ask('restaurants: list', EXTRACT(), {
       system: sys,
       user: 'List EVERY restaurant, café, food court, bakery, dessert shop and snack stall in the manual\'s restaurant guide (and its "where to eat" pages), grouped by the manual\'s own area headings in order. Return {"areas":[{"area":{"en":"…"},"kind":0|1|2,"names":["…", …]}]} — kind 0 restaurants · 1 food courts and quick bites · 2 cafés and sweets. Names exactly as the manual writes them, one entry per place, none left out, no details yet.',
@@ -202,14 +247,15 @@ async function run({ buf, slug, client, take, onUsage, log = () => {}, dir, kids
     groups: areas.map((a) => ({ area: { en: String((a.area && (a.area.en || a.area)) || 'Places to eat') }, kind: [0, 1, 2].includes(a.kind) ? a.kind : 0,
       items: a.names.map((n) => rows.get(norm(n)) || { name: String(n) }).map((it) => ({ ...it, name: String(it.name).slice(0, 120) })) })),
   } : null;
-  log(`restaurants: ${rows.size} of ${wanted.length} rows written`);
+  if (!brief) log(`restaurants: ${rows.size} of ${wanted.length} rows written`);
   if (!top || !Array.isArray(top.days) || !top.days.length) throw Object.assign(new Error('no days found'), { code: 'days' });
   top.slug = slug;
-  const who = kids && kids.length ? kids.map((k) => `${k.name_en} (${k.age})`).join(' and ') : 'Mimi (3, a girl) and Mika (1½, a boy)';
-  const brief = top.days.map((d, i) => ({ i, title: d.title, plan: d.plan, planned: (d.planned || []).map((p) => p.en || p.name), pick: d.pick }));
+  // a planned trip never names the children (only their ages leave the server — docs/AI-PLANNER.md §7)
+  const who = brief ? `${brief.who || 'the children'} — never name them, say "the children"` : kids && kids.length ? kids.map((k) => `${k.name_en} (${k.age})`).join(' and ') : 'Mimi (3, a girl) and Mika (1½, a boy)';
+  const dayList = top.days.map((d, i) => ({ i, title: d.title, plan: d.plan, planned: (d.planned || []).map((p) => p.en || p.name), pick: d.pick }));
   const kidsOut = await ask('kids', WRITE(), {
     system: `You write the children's pages of a family memory book. The children: ${who}. Write warm, simple, true sentences a small child enjoys hearing; every text bilingual {"th": "…", "en": "…"} with natural Thai for a Thai family. ${THAI_STYLE} ${EN_STYLE} Only facts that are true and that the day really includes. Answer with JSON only, no code fence.`,
-    user: `For each day below write: learn (2–3 cards: name, facts[2], kid), quiz (3: q, a), mission {title, stamp (short CAPITALS), facts[3], spot[4] {k, e (emoji), th, en}}, tale {th, en, scenes:[4–5 × {e, h:{th,en}, th, en}]} — the guide's story of the day, the scenes cut from the same words. Return {"days":[{learn, quiz, mission, tale}, …]} in day order.\nDays: ${JSON.stringify(brief)}`,
+    user: `For each day below write: learn (2–3 cards: name, facts[2], kid), quiz (3: q, a), mission {title, stamp (short CAPITALS), facts[3], spot[4] {k, e (emoji), th, en}}, tale {th, en, scenes:[4–5 × {e, h:{th,en}, th, en}]} — the guide's story of the day, the scenes cut from the same words. Return {"days":[{learn, quiz, mission, tale}, …]} in day order.\nDays: ${JSON.stringify(dayList)}`,
     max: 48000, effort: 'medium', manual: false,
   });
 
@@ -227,11 +273,12 @@ async function run({ buf, slug, client, take, onUsage, log = () => {}, dir, kids
 "food": 6–10 local foods the children can try ({k, e, th, en, note:{th,en}});
 "map": the living map: {sea:{th,en} = the sea/ocean's name, stops: 5–8 of the trip's main places ({k (a-z), e, th, en, q = Google Maps query, x, y = percent positions 8–92 laid out roughly like the real geography}), days: for each day the stop keys visited that day};
 "stays": [{name, why:{th,en} — one warm sentence on why this stay suits the family}] for: ${JSON.stringify(stayNames)}.
-Trip: ${JSON.stringify({ title: top.title, place: top.place, from: top.from, to: top.to, days: brief })}`,
+Trip: ${JSON.stringify({ title: top.title, place: top.place, from: top.from, to: top.to, days: dayList })}`,
     max: 24000, effort: 'medium', manual: false,
   });
   if (info && info.ifthen && !Array.isArray(info.ifthen.rows) && info.ifthen.plans && Array.isArray(info.ifthen.plans.rows)) info.ifthen = { ...info.ifthen, head: info.ifthen.plans.head || info.ifthen.head, cols: info.ifthen.plans.cols || info.ifthen.cols, rows: info.ifthen.plans.rows };   // the seeds' shape ({cols, rows}), as views.js reads it
-  const plan = { ...top, info: info || {}, ...(rest && rest.groups ? { restaurants: rest } : {}) };
+  const restOut = brief ? restBrief : rest;
+  const plan = { ...top, info: info || {}, ...(restOut && restOut.groups ? { restaurants: restOut } : {}) };
   const asI18n = (x) => (x && typeof x === 'object' && typeof x.en === 'string' ? { th: typeof x.th === 'string' ? x.th : x.en, en: x.en } : null);
   const keyOf = (k, i) => (String(k || '').toLowerCase().replace(/[^a-z0-9]+/g, '-').replace(/^-+|-+$/g, '') || `x${i + 1}`);
   if (extras && typeof extras === 'object') {
@@ -334,4 +381,4 @@ Trip: ${JSON.stringify({ title: top.title, place: top.place, from: top.from, to:
   return { seed, plan, report, cost: { usd: ledger.some((r) => r.usd === null) ? null : cost, calls: ledger } };
 }
 
-module.exports = { run, redact, pdfText, EXTRACT, WRITE };
+module.exports = { run, redact, pdfText, EXTRACT, WRITE, PLAN_RULES, THAI_STYLE, EN_STYLE };
