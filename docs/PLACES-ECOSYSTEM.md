@@ -154,7 +154,7 @@ Migration numbers: the next free on `main` at build time.
 | E2 | `sight_lib` table, sync, API, lint; built-in **web-checked** sights for the 40 most-used cities first (Japan, Korea, Taiwan, HK, Singapore, Thailand, Vietnam, Australia, Europe's big ones), then the rest in later passes | L (data) |
 | E3 | `#/explore/<town>` + wish list — **built** (Nov 2026) | M |
 | E4 | Planner uses the library first (menus, ids, `new`, the draft carries facts, fewer web checks) + job log counts — **built** (Nov 2026; the route's menu holds the things to do — places to eat already reach the book through the eat library's `groupsFor`) | M |
-| E5 | Today: indoor plan B, "กินอะไรดี" near the bed; check-ins/reviews write back; next-plan "เคยไปแล้วชอบ" | M |
+| E5 | Today: indoor plan B, "กินอะไรดี" near the bed; check-ins/reviews write back; next-plan "เคยไปแล้วชอบ" — **built** (Nov 2026) | M |
 | E6 | Taste learning from reviews; style pictures drawn where missing; the remaining cities' sights; second web-check pass | M |
 
 ## 6. Risks
