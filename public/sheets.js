@@ -961,6 +961,22 @@ const A = {
     try { await api('DELETE', `/api/b/care/own/${encodeURIComponent(b.dataset.v)}`); careAsk = ''; render(); }
     catch (_) { toast(L('เอาออกไม่ได้ ลองอีกครั้ง', 'Could not remove it — try again')); }
   },
+  sightk(b) { SIGHT.kind = b.dataset.v; render(); },   // explore a town: the filters redraw the page (the search box keeps what was typed)
+  sightst(b) { SIGHT.st = SIGHT.st === b.dataset.v ? '' : b.dataset.v; render(); },
+  sightkid(b) { SIGHT.kid = SIGHT.kid === b.dataset.v ? '' : b.dataset.v; render(); },
+  sightf(b) { const k = b.dataset.v; if (['io', 'free', 'wish'].includes(k)) SIGHT[k] = !SIGHT[k]; render(); },
+  async sightwish(b) {   // ♡ → ♥: on the family's wish list (both parents; the planner reads it)
+    const x = (SIGHT.list || []).find((y) => y.id === b.dataset.v); if (!x) return;
+    const on = !x.wish; x.wish = on; SIGHT.towns = null; render();
+    try { await api('PUT', `/api/b/sights/${encodeURIComponent(x.id)}/wish`, { on }); toast(on ? L('เก็บไว้ในที่อยากไปแล้ว ♥', 'On our wish list ♥') : L('เอาออกจากที่อยากไปแล้ว', 'Off the wish list')); }
+    catch (_) { x.wish = !on; render(); toast(L('บันทึกไม่ได้ ต้องมีเน็ต', 'Not saved — you need a connection')); }
+  },
+  async sightdel(b) {   // a sight the parents do not want: two taps, it stays out
+    if (!armed(b, L('แตะอีกครั้งเพื่อเอาออก', 'Tap again to take it out'))) return;
+    const id = b.dataset.v;
+    try { await api('DELETE', `/api/b/sights/${encodeURIComponent(id)}`); SIGHT.list = (SIGHT.list || []).filter((x) => x.id !== id); SIGHT.towns = null; render(); }
+    catch (_) { toast(L('เอาออกไม่ได้ ลองอีกครั้ง', 'Could not take it out — try again')); }
+  },
   async eatlibdel(b) {   // a place the parents do not want in the library: two taps, it stays out
     if (!armed(b, L('แตะอีกครั้งเพื่อเอาออก', 'Tap again to take it out'))) return;
     const id = b.dataset.v;
@@ -1830,6 +1846,12 @@ document.addEventListener('input', (e) => { if (['captitle', 'captext', 'capdate
 document.addEventListener('input', (e) => {
   const el = e.target; if (!el) return;
   if (el.id === 'eltown') { eatLib.add = el.value; return; }
+  if (el.id === 'sightq') {   // explore a town: the search hides cards in place (the box keeps the focus)
+    SIGHT.q = el.value; const q = el.value.trim().toLowerCase(); let n = 0;
+    document.querySelectorAll('.sightl .sightc').forEach((li) => { const ok = !q || li.dataset.s.includes(q); li.hidden = !ok; if (ok) n++; });
+    const c = document.getElementById('sightn'), none = document.getElementById('sightnone'), all = (SIGHT.list || []).length;
+    if (c) c.textContent = L(`แสดง ${n} จาก ${all} แห่ง`, `Showing ${n} of ${all}`); if (none) none.hidden = n > 0; return;
+  }
   if (el.id === 'eltq') {   // the library's towns: filter the chips in place (the box keeps the focus)
     const q = el.value.trim().toLowerCase(); let n = 0;
     document.querySelectorAll('.elgrp').forEach((g) => { let any = false; g.querySelectorAll('.plchip').forEach((c) => { const ok = !q || c.dataset.s.includes(q); c.hidden = !ok; if (ok) { any = true; n++; } }); g.hidden = !any; });
