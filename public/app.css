@@ -3852,3 +3852,5 @@ a.plchip{text-decoration:none}a.plchip .label{font-weight:700}a.plchip[aria-curr
 .dchin{margin:8px 0 4px}.dchin .chips{display:flex;flex-wrap:wrap;gap:6px;margin-top:4px}
 .pllove{display:flex;flex-direction:column;gap:2px;margin:6px 0 8px;padding:8px 12px;border-radius:12px;background:color-mix(in srgb,#FF6FA8 10%,var(--card));font-size:13.5px}
 .pllove b{color:color-mix(in srgb,#FF6FA8 55%,var(--ink))}.pllove small{color:color-mix(in srgb,#F2B90C 60%,var(--ink))}
+.tastechip[data-st=learned]{border-style:dashed;background:color-mix(in srgb,#F2B90C 10%,var(--card))}
+.tastelo{margin-top:6px}

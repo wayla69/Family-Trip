@@ -745,6 +745,8 @@ try {
     ok(ed.route.days[0].stops[1].lib === s1.lib && ed.route.days[0].stops[2].new === true, 'planner (E4): the library id and the new mark survive an edit by hand'); }
   ok(new RegExp(`\\\\ns\\d+ ♥ ${globalThis.__wishName.replace(/[.*+?^${}()|[\]\\]/g, '\\$&')}`).test(rsent) && new RegExp(`\\\\ns\\d+ ★ ${globalThis.__lovedName.replace(/[.*+?^${}()|[\]\\]/g, '\\$&')}`).test(rsent) && /went before and loved it/.test(rsent),
     `planner (E5): the menu marks the wish (♥) and the place the family loved before (★), and says what the marks mean (${(rsent.match(/s\d+ [♥★✓][^(]{0,60}/g) || []).join(' | ')} · ${globalThis.__wishName} · ${globalThis.__lovedName})`);
+  ok(/What our own reviews suggest \(a gentle hint, not our choice\): we rated these well — outings [^"]*Kids/.test(rsent) && !/we rated these well[^"]*Animals/.test(rsent),
+    `planner (E6): what the family's own reviews taught goes with the route as a gentle hint, apart from the styles the parents chose (${(rsent.match(/What our own reviews suggest[^"]{0,120}/) || ['none'])[0]})`);
   { const c2 = calls.length, tr = await pl('/api/b/planner/route', { answers, two: true }), tj = await tr.json();
     ok(tr.status === 200 && calls.length === c2 + 1 && Array.isArray(tj.routes) && tj.routes.length === 1 && tj.routes[0].label.en === 'One base' && tj.routes[0].why.th === 'ไม่ต้องย้ายกระเป๋า' && tj.routes[0].days.length === 3,
       `planner: two routes to compare in one call — a route that does not read is left out, each keeps its name and who it suits (${tr.status} ${JSON.stringify(tj).slice(0, 160)})`); }
