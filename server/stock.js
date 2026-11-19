@@ -91,10 +91,11 @@ async function lint(dir = DIR) {
   const errs = [], bad = (m) => errs.push(m);
   if (!fs.existsSync(dir)) return errs;
   const indexFile = path.join(dir, 'index.json');
-  if (!fs.existsSync(indexFile)) { bad('index.json is missing'); return errs; }
-  if (fs.statSync(indexFile).size > INDEX_MAX) bad(`index.json is over ${INDEX_MAX / 1024 / 1024} MB — split it by country`);
+  let raw;   // read once: the size and the text are the same file (no check-then-read)
+  try { raw = fs.readFileSync(indexFile, 'utf8'); } catch (_) { bad('index.json is missing'); return errs; }
+  if (Buffer.byteLength(raw) > INDEX_MAX) bad(`index.json is over ${INDEX_MAX / 1024 / 1024} MB — split it by country`);
   let idx;
-  try { idx = JSON.parse(fs.readFileSync(indexFile, 'utf8')); } catch (e) { bad('index.json is not JSON: ' + e.message); return errs; }
+  try { idx = JSON.parse(raw); } catch (e) { bad('index.json is not JSON: ' + e.message); return errs; }
   if (idx.v !== 1) bad('index.json: v must be 1');
   const places = idx.places && typeof idx.places === 'object' ? idx.places : (bad('index.json: places must be an object'), {});
   const items = Array.isArray(idx.items) ? idx.items : (bad('index.json: items must be a list'), []);
@@ -141,11 +142,12 @@ async function lint(dir = DIR) {
       if (!CATS[cat].includes(m[1])) bad(`item ${id}: a ${cat} is a .${CATS[cat].join(' or .')} file`);
       if (files.has(name)) bad(`item ${id}: file ${name} used twice`); files.add(name);
       const f = path.join(dir, name);
-      if (!fs.existsSync(f)) { bad(`item ${id}: file ${name} is missing`); continue; }
-      const size = fs.statSync(f).size;
+      let buf;   // read once, then measure what was read
+      try { buf = fs.readFileSync(f); } catch (_) { bad(`item ${id}: file ${name} is missing`); continue; }
+      const size = buf.length;
       if (m[1] === 'svg') {
         if (size > SVG_MAX) bad(`item ${id}: ${name} is ${Math.round(size / 1024)} KB (max ${SVG_MAX / 1024})`);
-        const text = fs.readFileSync(f, 'utf8');
+        const text = buf.toString('utf8');
         if (!svgOf(text)) bad(`item ${id}: ${name} is not a safe SVG (svgOf)`);
         if (cat !== 'stamp' && /<text[\s>]/i.test(text)) bad(`item ${id}: only a stamp may carry text`);
         const vb = /viewBox="([^"]+)"/.exec(text), want = cat === 'stamp' ? '0 0 200 200' : '0 0 240 240';
@@ -153,7 +155,7 @@ async function lint(dir = DIR) {
       } else {
         if (size > WEBP_MAX) bad(`item ${id}: ${name} is ${Math.round(size / 1024)} KB (max ${WEBP_MAX / 1024})`);
         try {
-          const meta = await require('sharp')(f).metadata();
+          const meta = await require('sharp')(buf).metadata();
           if (meta.format !== 'webp') bad(`item ${id}: ${name} is not a webp`);
           if (meta.width !== 160 || meta.height !== 160) bad(`item ${id}: ${name} must be 160×160 (is ${meta.width}×${meta.height})`);
           if (!meta.hasAlpha) bad(`item ${id}: ${name} needs a transparent background`);

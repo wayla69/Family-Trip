@@ -1563,7 +1563,8 @@ const topicPage = (t, k, blocks, lede, open) => (open !== undefined && onePage(t
 // one topic, one page (owner, Nov 2026: "ซ้อนกันหลายชั้น ทำให้ใช้งานง่ายๆ"): a card of the summary opens that section alone — its title is the
 // page's heading, every detail is open (no report switch, no fold inside a fold), and ‹ › at the foot walk to the topics beside it
 const PG_RE = /^<details class="pg" open id="([^"]+)"><summary>([\s\S]*?)<\/summary>([\s\S]*)<\/details>$/;
-const pgName = (b) => { const m = PG_RE.exec(b || ''); return m ? m[2].replace(/<span class="label">[\s\S]*?<\/span>/g, '').replace(/<[^>]+>/g, '').trim() : ''; };
+const tagless = (h) => { let s = String(h || ''), p; do { p = s; s = s.replace(/<[^>]*>/g, ''); } while (s !== p); return s.replace(/[<>]/g, ''); };   // every tag gone, however nested
+const pgName = (b) => { const m = PG_RE.exec(b || ''); return m ? tagless(m[2].replace(/<span class="label">[\s\S]*?<\/span>/g, '')).trim() : ''; };
 const onePage = (t, k, blocks, open) => { const m = PG_RE.exec(blocks[open] || ''); if (!m) return '';
   const nav = (j, cls, lbl) => (pgName(blocks[j]) ? `<a class="pgn ${cls}" href="${fullHref(t, k, j)}"><small>${lbl}</small><b>${pgName(blocks[j])}</b></a>` : '<span></span>');
   const g = TOPIC_COLS[open % TOPIC_COLS.length];

@@ -128,6 +128,9 @@ function extras(trips, now, kids = { th: 'เด็กๆ', en: 'the kids' }) {
   return out;
 }
 
+// Apple's push service (an iPhone or iPad) — the host of the subscription's endpoint, never a match anywhere in the address
+const appleHost = (u) => { try { const h = new URL(u).hostname; return h === 'push.apple.com' || h.endsWith('.push.apple.com'); } catch (_) { return false; } };
+
 function create({ pool, family, A, sender = (sub, payload, opt) => webpush.sendNotification(sub, payload, opt) }) {   // sender: the tests pass a fake
   // true when the push service took it; otherwise {status, reason} (Apple says why in the body, e.g. {"reason":"BadJwtToken"}) — logged, never the endpoint
   const send = async (sub, payload, why) => {
@@ -314,7 +317,7 @@ function create({ pool, family, A, sender = (sub, payload, opt) => webpush.sendN
     const th = s.lang === 'th';
     const why = {};
     const ok = await send(s, JSON.stringify({ title: th ? 'ทดสอบการเตือน' : 'Test reminder', body: s.role === 'viewer' ? (th ? `ใช้ได้แล้ว — จะเตือนตอนค่ำเมื่อมีรูปใหม่ของวันนั้น` : 'Working — you will hear in the evening when there are new photos that day') : th ? `ใช้ได้แล้ว — จะเตือนก่อนทุกกิจกรรม ${LEAD / 60000} นาที` : `Working — you will hear ${LEAD / 60000} min before each step`, tag: 'test', url: '/' }), why);
-    res.status(ok ? 200 : 502).json(ok ? { ok } : { ok, status: why.status, reason: why.reason, apple: /push\.apple\.com/.test(s.endpoint) });
+    res.status(ok ? 200 : 502).json(ok ? { ok } : { ok, status: why.status, reason: why.reason, apple: appleHost(s.endpoint) });
   });
   return { router: r, tick, heart, draft, reel, inbox, alert, relatives, comment, start, stop };
 }
