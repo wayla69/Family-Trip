@@ -3805,7 +3805,7 @@ a.plchip{text-decoration:none}a.plchip .label{font-weight:700}a.plchip[aria-curr
 .plhist{margin-top:12px}
 
 /* explore a town (#/explore, docs/PLACES-ECOSYSTEM.md E3): a sight as the eat card's sibling — picture, name, the ages it suits, facts */
-.xptabs{display:grid;grid-template-columns:1fr 1fr;margin:14px 0 6px}
+.xptabs{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));margin:14px 0 6px}
 .xptabs a{min-height:44px;display:flex;align-items:center;justify-content:center;text-decoration:none;color:var(--ink);font-weight:600}
 .xptabs{gap:6px;padding:4px;border-radius:999px;background:var(--card);box-shadow:0 0 0 1px var(--rule)}
 .xptabs a{border-radius:999px}
