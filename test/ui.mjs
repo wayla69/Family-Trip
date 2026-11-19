@@ -276,6 +276,9 @@ const T = 'hk-macau-2026';
     const fr = await page.evaluate(() => ({ n: document.querySelectorAll('#findres .sres li').length, txt: (document.querySelector('#findres') || {}).textContent || '' }));
     await s.shot('find');
     ok(fr.n >= 1 && /ปลาอยู่ในน้ำ/.test(fr.txt) && /Words/.test(fr.txt) && await s.noHScroll(), `search every book: the kids' words found across the books, with when and in which book (${fr.n} hits)`);
+    await page.fill('#findq', 'ปลาอยู่ในนำ'); await page.waitForTimeout(250);   // a tone mark missed: still found, said to be close
+    const fz2 = await page.evaluate(() => ({ n: document.querySelectorAll('#findres .sres li').length, near: !!document.querySelector('#findres .fznear') }));
+    ok(fz2.n >= 1 && fz2.near, `search every book: a missed tone mark still finds the words, marked as close (${JSON.stringify(fz2)})`);
     await page.goto(`${BASE}/#/devices`); await page.waitForSelector('.devs li', { timeout: 8000 }).catch(() => {});
     const dv = await page.evaluate(() => ({ me: document.querySelectorAll('.devs li.me').length, n: document.querySelectorAll('.devs li').length, head: !!document.querySelector('.phead .phpic img[src$="devices.webp"]'), cards: document.querySelectorAll('.pcard .pch .pcpic img').length }));
     await s.shot('devices');
@@ -290,7 +293,7 @@ const T = 'hk-macau-2026';
     // growing up, trip by trip (#/grow): every book of the child, the age then, a height noted on each book, then the line of heights
     await page.goto(`${BASE}/#/grow/mimi`); await page.waitForSelector('.growl li');
     const ins = page.locator('.growl .ghinp');
-    if (await ins.count() >= 2) { await ins.nth(0).fill('96'); await ins.nth(0).blur(); await ins.nth(1).fill('103.5'); await ins.nth(1).blur(); }
+    if (await ins.count() >= 2) { await ins.nth(0).fill('96'); await ins.nth(0).blur(); await ins.nth(1).fill('1.035 ม.'); await ins.nth(1).blur(); }   // in metres, with the unit: read as 103.5 cm
     await page.waitForSelector('.grchart polyline', { timeout: 8000 }).catch(() => {});
     const gr = await page.evaluate(() => ({ n: document.querySelectorAll('.growl li').length, art: document.querySelectorAll('.growl .grart img').length, age: document.querySelectorAll('.growl .grchip').length, chart: !!document.querySelector('.grchart polyline'), note: (document.querySelector('.grcard') || {}).textContent || '' }));
     await s.shot('grow');
@@ -921,6 +924,14 @@ const T = 'hk-macau-2026';
   ok(/hoi lin/i.test(await page.inputValue('#eatq')) && page.url().endsWith(`#/t/${T}/eat/all`), 'a place found by the search opens the eat list already filtered to it');
   await page.goto(`${BASE}/#/t/${T}/search`); await page.waitForSelector('#bookq'); await page.fill('#bookq', 'zzzzqq');
   ok(await page.locator('.sres li').count() === 0 && await page.locator('#bookres .empty').count() === 1, 'a word that is nowhere says so');
+  { // forgiving (owner: "อย่าตึงเกินไป"): nothing as typed → close matches, said so; a word that is found as typed shows no such line
+    await page.fill('#bookq', 'disnyland'); await page.waitForTimeout(200);
+    const fz = await page.evaluate(() => ({ n: document.querySelectorAll('#bookres .sres li').length, near: !!document.querySelector('#bookres .fznear'), mark: document.querySelectorAll('#bookres mark').length }));
+    await page.fill('#bookq', 'senadosquare'); await page.waitForTimeout(200); const op = await page.locator('#bookres .sres li').count();
+    await page.fill('#bookq', 'Disneyland'); await page.waitForTimeout(200); const ex = await page.locator('#bookres .fznear').count();
+    const nums = await page.evaluate(() => [fzAmount('1,200'), fzAmount('๑๒๐๐'), fzAmount('1.2k'), fzAmount('฿300'), fzAmount('3 พัน'), fzAmount('HK$ 85.50'), fzHeight('1.05 ม.'), fzHeight('105ซม'), fzHeight('๑๐๕')].join());
+    ok(fz.n > 0 && fz.near && fz.mark > 0 && op > 0 && ex === 0 && nums === '1200,1200,1200,300,3000,85.5,105,105,105',
+      `search forgives a slip and spacing and says the results are close ones; money and heights read the way people type them (${JSON.stringify(fz)} · senadosquare ${op} · ${nums})`); }
   // English reader, Thai word: the snippets stay English; an "If… then…" hit is titled by its situation, not the section name
   await page.fill('#bookq', 'หมอ'); await page.waitForTimeout(150);
   ok(await page.evaluate(() => [...document.querySelectorAll('.sres .ssnip')].every((x) => !/[\u0E00-\u0E7F]/.test(x.textContent))), 'English reader: every snippet is English even when a Thai word found it');
@@ -2462,6 +2473,8 @@ const T = 'hk-macau-2026';
   await page.fill('#eatq', 'pie');
   const pies = await page.$$eval('.eatc', (els) => els.filter((e) => e.dataset.s.includes('pie')).length), shownPies = await page.locator('.eatc:visible').count();
   ok(shownPies === pies && pies > 10 && pies < 294 && await page.evaluate(() => document.activeElement.id) === 'eatq', `eat page: search filters in place and keeps the keyboard (${shownPies} pies)`);
+  await page.fill('#eatq', 'noodel'); const ndl = await page.locator('.eatc:visible').count(), ndn = await page.textContent('#eatn');
+  ok(ndl > 0 && ndl < 294 && /close|ใกล้เคียง/.test(ndn), `eat page: a slip ("noodel") still finds the noodles and says so (${ndl} · ${ndn})`);
   await page.fill('#eatq', ''); await page.click('[data-a="eatk"][data-v="2"]');
   ok(await page.locator('.eatc:visible').count() === 30, 'eat page: "cook it yourself" chip');
   await page.click('[data-a="eatk"][data-v="-1"]'); await page.click('[data-a="eatpick"]');

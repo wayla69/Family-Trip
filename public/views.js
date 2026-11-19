@@ -1049,8 +1049,21 @@ function bookFind(t, q) {
     }
     if (score) list.push({ e, score });
   }
+  let near = false; const extra = [];
+  if (!list.length) {   // nothing as typed: look again forgivingly (spacing, accents, a slip), and mark what was found for the snippet
+    for (const e of searchIndex(t)) {
+      let score = 0;
+      for (const w of terms) {
+        const inT = fzFind(`${e.tl.th} ${e.tl.en}`, w), inB = inT ? '' : fzFind(`${e.lc.th} ${e.lc.en}`, w);
+        if (!inT && !inB) { score = 0; break; }
+        score += inT ? 3 : 1; extra.push(inT || inB);
+      }
+      if (score) list.push({ e, score });
+    }
+    near = list.length > 0;
+  }
   list.sort((a, b) => b.score - a.score || TOPIC_RANK[a.e.topic] - TOPIC_RANK[b.e.topic] || a.e.i - b.e.i);
-  return { list, alts: [...new Set(alts.flat())] };
+  return { list, alts: [...new Set([...alts.flat(), ...extra.filter((x) => x && x.length >= 3)])], near };
 }
 // the words around the first hit, the hit marked (escape first, decorate never: each piece is escaped on its own)
 function snippet(e, alts) {
@@ -1071,11 +1084,14 @@ function snippet(e, alts) {
 function photoFind(t, q) {
   const terms = q.toLowerCase().split(/\s+/).filter(Boolean); if (!terms.length) return [];
   const alts = terms.map(termAlts);
-  return mediaOf(t.id).filter((m) => {
+  const out = mediaOf(t.id).filter((m) => {
     const tags = tagsOf(m).flatMap((k) => { const x = PHOTO_TAGS.find((p) => p[0] === k); return x ? [k, x[2], x[3]] : [k]; });
     const hay = [m.caption, m.place, ...tags].join(' ').toLowerCase();
     return alts.every((a) => a.some((w) => wHas(hay, w)));
   });
+  if (out.length) return out;
+  // nothing as typed: the same photos, forgivingly
+  return mediaOf(t.id).filter((m) => { const hay = [m.caption, m.place, ...tagsOf(m)].join(' '); return terms.every((w) => !!fzFind(hay, w)); });
 }
 /* Search every book (owner, Nov 2026: "ค้นข้ามทุกเล่ม เช่น มีมี่เห็นหิมะครั้งแรกเมื่อไร หรือ รูปที่มีช้าง"): the family's own memories —
    the kids' words, notes and favourites, the firsts (their own words and their badge names), each day's summary and bedtime story,
@@ -1119,18 +1135,29 @@ function memFind(q) {
     const hay = (x.text + ' ' + x.extra).toLowerCase();
     if (alts.every((a) => a.some((w) => wHas(hay, w)))) list.push(x);
   }
+  let near = false; const extra = [];
+  if (!list.length) {   // nothing as typed: look again forgivingly
+    for (const x of memIndex()) {
+      if (findWho && x.child && x.child !== findWho && x.child !== 'both') continue;
+      if (findWho && !x.child && x.kind !== 'photo') continue;
+      if (findFirsts && x.kind !== 'first') continue;
+      const hay = x.text + ' ' + x.extra, got = terms.map((w) => fzFind(hay, w));
+      if (got.every(Boolean)) { list.push(x); extra.push(...got); }
+    }
+    near = list.length > 0;
+  }
   list.sort((a, b) => String(a.date).localeCompare(String(b.date)));
-  return { list, alts: [...new Set(alts.flat())] };
+  return { list, alts: [...new Set([...alts.flat(), ...extra.filter((w) => w.length >= 3)])], near };
 }
 function findResults() {
   const q = findQ.trim();
   if (!q) return `<p class="empty">${L('พิมพ์สิ่งที่อยากหา เช่น หิมะ ช้าง ทะเล ไอติม — ไทยหรืออังกฤษก็ได้', 'Type what you remember — snow, elephant, beach, ice cream. Thai or English')}</p>`;
-  const { list, alts } = memFind(q);
+  const { list, alts, near } = memFind(q);
   if (!list.length) return `<p class="empty">${L(`ไม่พบ “${esc(q)}” ในเล่มไหนเลย ลองคำอื่น`, `Nothing for “${esc(q)}” in any book — try another word`)}</p>`;
   const kindName = { quote: ['คำพูด', 'Words'], note: ['โน้ตพ่อแม่', 'Parents’ note'], fav: ['ของโปรด', 'Favourite'], first: ['ครั้งแรก', 'A first'], sum: ['สรุปวัน', 'The day'], story: ['นิทาน', 'Story'], photo: ['รูป', 'Photo'], heart: ['หัวใจจากญาติ', 'A heart'] };
   const mark = (tx) => { const re = new RegExp(`(${[...alts].sort((a, b) => b.length - a.length).map((w) => wre(w).source).join('|')})`, 'gi'); const s = String(tx).slice(0, 220); return s.split(re).map((part, k) => (k % 2 ? `<mark>${esc(part)}</mark>` : esc(part))).join('') + (String(tx).length > 220 ? ' …' : ''); };
   const books = [...new Set(list.map((x) => x.t))];
-  return `<p class="label" id="findn">${L(`พบ ${list.length} รายการ ใน ${books.length} เล่ม`, `${list.length} found in ${books.length} book${books.length > 1 ? 's' : ''}`)}</p>
+  return `${near ? `<p class="label fznear">${L(`ไม่พบ “${esc(q)}” ตรงตัว · ผลที่ใกล้เคียง`, `No exact match for “${esc(q)}” · close matches`)}</p>` : ''}<p class="label" id="findn">${L(`พบ ${list.length} รายการ ใน ${books.length} เล่ม`, `${list.length} found in ${books.length} book${books.length > 1 ? 's' : ''}`)}</p>
 ${books.map((t) => { const xs = list.filter((x) => x.t === t), ph = xs.filter((x) => x.kind === 'photo'), rest = xs.filter((x) => x.kind !== 'photo');
     return `<section class="findbook"><h3>${esc(T(t.title).split(' · ')[0])} <span class="label">· ${esc(fmtRange(t))}</span></h3>
 ${ph.length ? `<div class="mosaic">${ph.slice(0, 12).map((x) => photoBtn(t, x.m)).join('')}</div>` : ''}
@@ -1150,12 +1177,12 @@ const topicName = (k) => (k === 'today' ? L('แผนรายวัน', 'Day 
 function bookResults(t) {
   const q = bookQ.trim();
   if (!q) return `<p class="empty">${L('พิมพ์คำที่ต้องการ เช่น หมอ แท็กซี่ ห้องน้ำ — ไทยหรืออังกฤษก็ได้', 'Type what you need — doctor, taxi, toilet, lost child. Thai and English both work')}</p>`;
-  const { list, alts } = bookFind(t, q), ph = photoFind(t, q);
+  const { list, alts, near } = bookFind(t, q), ph = photoFind(t, q);
   const phHtml = ph.length ? `<div class="sphotos"><p class="label">${ic('camera')} ${L(`รูป ${ph.length} รูป`, `${ph.length} photo${ph.length > 1 ? 's' : ''}`)}${ph.length > 12 ? L(' · 12 รูปแรก', ' · the first 12') : ''}</p><div class="mosaic">${ph.slice(0, 12).map((m) => photoBtn(t, m)).join('')}</div></div>` : '';
   if (!list.length && ph.length) return phHtml;
   if (!list.length) return `<p class="empty">${L(`ไม่พบ “${esc(q)}” ลองคำสั้นลงหรือคำอื่น`, `Nothing for “${esc(q)}” — try a shorter or different word`)}</p>`;
   const shown = list.slice(0, 30);
-  return `${phHtml}<p class="label" id="bookn">${L(`พบ ${list.length} รายการ`, `${list.length} found`)}${list.length > shown.length ? L(` · แสดง ${shown.length} อันดับแรก พิมพ์ให้เจาะจงขึ้นเพื่อกรอง`, ` · the top ${shown.length} — type more to narrow`) : ''}</p>
+  return `${phHtml}${near ? `<p class="label fznear">${L(`ไม่พบ “${esc(q)}” ตรงตัว · ผลที่ใกล้เคียง`, `No exact match for “${esc(q)}” · close matches`)}</p>` : ''}<p class="label" id="bookn">${L(`พบ ${list.length} รายการ`, `${list.length} found`)}${list.length > shown.length ? L(` · แสดง ${shown.length} อันดับแรก พิมพ์ให้เจาะจงขึ้นเพื่อกรอง`, ` · the top ${shown.length} — type more to narrow`) : ''}</p>
 <ul class="sres">${shown.map(({ e }) => `<li class="k-${e.topic}"><a href="${esc(e.href)}"${e.place ? ` data-a="eatgo" data-t="${esc(t.id)}" data-v="${esc(e.place)}"` : ''}><span class="stopic">${esc(topicName(e.topic))}</span><b>${esc((e.title[lang] || e.title.en).replace(/\s+·\s+\d+$/, ''))}</b>${e.place ? `<span class="label">${esc(T(e.area))}</span>` : ''}<span class="ssnip">${snippet(e, alts)}</span></a></li>`).join('')}</ul>`;
 }
 function viewSearch(t) {
@@ -2529,7 +2556,7 @@ ${pts.map((x) => `<circle cx="${X(x.m).toFixed(1)}" cy="${Y(x.h).toFixed(1)}" r=
     const q = entriesOf(t.id).filter((e) => e.kind === 'quote' && e.text && (e.child === slug || e.child === 'both')).sort((a, b) => (b.highlight ? 1 : 0) - (a.highlight ? 1 : 0))[0];
     return `<li class="growi pz" style="--g1:${Object.values(PG)[i % 8]}"><div class="grart">${art ? `<img src="${esc(art)}" alt="">` : kidFace(slug)}</div><div class="grtx">
 <a class="grbook" href="#/t/${esc(t.id)}/book"><b>${esc(T(t.title).split(' · ')[0])}</b><small>${esc(fmtRange(t))}</small></a>
-<div class="grfacts">${m != null ? `<span class="grchip">🎂 ${esc(famAgeM(m))}</span>` : ''}${ed ? `<label class="grchip grh">📏 <input class="ghinp" type="number" inputmode="decimal" step="0.5" min="40" max="200" data-t="${esc(t.id)}" data-k="${esc(slug)}" value="${h || ''}" placeholder="${L('ส่วนสูง', 'height')}" aria-label="${L('ส่วนสูงตอนทริปนี้ (ซม.)', 'Height on this trip (cm)')}"> ${L('ซม.', 'cm')}</label>` : h ? `<span class="grchip">📏 ${h} ${L('ซม.', 'cm')}</span>` : ''}</div>
+<div class="grfacts">${m != null ? `<span class="grchip">🎂 ${esc(famAgeM(m))}</span>` : ''}${ed ? `<label class="grchip grh">📏 <input class="ghinp" type="text" inputmode="decimal" autocomplete="off" data-t="${esc(t.id)}" data-k="${esc(slug)}" value="${h || ''}" placeholder="${L('ส่วนสูง', 'height')}" aria-label="${L('ส่วนสูงตอนทริปนี้ (ซม.)', 'Height on this trip (cm)')}"> ${L('ซม.', 'cm')}</label>` : h ? `<span class="grchip">📏 ${h} ${L('ซม.', 'cm')}</span>` : ''}</div>
 ${fe.length ? `<div class="grfirst" title="${L('เหรียญครั้งแรก', 'Firsts')}">${fe.map((e) => `<span>${emo(e)}</span>`).join('')}</div>` : ''}
 ${q ? `<p class="grq">“${emoIn(esc(q.text))}”</p>` : ''}</div></li>`;
   }).join('');
@@ -3408,9 +3435,9 @@ ${kinds.length > 1 ? `<div class="row chips" role="group"><span class="label">${
 ${styles.length > 1 ? `<div class="row chips" role="group"><span class="label">${L('แนว', 'Style')}</span>${styles.map((g) => ch('sightst', g[0], S2.st === g[0], `${tPic(g)} ${L(g[2], g[3])}${t.out.like.includes(g[0]) ? ' 💛' : ''}`)).join('')}</div>` : ''}${kinds.length > 1 || styles.length > 1 ? '</details>' : ''}</div>`;
   // what fits first: the wish list, then our styles and the children's ages (the server's `fit`), then the order of the list
   const shown = list.filter(sightOk).map((x, k) => [x, k]).sort((a, b) => (b[0].wish ? 1 : 0) - (a[0].wish ? 1 : 0) || (b[0].fit || 0) - (a[0].fit || 0) || a[1] - b[1]).map((p) => p[0]);
-  const q = S2.q.trim().toLowerCase(), vis = shown.filter((x) => !q || sightText(x).includes(q)).length;
+  const q = S2.q.trim().toLowerCase(), sfz = fzFilter(shown.map(sightText), q), vis = shown.filter((x, i) => !q || sfz.ok(i)).length;
   return `${head}${tabs}${bar}<p class="label" id="sightn">${L(`แสดง ${vis} จาก ${list.length} แห่ง`, `Showing ${vis} of ${list.length}`)}</p>
-<ul class="sightl">${shown.map((x) => sightCard(x).replace('<li class="sightc', `<li${q && !sightText(x).includes(q) ? ' hidden' : ''} class="sightc`)).join('')}</ul>
+<ul class="sightl">${shown.map((x) => sightCard(x).replace('<li class="sightc', `<li${q && !sfz.ok(shown.indexOf(x)) ? ' hidden' : ''} class="sightc`)).join('')}</ul>
 <p class="empty" id="sightnone"${vis ? ' hidden' : ''}>${L('ไม่พบที่เที่ยวที่ตรงกับตัวกรอง', 'Nothing matches these filters')}</p>
 <p class="label">${L('ทุกแห่งเช็กกับเว็บก่อนเข้าคลัง · ราคาและเวลาเปิดเปลี่ยนได้ เช็กซ้ำก่อนไป', 'Every place was checked on the web before it entered the library · hours and prices change, check again before you go')}</p>`;
 }
@@ -3561,7 +3588,7 @@ function eatData(t) {
 const eatCount = (t) => eatData(t).groups.reduce((n, g) => n + g.items.length, 0);
 const eatText = (g, x) => [x.name, x.zh, x.where, T(x.tag), (x.tag || {}).en, (x.tag || {}).th, T(x.what), T(x.why), T(x.note), T(g.area)].filter(Boolean).join(' ').toLowerCase();
 const eatKindOf = (g, x) => (x.kind !== undefined ? x.kind : g.kind);   // AU: kind per area · HK: kind per place
-const eatShow = (g, x) => (eatKind < 0 || eatKindOf(g, x) === eatKind) && (!eatPick || (x.pick || []).length) && (!eatQ || eatText(g, x).includes(eatQ.toLowerCase()));
+const eatShow = (g, x) => (eatKind < 0 || eatKindOf(g, x) === eatKind) && (!eatPick || (x.pick || []).length) && (!eatQ || eatText(g, x).includes(eatQ.toLowerCase()) || !!fzFind(eatText(g, x), eatQ));
 // Eat, one day at a time: each meal's pick + backup, then what else fits that meal nearby, then every place near the day's route and bed.
 // "Near a day" = the area names that day (AU: "Jervis Bay · Days 2–4"), the area of the day's bed (HK: "Studio City — …"), or an area holding a place the plan names for the day.
 const eatDays = (s) => { const out = new Set(); String(s || '').replace(/Days?\s+(\d+(?:\s*(?:–|-|,|and|or|to)\s*\d+)*)/gi, (_, g) => { g.split(/\s*(?:,|and|or)\s*/).forEach((x) => { const m = x.match(/(\d+)\s*(?:–|-|to)\s*(\d+)/); if (m) for (let k = +m[1]; k <= +m[2]; k++) out.add(k - 1); else if (+x) out.add(+x - 1); }); }); return out; };
@@ -3671,13 +3698,14 @@ ${r.groups.map((g) => `<section class="eatg"${g.items.some((x) => eatShow(g, x))
 // filter in place (no re-render: the search box keeps focus and the phone keyboard stays up)
 function eatFilter() {
   const q = eatQ.toLowerCase(); let n = 0;
+  const cards = $$('.eatc'), fz = fzFilter(cards.map((li) => li.dataset.s || ''), q), at = new Map(cards.map((li, i) => [li, i]));
   $$('.eatg').forEach((sec) => {
     let any = false;
-    sec.querySelectorAll('.eatc').forEach((li) => { const ok = (eatKind < 0 || +li.dataset.k === eatKind) && (!eatPick || li.dataset.p === '1') && (!q || li.dataset.s.includes(q)) && eatTagOk((li.dataset.t || '').split(' ').filter(Boolean)); li.hidden = !ok; if (ok) { any = true; n++; } });
+    sec.querySelectorAll('.eatc').forEach((li) => { const ok = (eatKind < 0 || +li.dataset.k === eatKind) && (!eatPick || li.dataset.p === '1') && (!q || fz.ok(at.get(li))) && eatTagOk((li.dataset.t || '').split(' ').filter(Boolean)); li.hidden = !ok; if (ok) { any = true; n++; } });
     sec.hidden = !any;
   });
   const all = $$('.eatc').length, c = $('#eatn'), none = $('#eatnone');
-  if (c) c.textContent = L(`แสดง ${n} จาก ${all} ร้าน`, `Showing ${n} of ${all}`);
+  if (c) c.textContent = L(`แสดง ${n} จาก ${all} ร้าน`, `Showing ${n} of ${all}`) + (fz.near && n ? L(' · ผลที่ใกล้เคียง', ' · close matches') : '');
   if (none) none.hidden = n > 0;
 }
 function viewFirsts(t) {
