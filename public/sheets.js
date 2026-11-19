@@ -1676,6 +1676,11 @@ document.addEventListener('input', (e) => { if (['captitle', 'captext', 'capdate
 document.addEventListener('input', (e) => {
   const el = e.target; if (!el) return;
   if (el.id === 'eltown') { eatLib.add = el.value; return; }
+  if (el.id === 'eltq') {   // the library's towns: filter the chips in place (the box keeps the focus)
+    const q = el.value.trim().toLowerCase(); let n = 0;
+    document.querySelectorAll('.elgrp').forEach((g) => { let any = false; g.querySelectorAll('.plchip').forEach((c) => { const ok = !q || c.dataset.s.includes(q); c.hidden = !ok; if (ok) { any = true; n++; } }); g.hidden = !any; });
+    const none = document.getElementById('eltnone'); if (none) none.hidden = n > 0; return;
+  }
   if (!pln.a) return;
   if (el.id === 'plask') { pln.ask = el.value; return; }
   if (el.dataset && el.dataset.pl && el.type !== 'date') { pln.a[el.dataset.pl] = el.value; ls('plan', pln.a); if (el.id === 'pldest') { const sg = $('#plsug'); if (sg) sg.innerHTML = plSugHtml(el.value); } }

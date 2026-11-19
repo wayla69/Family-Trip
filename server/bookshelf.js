@@ -171,7 +171,7 @@ function router({ pool, media, A, ai, hooks = {} }) {   // hooks.heart(h): set b
       let gone = 0;
       for (const k of new Set(keys)) { try { await media.del(k); gone++; } catch (_) { /* a file already missing is fine */ } }
       await q('DELETE FROM families WHERE id=$1', [FAMILY]);
-      await q("DELETE FROM settings WHERE key IN ('family_likes', 'emoji_seeded', 'emoji_offered', 'emoji_stock_offered', 'year_reels', 'planner_plans')");
+      await q("DELETE FROM settings WHERE key IN ('family_likes', 'emoji_seeded', 'emoji_offered', 'emoji_stock_offered', 'year_reels', 'planner_plans', 'eat_starter')");
       await q('INSERT INTO families (id, name) VALUES ($1, $2) ON CONFLICT (id) DO NOTHING', [FAMILY, 'Family']);
       await syncSeeds(pool); await EMOJI.seed(pool, FAMILY); await eatSyncAll(pool); A.groupsChanged();
       console.log(`family erased on request: ${gone} files, every row`);   // no names, no codes
@@ -1196,7 +1196,8 @@ function router({ pool, media, A, ai, hooks = {} }) {   // hooks.heart(h): set b
       const rows = await EATLIB.all(pool, FAMILY);
       if (req.query.for) return res.json({ for: eatFor(rows, eatPairs(String(req.query.for))) });
       if (req.query.town) return res.json({ places: rows.filter((x) => x.tkey === String(req.query.town)).map(EATLIB.out) });
-      res.json({ towns: EATLIB.towns(rows), total: rows.length, on: !!(ai && ai.enabled()) });
+      const cof = EATLIB.countryOf(STOCK.read());
+      res.json({ towns: EATLIB.towns(rows).map((t) => ({ ...t, country: cof.get(t.tkey) || null })), total: rows.length, on: !!(ai && ai.enabled()) });
     } catch (e) { next(e); }
   });
   // the helper fills a town: one call with web search, only the town's name (and the country or region typed with it) is sent
@@ -1852,5 +1853,5 @@ async function backfillPh(pool, media) {
   }
   return n;
 }
-const eatSyncAll = (pool) => EATLIB.syncBooks(pool, FAMILY, STOCK.read()).catch((e) => { console.error('eatlib sync', e.message); return 0; });
+const eatSyncAll = async (pool) => { try { await EATLIB.syncStarter(pool, FAMILY, STOCK.read()); return await EATLIB.syncBooks(pool, FAMILY, STOCK.read()); } catch (e) { console.error('eatlib sync', e.message); return 0; } };
 module.exports = { router, syncSeeds, brand, FAMILY, AUDIO_EXT, backfillPh, eatSyncAll };

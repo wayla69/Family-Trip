@@ -5,6 +5,8 @@
 // helper writes a list once, checked on the web (only the town's name is sent), kept with the day it was checked. The planner shows a
 // route's towns from here and writes them into the new book instead of asking the helper to think of places again.
 const crypto = require('crypto');
+const fs = require('fs');
+const path = require('path');
 
 const one = (v, n) => String(v == null ? '' : v).replace(/[\u0000-\u001f]+/g, ' ').trim().slice(0, n);
 const norm = (x) => String(x || '').normalize('NFKC').toLowerCase().replace(/[^a-z0-9฀-๿一-鿿]+/g, '');
@@ -61,7 +63,8 @@ function rowsOfBook(rest, index) {
 }
 
 const idOf = (family, tkey, nkey) => crypto.createHash('sha1').update(`${family}:${tkey}:${nkey}`).digest('hex').slice(0, 20);
-// rows into the table: a place the parents took out stays out (gone), a place the helper checked keeps what the check found
+// rows into the table: a place the parents took out stays out (gone); what the helper checked on the web wins over a book's row,
+// a book's row over the app's built-in list (src 'starter') — never the other way round
 async function put(pool, family, rows, src, trip, extra = {}) {
   if (!rows.length) return 0;
   const list = rows.map((r) => ({ ...r, id: idOf(family, r.tkey, r.nkey), st: r.st || '', url: r.url || '' }));
@@ -71,7 +74,7 @@ async function put(pool, family, rows, src, trip, extra = {}) {
     ON CONFLICT (family_id, tkey, nkey) DO UPDATE SET town = EXCLUDED.town, town_th = EXCLUDED.town_th, area = EXCLUDED.area, kind = EXCLUDED.kind, row = EXCLUDED.row, trip = EXCLUDED.trip,
       src = EXCLUDED.src, st = CASE WHEN EXCLUDED.src = 'helper' THEN EXCLUDED.st ELSE eat_lib.st END, url = CASE WHEN EXCLUDED.src = 'helper' THEN EXCLUDED.url ELSE eat_lib.url END,
       checked = CASE WHEN EXCLUDED.src = 'helper' THEN EXCLUDED.checked ELSE eat_lib.checked END
-    WHERE NOT eat_lib.gone AND (eat_lib.src = 'book' OR EXCLUDED.src = 'helper')`,
+    WHERE NOT eat_lib.gone AND (CASE eat_lib.src WHEN 'helper' THEN 2 WHEN 'book' THEN 1 ELSE 0 END) <= (CASE EXCLUDED.src WHEN 'helper' THEN 2 WHEN 'book' THEN 1 ELSE 0 END)`,
   [family, src, trip || null, JSON.stringify(list), extra.checked || null]);
   return res.rowCount;
 }
@@ -83,6 +86,44 @@ async function syncBooks(pool, family, index) {
   return n;
 }
 
+// ---------- the app's built-in list (server/eats/<cc>-<n>.json, owner Nov 2026: "เพิ่มร้านอาหารให้ครบทุกประเทศ เอาแบบลึกๆ"): places for
+// every city of the picture library, written ahead and not checked on the day — the page says so ("check before you go"). Read into
+// the family's library once per version of the files (settings eat_starter = their hash); scripts/eats-lint.mjs checks the files.
+const EATS_DIR = path.join(__dirname, 'eats');
+function starterFiles() { try { return fs.readdirSync(EATS_DIR).filter((f) => /^[a-z]{2}-\d+\.json$/.test(f)).sort(); } catch (_) { return []; } }
+function starterRows(file, index) {
+  let j; try { j = JSON.parse(fs.readFileSync(path.join(EATS_DIR, file), 'utf8')); } catch (_) { return []; }
+  const rows = [], seen = new Set();
+  for (const t of Array.isArray(j.towns) ? j.towns : []) {
+    const p = index && index.places && index.places[t.place]; if (!p || !p.name) continue;
+    const n = short(p.name), town = { en: n.en.split(',')[0].trim(), th: (n.en.includes(',') ? n.th.split(/[,\s]/)[0] : n.th).trim() || n.en }, tkey = norm(town.en);
+    for (const x of Array.isArray(t.places) ? t.places : []) {
+      const name = one(x && x.name, 120), nkey = norm(name);
+      if (!name || !nkey || seen.has(`${tkey}:${nkey}`)) continue;
+      seen.add(`${tkey}:${nkey}`);
+      rows.push({ town: town.en, town_th: town.th, tkey, nkey, area: i18n(x.area || town, 160), kind: [0, 1, 2].includes(x.kind) ? x.kind : 0, name, row: rowOf(x) });
+    }
+  }
+  return rows;
+}
+async function syncStarter(pool, family, index) {
+  const files = starterFiles(); if (!files.length) return 0;
+  const h = crypto.createHash('sha1'); for (const f of files) h.update(f).update(fs.readFileSync(path.join(EATS_DIR, f)));
+  const ver = `${family}:${h.digest('hex')}`;
+  const was = (await pool.query("SELECT value FROM settings WHERE key='eat_starter'")).rows[0];
+  if (was && was.value === ver) return 0;
+  let n = 0;
+  for (const f of files) n += await put(pool, family, starterRows(f, index), 'starter', null);
+  await pool.query("INSERT INTO settings (key, value) VALUES ('eat_starter', $1) ON CONFLICT (key) DO UPDATE SET value = EXCLUDED.value", [ver]);
+  return n;
+}
+// which country a town of the library is in (by the picture library's city of the same name), for the page's groups
+function countryOf(index) {
+  const m = new Map();
+  for (const [id, p] of Object.entries((index && index.places) || {})) if (id !== p.country && p.name) { const c = index.places[p.country]; m.set(norm(short(p.name).en.split(',')[0]), { cc: p.country, th: (c && c.name && c.name.th) || p.country, en: (c && c.name && c.name.en) || p.country }); }
+  return m;
+}
+
 const out = (r) => ({ id: r.id, town: r.town, town_th: r.town_th, tkey: r.tkey, area: r.area, kind: r.kind, name: r.name, src: r.src, trip: r.trip || '', st: r.st || '', url: r.url || '',
   checked: r.checked ? new Date(r.checked).toISOString().slice(0, 10) : '', ...r.row });
 const all = async (pool, family) => (await pool.query('SELECT * FROM eat_lib WHERE family_id=$1 AND NOT gone ORDER BY town, kind, created_at, name', [family])).rows;
@@ -90,8 +131,8 @@ const all = async (pool, family) => (await pool.query('SELECT * FROM eat_lib WHE
 function towns(rows) {
   const by = new Map();
   for (const r of rows) {
-    const t = by.get(r.tkey) || { tkey: r.tkey, town: r.town, town_th: r.town_th, n: 0, checked: '' };
-    t.n++; const c = r.checked ? new Date(r.checked).toISOString().slice(0, 10) : ''; if (c > t.checked) t.checked = c;
+    const t = by.get(r.tkey) || { tkey: r.tkey, town: r.town, town_th: r.town_th, n: 0, own: 0, checked: '' };
+    t.n++; if (r.src !== 'starter') t.own++; const c = r.checked ? new Date(r.checked).toISOString().slice(0, 10) : ''; if (c > t.checked) t.checked = c;
     by.set(r.tkey, t);
   }
   return [...by.values()].sort((a, b) => b.n - a.n || a.town.localeCompare(b.town));
@@ -144,10 +185,11 @@ async function fill({ client, model, town, where, have = [], take, onUsage }) {
 
 // the library's rows of a route's towns → a book's "where to eat" (a group a town, each place its own kind; at most `per` a town:
 // the ones the helper checked first, then the family's own books')
+const rank = (p) => (p.st === 'open' ? 3 : p.src === 'book' ? 2 : p.src === 'helper' ? 1 : 0);   // checked open first, then our own books', the helper's unsure ones, the built-in list
 function groupsFor(byTown, per = 12) {
   const groups = byTown.filter((t) => t.places.length).map((t) => ({ area: { th: t.th || t.en, en: t.en },
-    items: [...t.places].sort((a, b) => (b.st === 'open') - (a.st === 'open')).slice(0, per).map((p) => ({ name: p.name, kind: p.kind, ...rowOf(p) })) }));
+    items: [...t.places].filter((p) => p.st !== 'closed').sort((a, b) => rank(b) - rank(a)).slice(0, per).map((p) => ({ name: p.name, kind: p.kind, ...rowOf(p) })) }));
   return groups.length ? { lede: { th: 'ร้านจากคลังของครอบครัว: ร้านในเล่มก่อนๆ และร้านที่ผู้ช่วยหาและเช็กกับเว็บ · ราคาและเวลาเปิดเปลี่ยนได้ เช็กซ้ำก่อนไป', en: 'From the family’s library: places from our earlier books and ones the helper found and checked on the web. Hours and prices change — check before you go.' }, kinds: KINDS, groups } : null;
 }
 
-module.exports = { rowsOfBook, syncBooks, put, all, out, towns, forTown, fill, cleanFill, groupsFor, norm, KINDS };
+module.exports = { rowsOfBook, syncBooks, syncStarter, starterRows, starterFiles, countryOf, put, all, out, towns, forTown, fill, cleanFill, groupsFor, norm, KINDS };
