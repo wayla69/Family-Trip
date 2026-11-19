@@ -80,7 +80,8 @@ function render() {
     const ct = curTrip(), what = p[1] || 'today';
     if (!ct) { history.replaceState(null, '', '#/'); return render(); }
     const di = todayIdx(ct), ed = isEditor() && what !== 'today';
-    history.replaceState(null, '', ed ? `#/t/${encodeURIComponent(ct.id)}/log/${di}` : `#/t/${encodeURIComponent(ct.id)}/today/${di}`);
+    const stp = { photo: 'photos', rec: 'feel', quote: 'words' }[what];
+    history.replaceState(null, '', ed ? `#/t/${encodeURIComponent(ct.id)}/log/${di}${stp ? '/' + stp : ''}` : `#/t/${encodeURIComponent(ct.id)}/today/${di}`);
     render();
     if (ed) setTimeout(() => goShortcut(what), 60);
     return;
@@ -92,7 +93,7 @@ function render() {
     const sec = p[2] || 'hub';
     // the kids dress for the day on the page: the day being read or recorded, else today during the trip, else the book's own clothes
     artDay = (sec === 'today' || sec === 'log') && /^\d+$/.test(p[3] || '') ? Math.min(t.days.length - 1, +p[3]) : dayNow(t) >= 0 ? dayNow(t) : null;
-    if (sec === 'log') html = isEditor() ? viewLog(t, Math.min(t.days.length - 1, Math.max(0, +p[3] || 0)), p[4] === 'ai') : viewBook(t);
+    if (sec === 'log') html = isEditor() ? viewLog(t, Math.min(t.days.length - 1, Math.max(0, +p[3] || 0)), p[4] === 'ai', p[4]) : viewBook(t);
     else if (sec === 'book') html = viewBook(t);
     else if (sec === 'today' && t.kind === 'snap') html = viewSnapLive(t);
     else if (sec === 'draft' && t.kind === 'snap' && isEditor()) html = p[3] === 'review' ? viewSnapReview(t) : viewSnapDraft(t);   // the helper drafts it (P3)   // a book from photos: the day's page (docs/SNAP-BOOK.md P2)
@@ -3933,7 +3934,58 @@ function lgCards(html) {
     return `<section class="blk lgc${cls}"${attrs} style="--g1:${g}">${head ? `<h3>${lead}` : ''}`;
   });
 }
-function viewLog(t, i, evening) { return lgCards(viewLogRaw(t, i, evening)); }
+/* The record page, a page a step (owner, Nov 2026: "หน้า record ยาวมากเลย … แบบมีหลายหน้าในส่วนนี้"): #/t/<trip>/log/<i> is the day's
+   overview — the day strip, the plan line, then a tile a step with what it already holds (photos · words · mood and favourite · note
+   and firsts · places and spending · the helper · day done); #/t/<trip>/log/<i>/<step> is that step alone with the step dots on top
+   and back / next under it (the planner's look). The page is still drawn whole (viewLogRaw) and cut at its <!--lg:…--> marks, so
+   every block keeps its own code. /log/<i>/ai (the 21:30 push) is the helper's step. */
+const LG_STEPS = [['photos', '/art/hub/camera.webp', PG.pink, 'รูปและคลิป', 'Photos', ['photos']], ['words', '/art/hub/comment.webp', PG.purple, 'คำพูด', 'Words', ['words']],
+  ['feel', '/art/kidui/mood.webp', PG.gold, 'อารมณ์และของโปรด', 'Mood & favourite', ['mood', 'fav', 'voices']], ['notes', '/art/hub/pencil.webp', PG.blue, 'โน้ตและครั้งแรก', 'Note & firsts', ['note', 'firsts']],
+  ['places', '/art/hub/map.webp', PG.teal, 'ที่ไปและค่าใช้จ่าย', 'Places & spending', ['places']], ['ai', '/art/hub/helper.webp', PG.purple, 'ผู้ช่วย', 'The helper', ['ai']],
+  ['done', '/art/hub/today.webp', PG.lime, 'จบวันนี้', 'Day done', ['done']]];
+const LG_SHORT = { photos: ['รูป', 'Photos'], words: ['คำพูด', 'Words'], feel: ['อารมณ์', 'Mood'], notes: ['โน้ต', 'Notes'], places: ['ที่ไป', 'Places'], ai: ['ผู้ช่วย', 'Helper'], done: ['จบวัน', 'Done'] };
+function lgStatus(t, i) {
+  const es = entriesOf(t.id, i), kids = children().map((c) => c.slug), d = t.days[i];
+  const ph = mediaOf(t.id, i).length + (typeof videoOf === 'function' ? videoOf(t.id, i).length : 0), qs = es.filter((e) => e.kind === 'quote').length;
+  const moods = kids.filter((k) => es.some((e) => e.kind === 'mood' && e.child === k)).length, fav = es.some((e) => e.kind === 'fav'), voices = audioOf(t.id, i).length;
+  const note = es.some((e) => e.kind === 'note'), firsts = es.filter((e) => e.kind === 'first').length;
+  const places = placesOf(t.id, i).length, spend = spendOf(t.id, i).length, revs = S.reviews.filter((r) => r.trip === t.id && r.day === i).length;
+  const ai = es.filter((e) => ['sum', 'story', 'talk', 'mquiz'].includes(e.kind)).length;
+  const j = (parts) => parts.filter(Boolean).join(' · ');
+  return {
+    photos: [ph > 0, ph ? L(`${ph} รูป`, `${ph} photo${ph > 1 ? 's' : ''}`) : L('ยังว่าง', 'Nothing yet')],
+    words: [qs > 0, qs ? L(`${qs} คำพูด`, `${qs} said`) : L('ยังว่าง', 'Nothing yet')],
+    feel: [moods > 0 || fav || voices > 0, j([moods && L(`อารมณ์ ${moods}/${kids.length}`, `mood ${moods}/${kids.length}`), fav && L('ของโปรด ✓', 'favourite ✓'), voices && L(`เสียง ${voices}`, `${voices} voice${voices > 1 ? 's' : ''}`)]) || L('ยังว่าง', 'Nothing yet')],
+    notes: [note || firsts > 0, j([note && L('โน้ต ✓', 'note ✓'), firsts && L(`ครั้งแรก ${firsts}`, `${firsts} first${firsts > 1 ? 's' : ''}`)]) || L('ยังว่าง', 'Nothing yet')],
+    places: [places > 0 || spend > 0 || revs > 0, j([places && L(`เช็กอิน ${places}`, `${places} check-in${places > 1 ? 's' : ''}`), spend && L(`จ่าย ${spend} รายการ`, `${spend} spent`), revs && L(`รีวิว ${revs}`, `${revs} review${revs > 1 ? 's' : ''}`)]) || L('ยังว่าง', 'Nothing yet')],
+    ai: [ai > 0, ai ? L(`ทำแล้ว ${ai} อย่าง`, `${ai} done`) : L('สรุป นิทาน คำถาม', 'Summary, story, questions')],
+    done: [!!d.done_at, d.done_at ? L('จบวันนี้แล้ว ✓', 'Day done ✓') : L('แตะเมื่อจบวัน', 'Tap when the day is over')],
+  };
+}
+function viewLog(t, i, evening, step) {
+  const raw = lgCards(viewLogRaw(t, i, evening));
+  // the whole day on one page (/log/<i>/all): two versions, always — a page a step, or everything at once
+  if (step === 'all') return raw.replace(/href="#\/t\/([^"/]+)\/log\/(\d+)"/g, (m, x, y) => `href="#/t/${x}/log/${y}/all"`).replace('<!--lg:prog-->', `<p class="lgallnav"><a class="btn ghost" href="#/t/${esc(t.id)}/log/${i}">‹ ${L('ทีละหัวข้อ', 'One thing at a time')}</a></p><!--lg:prog-->`);
+  const cut = raw.split(/<!--lg:(\w+)-->/), seg = { head: cut[0] };
+  for (let k = 1; k < cut.length; k += 2) seg[cut[k]] = cut[k + 1];
+  const hasAi = /\S/.test(seg.ai || ''), steps = LG_STEPS.filter((x) => x[0] !== 'ai' || hasAi), st = lgStatus(t, i);
+  const base = `#/t/${esc(t.id)}/log/${i}`;
+  if (evening && hasAi) step = 'ai';
+  const k = steps.findIndex((x) => x[0] === step);
+  if (k < 0) {   // the day's overview: a tile a step
+    const tiles = steps.map((x) => { const s1 = st[x[0]]; return `<a class="lgtile${s1[0] ? ' has' : ''}${x[0] === 'done' ? ' end' : ''}" href="${base}/${x[0]}" style="--g1:${x[2]}"><span class="pcpic"><img src="${x[1]}" alt="" draggable="false"></span><b>${L(x[3], x[4])}</b><small>${esc(s1[1])}</small>${s1[0] ? '<i class="lgok" aria-hidden="true">✓</i>' : ''}</a>`; }).join('');
+    return `${seg.head}${seg.plan || ''}<div class="part pickh">${L('บันทึกวันนี้ แตะทีละหัวข้อ', 'Record the day — one thing at a time')}</div><nav class="lgtiles">${tiles}</nav><p class="lgallgo"><a class="linkbtn" href="${base}/all">${L('ดูทั้งหมดในหน้าเดียว', 'See everything on one page')} ›</a></p>`;
+  }
+  const x = steps[k];
+  const head = seg.head.replace(/href="#\/t\/([^"/]+)\/log\/(\d+)"/g, (m, a, b) => `href="#/t/${a}/log/${b}/${x[0]}"`);   // the day strip keeps the step
+  const dots = `<nav class="plqs lgqs" style="grid-template-columns:repeat(${steps.length},1fr)" aria-label="${L('หัวข้อ', 'Steps')}">${steps.map((y, j) => `<a class="plqd${j === k ? ' now' : st[y[0]][0] ? ' done' : ''}" href="${base}/${y[0]}"${j === k ? ' aria-current="step"' : ''}><i>${j !== k && st[y[0]][0] ? '✓' : j + 1}</i><span>${L(LG_SHORT[y[0]][0], LG_SHORT[y[0]][1])}</span></a>`).join('')}</nav>`;
+  let body = x[5].map((n) => seg[n] || '').join('');
+  if (x[0] === 'ai') body = body.replace('<details class="blk fold aifold"', '<details open class="blk fold aifold"');
+  if (!/\S/.test(body.replace(/<!--[\s\S]*?-->/g, ''))) body = `<p class="empty">${L('วันนี้ไม่มีส่วนนี้', 'Nothing to do here today')}</p>`;
+  const prev = k ? `<a class="btn ghost plback" href="${base}/${steps[k - 1][0]}">‹ ${L(LG_SHORT[steps[k - 1][0]][0], LG_SHORT[steps[k - 1][0]][1])}</a>` : `<a class="btn ghost plback" href="${base}">‹ ${L('ภาพรวม', 'Overview')}</a>`;
+  const next = k < steps.length - 1 ? `<a class="btn plnext" href="${base}/${steps[k + 1][0]}">${L(LG_SHORT[steps[k + 1][0]][0], LG_SHORT[steps[k + 1][0]][1])} ›</a>` : `<a class="btn plnext" href="${base}">${L('ภาพรวมของวัน', 'The day’s overview')} ›</a>`;
+  return `${head}${dots}<div class="lgstep" data-step="${x[0]}">${body}</div><div class="row plnav">${prev}${next}</div>`;
+}
 function viewLogRaw(t, i, evening) {
   const d = t.days[i], es = entriesOf(t.id, i), ph = mediaOf(t.id, i), now = dayNow(t);
   const dk = `${t.id}:${i}`;
@@ -3957,36 +4009,36 @@ function viewLogRaw(t, i, evening) {
 <div class="day" style="border:0;margin-top:0;padding-top:6px"><div class="hd"><div class="no">${String(i + 1).padStart(2, '0')}</div>
 <div class="dl">${L('วันที่', 'Day')} ${i + 1} · ${esc(fmtDay(d.date))}</div><div></div>
 <h3>${esc(T(d.title))}</h3>${artImg(t, i, 'hdart' + (dayStamped(t, i) ? '' : ' off'))}</div></div>
-<div class="logprog noprint" role="group" aria-label="${L('บันทึกวันนี้', 'Tonight’s three')}">${[['photos', 'camera', L('รูป', 'Photos'), ph.length], ['quotes', 'quote', L('คำพูด', 'Words'), quotes.length], ['mood', 'kid', L('อารมณ์', 'Mood'), kids.filter((k) => mood(k)).length]].map(([id, icon, lbl, n]) => `<button type="button" class="lpc${n ? ' on' : ''}" data-a="jump" data-v="#lg${id}" aria-label="${lbl}: ${n ? L('มีแล้ว', 'done') : L('ยังว่าง', 'empty')}">${ic(icon)}${lbl}<i>${n ? '✓' : '○'}</i></button>`).join('')}${aiJump(t, i, dk)}</div>
-${planLite(t, i)}
+<!--lg:prog--><div class="logprog noprint" role="group" aria-label="${L('บันทึกวันนี้', 'Tonight’s three')}">${[['photos', 'camera', L('รูป', 'Photos'), ph.length], ['quotes', 'quote', L('คำพูด', 'Words'), quotes.length], ['mood', 'kid', L('อารมณ์', 'Mood'), kids.filter((k) => mood(k)).length]].map(([id, icon, lbl, n]) => `<button type="button" class="lpc${n ? ' on' : ''}" data-a="jump" data-v="#lg${id}" aria-label="${lbl}: ${n ? L('มีแล้ว', 'done') : L('ยังว่าง', 'empty')}">${ic(icon)}${lbl}<i>${n ? '✓' : '○'}</i></button>`).join('')}${aiJump(t, i, dk)}</div>
+<!--lg:plan-->${planLite(t, i)}
 
-<section class="blk" id="lgphotos"><h3>${ic('camera')} ${L('รูป', 'Photos')}${ph.length ? ` <span class="label">${ph.length}</span>` : ''}</h3>
+<!--lg:photos--><section class="blk" id="lgphotos"><h3>${ic('camera')} ${L('รูป', 'Photos')}${ph.length ? ` <span class="label">${ph.length}</span>` : ''}</h3>
 <div class="row"><button class="btn" type="button" data-a="pickphotos" data-fpick data-t="${esc(t.id)}" data-d="${i}">＋ ${L('เพิ่มรูป', 'Add photos')}</button><button class="btn ghost" type="button" data-a="pickvideo" data-t="${esc(t.id)}" data-d="${i}">＋ ${L('คลิปวิดีโอ', 'Video clip')}</button><span class="progress" id="prog2"></span></div>
 ${photoSpots(t, i, ph)}
 ${ph.length ? `<div class="lgmos" style="margin-top:10px">${mosaicByPlace(t, ph)}</div>` : ''}${vidsBlock(t, i, true)}${upBlock()}</section>
 
-<section class="blk" id="lgquotes"><h3>${ic('quote')} ${L('คำพูดน่ารัก', 'Things they said')}</h3>
+<!--lg:words--><section class="blk" id="lgquotes"><h3>${ic('quote')} ${L('คำพูดน่ารัก', 'Things they said')}</h3>
 <div class="row" role="group">${kids.concat('both').map((k) => `<button class="chip" data-a="who" data-v="${k}" aria-pressed="${quoteWho === k}">${kidFace(k)} ${esc(kidName(k))}</button>`).join('')}</div>
 <div class="emowrap" style="margin-top:8px"><textarea id="qtext" class="field" data-draft="q:${esc(dk)}" placeholder="${L('“หนูอยากเป็นปลา…”', '“I want to be a fish…”')}">${esc(drafts['q:' + dk] || '')}</textarea>${emoBtn('qtext')}</div>
 <div class="row end" style="margin-top:6px"><button class="btn small" data-a="savequote" data-t="${esc(t.id)}" data-d="${i}">${L('บันทึกคำพูด', 'Save quote')}</button></div>
 ${quotes.length ? `<ul class="items">${quotes.map((e) => `<li><div class="grow">${quoteCall(e, false)}</div><button class="mini${e.highlight ? ' on' : ''}" data-a="hiq" data-v="${esc(e.id)}" aria-pressed="${!!e.highlight}" title="⭐">${e.highlight ? '⭐' : '☆'}</button><button class="mini" data-a="delentry" data-v="${esc(e.id)}">${L('ลบ', 'Delete')}</button></li>`).join('')}</ul>` : ''}</section>
 
-<section class="blk" id="lgmood"><h3>${ic('kid')} ${L('อารมณ์วันนี้', 'Mood today')} <span class="label">${L('แตะซ้ำเพื่อล้าง', 'tap again to clear')}</span></h3>
+<!--lg:mood--><section class="blk" id="lgmood"><h3>${ic('kid')} ${L('อารมณ์วันนี้', 'Mood today')} <span class="label">${L('แตะซ้ำเพื่อล้าง', 'tap again to clear')}</span></h3>
 ${kids.map((k) => `<div class="moodrow">${kidBadge(k)}<div class="opts">${(t.moods.length ? t.moods : ['😄', '🥰', '🤩', '😋', '😴', '😢']).map((m) => `<button data-a="mood" data-k="${k}" data-v="${esc(m)}" data-t="${esc(t.id)}" data-d="${i}" aria-pressed="${mood(k) === m}" aria-label="${esc(kidName(k))} ${esc(m)}">${emo(m)}</button>`).join('')}</div></div>`).join('')}</section>
 
-<section class="blk dayendblk"><button class="btn dayend${d.done_at ? ' is-done' : ''}" data-a="done" data-t="${esc(t.id)}" data-d="${i}">${d.done_at ? '✓ ' + L('วันนี้เสร็จแล้ว (แตะเพื่อยกเลิก)', 'Day done (tap to undo)') : ic('flag') + ' ' + L('จบวันนี้', 'Mark day done')}</button>
+<!--lg:done--><section class="blk dayendblk"><button class="btn dayend${d.done_at ? ' is-done' : ''}" data-a="done" data-t="${esc(t.id)}" data-d="${i}">${d.done_at ? '✓ ' + L('วันนี้เสร็จแล้ว (แตะเพื่อยกเลิก)', 'Day done (tap to undo)') : ic('flag') + ' ' + L('จบวันนี้', 'Mark day done')}</button>
 <div class="row"><a class="btn ghost" href="#/t/${esc(t.id)}">${ic('book')} ${L('ดูในสมุด', 'See it in the book')}</a>${navigator.share ? `<button class="btn ghost" data-a="share" data-t="${esc(t.id)}" data-d="${i}">${ic('share')} ${L('ส่งให้ญาติ', 'Share with family')}</button>` : ''}<button class="btn ghost" data-a="daycard" data-t="${esc(t.id)}" data-d="${i}">${ic('image')} ${L('การ์ดวันนี้', 'Day card')}</button></div></section>
 
-<details class="more"${moreOpen ? ' open' : ''}><summary><span><b>${L('เพิ่มเติม', 'More')}</b><small>${L('ของโปรด · โน้ต · เสียงเด็กๆ · ครั้งแรก · เช็กอิน · ค่าใช้จ่าย · รีวิว', 'favourite · note · voices · firsts · check-ins · spending · reviews')}</small></span><button type="button" class="linkbtn" data-a="logall">${ls('logall') ? L('พับเก็บได้', 'Let it fold') : L('เปิดไว้ตลอด', 'Keep open')}</button>${ic('chev', 'chv')}</summary>
-${clipsBlock(t, i)}
+<!--lg:more--><details class="more"${moreOpen ? ' open' : ''}><summary><span><b>${L('เพิ่มเติม', 'More')}</b><small>${L('ของโปรด · โน้ต · เสียงเด็กๆ · ครั้งแรก · เช็กอิน · ค่าใช้จ่าย · รีวิว', 'favourite · note · voices · firsts · check-ins · spending · reviews')}</small></span><button type="button" class="linkbtn" data-a="logall">${ls('logall') ? L('พับเก็บได้', 'Let it fold') : L('เปิดไว้ตลอด', 'Keep open')}</button>${ic('chev', 'chv')}</summary>
+<!--lg:voices-->${clipsBlock(t, i)}
 
-<section class="blk"><h3>${ic('hearts')} ${L('ของโปรดวันนี้', 'Favourite thing today')}</h3>
+<!--lg:fav--><section class="blk"><h3>${ic('hearts')} ${L('ของโปรดวันนี้', 'Favourite thing today')}</h3>
 <div class="emowrap"><input id="favtext" class="field" data-a-blur="fav" data-t="${esc(t.id)}" data-d="${i}" data-draft="f:${esc(dk)}" value="${esc(drafts['f:' + dk] ?? (fav ? fav.text : ''))}" placeholder="${L('เช่น ไอติมมะม่วง', 'e.g. mango ice cream')}">${emoBtn('favtext')}</div></section>
 
-<section class="blk"><h3>${ic('log')} ${L('โน้ตพ่อแม่', "Parents' note")}</h3>
+<!--lg:note--><section class="blk"><h3>${ic('log')} ${L('โน้ตพ่อแม่', "Parents' note")}</h3>
 <div class="emowrap"><textarea id="notetext" class="field" data-a-blur="note" data-t="${esc(t.id)}" data-d="${i}" data-draft="n:${esc(dk)}" placeholder="${L('บันทึกเมื่อแตะออกจากช่อง · เว้นว่าง = ลบ', 'Saved when you leave the box · empty = delete')}">${esc(drafts['n:' + dk] ?? (note ? note.text : ''))}</textarea>${emoBtn('notetext')}</div></section>
 
-<section class="blk"><h3>${ic('firsts')} ${L('ครั้งแรก', 'Firsts')} <span class="label">${L('แตะรูปเด็กเพื่อติ๊ก', 'tap a child to tick')}</span></h3>
+<!--lg:firsts--><section class="blk"><h3>${ic('firsts')} ${L('ครั้งแรก', 'Firsts')} <span class="label">${L('แตะรูปเด็กเพื่อติ๊ก', 'tap a child to tick')}</span></h3>
 ${((open, done) => `<div class="firsts">${open.map((f) => `<div class="first"><span class="e">${esc(f.emoji)}</span><span class="t">${esc(T(f.label))}</span><span class="kids">${kids.map((k) => { const fd = firstDay(f.key, k), here = fd === i, other = fd >= 0 && !here;
     return `<button data-a="first" data-v="${esc(f.key)}" data-k="${k}" data-t="${esc(t.id)}" data-d="${i}" aria-pressed="${here}" class="${other ? 'elsewhere' : ''}" aria-label="${esc(kidName(k))}: ${esc(T(f.label))}${other ? ` · ${L('วันที่', 'Day')} ${fd + 1}` : ''}">${kidBadge(k, !here)}${other ? `<small class="fday">${L('ว', 'D')}${fd + 1}</small>` : ''}</button>`; }).join('')}</span></div>`).join('')}</div>
 ${done.length ? `<details class="fdone"><summary>${L(`ทำไปแล้ววันอื่น (${done.length})`, `Already done on other days (${done.length})`)}</summary><ul>${done.map((f) => `<li>${esc(f.emoji)} ${esc(T(f.label))} <small class="label">${kids.map((k) => `${esc(kidName(k))} · ${L('วันที่', 'Day')} ${firstDay(f.key, k) + 1}`).join(' / ')}</small></li>`).join('')}</ul></details>` : ''}`)(t.firsts.filter((f) => !kidsDoneElsewhere(f.key)), t.firsts.filter((f) => kidsDoneElsewhere(f.key)))}
@@ -3994,13 +4046,13 @@ ${es.filter((e) => e.kind === 'first' && e.first_key === 'custom').map((e) => `<
 <div class="row" style="margin-top:8px"><input id="firsttext" class="field" style="flex:1;min-width:160px" data-draft="c:${esc(dk)}" value="${esc(drafts['c:' + dk] || '')}" placeholder="${L('ครั้งแรกอื่นๆ เช่น ใส่รองเท้าเอง', 'Another first, e.g. shoes on by herself')}">
 ${kids.map((k) => `<button class="btn ghost small" data-a="customfirst" data-k="${k}" data-t="${esc(t.id)}" data-d="${i}">＋ ${kidFace(k)}</button>`).join('')}</div></section>
 
-${(d.planned || []).length ? `<section class="blk"><h3>${ic('pin')} ${L('เช็กอิน: ที่ไปและมื้ออาหาร', 'Check in: places & meals')}</h3>
+<!--lg:places-->${(d.planned || []).length ? `<section class="blk"><h3>${ic('pin')} ${L('เช็กอิน: ที่ไปและมื้ออาหาร', 'Check in: places & meals')}</h3>
 ${d.planned.map((p) => `<div class="check"><button data-a="place" data-v="${esc(p.key)}" data-k="${esc(p.kind || 'place')}" data-t="${esc(t.id)}" data-d="${i}" aria-pressed="${visited.has(p.key)}" aria-label="${esc(T(p))}">${visited.has(p.key) ? '✓' : ''}</button><span class="grow">${p.kind === 'food' ? '🍽️ ' : ''}${esc(T(p))}${p.meal ? ` <small>· ${esc(p.meal)}</small>` : ''}</span>${extA(mapsUrl(placeQ(t, p)), L('แผนที่', 'Map') + ' ↗', 'mini nav')}</div>`).join('')}</section>` : ''}
 
 ${spendBlock(t, i, dk)}
 ${notebookBlock(t, i)}
-</details>
-${((g) => (g && isEditor() && S.features.story ? `<details class="blk fold aifold"${evening || ls('logall') || aiRun || ph.length || es.length ? ' open' : ''}><summary>${ic('sparkle')}<b>${L('คืนนี้ให้ผู้ช่วยทำให้', 'Tonight, with the helper')}</b><small>${ph.length || es.length ? L(`เหลือ ${aiTodo(t, i, dk).length}`, `${aiTodo(t, i, dk).length} to do`) : L('บันทึกก่อน แล้วค่อยเปิด', 'Record first, then open')}</small>${ic('chev', 'chv')}</summary>${g}</details>` : g))(aiGroup(t, i, dk))}`;
+<!--lg:moreend--></details>
+<!--lg:ai-->${((g) => (g && isEditor() && S.features.story ? `<details class="blk fold aifold"${evening || ls('logall') || aiRun || ph.length || es.length ? ' open' : ''}><summary>${ic('sparkle')}<b>${L('คืนนี้ให้ผู้ช่วยทำให้', 'Tonight, with the helper')}</b><small>${ph.length || es.length ? L(`เหลือ ${aiTodo(t, i, dk).length}`, `${aiTodo(t, i, dk).length} to do`) : L('บันทึกก่อน แล้วค่อยเปิด', 'Record first, then open')}</small>${ic('chev', 'chv')}</summary>${g}</details>` : g))(aiGroup(t, i, dk))}`;
 }
 // what we actually spent today: amount + category + a word → a row; the day's total in the heading, the trip's so far underneath.
 // A grown-up's number, so it stays on this page (and in our database) — never in the printed memory book or a seed.
