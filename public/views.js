@@ -2817,6 +2817,17 @@ const PL_OPTS = {
 };
 // what the family likes and needs: chips instead of typing (the keys are server/planner.js LIKES / NEEDS)
 // the planner's likes and needs are the family's style table (public/tags.js), so a plan, #/taste and the libraries speak one language
+// a painted picture per style (E6, the house style; the owner approved the sample, Nov 2026): our own under /art/taste, else the games'
+// and food library's picture of the same thing; a style without one keeps its emoji
+const TASTE_PIC = {
+  local: 'taste/local', noodle: 'food/noodles', rice: 'food/rice', seafood: 'food/prawn', grill: 'food/skewer', sweet: 'food/cakeslice',
+  court: 'taste/court', buffet: 'taste/buffet', veg: 'food/salad', halal: 'taste/halal', familiar: 'food/pizza',
+  animals: 'game/elephant', aquarium: 'game/reeffish', sea: 'taste/sea', nature: 'game/pine', park: 'taste/park', play: 'game/balloon',
+  museum: 'taste/museum', train: 'game/train', snow: 'taste/snow', farm: 'game/strawberry', food: 'taste/food', shop: 'taste/shop',
+  culture: 'taste/culture', onsen: 'taste/onsen', views: 'taste/views', show: 'taste/show',
+  pram: 'taste/pram', nap: 'taste/nap', walk: 'taste/walk', drive: 'game/car', mild: 'taste/mild', crowd: 'taste/crowd', early: 'taste/early',
+};
+const tPic = (r) => (TASTE_PIC[r[0]] ? `<img class="tpic" src="/art/${TASTE_PIC[r[0]]}.webp" alt="" draggable="false">` : emo(r[1]));
 const PL_LIKES = TASTE_OUT.map((r) => r.slice(0, 4));
 const PL_NEEDS = TASTE_NEED;
 // changes parents ask for most, one tap each (the words go to the helper as the ask)
@@ -2940,7 +2951,7 @@ function viewPlanner(qs) {
   const f = (k, th, en, ph, type = 'text', max = 200) => `<label class="vgl">${L(th, en)}<input class="field" id="pl${k}" data-pl="${k}" type="${type}" maxlength="${max}" value="${esc(a[k] == null ? '' : a[k])}"${ph ? ` placeholder="${esc(ph)}"` : ''}${k === 'dest' ? ' autocomplete="off"' : ''}></label>`;
   const tx = (k, th, en, ph, max) => `<label class="vgl">${L(th, en)}<textarea class="field" id="pl${k}" data-pl="${k}" rows="2" maxlength="${max}" placeholder="${esc(ph)}">${esc(a[k] || '')}</textarea></label>`;
   const opts = (k) => `<div class="tpk plopts" role="group">${PL_OPTS[k].map(([v, e, th, en, dth, den]) => `<button type="button" class="tpo" data-a="planopt" data-k="${k}" data-v="${v}" aria-pressed="${a[k] === v}"><span class="rme" aria-hidden="true">${emo(e)}</span><b>${L(th, en)}</b><small>${L(dth, den)}</small><span class="ck" aria-hidden="true">✓</span></button>`).join('')}</div>`;
-  const chips = (k, list) => `<div class="plchips" role="group">${list.map(([v, e, th, en]) => `<button type="button" class="plchip" data-a="planchip" data-k="${k}" data-v="${v}" aria-pressed="${a[k].includes(v)}"><span aria-hidden="true">${emo(e)}</span>${L(th, en)}</button>`).join('')}</div>`;
+  const chips = (k, list) => `<div class="plchips" role="group">${list.map(([v, e, th, en]) => `<button type="button" class="plchip" data-a="planchip" data-k="${k}" data-v="${v}" aria-pressed="${a[k].includes(v)}"><span aria-hidden="true">${tPic([v, e])}</span>${L(th, en)}</button>`).join('')}</div>`;
   const nd = plDays(a) || (a.from ? 0 : a.len), kids = children();
   const lens = `<div class="plchips pllens" role="group" aria-label="${L('กี่วัน', 'How many days')}">${[3, 4, 5, 6, 7, 10, 14].map((n) => `<button type="button" class="plchip" data-a="planlen" data-v="${n}" aria-pressed="${nd === n}">${n} ${L('วัน', 'days')}</button>`).join('')}</div>`;
   const now = new Date(), months = Array.from({ length: 9 }, (_, i) => { const d = new Date(now.getFullYear(), now.getMonth() + 1 + i, 1); return d.toLocaleDateString(LOC(), { month: 'long', year: 'numeric' }); });
@@ -3054,7 +3065,7 @@ const foodStyleBar = (places) => {
   const t = famTaste(), have = TASTE_FOOD.filter((g) => places.some((x) => foodStylesOf(x).includes(g[0])));
   if (have.length < 2) return '';
   have.sort((a, b) => (t.food.like.includes(b[0]) ? 1 : 0) - (t.food.like.includes(a[0]) ? 1 : 0));
-  return `<div class="row chips ektagbar fstyles" role="group" aria-label="${L('แนวอาหาร', 'Kind of food')}"><span class="label">${L('แนวอาหาร', 'Kind of food')}</span>${have.map((g) => `<button class="chip${t.food.like.includes(g[0]) ? ' ours' : ''}" data-a="eattag" data-v="${g[0]}" aria-pressed="${eatTags.has(g[0])}">${emo(g[1])} ${L(g[2], g[3])}${t.food.like.includes(g[0]) ? ' 💛' : ''}</button>`).join('')}</div>`;
+  return `<div class="row chips ektagbar fstyles" role="group" aria-label="${L('แนวอาหาร', 'Kind of food')}"><span class="label">${L('แนวอาหาร', 'Kind of food')}</span>${have.map((g) => `<button class="chip${t.food.like.includes(g[0]) ? ' ours' : ''}" data-a="eattag" data-v="${g[0]}" aria-pressed="${eatTags.has(g[0])}">${tPic(g)} ${L(g[2], g[3])}${t.food.like.includes(g[0]) ? ' 💛' : ''}</button>`).join('')}</div>`;
 };
 // our own verdict from the travel notebook on a place of the same name (any book): stars, or "we would not go again"
 const famStar = (x) => (!x.fam ? '' : x.fam.again === false ? `<span class="etag famno">${L('เราไม่ไปซ้ำ', 'We wouldn’t go again')}</span>` : x.fam.r ? `<span class="etag famstar">${'★'.repeat(x.fam.r)} ${L('ของเรา', 'ours')}</span>` : x.fam.again ? `<span class="etag famstar">♥ ${L('อยากไปซ้ำ', 'We’d go again')}</span>` : x.fam.been ? `<span class="etag fambeen">✓ ${L('เคยไปแล้ว', 'Been')}</span>` : '');
@@ -3131,7 +3142,7 @@ ${T(x.what) ? `<p class="ed">${esc(T(x.what))}</p>` : ''}${T(x.why) ? `<p class=
    Kept in the family's profile (families.profile.taste, both parents, in backups); the planner starts a new plan from it and sends it
    to the helper as words, the eat pages put the places of our style first with "ตรงใจเรา". Chips save in place, never a redraw. */
 const tasteState = (side, k) => { const t = famTaste()[side]; return t.like.includes(k) ? 'like' : t.avoid.includes(k) ? 'avoid' : ''; };
-const tasteChip = (side, r) => { const st = tasteState(side, r[0]); return `<button type="button" class="chip tastechip" data-a="taste" data-g="${side}" data-v="${r[0]}" data-st="${st}" aria-pressed="${!!st}"><span aria-hidden="true">${emo(r[1])}</span> ${L(r[2], r[3])}<i class="tsm" aria-hidden="true">${st === 'like' ? '💛' : st === 'avoid' ? '🚫' : ''}</i></button>`; };
+const tasteChip = (side, r) => { const st = tasteState(side, r[0]); return `<button type="button" class="chip tastechip" data-a="taste" data-g="${side}" data-v="${r[0]}" data-st="${st}" aria-pressed="${!!st}"><span aria-hidden="true">${tPic(r)}</span> ${L(r[2], r[3])}<i class="tsm" aria-hidden="true">${st === 'like' ? '💛' : st === 'avoid' ? '🚫' : ''}</i></button>`; };
 function tasteCard() {
   const t = famTaste(), n = t.food.like.length + t.out.like.length;
   const sub = n ? [...TASTE_OUT, ...TASTE_FOOD].filter((r) => t.out.like.includes(r[0]) || t.food.like.includes(r[0])).slice(0, 5).map((r) => `${r[1]} ${L(r[2], r[3])}`).join(' · ') : L('เลือกแนวอาหารและที่เที่ยวที่เราชอบ — ผู้ช่วยวางแผนและคลังร้านจะเรียงตามนี้', 'Pick the food and outings we love — the planner and the libraries follow it');
@@ -3149,14 +3160,14 @@ function viewTaste(qs) {
   const t = famTaste(), kids = children(), qsl = kids.length ? TASTE_Q : TASTE_Q.slice(0, 3);
   const k = Math.max(0, qsl.findIndex((q) => q[0] === qs)), q = qsl[k], last = k === qsl.length - 1;
   const how = `<p class="label">${L('แตะหนึ่งครั้ง = ชอบ 💛 · แตะอีกครั้ง = ไม่เอา 🚫 · แตะอีกครั้ง = เฉยๆ', 'Tap once = we love it 💛 · again = we skip it 🚫 · again = no view')}</p>`;
-  const hints = (side) => { const h = tasteHints(side), lo = tasteHints(side, 'avoid'); return (h.length ? `<div class="part pickh plhist">💡 ${L('เรียนรู้จากรีวิวทริปที่ผ่านมา · ใช้แล้วเบาๆ แตะเพื่อเก็บเป็นของเรา', 'Learned from our reviews · used gently already, tap to make it ours')}</div><div class="row chips tastechips tastehints">${h.map((r) => `<button type="button" class="chip tastechip" data-st="learned" data-a="tasteadd" data-g="${side}" data-v="${r[0]}">＋ <span aria-hidden="true">${emo(r[1])}</span> ${L(r[2], r[3])}</button>`).join('')}</div>` : '')
+  const hints = (side) => { const h = tasteHints(side), lo = tasteHints(side, 'avoid'); return (h.length ? `<div class="part pickh plhist">💡 ${L('เรียนรู้จากรีวิวทริปที่ผ่านมา · ใช้แล้วเบาๆ แตะเพื่อเก็บเป็นของเรา', 'Learned from our reviews · used gently already, tap to make it ours')}</div><div class="row chips tastechips tastehints">${h.map((r) => `<button type="button" class="chip tastechip" data-st="learned" data-a="tasteadd" data-g="${side}" data-v="${r[0]}">＋ <span aria-hidden="true">${tPic(r)}</span> ${L(r[2], r[3])}</button>`).join('')}</div>` : '')
     + (lo.length ? `<p class="label tastelo">🔻 ${L('เคยให้ดาวน้อย จึงเลื่อนลงไปท้ายๆ', 'We rated these low, so they go further down')}: ${lo.map((r) => `${r[1]} ${L(r[2], r[3])}`).join(' · ')}</p>` : ''); };
   const kidSum = (c) => { const ks = t.kids[c.slug] || [], rows = [...TASTE_OUT, ...TASTE_FOOD].filter((r) => ks.includes(r[0])); return rows.length ? rows.slice(0, 6).map((r) => `${r[1]} ${L(r[2], r[3])}`).join(' · ') + (rows.length > 6 ? ' …' : '') : L('แตะเพื่อเลือก (ไม่ใส่ก็ได้)', 'Tap to choose (optional)'); };
-  const kid = (c) => `<details class="tastekid"><summary class="tkh">${kidFace(c.slug)}<span class="tkn"><b>${esc(kidName(c.slug))}</b><small class="tks" data-k="${esc(c.slug)}">${esc(kidSum(c))}</small></span>${ic('chev', 'chv')}</summary><div class="row chips tastechips" role="group">${[...TASTE_OUT, ...TASTE_FOOD].map((r) => `<button type="button" class="chip" data-a="tastekid" data-k="${esc(c.slug)}" data-v="${r[0]}" aria-pressed="${(t.kids[c.slug] || []).includes(r[0])}"><span aria-hidden="true">${emo(r[1])}</span> ${L(r[2], r[3])}</button>`).join('')}</div></details>`;
+  const kid = (c) => `<details class="tastekid"><summary class="tkh">${kidFace(c.slug)}<span class="tkn"><b>${esc(kidName(c.slug))}</b><small class="tks" data-k="${esc(c.slug)}">${esc(kidSum(c))}</small></span>${ic('chev', 'chv')}</summary><div class="row chips tastechips" role="group">${[...TASTE_OUT, ...TASTE_FOOD].map((r) => `<button type="button" class="chip" data-a="tastekid" data-k="${esc(c.slug)}" data-v="${r[0]}" aria-pressed="${(t.kids[c.slug] || []).includes(r[0])}"><span aria-hidden="true">${tPic(r)}</span> ${L(r[2], r[3])}</button>`).join('')}</div></details>`;
   const pages = {
     out: pcard('plan', PG.teal, L('แนวที่เที่ยว', 'Outings'), `${how}<div class="row chips tastechips" role="group">${TASTE_OUT.map((r) => tasteChip('out', r)).join('')}</div>${hints('out')}`),
     food: pcard('eat', PG.orange, L('แนวอาหาร', 'Food'), `${how}<div class="row chips tastechips" role="group">${TASTE_FOOD.map((r) => tasteChip('food', r)).join('')}</div>${hints('food')}`),
-    need: pcard('family', PG.purple, L('สิ่งที่ต้องคิดถึงทุกทริป', 'Always allow for'), `<div class="row chips tastechips" role="group">${TASTE_NEED.map((r) => `<button type="button" class="chip" data-a="tasteneed" data-v="${r[0]}" aria-pressed="${t.needs.includes(r[0])}"><span aria-hidden="true">${emo(r[1])}</span> ${L(r[2], r[3])}</button>`).join('')}</div>`),
+    need: pcard('family', PG.purple, L('สิ่งที่ต้องคิดถึงทุกทริป', 'Always allow for'), `<div class="row chips tastechips" role="group">${TASTE_NEED.map((r) => `<button type="button" class="chip" data-a="tasteneed" data-v="${r[0]}" aria-pressed="${t.needs.includes(r[0])}"><span aria-hidden="true">${tPic(r)}</span> ${L(r[2], r[3])}</button>`).join('')}</div>`),
     kids: kids.length ? pcard('kid', PG.pink, L('ของโปรดของลูกแต่ละคน', 'Each child’s favourites'), kids.map(kid).join('')) : '',
   };
   const dots = `<nav class="plqs tasteqs" style="grid-template-columns:repeat(${qsl.length},1fr)" aria-label="${L('หัวข้อ', 'Topics')}">${qsl.map((x, j) => `<a class="plqd${j === k ? ' now' : j < k ? ' done' : ''}" href="#/taste/${x[0]}"${j === k ? ' aria-current="step"' : ''}><i>${j + 1}</i><span>${L(x[2], x[3])}</span></a>`).join('')}</nav>`;
@@ -3310,7 +3321,7 @@ ${[...byC.entries()].sort((a, b) => a[0].localeCompare(b[0], lang === 'en' ? 'en
 ${kidsY.length ? `<div class="row chips" role="group"><span class="label">${L('เหมาะกับ', 'Suits')}</span>${kidsY.map(([c, y]) => ch('sightkid', c.slug, S2.kid === c.slug, `${esc(kidName(c.slug))} <span class="nowrap">(${esc(famAgeM(Math.floor(y * 12)))})</span>`)).join('')}</div>` : ''}
 ${kinds.length > 1 || styles.length > 1 ? `<details class="xpmore"${S2.kind || S2.st ? ' open' : ''}><summary>${L('ประเภทและแนว', 'Kind and style')}${S2.kind || S2.st ? ` · ${esc([S2.kind && L(SIGHT_KINDS[S2.kind][1], SIGHT_KINDS[S2.kind][2]), S2.st && ((g) => (g ? L(g[2], g[3]) : ''))(TASTE_OUT.find((g) => g[0] === S2.st))].filter(Boolean).join(' · '))}` : ''}${ic('chev', 'chv')}</summary>` : ''}
 ${kinds.length > 1 ? `<div class="row chips" role="group"><span class="label">${L('ประเภท', 'Kind')}</span>${ch('sightk', '', !S2.kind, L('ทั้งหมด', 'All'))}${kinds.map((k) => ch('sightk', k, S2.kind === k, `${emo(SIGHT_KINDS[k][0])} ${L(SIGHT_KINDS[k][1], SIGHT_KINDS[k][2])}`)).join('')}</div>` : ''}
-${styles.length > 1 ? `<div class="row chips" role="group"><span class="label">${L('แนว', 'Style')}</span>${styles.map((g) => ch('sightst', g[0], S2.st === g[0], `${emo(g[1])} ${L(g[2], g[3])}${t.out.like.includes(g[0]) ? ' 💛' : ''}`)).join('')}</div>` : ''}${kinds.length > 1 || styles.length > 1 ? '</details>' : ''}</div>`;
+${styles.length > 1 ? `<div class="row chips" role="group"><span class="label">${L('แนว', 'Style')}</span>${styles.map((g) => ch('sightst', g[0], S2.st === g[0], `${tPic(g)} ${L(g[2], g[3])}${t.out.like.includes(g[0]) ? ' 💛' : ''}`)).join('')}</div>` : ''}${kinds.length > 1 || styles.length > 1 ? '</details>' : ''}</div>`;
   // what fits first: the wish list, then our styles and the children's ages (the server's `fit`), then the order of the list
   const shown = list.filter(sightOk).map((x, k) => [x, k]).sort((a, b) => (b[0].wish ? 1 : 0) - (a[0].wish ? 1 : 0) || (b[0].fit || 0) - (a[0].fit || 0) || a[1] - b[1]).map((p) => p[0]);
   const q = S2.q.trim().toLowerCase(), vis = shown.filter((x) => !q || sightText(x).includes(q)).length;

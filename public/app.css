@@ -3854,3 +3854,5 @@ a.plchip{text-decoration:none}a.plchip .label{font-weight:700}a.plchip[aria-curr
 .pllove b{color:color-mix(in srgb,#FF6FA8 55%,var(--ink))}.pllove small{color:color-mix(in srgb,#F2B90C 60%,var(--ink))}
 .tastechip[data-st=learned]{border-style:dashed;background:color-mix(in srgb,#F2B90C 10%,var(--card))}
 .tastelo{margin-top:6px}
+/* E6: the styles' painted pictures on chips */
+img.tpic{width:28px;height:28px;vertical-align:middle;margin:-4px 0;object-fit:contain}
