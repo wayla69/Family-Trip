@@ -721,7 +721,15 @@ try {
   { const tk = await (await fetch(BASE + '/api/b/sights?town=tokyo', { headers: { cookie: ck } })).json(), s0 = (tk.sights || [])[0] || {};
     const wsh = await fetch(BASE + `/api/b/sights/${s0.id}/wish`, { method: 'PUT', headers: PH, body: JSON.stringify({ on: true }) });
     ok(wsh.status === 200 && tk.sights.length >= 15, `sights: a heart keeps a sight on the family's wish list (${tk.sights.length} in Tokyo)`);
-    globalThis.__wishName = s0.name && s0.name.en; }
+    globalThis.__wishName = s0.name && s0.name.en;
+    // E5: what we did and thought there comes back on the library — a 5-star review of one sight, a check-in at another
+    const okk = tk.sights.filter((x) => x.fit !== -9 && x.id !== s0.id), s1 = okk[0], s2 = okk[1];   // a sight 'not for' the youngest never reaches the planner's menu
+    await put('/api/b/reviews/' + `${T}.rev.place.e5-loved`, { trip: T, day: 1, kind: 'place', key: 'e5-loved', name: s1.name, rating: 5, again: true });
+    await put('/api/b/places', { trip: T, key: 'e5-been', day: 1, kind: 'place', name: s2.name });
+    const tk2 = await (await fetch(BASE + '/api/b/sights?town=tokyo', { headers: { cookie: ck } })).json(), f1 = (tk2.sights.find((x) => x.id === s1.id) || {}).fam, f2 = (tk2.sights.find((x) => x.id === s2.id) || {}).fam;
+    ok(f1 && f1.r === 5 && f1.again === true && f2 && f2.been === 1 && !tk2.sights.find((x) => x.id === s0.id).fam,
+      `sights (E5): a review and a check-in come back as our own verdict on the library's card (${JSON.stringify(f1)} · ${JSON.stringify(f2)})`);
+    globalThis.__lovedName = s1.name.en; }
   const c0 = calls.length, rr = await pl('/api/b/planner/route', { answers }), rj = await rr.json(), rt = rj.route || {};
   ok(rr.status === 200 && rt.days && rt.days.length === 3 && rt.days.map((d) => d.date).join() === '2027-04-01,2027-04-02,2027-04-03' && rt.countries.join() === 'jp' && rt.title.en === 'Sakura test hop',
     `planner: the route comes back cleaned — the family's dates laid out again, a bad country code dropped (${rr.status} ${JSON.stringify(rj).slice(0, 300)})`);
@@ -735,6 +743,8 @@ try {
       `planner (E4): the route ask carries the library's menu for Tokyo (${lines} sights by key), a stop taken from it comes back with the library's id and name, one outside it is marked new (${JSON.stringify(rt.days[0].stops)} · ${JSON.stringify(rt.lib)})`);
     const ed = await (await pl('/api/b/planner/route', { answers, route: rt })).json();
     ok(ed.route.days[0].stops[1].lib === s1.lib && ed.route.days[0].stops[2].new === true, 'planner (E4): the library id and the new mark survive an edit by hand'); }
+  ok(new RegExp(`\\\\ns\\d+ ♥ ${globalThis.__wishName.replace(/[.*+?^${}()|[\]\\]/g, '\\$&')}`).test(rsent) && new RegExp(`\\\\ns\\d+ ★ ${globalThis.__lovedName.replace(/[.*+?^${}()|[\]\\]/g, '\\$&')}`).test(rsent) && /went before and loved it/.test(rsent),
+    `planner (E5): the menu marks the wish (♥) and the place the family loved before (★), and says what the marks mean (${(rsent.match(/s\d+ [♥★✓][^(]{0,60}/g) || []).join(' | ')} · ${globalThis.__wishName} · ${globalThis.__lovedName})`);
   { const c2 = calls.length, tr = await pl('/api/b/planner/route', { answers, two: true }), tj = await tr.json();
     ok(tr.status === 200 && calls.length === c2 + 1 && Array.isArray(tj.routes) && tj.routes.length === 1 && tj.routes[0].label.en === 'One base' && tj.routes[0].why.th === 'ไม่ต้องย้ายกระเป๋า' && tj.routes[0].days.length === 3,
       `planner: two routes to compare in one call — a route that does not read is left out, each keeps its name and who it suits (${tr.status} ${JSON.stringify(tj).slice(0, 160)})`); }

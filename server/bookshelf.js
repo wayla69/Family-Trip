@@ -1280,9 +1280,8 @@ function router({ pool, media, A, ai, hooks = {} }) {   // hooks.heart(h): set b
     try {
       res.setHeader('Cache-Control', 'no-store');
       const rows = await EATLIB.all(pool, FAMILY), cof = EATLIB.countryOf(STOCK.read());
-      // the family's own verdict from the travel notebook (a food review of the same name, any book): its stars and "would go again"
-      const fam = new Map();
-      for (const r of await q("SELECT name, rating, again FROM reviews WHERE family_id=$1 AND kind='food' AND (rating IS NOT NULL OR again IS NOT NULL) ORDER BY updated_at", [FAMILY])) for (const n of [r.name && r.name.en, r.name && r.name.th]) if (n && EATLIB.norm(n).length >= 2) fam.set(EATLIB.norm(n), { r: r.rating || 0, again: r.again });
+      // the family's own verdict (a food review of the same name, any book: its stars and "would go again") and its check-ins there
+      const fam = await famOf('food');
       const withCc = (x) => ({ ...x, cc: (cof.get(x.tkey) || {}).cc || '', ...(fam.has(EATLIB.norm(x.name)) ? { fam: fam.get(EATLIB.norm(x.name)) } : {}) });   // the place's country (≈ ฿ on the phone) and our own verdict
       if (req.query.for) return res.json({ for: eatFor(rows, eatPairs(String(req.query.for))).map((t) => ({ ...t, places: t.places.map(withCc) })) });
       if (req.query.town) return res.json({ places: rows.filter((x) => x.tkey === String(req.query.town)).map(EATLIB.out).map(withCc) });
@@ -1317,13 +1316,25 @@ function router({ pool, media, A, ai, hooks = {} }) {   // hooks.heart(h): set b
      many for a rainy day); ?town=<tkey> or ?place=<place id> = a town's sights, each with how well it suits this family (`fit`: the
      youngest child's age, the outing styles of #/taste, the needs; -9 = not for the youngest); ?for=[[en, th], …] = a route's towns.
      DELETE takes a sight out for good; PUT …/wish {on} keeps it on the family's wish list. */
+  /* What this family did and thought of a place, by its name in either language, from every book (E5, docs/PLACES-ECOSYSTEM.md F7):
+     the travel notebook's stars and "would go again" (reviews of that kind) and how many times it was checked in (places). The libraries
+     show it on their cards ("✓ been", "★★★★ ours"), Today puts the loved ones first and the planner offers them again. */
+  async function famOf(kind) {
+    const m = new Map(), keys = (nm) => [...new Set([nm && nm.en, nm && nm.th].filter(Boolean).map((n) => EATLIB.norm(n)).filter((k) => k.length >= 3))];
+    for (const r of await q('SELECT name, rating, again FROM reviews WHERE family_id=$1 AND kind=$2 AND (rating IS NOT NULL OR again IS NOT NULL) ORDER BY updated_at', [FAMILY, kind]))
+      for (const k of keys(r.name)) m.set(k, { ...(m.get(k) || {}), r: r.rating || 0, again: r.again });
+    for (const p of await q('SELECT name, count(*)::int AS n FROM places WHERE family_id=$1 AND kind=$2 GROUP BY name', [FAMILY, kind]))
+      for (const k of keys(p.name)) { const o = m.get(k) || {}; m.set(k, { ...o, been: (o.been || 0) + p.n }); }
+    return m;
+  }
+  const famFor = (fam, name) => { for (const n of [name && name.en, name && name.th, typeof name === 'string' ? name : ''].filter(Boolean)) { const f = fam.get(EATLIB.norm(n)); if (f) return f; } return null; };
   const sightKids = async () => { const ys = (await kidRows()).map((k) => (k.birth_ym ? (Date.now() - Date.parse(k.birth_ym + '-15')) / (365.25 * 864e5) : null)).filter((y) => y != null && y >= 0); return ys.length ? Math.min(...ys) : null; };
   const sightTaste = async () => FAM.cleanProfile(((await q('SELECT profile FROM families WHERE id=$1', [FAMILY]))[0] || {}).profile).taste || null;
   r.get('/api/b/sights', A.requireEditor, async (req, res, next) => {
     try {
       res.setHeader('Cache-Control', 'no-store');
-      const rows = await SIGHTLIB.all(pool, FAMILY), cof = EATLIB.countryOf(STOCK.read()), y = await sightKids(), taste = await sightTaste();
-      const full = (x) => { const o = SIGHTLIB.out(x); return { ...o, cc: (cof.get(x.tkey) || {}).cc || '', fit: SIGHTLIB.fitOf(o, taste, y) }; };
+      const rows = await SIGHTLIB.all(pool, FAMILY), cof = EATLIB.countryOf(STOCK.read()), y = await sightKids(), taste = await sightTaste(), fam = await famOf('place');
+      const full = (x) => { const o = SIGHTLIB.out(x), f = famFor(fam, o.name); return { ...o, cc: (cof.get(x.tkey) || {}).cc || '', fit: SIGHTLIB.fitOf(o, taste, y), ...(f ? { fam: f } : {}) }; };
       if (req.query.for) return res.json({ for: eatPairs(String(req.query.for)).map(([en, th]) => ({ en, th: th || en, sights: SIGHTLIB.forTown(rows, [en, th].filter(Boolean)).map(full) })) });
       if (req.query.town || req.query.place) { const k = String(req.query.town || ''), p = String(req.query.place || ''); return res.json({ sights: rows.filter((x) => (k && x.tkey === k) || (p && x.place === p)).map(full) }); }
       res.json({ towns: SIGHTLIB.towns(rows).map((t) => ({ ...t, country: cof.get(t.tkey) || null })), total: rows.length });
@@ -1357,15 +1368,16 @@ function router({ pool, media, A, ai, hooks = {} }) {   // hooks.heart(h): set b
      to 25 sights that suit the family (the youngest child's age, the taste, the wish list first; never one "not for" the youngest). */
   async function planMenu(answers, prev) {
     const rows = await SIGHTLIB.all(pool, FAMILY); if (!rows.length) return [];
-    const cof = EATLIB.countryOf(STOCK.read()), y = await sightKids(), taste = await sightTaste();
+    const cof = EATLIB.countryOf(STOCK.read()), y = await sightKids(), taste = await sightTaste(), fam = await famOf('place');
+    const loved = (x) => (x.fam && (x.fam.r >= 4 || x.fam.again === true) ? 1 : 0);
     const text = [answers.dest, answers.want, answers.stays, ...((prev && Array.isArray(prev.days)) ? prev.days.map((d) => `${(d && d.town && d.town.en) || ''} ${(d && d.town && d.town.th) || ''}`) : [])].join(' ').toLowerCase();
     const hit = (w) => { w = String(w || '').toLowerCase().trim(); if (w.length < 3) return false; return /^[a-z]/.test(w) ? new RegExp(`(^|[^a-z])${w.replace(/[.*+?^${}()|[\]\\]/g, '\\$&')}([^a-z]|$)`).test(text) : text.includes(w); };
     const towns = SIGHTLIB.towns(rows);
     let pick = towns.filter((t) => hit(t.town) || hit(t.town_th));
     if (!pick.length) pick = towns.filter((t) => { const c = cof.get(t.tkey); return c && (hit(c.en) || hit(c.th)); });
     let n = 0;
-    return pick.slice(0, 4).map((t) => ({ town: { en: t.town, th: t.town_th }, sights: rows.filter((r) => r.tkey === t.tkey).map((r) => { const o = SIGHTLIB.out(r); return { ...o, fit: SIGHTLIB.fitOf(o, taste, y) }; })
-      .filter((x) => x.fit !== -9).map((x, i) => [x, i]).sort((a, b) => (b[0].wish ? 1 : 0) - (a[0].wish ? 1 : 0) || b[0].fit - a[0].fit || a[1] - b[1]).slice(0, 25).map((p) => ({ ...p[0], k: `s${++n}` })) })).filter((t) => t.sights.length);
+    return pick.slice(0, 4).map((t) => ({ town: { en: t.town, th: t.town_th }, sights: rows.filter((r) => r.tkey === t.tkey).map((r) => { const o = SIGHTLIB.out(r), f = famFor(fam, o.name); return { ...o, fit: SIGHTLIB.fitOf(o, taste, y), ...(f ? { fam: f } : {}) }; })
+      .filter((x) => x.fit !== -9 && !(x.fam && x.fam.again === false)).map((x, i) => [x, i]).sort((a, b) => (b[0].wish ? 1 : 0) - (a[0].wish ? 1 : 0) || loved(b[0]) - loved(a[0]) || b[0].fit - a[0].fit || a[1] - b[1]).slice(0, 25).map((p) => ({ ...p[0], k: `s${++n}` })) })).filter((t) => t.sights.length);
   }
   // the route: drafted from the answers, or changed as asked ({prev, ask}); a route the parents edited by hand ({route}, no ask) is only cleaned
   r.post('/api/b/planner/route', ...W, async (req, res, next) => {

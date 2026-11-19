@@ -74,8 +74,8 @@ function menuText(menu) {
   if (!Array.isArray(menu) || !menu.length) return '';
   const io = { in: 'indoors', out: 'outdoors', both: 'in and out' };
   const line = (x) => { const best = (x.ages || []).map((a, i) => (a === 2 ? AGEW[i] : '')).filter(Boolean).join(', '), no = (x.ages || []).map((a, i) => (a === 0 ? AGEW[i] : '')).filter(Boolean).join(', ');
-    return `${x.k}${x.wish ? ' ♥' : ''} ${x.name.en} (${x.kind}${best ? `; best for ${best}` : ''}${no ? `; not for ${no}` : ''}; ${io[x.io] || 'outdoors'}; ≈ ${x.hrs} h)`; };
-  return `\n\nThe family's library of things to do in these towns (each checked on the web). Build each day's stops from it: give every stop the menu key as "id" (e.g. {"th","en","id":"s3"}), and use the name as written. ♥ = on the family's wish list — fit those in first. Add a place that is not in the menu only when nothing in it fits that day, and mark it "new": true.\n${menu.map((t) => `${t.town.en}:\n${t.sights.map(line).join('\n')}`).join('\n')}`;
+    return `${x.k}${x.wish ? ' ♥' : ''}${x.fam && (x.fam.r >= 4 || x.fam.again === true) ? ' ★' : x.fam && x.fam.been ? ' ✓' : ''} ${x.name.en} (${x.kind}${best ? `; best for ${best}` : ''}${no ? `; not for ${no}` : ''}; ${io[x.io] || 'outdoors'}; ≈ ${x.hrs} h)`; };
+  return `\n\nThe family's library of things to do in these towns (each checked on the web). Build each day's stops from it: give every stop the menu key as "id" (e.g. {"th","en","id":"s3"}), and use the name as written. ♥ = on the family's wish list — fit those in first. ★ = the family went before and loved it (offer it again where it fits). ✓ = the family has been there before. Add a place that is not in the menu only when nothing in it fits that day, and mark it "new": true.\n${menu.map((t) => `${t.town.en}:\n${t.sights.map(line).join('\n')}`).join('\n')}`;
 }
 // the menu's keys → the library's ids; a stop the helper took from the menu carries the library's id and its names
 function libStops(days, keys) {
