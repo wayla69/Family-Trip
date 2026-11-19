@@ -13,7 +13,7 @@ const EMOJI = require('./emoji');
 const EATLIB = require('./eatlib');
 
 // restore order follows foreign keys
-const TABLES = ['children', 'trips', 'trip_days', 'firsts_catalog', 'entries', 'media', 'places', 'hearts', 'reviews', 'spend', 'emoji', 'capsules', 'eat_lib'];   // capsules: letters to open in the future (migration 0034)
+const TABLES = ['children', 'trips', 'trip_days', 'firsts_catalog', 'entries', 'media', 'places', 'hearts', 'reviews', 'spend', 'emoji', 'capsules', 'comments', 'eat_lib'];   // capsules: letters to open in the future (migration 0034); comments: lines under photos (0038, after media)
 // eat_lib: only the family's own part — the helper's web-checked finds and the places the parents took out (gone); the books' and the
 // built-in places are read again on every boot
 const ID_RE = /^[A-Za-z0-9_.:-]{4,80}$/;

@@ -25,6 +25,15 @@ const clip = (s, n) => String(s == null ? '' : s).slice(0, n);
 const app = express();
 app.disable('x-powered-by');
 app.set('trust proxy', 1);
+// what went wrong on the server and what was slow, counted per kind of request (server/watch.js) — the first thing every request passes
+const WATCH = require('./watch').create({ pool: PG, A });
+app.use(WATCH.mw);
+// one ceiling for the whole API per address (a stolen cookie or a stuck phone cannot hammer the database or the storage); far above a
+// family's use — a phone polls every 30 s, a big photo upload is one request a photo. The server's own Chromium (PDF, film cards) and
+// the tests come from this machine and are not counted. The sign-in has its own, stricter throttle (auth.js).
+const { rateLimit } = require('express-rate-limit');
+app.use(['/api', '/media', '/v'], rateLimit({ windowMs: 60e3, limit: +process.env.API_RATE_PER_MIN || 1200, standardHeaders: 'draft-8', legacyHeaders: false,
+  skip: (req) => ['127.0.0.1', '::1', '::ffff:127.0.0.1'].includes(req.ip), handler: (_req, res) => res.status(429).json({ error: 'too-many' }) }));
 
 // CSP: only our own origin. No inline scripts exist; style 'unsafe-inline' is for the style="" attributes the views render;
 // blob:/data: images are queued photos and drawings shown before upload. Maps open as plain links (no frames).
@@ -97,6 +106,10 @@ app.use(require('./devices').router({ pool: PG, A, family: BS.FAMILY }));
 
 // bookshelf API (+ /media photo proxy)
 const HOOKS = {};   // filled below once the push scheduler exists
+// passkeys: a parent's phone signs in with Face ID or a fingerprint (server/passkey.js)
+const PASSKEY = require('./passkey').create({ pool: PG, A, family: BS.FAMILY, isSecure, appName: async () => { const b = await BS.brand(PG); return b.app.en || b.app.th; } });
+app.use(PASSKEY.router);
+HOOKS.passkeys = () => PASSKEY.count();
 // a book's own film (server/reel.js): its cards are the app's #/reelcards page, photographed by the PDF's Chromium with a read-only session
 const REEL = require('./reel').create({ pool: PG, media: MEDIA, A, family: BS.FAMILY,
   cards: (trip, lang, days, caps, at) => PDF.cards({ base: `http://127.0.0.1:${PORT}`, cookie: A.makeToken('viewer', 'REEL', crypto.randomBytes(6).toString('hex')), trip, lang, days, caps, path: at }),
@@ -112,19 +125,22 @@ app.use(require('./keep').router({ pool: PG, media: MEDIA, A, family: BS.FAMILY,
 // the family map: every town of every book the viewer may see (server/famap.js)
 app.use(require('./famap').router({ pool: PG, A, family: BS.FAMILY }));
 // what went wrong on the family's phones, and how much room the books take (server/errors.js)
+app.use(WATCH.router);
+app.use(require('./orphans').create({ pool: PG, media: MEDIA, A, hooks: HOOKS }).router);   // files no row names any more (room page)
 app.use(require('./errors').create({ pool: PG, media: MEDIA, A, family: BS.FAMILY, reelKey: REEL.key }).router);
 app.use(BS.router({ pool: PG, media: MEDIA, A, ai: STORY, hooks: HOOKS }));
 
 // reminders on the trip: phones that switched them on get a push 30 min before each timed step of the day
 const REMIND = PUSH.create({ pool: PG, family: BS.FAMILY, A });
 HOOKS.heart = (h) => REMIND.heart(h);   // a relative's heart nudges the parents' phones
+HOOKS.comment = (c) => REMIND.comment(c);   // a relative's line under a photo, the same
 HOOKS.draft = (x) => REMIND.draft(x);
 HOOKS.reel = (x) => REMIND.reel(x);
 HOOKS.closed = (x) => REMIND.closed(x);   // the web check of a coming book found a place closed or moved
 HOOKS.inbox = (x) => REMIND.inbox(x);   // a relative sent photos: a nudge to the parents' phones   // the film made by itself is ready: a push to the parents' phones   // the helper finished a photo book's draft: "ready to check" on the parents' phones
 app.use(REMIND.router);
 // the owner hears when something goes wrong: problems on the phones, room running out, the nightly copy failing (server/alerts.js)
-const ALERTS = require('./alerts').create({ pool: PG, A, family: BS.FAMILY, push: REMIND, dataDir: DATA_DIR, bucket: MEDIA.kind === 's3' });
+const ALERTS = require('./alerts').create({ pool: PG, A, family: BS.FAMILY, push: REMIND, dataDir: DATA_DIR, bucket: MEDIA.kind === 's3', watch: WATCH });
 app.use(ALERTS.router);
 
 // backup / restore (photos included): editors download, the scheduled job uses Bearer BACKUP_TOKEN
@@ -262,7 +278,7 @@ app.use(express.static(PUB, { maxAge: 0, etag: true, setHeaders: (res, f) => { i
 app.get(/^\/(?!api\/|media\/|stock\/).*/, (req, res) => res.sendFile(path.join(PUB, 'index.html')));
 app.use('/api', (_req, res) => res.status(404).json({ error: 'not-found' }));
 
-app.use((err, _req, res, _next) => { console.error(err.message); if (!res.headersSent) res.status(err.status || 500).json({ error: 'server' }); });
+app.use((err, _req, res, _next) => { console.error(err.message); if ((err.status || 500) >= 500) WATCH.error(err, res); if (!res.headersSent) res.status(err.status || 500).json({ error: 'server' }); });
 
 const PORT = +process.env.PORT || 3000;
 if (require.main === module) {

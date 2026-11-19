@@ -279,7 +279,7 @@ const T = 'hk-macau-2026';
     await page.goto(`${BASE}/#/devices`); await page.waitForSelector('.devs li', { timeout: 8000 }).catch(() => {});
     const dv = await page.evaluate(() => ({ me: document.querySelectorAll('.devs li.me').length, n: document.querySelectorAll('.devs li').length, head: !!document.querySelector('.phead .phpic img[src$="devices.webp"]'), cards: document.querySelectorAll('.pcard .pch .pcpic img').length }));
     await s.shot('devices');
-    ok(dv.me === 1 && dv.n >= 1 && dv.head && dv.cards === 2 && await s.noHScroll(), `phones signed in: this phone is listed and marked (${JSON.stringify(dv)})`);
+    ok(dv.me === 1 && dv.n >= 1 && dv.head && dv.cards === 3 && await s.noHScroll(), `phones signed in: this phone is listed and marked (${JSON.stringify(dv)})`);
     await page.goto(`${BASE}/#/capsules`); await page.waitForSelector('#captext');
     await page.fill('#captext', 'Dear Mimi, the fish were huge.'); await page.fill('#capdate', `${new Date().getFullYear() + 15}-05-01`);
     await page.click('[data-a="capsave"]'); await page.waitForSelector('.caps li [data-a="capseal"]', { timeout: 8000 }).catch(() => {});
@@ -287,6 +287,14 @@ const T = 'hk-macau-2026';
     await page.waitForFunction(() => document.querySelector('.caps li.sealed'), null, { timeout: 8000 }).catch(() => {});
     const cp = await page.evaluate(() => ({ sealed: document.querySelectorAll('.caps li.sealed').length, text: (document.querySelector('.caps') || {}).textContent || '' }));
     await s.shot('capsules');
+    // growing up, trip by trip (#/grow): every book of the child, the age then, a height noted on each book, then the line of heights
+    await page.goto(`${BASE}/#/grow/mimi`); await page.waitForSelector('.growl li');
+    const ins = page.locator('.growl .ghinp');
+    if (await ins.count() >= 2) { await ins.nth(0).fill('96'); await ins.nth(0).blur(); await ins.nth(1).fill('103.5'); await ins.nth(1).blur(); }
+    await page.waitForSelector('.grchart polyline', { timeout: 8000 }).catch(() => {});
+    const gr = await page.evaluate(() => ({ n: document.querySelectorAll('.growl li').length, art: document.querySelectorAll('.growl .grart img').length, age: document.querySelectorAll('.growl .grchip').length, chart: !!document.querySelector('.grchart polyline'), note: (document.querySelector('.grcard') || {}).textContent || '' }));
+    await s.shot('grow');
+    ok(gr.n >= 2 && gr.art === gr.n && gr.chart && /7\.5|7,5/.test(gr.note) && await s.noHScroll(), `growing up: each book with the character of its time; two heights draw the line (${JSON.stringify({ ...gr, note: gr.note.slice(-40) })})`);
     ok(cp.sealed === 1 && !/fish were huge/.test(cp.text) && /🔒/.test(cp.text), `letters for the future: written, sealed with two taps, then only to whom and when shows (${cp.text.replace(/\s+/g, ' ').slice(0, 80)})`);
     const kp = await page.evaluate(() => { const t = trips()[0]; return t ? { keep: viewBook(t).includes('keepbtn'), tell: kidTell(t, { id: 'ph-any-0001', day: 0 }).includes('data-a="kidtell"') } : null; });
     ok(kp && kp.keep && kp.tell, `the book page offers "keep as one file"; the kids' photo viewer offers "tell its story" (${JSON.stringify(kp)})`);
@@ -1891,6 +1899,16 @@ const T = 'hk-macau-2026';
   ok(await page.locator('a[href*="/log/"]').count() === 0, 'viewer: no edit links in the book');
   await page.locator('#d1 .mosaic button').first().click(); await page.waitForSelector('#lb:not([hidden]) img');
   ok(await page.locator('#lb [data-lb="del"]').count() === 0 && await page.locator('#lbcap').count() === 0, 'viewer: lightbox without delete/caption edit');
+  { // a relative writes under the photo (comments, migration 0038): the line is theirs, with their name, and sent
+    if (await page.locator('#lbfrom').count()) await page.fill('#lbfrom', 'ยาย');
+    await page.fill('#lbcomm', 'คิดถึงจัง'); await page.keyboard.press('Enter');
+    await page.waitForFunction(() => /คิดถึงจัง/.test((document.querySelector('#lb .lbcom ul') || {}).textContent || ''), null, { timeout: 5000 }).catch(() => {});
+    const cm = await page.evaluate(() => ({ text: (document.querySelector('#lb .lbcom ul') || {}).textContent || '', mine: document.querySelectorAll('#lb .lbcom [data-lb="uncomment"]').length }));
+    await page.waitForFunction(async () => (await (await fetch('/api/b/state?lite=1', { credentials: 'same-origin' })).json()).comments.some((c) => c.text === 'คิดถึงจัง'), null, { timeout: 8000 }).catch(() => {});
+    const saved = await page.evaluate(async () => (await (await fetch('/api/b/state?lite=1', { credentials: 'same-origin' })).json()).comments.filter((c) => c.text === 'คิดถึงจัง').length);
+    ok(/ยาย/.test(cm.text) && cm.mine === 1 && saved === 1, `viewer: writes a line under the photo, shown with the name and removable by its writer (${cm.text.slice(0, 40)} · ${saved})`);
+    await page.click('#lb [data-lb="close"]');
+    await page.evaluate(() => localStorage.removeItem('mbs_heartfrom')); }   // the hearts below ask for the sender's name afresh
   await page.goto(`${BASE}/#/t/${T}/log/1`); await page.waitForSelector('.cover');
   ok(true, 'viewer: record URL falls back to the book');
   const w = await page.evaluate(async () => (await fetch('/api/b/entries/q-hack-0001', { method: 'PUT', headers: { 'x-mb': '1', 'content-type': 'application/json' }, body: JSON.stringify({ trip: 'hk-macau-2026', day: 0, kind: 'quote', child: 'mimi', text: 'x' }) })).status);

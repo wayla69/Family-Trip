@@ -3,6 +3,7 @@
    a push to the parents' phones (push.js alert — the reminders' own channel, no new service), each kind at most once a day (a week for
    the room), opening the page that explains it:
    · problems on the phones: 20 or more reports in the last hour, or 5 new different ones (server/errors.js)  → #/health
+   · problems on the server: 10 or more answers of 500+ in the last hour (server/watch.js)  → #/health
    · room: the server's own disk under 15 % free (photos on disk), or the photos past 85 % of STORAGE_LIMIT_GB (photos in a bucket)  → #/health
    · the nightly copy: the Backup workflow reports each run (POST /api/backup/report, Bearer BACKUP_TOKEN); a failed copy or a failed
      restore drill is told at once, and during a trip a copy older than 36 hours is told too  → #/health
@@ -12,7 +13,7 @@ const path = require('path');
 const express = require('express');
 
 const DAY = 864e5;
-function create({ pool, A, family, push, dataDir, bucket }) {
+function create({ pool, A, family, push, dataDir, bucket, watch }) {
   const q = async (s, a) => (await pool.query(s, a)).rows;
   const getSet = async (k) => { const r = (await q('SELECT value FROM settings WHERE key=$1', [k]))[0]; try { return r ? JSON.parse(r.value) : null; } catch (_) { return null; } };
   const putSet = (k, v) => q('INSERT INTO settings (key, value) VALUES ($1, $2) ON CONFLICT (key) DO UPDATE SET value=EXCLUDED.value', [k, JSON.stringify(v)]);
@@ -31,6 +32,9 @@ function create({ pool, A, family, push, dataDir, bucket }) {
     // problems on the phones
     const e = (await q("SELECT coalesce(sum(n) FILTER (WHERE last_at > now() - interval '1 hour'), 0)::int recent, count(*) FILTER (WHERE first_at > now() - interval '1 hour')::int fresh FROM client_errors WHERE family_id=$1", [family]))[0];
     if (e.recent >= 20 || e.fresh >= 5) out.push(['errors', `err.${day(now)}`, { title: 'แอปสะดุดบนมือถือหลายครั้ง', body: `ชั่วโมงที่ผ่านมามือถือรายงานปัญหา ${e.recent} ครั้ง เปิดดูว่าเกิดที่ไหน` }, { title: 'The app is tripping on phones', body: `${e.recent} problem reports in the last hour — see where` }]);
+    // the server itself: ten answers of 500 or more in the last hour (server/watch.js)
+    const sv = watch ? await watch.recent() : { errs: 0 };
+    if (sv.errs >= 10) out.push(['server', `srv.${day(now)}`, { title: 'เซิร์ฟเวอร์ตอบผิดพลาดหลายครั้ง', body: `ชั่วโมงที่ผ่านมามีคำขอที่ล้มเหลว ${sv.errs} ครั้ง เปิดดูว่าเกิดที่ไหน` }, { title: 'The server is failing requests', body: `${sv.errs} failed requests in the last hour — see where` }]);
     // room
     const d = await diskFree();
     if (d && d.total && d.free / d.total < 0.15) out.push(['room', `disk.${week(now)}`, { title: 'พื้นที่เก็บรูปใกล้เต็ม', body: `เหลือที่ว่าง ${Math.round((d.free / d.total) * 100)}% เพิ่มพื้นที่ใน Railway ก่อนรูปใหม่จะเก็บไม่ได้` }, { title: 'Photo storage nearly full', body: `${Math.round((d.free / d.total) * 100)}% free — add room before new photos cannot be kept` }]);

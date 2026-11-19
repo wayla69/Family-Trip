@@ -86,10 +86,12 @@ function cleanRoute(r, a) {
 // the parents' edits come back from the page: the same cleaning, the dates laid out again from the first day
 const cleanEdited = (r, a) => cleanRoute(r, { ...a, from: (r && DATE_RE.test(r.from) ? r.from : a.from) });
 
-async function route({ client, model, answers, who, prev, ask, take, onUsage, two }) {
+async function route({ client, model, answers, who, prev, ask, take, onUsage, two, family }) {
   if (take && !(await take())) throw Object.assign(new Error('limit'), { code: 'limit' });
   // the import's redaction runs on the answers too: a booking number typed into "flights" never leaves the server
-  const { text } = require('./bookimport').redact(routeUser(answers, who, prev, ask) + (two && !prev ? TWO : ''));
+  // what this family learned on past trips (bookshelf.js familyLessons): follow it — the children's rest, short travel days, the food that worked
+  const past = family ? `\n\nWhat this family learned on past trips (follow it where it fits this trip):\n${family}` : '';
+  const { text } = require('./bookimport').redact(routeUser(answers, who, prev, ask) + past + (two && !prev ? TWO : ''));
   const msg = await client.messages.stream({ model, max_tokens: 8000, system: ROUTE_SYS, messages: [{ role: 'user', content: text }] }).finalMessage();
   if (onUsage) { try { onUsage(msg.usage || {}); } catch (_) { /* counting never breaks planning */ } }
   if (msg.stop_reason === 'refusal') throw Object.assign(new Error('refused'), { code: 'refusal' });

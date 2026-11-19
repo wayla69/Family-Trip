@@ -279,7 +279,7 @@ async function enqueue(op) {
 function applyLocal(op) {
   const l = op.local; if (!l || !S) return;
   idxTick++;   // the per-book lists (rowsIdx) are built again on the next ask
-  const list = S[l.coll];
+  const list = S[l.coll] || (S[l.coll] = []);   // a list an older stored state did not have yet (comments)
   const i = list.findIndex((x) => x.id === l.id);
   if (l.del) { if (i >= 0) list.splice(i, 1); return; }
   const row = { ...(i >= 0 ? list[i] : {}), ...l.row, id: l.id, pending: true };
