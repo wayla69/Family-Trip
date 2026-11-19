@@ -3981,7 +3981,7 @@ function viewLog(t, i, evening, step) {
   const dots = `<nav class="plqs lgqs" style="grid-template-columns:repeat(${steps.length},1fr)" aria-label="${L('หัวข้อ', 'Steps')}">${steps.map((y, j) => `<a class="plqd${j === k ? ' now' : st[y[0]][0] ? ' done' : ''}" href="${base}/${y[0]}"${j === k ? ' aria-current="step"' : ''}><i>${j !== k && st[y[0]][0] ? '✓' : j + 1}</i><span>${L(LG_SHORT[y[0]][0], LG_SHORT[y[0]][1])}</span></a>`).join('')}</nav>`;
   let body = x[5].map((n) => seg[n] || '').join('');
   if (x[0] === 'ai') body = body.replace('<details class="blk fold aifold"', '<details open class="blk fold aifold"');
-  if (!/\S/.test(body.replace(/<!--[\s\S]*?-->/g, ''))) body = `<p class="empty">${L('วันนี้ไม่มีส่วนนี้', 'Nothing to do here today')}</p>`;
+  if (x[5].every((n) => !/\S/.test(seg[n] || ''))) body = `<p class="empty">${L('วันนี้ไม่มีส่วนนี้', 'Nothing to do here today')}</p>`;
   const prev = k ? `<a class="btn ghost plback" href="${base}/${steps[k - 1][0]}">‹ ${L(LG_SHORT[steps[k - 1][0]][0], LG_SHORT[steps[k - 1][0]][1])}</a>` : `<a class="btn ghost plback" href="${base}">‹ ${L('ภาพรวม', 'Overview')}</a>`;
   const next = k < steps.length - 1 ? `<a class="btn plnext" href="${base}/${steps[k + 1][0]}">${L(LG_SHORT[steps[k + 1][0]][0], LG_SHORT[steps[k + 1][0]][1])} ›</a>` : `<a class="btn plnext" href="${base}">${L('ภาพรวมของวัน', 'The day’s overview')} ›</a>`;
   return `${head}${dots}<div class="lgstep" data-step="${x[0]}">${body}</div><div class="row plnav">${prev}${next}</div>`;
