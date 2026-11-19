@@ -978,6 +978,11 @@ const T = 'hk-macau-2026';
     const e1 = await page.evaluate((k) => { const shown = [...document.querySelectorAll('.eatc')].filter((li) => !li.hidden); return { n: shown.length, ok: shown.every((li) => li.dataset.t.split(' ').includes(k)), line: document.querySelector('#eatn').textContent }; }, e0.chips[0]);
     ok(e0.chips.length >= 1 && e1.n >= 1 && e1.n < e0.all && e1.ok && e1.line.includes(String(e1.n)) && e0.thb >= e0.all - 2, `eat library: a "easy with little ones" chip keeps only the places that say so, in place; prices show roughly in baht from the rate typed on this phone (${e0.chips.join(',')} · ${e0.all} → ${e1.n} · ${e0.thb} in baht)`);
     await page.evaluate(() => localStorage.removeItem('mbs_fx')); }
+  { // today's bag reads the live forecast too: rain → umbrella, a cold morning → a jacket, a hot day → sunscreen, each with its own reason
+    const bag = await page.evaluate(() => { const t = S.trips.find((x) => x.id === 'hk-macau-2026'), keep = WX[t.id]; WX[t.id] = { at: Date.now(), days: [null, null, { tmin: 11, tmax: 33, code: 61, pop: 70 }] };
+      const r = dayBag(t, 2).filter((x) => ['rain', 'warm', 'sun'].includes(x.k)).map((x) => [x.k, x.why]); WX[t.id] = keep; return r; });
+    const why = Object.fromEntries(bag);
+    ok(bag.length === 3 && /70%/.test(why.rain) && /11°C/.test(why.warm) && /33°C/.test(why.sun), `today's bag: the live forecast adds an umbrella, a jacket and sunscreen, each saying why (${bag.map((x) => x.join(': ')).join(' · ')})`); }
   { // a fold opened on a wide screen: the boxes after it change sides so the columns stay near each other; the tapped fold and everything before it stay put
     await page.goto(`${BASE}/#/t/big-hop-2027/today/1`); await page.waitForSelector('details.dmore'); await page.evaluate(() => { document.querySelector('details.dmore').open = true; }); await page.waitForSelector('.cgrid.packed');
     const two = () => page.evaluate(() => new Promise((r) => requestAnimationFrame(() => requestAnimationFrame(() => setTimeout(r, 60)))));

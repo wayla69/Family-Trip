@@ -1292,6 +1292,7 @@ const BAG = [
   ['octopus', '💳', 'บัตร Octopus', 'Octopus cards', /Octopus/],
   ['contactless', '💳', 'บัตร contactless (รถไฟ เรือ)', 'Contactless cards (train, ferry)', /contactless|\bOpal\b/i],
   ['tickets', '🎟️', 'ตั๋ว / บอร์ดดิ้งพาสในโทรศัพท์', 'Tickets / boarding passes on the phone', /boarding pass|timed ticket|tickets? on the phone/i],
+  ['rain', '☂️', 'ร่ม เสื้อกันฝน', 'Umbrella and raincoats', /\brain(y|coats?)?\b|showers?|umbrellas?|typhoon|storm/i],
   ['spare', '👕', 'เสื้อผ้าสำรอง', 'Spare clothes', /spare clothes/i],
   ['snacks', '🍎', 'ขนม ขวดน้ำ', 'Snacks and water bottles', /snacks?|water bottles?/i],
   ['nappies', '🧷', 'ผ้าอ้อม ทิชชู่เปียก', 'Nappies and wipes', /nappies|nappy|diaper/i],
@@ -1300,6 +1301,13 @@ const BAG = [
 const BAG_ALWAYS = ['snacks', 'nappies', 'spare'];   // a 1½-year-old and a 3-year-old: these go every day
 function dayBag(t, i) {
   const d = t.days[i], rows = ((d.plan || {}).plan || []).map((r) => ({ when: r.t || '', en: r.en || '', th: r.th || '' })).concat(d.wx ? [{ when: '', en: d.wx.en || '', th: d.wx.th || '' }] : []);
+  // the live forecast for that day (weather.js, within 16 days) says what the manual's climate note could not: rain, a cold or a hot day
+  const f = WX[t.id] && WX[t.id].days && WX[t.id].days[i];
+  if (f && f.tmin != null) {
+    const wet = (f.pop != null && f.pop >= 40) || (f.code >= 51 && f.code <= 82) || f.code >= 95, cold = f.tmin < 15, hot = f.tmax >= 31;
+    const when = L('พยากรณ์', 'Forecast'), pc = f.pop != null ? ` ${f.pop}%` : '';   // one row a condition, so each thing in the bag says its own reason
+    rows.unshift(...[wet && { when, en: `rain${pc}`, th: `โอกาสฝน${pc}` }, cold && { when, en: `cold, ${Math.round(f.tmin)}°C at the coolest`, th: `หนาว ต่ำสุด ${Math.round(f.tmin)}°C` }, hot && { when, en: `strong sun, ${Math.round(f.tmax)}°C`, th: `แดดแรง ${Math.round(f.tmax)}°C` }].filter(Boolean));
+  }
   return BAG.map(([k, e, th, en, re]) => {
     const r = rows.find((x) => re.test(x.en));
     if (!r && !BAG_ALWAYS.includes(k)) return null;
