@@ -705,7 +705,7 @@
           "hrs": 2,
           "io": "out",
           "pram": "yes",
-          "price": { "en": "≈ $55 adults · $40 ages 7–17 · 6 and under free (third-party listing)", "th": "≈ $55 ผู้ใหญ่ · $40 อายุ 7–17 ปี · 6 ขวบลงมาฟรี (จากเว็บรวมข้อมูล)" },
+          "price": { "en": "Check the price", "th": "เช็กราคา" },
           "book": "none",
           "q": "Alyeska Resort Aerial Tram, Girdwood, Alaska",
           "ok": "2026-11",

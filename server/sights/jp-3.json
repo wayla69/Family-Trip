@@ -1783,7 +1783,7 @@
           "hrs": 2,
           "io": "both",
           "pram": "part",
-          "price": { "en": "≈ ¥1,000 adults · junior high and under free", "th": "≈ ¥1,000 ผู้ใหญ่ · มัธยมต้นลงมาฟรี" },
+          "price": { "en": "≈ ¥1,000 adults from 1 October 2026 · check the child price", "th": "≈ ¥1,000 ผู้ใหญ่ ตั้งแต่ 1 ต.ค. 2026 · เช็กราคาเด็ก" },
           "book": "none",
           "q": "Nagoya Castle, Nagoya",
           "ok": "2026-11",

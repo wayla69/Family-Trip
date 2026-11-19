@@ -280,24 +280,6 @@
           "q": "Pansodan Jetty, Yangon",
           "ok": "2026-11",
           "src": "https://elevenmyanmar.com/node/310819"
-        },
-        {
-          "name": { "en": "Alibaba Amusement, Junction Square", "th": "อาลีบาบาอะมิวส์เมนต์ จังก์ชันสแควร์" },
-          "local": "",
-          "kind": "play",
-          "area": { "en": "Kamayut, Junction Square mall", "th": "กะมะยุต ห้างจังก์ชันสแควร์" },
-          "what": { "en": "An indoor arcade and amusement area on the second floor of the mall", "th": "โซนเกมและเครื่องเล่นในร่ม ชั้นสองของห้าง" },
-          "why": { "en": "Air-conditioned play for a hot or wet afternoon", "th": "เล่นในร่มมีเครื่องปรับอากาศ เหมาะบ่ายที่ร้อนหรือฝนตก" },
-          "tip": { "en": "The guide lists 09:00–19:00 and says to check the latest hours", "th": "คู่มือว่าเปิด 09:00–19:00 และให้เช็กเวลาล่าสุด" },
-          "ages": [0, 2, 2, 1],
-          "hrs": 1.5,
-          "io": "in",
-          "pram": "yes",
-          "price": { "en": "Check the price (pay per game)", "th": "เช็กราคา (จ่ายตามเกม)" },
-          "book": "none",
-          "q": "Junction Square, Kamayut, Yangon",
-          "ok": "2026-11",
-          "src": "https://offpeaktrip.com/en/guide/yangon/alibaba-amusement-junction-square"
         }
       ]
     }

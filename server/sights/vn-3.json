@@ -179,7 +179,7 @@
           "hrs": 1,
           "io": "out",
           "pram": "part",
-          "price": { "en": "≈ 120,000 VND one way · 150,000 VND return adults (check the price for children)", "th": "≈ 120,000 VND เที่ยวเดียว · 150,000 VND ไปกลับ ผู้ใหญ่ (เช็กราคาเด็กก่อนไป)" },
+          "price": { "en": "Check the price", "th": "เช็กราคา" },
           "book": "none",
           "q": "Dalat Cable Car, Robin Hill, Da Lat",
           "ok": "2026-11",
