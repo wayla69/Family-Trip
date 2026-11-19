@@ -67,15 +67,15 @@ const idOf = (family, tkey, nkey) => crypto.createHash('sha1').update(`${family}
 // a book's row over the app's built-in list (src 'starter') — never the other way round
 async function put(pool, family, rows, src, trip, extra = {}) {
   if (!rows.length) return 0;
-  const list = rows.map((r) => ({ ...r, id: idOf(family, r.tkey, r.nkey), st: r.st || '', url: r.url || '' }));
+  const list = rows.map((r) => ({ ...r, id: idOf(family, r.tkey, r.nkey), st: r.st || '', url: r.url || '', checked: r.checked || extra.checked || null }));
   const res = await pool.query(`INSERT INTO eat_lib (id, family_id, town, town_th, tkey, nkey, area, kind, name, row, src, trip, st, url, checked)
-    SELECT x.id, $1, x.town, x.town_th, x.tkey, x.nkey, x.area, x.kind, x.name, x.row, $2, $3, x.st, x.url, $5::date
-    FROM jsonb_to_recordset($4::jsonb) AS x(id text, town text, town_th text, tkey text, nkey text, area jsonb, kind int, name text, row jsonb, st text, url text)
+    SELECT x.id, $1, x.town, x.town_th, x.tkey, x.nkey, x.area, x.kind, x.name, x.row, $2, $3, x.st, x.url, x.checked::date
+    FROM jsonb_to_recordset($4::jsonb) AS x(id text, town text, town_th text, tkey text, nkey text, area jsonb, kind int, name text, row jsonb, st text, url text, checked text)
     ON CONFLICT (family_id, tkey, nkey) DO UPDATE SET town = EXCLUDED.town, town_th = EXCLUDED.town_th, area = EXCLUDED.area, kind = EXCLUDED.kind, row = EXCLUDED.row, trip = EXCLUDED.trip,
-      src = EXCLUDED.src, st = CASE WHEN EXCLUDED.src = 'helper' THEN EXCLUDED.st ELSE eat_lib.st END, url = CASE WHEN EXCLUDED.src = 'helper' THEN EXCLUDED.url ELSE eat_lib.url END,
-      checked = CASE WHEN EXCLUDED.src = 'helper' THEN EXCLUDED.checked ELSE eat_lib.checked END
+      src = EXCLUDED.src, st = CASE WHEN EXCLUDED.src = 'book' THEN eat_lib.st ELSE EXCLUDED.st END, url = CASE WHEN EXCLUDED.src = 'helper' THEN EXCLUDED.url ELSE eat_lib.url END,
+      checked = CASE WHEN EXCLUDED.src = 'book' THEN eat_lib.checked ELSE EXCLUDED.checked END
     WHERE NOT eat_lib.gone AND (CASE eat_lib.src WHEN 'helper' THEN 2 WHEN 'book' THEN 1 ELSE 0 END) <= (CASE EXCLUDED.src WHEN 'helper' THEN 2 WHEN 'book' THEN 1 ELSE 0 END)`,
-  [family, src, trip || null, JSON.stringify(list), extra.checked || null]);
+  [family, src, trip || null, JSON.stringify(list)]);
   return res.rowCount;
 }
 // every book's places, on boot and after a book is saved
@@ -101,7 +101,8 @@ function starterRows(file, index) {
       const name = one(x && x.name, 120), nkey = norm(name);
       if (!name || !nkey || seen.has(`${tkey}:${nkey}`)) continue;
       seen.add(`${tkey}:${nkey}`);
-      rows.push({ town: town.en, town_th: town.th, tkey, nkey, area: i18n(x.area || town, 160), kind: [0, 1, 2].includes(x.kind) ? x.kind : 0, name, row: rowOf(x) });
+      const ok = /^20\d\d-(0[1-9]|1[0-2])$/.test(x.ok || '') ? x.ok : '';   // the month a web search confirmed it open
+      rows.push({ town: town.en, town_th: town.th, tkey, nkey, area: i18n(x.area || town, 160), kind: [0, 1, 2].includes(x.kind) ? x.kind : 0, name, row: rowOf(x), st: ok ? 'open' : '', checked: ok ? `${ok}-01` : null });
     }
   }
   return rows;

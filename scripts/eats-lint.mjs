@@ -5,6 +5,7 @@
 //   name (as on its sign, Latin letters), zh (the name in the local script, optional), kind 0 restaurant · 1 food court / quick bite ·
 //   2 café / bakery / sweets, area {th,en}, tag {th,en}, what {th,en}, why {th,en} (why it is easy with small children),
 //   pr {th,en} (a typical spend per adult as a range with ≈), q (a full Google Maps query). No opening hours: they change.
+//   ok "YYYY-MM" (optional): the month a web search confirmed the place open — the card then says so.
 import fs from 'node:fs';
 import path from 'node:path';
 import { fileURLToPath } from 'node:url';
@@ -50,7 +51,8 @@ export function lintEats(only) {
         if (x.pr && !(x.pr.en || '').includes('≈')) errs.push(`${w}: pr is a range with ≈`);
         if (typeof x.q !== 'string' || x.q.length < 8 || x.q.length > 160 || /https?:/.test(x.q)) errs.push(`${w}: q is a full Google Maps query (name, district, town)`);
         if (x.zh !== undefined && (typeof x.zh !== 'string' || x.zh.length > 60)) errs.push(`${w}: zh is a short text`);
-        const extra = Object.keys(x).filter((k) => !['name', 'zh', 'kind', 'area', 'tag', 'what', 'why', 'pr', 'q'].includes(k));
+        if (x.ok !== undefined && !/^20\d\d-(0[1-9]|1[0-2])$/.test(x.ok)) errs.push(`${w}: ok is the month a web search confirmed it open, "YYYY-MM"`);
+        const extra = Object.keys(x).filter((k) => !['name', 'zh', 'kind', 'area', 'tag', 'what', 'why', 'pr', 'q', 'ok'].includes(k));
         if (extra.length) errs.push(`${w}: unknown fields ${extra.join(', ')}`);
       }
       // a short list (a place taken out after a check found it doubtful) only needs its restaurants: an honest gap beats a guess

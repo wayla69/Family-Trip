@@ -522,7 +522,11 @@ ok((await fetch(BASE + '/api/b/media/ph-test-0001', { method: 'DELETE', headers:
   const tok = (lib.towns || []).find((t) => t.tkey === 'tokyo'), mac = (lib.towns || []).find((t) => t.tkey === 'macau');
   ok(lib.towns.length > 100 && tok && tok.n >= 12 && !tok.own && tok.country && tok.country.cc === 'jp' && mac && mac.own > 100 && mac.n >= mac.own, `eat library: the built-in list fills the towns of the picture library, each with its country; our own books' towns count their own (${lib.towns.length} towns · Tokyo ${tok && tok.n} · Macau ${mac && mac.n}/${mac && mac.own} ours)`);
   const tk = (await (await fetch(BASE + '/api/b/eatlib?town=tokyo', { headers: { cookie: ck } })).json()).places;
-  ok(tk.every((x) => x.src === 'starter' && !x.st && !x.checked && x.what && x.pr && x.q), 'eat library: a built-in place is marked as one — not checked, no day');
+  // a built-in place is marked as one; only a row whose file says a web search confirmed it ("ok": "YYYY-MM") carries "open" and that month
+  const E0 = createRequire(import.meta.url)('../server/eatlib.js'), idx0 = JSON.parse(fs.readFileSync('public/stock/index.json', 'utf8'));
+  const okNames = new Set(E0.starterFiles().flatMap((f) => E0.starterRows(f, idx0)).filter((x) => x.tkey === 'tokyo' && x.st === 'open').map((x) => x.name));
+  ok(tk.every((x) => x.src === 'starter' && x.what && x.pr && x.q && (okNames.has(x.name) ? x.st === 'open' && /^20\d\d-\d\d-01$/.test(x.checked) : !x.st && !x.checked)),
+    `eat library: a built-in place is marked as one — not checked, unless its file says a web search confirmed it (${okNames.size} of ${tk.length} in Tokyo confirmed)`);
   const dup = (await pool.query("SELECT name, count(*)::int n FROM eat_lib WHERE tkey='macau' GROUP BY nkey, name HAVING count(*) > 1")).rows;
   // the names our Hong Kong–Macau book and the built-in Macau file both hold: each is one row, and it is the book's
   const E = createRequire(import.meta.url)('../server/eatlib.js'), idx = JSON.parse(fs.readFileSync('public/stock/index.json', 'utf8')), seed = JSON.parse(fs.readFileSync('server/seeds/hk-macau-2026.json', 'utf8'));
