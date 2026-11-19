@@ -39,9 +39,11 @@ export function lintFile(file, places) {
       if (!/^https:\/\/[^\s"<>]{4,300}$/.test(x.src || '')) bad(`${at}: src = the https page that confirmed it`);
       if (/ค่ะ|ครับ|เช็ค/.test(JSON.stringify(x))) bad(`${at}: Thai style (no ค่ะ/ครับ, spell เช็ก)`);
     }
-    if ((t.sights || []).length < 15) bad(`${t.place}: ${(t.sights || []).length} sights (15 or more)`);
-    const s = t.sights || [];
-    if (s.filter((x) => x.io === 'in' || x.io === 'both').length < 3) bad(`${t.place}: fewer than three for a rainy day (io in/both)`);
+    // a small or remote town whose honest web check found fewer places says so with "thin": true (the owner's rule: never pad)
+    const s = t.sights || [], min = t.thin === true ? 4 : 15;
+    if (t.thin !== undefined && t.thin !== true) bad(`${t.place}: thin is true or absent`);
+    if (s.length < min) bad(`${t.place}: ${s.length} sights (${min} or more${t.thin ? ' for a thin town' : ''})`);
+    if (!t.thin && s.filter((x) => x.io === 'in' || x.io === 'both').length < 3) bad(`${t.place}: fewer than three for a rainy day (io in/both)`);
   }
   return errs;
 }

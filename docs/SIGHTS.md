@@ -67,6 +67,9 @@ Prices and hours change; the card still says "check before you go". British spel
 - at least two free ones;
 - a playground or park, and a food market or street.
 
+A small or remote town where an honest web check finds fewer than 15 places it can confirm (a current page showing it open and its
+price) carries `"thin": true` on the town: it needs 4 or more and the rainy-day rule does not apply. Never pad a town to reach 15.
+
 Left out: anything closed, under renovation for the coming year, adults-only or with no web page newer than 2025. Also left out: casinos,
 nightlife, and religious sites that ask visitors to keep away.
 
