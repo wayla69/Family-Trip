@@ -87,8 +87,10 @@ const mock = http.createServer((req, res) => {
       thai: () => JSON.stringify(JSON.parse(facts).map((x) => `ไทย: ${x}`)),
       restsug: () => JSON.stringify({ areas: [{ area: en('Near the inn'), kind: 0, items: [{ name: 'Test Ramen', what: en('Ramen'), pr: '≈ ¥1,000', q: 'Test Ramen, Testland' }] }] }),
     };
-    const ROUTE = () => JSON.stringify({ title: L2('ซากุระทดสอบ', 'Sakura test hop'), place: L2('โตเกียว', 'Tokyo'), countries: ['JP', 'xx1'], tz: 'Asia/Tokyo', from: '2030-01-01',
-      days: [0, 1, 2].map((i) => ({ date: '2030-01-0' + (i + 1), town: L2('โตเกียว', 'Tokyo'), title: L2(`วันที่ ${i + 1}`, `Day ${i + 1} in Tokyo`), emoji: '🗼', stops: [L2('สวนอุเอโนะ', 'Ueno Park')], sleep: L2('อุเอโนะ', 'Ueno') })) });
+    const ROUTE = () => JSON.stringify({ title: L2('ซากุระทดสอบ', 'Sakura test hop'), place: L2('โตเกียว', 'Tokyo'), countries: ['JP', 'xx1'], tz: 'Asia/Tokyo', from: '2030-01-01', why: L2('ฐานเดียว', 'One base'), season: L2('มักเย็นสบาย', 'Usually mild'), cost: L2('≈ ¥12,000 ต่อวัน', '≈ ¥12,000 a day'), ahead: [L2('ตั๋วรถไฟ', 'Train seats'), '', null],
+      days: [0, 1, 2].map((i) => ({ date: '2030-01-0' + (i + 1), town: L2('โตเกียว', 'Tokyo'), title: L2(`วันที่ ${i + 1}`, `Day ${i + 1} in Tokyo`), emoji: '🗼', stops: [L2('สวนอุเอโนะ', 'Ueno Park')], sleep: L2('อุเอโนะ', 'Ueno'), kid: L2('เป็ดในสระ', 'Ducks on the pond'), move: i ? '' : L2('รถไฟ ≈ 45 นาที', 'Train ≈ 45 min'), junk: 'x' })) });
+    const planIdeas = String(b.system).startsWith('You suggest where');   // "where shall we go?"
+    const IDEAS = () => JSON.stringify({ ideas: [{ place: L2('ดานัง', 'Da Nang'), cc: 'VN', emoji: '🏖️', why: L2('ทะเลตื้น', 'A shallow sea'), fly: L2('≈ 1 ชม. 45', '≈ 1 h 45'), days: 4 }, { place: '', cc: 'jp' }, { place: L2('ซิดนีย์', 'Sydney'), cc: 'australia', days: 99 }] });
     const badJson = imp === 'kids' && importCalls.filter((c) => c.step === 'kids').length === 1;   // the first kids' answer is broken JSON (a missing comma), as a live run once got
     const DAYCH = () => JSON.stringify({ why: L2('ฝนตก เลยไปพิพิธภัณฑ์ในร่ม', 'Rain, so an indoor museum'), title: L2('วันฝนตกในพิพิธภัณฑ์', 'A rainy day at the museum'), emoji: '☔',
       plan: [{ t: '09:00', h: L2('🥐 มื้อเช้าสบายๆ', '🥐 Slow breakfast'), th: 'มื้อเช้าที่โรงแรม', en: 'Breakfast at the inn' }, { t: '10:00', go: true, h: L2('🚕 แท็กซี่ไปพิพิธภัณฑ์', '🚕 Taxi to the museum'), th: 'แท็กซี่ 10 นาที', en: 'Taxi 10 min' }, { t: '12:00', go: true, h: L2('🍜 มื้อกลางวัน', '🍜 Lunch'), th: 'บะหมี่', en: 'Noodles' }],
@@ -96,7 +98,7 @@ const mock = http.createServer((req, res) => {
       planB: L2('ถ้าฝนหยุด เดินเล่นที่จัตุรัส', 'If it stops raining, the square'), tips: [L2('พกร่ม', 'Bring an umbrella')] });
     const VF = () => JSON.stringify({ places: [{ i: 1, st: 'closed', hours: '10:00–18:00', note: L2('ปิดถาวรตั้งแต่ปี 2026', 'Closed for good since 2026'), url: 'https://example.com/test-square' }] });
     const two = planRoute && facts.includes('Give TWO different routes');
-    const parts = two ? [JSON.stringify({ routes: [{ ...JSON.parse(ROUTE()), label: L2('เมืองเดียว', 'One base'), why: L2('ไม่ต้องย้ายกระเป๋า', 'No packing up') }, { ...JSON.parse(ROUTE()), label: L2('สองเมือง', 'Two towns'), why: L2('ได้เห็นมากขึ้น', 'See more'), days: [] }, 'junk'] })] : vf ? [VF()] : dayCh ? [DAYCH()] : planRoute ? [ROUTE()] : art ? [ARTA[art]()] : imp ? [badJson ? '{"days":[{"learn":[{"name":{"th":"x" "en":"x"}}]}]}' : IMP[imp]()] : photo ? [JSON.stringify(pids.map((id, k) => (k === 0 ? { id, cap: '## เด็กๆ **ยิ้ม** หน้าปราสาท', tags: ['kids', 'Character', 'bogus', 'kids'], place: stop0, best: true } : { id, cap: 'เรากินติ่มซำ', tags: ['food'], place: 'Narnia', best: 'yes' })))]
+    const parts = planIdeas ? [IDEAS()] : two ? [JSON.stringify({ routes: [{ ...JSON.parse(ROUTE()), label: L2('เมืองเดียว', 'One base'), why: L2('ไม่ต้องย้ายกระเป๋า', 'No packing up') }, { ...JSON.parse(ROUTE()), label: L2('สองเมือง', 'Two towns'), why: L2('ได้เห็นมากขึ้น', 'See more'), days: [] }, 'junk'] })] : vf ? [VF()] : dayCh ? [DAYCH()] : planRoute ? [ROUTE()] : art ? [ARTA[art]()] : imp ? [badJson ? '{"days":[{"learn":[{"name":{"th":"x" "en":"x"}}]}]}' : IMP[imp]()] : photo ? [JSON.stringify(pids.map((id, k) => (k === 0 ? { id, cap: '## เด็กๆ **ยิ้ม** หน้าปราสาท', tags: ['kids', 'Character', 'bogus', 'kids'], place: stop0, best: true } : { id, cap: 'เรากินติ่มซำ', tags: ['food'], place: 'Narnia', best: 'yes' })))]
       : snapn ? ['```json\n' + JSON.stringify({ title: { th: 'เขาใหญ่ทุ่งดอกไม้', en: 'Khao Yai in bloom' }, days: [{ day: 1, th: 'ทานตะวันยามเช้า', en: 'Sunflowers at breakfast', emoji: '🌻' }, { day: 2, th: 'ฝนพรำ', en: 'Drizzle', emoji: '🌧️' }, { day: 9, th: 'x', en: 'x' }] }) + '\n```']
       : quiz ? ['```json\n[{"q":"เมื่อวานมีมี่บอกว่าปลาอยู่ที่ไหน","a":[{"e":"💧","t":"ในน้ำ"},{"e":"🌳","t":"บนต้นไม้"},{"e":"🚌","t":"บนรถบัส"}],"ok":0},',
       '{"q":"ไปไหนมา","a":[{"e":"🏰","t":"ดิสนีย์"},{"e":"🏖️","t":"ทะเล"},{"e":"🏔️","t":"ภูเขา"}],"ok":0},{"q":"bad","a":[{"t":"x"}],"ok":3}]\n```']
@@ -718,6 +720,33 @@ try {
   const edited = { ...rt, days: rt.days.slice(0, 2) };
   const cE = calls.length, er = await (await pl('/api/b/planner/route', { answers, route: edited })).json();
   ok(calls.length === cE && er.route.days.length === 2 && er.route.to === '2027-04-02', 'planner: a route edited by hand is only cleaned — no call');
+  // second round: the route says more (why, the season, a rough spend, what to book ahead, each day's best bit) and carries the app's own facts
+  ok(rt.why && rt.season && rt.cost && rt.ahead.length === 1 && rt.days[0].kid.en === 'Ducks on the pond' && rt.days[0].move && !rt.days[0].junk && rt.facts && rt.facts.countries.join() === 'jp' && rt.facts.emergency.some((e) => e.tel === '119') && rt.facts.visa.length === 1,
+    `planner: the route says why, the season, a rough spend, what to book ahead and each day's best bit — and the visa, emergency and power lines come with it from the app's table (${JSON.stringify(rt.facts && rt.facts.visa)})`);
+  { const c3 = calls.length, lk = await pl('/api/b/planner/route', { answers: { ...answers, likes: ['sea', 'bogus', 'train'], needs: ['pram'], dest: 'Okinawa', from: '', to: '', approx: 'April', len: 5 } }), sent3 = JSON.stringify(calls[c3] && calls[c3].body);
+    ok(lk.status === 200 && /We like: beach and sea, trains and vehicles/.test(sent3) && /We need: we bring a pram/.test(sent3) && /When: April — 5 days/.test(sent3) && !/bogus/.test(sent3), 'planner: what the family likes and needs (chips) and the length without dates reach the helper as words; an unknown chip is dropped'); }
+  // "where shall we go?": one call, no destination needed, ages only
+  { const c4 = calls.length, ir = await pl('/api/b/planner/ideas', { answers: { ...answers, dest: 'ignored' } }), ij = await ir.json(), sent4 = JSON.stringify(calls[c4] && calls[c4].body);
+    ok(ir.status === 200 && ij.ideas.length === 2 && ij.ideas[0].place.en === 'Da Nang' && ij.ideas[0].cc === 'vn' && ij.ideas[0].days === 4 && ij.ideas[1].days === 21 && !ij.ideas[1].cc && calls.length === c4 + 1,
+      `planner ideas: a few places that fit, cleaned (a bad country code dropped, the days bounded, an empty one left out) (${ir.status} ${JSON.stringify(ij).slice(0, 200)})`);
+    ok(/suggest/.test(sent4) && !/ignored/.test(sent4) && !/QZ8PLN/.test(sent4) && !/Mimi|Mika|มีมี่|มีก้า/.test(sent4), 'planner ideas: no child\'s name and no booking number in the call');
+    ok((await pl('/api/b/planner/ideas', { answers }, { ...PH, cookie: vck.split(';')[0] })).status === 403, 'planner ideas: relatives cannot'); }
+  // plans kept for both parents' phones: cleaned, a booking number not kept, newest first, deleted on request
+  { const pput = (id, body, h = PH) => fetch(BASE + '/api/b/planner/plans/' + id, { method: 'PUT', headers: h, body: JSON.stringify(body) }), plist = async () => (await (await fetch(BASE + '/api/b/planner/plans', { headers: { cookie: ck } })).json()).plans;
+    const { facts: _f, ...bare } = rt;
+    ok((await pput('pltest0001', { answers, route: bare })).status === 200 && (await pput('pltest0002', { answers: { ...answers, dest: 'Osaka' }, route: bare })).status === 200, 'kept plans: saved');
+    ok((await pput('BAD ID', { answers, route: bare })).status === 400 && (await pput('pltest0003', { answers, route: { days: [] } })).status === 400, 'kept plans: a bad id or a route that does not read → 400');
+    ok((await pput('pltest0009', { answers, route: bare }, { ...PH, cookie: vck.split(';')[0] })).status === 403 && (await fetch(BASE + '/api/b/planner/plans', { headers: { cookie: vck.split(';')[0] } })).status === 403, 'kept plans: relatives can neither read nor write them');
+    let l = await plist();
+    ok(l.length === 2 && l[0].id === 'pltest0002' && l[0].answers.dest === 'Osaka' && l[1].by === 'แม่' && !/QZ8PLN/.test(JSON.stringify(l)) && !l[0].answers.junk && l[0].route.facts && l[0].route.days.length === 3,
+      `kept plans: newest first, who kept it, the answers cleaned (a booking number is not kept), the app's facts added on the way out (${l.map((p) => p.id).join()})`);
+    await pput('pltest0001', { answers: { ...answers, dest: 'Kyoto' }, route: bare }); l = await plist();
+    ok(l.length === 2 && l[0].id === 'pltest0001' && l[0].answers.dest === 'Kyoto', 'kept plans: saving again replaces the plan and brings it to the top');
+    for (let i = 0; i < 9; i++) await pput('plfill000' + i, { answers, route: bare });
+    ok((await plist()).length === 8, 'kept plans: at most eight are kept');
+    for (const p of (await plist()).slice(1)) await fetch(BASE + '/api/b/planner/plans/' + p.id, { method: 'DELETE', headers: PH });
+    ok((await plist()).map((p) => p.id).join() === 'plfill0008', 'kept plans: deleted on request');
+    await fetch(BASE + '/api/b/planner/plans/plfill0008', { method: 'DELETE', headers: PH }); }
   const c1 = calls.length, dr0 = await pl('/api/b/planner/draft', { answers, route: rt }), dj = await dr0.json();
   ok(dr0.status === 202 && dj.slug === 'sakura-test-hop-2027', `planner: the book starts as an import job (${dr0.status} ${JSON.stringify(dj)})`);
   let pj; for (let i = 0; i < 160; i++) { pj = await (await fetch(BASE + '/api/b/import', { headers: { cookie: ck } })).json(); if (pj.job.status !== 'running') break; await new Promise((r) => setTimeout(r, 250)); }
@@ -749,6 +778,50 @@ try {
     const nday = await pp.locator('.plday').count(), wide = await pp.evaluate(() => document.documentElement.scrollWidth <= innerWidth + 1);
     const btn = await pp.locator('[data-a="planbook"]').count(), full = await pp.textContent('.plfoot');
     ok(nday === 3 && wide && btn === 0 && /next month|เดือนหน้า/i.test(full), `planner page: the route day by day, no sideways scroll; with the month used, the book waits (${nday} days · ${full.trim().slice(0, 80)})`);
+    // second round: steps, the answers folded to one card, the journey, "before you say yes", day actions with one undo, the plan kept for the other phone
+    { const st = await pp.evaluate(() => ({ steps: document.querySelectorAll('.plsteps .plst').length, done: document.querySelectorAll('.plsteps .plst.done').length, sum: !!document.querySelector('.plsum'), form: !!document.querySelector('#pldest'),
+        jour: document.querySelectorAll('.pljour .pljt').length, facts: [...document.querySelectorAll('.plfact h4')].map((h) => h.textContent.trim()).length, tel: (document.querySelector('.plfacts') || {}).textContent.includes('119'), kid: document.querySelector('.plday .pldx').textContent }));
+      ok(st.steps === 3 && st.done === 2 && st.sum && !st.form && st.jour === 1 && st.facts === 6 && st.tel && /Ducks on the pond/.test(st.kid),
+        `planner page: three steps, the answers folded to one card, the journey strip, six "before you say yes" tiles with the app's emergency number, each day's best bit (${JSON.stringify(st).slice(0, 200)})`);
+      const small = await pp.evaluate(() => [...document.querySelectorAll('#plroute button, .plsteps button, .plsum button')].filter((b) => { const r = b.getBoundingClientRect(); return r.width && (r.height < 43.5 || (r.width < 43.5)); }).map((b) => `${b.dataset.a}:${Math.round(b.getBoundingClientRect().width)}x${Math.round(b.getBoundingClientRect().height)}`));
+      ok(!small.length, `planner page: every button on the route is 44 px or taller (${small.slice(0, 5).join(' ')})`);
+      const titles = () => pp.evaluate(() => [...document.querySelectorAll('.plday .pldt')].map((h) => h.textContent)), dates = () => pp.evaluate(() => pln.route.days.map((d) => d.date).join());
+      const t0 = await titles();
+      await pp.click('#pld0 [data-a="planmove"][data-v="1"]'); const t1 = await titles();
+      ok(t1[0] === t0[1] && t1[1] === t0[0] && await dates() === '2027-04-01,2027-04-02,2027-04-03', `planner page: a day moves later, the dates stay in order (${t1.join(' | ')})`);
+      await pp.click('#pld0 [data-a="planadd"]');
+      ok(await pp.locator('.plday').count() === 4 && await pp.evaluate(() => pln.route.to === '2027-04-04' && pln.a.to === '2027-04-04'), 'planner page: a day added — the trip is a day longer, the answers follow');
+      await pp.click('#pld1 [data-a="plandel"]'); ok(await pp.locator('.plday').count() === 4, 'planner page: removing a day takes two taps');
+      await pp.click('#pld1 [data-a="plandel"]'); ok(await pp.locator('.plday').count() === 3 && await dates() === '2027-04-01,2027-04-02,2027-04-03', 'planner page: the day removed, the dates laid out again');
+      await pp.click('[data-a="planundo"]'); ok(await pp.locator('.plday').count() === 4, 'planner page: one undo brings the last change back');
+      await pp.click('#pld0 [data-a="planedit"]'); await pp.fill('[data-pr="0.title"]', 'Pandas first'); await pp.click('#pld0 [data-a="planedit"]');
+      ok((await titles())[0] === 'Pandas first', 'planner page: a day renamed by hand');
+      await pp.click('#pld2 [data-a="planday"]'); ok(/^Day 3: $/.test(await pp.inputValue('#plask')), 'planner page: "ask to change" on a day starts the ask with that day');
+      // the plan reaches the server by itself; the other parent's phone lists it and opens it
+      let kept = [], mine = null;
+      for (let k = 0; k < 40 && !mine; k++) { kept = (await (await fetch(BASE + '/api/b/planner/plans', { headers: { cookie: ck } })).json()).plans; mine = kept.find((p) => p.route.days[0].title.en === 'Pandas first'); if (!mine) await new Promise((r) => setTimeout(r, 250)); }
+      ok(mine && mine.route.days.length === 4 && mine.by === 'Mum', `planner page: the plan is kept on the server by itself, with the hand-made changes (${kept.map((p) => p.id).join()})`);
+      const p2c = await browser.newContext({ viewport: { width: 390, height: 844 } }), p2 = await p2c.newPage();
+      await p2.goto(BASE + '/'); await p2.waitForSelector('#lf'); await p2.fill('#lname', 'Dad'); await p2.fill('#lcode', CODE); await p2.keyboard.press('Enter'); await p2.waitForSelector('.shelf');
+      await p2.goto(BASE + '/#/planner'); await p2.waitForSelector('.plsv');
+      await p2.click(`.plsv[data-v="${mine.id}"]`); await p2.waitForSelector('.plday');
+      ok(await p2.locator('.plday').count() === 4 && (await p2.textContent('#pld0 .pldt')) === 'Pandas first' && await p2.inputValue('#pldest').catch(() => 'folded') === 'folded', 'planner page: the other parent\'s phone opens the kept plan as it was left');
+      await p2c.close();
+      // a new plan: two taps, a clean page, the kept one waits in the list
+      await pp.click('[data-a="plannew"]'); await pp.click('[data-a="plannew"]'); await pp.waitForSelector('#pldest');
+      ok(await pp.inputValue('#pldest') === '' && await pp.locator('.plday').count() === 0 && await pp.locator(`.plsv[data-v="${mine.id}"]`).count() === 1, 'planner page: "start a new plan" clears the page; the kept plan waits in the list');
+      // chips instead of typing: a suggested place with its picture, how long, what the children like
+      await pp.fill('#pldest', 'tok'); await pp.waitForSelector('.plsg');
+      await pp.click('.plsg >> nth=0'); const d1 = await pp.inputValue('#pldest');
+      await pp.fill('#plfrom', '2027-05-01'); await pp.keyboard.press('Tab'); await pp.click('.pllens .plchip[data-v="5"]');
+      await pp.click('.plchip[data-k="likes"][data-v="sea"]');
+      const a1 = await pp.evaluate(() => ({ to: pln.a.to, likes: pln.a.likes.join(), span: document.querySelector('#plspan').textContent, pressed: document.querySelector('.plchip[data-v="sea"]').getAttribute('aria-pressed') }));
+      ok(/Tokyo/i.test(d1) && a1.to === '2027-05-05' && a1.likes === 'sea' && /5 days, 4 nights/.test(a1.span) && a1.pressed === 'true', `planner page: a suggested place fills "where to", a length chip sets the last day, a like is ticked in place (${d1} · ${JSON.stringify(a1)})`);
+      await pp.click('[data-a="planideas"]'); await pp.waitForSelector('.plidea', { timeout: 15000 });
+      await pp.click('.plidea >> nth=0');
+      ok(await pp.inputValue('#pldest') === 'Da Nang' && await pp.evaluate(() => pln.a.to === '2027-05-04') && await pp.locator('.plidea').count() === 0, 'planner page: an idea from the helper fills "where to" and the length');
+      await fetch(BASE + '/api/b/planner/plans/' + mine.id, { method: 'DELETE', headers: PH });
+      await pp.evaluate(() => { pln.plans = null; render(); }); }
     // two to compare: the button only before a route is chosen; the cards side by side; "pick this one" makes it the route
     await pp.evaluate(() => { localStorage.removeItem('mbs_planRoute'); pln.route = null; pln.alts = null; render(); });
     await pp.click('[data-a="planroute2"]'); await pp.waitForSelector('.plalt', { timeout: 15000 });
