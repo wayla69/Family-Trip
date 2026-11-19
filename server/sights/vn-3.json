@@ -508,7 +508,7 @@
           "hrs": 0.5,
           "io": "out",
           "pram": "part",
-          "price": { "en": "Free (older sources; check the price)", "th": "ฟรี (แหล่งข้อมูลเก่า เช็กราคาก่อนไป)" },
+          "price": { "en": "Check the price", "th": "เช็กราคา" },
           "book": "none",
           "q": "Ho Quyen Tiger Arena, Thuy Bieu, Hue",
           "ok": "2026-11",

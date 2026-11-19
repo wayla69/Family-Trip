@@ -575,7 +575,7 @@
           "hrs": 1,
           "io": "out",
           "pram": "part",
-          "price": { "en": "≈ ₩2,000 children · adult fare ≈ ₩6,000 (check) · under 36 months free", "th": "≈ ₩2,000 เด็ก · ผู้ใหญ่ ≈ ₩6,000 (ไม่แน่ใจ ควรเช็ก) · ต่ำกว่า 36 เดือนฟรี (เช็กอีกครั้ง)" },
+          "price": { "en": "Check the price", "th": "เช็กราคา" },
           "book": "none",
           "q": "Hwaseong Eocha, Suwon Hwaseong Haenggung ticket office, Suwon",
           "ok": "2026-11",

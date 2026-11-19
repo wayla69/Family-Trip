@@ -393,7 +393,7 @@
           "hrs": 2,
           "io": "in",
           "pram": "yes",
-          "price": { "en": "≈ €7 adults · reduced ≈ €4.50 · under 6 free (an older listing, check the price)", "th": "≈ €7 ผู้ใหญ่ · ลดแล้ว ≈ €4.50 · ต่ำกว่า 6 ขวบฟรี (ข้อมูลเก่า เช็กราคาอีกครั้ง)" },
+          "price": { "en": "Check the price · under 6 free", "th": "เช็กราคา · ต่ำกว่า 6 ปีฟรี" },
           "book": "none",
           "q": "Rautenstrauch-Joest-Museum, Cäcilienstraße, Köln",
           "ok": "2026-11",

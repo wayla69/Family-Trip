@@ -32,7 +32,7 @@
           "hrs": 2.5,
           "io": "both",
           "pram": "yes",
-          "price": { "en": "≈ £11 adults (older listing, check) · children cheaper · under 3 free", "th": "≈ £11 ผู้ใหญ่ (ข้อมูลเก่า ควรเช็ก) · เด็กถูกกว่า · ต่ำกว่า 3 ขวบฟรี" },
+          "price": { "en": "Check the price · under 3 free", "th": "เช็กราคา · ต่ำกว่า 3 ปีฟรี" },
           "book": "none",
           "q": "Birdland Park and Gardens, Bourton-on-the-Water",
           "ok": "2026-11",

@@ -554,23 +554,6 @@
           "src": "https://www.nps.gov/yell/planyourvisit/swimming.htm"
         },
         {
-          "name": { "en": "Yellowstone Junior Ranger programme", "th": "โครงการจูเนียร์เรนเจอร์เยลโลว์สโตน" },
-          "kind": "nature",
-          "area": { "en": "Visitor centres across the park", "th": "ศูนย์ผู้เยี่ยมชมทั่วอุทยาน" },
-          "what": { "en": "A self-guided activity booklet on geysers, wildlife and fire; a ranger checks it and gives a badge", "th": "สมุดกิจกรรมทำเองเรื่องน้ำพุร้อน สัตว์ป่า และไฟป่า เจ้าหน้าที่ตรวจและมอบเข็มกลัด" },
-          "why": { "en": "Turns the visit into a game for children aged 4 and up", "th": "ทำให้การเที่ยวเป็นเกมสำหรับเด็กอายุ 4 ปีขึ้นไป" },
-          "tip": { "en": "Badges are given only in the park and cannot be mailed; take the booklet at any visitor centre", "th": "รับเข็มกลัดได้เฉพาะในอุทยาน ส่งทางไปรษณีย์ไม่ได้ รับสมุดได้ที่ศูนย์ผู้เยี่ยมชมทุกแห่ง" },
-          "ages": [0, 1, 2, 2],
-          "hrs": 2,
-          "io": "both",
-          "pram": "yes",
-          "price": { "en": "Check the price", "th": "เช็กราคาก่อนไป" },
-          "book": "none",
-          "q": "Old Faithful Visitor Education Center, Yellowstone National Park",
-          "ok": "2026-11",
-          "src": "https://www.nps.gov/yell/learn/kidsyouth/junior-ranger.htm"
-        },
-        {
           "name": { "en": "Grizzly and Wolf Discovery Center", "th": "กริซลี่แอนด์วูล์ฟดิสคัฟเวอรีเซ็นเตอร์" },
           "kind": "zoo",
           "area": { "en": "West Yellowstone, Montana", "th": "เวสต์เยลโลว์สโตน มอนทานา" },
@@ -1899,7 +1882,7 @@
           "hrs": 2,
           "io": "out",
           "pram": "yes",
-          "price": { "en": "check the price", "th": "เช็กราคา (ข่าวปี 2025 บอกว่าเริ่มเก็บค่าเข้า ชาวเคาน์ตี ≈ $4)" },
+          "price": { "en": "Check the price", "th": "เช็กราคา" },
           "book": "none",
           "q": "Pana'ewa Rainforest Zoo, 800 Stainback Hwy, Hilo",
           "ok": "2026-11",
