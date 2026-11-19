@@ -9,7 +9,7 @@ Owner, 19 Nov 2026: "ร้านอาหารด้วย แนวเดี�
 |---|---|---|
 | `helper` | A parent pressed "ask the helper to find and check places" for a town: one call with web search | Yes, on the day shown on the card |
 | `book` | The "where to eat" of a book the family has (the two bundled books: 506 places) | As the book's manual was — by the owner |
-| `starter` | The app's built-in list, `server/eats/<cc>-<n>.json`: 3,110 places in all 207 cities of the picture library | **Partly** — 513 places carry the month a web search confirmed them open; see below |
+| `starter` | The app's built-in list, `server/eats/<cc>-<n>.json`: 3,116 places in all 207 cities of the picture library | **Partly** — 513 places carry the month a web search confirmed them open; see below |
 
 A helper row replaces a book row of the same name, a book row replaces a built-in one; never the other way round. A place the parents
 take out stays out. The web check of a book (planner phase 3) writes what it found on the library's row of the same name.
@@ -58,18 +58,20 @@ Disneyland Paris. Page fetches were blocked, so everything rests on search summa
 Owner: "เช็กรอบสองเมืองที่เหลือให้ครบเลย". Twenty-eight workers in three waves, 19 searches each, on the 163 towns the second pass
 had not reached — so every town has now had a web check. Page fetches were still blocked; everything rests on search summaries.
 
-- `ok` went from 123 rows to 513; the list from 3,150 places to 3,110 (about 75 removed: closed, moved away, or no trace in two
+- `ok` went from 123 rows to 513; the list from 3,150 places to 3,116 (about 75 removed: closed, moved away, or no trace in two
   searches; about 35 added or renamed to the place's real name). Many addresses in the map queries were corrected.
 - Most searches returned undated guides, which do not earn `ok`. **33 towns still have no `ok` at all**: Patagonia, Melbourne,
   Bhutan, Geneva, Xi'an, Heidelberg, Barcelona, Helsinki, Dubrovnik, Cinque Terre, Takayama, Kanazawa, Nagano, Nagasaki, Kumamoto,
   Sri Lanka's hills, Yangon, Bagan, Langkawi, Rotorua, Cusco, Bled, Pattaya, Nan, Lampang, Rayong, Koh Chang, central Taiwan,
   Hawaii, Chicago, Boston, Hue, Kruger. Their rows are long-running places found in listings, not confirmed this year.
-- Short lists after removals (an honest gap, not a guess): Mae Hong Son 10, Guilin 11, Yangon 11, the Gobi 11. The lint now asks
+- Short lists after removals (an honest gap, not a guess): Mae Hong Son 12, Guilin 11, Yangon 11, the Gobi 11. The lint now asks
   for five restaurants a town, not six (Korat).
 - Taken out for not suiting small children or the budget: a brewery hall in Luxembourg's nightlife strip, a bar-restaurant with
   club nights in Dublin, a brewery and concert venue in Lyon, Mama's Fish House (Hawaii), Pancakes Amsterdam, a mall row in Petra.
-- In small Thai towns a place with "no trace in an English search" may still be trading (Jae Lek, Nai Wan, Flour Power Bakery,
-  Roti Mina, Ban Phleng, Pa Sri Bua were removed that way) — add them back by hand if you know them.
+- In small Thai towns a place with "no trace in an English search" may still be trading. Jae Lek, Nai Wan (Hat Yai–Songkhla),
+  Roti Mina, Flour Power Bakery (Koh Lipe), Ban Phleng and Pa Sri Bua (Mae Hong Son) were removed that way and put back on the
+  owner's word the same day, unmarked. Others removed the same way and not put back: Dee Amnuay Choke, Doppio (Ubon), King Ocha,
+  Lab Nua, Peng Duck Noodles (Udon), Rabieng Pa (Korat), Rabiang Pa (Khao Yai), Guang Tang Noodles (Khon Kaen).
 - Still not done: re-basing Argentine peso and Turkish lira prices (only Güerrin's 2026 prices were found, and they fit).
 - Rows worth one more look: The Empire Cafe (Kandy), Bear's Paw Bakery (Jasper), Pandeli (Istanbul), Al Dhafra (Abu Dhabi),
   Plage Café (Rio), Fortín Cataratas (Iguazú), Petit Royal (Zermatt), Pantarul (Dubrovnik), Kaffee Mayer (Bratislava),
