@@ -13,7 +13,7 @@ const ROOT = path.join(path.dirname(fileURLToPath(import.meta.url)), '..');
 const DIR = path.join(ROOT, 'server', 'eats');
 const norm = (x) => String(x || '').normalize('NFKC').toLowerCase().replace(/[^a-z0-9฀-๿一-鿿]+/g, '');
 const THAI = /[฀-๿]/;
-export const MIN = 12, MAX = 18;
+export const MIN = 10, MAX = 18;
 
 export function lintEats(only) {
   const index = JSON.parse(fs.readFileSync(path.join(ROOT, 'public', 'stock', 'index.json'), 'utf8'));
@@ -53,7 +53,8 @@ export function lintEats(only) {
         const extra = Object.keys(x).filter((k) => !['name', 'zh', 'kind', 'area', 'tag', 'what', 'why', 'pr', 'q'].includes(k));
         if (extra.length) errs.push(`${w}: unknown fields ${extra.join(', ')}`);
       }
-      if (kinds[0] < 6 || kinds[1] < 2 || kinds[2] < 2) errs.push(`${at}: wants at least 6 restaurants, 2 quick bites and 2 cafés or sweets (${kinds.join('/')})`);
+      // a short list (a place taken out after a check found it doubtful) only needs its restaurants: an honest gap beats a guess
+      if (kinds[0] < 6 || (list.length >= 12 && (kinds[1] < 2 || kinds[2] < 2))) errs.push(`${at}: wants at least 6 restaurants, 2 quick bites and 2 cafés or sweets (${kinds.join('/')})`);
     }
   }
   const missing = only && only.length ? [] : cities.filter(([k]) => !seenTown.has(k)).map(([k]) => k);

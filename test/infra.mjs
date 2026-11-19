@@ -179,7 +179,7 @@ if (process.env.BASE) {
 // languages, and the checker catches what it should
 { const { lintEats } = await import('../scripts/eats-lint.mjs');
   const r = lintEats();
-  ok(!r.errs.length && r.rows > 1000, `eats: the built-in list is clean (${r.rows} places in ${r.towns} towns)` + (r.errs.length ? ' — ' + r.errs.slice(0, 6).join(' · ') : ''));
+  ok(!r.errs.length && r.rows > 3000 && !r.missing.length && r.towns === r.cities, `eats: the built-in list is clean and every city of the picture library has its list (${r.rows} places in ${r.towns} of ${r.cities} towns${r.missing.length ? ' · missing ' + r.missing.join(', ') : ''})` + (r.errs.length ? ' — ' + r.errs.slice(0, 6).join(' · ') : ''));
   const E = require('../server/eatlib.js'), idx = JSON.parse(fs.readFileSync(path.resolve('public/stock/index.json'), 'utf8'));
   const rows = E.starterRows('th-1.json', idx), bk = rows.filter((x) => x.tkey === 'bangkok');
   ok(bk.length >= 12 && bk[0].town === 'Bangkok' && /[\u0E00-\u0E7F]/.test(bk[0].town_th) && bk.every((x) => x.row.what && x.row.what.th && x.row.q && !x.row.hours && !x.row.pick),

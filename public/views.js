@@ -2802,7 +2802,7 @@ function viewEats(tk) {
   const own = towns.filter((t) => t.own > 0), rest = towns.filter((t) => !t.own), byC = new Map();
   for (const t of rest) { const k = t.country ? L(t.country.th, t.country.en) : L('อื่นๆ', 'Elsewhere'); if (!byC.has(k)) byC.set(k, []); byC.get(k).push(t); }
   const groups = [...byC.entries()].sort((a, b) => a[0].localeCompare(b[0], lang === 'en' ? 'en' : 'th'));
-  const chips = !towns.length ? '' : tk ? `<div class="plchips eltowns one" style="--g1:${PG.orange}"><a class="plchip" href="#/eats">‹ ${L('ทุกเมือง', 'All towns')}</a>${[...own, ...((cur && cur.country) ? rest.filter((t) => t.country && t.country.cc === cur.country.cc) : [])].map(chip).join('')}</div>`
+  const chips = !towns.length ? '' : tk ? `<div class="plchips eltowns one" style="--g1:${PG.orange}"><a class="plchip" href="#/eats">‹ ${L('ทุกเมือง', 'All towns')}</a>${[...((cur && cur.country) ? rest.filter((t) => t.country && t.country.cc === cur.country.cc) : []), ...own].map(chip).join('')}</div>`
     : `<div class="elfind"><input id="eltq" class="field" type="search" enterkeyhint="search" autocomplete="off" placeholder="${L('ค้นเมืองหรือประเทศ เช่น โอซาก้า อิตาลี', 'Search a town or country — Osaka, Italy')}" aria-label="${L('ค้นเมือง', 'Search towns')}"></div>
 ${own.length ? `<section class="elgrp" style="--g1:${PG.orange}"><h3>${L('ของเรา', 'Ours')} <span class="label">${L('จากเล่มของเราและที่ผู้ช่วยหาให้', 'from our books and the helper’s searches')}</span></h3><div class="plchips eltowns">${own.map(chip).join('')}</div></section>` : ''}
 ${groups.map(([name, list], k) => `<section class="elgrp" style="--g1:${snapPal(k)}"><h3>${esc(name)}</h3><div class="plchips eltowns">${list.map(chip).join('')}</div></section>`).join('')}
