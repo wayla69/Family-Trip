@@ -11,9 +11,10 @@ const IMG = require('./images');
 const { FAMILY, AUDIO_EXT } = require('./bookshelf');
 const EMOJI = require('./emoji');
 const EATLIB = require('./eatlib');
+const SIGHTLIB = require('./sightlib');
 
 // restore order follows foreign keys
-const TABLES = ['children', 'trips', 'trip_days', 'firsts_catalog', 'entries', 'media', 'places', 'hearts', 'reviews', 'spend', 'emoji', 'capsules', 'comments', 'eat_lib'];   // capsules: letters to open in the future (migration 0034); comments: lines under photos (0038, after media)
+const TABLES = ['children', 'trips', 'trip_days', 'firsts_catalog', 'entries', 'media', 'places', 'hearts', 'reviews', 'spend', 'emoji', 'capsules', 'comments', 'eat_lib', 'sight_lib'];   // capsules: letters to open in the future (migration 0034); comments: lines under photos (0038, after media)
 // eat_lib: only the family's own part — the helper's web-checked finds and the places the parents took out (gone); the books' and the
 // built-in places are read again on every boot
 const ID_RE = /^[A-Za-z0-9_.:-]{4,80}$/;
@@ -24,7 +25,7 @@ const familyScoped = (t) => !['trip_days', 'firsts_catalog'].includes(t);
 async function dump(pool) {
   const tables = {};
   for (const t of TABLES) {
-    tables[t] = (await pool.query(t === 'eat_lib' ? "SELECT * FROM eat_lib WHERE family_id=$1 AND (src = 'helper' OR gone)" : familyScoped(t) ? `SELECT * FROM ${t} WHERE family_id=$1` : `SELECT x.* FROM ${t} x JOIN trips p ON p.id=x.trip_id WHERE p.family_id=$1`, [FAMILY])).rows;
+    tables[t] = (await pool.query(t === 'eat_lib' ? "SELECT * FROM eat_lib WHERE family_id=$1 AND (src = 'helper' OR gone)" : t === 'sight_lib' ? "SELECT * FROM sight_lib WHERE family_id=$1 AND (gone OR wish)" : familyScoped(t) ? `SELECT * FROM ${t} WHERE family_id=$1` : `SELECT x.* FROM ${t} x JOIN trips p ON p.id=x.trip_id WHERE p.family_id=$1`, [FAMILY])).rows;
   }
   const fam = (await pool.query('SELECT profile FROM families WHERE id=$1', [FAMILY])).rows[0];
   return { format: 'memory-bookshelf-backup', version: 1, at: Date.now(), complete: true, family: FAMILY, profile: (fam && fam.profile) || null, tables };
@@ -186,6 +187,8 @@ async function importZip(file, pool, media) {
         if (t === 'media') rows = rows.filter((m) => okMedia.has(m.id));
         if (t === 'eat_lib') rows = rows.filter((r) => r && typeof r.tkey === 'string' && typeof r.nkey === 'string' && r.tkey && r.nkey && (r.src === 'helper' || r.gone))
           .map((r) => ({ ...r, id: EATLIB.idOf(FAMILY, r.tkey, r.nkey) }));   // the id is this family's, never the file's
+        if (t === 'sight_lib') rows = rows.filter((r) => r && typeof r.tkey === 'string' && typeof r.nkey === 'string' && r.tkey && r.nkey && (r.gone || r.wish))
+          .map((r) => ({ ...r, id: SIGHTLIB.idOf(FAMILY, r.tkey, r.nkey) }));   // the parents' marks on the things-to-do library (E2)
         let n = 0;
         for (const r of rows) {
           if (!r || typeof r !== 'object') continue;
@@ -203,6 +206,7 @@ async function importZip(file, pool, media) {
                   [...['birth_ym', 'look', 'avatar'].filter((k) => ks.includes(k)).map((k) => [k, `(children.${k} IS NULL AND EXCLUDED.${k} IS NOT NULL)`]),
                     ...(ks.includes('avatars') ? [['avatars', "((children.avatars IS NULL OR children.avatars = '[]'::jsonb) AND EXCLUDED.avatars IS NOT NULL AND EXCLUDED.avatars <> '[]'::jsonb)"]] : [])])
               // a place the built-in list or a book already holds: the parents' "take out" mark comes back, and a helper's find replaces a built-in or book row
+              : t === 'sight_lib' ? "ON CONFLICT (family_id, tkey, nkey) DO UPDATE SET gone = sight_lib.gone OR EXCLUDED.gone, wish = (sight_lib.wish OR EXCLUDED.wish) AND NOT (sight_lib.gone OR EXCLUDED.gone) WHERE (EXCLUDED.gone AND NOT sight_lib.gone) OR (EXCLUDED.wish AND NOT sight_lib.wish)"
               : t === 'eat_lib' ? "ON CONFLICT (family_id, tkey, nkey) DO UPDATE SET gone = eat_lib.gone OR EXCLUDED.gone, src = CASE WHEN EXCLUDED.src = 'helper' THEN 'helper' ELSE eat_lib.src END, row = CASE WHEN EXCLUDED.src = 'helper' THEN EXCLUDED.row ELSE eat_lib.row END, st = CASE WHEN EXCLUDED.src = 'helper' THEN EXCLUDED.st ELSE eat_lib.st END, url = CASE WHEN EXCLUDED.src = 'helper' THEN EXCLUDED.url ELSE eat_lib.url END, checked = CASE WHEN EXCLUDED.src = 'helper' THEN EXCLUDED.checked ELSE eat_lib.checked END WHERE (EXCLUDED.gone AND NOT eat_lib.gone) OR (EXCLUDED.src = 'helper' AND eat_lib.src <> 'helper')"
               : 'ON CONFLICT DO NOTHING';
             n += (await c.query(`INSERT INTO ${t} (${ks.join(',')}) VALUES (${ks.map((_, i) => '$' + (i + 1)).join(',')}) ${onConflict}`, vals)).rowCount;

@@ -13,6 +13,7 @@ const PLANNER = require('./planner');
 const CF = require('./countryfacts');
 const EATLIB = require('./eatlib');
 const CARE = require('./care');   // hospitals, pharmacies, play and baby rooms per library town (server/care/*.json)
+const SIGHTLIB = require('./sightlib');
 const VERIFY = require('./verify');
 const TAGS = require('../public/tags.js');
 const FAM = require('./family');
@@ -160,7 +161,7 @@ function router({ pool, media, A, ai, hooks = {} }) {   // hooks.heart(h): set b
       let gone = 0;
       for (const k of new Set(keys)) { try { await media.del(k); gone++; } catch (_) { /* a file already missing is fine */ } }
       await q('DELETE FROM families WHERE id=$1', [FAMILY]);
-      await q("DELETE FROM settings WHERE key IN ('family_likes', 'emoji_seeded', 'emoji_offered', 'emoji_stock_offered', 'year_reels', 'planner_plans', 'eat_starter', 'orphans_last')");
+      await q("DELETE FROM settings WHERE key IN ('family_likes', 'emoji_seeded', 'emoji_offered', 'emoji_stock_offered', 'year_reels', 'planner_plans', 'eat_starter', 'sight_starter', 'orphans_last')");
       await q('INSERT INTO families (id, name) VALUES ($1, $2) ON CONFLICT (id) DO NOTHING', [FAMILY, 'Family']);
       await syncSeeds(pool); await EMOJI.seed(pool, FAMILY); await eatSyncAll(pool); A.groupsChanged();
       console.log(`family erased on request: ${gone} files, every row`);   // no names, no codes
@@ -1293,6 +1294,28 @@ function router({ pool, media, A, ai, hooks = {} }) {   // hooks.heart(h): set b
   r.delete('/api/b/eatlib/:id', ...W, async (req, res, next) => {
     try { await q('UPDATE eat_lib SET gone=true WHERE family_id=$1 AND id=$2', [FAMILY, String(req.params.id)]); res.json({ ok: true }); } catch (e) { next(e); }
   });
+  /* The library of things to do (docs/PLACES-ECOSYSTEM.md E2; server/sightlib.js), editors: GET = the towns with how many sights (and how
+     many for a rainy day); ?town=<tkey> or ?place=<place id> = a town's sights, each with how well it suits this family (`fit`: the
+     youngest child's age, the outing styles of #/taste, the needs; -9 = not for the youngest); ?for=[[en, th], …] = a route's towns.
+     DELETE takes a sight out for good; PUT …/wish {on} keeps it on the family's wish list. */
+  const sightKids = async () => { const ys = (await kidRows()).map((k) => (k.birth_ym ? (Date.now() - Date.parse(k.birth_ym + '-15')) / (365.25 * 864e5) : null)).filter((y) => y != null && y >= 0); return ys.length ? Math.min(...ys) : null; };
+  const sightTaste = async () => FAM.cleanProfile(((await q('SELECT profile FROM families WHERE id=$1', [FAMILY]))[0] || {}).profile).taste || null;
+  r.get('/api/b/sights', A.requireEditor, async (req, res, next) => {
+    try {
+      res.setHeader('Cache-Control', 'no-store');
+      const rows = await SIGHTLIB.all(pool, FAMILY), cof = EATLIB.countryOf(STOCK.read()), y = await sightKids(), taste = await sightTaste();
+      const full = (x) => { const o = SIGHTLIB.out(x); return { ...o, cc: (cof.get(x.tkey) || {}).cc || '', fit: SIGHTLIB.fitOf(o, taste, y) }; };
+      if (req.query.for) return res.json({ for: eatPairs(String(req.query.for)).map(([en, th]) => ({ en, th: th || en, sights: SIGHTLIB.forTown(rows, [en, th].filter(Boolean)).map(full) })) });
+      if (req.query.town || req.query.place) { const k = String(req.query.town || ''), p = String(req.query.place || ''); return res.json({ sights: rows.filter((x) => (k && x.tkey === k) || (p && x.place === p)).map(full) }); }
+      res.json({ towns: SIGHTLIB.towns(rows).map((t) => ({ ...t, country: cof.get(t.tkey) || null })), total: rows.length });
+    } catch (e) { next(e); }
+  });
+  r.delete('/api/b/sights/:id', ...W, async (req, res, next) => {
+    try { await q('UPDATE sight_lib SET gone=true, wish=false WHERE family_id=$1 AND id=$2', [FAMILY, String(req.params.id)]); res.json({ ok: true }); } catch (e) { next(e); }
+  });
+  r.put('/api/b/sights/:id/wish', ...W, async (req, res, next) => {
+    try { const on = !!(req.body || {}).on, r2 = await q('UPDATE sight_lib SET wish=$3 WHERE family_id=$1 AND id=$2 AND NOT gone RETURNING id', [FAMILY, String(req.params.id), on]); if (!r2.length) return bad(res, 'id', 404); res.json({ ok: true, wish: on }); } catch (e) { next(e); }
+  });
   /* What this family learned on its past trips (owner, Nov 2026: "ให้หน้าวางแผนอ่านบทเรียนจากทุกเล่มและสิ่งที่ครอบครัวชอบด้วย"): the travel
      notebook's summary (settings.family_likes) and the last six books' lessons (entry kind 'lessons') — words the parents kept, never a
      photo, at most 5,000 letters — go with the planner's route ask, so the plan keeps the naps, the short drives, the food that worked. */
@@ -1962,5 +1985,8 @@ async function backfillPh(pool, media) {
   }
   return n;
 }
-const eatSyncAll = async (pool) => { try { await EATLIB.syncStarter(pool, FAMILY, STOCK.read()); return await EATLIB.syncBooks(pool, FAMILY, STOCK.read()); } catch (e) { console.error('eatlib sync', e.message); return 0; } };
+const eatSyncAll = async (pool) => {
+  try { await SIGHTLIB.syncStarter(pool, FAMILY, STOCK.read(), (id) => STOCK.url(id)); } catch (e) { console.error('sightlib sync', e.message); }   // the things-to-do library (E2) with the eat library
+  try { await EATLIB.syncStarter(pool, FAMILY, STOCK.read()); return await EATLIB.syncBooks(pool, FAMILY, STOCK.read()); } catch (e) { console.error('eatlib sync', e.message); return 0; }
+};
 module.exports = { router, syncSeeds, brand, FAMILY, AUDIO_EXT, backfillPh, eatSyncAll };
