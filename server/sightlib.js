@@ -113,11 +113,11 @@ const forTown = (rows, names) => { const keys = names.map(norm).filter((k) => k.
 // how well a sight suits the family: the youngest child's age band (0–2 · 3–5 · 6–9 · 10+), the outing styles they love or skip,
 // the needs (a pram needs `pram` not `no`; little walking prefers short visits). -9 = not for the youngest at all.
 const band = (y) => (y == null ? 1 : y < 3 ? 0 : y < 6 ? 1 : y < 10 ? 2 : 3);
-function fitOf(r, taste, youngest) {
+function fitOf(r, taste, youngest, learned) {
   const ages = r.ages || [1, 1, 1, 1], a = ages[band(youngest)];
   if (a === 0) return -9;
   let s = a;
-  const t = TAGS.cleanTaste(taste), f = TAGS.tasteFit(r.styles || [], t.out);
+  const t = TAGS.cleanTaste(taste), f = TAGS.tasteFitLearned(r.styles || [], t.out, learned && learned.out);
   s += f * 2;
   if (t.needs.includes('pram') && r.pram === 'no') s -= 2;
   if (t.needs.includes('walk') && r.hrs > 4) s -= 1;

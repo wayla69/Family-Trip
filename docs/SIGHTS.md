@@ -70,23 +70,8 @@ Prices and hours change; the card still says "check before you go". British spel
 Left out: anything closed, under renovation for the coming year, adults-only or with no web page newer than 2025. Also left out: casinos,
 nightlife, and religious sites that ask visitors to keep away.
 
-## What is in it (Nov 2026)
+## Passes
 
-40 towns, every row checked on the web in November 2026: Tokyo, Osaka, Kyoto, Hokkaido, Fukuoka, Okinawa · Seoul, Busan, Jeju · Taipei ·
-Hong Kong · Macau · Singapore · Kuala Lumpur · Bangkok, Chiang Mai, Phuket, Pattaya, Hua Hin, Krabi · Da Nang, Hanoi, Ho Chi Minh City ·
-Bali · Sydney, Melbourne, Gold Coast · Auckland, Queenstown · London · Paris, Disneyland Paris · Lucerne · Rome · Barcelona · Munich ·
-Amsterdam · New York, California, Orlando.
-
-The last round (Okinawa, Jeju, Saigon, Disneyland Paris, Rome, Barcelona, Munich, Amsterdam, New York, California, Orlando) could not
-open the official sites from the session (blocked fetches), so each row was confirmed from web search results: an official page where the
-search showed one, else the tourism office or a dated 2025–2026 listing. The softer prices to look at first in the next re-check:
-- Okinawa: Shurijo (the main hall reopens 23 Nov 2026 — ¥400 or ¥1,000), DMM Kariyushi (new prices from 15 Oct 2026 not found), Neo Park (a range).
-- Jeju: Camellia Hill (converted from US$), Hallasan Eorimok (a hiking guide; booking rules on visithalla.jeju.go.kr).
-- Saigon: Landmark 81, Saigon Skydeck and the Mekong day trip (converted from US$).
-- Disneyland Paris: the gate price only (less online by date); 10 sights (a resort).
-- Rome: the Zoology Museum (€7 or €7.50), Casina di Raffaello (a spring 2026 notice).
-- Barcelona: Park Güell (official tables disagree), Tibidabo's winter days, the Aquarium's adult price.
-- Munich: SEA LIFE, BMW Museum, Bavaria Filmstadt (2026 listings); Deutsches Museum single tickets.
-- Amsterdam: the Maritime Museum's child price, the Blue Boat adult fare, Ridammerhoeve (free or €3.25).
-- New York: the Natural History Museum's out-of-state price; California: Universal's child price; Orlando: the Disney World ranges, Epic Universe "from".
-
+- **Nov 2026, E2:** 29 towns, 459 sights (Japan, Korea, Taiwan, Hong Kong, Macau, Singapore, Thailand, Vietnam, Malaysia, Indonesia, Australia, New Zealand, Switzerland, Paris, London).
+- **19 Nov 2026, E6:** 8 more towns, 128 sights — Okinawa 16, Jeju 15, Ho Chi Minh City 15, Phu Quoc 16, Penang 16, Koh Samui 16, Dubai 17, Shanghai 16 (37 towns, 587 sights). Every row was confirmed by a web search that session, but the official sites themselves could not be opened from the session's network, so most `src` are dated 2025–2026 guides, tourism offices or news pages the search showed. Weakest prices, kept with "≈" and a "check" note: Eco Land (Jeju, sources ₩14,000–21,000), Aqua Planet Jeju (online prices lower), Dubai Safari Park (new season's price not out), the Shanghai Science and Technology and Natural History museums (adult price on the booking page only), ESCAPE Penang, Paradise Park Farm (Samui). Left out for want of a current, dated source: Nago Pineapple Park, Bios no Oka, JUNGLIA, Ryukyu Mura (Okinawa); Teddy Bear Museum, Camellia Hill (Jeju); VinWonders Grand Park, tiNiWorld, Saigon Skydeck, the city museums (Ho Chi Minh City); Tropical Spice Garden (Penang); Coco Splash, the Samui Aquarium, Butterfly Hill (closed), Secret Buddha Garden (Samui); Haichang Ocean Park (Shanghai). The twice-yearly re-check (1 January, 1 July) now covers this list too.
+- **19 Nov 2026, E2 round 3:** 8 more towns — Disneyland Paris 10 (a resort: 10 or more), Rome 16, Barcelona 15, Munich 15, Amsterdam 15, New York 16, California 15, Orlando 15. Checked the same way (web search, official sites not reachable from the session). Softer prices to re-check first: Disneyland Paris (the gate price only; less online by date); Rome — the Zoology Museum (€7 or €7.50), Casina di Raffaello (a spring 2026 notice); Barcelona — Park Güell (official tables disagree), Tibidabo's winter days, the Aquarium's adult price; Munich — SEA LIFE, BMW Museum, Bavaria Filmstadt (2026 listings), Deutsches Museum single tickets; Amsterdam — the Maritime Museum's child price, the Blue Boat adult fare, Ridammerhoeve (free or €3.25); New York — the Natural History Museum's out-of-state price; California — Universal's child price; Orlando — the Disney World ranges, Epic Universe "from". Left out: La Brea Tar Pits (reported closed for work), Brooklyn Children's Museum (no 2026 price), the Olympic Tower (Munich, closed until 2027), Technotown (Rome, 12+), Davy Crockett's Adventure and Aqua Mundo (no price).

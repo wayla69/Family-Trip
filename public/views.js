@@ -3040,8 +3040,11 @@ const famTaste = () => cleanTaste(S && S.family && S.family.taste);
 // a place to eat's own styles (read from its words, public/tags.js) and its child-friendly tags — one list for the cards' filters
 const placeTags = (x) => [...kidTagsOf(x), ...foodStylesOf(x)];
 // 1 = one of our styles and none we avoid, -1 = a style we avoid, 0 = neither; "mild food" as a need counts a mild place as ours
+// what our reviews taught (E6), worked out on the phone from the travel notebook (public/tags.js learnTaste); kept per state
+let learnMemo = { s: null, t: null, v: null };
+const famLearned = () => { const t = S && S.family && S.family.taste; if (learnMemo.s !== (S && S.reviews) || learnMemo.t !== t) learnMemo = { s: S && S.reviews, t, v: learnTaste((S && S.reviews) || [], t) }; return learnMemo.v; };
 function tasteFitEat(x) {
-  const t = famTaste(), st = foodStylesOf(x), f = tasteFit(st, t.food);
+  const t = famTaste(), st = foodStylesOf(x), f = tasteFitLearned(st, t.food, famLearned().food);
   if (f) return f;
   return t.needs.includes('mild') && kidTagsOf(x).includes('mild') ? 1 : 0;
 }
@@ -3136,14 +3139,9 @@ function tasteCard() {
 }
 // what the stars we gave suggest (the travel notebook: a place or a meal of 4–5 ★ or "would go again"), read from its name and our
 // note — styles not chosen yet, most named first
-function tasteHints(side) {
-  const t = famTaste(), have = new Set([...t[side].like, ...t[side].avoid]), n = {};
-  for (const r of (S && S.reviews) || []) {
-    if (!(r.rating >= 4 || r.again === true) || r.kind !== (side === 'food' ? 'food' : 'place')) continue;
-    const x = { name: r.name, what: { en: r.note || '', th: r.note || '' }, tag: { en: (r.tags || []).join(' '), th: '' } };
-    for (const k of side === 'food' ? foodStylesOf(x) : outStylesOf(x)) if (!have.has(k)) n[k] = (n[k] || 0) + 1;
-  }
-  return Object.entries(n).sort((x, y) => y[1] - x[1]).slice(0, 5).map((e) => (side === 'food' ? TASTE_FOOD : TASTE_OUT).find((r) => r[0] === e[0])).filter(Boolean);
+function tasteHints(side, which = 'like') {
+  const l = famLearned()[side], list = side === 'food' ? TASTE_FOOD : TASTE_OUT;
+  return (l ? l[which] : []).slice(0, 6).map((k) => list.find((r) => r[0] === k)).filter(Boolean);
 }
 // #/taste in pages (owner, Nov 2026: "แยกเป็นหลายหน้า … เรียนรู้จากประวัติเดิม"): outings · food · always allow for · each child
 const TASTE_Q = [['out', '🎒', 'ที่เที่ยว', 'Outings'], ['food', '🍜', 'อาหาร', 'Food'], ['need', '🧳', 'ต้องคิดถึง', 'Allow for'], ['kids', '🧒', 'ลูกแต่ละคน', 'Each child']];
@@ -3151,7 +3149,8 @@ function viewTaste(qs) {
   const t = famTaste(), kids = children(), qsl = kids.length ? TASTE_Q : TASTE_Q.slice(0, 3);
   const k = Math.max(0, qsl.findIndex((q) => q[0] === qs)), q = qsl[k], last = k === qsl.length - 1;
   const how = `<p class="label">${L('แตะหนึ่งครั้ง = ชอบ 💛 · แตะอีกครั้ง = ไม่เอา 🚫 · แตะอีกครั้ง = เฉยๆ', 'Tap once = we love it 💛 · again = we skip it 🚫 · again = no view')}</p>`;
-  const hints = (side) => { const h = tasteHints(side); return h.length ? `<div class="part pickh plhist">⭐ ${L('จากที่เคยให้ดาวสูง แตะเพื่อเพิ่ม', 'From the places we starred — tap to add')}</div><div class="row chips tastechips tastehints">${h.map((r) => `<button type="button" class="chip" data-a="tasteadd" data-g="${side}" data-v="${r[0]}">＋ <span aria-hidden="true">${emo(r[1])}</span> ${L(r[2], r[3])}</button>`).join('')}</div>` : ''; };
+  const hints = (side) => { const h = tasteHints(side), lo = tasteHints(side, 'avoid'); return (h.length ? `<div class="part pickh plhist">💡 ${L('เรียนรู้จากรีวิวทริปที่ผ่านมา · ใช้แล้วเบาๆ แตะเพื่อเก็บเป็นของเรา', 'Learned from our reviews · used gently already, tap to make it ours')}</div><div class="row chips tastechips tastehints">${h.map((r) => `<button type="button" class="chip tastechip" data-st="learned" data-a="tasteadd" data-g="${side}" data-v="${r[0]}">＋ <span aria-hidden="true">${emo(r[1])}</span> ${L(r[2], r[3])}</button>`).join('')}</div>` : '')
+    + (lo.length ? `<p class="label tastelo">🔻 ${L('เคยให้ดาวน้อย จึงเลื่อนลงไปท้ายๆ', 'We rated these low, so they go further down')}: ${lo.map((r) => `${r[1]} ${L(r[2], r[3])}`).join(' · ')}</p>` : ''); };
   const kidSum = (c) => { const ks = t.kids[c.slug] || [], rows = [...TASTE_OUT, ...TASTE_FOOD].filter((r) => ks.includes(r[0])); return rows.length ? rows.slice(0, 6).map((r) => `${r[1]} ${L(r[2], r[3])}`).join(' · ') + (rows.length > 6 ? ' …' : '') : L('แตะเพื่อเลือก (ไม่ใส่ก็ได้)', 'Tap to choose (optional)'); };
   const kid = (c) => `<details class="tastekid"><summary class="tkh">${kidFace(c.slug)}<span class="tkn"><b>${esc(kidName(c.slug))}</b><small class="tks" data-k="${esc(c.slug)}">${esc(kidSum(c))}</small></span>${ic('chev', 'chv')}</summary><div class="row chips tastechips" role="group">${[...TASTE_OUT, ...TASTE_FOOD].map((r) => `<button type="button" class="chip" data-a="tastekid" data-k="${esc(c.slug)}" data-v="${r[0]}" aria-pressed="${(t.kids[c.slug] || []).includes(r[0])}"><span aria-hidden="true">${emo(r[1])}</span> ${L(r[2], r[3])}</button>`).join('')}</div></details>`;
   const pages = {
