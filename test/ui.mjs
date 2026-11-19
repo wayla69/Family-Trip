@@ -825,7 +825,7 @@ const T = 'hk-macau-2026';
   const bagKeys = await page.$$eval('.bag input[data-ck]', (els) => els.map((e) => e.dataset.ck));
   ok(['kidpp', 'sun', 'pram', 'spare'].every((k) => bagKeys.includes(`${T}.bag.d1.${k}`)) && !bagKeys.includes(`${T}.bag.d1.passports`) && /\d\d:\d\d · /.test(await page.textContent('.bag')), "today page: today's bag lists what the day's plan needs, with the reason (and not the passports on a city day)");
   ok(await page.locator('details.bag:not([open])').count() === 1 && !/0\//.test(await page.textContent('.bag summary')), 'today page before the trip: the bag is one closed line and names how many things, never “0/n packed”');
-  await page.click('.bag summary'); await page.check(`.bag input[data-ck="${T}.bag.d1.sun"]`); await page.reload(); await page.waitForSelector('.bag');
+  await page.click('.bag summary'); await page.check(`.bag input[data-ck="${T}.bag.d1.sun"]`); await page.reload(); await page.waitForSelector('.bag').catch(async (e) => { console.log('DEBUG after reload:', await page.evaluate(() => `${location.hash} · ${document.querySelectorAll('.bag').length} bag · ${(document.querySelector('main') || document.body).innerText.slice(0, 400).replace(/\s+/g, ' ')}`)); await page.screenshot({ path: `${OUT}/debug-bag.png` }); throw e; });
   ok(await page.isChecked(`.bag input[data-ck="${T}.bag.d1.sun"]`), "today page: a tick in today's bag stays after a reload");
   ok(await page.locator('.remind.line [data-a="remind"]').count() === 1 && await page.locator('.remind:not(.line)').count() === 0 && /30/.test(await page.textContent('.remind')), 'today page: one line with a “turn on” button — not a second reminder card (the ask lives on the shelf)');
   const tlRows = await page.$$eval('.tl.plan.brief li div', (els) => els.map((e) => e.textContent));
@@ -2754,7 +2754,7 @@ const T = 'hk-macau-2026';
   ok(true, 'memory game: two questions, then a well-done and "play again"');
   await page.evaluate(() => ls('kidmode', null));
   await page.clock.setFixedTime(new Date('2026-12-10T03:00:00Z'));   // the last day: the certificate comes by itself, for both
-  for (const k of ['mimi', 'mika']) { await page.goto(`${BASE}/#/passport/${k}/${T}`); await page.reload(); await page.waitForSelector('#cert'); }
+  for (const k of ['mimi', 'mika']) { await page.goto(`${BASE}/#/passport/${k}/${T}`); await page.reload(); await page.waitForSelector('#cert').catch(async (e) => { console.log('DEBUG cert after reload:', await page.evaluate(() => `${location.hash} · ${document.querySelectorAll('#cert').length} cert · ${(document.querySelector('main') || document.body).innerText.slice(0, 400).replace(/\s+/g, ' ')}`)); await page.screenshot({ path: `${OUT}/debug-cert.png` }); throw e; }); }
   ok(await page.locator('#cert.earned').count() === 1 && (await page.textContent('#cert')).includes('pointed, touched'), 'on the last day the certificate is there without any ticking (Mika gets her own words)');
   await page.clock.setFixedTime(new Date('2026-12-07T03:00:00Z'));
   await page.goto(`${BASE}/#/kid/mimi/numbers`); await page.waitForSelector('.cnt');
