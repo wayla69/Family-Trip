@@ -497,6 +497,21 @@ nav.bar a[aria-current=page] i{transform:translateY(-2px) scale(1.12);display:in
 .hero .count span{font-size:15px;font-weight:600;opacity:.9}
 .hero .kids{margin:8px 0 14px;font-size:14px;opacity:.92}
 .hero .btn{background:#fff;color:var(--hero,var(--accent))}
+/* the hero's buttons: one column, one width (owner's Samsung, Nov 2026: "Open the book" and the surprise button were two widths, one under the other) */
+.hero .heroacts{display:flex;flex-direction:column;align-items:stretch;gap:10px;width:100%;max-width:420px}
+.hero .hbtn{display:flex;align-items:center;gap:12px;width:100%;min-height:64px;padding:8px 14px 8px 8px;border-radius:18px;border:0;text-align:left;text-decoration:none;font:inherit;cursor:pointer;
+  background:#fff;color:var(--hero,var(--accent));box-shadow:0 8px 20px rgba(0,0,0,.18);transition:transform .15s}
+.hero .hbtn:active{transform:scale(.98)}
+.hero .hbpic{flex:none;width:48px;height:48px;border-radius:50%;display:grid;place-items:center;background:color-mix(in srgb,var(--hero,var(--accent)) 12%,#fff)}
+.hero .hbpic img{width:40px;height:40px;object-fit:contain}
+.hero .hbt{flex:1;min-width:0;display:grid;line-height:1.2}
+.hero .hbt b{font-size:17px;font-weight:700}
+.hero .hbt small{font-size:13px;font-weight:500;color:color-mix(in srgb,var(--hero,var(--accent)) 60%,#555)}
+.hero .hbgo{flex:none;font-size:24px;font-weight:600;opacity:.6}
+.hero .hbtn.alt{background:rgba(255,255,255,.14);color:#fff;box-shadow:inset 0 0 0 1.5px rgba(255,255,255,.4);-webkit-backdrop-filter:blur(6px);backdrop-filter:blur(6px)}
+.hero .hbtn.alt .hbpic{background:rgba(255,255,255,.92)}
+.hero .hbtn.alt .hbt small{color:rgba(255,255,255,.85)}
+.hero .hbtn.alt .hbgo{opacity:.85}
 .hero .float{position:relative;width:280px;height:190px}
 .hero .float .art{position:absolute;width:56px;height:56px;filter:drop-shadow(0 6px 10px rgba(0,0,0,.25));animation:bob 4s ease-in-out infinite}
 .hero .float .f0{left:0;top:0;--r:-6deg}.hero .float .f1{left:48px;top:-6px;--r:8deg;animation-delay:-1s;width:48px;height:48px}.hero .float .f2{left:96px;top:2px;--r:-10deg;animation-delay:-2s;width:46px;height:46px}
@@ -3856,3 +3871,19 @@ a.plchip{text-decoration:none}a.plchip .label{font-weight:700}a.plchip[aria-curr
 .tastelo{margin-top:6px}
 /* E6: the styles' painted pictures on chips */
 img.tpic{width:28px;height:28px;vertical-align:middle;margin:-4px 0;object-fit:contain}
+/* "where to", country first: cards of countries, then of the towns of the one opened (several ticked) */
+.plcards{display:grid;grid-template-columns:repeat(auto-fill,minmax(min(100%,96px),1fr));gap:8px;margin:2px 0 6px}
+.plcard{display:flex;flex-direction:column;align-items:center;gap:4px;min-height:100px;padding:10px 6px 8px;border-radius:16px;font:inherit;cursor:pointer;text-align:center;
+  border:1px solid color-mix(in srgb,var(--tc,var(--g1,var(--accent))) 35%,var(--line));background:color-mix(in srgb,var(--tc,var(--g1,var(--accent))) 8%,var(--card));color:var(--ink);position:relative}
+.plcard .plcp{width:50px;height:50px;border-radius:50%;background:#fff;display:grid;place-items:center;font-size:30px;box-shadow:0 2px 6px rgba(0,0,0,.08)}
+.plcard .plcp img{width:45px;height:45px;object-fit:contain}
+.plcard b{font-size:14px;line-height:1.2}.plcard small{font-size:12.5px;color:var(--muted);line-height:1.2}
+.plcard[aria-pressed=true]{border:2px solid color-mix(in srgb,var(--tc,var(--accent)) 75%,var(--ink));background:color-mix(in srgb,var(--tc,var(--accent)) 18%,var(--card))}
+.plcard[aria-pressed=true]::after{content:"✓";position:absolute;top:6px;right:8px;width:22px;height:22px;border-radius:50%;display:grid;place-items:center;font-size:13px;font-weight:700;color:#fff;background:color-mix(in srgb,var(--tc,var(--accent)) 75%,var(--ink))}
+.plcard.whole{border-style:dashed}
+.plcty{display:flex;align-items:center;gap:10px;flex-wrap:wrap;margin:0 0 4px}
+.plcty .plback{min-height:44px;padding:0 14px;border-radius:999px;border:1px solid var(--line);background:var(--card);font:inherit;font-weight:600;color:var(--ink);cursor:pointer}
+.plctyn{display:inline-flex;align-items:center;gap:8px;font-size:18px}.plctyn img{width:40px;height:40px;border-radius:50%;background:#fff;object-fit:contain}
+.plallcc{min-height:44px}
+:root[data-theme=dark] .plcard .plcp,:root[data-theme=dark] .plctyn img{background:#F4F1EA}
+

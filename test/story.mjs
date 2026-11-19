@@ -884,7 +884,34 @@ try {
         const cuba = await sug('Cub'), th = await sug('อเมริกา');
         ok(/United States/.test(usa[0]) && !usa.some((x) => /Busan/.test(x)) && usa.some((x) => /New York/.test(x)) && picked === 'The United States' && /Cuba/.test(cuba[0]) && /United States/.test(th[0]),
           `planner page: "where to" finds a country by its other names and brings its towns, a tap puts the name in place of what was typed, a country outside the picture library is offered too (${usa.join(' | ')} · ${picked} · ${cuba.join(' | ')} · ${th.join(' | ')})`);
+        // country first, then towns (owner: "เลือกประเทศก่อนได้ไหม แล้วค่อยเป็นเมือง"): countries as cards, a tap opens its towns, several ticked,
+        // "the whole country" swaps with its towns; "where to" stays the one text the route reads
+        { await pp.fill('#pldest', ''); await pp.dispatchEvent('#pldest', 'input'); await pp.evaluate(() => { pln.cc = ''; document.getElementById('plwhere').innerHTML = plWhereHtml(pln.a); });
+          const nc = await pp.locator('.plcards .plcard[data-a="plancc"]').count();
+          await pp.click('.plcard[data-a="plancc"][data-v="jp"]'); await pp.waitForSelector('.plcty');
+          const towns = await pp.locator('.plcard[data-a="plantown"]').count();
+          await pp.click('.plcard[data-a="plantown"] >> nth=1'); await pp.click('.plcard[data-a="plantown"] >> nth=2'); const two = await pp.inputValue('#pldest');
+          const on = await pp.locator('.plcard[aria-pressed="true"]').count();
+          await pp.click('.plcard.whole'); const whole = await pp.inputValue('#pldest');
+          await pp.click('.plback'); const back = await pp.locator('.plcard[data-a="plancc"][data-v="jp"][aria-pressed="true"]').count();
+          ok(nc >= 8 && towns >= 10 && two.split(',').length === 2 && on === 2 && /^(Japan|ญี่ปุ่น)$/.test(whole) && back === 1,
+            `planner page: country first — ${nc} countries, Japan opens ${towns} towns, two ticked (${two}), "all of Japan" replaces them (${whole}), the country shows as picked`);
+          await pp.fill('#pldest', ''); await pp.dispatchEvent('#pldest', 'input'); }
+        // flexible (owner: "ทำการค้นหาให้ flexible"): a slip of a letter, a name written together, a Thai name typed short, one letter
+        const tk = await sug('tokio'), hk = await sug('hokaido'), ny = await sug('newyork'), so = await sug('seol'), sy = await sug('ซิดนี'), one = await sug('b');
+        ok(/Tokyo/.test(tk[0]) && /Hokkaido/.test(hk[0]) && /New York/.test(ny[0]) && /Seoul/.test(so[0]) && /Sydney/.test(sy[0]) && one.length >= 3 && one.every((x) => x.replace(/[^A-Za-z]/g, '').startsWith('B')),
+          `planner page: "where to" forgives a slip and spacing, and one letter brings the places that start with it (${[tk[0], hk[0], ny[0], so[0], sy[0]].join(' · ')} · ${one.join(' | ')})`);
         await pp.fill('#pldest', d1); await pp.dispatchEvent('#pldest', 'input');
+      }
+      { // the place list fails once (no signal) while the parent is already typing: it is asked again and the row fills in place (owner's Samsung: "USA" offered nothing)
+        const gc = await browser.newContext({ viewport: { width: 412, height: 915 } }), gp = await gc.newPage(); let n = 0;
+        await gp.route('**/api/b/geo', (r) => (n++ === 0 ? r.abort() : r.continue()));
+        await gp.goto(BASE + '/'); await gp.waitForSelector('#lf'); await gp.fill('#lname', 'Dad'); await gp.fill('#lcode', CODE); await gp.keyboard.press('Enter'); await gp.waitForSelector('.shelf');
+        await gp.goto(BASE + '/#/planner/where'); await gp.waitForSelector('#pldest'); await gp.click('#pldest'); await gp.keyboard.type('USA');
+        const got = await gp.waitForFunction(() => [...document.querySelectorAll('#plsug .plsg')].some((e) => /United States/.test(e.textContent)), null, { timeout: 12000 }).then(() => true, () => false);
+        const focused = await gp.evaluate(() => document.activeElement && document.activeElement.id);
+        ok(got && n >= 2 && focused === 'pldest', `planner page: a failed place list is asked again and "USA" is offered while the box keeps the focus (${n} asks · ${got} · focus ${focused})`);
+        await gc.close();
       }
       await pp.goto(BASE + '/#/planner/when'); await pp.waitForSelector('#plfrom');
       await pp.fill('#plfrom', '2027-05-01'); await pp.keyboard.press('Tab'); await pp.click('.pllens .plchip[data-v="5"]');
