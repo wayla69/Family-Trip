@@ -1,0 +1,625 @@
+{
+ "cc": "de",
+ "towns": [
+  {
+   "place": "de-munich",
+   "sights": [
+    {
+     "name": {
+      "en": "Deutsches Museum",
+      "th": "ด็อยท์เชส มูเซียม"
+     },
+     "local": "Deutsches Museum",
+     "kind": "museumkid",
+     "area": {
+      "en": "Museumsinsel",
+      "th": "มูเซียมส์อินเซล"
+     },
+     "what": {
+      "en": "One of the world's great science and technology museums, on an island in the Isar, with a hands-on children's area for ages 3 to 8",
+      "th": "พิพิธภัณฑ์วิทยาศาสตร์และเทคโนโลยีชั้นนำของโลก บนเกาะกลางแม่น้ำอีซาร์ มีโซนเด็กให้จับเล่นสำหรับอายุ 3 ถึง 8 ขวบ"
+     },
+     "why": {
+      "en": "The children's area lets small ones build, pump water and play with light and sound; a whole day out of the rain",
+      "th": "โซนเด็กให้ต่อของ สูบน้ำ เล่นแสงและเสียง เที่ยวได้ทั้งวันแม้ฝนตก"
+     },
+     "tip": {
+      "en": "Parts of the museum are being renovated until 2028, so not every hall is open; head for the children's area first",
+      "th": "บางส่วนปิดปรับปรุงถึงปี 2028 ไม่ได้เปิดทุกห้อง ไปโซนเด็กก่อน"
+     },
+     "ages": [
+      1,
+      2,
+      2,
+      2
+     ],
+     "hrs": 4,
+     "io": "in",
+     "pram": "yes",
+     "price": {
+      "en": "≈ €16 adults · €9 ages 6–17 · €33 family · young children free",
+      "th": "≈ €16 ผู้ใหญ่ · €9 อายุ 6–17 ปี · €33 ตั๋วครอบครัว · เด็กเล็กฟรี"
+     },
+     "book": "rec",
+     "q": "Deutsches Museum, Museumsinsel, Munich",
+     "ok": "2026-11",
+     "src": "https://www.deutsches-museum.de/en/museum/current-news/slight-increase-in-admission-prices"
+    },
+    {
+     "name": {
+      "en": "Hellabrunn Zoo",
+      "th": "สวนสัตว์เฮลลาบรุนน์"
+     },
+     "local": "Tierpark Hellabrunn",
+     "kind": "zoo",
+     "area": {
+      "en": "Thalkirchen",
+      "th": "ทาลเคียร์เชิน"
+     },
+     "what": {
+      "en": "A big 'geo zoo' on the banks of the Isar with polar bears, elephants, penguins and a children's zoo",
+      "th": "สวนสัตว์ขนาดใหญ่ริมแม่น้ำอีซาร์ จัดสัตว์ตามทวีป มีหมีขั้วโลก ช้าง เพนกวิน และสวนสัตว์เด็ก"
+     },
+     "why": {
+      "en": "Wide paths, playgrounds and a petting area where children can stroke goats",
+      "th": "ทางเดินกว้าง มีสนามเด็กเล่น และลานให้เด็กลูบแพะ"
+     },
+     "tip": {
+      "en": "Children's prices rose on 1 October 2026; the elephant house and the polar world are warm stops on a cold day",
+      "th": "ค่าเข้าเด็กขึ้นเมื่อ 1 ต.ค. 2026 บ้านช้างกับโซนขั้วโลกเป็นที่หลบหนาวได้"
+     },
+     "ages": [
+      2,
+      2,
+      2,
+      1
+     ],
+     "hrs": 4,
+     "io": "both",
+     "pram": "yes",
+     "price": {
+      "en": "≈ €23 adults · €9 ages 4–14 · under 4 free",
+      "th": "≈ €23 ผู้ใหญ่ · €9 อายุ 4–14 ปี · ต่ำกว่า 4 ขวบฟรี"
+     },
+     "book": "none",
+     "q": "Tierpark Hellabrunn, Thalkirchen, Munich",
+     "ok": "2026-11",
+     "src": "https://www.muenchen.de/sehenswuerdigkeiten/tierpark-hellabrunn/besucherservice"
+    },
+    {
+     "name": {
+      "en": "SEA LIFE Munich",
+      "th": "ซีไลฟ์ มิวนิก"
+     },
+     "local": "SEA LIFE München",
+     "kind": "aquarium",
+     "area": {
+      "en": "Olympiapark",
+      "th": "โอลิมเปียพาร์ก"
+     },
+     "what": {
+      "en": "An aquarium that follows the water from the Isar to the sea, with a tunnel under sharks and rays",
+      "th": "พิพิธภัณฑ์สัตว์น้ำที่พาตามสายน้ำจากแม่น้ำอีซาร์สู่ทะเล มีอุโมงค์ใต้ฉลามและปลากระเบน"
+     },
+     "why": {
+      "en": "Compact and indoors, with low tanks small children can see into; a good rainy hour",
+      "th": "ไม่ใหญ่ อยู่ในร่ม ตู้ปลาเตี้ยเด็กเล็กมองเห็น เหมาะหลบฝนสักชั่วโมง"
+     },
+     "tip": {
+      "en": "Entry is by a timed slot booked online; it is cheaper than at the door",
+      "th": "ต้องจองรอบเวลาออนไลน์ ถูกกว่าซื้อหน้างาน"
+     },
+     "ages": [
+      2,
+      2,
+      2,
+      1
+     ],
+     "hrs": 1.5,
+     "io": "in",
+     "pram": "yes",
+     "price": {
+      "en": "≈ €22 adults online · €17 ages 3–13 · under 2 free",
+      "th": "≈ €22 ผู้ใหญ่ซื้อออนไลน์ · €17 อายุ 3–13 ปี · ต่ำกว่า 2 ขวบฟรี"
+     },
+     "book": "req",
+     "q": "SEA LIFE München, Olympiapark, Munich",
+     "ok": "2026-11",
+     "src": "https://thebettervacation.com/de/M%C3%BCnchen/Meeresleben-M%C3%BCnchen/"
+    },
+    {
+     "name": {
+      "en": "English Garden and the Chinese Tower playground",
+      "th": "สวนอิงลิชการ์เดินและสนามเด็กเล่นไชนีสทาวเวอร์"
+     },
+     "local": "Englischer Garten · Chinesischer Turm",
+     "kind": "park",
+     "area": {
+      "en": "Schwabing",
+      "th": "ชวาบิง"
+     },
+     "what": {
+      "en": "One of the world's largest city parks, with meadows, streams, the wooden Chinese Tower and a playground with a historic carousel",
+      "th": "สวนสาธารณะในเมืองที่ใหญ่ที่สุดแห่งหนึ่งของโลก มีทุ่งหญ้า ลำธาร หอไม้ไชนีสทาวเวอร์ และสนามเด็กเล่นที่มีม้าหมุนเก่าแก่"
+     },
+     "why": {
+      "en": "The playground by the tower has swings, slides and climbing frames, with a beer garden for parents beside it",
+      "th": "สนามเด็กเล่นข้างหอมีชิงช้า สไลเดอร์ และที่ปีนป่าย มีเบียร์การ์เดินให้พ่อแม่นั่งข้างๆ"
+     },
+     "tip": {
+      "en": "The carousel costs extra; watch the surfers on the Eisbach wave at the park's south end",
+      "th": "ม้าหมุนเสียเงินเพิ่ม ทางใต้ของสวนมีคนโต้คลื่นที่ลำน้ำไอส์บาคให้ดู"
+     },
+     "ages": [
+      2,
+      2,
+      2,
+      2
+     ],
+     "hrs": 2.5,
+     "io": "out",
+     "pram": "yes",
+     "price": {
+      "en": "Free",
+      "th": "ฟรี"
+     },
+     "book": "none",
+     "q": "Chinesischer Turm, Englischer Garten, Munich",
+     "ok": "2026-11",
+     "src": "https://www.muenchen.de/sehenswuerdigkeiten/top-sehenswuerdigkeiten/chinesischer-turm"
+    },
+    {
+     "name": {
+      "en": "Viktualienmarkt",
+      "th": "วิคทัวลีเอินมาร์คท์"
+     },
+     "local": "Viktualienmarkt",
+     "kind": "market",
+     "area": {
+      "en": "Old Town",
+      "th": "เมืองเก่า"
+     },
+     "what": {
+      "en": "Munich's open-air food market in the old town: fruit, cheese, sausages, bakeries and juice stands round a maypole",
+      "th": "ตลาดอาหารกลางแจ้งในเมืองเก่าของมิวนิก มีผลไม้ ชีส ไส้กรอก ขนมปัง และน้ำผลไม้ รอบเสาเมย์โพล"
+     },
+     "why": {
+      "en": "Easy to graze with children: a pretzel, fruit and a sausage in a bun, with seats under the trees",
+      "th": "พาเด็กเดินกินง่าย เพรทเซล ผลไม้ ไส้กรอกในขนมปัง มีที่นั่งใต้ต้นไม้"
+     },
+     "tip": {
+      "en": "Stalls open Monday to Saturday and close on Sundays; some stalls also close on Mondays",
+      "th": "แผงเปิดจันทร์ถึงเสาร์ ปิดวันอาทิตย์ บางร้านปิดวันจันทร์ด้วย"
+     },
+     "ages": [
+      1,
+      2,
+      2,
+      2
+     ],
+     "hrs": 1,
+     "io": "out",
+     "pram": "yes",
+     "price": {
+      "en": "Free to wander · food ≈ €5–15 a person",
+      "th": "เดินชมฟรี · ของกิน ≈ €5–15 ต่อคน"
+     },
+     "book": "none",
+     "q": "Viktualienmarkt, Altstadt, Munich",
+     "ok": "2026-11",
+     "src": "https://www.muenchen.de/sehenswuerdigkeiten/viktualienmarkt"
+    },
+    {
+     "name": {
+      "en": "Marienplatz and the Glockenspiel",
+      "th": "มาเรียนพลัทซ์และนาฬิกากล็อคเคินชปีล"
+     },
+     "local": "Glockenspiel im Neuen Rathaus",
+     "kind": "show",
+     "area": {
+      "en": "Old Town",
+      "th": "เมืองเก่า"
+     },
+     "what": {
+      "en": "The main square, where figures in the New Town Hall tower dance and joust to chiming bells",
+      "th": "จัตุรัสใจกลางเมือง หุ่นบนหอของศาลาว่าการใหม่ออกมาเต้นและประลองทวนตามเสียงระฆัง"
+     },
+     "why": {
+      "en": "A free show of about a quarter of an hour that small children love; the square is car-free",
+      "th": "การแสดงฟรีราว 15 นาทีที่เด็กเล็กชอบ จัตุรัสไม่มีรถวิ่ง"
+     },
+     "tip": {
+      "en": "It plays daily at 11:00 and 12:00; arrive a few minutes early and stand back for a view of the tower",
+      "th": "แสดงทุกวัน 11:00 และ 12:00 มาก่อนสักหน่อยแล้วถอยออกมาให้เห็นหอ"
+     },
+     "ages": [
+      2,
+      2,
+      2,
+      1
+     ],
+     "hrs": 0.5,
+     "io": "out",
+     "pram": "yes",
+     "price": {
+      "en": "Free",
+      "th": "ฟรี"
+     },
+     "book": "none",
+     "q": "Glockenspiel, Neues Rathaus, Marienplatz, Munich",
+     "ok": "2026-11",
+     "src": "https://www.muenchen.de/sehenswuerdigkeiten/glockenspiel"
+    },
+    {
+     "name": {
+      "en": "BMW Welt",
+      "th": "บีเอ็มดับเบิลยู เวลท์"
+     },
+     "local": "BMW Welt",
+     "kind": "museum",
+     "area": {
+      "en": "Olympiapark",
+      "th": "โอลิมเปียพาร์ก"
+     },
+     "what": {
+      "en": "A swooping glass showroom of new cars and motorbikes that visitors can sit on",
+      "th": "โชว์รูมกระจกโค้งของรถยนต์และมอเตอร์ไซค์รุ่นใหม่ ขึ้นไปนั่งลองได้"
+     },
+     "why": {
+      "en": "Free, warm and roomy: children climb into cars and onto bikes while it rains outside",
+      "th": "ฟรี อบอุ่น กว้างขวาง เด็กๆ ปีนขึ้นนั่งรถและมอเตอร์ไซค์ได้ตอนฝนตก"
+     },
+     "tip": {
+      "en": "No booking needed; pair it with SEA LIFE or the Olympic Park across the road",
+      "th": "ไม่ต้องจอง ไปต่อซีไลฟ์หรือโอลิมเปียพาร์กฝั่งตรงข้ามได้"
+     },
+     "ages": [
+      1,
+      2,
+      2,
+      2
+     ],
+     "hrs": 1,
+     "io": "in",
+     "pram": "yes",
+     "price": {
+      "en": "Free",
+      "th": "ฟรี"
+     },
+     "book": "none",
+     "q": "BMW Welt, Am Olympiapark, Munich",
+     "ok": "2026-11",
+     "src": "https://www.press.bmwgroup.com/global/article/detail/T0447988EN/reopening-of-bmw-welt:-what-guests-can-look-forward-to"
+    },
+    {
+     "name": {
+      "en": "BMW Museum",
+      "th": "พิพิธภัณฑ์บีเอ็มดับเบิลยู"
+     },
+     "local": "BMW Museum",
+     "kind": "museum",
+     "area": {
+      "en": "Olympiapark",
+      "th": "โอลิมเปียพาร์ก"
+     },
+     "what": {
+      "en": "A round 'bowl' building beside BMW Welt with a century of cars, motorbikes and racing cars",
+      "th": "อาคารทรงชามข้างบีเอ็มดับเบิลยู เวลท์ จัดแสดงรถยนต์ มอเตอร์ไซค์ และรถแข่งตลอดร้อยปี"
+     },
+     "why": {
+      "en": "Car-mad children of five and up enjoy it; little ones may tire of looking without touching",
+      "th": "เด็กห้าขวบขึ้นไปที่ชอบรถจะสนุก เด็กเล็กอาจเบื่อเพราะจับไม่ได้"
+     },
+     "tip": {
+      "en": "Closed on Mondays; open 10:00–18:00 the other days",
+      "th": "ปิดวันจันทร์ วันอื่นเปิด 10:00–18:00"
+     },
+     "ages": [
+      0,
+      1,
+      2,
+      2
+     ],
+     "hrs": 1.5,
+     "io": "in",
+     "pram": "yes",
+     "price": {
+      "en": "≈ €17 adults · €9 children",
+      "th": "≈ €17 ผู้ใหญ่ · €9 เด็ก"
+     },
+     "book": "none",
+     "q": "BMW Museum, Am Olympiapark, Munich",
+     "ok": "2026-11",
+     "src": "https://thebettervacation.com/de/M%C3%BCnchen/bmw-museum/"
+    },
+    {
+     "name": {
+      "en": "Nymphenburg Palace and Park",
+      "th": "พระราชวังและสวนนิมเฟินบวร์ก"
+     },
+     "local": "Schloss Nymphenburg",
+     "kind": "culture",
+     "area": {
+      "en": "Nymphenburg",
+      "th": "นิมเฟินบวร์ก"
+     },
+     "what": {
+      "en": "The Bavarian kings' summer palace, with golden coaches, a long canal with swans and a huge park",
+      "th": "พระราชวังฤดูร้อนของกษัตริย์บาวาเรีย มีรถม้าทองคำ คลองยาวมีหงส์ และสวนกว้างใหญ่"
+     },
+     "why": {
+      "en": "Under-18s go free into the palace, and the park is free for everyone, with ducks and swans along the canal",
+      "th": "เด็กต่ำกว่า 18 ปีเข้าพระราชวังฟรี สวนเข้าฟรีทุกคน มีเป็ดและหงส์ให้ดู"
+     },
+     "tip": {
+      "en": "Children usually like the coach museum best; gondola rides on the canal run only from April to October",
+      "th": "เด็กมักชอบพิพิธภัณฑ์รถม้าที่สุด เรือกอนโดลาในคลองมีแค่เมษายนถึงตุลาคม"
+     },
+     "ages": [
+      1,
+      1,
+      2,
+      2
+     ],
+     "hrs": 2.5,
+     "io": "both",
+     "pram": "part",
+     "price": {
+      "en": "Park free · palace combined ticket ≈ €16 adults in winter · under 18 free",
+      "th": "สวนฟรี · ตั๋วรวมพระราชวัง ≈ €16 ผู้ใหญ่ช่วงหน้าหนาว · ต่ำกว่า 18 ปีฟรี"
+     },
+     "book": "none",
+     "q": "Schloss Nymphenburg, Nymphenburg, Munich",
+     "ok": "2026-11",
+     "src": "https://www.schloss-nymphenburg.de/englisch/tourist/admiss.htm"
+    },
+    {
+     "name": {
+      "en": "Museum Mensch und Natur",
+      "th": "พิพิธภัณฑ์เมนช์อุนท์นาทัวร์"
+     },
+     "local": "Museum Mensch und Natur",
+     "kind": "museumkid",
+     "area": {
+      "en": "Nymphenburg",
+      "th": "นิมเฟินบวร์ก"
+     },
+     "what": {
+      "en": "A natural history museum in a wing of Nymphenburg Palace: dinosaurs, minerals, animals and the human body",
+      "th": "พิพิธภัณฑ์ธรรมชาติในปีกหนึ่งของพระราชวังนิมเฟินบวร์ก มีไดโนเสาร์ แร่ สัตว์ และร่างกายมนุษย์"
+     },
+     "why": {
+      "en": "Small, hands-on and free for children; easy to add to a palace visit",
+      "th": "ไม่ใหญ่ มีของให้จับเล่น เด็กเข้าฟรี ไปพร้อมพระราชวังได้ง่าย"
+     },
+     "tip": {
+      "en": "Closed on Mondays; Sundays cost only €1 for adults",
+      "th": "ปิดวันจันทร์ วันอาทิตย์ผู้ใหญ่จ่ายแค่ €1"
+     },
+     "ages": [
+      1,
+      2,
+      2,
+      1
+     ],
+     "hrs": 1.5,
+     "io": "in",
+     "pram": "yes",
+     "price": {
+      "en": "≈ €3.50 adults · under 18 free",
+      "th": "≈ €3.50 ผู้ใหญ่ · ต่ำกว่า 18 ปีฟรี"
+     },
+     "book": "none",
+     "q": "Museum Mensch und Natur, Schloss Nymphenburg, Munich",
+     "ok": "2026-11",
+     "src": "https://www.muenchen.de/sehenswuerdigkeiten/museen/museum-mensch-und-natur"
+    },
+    {
+     "name": {
+      "en": "Bavaria Filmstadt",
+      "th": "บาวาเรียฟิล์มชตัดท์"
+     },
+     "local": "Bavaria Filmstadt",
+     "kind": "show",
+     "area": {
+      "en": "Geiselgasteig",
+      "th": "ไกเซิลกาสไทก์"
+     },
+     "what": {
+      "en": "A guided walk through real film sets, with a 4D motion cinema at the end",
+      "th": "ทัวร์มีไกด์เดินชมฉากถ่ายภาพยนตร์จริง ปิดท้ายด้วยโรงหนังสี่มิติที่เก้าอี้ขยับได้"
+     },
+     "why": {
+      "en": "Children can ride a dragon and stand in a ship's set; the 4D cinema has height rules for the smallest",
+      "th": "เด็กได้ขี่มังกรและยืนในฉากเรือ โรงหนังสี่มิติมีเกณฑ์ส่วนสูงสำหรับเด็กเล็ก"
+     },
+     "tip": {
+      "en": "Tours run in German most of the day; ask for the English tour time when you book",
+      "th": "ทัวร์ส่วนใหญ่เป็นภาษาเยอรมัน ถามรอบภาษาอังกฤษตอนจอง"
+     },
+     "ages": [
+      0,
+      1,
+      2,
+      2
+     ],
+     "hrs": 2.5,
+     "io": "both",
+     "pram": "part",
+     "price": {
+      "en": "≈ €24 adults · €21 ages 6–17 for the tour and 4D cinema · under 6 free",
+      "th": "≈ €24 ผู้ใหญ่ · €21 อายุ 6–17 ปี รวมทัวร์และโรงหนังสี่มิติ · ต่ำกว่า 6 ขวบฟรี"
+     },
+     "book": "rec",
+     "q": "Bavaria Filmstadt, Geiselgasteig, Munich",
+     "ok": "2026-11",
+     "src": "https://thebettervacation.com/munich/bavaria-filmstadt/amp/"
+    },
+    {
+     "name": {
+      "en": "FC Bayern Museum and Allianz Arena tour",
+      "th": "พิพิธภัณฑ์เอฟซีบาเยิร์นและทัวร์อัลลิอันซ์อารีนา"
+     },
+     "local": "FC Bayern Museum · Allianz Arena",
+     "kind": "museum",
+     "area": {
+      "en": "Fröttmaning",
+      "th": "เฟริทมานิง"
+     },
+     "what": {
+      "en": "The football club's museum inside its glowing stadium, with a tour of the stands, changing rooms and players' tunnel",
+      "th": "พิพิธภัณฑ์สโมสรฟุตบอลในสนามที่เปลี่ยนสีได้ มีทัวร์อัฒจันทร์ ห้องแต่งตัว และอุโมงค์นักเตะ"
+     },
+     "why": {
+      "en": "Football-loving children of six and up will adore it; there is a children's media guide in English",
+      "th": "เด็กหกขวบขึ้นไปที่ชอบฟุตบอลจะชอบมาก มีไกด์มัลติมีเดียสำหรับเด็กเป็นภาษาอังกฤษ"
+     },
+     "tip": {
+      "en": "The museum and tour take about two and a half hours; tours do not run on some match days",
+      "th": "พิพิธภัณฑ์รวมทัวร์ใช้เวลาราวสองชั่วโมงครึ่ง บางวันที่มีแข่งไม่มีทัวร์"
+     },
+     "ages": [
+      0,
+      1,
+      2,
+      2
+     ],
+     "hrs": 2.5,
+     "io": "both",
+     "pram": "part",
+     "price": {
+      "en": "≈ €25 adults · €11 ages 6–13 for museum and tour · under 6 free",
+      "th": "≈ €25 ผู้ใหญ่ · €11 อายุ 6–13 ปี รวมพิพิธภัณฑ์และทัวร์ · ต่ำกว่า 6 ขวบฟรี"
+     },
+     "book": "rec",
+     "q": "Allianz Arena, Fröttmaning, Munich",
+     "ok": "2026-11",
+     "src": "https://fcbayern.com/museum/de/besucherinformation/preise"
+    },
+    {
+     "name": {
+      "en": "Olympic Park",
+      "th": "โอลิมเปียพาร์ก"
+     },
+     "local": "Olympiapark",
+     "kind": "park",
+     "area": {
+      "en": "Milbertshofen",
+      "th": "มิลแบร์ทส์โฮเฟิน"
+     },
+     "what": {
+      "en": "The 1972 Olympic grounds: a lake, grassy hills to climb, a playground with a view and the tented stadium roof",
+      "th": "พื้นที่โอลิมปิกปี 1972 มีทะเลสาบ เนินหญ้าให้ปีน สนามเด็กเล่นวิวสวย และหลังคาสนามกีฬาทรงเต็นท์"
+     },
+     "why": {
+      "en": "Free and open, with space to run, ducks on the lake and a short climb up the hill for the view",
+      "th": "ฟรีและโล่ง มีที่ให้วิ่ง มีเป็ดในทะเลสาบ เดินขึ้นเนินไม่ไกลก็เห็นวิว"
+     },
+     "tip": {
+      "en": "The Olympic Tower is closed for works until 2027; climb the Olympiaberg hill instead",
+      "th": "หอโอลิมปิกปิดปรับปรุงถึงปี 2027 ขึ้นเนินโอลิมเปียแบร์กแทน"
+     },
+     "ages": [
+      2,
+      2,
+      2,
+      2
+     ],
+     "hrs": 2,
+     "io": "out",
+     "pram": "part",
+     "price": {
+      "en": "Free",
+      "th": "ฟรี"
+     },
+     "book": "none",
+     "q": "Olympiapark, Milbertshofen, Munich",
+     "ok": "2026-11",
+     "src": "https://olympiapark.de/en/the-olympic-park/park-overview/olympic-tower"
+    },
+    {
+     "name": {
+      "en": "The Flaucher on the Isar",
+      "th": "ฟลาวเคอร์ริมแม่น้ำอีซาร์"
+     },
+     "local": "Flaucher",
+     "kind": "nature",
+     "area": {
+      "en": "Sendling",
+      "th": "เซนด์ลิง"
+     },
+     "what": {
+      "en": "Wide gravel banks and shallow side channels of the Isar, crossed by the long wooden Flaucher footbridge",
+      "th": "หาดกรวดกว้างและร่องน้ำตื้นของแม่น้ำอีซาร์ มีสะพานไม้ฟลาวเคอร์ยาวข้ามไป"
+     },
+     "why": {
+      "en": "Children throw stones and paddle in the shallows on warm days; the footbridge is a walk in itself",
+      "th": "เด็กๆ โยนหินเล่นและลุยน้ำตื้นได้ในวันอากาศอุ่น เดินข้ามสะพานก็สนุกแล้ว"
+     },
+     "tip": {
+      "en": "Bring shoes for the stones; the river has currents, so keep little ones in the shallow channels",
+      "th": "ใส่รองเท้าเพราะหินเยอะ แม่น้ำมีกระแส ให้เด็กเล็กเล่นแค่ร่องน้ำตื้น"
+     },
+     "ages": [
+      1,
+      2,
+      2,
+      2
+     ],
+     "hrs": 2,
+     "io": "out",
+     "pram": "part",
+     "price": {
+      "en": "Free",
+      "th": "ฟรี"
+     },
+     "book": "none",
+     "q": "Flaucher, Isarauen, Munich",
+     "ok": "2026-11",
+     "src": "https://www.muenchen.de/freizeit/flaucher"
+    },
+    {
+     "name": {
+      "en": "Westpark and its water playground",
+      "th": "เวสต์พาร์กและสนามเด็กเล่นน้ำ"
+     },
+     "local": "Westpark",
+     "kind": "play",
+     "area": {
+      "en": "Sendling-Westpark",
+      "th": "เซนด์ลิง-เวสต์พาร์ก"
+     },
+     "what": {
+      "en": "A family park with lakes, an Asian garden with a Thai sala and a pagoda, and one of the city's best water playgrounds",
+      "th": "สวนสำหรับครอบครัว มีทะเลสาบ สวนเอเชียที่มีศาลาไทยและเจดีย์ และสนามเด็กเล่นน้ำที่ดีที่สุดแห่งหนึ่งของเมือง"
+     },
+     "why": {
+      "en": "Rocks, pumps and channels to splash in, lawns to run on and a Thai sala that feels like home",
+      "th": "มีหิน ปั๊มน้ำ และรางน้ำให้เล่นสาด สนามหญ้าให้วิ่ง และศาลาไทยให้รู้สึกเหมือนบ้าน"
+     },
+     "tip": {
+      "en": "The water playground is cleaned on Tuesdays until 15:00; bring a change of clothes",
+      "th": "สนามเด็กเล่นน้ำทำความสะอาดวันอังคารถึง 15:00 พกเสื้อผ้าสำรองไปด้วย"
+     },
+     "ages": [
+      2,
+      2,
+      2,
+      1
+     ],
+     "hrs": 2,
+     "io": "out",
+     "pram": "yes",
+     "price": {
+      "en": "Free",
+      "th": "ฟรี"
+     },
+     "book": "none",
+     "q": "Westpark, Sendling-Westpark, Munich",
+     "ok": "2026-11",
+     "src": "https://www.muenchen.de/sehenswuerdigkeiten/westpark"
+    }
+   ]
+  }
+ ]
+}
