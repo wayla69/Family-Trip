@@ -155,7 +155,7 @@
           "hrs": 5,
           "io": "out",
           "pram": "part",
-          "price": { "en": "Check the price (user reports about MXN 1,299 adults · MXN 799 children, undated)", "th": "เช็กราคา" },
+          "price": { "en": "Check the price", "th": "เช็กราคา" },
           "book": "rec",
           "q": "Parque Garrafón, Isla Mujeres, Quintana Roo",
           "ok": "2026-11",

@@ -17,7 +17,7 @@
           "hrs": 5,
           "io": "out",
           "pram": "no",
-          "price": { "en": "Park ≈ ฿200 foreign adults · ฿100 foreign children · ฿40 Thai adults · ฿20 Thai children; ferry ≈ ฿50–70 each way slow boat (weak: check before you go)", "th": "ค่าอุทยาน ≈ ฿200 ผู้ใหญ่ต่างชาติ · ฿100 เด็กต่างชาติ · ฿40 ผู้ใหญ่ไทย · ฿20 เด็กไทย ค่าเรือช้า ≈ ฿50–70 ต่อเที่ยว (ราคาไม่แน่นอน เช็กก่อนไป)" },
+          "price": { "en": "Park ≈ ฿200 foreign adults · ฿100 foreign children · ฿40 Thai adults · ฿20 Thai children; ferry ≈ ฿50–70 each way slow boat (check)", "th": "ค่าอุทยาน ≈ ฿200 ผู้ใหญ่ต่างชาติ · ฿100 เด็กต่างชาติ · ฿40 ผู้ใหญ่ไทย · ฿20 เด็กไทย ค่าเรือช้า ≈ ฿50–70 ต่อเที่ยว (เช็กอีกครั้ง)" },
           "book": "none",
           "q": "Koh Samet, Rayong",
           "ok": "2026-11",

@@ -402,23 +402,6 @@
           "src": "https://www.visittromso.no/tromsobadet"
         },
         {
-          "name": { "en": "Tromsø Arctic Reindeer sledding and Sami camp", "th": "ขี่เลื่อนกวางเรนเดียร์และค่ายซามี" },
-          "kind": "farm",
-          "area": { "en": "Tromsø region", "th": "เขตทรอมโซ" },
-          "what": { "en": "A visit to a reindeer camp with feeding, a short sled ride and Sami stories", "th": "เยี่ยมค่ายกวางเรนเดียร์ ให้อาหาร นั่งเลื่อนสั้นๆ และฟังเรื่องซามี" },
-          "why": { "en": "This operator says the tours suit even infants and children under 6 go free; dress children in layers", "th": "ผู้ให้บริการนี้ระบุว่าเหมาะแม้ทารก และเด็กต่ำกว่า 6 ขวบไม่เสียค่าทัวร์ ควรแต่งตัวเด็กหลายชั้น" },
-          "tip": { "en": "A winter activity; other camps set a minimum age of 4, so check the operator's age rule", "th": "เป็นกิจกรรมหน้าหนาว ค่ายอื่นกำหนดอายุขั้นต่ำ 4 ปี เช็กเกณฑ์อายุของผู้ให้บริการ" },
-          "ages": [1, 2, 2, 2],
-          "hrs": 3,
-          "io": "out",
-          "pram": "no",
-          "price": { "en": "Check the price (2026–27 prices not seen; under 6 free on this operator)", "th": "เช็กราคาก่อนไป (ยังไม่เห็นราคา 2026–27 ผู้ให้บริการนี้เด็กต่ำกว่า 6 ขวบฟรี)" },
-          "book": "req",
-          "q": "Tromsø Arctic Reindeer, Tromsø",
-          "ok": "2026-11",
-          "src": "https://www.visittromso.no/reindeer-feeding-and-sami-history"
-        },
-        {
           "name": { "en": "Silent whale watching by Brim Explorer", "th": "ดูวาฬแบบเงียบกับบริมเอ็กซ์พลอเรอร์" },
           "kind": "nature",
           "area": { "en": "Harbour", "th": "ท่าเรือ" },

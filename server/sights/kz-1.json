@@ -82,7 +82,7 @@
           "local": "Алматы ботаникалық бағы",
           "kind": "park",
           "area": { "en": "Almaty", "th": "อัลมาตี" },
-          "what": { "en": "A large garden with paths, the ticket price of which the prosecutor's office ordered lowered", "th": "สวนขนาดใหญ่มีทางเดิน อัยการสั่งให้ลดราคาตั๋วลง" },
+          "what": { "en": "A large botanical garden with walking paths", "th": "สวนพฤกษศาสตร์ขนาดใหญ่ มีทางเดินเล่น" },
           "why": { "en": "Shady paths for a slow walk with a pram or on small legs", "th": "ทางเดินร่มรื่นเดินช้าๆ ได้ทั้งกับรถเข็นและขาเล็ก" },
           "tip": { "en": "Guides give prices from about ₸930 to ₸2,000 for adults; check the price and the days it is open", "th": "คู่มือให้ราคาผู้ใหญ่ตั้งแต่ราว ₸930 ถึง ₸2,000 เช็กราคาและวันเปิด" },
           "ages": [1, 2, 2, 1],
