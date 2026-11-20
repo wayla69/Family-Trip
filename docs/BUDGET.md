@@ -57,4 +57,5 @@ Editors only, as the whole planner is; the spend ledger never reaches a relative
   85 % and rose over it, the total with what is left or over; "change the plan" opens one amount a category in the plan's money. A book
   with a plan and no spending yet shows the card alone; a book with neither offers to set one.
 - **Today** (`budgetLine`, a trip day, editors): one line "spent ≈ … of a plan of ≈ … (n %)" → the spend page.
-- Not in backups yet (a small setting; the spending itself is).
+- **In backups**: `backup.json` carries `budgets` = the parents' own plans of the family's books; a restore puts one back only where the
+  book has none yet (a second restore changes nothing).
