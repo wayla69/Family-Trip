@@ -45,6 +45,10 @@ async function login(page) {
   await page.waitForSelector('.shelf');
 }
 // the page re-renders after each sync; measure again if the element was just swapped
+// the kids' passport is a book shown a page at a time (#/passport/<kid>/<trip>/<page>): open one page and wait for it
+const ppOpen = async (page, kid, tid, key) => { await page.goto(`${BASE}/#/passport/${kid}/${tid}/${key}`); await page.waitForSelector(`.pbook[data-page="${key}"]`); };
+// the passport's ✏️ (a parent opens its boxes and ticks): switch it to the state asked for
+const ppEdit = async (page, on) => { const b = page.locator('.ppedit'); if (await b.count() && (await b.getAttribute('aria-pressed')) !== String(on)) { await b.click(); await page.waitForSelector(`.ppedit[aria-pressed="${on}"]`); } };
 const boxOf = async (page, sel) => { for (let k = 0; k < 30; k++) { const b = await page.locator(sel).first().boundingBox().catch(() => null); if (b) return b; await page.waitForTimeout(100); } throw new Error('no box: ' + sel); };
 const apiState = (page) => page.evaluate(async () => (await fetch('/api/b/state')).json());
 const T = 'hk-macau-2026';
@@ -299,14 +303,20 @@ const T = 'hk-macau-2026';
     await page.waitForFunction(() => document.querySelector('.caps li.sealed'), null, { timeout: 8000 }).catch(() => {});
     const cp = await page.evaluate(() => ({ sealed: document.querySelectorAll('.caps li.sealed').length, text: (document.querySelector('.caps') || {}).textContent || '' }));
     await s.shot('capsules');
-    // growing up, trip by trip (#/grow): every book of the child, the age then, a height noted on each book, then the line of heights
-    await page.goto(`${BASE}/#/grow/mimi`); await page.waitForSelector('.growl li');
-    const ins = page.locator('.growl .ghinp');
-    if (await ins.count() >= 2) { await ins.nth(0).fill('96'); await ins.nth(0).blur(); await ins.nth(1).fill('1.035 ม.'); await ins.nth(1).blur(); }   // in metres, with the unit: read as 103.5 cm
+    // growing up, trip by trip — now the passport's Explorer ID (#/grow redirects there): the height is typed once, in the passport, and the line reads it
+    await page.goto(`${BASE}/#/grow/mimi`); await page.waitForSelector('.pbook[data-page="id"] .growl li');
+    const redir = page.url().endsWith('#/passport/mimi/id');
+    await ppEdit(page, true);
+    await page.fill('.ppf[data-v="height_last"]', '96'); await page.locator('.ppf[data-v="height_last"]').blur();
+    await page.click('.growl a.grgo'); await page.waitForSelector('.pbook[data-page="id"] .ppf[data-v="height_first"]');
+    await page.fill('.ppf[data-v="height_first"]', '1.035 ม.'); await page.locator('.ppf[data-v="height_first"]').blur();   // in metres, with the unit: read as 103.5 cm
     await page.waitForSelector('.grchart polyline', { timeout: 8000 }).catch(() => {});
-    const gr = await page.evaluate(() => ({ n: document.querySelectorAll('.growl li').length, art: document.querySelectorAll('.growl .grart img').length, age: document.querySelectorAll('.growl .grchip').length, chart: !!document.querySelector('.grchart polyline'), note: (document.querySelector('.grcard') || {}).textContent || '' }));
+    const gr = await page.evaluate(() => ({ n: document.querySelectorAll('.growl li').length, art: document.querySelectorAll('.growl .grart img').length, age: document.querySelectorAll('.growl .grchip').length, chart: !!document.querySelector('.grchart polyline'), note: (document.querySelector('.pp-page.grow') || {}).textContent || '', ghinp: document.querySelectorAll('.ghinp').length }));
     await s.shot('grow');
-    ok(gr.n >= 2 && gr.art === gr.n && gr.chart && /7\.5|7,5/.test(gr.note) && await s.noHScroll(), `growing up: each book with the character of its time; two heights draw the line (${JSON.stringify({ ...gr, note: gr.note.slice(-40) })})`);
+    ok(redir && gr.n >= 2 && gr.art === gr.n && gr.chart && /7\.5|7,5/.test(gr.note) && !gr.ghinp && await s.noHScroll(), `growing up lives in the passport: each book with the character of its time; the heights typed in two books' Explorer IDs draw the line (${JSON.stringify({ redir, ...gr, note: gr.note.slice(-40) })})`);
+    await ppEdit(page, false);
+    await page.goto(`${BASE}/#/`); await page.waitForSelector('.shelf');
+    ok(await page.locator('a[href^="#/grow"]').count() === 0 && await page.locator('.ppmini .ppc').count() >= 1, 'shelf: the "Growing up" card is gone — the passport cards are the one door');
     ok(cp.sealed === 1 && !/fish were huge/.test(cp.text) && /🔒/.test(cp.text), `letters for the future: written, sealed with two taps, then only to whom and when shows (${cp.text.replace(/\s+/g, ' ').slice(0, 80)})`);
     const kp = await page.evaluate(() => { const t = trips()[0]; return t ? { keep: viewBook(t).includes('keepbtn'), tell: kidTell(t, { id: 'ph-any-0001', day: 0 }).includes('data-a="kidtell"') } : null; });
     ok(kp && kp.keep && kp.tell, `the book page offers "keep as one file"; the kids' photo viewer offers "tell its story" (${JSON.stringify(kp)})`);
@@ -1084,19 +1094,33 @@ const T = 'hk-macau-2026';
   await page.goto(`${BASE}/#/t/${T}/offline`); await page.waitForSelector('#packbtn, [data-a="offline"]');
   ok(await page.locator('a[data-a="pdf"]').count() === 0 && await page.evaluate(() => { const h = document.querySelector('main h1'); return !!h && h.getBoundingClientRect().width <= 2 && /Offline|ไม่มีเน็ต/.test(document.querySelector('header.top .ttl').textContent); }),
     'no-signal page: the PDF button lives in the memory book only; the page\'s name is in the bar, not repeated as a heading');
-  await page.goto(`${BASE}/#/passport`); await page.waitForSelector('.pp .advc');
-  ok(await page.locator('.ppkids a[role=tab]').count() === 2 && await page.locator('.ppkids a:not([role=tab])').count() === 2, 'passport: one per child, a page set per trip');
-  ok(await page.locator('.advc .xbox img[src^="/art/kids/mimi-"][src$="-face.webp"]').count() === 1 && await page.locator('.bio .photo img[src^="/art/kids/mimi-"][src$="-face.webp"]').count() === 1, 'passport: Mimi drawn as her character on the cover and photo page');
+  // one passport per child: a book shown a page at a time — cover · Explorer ID · a visa per trip · missions · map · lists · stickers · trophies · certificate
+  await page.goto(`${BASE}/#/passport`); await page.waitForSelector('.pbook[data-page="cover"] .pp .advc');
+  ok(await page.locator('.ppkids a[role=tab]').count() === 2 && await page.locator('.ppkids a.chip:not([role=tab])').count() === 2 && await page.locator('.ppkids a.ppprint[href^="/api/b/pdf/"]').count() === 1, 'passport: one per child, a book per trip, and "print" from the book');
+  { const tabs = await page.$$eval('.pptabs .ppt', (as) => as.map((a) => a.getAttribute('href').split('/').pop()));
+    ok(tabs.join() === 'cover,id,visa-hk-macau-2026,visa-big-hop-2027,missions,map,lists,stickers,trophies,cert' && await page.locator('.ppbody .mission, .ppbody .pp-page.visa, .ppbody #cert').count() === 0 && await page.locator('.ppturn [data-dir="next"][href$="/id"]').count() === 1,
+      `passport book: the pages in order — a visa for each of Mimi's trips — and only one page on screen at a time (${tabs.join()})`); }
+  ok(await page.locator('.advc .xbox img[src^="/art/kids/mimi-"][src$="-face.webp"]').count() === 1, 'passport: Mimi drawn as her character on the cover');
   ok(await page.locator('.advc img.crest[src="/art/crest/hk.svg"]').count() === 1 && (await page.textContent('.advc')).includes('DOLPHIN-2026-MIMI'), 'passport cover as printed: crest, title, passport no. per child');
-  ok(await page.evaluate(() => getComputedStyle(document.querySelector('#m1 header')).backgroundColor) === 'rgb(252, 231, 241)', 'day 2 mission in the printed pink (#FCE7F1)');
-  ok((await page.textContent('.guides')).includes('Captain Pinky') && await page.locator('#pl-words .tick').count() === 10 && await page.locator('#pl-dimsum .stars').count() === 10, 'Captain Pinky, Say It Like a Local (10), Dim Sum Tasting Card (stars)');
+  ok((await page.textContent('.guides')).includes('Captain Pinky') && await page.locator('.guides .bubble img.guide').count() === 2, 'passport cover: the two guides say hello (Captain Pinky)');
   { // a lazy picture loads only near the screen: bring each into view in turn, wait for every one, then name any that did not arrive
     await page.evaluate(async () => { for (const i of document.querySelectorAll('img[src^="/art/"]')) { i.scrollIntoView({ block: 'center' }); await new Promise((r) => setTimeout(r, 30)); } scrollTo(0, 0); });
     await page.waitForFunction(() => Array.from(document.querySelectorAll('img[src^="/art/"]')).every((i) => i.complete && i.naturalWidth > 0), null, { timeout: 8000 }).catch(() => {});
     const bad = await page.evaluate(() => Array.from(document.querySelectorAll('img[src^="/art/"]')).filter((i) => !(i.complete && i.naturalWidth > 0)).map((i) => i.getAttribute('src')));
     ok(!bad.length, `character, guide and stamp drawings load${bad.length ? ` (not loaded: ${bad.slice(0, 5).join(', ')})` : ''}`); }
+  ok(await s.noHScroll(), 'passport cover: no horizontal scroll at 390 px');
+  await s.shot('06-passport');
+  // the arrow keys turn the pages (a swipe does the same on a phone: sheets.js ppTurn)
+  await page.keyboard.press('ArrowRight'); await page.waitForSelector('.pbook[data-page="id"]');
+  ok(await page.locator('.bio .photo img[src^="/art/kids/mimi-"][src$="-face.webp"]').count() === 1 && await page.locator('.ppbody .advc').count() === 0 && /#\/passport\/mimi\/hk-macau-2026\/id$/.test(page.url()), 'passport: → turns to the Explorer ID page (Mimi\'s character on the photo page)');
+  await page.keyboard.press('ArrowLeft'); await page.waitForSelector('.pbook[data-page="cover"]');
+  await ppOpen(page, 'mika', 'big-hop-2027', 'cover');
+  ok((await page.textContent('.advc')).includes('KOALA-2027-MIKA') && (await page.textContent('.guides')).includes('Ranger Roo'), 'Australia: a passport number per child (KOALA-2027-MIKA), Ranger Roo on the cover');
+  await ppOpen(page, 'mimi', T, `visa-${T}`);
   ok(await page.locator('.pp-page.visa').count() === 1 && await page.locator('.dstamp').count() === 6, 'passport: HK visa page, a stamp slot per day');
   ok(await page.locator('.dstamp.on').count() === 1 && await page.locator('.dstamp.new').count() === 1, 'passport: recorded day is stamped (with the stamp animation the first time)');
+  ok(await page.locator('.stampbtn').count() === 0, 'passport before the trip: no stamp button for a grown-up (the stamp is the kids\' ceremony on a trip day)');
+  await ppOpen(page, 'mimi', T, 'map');
   { await page.click('.mapdays [data-v="3"]'); await page.waitForFunction(() => document.querySelector('.mapsec .kicker').textContent.includes('4'));
     await page.locator('.tmap .pin[data-v="senado"]').dispatchEvent('click'); await page.waitForSelector('#sheet:not([hidden]) .pinacts');
     const hrefs = await page.$$eval('#sheet a', (as) => as.map((a) => a.getAttribute('href')));
@@ -1104,11 +1128,13 @@ const T = 'hk-macau-2026';
     { await page.locator('.tmap .pin[data-v="mawan"]').dispatchEvent('click'); await page.waitForSelector('#sheet:not([hidden]) .pinstay');
       ok(/Noah's Ark/.test(await page.textContent('#sheet .pinstays')) && await page.locator('#sheet .pinstay a[href*="maps/dir/"]').count() === 1, 'passport map: a pin lists the night’s stay with directions'); await page.click('#sheet [data-a="closesheet"]'); }
   }
-  ok(await page.locator('.guides .bubble img.guide').count() === 2 && await page.locator('.mission').count() === 6, 'passport: two guides + a mission per day');
   ok(await page.locator('.sleep li').count() === 6, 'passport: where we go — 6 pins as printed');
-  ok(await page.locator('.bdg').count() === 1 && (await page.textContent('.bdg')).includes('Mickey'), 'passport: Mimi’s first is a badge');
+  await ppOpen(page, 'mimi', T, 'trophies');
+  ok(await page.locator('.bdg').count() === 1 && (await page.textContent('.bdg')).includes('Mickey') && await page.locator('.trophies .tro').count() >= 10 && await page.locator('.ppbody .tro.new').count() === 0, 'passport: Mimi’s first is a badge beside her trophies (a grown-up looking never takes the child\'s "new!")');
   ok(!(await page.textContent('#app')).match(/\b[A-Z]{1,2}\d{6,9}\b|e-ticket/), 'passport: nothing that looks like a real passport / ticket number');
-  // tick a mission spot, a food (yum), an Explorer ID answer
+  await ppOpen(page, 'mimi', T, 'missions');
+  ok(await page.locator('.mission').count() === 6, 'passport: a mission per day');
+  ok(await page.evaluate(() => getComputedStyle(document.querySelector('#m1 header')).backgroundColor) === 'rgb(252, 231, 241)', 'day 2 mission in the printed pink (#FCE7F1)');
   ok(await page.locator('.mdays .chip').count() === 6 && await page.locator('.mfold[open]').count() === 1 && await page.locator('#m0 .mfold[open]').count() === 1 && await page.evaluate(() => document.documentElement.scrollHeight < 11000), `passport before the trip: day chips, only day 1's mission open (${await page.evaluate(() => document.documentElement.scrollHeight)} px)`);
   await page.click('.mdays [data-a="mday"][data-v="1"]'); await page.waitForSelector('#m1 .mfold[open]');
   ok(await page.locator('.mfold[open]').count() === 1 && await page.locator('.mdays .chip[aria-pressed="true"][data-v="1"]').count() === 1, 'a tap on day 2 opens its mission and folds day 1');
@@ -1118,44 +1144,62 @@ const T = 'hk-macau-2026';
     ok(Math.abs(w[0] - w[1]) < 2 && w[2] < w[1] * 0.7, `passport on a tablet: the open day fills the row, the folded ones stay a grid (${w.map(Math.round).join(' / ')})`);
     await page.setViewportSize(vp);
   }
+  // the grown-ups' boxes and ticks wait behind ✏️ (parents only, never in kid mode)
+  ok(await page.locator('#m1 button[data-a="tick"][data-v="spot.d1.tower"][disabled]').count() === 1 && await page.locator('#m1 .felt button[disabled]').count() === 3, 'passport: ticks are closed until a parent taps ✏️');
+  await ppEdit(page, true);
   await page.click('#m1 button[data-a="tick"][data-v="spot.d1.tower"]');
+  await page.click('#m1 .felt button[data-v="🤩"]');
+  ok(/⭐\s*1/.test(await page.textContent('#m1 .spothd')), 'a found thing is celebrated (⭐ 1), nothing missing is counted');
+  await ppOpen(page, 'mimi', T, 'lists');
+  ok(await page.locator('#pl-words .tick').count() === 10 && await page.locator('#pl-dimsum .stars').count() === 10, 'lists: Say It Like a Local (10), Dim Sum Tasting Card (stars)');
   await page.click('#pl-dimsum button[data-v="dimsum.eggtart"][data-yum="3"]');
   await page.click('#pl-words button[data-v="words.mhgoi"]');
   await page.fill('.ppf[data-v="decl.eggtarts"]', '7'); await page.locator('.ppf[data-v="decl.eggtarts"]').blur();
-  ok(await page.locator('.ppf').count() >= 4 && await page.locator('.ppf[placeholder]').count() === 0 && await page.locator('.unitd .unit').count() === 2, 'passport ID: blank boxes (no "e.g." hints), the height boxes show cm beside them');
+  ok(!/Tick \d|0\/|more in/.test(await page.textContent('.ppbody')), 'lists: no "0/27" counters or "tick N more"');
+  await ppOpen(page, 'mimi', T, 'id');
+  ok(await page.locator('.ppf').count() === 4 && await page.locator('.ppf[placeholder]').count() === 0 && await page.locator('.unitd .unit').count() === 2, 'passport ID: blank boxes (no "e.g." hints), the height boxes show cm beside them');
   await page.fill('.ppf[data-v="superpower"]', 'วิ่งเร็วมาก'); await page.locator('.ppf[data-v="superpower"]').blur();
-  await page.click('#m1 .felt button[data-v="🤩"]');
   await page.waitForFunction(() => queue.length === 0, null, { timeout: 15000 });
   st = await apiState(page);
   ok(st.entries.some((e) => e.id === `${'hk-macau-2026'}.tick.spot.d1.tower.mimi`) && st.entries.some((e) => e.first_key === 'dimsum.eggtart' && e.text === '3') && st.entries.some((e) => e.first_key === 'words.mhgoi'), 'server: mission spot, 3 stars for the egg tart, a word said — for Mimi');
   ok(st.entries.some((e) => e.kind === 'field' && e.first_key === 'decl.eggtarts' && e.text === '7'), 'server: customs declaration answer');
   ok(st.entries.some((e) => e.kind === 'field' && e.text === 'วิ่งเร็วมาก') && st.entries.some((e) => e.id === 'hk-macau-2026.mood.d1.mimi' && e.mood === '🤩'), 'server: superpower answer + “today I felt” (same mood as the record page)');
-  ok(await page.locator('#m1 .tick.on').count() === 1 && await page.inputValue('.ppf[data-v="superpower"]') === 'วิ่งเร็วมาก', 'passport shows the ticks after saving');
-  ok(await page.locator('.cert:not(.earned)').count() === 1 && /last day/.test(await page.textContent('#cert')) && !/Tick \d|0\/|more in/.test(await page.textContent('.pp')),
-    'play, not homework: before the trip the certificate simply waits for the last day; no "0/27" counters or "tick N more" anywhere');
-  ok(/⭐\s*1/.test(await page.textContent('#m1 .spothd')), 'a found thing is celebrated (⭐ 1), nothing missing is counted');
-  ok(await s.noHScroll(), 'passport: no horizontal scroll at 390 px');
-  await s.shot('06-passport');
-  await page.click('.ppkids a[role=tab][href^="#/passport/mika"]'); await page.waitForSelector('.pp.kid-mika');
+  await ppEdit(page, false);
+  ok(await page.locator('.ppf').count() === 0 && /วิ่งเร็วมาก/.test(await page.textContent('.bio')), 'passport ID: ✏️ off shows the answers as text');
+  await ppOpen(page, 'mimi', T, 'missions');
+  ok(await page.locator('#m1 .tick.on').count() === 1, 'passport shows the ticks after saving');
+  await ppOpen(page, 'mimi', T, 'cert');
+  ok(await page.locator('.cert:not(.earned)').count() === 1 && /last day/.test(await page.textContent('#cert')) && !/Tick \d|0\/|more in/.test(await page.textContent('.ppbody')),
+    'play, not homework: before the trip the certificate simply waits for the last day');
+  ok(await page.locator('.ppturn [data-dir="next"]').count() === 0 && await page.locator('.ppturn [data-dir="prev"][href$="/trophies"]').count() === 1, 'the certificate is the last page');
+  for (const k of ['cover', 'id', `visa-${T}`, 'missions', 'map', 'lists', 'stickers', 'trophies', 'cert']) { await ppOpen(page, 'mimi', T, k); if (!(await s.noHScroll())) ok(false, `passport page ${k}: no horizontal scroll at 390 px`); }
+  await ppOpen(page, 'mika', T, `visa-${T}`);
   ok(await page.locator('.dstamp.new').count() === 0, 'passport: stamp animation plays once, not on every visit');
-  ok(await page.locator('.bdg').count() === 0 && await page.locator('#lwords .lwl li').count() === 1 && await page.locator('.mission .tick.on').count() === 0, 'passport: Mika has her own ticks (none yet) and her own words');
+  await ppOpen(page, 'mika', T, 'trophies'); ok(await page.locator('.bdg').count() === 0, 'passport: Mika has her own badges (none yet)');
+  await ppOpen(page, 'mika', T, 'missions'); ok(await page.locator('.mission .tick.on').count() === 0, 'passport: Mika has her own ticks (none yet)');
   // the little one's edition (seed passport.little): point / touch / sound missions, no words-to-say or explorer list, a new-words page
-  ok(await page.locator('#m1 .spot.little button[data-v="little.d1.castle"]').count() === 1 && await page.locator('#m1 .mquiz').count() === 0 && await page.locator('#pl-words, #pl-master, #decl').count() === 0 && await page.locator('#pl-dimsum').count() === 1,
-    'little edition: Mika points at the castle; no quiz, no Cantonese words, no explorer list or customs form (the dim sum card stays)');
+  ok(await page.locator('#m1 .spot.little button[data-v="little.d1.castle"]').count() === 1 && await page.locator('#m1 .mquiz').count() === 0, 'little edition: Mika points at the castle; no quiz');
+  await ppOpen(page, 'mika', T, 'lists');
+  ok(await page.locator('#lwords .lwl li').count() === 1 && await page.locator('#pl-words, #pl-master, #decl').count() === 0 && await page.locator('#pl-dimsum').count() === 1,
+    'little edition: her own words; no Cantonese words, no explorer list or customs form (the dim sum card stays)');
+  await ppEdit(page, true);
   ok(/bye-bye/.test(await page.getAttribute('#lw-mika', 'placeholder')), 'little edition: the word box shows its whole example (quotes do not cut it)');
   await page.fill('#lw-mika', 'บ๊ายบาย'); await page.click('[data-a="littleword"][data-k="mika"]');
   await page.waitForFunction(() => [...document.querySelectorAll('#lwords .lwl li')].some((li) => li.textContent.includes('บ๊ายบาย')), null, { timeout: 5000 });
   await page.waitForFunction(() => queue.length === 0, null, { timeout: 15000 });
   ok((await apiState(page)).entries.some((e) => e.kind === 'quote' && e.child === 'mika' && e.text === 'บ๊ายบาย'), 'little edition: a new word is saved as Mika’s quote (book, PDF and story see it)');
+  await ppOpen(page, 'mika', T, 'missions');
   await page.click('button[data-a="tick"][data-v="little.d1.castle"]'); await page.waitForSelector('#m1 .tick.on');
-  ok(/⭐\s*1/.test(await page.textContent('#m1 .spothd')) && !(await page.locator('#cert').getAttribute('class')).includes('earned'), 'little edition: a pointed-at castle gets a star; the certificate still just waits for the last day');
+  ok(/⭐\s*1/.test(await page.textContent('#m1 .spothd')), 'little edition: a pointed-at castle gets a star');
   await page.waitForFunction(() => queue.length === 0, null, { timeout: 15000 });
-  await page.click('.ppkids a[href="#/passport/mika/big-hop-2027"]'); await page.waitForSelector('#m15');
-  ok(await page.locator('.mission').count() === 16 && (await page.textContent('.guides')).includes('Ranger Roo'), 'passport: Australia — Ranger Roo, Kiki and 16 missions');
-  ok(await page.locator('#m3 .spot.little button[data-v="little.d3.hop"]').count() === 1 && await page.locator('.mission .spot.little').count() === 16 && await page.locator('#pl-words, #pl-master, #decl').count() === 0 && await page.locator('#lwords').count() === 1,
-    'Australia, little edition too: Mika hops like a kangaroo on day 4 — a point/touch/sound mission every day, her new-words page, no words-to-say, explorer list or customs form');
-  await page.click('.ppkids a[role=tab][href="#/passport/mimi/big-hop-2027"]'); await page.waitForSelector('.pp.kid-mimi #pl-master');
+  await ppOpen(page, 'mika', T, 'cert'); ok(!(await page.locator('#cert').getAttribute('class')).includes('earned'), 'little edition: the certificate still just waits for the last day');
+  await ppOpen(page, 'mika', 'big-hop-2027', 'missions');
+  ok(await page.locator('.mission').count() === 16 && await page.locator('#m3 .spot.little button[data-v="little.d3.hop"]').count() === 1 && await page.locator('.mission .spot.little').count() === 16, 'Australia, little edition too: 16 missions, Mika hops like a kangaroo on day 4 — a point/touch/sound mission every day');
+  await ppOpen(page, 'mika', 'big-hop-2027', 'lists');
+  ok(await page.locator('#pl-words, #pl-master, #decl').count() === 0 && await page.locator('#lwords').count() === 1, 'Australia, little edition: her new-words page, no words-to-say, explorer list or customs form');
+  await ppOpen(page, 'mimi', 'big-hop-2027', 'missions');
   ok(await page.locator('.mission .spot.little').count() === 0 && await page.locator('#m3 button[data-v^="spot.d3."]').count() === 4, 'Australia: Mimi keeps her own find-these missions');
+  await ppOpen(page, 'mimi', 'big-hop-2027', 'lists'); await page.waitForSelector('.pp.kid-mimi #pl-master');
   {   // the tasting card draws each dish from the food library (owner, Nov 2026: "ต่อรูปใน การ์ดชิมอาหารในพาสปอร์ต"); a dish tasted is a sticker of its picture
     await page.waitForFunction(() => [...document.querySelectorAll('.ticks.food .tick .e img.ge')].every((i) => i.complete), null, { timeout: 8000 }).catch(() => {});
     const taste = await page.evaluate(() => { const t = trip('big-hop-2027'), l = kidLists(t, 'mimi').find((x) => x.yum || x.stars), rows = [...document.querySelectorAll(`#pl-${l.key} .tick`)];
@@ -1167,7 +1211,7 @@ const T = 'hk-macau-2026';
       `passport tasting card: every dish with a picture in the food library is drawn as that picture and its sticker carries it; a dish that names its own picture shows it (the lamington is the chocolate and coconut cube, the meat pie a savoury pie); an animal's picture never stands in for a dish (${JSON.stringify(taste)})`);
     await page.evaluate(() => { const l = kidLists(trip('big-hop-2027'), 'mimi').find((x) => x.yum || x.stars); document.querySelector(`#pl-${l.key}`).scrollIntoView({ block: 'start' }); window.scrollBy(0, -70); }); await s.shot('07c-passport-tasting', false);
   }
-  await page.click('.ppkids a[role=tab][href="#/passport/mika/big-hop-2027"]'); await page.waitForSelector('.pp.kid-mika #lwords'); await page.waitForSelector('#m15 .spot.little', { state: 'attached' });   // (folded before the trip) Mika's page itself (#m15 alone also matches Mimi's page still on screen)
+  await ppOpen(page, 'mika', 'big-hop-2027', 'map');
   await page.locator('.mapsec').screenshot({ path: path.join(OUT, 'phone-06b-map-au.png') });
   // kid mode: big buttons, locked until a grown-up holds the lock
   await page.evaluate(() => { window.__said = []; Object.defineProperty(window, 'speechSynthesis', { configurable: true, value: {
@@ -1727,8 +1771,12 @@ const T = 'hk-macau-2026';
   ok(await page.evaluate(() => ['.kidhear', '.kidme'].every((q) => { const b = document.querySelector(q); if (!b) return true; const c = getComputedStyle(b); return c.display === 'grid' && c.paddingLeft === '0px' && c.paddingTop === '0px'; })), 'the kid header\'s round buttons centre what they hold (no default button padding)');
   await page.mouse.down(); await page.waitForTimeout(1500); await page.mouse.up();
   await page.waitForSelector('.pp .advc');
-  ok(page.url().includes('#/passport/mimi') && await page.locator('#m1 .colsvg.sm svg').count() === 1, 'holding the lock leaves kid mode; the passport shows the colouring');
-  ok(await page.locator('.mapsec .tmap .pin').count() === 7 && await page.locator('.stkpage #stkboard .stk.on').count() === 1 && await page.locator('.stkpage #stktray').count() === 0, 'passport: the map, and the sticker page (read-only) Mimi made');
+  ok(page.url().includes('#/passport/mimi') && await page.locator('.pbook:not(.inkid)').count() === 1, 'holding the lock leaves kid mode: the grown-ups\' door of the same passport');
+  await ppOpen(page, 'mimi', T, 'missions'); await page.waitForSelector('#m1 .colsvg.sm svg', { timeout: 5000 }).catch(() => {});
+  ok(await page.locator('#m1 .colsvg.sm svg').count() === 1, 'the passport shows the colouring');
+  await ppOpen(page, 'mimi', T, 'map'); const pins = await page.locator('.mapsec .tmap .pin').count();
+  await ppOpen(page, 'mimi', T, 'stickers');
+  ok(pins === 7 && await page.locator('.stkpage #stkboard .stk.on').count() === 1 && await page.locator('.stkpage #stktray').count() === 0, 'passport: the map, and the sticker page (read-only) Mimi made — the same page kid mode sticks them on');
   await page.goto(BASE + '/#/'); await page.waitForSelector('.shelf');
   ok(await page.locator('.ppmini .ppc').count() === 2, 'shelf: passport covers for both kids');
   ok(/1 (รีวิว|review)/.test(await page.textContent('a.nbcard[href="#/notebook"]')), 'shelf: travel notebook card counts the review');
@@ -1918,9 +1966,9 @@ const T = 'hk-macau-2026';
   await s.page.goto(`${BASE}/#/print/hk-macau-2026`); await s.page.waitForSelector('.kbook');
   await s.page.screenshot({ path: path.join(OUT, 'wide-13-memory-book.png'), fullPage: true });
   await s.shot('10-book-wide');
-  await s.page.goto(`${BASE}/#/passport/mimi`); await s.page.waitForSelector('.pp .dstamp');
-  await s.page.waitForSelector('.pp.packed');
-  const pw = await s.page.evaluate(() => { const c = [...document.querySelectorAll('.pp.packed > .ccol')].map((x) => x.offsetHeight); return { cols: c.length, gap: Math.abs(c[0] - c[1]), st: document.querySelector('.dstamp .art').getBoundingClientRect().width }; });
+  await ppOpen(s.page, 'mimi', T, 'id'); await s.page.waitForSelector('.pp.packed');
+  const pw = await s.page.evaluate(() => { const c = [...document.querySelectorAll('.pp.packed > .ccol')].map((x) => x.offsetHeight); return { cols: c.length, gap: Math.abs(c[0] - c[1]) }; });
+  await ppOpen(s.page, 'mimi', T, `visa-${T}`); pw.st = await s.page.evaluate(() => document.querySelector('.dstamp .art').getBoundingClientRect().width);
   ok(pw.gap < 520, `wide passport: the two columns end close together (${pw.gap}px apart), no big hole beside the cover`);
   ok(pw.cols >= 2 && pw.st >= 56 && pw.st <= 90, `wide: passport pages side by side (${pw.cols} cols), stamps ${Math.round(pw.st)}px`);
   await s.shot('11-passport-wide');
@@ -1940,7 +1988,7 @@ const T = 'hk-macau-2026';
     await p.page.goto(`${BASE}/#/t/${T}/log/1/all`); await p.page.waitForSelector('.daystrip');
     ok(await p.noHScroll(), `${w}px dark: record page fits`);
     await p.shot('record-dark');
-    await p.page.goto(`${BASE}/#/passport/mimi`); await p.page.waitForSelector('.pp .dstamp');
+    await ppOpen(p.page, 'mimi', T, `visa-${T}`);
     ok(await p.noHScroll(), `${w}px dark: passport fits`);
     await p.shot('passport-dark');
     await p.page.goto(BASE + '/'); await p.page.waitForSelector('.shelf');
@@ -1959,9 +2007,9 @@ const T = 'hk-macau-2026';
   ok(await page.locator('.spine.add').count() === 0, 'viewer: no "new book"');
   ok(await page.locator('.setlist.disp [data-a="lang"]').count() === 2 && await page.locator('.setlist.disp .fsseg').count() === 1 && await page.locator('.top [data-a="lang"], .top .fsb').count() === 0, 'viewer: relatives get the language and text-size card on the shelf too (and no controls in the top bar)');
   ok(await page.locator('nav.bar a[href*="/log/"]').count() === 0, 'viewer: no Record tab');
-  ok(await page.locator('nav.bar a[href="#/passport"]').count() === 1 && await page.locator('nav.bar a[href$="/today"]').count() === 1, 'viewer: relatives get menu, today, book, firsts, passports');
-  await page.goto(`${BASE}/#/passport/mimi`); await page.waitForSelector('.mission');
-  ok(await page.locator('button[data-a="tick"]:not([disabled])').count() === 0 && await page.locator('.ppf').count() === 0 && await page.locator('.mission .tick.on').count() >= 1, 'viewer: sees the passport ticks read-only');
+  ok(await page.locator('nav.bar a[href*="#/passport"]').count() === 0 && await page.locator('nav.bar .in > *').count() === 4 && await page.locator('nav.bar a[href$="/today"]').count() === 1, 'viewer: relatives get menu, today, book, firsts — the passports open from the shelf (one door for grown-ups)');
+  await ppOpen(page, 'mimi', T, 'missions');
+  ok(await page.locator('button[data-a="tick"]:not([disabled])').count() === 0 && await page.locator('.ppf, .ppedit').count() === 0 && await page.locator('.mission .tick.on').count() >= 1, 'viewer: sees the passport ticks read-only (no ✏️)');
   await page.goto(`${BASE}/#/t/${T}`); await page.waitForSelector('.hubgrid');
   ok(await page.locator('.tile[href*="/log/"], .tile[href$="/offline"], .tile.kid').count() === 0 && await page.locator('.tile[href$="/sos"]').count() === 1 && await page.locator('.tile[href$="/eat"]').count() === 1, 'viewer menu: no record, offline or kid-mode tiles; emergency numbers stay, and the eat tile (their bar has no eat button)');
   await page.goto(`${BASE}/#/t/${T}/book`); await page.waitForSelector('#d1');
@@ -2453,10 +2501,11 @@ const T = 'hk-macau-2026';
   ok((await page.textContent('#pocket .emerg li.main')).includes('000') && await page.locator('#pocket .emerg a[href="tel:000"]').count() === 1, 'pocket guide: 000 is a tap-to-call link');
   await page.locator('#pocket').screenshot({ path: path.join(OUT, 'au-02-pocket.png') });
   ok(await s.noHScroll(), 'AU book with the pocket guide fits the phone');
-  await page.goto(`${BASE}/#/passport/mimi/big-hop-2027`); await page.waitForSelector('#m1');
+  await ppOpen(page, 'mimi', 'big-hop-2027', 'missions');
   ok(await page.locator('#m1 .says li').count() >= 4 && await page.locator('#m1 .mquiz .qa').count() === 3, 'passport mission: the guide tells the facts + one line per stop; Kiki asks 3 quiz questions');
   await page.locator('#m1 .qa summary').first().click();
   ok(await page.locator('#m1 .qa[open] p').count() === 1, 'passport quiz: tap reveals the answer');
+  await ppOpen(page, 'mimi', 'big-hop-2027', 'lists');
   ok(await page.locator('#pl-words .sayrow .hearbtn[data-lang="en-AU"]').count() === 8, 'passport: 8 Aussie words with an en-AU 🔊');
   await page.click('.kidgo'); await page.waitForSelector('.kidtiles');
   ok(await page.locator('.kidtiles button[data-v$="/quiz"]').count() === 1 && await page.locator('.kidtiles button[data-v$="/words"]').count() === 1, 'kid mode (AU): quiz + say-it tiles');
@@ -2639,7 +2688,7 @@ const T = 'hk-macau-2026';
   ok(zeros.length === 0, `menu tiles never show a zero or "0/6" (${zeros.join(' | ') || 'none'})`);
   // the same rule on every page a parent or a child reads before anything is recorded (a crawl of the app found these)
   { const Z = /(^|\s)0\/\d|(^|\s)0 (รูป|วัน|คำพูด|ครั้งแรก|ข้อความ|photos?|days?|quotes?|firsts?)\b/;
-    for (const [r, w] of [[`#/t/${T}/prep`, '.tp-prep, .glc'], [`#/passport/mika/big-hop-2027`, '.stkhd'], [`#/print/big-hop-2027`, '.facts'], [`#/t/big-hop-2027/log/12/all`, '#lgphotos'], ['#/kid/mika/stickers', '.stkhd'], ['#/kid/mika/trophies', '.trophies'], ['#/notebook', 'main h1'], ['#/family', '.famh3']]) {
+    for (const [r, w] of [[`#/t/${T}/prep`, '.tp-prep, .glc'], [`#/passport/mika/big-hop-2027/stickers`, '.stkhd'], [`#/print/big-hop-2027`, '.facts'], [`#/t/big-hop-2027/log/12/all`, '#lgphotos'], ['#/kid/mika/stickers', '.stkhd'], ['#/kid/mika/trophies', '.trophies'], ['#/notebook', 'main h1'], ['#/family', '.famh3']]) {
       await page.goto(`${BASE}/${r}`); await page.waitForSelector(w); const tx = await page.evaluate(() => (document.querySelector('main') || document.body).textContent.replace(/\s+/g, ' '));
       ok(!Z.test(tx), `${r}: no zero counter on the page (${(tx.match(Z) || [''])[0].trim() || 'none'})`); }
     // kid mode guards: a map with stops but no day that reaches one, two keys with one face in the match game, the words trophy, bubbles that survive a redraw, a child without a book
@@ -2766,7 +2815,7 @@ const T = 'hk-macau-2026';
   ok(await page.locator('.cover img[src^="/stock/"]').count() >= 1 || await page.locator('img[src^="/stock/"]').count() >= 1, 'sample: the book shows the library pictures');
   ok(await page.locator('.bookstart a.btn[href*="/log/"]').count() === 1 && await page.locator('.foreblk, .letterblk, .coverpick').count() === 0 && await page.locator('a[data-a="pdf"]:visible').count() === 0 && await page.evaluate(() => document.querySelector('.bookstart').getBoundingClientRect().top < document.querySelector('.bookstart').getBoundingClientRect().height + 900), 'empty book: the way in (“record the first day”) comes right after the cover; the foreword, letter, cover choice and PDF wait for content');
   await page.goto(`${BASE}/#/passport/${st1.children[0].slug}/sakura-hop-2028`); await page.waitForSelector('.advc');
-  ok(/^\/stock\/jp\/stamp\.v\d+\.svg$/.test(await page.getAttribute('.advc img.crest', 'src')) && await page.locator('.pp-page').count() >= 2, 'sample: the passport takes the stock library\'s Japan stamp as its crest (no drawn art of its own, the generic guides)');
+  ok(/^\/stock\/jp\/stamp\.v\d+\.svg$/.test(await page.getAttribute('.advc img.crest', 'src')) && await page.locator('.pp-page').count() >= 1, 'sample: the passport takes the stock library\'s Japan stamp as its crest (no drawn art of its own, the generic guides)');
   { const ad = (sample.theme || {}).artDays || [], stamps = ((await page.evaluate(() => S.trips.find((t) => t.id === 'sakura-hop-2028').passport)) || {}).stamps || [];
     ok(ad.length === 6 && ad.every((u) => /^\/stock\/jp\/tokyo\/[a-z-]+\.v\d+\.svg$/.test(u)) && stamps.map((x) => x.art).join() === '/stock/jp/stamp.v1.svg,/stock/jp/tokyo/stamp.v1.svg',
       'sample: every Tokyo day has a stock library picture and the passport holds the Japan and Tokyo stamps (resolved by the server)');
@@ -2788,11 +2837,22 @@ const T = 'hk-macau-2026';
   await s.page.clock.setFixedTime(new Date('2026-12-07T03:00:00Z'));   // 11:00 in Hong Kong / Macau, day 3 of the HK book
   await login(s.page);
   const page = s.page;
-  await page.goto(`${BASE}/#/passport/mimi/${T}`); await page.waitForSelector('#m2');
+  await ppOpen(page, 'mimi', T, 'missions'); await page.waitForSelector('#m2');
   ok(await page.evaluate(() => ['#m0', '#m1', '#m2', '#m3'].map((id) => document.querySelector(`${id} details.mfold`).open).join()) === 'false,false,true,false' && await page.locator('#m2.today').count() === 1,
     'passport during the trip: only today’s mission is open, the other days fold away');
   await page.click('#m4 summary'); await page.waitForFunction(() => document.querySelector('#m4 details.mfold').open);
   ok(await page.locator('#m4 .spot button[data-a="tick"]').first().isVisible(), 'passport during the trip: a tap opens another day');
+  await ppOpen(page, 'mimi', T, `visa-${T}`);
+  ok(await page.locator('.ppstamp .stampbtn[data-d="2"]').count() === 1, 'passport during the trip: this trip\'s visa holds today\'s stamp button for a parent too');
+  { // the kid door: the same book inside kid mode — locked, its pages turn by big buttons read aloud, no ✏️, no print
+    await page.goto(`${BASE}/#/kid/mimi/stamp`); await page.waitForSelector(`.kidwrap .pbook.inkid[data-page="visa-${T}"] .stampbtn[data-d="2"]`);
+    const kd = await page.evaluate(() => ({ lock: !!document.querySelector('.kidwrap #kidexit'), tabs: document.querySelectorAll('.pbook .pptabs button[data-a="kidnav"][data-say]').length, grown: document.querySelectorAll('.ppedit, .ppf, .ppprint, .ppkids, nav.bar').length,
+      next: (document.querySelector('.ppturn [data-dir="next"]') || {}).dataset || {} }));
+    ok(kd.lock && kd.tabs === 10 && kd.grown === 0 && kd.next.v === '#/kid/mimi/pass/missions', `kid door: this trip's visa with today's stamp, the book's ten pages as kid buttons, the lock, and nothing of the grown-ups' (${JSON.stringify(kd)})`);
+    await page.click('.ppturn [data-dir="next"]'); await page.waitForSelector('.pbook.inkid[data-page="missions"] .mission');
+    ok(page.url().endsWith('#/kid/mimi/pass/missions') && await page.locator('.mission button[data-a="tick"]:not([disabled])').count() === 0, 'kid door: ‹ › turn the pages inside kid mode; ticks stay with the grown-ups');
+    await page.goto(`${BASE}/#/kid/mimi/pass/id`); await page.waitForSelector('.pbook.inkid[data-page="id"] .bio');
+    ok(await page.locator('.ppf').count() === 0 && await page.locator('.pbook .growl li').count() === 2 && await page.locator('.kidbar').count() === 1, 'kid door: the Explorer ID with Mimi\'s trips, no boxes'); }
   await page.goto(`${BASE}/#/kid/mika/spot`); await page.waitForSelector('.kidspots');
   ok(await page.locator('.kidspots.little button[data-v^="little.d2."]').count() === 3, 'kid mode: Mika’s "point it" page has her three missions of today');
   // the morning surprise box: on a trip day kid mode greets with a box; opening it gives a sticker and shows today's missions; once
@@ -2828,7 +2888,7 @@ const T = 'hk-macau-2026';
   ok(true, 'memory game: two questions, then a well-done and "play again"');
   await page.evaluate(() => ls('kidmode', null));
   await page.clock.setFixedTime(new Date('2026-12-10T03:00:00Z'));   // the last day: the certificate comes by itself, for both
-  for (const k of ['mimi', 'mika']) { await page.goto(`${BASE}/#/passport/${k}/${T}`); await page.reload(); await page.waitForSelector('#cert').catch(async (e) => { console.log('DEBUG cert after reload:', await page.evaluate(() => `${location.hash} · ${document.querySelectorAll('#cert').length} cert · ${(document.querySelector('main') || document.body).innerText.slice(0, 400).replace(/\s+/g, ' ')}`)); await page.screenshot({ path: `${OUT}/debug-cert.png` }); throw e; }); }
+  for (const k of ['mimi', 'mika']) { await page.goto(`${BASE}/#/passport/${k}/${T}/cert`); await page.reload(); await page.waitForSelector('#cert').catch(async (e) => { console.log('DEBUG cert after reload:', await page.evaluate(() => `${location.hash} · ${document.querySelectorAll('#cert').length} cert · ${(document.querySelector('main') || document.body).innerText.slice(0, 400).replace(/\s+/g, ' ')}`)); await page.screenshot({ path: `${OUT}/debug-cert.png` }); throw e; }); }
   ok(await page.locator('#cert.earned').count() === 1 && (await page.textContent('#cert')).includes('pointed, touched'), 'on the last day the certificate is there without any ticking (Mika gets her own words)');
   await page.clock.setFixedTime(new Date('2026-12-07T03:00:00Z'));
   await page.goto(`${BASE}/#/kid/mimi/numbers`); await page.waitForSelector('.cnt');

@@ -3470,7 +3470,7 @@ textarea.field.paper{min-height:230px;line-height:30px;padding:8px 14px;backgrou
 .lbcin .btn{min-height:44px}
 .kidnotes{display:inline-flex;align-items:center;gap:10px}.kidnotes img{width:40px;height:40px;object-fit:contain}
 .remind.ask.rel .rbell{width:40px;height:40px;object-fit:contain;flex:none}
-/* growing up, trip by trip (#/grow) */
+/* growing up, trip by trip (the passport's Explorer ID page) */
 .grchips{margin:4px 0 10px}.grchips .chip .face{width:26px;height:26px;border-radius:50%;object-fit:cover;margin:-4px 0}
 .grchart{width:100%;height:auto;display:block}.grchart .grv{font-size:12px;font-weight:700;fill:var(--ink)}.grchart .gra{font-size:11px;fill:var(--muted)}
 .growl{list-style:none;padding:0;margin:14px 0;display:grid;gap:12px;position:relative}
@@ -3965,3 +3965,36 @@ details.more>summary{border-radius:16px}
 .budbars li{grid-template-columns:minmax(90px,auto) 1fr auto auto}
 .budbars small{white-space:nowrap}
 @media (max-width:480px){.budbars li{grid-template-columns:minmax(80px,auto) 1fr auto;row-gap:2px}.budbars small{grid-column:2/-1;text-align:right;margin-top:-4px}}
+
+/* one kids' passport per child (views.js viewPassport): a book shown a page at a time — the page tabs, the page, ‹ › at its foot.
+   The same book is kid mode's 🛂 / ⭐ / 🏆 (.pbook.inkid: bigger taps and type) */
+.pbook{margin:8px 0 24px}
+.pptabs{display:flex;gap:6px;overflow-x:auto;scrollbar-width:none;padding:4px 2px 10px;margin:0 -2px;-webkit-overflow-scrolling:touch;overscroll-behavior-x:contain}
+.pptabs::-webkit-scrollbar{display:none}
+.ppt{flex:none;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:3px;min-width:66px;max-width:100px;min-height:58px;padding:6px 8px;border-radius:16px;border:0;background:var(--card);box-shadow:inset 0 0 0 1px var(--line);color:var(--ink);text-decoration:none;font:inherit;cursor:pointer}
+.ppt span{font-size:22px;line-height:1}.ppt img{width:30px;height:30px;object-fit:contain}
+.ppt small{font-size:11.5px;line-height:1.2;text-align:center;overflow:hidden;display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;max-width:100%}
+.ppt[aria-current]{background:color-mix(in srgb,var(--accent) 14%,var(--card));box-shadow:inset 0 0 0 2px var(--accent);color:color-mix(in srgb,var(--accent) 60%,var(--ink))}
+.ppbody{min-height:40vh}
+.ppturn{display:grid;grid-template-columns:minmax(0,1fr) auto minmax(0,1fr);align-items:center;gap:10px;margin-top:18px}
+.ppgo{display:flex;align-items:center;justify-content:center;gap:6px;min-height:56px;padding:8px 16px;border-radius:999px;border:0;background:var(--accent);color:var(--on-accent);font:inherit;font-size:24px;font-weight:700;line-height:1;text-decoration:none;cursor:pointer;min-width:0;max-width:100%}
+.ppgo small{font-size:14px;font-weight:600;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;min-width:0}
+.ppgo.prev{justify-self:start;background:var(--card);color:color-mix(in srgb,var(--accent) 65%,var(--ink));box-shadow:inset 0 0 0 2px var(--accent)}
+.ppgo.next{justify-self:end}
+.ppn{font-size:13px;color:var(--muted);font-weight:600;white-space:nowrap}
+.pphd{display:flex;align-items:center;gap:8px;flex-wrap:wrap;margin:4px 0 12px}
+.pphd h2{margin:0;flex:1 1 auto;font-family:var(--ui);font-size:22px;line-height:1.25}
+.pphd .mini{min-height:44px;min-width:44px}
+.ppedit[aria-pressed=true]{background:color-mix(in srgb,var(--accent) 14%,var(--card));box-shadow:inset 0 0 0 2px var(--accent)}
+.ppprint{margin-left:auto;min-height:44px;display:inline-flex;align-items:center}
+.ppstamp{display:grid;gap:12px;margin:0 0 16px}
+.pbook .pp-page.grow{margin-top:16px}
+.pbook .growi .grgo{display:flex;gap:14px;align-items:flex-start;flex:1;min-width:0;color:inherit;text-decoration:none}
+.pbook .growi.cur{box-shadow:0 0 0 3px var(--g1)}
+.pbook .grtx b{font-size:16px;line-height:1.3}.pbook .grtx small{font-size:12.5px;color:color-mix(in srgb,#1F2A3A 70%,var(--g1))}
+.pbook.inkid .ppt{min-width:76px;min-height:72px}.pbook.inkid .ppt small{font-size:13px}
+.pbook.inkid .ppgo{min-height:64px;font-size:30px}.pbook.inkid .ppgo small{font-size:16px}
+.pbook.inkid .ppbody{min-height:0}
+.pbook.inkid>.ppbody>.kidguide{margin-bottom:12px}
+@media (prefers-color-scheme:dark){:root:not([data-theme=light]) .pbook .grtx small{color:color-mix(in srgb,var(--ink) 75%,var(--g1))}}
+:root[data-theme=dark] .pbook .grtx small{color:color-mix(in srgb,var(--ink) 75%,var(--g1))}

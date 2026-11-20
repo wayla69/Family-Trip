@@ -39,6 +39,7 @@ function render() {
     document.body.classList.remove('padfull');   // the drawing board's full-screen sheet puts it back (hydrateDraw) while it is open
     app.innerHTML = `<main class="kidmain${enter ? ' enter' : ''}">${viewKid(p)}</main>`;
     hydrateColours(app); hydrateDraw(app); hydrateMap(app); hydratePager(app);
+    ppTabsShow(app);
     return;
   }
   if (p[0] === 'reelcards' && (t = trip(p[1]))) {   // a book's film: its cards, photographed one by one by the server (server/reel.js)
@@ -110,7 +111,7 @@ function render() {
     else if (sec === 'check') html = isEditor() ? viewCheck(t) : viewHub(t);
     else if (sec === 'photos') html = viewPhotos(t);
     else html = viewHub(t);
-  } else if (p[0] === 'passport') html = viewPassport(p[1], p[2]);
+  } else if (p[0] === 'passport') html = trip(p[2]) ? viewPassport(p[1], p[2], p[3]) : viewPassport(p[1], undefined, p[2]);   // #/passport/<kid>[/<trip>][/<page>]
   else if (p[0] === 'notebook') html = viewNotebook();
   else if (p[0] === 'viewers' && isEditor()) html = viewViewers();
   else if (p[0] === 'import' && isEditor()) html = viewImport();
@@ -126,7 +127,7 @@ function render() {
   else if (p[0] === 'health' && isEditor()) html = viewHealth();
   else if (p[0] === 'map') html = viewFamMap(p[1] || '');
   else if (p[0] === 'year') html = viewYear(p[1] || '');
-  else if (p[0] === 'grow') html = viewGrow(p[1] || '');
+  else if (p[0] === 'grow') { history.replaceState(null, '', `#/passport/${encodeURIComponent(p[1] || '')}/id`); html = viewPassport(p[1] || '', undefined, 'id'); }   // the old Growing up page lives in the passport's Explorer ID now
   else if (p[0] === 'inbox' && isEditor()) html = viewInbox();
   else if (p[0] === 'devices' && isEditor()) html = viewDevices();
   else if (p[0] === 'capsules' && isEditor()) html = viewCapsules();
@@ -145,6 +146,7 @@ function render() {
   // the photo picker is one input outside #app, so a render while the picker is open cannot replace it and drop the chosen photos
   const fp = document.getElementById('fpick'), host = app.querySelector('[data-fpick]'); if (fp && host) { fp.dataset.t = host.dataset.t; fp.dataset.d = host.dataset.d; }   // (the place a "where was it?" chip set stays: a background redraw while the phone's gallery is open must not drop it)
   if (typeof hydrateColours === 'function') hydrateColours(app);   // kid.js loads after this file
+  ppTabsShow(app);
   if (enter && p[3] === 'full' && p[4] !== undefined) setTimeout(() => { const el = document.getElementById(`pg-${p[2]}-${p[4]}`); if (el && !el.closest('.tp.one')) el.scrollIntoView(); }, 0);   // after the router's scroll-to-top   // a glance card opens the report on its section
   if (p[2] === 'log' && p[4] === 'ai' ? aiOpened !== location.hash && (aiOpened = location.hash) : (aiOpened = null)) setTimeout(() => { const el = document.getElementById('aipanel'); if (el) { el.scrollIntoView({ block: 'start' }); el.classList.add('flash'); } }, 60);   // the 21:30 reminder: open at tonight's Claude panel
   if (enter && p[2] === 'book' && p[3] === 'd') { const el = document.getElementById('d' + p[4]); if (el) el.scrollIntoView(); }   // #/t/<trip>/book/d/<i> opens on that day
@@ -249,7 +251,7 @@ function tabBar(t, p) {
     ? [item('hub', `#/t/${esc(c.id)}`, 'home', L('เมนู', 'Menu')), item('today', `#/t/${esc(c.id)}/today`, 'today', L('วันนี้', 'Today')), item('log', `#/t/${esc(c.id)}/log/${dn}`, 'log', L('บันทึก', 'Record')),
       item('eat', `#/t/${esc(c.id)}/eat`, 'eat', L('ร้านอาหาร', 'Eat')), `<button type="button" data-a="kidmode">${pi('kid')}${L('โหมดเด็ก', 'Kid mode')}</button>`]
     : [item('hub', `#/t/${esc(c.id)}`, 'home', L('เมนู', 'Menu')), item('today', `#/t/${esc(c.id)}/today`, 'today', L('วันนี้', 'Today')), item('book', `#/t/${esc(c.id)}/book`, 'book', L('สมุด', 'Book')),
-      item('firsts', `#/t/${esc(c.id)}/firsts`, 'firsts', L('ครั้งแรก', 'Firsts')), item('passport', '#/passport', 'passport', L('พาสปอร์ต', 'Passport'))];
+      item('firsts', `#/t/${esc(c.id)}/firsts`, 'firsts', L('ครั้งแรก', 'Firsts'))];   // the passports open from the shelf's cards (one passport, one door for grown-ups)
   return `<nav class="bar"><div class="in">${items.join('')}</div></nav>`;
 }
 function renderProgress() {
@@ -311,7 +313,6 @@ ${S.trips.some((t) => t.id === 'sakura-hop-2028') ? '' : `<button type="button" 
 <p class="lede">${L('เติมระหว่างเที่ยว แล้วเปิดอ่านได้อีกหลายปี', 'Fill it in on the road, reread it for years.')}</p>
 <div class="shelf">${books}${add}</div>
 <div class="part">${L('พาสปอร์ตนักผจญภัย', 'The kids’ passports')} 🛂</div>
-${children().length && S.trips.length ? `<a class="nbcard growcard" href="#/grow/${esc(children()[0].slug)}"><span class="emb">${hubIc('growth')}</span><div><b>${L('โตขึ้นทีละทริป', 'Growing up, trip by trip')}</b><small>${L('ตัวการ์ตูน อายุ ส่วนสูง และครั้งแรกของลูก จากทุกเล่ม', 'Each child’s character, age, height and firsts across every book')}</small></div><span class="arrow">›</span></a>` : ''}
 <div class="ppmini">${children().map((k) => { const n = passportStamps(k.slug); return `<a class="ppc s kid-${esc(k.slug)}" href="#/passport/${esc(k.slug)}"><span class="emb">${kidArt(k.slug) ? `<img src="${kidArt(k.slug)}" alt="">` : '🌏'}</span><b>${L('พาสปอร์ตนักผจญภัย', 'Adventure passport')}</b><span class="nm">${esc(kidName(k.slug))}</span><small>${n ? `${n} ${L('ตราประทับ', n === 1 ? 'stamp' : 'stamps')}` : L('ตราประทับรอหนูอยู่', 'Stamps are waiting')}</small></a>`; }).join('')}</div>
 ${isEditor() && (inboxLoad(), (INBOX.items || []).length) ? `<a class="nbcard ibcard" href="#/inbox"><span class="emb">${hubIc('camera')}</span><div><b>${L(`ญาติส่งรูปมา ${INBOX.items.length} รูป`, `${INBOX.items.length} photo${INBOX.items.length > 1 ? 's' : ''} from the family`)}</b><small>${L('ดูก่อนว่าจะใส่ในเล่มไหม', 'Look before they go in a book')}</small></div><span class="arrow">›</span></a>` : ''}
 ${S.trips.length ? `<div class="part">${L('ทุกเล่มรวมกัน', 'All our books')}</div>
@@ -2528,43 +2529,8 @@ const famTone = (k) => FAM_TONE[(k.look && k.look.top) || (k.slug === 'mika' ? '
 const famMonths = (ym) => { if (!/^\d{4}-\d{2}$/.test(ym || '')) return null; const [y, m] = ym.split('-').map(Number), n = new Date(), mo = (n.getFullYear() - y) * 12 + n.getMonth() + 1 - m; return mo >= 0 ? mo : null; };
 const famAgeM = (mo) => (mo == null ? '' : mo < 12 ? L(`${mo} เดือน`, `${mo} mo`) : L(`${Math.floor(mo / 12)}${mo % 12 >= 6 ? ' ขวบครึ่ง' : ' ขวบ'}`, `${Math.floor(mo / 12)}${mo % 12 >= 6 ? '½' : ''} yrs`));
 const famAge = (ym) => famAgeM(famMonths(ym));   // "3 ขวบครึ่ง" today from a birth month, '' when unknown
-/* Growing up, trip by trip (owner, Nov 2026: "กราฟการเติบโตของลูก"): one child's books in time — the character as drawn for that trip
-   (kidArt, the drawing of its time), the age then, the height the parents noted (entry kind 'field', key 'height', a book-wide number in
-   cm: `<trip>.field.height.<kid>`), the trip's firsts badges and one of the child's own words — and, once two heights are noted, a line of
-   them. Everyone who may see the books reads it; parents note the heights. */
+// a child's age in months when a book began (the passport's "Growing up, trip by trip" on the Explorer ID page)
 const growAgeM = (k, t) => { if (!k || !/^\d{4}-\d{2}$/.test(k.birth_ym || '') || !t.date_from) return null; const [y, m] = t.date_from.split('-').map(Number), [by, bm] = k.birth_ym.split('-').map(Number), mo = (y - by) * 12 + m - bm; return mo >= 0 ? mo : null; };
-const growHeight = (t, slug) => { const e = entriesOf(t.id).find((x) => x.id === `${t.id}.field.height.${slug}`); const v = e ? parseFloat(e.text) : NaN; return v > 30 && v < 220 ? v : null; };
-function viewGrow(slug0) {
-  const kids = children(); if (!kids.length) return emptyCard(null, L('ยังไม่มีเด็กในครอบครัว', 'No children yet'), '');
-  const k = kids.find((x) => x.slug === slug0) || kids[0], slug = k.slug, ed = isEditor();
-  const books = S.trips.filter((t) => { const tk = (t.theme.children || []).map((c) => c.slug); return !tk.length || tk.includes(slug); }).sort((a, b) => String(a.date_from).localeCompare(String(b.date_from)));
-  const chips = kids.length > 1 ? `<div class="row chips grchips" role="group">${kids.map((x) => `<a class="chip" href="#/grow/${esc(x.slug)}" aria-pressed="${x.slug === slug}">${kidFace(x.slug)} ${esc(kidName(x.slug))}</a>`).join('')}</div>` : '';
-  // the line runs by the trips' dates (a child with no birth month still gets it); each point says the age then, else the month
-  const mOf = (t) => { const [y, mm] = String(t.date_from || '').split('-').map(Number); return y ? y * 12 + mm : null; };
-  const pts = books.map((t) => ({ t, h: growHeight(t, slug), m: mOf(t), age: growAgeM(k, t) })).filter((x) => x.h && x.m != null);
-  let chart = '';
-  if (pts.length >= 2) {
-    const W = 320, H = 150, P = 26, m0 = Math.min(...pts.map((x) => x.m)), m1 = Math.max(...pts.map((x) => x.m)), h0 = Math.min(...pts.map((x) => x.h)) - 4, h1 = Math.max(...pts.map((x) => x.h)) + 4;
-    const X = (m) => P + ((m - m0) / Math.max(1, m1 - m0)) * (W - 2 * P), Y = (h) => H - P + 6 - ((h - h0) / Math.max(1, h1 - h0)) * (H - 2 * P);
-    chart = pcard('growth', PG.lime, L('ส่วนสูงทีละทริป', 'Height, trip by trip'), `<svg class="grchart" viewBox="0 0 ${W} ${H}" role="img" aria-label="${L('กราฟส่วนสูง', 'Height chart')}">
-<polyline points="${pts.map((x) => `${X(x.m).toFixed(1)},${Y(x.h).toFixed(1)}`).join(' ')}" fill="none" stroke="var(--g1)" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/>
-${pts.map((x) => `<circle cx="${X(x.m).toFixed(1)}" cy="${Y(x.h).toFixed(1)}" r="7" fill="#fff" stroke="var(--g1)" stroke-width="3"/><text x="${X(x.m).toFixed(1)}" y="${(Y(x.h) - 13).toFixed(1)}" text-anchor="middle" class="grv">${x.h}</text><text x="${X(x.m).toFixed(1)}" y="${H - 4}" text-anchor="middle" class="gra">${esc(x.age != null ? famAgeM(x.age) : fmtDay(x.t.date_from, { month: 'short', year: '2-digit' }))}</text>`).join('')}</svg>
-<p class="muted small">${L(`จาก ${pts[0].h} เป็น ${pts[pts.length - 1].h} ซม. — สูงขึ้น ${(pts[pts.length - 1].h - pts[0].h).toFixed(1).replace(/\.0$/, '')} ซม.`, `From ${pts[0].h} to ${pts[pts.length - 1].h} cm — ${(pts[pts.length - 1].h - pts[0].h).toFixed(1).replace(/\.0$/, '')} cm taller`)}</p>`, 'grcard');
-  }
-  const rows = books.map((t, i) => {
-    const m = growAgeM(k, t), h = growHeight(t, slug), art = kidArt(slug, true, t);
-    const firsts = entriesOf(t.id).filter((e) => e.kind === 'first' && (e.child === slug || e.child === 'both')), fe = firsts.map((e) => { const f = (t.firsts || []).find((x) => x.key === e.first_key); return f ? f.emoji : '⭐'; }).slice(0, 10);
-    const q = entriesOf(t.id).filter((e) => e.kind === 'quote' && e.text && (e.child === slug || e.child === 'both')).sort((a, b) => (b.highlight ? 1 : 0) - (a.highlight ? 1 : 0))[0];
-    return `<li class="growi pz" style="--g1:${Object.values(PG)[i % 8]}"><div class="grart">${art ? `<img src="${esc(art)}" alt="">` : kidFace(slug)}</div><div class="grtx">
-<a class="grbook" href="#/t/${esc(t.id)}/book"><b>${esc(T(t.title).split(' · ')[0])}</b><small>${esc(fmtRange(t))}</small></a>
-<div class="grfacts">${m != null ? `<span class="grchip">🎂 ${esc(famAgeM(m))}</span>` : ''}${ed ? `<label class="grchip grh">📏 <input class="ghinp" type="text" inputmode="decimal" autocomplete="off" data-t="${esc(t.id)}" data-k="${esc(slug)}" value="${h || ''}" placeholder="${L('ส่วนสูง', 'height')}" aria-label="${L('ส่วนสูงตอนทริปนี้ (ซม.)', 'Height on this trip (cm)')}"> ${L('ซม.', 'cm')}</label>` : h ? `<span class="grchip">📏 ${h} ${L('ซม.', 'cm')}</span>` : ''}</div>
-${fe.length ? `<div class="grfirst" title="${L('เหรียญครั้งแรก', 'Firsts')}">${fe.map((e) => `<span>${emo(e)}</span>`).join('')}</div>` : ''}
-${q ? `<p class="grq">“${emoIn(esc(q.text))}”</p>` : ''}</div></li>`;
-  }).join('');
-  return `${pageHead('growth', PG.lime, L('โตขึ้นทีละทริป', 'Growing up, trip by trip'), L(`${esc(kidName(slug))} โตขึ้นทีละทริป`, `${esc(kidName(slug))}, trip by trip`), L('ตัวการ์ตูนของแต่ละทริป อายุตอนนั้น ส่วนสูง เหรียญครั้งแรก และคำพูดของหนู', 'The character of each trip, the age then, the height, the firsts and their own words'))}
-${chips}${chart}${books.length ? `<ol class="growl">${rows}</ol>` : `<p class="muted">${L('ยังไม่มีเล่ม', 'No books yet')}</p>`}
-${ed && !pts.length ? `<p class="muted small">${L('ใส่ส่วนสูงของแต่ละทริป แล้วกราฟจะขึ้นเมื่อมีสองทริปขึ้นไป', 'Note the height on each trip — the chart appears once two trips have one')}</p>` : ''}`;
-}
 function viewFamily() {
   if (!fam) {
     const c = (S.family && S.family.custom) || {}, ca = c.app || {}, ck = c.kicker || {};   // only what the parents typed; empty = built from the children
@@ -3786,107 +3752,71 @@ function sleepStops(t) {
   const fmt = (ds) => ds.reduce((r, x) => { const l = r[r.length - 1]; if (l && x === l[1] + 1) l[1] = x; else r.push([x, x]); return r; }, []).map(([a, b]) => (a === b ? a + 1 : `${a + 1}–${b + 1}`)).join(', ');
   return out.map((s) => ({ ...s, label: fmt(s.days) }));
 }
+// the passport's ticks and boxes take a tap only when the book is open for writing (ppW: a parent, ✏️ on, never in kid mode)
+let ppW = false, ppEditOn = false;
 function tickBtn(t, kid, key, day, label, emoji, extra) {
-  const on = ticked(t, key, kid), ed = isEditor();
+  const on = ticked(t, key, kid), ed = ppW;
   return `<button class="tick${on ? ' on' : ''}" data-a="tick" data-t="${esc(t.id)}" data-k="${esc(kid)}" data-v="${esc(key)}" data-d="${day === null ? '' : day}" aria-pressed="${!!on}"${ed ? '' : ' disabled'}>
 <i>${on ? '✓' : ''}</i>${emoji ? `<span class="e">${esc(emoji)}</span>` : ''}<span class="t">${esc(label)}${extra || ''}</span></button>`;
 }
 function yumBtns(t, kid, key) {
-  const cur = ticked(t, key, kid), ed = isEditor();
+  const cur = ticked(t, key, kid), ed = ppW;
   return `<span class="yum">${[['yum', '😋', L('อร่อย', 'Yum')], ['yuck', '😖', L('ไม่ชอบ', 'Yuck')]].map(([v, e, lbl]) => `<button data-a="tick" data-yum="${v}" data-t="${esc(t.id)}" data-k="${esc(kid)}" data-v="${esc(key)}" data-d="" aria-pressed="${!!cur && cur.text === v}" aria-label="${lbl}"${ed ? '' : ' disabled'}>${e}</button>`).join('')}</span>`;
 }
 function starBtns(t, kid, key) {
-  const cur = ticked(t, key, kid), n = cur ? +cur.text || 0 : 0, ed = isEditor();
+  const cur = ticked(t, key, kid), n = cur ? +cur.text || 0 : 0, ed = ppW;
   return `<span class="stars">${[1, 2, 3].map((v) => `<button data-a="tick" data-yum="${v}" data-t="${esc(t.id)}" data-k="${esc(kid)}" data-v="${esc(key)}" data-d="" aria-pressed="${v <= n}" aria-label="${v} ★"${ed ? '' : ' disabled'}>★</button>`).join('')}</span>`;
 }
-function viewPassport(slug, tid) {
+/* One kids' passport per child, in one place (owner, Nov 2026: "อยากให้ทำแล้วจบในที่เดียวเลย อย่าซ้ำซ้อนหลายที่มันจะเหนื่อย"): a book shown a
+   page at a time — cover · Explorer ID (with the height line across every trip) · a visa per trip (today's stamp on this trip's) · daily
+   missions · the map · my lists · stickers · trophies and firsts · the certificate. Two doors, one function: the shelf's passport cards
+   (grown-ups; ✏️ opens the boxes and ticks for parents) and kid mode's 🛂 / ⭐ / 🏆 (locked, every page read aloud). Swipe, ‹ › or the
+   page tabs turn the pages. #/passport/<kid>[/<trip>][/<page>] · #/kid/<kid>/stamp | stickers | trophies | pass/<page>.
+   The height lives only in the Explorer ID (height_first / height_last); the old "Growing up" row (`height`) is read only when a restored
+   backup brings one back (migration 0042 moved them). */
+const ppHeight = (t, kid) => { for (const k of ['height_last', 'height_first', 'height']) { const v = fzHeight(fieldVal(t, k, kid)); if (v > 30 && v < 220) return Math.round(v * 10) / 10; } return null; };
+const ppTrips = (slug) => kidTrips(slug).slice().sort((a, b) => String(a.date_from).localeCompare(String(b.date_from)));
+const ppShort = (t) => T(t.title).split(' · ')[0];
+function ppPages(t, kid) {
+  const pp = t.passport || {};
+  return [['cover', '📘', L('ปก', 'Cover')], ['id', '🪪', L('บัตรนักสำรวจ', 'Explorer ID')]]
+    .concat(ppTrips(kid).map((x) => [`visa-${x.id}`, '🛂', L(`วีซ่า ${ppShort(x)}`, `Visa · ${ppShort(x)}`)]))
+    .concat([(pp.days || []).length ? ['missions', '🎯', L('ภารกิจรายวัน', 'Daily missions')] : null, ['map', '🗺️', pp.map ? L('แผนที่', 'Map') : L('เรานอนที่ไหน', 'Where we sleep')],
+      kidLists(t, kid).length || littleOf(t, kid) || pp.declaration ? ['lists', '✅', L('รายการของหนู', 'My lists')] : null,
+      ['stickers', '⭐', L('สติกเกอร์', 'Stickers')], ['trophies', '🏆', L('รางวัล', 'Trophies')], pp.certificate ? ['cert', '📜', L('ใบประกาศ', 'Certificate')] : null].filter(Boolean));
+}
+// where a page lives: the grown-ups' address, or kid mode's (this trip's visa is the old stamp page, stickers and trophies keep their names)
+const ppHref = (kid, t, key, kidMode) => (kidMode ? `#/kid/${kid}/${key === `visa-${t.id}` ? 'stamp' : key === 'stickers' || key === 'trophies' ? key : 'pass/' + key}` : `#/passport/${kid}/${t.id}/${key}`);
+// the tab row shows the page open now (it scrolls sideways on a phone)
+function ppTabsShow(root) { const pc = $('.pptabs [aria-current]', root); if (pc) pc.parentElement.scrollLeft = pc.offsetLeft - pc.parentElement.offsetLeft - 24; }
+const PP_ART = { map: 'map', stickers: 'stickers', trophies: 'trophies' };   // kid mode's own bar pictures for those pages; the visas wear the passport
+function viewPassport(slug, tid, page0, kidMode) {
   const ks = children(), k = ks.find((c) => c.slug === slug) || ks[0];
-  if (!k) return `<div class="empty">${L('ยังไม่มีข้อมูลเด็ก', 'No children yet')}</div>`;
-  const mine = kidTrips(k.slug), t = mine.find((x) => x.id === tid) || (mine.includes(curTrip()) ? curTrip() : mine[0]);
-  if (!t) return `<div class="empty">${L('ยังไม่มีทริป', 'No trips yet')}</div>`;
-  const pp = t.passport || {}, g = pp.guides || [], ed = isEditor(), kid = k.slug, name = kidName(kid), st = pp.style;
+  if (!k) return emptyCard(null, L('ยังไม่มีเด็กในครอบครัว', 'No children yet'), '');
+  const mine = kidTrips(k.slug), t = kidMode ? kidTrip(k.slug) : mine.find((x) => x.id === tid) || (mine.includes(curTrip()) ? curTrip() : mine[0]);
+  if (!t) return emptyCard(null, L('ยังไม่มีเล่ม', 'No books yet'), '');
+  const pp = t.passport || {}, g = pp.guides || [], kid = k.slug, name = kidName(kid), st = pp.style;
+  ppW = isEditor() && ppEditOn && !kidMode;
+  const ed = ppW, canEdit = isEditor() && !kidMode;
+  const pages = ppPages(t, kid), keys = pages.map((p) => p[0]);
+  const page = keys.includes(page0) ? page0 : page0 === 'visa' || page0 === 'stamp' ? `visa-${t.id}` : 'cover', at = keys.indexOf(page), cur = pages[at];
   const fill = (x) => String(x || '').replace(/\{name\}/g, name).replace(/\{KID\}/g, (k.name_en || kid).toUpperCase());   // seed text templates
   const age = ((t.theme.children || []).find((c) => c.slug === kid) || {}).age;
   const firsts = entriesOf(t.id).filter((e) => e.kind === 'first' && e.child === kid);
   const words = entriesOf(t.id).filter((e) => e.kind === 'quote' && (e.child === kid || e.child === 'both')).sort((a, b) => (b.highlight ? 1 : 0) - (a.highlight ? 1 : 0) || b.at - a.at);
-  const seen = new Set(ls('seen') || []), fresh = [];
-  const got = t.days.filter((_, i) => dayStamped(t, i)).length;
-  const short = T(t.title).split(' · ')[0], year = t.date_from.slice(0, 4);
-  const mdSet = ppMapDay && ppMapDay.t === t.id, md = mdSet ? ppMapDay.d : mapDayOf(t), mdPre = !mdSet && preTrip(t);   // the day the map shows (a tapped day, else today)
-  const stopQ = (s) => { const m = ((pp.map || {}).stops || []).find((x) => x.en === s.en); return m && m.q; };   // "Where we go" names open the real place
-  const mrz = esc(`P<${(pp.code || 'MB').split('-')[0]}<<${(k.name_en || kid).toUpperCase().replace(/[^A-Z]/g, '')}<<EXPLORER<<${year}`.padEnd(40, '<'));   // decorative only
+  const year = t.date_from.slice(0, 4), lit = littleOf(t, kid);
   const guide = (i) => g[i] ? `<img class="guide" src="${esc(g[i].art)}" alt="${esc(T(g[i].name))}">` : '';
   // blank boxes like the printed passport (no "e.g." hints); a height box shows its unit beside it
-  const field = (key, label, unit) => `<div><dt>${label}</dt><dd${unit ? ' class="unitd"' : ''}>${ed ? `<input class="field ppf" data-a-blur="field" data-t="${esc(t.id)}" data-k="${esc(kid)}" data-v="${key}" data-draft="pf:${esc(t.id)}:${kid}:${key}" value="${esc(drafts[`pf:${t.id}:${kid}:${key}`] ?? fieldVal(t, key, kid))}" maxlength="60"${unit ? ' inputmode="decimal"' : ''}>${unit ? `<span class="unit">${unit}</span>` : ''}` : esc(fieldVal(t, key, kid)) ? esc(fieldVal(t, key, kid)) + (unit ? ' ' + unit : '') : '—'}</dd></div>`;
+  const field = (key, label, unit) => `<div><dt>${label}</dt><dd${unit ? ' class="unitd"' : ''}>${ed ? `<input class="field ppf" data-a-blur="field" data-t="${esc(t.id)}" data-k="${esc(kid)}" data-v="${key}" data-draft="pf:${esc(t.id)}:${kid}:${key}" value="${esc(drafts[`pf:${t.id}:${kid}:${key}`] ?? fieldVal(t, key, kid))}" maxlength="60"${unit ? ' inputmode="decimal"' : ''}>${unit ? `<span class="unit">${unit}</span>` : ''}` : esc(fieldVal(t, key, kid)) ? esc(fieldVal(t, key, kid)) + (unit && !/[a-zก-๙]/i.test(fieldVal(t, key, kid)) ? ' ' + unit : '') : '—'}</dd></div>`;
+  const hear = (line) => (kidMode ? `<div class="kidguide">${guide(at % 2)}<p>${line}</p></div>` : '');
+  const sayBtn = (line) => `<button class="mini hearbtn ppsay" data-a="sayfacts" data-v="${esc(line)}" aria-label="🔊 ${L('อ่านให้ฟัง', 'Read aloud')}">🔊</button>`;
+  // a page's heading: its title, 🔊 (read aloud), and for a parent the ✏️ switch where the page has boxes or ticks
+  const head = (title, line, edits) => `<header class="pphd"><h2>${title}</h2>${kidMode ? '' : sayBtn(line)}${edits && canEdit ? `<button class="mini ppedit" data-a="ppedit" aria-pressed="${ppEditOn}">✏️ ${ppEditOn ? L('เสร็จแล้ว', 'Done') : L('แก้ไข', 'Edit')}</button>` : ''}</header>`;
+  let body = '';
 
-  // visa: a stamp per day of this trip (inked once the day has anything recorded or is Done)
-  const ds = t.days.map((d, i) => {
-    const on = dayStamped(t, i), id = `${t.id}:${i}`, isNew = on && !seen.has(id);
-    if (isNew) fresh.push(id);
-    return `<div class="dstamp${on ? ' on' : ''}${isNew ? ' new' : ''}" style="--r:${((i * 37 + t.id.length * 11) % 17) - 8}deg;--d:${Math.min(fresh.length, 12) * 90}ms" title="${esc(T(d.title))}">${artImg(t, i)}<small>${esc(((pp.days || [])[i] || {}).stamp || fmtDay(d.date, { day: 'numeric', month: 'short' }))}</small></div>`;
-  }).join('');
-  if (fresh.length) ls('seen', [...seen, ...fresh]);
-
-  // daily missions
-  const feel = [['🤩', L('สุดยอด', 'Super')], ['😄', L('มีความสุข', 'Happy')], ['😴', L('ง่วงนอน', 'Sleepy')]];
-  const mood = (i) => (S.entries.find((e) => e.id === `${t.id}.mood.d${i}.${kid}`) || {}).mood;
-  const liveDay = dayNow(t);   // -1 before and after the trip
-  // before the trip only one mission is open — the day chosen on the chips (day 1 to start); after the trip all open (owner's review, Nov 2026: 13,000 px of missions months ahead)
-  const pre = liveDay < 0 && daysUntil(t) > 0, pick = pre ? (mdayPick[t.id] ?? 0) : -1;
-  const missions = (pp.days || []).map((pd, i) => {
-    const d = t.days[i]; if (!d) return '';
-    const lit = littleOf(t, kid), spots = daySpots(t, i, kid), n = spots.filter((s) => ticked(t, s.key, kid)).length;
-    const pl = d.plan || {}, facts = (pd.facts || []).concat((pl.learn || []).map((x) => x.kid).filter(Boolean));   // the guide's facts + one line per stop from the manual
-    const open = liveDay < 0 ? (!pre || i === pick) : i === liveDay;   // during the trip only today's mission is open (the rest fold away, a tap opens one)
-    return `<article class="mission${dayStamped(t, i) ? ' stamped' : ''}${i === liveDay ? ' today' : ''}" id="m${i}"${pd.acc ? ` style="--ma:${esc(pd.acc)};--mt:${esc(pd.tint || '')}"` : ''}><details class="mfold"${open ? ' open' : ''}><summary>
-<header>${artImg(t, i)}<div><div class="kicker">${L('วันที่', 'Day')} ${i + 1} · ${esc(fmtDay(d.date))}${i === liveDay ? ` · <b>${L('วันนี้', 'today')}</b>` : ''}</div><h4>${esc(T(pd.title) || T(d.title))}</h4></div>${pd.stamp ? `<span class="mstamp${dayStamped(t, i) ? ' on' : ''}" style="--n:${longWord(pd.stamp)}">${esc(pd.stamp)}</span>` : ''}</header></summary>
-${facts.length ? `<div class="says">${guide(0)}<div><b>${esc(T((g[0] || {}).name))} ${L('เล่าว่า…', 'says…')}</b><ul>${facts.map((f) => `<li>${esc(T(f))}</li>`).join('')}</ul><button class="mini hearbtn" data-a="sayfacts" data-v="${esc(facts.map((f) => T(f)).join(' '))}">🔊 ${L('อ่านให้ฟัง', 'Read aloud')}</button></div></div>` : ''}
-${pl.tale ? taleHtml(t, i, pl.tale) : ''}
-${(pl.quiz || []).length && !lit ? `<div class="mquiz"><b>❓ ${L(`${T((g[1] || {}).name)} ถาม…`, `${T((g[1] || {}).name)} asks…`)}</b>${quizHtml(pl.quiz)}</div>` : ''}
-${fieldVal(t, `colour.d${i}`, kid) ? `<div class="colsvg sm" data-src="${esc(colourUrl(t, i))}" data-fill="${esc(colourFill(t, i, kid))}" title="${L('ภาพที่หนูระบาย', 'My colouring')}"></div>` : ''}
-${drawingsOf(t, kid, i).length ? `<div class="mdraw">${drawingsOf(t, kid, i).map((m) => `<button data-a="lb" data-v="${esc(m.id)}" data-t="${esc(t.id)}" aria-label="${L('ภาพที่หนูวาด', 'My drawing')}"><img src="${esc(imgT(m))}" alt="" loading="lazy"></button>`).join('')}</div>` : ''}
-<div class="felt"><span class="label">${L(`วันนี้${esc(name)}รู้สึก…`, 'Today I felt…')}</span>${feel.map(([e, lbl]) => `<button data-a="mood" data-t="${esc(t.id)}" data-d="${i}" data-k="${esc(kid)}" data-v="${e}" aria-pressed="${mood(i) === e}"${ed ? '' : ' disabled'}><span>${e}</span><small>${lbl}</small></button>`).join('')}</div>
-${spots.length ? `<div class="spot${lit ? ' little' : ''}"><div class="spothd">${guide(1)}<b>${lit ? L(`ภารกิจของ${esc(name)}: ชี้ แตะ ทำเสียง!`, `${esc(name)}'s mission: point, touch, make the sound!`) : L(`ภารกิจของ${T((g[1] || {}).name)}: หาให้เจอ!`, `${T((g[1] || {}).name)}'s mission: spot these!`)}</b>${n ? `<span class="label got">⭐ ${n}</span>` : ''}</div>
-<div class="ticks">${spots.map((s) => tickBtn(t, kid, s.key, i, T(s), s.e)).join('')}</div></div>` : ''}
-</details></article>`;
-  }).join('');
-
-  // checklists: animals, food (yum / yuck), Master Explorer → certificate. The tasting card draws each dish from the food library (kid.js gE) when its emoji has a picture
-  const lists = kidLists(t, kid).map((l) => {
-    const items = listItems(l), n = listGot(t, l, kid), goal = l.goal || 0;
-    const rated = l.yum || l.stars, note = (it) => `${it.note ? `<small>${esc(T(it.note))}</small>` : ''}${it.say ? `<small class="say">“${esc(it.say)}”</small>` : ''}`;
-    const GC = [['#2E7D32', '#E6F6EA'], ['#1565C0', '#E3F2FD'], ['#A16207', '#FFF6D6']];   // Spotted / Rides / Yummy columns, as printed
-    const body = l.groups.map((gr, gi) => `<div class="grp"${l.groups.length > 1 ? ` style="--ma:${GC[gi % 3][0]};--mt:${GC[gi % 3][1]}"` : ''}>${gr.title ? `<h5>${esc(gr.e || '')} ${esc(T(gr.title))}</h5>` : ''}<div class="ticks${rated || l.said ? ' food' : ''}">${gr.items.map((it) => rated
-      ? `<div class="tick${ticked(t, `${l.key}.${it.k}`, kid) ? ' on' : ''}"><span class="e">${typeof gFood === 'function' ? gFood(it.e, it.art) : esc(it.e || '')}</span><span class="t">${esc(T(it))}${it.speak ? ` <span class="zh">${esc(it.speak.text)}</span>` : ''}${note(it)}</span>${it.speak ? `<button class="hearbtn round" data-a="hear" data-v="${esc(it.speak.text)}" data-lang="${esc(it.speak.lang)}" aria-label="🔊 ${esc(it.en)}">🔊</button>` : ''}${l.stars ? starBtns(t, kid, `${l.key}.${it.k}`) : yumBtns(t, kid, `${l.key}.${it.k}`)}</div>`
-      : l.said && it.speak ? `<div class="sayrow">${tickBtn(t, kid, `${l.key}.${it.k}`, null, T(it), it.e, note(it))}<button class="hearbtn round" data-a="hear" data-v="${esc(it.speak.text)}" data-lang="${esc(it.speak.lang)}" aria-label="🔊 ${esc(it.en)}">🔊</button></div>`
-      : tickBtn(t, kid, `${l.key}.${it.k}`, null, T(it), it.e, note(it))).join('')}</div></div>`).join('');
-    return `<section class="pp-page plist${l.groups.length > 1 ? ' wide' : ''}" id="pl-${esc(l.key)}"><header><div><div class="kicker">${esc(l.e || '')} ${esc(T(l.sub))}</div><h3>${esc(T(l.title))}</h3></div>${n ? `<span class="count">⭐${n}</span>` : ''}</header>
-${body}
-${!goal && l.goalText ? `<p class="call calm" style="margin-top:12px">${esc(T(l.goalText))}</p>` : ''}${l.said ? `<p class="label" style="margin-top:8px">${L('ติ๊กเมื่อหนูพูดคำนั้นได้แล้ว', 'Tick it when you have said it!')}</p>` : ''}</section>`;
-  }).join('');
-  const lit = littleOf(t, kid), dc = lit ? null : pp.declaration;
-  // the little one: the words they say on the trip (quotes for this child), with a box to add one — instead of the customs form
-  const myWords = words.filter((e) => e.child === kid);
-  const littleHtml = lit ? `<section class="pp-page lwords" id="lwords"><header><div><div class="kicker">🗣️ ${esc(fill(T((lit.words || {}).sub)))}</div><h3>${esc(fill(T((lit.words || {}).title) || L('คำใหม่', 'New words')))}</h3></div><span class="count">${myWords.length}</span></header>
-${ed ? `<div class="row lwrow"><input class="field" id="lw-${esc(kid)}" maxlength="120" placeholder="${esc(L('เช่น “ปา” “บ๊ายบาย” “น้ำ”', 'e.g. “dada”, “bye-bye”, “water”'))}" data-draft="lw:${esc(t.id)}:${esc(kid)}" value="${esc(drafts[`lw:${t.id}:${kid}`] || '')}"><button class="btn small" data-a="littleword" data-t="${esc(t.id)}" data-k="${esc(kid)}">＋ ${L('จดคำนี้', 'Add the word')}</button></div>` : ''}
-${myWords.length ? `<ul class="lwl">${myWords.map((e) => `<li><b>“${emoIn(esc(e.text))}”</b><small class="label">${L('วันที่', 'Day')} ${e.day + 1}</small></li>`).join('')}</ul>` : `<p class="empty">${L(`ยังไม่มีคำ — คำแรกที่${esc(name)}พูดในทริปจดไว้ตรงนี้`, `No words yet — the first word ${esc(name)} says on the trip goes here`)}</p>`}</section>` : '';
-  const declHtml = dc ? `<section class="pp-page decl" id="decl"><header><div><div class="kicker">🛃 ${esc(T(dc.sub))}</div><h3>${esc(T(dc.title))}</h3></div></header>
-<p class="label">${esc(T(dc.intro))}</p>
-${dc.counts.map((c) => `<div class="dline"><span class="e">${esc(c.e)}</span><span>${esc(T(c.pre))}</span>${ed ? `<input class="field ppf num" inputmode="numeric" data-a-blur="field" data-t="${esc(t.id)}" data-k="${esc(kid)}" data-v="decl.${esc(c.k)}" data-draft="pf:${esc(t.id)}:${kid}:decl.${esc(c.k)}" value="${esc(drafts[`pf:${t.id}:${kid}:decl.${c.k}`] ?? fieldVal(t, `decl.${c.k}`, kid))}" maxlength="6">` : `<b class="num">${esc(fieldVal(t, `decl.${c.k}`, kid)) || '__'}</b>`}<span>${esc(T(c.post))}</span></div>`).join('')}
-${dc.texts.map((x) => `<div class="dtext"><span class="label">${esc(T(x.label))}</span>${ed ? `<input class="field ppf" data-a-blur="field" data-t="${esc(t.id)}" data-k="${esc(kid)}" data-v="decl.${esc(x.k)}" data-draft="pf:${esc(t.id)}:${kid}:decl.${esc(x.k)}" value="${esc(drafts[`pf:${t.id}:${kid}:decl.${x.k}`] ?? fieldVal(t, `decl.${x.k}`, kid))}" maxlength="60">` : `<p>${esc(fieldVal(t, `decl.${x.k}`, kid)) || '—'}</p>`}</div>`).join('')}
-<div class="declared">${L('แจ้งแล้ว<br>ถูกต้อง', 'DECLARED<br>&amp; TRUE')}<br>★ ${t.date_from.slice(0, 4)} ★</div></section>` : '';
-  const cert = pp.certificate;
-  const earned = certEarned(t, kid);
-  const certHtml = cert ? `<section class="pp-page cert${earned ? ' earned' : ''}" id="cert">
-<div class="kicker">${L('ใบประกาศเกียรติคุณ', 'Certificate of achievement')}</div><h3>${esc(T(cert.title))}</h3>
-${st && st.crest ? `<img class="crest" src="${esc(st.crest)}" alt="">` : stampHtml(t)}<p class="label">${L('ขอมอบให้', 'This certifies that')}</p><div class="cname">${kidFace(kid)} ${esc(name)}</div>
-<p>${earned ? esc(certText(t, kid)) : L(`ใบประกาศนี้จะเป็นของ${esc(name)}ในวันสุดท้ายของทริป 🎉 — ไม่ต้องติ๊กให้ครบ แค่เที่ยวให้สนุก`, `This certificate is ${esc(name)}'s on the last day of the trip 🎉 — nothing to complete, just have fun`)}</p>
-${earned ? `<p class="bye">${esc(T(cert.bye))}</p>` : ''}</section>` : '';
-
-  return `<div class="row ppkids" role="tablist">${ks.map((c) => `<a class="chip" role="tab" href="#/passport/${esc(c.slug)}/${esc(t.id)}" aria-selected="${c.slug === kid}" aria-pressed="${c.slug === kid}">${kidFace(c.slug)} ${esc(kidName(c.slug))}</a>`).join('')}
-${ed ? `<button class="chip kidgo" data-a="kidmode" data-v="${esc(kid)}">🧒 ${L('โหมดเด็ก', 'Kid mode')}</button>` : ''}
-<span class="sep"></span>${mine.map((x) => `<a class="chip" href="#/passport/${esc(kid)}/${esc(x.id)}" aria-pressed="${x.id === t.id}">${flagsOf(x)} ${esc(T(x.title).split(' · ')[0])}</a>`).join('')}</div>
-<div class="pp kid-${esc(kid)}${t.theme.display === 'serif' ? ' serif' : ''}" style="${themeStyle(t)}">
+  if (page === 'cover') {
+    const line = L(`พาสปอร์ตนักผจญภัยของ${name}`, `${name}'s adventure passport`);
+    body = `${hear(esc(line))}<div class="pp kid-${esc(kid)}${t.theme.display === 'serif' ? ' serif' : ''}" style="${themeStyle(t)}">
 ${st ? `<section class="advc" style="--ink:${esc(st.ink)};--hi:${esc(st.hi)};--bgA:${esc(st.bgA)};--bgB:${esc(st.bgB)};--gold:${esc(st.gold)}"><div class="card">
 ${st.crest ? `<img class="crest" src="${esc(st.crest)}" alt="">` : `<span class="crest nocrest">${stampHtml(t, true)}</span>`}
 <div class="kick">${L('พาสปอร์ตนักผจญภัยของเด็กๆ', 'Kids adventure passport')}</div>
@@ -3896,9 +3826,37 @@ ${st.crest ? `<img class="crest" src="${esc(st.crest)}" alt="">` : `<span class=
 <p class="places">${esc(T(st.places))}</p>
 <div class="xbox"><span>${L('นักสำรวจ', 'Explorer')}</span><b>${kidFace(kid)} ${esc(name)}</b></div>
 <div class="foot"><span>${L('เลขที่พาสปอร์ต', 'Passport No.')} <b>${esc(fill(pp.code))}</b></span><span>${L('ใช้ได้', 'Valid')} <b>${esc(fmtRange(t))}</b></span></div>
-</div></section>` : `<section class="ppc"><span class="emb">${kidArt(kid) ? `<img src="${kidArt(kid)}" alt="">` : '🌏'}</span><b>${L('พาสปอร์ตนักผจญภัย', 'Adventure Passport')}</b><span class="sub">${esc(short)} · ${flagsOf(t)}</span>
+</div></section>` : `<section class="ppc"><span class="emb">${kidArt(kid) ? `<img src="${kidArt(kid)}" alt="">` : '🌏'}</span><b>${L('พาสปอร์ตนักผจญภัย', 'Adventure Passport')}</b><span class="sub">${esc(ppShort(t))} · ${flagsOf(t)}</span>
 <span class="explorer">★ ${L('นักสำรวจ', 'Explorer')} ★</span><span class="nm">${esc(name)}</span>
 <small>${pp.code ? `${L('เลขที่', 'No.')} ${esc(fill(pp.code))} · ` : ''}${L('ใช้ได้', 'Valid')} ${esc(fmtRange(t))}</small></section>`}
+${g.length ? `<section class="pp-page guides"><header><div><div class="kicker">${L('ไกด์สองคนของหนู', 'Meet your two guides')}</div><h3>${esc(pp.greeting ? fill(T(pp.greeting)) : L(`สวัสดี ${name}!`, `Hello, ${name}!`))}</h3></div></header>
+${g.map((x, i) => `<div class="bubble${i % 2 ? ' r' : ''}">${guide(i)}<div><b>${esc(T(x.name))} ${L('บอกว่า…', 'says…')}</b><p>${esc(fill(T(x.hello)))}</p><button class="mini hearbtn" data-a="sayfacts" data-v="${esc(fill(T(x.hello)))}">🔊 ${L('อ่านให้ฟัง', 'Read aloud')}</button></div></div>`).join('')}</section>` : ''}</div>`;
+  } else if (page === 'id') {
+    // the Explorer ID: the one place a child's height is typed (the day-1 and last-day boxes, as printed) — and the line of it across every trip
+    const books = ppTrips(kid), mOf = (x) => { const [y, mm] = String(x.date_from || '').split('-').map(Number); return y ? y * 12 + mm : null; };
+    const pts = books.map((x) => ({ x, h: ppHeight(x, kid), m: mOf(x), age: growAgeM(k, x) })).filter((p) => p.h && p.m != null);
+    let chart = '';
+    if (pts.length >= 2) {
+      const W = 320, H = 150, P = 26, m0 = Math.min(...pts.map((p) => p.m)), m1 = Math.max(...pts.map((p) => p.m)), h0 = Math.min(...pts.map((p) => p.h)) - 4, h1 = Math.max(...pts.map((p) => p.h)) + 4;
+      const X = (m) => P + ((m - m0) / Math.max(1, m1 - m0)) * (W - 2 * P), Y = (h) => H - P + 6 - ((h - h0) / Math.max(1, h1 - h0)) * (H - 2 * P);
+      const grew = (pts[pts.length - 1].h - pts[0].h).toFixed(1).replace(/\.0$/, '');
+      chart = `<svg class="grchart" viewBox="0 0 ${W} ${H}" role="img" aria-label="${L('กราฟส่วนสูง', 'Height chart')}">
+<polyline points="${pts.map((p) => `${X(p.m).toFixed(1)},${Y(p.h).toFixed(1)}`).join(' ')}" fill="none" stroke="var(--g1)" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/>
+${pts.map((p) => `<circle cx="${X(p.m).toFixed(1)}" cy="${Y(p.h).toFixed(1)}" r="7" fill="#fff" stroke="var(--g1)" stroke-width="3"/><text x="${X(p.m).toFixed(1)}" y="${(Y(p.h) - 13).toFixed(1)}" text-anchor="middle" class="grv">${p.h}</text><text x="${X(p.m).toFixed(1)}" y="${H - 4}" text-anchor="middle" class="gra">${esc(p.age != null ? famAgeM(p.age) : fmtDay(p.x.date_from, { month: 'short', year: '2-digit' }))}</text>`).join('')}</svg>
+<p class="muted small">${L(`จาก ${pts[0].h} เป็น ${pts[pts.length - 1].h} ซม. สูงขึ้น ${grew} ซม.`, `From ${pts[0].h} to ${pts[pts.length - 1].h} cm — ${grew} cm taller`)}</p>`;
+    }
+    // trip by trip: the character as drawn for that trip, the age then, the height, the firsts and one of the child's words
+    const rows = books.map((x, i) => {
+      const m = growAgeM(k, x), h = ppHeight(x, kid), art = kidArt(kid, true, x);
+      const fe = entriesOf(x.id).filter((e) => e.kind === 'first' && (e.child === kid || e.child === 'both')).map((e) => { const f = (x.firsts || []).find((y) => y.key === e.first_key); return f ? f.emoji : '⭐'; }).slice(0, 10);
+      const q = entriesOf(x.id).filter((e) => e.kind === 'quote' && e.text && (e.child === kid || e.child === 'both')).sort((a, b) => (b.highlight ? 1 : 0) - (a.highlight ? 1 : 0))[0];
+      const inner = `<div class="grart">${art ? `<img src="${esc(art)}" alt="">` : kidFace(kid)}</div><div class="grtx"><b>${esc(ppShort(x))}</b><small>${esc(fmtRange(x))}</small>
+<div class="grfacts">${m != null ? `<span class="grchip">🎂 ${esc(famAgeM(m))}</span>` : ''}${h ? `<span class="grchip">📏 ${h} ${L('ซม.', 'cm')}</span>` : ''}</div>
+${fe.length ? `<div class="grfirst" title="${L('เหรียญครั้งแรก', 'Firsts')}">${fe.map((e) => `<span>${emo(e)}</span>`).join('')}</div>` : ''}${q ? `<p class="grq">“${emoIn(esc(q.text))}”</p>` : ''}</div>`;
+      return `<li class="growi pz${x.id === t.id ? ' cur' : ''}" style="--g1:${Object.values(PG)[i % 8]}">${kidMode || x.id === t.id ? inner : `<a class="grgo" href="${esc(ppHref(kid, x, 'id', false))}">${inner}</a>`}</li>`;
+    }).join('');
+    const line = L(`นี่คือบัตรนักสำรวจของ${name}`, `This is ${name}'s explorer card`);
+    body = `${hear(esc(line))}<div class="pp kid-${esc(kid)}" style="${themeStyle(t)}">${head(L('บัตรนักสำรวจ', 'Explorer ID'), line, true)}
 <section class="pp-page bio">
 <div class="photo">${kidArt(kid) ? `<img src="${kidArt(kid)}" alt="">` : `<span>${esc(k.emoji || '🙂')}</span>`}</div>
 <dl>
@@ -3909,30 +3867,137 @@ ${field('superpower', L('พลังพิเศษ', 'Superpower'))}
 ${field('height_first', L('ส่วนสูง วันแรก', 'Height · Day 1'), L('ซม.', 'cm'))}
 ${field('height_last', L(`ส่วนสูง วันที่ ${t.days.length}`, `Height · Day ${t.days.length}`), L('ซม.', 'cm'))}
 </dl>
-<div class="mrz" aria-hidden="true">${mrz}</div></section>
-${g.length ? `<section class="pp-page guides"><header><div><div class="kicker">${L('ไกด์สองคนของหนู', 'Meet your two guides')}</div><h3>${esc(pp.greeting ? fill(T(pp.greeting)) : L(`สวัสดี ${name}!`, `Hello, ${name}!`))}</h3></div></header>
-${g.map((x, i) => `<div class="bubble${i % 2 ? ' r' : ''}">${guide(i)}<div><b>${esc(T(x.name))} ${L('บอกว่า…', 'says…')}</b><p>${esc(fill(T(x.hello)))}</p></div></div>`).join('')}</section>` : ''}
-<section class="pp-page visa"><header><div><div class="kicker">${L('วีซ่า', 'Visa')} · ${esc(fmtRange(t))}</div><h3><span class="vflags">${flagsOf(t)}</span> ${esc(short)}</h3>
-<p class="label">${((t.theme.places || []).map((p) => esc(T(p))).join(' · ')) || esc(T(t.sub))} · ${got ? L(`ได้ตราแล้ว ${got}`, `${got} stamp${got > 1 ? 's' : ''}`) : L('ยังไม่มีตรา', 'No stamps yet')}</p></div>${stampHtml(t, false)}</header>
+<div class="mrz" aria-hidden="true">${esc(`P<${(pp.code || 'MB').split('-')[0]}<<${(k.name_en || kid).toUpperCase().replace(/[^A-Z]/g, '')}<<EXPLORER<<${year}`.padEnd(40, '<'))}</div></section>
+<section class="pp-page grow" style="--g1:${PG.lime}"><header><div><div class="kicker">${L('โตขึ้นทีละทริป', 'Growing up, trip by trip')}</div><h3>📏 ${L(`${esc(name)} โตขึ้นทีละทริป`, `${esc(name)}, trip by trip`)}</h3></div></header>
+${chart}<ol class="growl">${rows}</ol>
+${canEdit && pts.length < 2 ? `<p class="muted small">${L('ใส่ส่วนสูงในบัตรนักสำรวจของแต่ละเล่ม (กด ✏️) แล้วเส้นการเติบโตจะขึ้นเมื่อมีสองทริปขึ้นไป', 'Note the height in each book’s Explorer ID (tap ✏️) — the growth line appears once two trips have one')}</p>` : ''}</section></div>`;
+  } else if (page.startsWith('visa-')) {
+    // a visa per trip: a stamp a day (inked once the day has anything recorded or is Done), the library's city stamps, and on this trip today's stamp button
+    const x = mine.find((y) => `visa-${y.id}` === page) || t, xp = x.passport || {}, got = x.days.filter((_, i) => dayStamped(x, i)).length;
+    const seen = new Set(ls('seen') || []), fresh = [];
+    const ds = x.days.map((d, i) => {
+      const on = dayStamped(x, i), id = `${x.id}:${i}`, isNew = on && !seen.has(id);
+      if (isNew) fresh.push(id);
+      return `<div class="dstamp${on ? ' on' : ''}${isNew ? ' new' : ''}" style="--r:${((i * 37 + x.id.length * 11) % 17) - 8}deg;--d:${Math.min(fresh.length, 12) * 90}ms" title="${esc(T(d.title))}">${artImg(x, i)}<small>${esc(((xp.days || [])[i] || {}).stamp || fmtDay(d.date, { day: 'numeric', month: 'short' }))}</small></div>`;
+    }).join('');
+    if (fresh.length) ls('seen', [...seen, ...fresh]);
+    // the stamp ceremony (kid mode's old stamp page): on this trip, in kid mode on the picked day (not before the trip), for a parent on a trip day
+    const si = x.id !== t.id ? -1 : kidMode ? (preTrip(t) ? -1 : kidDayOf(t)) : isEditor() && dayNow(t) >= 0 ? dayNow(t) : -1;
+    let stamp = '';
+    if (si >= 0) {
+      const mineS = ticked(t, `stamp.d${si}`, kid), sd = t.days[si], spd = (pp.days || [])[si] || {};
+      stamp = `<div class="ppstamp"><div class="kidstamp${mineS ? ' done' : ''}" id="kidstamp"><div class="ring"><span class="lbl">${esc(spd.stamp || fmtDay(sd.date, { day: 'numeric', month: 'short' }))}</span>${artImg(t, si, 'inked')}</div></div>
+<div class="kidguide pop" id="kidcheer" ${mineS ? '' : 'hidden'}>${guide(0)}<p>${L(`เก่งมาก ${name}! ได้ตราวันนี้แล้ว`, `Well done, ${name}! Today's stamp is yours`)}</p></div>
+<button class="kidbig stampbtn" data-a="kidstamp" data-t="${esc(t.id)}" data-d="${si}" data-k="${esc(kid)}">${mineS ? L('ปั๊มอีกที! 🛂', 'Stamp again! 🛂') : L('ปั๊มตรา! 🛂', 'Stamp! 🛂')}</button></div>`;
+    }
+    const line = si >= 0 && !ticked(t, `stamp.d${si}`, kid) ? L(`มาปั๊มตราวันนี้กัน ${name}!`, `Let's stamp today, ${name}!`) : got ? L(`ทริป${ppShort(x)} ได้ตราแล้ว ${got} ดวง`, `${ppShort(x)}: ${got} stamp${got > 1 ? 's' : ''} so far`) : L(`ตราของทริป${ppShort(x)} รอหนูอยู่`, `The stamps of ${ppShort(x)} are waiting for you`);
+    body = `${hear(esc(line))}${stamp}<div class="pp kid-${esc(kid)}" style="${themeStyle(x)}">
+<section class="pp-page visa"><header><div><div class="kicker">${L('วีซ่า', 'Visa')} · ${esc(fmtRange(x))}</div><h3><span class="vflags">${flagsOf(x)}</span> ${esc(ppShort(x))}</h3>
+<p class="label">${((x.theme.places || []).map((p) => esc(T(p))).join(' · ')) || esc(T(x.sub))}${got ? ` · ${L(`ได้ตราแล้ว ${got}`, `${got} stamp${got > 1 ? 's' : ''}`)}` : ''}</p></div>${stampHtml(x, false)}${kidMode ? '' : sayBtn(line)}</header>
 <div class="dstamps">${ds}</div>
-${cityStampsHtml(t)}<p class="label" style="margin-top:10px">${L('ได้ตราเมื่อวันนั้นมีบันทึก หรือกด "จบวันนี้"', 'A stamp is inked when the day has something recorded or is marked Done')}</p></section>
-${pp.pins ? `<section class="pp-page sleep"><header><div><div class="kicker">${esc(T(pp.pins.sub)) || `${L('หมุด', 'Hops')} · ${pp.pins.items.length}`}</div><h3>📍 ${esc(T(pp.pins.title))}</h3></div></header>
-<ol>${pp.pins.items.map((s, n) => `<li><span class="n">${n + 1}</span><span class="t"><b>${stopQ(s) ? mapA(stopQ(s), esc(T(s))) : esc(T(s))}</b><small>${esc(T(s.days))}</small></span><span class="pe">${esc(s.e)}</span></li>`).join('')}</ol></section>`
-    : `<section class="pp-page sleep"><header><div><div class="kicker">${L('ที่พัก', 'Hops')} · ${sleepStops(t).length}</div><h3>🛏️ ${L('เรานอนที่ไหนบ้าง', 'Where we sleep')}</h3></div></header>
-<ol>${sleepStops(t).map((s, n) => `<li><span class="n">${n + 1}</span><span class="t"><b>${esc(s.name)}</b><small>${L('คืนที่', s.days.length > 1 ? 'Nights' : 'Night')} ${s.label}</small></span>${artImg(t, s.art)}</li>`).join('')}</ol></section>`}
-${pp.map ? `<section class="pp-page mapsec"><header><div><div class="kicker">${L('แผนที่', 'Map')} · ${L('วันที่', 'Day')} ${md + 1}</div><h3>🗺️ ${esc(T(pp.map.title))}</h3></div></header>${mapHtml(t, md, [kid].concat((t.theme.children || []).map((c) => c.slug).filter((s) => s !== kid)), mdPre ? 0 : null)}
+${cityStampsHtml(x)}<p class="label" style="margin-top:10px">${L('ได้ตราเมื่อวันนั้นมีบันทึก หรือกด "จบวันนี้"', 'A stamp is inked when the day has something recorded or is marked Done')}</p></section></div>`;
+  } else if (page === 'missions') {
+    const feel = [['🤩', L('สุดยอด', 'Super')], ['😄', L('มีความสุข', 'Happy')], ['😴', L('ง่วงนอน', 'Sleepy')]];
+    const mood = (i) => (S.entries.find((e) => e.id === `${t.id}.mood.d${i}.${kid}`) || {}).mood;
+    const liveDay = dayNow(t);   // -1 before and after the trip
+    // before the trip only one mission is open — the day chosen on the chips (day 1 to start); after the trip all open (owner's review, Nov 2026: 13,000 px of missions months ahead)
+    const pre = liveDay < 0 && daysUntil(t) > 0, pick = pre ? (mdayPick[t.id] ?? 0) : -1;
+    const missions = (pp.days || []).map((pd, i) => {
+      const d = t.days[i]; if (!d) return '';
+      const spots = daySpots(t, i, kid), n = spots.filter((s) => ticked(t, s.key, kid)).length;
+      const pl = d.plan || {}, facts = (pd.facts || []).concat((pl.learn || []).map((y) => y.kid).filter(Boolean));   // the guide's facts + one line per stop from the manual
+      const open = liveDay < 0 ? (!pre || i === pick) : i === liveDay;   // during the trip only today's mission is open (the rest fold away, a tap opens one)
+      return `<article class="mission${dayStamped(t, i) ? ' stamped' : ''}${i === liveDay ? ' today' : ''}" id="m${i}"${pd.acc ? ` style="--ma:${esc(pd.acc)};--mt:${esc(pd.tint || '')}"` : ''}><details class="mfold"${open ? ' open' : ''}><summary>
+<header>${artImg(t, i)}<div><div class="kicker">${L('วันที่', 'Day')} ${i + 1} · ${esc(fmtDay(d.date))}${i === liveDay ? ` · <b>${L('วันนี้', 'today')}</b>` : ''}</div><h4>${esc(T(pd.title) || T(d.title))}</h4></div>${pd.stamp ? `<span class="mstamp${dayStamped(t, i) ? ' on' : ''}" style="--n:${longWord(pd.stamp)}">${esc(pd.stamp)}</span>` : ''}</header></summary>
+${facts.length ? `<div class="says">${guide(0)}<div><b>${esc(T((g[0] || {}).name))} ${L('เล่าว่า…', 'says…')}</b><ul>${facts.map((f) => `<li>${esc(T(f))}</li>`).join('')}</ul><button class="mini hearbtn" data-a="sayfacts" data-v="${esc(facts.map((f) => T(f)).join(' '))}">🔊 ${L('อ่านให้ฟัง', 'Read aloud')}</button></div></div>` : ''}
+${pl.tale ? taleHtml(t, i, pl.tale) : ''}
+${(pl.quiz || []).length && !lit ? `<div class="mquiz"><b>❓ ${L(`${T((g[1] || {}).name)} ถาม…`, `${T((g[1] || {}).name)} asks…`)}</b>${quizHtml(pl.quiz)}</div>` : ''}
+${fieldVal(t, `colour.d${i}`, kid) ? `<div class="colsvg sm" data-src="${esc(colourUrl(t, i))}" data-fill="${esc(colourFill(t, i, kid))}" title="${L('ภาพที่หนูระบาย', 'My colouring')}"></div>` : ''}
+${drawingsOf(t, kid, i).length ? `<div class="mdraw">${drawingsOf(t, kid, i).map((m) => `<button data-a="lb" data-v="${esc(m.id)}" data-t="${esc(t.id)}" aria-label="${L('ภาพที่หนูวาด', 'My drawing')}"><img src="${esc(imgT(m))}" alt="" loading="lazy"></button>`).join('')}</div>` : ''}
+<div class="felt"><span class="label">${L(`วันนี้${esc(name)}รู้สึก…`, 'Today I felt…')}</span>${feel.map(([e, lbl]) => `<button data-a="mood" data-t="${esc(t.id)}" data-d="${i}" data-k="${esc(kid)}" data-v="${e}" aria-pressed="${mood(i) === e}"${ed ? '' : ' disabled'}><span>${e}</span><small>${lbl}</small></button>`).join('')}</div>
+${spots.length ? `<div class="spot${lit ? ' little' : ''}"><div class="spothd">${guide(1)}<b>${lit ? L(`ภารกิจของ${esc(name)}: ชี้ แตะ ทำเสียง!`, `${esc(name)}'s mission: point, touch, make the sound!`) : L(`ภารกิจของ${T((g[1] || {}).name)}: หาให้เจอ!`, `${T((g[1] || {}).name)}'s mission: spot these!`)}</b>${n ? `<span class="label got">⭐ ${n}</span>` : ''}</div>
+<div class="ticks">${spots.map((s) => tickBtn(t, kid, s.key, i, T(s), s.e)).join('')}</div></div>` : ''}
+</details></article>`;
+    }).join('');
+    const line = L(`ภารกิจรายวันของ${name}`, `${name}'s daily missions`);
+    body = `${hear(esc(line))}<div class="pp kid-${esc(kid)}" style="${themeStyle(t)}">${head(L('ภารกิจรายวัน', 'Daily missions'), line, true)}</div>
+${pre ? `<div class="mapdays mdays" role="group" aria-label="${L('เลือกวัน', 'Pick a day')}"><span class="label">${L('วันที่', 'Day')}</span>${(pp.days || []).map((_, i) => (t.days[i] ? `<button type="button" class="chip" data-a="mday" data-t="${esc(t.id)}" data-v="${i}" aria-pressed="${i === pick}">${i + 1}</button>` : '')).join('')}</div>` : ''}<div class="missions" style="${themeStyle(t)}">${missions}</div>`;
+  } else if (page === 'map') {
+    const mdSet = ppMapDay && ppMapDay.t === t.id, md = mdSet ? ppMapDay.d : mapDayOf(t), mdPre = !mdSet && preTrip(t);   // the day the map shows (a tapped day, else today)
+    const stopQ = (s) => { const m = ((pp.map || {}).stops || []).find((y) => y.en === s.en); return m && m.q; };   // "Where we go" names open the real place
+    const line = pp.map ? L('แผนที่การเดินทางของเรา', 'Our travel map') : L('เรานอนที่ไหนบ้าง', 'Where we sleep');
+    body = `${hear(esc(line))}<div class="pp kid-${esc(kid)}" style="${themeStyle(t)}">
+${pp.map ? `<section class="pp-page mapsec"><header><div><div class="kicker">${L('แผนที่', 'Map')} · ${L('วันที่', 'Day')} ${md + 1}</div><h3>🗺️ ${esc(T(pp.map.title))}</h3></div>${kidMode ? '' : sayBtn(line)}</header>${mapHtml(t, md, [kid].concat((t.theme.children || []).map((c) => c.slug).filter((s) => s !== kid)), mdPre ? 0 : null)}
 <div class="mapdays" role="group" aria-label="${L('เลือกวัน', 'Pick a day')}"><span class="label">${L('วันที่', 'Day')}</span>${t.days.map((_, d) => `<button class="chip" data-a="ppmapday" data-t="${esc(t.id)}" data-v="${d}" aria-pressed="${d === md}">${d + 1}</button>`).join('')}</div>
 <p class="label" style="margin-top:8px">${L('เส้นทึบ = ไปแล้ว · แตะวันให้เด็กเดินตาม · แตะหมุดเพื่อนำทาง', 'Solid line = been there · tap a day to walk the kids there · tap a pin for the real map and directions')}</p></section>` : ''}
-</div>
-${missions ? `<div class="part">${L('ภารกิจรายวัน', 'Daily missions')} · ${esc(name)}</div>${pre ? `<div class="mapdays mdays" role="group" aria-label="${L('เลือกวัน', 'Pick a day')}"><span class="label">${L('วันที่', 'Day')}</span>${(pp.days || []).map((_, i) => (t.days[i] ? `<button type="button" class="chip" data-a="mday" data-t="${esc(t.id)}" data-v="${i}" aria-pressed="${i === pick}">${i + 1}</button>` : '')).join('')}</div>` : ''}<div class="missions" style="${themeStyle(t)}">${missions}</div>` : ''}
-<div class="pp kid-${esc(kid)}" style="${themeStyle(t)}">${lit && lit.note ? `<p class="call calm lnote">👶 ${esc(T(lit.note))}</p>` : ''}${lists}${littleHtml}${declHtml}${certHtml}
-<section class="pp-page stkpage"><header><div><div class="kicker">${L('หน้าสติกเกอร์', 'Sticker page')}</div><h3>⭐ ${L(`สติกเกอร์ของ${esc(name)}`, `${esc(name)}’s stickers`)}</h3></div></header>${stickerBoard(t, kid, false)}
-<p class="label" style="margin-top:8px">${L('สติกเกอร์ได้จากภารกิจ ตราประทับ และประตูเซอร์ไพรส์ · เด็กแปะเองในโหมดเด็ก', 'Stickers come from missions, checklists, stamps and surprise doors · the kids stick them on in kid mode')}</p></section>
+${pp.pins ? `<section class="pp-page sleep"><header><div><div class="kicker">${esc(T(pp.pins.sub)) || `${L('หมุด', 'Hops')} · ${pp.pins.items.length}`}</div><h3>📍 ${esc(T(pp.pins.title))}</h3></div></header>
+<ol>${pp.pins.items.map((s, n) => `<li><span class="n">${n + 1}</span><span class="t"><b>${stopQ(s) && !kidMode ? mapA(stopQ(s), esc(T(s))) : esc(T(s))}</b><small>${esc(T(s.days))}</small></span><span class="pe">${esc(s.e)}</span></li>`).join('')}</ol></section>`
+    : `<section class="pp-page sleep"><header><div><div class="kicker">${L('ที่พัก', 'Hops')} · ${sleepStops(t).length}</div><h3>🛏️ ${L('เรานอนที่ไหนบ้าง', 'Where we sleep')}</h3></div></header>
+<ol>${sleepStops(t).map((s, n) => `<li><span class="n">${n + 1}</span><span class="t"><b>${esc(s.name)}</b><small>${L('คืนที่', s.days.length > 1 ? 'Nights' : 'Night')} ${s.label}</small></span>${artImg(t, s.art)}</li>`).join('')}</ol></section>`}</div>`;
+  } else if (page === 'lists') {
+    // checklists: animals, food (yum / yuck), Master Explorer. The tasting card draws each dish from the food library (kid.js gE) when its emoji has a picture
+    const lists = kidLists(t, kid).map((l) => {
+      const n = listGot(t, l, kid), goal = l.goal || 0;
+      const rated = l.yum || l.stars, note = (it) => `${it.note ? `<small>${esc(T(it.note))}</small>` : ''}${it.say ? `<small class="say">“${esc(it.say)}”</small>` : ''}`;
+      const GC = [['#2E7D32', '#E6F6EA'], ['#1565C0', '#E3F2FD'], ['#A16207', '#FFF6D6']];   // Spotted / Rides / Yummy columns, as printed
+      const lb = l.groups.map((gr, gi) => `<div class="grp"${l.groups.length > 1 ? ` style="--ma:${GC[gi % 3][0]};--mt:${GC[gi % 3][1]}"` : ''}>${gr.title ? `<h5>${esc(gr.e || '')} ${esc(T(gr.title))}</h5>` : ''}<div class="ticks${rated || l.said ? ' food' : ''}">${gr.items.map((it) => rated
+        ? `<div class="tick${ticked(t, `${l.key}.${it.k}`, kid) ? ' on' : ''}"><span class="e">${typeof gFood === 'function' ? gFood(it.e, it.art) : esc(it.e || '')}</span><span class="t">${esc(T(it))}${it.speak ? ` <span class="zh">${esc(it.speak.text)}</span>` : ''}${note(it)}</span>${it.speak ? `<button class="hearbtn round" data-a="hear" data-v="${esc(it.speak.text)}" data-lang="${esc(it.speak.lang)}" aria-label="🔊 ${esc(it.en)}">🔊</button>` : ''}${l.stars ? starBtns(t, kid, `${l.key}.${it.k}`) : yumBtns(t, kid, `${l.key}.${it.k}`)}</div>`
+        : l.said && it.speak ? `<div class="sayrow">${tickBtn(t, kid, `${l.key}.${it.k}`, null, T(it), it.e, note(it))}<button class="hearbtn round" data-a="hear" data-v="${esc(it.speak.text)}" data-lang="${esc(it.speak.lang)}" aria-label="🔊 ${esc(it.en)}">🔊</button></div>`
+        : tickBtn(t, kid, `${l.key}.${it.k}`, null, T(it), it.e, note(it))).join('')}</div></div>`).join('');
+      return `<section class="pp-page plist${l.groups.length > 1 ? ' wide' : ''}" id="pl-${esc(l.key)}"><header><div><div class="kicker">${esc(l.e || '')} ${esc(T(l.sub))}</div><h3>${esc(T(l.title))}</h3></div>${n ? `<span class="count">⭐${n}</span>` : ''}</header>
+${lb}
+${!goal && l.goalText ? `<p class="call calm" style="margin-top:12px">${esc(T(l.goalText))}</p>` : ''}${l.said && ed ? `<p class="label" style="margin-top:8px">${L('ติ๊กเมื่อหนูพูดคำนั้นได้แล้ว', 'Tick it when you have said it!')}</p>` : ''}</section>`;
+    }).join('');
+    const dc = lit ? null : pp.declaration;
+    // the little one: the words they say on the trip (quotes for this child), with a box to add one — instead of the customs form
+    const myWords = words.filter((e) => e.child === kid);
+    const littleHtml = lit ? `<section class="pp-page lwords" id="lwords"><header><div><div class="kicker">🗣️ ${esc(fill(T((lit.words || {}).sub)))}</div><h3>${esc(fill(T((lit.words || {}).title) || L('คำใหม่', 'New words')))}</h3></div>${myWords.length ? `<span class="count">${myWords.length}</span>` : ''}</header>
+${ed ? `<div class="row lwrow"><input class="field" id="lw-${esc(kid)}" maxlength="120" placeholder="${esc(L('เช่น “ปา” “บ๊ายบาย” “น้ำ”', 'e.g. “dada”, “bye-bye”, “water”'))}" data-draft="lw:${esc(t.id)}:${esc(kid)}" value="${esc(drafts[`lw:${t.id}:${kid}`] || '')}"><button class="btn small" data-a="littleword" data-t="${esc(t.id)}" data-k="${esc(kid)}">＋ ${L('จดคำนี้', 'Add the word')}</button></div>` : ''}
+${myWords.length ? `<ul class="lwl">${myWords.map((e) => `<li><b>“${emoIn(esc(e.text))}”</b><small class="label">${L('วันที่', 'Day')} ${e.day + 1}</small></li>`).join('')}</ul>` : `<p class="empty">${L(`คำแรกที่${esc(name)}พูดในทริปจดไว้ตรงนี้`, `The first word ${esc(name)} says on the trip goes here`)}</p>`}</section>` : '';
+    const declHtml = dc ? `<section class="pp-page decl" id="decl"><header><div><div class="kicker">🛃 ${esc(T(dc.sub))}</div><h3>${esc(T(dc.title))}</h3></div></header>
+<p class="label">${esc(T(dc.intro))}</p>
+${dc.counts.map((c) => `<div class="dline"><span class="e">${esc(c.e)}</span><span>${esc(T(c.pre))}</span>${ed ? `<input class="field ppf num" inputmode="numeric" data-a-blur="field" data-t="${esc(t.id)}" data-k="${esc(kid)}" data-v="decl.${esc(c.k)}" data-draft="pf:${esc(t.id)}:${kid}:decl.${esc(c.k)}" value="${esc(drafts[`pf:${t.id}:${kid}:decl.${c.k}`] ?? fieldVal(t, `decl.${c.k}`, kid))}" maxlength="6">` : `<b class="num">${esc(fieldVal(t, `decl.${c.k}`, kid)) || '__'}</b>`}<span>${esc(T(c.post))}</span></div>`).join('')}
+${dc.texts.map((y) => `<div class="dtext"><span class="label">${esc(T(y.label))}</span>${ed ? `<input class="field ppf" data-a-blur="field" data-t="${esc(t.id)}" data-k="${esc(kid)}" data-v="decl.${esc(y.k)}" data-draft="pf:${esc(t.id)}:${kid}:decl.${esc(y.k)}" value="${esc(drafts[`pf:${t.id}:${kid}:decl.${y.k}`] ?? fieldVal(t, `decl.${y.k}`, kid))}" maxlength="60">` : `<p>${esc(fieldVal(t, `decl.${y.k}`, kid)) || '—'}</p>`}</div>`).join('')}
+<div class="declared">${L('แจ้งแล้ว<br>ถูกต้อง', 'DECLARED<br>&amp; TRUE')}<br>★ ${year} ★</div></section>` : '';
+    const line = L(`รายการของ${name}`, `${name}'s lists`);
+    body = `${hear(esc(line))}<div class="pp kid-${esc(kid)}" style="${themeStyle(t)}">${head(L('รายการของหนู', 'My lists'), line, true)}${lit && lit.note ? `<p class="call calm lnote">👶 ${esc(T(lit.note))}</p>` : ''}${lists}${littleHtml}${declHtml}</div>`;
+  } else if (page === 'stickers') {
+    const line = kidMode ? L('ลากสติกเกอร์ไปแปะได้เลย!', 'Drag your stickers onto the page!') : L(`สติกเกอร์ของ${name}`, `${name}’s stickers`);
+    body = `${hear(esc(line))}<div class="pp kid-${esc(kid)}" style="${themeStyle(t)}"><section class="pp-page stkpage"><header><div><div class="kicker">${L('หน้าสติกเกอร์', 'Sticker page')}</div><h3>⭐ ${esc(L(`สติกเกอร์ของ${name}`, `${name}’s stickers`))}</h3></div>${kidMode ? '' : sayBtn(line)}</header>${stickerBoard(t, kid, !!kidMode)}
+${kidMode ? '' : `<p class="label" style="margin-top:8px">${L('สติกเกอร์ได้จากภารกิจ ตราประทับ และประตูเซอร์ไพรส์ · เด็กแปะเองในโหมดเด็ก', 'Stickers come from missions, checklists, stamps and surprise doors · the kids stick them on in kid mode')}</p>`}</section></div>`;
+  } else if (page === 'trophies') {
+    // trophies are read off what the child already did; only kid mode marks them seen (the child's "new!" stays for the child)
+    const all = trophies(t, kid), got = all.filter((y) => y[3]), seen = new Set(ls('tseen_' + kid) || []), fresh = kidMode ? got.filter((y) => !seen.has(y[0])) : [];
+    if (fresh.length) ls('tseen_' + kid, got.map((y) => y[0]));
+    const line = fresh.length ? L(`เย้! รางวัลใหม่: ${fresh.map((y) => y[2]).join(', ')} 🎉`, `Yay! New: ${fresh.map((y) => y[2]).join(', ')} 🎉`) : got.length ? L(`${name} มี ${got.length} รางวัลแล้ว`, `${name} has ${got.length} troph${got.length === 1 ? 'y' : 'ies'}`) : L('ถ้วยรางวัลรอหนูอยู่', 'Trophies are waiting for you');
+    body = `${kidMode ? `<div class="kidguide${fresh.length ? ' pop' : ''}">${guide(0)}<p>${esc(line)}</p></div>` : ''}<div class="pp kid-${esc(kid)}" style="${themeStyle(t)}">${head(L('ถ้วยรางวัลและเหรียญ', 'Trophies and badges'), line, false)}
+<div class="trophies">${all.map((y) => `<button class="tro${y[3] ? ' got' : ''}${fresh.some((f) => f[0] === y[0]) ? ' new' : ''}" data-a="sayfacts" data-v="${esc(y[2])}"><span>${troImg(y)}</span><b>${esc(y[2])}</b></button>`).join('')}</div>
 <section class="pp-page"><header><div><div class="kicker">${L('เหรียญครั้งแรก', 'Badges')}</div><h3>🌟 ${L(`ครั้งแรกของ${esc(name)}`, `${esc(name)}’s firsts`)}</h3></div></header>
-${firsts.length ? `<div class="badges">${firsts.map((e) => { const f = firstLabel(t, e.first_key); return `<div class="bdg"><span>${esc(e.first_key === 'custom' ? '⭐' : f.e)}</span><b>${esc(e.first_key === 'custom' ? e.text : f.t)}</b><small>${L('วันที่', 'Day')} ${e.day + 1}</small></div>`; }).join('')}</div>`
+${firsts.length ? `<div class="badges">${firsts.map((e) => { const f = firstLabel(t, e.first_key); return `<button class="bdg" data-a="sayfacts" data-v="${esc(e.first_key === 'custom' ? e.text : f.t)}"><span>${esc(e.first_key === 'custom' ? '⭐' : f.e)}</span><b>${esc(e.first_key === 'custom' ? e.text : f.t)}</b><small>${L('วันที่', 'Day')} ${e.day + 1}</small></button>`; }).join('')}</div>`
     : `<p class="empty">${L('เหรียญจะมาเมื่อพ่อแม่ติ๊ก "ครั้งแรก" ระหว่างทริป', 'Badges appear when the grown-ups tick a “first” on the trip')}</p>`}</section>
-${words.length && !lit ? `<section class="pp-page"><header><div><div class="kicker">${L('คำพูดของหนู', 'In my own words')}</div><h3>💬 ${L('สิ่งที่หนูพูด', 'Things I said')}</h3></div></header>${words.slice(0, 6).map((e) => quoteCall(e, e.highlight)).join('')}</section>` : ''}
-</div>`;
+${words.length && !lit ? `<section class="pp-page"><header><div><div class="kicker">${L('คำพูดของหนู', 'In my own words')}</div><h3>💬 ${L('สิ่งที่หนูพูด', 'Things I said')}</h3></div></header>${words.slice(0, 6).map((e) => quoteCall(e, e.highlight)).join('')}</section>` : ''}</div>`;
+  } else if (page === 'cert') {
+    const cert = pp.certificate, earned = certEarned(t, kid);
+    const line = earned ? L(`ใบประกาศของ${name}! ${certText(t, kid)}`, `${name}'s certificate! ${certText(t, kid)}`) : L(`ใบประกาศนี้จะเป็นของ${name}ในวันสุดท้ายของทริป`, `This certificate is ${name}'s on the last day of the trip`);
+    body = `${hear(esc(line))}<div class="pp kid-${esc(kid)}" style="${themeStyle(t)}"><section class="pp-page cert${earned ? ' earned' : ''}" id="cert">
+<div class="kicker">${L('ใบประกาศเกียรติคุณ', 'Certificate of achievement')}${kidMode ? '' : ' ' + sayBtn(line)}</div><h3>${esc(T(cert.title))}</h3>
+${st && st.crest ? `<img class="crest" src="${esc(st.crest)}" alt="">` : stampHtml(t)}<p class="label">${L('ขอมอบให้', 'This certifies that')}</p><div class="cname">${kidFace(kid)} ${esc(name)}</div>
+<p>${earned ? esc(certText(t, kid)) : L(`ใบประกาศนี้จะเป็นของ${esc(name)}ในวันสุดท้ายของทริป 🎉 — ไม่ต้องติ๊กให้ครบ แค่เที่ยวให้สนุก`, `This certificate is ${esc(name)}'s on the last day of the trip 🎉 — nothing to complete, just have fun`)}</p>
+${earned ? `<p class="bye">${esc(T(cert.bye))}</p>` : ''}</section></div>`;
+  }
+
+  // turning the pages: the tabs (one a page, the visas each their own), ‹ › at the foot, a swipe (sheets.js) and the arrow keys
+  const go = (p, cls, inner, dir) => { const href = ppHref(kid, t, p[0], kidMode), cu = p[0] === page ? ' aria-current="page"' : '', dd = dir ? ` data-dir="${dir}"` : '';
+    return kidMode ? `<button type="button" class="${cls}" data-a="kidnav" data-v="${esc(href)}" data-say="${esc(p[2])}"${cu}${dd}>${inner}</button>` : `<a class="${cls}" href="${esc(href)}"${cu}${dd}>${inner}</a>`; };
+  const tabIc = (p) => (kidMode && PP_ART[p[0]] ? `<img src="/art/kidui/bar-${PP_ART[p[0]]}.webp" alt="">` : kidMode && p[0].startsWith('visa-') ? `<img src="/art/kidui/bar-passport.webp" alt="">` : `<span aria-hidden="true">${p[1]}</span>`);
+  const tabs = `<nav class="pptabs" aria-label="${L('หน้าในพาสปอร์ต', 'Passport pages')}">${pages.map((p) => go(p, 'ppt', `${tabIc(p)}<small>${esc(p[2])}</small>`)).join('')}</nav>`;
+  const prev = pages[at - 1], next = pages[at + 1];
+  const turn = `<div class="ppturn">${prev ? go(prev, 'ppgo prev', `‹ <small>${esc(prev[2])}</small>`, 'prev') : '<span></span>'}<span class="ppn">${at + 1} / ${pages.length}</span>${next ? go(next, 'ppgo next', `<small>${esc(next[2])}</small> ›`, 'next') : '<span></span>'}</div>`;
+  const top = kidMode ? '' : `<div class="row ppkids" role="tablist">${ks.map((c) => `<a class="chip" role="tab" href="#/passport/${esc(c.slug)}/${esc(t.id)}/${esc(page.startsWith('visa-') ? 'cover' : page)}" aria-selected="${c.slug === kid}" aria-pressed="${c.slug === kid}">${kidFace(c.slug)} ${esc(kidName(c.slug))}</a>`).join('')}
+${isEditor() ? `<button class="chip kidgo" data-a="kidmode" data-v="${esc(kid)}">🧒 ${L('โหมดเด็ก', 'Kid mode')}</button>` : ''}
+<span class="sep"></span>${mine.map((x) => `<a class="chip" href="#/passport/${esc(kid)}/${esc(x.id)}/${esc(page.startsWith('visa-') ? `visa-${x.id}` : page)}" aria-pressed="${x.id === t.id}">${flagsOf(x)} ${esc(ppShort(x))}</a>`).join('')}
+<a class="linkbtn ppprint" href="/api/b/pdf/${esc(t.id)}" download data-a="pdf">🖨️ ${L('พิมพ์', 'Print')}</a></div>`;
+  return `${top}<div class="pbook${kidMode ? ' inkid' : ''}" data-page="${esc(page)}" style="${themeStyle(t)}">${tabs}<div class="ppbody" aria-label="${esc(cur[2])}">${body}</div>${turn}</div>`;
 }
 
 /* ---------- record a day (editors) ---------- */

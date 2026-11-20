@@ -366,6 +366,7 @@ const A = {
   // the setup steps: skip them for good (the shelf's welcome card still leads back) · "not now" on the reminders step
   startskip() { ls('startDone', 1); nav('#/'); },
   // the passport before the trip: open that day's mission (the others fold) and go to it
+  ppedit() { ppEditOn = !ppEditOn; render(); },   // the passport's ✏️: a parent opens the boxes and ticks of the book (never in kid mode)
   mday(b) { mdayPick[b.dataset.t] = +b.dataset.v; render(); const el = $('#m' + b.dataset.v); if (el) el.scrollIntoView({ block: 'start', behavior: matchMedia('(prefers-reduced-motion: reduce)').matches ? 'auto' : 'smooth' }); },
   // the sample book: made for this family on request; opens its menu (already there: just opens it)
   async sample(b) {
@@ -1681,15 +1682,7 @@ document.addEventListener('click', (e) => {
   if (e.target.id === 'scrim') closeSheet();
 });
 document.addEventListener('input', (e) => { const el = e.target; if (el.id === 'erasetxt') { eraseTyped = el.value; const bt = document.querySelector('[data-a="erase"]'); if (bt) bt.disabled = el.value.trim() !== appName(); } if (el.dataset && el.dataset.emf) emoForm[el.dataset.emf] = el.value; if (el.dataset && el.dataset.fx) { const fx = ls('fx') || {}, v = parseFloat(String(el.value).replace(',', '.')); if (v > 0 && v < 100000) fx[el.dataset.fx] = v; else delete fx[el.dataset.fx]; ls('fx', fx); const t = trip(route().parts[1]), r = $('#fxres'); if (t && r) r.innerHTML = fxResult(t); document.querySelectorAll('.fxa').forEach((x) => { const rows = spendOf(t.id).filter((s2) => s2.cur === x.dataset.fxc); x.textContent = thbLine(rows); }); } if (el.dataset && el.dataset.lc) { const v = ls('lostTel') || ['', '']; v[+el.dataset.lc] = el.value.slice(0, 40); ls('lostTel', v); } if (el.dataset && el.dataset.draft) drafts[el.dataset.draft] = el.value; if (el.dataset && el.dataset.fam && fam) { const [i, f] = el.dataset.fam.split(':'), k = fam.kids[+i]; if (k) { k[f] = el.value; const tag = el.closest('.famkid') && el.closest('.famkid').querySelector('.famtag b'); if (tag && (f === 'name_th' || f === 'name_en')) tag.textContent = L(k.name_th || k.name_en, k.name_en || k.name_th) || L('ลูกคนใหม่', 'New child'); } } if (el.dataset && el.dataset.famp && fam) { const [o, l] = el.dataset.famp.split(':'); fam[o][l] = el.value; const pv = $('.fampreview'), b = famBuilt(); if (pv) { pv.querySelector('b').textContent = L(fam.app.th, fam.app.en) || L(b.app.th, b.app.en); pv.querySelector('small').textContent = L(fam.kicker.th, fam.kicker.en) || L(b.kicker.th, b.kicker.en); } } if (el.id === 'eatq') { eatQ = el.value.trim(); eatFilter(); } if (el.id === 'findq') { findQ = el.value; const r = $('#findres'); if (r) r.innerHTML = findResults(); } if (el.id === 'bookq') { bookQ = el.value; const r = $('#bookres'), t = trip(route().parts[1]); if (r && t) r.innerHTML = bookResults(t); } });
-// a child's height on a trip (#/grow): a book-wide field entry, saved when the box is left (an empty box removes it)
-function saveHeight(el) {
-  const t = trip(el.dataset.t), kid = el.dataset.k; if (!t || !kid) return;
-  const v = fzHeight(el.value), id = `${t.id}.field.height.${kid}`, cur = S.entries.find((x) => x.id === id);
-  if (!(v > 30 && v < 220)) { if (cur && !el.value) delEntry(id); return; }
-  const text = String(Math.round(v * 10) / 10); if (cur && cur.text === text) return;
-  putEntry(t, { day: null, kind: 'field', child: kid, first_key: 'height', text }, id);
-}
-document.addEventListener('focusout', (e) => { const el = e.target; if (el.classList && el.classList.contains('ghinp')) saveHeight(el); if (el.dataset && el.dataset.aBlur) saveBlur(el); if (el.id === 'lbcap') saveCaption(el); if (el.id === 'lbtags' || el.id === 'lbplace') saveTags(el); });
+document.addEventListener('focusout', (e) => { const el = e.target; if (el.dataset && el.dataset.aBlur) saveBlur(el); if (el.id === 'lbcap') saveCaption(el); if (el.id === 'lbtags' || el.id === 'lbplace') saveTags(el); });
 document.addEventListener('focusout', (e) => {   // a voice memo's caption ("who said what") saves when the box is left, like a photo caption
   const el = e.target; if (!el.classList || !el.classList.contains('clipcap')) return;
   const id = el.dataset.v, m = S && S.media.find((x) => x.id === id), cap = el.value.trim();
@@ -1746,7 +1739,13 @@ document.addEventListener('keydown', (e) => {
   if (e.key === 'Escape') closeSheet();
   if (e.key === 'Enter' && e.target.id === 'askq') { e.preventDefault(); const b = $('#askgo'); if (b && !b.disabled) A.ask(b); }   // Enter = ask the guide
   if (e.key === 'Enter' && e.target.id === 'bookq') { e.preventDefault(); const a = $('.sres a'); if (a) a.click(); }   // Enter = open the best hit
+  if ((e.key === 'ArrowLeft' || e.key === 'ArrowRight') && $('.pbook') && !/^(INPUT|TEXTAREA|SELECT)$/.test((e.target && e.target.tagName) || '') && !$('#sheet.open')) ppTurn(e.key === 'ArrowRight' ? 'next' : 'prev');   // the passport: arrow keys turn the page
 });
+// the passport book turns a page with a swipe — never from a sticker, the map, a box or the page tabs (they scroll or drag on their own)
+function ppTurn(dir) { const b = $(`.ppturn [data-dir="${dir}"]`); if (b) b.click(); }
+let ppx = null;
+document.addEventListener('touchstart', (e) => { ppx = e.touches.length === 1 && e.target.closest && e.target.closest('.ppbody') && !e.target.closest('.stkboard, .stktray, svg, input, textarea, .pptabs, .mapdays, .cstamps, .colsvg') ? [e.touches[0].clientX, e.touches[0].clientY] : null; }, { passive: true });
+document.addEventListener('touchend', (e) => { if (!ppx) return; const dx = e.changedTouches[0].clientX - ppx[0], dy = e.changedTouches[0].clientY - ppx[1]; ppx = null; if (Math.abs(dx) > 70 && Math.abs(dx) > 2 * Math.abs(dy)) ppTurn(dx < 0 ? 'next' : 'prev'); });
 let sx = null;
 document.addEventListener('touchstart', (e) => { if (lbState && e.target.closest('.stage')) sx = e.touches[0].clientX; }, { passive: true });
 document.addEventListener('touchend', (e) => { if (sx === null || !lbState) return; const dx = e.changedTouches[0].clientX - sx; sx = null; if (Math.abs(dx) > 50) lbAct(dx < 0 ? 'next' : 'prev'); });

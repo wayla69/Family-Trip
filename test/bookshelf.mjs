@@ -176,6 +176,19 @@ fs.writeFileSync(path.join(DATA_DIR, 'media', 'p', 'other-trip', 'ph-other-001.j
 ok((await fetch(BASE + '/media/ph-other-001', { headers: { cookie: ck } })).status === 404, "another family's photo id → 404 (IDOR)");
 ok((await up('ph-other-001')).status === 409, "can't overwrite another family's photo id");
 
+// one height per child (migration 0042): an old "Growing up" height moves into the passport's Explorer ID — the last day's box when it is
+// empty, else the first day's; when both are filled the passport keeps its own (the old row stays, never read)
+{ const fam = (await pool.query('SELECT family_id FROM trips WHERE id = $1', [T])).rows[0].family_id;
+  const row = (kid, key, text) => pool.query("INSERT INTO entries (id, family_id, trip_id, kind, child, first_key, text) VALUES ($1, $2, $3, 'field', $4, $5, $6)", [`${T}.field.${key}.${kid}`, fam, T, kid, key, text]);
+  await row('hz1', 'height', '96');                                                    // nothing in the passport yet → the last day's box
+  await row('hz2', 'height', '80'); await row('hz2', 'height_last', '82');            // the last day is filled → the first day's box
+  await row('hz3', 'height', '101'); await row('hz3', 'height_first', '99'); await row('hz3', 'height_last', '100');   // both filled → kept
+  await pool.query(fs.readFileSync(new URL('../migrations/0042_one_height.sql', import.meta.url), 'utf8'));
+  const got = Object.fromEntries((await pool.query("SELECT id, text FROM entries WHERE child IN ('hz1','hz2','hz3')")).rows.map((r) => [r.id.slice(T.length + 7), r.text]));
+  ok(JSON.stringify(got, Object.keys(got).sort()) === JSON.stringify({ 'height.hz3': '101', 'height_first.hz2': '80', 'height_first.hz3': '99', 'height_last.hz1': '96', 'height_last.hz2': '82', 'height_last.hz3': '100' }),
+    `migration 0042: the old height moves into the passport's empty box (last day first), a filled passport keeps its own (${JSON.stringify(got)})`);
+  await pool.query("DELETE FROM entries WHERE child IN ('hz1','hz2','hz3')"); }
+
 // ---- check-ins, days, firsts, trips
 ok((await put('/api/b/places', { trip: T, key: 'Hong Kong Disneyland', day: 1, kind: 'place', name: { en: 'Hong Kong Disneyland', th: 'ฮ่องกงดิสนีย์แลนด์' } })).ok, 'check in at Disneyland');
 await put('/api/b/places', { trip: T, key: 'Hong Kong Disneyland', day: 1 });
