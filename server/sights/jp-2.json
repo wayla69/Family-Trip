@@ -659,6 +659,170 @@
           "q": "Cape Manzamo, Onna, Okinawa",
           "ok": "2026-11",
           "src": "https://ryukyushimpo.jp/region/entry-5364738.html"
+        },
+        {
+          "name": {
+            "en": "JUNGLIA Okinawa",
+            "th": "จังเลีย โอกินาวา"
+          },
+          "local": "ジャングリア沖縄",
+          "kind": "themepark",
+          "area": {
+            "en": "Yambaru, Nago",
+            "th": "ยัมบารุ นาโกะ"
+          },
+          "what": {
+            "en": "A new jungle theme park in the Yambaru forest with a treetop walk, a dinosaur-spotting tour, a big slide and an infinity-pool spa",
+            "th": "ธีมปาร์คป่าดงดิบแห่งใหม่ในป่ายัมบารุ มีทางเดินยอดไม้ ทัวร์ตามหาไดโนเสาร์ สไลเดอร์ใหญ่ และสปาสระอินฟินิตี้"
+          },
+          "why": {
+            "en": "Under-3s enter free and the dinosaur and friends rides suit ages 4 and up; the thrill rides have height rules",
+            "th": "เด็กต่ำกว่า 3 ปีเข้าฟรี เครื่องเล่นไดโนเสาร์เหมาะกับเด็ก 4 ปีขึ้นไป เครื่องเล่นแรงมีเกณฑ์ความสูง"
+          },
+          "tip": {
+            "en": "Book the day ticket online; the park has no limit on your stay, so go early before the heat",
+            "th": "จองบัตรทั้งวันออนไลน์ ไม่จำกัดเวลาอยู่ในสวน ควรไปแต่เช้าก่อนอากาศร้อน"
+          },
+          "ages": [
+            0,
+            1,
+            2,
+            2
+          ],
+          "hrs": 5,
+          "io": "both",
+          "pram": "part",
+          "price": {
+            "en": "≈ ¥8,800 adults (tax incl.) · ¥5,940 ages 4–11 · under 3 free",
+            "th": "≈ ¥8,800 ผู้ใหญ่ (รวมภาษี) · ¥5,940 อายุ 4–11 ปี · ต่ำกว่า 3 ปีฟรี"
+          },
+          "book": "rec",
+          "q": "JUNGLIA Okinawa, Nago, Okinawa",
+          "ok": "2026-11",
+          "src": "https://junglia.jp/en/ticket/"
+        },
+        {
+          "name": {
+            "en": "Bios no Oka",
+            "th": "ไบออสโนะโอกะ"
+          },
+          "local": "ビオスの丘",
+          "kind": "nature",
+          "area": {
+            "en": "Uruma",
+            "th": "อุรุมะ"
+          },
+          "what": {
+            "en": "A subtropical forest garden with a lake boat ride and shaded walking trails",
+            "th": "สวนป่ากึ่งเขตร้อน มีเรือล่องทะเลสาบและเส้นทางเดินป่าร่มรื่น"
+          },
+          "why": {
+            "en": "Shaded boardwalks and a short boat ride keep small children comfortable; the ticket already includes the boat",
+            "th": "ทางเดินไม้มีร่มเงาและเรือสั้นๆ ทำให้เด็กเล็กสบาย ตั๋วรวมค่าเรือแล้ว"
+          },
+          "tip": {
+            "en": "Closing days are irregular, so check the official page before you drive up; allow 2 to 4 hours",
+            "th": "วันหยุดไม่แน่นอน เช็กหน้าทางการก่อนขับไป ควรเผื่อเวลา 2–4 ชั่วโมง"
+          },
+          "ages": [
+            1,
+            2,
+            2,
+            1
+          ],
+          "hrs": 3,
+          "io": "out",
+          "pram": "part",
+          "price": {
+            "en": "≈ ¥2,200 adults with boat · ¥1,100 ages 4 to primary school",
+            "th": "≈ ¥2,200 ผู้ใหญ่รวมเรือ · ¥1,100 อายุ 4 ปีถึงประถม"
+          },
+          "book": "none",
+          "q": "Bios no Oka, Ishikawa Kadekaru, Uruma, Okinawa",
+          "ok": "2026-11",
+          "src": "https://www.walkerplus.com/spot/ar1047s336496/price.html"
+        },
+        {
+          "name": {
+            "en": "Nago Pineapple Park",
+            "th": "นาโกะ ไพน์แอปเปิลพาร์ค"
+          },
+          "local": "ナゴパイナップルパーク",
+          "kind": "farm",
+          "area": {
+            "en": "Nago",
+            "th": "นาโกะ"
+          },
+          "what": {
+            "en": "Pineapple fields and a tropical garden toured by a slow driverless cart, plus a dinosaur tour and a small animal garden",
+            "th": "ไร่สับปะรดและสวนเขตร้อนที่นั่งชมด้วยรถอัตโนมัติวิ่งช้า มีทัวร์ไดโนเสาร์และสวนสัตว์เล็กๆ"
+          },
+          "why": {
+            "en": "The carts run at about 3 km/h, so even small children ride safely, and tasting pineapple treats is free",
+            "th": "รถวิ่งช้าราว 3 กม./ชม. เด็กเล็กนั่งได้ปลอดภัย และชิมขนมสับปะรดฟรี"
+          },
+          "tip": {
+            "en": "Collect your ticket at the counter first; a QR code alone does not open the gate",
+            "th": "รับตั๋วที่เคาน์เตอร์ก่อน ใช้คิวอาร์โค้ดอย่างเดียวผ่านประตูไม่ได้"
+          },
+          "ages": [
+            1,
+            2,
+            2,
+            1
+          ],
+          "hrs": 1.5,
+          "io": "both",
+          "pram": "yes",
+          "price": {
+            "en": "≈ ¥1,500 adults (16+) · ¥800 ages 4–15 · under 4 free",
+            "th": "≈ ¥1,500 ผู้ใหญ่ (16+) · ¥800 อายุ 4–15 ปี · ต่ำกว่า 4 ปีฟรี"
+          },
+          "book": "none",
+          "q": "Nago Pineapple Park, Nago, Okinawa",
+          "ok": "2026-11",
+          "src": "https://book-en.nagopine.com/top/products/e6b4c9de-eff9-5bc7-987d-ed382512edb4?lng=en-US"
+        },
+        {
+          "name": {
+            "en": "Ryukyu Mura",
+            "th": "ริวคิวมูระ"
+          },
+          "local": "琉球村",
+          "kind": "culture",
+          "area": {
+            "en": "Onna",
+            "th": "อนนะ"
+          },
+          "what": {
+            "en": "A living village of old Ryukyuan houses with eisa drumming, sanshin music, craft workshops and sweets",
+            "th": "หมู่บ้านบ้านเก่าสไตล์ริวคิว มีการแสดงกลองเอซา ดนตรีซันชิน เวิร์กชอปงานฝีมือ และขนม"
+          },
+          "why": {
+            "en": "Short shows and hands-on crafts hold the attention of children from about 3, and the paths are flat",
+            "th": "การแสดงสั้นๆ และงานฝีมือที่ลงมือทำเองดึงความสนใจเด็กตั้งแต่ราว 3 ขวบ ทางเดินเรียบ"
+          },
+          "tip": {
+            "en": "Reception opens at 9:30 and the last entry is 16:00; the ticket includes two Ryukyu coins for crafts or snacks",
+            "th": "เปิดรับเข้า 9:30 รอบสุดท้าย 16:00 ตั๋วมีเหรียญริวคิว 2 เหรียญใช้แลกงานฝีมือหรือขนม"
+          },
+          "ages": [
+            0,
+            1,
+            2,
+            1
+          ],
+          "hrs": 2,
+          "io": "out",
+          "pram": "yes",
+          "price": {
+            "en": "≈ ¥2,000 adults (16+) · ¥800 ages 6–15 · under 6 free",
+            "th": "≈ ¥2,000 ผู้ใหญ่ (16+) · ¥800 อายุ 6–15 ปี · ต่ำกว่า 6 ปีฟรี"
+          },
+          "book": "none",
+          "q": "Ryukyu Mura, Onna, Okinawa",
+          "ok": "2026-11",
+          "src": "https://book.ryukyumura.co.jp/products/37a0f023-46f9-51a7-bd61-1186d2f27581?lng=en-US"
         }
       ]
     }

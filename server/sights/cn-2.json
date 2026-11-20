@@ -1373,6 +1373,24 @@
           "q": "Shaanxi Natural History Museum, Xi'an",
           "ok": "2026-11",
           "src": "https://www.travelchinaguide.com/attraction/shaanxi/xian/nature-museum.htm"
+        },
+        {
+          "name": { "en": "Giant Wild Goose Pagoda and Da Ci'en Temple", "th": "เจดีย์ห่านป่าใหญ่และวัดต้าฉือเอิน" },
+          "local": "大慈恩寺 · 大雁塔",
+          "kind": "culture",
+          "area": { "en": "Yanta", "th": "เยี่ยนต้า" },
+          "what": { "en": "A 1,300-year-old seven-storey brick pagoda of the Tang dynasty, built to keep the scriptures a monk brought from India, inside a working temple", "th": "เจดีย์อิฐเจ็ดชั้นสมัยถัง อายุกว่า 1,300 ปี สร้างเก็บพระสูตรที่พระภิกษุนำมาจากอินเดีย ในวัดที่ยังใช้งาน" },
+          "why": { "en": "Children see the tall tower, courtyards and the evening fountain show in the square outside; climbing the pagoda is steep, so older ones go up", "th": "เด็กดูหอสูง ลานวัด และโชว์น้ำพุตอนเย็นหน้าลาน การขึ้นเจดีย์ชัน เหมาะกับเด็กโต" },
+          "tip": { "en": "Dress modestly and keep voices low inside; the temple and the pagoda climb are separate tickets", "th": "แต่งกายสุภาพและพูดเบาในวัด ตั๋ววัดกับตั๋วขึ้นเจดีย์แยกกัน" },
+          "ages": [0, 1, 2, 2],
+          "hrs": 2,
+          "io": "out",
+          "pram": "part",
+          "price": { "en": "≈ ¥50 Ci'en Temple · ¥30 to climb the pagoda", "th": "≈ ¥50 วัดต้าฉือเอิน · ¥30 ขึ้นเจดีย์" },
+          "book": "none",
+          "q": "Giant Wild Goose Pagoda, Da Ci'en Temple, Yanta District, Xi'an",
+          "ok": "2026-11",
+          "src": "https://www.chinabound.cn/s/202605/07/WS69fc523c498e36855033c5d5/scenic-area-of-the-giant-wild-goose-pagoda-and-the-dynasty-paradise.html"
         }
       ]
     },
@@ -1575,6 +1593,24 @@
           "q": "Dayan Old Town, Gucheng District, Lijiang",
           "ok": "2026-11",
           "src": "https://www.chinabound.cn/s/202601/15/WS69ba6a60498e36855033b59a/lijiang-ancient-town.html"
+        },
+        {
+          "name": { "en": "Chongsheng Temple and the Three Pagodas", "th": "วัดฉงเซิ่งและสามเจดีย์ ต้าหลี่" },
+          "local": "崇圣寺三塔",
+          "kind": "culture",
+          "area": { "en": "Dali", "th": "ต้าหลี่" },
+          "what": { "en": "Three ancient pagodas with the Cang mountains behind them and a reflecting pool in front, in a large temple park", "th": "สามเจดีย์โบราณมีเทือกเขาชางเป็นฉากหลังและสระสะท้อนภาพด้านหน้า ในสวนวัดขนาดใหญ่" },
+          "why": { "en": "Open lawns, water and a long walk give children room to run, though the grounds are big and best with a buggy for toddlers", "th": "สนามหญ้าโล่ง น้ำ และทางเดินยาว ให้เด็กวิ่งเล่น แต่พื้นที่กว้าง เด็กเล็กควรนั่งรถเข็น" },
+          "tip": { "en": "Dress modestly in the temple halls; a battery-car shuttle may cost extra; open 8:00 to 18:00", "th": "แต่งกายสุภาพในวิหาร อาจมีค่ารถแบตเตอรี่แยก เปิด 8:00–18:00" },
+          "ages": [0, 1, 2, 2],
+          "hrs": 2.5,
+          "io": "out",
+          "pram": "yes",
+          "price": { "en": "≈ ¥121 adults · discounts with valid certificates", "th": "≈ ¥121 ผู้ใหญ่ · ลดราคาเมื่อมีบัตรรับรอง" },
+          "book": "none",
+          "q": "Chongsheng Temple Three Pagodas, Dali, Yunnan",
+          "ok": "2026-11",
+          "src": "https://www.chinabound.cn/s/202601/15/WS69ba69e3498e23165e06e2ec/the-chongsheng-temple-and-the-three-pagoda-dali.html"
         }
       ]
     },

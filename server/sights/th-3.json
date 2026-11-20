@@ -284,6 +284,41 @@
           "q": "Chaweng Beach, Bo Phut, Koh Samui",
           "ok": "2026-11",
           "src": "https://www.insidesamui.com/visit/best-beaches-in-koh-samui/"
+        },
+        {
+          "name": { "en": "Coco Splash Adventure Waterpark", "th": "โคโค่สแปลช แอดเวนเจอร์ วอเตอร์พาร์ค" },
+          "kind": "play",
+          "area": { "en": "Maret", "th": "มะเร็ท" },
+          "what": { "en": "A family water park with slides, a wave pool, a lazy river and shallow kids' pools with cabanas for parents", "th": "สวนน้ำครอบครัว มีสไลเดอร์ สระคลื่น แม่น้ำวน และสระตื้นสำหรับเด็ก พร้อมศาลาให้พ่อแม่นั่งพัก" },
+          "why": { "en": "Shallow pools and small slides keep toddlers busy while older children use the big slides", "th": "สระตื้นและสไลเดอร์เล็กทำให้เด็กเล็กเล่นสนุก ส่วนเด็กโตเล่นสไลเดอร์ใหญ่" },
+          "tip": { "en": "Listed hours are about noon to 8 pm; call or ask your hotel first, as it opens by day and season", "th": "เวลาที่ลงไว้ราวเที่ยงถึงสองทุ่ม โทรถามหรือสอบถามโรงแรมก่อน เพราะเปิดตามวันและฤดูกาล" },
+          "ages": [1, 2, 2, 2],
+          "hrs": 3,
+          "io": "out",
+          "pram": "part",
+          "price": { "en": "Check the price", "th": "เช็กราคาก่อนไป" },
+          "book": "none",
+          "q": "Coco Splash Adventure and Waterpark, Maret, Koh Samui",
+          "ok": "2026-11",
+          "src": "https://ui-assets-gc.thrillophilia.com/water-parks-in-koh-samui"
+        },
+        {
+          "name": { "en": "Secret Buddha Garden (Magic Garden)", "th": "สวนพระพุทธรูปลับ (สวนเวทมนตร์)" },
+          "local": "สวนลับ ตาร์นิม",
+          "kind": "nature",
+          "area": { "en": "Ban Thale Nok, Na Mueang", "th": "บ้านทะเลนอก นาเมือง" },
+          "what": { "en": "A hillside jungle garden of old stone statues, ponds and a waterfall set among fruit trees, made by a farmer in the 1970s", "th": "สวนป่าบนเนินเขามีรูปปั้นหินเก่า บ่อน้ำ และน้ำตก ท่ามกลางต้นผลไม้ ที่ชาวสวนสร้างไว้ในทศวรรษ 1970" },
+          "why": { "en": "A short, shady walk with statues to find, though the steps are steep and mosquitoes bite, so it suits children who can walk", "th": "เดินสั้นๆ ในร่มเงามีรูปปั้นให้ตามหา แต่บันไดชันและมียุง เหมาะกับเด็กที่เดินเองได้" },
+          "tip": { "en": "Dress modestly as the statues include Buddha images; bring repellent and water, and expect a steep road up", "th": "แต่งกายสุภาพเพราะมีพระพุทธรูป พกยากันยุงและน้ำดื่ม ถนนขึ้นเขาชัน" },
+          "ages": [0, 1, 2, 1],
+          "hrs": 1.5,
+          "io": "out",
+          "pram": "no",
+          "price": { "en": "Check the price", "th": "เช็กราคาก่อนไป" },
+          "book": "none",
+          "q": "Secret Buddha Garden, Na Mueang, Koh Samui",
+          "ok": "2026-11",
+          "src": "https://airial.travel/attractions/thailand/secret-buddha-garden-w85RV9XI"
         }
       ]
     }

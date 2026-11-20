@@ -1593,6 +1593,42 @@
           "q": "Musée Tomi Ungerer, Strasbourg",
           "ok": "2026-11",
           "src": "https://www.strasbourg.eu/lieu/-/entity/id/685954/musee-tomi-ungerer-centre-international-de-l-illustration"
+        },
+        {
+          "name": { "en": "Strasbourg Cathedral and its astronomical clock", "th": "มหาวิหารสตราสบูร์กและนาฬิกาดาราศาสตร์" },
+          "local": "Cathédrale Notre-Dame de Strasbourg",
+          "kind": "culture",
+          "area": { "en": "Grande Île, Place de la Cathédrale", "th": "เกาะกลางเมือง จัตุรัสมหาวิหาร" },
+          "what": { "en": "A pink sandstone Gothic cathedral with a Renaissance astronomical clock whose figures all move together at 12.30", "th": "มหาวิหารกอทิกหินทรายสีชมพู มีนาฬิกาดาราศาสตร์สมัยเรอเนสซองส์ที่ตัวหุ่นทั้งหมดเคลื่อนไหวพร้อมกันตอน 12.30 น." },
+          "why": { "en": "Children enjoy the clock's little figures and the tall coloured windows; an hour is enough", "th": "เด็กชอบตัวหุ่นเล็กๆ ของนาฬิกาและกระจกสีสูงตระหง่าน ใช้เวลาราวหนึ่งชั่วโมงก็พอ" },
+          "tip": { "en": "Clock tickets sold from 11:30 at the Place Saint-Michel entrance, queue early; no clock show during the Christmas market; men remove hats; closed to visitors during services", "th": "ตั๋วนาฬิกาขายตั้งแต่ 11:30 ที่ทางเข้าจัตุรัสแซ็งต์มิเชล ไปเข้าคิวแต่เนิ่นๆ ช่วงตลาดคริสต์มาสไม่มีการแสดง ผู้ชายถอดหมวก และปิดรับชมช่วงพิธี" },
+          "ages": [1, 2, 2, 2],
+          "hrs": 1,
+          "io": "in",
+          "pram": "yes",
+          "price": { "en": "≈ €4 for the clock · ≈ €2 ages 6–17 · under 6 free · the nave is open to visit", "th": "≈ €4 ชมนาฬิกา · ≈ €2 อายุ 6–17 ปี · ต่ำกว่า 6 ปีฟรี · ชมภายในอาสนวิหารได้" },
+          "book": "none",
+          "q": "Cathédrale Notre-Dame de Strasbourg, Place de la Cathédrale, Strasbourg",
+          "ok": "2026-11",
+          "src": "https://www.cathedrale-strasbourg.fr/en/node/221"
+        },
+        {
+          "name": { "en": "Strasbourg Cathedral platform climb", "th": "ขึ้นจุดชมวิวมหาวิหารสตราสบูร์ก" },
+          "local": "Plateforme de la cathédrale de Strasbourg",
+          "kind": "views",
+          "area": { "en": "Grande Île, Place de la Cathédrale", "th": "เกาะกลางเมือง จัตุรัสมหาวิหาร" },
+          "what": { "en": "330 steps up to a platform 66 m high with rooftop views, a wind rose, two 15th-century winches and a guardians' house", "th": "บันได 330 ขั้นสู่ลานชมวิวสูง 66 เมตร เห็นหลังคาเมือง มีกังหันลมบอกทิศ รอกยุคศตวรรษที่ 15 และบ้านผู้เฝ้ายาม" },
+          "why": { "en": "Only for children who can climb a long spiral staircase on foot; there is no lift or pram access", "th": "เหมาะกับเด็กที่เดินขึ้นบันไดวนยาวได้เอง ไม่มีลิฟต์และรถเข็นขึ้นไม่ได้" },
+          "tip": { "en": "Open 10:00–18:00 from October to March (last climb 17:15), longer in summer; closed 1 January, 1 May and 25 December", "th": "เปิด 10:00–18:00 ตุลาคมถึงมีนาคม (ขึ้นรอบสุดท้าย 17:15) ฤดูร้อนเปิดนานกว่า ปิด 1 ม.ค. 1 พ.ค. และ 25 ธ.ค." },
+          "ages": [0, 1, 2, 2],
+          "hrs": 1,
+          "io": "out",
+          "pram": "no",
+          "price": { "en": "≈ €10 adults · ≈ €6 ages 6–18 · under 6 free", "th": "≈ €10 ผู้ใหญ่ · ≈ €6 อายุ 6–18 ปี · ต่ำกว่า 6 ปีฟรี" },
+          "book": "rec",
+          "q": "Plateforme de la cathédrale, Place de la Cathédrale, Strasbourg",
+          "ok": "2026-11",
+          "src": "https://www.oeuvre-notre-dame.org/cathedrale-de-strasbourg/visiter-cathedrale"
         }
       ]
     },
@@ -1854,6 +1890,24 @@
           "q": "La Vallée Village, Serris",
           "ok": "2026-11",
           "src": "https://www.visitparisregion.com/fr/la-vallee-village"
+        },
+        {
+          "name": { "en": "Aqua Mundo at Villages Nature Paris", "th": "อควา มุนโด ที่วิลลาจเนเจอร์ ปารีส" },
+          "local": "Aqua Mundo (formerly Aqualagon)",
+          "kind": "play",
+          "area": { "en": "Bailly-Romainvilliers, near Val d'Europe", "th": "ไบลลี-โรมาวิลลิเยร์ ใกล้วาล เดอโรป" },
+          "what": { "en": "A large heated indoor and outdoor water park with slides, a wave pool, a lazy river, a lagoon at 30°C and a toddler pool", "th": "สวนน้ำในร่มและกลางแจ้งขนาดใหญ่ น้ำอุ่น มีสไลเดอร์ สระคลื่น แม่น้ำให้ลอย ลากูน 30 องศา และสระเด็กเล็ก" },
+          "why": { "en": "Warm water all year with a baby pool and gentle slides, a good rainy day near Disneyland Paris", "th": "น้ำอุ่นตลอดปี มีสระเด็กเล็กและสไลเดอร์เบาๆ เป็นแผนวันฝนตกที่ดีใกล้ดิสนีย์แลนด์ปารีส" },
+          "tip": { "en": "Online booking only, no tickets at the gate; open daily 10:00–20:00; prices change by date, so compare dates", "th": "จองออนไลน์เท่านั้น ไม่ขายหน้าประตู เปิดทุกวัน 10:00–20:00 ราคาเปลี่ยนตามวัน ลองเทียบวันที่" },
+          "ages": [1, 2, 2, 2],
+          "hrs": 4,
+          "io": "both",
+          "pram": "yes",
+          "price": { "en": "≈ €48 adults · ≈ €34 ages 3–11 · under 3 free (low-season from price)", "th": "≈ €48 ผู้ใหญ่ · ≈ €34 อายุ 3–11 ปี · ต่ำกว่า 3 ปีฟรี (ราคาเริ่มต้นช่วงโลว์ซีซัน)" },
+          "book": "req",
+          "q": "Aqua Mundo, Villages Nature Paris, Bailly-Romainvilliers",
+          "ok": "2026-11",
+          "src": "https://parc-loisir.fr/villages-nature-paris-aqualagon-tarifs/"
         }
       ]
     }

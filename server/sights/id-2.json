@@ -435,6 +435,24 @@
           "book": "none",
           "q": "Senggigi Night Market, Jalan Raya Senggigi, West Lombok",
           "src": "https://travelguidestip.com/best-things-to-do-in-lombok/"
+        },
+        {
+          "name": { "en": "Islamic Center NTB (Hubbul Wathan Mosque)", "th": "อิสลามิกเซ็นเตอร์ NTB (มัสยิดฮูบูลวาธาน)" },
+          "local": "Islamic Center NTB Hubbul Wathan",
+          "kind": "culture",
+          "area": { "en": "Mataram", "th": "มาตาราม" },
+          "what": { "en": "The largest mosque on Lombok with two tall minarets, a great dome and a tower with a lift up to a lookout over Mataram", "th": "มัสยิดใหญ่ที่สุดในลอมบอก มีหออะซานสูงสองแห่ง โดมใหญ่ และหอคอยมีลิฟต์ขึ้นจุดชมวิวเมืองมาตาราม" },
+          "why": { "en": "A wide, flat courtyard and lift rides please children, and visitors of any faith are welcome in the public areas", "th": "ลานกว้างราบเรียบและการนั่งลิฟต์ถูกใจเด็กๆ ผู้มาเยือนทุกศาสนาเข้าส่วนสาธารณะได้" },
+          "tip": { "en": "Cover shoulders and knees (a robe is lent if needed); access can be limited on Fridays and holidays, and the reading room is for Muslims", "th": "ปิดไหล่และเข่า (ยืมเสื้อคลุมได้) วันศุกร์และวันสำคัญอาจจำกัดการเข้า ห้องอ่านหนังสือสำหรับมุสลิม" },
+          "ages": [0, 1, 2, 2],
+          "hrs": 1,
+          "io": "both",
+          "pram": "yes",
+          "price": { "en": "Check the price", "th": "เช็กราคาก่อนไป" },
+          "book": "none",
+          "q": "Islamic Center NTB, Jl. Udayana, Mataram, Lombok",
+          "ok": "2026-11",
+          "src": "https://uk.trip.com/moments/poi-islamic-center-ntb-hubbul-wathan-great-mosque-141070992"
         }
       ]
     },

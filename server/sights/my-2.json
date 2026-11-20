@@ -277,6 +277,23 @@
           "q": "Gurney Drive Hawker Centre, Persiaran Gurney, George Town",
           "ok": "2026-11",
           "src": "https://www.trvlogue.com/en/penang-gurney-drive-hawker-center-food"
+        },
+        {
+          "name": { "en": "Tropical Spice Garden", "th": "ทรอปิคัลสไปซ์การ์เดน" },
+          "kind": "nature",
+          "area": { "en": "Teluk Bahang", "th": "เตลุกบาหัง" },
+          "what": { "en": "A jungle garden of spice plants and orchids on a hillside, with a pond, shaded paths and a cafe", "th": "สวนป่าของพืชเครื่องเทศและกล้วยไม้บนเนินเขา มีบ่อน้ำ ทางเดินร่มรื่น และคาเฟ่" },
+          "why": { "en": "Shaded and cool for a walk, with guided walks daily that children enjoy sniffing and tasting along", "th": "ร่มและเย็นสบาย มีไกด์นำเดินทุกวันที่เด็กชอบดมและชิมระหว่างทาง" },
+          "tip": { "en": "Open 9am to 6pm Friday to Sunday and 9am to 4.30pm Monday to Thursday; last entry is an hour before closing; wear repellent", "th": "เปิด 9:00–18:00 ศุกร์–อาทิตย์ และ 9:00–16:30 จันทร์–พฤหัสฯ รอบสุดท้ายก่อนปิด 1 ชั่วโมง ทายากันยุง" },
+          "ages": [1, 2, 2, 1],
+          "hrs": 2,
+          "io": "out",
+          "pram": "part",
+          "price": { "en": "Check the price", "th": "เช็กราคาก่อนไป" },
+          "book": "none",
+          "q": "Tropical Spice Garden, Teluk Bahang, Penang",
+          "ok": "2026-11",
+          "src": "https://tropicalspicegarden.com/visitor-info"
         }
       ]
     }
