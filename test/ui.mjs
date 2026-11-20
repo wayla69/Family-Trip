@@ -2848,7 +2848,9 @@ const T = 'hk-macau-2026';
     await page.goto(`${BASE}/#/kid/mimi/stamp`); await page.waitForSelector(`.kidwrap .ppbook.inkid[data-page="visa-${T}"] .stampbtn[data-d="2"]`);
     const kd = await page.evaluate(() => ({ lock: !!document.querySelector('.kidwrap #kidexit'), tabs: document.querySelectorAll('.ppbook .pptabs button[data-a="kidnav"][data-say]').length, grown: document.querySelectorAll('.ppedit, .ppf, .ppprint, .ppkids, nav.bar').length,
       next: (document.querySelector('.ppturn [data-dir="next"]') || {}).dataset || {} }));
-    ok(kd.lock && kd.tabs === 10 && kd.grown === 0 && kd.next.v === '#/kid/mimi/pass/missions', `kid door: this trip's visa with today's stamp, the book's ten pages as kid buttons, the lock, and nothing of the grown-ups' (${JSON.stringify(kd)})`);
+    ok(kd.lock && kd.tabs === 10 && kd.grown === 0 && kd.next.v === '#/kid/mimi/pass/visa-big-hop-2027', `kid door: this trip's visa with today's stamp, the book's ten pages as kid buttons, the lock, and nothing of the grown-ups' (${JSON.stringify(kd)})`);
+    await page.click('.ppturn [data-dir="next"]'); await page.waitForSelector('.ppbook.inkid[data-page="visa-big-hop-2027"] .pp-page.visa');
+    ok(await page.locator('.stampbtn').count() === 0, 'kid door: another trip\'s visa shows its stamps, no stamp button');
     await page.click('.ppturn [data-dir="next"]'); await page.waitForSelector('.ppbook.inkid[data-page="missions"] .mission');
     ok(page.url().endsWith('#/kid/mimi/pass/missions') && await page.locator('.mission button[data-a="tick"]:not([disabled])').count() === 0, 'kid door: ‹ › turn the pages inside kid mode; ticks stay with the grown-ups');
     await page.goto(`${BASE}/#/kid/mimi/pass/id`); await page.waitForSelector('.ppbook.inkid[data-page="id"] .bio');
