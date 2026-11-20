@@ -1898,16 +1898,16 @@
           "area": { "en": "Bailly-Romainvilliers, near Val d'Europe", "th": "ไบลลี-โรมาวิลลิเยร์ ใกล้วาล เดอโรป" },
           "what": { "en": "A large heated indoor and outdoor water park with slides, a wave pool, a lazy river, a lagoon at 30°C and a toddler pool", "th": "สวนน้ำในร่มและกลางแจ้งขนาดใหญ่ น้ำอุ่น มีสไลเดอร์ สระคลื่น แม่น้ำให้ลอย ลากูน 30 องศา และสระเด็กเล็ก" },
           "why": { "en": "Warm water all year with a baby pool and gentle slides, a good rainy day near Disneyland Paris", "th": "น้ำอุ่นตลอดปี มีสระเด็กเล็กและสไลเดอร์เบาๆ เป็นแผนวันฝนตกที่ดีใกล้ดิสนีย์แลนด์ปารีส" },
-          "tip": { "en": "Online booking only, no tickets at the gate; open daily 10:00–20:00; prices change by date, so compare dates", "th": "จองออนไลน์เท่านั้น ไม่ขายหน้าประตู เปิดทุกวัน 10:00–20:00 ราคาเปลี่ยนตามวัน ลองเทียบวันที่" },
+          "tip": { "en": "Open to day visitors with an online day ticket (Aqua Mundo is included); no tickets at the gate; opening times vary by season, so check when booking", "th": "ผู้มาแบบไม่พักค้างเข้าได้ด้วยบัตรรายวันที่จองออนไลน์ (รวม Aqua Mundo) ไม่ขายหน้าประตู เวลาเปิดต่างกันตามฤดู เช็กตอนจอง" },
           "ages": [1, 2, 2, 2],
           "hrs": 4,
           "io": "both",
           "pram": "yes",
-          "price": { "en": "≈ €48 adults · ≈ €34 ages 3–11 · under 3 free (low-season from price)", "th": "≈ €48 ผู้ใหญ่ · ≈ €34 อายุ 3–11 ปี · ต่ำกว่า 3 ปีฟรี (ราคาเริ่มต้นช่วงโลว์ซีซัน)" },
+          "price": { "en": "Check the price", "th": "เช็กราคาก่อนไป" },
           "book": "req",
           "q": "Aqua Mundo, Villages Nature Paris, Bailly-Romainvilliers",
           "ok": "2026-11",
-          "src": "https://parc-loisir.fr/villages-nature-paris-aqualagon-tarifs/"
+          "src": "https://www.centerparcs.fr/fr-fr/france/fp_VN_vacances-domaine-villages-nature-paris/billets-journee"
         }
       ]
     }

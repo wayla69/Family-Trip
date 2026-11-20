@@ -174,6 +174,23 @@
           "q": "Sigatoka Sand Dunes National Park, Queens Road, Sigatoka",
           "ok": "2026-11",
           "src": "https://nationaltrust.org.fj/ssd/"
+        },
+        {
+          "name": { "en": "South Sea Island day trip", "th": "ทัวร์วันเดียวเกาะเซาท์ซี" },
+          "kind": "beach",
+          "area": { "en": "Mamanuca Islands, from Port Denarau", "th": "หมู่เกาะมามานูกา ออกจากพอร์ตเดนารอ" },
+          "what": { "en": "A short high-speed catamaran ride from Port Denarau to a Mamanuca island, sold as an all-inclusive day trip", "th": "นั่งเรือเร็วสั้นๆ จากพอร์ตเดนารอไปเกาะในหมู่เกาะมามานูกา ขายเป็นทัวร์วันเดียวแบบรวมทุกอย่าง" },
+          "why": { "en": "A day set up for families, with a child price; the sea is a short boat ride away", "th": "โปรแกรมทั้งวันสำหรับครอบครัว มีราคาเด็ก นั่งเรือสั้นๆ ก็ถึงเกาะ" },
+          "tip": { "en": "A half-day trip and a Finding Nemo option are cheaper; take sun cream and a rash vest", "th": "มีแบบครึ่งวันและแบบฟายดิงนีโมราคาถูกกว่า เตรียมครีมกันแดดและเสื้อกันแดดลงน้ำ" },
+          "ages": [1, 2, 2, 2],
+          "hrs": 7,
+          "io": "out",
+          "pram": "no",
+          "price": { "en": "≈ FJ$285 adults · FJ$149 children (full day)", "th": "≈ FJ$285 ผู้ใหญ่ · FJ$149 เด็ก (เต็มวัน)" },
+          "book": "rec",
+          "q": "South Sea Island, Port Denarau, Fiji",
+          "ok": "2026-11",
+          "src": "https://www.southseaislandfiji.com"
         }
       ]
     }

@@ -309,6 +309,23 @@
           "q": "Shinjuku Gyoen National Garden, Shinjuku, Tokyo",
           "ok": "2026-11",
           "src": "https://www.env.go.jp/garden/shinjukugyoen/english/2_guide/guide.html"
+        },
+        {
+          "name": { "en": "teamLab Borderless", "th": "ทีมแล็บ บอร์ดเลส" },
+          "kind": "museum",
+          "area": { "en": "Azabudai Hills, Minato", "th": "อาซาบุไดฮิลส์ มินาโตะ" },
+          "what": { "en": "A permanent digital art museum of rooms that flow into each other, with no water.", "th": "พิพิธภัณฑ์ศิลปะดิจิทัลถาวร ห้องต่างๆ เชื่อมต่อกันไหลลื่น ไม่มีน้ำให้ลุย" },
+          "why": { "en": "Indoors and dry, so it suits wet weather; children aged 4–12 have their own ticket price.", "th": "อยู่ในร่มและแห้ง เหมาะวันฝนตก เด็ก 4–12 ขวบมีราคาตั๋วของตัวเอง" },
+          "tip": { "en": "Tickets are for a set date and time and price changes by date, so book ahead.", "th": "ตั๋วระบุวันและเวลา และราคาเปลี่ยนตามวัน ควรจองล่วงหน้า" },
+          "ages": [1, 2, 2, 2],
+          "hrs": 2.5,
+          "io": "in",
+          "pram": "yes",
+          "price": { "en": "≈ ¥3,400 adults · ¥2,800 teens 13–17 · ¥1,500 child 4–12", "th": "≈ ¥3,400 ผู้ใหญ่ · ¥2,800 วัยรุ่น 13–17 ปี · ¥1,500 เด็ก 4–12 ปี" },
+          "book": "req",
+          "q": "teamLab Borderless, Azabudai Hills, Minato, Tokyo",
+          "ok": "2026-11",
+          "src": "https://jptaxrefund.com/blog/teamlab-tokyo-tickets"
         }
       ]
     },
@@ -584,6 +601,23 @@
           "q": "Umeda Sky Building, Kita, Osaka",
           "ok": "2026-11",
           "src": "https://www.westjr.co.jp/global/en/ticket/hokuriku-arch-pass/Explore_Japan/spot/osaka/umeda_sky_building/index.html"
+        },
+        {
+          "name": { "en": "teamLab Botanical Garden Osaka", "th": "ทีมแล็บ โบทานิคัล การ์เดน โอซาก้า" },
+          "kind": "nature",
+          "area": { "en": "Nagai Park, Sumiyoshi", "th": "สวนนางาอิ สุมิโยชิ" },
+          "what": { "en": "An evening light-art walk in the Osaka botanical garden, listed from 9 November 2026 to 31 January 2027.", "th": "เดินชมศิลปะแสงยามค่ำในสวนพฤกษศาสตร์โอซาก้า ตามรายการช่วง 9 พฤศจิกายน 2026 ถึง 31 มกราคม 2027" },
+          "why": { "en": "A gentle evening walk outdoors, 10 minutes from Nagai Station.", "th": "เดินเล่นยามค่ำเบาๆ กลางแจ้ง ห่างสถานีนางาอิราว 10 นาที" },
+          "tip": { "en": "A seasonal run held in the evening; check the dates and child price before you go.", "th": "เปิดเป็นรอบฤดูกาลช่วงเย็น เช็กวันและราคาเด็กก่อนไป" },
+          "ages": [1, 2, 2, 2],
+          "hrs": 1.5,
+          "io": "out",
+          "pram": "part",
+          "price": { "en": "≈ ¥1,800 adults; check the child price", "th": "≈ ¥1,800 ผู้ใหญ่ เช็กราคาเด็กก่อนไป" },
+          "book": "rec",
+          "q": "teamLab Botanical Garden Osaka, Nagai Park, Osaka",
+          "ok": "2026-11",
+          "src": "https://jptaxrefund.com/blog/teamlab-tokyo-tickets"
         }
       ]
     },
@@ -859,6 +893,23 @@
           "q": "Kyoto Tower, Shimogyo, Kyoto",
           "ok": "2026-11",
           "src": "https://hiddenjapan-gems.com/kyoto-tower-observation-deck-2026/"
+        },
+        {
+          "name": { "en": "teamLab Biovortex Kyoto", "th": "ทีมแล็บ ไบโอวอร์เท็กซ์ เกียวโต" },
+          "kind": "museum",
+          "area": { "en": "Near Kyoto Station", "th": "ใกล้สถานีเกียวโต" },
+          "what": { "en": "A teamLab digital art space that opened in October 2025, a 7-minute walk from Kyoto Station.", "th": "พื้นที่ศิลปะดิจิทัลของทีมแล็บที่เปิดเมื่อตุลาคม 2025 เดินจากสถานีเกียวโตราว 7 นาที" },
+          "why": { "en": "Indoors and close to the station, easy for a wet day.", "th": "อยู่ในร่มและใกล้สถานี เหมาะวันฝนตก" },
+          "tip": { "en": "Book for a set date and time; check the child price on the booking calendar.", "th": "จองวันและเวลาล่วงหน้า เช็กราคาเด็กที่ปฏิทินการจอง" },
+          "ages": [1, 2, 2, 2],
+          "hrs": 2,
+          "io": "in",
+          "pram": "yes",
+          "price": { "en": "≈ ¥3,800 adults; check the child price", "th": "≈ ¥3,800 ผู้ใหญ่ เช็กราคาเด็กก่อนไป" },
+          "book": "req",
+          "q": "teamLab Biovortex Kyoto, Kyoto Station, Kyoto",
+          "ok": "2026-11",
+          "src": "https://jptaxrefund.com/blog/teamlab-tokyo-tickets"
         }
       ]
     },

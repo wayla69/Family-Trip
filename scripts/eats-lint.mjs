@@ -4,7 +4,7 @@
 // A file: {"cc": "jp", "towns": [{"place": "jp-tokyo", "places": [row, …]}]} — a row is a book's "where to eat" row:
 //   name (as on its sign, Latin letters), zh (the name in the local script, optional), kind 0 restaurant · 1 food court / quick bite ·
 //   2 café / bakery / sweets, area {th,en}, tag {th,en}, what {th,en}, why {th,en} (why it is easy with small children),
-//   pr {th,en} (a typical spend per adult as a range with ≈), q (a full Google Maps query). No opening hours: they change.
+//   pr {th,en} (a typical spend per adult as a range with ≈, or "Check the price" / "เช็กราคาก่อนไป" when no page showed one), q (a full Google Maps query). No opening hours: they change.
 //   ok "YYYY-MM" (optional): the month a web search confirmed the place open — the card then says so.
 import fs from 'node:fs';
 import path from 'node:path';
@@ -14,7 +14,7 @@ const ROOT = path.join(path.dirname(fileURLToPath(import.meta.url)), '..');
 const DIR = path.join(ROOT, 'server', 'eats');
 const norm = (x) => String(x || '').normalize('NFKC').toLowerCase().replace(/[^a-z0-9฀-๿一-鿿]+/g, '');
 const THAI = /[฀-๿]/;
-export const MIN = 8, MAX = 18;
+export const MIN = 8, MAX = 80;   // 80: the growth plan (owner, 20 Nov 2026) — big cities 70, other towns 40, small ones 22
 
 export function lintEats(only) {
   const index = JSON.parse(fs.readFileSync(path.join(ROOT, 'public', 'stock', 'index.json'), 'utf8'));
@@ -48,7 +48,7 @@ export function lintEats(only) {
           const max = { area: 60, tag: 40, what: 170, why: 170, pr: 80 }[k];
           if (v.en.length > max || v.th.length > max + 30) errs.push(`${w}: ${k} too long (${v.en.length}/${v.th.length}, at most ${max})`);
         }
-        if (x.pr && !(x.pr.en || '').includes('≈')) errs.push(`${w}: pr is a range with ≈`);
+        if (x.pr && !(x.pr.en || '').includes('≈') && x.pr.en !== 'Check the price') errs.push(`${w}: pr is a range with ≈, or "Check the price" when no page shows one`);
         if (typeof x.q !== 'string' || x.q.length < 8 || x.q.length > 160 || /https?:/.test(x.q)) errs.push(`${w}: q is a full Google Maps query (name, district, town)`);
         if (x.zh !== undefined && (typeof x.zh !== 'string' || x.zh.length > 60)) errs.push(`${w}: zh is a short text`);
         if (x.ok !== undefined && !/^20\d\d-(0[1-9]|1[0-2])$/.test(x.ok)) errs.push(`${w}: ok is the month a web search confirmed it open, "YYYY-MM"`);
