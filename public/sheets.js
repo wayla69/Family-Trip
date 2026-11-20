@@ -1739,7 +1739,7 @@ document.addEventListener('keydown', (e) => {
   if (e.key === 'Escape') closeSheet();
   if (e.key === 'Enter' && e.target.id === 'askq') { e.preventDefault(); const b = $('#askgo'); if (b && !b.disabled) A.ask(b); }   // Enter = ask the guide
   if (e.key === 'Enter' && e.target.id === 'bookq') { e.preventDefault(); const a = $('.sres a'); if (a) a.click(); }   // Enter = open the best hit
-  if ((e.key === 'ArrowLeft' || e.key === 'ArrowRight') && $('.pbook') && !/^(INPUT|TEXTAREA|SELECT)$/.test((e.target && e.target.tagName) || '') && !$('#sheet.open')) ppTurn(e.key === 'ArrowRight' ? 'next' : 'prev');   // the passport: arrow keys turn the page
+  if ((e.key === 'ArrowLeft' || e.key === 'ArrowRight') && $('.ppbook') && !/^(INPUT|TEXTAREA|SELECT)$/.test((e.target && e.target.tagName) || '') && !$('#sheet.open')) ppTurn(e.key === 'ArrowRight' ? 'next' : 'prev');   // the passport: arrow keys turn the page
 });
 // the passport book turns a page with a swipe — never from a sticker, the map, a box or the page tabs (they scroll or drag on their own)
 function ppTurn(dir) { const b = $(`.ppturn [data-dir="${dir}"]`); if (b) b.click(); }

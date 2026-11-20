@@ -46,7 +46,7 @@ async function login(page) {
 }
 // the page re-renders after each sync; measure again if the element was just swapped
 // the kids' passport is a book shown a page at a time (#/passport/<kid>/<trip>/<page>): open one page and wait for it
-const ppOpen = async (page, kid, tid, key) => { await page.goto(`${BASE}/#/passport/${kid}/${tid}/${key}`); await page.waitForSelector(`.pbook[data-page="${key}"]`); };
+const ppOpen = async (page, kid, tid, key) => { await page.goto(`${BASE}/#/passport/${kid}/${tid}/${key}`); await page.waitForSelector(`.ppbook[data-page="${key}"]`); };
 // the passport's ✏️ (a parent opens its boxes and ticks): switch it to the state asked for
 const ppEdit = async (page, on) => { const b = page.locator('.ppedit'); if (await b.count() && (await b.getAttribute('aria-pressed')) !== String(on)) { await b.click(); await page.waitForSelector(`.ppedit[aria-pressed="${on}"]`); } };
 const boxOf = async (page, sel) => { for (let k = 0; k < 30; k++) { const b = await page.locator(sel).first().boundingBox().catch(() => null); if (b) return b; await page.waitForTimeout(100); } throw new Error('no box: ' + sel); };
@@ -304,11 +304,11 @@ const T = 'hk-macau-2026';
     const cp = await page.evaluate(() => ({ sealed: document.querySelectorAll('.caps li.sealed').length, text: (document.querySelector('.caps') || {}).textContent || '' }));
     await s.shot('capsules');
     // growing up, trip by trip — now the passport's Explorer ID (#/grow redirects there): the height is typed once, in the passport, and the line reads it
-    await page.goto(`${BASE}/#/grow/mimi`); await page.waitForSelector('.pbook[data-page="id"] .growl li');
+    await page.goto(`${BASE}/#/grow/mimi`); await page.waitForSelector('.ppbook[data-page="id"] .growl li');
     const redir = page.url().endsWith('#/passport/mimi/id');
     await ppEdit(page, true);
     await page.fill('.ppf[data-v="height_last"]', '96'); await page.locator('.ppf[data-v="height_last"]').blur();
-    await page.click('.growl a.grgo'); await page.waitForSelector('.pbook[data-page="id"] .ppf[data-v="height_first"]');
+    await page.click('.growl a.grgo'); await page.waitForSelector('.ppbook[data-page="id"] .ppf[data-v="height_first"]');
     await page.fill('.ppf[data-v="height_first"]', '1.035 ม.'); await page.locator('.ppf[data-v="height_first"]').blur();   // in metres, with the unit: read as 103.5 cm
     await page.waitForSelector('.grchart polyline', { timeout: 8000 }).catch(() => {});
     const gr = await page.evaluate(() => ({ n: document.querySelectorAll('.growl li').length, art: document.querySelectorAll('.growl .grart img').length, age: document.querySelectorAll('.growl .grchip').length, chart: !!document.querySelector('.grchart polyline'), note: (document.querySelector('.pp-page.grow') || {}).textContent || '', ghinp: document.querySelectorAll('.ghinp').length }));
@@ -1095,7 +1095,7 @@ const T = 'hk-macau-2026';
   ok(await page.locator('a[data-a="pdf"]').count() === 0 && await page.evaluate(() => { const h = document.querySelector('main h1'); return !!h && h.getBoundingClientRect().width <= 2 && /Offline|ไม่มีเน็ต/.test(document.querySelector('header.top .ttl').textContent); }),
     'no-signal page: the PDF button lives in the memory book only; the page\'s name is in the bar, not repeated as a heading');
   // one passport per child: a book shown a page at a time — cover · Explorer ID · a visa per trip · missions · map · lists · stickers · trophies · certificate
-  await page.goto(`${BASE}/#/passport`); await page.waitForSelector('.pbook[data-page="cover"] .pp .advc');
+  await page.goto(`${BASE}/#/passport`); await page.waitForSelector('.ppbook[data-page="cover"] .pp .advc');
   ok(await page.locator('.ppkids a[role=tab]').count() === 2 && await page.locator('.ppkids a.chip:not([role=tab])').count() === 2 && await page.locator('.ppkids a.ppprint[href^="/api/b/pdf/"]').count() === 1, 'passport: one per child, a book per trip, and "print" from the book');
   { const tabs = await page.$$eval('.pptabs .ppt', (as) => as.map((a) => a.getAttribute('href').split('/').pop()));
     ok(tabs.join() === 'cover,id,visa-hk-macau-2026,visa-big-hop-2027,missions,map,lists,stickers,trophies,cert' && await page.locator('.ppbody .mission, .ppbody .pp-page.visa, .ppbody #cert').count() === 0 && await page.locator('.ppturn [data-dir="next"][href$="/id"]').count() === 1,
@@ -1111,9 +1111,9 @@ const T = 'hk-macau-2026';
   ok(await s.noHScroll(), 'passport cover: no horizontal scroll at 390 px');
   await s.shot('06-passport');
   // the arrow keys turn the pages (a swipe does the same on a phone: sheets.js ppTurn)
-  await page.keyboard.press('ArrowRight'); await page.waitForSelector('.pbook[data-page="id"]');
+  await page.keyboard.press('ArrowRight'); await page.waitForSelector('.ppbook[data-page="id"]');
   ok(await page.locator('.bio .photo img[src^="/art/kids/mimi-"][src$="-face.webp"]').count() === 1 && await page.locator('.ppbody .advc').count() === 0 && /#\/passport\/mimi\/hk-macau-2026\/id$/.test(page.url()), 'passport: → turns to the Explorer ID page (Mimi\'s character on the photo page)');
-  await page.keyboard.press('ArrowLeft'); await page.waitForSelector('.pbook[data-page="cover"]');
+  await page.keyboard.press('ArrowLeft'); await page.waitForSelector('.ppbook[data-page="cover"]');
   await ppOpen(page, 'mika', 'big-hop-2027', 'cover');
   ok((await page.textContent('.advc')).includes('KOALA-2027-MIKA') && (await page.textContent('.guides')).includes('Ranger Roo'), 'Australia: a passport number per child (KOALA-2027-MIKA), Ranger Roo on the cover');
   await ppOpen(page, 'mimi', T, `visa-${T}`);
@@ -1771,7 +1771,7 @@ const T = 'hk-macau-2026';
   ok(await page.evaluate(() => ['.kidhear', '.kidme'].every((q) => { const b = document.querySelector(q); if (!b) return true; const c = getComputedStyle(b); return c.display === 'grid' && c.paddingLeft === '0px' && c.paddingTop === '0px'; })), 'the kid header\'s round buttons centre what they hold (no default button padding)');
   await page.mouse.down(); await page.waitForTimeout(1500); await page.mouse.up();
   await page.waitForSelector('.pp .advc');
-  ok(page.url().includes('#/passport/mimi') && await page.locator('.pbook:not(.inkid)').count() === 1, 'holding the lock leaves kid mode: the grown-ups\' door of the same passport');
+  ok(page.url().includes('#/passport/mimi') && await page.locator('.ppbook:not(.inkid)').count() === 1, 'holding the lock leaves kid mode: the grown-ups\' door of the same passport');
   await ppOpen(page, 'mimi', T, 'missions'); await page.waitForSelector('#m1 .colsvg.sm svg', { timeout: 5000 }).catch(() => {});
   ok(await page.locator('#m1 .colsvg.sm svg').count() === 1, 'the passport shows the colouring');
   await ppOpen(page, 'mimi', T, 'map'); const pins = await page.locator('.mapsec .tmap .pin').count();
@@ -2845,14 +2845,14 @@ const T = 'hk-macau-2026';
   await ppOpen(page, 'mimi', T, `visa-${T}`);
   ok(await page.locator('.ppstamp .stampbtn[data-d="2"]').count() === 1, 'passport during the trip: this trip\'s visa holds today\'s stamp button for a parent too');
   { // the kid door: the same book inside kid mode — locked, its pages turn by big buttons read aloud, no ✏️, no print
-    await page.goto(`${BASE}/#/kid/mimi/stamp`); await page.waitForSelector(`.kidwrap .pbook.inkid[data-page="visa-${T}"] .stampbtn[data-d="2"]`);
-    const kd = await page.evaluate(() => ({ lock: !!document.querySelector('.kidwrap #kidexit'), tabs: document.querySelectorAll('.pbook .pptabs button[data-a="kidnav"][data-say]').length, grown: document.querySelectorAll('.ppedit, .ppf, .ppprint, .ppkids, nav.bar').length,
+    await page.goto(`${BASE}/#/kid/mimi/stamp`); await page.waitForSelector(`.kidwrap .ppbook.inkid[data-page="visa-${T}"] .stampbtn[data-d="2"]`);
+    const kd = await page.evaluate(() => ({ lock: !!document.querySelector('.kidwrap #kidexit'), tabs: document.querySelectorAll('.ppbook .pptabs button[data-a="kidnav"][data-say]').length, grown: document.querySelectorAll('.ppedit, .ppf, .ppprint, .ppkids, nav.bar').length,
       next: (document.querySelector('.ppturn [data-dir="next"]') || {}).dataset || {} }));
     ok(kd.lock && kd.tabs === 10 && kd.grown === 0 && kd.next.v === '#/kid/mimi/pass/missions', `kid door: this trip's visa with today's stamp, the book's ten pages as kid buttons, the lock, and nothing of the grown-ups' (${JSON.stringify(kd)})`);
-    await page.click('.ppturn [data-dir="next"]'); await page.waitForSelector('.pbook.inkid[data-page="missions"] .mission');
+    await page.click('.ppturn [data-dir="next"]'); await page.waitForSelector('.ppbook.inkid[data-page="missions"] .mission');
     ok(page.url().endsWith('#/kid/mimi/pass/missions') && await page.locator('.mission button[data-a="tick"]:not([disabled])').count() === 0, 'kid door: ‹ › turn the pages inside kid mode; ticks stay with the grown-ups');
-    await page.goto(`${BASE}/#/kid/mimi/pass/id`); await page.waitForSelector('.pbook.inkid[data-page="id"] .bio');
-    ok(await page.locator('.ppf').count() === 0 && await page.locator('.pbook .growl li').count() === 2 && await page.locator('.kidbar').count() === 1, 'kid door: the Explorer ID with Mimi\'s trips, no boxes'); }
+    await page.goto(`${BASE}/#/kid/mimi/pass/id`); await page.waitForSelector('.ppbook.inkid[data-page="id"] .bio');
+    ok(await page.locator('.ppf').count() === 0 && await page.locator('.ppbook .growl li').count() === 2 && await page.locator('.kidbar').count() === 1, 'kid door: the Explorer ID with Mimi\'s trips, no boxes'); }
   await page.goto(`${BASE}/#/kid/mika/spot`); await page.waitForSelector('.kidspots');
   ok(await page.locator('.kidspots.little button[data-v^="little.d2."]').count() === 3, 'kid mode: Mika’s "point it" page has her three missions of today');
   // the morning surprise box: on a trip day kid mode greets with a box; opening it gives a sticker and shows today's missions; once
