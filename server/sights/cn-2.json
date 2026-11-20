@@ -1759,7 +1759,6 @@
     },
     {
       "place": "cn-zhangjiajie",
-      "thin": true,
       "sights": [
         {
           "name": { "en": "Zhangjiajie National Forest Park", "th": "อุทยานป่าไม้แห่งชาติจางเจียเจี้ย" },
@@ -2010,6 +2009,42 @@
           "q": "Huangshizhai, Zhangjiajie National Forest Park, Hunan",
           "ok": "2026-11",
           "src": "https://www.travelchinaguide.com/attraction/hunan/zhangjiajie/huangshizhai-village.htm"
+        },
+        {
+          "name": { "en": "Zhangjiajie Museum", "th": "พิพิธภัณฑ์จางเจียเจี้ย" },
+          "local": "张家界市博物馆",
+          "kind": "museum",
+          "area": { "en": "Yongding District", "th": "เขตหย่งติ้ง" },
+          "what": { "en": "The city museum, built to echo the sandstone peaks, with the region's history and hands-on craft activities", "th": "พิพิธภัณฑ์ของเมือง ตัวอาคารเลียนแบบยอดเขาหินทราย เล่าประวัติภูมิภาค มีกิจกรรมงานฝีมือให้ลองทำ" },
+          "why": { "en": "Free and indoors, a cool break for children on a hot or rainy day", "th": "เข้าฟรี อยู่ในร่ม พักให้เด็กหายร้อนหรือหลบฝนได้" },
+          "tip": { "en": "Local news in August 2026 named it a cool indoor stop for children in summer", "th": "ข่าวท้องถิ่นเดือนสิงหาคม 2026 แนะนำเป็นที่หลบร้อนในร่มสำหรับเด็ก" },
+          "ages": [1, 1, 2, 2],
+          "hrs": 1.5,
+          "io": "in",
+          "pram": "yes",
+          "price": { "en": "Free", "th": "ฟรี" },
+          "book": "none",
+          "q": "Zhangjiajie Museum, Yongding District, Zhangjiajie",
+          "ok": "2026-11",
+          "src": "https://zjj.rednet.cn/content/646042/65/16194602.html"
+        },
+        {
+          "name": { "en": "Tujia Folk Customs Park", "th": "สวนวัฒนธรรมชาวถู่เจีย" },
+          "local": "张家界土家风情园",
+          "kind": "culture",
+          "area": { "en": "Yongding District", "th": "เขตหย่งติ้ง" },
+          "what": { "en": "A park of Tujia wooden buildings and traditions, with costumes, songs and crafts of the local people", "th": "สวนอาคารไม้และวัฒนธรรมชาวถู่เจีย มีชุดพื้นเมือง เพลง และงานฝีมือของคนท้องถิ่น" },
+          "why": { "en": "Close to town and easy to walk round, with colourful buildings and things to watch", "th": "ใกล้ตัวเมือง เดินชมง่าย อาคารสีสันสดใสและมีอะไรให้ดูเยอะ" },
+          "tip": { "en": "Prices differ between the gate and booking sites, so check before you go", "th": "ราคาหน้างานกับเว็บจองต่างกัน เช็กก่อนไป" },
+          "ages": [1, 2, 2, 2],
+          "hrs": 2,
+          "io": "both",
+          "pram": "part",
+          "price": { "en": "Check the price", "th": "เช็กราคาก่อนไป" },
+          "book": "none",
+          "q": "Tujia Folk Customs Park, Yongding District, Zhangjiajie",
+          "ok": "2026-11",
+          "src": "https://www.trip.com/moments/poi-tujia-folk-customs-park-10558934/"
         }
       ]
     }

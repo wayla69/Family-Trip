@@ -263,7 +263,6 @@
     },
     {
       "place": "au-uluru",
-      "thin": true,
       "sights": [
         {
           "name": { "en": "Uluru-Kata Tjuta Cultural Centre", "th": "ศูนย์วัฒนธรรมอูลูรู-คาตาจูตา" },
@@ -502,6 +501,23 @@
           "q": "Sounds of Silence, Ayers Rock Resort, Yulara",
           "ok": "2026-11",
           "src": "https://www.ayersrockresort.com.au/all-experiences"
+        },
+        {
+          "name": { "en": "Gallery of Central Australia (GoCA)", "th": "แกลเลอรีออฟเซ็นทรัลออสเตรเลีย" },
+          "kind": "museum",
+          "area": { "en": "Yulara, Ayers Rock Resort", "th": "ยูลารา รีสอร์ตแอร์สร็อก" },
+          "what": { "en": "A gallery of artworks from the art centres of the Central and Western Desert, where artists in residence paint while you watch", "th": "แกลเลอรีงานศิลปะจากศูนย์ศิลปะในทะเลทรายตอนกลางและตะวันตก มีศิลปินมานั่งวาดให้ดู" },
+          "why": { "en": "Cool, indoors and close to the hotels, with bright dot paintings children like to look at closely", "th": "เย็นสบาย อยู่ในร่ม ใกล้ที่พัก ภาพจุดสีสดๆ เด็กชอบเข้าไปดูใกล้ๆ" },
+          "tip": { "en": "A good stop for the hot middle of the day; ask at the resort about the free guided walk-through", "th": "แวะช่วงกลางวันที่ร้อนจัด ถามรีสอร์ตเรื่องรอบพาชมฟรี" },
+          "ages": [1, 2, 2, 2],
+          "hrs": 1,
+          "io": "in",
+          "pram": "yes",
+          "price": { "en": "Check the price", "th": "เช็กราคาก่อนไป" },
+          "book": "none",
+          "q": "Gallery of Central Australia, Yulara",
+          "ok": "2026-11",
+          "src": "https://www.ayersrockresort.com.au/stories/gallery-of-central-australia-supporting-local"
         }
       ]
     }
