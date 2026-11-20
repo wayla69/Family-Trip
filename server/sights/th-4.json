@@ -1661,6 +1661,24 @@
           "q": "Khon Kaen Philatelic Museum, Mueang Khon Kaen",
           "ok": "2026-11",
           "src": "https://www.thaiholidayguide.com/attraction/khon-kaen-philatelic-museum/"
+        },
+        {
+          "name": { "en": "Phra Mahathat Kaen Nakhon (Wat Nong Waeng)", "th": "พระมหาธาตุแก่นนคร (วัดหนองแวง)" },
+          "local": "พระมหาธาตุแก่นนคร วัดหนองแวง",
+          "kind": "culture",
+          "area": { "en": "Mueang Khon Kaen", "th": "เมืองขอนแก่น" },
+          "what": { "en": "A nine-storey pagoda beside Nong Waeng lake, with murals of Buddhist stories and a view over the city from the upper floors", "th": "เจดีย์เก้าชั้นริมหนองแวง มีภาพจิตรกรรมเล่าเรื่องพุทธประวัติ และชมวิวเมืองจากชั้นบน" },
+          "why": { "en": "A short, easy visit with a lake path outside; the monks open the upper floors, and steps suit children who can climb", "th": "แวะสั้นๆ สบาย มีทางเดินริมหนองด้านนอก พระเปิดชั้นบนให้ขึ้นชม บันไดเหมาะกับเด็กที่ปีนเองได้" },
+          "tip": { "en": "Cover shoulders and knees and take shoes off; open daily 8:00 to 17:30, and the upper floors may close earlier", "th": "ปิดไหล่และเข่า ถอดรองเท้า เปิดทุกวัน 8:00–17:30 ชั้นบนอาจปิดเร็วกว่า" },
+          "ages": [0, 1, 2, 2],
+          "hrs": 1,
+          "io": "both",
+          "pram": "part",
+          "price": { "en": "Free", "th": "ฟรี" },
+          "book": "none",
+          "q": "Phra Mahathat Kaen Nakhon, Wat Nong Waeng, Khon Kaen",
+          "ok": "2026-11",
+          "src": "https://www.visitthailandtoday.com/temples-culture/khon-kaen/phra-mahathat-kaen-nakhon-wat-nong-wang"
         }
       ]
     },
@@ -4094,6 +4112,24 @@
           "q": "Wat Phra Phai Luang, Sukhothai Historical Park",
           "ok": "2026-11",
           "src": "https://www.thaiholidayguide.com/attraction/wat-phra-phai-luang/"
+        },
+        {
+          "name": { "en": "Wat Si Chum", "th": "วัดศรีชุม" },
+          "local": "วัดศรีชุม",
+          "kind": "culture",
+          "area": { "en": "Sukhothai Historical Park, north zone", "th": "อุทยานประวัติศาสตร์สุโขทัย โซนเหนือ" },
+          "what": { "en": "A roofless brick hall holding the huge seated Buddha Phra Achana, about 15 metres high, seen through a narrow slot", "th": "มณฑปอิฐไร้หลังคาที่ประดิษฐานพระอจนะนั่งองค์ใหญ่สูงราว 15 เมตร มองผ่านช่องแคบ" },
+          "why": { "en": "Children gasp at the size of the Buddha and like cycling to the north zone; the site is flat but has little shade", "th": "เด็กตื่นเต้นกับความใหญ่ขององค์พระ และสนุกกับการปั่นจักรยานไปโซนเหนือ ทางราบแต่ร่มน้อย" },
+          "tip": { "en": "The north zone is open 7:30 to 17:30 and has its own ticket; dress modestly and keep voices low", "th": "โซนเหนือเปิด 7:30–17:30 มีตั๋วแยก แต่งกายสุภาพและพูดเบา" },
+          "ages": [0, 1, 2, 2],
+          "hrs": 1,
+          "io": "out",
+          "pram": "yes",
+          "price": { "en": "Check the price", "th": "เช็กราคาก่อนไป" },
+          "book": "none",
+          "q": "Wat Si Chum, Sukhothai Historical Park, Sukhothai",
+          "ok": "2026-11",
+          "src": "https://www.thaiholidayguide.com/attraction/sukhothai-historical-park-old-sukhothai-city/"
         }
       ]
     },

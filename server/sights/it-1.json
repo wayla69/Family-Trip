@@ -1653,6 +1653,23 @@
           "q": "Terrazza del Gianicolo, Piazzale Giuseppe Garibaldi, Rome",
           "ok": "2026-11",
           "src": "https://www.turismoroma.it/en/node/31553"
+        },
+        {
+          "name": { "en": "Technotown, Villa Torlonia", "th": "เทคโนทาวน์ วิลลา ตอร์โลเนีย" },
+          "kind": "museum",
+          "area": { "en": "Villa Torlonia, Nomentano", "th": "วิลลา ตอร์โลเนีย โนเมนตาโน" },
+          "what": { "en": "A science and technology space for teenagers in Villa Torlonia, with a themed exhibition and daily creative workshops", "th": "พื้นที่วิทยาศาสตร์และเทคโนโลยีสำหรับวัยรุ่นในวิลลา ตอร์โลเนีย มีนิทรรศการตามธีมและเวิร์กช็อปสร้างสรรค์ทุกวัน" },
+          "why": { "en": "Open only to ages 12 and over, so it is for older children; the villa's gardens are a good stop for younger ones nearby", "th": "รับเฉพาะอายุ 12 ปีขึ้นไป จึงเหมาะกับเด็กโต ส่วนเด็กเล็กไปเดินสวนของวิลลาข้างๆ ได้" },
+          "tip": { "en": "Workshops need a booking at the bookshop; last entry one hour before closing; open Tuesday to Sunday", "th": "เวิร์กช็อปต้องจองที่ร้านหนังสือ เข้าชมรอบสุดท้ายก่อนปิดหนึ่งชั่วโมง เปิดอังคารถึงอาทิตย์" },
+          "ages": [0, 0, 0, 2],
+          "hrs": 1.5,
+          "io": "in",
+          "pram": "yes",
+          "price": { "en": "≈ €1 ticket", "th": "≈ €1 ต่อตั๋ว" },
+          "book": "none",
+          "q": "Technotown, Via Lazzaro Spallanzani 1/A, Villa Torlonia, Roma",
+          "ok": "2026-11",
+          "src": "https://www.technotown.it"
         }
       ]
     },

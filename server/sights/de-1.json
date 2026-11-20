@@ -533,6 +533,24 @@
           "q": "Kölnisches Stadtmuseum, Zeughausstraße 1-3, Köln",
           "ok": "2026-11",
           "src": "https://www.cologne-tourism.com/arts-culture/sights/detail/cologne-city-museum"
+        },
+        {
+          "name": { "en": "Cologne Cathedral and its south tower", "th": "มหาวิหารโคโลญและหอคอยใต้" },
+          "local": "Kölner Dom",
+          "kind": "culture",
+          "area": { "en": "Altstadt, next to the main station", "th": "ย่านเมืองเก่า ติดสถานีรถไฟกลาง" },
+          "what": { "en": "A huge Gothic cathedral with twin spires, stained-glass windows and, for those who can climb 533 steps, a viewing platform about 100 m up", "th": "มหาวิหารกอทิกขนาดมหึมาที่มียอดแหลมคู่ กระจกสีสวยงาม และจุดชมวิวสูงราว 100 เมตรสำหรับคนที่ไหวกับบันได 533 ขั้น" },
+          "why": { "en": "Small children are amazed by the height and the coloured light inside; the tower has no lift, so it suits only those who can climb by themselves", "th": "เด็กเล็กตื่นเต้นกับความสูงและแสงสีผ่านกระจก หอคอยไม่มีลิฟต์ เหมาะกับเด็กที่เดินขึ้นเองได้" },
+          "tip": { "en": "Visitors keep quiet and dress respectfully; no pram or large bag in the tower (bags up to 40×35×10 cm); the nave closes for services and the tower on some carnival days", "th": "ต้องเงียบและแต่งกายสุภาพ หอคอยห้ามรถเข็นและกระเป๋าใหญ่ (ไม่เกิน 40×35×10 ซม.) ช่วงพิธีและบางวันคาร์นิวัลจะปิด" },
+          "ages": [1, 2, 2, 2],
+          "hrs": 1.5,
+          "io": "both",
+          "pram": "part",
+          "price": { "en": "≈ €12 adults · children up to 13 free · tower ≈ €8 (free up to 13)", "th": "≈ €12 ผู้ใหญ่ · เด็กถึง 13 ปีฟรี · ขึ้นหอคอย ≈ €8 (เด็กถึง 13 ปีฟรี)" },
+          "book": "rec",
+          "q": "Kölner Dom, Domkloster 4, Köln",
+          "ok": "2026-11",
+          "src": "https://www.koelner-dom.de/besuchen/turmbesteigung"
         }
       ]
     },

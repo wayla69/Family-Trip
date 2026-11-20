@@ -535,6 +535,23 @@
           "q": "Heckscher Playground, Central Park, New York",
           "ok": "2026-11",
           "src": "https://www.centralparknyc.org/locations/heckscher-playground"
+        },
+        {
+          "name": { "en": "Brooklyn Children's Museum", "th": "พิพิธภัณฑ์เด็กบรู๊กลิน" },
+          "kind": "museumkid",
+          "area": { "en": "Crown Heights, Brooklyn", "th": "คราวน์ไฮตส์ บรู๊กลิน" },
+          "what": { "en": "The world's first children's museum, with hands-on exhibits about nature, culture and science for children", "th": "พิพิธภัณฑ์เด็กแห่งแรกของโลก มีนิทรรศการให้เล่นและลงมือทำเรื่องธรรมชาติ วัฒนธรรมและวิทยาศาสตร์" },
+          "why": { "en": "Made for hands-on play; younger children have fun with the touch-and-play exhibits", "th": "ออกแบบให้เล่นและสัมผัสได้ เด็กเล็กสนุกกับนิทรรศการแบบจับต้อง" },
+          "tip": { "en": "Open Wednesday to Sunday 10–5 (last entry 4:50 pm), closed Monday and Tuesday; free on Thursdays 2–5 pm with a ticket reserved online", "th": "เปิดพุธถึงอาทิตย์ 10:00–17:00 (เข้าได้ถึง 16:50) ปิดจันทร์และอังคาร พฤหัสบดี 14:00–17:00 เข้าฟรีโดยจองตั๋วออนไลน์" },
+          "ages": [2, 2, 2, 1],
+          "hrs": 2.5,
+          "io": "in",
+          "pram": "yes",
+          "price": { "en": "≈ $15 per person · free Thursdays 2–5 pm", "th": "≈ $15 ต่อคน · พฤหัสบดี 14:00–17:00 ฟรี" },
+          "book": "none",
+          "q": "Brooklyn Children's Museum, Crown Heights, Brooklyn, New York",
+          "ok": "2026-11",
+          "src": "https://www.brooklynkids.org/visit/"
         }
       ]
     },

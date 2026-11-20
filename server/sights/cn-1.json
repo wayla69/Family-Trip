@@ -291,6 +291,24 @@
           "q": "Zhujiajiao Ancient Town, Qingpu, Shanghai",
           "ok": "2026-11",
           "src": "https://goasia.cc/en/article/zhujiajiao-water-town"
+        },
+        {
+          "name": { "en": "Shanghai Haichang Ocean Park", "th": "ไห่ชาง โอเชียนปาร์ค เซี่ยงไฮ้" },
+          "local": "上海海昌海洋公园",
+          "kind": "themepark",
+          "area": { "en": "Lingang, Pudong", "th": "หลิงกั่ง ผู่ตง" },
+          "what": { "en": "A big marine park with a polar zone, whales and dolphins, sea-lion and bird shows, plus rides and a water area", "th": "สวนสัตว์ทะเลขนาดใหญ่ มีโซนขั้วโลก วาฬและโลมา โชว์สิงโตทะเลและนก พร้อมเครื่องเล่นและโซนน้ำ" },
+          "why": { "en": "Many indoor halls give shade and a rainy-day plan, and the shows are short enough for small children", "th": "มีโถงในร่มหลายแห่งให้ร่มเงาและใช้วันฝนตกได้ โชว์สั้นพอสำหรับเด็กเล็ก" },
+          "tip": { "en": "Hours change by season (off-season closes about 17:30 or 18:00); it is far out in Lingang, so allow a full day", "th": "เวลาเปลี่ยนตามฤดูกาล (นอกฤดูปิดราว 17:30–18:00) อยู่ไกลที่หลิงกั่ง ควรเผื่อทั้งวัน" },
+          "ages": [1, 2, 2, 2],
+          "hrs": 6,
+          "io": "both",
+          "pram": "yes",
+          "price": { "en": "≈ ¥339 adults weekdays (from ¥399 peak days) · reduced for 1.0–1.4 m", "th": "≈ ¥339 ผู้ใหญ่วันธรรมดา (วันแน่นเริ่ม ¥399) · ลดราคาสำหรับสูง 1.0–1.4 ม." },
+          "book": "rec",
+          "q": "Shanghai Haichang Ocean Park, Yinfei Road, Nanhui New Town, Pudong, Shanghai",
+          "ok": "2026-11",
+          "src": "https://intotravelchina.com/en/articles/1776674497638730963.html"
         }
       ]
     }
