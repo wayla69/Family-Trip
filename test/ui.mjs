@@ -1115,10 +1115,10 @@ const T = 'hk-macau-2026';
     'no-signal page: the PDF button lives in the memory book only; the page\'s name is in the bar, not repeated as a heading');
   // one passport per child: a book shown a page at a time — cover · Explorer ID · a visa per trip · missions · map · lists · stickers · trophies · certificate
   // the shelf's card opens the child's cover: a passport a trip (owner, Nov 2026: "แยกเล่มได้ไหม … เป็นหน้าปกแล้วกดแยกเล่มได้")
-  await page.goto(`${BASE}/#/passport`); await page.waitForSelector('.ppshelf .ppbk');
-  { const sh = await page.evaluate(() => ({ books: [...document.querySelectorAll('.ppshelf .ppbk')].map((a) => a.getAttribute('href')), back: document.querySelector('header.top a.ibtn').getAttribute('href'), book: !!document.querySelector('.ppbook') }));
+  await page.goto(`${BASE}/#/passport`); await page.waitForSelector('.ppshelf .ppbk2');
+  { const sh = await page.evaluate(() => ({ books: [...document.querySelectorAll('.ppshelf .ppbk2')].map((a) => a.getAttribute('href')), back: document.querySelector('header.top a.ibtn').getAttribute('href'), book: !!document.querySelector('.ppbook') }));
     ok(sh.books.join() === '#/passport/mimi/hk-macau-2026/cover,#/passport/mimi/big-hop-2027/cover' && sh.back === '#/' && !sh.book, `passport: the child's cover holds one passport a trip, oldest first (${JSON.stringify(sh)})`); }
-  await page.click('.ppshelf .ppbk[href*="hk-macau-2026"]'); await page.waitForSelector('.ppbook[data-page="cover"] .pp .advc');
+  await page.click('.ppshelf .ppbk2[href*="hk-macau-2026"]'); await page.waitForSelector('.ppbook[data-page="cover"] .pp .advc');
   ok(await page.getAttribute('header.top a.ibtn', 'href') === '#/passport/mimi', 'passport: a book\'s back goes to the child\'s cover');
   ok(await page.locator('.ppkids a[role=tab]').count() === 2 && await page.locator('.ppkids a.ppall[href="#/passport/mimi"]').count() === 1 && await page.locator('.ppkids a.ppprint[href^="/api/b/pdf/"]').count() === 1, 'passport: the children, "all of Mimi\'s passports" and "print" above the book');
   { const tabs = await page.$$eval('.pptabs .ppt', (as) => as.map((a) => a.getAttribute('href').split('/').pop()));
@@ -1797,8 +1797,8 @@ const T = 'hk-macau-2026';
     return Math.abs((r.left + r.width / 2) - (q.left + q.width / 2)) < 1 && Math.abs((r.top + r.height / 2) - (q.top + q.height / 2)) < 1; }), 'the lock is a drawn icon in the middle of its circle (the emoji sat off-centre in Safari)');
   ok(await page.evaluate(() => ['.kidhear', '.kidme'].every((q) => { const b = document.querySelector(q); if (!b) return true; const c = getComputedStyle(b); return c.display === 'grid' && c.paddingLeft === '0px' && c.paddingTop === '0px'; })), 'the kid header\'s round buttons centre what they hold (no default button padding)');
   await page.mouse.down(); await page.waitForTimeout(1500); await page.mouse.up();
-  await page.waitForSelector('.ppshelf .ppbk');
-  ok(page.url().includes('#/passport/mimi') && await page.locator('.ppshelf .ppbk').count() === 2, 'holding the lock leaves kid mode: Mimi\'s passports, the grown-ups\' door');
+  await page.waitForSelector('.ppshelf .ppbk2');
+  ok(page.url().includes('#/passport/mimi') && await page.locator('.ppshelf .ppbk2').count() === 2, 'holding the lock leaves kid mode: Mimi\'s passports, the grown-ups\' door');
   await ppOpen(page, 'mimi', T, 'missions'); await page.waitForSelector('#m1 .colsvg.sm svg', { timeout: 5000 }).catch(() => {});
   ok(await page.locator('#m1 .colsvg.sm svg').count() === 1, 'the passport shows the colouring');
   await ppOpen(page, 'mimi', T, 'map'); const pins = await page.locator('.mapsec .tmap .pin').count();
@@ -1904,7 +1904,7 @@ const T = 'hk-macau-2026';
   await page.waitForFunction(() => queue.length >= 1, null, { timeout: 5000 });
   const lock2 = await boxOf(page, '#kidexit');
   await page.mouse.move(lock2.x + lock2.width / 2, lock2.y + lock2.height / 2); await page.mouse.down(); await page.waitForTimeout(1500); await page.mouse.up();
-  await page.waitForSelector('.ppshelf .ppbk');
+  await page.waitForSelector('.ppshelf .ppbk2');
   await s.ctx.setOffline(false);
   await page.evaluate(() => { offline = false; return flush(); });
   await page.waitForFunction(() => queue.length === 0 && !offline, null, { timeout: 20000 });
@@ -2252,7 +2252,7 @@ const T = 'hk-macau-2026';
   // leave kid mode; the drawing is in the book, then a bedtime story read aloud with turning pages
   const lock = await page.locator('#kidexit').boundingBox();
   await page.mouse.move(lock.x + lock.width / 2, lock.y + lock.height / 2); await page.mouse.down(); await page.waitForTimeout(1500); await page.mouse.up();
-  await page.waitForSelector('.ppshelf .ppbk');
+  await page.waitForSelector('.ppshelf .ppbk2');
   await page.evaluate(async () => { await fetch('/api/b/entries/hk-macau-2026.story.all', { method: 'PUT', headers: { 'x-mb': '1', 'content-type': 'application/json' }, body: JSON.stringify({ trip: 'hk-macau-2026', day: null, kind: 'story', text: 'Once upon a time Mimi and Mika flew to Hong Kong. The plane went whoosh!\n\nThey met Captain Pinky by the sea. Then they slept in a castle of lights.\n\nThe end.', lang: 'en' }) }); await load(); });
   await page.goto(`${BASE}/#/t/${T}/book`); await page.waitForSelector('.cover');
   ok(await page.locator('.mosaic.drawings img').count() === 1, "book: the kids' drawings section");

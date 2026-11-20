@@ -3872,17 +3872,32 @@ const ppHref = (kid, t, key, kidMode) => (kidMode ? `#/kid/${kid}/${key === `vis
 // the tab row shows the page open now (it scrolls sideways on a phone)
 function ppTabsShow(root) { const pc = $('.pptabs [aria-current]', root); if (pc) pc.parentElement.scrollLeft = pc.offsetLeft - pc.parentElement.offsetLeft - 24; }
 const PP_ART = { map: 'map', stickers: 'stickers', trophies: 'trophies' };   // kid mode's own bar pictures for those pages; the visas wear the passport
-// a child's cover (#/passport/<kid>): the child, then a passport a trip — tap one to open that trip's book
+// a child's cover (#/passport/<kid>): a passport cover of the child's own (their character, name, age, how far they have travelled),
+// then a passport a trip, each in its own book's colours and crest — tap one to open that trip's book
 function viewPassportShelf(slug) {
   const ks = children(), k = ks.find((c) => c.slug === slug) || ks[0];
   if (!k) return emptyCard(null, L('ยังไม่มีเด็กในครอบครัว', 'No children yet'), '');
-  const kid = k.slug, name = kidName(kid), books = ppTrips(kid), cur = curTrip();
-  const card = (x) => { const st = (x.passport || {}).style || {}, n = x.days.filter((_, i) => dayStamped(x, i)).length, live = dayNow(x) >= 0;
-    return `<a class="ppc s ppbk kid-${esc(kid)}${x === cur ? ' cur' : ''}" href="#/passport/${esc(kid)}/${esc(x.id)}/cover"><span class="emb">${st.crest ? `<img src="${esc(st.crest)}" alt="">` : kidArt(kid) ? `<img src="${kidArt(kid, false, x)}" alt="">` : '🌏'}</span>
-<b>${flagsOf(x)} ${esc(String(x.date_from || '').slice(0, 4))}</b><span class="nm">${esc(ppShort(x))}</span><small>${esc(fmtRange(x))}</small>${n ? `<small>${L(`ได้ตราแล้ว ${n}`, `${n} stamp${n > 1 ? 's' : ''}`)}</small>` : ''}${live ? `<span class="ppnow">${L('ทริปนี้', 'On the trip')}</span>` : ''}</a>`; };
-  return `${pageHead('passport', PG.gold, L('พาสปอร์ตนักผจญภัย', 'Adventure passports'), L(`พาสปอร์ตของ${esc(name)}`, `${esc(name)}’s passports`), L('หนึ่งทริปหนึ่งเล่ม แตะเล่มเพื่อเปิด', 'One passport a trip — tap one to open it'))}
-${ks.length > 1 ? `<div class="row ppkids" role="tablist">${ks.map((c) => `<a class="chip" role="tab" href="#/passport/${esc(c.slug)}" aria-selected="${c.slug === kid}" aria-pressed="${c.slug === kid}">${kidFace(c.slug)} ${esc(kidName(c.slug))}</a>`).join('')}</div>` : ''}
-${books.length ? `<div class="ppmini ppshelf">${books.map(card).join('')}</div>` : `<p class="muted">${L('ยังไม่มีเล่ม', 'No books yet')}</p>`}`;
+  const kid = k.slug, name = kidName(kid), books = ppTrips(kid), cur = curTrip(), age = famAge(k.birth_ym);
+  const stamps = books.reduce((n, x) => n + x.days.filter((_, i) => dayStamped(x, i)).length, 0);
+  const art = kidArt(kid, true);
+  const card = (x) => {
+    const st = (x.passport || {}).style || {}, n = x.days.filter((_, i) => dayStamped(x, i)).length, live = dayNow(x) >= 0, short = ppShort(x);
+    const ttl = st.title && st.hl && st.title.endsWith(st.hl) ? `${esc(st.title.slice(0, -st.hl.length).trim())} <em>${esc(st.hl)}</em>` : esc(short);
+    return `<a class="ppbk2${x === cur ? ' cur' : ''}" href="#/passport/${esc(kid)}/${esc(x.id)}/cover" style="--bgA:${esc(st.bgA || '#FBF1DA')};--bgB:${esc(st.bgB || '#E3EEF9')};--ink:${esc(st.ink || '#1F3A5F')};--hi:${esc(st.hi || '#E05A7A')};--gold:${esc(st.gold || '#E9D9A0')}">
+${live ? `<span class="ppnow">${L('ทริปนี้', 'On the trip')}</span>` : ''}<span class="bkcard">
+<span class="bkcrest">${st.crest ? `<img src="${esc(st.crest)}" alt="">` : stampHtml(x, true)}</span>
+<span class="bkk">${flagsOf(x)} ${esc(String(x.date_from || '').slice(0, 4))}</span>
+<span class="bkt">${ttl}</span>
+<span class="bkd">${esc(fmtRange(x))}</span>
+${n ? `<span class="bks">🛂 ${L(`ได้ตราแล้ว ${n}`, `${n} stamp${n > 1 ? 's' : ''}`)}</span>` : ''}</span></a>`; };
+  return `${ks.length > 1 ? `<div class="row ppkids" role="tablist">${ks.map((c) => `<a class="chip" role="tab" href="#/passport/${esc(c.slug)}" aria-selected="${c.slug === kid}" aria-pressed="${c.slug === kid}">${kidFace(c.slug)} ${esc(kidName(c.slug))}</a>`).join('')}</div>` : ''}
+<section class="ppc ppkcover kid-${esc(kid)}">
+<span class="kcart">${art ? `<img src="${esc(art)}" alt="">` : `<span>${esc(k.emoji || '🙂')}</span>`}</span>
+<span class="kctx"><b>${L('พาสปอร์ตนักผจญภัย', 'Adventure passport')}</b><span class="nm">${esc(name)}</span>
+${age ? `<small>${L(`อายุ ${esc(age)}`, `${esc(age)} old`)}</small>` : ''}
+<span class="kcstat">${books.length ? `<span>✈️ ${L(`${books.length} ทริป`, `${books.length} trip${books.length > 1 ? 's' : ''}`)}</span>` : ''}${stamps ? `<span>🛂 ${L(`ได้ตราแล้ว ${stamps}`, `${stamps} stamp${stamps > 1 ? 's' : ''}`)}</span>` : ''}</span></span></section>
+<h2 class="ppbkh">${L(`เล่มของ${esc(name)}`, `${esc(name)}’s passports`)}<small>${L('หนึ่งทริปหนึ่งเล่ม แตะเพื่อเปิด', 'One a trip — tap to open')}</small></h2>
+${books.length ? `<div class="ppshelf">${books.map(card).join('')}</div>` : `<p class="muted">${L('ยังไม่มีเล่ม', 'No books yet')}</p>`}`;
 }
 function viewPassport(slug, tid, page0, kidMode) {
   const ks = children(), k = ks.find((c) => c.slug === slug) || ks[0];
