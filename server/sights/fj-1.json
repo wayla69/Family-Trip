@@ -140,6 +140,40 @@
           "q": "Natadola Beach, Viti Levu, Fiji",
           "ok": "2026-11",
           "src": "https://destinationlesstravel.com/best-beaches-in-fiji/"
+        },
+        {
+          "name": { "en": "Fiji Museum", "th": "พิพิธภัณฑ์ฟิจิ" },
+          "kind": "museum",
+          "area": { "en": "Suva", "th": "ซูวา" },
+          "what": { "en": "200 years of Fijian culture in Thurston Gardens, open every day 9:00–16:30", "th": "วัฒนธรรมฟิจิ 200 ปีในเธอร์สตันการ์เดนส์ เปิดทุกวัน 9:00–16:30" },
+          "why": { "en": "Canoes and old artefacts hold curious children; the gardens outside are good for a run", "th": "เรือแคนูและโบราณวัตถุดึงดูดเด็กช่างสงสัย สวนด้านนอกเหมาะวิ่งเล่น" },
+          "tip": { "en": "It is in Suva, far from Nadi, so make it a day trip; closed on Christmas, New Year's Day, Easter Sunday and Diwali", "th": "อยู่ที่ซูวา ไกลจากนาดี เหมาะเที่ยวทั้งวัน ปิดวันคริสต์มาส ปีใหม่ อีสเตอร์ และดีวาลี" },
+          "ages": [0, 1, 2, 2],
+          "hrs": 1.5,
+          "io": "in",
+          "pram": "yes",
+          "price": { "en": "≈ FJ$20 adults · FJ$10 child 2–15 (overseas visitors)", "th": "≈ FJ$20 ผู้ใหญ่ · FJ$10 เด็ก 2–15 ปี (ผู้มาเยือนจากต่างประเทศ)" },
+          "book": "none",
+          "q": "Fiji Museum, Thurston Gardens, Cakobau Road, Suva",
+          "ok": "2026-11",
+          "src": "https://www.fijimuseum.org.fj/"
+        },
+        {
+          "name": { "en": "Sigatoka Sand Dunes National Park", "th": "อุทยานแห่งชาติเนินทรายซิงกาโตกา" },
+          "kind": "nature",
+          "area": { "en": "Sigatoka", "th": "ซิงกาโตกา" },
+          "what": { "en": "Towering dunes by the sea with two walking trails, ranger guides and a lookout", "th": "เนินทรายสูงริมทะเล มีทางเดินสองสาย เจ้าหน้าที่นำชม และจุดชมวิว" },
+          "why": { "en": "Fun soft sand for children, but the trails are sandy and hot, so pick the shorter one", "th": "ทรายนุ่มสนุกสำหรับเด็ก แต่ทางเป็นทรายและร้อน เลือกเส้นสั้นกว่า" },
+          "tip": { "en": "Open 8:00–16:30, closed 13:00–14:00 each day", "th": "เปิด 8:00–16:30 ปิดพัก 13:00–14:00 ทุกวัน" },
+          "ages": [0, 1, 2, 2],
+          "hrs": 1.5,
+          "io": "out",
+          "pram": "no",
+          "price": { "en": "≈ FJ$10 adults · local students 6–17 FJ$5 · 5 and under free", "th": "≈ FJ$10 ผู้ใหญ่ · นักเรียนท้องถิ่น 6–17 ปี FJ$5 · 5 ปีและต่ำกว่าฟรี" },
+          "book": "none",
+          "q": "Sigatoka Sand Dunes National Park, Queens Road, Sigatoka",
+          "ok": "2026-11",
+          "src": "https://nationaltrust.org.fj/ssd/"
         }
       ]
     }

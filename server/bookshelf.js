@@ -1151,7 +1151,9 @@ function router({ pool, media, A, ai, hooks = {} }) {   // hooks.heart(h): set b
     return { title: seed.title, cover: seed.cover || null, date_from: seed.date_from || null, date_to: seed.date_to || null, days: n(seed.days),
       toc: (seed.days || []).map((d) => ({ t: d.title, e: d.emoji || '' })),
       peek: { stops: (seed.days || []).reduce((a, d) => a + n(d.planned), 0), restaurants: ((inf.restaurants && inf.restaurants.groups) || []).reduce((a, g) => a + n(g.items), 0), missions: n(pp.days),
-        wild: n(inf.wild), firsts: n(seed.firsts_catalog), words: list('words'), food: list('food'), map: n(pp.map && pp.map.stops), stays: n(inf.stays) } };
+        wild: n(inf.wild), firsts: n(seed.firsts_catalog), words: list('words'), food: list('food'), map: n(pp.map && pp.map.stops), stays: n(inf.stays),
+        doors: (pp.countdown && pp.countdown.own) || 0, customs: n(pp.declaration && pp.declaration.counts), little: pp.little ? n(pp.little.days) : 0,
+        littleKids: pp.little ? (pp.little.kids || []) : [] } };
   };
   const IMPORT_CALLS = 30;   // a manual of ~300 restaurants: structure, info, ~12 restaurant calls, kids, extras, ~4 Thai batches, and room for retries
   let job = null;   // { id, slug, status: running|done|error, log, draft, error, started }
@@ -1177,8 +1179,10 @@ function router({ pool, media, A, ai, hooks = {} }) {   // hooks.heart(h): set b
       try {
         const kids = await q('SELECT slug, name_th, name_en, emoji, birth_ym FROM children WHERE family_id=$1 ORDER BY pos', [FAMILY]);
         const out = await IMPORT.run({ buf, slug, client: new ai.SDK(), take: aiTake, onUsage: addUsage, log, dir: DATA_TMP,
-          kids: kids.map((k) => ({ name_en: k.name_en, age: k.birth_ym ? Math.max(0, Math.floor((Date.now() - new Date(k.birth_ym + '-01')) / 31557600000)) : '' })) });
+          kids: kids.map((k) => ({ name_en: k.name_en, age: k.birth_ym ? Math.max(0, Math.floor((Date.now() - new Date(k.birth_ym + '-01')) / 31557600000)) : '' })),
+          little: FAM.littleKids(kids, new Date(Date.now() + 365 * 864e5).toISOString()).length > 0 || FAM.littleKids(kids).length > 0 });   // a child under three now or within the year
         if (kids.length) out.seed.children = FAM.seedChildren(kids, out.seed.date_from);   // the book is about this family's children, whatever the manual's defaults
+        FAM.fitLittle(out.seed, kids);   // the little one's edition goes to the children under three on the trip's first day
         await q('INSERT INTO book_drafts (id, family_id, slug, seed, report, cost, created_by) VALUES ($1,$2,$3,$4,$5,$6,$7)', [id, FAMILY, slug, out.seed, out.report, out.cost, who]);
         job.draft = { id, slug, title: out.seed.title, days: out.seed.days.length, report: out.report, cost: out.cost };
         job.status = 'done'; log('done — review the draft, then save it as a book');
@@ -1488,8 +1492,9 @@ function router({ pool, media, A, ai, hooks = {} }) {   // hooks.heart(h): set b
         const sights = new Map((await SIGHTLIB.all(pool, FAMILY)).map((r) => [r.id, SIGHTLIB.out(r)]));
         const nLib = new Set(rt.days.flatMap((d) => d.stops.filter((x) => x.lib && sights.has(x.lib)).map((x) => x.lib))).size, nNew = new Set(rt.days.flatMap((d) => d.stops.filter((x) => x.new).map((x) => x.en))).size;   // each place once
         if (nLib || nNew) log(`stops: from the library ${nLib} · new ${nNew}`);
-        const out = await IMPORT.run({ brief: { ...PLANNER.brief(answers, rt, PLANNER.whoLine(kids, rt.from), eats, sights), eats, eatsAll: !!eats && eatTowns.every((t) => t.places.length) }, slug, client: new ai.SDK(), take, onUsage: addUsage, log, dir: DATA_TMP });
+        const out = await IMPORT.run({ brief: { ...PLANNER.brief(answers, rt, PLANNER.whoLine(kids, rt.from), eats, sights), eats, eatsAll: !!eats && eatTowns.every((t) => t.places.length) }, slug, client: new ai.SDK(), take, onUsage: addUsage, log, dir: DATA_TMP, little: FAM.littleKids(kids, rt.from).length > 0 });
         if (kids.length) out.seed.children = FAM.seedChildren(kids, out.seed.date_from);
+        FAM.fitLittle(out.seed, kids);
         const est = ((await withBudget(rt, answers)).budget || {}).lines || [];   // B3: the estimate travels with the book (editors only in the state)
         out.seed.theme = { ...(out.seed.theme || {}), planner: { answers, made: new Date().toISOString().slice(0, 10) }, ...(est.length ? { budget: { at: Date.now(), lines: est.map(({ k, cur, lo, hi }) => ({ k, cur, lo, hi })) } } : {}) };   // no child's name in it: kept for "change this day" (phase 2)
         out.report.planner = true;

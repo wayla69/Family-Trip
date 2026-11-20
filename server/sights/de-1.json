@@ -278,7 +278,6 @@
     },
     {
       "place": "de-cologne",
-      "thin": true,
       "sights": [
         {
           "name": { "en": "Cologne Zoo", "th": "สวนสัตว์โคโลญ" },
@@ -517,6 +516,23 @@
           "q": "Wildgehege Brück, Königsforst, Köln",
           "ok": "2026-11",
           "src": "https://www.koeln.de/koeln/freizeit/ausfluege/koelns-schoenste-tier--und-wildparks_wildgehege-br-ck_L1144671_1144663.html"
+        },
+        {
+          "name": { "en": "Cologne City Museum", "th": "พิพิธภัณฑ์เมืองโคโลญ" },
+          "kind": "museum",
+          "area": { "en": "Zeughaus", "th": "ซอยก์เฮาส์" },
+          "what": { "en": "The city’s history museum in the old arsenal, from the Romans to modern Cologne", "th": "พิพิธภัณฑ์ประวัติศาสตร์เมืองในคลังอาวุธเก่า ตั้งแต่สมัยโรมันถึงโคโลญปัจจุบัน" },
+          "why": { "en": "A sheltered stop for a rainy afternoon, best for children of six and over; step-free inside", "th": "แวะในร่มได้ในบ่ายฝนตก เหมาะกับเด็กอายุ 6 ปีขึ้นไป ภายในไม่มีขั้นบันได" },
+          "tip": { "en": "Closed on Mondays; open late on the first Thursday of the month", "th": "ปิดวันจันทร์ เปิดดึกวันพฤหัสบดีแรกของเดือน" },
+          "ages": [0, 1, 2, 2],
+          "hrs": 1.5,
+          "io": "in",
+          "pram": "yes",
+          "price": { "en": "Check the price", "th": "เช็กราคาก่อนไป" },
+          "book": "none",
+          "q": "Kölnisches Stadtmuseum, Zeughausstraße 1-3, Köln",
+          "ok": "2026-11",
+          "src": "https://www.cologne-tourism.com/arts-culture/sights/detail/cologne-city-museum"
         }
       ]
     },
@@ -1354,7 +1370,6 @@
     },
     {
       "place": "de-rothenburg",
-      "thin": true,
       "sights": [
         {
           "name": { "en": "Town Wall and Towers", "th": "กำแพงเมืองและหอคอยโรเทนบวร์ก" },
@@ -1535,6 +1550,91 @@
           "q": "Franken-Therme, Erkenbrechtallee 1, Bad Windsheim",
           "ok": "2026-11",
           "src": "https://tourispo.de/therme/franken-therme-bad-windsheim_preise-und-oeffnungszeiten.html"
+        },
+        {
+          "name": { "en": "Night watchman tour", "th": "ทัวร์ยามกลางคืน" },
+          "kind": "culture",
+          "area": { "en": "Marktplatz", "th": "ตลาดมาร์กท์" },
+          "what": { "en": "An hour’s lantern-lit walk with the town’s night watchman, with stories of medieval life and the Thirty Years’ War", "th": "เดินชมเมืองหนึ่งชั่วโมงกับยามกลางคืนที่ถือตะเกียง เล่าชีวิตยุคกลางและสงครามสามสิบปี" },
+          "why": { "en": "Children under 12 go free and love the costume, though it runs late for the youngest", "th": "เด็กต่ำกว่า 12 ปีเข้าฟรีและชอบชุดแต่งกาย แต่จัดตอนค่ำสำหรับเด็กเล็กมาก" },
+          "tip": { "en": "English tour daily at 20:00 from 29 March 2026; only Saturdays 9 January–13 March 2027; cash only", "th": "ภาษาอังกฤษทุกวัน 20:00 ตั้งแต่ 29 มีนาคม 2026 วันเสาร์เท่านั้น 9 มกราคม–13 มีนาคม 2027 รับเงินสดเท่านั้น" },
+          "ages": [0, 1, 2, 2],
+          "hrs": 1,
+          "io": "out",
+          "pram": "yes",
+          "price": { "en": "≈ €9 adults (English) · €4.50 pupils · under 12 free", "th": "≈ €9 ผู้ใหญ่ (ภาษาอังกฤษ) · €4.50 นักเรียน · ต่ำกว่า 12 ปีฟรี" },
+          "book": "none",
+          "q": "Marktplatz, Rothenburg ob der Tauber",
+          "ok": "2026-11",
+          "src": "https://www.rothenburg.de/entdecken/fuehrungen/nachtwaechter-rothenburg"
+        },
+        {
+          "name": { "en": "Burggarten", "th": "เบอร์กการ์เทน" },
+          "kind": "park",
+          "area": { "en": "Castle site", "th": "ที่ตั้งปราสาทเก่า" },
+          "what": { "en": "A green park on the old castle site with lookout points over the Tauber valley and many small hiding places", "th": "สวนเขียวบนที่ตั้งปราสาทเก่า มีจุดชมวิวหุบเขาเทาเบอร์และมุมซ่อนเล็กๆ มากมาย" },
+          "why": { "en": "Children enjoy the hiding places and the lookouts; it is right next to the old town", "th": "เด็กสนุกกับมุมซ่อนและจุดชมวิว อยู่ติดเมืองเก่า" },
+          "tip": { "en": "A 20-minute path leads on to Detwang", "th": "มีทางเดินราว 20 นาทีต่อไปยังเด็ตวัง" },
+          "ages": [1, 2, 2, 1],
+          "hrs": 1,
+          "io": "out",
+          "pram": "part",
+          "price": { "en": "Free", "th": "ฟรี" },
+          "book": "none",
+          "q": "Burggarten, Rothenburg ob der Tauber",
+          "ok": "2026-11",
+          "src": "https://www.rothenburg.de/entdecken/top-10/burggarten"
+        },
+        {
+          "name": { "en": "Plönlein", "th": "เพลินไลน์" },
+          "kind": "oldtown",
+          "area": { "en": "Spital quarter", "th": "ย่านชปิทัล" },
+          "what": { "en": "Rothenburg’s best-known photo spot: a crooked half-timbered house between two old town towers", "th": "จุดถ่ายรูปที่รู้จักที่สุดของโรเทนบวร์ก บ้านไม้ครึ่งปูนเอียงๆ ระหว่างหอคอยกำแพงเมืองสองแห่ง" },
+          "why": { "en": "A short cobbled stop on the way into the Spital quarter, with a fountain beside it", "th": "แวะสั้นๆ บนถนนหินก่อนเข้าย่านชปิทัล มีน้ำพุอยู่ข้างๆ" },
+          "tip": { "en": "Busy at midday; early morning is quieter", "th": "ช่วงเที่ยงคนเยอะ ตอนเช้าตรู่เงียบกว่า" },
+          "ages": [1, 2, 2, 2],
+          "hrs": 0.5,
+          "io": "out",
+          "pram": "part",
+          "price": { "en": "Free", "th": "ฟรี" },
+          "book": "none",
+          "q": "Plönlein, Rothenburg ob der Tauber",
+          "ok": "2026-11",
+          "src": "https://www.rothenburg.de/entdecken/top-10/das-ploenlein"
+        },
+        {
+          "name": { "en": "Children’s city guide trail", "th": "เส้นทางเที่ยวเมืองสำหรับเด็ก" },
+          "kind": "culture",
+          "area": { "en": "Old town", "th": "เมืองเก่า" },
+          "what": { "en": "A children’s guidebook with walking routes through the old town and play ideas along the way", "th": "หนังสือนำเที่ยวสำหรับเด็ก มีเส้นทางเดินชมเมืองเก่าและไอเดียเล่นระหว่างทาง" },
+          "why": { "en": "Turns the walk into a game, made by the town’s family council", "th": "เปลี่ยนการเดินเป็นเกม จัดทำโดยสภาครอบครัวของเมือง" },
+          "tip": { "en": "Buy it at the Tourist Info on the market square", "th": "ซื้อได้ที่ทัวริสต์อินโฟที่จัตุรัสตลาด" },
+          "ages": [0, 2, 2, 1],
+          "hrs": 2,
+          "io": "out",
+          "pram": "part",
+          "price": { "en": "≈ €5 the guidebook", "th": "≈ €5 ต่อเล่ม" },
+          "book": "none",
+          "q": "Tourist Info, Marktplatz 2, Rothenburg ob der Tauber",
+          "ok": "2026-11",
+          "src": "https://www.rothenburg.de/entdecken/zeitreise/kinderstadtfuehrer"
+        },
+        {
+          "name": { "en": "Old Rothenburg Craftsman’s House", "th": "บ้านช่างฝีมือรอเทนบวร์กเก่า" },
+          "kind": "museum",
+          "area": { "en": "Alter Stadtgraben", "th": "อัลเทอร์ชตัดท์กราเบิน" },
+          "what": { "en": "A house from 1270 left almost unchanged, showing how a medieval craftsman lived", "th": "บ้านจากปี 1270 ที่แทบไม่เปลี่ยนไป แสดงชีวิตช่างฝีมือยุคกลาง" },
+          "why": { "en": "Small enough for a short visit and fun with the Walburga guided tour", "th": "เล็กพอสำหรับแวะสั้นๆ และสนุกกับทัวร์ของวัลบูร์กา" },
+          "tip": { "en": "Seasonal: Tuesday to Sunday 11:00–15:00, from Easter to 31 October; closed in winter", "th": "ตามฤดูกาล: อังคารถึงอาทิตย์ 11:00–15:00 ตั้งแต่อีสเตอร์ถึง 31 ตุลาคม ปิดช่วงหนาว" },
+          "ages": [0, 1, 2, 2],
+          "hrs": 0.75,
+          "io": "in",
+          "pram": "no",
+          "price": { "en": "Check the price", "th": "เช็กราคาก่อนไป" },
+          "book": "none",
+          "q": "Alt-Rothenburger Handwerkerhaus, Alter Stadtgraben 26, Rothenburg ob der Tauber",
+          "ok": "2026-11",
+          "src": "https://www.rothenburg.de/entdecken/museen/alt-rothenburger-handwerkerhaus"
         }
       ]
     },

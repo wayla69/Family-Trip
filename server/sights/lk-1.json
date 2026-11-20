@@ -148,6 +148,23 @@
           "q": "Kandyan Art Association Cultural Centre, Kandy",
           "ok": "2026-11",
           "src": "https://mysltravel.com/?p=14740"
+        },
+        {
+          "name": { "en": "Hakgala Botanic Gardens", "th": "สวนพฤกษศาสตร์ฮักกาลา" },
+          "kind": "park",
+          "area": { "en": "Nuwara Eliya", "th": "นูวาระเอลิยะ" },
+          "what": { "en": "Terraced hill gardens at about 1,745 m under Hakgala Rock, open every day from 7.30 am to 6 pm", "th": "สวนบนเนินสูงราว 1,745 เมตร ใต้หินฮักกาลา เปิดทุกวัน 07.30–18.00 น." },
+          "why": { "en": "Cool air, wide lawns and gentle terraces for small legs to wander", "th": "อากาศเย็น สนามหญ้ากว้าง ขั้นบันไดเตี้ยๆ เหมาะกับเด็กเดินเล่น" },
+          "tip": { "en": "Fees for foreign visitors are revised often, so check at the gate", "th": "ราคาสำหรับชาวต่างชาติปรับบ่อย เช็กที่ประตูก่อนเข้า" },
+          "ages": [1, 2, 2, 1],
+          "hrs": 2,
+          "io": "out",
+          "pram": "part",
+          "price": { "en": "Check the price", "th": "เช็กราคาก่อนไป" },
+          "book": "none",
+          "q": "Hakgala Botanic Gardens, Badulla Road, Nuwara Eliya",
+          "ok": "2026-11",
+          "src": "https://en.botanicgardens.gov.lk/?p=1546"
         }
       ]
     }

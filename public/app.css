@@ -3470,7 +3470,7 @@ textarea.field.paper{min-height:230px;line-height:30px;padding:8px 14px;backgrou
 .lbcin .btn{min-height:44px}
 .kidnotes{display:inline-flex;align-items:center;gap:10px}.kidnotes img{width:40px;height:40px;object-fit:contain}
 .remind.ask.rel .rbell{width:40px;height:40px;object-fit:contain;flex:none}
-/* growing up, trip by trip (#/grow) */
+/* growing up, trip by trip (the passport's Explorer ID page) */
 .grchips{margin:4px 0 10px}.grchips .chip .face{width:26px;height:26px;border-radius:50%;object-fit:cover;margin:-4px 0}
 .grchart{width:100%;height:auto;display:block}.grchart .grv{font-size:12px;font-weight:700;fill:var(--ink)}.grchart .gra{font-size:11px;fill:var(--muted)}
 .growl{list-style:none;padding:0;margin:14px 0;display:grid;gap:12px;position:relative}
@@ -3827,6 +3827,8 @@ a.plchip{text-decoration:none}a.plchip .label{font-weight:700}a.plchip[aria-curr
 .xptabs a[aria-selected=true]{background:color-mix(in srgb,var(--accent) 16%,var(--card));box-shadow:inset 0 0 0 2px color-mix(in srgb,var(--accent) 60%,transparent);border-radius:999px}
 .xpbar .row.chips{flex-wrap:wrap;gap:6px;margin-top:8px;align-items:center}
 .xpbar .chips .label{margin-right:2px}
+.sagegrp{margin:14px 0 4px}.sagegrp>h3{display:flex;align-items:center;gap:8px;margin:0 0 4px;font:700 17px/1.3 var(--ui,inherit);color:color-mix(in srgb,var(--g1) 60%,var(--ink))}.sagegrp>h3::before{content:'';width:6px;height:20px;border-radius:3px;background:var(--g1)}
+:root[data-theme=dark] .sagegrp>h3{color:color-mix(in srgb,var(--g1) 70%,var(--ink))}
 .sightl{list-style:none;margin:8px 0 14px;padding:0;display:grid;gap:12px;grid-template-columns:repeat(auto-fill,minmax(min(100%,330px),1fr))}
 .sightc{background:var(--card);border-radius:16px;padding:12px 14px;box-shadow:0 1px 0 var(--rule),0 0 0 1px var(--rule);border-top:4px solid color-mix(in srgb,#1CC9A4 70%,var(--card));min-width:0;overflow-wrap:anywhere;font-size:13px;line-height:1.45}
 .sightc.fit{border-top-color:color-mix(in srgb,#FF6FA8 75%,var(--card))}
@@ -3965,3 +3967,102 @@ details.more>summary{border-radius:16px}
 .budbars li{grid-template-columns:minmax(90px,auto) 1fr auto auto}
 .budbars small{white-space:nowrap}
 @media (max-width:480px){.budbars li{grid-template-columns:minmax(80px,auto) 1fr auto;row-gap:2px}.budbars small{grid-column:2/-1;text-align:right;margin-top:-4px}}
+
+/* one kids' passport per child (views.js viewPassport): a book shown a page at a time — the page tabs, the page, ‹ › at its foot.
+   The same book is kid mode's 🛂 / ⭐ / 🏆 (.ppbook.inkid: bigger taps and type) */
+.ppbook{margin:8px 0 24px}
+.pptabs{display:flex;gap:6px;overflow-x:auto;scrollbar-width:none;padding:4px 2px 10px;margin:0 -2px;-webkit-overflow-scrolling:touch;overscroll-behavior-x:contain}
+.pptabs::-webkit-scrollbar{display:none}
+.ppt{flex:none;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:3px;min-width:66px;max-width:100px;min-height:58px;padding:6px 8px;border-radius:16px;border:0;background:var(--card);box-shadow:inset 0 0 0 1px var(--line);color:var(--ink);text-decoration:none;font:inherit;cursor:pointer}
+.ppt span{font-size:22px;line-height:1}.ppt img{width:30px;height:30px;object-fit:contain}
+.ppt small{font-size:11.5px;line-height:1.2;text-align:center;overflow:hidden;display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;max-width:100%}
+.ppt[aria-current]{background:color-mix(in srgb,var(--accent) 14%,var(--card));box-shadow:inset 0 0 0 2px var(--accent);color:color-mix(in srgb,var(--accent) 60%,var(--ink))}
+.ppbody{min-height:40vh}
+.ppturn{display:grid;grid-template-columns:minmax(0,1fr) auto minmax(0,1fr);align-items:center;gap:10px;margin-top:18px}
+.ppgo{display:flex;align-items:center;justify-content:center;gap:6px;min-height:56px;padding:8px 16px;border-radius:999px;border:0;background:var(--accent);color:var(--on-accent);font:inherit;font-size:24px;font-weight:700;line-height:1;text-decoration:none;cursor:pointer;min-width:0;max-width:100%}
+.ppgo small{font-size:14px;font-weight:600;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;min-width:0}
+.ppgo.prev{justify-self:start;background:var(--card);color:color-mix(in srgb,var(--accent) 65%,var(--ink));box-shadow:inset 0 0 0 2px var(--accent)}
+.ppgo.next{justify-self:end}
+.ppn{font-size:13px;color:var(--muted);font-weight:600;white-space:nowrap}
+.pphd{display:flex;align-items:center;gap:8px;flex-wrap:wrap;margin:4px 0 12px}
+.pphd h2{margin:0;flex:1 1 auto;font-family:var(--ui);font-size:22px;line-height:1.25}
+.pphd .mini{min-height:44px;min-width:44px}
+.ppedit[aria-pressed=true]{background:color-mix(in srgb,var(--accent) 14%,var(--card));box-shadow:inset 0 0 0 2px var(--accent)}
+.ppkids .ppprint{text-decoration:none;color:inherit}
+.ppbook .ppgo.next{color:var(--on-accent)!important}.ppbook .ppgo.prev{color:color-mix(in srgb,var(--accent) 65%,var(--ink))!important}   /* kid mode's buttons take color:inherit */
+.ppbook .tick,.ppbook .talebtn,.ppbook .hearbtn.round{min-height:44px}.ppbook .hearbtn.round{width:44px}
+.ppbook .stars button,.ppbook .yum button{min-width:44px;min-height:44px}
+.ppbook .felt button{min-height:44px}
+/* a rated dish (tasting card): the picture and its whole name on the first line, 🔊 and the stars (or yum / yuck) on the second —
+   three 44 px stars beside the name squeezed it to a word a line on a phone (owner's Samsung, Nov 2026: "เบียด") */
+.ppbook .ticks.food .tick.rate{flex-wrap:wrap;row-gap:6px;padding:8px 12px 8px 8px}
+.ppbook .ticks.food .tick.rate>.t{flex:1 1 calc(100% - 60px);font-size:15px;line-height:1.3}
+.ppbook .ticks.food .tick.rate>.t small{font-size:12.5px}
+.ppbook .ticks.food .tick.rate>.hearbtn{margin-left:52px}
+.ppbook .ticks.food .tick.rate>.stars,.ppbook .ticks.food .tick.rate>.yum{margin:0 0 0 auto}
+.ppstamp{display:grid;gap:12px;margin:0 0 16px}
+.ppbook .pp-page.grow{margin-top:16px}
+.ppbook .growi .grgo{display:flex;gap:14px;align-items:flex-start;flex:1;min-width:0;color:inherit;text-decoration:none}
+.ppbook .growi.cur{box-shadow:0 0 0 3px var(--g1)}
+.ppbook .grtx b{font-size:16px;line-height:1.3}.ppbook .grtx small{font-size:12.5px;color:color-mix(in srgb,#1F2A3A 70%,var(--g1))}
+.ppbook.inkid .ppt{min-width:76px;min-height:72px}.ppbook.inkid .ppt small{font-size:13px}
+.ppbook.inkid .ppgo{min-height:64px;font-size:30px}.ppbook.inkid .ppgo small{font-size:16px}
+.ppbook.inkid .ppbody{min-height:0}
+.ppbook.inkid>.ppbody>.kidguide{margin-bottom:12px}
+@media (prefers-color-scheme:dark){:root:not([data-theme=light]) .ppbook .grtx small{color:color-mix(in srgb,var(--ink) 75%,var(--g1))}}
+:root[data-theme=dark] .ppbook .grtx small{color:color-mix(in srgb,var(--ink) 75%,var(--g1))}
+/* how to use the app (#/help, views.js viewHelp): the settings pages' cards, one job a card */
+.helptoc{margin:4px 0 14px}.helptoc .chip{min-height:44px}
+.helpl{margin:0;padding:0 0 0 20px;display:grid;gap:8px;line-height:1.55}
+.helpl li::marker{color:color-mix(in srgb,var(--g1) 70%,var(--ink))}
+.hwho{display:inline-block;margin-left:8px;padding:2px 10px;border-radius:999px;font-size:12px;font-weight:600;vertical-align:middle;background:color-mix(in srgb,var(--g1) 16%,var(--card));color:color-mix(in srgb,var(--g1) 55%,var(--ink))}
+.helpc{scroll-margin-top:72px}
+/* a child's cover (#/passport/<kid>): the child's own passport cover, then a passport a trip in its book's colours */
+.ppkcover{grid-template-columns:auto minmax(0,1fr);justify-items:start;text-align:left;align-items:center;gap:18px;min-height:0;padding:26px 24px 26px 34px;margin:14px 0 6px;border-radius:10px 22px 22px 10px}
+.ppkcover .kcart{width:clamp(110px,30vw,170px);aspect-ratio:3/4;display:grid;place-items:end center;border-radius:18px;background:color-mix(in srgb,#fff 20%,transparent);box-shadow:inset 0 0 0 2px color-mix(in srgb,var(--gold) 70%,transparent)}
+.ppkcover .kcart img{width:100%;height:100%;object-fit:contain;object-position:bottom}.ppkcover .kcart>span{font-size:64px;align-self:center}
+.ppkcover .kctx{display:grid;gap:6px;min-width:0}
+.ppkcover .nm{font-size:clamp(34px,9vw,52px)!important;margin:0!important;overflow-wrap:anywhere}
+.ppkcover small{font-size:14px}
+.kcstat{display:flex;flex-wrap:wrap;gap:6px;margin-top:6px}
+.kcstat span{padding:5px 11px;border-radius:999px;background:color-mix(in srgb,#fff 24%,transparent);color:#fff;font-size:13px;font-weight:700;box-shadow:inset 0 0 0 1px color-mix(in srgb,#fff 40%,transparent)}
+.ppbkh{display:flex;flex-wrap:wrap;align-items:baseline;gap:4px 10px;margin:22px 0 4px;font-family:var(--ui);font-size:20px}.ppbkh small{font-size:13.5px;font-weight:500;color:var(--muted)}
+.ppshelf{display:grid;grid-template-columns:repeat(auto-fill,minmax(min(100%,170px),1fr));gap:16px;margin:12px 0 8px}
+.ppbk2{position:relative;display:block;padding:10px;border-radius:8px 18px 18px 8px;background:linear-gradient(135deg,var(--bgA) 0 50%,var(--bgB) 50%);box-shadow:inset 6px 0 0 color-mix(in srgb,var(--ink) 18%,transparent),0 16px 30px -22px rgba(0,0,0,.55);text-decoration:none;color:var(--ink);transition:transform .2s}
+.ppbk2 .bkcard{display:grid;justify-items:center;text-align:center;gap:4px;padding:14px 10px 12px;background:#fff;border:4px solid var(--gold);border-radius:14px;min-height:100%}
+.ppbk2 .bkcrest{width:76px;height:76px;display:grid;place-items:center}.ppbk2 .bkcrest img,.ppbk2 .bkcrest svg{width:100%;height:100%;object-fit:contain}
+.ppbk2 .bkk{font-size:12px;font-weight:700;letter-spacing:.12em;color:color-mix(in srgb,var(--ink) 75%,#fff)}
+.ppbk2 .bkt{font-family:var(--ui);font-weight:700;font-size:20px;line-height:1.15;color:var(--ink);overflow-wrap:anywhere}.ppbk2 .bkt em{font-style:normal;color:var(--hi)}
+.ppbk2 .bkd{font-size:12.5px;color:#59616D}
+.ppbk2 .bks{margin-top:4px;padding:3px 10px;border-radius:999px;background:color-mix(in srgb,var(--hi) 14%,#fff);color:color-mix(in srgb,var(--hi) 60%,#1F2A3A);font-size:12.5px;font-weight:700}
+.ppbk2.cur{box-shadow:inset 6px 0 0 color-mix(in srgb,var(--ink) 18%,transparent),0 0 0 3px var(--gold),0 16px 30px -22px rgba(0,0,0,.55)}
+.ppnow{position:absolute;top:-8px;right:10px;z-index:1;padding:4px 10px;border-radius:999px;background:var(--hi,#E05A7A);color:#fff;font-size:11.5px;font-weight:700;box-shadow:0 4px 10px -6px rgba(0,0,0,.5)}
+@media (hover:hover){.ppbk2:hover{transform:translateY(-3px)}}
+@media (max-width:380px){.ppkcover{grid-template-columns:minmax(0,1fr);justify-items:center;text-align:center}.ppkcover .kctx{justify-items:center}.kcstat{justify-content:center}}
+.ppkids .ppall{text-decoration:none}
+/* passport, easier to use (owner, Nov 2026: "recheck passport UIUX"): the children and kid mode in one row above the book (the top
+   bar's back is "every passport of this child"; print sits at the cover's foot), a row to jump to each list, labels that wrap */
+.ppkids{flex-wrap:nowrap;overflow-x:auto;scrollbar-width:none;-webkit-overflow-scrolling:touch;padding-bottom:2px}
+.ppkids::-webkit-scrollbar{display:none}
+.ppkids .chip{flex:0 0 auto}
+.ppgo small{white-space:normal;display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;text-align:center;line-height:1.2}
+.pljump{flex-wrap:nowrap;overflow-x:auto;scrollbar-width:none;margin:0 0 12px;padding-bottom:2px}
+.pljump::-webkit-scrollbar{display:none}
+.pljump .chip{flex:0 0 auto;min-height:44px}
+.ppfoot{text-align:center;margin:18px 0 4px}
+.ppfoot .ppprint{min-height:44px;display:inline-flex;align-items:center}
+.pp>.ppfoot{grid-column:1/-1;order:99}
+/* the draft's passport (import page): a small cover in the book's colours beside its pages */
+.imppp{display:grid;grid-template-columns:112px minmax(0,1fr);gap:14px;align-items:start;margin:14px 0;padding:14px;border-radius:20px;background:color-mix(in srgb,var(--accent) 7%,var(--card));box-shadow:inset 0 0 0 1px color-mix(in srgb,var(--accent) 18%,transparent)}
+.imppc{aspect-ratio:3/4;border-radius:10px 14px 14px 10px;background:linear-gradient(150deg,var(--g1),var(--g2));color:#fff;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:6px;padding:10px 8px;text-align:center;box-shadow:inset 6px 0 0 rgba(0,0,0,.14),0 6px 14px rgba(0,0,0,.14)}
+.imppc .e{font-size:30px;width:52px;height:52px;border-radius:50%;display:grid;place-items:center;background:rgba(255,255,255,.22);box-shadow:inset 0 0 0 2px rgba(255,255,255,.6)}
+.imppc b{font-size:11px;letter-spacing:.08em;text-transform:uppercase;line-height:1.25;text-shadow:0 1px 2px rgba(0,0,0,.25)}
+.imppc small{font-size:11px;opacity:.95;line-height:1.25;text-shadow:0 1px 2px rgba(0,0,0,.25);overflow:hidden;display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical}
+.imppl h4{margin:0 0 8px;font-size:15px}
+.imppl ul{list-style:none;margin:0;padding:0;display:grid;grid-template-columns:repeat(auto-fill,minmax(min(100%,220px),1fr));gap:8px}
+.imppl li{display:flex;align-items:center;gap:10px;min-height:52px;padding:6px 10px 6px 6px;border-radius:14px;background:var(--card);box-shadow:0 1px 0 color-mix(in srgb,var(--ink) 8%,transparent)}
+.imppl li img{width:40px;height:40px;flex:0 0 40px;object-fit:contain}
+.imppl li span{display:flex;flex-direction:column;min-width:0}
+.imppl li b{font-size:14px;line-height:1.25}
+.imppl li small{font-size:12.5px;color:var(--muted);line-height:1.3}
+@media (max-width:420px){.imppp{grid-template-columns:1fr}.imppc{aspect-ratio:auto;flex-direction:row;justify-content:flex-start;min-height:72px;text-align:left}.imppc b{white-space:nowrap;flex:0 0 auto}.imppc b br{display:none}}

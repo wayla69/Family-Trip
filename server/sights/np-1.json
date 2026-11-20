@@ -130,6 +130,40 @@
           "q": "National Botanical Garden, Godawari, Lalitpur",
           "ok": "2026-11",
           "src": "https://nepaltraveller.com/sidetrack/3428"
+        },
+        {
+          "name": { "en": "Swayambhunath (Monkey Temple)", "th": "สวายัมภูนาถ (วัดลิง)" },
+          "kind": "culture",
+          "area": { "en": "Swayambhu", "th": "สวายัมภู" },
+          "what": { "en": "A hilltop stupa with prayer wheels, views over the valley and many wild monkeys", "th": "เจดีย์บนเนินพร้อมกงล้อมนตร์ มีวิวหุบเขาและลิงอยู่เต็ม" },
+          "why": { "en": "The monkeys delight children but can snatch food; stairs are steep for prams", "th": "เด็กๆ ชอบลิง แต่ลิงแย่งอาหารได้ และบันไดชัน รถเข็นขึ้นยาก" },
+          "tip": { "en": "Keep snacks in the bag, carry little ones on the long steps, go early", "th": "เก็บขนมในกระเป๋า อุ้มเด็กเล็กตอนขึ้นบันได ไปแต่เช้า" },
+          "ages": [1, 2, 2, 2],
+          "hrs": 2,
+          "io": "out",
+          "pram": "no",
+          "price": { "en": "Check the price", "th": "เช็กราคาก่อนไป" },
+          "book": "none",
+          "q": "Swayambhunath Stupa, Kathmandu",
+          "ok": "2026-11",
+          "src": "https://www.bestheritagetour.com/blog/entrance-fees-and-travel-tips-in-nepal"
+        },
+        {
+          "name": { "en": "Shivapuri Nagarjun National Park", "th": "อุทยานแห่งชาติศิวปุรี นาการ์ชุน" },
+          "kind": "nature",
+          "area": { "en": "Budhanilkantha", "th": "พุทธนิลกัณฐะ" },
+          "what": { "en": "A forested hill park on the valley's northern rim with easy walks, birds and cool shade", "th": "อุทยานป่าบนเนินเหนือหุบเขา มีทางเดินสบายๆ นกและร่มเงาเย็น" },
+          "why": { "en": "A quiet break from city traffic; keep to the lower, gentler paths with small children", "th": "พักจากรถติดในเมือง เด็กเล็กควรเดินทางล่างที่ลาดน้อย" },
+          "tip": { "en": "Bring water and layers; hire a local guide if you go beyond the gate area", "th": "เตรียมน้ำและเสื้อกันหนาว หากเข้าลึกควรมีไกด์ท้องถิ่น" },
+          "ages": [0, 1, 2, 2],
+          "hrs": 3,
+          "io": "out",
+          "pram": "no",
+          "price": { "en": "Check the price", "th": "เช็กราคาก่อนไป" },
+          "book": "none",
+          "q": "Shivapuri Nagarjun National Park, Budhanilkantha, Kathmandu",
+          "ok": "2026-11",
+          "src": "https://www.bestheritagetour.com/blog/entrance-fees-and-travel-tips-in-nepal"
         }
       ]
     }

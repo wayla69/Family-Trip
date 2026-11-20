@@ -41,6 +41,7 @@
     { "id": "0038", "file": "0038_passkeys.sql" },
     { "id": "0039", "file": "0039_relatives.sql" },
     { "id": "0040", "file": "0040_sight_lib.sql" },
-    { "id": "0041", "file": "0041_care_own.sql" }
+    { "id": "0041", "file": "0041_care_own.sql" },
+    { "id": "0042", "file": "0042_one_height.sql" }
   ]
 }

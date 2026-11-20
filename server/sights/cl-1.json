@@ -107,6 +107,23 @@
           "q": "Termas de Puritama, San Pedro de Atacama",
           "ok": "2026-11",
           "src": "https://www.nomades.com/en/san-pedro-de-atacama/puritama-hot-springs-id133"
+        },
+        {
+          "name": { "en": "Pukará de Quitor", "th": "ปูการาเดกีตอร์" },
+          "kind": "culture",
+          "area": { "en": "Quitor", "th": "กีตอร์" },
+          "what": { "en": "A pre-Inca hilltop fortress 3 km from San Pedro with a short climb and wide valley views", "th": "ป้อมปราการก่อนยุคอินคาบนเนิน ห่างซานเปโดร 3 กม. เดินขึ้นสั้นๆ ชมวิวหุบเขากว้าง" },
+          "why": { "en": "A 30-minute walk is fine for most children; the last climb is steep and the air thin, so go early", "th": "เดินราว 30 นาทีไหวสำหรับเด็กส่วนใหญ่ ช่วงท้ายชันและอากาศบาง ควรไปเช้า" },
+          "tip": { "en": "Opens about 9:00 and closes around 17:30; sometimes tickets must be bought online first", "th": "เปิดราว 9:00 ปิดราว 17:30 บางช่วงต้องซื้อตั๋วออนไลน์ก่อน" },
+          "ages": [0, 1, 2, 2],
+          "hrs": 1.5,
+          "io": "out",
+          "pram": "no",
+          "price": { "en": "≈ CLP 6,000–7,000 adults", "th": "≈ CLP 6,000–7,000 ผู้ใหญ่" },
+          "book": "rec",
+          "q": "Pukará de Quitor, San Pedro de Atacama",
+          "ok": "2026-11",
+          "src": "https://dicaschile.com.br/san-pedro-de-atacama/sitio-arqueologico-pukara-de-quitor-em-san-pedro-de-atacama-no-chile"
         }
       ]
     },

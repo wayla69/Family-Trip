@@ -3,7 +3,6 @@
   "towns": [
     {
       "place": "nz-rotorua",
-      "thin": true,
       "sights": [
         {
           "name": { "en": "Skyline Rotorua gondola and luge", "th": "สกายไลน์ โรโตรัว กอนโดลาและลูจ" },
@@ -191,6 +190,75 @@
           "q": "Waitomo Glowworm Caves, Waitomo Village Road, Waitomo",
           "ok": "2026-11",
           "src": "https://www.newzealand.com/nz/plan/business/waitomo-glowworm-caves/"
+        },
+        {
+          "name": { "en": "Agrodome Farm Experience", "th": "อะโกรโดม ฟาร์มเอ็กซ์พีเรียนซ์" },
+          "kind": "farm",
+          "area": { "en": "Ngongotaha", "th": "งองโกตาฮา" },
+          "what": { "en": "A farm show with sheep, a farm tour and animal feeding, about 2.5 hours", "th": "โชว์ฟาร์มพร้อมแกะ ทัวร์ฟาร์ม และให้อาหารสัตว์ ใช้เวลาราว 2.5 ชั่วโมง" },
+          "why": { "en": "Hands-on animals and an all-weather show keep children busy; infants go free", "th": "ได้ใกล้ชิดสัตว์และโชว์ในร่มได้ทุกสภาพอากาศ เด็กเล็กเข้าฟรี" },
+          "tip": { "en": "Shows at 9:30, 11:00 and 14:30; open daily 9:00–17:00", "th": "โชว์เวลา 9:30 11:00 และ 14:30 เปิดทุกวัน 9:00–17:00" },
+          "ages": [1, 2, 2, 1],
+          "hrs": 2.5,
+          "io": "both",
+          "pram": "yes",
+          "price": { "en": "≈ NZ$68 adults · NZ$35 child 3–15 · under 3 free · family NZ$169", "th": "≈ NZ$68 ผู้ใหญ่ · NZ$35 เด็ก 3–15 ปี · ต่ำกว่า 3 ปีฟรี · ครอบครัว NZ$169" },
+          "book": "rec",
+          "q": "Agrodome, 141 Western Road, Ngongotaha, Rotorua",
+          "ok": "2026-11",
+          "src": "https://www.agrodome.co.nz/visitor-info/hours-and-prices/"
+        },
+        {
+          "name": { "en": "Hell's Gate Geothermal Walk", "th": "เฮลส์เกต ทางเดินชมความร้อนใต้พิภพ" },
+          "kind": "nature",
+          "area": { "en": "Tikitere", "th": "ทิกิเตเร" },
+          "what": { "en": "A 1–1.5 hour walk past a mud volcano, erupting pools and a hot waterfall, with Māori carving", "th": "ทางเดิน 1–1.5 ชั่วโมงผ่านภูเขาไฟโคลน บ่อน้ำพุ่ง และน้ำตกน้ำร้อน พร้อมกิจกรรมแกะสลักแบบเมารี" },
+          "why": { "en": "Steam and bubbling mud fascinate children; keep to the paths and hold hands near hot water", "th": "ไอน้ำและโคลนเดือดน่าตื่นตาสำหรับเด็ก เดินในทางที่กำหนดและจูงมือใกล้น้ำร้อน" },
+          "tip": { "en": "Open daily; the mud bath is a separate, pricier ticket", "th": "เปิดทุกวัน อาบโคลนเป็นตั๋วแยกที่แพงกว่า" },
+          "ages": [0, 1, 2, 2],
+          "hrs": 1.5,
+          "io": "out",
+          "pram": "part",
+          "price": { "en": "≈ NZ$45 adults · NZ$22.50 child · family NZ$125", "th": "≈ NZ$45 ผู้ใหญ่ · NZ$22.50 เด็ก · ครอบครัว NZ$125" },
+          "book": "rec",
+          "q": "Hell's Gate Geothermal Park, State Highway 30, Tikitere, Rotorua",
+          "ok": "2026-11",
+          "src": "https://hellsgate.co.nz/book/"
+        },
+        {
+          "ok": "2026-11",
+          "name": { "en": "Buried Village of Te Wairoa", "th": "บูรีดวิลเลจ เตไวโรอา" },
+          "kind": "culture",
+          "area": { "en": "Tarawera Road", "th": "ถนนทาราเวรา" },
+          "what": { "en": "An excavated village buried by the 1886 Tarawera eruption, with a museum, a bush walk and a waterfall trail", "th": "หมู่บ้านที่ขุดพบหลังถูกฝังโดยภูเขาไฟทาราเวราปี 1886 มีพิพิธภัณฑ์ ทางเดินป่า และเส้นทางน้ำตก" },
+          "why": { "en": "Children 0–12 go in free with a paying adult, and the museum gives shelter from rain", "th": "เด็ก 0–12 ปีเข้าฟรีเมื่อมีผู้ใหญ่ที่จ่ายบัตร และพิพิธภัณฑ์ช่วยหลบฝน" },
+          "tip": { "en": "Open Wednesday to Sunday, 10:00 to 16:00, last entry 15:45", "th": "เปิดพุธถึงอาทิตย์ 10:00–16:00 เข้าได้ครั้งสุดท้าย 15:45" },
+          "ages": [0, 1, 2, 2],
+          "hrs": 2,
+          "io": "both",
+          "pram": "part",
+          "price": { "en": "≈ NZ$30 international adults · teens NZ$10 · children 0–12 free", "th": "≈ NZ$30 ผู้ใหญ่ต่างชาติ · วัยรุ่น NZ$10 · เด็ก 0–12 ปีฟรี" },
+          "book": "none",
+          "q": "Buried Village of Te Wairoa, Tarawera Road, Rotorua",
+          "src": "https://buriedvillage.co.nz/what-to-expect/entry-prices-opening-hours"
+        },
+        {
+          "ok": "2026-11",
+          "name": { "en": "Rotorua Museum", "th": "พิพิธภัณฑ์โรโตรัว" },
+          "local": "Te Whare Taonga o Te Arawa",
+          "kind": "museum",
+          "area": { "en": "Government Gardens", "th": "ทำเนียบสวนรัฐบาล" },
+          "what": { "en": "The city museum in the old bathhouse building, telling the story of Te Arawa and the thermal town", "th": "พิพิธภัณฑ์เมืองในอาคารโรงอาบน้ำเก่า เล่าเรื่องชาวเตอาราวาและเมืองน้ำพุร้อน" },
+          "why": { "en": "A dry indoor stop beside the gardens; people living in New Zealand enter free, visitors pay", "th": "ที่หลบฝนในร่มข้างสวน ผู้อยู่ในนิวซีแลนด์เข้าฟรี นักท่องเที่ยวเสียค่าเข้า" },
+          "tip": { "en": "Check the price list and the opening hours on the museum's page before you go", "th": "เช็กราคาและเวลาเปิดที่หน้าเว็บของพิพิธภัณฑ์ก่อนไป" },
+          "ages": [0, 1, 1, 2],
+          "hrs": 1.5,
+          "io": "in",
+          "pram": "yes",
+          "price": { "en": "Check the price", "th": "เช็กราคาก่อนไป" },
+          "book": "none",
+          "q": "Rotorua Museum, Government Gardens, Rotorua",
+          "src": "https://www.rotoruamuseum.co.nz/prices/"
         }
       ]
     }

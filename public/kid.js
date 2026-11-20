@@ -973,11 +973,8 @@ ${lvBar(t, kid, 'jigsaw')}${quest ? '' : pixPick(t, i, 'jigsaw', 'kidnewjig')}
 <div class="jigboard" style="--art:url('${esc(jg.src)}');--c:${jg.cols};--ar:${jg.ar};--pa:${jg.ar * jg.rows / jg.cols}">${jg.slots.map((p, s) => `<button class="jslot${p !== null ? ' filled' : ''}" data-a="kidjslot" data-v="${s}"${p !== null ? ` style="${jgPos(p, jg)}"` : ''} aria-label="${L('ช่อง', 'Slot')} ${s + 1}"></button>`).join('')}</div>
 <div class="jigtray${jg.slots.length > 20 ? ' many lots' : jg.slots.length > 6 ? ' many' : ''}" style="--art:url('${esc(jg.src)}');--pa:${jg.ar * jg.rows / jg.cols}">${jg.tray.map((p) => `<button class="jpiece${jg.pick === p ? ' pick' : ''}" data-a="kidjpick" data-v="${p}" style="${jgPos(p, jg)}" aria-label="${L('ชิ้น', 'Piece')} ${p + 1}"></button>`).join('')}</div>
 ${jg.done ? lvWin(t, kid, 'jigsaw', ['kidnewjig']) : ''}`;
-  } else if (view === 'stamp') {
-    const mine = ticked(t, `stamp.d${i}`, kid);
-    body = `<div class="kidstamp${mine ? ' done' : ''}" id="kidstamp"><div class="ring"><span class="lbl">${esc(pd.stamp || fmtDay(d.date, { day: 'numeric', month: 'short' }))}</span>${artImg(t, i, 'inked')}</div></div>
-<div class="kidguide pop" id="kidcheer" ${mine ? '' : 'hidden'}>${guideImg(0)}<p>${L(`เก่งมาก ${name}! ได้ตราวันนี้แล้ว`, `Well done, ${name}! Today's stamp is yours`)}</p></div>
-<button class="kidbig stampbtn" data-a="kidstamp" data-t="${esc(t.id)}" data-d="${i}" data-k="${esc(kid)}">${mine ? L('ปั๊มอีกที! 🛂', 'Stamp again! 🛂') : L('ปั๊มตรา! 🛂', 'Stamp! 🛂')}</button>`;
+  } else if (view === 'stamp' || view === 'stickers' || view === 'trophies' || view === 'pass') {   // the passport book (views.js viewPassport): one book for the kid door and the grown-ups' — this trip's visa holds the stamp
+    body = viewPassport(kid, t.id, view === 'pass' ? p[3] : view === 'stamp' ? 'visa' : view, true);
   } else if (view === 'words') {
     const l = (pp.lists || []).find((x) => x.said);
     body = `<div class="kidwords">${(l ? listItems(l) : []).map((it) => { const on = ticked(t, `${l.key}.${it.k}`, kid); return `<div class="kw${on ? ' on' : ''}">
@@ -1014,8 +1011,6 @@ ${mapHtml(t, i, [kid].concat((t.theme.children || []).map((c) => c.slug).filter(
     const qs = kidTalk(t, i).text.split('\n').filter((x) => x.trim());
     body = `<div class="kidguide">${guideImg(0)}<p>${L('แตะการ์ดแล้วตอบดังๆ นะ!', 'Tap a card and say your answer!')}</p></div>
 <div class="kidquiz kidtalk">${qs.map((q, n) => `<button class="qcard" data-a="kidtalk" data-q="${esc(q)}" aria-pressed="false"><small>💬 ${n + 1}</small><b>${esc(q)}</b></button>`).join('')}</div>`;
-  } else if (view === 'stickers') {
-    body = `<div class="kidguide">${guideImg(1)}<p>${L('ลากสติกเกอร์ไปแปะได้เลย!', 'Drag your stickers onto the page!')}</p></div>${stickerBoard(t, kid, true)}`;
   } else if (view === 'photos') {
     const ph = kidPhotos(t, i); if (kidPhoto >= ph.length) kidPhoto = 0; const m = ph[kidPhoto];
     body = m ? `<div class="kidguide">${guideImg(0)}<p>${m.caption ? esc(m.caption) : L(`รูปวันที่ ${m.day + 1}`, `A photo from day ${m.day + 1}`)}</p></div>
@@ -1044,11 +1039,6 @@ ${mg.won ? lvWin(t, kid, 'match', ['kidnewmatch']) : `<button class="kidbig ghos
 <div class="countfield">${Array.from({ length: cnt.n }, (_, k) => `<button class="cnt${cnt.hit.includes(k) ? ' hit' : ''}" data-a="kidcount" data-v="${k}" aria-label="${k + 1}"><span>${esc(cnt.e)}</span><i>${cnt.hit.includes(k) ? cnt.hit.indexOf(k) + 1 : ''}</i></button>`).join('')}</div>
 <div class="bignum" id="bignum">${cnt.hit.length || ''}</div>
 <button class="kidbig ghost" data-a="kidnewcount">🔁 ${L('นับใหม่', 'Count again')}</button>`;
-  } else if (view === 'trophies') {
-    const all = trophies(t, kid), got = all.filter((x) => x[3]), seen = new Set(ls('tseen_' + kid) || []), fresh = got.filter((x) => !seen.has(x[0]));
-    if (fresh.length) ls('tseen_' + kid, got.map((x) => x[0]));
-    body = `<div class="kidguide${fresh.length ? ' pop' : ''}">${guideImg(0)}<p>${fresh.length ? L(`เย้! รางวัลใหม่: ${fresh.map((x) => x[2]).join(', ')} 🎉`, `Yay! New: ${fresh.map((x) => x[2]).join(', ')} 🎉`) : (got.length ? L(`${esc(name)} มี ${got.length} รางวัลแล้ว`, `${esc(name)} has ${got.length} troph${got.length === 1 ? 'y' : 'ies'}`) : L('ถ้วยรางวัลรอหนูอยู่', 'Trophies are waiting for you'))}</p></div>
-<div class="trophies">${all.map((x) => `<button class="tro${x[3] ? ' got' : ''}${fresh.some((f) => f[0] === x[0]) ? ' new' : ''}" data-a="sayfacts" data-v="${esc(x[2])}"><span>${troImg(x)}</span><b>${esc(x[2])}</b></button>`).join('')}</div>`;
   } else if (view === 'hearts') {
     const hs = heartsFor(kid), seen = ls('hseen_' + kid) || 0;
     if (hs.length) ls('hseen_' + kid, Math.max(seen, hs[0].at));
@@ -1056,7 +1046,7 @@ ${mg.won ? lvWin(t, kid, 'match', ['kidnewmatch']) : `<button class="kidbig ghos
   } else body = `<button class="kidbig" data-a="kidnav" data-v="#/kid/${esc(kid)}">🏠</button>`;
   // kid mode's own bar: big pictures, read aloud on tap (data-say), no grown-up pages
   const kb = [['', '🏠', L('บ้าน', 'Home')], mapModel(t) && ['map', '🗺️', L('แผนที่', 'Map')], [pre ? (canColour(t, i) ? 'colour' : 'draw') : 'stamp', pre ? (canColour(t, i) ? '🎨' : '🖍️') : '🛂', pre ? (canColour(t, i) ? L('ระบายสี', 'Colour') : L('วาดรูป', 'Draw')) : L('พาสปอร์ต', 'Passport')], ['stickers', '⭐', L('สติกเกอร์', 'Stickers')], ['trophies', '🏆', L('รางวัล', 'Trophies')]].filter(Boolean);
-  const bar = `<nav class="kidbar">${kb.map(([v, e, lbl]) => `<button data-a="kidnav" data-v="#/kid/${esc(kid)}${v ? '/' + v : ''}" data-say="${esc(lbl)}"${(v || 'home') === view ? ' aria-current="page"' : ''}>${KBAR[v || 'home'] ? `<img class="kbi" src="/art/kidui/bar-${KBAR[v || 'home']}.webp" alt="">` : ''}<span${KBAR[v || 'home'] ? ' class="vh"' : ''}>${e}</span><b>${lbl}</b></button>`).join('')}</nav>`;
+  const bar = `<nav class="kidbar">${kb.map(([v, e, lbl]) => `<button data-a="kidnav" data-v="#/kid/${esc(kid)}${v ? '/' + v : ''}" data-say="${esc(lbl)}"${(v || 'home') === (view === 'pass' ? 'stamp' : view) ? ' aria-current="page"' : ''}>${KBAR[v || 'home'] ? `<img class="kbi" src="/art/kidui/bar-${KBAR[v || 'home']}.webp" alt="">` : ''}<span${KBAR[v || 'home'] ? ' class="vh"' : ''}>${e}</span><b>${lbl}</b></button>`).join('')}</nav>`;
   return `<div class="kidwrap${view === 'home' ? ' home' : ''}${KSCENE[view] ? ` scene sc-${KSCENE[view]}` : ''}${kidEnter ? ' enter' : ''}" style="${style}">${head}${body}${lock}${bar}</div>`;
 }
 
@@ -1546,7 +1536,7 @@ function lvState(t, kid, game) {
   const q = questIn(t, kid, game); if (q) return { at: q.lv, best: q.lv - 1, top: q.lv, n: LV[game].length, quest: q };   // a mission plays at the road's level
   const st = (ls('lv_' + kid) || {})[game] || {}, start = littleOf(t, kid) ? 1 : 2, n = LV[game].length;
   const best = Math.min(n, st.best != null ? Math.max(st.best, start - 1) : start - 1), top = Math.min(n, best + 1);
-  return { at: Math.max(1, Math.min(top, st.at || start)), best, top, n };
+  return { at: Math.max(1, Math.min(top, st.at || start)), best, top, n, w: Array.isArray(st.w) ? st.w : Array.from({ length: Math.max(0, Math.min(n, st.best || 0) - start + 1) }, (_, k) => start + k) };   // w = the levels really played and won (an older save without the list: from the starting level up) — the level a child skips by starting at 2 opens, but wears no ⭐ (owner, Nov 2026: after a reset level 1 still showed as passed)
 }
 const lvOf = (t, kid, game) => LV[game][lvState(t, kid, game).at - 1];
 function lvSet(kid, game, patch) { if (quest && quest.kid === kid && quest.game === game) return;   // a mission never moves the child's own levels
@@ -1562,13 +1552,13 @@ function winShow(auto, kid) {
 }
 function lvDone(t, kid, game) { const q = questIn(t, kid, game); if (q) { questMark(t, kid, q.town, q.slot); winShow(true, kid); return; }
   winShow(false, kid);
-  const s = lvState(t, kid, game); lvSet(kid, game, { at: s.at, best: Math.max(s.best, s.at) }); }
+  const s = lvState(t, kid, game); lvSet(kid, game, { at: s.at, best: Math.max(s.best, s.at), w: [...new Set(s.w.concat(s.at))].sort((a, b) => a - b) }); }
 // the chips of the levels reached (a ⭐ on each one won); none when only level 1 is open
 function lvBar(t, kid, game) {
   const s = lvState(t, kid, game);
   if (s.quest) return `<div class="lvbar qbar"><span>${s.quest.slot === 3 ? qImg('crown') : s.quest.slot === 'x' ? '✨' : qImg('map')} ${wj(esc(questTown(t, s.quest.town)))}</span></div>`;   // on a mission: the town, no level chips
   if (s.top < 2) return '';
-  return `<div class="lvbar" role="group" aria-label="${L('ด่าน', 'Levels')}">${isEditor() ? `<button type="button" class="lvreset" data-k="${esc(kid)}" data-g="${game}" aria-label="${L('ด่าน · ผู้ใหญ่กดค้างเพื่อเริ่มด่านใหม่', 'Levels · grown-ups press and hold to start again')}">${L('ด่าน', 'Level')}</button>` : `<span>${L('ด่าน', 'Level')}</span>`}${Array.from({ length: s.top }, (_, k) => k + 1).map((n) => `<button class="lvc${n === s.at ? ' on' : ''}${n <= s.best ? ' won' : ''}" data-a="kglv" data-g="${game}" data-v="${n}" aria-pressed="${n === s.at}" aria-label="${esc(L(`ด่าน ${n}`, `Level ${n}`))}"><b>${n}</b>${n <= s.best ? '<i aria-hidden="true">⭐</i>' : ''}</button>`).join('')}</div>`;
+  return `<div class="lvbar" role="group" aria-label="${L('ด่าน', 'Levels')}">${isEditor() ? `<button type="button" class="lvreset" data-k="${esc(kid)}" data-g="${game}" aria-label="${L('ด่าน · ผู้ใหญ่กดค้างเพื่อเริ่มด่านใหม่', 'Levels · grown-ups press and hold to start again')}">${L('ด่าน', 'Level')}</button>` : `<span>${L('ด่าน', 'Level')}</span>`}${Array.from({ length: s.top }, (_, k) => k + 1).map((n) => `<button class="lvc${n === s.at ? ' on' : ''}${s.w.includes(n) ? ' won' : ''}" data-a="kglv" data-g="${game}" data-v="${n}" aria-pressed="${n === s.at}" aria-label="${esc(L(`ด่าน ${n}`, `Level ${n}`))}"><b>${n}</b>${s.w.includes(n) ? '<i aria-hidden="true">⭐</i>' : ''}</button>`).join('')}</div>`;
 }
 // after a win: on to the next level (or "every level done"), and the same one again
 function lvWin(t, kid, game, again) {

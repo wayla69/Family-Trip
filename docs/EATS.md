@@ -187,6 +187,26 @@ lists that copied one note for all were done again; an "open" with no link or a 
 
 ## Adding or changing the built-in list
 
+### The confirmation pass of 20 Nov 2026
+
+Owner: "เช็กร้านอาหารที่ยังไม่ได้เช็กกับเว็บ เริ่มจากเมืองที่ครอบครัวน่าจะไปก่อน". Round 1 took the unconfirmed rows of Taiwan, Hong Kong,
+Macau, Japan, Korea, Vietnam, Malaysia and part of Thailand (about 120 rows): 15 confirmed open (`ok 2026-11`), one closed and removed
+(Sukhothai). The rest stay as they were — "not found" on a search result is not a closure, and the session could not open the pages
+themselves.
+Round 2 read the pages with curl (Wongnai, TVBS, Wanderlog, dated articles): Taiwan, Hong Kong, Macau, Japan, Korea, Vietnam, Malaysia,
+Cambodia, Laos and Thailand, about 160 rows — 43 more confirmed open, 2 closed and removed (The Blue Pumpkin in Siem Reap, Xieng Thong
+Noodle in Luang Prabang). 2,674 rows now carry `ok`, 369 do not. To look at next: rows filed under the wrong town (Lu Lam is in Chiang Rai,
+Pee Pee Bakery on Phi Phi, Zest Coffee Lounge on Koh Tao, Dairy Home at Muak Lek), the renamed A-Tang Salty Congee in Tainan, the moved
+Red Gate Bakery in Nha Trang, and the mall food courts no page names.
+Round 3 (owner: "ทำหมดเลย"): A-Tang's row renamed and Red Gate's area moved; the wrong-town rows were mostly right (the library's
+towns are regions). The rest of the world and Europe were checked with curl (Wanderlog pages with 2025–2026 reviews, official sites with a
+2026 notice, Visit Bergen, an FSA rating): 46 more confirmed open, none closed. An "open" that rested only on a chain's main site, a search
+snippet of a page curl could not open, or a page for another branch was kept unconfirmed (Filli, Eataly, Time Out Market New York, Java
+House, Artcaffé, Griechenbeisl, Breydel De Coninc, The Old Keswickian, Queen of Tarts, Stani, Gino Sorbillo). Three rows filed under a
+town they are not in were taken out: eGeLoSIa (Koblenz, under Cologne), Café Schäfer (Triberg, under Heidelberg), Vigò (Ljubljana, under
+Bled). Renamed but trading, kept under the old name for now: Fløien Folkerestaurant (Fløirestauranten), Restaurant Aanaar (Wilderness Hotel
+Juutua). 2,720 of 3,040 rows carry `ok`; 320 do not — most are places whose sites refused curl or have no page of their own.
+
 - A file is `{"cc", "towns": [{"place": "<picture-library city id>", "places": [row…]}]}`; the header of `scripts/eats-lint.mjs` gives
   the row's fields. `npm run eats:lint` checks every file and that every city of the picture library has its list (test/infra runs it).
 - The server reads the files into the family's library once per version of the files (settings `eat_starter`); `EATS_STARTER=0` leaves

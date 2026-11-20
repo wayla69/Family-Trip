@@ -2717,7 +2717,7 @@
  },
  "passport": {
   "declaration": { "title": { "th": "ใบแจ้งศุลกากร", "en": "Customs Declaration" }, "sub": { "th": "กรอกก่อนบินกลับบ้าน", "en": "Official form · fill in before we fly home" }, "intro": { "th": "ฉัน นักสำรวจในพาสปอร์ตเล่มนี้ ขอแจ้งเรื่อง Big Hop ของฉันดังนี้", "en": "I, the explorer named in this passport, declare the following about my Big Hop:" }, "counts": [{ "k": "roos", "e": "🦘", "pre": { "th": "ฉันเห็น", "en": "I saw" }, "post": { "th": "จิงโจ้", "en": "kangaroos" } }, { "k": "koalas", "e": "🐨", "pre": { "th": "ฉันเห็น", "en": "I saw" }, "post": { "th": "โคอาล่า", "en": "koalas" } }, { "k": "pies", "e": "🥧", "pre": { "th": "ฉันกิน", "en": "I ate" }, "post": { "th": "พาย", "en": "pies" } }, { "k": "beaches", "e": "🏖️", "pre": { "th": "ฉันเล่นทราย", "en": "I played on" }, "post": { "th": "ชายหาด", "en": "beaches" } }, { "k": "ferries", "e": "⛴️", "pre": { "th": "ฉันนั่งเรือเฟอร์รี่", "en": "I rode" }, "post": { "th": "ครั้ง", "en": "ferries" } }, { "k": "friends", "e": "🤝", "pre": { "th": "ฉันได้", "en": "I made" }, "post": { "th": "เพื่อนใหม่", "en": "new friends" } }], "texts": [{ "k": "funniest", "label": { "th": "เรื่องที่ตลกที่สุดคือ…", "en": "The funniest thing that happened was…" } }, { "k": "bestday", "label": { "th": "วันที่ดีที่สุดของทริปคือ…", "en": "The BEST day of the whole trip was…" } }] },
-  "code": "KOALA-2027",
+  "code": "KOALA-2027-{KID}",
   "guides": [
    {
     "key": "roo",

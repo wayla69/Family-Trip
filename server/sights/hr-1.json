@@ -350,6 +350,23 @@
           "q": "Memorial Center Nikola Tesla, Smiljan",
           "ok": "2026-11",
           "src": "https://mcnikolatesla.hr/about-us"
+        },
+        {
+          "name": { "en": "Plitvice Upper Lakes route", "th": "เส้นทางทะเลสาบบนพลิตวิตเซ" },
+          "kind": "nature",
+          "area": { "en": "Plitvice Lakes", "th": "พลิตวิตเซ" },
+          "what": { "en": "A longer circular route over the Upper and Lower Lakes, combining walks, an electric-boat ride and the panoramic vehicle", "th": "เส้นทางวงกลมยาวผ่านทะเลสาบบนและล่าง ผสมเดิน เรือไฟฟ้า และรถพาโนรามา" },
+          "why": { "en": "4–6 hours is a lot for small legs, so use the boat and vehicle and stop often, or choose a shorter route", "th": "4–6 ชั่วโมงนานสำหรับขาเล็กๆ ใช้เรือและรถช่วยแล้วพักบ่อยๆ หรือเลือกเส้นสั้นกว่า" },
+          "tip": { "en": "Boat and vehicle rides come with a valid park ticket", "th": "เรือและรถพาโนรามาใช้ตั๋วเข้าอุทยานได้" },
+          "ages": [0, 1, 1, 2],
+          "hrs": 5,
+          "io": "out",
+          "pram": "no",
+          "price": { "en": "Included in the park ticket · the price changes with the season", "th": "รวมในตั๋วเข้าอุทยาน · ราคาเปลี่ยนตามฤดูกาล" },
+          "book": "rec",
+          "q": "Plitvice Lakes National Park, Entrance 2",
+          "ok": "2026-11",
+          "src": "https://np-plitvicka-jezera.hr/en/plan-your-visit/istrazite-jezera/activities/lake-tour-programmes/"
         }
       ]
     }
