@@ -3929,3 +3929,20 @@ details.more>summary{border-radius:16px}
 @media (prefers-color-scheme:dark){:root:not([data-theme=light]) .lgtile{background:color-mix(in srgb,var(--g1) 14%,var(--card))}:root:not([data-theme=light]) .lgtile b{color:color-mix(in srgb,var(--g1) 25%,#fff)}:root:not([data-theme=light]) .lgtile .pcpic{background:#F4F1EA}}
 .lgallgo{margin:2px 0 10px;text-align:center}.lgallgo .linkbtn{display:inline-flex;align-items:center;min-height:44px}
 .lgallnav{margin:8px 0 0}.lgallnav .btn{min-height:44px}
+
+/* the rough budget of a planned route (docs/BUDGET.md B1) */
+.plbudget .pch{margin:0 0 8px;font-size:17px}
+.plbl{list-style:none;margin:0;padding:0}
+.plbr{display:grid;grid-template-columns:36px 1fr auto;gap:10px;align-items:center;padding:9px 0;border-bottom:1px dashed var(--line)}
+.plbe{font-size:24px;text-align:center}
+.plbn{display:flex;flex-direction:column;min-width:0}
+.plbn small{color:var(--muted);font-size:12.5px}
+.plba{display:flex;flex-direction:column;align-items:flex-end;text-align:right}
+.plba .prthb,.plbt .plbthb{font-size:12.5px;color:var(--muted)}
+.plbt{display:flex;flex-wrap:wrap;gap:4px 10px;align-items:baseline;justify-content:space-between;margin-top:10px;font-size:16px}
+.plbt b{font-size:17px}
+.plbt .plbthb{flex-basis:100%;text-align:right;font-weight:600}
+.plbu{margin:8px 0 0;font-size:13.5px;color:color-mix(in srgb,#C2410C 70%,var(--ink))}
+.plbfx{margin-top:10px}
+.plbq{margin:8px 0 0;font-size:12.5px;color:var(--muted)}
+@media (max-width:420px){.plbr{grid-template-columns:30px 1fr}.plba{grid-column:2;align-items:flex-start;text-align:left}}

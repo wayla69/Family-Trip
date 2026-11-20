@@ -3052,6 +3052,26 @@ function plHist() {
   out.html = part(L('ไปที่เดิมอีกครั้ง', 'Somewhere we loved, again'), been.slice(0, 6)) + part(L('ที่ใหม่ในประเทศที่เคยไป', 'New towns in countries we know'), fresh);
   return out;
 }
+// the rough budget of a route (docs/BUDGET.md B1): a row a kind — the range in the money it is paid in, where it came from (the app's
+// library or the helper's estimate) — the total per currency and ≈ ฿ with the rate typed on this phone (a rate box for each money without one)
+const BUDGET_K = { flights: ['✈️', 'ตั๋วเครื่องบินไปกลับ', 'Return flights'], stay: ['🛏️', 'ที่พัก', 'Stays'], food: ['🍜', 'อาหาร', 'Food'], tickets: ['🎟️', 'ค่าเข้าที่เที่ยว', 'Tickets'], move: ['🚆', 'เดินทางในประเทศ', 'Getting around'] };
+function plBudget(rt) {
+  const b = rt && rt.budget; if (!b || !(b.lines || []).length) return '';
+  const fx = fxRates(), rng = (lo, hi, cur) => (lo === hi ? fmtMoney(lo, cur) : `${fmtMoney(lo, cur)}–${hi.toLocaleString(lang === 'th' ? 'th-TH' : 'en-GB')}`);
+  const baht = (lo, hi, cur) => { if (cur === 'THB' || !(+fx[cur] > 0)) return ''; const r = (v) => Math.round(v * fx[cur] / 100) * 100; return `<span class="prthb">≈ ${rng(r(lo), r(hi), 'THB')}</span>`; };
+  const rows = b.lines.map((l) => { const k = BUDGET_K[l.k] || ['💸', l.k, l.k];
+    const note = l.k === 'tickets' && l.n ? L(`${l.n} ที่จากคลัง`, `${l.n} places from the library`) : l.k === 'stay' && b.days > 1 ? L(`${b.days - 1} คืน`, `${b.days - 1} nights`) : l.k === 'food' ? L(`${b.days} วัน`, `${b.days} days`) : '';
+    return `<li class="plbr"><span class="plbe" aria-hidden="true">${emo(k[0])}</span><span class="plbn"><b>${L(k[1], k[2])}</b><small>${[note, l.src === 'lib' ? L('จากราคาในคลังของแอป', 'From the app’s library prices') : L('ผู้ช่วยประมาณให้', 'The helper’s estimate')].filter(Boolean).join(' · ')}</small></span><span class="plba"><b class="kf km">≈ ${rng(l.lo, l.hi, l.cur)}</b>${baht(l.lo, l.hi, l.cur)}</span></li>`; }).join('');
+  const tot = b.totals || [], all = tot.every((x) => x.cur === 'THB' || +fx[x.cur] > 0);
+  const thb = all && tot.some((x) => x.cur !== 'THB') ? tot.reduce((n, x) => [n[0] + x.lo * (x.cur === 'THB' ? 1 : fx[x.cur]), n[1] + x.hi * (x.cur === 'THB' ? 1 : fx[x.cur])], [0, 0]).map((v) => Math.round(v / 1000) * 1000) : null;
+  const unk = (b.unknown && (b.unknown.tickets || b.unknown.food)) ? `<p class="plbu">${[b.unknown.tickets ? L(`ค่าเข้าอีก ${b.unknown.tickets} ที่ยังไม่รู้ราคา ต้องเช็กเอง`, `${b.unknown.tickets} more places have no price yet — check them yourself`) : '', b.unknown.food ? L(`ค่าอาหาร ${b.unknown.food} วันยังไม่มีราคาในคลัง`, `Food for ${b.unknown.food} days has no library price yet`) : ''].filter(Boolean).join(' · ')}</p>` : '';
+  const need = tot.map((x) => x.cur).filter((c) => c !== 'THB' && !(+fx[c] > 0));
+  const rate = need.length ? `<div class="row fxrow plbfx">${need.map((c) => `<label class="fxf">1 ${esc(c)} =<input class="field" inputmode="decimal" data-fx="${esc(c)}" value="" aria-label="${esc(c)} → THB"> ${L('บาท', 'THB')}</label>`).join('')}</div><p class="label">${L('ใส่เรตแลกเงินเพื่อดูเป็นบาท · อยู่ในเครื่องนี้ ไม่ดึงจากเน็ต', 'Type a rate to see it in baht · kept on this phone · nothing is looked up online')}</p>` : '';
+  return `<section class="plbudget pcard" style="--g1:${PG.lime}"><h4 class="pch">${emo('💰')} ${L('งบคร่าวๆ ทั้งทริป', 'A rough budget for the whole trip')}</h4>
+<ul class="plbl">${rows}</ul>
+<div class="plbt"><span>${L('รวมคร่าวๆ', 'Roughly in all')}</span><b>${tot.map((x) => `≈ ${rng(x.lo, x.hi, x.cur)}`).join(' + ')}</b>${thb ? `<b class="plbthb">≈ ${rng(thb[0], thb[1], 'THB')}</b>` : ''}</div>
+${unk}${rate}<p class="plbq">${L('คร่าวๆ ไว้วางแผน ราคาเปลี่ยนได้ ยังไม่รวมของฝากและค่าใช้จ่ายส่วนตัว', 'Rough, for planning — prices change; souvenirs and personal spending not included')}</p></section>`;
+}
 function viewPlanner(qs) {
   // a new plan starts from what the family chose on #/taste (likes and needs), then what this phone kept of the plan in hand
   if (!pln.a) { const ft = famTaste(); pln.a = { dest: '', from: '', to: '', approx: '', len: 0, adults: 2, seniors: false, pace: 'slow', move: 'mix', budget: 'mid', stays: '', flights: '', want: '', avoid: '', likes: [...ft.out.like], needs: [...ft.needs], ...(ls('plan') || {}) }; pln.route = pln.route || ls('planRoute') || null; pln.id = ls('planId') || ''; pln.at = ls('planAt') || 0; }
@@ -3121,7 +3141,7 @@ ${d.stops && d.stops.length ? `<ul class="pldstops">${d.stops.map((x) => `<li${x
   const stays = rt ? plStays(rt) : [];
   const jour = !rt ? '' : `<div class="pljour">${stays.map((s, k) => { const p = plPlaceOf(s.town), nights = k === stays.length - 1 ? s.n - 1 : s.n; return `<button type="button" class="pljt" data-a="jump" data-v="#pld${s.i}" style="--tc:${cols[s.i]}"><span class="pljp">${p && p.art ? `<img src="${esc(p.art)}" alt="" draggable="false">` : emo(rt.days[s.i].emoji || '📍')}</span><b>${esc(T(s.town))}</b><small>${nights > 0 ? L(`${nights} คืน`, `${nights} ${nights > 1 ? 'nights' : 'night'}`) : L('วันกลับ', 'Last day')}</small></button>`; }).join('<i aria-hidden="true">›</i>')}</div>`;
   const routeHtml = !rt ? '' : pcard('today', PG.blue, `${esc(T(rt.title))} <small class="label">${esc(fmtRange({ date_from: rt.from, date_to: rt.to }))} · ${esc(plSpan(rt.days.length))}</small>`, `${jour}${rt.why ? `<p class="plwhy">${esc(T(rt.why))}</p>` : ''}
-<div class="part pickh">${L('ก่อนตัดสินใจ', 'Before you say yes')}</div>${factsHtml}
+<div class="part pickh">${L('ก่อนตัดสินใจ', 'Before you say yes')}</div>${factsHtml}${plBudget(rt)}
 ${planEatHtml(rt, on)}
 <div class="part pickh">${L('วันต่อวัน', 'Day by day')}</div><p class="label">${L('เลื่อนวัน เพิ่ม ลบ หรือแก้ชื่อได้เลย หรือบอกผู้ช่วยให้เปลี่ยน', 'Move, add or remove a day, rename it — or ask the helper to change it')}</p>
 ${((n, f) => (n ? `<p class="label pllib">✓ ${L(`จุดแวะ ${n} แห่งมาจาก<a href="#/explore">คลังที่เที่ยว</a> เช็กกับเว็บแล้ว${f ? ` · ผู้ช่วยเสนอนอกคลัง ${f} แห่ง` : ''}`, `${n} stop${n === 1 ? '' : 's'} from <a href="#/explore">the library</a>, checked on the web${f ? ` · ${f} suggested by the helper` : ''}`)}</p>` : ''))(rt.days.reduce((k, d) => k + (d.stops || []).filter((x) => x.lib).length, 0), rt.days.reduce((k, d) => k + (d.stops || []).filter((x) => x.new).length, 0))}
@@ -3189,7 +3209,7 @@ const kidTagBar = (places) => ((have) => (have.length ? `<div class="row chips e
 
 // roughly in baht beside a place's price (owner, Nov 2026: "ราคาเป็นบาทโดยประมาณ"): the place's country gives its currency, the rate is
 // the one the parents typed on this phone for the trip's spending (ls('fx')) — never fetched; no rate, nothing is shown
-const CC_CUR = { ae: 'AED', ar: 'ARS', at: 'EUR', au: 'AUD', be: 'EUR', br: 'BRL', bt: 'BTN', ca: 'CAD', ch: 'CHF', cl: 'CLP', cn: 'CNY', cz: 'CZK', de: 'EUR', dk: 'DKK', ee: 'EUR', eg: 'EGP', es: 'EUR', fi: 'EUR', fj: 'FJD', fr: 'EUR', gb: 'GBP', ge: 'GEL', gr: 'EUR', hk: 'HKD', hr: 'EUR', hu: 'HUF', id: 'IDR', ie: 'EUR', in: 'INR', is: 'ISK', it: 'EUR', jo: 'JOD', jp: 'JPY', ke: 'KES', kh: 'USD', kr: 'KRW', kz: 'KZT', la: 'LAK', lk: 'LKR', lu: 'EUR', ma: 'MAD', mm: 'MMK', mn: 'MNT', mo: 'MOP', mt: 'EUR', mv: 'MVR', mx: 'MXN', my: 'MYR', nl: 'EUR', no: 'NOK', np: 'NPR', nz: 'NZD', pe: 'PEN', ph: 'PHP', pl: 'PLN', pt: 'EUR', se: 'SEK', sg: 'SGD', si: 'EUR', sk: 'EUR', th: 'THB', tr: 'TRY', tw: 'TWD', us: 'USD', uz: 'UZS', vn: 'VND', za: 'ZAR' };
+// CC_CUR (a country's currency) lives in tags.js, shared with the server's budget
 function prThb(x) {
   const cur = CC_CUR[x.cc], rate = +(fxRates()[cur] || 0), en = (x.pr && x.pr.en) || '';
   if (!cur || cur === 'THB' || !(rate > 0)) return '';
