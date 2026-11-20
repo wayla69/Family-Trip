@@ -65,7 +65,7 @@ const T = {
   is: { n: ['Iceland', 'ไอซ์แลนด์'], e: E([ALL, '112']), plug: 'C/F', volt: 230, cur: 'ISK', side: 'R', v: SCH, s: true },
   tr: { n: ['Türkiye', 'ตุรกี'], e: E([ALL, '112']), plug: 'C/F', volt: 220, cur: 'TRY', side: 'R', v: ['free', 30], s: true },
   ge: { n: ['Georgia', 'จอร์เจีย'], e: E([ALL, '112']), plug: 'C/F', volt: 220, cur: 'GEL', side: 'R', v: ['free', 365], s: true },
-  uz: { n: ['Uzbekistan', 'อุซเบกิสถาน'], e: E([ALL, '112'], [POL, '102'], [AMB, '103'], [FIRE, '101']), plug: 'C/F', volt: 220, cur: 'UZS', side: 'R', v: ['evisa'], s: false },
+  uz: { n: ['Uzbekistan', 'อุซเบกิสถาน'], e: E([ALL, '112'], [POL, '102'], [AMB, '103'], [FIRE, '101']), plug: 'C/F', volt: 220, cur: 'UZS', side: 'R', v: ['evisa'], s: true },
   kz: { n: ['Kazakhstan', 'คาซัคสถาน'], e: E([ALL, '112'], [POL, '102'], [AMB, '103'], [FIRE, '101']), plug: 'C/F', volt: 220, cur: 'KZT', side: 'R', v: ['free', 30], s: true },
   mn: { n: ['Mongolia', 'มองโกเลีย'], e: E([POL, '102'], [AMB, '103'], [FIRE, '101']), plug: 'C/E', volt: 220, cur: 'MNT', side: 'R', v: ['free', 30], s: true },
   ae: { n: ['United Arab Emirates', 'สหรัฐอาหรับเอมิเรตส์'], e: E([POL, '999'], [AMB, '998'], [FIRE, '997']), plug: 'G', volt: 230, cur: 'AED', side: 'R', v: ['evisa'], s: true, vn: { en: 'on arrival only with a US, UK, EU, Japan or similar residence permit', th: 'ขอที่ด่านได้เฉพาะคนที่มีใบพำนักของสหรัฐ อังกฤษ EU ญี่ปุ่น ฯลฯ' } },
