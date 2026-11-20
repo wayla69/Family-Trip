@@ -1342,6 +1342,10 @@ if (typeof document !== 'undefined') document.addEventListener('change', (e) => 
 if (typeof document !== 'undefined') document.addEventListener('input', (e) => {   // typed in place: no redraw under the finger
   if (e.target.id === 'snapname') { snapName = e.target.value; if (snapS) snapS.name = e.target.value; return; }
   if (e.target.id === 'snaptitle' && snapS) { snapS.name = e.target.value; return; }
-  if (e.target.id === 'psq') { const q = e.target.value.trim().toLowerCase(); document.querySelectorAll('.pslist li').forEach((li) => { li.hidden = !!q && !li.classList.contains('psh') && !li.textContent.toLowerCase().includes(q); }); return; }   // the sheet's search filters in place
+  if (e.target.id === 'psq') {   // the sheet's search filters in place — as typed, or forgivingly when nothing matches as typed
+    const q = e.target.value.trim().toLowerCase(), lis = [...document.querySelectorAll('.pslist li')].filter((li) => !li.classList.contains('psh'));
+    const fz = fzFilter(lis.map((li) => li.textContent), q);
+    lis.forEach((li, i) => { li.hidden = !!q && !fz.ok(i); }); return;
+  }   // the sheet's search filters in place
   if (e.target.dataset && e.target.dataset.snapday && snapS) snapS.typed[e.target.dataset.snapday] = e.target.value;
 });

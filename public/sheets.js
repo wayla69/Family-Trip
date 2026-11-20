@@ -461,7 +461,7 @@ const A = {
   spendcur(b) { spendCur = b.dataset.v; $$('[data-a="spendcur"]').forEach((x) => x.setAttribute('aria-pressed', x.dataset.v === spendCur)); },
   async addspend(b) {
     const t = trip(b.dataset.t), d = +b.dataset.d, amt = $('#spendamt'), note = $('#spendnote');
-    const n = Number(String(amt.value).replace(/[^\d.]/g, ''));
+    const n = fzAmount(amt.value);   // 1,200 · ๑๒๐๐ · 1.2k · ฿300 · 3 พัน
     if (!(n >= 0) || !amt.value.trim()) { amt.focus(); return; }
     const curs = tripCurs(t), cur = curs.includes(spendCur) ? spendCur : curs[0], id = uid('sp');
     const body = { trip: t.id, day: d, amount: n, cur, cat: spendCat, note: note.value.trim() };
@@ -1671,7 +1671,7 @@ document.addEventListener('input', (e) => { const el = e.target; if (el.id === '
 // a child's height on a trip (#/grow): a book-wide field entry, saved when the box is left (an empty box removes it)
 function saveHeight(el) {
   const t = trip(el.dataset.t), kid = el.dataset.k; if (!t || !kid) return;
-  const v = parseFloat(el.value), id = `${t.id}.field.height.${kid}`, cur = S.entries.find((x) => x.id === id);
+  const v = fzHeight(el.value), id = `${t.id}.field.height.${kid}`, cur = S.entries.find((x) => x.id === id);
   if (!(v > 30 && v < 220)) { if (cur && !el.value) delEntry(id); return; }
   const text = String(Math.round(v * 10) / 10); if (cur && cur.text === text) return;
   putEntry(t, { day: null, kind: 'field', child: kid, first_key: 'height', text }, id);
@@ -1882,13 +1882,15 @@ document.addEventListener('input', (e) => {
   if (el.id === 'eltown') { eatLib.add = el.value; return; }
   if (el.id === 'sightq') {   // explore a town: the search hides cards in place (the box keeps the focus)
     SIGHT.q = el.value; const q = el.value.trim().toLowerCase(); let n = 0;
-    document.querySelectorAll('.sightl .sightc').forEach((li) => { const ok = !q || li.dataset.s.includes(q); li.hidden = !ok; if (ok) n++; });
+    const lis = [...document.querySelectorAll('.sightl .sightc')], fz = fzFilter(lis.map((li) => li.dataset.s || ''), q);
+    lis.forEach((li, i) => { const ok = !q || fz.ok(i); li.hidden = !ok; if (ok) n++; });
     const c = document.getElementById('sightn'), none = document.getElementById('sightnone'), all = (SIGHT.list || []).length;
     if (c) c.textContent = L(`แสดง ${n} จาก ${all} แห่ง`, `Showing ${n} of ${all}`); if (none) none.hidden = n > 0; return;
   }
   if (el.id === 'eltq') {   // the library's towns: filter the chips in place (the box keeps the focus)
     const q = el.value.trim().toLowerCase(); let n = 0;
-    document.querySelectorAll('.elgrp').forEach((g) => { let any = false; g.querySelectorAll('.plchip').forEach((c) => { const ok = !q || c.dataset.s.includes(q); c.hidden = !ok; if (ok) { any = true; n++; } }); g.hidden = !any; });
+    const chips = [...document.querySelectorAll('.elgrp .plchip')], fz = fzFilter(chips.map((c) => c.dataset.s || ''), q), at = new Map(chips.map((c, i) => [c, i]));
+    document.querySelectorAll('.elgrp').forEach((g) => { let any = false; g.querySelectorAll('.plchip').forEach((c) => { const ok = !q || fz.ok(at.get(c)); c.hidden = !ok; if (ok) { any = true; n++; } }); g.hidden = !any; });
     const none = document.getElementById('eltnone'); if (none) none.hidden = n > 0; return;
   }
   if (!pln.a) return;

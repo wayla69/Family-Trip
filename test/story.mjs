@@ -262,7 +262,7 @@ try {
   const page = await ctx1.newPage();
   const errs = []; page.on('pageerror', (e) => errs.push(e.message));
   await page.goto(BASE + '/'); await page.fill('#lcode', CODE); await page.keyboard.press('Enter'); await page.waitForSelector('.shelf');
-  await page.goto(`${BASE}/#/t/${T}/log/1`); await page.waitForSelector('#storygo');
+  await page.goto(`${BASE}/#/t/${T}/log/1/all`); await page.waitForSelector('#storygo');
   await page.click('#storygo');
   await page.waitForFunction(() => document.querySelector('#storytext') && document.querySelector('#storytext').textContent.includes('ฝันดี'));
   await page.waitForFunction(() => !document.querySelector('#storystop') || document.querySelector('#storystop').hidden);
@@ -305,8 +305,9 @@ try {
   ok(/Disneyland/.test(await page.textContent('.blk:last-child .items li:first-child')) && !/THB\s*1,?28/.test(sp), 'spending: biggest item first; currencies never added together');
   // the 21:30 reminder opens the record page at tonight's Claude panel: every Claude button of the day in one place, after the recording
   await page.goto(`${BASE}/#/t/${T}/log/1/ai`); await page.waitForSelector('#aipanel.flash');
-  const order = await page.evaluate(() => { const y = (q) => document.querySelector(q).getBoundingClientRect().top; return y('#qtext') < y('#aipanel') && y('#aipanel') < y('.sumblk') && y('.sumblk') < y('#storyblk') && y('#storyblk') < y('.talkblk') && y('.talkblk') < y('.msgblk'); });
-  ok(order && await page.locator('.aijump').count() === 1, 'record page: the recording first, then tonight\'s Claude panel and its boxes in the order they are used');
+  // the record page is a page a step now: the 21:30 link opens the helper's step on its own, its boxes in the order they are used
+  const order = await page.evaluate(() => { const y = (q) => document.querySelector(q).getBoundingClientRect().top; return !document.querySelector('#qtext') && y('#aipanel') < y('.sumblk') && y('.sumblk') < y('#storyblk') && y('#storyblk') < y('.talkblk') && y('.talkblk') < y('.msgblk'); });
+  ok(order && await page.locator('.lgstep[data-step="ai"]').count() === 1 && await page.locator('.lgqs .plqd.now').count() === 1, 'record page: the 21:30 link opens the helper\'s step alone, the panel then its boxes in the order they are used');
   ok(await page.locator('#aipanel .aistep').count() === 6 && await page.locator('#aiall').isDisabled() && (await page.textContent('#aiall')).includes('All done'), 'panel: six steps (no photos today), summary/story/questions already done → nothing for "do it all"');
   ok(!(await page.textContent('.talkblk')).includes('never photos') && (await page.locator('#aipanel .ainote').count()) === 1, 'panel: the privacy note lives once, behind ⓘ');
   await page.click('#aipanel [data-k="talk"]');
@@ -410,7 +411,7 @@ try {
     ok(await pg2.evaluate(() => { const p = [...document.querySelectorAll('section.pg')].map((x) => x.className); const c = p.findIndex((x) => /\bcover\b/.test(x)), f = p.findIndex((x) => /\bforep\b/.test(x)); return c >= 0 && f === c + 1; }), 'PDF route: the foreword is the first page after the cover');
     await pg2.goto(`${BASE}/#/t/${T}/today/1`); await pg2.waitForSelector('#nextgo');
     ok(await pg2.locator('.nextblk').count() === 1, 'today page: the "ready for tomorrow" button for grown-ups');
-    await pg2.goto(`${BASE}/#/t/${T}/log/1`); await pg2.waitForSelector('#mquiztext:not([hidden])');
+    await pg2.goto(`${BASE}/#/t/${T}/log/1/all`); await pg2.waitForSelector('#mquiztext:not([hidden])');
     ok((await pg2.textContent('#mquiztext')).includes('✓'), 'record page: the memory game is listed with its right answers for the grown-ups');
     // look at today's photos: the block counts what Claude has seen; a third photo makes the button live, a press sends it and the page redraws
     ok(await pg2.locator('.phaiblk').count() === 1 && (await pg2.textContent('.phaiblk h3')).includes('2/2') && await pg2.locator('#phaigo').isDisabled(), 'record page: "Claude looks at today\'s photos" shows 2/2 seen, nothing new to send');
@@ -428,7 +429,7 @@ try {
     // after a reload the phone draws its stored copy first (this day without the photo just uploaded: three steps), then the fresh state — wait for the
     // count the check is about, never one look at the first render (CI read "3 steps" here once, Nov 2026)
     const aiallSays = async (n) => { await pg2.waitForFunction((x) => { const b = document.querySelector('#aiall'); return b && !b.disabled && b.textContent.includes(x); }, String(n), { timeout: 15000 }).catch(() => {}); return (await pg2.textContent('#aiall')).trim(); };
-    await pg2.goto(`${BASE}/#/t/${T}/log/4`); await pg2.reload(); await pg2.waitForSelector('#aiall:not([disabled])');
+    await pg2.goto(`${BASE}/#/t/${T}/log/4/all`); await pg2.reload(); await pg2.waitForSelector('#aiall:not([disabled])');
     { const txt = await aiallSays(4); ok(txt.includes('4'), `do it all: the button says it will use 4 Claude calls (${txt})`); }
     const c0 = calls.length;
     await pg2.click('#aiall');
@@ -440,7 +441,7 @@ try {
     // a day of 13 photos: "do it all" sees them in two rounds of up to 12 (the button counts both), then the three text calls
     const sharp2 = createRequire(import.meta.url)('sharp');
     for (let k = 0; k < 13; k++) await fetch(`${BASE}/api/b/media/ph-many-${String(k).padStart(4, '0')}?trip=${T}&day=3&at=${Date.now() - (13 - k) * 60000}`, { method: 'PUT', headers: { 'x-mb': '1', cookie: ck, 'content-type': 'image/jpeg' }, body: await sharp2({ create: { width: 640, height: 480, channels: 3, background: `hsl(${k * 27},70%,55%)` } }).jpeg().toBuffer() });
-    await pg2.goto(`${BASE}/#/t/${T}/log/3`); await pg2.reload(); await pg2.waitForSelector('#aiall:not([disabled])');
+    await pg2.goto(`${BASE}/#/t/${T}/log/3/all`); await pg2.reload(); await pg2.waitForSelector('#aiall:not([disabled])');
     { const txt = await aiallSays(5); ok(txt.includes('5'), `do it all: 13 unseen photos count as two calls, five in all (${txt})`); }
     const c1 = calls.length;
     await pg2.click('#aiall');

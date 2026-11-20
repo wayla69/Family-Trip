@@ -107,9 +107,18 @@ const T = 'hk-macau-2026';
   ok(await page.locator('.hubpart').count() === 3 && /ready|เตรียม/.test(await page.locator('.hubpart').first().textContent()) && await page.locator('.hubpart + .hubgrid').count() === 3 && await page.locator('.hubgrid.lead .tile').count() === 1, 'book menu: three named groups, "get ready" first before the trip');
   { // a fresh phone: the record page shows tonight's three (photos, words, moods) and "day done", the rest folded under "more"
     const f = await session('fold', { logall: false }); await login(f.page);
-    await f.page.goto(`${BASE}/#/t/${T}/log/0`); await f.page.waitForSelector('details.more');
+    // a page a step (owner: "หน้า record ยาวมากเลย … แบบมีหลายหน้า"): the day's overview is tiles, a tile opens its step alone,
+    // the step dots and next lead on, the whole day stays one link away
+    await f.page.goto(`${BASE}/#/t/${T}/log/0`); await f.page.waitForSelector('.lgtiles');
+    const ov = await f.page.evaluate(() => ({ tiles: document.querySelectorAll('.lgtile').length, blocks: document.querySelectorAll('.blk:not(.planblk)').length, all: !!document.querySelector('.lgallgo a[href$="/log/0/all"]'), h: document.documentElement.scrollHeight, small: [...document.querySelectorAll('.lgtile, .lgallgo a')].filter((e) => e.getBoundingClientRect().height < 44).length }));
+    await f.page.click('.lgtile[href$="/log/0/words"]'); await f.page.waitForSelector('.lgstep[data-step="words"] #qtext');
+    const st = await f.page.evaluate(() => ({ dots: document.querySelectorAll('.lgqs .plqd').length, now: (document.querySelector('.lgqs .plqd.now') || {}).textContent, photos: !!document.querySelector('#lgphotos'), strip: [...document.querySelectorAll('.daystrip a')].every((a) => /\/words$/.test(a.getAttribute('href'))) }));
+    await f.page.click('.plnav .plnext'); await f.page.waitForSelector('.lgstep[data-step="feel"] #lgmood');
+    ok(ov.tiles >= 6 && ov.blocks === 0 && ov.all && !ov.small && st.dots === ov.tiles && /2/.test(st.now) && !st.photos && st.strip,
+      `record page, a page a step: ${ov.tiles} tiles and no long blocks on the overview (${ov.h} px), the words step alone with its dots, the day strip keeps the step, next goes on to the mood (${JSON.stringify({ ov, st })})`);
+    await f.page.goto(`${BASE}/#/t/${T}/log/0/all`); await f.page.waitForSelector('details.more');
     const y = (q) => f.page.evaluate((q) => document.querySelector(q).getBoundingClientRect().top, q);
-    ok(await f.page.locator('details.planblk:not([open])').count() === 1 && (await y('#lgphotos')) - (await y('.logprog')) < 140, 'record page: with the plan folded, the photo box sits right under the strip');
+    ok(await f.page.locator('details.planblk:not([open])').count() === 1 && (await y('#lgphotos')) - (await y('.logprog')) < 140, `record page: with the plan folded, the photo box sits right under the strip (${(await y('#lgphotos')) - (await y('.logprog'))} px)`);
     ok(!(await f.page.locator('details.more').evaluate((d) => d.open)) && (await y('#qtext')) < (await y('[data-a="done"]')) && (await y('[data-a="done"]')) < (await y('details.more')) && !(await f.page.locator('#favtext').isVisible()), 'record page: quotes → mood → day done above the fold; favourite/note/firsts folded on a fresh day');
     await f.page.click('details.more .linkbtn[data-a="logall"]'); await f.page.waitForSelector('#favtext');
     ok(await f.page.locator('#favtext').isVisible() && await f.page.evaluate(() => localStorage.getItem('mbs_logall') === '1'), 'record page: "keep open" shows every box and is remembered on this phone');
@@ -137,14 +146,14 @@ const T = 'hk-macau-2026';
   ok(await page.evaluate(() => getComputedStyle(document.querySelector('.cover h1')).fontFamily.includes('Cormorant')), 'HK title in Cormorant Garamond (as in the manual)');
 
   // record day 2
-  await page.goto(`${BASE}/#/t/${T}/log/1`); await page.waitForSelector('.daystrip');
+  await page.goto(`${BASE}/#/t/${T}/log/1/all`); await page.waitForSelector('.daystrip');
   // the strip under the date: tonight's three, ✓ where the day holds something, ○ where it is still empty; a tap jumps to that box
   ok(await page.evaluate(() => { const cs = [...document.querySelectorAll('.logprog .lpc')], es = entriesOf('hk-macau-2026', 1);
     const want = { '#lgphotos': mediaOf('hk-macau-2026', 1).length > 0, '#lgquotes': es.some((e) => e.kind === 'quote'), '#lgmood': es.some((e) => e.kind === 'mood' && e.mood) };
     return cs.length === 3 && cs.every((c) => document.querySelector(c.dataset.v) && c.classList.contains('on') === want[c.dataset.v] && c.querySelector('i').textContent === (want[c.dataset.v] ? '✓' : '○')); }), 'record page: the strip under the date says which of photos · words · mood the day already holds');
   await page.click('.logprog .lpc[data-v="#lgmood"]'); await page.waitForFunction(() => Math.abs(document.querySelector('#lgmood').getBoundingClientRect().top) < 140);
   ok(true, 'record page: a tap on the strip scrolls to that box');
-  await page.goto(`${BASE}/#/t/${T}/log/1`); await page.waitForSelector('.daystrip');
+  await page.goto(`${BASE}/#/t/${T}/log/1/all`); await page.waitForSelector('.daystrip');
   ok(await page.locator('.daystrip a').count() === 6, 'day strip shows 6 days');
   await page.fill('#qtext', 'ปลาอยู่ในน้ำเหมือนหนูเลย');
   await page.click('button[data-a="who"][data-v="mika"]');
@@ -173,12 +182,12 @@ const T = 'hk-macau-2026';
   await page.click('button[data-a="place"][data-v="Hong Kong Disneyland"]');
   await page.waitForFunction(() => queue.length === 0, null, { timeout: 15000 });
   // a first belongs to its own day: day 3's page shows Mimi met Mickey on day 2 (not ticked there), and a tap there keeps it
-  await page.goto(`${BASE}/#/t/${T}/log/2`); await page.waitForSelector('button[data-a="first"][data-v="mickey"][data-k="mimi"]');
+  await page.goto(`${BASE}/#/t/${T}/log/2/all`); await page.waitForSelector('button[data-a="first"][data-v="mickey"][data-k="mimi"]');
   const fbtn = page.locator('button[data-a="first"][data-v="mickey"][data-k="mimi"]');
   ok(await fbtn.getAttribute('aria-pressed') === 'false' && /2/.test(await fbtn.locator('.fday').textContent()), 'firsts: another day shows the day it happened, not a tick');
   await fbtn.click(); await page.waitForTimeout(300);
   ok(await page.evaluate(() => S.entries.some((e) => e.kind === 'first' && e.first_key === 'mickey' && e.child === 'mimi' && e.day === 1)), 'firsts: a tap on another day never removes it from its own day');
-  await page.goto(`${BASE}/#/t/${T}/log/1`); await page.waitForSelector('button[data-a="first"][data-v="mickey"][data-k="mimi"][aria-pressed="true"]');
+  await page.goto(`${BASE}/#/t/${T}/log/1/all`); await page.waitForSelector('button[data-a="first"][data-v="mickey"][data-k="mimi"][aria-pressed="true"]');
   // what we actually spent: category + amount + a word → a row and the day's total; the trip total appears underneath
   await page.click('button[data-a="spendcat"][data-v="transport"]');
   await page.fill('#spendamt', '120'); await page.fill('#spendnote', 'แท็กซี่ไปดิสนีย์'); await page.click('button[data-a="addspend"]');
@@ -204,12 +213,12 @@ const T = 'hk-macau-2026';
   await page.fill('.fxbox input[data-fx="HKD"]', '4.5');
   const fxTxt = await page.textContent('#fxres');
   ok(/≈/.test(fxTxt) && fxTxt.replace(/[^\d]/g, '').includes(String(Math.round((120 + 268) * 4.5))) && await page.evaluate(() => document.activeElement && document.activeElement.dataset.fx === 'HKD'), `baht: typing the rate shows the whole trip ≈ ฿${Math.round(388 * 4.5)} at once, the field keeps the cursor`);
-  await page.goto(`${BASE}/#/t/${T}/log/1`); await page.waitForSelector('.spend p.lede');
+  await page.goto(`${BASE}/#/t/${T}/log/1/all`); await page.waitForSelector('.spend p.lede');
   ok(/≈/.test(await page.textContent('.spend p.lede')) && await page.evaluate(() => (ls('fx') || {}).HKD) === 4.5, 'baht: the record page shows the trip total in baht too; the rate lives on this phone');
   // the home-screen icon shortcuts open today's record page with the box in view
   await page.goto(`${BASE}/#/go/quote`); await page.waitForSelector('#qtext');
   await page.waitForFunction(() => document.activeElement && document.activeElement.id === 'qtext', null, { timeout: 3000 }).catch(() => {});
-  ok(/\/log\/\d+$/.test(await page.evaluate(() => location.hash)) && await page.evaluate(() => document.activeElement && document.activeElement.id === 'qtext'), 'shortcut "quote": today\'s record page, the cursor in the quote box');
+  ok(/\/log\/\d+\/words$/.test(await page.evaluate(() => location.hash)) && await page.evaluate(() => document.activeElement && document.activeElement.id === 'qtext'), 'shortcut "quote": today\'s record page at its words step, the cursor in the quote box');
   await page.goto(`${BASE}/#/go/photo`); await page.waitForSelector('.golit .btn[data-a="pickphotos"]', { timeout: 3000 }).catch(() => {});
   ok(await page.locator('.golit .btn[data-a="pickphotos"]').count() === 1 && await page.locator('.golit .phstop').count() >= 3, 'shortcut "photo": the photo box is lit up and in view, with the day\'s places under the add button');
   const man = await (await page.request.get(`${BASE}/manifest.webmanifest`)).json();
@@ -276,6 +285,9 @@ const T = 'hk-macau-2026';
     const fr = await page.evaluate(() => ({ n: document.querySelectorAll('#findres .sres li').length, txt: (document.querySelector('#findres') || {}).textContent || '' }));
     await s.shot('find');
     ok(fr.n >= 1 && /ปลาอยู่ในน้ำ/.test(fr.txt) && /Words/.test(fr.txt) && await s.noHScroll(), `search every book: the kids' words found across the books, with when and in which book (${fr.n} hits)`);
+    await page.fill('#findq', 'ปลาอยู่ในนำ'); await page.waitForTimeout(250);   // a tone mark missed: still found, said to be close
+    const fz2 = await page.evaluate(() => ({ n: document.querySelectorAll('#findres .sres li').length, near: !!document.querySelector('#findres .fznear') }));
+    ok(fz2.n >= 1 && fz2.near, `search every book: a missed tone mark still finds the words, marked as close (${JSON.stringify(fz2)})`);
     await page.goto(`${BASE}/#/devices`); await page.waitForSelector('.devs li', { timeout: 8000 }).catch(() => {});
     const dv = await page.evaluate(() => ({ me: document.querySelectorAll('.devs li.me').length, n: document.querySelectorAll('.devs li').length, head: !!document.querySelector('.phead .phpic img[src$="devices.webp"]'), cards: document.querySelectorAll('.pcard .pch .pcpic img').length }));
     await s.shot('devices');
@@ -290,7 +302,7 @@ const T = 'hk-macau-2026';
     // growing up, trip by trip (#/grow): every book of the child, the age then, a height noted on each book, then the line of heights
     await page.goto(`${BASE}/#/grow/mimi`); await page.waitForSelector('.growl li');
     const ins = page.locator('.growl .ghinp');
-    if (await ins.count() >= 2) { await ins.nth(0).fill('96'); await ins.nth(0).blur(); await ins.nth(1).fill('103.5'); await ins.nth(1).blur(); }
+    if (await ins.count() >= 2) { await ins.nth(0).fill('96'); await ins.nth(0).blur(); await ins.nth(1).fill('1.035 ม.'); await ins.nth(1).blur(); }   // in metres, with the unit: read as 103.5 cm
     await page.waitForSelector('.grchart polyline', { timeout: 8000 }).catch(() => {});
     const gr = await page.evaluate(() => ({ n: document.querySelectorAll('.growl li').length, art: document.querySelectorAll('.growl .grart img').length, age: document.querySelectorAll('.growl .grchip').length, chart: !!document.querySelector('.grchart polyline'), note: (document.querySelector('.grcard') || {}).textContent || '' }));
     await s.shot('grow');
@@ -677,7 +689,7 @@ const T = 'hk-macau-2026';
   await page.click('[data-a="emoadd"]');
   await page.waitForFunction(() => S.emoji.some((e) => e.ch === '🦘'), null, { timeout: 8000 }).catch(() => {});
   ok(await page.locator('.emocard').count() === 72 && (await page.textContent('.emolist')).includes('Kangaroo') && await page.inputValue('[data-emf="ch"]') === '', 'emoji page: a new one with its picture, the form cleared');
-  await page.goto(`${BASE}/#/t/${T}/log/1`); await page.waitForSelector('#qtext');
+  await page.goto(`${BASE}/#/t/${T}/log/1/all`); await page.waitForSelector('#qtext');
   await page.click('[data-a="emopick"][data-for="qtext"]'); await page.waitForSelector('#emopop');
   ok(await page.locator('#emopop [data-a="emoput"][data-v="🦘"] img.emi[src^="/media/emoji/"]').count() === 1, 'emoji page: the new one is in the grid beside a text box');
   await page.keyboard.press('Escape'); await page.goto(`${BASE}/#/emoji`); await page.waitForSelector('.emolist');
@@ -696,7 +708,7 @@ const T = 'hk-macau-2026';
   const touch = await page.evaluate(() => document.querySelector('link[rel="apple-touch-icon"]').getAttribute('href'));
   const tm = await sharp(await (await page.request.get(BASE + touch)).body()).metadata();
   ok(sizes.every(Boolean) && new Set(man.shortcuts.map((s) => s.icons[0].src)).size === 4 && man.icons.some((i) => i.purpose === 'maskable') && tm.width === 180 && !tm.hasAlpha, 'app icons: every manifest icon at its size, four shortcut pictures, a maskable one, an opaque 180 px iPhone icon');
-  await page.goto(`${BASE}/#/t/${T}/log/1`); await page.waitForSelector('#qtext');
+  await page.goto(`${BASE}/#/t/${T}/log/1/all`); await page.waitForSelector('#qtext');
   // the day as a message for relatives: title line, the quotes in quotation marks, never a link; the button only where the phone can share
   const shTxt = await page.evaluate(() => shareText(trip('hk-macau-2026'), 1));
   ok(shTxt.split('\n').length >= 2 && /“.+”/.test(shTxt) && !/https?:/.test(shTxt) && !/undefined/.test(shTxt), 'share text: title + quotes, no link');
@@ -719,14 +731,14 @@ const T = 'hk-macau-2026';
     const { execFile } = await import('node:child_process');
     const vf = path.join(OUT, 'clip-ui.mp4');
     await new Promise((res, rej) => execFile('ffmpeg', ['-hide_banner', '-loglevel', 'error', '-y', '-f', 'lavfi', '-i', 'testsrc=size=640x360:rate=12', '-f', 'lavfi', '-i', 'sine=frequency=330', '-t', '3', '-c:v', 'libx264', '-preset', 'ultrafast', '-c:a', 'aac', '-shortest', vf], (e) => (e ? rej(e) : res())));
-    await page.goto(`${BASE}/#/t/${T}/log/1`); await page.waitForSelector('[data-a="pickvideo"]');
+    await page.goto(`${BASE}/#/t/${T}/log/1/all`); await page.waitForSelector('[data-a="pickvideo"]');
     const ph0 = await page.evaluate(() => stats(trip('hk-macau-2026')).photos);
     const [vc] = await Promise.all([page.waitForEvent('filechooser'), page.click('[data-a="pickvideo"]')]);
     await vc.setFiles(vf);
     await page.waitForFunction(() => S.media.some((m) => (m.mime || '').startsWith('video/')), null, { timeout: 15000 });
     await page.waitForFunction(() => queue.length === 0, null, { timeout: 60000 });
     const sv = (await apiState(page)).media.find((m) => (m.mime || '').startsWith('video/'));
-    await page.goto(`${BASE}/#/t/${T}/log/1`); await page.waitForSelector('.vclip video');
+    await page.goto(`${BASE}/#/t/${T}/log/1/all`); await page.waitForSelector('.vclip video');
     const recOk = await page.evaluate(() => { const v = document.querySelector('.vclip video'); return !!v && /\/media\/.+\/t$/.test(v.getAttribute('poster') || '') && document.querySelector('.vclip .clipcap') && document.querySelector('.vclip [data-a="delclip"]').getBoundingClientRect().height >= 44; });
     await page.goto(`${BASE}/#/t/${T}/book`); await page.waitForSelector('#d1');
     const bookOk = await page.locator('#d1 .vclips.noprint video').count() === 1;
@@ -734,7 +746,7 @@ const T = 'hk-macau-2026';
     ok(!!sv && sv.mime === 'video/mp4' && sv.day === 1 && recOk && bookOk && posterOk && (await page.evaluate(() => stats(trip('hk-macau-2026')).photos)) === ph0,
       `video clip: sent, made into an mp4, plays on the record page (poster, caption, delete) and in the book (not printed), not counted as a photo (${JSON.stringify({ sv: !!sv, recOk, bookOk, posterOk })})`);
   }
-  await page.goto(`${BASE}/#/t/${T}/log/1`); await page.waitForSelector('.clips audio');
+  await page.goto(`${BASE}/#/t/${T}/log/1/all`); await page.waitForSelector('.clips audio');
   let st = await apiState(page);
   const es = st.entries.filter((e) => e.trip === 'hk-macau-2026' && e.day === 1);
   ok(es.filter((e) => e.kind === 'quote' && e.child === 'mika' && e.highlight).length === 1, 'server: one ⭐ quote by Mika');
@@ -921,6 +933,14 @@ const T = 'hk-macau-2026';
   ok(/hoi lin/i.test(await page.inputValue('#eatq')) && page.url().endsWith(`#/t/${T}/eat/all`), 'a place found by the search opens the eat list already filtered to it');
   await page.goto(`${BASE}/#/t/${T}/search`); await page.waitForSelector('#bookq'); await page.fill('#bookq', 'zzzzqq');
   ok(await page.locator('.sres li').count() === 0 && await page.locator('#bookres .empty').count() === 1, 'a word that is nowhere says so');
+  { // forgiving (owner: "อย่าตึงเกินไป"): nothing as typed → close matches, said so; a word that is found as typed shows no such line
+    await page.fill('#bookq', 'disnyland'); await page.waitForTimeout(200);
+    const fz = await page.evaluate(() => ({ n: document.querySelectorAll('#bookres .sres li').length, near: !!document.querySelector('#bookres .fznear'), mark: document.querySelectorAll('#bookres mark').length }));
+    await page.fill('#bookq', 'senadosquare'); await page.waitForTimeout(200); const op = await page.locator('#bookres .sres li').count();
+    await page.fill('#bookq', 'Disneyland'); await page.waitForTimeout(200); const ex = await page.locator('#bookres .fznear').count();
+    const nums = await page.evaluate(() => [fzAmount('1,200'), fzAmount('๑๒๐๐'), fzAmount('1.2k'), fzAmount('฿300'), fzAmount('3 พัน'), fzAmount('HK$ 85.50'), fzHeight('1.05 ม.'), fzHeight('105ซม'), fzHeight('๑๐๕')].join());
+    ok(fz.n > 0 && fz.near && fz.mark > 0 && op > 0 && ex === 0 && nums === '1200,1200,1200,300,3000,85.5,105,105,105',
+      `search forgives a slip and spacing and says the results are close ones; money and heights read the way people type them (${JSON.stringify(fz)} · senadosquare ${op} · ${nums})`); }
   // English reader, Thai word: the snippets stay English; an "If… then…" hit is titled by its situation, not the section name
   await page.fill('#bookq', 'หมอ'); await page.waitForTimeout(150);
   ok(await page.evaluate(() => [...document.querySelectorAll('.sres .ssnip')].every((x) => !/[\u0E00-\u0E7F]/.test(x.textContent))), 'English reader: every snippet is English even when a Thai word found it');
@@ -1741,7 +1761,7 @@ const T = 'hk-macau-2026';
   ok(s.errs.length === 0, 'no console errors: ' + s.errs.join(' | '));
 
   // offline capture → reconnect → drains once
-  await page.goto(`${BASE}/#/t/${T}/log/2`); await page.waitForSelector('#qtext');
+  await page.goto(`${BASE}/#/t/${T}/log/2/all`); await page.waitForSelector('#qtext');
   await s.ctx.setOffline(true);
   await page.fill('#qtext', 'ออฟไลน์บนสะพาน'); await page.click('button[data-a="savequote"]');
   await page.waitForSelector('.items .tag'); await page.waitForTimeout(50);   // the save's re-render first (it replaces the file input)
@@ -1917,7 +1937,7 @@ const T = 'hk-macau-2026';
     ok(await p.noHScroll(), `${w}px dark: no horizontal scroll`);
     ok(await p.page.evaluate(() => getComputedStyle(document.body).backgroundColor) === 'rgb(27, 34, 48)', `${w}px: dark paper`);
     await p.shot('book-dark');
-    await p.page.goto(`${BASE}/#/t/${T}/log/1`); await p.page.waitForSelector('.daystrip');
+    await p.page.goto(`${BASE}/#/t/${T}/log/1/all`); await p.page.waitForSelector('.daystrip');
     ok(await p.noHScroll(), `${w}px dark: record page fits`);
     await p.shot('record-dark');
     await p.page.goto(`${BASE}/#/passport/mimi`); await p.page.waitForSelector('.pp .dstamp');
@@ -1959,7 +1979,7 @@ const T = 'hk-macau-2026';
     ok(/ยาย/.test(cm.text) && cm.mine === 1 && saved === 1, `viewer: writes a line under the photo, shown with the name and removable by its writer (${cm.text.slice(0, 40)} · ${saved})`);
     await page.click('#lb [data-lb="close"]');
     await page.evaluate(() => localStorage.removeItem('mbs_heartfrom')); }   // the hearts below ask for the sender's name afresh
-  await page.goto(`${BASE}/#/t/${T}/log/1`); await page.waitForSelector('.cover');
+  await page.goto(`${BASE}/#/t/${T}/log/1/all`); await page.waitForSelector('.cover');
   ok(true, 'viewer: record URL falls back to the book');
   const w = await page.evaluate(async () => (await fetch('/api/b/entries/q-hack-0001', { method: 'PUT', headers: { 'x-mb': '1', 'content-type': 'application/json' }, body: JSON.stringify({ trip: 'hk-macau-2026', day: 0, kind: 'quote', child: 'mimi', text: 'x' }) })).status);
   ok(w === 403, 'viewer write → 403');
@@ -2168,7 +2188,7 @@ const T = 'hk-macau-2026';
   const p4 = await page.locator('.itin > li').nth(3).locator('.dayplan').textContent();
   ok(/11:00/.test(p4) && /teamLab/.test(p4) && /Plan B/.test(p4) && /Money today/.test(p4) && /Local tip/.test(p4), 'itinerary: day 4 plan shows the timeline, local tip, plan B and money');
   await page.locator('.itin > li').nth(3).screenshot({ path: path.join(OUT, 'countdown-05-dayplan.png') });
-  await page.goto(`${BASE}/#/t/${T}/log/3`); await page.waitForSelector('.planblk');
+  await page.goto(`${BASE}/#/t/${T}/log/3/all`); await page.waitForSelector('.planblk');
   ok(await page.locator('.planblk .dayplan').count() === 0 && await page.locator('.planblk details').count() === 0 && await page.locator('.planblk .pll > li').count() >= 4 && await page.$$eval('.planblk .pll > li', (ls) => ls.every((l) => l.querySelector('time').textContent.trim() && l.querySelector('span').textContent.trim().length > 3))
     && await page.locator(`.planblk a.learnlink[href="#/t/${T}/today/3/full"]`).count() === 1 && await page.locator('.planblk .plstay b').count() === 1 && !(await page.textContent('.planblk')).includes('Wong Chi Kei') && await s.noHScroll(),
     'record page: the plan is one fold and nothing folds inside it — a line a step (time + headline), tonight\'s bed, one link to the full plan (the manual page no longer sits in it)');
@@ -2266,7 +2286,7 @@ const T = 'hk-macau-2026';
     await s.shot('au-02-today-one-page', false);
   }
   { // photos by spot (owner, Nov 2026): the record page's photo box lists the day's places; a tap adds photos that carry the place and checks it in
-    await page.goto(`${BASE}/#/t/big-hop-2027/log/1`); await page.waitForSelector('#lgphotos .phstop');
+    await page.goto(`${BASE}/#/t/big-hop-2027/log/1/all`); await page.waitForSelector('#lgphotos .phstop');
     const read = () => page.$$eval('#lgphotos .phstop', (els) => els.map((e) => ({ place: e.dataset.place, kind: e.dataset.kind, key: e.dataset.key, h: Math.round(e.getBoundingClientRect().height), txt: e.textContent.trim(), shown: getComputedStyle(e).display !== 'none' })));
     const chips = await read(), vis = chips.filter((c) => c.shown);
     const plan = await page.evaluate(() => { const t = S.trips.find((x) => x.id === 'big-hop-2027'), d = t.days[1]; return { places: d.planned.filter((p) => p.kind !== 'food').map((p) => p.en), food: d.planned.filter((p) => p.kind === 'food').map((p) => p.en), bed: d.plan.stay.name, morning: t.days[0].plan.stay.name, was: S.places.filter((p) => p.trip === 'big-hop-2027').length }; });
@@ -2462,6 +2482,8 @@ const T = 'hk-macau-2026';
   await page.fill('#eatq', 'pie');
   const pies = await page.$$eval('.eatc', (els) => els.filter((e) => e.dataset.s.includes('pie')).length), shownPies = await page.locator('.eatc:visible').count();
   ok(shownPies === pies && pies > 10 && pies < 294 && await page.evaluate(() => document.activeElement.id) === 'eatq', `eat page: search filters in place and keeps the keyboard (${shownPies} pies)`);
+  await page.fill('#eatq', 'noodel'); const ndl = await page.locator('.eatc:visible').count(), ndn = await page.textContent('#eatn');
+  ok(ndl > 0 && ndl < 294 && /close|ใกล้เคียง/.test(ndn), `eat page: a slip ("noodel") still finds the noodles and says so (${ndl} · ${ndn})`);
   await page.fill('#eatq', ''); await page.click('[data-a="eatk"][data-v="2"]');
   ok(await page.locator('.eatc:visible').count() === 30, 'eat page: "cook it yourself" chip');
   await page.click('[data-a="eatk"][data-v="-1"]'); await page.click('[data-a="eatpick"]');
@@ -2617,7 +2639,7 @@ const T = 'hk-macau-2026';
   ok(zeros.length === 0, `menu tiles never show a zero or "0/6" (${zeros.join(' | ') || 'none'})`);
   // the same rule on every page a parent or a child reads before anything is recorded (a crawl of the app found these)
   { const Z = /(^|\s)0\/\d|(^|\s)0 (รูป|วัน|คำพูด|ครั้งแรก|ข้อความ|photos?|days?|quotes?|firsts?)\b/;
-    for (const [r, w] of [[`#/t/${T}/prep`, '.tp-prep, .glc'], [`#/passport/mika/big-hop-2027`, '.stkhd'], [`#/print/big-hop-2027`, '.facts'], [`#/t/big-hop-2027/log/12`, '#lgphotos'], ['#/kid/mika/stickers', '.stkhd'], ['#/kid/mika/trophies', '.trophies'], ['#/notebook', 'main h1'], ['#/family', '.famh3']]) {
+    for (const [r, w] of [[`#/t/${T}/prep`, '.tp-prep, .glc'], [`#/passport/mika/big-hop-2027`, '.stkhd'], [`#/print/big-hop-2027`, '.facts'], [`#/t/big-hop-2027/log/12/all`, '#lgphotos'], ['#/kid/mika/stickers', '.stkhd'], ['#/kid/mika/trophies', '.trophies'], ['#/notebook', 'main h1'], ['#/family', '.famh3']]) {
       await page.goto(`${BASE}/${r}`); await page.waitForSelector(w); const tx = await page.evaluate(() => (document.querySelector('main') || document.body).textContent.replace(/\s+/g, ' '));
       ok(!Z.test(tx), `${r}: no zero counter on the page (${(tx.match(Z) || [''])[0].trim() || 'none'})`); }
     // kid mode guards: a map with stops but no day that reaches one, two keys with one face in the match game, the words trophy, bubbles that survive a redraw, a child without a book
@@ -2631,7 +2653,7 @@ const T = 'hk-macau-2026';
     });
     ok(kidChecks.map === null && !kidChecks.dupes && kidChecks.words && kidChecks.kept === 7 && kidChecks.lock, `kid mode: no walk → no map (${kidChecks.map}); one card per face (dupes ${kidChecks.dupes}); the words trophy counts (${kidChecks.words}); bubbles keep their score over a redraw (${kidChecks.kept}); a child without a book keeps the lock (${kidChecks.lock})`);
     // the record page: the spend amount and the day's summary are different drafts; the quote's child chip never redraws the page
-    await page.goto(`${BASE}/#/t/${T}/log/1`); await page.waitForSelector('#spendamt'); await page.fill('#spendamt', '120'); await page.locator('#spendamt').blur();
+    await page.goto(`${BASE}/#/t/${T}/log/1/all`); await page.waitForSelector('#spendamt'); await page.fill('#spendamt', '120'); await page.locator('#spendamt').blur();
     const dr = await page.evaluate(() => { const ks = Object.keys(drafts); document.querySelector('#app').dataset.mark = 'kept'; return { sa: ks.some((k) => k.startsWith('sa:')), s: ks.some((k) => k.startsWith('s:')), sum: document.querySelector('#sumtext').value }; });
     await page.click('[data-a="who"][data-v="mika"]');
     ok(dr.sa && !dr.s && dr.sum !== '120' && await page.evaluate(() => document.querySelector('#app').dataset.mark === 'kept' && document.querySelector('[data-a="who"][data-v="mika"]').getAttribute('aria-pressed') === 'true'), 'record page: a typed amount never lands in the summary box; the child chip switches in place');
@@ -2656,7 +2678,7 @@ const T = 'hk-macau-2026';
   // every control a parent taps is at least 44 px tall on the pages used during the trip
   const audit = `(sel) => [...document.querySelectorAll(sel)].filter((e) => { const r = e.getBoundingClientRect(); return r.width > 0 && r.height > 0 && r.height < 44 && !e.closest('details:not([open])'); }).map((e) => (e.textContent || e.className).trim().slice(0, 24) + ' ' + Math.round(e.getBoundingClientRect().height))`;
   const SEL = 'main .chip, main .btn.small, main .mini, main .seg button, main .linkbtn, a.maplink, .navb, .stayc .go, .eatday .go, .bag summary, .chk label, .remind .btn, .lpc, .dmore > summary';
-  for (const [name, path, wait] of [['record', `/log/1`, '.daystrip'], ['today', `/today/1`, '.day.today'], ['eat', `/eat/d/1`, '.eatday'], ['sos', `/sos`, '.tp-sos']]) {
+  for (const [name, path, wait] of [['record', `/log/1/all`, '.daystrip'], ['today', `/today/1`, '.day.today'], ['eat', `/eat/d/1`, '.eatday'], ['sos', `/sos`, '.tp-sos']]) {
     await page.goto(`${BASE}/#/t/${T}${path}`); await page.waitForSelector(wait);
     const small = await page.evaluate(`(${audit})(${JSON.stringify(SEL)})`);
     ok(small.length === 0, `${name}: every tap target is 44 px or taller (${small.slice(0, 6).join(' | ') || 'all good'})`);

@@ -45,6 +45,84 @@ window.addEventListener('unhandledrejection', (e) => {
 const $ = (s, r = document) => r.querySelector(s);
 const $$ = (s, r = document) => Array.from(r.querySelectorAll(s));
 const esc = (s) => String(s == null ? '' : s).replace(/[&<>"']/g, (c) => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' }[c]));
+/* Forgiving search (owner, Nov 2026: "มีอะไรที่ flexible แบบนี้ได้อีกไหม อย่าตึงเกินไป"): every search box looks for the words as typed
+   first; only when nothing at all is found does it look again forgivingly (fzFind) — accents and spaces never count, and a slip of
+   a letter (one from 4 letters typed, two from 7: a change, a missing or extra letter, two letters swapped) still finds the word.
+   The planner's "where to" has its own ranking (views.js plFit); the book search, the search of every book, the photos, the
+   offline guide answers, the place-to-eat, things-to-do, town and place-sheet boxes use these. */
+const fzNorm = (x) => String(x || '').normalize('NFD').replace(/[̀-ͯ]/g, '').toLowerCase();
+const fzCompact = (x) => fzNorm(x).replace(/[^a-z0-9฀-๿一-鿿]+/g, '');
+const fzSlack = (n) => (n >= 7 ? 2 : n >= 4 ? 1 : 0);
+function fzEdit(a, b, max) {
+  if (Math.abs(a.length - b.length) > max) return max + 1;
+  let p2 = null, p1 = Array.from({ length: b.length + 1 }, (_, j) => j);
+  for (let i = 1; i <= a.length; i++) {
+    const cur = [i]; let low = i;
+    for (let j = 1; j <= b.length; j++) {
+      let v = Math.min(p1[j] + 1, cur[j - 1] + 1, p1[j - 1] + (a[i - 1] === b[j - 1] ? 0 : 1));
+      if (p2 && i > 1 && j > 1 && a[i - 1] === b[j - 2] && a[i - 2] === b[j - 1]) v = Math.min(v, p2[j - 2] + 1);
+      cur.push(v); if (v < low) low = v;
+    }
+    if (low > max) return max + 1;
+    p2 = p1; p1 = cur;
+  }
+  return p1[b.length];
+}
+// the piece of `text` that `w` finds forgivingly ('' = none): the same letters with other spacing or accents, else a word (Thai: a run
+// of letters, Thai has no spaces) a slip away. Three letters or fewer must be exact.
+function fzFind(text, w) {
+  const cw = fzCompact(w); if (cw.length < 3 || !text) return '';
+  const nt = fzNorm(text), ct = nt.replace(/[^a-z0-9฀-๿一-鿿]+/g, '');
+  if (ct.includes(cw)) return String(w);
+  const sl = fzSlack(cw.length); if (!sl) return '';
+  if (/[฀-๿一-鿿]/.test(cw)) {
+    const tt = ct.slice(0, 4000);
+    for (let len = Math.max(3, cw.length - sl); len <= cw.length + sl; len++) {
+      for (let i = 0; i + len <= tt.length; i++) {
+        if (tt[i] !== cw[0] && tt[i + 1] !== cw[1]) continue;   // a cheap first look before the full count
+        const seg = tt.substr(i, len); if (fzEdit(cw, seg, sl) <= sl) return seg;
+      }
+    }
+    return '';
+  }
+  for (const word of nt.split(/[^a-z0-9]+/)) {
+    if (word.length < 3) continue;
+    if (fzEdit(cw, word, sl) <= sl) return word;
+    if (word.length > cw.length && fzEdit(cw, word.slice(0, cw.length), sl) <= sl) return word.slice(0, cw.length);
+  }
+  // two words typed as one and a slip ("dimsun" for "dim sum"): the run of letters without spaces, in short texts only
+  if (ct.length <= 600) for (let i = 0; i + cw.length - sl <= ct.length; i++) {
+    if (ct[i] !== cw[0] && ct[i + 1] !== cw[1]) continue;
+    for (let len = Math.max(3, cw.length - sl); len <= cw.length + sl && i + len <= ct.length; len++) if (fzEdit(cw, ct.substr(i, len), sl) <= sl) return ct.substr(i, len);
+  }
+  return '';
+}
+// a filter over things shown on the page: the exact matches, or — only when there are none — the forgiving ones. → {ok(i), near}
+function fzFilter(texts, q) {
+  const k = fzNorm(q).trim(); if (!k) return { ok: () => true, near: false };
+  const exact = texts.map((t) => fzNorm(t).includes(k));
+  if (exact.some(Boolean)) return { ok: (i) => exact[i], near: false };
+  const words = k.split(/\s+/).filter(Boolean), near = texts.map((t) => words.every((w) => fzNorm(t).includes(w) || !!fzFind(t, w)));
+  return { ok: (i) => near[i], near: near.some(Boolean) };
+}
+/* Numbers typed the way people type them (the same ask): Thai digits (๑๒๐๐), thousands commas, a currency sign, and a short word
+   for thousands — 1.2k, 1,200, ฿300, ¥12,000, 3 พัน, 2 หมื่น, 1.5 แสน, 2 ล้าน. NaN when there is no number. */
+function fzAmount(x) {
+  let s = String(x == null ? '' : x).replace(/[๐-๙]/g, (d) => String(d.charCodeAt(0) - 0x0E50)).trim().toLowerCase();
+  // the word for thousands counts only right after the number ("HK$ 85" is not 85 thousand)
+  const mult = /\d\s*(?:ล้าน|m(?![a-z]))/.test(s) ? 1e6 : /\d\s*แสน/.test(s) ? 1e5 : /\d\s*หมื่น/.test(s) ? 1e4 : /\d\s*(?:พัน|k(?![a-z]))/.test(s) ? 1e3 : 1;
+  s = s.replace(/(\d),(?=\d{3}\b)/g, '$1');
+  const m = s.match(/\d+(?:\.\d+)?|\.\d+/); if (!m) return NaN;
+  return Math.round(parseFloat(m[0]) * mult * 100) / 100;
+}
+// a child's height in cm, typed any way: 105, 105 ซม., 105cm, 1.05 ม., 1.05m, ๑๐๕
+function fzHeight(x) {
+  const s = String(x == null ? '' : x).replace(/[๐-๙]/g, (d) => String(d.charCodeAt(0) - 0x0E50)).replace(',', '.').toLowerCase();
+  const m = s.match(/\d+(?:\.\d+)?/); if (!m) return NaN;
+  let v = parseFloat(m[0]);
+  if (v > 0 && v < 3) v *= 100;   // metres
+  return Math.round(v * 10) / 10;
+}
 // one line-icon set for the grown-ups' pages (kid mode keeps its emoji): 24-unit grid, 1.75 stroke, drawn in currentColor
 const ICONS = {
   search: '<circle cx="11" cy="11" r="7"/><path d="M20 20l-4-4"/>',

@@ -3886,6 +3886,49 @@ img.tpic{width:28px;height:28px;vertical-align:middle;margin:-4px 0;object-fit:c
 .plctyn{display:inline-flex;align-items:center;gap:8px;font-size:18px}.plctyn img{width:40px;height:40px;border-radius:50%;background:#fff;object-fit:contain}
 .plallcc{min-height:44px}
 :root[data-theme=dark] .plcard .plcp,:root[data-theme=dark] .plctyn img{background:#F4F1EA}
+/* the record page's sections as cards (views.js lgCards; owner, Nov 2026: "ไม่เอาแบบเส้นๆสีๆ … kid friendly and worldclass"): no coloured
+   rules — each card is a soft pastel of its own colour with big round corners, its painted picture in a white circle, a friendly bold
+   heading; the boxes inside are white and borderless, so the card reads as one calm, playful surface */
+.blk.lgc{margin:12px 0;padding:16px 16px 18px;border:0;border-radius:26px;background:color-mix(in srgb,var(--g1) 11%,var(--card));box-shadow:0 1px 0 color-mix(in srgb,var(--g1) 14%,transparent)}
+.blk.lgc>h3{font-family:var(--ui);font-size:19px;font-weight:800;letter-spacing:-.01em;align-items:center;gap:12px;margin:0 0 12px;line-height:1.2;color:color-mix(in srgb,var(--g1) 30%,var(--ink))}
+.blk.lgc>h3 .label{font-size:13px;font-weight:600;color:color-mix(in srgb,var(--g1) 40%,var(--muted))}
+.blk.lgc>h3 .pcpic{flex:none;display:grid;place-items:center;width:50px;height:50px;border-radius:50%;background:#fff;box-shadow:0 4px 12px -4px color-mix(in srgb,var(--g1) 45%,transparent)}
+.blk.lgc>h3 .pcpic img{width:40px;height:40px;object-fit:contain}
+.blk.lgc>h3 .pcpic .ic{width:24px;height:24px;color:color-mix(in srgb,var(--g1) 70%,var(--ink))}
+.blk.lgc .field{background:var(--card);border-color:transparent;border-radius:16px;box-shadow:0 1px 3px rgba(16,24,32,.06)}
+.blk.lgc .field:focus{border-color:color-mix(in srgb,var(--g1) 55%,var(--ink))}
+.blk.lgc .btn{border-radius:999px}
+.blk.lgc .btn.ghost{background:var(--card);border-color:transparent;box-shadow:0 1px 3px rgba(16,24,32,.08)}
+.blk.lgc .first,.blk.lgc .check{background:var(--card);border-color:transparent;border-radius:16px}
+.planblk+.blk.lgc{margin-top:6px}   /* the photos card sits right under the folded plan line */
+.blk.lgc.dayendblk{background:color-mix(in srgb,var(--accent) 7%,var(--card))}
+:root[data-theme=dark] .blk.lgc{background:color-mix(in srgb,var(--g1) 14%,var(--card))}
+:root[data-theme=dark] .blk.lgc>h3{color:color-mix(in srgb,var(--g1) 25%,#fff)}
+:root[data-theme=dark] .blk.lgc>h3 .pcpic{background:#F4F1EA}
+@media (prefers-color-scheme:dark){:root:not([data-theme=light]) .blk.lgc{background:color-mix(in srgb,var(--g1) 14%,var(--card))}:root:not([data-theme=light]) .blk.lgc>h3{color:color-mix(in srgb,var(--g1) 25%,#fff)}:root:not([data-theme=light]) .blk.lgc>h3 .pcpic{background:#F4F1EA}}
+/* the day's three links under "day done": one width each — stacked on a phone, side by side where they fit */
+.blk.lgc.dayendblk .row{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,210px),1fr));gap:8px}
+.blk.lgc.dayendblk .row>.btn{width:100%;justify-content:center;margin:0}
+/* "more" folds like a card heading too */
+details.more>summary{border-radius:16px}
+/* the record page's overview: a tile a step, in the cards' pastel look */
+.lgtiles{display:grid;grid-template-columns:repeat(auto-fill,minmax(min(100%,150px),1fr));gap:12px;margin:6px 0 14px}
+.lgtile{position:relative;display:flex;flex-direction:column;align-items:flex-start;gap:6px;min-height:132px;padding:14px;border-radius:24px;text-decoration:none;color:var(--ink);background:color-mix(in srgb,var(--g1) 11%,var(--card))}
+.lgtile .pcpic{display:grid;place-items:center;width:54px;height:54px;border-radius:50%;background:#fff;box-shadow:0 4px 12px -4px color-mix(in srgb,var(--g1) 45%,transparent)}
+.lgtile .pcpic img{width:44px;height:44px;object-fit:contain}
+.lgtile b{font-size:16px;font-weight:800;line-height:1.2;color:color-mix(in srgb,var(--g1) 30%,var(--ink))}
+.lgtile small{font-size:13px;color:var(--muted);line-height:1.3}
+.lgtile .lgok{position:absolute;top:12px;right:12px;width:26px;height:26px;border-radius:50%;display:grid;place-items:center;font-style:normal;font-size:14px;font-weight:800;color:#fff;background:color-mix(in srgb,var(--g1) 75%,var(--ink))}
+.lgtile.end{grid-column:1/-1;flex-direction:row;align-items:center;min-height:84px}
+.lgtile.end .pcpic{flex:none}.lgtile.end b{flex:none}.lgtile.end small{flex:1}
+.lgqs{margin-top:10px}
+.lgstep>.blk.lgc:first-child,.lgstep>details:first-child{margin-top:4px}
+:root[data-theme=dark] .lgtile{background:color-mix(in srgb,var(--g1) 14%,var(--card))}
+:root[data-theme=dark] .lgtile b{color:color-mix(in srgb,var(--g1) 25%,#fff)}
+:root[data-theme=dark] .lgtile .pcpic{background:#F4F1EA}
+@media (prefers-color-scheme:dark){:root:not([data-theme=light]) .lgtile{background:color-mix(in srgb,var(--g1) 14%,var(--card))}:root:not([data-theme=light]) .lgtile b{color:color-mix(in srgb,var(--g1) 25%,#fff)}:root:not([data-theme=light]) .lgtile .pcpic{background:#F4F1EA}}
+.lgallgo{margin:2px 0 10px;text-align:center}.lgallgo .linkbtn{display:inline-flex;align-items:center;min-height:44px}
+.lgallnav{margin:8px 0 0}.lgallnav .btn{min-height:44px}
 
 /* the rough budget of a planned route (docs/BUDGET.md B1) */
 .plbudget .pch{margin:0 0 8px;font-size:17px}
