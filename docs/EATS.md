@@ -193,6 +193,11 @@ Owner: "เช็กร้านอาหารที่ยังไม่ได
 Macau, Japan, Korea, Vietnam, Malaysia and part of Thailand (about 120 rows): 15 confirmed open (`ok 2026-11`), one closed and removed
 (Sukhothai). The rest stay as they were — "not found" on a search result is not a closure, and the session could not open the pages
 themselves.
+Round 2 read the pages with curl (Wongnai, TVBS, Wanderlog, dated articles): Taiwan, Hong Kong, Macau, Japan, Korea, Vietnam, Malaysia,
+Cambodia, Laos and Thailand, about 160 rows — 43 more confirmed open, 2 closed and removed (The Blue Pumpkin in Siem Reap, Xieng Thong
+Noodle in Luang Prabang). 2,674 rows now carry `ok`, 369 do not. To look at next: rows filed under the wrong town (Lu Lam is in Chiang Rai,
+Pee Pee Bakery on Phi Phi, Zest Coffee Lounge on Koh Tao, Dairy Home at Muak Lek), the renamed A-Tang Salty Congee in Tainan, the moved
+Red Gate Bakery in Nha Trang, and the mall food courts no page names.
 
 - A file is `{"cc", "towns": [{"place": "<picture-library city id>", "places": [row…]}]}`; the header of `scripts/eats-lint.mjs` gives
   the row's fields. `npm run eats:lint` checks every file and that every city of the picture library has its list (test/infra runs it).

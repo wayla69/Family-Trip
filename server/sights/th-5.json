@@ -176,6 +176,57 @@
           "q": "Suan La-Mai, Rayong",
           "ok": "2026-11",
           "src": "https://www.thairath.co.th/lifestyle/travel/2773658"
+        },
+        {
+          "name": { "en": "Suphattra Land", "th": "ศุภัตรา แลนด์" },
+          "kind": "farm",
+          "area": { "en": "Ban Khai", "th": "บ้านค่าย" },
+          "what": { "en": "A big fruit garden with a tram ride and, in season, a durian-and-fruit buffet among the orchards", "th": "สวนผลไม้ขนาดใหญ่ มีรถรางพาชมสวน และบุฟเฟต์ทุเรียนกับผลไม้ในฤดูกาล" },
+          "why": { "en": "The tram saves little legs, there is shade, and children under 90 cm go in free", "th": "มีรถรางช่วยให้เด็กไม่เหนื่อย มีร่มเงา และเด็กสูงไม่ถึง 90 ซม. เข้าฟรี" },
+          "tip": { "en": "Open daily about 08:00–17:00; the durian buffet runs April–August; booking ahead costs less", "th": "เปิดทุกวันราว 08:00–17:00 บุฟเฟต์ทุเรียนช่วงเมษายน–สิงหาคม จองล่วงหน้าถูกกว่า" },
+          "ages": [1, 2, 2, 1],
+          "hrs": 3,
+          "io": "both",
+          "pram": "part",
+          "price": { "en": "≈ ฿650 Thai adults · ฿700 foreigners · under 90 cm free · 90–120 cm half price (buffet season; check)", "th": "≈ ฿650 คนไทย · ฿700 ชาวต่างชาติ · เด็กต่ำกว่า 90 ซม. ฟรี · 90–120 ซม. ครึ่งราคา (ช่วงบุฟเฟต์ เช็กอีกครั้ง)" },
+          "book": "rec",
+          "q": "Suphattra Land, Ban Khai, Rayong",
+          "ok": "2026-11",
+          "src": "https://thailandtourismdirectory.go.th/en/activities/102553"
+        },
+        {
+          "name": { "en": "Koh Kloi floating market", "th": "ตลาดน้ำเกาะกลอย" },
+          "kind": "market",
+          "area": { "en": "Koh Kloi", "th": "เกาะกลอย" },
+          "what": { "en": "A small canal-side market of local snacks and cheap goods beside Central Plaza Rayong, by the Koh Kloi junction", "th": "ตลาดริมคลองเล็กๆ ขายขนมพื้นเมืองและของราคาถูก ข้างเซ็นทรัลพลาซา ระยอง ตรงสี่แยกเกาะกลอย" },
+          "why": { "en": "Easy and free for a quick snack stop on the way into town; it is quiet on weekdays and some stalls are shut", "th": "แวะกินขนมได้ง่ายและฟรีระหว่างทางเข้าเมือง วันธรรมดาเงียบและร้านบางส่วนปิด" },
+          "tip": { "en": "Open about 08:00–18:30 on weekdays and to 19:30 at weekends", "th": "เปิดราว 08:00–18:30 วันธรรมดา และถึง 19:30 วันเสาร์–อาทิตย์" },
+          "ages": [1, 1, 1, 1],
+          "hrs": 1,
+          "io": "out",
+          "pram": "yes",
+          "price": { "en": "Free to enter · pay for food", "th": "ฟรี · จ่ายค่าอาหาร" },
+          "book": "none",
+          "q": "Koh Kloi Floating Market, Rayong",
+          "ok": "2026-11",
+          "src": "https://www.rayong-pao.go.th/th/travel/g/6/detail-news/11902.html"
+        },
+        {
+          "name": { "en": "Laem Charoen Beach", "th": "หาดแหลมเจริญ" },
+          "kind": "beach",
+          "area": { "en": "Rayong city", "th": "ตัวเมืองระยอง" },
+          "what": { "en": "A pine-shaded beach 15 minutes from Rayong city, with seaside cafés, and weekend mini tractors and beach painting for children", "th": "ชายหาดร่มสนห่างตัวเมืองระยองราว 15 นาที มีคาเฟ่ริมทะเล และวันหยุดมีรถแทรกเตอร์คันเล็กกับกิจกรรมวาดภาพริมหาดให้เด็กเล่น" },
+          "why": { "en": "Easy for a picnic and a paddle; the mini tractors carry up to 60 kg and stay on the sand, away from the sea", "th": "ปูเสื่อนั่งเล่นลงเล่นน้ำง่าย รถแทรกเตอร์คันเล็กรับน้ำหนักได้ 60 กก. และขับบนทรายเท่านั้น ไม่ลงทะเล" },
+          "tip": { "en": "Weekends are livelier; the activities are priced separately", "th": "วันเสาร์–อาทิตย์คึกคักกว่า กิจกรรมคิดเงินแยก" },
+          "ages": [1, 2, 2, 1],
+          "hrs": 2,
+          "io": "out",
+          "pram": "part",
+          "price": { "en": "Free to visit · activities priced separately", "th": "ฟรี · กิจกรรมคิดเงินแยก" },
+          "book": "none",
+          "q": "Laem Charoen Beach, Rayong",
+          "ok": "2026-11",
+          "src": "https://rayong.holidayinn.com/blog/travel-rayong-family"
         }
       ]
     }

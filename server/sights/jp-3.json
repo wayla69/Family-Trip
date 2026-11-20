@@ -828,7 +828,6 @@
     },
     {
       "place": "jp-kumamoto",
-      "thin": true,
       "sights": [
         {
           "name": { "en": "Kumamoto Castle", "th": "ปราสาทคุมาโมโตะ" },
@@ -855,7 +854,7 @@
           "area": { "en": "Sakuranobaba Josaien", "th": "ซากุระโนะบาบะ โจไซเอ็น" },
           "what": { "en": "A hands-on museum with a film, models and games about the castle's history", "th": "พิพิธภัณฑ์ที่เด็กลงมือเล่นได้ มีภาพยนตร์ โมเดล และเกมเล่าประวัติปราสาท" },
           "why": { "en": "A dry stop in the rain, with screens and games that keep children busy", "th": "ที่หลบฝน มีจอและเกมให้เด็กเล่นจนไม่เบื่อ" },
-          "tip": { "en": "Open 09:00–17:30, last entry 17:00; closed 29–31 December", "th": "เปิด 09:00–17:30 เข้าได้ถึง 17:00 ปิด 29–31 ธันวาคม" },
+          "tip": { "en": "Closed after the July 2026 earthquake; reopening is planned for December 2026 — check before you go", "th": "ปิดหลังแผ่นดินไหวเดือน ก.ค. 2026 มีแผนเปิดอีกครั้ง ธ.ค. 2026 เช็กก่อนไป" },
           "ages": [1, 2, 2, 1],
           "hrs": 1,
           "io": "in",
@@ -1079,6 +1078,24 @@
           "q": "Kumamoto Station tram stop, Kumamoto City",
           "ok": "2026-11",
           "src": "https://kumamoto-guide.jp/en/faq/"
+        },
+        {
+          "name": { "en": "Kamitori Shopping Arcade", "th": "คามิโตริ อาร์เคด" },
+          "local": "上通アーケード",
+          "kind": "shop",
+          "area": { "en": "Chuo Ward", "th": "เขตชูโอ" },
+          "what": { "en": "A 360 m covered arcade of old and new shops and cafés under a high glass roof, a short walk from the tram stop", "th": "อาร์เคดมีหลังคาคลุมยาว 360 เมตร มีร้านเก่าใหม่และคาเฟ่ใต้หลังคากระจกสูง เดินจากป้ายรถรางไม่ไกล" },
+          "why": { "en": "Flat, sheltered from rain and sun, and calmer than the neighbouring Shimotori arcade", "th": "ทางเรียบ กันฝนกันแดด และเงียบกว่าอาร์เคดชิโมโทริที่อยู่ติดกัน" },
+          "tip": { "en": "Bicycles are not allowed inside; get off the city tram at Torichosuji", "th": "ห้ามขี่จักรยานเข้าไป ลงรถรางที่ป้ายโทริโชซูจิ" },
+          "ages": [1, 1, 2, 1],
+          "hrs": 1.5,
+          "io": "both",
+          "pram": "yes",
+          "price": { "en": "Free", "th": "ฟรี" },
+          "book": "none",
+          "q": "Kamitori Shopping Arcade, Chuo Ward, Kumamoto",
+          "ok": "2026-11",
+          "src": "https://kumamoto-guide.jp/en/spots/detail/138"
         }
       ]
     },
@@ -1652,7 +1669,6 @@
     },
     {
       "place": "jp-nikko",
-      "thin": true,
       "sights": [
         {
           "name": { "en": "Edo Wonderland Nikko Edomura", "th": "เอโดะ วันเดอร์แลนด์ นิกโก้ เอโดมุระ" },
@@ -1851,6 +1867,78 @@
           "q": "Nikko Toshogu Museum, Sannai, Nikko",
           "ok": "2026-11",
           "src": "https://www.japan-guide.com/e/e3801.html"
+        },
+        {
+          "name": { "en": "Kanaya Hotel History House", "th": "บ้านประวัติศาสตร์โรงแรมคานายะ" },
+          "local": "日光金谷ホテル歴史館",
+          "kind": "museum",
+          "area": { "en": "Nikko town", "th": "เมืองนิกโก้" },
+          "what": { "en": "The wooden two-storey guesthouse of 1872 that came before the Kanaya Hotel, with tatami rooms, narrow stairs and a garden", "th": "บ้านพักไม้สองชั้นปี 1872 ก่อนจะเป็นโรงแรมคานายะ มีห้องเสื่อทาทามิ บันไดแคบ และสวน" },
+          "why": { "en": "Children like the creaky stairs and the garden view from upstairs; shoes come off", "th": "เด็กชอบบันไดลั่นเอี๊ยดและมุมมองสวนจากชั้นบน ต้องถอดรองเท้า" },
+          "tip": { "en": "Tickets are sold at the bakery next door; closed 2–3 irregular days a month from December to February", "th": "ซื้อตั๋วที่ร้านเบเกอรี่ข้างๆ ธันวาคมถึงกุมภาพันธ์ปิดไม่แน่นอนเดือนละ 2–3 วัน" },
+          "ages": [0, 1, 1, 2],
+          "hrs": 0.75,
+          "io": "in",
+          "pram": "no",
+          "price": { "en": "≈ ¥550 adults (check the child price)", "th": "≈ ¥550 ผู้ใหญ่ (เช็กราคาเด็กก่อนไป)" },
+          "book": "none",
+          "q": "Kanaya Hotel History House, Kamihatsuishimachi, Nikko",
+          "ok": "2026-11",
+          "src": "https://www.japan-guide.com/e/e3823.html"
+        },
+        {
+          "name": { "en": "Shinkyo Bridge", "th": "สะพานชินเคียว" },
+          "local": "神橋",
+          "kind": "culture",
+          "area": { "en": "Nikko town", "th": "เมืองนิกโก้" },
+          "what": { "en": "A vermilion arched bridge over the Daiya River at the foot of the shrine road, one of Nikko's best-known sights", "th": "สะพานโค้งสีแดงชาดข้ามแม่น้ำไดยะที่ทางเข้าถนนสู่ศาลเจ้า เป็นจุดเด่นของนิกโก้" },
+          "why": { "en": "A short, easy stop: kids enjoy the river below and the bridge's curve; stairs make prams awkward", "th": "แวะสั้นๆ ง่าย เด็กๆ ชอบแม่น้ำข้างล่างและทางโค้งของสะพาน แต่บันไดทำให้เข็นรถเข็นลำบาก" },
+          "tip": { "en": "Crossing the bridge itself costs a small fee; viewing it from the road next to it is free", "th": "ถ้าจะเดินข้ามสะพานต้องจ่ายค่าเข้าเล็กน้อย ส่วนมองจากถนนข้างสะพานฟรี" },
+          "ages": [1, 1, 1, 1],
+          "hrs": 0.5,
+          "io": "out",
+          "pram": "part",
+          "price": { "en": "≈ ¥300 to cross (viewing from the road is free)", "th": "≈ ¥300 สำหรับเดินข้าม (ยืนดูจากถนนฟรี)" },
+          "book": "none",
+          "q": "Shinkyo Bridge, Sannai, Nikko",
+          "ok": "2026-11",
+          "src": "https://www.japan-guide.com/e/e3814.html"
+        },
+        {
+          "name": { "en": "Senjogahara Marshland", "th": "ทุ่งเซ็นโจกาฮาระ" },
+          "local": "戦場ヶ原",
+          "kind": "nature",
+          "area": { "en": "Okunikko", "th": "โอคุนิกโก้" },
+          "what": { "en": "A high marshland plateau at 1,400 m with a boardwalk trail along the Yukawa River and mountain views, between Lake Chuzenji and Yumoto Onsen", "th": "ที่ราบชุ่มน้ำสูง 1,400 เมตร มีทางเดินไม้ริมแม่น้ำยูกาวะและวิวภูเขา อยู่ระหว่างทะเลสาบชูเซนจิกับยูโมโตะออนเซ็น" },
+          "why": { "en": "Wide open and level in parts, so little ones can do a short stretch; the whole trail takes 2.5–3 hours", "th": "บางช่วงโล่งและราบ เด็กเล็กเดินช่วงสั้นๆ ได้ ทั้งเส้นใช้เวลา 2.5–3 ชั่วโมง" },
+          "tip": { "en": "Cold at altitude; snow often covers the trail from December to March, so check before a winter visit", "th": "อากาศหนาวเพราะอยู่สูง ธันวาคมถึงมีนาคมมักมีหิมะปิดทาง เช็กก่อนไปหน้าหนาว" },
+          "ages": [0, 1, 2, 2],
+          "hrs": 2,
+          "io": "out",
+          "pram": "part",
+          "price": { "en": "Free", "th": "ฟรี" },
+          "book": "none",
+          "q": "Senjogahara Marshland, Okunikko, Nikko",
+          "ok": "2026-11",
+          "src": "https://www.japan-guide.com/e/e3811.html"
+        },
+        {
+          "name": { "en": "Lake Chuzenji", "th": "ทะเลสาบชูเซนจิ" },
+          "local": "中禅寺湖",
+          "kind": "nature",
+          "area": { "en": "Chuzenji Onsen, Okunikko", "th": "ชูเซนจิออนเซ็น โอคุนิกโก้" },
+          "what": { "en": "A cool mountain lake at the foot of Mount Nantai, with a small lakeside town next to Kegon Waterfall and walks along the shore", "th": "ทะเลสาบบนภูเขาที่เชิงเขานันไต มีเมืองเล็กริมทะเลสาบใกล้น้ำตกเคงอนและทางเดินริมฝั่ง" },
+          "why": { "en": "Easy to enjoy from the shore at the town end: skimming stones, feeding the eye with views, and a short stroll", "th": "ริมฝั่งฝั่งเมืองเดินเล่นสบาย ขว้างหินเล่นน้ำ ชมวิว ใช้เวลาไม่นาน" },
+          "tip": { "en": "Much colder than the town below; the lake is at about 1,270 m, so bring an extra layer", "th": "หนาวกว่าตัวเมืองด้านล่างมาก ทะเลสาบสูงราว 1,270 เมตร เตรียมเสื้อเพิ่ม" },
+          "ages": [1, 1, 2, 2],
+          "hrs": 1.5,
+          "io": "out",
+          "pram": "yes",
+          "price": { "en": "Free", "th": "ฟรี" },
+          "book": "none",
+          "q": "Lake Chuzenji, Chuzenji Onsen, Nikko",
+          "ok": "2026-11",
+          "src": "https://www.japan-guide.com/e/e3806.html"
         }
       ]
     },

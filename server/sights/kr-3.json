@@ -314,7 +314,6 @@
     },
     {
       "place": "kr-gyeongju",
-      "thin": true,
       "sights": [
         {
           "name": { "en": "Gyeongju World", "th": "คย็องจูเวิลด์" },
@@ -567,12 +566,29 @@
           "book": "none",
           "q": "Hwangnyongsa Temple History and Culture Hall, 64-19 Imhae-ro, Gyeongju",
           "src": "https://english.visitkorea.or.kr/svc/contents/contentsView.do?menuSn=219&vcontsId=221789"
+        },
+        {
+          "name": { "en": "Bulguksa Temple", "th": "วัดพุลกุกซา" },
+          "local": "불국사",
+          "kind": "culture",
+          "area": { "en": "Jinhyeon-dong", "th": "ชินฮยอนดง" },
+          "what": { "en": "A UNESCO-listed hillside temple of stone terraces and the twin pagodas Dabotap and Seokgatap, built in the Silla era", "th": "วัดบนเนินเขาที่ขึ้นทะเบียนมรดกโลก มีลานหินและเจดีย์คู่ทาโบทับกับซอกกาทับ สร้างสมัยชิลลา" },
+          "why": { "en": "Wide courtyards and short flights of stone steps; children can run along the open paths while you look at the pagodas", "th": "ลานกว้างและบันไดหินสั้นๆ เด็กวิ่งเล่นตามทางโล่งได้ขณะที่พ่อแม่ชมเจดีย์" },
+          "tip": { "en": "Entry has been free since May 2023; last entry 5 pm from November to January; parking about ₩2,000", "th": "เข้าชมฟรีตั้งแต่พฤษภาคม 2023 ช่วงพฤศจิกายนถึงมกราคมเข้าได้ถึง 17:00 ค่าจอดรถราว ₩2,000" },
+          "ages": [1, 1, 2, 2],
+          "hrs": 2,
+          "io": "out",
+          "pram": "part",
+          "price": { "en": "Free", "th": "ฟรี" },
+          "book": "none",
+          "q": "Bulguksa Temple, Jinhyeon-dong, Gyeongju",
+          "ok": "2026-11",
+          "src": "https://www.koursea.com/gyeongju-bulguksa-seokguram-grotto-morning-transit-guide.html"
         }
       ]
     },
     {
       "place": "kr-jeonju",
-      "thin": true,
       "sights": [
         {
           "name": { "en": "Jeonju Hanok Village", "th": "หมู่บ้านฮันนอกจอนจู" },
@@ -825,6 +841,23 @@
           "book": "none",
           "q": "Palbok Art Factory, 46 Guretdeul 1-gil, Deokjin-gu, Jeonju",
           "src": "https://english.visitkorea.or.kr/svc/whereToGo/locIntrdn/rgnContentsView.do?vcontsId=195027"
+        },
+        {
+          "name": { "en": "Jeonju Hanok Village History Museum", "th": "พิพิธภัณฑ์ประวัติศาสตร์หมู่บ้านฮันอกจอนจู" },
+          "kind": "museum",
+          "area": { "en": "Hanok Village", "th": "หมู่บ้านฮันอก" },
+          "what": { "en": "A free museum with permanent and special exhibitions on how the Jeonju Hanok Village formed and changed, and a playground on site", "th": "พิพิธภัณฑ์เข้าฟรี มีนิทรรศการถาวรและพิเศษเรื่องการก่อตัวและเปลี่ยนแปลงของหมู่บ้านฮันอกจอนจู และมีสนามเด็กเล่นในบริเวณ" },
+          "why": { "en": "A quiet, free indoor stop out of the weather in the middle of the busy village, with space outside for children to run", "th": "จุดแวะในร่มที่ฟรีและเงียบ ท่ามกลางหมู่บ้านที่คนเยอะ มีที่ข้างนอกให้เด็กวิ่งเล่น" },
+          "tip": { "en": "Open 10:00–18:00, last entry 17:45; closed on Mondays", "th": "เปิด 10:00–18:00 เข้าได้ถึง 17:45 ปิดวันจันทร์" },
+          "ages": [1, 2, 2, 1],
+          "hrs": 1,
+          "io": "both",
+          "pram": "part",
+          "price": { "en": "Free", "th": "ฟรี" },
+          "book": "none",
+          "q": "Jeonju Hanok Village History Museum, Wansan-gu, Jeonju",
+          "ok": "2026-11",
+          "src": "https://tour.jeonju.go.kr/eng/board/view.jeonju?boardId=BBS_0000016&menuCd=DOM_000000201009000000&paging=ok&startPage=1&searchType=DATA_TITLE&keyword=history&dataSid=10058"
         }
       ]
     },

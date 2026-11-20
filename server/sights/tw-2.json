@@ -3,7 +3,6 @@
   "towns": [
     {
       "place": "tw-central",
-      "thin": true,
       "sights": [
         {
           "name": { "en": "National Museum of Natural Science", "th": "พิพิธภัณฑ์วิทยาศาสตร์ธรรมชาติแห่งชาติ" },
@@ -256,6 +255,23 @@
           "book": "none",
           "q": "Aofeng Mountain Park Guliu Playground, Qingshui District, Taichung",
           "src": "https://udn.com/news/story/7325/9504780"
+        },
+        {
+          "name": { "en": "Dakeng Hiking Trail No. 9", "th": "เส้นทางเดินป่าต้าเคิงหมายเลข 9" },
+          "kind": "nature",
+          "area": { "en": "Beitun District", "th": "เขตเป่ยถุน" },
+          "what": { "en": "A 1.6 km shaded trail rated for parents with children, with city views, an old Japanese-era ammunition depot and a link to the Dakeng Earthquake Park", "th": "เส้นทางร่มรื่น 1.6 กม. จัดว่าเหมาะกับพ่อแม่และเด็ก มีวิวเมือง คลังกระสุนเก่าสมัยญี่ปุ่น และต่อกับสวนแผ่นดินไหวต้าเคิง" },
+          "why": { "en": "Taichung Tourism lists it for parent and child walks; about an hour, with parking at the Jingbu lot beside the earthquake park", "th": "การท่องเที่ยวไทจงจัดไว้สำหรับพาเด็กเดิน ใช้เวลาราวหนึ่งชั่วโมง จอดรถที่ลานจิงปู้ข้างสวนแผ่นดินไหว" },
+          "tip": { "en": "Bring water and insect repellent; some other Dakeng trails are steep or renovating, so stay on No. 9", "th": "เตรียมน้ำดื่มและยากันยุง เส้นทางอื่นของต้าเคิงบางเส้นชันหรือกำลังปรับปรุง เลือกเส้นหมายเลข 9" },
+          "ages": [0, 1, 2, 2],
+          "hrs": 1,
+          "io": "out",
+          "pram": "no",
+          "price": { "en": "Check the price", "th": "เช็กราคาก่อนไป" },
+          "book": "none",
+          "q": "Dakeng Hiking Trail No. 9, Jingbu Road, Beitun District, Taichung",
+          "ok": "2026-11",
+          "src": "https://taichung.travel/en/experience/hikingtrail/10"
         }
       ]
     },
@@ -460,6 +476,57 @@
           "book": "none",
           "q": "Danong Dafu Forest Park, Nongchang Road, Guangfu, Hualien",
           "src": "https://bunnyann.tw/hualien-free/"
+        },
+        {
+          "name": { "en": "Fuyuan National Forest Recreation Area", "th": "เขตนันทนาการป่าไม้แห่งชาติฝูหยวน" },
+          "kind": "nature",
+          "area": { "en": "Ruisui", "th": "รุ่ยซุ่ย" },
+          "what": { "en": "A 196-hectare forest park with shaded walking paths, a butterfly valley in spring and summer and fireflies in season", "th": "สวนป่า 196 เฮกตาร์ มีทางเดินร่มรื่น หุบเขาผีเสื้อช่วงฤดูใบไม้ผลิถึงฤดูร้อน และหิ่งห้อยตามฤดู" },
+          "why": { "en": "Easy forest paths and room to run; the youngest ride free and ages 4–12 pay a reduced fare", "th": "ทางเดินป่าง่าย มีที่ให้เด็กวิ่ง เด็กเล็กที่สุดเข้าฟรี อายุ 4–12 ปีจ่ายราคาลด" },
+          "tip": { "en": "Open 08:00–17:00; the Taiwan mountain firefly shows from October to December", "th": "เปิด 08:00–17:00 หิ่งห้อยภูเขาไต้หวันออกช่วงตุลาคมถึงธันวาคม" },
+          "ages": [1, 2, 2, 2],
+          "hrs": 3,
+          "io": "out",
+          "pram": "part",
+          "price": { "en": "≈ NT$150 adults · NT$50 ages 4–12 (or 120–145 cm) · free 3 and under (or 119 cm and shorter)", "th": "≈ NT$150 ผู้ใหญ่ · NT$50 อายุ 4–12 ปี (หรือสูง 120–145 ซม.) · ฟรีอายุ 3 ปีลงมา (หรือสูงไม่เกิน 119 ซม.)" },
+          "book": "none",
+          "q": "Fuyuan National Forest Recreation Area, Ruisui Township, Hualien",
+          "ok": "2026-11",
+          "src": "https://www.forest.gov.tw/EN/0000175"
+        },
+        {
+          "name": { "en": "Lintianshan Forestry Culture Park", "th": "สวนวัฒนธรรมป่าไม้หลินเถียนซาน" },
+          "kind": "culture",
+          "area": { "en": "Fenglin", "th": "เฟิงหลิน" },
+          "what": { "en": "A former logging town of Japanese-era wooden houses, a small museum and shady grounds, run by the East Rift Valley scenic area", "th": "อดีตเมืองตัดไม้ที่มีบ้านไม้สมัยญี่ปุ่น พิพิธภัณฑ์เล็ก และพื้นที่ร่มรื่น ดูแลโดยเขตท่องเที่ยวหุบเขาริฟต์ตะวันออก" },
+          "why": { "en": "Free, quiet and flat enough for children to wander between the old houses and the lawns", "th": "ฟรี เงียบ และราบพอให้เด็กเดินเล่นระหว่างบ้านเก่ากับสนามหญ้า" },
+          "tip": { "en": "Listed 09:00–16:00 and closed on Mondays; the official page also shows another time, so check", "th": "รายการระบุ 09:00–16:00 และปิดวันจันทร์ หน้าทางการมีเวลาอีกชุดหนึ่งด้วย เช็กก่อนไป" },
+          "ages": [1, 1, 2, 2],
+          "hrs": 1.5,
+          "io": "both",
+          "pram": "part",
+          "price": { "en": "Free", "th": "ฟรี" },
+          "book": "none",
+          "q": "Lintianshan Forestry Culture Park, Fenglin Township, Hualien",
+          "ok": "2026-11",
+          "src": "https://www.erv-nsa.gov.tw/en/attractions/detail/76"
+        },
+        {
+          "name": { "en": "Mataian Wetland Ecological Park", "th": "สวนนิเวศพื้นที่ชุ่มน้ำหม่าไท่อัน" },
+          "kind": "nature",
+          "area": { "en": "Guangfu", "th": "กวางฟู" },
+          "what": { "en": "A wetland park run by the East Rift Valley scenic area, with paths through ponds and marsh to see birds, fish and plants", "th": "สวนพื้นที่ชุ่มน้ำของเขตท่องเที่ยวหุบเขาริฟต์ตะวันออก มีทางเดินผ่านบ่อน้ำและหนองให้ดูนก ปลา และพืช" },
+          "why": { "en": "Free, flat paths and open water to look at; children enjoy spotting birds and fish", "th": "ฟรี ทางเดินราบและมีน้ำให้ดู เด็กๆ สนุกกับการหานกและปลา" },
+          "tip": { "en": "The official page lists 09:00–17:00 and points to the park's Facebook page for changes, so check", "th": "หน้าทางการระบุ 09:00–17:00 และให้ดูการเปลี่ยนแปลงในเฟซบุ๊กของสวน เช็กก่อนไป" },
+          "ages": [1, 1, 2, 2],
+          "hrs": 1.5,
+          "io": "out",
+          "pram": "part",
+          "price": { "en": "Free", "th": "ฟรี" },
+          "book": "none",
+          "q": "Mataian Wetland Ecological Park, Guangfu Township, Hualien",
+          "ok": "2026-11",
+          "src": "https://www.erv-nsa.gov.tw/en/attractions/detail/66"
         }
       ]
     },
