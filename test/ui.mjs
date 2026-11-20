@@ -46,7 +46,7 @@ async function login(page) {
 }
 // the page re-renders after each sync; measure again if the element was just swapped
 // the kids' passport is a book shown a page at a time (#/passport/<kid>/<trip>/<page>): open one page and wait for it
-const ppOpen = async (page, kid, tid, key) => { await page.goto(`${BASE}/#/passport/${kid}/${tid}/${key}`); await page.waitForSelector(`.ppbook[data-page="${key}"]`); };
+const ppOpen = async (page, kid, tid, key) => { await page.goto(`${BASE}/#/passport/${kid}/${tid}/${key}`); await page.waitForSelector(`.ppbook[data-page="${key}"][data-trip="${tid}"]`); };   // the trip too: the same page of another book is still on screen for a moment
 // the passport's ✏️ (a parent opens its boxes and ticks): switch it to the state asked for
 const ppEdit = async (page, on) => { const b = page.locator('.ppedit'); if (await b.count() && (await b.getAttribute('aria-pressed')) !== String(on)) { await b.click(); await page.waitForSelector(`.ppedit[aria-pressed="${on}"]`); } };
 const boxOf = async (page, sel) => { for (let k = 0; k < 30; k++) { const b = await page.locator(sel).first().boundingBox().catch(() => null); if (b) return b; await page.waitForTimeout(100); } throw new Error('no box: ' + sel); };
@@ -308,7 +308,8 @@ const T = 'hk-macau-2026';
     const redir = page.url().endsWith('#/passport/mimi/id');
     await ppEdit(page, true);
     await page.fill('.ppf[data-v="height_last"]', '96'); await page.locator('.ppf[data-v="height_last"]').blur();
-    await page.click('.growl a.grgo'); await page.waitForSelector('.ppbook[data-page="id"] .ppf[data-v="height_first"]');
+    const other = (await page.getAttribute('.growl a.grgo', 'href')).split('/')[3];   // the other book's Explorer ID
+    await page.click('.growl a.grgo'); await page.waitForSelector(`.ppbook[data-page="id"][data-trip="${other}"] .ppf[data-v="height_first"]`);
     await page.fill('.ppf[data-v="height_first"]', '1.035 ม.'); await page.locator('.ppf[data-v="height_first"]').blur();   // in metres, with the unit: read as 103.5 cm
     await page.waitForFunction(() => queue.length === 0, null, { timeout: 15000 }).catch(() => {});
     const saved = await page.evaluate(() => S.entries.filter((e) => /\.field\.height_(first|last)\.mimi$/.test(e.id)).map((e) => `${e.id.split('.field.')[0]}:${e.first_key}=${e.text}`));
@@ -317,12 +318,11 @@ const T = 'hk-macau-2026';
     const gr = await page.evaluate(() => ({ saved: [], n: document.querySelectorAll('.growl li').length, art: document.querySelectorAll('.growl .grart img').length, age: document.querySelectorAll('.growl .grchip').length, chart: !!document.querySelector('.grchart polyline'), note: (document.querySelector('.pp-page.grow') || {}).textContent || '', ghinp: document.querySelectorAll('.ghinp').length }));
     await s.shot('grow');
     gr.saved = saved;
-    ok(redir && saved.length === 2 && gr.n >= 2 && gr.art === gr.n && gr.chart && /7\.5|7,5/.test(gr.note) && !gr.ghinp && await s.noHScroll(), `growing up lives in the passport: each book with the character of its time; the heights typed in two books' Explorer IDs draw the line (${JSON.stringify({ redir, ...gr, note: gr.note.slice(-40) })})`);
+    ok(redir && saved.length === 2 && new Set(saved.map((x) => x.split(':')[0])).size === 2 && gr.n >= 2 && gr.art === gr.n && gr.chart && /7\.5|7,5/.test(gr.note) && !gr.ghinp && await s.noHScroll(), `growing up lives in the passport: each book with the character of its time; the heights typed in two books' Explorer IDs draw the line (${JSON.stringify({ redir, ...gr, note: gr.note.slice(-40) })})`);
     // clear both again (an empty box removes the answer): the printed book's checks below expect a passport page of stamps only
-    await page.fill('.ppf[data-v="height_first"]', ''); await page.locator('.ppf[data-v="height_first"]').blur();
-    await page.waitForFunction(() => queue.length === 0, null, { timeout: 15000 }).catch(() => {});
-    await page.click('.growl a.grgo'); await page.waitForSelector('.ppbook[data-page="id"] .ppf[data-v="height_last"]');
-    await page.fill('.ppf[data-v="height_last"]', ''); await page.locator('.ppf[data-v="height_last"]').blur();
+    for (const tid of [T, 'big-hop-2027']) { await ppOpen(page, 'mimi', tid, 'id');
+      for (const k of ['height_first', 'height_last']) { await page.fill(`.ppf[data-v="${k}"]`, ''); await page.locator(`.ppf[data-v="${k}"]`).blur(); }
+      await page.waitForFunction(() => queue.length === 0, null, { timeout: 15000 }).catch(() => {}); }
     await page.waitForFunction(() => queue.length === 0 && !S.entries.some((e) => /\.field\.height_(first|last)\.mimi$/.test(e.id)), null, { timeout: 10000 }).catch(() => {});
     ok(await page.evaluate(() => !S.entries.some((e) => /\.field\.height_(first|last)\.mimi$/.test(e.id))), 'Explorer ID: an emptied height box removes the height');
     await ppEdit(page, false);

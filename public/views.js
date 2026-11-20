@@ -3997,7 +3997,7 @@ ${earned ? `<p class="bye">${esc(T(cert.bye))}</p>` : ''}</section></div>`;
 ${isEditor() ? `<button class="chip kidgo" data-a="kidmode" data-v="${esc(kid)}">🧒 ${L('โหมดเด็ก', 'Kid mode')}</button>` : ''}
 <span class="sep"></span>${mine.map((x) => `<a class="chip" href="#/passport/${esc(kid)}/${esc(x.id)}/${esc(page.startsWith('visa-') ? `visa-${x.id}` : page)}" aria-pressed="${x.id === t.id}">${flagsOf(x)} ${esc(ppShort(x))}</a>`).join('')}
 <a class="linkbtn ppprint" href="/api/b/pdf/${esc(t.id)}" download data-a="pdf">🖨️ ${L('พิมพ์', 'Print')}</a></div>`;
-  return `${top}<div class="ppbook${kidMode ? ' inkid' : ''}" data-page="${esc(page)}" style="${themeStyle(t)}">${tabs}<div class="ppbody" aria-label="${esc(cur[2])}">${body}</div>${turn}</div>`;
+  return `${top}<div class="ppbook${kidMode ? ' inkid' : ''}" data-page="${esc(page)}" data-trip="${esc(t.id)}" style="${themeStyle(t)}">${tabs}<div class="ppbody" aria-label="${esc(cur[2])}">${body}</div>${turn}</div>`;
 }
 
 /* ---------- record a day (editors) ---------- */
