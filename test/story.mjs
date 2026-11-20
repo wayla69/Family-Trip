@@ -734,6 +734,15 @@ try {
   ok(rr.status === 200 && rt.days && rt.days.length === 3 && rt.days.map((d) => d.date).join() === '2027-04-01,2027-04-02,2027-04-03' && rt.countries.join() === 'jp' && rt.title.en === 'Sakura test hop',
     `planner: the route comes back cleaned — the family's dates laid out again, a bad country code dropped (${rr.status} ${JSON.stringify(rj).slice(0, 300)})`);
   const routeCall = calls[c0], rsent = JSON.stringify(routeCall && routeCall.body);
+  { // B2: a book that is over, with yen spent on food and on shopping → the next Tokyo route's food line comes from what we really spent
+    const pt = await (await pl('/api/b/trips', { slug: 'tokyo-past-test', title: { th: 'โตเกียวครั้งก่อน', en: 'Tokyo last time' }, date_from: '2025-03-01', date_to: '2025-03-03', timezone: 'Asia/Tokyo' })).json();
+    const tid = pt.id || (pt.trip && pt.trip.id);
+    for (const [id, amount, cat] of [['sp-past-1', 18000, 'food'], ['sp-past-2', 12000, 'food'], ['sp-past-3', 90000, 'shop']])
+      await fetch(BASE + '/api/b/spend/' + id, { method: 'PUT', headers: PH, body: JSON.stringify({ trip: tid, day: 0, amount, cur: 'JPY', cat, note: '' }) });
+    const er = await (await pl('/api/b/planner/route', { answers, route: rt })).json(), bg = er.route && er.route.budget || {};
+    const food = (bg.lines || []).find((l) => l.k === 'food') || {};
+    ok(tid && food.cur === 'JPY' && food.src === 'past' && food.past === 30000 && bg.unknown.food === 0 && !(bg.lines || []).some((l) => l.k === 'shop') && bg.past && bg.past.trips[0].title.en === 'Tokyo last time',
+      `planner (budget B2): what we really spent on a book that is over leans the next route's budget — food from our own yen, shopping never counts (${tid} · ${JSON.stringify(bg).slice(0, 400)})`); }
   { const bg = rt.budget || {}, line = (k) => (bg.lines || []).find((l) => l.k === k) || {};
     ok(rt.money && rt.money.cur === 'JPY' && rt.money.stay.join() === '18000,30000' && rt.money.move.join() === '20000,20000' && !rt.money.junk
       && line('stay').cur === 'JPY' && line('stay').lo === 36000 && line('stay').hi === 60000 && line('stay').src === 'helper' && line('move').lo === 20000

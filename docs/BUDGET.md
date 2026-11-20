@@ -33,11 +33,17 @@ edited by hand, a change asked in words, a saved plan read back). The page: the 
 its picture, the range, where it came from, the total per currency and "≈ ฿" when a rate is typed; a quiet line "rough, for planning —
 prices change" and one to the spend page's rate box when there is no rate.
 
-## B2 — learn from what we really spent (next)
+## B2 — learn from what we really spent (built)
 
-The `spend` table already holds each trip's real spending by category and currency. For a country the family has been to, the card
-shows "last time in Japan: ≈ ¥x a day on food" beside the estimate (per day, per person), and the estimate leans towards it. Editors
-only (the spend ledger never reaches a relative).
+bookshelf.js `withBudget` reads the family's `spend` rows of books that are over (`date_to` before today), summed by book, category
+and money, with each book's number of days; `budget.js` `pastPer` turns them into what a day cost (a night for stays) per category
+and money, over every past book that paid in it. Only the planner's own kinds count (food, tickets, getting around = `transport`,
+stays) — shopping and "other" never. In `estimate`, a line in the same money is leaned half-way towards it (lo = (estimate lo + 0.9 ×
+what we spent) / 2, hi likewise with 1.1) and carries `past` (that amount for this trip's days) and `pastN` (how many books); a kind
+the estimate lacks (food in a town the eat library does not price) comes from it alone (`src: 'past'`, ±10 %), and its "no price" count
+goes. Only this trip's money counts (its lines and the helper's local currency) — a Tokyo plan never borrows a Paris bill. The card
+says "compared with what we really spent on <books>" and, under a leaned line, "last time we really spent ≈ … — taken into account".
+Editors only, as the whole planner is; the spend ledger never reaches a relative.
 
 ## B3 — the budget travels with the book (later)
 

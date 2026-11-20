@@ -208,7 +208,18 @@ if (process.env.BASE) {
   ok(L('tickets').lo === 61 && L('tickets').n === 1 && L('stay').lo === 300 && L('stay').hi === 400 && L('flights').cur === 'THB' && L('food').cur === 'EUR' && L('food').lo === 2 * 36 * 2.5 && est.unknown.food === 1 && est.totals.length === 2 && est.lines[0].k === 'flights',
     `budget: an estimate — the sight once, two nights, food for the two days with prices (2½ eaters: two adults and a child of 3; the baby eats off the bill), a day with none counted as unknown (${JSON.stringify(est)})`);
   const low = B.estimate({ route, answers: { adults: 2, budget: 'low', flights: 'booked' }, kids: [], sightById: () => sight, ccOfPlace: () => 'fr', eatsOfTown: () => eats });
-  ok(!low.lines.some((l) => l.k === 'flights') && low.lines.find((l) => l.k === 'stay').hi === 350, 'budget: a careful budget keeps the low half of each range; flights the family typed are not estimated'); }
+  ok(!low.lines.some((l) => l.k === 'flights') && low.lines.find((l) => l.k === 'stay').hi === 350, 'budget: a careful budget keeps the low half of each range; flights the family typed are not estimated');
+  // B2: what we really spent before, in the same money, leans each line towards it; a kind the estimate lacks comes from it alone
+  const past = [{ trip: 'a', title: { en: 'Paris 2025' }, date_from: '2025-05-01', days: 4, cat: 'food', cur: 'EUR', total: 480 },
+    { trip: 'a', title: { en: 'Paris 2025' }, date_from: '2025-05-01', days: 4, cat: 'transport', cur: 'EUR', total: 100 },
+    { trip: 'a', title: { en: 'Paris 2025' }, date_from: '2025-05-01', days: 4, cat: 'shop', cur: 'EUR', total: 900 },
+    { trip: 'b', title: { en: 'Tokyo 2024' }, date_from: '2024-03-01', days: 5, cat: 'food', cur: 'JPY', total: 50000 }];
+  const pe = B.pastPer(past);
+  const e2 = B.estimate({ route: { ...route, money: { cur: 'EUR', stay: [150, 200] } }, answers: { adults: 2, budget: 'mid' }, kids: [{ birth_ym: '2023-10' }, { birth_ym: '2025-10' }], past, sightById: () => sight, ccOfPlace: () => 'fr', eatsOfTown: (t) => (t.en === 'Paris' ? eats : []) });
+  const L2 = (k) => e2.lines.find((l) => l.k === k) || {};
+  ok(pe.per.food.EUR.v === 120 && pe.per.transport.EUR.v === 25 && !pe.per.shop && pe.trips[0].id === 'a'
+    && L2('food').past === 360 && L2('food').lo === 250 && L2('food').hi === 330 && L2('move').src === 'past' && L2('move').past === 75 && !e2.lines.some((l) => l.cur === 'JPY') && e2.past.trips[0].title.en === 'Paris 2025',
+    `budget (B2): our own past spending in the same money — a day's food over 3 days leans the food line, getting around comes from it alone, shopping and other money never count (${JSON.stringify(e2.lines)})`); }
 
 // the built-in list of places to eat (server/eats, scripts/eats-lint.mjs): every file reads, every row has the book's shape in both
 // languages, and the checker catches what it should

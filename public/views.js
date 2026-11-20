@@ -3033,14 +3033,18 @@ function plBudget(rt) {
   const baht = (lo, hi, cur) => { if (cur === 'THB' || !(+fx[cur] > 0)) return ''; const r = (v) => Math.round(v * fx[cur] / 100) * 100; return `<span class="prthb">≈ ${rng(r(lo), r(hi), 'THB')}</span>`; };
   const rows = b.lines.map((l) => { const k = BUDGET_K[l.k] || ['💸', l.k, l.k];
     const note = l.k === 'tickets' && l.n ? L(`${l.n} ที่จากคลัง`, `${l.n} places from the library`) : l.k === 'stay' && b.days > 1 ? L(`${b.days - 1} คืน`, `${b.days - 1} nights`) : l.k === 'food' ? L(`${b.days} วัน`, `${b.days} days`) : '';
-    return `<li class="plbr"><span class="plbe" aria-hidden="true">${emo(k[0])}</span><span class="plbn"><b>${L(k[1], k[2])}</b><small>${[note, l.src === 'lib' ? L('จากราคาในคลังของแอป', 'From the app’s library prices') : L('ผู้ช่วยประมาณให้', 'The helper’s estimate')].filter(Boolean).join(' · ')}</small></span><span class="plba"><b class="kf km">≈ ${rng(l.lo, l.hi, l.cur)}</b>${baht(l.lo, l.hi, l.cur)}</span></li>`; }).join('');
+    const src = l.src === 'past' ? L('จากที่เราจ่ายจริงทริปก่อน', 'From what we really spent before') : l.src === 'lib' ? L('จากราคาในคลังของแอป', 'From the app’s library prices') : L('ผู้ช่วยประมาณให้', 'The helper’s estimate');
+    const was = l.past != null && l.src !== 'past' ? `<small class="plbpast">${L(`ทริปก่อนเราจ่ายจริง ≈ ${fmtMoney(l.past, l.cur)} ปรับให้แล้ว`, `Last time we really spent ≈ ${fmtMoney(l.past, l.cur)} — taken into account`)}</small>` : '';
+    return `<li class="plbr"><span class="plbe" aria-hidden="true">${emo(k[0])}</span><span class="plbn"><b>${L(k[1], k[2])}</b><small>${[note, src].filter(Boolean).join(' · ')}</small>${was}</span><span class="plba"><b class="kf km">≈ ${rng(l.lo, l.hi, l.cur)}</b>${baht(l.lo, l.hi, l.cur)}</span></li>`; }).join('');
+  const pastT = (b.past && b.past.trips || []).map((x) => (x.title ? esc(T(x.title)) : '')).filter(Boolean);
+  const pastLine = pastT.length ? `<p class="plbwas">${emo('📒')} ${L(`เทียบกับที่เราจ่ายจริงใน ${pastT.join(', ')}`, `Compared with what we really spent on ${pastT.join(', ')}`)}</p>` : '';
   const tot = b.totals || [], all = tot.every((x) => x.cur === 'THB' || +fx[x.cur] > 0);
   const thb = all && tot.some((x) => x.cur !== 'THB') ? tot.reduce((n, x) => [n[0] + x.lo * (x.cur === 'THB' ? 1 : fx[x.cur]), n[1] + x.hi * (x.cur === 'THB' ? 1 : fx[x.cur])], [0, 0]).map((v) => Math.round(v / 1000) * 1000) : null;
   const unk = (b.unknown && (b.unknown.tickets || b.unknown.food)) ? `<p class="plbu">${[b.unknown.tickets ? L(`ค่าเข้าอีก ${b.unknown.tickets} ที่ยังไม่รู้ราคา ต้องเช็กเอง`, `${b.unknown.tickets} more places have no price yet — check them yourself`) : '', b.unknown.food ? L(`ค่าอาหาร ${b.unknown.food} วันยังไม่มีราคาในคลัง`, `Food for ${b.unknown.food} days has no library price yet`) : ''].filter(Boolean).join(' · ')}</p>` : '';
   const need = tot.map((x) => x.cur).filter((c) => c !== 'THB' && !(+fx[c] > 0));
   const rate = need.length ? `<div class="row fxrow plbfx">${need.map((c) => `<label class="fxf">1 ${esc(c)} =<input class="field" inputmode="decimal" data-fx="${esc(c)}" value="" aria-label="${esc(c)} → THB"> ${L('บาท', 'THB')}</label>`).join('')}</div><p class="label">${L('ใส่เรตแลกเงินเพื่อดูเป็นบาท · อยู่ในเครื่องนี้ ไม่ดึงจากเน็ต', 'Type a rate to see it in baht · kept on this phone · nothing is looked up online')}</p>` : '';
   return `<section class="plbudget pcard" style="--g1:${PG.lime}"><h4 class="pch">${emo('💰')} ${L('งบคร่าวๆ ทั้งทริป', 'A rough budget for the whole trip')}</h4>
-<ul class="plbl">${rows}</ul>
+${pastLine}<ul class="plbl">${rows}</ul>
 <div class="plbt"><span>${L('รวมคร่าวๆ', 'Roughly in all')}</span><b>${tot.map((x) => `≈ ${rng(x.lo, x.hi, x.cur)}`).join(' + ')}</b>${thb ? `<b class="plbthb">≈ ${rng(thb[0], thb[1], 'THB')}</b>` : ''}</div>
 ${unk}${rate}<p class="plbq">${L('คร่าวๆ ไว้วางแผน ราคาเปลี่ยนได้ ยังไม่รวมของฝากและค่าใช้จ่ายส่วนตัว', 'Rough, for planning — prices change; souvenirs and personal spending not included')}</p></section>`;
 }
