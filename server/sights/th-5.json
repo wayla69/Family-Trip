@@ -125,6 +125,57 @@
           "q": "Sapan Raksa Saem, Klaeng, Rayong",
           "ok": "2026-11",
           "src": "https://www.thairath.co.th/lifestyle/travel/2773658"
+        },
+        {
+          "name": { "en": "Thung Prong Thong (golden mangrove meadow)", "th": "ทุ่งโปรงทอง" },
+          "kind": "nature",
+          "area": { "en": "Pak Nam Prasae, Klaeng", "th": "ปากน้ำประแส แกลง" },
+          "what": { "en": "A wide mangrove meadow whose prong leaves turn gold in the dry season, with a short walk and a boat ride through the canals.", "th": "ทุ่งป่าโปรงกว้างที่ใบเปลี่ยนเป็นสีทองในหน้าแล้ง เดินเล่นสั้นๆ และนั่งเรือชมคลองได้" },
+          "why": { "en": "Open flat ground and a boat ride keep little ones busy; the views are wide and there is no queue.", "th": "พื้นราบโล่งและมีเรือให้นั่ง เด็กเล็กไม่เบื่อ ไม่ต้องต่อคิว" },
+          "tip": { "en": "Open daily 06:00–18:00; go early or late, the midday sun is strong.", "th": "เปิดทุกวัน 06.00–18.00 น. ไปเช้าหรือเย็น แดดเที่ยงแรง" },
+          "ages": [1, 2, 2, 1],
+          "hrs": 1.5,
+          "io": "out",
+          "pram": "part",
+          "price": { "en": "Free", "th": "ฟรี" },
+          "book": "none",
+          "q": "Thung Prong Thong, Pak Nam Prasae, Klaeng, Rayong",
+          "ok": "2026-11",
+          "src": "https://www.thairath.co.th/lifestyle/travel/2773658"
+        },
+        {
+          "name": { "en": "Suan Lung Thong Bai fruit orchard", "th": "สวนลุงทองใบ" },
+          "kind": "farm",
+          "area": { "en": "Rayong", "th": "ระยอง" },
+          "what": { "en": "A working fruit orchard where, in the harvest months, visitors taste durian, mangosteen and other fruit.", "th": "สวนผลไม้ที่เปิดให้ชิมทุเรียน มังคุด และผลไม้อื่นๆ ในช่วงที่ผลไม้ออก" },
+          "why": { "en": "Walking among the trees and tasting fruit suits curious children; shade and picnic seating are easy to find.", "th": "เดินดูต้นไม้และชิมผลไม้ เหมาะกับเด็กช่างสงสัย มีร่มเงาและที่นั่ง" },
+          "tip": { "en": "Open daily 09:00–17:00; fruit is seasonal, so ask before you go what is ripe.", "th": "เปิดทุกวัน 09.00–17.00 น. ผลไม้ตามฤดูกาล โทรถามก่อนว่ามีอะไรสุก" },
+          "ages": [1, 2, 2, 1],
+          "hrs": 2,
+          "io": "out",
+          "pram": "part",
+          "price": { "en": "Check the price", "th": "เช็กราคาก่อนไป" },
+          "book": "rec",
+          "q": "Suan Lung Thong Bai, Rayong",
+          "ok": "2026-11",
+          "src": "https://www.thairath.co.th/lifestyle/travel/2773658"
+        },
+        {
+          "name": { "en": "Suan La-Mai fruit orchard", "th": "สวนละไม" },
+          "kind": "farm",
+          "area": { "en": "Rayong", "th": "ระยอง" },
+          "what": { "en": "A 500-rai orchard of durian, rambutan, mangosteen and longkong with seasonal fruit buffets.", "th": "สวนผลไม้กว่า 500 ไร่ มีทุเรียน เงาะ มังคุด ลองกอง และบุฟเฟ่ต์ผลไม้ตามฤดูกาล" },
+          "why": { "en": "Shaded paths and plenty to taste; children can see where fruit grows.", "th": "ทางเดินร่มรื่น มีของให้ชิม เด็กๆ ได้เห็นว่าผลไม้มาจากไหน" },
+          "tip": { "en": "Open daily 08:00–17:00; the buffet runs only in fruit season.", "th": "เปิดทุกวัน 08.00–17.00 น. บุฟเฟ่ต์มีเฉพาะช่วงผลไม้ออก" },
+          "ages": [1, 2, 2, 1],
+          "hrs": 2,
+          "io": "out",
+          "pram": "part",
+          "price": { "en": "Check the price", "th": "เช็กราคาก่อนไป" },
+          "book": "rec",
+          "q": "Suan La-Mai, Rayong",
+          "ok": "2026-11",
+          "src": "https://www.thairath.co.th/lifestyle/travel/2773658"
         }
       ]
     }

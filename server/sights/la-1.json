@@ -3,7 +3,6 @@
   "towns": [
     {
       "place": "la-luangprabang",
-      "thin": true,
       "sights": [
         {
           "name": { "en": "Kuang Si Falls and Bear Rescue Centre", "th": "น้ำตกกวางสีและศูนย์ช่วยเหลือหมี" },
@@ -202,6 +201,91 @@
           "q": "Luang Prabang Butterfly Park, Kuang Si",
           "ok": "2026-11",
           "src": "https://travellingfoot.com/best-places-to-visit-in-laos/tourist-attractions-in-luang-prabang/butterfly-park"
+        },
+        {
+          "name": { "en": "UXO Visitors Centre", "th": "ศูนย์ผู้เยี่ยมชมยูเอ็กโซ" },
+          "kind": "museum",
+          "area": { "en": "Pakham, near the Souphanouvong monument", "th": "ปากคาม ใกล้อนุสาวรีย์สุพานุวงศ์" },
+          "what": { "en": "A free centre with real bombs on display, survivors' stories and a documentary about the clearing work, open daily 8 AM to 4 PM", "th": "ศูนย์เข้าฟรี จัดแสดงลูกระเบิดจริง เรื่องเล่าของผู้รอดชีวิต และสารคดีเรื่องการเก็บกู้ เปิดทุกวัน 8:00–16:00" },
+          "why": { "en": "The subject is hard for small children, so it suits older ones; it is a short, indoor visit", "th": "เรื่องที่เล่าหนักสำหรับเด็กเล็ก เหมาะกับเด็กโต ใช้เวลาสั้นและอยู่ในอาคาร" },
+          "tip": { "en": "About a 12-minute walk from the centre; donations are welcome", "th": "เดินจากกลางเมืองราว 12 นาที รับบริจาค" },
+          "ages": [0, 0, 1, 2],
+          "hrs": 1,
+          "io": "in",
+          "pram": "part",
+          "price": { "en": "Free (donations encouraged)", "th": "ฟรี (รับบริจาค)" },
+          "book": "none",
+          "q": "UXO Visitors Centre, Sisavangvong Road, Luang Prabang",
+          "ok": "2026-11",
+          "src": "https://tourismluangprabang.org/things-to-do/culture-history/uxo-visitors-center/"
+        },
+        {
+          "name": { "en": "Nam Dong Park", "th": "สวนน้ำดง" },
+          "kind": "nature",
+          "area": { "en": "10 km from town", "th": "ห่างเมือง 10 กม." },
+          "what": { "en": "A family nature park with a waterfall, safe swimming spots, a roses field, fish feeding and shady places to picnic, open 10 AM to 5 PM", "th": "สวนธรรมชาติสำหรับครอบครัว มีน้ำตก จุดว่ายน้ำปลอดภัย ทุ่งกุหลาบ ให้อาหารปลา และที่ปิกนิกร่มรื่น เปิด 10:00–17:00" },
+          "why": { "en": "Children under 8 go in free, and the wooden balcony over the falls has a restaurant for lunch", "th": "เด็กต่ำกว่า 8 ปีเข้าฟรี และมีระเบียงไม้เหนือน้ำตกพร้อมร้านอาหารกลางวัน" },
+          "tip": { "en": "Bring swim clothes; the park also has zip lining and a bee farm that sells honey", "th": "พกชุดว่ายน้ำ มีซิปไลน์และฟาร์มผึ้งขายน้ำผึ้ง" },
+          "ages": [1, 2, 2, 2],
+          "hrs": 3,
+          "io": "out",
+          "pram": "no",
+          "price": { "en": "≈ 20,000 kip a person · under 8 free", "th": "≈ 20,000 กีบ ต่อคน · ต่ำกว่า 8 ปีฟรี" },
+          "book": "none",
+          "q": "Nam Dong Park, Luang Prabang",
+          "ok": "2026-11",
+          "src": "https://tourismluangprabang.org/things-to-do/nature/nam-dong-park/"
+        },
+        {
+          "name": { "en": "Pak Ou Caves (Tham Ting)", "th": "ถ้ำปากอู (ถ้ำติ่ง)" },
+          "kind": "culture",
+          "area": { "en": "Mekong, 1.5 h by boat", "th": "แม่น้ำโขง ล่องเรือราว 1.5 ชม." },
+          "what": { "en": "Two cave shrines in a cliff above the Mekong holding thousands of Buddha statues, open daily 8 AM to 5 PM, reached by a boat trip", "th": "ถ้ำสองแห่งในหน้าผาเหนือแม่น้ำโขง มีพระพุทธรูปหลายพันองค์ เปิดทุกวัน 8:00–17:00 ไปโดยล่องเรือ" },
+          "why": { "en": "The boat ride along the river is the fun part for children; the stairs to the upper cave are steep", "th": "ล่องเรือชมแม่น้ำเป็นส่วนที่เด็กสนุก บันไดขึ้นถ้ำบนชัน" },
+          "tip": { "en": "Plan about 3.5 hours round trip by boat; carry small children on the stairs", "th": "ใช้เวลาไป-กลับทางเรือราว 3.5 ชม. อุ้มเด็กเล็กตอนขึ้นบันได" },
+          "ages": [0, 1, 2, 2],
+          "hrs": 5,
+          "io": "out",
+          "pram": "no",
+          "price": { "en": "≈ 60,000 kip foreign visitors from 15 Nov 2026 (30,000 before) · boat extra", "th": "≈ 60,000 กีบ ผู้เยี่ยมชมต่างชาติ ตั้งแต่ 15 พ.ย. 2026 (ก่อนหน้า 30,000) · ค่าเรือแยก" },
+          "book": "none",
+          "q": "Pak Ou Caves, Tham Ting, Luang Prabang",
+          "ok": "2026-11",
+          "src": "https://tourismluangprabang.org/things-to-do/nature/pak-ou-cave-tham-ting/"
+        },
+        {
+          "name": { "en": "Children's Cultural Center", "th": "ศูนย์วัฒนธรรมเด็ก" },
+          "kind": "show",
+          "area": { "en": "Pakham, near Wat Mai", "th": "ปากคาม ใกล้วัดใหม่" },
+          "what": { "en": "A centre where Lao children perform traditional dances, music and a baci ceremony; open Tue–Fri and Sat, Mon–Fri June to August", "th": "ศูนย์ที่เด็กลาวแสดงรำ ดนตรี และพิธีบาสี เปิดอังคาร–ศุกร์และเสาร์ มิ.ย.–ส.ค. เปิดจันทร์–ศุกร์" },
+          "why": { "en": "Children performing for children holds the attention of small ones, and it is a short indoor visit", "th": "เด็กแสดงให้เด็กดู ดึงความสนใจเด็กเล็กได้ และใช้เวลาสั้นในอาคาร" },
+          "tip": { "en": "Hours are 9–11:30 AM and 2–5 PM (Sat from 8 AM); shows follow the season, so ask at the centre", "th": "เวลา 9:00–11:30 และ 14:00–17:00 (วันเสาร์เริ่ม 8:00) โชว์ตามฤดู สอบถามที่ศูนย์" },
+          "ages": [1, 2, 2, 1],
+          "hrs": 1,
+          "io": "in",
+          "pram": "part",
+          "price": { "en": "Check the price", "th": "เช็กราคาก่อนไป" },
+          "book": "none",
+          "q": "Children's Cultural Center, Pakham, Luang Prabang",
+          "ok": "2026-11",
+          "src": "https://tourismluangprabang.org/things-to-do/culture-history/childrens-cultural-center/"
+        },
+        {
+          "name": { "en": "Heritage Information Centre (Heuanchan)", "th": "ศูนย์ข้อมูลมรดก (เฮือนจันทร์)" },
+          "kind": "museum",
+          "area": { "en": "Behind Wat Xiengmuan", "th": "หลังวัดเซียงมวน" },
+          "what": { "en": "A small museum in a historic wooden house about Lao culture, such as baci ceremonies and alms giving, open daily 8 AM to 5 PM", "th": "พิพิธภัณฑ์เล็กในบ้านไม้เก่าเล่าวัฒนธรรมลาว เช่น พิธีบาสีและการใส่บาตร เปิดทุกวัน 8:00–17:00" },
+          "why": { "en": "The photographs and everyday objects are easy to look at, but the old wooden house has steps and no pram access", "th": "ภาพถ่ายและของใช้ในชีวิตประจำวันดูง่าย แต่บ้านไม้เก่ามีบันไดและเข็นรถเข็นไม่ได้" },
+          "tip": { "en": "A quiet, short stop that is cooler than the street", "th": "จุดแวะเงียบๆ ใช้เวลาไม่นาน เย็นกว่าริมถนน" },
+          "ages": [0, 1, 1, 2],
+          "hrs": 1,
+          "io": "in",
+          "pram": "no",
+          "price": { "en": "Check the price", "th": "เช็กราคาก่อนไป" },
+          "book": "none",
+          "q": "Heritage Information Centre, Luang Prabang",
+          "ok": "2026-11",
+          "src": "https://tourismluangprabang.org/things-to-do/culture-history/heritage-information-center/"
         }
       ]
     }
