@@ -540,7 +540,6 @@
     },
     {
       "place": "us-boston",
-      "thin": true,
       "sights": [
         {
           "name": { "en": "Boston Children's Museum", "th": "พิพิธภัณฑ์เด็กบอสตัน" },
@@ -762,6 +761,40 @@
           "q": "Arnold Arboretum, 125 Arborway, Boston",
           "ok": "2026-11",
           "src": "https://arboretum.harvard.edu/stories/category/jamaica-plain-news"
+        },
+        {
+          "name": { "en": "Boston Public Library, Central Library", "th": "ห้องสมุดสาธารณะบอสตัน อาคารกลาง" },
+          "kind": "culture",
+          "area": { "en": "Copley Square", "th": "คอปลีย์สแควร์" },
+          "what": { "en": "A grand 19th-century library with a Children's Library, a courtyard and free art-and-architecture tours", "th": "ห้องสมุดเก่าแก่หลังใหญ่ มีห้องสมุดเด็ก ลานกลางอาคาร และทัวร์ชมศิลปะสถาปัตยกรรมฟรี" },
+          "why": { "en": "A warm, indoor place with a children's room and a quiet courtyard for a rainy-day break", "th": "ที่หลบฝนในร่ม มีห้องหนังสือเด็กและลานนั่งเงียบๆ" },
+          "tip": { "en": "Children's Library is open 9:00–20:00 Mon–Thu, to 17:00 Fri–Sat, 11:00–17:00 Sun", "th": "ห้องสมุดเด็กเปิด 9:00–20:00 จันทร์–พฤหัสฯ ถึง 17:00 ศุกร์–เสาร์ และ 11:00–17:00 วันอาทิตย์" },
+          "ages": [1, 2, 2, 1],
+          "hrs": 1.5,
+          "io": "in",
+          "pram": "yes",
+          "price": { "en": "Free", "th": "ฟรี" },
+          "book": "none",
+          "q": "Boston Public Library Central Library, Copley Square, Boston",
+          "ok": "2026-11",
+          "src": "https://www.bpl.org/locations/central/"
+        },
+        {
+          "name": { "en": "Boston Common and the Frog Pond", "th": "บอสตันคอมมอนและฟรอกพอนด์" },
+          "kind": "park",
+          "area": { "en": "Downtown", "th": "ใจกลางเมือง" },
+          "what": { "en": "America's oldest city park with a tot lot, ice skating on the Frog Pond in winter and a spray pool in summer", "th": "สวนสาธารณะเก่าแก่ที่สุดของอเมริกา มีสนามเด็กเล่น ลานสเก็ตน้ำแข็งฟรอกพอนด์ช่วงหนาว และสระน้ำพุเล่นน้ำช่วงร้อน" },
+          "why": { "en": "Open grass and a tot lot for little legs; the pond gives a different activity each season", "th": "มีสนามหญ้ากว้างและสนามเด็กเล่นสำหรับเด็กเล็ก สระน้ำมีกิจกรรมต่างกันตามฤดู" },
+          "tip": { "en": "Skating is run by the Frog Pond; check its season and prices before you go", "th": "ลานสเก็ตเป็นของฟรอกพอนด์ เช็กฤดูกาลและราคาก่อนไป" },
+          "ages": [2, 2, 2, 1],
+          "hrs": 1.5,
+          "io": "out",
+          "pram": "yes",
+          "price": { "en": "Free (skating and carousel are extra)", "th": "ฟรี (สเก็ตและม้าหมุนจ่ายเพิ่ม)" },
+          "book": "none",
+          "q": "Boston Common, 139 Tremont Street, Boston",
+          "ok": "2026-11",
+          "src": "https://www.boston.gov/parks/boston-common"
         }
       ]
     },
@@ -1598,7 +1631,6 @@
     },
     {
       "place": "us-seattle",
-      "thin": true,
       "sights": [
         {
           "name": { "en": "Woodland Park Zoo", "th": "สวนสัตว์วูดแลนด์พาร์ก" },
@@ -1769,6 +1801,91 @@
           "q": "Hiram M. Chittenden Locks, 3015 NW 54th St, Seattle",
           "ok": "2026-11",
           "src": "https://www.parentmap.com/article/ballard-locks-reopen-take-kids-look-boats"
+        },
+        {
+          "name": { "en": "Chihuly Garden and Glass", "th": "ชิฮูลี การ์เดน แอนด์ กลาส" },
+          "kind": "museum",
+          "area": { "en": "Seattle Center", "th": "ซีแอตเทิลเซ็นเตอร์" },
+          "what": { "en": "Glass sculptures in galleries, a glasshouse and a garden beside the Space Needle", "th": "ประติมากรรมแก้วสีสันสดในห้องแสดง เรือนกระจก และสวน ข้างสเปซนีเดิล" },
+          "why": { "en": "Bright colours hold small eyes; look-don't-touch needs a close hand", "th": "สีสันจัดจ้านดึงดูดเด็ก แต่เป็นงานห้ามจับ ต้องจูงมือใกล้ๆ" },
+          "tip": { "en": "Allow 1–2 hours; no food or drink inside and a bag check at the door", "th": "ใช้เวลา 1–2 ชั่วโมง ห้ามนำอาหารและเครื่องดื่มเข้า และมีตรวจกระเป๋า" },
+          "ages": [0, 1, 2, 2],
+          "hrs": 1.5,
+          "io": "both",
+          "pram": "yes",
+          "price": { "en": "≈ US$40–45 adults · youth 5–12 US$35–40 · under 4 free", "th": "≈ US$40–45 ผู้ใหญ่ · เยาวชน 5–12 ปี US$35–40 · ต่ำกว่า 4 ปีฟรี" },
+          "book": "rec",
+          "q": "Chihuly Garden and Glass, Seattle Center, Seattle",
+          "ok": "2026-11",
+          "src": "https://www.chihulygardenandglass.com/visit/plan-your-visit"
+        },
+        {
+          "name": { "en": "Gas Works Park", "th": "แก๊สเวิร์กส์พาร์ก" },
+          "kind": "park",
+          "area": { "en": "Lake Union", "th": "เลกยูเนียน" },
+          "what": { "en": "A hilltop park on an old gasworks with a play barn, a big kite hill and a view of the Seattle skyline", "th": "สวนบนเนินที่เคยเป็นโรงงานก๊าซ มีบ้านเล่นหลังใหญ่ เนินปล่อยว่าว และวิวเมืองซีแอตเทิล" },
+          "why": { "en": "Big open hill for running and kites; keep little ones back from the old machinery", "th": "เนินกว้างให้วิ่งเล่นและปล่อยว่าว ควรกันเด็กเล็กห่างจากเครื่องจักรเก่า" },
+          "tip": { "en": "Access to the lake edge is restricted, so look from the hill", "th": "ริมทะเลสาบเข้าไม่ได้ ชมจากบนเนิน" },
+          "ages": [1, 2, 2, 1],
+          "hrs": 1.5,
+          "io": "out",
+          "pram": "part",
+          "price": { "en": "Free", "th": "ฟรี" },
+          "book": "none",
+          "q": "Gas Works Park, N Northlake Way, Seattle",
+          "ok": "2026-11",
+          "src": "https://www.seattle.gov/parks/allparks/gas-works-park"
+        },
+        {
+          "name": { "en": "Discovery Park", "th": "ดิสคัฟเวอรีพาร์ก" },
+          "kind": "nature",
+          "area": { "en": "Magnolia", "th": "แมกโนเลีย" },
+          "what": { "en": "Seattle's largest park: forest trails, meadows, a beach and a lighthouse on Puget Sound", "th": "สวนที่ใหญ่ที่สุดของซีแอตเทิล มีทางเดินป่า ทุ่งหญ้า ชายหาด และประภาคารริมอ่าวพิวเจ็ต" },
+          "why": { "en": "Wide, easy paths and a play area; the beach walk is long, so pick the near trails for small legs", "th": "ทางกว้างเดินง่ายและมีสนามเด็กเล่น ทางไปชายหาดไกล เด็กเล็กเลือกทางใกล้ๆ" },
+          "tip": { "en": "A free shuttle between car parks and the beach ran until 1 Nov 2026; the visitor centre is closed some days", "th": "มีรถรับส่งฟรีระหว่างลานจอดกับชายหาดถึง 1 พ.ย. 2026 ศูนย์ผู้เยี่ยมชมปิดบางวัน" },
+          "ages": [1, 2, 2, 2],
+          "hrs": 3,
+          "io": "out",
+          "pram": "part",
+          "price": { "en": "Free", "th": "ฟรี" },
+          "book": "none",
+          "q": "Discovery Park, 3801 Discovery Park Blvd, Seattle",
+          "ok": "2026-11",
+          "src": "https://www.seattle.gov/parks/allparks/discovery-park"
+        },
+        {
+          "name": { "en": "Seattle Central Library", "th": "ห้องสมุดกลางซีแอตเทิล" },
+          "kind": "culture",
+          "area": { "en": "Downtown", "th": "ดาวน์ทาวน์" },
+          "what": { "en": "A glass-and-steel library designed by Rem Koolhaas with a children's area and a view from its upper floors", "th": "ห้องสมุดกระจกและเหล็กดีไซน์โดยเรม คูลฮาส มีมุมเด็กและมองวิวจากชั้นบน" },
+          "why": { "en": "Free, dry and warm, with a children's area for a quiet rest between sights", "th": "ฟรี อบอุ่นและแห้ง มีมุมเด็กให้พักเงียบๆ ระหว่างเที่ยว" },
+          "tip": { "en": "Open Mon 10:00–18:00, Tue–Wed to 20:00; check the other days on the library's page", "th": "เปิดจันทร์ 10:00–18:00 อังคาร–พุธถึง 20:00 วันอื่นเช็กหน้าเว็บห้องสมุด" },
+          "ages": [1, 2, 2, 1],
+          "hrs": 1,
+          "io": "in",
+          "pram": "yes",
+          "price": { "en": "Free", "th": "ฟรี" },
+          "book": "none",
+          "q": "Seattle Central Library, 1000 4th Ave, Seattle",
+          "ok": "2026-11",
+          "src": "https://www.spl.org/hours-and-locations/central-library"
+        },
+        {
+          "name": { "en": "Seattle Center Armory", "th": "อาร์มอรีที่ซีแอตเทิลเซ็นเตอร์" },
+          "kind": "market",
+          "area": { "en": "Seattle Center", "th": "ซีแอตเทิลเซ็นเตอร์" },
+          "what": { "en": "An indoor food hall and event hall with many vendors, open every day from 7:00 to 21:00", "th": "ฟู้ดฮอลล์ในร่มพร้อมห้องจัดงาน มีร้านอาหารหลายร้าน เปิดทุกวัน 7:00–21:00" },
+          "why": { "en": "Dry, warm and with plenty of seating and choices for picky eaters; the Children's Museum is inside", "th": "แห้งและอบอุ่น ที่นั่งเยอะ เลือกกินง่ายสำหรับเด็กเลือกกิน และมีพิพิธภัณฑ์เด็กอยู่ข้างใน" },
+          "tip": { "en": "Hours can change for events and it is closed on Thanksgiving, Christmas and New Year's Day", "th": "เวลาเปลี่ยนได้ตามงาน และปิดวันขอบคุณพระเจ้า คริสต์มาส และปีใหม่" },
+          "ages": [1, 2, 2, 1],
+          "hrs": 1,
+          "io": "in",
+          "pram": "yes",
+          "price": { "en": "Free to enter · food extra", "th": "เข้าฟรี · ค่าอาหารแยก" },
+          "book": "none",
+          "q": "Seattle Center Armory, 305 Harrison St, Seattle",
+          "ok": "2026-11",
+          "src": "https://www.seattlecenter.com/explore/attractions/armory"
         }
       ]
     },

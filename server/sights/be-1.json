@@ -3,7 +3,6 @@
   "towns": [
     {
       "place": "be-bruges",
-      "thin": true,
       "sights": [
         {
           "name": { "en": "Boudewijn Seapark", "th": "บูเดอไวน์ซีพาร์ก" },
@@ -244,6 +243,23 @@
           "q": "SEA LIFE Blankenberge, Koning Albertstraat 1, Blankenberge",
           "ok": "2026-11",
           "src": "https://www.visitsealife.com/blankenberge/en/tickets-passes/single-tickets/star-tickets/"
+        },
+        {
+          "name": { "en": "Diamond Museum Bruges", "th": "พิพิธภัณฑ์เพชรบรูจส์" },
+          "kind": "museum",
+          "area": { "en": "Katelijnestraat", "th": "คาเทลิญสตราต" },
+          "what": { "en": "A museum on the story of diamonds with a daily polishing show at 12:15", "th": "พิพิธภัณฑ์เรื่องราวของเพชร มีการสาธิตเจียระไนทุกวัน 12:15" },
+          "why": { "en": "Short and indoors; the polishing show holds the attention of children of six and over", "th": "สั้นและอยู่ในร่ม การสาธิตเจียระไนดึงความสนใจเด็กอายุ 6 ปีขึ้นไปได้" },
+          "tip": { "en": "Open daily 10:30–17:30; the show is booked at reception on the day", "th": "เปิดทุกวัน 10:30–17:30 จองรอบสาธิตที่แผนกต้อนรับในวันนั้น" },
+          "ages": [0, 1, 2, 2],
+          "hrs": 1,
+          "io": "in",
+          "pram": "yes",
+          "price": { "en": "≈ €15 adults · child price on the booking page", "th": "≈ €15 ผู้ใหญ่ · ราคาเด็กดูที่หน้าจอง" },
+          "book": "none",
+          "q": "Diamantmuseum Brugge, Katelijnestraat 43, Bruges",
+          "ok": "2026-11",
+          "src": "https://www.diamondmuseum.be"
         }
       ]
     },

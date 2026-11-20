@@ -3,7 +3,6 @@
   "towns": [
     {
       "place": "fi-helsinki",
-      "thin": true,
       "sights": [
         {
           "name": { "en": "Linnanmäki Amusement Park", "th": "สวนสนุกลินนันมากิ" },
@@ -256,6 +255,23 @@
           "q": "Architecture and Design Museum, Korkeavuorenkatu 23, Helsinki",
           "ok": "2026-11",
           "src": "https://admuseo.fi/en/visit-us/"
+        },
+        {
+          "name": { "en": "Kiasma Museum of Contemporary Art", "th": "พิพิธภัณฑ์ศิลปะร่วมสมัยเคียสมา" },
+          "kind": "museum",
+          "area": { "en": "Kamppi", "th": "คัมปี" },
+          "what": { "en": "Finland's museum of contemporary art, with workshops for babies and families", "th": "พิพิธภัณฑ์ศิลปะร่วมสมัยของฟินแลนด์ มีเวิร์กช็อปสำหรับเด็กทารกและครอบครัว" },
+          "why": { "en": "Children under 18 go in free, and it is a warm place to spend a short, dark afternoon", "th": "เด็กต่ำกว่า 18 ปีเข้าฟรี และเป็นที่อบอุ่นสำหรับบ่ายสั้นๆ" },
+          "tip": { "en": "Closed on Mondays; check the family workshops on the museum page", "th": "ปิดวันจันทร์ เช็กเวิร์กช็อปครอบครัวที่หน้าเว็บ" },
+          "ages": [0, 1, 1, 2],
+          "hrs": 1.5,
+          "io": "in",
+          "pram": "yes",
+          "price": { "en": "≈ €23 adults · discounted €13 · under 18 free", "th": "≈ €23 ผู้ใหญ่ · ลดราคา €13 · ต่ำกว่า 18 ปีฟรี" },
+          "book": "none",
+          "q": "Kiasma, Mannerheiminaukio 2, Helsinki",
+          "ok": "2026-11",
+          "src": "https://kiasma.fi/en/visit/tickets-and-prices/"
         }
       ]
     },
@@ -406,6 +422,108 @@
           "q": "Kotatieva, Rovaniemi",
           "ok": "2026-11",
           "src": "https://www.visitrovaniemi.fi/?p=41184"
+        },
+        {
+          "name": { "en": "Santa Claus Office", "th": "สำนักงานซานตาคลอส" },
+          "kind": "culture",
+          "area": { "en": "Santa Claus Village", "th": "หมู่บ้านซานตาคลอส" },
+          "what": { "en": "The official place to meet Santa for a private chat in Santa Claus Village at the Arctic Circle", "th": "สถานที่พบซานตาอย่างเป็นทางการ ได้คุยส่วนตัวในหมู่บ้านซานตาคลอสที่เส้นอาร์กติกเซอร์เคิล" },
+          "why": { "en": "Free to enter and indoors, so a good first stop for children who believe", "th": "เข้าฟรี อยู่ในร่ม เหมาะเป็นจุดแรกสำหรับเด็กที่เชื่อในซานต้า" },
+          "tip": { "en": "Open every day with seasonal hours; queues are longest around Christmas", "th": "เปิดทุกวัน เวลาเปลี่ยนตามฤดูกาล ช่วงคริสต์มาสคิวยาว" },
+          "ages": [1, 2, 2, 1],
+          "hrs": 0.75,
+          "io": "in",
+          "pram": "yes",
+          "price": { "en": "Free", "th": "ฟรี" },
+          "book": "none",
+          "q": "Santa Claus Office, Santa Claus Village, Rovaniemi",
+          "ok": "2026-11",
+          "src": "https://www.visitrovaniemi.fi/attraction/santa-claus-office/"
+        },
+        {
+          "name": { "en": "Santa Claus Main Post Office", "th": "ที่ทำการไปรษณีย์ซานตาคลอส" },
+          "kind": "shop",
+          "area": { "en": "Santa Claus Village", "th": "หมู่บ้านซานตาคลอส" },
+          "what": { "en": "The official post office of Santa, where letters and cards get a special Arctic Circle postmark", "th": "ที่ทำการไปรษณีย์ของซานตา ส่งจดหมายและโปสการ์ดพร้อมตราไปรษณีย์อาร์กติกเซอร์เคิล" },
+          "why": { "en": "Children can post a card to themselves or to grandparents, and it is warm inside", "th": "เด็กๆ เขียนการ์ดส่งถึงตัวเองหรือคุณตาคุณยายได้ ข้างในอบอุ่น" },
+          "tip": { "en": "When it is closed, the yellow postbox by the door still gets the postmark", "th": "ถ้าปิด ใส่ตู้ไปรษณีย์สีเหลืองหน้าประตูก็ได้ตราเหมือนกัน" },
+          "ages": [0, 1, 2, 1],
+          "hrs": 0.75,
+          "io": "in",
+          "pram": "yes",
+          "price": { "en": "Free to enter · pay for stamps and gifts", "th": "เข้าฟรี · จ่ายค่าแสตมป์และของที่ซื้อ" },
+          "book": "none",
+          "q": "Santa Claus Main Post Office, Santa Claus Village, Rovaniemi",
+          "ok": "2026-11",
+          "src": "https://www.visitrovaniemi.fi/attraction/santa-claus-main-post-office/"
+        },
+        {
+          "name": { "en": "Santa's Pets", "th": "สัตว์เลี้ยงของซานตา" },
+          "kind": "farm",
+          "area": { "en": "Santa Claus Village", "th": "หมู่บ้านซานตาคลอส" },
+          "what": { "en": "A small farm yard with reindeer, alpacas, donkeys, sheep, goats, rabbits and birds, where you can feed the reindeer", "th": "ลานฟาร์มเล็กๆ มีเรนเดียร์ อัลปากา ลา แกะ แพะ กระต่าย และนก ป้อนเรนเดียร์ได้" },
+          "why": { "en": "Close contact with gentle animals, in a visit of about 30–60 minutes", "th": "ใกล้ชิดสัตว์ใจดี ใช้เวลาประมาณ 30–60 นาที" },
+          "tip": { "en": "Buy tickets on arrival; the ticket is valid all day, 11:00–18:00", "th": "ซื้อตั๋วหน้างาน ใช้ได้ทั้งวัน 11:00–18:00" },
+          "ages": [1, 2, 2, 1],
+          "hrs": 1,
+          "io": "out",
+          "pram": "part",
+          "price": { "en": "≈ €10 adults · €6 children 3–15 · winter season €15 and €10", "th": "≈ €10 ผู้ใหญ่ · €6 เด็ก 3–15 ปี · ฤดูหนาว €15 และ €10" },
+          "book": "none",
+          "q": "Santa's Pets, Pukinpolku 12, Rovaniemi",
+          "ok": "2026-11",
+          "src": "https://www.visitrovaniemi.fi/attraction/santas-pets/"
+        },
+        {
+          "name": { "en": "Mrs Santa Claus Christmas Cottage", "th": "กระท่อมคริสต์มาสของมิสซิสซานตา" },
+          "kind": "culture",
+          "area": { "en": "Santa Claus Village", "th": "หมู่บ้านซานตาคลอส" },
+          "what": { "en": "A private meeting with Mrs Santa Claus in her cottage, with a keepsake photo to take home", "th": "พบมิสซิสซานตาแบบส่วนตัวในกระท่อมของเธอ ได้รูปที่ระลึกกลับบ้าน" },
+          "why": { "en": "A quiet, unhurried visit for young children who find a big queue too much", "th": "เหมาะกับเด็กเล็กที่ไม่ชอบคิวยาวและเสียงดัง" },
+          "tip": { "en": "Book ahead, as meetings are private and timed", "th": "จองล่วงหน้า เพราะเป็นการพบแบบส่วนตัวตามเวลา" },
+          "ages": [1, 2, 2, 1],
+          "hrs": 0.75,
+          "io": "in",
+          "pram": "yes",
+          "price": { "en": "From ≈ €130 for a private meeting", "th": "เริ่มต้น ≈ €130 สำหรับการพบแบบส่วนตัว" },
+          "book": "req",
+          "q": "Mrs Santa Claus Christmas Cottage, Santa Claus Village, Rovaniemi",
+          "ok": "2026-11",
+          "src": "https://www.visitrovaniemi.fi/attraction/mrs-santa-claus-christmas-cottage/"
+        },
+        {
+          "name": { "en": "Arctic Garden", "th": "สวนอาร์กติก" },
+          "kind": "park",
+          "area": { "en": "Rovaniemi centre", "th": "ใจกลางโรวาเนียมี" },
+          "what": { "en": "A seven-hectare garden by the river in front of Arktikum, kept by the University of Lapland, with a small sandy beach in summer", "th": "สวนเจ็ดเฮกตาร์ริมแม่น้ำหน้าอาร์คติคุม ดูแลโดยมหาวิทยาลัยลาปแลนด์ มีหาดทรายเล็กๆ ในฤดูร้อน" },
+          "why": { "en": "An easy walk from the city centre next to the science centre, good for a break between museums", "th": "เดินจากใจกลางเมืองได้ง่าย อยู่ติดศูนย์วิทยาศาสตร์ เหมาะพักระหว่างพิพิธภัณฑ์" },
+          "tip": { "en": "Best in summer; in winter it is a quiet place to watch for northern lights", "th": "สวยที่สุดหน้าร้อน หน้าหนาวเป็นที่เงียบๆ ดูแสงเหนือ" },
+          "ages": [1, 2, 2, 1],
+          "hrs": 1,
+          "io": "out",
+          "pram": "yes",
+          "price": { "en": "Check the price", "th": "เช็กราคาก่อนไป" },
+          "book": "none",
+          "q": "Arctic Garden, Pohjoisranta, Rovaniemi",
+          "ok": "2026-11",
+          "src": "https://www.visitrovaniemi.fi/attraction/arctic-garden/"
+        },
+        {
+          "name": { "en": "Santa's Snowtubing", "th": "สโนว์ทูบบิ้งซานตา" },
+          "kind": "play",
+          "area": { "en": "Santa Claus Village", "th": "หมู่บ้านซานตาคลอส" },
+          "what": { "en": "A family snow-tubing slope in Santa Claus Village, with a warm hut between runs", "th": "ลานสไลด์ห่วงยางบนหิมะสำหรับครอบครัว มีกระท่อมอุ่นๆ ให้พักระหว่างรอบ" },
+          "why": { "en": "Fun for children who can sit on a tube; the ticket lasts all day so you can come and go", "th": "สนุกสำหรับเด็กที่นั่งบนห่วงยางได้ ตั๋วใช้ได้ทั้งวัน ออกมาพักแล้วกลับเข้าได้" },
+          "tip": { "en": "Open daily 12:00–18:00 in December and from January to March only", "th": "เปิดทุกวัน 12:00–18:00 เฉพาะเดือนธันวาคมและมกราคมถึงมีนาคม" },
+          "ages": [0, 1, 2, 2],
+          "hrs": 1.5,
+          "io": "out",
+          "pram": "no",
+          "price": { "en": "Check the price", "th": "เช็กราคาก่อนไป" },
+          "book": "rec",
+          "q": "Santa's Snowtubing, Santa Claus Village, Rovaniemi",
+          "ok": "2026-11",
+          "src": "https://www.visitrovaniemi.fi/attraction/snowtubing/"
         }
       ]
     }

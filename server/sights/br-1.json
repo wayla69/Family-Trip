@@ -214,6 +214,41 @@
           "q": "Quinta da Boa Vista, São Cristóvão, Rio de Janeiro",
           "ok": "2026-11",
           "src": "https://offpeaktrip.com/en/guide/riodejaneiro/quinta-da-boa-vista"
+        },
+        {
+          "name": { "en": "Lagoa Rodrigo de Freitas", "th": "ลากัวโรดริโกเดฟไรตัส" },
+          "kind": "park",
+          "area": { "en": "Lagoa", "th": "ลากัว" },
+          "what": { "en": "A lagoon ringed by a flat path, pedal boats, playgrounds and capybaras at Cantagalo", "th": "ทะเลสาบล้อมด้วยทางเดินราบ มีเรือถีบ สนามเด็กเล่น และคาปิบาราที่คอร์ตีดูกันตากาลู" },
+          "why": { "en": "A flat loop path suits prams; kids like the pedal boats and the capybaras", "th": "ทางเดินรอบทะเลสาบราบ เหมาะกับรถเข็น เด็กชอบเรือถีบและคาปิบารา" },
+          "tip": { "en": "Swimming is not allowed in the lagoon; early evening is cooler", "th": "ห้ามว่ายน้ำในทะเลสาบ ช่วงเย็นอากาศเย็นกว่า" },
+          "ages": [2, 2, 2, 1],
+          "hrs": 2,
+          "io": "out",
+          "pram": "yes",
+          "price": { "en": "Free to walk · pedal boats extra", "th": "เดินเล่นฟรี · เรือถีบคิดเงินแยก" },
+          "book": "none",
+          "q": "Lagoa Rodrigo de Freitas, Rio de Janeiro",
+          "ok": "2026-11",
+          "src": "https://www.quintoandar.com.br/guias/lagoa-rodrigo-de-freitas"
+        },
+        {
+          "name": { "en": "Selarón Steps", "th": "บันไดเซลารอน" },
+          "local": "Escadaria Selarón",
+          "kind": "culture",
+          "area": { "en": "Lapa", "th": "ลาปา" },
+          "what": { "en": "A staircase covered in colourful tiles from many countries between Lapa and Santa Teresa", "th": "บันไดปูกระเบื้องหลากสีจากหลายประเทศ ระหว่างลาปากับซานตาเทเรซา" },
+          "why": { "en": "Quick, bright and free for a photo stop; the steps are steep for prams", "th": "แวะถ่ายรูปสั้นๆ สีสดและฟรี แต่ขั้นบันไดชัน รถเข็นขึ้นลำบาก" },
+          "tip": { "en": "Go in daylight; there are no toilets or food at the steps", "th": "ไปตอนกลางวัน ที่บันไดไม่มีห้องน้ำหรือร้านอาหาร" },
+          "ages": [0, 1, 2, 2],
+          "hrs": 0.5,
+          "io": "out",
+          "pram": "no",
+          "price": { "en": "Free", "th": "ฟรี" },
+          "book": "none",
+          "q": "Escadaria Selarón, Lapa, Rio de Janeiro",
+          "ok": "2026-11",
+          "src": "https://www.aaa.com/tripcanvas/attraction/selaron-steps-escadaria-selaron-VA13341"
         }
       ]
     }

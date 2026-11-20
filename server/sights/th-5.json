@@ -3,7 +3,6 @@
   "towns": [
     {
       "place": "th-rayong",
-      "thin": true,
       "sights": [
         {
           "name": { "en": "Koh Samet beaches (Khao Laem Ya–Mu Ko Samet National Park)", "th": "เกาะเสม็ด (อุทยานแห่งชาติเขาแหลมหญ้า–หมู่เกาะเสม็ด)" },
@@ -227,6 +226,40 @@
           "q": "Laem Charoen Beach, Rayong",
           "ok": "2026-11",
           "src": "https://rayong.holidayinn.com/blog/travel-rayong-family"
+        },
+        {
+          "name": { "en": "Rock and Mineral Research Centre", "th": "ศูนย์วิจัยทรัพยากรแร่และหิน ระยอง" },
+          "kind": "museumkid",
+          "area": { "en": "Mueang Rayong", "th": "เมืองระยอง" },
+          "what": { "en": "A Department of Mineral Resources site with indoor cases of minerals, gems and fossils and a stone garden of big rock samples outside", "th": "ศูนย์ของกรมทรัพยากรธรณี มีตู้โชว์แร่ อัญมณี ฟอสซิลในอาคาร และสวนหินตัวอย่างขนาดใหญ่กลางแจ้ง" },
+          "why": { "en": "Free, cool indoors and easy for children to look at shiny stones, then run round the stone garden", "th": "เข้าฟรี ในร่มเย็น เด็กชอบดูหินสวยๆ แล้ววิ่งเล่นในสวนหิน" },
+          "tip": { "en": "Open Tuesday to Sunday 09:30 to 16:30, closed Monday; there is no direct public transport", "th": "เปิดอังคารถึงอาทิตย์ 09:30 ถึง 16:30 ปิดวันจันทร์ ไม่มีขนส่งสาธารณะตรง" },
+          "ages": [0, 1, 2, 1],
+          "hrs": 1.5,
+          "io": "both",
+          "pram": "yes",
+          "price": { "en": "Free", "th": "ฟรี" },
+          "book": "none",
+          "q": "Rock and Mineral Research Center, Klaeng, Mueang Rayong",
+          "ok": "2026-11",
+          "src": "https://www.thaiholidayguide.com/attraction/rock-and-mineral-research-center-rayong-province/"
+        },
+        {
+          "name": { "en": "Wat Ban Don shadow play museum", "th": "พิพิธภัณฑ์หนังใหญ่วัดบ้านดอน" },
+          "kind": "museum",
+          "area": { "en": "Choeng Noen", "th": "เชิงเนิน" },
+          "what": { "en": "A museum hall of about 200 large carved-leather nang yai puppets from 1888, one of only three such collections left in Thailand", "th": "อาคารพิพิธภัณฑ์เก็บหนังใหญ่แกะสลักราว 200 ตัวจากปี 2431 หนึ่งในสามแห่งที่เหลือในไทย" },
+          "why": { "en": "Big dramatic figures hold children's eyes for a short visit, and it is free and indoors", "th": "ตัวหนังใหญ่ดูตื่นตา เด็กสนใจได้สั้นๆ เข้าฟรี อยู่ในร่ม" },
+          "tip": { "en": "Inside a working temple, so cover shoulders and knees; a live show must be arranged days ahead", "th": "อยู่ในวัด แต่งกายสุภาพ ถ้าอยากดูการแสดงสดต้องนัดล่วงหน้าหลายวัน" },
+          "ages": [0, 1, 1, 1],
+          "hrs": 1,
+          "io": "in",
+          "pram": "yes",
+          "price": { "en": "Free", "th": "ฟรี" },
+          "book": "rec",
+          "q": "Wat Ban Don Nang Yai Museum, Choeng Noen, Mueang Rayong",
+          "ok": "2026-11",
+          "src": "https://www.thaiholidayguide.com/attraction/wat-ban-don-shadow-play-museum/"
         }
       ]
     }

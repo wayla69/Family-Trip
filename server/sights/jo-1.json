@@ -93,6 +93,57 @@
           "q": "Amman Beach, Dead Sea, Jordan",
           "ok": "2026-11",
           "src": "https://wowjordan.com/dead-sea-day-pass-prices"
+        },
+        {
+          "name": { "en": "Petra by Night", "th": "เพตรา บาย ไนต์" },
+          "kind": "show",
+          "area": { "en": "Petra Visitor Centre", "th": "ศูนย์ผู้เยี่ยมชมเพตรา" },
+          "what": { "en": "An evening walk down the candle-lit Siq to the Treasury with projection mapping and narration, about two hours", "th": "เดินยามค่ำคืนตามทางซีคที่จุดเทียนไปยังคลังสมบัติ มีแสงฉายและเสียงบรรยาย ประมาณ 2 ชั่วโมง" },
+          "why": { "en": "Children under 10 go free, but it ends about 22:30, so it suits older pre-schoolers who nap earlier in the day", "th": "เด็กต่ำกว่า 10 ปีเข้าฟรี แต่จบราว 22:30 เหมาะกับเด็กโตที่งีบมาก่อน" },
+          "tip": { "en": "Runs Sunday to Thursday from 20:30; you also need a daytime Petra ticket or Jordan Pass", "th": "จัดวันอาทิตย์–พฤหัสบดี เริ่ม 20:30 ต้องมีตั๋วเข้าเพตราตอนกลางวันหรือ Jordan Pass ด้วย" },
+          "ages": [0, 1, 1, 1],
+          "hrs": 2,
+          "io": "out",
+          "pram": "no",
+          "price": { "en": "≈ 30 JD per person · under 10 free", "th": "≈ 30 JD ต่อคน · เด็กต่ำกว่า 10 ปีฟรี" },
+          "book": "rec",
+          "q": "Petra Visitor Centre, Wadi Musa, Jordan",
+          "ok": "2026-11",
+          "src": "https://international.visitjordan.com/wheretogo/petra/"
+        },
+        {
+          "name": { "en": "Petra Museum", "th": "พิพิธภัณฑ์เพตรา" },
+          "kind": "museum",
+          "area": { "en": "Wadi Musa main street", "th": "ถนนสายหลักวาดีมูซา" },
+          "what": { "en": "A small museum three minutes’ walk from the main gate, with finds that tell how the Nabataeans lived", "th": "พิพิธภัณฑ์เล็กๆ เดินจากประตูหลักสามนาที มีโบราณวัตถุเล่าชีวิตชาวนาบาเทียน" },
+          "why": { "en": "Cool, indoors and quick, so it is a good first stop or a break from the heat and the long walk", "th": "อยู่ในร่ม เย็น ใช้เวลาสั้น เหมาะเป็นจุดแรกหรือพักจากความร้อนและการเดินไกล" },
+          "tip": { "en": "Open seven days a week through the day; ask at the Visitor Centre for current hours", "th": "เปิดทุกวัน ถามเวลาล่าสุดที่ศูนย์ผู้เยี่ยมชม" },
+          "ages": [1, 1, 2, 2],
+          "hrs": 1,
+          "io": "in",
+          "pram": "yes",
+          "price": { "en": "Check the price", "th": "เช็กราคาก่อนไป" },
+          "book": "none",
+          "q": "Petra Museum, Wadi Musa, Jordan",
+          "ok": "2026-11",
+          "src": "https://international.visitjordan.com/wheretogo/petra/"
+        },
+        {
+          "name": { "en": "Beidha Neolithic village", "th": "หมู่บ้านยุคหินใหม่ไบดา" },
+          "kind": "culture",
+          "area": { "en": "Beidha, north of Petra", "th": "ไบดา ทางเหนือของเพตรา" },
+          "what": { "en": "A 9,000-year-old farming settlement on the Beidha trail, near Siq al-Barid, with low stone walls to walk among", "th": "ชุมชนเกษตรอายุ 9,000 ปีบนเส้นทางไบดา ใกล้ซีค อัล-บาริด มีกำแพงหินเตี้ยให้เดินดู" },
+          "why": { "en": "Quiet and uncrowded, but exposed and unshaded; it works for children who like to explore and walk", "th": "เงียบและคนน้อย แต่โล่งไม่มีร่ม เหมาะกับเด็กที่ชอบสำรวจและเดิน" },
+          "tip": { "en": "Visit with a driver or the Little Petra trip; carry water and a hat", "th": "ไปกับคนขับรถหรือทริปลิตเติลเพตรา เตรียมน้ำและหมวก" },
+          "ages": [0, 1, 2, 2],
+          "hrs": 1.5,
+          "io": "out",
+          "pram": "no",
+          "price": { "en": "Check the price", "th": "เช็กราคาก่อนไป" },
+          "book": "none",
+          "q": "Beidha Neolithic village, near Little Petra, Wadi Musa, Jordan",
+          "ok": "2026-11",
+          "src": "https://international.visitjordan.com/wheretogo/petra/"
         }
       ]
     }

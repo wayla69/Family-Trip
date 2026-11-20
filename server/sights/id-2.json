@@ -157,6 +157,23 @@
           "q": "Padar Island, Komodo National Park, Labuan Bajo",
           "ok": "2026-11",
           "src": "https://dragondivekomodo.com/komodo-island-entry-fees"
+        },
+        {
+          "name": { "en": "Cunca Wulang canyon", "th": "จุนกา วูลัง" },
+          "kind": "nature",
+          "area": { "en": "Near Labuan Bajo", "th": "ใกล้ลาบวนบาโจ" },
+          "what": { "en": "A jungle walk over bamboo trails and suspension bridges to a turquoise canyon with swimming pools", "th": "เดินป่าผ่านสะพานแขวนไปยังหุบเขาน้ำสีเทอร์ควอยซ์ที่ลงเล่นน้ำได้" },
+          "why": { "en": "Good for children who can walk on uneven paths and swim with a life jacket; the optional cliff jumping is not for small ones", "th": "เหมาะกับเด็กที่เดินทางขรุขระได้และใส่เสื้อชูชีพ ส่วนกระโดดหน้าผาไม่เหมาะกับเด็กเล็ก" },
+          "tip": { "en": "About 1.5 hours by road from town; bring water shoes and a towel", "th": "ขับรถจากตัวเมืองราว 1.5 ชั่วโมง เตรียมรองเท้าลุยน้ำและผ้าเช็ดตัว" },
+          "ages": [0, 0, 1, 2],
+          "hrs": 4,
+          "io": "out",
+          "pram": "no",
+          "price": { "en": "Check the price", "th": "เช็กราคาก่อนไป" },
+          "book": "rec",
+          "q": "Cunca Wulang, Mbeliling, Manggarai Barat, Flores",
+          "ok": "2026-11",
+          "src": "https://komodotravelguide.blogspot.com/2025/07/cunca-wulang-waterfall-jungle-trekking.html"
         }
       ]
     },
@@ -333,6 +350,40 @@
           "q": "Sade Village, Rembitan, Pujut, Central Lombok",
           "ok": "2026-11",
           "src": "https://www.backindo.com/?p=9676"
+        },
+        {
+          "name": { "en": "Senggigi Beach", "th": "หาดเซงกิกี" },
+          "kind": "beach",
+          "area": { "en": "Senggigi, West Lombok", "th": "เซงกิกี ลอมบอกตะวันตก" },
+          "what": { "en": "A long sandy beach about 17 km from Mataram with canoes, snorkel sets and mats for hire", "th": "หาดทรายยาวห่างจากมะตารัมราว 17 กม. มีเช่าเรือแคนู ชุดดำน้ำตื้น และเสื่อ" },
+          "why": { "en": "Calm shallow water and cafes along the sand make it easy for a short family beach stop", "th": "น้ำตื้นสงบและมีคาเฟ่ริมหาด แวะเล่นสั้นๆ กับเด็กได้สบาย" },
+          "tip": { "en": "Parking is charged separately; go in the morning when it is cooler", "th": "ค่าจอดรถแยกต่างหาก ไปตอนเช้าอากาศเย็นกว่า" },
+          "ages": [1, 2, 2, 1],
+          "hrs": 2.5,
+          "io": "out",
+          "pram": "part",
+          "price": { "en": "≈ Rp15,000 entry", "th": "≈ Rp15,000 ค่าเข้า" },
+          "book": "none",
+          "q": "Pantai Senggigi, Batulayar, West Lombok",
+          "ok": "2026-11",
+          "src": "https://www.goodnewsfromindonesia.id/2025/01/21/rute-dan-biaya-masuk-ke-6-tempat-wisata-di-lombok-yang-wajib-kawan-tahu-sebelum-liburan"
+        },
+        {
+          "name": { "en": "Bale Mangrove Ecotourism", "th": "บาเล แมนโกรฟ" },
+          "kind": "nature",
+          "area": { "en": "Jerowaru, East Lombok", "th": "เจโรวารู ลอมบอกตะวันออก" },
+          "what": { "en": "A mangrove forest in Jor Bay with a wooden walkway through the trees, open 07:00–18:00", "th": "ป่าชายเลนในอ่าวจอร์ มีทางเดินไม้ผ่านป่า เปิด 07:00–18:00 น." },
+          "why": { "en": "A short, shaded walk with water and birds to look at; children enter free", "th": "ทางเดินสั้นๆ ร่มรื่น มีน้ำและนกให้ดู เด็กเข้าฟรี" },
+          "tip": { "en": "About 80–90 minutes from Mataram, so combine it with the south-east beaches", "th": "ห่างจากมะตารัม 80–90 นาที ควรไปรวมกับหาดทางตะวันออกเฉียงใต้" },
+          "ages": [1, 2, 2, 1],
+          "hrs": 1.5,
+          "io": "out",
+          "pram": "part",
+          "price": { "en": "≈ Rp5,000 adults · children free", "th": "≈ Rp5,000 ผู้ใหญ่ · เด็กฟรี" },
+          "book": "none",
+          "q": "Ekowisata Bale Mangrove, Jerowaru, East Lombok",
+          "ok": "2026-11",
+          "src": "https://www.goodnewsfromindonesia.id/2025/01/21/rute-dan-biaya-masuk-ke-6-tempat-wisata-di-lombok-yang-wajib-kawan-tahu-sebelum-liburan"
         }
       ]
     },

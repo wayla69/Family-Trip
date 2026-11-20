@@ -1541,6 +1541,40 @@
           "q": "Cangshan Gantong Cableway, Dali",
           "ok": "2026-11",
           "src": "https://travelchinawith.me/attractions/yunnan/dali/cangshan-cable-cars/"
+        },
+        {
+          "name": { "en": "Kunming World Horticultural Expo Garden", "th": "สวนพฤกษศาสตร์โลกคุนหมิง" },
+          "kind": "park",
+          "area": { "en": "Kunming", "th": "คุนหมิง" },
+          "what": { "en": "A big landscaped park from the 1999 world expo with themed gardens, greenhouses and flower displays, open 08:00–17:00", "th": "สวนใหญ่จากงานเอ็กซ์โปโลก มีสวนตามธีม เรือนกระจก และดอกไม้หลากสี เปิด 08:00–17:00 น." },
+          "why": { "en": "Wide paths and lawns for small legs to run, and the glasshouses give shade or shelter from rain", "th": "ทางกว้างและสนามหญ้าให้เด็กวิ่งเล่น เรือนกระจกช่วยหลบแดดหรือฝน" },
+          "tip": { "en": "The ticket is cheaper after 14:00; a buggy ride saves tired legs", "th": "ตั๋วถูกลงหลัง 14:00 น. มีรถไฟฟ้าช่วยตอนเด็กเหนื่อย" },
+          "ages": [1, 2, 2, 1],
+          "hrs": 4,
+          "io": "both",
+          "pram": "yes",
+          "price": { "en": "≈ ¥100 · ¥70 after 14:00", "th": "≈ ¥100 · ¥70 หลัง 14:00 น." },
+          "book": "none",
+          "q": "Kunming World Horticultural Expo Garden, Shibo Road, Kunming",
+          "ok": "2026-11",
+          "src": "https://www.chinabound.cn/s/202603/26/WS69c493dc498e23165e06e5de/world-horticultural-expo-garden-kunming.html"
+        },
+        {
+          "name": { "en": "Lijiang Old Town", "th": "เมืองเก่าลี่เจียง" },
+          "kind": "oldtown",
+          "area": { "en": "Lijiang", "th": "ลี่เจียง" },
+          "what": { "en": "A car-free Naxi town of cobbled lanes, canals and wooden houses with no city wall, open all day", "th": "เมืองเก่าชาวนาซีไร้กำแพง มีซอยหินปู คลอง และบ้านไม้ ไม่ให้รถเข้า เปิดทั้งวัน" },
+          "why": { "en": "Easy to wander in short bursts with snacks and shops, but cobbles are rough for prams", "th": "เดินเล่นเป็นช่วงสั้นๆ แวะกินขนมและร้านค้าได้ แต่พื้นหินไม่เหมาะกับรถเข็น" },
+          "tip": { "en": "Come early to avoid the crowds; a small maintenance fee is reported, so ask at your hotel", "th": "ไปเช้าเพื่อเลี่ยงคนเยอะ มีรายงานค่าบำรุงเมืองเก่า ถามที่โรงแรมก่อน" },
+          "ages": [1, 1, 2, 1],
+          "hrs": 3,
+          "io": "out",
+          "pram": "no",
+          "price": { "en": "Check the price", "th": "เช็กราคาก่อนไป" },
+          "book": "none",
+          "q": "Dayan Old Town, Gucheng District, Lijiang",
+          "ok": "2026-11",
+          "src": "https://www.chinabound.cn/s/202601/15/WS69ba6a60498e36855033b59a/lijiang-ancient-town.html"
         }
       ]
     },
@@ -1709,6 +1743,40 @@
           "q": "Tianmen Fox Fairy Theatre, Zhangjiajie",
           "ok": "2026-11",
           "src": "https://travelchinawith.me/china-destinations/zhangjiajie/zhangjiajie-night-shows/"
+        },
+        {
+          "name": { "en": "Golden Whip Stream", "th": "แม่น้ำจินเปียน" },
+          "kind": "nature",
+          "area": { "en": "Wulingyuan", "th": "อู่หลิง" },
+          "what": { "en": "A gentle 7.5 km stream trail along the canyon floor of the national forest park, with wild monkeys and stone pillars", "th": "ทางเดินริมลำธารยาว 7.5 กม. ในหุบเขาของอุทยาน มีลิงป่าและเสาหิน" },
+          "why": { "en": "Flat and shaded, the easiest walking in the park; children under 14 enter free", "th": "ทางราบและร่มรื่น เดินง่ายที่สุดในอุทยาน เด็กอายุต่ำกว่า 14 ปีเข้าฟรี" },
+          "tip": { "en": "Walk only a short stretch with little ones; do not feed or touch the monkeys", "th": "เดินแค่ช่วงสั้นๆ กับเด็กเล็ก และอย่าให้อาหารหรือแตะต้องลิง" },
+          "ages": [0, 1, 2, 2],
+          "hrs": 3,
+          "io": "out",
+          "pram": "part",
+          "price": { "en": "≈ ¥239 park ticket adults · under 14 free", "th": "≈ ¥239 บัตรอุทยานผู้ใหญ่ · ต่ำกว่า 14 ปีฟรี" },
+          "book": "none",
+          "q": "Golden Whip Stream, Zhangjiajie National Forest Park, Wulingyuan",
+          "ok": "2026-11",
+          "src": "https://www.advantour.com/china/zhangjiajie/golden-whip-stream.htm"
+        },
+        {
+          "name": { "en": "Ten-Mile Gallery tram", "th": "รถรางสิบลี้" },
+          "kind": "ride",
+          "area": { "en": "Wulingyuan", "th": "อู่หลิง" },
+          "what": { "en": "A small tram along 2.5 km of valley floor beneath sandstone peaks, 10–15 minutes each way, 07:00–18:00", "th": "รถรางเล็กวิ่ง 2.5 กม. ตามหุบเขาใต้ยอดหินทราย ใช้เวลา 10–15 นาที เปิด 07:00–18:00 น." },
+          "why": { "en": "Children under 1.3 m ride free and a flat path runs beside the track for tired legs", "th": "เด็กสูงต่ำกว่า 1.3 ม. ขึ้นฟรี และมีทางเดินราบข้างราง" },
+          "tip": { "en": "Not covered by the park pass; buy a one-way ticket and walk back", "th": "ไม่รวมในบัตรอุทยาน ซื้อเที่ยวเดียวแล้วเดินกลับ" },
+          "ages": [1, 2, 2, 1],
+          "hrs": 1.5,
+          "io": "out",
+          "pram": "yes",
+          "price": { "en": "≈ ¥38 one-way · under 1.3 m free", "th": "≈ ¥38 เที่ยวเดียว · สูงต่ำกว่า 1.3 ม. ฟรี" },
+          "book": "none",
+          "q": "Ten-Mile Gallery, Zhangjiajie National Forest Park, Wulingyuan",
+          "ok": "2026-11",
+          "src": "https://travelchinawith.me/attractions/hunan/zhangjiajie/zhangjiajie-ten-mile-gallery-tram/"
         }
       ]
     }

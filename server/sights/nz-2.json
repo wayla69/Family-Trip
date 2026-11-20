@@ -191,6 +191,40 @@
           "q": "Waitomo Glowworm Caves, Waitomo Village Road, Waitomo",
           "ok": "2026-11",
           "src": "https://www.newzealand.com/nz/plan/business/waitomo-glowworm-caves/"
+        },
+        {
+          "name": { "en": "Agrodome Farm Experience", "th": "อะโกรโดม ฟาร์มเอ็กซ์พีเรียนซ์" },
+          "kind": "farm",
+          "area": { "en": "Ngongotaha", "th": "งองโกตาฮา" },
+          "what": { "en": "A farm show with sheep, a farm tour and animal feeding, about 2.5 hours", "th": "โชว์ฟาร์มพร้อมแกะ ทัวร์ฟาร์ม และให้อาหารสัตว์ ใช้เวลาราว 2.5 ชั่วโมง" },
+          "why": { "en": "Hands-on animals and an all-weather show keep children busy; infants go free", "th": "ได้ใกล้ชิดสัตว์และโชว์ในร่มได้ทุกสภาพอากาศ เด็กเล็กเข้าฟรี" },
+          "tip": { "en": "Shows at 9:30, 11:00 and 14:30; open daily 9:00–17:00", "th": "โชว์เวลา 9:30 11:00 และ 14:30 เปิดทุกวัน 9:00–17:00" },
+          "ages": [1, 2, 2, 1],
+          "hrs": 2.5,
+          "io": "both",
+          "pram": "yes",
+          "price": { "en": "≈ NZ$68 adults · NZ$35 child 3–15 · under 3 free · family NZ$169", "th": "≈ NZ$68 ผู้ใหญ่ · NZ$35 เด็ก 3–15 ปี · ต่ำกว่า 3 ปีฟรี · ครอบครัว NZ$169" },
+          "book": "rec",
+          "q": "Agrodome, 141 Western Road, Ngongotaha, Rotorua",
+          "ok": "2026-11",
+          "src": "https://www.agrodome.co.nz/visitor-info/hours-and-prices/"
+        },
+        {
+          "name": { "en": "Hell's Gate Geothermal Walk", "th": "เฮลส์เกต ทางเดินชมความร้อนใต้พิภพ" },
+          "kind": "nature",
+          "area": { "en": "Tikitere", "th": "ทิกิเตเร" },
+          "what": { "en": "A 1–1.5 hour walk past a mud volcano, erupting pools and a hot waterfall, with Māori carving", "th": "ทางเดิน 1–1.5 ชั่วโมงผ่านภูเขาไฟโคลน บ่อน้ำพุ่ง และน้ำตกน้ำร้อน พร้อมกิจกรรมแกะสลักแบบเมารี" },
+          "why": { "en": "Steam and bubbling mud fascinate children; keep to the paths and hold hands near hot water", "th": "ไอน้ำและโคลนเดือดน่าตื่นตาสำหรับเด็ก เดินในทางที่กำหนดและจูงมือใกล้น้ำร้อน" },
+          "tip": { "en": "Open daily; the mud bath is a separate, pricier ticket", "th": "เปิดทุกวัน อาบโคลนเป็นตั๋วแยกที่แพงกว่า" },
+          "ages": [0, 1, 2, 2],
+          "hrs": 1.5,
+          "io": "out",
+          "pram": "part",
+          "price": { "en": "≈ NZ$45 adults · NZ$22.50 child · family NZ$125", "th": "≈ NZ$45 ผู้ใหญ่ · NZ$22.50 เด็ก · ครอบครัว NZ$125" },
+          "book": "rec",
+          "q": "Hell's Gate Geothermal Park, State Highway 30, Tikitere, Rotorua",
+          "ok": "2026-11",
+          "src": "https://hellsgate.co.nz/book/"
         }
       ]
     }

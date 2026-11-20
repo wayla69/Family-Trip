@@ -3,7 +3,6 @@
   "towns": [
     {
       "place": "ph-bohol",
-      "thin": true,
       "sights": [
         {
           "name": { "en": "Chocolate Hills", "th": "ช็อกโกแลตฮิลส์" },
@@ -191,6 +190,74 @@
           "q": "Bohol Bee Farm, Dao, Dauis, Panglao Island, Bohol",
           "ok": "2026-11",
           "src": "https://www.boholbeefarm.com/"
+        },
+        {
+          "name": { "en": "Nova Shell Museum", "th": "โนวา เชลล์ มิวเซียม" },
+          "kind": "museum",
+          "area": { "en": "Panglao", "th": "ปังเลา" },
+          "what": { "en": "A museum in Panglao with one of the world's biggest seashell collections, from tiny shells to giant clams", "th": "พิพิธภัณฑ์ในปังเลาที่มีคอลเลกชันเปลือกหอยใหญ่ที่สุดแห่งหนึ่งของโลก ตั้งแต่เล็กจิ๋วถึงหอยมือเสือยักษ์" },
+          "why": { "en": "Shells are easy for children to look at and name, and it is a short indoor stop near Alona Beach", "th": "เด็กดูและเรียกชื่อเปลือกหอยง่าย เป็นจุดแวะในร่มสั้นๆ ใกล้หาดอโลนา" },
+          "tip": { "en": "Sources give different fees and hours, so call before you go", "th": "แหล่งข้อมูลบอกค่าเข้าและเวลาเปิดไม่ตรงกัน โทรเช็กก่อนไป" },
+          "ages": [0, 1, 2, 1],
+          "hrs": 1,
+          "io": "in",
+          "pram": "part",
+          "price": { "en": "Check the price", "th": "เช็กราคาก่อนไป" },
+          "book": "none",
+          "q": "Nova Shell Museum, Teofilo Arcay Street, Poblacion, Panglao, Bohol",
+          "ok": "2026-11",
+          "src": "https://tourism.bohol.gov.ph/visitbohol-panglao/"
+        },
+        {
+          "name": { "en": "Alona Beach", "th": "หาดอโลนา" },
+          "kind": "beach",
+          "area": { "en": "Panglao", "th": "ปังเลา" },
+          "what": { "en": "The best-known white-sand beach of Panglao Island, lined with cafés, dive shops and boats", "th": "หาดทรายขาวที่มีชื่อเสียงที่สุดของเกาะปังเลา เรียงรายด้วยร้านกาแฟ ร้านดำน้ำ และเรือ" },
+          "why": { "en": "Shallow sand, many places to shelter and eat, and easy access make it simple for a family beach day", "th": "ทรายตื้น มีที่หลบแดดและร้านอาหารมาก เดินทางง่าย เที่ยวทั้งครอบครัวสะดวก" },
+          "tip": { "en": "Come early or late to avoid midday heat; choose a stretch away from the boat lane for swimming", "th": "ไปเช้าหรือเย็นเลี่ยงแดดจัด เลือกช่วงที่ห่างจากร่องเรือเวลาเล่นน้ำ" },
+          "ages": [1, 2, 2, 1],
+          "hrs": 3,
+          "io": "out",
+          "pram": "part",
+          "price": { "en": "Free", "th": "ฟรี" },
+          "book": "none",
+          "q": "Alona Beach, Panglao, Bohol",
+          "ok": "2026-11",
+          "src": "https://tourism.bohol.gov.ph/visitbohol-panglao/"
+        },
+        {
+          "name": { "en": "Island hopping to Balicasag and Virgin Island", "th": "ทัวร์เกาะบาลิกาซัคและเวอร์จิน" },
+          "kind": "nature",
+          "area": { "en": "Panglao", "th": "ปังเลา" },
+          "what": { "en": "A boat trip from Panglao to Balicasag Island and Virgin Island for swimming and snorkelling over reefs, with sea turtles a chance", "th": "ทริปเรือจากปังเลาไปเกาะบาลิกาซัคและเกาะเวอร์จิน ว่ายน้ำและดูปะการัง อาจเห็นเต่าทะเล" },
+          "why": { "en": "Calm shallow water suits older children in life vests; babies need shade and a short trip", "th": "น้ำนิ่งตื้น เหมาะเด็กโตที่ใส่เสื้อชูชีพ เด็กเล็กต้องมีร่มเงาและเลือกทริปสั้น" },
+          "tip": { "en": "Book with a tourism-accredited boat and ask about life vests for small sizes; trips can be cancelled in rough weather", "th": "จองเรือที่ได้รับการรับรองและถามเรื่องเสื้อชูชีพไซซ์เด็ก ทริปอาจยกเลิกเมื่อคลื่นแรง" },
+          "ages": [0, 1, 2, 2],
+          "hrs": 5,
+          "io": "out",
+          "pram": "no",
+          "price": { "en": "Check the price", "th": "เช็กราคาก่อนไป" },
+          "book": "rec",
+          "q": "Balicasag Island and Virgin Island boat tours, Panglao, Bohol",
+          "ok": "2026-11",
+          "src": "https://tourism.bohol.gov.ph/visitbohol-panglao/"
+        },
+        {
+          "name": { "en": "National Museum of the Philippines, Bohol", "th": "พิพิธภัณฑ์แห่งชาติ โบโฮล" },
+          "kind": "museum",
+          "area": { "en": "Tagbilaran", "th": "ตักบิลารัน" },
+          "what": { "en": "The regional National Museum in the old provincial capitol in Tagbilaran, with exhibits on Bohol's history and nature", "th": "พิพิธภัณฑ์แห่งชาติสาขาในอาคารที่ทำการจังหวัดเก่าที่ตักบิลารัน แสดงประวัติศาสตร์และธรรมชาติของโบโฮล" },
+          "why": { "en": "Free, indoors and small enough for a short rainy-day visit before moving on", "th": "เข้าฟรี ในร่ม ขนาดเล็ก เหมาะแวะสั้นๆ ตอนฝนตก" },
+          "tip": { "en": "Listings differ on opening hours and say it can be closed some days, so check first", "th": "ข้อมูลเวลาเปิดไม่ตรงกันและอาจปิดบางวัน เช็กก่อนไป" },
+          "ages": [0, 1, 1, 1],
+          "hrs": 1,
+          "io": "in",
+          "pram": "yes",
+          "price": { "en": "Free", "th": "ฟรี" },
+          "book": "none",
+          "q": "National Museum of the Philippines Bohol, Old Capitol, Tagbilaran City",
+          "ok": "2026-11",
+          "src": "https://nz.trip.com/moments/poi-national-museum-of-the-philippines-bohol-23029462"
         }
       ]
     },
@@ -367,6 +434,40 @@
           "q": "D'Mall, Station 2, Boracay Island, Malay, Aklan",
           "ok": "2026-11",
           "src": "https://tripwis.com/things-to-do-in-boracay/"
+        },
+        {
+          "name": { "en": "Island hopping by bangka", "th": "ทัวร์เที่ยวเกาะด้วยเรือบังกา" },
+          "kind": "nature",
+          "area": { "en": "Boracay", "th": "โบราเคย์" },
+          "what": { "en": "A shared five-hour outrigger boat tour with snorkelling, Puka Beach and a lunch stop around the islands", "th": "ทัวร์เรือบังกาแบบรวมกลุ่มห้าชั่วโมง ดำน้ำตื้น หาดปูกา และพักกินข้าวกลางวัน" },
+          "why": { "en": "The sheltered water is usually calm and the operator says children of all ages are welcome", "th": "น้ำในอ่าวมักนิ่ง ผู้ให้บริการบอกว่ารับเด็กทุกวัย" },
+          "tip": { "en": "Crystal Cove and Magic Island charge separate entry (about ₱200 each) and rough weather can cancel the trip", "th": "คริสตัลโคฟและเมจิกไอส์แลนด์เก็บค่าเข้าแยก (ราว ₱200 ต่อแห่ง) และอาจงดทริปเมื่อคลื่นแรง" },
+          "ages": [1, 2, 2, 2],
+          "hrs": 5,
+          "io": "out",
+          "pram": "no",
+          "price": { "en": "≈ ₱900–1,700 per person (shared tour, as listed)", "th": "≈ ₱900–1,700 ต่อคน (ทัวร์รวม ตามรายการ)" },
+          "book": "rec",
+          "q": "Boracay Island hopping, White Beach Station 1, Malay, Aklan",
+          "ok": "2026-11",
+          "src": "https://myboracayguide.com/boracay/activities/boracay-island-hopping"
+        },
+        {
+          "name": { "en": "Boracay sunset cruise", "th": "ล่องเรือชมพระอาทิตย์ตกโบราเคย์" },
+          "kind": "nature",
+          "area": { "en": "Boracay", "th": "โบราเคย์" },
+          "what": { "en": "A two-hour afternoon sail leaving at 3.30 pm with snorkelling gear, kayaks, live acoustic music and the sunset", "th": "ล่องเรือสองชั่วโมงออก 15.30 น. มีอุปกรณ์ดำน้ำตื้น คายัค ดนตรีสด และชมพระอาทิตย์ตก" },
+          "why": { "en": "Short, calm and not too hot, and a local guide says kids love the paddle boards and snorkel gear", "th": "สั้น นิ่ง และไม่ร้อนมาก ไกด์ท้องถิ่นบอกว่าเด็กๆ ชอบบอร์ดพายและอุปกรณ์ดำน้ำตื้น" },
+          "tip": { "en": "Boarding is at Station 1 from October to April and at Bulabog Beach from May to October; arrive 15 minutes early", "th": "ขึ้นเรือที่สเตชัน 1 ตั้งแต่ตุลาคมถึงเมษายน และหาดบูลาบ็อกตั้งแต่พฤษภาคมถึงตุลาคม มาก่อน 15 นาที" },
+          "ages": [1, 2, 2, 2],
+          "hrs": 2,
+          "io": "out",
+          "pram": "no",
+          "price": { "en": "≈ ₱850 per person (joiner)", "th": "≈ ₱850 ต่อคน (ร่วมกลุ่ม)" },
+          "book": "rec",
+          "q": "Boracay sunset cruise, Station 1, White Beach, Malay, Aklan",
+          "ok": "2026-11",
+          "src": "https://myboracayguide.com/boracay/activities/boracay-sunset-cruise"
         }
       ]
     }

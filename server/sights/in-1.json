@@ -3,7 +3,6 @@
   "towns": [
     {
       "place": "in-golden",
-      "thin": true,
       "sights": [
         {
           "name": { "en": "Taj Mahal", "th": "ทัชมาฮาล" },
@@ -208,6 +207,57 @@
           "q": "Albert Hall Museum, Ram Niwas Garden, Jaipur",
           "ok": "2026-11",
           "src": "https://www.rajasthantourtrip.com/blog/albert-hall-museum-jaipur-complete-guide.html"
+        },
+        {
+          "name": { "en": "Humayun's Tomb", "th": "สุสานหุมายุน" },
+          "kind": "culture",
+          "area": { "en": "Nizamuddin, Delhi", "th": "นิซามุดดิน เดลี" },
+          "what": { "en": "A red-sandstone Mughal tomb in a vast square garden, the model for the Taj Mahal", "th": "สุสานราชวงศ์โมกุลหินทรายแดงในสวนสี่เหลี่ยมกว้าง ต้นแบบทัชมาฮาล" },
+          "why": { "en": "Wide lawns and flat paths let small children run safely", "th": "สนามหญ้ากว้างและทางราบ ให้เด็กเล็กวิ่งเล่นได้ปลอดภัย" },
+          "tip": { "en": "Come mid-morning and walk on to Sunder Nursery next door", "th": "ไปสายๆ แล้วเดินต่อไปสวนซุนเดอร์ที่อยู่ติดกัน" },
+          "ages": [1, 2, 2, 2],
+          "hrs": 2,
+          "io": "out",
+          "pram": "yes",
+          "price": { "en": "Check the price", "th": "เช็กราคาก่อนไป" },
+          "book": "none",
+          "q": "Humayun's Tomb, Nizamuddin, New Delhi",
+          "ok": "2026-11",
+          "src": "https://lbb.in/delhi/humayun-tomb"
+        },
+        {
+          "name": { "en": "Sunder Nursery", "th": "ซุนเดอร์ เนอร์สเซอรี" },
+          "kind": "park",
+          "area": { "en": "Nizamuddin, Delhi", "th": "นิซามุดดิน เดลี" },
+          "what": { "en": "A restored heritage park with Mughal tombs, lawns, a lake and bird and butterfly zones", "th": "สวนมรดกที่บูรณะแล้ว มีสุสานโมกุล สนามหญ้า ทะเลสาบ และโซนนกกับผีเสื้อ" },
+          "why": { "en": "It has its own children's play zone and shaded picnic lawns beside Humayun's Tomb", "th": "มีโซนเล่นสำหรับเด็กและสนามปิกนิกร่มรื่น ติดสุสานหุมายุน" },
+          "tip": { "en": "Under-5s are listed as free; the page's price table is old, so check", "th": "เด็กต่ำกว่า 5 ปีฟรีตามเว็บไซต์ แต่ตารางราคาเก่า ให้เช็กก่อน" },
+          "ages": [2, 2, 2, 1],
+          "hrs": 2,
+          "io": "out",
+          "pram": "yes",
+          "price": { "en": "Check the price", "th": "เช็กราคาก่อนไป" },
+          "book": "none",
+          "q": "Sunder Nursery, Mathura Road, New Delhi",
+          "ok": "2026-11",
+          "src": "https://sundernursery.org/book-tickets.php"
+        },
+        {
+          "name": { "en": "City Palace, Jaipur", "th": "ซิตี้พาเลซ ชัยปุระ" },
+          "kind": "museum",
+          "area": { "en": "Old City, Jaipur", "th": "เมืองเก่า ชัยปุระ" },
+          "what": { "en": "The royal family's palace complex with courtyards, giant silver urns and costume and arms galleries", "th": "พระราชวังมีลานกว้าง โถเงินยักษ์ และห้องแสดงเครื่องแต่งกายกับอาวุธ" },
+          "why": { "en": "Shaded courtyards and short indoor galleries suit a rainy or hot afternoon", "th": "ลานร่มและห้องแสดงสั้นๆ ในร่ม เหมาะวันฝนหรือบ่ายร้อน" },
+          "tip": { "en": "Open 9.30 am to 5 pm, last entry 4.30 pm; closed on Holi", "th": "เปิด 09.30–17.00 น. เข้าได้ถึง 16.30 น. ปิดวันโฮลี" },
+          "ages": [1, 2, 2, 2],
+          "hrs": 2.5,
+          "io": "both",
+          "pram": "part",
+          "price": { "en": "≈ ₹300 foreign adults · children under 7 ₹50", "th": "≈ ₹300 ผู้ใหญ่ต่างชาติ · เด็กต่ำกว่า 7 ปี ₹50" },
+          "book": "none",
+          "q": "City Palace, Jaipur",
+          "ok": "2026-11",
+          "src": "https://www.trivenicabs.in/blog/city-palace-jaipur-complete-guide-2026"
         }
       ]
     }

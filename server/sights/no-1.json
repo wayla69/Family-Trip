@@ -278,7 +278,6 @@
     },
     {
       "place": "no-tromso",
-      "thin": true,
       "sights": [
         {
           "name": { "en": "Polaria", "th": "โพลาเรีย" },
@@ -468,6 +467,74 @@
           "q": "Telegrafbukta, Tromsø",
           "ok": "2026-11",
           "src": "https://www.visittromso.no/telegrafbukta-telegraph-bay"
+        },
+        {
+          "name": { "en": "Perspektivet Folkeparken open-air museum", "th": "พิพิธภัณฑ์กลางแจ้งเปอร์สเปกติเวต โฟลเกอปาร์เกน" },
+          "kind": "culture",
+          "area": { "en": "Folkeparken", "th": "โฟลเกอปาร์เกน" },
+          "what": { "en": "An open-air museum of old Tromsø houses that you can wander between, with family activities in summer", "th": "พิพิธภัณฑ์กลางแจ้งบ้านเก่าของทรอมโซ เดินชมได้ มีกิจกรรมครอบครัวในฤดูร้อน" },
+          "why": { "en": "Not fenced in, so children can roam, with toys such as stilts and ring toss", "th": "ไม่มีรั้ว เด็กๆ เดินเล่นได้ มีของเล่นอย่างไม้ต่อขาและห่วงโยน" },
+          "tip": { "en": "In summer, 21 June–23 August, the museum is open on Sundays 12:00–16:00", "th": "ฤดูร้อน 21 มิ.ย.–23 ส.ค. เปิดวันอาทิตย์ 12:00–16:00" },
+          "ages": [1, 2, 2, 1],
+          "hrs": 1,
+          "io": "out",
+          "pram": "part",
+          "price": { "en": "Free to wander the grounds", "th": "เดินชมบริเวณโดยรอบฟรี" },
+          "book": "none",
+          "q": "Perspektivet Folkeparken, Tromsø",
+          "ok": "2026-11",
+          "src": "https://www.visittromso.no/perspektivet-folkeparken"
+        },
+        {
+          "name": { "en": "Prestvannet", "th": "เพรสต์วานเนต" },
+          "kind": "park",
+          "area": { "en": "Tromsø island", "th": "เกาะทรอมโซ" },
+          "what": { "en": "A lake and bird area a bus ride or a walk from the centre, where families feed the ducks and birds", "th": "ทะเลสาบและพื้นที่นกห่างจากใจกลางเมืองแค่นั่งรถบัสหรือเดิน ครอบครัวไปให้อาหารเป็ดและนก" },
+          "why": { "en": "Calm, flat paths and birds to watch; in winter the lake is dark enough for northern lights", "th": "ทางเงียบราบเรียบ มีนกให้ดู หน้าหนาวมืดพอดูแสงเหนือ" },
+          "tip": { "en": "Only skate if you are completely sure the ice is safe", "th": "เล่นสเก็ตเมื่อมั่นใจเต็มที่ว่าน้ำแข็งปลอดภัยเท่านั้น" },
+          "ages": [1, 2, 2, 1],
+          "hrs": 1,
+          "io": "out",
+          "pram": "part",
+          "price": { "en": "Free", "th": "ฟรี" },
+          "book": "none",
+          "q": "Prestvannet, Tromsø",
+          "ok": "2026-11",
+          "src": "https://www.visittromso.no/family-holiday"
+        },
+        {
+          "name": { "en": "Charlottenlund play area", "th": "ลานเล่นชาร์ล็อตเตนลุนด์" },
+          "kind": "play",
+          "area": { "en": "Tromsø island", "th": "เกาะทรอมโซ" },
+          "what": { "en": "A local favourite with large play areas, climbing towers and volleyball courts", "th": "ลานเล่นขนาดใหญ่ที่ครอบครัวท้องถิ่นชอบ มีหอปีนและสนามวอลเลย์บอล" },
+          "why": { "en": "Plenty of room for energetic children to run and climb", "th": "มีที่กว้างให้เด็กๆ วิ่งและปีน" },
+          "tip": { "en": "Best on a dry day; bring a snack and spare layers", "th": "เหมาะวันที่ไม่ฝน เตรียมขนมและเสื้อสำรอง" },
+          "ages": [1, 2, 2, 2],
+          "hrs": 1.5,
+          "io": "out",
+          "pram": "part",
+          "price": { "en": "Free", "th": "ฟรี" },
+          "book": "none",
+          "q": "Charlottenlund, Tromsø",
+          "ok": "2026-11",
+          "src": "https://www.visittromso.no/family-holiday"
+        },
+        {
+          "name": { "en": "Tromsø Climbing Centre family climbing", "th": "ศูนย์ปีนหน้าผาทรอมโซ ปีนแบบครอบครัว" },
+          "kind": "play",
+          "area": { "en": "Tromsø", "th": "ทรอมโซ" },
+          "what": { "en": "An indoor climbing centre with a children's wall and family climbing on Saturdays 10:00–12:00", "th": "ศูนย์ปีนผาในร่ม มีกำแพงสำหรับเด็ก และเวลาปีนแบบครอบครัววันเสาร์ 10:00–12:00" },
+          "why": { "en": "A dry, warm way to burn off energy when the weather is bad", "th": "วิธีเผาผลาญพลังงานในร่มอบอุ่นเมื่ออากาศไม่ดี" },
+          "tip": { "en": "There are also family prices on weekdays before 14:00; check the price list", "th": "วันธรรมดาก่อน 14:00 มีราคาครอบครัวด้วย เช็กตารางราคา" },
+          "ages": [0, 1, 2, 2],
+          "hrs": 1.5,
+          "io": "in",
+          "pram": "part",
+          "price": { "en": "Check the price", "th": "เช็กราคาก่อนไป" },
+          "book": "rec",
+          "q": "Tromsø Klatresenter, Tromsø",
+          "ok": "2026-11",
+          "src": "https://tromsoklatresenter.no/priser"
         }
       ]
     }

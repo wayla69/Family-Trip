@@ -278,7 +278,6 @@
     },
     {
       "place": "pt-porto",
-      "thin": true,
       "sights": [
         {
           "name": { "en": "Santo Inácio Zoo", "th": "สวนสัตว์ซานตูอินาซิอู" },
@@ -513,6 +512,40 @@
           "q": "Livraria Lello, Rua das Carmelitas 144, Porto",
           "ok": "2026-11",
           "src": "https://www.avygeo.com/pt/guia/atividades/88480-livraria-lello"
+        },
+        {
+          "name": { "en": "Water Pavilion (Pavilhão da Água)", "th": "พาวิลเลียนน้ำ (ปาวีลยาวดาอากัว)" },
+          "kind": "museumkid",
+          "area": { "en": "Boavista", "th": "โบอาวิสตา" },
+          "what": { "en": "An interactive museum about water run by the city's water company", "th": "พิพิธภัณฑ์เชิงโต้ตอบเรื่องน้ำ ดำเนินการโดยบริษัทน้ำของเมือง" },
+          "why": { "en": "A calm hands-on stop indoors for a wet or hot afternoon", "th": "จุดแวะในร่มที่ให้ลงมือเล่น เหมาะวันฝนตกหรือบ่ายร้อน" },
+          "tip": { "en": "Open in morning and afternoon sessions; check the day before you go", "th": "เปิดเป็นรอบเช้าและบ่าย เช็กวันก่อนไป" },
+          "ages": [0, 1, 2, 1],
+          "hrs": 1.5,
+          "io": "in",
+          "pram": "part",
+          "price": { "en": "≈ €8 (Visit Porto lists €8, check the child price)", "th": "≈ €8 (Visit Porto ระบุ €8 เช็กราคาเด็กก่อนไป)" },
+          "book": "none",
+          "q": "Pavilhão da Água, Estrada da Circunvalação 15443, Porto",
+          "ok": "2026-11",
+          "src": "https://visitporto.travel/en-GB/poi/5cd04b45f979e000018e5a80"
+        },
+        {
+          "name": { "en": "Porto Botanical Garden", "th": "สวนพฤกษศาสตร์ปอร์โต" },
+          "kind": "park",
+          "area": { "en": "Boavista", "th": "โบอาวิสตา" },
+          "what": { "en": "A garden at the former Quinta do Campo Alegre with old trees, run by the University of Porto's natural history museum", "th": "สวนที่ควินตาดูกัมปูอาเลเกร มีต้นไม้เก่าแก่ ดูแลโดยพิพิธภัณฑ์ประวัติศาสตร์ธรรมชาติของมหาวิทยาลัยปอร์โต" },
+          "why": { "en": "Free, shaded and quiet, with room to run between the trees", "th": "ฟรี ร่มรื่น เงียบ มีที่ให้วิ่งเล่นระหว่างต้นไม้" },
+          "tip": { "en": "Open daily; 09:00–18:00 on weekdays, 10:00–18:00 at weekends", "th": "เปิดทุกวัน วันธรรมดา 09:00–18:00 วันหยุด 10:00–18:00" },
+          "ages": [1, 2, 2, 1],
+          "hrs": 1.5,
+          "io": "out",
+          "pram": "part",
+          "price": { "en": "Free", "th": "ฟรี" },
+          "book": "none",
+          "q": "Jardim Botânico do Porto, Rua do Campo Alegre 1191, Porto",
+          "ok": "2026-11",
+          "src": "https://visitporto.travel/en-GB/poi/5cd04b49f979e0000169b570"
         }
       ]
     }

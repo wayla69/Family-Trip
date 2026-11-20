@@ -277,7 +277,6 @@
     },
     {
       "place": "tw-hualien",
-      "thin": true,
       "sights": [
         {
           "name": { "en": "Farglory Ocean Park", "th": "ฟาร์โกลรีโอเชียนพาร์ก" },
@@ -527,6 +526,24 @@
           "q": "Mataian Wetland Ecological Park, Guangfu Township, Hualien",
           "ok": "2026-11",
           "src": "https://www.erv-nsa.gov.tw/en/attractions/detail/66"
+        },
+        {
+          "name": { "en": "Pine Garden", "th": "ไพน์การ์เดน ฮวาเหลียน" },
+          "local": "松園別館",
+          "kind": "culture",
+          "area": { "en": "Hualien City", "th": "ตัวเมืองฮวาเหลียน" },
+          "what": { "en": "A former wartime command house on a hill with pine-shaded gardens, art spaces and a café, run as a heritage site", "th": "บ้านเก่าสมัยสงครามบนเนินในสวนต้นสน เป็นแหล่งมรดกที่มีพื้นที่ศิลปะและคาเฟ่" },
+          "why": { "en": "Shady lawns and a free entry for under-6s let small children roam while parents look at the old rooms", "th": "สนามหญ้าร่มรื่น เด็กต่ำกว่า 6 ปีเข้าฟรี ให้วิ่งเล่นระหว่างพ่อแม่ชมห้องเก่า" },
+          "tip": { "en": "Open 09:00 to 18:00, last entry 17:30, and closed on a few listed Tuesdays each month (see the official page)", "th": "เปิด 09:00 ถึง 18:00 เข้าได้ถึง 17:30 ปิดบางวันอังคารของเดือนตามประกาศ (ดูหน้าทางการ)" },
+          "ages": [1, 2, 2, 1],
+          "hrs": 1.5,
+          "io": "both",
+          "pram": "part",
+          "price": { "en": "≈ NT$50 adults · NT$25 half price · under 6 free", "th": "≈ NT$50 ผู้ใหญ่ · NT$25 ครึ่งราคา · ต่ำกว่า 6 ปีฟรี" },
+          "book": "none",
+          "q": "Pine Garden, No. 65 Songyuan Street, Hualien City",
+          "ok": "2026-11",
+          "src": "https://www.pinegarden.com.tw"
         }
       ]
     },

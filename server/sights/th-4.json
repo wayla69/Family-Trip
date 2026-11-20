@@ -1074,6 +1074,23 @@
           "q": "Khao Kho Sacrificial Monument, Khao Kho, Phetchabun",
           "ok": "2026-11",
           "src": "https://www.thaiholidayguide.com/attraction/khao-kho-sacrificial-monument-information-and-travel-videos/"
+        },
+        {
+          "name": { "en": "Khao Kho National Park", "th": "อุทยานแห่งชาติเขาค้อ" },
+          "kind": "nature",
+          "area": { "en": "Khao Kho", "th": "เขาค้อ" },
+          "what": { "en": "A 483 sq km highland park of pine and montane forest, where winter nights drop into single digits and valleys fill with mist at dawn", "th": "อุทยานบนที่สูง 483 ตารางกิโลเมตร ป่าสนและป่าเขา ฤดูหนาวกลางคืนหนาวจัด เช้าๆ มีหมอกในหุบ" },
+          "why": { "en": "Cool air and short viewpoint stops suit children, and resorts, cafés and strawberry farms are close by", "th": "อากาศเย็น แวะจุดชมวิวสั้นๆ เหมาะกับเด็ก มีรีสอร์ต คาเฟ่ และไร่สตรอว์เบอร์รีใกล้ๆ" },
+          "tip": { "en": "Go on a weekday for the mist viewpoints without the crowd; the park gate hours are 08:30 to 16:30", "th": "ไปวันธรรมดาจะไม่แออัด ประตูอุทยานเปิด 08:30 ถึง 16:30" },
+          "ages": [1, 2, 2, 1],
+          "hrs": 2,
+          "io": "out",
+          "pram": "part",
+          "price": { "en": "≈ ฿100 adults · ฿50 children (foreign rate)", "th": "≈ ฿100 ผู้ใหญ่ · ฿50 เด็ก (อัตราชาวต่างชาติ)" },
+          "book": "none",
+          "q": "Khao Kho National Park, Khao Kho, Phetchabun",
+          "ok": "2026-11",
+          "src": "https://www.thaiholidayguide.com/attraction/khao-kho-national-park/"
         }
       ]
     },
@@ -2989,7 +3006,6 @@
     },
     {
       "place": "th-maehongson",
-      "thin": true,
       "sights": [
         {
           "name": { "en": "Pang Ung", "th": "ปางอุ๋ง" },
@@ -3186,12 +3202,79 @@
           "q": "Wat Jong Kham, Mueang Mae Hong Son",
           "ok": "2026-11",
           "src": "https://www.pptvhd36.com/travel/thailand/285650"
+        },
+        {
+          "name": { "en": "Doi Mae U Kho sunflower fields", "th": "ทุ่งดอกบัวตองดอยแม่อูคอ" },
+          "kind": "views",
+          "area": { "en": "Khun Yuam", "th": "ขุนยวม" },
+          "what": { "en": "Wild Mexican sunflowers (bua tong) cover the hillside at about 1,600 m for roughly a month, with viewing pavilions along the ridges", "th": "ทุ่งบัวตองป่าบนเขาสูงราว 1,600 เมตร บานราวหนึ่งเดือน มีศาลาชมวิวตามสันเขา" },
+          "why": { "en": "Paths wind through the flowers and the pavilions give a wide view, so small children enjoy it for an hour or so", "th": "มีทางเดินผ่านดอกไม้และศาลาชมวิว เด็กเล็กเดินเล่นได้สักชั่วโมง" },
+          "tip": { "en": "Peak bloom is mid-November to early December and mornings are cold, so bring a jacket", "th": "บานเต็มที่ราวกลางพฤศจิกายนถึงต้นธันวาคม ตอนเช้าหนาว เอาเสื้อกันหนาวไปด้วย" },
+          "ages": [1, 2, 2, 1],
+          "hrs": 1.5,
+          "io": "out",
+          "pram": "part",
+          "price": { "en": "Free", "th": "ฟรี" },
+          "book": "none",
+          "q": "Doi Mae U Kho, Khun Yuam, Mae Hong Son",
+          "ok": "2026-11",
+          "src": "https://www.thaiholidayguide.com/attraction/bua-tong-field-doi-mae-u-kho/"
+        },
+        {
+          "name": { "en": "Royal Folk Arts and Crafts Centre", "th": "ศูนย์ศิลปาชีพแม่ฮ่องสอน" },
+          "kind": "culture",
+          "area": { "en": "Mae Hong Son town", "th": "เมืองแม่ฮ่องสอน" },
+          "what": { "en": "A Queen Sirikit foundation centre where Shan and hill-tribe artisans weave and make wickerware, with a shop floor selling their work", "th": "ศูนย์ศิลปาชีพที่ชาวไทใหญ่และชาวเขาทอผ้าและจักสาน มีร้านขายงานฝีมือ" },
+          "why": { "en": "Cool, indoors and easy to walk round, a good wet-weather stop where children can watch looms at work", "th": "ในร่ม เย็นสบาย เดินง่าย เป็นที่หลบฝนที่เด็กๆ ดูการทอผ้าได้" },
+          "tip": { "en": "Open Monday to Saturday only; artisans are not always working, so treat the looms as a bonus", "th": "เปิดจันทร์ถึงเสาร์ ช่างอาจไม่ได้ทำงานทุกวัน ถ้าได้เห็นถือเป็นโบนัส" },
+          "ages": [1, 1, 1, 1],
+          "hrs": 1,
+          "io": "in",
+          "pram": "yes",
+          "price": { "en": "Free", "th": "ฟรี" },
+          "book": "none",
+          "q": "Royal Folk Arts and Crafts Center, Khun Lum Praphat Road, Mae Hong Son",
+          "ok": "2026-11",
+          "src": "https://www.thaiholidayguide.com/attraction/the-royal-folk-arts-and-crafts-center-mae-hong-son/"
+        },
+        {
+          "name": { "en": "Su Tong Pe bamboo bridge", "th": "สะพานซูตองเป้" },
+          "kind": "views",
+          "area": { "en": "Pang Mu, near Mae Hong Son", "th": "ปางหมู ใกล้เมืองแม่ฮ่องสอน" },
+          "what": { "en": "A hand-built bamboo bridge over 500 m long across rice paddies and a stream, linking Ban Kung Mai Sak to a hillside temple, with a small café at the far end", "th": "สะพานไม้ไผ่ยาวกว่า 500 เมตรข้ามนาและลำธาร ชาวบ้านสร้างเอง มีร้านกาแฟเล็กๆ ปลายทาง" },
+          "why": { "en": "A flat, open walk of 30 to 45 minutes there and back that children enjoy, but the planks have gaps so hold small hands", "th": "เดินเรียบๆ ไปกลับ 30 ถึง 45 นาที เด็กสนุก แต่แผ่นไม้มีช่อง จับมือเด็กเล็กไว้" },
+          "tip": { "en": "Free with a donation box; go early for the cool air and the morning alms round, and show quiet respect", "th": "ฟรี มีตู้รับบริจาค ไปเช้าอากาศเย็น เห็นพระบิณฑบาต ควรเงียบและสุภาพ" },
+          "ages": [1, 2, 2, 1],
+          "hrs": 1,
+          "io": "out",
+          "pram": "no",
+          "price": { "en": "Free (donations welcome)", "th": "ฟรี (รับบริจาค)" },
+          "book": "none",
+          "q": "Su Tong Pae Bamboo Bridge, Pang Mu, Mae Hong Son",
+          "ok": "2026-11",
+          "src": "https://www.thaiholidayguide.com/attraction/su-tong-pe-bridge-tham-phu-sama-park/"
+        },
+        {
+          "name": { "en": "Bua tong fields at Doi Mae Ho", "th": "ทุ่งบัวตองดอยแม่เหาะ" },
+          "kind": "views",
+          "area": { "en": "Mae Sariang", "th": "แม่สะเรียง" },
+          "what": { "en": "Wild Mexican sunflowers cover about 2 km of roadside slopes on Highway 108, about 19 km from Mae Sariang, from early November into December", "th": "ทุ่งบัวตองป่าราว 2 กิโลเมตรริมทางหลวง 108 ห่างแม่สะเรียงราว 19 กิโลเมตร บานต้นพฤศจิกายนถึงธันวาคม" },
+          "why": { "en": "Nothing to hike: families stop the car and walk a short roadside track, so it suits a quick photo stop with little ones", "th": "ไม่ต้องเดินไกล จอดรถแล้วเดินสั้นๆ ริมทาง เหมาะแวะถ่ายรูปกับเด็กเล็ก" },
+          "tip": { "en": "Arrive before 8 am on bloom weekends, when parking on the narrow shoulder fills up; the mountain bends can make children car-sick", "th": "ไปก่อน 8 โมงในช่วงดอกบาน ที่จอดริมทางเต็มเร็ว ทางโค้งอาจทำให้เด็กเมารถ" },
+          "ages": [1, 2, 2, 1],
+          "hrs": 1,
+          "io": "out",
+          "pram": "part",
+          "price": { "en": "Free", "th": "ฟรี" },
+          "book": "none",
+          "q": "Bua Tong fields Doi Mae Ho, Highway 108, Mae Sariang, Mae Hong Son",
+          "ok": "2026-11",
+          "src": "https://www.thaiholidayguide.com/attraction/bua-tong-fields-at-doi-mae-ho/"
         }
       ]
     },
     {
       "place": "th-nakhonsi",
-      "thin": true,
       "sights": [
         {
           "name": { "en": "Nakhon Si Thammarat National Museum", "th": "พิพิธภัณฑสถานแห่งชาติ นครศรีธรรมราช" },
@@ -3435,6 +3518,23 @@
           "q": "Krung Ching hot spring, Nopphitam, Nakhon Si Thammarat",
           "ok": "2026-11",
           "src": "https://www.thaiholidayguide.com/attraction/krung-ching-hot-spring/"
+        },
+        {
+          "name": { "en": "Thong Yee Bay", "th": "อ่าวท้องหยี" },
+          "kind": "beach",
+          "area": { "en": "Khanom", "th": "ขนอม" },
+          "what": { "en": "A quiet curve of sand and rock at the south end of Khanom with calm water in the sandy north half and a shallow reef off the rocky south", "th": "อ่าวเงียบๆ หาดทรายและโขดหิน ครึ่งเหนือน้ำนิ่งเล่นน้ำง่าย ครึ่งใต้มีแนวปะการังตื้น" },
+          "why": { "en": "Few visitors, no vendors on the sand and shallow water make it relaxed for a family beach morning", "th": "คนน้อย ไม่มีหาบเร่บนหาด น้ำตื้น เหมาะกับครอบครัวที่อยากพักผ่อนเงียบๆ" },
+          "tip": { "en": "One family-run restaurant serves the day's catch, so bring water and sun cover", "th": "มีร้านอาหารของครอบครัวร้านเดียวขายอาหารทะเลสด เอาน้ำและที่กันแดดไปด้วย" },
+          "ages": [1, 2, 2, 1],
+          "hrs": 2.5,
+          "io": "out",
+          "pram": "part",
+          "price": { "en": "Free", "th": "ฟรี" },
+          "book": "none",
+          "q": "Ao Thong Yee, Khanom, Nakhon Si Thammarat",
+          "ok": "2026-11",
+          "src": "https://www.thaiholidayguide.com/attraction/thong-yee-bay/"
         }
       ]
     },
