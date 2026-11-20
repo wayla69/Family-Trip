@@ -367,6 +367,57 @@
           "q": "Plitvice Lakes National Park, Entrance 2",
           "ok": "2026-11",
           "src": "https://np-plitvicka-jezera.hr/en/plan-your-visit/istrazite-jezera/activities/lake-tour-programmes/"
+        },
+        {
+          "name": { "en": "Aquatika Freshwater Aquarium", "th": "อควาติกา พิพิธภัณฑ์สัตว์น้ำจืด" },
+          "kind": "aquarium",
+          "area": { "en": "Karlovac", "th": "คาร์โลวัซ" },
+          "what": { "en": "Croatia's freshwater aquarium, with fish from the country's rivers and lakes in tanks, in Karlovac on the way from Zagreb", "th": "พิพิธภัณฑ์สัตว์น้ำจืดของโครเอเชีย มีปลาจากแม่น้ำและทะเลสาบของประเทศในตู้ อยู่ที่คาร์โลวัซระหว่างทางจากซาเกร็บ" },
+          "why": { "en": "Indoors and step-free, so it is the wet-day answer for the area; a family ticket keeps it cheap", "th": "อยู่ในร่ม ไม่มีขั้นบันได เป็นที่หลบฝนของแถบนี้ มีตั๋วครอบครัวประหยัด" },
+          "tip": { "en": "Plitvice tickets can bring a discount here; ask at the desk", "th": "ตั๋วพลิตวิตเซอาจลดราคาที่นี่ ถามที่เคาน์เตอร์" },
+          "ages": [1, 2, 2, 2],
+          "hrs": 2,
+          "io": "in",
+          "pram": "yes",
+          "price": { "en": "≈ €12 adults · €7 ages 3–14 · family (2 adults + 3 children) ≈ €24", "th": "≈ €12 ผู้ใหญ่ · €7 อายุ 3–14 ปี · ตั๋วครอบครัว (ผู้ใหญ่ 2 เด็ก 3) ≈ €24" },
+          "book": "none",
+          "q": "Aquatika Freshwater Aquarium, Karlovac",
+          "ok": "2026-11",
+          "src": "https://www.aquariumkarlovac.com/?p=5550"
+        },
+        {
+          "name": { "en": "Grabovača Cave Park", "th": "สวนถ้ำกราโบวาชา" },
+          "kind": "nature",
+          "area": { "en": "Perušić, Lika", "th": "เปรูชิช แคว้นลีกา" },
+          "what": { "en": "Guided walk into the Samograd cave, plus a herbal garden with a Hobbit House, Fairy Land and a forest tower", "th": "เดินชมถ้ำซาโมกราดกับไกด์ และมีสวนสมุนไพร บ้านฮอบบิท ดินแดนนางฟ้า และหอคอยในป่า" },
+          "why": { "en": "Children can play outside while waiting for the cave tour; the cave is cool, so bring a jacket", "th": "เด็กเล่นข้างนอกระหว่างรอรอบถ้ำได้ ในถ้ำเย็น เตรียมเสื้อกันหนาว" },
+          "tip": { "en": "The season opened on 4 April in 2026, so the park is closed in winter; check dates before you drive", "th": "ปี 2026 เปิดฤดูกาลวันที่ 4 เมษายน ช่วงหนาวปิด เช็กวันก่อนขับไป" },
+          "ages": [1, 2, 2, 2],
+          "hrs": 2.5,
+          "io": "both",
+          "pram": "part",
+          "price": { "en": "Check the price", "th": "เช็กราคาก่อนไป" },
+          "book": "none",
+          "q": "Cave Park Grabovača, Perušić, Croatia",
+          "ok": "2026-11",
+          "src": "https://pp-grabovaca.hr/en/ulaz-1-pecinski-park/"
+        },
+        {
+          "name": { "en": "Barać Caves", "th": "ถ้ำบาราช" },
+          "kind": "nature",
+          "area": { "en": "Rakovica", "th": "ราโคบิตซา" },
+          "what": { "en": "The Upper Barać Cave, open to visitors since 2004: a 45-minute to one-hour guided tour among stalactites", "th": "ถ้ำบาราชตอนบน เปิดให้เข้าชมตั้งแต่ปี 2004 เดินชมกับไกด์ 45 นาทีถึงหนึ่งชั่วโมง เห็นหินงอกหินย้อย" },
+          "why": { "en": "A short cool tour in the rain; the guide is included in the ticket", "th": "ทัวร์สั้นๆ ในอากาศเย็น เหมาะวันฝนตก ค่าไกด์รวมในตั๋ว" },
+          "tip": { "en": "The cave stays at 9 °C, so bring a jacket and shoes with grip; ask about the season, it closes in winter", "th": "ในถ้ำอุณหภูมิ 9 องศา เตรียมเสื้อกันหนาวและรองเท้ากันลื่น ถามช่วงเปิด ฤดูหนาวปิด" },
+          "ages": [0, 1, 2, 2],
+          "hrs": 1.5,
+          "io": "both",
+          "pram": "no",
+          "price": { "en": "Check the price", "th": "เช็กราคาก่อนไป" },
+          "book": "none",
+          "q": "Barać Caves, Rakovica, Croatia",
+          "ok": "2026-11",
+          "src": "https://www.lika-destination.hr/nature-protected-area/tourism/155/barac-caves"
         }
       ]
     }

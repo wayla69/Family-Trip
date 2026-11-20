@@ -286,23 +286,6 @@
           "src": "https://www.insidesamui.com/visit/best-beaches-in-koh-samui/"
         },
         {
-          "name": { "en": "Coco Splash Adventure Waterpark", "th": "โคโค่สแปลช แอดเวนเจอร์ วอเตอร์พาร์ค" },
-          "kind": "play",
-          "area": { "en": "Maret", "th": "มะเร็ท" },
-          "what": { "en": "A family water park with slides, a wave pool, a lazy river and shallow kids' pools with cabanas for parents", "th": "สวนน้ำครอบครัว มีสไลเดอร์ สระคลื่น แม่น้ำวน และสระตื้นสำหรับเด็ก พร้อมศาลาให้พ่อแม่นั่งพัก" },
-          "why": { "en": "Shallow pools and small slides keep toddlers busy while older children use the big slides", "th": "สระตื้นและสไลเดอร์เล็กทำให้เด็กเล็กเล่นสนุก ส่วนเด็กโตเล่นสไลเดอร์ใหญ่" },
-          "tip": { "en": "Listed hours are about noon to 8 pm; call or ask your hotel first, as it opens by day and season", "th": "เวลาที่ลงไว้ราวเที่ยงถึงสองทุ่ม โทรถามหรือสอบถามโรงแรมก่อน เพราะเปิดตามวันและฤดูกาล" },
-          "ages": [1, 2, 2, 2],
-          "hrs": 3,
-          "io": "out",
-          "pram": "part",
-          "price": { "en": "Check the price", "th": "เช็กราคาก่อนไป" },
-          "book": "none",
-          "q": "Coco Splash Adventure and Waterpark, Maret, Koh Samui",
-          "ok": "2026-11",
-          "src": "https://ui-assets-gc.thrillophilia.com/water-parks-in-koh-samui"
-        },
-        {
           "name": { "en": "Secret Buddha Garden (Magic Garden)", "th": "สวนพระพุทธรูปลับ (สวนเวทมนตร์)" },
           "local": "สวนลับ ตาร์นิม",
           "kind": "nature",

@@ -201,6 +201,42 @@
           "q": "Stalin Park, Daoli District, Harbin",
           "ok": "2026-11",
           "src": "https://www.icefestivalharbin.com/attraction-p27-stalin-park.html"
+        },
+        {
+          "name": { "en": "Dragon Tower, Harbin", "th": "หอมังกร ฮาร์บิน" },
+          "local": "龙塔",
+          "kind": "views",
+          "area": { "en": "Nangang District", "th": "เขตหนานกั่ง" },
+          "what": { "en": "A 336-metre steel TV tower with indoor observation decks at 181 and 190 metres over the city", "th": "หอโทรทัศน์เหล็กสูง 336 เมตร มีจุดชมวิวในร่มที่ชั้น 181 และ 190 เมตรเหนือเมือง" },
+          "why": { "en": "A warm, covered way to see the whole city in winter or rain; children under 1.2 m go in free", "th": "จุดชมเมืองในร่มที่อุ่นสบายทั้งหน้าหนาวและหน้าฝน เด็กสูงต่ำกว่า 1.2 ม. เข้าฟรี" },
+          "tip": { "en": "Open 09:00–20:00 with last entry at 19:30; go on a clear afternoon for the best view", "th": "เปิด 09:00–20:00 เข้าได้ถึง 19:30 ไปช่วงบ่ายที่ท้องฟ้าโปร่งจะเห็นวิวดีที่สุด" },
+          "ages": [1, 2, 2, 2],
+          "hrs": 1.5,
+          "io": "in",
+          "pram": "yes",
+          "price": { "en": "≈ ¥95 adults · ≈ ¥47 children 1.2–1.4 m · under 1.2 m free", "th": "≈ ¥95 ผู้ใหญ่ · ≈ ¥47 เด็กสูง 1.2–1.4 ม. · ต่ำกว่า 1.2 ม. ฟรี" },
+          "book": "none",
+          "q": "Dragon Tower, Nangang District, Harbin",
+          "ok": "2026-11",
+          "src": "https://www.travelchinaguide.com/attraction/heilongjiang/dragon-tower-harbin.htm"
+        },
+        {
+          "name": { "en": "Jile Temple (Bliss Temple)", "th": "วัดจี๋เล่อ ฮาร์บิน" },
+          "local": "极乐寺",
+          "kind": "culture",
+          "area": { "en": "Nangang District", "th": "เขตหนานกั่ง" },
+          "what": { "en": "Harbin's largest Buddhist temple, with courtyard halls and a quiet garden; visitors are welcome", "th": "วัดพุทธที่ใหญ่ที่สุดในฮาร์บิน มีลานและหอต่าง ๆ กับสวนเงียบสงบ ต้อนรับผู้มาเยือน" },
+          "why": { "en": "Short, flat and cheap; a calm stop between busier sights", "th": "ใช้เวลาสั้น พื้นเรียบ ราคาถูก เป็นจุดแวะสงบ ๆ ระหว่างที่เที่ยวคึกคัก" },
+          "tip": { "en": "Dress modestly and speak softly; winter hours close earlier at 16:00", "th": "แต่งกายสุภาพและพูดเบา ๆ หน้าหนาวปิดเร็วที่ 16:00" },
+          "ages": [1, 1, 1, 1],
+          "hrs": 1,
+          "io": "out",
+          "pram": "part",
+          "price": { "en": "≈ ¥10 adults", "th": "≈ ¥10 ผู้ใหญ่" },
+          "book": "none",
+          "q": "Jile Temple, Nangang District, Harbin",
+          "ok": "2026-11",
+          "src": "https://www.travelchinaguide.com/attraction/heilongjiang/harbin/bliss-temple.htm"
         }
       ]
     }

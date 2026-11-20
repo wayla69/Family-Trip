@@ -332,16 +332,16 @@
           "area": { "en": "Botanical Garden, District 1", "th": "สวนพฤกษศาสตร์ เขต 1" },
           "what": { "en": "Vietnam's history from the Dong Son drums to the Nguyen kings in a pagoda-roofed building beside the zoo and botanical gardens", "th": "ประวัติศาสตร์เวียดนามตั้งแต่กลองดงเซินถึงราชวงศ์เหงียน ในอาคารหลังคาเจดีย์ข้างสวนสัตว์และสวนพฤกษศาสตร์" },
           "why": { "en": "The glass cases suit children from about 6 who like old things; pair it with the zoo next door", "th": "ตู้กระจกของเก่าเหมาะกับเด็กราว 6 ขวบขึ้นไปที่ชอบของโบราณ ไปคู่กับสวนสัตว์ข้างๆ ได้" },
-          "tip": { "en": "Listings disagree on the weekly closing day (Monday), so check before going; plan about an hour", "th": "แหล่งข้อมูลไม่ตรงกันเรื่องวันหยุด (วันจันทร์) เช็กก่อนไป ใช้เวลาราว 1 ชั่วโมง" },
+          "tip": { "en": "Closed on Mondays (open Tuesday to Sunday); a morning and an afternoon session with a lunch break, so check the times before going", "th": "ปิดวันจันทร์ (เปิดอังคารถึงอาทิตย์) เปิดรอบเช้าและบ่าย พักเที่ยง เช็กเวลาก่อนไป" },
           "ages": [0, 0, 1, 2],
           "hrs": 1,
           "io": "in",
           "pram": "yes",
-          "price": { "en": "≈ 30,000 VND per person", "th": "≈ 30,000 ด่ง ต่อคน" },
+          "price": { "en": "≈ 30,000 VND adults", "th": "≈ 30,000 ด่ง ผู้ใหญ่" },
           "book": "none",
           "q": "Museum of History, 2 Nguyen Binh Khiem, District 1, Ho Chi Minh City",
           "ok": "2026-11",
-          "src": "https://vinwonders.com/vi/wonderpedia/news/bao-tang-lich-su-thanh-pho-ho-chi-minh/"
+          "src": "https://thanhnien.vn/bi-an-thi-the-nu-quy-toc-xua-trong-bao-tang-co-nhat-tphcm-185260125005316517.htm"
         }
       ]
     },

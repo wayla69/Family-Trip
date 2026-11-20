@@ -206,6 +206,10 @@ House, Artcaffé, Griechenbeisl, Breydel De Coninc, The Old Keswickian, Queen of
 town they are not in were taken out: eGeLoSIa (Koblenz, under Cologne), Café Schäfer (Triberg, under Heidelberg), Vigò (Ljubljana, under
 Bled). Renamed but trading, kept under the old name for now: Fløien Folkerestaurant (Fløirestauranten), Restaurant Aanaar (Wilderness Hotel
 Juutua). 2,720 of 3,040 rows carry `ok`; 320 do not — most are places whose sites refused curl or have no page of their own.
+Round 4: 34 more confirmed open (Wanderlog pages with 2025–2026 Google reviews, Wongnai, dated articles), Störtebeker at the Elbphilharmonie
+taken out (permanently closed); a chain's main site or a temporary-closed tag kept a row unconfirmed. 2,754 of 3,039 rows carry `ok`. The
+search allowance ran out before most rows were searched; the rest, and the library's growth (big cities 70 places, other towns 40, small ones
+22, spread over districts), went to the owner's Gemini Deep Research brief.
 
 - A file is `{"cc", "towns": [{"place": "<picture-library city id>", "places": [row…]}]}`; the header of `scripts/eats-lint.mjs` gives
   the row's fields. `npm run eats:lint` checks every file and that every city of the picture library has its list (test/infra runs it).

@@ -3,7 +3,6 @@
   "towns": [
     {
       "place": "tr-cappadocia",
-      "thin": true,
       "sights": [
         {
           "name": { "en": "Göreme Open Air Museum", "th": "พิพิธภัณฑ์กลางแจ้งเกอเรเม" },
@@ -201,6 +200,77 @@
           "q": "Pigeon Valley, Uçhisar, Nevşehir",
           "ok": "2026-11",
           "src": "https://goturkiye.com/cappadocia/see-cappadocia"
+        },
+        {
+          "name": { "en": "Özkonak Underground City", "th": "เมืองใต้ดินเอิซโกนัก" },
+          "local": "Özkonak Yeraltı Şehri",
+          "kind": "culture",
+          "area": { "en": "Özkonak, near Avanos", "th": "เอิซโกนัก ใกล้อาวานอส" },
+          "what": { "en": "A two-storey underground city dug into tuff, with tunnels, rolling-stone doors, a barn and a winery", "th": "เมืองใต้ดินสองชั้นที่ขุดในหินทัฟฟ์ มีอุโมงค์ ประตูหินกลิ้ง คอกสัตว์ และห้องทำไวน์" },
+          "why": { "en": "Fun to explore like a maze, and indoors on a hot or wet day; tunnels are low, so small heads need care", "th": "สนุกเหมือนเดินเขาวงกต อยู่ในร่มวันร้อนหรือฝนตก อุโมงค์เตี้ย ระวังศีรษะเด็ก" },
+          "tip": { "en": "Wear shoes with grip and keep children close in the narrow passages", "th": "ใส่รองเท้ากันลื่น และให้เด็กอยู่ใกล้ตัวในช่องแคบ" },
+          "ages": [0, 1, 2, 2],
+          "hrs": 1,
+          "io": "in",
+          "pram": "no",
+          "price": { "en": "≈ ₺200 adults", "th": "≈ ₺200 ผู้ใหญ่" },
+          "book": "none",
+          "q": "Özkonak Underground City, Özkonak, Avanos",
+          "ok": "2026-11",
+          "src": "https://turkishmuseums.kprod.kultur.gov.tr/museum/detail/2209-nevsehir-ozkonak-underground-city/2209/4"
+        },
+        {
+          "name": { "en": "Love Valley", "th": "หุบเขาเลิฟ (อัชก์วาดีซี)" },
+          "local": "Aşk Vadisi",
+          "kind": "nature",
+          "area": { "en": "Between Göreme and Uçhisar", "th": "ระหว่างเกอเรเมกับอุชิซาร์" },
+          "what": { "en": "A valley of tall, rounded fairy chimneys that you can walk among on a flat path", "th": "หุบเขาปล่องนางฟ้าทรงสูงมน เดินเล่นระหว่างหินบนทางราบ" },
+          "why": { "en": "Free and open all day; the flat path is easy for walkers and the shapes make children laugh", "th": "ฟรีและเข้าได้ทั้งวัน ทางเดินราบ รูปทรงหินทำให้เด็กหัวเราะ" },
+          "tip": { "en": "Go early or late for shade and a good light; take water, as there is little shade at midday", "th": "ไปเช้าหรือเย็นเพื่อร่มและแสงสวย พกน้ำ เที่ยงแทบไม่มีร่ม" },
+          "ages": [0, 1, 2, 2],
+          "hrs": 1.5,
+          "io": "out",
+          "pram": "no",
+          "price": { "en": "Free", "th": "ฟรี" },
+          "book": "none",
+          "q": "Love Valley (Aşk Vadisi), Göreme, Cappadocia",
+          "ok": "2026-11",
+          "src": "https://topologica.co/local-guides/turkey/cappadocia-rock-valleys"
+        },
+        {
+          "name": { "en": "Devrent Valley (Imagination Valley)", "th": "หุบเขาเดฟเรนต์ (หุบเขาจินตนาการ)" },
+          "local": "Devrent Vadisi",
+          "kind": "nature",
+          "area": { "en": "On the road to Avanos", "th": "ริมถนนไปอาวานอส" },
+          "what": { "en": "Fairy chimneys shaped like animals, where children name what each rock looks like", "th": "ปล่องนางฟ้าที่ดูเหมือนสัตว์ ให้เด็กๆ ตั้งชื่อว่าแต่ละก้อนเหมือนอะไร" },
+          "why": { "en": "A free game of finding the camel and the seal; it is a short walk from the roadside stop", "th": "เกมหาอูฐหาแมวน้ำฟรีๆ เดินสั้นจากจุดจอดริมถนน" },
+          "tip": { "en": "A small sign marks the pull-out, and an informal parking helper may ask for about ₺20", "th": "มีป้ายเล็กๆ ตรงจุดจอด อาจมีคนดูรถขอทิปราว ₺20" },
+          "ages": [0, 2, 2, 2],
+          "hrs": 1,
+          "io": "out",
+          "pram": "part",
+          "price": { "en": "Free", "th": "ฟรี" },
+          "book": "none",
+          "q": "Devrent Valley, Avanos, Cappadocia",
+          "ok": "2026-11",
+          "src": "https://topologica.co/local-guides/turkey/cappadocia-rock-valleys"
+        },
+        {
+          "name": { "en": "Hair Museum of Avanos (Chez Galip)", "th": "พิพิธภัณฑ์ผมอาวานอส (เชซกาลิป)" },
+          "kind": "museum",
+          "area": { "en": "Avanos", "th": "อาวานอส" },
+          "what": { "en": "A cave under a pottery shop whose walls and ceiling hold thousands of locks of hair left by visitors", "th": "ถ้ำใต้ร้านเซรามิก ผนังและเพดานเต็มไปด้วยเส้นผมหลายพันเส้นที่ผู้มาเยือนทิ้งไว้" },
+          "why": { "en": "A short, odd stop that older children remember; there is also pottery to watch being made", "th": "แวะสั้นๆ ที่แปลกและเด็กโตจำได้ ดูการปั้นเซรามิกได้ด้วย" },
+          "tip": { "en": "A 2026 report says visitors buy a ticket; a past rule tied entry to the shop, so ask on arrival", "th": "รายงานปี 2026 บอกว่าต้องซื้อตั๋ว เดิมเคยผูกกับร้านค้า ถามเมื่อถึง" },
+          "ages": [0, 0, 1, 2],
+          "hrs": 0.5,
+          "io": "in",
+          "pram": "part",
+          "price": { "en": "Check the price", "th": "เช็กราคาก่อนไป" },
+          "book": "none",
+          "q": "Hair Museum Chez Galip, Avanos",
+          "ok": "2026-11",
+          "src": "https://www.dailysabah.com/arts/from-balloons-to-lock-of-hair-unexpected-cappadocia-discovery/news"
         }
       ]
     },
