@@ -4050,3 +4050,17 @@ details.more>summary{border-radius:16px}
 .ppfoot{text-align:center;margin:18px 0 4px}
 .ppfoot .ppprint{min-height:44px;display:inline-flex;align-items:center}
 .pp>.ppfoot{grid-column:1/-1;order:99}
+/* the draft's passport (import page): a small cover in the book's colours beside its pages */
+.imppp{display:grid;grid-template-columns:112px minmax(0,1fr);gap:14px;align-items:start;margin:14px 0;padding:14px;border-radius:20px;background:color-mix(in srgb,var(--accent) 7%,var(--card));box-shadow:inset 0 0 0 1px color-mix(in srgb,var(--accent) 18%,transparent)}
+.imppc{aspect-ratio:3/4;border-radius:10px 14px 14px 10px;background:linear-gradient(150deg,var(--g1),var(--g2));color:#fff;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:6px;padding:10px 8px;text-align:center;box-shadow:inset 6px 0 0 rgba(0,0,0,.14),0 6px 14px rgba(0,0,0,.14)}
+.imppc .e{font-size:30px;width:52px;height:52px;border-radius:50%;display:grid;place-items:center;background:rgba(255,255,255,.22);box-shadow:inset 0 0 0 2px rgba(255,255,255,.6)}
+.imppc b{font-size:11px;letter-spacing:.08em;text-transform:uppercase;line-height:1.25;text-shadow:0 1px 2px rgba(0,0,0,.25)}
+.imppc small{font-size:11px;opacity:.95;line-height:1.25;text-shadow:0 1px 2px rgba(0,0,0,.25);overflow:hidden;display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical}
+.imppl h4{margin:0 0 8px;font-size:15px}
+.imppl ul{list-style:none;margin:0;padding:0;display:grid;grid-template-columns:repeat(auto-fill,minmax(min(100%,220px),1fr));gap:8px}
+.imppl li{display:flex;align-items:center;gap:10px;min-height:52px;padding:6px 10px 6px 6px;border-radius:14px;background:var(--card);box-shadow:0 1px 0 color-mix(in srgb,var(--ink) 8%,transparent)}
+.imppl li img{width:40px;height:40px;flex:0 0 40px;object-fit:contain}
+.imppl li span{display:flex;flex-direction:column;min-width:0}
+.imppl li b{font-size:14px;line-height:1.25}
+.imppl li small{font-size:12.5px;color:var(--muted);line-height:1.3}
+@media (max-width:420px){.imppp{grid-template-columns:1fr}.imppc{aspect-ratio:auto;flex-direction:row;justify-content:flex-start;min-height:72px;text-align:left}.imppc b{white-space:nowrap;flex:0 0 auto}.imppc b br{display:none}}
