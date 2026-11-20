@@ -1536,7 +1536,7 @@ function lvState(t, kid, game) {
   const q = questIn(t, kid, game); if (q) return { at: q.lv, best: q.lv - 1, top: q.lv, n: LV[game].length, quest: q };   // a mission plays at the road's level
   const st = (ls('lv_' + kid) || {})[game] || {}, start = littleOf(t, kid) ? 1 : 2, n = LV[game].length;
   const best = Math.min(n, st.best != null ? Math.max(st.best, start - 1) : start - 1), top = Math.min(n, best + 1);
-  return { at: Math.max(1, Math.min(top, st.at || start)), best, top, n, won: Math.min(n, st.best || 0) };   // won = levels really played and won — the level a child skips by starting at 2 opens, but wears no ⭐ (owner, Nov 2026: after a reset level 1 still showed as passed)
+  return { at: Math.max(1, Math.min(top, st.at || start)), best, top, n, w: Array.isArray(st.w) ? st.w : Array.from({ length: Math.max(0, Math.min(n, st.best || 0) - start + 1) }, (_, k) => start + k) };   // w = the levels really played and won (an older save without the list: from the starting level up) — the level a child skips by starting at 2 opens, but wears no ⭐ (owner, Nov 2026: after a reset level 1 still showed as passed)
 }
 const lvOf = (t, kid, game) => LV[game][lvState(t, kid, game).at - 1];
 function lvSet(kid, game, patch) { if (quest && quest.kid === kid && quest.game === game) return;   // a mission never moves the child's own levels
@@ -1552,13 +1552,13 @@ function winShow(auto, kid) {
 }
 function lvDone(t, kid, game) { const q = questIn(t, kid, game); if (q) { questMark(t, kid, q.town, q.slot); winShow(true, kid); return; }
   winShow(false, kid);
-  const s = lvState(t, kid, game); lvSet(kid, game, { at: s.at, best: Math.max(s.best, s.at) }); }
+  const s = lvState(t, kid, game); lvSet(kid, game, { at: s.at, best: Math.max(s.best, s.at), w: [...new Set(s.w.concat(s.at))].sort((a, b) => a - b) }); }
 // the chips of the levels reached (a ⭐ on each one won); none when only level 1 is open
 function lvBar(t, kid, game) {
   const s = lvState(t, kid, game);
   if (s.quest) return `<div class="lvbar qbar"><span>${s.quest.slot === 3 ? qImg('crown') : s.quest.slot === 'x' ? '✨' : qImg('map')} ${wj(esc(questTown(t, s.quest.town)))}</span></div>`;   // on a mission: the town, no level chips
   if (s.top < 2) return '';
-  return `<div class="lvbar" role="group" aria-label="${L('ด่าน', 'Levels')}">${isEditor() ? `<button type="button" class="lvreset" data-k="${esc(kid)}" data-g="${game}" aria-label="${L('ด่าน · ผู้ใหญ่กดค้างเพื่อเริ่มด่านใหม่', 'Levels · grown-ups press and hold to start again')}">${L('ด่าน', 'Level')}</button>` : `<span>${L('ด่าน', 'Level')}</span>`}${Array.from({ length: s.top }, (_, k) => k + 1).map((n) => `<button class="lvc${n === s.at ? ' on' : ''}${n <= s.won ? ' won' : ''}" data-a="kglv" data-g="${game}" data-v="${n}" aria-pressed="${n === s.at}" aria-label="${esc(L(`ด่าน ${n}`, `Level ${n}`))}"><b>${n}</b>${n <= s.won ? '<i aria-hidden="true">⭐</i>' : ''}</button>`).join('')}</div>`;
+  return `<div class="lvbar" role="group" aria-label="${L('ด่าน', 'Levels')}">${isEditor() ? `<button type="button" class="lvreset" data-k="${esc(kid)}" data-g="${game}" aria-label="${L('ด่าน · ผู้ใหญ่กดค้างเพื่อเริ่มด่านใหม่', 'Levels · grown-ups press and hold to start again')}">${L('ด่าน', 'Level')}</button>` : `<span>${L('ด่าน', 'Level')}</span>`}${Array.from({ length: s.top }, (_, k) => k + 1).map((n) => `<button class="lvc${n === s.at ? ' on' : ''}${s.w.includes(n) ? ' won' : ''}" data-a="kglv" data-g="${game}" data-v="${n}" aria-pressed="${n === s.at}" aria-label="${esc(L(`ด่าน ${n}`, `Level ${n}`))}"><b>${n}</b>${s.w.includes(n) ? '<i aria-hidden="true">⭐</i>' : ''}</button>`).join('')}</div>`;
 }
 // after a win: on to the next level (or "every level done"), and the same one again
 function lvWin(t, kid, game, again) {
