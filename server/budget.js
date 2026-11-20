@@ -86,10 +86,29 @@ function cleanMoney(m) {
   return Object.keys(o).length > (cur ? 1 : 0) ? o : null;
 }
 
+
+/* B2 (docs/BUDGET.md): the family's own spending on past trips, as rows {trip, title, days, cat, cur, total} (bookshelf.js reads them
+   from `spend`, ended trips only) → for each spending category and money, what a day cost (a night for stays), over every trip that
+   paid in that money; the trips named newest first. Only categories the planner has a line for count (shopping and "other" never). */
+const PAST_CAT = { food: 'food', tickets: 'tickets', move: 'transport', stay: 'stay' };
+function pastPer(rows) {
+  const per = {}, trips = new Map();
+  const acc = new Map();   // cat|cur → {sum, days, trips:Set}
+  for (const r of rows) {
+    if (!Object.values(PAST_CAT).includes(r.cat) || !(r.total > 0) || !(r.days > 0) || !CUR_RE.test(r.cur || '')) continue;
+    const span = r.cat === 'stay' ? Math.max(1, r.days - 1) : r.days, key = `${r.cat}|${r.cur}`;
+    const a = acc.get(key) || { sum: 0, days: 0, trips: new Set() };
+    a.sum += r.total; if (!a.trips.has(r.trip)) { a.days += span; a.trips.add(r.trip); } acc.set(key, a);
+    if (!trips.has(r.trip)) trips.set(r.trip, { id: r.trip, title: r.title || null, at: r.date_from || '' });
+  }
+  for (const [key, a] of acc) { const [cat, cur] = key.split('|'); (per[cat] = per[cat] || {})[cur] = { v: a.sum / a.days, n: a.trips.size }; }
+  return { per, trips: [...trips.values()].sort((x, y) => String(y.at).localeCompare(String(x.at))).map(({ id, title }) => ({ id, title })) };
+}
+
 const round = (v) => (v >= 10000 ? Math.round(v / 1000) * 1000 : v >= 1000 ? Math.round(v / 100) * 100 : v >= 100 ? Math.round(v / 10) * 10 : Math.round(v));
 /* route: a cleaned planner route (days with town, stops with `lib`, money); answers: the cleaned answers; kids: the family's rows;
    sightById: id → the library's out() row; eatsOfTown(town{en,th}) → the eat library's out() rows (with cc); ccOfPlace(place) → cc */
-function estimate({ route, answers, kids, sightById, eatsOfTown, ccOfPlace }) {
+function estimate({ route, answers, kids, sightById, eatsOfTown, ccOfPlace, past }) {
   if (!route || !Array.isArray(route.days) || !route.days.length) return null;
   const adults = Math.max(1, (answers && answers.adults) || 2), b = (answers && answers.budget) || 'mid';
   const ages = agesOf(kids, route.from), eaters = eaterOf(ages, adults);
@@ -126,9 +145,26 @@ function estimate({ route, answers, kids, sightById, eatsOfTown, ccOfPlace }) {
     const mid = at(o), lo = b === 'high' ? mid : o.lo, hi = b === 'low' ? mid : o.hi;
     return { k: o.k, cur: o.cur, lo: round(Math.min(lo, hi)), hi: round(Math.max(lo, hi)), src: o.src, ...(o.k === 'tickets' ? { n: o.n } : {}) };
   }).sort((a, z) => ORDER.indexOf(a.k) - ORDER.indexOf(z.k) || a.cur.localeCompare(z.cur));
+  // B2: what this family really spent before in the same money leans each line towards it (half the estimate, half what we spent)
+  const pp = pastPer(past || []);
+  if (pp.trips.length) {
+    for (const [k, cat] of Object.entries(PAST_CAT)) {
+      // only the money this trip is paid in (its lines and the helper's local currency) — a Tokyo trip never borrows a Paris bill
+      const curs = new Set([...lines.filter((l) => l.k === k).map((l) => l.cur), ...Object.keys(pp.per[cat] || {}).filter((c) => c === own || lines.some((l) => l.cur === c && l.k !== 'flights'))]);
+      for (const cur of curs) {
+        const per = pp.per[cat] && pp.per[cat][cur]; if (!per) continue;
+        const span = k === 'stay' ? nights : route.days.length; if (!span) continue;
+        const was = per.v * span, l = lines.find((x) => x.k === k && x.cur === cur);
+        if (l) { const lo = (l.lo + was * 0.9) / 2, hi = (l.hi + was * 1.1) / 2; Object.assign(l, { lo: round(Math.min(lo, hi)), hi: round(Math.max(lo, hi)), past: round(was), pastN: per.n }); }
+        else { lines.push({ k, cur, lo: round(was * 0.9), hi: round(was * 1.1), src: 'past', past: round(was), pastN: per.n }); if (k === 'food') unknown.food = 0; }
+      }
+    }
+    lines.sort((a, z) => ORDER.indexOf(a.k) - ORDER.indexOf(z.k) || a.cur.localeCompare(z.cur));
+  }
   if (!lines.length && !unknown.tickets && !unknown.food) return null;
   const tot = new Map(); for (const l of lines) { const t = tot.get(l.cur) || { cur: l.cur, lo: 0, hi: 0 }; t.lo += l.lo; t.hi += l.hi; tot.set(l.cur, t); }
-  return { lines, totals: [...tot.values()].map((t) => ({ cur: t.cur, lo: round(t.lo), hi: round(t.hi) })), unknown, days: route.days.length, eaters };
+  return { lines, totals: [...tot.values()].map((t) => ({ cur: t.cur, lo: round(t.lo), hi: round(t.hi) })), unknown, days: route.days.length, eaters,
+    ...(pp.trips.length && lines.some((l) => l.past != null) ? { past: { trips: pp.trips.slice(0, 3) } } : {}) };
 }
 
-module.exports = { estimate, priceOf, moneyIn, curOf, ticketFor, cleanMoney, agesOf, eaterOf };
+module.exports = { estimate, pastPer, priceOf, moneyIn, curOf, ticketFor, cleanMoney, agesOf, eaterOf };

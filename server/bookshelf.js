@@ -1241,7 +1241,11 @@ function router({ pool, media, A, ai, hooks = {} }) {   // hooks.heart(h): set b
     try {
       const idx = STOCK.read(), cof = EATLIB.countryOf(idx), sights = new Map((await SIGHTLIB.all(pool, FAMILY)).map((r) => [r.id, SIGHTLIB.out(r)])), eats = await EATLIB.all(pool, FAMILY);
       const ccOfPlace = (pl) => { const p = idx.places && idx.places[pl]; return (p && p.country) || String(pl || '').slice(0, 2); };
-      const b = BUDGET.estimate({ route: rt, answers: answers || {}, kids: await kidRows(), sightById: (id) => sights.get(id), ccOfPlace,
+      // B2: what we really spent on trips that are over (editors only — the spend ledger never reaches a relative)
+      const past = await q(`SELECT s.trip_id trip, t.title, t.date_from::text date_from, s.cat, s.cur, sum(s.amount)::float total,
+          (SELECT count(*)::int FROM trip_days d WHERE d.trip_id = t.id) days
+        FROM spend s JOIN trips t ON t.id = s.trip_id WHERE s.family_id=$1 AND t.date_to < current_date GROUP BY s.trip_id, t.id, s.cat, s.cur`, [FAMILY]);
+      const b = BUDGET.estimate({ route: rt, answers: answers || {}, kids: await kidRows(), past, sightById: (id) => sights.get(id), ccOfPlace,
         eatsOfTown: (tw) => EATLIB.forTown(eats, [tw.en, tw.th].filter(Boolean)).map((r) => ({ ...EATLIB.out(r), cc: (cof.get(r.tkey) || {}).cc || '' })) });
       if (b) out.budget = b;
     } catch (e) { console.warn('budget:', e.message); }

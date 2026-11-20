@@ -3903,3 +3903,5 @@ img.tpic{width:28px;height:28px;vertical-align:middle;margin:-4px 0;object-fit:c
 .plbfx{margin-top:10px}
 .plbq{margin:8px 0 0;font-size:12.5px;color:var(--muted)}
 @media (max-width:420px){.plbr{grid-template-columns:30px 1fr}.plba{grid-column:2;align-items:flex-start;text-align:left}}
+.plbpast{display:block;margin-top:2px;font-size:12.5px;color:color-mix(in srgb,#7C3AED 65%,var(--ink))}
+.plbwas{margin:0 0 6px;font-size:13.5px;color:var(--muted)}
