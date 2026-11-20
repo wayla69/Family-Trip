@@ -210,6 +210,13 @@ Round 4: 34 more confirmed open (Wanderlog pages with 2025–2026 Google reviews
 taken out (permanently closed); a chain's main site or a temporary-closed tag kept a row unconfirmed. 2,754 of 3,039 rows carry `ok`. The
 search allowance ran out before most rows were searched; the rest, and the library's growth (big cities 70 places, other towns 40, small ones
 22, spread over districts), went to the owner's Gemini Deep Research brief.
+Gemini round 3 (20 Nov 2026): every row of its answer was opened here first. 29 more confirmed open; out as closed for good: Din Tai
+Fung World Square (Sydney, now Double Chin Eats) and Warung Mama (Komodo); moved and corrected by hand: Al Fanar Abu Dhabi (Yas Mall),
+Nonie's (Station 3, Boracay), Lai Cheng (477 Zhongzheng Rd, Hualien), the Oranjezicht market (across the road); kept unconfirmed: Queen
+of Tarts (closure seen only in a search result), Larsian (renamed Sugbo Sentro, reported problems), Lake Louise station restaurant (closed
+for renovation), Barrio Bonito (renamed El Barrio, closed for the 2026–27 season). New places: 48 in Dubai, Sydney, Melbourne, the Gold
+Coast and Bangkok (listings and venue pages read here; a price no page showed is "Check the price", now allowed by the lint). A town may
+now hold up to 80 places (the growth plan).
 
 - A file is `{"cc", "towns": [{"place": "<picture-library city id>", "places": [row…]}]}`; the header of `scripts/eats-lint.mjs` gives
   the row's fields. `npm run eats:lint` checks every file and that every city of the picture library has its list (test/infra runs it).

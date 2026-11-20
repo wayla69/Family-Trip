@@ -310,6 +310,23 @@
           "q": "Palawan Beach, Sentosa, Singapore",
           "ok": "2026-11",
           "src": "https://www.lonelyplanet.com/singapore/singapore-city/sentosa-island/attractions/palawan-beach/a/poi-sig/1280006/1322427"
+        },
+        {
+          "name": { "en": "Rainforest Wild Adventure", "th": "เรนฟอเรสต์ ไวลด์ แอดเวนเจอร์" },
+          "kind": "nature",
+          "area": { "en": "Mandai Wildlife Reserve", "th": "มันได ไวลด์ไลฟ์ รีเซิร์ฟ" },
+          "what": { "en": "A Mandai park of EAST and WEST zones with Adventure+ activities included in the full-park ticket.", "th": "สวนในมันไดโซนตะวันออกและตะวันตก ตั๋วเต็มรวมกิจกรรม Adventure+ ด้วย" },
+          "why": { "en": "Children under 3 enter free with an adult.", "th": "เด็กต่ำกว่า 3 ขวบเข้าฟรีเมื่อไปกับผู้ใหญ่" },
+          "tip": { "en": "Book on the Mandai site; prices differ for Singapore residents.", "th": "จองที่เว็บมันได ราคาสำหรับชาวสิงคโปร์ต่างกัน" },
+          "ages": [1, 2, 2, 2],
+          "hrs": 4,
+          "io": "both",
+          "pram": "part",
+          "price": { "en": "≈ S$55 adults · S$39 child 3–12 · under 3 free", "th": "≈ S$55 ผู้ใหญ่ · S$39 เด็ก 3–12 ปี · ต่ำกว่า 3 ขวบฟรี" },
+          "book": "rec",
+          "q": "Rainforest Wild Adventure, Mandai Wildlife Reserve, Singapore",
+          "ok": "2026-11",
+          "src": "https://www.mandai.com/en/tickets-and-passes/single-attractions/rainforest-wild-adventure.html"
         }
       ]
     }
