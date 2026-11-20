@@ -513,7 +513,14 @@ const DISH_ART = [[/takoyaki|ทาโกะยากิ/i, 'takoyaki'], [/okono
   [/tonkatsu|ทงคัตสึ/i, 'tonkatsu'], [/matcha.*(soft|ice|cone)|(soft.?serve|ice cream).*matcha|ไอศกรีมชาเขียว|ซอฟต์ครีมชาเขียว/i, 'matchacone'],
   [/bibimbap|บิบิมบับ/i, 'bibimbap'], [/kimbap|gimbap|คิมบับ/i, 'kimbap'], [/tteokbokki|ต็อกบกกี/i, 'tteokbokki'], [/hotteok|โฮต็อก/i, 'hotteok'],
   [/korean fried chicken|ไก่ทอดเกาหลี/i, 'friedchicken'], [/japchae|จับแช/i, 'japchae'], [/beef noodle|บะหมี่เนื้อ/i, 'beefnoodle'],
-  [/scallion pancake|spring onion pancake|แพนเค้กต้นหอม/i, 'scallionpancake'], [/gua ?bao|กัวเปา/i, 'guabao'], [/xiao ?long ?bao|เสี่ยวหลงเปา/i, 'xiaolongbao'], [/\bpho\b|phở|เฝอ/i, 'pho']];
+  [/scallion pancake|spring onion pancake|แพนเค้กต้นหอม/i, 'scallionpancake'], [/gua ?bao|กัวเปา/i, 'guabao'], [/xiao ?long ?bao|เสี่ยวหลงเปา/i, 'xiaolongbao'], [/\bpho\b|phở|เฝอ/i, 'pho'],
+  [/ramen|ราเมง/i, 'ramen'], [/egg ?tart|ทาร์ตไข่/i, 'eggtart'], [/egg ?waffle|eggette|gai daan jai|วาฟเฟิลไข่|ขนมไข่ฮ่องกง/i, 'eggwaffle'], [/wonton|บะหมี่เกี๊ยว|เกี๊ยวกุ้ง/i, 'wonton'],
+  [/fish ?balls?|ลูกชิ้นปลา/i, 'fishball'], [/chicken rice|ข้าวมันไก่/i, 'chickenrice'], [/laksa|ลักซา/i, 'laksa'], [/kaya|สังขยาใบเตย|ขนมปังกายา/i, 'kayatoast'],
+  [/roti (canai|prata)|โรตีแกง|โรตีจิ้มแกง|โรตีคาไน/i, 'roticanai'], [/nasi lemak|นาซิเลอมัก/i, 'nasilemak'], [/b[aá]nh m[iì]|บั๋นหมี่|บานหมี่/i, 'banhmi'],
+  [/summer rolls?|fresh spring rolls?|g[oỏ]i cu[oố]n|ปอเปี๊ยะสด|ปอเปี๊ยะญวน/i, 'goicuon'], [/b[aá]nh x[eè]o|บั๋นแส่ว|ขนมเบื้องญวน/i, 'banhxeo'], [/peking duck|เป็ดปักกิ่ง/i, 'pekingduck'],
+  [/tanghulu|ถังหูลู่|ถังหูหลู/i, 'tanghulu'], [/fried rice|ข้าวผัด/i, 'friedrice'], [/churros?|ชูโรส/i, 'churros'], [/cr[eê]pes?|เครป/i, 'crepe'], [/macarons?|มาการ[ งอ]/i, 'macarons'],
+  [/strudel|สตรูเดิล|ชตรูเดิล/i, 'strudel'], [/schnitzel|ชนิทเซล|ชนิตเซล/i, 'schnitzel'], [/poffertjes|พอฟเฟอร์เจส|ป๊อฟเฟอร์เจส/i, 'poffertjes'], [/meatballs?|มีทบอล|มีตบอล/i, 'meatballs'],
+  [/fondue|ฟองดู/i, 'fondue'], [/pineapple cake|พายสับปะรดไต้หวัน|เค้กสับปะรด/i, 'pineapplecake']];
 const dishArt = (name) => { const s = String(name || ''); if (!s) return ''; const m = DISH_ART.find((d) => d[0].test(s)); return m ? `food/${m[1]}` : ''; };
 const foodArt = (e, art, name) => { if (!art && name) art = dishArt(name); if (/^food\/[a-z0-9-]+$/.test(art || '')) return `/art/${art}.webp`; const a = GAME_ART[String(e || '').replace(/\uFE0F/g, '')]; return a && (a.startsWith('food/') || FOOD_GAME.has(a)) ? `/art/${a}.webp` : ''; };
 const gFood = (e, art, name) => { const a = foodArt(e, art, name); return a ? `<img class="ge" src="${a}" alt="">` : esc(e || ''); };

@@ -1288,8 +1288,8 @@ const T = 'hk-macau-2026';
       `kid pictures: every picture the games name is served, the food library holds 60 dishes, a book's ramen and tea draw as pictures and an emoji without one stays an emoji (bad: ${artBad.join(' ') || 'none'}, ${foodLib.n})`);
     // a dish named in a book finds its own picture by its name (either language), and every such picture is served
     const dishes = await page.evaluate(async () => { const bad = []; for (const [, n] of DISH_ART) { const r = await fetch(`/art/food/${n}.webp`); if (!r.ok) bad.push(n); }
-      return { bad, ramen: foodArt('🍜', '', 'Tempura เทมปุระ'), th: foodArt('🥘', '', 'ต็อกบกกี'), pho: foodArt('🍜', '', 'Phở bò'), photo: dishArt('Photo stop'), own: foodArt('🍜', 'food/noodles', 'Ramen') }; });
-    ok(!dishes.bad.length && /tempura\.webp/.test(dishes.ramen) && /pho\.webp/.test(dishes.pho) && /tteokbokki\.webp/.test(dishes.th) && dishes.photo === '' && /noodles\.webp/.test(dishes.own),
+      return { bad, ramen: foodArt('🍜', '', 'Tempura เทมปุระ'), th: foodArt('🥘', '', 'ต็อกบกกี'), pho: foodArt('🍜', '', 'Phở bò'), photo: dishArt('Photo stop'), tart: dishArt('Egg tart 蛋撻'), rice: dishArt('ข้าวมันไก่'), own: foodArt('🍜', 'food/noodles', 'Ramen') }; });
+    ok(!dishes.bad.length && /tempura\.webp/.test(dishes.ramen) && /pho\.webp/.test(dishes.pho) && /tteokbokki\.webp/.test(dishes.th) && dishes.photo === '' && dishes.tart === 'food/eggtart' && dishes.rice === 'food/chickenrice' && /noodles\.webp/.test(dishes.own),
       `dish pictures by name: Tempura → tempura, Phở → pho, ต็อกบกกี → tteokbokki, "Photo" is not phở, a book's own art wins (${JSON.stringify(dishes)})`);
   }
   for (const [gm, sel] of [['shadow', '.shbig'], ['feed', '.feedpal'], ['sort', '.baskets'], ['bigsmall', '.bsrow'], ['where', '.whereb'], ['odd', '.oddch'], ['next', '.nextrow'], ['howmany', '.hmbox']]) {
