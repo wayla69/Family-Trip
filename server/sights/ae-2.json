@@ -3,7 +3,6 @@
   "towns": [
     {
       "place": "ae-abudhabi",
-      "thin": true,
       "sights": [
         {
           "name": { "en": "Louvre Abu Dhabi and its Children's Museum", "th": "ลูฟร์ อาบูดาบี และพิพิธภัณฑ์เด็ก" },
@@ -191,6 +190,91 @@
           "q": "Al Jahili Fort, Al Ain",
           "ok": "2026-11",
           "src": "https://www.dubaifaqs.com/al-ain-landmarks.php"
+        },
+        {
+          "name": { "en": "Umm Al Emarat Park", "th": "สวนอุม อัล เอมารัต" },
+          "kind": "park",
+          "area": { "en": "Al Khalidiyah", "th": "อัล คาลิดียะห์" },
+          "what": { "en": "One of the capital’s oldest and largest parks, with a Shade House, an Animal Barn, a Great Lawn and a botanic garden", "th": "หนึ่งในสวนที่เก่าแก่และใหญ่ที่สุดของเมือง มีบ้านร่มเงา คอกสัตว์ สนามหญ้ากว้าง และสวนพฤกษศาสตร์" },
+          "why": { "en": "Wide lawns and the animal barn suit toddlers and pre-schoolers; there is room to run", "th": "สนามหญ้ากว้างและคอกสัตว์เหมาะกับเด็กเล็ก มีที่ให้วิ่งเล่น" },
+          "tip": { "en": "Children under 3 enter free; outside food is not allowed, so eat at the park’s cafés", "th": "เด็กต่ำกว่า 3 ปีเข้าฟรี นำอาหารเข้าไม่ได้ ให้ทานที่ร้านในสวน" },
+          "ages": [2, 2, 2, 1],
+          "hrs": 3,
+          "io": "out",
+          "pram": "yes",
+          "price": { "en": "≈ AED 5 · under 3 free", "th": "≈ AED 5 · เด็กต่ำกว่า 3 ปีฟรี" },
+          "book": "none",
+          "q": "Umm Al Emarat Park, Al Khalidiyah, Abu Dhabi",
+          "ok": "2026-11",
+          "src": "https://visitabudhabi.ae/en/things-to-do/nature-and-wildlife/parks/umm-al-emarat-park"
+        },
+        {
+          "name": { "en": "Al Hosn Cultural Foundation and House of Artisans", "th": "อัล ฮอสน์ คัลเจอรัล ฟาวน์เดชัน และเฮาส์ออฟอาร์ติซันส์" },
+          "kind": "culture",
+          "area": { "en": "Al Hosn", "th": "อัล ฮอสน์" },
+          "what": { "en": "Next to the old fort, a free cultural centre and a craft house where visitors try traditional Emirati crafts", "th": "ข้างป้อมเก่า เป็นศูนย์วัฒนธรรมและบ้านงานฝีมือที่เข้าชมฟรี ลองทำงานหัตถกรรมแบบเอมิเรตส์ได้" },
+          "why": { "en": "Short, hands-on and mostly air-conditioned, so it is an easy rainy or hot-hour stop", "th": "สั้น ได้ลงมือทำ และส่วนใหญ่มีแอร์ จึงแวะง่ายในวันฝนหรือช่วงร้อน" },
+          "tip": { "en": "Entry to the fort itself is ticketed; the landscape, Cultural Foundation and House of Artisans are free", "th": "ป้อมต้องมีตั๋ว แต่ภูมิทัศน์ ศูนย์วัฒนธรรม และบ้านงานฝีมือเข้าฟรี" },
+          "ages": [1, 2, 2, 1],
+          "hrs": 2,
+          "io": "both",
+          "pram": "yes",
+          "price": { "en": "Free (the fort has its own ticket)", "th": "ฟรี (ป้อมมีตั๋วแยก)" },
+          "book": "none",
+          "q": "Qasr Al Hosn, Sheikh Rashid Bin Saeed Street, Abu Dhabi",
+          "ok": "2026-11",
+          "src": "https://www.qasralhosn.ae/en/plan-your-visit"
+        },
+        {
+          "name": { "en": "Heritage Village", "th": "เฮอริเทจ วิลเลจ" },
+          "kind": "culture",
+          "area": { "en": "Breakwater", "th": "เบรกวอเตอร์" },
+          "what": { "en": "A rebuilt desert village by the sea with a souk, barasti houses, a fort, a dhow and craftsmen at work", "th": "หมู่บ้านทะเลทรายจำลองริมทะเล มีตลาด บ้านใบปาล์ม ป้อม เรือโบราณ และช่างทำงานฝีมือ" },
+          "why": { "en": "Short flat paths and things to touch keep young children interested for an hour or two", "th": "ทางสั้นและเรียบ มีของให้จับ เด็กเล็กเพลินได้ 1–2 ชั่วโมง" },
+          "tip": { "en": "Open daily; Friday has a long midday break, so go in the morning or after 3 pm", "th": "เปิดทุกวัน วันศุกร์พักกลางวันนาน ควรไปตอนเช้าหรือหลัง 15:00" },
+          "ages": [1, 2, 2, 1],
+          "hrs": 1.5,
+          "io": "out",
+          "pram": "yes",
+          "price": { "en": "Free", "th": "ฟรี" },
+          "book": "none",
+          "q": "Heritage Village, Breakwater, Abu Dhabi",
+          "ok": "2026-11",
+          "src": "https://abudhabiculture.ae/en/cultural-sites/culture-centers/heritage-village"
+        },
+        {
+          "name": { "en": "KidZania Abu Dhabi", "th": "คิดซาเนีย อาบูดาบี" },
+          "kind": "museumkid",
+          "area": { "en": "Yas Mall, Yas Island", "th": "ยาส มอลล์ เกาะยาส" },
+          "what": { "en": "An indoor mini-city where children try more than 40 pretend jobs and earn their own kidZos money", "th": "เมืองจำลองในร่ม เด็กลองเล่นอาชีพกว่า 40 อย่างและได้เงินคิดโซของตัวเอง" },
+          "why": { "en": "Built for ages 3 and up, with role play that holds the attention of 4 to 8 year olds for hours", "th": "ออกแบบสำหรับเด็ก 3 ขวบขึ้นไป เล่นบทบาทได้นานสำหรับเด็ก 4–8 ปี" },
+          "tip": { "en": "It is on the ground floor of Yas Mall; book a timed slot ahead on busy days", "th": "อยู่ชั้นล่างของยาส มอลล์ วันคนเยอะควรจองรอบล่วงหน้า" },
+          "ages": [0, 2, 2, 1],
+          "hrs": 4,
+          "io": "in",
+          "pram": "yes",
+          "price": { "en": "Check the price", "th": "เช็กราคาก่อนไป" },
+          "book": "rec",
+          "q": "KidZania Abu Dhabi, Yas Mall, Yas Island, Abu Dhabi",
+          "ok": "2026-11",
+          "src": "https://visitabudhabi.ae/en/plan-your-trip/article-hub/hidden-family-gems"
+        },
+        {
+          "name": { "en": "Al Bateen Beach", "th": "ชายหาดอัล บาติน" },
+          "kind": "beach",
+          "area": { "en": "Al Bateen", "th": "อัล บาติน" },
+          "what": { "en": "An 800-metre beach beside Hudariyat Island with play areas for toddlers and a calm shoreline", "th": "ชายหาดยาว 800 เมตร ติดเกาะฮูดาริยาต มีที่เล่นสำหรับเด็กเล็กและชายฝั่งสงบ" },
+          "why": { "en": "Free to enter and gentle for small children; the women-and-children area charges a small fee", "th": "เข้าฟรีและเหมาะกับเด็กเล็ก ส่วนโซนผู้หญิงและเด็กมีค่าเข้าเล็กน้อย" },
+          "tip": { "en": "Come in the morning or late afternoon; it is too hot at midday for toddlers", "th": "ไปตอนเช้าหรือเย็น กลางวันร้อนเกินไปสำหรับเด็กเล็ก" },
+          "ages": [2, 2, 2, 1],
+          "hrs": 2,
+          "io": "out",
+          "pram": "part",
+          "price": { "en": "Free (a small fee in the women-and-children area)", "th": "ฟรี (โซนผู้หญิงและเด็กมีค่าเข้าเล็กน้อย)" },
+          "book": "none",
+          "q": "Al Bateen Beach, Al Bateen, Abu Dhabi",
+          "ok": "2026-11",
+          "src": "https://visitabudhabi.ae/en/plan-your-trip/article-hub/best-things-to-do-with-kids-in-abu-dhabi"
         }
       ]
     }

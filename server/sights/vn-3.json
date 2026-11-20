@@ -3,7 +3,6 @@
   "towns": [
     {
       "place": "vn-dalat",
-      "thin": true,
       "sights": [
         {
           "name": { "en": "Crazy House (Hang Nga Villa)", "th": "แครซีเฮาส์ (วิลล่าหางหงา)" },
@@ -256,6 +255,23 @@
           "q": "Dalat Market, Nguyen Thi Minh Khai, Da Lat",
           "ok": "2026-11",
           "src": "https://dalat.app/blog/guides/da-lat-kids-family-activities-guide-2026"
+        },
+        {
+          "ok": "2026-11",
+          "name": { "en": "Puppy Farm Dalat", "th": "พัพพี่ ฟาร์ม ดาลัต" },
+          "kind": "farm",
+          "area": { "en": "Mang Lin, about 8 km from the centre", "th": "หมางลิน ห่างตัวเมืองราว 8 กม." },
+          "what": { "en": "A garden of friendly dogs with flower fields and a vegetable farm", "th": "สวนสุนัขใจดี มีทุ่งดอกไม้และฟาร์มผัก" },
+          "why": { "en": "Children can stroke and feed the puppies; keep an eye on very small ones around big dogs", "th": "เด็กๆ ลูบและให้อาหารลูกสุนัขได้ ควรดูเด็กเล็กใกล้สุนัขตัวใหญ่" },
+          "tip": { "en": "Usually open about 7:30–17:30; fees differ between guides, so ask at the gate", "th": "มักเปิดราว 7:30–17:30 ราคาแต่ละแหล่งไม่ตรงกัน ถามที่หน้าประตู" },
+          "ages": [1, 2, 2, 1],
+          "hrs": 2,
+          "io": "out",
+          "pram": "part",
+          "price": { "en": "Check the price", "th": "เช็กราคาก่อนไป" },
+          "book": "none",
+          "q": "Puppy Farm, Mang Lin, Da Lat",
+          "src": "https://localvietnam.com/lam-dong/dalat/puppy-farm-dalat/"
         }
       ]
     },
@@ -536,7 +552,6 @@
     },
     {
       "place": "vn-nhatrang",
-      "thin": true,
       "sights": [
         {
           "name": { "en": "VinWonders Nha Trang", "th": "วินวันเดอร์ส ญาจาง" },
@@ -735,6 +750,92 @@
           "q": "Hon Chong Promontory, Vinh Phuoc, Nha Trang",
           "ok": "2026-11",
           "src": "https://vinpearl.com/en/hon-chong-promontory-the-exotic-beauty-of-rocks-in-nha-trang"
+        },
+        {
+          "ok": "2026-11",
+          "name": { "en": "Po Nagar Cham Towers", "th": "หอจามโปนาการ์" },
+          "local": "Tháp Bà Ponagar",
+          "kind": "culture",
+          "area": { "en": "Cam Duong hill, north of the centre", "th": "เนินกามเดื่อง ทางเหนือของตัวเมือง" },
+          "what": { "en": "Brick Cham towers from the 7th–13th centuries on a hill above the river, with a small museum", "th": "หอก่ออิฐสมัยจามศตวรรษที่ 7–13 บนเนินเหนือแม่น้ำ มีพิพิธภัณฑ์เล็ก" },
+          "why": { "en": "Short, open-air visit with steps; carry small children up, and dress covered shoulders and knees", "th": "ชมกลางแจ้งใช้เวลาไม่นาน มีบันได ต้องอุ้มเด็กเล็ก และแต่งกายให้ปิดไหล่และเข่า" },
+          "tip": { "en": "Most guides give about 6:00–18:00, slightly earlier from October to December; pay cash at the foot of the hill", "th": "ส่วนใหญ่ระบุราว 6:00–18:00 ช่วงต.ค.–ธ.ค. ปิดเร็วขึ้นเล็กน้อย จ่ายเงินสดที่เชิงเนิน" },
+          "ages": [0, 1, 1, 2],
+          "hrs": 1,
+          "io": "out",
+          "pram": "no",
+          "price": { "en": "≈ 30,000 VND per person", "th": "≈ 30,000 ดอง ต่อคน" },
+          "book": "none",
+          "q": "Po Nagar Cham Towers, Nha Trang",
+          "src": "https://www.vietnamairlines.com/en/useful-information/travel-guide/ponagar-temple"
+        },
+        {
+          "name": { "en": "Vinpearl Harbour", "th": "วินเพิร์ล ฮาร์เบอร์" },
+          "kind": "shop",
+          "area": { "en": "Hon Tre Island", "th": "เกาะหอน แตร" },
+          "what": { "en": "A free-to-enter waterfront quarter on Hon Tre Island with cafés, shops and street shows, open 8 AM to midnight", "th": "ย่านริมน้ำบนเกาะหอน แตร เข้าฟรี มีคาเฟ่ ร้านค้า และโชว์ เปิด 8 โมงถึงเที่ยงคืน" },
+          "why": { "en": "Wide paved walkways and plenty of cafés make an easy half-day when the little ones tire of rides", "th": "ทางเดินกว้าง มีคาเฟ่เยอะ เหมาะกับครึ่งวันสบายๆ เมื่อเด็กเล็กเริ่มเหนื่อย" },
+          "tip": { "en": "You only pay for the Vinpearl cable car from Cau Da Port; come in the evening for the shows", "th": "จ่ายแค่ค่ากระเช้าวินเพิร์ลจากท่าเรือเกาะดา ไปช่วงเย็นจะมีโชว์" },
+          "ages": [1, 2, 2, 2],
+          "hrs": 3,
+          "io": "both",
+          "pram": "part",
+          "price": { "en": "Free entry · ≈ 200,000 VND return cable car from Cau Da Port", "th": "เข้าฟรี · กระเช้าไป-กลับจากท่าเรือเกาะดา ≈ 200,000 ดอง" },
+          "book": "none",
+          "q": "Vinpearl Harbour, Hon Tre Island, Nha Trang",
+          "ok": "2026-11",
+          "src": "https://vinwonders.com/en/wonderpedia/news/vinpearl-harbour-nha-trang/"
+        },
+        {
+          "name": { "en": "Do Theater – Chum Show", "th": "โรงละครโด – โชว์ชุม" },
+          "kind": "show",
+          "area": { "en": "Vega City, north Nha Trang", "th": "เวกา ซิตี้ ทางเหนือของนาตรัง" },
+          "what": { "en": "A modern theatre built like a fishing basket, with an evening show of aerial silk, acrobatics and live music", "th": "โรงละครทรงเครื่องมือจับปลา มีโชว์ตอนเย็นที่ผสมผ้าแอเรียล กายกรรม และดนตรีสด" },
+          "why": { "en": "The acrobatics give young eyes something to follow without needing the story, so it is the easier pick for children", "th": "กายกรรมช่วยให้เด็กดูตามได้แม้ไม่รู้เรื่อง จึงเป็นโชว์ที่ง่ายสำหรับเด็ก" },
+          "tip": { "en": "Pick a seat tier when you book; the show runs in the evening, so plan a nap before", "th": "เลือกที่นั่งตอนจอง โชว์เป็นรอบเย็น ควรให้เด็กงีบก่อน" },
+          "ages": [0, 1, 2, 2],
+          "hrs": 1.5,
+          "io": "in",
+          "pram": "part",
+          "price": { "en": "≈ 420,000–630,000 VND by seat tier", "th": "≈ 420,000–630,000 ดอง ตามโซนที่นั่ง" },
+          "book": "rec",
+          "q": "Do Theater, Vega City, Nha Trang",
+          "ok": "2026-11",
+          "src": "https://localvietnam.com/khanh-hoa/nha-trang/do-theater/"
+        },
+        {
+          "name": { "en": "Hon Tam Island (day-visitor side)", "th": "เกาะหอนตาม (ฝั่งนักท่องเที่ยววันเดียว)" },
+          "kind": "beach",
+          "area": { "en": "Hon Tam, 7 km from the city", "th": "เกาะหอนตาม ห่างเมือง 7 กม." },
+          "what": { "en": "A short boat ride to a public beach with mud baths, kayaking and sea walking, enough for a half day or full day", "th": "นั่งเรือสั้นๆ ไปหาดสาธารณะ มีบ่อโคลน พายเรือคายัค และเดินใต้ทะเล" },
+          "why": { "en": "Sea walking and the beach are easy to mix in one trip; the resort side with the pools is for overnight guests only", "th": "เดินใต้ทะเลกับเล่นหาดไปด้วยกันได้ ส่วนสระของรีสอร์ตสำหรับแขกที่พักค้างคืนเท่านั้น" },
+          "tip": { "en": "The public area is busy; go early and skip the water sports if the sea is rough", "th": "ฝั่งสาธารณะคนเยอะ ไปแต่เช้า ถ้าคลื่นแรงให้ข้ามกีฬาทางน้ำ" },
+          "ages": [1, 2, 2, 2],
+          "hrs": 5,
+          "io": "out",
+          "pram": "no",
+          "price": { "en": "Check the price", "th": "เช็กราคาก่อนไป" },
+          "book": "none",
+          "q": "Hon Tam Island, Nha Trang",
+          "ok": "2026-11",
+          "src": "https://localvietnam.com/khanh-hoa/nha-trang/nha-trang-with-kids/"
+        },
+        {
+          "name": { "en": "Doc Let Beach", "th": "หาดด็อกเหลต" },
+          "kind": "beach",
+          "area": { "en": "Ninh Hoa, 50 km north", "th": "นิญหว่า ทางเหนือ 50 กม." },
+          "what": { "en": "A calm, shallow beach about 50 km north of the city, far quieter than the city beach", "th": "หาดน้ำนิ่งตื้น ห่างจากตัวเมืองไปทางเหนือประมาณ 50 กม. เงียบกว่าหาดในเมืองมาก" },
+          "why": { "en": "The calm shallow water suits toddlers and families who want a slower day", "th": "น้ำนิ่งตื้น เหมาะกับเด็กเล็กและครอบครัวที่อยากไปช้าๆ" },
+          "tip": { "en": "Hire a private car for the day; a motorbike is not advised with young children", "th": "เหมารถส่วนตัวทั้งวัน ไม่แนะนำให้ใช้มอเตอร์ไซค์กับเด็กเล็ก" },
+          "ages": [1, 2, 2, 1],
+          "hrs": 4,
+          "io": "out",
+          "pram": "no",
+          "price": { "en": "Check the price", "th": "เช็กราคาก่อนไป" },
+          "book": "none",
+          "q": "Doc Let Beach, Ninh Hoa, Khanh Hoa",
+          "ok": "2026-11",
+          "src": "https://localvietnam.com/khanh-hoa/nha-trang/nha-trang-with-kids/"
         }
       ]
     }

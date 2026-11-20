@@ -3,7 +3,6 @@
   "towns": [
     {
       "place": "ma-fes",
-      "thin": true,
       "sights": [
         {
           "name": { "en": "Jnan Sbil Gardens", "th": "สวนจนันสบิล" },
@@ -202,12 +201,79 @@
           "q": "Kasbah Museum, Chefchaouen",
           "ok": "2026-11",
           "src": "https://travelynnfamily.com/chefchaouen-with-kids/"
+        },
+        {
+          "name": { "en": "Bab Boujloud (the Blue Gate)", "th": "บับ บูจลูด (ประตูสีน้ำเงิน)" },
+          "kind": "oldtown",
+          "area": { "en": "Fes el-Bali", "th": "เฟสเอลบาลี" },
+          "what": { "en": "The blue-tiled gate of 1913 where most visitors enter the old medina", "th": "ประตูกระเบื้องสีน้ำเงินปี 1913 ทางเข้าหลักสู่เมืองเก่า" },
+          "why": { "en": "Colourful and free to see; a good starting point before the narrow lanes", "th": "สีสวย ดูฟรี เป็นจุดเริ่มก่อนเข้าซอยแคบ" },
+          "tip": { "en": "Taxis stop here, as they cannot enter the medina; use a carrier, not a pram", "th": "แท็กซี่ส่งที่นี่เพราะเข้าเมืองเก่าไม่ได้ ใช้เป้อุ้มดีกว่ารถเข็น" },
+          "ages": [1, 2, 2, 1],
+          "hrs": 0.5,
+          "io": "out",
+          "pram": "part",
+          "price": { "en": "Free", "th": "ฟรี" },
+          "book": "none",
+          "q": "Bab Bou Jeloud, Fes el-Bali, Fes",
+          "ok": "2026-11",
+          "src": "https://loudavymkrokem.cz/en/fes-morocco-guide/"
+        },
+        {
+          "name": { "en": "Bou Inania Madrasa", "th": "มาดราซาบูอินานียา" },
+          "kind": "culture",
+          "area": { "en": "Fes el-Bali", "th": "เฟสเอลบาลี" },
+          "what": { "en": "A 14th-century school with tile work, carved cedar and a calm courtyard", "th": "โรงเรียนเก่าศตวรรษที่ 14 มีกระเบื้องโมเสก ไม้ซีดาร์แกะสลัก และลานกลางสงบ" },
+          "why": { "en": "Short to visit and rich in colour and pattern for curious children", "th": "ใช้เวลาเที่ยวสั้น สีสันและลวดลายเยอะ เด็กช่างสังเกตชอบ" },
+          "tip": { "en": "Open 9 am to 6 pm, closing briefly at prayer times", "th": "เปิด 09:00–18:00 น. ปิดชั่วคราวตอนเวลาละหมาด" },
+          "ages": [0, 1, 2, 2],
+          "hrs": 0.5,
+          "io": "both",
+          "pram": "no",
+          "price": { "en": "Check the price", "th": "เช็กราคาก่อนไป" },
+          "book": "none",
+          "q": "Medersa Bou Inania, Talaa Kebira, Fes",
+          "ok": "2026-11",
+          "src": "https://loudavymkrokem.cz/en/fes-morocco-guide/"
+        },
+        {
+          "name": { "en": "Al-Attarine Madrasa", "th": "มาดราซาอัล-อัตตารีน" },
+          "kind": "culture",
+          "area": { "en": "Fes el-Bali", "th": "เฟสเอลบาลี" },
+          "what": { "en": "A small 14th-century school known for its geometric tile and plaster work", "th": "โรงเรียนเก่าขนาดเล็กศตวรรษที่ 14 เด่นเรื่องกระเบื้องและปูนปั้นลายเรขาคณิต" },
+          "why": { "en": "Compact and quiet, with patterns children enjoy spotting", "th": "เล็กและเงียบ มีลวดลายให้เด็กๆ ตามหา" },
+          "tip": { "en": "Open 9 am to 6 pm; go early for fewer people", "th": "เปิด 09:00–18:00 น. ไปเช้าคนน้อยกว่า" },
+          "ages": [0, 1, 2, 2],
+          "hrs": 0.5,
+          "io": "both",
+          "pram": "no",
+          "price": { "en": "Check the price", "th": "เช็กราคาก่อนไป" },
+          "book": "none",
+          "q": "Al-Attarine Madrasa, Fes el-Bali, Fes",
+          "ok": "2026-11",
+          "src": "https://loudavymkrokem.cz/en/fes-morocco-guide/"
+        },
+        {
+          "ok": "2026-11",
+          "name": { "en": "Merenid Tombs viewpoint", "th": "จุดชมวิวสุสานเมรีนิด" },
+          "kind": "views",
+          "area": { "en": "Hill above Fes el-Bali", "th": "เนินเหนือเฟสเอลบาลี" },
+          "what": { "en": "Ruined 14th-century tombs on a hill with a wide view over the whole medina", "th": "ซากสุสานศตวรรษที่ 14 บนเนินเขา มองเห็นเมดินาทั้งเมือง" },
+          "why": { "en": "A short climb to a big view; the open hilltop gives children room to run before sunset", "th": "เดินขึ้นเนินสั้นๆ ได้วิวกว้าง ยอดเขาโล่งให้เด็กวิ่งเล่นก่อนพระอาทิตย์ตก" },
+          "tip": { "en": "Go for sunset but leave before dark; a taxi from Bab Boujloud is short and cheap", "th": "ไปชมพระอาทิตย์ตกแต่กลับก่อนมืด นั่งแท็กซี่จากบาบบูจลูดใกล้และไม่แพง" },
+          "ages": [0, 1, 1, 2],
+          "hrs": 1,
+          "io": "out",
+          "pram": "no",
+          "price": { "en": "Free", "th": "ฟรี" },
+          "book": "none",
+          "q": "Merenid Tombs, Fes, Morocco",
+          "src": "https://thirdeyetraveller.com/merenid-tombs-in-fes-best-viewpoint/"
         }
       ]
     },
     {
       "place": "ma-marrakech",
-      "thin": true,
       "sights": [
         {
           "name": { "en": "Jardin Majorelle", "th": "ฌาร์แดงมาจอแรล" },
@@ -442,6 +508,40 @@
           "q": "Setti Fatma, Ourika Valley, Morocco",
           "ok": "2026-11",
           "src": "https://www.civitatis.com/en/marrakech/ourika-valley-trip/"
+        },
+        {
+          "name": { "en": "Kawkab Jeux indoor play centre", "th": "ศูนย์เล่นในร่มคาวคับ เฌอซ์" },
+          "kind": "play",
+          "area": { "en": "Gueliz", "th": "เกลิซ" },
+          "what": { "en": "A soft-play centre in the Centre Harti for children of about 1 to 8", "th": "ศูนย์เล่นนุ่มๆ ในร่มที่ Centre Harti สำหรับเด็กราว 1–8 ขวบ" },
+          "why": { "en": "A cool, safe place for a hot afternoon while adults rest", "th": "ที่เล่นเย็นสบายและปลอดภัยสำหรับบ่ายร้อนๆ ให้ผู้ใหญ่ได้พัก" },
+          "tip": { "en": "Entry starts from around 25 MAD; check the opening hours on the day", "th": "ค่าเข้าเริ่มราว 25 MAD เช็กเวลาเปิดในวันที่ไป" },
+          "ages": [2, 2, 1, 0],
+          "hrs": 2,
+          "io": "in",
+          "pram": "yes",
+          "price": { "en": "≈ from 25 MAD", "th": "≈ เริ่มราว 25 MAD" },
+          "book": "none",
+          "q": "Kawkab Jeux, Centre Harti, Gueliz, Marrakech",
+          "ok": "2026-11",
+          "src": "https://www.nomadotravel.app/en/guides/marrakech-with-kids"
+        },
+        {
+          "name": { "en": "Hot-air balloon over the Agafay Desert", "th": "บอลลูนลมร้อนเหนือทะเลทรายอากาฟาย" },
+          "kind": "ride",
+          "area": { "en": "Agafay Desert", "th": "ทะเลทรายอากาฟาย" },
+          "what": { "en": "A sunrise flight of about an hour that departs from outside the city", "th": "เที่ยวบินตอนเช้าตรู่ราวหนึ่งชั่วโมง ออกจากนอกเมือง" },
+          "why": { "en": "Most operators take children from 5 only, so it suits older ones", "th": "ผู้ให้บริการส่วนใหญ่รับเด็กตั้งแต่ 5 ขวบ จึงเหมาะกับเด็กโต" },
+          "tip": { "en": "Check the minimum age before booking; pick-up is before dawn", "th": "เช็กอายุขั้นต่ำก่อนจอง รถรับก่อนฟ้าสาง" },
+          "ages": [0, 0, 1, 2],
+          "hrs": 4,
+          "io": "out",
+          "pram": "no",
+          "price": { "en": "Check the price", "th": "เช็กราคาก่อนไป" },
+          "book": "req",
+          "q": "Hot air balloon, Agafay Desert, Marrakech",
+          "ok": "2026-11",
+          "src": "https://www.nomadotravel.app/en/guides/marrakech-with-kids"
         }
       ]
     }

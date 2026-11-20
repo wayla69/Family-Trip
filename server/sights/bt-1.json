@@ -112,6 +112,40 @@
           "q": "Punakha Suspension Bridge, Punakha",
           "ok": "2026-11",
           "src": "https://punakha.gov.bt/tourism/suspension-bridge/"
+        },
+        {
+          "name": { "en": "Kyichu Lhakhang", "th": "กยิจู ลาคัง" },
+          "kind": "culture",
+          "area": { "en": "Paro valley", "th": "หุบเขาพาโร" },
+          "what": { "en": "One of Bhutan's oldest temples, a calm courtyard of prayer wheels and orange trees", "th": "หนึ่งในวัดเก่าแก่ที่สุดของภูฏาน ลานสงบมีกงล้อมนตร์และต้นส้ม" },
+          "why": { "en": "Short and flat, a gentle first temple visit; quiet voices inside", "th": "สั้นและราบ เหมาะเป็นวัดแรก ภายในต้องพูดเบาๆ" },
+          "tip": { "en": "Dress modestly and take no photos inside the shrine rooms", "th": "แต่งกายสุภาพ ห้ามถ่ายรูปในห้องบูชา" },
+          "ages": [1, 1, 2, 2],
+          "hrs": 1,
+          "io": "out",
+          "pram": "yes",
+          "price": { "en": "≈ Nu 500 for foreign adults", "th": "≈ Nu 500 ผู้ใหญ่ต่างชาติ" },
+          "book": "none",
+          "q": "Kyichu Lhakhang, Paro, Bhutan",
+          "ok": "2026-11",
+          "src": "https://www.windhorsetours.com/bhutan/bhutan-travel-info/entrance-fees-monuments-bhutan"
+        },
+        {
+          "name": { "en": "Drukgyel Dzong ruins", "th": "ซากป้อมดรุกเกียล" },
+          "kind": "culture",
+          "area": { "en": "Upper Paro valley", "th": "ต้นหุบเขาพาโร" },
+          "what": { "en": "The ruined 1649 fortress built to mark a victory, with mountain views at the end of the valley road", "th": "ซากป้อมปี 1649 สร้างเฉลิมชัยชนะ มีวิวภูเขาปลายถนนหุบเขา" },
+          "why": { "en": "Open ground to run about, but uneven stones and no shade", "th": "พื้นที่โล่งให้วิ่งเล่น แต่พื้นขรุขระและไม่มีร่ม" },
+          "tip": { "en": "Go in the morning light; hold hands on the loose steps", "th": "ไปตอนเช้าที่แสงสวย จูงมือเด็กตอนขึ้นบันไดหิน" },
+          "ages": [1, 1, 2, 2],
+          "hrs": 1,
+          "io": "out",
+          "pram": "no",
+          "price": { "en": "Check the price", "th": "เช็กราคาก่อนไป" },
+          "book": "none",
+          "q": "Drukgyel Dzong, Paro, Bhutan",
+          "ok": "2026-11",
+          "src": "https://www.dailybhutan.com/article/travel-to-bhutan-experience-the-charm-of-paro"
         }
       ]
     }

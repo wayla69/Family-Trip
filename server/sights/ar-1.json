@@ -3,7 +3,6 @@
   "towns": [
     {
       "place": "ar-buenosaires",
-      "thin": true,
       "sights": [
         {
           "name": { "en": "Ecoparque Buenos Aires", "th": "เอโกปาร์เกบัวโนสไอเรส" },
@@ -199,12 +198,79 @@
           "q": "Parque Nacional Iguazú, Puerto Iguazú, Misiones",
           "ok": "2026-11",
           "src": "https://www.iprofesional.com/turismo/454919-aumentan-las-entradas-a-parques-nacionales-cuanto-cuesta-ir-a-cataratas-glaciares-y-mas"
+        },
+        {
+          "name": { "en": "Teatro Colón guided tour", "th": "ทัวร์โรงละครโคลอน" },
+          "kind": "culture",
+          "area": { "en": "Microcentro", "th": "ไมโครเซนโตร" },
+          "what": { "en": "A 50-minute tour of one of the world's great opera houses, with English tours at set times", "th": "ทัวร์ 50 นาทีในโรงอุปรากรชื่อดังของโลก มีรอบภาษาอังกฤษตามเวลา" },
+          "why": { "en": "Gilded halls hold older children; under 7 go free, but 50 minutes is long for a toddler", "th": "ห้องโถงปิดทองดึงดูดเด็กโต เด็กต่ำกว่า 7 ปีเข้าฟรี แต่ 50 นาทีนานสำหรับเด็กเล็กมาก" },
+          "tip": { "en": "Tours leave every 15 minutes, 10:00–16:45; English at 11:00, 12:00, 13:00 and 15:00", "th": "ทัวร์ออกทุก 15 นาที 10:00–16:45 ภาษาอังกฤษรอบ 11:00 12:00 13:00 และ 15:00" },
+          "ages": [0, 1, 2, 2],
+          "hrs": 1,
+          "io": "in",
+          "pram": "yes",
+          "price": { "en": "Check the price (guided tours, prices change often)", "th": "เช็กราคาก่อนไป (ทัวร์นำชม ราคาเปลี่ยนบ่อย)" },
+          "book": "rec",
+          "q": "Teatro Colón, Tucumán 1171, Buenos Aires",
+          "ok": "2026-11",
+          "src": "https://www.teatrocolon.org.ar/es/visitas-guiadas"
+        },
+        {
+          "name": { "en": "National Museum of Fine Arts", "th": "พิพิธภัณฑ์ศิลปะแห่งชาติ" },
+          "kind": "museum",
+          "area": { "en": "Recoleta", "th": "เรโกเลตา" },
+          "what": { "en": "A free national art museum with family activities and guided visits for children", "th": "พิพิธภัณฑ์ศิลปะแห่งชาติเข้าฟรี มีกิจกรรมและทัวร์สำหรับเด็กและครอบครัว" },
+          "why": { "en": "Free and roomy, so a short visit works; book a children's route on its website", "th": "ฟรีและกว้างขวาง แวะสั้นๆ ได้ จองเส้นทางสำหรับเด็กได้ที่เว็บไซต์" },
+          "tip": { "en": "Opening days differ between listings; confirm on the museum's website, and holidays vary", "th": "วันเปิดแต่ละแหล่งไม่ตรงกัน เช็กที่เว็บไซต์พิพิธภัณฑ์ และวันหยุดอาจเปลี่ยน" },
+          "ages": [0, 1, 2, 2],
+          "hrs": 1.5,
+          "io": "in",
+          "pram": "yes",
+          "price": { "en": "Free", "th": "ฟรี" },
+          "book": "none",
+          "q": "Museo Nacional de Bellas Artes, Av. del Libertador 1473, Buenos Aires",
+          "ok": "2026-11",
+          "src": "https://www.canal26.com/turismo/2026/05/14/dia-de-los-museos-en-buenos-aires-5-imperdibles-para-viajar-en-el-tiempo-con-horarios-y-direcciones/"
+        },
+        {
+          "name": { "en": "Argentine Museum of Natural Sciences", "th": "พิพิธภัณฑ์วิทยาศาสตร์ธรรมชาติอาร์เจนตินา" },
+          "kind": "museum",
+          "area": { "en": "Parque Centenario", "th": "ปาร์เก เซนเตนาริโอ" },
+          "what": { "en": "The city's oldest museum, with giant prehistoric skeletons, open daily 14:00–19:00", "th": "พิพิธภัณฑ์เก่าแก่ที่สุดของเมือง มีโครงกระดูกยักษ์ยุคก่อนประวัติศาสตร์ เปิดทุกวัน 14:00–19:00" },
+          "why": { "en": "Dinosaur and giant-animal skeletons suit curious children and keep a rainy afternoon dry", "th": "โครงกระดูกไดโนเสาร์และสัตว์ยักษ์ถูกใจเด็กช่างสงสัย และใช้เป็นที่หลบฝนช่วงบ่าย" },
+          "tip": { "en": "It opens only in the afternoon; the park outside is good for a run first", "th": "เปิดเฉพาะช่วงบ่าย สวนด้านนอกเหมาะวิ่งเล่นก่อน" },
+          "ages": [1, 2, 2, 2],
+          "hrs": 1.5,
+          "io": "in",
+          "pram": "part",
+          "price": { "en": "Check the price", "th": "เช็กราคาก่อนไป" },
+          "book": "none",
+          "q": "Museo Argentino de Ciencias Naturales, Av. Ángel Gallardo 490, Buenos Aires",
+          "ok": "2026-11",
+          "src": "https://www.canal26.com/historia/2026/05/16/el-primer-museo-de-buenos-aires-nacio-en-1812-cambio-de-casa-y-hoy-guarda-gigantes-prehistoricos-en-parque-centenario/"
+        },
+        {
+          "ok": "2026-11",
+          "name": { "en": "MIJU – Museum of Imagination and Play", "th": "พิพิธภัณฑ์มิฮู จินตนาการและการเล่น" },
+          "kind": "museumkid",
+          "area": { "en": "Puerto Madero", "th": "ปวยร์โตมาเดโร" },
+          "what": { "en": "A city-run museum made for children up to 12, with hands-on rooms for play and imagination", "th": "พิพิธภัณฑ์ของเมืองสำหรับเด็กถึง 12 ปี มีห้องให้เล่นและใช้จินตนาการ" },
+          "why": { "en": "Made for the very young: the visit is a short hour, with room to touch and move", "th": "ออกแบบมาเพื่อเด็กเล็ก เข้าชมราวหนึ่งชั่วโมง จับต้องและขยับตัวได้" },
+          "tip": { "en": "Book a timed slot online first; the city page lists different prices for residents and visitors", "th": "จองรอบเวลาออนไลน์ก่อน หน้าเมืองระบุราคาต่างกันระหว่างคนในประเทศกับนักท่องเที่ยว" },
+          "ages": [2, 2, 1, 0],
+          "hrs": 1,
+          "io": "in",
+          "pram": "part",
+          "price": { "en": "Check the price", "th": "เช็กราคาก่อนไป" },
+          "book": "req",
+          "q": "MIJU Museo de la Imaginación y el Juego, Av. de los Italianos 851, Puerto Madero, Buenos Aires",
+          "src": "https://buenosaires.gob.ar/cultura/museos/museo-de-la-imaginacion-y-el-juego"
         }
       ]
     },
     {
       "place": "ar-patagonia",
-      "thin": true,
       "sights": [
         {
           "name": { "en": "Perito Moreno Glacier walkways", "th": "ทางเดินชมธารน้ำแข็งเปริโต โมเรโน" },
@@ -457,6 +523,23 @@
           "q": "Puerto Pirámides, Península Valdés, Chubut",
           "ok": "2026-11",
           "src": "https://www.turismocity.com.ar/promociones_aereas/p-temporada_de_ballenas_en_peninsula_valdes_cuando_ir_y_que_hacer-9503.html"
+        },
+        {
+          "ok": "2026-11",
+          "name": { "en": "Parque Nahuelito", "th": "ปาร์เก นาเวลิโต" },
+          "kind": "play",
+          "area": { "en": "Circuito Chico, Bariloche", "th": "เซอร์กวิโตชิโก บาริโลเช" },
+          "what": { "en": "A forest walk among life-size dinosaur replicas, with a nod to the Nahuelito lake legend", "th": "เดินในป่าชมโมเดลไดโนเสาร์ขนาดเท่าจริง พร้อมตำนานนาเวลิโตแห่งทะเลสาบ" },
+          "why": { "en": "Children compare sizes and hunt for the next dinosaur; the visit is guided and short", "th": "เด็กๆ ชอบเทียบขนาดและตามหาไดโนเสาร์ตัวถัดไป มีไกด์พาเดินและใช้เวลาไม่นาน" },
+          "tip": { "en": "Opens at 12; guided visits start at 12:30 and leave hourly until 16:30. Ask the park for prices", "th": "เปิด 12:00 รอบนำชมแรก 12:30 แล้วออกทุกชั่วโมงถึง 16:30 สอบถามราคากับสวน" },
+          "ages": [1, 2, 2, 1],
+          "hrs": 1.5,
+          "io": "out",
+          "pram": "part",
+          "price": { "en": "Check the price", "th": "เช็กราคาก่อนไป" },
+          "book": "rec",
+          "q": "Parque Nahuelito, Ruta 77 km 24.5, Circuito Chico, Bariloche",
+          "src": "https://www.rionegro.com.ar/?p=4657204"
         }
       ]
     }

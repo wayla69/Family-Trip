@@ -3407,6 +3407,12 @@ function sightOk(x) {
   return true;
 }
 // one sight as a card: its picture (the library's landmark) or its kind, the name, the ages it suits, time · indoors · pram, price, why, a tip
+// the town's things to do in groups by the youngest age band they suit best (★ = 2, else the first that suits at all); the order inside a group is kept
+function sightGroups(list) {
+  const at = (x) => { const a = x.ages || [1, 1, 1, 1], k = a.indexOf(2); return k >= 0 ? k : Math.max(0, a.indexOf(1) >= 0 ? a.indexOf(1) : 3); };
+  const g = [[], [], [], []]; for (const x of list) g[at(x)].push(x);
+  return g.map((xs, k) => [k, xs]).filter((p) => p[1].length);
+}
 function sightCard(x) {
   const kd = SIGHT_KINDS[x.kind] || ['📍', '', ''], ages = x.ages || [1, 1, 1, 1], t = famTaste(), ours = (x.styles || []).some((k) => t.out.like.includes(k)) && !(x.styles || []).some((k) => t.out.avoid.includes(k));
   const io = { in: ['🏠', 'ในร่ม', 'Indoors'], out: ['🌤️', 'กลางแจ้ง', 'Outdoors'], both: ['⛅', 'ในร่มและกลางแจ้ง', 'In and out'] }[x.io] || null;
@@ -3531,7 +3537,8 @@ ${styles.length > 1 ? `<div class="row chips" role="group"><span class="label">$
   const shown = list.filter(sightOk).map((x, k) => [x, k]).sort((a, b) => (b[0].wish ? 1 : 0) - (a[0].wish ? 1 : 0) || (b[0].fit || 0) - (a[0].fit || 0) || a[1] - b[1]).map((p) => p[0]);
   const q = S2.q.trim().toLowerCase(), sfz = fzFilter(shown.map(sightText), q), vis = shown.filter((x, i) => !q || sfz.ok(i)).length;
   return `${head}${tabs}${bar}<p class="label" id="sightn">${L(`แสดง ${vis} จาก ${list.length} แห่ง`, `Showing ${vis} of ${list.length}`)}</p>
-<ul class="sightl">${shown.map((x) => sightCard(x).replace('<li class="sightc', `<li${q && !sfz.ok(shown.indexOf(x)) ? ' hidden' : ''} class="sightc`)).join('')}</ul>
+${sightGroups(shown).map(([g, xs]) => `<section class="sagegrp" style="--g1:${[PG.pink, PG.gold, PG.teal, PG.blue][g]}"${q && !xs.some((x) => sfz.ok(shown.indexOf(x))) ? ' hidden' : ''}><h3>${L(`เหมาะที่สุดกับ ${SIGHT_AGES[g]} ขวบ`, `Best for ages ${SIGHT_AGES[g]}`)} <span class="label">${xs.length}</span></h3>
+<ul class="sightl">${xs.map((x) => sightCard(x).replace('<li class="sightc', `<li${q && !sfz.ok(shown.indexOf(x)) ? ' hidden' : ''} class="sightc`)).join('')}</ul></section>`).join('')}
 <p class="empty" id="sightnone"${vis ? ' hidden' : ''}>${L('ไม่พบที่เที่ยวที่ตรงกับตัวกรอง', 'Nothing matches these filters')}</p>
 <p class="label">${L('ทุกแห่งเช็กกับเว็บก่อนเข้าคลัง · ราคาและเวลาเปิดเปลี่ยนได้ เช็กซ้ำก่อนไป', 'Every place was checked on the web before it entered the library · hours and prices change, check again before you go')}</p>`;
 }

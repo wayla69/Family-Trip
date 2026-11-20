@@ -793,7 +793,6 @@
     },
     {
       "place": "fr-nice",
-      "thin": true,
       "sights": [
         {
           "name": { "en": "Parc Phoenix", "th": "ปาร์กเฟนิกซ์" },
@@ -1026,6 +1025,40 @@
           "q": "Musée Picasso, Antibes",
           "ok": "2026-11",
           "src": "https://cotedazurfrance.fr/offres/musee-picasso-antibes-fr-3001896/"
+        },
+        {
+          "name": { "en": "Nice tourist little train", "th": "รถไฟนำเที่ยวเมืองนีซ" },
+          "kind": "ride",
+          "area": { "en": "Promenade des Anglais", "th": "พรอมนาดเดแซงเกล" },
+          "what": { "en": "A 50-minute road-train loop of the old town and Castle Hill, with a ten-minute stop at the top", "th": "รถไฟล้อยางวิ่งรอบเมืองเก่าและเนินปราสาทราว 50 นาที จอดชมวิวบนเนินราว 10 นาที" },
+          "why": { "en": "Sit-down sightseeing with no walking, easy for tired legs and toddlers on laps", "th": "นั่งชมเมืองโดยไม่ต้องเดิน เหมาะกับขาล้าและเด็กเล็กที่นั่งตัก" },
+          "tip": { "en": "Runs daily from 5 April to 30 September 2026 from the Jardin Albert Ier; check winter times", "th": "วิ่งทุกวันตั้งแต่ 5 เมษายนถึง 30 กันยายน 2026 จากสวนอัลแบร์ที่ 1 ช่วงฤดูหนาวเช็กเวลาก่อนไป" },
+          "ages": [2, 2, 1, 1],
+          "hrs": 1,
+          "io": "out",
+          "pram": "yes",
+          "price": { "en": "≈ €12 adults · €6 ages 4–12 · under 4 free", "th": "≈ €12 ผู้ใหญ่ · €6 อายุ 4–12 ปี · ต่ำกว่า 4 ปีฟรี" },
+          "book": "none",
+          "q": "Petit Train de Nice, Promenade des Anglais, Nice",
+          "ok": "2026-11",
+          "src": "https://niceevents.nicecotedazur.org/visitables/le-petit-train-de-nice-344/sessions/circuit-chateau-panoramique-20928?lang=en"
+        },
+        {
+          "name": { "en": "Cimiez Archaeological Museum and Roman ruins", "th": "พิพิธภัณฑ์โบราณคดีซิมิเยร์และซากโรมัน" },
+          "kind": "museum",
+          "area": { "en": "Cimiez", "th": "ซิมิเยร์" },
+          "what": { "en": "Roman baths and an amphitheatre beside a small museum of finds, on the hill above the town", "th": "ซากอาบน้ำโรมันและอัฒจันทร์ข้างพิพิธภัณฑ์เล็กๆ บนเนินเหนือเมือง" },
+          "why": { "en": "Children can walk among real Roman walls; under-18s go in free, and it pairs with the Matisse Museum next door", "th": "เด็กเดินเล่นท่ามกลางกำแพงโรมันของจริงได้ อายุต่ำกว่า 18 ปีเข้าฟรี และอยู่ติดพิพิธภัณฑ์มาติส" },
+          "tip": { "en": "Closed on Tuesdays; a €10 combined ticket also covers the Matisse Museum", "th": "ปิดวันอังคาร ตั๋วรวม €10 เข้าพิพิธภัณฑ์มาติสได้ด้วย" },
+          "ages": [0, 1, 2, 2],
+          "hrs": 1.5,
+          "io": "both",
+          "pram": "part",
+          "price": { "en": "≈ €5 adults · under 18 free · ≈ €10 with the Matisse Museum", "th": "≈ €5 ผู้ใหญ่ · ต่ำกว่า 18 ปีฟรี · ≈ €10 รวมพิพิธภัณฑ์มาติส" },
+          "book": "none",
+          "q": "Musée d’archéologie de Nice-Cimiez, 160 Avenue des Arènes de Cimiez, Nice",
+          "ok": "2026-11",
+          "src": "https://www.bestofniceblog.com/what-to-see-in-nice/museums-in-nice-france/"
         }
       ]
     },

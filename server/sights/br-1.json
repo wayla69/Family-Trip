@@ -3,7 +3,6 @@
   "towns": [
     {
       "place": "br-rio",
-      "thin": true,
       "sights": [
         {
           "name": { "en": "Christ the Redeemer", "th": "อนุสาวรีย์พระเยซูคริสต์ไถ่บาป" },
@@ -214,6 +213,58 @@
           "q": "Quinta da Boa Vista, São Cristóvão, Rio de Janeiro",
           "ok": "2026-11",
           "src": "https://offpeaktrip.com/en/guide/riodejaneiro/quinta-da-boa-vista"
+        },
+        {
+          "name": { "en": "Lagoa Rodrigo de Freitas", "th": "ลากัวโรดริโกเดฟไรตัส" },
+          "kind": "park",
+          "area": { "en": "Lagoa", "th": "ลากัว" },
+          "what": { "en": "A lagoon ringed by a flat path, pedal boats, playgrounds and capybaras at Cantagalo", "th": "ทะเลสาบล้อมด้วยทางเดินราบ มีเรือถีบ สนามเด็กเล่น และคาปิบาราที่คอร์ตีดูกันตากาลู" },
+          "why": { "en": "A flat loop path suits prams; kids like the pedal boats and the capybaras", "th": "ทางเดินรอบทะเลสาบราบ เหมาะกับรถเข็น เด็กชอบเรือถีบและคาปิบารา" },
+          "tip": { "en": "Swimming is not allowed in the lagoon; early evening is cooler", "th": "ห้ามว่ายน้ำในทะเลสาบ ช่วงเย็นอากาศเย็นกว่า" },
+          "ages": [2, 2, 2, 1],
+          "hrs": 2,
+          "io": "out",
+          "pram": "yes",
+          "price": { "en": "Free to walk · pedal boats extra", "th": "เดินเล่นฟรี · เรือถีบคิดเงินแยก" },
+          "book": "none",
+          "q": "Lagoa Rodrigo de Freitas, Rio de Janeiro",
+          "ok": "2026-11",
+          "src": "https://www.quintoandar.com.br/guias/lagoa-rodrigo-de-freitas"
+        },
+        {
+          "name": { "en": "Selarón Steps", "th": "บันไดเซลารอน" },
+          "local": "Escadaria Selarón",
+          "kind": "culture",
+          "area": { "en": "Lapa", "th": "ลาปา" },
+          "what": { "en": "A staircase covered in colourful tiles from many countries between Lapa and Santa Teresa", "th": "บันไดปูกระเบื้องหลากสีจากหลายประเทศ ระหว่างลาปากับซานตาเทเรซา" },
+          "why": { "en": "Quick, bright and free for a photo stop; the steps are steep for prams", "th": "แวะถ่ายรูปสั้นๆ สีสดและฟรี แต่ขั้นบันไดชัน รถเข็นขึ้นลำบาก" },
+          "tip": { "en": "Go in daylight; there are no toilets or food at the steps", "th": "ไปตอนกลางวัน ที่บันไดไม่มีห้องน้ำหรือร้านอาหาร" },
+          "ages": [0, 1, 2, 2],
+          "hrs": 0.5,
+          "io": "out",
+          "pram": "no",
+          "price": { "en": "Free", "th": "ฟรี" },
+          "book": "none",
+          "q": "Escadaria Selarón, Lapa, Rio de Janeiro",
+          "ok": "2026-11",
+          "src": "https://www.aaa.com/tripcanvas/attraction/selaron-steps-escadaria-selaron-VA13341"
+        },
+        {
+          "ok": "2026-11",
+          "name": { "en": "Rio Planetarium (Museum of the Universe)", "th": "พลาเนตาริโอ ริโอ (พิพิธภัณฑ์จักรวาล)" },
+          "kind": "museumkid",
+          "area": { "en": "Gávea", "th": "กาเวีย" },
+          "what": { "en": "The city planetarium in Gávea: a Museum of the Universe and dome shows about the night sky", "th": "พลาเนทาเรียมของเมืองที่กาเวีย มีพิพิธภัณฑ์จักรวาลและโปรแกรมโดมเรื่องท้องฟ้ายามค่ำ" },
+          "why": { "en": "A cool indoor hour of stars and planets, fine for curious children from about three", "th": "หนึ่งชั่วโมงในร่มดูดาวและดาวเคราะห์ เหมาะกับเด็กช่างสงสัยตั้งแต่ราว 3 ปี" },
+          "tip": { "en": "Dome shows are sold apart from the museum ticket; check the programme and prices on the city page", "th": "รอบโดมขายแยกจากบัตรพิพิธภัณฑ์ เช็กโปรแกรมและราคาที่หน้าเว็บของเมือง" },
+          "ages": [0, 1, 2, 2],
+          "hrs": 2,
+          "io": "in",
+          "pram": "yes",
+          "price": { "en": "Check the price", "th": "เช็กราคาก่อนไป" },
+          "book": "rec",
+          "q": "Planetário do Rio, Rua Vice-Governador Rubens Berardo 100, Gávea, Rio de Janeiro",
+          "src": "https://carioca.rio/servicos/visitacao-ao-museu-do-universo-no-planetario-da-gavea/"
         }
       ]
     }

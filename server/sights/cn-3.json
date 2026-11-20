@@ -184,6 +184,23 @@
           "q": "Heilongjiang Provincial Museum, Nangang District, Harbin",
           "ok": "2026-11",
           "src": "https://gs.ctrip.com/html5/you/sight/151/7914.html"
+        },
+        {
+          "name": { "en": "Stalin Park and the Songhua River promenade", "th": "สวนสตาลินและทางเดินริมแม่น้ำซงฮัว" },
+          "kind": "park",
+          "area": { "en": "Daoli", "th": "เต้าหลี่" },
+          "what": { "en": "A 1.75 km tree-lined riverside promenade with statues, playgrounds, cafes and river boat rides, open all hours", "th": "ทางเดินริมแม่น้ำยาว 1.75 กม. ร่มรื่น มีรูปปั้น สนามเด็กเล่น คาเฟ่ และเรือล่องแม่น้ำ เปิดตลอดเวลา" },
+          "why": { "en": "Flat, free and easy for prams; a nightly free music evening also runs in the park", "th": "ทางราบ ฟรี รถเข็นเดินง่าย และมีดนตรีฟรีทุกค่ำในสวน" },
+          "tip": { "en": "Dress very warmly in winter; river boats and rides are paid separately", "th": "หน้าหนาวแต่งตัวให้อุ่นมาก เรือและเครื่องเล่นคิดเงินแยก" },
+          "ages": [1, 2, 2, 1],
+          "hrs": 2,
+          "io": "out",
+          "pram": "yes",
+          "price": { "en": "Free", "th": "ฟรี" },
+          "book": "none",
+          "q": "Stalin Park, Daoli District, Harbin",
+          "ok": "2026-11",
+          "src": "https://www.icefestivalharbin.com/attraction-p27-stalin-park.html"
         }
       ]
     }
