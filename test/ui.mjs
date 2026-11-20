@@ -1171,6 +1171,9 @@ const T = 'hk-macau-2026';
   ok(/⭐\s*1/.test(await page.textContent('#m1 .spothd')), 'a found thing is celebrated (⭐ 1), nothing missing is counted');
   await ppOpen(page, 'mimi', T, 'lists');
   ok(await page.locator('#pl-words .tick').count() === 10 && await page.locator('#pl-dimsum .stars').count() === 10, 'lists: Say It Like a Local (10), Dim Sum Tasting Card (stars)');
+  { // a rated dish keeps its whole name on one line beside its picture; 🔊 and the stars go under it (owner's Samsung, Nov 2026: the stars squeezed the name to a word a line)
+    const rt = await page.evaluate(() => [...document.querySelectorAll('#pl-dimsum .tick.rate')].map((r) => { const t = r.querySelector('.t').getBoundingClientRect(), st = r.querySelector('.stars').getBoundingClientRect(); return { w: Math.round(t.width / r.getBoundingClientRect().width * 100), below: st.top >= t.bottom - 2 }; }));
+    ok(rt.length === 10 && rt.every((x) => x.w >= 60 && x.below), `tasting card: each dish's name takes the line, the stars sit under it (${JSON.stringify(rt.slice(0, 3))})`); }
   await page.click('#pl-dimsum button[data-v="dimsum.eggtart"][data-yum="3"]');
   await page.click('#pl-words button[data-v="words.mhgoi"]');
   await page.fill('.ppf[data-v="decl.eggtarts"]', '7'); await page.locator('.ppf[data-v="decl.eggtarts"]').blur();
