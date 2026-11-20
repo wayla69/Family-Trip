@@ -3948,3 +3948,20 @@ details.more>summary{border-radius:16px}
 @media (max-width:420px){.plbr{grid-template-columns:30px 1fr}.plba{grid-column:2;align-items:flex-start;text-align:left}}
 .plbpast{display:block;margin-top:2px;font-size:12.5px;color:color-mix(in srgb,#7C3AED 65%,var(--ink))}
 .plbwas{margin:0 0 6px;font-size:13.5px;color:var(--muted)}
+/* B3: planned and really spent (the spend page) and Today's one line */
+.budbars li.near .spbar i{background:#F59E0B}
+.budbars li.over .spbar i{background:#E11D48}
+.budbars li.over b{color:color-mix(in srgb,#E11D48 70%,var(--ink))}
+.budtot{margin:4px 0 10px;font-size:15px}
+.budtot.near{color:color-mix(in srgb,#B45309 75%,var(--ink))}
+.budtot.over{color:color-mix(in srgb,#E11D48 70%,var(--ink))}
+.budedit{margin-top:12px}
+.budf{display:grid;grid-template-columns:repeat(auto-fill,minmax(min(100%,160px),1fr));gap:8px;margin:6px 0 10px}
+.budf .fxf{display:flex;flex-direction:column;gap:4px;font-size:14px}
+.budblk .mini{margin-top:10px}
+.budline{display:flex;align-items:center;gap:6px;min-height:44px;margin:6px 0;padding:6px 12px;border-radius:12px;background:color-mix(in srgb,var(--accent) 10%,var(--card));color:var(--ink);text-decoration:none;font-size:14.5px}
+.budline.near{background:color-mix(in srgb,#F59E0B 16%,var(--card))}
+.budline.over{background:color-mix(in srgb,#E11D48 14%,var(--card))}
+.budbars li{grid-template-columns:minmax(90px,auto) 1fr auto auto}
+.budbars small{white-space:nowrap}
+@media (max-width:480px){.budbars li{grid-template-columns:minmax(80px,auto) 1fr auto;row-gap:2px}.budbars small{grid-column:2/-1;text-align:right;margin-top:-4px}}

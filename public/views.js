@@ -1423,7 +1423,7 @@ function viewToday(t, j, full) {
 ${nextCard(t, i)}${changedLine(t, i)}${checkLine(t, i)}${dayFacts(d)}
 ${banner}
 <div class="row quick">${pl.route ? extA(pl.route, ic('route') + ' ' + L('เส้นทางวันนี้', "Today's route"), 'qlink') : ''}${pl.stay ? extA(mapsUrl(pl.stay.q || pl.stay.addr), ic('stays') + ' ' + L('ไปที่พัก', 'To the stay'), 'qlink') : ''}</div>
-${((g) => (g ? `${g[0]}${isEditor() && (dn >= 0 || until > 0) ? remindLine(t) : ''}${bagBlock(t, i)}${g[1]}` : `${isEditor() && (dn >= 0 || until > 0) ? remindLine(t) : ''}${bagBlock(t, i)}${nop}`))(dayGlance(t, i, pre, true, full))}
+${((g) => (g ? `${g[0]}${dn >= 0 ? budgetLine(t) : ''}${isEditor() && (dn >= 0 || until > 0) ? remindLine(t) : ''}${bagBlock(t, i)}${g[1]}` : `${dn >= 0 ? budgetLine(t) : ''}${isEditor() && (dn >= 0 || until > 0) ? remindLine(t) : ''}${bagBlock(t, i)}${nop}`))(dayGlance(t, i, pre, true, full))}
 ${!pre && mission && (mission.facts || []).length ? `<div class="part kidm">${L('ภารกิจของเด็กๆ วันนี้', "The kids' mission today")}</div><div class="call pick mission"><b>${esc(T(mission.title))}</b><ul class="tips">${mission.facts.map((f) => `<li>${esc(T(f))}</li>`).join('')}</ul></div>` : ''}
 ${changeBlock(t, i)}${nextBlock(t, i)}${askBlock(t, i)}`;
 }
@@ -4161,9 +4161,39 @@ ${keys.length ? `<div class="chips" id="phtags"><button class="chip" data-a="pht
 ${loose.length ? `<section class="blk phday"><h3>${L('ไม่ระบุวัน', 'No day')}</h3>${grp(loose)}</section>` : ''}</div>`;
 }
 const emptyCard = (t, title, line, act) => `<div class="empty bookstart">${castHtml(((t && t.theme && t.theme.children) || []).map((k) => k.slug))}<b>${title}</b>${line ? `<p>${line}</p>` : ''}${act ? `<a class="btn" href="${act[0]}">${act[1]}</a>` : ''}</div>`;
+/* B3 (docs/BUDGET.md): the plan a book's spending is held against — the parents' own (set here) or the planner's estimate the book
+   was written with — as spent / planned per category and money, bars that turn amber near the plan and rose over it. Editors only. */
+const budgetOf = (t) => (S && S.budgets && S.budgets[t.id]) || null;
+let budEdit = false;
+function budgetBlock(t) {
+  if (!isEditor()) return '';
+  const b = budgetOf(t), all = spendOf(t.id), lines = (b && b.lines) || [];
+  const spentOf = (cat, cur) => all.filter((s) => (s.cat || 'other') === cat && s.cur === cur).reduce((a, s) => a + s.amount, 0);
+  const pctCls = (p) => (p > 100 ? 'over' : p >= 85 ? 'near' : '');
+  const rows = lines.map((l) => {
+    const c = SPEND_CATS.find((x) => x[0] === l.cat) || SPEND_CATS[5], n = spentOf(l.cat, l.cur), p = Math.round((n / l.amt) * 100);
+    return `<li class="${pctCls(p)}"><span class="spl">${emo(c[1])} ${esc(L(c[2], c[3]))}</span><span class="spbar"><i style="width:${Math.min(100, Math.max(n ? 3 : 0, p))}%"></i></span><b>${n ? esc(fmtMoney(n, l.cur)) : '—'}</b><small>${esc(L('จากงบ', 'of'))} ${esc(fmtMoney(l.amt, l.cur))}</small></li>`;
+  }).join('');
+  const curs = [...new Set(lines.map((l) => l.cur))];
+  const tots = curs.map((cur) => { const plan = lines.filter((l) => l.cur === cur).reduce((a, l) => a + l.amt, 0), n = all.filter((s) => s.cur === cur).reduce((a, s) => a + s.amount, 0); return { cur, plan, n, p: Math.round((n / plan) * 100) }; });
+  const totHtml = tots.map((x) => `<p class="budtot ${pctCls(x.p)}"><b>${esc(fmtMoney(x.n, x.cur))}</b> ${L('จากงบ', 'of')} ${esc(fmtMoney(x.plan, x.cur))} · ${x.p}%${x.p > 100 ? ` · ${L(`เกินงบ ${fmtMoney(x.n - x.plan, x.cur)}`, `${fmtMoney(x.n - x.plan, x.cur)} over`)}` : x.n < x.plan ? ` · ${L(`เหลือ ${fmtMoney(x.plan - x.n, x.cur)}`, `${fmtMoney(x.plan - x.n, x.cur)} left`)}` : ''}</p>`).join('');
+  const src = !b ? '' : b.src === 'own' ? L('งบที่เราตั้งเอง', 'The plan we set') : L('จากงบคร่าวๆ ตอนวางแผนกับผู้ช่วย (กลางช่วง)', 'From the rough budget when we planned with the helper (the middle of each range)');
+  // the editor: one amount a category, in the plan's money (or the book's own); other money in the plan stays as it is
+  const cur0 = (lines[0] && lines[0].cur) || tripCurs(t)[0];
+  const edit = budEdit || !b ? `<div class="budedit" data-cur="${esc(cur0)}"><p class="label">${L(`ตั้งงบแต่ละหมวดเป็น ${cur0} · เว้นว่างได้`, `A plan for each kind in ${cur0} · leave any blank`)}</p><div class="budf">${SPEND_CATS.map(([k, e, th, en]) => { const l = lines.find((x) => x.cat === k && x.cur === cur0); return `<label class="fxf">${emo(e)} ${esc(L(th, en))}<input class="field" inputmode="numeric" data-bud="${k}" value="${l ? esc(String(l.amt)) : ''}" aria-label="${esc(L(th, en))} ${esc(cur0)}"></label>`; }).join('')}</div>
+<div class="row"><button type="button" class="btn" data-a="budsave" data-trip="${esc(t.id)}">${L('บันทึกงบ', 'Save the plan')}</button>${b ? `<button type="button" class="mini" data-a="budedit">${L('ยกเลิก', 'Cancel')}</button>` : ''}${b && b.src === 'own' && (t.theme || {}).budget ? `<button type="button" class="linkbtn" data-a="budclear" data-trip="${esc(t.id)}">${L('กลับไปใช้งบจากแผน', 'Back to the planned estimate')}</button>` : ''}</div></div>` : `<button type="button" class="mini" data-a="budedit">${ic('log')} ${L('แก้งบ', 'Change the plan')}</button>`;
+  return `<section class="blk budblk"><h3>${emo('🎯')} ${L('งบที่วางไว้ กับที่จ่ายจริง', 'Planned and really spent')}</h3>${b ? `<p class="label">${src}</p>${totHtml}<ul class="spbars budbars">${rows}</ul>` : `<p class="label">${L('ยังไม่ได้ตั้งงบของเล่มนี้ ตั้งไว้เพื่อดูว่าใช้ไปเท่าไรแล้ว', 'No plan for this book yet — set one to see how the spending is going')}</p>`}${edit}</section>`;
+}
+// Today, on a trip day: one line — spent so far of the plan, in the plan's main money
+function budgetLine(t) {
+  const b = isEditor() && budgetOf(t); if (!b || !(b.lines || []).length) return '';
+  const cur = b.lines[0].cur, plan = b.lines.filter((l) => l.cur === cur).reduce((a, l) => a + l.amt, 0), n = spendOf(t.id).filter((s) => s.cur === cur).reduce((a, s) => a + s.amount, 0), p = Math.round((n / plan) * 100);
+  return `<a class="budline ${p > 100 ? 'over' : p >= 85 ? 'near' : ''}" href="#/t/${esc(t.id)}/spend">${emo('🎯')} ${L(`ใช้ไปแล้ว ${fmtMoney(n, cur)} จากงบ ${fmtMoney(plan, cur)} (${p}%)`, `Spent ${fmtMoney(n, cur)} of a plan of ${fmtMoney(plan, cur)} (${p}%)`)} ›</a>`;
+}
 function viewSpend(t) {
   const all = spendOf(t.id);
-  if (!all.length) return `<h1 class="h2">${L('ค่าใช้จ่าย', 'Spending')}</h1>${emptyCard(t, L('ยังไม่มีรายการ', 'Nothing yet'), L('บันทึกค่าใช้จ่ายได้ที่หน้าบันทึกของแต่ละวัน', 'Add spending on each day’s record page'), [`#/t/${esc(t.id)}/log/${Math.max(0, dayNow(t))}`, L('ไปหน้าบันทึก', 'Open the record page')])}`;
+  if (!all.length && budgetOf(t)) return `<h1 class="h2">${L('สรุปค่าใช้จ่ายทริป', 'Trip spending')}</h1>${budgetBlock(t)}`;
+  if (!all.length) return `<h1 class="h2">${L('ค่าใช้จ่าย', 'Spending')}</h1>${emptyCard(t, L('ยังไม่มีรายการ', 'Nothing yet'), L('บันทึกค่าใช้จ่ายได้ที่หน้าบันทึกของแต่ละวัน', 'Add spending on each day’s record page'), [`#/t/${esc(t.id)}/log/${Math.max(0, dayNow(t))}`, L('ไปหน้าบันทึก', 'Open the record page')])}`+ budgetBlock(t);
   const curs = [...new Set(all.map((s) => s.cur))];
   const byCur = curs.map((c) => {
     const rows = all.filter((s) => s.cur === c), total = rows.reduce((a, s) => a + s.amount, 0);
@@ -4175,7 +4205,7 @@ function viewSpend(t) {
   const top = [...all].sort((a, b) => b.amount - a.amount).slice(0, 5);
   return `<div class="part">${L('ค่าใช้จ่ายจริง', 'What we actually spent')}</div><h1 class="h2">${L('สรุปค่าใช้จ่ายทริป', 'Trip spending')}</h1>
 <p class="lede">${L(`ทั้งหมด ${all.length} รายการ · ${esc(sumMoney(all))} · แยกตามสกุลเงิน (เงินบาทด้านล่างเป็นค่าประมาณจากเรตที่ใส่เอง) · อยู่ในสมุดของเราเท่านั้น ไม่เข้าเล่มพิมพ์`, `${all.length} items · ${esc(sumMoney(all))} · each currency on its own (the baht below is an estimate at your own rate) · stays in our book, not in the printed one`)}</p>
-${fxBlock(t)}<div class="spgrid">${byCur}</div>
+${budgetBlock(t)}${fxBlock(t)}<div class="spgrid">${byCur}</div>
 <section class="blk"><h3>${ic('today')} ${L('รายวัน', 'Day by day')}</h3><ul class="items spdays">${days.map(({ d, i, rows }) => `<li><a class="grow" href="#/t/${esc(t.id)}/log/${i}"><b>${L('วันที่', 'Day')} ${i + 1}</b> · ${esc(fmtDay(d.date, { day: 'numeric', month: 'short' }))} · ${esc(T(d.title))}</a><b>${esc(sumMoney(rows))}</b></li>`).join('')}</ul></section>
 <section class="blk"><h3>${ic('up')} ${L('รายการใหญ่สุด', 'The biggest items')}</h3><ul class="items">${top.map((s) => { const c = SPEND_CATS.find((x) => x[0] === s.cat) || SPEND_CATS[5]; return `<li><div class="grow">${emo(c[1])} ${s.note ? esc(s.note) : esc(L(c[2], c[3]))} <small class="label">· ${L('วันที่', 'Day')} ${s.day + 1}</small></div><b>${esc(fmtMoney(s.amount, s.cur))}</b></li>`; }).join('')}</ul></section>`;
 }

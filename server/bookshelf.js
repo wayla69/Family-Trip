@@ -162,7 +162,7 @@ function router({ pool, media, A, ai, hooks = {} }) {   // hooks.heart(h): set b
       let gone = 0;
       for (const k of new Set(keys)) { try { await media.del(k); gone++; } catch (_) { /* a file already missing is fine */ } }
       await q('DELETE FROM families WHERE id=$1', [FAMILY]);
-      await q("DELETE FROM settings WHERE key IN ('family_likes', 'emoji_seeded', 'emoji_offered', 'emoji_stock_offered', 'year_reels', 'planner_plans', 'eat_starter', 'sight_starter', 'orphans_last')");
+      await q("DELETE FROM settings WHERE key IN ('family_likes', 'emoji_seeded', 'emoji_offered', 'emoji_stock_offered', 'year_reels', 'planner_plans', 'eat_starter', 'sight_starter', 'orphans_last', 'budget_plan')");
       await q('INSERT INTO families (id, name) VALUES ($1, $2) ON CONFLICT (id) DO NOTHING', [FAMILY, 'Family']);
       await syncSeeds(pool); await EMOJI.seed(pool, FAMILY); await eatSyncAll(pool); A.groupsChanged();
       console.log(`family erased on request: ${gone} files, every row`);   // no names, no codes
@@ -339,7 +339,10 @@ function router({ pool, media, A, ai, hooks = {} }) {   // hooks.heart(h): set b
       // a relatives' group sees only its ticked books — everything tied to another book is left out here, at the source
       const see = (x) => A.canSee(req.user, x.trip_id === undefined ? x.id : x.trip_id);
       if (req.user.group) for (const list of [trips, days, firsts, entries, mediaRows, places, hearts, reviews, spendRows, comments]) list.splice(0, list.length, ...list.filter(see));
-      if (req.user.role !== 'editor') spendRows.length = 0;   // what the family spent is the parents' own ledger (the spend page is editors-only; the state must be too)
+      if (req.user.role !== 'editor') spendRows.length = 0;
+      // B3 (docs/BUDGET.md): the plan a book's spending is held against — the parents' own (settings) or the planner's estimate the
+      // book was written with (theme.budget); editors only, like the spend ledger it is read against
+      const budgets = req.user.role === 'editor' ? await budgetsOf(trips) : {};   // what the family spent is the parents' own ledger (the spend page is editors-only; the state must be too)
       // ?lite=1 (the app): each book's guide text (info, passport, day plans — ~95% of the bytes, changes only with a new seed)
       // is left out and named by a hash; the app keeps the copy it has or fetches /api/b/seed/<trip>/<hash> once
       res.setHeader('Cache-Control', 'no-store');
@@ -349,7 +352,7 @@ function router({ pool, media, A, ai, hooks = {} }) {   // hooks.heart(h): set b
         children: children.map((k) => ({ ...k, v: FAM.lookVersion(k.look) })),
         trips: trips.map((t) => {
           const td = days.filter((d) => d.trip_id === t.id).map(({ trip_id, ...d }) => ({ ...d, done_at: ms(d.done_at) }));
-          const out = { ...t, theme: STOCK.maybe(t.theme), passport: STOCK.maybe(t.passport), info: STOCK.maybe(t.info), days: td.map((d) => ({ ...d, plan: STOCK.maybe(d.plan) })), firsts: firsts.filter((f) => f.trip_id === t.id).map(({ trip_id, ...f }) => f) };
+          const out = { ...t, theme: STOCK.maybe(req.user.role === 'editor' ? t.theme : { ...(t.theme || {}), budget: undefined }), passport: STOCK.maybe(t.passport), info: STOCK.maybe(t.info), days: td.map((d) => ({ ...d, plan: STOCK.maybe(d.plan) })), firsts: firsts.filter((f) => f.trip_id === t.id).map(({ trip_id, ...f }) => f) };
           if (!lite) return out;
           return { ...out, info: undefined, passport: undefined, days: td.map(({ plan, ...d }) => d), seed: hashes[t.id] };
         }),
@@ -357,6 +360,7 @@ function router({ pool, media, A, ai, hooks = {} }) {   // hooks.heart(h): set b
         media: mediaRows.map(({ trip_id, day_index, taken_at, width, height, ai_at, edited_at, ...m }) => ({ ...m, trip: trip_id, day: day_index, w: width, h: height, at: ms(taken_at), ai: !!ai_at, v: ms(edited_at) })),
         places: places.map(({ trip_id, day_index, visited_at, ...p }) => ({ ...p, trip: trip_id, day: day_index, at: ms(visited_at) })),
         hearts: hearts.map(({ trip_id, day_index, created_uid, created_at, from_name, ...h }) => ({ ...h, trip: trip_id, day: day_index, from: from_name, at: ms(created_at), mine: created_uid === req.user.uid })),
+        budgets,
         comments: comments.map(({ trip_id, media_id, created_uid, created_at, from_name, ...c }) => ({ ...c, trip: trip_id, media: media_id, from: from_name, at: ms(created_at), mine: created_uid === req.user.uid })),
         reviews: reviews.map(({ trip_id, day_index, updated_at, ...r }) => ({ ...r, trip: trip_id, day: day_index, at: ms(updated_at) })),
         emoji: EMOJI.outAll(emojiRows),   // the family's emoji library: each emoji's picture (core.js emo)
@@ -1233,6 +1237,41 @@ function router({ pool, media, A, ai, hooks = {} }) {   // hooks.heart(h): set b
   });
   // what the app itself knows about the route's countries (server/countryfacts.js, the checked table — never the helper): shown on the
   // page as "before you go"; the page sends it back with the route, where the cleaning drops it
+  /* B3: the plan each book's spending is held against. The parents' own plan lives in settings.budget_plan ({trip: {lines, at, by}},
+     lines = [{cat, cur, amt}], a spending category of `spend`) — a bundled book's theme is written again on every boot; else the
+     planner's estimate kept in theme.budget is turned into the same shape (the middle of each range; flights count as transport). */
+  const BUD_CAT = { food: 'food', tickets: 'tickets', move: 'transport', stay: 'stay', flights: 'transport' };
+  const budgetRead = async () => { const v = (await q("SELECT value FROM settings WHERE key='budget_plan'"))[0]; try { const o = JSON.parse(v.value); return o && typeof o === 'object' ? o : {}; } catch (_) { return {}; } };
+  async function budgetsOf(trips) {
+    const own = await budgetRead(), out = {};
+    for (const t of trips) {
+      if (own[t.id] && Array.isArray(own[t.id].lines)) { out[t.id] = { src: 'own', lines: own[t.id].lines, at: own[t.id].at || null }; continue; }
+      const b = t.theme && t.theme.budget;
+      if (b && Array.isArray(b.lines) && b.lines.length) {
+        const m = new Map();
+        for (const l of b.lines) { const cat = BUD_CAT[l.k]; if (!cat || !/^[A-Z]{3}$/.test(l.cur || '')) continue; const key = `${cat}|${l.cur}`; m.set(key, (m.get(key) || 0) + Math.round(((+l.lo || 0) + (+l.hi || 0)) / 2)); }
+        out[t.id] = { src: 'plan', lines: [...m].map(([key, amt]) => { const [cat, cur] = key.split('|'); return { cat, cur, amt }; }), at: b.at || null };
+      }
+    }
+    return out;
+  }
+  const SPEND_CATS_OK = ['food', 'transport', 'tickets', 'stay', 'shop', 'other'];
+  r.put('/api/b/budget/:trip', ...W, async (req, res, next) => {
+    try {
+      const t = await trip(String(req.params.trip)); if (!t) return bad(res, 'trip');
+      const raw = Array.isArray((req.body || {}).lines) ? req.body.lines : null; if (!raw) return bad(res, 'lines');
+      const lines = []; const seen = new Set();
+      for (const l of raw.slice(0, 40)) {
+        const cat = String((l && l.cat) || ''), cur = String((l && l.cur) || '').toUpperCase(), amt = Math.round(Number(l && l.amt));
+        if (!SPEND_CATS_OK.includes(cat) || !/^[A-Z]{3}$/.test(cur) || !Number.isFinite(amt) || amt <= 0 || amt > 1e9 || seen.has(`${cat}|${cur}`)) continue;
+        seen.add(`${cat}|${cur}`); lines.push({ cat, cur, amt });
+      }
+      const all = await budgetRead();
+      if (lines.length) all[t.id] = { lines, at: Date.now(), by: req.user.name || '' }; else delete all[t.id];   // an empty plan goes back to the planner's estimate
+      await q("INSERT INTO settings (key, value) VALUES ('budget_plan', $1) ON CONFLICT (key) DO UPDATE SET value = EXCLUDED.value", [JSON.stringify(all)]);
+      res.json({ ok: true, budget: (await budgetsOf([t]))[t.id] || null });
+    } catch (e) { next(e); }
+  });
   const withFacts = (rt) => ({ ...rt, facts: CF.factsFor(rt.countries) });
   /* the rough budget (docs/BUDGET.md B1): tickets from the library's sight prices, food from the eat library's prices of each day's town,
      a night's stay, getting around and flights from the helper's numbers in the same answer — worked out again on every answer */
@@ -1451,7 +1490,8 @@ function router({ pool, media, A, ai, hooks = {} }) {   // hooks.heart(h): set b
         if (nLib || nNew) log(`stops: from the library ${nLib} · new ${nNew}`);
         const out = await IMPORT.run({ brief: { ...PLANNER.brief(answers, rt, PLANNER.whoLine(kids, rt.from), eats, sights), eats, eatsAll: !!eats && eatTowns.every((t) => t.places.length) }, slug, client: new ai.SDK(), take, onUsage: addUsage, log, dir: DATA_TMP });
         if (kids.length) out.seed.children = FAM.seedChildren(kids, out.seed.date_from);
-        out.seed.theme = { ...(out.seed.theme || {}), planner: { answers, made: new Date().toISOString().slice(0, 10) } };   // no child's name in it: kept for "change this day" (phase 2)
+        const est = ((await withBudget(rt, answers)).budget || {}).lines || [];   // B3: the estimate travels with the book (editors only in the state)
+        out.seed.theme = { ...(out.seed.theme || {}), planner: { answers, made: new Date().toISOString().slice(0, 10) }, ...(est.length ? { budget: { at: Date.now(), lines: est.map(({ k, cur, lo, hi }) => ({ k, cur, lo, hi })) } } : {}) };   // no child's name in it: kept for "change this day" (phase 2)
         out.report.planner = true;
         await q('INSERT INTO book_drafts (id, family_id, slug, seed, report, cost, created_by) VALUES ($1,$2,$3,$4,$5,$6,$7)', [id, FAMILY, slug, out.seed, out.report, out.cost, who]);
         await plannerCount();

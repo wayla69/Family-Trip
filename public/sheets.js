@@ -1065,6 +1065,19 @@ const A = {
   planday(b) { pln.ask = L(`วันที่ ${+b.dataset.i + 1}: `, `Day ${+b.dataset.i + 1}: `); render(); const el = $('#plask'); if (el) { el.scrollIntoView({ behavior: 'smooth', block: 'center' }); el.focus(); el.setSelectionRange(el.value.length, el.value.length); } },
   planundo() { if (!pln.prev || pln.busy) return; [pln.route, pln.prev] = [pln.prev, pln.route]; pln.edit = -1; planKeep(); render(); toast(L('ย้อนกลับแล้ว', 'Undone')); },
   async planquick(b) { await planCall({ answers: pln.a, route: planBare(), ask: b.dataset.v }); },
+  // B3: the plan a book's spending is held against (the spend page)
+  budedit() { budEdit = !budEdit; render(); },
+  async budsave(b) {
+    const box = b.closest('.budblk'), ed = box && box.querySelector('.budedit'); if (!ed) return;
+    const t = trip(b.dataset.trip), cur0 = ed.dataset.cur, old = ((budgetOf(t) || {}).lines || []).filter((l) => l.cur !== cur0);
+    const mine = [...ed.querySelectorAll('[data-bud]')].map((i) => ({ cat: i.dataset.bud, cur: cur0, amt: Math.round(parseFloat(String(i.value).replace(/[^\d.]/g, '')) || 0) })).filter((l) => l.amt > 0);
+    if (!mine.length && !old.length) { toast(L('ใส่งบอย่างน้อยหนึ่งหมวด', 'Type a plan for at least one kind')); return; }
+    try { const r = await api('PUT', `/api/b/budget/${t.id}`, { lines: [...mine, ...old] }); S.budgets = { ...(S.budgets || {}), [t.id]: r.budget }; budEdit = false; toast(L('บันทึกงบแล้ว', 'Plan saved')); render(); } catch (_) { toast(L('ยังบันทึกไม่ได้ ลองใหม่เมื่อมีเน็ต', 'Could not save — try again with signal')); }
+  },
+  async budclear(b) {
+    const t = trip(b.dataset.trip);
+    try { const r = await api('PUT', `/api/b/budget/${t.id}`, { lines: [] }); S.budgets = { ...(S.budgets || {}) }; if (r.budget) S.budgets[t.id] = r.budget; else delete S.budgets[t.id]; budEdit = false; render(); } catch (_) { toast(L('ยังบันทึกไม่ได้ ลองใหม่เมื่อมีเน็ต', 'Could not save — try again with signal')); }
+  },
   async planask() { const ask = (($('#plask') || {}).value || '').trim(); if (!ask || /^(วันที่|Day) \d+:$/.test(ask)) { toast(L('พิมพ์ก่อนว่าอยากเปลี่ยนอะไร', 'Type what should change first')); return; } await planCall({ answers: pln.a, route: planBare(), ask }); },
   async planshare() {
     if (!pln.route) return; const text = plText(pln.route);

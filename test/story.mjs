@@ -838,6 +838,9 @@ try {
   ok(ps.info.restaurants && ps.info.restaurants.groups[1].items[0].name === 'Test Ramen' && ps.theme.planner && ps.theme.planner.answers.dest === 'Tokyo with the kids' && pdr.report.planner === true,
     'planner: the suggested places to eat, and the answers kept with the book for later changes');
   ok(!JSON.stringify(ps.theme.planner).match(/Mimi|Mika/), 'planner: the kept answers name no child');
+  { const bl = (ps.theme.budget && ps.theme.budget.lines) || [];
+    ok(bl.some((l) => l.k === 'stay' && l.cur === 'JPY' && l.lo > 0) && bl.every((l) => Object.keys(l).sort().join() === 'cur,hi,k,lo'),
+      `budget (B3): the rough budget travels with the book the planner wrote (${JSON.stringify(bl)})`); }
   { const db = new Client({ connectionString: u.toString() }); await db.connect(); await db.query('UPDATE ai_usage SET calls=0'); await db.end(); }
   const mo = await pl('/api/b/planner/draft', { answers, route: rt });
   ok(mo.status === 429 && (await mo.json()).error === 'month', 'planner: past this month\'s allowance → 429 month');
