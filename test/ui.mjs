@@ -1300,8 +1300,8 @@ const T = 'hk-macau-2026';
       const nextBtn = page.locator('[data-a="kglv"][data-v="3"].kidbig');
       const hadNext = await nextBtn.count() === 1; if (hadNext) await nextBtn.click();
       await page.waitForSelector('.lvbar');
-      const lv = await page.evaluate(() => ({ at: kg.at, opts: kg.r.opts.length, chips: document.querySelectorAll('.lvbar .lvc').length, on: document.querySelector('.lvc.on').dataset.v, won: document.querySelectorAll('.lvc i').length }));
-      ok(hadNext && lv.at === 3 && lv.opts === 4 && lv.chips === 3 && lv.on === '3' && lv.won === 2, `kid levels: a won level opens the next (level 3: four pictures; three chips, a star on the two won) (${JSON.stringify({ hadNext, ...lv })})`);
+      const lv = await page.evaluate(() => ({ at: kg.at, opts: kg.r.opts.length, chips: document.querySelectorAll('.lvbar .lvc').length, on: document.querySelector('.lvc.on').dataset.v, won: document.querySelectorAll('.lvc i').length, l1: document.querySelector('.lvc[data-v="1"]').classList.contains('won') }));
+      ok(hadNext && lv.at === 3 && lv.opts === 4 && lv.chips === 3 && lv.on === '3' && lv.won === 1 && lv.l1 === false, `kid levels: a won level opens the next (level 3: four pictures; three chips, a star only on level 2 — the one played and won; level 1, skipped by starting at 2, wears none) (${JSON.stringify({ hadNext, ...lv })})`);
       // the levels start again (owner, Nov 2026: "อันนี้จะล้างยังไง"): a tap on "Level" does nothing, a grown-up's 1.5 s hold goes back to the start
       const rb = await page.locator('.lvbar .lvreset').boundingBox();
       await page.mouse.click(rb.x + rb.width / 2, rb.y + rb.height / 2); await page.waitForTimeout(300);
