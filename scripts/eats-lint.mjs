@@ -14,7 +14,7 @@ const ROOT = path.join(path.dirname(fileURLToPath(import.meta.url)), '..');
 const DIR = path.join(ROOT, 'server', 'eats');
 const norm = (x) => String(x || '').normalize('NFKC').toLowerCase().replace(/[^a-z0-9฀-๿一-鿿]+/g, '');
 const THAI = /[฀-๿]/;
-export const MIN = 8, MAX = 18;
+export const MIN = 8, MAX = 80;   // 80: the growth plan (owner, 20 Nov 2026) — big cities 70, other towns 40, small ones 22
 
 export function lintEats(only) {
   const index = JSON.parse(fs.readFileSync(path.join(ROOT, 'public', 'stock', 'index.json'), 'utf8'));
