@@ -1177,7 +1177,7 @@ const T = 'hk-macau-2026';
   ok(/⭐\s*1/.test(await page.textContent('#m1 .spothd')), 'a found thing is celebrated (⭐ 1), nothing missing is counted');
   await ppOpen(page, 'mimi', T, 'lists');
   ok(await page.locator('#pl-words .tick').count() === 10 && await page.locator('#pl-dimsum .stars').count() === 10, 'lists: Say It Like a Local (10), Dim Sum Tasting Card (stars)');
-  { const jr = await page.$$eval('.pljump button[data-a="jump"]', (bs) => bs.map((b) => b.dataset.v)); ok(jr.includes('#pl-dimsum') && jr.includes('#decl') && jr.every((v) => document.querySelector(v)), `lists: a row jumps to each list (${jr})`); }
+  { const jr = await page.$$eval('.pljump button[data-a="jump"]', (bs) => bs.map((b) => [b.dataset.v, !!document.querySelector(b.dataset.v)])); ok(jr.some(([v]) => v === '#pl-dimsum') && jr.some(([v]) => v === '#decl') && jr.every(([, f]) => f), `lists: a row jumps to each list (${JSON.stringify(jr)})`); }
   { // a rated dish keeps its whole name on one line beside its picture; 🔊 and the stars go under it (owner's Samsung, Nov 2026: the stars squeezed the name to a word a line)
     const rt = await page.evaluate(() => [...document.querySelectorAll('#pl-dimsum .tick.rate')].map((r) => { const t = r.querySelector('.t').getBoundingClientRect(), st = r.querySelector('.stars').getBoundingClientRect(); return { w: Math.round(t.width / r.getBoundingClientRect().width * 100), below: st.top >= t.bottom - 2 }; }));
     ok(rt.length === 10 && rt.every((x) => x.w >= 60 && x.below), `tasting card: each dish's name takes the line, the stars sit under it (${JSON.stringify(rt.slice(0, 3))})`); }
