@@ -3827,6 +3827,8 @@ a.plchip{text-decoration:none}a.plchip .label{font-weight:700}a.plchip[aria-curr
 .xptabs a[aria-selected=true]{background:color-mix(in srgb,var(--accent) 16%,var(--card));box-shadow:inset 0 0 0 2px color-mix(in srgb,var(--accent) 60%,transparent);border-radius:999px}
 .xpbar .row.chips{flex-wrap:wrap;gap:6px;margin-top:8px;align-items:center}
 .xpbar .chips .label{margin-right:2px}
+.sagegrp{margin:14px 0 4px}.sagegrp>h3{display:flex;align-items:center;gap:8px;margin:0 0 4px;font:700 17px/1.3 var(--ui,inherit);color:color-mix(in srgb,var(--g1) 60%,var(--ink))}.sagegrp>h3::before{content:'';width:6px;height:20px;border-radius:3px;background:var(--g1)}
+:root[data-theme=dark] .sagegrp>h3{color:color-mix(in srgb,var(--g1) 70%,var(--ink))}
 .sightl{list-style:none;margin:8px 0 14px;padding:0;display:grid;gap:12px;grid-template-columns:repeat(auto-fill,minmax(min(100%,330px),1fr))}
 .sightc{background:var(--card);border-radius:16px;padding:12px 14px;box-shadow:0 1px 0 var(--rule),0 0 0 1px var(--rule);border-top:4px solid color-mix(in srgb,#1CC9A4 70%,var(--card));min-width:0;overflow-wrap:anywhere;font-size:13px;line-height:1.45}
 .sightc.fit{border-top-color:color-mix(in srgb,#FF6FA8 75%,var(--card))}

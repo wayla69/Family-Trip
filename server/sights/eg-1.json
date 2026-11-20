@@ -308,7 +308,6 @@
     },
     {
       "place": "eg-luxor",
-      "thin": true,
       "sights": [
         {
           "name": { "en": "Karnak Temple Complex", "th": "กลุ่มวิหารคาร์นัก" },
@@ -556,6 +555,23 @@
           "book": "none",
           "q": "Valley of the Kings, West Bank, Luxor",
           "src": "https://exploreluxor.org/luxor-entrance-fees"
+        },
+        {
+          "ok": "2026-11",
+          "name": { "en": "Mummification Museum", "th": "พิพิธภัณฑ์มัมมี่" },
+          "kind": "museum",
+          "area": { "en": "Corniche, East Bank", "th": "ถนนริมแม่น้ำ ฝั่งตะวันออก" },
+          "what": { "en": "A small museum on the Nile that shows how ancient Egyptians made mummies, with tools, coffins, amulets and mummified animals and people", "th": "พิพิธภัณฑ์เล็กริมแม่น้ำไนล์ เล่าว่าชาวอียิปต์โบราณทำมัมมี่อย่างไร มีเครื่องมือ โลงศพ เครื่องราง และมัมมี่สัตว์กับคน" },
+          "why": { "en": "Real mummies are on show, so it suits curious children of about ten and over; younger ones may find it frightening", "th": "มีมัมมี่จริงจัดแสดง เหมาะกับเด็กที่อยากรู้ราว 10 ขวบขึ้นไป เด็กเล็กอาจกลัว" },
+          "tip": { "en": "Open mornings and again in the evening, a cool way to end a hot day; ask at the ticket window for the current price", "th": "เปิดช่วงเช้าและอีกรอบตอนเย็น เป็นที่เย็นๆ ปิดท้ายวันร้อน ถามราคาล่าสุดที่ช่องขายบัตร" },
+          "ages": [0, 0, 1, 2],
+          "hrs": 1,
+          "io": "in",
+          "pram": "part",
+          "price": { "en": "Check the price", "th": "เช็กราคาก่อนไป" },
+          "book": "none",
+          "q": "Mummification Museum, Corniche, Luxor",
+          "src": "https://egymonuments.gov.eg/en/museums/mummification-museum"
         }
       ]
     }

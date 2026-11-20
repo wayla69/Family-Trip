@@ -1896,6 +1896,7 @@ document.addEventListener('input', (e) => {
     SIGHT.q = el.value; const q = el.value.trim().toLowerCase(); let n = 0;
     const lis = [...document.querySelectorAll('.sightl .sightc')], fz = fzFilter(lis.map((li) => li.dataset.s || ''), q);
     lis.forEach((li, i) => { const ok = !q || fz.ok(i); li.hidden = !ok; if (ok) n++; });
+    document.querySelectorAll('.sagegrp').forEach((g) => { g.hidden = !g.querySelector('.sightc:not([hidden])'); });
     const c = document.getElementById('sightn'), none = document.getElementById('sightnone'), all = (SIGHT.list || []).length;
     if (c) c.textContent = L(`แสดง ${n} จาก ${all} แห่ง`, `Showing ${n} of ${all}`); if (none) none.hidden = n > 0; return;
   }
