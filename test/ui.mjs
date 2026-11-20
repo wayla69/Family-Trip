@@ -1120,7 +1120,8 @@ const T = 'hk-macau-2026';
     ok(sh.books.join() === '#/passport/mimi/hk-macau-2026/cover,#/passport/mimi/big-hop-2027/cover' && sh.back === '#/' && !sh.book, `passport: the child's cover holds one passport a trip, oldest first (${JSON.stringify(sh)})`); }
   await page.click('.ppshelf .ppbk2[href*="hk-macau-2026"]'); await page.waitForSelector('.ppbook[data-page="cover"] .pp .advc');
   ok(await page.getAttribute('header.top a.ibtn', 'href') === '#/passport/mimi', 'passport: a book\'s back goes to the child\'s cover');
-  ok(await page.locator('.ppkids a[role=tab]').count() === 2 && await page.locator('.ppkids a.ppall[href="#/passport/mimi"]').count() === 1 && await page.locator('.ppkids a.ppprint[href^="/api/b/pdf/"]').count() === 1, 'passport: the children, "all of Mimi\'s passports" and "print" above the book');
+  { const hd = await page.evaluate(() => { const r = document.querySelector('.ppkids'), ch = [...r.children].map((c) => c.getBoundingClientRect().top); return { kids: r.querySelectorAll('a[role=tab]').length, kidgo: !!r.querySelector('.kidgo'), oneRow: ch.every((y) => Math.abs(y - ch[0]) < 2), print: !!document.querySelector('.ppbody .ppfoot a.ppprint[href^="/api/b/pdf/"]'), topPrint: !!r.querySelector('.ppprint, .ppall') }; });
+    ok(hd.kids === 2 && hd.kidgo && hd.oneRow && hd.print && !hd.topPrint, `passport: the children and kid mode in one row above the book, print at the cover's foot (${JSON.stringify(hd)})`); }
   { const tabs = await page.$$eval('.pptabs .ppt', (as) => as.map((a) => a.getAttribute('href').split('/').pop()));
     ok(tabs.join() === 'cover,id,visa-hk-macau-2026,missions,map,lists,stickers,trophies,cert' && await page.locator('.ppbody .mission, .ppbody .pp-page.visa, .ppbody #cert').count() === 0 && await page.locator('.ppturn [data-dir="next"][href$="/id"]').count() === 1,
       `passport book: the pages in order — one trip a book, its own visa — and only one page on screen at a time (${tabs.join()})`); }
@@ -1176,6 +1177,7 @@ const T = 'hk-macau-2026';
   ok(/⭐\s*1/.test(await page.textContent('#m1 .spothd')), 'a found thing is celebrated (⭐ 1), nothing missing is counted');
   await ppOpen(page, 'mimi', T, 'lists');
   ok(await page.locator('#pl-words .tick').count() === 10 && await page.locator('#pl-dimsum .stars').count() === 10, 'lists: Say It Like a Local (10), Dim Sum Tasting Card (stars)');
+  { const jr = await page.$$eval('.pljump button[data-a="jump"]', (bs) => bs.map((b) => [b.dataset.v, !!document.querySelector(b.dataset.v)])); ok(jr.some(([v]) => v === '#pl-dimsum') && jr.some(([v]) => v === '#decl') && jr.every(([, f]) => f), `lists: a row jumps to each list (${JSON.stringify(jr)})`); }
   { // a rated dish keeps its whole name on one line beside its picture; 🔊 and the stars go under it (owner's Samsung, Nov 2026: the stars squeezed the name to a word a line)
     const rt = await page.evaluate(() => [...document.querySelectorAll('#pl-dimsum .tick.rate')].map((r) => { const t = r.querySelector('.t').getBoundingClientRect(), st = r.querySelector('.stars').getBoundingClientRect(); return { w: Math.round(t.width / r.getBoundingClientRect().width * 100), below: st.top >= t.bottom - 2 }; }));
     ok(rt.length === 10 && rt.every((x) => x.w >= 60 && x.below), `tasting card: each dish's name takes the line, the stars sit under it (${JSON.stringify(rt.slice(0, 3))})`); }

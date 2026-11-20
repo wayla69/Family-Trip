@@ -2712,7 +2712,7 @@ const HELP = [
     ['พ่อแม่กด ✏️ เพื่อกรอกบัตรนักสำรวจ ติ๊กภารกิจ และรายการ', 'Parents tap ✏️ to fill in the Explorer ID, tick missions and lists'],
     ['ส่วนสูงกรอกที่บัตรนักสำรวจของแต่ละเล่มที่เดียว แล้วเส้นการเติบโตขึ้นเองเมื่อมีสองทริป', 'The height is typed in each book’s Explorer ID only — the growth line appears once two trips have one'],
     ['ใบประกาศมาเองในวันสุดท้าย ไม่ต้องติ๊กให้ครบ', 'The certificate comes by itself on the last day — nothing to complete'],
-    ['ปุ่ม “พิมพ์” โหลดสมุดความทรงจำเป็น PDF ซึ่งมีหน้าพาสปอร์ตของลูกทุกคน', '“Print” downloads the memory book as a PDF, with every child’s passport pages']]],
+    ['ลิงก์ “พิมพ์” ท้ายหน้าปกของเล่ม โหลดสมุดความทรงจำเป็น PDF ซึ่งมีหน้าพาสปอร์ตของลูกทุกคน · หน้ารายการมีปุ่มกระโดดไปแต่ละรายการ', '“Print” at the foot of a passport’s cover downloads the memory book as a PDF, with every child’s passport pages · the lists page has a row to jump to each list']]],
   ['kid', 'kid', PG.purple, ['โหมดเด็ก', 'Kid mode'], 'parents', [
     ['กด “โหมดเด็ก” ที่แถบล่าง แล้วเลือกลูก หน้าจอจะล็อกไว้ให้เด็กเล่น', 'Tap Kid mode on the bar and pick a child — the screen is locked for them'],
     ['ออกจากโหมดเด็ก: กดค้างที่รูปกุญแจมุมบนประมาณหนึ่งวินาที', 'To leave: press and hold the lock in the top corner for about a second'],
@@ -3939,7 +3939,7 @@ ${st.crest ? `<img class="crest" src="${esc(st.crest)}" alt="">` : `<span class=
 <span class="explorer">★ ${L('นักสำรวจ', 'Explorer')} ★</span><span class="nm">${esc(name)}</span>
 <small>${pp.code ? `${L('เลขที่', 'No.')} ${esc(fill(pp.code))} · ` : ''}${L('ใช้ได้', 'Valid')} ${esc(fmtRange(t))}</small></section>`}
 ${g.length ? `<section class="pp-page guides"><header><div><div class="kicker">${L('ไกด์สองคนของหนู', 'Meet your two guides')}</div><h3>${esc(pp.greeting ? fill(T(pp.greeting)) : L(`สวัสดี ${name}!`, `Hello, ${name}!`))}</h3></div></header>
-${g.map((x, i) => `<div class="bubble${i % 2 ? ' r' : ''}">${guide(i)}<div><b>${esc(T(x.name))} ${L('บอกว่า…', 'says…')}</b><p>${esc(fill(T(x.hello)))}</p><button class="mini hearbtn" data-a="sayfacts" data-v="${esc(fill(T(x.hello)))}">🔊 ${L('อ่านให้ฟัง', 'Read aloud')}</button></div></div>`).join('')}</section>` : ''}</div>`;
+${g.map((x, i) => `<div class="bubble${i % 2 ? ' r' : ''}">${guide(i)}<div><b>${esc(T(x.name))} ${L('บอกว่า…', 'says…')}</b><p>${esc(fill(T(x.hello)))}</p><button class="mini hearbtn" data-a="sayfacts" data-v="${esc(fill(T(x.hello)))}">🔊 ${L('อ่านให้ฟัง', 'Read aloud')}</button></div></div>`).join('')}</section>` : ''}${kidMode ? '' : `<p class="ppfoot"><a class="linkbtn ppprint" href="/api/b/pdf/${esc(t.id)}" download data-a="pdf">🖨️ ${L('พิมพ์สมุดความทรงจำเล่มนี้ (มีหน้าพาสปอร์ตด้วย)', 'Print this memory book (the passport pages are in it)')}</a></p>`}</div>`;
   } else if (page === 'id') {
     // the Explorer ID: the one place a child's height is typed (the day-1 and last-day boxes, as printed) — and the line of it across every trip
     const books = ppTrips(kid), mOf = (x) => { const [y, mm] = String(x.date_from || '').split('-').map(Number); return y ? y * 12 + mm : null; };
@@ -4004,7 +4004,7 @@ ${canEdit && pts.length < 2 ? `<p class="muted small">${L('ใส่ส่วน
 <section class="pp-page visa"><header><div><div class="kicker">${L('วีซ่า', 'Visa')} · ${esc(fmtRange(x))}</div><h3><span class="vflags">${flagsOf(x)}</span> ${esc(ppShort(x))}</h3>
 <p class="label">${((x.theme.places || []).map((p) => esc(T(p))).join(' · ')) || esc(T(x.sub))}${got ? ` · ${L(`ได้ตราแล้ว ${got}`, `${got} stamp${got > 1 ? 's' : ''}`)}` : ''}</p></div>${stampHtml(x, false)}${kidMode ? '' : sayBtn(line)}</header>
 <div class="dstamps">${ds}</div>
-${cityStampsHtml(x)}<p class="label" style="margin-top:10px">${L('ได้ตราเมื่อวันนั้นมีบันทึก หรือกด "จบวันนี้"', 'A stamp is inked when the day has something recorded or is marked Done')}</p></section></div>`;
+${cityStampsHtml(x)}${kidMode ? '' : `<p class="label" style="margin-top:10px">${L('ได้ตราเมื่อวันนั้นมีบันทึก หรือกด "จบวันนี้"', 'A stamp is inked when the day has something recorded or is marked Done')}</p>`}</section></div>`;
   } else if (page === 'missions') {
     const feel = [['🤩', L('สุดยอด', 'Super')], ['😄', L('มีความสุข', 'Happy')], ['😴', L('ง่วงนอน', 'Sleepy')]];
     const mood = (i) => (S.entries.find((e) => e.id === `${t.id}.mood.d${i}.${kid}`) || {}).mood;
@@ -4069,7 +4069,10 @@ ${dc.counts.map((c) => `<div class="dline"><span class="e">${esc(c.e)}</span><sp
 ${dc.texts.map((y) => `<div class="dtext"><span class="label">${esc(T(y.label))}</span>${ed ? `<input class="field ppf" data-a-blur="field" data-t="${esc(t.id)}" data-k="${esc(kid)}" data-v="decl.${esc(y.k)}" data-draft="pf:${esc(t.id)}:${kid}:decl.${esc(y.k)}" value="${esc(drafts[`pf:${t.id}:${kid}:decl.${y.k}`] ?? fieldVal(t, `decl.${y.k}`, kid))}" maxlength="60">` : `<p>${esc(fieldVal(t, `decl.${y.k}`, kid)) || '—'}</p>`}</div>`).join('')}
 <div class="declared">${L('แจ้งแล้ว<br>ถูกต้อง', 'DECLARED<br>&amp; TRUE')}<br>★ ${year} ★</div></section>` : '';
     const line = L(`รายการของ${name}`, `${name}'s lists`);
-    body = `${hear(esc(line))}${head(L('รายการของหนู', 'My lists'), line, true)}<div class="pp kid-${esc(kid)}" style="${themeStyle(t)}">${lit && lit.note ? `<p class="call calm lnote">👶 ${esc(T(lit.note))}</p>` : ''}${lists}${littleHtml}${declHtml}</div>`;
+    // a page this long (HK: words, tasting card, Master Explorer, the customs form — ~5 screens) gets a row to jump to each list
+    const jumps = kidLists(t, kid).map((l) => [`#pl-${l.key}`, l.e || '✅', T(l.title)]).concat(littleHtml ? [['#lwords', '🗣️', fill(T((lit.words || {}).title) || L('คำใหม่', 'New words'))]] : [], declHtml ? [['#decl', '🛃', T(dc.title)]] : []);
+    const jumpRow = jumps.length > 1 ? `<nav class="row pljump" aria-label="${L('ไปที่รายการ', 'Go to a list')}">${jumps.map(([sel, e, ti]) => `<button type="button" class="chip" data-a="jump" data-v="${esc(sel)}">${esc(e)} ${esc(ti)}</button>`).join('')}</nav>` : '';
+    body = `${hear(esc(line))}${head(L('รายการของหนู', 'My lists'), line, true)}${jumpRow}<div class="pp kid-${esc(kid)}" style="${themeStyle(t)}">${lit && lit.note ? `<p class="call calm lnote">👶 ${esc(T(lit.note))}</p>` : ''}${lists}${littleHtml}${declHtml}</div>`;
   } else if (page === 'stickers') {
     const line = kidMode ? L('ลากสติกเกอร์ไปแปะได้เลย!', 'Drag your stickers onto the page!') : L(`สติกเกอร์ของ${name}`, `${name}’s stickers`);
     body = `${hear(esc(line))}<div class="pp kid-${esc(kid)}" style="${themeStyle(t)}"><section class="pp-page stkpage"><header><div><div class="kicker">${L('หน้าสติกเกอร์', 'Sticker page')}</div><h3>⭐ ${esc(L(`สติกเกอร์ของ${name}`, `${name}’s stickers`))}</h3></div>${kidMode ? '' : sayBtn(line)}</header>${stickerBoard(t, kid, !!kidMode)}
@@ -4104,8 +4107,7 @@ ${earned ? `<p class="bye">${esc(T(cert.bye))}</p>` : ''}</section></div>`;
   const turn = `<div class="ppturn">${prev ? go(prev, 'ppgo prev', `‹ <small>${esc(prev[2])}</small>`, 'prev') : '<span></span>'}<span class="ppn">${at + 1} / ${pages.length}</span>${next ? go(next, 'ppgo next', `<small>${esc(next[2])}</small> ›`, 'next') : '<span></span>'}</div>`;
   const top = kidMode ? '' : `<div class="row ppkids" role="tablist">${ks.map((c) => `<a class="chip" role="tab" href="#/passport/${esc(c.slug)}${kidTrips(c.slug).includes(t) ? `/${esc(t.id)}/${esc(page.startsWith('visa-') ? `visa-${t.id}` : page)}` : ''}" aria-selected="${c.slug === kid}" aria-pressed="${c.slug === kid}">${kidFace(c.slug)} ${esc(kidName(c.slug))}</a>`).join('')}
 ${isEditor() ? `<button class="chip kidgo" data-a="kidmode" data-v="${esc(kid)}">🧒 ${L('โหมดเด็ก', 'Kid mode')}</button>` : ''}
-<a class="chip ppall" href="#/passport/${esc(kid)}">📚 ${L(`ทุกเล่มของ${esc(name)}`, `All ${esc(name)}’s passports`)}</a>
-<a class="chip ppprint" href="/api/b/pdf/${esc(t.id)}" download data-a="pdf">🖨️ ${L('พิมพ์', 'Print')}</a></div>`;
+</div>`;
   return `${top}<div class="ppbook${kidMode ? ' inkid' : ''}" data-page="${esc(page)}" data-trip="${esc(t.id)}" data-kid="${esc(kid)}" style="${themeStyle(t)}">${tabs}<div class="ppbody" aria-label="${esc(cur[2])}">${body}</div>${turn}</div>`;
 }
 

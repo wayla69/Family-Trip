@@ -4038,3 +4038,15 @@ details.more>summary{border-radius:16px}
 @media (hover:hover){.ppbk2:hover{transform:translateY(-3px)}}
 @media (max-width:380px){.ppkcover{grid-template-columns:minmax(0,1fr);justify-items:center;text-align:center}.ppkcover .kctx{justify-items:center}.kcstat{justify-content:center}}
 .ppkids .ppall{text-decoration:none}
+/* passport, easier to use (owner, Nov 2026: "recheck passport UIUX"): the children and kid mode in one row above the book (the top
+   bar's back is "every passport of this child"; print sits at the cover's foot), a row to jump to each list, labels that wrap */
+.ppkids{flex-wrap:nowrap;overflow-x:auto;scrollbar-width:none;-webkit-overflow-scrolling:touch;padding-bottom:2px}
+.ppkids::-webkit-scrollbar{display:none}
+.ppkids .chip{flex:0 0 auto}
+.ppgo small{white-space:normal;display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;text-align:center;line-height:1.2}
+.pljump{flex-wrap:nowrap;overflow-x:auto;scrollbar-width:none;margin:0 0 12px;padding-bottom:2px}
+.pljump::-webkit-scrollbar{display:none}
+.pljump .chip{flex:0 0 auto;min-height:44px}
+.ppfoot{text-align:center;margin:18px 0 4px}
+.ppfoot .ppprint{min-height:44px;display:inline-flex;align-items:center}
+.pp>.ppfoot{grid-column:1/-1;order:99}
