@@ -3986,7 +3986,11 @@ details.more>summary{border-radius:16px}
 .pphd h2{margin:0;flex:1 1 auto;font-family:var(--ui);font-size:22px;line-height:1.25}
 .pphd .mini{min-height:44px;min-width:44px}
 .ppedit[aria-pressed=true]{background:color-mix(in srgb,var(--accent) 14%,var(--card));box-shadow:inset 0 0 0 2px var(--accent)}
-.ppprint{margin-left:auto;min-height:44px;display:inline-flex;align-items:center}
+.ppkids .ppprint{text-decoration:none;color:inherit}
+.ppbook .ppgo.next{color:var(--on-accent)!important}.ppbook .ppgo.prev{color:color-mix(in srgb,var(--accent) 65%,var(--ink))!important}   /* kid mode's buttons take color:inherit */
+.ppbook .tick,.ppbook .talebtn,.ppbook .hearbtn.round{min-height:44px}.ppbook .hearbtn.round{width:44px}
+.ppbook .stars button,.ppbook .yum button{min-width:44px;min-height:44px}
+.ppbook .felt button{min-height:44px}
 .ppstamp{display:grid;gap:12px;margin:0 0 16px}
 .ppbook .pp-page.grow{margin-top:16px}
 .ppbook .growi .grgo{display:flex;gap:14px;align-items:flex-start;flex:1;min-width:0;color:inherit;text-decoration:none}

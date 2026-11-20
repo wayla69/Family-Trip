@@ -1141,7 +1141,7 @@ const T = 'hk-macau-2026';
   }
   ok(await page.locator('.sleep li').count() === 6, 'passport: where we go — 6 pins as printed');
   await ppOpen(page, 'mimi', T, 'trophies');
-  ok(await page.locator('.bdg').count() === 1 && (await page.textContent('.bdg')).includes('Mickey') && await page.locator('.trophies .tro').count() >= 10 && await page.locator('.ppbody .tro.new').count() === 0, 'passport: Mimi’s first is a badge beside her trophies (a grown-up looking never takes the child\'s "new!")');
+  ok(await page.locator('.bdg').count() === 1 && (await page.textContent('.bdg')).includes('Mickey') && await page.locator('.ppbody .tro:not(.got)').count() === 0 && await page.locator('.ppbody .tro.new').count() === 0, 'passport: Mimi’s first is a badge; the grown-ups see only trophies earned — no wall of grey ones — and looking never takes the child\'s "new!"');
   ok(!(await page.textContent('#app')).match(/\b[A-Z]{1,2}\d{6,9}\b|e-ticket/), 'passport: nothing that looks like a real passport / ticket number');
   await ppOpen(page, 'mimi', T, 'missions');
   ok(await page.locator('.mission').count() === 6, 'passport: a mission per day');
