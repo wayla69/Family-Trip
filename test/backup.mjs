@@ -48,6 +48,12 @@ await EL.put(srcPool, fam0, [{ town: 'Testtown', town_th: 'เทสต์ทา
 const goneRow = (await srcPool.query("SELECT tkey, nkey FROM eat_lib WHERE family_id=$1 AND src='starter' ORDER BY tkey, nkey LIMIT 1", [fam0])).rows[0];
 if (goneRow) await srcPool.query('UPDATE eat_lib SET gone = true WHERE family_id=$1 AND tkey=$2 AND nkey=$3', [fam0, goneRow.tkey, goneRow.nkey]);
 await srcPool.end();
+// the parents' own budget plan for a book (settings.budget_plan) travels in the backup
+const bck = await login(BASE), btid = (await state(BASE, bck)).trips[0].id;
+const BPLAN = [{ cat: 'food', cur: 'HKD', amt: 3000 }, { cat: 'stay', cur: 'HKD', amt: 9000 }];
+const bput = await fetch(BASE + '/api/b/budget/' + btid, { method: 'PUT', headers: { 'x-mb': '1', cookie: bck, 'content-type': 'application/json' }, body: JSON.stringify({ lines: BPLAN }) });
+ok(bput.ok, 'budget plan set on the source (' + bput.status + ')');
+const bsame = (st) => { const b = st.budgets && st.budgets[btid]; return !!b && b.src === 'own' && JSON.stringify((b.lines || []).map((l) => [l.cat, l.cur, l.amt]).sort()) === JSON.stringify(BPLAN.map((l) => [l.cat, l.cur, l.amt]).sort()); };
 const zr = await fetch(BASE + '/api/backup.zip', { headers: { authorization: 'Bearer ' + BACKUP_TOKEN.trim() } });
 ok(zr.status === 200, 'backup.zip with the token → 200, even when the server variable was pasted with a trailing newline/space');
 const zip = Buffer.from(await zr.arrayBuffer());
@@ -80,6 +86,7 @@ try {
   const r1 = await (await fetch(B2 + '/api/import', { method: 'POST', headers: { 'x-mb': '1', cookie: ck2, 'content-type': 'application/zip' }, body: zip })).json();
   ok(r1.ok && r1.photos === srcImgs && r1.audio === srcAud && r1.videos === srcVid, `restore: ${r1.photos} photos + ${r1.audio} voice memo(s), rows ${JSON.stringify(r1.rows)}`);
   const dst = await state(B2, ck2);
+  ok(bsame(dst), `restore: the parents' budget plan comes back (${JSON.stringify(dst.budgets && dst.budgets[btid])})`);
   ok(counts(dst) === counts(src), `restored counts match: entries/photos/places/hearts/reviews/trips/done = ${counts(dst)}`);
   ok(JSON.stringify(dst.children.map((k) => [k.slug, k.birth_ym, k.avatar, JSON.stringify(k.look || null)]).sort()) === JSON.stringify(src.children.map((k) => [k.slug, k.birth_ym, k.avatar, JSON.stringify(k.look || null)]).sort()), 'restore: the children\'s birth months, looks and drawn characters come back even though the seeds made the rows first');
   { const dp = new SrcPool({ connectionString: u.toString() });
@@ -110,6 +117,7 @@ try {
     ok(out.c === 0 && /everything in the backup came back/.test(out.o) && !named.some((x) => out.o.includes(x)), `restore drill as a command: passes and prints counts only (${out.o.trim().split('\n').slice(-2).join(' / ')})`); }
   const r2 = await (await fetch(B2 + '/api/import', { method: 'POST', headers: { 'x-mb': '1', cookie: ck2 }, body: zip })).json();
   ok(r2.photos === 0 && Object.values(r2.rows).every((n) => n === 0) && counts(await state(B2, ck2)) === counts(src), 'second import is a no-op (idempotent)');
+  ok(bsame(await state(B2, ck2)), 'second import keeps the budget plan as it was');
   const bad = await fetch(B2 + '/api/import', { method: 'POST', headers: { 'x-mb': '1', cookie: ck2 }, body: Buffer.from('not a zip at all, just text padding padding padding padding padding') });
   ok(bad.status === 400 && (await fetch(B2 + '/healthz')).ok, 'garbage upload → 400, server still up');
   ok(!fs.existsSync(path.join(data, 'tmp')) || fs.readdirSync(path.join(data, 'tmp')).length === 0, 'temp upload files cleaned up');
