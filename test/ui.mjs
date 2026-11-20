@@ -46,7 +46,7 @@ async function login(page) {
 }
 // the page re-renders after each sync; measure again if the element was just swapped
 // the kids' passport is a book shown a page at a time (#/passport/<kid>/<trip>/<page>): open one page and wait for it
-const ppOpen = async (page, kid, tid, key) => { await page.goto(`${BASE}/#/passport/${kid}/${tid}/${key}`); await page.waitForSelector(`.ppbook[data-page="${key}"][data-trip="${tid}"]`); };   // the trip too: the same page of another book is still on screen for a moment
+const ppOpen = async (page, kid, tid, key) => { await page.goto(`${BASE}/#/passport/${kid}/${tid}/${key}`); await page.waitForSelector(`.ppbook[data-page="${key}"][data-trip="${tid}"][data-kid="${kid}"]`); };   // the trip too: the same page of another book is still on screen for a moment
 // the passport's ✏️ (a parent opens its boxes and ticks): switch it to the state asked for
 const ppEdit = async (page, on) => { const b = page.locator('.ppedit'); if (await b.count() && (await b.getAttribute('aria-pressed')) !== String(on)) { await b.click(); await page.waitForSelector(`.ppedit[aria-pressed="${on}"]`); } };
 const boxOf = async (page, sel) => { for (let k = 0; k < 30; k++) { const b = await page.locator(sel).first().boundingBox().catch(() => null); if (b) return b; await page.waitForTimeout(100); } throw new Error('no box: ' + sel); };
