@@ -111,7 +111,7 @@ function render() {
     else if (sec === 'check') html = isEditor() ? viewCheck(t) : viewHub(t);
     else if (sec === 'photos') html = viewPhotos(t);
     else html = viewHub(t);
-  } else if (p[0] === 'passport') html = trip(p[2]) ? viewPassport(p[1], p[2], p[3]) : viewPassport(p[1], undefined, p[2]);   // #/passport/<kid>[/<trip>][/<page>]
+  } else if (p[0] === 'passport') html = trip(p[2]) ? viewPassport(p[1], p[2], p[3]) : p[2] ? viewPassport(p[1], undefined, p[2]) : viewPassportShelf(p[1]);   // #/passport/<kid> = the child's cover, a book a trip   // #/passport/<kid>[/<trip>][/<page>]
   else if (p[0] === 'notebook') html = viewNotebook();
   else if (p[0] === 'viewers' && isEditor()) html = viewViewers();
   else if (p[0] === 'import' && isEditor()) html = viewImport();
@@ -221,6 +221,7 @@ function topBar(t, p) {
     : sub ? [`#/t/${esc(t.id)}`, L('เมนูเล่ม', 'Book menu')] : ['#/', L('ชั้นหนังสือ', 'Bookshelf')];
   const back = t ? `<a class="ibtn" href="${up[0]}" aria-label="${up[1]}">${ic('back')}</a>`
     : p && ['explore', 'eats'].includes(p[0]) && p[1] ? `<a class="ibtn" href="#/${p[0]}" aria-label="${L('ทุกเมือง', 'All towns')}">${ic('back')}</a>`
+    : p && p[0] === 'passport' && p[1] && p[2] ? `<a class="ibtn" href="#/passport/${esc(p[1])}" aria-label="${L('ทุกเล่ม', 'Every passport')}">${ic('back')}</a>`
     : p && p[0] && p[0] !== 'start' ? `<a class="ibtn" href="#/" aria-label="${L('ชั้นหนังสือ', 'Bookshelf')}">${ic('back')}</a>` : '';
   const secName = sub ? (p[2] === 'log' ? L('บันทึก', 'Record') : secTitle(p[2]) || esc(t.theme.kicker || '')) : '';
   const ttl = t && sub ? `<small>${secName}</small>${esc(T(t.title).split(' · ').pop())}` : `<small>${esc(kicker())}</small>${esc(appName())}`;   // the place, not the long brand name: it fits a phone's bar
@@ -2705,8 +2706,8 @@ const HELP = [
     ['สามทุ่มครึ่งมีเตือนให้บันทึก ถ้าเปิดผู้ช่วยไว้ กด “ทำทั้งหมดในครั้งเดียว” ให้ผู้ช่วยสรุปวันและแต่งนิทาน', 'At 21:30 a reminder comes; with the helper on, “Do it all in one go” writes the day’s summary and a story'],
     ['กด “จบวันนี้” แล้ววันนั้นจะได้ตราประทับในพาสปอร์ต', 'Tap “Mark day done” and the day gets its stamp in the passport']]],
   ['passport', 'passport', PG.gold, ['พาสปอร์ตนักผจญภัย', 'The adventure passport'], 'all', [
-    ['ลูกแต่ละคนมีพาสปอร์ตเล่มเดียว เปิดจากการ์ดบนชั้นหนังสือ', 'Each child has one passport — open it from the shelf’s cards'],
-    ['เปิดทีละหน้า: ปก บัตรนักสำรวจ วีซ่าทุกทริป ภารกิจ แผนที่ รายการ สติกเกอร์ ถ้วยรางวัล ใบประกาศ', 'A page at a time: cover, Explorer ID, a visa for every trip, missions, map, lists, stickers, trophies, certificate'],
+    ['แตะการ์ดของลูกบนชั้นหนังสือ แล้วเลือกเล่มของทริปที่ต้องการ หนึ่งทริปหนึ่งเล่ม', 'Tap a child’s card on the shelf, then pick a trip’s passport — one passport a trip'],
+    ['เปิดทีละหน้า: ปก บัตรนักสำรวจ วีซ่า ภารกิจ แผนที่ รายการ สติกเกอร์ ถ้วยรางวัล ใบประกาศ', 'A page at a time: cover, Explorer ID, the visa, missions, map, lists, stickers, trophies, certificate'],
     ['เปลี่ยนหน้าด้วยแท็บด้านบน ปุ่ม ‹ › ด้านล่าง หรือปัดจอ', 'Turn pages with the tabs at the top, ‹ › at the foot, or a swipe'],
     ['พ่อแม่กด ✏️ เพื่อกรอกบัตรนักสำรวจ ติ๊กภารกิจ และรายการ', 'Parents tap ✏️ to fill in the Explorer ID, tick missions and lists'],
     ['ส่วนสูงกรอกที่บัตรนักสำรวจของแต่ละเล่มที่เดียว แล้วเส้นการเติบโตขึ้นเองเมื่อมีสองทริป', 'The height is typed in each book’s Explorer ID only — the growth line appears once two trips have one'],
@@ -3861,7 +3862,7 @@ const ppShort = (t) => T(t.title).split(' · ')[0];
 function ppPages(t, kid) {
   const pp = t.passport || {};
   return [['cover', '📘', L('ปก', 'Cover')], ['id', '🪪', L('บัตรนักสำรวจ', 'Explorer ID')]]
-    .concat(ppTrips(kid).map((x) => [`visa-${x.id}`, '🛂', L(`วีซ่า ${ppShort(x)}`, `${ppShort(x)} visa`)]))
+    .concat([[`visa-${t.id}`, '🛂', L('วีซ่า', 'Visa')]])   // one trip a book (owner, Nov 2026: "แยกเล่มได้ไหม … เป็นหน้าปกแล้วกดแยกเล่มได้"): the child's cover lists a book a trip
     .concat([(pp.days || []).length ? ['missions', '🎯', L('ภารกิจรายวัน', 'Daily missions')] : null, ['map', '🗺️', pp.map ? L('แผนที่', 'Map') : L('เรานอนที่ไหน', 'Where we sleep')],
       kidLists(t, kid).length || littleOf(t, kid) || pp.declaration ? ['lists', '✅', L('รายการของหนู', 'My lists')] : null,
       ['stickers', '⭐', L('สติกเกอร์', 'Stickers')], ['trophies', '🏆', L('รางวัล', 'Trophies')], pp.certificate ? ['cert', '📜', L('ใบประกาศ', 'Certificate')] : null].filter(Boolean));
@@ -3871,6 +3872,18 @@ const ppHref = (kid, t, key, kidMode) => (kidMode ? `#/kid/${kid}/${key === `vis
 // the tab row shows the page open now (it scrolls sideways on a phone)
 function ppTabsShow(root) { const pc = $('.pptabs [aria-current]', root); if (pc) pc.parentElement.scrollLeft = pc.offsetLeft - pc.parentElement.offsetLeft - 24; }
 const PP_ART = { map: 'map', stickers: 'stickers', trophies: 'trophies' };   // kid mode's own bar pictures for those pages; the visas wear the passport
+// a child's cover (#/passport/<kid>): the child, then a passport a trip — tap one to open that trip's book
+function viewPassportShelf(slug) {
+  const ks = children(), k = ks.find((c) => c.slug === slug) || ks[0];
+  if (!k) return emptyCard(null, L('ยังไม่มีเด็กในครอบครัว', 'No children yet'), '');
+  const kid = k.slug, name = kidName(kid), books = ppTrips(kid), cur = curTrip();
+  const card = (x) => { const st = (x.passport || {}).style || {}, n = x.days.filter((_, i) => dayStamped(x, i)).length, live = dayNow(x) >= 0;
+    return `<a class="ppc s ppbk kid-${esc(kid)}${x === cur ? ' cur' : ''}" href="#/passport/${esc(kid)}/${esc(x.id)}/cover"><span class="emb">${st.crest ? `<img src="${esc(st.crest)}" alt="">` : kidArt(kid) ? `<img src="${kidArt(kid, false, x)}" alt="">` : '🌏'}</span>
+<b>${flagsOf(x)} ${esc(String(x.date_from || '').slice(0, 4))}</b><span class="nm">${esc(ppShort(x))}</span><small>${esc(fmtRange(x))}</small>${n ? `<small>${L(`ได้ตราแล้ว ${n}`, `${n} stamp${n > 1 ? 's' : ''}`)}</small>` : ''}${live ? `<span class="ppnow">${L('ทริปนี้', 'On the trip')}</span>` : ''}</a>`; };
+  return `${pageHead('passport', PG.gold, L('พาสปอร์ตนักผจญภัย', 'Adventure passports'), L(`พาสปอร์ตของ${esc(name)}`, `${esc(name)}’s passports`), L('หนึ่งทริปหนึ่งเล่ม แตะเล่มเพื่อเปิด', 'One passport a trip — tap one to open it'))}
+${ks.length > 1 ? `<div class="row ppkids" role="tablist">${ks.map((c) => `<a class="chip" role="tab" href="#/passport/${esc(c.slug)}" aria-selected="${c.slug === kid}" aria-pressed="${c.slug === kid}">${kidFace(c.slug)} ${esc(kidName(c.slug))}</a>`).join('')}</div>` : ''}
+${books.length ? `<div class="ppmini ppshelf">${books.map(card).join('')}</div>` : `<p class="muted">${L('ยังไม่มีเล่ม', 'No books yet')}</p>`}`;
+}
 function viewPassport(slug, tid, page0, kidMode) {
   const ks = children(), k = ks.find((c) => c.slug === slug) || ks[0];
   if (!k) return emptyCard(null, L('ยังไม่มีเด็กในครอบครัว', 'No children yet'), '');
@@ -4074,9 +4087,9 @@ ${earned ? `<p class="bye">${esc(T(cert.bye))}</p>` : ''}</section></div>`;
   const tabs = `<nav class="pptabs" aria-label="${L('หน้าในพาสปอร์ต', 'Passport pages')}">${pages.map((p) => go(p, 'ppt', `${tabIc(p)}<small>${esc(p[2])}</small>`)).join('')}</nav>`;
   const prev = pages[at - 1], next = pages[at + 1];
   const turn = `<div class="ppturn">${prev ? go(prev, 'ppgo prev', `‹ <small>${esc(prev[2])}</small>`, 'prev') : '<span></span>'}<span class="ppn">${at + 1} / ${pages.length}</span>${next ? go(next, 'ppgo next', `<small>${esc(next[2])}</small> ›`, 'next') : '<span></span>'}</div>`;
-  const top = kidMode ? '' : `<div class="row ppkids" role="tablist">${ks.map((c) => `<a class="chip" role="tab" href="#/passport/${esc(c.slug)}/${esc(t.id)}/${esc(page.startsWith('visa-') ? 'cover' : page)}" aria-selected="${c.slug === kid}" aria-pressed="${c.slug === kid}">${kidFace(c.slug)} ${esc(kidName(c.slug))}</a>`).join('')}
+  const top = kidMode ? '' : `<div class="row ppkids" role="tablist">${ks.map((c) => `<a class="chip" role="tab" href="#/passport/${esc(c.slug)}${kidTrips(c.slug).includes(t) ? `/${esc(t.id)}/${esc(page.startsWith('visa-') ? `visa-${t.id}` : page)}` : ''}" aria-selected="${c.slug === kid}" aria-pressed="${c.slug === kid}">${kidFace(c.slug)} ${esc(kidName(c.slug))}</a>`).join('')}
 ${isEditor() ? `<button class="chip kidgo" data-a="kidmode" data-v="${esc(kid)}">🧒 ${L('โหมดเด็ก', 'Kid mode')}</button>` : ''}
-<span class="sep"></span>${mine.map((x) => `<a class="chip" href="#/passport/${esc(kid)}/${esc(x.id)}/${esc(page.startsWith('visa-') ? `visa-${x.id}` : page)}" aria-pressed="${x.id === t.id}">${flagsOf(x)} ${esc(ppShort(x))}</a>`).join('')}
+<a class="chip ppall" href="#/passport/${esc(kid)}">📚 ${L(`ทุกเล่มของ${esc(name)}`, `All ${esc(name)}’s passports`)}</a>
 <a class="chip ppprint" href="/api/b/pdf/${esc(t.id)}" download data-a="pdf">🖨️ ${L('พิมพ์', 'Print')}</a></div>`;
   return `${top}<div class="ppbook${kidMode ? ' inkid' : ''}" data-page="${esc(page)}" data-trip="${esc(t.id)}" data-kid="${esc(kid)}" style="${themeStyle(t)}">${tabs}<div class="ppbody" aria-label="${esc(cur[2])}">${body}</div>${turn}</div>`;
 }
