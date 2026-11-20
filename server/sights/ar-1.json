@@ -3,7 +3,6 @@
   "towns": [
     {
       "place": "ar-buenosaires",
-      "thin": true,
       "sights": [
         {
           "name": { "en": "Ecoparque Buenos Aires", "th": "เอโกปาร์เกบัวโนสไอเรส" },
@@ -250,12 +249,28 @@
           "q": "Museo Argentino de Ciencias Naturales, Av. Ángel Gallardo 490, Buenos Aires",
           "ok": "2026-11",
           "src": "https://www.canal26.com/historia/2026/05/16/el-primer-museo-de-buenos-aires-nacio-en-1812-cambio-de-casa-y-hoy-guarda-gigantes-prehistoricos-en-parque-centenario/"
+        },
+        {
+          "ok": "2026-11",
+          "name": { "en": "MIJU – Museum of Imagination and Play", "th": "พิพิธภัณฑ์มิฮู จินตนาการและการเล่น" },
+          "kind": "museumkid",
+          "area": { "en": "Puerto Madero", "th": "ปวยร์โตมาเดโร" },
+          "what": { "en": "A city-run museum made for children up to 12, with hands-on rooms for play and imagination", "th": "พิพิธภัณฑ์ของเมืองสำหรับเด็กถึง 12 ปี มีห้องให้เล่นและใช้จินตนาการ" },
+          "why": { "en": "Made for the very young: the visit is a short hour, with room to touch and move", "th": "ออกแบบมาเพื่อเด็กเล็ก เข้าชมราวหนึ่งชั่วโมง จับต้องและขยับตัวได้" },
+          "tip": { "en": "Book a timed slot online first; the city page lists different prices for residents and visitors", "th": "จองรอบเวลาออนไลน์ก่อน หน้าเมืองระบุราคาต่างกันระหว่างคนในประเทศกับนักท่องเที่ยว" },
+          "ages": [2, 2, 1, 0],
+          "hrs": 1,
+          "io": "in",
+          "pram": "part",
+          "price": { "en": "Check the price", "th": "เช็กราคาก่อนไป" },
+          "book": "req",
+          "q": "MIJU Museo de la Imaginación y el Juego, Av. de los Italianos 851, Puerto Madero, Buenos Aires",
+          "src": "https://buenosaires.gob.ar/cultura/museos/museo-de-la-imaginacion-y-el-juego"
         }
       ]
     },
     {
       "place": "ar-patagonia",
-      "thin": true,
       "sights": [
         {
           "name": { "en": "Perito Moreno Glacier walkways", "th": "ทางเดินชมธารน้ำแข็งเปริโต โมเรโน" },
@@ -508,6 +523,23 @@
           "q": "Puerto Pirámides, Península Valdés, Chubut",
           "ok": "2026-11",
           "src": "https://www.turismocity.com.ar/promociones_aereas/p-temporada_de_ballenas_en_peninsula_valdes_cuando_ir_y_que_hacer-9503.html"
+        },
+        {
+          "ok": "2026-11",
+          "name": { "en": "Parque Nahuelito", "th": "ปาร์เก นาเวลิโต" },
+          "kind": "play",
+          "area": { "en": "Circuito Chico, Bariloche", "th": "เซอร์กวิโตชิโก บาริโลเช" },
+          "what": { "en": "A forest walk among life-size dinosaur replicas, with a nod to the Nahuelito lake legend", "th": "เดินในป่าชมโมเดลไดโนเสาร์ขนาดเท่าจริง พร้อมตำนานนาเวลิโตแห่งทะเลสาบ" },
+          "why": { "en": "Children compare sizes and hunt for the next dinosaur; the visit is guided and short", "th": "เด็กๆ ชอบเทียบขนาดและตามหาไดโนเสาร์ตัวถัดไป มีไกด์พาเดินและใช้เวลาไม่นาน" },
+          "tip": { "en": "Opens at 12; guided visits start at 12:30 and leave hourly until 16:30. Ask the park for prices", "th": "เปิด 12:00 รอบนำชมแรก 12:30 แล้วออกทุกชั่วโมงถึง 16:30 สอบถามราคากับสวน" },
+          "ages": [1, 2, 2, 1],
+          "hrs": 1.5,
+          "io": "out",
+          "pram": "part",
+          "price": { "en": "Check the price", "th": "เช็กราคาก่อนไป" },
+          "book": "rec",
+          "q": "Parque Nahuelito, Ruta 77 km 24.5, Circuito Chico, Bariloche",
+          "src": "https://www.rionegro.com.ar/?p=4657204"
         }
       ]
     }

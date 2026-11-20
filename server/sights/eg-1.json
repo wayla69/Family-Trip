@@ -539,6 +539,23 @@
           "q": "Karnak Temple Sound and Light Show, Luxor",
           "ok": "2026-11",
           "src": "https://exploreluxor.org/sound-and-light-show"
+        },
+        {
+          "ok": "2026-11",
+          "name": { "en": "Valley of the Kings", "th": "หุบเขากษัตริย์" },
+          "kind": "culture",
+          "area": { "en": "West Bank", "th": "ฝั่งตะวันตก" },
+          "what": { "en": "The royal burial valley with painted tombs cut into the rock, visited with a ticket for three tombs", "th": "หุบเขาสุสานหลวงที่มีสุสานเจาะหินและภาพเขียนสี เข้าชมด้วยบัตรสามสุสาน" },
+          "why": { "en": "Hot, steep and dim underground, so best for children of about six and over; little ones tire quickly", "th": "ร้อน ลาดชัน และมืดในสุสาน เหมาะกับเด็กราว 6 ปีขึ้นไป เด็กเล็กเหนื่อยเร็ว" },
+          "tip": { "en": "Go at opening time before the heat; a few tombs (such as Tutankhamun's) need an extra ticket", "th": "ไปตอนเปิดก่อนอากาศร้อน บางสุสาน (เช่นตุตันคามุน) ต้องซื้อบัตรเพิ่ม" },
+          "ages": [0, 0, 1, 2],
+          "hrs": 2.5,
+          "io": "both",
+          "pram": "no",
+          "price": { "en": "Check the price", "th": "เช็กราคาก่อนไป" },
+          "book": "none",
+          "q": "Valley of the Kings, West Bank, Luxor",
+          "src": "https://exploreluxor.org/luxor-entrance-fees"
         }
       ]
     }

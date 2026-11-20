@@ -3,7 +3,6 @@
   "towns": [
     {
       "place": "ke-mara",
-      "thin": true,
       "sights": [
         {
           "name": { "en": "Nairobi National Park", "th": "อุทยานแห่งชาติไนโรบี" },
@@ -242,6 +241,23 @@
           "q": "Masai Balloons, Maasai Mara, Kenya",
           "ok": "2026-11",
           "src": "https://masaiballoons-com.nuxt.dev/terms"
+        },
+        {
+          "ok": "2026-11",
+          "name": { "en": "Nairobi Gallery", "th": "หอศิลป์ไนโรบี" },
+          "kind": "museum",
+          "area": { "en": "City centre", "th": "ใจกลางเมือง" },
+          "what": { "en": "A National Museums of Kenya gallery in a historic building in the city centre", "th": "หอศิลป์ของพิพิธภัณฑ์แห่งชาติเคนยา ในอาคารเก่าใจกลางเมือง" },
+          "why": { "en": "A short, quiet indoor stop in town; best for children who like to look at pictures", "th": "แวะในร่มสั้นๆ ใจกลางเมือง เหมาะกับเด็กที่ชอบดูภาพ" },
+          "tip": { "en": "Museum fees were revised from 7 May 2026; the museums ask visitors to pay online", "th": "ค่าเข้าพิพิธภัณฑ์ปรับใหม่ตั้งแต่ 7 พ.ค. 2569 และให้ชำระออนไลน์" },
+          "ages": [0, 1, 1, 1],
+          "hrs": 1,
+          "io": "in",
+          "pram": "part",
+          "price": { "en": "≈ US$14 adults · US$7 children (visitors from outside Africa)", "th": "≈ US$14 ผู้ใหญ่ · US$7 เด็ก (ผู้มาจากนอกแอฟริกา)" },
+          "book": "none",
+          "q": "Nairobi Gallery, Kenyatta Avenue, Nairobi",
+          "src": "https://museums.or.ke/wp-content/uploads/2026/04/Revision-of-NMK-admission-fees-2026-Website.pdf"
         }
       ]
     }

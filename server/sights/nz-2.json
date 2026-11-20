@@ -3,7 +3,6 @@
   "towns": [
     {
       "place": "nz-rotorua",
-      "thin": true,
       "sights": [
         {
           "name": { "en": "Skyline Rotorua gondola and luge", "th": "สกายไลน์ โรโตรัว กอนโดลาและลูจ" },
@@ -225,6 +224,41 @@
           "q": "Hell's Gate Geothermal Park, State Highway 30, Tikitere, Rotorua",
           "ok": "2026-11",
           "src": "https://hellsgate.co.nz/book/"
+        },
+        {
+          "ok": "2026-11",
+          "name": { "en": "Buried Village of Te Wairoa", "th": "บูรีดวิลเลจ เตไวโรอา" },
+          "kind": "culture",
+          "area": { "en": "Tarawera Road", "th": "ถนนทาราเวรา" },
+          "what": { "en": "An excavated village buried by the 1886 Tarawera eruption, with a museum, a bush walk and a waterfall trail", "th": "หมู่บ้านที่ขุดพบหลังถูกฝังโดยภูเขาไฟทาราเวราปี 1886 มีพิพิธภัณฑ์ ทางเดินป่า และเส้นทางน้ำตก" },
+          "why": { "en": "Children 0–12 go in free with a paying adult, and the museum gives shelter from rain", "th": "เด็ก 0–12 ปีเข้าฟรีเมื่อมีผู้ใหญ่ที่จ่ายบัตร และพิพิธภัณฑ์ช่วยหลบฝน" },
+          "tip": { "en": "Open Wednesday to Sunday, 10:00 to 16:00, last entry 15:45", "th": "เปิดพุธถึงอาทิตย์ 10:00–16:00 เข้าได้ครั้งสุดท้าย 15:45" },
+          "ages": [0, 1, 2, 2],
+          "hrs": 2,
+          "io": "both",
+          "pram": "part",
+          "price": { "en": "≈ NZ$30 international adults · teens NZ$10 · children 0–12 free", "th": "≈ NZ$30 ผู้ใหญ่ต่างชาติ · วัยรุ่น NZ$10 · เด็ก 0–12 ปีฟรี" },
+          "book": "none",
+          "q": "Buried Village of Te Wairoa, Tarawera Road, Rotorua",
+          "src": "https://buriedvillage.co.nz/what-to-expect/entry-prices-opening-hours"
+        },
+        {
+          "ok": "2026-11",
+          "name": { "en": "Rotorua Museum", "th": "พิพิธภัณฑ์โรโตรัว" },
+          "local": "Te Whare Taonga o Te Arawa",
+          "kind": "museum",
+          "area": { "en": "Government Gardens", "th": "ทำเนียบสวนรัฐบาล" },
+          "what": { "en": "The city museum in the old bathhouse building, telling the story of Te Arawa and the thermal town", "th": "พิพิธภัณฑ์เมืองในอาคารโรงอาบน้ำเก่า เล่าเรื่องชาวเตอาราวาและเมืองน้ำพุร้อน" },
+          "why": { "en": "A dry indoor stop beside the gardens; people living in New Zealand enter free, visitors pay", "th": "ที่หลบฝนในร่มข้างสวน ผู้อยู่ในนิวซีแลนด์เข้าฟรี นักท่องเที่ยวเสียค่าเข้า" },
+          "tip": { "en": "Check the price list and the opening hours on the museum's page before you go", "th": "เช็กราคาและเวลาเปิดที่หน้าเว็บของพิพิธภัณฑ์ก่อนไป" },
+          "ages": [0, 1, 1, 2],
+          "hrs": 1.5,
+          "io": "in",
+          "pram": "yes",
+          "price": { "en": "Check the price", "th": "เช็กราคาก่อนไป" },
+          "book": "none",
+          "q": "Rotorua Museum, Government Gardens, Rotorua",
+          "src": "https://www.rotoruamuseum.co.nz/prices/"
         }
       ]
     }

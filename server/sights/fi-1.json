@@ -277,7 +277,6 @@
     },
     {
       "place": "p-lapland",
-      "thin": true,
       "sights": [
         {
           "name": { "en": "Santa Claus Village", "th": "หมู่บ้านซานตาคลอส" },
@@ -524,6 +523,24 @@
           "q": "Santa's Snowtubing, Santa Claus Village, Rovaniemi",
           "ok": "2026-11",
           "src": "https://www.visitrovaniemi.fi/attraction/snowtubing/"
+        },
+        {
+          "ok": "2026-11",
+          "name": { "en": "Korundi – Rovaniemi Art Museum", "th": "โคลุนดิ พิพิธภัณฑ์ศิลปะโรวาเนียมี" },
+          "local": "Kulttuuritalo Korundi",
+          "kind": "museum",
+          "area": { "en": "Rovaniemi centre", "th": "ใจกลางโรวาเนียมี" },
+          "what": { "en": "A house of culture in an old postal-bus garage, with the art museum's exhibitions", "th": "บ้านวัฒนธรรมในอู่รถไปรษณีย์เก่า มีนิทรรศการของพิพิธภัณฑ์ศิลปะ" },
+          "why": { "en": "A warm, calm stop on a freezing day; children under 7 go in free", "th": "ที่หลบหนาวสงบๆ ในวันที่อากาศเย็นจัด เด็กต่ำกว่า 7 ปีเข้าฟรี" },
+          "tip": { "en": "The exhibitions are free on Thursdays from 16:00 to 18:00", "th": "ชมนิทรรศการฟรีทุกวันพฤหัสบดี 16:00–18:00" },
+          "ages": [0, 1, 1, 2],
+          "hrs": 1.5,
+          "io": "in",
+          "pram": "yes",
+          "price": { "en": "≈ €13 adults · €7 children 7–17 · under 7 free", "th": "≈ €13 ผู้ใหญ่ · €7 เด็ก 7–17 ปี · ต่ำกว่า 7 ปีฟรี" },
+          "book": "none",
+          "q": "Korundi House of Culture, Lapinkävijäntie 2, Rovaniemi",
+          "src": "https://korundi.fi/en/korundi/korundi-house-of-culture/tickets"
         }
       ]
     }

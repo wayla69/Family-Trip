@@ -468,6 +468,40 @@
           "q": "Boracay sunset cruise, Station 1, White Beach, Malay, Aklan",
           "ok": "2026-11",
           "src": "https://myboracayguide.com/boracay/activities/boracay-sunset-cruise"
+        },
+        {
+          "ok": "2026-11",
+          "name": { "en": "Boracay Butterfly Garden", "th": "สวนผีเสื้อโบราเคย์" },
+          "kind": "nature",
+          "area": { "en": "Near Station 3", "th": "ใกล้สเตชัน 3" },
+          "what": { "en": "A small garden near Station 3 where children learn about butterfly species and where they live", "th": "สวนเล็กๆ ใกล้สเตชัน 3 ให้เด็กเรียนรู้ชนิดผีเสื้อและที่อยู่อาศัย" },
+          "why": { "en": "Calm and shady, with guided tours; mornings are best, when the butterflies are most active", "th": "เงียบสงบและร่มรื่น มีไกด์นำชม ช่วงเช้าผีเสื้อคึกคักที่สุด" },
+          "tip": { "en": "Best in the dry season, November to April; guides quote different prices, so ask at the gate", "th": "ดีที่สุดหน้าแล้ง พ.ย.–เม.ย. ราคาแต่ละแหล่งไม่ตรงกัน ถามที่หน้าสวน" },
+          "ages": [1, 2, 2, 1],
+          "hrs": 1,
+          "io": "out",
+          "pram": "part",
+          "price": { "en": "Check the price", "th": "เช็กราคาก่อนไป" },
+          "book": "none",
+          "q": "Boracay Butterfly Garden, Boracay Island, Malay, Aklan",
+          "src": "https://visitboracay.com/boracay/travel-guides/family-kids/boracay-with-kids-family-friendly-activities-beaches"
+        },
+        {
+          "ok": "2026-11",
+          "name": { "en": "Fire dance show on White Beach", "th": "โชว์เต้นไฟที่หาดไวต์บีช" },
+          "kind": "show",
+          "area": { "en": "White Beach", "th": "หาดไวต์บีช" },
+          "what": { "en": "A weekly fire-dance performance on the sand, with drums and glowing flames", "th": "การแสดงเต้นไฟบนหาดทุกสัปดาห์ พร้อมเสียงกลองและเปลวไฟ" },
+          "why": { "en": "Free and outdoors; a sitting-down show, but the flames and drums can startle very small children", "th": "ดูฟรีกลางแจ้ง นั่งดูได้ แต่เปลวไฟและเสียงกลองอาจทำเด็กเล็กมากตกใจ" },
+          "tip": { "en": "Held on Wednesday evenings, says the island guide; sit back from the flames", "th": "จัดคืนวันพุธตามไกด์ของเกาะ นั่งห่างจากเปลวไฟ" },
+          "ages": [0, 1, 2, 2],
+          "hrs": 1,
+          "io": "out",
+          "pram": "no",
+          "price": { "en": "Free", "th": "ฟรี" },
+          "book": "none",
+          "q": "White Beach, Boracay Island, Malay, Aklan",
+          "src": "https://visitboracay.com/boracay/travel-guides/family-kids/boracay-with-kids-family-friendly-activities-beaches"
         }
       ]
     }

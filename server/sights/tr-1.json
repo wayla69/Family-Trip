@@ -496,7 +496,6 @@
     },
     {
       "place": "tr-pamukkale",
-      "thin": true,
       "sights": [
         {
           "name": { "en": "Pamukkale travertine terraces", "th": "ขั้นบันไดหินปูนปามุคคาเล" },
@@ -712,6 +711,59 @@
           "q": "Denizli Atatürk House and Ethnographic Museum, Denizli",
           "ok": "2026-11",
           "src": "https://goturkiye.com/pamukkale/10-vibes-for-pamukkale"
+        },
+        {
+          "ok": "2026-11",
+          "name": { "en": "İncilipınar Park", "th": "สวนอินจิลิพินาร์" },
+          "local": "İncilipınar Parkı",
+          "kind": "park",
+          "area": { "en": "Denizli centre", "th": "ใจกลางเดนิซลี" },
+          "what": { "en": "A prize-winning city park with big ponds, walking paths and lawns", "th": "สวนสาธารณะของเมืองที่ได้รางวัล มีบ่อใหญ่ ทางเดิน และสนามหญ้า" },
+          "why": { "en": "Free; children watch the ducks and run on the grass after the long drive from the terraces", "th": "เข้าฟรี เด็กๆ ดูเป็ดและวิ่งบนสนามหญ้าหลังนั่งรถนานจากลานหินปูน" },
+          "tip": { "en": "In the evening the park is lit and the fountain pool puts on shows", "th": "ตอนเย็นสวนเปิดไฟและสระน้ำพุมีการแสดง" },
+          "ages": [2, 2, 2, 1],
+          "hrs": 1.5,
+          "io": "out",
+          "pram": "yes",
+          "price": { "en": "Free", "th": "ฟรี" },
+          "book": "none",
+          "q": "İncilipınar Parkı, Pamukkale, Denizli",
+          "src": "https://yolcu360.com/blog/denizli-gezilecek-yerler/"
+        },
+        {
+          "ok": "2026-11",
+          "name": { "en": "Denizli Rag Doll House Museum", "th": "พิพิธภัณฑ์บ้านตุ๊กตาผ้าเดนิซลี" },
+          "local": "Denizli Bez Bebek Evi Müzesi",
+          "kind": "museumkid",
+          "area": { "en": "Saraylar, Denizli", "th": "ซารายลาร์ เดนิซลี" },
+          "what": { "en": "A restored historic house of hand-made rag dolls in local dress, showing weddings and daily life", "th": "บ้านเก่าที่บูรณะ จัดแสดงตุ๊กตาผ้าทำมือในชุดท้องถิ่น เล่าเรื่องงานแต่งและชีวิตประจำวัน" },
+          "why": { "en": "Free and indoors; small children love the tiny dressed dolls", "th": "เข้าฟรีและอยู่ในร่ม เด็กเล็กชอบตุ๊กตาตัวจิ๋วในชุดสวยๆ" },
+          "tip": { "en": "Look at the cloth of each outfit; it is all original fabric", "th": "ลองดูผ้าของแต่ละชุด ทั้งหมดเป็นผ้าดั้งเดิม" },
+          "ages": [1, 2, 2, 1],
+          "hrs": 1,
+          "io": "in",
+          "pram": "no",
+          "price": { "en": "Free", "th": "ฟรี" },
+          "book": "none",
+          "q": "Denizli Bez Bebek Evi Müzesi, Saraylar Mahallesi, Merkezefendi, Denizli",
+          "src": "https://yolcu360.com/blog/denizli-gezilecek-yerler/"
+        },
+        {
+          "ok": "2026-11",
+          "name": { "en": "Sinpaş Aquamall", "th": "ซินปาช อความอลล์" },
+          "kind": "shop",
+          "area": { "en": "Gültepe, Denizli", "th": "กุลเตเป เดนิซลี" },
+          "what": { "en": "A modern mall with an open-air design and water features, plus cinema and restaurants", "th": "ห้างสมัยใหม่ดีไซน์โล่ง มีน้ำพุและสายน้ำ มีโรงหนังและร้านอาหาร" },
+          "why": { "en": "Safe play areas for families with children, and water shows to watch over a snack", "th": "มีมุมเล่นปลอดภัยสำหรับครอบครัว และโชว์น้ำให้ดูระหว่างกินของว่าง" },
+          "tip": { "en": "Easy to reach on the İzmir road when you enter or leave Denizli", "th": "แวะง่ายบนถนนไปอิซมีร์ตอนเข้าหรือออกเมืองเดนิซลี" },
+          "ages": [1, 2, 2, 1],
+          "hrs": 2,
+          "io": "both",
+          "pram": "yes",
+          "price": { "en": "Free", "th": "ฟรี" },
+          "book": "none",
+          "q": "Sinpaş Aquamall, Gültepe, Merkezefendi, Denizli",
+          "src": "https://yolcu360.com/blog/denizli-gezilecek-yerler/"
         }
       ]
     }

@@ -3,7 +3,6 @@
   "towns": [
     {
       "place": "sk-bratislava",
-      "thin": true,
       "sights": [
         {
           "name": { "en": "Bratislava Zoo", "th": "สวนสัตว์บราติสลาวา" },
@@ -248,6 +247,23 @@
           "q": "Slovak National Museum Natural History, Vajanského nábrežie 2, Bratislava",
           "ok": "2026-11",
           "src": "https://www.snm.sk/en/visit/admission-fees"
+        },
+        {
+          "ok": "2026-11",
+          "name": { "en": "Primate's Palace", "th": "พระราชวังไพรเมต" },
+          "kind": "museum",
+          "area": { "en": "Old Town", "th": "เมืองเก่า" },
+          "what": { "en": "A neoclassical palace with a gallery of tapestries and a Mirror Hall, run by the city museum", "th": "วังสไตล์นีโอคลาสสิก มีห้องแขวนผ้าทอและห้องกระจก ดูแลโดยพิพิธภัณฑ์เมือง" },
+          "why": { "en": "A dry indoor stop in the middle of the Old Town; everyone under 18 goes in free", "th": "ที่ในร่มกลางเมืองเก่า ผู้ที่อายุต่ำกว่า 18 ปีเข้าฟรี" },
+          "tip": { "en": "Opening days change week by week, so check the palace page for this week's hours", "th": "วันเปิดเปลี่ยนไปแต่ละสัปดาห์ เช็กเวลาประจำสัปดาห์ที่หน้าเว็บของวัง" },
+          "ages": [0, 1, 1, 2],
+          "hrs": 1,
+          "io": "in",
+          "pram": "part",
+          "price": { "en": "≈ €5 adults · under 18 free", "th": "≈ €5 ผู้ใหญ่ · ต่ำกว่า 18 ปีฟรี" },
+          "book": "none",
+          "q": "Primate's Palace, Primaciálne námestie 1, Bratislava",
+          "src": "https://bratislava.sk/en/city-of-bratislava/transparent-city/city-property/primates-palace/visit-us"
         }
       ]
     }

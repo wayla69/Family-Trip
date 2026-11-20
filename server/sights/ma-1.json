@@ -3,7 +3,6 @@
   "towns": [
     {
       "place": "ma-fes",
-      "thin": true,
       "sights": [
         {
           "name": { "en": "Jnan Sbil Gardens", "th": "สวนจนันสบิล" },
@@ -253,6 +252,23 @@
           "q": "Al-Attarine Madrasa, Fes el-Bali, Fes",
           "ok": "2026-11",
           "src": "https://loudavymkrokem.cz/en/fes-morocco-guide/"
+        },
+        {
+          "ok": "2026-11",
+          "name": { "en": "Merenid Tombs viewpoint", "th": "จุดชมวิวสุสานเมรีนิด" },
+          "kind": "views",
+          "area": { "en": "Hill above Fes el-Bali", "th": "เนินเหนือเฟสเอลบาลี" },
+          "what": { "en": "Ruined 14th-century tombs on a hill with a wide view over the whole medina", "th": "ซากสุสานศตวรรษที่ 14 บนเนินเขา มองเห็นเมดินาทั้งเมือง" },
+          "why": { "en": "A short climb to a big view; the open hilltop gives children room to run before sunset", "th": "เดินขึ้นเนินสั้นๆ ได้วิวกว้าง ยอดเขาโล่งให้เด็กวิ่งเล่นก่อนพระอาทิตย์ตก" },
+          "tip": { "en": "Go for sunset but leave before dark; a taxi from Bab Boujloud is short and cheap", "th": "ไปชมพระอาทิตย์ตกแต่กลับก่อนมืด นั่งแท็กซี่จากบาบบูจลูดใกล้และไม่แพง" },
+          "ages": [0, 1, 1, 2],
+          "hrs": 1,
+          "io": "out",
+          "pram": "no",
+          "price": { "en": "Free", "th": "ฟรี" },
+          "book": "none",
+          "q": "Merenid Tombs, Fes, Morocco",
+          "src": "https://thirdeyetraveller.com/merenid-tombs-in-fes-best-viewpoint/"
         }
       ]
     },
