@@ -1107,7 +1107,7 @@ const T = 'hk-macau-2026';
     'no-signal page: the PDF button lives in the memory book only; the page\'s name is in the bar, not repeated as a heading');
   // one passport per child: a book shown a page at a time — cover · Explorer ID · a visa per trip · missions · map · lists · stickers · trophies · certificate
   await page.goto(`${BASE}/#/passport`); await page.waitForSelector('.ppbook[data-page="cover"] .pp .advc');
-  ok(await page.locator('.ppkids a[role=tab]').count() === 2 && await page.locator('.ppkids a.chip:not([role=tab])').count() === 2 && await page.locator('.ppkids a.ppprint[href^="/api/b/pdf/"]').count() === 1, 'passport: one per child, a book per trip, and "print" from the book');
+  ok(await page.locator('.ppkids a[role=tab]').count() === 2 && await page.locator('.ppkids a.chip:not([role=tab]):not(.ppprint)').count() === 2 && await page.locator('.ppkids a.ppprint[href^="/api/b/pdf/"]').count() === 1, 'passport: one per child, a book per trip, and "print" from the book');
   { const tabs = await page.$$eval('.pptabs .ppt', (as) => as.map((a) => a.getAttribute('href').split('/').pop()));
     ok(tabs.join() === 'cover,id,visa-hk-macau-2026,visa-big-hop-2027,missions,map,lists,stickers,trophies,cert' && await page.locator('.ppbody .mission, .ppbody .pp-page.visa, .ppbody #cert').count() === 0 && await page.locator('.ppturn [data-dir="next"][href$="/id"]').count() === 1,
       `passport book: the pages in order — a visa for each of Mimi's trips — and only one page on screen at a time (${tabs.join()})`); }
@@ -1141,7 +1141,7 @@ const T = 'hk-macau-2026';
   }
   ok(await page.locator('.sleep li').count() === 6, 'passport: where we go — 6 pins as printed');
   await ppOpen(page, 'mimi', T, 'trophies');
-  ok(await page.locator('.bdg').count() === 1 && (await page.textContent('.bdg')).includes('Mickey') && await page.locator('.trophies .tro').count() >= 10 && await page.locator('.ppbody .tro.new').count() === 0, 'passport: Mimi’s first is a badge beside her trophies (a grown-up looking never takes the child\'s "new!")');
+  ok(await page.locator('.bdg').count() === 1 && (await page.textContent('.bdg')).includes('Mickey') && await page.locator('.ppbody .tro:not(.got)').count() === 0 && await page.locator('.ppbody .tro.new').count() === 0, 'passport: Mimi’s first is a badge; the grown-ups see only trophies earned — no wall of grey ones — and looking never takes the child\'s "new!"');
   ok(!(await page.textContent('#app')).match(/\b[A-Z]{1,2}\d{6,9}\b|e-ticket/), 'passport: nothing that looks like a real passport / ticket number');
   await ppOpen(page, 'mimi', T, 'missions');
   ok(await page.locator('.mission').count() === 6, 'passport: a mission per day');
