@@ -187,6 +187,13 @@ lists that copied one note for all were done again; an "open" with no link or a 
 
 ## Adding or changing the built-in list
 
+### The confirmation pass of 20 Nov 2026
+
+Owner: "เช็กร้านอาหารที่ยังไม่ได้เช็กกับเว็บ เริ่มจากเมืองที่ครอบครัวน่าจะไปก่อน". Round 1 took the unconfirmed rows of Taiwan, Hong Kong,
+Macau, Japan, Korea, Vietnam, Malaysia and part of Thailand (about 120 rows): 15 confirmed open (`ok 2026-11`), one closed and removed
+(Sukhothai). The rest stay as they were — "not found" on a search result is not a closure, and the session could not open the pages
+themselves.
+
 - A file is `{"cc", "towns": [{"place": "<picture-library city id>", "places": [row…]}]}`; the header of `scripts/eats-lint.mjs` gives
   the row's fields. `npm run eats:lint` checks every file and that every city of the picture library has its list (test/infra runs it).
 - The server reads the files into the family's library once per version of the files (settings `eat_starter`); `EATS_STARTER=0` leaves

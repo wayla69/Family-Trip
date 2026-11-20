@@ -123,6 +123,23 @@
           "q": "Gaya Street Sunday Market, Kota Kinabalu",
           "ok": "2026-11",
           "src": "https://www.wonderfulmalaysia.com/attractions/?p=2202"
+        },
+        {
+          "ok": "2026-11",
+          "name": { "en": "Kota Kinabalu Wetland Centre", "th": "ศูนย์ชุ่มน้ำโกตาคินาบาลู" },
+          "kind": "nature",
+          "area": { "en": "Likas, Kota Kinabalu", "th": "ลิกัส โกตาคินาบาลู" },
+          "what": { "en": "A mangrove reserve in the city with boardwalks, bird hides and a watch tower", "th": "ป่าชายเลนในเมือง มีทางไม้ ที่ซุ่มดูนก และหอคอย" },
+          "why": { "en": "Short flat boardwalks, shade and mudskippers keep children busy; bring insect repellent", "th": "ทางไม้สั้นและราบ มีร่มและปลาตีนให้ดู ควรพกยากันยุง" },
+          "tip": { "en": "Listed as open Tuesday to Sunday about 8:00–18:00, closed Mondays; best at low tide", "th": "ระบุว่าเปิดอังคารถึงอาทิตย์ราว 8:00–18:00 ปิดวันจันทร์ ไปช่วงน้ำลงจะดีที่สุด" },
+          "ages": [1, 2, 2, 1],
+          "hrs": 1.5,
+          "io": "out",
+          "pram": "yes",
+          "price": { "en": "Check the price", "th": "เช็กราคาก่อนไป" },
+          "book": "none",
+          "q": "Kota Kinabalu Wetland Centre, Likas, Kota Kinabalu",
+          "src": "https://sabahwetlands.org"
         }
       ]
     },
@@ -333,6 +350,24 @@
           "q": "Dataran Lang Eagle Square, Kuah, Langkawi",
           "ok": "2026-11",
           "src": "https://www.klook.com/en-AU/blog/langkawi-family-trip-kids-malaysia/"
+        },
+        {
+          "ok": "2026-11",
+          "name": { "en": "Langkawi Craft Complex", "th": "ลังกาวี คราฟต์ คอมเพล็กซ์" },
+          "local": "Kompleks Kraf Langkawi",
+          "kind": "shop",
+          "area": { "en": "Teluk Yu, north coast", "th": "เตอลุกยู ชายฝั่งเหนือ" },
+          "what": { "en": "A craft centre with batik, wood carving, museums and demonstrations by the sea", "th": "ศูนย์งานฝีมือ มีบาติก งานแกะสลักไม้ พิพิธภัณฑ์ และการสาธิตริมทะเล" },
+          "why": { "en": "Free, shady and partly indoors; children can watch makers at work", "th": "เข้าฟรี ร่มรื่นและมีส่วนในร่ม เด็กๆ ดูช่างทำงานได้" },
+          "tip": { "en": "Hours are given as about 9:00 or 10:00 to 18:00 and change on public holidays", "th": "เวลาเปิดราว 9:00 หรือ 10:00 ถึง 18:00 และเปลี่ยนในวันหยุดนักขัตฤกษ์" },
+          "ages": [1, 1, 2, 1],
+          "hrs": 1.5,
+          "io": "both",
+          "pram": "yes",
+          "price": { "en": "Free", "th": "ฟรี" },
+          "book": "none",
+          "q": "Langkawi Craft Complex, Teluk Yu, Langkawi",
+          "src": "https://ebrochures.malaysia.travel/?p=2312"
         }
       ]
     }

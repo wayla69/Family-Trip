@@ -107,6 +107,24 @@
           "q": "Hat Saeng Chan, Rayong",
           "ok": "2026-11",
           "src": "https://www.lovethailand.org/travel/-/60-ระยอง/2604-หาดแสงจันทร์.html"
+        },
+        {
+          "name": { "en": "Raksa Sam Bridge mangrove walkway", "th": "สะพานรักษ์แสม" },
+          "local": "สะพานรักษ์แสม",
+          "kind": "nature",
+          "area": { "en": "Klaeng", "th": "แกลง" },
+          "what": { "en": "A wooden boardwalk of about 100 metres through a protected mangrove forest where small sea creatures breed", "th": "สะพานไม้ยาวราว 100 เมตรเดินชมป่าชายเลนที่เป็นเขตอนุรักษ์และแหล่งเพาะพันธุ์สัตว์น้ำ" },
+          "why": { "en": "A short, shaded, flat walk that small legs can finish, with crabs and mudskippers to spot", "th": "เดินสั้น ๆ ทางเรียบ มีร่มไม้ เด็กเล็กเดินไหว และมีปูกับปลาตีนให้ดู" },
+          "tip": { "en": "Open daily 08:00–18:00; go in the cooler morning and bring mosquito repellent", "th": "เปิดทุกวัน 08:00–18:00 ไปตอนเช้าอากาศเย็นกว่า และเตรียมยากันยุง" },
+          "ages": [1, 2, 2, 1],
+          "hrs": 1,
+          "io": "out",
+          "pram": "part",
+          "price": { "en": "Check the price", "th": "เช็กราคาก่อนไป" },
+          "book": "none",
+          "q": "Sapan Raksa Saem, Klaeng, Rayong",
+          "ok": "2026-11",
+          "src": "https://www.thairath.co.th/lifestyle/travel/2773658"
         }
       ]
     }

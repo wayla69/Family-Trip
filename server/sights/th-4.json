@@ -328,6 +328,24 @@
           "q": "Kung Krabaen Mangrove Forest Study Walkway, Tha Mai, Chanthaburi",
           "ok": "2026-11",
           "src": "https://www.thaiholidayguide.com/attraction/kung-krabane-wildlife-reserve/"
+        },
+        {
+          "name": { "en": "Khao Khitchakut National Park", "th": "อุทยานแห่งชาติเขาคิชฌกูฏ" },
+          "local": "อุทยานแห่งชาติเขาคิชฌกูฏ",
+          "kind": "nature",
+          "area": { "en": "Khao Khitchakut district", "th": "อำเภอเขาคิชฌกูฏ" },
+          "what": { "en": "A forested mountain park with waterfalls, viewpoints and a famous pilgrimage trail", "th": "อุทยานภูเขาป่าไม้ มีน้ำตก จุดชมวิว และเส้นทางแสวงบุญที่มีชื่อเสียง" },
+          "why": { "en": "Choose the waterfall stops for small children; the summit climb is long and for older children", "th": "เลือกจุดน้ำตกสำหรับเด็กเล็ก ส่วนเส้นทางขึ้นยอดยาวเหมาะกับเด็กโต" },
+          "tip": { "en": "The pilgrimage season (about January–March) is very crowded; ask the park office about trails", "th": "ช่วงแสวงบุญ (ราว ม.ค.–มี.ค.) คนมากมาก สอบถามเส้นทางที่ที่ทำการอุทยาน" },
+          "ages": [0, 1, 2, 2],
+          "hrs": 3,
+          "io": "out",
+          "pram": "no",
+          "price": { "en": "≈ ฿40 Thai adults, ฿20 children · foreigners ≈ ฿200 adults, ฿100 children", "th": "≈ ฿40 ผู้ใหญ่ไทย ฿20 เด็ก · ชาวต่างชาติ ≈ ฿200 ผู้ใหญ่ ฿100 เด็ก" },
+          "book": "none",
+          "q": "Khao Khitchakut National Park, Chanthaburi",
+          "ok": "2026-11",
+          "src": "https://www.thainationalparks.com/khao-khitchakut-national-park"
         }
       ]
     },
@@ -1374,6 +1392,24 @@
           "q": "Chae Son National Park, Mueang Pan, Lampang",
           "ok": "2026-11",
           "src": "https://www.thaiholidayguide.com/attraction/chae-son-national-park/"
+        },
+        {
+          "name": { "en": "Wat Phra That Lampang Luang", "th": "วัดพระธาตุลำปางหลวง" },
+          "local": "วัดพระธาตุลำปางหลวง",
+          "kind": "culture",
+          "area": { "en": "Ko Kha, outside Lampang", "th": "อำเภอเกาะคา นอกเมืองลำปาง" },
+          "what": { "en": "A walled 13th-century Lanna temple on a raised mound with a large wooden hall", "th": "วัดล้านนาโบราณมีกำแพงล้อมบนเนินสูง มีวิหารไม้ขนาดใหญ่" },
+          "why": { "en": "Open courtyards for children to walk, but steps and quiet rules suit older children better", "th": "ลานโล่งให้เดินเล่น แต่มีบันไดและต้องสงบ เหมาะกับเด็กโตมากกว่า" },
+          "tip": { "en": "Go in the morning; sources report about 07:30–17:00 and a small fee for foreigners, so check at the gate", "th": "ไปตอนเช้า แหล่งข้อมูลบอกเปิดราว 07:30–17:00 และมีค่าเข้าเล็กน้อยสำหรับชาวต่างชาติ เช็กที่หน้าวัด" },
+          "ages": [1, 1, 1, 2],
+          "hrs": 1.5,
+          "io": "out",
+          "pram": "part",
+          "price": { "en": "Check the price", "th": "เช็กราคาก่อนไป" },
+          "book": "none",
+          "q": "Wat Phra That Lampang Luang, Ko Kha, Lampang",
+          "ok": "2026-11",
+          "src": "https://www.thaiholidayguide.com/attraction/wat-phrathat-lampang-luang/"
         }
       ]
     },
@@ -1914,6 +1950,41 @@
           "q": "Saiyut Market, Mae Hong Son town",
           "ok": "2026-11",
           "src": "https://www.lovethailand.org/travel/-/5-แม่ฮ่องสอน/662-ตลาดสายหยุด-(กาดเช้า)-หรือตลาดเทศบาล.html"
+        },
+        {
+          "name": { "en": "Wat Phra That Doi Kong Mu", "th": "วัดพระธาตุดอยกองมู" },
+          "local": "วัดพระธาตุดอยกองมู",
+          "kind": "views",
+          "area": { "en": "Doi Kong Mu", "th": "ดอยกองมู" },
+          "what": { "en": "Two white Shan-style chedis on a hilltop with views over the town, Chong Kham Lake and the valley", "th": "เจดีย์สีขาวสององค์แบบไทใหญ่บนยอดดอย มองเห็นเมืองแม่ฮ่องสอน หนองจองคำ และหุบเขา" },
+          "why": { "en": "Easy to reach by car and a good place for misty sunrise or sunset; the walk up is a zig-zag of ramps with short stairs", "th": "ขึ้นรถไปได้ง่าย เหมาะดูหมอกยามเช้าหรือพระอาทิตย์ตก ทางเดินขึ้นเป็นทางลาดคดเคี้ยวมีบันไดสั้น ๆ" },
+          "tip": { "en": "No fee, donations welcome; hours are listed differently, so check locally; dress modestly", "th": "ไม่เก็บค่าเข้า รับบริจาค เวลาเปิดแต่ละแหล่งไม่ตรงกัน เช็กหน้างาน และแต่งกายสุภาพ" },
+          "ages": [1, 2, 2, 1],
+          "hrs": 1,
+          "io": "out",
+          "pram": "part",
+          "price": { "en": "Free", "th": "ฟรี" },
+          "book": "none",
+          "q": "Wat Phra That Doi Kong Mu, Mae Hong Son",
+          "ok": "2026-11",
+          "src": "https://www.thaiholidayguide.com/attraction/wat-phrathat-doi-kong-mu/"
+        },
+        {
+          "name": { "en": "Tham Lod Cave", "th": "ถ้ำลอด" },
+          "kind": "nature",
+          "area": { "en": "Pang Mapha (about 1.5 hours away)", "th": "ปางมะผ้า (ห่างราว 1 ชม. ครึ่ง)" },
+          "what": { "en": "A huge limestone cave crossed by a stream, with three chambers reached by bamboo raft and wooden stairs and old teak coffins", "th": "ถ้ำหินปูนขนาดใหญ่มีลำธารไหลผ่าน มีสามโถง ล่องแพไม้ไผ่และเดินบันไดไม้ ชมโลงไม้สักโบราณ" },
+          "why": { "en": "The raft ride is a big adventure for children 6 and over; a guide with a lamp is compulsory and the steps are steep for toddlers", "th": "ล่องแพสนุกสำหรับเด็ก 6 ขวบขึ้นไป ต้องมีไกด์ถือตะเกียง และบันไดชันสำหรับเด็กเล็ก" },
+          "tip": { "en": "The 200 baht pass covers the Lum Nam Pai sanctuary for the day; raft about 400 baht (up to three people) and guide about 150 baht", "th": "บัตร 200 บาทใช้ได้ทั้งวันในเขตอนุรักษ์ลุ่มน้ำปาย แพราว 400 บาท (นั่งได้สามคน) และไกด์ราว 150 บาท" },
+          "ages": [0, 1, 2, 2],
+          "hrs": 3,
+          "io": "both",
+          "pram": "no",
+          "price": { "en": "≈ ฿200 entry pass · raft ≈ ฿400 · guide ≈ ฿150 (as listed in 2026; check)", "th": "≈ ฿200 บัตรเข้า · แพ ≈ ฿400 · ไกด์ ≈ ฿150 (ตามข้อมูลปี 2026 เช็กอีกครั้ง)" },
+          "book": "none",
+          "q": "Tham Lod Cave, Pang Mapha, Mae Hong Son",
+          "ok": "2026-11",
+          "src": "https://thebackpackingfamily.com/how-to-get-to-the-tham-lod-cave-pai/"
         }
       ]
     },
@@ -1992,6 +2063,24 @@
           "q": "Khao Luang National Park, Kiriwong, Nakhon Si Thammarat",
           "ok": "2026-11",
           "src": "https://www.thaiholidayguide.com/attraction/khao-luang-national-park/"
+        },
+        {
+          "name": { "en": "Phrom Lok Waterfall", "th": "น้ำตกพรหมโลก" },
+          "local": "น้ำตกพรหมโลก",
+          "kind": "nature",
+          "area": { "en": "Phrom Khiri, Khao Luang National Park", "th": "พรหมคีรี อุทยานแห่งชาติเขาหลวง" },
+          "what": { "en": "A tiered waterfall in the Khao Luang foothills with shaded pools and places to sit", "th": "น้ำตกหลายชั้นที่เชิงเขาหลวง มีแอ่งน้ำร่มรื่นและที่นั่งพัก" },
+          "why": { "en": "The lower tiers are an easy walk for small children; keep them off wet rocks after rain", "th": "ชั้นล่างเดินง่ายสำหรับเด็กเล็ก ระวังโขดหินลื่นหลังฝนตก" },
+          "tip": { "en": "Guides list 08:00–16:30; the park ticket also covers other falls in Khao Luang", "th": "แหล่งข้อมูลบอกเปิด 08:00–16:30 ตั๋วอุทยานใช้กับน้ำตกอื่นในเขาหลวงด้วย" },
+          "ages": [1, 2, 2, 2],
+          "hrs": 2,
+          "io": "out",
+          "pram": "no",
+          "price": { "en": "≈ ฿40 Thai adults, ฿20 children · foreigners ≈ ฿200 adults, ฿100 children", "th": "≈ ฿40 ผู้ใหญ่ไทย ฿20 เด็ก · ชาวต่างชาติ ≈ ฿200 ผู้ใหญ่ ฿100 เด็ก" },
+          "book": "none",
+          "q": "Phrom Lok Waterfall, Phrom Khiri, Nakhon Si Thammarat",
+          "ok": "2026-11",
+          "src": "https://www.thaiholidayguide.com/attraction/phrom-lok-waterfall/"
         }
       ]
     },
@@ -2070,6 +2159,24 @@
           "q": "Sao Din Na Noi, Na Noi, Nan",
           "ok": "2026-11",
           "src": "https://www.thaiholidayguide.com/attraction/sao-din-na-noi/"
+        },
+        {
+          "name": { "en": "Wat Phumin", "th": "วัดภูมินทร์" },
+          "local": "วัดภูมินทร์",
+          "kind": "culture",
+          "area": { "en": "Nan old town", "th": "เมืองน่านเก่า" },
+          "what": { "en": "Nan's best-known temple, with four Buddha images facing four doors and 19th-century Thai Lue murals", "th": "วัดที่รู้จักที่สุดของน่าน มีพระพุทธรูปสี่ทิศและจิตรกรรมฝาผนังไทลื้อ" },
+          "why": { "en": "Right in the walkable old town; a short, free stop that older children can enjoy for the murals", "th": "อยู่กลางเมืองเก่าที่เดินได้ แวะสั้นๆ ฟรี เด็กโตสนุกกับภาพจิตรกรรม" },
+          "tip": { "en": "Dress modestly and speak quietly; hours differ between sources, so check before a late visit", "th": "แต่งกายสุภาพและพูดเบาๆ เวลาเปิดแต่ละแหล่งไม่ตรงกัน เช็กก่อนไปช่วงเย็น" },
+          "ages": [1, 1, 1, 2],
+          "hrs": 1,
+          "io": "both",
+          "pram": "part",
+          "price": { "en": "Free", "th": "ฟรี" },
+          "book": "none",
+          "q": "Wat Phumin, Nan old town, Nan",
+          "ok": "2026-11",
+          "src": "https://www.thaiholidayguide.com/attraction/wat-phumin/"
         }
       ]
     },
@@ -2292,6 +2399,24 @@
           "q": "Kaeng Krung National Park, Kian Sa, Surat Thani",
           "ok": "2026-11",
           "src": "https://www.thaiholidayguide.com/attraction/kaeng-krung-national-park/"
+        },
+        {
+          "name": { "en": "Wat Phra Borommathat Chaiya", "th": "วัดพระบรมธาตุไชยา" },
+          "local": "วัดพระบรมธาตุไชยา",
+          "kind": "culture",
+          "area": { "en": "Chaiya", "th": "อำเภอไชยา" },
+          "what": { "en": "An old southern temple whose Srivijaya-style pagoda is the town's landmark, with a shaded cloister around it", "th": "วัดเก่าแก่ของภาคใต้ มีพระบรมธาตุแบบศรีวิชัยเป็นจุดเด่น และมีระเบียงร่มรื่น" },
+          "why": { "en": "Free, flat and quiet, a short stop on the road between Surat Thani and Nakhon Si Thammarat", "th": "ฟรี พื้นเรียบ เงียบสงบ แวะสั้นๆ ระหว่างทางสุราษฎร์ธานี–นครศรีธรรมราช" },
+          "tip": { "en": "The separate Chaiya National Museum nearby has its own fee and days; check them first", "th": "พิพิธภัณฑสถานแห่งชาติไชยาที่อยู่ใกล้ๆ มีค่าเข้าและวันเปิดแยกต่างหาก เช็กก่อนไป" },
+          "ages": [1, 1, 1, 1],
+          "hrs": 1,
+          "io": "out",
+          "pram": "yes",
+          "price": { "en": "Free", "th": "ฟรี" },
+          "book": "none",
+          "q": "Wat Phra Borommathat Chaiya, Chaiya, Surat Thani",
+          "ok": "2026-11",
+          "src": "https://www.thaiholidayguide.com/attraction/wat-phra-borommathat-chaiya-ratchaworawihan/"
         }
       ]
     },
@@ -2424,6 +2549,24 @@
           "q": "Ruenrom Road night market, Trang",
           "ok": "2026-11",
           "src": "https://www.tourismthailand.org/Articles/https-www-tourismthailand-org-articles-beyond-the-beach-where-to-eat-travel-and-shop-at-in-trang"
+        },
+        {
+          "name": { "en": "Khao Chang Hai Cave", "th": "ถ้ำเขาช้างหาย" },
+          "local": "ถ้ำเขาช้างหาย",
+          "kind": "nature",
+          "area": { "en": "Na Yong (about 25 km from town)", "th": "นาโยง (ห่างตัวเมืองราว 25 กม.)" },
+          "what": { "en": "A lit, railed cave walk of about 500 metres and six chambers in a limestone hill, with no climbing or wading", "th": "เดินชมถ้ำหินปูนยาวราว 500 เมตร มีหกโถง มีราวกั้นและไฟส่อง ไม่ต้องปีนหรือลุยน้ำ" },
+          "why": { "en": "Smooth, well-kept paths and a short guided round of about 20 minutes suit families; it is cool and dry in the rain", "th": "ทางเรียบดูแลดี รอบนำชมสั้นราว 20 นาที เหมาะกับครอบครัว เย็นและหลบฝนได้" },
+          "tip": { "en": "Entry only on guided rounds: weekdays 09:00, 11:00, 13:30, 15:00; weekends and holidays six rounds", "th": "เข้าได้เฉพาะรอบนำชม วันธรรมดา 09:00, 11:00, 13:30, 15:00 วันเสาร์-อาทิตย์และวันหยุดมีหกรอบ" },
+          "ages": [1, 2, 2, 1],
+          "hrs": 1,
+          "io": "both",
+          "pram": "part",
+          "price": { "en": "≈ ฿50 a person (check)", "th": "≈ ฿50 ต่อคน (เช็กอีกครั้ง)" },
+          "book": "none",
+          "q": "Tham Khao Chang Hai, Na Yong, Trang",
+          "ok": "2026-11",
+          "src": "https://www.thaiholidayguide.com/attraction/tham-khao-chang-hai/"
         }
       ]
     },

@@ -166,6 +166,42 @@
           "q": "Sokcho Tourist and Fishery Market, Sokcho, Gangwon",
           "ok": "2026-11",
           "src": "https://www.aaa.com/tripcanvas/attraction/sokcho-tourist-%26-fishery-market-(jungang-market)-VA18524"
+        },
+        {
+          "name": { "en": "Ojukheon House and Gangneung Museum", "th": "โอจุกฮอน และพิพิธภัณฑ์เมืองคังนึง" },
+          "local": "오죽헌",
+          "kind": "culture",
+          "area": { "en": "Gangneung", "th": "คังนึง" },
+          "what": { "en": "A 16th-century scholar's house with a bamboo grove, a small museum and a currency exhibition hall on one ticket", "th": "บ้านโบราณอายุกว่า 500 ปี มีป่าไผ่ พิพิธภัณฑ์เล็กๆ และห้องแสดงเงินตราในตั๋วใบเดียว" },
+          "why": { "en": "Short flat paths and shady grounds; under-7s are free and the halls give a dry hour", "th": "ทางสั้นเรียบ ร่มรื่น เด็กต่ำกว่า 7 ปีเข้าฟรี และมีห้องในร่มให้หลบฝน" },
+          "tip": { "en": "Open daily 09:00–18:00, last entry 17:00; ask about the half-price day at the end of each month", "th": "เปิดทุกวัน 09:00–18:00 เข้าสุดท้าย 17:00 สอบถามส่วนลดครึ่งราคาปลายเดือน" },
+          "ages": [1, 2, 2, 1],
+          "hrs": 1.5,
+          "io": "both",
+          "pram": "yes",
+          "price": { "en": "≈ ₩3,000 adults · ₩2,000 teens · ₩1,000 children · under 7 free", "th": "≈ ₩3,000 ผู้ใหญ่ · ₩2,000 วัยรุ่น · ₩1,000 เด็ก · ต่ำกว่า 7 ปีฟรี" },
+          "book": "none",
+          "q": "Ojukheon, Gangneung, Gangwon",
+          "ok": "2026-11",
+          "src": "https://ojuk.gtdc.or.kr/en/"
+        },
+        {
+          "name": { "en": "Soyang River Skywalk", "th": "โซยางกัง สกายวอล์ก" },
+          "local": "소양강스카이워크",
+          "kind": "views",
+          "area": { "en": "Chuncheon", "th": "ชุนชอน" },
+          "what": { "en": "A short glass-floored walkway out over Soyang River with views of the lake and hills", "th": "ทางเดินพื้นกระจกสั้นๆ ยื่นออกไปเหนือแม่น้ำโซยางกัง เห็นวิวทะเลสาบและภูเขา" },
+          "why": { "en": "Quick and flat, with a free entry for preschoolers; a good stretch-your-legs stop after lunch", "th": "ใช้เวลาไม่นาน ทางเรียบ เด็กก่อนวัยเรียนเข้าฟรี เหมาะแวะเดินเล่นหลังมื้อกลางวัน" },
+          "tip": { "en": "Winter hours are 10:00–18:00; it can close in bad weather and tickets are bought on the day", "th": "ฤดูหนาวเปิด 10:00–18:00 ปิดได้เมื่อสภาพอากาศไม่ดี ซื้อตั๋วหน้างาน" },
+          "ages": [1, 2, 2, 1],
+          "hrs": 0.75,
+          "io": "out",
+          "pram": "yes",
+          "price": { "en": "≈ ₩2,000 (returned as a local gift voucher) · preschoolers free", "th": "≈ ₩2,000 (คืนเป็นบัตรกำนัลท้องถิ่น) · เด็กก่อนวัยเรียนฟรี" },
+          "book": "none",
+          "q": "Soyanggang Skywalk, Chuncheon, Gangwon",
+          "ok": "2026-11",
+          "src": "https://mom-mom.net/en/travel/places/6450c208806baefe6047ecb4"
         }
       ]
     },
@@ -520,12 +556,47 @@
           "q": "Deokjin Park, Gwonsamdeuk-ro, Deokjin-gu, Jeonju",
           "ok": "2026-11",
           "src": "https://koreatriptips.com/en/tourist-attractions/264423.html"
+        },
+        {
+          "name": { "en": "Hayan Yangokjip", "th": "ฮายัน ยังกกจิบ" },
+          "local": "하얀양곡집",
+          "kind": "culture",
+          "area": { "en": "Hanok Village", "th": "หมู่บ้านฮันอก" },
+          "what": { "en": "A free cultural complex of hanok halls with exhibitions and quiet courtyards inside Jeonju Hanok Village", "th": "อาคารฮันอกของหมู่บ้านฮันอกที่เข้าชมฟรี มีนิทรรศการและลานโปร่งสงบ" },
+          "why": { "en": "Free, indoors and calm, so it gives children a rest between the busy lanes", "th": "เข้าฟรี อยู่ในร่ม เงียบสงบ เหมาะให้เด็กพักจากตรอกที่คนเยอะ" },
+          "tip": { "en": "Open Tuesday–Sunday 10:00–18:00 and closed every Monday", "th": "เปิดวันอังคาร–อาทิตย์ 10:00–18:00 ปิดทุกวันจันทร์" },
+          "ages": [1, 1, 2, 1],
+          "hrs": 1,
+          "io": "both",
+          "pram": "part",
+          "price": { "en": "Free", "th": "ฟรี" },
+          "book": "none",
+          "q": "Hayan Yangokjip, Jeonju Hanok Village, Jeonju",
+          "ok": "2026-11",
+          "src": "https://www.trvlogue.com/en/jeonju-hanok-village-hayan-yangokjip"
+        },
+        {
+          "name": { "en": "Jeonju Nanjang retro museum", "th": "พิพิธภัณฑ์ย้อนยุคจอนจู นันจัง" },
+          "local": "전주난장",
+          "kind": "museum",
+          "area": { "en": "Hanok Village", "th": "หมู่บ้านฮันอก" },
+          "what": { "en": "A small indoor museum of old Korean toys, school rooms and shops from the last century", "th": "พิพิธภัณฑ์ในร่มขนาดเล็ก รวมของเล่น ห้องเรียน และร้านค้าเก่าของเกาหลี" },
+          "why": { "en": "Colourful old toys and dress-up corners hold children's attention for a dry hour", "th": "ของเล่นเก่าสีสดและมุมแต่งตัวช่วยดึงความสนใจเด็กได้ราวหนึ่งชั่วโมงในร่ม" },
+          "tip": { "en": "Small rooms, so go early; prices in blogs differ, so check at the door", "th": "ห้องเล็ก ควรไปเช้า ราคาในบล็อกต่างกัน เช็กที่หน้างาน" },
+          "ages": [0, 2, 2, 1],
+          "hrs": 1,
+          "io": "in",
+          "pram": "no",
+          "price": { "en": "Check the price", "th": "เช็กราคาก่อนไป" },
+          "book": "none",
+          "q": "Jeonju Nanjang, Hanok Village, Jeonju",
+          "ok": "2026-11",
+          "src": "https://www.trvlogue.com/en/jeonju-nanjang-retro-museum"
         }
       ]
     },
     {
       "place": "kr-suwon",
-      "thin": true,
       "sights": [
         {
           "name": { "en": "Hwaseong Haenggung Palace", "th": "พระราชวังฮวาซอง แฮงกุง" },
@@ -778,6 +849,42 @@
           "q": "National Agricultural Museum, Gwonseon-gu, Suwon",
           "ok": "2026-11",
           "src": "https://mom-mom.net/en/travel/places/63ad2600356e0caa7ac3b7db"
+        },
+        {
+          "name": { "en": "Aqua Planet Gwanggyo", "th": "อควาแพลนเน็ต ควางกโย" },
+          "local": "아쿠아플라넷 광교",
+          "kind": "aquarium",
+          "area": { "en": "Gwanggyo", "th": "ควางกโย" },
+          "what": { "en": "A large indoor aquarium in the Gwanggyo AK Plaza mall, with a sea tunnel, otters and a penguin area", "th": "อควาเรียมในร่มขนาดใหญ่ในห้างควางกโย มีอุโมงค์ใต้ทะเล นากน้ำ และโซนเพนกวิน" },
+          "why": { "en": "Stroller-friendly, with a nursing room inside, and children under 36 months enter free", "th": "รถเข็นเข้าได้ มีห้องให้นมข้างใน และเด็กอายุต่ำกว่า 36 เดือนเข้าฟรี" },
+          "tip": { "en": "Open 10:30 to 19:30, last entry 18:30; booking online is often cheaper", "th": "เปิด 10:30-19:30 เข้าได้ถึง 18:30 จองออนไลน์มักถูกกว่า" },
+          "ages": [2, 2, 2, 1],
+          "hrs": 2.5,
+          "io": "in",
+          "pram": "yes",
+          "price": { "en": "Check the price", "th": "เช็กราคาก่อนไป" },
+          "book": "rec",
+          "q": "Aqua Planet Gwanggyo, AK Plaza, Yeongtong-gu, Suwon",
+          "ok": "2026-11",
+          "src": "https://www.trvlogue.com/en/gwanggyo-aqua-planet-tickets"
+        },
+        {
+          "name": { "en": "Hwaseong Traditional Archery at Yeonmudae", "th": "ยิงธนูแบบดั้งเดิมที่ยอนมูแด" },
+          "local": "연무대 국궁체험",
+          "kind": "show",
+          "area": { "en": "Yeonmudae, Hwaseong", "th": "ยอนมูแด ฮวาซอง" },
+          "what": { "en": "A chance to shoot ten arrows with a traditional Korean bow at the old drill ground of the fortress", "th": "ลองยิงธนูเกาหลีแบบดั้งเดิม 10 ดอกที่ลานฝึกทหารเก่าของป้อมฮวาซอง" },
+          "why": { "en": "Fun for children who can follow instructions with a grown-up beside them; younger ones can watch", "th": "สนุกสำหรับเด็กที่ทำตามคำสั่งได้โดยมีผู้ใหญ่ดูแล เด็กเล็กดูได้" },
+          "tip": { "en": "Does not run in rain or snow; hours 9:30 to 17:30 March to October, to 17:00 November to February", "th": "ไม่เปิดเมื่อฝนหรือหิมะตก เวลา 9:30-17:30 มีนาคมถึงตุลาคม และถึง 17:00 พฤศจิกายนถึงกุมภาพันธ์" },
+          "ages": [0, 1, 2, 2],
+          "hrs": 1,
+          "io": "out",
+          "pram": "part",
+          "price": { "en": "≈ ₩3,000 for ten arrows", "th": "≈ ₩3,000 ต่อ 10 ดอก" },
+          "book": "none",
+          "q": "Yeonmudae, Hwaseong Fortress, Suwon",
+          "ok": "2026-11",
+          "src": "https://swcf.or.kr/english/?p=13"
         }
       ]
     }

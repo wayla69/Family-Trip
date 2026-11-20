@@ -93,3 +93,4 @@ nightlife, and religious sites that ask visitors to keep away.
   Nymphenburg €16, Arctic Snow Hotel €35/€17 from 15 December, Gullfoss free, Lake Braies 2026 parking); 75 prices that rested on old
   or undated pages became "Check the price". Most "wrong town" flags were false: the library's towns are regions (Heidelberg and the
   Black Forest, Buenos Aires and Iguazú, Toronto and Niagara, Santiago and Valparaíso, Seville and Granada, Paro–Thimphu–Punakha).
+- **20 Nov 2026, thin towns round 1** (owner: "เติมที่เที่ยวให้ 97 เมืองที่ยังบาง"): 25 towns of Japan, Korea, Taiwan, Vietnam, Malaysia and Thailand, +36 sights; Suwon, Tainan–Kaohsiung (tw-south) and Da Lat reach 15 and are no longer thin (94 left). The session could not open most sites (its network allows few hosts), so every row rests on search results; prices no result showed are "Check the price".
