@@ -4002,3 +4002,9 @@ details.more>summary{border-radius:16px}
 .ppbook.inkid>.ppbody>.kidguide{margin-bottom:12px}
 @media (prefers-color-scheme:dark){:root:not([data-theme=light]) .ppbook .grtx small{color:color-mix(in srgb,var(--ink) 75%,var(--g1))}}
 :root[data-theme=dark] .ppbook .grtx small{color:color-mix(in srgb,var(--ink) 75%,var(--g1))}
+/* how to use the app (#/help, views.js viewHelp): the settings pages' cards, one job a card */
+.helptoc{margin:4px 0 14px}.helptoc .chip{min-height:44px}
+.helpl{margin:0;padding:0 0 0 20px;display:grid;gap:8px;line-height:1.55}
+.helpl li::marker{color:color-mix(in srgb,var(--g1) 70%,var(--ink))}
+.hwho{display:inline-block;margin-left:8px;padding:2px 10px;border-radius:999px;font-size:12px;font-weight:600;vertical-align:middle;background:color-mix(in srgb,var(--g1) 16%,var(--card));color:color-mix(in srgb,var(--g1) 55%,var(--ink))}
+.helpc{scroll-margin-top:72px}

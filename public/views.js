@@ -23,7 +23,7 @@ function curTrip() {
 
 function render() {
   const app = $('#app');
-  if (!S) { app.innerHTML = route().parts[0] === 'privacy' ? `<main class="wrap">${viewPrivacy()}</main>` : loginView(); document.documentElement.style.cssText = ''; return; }
+  if (!S) { app.innerHTML = route().parts[0] === 'privacy' ? `<main class="wrap">${viewPrivacy()}</main>` : route().parts[0] === 'help' ? `<main class="wrap">${viewHelp()}</main>` : loginView(); document.documentElement.style.cssText = ''; return; }
   const r = route(), p = r.parts;
   let t = null, html;
   // kid mode is "locked": while it is on, every route leads back to it (a grown-up holds the lock to leave)
@@ -122,6 +122,7 @@ function render() {
   else if (p[0] === 'family' && isEditor()) html = viewFamily();
   else if (p[0] === 'start' && isEditor()) html = viewStart(p);
   else if (p[0] === 'privacy') html = viewPrivacy();
+  else if (p[0] === 'help') html = viewHelp();
   else if (p[0] === 'emoji' && isEditor()) html = viewEmoji();
   else if (p[0] === 'snaptest' && isEditor()) html = viewSnapTest();
   else if (p[0] === 'health' && isEditor()) html = viewHealth();
@@ -281,7 +282,7 @@ ${BRAND && BRAND.passkey && window.PublicKeyCredential ? `<button type="button" 
 <div class="row lgo"><button class="btn" type="submit">${L('เข้าสมุด', 'Open the shelf')}</button>
 <span class="row" style="gap:8px">${langSeg()}<button type="button" class="ibtn fsb" data-a="fs" data-l="${+ls('fs') || 0}" aria-label="${L('ขนาดตัวอักษร', 'Text size')}">Aa</button></span></div>
 <div class="err" id="lerr" role="alert"></div>
-<p class="label" style="margin-top:6px"><a href="#/privacy">${L('ความเป็นส่วนตัวและข้อมูลของคุณ', 'Privacy and your data')}</a> · ${L('ใส่รหัสครั้งเดียว เครื่องนี้จำไว้ · ญาติใช้รหัสจากพ่อแม่ แล้วพิมพ์ชื่อที่ "ชื่ออื่น"', "Enter the PIN once — this phone remembers it · Relatives use the view-only PIN from Mum or Dad and type their name under “Other name”")}</p></form></div>`;
+<p class="label" style="margin-top:6px"><a href="#/help">${L('คู่มือใช้งาน', 'How to use it')}</a> · <a href="#/privacy">${L('ความเป็นส่วนตัวและข้อมูลของคุณ', 'Privacy and your data')}</a> · ${L('ใส่รหัสครั้งเดียว เครื่องนี้จำไว้ · ญาติใช้รหัสจากพ่อแม่ แล้วพิมพ์ชื่อที่ "ชื่ออื่น"', "Enter the PIN once — this phone remembers it · Relatives use the view-only PIN from Mum or Dad and type their name under “Other name”")}</p></form></div>`;
 }
 
 /* ---------- shelf ---------- */
@@ -326,6 +327,7 @@ ${isEditor() ? tasteCard() : ''}
 ${isEditor() ? `<a class="nbcard eatlibcard" href="#/eats"><span class="emb">${hubIc('eat')}</span><div><b>${L('คลังร้านอาหาร', 'Places to eat — our library')}</b><small>${L('ร้านจากทุกเล่ม และร้านที่ผู้ช่วยหาแล้วเช็กกับเว็บ — ไว้วางแผนทริปหน้า', 'The places from every book, and ones the helper found and checked — for planning the next trip')}</small></div><span class="arrow">›</span></a>` : ''}
 ${isEditor() ? `<a class="nbcard explorecard" href="#/explore"><span class="emb">${hubIc('plan')}</span><div><b>${L('สำรวจเมือง', 'Explore a town')}</b><small>${L('ที่เที่ยวที่เช็กกับเว็บแล้ว เหมาะกับอายุลูก ร้านอาหาร และที่ที่เราอยากไป', 'Things to do checked on the web, for our children’s ages, places to eat and our wish list')}</small></div><span class="arrow">›</span></a>` : ''}
 ${isEditor() ? backupCard() : ''}
+<a class="nbcard helpcard" href="#/help"><span class="emb">${hubIc('manual')}</span><div><b>${L('คู่มือใช้งาน', 'How to use the app')}</b><small>${L('ทีละเรื่อง: เริ่มใช้ ระหว่างทริป พาสปอร์ต โหมดเด็ก ญาติ', 'One job at a time: starting, on the trip, the passport, kid mode, the family')}</small></div><span class="arrow">›</span></a>
 ${dispCard()}
 ${isEditor() ? `<div class="part">${L('ตั้งค่า', 'Settings')} <img class="partpic" src="/art/hub/settings.webp" alt=""></div>
 <nav class="setlist">
@@ -2667,6 +2669,85 @@ ${S.trips.some((t) => t.id === 'sakura-hop-2028') ? '' : `<button type="button" 
 <li>○ ${L('รหัสญาติ ตั้งหรือแก้ได้ที่ เมนู › ญาติ', 'Relatives’ PIN: set or change it under Menu › Relatives')}</li></ul>`;
   }
   return `<section class="onb">${head}${body}</section>`;
+}
+
+/* ---------- how to use the app (#/help): readable before sign-in, for parents and relatives alike ----------
+   Owner, Nov 2026: "มีคู่มือใช้งานไหม" → "ทำหมดเลย". One page in the settings pages' look (pageHead + pcard), a card a job in the order a
+   family meets them; each card says who it is for; the chips at the top jump to a card (A.jump takes a selector). Plain words from the
+   Thai glossary — no developer words. A new feature a parent or relative uses gets its line here. */
+const HELP = [
+  ['start', 'settings', PG.blue, ['เริ่มใช้', 'Getting started'], 'all', [
+    ['เปิดลิงก์ของแอป พิมพ์ชื่อตัวเอง แล้วกดรหัส แอปเข้าเองเมื่อกดตัวสุดท้าย', 'Open the app’s link, type your name, then tap in the code — it signs in by itself at the last digit'],
+    ['พ่อแม่ใช้รหัสครอบครัว ญาติใช้รหัสหรือลิงก์ที่พ่อแม่ส่งให้ (ดูได้อย่างเดียว)', 'Parents use the family code; relatives use the code or link Mum or Dad sent (view only)'],
+    ['ใส่ไอคอนบนหน้าจอ: iPhone กดปุ่มแชร์ › “เพิ่มไปยังหน้าจอโฮม” · Android กดเมนู ⋮ › “ติดตั้งแอป”', 'Add it to the home screen: on an iPhone tap Share › “Add to Home Screen” · on Android tap ⋮ › “Install app”'],
+    ['เปิดการเตือนเมื่อแอปถาม (iPhone เตือนได้เฉพาะตอนเปิดจากไอคอนบนหน้าจอ)', 'Switch reminders on when the app asks (an iPhone sends them only from the home-screen icon)'],
+    ['ภาษาไทย/English และขนาดตัวอักษร เปลี่ยนได้ที่การ์ด “ภาษาและตัวอักษร” บนชั้นหนังสือ', 'Thai/English and the text size are on the shelf’s “Language and text” card']]],
+  ['shelf', 'shelf', PG.orange, ['ชั้นหนังสือและเมนูเล่ม', 'The shelf and a book’s menu'], 'all', [
+    ['หนึ่งทริปคือหนึ่งเล่ม แตะปกเพื่อเปิดเมนูของเล่ม', 'One trip is one book — tap a cover to open its menu'],
+    ['เมนูเป็นกล่องตามหัวข้อ: วันนี้ แผนทั้งทริป ที่พัก ฉุกเฉิน เตรียมตัว เรียนรู้ สมุดความทรงจำ', 'The menu is a box a topic: Today, the whole plan, stays, emergency, get ready, learn, the memory book'],
+    ['แถบล่างของพ่อแม่: เมนู · วันนี้ · บันทึก · ร้านอาหาร · โหมดเด็ก', 'The parents’ bar: Menu · Today · Record · Eat · Kid mode'],
+    ['ทุกรายงานมีสองแบบ “สรุป” และ “เต็ม” สลับได้ที่หัวหน้า', 'Every report comes in two versions, short and full — switch at the top'],
+    ['ปุ่มค้นหาที่มุมบนหาได้ทั้งเล่ม พิมพ์ผิดนิดหน่อยก็ยังเจอ', 'The search at the top finds anything in the book, even with a small typo']]],
+  ['before', 'today', PG.teal, ['ก่อนเดินทาง', 'Before you go'], 'parents', [
+    ['หน้า “เตรียมตัว” มีรายการของที่ต้องจัด เอกสารที่ต้องพร้อม และวีซ่า ติ๊กได้ในเครื่อง', 'The “Get ready” page has the packing list, the papers to have ready and the visa — tick them on your phone'],
+    ['กด “เก็บเล่มไว้ในเครื่อง” ก่อนบิน แล้วจะเปิดได้แม้ไม่มีเน็ต', 'Tap “Keep this book on the phone” before the flight, so it opens with no signal'],
+    ['เด็กๆ เปิดประตูนับวันถอยหลังได้วันละบาน และช่วยจัดกระเป๋าในโหมดเด็ก', 'The children open one countdown door a day and help pack in kid mode']]],
+  ['today', 'today', PG.blue, ['ระหว่างทริป: หน้าวันนี้', 'On the trip: Today'], 'all', [
+    ['แอปเปิดที่หน้าวันนี้เอง บนสุดบอกว่าต่อไปทำอะไร แตะขั้นตอนเพื่อดูรายละเอียด', 'The app opens on Today by itself; the top says what is next — tap a step for its details'],
+    ['ปุ่มหมุดข้างชื่อสถานที่เปิดแผนที่นำทาง', 'The pin beside a place’s name opens directions in Maps'],
+    ['“กระเป๋าวันนี้” ติ๊กตอนเช้า มีร่มให้เองถ้าพยากรณ์บอกว่าฝนจะตก', '“Today’s bag” is ticked in the morning — an umbrella appears by itself when rain is forecast'],
+    ['หน้าร้านอาหารบอกร้านของแต่ละมื้อ และร้านใกล้ที่พักคืนนี้', 'The eat page gives each meal’s place and places near tonight’s bed'],
+    ['หน้าฉุกเฉิน: เบอร์โทร ที่อยู่คืนนี้ และ “การ์ดเด็กหลง” ไว้ตั้งเป็นภาพหน้าจอล็อกของเด็ก', 'Emergency: the numbers, tonight’s address and a lost-child card to set as the child’s lock screen']]],
+  ['record', 'pencil', PG.pink, ['บันทึกตอนเย็น', 'Recording the day'], 'parents', [
+    ['กด “บันทึก” ที่แถบล่าง แต่ละขั้นเป็นหน้าของมันเอง: รูป คำพูด อารมณ์ โน้ตและครั้งแรก ที่ไปและค่าใช้จ่าย', 'Tap Record on the bar — a page a step: photos, words, mood, note and firsts, places and spending'],
+    ['รูปแปะตามจุดได้: แตะชิปชื่อสถานที่ แล้วเลือกรูป รูปซ้ำจะถูกถามก่อนส่ง', 'Photos by spot: tap a place’s chip, then pick photos — a copy of one already in the book is asked about first'],
+    ['คำพูดของลูกจดไว้ตามคำที่พูดจริง อัดเสียงได้ไม่เกิน 30 วินาที', 'Write the children’s words as they said them; record a voice up to 30 seconds'],
+    ['สามทุ่มครึ่งมีเตือนให้บันทึก ถ้าเปิดผู้ช่วยไว้ กด “ทำทั้งหมดในครั้งเดียว” ให้ผู้ช่วยสรุปวันและแต่งนิทาน', 'At 21:30 a reminder comes; with the helper on, “Do it all in one go” writes the day’s summary and a story'],
+    ['กด “จบวันนี้” แล้ววันนั้นจะได้ตราประทับในพาสปอร์ต', 'Tap “Mark day done” and the day gets its stamp in the passport']]],
+  ['passport', 'passport', PG.gold, ['พาสปอร์ตนักผจญภัย', 'The adventure passport'], 'all', [
+    ['ลูกแต่ละคนมีพาสปอร์ตเล่มเดียว เปิดจากการ์ดบนชั้นหนังสือ', 'Each child has one passport — open it from the shelf’s cards'],
+    ['เปิดทีละหน้า: ปก บัตรนักสำรวจ วีซ่าทุกทริป ภารกิจ แผนที่ รายการ สติกเกอร์ ถ้วยรางวัล ใบประกาศ', 'A page at a time: cover, Explorer ID, a visa for every trip, missions, map, lists, stickers, trophies, certificate'],
+    ['เปลี่ยนหน้าด้วยแท็บด้านบน ปุ่ม ‹ › ด้านล่าง หรือปัดจอ', 'Turn pages with the tabs at the top, ‹ › at the foot, or a swipe'],
+    ['พ่อแม่กด ✏️ เพื่อกรอกบัตรนักสำรวจ ติ๊กภารกิจ และรายการ', 'Parents tap ✏️ to fill in the Explorer ID, tick missions and lists'],
+    ['ส่วนสูงกรอกที่บัตรนักสำรวจของแต่ละเล่มที่เดียว แล้วเส้นการเติบโตขึ้นเองเมื่อมีสองทริป', 'The height is typed in each book’s Explorer ID only — the growth line appears once two trips have one'],
+    ['ใบประกาศมาเองในวันสุดท้าย ไม่ต้องติ๊กให้ครบ', 'The certificate comes by itself on the last day — nothing to complete'],
+    ['ปุ่ม “พิมพ์” โหลดสมุดความทรงจำเป็น PDF ซึ่งมีหน้าพาสปอร์ตของลูกทุกคน', '“Print” downloads the memory book as a PDF, with every child’s passport pages']]],
+  ['kid', 'kid', PG.purple, ['โหมดเด็ก', 'Kid mode'], 'parents', [
+    ['กด “โหมดเด็ก” ที่แถบล่าง แล้วเลือกลูก หน้าจอจะล็อกไว้ให้เด็กเล่น', 'Tap Kid mode on the bar and pick a child — the screen is locked for them'],
+    ['ออกจากโหมดเด็ก: กดค้างที่รูปกุญแจมุมบนประมาณหนึ่งวินาที', 'To leave: press and hold the lock in the top corner for about a second'],
+    ['มีเกมฝึกเชาว์หลายด่าน แผนที่ผจญภัย ระบายสี วาดรูป และนิทานก่อนนอน ทุกปุ่มอ่านออกเสียง', 'Thinking games with levels, the adventure map, colouring, drawing and a bedtime story — every button reads itself aloud'],
+    ['ปุ่ม 🛂 ⭐ 🏆 เปิดพาสปอร์ตเล่มเดียวกับของพ่อแม่ ตอนเย็นมีป้ายชวนปั๊มตราวันนี้ก่อนนอน', '🛂 ⭐ 🏆 open the same passport the parents see; in the evening a banner asks to stamp today before bed'],
+    ['ล้างด่านของเกมหรือโถดาว: ผู้ใหญ่กดค้าง 1.5 วินาที', 'To start a game’s levels or the star jar again: a grown-up presses and holds for 1.5 seconds']]],
+  ['relatives', 'relatives', PG.cyan, ['สำหรับญาติ', 'For the family'], 'all', [
+    ['ญาติเปิดดูได้ทุกเล่มที่พ่อแม่เลือกให้ ดูอย่างเดียว แก้ไม่ได้', 'Relatives see the books the parents chose for them — to look at, not to change'],
+    ['ส่งหัวใจและข้อความสั้นๆ ถึงเด็กๆ ได้จากหน้าหัวใจ เด็กจะได้ยินในโหมดเด็ก', 'Send hearts and a short note to the children from the hearts page — they hear it in kid mode'],
+    ['เขียนข้อความใต้รูปได้เมื่อเปิดรูปเต็มจอ', 'Write a note under a photo when it is open full screen'],
+    ['ส่งรูปให้พ่อแม่ได้ รูปจะรอให้พ่อแม่กดใส่ในเล่มก่อน', 'Send photos to Mum and Dad — they wait until the parents put them in the book'],
+    ['เปิดการเตือนไว้ แล้วตอนค่ำจะรู้เมื่อมีรูปใหม่ของวันนี้', 'Switch reminders on to hear in the evening when today has new photos']]],
+  ['after', 'book', PG.lime, ['หลังจบทริป', 'After the trip'], 'parents', [
+    ['สมุดความทรงจำรวมรูป คำพูด ครั้งแรก และนิทานไว้เป็นวัน', 'The memory book holds the photos, words, firsts and stories day by day'],
+    ['ท้ายสมุดมี PDF ขนาด A4 และ A5 เลือกปกและวัยของเล่มได้', 'At the foot of the book: a PDF in A4 or A5; choose the cover and the age the book is written for'],
+    ['กด “ทำคลิปสรุปทริป” ได้คลิปแนวตั้งพร้อมเพลง ส่งต่อได้เลย', '“Make the trip film” gives a portrait film with music, ready to share'],
+    ['“เก็บเล่มเป็นไฟล์เดียว” โหลดไฟล์ที่มีรูปและคำพูดทั้งเล่ม เปิดได้โดยไม่ต้องมีแอป', '“Keep the book as one file” downloads one file with every photo and word, which opens without the app'],
+    ['ทริปที่ไม่ได้วางแผนไว้ ทำ “เล่มจากรูป” ได้ที่การ์ดเล่มใหม่บนชั้นหนังสือ', 'A trip you did not plan: make “A book from photos” from the shelf’s New book card']]],
+  ['offline', 'offline', PG.teal, ['ตอนไม่มีเน็ต', 'With no signal'], 'all', [
+    ['เล่มที่เก็บไว้ในเครื่อง พาสปอร์ต และโหมดเด็ก เปิดได้ทั้งหมด', 'A book kept on the phone, the passports and kid mode all open'],
+    ['รูปและข้อความที่บันทึกตอนไม่มีเน็ต รออยู่ในเครื่อง แล้วส่งเองเมื่อมีสัญญาณ', 'Photos and words recorded with no signal wait on the phone and go by themselves once there is signal'],
+    ['ตั้ง “ส่งรูปและเสียงเฉพาะตอนต่อ Wi-Fi” ได้ในหน้าใช้ตอนไม่มีเน็ต ข้อความยังส่งทันที', 'Set “Send photos and voice clips on Wi-Fi only” on the no-signal page — words still go at once']]],
+  ['trouble', 'checkphone', PG.orange, ['ถ้ามีปัญหา', 'If something is wrong'], 'all', [
+    ['ยังเห็นหน้าเก่าหลังแอปอัปเดต: ปิดแอปแล้วเปิดใหม่ 1–2 ครั้ง', 'Still seeing the old version after an update: close the app and open it again once or twice'],
+    ['ไม่มีเสียงบน iPad: ลองแตะปุ่มอีกครั้ง เสียงจะเล่นหลังการแตะครั้งแรก', 'No sound on an iPad: tap the button once more — sound plays after the first tap'],
+    ['พ่อแม่: “ตรวจเครื่องนี้” ในรายการตั้งค่าบอกว่ารูป คลิป และการแชร์ใช้ได้ไหม', 'Parents: “Check this phone” in the settings list says whether photos, clips and sharing work'],
+    ['มือถือหาย: พ่อแม่ให้เครื่องนั้นออกจากระบบได้ที่ “มือถือที่เข้าระบบ”', 'A lost phone: the parents sign it out from “Phones signed in”']]],
+];
+function viewHelp() {
+  const who = (w) => (w === 'parents' ? `<span class="hwho">${L('พ่อแม่', 'Parents')}</span>` : '');
+  const cards = HELP;   // everyone reads every card; the parents' jobs carry a tag
+  return `<article class="helppg">${pageHead('manual', PG.purple, L('คู่มือ', 'Guide'), L(`ใช้ ${esc(appName())} ยังไง`, `How to use ${esc(appName())}`), L('ทีละเรื่อง ตามลำดับที่ครอบครัวได้ใช้ แตะหัวข้อเพื่อไปที่เรื่องนั้น', 'One job at a time, in the order a family meets them — tap a topic to go to it'))}
+<nav class="row chips helptoc" aria-label="${L('หัวข้อ', 'Topics')}">${cards.map(([k, , , t]) => `<button type="button" class="chip" data-a="jump" data-v="#help-${k}">${L(t[0], t[1])}</button>`).join('')}</nav>
+${cards.map(([k, pic, g, t, w, rows]) => pcard(pic, g, `${L(t[0], t[1])}${who(w)}`, `<ul class="helpl">${rows.map(([th, en]) => `<li>${L(th, en)}</li>`).join('')}</ul>`, 'helpc', `help-${k}`)).join('')}
+<p class="muted small">${L('อ่านเรื่องข้อมูลส่วนตัวได้ที่', 'About your data:')} <a href="#/privacy">${L('ความเป็นส่วนตัวและข้อมูลของคุณ', 'Privacy and your data')}</a></p>
+${S ? '' : `<p><a class="btn" href="#/">${L('ไปหน้าเข้าใช้', 'Go to sign in')}</a></p>`}</article>`;
 }
 
 /* ---------- privacy and your data (#/privacy): readable before sign-in; the erase box for editors ----------

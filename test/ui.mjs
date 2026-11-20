@@ -87,6 +87,14 @@ const T = 'hk-macau-2026';
     'shelf: every way to a new book sits in the new-book tile; family and relatives in one settings list; sign out on its own');
   ok(await page.locator('.setlist > a .e.pic img').count() === await page.locator('.setlist > a').count() && await page.locator('.setlist a[href="#/family"] img[src$="/art/hub/family.webp"]').count() === 1
     && await page.locator('.setlist a[href="#/viewers"] img[src$="/art/hub/relatives.webp"]').count() === 1, 'settings list: each row has its own picture (family, emoji, relatives)');
+  { // how to use the app (#/help): a card on the shelf for everyone, a card a job, the topics jump to their card
+    ok(await page.locator('a.helpcard[href="#/help"]').count() === 1, 'shelf: a card for the guide');
+    await page.goto(`${BASE}/#/help`); await page.waitForSelector('.helppg .helpc');
+    const hp = await page.evaluate(() => ({ cards: document.querySelectorAll('.helpc').length, toc: document.querySelectorAll('.helptoc [data-a="jump"]').length, tag: document.querySelectorAll('.helpc .hwho').length, sx: document.documentElement.scrollWidth > innerWidth + 1 }));
+    await page.click('.helptoc [data-v="#help-kid"]'); await page.waitForTimeout(300);
+    const top = await page.evaluate(() => Math.round(document.querySelector('#help-kid').getBoundingClientRect().top));
+    ok(hp.cards === 11 && hp.toc === 11 && hp.tag >= 4 && !hp.sx && top >= 0 && top < 200, `guide: eleven topics, the parents' jobs tagged, a topic chip jumps to its card (${JSON.stringify({ ...hp, top })})`);
+    await page.goto(`${BASE}/#/`); await page.waitForSelector('.shelf'); }
   { // owner, Nov 2026: four rows wore the same gear — every settings row, shelf card and new-book way has a picture of its own
     const pics = await page.$$eval('.setlist:not(.disp) > a .e.pic img', (xs) => xs.map((x) => x.getAttribute('src')));
     const cards = await page.$$eval('a.nbcard .emb', (xs) => xs.map((x) => !!x.querySelector('img')));
@@ -2757,6 +2765,10 @@ const T = 'hk-macau-2026';
   ok(await page.locator('.privacy .pvsec a[href*="Barking_of_a_dog"]').count() === 1 && await page.locator('.privacy .pvsec a[href*="by-sa/3.0"]').count() === 1, 'the privacy page credits the dog\'s bark (CC BY-SA: author, source and licence)');
   await page.goto(`${BASE}/#/`); await page.waitForSelector('#lcode');
   ok(await page.locator('.login a[href="#/privacy"]').count() === 1, 'the login page links to it');
+  ok(await page.locator('.login a[href="#/help"]').count() === 1, 'the login page links to the guide');
+  await page.goto(`${BASE}/#/help`); await page.waitForSelector('.helppg');
+  ok(await page.locator('.helpc').count() === 11 && await page.locator('.helppg a.btn[href="#/"]').count() === 1 && await page.locator('#lcode').count() === 0, 'signed out: the guide reads in full, with a way back to sign in');
+  await page.goto(`${BASE}/#/`); await page.waitForSelector('#lcode');
   await login(page);
   await page.goto(`${BASE}/#/privacy`); await page.waitForSelector('.pverase');
   ok(await page.locator('[data-a="erase"]').isDisabled() && await page.locator('.setlist a[href="#/privacy"]').count() === 0, 'editor: the erase box, its button off until the app name is typed');
