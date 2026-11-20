@@ -508,8 +508,22 @@ const FOOD_GAME = new Set(['banana', 'apple', 'carrot', 'watermelon', 'strawberr
   'greenapple', 'pumpkin', 'pear', 'pineapple', 'kiwi', 'potato', 'onion', 'pepper', 'greens', 'mushroom', 'icecream', 'chocolate', 'sweet', 'lollipop'].map((n) => 'game/' + n));
 // a dish may name its own picture (a list item's `art: "food/lamington"`): an emoji is too coarse for a real dish — 🍰 drew a cream slice for the lamington,
 // 🥧 a custard tart for the meat pie (owner, Nov 2026: "Lamington ไม่ใช่เค้กแบบนั้น"). The emoji's picture is the fallback.
-const foodArt = (e, art) => { if (/^food\/[a-z0-9-]+$/.test(art || '')) return `/art/${art}.webp`; const a = GAME_ART[String(e || '').replace(/\uFE0F/g, '')]; return a && (a.startsWith('food/') || FOOD_GAME.has(a)) ? `/art/${a}.webp` : ''; };
-const gFood = (e, art) => { const a = foodArt(e, art); return a ? `<img class="ge" src="${a}" alt="">` : esc(e || ''); };
+// a dish's own picture by its name (either language), for a book that names no `art`: an emoji is too coarse (🍜 is any noodles)
+const DISH_ART = [[/takoyaki|ทาโกะยากิ/i, 'takoyaki'], [/okonomiyaki|โอโคโนมิยากิ/i, 'okonomiyaki'], [/taiyaki|ไทยากิ/i, 'taiyaki'], [/tempura|เทมปุระ/i, 'tempura'],
+  [/tonkatsu|ทงคัตสึ/i, 'tonkatsu'], [/matcha.*(soft|ice|cone)|(soft.?serve|ice cream).*matcha|ไอศกรีมชาเขียว|ซอฟต์ครีมชาเขียว/i, 'matchacone'],
+  [/bibimbap|บิบิมบับ/i, 'bibimbap'], [/kimbap|gimbap|คิมบับ/i, 'kimbap'], [/tteokbokki|ต็อกบกกี/i, 'tteokbokki'], [/hotteok|โฮต็อก/i, 'hotteok'],
+  [/korean fried chicken|ไก่ทอดเกาหลี/i, 'friedchicken'], [/japchae|จับแช/i, 'japchae'], [/beef noodle|บะหมี่เนื้อ/i, 'beefnoodle'],
+  [/scallion pancake|spring onion pancake|แพนเค้กต้นหอม/i, 'scallionpancake'], [/gua ?bao|กัวเปา/i, 'guabao'], [/xiao ?long ?bao|เสี่ยวหลงเปา/i, 'xiaolongbao'], [/\bpho\b|phở|เฝอ/i, 'pho'],
+  [/ramen|ราเมง/i, 'ramen'], [/egg ?tart|ทาร์ตไข่/i, 'eggtart'], [/egg ?waffle|eggette|gai daan jai|วาฟเฟิลไข่|ขนมไข่ฮ่องกง/i, 'eggwaffle'], [/wonton|บะหมี่เกี๊ยว|เกี๊ยวกุ้ง/i, 'wonton'],
+  [/fish ?balls?|ลูกชิ้นปลา/i, 'fishball'], [/chicken rice|ข้าวมันไก่/i, 'chickenrice'], [/laksa|ลักซา/i, 'laksa'], [/kaya|สังขยาใบเตย|ขนมปังกายา/i, 'kayatoast'],
+  [/roti (canai|prata)|โรตีแกง|โรตีจิ้มแกง|โรตีคาไน/i, 'roticanai'], [/nasi lemak|นาซิเลอมัก/i, 'nasilemak'], [/b[aá]nh m[iì]|บั๋นหมี่|บานหมี่/i, 'banhmi'],
+  [/summer rolls?|fresh spring rolls?|g[oỏ]i cu[oố]n|ปอเปี๊ยะสด|ปอเปี๊ยะญวน/i, 'goicuon'], [/b[aá]nh x[eè]o|บั๋นแส่ว|ขนมเบื้องญวน/i, 'banhxeo'], [/peking duck|เป็ดปักกิ่ง/i, 'pekingduck'],
+  [/tanghulu|ถังหูลู่|ถังหูหลู/i, 'tanghulu'], [/fried rice|ข้าวผัด/i, 'friedrice'], [/churros?|ชูโรส/i, 'churros'], [/cr[eê]pes?|เครป/i, 'crepe'], [/macarons?|มาการ[ งอ]/i, 'macarons'],
+  [/strudel|สตรูเดิล|ชตรูเดิล/i, 'strudel'], [/schnitzel|ชนิทเซล|ชนิตเซล/i, 'schnitzel'], [/poffertjes|พอฟเฟอร์เจส|ป๊อฟเฟอร์เจส/i, 'poffertjes'], [/meatballs?|มีทบอล|มีตบอล/i, 'meatballs'],
+  [/fondue|ฟองดู/i, 'fondue'], [/pineapple cake|พายสับปะรดไต้หวัน|เค้กสับปะรด/i, 'pineapplecake']];
+const dishArt = (name) => { const s = String(name || ''); if (!s) return ''; const m = DISH_ART.find((d) => d[0].test(s)); return m ? `food/${m[1]}` : ''; };
+const foodArt = (e, art, name) => { if (!art && name) art = dishArt(name); if (/^food\/[a-z0-9-]+$/.test(art || '')) return `/art/${art}.webp`; const a = GAME_ART[String(e || '').replace(/\uFE0F/g, '')]; return a && (a.startsWith('food/') || FOOD_GAME.has(a)) ? `/art/${a}.webp` : ''; };
+const gFood = (e, art, name) => { const a = foodArt(e, art, name); return a ? `<img class="ge" src="${a}" alt="">` : esc(e || ''); };
 const gE = (e) => { const a = GAME_ART[String(e).replace(/\uFE0F/g, '')]; return a ? `<img class="ge" src="/art/${a}.webp" alt="">` : esc(e); };   // the lists write some emoji with a variation selector
 const kuImg = (name, cls) => `<img class="ku${cls ? ' ' + cls : ''}" src="/art/kidui/${name}.webp" alt="">`;
 const petImg = (e) => (PET_ART[e] ? kuImg('pet-' + PET_ART[e][0]) : esc(e));
@@ -581,7 +595,7 @@ function stickerSet(t, kid) {
   t.days.forEach((_, i) => add(`gift.d${i}`, giftE(i), '', ticked(t, `gift.d${i}`, kid)));
   { const mm = mapModel(t); if (mm) { const real = mapReal(t, mm); mm.m.stops.forEach((st) => { if (real.has(st.k)) add(`been.${st.k}`, st.e || '📍', st.art || '', true); }); } }   // a place we really went (the parents checked it in)
   t.days.forEach((_, i) => add(questKey(i, 'chest'), QUEST_GEM[i % QUEST_GEM.length], qArt(gemArt(i)), ticked(t, questKey(i, 'chest'), kid)));   // a town's treasure on the adventure map   // the morning surprise box's sticker
-  kidLists(t, kid).forEach((l) => listItems(l).forEach((it) => { const x = ticked(t, `${l.key}.${it.k}`, kid); add(`${l.key}.${it.k}`, it.e, l.yum || l.stars ? foodArt(it.e, it.art) : '', x && x.text !== 'yuck'); }));   // a dish tasted is a sticker of its picture
+  kidLists(t, kid).forEach((l) => listItems(l).forEach((it) => { const x = ticked(t, `${l.key}.${it.k}`, kid); add(`${l.key}.${it.k}`, it.e, l.yum || l.stars ? foodArt(it.e, it.art, `${it.en || ''} ${it.th || ''}`) : '', x && x.text !== 'yuck'); }));   // a dish tasted is a sticker of its picture
   ((pp.countdown || {}).doors || []).forEach((d, n) => add(`cd.${n + 1}`, d.e, '', ticked(t, `cd.${n + 1}`, kid)));
   entriesOf(t.id).filter((e) => e.kind === 'first' && e.child === kid && e.first_key !== 'custom').forEach((e) => add(`first.${e.first_key}`, firstLabel(t, e.first_key).e, '', true));
   return out;
@@ -1347,7 +1361,7 @@ const qEn = (x) => { const v = String(x || '').replace(/^(a|an|the|our|some)\s+/
 const qUniq = (xs) => { const seen = new Set(); return xs.filter((x) => x && x[0] && x[1] && x[2] && !seen.has(x[0]) && seen.add(x[0])); };
 const questThings = (t, i) => qUniq(((((t.passport || {}).days || [])[i] || {}).spot || []).map((x) => [x.e, x.th, qEn(x.en)]));
 const questAnimals = (t) => qUniq((((t.info || {}).wild) || []).map((w) => [w.emo, (w.name || {}).th, qEn((w.name || {}).en)]));
-const questFoods = (t) => { const pp = t.passport || {}; return qUniq((Array.isArray(pp.food) ? pp.food : []).concat((pp.lists || []).filter((l) => l.yum || l.stars).flatMap((l) => listItems(l))).map((x) => [x.e, x.th, qEn(x.en), x.art || ''])).map((x) => [x[0], x[1], x[2], `some ${x[2]}`, x[3]]); };   // [emoji, th, en, what it asks for, its own picture]
+const questFoods = (t) => { const pp = t.passport || {}; return qUniq((Array.isArray(pp.food) ? pp.food : []).concat((pp.lists || []).filter((l) => l.yum || l.stars).flatMap((l) => listItems(l))).map((x) => [x.e, x.th, qEn(x.en), x.art || dishArt(`${x.en || ''} ${x.th || ''}`)])).map((x) => [x[0], x[1], x[2], `some ${x[2]}`, x[3]]); };   // [emoji, th, en, what it asks for, its own picture]
 const questPhotos = (t, i) => mediaOf(t.id).filter((m) => m.day === i && !isDrawing(m) && !m.pending);
 // a list that leads with the town's own, the game's stock after it (never the same emoji twice)
 const qLead = (own, stock) => qUniq(shuffle(own).concat(shuffle(stock)));
@@ -1729,7 +1743,7 @@ const kgRight = (g) => String(g.game === 'shadow' || g.game === 'feed' ? g.r.wan
 const kgNope = (b, line) => { beep('tap'); b.classList.remove('nope'); void b.offsetWidth; b.classList.add('nope'); sayUi(line); if (kg) { kg.miss = (kg.miss || 0) + 1; if (kg.miss >= 3) { const v = kgRight(kg), el = $$('[data-a="kgpick"]').find((x) => x.dataset.v === v); if (el) el.classList.add('hint'); if (kg.miss === 3) palPop('heart'); } } };
 // ---- what dish is this? (owner, Nov 2026: "เกมทายอาหาร" + "คำศัพท์อาหารภาษาท้องถิ่น"): the book's tasting-card foods, five rounds,
 // two names to pick from (three from age four), the right one said in Thai or English and then in the local language when the dish has it
-const dishFoods = (t) => { const pp = t.passport || {}, seen = new Set(); return (Array.isArray(pp.food) ? pp.food : []).concat((pp.lists || []).filter((l) => l.yum || l.stars).flatMap((l) => listItems(l))).filter((x) => x && x.k && x.th && x.en && (x.e || x.art) && !seen.has(x.k) && seen.add(x.k)); };
+const dishFoods = (t) => { const pp = t.passport || {}, seen = new Set(); return (Array.isArray(pp.food) ? pp.food : []).concat((pp.lists || []).filter((l) => l.yum || l.stars).flatMap((l) => listItems(l))).filter((x) => x && x.k && x.th && x.en && (x.e || x.art) && !seen.has(x.k) && seen.add(x.k)).map((x) => (x.art ? x : { ...x, art: dishArt(`${x.en} ${x.th}`) })); };
 let dsh = null;
 function dishRound(g) { const want = g.deck[g.n]; g.r = { want, opts: shuffle([want].concat(shuffle(g.pool.filter((x) => x.k !== want.k)).slice(0, g.many - 1))) }; g.got = false; }
 function dishFor(t, kid) {
