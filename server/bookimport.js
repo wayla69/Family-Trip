@@ -99,7 +99,32 @@ const EN_ONLY = `Wherever the schema asks for an {th, en} object, write {"en": "
 const PLAN_RULES = 'Plan for small children first: keep their naps (no leg over 80 minutes at nap time), dinner by 18:30, one main sight per half day at a slow pace (two at a full one), an easy arrival day and departure day. '
   + 'Every stop is a real, well-known place you are sure exists, with a full Google Maps query. Never invent an exact price, opening hour or height limit: give prices as a range with ≈, and where you are not sure of hours or a rule write "check before you go". '
   + 'Never name the children — say "the children" (or "the little one" for the youngest). No booking references, no flight numbers you were not given, no e-mails or phone numbers of people. Answer with JSON only, no prose, no code fence.';
-async function run({ buf, brief, slug, client, take, onUsage, log = () => {}, dir, kids }) {
+// The passport pages of an AI-written book, cleaned: 14 doors (short of 14 = left to the generic ones), a customs form with 3+ counts,
+// the little one's edition with three things a day for every day. Anything malformed is dropped, never half-kept.
+function passportPages(P, nDays, little) {
+  const i18 = (x) => (x && typeof x === 'object' && typeof x.en === 'string' && x.en.trim() ? { th: typeof x.th === 'string' && x.th.trim() ? x.th.trim() : '', en: x.en.trim() } : null);
+  const key = (k, i) => (String(k || '').toLowerCase().replace(/[^a-z0-9]+/g, '-').replace(/^-+|-+$/g, '').slice(0, 24) || `x${i + 1}`);
+  const emo = (e, d) => String(e || d).slice(0, 8);
+  const out = {};
+  if (!P || typeof P !== 'object') return out;
+  const doors = (Array.isArray(P.doors) ? P.doors : []).map((d) => (d && typeof d.en === 'string' && d.en.trim() ? { e: emo(d.e, '🎁'), th: String(d.th || '').trim(), en: d.en.trim() } : null)).filter(Boolean).slice(0, 14);
+  if (doors.length >= 7) out.doors = doors;
+  const D = P.declaration || {};
+  const seen = new Set();
+  const counts = (Array.isArray(D.counts) ? D.counts : []).map((c, i) => (c && i18(c.pre) && i18(c.post) ? { k: key(c.k, i), e: emo(c.e, '✨'), pre: i18(c.pre), post: i18(c.post) } : null)).filter((c) => c && !seen.has(c.k) && seen.add(c.k)).slice(0, 6);
+  const texts = (Array.isArray(D.texts) ? D.texts : []).map((y, i) => (y && i18(y.label) ? { k: key(y.k, i), label: i18(y.label) } : null)).filter((y) => y && !seen.has(y.k) && seen.add(y.k)).slice(0, 3);
+  if (counts.length >= 3 && i18(D.intro)) out.declaration = { title: { th: 'ใบแจ้งศุลกากร', en: 'Customs Declaration' }, sub: { th: 'กรอกก่อนบินกลับบ้าน', en: 'Official form · fill in before we fly home' }, intro: i18(D.intro), counts, texts };
+  const Lt = P.little || {};
+  if (little && Array.isArray(Lt.days) && Lt.days.length === nDays) {
+    const days = Lt.days.map((d) => { const ks = new Set(); return (Array.isArray(d) ? d : []).map((x, i) => (x && typeof x.en === 'string' && x.en.trim() ? { k: key(x.k, i), e: emo(x.e, '👉'), th: String(x.th || '').trim(), en: x.en.trim() } : null)).filter((x) => x && !ks.has(x.k) && ks.add(x.k)).slice(0, 3); });
+    if (days.every((d) => d.length >= 2)) out.little = { kids: [], note: { th: 'ฉบับเด็กเล็ก: ภารกิจแบบชี้ แตะ ทำเสียง — พ่อแม่อ่านให้ฟังแล้วทำด้วยกัน ติ๊กให้เมื่อทำแล้ว', en: "The little one's edition: point, touch and make the sound — read it out, do it together, tick it when done" },
+      days, words: { title: { th: 'คำใหม่ของ{name}', en: "{name}'s new words" }, sub: { th: 'เด็กวัยนี้กำลังหัดพูด — จดคำที่{name}พูดได้ระหว่างทริป แม้แต่คำเดียวก็นับ', en: 'Words are coming fast at this age — jot down every word {name} says on the trip, even just one' } },
+      ...(i18(Lt.cert) ? { cert: i18(Lt.cert) } : {}) };
+  }
+  return out;
+}
+
+async function run({ buf, brief, slug, client, take, onUsage, log = () => {}, dir, kids, little = false }) {
   let text, dropped = 0, masked = 0;
   if (brief) { ({ text, dropped, masked } = redact(String(brief.text || ''))); log(`text brief ${text.length} chars (a planned trip; ${dropped} lines dropped, ${masked} values masked)`); }   // a typed booking number never leaves either
   else {
@@ -303,6 +328,29 @@ Trip: ${JSON.stringify({ title: top.title, place: top.place, from: top.from, to:
     if (whys.size) { plan.info.stays = (Array.isArray(plan.info.stays) ? plan.info.stays : []); for (const st of plan.info.stays) { const w = st.prop && whys.get(norm(st.prop.en || st.prop)); if (w && (!st.why || !st.why.en)) st.why = w; } plan.staysWhy = (Array.isArray(E.stays) ? E.stays : []).filter((s2) => s2 && s2.name && asI18n(s2.why)).map((s2) => ({ name: String(s2.name), why: asI18n(s2.why) })); }
     log(`extras: ${wild.length} animals & friends · ${firsts.length} firsts · ${words.length} words · ${food.length} foods · map ${stops.length} stops · ${whys.size} stays' why`);
   }
+  // the passport's own pages of this trip (owner, Nov 2026): the 14 countdown doors, the children's customs form, and — when a child
+  // is under three — the little one's edition (point / touch / make the sound, three a day). One call; a failure keeps the book
+  // (the doors fall back to the generic ones, the form and the little edition are simply left out).
+  try {
+    const P = await ask('passport', WRITE(), {
+      system: `You write the passport pages of a family memory book for a trip to ${placeEn}. The children: ${who}. Every text bilingual {"th": "…", "en": "…"} in natural Thai a parent reads aloud to a small child. ${THAI_STYLE} ${EN_STYLE} Only things that are true of this trip and this place. Answer with JSON only, no code fence.`,
+      user: `Write:
+"doors": exactly 14 countdown doors, one each morning for the 14 days before we leave — door 1 is 14 sleeps before, door 14 is the last night. Each {e (one emoji), th, en}: one or two short sentences a 2–5 year old enjoys — a fact about a place we will see, a sound to make, a question to answer; door 1 says hello and "in 14 sleeps", the last says "tomorrow!". Use {name} for the child's name where it fits.
+"declaration": the children's pretend customs form to fill in before flying home: {intro:{th,en} — "I, the explorer named in this passport, declare…" naming the trip, counts: 4–5 × {k (a-z), e, pre:{th,en}, post:{th,en}} — things to count on this trip ("I ate" … "egg tarts", "I crossed the sea" … "times"), texts: 2 × {k, label:{th,en}} — sentences to finish ("The funniest thing that happened was…")}.
+${little ? `"little": the little one's edition for a child under three: {days: one list per day, each exactly 3 × {k (a-z), e, th, en} — a tiny thing to do together that day: point at something they will see ("Point at the castle"), touch or catch something, or make its sound ("Make the ferry horn: toot!"); never reading, counting or a quiz. cert:{th,en} — one line for the certificate: what the little one pointed at, touched and heard all through the trip}.` : ''}
+Trip: ${JSON.stringify({ title: top.title, place: top.place, from: top.from, to: top.to, days: dayList })}`,
+      max: 16000, effort: 'medium', manual: false,
+    });
+    const got = passportPages(P, top.days.length, little);
+    const pp = plan.passport = plan.passport || {};
+    if (got.doors) pp.countdown = { ...(pp.countdown || {}), doors: got.doors };
+    if (got.declaration) pp.declaration = got.declaration;
+    if (got.little) pp.little = got.little;
+    log(`passport: ${got.doors ? got.doors.length : 0} countdown doors · customs form ${got.declaration ? got.declaration.counts.length : 0} counts · little one's edition ${got.little ? got.little.days.length + ' days' : 'none'}`);
+  } catch (e) {
+    if (e && e.code === 'limit') throw e;
+    log(`passport: skipped (${(e && e.message) || e}) — generic doors, no customs form`);
+  }
   // a price line with words ("mains A$22–32", "A$20–30 /adult") becomes {en} like every other text, so the Thai pass below translates
   // it; a line of money only ("$ · A$10–20") stays a plain string (docs/STYLE.md §5)
   (function prices(v) {
@@ -381,4 +429,4 @@ Trip: ${JSON.stringify({ title: top.title, place: top.place, from: top.from, to:
   return { seed, plan, report, cost: { usd: ledger.some((r) => r.usd === null) ? null : cost, calls: ledger } };
 }
 
-module.exports = { run, redact, pdfText, EXTRACT, WRITE, PLAN_RULES, THAI_STYLE, EN_STYLE };
+module.exports = { run, passportPages, redact, pdfText, EXTRACT, WRITE, PLAN_RULES, THAI_STYLE, EN_STYLE };

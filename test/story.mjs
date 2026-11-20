@@ -51,7 +51,7 @@ const mock = http.createServer((req, res) => {
     const dayCh = String(b.system).startsWith('You change one day of a family trip');   // change this day (phase 2)
     const planRoute = String(b.system).startsWith('You plan family trips for Thai');   // plan with the helper: the route, as JSON
     const imp = sysText.includes('Trip Operations Manual') || sysText.includes('You plan a family trip and write') ? (facts.includes('top level and its days') ? 'top' : facts.includes('pocket guide') ? 'info' : facts.startsWith('Suggest places to eat') ? 'restsug' : facts.startsWith('List EVERY restaurant') ? 'restlist' : facts.startsWith('List only the area headings') ? 'restareas' : facts.startsWith('For these areas') ? 'restnames' : facts.startsWith('For each of these places') ? 'rest' : 'other')
-      : sysText.includes("children's pages") ? 'kids' : sysText.includes('playful pages') ? 'extras' : sysText.includes('You translate a family trip guide') ? 'thai' : null;
+      : sysText.includes("children's pages") ? 'kids' : sysText.includes('playful pages') ? 'extras' : sysText.includes('passport pages') ? 'passport' : sysText.includes('You translate a family trip guide') ? 'thai' : null;
     if (imp) importCalls.push({ step: imp, system: sysText, user: facts });
     // the book's pictures (server/bookart.js): SVG per day / crest / guide, the guides' names as JSON; the first day answer is unsafe (a script), so it is asked again
     const art = String(b.system).startsWith('You draw the pictures') ? (facts.startsWith('Invent the two guide') ? 'names' : facts.startsWith('Draw day') ? 'day' : facts.startsWith("Draw the book's crest") ? 'crest' : 'guide') : null;
@@ -75,6 +75,11 @@ const mock = http.createServer((req, res) => {
       restnames: () => JSON.stringify({ areas: [{ area: en('Test town'), names: ['Test Noodles', 'Test Dumplings'] }, { area: en('Test sweets'), names: ['Test Tarts'] }] }),
       // the rows for the names asked; "Test Dumplings" is left out the first time so the retry is exercised
       rest: () => JSON.stringify({ items: JSON.parse(/Places: (\[.*\])/.exec(facts)[1]).filter((n) => n !== 'Test Dumplings' || importCalls.filter((c) => c.step === 'rest').length > 1).map((n) => ({ name: n, what: en(n === 'Test Tarts' ? 'Egg tarts' : 'Noodles'), pr: 'MOP 50', q: `${n}, Testland`, pick: n === 'Test Noodles' ? ['Day 1 · Lunch'] : [] })) }),
+      // the passport's own pages: 14 doors (one broken), a customs form (a duplicate count dropped), and the little one's edition when asked
+      passport: () => { const nd = (JSON.parse(/Trip: (\{.*\})\s*$/s.exec(facts)[1]).days || []).length;
+        return JSON.stringify({ doors: [...Array.from({ length: 13 }, (_, i) => ({ e: '🎁', th: `ประตู ${i + 1}`, en: `Door ${i + 1} of the test` })), { th: 'x' }, { e: '🌙', th: 'พรุ่งนี้แล้ว!', en: 'Tomorrow!' }],
+          declaration: { intro: L2('ฉันขอแจ้ง', 'I declare'), counts: [{ k: 'tarts', e: '🥧', pre: L2('ฉันกิน', 'I ate'), post: L2('ทาร์ต', 'tarts') }, { k: 'boats', e: '⛴️', pre: L2('ฉันนั่งเรือ', 'I rode'), post: L2('ครั้ง', 'boats') }, { k: 'tarts', pre: L2('ซ้ำ', 'dup'), post: L2('ซ้ำ', 'dup') }, { k: 'birds', e: '🐦', pre: L2('ฉันเห็น', 'I saw'), post: L2('นก', 'birds') }], texts: [{ k: 'funny', label: L2('เรื่องตลกคือ…', 'The funniest thing was…') }] },
+          ...(/little one's edition/.test(facts) ? { little: { days: Array.from({ length: nd }, (_, i) => [{ k: 'boat', e: '⛴️', th: 'ชี้เรือ', en: `Point at a boat ${i + 1}` }, { k: 'toot', e: '🔊', th: 'ทำเสียงเรือ ปู๊น!', en: 'Make the boat horn: toot!' }, { k: 'sand', e: '🏖️', th: 'จับทราย', en: 'Touch the sand' }]), cert: L2('ชี้ แตะ ทำเสียงครบทริป', 'pointed, touched and tooted all trip') } } : {}) }); },
       extras: () => JSON.stringify({ wild: [{ name: L2('นกนางนวล', 'Seagull'), emo: '🐦', text: L2('บินเหนือท่าเรือ', 'Flies over the pier') }, { name: L2('ปูทะเล', 'Crab'), emo: '🦀', text: L2('ซ่อนอยู่ใต้ก้อนหิน', 'Hides under rocks') }], wildLabel: { emo: '🐾', title: L2('สัตว์ที่อาจได้เจอ', 'Animals we may meet'), short: L2('สัตว์', 'Animals') },
         firsts: [{ key: 'ferry', emoji: '⛴️', label: L2('นั่งเรือ', 'A ferry') }, { key: 'tram', emoji: '🚋', label: L2('นั่งรถราง', 'A tram') }, { key: 'tart', emoji: '🥧', label: L2('ทาร์ตไข่', 'An egg tart') }, { key: 'bad', label: 'x' }, { key: 'ferry', emoji: '⛴️', label: L2('ซ้ำ', 'dup') }],
         words: [{ k: 'hello', e: '👋', th: 'เฮลโล', en: 'Hello', note: L2('สวัสดี', 'Hi'), say: 'Hello, Kiki!', speak: { text: 'hello', lang: 'en-GB' } }, { k: 'thanks', e: '🙏', th: 'แธงกิ้ว', en: 'Thank you', note: L2('ขอบคุณ', 'Thanks'), speak: { text: 'thank you', lang: 'en-GB' } }, { k: 'bye', e: '👋', th: 'บ๊ายบาย', en: 'Bye', note: L2('ลาก่อน', 'Bye') }],
@@ -497,7 +502,7 @@ try {
   let imp;
   for (let i = 0; i < 120; i++) { imp = await (await fetch(BASE + '/api/b/import', { headers: { cookie: ck } })).json(); if (imp.job.status !== 'running') break; await new Promise((r) => setTimeout(r, 250)); }
   ok(imp.job.status === 'done' && imp.job.draft && imp.job.draft.slug === 'test-hop' && imp.job.draft.days === 2, `import: job done → a draft (${imp.job.status}: ${(imp.job.log || []).at(-1)})`);
-  ok(importCalls.map((c) => c.step).join(',') === 'top,info,restlist,restareas,restnames,rest,rest,kids,kids,extras,thai', `import: the model calls in order — structure, guide, restaurant names, rows, the retry for the missing row, kids, extras, Thai (${importCalls.map((c) => c.step).join(',')})`);
+  ok(importCalls.map((c) => c.step).join(',') === 'top,info,restlist,restareas,restnames,rest,rest,kids,kids,extras,passport,thai', `import: the model calls in order — structure, guide, restaurant names, rows, the retry for the missing row, kids, extras, Thai (${importCalls.map((c) => c.step).join(',')})`);
   const sent = importCalls.map((c) => c.system + c.user).join('\n');
   ok(sent.includes('Test Square') && sent.includes('Super Fun Zone') && sent.includes('Test Noodles'), 'import: the manual\'s text reached the model');
   ok(!Object.values(FAKE).some((v) => sent.includes(v)) && !/born 2023|allergies/.test(sent), 'import: PNR, booking numbers and references, confirmation and reservation codes, e-tickets, the baht amount, birth and allergy lines never reached the model');
@@ -516,6 +521,9 @@ try {
   ok(wl && wl.groups[0].items.length === 3 && wl.groups[0].items[0].speak.lang === 'en-GB' && fl && fl.groups[0].items.length === 3 && fl.goal === 2, 'import: say-it-like-a-local words (read aloud) and the tasting card');
   ok(px.map.sea.en === 'Test Sea' && px.map.stops.length === 2 && px.map.stops[1].x === 92 && px.map.stops[1].y === 8 && JSON.stringify(px.map.days) === '[["inn"],["square","inn"]]', 'import: the living map with clamped positions and only known stops per day');
   ok(dr.seed.info.stays[0].why.en === 'Close to everything' && dr.report.todo === 0, 'import: "why we chose it" filled, nothing left TODO');
+  { const cd = px.countdown || {}, dc = px.declaration || {};
+    ok(cd.own === 14 && cd.doors[0].en === 'Door 1 of the test' && cd.doors[13].en === 'Tomorrow!' && dc.counts.map((c) => c.k).join() === 'tarts,boats,birds' && dc.texts.length === 1 && dc.title.en === 'Customs Declaration' && !px.little && d0.peek.doors === 14 && d0.peek.customs === 3 && !d0.peek.little,
+      `import: the passport's own countdown doors (a broken one dropped) and customs form; no child under three with a birth month → no little one's edition (${JSON.stringify({ own: cd.own, n: (cd.doors || []).length, dc: (dc.counts || []).map((c) => c.k), little: !!px.little, peek: d0.peek })})`); }
   ok(dr.seed.info.guide.length === 1 && dr.seed.info.guide[0].title.en === 'Clocks' && !JSON.stringify(dr.seed).includes('KL4PQZ') && dr.report.warns.some((w) => /removed info\.guide\[1\] \(looked like a booking reference\)/.test(w)), `import: a guide card that looks like a booking reference is taken out and named, the book is kept (${JSON.stringify(dr.report.warns)})`);
   ok(dr.seed.days[0].moving.th === 'ไทย: Walk 5 min' && dr.seed.days[0].planned[0].th === 'ไทย: Test Square' && dr.seed.days[1].planned[0].th === 'ไทย: Test Square', 'import: a blank, a space or a null Thai from the model counts as missing and is translated');
   { const db = new Client({ connectionString: u.toString() }); await db.connect(); await db.query('UPDATE ai_usage SET calls=0'); await db.end(); }   // a fresh day's allowance: saving starts the book's drawings (6 calls)
@@ -828,7 +836,7 @@ try {
     ok(/stops taken from the family's library/.test(topSent) && /price: /.test(topSent) && (pj.job.log || []).some((l) => /stops: from the library 1 · new 1/.test(l)),
       `planner (E4): the book's brief carries the checked facts of the stops from the library, and the job log counts them (${(pj.job.log || []).filter((l) => /stops:/.test(l)).join(' | ') || 'no line'})`); }
   const steps = importCalls.slice(-8).map((c) => c.step).join();
-  ok(/top,info,restsug,kids,extras,thai/.test(steps) && !/restlist|restareas/.test(steps), `planner: structure, guide, places to eat suggested, kids, extras, Thai — no manual's restaurant list (${steps})`);
+  ok(/top,info,restsug,kids,extras,passport,thai/.test(steps) && !/restlist|restareas/.test(steps), `planner: structure, guide, places to eat suggested, kids, extras, Thai — no manual's restaurant list (${steps})`);
   const pd = pj.drafts.find((d) => d.slug === dj.slug), pdr = await (await fetch(BASE + '/api/b/import/' + pd.id, { headers: { cookie: ck } })).json(), ps = pdr.seed;
   ok(ps.info.emergency.map((e) => e.tel).join() === '110,119' && /15 days/.test(ps.info.visa.lede.en) && ps.info.guide[0].title.en === 'Power, money, roads',
     `planner: emergency numbers, the visa line and the power/money card come from the checked table, never the helper (${JSON.stringify(ps.info.emergency)})`);
@@ -838,6 +846,9 @@ try {
   ok(ps.info.restaurants && ps.info.restaurants.groups[1].items[0].name === 'Test Ramen' && ps.theme.planner && ps.theme.planner.answers.dest === 'Tokyo with the kids' && pdr.report.planner === true,
     'planner: the suggested places to eat, and the answers kept with the book for later changes');
   ok(!JSON.stringify(ps.theme.planner).match(/Mimi|Mika/), 'planner: the kept answers name no child');
+  { const lt = ps.passport.little, pd2 = pj.drafts.find((d) => d.slug === dj.slug);
+    ok(lt && lt.kids.join() === 'mika' && lt.days.length === ps.days.length && lt.days[0].length === 3 && lt.cert.en && lt.words && pd2.peek.little === ps.days.length && pd2.peek.littleKids.join() === 'mika',
+      `planner: a child under three gets the little one's edition — three things a day, for that child only (${JSON.stringify({ kids: lt && lt.kids, n: lt && lt.days.length, peek: pd2 && pd2.peek })})`); }
   { const bl = (ps.theme.budget && ps.theme.budget.lines) || [];
     ok(bl.some((l) => l.k === 'stay' && l.cur === 'JPY' && l.lo > 0) && bl.every((l) => Object.keys(l).sort().join() === 'cur,hi,k,lo'),
       `budget (B3): the rough budget travels with the book the planner wrote (${JSON.stringify(bl)})`); }

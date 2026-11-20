@@ -100,4 +100,10 @@ function cleanKid(k, i) {
 // the children rows as a seed's "children" (names, emoji, age at the trip's first day) — an imported book is about this family's kids
 const seedChildren = (kids, dateFrom) => kids.map((k) => ({ slug: k.slug, name_th: k.name_th, name_en: k.name_en, emoji: k.emoji || '🧒', age_at_trip: ageOf(k, dateFrom ? new Date(dateFrom + 'T00:00:00Z') : null) || { th: '', en: '' } }));
 
-module.exports = { PALETTE, OUTFITS, cleanLook, lookVersion, renderKid, kidsFor, profile, cleanProfile, cleanKid, seedChildren, names, TILES };
+// the children under three on a date (by birth month): the little one's edition of an AI-written passport is theirs (owner, Nov 2026)
+const LITTLE_MONTHS = 36;
+const littleKids = (kids, date) => { const at = date ? new Date(String(date).slice(0, 10) + 'T00:00:00Z') : new Date(); if (isNaN(at)) return [];
+  return kids.filter((k) => /^\d{4}-\d{2}$/.test(k.birth_ym || '')).filter((k) => { const [y, m] = k.birth_ym.split('-').map(Number); return (at.getUTCFullYear() - y) * 12 + (at.getUTCMonth() + 1 - m) < LITTLE_MONTHS; }).map((k) => k.slug); };
+// a seed's little edition goes to the children under three on its first day; with none, the edition is dropped
+const fitLittle = (seed, kids) => { const pp = seed && seed.passport; if (!pp || !pp.little) return seed; const ks = littleKids(kids, seed.date_from); if (ks.length) pp.little.kids = ks; else delete pp.little; return seed; };
+module.exports = { littleKids, fitLittle, PALETTE, OUTFITS, cleanLook, lookVersion, renderKid, kidsFor, profile, cleanProfile, cleanKid, seedChildren, names, TILES };

@@ -2712,6 +2712,7 @@ const HELP = [
     ['พ่อแม่กด ✏️ เพื่อกรอกบัตรนักสำรวจ ติ๊กภารกิจ และรายการ', 'Parents tap ✏️ to fill in the Explorer ID, tick missions and lists'],
     ['ส่วนสูงกรอกที่บัตรนักสำรวจของแต่ละเล่มที่เดียว แล้วเส้นการเติบโตขึ้นเองเมื่อมีสองทริป', 'The height is typed in each book’s Explorer ID only — the growth line appears once two trips have one'],
     ['ใบประกาศมาเองในวันสุดท้าย ไม่ต้องติ๊กให้ครบ', 'The certificate comes by itself on the last day — nothing to complete'],
+    ['เล่มที่ผู้ช่วยเขียนให้ได้พาสปอร์ตครบ: ภารกิจรายวัน คำท้องถิ่น การ์ดชิม แผนที่ ประตูนับถอยหลัง 14 บาน ใบแจ้งศุลกากร และฉบับน้องเล็ก (ชี้ แตะ ทำเสียง) ให้ลูกที่ยังไม่ถึง 3 ขวบ · ใส่เดือนปีเกิดของลูกไว้ในหน้าครอบครัวก่อน', 'A book the helper writes comes with the whole passport: daily missions, local words, a tasting card, the map, 14 countdown doors, a customs form, and the little one’s edition (point, touch, make the sound) for a child under three · put each child’s birth month in Family first'],
     ['ลิงก์ “พิมพ์” ท้ายหน้าปกของเล่ม โหลดสมุดความทรงจำเป็น PDF ซึ่งมีหน้าพาสปอร์ตของลูกทุกคน · หน้ารายการมีปุ่มกระโดดไปแต่ละรายการ', '“Print” at the foot of a passport’s cover downloads the memory book as a PDF, with every child’s passport pages · the lists page has a row to jump to each list']]],
   ['kid', 'kid', PG.purple, ['โหมดเด็ก', 'Kid mode'], 'parents', [
     ['กด “โหมดเด็ก” ที่แถบล่าง แล้วเลือกลูก หน้าจอจะล็อกไว้ให้เด็กเล่น', 'Tap Kid mode on the bar and pick a child — the screen is locked for them'],
@@ -2825,10 +2826,29 @@ const IMP_STEPS = [['text', /^text /, 'อ่านคู่มือ', 'Reading
   ['restaurants', /^restaurants:/, 'ร้านอาหาร', 'Places to eat', 'จดร้านอาหารทุกร้านในคู่มือ ทีละย่าน', 'Every place to eat in the manual, area by area'],
   ['kids', /^kids:/, 'หน้าของเด็กๆ', "Kids' pages", 'ภารกิจ เรื่องน่ารู้ และคำถามของแต่ละวัน', "Missions, facts and quizzes for every day"],
   ['extras', /^extras:/, 'สัตว์ คำ และครั้งแรก', 'Animals, words & firsts', 'สัตว์ที่จะได้เจอ คำท้องถิ่น ของอร่อย ครั้งแรกของทริป และแผนที่', 'The animals, local words, tastes, firsts and the map of this trip'],
+  ['passport', /^passport:/, 'พาสปอร์ตเด็ก', "Kids' passport", 'ประตูนับถอยหลัง ใบแจ้งศุลกากร และฉบับน้องเล็ก', "Countdown doors, the customs form and the little one's edition"],
   ['thai', /^thai /, 'แปลไทย', 'Thai', 'แปลทั้งเล่มเป็นภาษาไทย', 'Translating the whole book into Thai'],
   ['seed', /^seed:/, 'ประกอบเล่ม', 'Binding the book', 'ประกอบเล่มและตรวจข้อมูลส่วนตัวอีกครั้ง', 'Binding the book and scanning it for private data once more']];
 const impStepName = (step) => { const k = String(step).split(/[: ]/)[0]; const row = IMP_STEPS.find(([key]) => key === k); return row ? L(row[2], row[3]) : step; };
 const impMins = (ms) => { const m = Math.round(ms / 60000); return m < 1 ? L('ไม่ถึงนาที', 'under a minute') : L(`${m} นาที`, `${m} min`); };
+// the draft's passport, as the children will meet it (owner, Nov 2026: "ออกแบบ UIUX ดีเลย"): a small passport cover in the book's
+// colours beside its pages, each with the kid-mode picture of that page and what it holds — only what is there, never a zero
+function impPassport(d) {
+  const pk = d.peek || {}, c = d.cover || {}, g = Array.isArray(c.gradient) && c.gradient.length >= 2 ? c.gradient : ['#2E5C8A', '#7FB2DE'];
+  const lk = (pk.littleKids || []).map((k) => kidName(k)).filter(Boolean);
+  const rows = [
+    [pk.missions, 'find', L(`ภารกิจรายวัน ${pk.missions} วัน`, `Daily missions · ${pk.missions} days`), L('เกร็ดความรู้และของให้ตามหาทุกวัน', 'Facts and things to spot, every day')],
+    [pk.words, 'say', L(`คำท้องถิ่น ${pk.words} คำ`, `${pk.words} local words`), L('ฟังเสียงแล้วพูดตาม', 'Hear it, say it')],
+    [pk.food, 'feed', L(`การ์ดชิม ${pk.food} อย่าง`, `Tasting card · ${pk.food}`), L('ลองแล้วให้ดาว', 'Try it, give it stars')],
+    [pk.map, 'bar-map', L(`แผนที่ผจญภัย ${pk.map} จุด`, `Adventure map · ${pk.map} stops`), L('เดินตามทริปไปทีละวัน', 'Walk the trip day by day')],
+    [pk.doors, 't-door', L(`ประตูนับถอยหลัง ${pk.doors} บาน`, `${pk.doors} countdown doors`), L('เปิดวันละบานก่อนออกเดินทาง', 'One a morning before we go')],
+    [pk.customs, 'stamp', L('ใบแจ้งศุลกากรของหนู', 'My customs form'), L(`นับ ${pk.customs} อย่าง แล้วกรอกก่อนบินกลับ`, `${pk.customs} things to count, filled in before we fly home`)],
+    [pk.little, 'pet-chick', L(`ฉบับน้องเล็ก${lk.length ? `ของ${lk.join(' ')}` : ''}`, `The little one's edition${lk.length ? ` · ${lk.join(', ')}` : ''}`), L('ชี้ แตะ ทำเสียง วันละ 3 อย่าง', 'Point, touch, make the sound · 3 a day')],
+  ].filter((r) => r[0]);
+  if (!rows.length) return '';
+  return `<section class="imppp"><div class="imppc" style="--g1:${esc(g[0])};--g2:${esc(g[g.length - 1])}"><span class="e">${esc(c.emoji || '🛂')}</span><b>${L('พาสปอร์ต <br>นักผจญภัย', 'Adventure <br>passport')}</b><small>${esc(T(d.title) || d.slug)}</small></div>
+<div class="imppl"><h4>${L('พาสปอร์ตของเด็กๆ ในเล่มนี้', "The children's passport in this book")}</h4><ul>${rows.map(([, pic, t1, t2]) => `<li><img src="/art/kidui/${pic}.webp" alt="" loading="lazy"><span><b>${t1}</b><small>${t2}</small></span></li>`).join('')}</ul></div></section>`;
+}
 function viewImport() {
   if (imp.list === null) { imp.list = 'loading'; impRefresh(); }
   const j = imp.job || { status: 'idle' }, running = j.status === 'running', on = !!S.features.story;
@@ -2862,7 +2882,8 @@ function viewImport() {
     const warns = (d.report && d.report.warns) || [], todo = (d.report && d.report.todo) || 0;
     return `<article class="impdraft"><div class="impcover" ${g}><span class="e">${esc(c.emoji || '📖')}</span><b>${esc(T(d.title) || d.slug)}</b><small>${d.days} ${L('วัน', 'days')}${when}</small><code>${esc(d.slug)}</code></div>
 <div class="impbody">
-<div class="impstats">${tile(d.days, '📅', 'วัน', 'days')}${tile(pk.stops, '📍', 'จุดแวะ', 'stops')}${tile(pk.restaurants, '🍽️', 'ร้านอาหาร', 'places to eat')}${tile(pk.stays, '🛏️', 'ที่พัก', 'stays')}${tile(pk.missions, '🛂', 'ภารกิจเด็ก', "kids' missions")}${tile(pk.wild, '🐾', 'สัตว์และเพื่อน', 'animals & friends')}${tile(pk.firsts, '🌟', 'ครั้งแรก', 'firsts')}${tile(pk.words, '💬', 'คำท้องถิ่น', 'local words')}${tile(pk.food, '😋', 'ของอร่อยให้ชิม', 'tastes to try')}${tile(pk.map, '🗺️', 'จุดบนแผนที่', 'map stops')}</div>
+<div class="impstats">${tile(d.days, '📅', 'วัน', 'days')}${tile(pk.stops, '📍', 'จุดแวะ', 'stops')}${tile(pk.restaurants, '🍽️', 'ร้านอาหาร', 'places to eat')}${tile(pk.stays, '🛏️', 'ที่พัก', 'stays')}${tile(pk.wild, '🐾', 'สัตว์และเพื่อน', 'animals & friends')}${tile(pk.firsts, '🌟', 'ครั้งแรก', 'firsts')}</div>
+${impPassport(d)}
 ${Array.isArray(d.toc) && d.toc.length ? `<details class="imptoc" open><summary>${ic('book')} ${L('สารบัญ', 'Contents')}</summary><ol>${d.toc.slice(0, 20).map((x, i) => `<li><em>${L(`วันที่ ${i + 1}`, `Day ${i + 1}`)}</em><span>${esc(x.e || '')}</span>${esc(T(x.t) || '')}</li>`).join('')}${d.toc.length > 20 ? `<li>… ${d.toc.length - 20} ${L('วันถัดไป', 'more days')}</li>` : ''}</ol></details>` : ''}
 <details class="impcost"><summary>💸 ${L('ค่าใช้จ่ายของเล่มนี้ (รายละเอียดทางเทคนิค)', 'This book’s cost (technical details)')} ${usd(d.cost)}${calls.length ? ` · ${impMins(took(d.cost))}` : ''}</summary>${costRows ? `<table><thead><tr><th>${L('ขั้นตอน', 'Step')}</th><th>${L('โมเดล', 'Model')}</th><th class="n">USD</th><th class="n">${L('เวลา', 'Time')}</th></tr></thead><tbody>${costRows}</tbody></table>` : ''}</details>
 ${warns.length || todo ? `<details class="impwarn"><summary>⚠️ ${L('ข้อควรดูก่อนวางบนชั้น', 'Worth a look before shelving')} <span class="pill">${warns.length + (todo ? 1 : 0)}</span></summary><ul>${todo ? `<li>${L(`มี ${todo} จุดที่ไม่พบในคู่มือ จึงเว้นไว้ว่า "รอเติม" แก้ได้ในแอปทีหลัง`, `${todo} spots were not in the manual and are marked TODO — edit them in the app later`)}</li>` : ''}${warns.map((w) => `<li>${esc(w)}</li>`).join('')}</ul></details>` : `<p class="label">✅ ${L('ไม่มีข้อควรระวัง พร้อมวางบนชั้น', 'Nothing to flag — ready for the shelf')}</p>`}
