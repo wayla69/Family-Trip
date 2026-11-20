@@ -45,7 +45,16 @@ goes. Only this trip's money counts (its lines and the helper's local currency) 
 says "compared with what we really spent on <books>" and, under a leaned line, "last time we really spent ≈ … — taken into account".
 Editors only, as the whole planner is; the spend ledger never reaches a relative.
 
-## B3 — the budget travels with the book (later)
+## B3 — the budget travels with the book (built)
 
-The draft keeps the estimate (`theme.budget`); the spend page shows "spent so far / planned" by kind as bars, and Today a one-line
-"today ≈ … of a planned ≈ …". Nothing is shown to relatives.
+- **The plan a book is held against**: the parents' own, typed on the spend page (`PUT /api/b/budget/:trip {lines: [{cat, cur,
+  amt}]}`, editors; a spending category, a currency, an amount; stored in `settings.budget_plan` — a bundled book's `theme` is written
+  again on every boot; an empty list goes back to the planner's estimate; cleared by "delete everything"), else the estimate the planner
+  wrote the book with (`theme.budget = {at, lines: [{k, cur, lo, hi}]}`, kept by the draft job) turned into the same shape — the middle of
+  each range, flights counted as transport. The state carries it as `budgets` to editors only (and `theme.budget` is taken out of a
+  relative's state).
+- **The spend page** (`budgetBlock`): "planned and really spent" — what we spent of the plan per category and currency, bars amber from
+  85 % and rose over it, the total with what is left or over; "change the plan" opens one amount a category in the plan's money. A book
+  with a plan and no spending yet shows the card alone; a book with neither offers to set one.
+- **Today** (`budgetLine`, a trip day, editors): one line "spent ≈ … of a plan of ≈ … (n %)" → the spend page.
+- Not in backups yet (a small setting; the spending itself is).

@@ -191,6 +191,15 @@ ok((await put(`/api/b/spend/${T}.sp.bad1`, { ...sp, cat: 'casino' })).status ===
   && (await put(`/api/b/spend/${T}.sp.bad3`, { ...sp, cur: 'dollars' })).status === 400 && (await put(`/api/b/spend/${T}.sp.bad4`, { ...sp, day: 99 })).status === 400, 'spend: unknown category, negative amount, bad currency or day → 400');
 ok((await state(vck)).spend.length === 0 && (await state()).spend.length > 0, 'spending is the parents\' own ledger: a relative\'s state carries none of it');
 ok((await fetch(BASE + '/api/b/trips', { method: 'POST', headers: H, body: JSON.stringify({ slug: 'tz-test-book', title: { th: 'ทดสอบ', en: 'Test' }, date_from: '2030-01-01', date_to: '2030-01-02', timezone: 'Pacific/Sidney' }) })).status === 400, 'a new book with a timezone the platform does not know is refused (reminders would stop for every book)');
+{ // B3: the plan a book's spending is held against — the parents' own, kept in settings (a bundled book's theme is rewritten on boot)
+  const bp = await put(`/api/b/budget/${T}`, { lines: [{ cat: 'food', cur: 'mop', amt: 2000 }, { cat: 'casino', cur: 'MOP', amt: 5 }, { cat: 'tickets', cur: 'MOP', amt: -1 }, { cat: 'food', cur: 'MOP', amt: 9 }] });
+  const bj = await bp.json(), s1 = await state(), sv = await state(vck);
+  ok(bp.ok && bj.budget.src === 'own' && JSON.stringify(bj.budget.lines) === '[{"cat":"food","cur":"MOP","amt":2000}]' && s1.budgets[T].lines[0].amt === 2000 && !Object.keys(sv.budgets || {}).length,
+    `budget (B3): a plan of our own is kept (bad category, amount and a second line of the same kind and money dropped) and only the parents see it (${JSON.stringify(bj)})`);
+  ok((await put(`/api/b/budget/${T}`, { lines: 'x' })).status === 400 && (await put(`/api/b/budget/no-such-book`, { lines: [] })).status === 400 && (await put(`/api/b/budget/${T}`, { lines: [] }, { ...H, cookie: vck })).status === 403,
+    'budget (B3): a malformed plan, an unknown book or a relative → refused');
+  const bc = await (await put(`/api/b/budget/${T}`, { lines: [] })).json();
+  ok(bc.budget === null && !(await state()).budgets[T], 'budget (B3): an empty plan takes our own away'); }
 ok((await fetch(BASE + `/api/b/spend/${T}.sp.0001`, { method: 'DELETE', headers: H })).ok && !(await state()).spend.length, 'spend deleted');
 const nt = await fetch(BASE + '/api/b/trips', { method: 'POST', headers: H, body: JSON.stringify({ slug: 'chiang-mai-2027', title: { th: 'เชียงใหม่', en: 'Chiang Mai' }, date_from: '2027-08-10', date_to: '2027-08-13' }) });
 s = await state();
