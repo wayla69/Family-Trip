@@ -310,12 +310,17 @@ const T = 'hk-macau-2026';
     await page.fill('.ppf[data-v="height_last"]', '96'); await page.locator('.ppf[data-v="height_last"]').blur();
     await page.click('.growl a.grgo'); await page.waitForSelector('.ppbook[data-page="id"] .ppf[data-v="height_first"]');
     await page.fill('.ppf[data-v="height_first"]', '1.035 ม.'); await page.locator('.ppf[data-v="height_first"]').blur();   // in metres, with the unit: read as 103.5 cm
+    await page.waitForFunction(() => queue.length === 0, null, { timeout: 15000 }).catch(() => {});
+    const saved = await page.evaluate(() => S.entries.filter((e) => /\.field\.height_(first|last)\.mimi$/.test(e.id)).map((e) => `${e.id.split('.field.')[0]}:${e.first_key}=${e.text}`));
+    await ppOpen(page, 'mimi', 'big-hop-2027', 'id');   // drawn again from the saved state
     await page.waitForSelector('.grchart polyline', { timeout: 8000 }).catch(() => {});
-    const gr = await page.evaluate(() => ({ n: document.querySelectorAll('.growl li').length, art: document.querySelectorAll('.growl .grart img').length, age: document.querySelectorAll('.growl .grchip').length, chart: !!document.querySelector('.grchart polyline'), note: (document.querySelector('.pp-page.grow') || {}).textContent || '', ghinp: document.querySelectorAll('.ghinp').length }));
+    const gr = await page.evaluate(() => ({ saved: [], n: document.querySelectorAll('.growl li').length, art: document.querySelectorAll('.growl .grart img').length, age: document.querySelectorAll('.growl .grchip').length, chart: !!document.querySelector('.grchart polyline'), note: (document.querySelector('.pp-page.grow') || {}).textContent || '', ghinp: document.querySelectorAll('.ghinp').length }));
     await s.shot('grow');
-    ok(redir && gr.n >= 2 && gr.art === gr.n && gr.chart && /7\.5|7,5/.test(gr.note) && !gr.ghinp && await s.noHScroll(), `growing up lives in the passport: each book with the character of its time; the heights typed in two books' Explorer IDs draw the line (${JSON.stringify({ redir, ...gr, note: gr.note.slice(-40) })})`);
+    gr.saved = saved;
+    ok(redir && saved.length === 2 && gr.n >= 2 && gr.art === gr.n && gr.chart && /7\.5|7,5/.test(gr.note) && !gr.ghinp && await s.noHScroll(), `growing up lives in the passport: each book with the character of its time; the heights typed in two books' Explorer IDs draw the line (${JSON.stringify({ redir, ...gr, note: gr.note.slice(-40) })})`);
     // clear both again (an empty box removes the answer): the printed book's checks below expect a passport page of stamps only
     await page.fill('.ppf[data-v="height_first"]', ''); await page.locator('.ppf[data-v="height_first"]').blur();
+    await page.waitForFunction(() => queue.length === 0, null, { timeout: 15000 }).catch(() => {});
     await page.click('.growl a.grgo'); await page.waitForSelector('.ppbook[data-page="id"] .ppf[data-v="height_last"]');
     await page.fill('.ppf[data-v="height_last"]', ''); await page.locator('.ppf[data-v="height_last"]').blur();
     await page.waitForFunction(() => queue.length === 0 && !S.entries.some((e) => /\.field\.height_(first|last)\.mimi$/.test(e.id)), null, { timeout: 10000 }).catch(() => {});
