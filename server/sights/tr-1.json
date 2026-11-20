@@ -331,40 +331,6 @@
           "src": "https://istanbul.com/istanbul-aquarium"
         },
         {
-          "name": { "en": "LEGOLAND Discovery Centre Istanbul", "th": "เลโก้แลนด์ ดิสคัฟเวอรี เซ็นเตอร์ อิสตันบูล" },
-          "kind": "play",
-          "area": { "en": "Forum Istanbul, Bayrampaşa", "th": "ฟอรัมอิสตันบูล บายรัมปาชา" },
-          "what": { "en": "An indoor LEGO play centre with rides, a build area and Miniland models of Istanbul", "th": "ศูนย์เล่นเลโก้ในร่ม มีเครื่องเล่น โซนต่อเลโก้ และโมเดลมินิแลนด์ของอิสตันบูล" },
-          "why": { "en": "Built for ages 3 to 10, with a soft-play area for the youngest; a reliable wet-weather stop", "th": "ออกแบบสำหรับอายุ 3–10 ปี และมีโซนนุ่มๆ สำหรับเด็กเล็ก เป็นที่หลบฝนที่พึ่งได้" },
-          "tip": { "en": "Online tickets are about 10% cheaper; a combined ticket with SEA LIFE next door saves 15%", "th": "ตั๋วออนไลน์ถูกกว่าราว 10% ตั๋วรวมกับ SEA LIFE ข้างๆ ลด 15%" },
-          "ages": [0, 2, 2, 1],
-          "hrs": 3,
-          "io": "in",
-          "pram": "yes",
-          "price": { "en": "≈ TL 945–990 at the door · TL 851–891 online (snapshots differ) · under 3 free (reseller rule)", "th": "≈ TL 945–990 หน้างาน · TL 851–891 ออนไลน์ (ข้อมูลแต่ละช่วงต่างกัน) · ต่ำกว่า 3 ขวบฟรี (กฎจากตัวแทนขายบัตร)" },
-          "book": "rec",
-          "q": "LEGOLAND Discovery Centre, Forum Istanbul, Bayrampaşa",
-          "ok": "2026-11",
-          "src": "https://legolanddiscoverycentre.com/istanbul-en/tickets"
-        },
-        {
-          "name": { "en": "SEA LIFE Istanbul", "th": "ซีไลฟ์ อิสตันบูล" },
-          "kind": "aquarium",
-          "area": { "en": "Forum Istanbul, Bayrampaşa", "th": "ฟอรัมอิสตันบูล บายรัมปาชา" },
-          "what": { "en": "An indoor aquarium next to the LEGOLAND centre in the Forum Istanbul mall, with tunnels and touch pools", "th": "พิพิธภัณฑ์สัตว์น้ำในร่มข้างเลโก้แลนด์ในห้างฟอรัมอิสตันบูล มีอุโมงค์และบ่อให้สัมผัส" },
-          "why": { "en": "Easy to pair with LEGOLAND for a full wet day under one roof", "th": "ไปคู่กับเลโก้แลนด์ได้ง่าย เที่ยวทั้งวันที่ฝนตกในร่มเดียวกัน" },
-          "tip": { "en": "The official ticket page also offers a SEA LIFE + LEGOLAND combination ticket", "th": "หน้าตั๋วทางการมีตั๋วรวม SEA LIFE กับเลโก้แลนด์ด้วย" },
-          "ages": [1, 2, 2, 1],
-          "hrs": 2,
-          "io": "in",
-          "pram": "yes",
-          "price": { "en": "Check the price · SEA LIFE + LEGOLAND combi ≈ TL 1,535 at the door (≈ TL 1,382 online)", "th": "เช็กราคา · ตั๋วรวม SEA LIFE + เลโก้แลนด์ ≈ TL 1,535 หน้างาน (≈ TL 1,382 ออนไลน์)" },
-          "book": "rec",
-          "q": "SEA LIFE Istanbul, Forum Istanbul, Bayrampaşa",
-          "ok": "2026-11",
-          "src": "https://visitsealife.com/istanbul/en/tickets-prices"
-        },
-        {
           "name": { "en": "Basilica Cistern", "th": "บาซิลิกาซิสเทิร์น" },
           "local": "Yerebatan Sarnıcı",
           "kind": "oldtown",
@@ -561,6 +527,24 @@
           "q": "Panorama 1453 History Museum, Topkapı, Istanbul",
           "ok": "2026-11",
           "src": "https://www.panoramikmuze.com/en/visit-hours"
+        },
+        {
+          "name": { "en": "Istanbul Naval Museum", "th": "พิพิธภัณฑ์ทหารเรืออิสตันบูล" },
+          "local": "Deniz Müzesi",
+          "kind": "museum",
+          "area": { "en": "Beşiktaş, by the ferry pier", "th": "เบชิกตัช ข้างท่าเรือเฟอร์รี" },
+          "what": { "en": "The navy's museum by the Bosphorus, with a hall of great Ottoman rowing boats and old ships' models", "th": "พิพิธภัณฑ์ของกองทัพเรือริมช่องแคบบอสฟอรัส มีห้องโถงเรือพายโบราณลำใหญ่ของออตโตมันและเรือจำลอง" },
+          "why": { "en": "Indoors and right by the ferry, with huge boats children can walk around", "th": "อยู่ในร่ม ติดท่าเรือเฟอร์รี มีเรือลำใหญ่ให้เด็กเดินดูรอบๆ" },
+          "tip": { "en": "Closed on Mondays; good after a Bosphorus ferry from Beşiktaş", "th": "ปิดวันจันทร์ แวะหลังนั่งเฟอร์รีช่องแคบบอสฟอรัสจากเบชิกตัช" },
+          "ages": [1, 1, 2, 2],
+          "hrs": 1.5,
+          "io": "in",
+          "pram": "yes",
+          "price": { "en": "Check the price", "th": "เช็กราคาก่อนไป" },
+          "book": "none",
+          "q": "Deniz Müzesi, Beşiktaş, Istanbul",
+          "ok": "2026-11",
+          "src": "https://istanbul.com/blog/museums/maritime-museum-istanbul"
         }
       ]
     },

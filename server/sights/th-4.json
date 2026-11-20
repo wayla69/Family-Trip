@@ -701,24 +701,6 @@
           "src": "https://www.agoda.com/travel-guides/thailand/hat-yai/discover-hatyais-greenway-night-market-feast-fun-awaits"
         },
         {
-          "name": { "en": "Kidzoona at Aman Central", "th": "คิดซูน่า อมันเซ็นทรัล" },
-          "local": "Kidzoona Aman Central",
-          "kind": "play",
-          "area": { "en": "Aman Central, Hat Yai", "th": "อมันเซ็นทรัล หาดใหญ่" },
-          "what": { "en": "An indoor playground inside a Hat Yai mall with soft play and games", "th": "สนามเด็กเล่นในร่มในห้างหาดใหญ่ มีโซนเล่นนุ่มๆ และเกม" },
-          "why": { "en": "Air-conditioned and an easy rainy-day or midday-heat stop for ages 2 to 7", "th": "มีแอร์ เหมาะเป็นที่หลบฝนหรือแดดร้อนกลางวัน สำหรับเด็ก 2–7 ขวบ" },
-          "tip": { "en": "Listed as open daily; entry price not found in the sources, so ask at the counter", "th": "ระบุว่าเปิดทุกวัน แต่ไม่พบราคาเข้าในแหล่งข้อมูล ควรถามที่เคาน์เตอร์" },
-          "ages": [1, 2, 2, 0],
-          "hrs": 2,
-          "io": "in",
-          "pram": "yes",
-          "price": { "en": "Price not confirmed: check at the counter", "th": "ยังไม่ยืนยันราคา เช็กที่เคาน์เตอร์" },
-          "book": "none",
-          "q": "Kidzoona, Aman Central, Hat Yai",
-          "ok": "2026-11",
-          "src": "https://www.agoda.com/travel-guides/thailand/hat-yai/family-fun-awaits-kidzoona-aman-central-tickets-guide"
-        },
-        {
           "name": { "en": "Jumptopia at Central Hatyai", "th": "จัมพ์โทเปีย เซ็นทรัลหาดใหญ่" },
           "local": "Jumptopia Central Hatyai",
           "kind": "play",
@@ -822,6 +804,23 @@
           "q": "Khao Noi, Songkhla",
           "ok": "2026-11",
           "src": "https://www.thaiholidayguide.com/attraction/khao-noi/"
+        },
+        {
+          "name": { "en": "Folklore Museum, Institute for Southern Thai Studies", "th": "พิพิธภัณฑ์คติชนวิทยา สถาบันทักษิณคดีศึกษา" },
+          "kind": "museum",
+          "area": { "en": "Ko Yo, Songkhla Lake", "th": "เกาะยอ ทะเลสาบสงขลา" },
+          "what": { "en": "Southern Thai houses on a hill over Songkhla Lake, full of shadow puppets, boats, toys and tools of the south", "th": "เรือนทรงปักษ์ใต้บนเนินริมทะเลสาบสงขลา จัดแสดงหนังตะลุง เรือ ของเล่น และเครื่องมือของคนใต้" },
+          "why": { "en": "Mostly indoors, with shadow puppets children love and a view over the lake and the bridge", "th": "ส่วนใหญ่อยู่ในร่ม มีหนังตะลุงที่เด็กชอบ และจุดชมวิวทะเลสาบกับสะพาน" },
+          "tip": { "en": "Steps between the buildings on the hill, so a carrier beats a pram", "th": "มีบันไดระหว่างอาคารบนเนิน ใช้เป้อุ้มเด็กสะดวกกว่ารถเข็น" },
+          "ages": [1, 1, 2, 2],
+          "hrs": 1.5,
+          "io": "in",
+          "pram": "no",
+          "price": { "en": "Check the price", "th": "เช็กราคาก่อนไป" },
+          "book": "none",
+          "q": "Institute for Southern Thai Studies, Ko Yo, Songkhla",
+          "ok": "2026-11",
+          "src": "https://www.thaipost.net/district-news/772516/"
         }
       ]
     },
