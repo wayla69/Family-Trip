@@ -1255,8 +1255,8 @@ const T = 'hk-macau-2026';
   await page.goto(`${BASE}/#/passport/mimi/${T}`); await page.waitForSelector('.kidgo');
   { // owner's Samsung, Nov 2026: "จะพิมพ์แล้ว keyboard เด้งหาย" — the keyboard shrinks the screen's height, and the resize re-packed the
     // passport's pages, moving the box under the focused field, which closed the keyboard
-    const vs = page.viewportSize(); await page.focus('.pp input.ppf'); await page.setViewportSize({ width: vs.width, height: Math.round(vs.height * 0.55) }); await page.waitForTimeout(400);
-    const kept = await page.evaluate(() => !!(document.activeElement && document.activeElement.matches('.pp input.ppf')));
+    await ppOpen(page, 'mimi', T, 'id'); const vs = page.viewportSize(); await page.focus('input.ppf'); await page.setViewportSize({ width: vs.width, height: Math.round(vs.height * 0.55) }); await page.waitForTimeout(400);
+    const kept = await page.evaluate(() => !!(document.activeElement && document.activeElement.matches('input.ppf')));
     await page.setViewportSize(vs); await page.waitForTimeout(300);
     ok(kept, `passport: a field keeps the focus when the keyboard shrinks the screen (focused: ${await page.evaluate(() => document.activeElement && document.activeElement.className)})`); }
   await page.click('.kidgo'); await page.waitForSelector('.kidwrap .kidtiles');
