@@ -158,8 +158,12 @@ function packBoxes(root) {
   root.querySelectorAll('.cgrid, .pp').forEach((g) => {
     const boxes = [...g.querySelectorAll(':scope > section, :scope > .ccol > section')];
     boxes.forEach((b, i) => { if (b._o === undefined) b._o = i; }); boxes.sort((a, b) => a._o - b._o);   // the order they were written in, however often they are packed again
+    const two = g.clientWidth >= (g.classList.contains('pp') ? 858 : 694) && boxes.length >= 2;
+    if (!two && !g.classList.contains('packed')) return;   // one column already: moving the boxes would only drop the focus of a field inside one
+    const was = document.activeElement, inside = was && was !== document.body && g.contains(was);
     g.querySelectorAll(':scope > .ccol').forEach((c) => c.remove()); g.classList.remove('packed'); boxes.forEach((b) => g.append(b));
-    if (g.clientWidth < (g.classList.contains('pp') ? 858 : 694) || boxes.length < 2) return;
+    const refocus = () => { if (inside && document.activeElement !== was && document.contains(was)) try { was.focus({ preventScroll: true }); } catch (e) { /* ignore */ } };
+    if (!two) { refocus(); return; }
     const h = boxes.map((b) => b.offsetHeight); let best = null;
     for (let m = 0; m < 1 << boxes.length; m++) {
       if (m & 1) continue;   // the first box stays on the left
@@ -168,10 +172,12 @@ function packBoxes(root) {
     }
     const cols = [0, 1].map(() => { const c = document.createElement('div'); c.className = 'ccol'; return c; });
     boxes.forEach((b, i) => cols[best.m >> i & 1].append(b));
-    g.append(...cols); g.classList.add('packed');
+    g.append(...cols); g.classList.add('packed'); refocus();
   });
 }
-let packT; addEventListener('resize', () => { clearTimeout(packT); packT = setTimeout(() => packBoxes(document), 150); });
+// only a change of width can change the columns: a phone's keyboard opening changes the height alone (owner's Samsung, Nov 2026:
+// "จะพิมพ์แล้ว keyboard เด้งหาย" — the re-pack moved the box under the focused field and the keyboard closed)
+let packT, packW = innerWidth; addEventListener('resize', () => { if (innerWidth === packW) return; packW = innerWidth; clearTimeout(packT); packT = setTimeout(() => packBoxes(document), 150); });
 // A fold opened or closed inside a packed grid (owner, Nov 2026: on a wide screen an opened box left the other column ending far short of it):
 // the boxes are dealt again by their heights as they are now — without anything moving under the finger. One fold: the box that was tapped and
 // every box written before it keep their columns, so it stays exactly where it is on the screen (a first version also moved the boxes above
