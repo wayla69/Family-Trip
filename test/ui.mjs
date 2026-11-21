@@ -1034,10 +1034,10 @@ const T = 'hk-macau-2026';
   { // the eat library: what makes a place easy with a little one is read from its own words and filters in place; a typed rate shows its price roughly in baht
     await page.evaluate(() => localStorage.setItem('mbs_fx', JSON.stringify({ JPY: 0.23 })));
     await page.goto(`${BASE}/#/eats/tokyo`); await page.waitForSelector('.eatc');
-    const e0 = await page.evaluate(() => ({ all: document.querySelectorAll('.eatc').length, thb: document.querySelectorAll('.eatc .prthb').length, chips: [...document.querySelectorAll('.ektagbar .chip')].map((b) => b.dataset.v) }));
+    const e0 = await page.evaluate(() => ({ all: document.querySelectorAll('.eatc').length, thb: document.querySelectorAll('.eatc .prthb').length, priced: [...document.querySelectorAll('.eatc')].filter((li) => /¥\s?\d/.test(li.textContent)).length, chips: [...document.querySelectorAll('.ektagbar .chip')].map((b) => b.dataset.v) }));
     await page.locator('.ektagbar .chip').first().click();
     const e1 = await page.evaluate((k) => { const shown = [...document.querySelectorAll('.eatc')].filter((li) => !li.hidden); return { n: shown.length, ok: shown.every((li) => li.dataset.t.split(' ').includes(k)), line: document.querySelector('#eatn').textContent }; }, e0.chips[0]);
-    ok(e0.chips.length >= 1 && e1.n >= 1 && e1.n < e0.all && e1.ok && e1.line.includes(String(e1.n)) && e0.thb >= e0.all - 2, `eat library: a "easy with little ones" chip keeps only the places that say so, in place; prices show roughly in baht from the rate typed on this phone (${e0.chips.join(',')} · ${e0.all} → ${e1.n} · ${e0.thb} in baht)`);
+    ok(e0.chips.length >= 1 && e1.n >= 1 && e1.n < e0.all && e1.ok && e1.line.includes(String(e1.n)) && e0.priced >= 5 && e0.thb >= e0.priced - 2, `eat library: a "easy with little ones" chip keeps only the places that say so, in place; every place with a yen price shows it roughly in baht from the rate typed on this phone — a place whose page gave no price says "Check the price" (${e0.chips.join(',')} · ${e0.all} → ${e1.n} · ${e0.thb} in baht of ${e0.priced} priced)`);
     await page.evaluate(() => localStorage.removeItem('mbs_fx')); }
   { // explore a town (#/explore, E3): the library's things to do with their ages, the rainy-day filter, a child's age, the wish list ♥ kept on the server, and the town's places to eat in a tab
     await page.goto(`${BASE}/#/explore`); await page.waitForSelector('.xptowns .plchip');
