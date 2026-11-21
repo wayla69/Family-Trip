@@ -19,6 +19,13 @@ function page(url) {
   const text = raw.replace(/<script\b[^>]*>[\s\S]*?<\/script[^>]*>/gi, (s) => (/ld\+json/.test(s) ? s : ' ')).replace(/<[^>]*>/g, ' ').replace(/&rsquo;|&lsquo;/g, "'").replace(/&ndash;/g, '–').replace(/&nbsp;/g, ' ')
     .replace(/&#x([0-9a-f]+);/gi, (_, h) => String.fromCodePoint(parseInt(h, 16))).replace(/&#(\d+);/g, (_, d) => String.fromCodePoint(+d)).replace(/&quot;/g, '"');   // '&#x26;' = '&' (Wongnai)
   const dates = [...raw.matchAll(/"(?:datePublished|dateModified|dateCreated|publishTime|updateTime|updatedAt|publishedAt|createdAt|dateSchemaPublish|dateSchemaModify|publishDate|updateDate)"\s*:\s*"(\d{4})-(\d{2})/g), ...raw.matchAll(/article:(?:published|modified)_time" content="(\d{4})-(\d{2})/g)].map((m) => m[1] + '-' + m[2]);
+  // a <meta> tag that carries the page's date, either attribute order (government pages: <meta name="PubDate" content="2026-03-16 …">)
+  for (const m of raw.matchAll(/<meta\b[^>]*>/gi)) {
+    const t = m[0];
+    if (!/(?:name|property|itemprop)\s*=\s*["'][^"']*(?:date|publish|modified|updated)[^"']*["']/i.test(t)) continue;
+    const c = /content\s*=\s*["'](\d{4})[-/.](\d{2})/i.exec(t);
+    if (c) dates.push(`${c[1]}-${c[2]}`);
+  }
   // a date the page prints as words: "Updated Nov 2, 2026", "updated 2 November 2026", "Last checked 29 September 2026" (Wanderlog, bkkfamilies)
   const MON = { jan: '01', feb: '02', mar: '03', apr: '04', may: '05', jun: '06', jul: '07', aug: '08', sep: '09', oct: '10', nov: '11', dec: '12' };
   for (const m of text.matchAll(/\b(?:updated|last (?:updated|checked)|published)\s*(?:on|in)?\s*:?\s*(?:(\d{1,2})\s+([a-z]{3})[a-z]*\.?,?\s+(\d{4})|([a-z]{3})[a-z]*\.?\s+(?:(\d{1,2}),?\s+)?(\d{4}))/gi)) {   // also 'updated in July 2026'
