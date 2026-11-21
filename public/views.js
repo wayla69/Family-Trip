@@ -1370,7 +1370,7 @@ const BAG = [
   ['octopus', '💳', 'บัตร Octopus', 'Octopus cards', /Octopus/],
   ['contactless', '💳', 'บัตร contactless (รถไฟ เรือ)', 'Contactless cards (train, ferry)', /contactless|\bOpal\b/i],
   ['tickets', '🎟️', 'ตั๋ว / บอร์ดดิ้งพาสในโทรศัพท์', 'Tickets / boarding passes on the phone', /boarding pass|timed ticket|tickets? on the phone/i],
-  ['rain', '☂️', 'ร่ม เสื้อกันฝน', 'Umbrella and raincoats', /\brain(y|coats?)?\b|showers?|umbrellas?|typhoon|storm/i],
+  ['rain', '☔', 'ร่ม เสื้อกันฝน', 'Umbrella and raincoats', /\brain(y|coats?)?\b|showers?|umbrellas?|typhoon|storm/i],
   ['spare', '👕', 'เสื้อผ้าสำรอง', 'Spare clothes', /spare clothes/i],
   ['snacks', '🍎', 'ขนม ขวดน้ำ', 'Snacks and water bottles', /snacks?|water bottles?/i],
   ['nappies', '🧷', 'ผ้าอ้อม ทิชชู่เปียก', 'Nappies and wipes', /nappies|nappy|diaper/i],

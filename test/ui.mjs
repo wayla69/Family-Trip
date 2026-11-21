@@ -207,6 +207,10 @@ const T = 'hk-macau-2026';
   ok(await page.locator('.spend .items li', { hasText: 'แท็กซี่ไปดิสนีย์' }).count() === 1 && /120/.test(await page.locator('.spend h3 .label').textContent()) && /120/.test(await page.locator('.spend p.lede').textContent()), 'spend: a row with its note, the day total and the trip total');
   ok(await page.locator('button[data-a="spendcat"] img.emi').count() === 6 && await page.locator('.spend .items li img.emi[src="/art/emoji/taxi.webp"]').count() === 1, 'spend: the categories and the row show the library pictures (🚕 = the taxi)');
   ok(await page.evaluate(() => { const box = document.createElement('div'); box.innerHTML = tagHtml('animals') + bagBlock(trip(location.hash.split('/')[2]), 1); return !!box.querySelector('img.emi[src="/art/emoji/koala.webp"]') && box.querySelectorAll('.bagl img.emi').length === box.querySelectorAll('.bagl li').length; }), 'photo tags and today’s bag draw the library pictures');
+  // the forecast adds rows (rain, warm, sun) only within 16 days of a trip, so check every thing the bag can hold, not just today's
+  // (21 Nov 2026: the HK book came within the forecast's reach and its rain row ☂️ had no picture)
+  { const miss = await page.evaluate(() => BAG.filter((b) => !emoOf(b[1])).map((b) => b[0]));
+    ok(!miss.length, `every thing today's bag can hold has a library picture (${miss.join(', ') || 'all'})`); }
   await page.waitForFunction(() => queue.length === 0, null, { timeout: 15000 });
   ok((await page.evaluate(async () => (await (await fetch('/api/b/state', { credentials: 'same-origin' })).json()).spend)).some((x) => x.amount === 120 && x.cur === 'HKD' && x.cat === 'transport'), 'spend: saved on the server in the book’s money (HKD)');
   // food: the day's places in a dropdown (plan picks first, then the route, the bed, the rest) — picking one writes the note; "other" leaves it free
