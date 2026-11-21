@@ -273,6 +273,23 @@
           "q": "Suzuhiro Kamaboko no Sato, Odawara",
           "ok": "2026-11",
           "src": "https://www.kamaboko.com/en/?p=210"
+        },
+        {
+          "name": { "en": "Forest Adventure Hakone", "th": "ฟอเรสต์ แอดเวนเจอร์ ฮาโกเนะ" },
+          "kind": "play",
+          "area": { "en": "Yumoto", "th": "ยูโมโตะ" },
+          "what": { "en": "Athletic forest park with narrow bridges between trees, ziplines, climbing walls, mini-golf and a giant trampoline.", "th": "สวนผจญภัยในป่า มีสะพานแคบระหว่างต้นไม้ ซิปไลน์ กำแพงปีนเขา มินิกอล์ฟ และแทรมโพลีนยักษ์" },
+          "why": { "en": "Children can cross the tree bridges and glide on ziplines; the Canopy Course is the gentler one for first-time visitors.", "th": "เด็กข้ามสะพานบนต้นไม้และโหนซิปไลน์ได้ คอร์สแคโนปีเบากว่าและเหมาะกับคนมาครั้งแรก" },
+          "tip": { "en": "Canopy Course 08:30–15:30, Adventure Course 08:30–15:00 (hours vary by season); children must be over 110 cm.", "th": "คอร์สแคโนปี 08:30–15:30 คอร์สแอดเวนเจอร์ 08:30–15:00 (เวลาเปลี่ยนตามฤดูกาล) เด็กต้องสูงเกิน 110 ซม." },
+          "ages": [0, 0, 1, 2],
+          "hrs": 2,
+          "io": "out",
+          "pram": "no",
+          "price": { "en": "Check the price", "th": "เช็กราคาก่อนไป" },
+          "book": "none",
+          "q": "Forest Adventure HAKONE, 749-1 Chanohanakan, Yumoto, Hakone",
+          "ok": "2026-11",
+          "src": "https://www.magical-trip.com/media/top-10-family-friendly-activities-in-hakone-a-comprehensive-guide-for-2025/"
         }
       ]
     },
@@ -548,6 +565,23 @@
           "q": "Kobe Port Tower, Kobe",
           "ok": "2026-11",
           "src": "https://japanactivity.com/attractions/kobe/kobe-port-tower"
+        },
+        {
+          "name": { "en": "Miyajima Aquarium", "th": "พิพิธภัณฑ์สัตว์น้ำมิยาจิมะ" },
+          "kind": "aquarium",
+          "area": { "en": "Miyajima island", "th": "เกาะมิยาจิมะ" },
+          "what": { "en": "Small aquarium with local marine life from the Seto Inland Sea and beluga whales.", "th": "พิพิธภัณฑ์สัตว์น้ำขนาดเล็ก มีสัตว์ทะเลจากทะเลในเซโตะและวาฬเบลูก้า" },
+          "why": { "en": "Small and easy for little legs; a child who loves sea animals will like it.", "th": "ขนาดเล็ก เดินไม่เหนื่อยสำหรับขาเล็ก ๆ เด็กที่ชอบสัตว์ทะเลจะชอบ" },
+          "tip": { "en": "Cash only.", "th": "รับเงินสดเท่านั้น" },
+          "ages": [1, 2, 2, 2],
+          "hrs": 1,
+          "io": "in",
+          "pram": "part",
+          "price": { "en": "Check the price", "th": "เช็กราคาก่อนไป" },
+          "book": "none",
+          "q": "Miyajima Aquarium, Miyajima island, Hiroshima",
+          "ok": "2026-11",
+          "src": "https://tinytotintokyo.com/miyajima-with-kids"
         }
       ]
     },
