@@ -25,6 +25,11 @@ function page(url) {
     const mon = MON[(m[2] || m[4] || '').toLowerCase()], y = m[3] || m[6];
     if (mon && y) dates.push(`${y}-${mon}`);
   }
+  // day/month/year in numbers, only after a word that says it is the page's date ("Ngày đăng: 30/05/2026", "Updated 30/05/2026")
+  for (const m of text.matchAll(/\b(?:updated|published|posted|date|ngày(?: đăng| cập nhật)?|更新|发布)\s*:?\s*(\d{1,2})[/.-](\d{1,2})[/.-](20\d\d)\b/gi)) {
+    const mon = +m[2];   // day first (the European and Vietnamese order)
+    if (mon >= 1 && mon <= 12) dates.push(`${m[3]}-${String(mon).padStart(2, '0')}`);
+  }
   const r ={ ok: raw.length > 500, text: norm(text), flat: key(text), dates };
   cache.set(url, r); return r;
 }
