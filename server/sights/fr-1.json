@@ -289,6 +289,57 @@
           "q": "Musée Grévin, 10 boulevard Montmartre, Paris",
           "ok": "2026-11",
           "src": "https://www.tarifs.org/musee-grevin-tarif"
+        },
+        {
+          "name": { "en": "Musée en Herbe", "th": "พิพิธภัณฑ์ มูเซ็ ออง แอร์บ" },
+          "kind": "museumkid",
+          "area": { "en": "Le Marais, 23 rue de l'Arbre-Sec", "th": "เลอมาแร 23 ถนนลาร์บร์-เซก" },
+          "what": { "en": "A child-sized art museum with temporary, interactive exhibitions and no permanent collection.", "th": "พิพิธภัณฑ์ศิลปะขนาดเด็ก มีนิทรรศการชั่วคราวแบบโต้ตอบ ไม่มีคอลเลกชันถาวร" },
+          "why": { "en": "Interactive exhibitions for young children; children under 3 do not pay.", "th": "นิทรรศการโต้ตอบสำหรับเด็กเล็ก เด็กอายุต่ำกว่า 3 ปีไม่ต้องจ่าย" },
+          "tip": { "en": "Allow about two hours.", "th": "เผื่อเวลาราว 2 ชั่วโมง" },
+          "ages": [0, 2, 2, 2],
+          "hrs": 2,
+          "io": "in",
+          "pram": "part",
+          "price": { "en": "≈ €7.5 for anyone over 3 · under 3 free", "th": "≈ €7.5 สำหรับอายุเกิน 3 ปี · ต่ำกว่า 3 ปีฟรี" },
+          "book": "none",
+          "q": "Musée en Herbe, 23 rue de l'Arbre-Sec, Paris",
+          "ok": "2026-11",
+          "src": "https://www.sortiraparis.com/en/what-to-visit-in-paris/exhibit-museum/articles/1261-le-musee-en-herbe-the-child-sized-cultural-venue-in-the-marshlands"
+        },
+        {
+          "name": { "en": "Parc André-Citroën", "th": "สวนอ็องเดร-ซิโตรเอ็ง" },
+          "kind": "play",
+          "area": { "en": "Parc André-Citroën, 15th", "th": "สวนอ็องเดร-ซิโตรเอ็ง เขต 15" },
+          "what": { "en": "A large park with a children's playground in the 15th arrondissement.", "th": "สวนขนาดใหญ่ในเขต 15 มีสนามเด็กเล่น" },
+          "why": { "en": "A children's playground ideal for young and old alike.", "th": "สนามเด็กเล่นที่เหมาะทั้งเด็กเล็กและเด็กโต" },
+          "tip": { "en": "Allow about two hours.", "th": "เผื่อเวลาราว 2 ชั่วโมง" },
+          "ages": [2, 2, 2, 1],
+          "hrs": 2,
+          "io": "out",
+          "pram": "yes",
+          "price": { "en": "Check the price", "th": "เช็กราคาก่อนไป" },
+          "book": "none",
+          "q": "Parc André-Citroën, 15th arrondissement, Paris",
+          "ok": "2026-11",
+          "src": "https://www.sortiraparis.com/en/child-and-family/guides/298982-children-s-playground-outdoor-paris-family-tips"
+        },
+        {
+          "name": { "en": "Marcel Bleustein Blanchet park", "th": "สวนมาร์แซล เบลอสแตง-บล็องเชต์" },
+          "kind": "play",
+          "area": { "en": "Next to Sacré-Coeur, Montmartre", "th": "ข้างซาเคร-เกอร์ มงมาร์ต" },
+          "what": { "en": "A small park with a playground, a short walk from Sacré-Coeur.", "th": "สวนเล็กๆ มีสนามเด็กเล่น เดินจากซาเคร-เกอร์ไม่ไกล" },
+          "why": { "en": "A playground option for children, a break near Sacré-Coeur.", "th": "เป็นสนามเด็กเล่นให้เด็กๆ พักใกล้ซาเคร-เกอร์" },
+          "tip": { "en": "Allow about an hour.", "th": "เผื่อเวลาราวหนึ่งชั่วโมง" },
+          "ages": [2, 2, 2, 1],
+          "hrs": 1,
+          "io": "out",
+          "pram": "yes",
+          "price": { "en": "Check the price", "th": "เช็กราคาก่อนไป" },
+          "book": "none",
+          "q": "Marcel Bleustein Blanchet park, next to Sacré-Coeur, Paris",
+          "ok": "2026-11",
+          "src": "https://www.sortiraparis.com/en/child-and-family/guides/298982-children-s-playground-outdoor-paris-family-tips"
         }
       ]
     }
