@@ -18,7 +18,7 @@ function page(url) {
   // the text only feeds a substring check, never a page: script blocks are blanked (closing tags in any spacing), JSON-LD kept for dates and names
   const text = raw.replace(/<script\b[^>]*>[\s\S]*?<\/script[^>]*>/gi, (s) => (/ld\+json/.test(s) ? s : ' ')).replace(/<[^>]*>/g, ' ').replace(/&rsquo;|&lsquo;/g, "'").replace(/&ndash;/g, '–').replace(/&nbsp;/g, ' ')
     .replace(/&#x([0-9a-f]+);/gi, (_, h) => String.fromCodePoint(parseInt(h, 16))).replace(/&#(\d+);/g, (_, d) => String.fromCodePoint(+d)).replace(/&quot;/g, '"');   // '&#x26;' = '&' (Wongnai)
-  const dates = [...raw.matchAll(/"(?:datePublished|dateModified|dateCreated|publishTime|updateTime)"\s*:\s*"(\d{4})-(\d{2})/g), ...raw.matchAll(/article:(?:published|modified)_time" content="(\d{4})-(\d{2})/g)].map((m) => m[1] + '-' + m[2]);
+  const dates = [...raw.matchAll(/"(?:datePublished|dateModified|dateCreated|publishTime|updateTime|updatedAt|publishedAt|createdAt)"\s*:\s*"(\d{4})-(\d{2})/g), ...raw.matchAll(/article:(?:published|modified)_time" content="(\d{4})-(\d{2})/g)].map((m) => m[1] + '-' + m[2]);
   // a date the page prints as words: "Updated Nov 2, 2026", "updated 2 November 2026", "Last checked 29 September 2026" (Wanderlog, bkkfamilies)
   const MON = { jan: '01', feb: '02', mar: '03', apr: '04', may: '05', jun: '06', jul: '07', aug: '08', sep: '09', oct: '10', nov: '11', dec: '12' };
   for (const m of text.matchAll(/\b(?:updated|last (?:updated|checked)|published)\s*(?:on|in)?\s*:?\s*(?:(\d{1,2})\s+([a-z]{3})[a-z]*\.?,?\s+(\d{4})|([a-z]{3})[a-z]*\.?\s+(?:(\d{1,2}),?\s+)?(\d{4}))/gi)) {   // also 'updated in July 2026'
