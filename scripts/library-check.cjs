@@ -18,7 +18,7 @@ function page(url) {
   // the text only feeds a substring check, never a page: script blocks are blanked (closing tags in any spacing), JSON-LD kept for dates and names
   const text = raw.replace(/<script\b[^>]*>[\s\S]*?<\/script[^>]*>/gi, (s) => (/ld\+json/.test(s) ? s : ' ')).replace(/<[^>]*>/g, ' ').replace(/&rsquo;|&lsquo;/g, "'").replace(/&ndash;/g, '–').replace(/&nbsp;/g, ' ')
     .replace(/&#x([0-9a-f]+);/gi, (_, h) => String.fromCodePoint(parseInt(h, 16))).replace(/&#(\d+);/g, (_, d) => String.fromCodePoint(+d)).replace(/&quot;/g, '"');   // '&#x26;' = '&' (Wongnai)
-  const dates = [...raw.matchAll(/"(?:datePublished|dateModified)"\s*:\s*"(\d{4})-(\d{2})/g), ...raw.matchAll(/article:(?:published|modified)_time" content="(\d{4})-(\d{2})/g)].map((m) => m[1] + '-' + m[2]);
+  const dates = [...raw.matchAll(/"(?:datePublished|dateModified|dateCreated|publishTime|updateTime)"\s*:\s*"(\d{4})-(\d{2})/g), ...raw.matchAll(/article:(?:published|modified)_time" content="(\d{4})-(\d{2})/g)].map((m) => m[1] + '-' + m[2]);
   // a date the page prints as words: "Updated Nov 2, 2026", "updated 2 November 2026", "Last checked 29 September 2026" (Wanderlog, bkkfamilies)
   const MON = { jan: '01', feb: '02', mar: '03', apr: '04', may: '05', jun: '06', jul: '07', aug: '08', sep: '09', oct: '10', nov: '11', dec: '12' };
   for (const m of text.matchAll(/\b(?:updated|last (?:updated|checked)|published)\s*(?:on\s*)?:?\s*(?:(\d{1,2})\s+([a-z]{3})[a-z]*\.?,?\s+(\d{4})|([a-z]{3})[a-z]*\.?\s+(\d{1,2}),?\s+(\d{4}))/gi)) {
@@ -37,29 +37,29 @@ const out = { pass: [], fail: [] };
 for (const f of process.argv.slice(2)) {
   const kind = /\.E\./.test(f) || /(^|\/)sights?[-.]/.test(f) ? 'sights' : 'eats';
   for (const r of JSON.parse(fs.readFileSync(f, 'utf8'))) {
-    const why = [];
-    if (!/^https?:\/\//.test(r.src || '')) why.push('no src');
+    const fails = [];
+    if (!/^https?:\/\//.test(r.src || '')) fails.push('no src');
     else {
       const p = page(r.src);
-      if (!p.ok) why.push('page did not open');
+      if (!p.ok) fails.push('page did not open');
       else {
         const nk = key(r.name);
-        if (!nk || !p.flat.includes(nk)) why.push('name not on page');
+        if (!nk || !p.flat.includes(nk)) fails.push('name not on page');
         const q = key(r.quote);
-        if (!q || q.length < 12 || !p.flat.includes(q)) why.push('quote not on page');
+        if (!q || q.length < 12 || !p.flat.includes(q)) fails.push('quote not on page');
         const recent = p.dates.some((d) => d >= '2025-01');
-        if (!recent && r.date !== 'official') why.push(`page date ${p.dates[0] || 'none'}`);
+        if (!recent && r.date !== 'official') fails.push(`page date ${p.dates[0] || 'none'}`);
         const amt = (r.price || '').match(/\d[\d,.]*/g);
-        if (amt && !/check the price/i.test(r.price) && !amt.every((a) => p.text.includes(a))) why.push('price not on page');
+        if (amt && !/check the price/i.test(r.price) && !amt.every((a) => p.text.includes(a))) fails.push('price not on page');
       }
     }
-    if (have[kind + '|' + r.place] && (have[kind + '|' + r.place].has(key(r.name)) || (r.local && have[kind + '|' + r.place].has(key(r.local))))) why.push('already in library');
-    (why.length ? out.fail : out.pass).push({ ...r, why, file: f });
+    if (have[kind + '|' + r.place] && (have[kind + '|' + r.place].has(key(r.name)) || (r.local && have[kind + '|' + r.place].has(key(r.local))))) fails.push('already in library');
+    (fails.length ? out.fail : out.pass).push({ ...r, fails, file: f });
   }
 }
 // duplicates between files of one run
 const seen = new Set();
-out.pass = out.pass.filter((r) => { const k = r.place + '|' + key(r.name); if (seen.has(k)) { out.fail.push({ ...r, why: ['duplicate in this run'] }); return false; } seen.add(k); return true; });
+out.pass = out.pass.filter((r) => { const k = r.place + '|' + key(r.name); if (seen.has(k)) { out.fail.push({ ...r, fails: ['duplicate in this run'] }); return false; } seen.add(k); return true; });
 fs.writeFileSync(process.env.OUT || '/dev/stdout', JSON.stringify(out, null, 1));
 console.error(`pass ${out.pass.length} · fail ${out.fail.length}`);
-const tally = {}; for (const r of out.fail) for (const w of r.why) tally[w.replace(/ \d.*/, '')] = (tally[w.replace(/ \d.*/, '')] || 0) + 1; console.error(tally);
+const tally = {}; for (const r of out.fail) for (const w of r.fails) tally[w.replace(/ \d.*/, '')] = (tally[w.replace(/ \d.*/, '')] || 0) + 1; console.error(tally);
