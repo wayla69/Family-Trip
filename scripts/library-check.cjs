@@ -47,7 +47,10 @@ function page(url) {
     const mon = +m[2];   // day first (the European and Vietnamese order)
     if (mon >= 1 && mon <= 12) dates.push(`${m[3]}-${String(mon).padStart(2, '0')}`);
   }
-  const r ={ ok: raw.length > 500, text: norm(text), flat: key(text), dates };
+  // places the page itself marks closed (Wanderlog embeds Google's status: "name":"…","businessStatus":"CLOSED_PERMANENTLY")
+  const closed = new Set();
+  for (const m of raw.matchAll(/"name":"((?:[^"\\]|\\.){1,120})"[^{}]{0,600}?"businessStatus":"CLOSED_(?:PERMANENTLY|TEMPORARILY)"/g)) closed.add(key(m[1]));
+  const r ={ ok: raw.length > 500, text: norm(text), flat: key(text), dates, closed };
   cache.set(url, r); return r;
 }
 const have = {};
@@ -67,6 +70,7 @@ for (const f of process.argv.slice(2)) {
       else {
         const nk = key(r.name);
         if (!nk || !p.flat.includes(nk)) fails.push('name not on page');
+        if (nk && [...p.closed].some((c) => c && (c.includes(nk) || nk.includes(c)))) fails.push('page marks it closed');
         const q = key(r.quote);
         if (!q || q.length < 12 || !p.flat.includes(q)) fails.push('quote not on page');
         const recent = p.dates.some((d) => d >= '2025-01');
