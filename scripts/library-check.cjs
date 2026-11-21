@@ -18,7 +18,7 @@ function page(url) {
   // the text only feeds a substring check, never a page: script blocks are blanked (closing tags in any spacing), JSON-LD kept for dates and names
   const text = raw.replace(/<script\b[^>]*>[\s\S]*?<\/script[^>]*>/gi, (s) => (/ld\+json/.test(s) ? s : ' ')).replace(/<[^>]*>/g, ' ').replace(/&rsquo;|&lsquo;/g, "'").replace(/&ndash;/g, '–').replace(/&nbsp;/g, ' ')
     .replace(/&#x([0-9a-f]+);/gi, (_, h) => String.fromCodePoint(parseInt(h, 16))).replace(/&#(\d+);/g, (_, d) => String.fromCodePoint(+d)).replace(/&quot;/g, '"');   // '&#x26;' = '&' (Wongnai)
-  const dates = [...raw.matchAll(/"(?:datePublished|dateModified|dateCreated|publishTime|updateTime|updatedAt|publishedAt|createdAt|dateSchemaPublish|dateSchemaModify|publishDate|updateDate)"\s*:\s*"(\d{4})-(\d{2})/g), ...raw.matchAll(/article:(?:published|modified)_time" content="(\d{4})-(\d{2})/g)].map((m) => m[1] + '-' + m[2]);
+  const dates = [...raw.replace(/\\"/g, '"').matchAll(/"(?:datePublished|dateModified|dateCreated|publishTime|updateTime|updatedAt|publishedAt|createdAt|dateSchemaPublish|dateSchemaModify|publishDate|updateDate)"\s*:\s*"(\d{4})-(\d{2})/g), ...raw.matchAll(/article:(?:published|modified)_time" content="(\d{4})-(\d{2})/g)].map((m) => m[1] + '-' + m[2]);
   // a Chinese page's printed date: 发布时间：2026-03-16 · 日期：2026年3月16日
   for (const m of text.matchAll(/(?:发布时间|发布日期|发布于|更新时间|日期|时间)\s*[:：]?\s*(20\d\d)\s*[-年/.]\s*(\d{1,2})/g)) dates.push(`${m[1]}-${m[2].padStart(2, '0')}`);
   // a <meta> tag that carries the page's date, either attribute order (government pages: <meta name="PubDate" content="2026-03-16 …">)
@@ -35,7 +35,7 @@ function page(url) {
     if (mon && y) dates.push(`${y}-${mon}`);
   }
   // day/month/year in numbers, only after a word that says it is the page's date ("Ngày đăng: 30/05/2026", "Updated 30/05/2026")
-  for (const m of text.matchAll(/\b(?:updated|published|posted|date|ngày(?: đăng| cập nhật)?|更新|发布)\s*:?\s*(\d{1,2})[/.-](\d{1,2})[/.-](20\d\d)\b/gi)) {
+  for (const m of text.matchAll(/\b(?:updated|published|posted|date|ngày(?: đăng| cập nhật)?|更新|发布)\s*(?:on\s*)?:?\s*(\d{1,2})[/.-](\d{1,2})[/.-](20\d\d)\b/gi)) {
     const mon = +m[2];   // day first (the European and Vietnamese order)
     if (mon >= 1 && mon <= 12) dates.push(`${m[3]}-${String(mon).padStart(2, '0')}`);
   }
