@@ -19,6 +19,8 @@ function page(url) {
   const text = raw.replace(/<script\b[^>]*>[\s\S]*?<\/script[^>]*>/gi, (s) => (/ld\+json/.test(s) ? s : ' ')).replace(/<[^>]*>/g, ' ').replace(/&rsquo;|&lsquo;/g, "'").replace(/&ndash;/g, '–').replace(/&nbsp;/g, ' ')
     .replace(/&#x([0-9a-f]+);/gi, (_, h) => String.fromCodePoint(parseInt(h, 16))).replace(/&#(\d+);/g, (_, d) => String.fromCodePoint(+d)).replace(/&quot;/g, '"');   // '&#x26;' = '&' (Wongnai)
   const dates = [...raw.replace(/\\"/g, '"').matchAll(/"(?:datePublished|dateModified|dateCreated|publishTime|updateTime|updatedAt|publishedAt|createdAt|dateSchemaPublish|dateSchemaModify|publishDate|updateDate)"\s*:\s*"(\d{4})-(\d{2})/g), ...raw.matchAll(/article:(?:published|modified)_time" content="(\d{4})-(\d{2})/g)].map((m) => m[1] + '-' + m[2]);
+  // a post's time in epoch milliseconds (Trip.com moments: "publishTime":1758034525000)
+  for (const m of raw.matchAll(/"(?:publishTime|updateTime|publishedAt|updatedAt)"\s*:\s*(1[6-9]\d{11})\b/g)) dates.push(new Date(+m[1]).toISOString().slice(0, 7));
   // a Chinese page's printed date: 发布时间：2026-03-16 · 日期：2026年3月16日
   for (const m of text.matchAll(/(?:发布时间|发布日期|发布于|更新时间|日期|时间)\s*[:：]?\s*(20\d\d)\s*[-年/.]\s*(\d{1,2})/g)) dates.push(`${m[1]}-${m[2].padStart(2, '0')}`);
   // a <meta> tag that carries the page's date, either attribute order (government pages: <meta name="PubDate" content="2026-03-16 …">)
