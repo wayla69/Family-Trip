@@ -5,11 +5,18 @@ const fs = require('fs'), { execFileSync } = require('child_process');
 const norm = (s) => String(s || '').toLowerCase().normalize('NFKD').replace(/[̀-ͯ]/g, '').replace(/&amp;/g, '&').replace(/[’'`]/g, "'").replace(/\s+/g, ' ').trim();
 const key = (s) => norm(s).replace(/[^a-z0-9฀-๿぀-鿿]+/g, '');
 const cache = new Map();
+// only a public https page: an agent's row must never make this script reach the machine it runs on or a private network
+const PRIVATE = /^(localhost|.*\.local|.*\.internal|0\.|10\.|127\.|169\.254\.|192\.168\.|172\.(1[6-9]|2\d|3[01])\.|\[|::)/i;
+function safeUrl(u) {
+  try { const x = new URL(u); return x.protocol === 'https:' && !x.username && !x.password && !PRIVATE.test(x.hostname) && !/^\d+\.\d+\.\d+\.\d+$/.test(x.hostname) ? x.href : null; } catch (_) { return null; }
+}
 function page(url) {
   if (cache.has(url)) return cache.get(url);
   let raw = '';
-  try { raw = execFileSync('curl', ['-sL', '--max-time', '30', '-A', 'Mozilla/5.0', url], { maxBuffer: 64 << 20 }).toString(); } catch (_) {}
-  const text = raw.replace(/<script[\s\S]*?<\/script>/gi, (s) => (/ld\+json/.test(s) ? s : ' ')).replace(/<[^>]*>/g, ' ').replace(/&#8217;|&rsquo;/g, "'").replace(/&#8211;|&ndash;/g, '–').replace(/&nbsp;/g, ' ');
+  const safe = safeUrl(url);
+  if (safe) try { raw = execFileSync('curl', ['-sL', '--proto', '=https', '--proto-redir', '=https', '--max-time', '30', '-A', 'Mozilla/5.0', '--', safe], { maxBuffer: 64 << 20 }).toString(); } catch (_) {}
+  // the text only feeds a substring check, never a page: script blocks are blanked (closing tags in any spacing), JSON-LD kept for dates and names
+  const text = raw.replace(/<script\b[^>]*>[\s\S]*?<\/script\s*>/gi, (s) => (/ld\+json/.test(s) ? s : ' ')).replace(/<[^>]*>/g, ' ').replace(/&#8217;|&rsquo;/g, "'").replace(/&#8211;|&ndash;/g, '–').replace(/&nbsp;/g, ' ');
   const dates = [...raw.matchAll(/"(?:datePublished|dateModified)"\s*:\s*"(\d{4})-(\d{2})/g), ...raw.matchAll(/article:(?:published|modified)_time" content="(\d{4})-(\d{2})/g)].map((m) => m[1] + '-' + m[2]);
   const r = { ok: raw.length > 500, text: norm(text), flat: key(text), dates };
   cache.set(url, r); return r;
