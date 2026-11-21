@@ -81,6 +81,9 @@ ok(sent[0].p.body.length <= 140 && !/booking|PNR|passport no/i.test(sent[0].p.bo
 { const n0 = sent.length;
   ok(await R.tick(PUSH.zoned('2026-12-03', '19:00', 'Asia/Bangkok')) === 1 && sent[n0].p.url === '/#/t/hk-macau-2026/offline' && /เก็บเล่มนี้ไว้ในเครื่อง/.test(sent[n0].p.body) && sent[n0].p.tag === 'hk-macau-2026.x.pack', 'scheduler: the store-the-book nudge goes out two evenings before, in the phone’s language');
   ok(await R.tick(PUSH.zoned('2026-12-03', '19:01', 'Asia/Bangkok')) === 0, '…once');
+  // the live test server runs its own minute ticker on the real clock: on 21 Nov 2026 between 08:00 and 08:15 Bangkok time (door 1 of the
+  // bundled HK book, for real) it claimed this door before the test could (CI, 21 Nov 2026) — the test's clock is the one under test
+  await pool.query("DELETE FROM push_sent WHERE key LIKE 'hk-macau-2026.x.door%'");
   ok(await R.tick(PUSH.zoned('2026-11-21', '08:00', 'Asia/Bangkok')) === 1 && /ประตูที่ 1/.test(sent[sent.length - 1].p.title), 'scheduler: door 1 the morning 14 sleeps before');
   const rec = async (i) => (await pool.query(`SELECT 1 FROM entries WHERE trip_id='hk-macau-2026' AND day_index=$1 AND kind IN ('quote','mood','fav','note','first') UNION ALL SELECT 1 FROM media WHERE trip_id='hk-macau-2026' AND day_index=$1`, [i])).rowCount > 0;
   const days = [0, 1, 2, 3, 4, 5], recorded = []; for (const i of days) if (await rec(i)) recorded.push(i);

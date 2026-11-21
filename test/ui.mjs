@@ -207,6 +207,10 @@ const T = 'hk-macau-2026';
   ok(await page.locator('.spend .items li', { hasText: 'แท็กซี่ไปดิสนีย์' }).count() === 1 && /120/.test(await page.locator('.spend h3 .label').textContent()) && /120/.test(await page.locator('.spend p.lede').textContent()), 'spend: a row with its note, the day total and the trip total');
   ok(await page.locator('button[data-a="spendcat"] img.emi').count() === 6 && await page.locator('.spend .items li img.emi[src="/art/emoji/taxi.webp"]').count() === 1, 'spend: the categories and the row show the library pictures (🚕 = the taxi)');
   ok(await page.evaluate(() => { const box = document.createElement('div'); box.innerHTML = tagHtml('animals') + bagBlock(trip(location.hash.split('/')[2]), 1); return !!box.querySelector('img.emi[src="/art/emoji/koala.webp"]') && box.querySelectorAll('.bagl img.emi').length === box.querySelectorAll('.bagl li').length; }), 'photo tags and today’s bag draw the library pictures');
+  // the forecast adds rows (rain, warm, sun) only within 16 days of a trip, so check every thing the bag can hold, not just today's
+  // (21 Nov 2026: the HK book came within the forecast's reach and its rain row ☂️ had no picture)
+  { const miss = await page.evaluate(() => BAG.filter((b) => !emoOf(b[1])).map((b) => b[0]));
+    ok(!miss.length, `every thing today's bag can hold has a library picture (${miss.join(', ') || 'all'})`); }
   await page.waitForFunction(() => queue.length === 0, null, { timeout: 15000 });
   ok((await page.evaluate(async () => (await (await fetch('/api/b/state', { credentials: 'same-origin' })).json()).spend)).some((x) => x.amount === 120 && x.cur === 'HKD' && x.cat === 'transport'), 'spend: saved on the server in the book’s money (HKD)');
   // food: the day's places in a dropdown (plan picks first, then the route, the bed, the rest) — picking one writes the note; "other" leaves it free
@@ -1030,10 +1034,10 @@ const T = 'hk-macau-2026';
   { // the eat library: what makes a place easy with a little one is read from its own words and filters in place; a typed rate shows its price roughly in baht
     await page.evaluate(() => localStorage.setItem('mbs_fx', JSON.stringify({ JPY: 0.23 })));
     await page.goto(`${BASE}/#/eats/tokyo`); await page.waitForSelector('.eatc');
-    const e0 = await page.evaluate(() => ({ all: document.querySelectorAll('.eatc').length, thb: document.querySelectorAll('.eatc .prthb').length, chips: [...document.querySelectorAll('.ektagbar .chip')].map((b) => b.dataset.v) }));
+    const e0 = await page.evaluate(() => ({ all: document.querySelectorAll('.eatc').length, thb: document.querySelectorAll('.eatc .prthb').length, priced: [...document.querySelectorAll('.eatc')].filter((li) => /¥\s?\d/.test(li.textContent)).length, chips: [...document.querySelectorAll('.ektagbar .chip')].map((b) => b.dataset.v) }));
     await page.locator('.ektagbar .chip').first().click();
     const e1 = await page.evaluate((k) => { const shown = [...document.querySelectorAll('.eatc')].filter((li) => !li.hidden); return { n: shown.length, ok: shown.every((li) => li.dataset.t.split(' ').includes(k)), line: document.querySelector('#eatn').textContent }; }, e0.chips[0]);
-    ok(e0.chips.length >= 1 && e1.n >= 1 && e1.n < e0.all && e1.ok && e1.line.includes(String(e1.n)) && e0.thb >= e0.all - 2, `eat library: a "easy with little ones" chip keeps only the places that say so, in place; prices show roughly in baht from the rate typed on this phone (${e0.chips.join(',')} · ${e0.all} → ${e1.n} · ${e0.thb} in baht)`);
+    ok(e0.chips.length >= 1 && e1.n >= 1 && e1.n < e0.all && e1.ok && e1.line.includes(String(e1.n)) && e0.priced >= 5 && e0.thb >= e0.priced - 2, `eat library: a "easy with little ones" chip keeps only the places that say so, in place; every place with a yen price shows it roughly in baht from the rate typed on this phone — a place whose page gave no price says "Check the price" (${e0.chips.join(',')} · ${e0.all} → ${e1.n} · ${e0.thb} in baht of ${e0.priced} priced)`);
     await page.evaluate(() => localStorage.removeItem('mbs_fx')); }
   { // explore a town (#/explore, E3): the library's things to do with their ages, the rainy-day filter, a child's age, the wish list ♥ kept on the server, and the town's places to eat in a tab
     await page.goto(`${BASE}/#/explore`); await page.waitForSelector('.xptowns .plchip');

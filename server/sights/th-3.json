@@ -302,6 +302,40 @@
           "q": "Secret Buddha Garden, Na Mueang, Koh Samui",
           "ok": "2026-11",
           "src": "https://airial.travel/attractions/thailand/secret-buddha-garden-w85RV9XI"
+        },
+        {
+          "name": { "en": "Renaissance Art Center", "th": "เรอเนสซองส์ อาร์ต เซ็นเตอร์" },
+          "kind": "play",
+          "area": { "en": "Bophut, northern sub-district", "th": "โพธิ์ทอง ตำบลทางเหนือของเกาะ" },
+          "what": { "en": "A children's art centre with dance, art, craft, pottery, gymnastics, ballet, chess and music classes", "th": "ศูนย์ศิลปะสำหรับเด็ก มีคลาสเต้น ศิลปะ งานฝีมือ ปั้นเซรามิก ยิมนาสติก บัลเลต์ หมากรุกและดนตรี" },
+          "why": { "en": "It focuses on developing children's natural talents; the page gives no ages", "th": "เน้นพัฒนาความสามารถตามธรรมชาติของเด็ก หน้าเว็บไม่ได้ระบุอายุ" },
+          "tip": { "en": "Classes, so book ahead for a set time", "th": "เป็นคลาสเรียน จึงควรจองล่วงหน้าเพื่อกำหนดเวลา" },
+          "ages": [0, 1, 2, 2],
+          "hrs": 1.5,
+          "io": "in",
+          "pram": "no",
+          "price": { "en": "Check the price", "th": "เช็กราคาก่อนไป" },
+          "book": "req",
+          "q": "Renaissance Art Center, Buffalo area, Bophut, Koh Samui",
+          "ok": "2026-11",
+          "src": "https://www.thethaiger.com/news/samui/top-5-kid-friendly-experiences-on-koh-samui"
+        },
+        {
+          "name": { "en": "MK Ultra Artists Pottery Studio", "th": "เอ็มเค อัลตรา อาร์ติสต์ สตูดิโอปั้นเซรามิก" },
+          "kind": "culture",
+          "area": { "en": "Bo Put, north of the island", "th": "บ่อผุด ทางเหนือของเกาะ" },
+          "what": { "en": "The island's pottery studio: wheel throwing, pottery painting and hand-building", "th": "สตูดิโอปั้นเซรามิกของเกาะ มีปั้นบนแป้นหมุน เพนต์เซรามิกและปั้นด้วยมือ" },
+          "why": { "en": "Children aged 7 and above are welcome, as some fine motor skills are needed; younger children are not taken in classes", "th": "รับเด็กอายุ 7 ขวบขึ้นไป เพราะต้องใช้กล้ามเนื้อมัดเล็กบ้าง เด็กเล็กกว่านี้ไม่รับเข้าคลาส" },
+          "tip": { "en": "Messy work, so wear old clothes; children under 7 are not taken in classes", "th": "งานเลอะ ควรใส่เสื้อผ้าเก่า เด็กอายุต่ำกว่า 7 ขวบไม่รับเข้าคลาส" },
+          "ages": [0, 0, 1, 2],
+          "hrs": 2,
+          "io": "in",
+          "pram": "no",
+          "price": { "en": "Check the price", "th": "เช็กราคาก่อนไป" },
+          "book": "req",
+          "q": "MK Ultra Artists Pottery Studio, 16/41 Moo 4, Bo Put, Koh Samui",
+          "ok": "2026-11",
+          "src": "https://www.thethaiger.com/news/samui/top-5-kid-friendly-experiences-on-koh-samui"
         }
       ]
     }

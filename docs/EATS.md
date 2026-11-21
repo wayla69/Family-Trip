@@ -211,6 +211,12 @@ taken out (permanently closed); a chain's main site or a temporary-closed tag ke
 search allowance ran out before most rows were searched; the rest, and the library's growth (big cities 70 places, other towns 40, small ones
 22, spread over districts), went to the owner's Gemini Deep Research brief.
 Gemini round 3 (20 Nov 2026): every row of its answer was opened here first. 29 more confirmed open; out as closed for good: Din Tai
+
+Gemini round 4 (20 Nov 2026, an audit of our rows): Palio Khao Yai taken out — the Tuscan village has been shut since March 2020 (Bangkok Post, Bangkok Insight); it was one of the unconfirmed rows. The care list also lost LEGOLAND Discovery Centre Istanbul (closed 1 Jan 2025).
+
+Gemini round 5 (21 Nov 2026, batch D1): 13 rows offered, each looked for on its own source page. In: Twiggy Family, Hyperama, Pepe Cucina, The Garden Project (Dubai), Local Hive Cafe (Sydney), The Farm Cafe, Ichi Ni Nana Izakaya (Melbourne) — no price shown on any page, so "Check the price". Out: Maison Mathis, The Farm (Al Barari), Frankie's Food Factory, Oli's (not on the page Gemini named), The Uncommon (a desert café the page does not call child-friendly), Studley Park Boathouse (no 2025–26 page; its café is now The Perch).
+
+Our own agents, pilot (21 Nov 2026, Bangkok): 29 rows offered, each checked by a script against its page (name, a copied sentence, a 2025–2026 date). In: Genius Kids Cafe, BABYCCINO & Co., Mozza by Cocotte, BHC Chicken, Underhound, Benihana. Out: nine rows from an undated ranking site (restaurantsforkings.com), and five whose page gave no district (Frame, MAKIN, Rinji, Bubble in the Forest, SukiCamp Safari).
 Fung World Square (Sydney, now Double Chin Eats) and Warung Mama (Komodo); moved and corrected by hand: Al Fanar Abu Dhabi (Yas Mall),
 Nonie's (Station 3, Boracay), Lai Cheng (477 Zhongzheng Rd, Hualien), the Oranjezicht market (across the road); kept unconfirmed: Queen
 of Tarts (closure seen only in a search result), Larsian (renamed Sugbo Sentro, reported problems), Lake Louise station restaurant (closed

@@ -727,12 +727,12 @@ try {
       `taste: the family's styles are kept in the profile and cleaned (${JSON.stringify(tj.family && tj.family.taste)})`);
     ok((await fetch(BASE + '/api/b/family/profile', { method: 'PATCH', headers: { ...PH, cookie: vck.split(';')[0] }, body: JSON.stringify({ taste: {} }) })).status === 403, 'taste: relatives cannot change it'); }
   // the things-to-do library: a heart on a sight keeps it, and the planner sends the wish list with the route ask
-  { const tk = await (await fetch(BASE + '/api/b/sights?town=tokyo', { headers: { cookie: ck } })).json(), s0 = (tk.sights || [])[0] || {};
+  { const tk = await (await fetch(BASE + '/api/b/sights?town=tokyo', { headers: { cookie: ck } })).json(), s0 = (tk.sights || []).find((x) => x.fit > -9) || {};   // a sight that suits the youngest: the planner's menu leaves out one that does not, wished or not (the first row changes as the library grows — 21 Nov 2026, the Edo-Tokyo Museum)
     const wsh = await fetch(BASE + `/api/b/sights/${s0.id}/wish`, { method: 'PUT', headers: PH, body: JSON.stringify({ on: true }) });
     ok(wsh.status === 200 && tk.sights.length >= 15, `sights: a heart keeps a sight on the family's wish list (${tk.sights.length} in Tokyo)`);
     globalThis.__wishName = s0.name && s0.name.en;
     // E5: what we did and thought there comes back on the library — a 5-star review of one sight, a check-in at another
-    const okk = tk.sights.filter((x) => x.fit !== -9 && x.id !== s0.id), s1 = okk[0], s2 = okk[1];   // a sight 'not for' the youngest never reaches the planner's menu
+    const okk = tk.sights.filter((x) => x.fit !== -9 && x.id !== s0.id), s1 = okk.find((x) => /museum/i.test(x.name.en)) || okk[0], s2 = okk.find((x) => x !== s1);   // the loved one is a museum: E6 below learns the "Kids' museums" style from its name   // a sight 'not for' the youngest never reaches the planner's menu
     await put('/api/b/reviews/' + `${T}.rev.place.e5-loved`, { trip: T, day: 1, kind: 'place', key: 'e5-loved', name: s1.name, rating: 5, again: true });
     await put('/api/b/places', { trip: T, key: 'e5-been', day: 1, kind: 'place', name: s2.name });
     const tk2 = await (await fetch(BASE + '/api/b/sights?town=tokyo', { headers: { cookie: ck } })).json(), f1 = (tk2.sights.find((x) => x.id === s1.id) || {}).fam, f2 = (tk2.sights.find((x) => x.id === s2.id) || {}).fam;

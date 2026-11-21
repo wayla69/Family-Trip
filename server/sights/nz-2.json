@@ -243,22 +243,21 @@
           "src": "https://buriedvillage.co.nz/what-to-expect/entry-prices-opening-hours"
         },
         {
-          "ok": "2026-11",
-          "name": { "en": "Rotorua Museum", "th": "พิพิธภัณฑ์โรโตรัว" },
-          "local": "Te Whare Taonga o Te Arawa",
-          "kind": "museum",
-          "area": { "en": "Government Gardens", "th": "ทำเนียบสวนรัฐบาล" },
-          "what": { "en": "The city museum in the old bathhouse building, telling the story of Te Arawa and the thermal town", "th": "พิพิธภัณฑ์เมืองในอาคารโรงอาบน้ำเก่า เล่าเรื่องชาวเตอาราวาและเมืองน้ำพุร้อน" },
-          "why": { "en": "A dry indoor stop beside the gardens; people living in New Zealand enter free, visitors pay", "th": "ที่หลบฝนในร่มข้างสวน ผู้อยู่ในนิวซีแลนด์เข้าฟรี นักท่องเที่ยวเสียค่าเข้า" },
-          "tip": { "en": "Check the price list and the opening hours on the museum's page before you go", "th": "เช็กราคาและเวลาเปิดที่หน้าเว็บของพิพิธภัณฑ์ก่อนไป" },
-          "ages": [0, 1, 1, 2],
-          "hrs": 1.5,
-          "io": "in",
-          "pram": "yes",
+          "name": { "en": "Paradise Valley Springs Wildlife Park", "th": "สวนสัตว์พาราไดซ์แวลลีย์สปริงส์" },
+          "kind": "zoo",
+          "area": { "en": "Ngongotahā, west of Rotorua", "th": "งองโกทาฮา ทางตะวันตกของโรโตรัว" },
+          "what": { "en": "A small wildlife park among springs and native bush, with lions, kea and farm animals to meet", "th": "สวนสัตว์เล็กๆ ท่ามกลางลำธารและป่าพื้นเมือง มีสิงโต นกเคีย และสัตว์ในฟาร์มให้ดูใกล้ๆ" },
+          "why": { "en": "Hands-on with friendly animals for children of any age, and short paths", "th": "เด็กทุกวัยได้ใกล้ชิดสัตว์ที่เชื่อง ทางเดินสั้น" },
+          "tip": { "en": "Open every day of the year; the lion feeding in the afternoon is the highlight", "th": "เปิดทุกวันตลอดปี ช่วงให้อาหารสิงโตตอนบ่ายเด็กชอบที่สุด" },
+          "ages": [2, 2, 2, 1],
+          "hrs": 2,
+          "io": "out",
+          "pram": "part",
           "price": { "en": "Check the price", "th": "เช็กราคาก่อนไป" },
           "book": "none",
-          "q": "Rotorua Museum, Government Gardens, Rotorua",
-          "src": "https://www.rotoruamuseum.co.nz/prices/"
+          "q": "Paradise Valley Springs, Paradise Valley Road, Rotorua",
+          "ok": "2026-11",
+          "src": "https://www.paradisev.co.nz/"
         }
       ]
     }

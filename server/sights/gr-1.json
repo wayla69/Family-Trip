@@ -257,21 +257,22 @@
           "src": "https://offpeaktrip.com/en/guide/athens/monastiraki-flea-market"
         },
         {
-          "name": { "en": "Allou! Fun Park", "th": "อัลลู! ฟันพาร์ก" },
-          "kind": "themepark",
-          "area": { "en": "Renti", "th": "เรนติ" },
-          "what": { "en": "An amusement park with rides, plus a Kidom area for younger children with a pirate ship, carousel and trampolines", "th": "สวนสนุกมีเครื่องเล่น และโซน Kidom สำหรับเด็กเล็กมีเรือโจรสลัด ม้าหมุน และแทรมโพลีน" },
-          "why": { "en": "The Kidom area suits ages 2–7; the listing is undated, so confirm the park is open in your month", "th": "โซน Kidom เหมาะกับอายุ 2–7 ปี รายการไม่ระบุวันที่ ยืนยันก่อนว่าเปิดในเดือนที่ไป" },
-          "tip": { "en": "Express tickets shorten queues; tickets are valid for 24 hours; check the season and price on the park's page", "th": "บัตรด่วนช่วยลดคิว บัตรใช้ได้ 24 ชั่วโมง เช็กฤดูกาลและราคาที่เว็บสวนสนุก" },
-          "ages": [0, 2, 2, 1],
-          "hrs": 4,
+          "name": { "en": "Ellinikon Sports Park", "th": "สวนกีฬาเอลลินิคอน" },
+          "local": "Ellinikon Sports Park",
+          "kind": "park",
+          "area": { "en": "Ellinikon, by the old airport", "th": "เอลลินิคอน ข้างสนามบินเก่า" },
+          "what": { "en": "A big new park on the old airport land with green lawns, walking and cycling paths and play areas for children", "th": "สวนใหญ่เปิดใหม่บนที่ดินสนามบินเก่า มีสนามหญ้า ทางเดินและทางจักรยาน และพื้นที่เล่นสำหรับเด็ก" },
+          "why": { "en": "Free, wide and flat, with room to run, cafés and parking", "th": "เข้าฟรี กว้างและเรียบ วิ่งเล่นได้เต็มที่ มีร้านอาหารและที่จอดรถ" },
+          "tip": { "en": "Opened July 2026 and still opening in stages; enter from Aeroporias Street on the Alimos side", "th": "เปิดเมื่อกรกฎาคม 2026 และยังทยอยเปิดเพิ่ม เข้าทางถนนแอโรโปเรียส ฝั่งอาลิมอส" },
+          "ages": [2, 2, 2, 2],
+          "hrs": 2,
           "io": "out",
           "pram": "yes",
-          "price": { "en": "check the price", "th": "เช็กราคา" },
+          "price": { "en": "Free", "th": "ฟรี" },
           "book": "none",
-          "q": "Allou! Fun Park, Renti, Athens",
+          "q": "Ellinikon Sports Park, Aeroporias, Alimos",
           "ok": "2026-11",
-          "src": "https://www.kidslovegreece.com/activity/allou-fun-park-athens/"
+          "src": "https://www.tovima.com/society/the-ellinikon-sports-park-opens-to-the-public/"
         }
       ]
     },
