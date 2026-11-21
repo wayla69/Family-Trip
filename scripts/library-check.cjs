@@ -3,7 +3,7 @@
 // the name and the quote are on the page, and a printed price is on the page; never already in the library under the same name
 const fs = require('fs'), { execFileSync } = require('child_process');
 const norm = (s) => String(s || '').toLowerCase().normalize('NFKD').replace(/[̀-ͯ]/g, '').replace(/&amp;/g, '&').replace(/[’'`]/g, "'").replace(/\s+/g, ' ').trim();
-const key = (s) => norm(s).replace(/[^a-z0-9฀-๿぀-鿿]+/g, '');
+const key = (s) => norm(s).replace(/[^a-z0-9\u0e00-\u0e7f\u3040-\u9fff\u1100-\u11ff\uac00-\ud7af]+/g, '')   // Hangul: NFKD splits a syllable into its jamo (U+1100–11FF);
 const cache = new Map();
 // only a public https page: an agent's row must never make this script reach the machine it runs on or a private network
 const PRIVATE = /^(localhost|.*\.local|.*\.internal|0\.|10\.|127\.|169\.254\.|192\.168\.|172\.(1[6-9]|2\d|3[01])\.|\[|::)/i;
@@ -31,7 +31,7 @@ function page(url) {
 const have = {};
 for (const d of ['eats', 'sights']) for (const f of fs.readdirSync('server/' + d)) for (const t of JSON.parse(fs.readFileSync(`server/${d}/${f}`)).towns) {
   const s = (have[d + '|' + t.place] = new Set());
-  for (const r of t.places || t.sights) { s.add(key(typeof r.name === 'string' ? r.name : r.name.en)); if (r.zh) s.add(key(r.zh)); if (r.local) s.add(key(r.local)); }
+  for (const r of t.places || t.sights) { for (const k of [key(typeof r.name === 'string' ? r.name : r.name.en), key(r.zh), key(r.local)]) if (k) s.add(k); }   // an empty key (a script the key drops) must never match
 }
 const out = { pass: [], fail: [] };
 for (const f of process.argv.slice(2)) {
