@@ -16,7 +16,7 @@ function page(url) {
   const safe = safeUrl(url);
   if (safe) try { raw = execFileSync('curl', ['-sL', '--proto', '=https', '--proto-redir', '=https', '--max-time', '30', '-A', 'Mozilla/5.0', '--', safe], { maxBuffer: 64 << 20 }).toString(); } catch (_) {}
   // the text only feeds a substring check, never a page: script blocks are blanked (closing tags in any spacing), JSON-LD kept for dates and names
-  const text = raw.replace(/<script\b[^>]*>[\s\S]*?<\/script\s*>/gi, (s) => (/ld\+json/.test(s) ? s : ' ')).replace(/<[^>]*>/g, ' ').replace(/&#8217;|&rsquo;/g, "'").replace(/&#8211;|&ndash;/g, '–').replace(/&nbsp;/g, ' ');
+  const text = raw.replace(/<script\b[^>]*>[\s\S]*?<\/script[^>]*>/gi, (s) => (/ld\+json/.test(s) ? s : ' ')).replace(/<[^>]*>/g, ' ').replace(/&#8217;|&rsquo;/g, "'").replace(/&#8211;|&ndash;/g, '–').replace(/&nbsp;/g, ' ');
   const dates = [...raw.matchAll(/"(?:datePublished|dateModified)"\s*:\s*"(\d{4})-(\d{2})/g), ...raw.matchAll(/article:(?:published|modified)_time" content="(\d{4})-(\d{2})/g)].map((m) => m[1] + '-' + m[2]);
   const r = { ok: raw.length > 500, text: norm(text), flat: key(text), dates };
   cache.set(url, r); return r;
