@@ -23,7 +23,7 @@ function page(url) {
   for (const m of raw.matchAll(/"(?:publishTime|updateTime|publishedAt|updatedAt)"\s*:\s*(1[6-9]\d{11})\b/g)) dates.push(new Date(+m[1]).toISOString().slice(0, 7));
   // a Thai page's printed date in the Buddhist year: "อัพเดทเมื่อ 21 มี.ค. 2568" (Wongnai), "อัปเดตล่าสุด 9 พ.ค. 2568"
   const TMON = ['ม.ค.', 'ก.พ.', 'มี.ค.', 'เม.ย.', 'พ.ค.', 'มิ.ย.', 'ก.ค.', 'ส.ค.', 'ก.ย.', 'ต.ค.', 'พ.ย.', 'ธ.ค.'];
-  for (const m of text.matchAll(/(?:อัพเดท|อัปเดต)(?:เมื่อ|ล่าสุด)?\s*:?\s*\d{1,2}\s+([ก-ฮ]{1,2}\.[ก-ฮ]{1,2}\.)\s*(25\d\d)/g)) {
+  for (const m of text.matchAll(/(?:อัพเดท|อัปเดต)(?:เมื่อ|ล่าสุด)?\s*:?\s*\d{1,2}\s+([ก-๙]{1,3}\.[ก-๙]{1,2}\.)\s*(25\d\d)/g)) {
     const i = TMON.indexOf(m[1]);
     if (i >= 0) dates.push(`${+m[2] - 543}-${String(i + 1).padStart(2, '0')}`);
   }
