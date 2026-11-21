@@ -30,7 +30,7 @@ function page(url) {
   }
   // a date the page prints as words: "Updated Nov 2, 2026", "updated 2 November 2026", "Last checked 29 September 2026" (Wanderlog, bkkfamilies)
   const MON = { jan: '01', feb: '02', mar: '03', apr: '04', may: '05', jun: '06', jul: '07', aug: '08', sep: '09', oct: '10', nov: '11', dec: '12' };
-  for (const m of text.matchAll(/\b(?:updated|last (?:updated|checked)|published)\s*(?:on|in)?\s*:?\s*(?:(\d{1,2})\s+([a-z]{3})[a-z]*\.?,?\s+(\d{4})|([a-z]{3})[a-z]*\.?\s+(?:(\d{1,2}),?\s+)?(\d{4}))/gi)) {   // also 'updated in July 2026'
+  for (const m of text.matchAll(/\b(?:updated|last (?:updated|checked)|published)\s*(?:on|in)?\s*:?\s*(?:(\d{1,2})(?:st|nd|rd|th)?\s+(?:of\s+)?([a-z]{3})[a-z]*\.?,?\s+(\d{4})|([a-z]{3})[a-z]*\.?\s+(?:(\d{1,2})(?:st|nd|rd|th)?,?\s+)?(\d{4}))/gi)) {   // also 'updated in July 2026'
     const mon = MON[(m[2] || m[4] || '').toLowerCase()], y = m[3] || m[6];
     if (mon && y) dates.push(`${y}-${mon}`);
   }
