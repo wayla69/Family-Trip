@@ -18,7 +18,7 @@ function page(url) {
   // the text only feeds a substring check, never a page: script blocks are blanked (closing tags in any spacing), JSON-LD kept for dates and names
   const text = raw.replace(/<script\b[^>]*>[\s\S]*?<\/script[^>]*>/gi, (s) => (/ld\+json/.test(s) ? s : ' ')).replace(/<[^>]*>/g, ' ').replace(/&rsquo;|&lsquo;/g, "'").replace(/&ndash;/g, '–').replace(/&nbsp;/g, ' ')
     .replace(/&#x([0-9a-f]+);/gi, (_, h) => String.fromCodePoint(parseInt(h, 16))).replace(/&#(\d+);/g, (_, d) => String.fromCodePoint(+d)).replace(/&quot;/g, '"');   // '&#x26;' = '&' (Wongnai)
-  const dates = [...raw.replace(/\\"/g, '"').matchAll(/"(?:datePublished|dateModified|dateCreated|publishTime|updateTime|updatedAt|publishedAt|createdAt|dateSchemaPublish|dateSchemaModify|publishDate|updateDate)"\s*:\s*"(\d{4})-(\d{2})/g), ...raw.matchAll(/article:(?:published|modified)_time" content="(\d{4})-(\d{2})/g)].map((m) => m[1] + '-' + m[2]);
+  const dates = [...raw.replace(/\\"/g, '"').matchAll(/"(?:datePublished|dateModified|dateCreated|publishTime|updateTime|updatedAt|publishedAt|createdAt|dateSchemaPublish|dateSchemaModify|publishDate|updateDate)"\s*:\s*"(\d{4})[-/.](\d{2})/g), ...raw.matchAll(/article:(?:published|modified)_time" content="(\d{4})-(\d{2})/g)].map((m) => m[1] + '-' + m[2]);
   // a post's time in epoch milliseconds (Trip.com moments: "publishTime":1758034525000)
   for (const m of raw.matchAll(/"(?:publishTime|updateTime|publishedAt|updatedAt)"\s*:\s*(1[6-9]\d{11})\b/g)) dates.push(new Date(+m[1]).toISOString().slice(0, 7));
   // a Thai page's printed date in the Buddhist year: "อัพเดทเมื่อ 21 มี.ค. 2568" (Wongnai), "อัปเดตล่าสุด 9 พ.ค. 2568"
