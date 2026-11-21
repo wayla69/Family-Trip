@@ -327,6 +327,23 @@
           "q": "Myeongdong Nanta Theatre, Jung-gu, Seoul",
           "ok": "2026-11",
           "src": "https://www.seoultravelpass.com/en/products/117-seoul-myeongdong-nanta-show-ticket"
+        },
+        {
+          "name": { "en": "Seoul Science Center", "th": "ศูนย์วิทยาศาสตร์โซล" },
+          "kind": "museum",
+          "area": { "en": "Nowon District, northeastern Seoul", "th": "เขตโนวอน ทางตะวันออกเฉียงเหนือของโซล" },
+          "what": { "en": "A hands-on science museum where a summer festival turns it into a 'science mart' with workshops, a pet-rock station, live tornado demonstrations and stargazing", "th": "พิพิธภัณฑ์วิทยาศาสตร์ให้ลงมือทำ ช่วงเทศกาลฤดูร้อนเปลี่ยนเป็น \"ซูเปอร์มาร์เก็ตวิทยาศาสตร์\" มีเวิร์กชอป มุมระบายหินสัตว์เลี้ยง สาธิตทอร์นาโดสดๆ และดูดาว" },
+          "why": { "en": "Parents and children can discover science together through play and performances, with bubble shows and magic shows", "th": "พ่อแม่และลูกค้นพบวิทยาศาสตร์ไปด้วยกันผ่านการเล่นและการแสดง มีโชว์ฟองสบู่และมายากล" },
+          "tip": { "en": "The 2026 festival ran 29 July to 2 August, open until 10 p.m. on 1 August. Check the museum for its normal opening hours.", "th": "เทศกาลปี 2026 จัด 29 กรกฎาคม–2 สิงหาคม เปิดถึง 22:00 วันที่ 1 สิงหาคม เวลาเปิดปกติเช็กกับพิพิธภัณฑ์" },
+          "ages": [0, 2, 2, 2],
+          "hrs": 2,
+          "io": "in",
+          "pram": "part",
+          "price": { "en": "Check the price", "th": "เช็กราคาก่อนไป" },
+          "book": "none",
+          "q": "Seoul Science Center, Nowon District, Seoul",
+          "ok": "2026-11",
+          "src": "https://www.koreatimes.co.kr/amp/lifestyle/people-events/20260721/seoul-science-center-extends-hours-for-interactive-summer-festival"
         }
       ]
     },
