@@ -750,7 +750,7 @@ img.guide{width:54px;height:54px;flex:none}
 .tick .e{font-size:20px;flex:none}.tick .e .ge{width:28px;height:28px}.tick .t{flex:1;min-width:0}.tick .t small{display:block;color:var(--muted);font-size:11px}
 .tick.on{border-color:var(--accent);background:color-mix(in srgb,var(--accent) 8%,var(--paper))}
 .tick.on i{background:var(--accent)}
-.tick:disabled{cursor:default;color:inherit;opacity:1}
+.tick:disabled,.tick[aria-disabled=true]{cursor:default;color:inherit;opacity:1}
 .ticks.food .tick{border-radius:14px}
 .yum{display:flex;gap:4px;flex:none}
 .yum button{width:36px;height:36px;border-radius:50%;border:1px solid var(--rule);background:var(--paper);font-size:18px;opacity:.5}
@@ -1916,7 +1916,7 @@ p,li,.bubble p{text-wrap:pretty}
 /* passport map: day buttons under it; a pin opens a card with the real place */
 .mapdays{display:flex;align-items:center;gap:6px;overflow-x:auto;padding:10px 0 2px;scrollbar-width:none}.mapdays::-webkit-scrollbar{display:none}
 .mapdays .label{flex:none;margin-right:2px}
-.mapdays .chip{flex:none;min-width:36px;justify-content:center;padding:6px 8px;font-weight:700}
+.mapdays .chip{flex:none;min-width:44px;min-height:44px;justify-content:center;padding:6px 8px;font-weight:700}
 .tmap .pin{cursor:pointer}
 .pinacts{display:flex;flex-wrap:wrap;gap:8px;margin:12px 0}
 .pindays{display:flex;flex-wrap:wrap;gap:6px;margin-bottom:12px}
@@ -4083,3 +4083,8 @@ details.more>summary{border-radius:16px}
 .ntcol{height:48px;padding:4px;min-width:64px}
 .ntsheet #nterr{color:color-mix(in srgb,var(--accent2) 60%,var(--ink));min-height:0}.ntsheet #nterr:empty{display:none}
 .ntsheet .ntgo{padding-top:4px}
+.tick.nope,.felt button.nope,.yum button.nope,.ppbook .stars button.nope{animation:lockwob .35s}@keyframes lockwob{25%{transform:translateX(-4px)}75%{transform:translateX(4px)}}
+.pin circle.hit{fill:transparent!important;stroke:none!important}
+.mapdays.mdays .chip{min-width:44px;min-height:44px}
+.kidexit,#qreset{touch-action:none;-webkit-touch-callout:none;-webkit-user-select:none;user-select:none}
+.ppbook .hearbtn.ppsay{min-width:44px;min-height:44px}

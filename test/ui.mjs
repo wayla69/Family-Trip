@@ -1174,7 +1174,7 @@ const T = 'hk-macau-2026';
     await page.setViewportSize(vp);
   }
   // the grown-ups' boxes and ticks wait behind ✏️ (parents only, never in kid mode)
-  ok(await page.locator('#m1 button[data-a="tick"][data-v="spot.d1.tower"][disabled]').count() === 1 && await page.locator('#m1 .felt button[disabled]').count() === 3, 'passport: ticks are closed until a parent taps ✏️');
+  ok(await page.locator('#m1 button[data-a="tick"][data-v="spot.d1.tower"][aria-disabled="true"]').count() === 1 && await page.locator('#m1 .felt button[aria-disabled="true"]').count() === 3, 'passport: ticks are closed until a parent taps ✏️');
   await ppEdit(page, true);
   await page.click('#m1 button[data-a="tick"][data-v="spot.d1.tower"]');
   await page.click('#m1 .felt button[data-v="🤩"]');
@@ -2053,7 +2053,7 @@ const T = 'hk-macau-2026';
   ok(await page.locator('nav.bar a[href*="/log/"]').count() === 0, 'viewer: no Record tab');
   ok(await page.locator('nav.bar a[href*="#/passport"]').count() === 0 && await page.locator('nav.bar .in > *').count() === 4 && await page.locator('nav.bar a[href$="/today"]').count() === 1, 'viewer: relatives get menu, today, book, firsts — the passports open from the shelf (one door for grown-ups)');
   await ppOpen(page, 'mimi', T, 'missions');
-  ok(await page.locator('button[data-a="tick"]:not([disabled])').count() === 0 && await page.locator('.ppf, .ppedit').count() === 0 && await page.locator('.mission .tick.on').count() >= 1, 'viewer: sees the passport ticks read-only (no ✏️)');
+  ok(await page.locator('button[data-a="tick"]:not([disabled]):not([aria-disabled="true"])').count() === 0 && await page.locator('.ppf, .ppedit').count() === 0 && await page.locator('.mission .tick.on').count() >= 1, 'viewer: sees the passport ticks read-only (no ✏️)');
   await page.goto(`${BASE}/#/t/${T}`); await page.waitForSelector('.hubgrid');
   ok(await page.locator('.tile[href*="/log/"], .tile[href$="/offline"], .tile.kid').count() === 0 && await page.locator('.tile[href$="/sos"]').count() === 1 && await page.locator('.tile[href$="/eat"]').count() === 1, 'viewer menu: no record, offline or kid-mode tiles; emergency numbers stay, and the eat tile (their bar has no eat button)');
   await page.goto(`${BASE}/#/t/${T}/book`); await page.waitForSelector('#d1');
@@ -2898,7 +2898,7 @@ const T = 'hk-macau-2026';
       next: (document.querySelector('.ppturn [data-dir="next"]') || {}).dataset || {} }));
     ok(kd.lock && kd.tabs === 9 && kd.grown === 0 && kd.next.v === '#/kid/mimi/pass/missions', `kid door: this trip's visa with today's stamp, the book's nine pages as kid buttons, the lock, and nothing of the grown-ups' (${JSON.stringify(kd)})`);
     await page.click('.ppturn [data-dir="next"]'); await page.waitForSelector('.ppbook.inkid[data-page="missions"] .mission');
-    ok(page.url().endsWith('#/kid/mimi/pass/missions') && await page.locator('.mission button[data-a="tick"]:not([disabled])').count() === 0, 'kid door: ‹ › turn the pages inside kid mode; ticks stay with the grown-ups');
+    ok(page.url().endsWith('#/kid/mimi/pass/missions') && await page.locator('.mission button[data-a="tick"]:not([disabled]):not([aria-disabled="true"])').count() === 0, 'kid door: ‹ › turn the pages inside kid mode; ticks stay with the grown-ups');
     await page.goto(`${BASE}/#/kid/mimi/pass/id`); await page.waitForSelector('.ppbook.inkid[data-page="id"] .bio');
     ok(await page.locator('.ppf').count() === 0 && await page.locator('.ppbook .growl li').count() === 2 && await page.locator('.kidbar').count() === 1, 'kid door: the Explorer ID with Mimi\'s trips, no boxes'); }
   await page.goto(`${BASE}/#/kid/mika/spot`); await page.waitForSelector('.kidspots');
@@ -2929,6 +2929,19 @@ const T = 'hk-macau-2026';
     await page.click('.kidgift'); await page.waitForSelector('.giftbox'); await page.click('.giftbox'); await page.waitForSelector('.giftopen .gstk img', { timeout: 5000 });
     await page.waitForFunction(() => queue.length === 0, null, { timeout: 15000 });
     await page.click('.kidbar button[data-v="#/kid/mimi"]'); await page.waitForSelector('.kidtiles'); }
+  // nowhere to get stuck (owner, Nov 2026: item 5 of the follow-ups): a locked tick in the passport says what to do, the lock says to hold
+  { const toastIs = async (re) => page.waitForFunction((src) => [...document.querySelectorAll('.toast')].some((x) => new RegExp(src, 'i').test(x.textContent)), re.source, { timeout: 3000 }).then(() => true, () => false);
+    await page.goto(`${BASE}/#/kid/mimi/pass/missions`); await page.waitForSelector('.mission.today .tick[aria-disabled="true"]');
+    await page.click('.mission.today .tick[aria-disabled="true"] >> nth=0', { force: true });
+    await page.waitForFunction(() => /\/kid\/mimi\/spot$/.test(location.hash), null, { timeout: 3000 }).catch(() => {});
+    const toSpot = /\/kid\/mimi\/spot$/.test(await page.evaluate(() => location.hash));
+    await page.locator('#kidexit').click(); const lockSays = await toastIs(/press and hold|กดแม่กุญแจ/);
+    await page.evaluate(() => { ls('kidmode', null); location.hash = '#/passport/mimi/hk-macau-2026/missions'; }); await page.waitForSelector('.mission.today .tick[aria-disabled="true"]');
+    await page.click('.mission.today .tick[aria-disabled="true"] >> nth=0', { force: true }); const editSays = await toastIs(/Edit|แก้ไข/);
+    const lit = await page.locator('[data-a="ppedit"].golit').count();
+    const pins = await page.evaluate(() => [...document.querySelectorAll('.mapdays .chip')].every((c) => c.getBoundingClientRect().height >= 44));
+    ok(toSpot && lockSays && editSays && lit === 1 && pins, `nowhere to get stuck: a child's locked mission leads to today's things to find, the lock says to hold, a parent's locked tick points at ✏️, day chips are 44 px (${toSpot} · ${lockSays} · ${editSays} · ${lit} · ${pins})`);
+    await page.evaluate(() => { ls('kidmode', 'mimi'); location.hash = '#/kid/mimi'; }); await page.waitForSelector('.kidtiles'); }
   // the evening: a "stamp today before bed" banner until the stamp is done
   await page.clock.setFixedTime(new Date('2026-12-07T11:00:00Z'));   // 19:00 in Macau
   await page.reload(); await page.waitForSelector('.kidtiles');
