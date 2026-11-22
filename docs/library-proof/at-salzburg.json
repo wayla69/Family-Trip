@@ -1,0 +1,107 @@
+{
+  "town": "at-salzburg",
+  "kind": "places to eat",
+  "rows_in_library": "added in 5b6767a",
+  "checker": "scripts/library-check.cjs, run before merge: 9 pass, 0 fail",
+  "rows": [
+    {
+      "name": "IMLAUER Brasserie Mirabell",
+      "area": "Mirabellplatz 8",
+      "src": "https://imlauer.com/brasserie-mirabell/",
+      "date": "official",
+      "quote": "Die IMLAUER Brasserie Mirabell befindet sich am Mirabellplatz 8, mitten in Salzburg.",
+      "checker": {
+        "pass": true,
+        "fails": []
+      }
+    },
+    {
+      "name": "Braurestaurant IMLAUER",
+      "area": "Rainerstraße 14",
+      "src": "https://imlauer.com/braurestaurant-imlauer/",
+      "date": "official",
+      "quote": "Unser Braurestaurant IMLAUER hat täglich von 11:00 – 23:00 Uhr geöffnet.",
+      "checker": {
+        "pass": true,
+        "fails": []
+      }
+    },
+    {
+      "name": "Café Glockenspiel",
+      "area": "Mozartplatz, Salzburger Altstadt",
+      "src": "https://felleis-knittelfelder.at/cafe-glockenspiel/",
+      "date": "official",
+      "quote": "An einem der schönsten Plätze der Welt, dem Mozartplatz in der Salzburger Altstadt, liegt das Café Glockenspiel.",
+      "checker": {
+        "pass": true,
+        "fails": []
+      }
+    },
+    {
+      "name": "Pan e Vin",
+      "area": "Gstättengasse 1",
+      "src": "https://panevin.at/",
+      "date": "2026-11",
+      "quote": "machen einen Besuch im PAN E VIN zu einem unvergesslichen Erlebnis.",
+      "checker": {
+        "pass": true,
+        "fails": []
+      }
+    },
+    {
+      "name": "Steinterrasse",
+      "area": "Giselakai 3-5",
+      "src": "https://steinterrasse.com",
+      "date": "2026-07",
+      "quote": "Die Steinterrasse begleitet euch durch den Tag – mit direktem Blick über die Altstadt und einer Küche, die Casual Culinary auf den Teller bringt: kreativ, modern und simpel.",
+      "checker": {
+        "pass": true,
+        "fails": []
+      }
+    },
+    {
+      "name": "Humboldt",
+      "area": "Gstättengasse 4",
+      "src": "https://www.humboldtstubn.at/",
+      "date": "2026-11",
+      "quote": "HUMBOLDT – BIO RESTAURANT & BAR IN DER SALZBURGER ALTSTADT",
+      "checker": {
+        "pass": true,
+        "fails": []
+      }
+    },
+    {
+      "name": "Metzgersteig",
+      "area": "Alter Markt, Altstadt",
+      "src": "https://www.metzgersteig.at/",
+      "date": "2025-12",
+      "quote": "Metzgersteig mit großem Gastgarten am Alten Markt",
+      "checker": {
+        "pass": true,
+        "fails": []
+      }
+    },
+    {
+      "name": "Kaffeeothek",
+      "area": "Getreidegasse 3",
+      "src": "https://www.kaffeeothek.at/",
+      "date": "2026-11",
+      "quote": "Kaffeeothek | Kaffeespezialitäten für Kaffeeenthusiasten",
+      "checker": {
+        "pass": true,
+        "fails": []
+      }
+    },
+    {
+      "name": "Kuglhof",
+      "area": "Kugelhofstraße 13",
+      "src": "https://www.kuglhof.at/",
+      "date": "official",
+      "quote": "Im Kuglhof gibt’s immer Frisches aus der Backstube.",
+      "checker": {
+        "pass": true,
+        "fails": []
+      }
+    }
+  ]
+}

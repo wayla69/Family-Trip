@@ -5,701 +5,398 @@
       "place": "kr-jeju",
       "sights": [
         {
-          "name": {
-            "en": "Aqua Planet Jeju",
-            "th": "อควาแพลนเน็ตเชจู"
-          },
+          "name": { "en": "Aqua Planet Jeju", "th": "อควาแพลนเน็ตเชจู" },
           "local": "아쿠아플라넷 제주",
           "kind": "aquarium",
-          "area": {
-            "en": "Seongsan",
-            "th": "ซ็องซัน"
-          },
-          "what": {
-            "en": "Jeju's largest aquarium, with a huge main tank, sea lions, penguins and daily shows",
-            "th": "พิพิธภัณฑ์สัตว์น้ำใหญ่ที่สุดในเชจู มีตู้หลักขนาดยักษ์ สิงโตทะเล เพนกวิน และโชว์ทุกวัน"
-          },
-          "why": {
-            "en": "All indoors, with wide paths for a pram and lots of animals at a child's eye level",
-            "th": "อยู่ในร่มทั้งหมด ทางกว้างพอรถเข็น สัตว์อยู่ระดับสายตาเด็ก"
-          },
-          "tip": {
-            "en": "Open daily 09:30–18:00; pair it with Seongsan Ilchulbong next door",
-            "th": "เปิดทุกวัน 09:30–18:00 ไปต่อซ็องซันอิลชุลบงที่อยู่ใกล้กันได้"
-          },
-          "ages": [
-            2,
-            2,
-            2,
-            2
-          ],
+          "area": { "en": "Seongsan", "th": "ซ็องซัน" },
+          "what": { "en": "Jeju's largest aquarium, with a huge main tank, sea lions, penguins and daily shows", "th": "พิพิธภัณฑ์สัตว์น้ำใหญ่ที่สุดในเชจู มีตู้หลักขนาดยักษ์ สิงโตทะเล เพนกวิน และโชว์ทุกวัน" },
+          "why": { "en": "All indoors, with wide paths for a pram and lots of animals at a child's eye level", "th": "อยู่ในร่มทั้งหมด ทางกว้างพอรถเข็น สัตว์อยู่ระดับสายตาเด็ก" },
+          "tip": { "en": "Open daily 09:30–18:00; pair it with Seongsan Ilchulbong next door", "th": "เปิดทุกวัน 09:30–18:00 ไปต่อซ็องซันอิลชุลบงที่อยู่ใกล้กันได้" },
+          "ages": [2, 2, 2, 2],
           "hrs": 2.5,
           "io": "in",
           "pram": "yes",
-          "price": {
-            "en": "≈ ₩43,700 adults · ₩39,700 children · under 3 free; online prices lower",
-            "th": "≈ ₩43,700 ผู้ใหญ่ · ₩39,700 เด็ก · ต่ำกว่า 3 ขวบฟรี ซื้อออนไลน์ถูกกว่า"
-          },
+          "price": { "en": "≈ ₩43,700 adults · ₩39,700 children · under 3 free; online prices lower", "th": "≈ ₩43,700 ผู้ใหญ่ · ₩39,700 เด็ก · ต่ำกว่า 3 ขวบฟรี ซื้อออนไลน์ถูกกว่า" },
           "book": "rec",
           "q": "Aqua Planet Jeju, Seongsan-eup, Seogwipo",
           "ok": "2026-11",
           "src": "https://mom-mom.net/en/travel/places/62cd18072718fee95297db9a"
         },
         {
-          "name": {
-            "en": "Seongsan Ilchulbong",
-            "th": "ซ็องซันอิลชุลบง"
-          },
+          "name": { "en": "Seongsan Ilchulbong", "th": "ซ็องซันอิลชุลบง" },
           "local": "성산일출봉",
           "kind": "nature",
-          "area": {
-            "en": "Seongsan",
-            "th": "ซ็องซัน"
-          },
-          "what": {
-            "en": "Sunrise Peak, a volcanic crater rising straight out of the sea, with a stair path to the rim",
-            "th": "ยอดเขาพระอาทิตย์ขึ้น ปล่องภูเขาไฟที่โผล่จากทะเล มีบันไดขึ้นไปถึงขอบปล่อง"
-          },
-          "why": {
-            "en": "The free lower path gives a big view without the climb, which suits small legs",
-            "th": "ทางเดินฟรีด้านล่างก็เห็นวิวสวยโดยไม่ต้องปีน เหมาะกับขาเล็ก ๆ"
-          },
-          "tip": {
-            "en": "Closed on the first Monday of the month; the summit is stairs all the way, so bring a carrier",
-            "th": "ปิดวันจันทร์แรกของเดือน ทางขึ้นยอดเป็นบันไดตลอด เอาเป้อุ้มไป"
-          },
-          "ages": [
-            1,
-            2,
-            2,
-            2
-          ],
+          "area": { "en": "Seongsan", "th": "ซ็องซัน" },
+          "what": { "en": "Sunrise Peak, a volcanic crater rising straight out of the sea, with a stair path to the rim", "th": "ยอดเขาพระอาทิตย์ขึ้น ปล่องภูเขาไฟที่โผล่จากทะเล มีบันไดขึ้นไปถึงขอบปล่อง" },
+          "why": { "en": "The free lower path gives a big view without the climb, which suits small legs", "th": "ทางเดินฟรีด้านล่างก็เห็นวิวสวยโดยไม่ต้องปีน เหมาะกับขาเล็ก ๆ" },
+          "tip": { "en": "Closed on the first Monday of the month; the summit is stairs all the way, so bring a carrier", "th": "ปิดวันจันทร์แรกของเดือน ทางขึ้นยอดเป็นบันไดตลอด เอาเป้อุ้มไป" },
+          "ages": [1, 2, 2, 2],
           "hrs": 1.5,
           "io": "out",
           "pram": "part",
-          "price": {
-            "en": "≈ ₩5,000 adults · ₩2,500 ages 7–24 · 6 and under free",
-            "th": "≈ ₩5,000 ผู้ใหญ่ · ₩2,500 อายุ 7–24 ปี · 6 ขวบลงมาฟรี"
-          },
+          "price": { "en": "≈ ₩5,000 adults · ₩2,500 ages 7–24 · 6 and under free", "th": "≈ ₩5,000 ผู้ใหญ่ · ₩2,500 อายุ 7–24 ปี · 6 ขวบลงมาฟรี" },
           "book": "none",
           "q": "Seongsan Ilchulbong, Seongsan-eup, Seogwipo",
           "ok": "2026-11",
           "src": "https://www.trvlogue.com/en/jeju-seongsan-umutgae-coast"
         },
         {
-          "name": {
-            "en": "Manjanggul Lava Tube",
-            "th": "ถ้ำลาวามันจังกุล"
-          },
+          "name": { "en": "Manjanggul Lava Tube", "th": "ถ้ำลาวามันจังกุล" },
           "local": "만장굴",
           "kind": "nature",
-          "area": {
-            "en": "Gujwa, east Jeju",
-            "th": "คูจวา เชจูตะวันออก"
-          },
-          "what": {
-            "en": "A long lava tunnel made by a volcano, with a walk to a tall lava column",
-            "th": "อุโมงค์ลาวายาวที่ภูเขาไฟสร้างไว้ เดินไปดูเสาลาวาสูง"
-          },
-          "why": {
-            "en": "A real volcano tunnel feels like an adventure, and it stays cool even in summer",
-            "th": "อุโมงค์ภูเขาไฟจริงให้ความรู้สึกเหมือนผจญภัย และเย็นแม้หน้าร้อน"
-          },
-          "tip": {
-            "en": "Reopened in May 2026; closed on the first Wednesday of the month; the floor is uneven and wet, so use a carrier",
-            "th": "เปิดใหม่พฤษภาคม 2026 ปิดวันพุธแรกของเดือน พื้นขรุขระและเปียก ใช้เป้อุ้ม"
-          },
-          "ages": [
-            1,
-            2,
-            2,
-            2
-          ],
+          "area": { "en": "Gujwa, east Jeju", "th": "คูจวา เชจูตะวันออก" },
+          "what": { "en": "A long lava tunnel made by a volcano, with a walk to a tall lava column", "th": "อุโมงค์ลาวายาวที่ภูเขาไฟสร้างไว้ เดินไปดูเสาลาวาสูง" },
+          "why": { "en": "A real volcano tunnel feels like an adventure, and it stays cool even in summer", "th": "อุโมงค์ภูเขาไฟจริงให้ความรู้สึกเหมือนผจญภัย และเย็นแม้หน้าร้อน" },
+          "tip": { "en": "Reopened in May 2026; closed on the first Wednesday of the month; the floor is uneven and wet, so use a carrier", "th": "เปิดใหม่พฤษภาคม 2026 ปิดวันพุธแรกของเดือน พื้นขรุขระและเปียก ใช้เป้อุ้ม" },
+          "ages": [1, 2, 2, 2],
           "hrs": 1,
           "io": "in",
           "pram": "no",
-          "price": {
-            "en": "≈ ₩4,000 adults · ₩2,000 youth and children · 6 and under free",
-            "th": "≈ ₩4,000 ผู้ใหญ่ · ₩2,000 เยาวชนและเด็ก · 6 ขวบลงมาฟรี"
-          },
+          "price": { "en": "≈ ₩4,000 adults · ₩2,000 youth and children · 6 and under free", "th": "≈ ₩4,000 ผู้ใหญ่ · ₩2,000 เยาวชนและเด็ก · 6 ขวบลงมาฟรี" },
           "book": "none",
           "q": "Manjanggul Cave, Gujwa-eup, Jeju",
           "ok": "2026-11",
           "src": "https://www.trvlogue.com/en/manjanggul-cave-jeju-guide"
         },
         {
-          "name": {
-            "en": "Hamdeok Beach",
-            "th": "หาดฮัมด็อก"
-          },
+          "name": { "en": "Hamdeok Beach", "th": "หาดฮัมด็อก" },
           "local": "함덕해수욕장",
           "kind": "beach",
-          "area": {
-            "en": "Jocheon, near Jeju City",
-            "th": "โชช็อน ใกล้เมืองเชจู"
-          },
-          "what": {
-            "en": "A white-sand beach with turquoise water that stays shallow far out, close to Jeju City",
-            "th": "หาดทรายขาวน้ำสีฟ้าเขียว น้ำตื้นออกไปไกล อยู่ใกล้เมืองเชจู"
-          },
-          "why": {
-            "en": "Shallow, gentle water for paddling, with showers and lifeguards in summer",
-            "th": "น้ำตื้นและนิ่งให้เด็กเล่นน้ำ มีห้องอาบน้ำ และไลฟ์การ์ดหน้าร้อน"
-          },
-          "tip": {
-            "en": "Lifeguards are on duty in July and August; the low hill beside it makes a short family walk",
-            "th": "มีไลฟ์การ์ดช่วงกรกฎาคมถึงสิงหาคม เนินเตี้ยข้างหาดเดินเล่นกับเด็กได้"
-          },
-          "ages": [
-            2,
-            2,
-            2,
-            2
-          ],
+          "area": { "en": "Jocheon, near Jeju City", "th": "โชช็อน ใกล้เมืองเชจู" },
+          "what": { "en": "A white-sand beach with turquoise water that stays shallow far out, close to Jeju City", "th": "หาดทรายขาวน้ำสีฟ้าเขียว น้ำตื้นออกไปไกล อยู่ใกล้เมืองเชจู" },
+          "why": { "en": "Shallow, gentle water for paddling, with showers and lifeguards in summer", "th": "น้ำตื้นและนิ่งให้เด็กเล่นน้ำ มีห้องอาบน้ำ และไลฟ์การ์ดหน้าร้อน" },
+          "tip": { "en": "Lifeguards are on duty in July and August; the low hill beside it makes a short family walk", "th": "มีไลฟ์การ์ดช่วงกรกฎาคมถึงสิงหาคม เนินเตี้ยข้างหาดเดินเล่นกับเด็กได้" },
+          "ages": [2, 2, 2, 2],
           "hrs": 2,
           "io": "out",
           "pram": "part",
-          "price": {
-            "en": "Free",
-            "th": "ฟรี"
-          },
+          "price": { "en": "Free", "th": "ฟรี" },
           "book": "none",
           "q": "Hamdeok Beach, Jocheon-eup, Jeju",
           "ok": "2026-11",
           "src": "https://www.trvlogue.com/en/jeju-hamdeok-seoubong-guide"
         },
         {
-          "name": {
-            "en": "Hyeopjae Beach",
-            "th": "หาดฮย็อบแจ"
-          },
+          "name": { "en": "Hyeopjae Beach", "th": "หาดฮย็อบแจ" },
           "local": "협재해수욕장",
           "kind": "beach",
-          "area": {
-            "en": "Hallim, west Jeju",
-            "th": "ฮัลลิม เชจูตะวันตก"
-          },
-          "what": {
-            "en": "A west-coast beach of white sand and clear shallow water facing a small island",
-            "th": "หาดฝั่งตะวันตก ทรายขาว น้ำใสตื้น มองเห็นเกาะเล็กตรงหน้า"
-          },
-          "why": {
-            "en": "A gentle slope and shallow water make it a favourite with families of young children",
-            "th": "พื้นลาดค่อย ๆ และน้ำตื้น ครอบครัวที่มีเด็กเล็กชอบมาก"
-          },
-          "tip": {
-            "en": "Right next to Hallim Park, so the two fit into one day",
-            "th": "อยู่ติดสวนฮัลลิม เที่ยวสองที่ในวันเดียวได้"
-          },
-          "ages": [
-            2,
-            2,
-            2,
-            2
-          ],
+          "area": { "en": "Hallim, west Jeju", "th": "ฮัลลิม เชจูตะวันตก" },
+          "what": { "en": "A west-coast beach of white sand and clear shallow water facing a small island", "th": "หาดฝั่งตะวันตก ทรายขาว น้ำใสตื้น มองเห็นเกาะเล็กตรงหน้า" },
+          "why": { "en": "A gentle slope and shallow water make it a favourite with families of young children", "th": "พื้นลาดค่อย ๆ และน้ำตื้น ครอบครัวที่มีเด็กเล็กชอบมาก" },
+          "tip": { "en": "Right next to Hallim Park, so the two fit into one day", "th": "อยู่ติดสวนฮัลลิม เที่ยวสองที่ในวันเดียวได้" },
+          "ages": [2, 2, 2, 2],
           "hrs": 2,
           "io": "out",
           "pram": "part",
-          "price": {
-            "en": "Free",
-            "th": "ฟรี"
-          },
+          "price": { "en": "Free", "th": "ฟรี" },
           "book": "none",
           "q": "Hyeopjae Beach, Hallim-eup, Jeju",
           "ok": "2026-11",
           "src": "https://beachesforkings.pages.dev/jeju/for-families/"
         },
         {
-          "name": {
-            "en": "Hallim Park",
-            "th": "สวนฮัลลิม"
-          },
+          "name": { "en": "Hallim Park", "th": "สวนฮัลลิม" },
           "local": "한림공원",
           "kind": "park",
-          "area": {
-            "en": "Hallim, west Jeju",
-            "th": "ฮัลลิม เชจูตะวันตก"
-          },
-          "what": {
-            "en": "Gardens of palms and seasonal flowers, with lava caves and a small folk village",
-            "th": "สวนต้นปาล์มและดอกไม้ตามฤดู มีถ้ำลาวาและหมู่บ้านพื้นเมืองเล็ก ๆ"
-          },
-          "why": {
-            "en": "Flat garden paths with something new round each corner, and caves to peek into",
-            "th": "ทางเดินในสวนเรียบ มีอะไรใหม่ให้ดูทุกมุม และมีถ้ำให้ลองแวะดู"
-          },
-          "tip": {
-            "en": "Online tickets are cheaper than at the gate",
-            "th": "ซื้อบัตรออนไลน์ถูกกว่าหน้าประตู"
-          },
-          "ages": [
-            2,
-            2,
-            2,
-            1
-          ],
+          "area": { "en": "Hallim, west Jeju", "th": "ฮัลลิม เชจูตะวันตก" },
+          "what": { "en": "Gardens of palms and seasonal flowers, with lava caves and a small folk village", "th": "สวนต้นปาล์มและดอกไม้ตามฤดู มีถ้ำลาวาและหมู่บ้านพื้นเมืองเล็ก ๆ" },
+          "why": { "en": "Flat garden paths with something new round each corner, and caves to peek into", "th": "ทางเดินในสวนเรียบ มีอะไรใหม่ให้ดูทุกมุม และมีถ้ำให้ลองแวะดู" },
+          "tip": { "en": "Online tickets are cheaper than at the gate", "th": "ซื้อบัตรออนไลน์ถูกกว่าหน้าประตู" },
+          "ages": [2, 2, 2, 1],
           "hrs": 2,
           "io": "both",
           "pram": "part",
-          "price": {
-            "en": "≈ ₩15,000 adults · ₩9,000 children · under 3 free",
-            "th": "≈ ₩15,000 ผู้ใหญ่ · ₩9,000 เด็ก · ต่ำกว่า 3 ขวบฟรี"
-          },
+          "price": { "en": "≈ ₩15,000 adults · ₩9,000 children · under 3 free", "th": "≈ ₩15,000 ผู้ใหญ่ · ₩9,000 เด็ก · ต่ำกว่า 3 ขวบฟรี" },
           "book": "none",
           "q": "Hallim Park, Hallim-eup, Jeju",
           "ok": "2026-11",
           "src": "https://www.trvlogue.com/en/hallim-park-jeju-guide"
         },
         {
-          "name": {
-            "en": "Jeju Stone Park",
-            "th": "สวนหินเชจู"
-          },
+          "name": { "en": "Jeju Stone Park", "th": "สวนหินเชจู" },
           "local": "제주돌문화공원",
           "kind": "park",
-          "area": {
-            "en": "Jocheon, east of Jeju City",
-            "th": "โชช็อน ทางตะวันออกของเมืองเชจู"
-          },
-          "what": {
-            "en": "A wide park of volcanic stones, stone grandfather statues and a sky-mirror pond",
-            "th": "สวนกว้างของหินภูเขาไฟ รูปปั้นหินโทลฮารูบัง และสระน้ำสะท้อนฟ้า"
-          },
-          "why": {
-            "en": "Lots of space and funny stone faces to spot; children 12 and under go free",
-            "th": "กว้างขวาง มีหน้าหินตลก ๆ ให้ตามหา เด็ก 12 ปีลงมาเข้าฟรี"
-          },
-          "tip": {
-            "en": "Open 09:00–18:00, closed on Mondays",
-            "th": "เปิด 09:00–18:00 ปิดวันจันทร์"
-          },
-          "ages": [
-            1,
-            2,
-            2,
-            2
-          ],
+          "area": { "en": "Jocheon, east of Jeju City", "th": "โชช็อน ทางตะวันออกของเมืองเชจู" },
+          "what": { "en": "A wide park of volcanic stones, stone grandfather statues and a sky-mirror pond", "th": "สวนกว้างของหินภูเขาไฟ รูปปั้นหินโทลฮารูบัง และสระน้ำสะท้อนฟ้า" },
+          "why": { "en": "Lots of space and funny stone faces to spot; children 12 and under go free", "th": "กว้างขวาง มีหน้าหินตลก ๆ ให้ตามหา เด็ก 12 ปีลงมาเข้าฟรี" },
+          "tip": { "en": "Open 09:00–18:00, closed on Mondays", "th": "เปิด 09:00–18:00 ปิดวันจันทร์" },
+          "ages": [1, 2, 2, 2],
           "hrs": 2,
           "io": "out",
           "pram": "yes",
-          "price": {
-            "en": "≈ ₩5,000 adults · 12 and under free",
-            "th": "≈ ₩5,000 ผู้ใหญ่ · 12 ปีลงมาฟรี"
-          },
+          "price": { "en": "≈ ₩5,000 adults · 12 and under free", "th": "≈ ₩5,000 ผู้ใหญ่ · 12 ปีลงมาฟรี" },
           "book": "none",
           "q": "Jeju Stone Park, Jocheon-eup, Jeju",
           "ok": "2026-11",
           "src": "https://www.trvlogue.com/en/jeju-stone-park-review"
         },
         {
-          "name": {
-            "en": "Eco Land Theme Park",
-            "th": "อีโคแลนด์ธีมพาร์ก"
-          },
+          "name": { "en": "Eco Land Theme Park", "th": "อีโคแลนด์ธีมพาร์ก" },
           "local": "에코랜드 테마파크",
           "kind": "ride",
-          "area": {
-            "en": "Jocheon, central Jeju",
-            "th": "โชช็อน กลางเกาะเชจู"
-          },
-          "what": {
-            "en": "An old-style steam-look train through a forest, stopping at a lake, gardens and a play area",
-            "th": "รถไฟหน้าตาแบบหัวรถจักรไอน้ำวิ่งผ่านป่า จอดที่ทะเลสาบ สวน และลานเด็กเล่น"
-          },
-          "why": {
-            "en": "Riding the train is the fun, and the walks between stations are short",
-            "th": "การนั่งรถไฟคือความสนุก และทางเดินระหว่างสถานีก็สั้น"
-          },
-          "tip": {
-            "en": "Trains run every 10–15 minutes; catch the last train back in good time",
-            "th": "รถไฟมาทุก 10–15 นาที อย่าลืมกลับก่อนขบวนสุดท้าย"
-          },
-          "ages": [
-            2,
-            2,
-            2,
-            1
-          ],
+          "area": { "en": "Jocheon, central Jeju", "th": "โชช็อน กลางเกาะเชจู" },
+          "what": { "en": "An old-style steam-look train through a forest, stopping at a lake, gardens and a play area", "th": "รถไฟหน้าตาแบบหัวรถจักรไอน้ำวิ่งผ่านป่า จอดที่ทะเลสาบ สวน และลานเด็กเล่น" },
+          "why": { "en": "Riding the train is the fun, and the walks between stations are short", "th": "การนั่งรถไฟคือความสนุก และทางเดินระหว่างสถานีก็สั้น" },
+          "tip": { "en": "Trains run every 10–15 minutes; catch the last train back in good time", "th": "รถไฟมาทุก 10–15 นาที อย่าลืมกลับก่อนขบวนสุดท้าย" },
+          "ages": [2, 2, 2, 1],
           "hrs": 2,
           "io": "out",
           "pram": "yes",
-          "price": {
-            "en": "≈ ₩14,000–21,000 adults (sources differ, check the park’s price) · ₩10,000 ages 3–12 · under 3 free",
-            "th": "≈ ₩14,000–21,000 ผู้ใหญ่ (แต่ละแหล่งไม่ตรงกัน เช็กราคาที่สวน) · ₩10,000 อายุ 3–12 ปี · ต่ำกว่า 3 ขวบฟรี"
-          },
+          "price": { "en": "≈ ₩14,000–21,000 adults (sources differ, check the park’s price) · ₩10,000 ages 3–12 · under 3 free", "th": "≈ ₩14,000–21,000 ผู้ใหญ่ (แต่ละแหล่งไม่ตรงกัน เช็กราคาที่สวน) · ₩10,000 อายุ 3–12 ปี · ต่ำกว่า 3 ขวบฟรี" },
           "book": "none",
           "q": "Eco Land Theme Park, Jocheon-eup, Jeju",
           "ok": "2026-11",
           "src": "https://koreatriptips.com/en/tourist-attractions/1627334.html"
         },
         {
-          "name": {
-            "en": "Snoopy Garden",
-            "th": "สนูปปี้การ์เดน"
-          },
+          "name": { "en": "Snoopy Garden", "th": "สนูปปี้การ์เดน" },
           "local": "스누피가든",
           "kind": "themepark",
-          "area": {
-            "en": "Gujwa, east Jeju",
-            "th": "คูจวา เชจูตะวันออก"
-          },
-          "what": {
-            "en": "Peanuts story rooms indoors, then a big garden with Snoopy scenes to walk through",
-            "th": "ห้องเรื่องราวพีนัทส์ในร่ม แล้วต่อด้วยสวนใหญ่ที่มีฉากสนูปปี้ให้เดินชม"
-          },
-          "why": {
-            "en": "Children who know Snoopy find him everywhere, inside and out",
-            "th": "เด็กที่รู้จักสนูปปี้จะได้เจอเขาทุกที่ ทั้งในอาคารและในสวน"
-          },
-          "tip": {
-            "en": "Winter hours are 09:00–18:00, last entry an hour before closing",
-            "th": "ฤดูหนาวเปิด 09:00–18:00 เข้าได้ก่อนปิดหนึ่งชั่วโมง"
-          },
-          "ages": [
-            1,
-            2,
-            2,
-            1
-          ],
+          "area": { "en": "Gujwa, east Jeju", "th": "คูจวา เชจูตะวันออก" },
+          "what": { "en": "Peanuts story rooms indoors, then a big garden with Snoopy scenes to walk through", "th": "ห้องเรื่องราวพีนัทส์ในร่ม แล้วต่อด้วยสวนใหญ่ที่มีฉากสนูปปี้ให้เดินชม" },
+          "why": { "en": "Children who know Snoopy find him everywhere, inside and out", "th": "เด็กที่รู้จักสนูปปี้จะได้เจอเขาทุกที่ ทั้งในอาคารและในสวน" },
+          "tip": { "en": "Winter hours are 09:00–18:00, last entry an hour before closing", "th": "ฤดูหนาวเปิด 09:00–18:00 เข้าได้ก่อนปิดหนึ่งชั่วโมง" },
+          "ages": [1, 2, 2, 1],
           "hrs": 2,
           "io": "both",
           "pram": "part",
-          "price": {
-            "en": "≈ ₩19,000 adults · ₩13,000 children · under 36 months free",
-            "th": "≈ ₩19,000 ผู้ใหญ่ · ₩13,000 เด็ก · ต่ำกว่า 36 เดือนฟรี"
-          },
+          "price": { "en": "≈ ₩19,000 adults · ₩13,000 children · under 36 months free", "th": "≈ ₩19,000 ผู้ใหญ่ · ₩13,000 เด็ก · ต่ำกว่า 36 เดือนฟรี" },
           "book": "rec",
           "q": "Snoopy Garden, Gujwa-eup, Jeju",
           "ok": "2026-11",
           "src": "https://www.trvlogue.com/en/jeju-snoopy-garden-tips"
         },
         {
-          "name": {
-            "en": "Jeju Aerospace Museum",
-            "th": "พิพิธภัณฑ์อากาศยานและอวกาศเชจู"
-          },
+          "name": { "en": "Jeju Aerospace Museum", "th": "พิพิธภัณฑ์อากาศยานและอวกาศเชจู" },
           "local": "제주항공우주박물관",
           "kind": "museumkid",
-          "area": {
-            "en": "Andeok, southwest Jeju",
-            "th": "อันด็อก เชจูตะวันตกเฉียงใต้"
-          },
-          "what": {
-            "en": "Real aircraft in a huge hall, plus space zones with hands-on games and shows",
-            "th": "เครื่องบินจริงในโถงขนาดใหญ่ และโซนอวกาศที่มีเกมให้ลองเล่นและโชว์"
-          },
-          "why": {
-            "en": "Planes overhead and buttons to press: a big indoor day for a rainy one",
-            "th": "เครื่องบินอยู่เหนือหัวและมีปุ่มให้กด เที่ยวในร่มได้ทั้งวันเวลาฝนตก"
-          },
-          "tip": {
-            "en": "Open 09:00–18:00, last entry 17:00; closed on the third Monday of the month",
-            "th": "เปิด 09:00–18:00 เข้าได้ถึง 17:00 ปิดวันจันทร์ที่สามของเดือน"
-          },
-          "ages": [
-            1,
-            2,
-            2,
-            2
-          ],
+          "area": { "en": "Andeok, southwest Jeju", "th": "อันด็อก เชจูตะวันตกเฉียงใต้" },
+          "what": { "en": "Real aircraft in a huge hall, plus space zones with hands-on games and shows", "th": "เครื่องบินจริงในโถงขนาดใหญ่ และโซนอวกาศที่มีเกมให้ลองเล่นและโชว์" },
+          "why": { "en": "Planes overhead and buttons to press: a big indoor day for a rainy one", "th": "เครื่องบินอยู่เหนือหัวและมีปุ่มให้กด เที่ยวในร่มได้ทั้งวันเวลาฝนตก" },
+          "tip": { "en": "Open 09:00–18:00, last entry 17:00; closed on the third Monday of the month", "th": "เปิด 09:00–18:00 เข้าได้ถึง 17:00 ปิดวันจันทร์ที่สามของเดือน" },
+          "ages": [1, 2, 2, 2],
           "hrs": 2.5,
           "io": "in",
           "pram": "yes",
-          "price": {
-            "en": "≈ ₩10,000 adults · ₩8,000 ages 3–12 · under 36 months free",
-            "th": "≈ ₩10,000 ผู้ใหญ่ · ₩8,000 อายุ 3–12 ปี · ต่ำกว่า 36 เดือนฟรี"
-          },
+          "price": { "en": "≈ ₩10,000 adults · ₩8,000 ages 3–12 · under 36 months free", "th": "≈ ₩10,000 ผู้ใหญ่ · ₩8,000 อายุ 3–12 ปี · ต่ำกว่า 36 เดือนฟรี" },
           "book": "none",
           "q": "Jeju Aerospace Museum, Andeok-myeon, Seogwipo",
           "ok": "2026-11",
           "src": "https://english.jdc-jam.com/jamEng/visit/info.do"
         },
         {
-          "name": {
-            "en": "Jeju National Museum",
-            "th": "พิพิธภัณฑ์แห่งชาติเชจู"
-          },
+          "name": { "en": "Jeju National Museum", "th": "พิพิธภัณฑ์แห่งชาติเชจู" },
           "local": "국립제주박물관",
           "kind": "museum",
-          "area": {
-            "en": "Jeju City",
-            "th": "เมืองเชจู"
-          },
-          "what": {
-            "en": "The island's history museum, reopened after renovation, with a children's museum of hands-on play",
-            "th": "พิพิธภัณฑ์ประวัติศาสตร์ของเกาะ เปิดใหม่หลังปรับปรุง มีพิพิธภัณฑ์เด็กให้ลองเล่นเอง"
-          },
-          "why": {
-            "en": "Free, indoors, with a nursing room, nappy-changing table and pram hire",
-            "th": "ฟรี อยู่ในร่ม มีห้องให้นม โต๊ะเปลี่ยนผ้าอ้อม และรถเข็นให้ยืม"
-          },
-          "tip": {
-            "en": "Closed on Mondays; get children's museum tickets at the information desk, busy at weekends",
-            "th": "ปิดวันจันทร์ รับบัตรพิพิธภัณฑ์เด็กที่จุดประชาสัมพันธ์ วันหยุดคนเยอะ"
-          },
-          "ages": [
-            2,
-            2,
-            2,
-            1
-          ],
+          "area": { "en": "Jeju City", "th": "เมืองเชจู" },
+          "what": { "en": "The island's history museum, reopened after renovation, with a children's museum of hands-on play", "th": "พิพิธภัณฑ์ประวัติศาสตร์ของเกาะ เปิดใหม่หลังปรับปรุง มีพิพิธภัณฑ์เด็กให้ลองเล่นเอง" },
+          "why": { "en": "Free, indoors, with a nursing room, nappy-changing table and pram hire", "th": "ฟรี อยู่ในร่ม มีห้องให้นม โต๊ะเปลี่ยนผ้าอ้อม และรถเข็นให้ยืม" },
+          "tip": { "en": "Closed on Mondays; get children's museum tickets at the information desk, busy at weekends", "th": "ปิดวันจันทร์ รับบัตรพิพิธภัณฑ์เด็กที่จุดประชาสัมพันธ์ วันหยุดคนเยอะ" },
+          "ages": [2, 2, 2, 1],
           "hrs": 1.5,
           "io": "in",
           "pram": "yes",
-          "price": {
-            "en": "Free",
-            "th": "ฟรี"
-          },
+          "price": { "en": "Free", "th": "ฟรี" },
           "book": "none",
           "q": "Jeju National Museum, Jeju City",
           "ok": "2026-11",
           "src": "https://mom-mom.net/en/travel/places/695200cc37c398078ec533d7"
         },
         {
-          "name": {
-            "en": "Jeju Folk Village",
-            "th": "หมู่บ้านพื้นเมืองเชจู"
-          },
+          "name": { "en": "Jeju Folk Village", "th": "หมู่บ้านพื้นเมืองเชจู" },
           "local": "제주민속촌",
           "kind": "culture",
-          "area": {
-            "en": "Pyoseon, east Jeju",
-            "th": "พโยซ็อน เชจูตะวันออก"
-          },
-          "what": {
-            "en": "An open-air village of old thatched Jeju houses, tools and farm life",
-            "th": "หมู่บ้านกลางแจ้งของบ้านมุงหญ้าแบบเชจูเก่า เครื่องมือ และชีวิตชาวไร่"
-          },
-          "why": {
-            "en": "Children can walk in and out of the little houses and see how island families lived",
-            "th": "เด็กเดินเข้าออกบ้านหลังเล็ก ๆ ได้ และเห็นว่าครอบครัวบนเกาะเคยอยู่อย่างไร"
-          },
-          "tip": {
-            "en": "Winter hours end earlier, around 17:00 from October to February",
-            "th": "ฤดูหนาวปิดเร็วขึ้น ราว 17:00 ช่วงตุลาคมถึงกุมภาพันธ์"
-          },
-          "ages": [
-            1,
-            2,
-            2,
-            2
-          ],
+          "area": { "en": "Pyoseon, east Jeju", "th": "พโยซ็อน เชจูตะวันออก" },
+          "what": { "en": "An open-air village of old thatched Jeju houses, tools and farm life", "th": "หมู่บ้านกลางแจ้งของบ้านมุงหญ้าแบบเชจูเก่า เครื่องมือ และชีวิตชาวไร่" },
+          "why": { "en": "Children can walk in and out of the little houses and see how island families lived", "th": "เด็กเดินเข้าออกบ้านหลังเล็ก ๆ ได้ และเห็นว่าครอบครัวบนเกาะเคยอยู่อย่างไร" },
+          "tip": { "en": "Winter hours end earlier, around 17:00 from October to February", "th": "ฤดูหนาวปิดเร็วขึ้น ราว 17:00 ช่วงตุลาคมถึงกุมภาพันธ์" },
+          "ages": [1, 2, 2, 2],
           "hrs": 2,
           "io": "out",
           "pram": "part",
-          "price": {
-            "en": "≈ ₩15,000 adults · ₩11,000 age 4 to primary · under 4 free",
-            "th": "≈ ₩15,000 ผู้ใหญ่ · ₩11,000 อายุ 4 ปีถึงประถม · ต่ำกว่า 4 ขวบฟรี"
-          },
+          "price": { "en": "≈ ₩15,000 adults · ₩11,000 age 4 to primary · under 4 free", "th": "≈ ₩15,000 ผู้ใหญ่ · ₩11,000 อายุ 4 ปีถึงประถม · ต่ำกว่า 4 ขวบฟรี" },
           "book": "none",
           "q": "Jeju Folk Village, Pyoseon-myeon, Seogwipo",
           "ok": "2026-11",
           "src": "https://thesoulofseoul.net/travel-back-in-time-at-the-jeju-folk-village/"
         },
         {
-          "name": {
-            "en": "Cheonjiyeon Waterfall",
-            "th": "น้ำตกช็อนจียอน"
-          },
+          "name": { "en": "Cheonjiyeon Waterfall", "th": "น้ำตกช็อนจียอน" },
           "local": "천지연폭포",
           "kind": "nature",
-          "area": {
-            "en": "Seogwipo",
-            "th": "ซอกวิโพ"
-          },
-          "what": {
-            "en": "A flat path through a green gorge to a tall waterfall falling into a pool",
-            "th": "ทางเดินเรียบผ่านหุบเขาเขียว ไปถึงน้ำตกสูงที่ตกลงในแอ่งน้ำ"
-          },
-          "why": {
-            "en": "One of the few waterfalls reached on an easy, flat path that suits a pram",
-            "th": "เป็นน้ำตกไม่กี่แห่งที่เดินไปถึงได้ง่ายบนทางเรียบ เข็นรถเข็นได้"
-          },
-          "tip": {
-            "en": "Combine it with the Olle market in the same town",
-            "th": "ไปต่อตลาดโอลเลในเมืองเดียวกันได้"
-          },
-          "ages": [
-            2,
-            2,
-            2,
-            2
-          ],
+          "area": { "en": "Seogwipo", "th": "ซอกวิโพ" },
+          "what": { "en": "A flat path through a green gorge to a tall waterfall falling into a pool", "th": "ทางเดินเรียบผ่านหุบเขาเขียว ไปถึงน้ำตกสูงที่ตกลงในแอ่งน้ำ" },
+          "why": { "en": "One of the few waterfalls reached on an easy, flat path that suits a pram", "th": "เป็นน้ำตกไม่กี่แห่งที่เดินไปถึงได้ง่ายบนทางเรียบ เข็นรถเข็นได้" },
+          "tip": { "en": "Combine it with the Olle market in the same town", "th": "ไปต่อตลาดโอลเลในเมืองเดียวกันได้" },
+          "ages": [2, 2, 2, 2],
           "hrs": 1,
           "io": "out",
           "pram": "yes",
-          "price": {
-            "en": "≈ ₩2,000 adults · ₩1,000 ages 7–24 · 6 and under free",
-            "th": "≈ ₩2,000 ผู้ใหญ่ · ₩1,000 อายุ 7–24 ปี · 6 ขวบลงมาฟรี"
-          },
+          "price": { "en": "≈ ₩2,000 adults · ₩1,000 ages 7–24 · 6 and under free", "th": "≈ ₩2,000 ผู้ใหญ่ · ₩1,000 อายุ 7–24 ปี · 6 ขวบลงมาฟรี" },
           "book": "none",
           "q": "Cheonjiyeon Waterfall, Seogwipo",
           "ok": "2026-11",
           "src": "https://www.trvlogue.com/en/jeju-cheonjiyeon-waterfall-guide"
         },
         {
-          "name": {
-            "en": "Dongmun Market and Night Market",
-            "th": "ตลาดทงมุนและตลาดกลางคืน"
-          },
+          "name": { "en": "Dongmun Market and Night Market", "th": "ตลาดทงมุนและตลาดกลางคืน" },
           "local": "동문재래시장",
           "kind": "market",
-          "area": {
-            "en": "Jeju City",
-            "th": "เมืองเชจู"
-          },
-          "what": {
-            "en": "Jeju City's old covered market, with tangerines by day and a street-food night market",
-            "th": "ตลาดในร่มเก่าแก่ของเมืองเชจู กลางวันมีส้มเชจู กลางคืนมีตลาดสตรีทฟู้ด"
-          },
-          "why": {
-            "en": "Mostly under a roof, with snacks to share and plenty to look at",
-            "th": "ส่วนใหญ่มีหลังคา มีของกินให้แบ่งกัน และมีอะไรให้ดูเยอะ"
-          },
-          "tip": {
-            "en": "The night market is through Gate 8, about 18:00–24:00; many stalls close near 23:00",
-            "th": "ตลาดกลางคืนเข้าทางประตู 8 ราว 18:00–24:00 หลายร้านปิดราว 23:00"
-          },
-          "ages": [
-            1,
-            2,
-            2,
-            2
-          ],
+          "area": { "en": "Jeju City", "th": "เมืองเชจู" },
+          "what": { "en": "Jeju City's old covered market, with tangerines by day and a street-food night market", "th": "ตลาดในร่มเก่าแก่ของเมืองเชจู กลางวันมีส้มเชจู กลางคืนมีตลาดสตรีทฟู้ด" },
+          "why": { "en": "Mostly under a roof, with snacks to share and plenty to look at", "th": "ส่วนใหญ่มีหลังคา มีของกินให้แบ่งกัน และมีอะไรให้ดูเยอะ" },
+          "tip": { "en": "The night market is through Gate 8, about 18:00–24:00; many stalls close near 23:00", "th": "ตลาดกลางคืนเข้าทางประตู 8 ราว 18:00–24:00 หลายร้านปิดราว 23:00" },
+          "ages": [1, 2, 2, 2],
           "hrs": 1.5,
           "io": "both",
           "pram": "part",
-          "price": {
-            "en": "Free to enter",
-            "th": "เข้าฟรี"
-          },
+          "price": { "en": "Free to enter", "th": "เข้าฟรี" },
           "book": "none",
           "q": "Dongmun Traditional Market, Jeju City",
           "ok": "2026-11",
           "src": "https://www.trvlogue.com/en/dongmun-night-market-jeju"
         },
         {
-          "name": {
-            "en": "Seogwipo Maeil Olle Market",
-            "th": "ตลาดแมอิลโอลเลซอกวิโพ"
-          },
+          "name": { "en": "Seogwipo Maeil Olle Market", "th": "ตลาดแมอิลโอลเลซอกวิโพ" },
           "local": "서귀포매일올레시장",
           "kind": "market",
-          "area": {
-            "en": "Seogwipo",
-            "th": "ซอกวิโพ"
-          },
-          "what": {
-            "en": "Seogwipo's covered daily market of fruit, mochi, fish and snacks",
-            "th": "ตลาดประจำวันมีหลังคาของซอกวิโพ มีผลไม้ โมจิ ปลา และของว่าง"
-          },
-          "why": {
-            "en": "A roof over the main lane, fruit mochi for children and an easy stop between sights",
-            "th": "ทางหลักมีหลังคา มีโมจิผลไม้ถูกใจเด็ก แวะง่ายระหว่างเที่ยว"
-          },
-          "tip": {
-            "en": "Open daily about 07:00–21:00; stalls set their own hours, and the car park is free for 30 minutes",
-            "th": "เปิดทุกวันราว 07:00–21:00 แต่ละร้านเปิดไม่เท่ากัน ลานจอดรถฟรี 30 นาทีแรก"
-          },
-          "ages": [
-            1,
-            2,
-            2,
-            2
-          ],
+          "area": { "en": "Seogwipo", "th": "ซอกวิโพ" },
+          "what": { "en": "Seogwipo's covered daily market of fruit, mochi, fish and snacks", "th": "ตลาดประจำวันมีหลังคาของซอกวิโพ มีผลไม้ โมจิ ปลา และของว่าง" },
+          "why": { "en": "A roof over the main lane, fruit mochi for children and an easy stop between sights", "th": "ทางหลักมีหลังคา มีโมจิผลไม้ถูกใจเด็ก แวะง่ายระหว่างเที่ยว" },
+          "tip": { "en": "Open daily about 07:00–21:00; stalls set their own hours, and the car park is free for 30 minutes", "th": "เปิดทุกวันราว 07:00–21:00 แต่ละร้านเปิดไม่เท่ากัน ลานจอดรถฟรี 30 นาทีแรก" },
+          "ages": [1, 2, 2, 2],
           "hrs": 1,
           "io": "both",
           "pram": "part",
-          "price": {
-            "en": "Free to enter",
-            "th": "เข้าฟรี"
-          },
+          "price": { "en": "Free to enter", "th": "เข้าฟรี" },
           "book": "none",
           "q": "Seogwipo Maeil Olle Market, Seogwipo",
           "ok": "2026-11",
           "src": "https://www.trvlogue.com/en/jeju-seogwipo-olle-market-guide"
         },
         {
-          "name": {
-            "en": "Teddy Bear Museum Jeju",
-            "th": "พิพิธภัณฑ์เท็ดดี้แบร์ เชจู"
-          },
+          "name": { "en": "Teddy Bear Museum Jeju", "th": "พิพิธภัณฑ์เท็ดดี้แบร์ เชจู" },
           "local": "테디베어뮤지엄",
           "kind": "museumkid",
-          "area": {
-            "en": "Jungmun, Seogwipo",
-            "th": "ชุงมุน ซอกวิโพ"
-          },
-          "what": {
-            "en": "Korea's first teddy bear museum: a history of the toy since the 1900s, an art hall of jewelled bears and bears at every photo corner",
-            "th": "พิพิธภัณฑ์หมีเท็ดดี้แห่งแรกของเกาหลี เล่าประวัติตุ๊กตาหมีตั้งแต่ปี 1900 มีหมีประดับเพชรและมุมถ่ายรูปทุกมุม"
-          },
-          "why": {
-            "en": "Indoors, flat and full of photo corners, so it suits a rainy day with toddlers and pre-schoolers",
-            "th": "อยู่ในอาคาร ทางราบ มีมุมถ่ายรูปเต็ม เหมาะวันฝนตกกับเด็กเล็กและเด็กอนุบาล"
-          },
-          "tip": {
-            "en": "A shop at the exit sells bears; leave about 90 minutes",
-            "th": "มีร้านขายตุ๊กตาหมีตรงทางออก เผื่อเวลาราว 90 นาที"
-          },
-          "ages": [
-            1,
-            2,
-            2,
-            1
-          ],
+          "area": { "en": "Jungmun, Seogwipo", "th": "ชุงมุน ซอกวิโพ" },
+          "what": { "en": "Korea's first teddy bear museum: a history of the toy since the 1900s, an art hall of jewelled bears and bears at every photo corner", "th": "พิพิธภัณฑ์หมีเท็ดดี้แห่งแรกของเกาหลี เล่าประวัติตุ๊กตาหมีตั้งแต่ปี 1900 มีหมีประดับเพชรและมุมถ่ายรูปทุกมุม" },
+          "why": { "en": "Indoors, flat and full of photo corners, so it suits a rainy day with toddlers and pre-schoolers", "th": "อยู่ในอาคาร ทางราบ มีมุมถ่ายรูปเต็ม เหมาะวันฝนตกกับเด็กเล็กและเด็กอนุบาล" },
+          "tip": { "en": "A shop at the exit sells bears; leave about 90 minutes", "th": "มีร้านขายตุ๊กตาหมีตรงทางออก เผื่อเวลาราว 90 นาที" },
+          "ages": [1, 2, 2, 1],
           "hrs": 1.5,
           "io": "in",
           "pram": "yes",
-          "price": {
-            "en": "Check the price",
-            "th": "เช็กราคาก่อนไป"
-          },
+          "price": { "en": "Check the price", "th": "เช็กราคาก่อนไป" },
           "book": "none",
           "q": "Teddy Bear Museum, Jungmungwangwang-ro 110beon-gil, Seogwipo, Jeju",
           "ok": "2026-11",
           "src": "https://world.nol.com/regions/759174cc-0814-4400-a420-5668a0517edd/attractions/3de7bcd2-063f-42c5-89cb-6a7abd56381e"
         },
         {
-          "name": {
-            "en": "Camellia Hill",
-            "th": "คามิเลียฮิลล์"
-          },
+          "name": { "en": "Camellia Hill", "th": "คามิเลียฮิลล์" },
           "local": "카멜리아힐",
           "kind": "park",
-          "area": {
-            "en": "Andeok, Seogwipo",
-            "th": "อันด็อก ซอกวิโพ"
-          },
-          "what": {
-            "en": "A 172,000 sq m arboretum of about 6,000 camellia trees of 500 kinds, with flower paths, a glasshouse and photo spots",
-            "th": "สวนพฤกษศาสตร์ 172,000 ตร.ม. มีต้นคามิเลียราว 6,000 ต้น 500 สายพันธุ์ ทางเดินดอกไม้ เรือนกระจก และจุดถ่ายรูป"
-          },
-          "why": {
-            "en": "Gentle paths and plenty of colour in winter, when the camellias bloom; children can run beside the flower walks",
-            "th": "ทางเดินลาดเอียงน้อย ดอกสีสวยในฤดูหนาวที่คามิเลียบาน เด็กวิ่งเล่นข้างทางดอกไม้ได้"
-          },
-          "tip": {
-            "en": "Winter hours are 8:30 to 18:00 and there is no lighting, so arrive before sunset; last entry is an hour before closing",
-            "th": "หน้าหนาวเปิด 8:30–18:00 ไม่มีไฟส่องสว่าง ควรมาก่อนพระอาทิตย์ตก รอบสุดท้ายก่อนปิด 1 ชั่วโมง"
-          },
-          "ages": [
-            1,
-            2,
-            2,
-            1
-          ],
+          "area": { "en": "Andeok, Seogwipo", "th": "อันด็อก ซอกวิโพ" },
+          "what": { "en": "A 172,000 sq m arboretum of about 6,000 camellia trees of 500 kinds, with flower paths, a glasshouse and photo spots", "th": "สวนพฤกษศาสตร์ 172,000 ตร.ม. มีต้นคามิเลียราว 6,000 ต้น 500 สายพันธุ์ ทางเดินดอกไม้ เรือนกระจก และจุดถ่ายรูป" },
+          "why": { "en": "Gentle paths and plenty of colour in winter, when the camellias bloom; children can run beside the flower walks", "th": "ทางเดินลาดเอียงน้อย ดอกสีสวยในฤดูหนาวที่คามิเลียบาน เด็กวิ่งเล่นข้างทางดอกไม้ได้" },
+          "tip": { "en": "Winter hours are 8:30 to 18:00 and there is no lighting, so arrive before sunset; last entry is an hour before closing", "th": "หน้าหนาวเปิด 8:30–18:00 ไม่มีไฟส่องสว่าง ควรมาก่อนพระอาทิตย์ตก รอบสุดท้ายก่อนปิด 1 ชั่วโมง" },
+          "ages": [1, 2, 2, 1],
           "hrs": 2,
           "io": "out",
           "pram": "part",
-          "price": {
-            "en": "≈ ₩10,000 adults · ₩8,000 ages 13–18 and 65+ · ₩7,000 ages 3–12",
-            "th": "≈ ₩10,000 ผู้ใหญ่ · ₩8,000 อายุ 13–18 และ 65+ · ₩7,000 อายุ 3–12 ปี"
-          },
+          "price": { "en": "≈ ₩10,000 adults · ₩8,000 ages 13–18 and 65+ · ₩7,000 ages 3–12", "th": "≈ ₩10,000 ผู้ใหญ่ · ₩8,000 อายุ 13–18 และ 65+ · ₩7,000 อายุ 3–12 ปี" },
           "book": "none",
           "q": "Camellia Hill, Sangchang-ri, Andeok-myeon, Seogwipo, Jeju",
           "ok": "2026-11",
           "src": "https://www.ktriptips.com/eng/tourspot/1624990"
+        },
+        {
+          "name": { "en": "Hello Kitty Island", "th": "เฮลโลคิตตี้ ไอส์แลนด์" },
+          "kind": "themepark",
+          "area": { "en": "Andeok-myeon, Seogwipo", "th": "อันด็อก-มยอน ซอกวิโพ" },
+          "what": { "en": "Hello Kitty themed rooms and activities on Jeju island", "th": "ห้องและกิจกรรมธีมเฮลโลคิตตี้บนเกาะเชจู" },
+          "why": { "en": "A paradise for kids, with colourful themed rooms and engaging activities", "th": "สวรรค์ของเด็กๆ มีห้องธีมสีสันสดใสและกิจกรรมสนุก" },
+          "tip": { "en": "Daily 09:00–18:00, last entry 17:00", "th": "ทุกวัน 09:00–18:00 รับเข้าสุดท้าย 17:00" },
+          "ages": [2, 2, 2, 1],
+          "hrs": 2,
+          "io": "in",
+          "pram": "part",
+          "price": { "en": "Check the price", "th": "เช็กราคาก่อนไป" },
+          "book": "none",
+          "q": "Hello Kitty Island, 340 Hanchang-ro, Andeok-myeon, Seogwipo",
+          "ok": "2026-11",
+          "src": "https://blog.trazy.com/family-friendly-places-to-visit-in-jeju/"
+        },
+        {
+          "name": { "en": "Jeju Clip 'N Climb", "th": "เชจู คลิป แอนด์ ไคลม์บ์" },
+          "kind": "play",
+          "area": { "en": "Hallim-eup, Jeju-si", "th": "ฮัลลิม-อึบ เมืองเชจู" },
+          "what": { "en": "An indoor climbing park, which the page calls Asia's largest Clip 'N Climb facility", "th": "สวนปีนผาในร่ม หน้าเพจเรียกว่าสถานที่ Clip 'N Climb ที่ใหญ่ที่สุดในเอเชีย" },
+          "why": { "en": "Over 30 unique challenges and activities for all ages and skill levels", "th": "มีมากกว่า 30 ด่านและกิจกรรมเฉพาะตัว เหมาะกับทุกวัยและทุกระดับฝีมือ" },
+          "tip": { "en": "Daily 09:30–18:00; a limited number of participants per session", "th": "ทุกวัน 09:30–18:00 จำกัดจำนวนผู้เข้าร่วมต่อรอบ" },
+          "ages": [1, 2, 2, 2],
+          "hrs": 2,
+          "io": "in",
+          "pram": "part",
+          "price": { "en": "Check the price", "th": "เช็กราคาก่อนไป" },
+          "book": "rec",
+          "q": "Jeju Clip 'N Climb, 76 Geumneungnam-ro, Hallim-eup, Jeju-si",
+          "ok": "2026-11",
+          "src": "https://blog.trazy.com/family-friendly-places-to-visit-in-jeju/"
+        },
+        {
+          "name": { "en": "Bunker de Lumières", "th": "บิตอุย บังเกอร์" },
+          "local": "빛의 벙커",
+          "kind": "show",
+          "area": { "en": "Seongsan-eup, Seogwipo", "th": "ซองซัน-อึบ ซอกวิโพ" },
+          "what": { "en": "An old national telecom bunker turned into an indoor immersive media-art space with projection mapping of Klimt and van Gogh", "th": "บังเกอร์โทรคมนาคมเก่าของรัฐที่เปลี่ยนเป็นพื้นที่มีเดียอาร์ตในร่ม ฉายภาพผลงานคลิมต์และแวนโก๊ะ" },
+          "why": { "en": "Music and projection art indoors; babies under 36 months enter free", "th": "ดนตรีและภาพฉายในร่ม ทารกต่ำกว่า 36 เดือนเข้าฟรี" },
+          "tip": { "en": "Open daily 10:00–18:20, last entry 17:30", "th": "เปิดทุกวัน 10:00–18:20 รับเข้าสุดท้าย 17:30" },
+          "ages": [2, 2, 2, 1],
+          "hrs": 1.5,
+          "io": "in",
+          "pram": "part",
+          "price": { "en": "≈ ₩11,000 a child · under 36 months free", "th": "≈ ₩11,000 เด็ก · ต่ำกว่า 36 เดือนฟรี" },
+          "book": "none",
+          "q": "빛의 벙커, 서귀포시 성산읍 서성일로1168번길 89-17",
+          "ok": "2026-11",
+          "src": "https://www.yugacrew.com/crewletter/jeju-indoor-places"
+        },
+        {
+          "name": { "en": "Nexon Computer Museum", "th": "พิพิธภัณฑ์คอมพิวเตอร์เน็กซอน" },
+          "local": "넥슨컴퓨터박물관",
+          "kind": "museumkid",
+          "area": { "en": "1100-ro, Jeju City", "th": "ถนน 1100-โร เมืองเชจู" },
+          "what": { "en": "A hands-on museum of computer and game history where most exhibits can be tried", "th": "พิพิธภัณฑ์ประวัติศาสตร์คอมพิวเตอร์และเกมที่ลองเล่นนิทรรศการได้เกือบทั้งหมด" },
+          "why": { "en": "Most exhibits can be tried by hand, and kids can play games there", "th": "นิทรรศการส่วนใหญ่ลองจับได้ และเด็กๆ เล่นเกมที่นั่นได้" },
+          "tip": { "en": "Closed every Monday and on Seollal and Chuseok day; reservation system; last entry 17:30", "th": "ปิดทุกวันจันทร์ และวันซอลลัลกับชูซอก ต้องจอง รับเข้าสุดท้าย 17:30" },
+          "ages": [0, 2, 2, 2],
+          "hrs": 2,
+          "io": "in",
+          "pram": "part",
+          "price": { "en": "≈ ₩6,000 a child · ₩8,000 adult", "th": "≈ ₩6,000 เด็ก · ₩8,000 ผู้ใหญ่" },
+          "book": "req",
+          "q": "넥슨컴퓨터박물관, 제주시 1100로 3198-8",
+          "ok": "2026-11",
+          "src": "https://www.yugacrew.com/crewletter/jeju-indoor-places"
+        },
+        {
+          "name": { "en": "Bonte Museum", "th": "พิพิธภัณฑ์บอนแต" },
+          "local": "본태박물관",
+          "kind": "museum",
+          "area": { "en": "Andeok-myeon, Seogwipo", "th": "อันด็อก-มยอน ซอกวิโพ" },
+          "what": { "en": "A museum designed by Pritzker Prize architect Ando Tadao, with traditional crafts and modern art by Picasso and Kusama", "th": "พิพิธภัณฑ์ที่ออกแบบโดยอันโดะ ทาดาโอะ สถาปนิกรางวัลพริตซ์เกอร์ มีงานหัตถกรรมดั้งเดิมและศิลปะสมัยใหม่ของปิกัสโซและคุซามะ" },
+          "why": { "en": "Traditional crafts and works by Picasso and Kusama in one building", "th": "งานหัตถกรรมดั้งเดิมและผลงานของปิกัสโซและคุซามะในอาคารเดียว" },
+          "tip": { "en": "Open daily 10:00–18:00; last entry 17:00", "th": "เปิดทุกวัน 10:00–18:00 รับเข้าสุดท้าย 17:00" },
+          "ages": [0, 1, 2, 2],
+          "hrs": 1.5,
+          "io": "in",
+          "pram": "part",
+          "price": { "en": "≈ ₩10,000 a child · ₩30,000 adult", "th": "≈ ₩10,000 เด็ก · ₩30,000 ผู้ใหญ่" },
+          "book": "none",
+          "q": "본태박물관, 서귀포시 안덕면 산록남로762번길 69",
+          "ok": "2026-11",
+          "src": "https://www.yugacrew.com/crewletter/jeju-indoor-places"
         }
       ]
     }

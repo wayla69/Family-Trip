@@ -263,8 +263,98 @@
           "q": "Platja de la Barceloneta, Barcelona",
           "ok": "2026-11",
           "src": "https://www.barcelona.cat/en/what-to-do-in-bcn/bathing-and-beaches/barceloneta-beach"
-        }
-      ]
+        },
+        {
+          "name": { "en": "JumpYard", "th": "จัมป์ยาร์ด" },
+          "kind": "play",
+          "area": { "en": "Cornellà Centre", "th": "กอร์เนยาเซ็นเตอร์" },
+          "what": { "en": "The most complete trampoline park in the Barcelona area, with trampolines to jump on.", "th": "สวนแทรมโพลีนที่ครบครันที่สุดในย่านบาร์เซโลนา มีแทรมโพลีนให้กระโดด" },
+          "why": { "en": "Minimum age is 3 to 4 years for some zones, and it fills faster than almost any other venue on rainy days.", "th": "บางโซนกำหนดอายุขั้นต่ำ 3–4 ปี และวันฝนตกคนเต็มเร็วกว่าที่อื่นเกือบทั้งหมด" },
+          "tip": { "en": "Closed-toe shoes are mandatory with no exceptions; advance booking is recommended.", "th": "ต้องใส่รองเท้าหุ้มปลายเท้าโดยไม่มีข้อยกเว้น แนะนำให้จองล่วงหน้า" },
+          "ages": [0, 1, 2, 2],
+          "hrs": 2,
+          "io": "in",
+          "pram": "no",
+          "price": { "en": "≈ €15 an hour", "th": "≈ €15 ต่อชั่วโมง" },
+          "book": "rec",
+          "q": "JumpYard, Cornellà Centre, Cornellà de Llobregat",
+          "ok": "2026-11",
+          "src": "https://barcelonaurbana.com/en/blog/barcelona-kids-rainy-day-guide"
+        },
+        {
+          "name": { "en": "Casa dels Entremesos", "th": "กาซา เดลส์ เอนเตรเมโซส" },
+          "kind": "culture",
+          "area": { "en": "El Born", "th": "เอลบอร์น" },
+          "what": { "en": "The cultural centre for Catalan festival giants, big heads, dragons and beasts.", "th": "ศูนย์วัฒนธรรมของยักษ์ หัวโต มังกรและสัตว์ในเทศกาลคาตาลัน" },
+          "why": { "en": "Free to enter, and the giants and dragons of Catalan street festivals are there for children to see.", "th": "เข้าฟรี และเด็กๆ ได้ดูยักษ์กับมังกรจากเทศกาลข้างถนนของคาตาลัน" },
+          "tip": { "en": "The guide says Sundays bring theatrical performances.", "th": "คู่มือบอกว่าวันอาทิตย์มีการแสดงละคร" },
+          "ages": [1, 2, 2, 1],
+          "hrs": 1,
+          "io": "in",
+          "pram": "part",
+          "price": { "en": "Free", "th": "ฟรี" },
+          "book": "none",
+          "q": "Casa dels Entremesos, El Born, Barcelona",
+          "ok": "2026-11",
+          "src": "https://barcelonaurbana.com/en/blog/barcelona-kids-rainy-day-guide"
+        },
+        {
+          "name": { "en": "Plaça del Rei", "th": "ปลาซา เดล เรย์" },
+          "kind": "museum",
+          "area": { "en": "Gothic Quarter", "th": "ย่านโกทิก" },
+          "what": { "en": "An underground Roman site with streets, workshops and houses seen from walkways above.", "th": "แหล่งโบราณสถานโรมันใต้ดิน มีถนน เวิร์กชอปและบ้านเรือน ดูได้จากทางเดินด้านบน" },
+          "why": { "en": "Completely covered, so it works on a rainy day, and one of the most unexpectedly captivating experiences for children interested in history.", "th": "อยู่ในร่มทั้งหมด จึงเหมาะวันฝนตก และเป็นประสบการณ์ที่น่าหลงใหลเกินคาดสำหรับเด็กที่สนใจประวัติศาสตร์" },
+          "tip": { "en": "The first Sunday of every month, municipal museums have free entry.", "th": "วันอาทิตย์แรกของทุกเดือน พิพิธภัณฑ์ของเทศบาลเข้าฟรี" },
+          "ages": [1, 2, 2, 2],
+          "hrs": 1,
+          "io": "in",
+          "pram": "part",
+          "price": { "en": "Check the price", "th": "เช็กราคาก่อนไป" },
+          "book": "none",
+          "q": "Plaça del Rei, Gothic Quarter, Barcelona",
+          "ok": "2026-11",
+          "src": "https://barcelonaurbana.com/en/blog/barcelona-kids-rainy-day-guide"
+        },
+        {
+          "name": { "en": "Nova Icària beach", "th": "ชายหาดโนวา อิคาเรีย" },
+          "kind": "beach",
+          "area": { "en": "Olympic Harbour", "th": "ท่าเรือโอลิมปิก" },
+          "what": { "en": "A city beach halfway along the seafront, with a playground and a ping-pong table.", "th": "หาดในเมืองที่อยู่กลางแนวชายฝั่ง มีสนามเด็กเล่นและโต๊ะปิงปอง" },
+          "why": { "en": "A playground and a ping-pong table by the Bogatell breakwater, so children have something to do on the sand.", "th": "มีสนามเด็กเล่นและโต๊ะปิงปองข้างเขื่อนกันคลื่นโบกาเตลล์ เด็กๆ จึงมีอะไรทำบนผืนทราย" },
+          "tip": { "en": "The beach flies the Ecoplayas flag for its quality and services.", "th": "หาดนี้ได้ธงเอโกปลายาส์จากคุณภาพและบริการ" },
+          "ages": [2, 2, 2, 2],
+          "hrs": 2,
+          "io": "out",
+          "pram": "part",
+          "price": { "en": "Check the price", "th": "เช็กราคาก่อนไป" },
+          "book": "none",
+          "q": "Nova Icària beach, Olympic Harbour, Barcelona",
+          "ok": "2026-11",
+          "src": "https://www.barcelona.cat/en/what-to-do-in-bcn/bathing-and-beaches/nova-icaria-beach"
+        },
+        {
+          "name": { "en": "Bogatell beach", "th": "ชายหาดโบกาเตลล์" },
+          "kind": "beach",
+          "area": { "en": "Bogatell breakwater to Mar Bella", "th": "จากเขื่อนโบกาเตลล์ถึงมาร์เบยา" },
+          "what": { "en": "About 700 metres of city beach with ping-pong tables, a football pitch and a volleyball court.", "th": "หาดในเมืองยาวราว 700 เมตร มีโต๊ะปิงปอง สนามฟุตบอลและสนามวอลเลย์บอล" },
+          "why": { "en": "Wide sand with room to run, and an accessible changing room with a lifting system.", "th": "ทรายกว้างมีที่ให้วิ่ง และมีห้องเปลี่ยนเสื้อผ้าที่เข้าถึงได้พร้อมระบบยก" },
+          "tip": { "en": "Parking areas make the dry beach easy to reach.", "th": "มีที่จอดรถ ทำให้ไปถึงหาดทรายได้ง่าย" },
+          "ages": [2, 2, 2, 2],
+          "hrs": 2,
+          "io": "out",
+          "pram": "part",
+          "price": { "en": "Check the price", "th": "เช็กราคาก่อนไป" },
+          "book": "none",
+          "q": "Bogatell beach, Barcelona",
+          "ok": "2026-11",
+          "src": "https://www.barcelona.cat/en/what-to-do-in-bcn/bathing-and-beaches/bogatell-beach"
+        },
+      {"name":{"en":"Port Cable Car","th":"กระเช้าท่าเรือ"},"kind":"views","area":{"en":"Barceloneta","th":"บาร์เซโลเนตา"},"what":{"en":"An eight-minute cable car from the port area of Barceloneta up to Montjuïc hill, with views of the sea and the city.","th":"กระเช้าแปดนาทีจากท่าเรือบาร์เซโลเนตาขึ้นสู่เนินมงต์จูอิก มีวิวทะเลและเมือง"},"why":{"en":"Along the way you see the sea, Las Ramblas, the Arc de Triomf and Sagrada Familia; the swing at the first tower is a thrill for children.","th":"ระหว่างทางเห็นทะเล ลาสรามบลาส ประตูชัย และซากราดาฟามีเลีย ชิงช้าที่หอแรกเป็นความตื่นเต้นสำหรับเด็ก"},"ages":[1,2,2,2],"hrs":1,"io":"out","pram":"part","price":{"en":"Check the price","th":"เช็กราคาก่อนไป"},"book":"rec","q":"Port Cable Car, Barceloneta, Barcelona","ok":"2026-11","src":"https://barcelonahacks.com/barcelona-with-kids/"},
+      {"name":{"en":"Barcelona Wax Museum","th":"พิพิธภัณฑ์ขี้ผึ้งบาร์เซโลนา"},"kind":"museumkid","area":{"en":"La Rambla","th":"ลาสรามบลา"},"what":{"en":"Wax museum in a beautiful old building on La Rambla, with a vault where you can act out a robbers' escape.","th":"พิพิธภัณฑ์ขี้ผึ้งในอาคารเก่าที่สวยบนลาสรามบลา มีห้องนิรภัยให้เล่นเป็นโจรหนีด้วยของที่ขโมยมา"},"why":{"en":"The vault simulates how robbers try to escape with their loot, which the page calls one of the best places for kids in Barcelona.","th":"ห้องนิรภัยจำลองการหนีของโจร หน้าเว็บเรียกว่าเป็นหนึ่งในที่ดีที่สุดสำหรับเด็กในบาร์เซโลนา"},"ages":[1,2,2,1],"hrs":1,"io":"in","pram":"part","price":{"en":"Check the price","th":"เช็กราคาก่อนไป"},"book":"none","q":"Barcelona Wax Museum, La Rambla, Barcelona","ok":"2026-11","src":"https://www.tiqets.com/blog/?p=17070"},
+      {"name":{"en":"Parc Joan Miro","th":"สวนฌ็องมีโร"},"kind":"park","area":{"en":"Las Arenas","th":"ลาสอาเรนัส"},"what":{"en":"Park with Joan Miró's centre-piece statue Dona i Ocell (Woman and Bird), rising 22 metres over two lawns and maze-like paths.","th":"สวนที่มีรูปปั้นศูนย์กลางของฌ็องมีโร โดนาอิโอเซ (หญิงกับนก) สูง 22 เมตร เหนือสนามหญ้าสองแห่งและทางเดินคล้ายเขาวงกต"},"why":{"en":"A quick sit-down after sightseeing, with bike paths, a basketball court and a bocce spot.","th":"นั่งพักเบาๆ หลังเที่ยว มีทางจักรยาน สนามบาสเกตบอล และลานโบชช์"},"ages":[2,2,2,1],"hrs":1,"io":"out","pram":"part","price":{"en":"Check the price","th":"เช็กราคาก่อนไป"},"book":"none","q":"Parc Joan Miro, behind Las Arenas, Barcelona","ok":"2026-11","src":"https://barcelonahacks.com/barcelona-park-guide/"},
+      {"name":{"en":"Joan Brossa Gardens","th":"สวนจัวน์บรอสซา"},"kind":"play","area":{"en":"Montjuïc","th":"มงต์จูอิก"},"what":{"en":"Gardens on Montjuïc with a play area of sand, water, slides, swings, sound pillows and a mini wooden suspension bridge.","th":"สวนบนมงต์จูอิกที่มีสนามเด็กเล่นทราย น้ำ สไลด์ ชิงช้า เสาเสียง และสะพานแขวนไม้จิ๋ว"},"why":{"en":"The page recommends it for the play area with sand, water, slides and swings.","th":"หน้าเว็บแนะนำให้มาที่สนามเด็กเล่นที่มีทราย น้ำ สไลด์ และชิงช้า"},"ages":[2,2,2,1],"hrs":2,"io":"out","pram":"part","price":{"en":"Check the price","th":"เช็กราคาก่อนไป"},"book":"none","q":"Joan Brossa Gardens, Montjuïc, Barcelona","ok":"2026-11","src":"https://barcelonahacks.com/barcelona-with-kids/"},
+      {"name":{"en":"Plaça de Masadas","th":"ปลาซาเดมาซาดาส"},"kind":"play","area":{"en":"La Sagrera","th":"ลาซาเกรรา"},"what":{"en":"A square in the La Sagrera district, close to the Parc de Can Dragò playground with its mega octopus.","th":"จัตุรัสในย่านลาซาเกรรา ใกล้สนามเด็กเล่นปาร์กเดกันดรางกับปลาหมึกยักษ์"},"why":{"en":"The page calls it a big area full of kids; it is not a restaurant.","th":"หน้าเว็บเรียกว่าเป็นพื้นที่กว้างที่มีเด็กเยอะ และไม่ใช่ร้านอาหาร"},"ages":[1,2,2,1],"hrs":1,"io":"out","pram":"part","price":{"en":"Check the price","th":"เช็กราคาก่อนไป"},"book":"none","q":"Plaça de Masadas, La Sagrera, Barcelona","ok":"2026-11","src":"https://barcelonahacks.com/barcelona-with-kids/"}
+    ]
     },
     {
       "place": "es-madrid",
@@ -556,8 +646,12 @@
           "q": "CaixaForum Madrid, Paseo del Prado 36, Madrid",
           "ok": "2026-11",
           "src": "https://www.esmadrid.com/informacion-turistica/caixaforum-madrid"
-        }
-      ]
+        },
+      {"name":{"en":"Parque del Oeste","th":"สวนปาร์เกเดลโอเอสเต"},"kind":"park","area":{"en":"western side of Madrid","th":"ฝั่งตะวันตกของมาดริด"},"what":{"en":"A serene park on the western side of Madrid with playgrounds and city views, best at sunset.","th":"สวนเงียบสงบฝั่งตะวันตกของมาดริด มีสนามเด็กเล่นและวิวเมือง ดีที่สุดตอนพระอาทิตย์ตก"},"why":{"en":"Playgrounds and views, with room to run and a calm place to sit.","th":"สนามเด็กเล่นและวิว มีที่ให้วิ่งและที่นั่งสงบ"},"tip":{"en":"Best at sunset for the views, per the page.","th":"ดีที่สุดตอนพระอาทิตย์ตกเพื่อชมวิว ตามหน้าเว็บ"},"ages":[1,2,2,1],"hrs":2,"io":"out","pram":"part","price":{"en":"Free","th":"ฟรี"},"book":"none","q":"Parque del Oeste, Madrid","ok":"2026-11","src":"https://tourismattractions.net/spain/madrid-parks-for-families"},
+      {"name":{"en":"Parque Juan Carlos I","th":"สวนฮวนการ์ลอสที่ 1"},"kind":"park","area":{"en":"Feria de Madrid metro station, Line 8","th":"สถานีเฟเรียเดมาดริด สายสีแดง 8"},"what":{"en":"A large, modern park with a uniquely designed layout, reached by metro Line 8.","th":"สวนขนาดใหญ่ทันสมัย มีผังที่ออกแบบเฉพาะ เดินทางด้วยรถไฟใต้ดินสาย 8"},"why":{"en":"Modern play areas for all ages, the page says.","th":"หน้าเว็บบอกว่ามีพื้นที่เล่นทันสมัยสำหรับทุกวัย"},"tip":{"en":"Reached by metro Line 8, Feria de Madrid station, per the page.","th":"เดินทางด้วยรถไฟใต้ดินสาย 8 สถานีเฟเรียเดมาดริด ตามหน้าเว็บ"},"ages":[2,2,2,1],"hrs":3,"io":"out","pram":"yes","price":{"en":"Check the price","th":"เช็กราคาก่อนไป"},"book":"none","q":"Parque Juan Carlos I, Feria de Madrid, Madrid","ok":"2026-11","src":"https://tourismattractions.net/spain/madrid-parks-for-families"},
+      {"name":{"en":"Madrid Río Park","th":"มาดริดริโอพาร์ค"},"kind":"park","area":{"en":"along the Manzanares River","th":"ตามแม่น้ำมันซาเนอาเรส"},"what":{"en":"A linear park along the Manzanares River with many innovative playgrounds, cycling and walking paths.","th":"สวนเชิงเส้นตามแม่น้ำมันซาเนอาเรส มีสนามเด็กเล่นแปลกใหม่หลายแห่ง ทางจักรยานและทางเดิน"},"why":{"en":"The page calls it one of the best choices for toddlers and very young children.","th":"หน้าเว็บเรียกว่าเป็นหนึ่งในตัวเลือกที่ดีที่สุดสำหรับเด็กวัยเตาะแตะและเด็กเล็กมาก"},"ages":[2,2,2,1],"hrs":2,"io":"out","pram":"yes","price":{"en":"Check the price","th":"เช็กราคาก่อนไป"},"book":"none","q":"Madrid Río Park, along the Manzanares River, Madrid","ok":"2026-11","src":"https://tourismattractions.net/spain/madrid-parks-for-families"},
+      {"name":{"en":"Plaza de España","th":"พลาซาเดเอสปาญา"},"kind":"play","area":{"en":"Plaza de España","th":"พลาซาเดเอสปาญา"},"what":{"en":"A children's play area with giant slides in the Plaza de España.","th":"พื้นที่เล่นสำหรับเด็กพร้อมสไลด์ยักษ์ในพลาซาเดเอสปาญา"},"why":{"en":"Giant slides for the children to whizz down, per the page.","th":"สไลด์ยักษ์ให้เด็กไถลลงมา ตามหน้าเว็บ"},"ages":[2,2,1,0],"hrs":1,"io":"out","pram":"yes","price":{"en":"Check the price","th":"เช็กราคาก่อนไป"},"book":"none","q":"Plaza de España, Madrid","ok":"2026-11","src":"https://www.esmadrid.com/en/ultimate-family-guide-30-things-do-kids"}
+    ]
     },
     {
       "place": "es-seville",

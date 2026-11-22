@@ -273,8 +273,89 @@
           "q": "Zeiss-Großplanetarium, Prenzlauer Allee 80, Berlin",
           "ok": "2026-11",
           "src": "https://www.planetarium.berlin/sites/default/files/2026-06/SPB_Programm_JUL-SEP26_RZ_web.pdf"
-        }
-      ]
+        },
+        {
+          "name": { "en": "FEZ Berlin", "th": "เฟซ เบอร์ลิน" },
+          "kind": "play",
+          "area": { "en": "Wuhlheide", "th": "วูลไฮเดอ" },
+          "what": { "en": "Europe's largest non-profit children's, youth and family centre, with a giant indoor play area and an adventure playground", "th": "ศูนย์เด็ก เยาวชน และครอบครัวแบบไม่แสวงหากำไรที่ใหญ่ที่สุดในยุโรป มีโซนเล่นในร่มขนาดยักษ์และสนามผจญภัย" },
+          "why": { "en": "The extensive grounds hold a giant indoor play area and an exciting adventure playground.", "th": "ในพื้นที่กว้างขวางมีโซนเล่นในร่มขนาดยักษ์และสนามผจญภัยสนุกๆ" },
+          "tip": { "en": "Allow about three hours.", "th": "เผื่อเวลาราว 3 ชั่วโมง" },
+          "ages": [2, 2, 2, 1],
+          "hrs": 3,
+          "io": "both",
+          "pram": "part",
+          "price": { "en": "Check the price", "th": "เช็กราคาก่อนไป" },
+          "book": "none",
+          "q": "FEZ Berlin, Wuhlheide, Berlin",
+          "ok": "2026-11",
+          "src": "https://www.visitberlin.de/en/node/348759"
+        },
+        {
+          "name": { "en": "Waldhochseilgarten Jungfernheide", "th": "วัลด์โฮคไซล์การ์เทน ยุงแฟร์นไฮเดอ" },
+          "kind": "play",
+          "area": { "en": "Jungfernheide", "th": "ยุงแฟร์นไฮเดอ" },
+          "what": { "en": "A forest high ropes course with courses between the treetops, suspension bridges and zip lines", "th": "สวนเชือกไต่ในป่า มีเส้นทางระหว่างยอดไม้ สะพานแขวน และซิปไลน์" },
+          "why": { "en": "Children can climb with you between treetops, over suspension bridges and down zip lines", "th": "เด็กปีนไปกับคุณระหว่างยอดไม้ ข้ามสะพานแขวน และไหลลงซิปไลน์" },
+          "tip": { "en": "Allow about two hours.", "th": "เผื่อเวลาราว 2 ชั่วโมง" },
+          "ages": [0, 1, 2, 2],
+          "hrs": 2,
+          "io": "out",
+          "pram": "no",
+          "price": { "en": "Check the price", "th": "เช็กราคาก่อนไป" },
+          "book": "rec",
+          "q": "Waldhochseilgarten Jungfernheide, Jungfernheide, Berlin",
+          "ok": "2026-11",
+          "src": "https://www.visitberlin.de/en/node/348759"
+        },
+        {
+          "name": { "en": "Tempelhofer Feld", "th": "เทมเพลโฮเฟอร์ เฟลด์" },
+          "kind": "park",
+          "area": { "en": "Tempelhof, the former runway", "th": "เทมเพลโฮฟ ลานบินเก่า" },
+          "what": { "en": "A huge former airport runway in the middle of the city, open for running, inline skating and kites", "th": "รันเวย์สนามบินเก่าขนาดใหญ่กลางเมือง เปิดให้วิ่ง เล่นอินไลน์สเกต และเล่นว่าว" },
+          "why": { "en": "There is plenty of space for all kinds of activities on the huge former runway", "th": "รันเวย์เก่าที่กว้างใหญ่มีที่ว่างให้ทำกิจกรรมได้สารพัด" },
+          "tip": { "en": "Allow about two hours.", "th": "เผื่อเวลาราว 2 ชั่วโมง" },
+          "ages": [2, 2, 2, 1],
+          "hrs": 2,
+          "io": "out",
+          "pram": "part",
+          "price": { "en": "Check the price", "th": "เช็กราคาก่อนไป" },
+          "book": "none",
+          "q": "Tempelhofer Feld, Berlin",
+          "ok": "2026-11",
+          "src": "https://www.visitberlin.de/en/berlin-children-4-7-years"
+        },
+        {
+          "name": { "en": "Treptower Park", "th": "เทรปโทเวอร์ พาร์ก" },
+          "kind": "park",
+          "area": { "en": "Treptow", "th": "เทรปโทว์" },
+          "what": { "en": "A big park with wide paths for cycling and walking, meadows for picnics and ball games, and two playgrounds", "th": "สวนใหญ่ มีทางกว้างสำหรับปั่นจักรยานและเดิน สนามหญ้าสำหรับปิกนิกและเล่นบอล และสนามเด็กเล่นสองแห่ง" },
+          "why": { "en": "There are two playgrounds for children, one of which is the world playground with play stations themed around the continents.", "th": "มีสนามเด็กเล่นสองแห่ง หนึ่งในนั้นคือสนามเด็กเล่นโลก มีสถานีเล่นตามธีมทวีปต่างๆ" },
+          "tip": { "en": "Allow about two hours.", "th": "เผื่อเวลาราว 2 ชั่วโมง" },
+          "ages": [2, 2, 2, 1],
+          "hrs": 2,
+          "io": "out",
+          "pram": "yes",
+          "price": { "en": "Check the price", "th": "เช็กราคาก่อนไป" },
+          "book": "none",
+          "q": "Treptower Park, Treptow, Berlin",
+          "ok": "2026-11",
+          "src": "https://www.visitberlin.de/en/berlin-children-4-7-years"
+        },
+      {"name":{"en":"Türkenmarkt","th":"ตลาดตุรกี"},"kind":"market","area":{"en":"Maybachufer, Kreuzberg and Neukölln","th":"มาย์บัคฟ์เฟอร์ ครอยซ์แบร์กและนอยเคิลน์"},"what":{"en":"Berlin's outdoor food market along the Maybachufer canal, on Tuesdays and Fridays.","th":"ตลาดอาหารกลางแจ้งของเบอร์ลินริมคลองมาย์บัค วันอังคารและศุกร์"},"why":{"en":"An outdoor market with food stalls to browse and taste from.","th":"ตลาดกลางแจ้งที่มีแผงอาหารให้เดินชมและชิม"},"tip":{"en":"Open every Tuesday and Friday from 11:00 to 18:30.","th":"เปิดทุกวันอังคารและศุกร์ 11:00–18:30"},"ages":[1,2,2,2],"hrs":2,"io":"out","pram":"part","price":{"en":"Check the price","th":"เช็กราคาก่อนไป"},"book":"none","q":"Türkenmarkt, Maybachufer, Berlin","ok":"2026-11","src":"https://www.berlin-escape.com/guides/berlin-street-food-scene/"},
+      {"name":{"en":"KICKERworld","th":"คิกเกอร์เวิลด์"},"kind":"play","area":{"en":"Spandau","th":"สปันเดา"},"what":{"en":"An indoor football hall with three Power Courts, plus an outdoor area with padel tennis and table tennis.","th":"ฮอลล์ฟุตบอลในร่มมีพาวเวอร์คอร์ตสามแห่ง และพื้นที่กลางแจ้งมีปาเดลเทนนิสและปิงปอง"},"why":{"en":"Playing football whatever the weather, and letting off steam.","th":"เล่นฟุตบอลได้ไม่ว่าอากาศจะเป็นอย่างไร และระบายพลังงาน"},"ages":[0,1,2,2],"hrs":2,"io":"both","pram":"part","price":{"en":"Check the price","th":"เช็กราคาก่อนไป"},"book":"none","q":"KICKERworld, Spandau, Berlin","ok":"2026-11","src":"https://www.visitberlin.de/en/berlin-rain-kids"},
+      {"name":{"en":"JUMP House Reinickendorf","th":"จัมพ์เฮาส์ ไรนิคเคินดอร์ฟ"},"kind":"play","area":{"en":"Reinickendorf","th":"ไรนิคเคินดอร์ฟ"},"what":{"en":"A family action centre of over 4,000 m² with more than 120 trampolines, foam pit and dodgeball.","th":"ศูนย์กิจกรรมครอบครัวกว่า 4,000 ตารางเมตร มีแทรมโพลีนมากกว่า 120 ตัว บ่อโฟม และดอดจ์บอล"},"why":{"en":"Trampolines, a foam pit and jumping in three dimensions, as the page puts it.","th":"หน้าเว็บบอกว่ามีแทรมโพลีน บ่อโฟม และกระโดดได้สามมิติ"},"ages":[0,0,2,2],"hrs":2,"io":"in","pram":"no","price":{"en":"Check the price","th":"เช็กราคาก่อนไป"},"book":"none","q":"JUMP House Reinickendorf, Berlin","ok":"2026-11","src":"https://www.visitberlin.de/en/berlin-rain-kids"},
+      {"name":{"en":"Colorb(l)ind Artspace","th":"คัลเลอร์บลินด์ อาร์ตสเปซ"},"kind":"museum","area":{"en":"Wedding","th":"เวดดิง"},"what":{"en":"An immersive art space where glassworks, installations and light displays mix with hands-on experiences.","th":"พื้นที่ศิลปะแบบดื่มด่ำ ที่งานแก้ว ศิลปะจัดวาง และแสงผสมกับกิจกรรมลงมือทำ"},"why":{"en":"In the Painting Arena, children aged 3 and over make large-scale murals with their parents.","th":"ในห้องเพนติ้งอารีนา เด็กอายุ 3 ปีขึ้นไปวาดภาพจิตรกรรมฝาผนังขนาดใหญ่กับพ่อแม่"},"ages":[0,2,2,1],"hrs":2,"io":"in","pram":"yes","price":{"en":"Check the price","th":"เช็กราคาก่อนไป"},"book":"none","q":"Colorb(l)ind Artspace, Wedding, Berlin","ok":"2026-11","src":"https://www.visitberlin.de/en/berlin-rain-kids"},
+      {"name":{"en":"Wilhelm Foerster Observatory","th":"หอดูดาววิลเฮล์ม ฟอร์สเตอร์"},"kind":"museum","area":{"en":"Insulaner, Schöneberg","th":"อินซูลาเนอร์ เชอเนแบร์ก"},"what":{"en":"A public observatory combined with a large planetarium, under an artificial starry sky.","th":"หอดูดาวสาธารณะรวมกับท้องฟ้าจำลองขนาดใหญ่ ใต้ท้องฟ้าดาวจำลอง"},"why":{"en":"A magnificent view of an artificial starry sky.","th":"ได้เห็นท้องฟ้าดาวจำลองที่สวยงาม"},"ages":[0,1,2,2],"hrs":2,"io":"in","pram":"yes","price":{"en":"Check the price","th":"เช็กราคาก่อนไป"},"book":"none","q":"Wilhelm Foerster Observatory, Insulaner, Schöneberg, Berlin","ok":"2026-11","src":"https://www.visitberlin.de/en/berlin-rain-kids"},
+      {"name":{"en":"Archenhold Observatory","th":"หอดูดาวอาร์เคนโฮลด์"},"kind":"museum","area":{"en":"Treptower Park","th":"ทรึพโทว์เวอร์พาร์ค"},"what":{"en":"Germany's oldest and largest public observatory, with the world's longest movable refracting telescope.","th":"หอดูดาวสาธารณะที่เก่าแก่และใหญ่ที่สุดของเยอรมนี มีกล้องหักเหแสงที่เคลื่อนย้ายได้ยาวที่สุดในโลก"},"why":{"en":"Every child is allowed to look through the telescope at least once.","th":"เด็กทุกคนได้ส่องกล้องอย่างน้อยหนึ่งครั้ง"},"ages":[0,1,2,2],"hrs":1.5,"io":"both","pram":"part","price":{"en":"Check the price","th":"เช็กราคาก่อนไป"},"book":"none","q":"Archenhold Observatory, Treptower Park, Berlin","ok":"2026-11","src":"https://www.visitberlin.de/en/berlin-rain-kids"},
+      {"name":{"en":"Anne Frank Centre","th":"ศูนย์แอนน์ แฟรงค์"},"kind":"museum","area":{"en":"Hackescher Markt","th":"ฮัคเคชเชอร์มาร์คท์"},"what":{"en":"The exhibition All About Anne, in six sections on each stage of Anne Frank's life, with panels to discuss together.","th":"นิทรรศการ All About Anne แบ่งเป็นหกส่วนตามแต่ละช่วงชีวิตของแอนน์ แฟรงค์ มีแผงให้คุยด้วยกัน"},"why":{"en":"Built for families to share their own thoughts and talk through the story together.","th":"ออกแบบให้ครอบครัวแบ่งปันความคิดและพูดถึงเรื่องราวด้วยกัน"},"ages":[0,0,1,2],"hrs":1.5,"io":"in","pram":"part","price":{"en":"Check the price","th":"เช็กราคาก่อนไป"},"book":"none","q":"Anne Frank Centre, Hackescher Markt, Berlin","ok":"2026-11","src":"https://www.visitberlin.de/en/berlin-rain-kids"},
+      {"name":{"en":"Grashüpfer Puppet Theatre","th":"โรงละครหุ่นกระบอกกราชฮุพฟ์เฟอร์"},"kind":"show","area":{"en":"Treptow","th":"ทรัพโทว์"},"what":{"en":"A puppet theatre for the very youngest children.","th":"โรงละครหุ่นกระบอกสำหรับเด็กเล็กที่สุด"},"why":{"en":"Made for the youngest children, with puppet shows.","th":"ทำมาสำหรับเด็กเล็กที่สุด มีการแสดงหุ่นกระบอก"},"ages":[2,2,1,0],"hrs":1,"io":"in","pram":"yes","price":{"en":"Check the price","th":"เช็กราคาก่อนไป"},"book":"none","q":"Grashüpfer Puppet Theatre, Treptow, Berlin","ok":"2026-11","src":"https://www.visitberlin.de/en/berlin-rain-kids"},
+      {"name":{"en":"Morgenstern Theatre","th":"โรงละครมอร์เกนสเติร์น"},"kind":"show","area":{"en":"Friedenau","th":"ฟรีเดเนา"},"what":{"en":"A children's theatre where imaginative, classic and modern children's plays are performed.","th":"โรงละครเด็กที่แสดงละครเด็กทั้งแบบจินตนาการ คลาสสิก และสมัยใหม่"},"why":{"en":"Children's plays in a theatre made for them.","th":"ละครเด็กในโรงละครที่ทำมาเพื่อเด็ก"},"ages":[1,2,2,1],"hrs":1,"io":"in","pram":"yes","price":{"en":"Check the price","th":"เช็กราคาก่อนไป"},"book":"none","q":"Morgenstern Theatre, Friedenau, Berlin","ok":"2026-11","src":"https://www.visitberlin.de/en/berlin-rain-kids"},
+      {"name":{"en":"Grips Theatre","th":"โรงละครกริปส์"},"kind":"show","area":{"en":"Mitte","th":"มิทเทอ"},"what":{"en":"A children's theatre with realistic stories for young audiences.","th":"โรงละครเด็กที่มีเรื่องราวสมจริงสำหรับผู้ชมอายุน้อย"},"why":{"en":"Realistic stories told for children.","th":"เรื่องราวสมจริงที่เล่าให้เด็กฟัง"},"ages":[0,1,2,2],"hrs":1,"io":"in","pram":"yes","price":{"en":"Check the price","th":"เช็กราคาก่อนไป"},"book":"none","q":"Grips Theatre, Mitte, Berlin","ok":"2026-11","src":"https://www.visitberlin.de/en/berlin-rain-kids"},
+      {"name":{"en":"Hassenheide Park","th":"สวนฮัสเซนไฮเดอ"},"kind":"park","area":{"en":"Neukölln","th":"นอยเคิลน์"},"what":{"en":"A park in Neukölln with a very different atmosphere from the centre, a green space for everyday use.","th":"สวนในนอยเคิลน์ บรรยากาศต่างจากใจกลางมาก เป็นพื้นที่สีเขียวสำหรับใช้ในชีวิตประจำวัน"},"why":{"en":"A green space for everyday use, the page says, for families staying south of Mitte.","th":"หน้าเว็บบอกว่าเป็นพื้นที่สีเขียวสำหรับใช้ในชีวิตประจำวันของครอบครัวที่พักทางใต้ของมิทเทอ"},"ages":[2,2,2,1],"hrs":2,"io":"out","pram":"yes","price":{"en":"Check the price","th":"เช็กราคาก่อนไป"},"book":"none","q":"Hassenheide Park, Neukölln, Berlin","ok":"2026-11","src":"https://germanywander.com/fun-things-to-do-in-berlin-with-kids"},
+      {"name":{"en":"Kinderbad at Monbijoux Park","th":"สระว่ายน้ำเด็กที่สวนมอนบิจู"},"kind":"play","area":{"en":"Mitte","th":"มิทเทอ"},"what":{"en":"A children's pool at Monbijoux Park in Mitte, on the walk past Museum Island and the Berlin Cathedral.","th":"สระเด็กที่สวนมอนบิจูในมิทเทอ บนทางเดินผ่านเกาะพิพิธภัณฑ์และอาสนวิหารเบอร์ลิน"},"why":{"en":"A children's pool close to the main sights in Mitte.","th":"สระเด็กใกล้สถานที่สำคัญในมิทเทอ"},"tip":{"en":"Pool season is May to August.","th":"ฤดูสระน้ำคือพฤษภาคมถึงสิงหาคม"},"ages":[2,2,1,0],"hrs":2,"io":"out","pram":"yes","price":{"en":"Check the price","th":"เช็กราคาก่อนไป"},"book":"none","q":"Kinderbad at Monbijoux Park, Mitte, Berlin","ok":"2026-11","src":"https://germanywander.com/fun-things-to-do-in-berlin-with-kids"},
+      {"name":{"en":"East Side Gallery","th":"อีสต์ไซด์แกลเลอรี"},"kind":"culture","area":{"en":"Friedrichshain","th":"ฟรีดริชชไฮน์"},"what":{"en":"A painted stretch of the Berlin Wall that runs along the Spree.","th":"ส่วนกำแพงเบอร์ลินที่ทาสีตามแนวแม่น้ำชปรี"},"why":{"en":"A walk past painted murals along the river.","th":"เดินชมภาพจิตรกรรมที่ทาไว้ริมแม่น้ำ"},"ages":[1,2,2,2],"hrs":1.5,"io":"out","pram":"yes","price":{"en":"Check the price","th":"เช็กราคาก่อนไป"},"book":"none","q":"East Side Gallery, Friedrichshain, Berlin","ok":"2026-11","src":"https://www.berlin-escape.com/guides/kreuzberg-food-guide/"}
+    ]
     },
     {
       "place": "de-cologne",
@@ -1383,8 +1464,13 @@
           "q": "LEGOLAND Deutschland Resort, Legolandallee, Günzburg",
           "ok": "2026-11",
           "src": "https://www.monsterdealz.de/magazin/legoland-guenzburg-tickets"
-        }
-      ]
+        },
+      {"name":{"en":"Kinderkunsthaus","th":"คินเดอร์คุนสท์เฮาส์"},"kind":"museumkid","area":{"en":"Schwabing","th":"ชวาบิง"},"what":{"en":"A children's art house in Schwabing (Römerstr. 21) with many workshops.","th":"บ้านศิลปะเด็กในชวาบิง (เรอเมอร์ชทราเซอ 21) มีเวิร์กช็อปมากมาย"},"why":{"en":"Creative workshops, some designed for children as young as 3.","th":"เวิร์กช็อปสร้างสรรค์ บางรอบออกแบบสำหรับเด็กตั้งแต่อายุ 3 ปี"},"ages":[0,2,2,1],"hrs":2,"io":"in","pram":"part","price":{"en":"Check the price","th":"เช็กราคาก่อนไป"},"book":"rec","q":"Kinderkunsthaus, Römerstr. 21, Schwabing, Munich","ok":"2026-11","src":"https://secretmuenchen.com/en/munich-with-children/"},
+      {"name":{"en":"Children’s Museum Munich","th":"พิพิธภัณฑ์เด็กมิวนิก"},"kind":"museumkid","area":{"en":"Willy-Brandt-Allee 10","th":"วิลลี-บรันท์-อัลเลอ 10"},"what":{"en":"An interactive children's museum at Willy-Brandt-Allee 10 with science and art zones.","th":"พิพิธภัณฑ์เด็กแบบโต้ตอบที่วิลลี-บรันท์-อัลเลอ 10 มีโซนวิทยาศาสตร์และศิลปะ"},"why":{"en":"Interactive exhibits designed specifically for young explorers, with experiments and creative play.","th":"นิทรรศการแบบโต้ตอบออกแบบสำหรับนักสำรวจตัวน้อย มีการทดลองและการเล่นสร้างสรรค์"},"ages":[1,2,2,1],"hrs":2,"io":"in","pram":"part","price":{"en":"Check the price","th":"เช็กราคาก่อนไป"},"book":"rec","q":"Children’s Museum Munich, Willy-Brandt-Allee 10, Munich","ok":"2026-11","src":"https://secretmuenchen.com/en/munich-with-children/"},
+      {"name":{"en":"Museum Man and Nature","th":"พิพิธภัณฑ์คนและธรรมชาติ"},"kind":"museum","area":{"en":"Schloss Nymphenburg","th":"พระราชวังนิมเฟนบวร์ค"},"what":{"en":"An interactive natural-science museum inside Nymphenburg Palace.","th":"พิพิธภัณฑ์วิทยาศาสตร์ธรรมชาติแบบโต้ตอบในพระราชวังนิมเฟนบวร์ค"},"why":{"en":"Interactive natural-science exhibits inside Nymphenburg Palace.","th":"นิทรรศการวิทยาศาสตร์ธรรมชาติแบบโต้ตอบในพระราชวังนิมเฟนบวร์ค"},"ages":[0,2,2,1],"hrs":2,"io":"in","pram":"part","price":{"en":"From €3.50","th":"ตั้งแต่ €3.50"},"book":"none","q":"Museum Mensch und Natur, Schloss Nymphenburg, Munich","ok":"2026-11","src":"https://www.musa.guide/en/discover/munich/museum-man-and-nature"},
+      {"name":{"en":"Sayaq Adventure Tower","th":"ซายาค แอดเวนเจอร์ ทาวเวอร์"},"kind":"play","area":{"en":"Olympic Park","th":"โอลิมปิกพาร์ค"},"what":{"en":"Aerial climbing courses at heights of up to 25 metres, in three difficulty levels, in Munich's Olympic Park.","th":"คอร์สปีนขึ้นไปบนที่สูงถึง 25 เมตร สามระดับความยาก ในโอลิมปิกพาร์คมิวนิก"},"why":{"en":"Adventurous climbing with views over the Olympic Park; the courses run in three levels, blue, red and black.","th":"ปีนผจญภัยพร้อมวิวโอลิมปิกพาร์ค คอร์สมีสามระดับ คือ น้ำเงิน แดง และดำ"},"ages":[0,0,2,2],"hrs":2,"io":"out","pram":"no","price":{"en":"Check the price","th":"เช็กราคาก่อนไป"},"book":"rec","q":"Sayaq Adventure Tower, Olympic Park, Munich","ok":"2026-11","src":"https://secretmuenchen.com/en/munich-with-children/"},
+      {"name":{"en":"Railroad Museum","th":"พิพิธภัณฑ์รถราง"},"kind":"ride","area":{"en":"Ostbahnhof","th":"ออสต์บาห์นฮอฟ"},"what":{"en":"A museum train of restored Munich streetcars, pulled by a steam locomotive, departing from Ostbahnhof.","th":"รถไฟพิพิธภัณฑ์จากรถรางมิวนิกที่บูรณะแล้ว ลากด้วยหัวรถจักรไอน้ำ ออกจากออสต์บาห์นฮอฟ"},"why":{"en":"A fun way to explore the city by train, through the streets as they were decades ago.","th":"วิธีสนุกในการสำรวจเมืองด้วยรถไฟ ผ่านถนนแบบที่เคยเป็นเมื่อหลายสิบปีก่อน"},"ages":[1,2,2,2],"hrs":1.5,"io":"out","pram":"part","price":{"en":"Check the price","th":"เช็กราคาก่อนไป"},"book":"rec","q":"Ostbahnhof, Munich","ok":"2026-11","src":"https://secretmuenchen.com/en/munich-with-children/"}
+    ]
     },
     {
       "place": "de-rothenburg",

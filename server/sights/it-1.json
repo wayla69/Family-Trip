@@ -1094,8 +1094,12 @@
           "q": "Torre Grossa, Piazza del Duomo, San Gimignano",
           "ok": "2026-11",
           "src": "https://museionline.info/tipologie-museo/torre-grossa"
-        }
-      ]
+        },
+      {"name":{"en":"HZERO Model Train Museum","th":"พิพิธภัณฑ์รถไฟจำลองเฮซีโร"},"kind":"museumkid","area":{"en":"Santa Maria Novella","th":"ซานตามาเรียโนเวลลา"},"what":{"en":"Model railway museum near Santa Maria Novella, with one of the largest model railway systems in Europe.","th":"พิพิธภัณฑ์รถไฟจำลองใกล้ซานตามาเรียโนเวลลา มีระบบรถไฟจำลองที่ใหญ่ที่สุดแห่งหนึ่งในยุโรป"},"why":{"en":"If your kids love trains, they will be glued to it.","th":"ถ้าเด็กชอบรถไฟ จะติดอยู่กับมันทั้งวัน"},"ages":[1,2,2,2],"hrs":1.5,"io":"in","pram":"part","price":{"en":"Check the price","th":"เช็กราคาก่อนไป"},"book":"rec","q":"HZERO Model Train Museum, Santa Maria Novella, Florence","ok":"2026-11","src":"https://www.viaggiapiccoli.com/en/museums-for-kids-in-florence/"},
+      {"name":{"en":"Museo degli Innocenti","th":"พิพิธภัณฑ์อินโนเชนตี"},"kind":"museumkid","area":{"en":"Piazza della Santissima Annunziata","th":"ปิอัซซาเดลลาซานตีซิมา อันนุนซิอาตา"},"what":{"en":"Historic centre for children's culture and youth programmes, with children's workshops (laboratori per bambini).","th":"ศูนย์กลางประวัติศาสตร์สำหรับวัฒนธรรมเด็กและโปรแกรมเยาวชน มีเวิร์กช็อปเด็ก"},"why":{"en":"Workshops for preschool and primary-school ages blend history with modelling and collage.","th":"เวิร์กช็อปสำหรับเด็กก่อนวัยเรียนและประถม ผสมประวัติศาสตร์กับการปั้นและการตัดแปะ"},"ages":[1,2,2,1],"hrs":1.5,"io":"in","pram":"part","price":{"en":"Check the price","th":"เช็กราคาก่อนไป"},"book":"rec","q":"Museo degli Innocenti, Piazza della Santissima Annunziata, Florence","ok":"2026-11","src":"https://florence.ue.is/en/kids-art-workshops-florence-museums-studios/"},
+      {"name":{"en":"Leonardo Interactive Museum","th":"พิพิธภัณฑ์เลโอนาร์โดแบบโต้ตอบ"},"kind":"museumkid","area":{"en":"Via dei Servi","th":"ถนนเวีย เดย์ เซอร์วี"},"what":{"en":"Interactive Leonardo da Vinci museum at Via dei Servi 66/R, with machines to touch.","th":"พิพิธภัณฑ์เลโอนาร์โด ดา วินชี แบบโต้ตอบ ที่เวีย เดย์ เซอร์วี 66/R มีเครื่องจักรให้จับ"},"why":{"en":"Plain reason: the page says a visit takes about an hour.","th":"หน้าเว็บบอกว่าการเที่ยวใช้เวลาราวหนึ่งชั่วโมง"},"tip":{"en":"Open every day 9:30–19:30, last entry one hour before closing (per the page).","th":"เปิดทุกวัน 9:30–19:30 เข้าได้ล่าสุดหนึ่งชั่วโมงก่อนปิด ตามหน้าเว็บ"},"ages":[1,2,2,2],"hrs":1,"io":"in","pram":"part","price":{"en":"€8.30 online","th":"8.30 ยูโร ออนไลน์"},"book":"rec","q":"Leonardo Interactive Museum, Via dei Servi 66/R, Florence","ok":"2026-11","src":"https://ticket.florence.it/en/leonardo-museum/"},
+      {"name":{"en":"Palazzo Strozzi","th":"พาลัซโซสโตรซซี"},"kind":"museum","area":{"en":"Piazza Strozzi","th":"ปิอัซซาสโตรซซี"},"what":{"en":"Palace of exhibitions, with a Family Kit (a bag of games and insights) and tours and workshops for families.","th":"พระราชวังจัดนิทรรศการ มี Family Kit (ถุงเกมและสิ่งที่น่าสนใจ) และทัวร์กับเวิร์กช็อปสำหรับครอบครัว"},"why":{"en":"The page says its exhibitions are often accompanied by activities designed for families, from age 3.","th":"หน้าเว็บบอกว่านิทรรศการมักมีกิจกรรมออกแบบสำหรับครอบครัว ตั้งแต่อายุ 3 ปี"},"ages":[0,2,2,1],"hrs":1.5,"io":"in","pram":"part","price":{"en":"Check the price","th":"เช็กราคาก่อนไป"},"book":"rec","q":"Palazzo Strozzi, Piazza Strozzi, Florence","ok":"2026-11","src":"https://www.viaggiapiccoli.com/en/museums-for-kids-in-florence/"}
+    ]
     },
     {
       "place": "it-milan",
@@ -1369,8 +1373,12 @@
           "q": "Museo del Novecento, Piazza del Duomo 8, Milan",
           "ok": "2026-11",
           "src": "https://www.mentelocale.it/milano/120830-musei-civici-di-milano-aumenta-il-prezzo-dei-biglietti-ecco-quanto-coster-l-ingresso-dal-10-maggio-2026.htm"
-        }
-      ]
+        },
+      {"name":{"en":"Museo d’Arte e Scienza di Milano","th":"พิพิธภัณฑ์ศิลปะและวิทยาศาสตร์แห่งมิลาน"},"kind":"museum","area":{"en":"Castello Sforzesco","th":"คาสเตลโลสฟอร์เซสโก"},"what":{"en":"A museum of art and science with a learning route on how to recognise authenticity in art and antiques.","th":"พิพิธภัณฑ์ศิลปะและวิทยาศาสตร์ มีเส้นทางเรียนรู้วิธีแยกของแท้ในงานศิลปะและของเก่า"},"why":{"en":"Guided visits can be booked, and free visits come with multilingual panels.","th":"จองทัวร์นำชมได้ และการเข้าชมฟรีมีป้ายหลายภาษา"},"ages":[0,1,2,2],"hrs":2,"io":"in","pram":"part","price":{"en":"Check the price","th":"เช็กราคาก่อนไป"},"book":"rec","q":"Museo d'Arte e Scienza di Milano, Milan","ok":"2026-11","src":"https://www.familygo.eu/vacanze-con-bambini/eventi/milano/milano-eventi-per-bambini/"},
+      {"name":{"en":"Leonardo3 Museum","th":"พิพิธภัณฑ์เลโอนาร์โด3"},"kind":"museum","area":{"en":"Piazza della Scala","th":"ปิอัซซาเดลลาสกาลา"},"what":{"en":"Rebuilt machines and restored paintings from Leonardo da Vinci, in the heart of the city.","th":"เครื่องจักรสร้างใหม่และภาพวาดที่บูรณะของเลโอนาร์โด ดา วินชี ใจกลางเมือง"},"why":{"en":"Family activities such as a flight-themed visit for children from six up.","th":"มีกิจกรรมครอบครัว เช่น การเยี่ยมชมธีมการบินสำหรับเด็กตั้งแต่หกขวบ"},"ages":[0,0,1,2],"hrs":1.5,"io":"in","pram":"part","price":{"en":"Check the price","th":"เช็กราคาก่อนไป"},"book":"rec","q":"Leonardo3 Museum, Milan","ok":"2026-11","src":"https://www.familygo.eu/vacanze-con-bambini/eventi/milano/milano-eventi-per-bambini/"},
+      {"name":{"en":"MUSEO BAGATTI VALSECCHI","th":"พิพิธภัณฑ์บากัตติ วัลเซกกี"},"kind":"museum","area":{"en":"Montenapoleone","th":"มอนเตนาโปเลโอเน"},"what":{"en":"A historic house museum, one of the most important and best-kept house museums in Europe.","th":"พิพิธภัณฑ์บ้านประวัติศาสตร์ ที่เป็นหนึ่งในพิพิธภัณฑ์บ้านที่สำคัญและดูแลดีที่สุดในยุโรป"},"why":{"en":"Workshops and treasure hunts for children run at weekends.","th":"มีเวิร์กช็อปและการล่าสมบัติสำหรับเด็กในวันหยุดสุดสัปดาห์"},"ages":[0,1,2,2],"hrs":1.5,"io":"in","pram":"part","price":{"en":"Check the price","th":"เช็กราคาก่อนไป"},"book":"rec","q":"Museo Bagatti Valsecchi, Milan","ok":"2026-11","src":"https://www.familygo.eu/vacanze-con-bambini/eventi/milano/milano-eventi-per-bambini/"},
+      {"name":{"en":"Brera Botanical Garden","th":"สวนพฤกษศาสตร์เบรรา"},"kind":"nature","area":{"en":"Via Brera 28","th":"ถนนเวีย เบรรา 28"},"what":{"en":"The botanical garden of the University of Milan, with guided tours and educational activities.","th":"สวนพฤกษศาสตร์ของมหาวิทยาลัยมิลาน มีทัวร์นำชมและกิจกรรมเพื่อการศึกษา"},"why":{"en":"Guided tours from kindergarten age up, including observation games in the garden for 7 to 13 year olds.","th":"มีทัวร์นำชมตั้งแต่อายุอนุบาลขึ้นไป รวมถึงเกมสังเกตในสวนสำหรับอายุ 7–13 ปี"},"ages":[0,1,2,2],"hrs":1.5,"io":"out","pram":"part","price":{"en":"Check the price","th":"เช็กราคาก่อนไป"},"book":"req","q":"Brera Botanical Garden, Via Brera 28, Milan","ok":"2026-11","src":"https://ortibotanici.unimi.it/?p=2602"}
+    ]
     },
     {
       "place": "it-rome",
@@ -1670,8 +1678,140 @@
           "q": "Technotown, Via Lazzaro Spallanzani 1/A, Villa Torlonia, Roma",
           "ok": "2026-11",
           "src": "https://www.technotown.it"
-        }
-      ]
+        },
+        {
+          "name": { "en": "San Carlino", "th": "ซานคาร์ลีโน" },
+          "local": "Teatro dei burattini",
+          "kind": "show",
+          "area": { "en": "Viale dei Bambini", "th": "วิอาเลเดอิบัมบีนี" },
+          "what": { "en": "A hand-puppet theatre with Punch and his friends, open to the public whenever an artistic event takes place.", "th": "โรงละครหุ่นมือที่มีพันช์กับเพื่อนๆ เปิดให้คนทั่วไปเข้าชมเมื่อมีกิจกรรมทางศิลปะ" },
+          "why": { "en": "Hand puppets, music and clowning give children a love for theatre.", "th": "หุ่นมือ ดนตรีและการแสดงตลกทำให้เด็กๆ รักการละคร" },
+          "tip": { "en": "Buy tickets online at sancarlino.it/tickets; check the contacts before a visit.", "th": "ซื้อตั๋วออนไลน์ที่ sancarlino.it/tickets และเช็กช่องทางติดต่อก่อนไป" },
+          "ages": [1, 2, 2, 2],
+          "hrs": 1,
+          "io": "in",
+          "pram": "part",
+          "price": { "en": "Check the price", "th": "เช็กราคาก่อนไป" },
+          "book": "rec",
+          "q": "San Carlino theatre, Viale dei Bambini, Rome",
+          "ok": "2026-11",
+          "src": "https://turismoroma.it/en/node/3521"
+        },
+        {
+          "name": { "en": "Verde Theatre", "th": "เตอาโตรเวร์เด" },
+          "local": "Teatro Verde",
+          "kind": "show",
+          "area": { "en": "Circonvallazione Gianicolense 10", "th": "ซีร์คอนวัลลาซิโอเน จานิโคเลนเซ 10" },
+          "what": { "en": "The official theatre for Rome's children and youth, with puppet and classical plays.", "th": "โรงละครทางการสำหรับเด็กและเยาวชนของโรม มีการแสดงหุ่นและละครคลาสสิก" },
+          "why": { "en": "It offers over 30 shows chosen and created for the very young.", "th": "มีการแสดงกว่า 30 เรื่องที่คัดและสร้างมาสำหรับเด็กเล็กมาก" },
+          "tip": { "en": "Check the current programme before you go.", "th": "เช็กโปรแกรมปัจจุบันก่อนไป" },
+          "ages": [0, 1, 2, 2],
+          "hrs": 1.5,
+          "io": "in",
+          "pram": "part",
+          "price": { "en": "Check the price", "th": "เช็กราคาก่อนไป" },
+          "book": "rec",
+          "q": "Teatro Verde, C.ne Gianicolense 10, Rome",
+          "ok": "2026-11",
+          "src": "https://turismoroma.it/en/node/36923"
+        },
+        {
+          "name": { "en": "Mongiovino Theatre of Accettella", "th": "เตอาโตรมอนจิโอวิโน" },
+          "local": "Teatro Mongiovino",
+          "kind": "show",
+          "area": { "en": "Via Giovanni Genocchi 15", "th": "เวียจิโอวันนีเจโนกกี 15" },
+          "what": { "en": "A theatre that runs shows only for children and teenagers, with puppets and drama from myths and fairy tales.", "th": "โรงละครที่จัดการแสดงเฉพาะเด็กและวัยรุ่น มีหุ่นและละครจากเทพนิยายและตำนาน" },
+          "why": { "en": "Its shows use puppet theatre and drama based on myths, legends and popular fairy tales.", "th": "การแสดงใช้หุ่นและละครจากเทพปกรณัม ตำนานและเทพนิยายยอดนิยม" },
+          "tip": { "en": "Running for seventy years; check the programme before you go.", "th": "เปิดมาแล้วเจ็ดสิบปี เช็กโปรแกรมก่อนไป" },
+          "ages": [1, 2, 2, 2],
+          "hrs": 1.5,
+          "io": "in",
+          "pram": "part",
+          "price": { "en": "Check the price", "th": "เช็กราคาก่อนไป" },
+          "book": "rec",
+          "q": "Mongiovino Theatre, Via Giovanni Genocchi 15, Rome",
+          "ok": "2026-11",
+          "src": "https://turismoroma.it/en/node/36923"
+        },
+        {
+          "name": { "en": "Cinecittà World", "th": "ชิเนชิตตา เวิลด์" },
+          "kind": "themepark",
+          "area": { "en": "Near Cinecittà Studios, outside the city", "th": "ใกล้สตูดิโอชิเนชิตตา นอกเมือง" },
+          "what": { "en": "Rome's theme park dedicated to cinema, with rides, live stunt shows and film sets to walk through.", "th": "สวนสนุกของโรมที่ว่าด้วยภาพยนตร์ มีเครื่องเล่น โชว์สตันต์สดและฉากถ่ายทำให้เดินชม" },
+          "why": { "en": "Younger kids can explore film sets and enjoy smaller rides.", "th": "เด็กเล็กได้สำรวจฉากถ่ายทำและเล่นเครื่องเล่นขนาดเล็ก" },
+          "tip": { "en": "Check the day's prices and the season before you go.", "th": "เช็กราคาของวันและฤดูกาลก่อนไป" },
+          "ages": [1, 2, 2, 2],
+          "hrs": 5,
+          "io": "out",
+          "pram": "part",
+          "price": { "en": "Check the price", "th": "เช็กราคาก่อนไป" },
+          "book": "rec",
+          "q": "Cinecittà World, Rome",
+          "ok": "2026-11",
+          "src": "https://www.roughguides.com/italy/things-to-do-in-rome-with-kids/"
+        },
+        {
+          "name": { "en": "Playground Parco Archeologico di Centocelle", "th": "สนามเด็กเล่นสวนโบราณคดีเชนโตเชลเล" },
+          "kind": "play",
+          "area": { "en": "Centocelle", "th": "เชนโตเชลเล" },
+          "what": { "en": "A playground inside the Centocelle archaeological park, built on the old runway of Italy's first airport.", "th": "สนามเด็กเล่นในสวนโบราณคดีเชนโตเชลเล สร้างบนรันเวย์เก่าของสนามบินแห่งแรกของอิตาลี" },
+          "why": { "en": "Celebrated as one of the largest public playgrounds in Europe.", "th": "ได้รับการยกย่องว่าเป็นสนามเด็กเล่นสาธารณะที่ใหญ่ที่สุดแห่งหนึ่งในยุโรป" },
+          "tip": { "en": "A sports track over 350 m long runs alongside.", "th": "มีลู่กีฬายาวกว่า 350 เมตรอยู่ข้างๆ" },
+          "ages": [0, 1, 2, 2],
+          "hrs": 2,
+          "io": "out",
+          "pram": "part",
+          "price": { "en": "Check the price", "th": "เช็กราคาก่อนไป" },
+          "book": "none",
+          "q": "Parco Archeologico di Centocelle, Rome",
+          "ok": "2026-11",
+          "src": "https://turismoroma.it/en/node/177026"
+        },
+        {
+          "name": { "en": "Mercato Trionfale", "th": "ตลาดตริออนฟาเล" },
+          "kind": "market",
+          "area": { "en": "Near St Peter's", "th": "ใกล้มหาวิหารนักบุญเปโตร" },
+          "what": { "en": "One of the largest markets in Italy and Europe, a stone's throw from St Peter's and the Vatican Museums.", "th": "หนึ่งในตลาดที่ใหญ่ที่สุดของอิตาลีและยุโรป อยู่ห่างจากมหาวิหารนักบุญเปโตรและพิพิธภัณฑ์วาติกันไม่ไกล" },
+          "why": { "en": "A working market with a history that begins in the late 19th century.", "th": "ตลาดที่ยังใช้งานจริง มีประวัติเริ่มตั้งแต่ปลายศตวรรษที่ 19" },
+          "tip": { "en": "Open Monday to Saturday 07:00–14:00, Tuesday and Friday to 19:00; closed Sunday.", "th": "เปิดวันจันทร์–เสาร์ 07:00–14:00 วันอังคารและศุกร์ถึง 19:00 ปิดวันอาทิตย์" },
+          "ages": [1, 2, 2, 2],
+          "hrs": 1.5,
+          "io": "both",
+          "pram": "part",
+          "price": { "en": "Check the price", "th": "เช็กราคาก่อนไป" },
+          "book": "none",
+          "q": "Mercato Trionfale, Rome",
+          "ok": "2026-11",
+          "src": "https://www.turismoroma.it/en/places/mercato-trionfale-local-market"
+        },
+        {
+          "name": { "en": "Puppet Theater on the Janiculum Hill", "th": "โรงละครหุ่นเชิดบนเนินจานิโคโล" },
+          "kind": "show",
+          "area": { "en": "Passeggiata del Gianicolo", "th": "ปัสเซจจาตาเดลจานิโคโล" },
+          "what": { "en": "A traditional outdoor puppet show near the Janiculum's panoramic terrace.", "th": "การแสดงหุ่นเชิดแบบดั้งเดิมกลางแจ้ง ใกล้ระเบียงชมวิวของเนินจานิโคโล" },
+          "why": { "en": "A short show of about half an hour, outdoors.", "th": "การแสดงสั้นๆ ราวครึ่งชั่วโมง กลางแจ้ง" },
+          "tip": { "en": "Weekends only, with variable hours; puppets can also be bought there.", "th": "เฉพาะวันหยุดสุดสัปดาห์ เวลาไม่แน่นอน และซื้อหุ่นได้ที่นั่น" },
+          "ages": [0, 1, 2, 2],
+          "hrs": 0.5,
+          "io": "out",
+          "pram": "part",
+          "price": { "en": "Check the price", "th": "เช็กราคาก่อนไป" },
+          "book": "none",
+          "q": "Passeggiata del Gianicolo, Rome",
+          "ok": "2026-11",
+          "src": "https://turismoroma.it/en/node/36923"
+        },
+      {"name":{"en":"Parco del Colle Oppio","th":"ปาร์โก เดล โคลเล โอปิโอ"},"kind":"park","area":{"en":"Northeast of the Colosseum","th":"ทางตะวันออกเฉียงเหนือของโคลอสเซียม"},"what":{"en":"Hilltop park beside the Colosseum with a playground and views back over the arena.","th":"สวนบนเนินติดโคลอสเซียม มีสนามเด็กเล่นและวิวกลับไปยังลาน"},"why":{"en":"Swings, a jungle gym and a slide, and a stroller-friendly path; a good place to rest after the Colosseum.","th":"มีชิงช้า โครงปีน และสไลด์ และทางเดินเข็นรถได้ เป็นที่พักดีหลังดูโคลอสเซียม"},"ages":[1,2,2,1],"hrs":1,"io":"out","pram":"yes","price":{"en":"Check the price","th":"เช็กราคาก่อนไป"},"book":"none","q":"Parco del Colle Oppio, Rome","ok":"2026-11","src":"https://www.familycantravel.com/rome-playgrounds/"},
+      {"name":{"en":"Aqueduct Park","th":"สวนท่อส่งน้ำ"},"kind":"park","area":{"en":"Near Subaugusta metro station","th":"ใกล้สถานีรถไฟใต้ดินซูเบากุสตา"},"what":{"en":"Park of pathways among well-preserved Roman aqueducts, off the usual tourist path.","th":"สวนทางเดินท่ามกลางท่อส่งน้ำโรมันที่สมบูรณ์ ห่างจากเส้นทางนักท่องเที่ยวปกติ"},"why":{"en":"Pathways to run along, and a small playground on the way back.","th":"มีทางให้วิ่งเล่น และสนามเด็กเล่นเล็กๆ ระหว่างทางกลับ"},"ages":[1,2,2,2],"hrs":2,"io":"out","pram":"part","price":{"en":"Check the price","th":"เช็กราคาก่อนไป"},"book":"none","q":"Aqueduct Park, Rome","ok":"2026-11","src":"https://www.familycantravel.com/rome-playgrounds/"},
+      {"name":{"en":"Tiber River Walkway","th":"ทางเดินริมแม่น้ำไทเบอร์"},"kind":"park","area":{"en":"Shores of the Tiber River","th":"ริมแม่น้ำไทเบอร์"},"what":{"en":"Wide walkways along the river where children can burn off energy.","th":"ทางเดินกว้างริมแม่น้ำ ให้เด็กวิ่งเล่นระบายพลังงาน"},"why":{"en":"Chasing pigeons, looking for ducks and waving at rowers on the river.","th":"หน้าเว็บบอกว่าไล่นก หาเป็ด และโบกมือให้คนพายเรือได้"},"tip":{"en":"The page warns to watch for people on bikes and some broken glass.","th":"หน้าเว็บเตือนให้ระวังคนขี่จักรยานและเศษแก้วแตกบางจุด"},"ages":[1,2,2,1],"hrs":1,"io":"out","pram":"part","price":{"en":"Check the price","th":"เช็กราคาก่อนไป"},"book":"none","q":"Tiber River walkway, Rome","ok":"2026-11","src":"https://www.familycantravel.com/rome-playgrounds/"},
+      {"name":{"en":"Laghetto dell’Eur","th":"ลาเกตโต เดลเลอูร์"},"kind":"park","area":{"en":"EUR","th":"เอยูอาร์"},"what":{"en":"Local pond park with a family atmosphere, a short metro ride out of the centre.","th":"สวนบ่อน้ำในท้องถิ่น บรรยากาศครอบครัว อยู่ห่างจากใจกลางด้วยรถไฟใต้ดินไม่นาน"},"why":{"en":"The page calls it one of the most family-friendly parks in Rome.","th":"หน้าเว็บเรียกว่าเป็นสวนที่เป็นมิตรกับครอบครัวที่สุดแห่งหนึ่งในโรม"},"tip":{"en":"In spring it is one of the best places to see cherry blossoms.","th":"ฤดูใบไม้ผลิเป็นหนึ่งในที่ชมดอกซากุระที่ดีที่สุด"},"ages":[1,2,2,2],"hrs":2,"io":"out","pram":"part","price":{"en":"Check the price","th":"เช็กราคาก่อนไป"},"book":"none","q":"Laghetto dell’Eur, EUR, Rome","ok":"2026-11","src":"https://mamalovesrome.com/things-to-do-in-rome-with-kids-complete-guide/"},
+      {"name":{"en":"Museum of Illusions","th":"พิพิธภัณฑ์ภาพลวงตา"},"kind":"museumkid","area":{"en":"Via Merulana, city centre","th":"เวีย เมรูลานา ใจกลางเมือง"},"what":{"en":"Rooms of optical illusions that play tricks on the eye, about an hour to visit.","th":"ห้องภาพลวงตาที่หลอกสายตา ใช้เวลาราวหนึ่งชั่วโมง"},"why":{"en":"Suited to kids from about six up; the page says all ages can enjoy it.","th":"เหมาะกับเด็กตั้งแต่อายุราวหกขวบ หน้าเว็บบอกว่าทุกวัยสนุกได้"},"ages":[0,1,2,2],"hrs":1,"io":"in","pram":"part","price":{"en":"Check the price","th":"เช็กราคาก่อนไป"},"book":"none","q":"Museum of Illusions, Via Merulana, Rome","ok":"2026-11","src":"https://mamalovesrome.com/things-to-do-in-rome-with-kids-complete-guide/"},
+      {"name":{"en":"Museo Mostra dei Leonardo","th":"พิพิธภัณฑ์เลโอนาร์โด"},"kind":"museumkid","area":{"en":"Palazzo della Cancelleria, city centre","th":"พาลัซโซเดลลาคันเชลเลเรีย ใจกลางเมือง"},"what":{"en":"Permanent exhibition of Leonardo's machines that children can try, with a corner to build his bridge.","th":"นิทรรศการถาวรของเครื่องจักรของเลโอนาร์โดที่เด็กลองได้ มีมุมให้สร้างสะพานของเขา"},"why":{"en":"Hands-on: kids can experiment with several machines and build the self-supporting bridge.","th":"ลงมือทำ: เด็กทดลองเครื่องจักรหลายแบบ และสร้างสะพานที่พยุงตัวเองได้"},"ages":[1,2,2,2],"hrs":1,"io":"in","pram":"part","price":{"en":"Check the price","th":"เช็กราคาก่อนไป"},"book":"none","q":"Palazzo della Cancelleria, Rome","ok":"2026-11","src":"https://mamalovesrome.com/things-to-do-in-rome-with-kids-complete-guide/"},
+      {"name":{"en":"Galleria Borghese","th":"หอศิลป์บอร์เกเซ"},"kind":"museum","area":{"en":"Villa Borghese","th":"วิลลาบอร์เกเซ"},"what":{"en":"Compact museum in Villa Borghese with fun animal sculptures; not interactive, but easy for children to enjoy.","th":"พิพิธภัณฑ์กะทัดรัดในวิลลาบอร์เกเซ มีประติมากรรมสัตว์สนุกๆ ไม่ได้โต้ตอบ แต่เด็กดูได้ง่าย"},"why":{"en":"The page says it is worth a visit at all ages thanks to its compact size.","th":"หน้าเว็บบอกว่าคุ้มค่าทุกวัยเพราะขนาดกะทัดรัด"},"ages":[1,2,2,2],"hrs":1.5,"io":"in","pram":"part","price":{"en":"Check the price","th":"เช็กราคาก่อนไป"},"book":"none","q":"Galleria Borghese, Villa Borghese, Rome","ok":"2026-11","src":"https://mamalovesrome.com/things-to-do-in-rome-with-kids-complete-guide/"},
+      {"name":{"en":"Christmas World","th":"คริสต์มาสเวิลด์"},"kind":"themepark","area":{"en":"Villa Borghese","th":"วิลลาบอร์เกเซ"},"what":{"en":"Christmas theme park with food stalls, shows, ice skating and seasonal entertainment.","th":"สวนสนุกธีมคริสต์มาสมีร้านอาหาร โชว์ สเกตน้ำแข็ง และความบันเทิงตามฤดูกาล"},"why":{"en":"The page calls it a fun seasonal attraction for kids, with rides for all ages.","th":"หน้าเว็บเรียกว่าเป็นกิจกรรมตามฤดูกาลที่สนุกสำหรับเด็ก มีเครื่องเล่นทุกวัย"},"tip":{"en":"Seasonal: it comes to Villa Borghese in December.","th":"ตามฤดูกาล มาถึงวิลลาบอร์เกเซในเดือนธันวาคม"},"ages":[1,2,2,1],"hrs":3,"io":"out","pram":"part","price":{"en":"Check the price","th":"เช็กราคาก่อนไป"},"book":"none","q":"Villa Borghese, Rome","ok":"2026-11","src":"https://mamalovesrome.com/things-to-do-in-rome-with-kids-complete-guide/"},
+      {"name":{"en":"Trastevere","th":"ทราสเตเวเร"},"kind":"oldtown","area":{"en":"Trastevere","th":"ทราสเตเวเร"},"what":{"en":"Lively old quarter of restaurants, cafés and street performers, liveliest at night.","th":"ย่านเก่าที่คึกคักด้วยร้านอาหาร คาเฟ่ และนักแสดงข้างถนน คึกที่สุดตอนกลางคืน"},"why":{"en":"The page says it stays family-friendly until late thanks to its many restaurants.","th":"หน้าเว็บบอกว่าเป็นมิตรกับครอบครัวจนดึกเพราะมีร้านอาหารมาก"},"tip":{"en":"Most fun after dark, per the page.","th":"สนุกที่สุดตอนพลบค่ำ ตามหน้าเว็บ"},"ages":[1,2,2,2],"hrs":2,"io":"out","pram":"part","price":{"en":"Check the price","th":"เช็กราคาก่อนไป"},"book":"none","q":"Trastevere, Rome","ok":"2026-11","src":"https://mamalovesrome.com/things-to-do-in-rome-with-kids-complete-guide/"},
+      {"name":{"en":"Pincio Terrace","th":"เทอร์เรซปินชิโอ"},"kind":"views","area":{"en":"Near Piazza del Popolo","th":"ใกล้ปิอัซซาเดลโปโปโล"},"what":{"en":"Terrace with a panoramic view over the city, entered near Piazza del Popolo.","th":"เทอร์เรซที่มีวิวพาโนรามาเหนือเมือง เข้าใกล้ปิอัซซาเดลโปโปโล"},"why":{"en":"A wide view over the city as you arrive at Villa Borghese.","th":"วิวกว้างเหนือเมืองตอนที่มาถึงวิลลาบอร์เกเซ"},"ages":[1,2,2,2],"hrs":1,"io":"out","pram":"part","price":{"en":"Check the price","th":"เช็กราคาก่อนไป"},"book":"none","q":"Pincio Terrace, Piazza del Popolo, Rome","ok":"2026-11","src":"https://italywander.com/things-to-do-in-rome-with-kids"}
+    ]
     },
     {
       "place": "it-sicily",
@@ -2256,8 +2396,14 @@
           "q": "Museo di Storia Naturale, Fondaco dei Turchi, Santa Croce 1730, Venezia",
           "ok": "2026-11",
           "src": "https://www.veneziaunica.it/en/things-to-do-in-venice/civic-museums-of-venice/museum-of-natural-history"
-        }
-      ]
+        },
+      {"name":{"en":"ABCs course: Venetian Mask Decoration","th":"คอร์สตกแต่งหน้ากากเวเนเชียน"},"kind":"culture","area":{"en":"Dorsoduro","th":"ดอร์โซดูโร"},"what":{"en":"A one-hour hands-on course at the Ca' Macana master workshop, where each child decorates a Venetian carnival mask with an instructor's help","th":"คอร์สลงมือทำหนึ่งชั่วโมงที่เวิร์กช็อปมาสเตอร์ของคา มาคานา ที่เด็กตกแต่งหน้ากากคาร์นิวัลเวเนเชียนพร้อมผู้สอนช่วย"},"why":{"en":"Instructors guide kids and adults as they work independently, and each child can make the mask look however they like","th":"ผู้สอนแนะนำเด็กและผู้ใหญ่ขณะทำงานเอง และแต่ละคนทำให้หน้ากากออกมาเป็นอย่างที่ชอบได้"},"ages":[0,1,2,2],"hrs":1,"io":"in","pram":"part","price":{"en":"from 46 to 57 Euro per person","th":"เริ่มที่ 46 ถึง 57 ยูโรต่อคน"},"book":"rec","q":"Ca' Macana, Dorsoduro 3215, Venice","ok":"2026-11","src":"https://www.camacana.com/en-UK/venice-with-kids-abc-course.php"},
+      {"name":{"en":"Giardini Della Biennale","th":"สวนบีนนาเล่"},"kind":"park","area":{"en":"Grand Canal","th":"แกรนด์คาแนล"},"what":{"en":"A large garden on the Grand Canal with art pavilions dotted across the lawns","th":"สวนใหญ่ริมแกรนด์คาแนลที่มีศาลาศิลปะกระจายอยู่บนสนามหญ้า"},"why":{"en":"Playgrounds and flat lawns to spread out on, with free art workshops now and then","th":"มีสนามเด็กเล่นและสนามหญ้าเรียบให้นั่งเล่น และบางครั้งมีเวิร์กช็อปศิลปะฟรี"},"ages":[1,2,2,1],"hrs":2,"io":"out","pram":"yes","price":{"en":"Check the price","th":"เช็กราคาก่อนไป"},"book":"none","q":"Giardini della Biennale, Venice","ok":"2026-11","src":"https://www.marcieinmommyland.com/things-to-do-in-venice-with-kids/"},
+      {"name":{"en":"Parco Navagero","th":"สวนนาวาเกโร"},"kind":"park","area":{"en":"Murano","th":"มูราโน"},"what":{"en":"A tiny enclosed park on Murano with padded ground, green space and a picnic area with tables","th":"สวนเล็กที่มีรั้วล้อมบนมูราโน มีพื้นนุ่ม พื้นที่สีเขียว และบริเวณปิกนิกพร้อมโต๊ะ"},"why":{"en":"Good for toddlers and small children: enclosed, padded and not right on the water","th":"เหมาะกับเด็กเตาะแตะและเด็กเล็ก ล้อมรั้ว พื้นนุ่ม และไม่อยู่ติดน้ำ"},"ages":[2,2,0,0],"hrs":1,"io":"out","pram":"part","price":{"en":"Check the price","th":"เช็กราคาก่อนไป"},"book":"none","q":"Parco Navagero, Murano, Venice","ok":"2026-11","src":"https://mominitaly.com/venice-italy-playgrounds/"},
+      {"name":{"en":"Giardini Napoleonici Playground","th":"สนามเด็กเล่นสวนนาโปเลโอนิซี"},"kind":"play","area":{"en":"Giardini","th":"สวน"},"what":{"en":"Two playgrounds in the shade, one for older children and one for smaller ones, in a park with paths for bikes and scooters","th":"สนามเด็กเล่นสองแห่งในร่มเงา แห่งหนึ่งสำหรับเด็กโต อีกแห่งสำหรับเด็กเล็ก ในสวนที่มีทางจักรยานและสกู๊ตเตอร์"},"why":{"en":"Swings, climbing structures and a see-saw, with shady benches away from the water","th":"มีชิงช้า โครงปีน และกระดานหก มีม้านั่งร่มเงาห่างจากน้ำ"},"ages":[2,2,2,1],"hrs":1,"io":"out","pram":"part","price":{"en":"Check the price","th":"เช็กราคาก่อนไป"},"book":"none","q":"Giardini Napoleonici playground, Venice","ok":"2026-11","src":"https://mominitaly.com/venice-italy-playgrounds/"},
+      {"name":{"en":"Sacca Fisola playground","th":"สนามเด็กเล่นซักกา ฟิโซลา"},"kind":"play","area":{"en":"Giudecca","th":"จูเดกกา"},"what":{"en":"A shaded playground on Giudecca with benches, set away from the water","th":"สนามเด็กเล่นร่มเงาบนจูเดกกาที่มีม้านั่ง ตั้งห่างจากน้ำ"},"why":{"en":"Swings and a play structure, and it is away from the water","th":"มีชิงช้าและโครงเล่น และอยู่ห่างจากน้ำ"},"ages":[2,2,2,1],"hrs":1,"io":"out","pram":"part","price":{"en":"Check the price","th":"เช็กราคาก่อนไป"},"book":"none","q":"Sacca Fisola playground, Giudecca, Venice","ok":"2026-11","src":"https://mominitaly.com/venice-italy-playgrounds/"},
+      {"name":{"en":"Parco Ca' Bianca playground","th":"สนามเด็กเล่นปาร์โก ca' บีอังกา"},"kind":"play","area":{"en":"Lido","th":"ลิโด"},"what":{"en":"One of the playgrounds on the Lido, where children can play between swims and rides along the beach","th":"สนามเด็กเล่นแห่งหนึ่งบนลิโด ที่เด็กเล่นได้ระหว่างการว่ายน้ำและการขี่จักรยานตามชายหาด"},"why":{"en":"A break from the beach and the bikes for little ones","th":"ช่วงพักจากชายหาดและจักรยานสำหรับเด็กเล็ก"},"ages":[2,2,2,1],"hrs":1,"io":"out","pram":"part","price":{"en":"Check the price","th":"เช็กราคาก่อนไป"},"book":"none","q":"Parco Ca' Bianca, Lido di Venezia","ok":"2026-11","src":"https://mominitaly.com/venice-italy-playgrounds/"}
+    ]
     }
   ]
 }

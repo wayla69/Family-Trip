@@ -237,6 +237,24 @@
           "q": "Jile Temple, Nangang District, Harbin",
           "ok": "2026-11",
           "src": "https://www.travelchinaguide.com/attraction/heilongjiang/harbin/bliss-temple.htm"
+        },
+        {
+          "name": { "en": "Songhua River Ice and Snow Carnival", "th": "งานคาร์นิวัลน้ำแข็งและหิมะแม่น้ำซงหัว" },
+          "local": "松花江冰雪嘉年华",
+          "kind": "park",
+          "area": { "en": "Songhua River, beside the Flood Control Memorial Tower", "th": "แม่น้ำซงหัว ข้างอนุสาวรีย์ป้องกันน้ำท่วม" },
+          "what": { "en": "A winter ice and snow carnival on the frozen Songhua River, from the rail bridge to Tongjiang Square", "th": "คาร์นิวัลน้ำแข็งและหิมะฤดูหนาวบนแม่น้ำซงหัวที่เป็นน้ำแข็ง ตั้งแต่สะพานรถไฟถึงจัตุรัสถงเจียง" },
+          "why": { "en": "Entry is free, so families can walk in and pay only for the rides they want", "th": "เข้าฟรี ครอบครัวเดินเข้าไปแล้วจ่ายเฉพาะเครื่องเล่นที่อยากเล่น" },
+          "tip": { "en": "Winter only, from about late December to February, so check the dates; most rides are paid, so decide inside which to try", "th": "เปิดเฉพาะหน้าหนาว ราวปลายธันวาคมถึงกุมภาพันธ์ เช็กวันก่อนไป เครื่องเล่นส่วนใหญ่เสียเงิน เลือกเล่นข้างใน" },
+          "ages": [1, 2, 2, 2],
+          "hrs": 2,
+          "io": "out",
+          "pram": "part",
+          "price": { "en": "Free", "th": "ฟรี" },
+          "book": "none",
+          "q": "松花江冰雪嘉年华, Songhua River, Harbin",
+          "ok": "2026-11",
+          "src": "https://m.heb.bendibao.com/xiuxian/80720.shtm"
         }
       ]
     }
