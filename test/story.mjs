@@ -743,6 +743,9 @@ try {
   ok(rr.status === 200 && rt.days && rt.days.length === 3 && rt.days.map((d) => d.date).join() === '2027-04-01,2027-04-02,2027-04-03' && rt.countries.join() === 'jp' && rt.title.en === 'Sakura test hop',
     `planner: the route comes back cleaned — the family's dates laid out again, a bad country code dropped (${rr.status} ${JSON.stringify(rj).slice(0, 300)})`);
   const routeCall = calls[c0], rsent = JSON.stringify(routeCall && routeCall.body);
+  { const P = createRequire(import.meta.url)('../server/planner.js');
+    ok(routeCall && routeCall.body.max_tokens === P.routeTokens(answers) && P.routeTokens({ from: '2027-04-01', to: '2027-04-10' }, null, true) >= 2 * 10 * 1000 && P.routeTokens({ len: 31 }, null, true) <= 48000,
+      `planner: the route ask has room for its days (two routes twice) — a flat 8,000 cut a 10-day pair off on the live site (${routeCall && routeCall.body.max_tokens})`); }
   { // B2: a book that is over, with yen spent on food and on shopping → the next Tokyo route's food line comes from what we really spent
     const pt = await (await pl('/api/b/trips', { slug: 'tokyo-past-test', title: { th: 'โตเกียวครั้งก่อน', en: 'Tokyo last time' }, date_from: '2025-03-01', date_to: '2025-03-03', timezone: 'Asia/Tokyo' })).json();
     const tid = pt.id || (pt.trip && pt.trip.id);

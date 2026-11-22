@@ -47,7 +47,8 @@ const fpOf = (s) => (/^[0-9a-f]{16,64}$/.test(String(s || '')) ? String(s) : nul
 const tagList = (v) => (Array.isArray(v) && v.length <= 10 && v.every((x) => typeof x === 'string') ? [...new Set(v.map((x) => x.trim().toLowerCase().slice(0, 24)).filter(Boolean))] : null);
 const i18n = (o, n = 200) => (o && typeof o === 'object' ? { th: clip(o.th, n), en: clip(o.en, n), ...(o.zh ? { zh: clip(o.zh, n) } : {}) } : { th: clip(o, n), en: clip(o, n) });
 const at = (v) => new Date(Math.min(Number.isFinite(+v) && +v > 0 ? +v : Date.now(), Date.now() + 86400e3));
-const bad = (res, error, code = 400) => res.status(code).json({ error });
+// a 5xx answer names its reason on the room page's server problems (watch.js reads res.locals.errMsg) — the planner's 502s said nothing
+const bad = (res, error, code = 400, why) => { if (code >= 500) res.locals.errMsg = String(why || error).slice(0, 200); return res.status(code).json({ error }); };
 // the state carries every book's plan (~1 MB of text for a 16-day road trip): gzip it, a phone on hotel wifi feels the difference
 const sha = (s) => crypto.createHash('sha1').update(s).digest('base64url').slice(0, 20);
 // etag: answer 304 (no body) when the phone already holds exactly this — the app asks every 30 s and on every return
@@ -1303,7 +1304,7 @@ function router({ pool, media, A, ai, hooks = {} }) {   // hooks.heart(h): set b
       res.json({ ideas: list });
     } catch (e) {
       if (e.code === 'limit') return res.status(429).json({ error: 'limit' });
-      if (['route', 'json', 'refusal'].includes(e.code)) return bad(res, e.code, 502);
+      if (['route', 'json', 'refusal'].includes(e.code)) return bad(res, e.code, 502, e.message);
       next(e);
     }
   });
@@ -1365,7 +1366,7 @@ function router({ pool, media, A, ai, hooks = {} }) {   // hooks.heart(h): set b
       res.json({ ok: true, added: rows.length, tkey: EATLIB.norm(t.en) });
     } catch (e) {
       if (e.code === 'limit') return res.status(429).json({ error: 'limit' });
-      if (['json', 'refusal'].includes(e.code)) return bad(res, e.code, 502);
+      if (['json', 'refusal'].includes(e.code)) return bad(res, e.code, 502, e.message);
       next(e);
     } finally { eatBusy = false; }
   });
@@ -1459,7 +1460,7 @@ function router({ pool, media, A, ai, hooks = {} }) {   // hooks.heart(h): set b
       res.json(two ? { routes: await Promise.all(route.map((x) => withBudget(x, answers))) } : { route: await withBudget(route, answers) });
     } catch (e) {
       if (e.code === 'limit') return res.status(429).json({ error: 'limit' });
-      if (['route', 'json', 'refusal'].includes(e.code)) return bad(res, e.code, 502);
+      if (['route', 'json', 'refusal'].includes(e.code)) return bad(res, e.code, 502, e.message);
       next(e);
     }
   });
@@ -1543,7 +1544,7 @@ function router({ pool, media, A, ai, hooks = {} }) {   // hooks.heart(h): set b
       res.json({ day, forecast: forecast || null });
     } catch (e) {
       if (e.code === 'limit') return res.status(429).json({ error: 'limit' });
-      if (['day', 'json', 'refusal'].includes(e.code)) return bad(res, e.code, 502);
+      if (['day', 'json', 'refusal'].includes(e.code)) return bad(res, e.code, 502, e.message);
       next(e);
     }
   });
