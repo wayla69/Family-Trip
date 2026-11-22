@@ -1,0 +1,41 @@
+{
+  "town": "th-chanthaburi",
+  "kind": "eats",
+  "checked": "2026-11",
+  "rule": "A row gets ok only from a current listing, its own site or recent reviews with nothing saying closed (docs/EATS.md). A row is taken out when a search could not find the place at all or the sources disagree; a place found but not freshly confirmed stays without ok.",
+  "confirmed": [],
+  "kept_without_ok": [
+    {
+      "name": "The Tamajun Restaurant",
+      "src": "https://www.wongnai.com/restaurants/25892Xo-ท่ามาจัน",
+      "evidence": "Wongnai listing 'ท่ามาจัน (Tamajun Seaside Cuisine & Cafe)', closed:false; newest review 2025-06-11, menu updated 2025-03-20 — too old to confirm it is open now"
+    },
+    {
+      "name": "Jae Eid Tom Yam Seafood Noodles",
+      "evidence": "described in travel articles (Posttoday, LINE Today) as a long-running mantis-shrimp noodle shop; no current listing with a date found"
+    },
+    {
+      "name": "Nam Phu Market",
+      "evidence": "a TrueID guide describes the municipal market behind the fountain roundabout with morning and evening hours; undated"
+    },
+    {
+      "name": "Robinson Chanthaburi food court",
+      "evidence": "the mall exists (a Robinson Chanthaburi promotion ran Mar–Apr 2025); the food court itself is not confirmed"
+    },
+    {
+      "name": "Central Chanthaburi food court",
+      "evidence": "the mall opened 26 May 2022 with restaurants; the food court itself is not confirmed"
+    },
+    {
+      "name": "Baan Luang Rajamaitri cafe",
+      "src": "https://www.wongnai.com/restaurants/289036AH-บ้านหลวงราชไมตรี",
+      "evidence": "Wongnai listing not marked closed, but its newest data is from 2019; a Bangkok Biznews article mentions coffee and fried bread at the house, but its date could not be told apart from the site's header date"
+    }
+  ],
+  "removed": [
+    {
+      "name": "Suthee Khao Khluk Phrik Kluea",
+      "reason": "one web search (snippets only, pages not opened) found no place of this name at Kung Wiman beach; khao khluk phrik kluea is sold at Nam Phu Market, not confirmed here"
+    }
+  ]
+}
