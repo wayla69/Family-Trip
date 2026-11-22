@@ -3063,6 +3063,57 @@ function plText(rt) {
 // numbered dots on top (each a link), "back" and a big "next"; the last page holds the buttons that ask for the route. A jump to the
 // route is offered from the second page on, once the family has said where.
 const PL_Q = [['where', '📍', 'ไปไหน', 'Where'], ['when', '📅', 'เมื่อไร', 'When'], ['who', '👨‍👩‍👧', 'ใครไป', 'Who'], ['style', '🎒', 'แบบไหน', 'How'], ['more', '📝', 'เพิ่มเติม', 'Extras']];
+/* the extras page (owner, Nov 2026: "คนไปเที่ยวอาจจะไม่รู้ … ต้องให้ AI แนะนำหรือขึ้นให้เลือก"): every box may stay empty — the helper
+   then picks (the server already asks it to suggest where to sleep) — and each box offers taps: the library's things to do of the
+   places picked (must do), the kind of stay, when we land and leave, what to avoid. A tap puts its words in the box or takes them
+   out (`plantx`); a chip of the same group (data-g: land in the morning / in the evening) gives way. Typing still works. */
+const PL_TX = {
+  stays: [['', '🏠', 'ที่พักเดียวทั้งทริป', 'one place for the whole trip'], ['', '🚆', 'ใกล้สถานีรถไฟ', 'near a train station'], ['', '🍳', 'มีครัว', 'with a kitchen'], ['', '👨‍👩‍👧', 'ห้องครอบครัว', 'a family room'], ['', '🛁', 'มีอ่างอาบน้ำ', 'with a bathtub']],
+  flights: [['arr', '🌅', 'ถึงตอนเช้า', 'land in the morning'], ['arr', '☀️', 'ถึงตอนบ่าย', 'land in the afternoon'], ['arr', '🌙', 'ถึงตอนค่ำ', 'land in the evening'],
+    ['dep', '🌅', 'บินกลับตอนเช้า', 'fly home in the morning'], ['dep', '☀️', 'บินกลับตอนบ่าย', 'fly home in the afternoon'], ['dep', '🌙', 'บินกลับตอนค่ำ', 'fly home in the evening']],
+  avoid: [['', '🦐', 'แพ้อาหารทะเล', 'a seafood allergy'], ['', '🥜', 'แพ้ถั่ว', 'a nut allergy'], ['', '🌶️', 'ไม่กินเผ็ด', 'nothing spicy'], ['', '🥦', 'มังสวิรัติ', 'vegetarian'], ['', '🐷', 'ไม่กินหมู', 'no pork'],
+    ['', '🤢', 'เมารถ', 'car sick'], ['', '⛴️', 'ไม่ขึ้นเรือ', 'no boats'], ['', '⛰️', 'ไม่เดินขึ้นเขาชัน', 'no steep hikes'], ['', '👥', 'ไม่เอาที่คนแน่นมาก', 'no big crowds'], ['', '🚗', 'ไม่ขับรถเอง', 'no driving ourselves']],
+};
+const plHasTx = (text, ps) => { const parts = String(text || '').split(/\s*,\s*/).map((x) => x.trim().toLowerCase()); return ps.some((p) => p && parts.includes(p.toLowerCase())); };
+function plTxChip(a, k, g, e, th, en, sub) {
+  const p = L(th, en), p2 = lang === 'en' ? th : en;
+  return `<button type="button" class="plchip" data-a="plantx" data-k="${k}" data-p="${esc(p)}" data-p2="${esc(p2)}"${g ? ` data-g="${g}"` : ''} aria-pressed="${plHasTx(a[k], [p, p2])}">${e ? `<span aria-hidden="true">${emo(e)}</span>` : ''}${esc(p)}${sub ? ` <small>${esc(sub)}</small>` : ''}</button>`;
+}
+const plTxChips = (a, k, list) => `<div class="plchips pltx" role="group">${list.map(([g, e, th, en]) => plTxChip(a, k, g, e, th, en)).join('')}</div>`;
+// the library towns "where to" names: a town by any of its names, a country = its first three towns
+function plDestIds(dest) {
+  const g = plGeo(); if (!g) return [];
+  const parts = plParts(dest), ids = [];
+  const hit = (x) => [snapShort(x.name).en, snapShort(x.name).th, ...(x.al || [])].some((n) => n && parts.includes(plNorm(n)));
+  for (const c of g.countries || []) if (hit(c)) ids.push(...g.places.filter((p) => p.cc === c.cc && p.id !== c.cc).slice(0, 3).map((p) => p.id));
+  for (const p of g.places) if (p.id !== p.cc && hit(p)) ids.unshift(p.id);
+  return [...new Set(ids)].slice(0, 6);
+}
+// must do: the library's things to do of those towns that fit this family (wished first, then the server's fit), a tap adds one;
+// the list arrives after the page is drawn, so it fills its own slot in place (a redraw would take the focus from a box)
+function plWantSug(a) {
+  const ids = plDestIds(a.dest), key = JSON.stringify(ids.map((id) => [id, '']));
+  if (!ids.length) return '';
+  if (!pln.wantSug || pln.wantSug.key !== key) {
+    pln.wantSug = { key, list: null };
+    api('GET', `/api/b/sights?for=${encodeURIComponent(key)}`).then((r) => {
+      if (!pln.wantSug || pln.wantSug.key !== key) return;
+      const seen = new Set();
+      pln.wantSug.list = (r.for || []).flatMap((t) => (t.sights || []).map((x) => ({ ...x, tn: { en: t.en, th: t.th } })))
+        .filter((x) => (x.fit == null || x.fit > -9) && x.name && !seen.has(x.name.en) && seen.add(x.name.en))
+        .sort((x, y) => (y.wish ? 1 : 0) - (x.wish ? 1 : 0) || (y.fit || 0) - (x.fit || 0)).slice(0, 12);
+      const el = document.getElementById('plwantsug'); if (el && pln.a) el.innerHTML = plWantSugIn(pln.a);
+    }, () => { if (pln.wantSug && pln.wantSug.key === key) { pln.wantSug.list = []; const el = document.getElementById('plwantsug'); if (el) el.innerHTML = ''; } });
+  }
+  return `<div id="plwantsug">${plWantSugIn(a)}</div>`;
+}
+function plWantSugIn(a) {
+  const s = pln.wantSug; if (!s || !s.list) return s ? `<p class="label plhint">${L('กำลังหาที่เที่ยวในคลังให้…', 'Finding places in the library…')}</p>` : '';
+  if (!s.list.length) return '';
+  const many = new Set(s.list.map((x) => x.place)).size > 1;
+  return `<p class="label plhint">💡 ${L('ที่เที่ยวที่เหมาะกับเด็กๆ จากคลังของแอป แตะเพื่อเพิ่ม', 'Places that suit the children, from the app’s library — tap to add')}</p>
+<div class="plchips pltx" role="group">${s.list.map((x) => plTxChip(a, 'want', '', x.wish ? '♥' : '', x.name.th || x.name.en, x.name.en || x.name.th, many ? T(x.town ? { th: x.town_th || x.town, en: x.town } : '') : '')).join('')}</div>`;
+}
 function plWizard(qs, pages, go, hasDest) {
   const k = Math.max(0, PL_Q.findIndex((q) => q[0] === qs)), q = PL_Q[k], last = k === PL_Q.length - 1;
   const dots = `<nav class="plqs" aria-label="${L('คำถาม', 'Questions')}">${PL_Q.map((x, j) => `<a class="plqd${j === k ? ' now' : j < k ? ' done' : ''}" href="#/planner/${x[0]}"${j === k ? ' aria-current="step"' : ''}><i>${j < k ? '✓' : j + 1}</i><span>${L(x[2], x[3])}</span></a>`).join('')}</nav>`;
@@ -3184,10 +3235,15 @@ ${kids.length ? `<div class="plkids">${kids.map((k) => { const src = kidArt(k.sl
 <p class="label">${kids.length ? `🔒 ${L('ผู้ช่วยรู้แค่อายุของเด็กๆ ไม่รู้ชื่อ', 'The helper is told the children’s ages, never their names')}` : L('ใส่ลูกๆ ในหน้าครอบครัวก่อน ผู้ช่วยจะวางแผนตามอายุ', 'Add the children on the family page first — the plan follows their ages')}</p></div>`);
   const q2 = pcard('plan', PG.teal, L('เที่ยวแบบไหน', 'How we travel'), `<div class="part pickh">${L('จังหวะ', 'Pace')}</div>${opts('pace')}<div class="part pickh">${L('การเดินทาง', 'Getting around')}</div>${opts('move')}<div class="part pickh">${L('งบ', 'Budget')}</div>${opts('budget')}
 <div class="part pickh">${L('เด็กๆ ชอบอะไร (แตะได้หลายอย่าง)', 'What the children like (tap any)')}</div>${chips('likes', PL_LIKES)}${famTaste().out.like.length || famTaste().needs.length ? `<p class="label plhint">💛 ${L('เลือกไว้ให้จาก', 'Filled in from')} <a href="#/taste">${L('สิ่งที่ครอบครัวเราชอบ', 'what our family likes')}</a></p>` : ''}<div class="part pickh">${L('สิ่งที่ต้องคิดถึง', 'Things to allow for')}</div>${chips('needs', PL_NEEDS)}`);
-  const q3 = pcard('notebook', PG.gold, L('ที่จองแล้วและที่อยากทำ', 'Booked already, and wishes'), `<div class="pform">${tx('want', 'ต้องไปให้ได้', 'Must do', L('เช่น สวนสัตว์อุเอโนะ ดูหิมะ', 'e.g. Ueno Zoo, seeing snow'), 500)}
-${tx('stays', 'ที่พักที่จองแล้ว (ถ้ามี)', 'Stays already booked (if any)', L('เช่น 3 คืนแรกแถวอุเอโนะ', 'e.g. the first 3 nights near Ueno'), 400)}
+  const q3 = pcard('notebook', PG.gold, L('ที่จองแล้วและที่อยากทำ', 'Booked already, and wishes'), `<div class="pform"><p class="plskipok">✨ ${L('หน้านี้ไม่ต้องตอบก็ได้ ยังไม่รู้ก็ว่างไว้ ผู้ช่วยจะเลือกให้เองตามอายุเด็กและสิ่งที่ชอบ หรือแตะตัวเลือกด้านล่าง', 'Nothing here is needed — leave a box empty and the helper chooses for you, from the children’s ages and what you like. Or tap a choice below.')}</p>
+${tx('want', 'ต้องไปให้ได้ (ถ้ามี)', 'Must do (if any)', L('เช่น สวนสัตว์อุเอโนะ ดูหิมะ', 'e.g. Ueno Zoo, seeing snow'), 500)}
+${plWantSug(a)}
+${tx('stays', 'ที่พัก (ถ้าจองแล้ว หรืออยากได้แบบไหน)', 'Where we sleep (booked, or what we would like)', L('เช่น 3 คืนแรกแถวอุเอโนะ', 'e.g. the first 3 nights near Ueno'), 400)}
+<p class="label plhint">${L('ยังไม่ได้จอง? ว่างไว้ ผู้ช่วยจะแนะนำย่านที่พักให้ หรือแตะแบบที่อยากได้', 'Not booked yet? Leave it empty and the helper suggests areas — or tap what you would like')}</p>${plTxChips(a, 'stays', PL_TX.stays)}
 ${tx('flights', 'เที่ยวบิน (ถ้ามี)', 'Flights (if any)', L('เช่น ถึง 08:00 วันแรก กลับ 18:00 วันสุดท้าย', 'e.g. land 08:00 on day 1, leave 18:00 on the last day'), 200)}
-${tx('avoid', 'ไม่เอา / ข้อจำกัดอื่น', 'Avoid / other needs', L('เช่น ไม่ขึ้นเรือ แพ้อาหารทะเล', 'e.g. no boats, a seafood allergy'), 300)}
+<p class="label plhint">${L('ยังไม่ได้จอง? ว่างไว้ ผู้ช่วยจะเผื่อวันแรกและวันสุดท้ายให้เบาๆ หรือแตะช่วงเวลาคร่าวๆ', 'Not booked yet? Leave it empty and the helper keeps the first and last days light — or tap roughly when')}</p>${plTxChips(a, 'flights', PL_TX.flights)}
+${tx('avoid', 'ไม่เอา / ข้อจำกัดอื่น (ถ้ามี)', 'Avoid / other needs (if any)', L('เช่น ไม่ขึ้นเรือ แพ้อาหารทะเล', 'e.g. no boats, a seafood allergy'), 300)}
+${plTxChips(a, 'avoid', PL_TX.avoid)}
 <p class="label">🔒 ${L('ไม่ต้องใส่เลขจอง — ถ้าพิมพ์มา จะถูกตัดออกก่อนถึงผู้ช่วย', 'No booking numbers needed — any typed in are removed before the helper sees them')}</p></div>`);
   // with a route on the page the answers fold to one card; "change the answers" opens them again
   const optName = (k) => { const o = PL_OPTS[k].find((x) => x[0] === a[k]); return o ? `${emo(o[1])} ${L(o[2], o[3])}` : ''; };

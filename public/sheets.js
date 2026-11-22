@@ -241,7 +241,7 @@ function planEdit(fn) {
 // the route call (a draft, two to compare, or a change asked in words); a change keeps the old route for one undo
 async function planCall(body) {
   if (pln.busy) return;
-  if (!String(pln.a.dest || '').trim()) { pln.err = L('บอกก่อนว่าอยากไปที่ไหน', 'Say where to first'); render(); const d = $('#pldest'); if (d) d.focus(); return; }
+  if (!String(pln.a.dest || '').trim()) { pln.err = L('บอกก่อนว่าอยากไปที่ไหน', 'Say where to first'); if (!$('#pldest')) { location.hash = '#/planner/where'; return; } render(); const d = $('#pldest'); if (d) d.focus(); return; }   // asked from a later page: back to "where"
   const old = pln.route;
   pln.busy = 'route'; pln.err = ''; render();
   try {
@@ -1006,6 +1006,16 @@ const A = {
   planopt(b) { pln.a[b.dataset.k] = b.dataset.v; planKeepA(); b.closest('.plopts').querySelectorAll('.tpo').forEach((x) => x.setAttribute('aria-pressed', x === b ? 'true' : 'false')); },
   planseniors(b) { pln.a.seniors = !!b.checked; planKeepA(); },
   planchip(b) { const k = b.dataset.k, v = b.dataset.v, l = pln.a[k] = Array.isArray(pln.a[k]) ? pln.a[k] : []; const i = l.indexOf(v); if (i >= 0) l.splice(i, 1); else l.push(v); planKeepA(); b.setAttribute('aria-pressed', i < 0 ? 'true' : 'false'); },
+  plantx(b) {   // a choice on the planner's extras page: its words in the box or out of it; a choice of the same group (land in the morning / evening) gives way
+    const k = b.dataset.k, on = b.getAttribute('aria-pressed') === 'true', box = $(`#pl${k}`);
+    const sib = b.dataset.g ? [...b.parentNode.querySelectorAll(`[data-g="${b.dataset.g}"]`)].filter((x) => x !== b) : [];
+    const drop = new Set([b, ...sib].flatMap((x) => [x.dataset.p, x.dataset.p2]).filter(Boolean).map((x) => x.toLowerCase()));
+    const parts = String(pln.a[k] || '').split(/\s*,\s*/).map((x) => x.trim()).filter((x) => x && !drop.has(x.toLowerCase()));
+    if (!on) parts.push(b.dataset.p);
+    pln.a[k] = parts.join(', ').slice(0, box && box.maxLength > 0 ? box.maxLength : 500); planKeepA();
+    if (box) box.value = pln.a[k];
+    b.setAttribute('aria-pressed', on ? 'false' : 'true'); sib.forEach((x) => x.setAttribute('aria-pressed', 'false'));
+  },
   planlen(b) {   // how long: with a first day it sets the last day, without one it is kept as a number of days
     const n = +b.dataset.v, a = pln.a;
     if (a.from) { a.to = plAdd(a.from, n - 1); const el = $('#plto'); if (el) el.value = a.to; } else a.len = a.len === n ? 0 : n;
@@ -1908,5 +1918,5 @@ document.addEventListener('input', (e) => {
   }
   if (!pln.a) return;
   if (el.id === 'plask') { pln.ask = el.value; return; }
-  if (el.dataset && el.dataset.pl && el.type !== 'date') { pln.a[el.dataset.pl] = el.value; ls('plan', pln.a); if (el.id === 'pldest') { const sg = $('#plsug'); if (sg) sg.innerHTML = plSugHtml(el.value); } }
+  if (el.dataset && el.dataset.pl && el.type !== 'date') { pln.a[el.dataset.pl] = el.value; ls('plan', pln.a); document.querySelectorAll(`[data-a="plantx"][data-k="${el.dataset.pl}"]`).forEach((c) => c.setAttribute('aria-pressed', plHasTx(el.value, [c.dataset.p, c.dataset.p2]) ? 'true' : 'false')); if (el.id === 'pldest') { const sg = $('#plsug'); if (sg) sg.innerHTML = plSugHtml(el.value); } }
 });
