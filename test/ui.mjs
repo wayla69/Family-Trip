@@ -1057,6 +1057,20 @@ const T = 'hk-macau-2026';
     await page.goto(`${BASE}/#/explore/tokyo/eat`); await page.waitForSelector('.eatc:not([hidden])'); const eats = await page.$$eval('.eatc', (l) => l.length);
     ok(x0.n >= 15 && x0.ages === x0.n * 4 && x1 >= 3 && x1 < x0.n && x2 <= x0.n && none && kept === true && eats >= 5 && x0.back === '#/explore' && x0.sx <= 0, `explore Tokyo: ${x0.n} things to do with their ages, ${x1} indoors for a rainy day, ${x2} for one child, the search empties in place, ♥ kept on the server, ${eats} places to eat in the tab, back goes to every town (${JSON.stringify({ x0, none, kept })})`);
     await page.screenshot({ path: `${OUT}/explore-tokyo.png` }).catch(() => {});
+    // the stops our own books visit join the library (owner, Nov 2026): Macau's from the Hong Kong book, with the book and day they are from,
+    // no age bands (a book gives none — never guessed), never a ferry terminal or a hotel, and Paddington in Sydney never filed under London
+    { const mo = await page.evaluate(async () => (await fetch('/api/b/sights?town=macau').then((x) => x.json())).sights.filter((x) => x.src === 'book'));
+      const ld = await page.evaluate(async () => (await fetch('/api/b/sights?town=london').then((x) => x.json())).sights.filter((x) => x.src === 'book').map((x) => x.name.en));
+      // one town, one name in both libraries (owner, Nov 2026: Jervis Bay's stops were "Sanctuary Point" while its places to eat were "Jervis Bay")
+      const lib2 = await page.evaluate(async () => { const st = (await fetch('/api/b/sights').then((x) => x.json())).towns, et = (await fetch('/api/b/eatlib').then((x) => x.json())).towns;
+        const ek = new Set(et.map((t) => t.tkey)); const all = await Promise.all(st.map(async (t) => [t.tkey, (await fetch('/api/b/sights?town=' + t.tkey).then((x) => x.json())).sights.some((x) => x.src === 'book')]));
+        return all.filter(([, b]) => b).map(([k]) => k).filter((k) => !ek.has(k)); });
+      ok(lib2.length === 0, `the library: every town our books' stops sit in has its places to eat under the same name (${JSON.stringify(lib2)})`);
+      const tl = mo[0];   // (a stop the built-in list already holds — teamLab, the Venetian — stays the built-in row, which carries the facts)
+      await page.goto(`${BASE}/#/explore/macau`); await page.waitForSelector('.sightc');
+      const card = await page.evaluate((id) => { const li = [...document.querySelectorAll('.sightc')].find((l) => l.querySelector(`[data-v="${id}"]`)); return li ? { ages: li.querySelectorAll('.sa').length, src: li.querySelector('.elsrc').textContent, grp: li.closest('.sagegrp').querySelector('h3').textContent } : null; }, tl && tl.id);
+      ok(mo.length >= 4 && tl && tl.trip === 'hk-macau-2026' && !mo.some((x) => /teamLab/.test(x.name.en)) && tl.day >= 0 && !tl.ages && !mo.some((x) => /Shun Tak|HZMB|terminus|Hotel/i.test(x.name.en)) && !ld.includes('Paddington') && card && card.ages === 0 && /Harbour Hop|ฮ่องกง/.test(card.src) && /own books|เล่มของเรา/.test(card.grp),
+        `the library: our books' stops join it under their towns, from which book and day, no guessed ages (${mo.length} in Macau · ${JSON.stringify(card)} · London ${JSON.stringify(ld)})`); }
     // plan a day: built on the phone from the library (a long sight, lunch, a shorter sight, dinner), then carried into the planner
     await page.goto(`${BASE}/#/explore/tokyo/day`); await page.waitForSelector('.bday li');
     const dr = await page.evaluate(() => ({ rows: document.querySelectorAll('.bday li').length, small: [...document.querySelectorAll('.bdayb .btn, .xptabs a')].filter((b) => b.getBoundingClientRect().height < 43.5).length, sx: document.documentElement.scrollWidth - innerWidth }));

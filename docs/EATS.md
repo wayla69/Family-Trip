@@ -229,3 +229,11 @@ now hold up to 80 places (the growth plan).
 - The server reads the files into the family's library once per version of the files (settings `eat_starter`); `EATS_STARTER=0` leaves
   them out (the tests of the library itself run that way).
 - A new city in the picture library needs its list here, or `eats:lint` names it.
+
+### Our own agents, 22 Nov 2026 (Hong Kong)
+Two small agents (docs/LIBRARY-AGENTS.md), every page opened by `scripts/library-check.cjs`, each name status-searched here: +13
+Hong Kong — nine cha chaan teng from a January 2026 guide (Mido Cafe, Luen Wah, Kwong Ming, Tak Yu, My Cup of Tea, Luen Fat, Shui
+Kee, Sun Hang Yuen, MD Cafe) and four family places from Cathay Pacific's 2026 children's guide and a 2025 expat guide (Limewood,
+MeokBang BBQ Kidzone, Tree Café, Yakiniku Tabeyo). Left out: Transformers: The Ark (closed in Hong Kong, Feb 2025), Smoke and Barrel
+(moved, the new address not confirmed), Baumhaus (nothing current), Pizza Express (no one branch). In the app the Hong Kong book's own
+28 places and the Macau book part's 188 sit beside this list (`syncBooks`, src `book`).
