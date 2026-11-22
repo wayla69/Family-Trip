@@ -294,6 +294,24 @@
           "q": "Tropical Spice Garden, Teluk Bahang, Penang",
           "ok": "2026-11",
           "src": "https://tropicalspicegarden.com/visitor-info"
+        },
+        {
+          "name": { "en": "Kidster Gurney Plaza", "th": "คิดสเตอร์ กูร์นีย์ พลาซ่า" },
+          "local": "",
+          "kind": "play",
+          "area": { "en": "Gurney Plaza, George Town", "th": "กูร์นีย์ พลาซ่า จอร์จทาวน์" },
+          "what": { "en": "An indoor playground in Gurney Plaza, one of the most convenient indoor playgrounds on Penang island.", "th": "สนามเด็กเล่นในร่มในกูร์นีย์ พลาซ่า เป็นสนามเด็กเล่นในร่มที่สะดวกที่สุดแห่งหนึ่งบนเกาะปีนัง" },
+          "why": { "en": "An indoor place to play when the weather is hot or wet.", "th": "ที่เล่นในร่มเมื่ออากาศร้อนหรือฝนตก" },
+          "tip": { "en": "Allow about two hours", "th": "เผื่อเวลาราว 2 ชั่วโมง" },
+          "ages": [0, 1, 2, 2],
+          "hrs": 2,
+          "io": "in",
+          "pram": "part",
+          "price": { "en": "Check the price", "th": "เช็กราคาก่อนไป" },
+          "book": "none",
+          "q": "Kidster Gurney Plaza, George Town, Penang",
+          "ok": "2026-11",
+          "src": "https://newswav.com/article/top-10-indoor-playgrounds-in-penang-2026-A2607_gXLkaf"
         }
       ]
     }
