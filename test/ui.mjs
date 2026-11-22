@@ -1061,6 +1061,11 @@ const T = 'hk-macau-2026';
     // no age bands (a book gives none — never guessed), never a ferry terminal or a hotel, and Paddington in Sydney never filed under London
     { const mo = await page.evaluate(async () => (await fetch('/api/b/sights?town=macau').then((x) => x.json())).sights.filter((x) => x.src === 'book'));
       const ld = await page.evaluate(async () => (await fetch('/api/b/sights?town=london').then((x) => x.json())).sights.filter((x) => x.src === 'book').map((x) => x.name.en));
+      // one town, one name in both libraries (owner, Nov 2026: Jervis Bay's stops were "Sanctuary Point" while its places to eat were "Jervis Bay")
+      const lib2 = await page.evaluate(async () => { const st = (await fetch('/api/b/sights').then((x) => x.json())).towns, et = (await fetch('/api/b/eatlib').then((x) => x.json())).towns;
+        const ek = new Set(et.map((t) => t.tkey)); const all = await Promise.all(st.map(async (t) => [t.tkey, (await fetch('/api/b/sights?town=' + t.tkey).then((x) => x.json())).sights.some((x) => x.src === 'book')]));
+        return all.filter(([, b]) => b).map(([k]) => k).filter((k) => !ek.has(k)); });
+      ok(lib2.length === 0, `the library: every town our books' stops sit in has its places to eat under the same name (${JSON.stringify(lib2)})`);
       const tl = mo[0];   // (a stop the built-in list already holds — teamLab, the Venetian — stays the built-in row, which carries the facts)
       await page.goto(`${BASE}/#/explore/macau`); await page.waitForSelector('.sightc');
       const card = await page.evaluate((id) => { const li = [...document.querySelectorAll('.sightc')].find((l) => l.querySelector(`[data-v="${id}"]`)); return li ? { ages: li.querySelectorAll('.sa').length, src: li.querySelector('.elsrc').textContent, grp: li.closest('.sagegrp').querySelector('h3').textContent } : null; }, tl && tl.id);

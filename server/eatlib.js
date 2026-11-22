@@ -48,10 +48,22 @@ function townOf(g, cities) {
 const citiesOf = (index) => Object.entries((index && index.places) || {}).filter(([id, p]) => id !== p.country && p.name).map(([, p]) => short(p.name)).filter((c) => c.en);
 
 // a book's "where to eat" → library rows (a place named twice in one town is one row: the first)
-function rowsOfBook(rest, index) {
-  const cities = citiesOf(index), out = [], seen = new Set();
+// a group's town (townOf above: the library city its area or addresses name most, else the head of its area's name) — the region the
+// book itself uses ("Jervis Bay · Days 2–4" → Jervis Bay); the things-to-do library files the book's stops under the same names
+const groupTownOf = (index) => { const cities = citiesOf(index); return (g) => townOf(g, cities); };
+// a book's groups as the things-to-do library reads them: town, the days the area's name gives ("Days 2–4" → 1…3), the address parts
+function bookGroups(rest, index, lls) {
+  const tOf = groupTownOf(index), nm = require('./sightlib').townNamer(index);
+  return (rest && Array.isArray(rest.groups) ? rest.groups : []).map((g) => {
+    const t = tOf(g), m = /\bDays?\s+(\d+)(?:\s*[–-]\s*(\d+))?/.exec((g.area && g.area.en) || '');
+    const parts = new Set(); for (const x of g.items || []) for (const p of nm.parts(x.q || '')) parts.add(p.toLowerCase());
+    return { town: t, tkey: norm(t.en), from: m ? +m[1] - 1 : null, to: m ? +(m[2] || m[1]) - 1 : null, parts, n: (g.items || []).length };
+  }).filter((g) => g.tkey);
+}
+function rowsOfBook(rest, index, lls) {
+  const out = [], seen = new Set(), tOf = groupTownOf(index);
   for (const g of (rest && Array.isArray(rest.groups) ? rest.groups : [])) {
-    const t = townOf(g, cities), tkey = norm(t.en);
+    const t = tOf(g), tkey = norm(t.en);
     for (const x of g.items || []) {
       const name = one(x && x.name, 120), nkey = norm(name);
       if (!name || !nkey || !tkey || seen.has(`${tkey}:${nkey}`)) continue;
@@ -80,9 +92,12 @@ async function put(pool, family, rows, src, trip, extra = {}) {
 }
 // every book's places, on boot and after a book is saved
 async function syncBooks(pool, family, index) {
-  const trips = (await pool.query("SELECT id, info->'restaurants' AS r FROM trips WHERE family_id=$1 AND jsonb_typeof(info->'restaurants') = 'object' ORDER BY date_from", [family])).rows;
-  let n = 0;
-  for (const t of trips) n += await put(pool, family, rowsOfBook(t.r, index), 'book', t.id);
+  const trips = (await pool.query(`SELECT t.id, t.info->'restaurants' AS r, (SELECT jsonb_agg(d.plan->'stay'->'ll') FROM trip_days d WHERE d.trip_id = t.id AND d.plan->'stay'->'ll' IS NOT NULL) AS lls
+    FROM trips t WHERE t.family_id=$1 AND jsonb_typeof(t.info->'restaurants') = 'object' ORDER BY t.date_from`, [family])).rows;
+  let n = 0; const keep = [];
+  for (const t of trips) { const rows = rowsOfBook(t.r, index, t.lls || []); for (const r of rows) keep.push(idOf(family, r.tkey, r.nkey)); n += await put(pool, family, rows, 'book', t.id); }
+  // a book's place now filed under another town leaves its old row (never one the parents took out: gone stays)
+  await pool.query("DELETE FROM eat_lib WHERE family_id=$1 AND src='book' AND NOT gone AND NOT (id = ANY($2::text[]))", [family, keep]);
   return n;
 }
 
@@ -197,4 +212,4 @@ function groupsFor(byTown, per = 12) {
   return groups.length ? { lede: { th: 'ร้านจากคลังของครอบครัว: ร้านในเล่มก่อนๆ และร้านที่ผู้ช่วยหาและเช็กกับเว็บ · ราคาและเวลาเปิดเปลี่ยนได้ เช็กซ้ำก่อนไป', en: 'From the family’s library: places from our earlier books and ones the helper found and checked on the web. Hours and prices change — check before you go.' }, kinds: KINDS, groups } : null;
 }
 
-module.exports = { idOf, rowsOfBook, syncBooks, syncStarter, starterRows, starterFiles, countryOf, put, all, out, towns, forTown, fill, cleanFill, groupsFor, norm, KINDS };
+module.exports = { bookGroups, idOf, rowsOfBook, syncBooks, syncStarter, starterRows, starterFiles, countryOf, put, all, out, towns, forTown, fill, cleanFill, groupsFor, norm, KINDS };
