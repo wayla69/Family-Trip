@@ -753,10 +753,16 @@ try {
     ok(tid && food.cur === 'JPY' && food.src === 'past' && food.past === 30000 && bg.unknown.food === 0 && !(bg.lines || []).some((l) => l.k === 'shop') && bg.past && bg.past.trips[0].title.en === 'Tokyo last time',
       `planner (budget B2): what we really spent on a book that is over leans the next route's budget — food from our own yen, shopping never counts (${tid} · ${JSON.stringify(bg).slice(0, 400)})`); }
   { const bg = rt.budget || {}, line = (k) => (bg.lines || []).find((l) => l.k === k) || {};
+    // the tickets are counted from the library's own price text: a stop with a printed number is priced (from the library, in JPY),
+    // a stop without one ("Check the price") is counted as unknown — exactly as many as there are, never a guessed price
+    const libIds = [...new Set(rt.days.flatMap((d) => d.stops).filter((s) => s.lib).map((s) => s.lib))];
+    const sk = await (await fetch(BASE + '/api/b/sights?town=tokyo', { headers: { cookie: ck } })).json();
+    const priceText = Object.fromEntries(sk.sights.map((x) => [x.id, (x.price && x.price.en) || ''])), priced = libIds.filter((id) => /\d/.test(priceText[id] || ''));
+    const ticketsOk = (priced.length ? line('tickets').src === 'lib' && line('tickets').cur === 'JPY' : !line('tickets').k) && (bg.unknown || {}).tickets === libIds.length - priced.length;
     ok(rt.money && rt.money.cur === 'JPY' && rt.money.stay.join() === '18000,30000' && rt.money.move.join() === '20000,20000' && !rt.money.junk
       && line('stay').cur === 'JPY' && line('stay').lo === 36000 && line('stay').hi === 60000 && line('stay').src === 'helper' && line('move').lo === 20000
-      && !line('flights').k && (line('tickets').src === 'lib' ? line('tickets').cur === 'JPY' : (bg.unknown || {}).tickets >= 1) && (bg.totals || []).some((x) => x.cur === 'JPY') && /money.{0,8}cur.{0,8}ISO code/.test(JSON.stringify(calls[c0].body)),
-      `planner (budget B1): the route ask asks for the helper's three numbers; the answer carries a budget — two nights' stay, getting around, tickets from the library's prices, no flights when the family typed theirs (${JSON.stringify(bg)})`); }
+      && !line('flights').k && ticketsOk && (bg.totals || []).some((x) => x.cur === 'JPY') && /money.{0,8}cur.{0,8}ISO code/.test(JSON.stringify(calls[c0].body)),
+      `planner (budget B1): the route ask asks for the helper's three numbers; the answer carries a budget — two nights' stay, getting around, tickets from the library's prices (${priced.length} priced, ${libIds.length - priced.length} unpriced counted unknown), no flights when the family typed theirs (${JSON.stringify(bg)})`); }
   ok(calls.length === c0 + 1 && /Where: Tokyo with the kids/.test(rsent) && /Ueno Zoo/.test(rsent) && !/junk/.test(rsent), 'planner: one call for the route, carrying the answers (unknown fields dropped)');
   ok(/learned on past trips/.test(rsent) && /ยัดลก/.test(rsent) && !/\.jpg|media\//.test(rsent), 'planner: the family\'s lessons from past books go with the route (words only, never a photo)');
   ok(rsent.includes('Places we would love to go to') && rsent.includes(globalThis.__wishName), `planner: the wish list goes with the route (${globalThis.__wishName})`);
