@@ -4088,3 +4088,8 @@ details.more>summary{border-radius:16px}
 .mapdays.mdays .chip{min-width:44px;min-height:44px}
 .kidexit,#qreset{touch-action:none;-webkit-touch-callout:none;-webkit-user-select:none;user-select:none}
 .ppbook .hearbtn.ppsay{min-width:44px;min-height:44px}
+/* thumb sizes, third pass (layout audit of 22 Nov 2026: 110 pages × 4 widths × light/dark): every tap 44 px, the drawing unchanged */
+.first .kids button{min-width:44px;min-height:44px;display:grid;place-items:center}
+.pk .eh .pinlink{padding:16px;margin:-16px -14px -16px -15px}
+.rkid .opts button{height:auto;min-height:44px;min-width:44px}
+.sightc .ef a.go,.eatc .ef a.go{min-height:44px;display:inline-flex;align-items:center}
