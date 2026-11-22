@@ -631,8 +631,10 @@ const T = 'hk-macau-2026';
         `the trip film: made in ${secs} s (${st.reel && st.reel.secs} s long, ${st.reel && st.reel.n} photos), portrait 720×1280 H.264/AAC, played in byte ranges, no metadata (${JSON.stringify({ running, status: v.status, type: v.type, range: v.range, w: vs.width, h: vs.height, aac: !!as, dur: (pr.format || {}).duration, tags, err: v.err })})`);
       await page.evaluate(() => document.getElementById('reelbox').scrollIntoView());
       await s.shot('reel-book');
-      ok(await page.locator('[data-a="reelshare"]').count() === 1 && await page.locator('#reelbox a[download]').count() === 1 && await page.locator('[data-a="reelmake"]').count() === 1,
-        'the trip film: the memory book plays it, sends it through the phone\'s share sheet, saves it, and the parents can make it again'); }
+      // wait for the film's buttons (the page redraws once the state says the film is there), never one look
+      const rb = await page.waitForFunction(() => document.querySelectorAll('[data-a="reelshare"]').length === 1 && document.querySelectorAll('#reelbox a[download]').length === 1 && document.querySelectorAll('[data-a="reelmake"]').length === 1, null, { timeout: 8000 }).then(() => true, () => false);
+      const rbSeen = await page.evaluate(() => ({ share: document.querySelectorAll('[data-a="reelshare"]').length, save: document.querySelectorAll('#reelbox a[download]').length, make: document.querySelectorAll('[data-a="reelmake"]').length, box: !!document.getElementById('reelbox') }));
+      ok(rb, `the trip film: the memory book plays it, sends it through the phone's share sheet, saves it, and the parents can make it again (${JSON.stringify(rbSeen)})`); }
     // a book with fewer than three photos has no film to make yet
     { const r = await page.evaluate(async () => { const t = trips().find((x) => !mediaOf(x.id).length); return t ? (await fetch(`/api/b/reel/${t.id}`, { method: 'POST', headers: { 'x-mb': '1', 'content-type': 'application/json' }, body: '{}' })).json() : null; });
       ok(!r || r.error === 'few', `the trip film: a book with too few photos is told so (${JSON.stringify(r)})`); }
