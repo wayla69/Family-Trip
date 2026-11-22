@@ -870,6 +870,20 @@ try {
     await pp.goto(BASE + '/#/planner'); await pp.waitForSelector('#pldest');
     { const qd = await pp.locator('.plqs .plqd').count(), nx = await pp.locator('.plnav .plnext').count(); ok(qd === 5 && nx === 1, `planner page: the questions come a page each — five dots and a big "next" (${qd} · ${nx})`); }
     await pp.fill('#pldest', 'Tokyo'); await pp.click('.plnav .plnext'); await pp.waitForSelector('#plfrom');
+    // the extras page asks nothing that must be known (owner, Nov 2026: "คนไปเที่ยวอาจจะไม่รู้ … ต้องให้ AI แนะนำหรือขึ้นให้เลือก"): a line says
+    // every box may stay empty, the library's things to do of Tokyo come as taps, the flight times are a group (one arrival at a time)
+    { await pp.goto(BASE + '/#/planner/more'); await pp.waitForSelector('#plwant');
+      const note = await pp.locator('.plskipok').count();
+      await pp.waitForFunction(() => document.querySelectorAll('#plwantsug .plchip').length > 0, null, { timeout: 6000 }).catch(() => {});
+      const sights = await pp.locator('#plwantsug .plchip').count();
+      if (sights) await pp.click('#plwantsug .plchip >> nth=0');
+      const pick = sights ? await pp.getAttribute('#plwantsug .plchip >> nth=0', 'data-p') : '';
+      await pp.click('[data-a="plantx"][data-k="flights"][data-g="arr"] >> nth=0'); await pp.click('[data-a="plantx"][data-k="flights"][data-g="arr"] >> nth=2');
+      await pp.click('[data-a="plantx"][data-k="avoid"] >> nth=0'); await pp.click('[data-a="plantx"][data-k="avoid"] >> nth=0');
+      const fl = await pp.inputValue('#plflights'), av = await pp.inputValue('#plavoid'), want = await pp.inputValue('#plwant');
+      const pressed = await pp.locator('[data-k="flights"][aria-pressed="true"]').count();
+      ok(note === 1 && sights >= 3 && want === pick && /evening|ค่ำ/.test(fl) && !/morning|เช้า/.test(fl) && pressed === 1 && av === '', `planner page: the extras page says it may stay empty and offers taps — Tokyo's things to do, one arrival time, a choice taken back (${note} · ${sights} · ${want} · ${fl} · ${pressed} · "${av}")`);
+      await pp.fill('#plwant', ''); await pp.fill('#plflights', ''); await pp.goto(BASE + '/#/planner/when'); await pp.waitForSelector('#plfrom'); }
     await pp.fill('#plfrom', '2027-04-01'); await pp.fill('#plto', '2027-04-03');
     await pp.click('[data-a="planroute"]'); await pp.waitForSelector('.plday', { timeout: 15000 });
     const nday = await pp.locator('.plday').count(), wide = await pp.evaluate(() => document.documentElement.scrollWidth <= innerWidth + 1);
