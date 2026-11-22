@@ -76,7 +76,7 @@ function menuText(menu) {
   if (!Array.isArray(menu) || !menu.length) return '';
   const io = { in: 'indoors', out: 'outdoors', both: 'in and out' };
   const line = (x) => { const best = (x.ages || []).map((a, i) => (a === 2 ? AGEW[i] : '')).filter(Boolean).join(', '), no = (x.ages || []).map((a, i) => (a === 0 ? AGEW[i] : '')).filter(Boolean).join(', ');
-    return `${x.k}${x.wish ? ' ♥' : ''}${x.fam && (x.fam.r >= 4 || x.fam.again === true) ? ' ★' : x.fam && x.fam.been ? ' ✓' : ''} ${x.name.en} (${x.kind}${best ? `; best for ${best}` : ''}${no ? `; not for ${no}` : ''}; ${io[x.io] || 'outdoors'}; ≈ ${x.hrs} h)`; };
+    return `${x.k}${x.wish ? ' ♥' : ''}${x.fam && (x.fam.r >= 4 || x.fam.again === true) ? ' ★' : x.fam && x.fam.been ? ' ✓' : ''} ${x.name.en} (${[x.kind || 'a stop from our own book', best && `best for ${best}`, no && `not for ${no}`, io[x.io], x.hrs && `≈ ${x.hrs} h`].filter(Boolean).join('; ')})`; };   // a stop of our books knows no ages, indoors or time
   return `\n\nThe family's library of things to do in these towns (each checked on the web). Build each day's stops from it: give every stop the menu key as "id" (e.g. {"th","en","id":"s3"}), and use the name as written. ♥ = on the family's wish list — fit those in first. ★ = the family went before and loved it (offer it again where it fits). ✓ = the family has been there before. Add a place that is not in the menu only when nothing in it fits that day, and mark it "new": true.\n${menu.map((t) => `${t.town.en}:\n${t.sights.map(line).join('\n')}`).join('\n')}`;
 }
 // the menu's keys → the library's ids; a stop the helper took from the menu carries the library's id and its names
@@ -177,7 +177,7 @@ function sightFacts(rt, sights) {
   if (!sights || !sights.size) return '';
   const seen = new Set(), rows = [];
   for (const d of rt.days) for (const st of d.stops) { const x = st.lib && sights.get(st.lib); if (!x || seen.has(x.id)) continue; seen.add(x.id);
-    rows.push(`${x.name.en}${x.local ? ` (${x.local})` : ''} — ${(x.what && x.what.en) || ''}; for the children: ${(x.why && x.why.en) || ''}${x.tip && x.tip.en ? `; tip: ${x.tip.en}` : ''}; ${{ in: 'indoors', out: 'outdoors', both: 'in and out' }[x.io] || 'outdoors'}; ≈ ${x.hrs} h; price: ${(x.price && x.price.en) || '—'}${x.book === 'req' ? '; book ahead' : x.book === 'rec' ? '; booking advised' : ''}; map: ${x.q || x.name.en}`); }
+    rows.push(`${x.name.en}${x.local ? ` (${x.local})` : ''} — ${(x.what && x.what.en) || ''}; for the children: ${(x.why && x.why.en) || ''}${x.tip && x.tip.en ? `; tip: ${x.tip.en}` : ''}; ${{ in: 'indoors', out: 'outdoors', both: 'in and out' }[x.io] || 'indoors or out not known'}; ${x.hrs ? `≈ ${x.hrs} h` : 'time not known'}; price: ${(x.price && x.price.en) || '—'}${x.book === 'req' ? '; book ahead' : x.book === 'rec' ? '; booking advised' : ''}; map: ${x.q || x.name.en}`); }
   return rows.length ? `\n\nThe stops taken from the family's library, with facts checked on the web — use these facts for those stops (do not invent other hours or prices), and the map query as the stop's address:\n${rows.join('\n')}` : '';
 }
 // the brief the book is written from: the answers, then the agreed route day by day

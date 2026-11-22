@@ -3462,17 +3462,17 @@ function sightOk(x) {
   const S2 = SIGHT, k = S2.kid && children().find((c) => c.slug === S2.kid);
   if (S2.kind && x.kind !== S2.kind) return false;
   if (S2.st && !(x.styles || []).includes(S2.st)) return false;
-  if (S2.io && x.io === 'out') return false;
+  if (S2.io && x.io !== 'in' && x.io !== 'both') return false;   // a stop from our books says nothing of indoors
   if (S2.free && !sightFree(x)) return false;
   if (S2.wish && !x.wish) return false;
-  if (k && (x.ages || [1, 1, 1, 1])[sightBand(kidYears(k))] === 0) return false;
+  if (k && x.ages && x.ages[sightBand(kidYears(k))] === 0) return false;
   return true;
 }
 // one sight as a card: its picture (the library's landmark) or its kind, the name, the ages it suits, time · indoors · pram, price, why, a tip
 // the town's things to do in groups by the youngest age band they suit best (★ = 2, else the first that suits at all); the order inside a group is kept
 function sightGroups(list) {
-  const at = (x) => { const a = x.ages || [1, 1, 1, 1], k = a.indexOf(2); return k >= 0 ? k : Math.max(0, a.indexOf(1) >= 0 ? a.indexOf(1) : 3); };
-  const g = [[], [], [], []]; for (const x of list) g[at(x)].push(x);
+  const at = (x) => { if (!x.ages) return 4; const a = x.ages, k = a.indexOf(2); return k >= 0 ? k : Math.max(0, a.indexOf(1) >= 0 ? a.indexOf(1) : 3); };   // 4 = a stop of our own books (no ages known)
+  const g = [[], [], [], [], []]; for (const x of list) g[at(x)].push(x);
   return g.map((xs, k) => [k, xs]).filter((p) => p[1].length);
 }
 function sightCard(x) {
@@ -3486,11 +3486,11 @@ function sightCard(x) {
   return `<li class="sightc${x.wish ? ' wished' : ''}${ours ? ' fit' : ''}${x.fit === -9 ? ' young' : ''}" data-s="${esc(sightText(x))}">
 <div class="sct"><span class="scpic">${pic}</span><div class="scn"><b>${mapA(x.q || T(x.name), esc(T(x.name)))}</b>${x.local ? `<span class="zh">${esc(x.local)}</span>` : ''}<span class="sckd">${emo(kd[0])} ${L(kd[1], kd[2])}${T(x.area) ? ` · ${esc(T(x.area))}` : ''}</span></div>
 <button type="button" class="sheart" data-a="sightwish" data-v="${esc(x.id)}" aria-pressed="${!!x.wish}" aria-label="${x.wish ? L('เอาออกจากที่อยากไป', 'Off the wish list') : L('อยากไป', 'We’d love to go')}">${x.wish ? '♥' : '♡'}</button></div>
-<div class="sages" role="img" aria-label="${L('เหมาะกับอายุ', 'Ages')}">${SIGHT_AGES.map((a, k) => `<span class="sa a${ages[k]}">${ages[k] === 2 ? '★ ' : ''}${a}${lang === 'th' ? ' ขวบ' : ''}</span>`).join('')}${x.fit === -9 ? `<span class="etag st-closed">${L('ยังเล็กไปสำหรับน้องคนเล็ก', 'Too young for our youngest')}</span>` : ours ? `<span class="etag fitb">💛 ${L('ตรงใจเรา', 'Our style')}</span>` : ''}${famStar(x)}</div>
+<div class="sages"${x.ages ? ` role="img" aria-label="${L('เหมาะกับอายุ', 'Ages')}"` : ''}>${x.ages ? SIGHT_AGES.map((a, k) => `<span class="sa a${ages[k]}">${ages[k] === 2 ? '★ ' : ''}${a}${lang === 'th' ? ' ขวบ' : ''}</span>`).join('') : ''}${x.fit === -9 ? `<span class="etag st-closed">${L('ยังเล็กไปสำหรับน้องคนเล็ก', 'Too young for our youngest')}</span>` : ours ? `<span class="etag fitb">💛 ${L('ตรงใจเรา', 'Our style')}</span>` : ''}${famStar(x)}</div>
 ${T(x.what) ? `<p class="ed">${esc(T(x.what))}</p>` : ''}${T(x.why) ? `<p class="why"><b>${L('เหมาะกับเด็ก', 'For the kids')}</b> ${esc(T(x.why))}</p>` : ''}${T(x.tip) ? `<p class="why sctip"><b>${L('เคล็ดลับ', 'Tip')}</b> ${esc(T(x.tip))}</p>` : ''}
 <div class="scfacts">${[hrs && `⏱️ ${hrs}`, io && `${io[0]} ${L(io[1], io[2])}`, pram && `👶 ${pram}`, book && `🎟️ ${book}`].filter(Boolean).map((v) => `<span class="ektag">${esc(v)}</span>`).join('')}</div>
 <div class="ef"><span class="echips">${price}</span>${extA(`https://www.google.com/maps/dir/?api=1&destination=${encodeURIComponent(x.q || T(x.name))}`, ic('route') + ' ' + L('นำทาง', 'Go'), 'go')}</div>
-<div class="elsrc"><small>${x.src === 'starter' && x.checked ? `${L('เช็กกับเว็บ', 'Checked on the web')} ${esc(fmtDay(x.checked, { month: 'short', year: '2-digit' }))}${x.url ? ` · ${extA(x.url, L('ที่มา', 'source'), 'srcl')}` : ''}` : L('ราคาและเวลาเปิดเปลี่ยนได้ เช็กก่อนไป', 'Hours and prices change — check before you go')}</small><button type="button" class="mini" data-a="sightdel" data-v="${esc(x.id)}">${L('เอาออก', 'Take out')}</button></div></li>`;
+<div class="elsrc"><small>${x.src === 'book' ? (() => { const bt = x.trip && trip(x.trip); return `${bt ? `${L('จากเล่ม', 'From')} ${esc(T(bt.title))}${Number.isInteger(x.day) ? ` · ${L('วันที่', 'day')} ${x.day + 1}` : ''}` : L('จากเล่มของเรา', 'From our books')} · ${L('เช็กเวลาเปิดก่อนไป', 'check the hours before you go')}`; })() : x.src === 'starter' && x.checked ? `${L('เช็กกับเว็บ', 'Checked on the web')} ${esc(fmtDay(x.checked, { month: 'short', year: '2-digit' }))}${x.url ? ` · ${extA(x.url, L('ที่มา', 'source'), 'srcl')}` : ''}` : L('ราคาและเวลาเปิดเปลี่ยนได้ เช็กก่อนไป', 'Hours and prices change — check before you go')}</small><button type="button" class="mini" data-a="sightdel" data-v="${esc(x.id)}">${L('เอาออก', 'Take out')}</button></div></li>`;
 }
 // the youngest child's age today in years (null when no birth month is known)
 const youngestAge = () => { const ys = children().map((k) => (k.birth_ym ? (Date.now() - Date.parse(k.birth_ym + '-15')) / (365.25 * 864e5) : null)).filter((y) => y != null && y >= 0); return ys.length ? Math.min(...ys) : null; };
@@ -3536,7 +3536,7 @@ function rainSights(t, i, fbox) {
       if (!town) { sightRain.list = []; return; }
       sightRain.town = town;
       api('GET', `/api/b/sights?for=${encodeURIComponent(JSON.stringify([[town.en, town.th]]))}`).then((r) => {
-        if (sightRain.key !== key) return; sightRain.list = (((r.for || [])[0] || {}).sights || []).filter((x) => x.io !== 'out' && x.fit > 0);
+        if (sightRain.key !== key) return; sightRain.list = (((r.for || [])[0] || {}).sights || []).filter((x) => (x.io === 'in' || x.io === 'both') && x.fit > 0);
         const din = document.getElementById('dchin'); if (din && din.hidden) { const tmp = document.createElement('div'); tmp.innerHTML = dchIndoor(t, i); const nb = tmp.firstElementChild; if (nb && !nb.hidden) din.replaceWith(nb); }
         const slot = document.querySelector(`section.rainslot[data-k="${CSS.escape(key)}"]`), html = sightRain.fbox && rainSights(t, i, sightRain.fbox);
         if (!slot || !html) return;
@@ -3599,7 +3599,7 @@ ${styles.length > 1 ? `<div class="row chips" role="group"><span class="label">$
   const shown = list.filter(sightOk).map((x, k) => [x, k]).sort((a, b) => (b[0].wish ? 1 : 0) - (a[0].wish ? 1 : 0) || (b[0].fit || 0) - (a[0].fit || 0) || a[1] - b[1]).map((p) => p[0]);
   const q = S2.q.trim().toLowerCase(), sfz = fzFilter(shown.map(sightText), q), vis = shown.filter((x, i) => !q || sfz.ok(i)).length;
   return `${head}${tabs}${bar}<p class="label" id="sightn">${L(`แสดง ${vis} จาก ${list.length} แห่ง`, `Showing ${vis} of ${list.length}`)}</p>
-${sightGroups(shown).map(([g, xs]) => `<section class="sagegrp" style="--g1:${[PG.pink, PG.gold, PG.teal, PG.blue][g]}"${q && !xs.some((x) => sfz.ok(shown.indexOf(x))) ? ' hidden' : ''}><h3>${L(`เหมาะที่สุดกับ ${SIGHT_AGES[g]} ขวบ`, `Best for ages ${SIGHT_AGES[g]}`)} <span class="label">${xs.length}</span></h3>
+${sightGroups(shown).map(([g, xs]) => `<section class="sagegrp" style="--g1:${[PG.pink, PG.gold, PG.teal, PG.blue, PG.purple][g]}"${q && !xs.some((x) => sfz.ok(shown.indexOf(x))) ? ' hidden' : ''}><h3>${g === 4 ? L('ที่เราไปในเล่มของเรา', 'Places in our own books') : L(`เหมาะที่สุดกับ ${SIGHT_AGES[g]} ขวบ`, `Best for ages ${SIGHT_AGES[g]}`)} <span class="label">${xs.length}</span></h3>
 <ul class="sightl">${xs.map((x) => sightCard(x).replace('<li class="sightc', `<li${q && !sfz.ok(shown.indexOf(x)) ? ' hidden' : ''} class="sightc`)).join('')}</ul></section>`).join('')}
 <p class="empty" id="sightnone"${vis ? ' hidden' : ''}>${L('ไม่พบที่เที่ยวที่ตรงกับตัวกรอง', 'Nothing matches these filters')}</p>
 <p class="label">${L('ทุกแห่งเช็กกับเว็บก่อนเข้าคลัง · ราคาและเวลาเปิดเปลี่ยนได้ เช็กซ้ำก่อนไป', 'Every place was checked on the web before it entered the library · hours and prices change, check again before you go')}</p>`;
