@@ -3675,6 +3675,8 @@ b.kf.kd,.tp.one .gcard b.kf.kd{--kc:#C9780E}
 .plsg .plflag{width:34px;height:34px;border-radius:50%;background:#fff;display:inline-grid;place-items:center;font-size:21px;line-height:1}.plsg:has(.plflag){padding-left:5px}
 .plidgo{justify-self:start;min-height:44px;text-align:left}
 .plchips{display:flex;flex-wrap:wrap;gap:8px;margin:6px 0 2px}
+.plskipok{margin:0 0 6px;padding:12px 14px;border-radius:16px;background:color-mix(in srgb,var(--g1,var(--accent)) 14%,var(--card));color:var(--ink);font-weight:600;line-height:1.5}
+.pltx{margin:2px 0 10px}.pltx .plchip small{color:var(--muted);font-weight:500}
 .plchip{display:inline-flex;align-items:center;gap:6px;min-height:44px;padding:6px 14px;border:1px solid var(--line);border-radius:999px;background:var(--card);font-size:14.5px;font-weight:500;line-height:1.2;color:var(--ink)}
 .plchip .emi{width:1.25em;height:1.25em}
 .plchip[aria-pressed=true]{border-color:var(--g1);box-shadow:0 0 0 1px var(--g1);background:color-mix(in srgb,var(--g1) 16%,var(--card));font-weight:700}
