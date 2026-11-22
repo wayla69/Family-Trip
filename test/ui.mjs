@@ -1054,7 +1054,7 @@ const T = 'hk-macau-2026';
     // the heart turns on before the server has it (the PUT is still on its way): wait for the server, never one look
     const kept = await page.waitForFunction(async (v) => { const r = await fetch('/api/b/sights?town=tokyo').then((x) => x.json()); return r.sights.find((x) => x.id === v).wish === true; }, id, { timeout: 8000, polling: 250 }).then(() => true, () => false);
     await page.$eval(`.sheart[data-v="${id}"]`, (b) => b.click()); await page.waitForFunction((v) => document.querySelector(`.sheart[data-v="${v}"]`).getAttribute('aria-pressed') === 'false', id);
-    await page.goto(`${BASE}/#/explore/tokyo/eat`); await page.waitForSelector('.eatc'); const eats = await page.$$eval('.eatc', (l) => l.length);
+    await page.goto(`${BASE}/#/explore/tokyo/eat`); await page.waitForSelector('.eatc:not([hidden])'); const eats = await page.$$eval('.eatc', (l) => l.length);
     ok(x0.n >= 15 && x0.ages === x0.n * 4 && x1 >= 3 && x1 < x0.n && x2 <= x0.n && none && kept === true && eats >= 5 && x0.back === '#/explore' && x0.sx <= 0, `explore Tokyo: ${x0.n} things to do with their ages, ${x1} indoors for a rainy day, ${x2} for one child, the search empties in place, ♥ kept on the server, ${eats} places to eat in the tab, back goes to every town (${JSON.stringify({ x0, none, kept })})`);
     await page.screenshot({ path: `${OUT}/explore-tokyo.png` }).catch(() => {});
     // plan a day: built on the phone from the library (a long sight, lunch, a shorter sight, dinner), then carried into the planner

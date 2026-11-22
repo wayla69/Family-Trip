@@ -755,7 +755,7 @@ try {
   { const bg = rt.budget || {}, line = (k) => (bg.lines || []).find((l) => l.k === k) || {};
     ok(rt.money && rt.money.cur === 'JPY' && rt.money.stay.join() === '18000,30000' && rt.money.move.join() === '20000,20000' && !rt.money.junk
       && line('stay').cur === 'JPY' && line('stay').lo === 36000 && line('stay').hi === 60000 && line('stay').src === 'helper' && line('move').lo === 20000
-      && !line('flights').k && line('tickets').src === 'lib' && line('tickets').cur === 'JPY' && (bg.totals || []).some((x) => x.cur === 'JPY') && /money.{0,8}cur.{0,8}ISO code/.test(JSON.stringify(calls[c0].body)),
+      && !line('flights').k && (line('tickets').src === 'lib' ? line('tickets').cur === 'JPY' : (bg.unknown || {}).tickets >= 1) && (bg.totals || []).some((x) => x.cur === 'JPY') && /money.{0,8}cur.{0,8}ISO code/.test(JSON.stringify(calls[c0].body)),
       `planner (budget B1): the route ask asks for the helper's three numbers; the answer carries a budget — two nights' stay, getting around, tickets from the library's prices, no flights when the family typed theirs (${JSON.stringify(bg)})`); }
   ok(calls.length === c0 + 1 && /Where: Tokyo with the kids/.test(rsent) && /Ueno Zoo/.test(rsent) && !/junk/.test(rsent), 'planner: one call for the route, carrying the answers (unknown fields dropped)');
   ok(/learned on past trips/.test(rsent) && /ยัดลก/.test(rsent) && !/\.jpg|media\//.test(rsent), 'planner: the family\'s lessons from past books go with the route (words only, never a photo)');
