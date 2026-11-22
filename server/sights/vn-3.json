@@ -836,6 +836,42 @@
           "q": "Doc Let Beach, Ninh Hoa, Khanh Hoa",
           "ok": "2026-11",
           "src": "https://localvietnam.com/khanh-hoa/nha-trang/nha-trang-with-kids/"
+        },
+        {
+          "name": { "en": "Monkey Island (Hòn Lao)", "th": "เกาะลิง (ฮ่นลาว)" },
+          "local": "",
+          "kind": "zoo",
+          "area": { "en": "Hòn Lao", "th": "ฮ่นลาว" },
+          "what": { "en": "A petting-zoo island where monkeys roam free.", "th": "เกาะสวนสัตว์ให้สัมผัสสัตว์ได้ ที่มีลิงเดินเล่นอิสระ" },
+          "why": { "en": "A petting-zoo island where monkeys roam free.", "th": "เกาะเล็กๆ ที่เด็กๆ ได้ใกล้ชิดสัตว์ และได้เห็นลิงเดินเล่นอิสระ" },
+          "tip": { "en": "Allow about two hours", "th": "เผื่อเวลาราว 2 ชั่วโมง" },
+          "ages": [2, 2, 2, 1],
+          "hrs": 2,
+          "io": "out",
+          "pram": "part",
+          "price": { "en": "Check the price", "th": "เช็กราคาก่อนไป" },
+          "book": "none",
+          "q": "Monkey Island (Hòn Lao), Nha Trang",
+          "ok": "2026-11",
+          "src": "https://vietnamspot.ru/en/blog/nha-trang-with-kids"
+        },
+        {
+          "name": { "en": "Tran Phu Beach", "th": "หาดจ่านฝู่" },
+          "local": "",
+          "kind": "beach",
+          "area": { "en": "Tran Phu", "th": "จ่านฝู่" },
+          "what": { "en": "The main stretch of beach in Nha Trang.", "th": "ชายหาดหลักของนาจาง" },
+          "why": { "en": "The article says it is easier for families with small children to manage than many other beaches in Vietnam.", "th": "บทความบอกว่าครอบครัวที่มีเด็กเล็กดูแลได้ง่ายกว่าชายหาดอื่นๆ หลายแห่งในเวียดนาม" },
+          "tip": { "en": "Allow about three hours", "th": "เผื่อเวลาราว 3 ชั่วโมง" },
+          "ages": [2, 2, 2, 2],
+          "hrs": 3,
+          "io": "out",
+          "pram": "part",
+          "price": { "en": "Check the price", "th": "เช็กราคาก่อนไป" },
+          "book": "none",
+          "q": "Tran Phu Beach, Nha Trang",
+          "ok": "2026-11",
+          "src": "https://www.vietnamtourism.com/en/nha-trang-things-to-do-beyond-the-beach"
         }
       ]
     }
