@@ -2910,6 +2910,21 @@ const T = 'hk-macau-2026';
   ok((await apiState(page)).entries.some((e) => e.first_key === 'gift.d2' && e.child === 'mimi') && await page.evaluate(() => stickerSet(trip('hk-macau-2026'), 'mimi').some((x) => x.k === 'gift.d2' && x.got)), 'surprise box: opened once (saved), its sticker is in Mimi’s sticker tray');
   await page.click('.kidbar button[data-v="#/kid/mimi"]'); await page.waitForSelector('.kidtiles');
   ok(await page.locator('.kidgift').count() === 0, 'surprise box: gone from home once opened');
+  // every box's sticker is a picture of the library, never a bare emoji (owner, Nov 2026: "รูปการ์ดทำให้สวยขึ้นโดยใช้ไฟล์ในคลัง")
+  { const bad = await page.evaluate(() => GIFT_E.map((e, i) => [e, giftArt(i)]).filter(([, a]) => !a).map(([e]) => e));
+    const gone = await page.evaluate(async () => { const out = []; for (let i = 0; i < GIFT_E.length; i++) { const r = await fetch(giftArt(i)); if (!r.ok) out.push(giftArt(i)); } return out; });
+    ok(!bad.length && !gone.length && await page.evaluate(() => stickerSet(trip('hk-macau-2026'), 'mimi').find((x) => x.k === 'gift.d2').img === giftArt(2)), `surprise box: all ${16} stickers are the library's pictures, in the sticker tray too (${bad.join(' ')} ${gone.join(' ')})`); }
+  // the parents close the boxes again for every child from the book's menu (owner: "ช่วยเคลียร์ surprise ให้ก่อนรอบนึงครับของสองคนเลย"), two taps
+  { await page.evaluate(() => { ls('kidmode', null); location.hash = '#/t/hk-macau-2026'; }); await page.waitForSelector('.giftline [data-a="giftreset"]');
+    await page.click('.giftline [data-a="giftreset"]'); await page.click('.giftline [data-a="giftreset"]');
+    await page.waitForFunction(() => !S.entries.some((e) => /^gift\.d/.test(e.first_key || '')), null, { timeout: 5000 }).catch(() => {});
+    await page.waitForFunction(() => queue.length === 0, null, { timeout: 15000 });
+    const left = (await apiState(page)).entries.filter((e) => /^gift\.d/.test(e.first_key || '')).length;
+    await page.evaluate(() => { ls('kidmode', 'mimi'); location.hash = '#/kid/mimi'; }); await page.waitForSelector('.kidtiles');
+    ok(left === 0 && await page.locator('.giftline').count() === 0 && await page.locator('.kidgift').count() === 1, `surprise box: the parents close every box again, the morning box is back (${left} left)`);
+    await page.click('.kidgift'); await page.waitForSelector('.giftbox'); await page.click('.giftbox'); await page.waitForSelector('.giftopen .gstk img', { timeout: 5000 });
+    await page.waitForFunction(() => queue.length === 0, null, { timeout: 15000 });
+    await page.click('.kidbar button[data-v="#/kid/mimi"]'); await page.waitForSelector('.kidtiles'); }
   // the evening: a "stamp today before bed" banner until the stamp is done
   await page.clock.setFixedTime(new Date('2026-12-07T11:00:00Z'));   // 19:00 in Macau
   await page.reload(); await page.waitForSelector('.kidtiles');

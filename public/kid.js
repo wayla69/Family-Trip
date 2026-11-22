@@ -482,7 +482,7 @@ const PET_ART = { '🐣': ['chick', 'ลูกเจี๊ยบ', 'A chick'], '
   '🐨': ['koala', 'โคอาล่า', 'A koala'], '🦋': ['butterfly', 'ผีเสื้อ', 'A butterfly'], '🐢': ['turtle', 'เต่าน้อย', 'A little turtle'], '🦜': ['parrot', 'นกแก้ว', 'A parrot'], '🐧': ['penguin', 'เพนกวิน', 'A penguin'], '🦁': ['lion', 'สิงโตน้อย', 'A little lion'] };
 // the games' own animals and foods (set 5, public/art/game): where a game shows one of these emoji as its thing, gE() draws the picture instead —
 // sized like the emoji it replaces (1em), so every layout stays; an emoji without a picture (a book's own food) stays an emoji
-const GAME_ART = { '🐑': 'game/sheep', '🐔': 'game/hen', '🐘': 'game/elephant', '🐥': 'game/chick', '🐮': 'game/cow', '🐰': 'game/rabbit', '🐱': 'game/cat', '🐳': 'game/whale', '🐴': 'game/horse', '🐵': 'game/monkey',
+const GAME_ART = { '🦄': 'kidui/pet-unicorn', '🐑': 'game/sheep', '🐔': 'game/hen', '🐘': 'game/elephant', '🐥': 'game/chick', '🐮': 'game/cow', '🐰': 'game/rabbit', '🐱': 'game/cat', '🐳': 'game/whale', '🐴': 'game/horse', '🐵': 'game/monkey',
   '🐶': 'game/dog', '🐷': 'game/pig', '🐸': 'game/frog', '🐻': 'game/bear', '🐼': 'kidui/pet-panda', '🦆': 'game/duck', '🦛': 'game/hippo',
   '🍌': 'game/banana', '🍎': 'game/apple', '🥕': 'game/carrot', '🍉': 'game/watermelon', '🍓': 'game/strawberry', '🍇': 'game/grapes', '🌽': 'game/corn', '🍪': 'game/cookie', '🍞': 'game/bread', '🥚': 'game/egg', '🥦': 'game/broccoli', '🧀': 'game/cheese',
   // set 6: every other thing the games show (shadows, colours, odd one out, patterns, counting, where, the maze, I spy, the cake)
@@ -585,14 +585,18 @@ function celebrate(chars) {
   }
 }
 let memState = null;   // the memory game's place: {key: trip.day.kid, n: question, got: answered right}
-const GIFT_E = ['🦄', '🐉', '🎈', '🍭', '🌈', '🚀', '🦋', '🍦', '🐳', '🪁', '🎠', '🧸', '🌟', '🦕', '🎪', '🍩'];
+// the morning box's stickers (owner, Nov 2026: "รูปการ์ดทำให้สวยขึ้นโดยใช้ไฟล์ในคลัง"): every one is a painted picture of the library
+// (GAME_ART), never a bare emoji — an emoji looks different on every phone; the emoji stays the data (confetti, the sticker's key)
+const GIFT_E = ['🦄', '🐬', '🎈', '🍭', '🦉', '🚀', '🦋', '🍦', '🐳', '🐼', '🦊', '🐧', '⭐', '🦕', '🐢', '🍩'];
 const giftE = (i) => GIFT_E[i % GIFT_E.length];
+const giftArt = (i) => { const a = GAME_ART[giftE(i).replace(/\uFE0F/g, '')]; return a ? `/art/${a}.webp` : ''; };
+const GIFT_TINT = ['#F7C6D9', '#BFE3F2', '#FFE08A', '#CDEBC2', '#E3D2F7', '#FFD0B0'];
 function stickerSet(t, kid) {
   const pp = t.passport || {}, out = [], seen = new Set();
   const add = (k, e, img, got) => { if (seen.has(k) || (!e && !img)) return; seen.add(k); out.push({ k, e, img, got: !!got }); };
   t.days.forEach((_, i) => add(`stamp.d${i}`, '', dayArt(t, i), dayStamped(t, i)));
   t.days.forEach((_, i) => daySpots(t, i, kid).forEach((s) => add(s.key, s.e, '', ticked(t, s.key, kid))));
-  t.days.forEach((_, i) => add(`gift.d${i}`, giftE(i), '', ticked(t, `gift.d${i}`, kid)));
+  t.days.forEach((_, i) => add(`gift.d${i}`, giftE(i), giftArt(i), ticked(t, `gift.d${i}`, kid)));
   { const mm = mapModel(t); if (mm) { const real = mapReal(t, mm); mm.m.stops.forEach((st) => { if (real.has(st.k)) add(`been.${st.k}`, st.e || '📍', st.art || '', true); }); } }   // a place we really went (the parents checked it in)
   t.days.forEach((_, i) => add(questKey(i, 'chest'), QUEST_GEM[i % QUEST_GEM.length], qArt(gemArt(i)), ticked(t, questKey(i, 'chest'), kid)));   // a town's treasure on the adventure map   // the morning surprise box's sticker
   kidLists(t, kid).forEach((l) => listItems(l).forEach((it) => { const x = ticked(t, `${l.key}.${it.k}`, kid); add(`${l.key}.${it.k}`, it.e, l.yum || l.stars ? foodArt(it.e, it.art, `${it.en || ''} ${it.th || ''}`) : '', x && x.text !== 'yuck'); }));   // a dish tasted is a sticker of its picture
@@ -838,7 +842,7 @@ ${mine.length ? `<div class="drawn">${mine.map((m) => isEditor() ? `<button type
 <div class="kidspots${lit ? ' little' : ''}">${spots.map((s) => { const on = ticked(t, s.key, kid); return `<button class="${on ? 'on' : ''}" data-a="kidspot" data-t="${esc(t.id)}" data-d="${i}" data-k="${esc(kid)}" data-v="${esc(s.key)}" data-say="${esc(T(s))}" aria-pressed="${!!on}"><span>${esc(s.e)}</span><b>${esc(T(s))}</b>${on ? '<i>✓</i>' : ''}</button>`; }).join('')}</div>`;
   } else if (view === 'gift' && !pre) {
     const got = ticked(t, `gift.d${i}`, kid), sp = daySpots(t, i, kid), fact = (pd.facts || [])[0], lit = littleOf(t, kid);
-    body = got ? `<div class="giftopen"><div class="gstk">${giftE(i)}</div><p class="gnew">${L('ได้สติกเกอร์ใหม่!', 'A new sticker!')} ⭐</p>
+    body = got ? `<div class="giftopen"><div class="gstk" style="--gt:${GIFT_TINT[i % GIFT_TINT.length]}"><span class="gray" aria-hidden="true"></span>${giftArt(i) ? `<img src="${giftArt(i)}" alt="" draggable="false">` : esc(giftE(i))}</div><p class="gnew">${L('ได้สติกเกอร์ใหม่!', 'A new sticker!')} ⭐</p>
 <div class="kidguide">${guideImg(0)}<p>${esc(T(pd.title) || T(d.title))}${fact ? ` — ${esc(T(fact))}` : ''}</p></div>
 ${sp.length ? `<div class="gmiss"><b>${lit ? L('วันนี้ชี้ให้ดูนะ', 'Point to these today') : L('วันนี้หาให้เจอนะ', 'Find these today')}</b><div>${sp.map((x) => `<span title="${esc(T(x))}">${esc(x.e)}</span>`).join('')}</div></div>` : ''}
 <button class="kidbig" data-a="kidnav" data-v="#/kid/${esc(kid)}/spot">${lit ? '👉 ' + L('ไปชี้กัน!', 'Let’s point!') : '🔍 ' + L('ไปหากัน!', 'Let’s find them!')}</button></div>`
@@ -1481,6 +1485,15 @@ function questLine(t) {
   }).filter(Boolean);
   return rows.length ? `<section class="questline"><div class="part pickh">${L('แผนที่ผจญภัยของเด็กๆ', 'The kids’ adventure map')}</div><ul>${rows.join('')}</ul></section>` : '';
 }
+// the surprise boxes again (owner, Nov 2026: "ช่วยเคลียร์ surprise ให้ก่อนรอบนึงครับของสองคนเลย"): on the book's menu, for the parents, once a
+// box of this book has been opened — two taps close every box of the book again for every child, so the morning opens a full box
+function giftLine(t) {
+  if (!isEditor()) return '';
+  const opened = entriesOf(t.id).filter((e) => e.kind === 'tick' && /^gift\.d\d+$/.test(e.first_key || ''));
+  if (!opened.length) return '';
+  const kids = [...new Set(opened.map((e) => e.child))].map((k) => kidName(k)).filter(Boolean);
+  return `<section class="questline giftline"><div class="part pickh">${L('กล่องเซอร์ไพรส์', 'The surprise boxes')}</div><ul><li><span class="gface">${kuImg('surprise')}</span><span>${esc(L(`${kids.join(' และ ')} เปิดไปแล้ว ${opened.length} กล่อง`, `${kids.join(' and ')} opened ${opened.length} box${opened.length > 1 ? 'es' : ''}`))}</span><button type="button" class="mini" data-a="giftreset" data-t="${esc(t.id)}">${L('ปิดกล่องใหม่ทั้งหมด', 'Close them all again')}</button></li></ul></section>`;
+}
 // the road from the first town again (a test run, a fresh start): this book's missions and chests of that child go, with the easing kept on this device
 function questWipe(t, kid) {
   entriesOf(t.id).filter((e) => e.kind === 'tick' && e.child === kid && /^quest\./.test(e.first_key || '')).forEach((e) => delEntry(e.id));
@@ -1498,6 +1511,12 @@ document.addEventListener('pointerdown', (e) => {
 });
 ['pointerup', 'pointercancel', 'pointerleave'].forEach((ev) => document.addEventListener(ev, () => { clearTimeout(qresT); const b = $('#qreset'); if (b) b.classList.remove('holding'); }, true));
 Object.assign(A, {
+  giftreset(b) {   // every surprise box of the book closed again, for every child (the stickers they gave go with them; stars stay)
+    const t = trip(b.dataset.t); if (!t || !isEditor()) return;
+    if (!armed(b, L('แตะอีกครั้ง กล่องเซอร์ไพรส์ของทุกคนจะปิดใหม่', 'Tap again — every child’s boxes close again'))) return;
+    entriesOf(t.id).filter((e) => e.kind === 'tick' && /^gift\.d\d+$/.test(e.first_key || '')).forEach((e) => delEntry(e.id));
+    toast(L('ปิดกล่องเซอร์ไพรส์ใหม่แล้ว เปิดได้อีกรอบ', 'The surprise boxes are closed — ready to open again')); safeRender();
+  },
   questreset(b) {   // a grown-up starts a child's road again: the missions and chests of this book go, the stars and stickers of other things stay
     const t = trip(b.dataset.t), kid = b.dataset.k; if (!t || !isEditor()) return;
     if (!armed(b, L('แตะอีกครั้ง เส้นทางของลูกจะเริ่มใหม่ตั้งแต่เมืองแรก', 'Tap again — the road starts over from the first town'))) return;
