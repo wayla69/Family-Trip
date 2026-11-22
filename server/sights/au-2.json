@@ -258,6 +258,24 @@
           "q": "Rainforestation Nature Park, Kennedy Highway, Kuranda",
           "ok": "2026-11",
           "src": "https://www.rainforest.com.au/?p=755"
+        },
+        {
+          "name": { "en": "Sugarworld Waterpark", "th": "ซูการ์เวิลด์ วอเตอร์พาร์ก" },
+          "local": "",
+          "kind": "play",
+          "area": { "en": "Cairns", "th": "เคิร์นส์" },
+          "what": { "en": "Waterpark in Cairns that the page recommends for families.", "th": "สวนน้ำในเคิร์นส์ที่หน้าเว็บแนะนำสำหรับครอบครัว" },
+          "why": { "en": "Sugarworld has been entertaining generations of kids for nearly 30 years.", "th": "ซูการ์เวิลด์ให้ความสนุกกับเด็กหลายรุ่นมาเกือบ 30 ปีแล้ว" },
+          "tip": { "en": "Allow about three hours", "th": "เผื่อเวลาราว 3 ชั่วโมง" },
+          "ages": [1, 2, 2, 2],
+          "hrs": 3,
+          "io": "out",
+          "pram": "part",
+          "price": { "en": "Check the price", "th": "เช็กราคาก่อนไป" },
+          "book": "none",
+          "q": "Sugarworld Waterpark, Cairns",
+          "ok": "2026-11",
+          "src": "https://www.barrierreefaustralia.com/blog/10-best-things-to-do-in-cairns-with-kids.7/"
         }
       ]
     },
@@ -518,6 +536,24 @@
           "q": "Gallery of Central Australia, Yulara",
           "ok": "2026-11",
           "src": "https://www.ayersrockresort.com.au/stories/gallery-of-central-australia-supporting-local"
+        },
+        {
+          "name": { "en": "Bush Food Experience", "th": "ประสบการณ์อาหารป่า" },
+          "local": "",
+          "kind": "culture",
+          "area": { "en": "Ayers Rock Resort", "th": "เอเยอร์สร็อก รีสอร์ต" },
+          "what": { "en": "Daytime bush food session at Ayers Rock Resort.", "th": "กิจกรรมชิมอาหารป่าตอนกลางวันที่เอเยอร์สร็อก รีสอร์ต" },
+          "why": { "en": "Learn about Australian and local bush tucker.", "th": "เรียนรู้เรื่องอาหารป่าของออสเตรเลียและท้องถิ่น" },
+          "tip": { "en": "Allow about one hour", "th": "เผื่อเวลาราว 1 ชั่วโมง" },
+          "ages": [0, 1, 2, 2],
+          "hrs": 1,
+          "io": "out",
+          "pram": "part",
+          "price": { "en": "Check the price", "th": "เช็กราคาก่อนไป" },
+          "book": "rec",
+          "q": "Bush Food Experience, Ayers Rock Resort, Uluru",
+          "ok": "2026-11",
+          "src": "https://ayersrockresort.com.au/plan/for-families"
         }
       ]
     }
