@@ -1,0 +1,32 @@
+{
+  "town": "cn-chongqing",
+  "kind": "eats",
+  "added": [
+    {
+      "name": "Xi Yang Yang",
+      "area": "LG21, Park 108 Shopping Center, 108 Zourong Road, Yuzhong District",
+      "src": "https://www.cathaypacific.com/cx/en_GB/inspiration/dining/best-restaurants-chongqing.html",
+      "date": "2025-10-16 (the page's own creation date, discoveryCreationDate)",
+      "quote": "This local institution has captivated food lovers for years with its signature steamed pork ribs with millet.",
+      "address_on_page": "LG21, Park 108 Shopping Center, 108 Zourong Road, Yuzhong District",
+      "price": "not printed on the page, so Check the price",
+      "checker": "name, quote and address on the page; the checker does not read discoveryCreationDate, so it reports 'page date none'. The date was checked by hand."
+    }
+  ],
+  "removed": [
+    {"name": "Qin Ma Hot Pot", "reason": "sources disagree on the area (Jiefangbei vs Longxi); no current Jiefangbei address found"},
+    {"name": "Dezhuang Hot Pot", "reason": "no Nanping branch found; the only branch found is in Nan'an"},
+    {"name": "Shun Feng 123", "reason": "no Jiefangbei branch found; the only branch found is in Guanyinqiao"},
+    {"name": "Tao Ran Ju", "reason": "no Nanbin Road branch found; the only address found is on Zourong Road"},
+    {"name": "Lao Sichuan", "reason": "no page found matching a 1930s Bayi Road beef restaurant"}
+  ],
+  "still_unverified_in_town": [
+    "Pei Jie Lao Huoguo (no ok month; the only branch in sources is Hongya Cave, the Jiefangbei address is unconfirmed)",
+    "Cygnet Hot Pot (Hongyadong) (no ok month; the Hongyadong branch is from a single guide)",
+    "Bayi Road Food Street (no ok month; a street, not one restaurant)",
+    "Hao You Lai Suan La Fen (no ok month; hours and address come from listings of mixed dates)",
+    "Shancheng Xiao Tangyuan (no ok month; the address is from one guide)",
+    "Chen Changyin Mahua (no ok month; the brand is in Ciqikou, the shop row is not confirmed)",
+    "Jiaotong Teahouse (no ok month)"
+  ]
+}
