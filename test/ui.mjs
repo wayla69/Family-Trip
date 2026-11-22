@@ -2919,9 +2919,8 @@ const T = 'hk-macau-2026';
     const gone = await page.evaluate(async () => { const out = []; for (let i = 0; i < GIFT_E.length; i++) { const r = await fetch(giftArt(i)); if (!r.ok) out.push(giftArt(i)); } return out; });
     ok(!bad.length && !gone.length && await page.evaluate(() => stickerSet(trip('hk-macau-2026'), 'mimi').find((x) => x.k === 'gift.d2').img === giftArt(2)), `surprise box: all ${16} stickers are the library's pictures, in the sticker tray too (${bad.join(' ')} ${gone.join(' ')})`); }
   // every thing the books ask the children to find has a painted picture (owner, Nov 2026: 33 drawn with GPT from our prompts, public/art/spot)
-  // WAIT = the two still to be painted (a waving hand, a pelican: sheet 10 of the owner's GPT prompts) — take them out of WAIT when they come
-  { const r = await page.evaluate(async () => { const WAIT = /👋|🐦/u, out = { n: 0, miss: [], bad: [] }, seen = new Set();
-      for (const t of S.trips.filter((x) => x.passport && (x.passport.days || []).length)) for (const kid of (t.theme.children || []).map((c) => c.slug)) t.days.forEach((_, i) => daySpots(t, i, kid).forEach((s) => { out.n++; const src = spotSrc(s.e, s); if (!src && !WAIT.test(s.e)) out.miss.push(s.e + ' ' + (s.en || '')); else if (src) seen.add(src); }));
+  { const r = await page.evaluate(async () => { const out = { n: 0, miss: [], bad: [] }, seen = new Set();
+      for (const t of S.trips.filter((x) => x.passport && (x.passport.days || []).length)) for (const kid of (t.theme.children || []).map((c) => c.slug)) t.days.forEach((_, i) => daySpots(t, i, kid).forEach((s) => { out.n++; const src = spotSrc(s.e, s); if (!src) out.miss.push(s.e + ' ' + (s.en || '')); else seen.add(src); }));
       for (const src of seen) { const r = await fetch(src); if (!r.ok) out.bad.push(src); }
       out.castle = [spotSrc('🏰', { en: 'A sandcastle' }), spotSrc('🏰', { en: 'Point at the castle' }), spotSrc('⛪', { en: 'A church' })];
       return out; });

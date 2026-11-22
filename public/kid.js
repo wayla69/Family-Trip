@@ -530,17 +530,14 @@ const gE = (e) => { const a = GAME_ART[String(e).replace(/\uFE0F/g, '')]; return
 // the 33 things the bundled books ask the children to find that had no picture (owner drew them with GPT from our prompts, Nov 2026,
 // public/art/spot): an emoji that means one thing in every book maps by itself; one that can mean several (🏰 a sandcastle or a castle,
 // ⛪ any church) is read by the thing's own name first (SPOT_RULE), so another book's plain church never gets the ruined one
-const SPOT_E = { '💺': 'seatbelt', '🪟': 'planewindow', '🪂': 'hangglider', '🌉': 'bridge', '🚐': 'van', '🐚': 'seashell', '🏰': 'fairytale', '🦘': 'kangaroo', '🕳': 'burrow', '⛰': 'threepeaks', '🧺': 'picnic', '📯': 'whistle', '🚡': 'cablecar', '🚇': 'tunnel', '🚧': 'farmgate', '🧚': 'fairytale', '🌷': 'flower', '🌊': 'wave', '🕊': 'seagull', '🪣': 'bucket', '🦜': 'parrot', '🦭': 'seal', '🏄': 'surfboard', '🔊': 'sound', '🎄': 'xmastree', '🚢': 'ship', '🫧': 'bubble' };
+const SPOT_E = { '💺': 'seatbelt', '🪟': 'planewindow', '🪂': 'hangglider', '🌉': 'bridge', '🚐': 'van', '🐚': 'seashell', '🏰': 'fairytale', '🦘': 'kangaroo', '🕳': 'burrow', '⛰': 'threepeaks', '🧺': 'picnic', '📯': 'whistle', '🚡': 'cablecar', '🚇': 'tunnel', '🚧': 'farmgate', '🧚': 'fairytale', '🌷': 'flower', '🌊': 'wave', '🕊': 'seagull', '🪣': 'bucket', '🦜': 'parrot', '🦭': 'seal', '🏄': 'surfboard', '🔊': 'sound', '🎄': 'xmastree', '🚢': 'ship', '🫧': 'bubble', '🚋': 'tram', '⛴': 'ferry', '👋': 'hello' };
 const SPOT_RULE = [[/sand ?castle|ปราสาททราย/i, 'sandcastle'], [/no roof|ไม่มีหลังคา|ruin/i, 'ruinchurch'], [/shell roof|หลังคา.*หอย/i, 'shellroof'], [/smiling face|giant face|smile big|หน้ายิ้ม|ยิ้มกว้าง/i, 'bigsmile'],
-  [/christmas lights?|ไฟคริสต์มาส/i, 'xmaslights'], [/ball pit|บ่อบอล/i, 'ballpit'], [/steam|ไอน้ำ/i, 'steam'], [/seagull|นางนวล/i, 'seagull']];
-// until their painted pictures come (sheet 10): the picture library's flat drawings of the same things
-const SPOT_STOCK = { '🚋': '/stock/hk/transport-tram.v1.svg', '⛴': '/stock/hk/transport-starferry.v1.svg' };
+  [/christmas lights?|ไฟคริสต์มาส/i, 'xmaslights'], [/ball pit|บ่อบอล/i, 'ballpit'], [/steam|ไอน้ำ/i, 'steam'], [/seagull|นางนวล/i, 'seagull'], [/pelican|นกกระทุง/i, 'pelican']];
 const spotSrc = (e, it) => {
   const k = String(e || '').replace(/\uFE0F/g, ''); if (!k) return '';
   const words = it && typeof it === 'object' ? `${it.en || ''} ${it.th || ''}` : String(it || '');
   const rule = words.trim() && SPOT_RULE.find(([re]) => re.test(words)); if (rule) return `/art/spot/${rule[1]}.webp`;
   if (SPOT_E[k]) return `/art/spot/${SPOT_E[k]}.webp`;
-  if (SPOT_STOCK[k]) return SPOT_STOCK[k];
   if (GAME_ART[k]) return `/art/${GAME_ART[k]}.webp`;
   const x = typeof emoOf === 'function' ? emoOf(e) : null; return x ? x.src : '';
 };
