@@ -258,8 +258,10 @@
           "q": "Paradise Valley Springs, Paradise Valley Road, Rotorua",
           "ok": "2026-11",
           "src": "https://www.paradisev.co.nz/"
-        }
-      ]
+        },
+      {"name":{"en":"Velocity Valley","th":"เวโลซิตี้วัลเลย์"},"kind":"ride","area":{"en":"Ngongotaha","th":"งองโกตาฮา"},"what":{"en":"New Zealand's adventure park with rides from a low to a high adrenaline buzz, including a wind tunnel and a pedal-powered shweeb.","th":"สวนผจญภัยของนิวซีแลนด์ มีเครื่องเล่นตั้งแต่ความตื่นเต้นระดับต่ำถึงสูง รวมอุโมงค์ลม และชเวปที่ปั่นด้วยแรงเท้า"},"why":{"en":"All the fun of your favourite playground swing, times a million.","th":"ความสนุกของสนามเด็กเล่นที่ชอบ คูณด้วยล้านเท่า"},"ages":[0,1,2,2],"hrs":2,"io":"out","pram":"part","price":{"en":"Check the price","th":"เช็กราคาก่อนไป"},"book":"rec","q":"Velocity Valley, 1335 Paradise Valley Road, Ngongotaha, Rotorua","ok":"2026-11","src":"https://www.velocityvalley.co.nz/"},
+      {"name":{"en":"Waimangu Volcanic Valley","th":"หุบเขาภูเขาไฟไวมังกู"},"kind":"nature","area":{"en":"Lake Rotomahana","th":"ทะเลสาบโรโตมาฮานา"},"what":{"en":"A walk through a geothermal valley, with an optional guided 45 minute boat cruise on Lake Rotomahana.","th":"เดินผ่านหุบเขาพลังความร้อนใต้พิภพ และมีล่องเรือนำเที่ยว 45 นาทีบนทะเลสาบโรโตมาฮานา (ไม่บังคับ)"},"why":{"en":"A visit to Waimangu Volcanic Valley is a great family activity in Rotorua, especially for kids who enjoy being outside and discovering something a little different.","th":"เป็นกิจกรรมครอบครัวที่ดีในโรโตรัว โดยเฉพาะกับเด็กที่ชอบอยู่กลางแจ้งและค้นพบสิ่งใหม่"},"ages":[1,2,2,2],"hrs":3,"io":"out","pram":"part","price":{"en":"Check the price","th":"เช็กราคาก่อนไป"},"book":"rec","q":"Waimangu Volcanic Valley, Rotorua","ok":"2026-11","src":"https://www.waimangu.co.nz/about/blog/post/things-to-do-with-kids-in-rotorua-school-holiday-activities/"}
+    ]
     }
   ]
 }
