@@ -428,7 +428,7 @@ function mapCard(t, kid, day, at) {
 <button class="mcstep" data-a="mapstep" data-v="1" aria-label="${L('ที่ถัดไป', 'The next stop')}"${pos >= mm.seq.length - 1 ? ' disabled' : ''}>›</button></div>
 ${sec('✅', 'เราไปมาแล้ว', 'We really went', wentDay.length ? `<div class="mcwent">${wentDay.map((x) => { const nm = T(x.name) || x.key; return `<button data-a="mapsay" data-say="${esc(nm)}"><span aria-hidden="true">${x.kind === 'food' ? '🍽️' : '📍'}</span><b>${esc(nm)}</b></button>`; }).join('')}</div>` : '')}
 ${sec('🧭', 'วันนั้นเราทำอะไร', 'What we do that day', heads.length ? `<div class="mcdo">${heads.map((r) => { const h = T(r.h), e = (h.match(/^[\p{Extended_Pictographic}️‍]+/u) || ['✨'])[0]; return `<button data-a="mapsay" data-say="${esc(noEmoji(h))}"><span aria-hidden="true">${esc(e)}</span><b>${esc(noEmoji(h))}</b></button>`; }).join('')}</div>` : '')}
-${sec('🔍', 'หาให้เจอนะ', 'Can you find them?', spots.length ? `<div class="mcfind">${spots.map((x) => `<button class="${ticked(t, x.key, kid) ? 'got' : ''}" data-a="mapsay" data-say="${esc(T(x))}"><span aria-hidden="true">${esc(x.e)}</span><b>${esc(T(x))}</b>${ticked(t, x.key, kid) ? '<i aria-hidden="true">⭐</i>' : ''}</button>`).join('')}</div>` : '')}
+${sec('🔍', 'หาให้เจอนะ', 'Can you find them?', spots.length ? `<div class="mcfind">${spots.map((x) => `<button class="${ticked(t, x.key, kid) ? 'got' : ''}" data-a="mapsay" data-say="${esc(T(x))}"><span aria-hidden="true">${spotPic(x.e)}</span><b>${esc(T(x))}</b>${ticked(t, x.key, kid) ? '<i aria-hidden="true">⭐</i>' : ''}</button>`).join('')}</div>` : '')}
 ${fact ? `<button class="mcfact" data-a="mapsay" data-say="${esc(fact)}"><span aria-hidden="true">💡</span><p>${esc(fact)}</p></button>` : ''}
 ${sec('📸', 'รูปของเราวันนั้น', 'Our photos that day', photos.length ? `<button class="mcphotos" data-a="mapgo" data-d="${i}" data-v="#/kid/${esc(kid)}/photos" aria-label="${L('ดูรูป', 'Photos')}">${photos.map((m) => `<img src="${esc(imgT(m))}" alt="">`).join('')}</button>` : '')}
 ${others.length ? `<p class="mcalso">${L(`วันเดียวกันเราไป${esc(others.join(' และ '))}ด้วย`, `The same day we also go to ${esc(others.join(' and '))}`)}</p>` : ''}
@@ -525,6 +525,10 @@ const dishArt = (name) => { const s = String(name || ''); if (!s) return ''; con
 const foodArt = (e, art, name) => { if (!art && name) art = dishArt(name); if (/^food\/[a-z0-9-]+$/.test(art || '')) return `/art/${art}.webp`; const a = GAME_ART[String(e || '').replace(/\uFE0F/g, '')]; return a && (a.startsWith('food/') || FOOD_GAME.has(a)) ? `/art/${a}.webp` : ''; };
 const gFood = (e, art, name) => { const a = foodArt(e, art, name); return a ? `<img class="ge" src="${a}" alt="">` : esc(e || ''); };
 const gE = (e) => { const a = GAME_ART[String(e).replace(/\uFE0F/g, '')]; return a ? `<img class="ge" src="/art/${a}.webp" alt="">` : esc(e); };   // the lists write some emoji with a variation selector
+// the kids' things to find (owner, Nov 2026: an emoji looks different on every phone): the games' picture, else the family's emoji
+// library (the bundled set and the country packs), else the emoji itself — the data keeps the emoji
+const spotSrc = (e) => { const k = String(e || '').replace(/\uFE0F/g, ''); if (!k) return ''; if (GAME_ART[k]) return `/art/${GAME_ART[k]}.webp`; const x = typeof emoOf === 'function' ? emoOf(e) : null; return x ? x.src : ''; };
+const spotPic = (e) => { const src = spotSrc(e); return src ? `<img class="ge" src="${esc(src)}" alt="" draggable="false">` : esc(e); };
 const kuImg = (name, cls) => `<img class="ku${cls ? ' ' + cls : ''}" src="/art/kidui/${name}.webp" alt="">`;
 const petImg = (e) => (PET_ART[e] ? kuImg('pet-' + PET_ART[e][0]) : esc(e));
 const petName = (e) => (PET_ART[e] ? L(PET_ART[e][1], PET_ART[e][2]) : L('เพื่อนใหม่', 'A new friend'));
@@ -595,7 +599,7 @@ function stickerSet(t, kid) {
   const pp = t.passport || {}, out = [], seen = new Set();
   const add = (k, e, img, got) => { if (seen.has(k) || (!e && !img)) return; seen.add(k); out.push({ k, e, img, got: !!got }); };
   t.days.forEach((_, i) => add(`stamp.d${i}`, '', dayArt(t, i), dayStamped(t, i)));
-  t.days.forEach((_, i) => daySpots(t, i, kid).forEach((s) => add(s.key, s.e, '', ticked(t, s.key, kid))));
+  t.days.forEach((_, i) => daySpots(t, i, kid).forEach((s) => add(s.key, s.e, spotSrc(s.e), ticked(t, s.key, kid))));
   t.days.forEach((_, i) => add(`gift.d${i}`, giftE(i), giftArt(i), ticked(t, `gift.d${i}`, kid)));
   { const mm = mapModel(t); if (mm) { const real = mapReal(t, mm); mm.m.stops.forEach((st) => { if (real.has(st.k)) add(`been.${st.k}`, st.e || '📍', st.art || '', true); }); } }   // a place we really went (the parents checked it in)
   t.days.forEach((_, i) => add(questKey(i, 'chest'), QUEST_GEM[i % QUEST_GEM.length], qArt(gemArt(i)), ticked(t, questKey(i, 'chest'), kid)));   // a town's treasure on the adventure map   // the morning surprise box's sticker
@@ -839,12 +843,12 @@ ${mine.length ? `<div class="drawn">${mine.map((m) => isEditor() ? `<button type
   } else if (view === 'spot') {
     const spots = daySpots(t, i, kid), lit = littleOf(t, kid);
     body = `<div class="kidguide">${guideImg(1)}<p>${lit ? L(`${name} ชี้ให้ดูหน่อย!`, `${name}, can you point to it?`) : L(`${T((g[1] || {}).name)}: หาให้เจอนะ!`, `${T((g[1] || {}).name)}: can you find them?`)}</p></div>
-<div class="kidspots${lit ? ' little' : ''}">${spots.map((s) => { const on = ticked(t, s.key, kid); return `<button class="${on ? 'on' : ''}" data-a="kidspot" data-t="${esc(t.id)}" data-d="${i}" data-k="${esc(kid)}" data-v="${esc(s.key)}" data-say="${esc(T(s))}" aria-pressed="${!!on}"><span>${esc(s.e)}</span><b>${esc(T(s))}</b>${on ? '<i>✓</i>' : ''}</button>`; }).join('')}</div>`;
+<div class="kidspots${lit ? ' little' : ''}">${spots.map((s) => { const on = ticked(t, s.key, kid); return `<button class="${on ? 'on' : ''}" data-a="kidspot" data-t="${esc(t.id)}" data-d="${i}" data-k="${esc(kid)}" data-v="${esc(s.key)}" data-say="${esc(T(s))}" aria-pressed="${!!on}"><span>${spotPic(s.e)}</span><b>${esc(T(s))}</b>${on ? '<i>✓</i>' : ''}</button>`; }).join('')}</div>`;
   } else if (view === 'gift' && !pre) {
     const got = ticked(t, `gift.d${i}`, kid), sp = daySpots(t, i, kid), fact = (pd.facts || [])[0], lit = littleOf(t, kid);
     body = got ? `<div class="giftopen"><div class="gstk" style="--gt:${GIFT_TINT[i % GIFT_TINT.length]}"><span class="gray" aria-hidden="true"></span>${giftArt(i) ? `<img src="${giftArt(i)}" alt="" draggable="false">` : esc(giftE(i))}</div><p class="gnew">${L('ได้สติกเกอร์ใหม่!', 'A new sticker!')} ⭐</p>
 <div class="kidguide">${guideImg(0)}<p>${esc(T(pd.title) || T(d.title))}${fact ? ` — ${esc(T(fact))}` : ''}</p></div>
-${sp.length ? `<div class="gmiss"><b>${lit ? L('วันนี้ชี้ให้ดูนะ', 'Point to these today') : L('วันนี้หาให้เจอนะ', 'Find these today')}</b><div>${sp.map((x) => `<span title="${esc(T(x))}">${esc(x.e)}</span>`).join('')}</div></div>` : ''}
+${sp.length ? `<div class="gmiss"><b>${lit ? L('วันนี้ชี้ให้ดูนะ', 'Point to these today') : L('วันนี้หาให้เจอนะ', 'Find these today')}</b><div>${sp.map((x) => `<span title="${esc(T(x))}">${spotPic(x.e)}</span>`).join('')}</div></div>` : ''}
 <button class="kidbig" data-a="kidnav" data-v="#/kid/${esc(kid)}/spot">${lit ? '👉 ' + L('ไปชี้กัน!', 'Let’s point!') : '🔍 ' + L('ไปหากัน!', 'Let’s find them!')}</button></div>`
       : `<div class="kidguide">${guideImg(0)}<p>${L(`${esc(name)} แตะกล่องเลย!`, `${esc(name)}, tap the box!`)}</p></div>
 <button class="giftbox" data-a="kidgift" data-t="${esc(t.id)}" data-d="${i}" data-k="${esc(kid)}" aria-label="${L('เปิดกล่อง', 'Open the box')}"><span>${kuImg('surprise')}</span></button>`;

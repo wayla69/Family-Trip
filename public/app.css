@@ -747,7 +747,7 @@ img.guide{width:54px;height:54px;flex:none}
 .ticks.food{grid-template-columns:repeat(auto-fill,minmax(min(100%,230px),1fr))}
 .tick{display:flex;align-items:center;gap:7px;border:1px solid var(--rule);background:var(--paper);border-radius:999px;padding:6px 10px 6px 6px;text-align:left;min-height:42px;font-size:13px;line-height:1.2}
 .tick i{width:24px;height:24px;border-radius:50%;border:2px solid var(--accent);display:grid;place-items:center;font-style:normal;font-weight:700;color:#fff;flex:none;font-size:13px}
-.tick .e{font-size:20px;flex:none}.tick .t{flex:1;min-width:0}.tick .t small{display:block;color:var(--muted);font-size:11px}
+.tick .e{font-size:20px;flex:none}.tick .e .ge{width:28px;height:28px}.tick .t{flex:1;min-width:0}.tick .t small{display:block;color:var(--muted);font-size:11px}
 .tick.on{border-color:var(--accent);background:color-mix(in srgb,var(--accent) 8%,var(--paper))}
 .tick.on i{background:var(--accent)}
 .tick:disabled{cursor:default;color:inherit;opacity:1}
@@ -4071,3 +4071,15 @@ details.more>summary{border-radius:16px}
 .imppl li b{font-size:14px;line-height:1.25}
 .imppl li small{font-size:12.5px;color:var(--muted);line-height:1.3}
 @media (max-width:420px){.imppp{grid-template-columns:1fr}.imppc{aspect-ratio:auto;flex-direction:row;justify-content:flex-start;min-height:72px;text-align:left}.imppc b{white-space:nowrap;flex:0 0 auto}.imppc b br{display:none}}
+
+/* the new-book sheet in the app's card look (owner, Nov 2026) */
+.ntsheet{display:grid;gap:12px}.ntsheet .ntt{margin:0;font-size:20px}
+.ntsheet .pcard{margin:0}
+.ntplan{display:grid;grid-template-columns:auto 1fr auto;align-items:center;gap:12px;padding:12px 14px;border-radius:18px;text-decoration:none;color:var(--ink);min-height:56px}
+.ntplan .pcpic{width:44px;height:44px;border-radius:50%;background:#fff;display:grid;place-items:center;box-shadow:0 0 0 3px color-mix(in srgb,var(--g1) 45%,#fff)}.ntplan .pcpic img{width:34px;height:34px;object-fit:contain}
+.ntplan b{display:block}.ntplan small{display:block;color:var(--muted);line-height:1.4}.ntplan i{font-style:normal;font-size:22px;color:color-mix(in srgb,var(--g1) 60%,var(--ink))}
+.ntmore{border-radius:16px;background:var(--card);box-shadow:inset 0 0 0 1px var(--line)}.ntmore>summary{display:flex;align-items:center;justify-content:space-between;gap:8px;min-height:48px;padding:0 14px;cursor:pointer;list-style:none;font-weight:600}.ntmore>summary::-webkit-details-marker{display:none}
+.ntmore>.pform,.ntmore>label{padding:0 14px 14px;display:grid}.ntmore[open]>summary .chv{transform:rotate(180deg)}
+.ntcol{height:48px;padding:4px;min-width:64px}
+.ntsheet #nterr{color:color-mix(in srgb,var(--accent2) 60%,var(--ink));min-height:0}.ntsheet #nterr:empty{display:none}
+.ntsheet .ntgo{padding-top:4px}

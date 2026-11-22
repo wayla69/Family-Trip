@@ -2900,7 +2900,7 @@ ${warns.length || todo ? `<details class="impwarn"><summary>⚠️ ${L('ข้�
   const form = running ? '' : `<div class="impcard">
 <label class="impdrop ${imp.file ? 'has' : ''} ${!on ? 'off' : ''}"><input id="impfile" type="file" accept="application/pdf,.pdf" ${!on ? 'disabled' : ''}>
 <span class="e">${imp.file ? '📘' : '📄'}</span><b>${imp.file ? esc(imp.file.name) : L('แตะเพื่อเลือกไฟล์ PDF', 'Tap to choose the PDF')}</b><small>${imp.file ? `${(imp.file.size / 1048576).toFixed(1)} MB · ${L('แตะอีกครั้งเพื่อเปลี่ยน', 'tap again to change')}` : L('ไม่เกิน 25 MB', 'Up to 25 MB')}</small></label>
-<label class="label impslug">${L('ชื่อสั้นของเล่มในลิงก์ (ไม่ต้องใส่ก็ได้ แอปตั้งให้)', 'Short name for the link (optional — the app makes one)')} <small>${L('ถ้าใส่ ใช้อักษรอังกฤษ ตัวเลข และ -', 'if you type one: letters, digits and -')}</small><input id="impslug" class="field" maxlength="60" value="${esc(imp.slug || '')}" placeholder="tokyo-2027"></label>
+<details class="ntmore impmore"><summary>${L('ตั้งค่าเพิ่มเติม (ไม่ต้องก็ได้)', 'More settings (optional)')}${ic('chev', 'chv')}</summary><label class="label impslug">${L('ชื่อสั้นของเล่มในลิงก์ — แอปตั้งให้จากชื่อไฟล์', 'Short name for the link — the app makes one from the file name')} <small>${L('ถ้าใส่ ใช้อักษรอังกฤษ ตัวเลข และ -', 'if you type one: letters, digits and -')}</small><input id="impslug" class="field" maxlength="60" value="${esc(imp.slug || '')}" placeholder="tokyo-2027"></label></details>
 <button class="btn impgo" data-a="impstart" ${!on ? 'disabled' : ''}>✨ ${L('ให้ผู้ช่วยเขียนเล่ม', 'Ask the helper to write the book')}</button>
 ${imp.err ? `<div class="err" style="color:var(--accent2)">${esc(imp.err)}</div>` : ''}
 </div>`;
@@ -3929,7 +3929,7 @@ let ppW = false, ppEditOn = false;
 function tickBtn(t, kid, key, day, label, emoji, extra) {
   const on = ticked(t, key, kid), ed = ppW;
   return `<button class="tick${on ? ' on' : ''}" data-a="tick" data-t="${esc(t.id)}" data-k="${esc(kid)}" data-v="${esc(key)}" data-d="${day === null ? '' : day}" aria-pressed="${!!on}"${ed ? '' : ' disabled'}>
-<i>${on ? '✓' : ''}</i>${emoji ? `<span class="e">${esc(emoji)}</span>` : ''}<span class="t">${esc(label)}${extra || ''}</span></button>`;
+<i>${on ? '✓' : ''}</i>${emoji ? `<span class="e">${typeof spotPic === 'function' ? spotPic(emoji) : esc(emoji)}</span>` : ''}<span class="t">${esc(label)}${extra || ''}</span></button>`;
 }
 function yumBtns(t, kid, key) {
   const cur = ticked(t, key, kid), ed = ppW;
