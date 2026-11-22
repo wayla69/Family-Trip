@@ -9,6 +9,21 @@ function putEntry(t, row, id) {
   if (TEXTY.includes(body.kind) && cur && cur.v) body.base = cur.v;   // the version this phone edits from: a change from the other parent's phone since is told, not written over
   return enqueue({ method: 'PUT', url: '/api/b/entries/' + encodeURIComponent(id), body, local: { coll: 'entries', id, row: { ...body, tr, src, created_by: S.me.name, mine: true } } });
 }
+/* a locked tick or mood in the passport (owner, Nov 2026: "ไม่ให้ติดตรงไหน"): it used to be a disabled button that did nothing at all.
+   Now a tap says what to do — a child in kid mode is sent to today's things to find (or told a grown-up ticks it), a relative is told
+   the parents tick, a parent is shown the ✏️ button that unlocks the page */
+function ppLocked(b) {
+  const t = trip(b.dataset.t), kid = b.dataset.k, key = b.dataset.v || '', m = /^(?:spot|little)\.d(\d+)\./.exec(key);
+  b.classList.remove('nope'); void b.offsetWidth; b.classList.add('nope');
+  if (route().parts[0] === 'kid') {
+    if (t && m && typeof kidDayOf === 'function' && +m[1] === kidDayOf(t)) { const say = L('ไปหาของของวันนี้กัน!', 'Let’s go and find today’s things!'); toast(say); if (typeof sayUi === 'function') sayUi(say); nav(`#/kid/${kid}/spot`); return; }
+    const say = L('อันนี้ให้พ่อแม่ช่วยติ๊กนะ', 'Ask a grown-up to tick this one'); toast(say); if (typeof sayUi === 'function') sayUi(say); return;
+  }
+  if (!isEditor()) { toast(L('พ่อแม่เป็นคนติ๊ก ญาติดูได้อย่างเดียวนะ', 'The parents tick these — relatives can look')); return; }
+  const ed = document.querySelector('[data-a="ppedit"]');
+  toast(L('แตะ ✏️ แก้ไข ด้านบนก่อน แล้วค่อยติ๊ก', 'Tap ✏️ Edit at the top first, then tick'));
+  if (ed) { ed.scrollIntoView({ block: 'center', behavior: 'smooth' }); ed.classList.remove('golit'); void ed.offsetWidth; ed.classList.add('golit'); }
+}
 const delEntry = (id) => enqueue({ method: 'DELETE', url: '/api/b/entries/' + encodeURIComponent(id), local: { coll: 'entries', id, del: true } });
 let spendCat = 'food', spendCur = '';   // the spend box remembers the last category / money while recording
 
@@ -500,6 +515,7 @@ const A = {
   },
   delentry(b) { if (armed(b)) delEntry(b.dataset.v); },
   mood(b) {
+    if (b.getAttribute('aria-disabled') === 'true') return ppLocked(b);
     const t = trip(b.dataset.t), d = +b.dataset.d, k = b.dataset.k, id = `${t.id}.mood.d${d}.${k}`;
     const cur = S.entries.find((e) => e.id === id);
     if (cur && cur.mood === b.dataset.v) delEntry(id);   // tap again = clear
@@ -526,6 +542,7 @@ const A = {
   },
   // passport: a mission spot / animal / explorer box (tap again to untick); food has YUM / YUCK
   tick(b) {
+    if (b.getAttribute('aria-disabled') === 'true') return ppLocked(b);
     const t = trip(b.dataset.t), k = b.dataset.k, key = b.dataset.v, yum = b.dataset.yum || '', id = `${t.id}.tick.${key}.${k}`;
     const cur = S.entries.find((e) => e.id === id), before = certEarned(t, k);
     if (cur && cur.text === yum) { delEntry(id); return; }

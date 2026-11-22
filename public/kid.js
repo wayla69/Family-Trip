@@ -404,7 +404,7 @@ function mapHtml(t, day, kids, at) {
 <text class="sealbl" x="${MAP_W - 14}" y="${MAP_H - 12}">${esc(T(mm.m.sea))}</text>
 <g class="compass" transform="translate(30,40)"><circle r="15"/><path d="M0,-12 L4,0 L0,12 L-4,0Z"/><text y="-18">N</text></g>
 ${mm.hops.map((h, j) => `<path class="hop${j < pos ? ' done' : ''}" id="hop${j}" d="${h.d}"/>`).join('')}
-${mm.m.stops.filter((s) => mm.seq.some((v) => v.k === s.k)).map((s) => `<g class="pin${been.has(s.k) ? ' on' : ''}${s.k === here ? ' here' : ''}${real.has(s.k) ? ' real' : ''}" data-a="mappin" data-t="${esc(t.id)}" data-v="${esc(s.k)}" data-say="${esc(T(s))}" transform="translate(${s.x * MAP_W / 100},${s.y * MAP_H / 100})" role="button" aria-label="${esc(T(s))}"><circle r="17"/>${s.art ? `<image class="ea" href="${esc(s.art)}" x="-15" y="-15" width="30" height="30"/>` : `<text class="e" y="6">${esc(s.e)}</text>`}${real.has(s.k) ? '<g class="flag" aria-hidden="true"><circle cx="13" cy="-13" r="8"/><text x="13" y="-9.5">✓</text></g>' : ''}</g>`).join('')}
+${mm.m.stops.filter((s) => mm.seq.some((v) => v.k === s.k)).map((s) => `<g class="pin${been.has(s.k) ? ' on' : ''}${s.k === here ? ' here' : ''}${real.has(s.k) ? ' real' : ''}" data-a="mappin" data-t="${esc(t.id)}" data-v="${esc(s.k)}" data-say="${esc(T(s))}" transform="translate(${s.x * MAP_W / 100},${s.y * MAP_H / 100})" role="button" aria-label="${esc(T(s))}"><circle class="hit" r="24"/><circle r="17"/>${s.art ? `<image class="ea" href="${esc(s.art)}" x="-15" y="-15" width="30" height="30"/>` : `<text class="e" y="6">${esc(s.e)}</text>`}${real.has(s.k) ? '<g class="flag" aria-hidden="true"><circle cx="13" cy="-13" r="8"/><text x="13" y="-9.5">✓</text></g>' : ''}</g>`).join('')}
 </svg>
 <svg class="lbls" viewBox="0 0 ${MAP_W} ${MAP_H}" aria-hidden="true">${mm.m.stops.filter((s) => mm.seq.some((v) => v.k === s.k)).map((s) => `<text class="lbl" x="${s.x * MAP_W / 100}" y="${s.y * MAP_H / 100 + 31}">${esc(T(s))}</text>`).join('')}</svg>
 <div class="walkers" style="left:${s0.x}%;top:${s0.y}%" aria-hidden="true">${kids.filter((k) => kidArt(k)).map((k) => `<img class="${esc(k)} ${esc(kidBase(k))}" src="${kidArt(k, true)}" alt="">`).join('')}</div></div>`;
@@ -1507,13 +1507,19 @@ function questWipe(t, kid) {
 }
 const questStarted = (t, kid) => t.days.some((_, i) => [0, 1, 2, 3, 'x', 'chest'].some((k) => questGot(t, kid, i, k)));
 // grown-ups start the road again from the map itself: press and hold 1.5 s (as with the star jar) — a child's tap does nothing
-let qresT = 0;
+let qresT = 0, qresAt = 0;
 document.addEventListener('pointerdown', (e) => {
   const b = e.target.closest && e.target.closest('#qreset'); if (!b || !isEditor()) return;
-  b.classList.add('holding');
-  qresT = setTimeout(() => { const t = trip(b.dataset.t); if (t) { beep('pop'); questWipe(t, b.dataset.k); } }, 1500);
+  b.classList.add('holding'); qresAt = Date.now();
+  try { b.setPointerCapture(e.pointerId); } catch (_) { /* an older browser */ }
+  qresT = setTimeout(() => { qresT = 0; const t = trip(b.dataset.t); if (t) { beep('pop'); questWipe(t, b.dataset.k); } }, 1500);
 });
-['pointerup', 'pointercancel', 'pointerleave'].forEach((ev) => document.addEventListener(ev, () => { clearTimeout(qresT); const b = $('#qreset'); if (b) b.classList.remove('holding'); }, true));
+['pointerup', 'pointercancel', 'pointerleave'].forEach((ev) => document.addEventListener(ev, (e) => {
+  const b = $('#qreset.holding'); if (!b || (ev === 'pointerleave' && e.target !== b)) return;
+  clearTimeout(qresT); b.classList.remove('holding');
+  if (qresT && ev === 'pointerup' && Date.now() - qresAt < 1500) toast(L('กดค้างไว้ให้นับถึงสอง เส้นทางจะเริ่มใหม่', 'Press and hold — the road starts again'));
+  qresT = 0;
+}, true));
 Object.assign(A, {
   giftreset(b) {   // every surprise box of the book closed again, for every child (the stickers they gave go with them; stars stay)
     const t = trip(b.dataset.t); if (!t || !isEditor()) return;
@@ -2320,10 +2326,18 @@ document.addEventListener('pointerdown', (e) => {
 }, true));
 document.addEventListener('contextmenu', (e) => { if (e.target.closest && e.target.closest('.kidwrap')) e.preventDefault(); });   // no long-press menu in kid mode
 // grown-ups leave kid mode by pressing and holding the lock
-let holdT = 0;
+// (owner, Nov 2026, "ไม่ให้ติดตรงไหน"): like the levels' hold, it keeps the finger (pointer capture — a Samsung's long press otherwise
+// cancels it) and a tap let go too soon says to press and hold, so a parent never thinks the lock is broken
+let holdT = 0, holdAt = 0;
 document.addEventListener('pointerdown', (e) => {
   const lock = e.target.closest && e.target.closest('#kidexit'); if (!lock) return;
-  lock.classList.add('holding');
-  holdT = setTimeout(() => { const k = ls('kidmode'); ls('kidmode', null); beep('pop'); nav(k && k !== 'pick' ? `#/passport/${k}` : '#/'); }, 1200);
+  lock.classList.add('holding'); holdAt = Date.now();
+  try { lock.setPointerCapture(e.pointerId); } catch (_) { /* an older browser */ }
+  holdT = setTimeout(() => { holdT = 0; const k = ls('kidmode'); ls('kidmode', null); beep('pop'); nav(k && k !== 'pick' ? `#/passport/${k}` : '#/'); }, 1200);
 });
-['pointerup', 'pointercancel', 'pointerleave'].forEach((ev) => document.addEventListener(ev, () => { clearTimeout(holdT); const l = $('#kidexit'); if (l) l.classList.remove('holding'); }, true));
+['pointerup', 'pointercancel', 'pointerleave'].forEach((ev) => document.addEventListener(ev, (e) => {
+  const l = $('#kidexit.holding'); if (!l || (ev === 'pointerleave' && e.target !== l)) return;
+  clearTimeout(holdT); l.classList.remove('holding');
+  if (holdT && ev === 'pointerup' && Date.now() - holdAt < 1200) toast(L('ผู้ใหญ่: กดแม่กุญแจค้างไว้สักครู่เพื่อออก', 'Grown-ups: press and hold the lock to leave'));
+  holdT = 0;
+}, true));
