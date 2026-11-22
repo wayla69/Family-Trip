@@ -988,7 +988,7 @@ function viewHub(t) {
   const pick = isEditor() ? `<section class="tilepick"><div class="part pickh">${L('สีของเมนู', 'Menu colours')}</div><div class="tpk" role="group" aria-label="${L('สีของเมนู', 'Menu colours')}">${[['pastel', 'สีสัน', 'Colourful'], ['accent', 'สีเล่ม', 'Book colour'], ['plain', 'เรียบ', 'Plain']].map(([k, th, en]) => `<button type="button" class="tpo tpo-${k}" data-a="tiles" data-v="${k}" aria-pressed="${tl === ` tl-${k}`}"><span class="sw" aria-hidden="true"><i></i><i></i><i></i></span><b>${L(th, en)}</b><span class="ck" aria-hidden="true">✓</span></button>`).join('')}</div></section>` : '';
   return `<section class="hubhead">${stampHtml(t, true)}<div class="grow"><div class="kicker">${esc(t.theme.kicker || '')}</div><h1>${esc(T(t.title).split(' · ')[0])}</h1><p class="line">${esc(fmtRange(t))}${ages ? ' · ' + ages : ''}</p></div></section>
 <a class="hubsearch" href="#/t/${esc(t.id)}/search">${ic('search')}<span><b>${L('ค้นหาทั้งเล่ม', 'Search the whole book')}</b><small>${L('หมอ · ยา · แท็กซี่ · ห้องน้ำ · เด็กหลง', 'doctor · pharmacy · taxi · toilet · lost child')}</small></span></a>
-${hero ? `<div class="hubgrid lead${tl}">${hero}</div>` : ''}${offWarn ? offRow : ''}${groups}<div class="hubrows">${offWarn ? '' : offRow}${shelfRow}</div>${typeof questLine === 'function' ? questLine(t) : ''}${pick}${artCard(t)}${isEditor() && t.source && t.source !== 'seed' ? `<div class="row end tripdel"><button type="button" class="mini" data-a="tripdel" data-t="${esc(t.id)}">${L('ลบเล่มนี้', 'Delete this book')}</button></div>` : ''}`;
+${hero ? `<div class="hubgrid lead${tl}">${hero}</div>` : ''}${offWarn ? offRow : ''}${groups}<div class="hubrows">${offWarn ? '' : offRow}${shelfRow}</div>${typeof questLine === 'function' ? questLine(t) + giftLine(t) : ''}${pick}${artCard(t)}${isEditor() && t.source && t.source !== 'seed' ? `<div class="row end tripdel"><button type="button" class="mini" data-a="tripdel" data-t="${esc(t.id)}">${L('ลบเล่มนี้', 'Delete this book')}</button></div>` : ''}`;
 }
 /* ---------- search the whole book ----------
    One index per book, both languages (a Thai phone finds "taxi", an English one finds "แท็กซี่"): the pocket-guide sections (stays, emergency,
@@ -2900,7 +2900,7 @@ ${warns.length || todo ? `<details class="impwarn"><summary>⚠️ ${L('ข้�
   const form = running ? '' : `<div class="impcard">
 <label class="impdrop ${imp.file ? 'has' : ''} ${!on ? 'off' : ''}"><input id="impfile" type="file" accept="application/pdf,.pdf" ${!on ? 'disabled' : ''}>
 <span class="e">${imp.file ? '📘' : '📄'}</span><b>${imp.file ? esc(imp.file.name) : L('แตะเพื่อเลือกไฟล์ PDF', 'Tap to choose the PDF')}</b><small>${imp.file ? `${(imp.file.size / 1048576).toFixed(1)} MB · ${L('แตะอีกครั้งเพื่อเปลี่ยน', 'tap again to change')}` : L('ไม่เกิน 25 MB', 'Up to 25 MB')}</small></label>
-<label class="label impslug">${L('ชื่อสั้นของเล่มในลิงก์ (ไม่ต้องใส่ก็ได้ แอปตั้งให้)', 'Short name for the link (optional — the app makes one)')} <small>${L('ถ้าใส่ ใช้อักษรอังกฤษ ตัวเลข และ -', 'if you type one: letters, digits and -')}</small><input id="impslug" class="field" maxlength="60" value="${esc(imp.slug || '')}" placeholder="tokyo-2027"></label>
+<details class="ntmore impmore"><summary>${L('ตั้งค่าเพิ่มเติม (ไม่ต้องก็ได้)', 'More settings (optional)')}${ic('chev', 'chv')}</summary><label class="label impslug">${L('ชื่อสั้นของเล่มในลิงก์ — แอปตั้งให้จากชื่อไฟล์', 'Short name for the link — the app makes one from the file name')} <small>${L('ถ้าใส่ ใช้อักษรอังกฤษ ตัวเลข และ -', 'if you type one: letters, digits and -')}</small><input id="impslug" class="field" maxlength="60" value="${esc(imp.slug || '')}" placeholder="tokyo-2027"></label></details>
 <button class="btn impgo" data-a="impstart" ${!on ? 'disabled' : ''}>✨ ${L('ให้ผู้ช่วยเขียนเล่ม', 'Ask the helper to write the book')}</button>
 ${imp.err ? `<div class="err" style="color:var(--accent2)">${esc(imp.err)}</div>` : ''}
 </div>`;
@@ -3929,7 +3929,7 @@ let ppW = false, ppEditOn = false;
 function tickBtn(t, kid, key, day, label, emoji, extra) {
   const on = ticked(t, key, kid), ed = ppW;
   return `<button class="tick${on ? ' on' : ''}" data-a="tick" data-t="${esc(t.id)}" data-k="${esc(kid)}" data-v="${esc(key)}" data-d="${day === null ? '' : day}" aria-pressed="${!!on}"${ed ? '' : ' disabled'}>
-<i>${on ? '✓' : ''}</i>${emoji ? `<span class="e">${esc(emoji)}</span>` : ''}<span class="t">${esc(label)}${extra || ''}</span></button>`;
+<i>${on ? '✓' : ''}</i>${emoji ? `<span class="e">${typeof spotPic === 'function' ? spotPic(emoji) : esc(emoji)}</span>` : ''}<span class="t">${esc(label)}${extra || ''}</span></button>`;
 }
 function yumBtns(t, kid, key) {
   const cur = ticked(t, key, kid), ed = ppW;

@@ -747,7 +747,7 @@ img.guide{width:54px;height:54px;flex:none}
 .ticks.food{grid-template-columns:repeat(auto-fill,minmax(min(100%,230px),1fr))}
 .tick{display:flex;align-items:center;gap:7px;border:1px solid var(--rule);background:var(--paper);border-radius:999px;padding:6px 10px 6px 6px;text-align:left;min-height:42px;font-size:13px;line-height:1.2}
 .tick i{width:24px;height:24px;border-radius:50%;border:2px solid var(--accent);display:grid;place-items:center;font-style:normal;font-weight:700;color:#fff;flex:none;font-size:13px}
-.tick .e{font-size:20px;flex:none}.tick .t{flex:1;min-width:0}.tick .t small{display:block;color:var(--muted);font-size:11px}
+.tick .e{font-size:20px;flex:none}.tick .e .ge{width:28px;height:28px}.tick .t{flex:1;min-width:0}.tick .t small{display:block;color:var(--muted);font-size:11px}
 .tick.on{border-color:var(--accent);background:color-mix(in srgb,var(--accent) 8%,var(--paper))}
 .tick.on i{background:var(--accent)}
 .tick:disabled{cursor:default;color:inherit;opacity:1}
@@ -943,9 +943,12 @@ body.kidmode{padding-bottom:0;background:var(--tint,#F3F6FA)}
 .kidgift b,.kidnight b{font-size:22px;flex:1}button.kidnight b,button.kidnight small{color:#fff}.kidgift small,.kidnight small{font-size:15px;opacity:.8}.kidgift .box,.kidnight .moon{font-size:46px;line-height:1}
 .kidgift .box{animation:wiggle 1.4s ease-in-out infinite}@keyframes wiggle{0%,60%,100%{transform:rotate(0)}70%{transform:rotate(-12deg)}80%{transform:rotate(10deg)}90%{transform:rotate(-6deg)}}
 .giftbox{display:block;margin:30px auto;border:0;background:none;font-size:170px;line-height:1;cursor:pointer;animation:wiggle 1.4s ease-in-out infinite}.giftbox.pop{animation:gpop .6s ease forwards}@keyframes gpop{40%{transform:scale(1.25) rotate(8deg)}100%{transform:scale(0);opacity:0}}
-.giftopen{text-align:center}.gstk{font-size:150px;line-height:1.1;animation:gin .7s cubic-bezier(.2,1.6,.4,1)}@keyframes gin{0%{transform:scale(0) rotate(-30deg)}100%{transform:scale(1)}}
+.giftopen{text-align:center}.gstk{position:relative;display:grid;place-items:center;width:min(240px,64vw);aspect-ratio:1;margin:8px auto 4px;border-radius:32px;background:radial-gradient(circle at 50% 42%,#fff 0 34%,var(--gt,#FFE08A) 70%);box-shadow:0 0 0 6px #fff,0 0 0 9px color-mix(in srgb,var(--gt,#FFE08A) 70%,#fff),0 14px 30px rgba(31,58,95,.18);font-size:130px;line-height:1;overflow:hidden;animation:gin .7s cubic-bezier(.2,1.6,.4,1)}
+.gstk img{position:relative;width:78%;height:78%;object-fit:contain;filter:drop-shadow(0 6px 8px rgba(31,58,95,.18))}
+.gstk .gray{position:absolute;inset:-40%;background:repeating-conic-gradient(from 0deg,rgba(255,255,255,.55) 0 10deg,transparent 10deg 24deg);animation:gspin 14s linear infinite}@keyframes gspin{to{transform:rotate(1turn)}}
+.giftline .gface .ku{width:40px;height:40px}@keyframes gin{0%{transform:scale(0) rotate(-30deg)}100%{transform:scale(1)}}
 .gnew{font-size:26px;font-weight:800;margin:6px 0 12px}.gmiss{background:#fff;border-radius:24px;padding:12px 16px;margin:12px 0}.gmiss b{display:block;margin-bottom:6px}.gmiss div{font-size:46px;display:flex;justify-content:center;gap:14px;flex-wrap:wrap}
-@media (prefers-reduced-motion:reduce){.kidgift .box,.giftbox,.gstk{animation:none}}
+@media (prefers-reduced-motion:reduce){.kidgift .box,.giftbox,.gstk,.gstk .gray{animation:none}}
 .kidhearts{position:relative;border:0;border-radius:28px;background:linear-gradient(135deg,#FFD1E1,#FFE9F1);display:flex;align-items:center;gap:12px;padding:14px 18px;text-align:left;box-shadow:0 10px 22px -14px #C2185B;overflow:hidden}
 .kidhearts .e{font-size:46px;line-height:1;animation:beat 1.2s ease-in-out infinite}
 .kidhearts b{font-size:22px;color:#AD1457;flex:1}
@@ -4068,3 +4071,15 @@ details.more>summary{border-radius:16px}
 .imppl li b{font-size:14px;line-height:1.25}
 .imppl li small{font-size:12.5px;color:var(--muted);line-height:1.3}
 @media (max-width:420px){.imppp{grid-template-columns:1fr}.imppc{aspect-ratio:auto;flex-direction:row;justify-content:flex-start;min-height:72px;text-align:left}.imppc b{white-space:nowrap;flex:0 0 auto}.imppc b br{display:none}}
+
+/* the new-book sheet in the app's card look (owner, Nov 2026) */
+.ntsheet{display:grid;gap:12px}.ntsheet .ntt{margin:0;font-size:20px}
+.ntsheet .pcard{margin:0}
+.ntplan{display:grid;grid-template-columns:auto 1fr auto;align-items:center;gap:12px;padding:12px 14px;border-radius:18px;text-decoration:none;color:var(--ink);min-height:56px}
+.ntplan .pcpic{width:44px;height:44px;border-radius:50%;background:#fff;display:grid;place-items:center;box-shadow:0 0 0 3px color-mix(in srgb,var(--g1) 45%,#fff)}.ntplan .pcpic img{width:34px;height:34px;object-fit:contain}
+.ntplan b{display:block}.ntplan small{display:block;color:var(--muted);line-height:1.4}.ntplan i{font-style:normal;font-size:22px;color:color-mix(in srgb,var(--g1) 60%,var(--ink))}
+.ntmore{border-radius:16px;background:var(--card);box-shadow:inset 0 0 0 1px var(--line)}.ntmore>summary{display:flex;align-items:center;justify-content:space-between;gap:8px;min-height:48px;padding:0 14px;cursor:pointer;list-style:none;font-weight:600}.ntmore>summary::-webkit-details-marker{display:none}
+.ntmore>.pform,.ntmore>label{padding:0 14px 14px;display:grid}.ntmore[open]>summary .chv{transform:rotate(180deg)}
+.ntcol{height:48px;padding:4px;min-width:64px}
+.ntsheet #nterr{color:color-mix(in srgb,var(--accent2) 60%,var(--ink));min-height:0}.ntsheet #nterr:empty{display:none}
+.ntsheet .ntgo{padding-top:4px}

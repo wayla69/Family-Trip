@@ -1630,16 +1630,20 @@ function bookSlug(base) {
   return out;
 }
 function newTripSheet() {
-  return `<h3>${L('เล่มใหม่', 'New book')}</h3><form id="ntf">
-${S.features && S.features.story ? `<p class="label ntplan">💡 ${L('ยังไม่รู้จะไปไหนหรือวันไหน?', 'Not sure where or when yet?')} <a href="#/planner" data-a="closesheet">${L('วางแผนกับผู้ช่วย', 'Plan with the helper')} ›</a></p>` : ''}
-<label class="label">${L('ชื่อทริป (ไม่ใส่ก็ได้ ตั้งให้จากวันที่)', 'Trip name (optional — named from the dates)')}</label><input name="title" class="field" maxlength="80" placeholder="${L('เช่น เชียงใหม่หน้าหนาว', 'e.g. Chiang Mai in winter')}">
-<label class="label">${L('ชื่อภาษาอังกฤษ (ไม่บังคับ)', 'English name (optional)')}</label><input name="title_en" class="field" maxlength="80">
-<div class="row" style="margin-top:8px"><label class="label" style="flex:1">${L('วันแรก', 'From')}<input name="from" type="date" class="field" required></label><label class="label" style="flex:1">${L('วันสุดท้าย', 'To')}<input name="to" type="date" class="field" required></label></div>
-<div class="plchips ntlens" role="group" aria-label="${L('กี่วัน', 'How many days')}">${[2, 3, 4, 5, 7, 10].map((n) => `<button type="button" class="plchip" data-a="ntlen" data-v="${n}">${n} ${L('วัน', 'days')}</button>`).join('')}</div>
-<p class="label">${L('แตะจำนวนวันได้ ถ้ายังไม่ใส่วันแรกจะเริ่มวันนี้', 'Tap how long — with no first day it starts today')}</p>
-<div class="row" style="margin-top:8px"><label class="label" style="flex:1">${L('รหัสเล่ม (ไม่บังคับ)', 'Book id (optional)')}<input name="slug" class="field" maxlength="40" placeholder="chiang-mai-2027"></label><label class="label">${L('สีปก', 'Colour')}<input name="accent" type="color" value="#1F3A5F" class="field" style="height:44px;width:70px;padding:4px"></label></div>
-<div class="err" id="nterr" style="color:var(--accent2);min-height:20px;margin-top:6px"></div>
-<div class="row end"><button type="button" class="btn ghost" data-a="closesheet">${L('ยกเลิก', 'Cancel')}</button><button class="btn" data-a="createtrip">${L('สร้างเล่ม', 'Create')}</button></div></form>`;
+  // in the app's card look (owner, Nov 2026): the name, the days, then the rarely used settings folded away — nothing must be typed
+  // but the days, and those are one tap on how long
+  return `<form id="ntf" class="ntsheet"><h3 class="ntt">${L('เล่มใหม่', 'New book')}</h3>
+${S.features && S.features.story ? `<a class="ntplan pz" style="--g1:${PG.purple}" href="#/planner" data-a="closesheet"><span class="pcpic">${hubIc('plan')}</span><span><b>${L('ยังไม่รู้จะไปไหนหรือวันไหน?', 'Not sure where or when yet?')}</b><small>${L('วางแผนกับผู้ช่วย ตอบไม่กี่ข้อ ได้เส้นทางทั้งทริป', 'Plan with the helper — a few answers, a whole route')}</small></span><i aria-hidden="true">›</i></a>` : ''}
+${pcard('pencil', PG.gold, L('ชื่อทริป', 'Trip name'), `<div class="pform"><input name="title" class="field" maxlength="80" aria-label="${L('ชื่อทริป', 'Trip name')}" placeholder="${L('เช่น เชียงใหม่หน้าหนาว', 'e.g. Chiang Mai in winter')}">
+<p class="label">${L('ไม่ใส่ก็ได้ แอปตั้งให้จากเดือนที่ไป', 'Optional — the app names it from the month')}</p></div>`)}
+${pcard('today', PG.teal, L('ไปวันไหน', 'When'), `<div class="pform"><div class="plchips ntlens" role="group" aria-label="${L('กี่วัน', 'How many days')}">${[2, 3, 4, 5, 7, 10].map((n) => `<button type="button" class="plchip" data-a="ntlen" data-v="${n}">${n} ${L('วัน', 'days')}</button>`).join('')}</div>
+<div class="pform2"><label class="vgl">${L('วันแรก', 'From')}<input name="from" type="date" class="field"></label><label class="vgl">${L('วันสุดท้าย', 'To')}<input name="to" type="date" class="field"></label></div>
+<p class="label">${L('แตะจำนวนวันได้ ถ้ายังไม่ใส่วันแรกจะเริ่มวันนี้', 'Tap how long — with no first day it starts today')}</p></div>`)}
+<details class="ntmore"><summary>${L('ตั้งค่าเพิ่มเติม (ไม่ต้องก็ได้)', 'More settings (optional)')}${ic('chev', 'chv')}</summary><div class="pform">
+<label class="vgl">${L('ชื่อภาษาอังกฤษ', 'English name')}<input name="title_en" class="field" maxlength="80"></label>
+<div class="pform2"><label class="vgl">${L('รหัสเล่มในลิงก์', 'Book id in the link')}<input name="slug" class="field" maxlength="40" placeholder="chiang-mai-2027"></label><label class="vgl">${L('สีปก', 'Colour')}<input name="accent" type="color" value="#1F3A5F" class="field ntcol"></label></div></div></details>
+<div class="err" id="nterr"></div>
+<div class="row end ntgo"><button type="button" class="btn ghost" data-a="closesheet">${L('ยกเลิก', 'Cancel')}</button><button class="btn" data-a="createtrip">${L('สร้างเล่ม', 'Create')}</button></div></form>`;
 }
 
 /* ---------- the emoji library beside a text box (core.js EMOJI_LIB / emoBtn) ----------
