@@ -886,11 +886,12 @@ const A = {
   lb(b) { openLb(b.dataset.t, b.dataset.v); },
   newtrip() { openSheet(newTripSheet()); },
   async impstart() {
-    const f = imp.file, slug = ($('#impslug') || {}).value || imp.slug;
-    imp.slug = (slug || '').trim().toLowerCase(); imp.err = '';
+    const f = imp.file, typed = (($('#impslug') || {}).value || '').trim();
+    imp.err = '';
     if (!f) { imp.err = L('เลือกไฟล์ PDF ก่อน', 'Choose a PDF first'); render(); return; }
-    if (!/^[a-z0-9-]{2,60}$/.test(imp.slug)) { imp.err = L('รหัสเล่ม: a-z 0-9 - เท่านั้น (2–60 ตัว)', 'Book id: a-z 0-9 - only (2–60 chars)'); render(); return; }
-    if (S.trips.some((t) => t.slug === imp.slug || t.id === imp.slug)) { imp.err = L('มีเล่มรหัสนี้แล้ว', 'A book with this id exists'); render(); return; }
+    // the link name is the app's job (owner, Nov 2026: a parent should never be stuck on a box they cannot fill): what was typed,
+    // made safe, else the file's name, else "book-<date>"; a name a book already has gets -2, -3 …
+    imp.slug = bookSlug(typed || f.name.replace(/\.pdf$/i, ''));
     try {
       imp.job = { status: 'running', slug: imp.slug, log: [] }; render();
       await api('POST', `/api/b/import?slug=${encodeURIComponent(imp.slug)}`, undefined, new Blob([await f.arrayBuffer()], { type: 'application/pdf' }));
@@ -1144,15 +1145,30 @@ const A = {
   },
   async createtrip(b, e) {
     e.preventDefault();
-    const f = $('#ntf'), title = f.title.value.trim(), from = f.from.value, to = f.to.value;
-    const slug = (f.slug.value.trim() || title).toLowerCase().normalize('NFKD').replace(/[^a-z0-9]+/g, '-').replace(/^-|-$/g, '').slice(0, 40) || uid('trip');
-    if (!title || !from || !to) return;
+    const f = $('#ntf'), from = f.from.value, to = f.to.value;
+    if (!from || !to) { $('#nterr').textContent = L('ใส่วันแรกและวันสุดท้าย หรือแตะจำนวนวัน', 'Give the first and last day, or tap how long'); return; }
+    const mon = (l) => new Date(from + 'T12:00:00').toLocaleDateString(l, { month: 'long', year: 'numeric' });
+    const typed = f.title.value.trim(), th = typed || `ทริป${mon('th-TH')}`, en = f.title_en.value.trim() || typed || `Trip · ${mon('en-GB')}`;
+    const slug = bookSlug(f.slug.value.trim() || f.title_en.value.trim() || f.title.value.trim() || `trip-${from}`);
     try {
-      await api('POST', '/api/b/trips', { slug, title: { th: title, en: f.title_en.value.trim() || title }, date_from: from, date_to: to, accent: f.accent.value });
+      await api('POST', '/api/b/trips', { slug, title: { th, en }, date_from: from, date_to: to, accent: f.accent.value });
       closeSheet(); await load(); nav('#/t/' + slug);
     } catch (err) { $('#nterr').textContent = err.code === 409 ? L('มีเล่มชื่อนี้แล้ว', 'A book with this id exists') : L('ตรวจวันที่อีกครั้ง (ไม่เกิน 60 วัน)', 'Check the dates (60 days max)'); }
   },
   closesheet() { closeSheet(); },
+  ntlen(b) {   // how long: the last day from the first (today when none was given)
+    const f = $('#ntf'); if (!f) return;
+    const pad = (x) => String(x).padStart(2, '0'), iso = (d) => `${d.getFullYear()}-${pad(d.getMonth() + 1)}-${pad(d.getDate())}`;
+    if (!f.from.value) f.from.value = iso(new Date());
+    const d = new Date(f.from.value + 'T12:00:00'); d.setDate(d.getDate() + (+b.dataset.v) - 1); f.to.value = iso(d);
+    f.querySelectorAll('[data-a="ntlen"]').forEach((x) => x.setAttribute('aria-pressed', String(x === b)));
+  },
+  vgrandpin() {   // a PIN the parents do not have to think up: six digits, never one digit repeated or a plain run
+    const box = $('#vgpin'); if (!box) return; let p = '';
+    do { const a = new Uint32Array(6); crypto.getRandomValues(a); p = [...a].map((x) => x % 10).join(''); } while (/^(\d)\1+$/.test(p) || '0123456789'.includes(p) || '9876543210'.includes(p));
+    box.value = p; drafts['vg:pin'] = p;
+  },
+  vgnamechip(b) { const box = $('#vgname'); if (box) { box.value = b.dataset.v; drafts['vg:name'] = b.dataset.v; } },
   nearpick(b) {   // in place: the sheet stays as it is
     if (!nearHeld) return; const k = +b.dataset.k, on = !nearHeld.pick.has(k); if (on) nearHeld.pick.add(k); else nearHeld.pick.delete(k);
     b.classList.toggle('kept', on); b.classList.toggle('off', !on); b.setAttribute('aria-pressed', String(on));
@@ -1606,11 +1622,21 @@ function saveTags(inp) {
 function openSheet(html) { $('#scrim').hidden = false; const s = $('#sheet'); s.innerHTML = html; s.hidden = false; const f = s.querySelector('input'); if (f) f.focus(); }
 function closeSheet() { $('#scrim').hidden = true; $('#sheet').hidden = true; $('#sheet').innerHTML = ''; }
 const sheetOpen = () => !$('#sheet').hidden || !$('#lb').hidden;
+function bookSlug(base) {
+  let b = String(base || '').toLowerCase().normalize('NFKD').replace(/[^a-z0-9]+/g, '-').replace(/^-+|-+$/g, '').slice(0, 40);
+  if (b.length < 3) { const d = new Date(); b = `book-${d.getFullYear()}${String(d.getMonth() + 1).padStart(2, '0')}${String(d.getDate()).padStart(2, '0')}`; }
+  const taken = (x) => (S.trips || []).some((t) => t.slug === x || t.id === x);
+  let out = b, n = 2; while (taken(out)) out = `${b}-${n++}`;
+  return out;
+}
 function newTripSheet() {
   return `<h3>${L('เล่มใหม่', 'New book')}</h3><form id="ntf">
-<label class="label">${L('ชื่อทริป', 'Trip name')}</label><input name="title" class="field" required maxlength="80" placeholder="${L('เช่น เชียงใหม่หน้าหนาว', 'e.g. Chiang Mai in winter')}">
+${S.features && S.features.story ? `<p class="label ntplan">💡 ${L('ยังไม่รู้จะไปไหนหรือวันไหน?', 'Not sure where or when yet?')} <a href="#/planner" data-a="closesheet">${L('วางแผนกับผู้ช่วย', 'Plan with the helper')} ›</a></p>` : ''}
+<label class="label">${L('ชื่อทริป (ไม่ใส่ก็ได้ ตั้งให้จากวันที่)', 'Trip name (optional — named from the dates)')}</label><input name="title" class="field" maxlength="80" placeholder="${L('เช่น เชียงใหม่หน้าหนาว', 'e.g. Chiang Mai in winter')}">
 <label class="label">${L('ชื่อภาษาอังกฤษ (ไม่บังคับ)', 'English name (optional)')}</label><input name="title_en" class="field" maxlength="80">
 <div class="row" style="margin-top:8px"><label class="label" style="flex:1">${L('วันแรก', 'From')}<input name="from" type="date" class="field" required></label><label class="label" style="flex:1">${L('วันสุดท้าย', 'To')}<input name="to" type="date" class="field" required></label></div>
+<div class="plchips ntlens" role="group" aria-label="${L('กี่วัน', 'How many days')}">${[2, 3, 4, 5, 7, 10].map((n) => `<button type="button" class="plchip" data-a="ntlen" data-v="${n}">${n} ${L('วัน', 'days')}</button>`).join('')}</div>
+<p class="label">${L('แตะจำนวนวันได้ ถ้ายังไม่ใส่วันแรกจะเริ่มวันนี้', 'Tap how long — with no first day it starts today')}</p>
 <div class="row" style="margin-top:8px"><label class="label" style="flex:1">${L('รหัสเล่ม (ไม่บังคับ)', 'Book id (optional)')}<input name="slug" class="field" maxlength="40" placeholder="chiang-mai-2027"></label><label class="label">${L('สีปก', 'Colour')}<input name="accent" type="color" value="#1F3A5F" class="field" style="height:44px;width:70px;padding:4px"></label></div>
 <div class="err" id="nterr" style="color:var(--accent2);min-height:20px;margin-top:6px"></div>
 <div class="row end"><button type="button" class="btn ghost" data-a="closesheet">${L('ยกเลิก', 'Cancel')}</button><button class="btn" data-a="createtrip">${L('สร้างเล่ม', 'Create')}</button></div></form>`;
