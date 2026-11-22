@@ -113,6 +113,12 @@ function cleanRoute(r, a, keys) {
 // the parents' edits come back from the page: the same cleaning, the dates laid out again from the first day
 const cleanEdited = (r, a) => cleanRoute(r, { ...a, from: (r && DATE_RE.test(r.from) ? r.from : a.from) });
 
+// room for the answer: a day in both languages with its stops, kid line, move and rain is ~600–900 tokens (Thai costs more),
+// two routes twice that. 8,000 flat cut a 10-day pair off mid-JSON on the live site (four 502s at ~60 s each, 21 Nov 2026).
+function routeTokens(a, prev, two) {
+  const n = daysOf(a) || a.len || (prev && Array.isArray(prev.days) ? prev.days.length : 0) || 10;
+  return Math.min(48000, (3000 + Math.min(31, n) * 1000) * (two ? 2 : 1));
+}
 async function route({ client, model, answers, who, prev, ask, take, onUsage, two, family, menu }) {
   const keys = new Map(); for (const t of menu || []) for (const x of t.sights) keys.set(x.k, x);
   if (take && !(await take())) throw Object.assign(new Error('limit'), { code: 'limit' });
@@ -120,11 +126,11 @@ async function route({ client, model, answers, who, prev, ask, take, onUsage, tw
   // what this family learned on past trips (bookshelf.js familyLessons): follow it — the children's rest, short travel days, the food that worked
   const past = family ? `\n\nWhat this family learned on past trips (follow it where it fits this trip):\n${family}` : '';
   const { text } = require('./bookimport').redact(routeUser(answers, who, prev, ask) + past + menuText(menu) + (two && !prev ? TWO : ''));
-  const msg = await client.messages.stream({ model, max_tokens: 8000, system: ROUTE_SYS, messages: [{ role: 'user', content: text }] }).finalMessage();
+  const msg = await client.messages.stream({ model, max_tokens: routeTokens(answers, prev, two && !prev), system: ROUTE_SYS, messages: [{ role: 'user', content: text }] }).finalMessage();
   if (onUsage) { try { onUsage(msg.usage || {}); } catch (_) { /* counting never breaks planning */ } }
   if (msg.stop_reason === 'refusal') throw Object.assign(new Error('refused'), { code: 'refusal' });
   const t = msg.content.filter((b) => b.type === 'text').map((b) => b.text).join('').replace(/^```(?:json)?\s*/m, '').replace(/```\s*$/m, '').trim();
-  let r; try { r = JSON.parse(t.slice(t.indexOf('{'))); } catch (e) { throw Object.assign(new Error('route json'), { code: 'json' }); }
+  let r; try { r = JSON.parse(t.slice(t.indexOf('{'))); } catch (e) { throw Object.assign(new Error('route json' + (msg.stop_reason === 'max_tokens' ? ' cut off' : '')), { code: 'json' }); }
   if (two && !prev) {   // two routes to choose between: both cleaned the same way; one that does not read is left out, none → an error
     const list = (Array.isArray(r.routes) ? r.routes : []).slice(0, 2).map((x) => { try { return cleanRoute(x, answers, keys); } catch (_) { return null; } }).filter(Boolean);
     if (!list.length) throw Object.assign(new Error('route'), { code: 'route' });
@@ -255,4 +261,4 @@ async function dayAsk({ client, model, day, place, forecast, ask, who, tz, take,
   try { return JSON.parse(t.slice(t.indexOf('{'))); } catch (e) { throw Object.assign(new Error('day json'), { code: 'json' }); }
 }
 
-module.exports = { cleanAnswers, keepAnswers, whoLine, route, ideas, cleanRoute: cleanEdited, menuText, libStops, brief, slugOf, daysOf, dayAsk, cleanDay, MAPS, LIKES, NEEDS };
+module.exports = { routeTokens, cleanAnswers, keepAnswers, whoLine, route, ideas, cleanRoute: cleanEdited, menuText, libStops, brief, slugOf, daysOf, dayAsk, cleanDay, MAPS, LIKES, NEEDS };
