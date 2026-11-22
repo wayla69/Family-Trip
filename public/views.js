@@ -3929,7 +3929,7 @@ let ppW = false, ppEditOn = false;
 function tickBtn(t, kid, key, day, label, emoji, extra) {
   const on = ticked(t, key, kid), ed = ppW;
   return `<button class="tick${on ? ' on' : ''}" data-a="tick" data-t="${esc(t.id)}" data-k="${esc(kid)}" data-v="${esc(key)}" data-d="${day === null ? '' : day}" aria-pressed="${!!on}"${ed ? '' : ' aria-disabled="true"'}>
-<i>${on ? '✓' : ''}</i>${emoji ? `<span class="e">${typeof spotPic === 'function' ? spotPic(emoji) : esc(emoji)}</span>` : ''}<span class="t">${esc(label)}${extra || ''}</span></button>`;
+<i>${on ? '✓' : ''}</i>${emoji ? `<span class="e">${typeof spotPic === 'function' ? spotPic(emoji, label) : esc(emoji)}</span>` : ''}<span class="t">${esc(label)}${extra || ''}</span></button>`;
 }
 function yumBtns(t, kid, key) {
   const cur = ticked(t, key, kid), ed = ppW;
