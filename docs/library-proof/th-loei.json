@@ -1,0 +1,28 @@
+{
+  "town": "th-loei",
+  "kind": "eats",
+  "checked": "2026-11",
+  "rule": "A row gets ok only from a current listing, its own site or recent reviews with nothing saying closed (docs/EATS.md). A row is taken out when a search could not find the place at all or the sources disagree; a place found but not freshly confirmed stays without ok.",
+  "confirmed": [
+    {
+      "name": "Husband and Wife",
+      "src": "https://www.wongnai.com/restaurants/songphuamia",
+      "page_name": "สองผัวเมีย : SongPhuaMia Cafe & Bar (Husband & Wife) เชียงคาน",
+      "evidence": "menu updatedTime 2026-04-24, a review dated 2025-11-01, closed:false",
+      "ok": "2026-11"
+    }
+  ],
+  "kept_without_ok": [
+    {"name": "Rabiang Rim Khong", "src": "https://www.wongnai.com/restaurants/159160zz-ระเบียงริมโขง", "evidence": "listing exists, closed:false, but lastUpdatedTime 2025-05-27 and the newest review 2024-11-04; too old to confirm it is open now"},
+    {"name": "Buppa Kaffe", "evidence": "a Trip.com guide lists it (wooden house café by the Mekong, Chai Kong, Chiang Khan); undated, no current listing found"},
+    {"name": "Kaeng Khut Khu coconut candy shops", "evidence": "coconut candy shops with related names found on Wongnai and mybest; the Kaeng Khut Khu location is not confirmed"}
+  ],
+  "removed": [
+    {"name": "Luk Lao", "reason": "one web search (snippets only, pages not opened) found no place of this name in Chiang Khan"},
+    {"name": "Khao Pun Nam Jaew Pa Bua Wan", "reason": "one web search (snippets only, pages not opened) found no place of this name"},
+    {"name": "Krua Nid", "reason": "one web search (snippets only, pages not opened) found no place of this name in Mueang Loei"},
+    {"name": "Soi Sao Khao Piak Sen", "reason": "one web search (snippets only, pages not opened) found no khao piak sen shop on a Soi Sao"},
+    {"name": "Loei Night Market", "reason": "one web search (snippets only, pages not opened) found no listing of a Loei night bazaar"},
+    {"name": "Chiang Khan Morning Market", "reason": "one web search (snippets only, pages not opened) found no listing of the morning market"}
+  ]
+}
