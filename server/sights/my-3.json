@@ -570,6 +570,24 @@
           "q": "Dream Forest Langkawi, Lubuk Semilang, Langkawi",
           "ok": "2026-11",
           "src": "https://www.langkawibook.my/attractions/dream-forest-langkawi"
+        },
+        {
+          "name": { "en": "Perdana Marine Park", "th": "เปอร์ดานา มารีน พาร์ก" },
+          "local": "",
+          "kind": "park",
+          "area": { "en": "Langkawi", "th": "ลังกาวี" },
+          "what": { "en": "An artificial salt pool with lots of sea life.", "th": "สระน้ำเค็มเทียมที่มีสัตว์ทะเลมากมาย" },
+          "why": { "en": "The page mentions a kids' play area.", "th": "หน้าเว็บบอกว่ามีลานเล่นสำหรับเด็ก" },
+          "tip": { "en": "Allow about two hours", "th": "เผื่อเวลาราว 2 ชั่วโมง" },
+          "ages": [1, 2, 2, 2],
+          "hrs": 2,
+          "io": "out",
+          "pram": "part",
+          "price": { "en": "Check the price", "th": "เช็กราคาก่อนไป" },
+          "book": "none",
+          "q": "Perdana Marine Park, Langkawi",
+          "ok": "2026-11",
+          "src": "https://thebackpackingfamily.com/amazing-things-to-do-in-langkawi/"
         }
       ]
     }
