@@ -1335,7 +1335,7 @@ function router({ pool, media, A, ai, hooks = {} }) {   // hooks.heart(h): set b
   // by the helper with a web check. GET lists the towns, or the places of one town (?town=<key>), or of a route's towns
   // (?for=<JSON [[en, th], …]>: a town's own rows and rows whose area or map address names it).
   let eatBusy = false;
-  const eatSync = () => EATLIB.syncBooks(pool, FAMILY, STOCK.read()).catch((e) => { console.error('eatlib sync', e.message); return 0; });
+  const eatSync = () => { SIGHTLIB.syncBooks(pool, FAMILY, STOCK.read(), (id) => STOCK.url(id)).catch((e) => console.error('sightlib books', e.message)); return EATLIB.syncBooks(pool, FAMILY, STOCK.read()).catch((e) => { console.error('eatlib sync', e.message); return 0; }); };
   const eatFor = (rows, pairs) => pairs.map(([en, th]) => ({ en, th: th || en, places: EATLIB.forTown(rows, [en, th].filter(Boolean)).map(EATLIB.out) }));
   const eatPairs = (v) => { let a; try { a = JSON.parse(v); } catch (_) { a = []; } return (Array.isArray(a) ? a : []).slice(0, 12).map((x) => [clip(Array.isArray(x) ? x[0] : x, 80).trim(), clip(Array.isArray(x) ? x[1] : '', 80).trim()]).filter((x) => x[0]); };
   r.get('/api/b/eatlib', A.requireEditor, async (req, res, next) => {
@@ -1398,10 +1398,11 @@ function router({ pool, media, A, ai, hooks = {} }) {   // hooks.heart(h): set b
     try {
       res.setHeader('Cache-Control', 'no-store');
       const rows = await SIGHTLIB.all(pool, FAMILY), cof = EATLIB.countryOf(STOCK.read()), y = await sightKids(), taste = await sightTaste(), fam = await famOf('place'), learned = await sightLearned(taste);
-      const full = (x) => { const o = SIGHTLIB.out(x), f = famFor(fam, o.name); return { ...o, cc: (cof.get(x.tkey) || {}).cc || '', fit: SIGHTLIB.fitOf(o, taste, y, learned), ...(f ? { fam: f } : {}) }; };
+      const full = (x) => { const o = SIGHTLIB.out(x), f = famFor(fam, o.name); return { ...o, cc: (cof.get(x.tkey) || {}).cc || o.cc || '', fit: SIGHTLIB.fitOf(o, taste, y, learned), ...(f ? { fam: f } : {}) }; };
       if (req.query.for) return res.json({ for: eatPairs(String(req.query.for)).map(([en, th]) => ({ en, th: th || en, sights: SIGHTLIB.forTown(rows, [en, th].filter(Boolean)).map(full) })) });
       if (req.query.town || req.query.place) { const k = String(req.query.town || ''), p = String(req.query.place || ''); return res.json({ sights: rows.filter((x) => (k && x.tkey === k) || (p && x.place === p)).map(full) }); }
-      res.json({ towns: SIGHTLIB.towns(rows).map((t) => ({ ...t, country: cof.get(t.tkey) || null })), total: rows.length });
+      const ix = STOCK.read(), ccName = (cc) => { const c = cc && ix.places && ix.places[cc]; return c && c.name ? { cc, th: c.name.th || cc, en: c.name.en || cc } : null; };   // a town of a book that the picture library lacks: its GeoNames country
+      res.json({ towns: SIGHTLIB.towns(rows).map((t) => ({ ...t, country: cof.get(t.tkey) || ccName(t.cc) })), total: rows.length });
     } catch (e) { next(e); }
   });
   r.delete('/api/b/sights/:id', ...W, async (req, res, next) => {
@@ -2115,7 +2116,8 @@ async function backfillPh(pool, media) {
   return n;
 }
 const eatSyncAll = async (pool) => {
-  try { await SIGHTLIB.syncStarter(pool, FAMILY, STOCK.read(), (id) => STOCK.url(id)); } catch (e) { console.error('sightlib sync', e.message); }   // the things-to-do library (E2) with the eat library
+  try { await SIGHTLIB.syncStarter(pool, FAMILY, STOCK.read(), (id) => STOCK.url(id)); } catch (e) { console.error('sightlib sync', e.message); }
+  try { await SIGHTLIB.syncBooks(pool, FAMILY, STOCK.read(), (id) => STOCK.url(id)); } catch (e) { console.error('sightlib books', e.message); }   // the stops our own books visit   // the things-to-do library (E2) with the eat library
   try { await EATLIB.syncStarter(pool, FAMILY, STOCK.read()); return await EATLIB.syncBooks(pool, FAMILY, STOCK.read()); } catch (e) { console.error('eatlib sync', e.message); return 0; }
 };
 module.exports = { router, syncSeeds, brand, FAMILY, AUDIO_EXT, backfillPh, eatSyncAll };

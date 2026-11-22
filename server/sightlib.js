@@ -101,12 +101,76 @@ async function syncStarter(pool, family, index, url) {
   return n;
 }
 
+// ---------- the places our own books visit (owner, Nov 2026: "จุดแวะในเล่มเข้าคลังที่เที่ยวเองเหมือนร้านอาหาร"): every planned stop of a
+// book (trip_days.planned, kind 'place') becomes a row under its town, src 'book' — the name, the local name and the map address only:
+// a book says nothing of ages, indoors or prams, so the card shows none (never a guessed band) and says which book and day it is from.
+// The town: a library town the address names (its own name or an alias, a whole comma part), else a town of the country's GeoNames
+// list the address names, then the nearest library town within 60 km of that town or else that town itself; else the town where the
+// family slept that night (the stay's town-level ll), named the same way. A built-in row of the same place wins (it carries the facts).
+const geoOf = (() => { const G = {}; return (cc) => { if (!/^[a-z]{2}$/.test(cc || '')) return null; if (!(cc in G)) { try { G[cc] = JSON.parse(fs.readFileSync(path.join(__dirname, '..', 'public', 'geo', cc + '.json'), 'utf8')); } catch (_) { G[cc] = null; } } return G[cc]; }; })();
+const km = (a, b) => { const r = Math.PI / 180, dLa = (b[0] - a[0]) * r, dLo = (b[1] - a[1]) * r, x = Math.sin(dLa / 2) ** 2 + Math.cos(a[0] * r) * Math.cos(b[0] * r) * Math.sin(dLo / 2) ** 2; return 2 * 6371 * Math.asin(Math.sqrt(x)); };
+const NOT_A_SIGHT = /\b(airport|terminal|terminus|hotel|hostel|motel|apartments?|cottage|hideaway|lodge|resort|yha)\b|shun tak|zhuhai|hzmb/i;   // getting there and sleeping, not a thing to do
+function townNamer(index) {
+  const towns = Object.entries((index && index.places) || {}).filter(([id, p]) => p && p.name && id !== p.country && Array.isArray(p.ll));
+  const libOf = ([id, p]) => { const t = townOfPlace(p); return { place: id, town: t.en, town_th: t.th, tkey: norm(t.en), cc: p.country }; };
+  const byWord = new Map();
+  for (const tw of towns) for (const w of [tw[1].name.en, tw[1].name.th, short(tw[1].name).en, ...(tw[1].alias || [])]) { const k = String(w || '').trim().toLowerCase(); if (k.length >= 4 && !byWord.has(k)) byWord.set(k, tw); }
+  const nearLib = (ll, max) => { let best = null, bd = max; for (const tw of towns) { const d = km(ll, tw[1].ll); if (d < bd) { bd = d; best = tw; } } return best; };
+  const gnOf = (cc, part) => { const g = geoOf(cc); if (!g) return null; const k = part.toLowerCase(); return (g.t || []).find((x) => String(x[1]).toLowerCase() === k) || null; };
+  // a GeoNames town → the library town of the same name in that country (Katoomba is Sydney's), else one within 60 km, else itself
+  const fromGn = (x, cc) => { const w = byWord.get(String(x[1]).toLowerCase()); if (w && w[1].country === cc) return libOf(w); const ll = [x[3], x[4]], lib = nearLib(ll, 60); return lib ? libOf(lib) : { place: '', town: x[1], town_th: x[2] || x[1], tkey: norm(x[1]), cc }; };
+  // the comma parts of a map address, the state and postcode taken off ("Kiama NSW 2533" → "Kiama")
+  const parts = (q) => String(q || '').split(/\s*,\s*/).map((x) => x.replace(/\s+\d{3,6}$/, '').replace(/\s+(NSW|VIC|QLD|SA|WA|TAS|NT|ACT)$/, '').trim()).filter(Boolean).reverse();
+  return { forStop(stop, stayLl) {
+    const ps = parts(stop.q), near = stayLl ? nearLib(stayLl, 1500) : null, cc = near && near[1].country;
+    // a library town's name in the address, only in the country we slept in (Paddington, Sydney is not London's)
+    for (const x of ps) { const tw = byWord.get(x.toLowerCase()); if (tw && (!cc || tw[1].country === cc)) return libOf(tw); }
+    for (const x of ps) { const g = cc && gnOf(cc, x); if (g) return fromGn(g, cc); }
+    if (!stayLl) return null;
+    const lib = nearLib(stayLl, 60); if (lib) return libOf(lib);
+    const g = geoOf(cc); let best = null, bd = 40; for (const x of (g && g.t) || []) { const d = km(stayLl, [x[3], x[4]]); if (d < bd) { bd = d; best = x; } }
+    return best ? fromGn(best, cc) : null;
+  } };
+}
+// days: [{trip_id, title (the book's {th,en}), day_index, planned, stay}] → rows
+function bookRows(days, index, url) {
+  const nm = townNamer(index), rows = [], seen = new Set();
+  for (const d of days) {
+    const ll = d.stay && Array.isArray(d.stay.ll) && d.stay.ll.length === 2 ? d.stay.ll.map(Number) : null;
+    for (const s of Array.isArray(d.planned) ? d.planned : []) {
+      if (!s || s.kind !== 'place' || !(s.en || s.th)) continue;
+      if (NOT_A_SIGHT.test(`${s.en || ''} ${s.q || ''}`) || (d.stay && d.stay.name && String(s.q || '').startsWith(d.stay.name))) continue;
+      const t = nm.forStop(s, ll); if (!t || !t.tkey) continue;
+      const name = one(s.en || s.th, 120), nkey = norm(name);
+      if (!nkey || seen.has(`${t.tkey}:${nkey}`)) continue;
+      seen.add(`${t.tkey}:${nkey}`);
+      const nameI = i18n({ en: s.en || s.th, th: s.th || s.en }, 120), art = t.place ? artOf(t.place, nameI, index) : '';
+      const row = { name: nameI, local: one(s.zh, 80), area: { en: t.town, th: t.town_th }, q: one(s.q || name, 200), trip: d.trip_id, day: d.day_index, cc: t.cc || '',
+        styles: [...new Set(TAGS.outStylesOf({ name: nameI, what: { th: '', en: '' }, why: { th: '', en: '' } }))].slice(0, 6), ...(art && url ? { art: url(art) } : {}) };
+      rows.push({ place: t.place, town: t.town, town_th: t.town_th, tkey: t.tkey, nkey, kind: '', name, row, url: '', checked: null });
+    }
+  }
+  return rows;
+}
+// every book's stops into the table, on boot and after a book is saved; a stop a book no longer plans leaves (never one the parents marked)
+async function syncBooks(pool, family, index, url) {   // (the sample book, sakura-hop-2028, is a trip nobody took: left out)
+  const days = (await pool.query(`SELECT d.trip_id, d.day_index, d.planned, d.plan->'stay' AS stay FROM trip_days d JOIN trips t ON t.id = d.trip_id
+    WHERE t.family_id=$1 AND t.id <> 'sakura-hop-2028' AND jsonb_array_length(COALESCE(d.planned, '[]'::jsonb)) > 0 ORDER BY t.date_from, d.trip_id, d.day_index`, [family])).rows;
+  const have = (await pool.query("SELECT tkey, nkey FROM sight_lib WHERE family_id=$1 AND src <> 'book'", [family])).rows;
+  // the same place under a built-in row ("Taronga Zoo" · "Taronga Zoo Sydney"): the built-in one carries the facts, so the book's is left out
+  const dup = (r) => have.some((h) => h.tkey === r.tkey && (h.nkey === r.nkey || (Math.min(h.nkey.length, r.nkey.length) >= 6 && (h.nkey.includes(r.nkey) || r.nkey.includes(h.nkey)))));
+  const rows = bookRows(days, index, url).filter((r) => !dup(r));
+  const n = await put(pool, family, rows, 'book');
+  await pool.query("DELETE FROM sight_lib WHERE family_id=$1 AND src='book' AND NOT gone AND NOT wish AND NOT (id = ANY($2::text[]))", [family, rows.map((r) => idOf(family, r.tkey, r.nkey))]);
+  return n;
+}
+
 const out = (r) => ({ id: r.id, place: r.place, town: r.town, town_th: r.town_th, tkey: r.tkey, src: r.src, url: r.url || '', wish: !!r.wish,
   checked: r.checked ? new Date(r.checked).toISOString().slice(0, 10) : '', ...r.row, kind: r.kind });
 const all = async (pool, family) => (await pool.query('SELECT * FROM sight_lib WHERE family_id=$1 AND NOT gone ORDER BY town, created_at, name', [family])).rows;
 function towns(rows) {
   const by = new Map();
-  for (const r of rows) { const t = by.get(r.tkey) || { tkey: r.tkey, place: r.place, town: r.town, town_th: r.town_th, n: 0, wish: 0, indoor: 0 }; t.n++; if (r.wish) t.wish++; if (r.row && r.row.io !== 'out') t.indoor++; by.set(r.tkey, t); }
+  for (const r of rows) { const t = by.get(r.tkey) || { tkey: r.tkey, place: r.place, town: r.town, town_th: r.town_th, cc: (r.row && r.row.cc) || '', n: 0, wish: 0, indoor: 0 }; t.n++; if (r.wish) t.wish++; if (r.row && (r.row.io === 'in' || r.row.io === 'both')) t.indoor++; by.set(r.tkey, t); }
   return [...by.values()].sort((a, b) => b.n - a.n || a.town.localeCompare(b.town));
 }
 // the sights of a town a route names: by the town's key, or by the place id
@@ -125,4 +189,4 @@ function fitOf(r, taste, youngest, learned) {
   return s;
 }
 
-module.exports = { KINDS, rowOf, artOf, starterRows, starterFiles, syncStarter, put, all, out, towns, forTown, fitOf, idOf, norm, band };
+module.exports = { syncBooks, bookRows, townNamer, KINDS, rowOf, artOf, starterRows, starterFiles, syncStarter, put, all, out, towns, forTown, fitOf, idOf, norm, band };
