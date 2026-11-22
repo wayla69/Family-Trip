@@ -28,7 +28,7 @@ const RE = { io: ['in', 'out', 'both'], pram: ['yes', 'part', 'no'], book: ['non
 
 // one built-in row → the table's row (bounded, both languages); the landmark picture of the same place when the picture library has one
 function rowOf(x, art) {
-  const ages = Array.isArray(x.ages) && x.ages.length === 4 && x.ages.every((a) => [0, 1, 2].includes(a)) ? x.ages : [1, 1, 1, 1];
+  const ages = x.ages;   // the caller skips a row whose ages are not four of 0/1/2 (never a guessed band)
   const r = {
     name: i18n(x.name, 120), local: one(x.local, 80), kind: KINDS[x.kind] ? x.kind : 'park', area: i18n(x.area, 120),
     what: i18n(x.what, 240), why: i18n(x.why, 240), tip: x.tip ? i18n(x.tip, 240) : null, ages,
@@ -62,6 +62,7 @@ function starterRows(file, index, url) {
     const town = townOfPlace(p), tkey = norm(town.en);
     for (const x of Array.isArray(t.sights) ? t.sights : []) {
       if (!x || !x.name || !/^20\d\d-(0[1-9]|1[0-2])$/.test(x.ok || '') || !/^https:\/\//.test(x.src || '')) continue;   // never a row without its web check
+      if (!(Array.isArray(x.ages) && x.ages.length === 4 && x.ages.every((a) => [0, 1, 2].includes(a)))) continue;   // never a row whose age bands are not given
       const name = one(x.name.en, 120), nkey = norm(name);
       if (!nkey || seen.has(`${tkey}:${nkey}`)) continue;
       seen.add(`${tkey}:${nkey}`);

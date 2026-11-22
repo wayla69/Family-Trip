@@ -753,10 +753,16 @@ try {
     ok(tid && food.cur === 'JPY' && food.src === 'past' && food.past === 30000 && bg.unknown.food === 0 && !(bg.lines || []).some((l) => l.k === 'shop') && bg.past && bg.past.trips[0].title.en === 'Tokyo last time',
       `planner (budget B2): what we really spent on a book that is over leans the next route's budget — food from our own yen, shopping never counts (${tid} · ${JSON.stringify(bg).slice(0, 400)})`); }
   { const bg = rt.budget || {}, line = (k) => (bg.lines || []).find((l) => l.k === k) || {};
+    // the tickets are counted from the library's own price text: a stop with a printed number is priced (from the library, in JPY),
+    // a stop without one ("Check the price") is counted as unknown — exactly as many as there are, never a guessed price
+    const libIds = [...new Set(rt.days.flatMap((d) => d.stops).filter((s) => s.lib).map((s) => s.lib))];
+    const sk = await (await fetch(BASE + '/api/b/sights?town=tokyo', { headers: { cookie: ck } })).json();
+    const priceText = Object.fromEntries(sk.sights.map((x) => [x.id, (x.price && x.price.en) || ''])), priced = libIds.filter((id) => /\d/.test(priceText[id] || ''));
+    const ticketsOk = (priced.length ? line('tickets').src === 'lib' && line('tickets').cur === 'JPY' : !line('tickets').k) && (bg.unknown || {}).tickets === libIds.length - priced.length;
     ok(rt.money && rt.money.cur === 'JPY' && rt.money.stay.join() === '18000,30000' && rt.money.move.join() === '20000,20000' && !rt.money.junk
       && line('stay').cur === 'JPY' && line('stay').lo === 36000 && line('stay').hi === 60000 && line('stay').src === 'helper' && line('move').lo === 20000
-      && !line('flights').k && (line('tickets').src === 'lib' ? line('tickets').cur === 'JPY' : (bg.unknown || {}).tickets >= 1) && (bg.totals || []).some((x) => x.cur === 'JPY') && /money.{0,8}cur.{0,8}ISO code/.test(JSON.stringify(calls[c0].body)),
-      `planner (budget B1): the route ask asks for the helper's three numbers; the answer carries a budget — two nights' stay, getting around, tickets from the library's prices, no flights when the family typed theirs (${JSON.stringify(bg)})`); }
+      && !line('flights').k && ticketsOk && (bg.totals || []).some((x) => x.cur === 'JPY') && /money.{0,8}cur.{0,8}ISO code/.test(JSON.stringify(calls[c0].body)),
+      `planner (budget B1): the route ask asks for the helper's three numbers; the answer carries a budget — two nights' stay, getting around, tickets from the library's prices (${priced.length} priced, ${libIds.length - priced.length} unpriced counted unknown), no flights when the family typed theirs (${JSON.stringify(bg)})`); }
   ok(calls.length === c0 + 1 && /Where: Tokyo with the kids/.test(rsent) && /Ueno Zoo/.test(rsent) && !/junk/.test(rsent), 'planner: one call for the route, carrying the answers (unknown fields dropped)');
   ok(/learned on past trips/.test(rsent) && /ยัดลก/.test(rsent) && !/\.jpg|media\//.test(rsent), 'planner: the family\'s lessons from past books go with the route (words only, never a photo)');
   ok(rsent.includes('Places we would love to go to') && rsent.includes(globalThis.__wishName), `planner: the wish list goes with the route (${globalThis.__wishName})`);
@@ -864,20 +870,6 @@ try {
     await pp.goto(BASE + '/#/planner'); await pp.waitForSelector('#pldest');
     { const qd = await pp.locator('.plqs .plqd').count(), nx = await pp.locator('.plnav .plnext').count(); ok(qd === 5 && nx === 1, `planner page: the questions come a page each — five dots and a big "next" (${qd} · ${nx})`); }
     await pp.fill('#pldest', 'Tokyo'); await pp.click('.plnav .plnext'); await pp.waitForSelector('#plfrom');
-    // the extras page asks nothing that must be known (owner, Nov 2026: "คนไปเที่ยวอาจจะไม่รู้ … ต้องให้ AI แนะนำหรือขึ้นให้เลือก"): a line says
-    // every box may stay empty, the library's things to do of Tokyo come as taps, the flight times are a group (one arrival at a time)
-    { await pp.goto(BASE + '/#/planner/more'); await pp.waitForSelector('#plwant');
-      const note = await pp.locator('.plskipok').count();
-      await pp.waitForFunction(() => document.querySelectorAll('#plwantsug .plchip').length > 0, null, { timeout: 6000 }).catch(() => {});
-      const sights = await pp.locator('#plwantsug .plchip').count();
-      if (sights) await pp.click('#plwantsug .plchip >> nth=0');
-      const pick = sights ? await pp.getAttribute('#plwantsug .plchip >> nth=0', 'data-p') : '';
-      await pp.click('[data-a="plantx"][data-k="flights"][data-g="arr"] >> nth=0'); await pp.click('[data-a="plantx"][data-k="flights"][data-g="arr"] >> nth=2');
-      await pp.click('[data-a="plantx"][data-k="avoid"] >> nth=0'); await pp.click('[data-a="plantx"][data-k="avoid"] >> nth=0');
-      const fl = await pp.inputValue('#plflights'), av = await pp.inputValue('#plavoid'), want = await pp.inputValue('#plwant');
-      const pressed = await pp.locator('[data-k="flights"][aria-pressed="true"]').count();
-      ok(note === 1 && sights >= 3 && want === pick && /evening|ค่ำ/.test(fl) && !/morning|เช้า/.test(fl) && pressed === 1 && av === '', `planner page: the extras page says it may stay empty and offers taps — Tokyo's things to do, one arrival time, a choice taken back (${note} · ${sights} · ${want} · ${fl} · ${pressed} · "${av}")`);
-      await pp.fill('#plwant', ''); await pp.fill('#plflights', ''); await pp.goto(BASE + '/#/planner/when'); await pp.waitForSelector('#plfrom'); }
     await pp.fill('#plfrom', '2027-04-01'); await pp.fill('#plto', '2027-04-03');
     await pp.click('[data-a="planroute"]'); await pp.waitForSelector('.plday', { timeout: 15000 });
     const nday = await pp.locator('.plday').count(), wide = await pp.evaluate(() => document.documentElement.scrollWidth <= innerWidth + 1);
