@@ -80,6 +80,10 @@ try {
   const errs = []; page.on('pageerror', (e) => errs.push(e.message));
   await page.goto(BASE + '/'); await page.fill('#lcode', CODE); await page.keyboard.press('Enter'); await page.waitForSelector('.shelf');
   await page.click('a[href="#/viewers"]'); await page.waitForSelector('.vgform');
+  // nothing to think up (owner, Nov 2026: a box a parent may not know how to fill always offers a choice): names to tap, a PIN made by the app
+  { await page.click('[data-a="vgnamechip"] >> nth=0'); await page.click('[data-a="vgrandpin"]');
+    const nm = await page.inputValue('#vgname'), pin = await page.inputValue('#vgpin');
+    ok(nm.length > 1 && /^\d{6}$/.test(pin) && !/^(\d)\1+$/.test(pin), `browser: a group name is one tap, the app makes a six-digit PIN (${nm} · ${pin})`); }
   await page.fill('#vgname', 'ฝั่งคุณย่า'); await page.fill('#vgpin', '445566');
   await page.locator(`.vgchecks input[data-v="${AU}"]`).uncheck();
   await page.click('[data-a="vgsave"]'); await page.waitForSelector('.vgjust');
@@ -89,6 +93,14 @@ try {
   await page.reload(); await page.waitForSelector('.vgcard');
   ok(await page.locator('.vgjust').count() === 0, 'the PIN is not shown again');
   ok(await page.evaluate(() => document.documentElement.scrollWidth <= innerWidth), 'no sideways scroll at 390 px');
+  // a new blank book needs no name and no typed dates: a tap on "4 days" starts it today, the name comes from the month
+  { await page.goto(BASE + '/#/'); await page.waitForSelector('.shelf'); await page.click('.spine.add [data-a="newtrip"]'); await page.waitForSelector('#ntf');
+    await page.click('#ntf [data-a="ntlen"][data-v="4"]');
+    const [from, to] = [await page.inputValue('#ntf [name=from]'), await page.inputValue('#ntf [name=to]')];
+    await page.click('#ntf [data-a="createtrip"]'); await page.waitForFunction(() => /^#\/t\//.test(location.hash), null, { timeout: 8000 }).catch(() => {});
+    const made = await page.evaluate(() => { const t = S.trips.find((x) => location.hash.includes(x.id)); return t ? { id: t.id, th: t.title.th, n: t.days.length } : null; });
+    ok(made && made.n === 4 && /^ทริป/.test(made.th) && (Date.parse(to) - Date.parse(from)) === 3 * 864e5, `browser: a new book from one tap on how long, named by the app (${from}–${to} · ${JSON.stringify(made)})`);
+    if (made) await page.evaluate(async (id) => { await fetch('/api/b/trips/' + encodeURIComponent(id), { method: 'DELETE' }); }, made.id); }
   ok(errs.length === 0, 'no page errors ' + errs.join(' | '));
 } finally { await browser.close(); await db.end(); }
 

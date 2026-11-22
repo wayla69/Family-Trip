@@ -559,6 +559,14 @@ for (const f of ['core.js', 'views.js', 'sheets.js', 'kid.js', 'snap.js', 'sw.js
   for (const [, k, v] of (m ? m[1] : '').matchAll(/(\w+): '([^']+)'/g)) pic[k] = v;
   const keys = [...TG.TASTE_FOOD, ...TG.TASTE_OUT, ...TG.TASTE_NEED].map((r) => r[0]), bad = keys.filter((k) => !pic[k] || !fs.existsSync(new URL(`../public/art/${pic[k]}.webp`, import.meta.url)));
   ok(keys.length > 30 && !bad.length, `every taste style has its picture (${keys.length})${bad.length ? ' — missing: ' + bad.join(', ') : ''}`); }
+// every thing Today's bag can name draws a picture of the family's emoji library (the forecast's umbrella was ☂️, which no picture
+// answered — the test of the bag only saw it on a day the mock forecast said rain)
+{ const vsrc = fs.readFileSync(new URL('../public/views.js', import.meta.url), 'utf8');
+  const body = vsrc.slice(vsrc.indexOf('const BAG = ['), vsrc.indexOf('const BAG_ALWAYS'));
+  const bag = [...body.matchAll(/^\s*\['(\w+)', '([^']+)'/gm)].map((m) => [m[1], m[2]]);
+  const vs = (e) => e.replace(/️/g, ''), have = new Set(require('../server/emoji.js').DEFAULTS.flatMap((d) => [d[1], ...d.slice(4)]).map(vs));
+  const bad = bag.filter(([, e]) => !have.has(vs(e))).map(([k, e]) => `${k} ${e}`);
+  ok(bag.length > 15 && !bad.length, `every thing Today's bag can name has a picture in the emoji library (${bag.length})${bad.length ? ' — missing: ' + bad.join(', ') : ''}`); }
 if (process.env.BASE) { const r = await fetch(process.env.BASE + '/app-legacy.css'); ok(r.ok && /text\/css/.test(r.headers.get('content-type')) && !(await r.text()).includes('color-mix('), '/app-legacy.css is served, resolved'); }
 
 console.log(failures ? `\n${failures} FAILED` : '\nALL PASSED');
