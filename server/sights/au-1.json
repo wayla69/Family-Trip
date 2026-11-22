@@ -938,8 +938,10 @@
           "q": "IMAX, Darling Harbour, Sydney",
           "ok": "2026-11",
           "src": "https://newywithkids.com.au/things-to-do-in-sydney-with-kids/"
-        }
-      ]
+        },
+      {"name":{"en":"Hyde Park Barracks","th":"ฮายด์ปาร์กบาร์แร็กส์"},"kind":"museum","area":{"en":"Sydney CBD","th":"ใจกลางซิดนีย์ (ซีบีดี)"},"what":{"en":"A UNESCO World Heritage-listed convict barracks where visitors learn what life was like for convicts and immigrants","th":"เรือนจำนักโทษจากยุคอาณานิคม ขึ้นทะเบียนเป็นมรดกโลกขององค์การยูเนสโก ที่นี่เล่าชีวิตของนักโทษและผู้อพยพ"},"why":{"en":"The building's own history, told as a visit rather than a lecture","th":"เรื่องราวของอาคารเล่าเป็นการเที่ยวชม ไม่ใช่การบรรยาย"},"ages":[0,0,1,2],"hrs":1.5,"io":"in","pram":"part","price":{"en":"Check the price","th":"เช็กราคาก่อนไป"},"book":"none","q":"Hyde Park Barracks, Sydney CBD","ok":"2026-11","src":"https://newywithkids.com.au/free-things-to-do-sydney-with-kids/"},
+      {"name":{"en":"Sydney Olympic Park","th":"โอลิมปิกพาร์กซิดนีย์"},"kind":"park","area":{"en":"Sydney Olympic Park","th":"โอลิมปิกพาร์กซิดนีย์"},"what":{"en":"A large park complex west of the city with an archery centre and an aquatic centre","th":"สวนขนาดใหญ่ทางตะวันตกของเมือง มีศูนย์ยิงธนูและศูนย์กีฬาทางน้ำ"},"why":{"en":"Learn a new skill at the archery centre and swim at the aquatic centre","th":"เรียนทักษะใหม่ที่ศูนย์ยิงธนู และว่ายน้ำที่ศูนย์กีฬาทางน้ำ"},"ages":[0,1,2,2],"hrs":4,"io":"both","pram":"yes","price":{"en":"Check the price","th":"เช็กราคาก่อนไป"},"book":"none","q":"Sydney Olympic Park, Sydney","ok":"2026-11","src":"https://www.sydney.com/articles/family-friendly-attractions-sydney"}
+    ]
     },
     {
       "place": "au-melbourne",
