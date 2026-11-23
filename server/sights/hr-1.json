@@ -418,6 +418,47 @@
           "q": "Barać Caves, Rakovica, Croatia",
           "ok": "2026-11",
           "src": "https://www.lika-destination.hr/nature-protected-area/tourism/155/barac-caves"
+        },
+        {
+          "local": "Veliki slap",
+          "ages": [
+            1,
+            2,
+            2,
+            2
+          ],
+          "hrs": 2,
+          "io": "out",
+          "pram": "no",
+          "price": {
+            "th": "เช็กราคาก่อนไป",
+            "en": "Check the price"
+          },
+          "book": "none",
+          "src": "https://www.familycantravel.com/plitvice-lakes-croatia-with-kids/",
+          "name": {
+            "th": "น้ำตกใหญ่ปลิตวิเซ",
+            "en": "The Great Waterfall"
+          },
+          "kind": "nature",
+          "area": {
+            "th": "อุทยานทะเลสาบปลิตวิเซ ใกล้ทางเข้า 1",
+            "en": "Plitvice Lakes, near Entrance 1"
+          },
+          "what": {
+            "th": "น้ำตกใหญ่ของอุทยาน ไปถึงด้วยทางเดินไม้",
+            "en": "The park's great waterfall, reached on the boardwalks"
+          },
+          "why": {
+            "th": "ลูก ๆ ของครอบครัวผู้เขียนชอบช่วงนี้ของเส้นทางมาก",
+            "en": "The family's children loved this part of the walk"
+          },
+          "tip": {
+            "th": "คนเยอะมาก ไปเช้าหรือแวะที่นี่ก่อน และอุ้มเด็กเล็กใส่เป้ใกล้น้ำตก",
+            "en": "Very busy: go early or first, and carry small children in a carrier near the falls"
+          },
+          "q": "Veliki slap, Plitvice Lakes National Park",
+          "ok": "2026-11"
         }
       ]
     }
