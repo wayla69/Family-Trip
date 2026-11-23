@@ -1,0 +1,130 @@
+{
+  "town": "ch-zurich",
+  "kind": "eats + sights",
+  "checked": "2026-11-23",
+  "rule": "library-check.cjs, then the Google Maps Reviews tab sorted by newest: ok only when not marked closed, with a review from the last six months, and the map's name matching the page's.",
+  "agents": "one Haiku agent; 17 rows passed library-check.cjs, 14 went in",
+  "added": [
+    {
+      "name": "Kafi für Dich",
+      "page_name": "Kafi für Dich",
+      "src": "https://www.zuerich.com/en/eat-drink/child-friendly-restaurants",
+      "date": "official",
+      "map": "Google Maps Stauffacherstrasse 141, 642 reviews, newest '3 days ago'"
+    },
+    {
+      "name": "Brasserie Freilager",
+      "page_name": "Brasserie Freilager",
+      "src": "https://www.zuerich.com/en/eat-drink/child-friendly-restaurants",
+      "date": "official",
+      "map": "Google Maps 'Restaurant Freilager', Freilagerstrasse 53, 650 reviews, newest '1 day ago'"
+    },
+    {
+      "name": "Die Waid",
+      "page_name": "Die Waid",
+      "src": "https://www.zuerich.com/en/eat-drink/child-friendly-restaurants",
+      "date": "official",
+      "map": "Google Maps 3,520 reviews, newest '16 hours ago'"
+    },
+    {
+      "name": "Alter Tobelhof",
+      "page_name": "Alter Tobelhof",
+      "src": "https://www.zuerich.com/en/eat-drink/child-friendly-restaurants",
+      "date": "official",
+      "map": "Google Maps 1,429 reviews, newest '15 hours ago'"
+    },
+    {
+      "name": "Kafi Plus (ELCH Regensbergstrasse)",
+      "page_name": "Kafi Plus Regensbergstrasse",
+      "src": "https://zentrumelch.ch/kafi-plus",
+      "date": "official",
+      "map": "Google Maps 'Familienzentrum Regensbergstrasse des Vereins ELCH', 30 reviews, newest 'last week'"
+    },
+    {
+      "name": "Kids Playland",
+      "page_name": "Kids Playland",
+      "src": "https://mycation.ch/fuenf-indoor-spielplaetze-in-zuerich-im-vergleich/",
+      "date": "2025-11",
+      "map": "Google Maps 'KIDS PLAYLAND Zürich Indoor Kinderspielparadies', Hohlstrasse 461, 360 reviews, newest '4 days ago'"
+    },
+    {
+      "name": "Play hall, GZ Hirzenbach",
+      "page_name": "Spielsaal im GZ Hirzenbach",
+      "src": "https://zurini.ch/k2/12-kostenlose-indoor-spielplaetze-in-zuerich/",
+      "date": "2026-10",
+      "map": "Google Maps 'GZ Hirzenbach', 161 reviews, newest 'last month'"
+    },
+    {
+      "name": "Indoor play, Bäckeranlage",
+      "page_name": "Indoor Spielplatz Bäckeranlage",
+      "src": "https://zurini.ch/k2/12-kostenlose-indoor-spielplaetze-in-zuerich/",
+      "date": "2026-10",
+      "map": "Google Maps 'Quartierzentrum Bäckeranlage', 84 reviews, newest '4 days ago'"
+    },
+    {
+      "name": "Indoor play, GZ Oerlikon",
+      "page_name": "Indoorspielplatz im GZ Oerlikon",
+      "src": "https://zurini.ch/k2/12-kostenlose-indoor-spielplaetze-in-zuerich/",
+      "date": "2026-10",
+      "map": "Google Maps 'GZ Oerlikon', 215 reviews, newest '4 days ago'"
+    },
+    {
+      "name": "Indoor play, GZ Höngg",
+      "page_name": "Indoorspielplatz im GZ Höngg",
+      "src": "https://zurini.ch/k2/12-kostenlose-indoor-spielplaetze-in-zuerich/",
+      "date": "2026-10",
+      "map": "Google Maps 'GZ Höngg/Rütihof', 41 reviews, newest '5 months ago'"
+    },
+    {
+      "name": "Indoor play, Zentrum Krokodil",
+      "page_name": "Indoorspielplatz im Zentrum Krokodil",
+      "src": "https://zurini.ch/k2/12-kostenlose-indoor-spielplaetze-in-zuerich/",
+      "date": "2026-10",
+      "map": "Google Maps 'Familienzentrum Krokodil in Schwamendingen', 64 reviews, newest 'last week'"
+    },
+    {
+      "name": "Polybahn funicular",
+      "page_name": "Polybahn",
+      "src": "https://www.nume.ch/wohin-in-zuerich-mit-kindern-events-preise-2026/",
+      "date": "2026-02",
+      "map": "Google Maps 'UBS Polybahn', 1,244 reviews, newest '16 hours ago'"
+    },
+    {
+      "name": "Wildnispark Langenberg",
+      "page_name": "Wildpark Langenberg",
+      "src": "https://www.nume.ch/wohin-in-zuerich-mit-kindern-events-preise-2026/",
+      "date": "2026-02",
+      "map": "Google Maps 'Wildnispark Zürich Langenberg', 5,219 reviews, newest '1 day ago'"
+    },
+    {
+      "name": "KULTURAMA Museum of Humankind",
+      "page_name": "KULTURAMA Museum des Menschen",
+      "src": "https://www.kulturama.ch/",
+      "date": "official",
+      "map": "Google Maps 510 reviews, newest '2 days ago'"
+    }
+  ],
+  "left_out": [
+    {
+      "name": "Kunsthaus",
+      "why": "already in the library"
+    },
+    {
+      "name": "Play Village",
+      "why": "the map's newest review is 7 months old"
+    },
+    {
+      "name": "Theater PurPur",
+      "why": "the map puts it at Grütlistrasse 36, not the page's Spinnereistrasse 10"
+    },
+    {
+      "name": "momizen.com, Latte Stories",
+      "why": "pages dated 2024"
+    },
+    {
+      "name": "kiddoland, kinderregion.ch",
+      "why": "no date on the page"
+    }
+  ],
+  "estimates": "Ages and visit hours are placeholders; prices and opening notes are the pages' own."
+}
