@@ -925,6 +925,117 @@
           "q": "Parque del Alamillo, Isla de la Cartuja, Sevilla",
           "ok": "2026-11",
           "src": "https://www.timeout.com/es/sevilla/que-hacer/parque-del-alamillo"
+        },
+        {
+          "local": "Catedral de Sevilla",
+          "ages": [
+            0,
+            1,
+            2,
+            2
+          ],
+          "hrs": 2,
+          "io": "in",
+          "pram": "part",
+          "price": {
+            "th": "เช็กราคาก่อนไป",
+            "en": "Check the price"
+          },
+          "book": "rec",
+          "src": "https://www.roughguides.com/spain/seville-with-kids/",
+          "name": {
+            "th": "มหาวิหารเซบิยาและหอคอยฆิรัลดา",
+            "en": "Seville Cathedral and the Giralda"
+          },
+          "kind": "culture",
+          "area": {
+            "th": "ข้างพระราชวังอัลกาซาร์ เซบิยา",
+            "en": "Next to the Alcázar, Seville"
+          },
+          "what": {
+            "th": "มหาวิหารกอทิกใหญ่ที่สุดในโลก พร้อมหอคอยฆิรัลดา",
+            "en": "The world’s largest Gothic cathedral, with the Giralda tower"
+          },
+          "why": {
+            "th": "ขึ้นหอฆิรัลดาด้วยทางลาด ไม่ใช่บันได",
+            "en": "The Giralda is climbed by ramps, not stairs"
+          },
+          "q": "Catedral de Sevilla, Avenida de la Constitución, Sevilla",
+          "ok": "2026-11"
+        },
+        {
+          "local": "",
+          "ages": [
+            1,
+            1,
+            1,
+            1
+          ],
+          "hrs": 2,
+          "io": "in",
+          "pram": "part",
+          "price": {
+            "th": "เช็กราคาก่อนไป",
+            "en": "Check the price"
+          },
+          "book": "none",
+          "src": "https://www.ciceronegranada.com/en/blog/family-holiday-granada/",
+          "name": {
+            "th": "พิพิธภัณฑ์คาฮากรานาดา",
+            "en": "CajaGranada museum (Memoria de Andalucía)"
+          },
+          "kind": "museumkid",
+          "area": {
+            "th": "กรานาดา",
+            "en": "Granada"
+          },
+          "what": {
+            "th": "พิพิธภัณฑ์ที่ได้ลองเล่น เรื่องวัฒนธรรมและธรรมชาติอันดาลูเซีย มีความจริงเสมือน",
+            "en": "An interactive museum on Andalusia’s culture and nature, with virtual reality"
+          },
+          "why": {
+            "th": "นิทรรศการให้จับ ดม และฟัง",
+            "en": "Exhibits to touch, smell and listen to"
+          },
+          "q": "CajaGranada Cultural Center, Avenida de la Ciencia 2, Granada",
+          "ok": "2026-11"
+        },
+        {
+          "local": "",
+          "ages": [
+            1,
+            1,
+            1,
+            1
+          ],
+          "hrs": 1,
+          "io": "out",
+          "pram": "part",
+          "price": {
+            "th": "เช็กราคาก่อนไป",
+            "en": "Check the price"
+          },
+          "book": "none",
+          "src": "https://www.ciceronegranada.com/en/blog/family-holiday-granada/",
+          "name": {
+            "th": "สวนพฤกษศาสตร์มหาวิทยาลัยกรานาดา",
+            "en": "Botanical Garden of the University of Granada"
+          },
+          "kind": "park",
+          "area": {
+            "th": "ใจกลางกรานาดา",
+            "en": "Centre, Granada"
+          },
+          "what": {
+            "th": "สวนพฤกษศาสตร์ศตวรรษที่ 19 มีพืชจากเอเชียและอเมริกา",
+            "en": "A 19th-century botanical garden with plants from Asia and the Americas"
+          },
+          "why": {
+            "th": "สวนให้เดินเล่นกลางเมือง",
+            "en": "A garden to stroll in the centre"
+          },
+          "q": "Jardín Botánico de la Universidad de Granada, Calle Escuelas, Granada",
+          "ok": "2026-11"
         }
       ]
     }
