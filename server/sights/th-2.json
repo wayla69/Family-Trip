@@ -1119,6 +1119,158 @@
           "q": "Wildlife Friends Foundation Thailand, Tha Yang, Hua Hin",
           "ok": "2026-11",
           "src": "https://www.wfft.org/?p=38052"
+        },
+        {
+          "local": "",
+          "ages": [
+            0,
+            1,
+            2,
+            2
+          ],
+          "hrs": 1,
+          "io": "out",
+          "pram": "no",
+          "price": {
+            "th": "เช็กราคาก่อนไป",
+            "en": "Check the price"
+          },
+          "book": "none",
+          "src": "https://www.airasia.com/blog/thailand/prachuap-khiri-khan/best-places-to-travel-with-kids-in-hua-hin/",
+          "name": {
+            "th": "เขาตะเกียบ",
+            "en": "Khao Takiab (Monkey Mountain)"
+          },
+          "kind": "nature",
+          "area": {
+            "th": "เขาตะเกียบ หัวหิน",
+            "en": "Khao Takiab, Hua Hin"
+          },
+          "what": {
+            "th": "เขาที่มีวัด ทางใต้ของตัวเมือง มีลิงอยู่มาก",
+            "en": "A temple hill south of town where macaques roam"
+          },
+          "why": {
+            "th": "เด็ก ๆ ได้ดูลิง",
+            "en": "Children watch the monkeys"
+          },
+          "tip": {
+            "th": "เก็บขนมและกระเป๋าให้ดี ลิงชอบแย่ง",
+            "en": "Keep snacks and bags secured: the monkeys snatch"
+          },
+          "q": "Khao Takiap, หัวหิน",
+          "ok": "2026-11"
+        },
+        {
+          "local": "",
+          "ages": [
+            2,
+            2,
+            2,
+            1
+          ],
+          "hrs": 1.5,
+          "io": "out",
+          "pram": "part",
+          "price": {
+            "th": "เช็กราคาก่อนไป",
+            "en": "Check the price"
+          },
+          "book": "none",
+          "src": "https://www.airasia.com/blog/thailand/prachuap-khiri-khan/best-places-to-travel-with-kids-in-hua-hin/",
+          "name": {
+            "th": "วนอุทยานปราณบุรี",
+            "en": "Pranburi Forest Park"
+          },
+          "kind": "nature",
+          "area": {
+            "th": "ปราณบุรี ใกล้หัวหิน",
+            "en": "Pranburi, near Hua Hin"
+          },
+          "what": {
+            "th": "ทางเดินไม้ผ่านป่าชายเลน",
+            "en": "A boardwalk through the mangroves"
+          },
+          "why": {
+            "th": "เด็กเล็กได้ดูปูตัวเล็กและแอ่งน้ำ",
+            "en": "Little ones spot tiny crabs and poke at tide pools"
+          },
+          "q": "วนอุทยาน ปราณบุรี",
+          "ok": "2026-11"
+        },
+        {
+          "local": "",
+          "ages": [
+            1,
+            1,
+            1,
+            1
+          ],
+          "hrs": 1,
+          "io": "out",
+          "pram": "part",
+          "price": {
+            "th": "เช็กราคาก่อนไป",
+            "en": "Check the price"
+          },
+          "book": "none",
+          "src": "https://www.airasia.com/blog/thailand/prachuap-khiri-khan/best-places-to-travel-with-kids-in-hua-hin/",
+          "name": {
+            "th": "วัดห้วยมงคล",
+            "en": "Wat Huay Mongkol"
+          },
+          "kind": "culture",
+          "area": {
+            "th": "ทับใต้ หัวหิน",
+            "en": "Thap Tai, Hua Hin"
+          },
+          "what": {
+            "th": "วัดที่มีรูปปั้นงดงามและลานกว้าง",
+            "en": "A temple with dramatic statues and open grounds"
+          },
+          "why": {
+            "th": "ลานกว้างให้เด็กเดินเล่น",
+            "en": "Open grounds for little legs to stretch"
+          },
+          "q": "วัดห้วยมงคล, หัวหิน",
+          "ok": "2026-11"
+        },
+        {
+          "local": "",
+          "ages": [
+            0,
+            1,
+            1,
+            2
+          ],
+          "hrs": 1,
+          "io": "both",
+          "pram": "part",
+          "price": {
+            "th": "เช็กราคาก่อนไป",
+            "en": "Check the price"
+          },
+          "book": "none",
+          "src": "https://www.airasia.com/blog/thailand/prachuap-khiri-khan/best-places-to-travel-with-kids-in-hua-hin/",
+          "name": {
+            "th": "พระราชนิเวศน์มฤคทายวัน",
+            "en": "Mrigadayavan Palace"
+          },
+          "kind": "culture",
+          "area": {
+            "th": "ริมทะเลชะอำ ใกล้หัวหิน",
+            "en": "Cha-am seafront, near Hua Hin"
+          },
+          "what": {
+            "th": "พระราชวังไม้สักริมทะเล",
+            "en": "A teak palace on the seafront"
+          },
+          "why": {
+            "th": "แวะชมสั้น ๆ ลมเย็น ระหว่างทะเลกับตลาด",
+            "en": "A short, breezy visit between beach and markets"
+          },
+          "q": "พระราชนิเวศน์มฤคทายวัน",
+          "ok": "2026-11"
         }
       ]
     },
