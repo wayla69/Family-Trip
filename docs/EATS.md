@@ -313,3 +313,17 @@ batch-29 of docs/library-briefs. +9: Pili (GTC Mall), Hunger's Nest, Bao Box, Bw
 
 ### Kruger, 23 Nov 2026
 batch-32 of docs/library-briefs. +8 rest-camp restaurants: Mugg & Bean (Lower Sabie), Tindlovu (Letaba, Berg-en-Dal), Mopani, Pretoriuskop, Wimpy (Pretoriuskop), Punda Maria, Shingwedzi. Proof in `docs/library-proof/za-kruger.json`.
+### Gold Coast and Brisbane, 23 Nov 2026
+batch-05 of docs/library-briefs. +7 cafés and restaurants with something for children (a playroom, a playground in view, a sandpit, a gated play area): Merlina’s, FunnyBone Coffee, Café 63, Pasture & Co, Dune Cafe, Gathering Co, Stones Throw. Out: one name the map puts in Brisbane, one it does not know, one with no recent review. Proof in `docs/library-proof/au-goldcoast.json`.
+
+### Cairns, 23 Nov 2026
+batch-05 of docs/library-briefs. +1: Wharf One Cafe (kids’ menu, prams and high chairs). Proof in `docs/library-proof/au-cairns.json`.
+
+### Auckland, 23 Nov 2026
+batch-06 of docs/library-briefs. +9 restaurants and cafés with something for children (bento boxes, a play area, a playground next door, a sushi train): MASU, BODA, The Heke, Sugar at Chelsea Bay, K10 Newmarket, Azabu Mission Bay, Baduzzi, Huddle Cafe, Cornwall Park Cafe. Proof in `docs/library-proof/nz-auckland.json`.
+
+### Rotorua and Taupō, 23 Nov 2026
+batch-06 of docs/library-briefs. +5 from the Rotorua tourism site’s family-friendly list: Black Label Barbecue, Charlie’s Café at Chipmunks Playland, Lone Star, River’s Catch, Scope. Proof in `docs/library-proof/nz-rotorua.json`.
+
+### Fiji, 23 Nov 2026
+batch-28 of docs/library-briefs. +6: Isa Lei, The Curry House, Zigzag Cafe, The Coffee Hub, Sentai Seafood (Nadi), Mamacita (Denarau). Proof in `docs/library-proof/fj-islands.json`.

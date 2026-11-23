@@ -269,7 +269,307 @@
       {"name":{"en":"Te Rātā Bay / Hot Water Beach","th":"อ่าวเต ราตา / ชายหาดน้ำร้อน"},"kind":"beach","area":{"en":"Lake Tarawera, reached by water taxi or the Tarawera Trail","th":"ทะเลสาบทาราเวรา ไปทางเรือแท็กซี่น้ำหรือเส้นทางทาราเวรา"},"what":{"en":"A secluded lakeside beach where geothermal springs warm the sand and water at the lake's edge.","th":"ชายหาดริมทะเลสาบที่ลับตา มีน้ำพุร้อนทำให้ทรายและน้ำริมทะเลสาบอุ่น"},"why":{"en":"Children can swim and picnic on the shore, and the warm sand is a different beach from the usual lake.","th":"เด็กลงเล่นน้ำและปิกนิกริมฝั่งได้ ทรายอุ่นทำให้ชายหาดนี้ต่างจากทะเลสาบปกติ"},"tip":{"en":"Reached by water taxi with Totally Tarawera, or by the Tarawera Trail.","th":"ไปทางเรือแท็กซี่น้ำกับโททัลลี ทาราเวรา หรือเดินตามเส้นทางทาราเวรา"},"ages":[1,2,2,2],"hrs":3,"io":"out","pram":"no","price":{"en":"Check the price","th":"เช็กราคาก่อนไป"},"book":"rec","q":"Te Rātā Bay, Lake Tarawera, Rotorua","ok":"2026-11","src":"https://www.rotoruanz.com/visit/stories-articles/may-2026/experience-tarawera,-140-years-after-the-eruption"},
       {"name":{"en":"Rotorua Duck Tours","th":"ทัวร์เป็ดโรโตรัว"},"kind":"ride","area":{"en":"From Rotorua through the lakes district","th":"จากโรโตรัวผ่านเขตทะเลสาบ"},"what":{"en":"A tour in an amphibious vehicle that drives from Rotorua through the lakes district, with splashdowns onto the water.","th":"ทัวร์ด้วยรถสะเทินน้ำสะเทินบก วิ่งจากโรโตรัวผ่านเขตทะเลสาบ และลงน้ำกระเด็นสู่ผืนน้ำ"},"why":{"en":"The page says it is a fun and memorable way to see the lakes, and the splashdowns are the highlight for children.","th":"หน้าเว็บบอกว่าเป็นวิธีสนุกและน่าจดจำในการชมทะเลสาบ และการลงน้ำกระเด็นคือไฮไลต์ของเด็กๆ"},"ages":[1,2,2,2],"hrs":1.5,"io":"out","pram":"no","price":{"en":"Check the price","th":"เช็กราคาก่อนไป"},"book":"rec","q":"Rotorua Duck Tours, Rotorua","ok":"2026-11","src":"https://www.rotoruanz.com/visit/stories-articles/may-2026/experience-tarawera,-140-years-after-the-eruption"},
       {"name":{"en":"Katoa Lake Rotorua Jet","th":"คาโตอา เจ็ต โรโตรัว"},"kind":"ride","area":{"en":"Lake Rotorua, from the lake's edge","th":"ทะเลสาบโรโตรัว จากริมทะเลสาบ"},"what":{"en":"A jet boat ride on Lake Rotorua with spins, high-speed turns and a stop at secluded hot springs and a bird sanctuary.","th":"นั่งเจ็ตโบ้ทบนทะเลสาบโรโตรัว มีการหมุนตัว เลี้ยวความเร็วสูง และแวะบ่อน้ำพุร้อนลับตากับเขตอนุรักษ์นก"},"why":{"en":"The page says the children scream and holler with delight over the noise of the V8 jet engines.","th":"หน้าเว็บบอกว่าเด็กๆ กรี๊ดและตะโกนด้วยความสนุกเมื่อได้ยินเสียงเครื่องยนต์วี 8"},"ages":[0,0,1,2],"hrs":1,"io":"out","pram":"no","price":{"en":"Check the price","th":"เช็กราคาก่อนไป"},"book":"rec","q":"Katoa Lake Rotorua Jet, Lake Rotorua","ok":"2026-11","src":"https://www.tepuia.com/te-puia-blog/top-5-family-activities-in-rotorua/"},
-      {"name":{"en":"Volcanic Air floatplane","th":"วอลคานิก แอร์ ฟลอตเพลน"},"kind":"views","area":{"en":"Take-off and landing on Lake Rotorua","th":"ขึ้นและลงจอดบนทะเลสาบโรโตรัว"},"what":{"en":"A floatplane flight that takes off from Lake Rotorua and shows the crater lakes, forests, geothermal valleys and Mount Tarawera from above.","th":"เที่ยวบินฟลอตเพลนที่ขึ้นจากทะเลสาบโรโตรัว ชมทะเลสาบปล่องภูเขาไฟ ป่า หุบเขาพลังความร้อนใต้พิภพ และภูเขาทาราเวราจากด้านบน"},"why":{"en":"The water landing at the end is a memorable finish for children who like planes and water.","th":"การลงจอดบนน้ำตอนท้ายเป็นบทจบที่น่าจดจำ สำหรับเด็กที่ชอบเครื่องบินและน้ำ"},"ages":[0,0,1,2],"hrs":1,"io":"out","pram":"no","price":{"en":"Check the price","th":"เช็กราคาก่อนไป"},"book":"req","q":"Volcanic Air, Lake Rotorua","ok":"2026-11","src":"https://www.rotoruanz.com/visit/stories-articles/january-2026/10-bucket-list-activities-to-do-this-summer"}
+      {"name":{"en":"Volcanic Air floatplane","th":"วอลคานิก แอร์ ฟลอตเพลน"},"kind":"views","area":{"en":"Take-off and landing on Lake Rotorua","th":"ขึ้นและลงจอดบนทะเลสาบโรโตรัว"},"what":{"en":"A floatplane flight that takes off from Lake Rotorua and shows the crater lakes, forests, geothermal valleys and Mount Tarawera from above.","th":"เที่ยวบินฟลอตเพลนที่ขึ้นจากทะเลสาบโรโตรัว ชมทะเลสาบปล่องภูเขาไฟ ป่า หุบเขาพลังความร้อนใต้พิภพ และภูเขาทาราเวราจากด้านบน"},"why":{"en":"The water landing at the end is a memorable finish for children who like planes and water.","th":"การลงจอดบนน้ำตอนท้ายเป็นบทจบที่น่าจดจำ สำหรับเด็กที่ชอบเครื่องบินและน้ำ"},"ages":[0,0,1,2],"hrs":1,"io":"out","pram":"no","price":{"en":"Check the price","th":"เช็กราคาก่อนไป"},"book":"req","q":"Volcanic Air, Lake Rotorua","ok":"2026-11","src":"https://www.rotoruanz.com/visit/stories-articles/january-2026/10-bucket-list-activities-to-do-this-summer"},
+        {
+          "local": "",
+          "ages": [
+            1,
+            1,
+            1,
+            1
+          ],
+          "hrs": 2,
+          "io": "out",
+          "pram": "no",
+          "price": {
+            "th": "เช็กราคาก่อนไป",
+            "en": "Check the price"
+          },
+          "book": "none",
+          "src": "https://www.nomadasaurus.com/things-to-do-in-rotorua-new-zealand/",
+          "name": {
+            "th": "ทะเลสาบทิกิทาปู (บลูเลก)",
+            "en": "Lake Tikitapu (the Blue Lake)"
+          },
+          "kind": "nature",
+          "area": {
+            "th": "ใกล้โรโตรัว",
+            "en": "Near Rotorua"
+          },
+          "what": {
+            "th": "เดินรอบทะเลสาบระยะสั้นและปิกนิก",
+            "en": "A short walk around the lake and a picnic"
+          },
+          "why": {
+            "th": "ทางเดินสั้นเหมาะกับเด็ก จบแล้วแวะกินไอศกรีมที่ร้านในฮอลิเดย์พาร์ก",
+            "en": "A short loop that suits children, and an ice cream at the holiday park shop after"
+          },
+          "q": "Lake Tikitapu (Blue Lake), Rotorua",
+          "ok": "2026-11"
+        },
+        {
+          "local": "",
+          "ages": [
+            1,
+            1,
+            1,
+            1
+          ],
+          "hrs": 2,
+          "io": "out",
+          "pram": "part",
+          "price": {
+            "th": "เช็กราคาก่อนไป",
+            "en": "Check the price"
+          },
+          "book": "none",
+          "src": "https://www.lovetaupo.com/en/plan/recommended-itineraries/7-days-of-family-fun-in-taupo/",
+          "name": {
+            "th": "บ่อน้ำร้อนเดอเบรตส์ เตาโป",
+            "en": "Taupō DeBretts Hot Pools"
+          },
+          "kind": "play",
+          "area": {
+            "th": "เตาโป",
+            "en": "Taupō"
+          },
+          "what": {
+            "th": "บ่อน้ำร้อนพร้อมสนามเด็กเล่นในน้ำอุ่น",
+            "en": "Hot pools with a warm-water playground"
+          },
+          "why": {
+            "th": "มีสไลเดอร์มังกรและสไลเดอร์แข่ง",
+            "en": "A dragon hydroslide and racing slides"
+          },
+          "q": "Taupo DeBretts Spa Resort",
+          "ok": "2026-11"
+        },
+        {
+          "local": "",
+          "ages": [
+            1,
+            1,
+            1,
+            1
+          ],
+          "hrs": 1,
+          "io": "in",
+          "pram": "part",
+          "price": {
+            "th": "เช็กราคาก่อนไป",
+            "en": "Check the price"
+          },
+          "book": "none",
+          "src": "https://www.lovetaupo.com/en/plan/recommended-itineraries/7-days-of-family-fun-in-taupo/",
+          "name": {
+            "th": "ฮูกาฮันนีไฮฟ์",
+            "en": "Huka Honey Hive"
+          },
+          "kind": "shop",
+          "area": {
+            "th": "เตาโป",
+            "en": "Taupō"
+          },
+          "what": {
+            "th": "ไอศกรีมน้ำผึ้ง ชิมน้ำผึ้งฟรี และรังผึ้งจริงหลังกระจก",
+            "en": "Honey ice cream, free honey tastings and live beehives behind glass"
+          },
+          "why": {
+            "th": "เด็กได้ดูผึ้งทำน้ำผึ้ง",
+            "en": "Children watch the bees make honey"
+          },
+          "q": "Huka Honey Hive, Taupo",
+          "ok": "2026-11"
+        },
+        {
+          "local": "",
+          "ages": [
+            1,
+            1,
+            1,
+            1
+          ],
+          "hrs": 2,
+          "io": "in",
+          "pram": "part",
+          "price": {
+            "th": "เช็กราคาก่อนไป",
+            "en": "Check the price"
+          },
+          "book": "none",
+          "src": "https://www.lovetaupo.com/en/plan/recommended-itineraries/7-days-of-family-fun-in-taupo/",
+          "name": {
+            "th": "สระเอซีบาธส์",
+            "en": "AC Baths"
+          },
+          "kind": "play",
+          "area": {
+            "th": "เตาโป",
+            "en": "Taupō"
+          },
+          "what": {
+            "th": "สระน้ำอุ่นใหญ่ มีสไลเดอร์สองตัวและเชือกโหน",
+            "en": "A big heated leisure pool with two hydroslides and a rope swing"
+          },
+          "why": {
+            "th": "มีโซนเด็กเล็กและสไลเดอร์ เหมาะกับวันฝนตก",
+            "en": "Toddler areas and slides, good when it rains"
+          },
+          "q": "AC Baths & Thermal Hot Pools, Taupo",
+          "ok": "2026-11"
+        },
+        {
+          "local": "",
+          "ages": [
+            1,
+            1,
+            1,
+            1
+          ],
+          "hrs": 1,
+          "io": "in",
+          "pram": "part",
+          "price": {
+            "th": "เช็กราคาก่อนไป",
+            "en": "Check the price"
+          },
+          "book": "none",
+          "src": "https://www.lovetaupo.com/en/plan/recommended-itineraries/7-days-of-family-fun-in-taupo/",
+          "name": {
+            "th": "พิพิธภัณฑ์และหอศิลป์เตาโป",
+            "en": "Taupō Museum and Art Gallery"
+          },
+          "kind": "museumkid",
+          "area": {
+            "th": "เตาโป",
+            "en": "Taupō"
+          },
+          "what": {
+            "th": "ประวัติศาสตร์ของเตาโปและวัฒนธรรมเมารี",
+            "en": "Taupō’s history and Māori culture"
+          },
+          "why": {
+            "th": "มีเกมล่าสมบัติให้เด็กเล่นรอบพิพิธภัณฑ์",
+            "en": "A treasure hunt for children around the museum"
+          },
+          "q": "Taupo Museum and Art Gallery",
+          "ok": "2026-11"
+        },
+        {
+          "local": "",
+          "ages": [
+            1,
+            1,
+            1,
+            1
+          ],
+          "hrs": 2,
+          "io": "in",
+          "pram": "part",
+          "price": {
+            "th": "เช็กราคาก่อนไป",
+            "en": "Check the price"
+          },
+          "book": "none",
+          "src": "https://www.lovetaupo.com/en/plan/recommended-itineraries/7-days-of-family-fun-in-taupo/",
+          "name": {
+            "th": "ไมนด์จังก์ชัน",
+            "en": "Mind Junction"
+          },
+          "kind": "museumkid",
+          "area": {
+            "th": "เตาโป",
+            "en": "Taupō"
+          },
+          "what": {
+            "th": "วิทยาศาสตร์ให้ลองเล่น เครื่องจำลองการบิน เรือบังคับ และปริศนา",
+            "en": "Hands-on science, a flight simulator, remote-controlled boats and puzzles"
+          },
+          "why": {
+            "th": "มีเกม ปริศนา และโชว์เลโก้ใหญ่ สำหรับวันฝนตก",
+            "en": "Games, puzzles and a big Lego display for a rainy day"
+          },
+          "q": "Mind Junction Activity Park, Taupo",
+          "ok": "2026-11"
+        },
+        {
+          "local": "",
+          "ages": [
+            1,
+            1,
+            1,
+            1
+          ],
+          "hrs": 1,
+          "io": "out",
+          "pram": "part",
+          "price": {
+            "th": "ฟรี",
+            "en": "Free"
+          },
+          "book": "none",
+          "src": "https://www.lovetaupo.com/en/plan/recommended-itineraries/7-days-of-family-fun-in-taupo/",
+          "name": {
+            "th": "แก่งอาราเทียเทีย",
+            "en": "Aratiatia Rapids"
+          },
+          "kind": "views",
+          "area": {
+            "th": "ใกล้เตาโป",
+            "en": "Near Taupō"
+          },
+          "what": {
+            "th": "เขื่อนที่ปล่อยน้ำไหลแรงผ่านหุบหินด้านล่างวันละไม่กี่รอบ",
+            "en": "A dam that releases water a few times a day through the rocky valley below"
+          },
+          "why": {
+            "th": "เสียงไซเรนนับถอยหลังก่อนปล่อยน้ำแต่ละรอบ",
+            "en": "The sirens counting down to each release"
+          },
+          "tip": {
+            "th": "ไปก่อนเวลาเพื่อได้ที่ดูดีๆ",
+            "en": "Arrive early to get a good spot"
+          },
+          "q": "Aratiatia Rapids, Taupo",
+          "ok": "2026-11"
+        },
+        {
+          "local": "",
+          "ages": [
+            1,
+            1,
+            1,
+            1
+          ],
+          "hrs": 2,
+          "io": "in",
+          "pram": "part",
+          "price": {
+            "th": "เช็กราคาก่อนไป",
+            "en": "Check the price"
+          },
+          "book": "none",
+          "src": "https://www.lovetaupo.com/en/plan/recommended-itineraries/7-days-of-family-fun-in-taupo/",
+          "name": {
+            "th": "โรงหนังสตาร์ไลต์",
+            "en": "Starlight Cinema"
+          },
+          "kind": "show",
+          "area": {
+            "th": "เตาโป",
+            "en": "Taupō"
+          },
+          "what": {
+            "th": "โรงหนังห้าโรง มีโรงแบบเลานจ์และสามมิติ",
+            "en": "A five-screen cinema with a lounge cinema and 3D"
+          },
+          "why": {
+            "th": "ตัวเลือกสำหรับครอบครัวในวันฝนตก",
+            "en": "A rainy-day choice for families"
+          },
+          "q": "Starlight Cinema, Taupo",
+          "ok": "2026-11"
+        }
     ]
     }
   ]

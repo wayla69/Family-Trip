@@ -1663,6 +1663,413 @@
           "q": "Glow Worm Caves, Tamborine Mountain, Queensland",
           "ok": "2026-11",
           "src": "https://www.goldcoastpoint.com.au/attractions/glow-worm-caves-tamborine-mountain/"
+        },
+        {
+          "local": "",
+          "ages": [
+            1,
+            1,
+            1,
+            1
+          ],
+          "hrs": 2,
+          "io": "in",
+          "pram": "part",
+          "price": {
+            "th": "เช็กราคาก่อนไป",
+            "en": "Check the price"
+          },
+          "book": "none",
+          "src": "https://www.ellaslist.com.au/articles/brisbane-s-best-indoor-play-centres-for-rainy-days",
+          "name": {
+            "th": "ชิปมังก์ส เอฟเวอร์ตันพาร์ก",
+            "en": "Chipmunks Everton Park"
+          },
+          "kind": "play",
+          "area": {
+            "th": "เอฟเวอร์ตันพาร์ก บริสเบน",
+            "en": "Everton Park, Brisbane"
+          },
+          "what": {
+            "th": "ศูนย์เด็กเล่นในร่มพร้อมคาเฟ่",
+            "en": "An indoor play centre with a café"
+          },
+          "why": {
+            "th": "แบ่งโซนตามวัยสำหรับเด็ก 0–11 ปี มีเมนูเด็ก",
+            "en": "Zones by age for children from 0 to 11, and a children’s menu"
+          },
+          "q": "Chipmunks Playland & Café Everton Park",
+          "ok": "2026-11"
+        },
+        {
+          "local": "",
+          "ages": [
+            1,
+            1,
+            1,
+            1
+          ],
+          "hrs": 2,
+          "io": "in",
+          "pram": "part",
+          "price": {
+            "th": "เช็กราคาก่อนไป",
+            "en": "Check the price"
+          },
+          "book": "none",
+          "src": "https://www.indailyqld.com.au/theweekendedition-goldcoast/best-of/2025/04/07/gold-coasts-best-kid-friendly-restaurants",
+          "name": {
+            "th": "เบลล่าส์วันเดอร์แลนด์",
+            "en": "Bella’s Wonderland"
+          },
+          "kind": "play",
+          "area": {
+            "th": "เซาท์พอร์ต",
+            "en": "Southport"
+          },
+          "what": {
+            "th": "ศูนย์เด็กเล่นในร่มที่ใหญ่ที่สุดในโกลด์โคสต์ มีคาเฟ่",
+            "en": "The biggest indoor play centre on the Gold Coast, with a café"
+          },
+          "why": {
+            "th": "มีสไลเดอร์ บ่อบอล กำแพงปีน และชุดแต่งตัว",
+            "en": "Slides, ball pits, climbing walls and dress-ups"
+          },
+          "q": "Bella's Wonderland, Southport",
+          "ok": "2026-11"
+        },
+        {
+          "local": "",
+          "ages": [
+            0,
+            1,
+            1,
+            1
+          ],
+          "hrs": 1,
+          "io": "in",
+          "pram": "no",
+          "price": {
+            "th": "เช็กราคาก่อนไป",
+            "en": "Check the price"
+          },
+          "book": "none",
+          "src": "https://www.familiesmagazine.com.au/things-to-do-on-the-gold-coast-with-kids/",
+          "name": {
+            "th": "แพลเน็ตชิล",
+            "en": "Planet Chill"
+          },
+          "kind": "play",
+          "area": {
+            "th": "พาราไดซ์รีสอร์ต เซิร์ฟเฟอร์สพาราไดซ์",
+            "en": "Paradise Resort, Surfers Paradise"
+          },
+          "what": {
+            "th": "ลานสเก็ตน้ำแข็งในพาราไดซ์รีสอร์ต เปิดให้ทุกคน",
+            "en": "An ice rink at the Paradise Resort, open to everyone"
+          },
+          "why": {
+            "th": "เด็กตั้งแต่สามขวบลองเล่นสเก็ตน้ำแข็งได้ทุกวันตลอดปี",
+            "en": "Children from three can try ice skating, every day of the year"
+          },
+          "q": "Planet Chill Ice Skating Rink, Surfers Paradise",
+          "ok": "2026-11"
+        },
+        {
+          "local": "",
+          "ages": [
+            1,
+            1,
+            1,
+            1
+          ],
+          "hrs": 2,
+          "io": "out",
+          "pram": "no",
+          "price": {
+            "th": "เช็กราคาก่อนไป",
+            "en": "Check the price"
+          },
+          "book": "none",
+          "src": "https://www.familiesmagazine.com.au/things-to-do-on-the-gold-coast-with-kids/",
+          "name": {
+            "th": "จีซีอควาพาร์ก",
+            "en": "GC Aqua Park"
+          },
+          "kind": "play",
+          "area": {
+            "th": "เซาท์พอร์ต ตรงข้ามออสเตรเลียแฟร์",
+            "en": "Southport, opposite Australia Fair"
+          },
+          "what": {
+            "th": "เครื่องเล่นเป่าลมบนน้ำยาวกว่า 300 เมตร ให้กระโดดและไถล",
+            "en": "Over 300 m of inflatables on the water to bounce and slide on"
+          },
+          "why": {
+            "th": "ได้กระโดดและไถลบนน้ำ",
+            "en": "Bouncing and sliding on the water"
+          },
+          "q": "GC Aqua Park, Southport",
+          "ok": "2026-11"
+        },
+        {
+          "local": "",
+          "ages": [
+            1,
+            1,
+            1,
+            1
+          ],
+          "hrs": 2,
+          "io": "in",
+          "pram": "no",
+          "price": {
+            "th": "เช็กราคาก่อนไป",
+            "en": "Check the price"
+          },
+          "book": "none",
+          "src": "https://www.familiesmagazine.com.au/things-to-do-on-the-gold-coast-with-kids/",
+          "name": {
+            "th": "บาวซ์อิงก์",
+            "en": "Bounce Inc"
+          },
+          "kind": "play",
+          "area": {
+            "th": "เบอร์ลีย์วอเตอร์ส",
+            "en": "Burleigh Waters"
+          },
+          "what": {
+            "th": "สวนแทรมโพลีนในร่มขนาดใหญ่",
+            "en": "A big indoor trampoline park"
+          },
+          "why": {
+            "th": "เหมาะกับเด็กที่อยากปล่อยพลัง",
+            "en": "For children who need to let off steam"
+          },
+          "q": "BOUNCE Inc Gold Coast, Burleigh Waters",
+          "ok": "2026-11"
+        },
+        {
+          "local": "",
+          "ages": [
+            1,
+            1,
+            1,
+            1
+          ],
+          "hrs": 2,
+          "io": "out",
+          "pram": "no",
+          "price": {
+            "th": "เช็กราคาก่อนไป",
+            "en": "Check the price"
+          },
+          "book": "none",
+          "src": "https://www.familiesmagazine.com.au/things-to-do-on-the-gold-coast-with-kids/",
+          "name": {
+            "th": "ทางเดินยอดไม้โอไรลีส์",
+            "en": "O’Reilly’s Tree Top Walk"
+          },
+          "kind": "nature",
+          "area": {
+            "th": "อุทยานแห่งชาติแลมิงตัน",
+            "en": "Lamington National Park"
+          },
+          "what": {
+            "th": "ทางเดินวนง่ายๆ 800 เมตร มีสะพานแขวนเก้าสะพานบนยอดป่าฝน",
+            "en": "An easy 800 m loop with nine suspension bridges up in the rainforest canopy"
+          },
+          "why": {
+            "th": "ได้เจอนกแก้วโรเซลลาและนกแก้วคิง และมีโชว์นกล่าเหยื่อที่โอไรลีส์",
+            "en": "Rosellas and king parrots to meet, and a bird of prey show at O’Reilly’s"
+          },
+          "q": "Tree Top Walkway, O'Reilly's, Lamington National Park",
+          "ok": "2026-11"
+        },
+        {
+          "local": "",
+          "ages": [
+            1,
+            1,
+            1,
+            1
+          ],
+          "hrs": 3,
+          "io": "out",
+          "pram": "no",
+          "price": {
+            "th": "ฟรี",
+            "en": "Free"
+          },
+          "book": "none",
+          "src": "https://www.familiesmagazine.com.au/things-to-do-on-the-gold-coast-with-kids/",
+          "name": {
+            "th": "แอ่งหินเคอร์รัมบิน",
+            "en": "Currumbin Rock Pools"
+          },
+          "kind": "nature",
+          "area": {
+            "th": "หุบเขาเคอร์รัมบิน",
+            "en": "Currumbin Valley"
+          },
+          "what": {
+            "th": "แอ่งน้ำในหินบนเนินเขา สำหรับปิกนิกและลงแช่น้ำเย็น",
+            "en": "Rock pools in the hills for a picnic and a cool dip"
+          },
+          "why": {
+            "th": "จุดเล่นน้ำของคนท้องถิ่น ไม่เสียค่าเข้า",
+            "en": "A free local swimming spot"
+          },
+          "q": "Currumbin Rock Pools, Currumbin Valley",
+          "ok": "2026-11"
+        },
+        {
+          "local": "",
+          "ages": [
+            1,
+            1,
+            1,
+            1
+          ],
+          "hrs": 2,
+          "io": "out",
+          "pram": "part",
+          "price": {
+            "th": "เช็กราคาก่อนไป",
+            "en": "Check the price"
+          },
+          "book": "none",
+          "src": "https://www.familiesmagazine.com.au/things-to-do-on-the-gold-coast-with-kids/",
+          "name": {
+            "th": "คันทรีพาราไดซ์พาร์กแลนด์ส",
+            "en": "Country Paradise Parklands"
+          },
+          "kind": "park",
+          "area": {
+            "th": "เนรัง",
+            "en": "Nerang"
+          },
+          "what": {
+            "th": "สวนสาธารณะของชุมชน มีสนามเด็กเล่นผจญภัย",
+            "en": "Community parklands with an adventure playground"
+          },
+          "why": {
+            "th": "กังหันลมสูง 11.5 เมตรพร้อมสไลเดอร์ยักษ์ ลำธารให้เล่นน้ำ และโซนเล่นของเด็กเล็ก",
+            "en": "An 11.5 m windmill with a mega slide, a creek bed with water play, and play spaces for toddlers"
+          },
+          "q": "Country Paradise Parklands, Nerang",
+          "ok": "2026-11"
+        },
+        {
+          "local": "",
+          "ages": [
+            1,
+            1,
+            1,
+            1
+          ],
+          "hrs": 3,
+          "io": "in",
+          "pram": "part",
+          "price": {
+            "th": "เช็กราคาก่อนไป",
+            "en": "Check the price"
+          },
+          "book": "none",
+          "src": "https://www.ellaslist.com.au/articles/brisbane-s-best-indoor-play-centres-for-rainy-days",
+          "name": {
+            "th": "เดอะจังเกิลแอดเวนเจอร์เพลย์",
+            "en": "The Jungle Adventure Play"
+          },
+          "kind": "play",
+          "area": {
+            "th": "ทิงกัลปา บริสเบน",
+            "en": "Tingalpa, Brisbane"
+          },
+          "what": {
+            "th": "ศูนย์เล่นผจญภัยในร่ม มีคาเฟ่",
+            "en": "An indoor adventure play centre with a café"
+          },
+          "why": {
+            "th": "มีโซนเด็กเล็ก และเชือกผจญภัย ด่านนินจา และสไลเดอร์",
+            "en": "A junior zone for little ones, plus high ropes, a ninja course and slides"
+          },
+          "q": "The Jungle Adventure Play Tingalpa",
+          "ok": "2026-11"
+        },
+        {
+          "local": "",
+          "ages": [
+            1,
+            1,
+            1,
+            0
+          ],
+          "hrs": 2,
+          "io": "in",
+          "pram": "part",
+          "price": {
+            "th": "เช็กราคาก่อนไป",
+            "en": "Check the price"
+          },
+          "book": "none",
+          "src": "https://www.ellaslist.com.au/articles/brisbane-s-best-indoor-play-centres-for-rainy-days",
+          "name": {
+            "th": "เรนโบว์ซิตี้",
+            "en": "Rainbow City Play Centre"
+          },
+          "kind": "play",
+          "area": {
+            "th": "อันเดอร์วูด บริสเบน",
+            "en": "Underwood, Brisbane"
+          },
+          "what": {
+            "th": "ศูนย์เด็กเล่นในร่มสำหรับเด็ก 0–8 ปี มีปราสาทเป่าลม แทรมโพลีน และโซนนุ่ม",
+            "en": "An indoor play centre for children from 0 to 8, with bouncy castles, trampolines and soft play"
+          },
+          "why": {
+            "th": "มีบ้านจำลองและโซนนุ่มสำหรับเด็กเล็ก",
+            "en": "Cubby houses and soft play for the little ones"
+          },
+          "q": "Rainbow City Play Centre, 15 Lapis St, Underwood",
+          "ok": "2026-11"
+        },
+        {
+          "local": "",
+          "ages": [
+            1,
+            1,
+            1,
+            1
+          ],
+          "hrs": 2,
+          "io": "in",
+          "pram": "part",
+          "price": {
+            "th": "เช็กราคาก่อนไป",
+            "en": "Check the price"
+          },
+          "book": "none",
+          "src": "https://www.ellaslist.com.au/articles/brisbane-s-best-indoor-play-centres-for-rainy-days",
+          "name": {
+            "th": "ครอกส์เพลย์เซ็นเตอร์ นอร์ธเลกส์",
+            "en": "Crocs Playcentre North Lakes"
+          },
+          "kind": "play",
+          "area": {
+            "th": "นอร์ธเลกส์ บริสเบน",
+            "en": "North Lakes, Brisbane"
+          },
+          "what": {
+            "th": "ศูนย์เด็กเล่นในร่มใหญ่และสว่าง มีคาเฟ่ในตัว",
+            "en": "A big, bright indoor play centre with a café on site"
+          },
+          "why": {
+            "th": "มีสไลเดอร์ โครงปีน ปราสาทเป่าลม และโซนนุ่มสำหรับเด็กอ่อน",
+            "en": "Slides, climbing frames, bouncy castles and baby soft play"
+          },
+          "q": "Crocs Playcentre North Lakes",
+          "ok": "2026-11"
         }
       ]
     }

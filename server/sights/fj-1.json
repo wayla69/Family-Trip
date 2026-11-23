@@ -191,6 +191,125 @@
           "q": "South Sea Island, Port Denarau, Fiji",
           "ok": "2026-11",
           "src": "https://www.southseaislandfiji.com"
+        },
+        {
+          "local": "",
+          "ages": [
+            1,
+            1,
+            2,
+            2
+          ],
+          "hrs": 0.5,
+          "io": "both",
+          "pram": "part",
+          "price": {
+            "th": "เช็กราคาก่อนไป",
+            "en": "Check the price"
+          },
+          "book": "none",
+          "src": "https://www.awinterescape.com/things-to-do-fiji/",
+          "name": {
+            "th": "วัดศรีศิวะสุบรามานิยะ",
+            "en": "Sri Siva Subramaniya Temple"
+          },
+          "kind": "culture",
+          "area": {
+            "th": "นาดี",
+            "en": "Nadi"
+          },
+          "what": {
+            "th": "วัดฮินดูสไตล์ดราวิเดียน ด้านหน้าทาสีสดใส",
+            "en": "A Hindu temple in Dravidian style with a brightly painted front"
+          },
+          "why": {
+            "th": "ให้เด็ก ๆ เห็นว่าฟิจิมีหลายวัฒนธรรม",
+            "en": "Shows children that Fiji has many cultures"
+          },
+          "tip": {
+            "th": "แต่งกายปิดไหล่และเข่า และขอให้ไม่กินอาหารก่อนเข้า",
+            "en": "Cover shoulders and knees; visitors are asked not to have eaten a meal before"
+          },
+          "q": "Sri Siva Subramaniya Temple, Queens Rd, Nadi",
+          "ok": "2026-11"
+        },
+        {
+          "local": "",
+          "ages": [
+            1,
+            2,
+            2,
+            2
+          ],
+          "hrs": 3,
+          "io": "out",
+          "pram": "part",
+          "price": {
+            "th": "เช็กราคาก่อนไป",
+            "en": "Check the price"
+          },
+          "book": "none",
+          "src": "https://fijipocketguide.com/the-guide-to-denarau-island-for-families/",
+          "name": {
+            "th": "สวนน้ำบิ๊กบูลา",
+            "en": "Big Bula Waterpark"
+          },
+          "kind": "themepark",
+          "area": {
+            "th": "เกาะเดนาเรา",
+            "en": "Denarau Island"
+          },
+          "what": {
+            "th": "สไลเดอร์น้ำยักษ์ สไลเดอร์เป่าลม และด่านอุปสรรค",
+            "en": "Giant waterslides, inflatable slides and obstacle courses"
+          },
+          "why": {
+            "th": "เด็ก ๆ ชอบเครื่องเล่นเป่าลม",
+            "en": "Children love the inflatables"
+          },
+          "q": "Big Bula Waterpark, Jayant Rd, Denarau Island",
+          "ok": "2026-11"
+        },
+        {
+          "local": "Namaka Farmers Market",
+          "ages": [
+            1,
+            2,
+            2,
+            2
+          ],
+          "hrs": 0.5,
+          "io": "both",
+          "pram": "part",
+          "price": {
+            "th": "เช็กราคาก่อนไป",
+            "en": "Check the price"
+          },
+          "book": "none",
+          "src": "https://fijipocketguide.com/the-foodie-guide-to-nadi/",
+          "name": {
+            "th": "ตลาดนามากา",
+            "en": "Namaka market"
+          },
+          "kind": "market",
+          "area": {
+            "th": "นามากา นาดี",
+            "en": "Namaka, Nadi"
+          },
+          "what": {
+            "th": "ตลาดเล็กบรรยากาศสบาย ขายผักผลไม้ตามฤดูกาล",
+            "en": "A smaller, calmer market of seasonal fruit and vegetables"
+          },
+          "why": {
+            "th": "สบาย ๆ กว่าตลาดใหญ่",
+            "en": "More relaxed than the big markets"
+          },
+          "tip": {
+            "th": "ปิดวันอาทิตย์",
+            "en": "Closed on Sundays"
+          },
+          "q": "Namaka Farmers Market, Nadi",
+          "ok": "2026-11"
         }
       ]
     }
