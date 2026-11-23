@@ -258,6 +258,43 @@
           "q": "Museum of the Yellowstone, West Yellowstone, Montana",
           "ok": "2026-11",
           "src": "https://museumoftheyellowstone.org/tickets-hours"
+        },
+        {
+          "local": "",
+          "ages": [
+            1,
+            2,
+            2,
+            2
+          ],
+          "hrs": 0.5,
+          "io": "in",
+          "pram": "part",
+          "price": {
+            "th": "เช็กราคาก่อนไป",
+            "en": "Check the price"
+          },
+          "book": "none",
+          "src": "https://fullsuitcase.com/best-things-yellowstone-kids/",
+          "name": {
+            "th": "โอลด์เฟธฟูลอินน์",
+            "en": "Old Faithful Inn"
+          },
+          "kind": "culture",
+          "area": {
+            "th": "โอลด์เฟธฟูล เยลโลว์สโตน",
+            "en": "Old Faithful, Yellowstone"
+          },
+          "what": {
+            "th": "โรงแรมไม้เก่าแก่ ภายในงดงามให้เดินชม",
+            "en": "The historic wooden inn with a grand interior to walk through"
+          },
+          "why": {
+            "th": "เด็ก ๆ ชอบปีนบันไดไม้",
+            "en": "Children love climbing the wooden stairs"
+          },
+          "q": "Old Faithful Inn, Yellowstone",
+          "ok": "2026-11"
         }
       ]
     },
