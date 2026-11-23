@@ -542,6 +542,47 @@
           "q": "Hot air balloon, Agafay Desert, Marrakech",
           "ok": "2026-11",
           "src": "https://www.nomadotravel.app/en/guides/marrakech-with-kids"
+        },
+        {
+          "local": "Cascades d'Ouzoud",
+          "ages": [
+            0,
+            0,
+            1,
+            2
+          ],
+          "hrs": 6,
+          "io": "out",
+          "pram": "no",
+          "price": {
+            "th": "เรือที่นั่งละ 10–20 MAD",
+            "en": "10–20 MAD a seat (boat)"
+          },
+          "book": "none",
+          "src": "https://www.marrakech-desert-trips.com/best-day-trips-from-marrakech-for-families-with-kids",
+          "name": {
+            "th": "น้ำตกอูซูด",
+            "en": "Ouzoud Falls"
+          },
+          "kind": "nature",
+          "area": {
+            "th": "เทือกเขาแอตลาส ไปกลับจากมาราเกชในวันเดียว",
+            "en": "Atlas Mountains, a day trip from Marrakech"
+          },
+          "what": {
+            "th": "น้ำตกสูง 110 เมตร ลิงบาร์บารี และแอ่งน้ำธรรมชาติ",
+            "en": "110 metres of falling water, Barbary macaques and natural pools"
+          },
+          "why": {
+            "th": "นั่งเรือไม้ไปถึงตีนน้ำตก มีเสื้อชูชีพให้ขอ",
+            "en": "Wooden boats to the foot of the falls, with life jackets on request"
+          },
+          "tip": {
+            "th": "คนเยอะวันอาทิตย์และช่วงปิดเทอมของโมร็อกโก วันธรรมดาหน้าใบไม้ผลิดีที่สุด",
+            "en": "Busy on Sundays and in Moroccan school holidays; a spring weekday is best"
+          },
+          "q": "Ouzoud Waterfalls, Ouzoud",
+          "ok": "2026-11"
         }
       ]
     }
