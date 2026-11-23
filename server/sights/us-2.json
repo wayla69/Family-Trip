@@ -1626,6 +1626,445 @@
           "q": "Lydgate Beach Park, Wailua, Kauai",
           "ok": "2026-11",
           "src": "https://www.kauai.gov/Press-Releases/Lydgate-Beach-Park-and-Kamalani-Playground-to-reopen-April-25-2024"
+        },
+        {
+          "local": "",
+          "ages": [
+            1,
+            2,
+            2,
+            2
+          ],
+          "hrs": 2.5,
+          "io": "out",
+          "pram": "yes",
+          "price": {
+            "th": "เช็กราคาก่อนไป",
+            "en": "Check the price"
+          },
+          "book": "none",
+          "src": "https://ryo.co/en/articles/united-states/los-angeles/things-do-honolulu-kids/",
+          "name": {
+            "th": "หุบเขาไวเมอา",
+            "en": "Waimea Valley"
+          },
+          "kind": "nature",
+          "area": {
+            "th": "นอร์ทชอร์ โออาฮู",
+            "en": "North Shore, Oahu"
+          },
+          "what": {
+            "th": "สวนพฤกษศาสตร์มีทางเดินลาดยางง่าย ๆ ไปถึงน้ำตก",
+            "en": "A botanical garden with an easy paved trail to a waterfall"
+          },
+          "why": {
+            "th": "ว่ายน้ำใต้น้ำตกโดยมีไลฟ์การ์ดดูแล",
+            "en": "Swim under the waterfall with lifeguards watching"
+          },
+          "tip": {
+            "th": "เปิดอังคาร–อาทิตย์ 9:00–16:00 (ปิดวันจันทร์ในเดือน ม.ค. ก.พ. ต.ค. พ.ย.)",
+            "en": "Open Tuesday–Sunday 9am–4pm (closed Mondays in Jan, Feb, Oct, Nov)"
+          },
+          "q": "Waimea Valley, 59-864 Kamehameha Hwy, Haleiwa",
+          "ok": "2026-11"
+        },
+        {
+          "local": "",
+          "ages": [
+            0,
+            0,
+            1,
+            2
+          ],
+          "hrs": 2.5,
+          "io": "both",
+          "pram": "part",
+          "price": {
+            "th": "เช็กราคาก่อนไป",
+            "en": "Check the price"
+          },
+          "book": "req",
+          "src": "https://ryo.co/en/articles/united-states/los-angeles/things-do-honolulu-kids/",
+          "name": {
+            "th": "อนุสรณ์สถานแห่งชาติเพิร์ลฮาร์เบอร์",
+            "en": "Pearl Harbor National Memorial"
+          },
+          "kind": "museum",
+          "area": {
+            "th": "เพิร์ลฮาร์เบอร์ โฮโนลูลู",
+            "en": "Pearl Harbor, Honolulu"
+          },
+          "what": {
+            "th": "อนุสรณ์เรือยูเอสเอสแอริโซนาและห้องจัดแสดง",
+            "en": "The USS Arizona Memorial and museum galleries"
+          },
+          "why": {
+            "th": "สิ่งของ แผนที่ และเสียงของผู้รอดชีวิตเล่าเรื่องราว",
+            "en": "Objects, maps and survivors' voices tell the story"
+          },
+          "tip": {
+            "th": "จองตั๋วตามรอบเวลาทางออนไลน์ ส่วนใหญ่เปิดจองล่วงหน้า 56 วัน",
+            "en": "Book a timed ticket online; most open 56 days ahead"
+          },
+          "q": "Pearl Harbor National Memorial, Honolulu",
+          "ok": "2026-11"
+        },
+        {
+          "local": "",
+          "ages": [
+            2,
+            2,
+            2,
+            2
+          ],
+          "hrs": 1,
+          "io": "out",
+          "pram": "part",
+          "price": {
+            "th": "เช็กราคาก่อนไป",
+            "en": "Check the price"
+          },
+          "book": "none",
+          "src": "https://hawaiitravelwithkids.com/best-things-to-do-on-oahu-with-kids",
+          "name": {
+            "th": "วัดเบียวโดอิน",
+            "en": "Byodo-In Temple"
+          },
+          "kind": "culture",
+          "area": {
+            "th": "คาเนโอเฮ โออาฮูฝั่งรับลม",
+            "en": "Kaneohe, windward Oahu"
+          },
+          "what": {
+            "th": "วัดจำลองจากวัดญี่ปุ่นอายุ 950 ปี ใต้แนวภูเขา",
+            "en": "A copy of a 950-year-old Japanese temple below the mountains"
+          },
+          "why": {
+            "th": "ตีระฆัง ให้อาหารปลาคาร์ป และมองหานกยูง",
+            "en": "Ring the bell, feed the koi and spot peacocks"
+          },
+          "tip": {
+            "th": "มีค่าเข้าเล็กน้อย",
+            "en": "A small entry fee"
+          },
+          "q": "Byodo-In Temple, 47-200 Kahekili Hwy, Kaneohe",
+          "ok": "2026-11"
+        },
+        {
+          "local": "",
+          "ages": [
+            2,
+            2,
+            2,
+            2
+          ],
+          "hrs": 3,
+          "io": "out",
+          "pram": "part",
+          "price": {
+            "th": "ฟรี",
+            "en": "Free"
+          },
+          "book": "none",
+          "src": "https://ryo.co/en/articles/united-states/los-angeles/things-do-honolulu-kids/",
+          "name": {
+            "th": "หาดไคลัว",
+            "en": "Kailua Beach Park"
+          },
+          "kind": "beach",
+          "area": {
+            "th": "ไคลัว",
+            "en": "Kailua"
+          },
+          "what": {
+            "th": "หาดคลื่นสงบ มีห้องน้ำและฝักบัว",
+            "en": "A calm beach with toilets and showers"
+          },
+          "why": {
+            "th": "คลื่นสงบกว่าไวกีกี พื้นลาดค่อย ๆ เหมาะกับเด็กเล็ก",
+            "en": "Calmer than most of Waikiki, sloping gently for young swimmers"
+          },
+          "q": "Kailua Beach Park, 526 Kawailoa Rd, Kailua",
+          "ok": "2026-11"
+        },
+        {
+          "local": "",
+          "ages": [
+            2,
+            2,
+            2,
+            2
+          ],
+          "hrs": 3,
+          "io": "out",
+          "pram": "part",
+          "price": {
+            "th": "เช็กราคาก่อนไป",
+            "en": "Check the price"
+          },
+          "book": "none",
+          "src": "https://ryo.co/en/articles/united-states/los-angeles/things-do-honolulu-kids/",
+          "name": {
+            "th": "ลากูนโคโอลินา",
+            "en": "Ko Olina lagoons"
+          },
+          "kind": "beach",
+          "area": {
+            "th": "โคโอลินา คาโปเลย",
+            "en": "Ko Olina, Kapolei"
+          },
+          "what": {
+            "th": "อ่าวว่ายน้ำที่สร้างขึ้นหลังแนวกันคลื่นหิน",
+            "en": "Man-made swimming coves behind rock breakwaters"
+          },
+          "why": {
+            "th": "น้ำสงบและค่อย ๆ ลึก",
+            "en": "Calm water that deepens slowly"
+          },
+          "tip": {
+            "th": "ที่จอดรถเต็มเร็ว วันหยุดมักเต็มก่อน 9–10 โมง",
+            "en": "Parking fills early, often by 9 or 10am at weekends"
+          },
+          "q": "Ko Olina Lagoon 1, Kapolei",
+          "ok": "2026-11"
+        },
+        {
+          "local": "",
+          "ages": [
+            2,
+            2,
+            2,
+            2
+          ],
+          "hrs": 2,
+          "io": "out",
+          "pram": "yes",
+          "price": {
+            "th": "ฟรี",
+            "en": "Free"
+          },
+          "book": "none",
+          "src": "https://ryo.co/en/articles/united-states/los-angeles/things-do-honolulu-kids/",
+          "name": {
+            "th": "สวนชายหาดอาลาโมอานา",
+            "en": "Ala Moana Beach Park"
+          },
+          "kind": "park",
+          "area": {
+            "th": "อาลาโมอานา โฮโนลูลู",
+            "en": "Ala Moana, Honolulu"
+          },
+          "what": {
+            "th": "สวนริมหาด 100 เอเคอร์ มีลากูนกำบังคลื่น",
+            "en": "A 100-acre beach park with its own sheltered lagoon"
+          },
+          "why": {
+            "th": "ลากูนสงบ สนามเด็กเล่น และสนามหญ้าร่มรื่น",
+            "en": "A calm lagoon, a playground and shady lawns"
+          },
+          "q": "Ala Moana Regional Park, 1201 Ala Moana Blvd, Honolulu",
+          "ok": "2026-11"
+        },
+        {
+          "local": "",
+          "ages": [
+            2,
+            2,
+            2,
+            1
+          ],
+          "hrs": 2,
+          "io": "out",
+          "pram": "part",
+          "price": {
+            "th": "ฟรี",
+            "en": "Free"
+          },
+          "book": "none",
+          "src": "https://ryo.co/en/articles/united-states/los-angeles/things-do-honolulu-kids/",
+          "name": {
+            "th": "หาดคูฮิโอ",
+            "en": "Kuhio Beach"
+          },
+          "kind": "beach",
+          "area": {
+            "th": "ไวกีกี โฮโนลูลู",
+            "en": "Waikiki, Honolulu"
+          },
+          "what": {
+            "th": "แอ่งน้ำตื้นกำบังคลื่นที่ขอบไวกีกี",
+            "en": "A sheltered wading pool at the edge of Waikiki"
+          },
+          "why": {
+            "th": "น้ำตื้นสงบ เหมาะให้เด็กเล็กลองลงทะเลครั้งแรก",
+            "en": "Gentle, shallow water for a toddler's first sea"
+          },
+          "q": "Kuhio Beach, Kalākaua Ave, Honolulu",
+          "ok": "2026-11"
+        },
+        {
+          "local": "",
+          "ages": [
+            1,
+            2,
+            2,
+            2
+          ],
+          "hrs": 2,
+          "io": "out",
+          "pram": "part",
+          "price": {
+            "th": "เช็กราคาก่อนไป",
+            "en": "Check the price"
+          },
+          "book": "none",
+          "src": "https://ryo.co/en/articles/united-states/los-angeles/things-do-honolulu-kids/",
+          "name": {
+            "th": "ตลาดนัดอโลฮาสเตเดียม",
+            "en": "Aloha Stadium Swap Meet"
+          },
+          "kind": "market",
+          "area": {
+            "th": "ฮาลาวา โฮโนลูลู",
+            "en": "Halawa, Honolulu"
+          },
+          "what": {
+            "th": "ตลาดกลางแจ้งขายเสื้อผ้า ผลผลิต และของที่ระลึก",
+            "en": "An outdoor market of clothes, produce and souvenirs"
+          },
+          "why": {
+            "th": "มีน้ำแข็งไสและมาลาซาดาให้เด็กกินระหว่างเดิน",
+            "en": "Shave ice and malasadas keep children walking"
+          },
+          "tip": {
+            "th": "เปิดเช้าวันพุธ เสาร์ และอาทิตย์",
+            "en": "Wednesday, Saturday and Sunday mornings"
+          },
+          "q": "Aloha Stadium Swap Meet, 99-500 Salt Lake Blvd, Honolulu",
+          "ok": "2026-11"
+        },
+        {
+          "local": "",
+          "ages": [
+            2,
+            2,
+            2,
+            2
+          ],
+          "hrs": 1,
+          "io": "out",
+          "pram": "part",
+          "price": {
+            "th": "ฟรี",
+            "en": "Free"
+          },
+          "book": "none",
+          "src": "https://hawaiitravelwithkids.com/best-things-to-do-on-oahu-with-kids",
+          "name": {
+            "th": "หาดลาเนียเคอา (หาดเต่า)",
+            "en": "Laniakea Beach (turtle beach)"
+          },
+          "kind": "nature",
+          "area": {
+            "th": "นอร์ทชอร์ โออาฮู",
+            "en": "North Shore, Oahu"
+          },
+          "what": {
+            "th": "หาดที่เต่าทะเลสีเขียวขึ้นมานอนบนทราย",
+            "en": "A beach where green sea turtles rest on the sand"
+          },
+          "why": {
+            "th": "ดูเต่า และเล่นโยนบอลบนสนามหญ้า",
+            "en": "Watch the turtles, and play catch on the grass"
+          },
+          "tip": {
+            "th": "ไปเช้าตรู่หรือบ่ายแก่ ๆ อยู่ห่างเต่าอย่างน้อย 10 ฟุต",
+            "en": "Go early morning or late afternoon; keep at least 10 feet from the turtles"
+          },
+          "q": "Laniakea Beach, Haleiwa",
+          "ok": "2026-11"
+        },
+        {
+          "local": "",
+          "ages": [
+            0,
+            1,
+            2,
+            2
+          ],
+          "hrs": 2,
+          "io": "out",
+          "pram": "no",
+          "price": {
+            "th": "เช็กราคาก่อนไป",
+            "en": "Check the price"
+          },
+          "book": "none",
+          "src": "https://ryo.co/en/articles/united-states/los-angeles/things-do-honolulu-kids/",
+          "name": {
+            "th": "เส้นทางน้ำตกมาโนอา",
+            "en": "Mānoa Falls Trail"
+          },
+          "kind": "nature",
+          "area": {
+            "th": "มาโนอา โฮโนลูลู",
+            "en": "Mānoa, Honolulu"
+          },
+          "what": {
+            "th": "เส้นทางเดินป่าฝนไปถึงน้ำตก",
+            "en": "A rainforest trail to a waterfall"
+          },
+          "why": {
+            "th": "เดินป่าฝนจริง ๆ พร้อมน้ำตกตอนจบสำหรับเด็กโต",
+            "en": "A real rainforest walk with a big finish for older children"
+          },
+          "tip": {
+            "th": "ใส่รองเท้าที่เหมาะ ทางอาจเป็นโคลน",
+            "en": "Wear proper shoes; the trail can be muddy"
+          },
+          "q": "Mānoa Falls Trail, Honolulu",
+          "ok": "2026-11"
+        },
+        {
+          "local": "",
+          "ages": [
+            0,
+            1,
+            1,
+            2
+          ],
+          "hrs": 1.5,
+          "io": "in",
+          "pram": "part",
+          "price": {
+            "th": "เช็กราคาก่อนไป",
+            "en": "Check the price"
+          },
+          "book": "rec",
+          "src": "https://ryo.co/en/articles/united-states/los-angeles/things-do-honolulu-kids/",
+          "name": {
+            "th": "พระราชวังอิโอลานี",
+            "en": "ʻIolani Palace"
+          },
+          "kind": "culture",
+          "area": {
+            "th": "ใจกลางเมือง โฮโนลูลู",
+            "en": "Downtown, Honolulu"
+          },
+          "what": {
+            "th": "พระราชวังแห่งเดียวในสหรัฐฯ พร้อมเฟอร์นิเจอร์ของเดิม",
+            "en": "The only royal palace in the United States, with its original furniture"
+          },
+          "why": {
+            "th": "ทัวร์นำชมเหมาะกับเด็กโต",
+            "en": "Guided tours suit older children"
+          },
+          "tip": {
+            "th": "เด็กอายุไม่เกิน 4 ขวบร่วมทัวร์เสียงได้ในเป้อุ้มหรือรถเข็นของวัง",
+            "en": "Under-fives can join the audio tour in a carrier or a palace pushchair"
+          },
+          "q": "Iolani Palace, 364 S King St, Honolulu",
+          "ok": "2026-11"
         }
       ]
     },
