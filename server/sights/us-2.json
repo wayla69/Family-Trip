@@ -535,6 +535,248 @@
           "q": "Anchorage Market and Festival, 3rd Avenue, Anchorage, Alaska",
           "ok": "2026-11",
           "src": "https://festivalnet.com/94898/Anchorage-Alaska/Marketplace-Expos/Anchorage-Weekend-Downtown-Market"
+        },
+        {
+          "local": "",
+          "ages": [
+            1,
+            2,
+            2,
+            2
+          ],
+          "hrs": 2,
+          "io": "in",
+          "pram": "yes",
+          "price": {
+            "th": "เช็กราคาก่อนไป",
+            "en": "Check the price"
+          },
+          "book": "none",
+          "src": "https://mommypoppins.com/anywhere-kids/family-travel/best-things-to-do-anchorage-alaska-kids-itinerary",
+          "name": {
+            "th": "พิพิธภัณฑ์การบินอะแลสกา",
+            "en": "Alaska Aviation Museum"
+          },
+          "kind": "museum",
+          "area": {
+            "th": "แองเคอเรจ",
+            "en": "Anchorage"
+          },
+          "what": {
+            "th": "เครื่องบินรุ่นเก่าและเครื่องบินทะเล มีหอบังคับการบินริมน้ำ",
+            "en": "Vintage planes and float planes, with a working flight tower by the water"
+          },
+          "why": {
+            "th": "มีมุมของเล่นและเครื่องบินเล็กให้เด็กเล่น",
+            "en": "A small area with toys and small planes for children"
+          },
+          "tip": {
+            "th": "เครื่องจำลองการบินเสียค่าเล่นเล็กน้อย",
+            "en": "The flight simulator costs a small fee"
+          },
+          "q": "Alaska Aviation Museum, 4721 Aircraft Dr, Anchorage",
+          "ok": "2026-11"
+        },
+        {
+          "local": "",
+          "ages": [
+            1,
+            2,
+            2,
+            2
+          ],
+          "hrs": 2,
+          "io": "in",
+          "pram": "yes",
+          "price": {
+            "th": "เช็กราคาก่อนไป",
+            "en": "Check the price"
+          },
+          "book": "none",
+          "src": "https://mommypoppins.com/anywhere-kids/family-travel/best-things-to-do-anchorage-alaska-kids-itinerary",
+          "name": {
+            "th": "พิพิธภัณฑ์วิทยาศาสตร์และธรรมชาติอะแลสกา",
+            "en": "Alaska Museum of Science and Nature"
+          },
+          "kind": "museumkid",
+          "area": {
+            "th": "แองเคอเรจ",
+            "en": "Anchorage"
+          },
+          "what": {
+            "th": "ไดโนเสาร์ สัตว์ยุคน้ำแข็ง ฟอสซิล นก และสัตว์ทะเล",
+            "en": "Dinosaurs, Ice Age animals, fossils, birds and sea life"
+          },
+          "why": {
+            "th": "ที่หลบฝนหรืออากาศหนาว",
+            "en": "A place to get out of the rain or the cold"
+          },
+          "tip": {
+            "th": "เปิดเฉพาะวันพฤหัสบดีถึงวันเสาร์",
+            "en": "Open Thursday to Saturday only"
+          },
+          "q": "Alaska Museum of Science and Nature, 201 N Bragaw St, Anchorage",
+          "ok": "2026-11"
+        },
+        {
+          "local": "",
+          "ages": [
+            2,
+            2,
+            2,
+            1
+          ],
+          "hrs": 1.5,
+          "io": "in",
+          "pram": "yes",
+          "price": {
+            "th": "เช็กราคาก่อนไป",
+            "en": "Check the price"
+          },
+          "book": "none",
+          "src": "https://mommypoppins.com/anywhere-kids/family-travel/best-things-to-do-anchorage-alaska-kids-itinerary",
+          "name": {
+            "th": "ห้องสมุดซี.เจ. ลูแซก",
+            "en": "Z.J. Loussac Library"
+          },
+          "kind": "play",
+          "area": {
+            "th": "แองเคอเรจ",
+            "en": "Anchorage"
+          },
+          "what": {
+            "th": "ชั้นเด็กมีเกมล่าสมบัติ งานฝีมือ และมุมเล่นสำหรับเด็กเล็ก",
+            "en": "A children's floor with scavenger hunts, crafts and a play area for babies and toddlers"
+          },
+          "why": {
+            "th": "เล่น ทำงานฝีมือ และเกมในร่ม",
+            "en": "Indoor play, crafts and games"
+          },
+          "tip": {
+            "th": "มีสนามเด็กเล่นใหญ่ที่มุมลานจอดรถ",
+            "en": "A large playground sits in the far corner of the car park"
+          },
+          "q": "Z.J. Loussac Library, 3600 Denali St, Anchorage",
+          "ok": "2026-11"
+        },
+        {
+          "local": "",
+          "ages": [
+            1,
+            2,
+            2,
+            1
+          ],
+          "hrs": 2,
+          "io": "out",
+          "pram": "part",
+          "price": {
+            "th": "เช็กราคาก่อนไป",
+            "en": "Check the price"
+          },
+          "book": "none",
+          "src": "https://mommypoppins.com/anywhere-kids/family-travel/best-things-to-do-anchorage-alaska-kids-itinerary",
+          "name": {
+            "th": "เหมืองอินเดียนแวลลีย์",
+            "en": "Indian Valley Mine"
+          },
+          "kind": "farm",
+          "area": {
+            "th": "อินเดียน ทางหลวงซูเวิร์ด",
+            "en": "Indian, Seward Highway"
+          },
+          "what": {
+            "th": "เหมืองเก่าให้ร่อนทอง มีเป็ดและไก่งวงอยู่ใกล้ ๆ",
+            "en": "A historic mine where you pan for gold, with ducks and turkeys nearby"
+          },
+          "why": {
+            "th": "ทุกคนได้ทองกลับบ้าน",
+            "en": "Everyone goes home with gold"
+          },
+          "q": "Indian Valley Mine, 27301 Seward Hwy, Indian, AK",
+          "ok": "2026-11"
+        },
+        {
+          "local": "",
+          "ages": [
+            1,
+            2,
+            2,
+            2
+          ],
+          "hrs": 1,
+          "io": "out",
+          "pram": "part",
+          "price": {
+            "th": "เช็กราคาก่อนไป",
+            "en": "Check the price"
+          },
+          "book": "none",
+          "src": "https://mommypoppins.com/anywhere-kids/family-travel/best-things-to-do-anchorage-alaska-kids-itinerary",
+          "name": {
+            "th": "ชายหาดคินเคดพาร์ก",
+            "en": "Kincaid Park beach"
+          },
+          "kind": "beach",
+          "area": {
+            "th": "แองเคอเรจ",
+            "en": "Anchorage"
+          },
+          "what": {
+            "th": "ชายหาดที่มีทะเลด้านหนึ่งและหน้าผาอีกด้าน",
+            "en": "A beach with the sea on one side and bluffs on the other"
+          },
+          "why": {
+            "th": "ถ้าคนไม่เยอะ อาจเห็นมูสเดินผ่าน",
+            "en": "Moose may stroll past when it is quiet"
+          },
+          "tip": {
+            "th": "มีทรายดูด อย่าเข้าใกล้น้ำ",
+            "en": "There is quicksand: keep away from the water"
+          },
+          "q": "Kincaid Park, 9401 Raspberry Rd, Anchorage",
+          "ok": "2026-11"
+        },
+        {
+          "local": "",
+          "ages": [
+            1,
+            2,
+            2,
+            2
+          ],
+          "hrs": 2,
+          "io": "out",
+          "pram": "part",
+          "price": {
+            "th": "เช็กราคาก่อนไป",
+            "en": "Check the price"
+          },
+          "book": "none",
+          "src": "https://mommypoppins.com/anywhere-kids/family-travel/best-things-to-do-anchorage-alaska-kids-itinerary",
+          "name": {
+            "th": "ทะเลสาบเอคลุตนา",
+            "en": "Eklutna Lake"
+          },
+          "kind": "nature",
+          "area": {
+            "th": "อุทยานแห่งรัฐชูกาช ใกล้แองเคอเรจ",
+            "en": "Chugach State Park, near Anchorage"
+          },
+          "what": {
+            "th": "ทะเลสาบวิวภูเขา มีทางเดินสำหรับทุกวัย",
+            "en": "A lake with mountain views and walks for all ages"
+          },
+          "why": {
+            "th": "เด็กเล็กเดินริมทะเลสาบ เด็กโตเดินขึ้นจุดชมวิวแรก",
+            "en": "Little ones walk by the lake, older ones hike to the first lookout"
+          },
+          "tip": {
+            "th": "จุดชมวิวแรกสวยไม่แพ้จุดที่สูงกว่า",
+            "en": "The first lookout is as pretty as the higher ones"
+          },
+          "q": "Eklutna Lake, Chugach State Park",
+          "ok": "2026-11"
         }
       ]
     },
