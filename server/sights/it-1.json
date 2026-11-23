@@ -819,6 +819,240 @@
           "q": "Toblacher See, Dobbiaco",
           "ok": "2026-11",
           "src": "https://www.suedtirol.com/natur/seen/toblacher-see"
+        },
+        {
+          "local": "Museo all'aperto della Grande Guerra",
+          "ages": [
+            1,
+            2,
+            2,
+            2
+          ],
+          "hrs": 2,
+          "io": "out",
+          "pram": "no",
+          "price": {
+            "th": "เช็กราคาก่อนไป",
+            "en": "Check the price"
+          },
+          "book": "none",
+          "src": "https://mominitaly.com/dolomites-with-kids/",
+          "name": {
+            "th": "พิพิธภัณฑ์กลางแจ้งสงครามโลกครั้งที่ 1 ชิงเกวตอร์รี",
+            "en": "Cinque Torri WW1 open-air museum"
+          },
+          "kind": "museum",
+          "area": {
+            "th": "ชิงเกวตอร์รี ใกล้คอร์ตินาดัมเปซโซ",
+            "en": "Cinque Torri, near Cortina d'Ampezzo"
+          },
+          "what": {
+            "th": "เส้นทางผ่านสนามเพลาะสงครามโลกครั้งที่ 1 มีหุ่นจำลอง อุปกรณ์ และคำอธิบายภาษาอังกฤษ",
+            "en": "A trail of WW1 trenches with mannequins, props and English explanations"
+          },
+          "why": {
+            "th": "แม้เด็กเล็กก็สนุกกับการเดินในสนามเพลาะ",
+            "en": "Even little ones stay interested walking through the trenches"
+          },
+          "tip": {
+            "th": "ขึ้นกระเช้าจากไบตาไบเดโดเนส กระเช้าลงรอบสุดท้ายมักราว 17:00",
+            "en": "Take the chairlift from Baita Bai de Dones; the last lift down is usually around 5pm"
+          },
+          "q": "Museo Postazioni Italiane Grande Guerra alle Cinque Torri",
+          "ok": "2026-11"
+        },
+        {
+          "local": "Malga Tuff",
+          "ages": [
+            2,
+            2,
+            2,
+            1
+          ],
+          "hrs": 2,
+          "io": "out",
+          "pram": "part",
+          "price": {
+            "th": "เช็กราคาก่อนไป",
+            "en": "Check the price"
+          },
+          "book": "none",
+          "src": "https://mominitaly.com/dolomites-with-kids/",
+          "name": {
+            "th": "ทุฟอาล์ม",
+            "en": "Tuffalm"
+          },
+          "kind": "farm",
+          "area": {
+            "th": "ทะเลสาบเล็กฟิเอ ใต้เขาซีลีอาร์",
+            "en": "Laghetto di Fiè, below the Sciliar"
+          },
+          "what": {
+            "th": "กระท่อมบนเขาที่มีสวนสัตว์ให้ลูบและสนามเด็กเล่น",
+            "en": "A mountain hut with a petting zoo and a playground"
+          },
+          "why": {
+            "th": "มีม้า อัลปากา และกระต่ายให้ทักทาย",
+            "en": "Horses, alpacas and rabbits to say hello to"
+          },
+          "tip": {
+            "th": "ถ้ามีรถเข็นเด็ก ใช้ถนนกรวดแทนทางเดินป่า",
+            "en": "With a pram, take the gravel fire road instead of the trail"
+          },
+          "q": "Tuffalm, Fiè allo Sciliar",
+          "ok": "2026-11"
+        },
+        {
+          "local": "Movimënt",
+          "ages": [
+            2,
+            2,
+            2,
+            1
+          ],
+          "hrs": 2,
+          "io": "out",
+          "pram": "part",
+          "price": {
+            "th": "เช็กราคาก่อนไป",
+            "en": "Check the price"
+          },
+          "book": "none",
+          "src": "https://mominitaly.com/dolomites-with-kids/",
+          "name": {
+            "th": "สวนเล่นโมวีเมนต์",
+            "en": "Movimënt play park"
+          },
+          "kind": "play",
+          "area": {
+            "th": "ยอดกระเช้าปิซโซเรกา อัลตาบาเดีย",
+            "en": "Top of the Piz Sorega gondola, Alta Badia"
+          },
+          "what": {
+            "th": "สวนเล่นบนยอดกระเช้าปิซโซเรกา",
+            "en": "A play park at the top of the Piz Sorega gondola"
+          },
+          "why": {
+            "th": "หน้าเว็บบอกว่าเป็นจุดแวะโปรด มีที่เล่นสำหรับเด็ก",
+            "en": "A favourite stop with a play area, the page says"
+          },
+          "q": "Movimënt, Str. Col Alt 40, Corvara in Badia",
+          "ok": "2026-11"
+        },
+        {
+          "local": "Castel Presule",
+          "ages": [
+            1,
+            2,
+            2,
+            2
+          ],
+          "hrs": 1.5,
+          "io": "both",
+          "pram": "part",
+          "price": {
+            "th": "เช็กราคาก่อนไป",
+            "en": "Check the price"
+          },
+          "book": "rec",
+          "src": "https://mominitaly.com/dolomites-with-kids/",
+          "name": {
+            "th": "ปราสาทเพรอเซลส์",
+            "en": "Prösels Castle"
+          },
+          "kind": "culture",
+          "area": {
+            "th": "เหนือโบลซาโน",
+            "en": "Above Bolzano"
+          },
+          "what": {
+            "th": "ปราสาทสร้างราวปี ค.ศ. 1200 แล้วต่อเติมภายหลัง",
+            "en": "A castle from around 1200, later enlarged"
+          },
+          "why": {
+            "th": "ทัวร์นำชมคุกใต้ดิน ห้องส้วม และคลังอาวุธเป็นส่วนที่เด็ก ๆ ชอบ",
+            "en": "The guided tour of the dungeon, the toilet and the armoury is a children's favourite"
+          },
+          "tip": {
+            "th": "เข้าทัวร์นำชม มีสนามหญ้าให้เล่นและร้านขนมเล็ก ๆ",
+            "en": "Take the guided tour; there is a green area to play and a small snack bar"
+          },
+          "q": "Castel Prösels, Fiè allo Sciliar",
+          "ok": "2026-11"
+        },
+        {
+          "local": "Prati del Talvera",
+          "ages": [
+            2,
+            2,
+            2,
+            2
+          ],
+          "hrs": 1.5,
+          "io": "out",
+          "pram": "yes",
+          "price": {
+            "th": "ฟรี",
+            "en": "Free"
+          },
+          "book": "none",
+          "src": "https://mominitaly.com/bolzano-with-kids/",
+          "name": {
+            "th": "ทุ่งหญ้าริมแม่น้ำทัลเวรา",
+            "en": "Talvera meadows"
+          },
+          "kind": "park",
+          "area": {
+            "th": "ขอบตะวันตกของโบลซาโน",
+            "en": "Western edge of Bolzano"
+          },
+          "what": {
+            "th": "สวนกว้างที่ครอบครัวมาปิกนิกและเล่นสนามเด็กเล่น",
+            "en": "A large green park where families picnic and use the playgrounds"
+          },
+          "why": {
+            "th": "หน้าเว็บบอกว่าสนามเด็กเล่นยอดเยี่ยม",
+            "en": "The page calls the playgrounds amazing"
+          },
+          "q": "Lungotalvera Bolzano",
+          "ok": "2026-11"
+        },
+        {
+          "local": "Meran 2000",
+          "ages": [
+            1,
+            2,
+            2,
+            2
+          ],
+          "hrs": 4,
+          "io": "out",
+          "pram": "part",
+          "price": {
+            "th": "เช็กราคาก่อนไป",
+            "en": "Check the price"
+          },
+          "book": "none",
+          "src": "https://mominitaly.com/merano-2000-with-kids/",
+          "name": {
+            "th": "เมราโน 2000",
+            "en": "Merano 2000"
+          },
+          "kind": "views",
+          "area": {
+            "th": "เหนือเมราโน ขึ้นกระเช้า",
+            "en": "Above Merano, by cable car"
+          },
+          "what": {
+            "th": "พื้นที่บนภูเขาเหนือเมราโน มีเส้นทางเดินและร้านอาหาร",
+            "en": "Mountain area above Merano with trails and places to eat"
+          },
+          "why": {
+            "th": "มีสนามเด็กเล่นดีมาก และเครื่องเล่นอัลพินบ็อบ",
+            "en": "A very good playground and the Alpin Bob ride"
+          },
+          "q": "Talstation Seilbahn Meran 2000, Via Val di Nova, Merano",
+          "ok": "2026-11"
         }
       ]
     },
