@@ -260,7 +260,48 @@
           "src": "https://www.oberoesterreich.at/oesterreich-poi/detail/430014281/kinderspielplatz-am-strandbadgelaende.html"
         },
       {"name":{"en":"Beinhaus in der Michaelskapelle","th":"ห้องกระดูกในโบสถ์น้อยมิคาเอล"},"kind":"culture","area":{"en":"Hallstatt historic town centre","th":"ใจกลางเมืองเก่าฮัลชตัท"},"what":{"en":"Bone house with about 1,200 skulls in the St. Michael's chapel, the skulls of families painted and dated.","th":"ห้องกระดูกที่มีกะโหลกราว 1,200 ชิ้นในโบสถ์น้อยเซนต์ไมเคิล กะโหลกของครอบครัวต่างๆ ถูกวาดสีและลงปีไว้"},"why":{"en":"A short, quiet visit in the old town centre; the page says it suits children.","th":"ชมสั้นๆ อย่างเงียบสงบในใจกลางเมืองเก่า หน้าเว็บบอกว่าเหมาะกับเด็ก"},"tip":{"en":"Open May to September 10:00 to 18:00; October 10:00 to 17:00; November to April 11:30 to 15:30.","th":"เปิดพฤษภาคมถึงกันยายน 10:00–18:00 ตุลาคม 10:00–17:00 พฤศจิกายนถึงเมษายน 11:30–15:30"},"ages":[0,1,2,2],"hrs":0.5,"io":"in","pram":"part","price":{"en":"€ 0.50","th":"€ 0.50"},"book":"none","q":"Beinhaus Michaelskapelle, Kirchenweg 40, Hallstatt","ok":"2026-11","src":"https://dachstein.salzkammergut.at/en/oesterreich-poi/detail/400341/bone-house-ossuary-in-the-st-michaels-chapel.html"},
-      {"name":{"en":"Little Bear via ferrata","th":"ลิตเติลแบร์ เฟียเฟอร์ราตา (เส้นทางไต่เขาสำหรับเด็ก)"},"kind":"nature","area":{"en":"Dachstein Krippenstein cable car mountain station","th":"สถานีบนเขาของกระเช้า Dachstein Krippenstein"},"what":{"en":"Children's via ferrata beside the Krippenstein cable car mountain station, with wire ropes, stepping sticks and suspension bridges.","th":"เส้นทางไต่เขาสำหรับเด็กข้างสถานีกระเช้า Krippenstein มีเชือกลวด ขั้นเหยียบ และสะพานแขวน"},"why":{"en":"Built for children and beginners; the children must reach the rope at a 1.35 m measuring station.","th":"ออกแบบสำหรับเด็กและมือใหม่ เด็กต้องเอื้อมถึงเชือกที่จุดวัดความสูง 1.35 เมตร"},"tip":{"en":"Summer only, during the cable car's opening times.","th":"เปิดเฉพาะฤดูร้อน ตามเวลาเปิดของกระเช้า"},"ages":[0,1,2,2],"hrs":2,"io":"out","pram":"no","price":{"en":"Check the price","th":"เช็กราคาก่อนไป"},"book":"none","q":"Little Bear via ferrata, Dachstein Krippenstein, Obertraun","ok":"2026-11","src":"https://dachstein.salzkammergut.at/en/adventure/listen-tourdata/via-ferratas-for-kids/oesterreich-tour/detail/430007114/familienklettersteig-little-bear.html"}
+      {"name":{"en":"Little Bear via ferrata","th":"ลิตเติลแบร์ เฟียเฟอร์ราตา (เส้นทางไต่เขาสำหรับเด็ก)"},"kind":"nature","area":{"en":"Dachstein Krippenstein cable car mountain station","th":"สถานีบนเขาของกระเช้า Dachstein Krippenstein"},"what":{"en":"Children's via ferrata beside the Krippenstein cable car mountain station, with wire ropes, stepping sticks and suspension bridges.","th":"เส้นทางไต่เขาสำหรับเด็กข้างสถานีกระเช้า Krippenstein มีเชือกลวด ขั้นเหยียบ และสะพานแขวน"},"why":{"en":"Built for children and beginners; the children must reach the rope at a 1.35 m measuring station.","th":"ออกแบบสำหรับเด็กและมือใหม่ เด็กต้องเอื้อมถึงเชือกที่จุดวัดความสูง 1.35 เมตร"},"tip":{"en":"Summer only, during the cable car's opening times.","th":"เปิดเฉพาะฤดูร้อน ตามเวลาเปิดของกระเช้า"},"ages":[0,1,2,2],"hrs":2,"io":"out","pram":"no","price":{"en":"Check the price","th":"เช็กราคาก่อนไป"},"book":"none","q":"Little Bear via ferrata, Dachstein Krippenstein, Obertraun","ok":"2026-11","src":"https://dachstein.salzkammergut.at/en/adventure/listen-tourdata/via-ferratas-for-kids/oesterreich-tour/detail/430007114/familienklettersteig-little-bear.html"},
+        {
+          "local": "",
+          "ages": [
+            0,
+            1,
+            2,
+            2
+          ],
+          "hrs": 5,
+          "io": "out",
+          "pram": "no",
+          "price": {
+            "th": "ฟรี",
+            "en": "Free"
+          },
+          "book": "none",
+          "src": "https://www.hallstatt.net/about-hallstatt/active-summer-holiday/wanderzeit-en-US/neue-content-holder-en-us/hiking-in-hallstatt/hiking-to-the-waldbachstrub-waterfall-in-hallstatt/",
+          "name": {
+            "th": "น้ำตกวัลด์บัคชตรูบ",
+            "en": "Waldbachstrub waterfall"
+          },
+          "kind": "nature",
+          "area": {
+            "th": "หุบเขาเอเชิร์นทัล ฮัลล์ชตัทท์",
+            "en": "Echerntal valley, Hallstatt"
+          },
+          "what": {
+            "th": "เดินขึ้นหุบเขาเอเชิร์นทัลไปน้ำตก ราว 2–2.5 ชั่วโมงต่อเที่ยว",
+            "en": "A walk up the Echerntal valley to a waterfall, about 2–2.5 hours each way"
+          },
+          "why": {
+            "th": "เหมาะกับครอบครัว และค่อนข้างง่าย",
+            "en": "Family-friendly and fairly easy"
+          },
+          "tip": {
+            "th": "ต้องใส่รองเท้าเดินป่า",
+            "en": "Proper outdoor shoes are a must"
+          },
+          "q": "Waldbachstrub wasserfall, Echerntalweg, Hallstatt",
+          "ok": "2026-11"
+        }
     ]
     },
     {
