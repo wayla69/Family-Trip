@@ -259,6 +259,195 @@
           "q": "Big adventure playground Heringer Millen, Mullerthal, Luxembourg",
           "ok": "2026-11",
           "src": "https://visitluxembourg.com/place/big-adventure-playground-heringer-millen"
+        },
+        {
+          "local": "",
+          "ages": [
+            2,
+            2,
+            2,
+            0
+          ],
+          "hrs": 2,
+          "io": "in",
+          "pram": "part",
+          "price": {
+            "th": "เช็กราคาก่อนไป",
+            "en": "Check the price"
+          },
+          "book": "none",
+          "src": "https://luxtoday.lu/en/blog/amusement-parks-playgrounds-luxembourg",
+          "name": {
+            "th": "สนามเด็กเล่นในร่มซิกแซก",
+            "en": "Zigzag indoor playground"
+          },
+          "kind": "play",
+          "area": {
+            "th": "แบร์ตร็องจ์",
+            "en": "Bertrange"
+          },
+          "what": {
+            "th": "สนามเด็กเล่นในร่ม มีเครื่องเล่นหลายชั้น",
+            "en": "An indoor playground with a play structure on several levels"
+          },
+          "why": {
+            "th": "มีสองโซน สำหรับเด็กต่ำกว่า 3 ขวบ และเด็ก 3–10 ขวบ",
+            "en": "Two areas: one for under-3s and one for ages 3 to 10"
+          },
+          "q": "Zigzag, 7 Rue Pletzer, Bertrange",
+          "ok": "2026-11"
+        },
+        {
+          "local": "",
+          "ages": [
+            2,
+            2,
+            2,
+            1
+          ],
+          "hrs": 1,
+          "io": "out",
+          "pram": "yes",
+          "price": {
+            "th": "ฟรี",
+            "en": "Free"
+          },
+          "book": "none",
+          "src": "https://luxtoday.lu/en/blog/amusement-parks-playgrounds-luxembourg",
+          "name": {
+            "th": "เรือโจรสลัดสวนมอนเทอเรย์",
+            "en": "Monterey Park pirate ship"
+          },
+          "kind": "play",
+          "area": {
+            "th": "วีลโอต เมืองลักเซมเบิร์ก",
+            "en": "Ville-Haute, Luxembourg City"
+          },
+          "what": {
+            "th": "สวนที่มีเรือโจรสลัดลำใหญ่ให้ปีนเล่น",
+            "en": "A park with an enormous pirate ship to play on"
+          },
+          "why": {
+            "th": "มีเรือโจรสลัด ชิงช้า และสไลเดอร์สูง",
+            "en": "A pirate ship, swings and a tall slide"
+          },
+          "tip": {
+            "th": "หน้าร้อนเตรียมกางเกงขาสั้นหรือชุดว่ายน้ำ มีเล่นน้ำด้วย",
+            "en": "In summer bring shorts or swimsuits: water games are part of it"
+          },
+          "q": "Pirate Ship playground, Avenue Monterey, Luxembourg",
+          "ok": "2026-11"
+        },
+        {
+          "local": "Bambësch",
+          "ages": [
+            2,
+            2,
+            2,
+            1
+          ],
+          "hrs": 1.5,
+          "io": "out",
+          "pram": "yes",
+          "price": {
+            "th": "ฟรี",
+            "en": "Free"
+          },
+          "book": "none",
+          "src": "https://luxtoday.lu/en/blog/amusement-parks-playgrounds-luxembourg",
+          "name": {
+            "th": "สนามเด็กเล่นบัมเบช",
+            "en": "Bambesch playground"
+          },
+          "kind": "play",
+          "area": {
+            "th": "มึห์เลินบัค ทางเหนือของเมือง",
+            "en": "Muhlenbach, north of the city"
+          },
+          "what": {
+            "th": "สไลเดอร์ ชิงช้า บ่อทราย ซิปไลน์ กำแพงปีนป่าย และที่เล่นน้ำ",
+            "en": "Slides, swings, a sandpit, a zip line, a climbing wall and water play"
+          },
+          "why": {
+            "th": "มีหลายโซนตามช่วงอายุ",
+            "en": "Zones for children of different ages"
+          },
+          "q": "Bambesch Playground, 22 Rue de Bridel, Luxembourg",
+          "ok": "2026-11"
+        },
+        {
+          "local": "",
+          "ages": [
+            0,
+            1,
+            2,
+            2
+          ],
+          "hrs": 1,
+          "io": "out",
+          "pram": "part",
+          "price": {
+            "th": "เช็กราคาก่อนไป",
+            "en": "Check the price"
+          },
+          "book": "none",
+          "src": "https://www.visit-eislek.lu/the-eislek/eislek-for-families",
+          "name": {
+            "th": "มินิกอล์ฟเวียนเดิน",
+            "en": "Minigolf Vianden"
+          },
+          "kind": "play",
+          "area": {
+            "th": "ถนนวิกตอร์อูโก เวียนเดิน",
+            "en": "Rue Victor Hugo, Vianden"
+          },
+          "what": {
+            "th": "สนามมินิกอล์ฟ 18 หลุมริมแม่น้ำ",
+            "en": "An 18-hole mini-golf course along the river"
+          },
+          "why": {
+            "th": "กิจกรรมครอบครัวเงียบสงบริมแม่น้ำ",
+            "en": "A quiet family outing by the river"
+          },
+          "q": "Minigolf Vianden, 42 Rue Victor Hugo, Vianden",
+          "ok": "2026-11"
+        },
+        {
+          "local": "Freibad Vianden",
+          "ages": [
+            1,
+            2,
+            2,
+            2
+          ],
+          "hrs": 3,
+          "io": "out",
+          "pram": "part",
+          "price": {
+            "th": "เช็กราคาก่อนไป",
+            "en": "Check the price"
+          },
+          "book": "none",
+          "src": "https://www.visit-eislek.lu/the-eislek/eislek-for-families",
+          "name": {
+            "th": "สระว่ายน้ำกลางแจ้งเวียนเดิน",
+            "en": "Vianden outdoor pool"
+          },
+          "kind": "play",
+          "area": {
+            "th": "ถนนซานาตอรียม เวียนเดิน",
+            "en": "Rue du Sanatorium, Vianden"
+          },
+          "what": {
+            "th": "สระว่ายน้ำกลางแจ้งน้ำอุ่น มีสนามหญ้าและวิวปราสาท",
+            "en": "A heated outdoor pool with a lawn and a view of the castle"
+          },
+          "why": {
+            "th": "สไลเดอร์สูง 6.5 เมตร และสนามหญ้ากว้าง",
+            "en": "A 6.5-metre slide and a big lawn"
+          },
+          "q": "Freibad Vianden, Rue du Sanatorium, Vianden",
+          "ok": "2026-11"
         }
       ]
     }
