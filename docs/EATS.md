@@ -374,3 +374,41 @@ batch-31 of docs/library-briefs. +3 in Anchorage: Simon & Seafort's, Golden Donu
 
 ### Cusco, 23 Nov 2026
 batch-31 of docs/library-briefs. +4: Pirwa, Green Point, L'Atelier Café Concept, Cappuccino Cusco Cafe. Proof in `docs/library-proof/pe-cusco.json`.
+### Bruges, 23 Nov 2026
+batch-07 of docs/library-briefs. +1: Jacobin (kids’ menu 5–12, mild sauces; Fooding Kids 2026). Out: two names the map does not know at their streets. Proof in `docs/library-proof/be-bruges.json`.
+
+### Brussels, 23 Nov 2026
+batch-08 of docs/library-briefs. +4: Le Fox, Lloyd Coffee Eatery Louise (glass-walled kids’ room), Cōcina Châtelain (under-10s eat free), Brasserie du Miroir. Proof in `docs/library-proof/be-brussels.json`.
+
+### Lyon, 23 Nov 2026
+batch-13 of docs/library-briefs. +5 from Lyon Tourism’s family pages: Mama Shelter, Zucca (Sunday kids’ club), Yakapiocher, Bouillon Baratte, La Commune. Proof in `docs/library-proof/fr-lyon.json`.
+
+### Chamonix and Annecy, 23 Nov 2026
+batch-13 of docs/library-briefs. +1: L’Aquarama at Angon (children’s menu, high chair). No dated page named a new Chamonix restaurant. Proof in `docs/library-proof/fr-alps.json`.
+
+### Strasbourg and Colmar, 23 Nov 2026
+batch-14 of docs/library-briefs. +3: Lucas & Chris and Caveau Saint-Jean (Colmar), Le Colbert (Strasbourg, children’s menu). Proof in `docs/library-proof/fr-strasbourg.json`.
+
+### Nice and the Riviera, 23 Nov 2026
+batch-14 of docs/library-briefs. +4 from Nice Côte d’Azur tourism’s family-labelled restaurants: Lou Balico, La Verrière, Brasserie Le Gioffredo, Lu Fran Calin. The family guide PDF could not be checked by the script. Proof in `docs/library-proof/fr-nice.json`.
+
+### Provence, 23 Nov 2026
+batch-14 of docs/library-briefs. +5: Chez Mamie, Kouk, Le 26, Au Jardin des Carmes (Avignon) and Côté Arènes (Arles); prices from the pages. Proof in `docs/library-proof/fr-provence.json`.
+
+### York, 23 Nov 2026
+batch-15 of docs/library-briefs. +8 from Little Vikings’ places to eat: Ambiente Tapas, SPARK:York, Brew & Brownie, Partisan, Trinacria, The Pig & Pastry, Robinsons, Rowntree Park Reading Café. Proof in `docs/library-proof/gb-york.json`.
+
+### Edinburgh, 23 Nov 2026
+batch-15 of docs/library-briefs. +11 (Chop House, Civerinos Stockbridge, two Pizza Express branches, Montpeliers, Loudons New Waverley, Franco Manca Stockbridge, Dishoom, Mamma Roma, The Edinburgh Larder, Chaskaa). Proof in `docs/library-proof/gb-edinburgh.json`.
+
+### The Lake District, 23 Nov 2026
+batch-15 of docs/library-briefs. +7 from Lake District Kids: Boardwalk Bar & Grill, Villa Positano, YHA Ambleside café, Cuckoo Brow Inn, The Kellbank, Boot Inn, Woolpack Inn (the inns for their play areas and kids’ menus). Proof in `docs/library-proof/gb-lakes.json`.
+
+### Ireland, 23 Nov 2026
+batch-17 of docs/library-briefs. +10: The Bad Ass Cafe, Carluccio's, Wagamama Dundrum, Brother Hubbard, The Fumbally, Overends Kitchen, Saba (Dublin); Blackrock Cottage, Freddy's, Aniar (Galway). Proof in `docs/library-proof/ie-ireland.json`.
+
+### Disneyland Paris, 23 Nov 2026
+batch-21 of docs/library-briefs. +10 in the parks: Market House Deli, Last Chance Café, Casa de Coco, Cowboy Cookout Barbecue, Café de la Brousse, Hakuna Matata, The Old Mill, Pizzeria Bella Notte, Toad Hall, Café Luminosity. Proof in `docs/library-proof/p-disney-paris.json`.
+
+### Mont-Saint-Michel, 23 Nov 2026
+batch-28 of docs/library-briefs. +5: Le Grillon and Restaurant Eugénie (Pontorson), Saint James Café (Beauvoir), Le Café de la Baie (Vains), Le Logis Sainte-Catherine (on the Mont). Proof in `docs/library-proof/fr-montstmichel.json`.

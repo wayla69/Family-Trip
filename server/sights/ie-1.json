@@ -258,6 +258,470 @@
           "q": "Connemara Pony Heritage Centre, Letterfrack, County Galway",
           "ok": "2026-11",
           "src": "https://www.nationalparks.ie/connemara"
+        },
+        {
+          "local": "",
+          "ages": [
+            2,
+            2,
+            2,
+            1
+          ],
+          "hrs": 3,
+          "io": "both",
+          "pram": "part",
+          "price": {
+            "th": "เช็กราคาก่อนไป",
+            "en": "Check the price"
+          },
+          "book": "none",
+          "src": "https://www.discoverireland.ie/clare/family-break-county-clare",
+          "name": {
+            "th": "ฟาร์มเปิดโมเฮอร์ฮิลล์",
+            "en": "Moher Hill Open Farm"
+          },
+          "kind": "farm",
+          "area": {
+            "th": "ลิสแคนเนอร์ เคาน์ตีแคลร์",
+            "en": "Liscannor, County Clare"
+          },
+          "what": {
+            "th": "ฟาร์มเปิดที่มีนกอีมู นกกระจอกเทศ และแรคคูน และมีลานโกคาร์ต",
+            "en": "An open farm with emus, ostriches and raccoons, and a go-kart track"
+          },
+          "why": {
+            "th": "มีสัตว์ให้ทักทาย และที่เล่นในร่มสำหรับเด็กเล็ก",
+            "en": "Animals to meet and indoor play areas for little ones"
+          },
+          "q": "Moher Hill Open Farm, Liscannor, County Clare",
+          "ok": "2026-11"
+        },
+        {
+          "local": "",
+          "ages": [
+            1,
+            2,
+            2,
+            1
+          ],
+          "hrs": 1.5,
+          "io": "both",
+          "pram": "part",
+          "price": {
+            "th": "เช็กราคาก่อนไป",
+            "en": "Check the price"
+          },
+          "book": "none",
+          "src": "https://www.discoverireland.ie/clare/family-break-county-clare",
+          "name": {
+            "th": "ถ้ำดูลิน",
+            "en": "Doolin Cave"
+          },
+          "kind": "nature",
+          "area": {
+            "th": "เคาน์ตีแคลร์",
+            "en": "County Clare"
+          },
+          "what": {
+            "th": "ถ้ำที่มีหินย้อยใหญ่ที่สุดในซีกโลกเหนือ และมีเส้นทางเดินในฟาร์ม",
+            "en": "A cave with the largest stalactite in the Northern Hemisphere, and a farm trail"
+          },
+          "why": {
+            "th": "เส้นทางวนในฟาร์ม 1 กม. มีวัวพันธุ์หายาก แพะแคระ และหมู่บ้านนางฟ้าให้ตามหา",
+            "en": "A 1 km farm loop with rare cattle, pygmy goats and a fairy village to find"
+          },
+          "q": "Doolin Cave, Doolin, County Clare",
+          "ok": "2026-11"
+        },
+        {
+          "local": "",
+          "ages": [
+            1,
+            2,
+            2,
+            2
+          ],
+          "hrs": 1.5,
+          "io": "out",
+          "pram": "part",
+          "price": {
+            "th": "เช็กราคาก่อนไป",
+            "en": "Check the price"
+          },
+          "book": "none",
+          "src": "https://www.discoverireland.ie/clare/family-break-county-clare",
+          "name": {
+            "th": "ป้อมคาเฮอร์คอนเนลล์",
+            "en": "Caherconnell Fort"
+          },
+          "kind": "culture",
+          "area": {
+            "th": "เคาน์ตีแคลร์",
+            "en": "County Clare"
+          },
+          "what": {
+            "th": "ป้อมหินทรงวงแหวนอายุกว่า 1,000 ปี",
+            "en": "A stone ring fort over 1,000 years old"
+          },
+          "why": {
+            "th": "การแสดงสุนัขต้อนแกะกับคนต้อนและสุนัขบอร์เดอร์คอลลี",
+            "en": "Sheepdog shows with a handler and his border collies"
+          },
+          "tip": {
+            "th": "การแสดงสุนัขต้อนแกะมีช่วงมีนาคมถึงตุลาคม",
+            "en": "Sheepdog shows run between March and October"
+          },
+          "q": "Caherconnell Stone Fort, Carran, County Clare",
+          "ok": "2026-11"
+        },
+        {
+          "local": "",
+          "ages": [
+            1,
+            2,
+            2,
+            1
+          ],
+          "hrs": 2,
+          "io": "out",
+          "pram": "part",
+          "price": {
+            "th": "ฟรี",
+            "en": "Free"
+          },
+          "book": "none",
+          "src": "https://www.discoverireland.ie/clare/family-break-county-clare",
+          "name": {
+            "th": "เขตอนุรักษ์ป่าโดรมอร์",
+            "en": "Dromore Wood nature reserve"
+          },
+          "kind": "nature",
+          "area": {
+            "th": "เคาน์ตีแคลร์",
+            "en": "County Clare"
+          },
+          "what": {
+            "th": "ป่าที่มีแบดเจอร์ สโต๊ต นกหายาก ผีเสื้อ ป้อมวงแหวนสองแห่ง และเตาเผาปูนเก่า",
+            "en": "Woods with badgers, stoats, rare birds and butterflies, two ring forts and an old lime kiln"
+          },
+          "why": {
+            "th": "มีสัตว์และนกให้มองหา",
+            "en": "Animals and birds to spot"
+          },
+          "q": "Dromore Wood, County Clare",
+          "ok": "2026-11"
+        },
+        {
+          "local": "",
+          "ages": [
+            0,
+            1,
+            2,
+            2
+          ],
+          "hrs": 2,
+          "io": "in",
+          "pram": "part",
+          "price": {
+            "th": "เช็กราคาก่อนไป",
+            "en": "Check the price"
+          },
+          "book": "none",
+          "src": "https://www.discoverireland.ie/clare/family-break-county-clare",
+          "name": {
+            "th": "พิพิธภัณฑ์การบินแชนนอน",
+            "en": "Shannon Aviation Museum"
+          },
+          "kind": "museum",
+          "area": {
+            "th": "เคาน์ตีแคลร์",
+            "en": "County Clare"
+          },
+          "what": {
+            "th": "เครื่องบินและของที่ระลึกด้านการบิน",
+            "en": "Aircraft and aviation memorabilia"
+          },
+          "why": {
+            "th": "มีบทเรียนบินเสมือนจริงในทัวร์นำชม",
+            "en": "A virtual flying lesson on a guided tour"
+          },
+          "q": "Shannon Aviation Museum, Shannon, County Clare",
+          "ok": "2026-11"
+        },
+        {
+          "local": "",
+          "ages": [
+            2,
+            2,
+            2,
+            2
+          ],
+          "hrs": 2,
+          "io": "out",
+          "pram": "part",
+          "price": {
+            "th": "ฟรี",
+            "en": "Free"
+          },
+          "book": "none",
+          "src": "https://www.discoverireland.ie/clare/family-break-county-clare",
+          "name": {
+            "th": "หาดลาฮินช์",
+            "en": "Lahinch beach"
+          },
+          "kind": "beach",
+          "area": {
+            "th": "ลาฮินช์ เคาน์ตีแคลร์",
+            "en": "Lahinch, County Clare"
+          },
+          "what": {
+            "th": "หาดทรายยาว 2 กม. ข้างเมืองริมทะเลที่คึกคัก",
+            "en": "A 2 km sandy beach beside a lively seaside town"
+          },
+          "why": {
+            "th": "เรียนโต้คลื่น ว่ายน้ำ แล่นเรือใบ และพายคายัก",
+            "en": "Surf lessons, swimming, sailing and kayaking"
+          },
+          "q": "Lahinch Beach, Lahinch, County Clare",
+          "ok": "2026-11"
+        },
+        {
+          "local": "",
+          "ages": [
+            0,
+            0,
+            2,
+            2
+          ],
+          "hrs": 2,
+          "io": "in",
+          "pram": "part",
+          "price": {
+            "th": "ฟรี",
+            "en": "Free"
+          },
+          "book": "none",
+          "src": "https://www.dublintourism.org/rainy-day-kids/",
+          "name": {
+            "th": "พิพิธภัณฑ์แห่งชาติไอร์แลนด์ – โบราณคดี",
+            "en": "National Museum of Ireland – Archaeology"
+          },
+          "kind": "museum",
+          "area": {
+            "th": "ถนนคิลแดร์ ดับลิน",
+            "en": "Kildare Street, Dublin"
+          },
+          "what": {
+            "th": "ทองและเงินยุคไวกิ้ง ศพในบึงยุคเหล็ก และห้องจัดแสดงอียิปต์",
+            "en": "Viking gold and silver, Iron Age bog bodies and an Egyptian gallery"
+          },
+          "why": {
+            "th": "สมบัติทองคำสำหรับเด็กโต",
+            "en": "Gold treasures for older children"
+          },
+          "tip": {
+            "th": "เหมาะกับเด็ก 8 ขวบขึ้นไป · เปิดอังคาร–เสาร์ 10:00–17:00 อาทิตย์และจันทร์ 13:00–17:00",
+            "en": "Best for ages 8 and up; open Tuesday–Saturday 10am–5pm, Sunday and Monday 1pm–5pm"
+          },
+          "q": "National Museum of Ireland - Archaeology, Kildare Street, Dublin",
+          "ok": "2026-11"
+        },
+        {
+          "local": "",
+          "ages": [
+            1,
+            2,
+            2,
+            2
+          ],
+          "hrs": 2,
+          "io": "in",
+          "pram": "yes",
+          "price": {
+            "th": "ฟรี",
+            "en": "Free"
+          },
+          "book": "none",
+          "src": "https://www.dublintourism.org/rainy-day-kids/",
+          "name": {
+            "th": "หอศิลป์แห่งชาติไอร์แลนด์",
+            "en": "National Gallery of Ireland"
+          },
+          "kind": "museum",
+          "area": {
+            "th": "ดับลิน",
+            "en": "Dublin"
+          },
+          "what": {
+            "th": "ภาพวาดและประติมากรรม มีห้องของคาราวัจโจ",
+            "en": "Paintings and sculpture, with a Caravaggio room"
+          },
+          "why": {
+            "th": "เวิร์กช็อปครอบครัวฟรีทุกบ่ายวันอาทิตย์",
+            "en": "Free family workshops on Sunday afternoons"
+          },
+          "q": "National Gallery of Ireland, Dublin",
+          "ok": "2026-11"
+        },
+        {
+          "local": "",
+          "ages": [
+            1,
+            2,
+            2,
+            1
+          ],
+          "hrs": 1.5,
+          "io": "in",
+          "pram": "part",
+          "price": {
+            "th": "เด็กต่ำกว่า 12 ปี €11.50 (บัตรปกติ)",
+            "en": "€11.50 child under 12 (standard tickets)"
+          },
+          "book": "none",
+          "src": "https://www.dublintourism.org/rainy-day-kids/",
+          "name": {
+            "th": "พิพิธภัณฑ์หุ่นขี้ผึ้งแห่งชาติ",
+            "en": "National Wax Museum Plus"
+          },
+          "kind": "museum",
+          "area": {
+            "th": "ดับลิน",
+            "en": "Dublin"
+          },
+          "what": {
+            "th": "หุ่นขี้ผึ้งคนดัง บุคคลในประวัติศาสตร์ และตัวละคร",
+            "en": "Wax figures of celebrities, historical figures and characters"
+          },
+          "why": {
+            "th": "มีโซนเด็กสำหรับเด็กเล็ก",
+            "en": "A Children's Zone for younger visitors"
+          },
+          "tip": {
+            "th": "ห้องสยองขวัญเหมาะกับเด็กโตเท่านั้น",
+            "en": "The Chamber of Horrors is best left to older children"
+          },
+          "q": "The National Wax Museum Plus, Dublin",
+          "ok": "2026-11"
+        },
+        {
+          "local": "",
+          "ages": [
+            0,
+            0,
+            2,
+            2
+          ],
+          "hrs": 1,
+          "io": "in",
+          "pram": "part",
+          "price": {
+            "th": "ผู้ใหญ่ €18 · ผู้ใหญ่ 2 คนกับเด็กไม่เกิน 3 คน €45",
+            "en": "€18 adult; €45 for two adults and up to three children"
+          },
+          "book": "none",
+          "src": "https://www.dublintourism.org/rainy-day-kids/",
+          "name": {
+            "th": "พิพิธภัณฑ์เล็กแห่งดับลิน",
+            "en": "The Little Museum of Dublin"
+          },
+          "kind": "museum",
+          "area": {
+            "th": "เซนต์สตีเฟนส์กรีน ดับลิน",
+            "en": "St Stephen's Green, Dublin"
+          },
+          "what": {
+            "th": "ทัวร์นำชม 29 นาที เล่าเรื่องราวของดับลิน",
+            "en": "A 29-minute guided tour that tells the story of Dublin"
+          },
+          "why": {
+            "th": "รูปแบบแปลกใหม่ที่ทำให้เด็กสนใจ",
+            "en": "A quirky format that keeps children engaged"
+          },
+          "tip": {
+            "th": "เหมาะกับเด็ก 8 ขวบขึ้นไป",
+            "en": "Best for ages 8+"
+          },
+          "q": "The Little Museum of Dublin, St Stephen's Green, Dublin",
+          "ok": "2026-11"
+        },
+        {
+          "local": "",
+          "ages": [
+            0,
+            1,
+            2,
+            2
+          ],
+          "hrs": 2,
+          "io": "in",
+          "pram": "part",
+          "price": {
+            "th": "เด็กและนักเรียน €17 (2 ชั่วโมง)",
+            "en": "€17 for children and students (two hours)"
+          },
+          "book": "none",
+          "src": "https://www.dublintourism.org/rainy-day-kids/",
+          "name": {
+            "th": "อะควาโซน",
+            "en": "AquaZone"
+          },
+          "kind": "play",
+          "area": {
+            "th": "ศูนย์กีฬาทางน้ำแห่งชาติ แบลนชาร์ดสทาวน์",
+            "en": "National Aquatic Centre, Blanchardstown"
+          },
+          "what": {
+            "th": "สวนน้ำที่มีสระคลื่น แม่น้ำจำลอง และเครื่องจำลองโต้คลื่น",
+            "en": "A water park with a wave pool, a lazy river and a surf simulator"
+          },
+          "why": {
+            "th": "สไลเดอร์ คลื่น และแม่น้ำจำลอง",
+            "en": "Slides, waves and the lazy river"
+          },
+          "q": "AquaZone, National Aquatic Centre, Blanchardstown, Dublin",
+          "ok": "2026-11"
+        },
+        {
+          "local": "",
+          "ages": [
+            0,
+            1,
+            2,
+            2
+          ],
+          "hrs": 1.5,
+          "io": "in",
+          "pram": "yes",
+          "price": {
+            "th": "เช็กราคาก่อนไป",
+            "en": "Check the price"
+          },
+          "book": "none",
+          "src": "https://www.dublintourism.org/rainy-day-kids/",
+          "name": {
+            "th": "พิพิธภัณฑ์การอพยพไอริช EPIC",
+            "en": "EPIC The Irish Emigration Museum"
+          },
+          "kind": "museum",
+          "area": {
+            "th": "ดับลิน",
+            "en": "Dublin"
+          },
+          "what": {
+            "th": "ภาพยนตร์ เสียง และจอสัมผัส เล่าเรื่องผู้อพยพ",
+            "en": "Films, audio and touch screens with emigrants' stories"
+          },
+          "why": {
+            "th": "มีเส้นทางล่าของในพิพิธภัณฑ์และทัวร์เด็กในแอป",
+            "en": "Museum trails and a children's tour on the app"
+          },
+          "tip": {
+            "th": "เผื่อเวลาอย่างน้อย 90 นาที",
+            "en": "Allow at least 90 minutes"
+          },
+          "q": "EPIC The Irish Emigration Museum, Dublin",
+          "ok": "2026-11"
         }
       ]
     }

@@ -1,0 +1,59 @@
+{
+  "town": "lu-luxembourg",
+  "kind": "eats + sights",
+  "checked": "2026-11-23",
+  "rule": "library-check.cjs, then the Google Maps Reviews tab sorted by newest: ok only when not marked closed, with a review from the last six months, and the map's name matching the page's.",
+  "agents": "one Haiku agent; 14 rows from Luxtoday (2026), Wanderlog, Visit Éislek and Visit Luxembourg passed library-check.cjs, 5 went in",
+  "added": [
+    {
+      "name": "Zigzag indoor playground",
+      "page_name": "Zigzag",
+      "src": "https://luxtoday.lu/en/blog/amusement-parks-playgrounds-luxembourg",
+      "date": "2026-02",
+      "map": "Google Maps 7 Rue Pletzer, Bertrange, 607 reviews, newest '2 days ago'"
+    },
+    {
+      "name": "Monterey Park pirate ship",
+      "page_name": "Monterey Park",
+      "src": "https://luxtoday.lu/en/blog/amusement-parks-playgrounds-luxembourg",
+      "date": "2026-02",
+      "map": "Google Maps 'Children's playground - Pirate Ship', Av. Monterey, 1,324 reviews, newest '1 hour ago'"
+    },
+    {
+      "name": "Bambesch playground",
+      "page_name": "Bambesch Playground",
+      "src": "https://luxtoday.lu/en/blog/amusement-parks-playgrounds-luxembourg",
+      "date": "2026-02",
+      "map": "Google Maps 22 Rue de Bridel, 243 reviews, newest 'last week'"
+    },
+    {
+      "name": "Minigolf Vianden",
+      "page_name": "Minigolf Vianden",
+      "src": "https://www.visit-eislek.lu/the-eislek/eislek-for-families",
+      "date": "official",
+      "map": "Google Maps 42 Rue Victor Hugo, 13 reviews, newest '3 months ago'"
+    },
+    {
+      "name": "Vianden outdoor pool",
+      "page_name": "Vianden outdoor pool",
+      "src": "https://www.visit-eislek.lu/the-eislek/eislek-for-families",
+      "date": "official",
+      "map": "Google Maps 'Freibad Vianden', 237 reviews, newest 'last month'"
+    }
+  ],
+  "left_out": [
+    {
+      "name": "Madame Marianne, Brasserie Belle Vue (Vianden)",
+      "why": "map-checked and open, but held back: the eats lint wants 2 quick bites once a town has 13 places, and Luxembourg has 1"
+    },
+    {
+      "name": "Hôtel Sieweburen, Pavillon, Njord, Phare Gourmet, Athena, Juegdschlass",
+      "why": "their only source was a Wanderlog list"
+    },
+    {
+      "name": "Parc de Gasperich",
+      "why": "Google Maps found only a bus stop of that name"
+    }
+  ],
+  "estimates": "Ages and visit hours are placeholders; prices and opening notes are the pages' own."
+}
