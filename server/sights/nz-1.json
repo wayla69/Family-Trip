@@ -290,7 +290,241 @@
       {"name":{"en":"Smales Farm Market","th":"ตลาดสมาลส์ฟาร์ม"},"kind":"market","area":{"en":"North Shore","th":"นอร์ธชอร์"},"what":{"en":"Market of artisan food, local crafts and live music on the North Shore.","th":"ตลาดอาหารทำมือ งานฝีมือท้องถิ่น และดนตรีสด บนนอร์ธชอร์"},"why":{"en":"Discover Auckland calls it one of the North Shore's most wholesome weekend activities.","th":"หน้าเว็บ Discover Auckland เรียกว่าเป็นหนึ่งในกิจกรรมวันหยุดสุดสัปดาห์ที่ดีต่อใจที่สุดของนอร์ธชอร์"},"tip":{"en":"Every second Sunday of the month","th":"วันอาทิตย์ที่สองของทุกเดือน"},"ages":[1,2,2,2],"hrs":2,"io":"out","pram":"part","price":{"en":"Check the price","th":"เช็กราคาก่อนไป"},"book":"none","q":"Smales Farm Market, North Shore, Auckland","ok":"2026-11","src":"https://www.aucklandnz.com/inspire/a-locals-guide-to-aucklands-best-markets"},
       {"name":{"en":"Howick's Saturday Market","th":"ตลาดวันเสาร์ฮาวิก"},"kind":"market","area":{"en":"Howick, East Auckland","th":"ฮาวิก ออกแลนด์ตะวันออก"},"what":{"en":"Village Saturday market with fresh flowers, smoked fish, cheeses, bread and homemade fudge.","th":"ตลาดวันเสาร์ประจำหมู่บ้าน มีดอกไม้สด ปลารมควัน ชีส ขนมปัง และฟัดจ์ทำเอง"},"why":{"en":"Discover Auckland says it is full of small-town charm, with cafés nearby.","th":"หน้าเว็บ Discover Auckland บอกว่ามีเสน่ห์เมืองเล็กและมีคาเฟ่ใกล้ๆ"},"tip":{"en":"Pair it with a wander around the Howick Historical Village","th":"เดินชมหมู่บ้านประวัติศาสตร์ฮาวิกไปด้วยกันได้"},"ages":[1,2,2,2],"hrs":2,"io":"out","pram":"part","price":{"en":"Check the price","th":"เช็กราคาก่อนไป"},"book":"none","q":"Howick Village, Howick, Auckland","ok":"2026-11","src":"https://www.aucklandnz.com/inspire/a-locals-guide-to-aucklands-best-markets"},
       {"name":{"en":"My Wonderland","th":"มายวันเดอร์แลนด์"},"kind":"play","area":{"en":"63 Corinthian Drive, Albany, North Shore","th":"63 คอรินเธียนไดรฟ์ อัลบานี นอร์ธชอร์"},"what":{"en":"Indoor family venue with a modern playground, an arcade and an allergy-friendly café.","th":"สถานที่ครอบครัวในร่ม มีสนามเด็กเล่นทันสมัย ตู้เกม และคาเฟ่ที่ปลอดถั่ว"},"why":{"en":"Nut-free, with all-day play for ages 0 to 12 and all-weather play.","th":"หน้าเว็บบอกว่าปลอดถั่ว มีที่เล่นทั้งวันสำหรับอายุ 0–12 ปี และเล่นได้ทุกสภาพอากาศ"},"tip":{"en":"Socks are required for everyone, for hygiene and safety","th":"ทุกคนต้องใส่ถุงเท้า เพื่อความสะอาดและความปลอดภัย"},"ages":[2,2,2,1],"hrs":3,"io":"in","pram":"part","price":{"en":"Check the price","th":"เช็กราคาก่อนไป"},"book":"rec","q":"My Wonderland, 63 Corinthian Drive, Albany, Auckland","ok":"2026-11","src":"https://www.aucklandnz.com/explore/my-wonderland"},
-      {"name":{"en":"Archie Brothers Cirque Electriq","th":"อาร์ชี บราเธอร์ส เซอร์ค อิเล็กทริก"},"kind":"play","area":{"en":"Westfield Newmarket","th":"เวสต์ฟิลด์นิวมาร์เก็ต"},"what":{"en":"Entertainment space with bowling, dodgem cars, virtual reality and classic carnival games under one roof.","th":"พื้นที่บันเทิงที่มีโบว์ลิ่ง รถชนกันและเกมแบบคาร์นิวัลคลาสสิก รวมภายใต้หลังคาเดียว"},"why":{"en":"Discover Auckland says kids will love battling for high scores and prize tickets.","th":"หน้าเว็บ Discover Auckland บอกว่าเด็กจะชอบแข่งทำคะแนนสูงและสะสมตั๋วรางวัล"},"tip":{"en":"Food court or rooftop dining precinct nearby","th":"มีฟู้ดคอร์ตหรือลานอาหารบนดาดฟ้าอยู่ใกล้ๆ"},"ages":[1,2,2,2],"hrs":2,"io":"in","pram":"part","price":{"en":"Check the price","th":"เช็กราคาก่อนไป"},"book":"none","q":"Archie Brothers Cirque Electriq, Westfield Newmarket, Auckland","ok":"2026-11","src":"https://www.aucklandnz.com/inspire/explore-aucklands-top-7-family-friendly-attractions"}
+      {"name":{"en":"Archie Brothers Cirque Electriq","th":"อาร์ชี บราเธอร์ส เซอร์ค อิเล็กทริก"},"kind":"play","area":{"en":"Westfield Newmarket","th":"เวสต์ฟิลด์นิวมาร์เก็ต"},"what":{"en":"Entertainment space with bowling, dodgem cars, virtual reality and classic carnival games under one roof.","th":"พื้นที่บันเทิงที่มีโบว์ลิ่ง รถชนกันและเกมแบบคาร์นิวัลคลาสสิก รวมภายใต้หลังคาเดียว"},"why":{"en":"Discover Auckland says kids will love battling for high scores and prize tickets.","th":"หน้าเว็บ Discover Auckland บอกว่าเด็กจะชอบแข่งทำคะแนนสูงและสะสมตั๋วรางวัล"},"tip":{"en":"Food court or rooftop dining precinct nearby","th":"มีฟู้ดคอร์ตหรือลานอาหารบนดาดฟ้าอยู่ใกล้ๆ"},"ages":[1,2,2,2],"hrs":2,"io":"in","pram":"part","price":{"en":"Check the price","th":"เช็กราคาก่อนไป"},"book":"none","q":"Archie Brothers Cirque Electriq, Westfield Newmarket, Auckland","ok":"2026-11","src":"https://www.aucklandnz.com/inspire/explore-aucklands-top-7-family-friendly-attractions"},
+        {
+          "local": "",
+          "ages": [
+            1,
+            1,
+            1,
+            1
+          ],
+          "hrs": 2,
+          "io": "out",
+          "pram": "part",
+          "price": {
+            "th": "ฟรี",
+            "en": "Free"
+          },
+          "book": "none",
+          "src": "https://www.aucklandforkids.co.nz/things-to-do/free-cheap-kids-activities-auckland-winter/",
+          "name": {
+            "th": "สวนคอร์นวอลล์",
+            "en": "Cornwall Park"
+          },
+          "kind": "farm",
+          "area": {
+            "th": "เอปซัม",
+            "en": "Epsom"
+          },
+          "what": {
+            "th": "สวนสาธารณะใหญ่กลางเมืองที่มีฟาร์ม",
+            "en": "A big city park with a working farm"
+          },
+          "why": {
+            "th": "ได้ดูลูกสัตว์ แล้วไปดื่มช็อกโกแลตร้อนที่คาเฟ่",
+            "en": "Baby animals to see, then a hot chocolate at the café"
+          },
+          "tip": {
+            "th": "ลูกวัวเกิดตั้งแต่กลางเดือนกรกฎาคม ลูกแกะเกิดเดือนสิงหาคม",
+            "en": "Calves are born from mid-July, lambs arrive in August"
+          },
+          "q": "Cornwall Park, Epsom, Auckland",
+          "ok": "2026-11"
+        },
+        {
+          "local": "",
+          "ages": [
+            1,
+            1,
+            1,
+            1
+          ],
+          "hrs": 2,
+          "io": "out",
+          "pram": "part",
+          "price": {
+            "th": "ฟรี",
+            "en": "Free"
+          },
+          "book": "none",
+          "src": "https://www.aucklandforkids.co.nz/things-to-do/free-cheap-kids-activities-auckland-winter/",
+          "name": {
+            "th": "อุทยานภูมิภาคลองเบย์",
+            "en": "Long Bay Regional Park"
+          },
+          "kind": "park",
+          "area": {
+            "th": "ลองเบย์ นอร์ทชอร์",
+            "en": "Long Bay, North Shore"
+          },
+          "what": {
+            "th": "อุทยานที่มีเส้นทางเดินริมทะเลและสนามเด็กเล่นผจญภัย",
+            "en": "A regional park with a coastal track and an adventure playground"
+          },
+          "why": {
+            "th": "มีสนามเด็กเล่นผจญภัยและทางเดินริมทะเล",
+            "en": "An adventure playground and a walk by the sea"
+          },
+          "q": "Long Bay Regional Park, Auckland",
+          "ok": "2026-11"
+        },
+        {
+          "local": "",
+          "ages": [
+            1,
+            1,
+            1,
+            1
+          ],
+          "hrs": 1,
+          "io": "out",
+          "pram": "part",
+          "price": {
+            "th": "≈ NZ$2 ต่อเที่ยว",
+            "en": "≈ NZ$2 a ride"
+          },
+          "book": "none",
+          "src": "https://www.aucklandforkids.co.nz/things-to-do/free-cheap-kids-activities-auckland-winter/",
+          "name": {
+            "th": "รถรางด็อกไลน์ โอ๊กแลนด์",
+            "en": "Auckland Dockline Tram"
+          },
+          "kind": "ride",
+          "area": {
+            "th": "ไวน์ยาร์ดควอเตอร์",
+            "en": "Wynyard Quarter"
+          },
+          "what": {
+            "th": "นั่งรถรางเก่ารอบย่านริมน้ำ",
+            "en": "A heritage tram ride around the waterfront"
+          },
+          "why": {
+            "th": "กิจกรรมครอบครัวราคาถูกที่คนชอบ",
+            "en": "A cheap family favourite"
+          },
+          "tip": {
+            "th": "วันอาทิตย์ วันหยุดยาว และวันหยุดราชการ 10:00–16:00",
+            "en": "Sundays, long weekends and public holidays, 10:00–16:00"
+          },
+          "q": "Auckland Dockline Trams, Wynyard Quarter",
+          "ok": "2026-11"
+        },
+        {
+          "local": "",
+          "ages": [
+            1,
+            1,
+            1,
+            1
+          ],
+          "hrs": 1,
+          "io": "out",
+          "pram": "part",
+          "price": {
+            "th": "บริจาคเหรียญ",
+            "en": "A gold coin donation"
+          },
+          "book": "none",
+          "src": "https://www.aucklandforkids.co.nz/things-to-do/free-cheap-kids-activities-auckland-winter/",
+          "name": {
+            "th": "รถไฟจิ๋วมานูเกา",
+            "en": "Manukau Live Steamers"
+          },
+          "kind": "ride",
+          "area": {
+            "th": "สวนมังเกเรเซ็นเตอร์",
+            "en": "Mangere Centre Park"
+          },
+          "what": {
+            "th": "รถไฟจิ๋ววิ่งรอบสวนบางวันอาทิตย์",
+            "en": "Miniature trains through the park on some Sundays"
+          },
+          "why": {
+            "th": "เด็กได้นั่งรถไฟจิ๋ว",
+            "en": "Children ride the little trains"
+          },
+          "tip": {
+            "th": "ใส่รองเท้าหุ้มส้น และเช็กวันที่เปิดวิ่งก่อน",
+            "en": "Wear closed shoes and check the running dates first"
+          },
+          "q": "Manukau Live Steamers, Mangere",
+          "ok": "2026-11"
+        },
+        {
+          "local": "",
+          "ages": [
+            1,
+            1,
+            1,
+            1
+          ],
+          "hrs": 2,
+          "io": "in",
+          "pram": "part",
+          "price": {
+            "th": "เช็กราคาก่อนไป",
+            "en": "Check the price"
+          },
+          "book": "none",
+          "src": "https://adventurealley.co.nz/",
+          "name": {
+            "th": "แอดเวนเจอร์แอลลีย์",
+            "en": "Adventure Alley"
+          },
+          "kind": "play",
+          "area": {
+            "th": "โรสเดล นอร์ทชอร์",
+            "en": "Rosedale, North Shore"
+          },
+          "what": {
+            "th": "สนามเด็กเล่นในร่มของครอบครัว มีคาเฟ่",
+            "en": "A family-owned indoor playground with a café"
+          },
+          "why": {
+            "th": "มีโซนเด็กเล็ก บ่อบอลใหญ่ และเครื่องเล่นเป่าลมยาว 20 เมตรสำหรับเด็กโต",
+            "en": "A toddler area, a huge ball pit and a 20 m inflatable for older children"
+          },
+          "q": "Adventure Alley, Rosedale",
+          "ok": "2026-11"
+        },
+        {
+          "local": "",
+          "ages": [
+            1,
+            1,
+            1,
+            1
+          ],
+          "hrs": 2,
+          "io": "in",
+          "pram": "part",
+          "price": {
+            "th": "≈ NZ$18 (1–3 ขวบ) · NZ$25 (4–12 ปี)",
+            "en": "≈ NZ$18 (1–3) · NZ$25 (4–12)"
+          },
+          "book": "none",
+          "src": "https://www.magicloft.co.nz/",
+          "name": {
+            "th": "เมจิกลอฟต์",
+            "en": "Magic Loft"
+          },
+          "kind": "play",
+          "area": {
+            "th": "บราวน์สเบย์ นอร์ทชอร์",
+            "en": "Browns Bay, North Shore"
+          },
+          "what": {
+            "th": "ศูนย์เด็กเล่นแบ่งโซน มีคาเฟ่",
+            "en": "A play centre with zones for children and a café"
+          },
+          "why": {
+            "th": "เครื่องเล่นที่ทำมาสำหรับเด็ก",
+            "en": "Play equipment made for children"
+          },
+          "q": "Magic Loft Playground & Cafe, Browns Bay",
+          "ok": "2026-11"
+        }
     ]
     },
     {
