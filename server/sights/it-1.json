@@ -544,6 +544,47 @@
           "q": "Baia delle Favole, Sestri Levante",
           "ok": "2026-11",
           "src": "https://www.spiagge.it/magazine/baia-delle-favole/"
+        },
+        {
+          "local": "Spiaggia di Vernazza",
+          "ages": [
+            1,
+            2,
+            2,
+            1
+          ],
+          "hrs": 1,
+          "io": "out",
+          "pram": "no",
+          "price": {
+            "th": "ฟรี",
+            "en": "Free"
+          },
+          "book": "none",
+          "src": "https://mominitaly.com/vernazza-with-kids/",
+          "name": {
+            "th": "หาดท่าเรือแวร์นาซซา",
+            "en": "Vernazza harbour beach"
+          },
+          "kind": "beach",
+          "area": {
+            "th": "ท่าเรือแวร์นาซซา",
+            "en": "Vernazza harbour"
+          },
+          "what": {
+            "th": "หาดเล็ก ๆ ริมท่าเรือ ให้โยนหินเล่นและเล่นทราย",
+            "en": "A small harbour beach for skipping stones and playing in the sand"
+          },
+          "why": {
+            "th": "มีทรายให้ก่อและน้ำตื้นให้ลุย",
+            "en": "Sand to build in and water to wade in"
+          },
+          "tip": {
+            "th": "หน้าเว็บบอกว่าไม่ใช่หาดที่ดีที่สุดสำหรับเด็กในย่านนี้",
+            "en": "The page says it is not the best beach for children in the area"
+          },
+          "q": "Vernazza Beach, Vernazza",
+          "ok": "2026-11"
         }
       ]
     },
