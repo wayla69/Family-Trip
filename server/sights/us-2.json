@@ -1072,6 +1072,195 @@
           "q": "Brookfield Zoo Chicago, 8400 W 31st St, Brookfield, Illinois",
           "ok": "2026-11",
           "src": "https://brookfieldzoo.org/Visit"
+        },
+        {
+          "local": "",
+          "ages": [
+            0,
+            2,
+            2,
+            1
+          ],
+          "hrs": 1.5,
+          "io": "in",
+          "pram": "part",
+          "price": {
+            "th": "เช็กราคาก่อนไป",
+            "en": "Check the price"
+          },
+          "book": "none",
+          "src": "https://www.choosechicago.com/articles/families/30-kid-friendly-things-to-do-in-chicago/",
+          "name": {
+            "th": "พิพิธภัณฑ์เด็กบรอนซ์วิลล์",
+            "en": "Bronzeville Children's Museum"
+          },
+          "kind": "museumkid",
+          "area": {
+            "th": "เซาท์ชอร์ ชิคาโก",
+            "en": "South Shore, Chicago"
+          },
+          "what": {
+            "th": "พิพิธภัณฑ์เด็กเรื่องประวัติศาสตร์ชาวแอฟริกันอเมริกัน",
+            "en": "A children's museum about African American history"
+          },
+          "why": {
+            "th": "ลงมือเล่นวิทยาศาสตร์และศิลปะ สำหรับเด็ก 4–9 ขวบ",
+            "en": "Hands-on science and art for ages 4 to 9"
+          },
+          "q": "Bronzeville Children's Museum, 9301 S Stony Island Ave, Chicago",
+          "ok": "2026-11"
+        },
+        {
+          "local": "",
+          "ages": [
+            1,
+            2,
+            2,
+            2
+          ],
+          "hrs": 1.5,
+          "io": "in",
+          "pram": "part",
+          "price": {
+            "th": "เช็กราคาก่อนไป",
+            "en": "Check the price"
+          },
+          "book": "rec",
+          "src": "https://www.choosechicago.com/articles/families/30-kid-friendly-things-to-do-in-chicago/",
+          "name": {
+            "th": "คัลเลอร์แฟกทอรี ชิคาโก",
+            "en": "Color Factory Chicago"
+          },
+          "kind": "culture",
+          "area": {
+            "th": "อาคารวิลลิส ชิคาโก",
+            "en": "Willis Tower, Chicago"
+          },
+          "what": {
+            "th": "นิทรรศการศิลปะเรื่องสีแบบมีส่วนร่วม",
+            "en": "An interactive art experience of colour"
+          },
+          "why": {
+            "th": "ห้องสีสดใสที่ทำร่วมกับศิลปินท้องถิ่น",
+            "en": "Bright rooms made with local artists"
+          },
+          "q": "Color Factory Chicago, 233 S Wacker Dr, Chicago",
+          "ok": "2026-11"
+        },
+        {
+          "local": "",
+          "ages": [
+            1,
+            2,
+            2,
+            2
+          ],
+          "hrs": 1.5,
+          "io": "in",
+          "pram": "part",
+          "price": {
+            "th": "เช็กราคาก่อนไป",
+            "en": "Check the price"
+          },
+          "book": "rec",
+          "src": "https://www.choosechicago.com/articles/families/30-kid-friendly-things-to-do-in-chicago/",
+          "name": {
+            "th": "สกายเด็ก ชิคาโก",
+            "en": "Skydeck Chicago"
+          },
+          "kind": "views",
+          "area": {
+            "th": "อาคารวิลลิส ชิคาโก",
+            "en": "Willis Tower, Chicago"
+          },
+          "what": {
+            "th": "วิวเมืองและทะเลสาบจากยอดอาคารวิลลิส",
+            "en": "Views of the city and the lake from the top of Willis Tower"
+          },
+          "why": {
+            "th": "มีพิพิธภัณฑ์เล็ก ๆ แล้วก้าวออกไปบนกล่องกระจกเดอะเลดจ์",
+            "en": "A small museum, then a step out onto The Ledge"
+          },
+          "q": "Skydeck Chicago, 233 S Wacker Dr, Chicago",
+          "ok": "2026-11"
+        },
+        {
+          "local": "",
+          "ages": [
+            0,
+            1,
+            2,
+            2
+          ],
+          "hrs": 1,
+          "io": "in",
+          "pram": "part",
+          "price": {
+            "th": "เช็กราคาก่อนไป",
+            "en": "Check the price"
+          },
+          "book": "none",
+          "src": "https://www.choosechicago.com/articles/families/30-kid-friendly-things-to-do-in-chicago/",
+          "name": {
+            "th": "พิพิธภัณฑ์นักเขียนอเมริกัน",
+            "en": "American Writers Museum"
+          },
+          "kind": "museum",
+          "area": {
+            "th": "ถนนมิชิแกน ชิคาโก",
+            "en": "Michigan Avenue, Chicago"
+          },
+          "what": {
+            "th": "พิพิธภัณฑ์เรื่องการเล่าเรื่อง มีของให้ลงมือเล่น",
+            "en": "A museum of storytelling with hands-on exhibits"
+          },
+          "why": {
+            "th": "มีห้องวรรณกรรมเด็กให้เล่นกับคำ",
+            "en": "A children's literature gallery for playing with words"
+          },
+          "q": "American Writers Museum, 180 N Michigan Ave, Chicago",
+          "ok": "2026-11"
+        },
+        {
+          "local": "",
+          "ages": [
+            1,
+            2,
+            2,
+            2
+          ],
+          "hrs": 1.5,
+          "io": "out",
+          "pram": "part",
+          "price": {
+            "th": "เช็กราคาก่อนไป",
+            "en": "Check the price"
+          },
+          "book": "none",
+          "src": "https://www.choosechicago.com/articles/families/30-kid-friendly-things-to-do-in-chicago/",
+          "name": {
+            "th": "เพียร์พาร์ก",
+            "en": "Pier Park"
+          },
+          "kind": "ride",
+          "area": {
+            "th": "เนวีเพียร์ ชิคาโก",
+            "en": "Navy Pier, Chicago"
+          },
+          "what": {
+            "th": "เครื่องเล่นคลาสสิกและเขาวงกตบ้านกระจก",
+            "en": "Classic rides and a funhouse maze"
+          },
+          "why": {
+            "th": "เครื่องเล่นสำหรับเด็กบนท่าเรือ",
+            "en": "Rides for children on the pier"
+          },
+          "tip": {
+            "th": "คืนหน้าร้อนมีพลุริมน้ำ ดูได้ไม่ต้องซื้อตั๋ว",
+            "en": "On summer nights the fireworks over the water need no ticket"
+          },
+          "q": "Pier Park, Navy Pier, Chicago",
+          "ok": "2026-11"
         }
       ]
     },
