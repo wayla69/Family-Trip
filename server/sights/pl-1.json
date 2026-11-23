@@ -291,6 +291,121 @@
           "q": "MNK Sukiennice, Rynek Główny 3, Kraków",
           "ok": "2026-11",
           "src": "https://mnk.pl/en/branch/mnk-the-sukiennice"
+        },
+        {
+          "local": "GoJump",
+          "ages": [
+            2,
+            2,
+            2,
+            1
+          ],
+          "hrs": 2,
+          "io": "in",
+          "pram": "part",
+          "price": {
+            "th": "เช็กราคาก่อนไป",
+            "en": "Check the price"
+          },
+          "book": "none",
+          "src": "https://www.hellocracow.com/krakow-with-kids-a-practical-guide",
+          "name": {
+            "th": "สนามเด็กเล่นในร่มโกจัมพ์",
+            "en": "GOjump! indoor playground"
+          },
+          "kind": "play",
+          "area": {
+            "th": "คราคูฟ",
+            "en": "Kraków"
+          },
+          "what": {
+            "th": "เครื่องเล่นขนาดใหญ่ สไลเดอร์ อุโมงค์ และโซนปีนป่าย",
+            "en": "Giant play structures, slides, tunnels and climbing zones"
+          },
+          "why": {
+            "th": "สวรรค์ในร่มของเด็กเล็ก",
+            "en": "An indoor playground heaven for younger children"
+          },
+          "q": "GoJump, Sikorki 23, Kraków",
+          "ok": "2026-11"
+        },
+        {
+          "local": "",
+          "ages": [
+            0,
+            1,
+            2,
+            2
+          ],
+          "hrs": 1.5,
+          "io": "in",
+          "pram": "part",
+          "price": {
+            "th": "เช็กราคาก่อนไป",
+            "en": "Check the price"
+          },
+          "book": "none",
+          "src": "https://www.hellocracow.com/krakow-with-kids-a-practical-guide",
+          "name": {
+            "th": "พิพิธภัณฑ์พินบอลคราคูฟ",
+            "en": "Kraków Pinball Museum"
+          },
+          "kind": "museum",
+          "area": {
+            "th": "ถนนสตราดอมสกา คราคูฟ",
+            "en": "Stradomska, Kraków"
+          },
+          "what": {
+            "th": "เครื่องพินบอลวินเทจที่ซ่อมแล้วกว่า 80 เครื่องให้เล่น",
+            "en": "Over 80 restored vintage pinball machines to play"
+          },
+          "why": {
+            "th": "ไฟกะพริบ ไม้ตี และเสียงเอฟเฟกต์ยุคเก่า",
+            "en": "Flashing lights, flippers and old sound effects"
+          },
+          "q": "Kraków Pinball Museum, Stradomska 15, Kraków",
+          "ok": "2026-11"
+        },
+        {
+          "local": "",
+          "ages": [
+            0,
+            1,
+            2,
+            2
+          ],
+          "hrs": 1.5,
+          "io": "in",
+          "pram": "part",
+          "price": {
+            "th": "เช็กราคาก่อนไป",
+            "en": "Check the price"
+          },
+          "book": "none",
+          "src": "https://houseofattractions.club/en/the-best-childrens-restaurants-in-cracow/",
+          "name": {
+            "th": "เฮาส์ออฟแอตแทร็กชันส์",
+            "en": "House of Attractions"
+          },
+          "kind": "play",
+          "area": {
+            "th": "เมืองเก่า คราคูฟ",
+            "en": "Old Town, Kraków"
+          },
+          "what": {
+            "th": "ความสนุกในร่ม ยิงธนูวีอาร์ เขาวงกตเลเซอร์ ห้องกระจก และหนัง 7 มิติ",
+            "en": "Indoor fun with VR archery, a laser maze, a mirror room and 7D films"
+          },
+          "why": {
+            "th": "เป็นนักธนูป้องกันปราสาท หรือสายลับในเขาวงกตเลเซอร์",
+            "en": "Be an archer defending a castle, or a spy in a laser maze"
+          },
+          "tip": {
+            "th": "เปิดทุกวันรวมวันหยุดนักขัตฤกษ์",
+            "en": "Open every day, including public holidays"
+          },
+          "q": "House of Attractions, Grodzka 2, Kraków",
+          "ok": "2026-11"
         }
       ]
     }
