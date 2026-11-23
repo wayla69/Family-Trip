@@ -427,6 +427,43 @@
           "q": "Vietopia, Tan Hung Ward, District 7, Ho Chi Minh City",
           "ok": "2026-11",
           "src": "https://offpeaktrip.com/en/guide/hochiminh/vietopia"
+        },
+        {
+          "local": "Nhà hát Múa rối nước Rồng Vàng",
+          "ages": [
+            1,
+            2,
+            2,
+            2
+          ],
+          "hrs": 1,
+          "io": "in",
+          "pram": "part",
+          "price": {
+            "th": "ประมาณ 12 ดอลลาร์สหรัฐต่อคน",
+            "en": "About US$12 a person"
+          },
+          "book": "rec",
+          "src": "https://www.edarabia.com/things-to-do-ho-chi-minh-city-with-kids/",
+          "name": {
+            "th": "โรงละครหุ่นกระบอกน้ำมังกรทอง",
+            "en": "Golden Dragon Water Puppet Theatre"
+          },
+          "kind": "show",
+          "area": {
+            "th": "เขต 1 โฮจิมินห์",
+            "en": "District 1, Ho Chi Minh City"
+          },
+          "what": {
+            "th": "การแสดงหุ่นกระบอกบนเวทีน้ำ 1 ชั่วโมง มีดนตรีพื้นเมืองเล่นสด",
+            "en": "A one-hour show of puppets on a water stage, with live traditional music"
+          },
+          "why": {
+            "th": "หุ่นเหมือนมีชีวิต เล่านิทานให้เด็กดู",
+            "en": "The puppets seem to come alive and tell a story"
+          },
+          "q": "Golden Dragon Water Puppet Theater, District 1, Ho Chi Minh City",
+          "ok": "2026-11"
         }
       ]
     },

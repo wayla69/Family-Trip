@@ -1,16 +1,35 @@
 {
   "town": "vn-saigon",
-  "kind": "eats",
-  "checked": "2026-11",
-  "rule": "A row gets ok only from a current listing, its own site or recent reviews with nothing saying closed (docs/EATS.md). A row is taken out when a search could not find the place at all or the sources disagree; a place found but not freshly confirmed stays without ok.",
-  "scope": "the 1 row without ok; the town holds 16 rows after this pass",
-  "how": "Google Maps opened in headless Chromium (2026-11-23), limited view without a reviews tab, so no review date could be read; searched in English and in the local language, each verdict from the place page or the result list shown",
-  "confirmed": [],
-  "kept_without_ok": [],
-  "removed": [
+  "kind": "eats + sights",
+  "checked": "2026-11-23",
+  "rule": "library-check.cjs, then the Google Maps Reviews tab sorted by newest: ok only when not marked closed, with a review from the last six months, and the map's name matching the page's.",
+  "agents": "one Haiku agent; 9 rows from edarabia (Nov 2026), restaurantsforkings, impresstravel and mytour.vn, 8 passed library-check.cjs, 1 went in",
+  "added": [
     {
-      "name": "Phúc Long Coffee & Tea",
-      "reason": "Google Maps (2026-11-23): 'Phuc Long Tea & Coffee', 42 Ngô Đức Kế, Sài Gòn (QPF3+4R) — the branch the row names — 'Permanently closed' (the chain itself is open elsewhere)"
+      "name": "Golden Dragon Water Puppet Theatre",
+      "page_name": "The Golden Dragon Water Puppetry Theater",
+      "src": "https://www.edarabia.com/things-to-do-ho-chi-minh-city-with-kids/",
+      "date": "2026-11",
+      "map": "Google Maps 'The Golden Dragon Water Puppet Theater', 2,318 reviews, newest shown 'last week'"
     }
-  ]
+  ],
+  "left_out": [
+    {
+      "name": "SNAP Cafe, Dodam, WKND, Bep Vo Kitchen",
+      "why": "from a generated ranking site (restaurantsforkings.com), not an editor's page"
+    },
+    {
+      "name": "Thuy Cung Aquarium",
+      "why": "a tour operator's page; it is inside Dam Sen Park, already in"
+    },
+    {
+      "name": "KizCiti, Artinus 3D Art Museum",
+      "why": "permanently closed on the map"
+    },
+    {
+      "name": "Snow Town Saigon",
+      "why": "no readable page date (library-check.cjs)"
+    }
+  ],
+  "estimates": "Ages and visit hours are placeholders; prices and opening notes are the pages' own."
 }
