@@ -795,6 +795,466 @@
           "q": "Tarn Hows, Coniston",
           "ok": "2026-11",
           "src": "https://www.nationaltrust.org.uk/place-pages/4554/pages/opening-times-calendar"
+        },
+        {
+          "local": "",
+          "ages": [
+            1,
+            1,
+            1,
+            1
+          ],
+          "hrs": 2,
+          "io": "both",
+          "pram": "part",
+          "price": {
+            "th": "เช็กราคาก่อนไป",
+            "en": "Check the price"
+          },
+          "book": "none",
+          "src": "https://lakedistrictkids.co.uk/things-to-do/",
+          "name": {
+            "th": "ปราสาทเรย์",
+            "en": "Wray Castle"
+          },
+          "kind": "culture",
+          "area": {
+            "th": "ฝั่งตะวันตกทะเลสาบวินเดอร์เมียร์",
+            "en": "Windermere west shore"
+          },
+          "what": {
+            "th": "ปราสาทแบบกอทิกยุควิกตอเรีย มีป่าและทางเดินริมทะเลสาบ",
+            "en": "A Victorian mock-Gothic castle with woods and lakeshore paths"
+          },
+          "why": {
+            "th": "มีบริเวณให้สำรวจและกิจกรรมตามฤดูกาล",
+            "en": "Grounds to explore and seasonal activities"
+          },
+          "tip": {
+            "th": "มาทางเรือจะได้อารมณ์ผจญภัยยิ่งขึ้น",
+            "en": "Arrive by boat for extra adventure"
+          },
+          "q": "Wray Castle, Low Wray, Ambleside",
+          "ok": "2026-11"
+        },
+        {
+          "local": "",
+          "ages": [
+            1,
+            2,
+            2,
+            1
+          ],
+          "hrs": 3,
+          "io": "out",
+          "pram": "part",
+          "price": {
+            "th": "เช็กราคาก่อนไป",
+            "en": "Check the price"
+          },
+          "book": "none",
+          "src": "https://lakedistrictkids.co.uk/things-to-do/",
+          "name": {
+            "th": "ปราสาทและสวนโลว์เธอร์",
+            "en": "Lowther Castle and Gardens"
+          },
+          "kind": "play",
+          "area": {
+            "th": "โลว์เธอร์ ใกล้เพนริธ",
+            "en": "Lowther, near Penrith"
+          },
+          "what": {
+            "th": "ซากปราสาทและสวน มีสนามเด็กเล่นผจญภัยลอสต์คาสเซิล",
+            "en": "Castle ruins and gardens with the Lost Castle adventure playground"
+          },
+          "why": {
+            "th": "สนามเด็กเล่นใหญ่ มีหอคอย สไลเดอร์ และซิปไลน์",
+            "en": "A huge playground of towers, slides and zip wires"
+          },
+          "q": "Lowther Castle & Gardens, Lowther, Penrith",
+          "ok": "2026-11"
+        },
+        {
+          "local": "",
+          "ages": [
+            1,
+            1,
+            1,
+            1
+          ],
+          "hrs": 2,
+          "io": "both",
+          "pram": "part",
+          "price": {
+            "th": "เช็กราคาก่อนไป",
+            "en": "Check the price"
+          },
+          "book": "none",
+          "src": "https://lakedistrictkids.co.uk/things-to-do/",
+          "name": {
+            "th": "อัลลันแบงก์",
+            "en": "Allan Bank"
+          },
+          "kind": "culture",
+          "area": {
+            "th": "แกรสเมียร์",
+            "en": "Grasmere"
+          },
+          "what": {
+            "th": "บ้านเก่าของเวิร์ดสเวิร์ธเหนือแกรสเมียร์",
+            "en": "Wordsworth’s former home above Grasmere, now a National Trust house"
+          },
+          "why": {
+            "th": "มีเป้นักสำรวจให้ยืม และกระรอกแดงให้ตามหา",
+            "en": "Explorer backpacks and red squirrels to look for"
+          },
+          "q": "Allan Bank, Grasmere",
+          "ok": "2026-11"
+        },
+        {
+          "local": "",
+          "ages": [
+            2,
+            2,
+            2,
+            1
+          ],
+          "hrs": 3,
+          "io": "out",
+          "pram": "part",
+          "price": {
+            "th": "เช็กราคาก่อนไป",
+            "en": "Check the price"
+          },
+          "book": "none",
+          "src": "https://lakedistrictkids.co.uk/keswick/",
+          "name": {
+            "th": "สวนสัตว์ป่าเลคดิสตริกต์",
+            "en": "Lake District Wildlife Park"
+          },
+          "kind": "zoo",
+          "area": {
+            "th": "บาสเซนธ์เวต ทางเหนือของเคสวิก",
+            "en": "Bassenthwaite, north of Keswick"
+          },
+          "what": {
+            "th": "สัตว์กว่า 100 ชนิด ตั้งแต่แพนด้าแดง ลีเมอร์ ถึงนกล่าเหยื่อ",
+            "en": "Over 100 species, from red pandas and lemurs to birds of prey"
+          },
+          "why": {
+            "th": "ขนาดกำลังดีสำหรับเด็กเล็ก",
+            "en": "A manageable size for younger children"
+          },
+          "q": "Lake District Wildlife Park, Bassenthwaite, Keswick",
+          "ok": "2026-11"
+        },
+        {
+          "local": "",
+          "ages": [
+            1,
+            1,
+            1,
+            1
+          ],
+          "hrs": 2,
+          "io": "out",
+          "pram": "part",
+          "price": {
+            "th": "เช็กราคาก่อนไป",
+            "en": "Check the price"
+          },
+          "book": "req",
+          "src": "https://lakedistrictkids.co.uk/things-to-do/",
+          "name": {
+            "th": "อัลปากาลี เอเวอร์อาฟเตอร์",
+            "en": "Alpacaly Ever After"
+          },
+          "kind": "farm",
+          "area": {
+            "th": "เคสวิก",
+            "en": "Keswick"
+          },
+          "what": {
+            "th": "อัลปากาและลามะที่ช่วยมา ให้ทักทาย ให้อาหาร และจูงเดิน",
+            "en": "Rescued alpacas and llamas to meet, feed and walk"
+          },
+          "why": {
+            "th": "เด็กต่ำกว่า 10 ขวบเข้าร่วมได้ โดยมีผู้ใหญ่จูงอัลปากา",
+            "en": "Under-10s can join, with a grown-up leading the alpaca"
+          },
+          "q": "Alpacaly Ever After, Keswick",
+          "ok": "2026-11"
+        },
+        {
+          "local": "",
+          "ages": [
+            1,
+            1,
+            1,
+            1
+          ],
+          "hrs": 2,
+          "io": "out",
+          "pram": "part",
+          "price": {
+            "th": "เช็กราคาก่อนไป",
+            "en": "Check the price"
+          },
+          "book": "req",
+          "src": "https://lakedistrictkids.co.uk/things-to-do/",
+          "name": {
+            "th": "เดินจูงอัลปากาวอสต์วอเตอร์",
+            "en": "Wastwater Alpaca Trekking"
+          },
+          "kind": "farm",
+          "area": {
+            "th": "วอสเดลเฮด",
+            "en": "Wasdale Head"
+          },
+          "what": {
+            "th": "เดินจูงอัลปากาใต้เทือกเขาวอสเดล",
+            "en": "Alpaca walks below the Wasdale fells"
+          },
+          "why": {
+            "th": "การผจญภัยของครอบครัวที่เด็กจำได้นาน",
+            "en": "A family adventure children remember"
+          },
+          "q": "Wastwater Alpaca Trekking, Wasdale Head Hall Farm",
+          "ok": "2026-11"
+        },
+        {
+          "local": "",
+          "ages": [
+            1,
+            1,
+            1,
+            1
+          ],
+          "hrs": 1,
+          "io": "out",
+          "pram": "part",
+          "price": {
+            "th": "เช็กราคาก่อนไป",
+            "en": "Check the price"
+          },
+          "book": "none",
+          "src": "https://lakedistrictkids.co.uk/things-to-do/",
+          "name": {
+            "th": "เรือไอน้ำกอนโดลา",
+            "en": "Steam Yacht Gondola"
+          },
+          "kind": "ride",
+          "area": {
+            "th": "ทะเลสาบโคนิสตัน",
+            "en": "Coniston Water"
+          },
+          "what": {
+            "th": "เรือยอตไอน้ำยุควิกตอเรียปี 1859 ล่องพร้อมบรรยาย",
+            "en": "A restored Victorian steam yacht from 1859 on cruises with commentary"
+          },
+          "why": {
+            "th": "สนุกกับการนั่งเรือพลังไอน้ำ",
+            "en": "The fun of a steam-powered boat"
+          },
+          "tip": {
+            "th": "มีเที่ยวเดียวระยะสั้นด้วย",
+            "en": "Shorter one-way sailings too"
+          },
+          "q": "Steam Yacht Gondola, Coniston Pier, Coniston",
+          "ok": "2026-11"
+        },
+        {
+          "local": "",
+          "ages": [
+            1,
+            1,
+            1,
+            1
+          ],
+          "hrs": 2,
+          "io": "in",
+          "pram": "part",
+          "price": {
+            "th": "เช็กราคาก่อนไป",
+            "en": "Check the price"
+          },
+          "book": "none",
+          "src": "https://lakedistrictkids.co.uk/things-to-do/",
+          "name": {
+            "th": "รถไฟไอน้ำเลคไซด์และฮาเวอร์ธเวต",
+            "en": "Lakeside and Haverthwaite Railway"
+          },
+          "kind": "ride",
+          "area": {
+            "th": "ปลายด้านใต้ทะเลสาบวินเดอร์เมียร์",
+            "en": "South end of Windermere"
+          },
+          "what": {
+            "th": "รถไฟไอน้ำมรดกระหว่างฮาเวอร์ธเวตกับเลคไซด์",
+            "en": "A heritage steam railway between Haverthwaite and Lakeside"
+          },
+          "why": {
+            "th": "เส้นทางสั้น เหมาะกับเด็กเล็ก",
+            "en": "A short route, good for younger children"
+          },
+          "tip": {
+            "th": "ต่อกับเรือล่องทะเลสาบวินเดอร์เมียร์ได้",
+            "en": "Combine with a Windermere lake cruise"
+          },
+          "q": "Lakeside and Haverthwaite Railway, Haverthwaite Station",
+          "ok": "2026-11"
+        },
+        {
+          "local": "",
+          "ages": [
+            1,
+            1,
+            1,
+            1
+          ],
+          "hrs": 1,
+          "io": "in",
+          "pram": "part",
+          "price": {
+            "th": "เช็กราคาก่อนไป",
+            "en": "Check the price"
+          },
+          "book": "none",
+          "src": "https://lakedistrictkids.co.uk/things-to-do/",
+          "name": {
+            "th": "พัซลิงเพลส",
+            "en": "Puzzling Place"
+          },
+          "kind": "museumkid",
+          "area": {
+            "th": "เคสวิก",
+            "en": "Keswick"
+          },
+          "what": {
+            "th": "ภาพลวงตา โฮโลแกรม และห้องที่เหมือนไร้แรงโน้มถ่วง",
+            "en": "Optical illusions, holograms and rooms that seem to defy gravity"
+          },
+          "why": {
+            "th": "ได้ถ่ายรูปท่าที่เป็นไปไม่ได้",
+            "en": "Impossible photos to pose for"
+          },
+          "q": "Puzzling Place, Museum Square, Keswick",
+          "ok": "2026-11"
+        },
+        {
+          "local": "",
+          "ages": [
+            1,
+            1,
+            1,
+            1
+          ],
+          "hrs": 1,
+          "io": "in",
+          "pram": "part",
+          "price": {
+            "th": "เช็กราคาก่อนไป",
+            "en": "Check the price"
+          },
+          "book": "none",
+          "src": "https://lakedistrictkids.co.uk/keswick/",
+          "name": {
+            "th": "พิพิธภัณฑ์ดินสอเดอร์เวนต์",
+            "en": "Derwent Pencil Museum"
+          },
+          "kind": "museumkid",
+          "area": {
+            "th": "เคสวิก",
+            "en": "Keswick"
+          },
+          "what": {
+            "th": "เรื่องราวดินสอเลคแลนด์ มีดินสอสีแท่งใหญ่ที่สุดแห่งหนึ่งของโลก",
+            "en": "The story of Lakeland pencils, with one of the world’s largest coloured pencils"
+          },
+          "why": {
+            "th": "เหมาะกับวันฝนตก",
+            "en": "A good rainy-day choice"
+          },
+          "q": "Derwent Pencil Museum, Southey Works, Keswick",
+          "ok": "2026-11"
+        },
+        {
+          "local": "",
+          "ages": [
+            1,
+            2,
+            2,
+            2
+          ],
+          "hrs": 2,
+          "io": "in",
+          "pram": "part",
+          "price": {
+            "th": "เช็กราคาก่อนไป",
+            "en": "Check the price"
+          },
+          "book": "none",
+          "src": "https://lakedistrictkids.co.uk/keswick/",
+          "name": {
+            "th": "คองแอดเวนเจอร์",
+            "en": "Kong Adventure"
+          },
+          "kind": "play",
+          "area": {
+            "th": "เคสวิก",
+            "en": "Keswick"
+          },
+          "what": {
+            "th": "กำแพงปีนในร่ม ถ้ำจำลอง ภารกิจเชือก และที่เล่นนุ่ม",
+            "en": "Indoor climbing walls, caving, rope challenges and soft play"
+          },
+          "why": {
+            "th": "ทางเลือกวันฝนตก ใกล้พัซลิงเพลส",
+            "en": "A rainy-day option close to the Puzzling Place"
+          },
+          "q": "Kong Adventure, Heads Road, Keswick",
+          "ok": "2026-11"
+        },
+        {
+          "local": "",
+          "ages": [
+            1,
+            1,
+            1,
+            1
+          ],
+          "hrs": 2,
+          "io": "out",
+          "pram": "part",
+          "price": {
+            "th": "ฟรี",
+            "en": "Free"
+          },
+          "book": "none",
+          "src": "https://lakedistrictkids.co.uk/bowness-on-windermere/",
+          "name": {
+            "th": "มิลเลอร์กราวด์",
+            "en": "Millerground"
+          },
+          "kind": "park",
+          "area": {
+            "th": "ทางเหนือของโบว์เนส วินเดอร์เมียร์",
+            "en": "North of Bowness, Windermere"
+          },
+          "what": {
+            "th": "สวนริมทะเลสาบ มีสนามเด็กเล่น ท่าเรือเล็ก และหาดหิน",
+            "en": "A lakeside park with a playground, jetties and a stony beach"
+          },
+          "why": {
+            "th": "เล่นปาหินแฉลบน้ำและปิกนิกริมทะเลสาบ",
+            "en": "Skimming stones and a picnic by the lake"
+          },
+          "tip": {
+            "th": "จอดรถที่เรย์ริกเมโดว์ ห้องน้ำเปิดช่วงหน้าร้อน",
+            "en": "Park at Rayrigg Meadow; toilets open in summer"
+          },
+          "q": "Millerground, Windermere",
+          "ok": "2026-11"
         }
       ]
     },

@@ -237,3 +237,6 @@ Kee, Sun Hang Yuen, MD Cafe) and four family places from Cathay Pacific's 2026 c
 MeokBang BBQ Kidzone, Tree Café, Yakiniku Tabeyo). Left out: Transformers: The Ark (closed in Hong Kong, Feb 2025), Smoke and Barrel
 (moved, the new address not confirmed), Baumhaus (nothing current), Pizza Express (no one branch). In the app the Hong Kong book's own
 28 places and the Macau book part's 188 sit beside this list (`syncBooks`, src `book`).
+
+### The Lake District, 23 Nov 2026
+batch-15 of docs/library-briefs. +7 from Lake District Kids: Boardwalk Bar & Grill, Villa Positano, YHA Ambleside café, Cuckoo Brow Inn, The Kellbank, Boot Inn, Woolpack Inn (the inns for their play areas and kids’ menus). Proof in `docs/library-proof/gb-lakes.json`.
