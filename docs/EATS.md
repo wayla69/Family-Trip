@@ -526,3 +526,6 @@ batch-23 of docs/library-briefs. +3: Junibacken restaurant, Haga Bottega, Bokett
 
 ### Astana, 23 Nov 2026
 batch-19 of docs/library-briefs. +2: Cappuccino, TomYumBar. Proof in `docs/library-proof/kz-astana.json`.
+
+### Yangon, 23 Nov 2026
+batch-29 of docs/library-briefs. +2: Sharky's, Chatrium Hotel Royal Lake. Proof in `docs/library-proof/mm-yangon.json`.
