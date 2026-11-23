@@ -1,26 +1,23 @@
 {
   "town": "vn-dalat",
-  "kind": "eats",
-  "checked": "2026-11",
-  "rule": "A row gets ok only from a current listing, its own site or recent reviews with nothing saying closed (docs/EATS.md). A row is taken out when a search could not find the place at all or the sources disagree; a place found but not freshly confirmed stays without ok.",
-  "scope": "the 2 rows without ok; the town holds 19 rows after this pass",
-  "how": "Google Maps opened in headless Chromium (2026-11-23), limited view without a reviews tab, so no review date could be read; searched in English and in the local language, each verdict from the place page or the result list shown",
-  "confirmed": [
-    {
-      "name": "Thủy Tạ",
-      "src": "https://www.google.com/maps/place/Thuy+Ta+Restaurant",
-      "page_name": "Thuy Ta Restaurant / Nhà Hàng Thủy Tạ",
-      "evidence": "Google Maps (2026-11-23): restaurant, 4.2★, 2 Đ. Trần Quốc Toản, Xuân Hương - Đà Lạt ('This calm eatery offers Vietnamese food & coffee, plus lakeside views'); 'Open · Closes 10 PM', dalattourist.com.vn; nothing says closed",
-      "ok": "2026-11"
-    },
-    {
-      "name": "Sữa Đậu Nành Hoa Sữa",
-      "src": "https://www.google.com/maps/place/Quán+Hoa+Sữa",
-      "page_name": "Quán Hoa Sữa",
-      "evidence": "Google Maps (2026-11-23): dessert shop, 4.2★, 3F Đường Tăng Bạt Hổ, Xuân Hương - Đà Lạt (WCVP+F4); 'Open · Closes 11:30 PM', phone listed; nothing says closed",
-      "ok": "2026-11"
-    }
+  "kind": "eats + sights",
+  "checked": "2026-11-23",
+  "rule": "A new row needs a page dated 2025–2026 that names it and carries a copied sentence (scripts/library-check.cjs), then a Google Maps check of the place's Reviews tab: ok only when the place is not marked permanently or temporarily closed and has a review from the last six months.",
+  "agents": "two Haiku agents; 25 rows offered, 12 passed library-check.cjs, 7 went in",
+  "added": [
+    { "name": "Rừng Thông Mơ Farm & Bistro", "src": "https://wanderlog.com/list/geoCategory/33031/best-family-restaurants-in-da-lat", "date": "2026-07", "map": "Google Maps 1,243 reviews, newest 'a month ago', not closed" },
+    { "name": "Léguda Buffet Rau Đà Lạt", "src": "https://wanderlog.com/list/geoCategory/33031/best-family-restaurants-in-da-lat", "date": "2026-07", "map": "Google Maps 5,250 reviews, newest 'a month ago', not closed" },
+    { "name": "La DaLat Children's Play Area", "src": "https://mia.vn/cam-nang-du-lich/khu-vui-choi-tre-em-o-da-lat-19005", "date": "2025-08", "map": "Google Maps 'La DaLat khu vui chơi trẻ em', 60 reviews, newest '3 weeks ago'" },
+    { "name": "Nobi Town", "src": "https://mia.vn/cam-nang-du-lich/khu-vui-choi-tre-em-o-da-lat-19005", "date": "2025-08", "map": "Google Maps 'Thị Trấn Nobi', 1,111 reviews, newest '2 months ago'" },
+    { "name": "Mongo Land", "src": "https://mia.vn/cam-nang-du-lich/khu-vui-choi-tre-em-o-da-lat-19005", "date": "2025-08", "map": "Google Maps 11,020 reviews, newest 'a week ago'" },
+    { "name": "Kids Coffee", "src": "https://mia.vn/cam-nang-du-lich/khu-vui-choi-tre-em-o-da-lat-19005", "date": "2025-08", "map": "Google Maps 89 reviews, newest 'a month ago'" },
+    { "name": "Dalat Milk Farm", "src": "https://mia.vn/cam-nang-du-lich/khu-vui-choi-tre-em-o-da-lat-19005", "date": "2025-08", "map": "Google Maps 'Da Lat Milk Joint-stock Company' (dairy farm), 998 reviews, newest '5 months ago'" }
   ],
-  "kept_without_ok": [],
-  "removed": []
+  "left_out": [
+    { "name": "13 bánh căn and noodle shops (VinWonders lists)", "why": "the pages carry no date the checker can read" },
+    { "name": "Tea Resort Prenn, MerPerle Dalat Hotel", "why": "hotel kids' clubs, not places to visit" },
+    { "name": "F49", "why": "Google Maps finds no such place at 95 Hà Giang" },
+    { "name": "Titan Kids, Yoyo Play Kids", "why": "about 30 km outside Đà Lạt (Liên Nghĩa, Đức Trọng); not checked" }
+  ],
+  "estimates": "Ages ([1,1,1,1]) and visit hours are not printed on these pages; the format requires them, so they are placeholders for the owner to review."
 }
