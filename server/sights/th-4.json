@@ -357,6 +357,43 @@
           "q": "Wat Yai Chaya Mongkol, Ayutthaya",
           "ok": "2026-11",
           "src": "https://www.familycantravel.com/ayutthaya-thailand-with-kids/"
+        },
+        {
+          "local": "",
+          "ages": [
+            1,
+            2,
+            2,
+            2
+          ],
+          "hrs": 1,
+          "io": "out",
+          "pram": "part",
+          "price": {
+            "th": "เช็กราคาก่อนไป",
+            "en": "Check the price"
+          },
+          "book": "none",
+          "src": "https://www.familycantravel.com/ayutthaya-thailand-with-kids/",
+          "name": {
+            "th": "วัดไชยวัฒนาราม",
+            "en": "Wat Chai Wattanaram"
+          },
+          "kind": "oldtown",
+          "area": {
+            "th": "บ้านป้อม ฝั่งตรงข้ามเกาะเมือง อยุธยา",
+            "en": "Ban Pom, across the river from the island, Ayutthaya"
+          },
+          "what": {
+            "th": "วัดแบบเขมรสร้างปี 1630 มีปรางค์ประธานสูง 35 เมตร",
+            "en": "A Khmer-style temple of 1630 with a 35 m central prang"
+          },
+          "why": {
+            "th": "บล็อกครอบครัวบอกว่าเด็ก 3 และ 5 ขวบเดินรอบได้สบาย",
+            "en": "A family blog says the walk round was fine for children of 3 and 5"
+          },
+          "q": "วัดไชยวัฒนาราม, อยุธยา",
+          "ok": "2026-11"
         }
       ]
     },
