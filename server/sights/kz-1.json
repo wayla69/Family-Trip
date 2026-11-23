@@ -548,6 +548,117 @@
           "q": "Uly Dala Eli Monument, Yesil District, Astana",
           "ok": "2026-11",
           "src": "https://visitastana.kz/en/about-city/what-to-see/monument-uly-dala-eli/"
+        },
+        {
+          "local": "КидБург",
+          "ages": [
+            0,
+            2,
+            2,
+            1
+          ],
+          "hrs": 2,
+          "io": "in",
+          "pram": "part",
+          "price": {
+            "th": "เช็กราคาก่อนไป",
+            "en": "Check the price"
+          },
+          "book": "none",
+          "src": "https://www.weproject.media/en/articles/detail/where-to-go-with-kids-in-astana-12-ideas-for-active-family-fun/",
+          "name": {
+            "th": "คิดเบิร์ก",
+            "en": "Kidburg"
+          },
+          "kind": "play",
+          "area": {
+            "th": "ถนนซือกานัก อัสตานา",
+            "en": "Syganak St, Astana"
+          },
+          "what": {
+            "th": "เมืองจำลองสำหรับเด็ก มีสถานที่จริงย่อส่วนให้ลองทำอาชีพต่าง ๆ",
+            "en": "A children's town of small copies of real places to try out jobs"
+          },
+          "why": {
+            "th": "เด็ก ๆ ได้ลองทำงานหลายอย่าง",
+            "en": "Children try different jobs"
+          },
+          "q": "KidBurg, Syganak St 60/5, Astana",
+          "ok": "2026-11"
+        },
+        {
+          "local": "",
+          "ages": [
+            2,
+            2,
+            1,
+            0
+          ],
+          "hrs": 1.5,
+          "io": "in",
+          "pram": "part",
+          "price": {
+            "th": "เช็กราคาก่อนไป",
+            "en": "Check the price"
+          },
+          "book": "none",
+          "src": "https://www.weproject.media/en/articles/detail/where-to-go-with-kids-in-astana-12-ideas-for-active-family-fun/",
+          "name": {
+            "th": "เบบี้บูม",
+            "en": "Baby BOOM"
+          },
+          "kind": "play",
+          "area": {
+            "th": "ถนนตูรัน อัสตานา",
+            "en": "Turan Ave, Astana"
+          },
+          "what": {
+            "th": "ศูนย์เล่นสำหรับเด็ก มีของเล่นนุ่ม ๆ และเครื่องเล่นปลอดภัย",
+            "en": "A children's play centre with soft play and gentle rides"
+          },
+          "why": {
+            "th": "เหมาะกับเด็กเล็ก",
+            "en": "Suited to little ones"
+          },
+          "q": "Baby Boom, Turan Ave 53, Astana",
+          "ok": "2026-11"
+        },
+        {
+          "local": "",
+          "ages": [
+            0,
+            0,
+            1,
+            2
+          ],
+          "hrs": 1,
+          "io": "in",
+          "pram": "part",
+          "price": {
+            "th": "เช็กราคาก่อนไป",
+            "en": "Check the price"
+          },
+          "book": "none",
+          "src": "https://www.weproject.media/en/articles/detail/where-to-go-with-kids-in-astana-12-ideas-for-active-family-fun/",
+          "name": {
+            "th": "บีคาร์ติง",
+            "en": "Bee Karting"
+          },
+          "kind": "ride",
+          "area": {
+            "th": "ห้างยูเรเชีย-3 อัสตานา",
+            "en": "Eurasia-3 mall, Astana"
+          },
+          "what": {
+            "th": "ศูนย์โกคาร์ตที่เด็กและผู้ใหญ่ขับแข่งได้",
+            "en": "A karting centre where children and adults can race"
+          },
+          "why": {
+            "th": "เด็ก ๆ ได้สัมผัสความเร็วบนสนาม",
+            "en": "Children feel the speed on the track"
+          },
+          "q": "Bee Karting, Petrova St 24a/1, Astana",
+          "ok": "2026-11"
         }
       ]
     }
