@@ -2069,7 +2069,122 @@
         },
       {"name":{"en":"Yuantong Temple","th":"วัดหยวนทง"},"kind":"culture","area":{"en":"near Yuantong Hill, central Kunming","th":"ใกล้เขาหยวนทง ใจกลางคุนหมิง"},"what":{"en":"Ancient halls, peaceful courtyards and tranquil ponds, with locals making offerings and lighting incense.","th":"โถงโบราณ ลานสงบ และสระน้ำเงียบ มีคนมาถวายของและจุดธูป"},"why":{"en":"A peaceful detour from city traffic, a short walk from Green Lake Park.","th":"หลบจากความวุ่นวายของเมือง เดินจากทะเลสาบสีเขียวได้ไม่ไกล"},"tip":{"en":"Dress modestly, keep voices low and step carefully around active prayer spaces.","th":"แต่งกายสุภาพ พูดเสียงเบา และระวังเวลาเดินใกล้พื้นที่สวดมนต์"},"ages":[1,2,2,2],"hrs":1,"io":"out","pram":"part","price":{"en":"Check the price","th":"เช็กราคาก่อนไป"},"book":"none","q":"Yuantong Temple, Yuantong Hill, Kunming","ok":"2026-11","src":"https://www.airasia.com/blog/china/kunming/things-to-do-in-kunming/"},
       {"name":{"en":"Dianchi Lake","th":"ทะเลสาบเตียนฉือ"},"kind":"views","area":{"en":"south-western edge of Kunming","th":"ขอบตะวันตกเฉียงใต้ของคุนหมิง"},"what":{"en":"Lakeshore promenades, especially near Haigeng Park, with open skies and water views.","th":"ทางเดินริมทะเลสาบโดยเฉพาะแถวสวนไห่เกิ้ง ท้องฟ้ากว้างและวิวน้ำ"},"why":{"en":"Waterside walks and cycling; in the cooler months migratory seagulls gather on the lake.","th":"เดินเล่นและปั่นจักรยานริมน้ำได้ ช่วงอากาศเย็นนกนางนวลอพยพมารวมกันที่ทะเลสาบ"},"tip":{"en":"Best timed for just before sunset.","th":"เวลาที่ดีคือช่วงก่อนพระอาทิตย์ตกไม่นาน"},"ages":[1,2,2,2],"hrs":3,"io":"out","pram":"part","price":{"en":"Check the price","th":"เช็กราคาก่อนไป"},"book":"none","q":"Dianchi Lake, south-western Kunming","ok":"2026-11","src":"https://www.airasia.com/blog/china/kunming/things-to-do-in-kunming/"},
-      {"name":{"en":"Western Hills","th":"ภูเขาซีซาน"},"kind":"nature","area":{"en":"Xishan District, west of Kunming","th":"เขตซีซาน ทางตะวันตกของคุนหมิง"},"what":{"en":"Forested hills with Dragon Gate (Longmen) and its cliffside carvings, reached by trail or chairlift.","th":"เนินเขาที่มีป่าไม้ มีประตูมังกร (หลงเหมิน) และภาพแกะสลักบนหน้าผา เข้าได้ทางเดินเท้าหรือกระเช้า"},"why":{"en":"Hike the trails or take the chairlift up for sweeping views over Kunming.","th":"เดินเส้นทางขึ้นเขาหรือนั่งกระเช้า แล้วชมวิวคุนหมิงกว้างไกล"},"tip":{"en":"Chairlift availability and fares can change, so check on the day; wear good shoes and carry water.","th":"กระเช้าและค่าโดยสารอาจเปลี่ยน ให้เช็กหน้างาน ใส่รองเท้าดีและพกน้ำ"},"ages":[1,2,2,2],"hrs":4,"io":"out","pram":"no","price":{"en":"Check the price","th":"เช็กราคาก่อนไป"},"book":"none","q":"Western Hills (Xishan), Kunming","ok":"2026-11","src":"https://www.airasia.com/blog/china/kunming/things-to-do-in-kunming/"}
+      {"name":{"en":"Western Hills","th":"ภูเขาซีซาน"},"kind":"nature","area":{"en":"Xishan District, west of Kunming","th":"เขตซีซาน ทางตะวันตกของคุนหมิง"},"what":{"en":"Forested hills with Dragon Gate (Longmen) and its cliffside carvings, reached by trail or chairlift.","th":"เนินเขาที่มีป่าไม้ มีประตูมังกร (หลงเหมิน) และภาพแกะสลักบนหน้าผา เข้าได้ทางเดินเท้าหรือกระเช้า"},"why":{"en":"Hike the trails or take the chairlift up for sweeping views over Kunming.","th":"เดินเส้นทางขึ้นเขาหรือนั่งกระเช้า แล้วชมวิวคุนหมิงกว้างไกล"},"tip":{"en":"Chairlift availability and fares can change, so check on the day; wear good shoes and carry water.","th":"กระเช้าและค่าโดยสารอาจเปลี่ยน ให้เช็กหน้างาน ใส่รองเท้าดีและพกน้ำ"},"ages":[1,2,2,2],"hrs":4,"io":"out","pram":"no","price":{"en":"Check the price","th":"เช็กราคาก่อนไป"},"book":"none","q":"Western Hills (Xishan), Kunming","ok":"2026-11","src":"https://www.airasia.com/blog/china/kunming/things-to-do-in-kunming/"},
+        {
+          "local": "昆明融创海世界",
+          "name": {
+            "th": "ซันแนค ซีเวิลด์ คุนหมิง",
+            "en": "Sunac Kunming Sea World"
+          },
+          "kind": "aquarium",
+          "area": {
+            "th": "คุนหมิง ถนนปี้จี เขตซีซาน",
+            "en": "Kunming, Bijie Road, Xishan District"
+          },
+          "what": {
+            "th": "โลกใต้ทะเลในร่ม อุณหภูมิคงที่ทั้งปี อยู่ติดโลกหิมะในร่ม",
+            "en": "An indoor sea world, kept warm all year, beside an indoor snow world"
+          },
+          "why": {
+            "th": "อยู่ในร่ม วันฝนตกก็พาเด็กไปเที่ยวได้",
+            "en": "Indoors, so a rainy day still works for children"
+          },
+          "ages": [
+            1,
+            1,
+            1,
+            1
+          ],
+          "hrs": 3,
+          "io": "in",
+          "pram": "part",
+          "price": {
+            "th": "เช็กราคาก่อนไป",
+            "en": "Check the price"
+          },
+          "book": "none",
+          "q": "昆明融创海世界, 碧鸡路2999-1号, 西山区, 昆明",
+          "src": "https://travel.sina.cn/2026-07-10/detail-inihhkum8436060.d.html",
+          "ok": "2026-11"
+        },
+        {
+          "local": "洱海公园",
+          "name": {
+            "th": "สวนเอ๋อไห่",
+            "en": "Erhai Park"
+          },
+          "kind": "park",
+          "area": {
+            "th": "ต้าหลี่ ปลายใต้ของทะเลสาบเอ๋อไห่",
+            "en": "Dali, the southern end of Erhai Lake"
+          },
+          "what": {
+            "th": "สวนริมทะเลสาบ มีเนินเขาเล็ก สวนสัตว์เล็ก และสนามเด็กเล่น",
+            "en": "A lakeside park with a small hill, a small zoo and a children’s playground"
+          },
+          "why": {
+            "th": "มีสนามเด็กเล่นและสวนสัตว์เล็กริมทะเลสาบ",
+            "en": "A playground and a small zoo by the lake"
+          },
+          "tip": {
+            "th": "ขึ้นเนินเขาเล็กราว 200 ขั้น",
+            "en": "About 200 steps up the small hill"
+          },
+          "ages": [
+            1,
+            1,
+            1,
+            1
+          ],
+          "hrs": 1.5,
+          "io": "out",
+          "pram": "part",
+          "price": {
+            "th": "เช็กราคาก่อนไป",
+            "en": "Check the price"
+          },
+          "book": "none",
+          "q": "洱海公园, 洱河南路1号, 大理",
+          "src": "https://www.chinahighlights.com/dali/free-things-to-do.htm",
+          "ok": "2026-11"
+        },
+        {
+          "local": "喜洲古镇",
+          "name": {
+            "th": "เมืองเก่าสี่โจว",
+            "en": "Xizhou Old Town"
+          },
+          "kind": "oldtown",
+          "area": {
+            "th": "ห่างเมืองเก่าต้าหลี่ไปทางเหนือราว 30 นาที",
+            "en": "About 30 minutes’ drive north of Dali Old Town"
+          },
+          "what": {
+            "th": "เมืองเก่าเล็กๆ ของชาวไป๋ บ้านเก่าสวยงาม ทุ่งนา ร้านผ้ามัดย้อม และตลาดเช้า",
+            "en": "A small old Bai town of well-kept houses, rice fields, tie-dye shops and a morning market"
+          },
+          "why": {
+            "th": "เวิร์กช็อปผ้ามัดย้อมให้ครอบครัวและเด็กลงมือทำ",
+            "en": "Tie-dye workshops are a hands-on craft for families with children"
+          },
+          "ages": [
+            1,
+            1,
+            1,
+            1
+          ],
+          "hrs": 2.5,
+          "io": "out",
+          "pram": "part",
+          "price": {
+            "th": "เช็กราคาก่อนไป",
+            "en": "Check the price"
+          },
+          "book": "none",
+          "q": "喜洲古镇, 大理",
+          "src": "https://www.chinahighlights.com/dali/attraction/houses-of-bai-people-in-xizhou.htm",
+          "ok": "2026-11"
+        }
     ]
     },
     {
