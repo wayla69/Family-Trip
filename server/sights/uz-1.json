@@ -599,6 +599,117 @@
           "q": "Tashkent Planetarium, Tashkent City Park, Tashkent",
           "ok": "2026-11",
           "src": "https://www.aviasales.uz/yolovchi/article/kuda-pojti-s-detmi-v-tashkente"
+        },
+        {
+          "local": "",
+          "ages": [
+            0,
+            1,
+            2,
+            2
+          ],
+          "hrs": 1,
+          "io": "in",
+          "pram": "part",
+          "price": {
+            "th": "ฟรี",
+            "en": "Free"
+          },
+          "book": "none",
+          "src": "https://www.outlooktraveller.com/destinations/international/budget-friendly-uzbekistan-6-free-must-do-experiences-in-tashkent-for-families",
+          "name": {
+            "th": "พิพิธภัณฑ์ประวัติศาสตร์การสื่อสาร",
+            "en": "Museum of Telecommunication History"
+          },
+          "kind": "museumkid",
+          "area": {
+            "th": "ใกล้สถานีรถไฟใต้ดินอาลีเชอร์นาวอย",
+            "en": "Near Alisher Navoi metro"
+          },
+          "what": {
+            "th": "พิพิธภัณฑ์ฟรี มีโทรศัพท์ วิทยุ และคอมพิวเตอร์ยุคแรก",
+            "en": "A free museum of old phones, radios and early computers"
+          },
+          "why": {
+            "th": "มีของให้ลองเล่น และที่ทำการไปรษณีย์ยุค 1970 ชั้นใต้ดิน",
+            "en": "Some hands-on displays and a 1970s post office in the basement"
+          },
+          "q": "Museum of Telecommunication History of Uzbekistan, Tashkent",
+          "ok": "2026-11"
+        },
+        {
+          "local": "Mustaqillik Maydoni",
+          "ages": [
+            2,
+            2,
+            2,
+            2
+          ],
+          "hrs": 1,
+          "io": "out",
+          "pram": "yes",
+          "price": {
+            "th": "เช็กราคาก่อนไป",
+            "en": "Check the price"
+          },
+          "book": "none",
+          "src": "https://www.outlooktraveller.com/destinations/international/budget-friendly-uzbekistan-6-free-must-do-experiences-in-tashkent-for-families",
+          "name": {
+            "th": "จัตุรัสอิสรภาพ",
+            "en": "Independence Square"
+          },
+          "kind": "park",
+          "area": {
+            "th": "ทาชเคนต์",
+            "en": "Tashkent"
+          },
+          "what": {
+            "th": "จัตุรัสกว้างมีอนุสาวรีย์อิสรภาพ ซุ้มประตู น้ำพุ และสวน",
+            "en": "A wide square with the Independence Monument, arches, fountains and gardens"
+          },
+          "why": {
+            "th": "น้ำพุและสวนให้เดินเล่นสบาย ๆ",
+            "en": "Fountains and gardens for an easy walk"
+          },
+          "q": "Mustaqillik Maydoni, Tashkent",
+          "ok": "2026-11"
+        },
+        {
+          "local": "Hazrati Imom",
+          "ages": [
+            1,
+            1,
+            2,
+            2
+          ],
+          "hrs": 1,
+          "io": "out",
+          "pram": "part",
+          "price": {
+            "th": "ฟรี",
+            "en": "Free"
+          },
+          "book": "none",
+          "src": "https://www.outlooktraveller.com/destinations/international/budget-friendly-uzbekistan-6-free-must-do-experiences-in-tashkent-for-families",
+          "name": {
+            "th": "กลุ่มอาคารฮาซรัตอิหม่าม",
+            "en": "Hazrati Imam complex"
+          },
+          "kind": "culture",
+          "area": {
+            "th": "ทาชเคนต์",
+            "en": "Tashkent"
+          },
+          "what": {
+            "th": "มัสยิดและโรงเรียนสอนศาสนาจากศตวรรษที่ 16 รอบลานกว้าง",
+            "en": "16th-century mosques and madrasas around courtyards"
+          },
+          "why": {
+            "th": "อาคารเก่าแก่และลานกว้าง เข้าชมฟรี",
+            "en": "Old monuments and courtyards, free to enter"
+          },
+          "q": "Hazrati Imam complex, Qorasaroy street, Tashkent",
+          "ok": "2026-11"
         }
       ]
     }
