@@ -276,6 +276,84 @@
           "q": "Sugarworld Waterpark, Cairns",
           "ok": "2026-11",
           "src": "https://www.barrierreefaustralia.com/blog/10-best-things-to-do-in-cairns-with-kids.7/"
+        },
+        {
+          "local": "",
+          "ages": [
+            1,
+            1,
+            1,
+            1
+          ],
+          "hrs": 2,
+          "io": "out",
+          "pram": "no",
+          "price": {
+            "th": "เช็กราคาก่อนไป",
+            "en": "Check the price"
+          },
+          "book": "none",
+          "src": "https://hideshotel.com.au/family-friendly-cairns/",
+          "name": {
+            "th": "คริสตัลคาสเคด",
+            "en": "Crystal Cascades"
+          },
+          "kind": "nature",
+          "area": {
+            "th": "เรดลินช์ ห่างจากตัวเมือง 20 นาที",
+            "en": "Redlynch, 20 minutes from the city"
+          },
+          "what": {
+            "th": "ลำธารในป่าฝน มีแอ่งหินและน้ำตกเล็กๆ",
+            "en": "A rainforest creek of rock pools and small waterfalls"
+          },
+          "why": {
+            "th": "เดินสั้นๆ และปิกนิกในป่าฝน",
+            "en": "A short walk and a picnic in the rainforest"
+          },
+          "tip": {
+            "th": "บางช่วงห้ามลงเล่นน้ำ ให้เด็กอยู่ใกล้มือ และอย่าเดินบนหินลื่น",
+            "en": "Parts of the creek are closed to swimming; keep children within arm’s reach and off slippery rocks"
+          },
+          "q": "Crystal Cascades, Redlynch",
+          "ok": "2026-11"
+        },
+        {
+          "local": "",
+          "ages": [
+            1,
+            1,
+            1,
+            1
+          ],
+          "hrs": 3,
+          "io": "out",
+          "pram": "part",
+          "price": {
+            "th": "เช็กราคาก่อนไป",
+            "en": "Check the price"
+          },
+          "book": "none",
+          "src": "https://www.outandaboutwithkids.com.au/things-to-do-cairns/",
+          "name": {
+            "th": "กระเช้าสกายเรล",
+            "en": "Skyrail Rainforest Cableway"
+          },
+          "kind": "ride",
+          "area": {
+            "th": "สมิธฟิลด์ถึงคูรันดา",
+            "en": "Smithfield to Kuranda"
+          },
+          "what": {
+            "th": "กระเช้าลอยฟ้าเหนือป่าฝนขึ้นไปคูรันดา ผ่านน้ำตกแม่น้ำบาร์รอน",
+            "en": "A cableway over the rainforest up to Kuranda, past the Barron River waterfalls"
+          },
+          "why": {
+            "th": "ได้นั่งกระเช้าข้ามป่าฝนมรดกโลก",
+            "en": "Riding over the world-heritage rainforest"
+          },
+          "q": "Skyrail Rainforest Cableway, Smithfield",
+          "ok": "2026-11"
         }
       ]
     },
