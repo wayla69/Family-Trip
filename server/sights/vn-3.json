@@ -280,7 +280,196 @@
       {"name":{"en":"Valley of Love Pedal Boats","th":"หุบเขาแห่งความรัก เรือถีบรูปหงส์"},"kind":"park","area":{"en":"Da Lat","th":"ดาลัด"},"what":{"en":"Swan pedal boats on the heart-shaped lake.","th":"เรือถีบรูปหงส์บนทะเลสาบรูปหัวใจ"},"why":{"en":"The page says the swan boats and heart-shaped lake are romantic scenery perfect for family photos.","th":"หน้าเว็บบอกว่าเรือหงส์และทะเลสาบรูปหัวใจเป็นฉากสวยสำหรับรูปครอบครัว"},"ages":[0,1,2,2],"hrs":1,"io":"out","pram":"part","price":{"en":"150,000 VND per boat (30 minutes)","th":"150,000 VND ต่อลำ (30 นาที)"},"book":"none","q":"Valley of Love, Da Lat","ok":"2026-11","src":"https://dalat.app/ko/blog/guides/da-lat-family-activities-kids-children-guide-2026"},
       {"name":{"en":"Strawberry Farm Tours","th":"ทัวร์ฟาร์มสตรอว์เบอร์รี่"},"kind":"farm","area":{"en":"Da Lat","th":"ดาลัด"},"what":{"en":"Pick-your-own strawberries and fresh strawberry juice on a highland farm.","th":"เก็บสตรอว์เบอร์รี่เองในฟาร์มบนที่ราบสูง และดื่มน้ำสตรอว์เบอร์รี่สด"},"why":{"en":"The page says it suits all ages, especially toddlers.","th":"หน้าเว็บบอกว่าเหมาะกับทุกวัย โดยเฉพาะเด็กเล็ก"},"ages":[2,2,2,1],"hrs":2.5,"io":"out","pram":"part","price":{"en":"50,000-100,000 VND per person","th":"50,000–100,000 VND ต่อคน"},"book":"none","q":"Strawberry farms, Da Lat","ok":"2026-11","src":"https://dalat.app/ko/blog/guides/da-lat-family-activities-kids-children-guide-2026"},
       {"name":{"en":"Linh Phuoc Pagoda (Dragon Temple)","th":"วัดลิ้นฟุก (วัดมังกร)"},"kind":"culture","area":{"en":"Da Lat","th":"ดาลัด"},"what":{"en":"Temple grounds with a mosaic dragon.","th":"บริเวณวัดมีมังกรโมเสก"},"why":{"en":"The page says it is a peaceful place with a mosaic dragon for cultural learning.","th":"หน้าเว็บบอกว่าเป็นที่สงบ มีมังกรโมเสกให้เด็กเรียนรู้วัฒนธรรม"},"ages":[0,0,2,2],"hrs":1.5,"io":"out","pram":"part","price":{"en":"Free (donations welcome)","th":"ฟรี (ยินดีรับบริจาค)"},"book":"none","q":"Linh Phuoc Pagoda, Da Lat","ok":"2026-11","src":"https://dalat.app/ko/blog/guides/da-lat-family-activities-kids-children-guide-2026"},
-      {"name":{"en":"Coffee Farm Tours","th":"ทัวร์ฟาร์มกาแฟ"},"kind":"farm","area":{"en":"Da Lat","th":"ดาลัด"},"what":{"en":"Bean-to-cup tour of highland coffee farms.","th":"ทัวร์จากเมล็ดถึงแก้วในฟาร์มกาแฟบนที่ราบสูง"},"why":{"en":"The page says it is educational, about the highland agriculture process.","th":"หน้าเว็บบอกว่าให้ความรู้เรื่องกระบวนการเกษตรบนที่ราบสูง"},"ages":[0,0,1,2],"hrs":3.5,"io":"both","pram":"no","price":{"en":"150,000-250,000 VND per person","th":"150,000–250,000 VND ต่อคน"},"book":"none","q":"Coffee farms, Da Lat","ok":"2026-11","src":"https://dalat.app/ko/blog/guides/da-lat-family-activities-kids-children-guide-2026"}
+      {"name":{"en":"Coffee Farm Tours","th":"ทัวร์ฟาร์มกาแฟ"},"kind":"farm","area":{"en":"Da Lat","th":"ดาลัด"},"what":{"en":"Bean-to-cup tour of highland coffee farms.","th":"ทัวร์จากเมล็ดถึงแก้วในฟาร์มกาแฟบนที่ราบสูง"},"why":{"en":"The page says it is educational, about the highland agriculture process.","th":"หน้าเว็บบอกว่าให้ความรู้เรื่องกระบวนการเกษตรบนที่ราบสูง"},"ages":[0,0,1,2],"hrs":3.5,"io":"both","pram":"no","price":{"en":"150,000-250,000 VND per person","th":"150,000–250,000 VND ต่อคน"},"book":"none","q":"Coffee farms, Da Lat","ok":"2026-11","src":"https://dalat.app/ko/blog/guides/da-lat-family-activities-kids-children-guide-2026"},
+        {
+          "local": "Khu vui chơi trẻ em La DaLat",
+          "name": {
+            "th": "ลานเล่นเด็กลาดาลัด",
+            "en": "La DaLat Children’s Play Area"
+          },
+          "kind": "play",
+          "area": {
+            "th": "106A ถนนไมอันดาว ชั้นใต้ดินของโรงแรม",
+            "en": "106A Mai Anh Đào, in the hotel’s basement"
+          },
+          "what": {
+            "th": "ลานเล่นในร่มราว 7,000 ตร.ม. แบ่ง 5 โซน มีซอฟต์เพลย์และบ้านลม",
+            "en": "An indoor play zone of about 7,000 m² in five areas, with soft play and bouncy houses"
+          },
+          "why": {
+            "th": "เย็นสบายและไม่โดนฝน เหมาะวันฝนตก",
+            "en": "Cool and sheltered from the weather, so it works on a rainy day"
+          },
+          "ages": [
+            1,
+            1,
+            1,
+            1
+          ],
+          "hrs": 2,
+          "io": "in",
+          "pram": "part",
+          "price": {
+            "th": "≈ 50,000 ดอง ต่อคน",
+            "en": "≈ 50,000 VND a person"
+          },
+          "book": "none",
+          "q": "La DaLat khu vui chơi trẻ em, 106A Mai Anh Đào, Đà Lạt",
+          "src": "https://mia.vn/cam-nang-du-lich/khu-vui-choi-tre-em-o-da-lat-19005",
+          "ok": "2026-11"
+        },
+        {
+          "local": "Thị trấn Nobi",
+          "name": {
+            "th": "เมืองโนบิ",
+            "en": "Nobi Town"
+          },
+          "kind": "play",
+          "area": {
+            "th": "30/36 ถนนนามโห่ เขต 11",
+            "en": "30/36 Nam Hồ, Ward 11"
+          },
+          "what": {
+            "th": "หมู่บ้านเล็กที่จำลองโลกของโนบิตะและโดราเอมอน",
+            "en": "A little village built like the world of Nobita and Doraemon"
+          },
+          "why": {
+            "th": "เด็กที่ชอบโดราเอมอนได้เดินเข้าไปในฉากจากการ์ตูน",
+            "en": "Children who love Doraemon walk into scenes from the comic"
+          },
+          "ages": [
+            1,
+            1,
+            1,
+            1
+          ],
+          "hrs": 1.5,
+          "io": "both",
+          "pram": "part",
+          "price": {
+            "th": "≈ เด็ก 25,000 ดอง ผู้ใหญ่ 35,000 ดอง",
+            "en": "≈ 25,000 VND a child, 35,000 VND an adult"
+          },
+          "book": "none",
+          "q": "Thị Trấn Nobi, 30/36 Nam Hồ, Đà Lạt",
+          "src": "https://mia.vn/cam-nang-du-lich/khu-vui-choi-tre-em-o-da-lat-19005",
+          "ok": "2026-11"
+        },
+        {
+          "local": "Mongo Land Đà Lạt",
+          "name": {
+            "th": "มองโกแลนด์",
+            "en": "Mongo Land"
+          },
+          "kind": "play",
+          "area": {
+            "th": "ตานุง ทางตะวันตกของดาลัด",
+            "en": "Tà Nung, west of Đà Lạt"
+          },
+          "what": {
+            "th": "แคมป์สไตล์มองโกเลียบนเนินเขา มีกระโจมหลากสีและรางเลื่อนแห้งยาวกว่า 400 ม.",
+            "en": "A Mongolian-style camp on a hillside with coloured tents and a dry toboggan run of more than 400 m"
+          },
+          "why": {
+            "th": "มีรางเลื่อน ยิงธนู สไลด์หญ้า และชุดมองโกเลียให้ลองแต่ง",
+            "en": "A dry toboggan, archery, grass sliding and Mongolian costumes to dress up in"
+          },
+          "ages": [
+            1,
+            1,
+            1,
+            1
+          ],
+          "hrs": 2,
+          "io": "out",
+          "pram": "part",
+          "price": {
+            "th": "≈ 100,000–120,000 ดอง ต่อคน",
+            "en": "≈ 100,000–120,000 VND a person"
+          },
+          "book": "none",
+          "q": "Mongo Land, Tà Nung, Đà Lạt",
+          "src": "https://mia.vn/cam-nang-du-lich/khu-vui-choi-tre-em-o-da-lat-19005",
+          "ok": "2026-11"
+        },
+        {
+          "local": "Kids Coffee",
+          "name": {
+            "th": "คิดส์คอฟฟี่",
+            "en": "Kids Coffee"
+          },
+          "kind": "play",
+          "area": {
+            "th": "10 ถนนเหงียนตื๋อหลึก เขต 8",
+            "en": "10 Nguyên Tử Lực, Ward 8"
+          },
+          "what": {
+            "th": "สวนเขียวสำหรับเล่น มีคาเฟ่ในตัว",
+            "en": "A green garden play space with a café"
+          },
+          "why": {
+            "th": "มีเวิร์กช็อปฟรีสำหรับเด็ก ปั้นแป้ง ปลูกผัก และวาดภาพ",
+            "en": "Free workshops for children: dough modelling, planting vegetables and painting"
+          },
+          "ages": [
+            1,
+            1,
+            1,
+            1
+          ],
+          "hrs": 2,
+          "io": "both",
+          "pram": "part",
+          "price": {
+            "th": "≈ 100,000 ดอง ต่อคน",
+            "en": "≈ 100,000 VND a person"
+          },
+          "book": "none",
+          "q": "Kids Coffee, 10 Nguyên Tử Lực, Đà Lạt",
+          "src": "https://mia.vn/cam-nang-du-lich/khu-vui-choi-tre-em-o-da-lat-19005",
+          "ok": "2026-11"
+        },
+        {
+          "local": "Dalat Milk",
+          "name": {
+            "th": "ฟาร์มนมดาลัด",
+            "en": "Dalat Milk Farm"
+          },
+          "kind": "farm",
+          "area": {
+            "th": "ตูจ่า เขตด๋อนเซือง (ทางใต้ของดาลัด)",
+            "en": "Tu Tra, Đơn Dương (south of Đà Lạt)"
+          },
+          "what": {
+            "th": "ฟาร์มโคนมที่ได้ชิมนมสด",
+            "en": "A dairy farm where you can taste fresh milk"
+          },
+          "why": {
+            "th": "เด็กๆ ได้ลูบวัว แพะ และแกะ",
+            "en": "Children can stroke the cows, goats and sheep"
+          },
+          "tip": {
+            "th": "ลูบได้อย่างเดียว ไม่มีขี่",
+            "en": "Petting only; no riding"
+          },
+          "ages": [
+            1,
+            1,
+            1,
+            1
+          ],
+          "hrs": 2,
+          "io": "out",
+          "pram": "part",
+          "price": {
+            "th": "ฟรี",
+            "en": "Free"
+          },
+          "book": "none",
+          "q": "Da Lat Milk Joint-stock Company, Tu Tra, Đơn Dương",
+          "src": "https://mia.vn/cam-nang-du-lich/khu-vui-choi-tre-em-o-da-lat-19005",
+          "ok": "2026-11"
+        }
     ]
     },
     {

@@ -1,0 +1,23 @@
+{
+  "town": "vn-dalat",
+  "kind": "eats + sights",
+  "checked": "2026-11-23",
+  "rule": "A new row needs a page dated 2025–2026 that names it and carries a copied sentence (scripts/library-check.cjs), then a Google Maps check of the place's Reviews tab: ok only when the place is not marked permanently or temporarily closed and has a review from the last six months.",
+  "agents": "two Haiku agents; 25 rows offered, 12 passed library-check.cjs, 7 went in",
+  "added": [
+    { "name": "Rừng Thông Mơ Farm & Bistro", "src": "https://wanderlog.com/list/geoCategory/33031/best-family-restaurants-in-da-lat", "date": "2026-07", "map": "Google Maps 1,243 reviews, newest 'a month ago', not closed" },
+    { "name": "Léguda Buffet Rau Đà Lạt", "src": "https://wanderlog.com/list/geoCategory/33031/best-family-restaurants-in-da-lat", "date": "2026-07", "map": "Google Maps 5,250 reviews, newest 'a month ago', not closed" },
+    { "name": "La DaLat Children's Play Area", "src": "https://mia.vn/cam-nang-du-lich/khu-vui-choi-tre-em-o-da-lat-19005", "date": "2025-08", "map": "Google Maps 'La DaLat khu vui chơi trẻ em', 60 reviews, newest '3 weeks ago'" },
+    { "name": "Nobi Town", "src": "https://mia.vn/cam-nang-du-lich/khu-vui-choi-tre-em-o-da-lat-19005", "date": "2025-08", "map": "Google Maps 'Thị Trấn Nobi', 1,111 reviews, newest '2 months ago'" },
+    { "name": "Mongo Land", "src": "https://mia.vn/cam-nang-du-lich/khu-vui-choi-tre-em-o-da-lat-19005", "date": "2025-08", "map": "Google Maps 11,020 reviews, newest 'a week ago'" },
+    { "name": "Kids Coffee", "src": "https://mia.vn/cam-nang-du-lich/khu-vui-choi-tre-em-o-da-lat-19005", "date": "2025-08", "map": "Google Maps 89 reviews, newest 'a month ago'" },
+    { "name": "Dalat Milk Farm", "src": "https://mia.vn/cam-nang-du-lich/khu-vui-choi-tre-em-o-da-lat-19005", "date": "2025-08", "map": "Google Maps 'Da Lat Milk Joint-stock Company' (dairy farm), 998 reviews, newest '5 months ago'" }
+  ],
+  "left_out": [
+    { "name": "13 bánh căn and noodle shops (VinWonders lists)", "why": "the pages carry no date the checker can read" },
+    { "name": "Tea Resort Prenn, MerPerle Dalat Hotel", "why": "hotel kids' clubs, not places to visit" },
+    { "name": "F49", "why": "Google Maps finds no such place at 95 Hà Giang" },
+    { "name": "Titan Kids, Yoyo Play Kids", "why": "about 30 km outside Đà Lạt (Liên Nghĩa, Đức Trọng); not checked" }
+  ],
+  "estimates": "Ages ([1,1,1,1]) and visit hours are not printed on these pages; the format requires them, so they are placeholders for the owner to review."
+}
