@@ -260,6 +260,117 @@
           "q": "Diamantmuseum Brugge, Katelijnestraat 43, Bruges",
           "ok": "2026-11",
           "src": "https://www.diamondmuseum.be"
+        },
+        {
+          "local": "Volkskundemuseum",
+          "ages": [
+            1,
+            1,
+            1,
+            1
+          ],
+          "hrs": 2,
+          "io": "in",
+          "pram": "part",
+          "price": {
+            "th": "เช็กราคาก่อนไป",
+            "en": "Check the price"
+          },
+          "book": "none",
+          "src": "https://www.museabrugge.be/en/visit/kids",
+          "name": {
+            "th": "พิพิธภัณฑ์วิถีชาวบ้าน",
+            "en": "Volkskundemuseum (Folklore Museum)"
+          },
+          "kind": "museumkid",
+          "area": {
+            "th": "มิวเซียบรูช",
+            "en": "Musea Brugge"
+          },
+          "what": {
+            "th": "พิพิธภัณฑ์วิถีชีวิตชาวบ้าน มีจุดเล่นและกระเป๋าเกมสำหรับเด็ก",
+            "en": "A folklore museum with play stations and play suitcases for children"
+          },
+          "why": {
+            "th": "มีจุดเล่นให้ตามหารอบพิพิธภัณฑ์",
+            "en": "Play stations to find around the museum"
+          },
+          "q": "Volkskundemuseum, Brugge",
+          "ok": "2026-11"
+        },
+        {
+          "local": "",
+          "ages": [
+            1,
+            1,
+            1,
+            1
+          ],
+          "hrs": 2,
+          "io": "in",
+          "pram": "part",
+          "price": {
+            "th": "เช็กราคาก่อนไป",
+            "en": "Check the price"
+          },
+          "book": "none",
+          "src": "https://www.museabrugge.be/en/visit/kids",
+          "name": {
+            "th": "พิพิธภัณฑ์กรุทฮุส",
+            "en": "Gruuthusemuseum"
+          },
+          "kind": "museum",
+          "area": {
+            "th": "มิวเซียบรูช",
+            "en": "Musea Brugge"
+          },
+          "what": {
+            "th": "พิพิธภัณฑ์ในวังกลางเมือง เด็กสำรวจเหมือนผจญภัย",
+            "en": "A city palace museum children explore as an adventure"
+          },
+          "why": {
+            "th": "พิพิธภัณฑ์จัดเป็นการผจญภัยสำหรับเด็ก",
+            "en": "Musea Brugge sets it up as an adventure for children"
+          },
+          "q": "Gruuthusemuseum, Brugge",
+          "ok": "2026-11"
+        },
+        {
+          "local": "",
+          "ages": [
+            1,
+            1,
+            1,
+            1
+          ],
+          "hrs": 2,
+          "io": "in",
+          "pram": "part",
+          "price": {
+            "th": "เช็กราคาก่อนไป",
+            "en": "Check the price"
+          },
+          "book": "none",
+          "src": "https://www.museabrugge.be/en/visit/kids",
+          "name": {
+            "th": "พิพิธภัณฑ์โรงพยาบาลเซนต์จอห์น",
+            "en": "Sint-Janshospitaal"
+          },
+          "kind": "museum",
+          "area": {
+            "th": "มิวเซียบรูช",
+            "en": "Musea Brugge"
+          },
+          "what": {
+            "th": "พิพิธภัณฑ์โรงพยาบาลยุคกลาง มีผลงานของฮันส์ เมมลิง",
+            "en": "A medieval hospital museum with works by Hans Memling"
+          },
+          "why": {
+            "th": "มีออดิโอทัวร์สำหรับเด็กและห้องโรงพยาบาลของเด็ก",
+            "en": "A children’s audio tour and a children’s hospital room"
+          },
+          "q": "Sint-Janshospitaal, Brugge",
+          "ok": "2026-11"
         }
       ]
     },
