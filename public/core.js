@@ -550,7 +550,8 @@ function themeStyle(t) {
   const css = Object.entries(keys).filter(([k]) => th[k] && !(dark && ['ink', 'muted', 'panel', 'rule', 'pick', 'info', 'calm', 'warn'].includes(k)))
     .map(([k, v]) => `${v}:${k === 'accent' && dark && th.accentDark ? th.accentDark : k === 'accent2' ? acc2 : th[k]}`);
   const acc = dark && th.accentDark ? th.accentDark : th.accent;
-  if (acc) css.push(`--on-accent:${onAccent(acc)}`);   // text on an accent fill: white on a deep accent, the dark paper on the light dark-mode accent
+  if (acc) css.push(`--on-accent:${onAccent(acc)}`);
+  if (th.accentDark || acc) css.push(`--acc-soft:${th.accentDark || acc}`);   // the book's lighter colour: what is selected is tinted with it, so a navy or forest book's choice reads coloured, not grey (UI review, Nov 2026)   // text on an accent fill: white on a deep accent, the dark paper on the light dark-mode accent
   if (th.accent2) css.push(`--on-accent2:${onAccent(acc2)}`);   // the same for the second colour (AU's sea blue wants dark text)
   return css.join(';');
 }

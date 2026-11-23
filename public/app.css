@@ -4128,3 +4128,56 @@ details.more>summary{border-radius:16px}
 :root[data-theme=dark] .cdcard .cdk,:root[data-theme=dark] .cdcard .cdn,:root[data-theme=dark] .row.quick .qlink .qtx b{color:color-mix(in srgb,var(--g1) 55%,#fff)}:root[data-theme=dark] .call.info.pre.cdcard .cdsub,:root[data-theme=dark] .row.quick .qlink .qtx small{color:color-mix(in srgb,var(--ink) 80%,var(--g1))}:root[data-theme=dark] .row.quick .qlink.pz{color:var(--ink)}:root[data-theme=dark] .dayhd .seg.dayseg button[aria-pressed=true]{color:color-mix(in srgb,var(--accent) 45%,#fff)}
 @media (prefers-color-scheme:dark){:root:not([data-theme=light]) .dayhd .seg.dayseg{background:color-mix(in srgb,var(--accent) 22%,var(--card))}:root:not([data-theme=light]) .dayhd .seg.dayseg button[aria-pressed=true]{background:color-mix(in srgb,var(--accent) 45%,var(--card));box-shadow:inset 0 0 0 1.5px color-mix(in srgb,var(--accent) 70%,#fff)}}
 :root[data-theme=dark] .dayhd .seg.dayseg{background:color-mix(in srgb,var(--accent) 22%,var(--card))}:root[data-theme=dark] .dayhd .seg.dayseg button[aria-pressed=true]{background:color-mix(in srgb,var(--accent) 45%,var(--card));box-shadow:inset 0 0 0 1.5px color-mix(in srgb,var(--accent) 70%,#fff)}
+/* one selected look (UI review, Nov 2026: a 12 % tint of a navy or forest accent read as a grey block): every chosen chip, switch, day, tab and option card
+   is tinted with the book's lighter colour (--acc-soft, core.js themeStyle) and ringed in its main colour; a current step is the same, never a solid dark disc */
+:root{--sel-bg:color-mix(in srgb,var(--acc-soft,var(--accent)) 40%,var(--card));--sel-ink:color-mix(in srgb,var(--accent) 82%,var(--ink))}
+.seg button[aria-pressed=true],.chip[aria-pressed=true],.rtags .chip[aria-pressed=true],.daystrip a[aria-current=true],.daytabs a[aria-current=page],.tpo[aria-pressed=true],.ppt[aria-current],.ppedit[aria-pressed=true],.mission .felt button[aria-pressed=true],.rkid .opts button[aria-pressed=true],.moodgrid button[aria-pressed=true]{background:var(--sel-bg)}
+.seg button[aria-pressed=true],.chip[aria-pressed=true],.daystrip a[aria-current=true],.daytabs a[aria-current=page]{color:var(--sel-ink)}
+nav.bar a[aria-current=page]{background:var(--sel-bg);color:var(--sel-ink)}
+.plqd.now i{background:var(--sel-bg);color:var(--sel-ink);box-shadow:inset 0 0 0 2px var(--accent),0 0 0 3px color-mix(in srgb,var(--acc-soft,var(--accent)) 30%,transparent)}
+@media (prefers-color-scheme:dark){:root:not([data-theme=light]){--sel-bg:color-mix(in srgb,var(--acc-soft,var(--accent)) 24%,var(--card));--sel-ink:color-mix(in srgb,var(--acc-soft,var(--accent)) 70%,#fff)}}
+:root[data-theme=dark]{--sel-bg:color-mix(in srgb,var(--acc-soft,var(--accent)) 24%,var(--card));--sel-ink:color-mix(in srgb,var(--acc-soft,var(--accent)) 70%,#fff)}
+/* no thin coloured rules (owner, Nov 2026: "ไม่เอาแบบเส้นๆสีๆอีกแล้ว", carried from the record page by the UI review): a card wears its colour as a soft fill
+   with rounder corners, never a 4 px stripe across its top or down its side */
+.pcard,.privacy .pvsec{border:0;border-radius:24px;background:color-mix(in srgb,var(--g1,var(--accent)) 9%,var(--card));box-shadow:0 1px 0 color-mix(in srgb,var(--g1,var(--accent)) 14%,transparent)}
+.stayc{border:0;border-radius:20px;background:color-mix(in srgb,var(--c) 9%,var(--card))}
+.tp-learn .gcard{border-top:0;border-radius:20px;padding:12px 14px;background:color-mix(in srgb,var(--tc,var(--accent)) 8%,var(--card));margin-bottom:10px}
+.tp.one .gl{border:0;border-radius:22px;background:color-mix(in srgb,var(--g1,var(--accent)) 8%,var(--card));box-shadow:none}
+.tp.one .cols2>div,.tp.one .pg1>ul.tips,.tp.one .pg1>ol.tips,.tp.one .gcard,.tp.one .ifts details.ifold,.tp.one .pg1>.call.info,.tp.one .pg1>.call.calm,.tp.one .pg1>.call.pick,.tp.one details.sub{border:0;border-radius:22px;background:color-mix(in srgb,var(--cc,var(--g1,var(--accent))) 8%,var(--card));box-shadow:none}
+@media (max-width:560px){.tp.one .prices tr{border:0;border-radius:22px;background:color-mix(in srgb,var(--rc,var(--g1,var(--accent))) 8%,var(--card));box-shadow:none}}
+@media (min-width:641px){.tp.one .tblwrap{border:0;border-radius:22px;background:color-mix(in srgb,var(--g1,var(--accent)) 6%,var(--card));box-shadow:none}}
+.plday{border:0;border-radius:20px;background:color-mix(in srgb,var(--tc) 10%,var(--card))}
+.sightc{border-top:0;border-radius:20px;box-shadow:none;background:color-mix(in srgb,#1CC9A4 8%,var(--card))}
+.nights li{border-left:0;border-radius:16px;background:color-mix(in srgb,var(--c,var(--accent)) 8%,var(--card))}
+.call{border-left:0;border-radius:18px}
+.tp .pocket details.pg>summary{border-left:0}
+/* folds that got the app's chevron after the render (views.js chvAdd): no browser triangle, no CSS-drawn › or ⌄ beside it */
+summary.chvadd{display:flex;align-items:center;gap:6px;list-style:none}summary.chvadd::-webkit-details-marker{display:none}summary.chvadd::marker{content:""}
+summary.chvadd::after{content:none!important;display:none!important}
+summary.chvadd>svg.ic.chv{margin-left:auto}
+/* the first-run steps as pastel cards with their pictures (UI review, Nov 2026) */
+.onbsteps{border-top:0;display:grid;gap:10px}
+.onbsteps li.pz{padding:12px 14px;border:1px solid;border-radius:20px}
+.onbsteps li.pz .onbno{width:52px;height:52px;border-radius:50%;background:#fff;box-shadow:0 0 0 3px color-mix(in srgb,var(--g1) 40%,#fff);display:grid;place-items:center}
+.onbsteps li.pz .onbno img{width:42px;height:42px;object-fit:contain}
+summary.chvadd>.chvt{flex:1;min-width:0}
+/* the budget form: one row a kind on a white strip, the amount box with its money inside (UI review, Nov 2026) */
+.budblk .budf{grid-template-columns:1fr;gap:8px}
+.budblk .budf .fxf{flex-direction:row;align-items:center;gap:10px;padding:6px 8px 6px 14px;border-radius:16px;background:var(--card);font-size:15px;font-weight:600}
+.budblk .budn{flex:1;min-width:0}
+.budblk .budin{position:relative;flex:0 0 46%}.budblk .budin .field{width:100%;padding-right:52px;text-align:right}
+.budblk .budin small{position:absolute;right:12px;top:50%;transform:translateY(-50%);font-size:12px;font-weight:700;color:var(--muted);pointer-events:none}
+/* dark mode (UI review, Nov 2026) — kid mode and the passport are painted pages for a child, used at bedtime and on dark planes: in dark mode a dusk veil
+   dims them (an overlay, never a filter, which would break the fixed kid bar), taps go through it */
+@media (prefers-color-scheme:dark){:root:not([data-theme=light]) .kidmain::after{content:"";position:fixed;inset:0;background:rgba(8,14,30,.28);pointer-events:none;z-index:9999}:root:not([data-theme=light]) .ppbook:not(.inkid){position:relative}:root:not([data-theme=light]) .ppbook:not(.inkid)::after{content:"";position:absolute;inset:0;border-radius:inherit;background:rgba(8,14,30,.22);pointer-events:none;z-index:5}}
+:root[data-theme=dark] .kidmain::after{content:"";position:fixed;inset:0;background:rgba(8,14,30,.28);pointer-events:none;z-index:9999}:root[data-theme=dark] .ppbook:not(.inkid){position:relative}:root[data-theme=dark] .ppbook:not(.inkid)::after{content:"";position:absolute;inset:0;border-radius:inherit;background:rgba(8,14,30,.22);pointer-events:none;z-index:5}
+/* the language and text-size choices: a deeper disc with a light letter (the light-mode colours mixed with the dark ink all but vanished) */
+@media (prefers-color-scheme:dark){:root:not([data-theme=light]) .lgk .tpo:nth-child(1) .gl,:root:not([data-theme=light]) .fsk .tpo:nth-child(4) .gl{background:color-mix(in srgb,#FF6FA8 38%,var(--card));color:#FFE3EE}:root:not([data-theme=light]) .lgk .tpo:nth-child(2) .gl,:root:not([data-theme=light]) .fsk .tpo:nth-child(1) .gl{background:color-mix(in srgb,#4F7BFF 40%,var(--card));color:#E3EBFF}:root:not([data-theme=light]) .fsk .tpo:nth-child(2) .gl{background:color-mix(in srgb,#2DB38A 38%,var(--card));color:#DDF7EE}:root:not([data-theme=light]) .fsk .tpo:nth-child(3) .gl{background:color-mix(in srgb,#F2B90C 38%,var(--card));color:#FFF4D2}}
+:root[data-theme=dark] .lgk .tpo:nth-child(1) .gl,:root[data-theme=dark] .fsk .tpo:nth-child(4) .gl{background:color-mix(in srgb,#FF6FA8 38%,var(--card));color:#FFE3EE}:root[data-theme=dark] .lgk .tpo:nth-child(2) .gl,:root[data-theme=dark] .fsk .tpo:nth-child(1) .gl{background:color-mix(in srgb,#4F7BFF 40%,var(--card));color:#E3EBFF}:root[data-theme=dark] .fsk .tpo:nth-child(2) .gl{background:color-mix(in srgb,#2DB38A 38%,var(--card));color:#DDF7EE}:root[data-theme=dark] .fsk .tpo:nth-child(3) .gl{background:color-mix(in srgb,#F2B90C 38%,var(--card));color:#FFF4D2}
+/* the menu-colour previews stay visible on a dark card */
+@media (prefers-color-scheme:dark){:root:not([data-theme=light]) .tpo-plain .sw i{background:color-mix(in srgb,#fff 12%,var(--card));border-color:color-mix(in srgb,#fff 30%,transparent)}:root:not([data-theme=light]) .tpo-accent .sw i{background:color-mix(in srgb,var(--accent) 45%,var(--card));border-color:color-mix(in srgb,var(--accent) 60%,transparent)}}
+:root[data-theme=dark] .tpo-plain .sw i{background:color-mix(in srgb,#fff 12%,var(--card));border-color:color-mix(in srgb,#fff 30%,transparent)}:root[data-theme=dark] .tpo-accent .sw i{background:color-mix(in srgb,var(--accent) 45%,var(--card));border-color:color-mix(in srgb,var(--accent) 60%,transparent)}
+/* the tasting card: a star not given yet is pale, so "not tasted" never reads as "three stars" (UI review, Nov 2026) */
+.ppbook .stars button[aria-pressed=false]{color:#D5DAE1;text-shadow:none}
+@media (prefers-color-scheme:dark){:root:not([data-theme=light]) .ppbook .stars button[aria-pressed=false]{color:#4A5468}}:root[data-theme=dark] .ppbook .stars button[aria-pressed=false]{color:#4A5468}
+.tdv.zh{font-size:22px;line-height:1.35;letter-spacing:.02em}
