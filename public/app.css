@@ -4093,3 +4093,5 @@ details.more>summary{border-radius:16px}
 .pk .eh .pinlink{padding:16px;margin:-16px -14px -16px -15px}
 .rkid .opts button{height:auto;min-height:44px;min-width:44px}
 .sightc .ef a.go,.eatc .ef a.go{min-height:44px;display:inline-flex;align-items:center}
+/* the fresh-start card (owner, Nov 2026): one row a kind of play, ticked, then two taps */
+.freshline .frrows{display:grid;gap:8px;margin:8px 0 10px}.freshline .frrow .gface{flex:none;display:grid;place-items:center}.freshline .frrow .gface .ku{width:36px;height:36px}.freshline .frrow .label{margin-left:4px}
