@@ -263,6 +263,351 @@
           "q": "Parc La Grange, Quai Gustave-Ador, Geneva",
           "ok": "2026-11",
           "src": "https://www.myswitzerland.com/en/experiences/cities-culture/city-parks-and-squares-search/-/geneva/"
+        },
+        {
+          "local": "",
+          "ages": [
+            2,
+            2,
+            1,
+            1
+          ],
+          "hrs": 2,
+          "io": "out",
+          "pram": "part",
+          "price": {
+            "th": "ฟรี",
+            "en": "Free"
+          },
+          "book": "none",
+          "src": "https://www.geneve.com/en/see-do/attractions/geneva-family-activities",
+          "name": {
+            "th": "บัวเดอลาบาตี",
+            "en": "Bois de la Bâtie"
+          },
+          "kind": "farm",
+          "area": {
+            "th": "เจนีวา ริมแม่น้ำโรน",
+            "en": "Geneva, by the Rhône"
+          },
+          "what": {
+            "th": "ฟาร์มในเมืองและสนามเด็กเล่นขนาดใหญ่กลางธรรมชาติ",
+            "en": "A city farm and a huge playground in the middle of nature"
+          },
+          "why": {
+            "th": "มีสัตว์ในฟาร์มและสนามเด็กเล่นใหญ่ในที่เดียว",
+            "en": "Farm animals and a big playground in one place"
+          },
+          "q": "Bois de la Bâtie, Genève",
+          "ok": "2026-11"
+        },
+        {
+          "local": "",
+          "ages": [
+            0,
+            1,
+            2,
+            2
+          ],
+          "hrs": 2,
+          "io": "in",
+          "pram": "part",
+          "price": {
+            "th": "เช็กราคาก่อนไป",
+            "en": "Check the price"
+          },
+          "book": "none",
+          "src": "https://www.geneve.com/en/see-do/attractions/geneva-family-activities",
+          "name": {
+            "th": "แอร์ลูป",
+            "en": "AIRLOOP"
+          },
+          "kind": "play",
+          "area": {
+            "th": "ลองซี",
+            "en": "Lancy"
+          },
+          "what": {
+            "th": "สวนแทรมโพลีน",
+            "en": "A trampoline park"
+          },
+          "why": {
+            "th": "แทรมโพลีนสนุกๆ ที่เด็กได้เล่นโต้ตอบ",
+            "en": "Fun, interactive trampolines for children"
+          },
+          "q": "AIRLOOP, Route des Jeunes 28, Lancy",
+          "ok": "2026-11"
+        },
+        {
+          "local": "Parc Aventure des Evaux",
+          "ages": [
+            0,
+            1,
+            2,
+            2
+          ],
+          "hrs": 3,
+          "io": "out",
+          "pram": "part",
+          "price": {
+            "th": "เช็กราคาก่อนไป",
+            "en": "Check the price"
+          },
+          "book": "none",
+          "src": "https://www.geneve.com/en/see-do/attractions/geneva-family-activities",
+          "name": {
+            "th": "สวนผจญภัยเจนีวา เอโว",
+            "en": "Geneva Adventure Park (Evaux)"
+          },
+          "kind": "play",
+          "area": {
+            "th": "เลเอโว ออนเน็กซ์",
+            "en": "Les Evaux, Onex"
+          },
+          "what": {
+            "th": "สวนผจญภัยบนต้นไม้ มีซิปไลน์",
+            "en": "A treetop adventure park with zip lines"
+          },
+          "why": {
+            "th": "มีซิปไลน์และเส้นทางบนต้นไม้สำหรับเด็กชอบปีน",
+            "en": "Zip lines and tree courses for children who like to climb"
+          },
+          "q": "Geneva Adventure Park, Les Evaux, Onex",
+          "ok": "2026-11"
+        },
+        {
+          "local": "",
+          "ages": [
+            1,
+            1,
+            1,
+            1
+          ],
+          "hrs": 3,
+          "io": "both",
+          "pram": "part",
+          "price": {
+            "th": "เช็กราคาก่อนไป",
+            "en": "Check the price"
+          },
+          "book": "none",
+          "src": "https://www.chaplinsworld.com/en/",
+          "name": {
+            "th": "แชปลินส์เวิลด์",
+            "en": "Chaplin’s World"
+          },
+          "kind": "museum",
+          "area": {
+            "th": "กอร์ซิเยซูร์เวอแว",
+            "en": "Corsier-sur-Vevey"
+          },
+          "what": {
+            "th": "บ้านของชาร์ลี แชปลินและครอบครัว มีพิพิธภัณฑ์และสวนเหนือทะเลสาบ",
+            "en": "Charlie Chaplin’s family home, with a museum and a park above the lake"
+          },
+          "why": {
+            "th": "มีสวนให้วิ่งเล่นและชมวิว",
+            "en": "A park to play in and enjoy the view"
+          },
+          "tip": {
+            "th": "เวลาเปิดเปลี่ยนตามฤดู ปกติ 10:00 ถึง 18:00 หรือ 17:00 หน้าหนาวปิดเร็วกว่า",
+            "en": "Hours change with the seasons, usually 10:00 to 18:00 or 17:00, shorter in winter"
+          },
+          "q": "Chaplin's World, Route de Fenil 2, Corsier-sur-Vevey",
+          "ok": "2026-11"
+        },
+        {
+          "local": "",
+          "ages": [
+            0,
+            1,
+            2,
+            2
+          ],
+          "hrs": 2,
+          "io": "in",
+          "pram": "part",
+          "price": {
+            "th": "เช็กราคาก่อนไป",
+            "en": "Check the price"
+          },
+          "book": "none",
+          "src": "https://www.lausanne-tourisme.ch/en/explore/the-olympic-museum/",
+          "name": {
+            "th": "พิพิธภัณฑ์โอลิมปิก",
+            "en": "The Olympic Museum"
+          },
+          "kind": "museum",
+          "area": {
+            "th": "อูชี โลซาน",
+            "en": "Ouchy, Lausanne"
+          },
+          "what": {
+            "th": "พิพิธภัณฑ์โอลิมปิกริมทะเลสาบ มีนิทรรศการถาวรเรื่องที่มาของการแข่งขัน",
+            "en": "The Olympic Museum by the lake, with a permanent exhibition on how the Games began"
+          },
+          "why": {
+            "th": "ได้ลองเล่นเยอะ มีจอใหญ่ฉายช่วงเวลาดีที่สุดของโอลิมปิก",
+            "en": "Very interactive, with a huge screen of the best Olympic moments"
+          },
+          "tip": {
+            "th": "เปิดอังคารถึงอาทิตย์ 9:00–18:00 ปิดวันจันทร์ ยกเว้นวันหยุด",
+            "en": "Tuesday to Sunday 9:00–18:00, closed Mondays except holidays"
+          },
+          "q": "The Olympic Museum, Quai d’Ouchy 1, Lausanne",
+          "ok": "2026-11"
+        },
+        {
+          "local": "",
+          "ages": [
+            1,
+            2,
+            2,
+            1
+          ],
+          "hrs": 2,
+          "io": "in",
+          "pram": "part",
+          "price": {
+            "th": "เช็กราคาก่อนไป",
+            "en": "Check the price"
+          },
+          "book": "none",
+          "src": "https://www.lausanne-tourisme.ch/en/explore/aquatis-aquarium-vivarium-lausanne/",
+          "name": {
+            "th": "อควาติส อควาเรียม-วิวาเรียม",
+            "en": "AQUATIS Aquarium-Vivarium"
+          },
+          "kind": "aquarium",
+          "area": {
+            "th": "โลซาน",
+            "en": "Lausanne"
+          },
+          "what": {
+            "th": "อควาเรียม-วิวาเรียมน้ำจืดใหญ่ที่สุดในสวิตเซอร์แลนด์ เดินทางผ่านห้าทวีป",
+            "en": "Switzerland’s largest freshwater aquarium-vivarium, a journey across five continents"
+          },
+          "why": {
+            "th": "เหมาะกับวันฝนตก",
+            "en": "Made for a rainy day"
+          },
+          "q": "AQUATIS Aquarium-Vivarium, Route de Berne 144, Lausanne",
+          "ok": "2026-11"
+        },
+        {
+          "local": "",
+          "ages": [
+            1,
+            1,
+            1,
+            1
+          ],
+          "hrs": 2,
+          "io": "out",
+          "pram": "part",
+          "price": {
+            "th": "ฟรี",
+            "en": "Free"
+          },
+          "book": "none",
+          "src": "https://www.lausanne-tourisme.ch/en/explore/the-sauvabelin-site/",
+          "name": {
+            "th": "โซวาเบอแลง",
+            "en": "Sauvabelin"
+          },
+          "kind": "park",
+          "area": {
+            "th": "บนเนินเหนือโลซาน",
+            "en": "Above Lausanne"
+          },
+          "what": {
+            "th": "สวนเหนือเมืองโลซาน มีสัตว์ฟาร์มและสัตว์ป่า ทะเลสาบ และหอโซวาเบอแลง",
+            "en": "A park above Lausanne with farm and forest animals, a lake and the Sauvabelin Tower"
+          },
+          "why": {
+            "th": "มีสนามเด็กเล่นเล็กๆ และโต๊ะปิกนิก",
+            "en": "A small play area with picnic tables"
+          },
+          "q": "Lac de Sauvabelin, Lausanne",
+          "ok": "2026-11"
+        },
+        {
+          "local": "Naturéum – département de zoologie",
+          "ages": [
+            1,
+            1,
+            1,
+            1
+          ],
+          "hrs": 1,
+          "io": "in",
+          "pram": "part",
+          "price": {
+            "th": "ฟรี",
+            "en": "Free"
+          },
+          "book": "none",
+          "src": "https://www.lausanne-tourisme.ch/en/explore/vaud-zoology-museum/",
+          "name": {
+            "th": "พิพิธภัณฑ์สัตววิทยา พระราชวังรูมีน",
+            "en": "Zoology museum, Palais de Rumine"
+          },
+          "kind": "museumkid",
+          "area": {
+            "th": "พระราชวังรูมีน โลซาน",
+            "en": "Palais de Rumine, Lausanne"
+          },
+          "what": {
+            "th": "สัตว์จากทั่วโลกในนิทรรศการถาวร เข้าฟรี",
+            "en": "Animals from around the world in a free permanent exhibition"
+          },
+          "why": {
+            "th": "มีสัตว์จากทุกทวีปให้ดูใกล้ๆ",
+            "en": "Animals from every continent to look at up close"
+          },
+          "q": "Naturéum, Palais de Rumine, Place de la Riponne 6, Lausanne",
+          "ok": "2026-11"
+        },
+        {
+          "local": "",
+          "ages": [
+            1,
+            1,
+            1,
+            1
+          ],
+          "hrs": 1,
+          "io": "out",
+          "pram": "part",
+          "price": {
+            "th": "เช็กราคาก่อนไป",
+            "en": "Check the price"
+          },
+          "book": "none",
+          "src": "https://www.lausanne-tourisme.ch/en/explore/lausanne-botanical-museum-and-garden/",
+          "name": {
+            "th": "สวนพฤกษศาสตร์โลซาน",
+            "en": "Lausanne Botanical Garden"
+          },
+          "kind": "nature",
+          "area": {
+            "th": "มงทริยง โลซาน",
+            "en": "Montriond, Lausanne"
+          },
+          "what": {
+            "th": "พืชหลายพันชนิด เรือนกระจก สวนหิน และทางเดินร่มรื่น",
+            "en": "Thousands of plant species, greenhouses, rock gardens and shady paths"
+          },
+          "why": {
+            "th": "เดินเล่นในเรือนกระจกและสวนหิน",
+            "en": "Greenhouses and rock gardens to wander through"
+          },
+          "tip": {
+            "th": "เปิดทุกวัน",
+            "en": "Open every day"
+          },
+          "q": "Lausanne Botanical Garden, Avenue de Cour 14B, Lausanne",
+          "ok": "2026-11"
         }
       ]
     },
