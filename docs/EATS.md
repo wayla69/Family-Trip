@@ -529,3 +529,6 @@ batch-19 of docs/library-briefs. +2: Cappuccino, TomYumBar. Proof in `docs/libra
 
 ### Yangon, 23 Nov 2026
 batch-29 of docs/library-briefs. +2: Sharky's, Chatrium Hotel Royal Lake. Proof in `docs/library-proof/mm-yangon.json`.
+
+### Tokyo, 24 Nov 2026
+batch-38 of docs/library-briefs (round 2). +2: Kawara Cafe & Kitchen (Kichijoji Parco), HUGHUG Café. Four places on 2025 pages turned out permanently closed. Proof in `docs/library-proof/jp-tokyo.json`.

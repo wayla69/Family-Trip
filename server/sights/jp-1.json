@@ -461,7 +461,270 @@
       {"name":{"en":"Shinobazu Pond","th":"สระชิโนบาสุ"},"kind":"park","area":{"en":"Ueno","th":"อูเอโนะ"},"what":{"en":"Pond in Ueno Park with pedal boats, a calm break near the zoo and museums.","th":"สระในสวนอูเอโนะ มีเรือถีบ เป็นที่พักสงบใกล้สวนสัตว์และพิพิธภัณฑ์"},"why":{"en":"The page calls it a calming break with pedal boats.","th":"หน้าเว็บเรียกว่าเป็นที่พักที่ผ่อนคลายด้วยเรือถีบ"},"ages":[1,2,2,2],"hrs":1,"io":"out","pram":"yes","price":{"en":"Check the price","th":"เช็กราคาก่อนไป"},"book":"none","q":"Shinobazu Pond, Ueno Park, Tokyo","ok":"2026-11","src":"https://www.japan-atlas.com/guides/tokyo-family-guide/"},
       {"name":{"en":"Toyota Mega Web","th":"โตโยต้า เมกะเว็บ"},"kind":"museumkid","area":{"en":"Odaiba","th":"โอไดบะ"},"what":{"en":"Toyota showroom in Odaiba with drive simulators for kids.","th":"โชว์รูมโตโยต้าในโอไดบะ มีเครื่องจำลองการขับรถสำหรับเด็ก"},"why":{"en":"The page says the entry is free and there are drive simulators for kids.","th":"หน้าเว็บบอกว่าเข้าชมฟรี และมีเครื่องจำลองการขับรถสำหรับเด็ก"},"ages":[1,2,2,1],"hrs":1,"io":"in","pram":"yes","price":{"en":"Free entry","th":"เข้าชมฟรี"},"book":"none","q":"Toyota Mega Web, Odaiba, Tokyo","ok":"2026-11","src":"https://www.japan-atlas.com/guides/tokyo-family-guide/"},
       {"name":{"en":"Yuyake Dandan","th":"ยูยาเกะ ดันดัน"},"kind":"views","area":{"en":"Yanaka Ginza, Nippori side","th":"ยาไนกินซ่า ฝั่งนิปโปริ"},"what":{"en":"Sunset staircase at the eastern end of Yanaka Ginza, the viewpoint over the shopping street.","th":"บันไดชมพระอาทิตย์ตกที่ปลายตะวันออกของยาไนกินซ่า เป็นจุดชมวิวถนนช็อปปิ้ง"},"why":{"en":"The page calls it the neighbourhood's viewpoint and meeting spot.","th":"หน้าเว็บเรียกว่าเป็นจุดชมวิวและจุดนัดพบของย่านนี้"},"tip":{"en":"Golden hour is the best time to go, per the page.","th":"ชั่วโมงทองเป็นเวลาไปที่ดีที่สุด ตามหน้าเว็บ"},"ages":[2,2,2,1],"hrs":1,"io":"out","pram":"no","price":{"en":"Check the price","th":"เช็กราคาก่อนไป"},"book":"none","q":"Yuyake Dandan, Yanaka, Tokyo","ok":"2026-11","src":"https://cheku.co/blogs/japan-travel-tips/things-to-do-in-yanaka-ginza"},
-      {"name":{"en":"Kawaii Monsterland","th":"คาวาอี มอนสเตอร์แลนด์"},"kind":"show","area":{"en":"Takeshita Street, Harajuku","th":"ถนนทาเคชิตะ ฮาราจูกุ"},"what":{"en":"Bright, kitschy one-hour parade and show on Takeshita Street with a ride at extra cost.","th":"ขบวนพาเหรดและโชว์สีสดใสราวหนึ่งชั่วโมงบนถนนทาเคชิตะ มีเครื่องเล่นเสียเงินเพิ่ม"},"why":{"en":"The page says it is a bit of fun for kids who love bright colours and over-the-top things.","th":"หน้าเว็บบอกว่าเป็นความสนุกสำหรับเด็กที่ชอบสีสดและอะไรเกินจริง"},"ages":[1,2,2,2],"hrs":1,"io":"in","pram":"no","price":{"en":"Check the price","th":"เช็กราคาก่อนไป"},"book":"none","q":"Kawaii Monsterland, Takeshita Street, Harajuku, Tokyo","ok":"2026-11","src":"https://backyardtravelfamily.com/things-to-do-with-kids-in-tokyo/"}
+      {"name":{"en":"Kawaii Monsterland","th":"คาวาอี มอนสเตอร์แลนด์"},"kind":"show","area":{"en":"Takeshita Street, Harajuku","th":"ถนนทาเคชิตะ ฮาราจูกุ"},"what":{"en":"Bright, kitschy one-hour parade and show on Takeshita Street with a ride at extra cost.","th":"ขบวนพาเหรดและโชว์สีสดใสราวหนึ่งชั่วโมงบนถนนทาเคชิตะ มีเครื่องเล่นเสียเงินเพิ่ม"},"why":{"en":"The page says it is a bit of fun for kids who love bright colours and over-the-top things.","th":"หน้าเว็บบอกว่าเป็นความสนุกสำหรับเด็กที่ชอบสีสดและอะไรเกินจริง"},"ages":[1,2,2,2],"hrs":1,"io":"in","pram":"no","price":{"en":"Check the price","th":"เช็กราคาก่อนไป"},"book":"none","q":"Kawaii Monsterland, Takeshita Street, Harajuku, Tokyo","ok":"2026-11","src":"https://backyardtravelfamily.com/things-to-do-with-kids-in-tokyo/"},
+        {
+          "local": "サンリオピューロランド",
+          "ages": [
+            2,
+            2,
+            1,
+            0
+          ],
+          "hrs": 5,
+          "io": "in",
+          "pram": "yes",
+          "price": {
+            "th": "เช็กราคาก่อนไป",
+            "en": "Check the price"
+          },
+          "book": "rec",
+          "src": "https://www.magical-trip.com/media/places-for-children-in-tokyo-10-best-things-to-do-with-kids/",
+          "name": {
+            "th": "ซานริโอ พูโรแลนด์",
+            "en": "Sanrio Puroland"
+          },
+          "kind": "themepark",
+          "area": {
+            "th": "ทามะ โตเกียว",
+            "en": "Tama City, Tokyo"
+          },
+          "what": {
+            "th": "พบเฮลโลคิตตี้และมายเมโลดี้ มีเครื่องเล่นและโชว์บนเวที",
+            "en": "Meet Hello Kitty and My Melody, with rides and stage shows"
+          },
+          "why": {
+            "th": "ตัวการ์ตูน เครื่องเล่น และโชว์",
+            "en": "Characters, themed rides and shows"
+          },
+          "tip": {
+            "th": "เวลาเปิดไม่แน่นอน เช็กปฏิทินทางการก่อน",
+            "en": "Hours vary; check the official calendar"
+          },
+          "q": "サンリオピューロランド",
+          "ok": "2026-11"
+        },
+        {
+          "local": "",
+          "ages": [
+            0,
+            1,
+            2,
+            2
+          ],
+          "hrs": 1,
+          "io": "in",
+          "pram": "part",
+          "price": {
+            "th": "เช็กราคาก่อนไป",
+            "en": "Check the price"
+          },
+          "book": "rec",
+          "src": "https://www.gotokyo.org/en/story/guide/sightseeing-spots-for-the-family/index.html",
+          "name": {
+            "th": "นินจา ทริก เฮาส์",
+            "en": "Ninja Trick House"
+          },
+          "kind": "culture",
+          "area": {
+            "th": "ชินจูกุ โตเกียว",
+            "en": "Shinjuku, Tokyo"
+          },
+          "what": {
+            "th": "เรียนรู้วิชาลับของนินจา",
+            "en": "Learn the ninja's secret techniques"
+          },
+          "why": {
+            "th": "ให้เด็กได้ลองเป็นนินจาจริง ๆ",
+            "en": "A hands-on ninja experience for children"
+          },
+          "q": "Ninja Trick House In Tokyo, Shinjuku",
+          "ok": "2026-11"
+        },
+        {
+          "local": "浜離宮恩賜庭園",
+          "ages": [
+            1,
+            1,
+            1,
+            1
+          ],
+          "hrs": 1.5,
+          "io": "out",
+          "pram": "part",
+          "price": {
+            "th": "เช็กราคาก่อนไป",
+            "en": "Check the price"
+          },
+          "book": "none",
+          "src": "https://www.gotokyo.org/en/story/guide/sightseeing-spots-for-the-family/index.html",
+          "name": {
+            "th": "สวนฮามาริคิว",
+            "en": "Hama-rikyu Gardens"
+          },
+          "kind": "park",
+          "area": {
+            "th": "ชูโอ โตเกียว",
+            "en": "Chuo, Tokyo"
+          },
+          "what": {
+            "th": "สวนญี่ปุ่นแบบดั้งเดิมกลางโตเกียว",
+            "en": "A traditional garden in central Tokyo"
+          },
+          "why": {
+            "th": "มีที่ให้เด็กเดินเล่นกว้าง",
+            "en": "Room for children to wander"
+          },
+          "q": "浜離宮恩賜庭園",
+          "ok": "2026-11"
+        },
+        {
+          "local": "有栖川宮記念公園",
+          "ages": [
+            2,
+            2,
+            1,
+            1
+          ],
+          "hrs": 1,
+          "io": "out",
+          "pram": "part",
+          "price": {
+            "th": "ฟรี",
+            "en": "Free"
+          },
+          "book": "none",
+          "src": "https://www.gotokyo.org/en/story/guide/sightseeing-spots-for-the-family/index.html",
+          "name": {
+            "th": "สวนอาริซูกาวะ",
+            "en": "Arisugawa Park"
+          },
+          "kind": "park",
+          "area": {
+            "th": "ฮิโรโอะ โตเกียว",
+            "en": "Hiroo, Tokyo"
+          },
+          "what": {
+            "th": "สวนสาธารณะแบบญี่ปุ่น",
+            "en": "A park with traditional gardens"
+          },
+          "why": {
+            "th": "มีพื้นที่ให้เด็กสำรวจ",
+            "en": "Room for children to explore"
+          },
+          "q": "有栖川宮記念公園",
+          "ok": "2026-11"
+        },
+        {
+          "local": "上野恩賜公園",
+          "ages": [
+            2,
+            2,
+            2,
+            2
+          ],
+          "hrs": 3,
+          "io": "out",
+          "pram": "part",
+          "price": {
+            "th": "ฟรี",
+            "en": "Free"
+          },
+          "book": "none",
+          "src": "https://www.gotokyo.org/en/story/guide/sightseeing-spots-for-the-family/index.html",
+          "name": {
+            "th": "สวนอุเอโนะ",
+            "en": "Ueno Park"
+          },
+          "kind": "park",
+          "area": {
+            "th": "อุเอโนะ โตเกียว",
+            "en": "Ueno, Tokyo"
+          },
+          "what": {
+            "th": "สวนใหญ่มีทะเลสาบ ศาลเจ้า และสวนสัตว์",
+            "en": "A large park with a lake, shrines and the zoo"
+          },
+          "why": {
+            "th": "มีสนามเด็กเล่น อยู่ได้ทั้งวัน",
+            "en": "Playgrounds, and room for a whole day"
+          },
+          "q": "上野恩賜公園",
+          "ok": "2026-11"
+        },
+        {
+          "local": "",
+          "ages": [
+            1,
+            1,
+            2,
+            2
+          ],
+          "hrs": 1,
+          "io": "in",
+          "pram": "yes",
+          "price": {
+            "th": "ฟรี",
+            "en": "Free"
+          },
+          "book": "none",
+          "src": "https://www.gotokyo.org/en/story/guide/sightseeing-spots-for-the-family/index.html",
+          "name": {
+            "th": "จุดชมวิวอาคารศาลาว่าการกรุงโตเกียว",
+            "en": "Tokyo Metropolitan Government observation decks"
+          },
+          "kind": "views",
+          "area": {
+            "th": "นิชิชินจูกุ โตเกียว",
+            "en": "Nishi-Shinjuku, Tokyo"
+          },
+          "what": {
+            "th": "จุดชมวิวฟรี อาจเห็นภูเขาไฟฟูจิ",
+            "en": "Free observation decks with a glimpse of Mt Fuji"
+          },
+          "why": {
+            "th": "ชมวิวเมืองจากที่สูง",
+            "en": "A high view over the city"
+          },
+          "q": "東京都庁 展望室",
+          "ok": "2026-11"
+        },
+        {
+          "local": "京王あそびの森HUGHUG",
+          "ages": [
+            2,
+            2,
+            1,
+            0
+          ],
+          "hrs": 2,
+          "io": "in",
+          "pram": "yes",
+          "price": {
+            "th": "เช็กราคาก่อนไป",
+            "en": "Check the price"
+          },
+          "book": "none",
+          "src": "https://global.tama.metro.tokyo.lg.jp/articles/5-family-friendly-places-to-explore-in-minami-tama-west-tokyo/",
+          "name": {
+            "th": "เคโอ อาโซบิโนะโมริ ฮักฮัก",
+            "en": "Keio Asobi no Mori HUGHUG"
+          },
+          "kind": "play",
+          "area": {
+            "th": "ทามะโดบุตสึโคเอ็น โตเกียว",
+            "en": "Tama-dobutsukoen, Hino, Tokyo"
+          },
+          "what": {
+            "th": "โซนเล่นในร่ม มีตาข่ายปีนสูง 12 เมตร",
+            "en": "An indoor play area with a 12-metre climbing net"
+          },
+          "why": {
+            "th": "สนามเด็กเล่น ติดคาเฟ่และรถไฟ HUGHUG",
+            "en": "Playgrounds, next to the HUGHUG café and train"
+          },
+          "q": "京王あそびの森HUGHUG",
+          "ok": "2026-11"
+        }
     ]
     },
     {
