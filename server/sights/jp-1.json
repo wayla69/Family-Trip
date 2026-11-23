@@ -974,7 +974,167 @@
       {"name":{"en":"Osaka Korea Town","th":"โอซาก้า โคเรียทาวน์"},"kind":"market","area":{"en":"Tsuruhashi","th":"ซึรุฮาชิ"},"what":{"en":"A shopping area of butchers, fishmongers, produce stalls and kimchi shops around Tsuruhashi Station.","th":"ย่านช้อปปิ้งของคนขายเนื้อ พ่อค้าปลา ผักผลไม้ และร้านกิมจิรอบสถานีซึรุฮาชิ"},"why":{"en":"Korean street food and an everyday shopping feel, per the page.","th":"หน้าเว็บบอกว่ามีของกินข้างทางแบบเกาหลีและบรรยากาศช้อปปิ้งประจำวัน"},"tip":{"en":"Best in the morning, when the streets are busiest with shoppers.","th":"ดีที่สุดตอนเช้า เมื่อถนนคนช้อปแน่นที่สุด"},"ages":[1,2,2,2],"hrs":2,"io":"out","pram":"part","price":{"en":"Check the price","th":"เช็กราคาก่อนไป"},"book":"none","q":"Osaka Korea Town, Tsuruhashi, Osaka","ok":"2026-11","src":"https://www.cityunscripted.com/travel-magazine/hidden-gems-in-osaka"},
       {"name":{"en":"Namba Yasaka Shrine","th":"ศาลเจ้านัมบะยาซากะ"},"kind":"culture","area":{"en":"Namba","th":"นัมบะ"},"what":{"en":"A shrine with a lion-head stage, a building-sized lion's head used for festival performances.","th":"ศาลเจ้าที่มีเวทีหัวสิงโต หัวสิงโตขนาดตึกใช้ในการแสดงเทศกาล"},"why":{"en":"At night the floodlights light up the lion's open jaws, per the page.","th":"หน้าเว็บบอกว่ากลางคืนไฟส่องปากสิงโตที่อ้าอยู่"},"tip":{"en":"Best from 19:00 to 22:00, when the stage is floodlit.","th":"ดีที่สุดระหว่าง 19:00–22:00 เมื่อเวทีมีไฟส่อง"},"ages":[1,2,2,2],"hrs":1,"io":"out","pram":"part","price":{"en":"Check the price","th":"เช็กราคาก่อนไป"},"book":"none","q":"Namba Yasaka Shrine, Namba, Osaka","ok":"2026-11","src":"https://www.japanspecialtraveler.com/guides/osaka-hidden-gems/"},
       {"name":{"en":"Nakazakicho","th":"นากาซากิโจ"},"local":"中崎町","kind":"oldtown","area":{"en":"Nakazakinishi Station, Tanimachi Line","th":"สถานีนากาซากินิชิ สายทานิมาจิ"},"what":{"en":"Preserved 1920s–1950s wooden row houses that now hold independent cafés, galleries and vintage shops.","th":"บ้านแถวไม้ที่อนุรักษ์จากยุคโชวะตอนต้นถึงกลาง ตอนนี้มีคาเฟ่อิสระ แกลเลอรี และร้านของเก่า"},"why":{"en":"Quiet streets for an unhurried afternoon, away from the big department stores.","th":"ถนนเงียบๆ สำหรับบ่ายที่ไม่รีบ ห่างจากห้างใหญ่"},"ages":[1,1,2,2],"hrs":2,"io":"out","pram":"part","price":{"en":"Check the price","th":"เช็กราคาก่อนไป"},"book":"none","q":"Nakazakicho, Osaka","ok":"2026-11","src":"https://www.japanspecialtraveler.com/guides/osaka-hidden-gems/"},
-      {"name":{"en":"Karahori","th":"คารามาจิ"},"kind":"oldtown","area":{"en":"Just south of Osaka Castle","th":"ทางใต้ของปราสาทโอซาก้า"},"what":{"en":"Old townhouses beside family-run shops, small galleries and cafés, along Karahori Shopping Street.","th":"บ้านแถวเก่าข้างร้านของครอบครัว แกลเลอรีเล็กๆ และคาเฟ่ ตามถนนช้อปปิ้งคารามาจิ"},"why":{"en":"Smaller alleys to wander, rather than a checklist.","th":"หน้าเว็บบอกว่ามีตรอกเล็กให้เดินเล่น มากกว่าเช็กลิสต์"},"ages":[1,2,2,2],"hrs":2,"io":"out","pram":"part","price":{"en":"Check the price","th":"เช็กราคาก่อนไป"},"book":"none","q":"Karahori, Osaka","ok":"2026-11","src":"https://www.cityunscripted.com/travel-magazine/hidden-gems-in-osaka"}
+      {"name":{"en":"Karahori","th":"คารามาจิ"},"kind":"oldtown","area":{"en":"Just south of Osaka Castle","th":"ทางใต้ของปราสาทโอซาก้า"},"what":{"en":"Old townhouses beside family-run shops, small galleries and cafés, along Karahori Shopping Street.","th":"บ้านแถวเก่าข้างร้านของครอบครัว แกลเลอรีเล็กๆ และคาเฟ่ ตามถนนช้อปปิ้งคารามาจิ"},"why":{"en":"Smaller alleys to wander, rather than a checklist.","th":"หน้าเว็บบอกว่ามีตรอกเล็กให้เดินเล่น มากกว่าเช็กลิสต์"},"ages":[1,2,2,2],"hrs":2,"io":"out","pram":"part","price":{"en":"Check the price","th":"เช็กราคาก่อนไป"},"book":"none","q":"Karahori, Osaka","ok":"2026-11","src":"https://www.cityunscripted.com/travel-magazine/hidden-gems-in-osaka"},
+        {
+          "local": "扇町公園",
+          "ages": [
+            2,
+            2,
+            2,
+            1
+          ],
+          "hrs": 1,
+          "io": "out",
+          "pram": "part",
+          "price": {
+            "th": "ฟรี",
+            "en": "Free"
+          },
+          "book": "none",
+          "src": "https://www.osakatourism.org/best-playgrounds-in-osaka/",
+          "name": {
+            "th": "สวนโองิมาจิ",
+            "en": "Ogimachi Park"
+          },
+          "kind": "park",
+          "area": {
+            "th": "คิตะ ด้านหลังคิดส์พลาซ่า โอซาก้า",
+            "en": "Kita, behind Kids Plaza, Osaka"
+          },
+          "what": {
+            "th": "สวนกลางเมือง มีผนังปีนป่าย บ่อทราย และสไลเดอร์",
+            "en": "A central park with a climbing wall, sandpit and slides"
+          },
+          "why": {
+            "th": "บ่อทรายและสไลเดอร์เล็กสำหรับเด็กเล็ก ผนังปีนสำหรับเด็กโต",
+            "en": "Sand and small slides for little ones, a climbing wall for older ones"
+          },
+          "tip": {
+            "th": "ไปพร้อมคิดส์พลาซ่าโอซาก้าได้ทั้งวัน",
+            "en": "Combine it with Kids Plaza Osaka for a full day"
+          },
+          "q": "扇町公園, 大阪",
+          "ok": "2026-11"
+        },
+        {
+          "local": "服部緑地",
+          "ages": [
+            2,
+            2,
+            2,
+            1
+          ],
+          "hrs": 2,
+          "io": "out",
+          "pram": "part",
+          "price": {
+            "th": "เช็กราคาก่อนไป",
+            "en": "Check the price"
+          },
+          "book": "none",
+          "src": "https://www.osakatourism.org/best-playgrounds-in-osaka/",
+          "name": {
+            "th": "สวนฮัตโตริ เรียวคุจิ",
+            "en": "Hattori Ryokuchi Park"
+          },
+          "kind": "park",
+          "area": {
+            "th": "โทโยนากะ โอซาก้า",
+            "en": "Toyonaka, Osaka"
+          },
+          "what": {
+            "th": "สวนใหญ่มีเครื่องเล่นขนาดใหญ่",
+            "en": "A big park with large playscapes"
+          },
+          "why": {
+            "th": "สนามหญ้าเรียบและสไลเดอร์ไม่ชันสำหรับเด็กเล็ก",
+            "en": "Flat lawns and gentle slides for little ones"
+          },
+          "q": "服部緑地",
+          "ok": "2026-11"
+        },
+        {
+          "local": "鶴見緑地",
+          "ages": [
+            2,
+            2,
+            2,
+            1
+          ],
+          "hrs": 2,
+          "io": "out",
+          "pram": "part",
+          "price": {
+            "th": "ฟรี",
+            "en": "Free"
+          },
+          "book": "none",
+          "src": "https://www.osakatourism.org/best-playgrounds-in-osaka/",
+          "name": {
+            "th": "สวนสึรุมิ เรียวคุจิ",
+            "en": "Tsurumi Ryokuchi Park"
+          },
+          "kind": "park",
+          "area": {
+            "th": "สึรุมิ โอซาก้า",
+            "en": "Tsurumi, Osaka"
+          },
+          "what": {
+            "th": "สวนใหญ่เข้าฟรี มีกังหันลมและทุ่งดอกไม้",
+            "en": "A big free park with a windmill and flower fields"
+          },
+          "why": {
+            "th": "วิ่งเล่นท่ามกลางดอกไม้",
+            "en": "Room to run among the flowers"
+          },
+          "tip": {
+            "th": "สวยที่สุดหน้าใบไม้ผลิ (ซากุระ) และใบไม้ร่วง (คอสมอส)",
+            "en": "Best in spring (cherry blossom) and autumn (cosmos)"
+          },
+          "q": "花博記念公園鶴見緑地",
+          "ok": "2026-11"
+        },
+        {
+          "local": "大泉緑地 冒険ランド",
+          "ages": [
+            1,
+            2,
+            2,
+            1
+          ],
+          "hrs": 2,
+          "io": "out",
+          "pram": "part",
+          "price": {
+            "th": "เช็กราคาก่อนไป",
+            "en": "Check the price"
+          },
+          "book": "none",
+          "src": "https://www.osakatourism.org/best-playgrounds-in-osaka/",
+          "name": {
+            "th": "โออิซุมิ เรียวคุจิ แอดเวนเจอร์แลนด์",
+            "en": "Oizumi Ryokuchi Adventure Land"
+          },
+          "kind": "play",
+          "area": {
+            "th": "ซาไก โอซาก้า",
+            "en": "Sakai, Osaka"
+          },
+          "what": {
+            "th": "ลานเล่นมีสไลเดอร์ลูกกลิ้งยาว",
+            "en": "A play area with long roller slides"
+          },
+          "why": {
+            "th": "สไลเดอร์ลูกกลิ้งยาวสำหรับเด็กวัยเรียน",
+            "en": "A long roller slide for school-age children"
+          },
+          "tip": {
+            "th": "สไลเดอร์ลูกกลิ้งมีโซนแยก",
+            "en": "The roller slide has its own zones"
+          },
+          "q": "大泉緑地 冒険ランド",
+          "ok": "2026-11"
+        }
     ]
     },
     {
