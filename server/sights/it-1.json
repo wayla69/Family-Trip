@@ -1098,7 +1098,282 @@
       {"name":{"en":"HZERO Model Train Museum","th":"พิพิธภัณฑ์รถไฟจำลองเฮซีโร"},"kind":"museumkid","area":{"en":"Santa Maria Novella","th":"ซานตามาเรียโนเวลลา"},"what":{"en":"Model railway museum near Santa Maria Novella, with one of the largest model railway systems in Europe.","th":"พิพิธภัณฑ์รถไฟจำลองใกล้ซานตามาเรียโนเวลลา มีระบบรถไฟจำลองที่ใหญ่ที่สุดแห่งหนึ่งในยุโรป"},"why":{"en":"If your kids love trains, they will be glued to it.","th":"ถ้าเด็กชอบรถไฟ จะติดอยู่กับมันทั้งวัน"},"ages":[1,2,2,2],"hrs":1.5,"io":"in","pram":"part","price":{"en":"Check the price","th":"เช็กราคาก่อนไป"},"book":"rec","q":"HZERO Model Train Museum, Santa Maria Novella, Florence","ok":"2026-11","src":"https://www.viaggiapiccoli.com/en/museums-for-kids-in-florence/"},
       {"name":{"en":"Museo degli Innocenti","th":"พิพิธภัณฑ์อินโนเชนตี"},"kind":"museumkid","area":{"en":"Piazza della Santissima Annunziata","th":"ปิอัซซาเดลลาซานตีซิมา อันนุนซิอาตา"},"what":{"en":"Historic centre for children's culture and youth programmes, with children's workshops (laboratori per bambini).","th":"ศูนย์กลางประวัติศาสตร์สำหรับวัฒนธรรมเด็กและโปรแกรมเยาวชน มีเวิร์กช็อปเด็ก"},"why":{"en":"Workshops for preschool and primary-school ages blend history with modelling and collage.","th":"เวิร์กช็อปสำหรับเด็กก่อนวัยเรียนและประถม ผสมประวัติศาสตร์กับการปั้นและการตัดแปะ"},"ages":[1,2,2,1],"hrs":1.5,"io":"in","pram":"part","price":{"en":"Check the price","th":"เช็กราคาก่อนไป"},"book":"rec","q":"Museo degli Innocenti, Piazza della Santissima Annunziata, Florence","ok":"2026-11","src":"https://florence.ue.is/en/kids-art-workshops-florence-museums-studios/"},
       {"name":{"en":"Leonardo Interactive Museum","th":"พิพิธภัณฑ์เลโอนาร์โดแบบโต้ตอบ"},"kind":"museumkid","area":{"en":"Via dei Servi","th":"ถนนเวีย เดย์ เซอร์วี"},"what":{"en":"Interactive Leonardo da Vinci museum at Via dei Servi 66/R, with machines to touch.","th":"พิพิธภัณฑ์เลโอนาร์โด ดา วินชี แบบโต้ตอบ ที่เวีย เดย์ เซอร์วี 66/R มีเครื่องจักรให้จับ"},"why":{"en":"Plain reason: the page says a visit takes about an hour.","th":"หน้าเว็บบอกว่าการเที่ยวใช้เวลาราวหนึ่งชั่วโมง"},"tip":{"en":"Open every day 9:30–19:30, last entry one hour before closing (per the page).","th":"เปิดทุกวัน 9:30–19:30 เข้าได้ล่าสุดหนึ่งชั่วโมงก่อนปิด ตามหน้าเว็บ"},"ages":[1,2,2,2],"hrs":1,"io":"in","pram":"part","price":{"en":"€8.30 online","th":"8.30 ยูโร ออนไลน์"},"book":"rec","q":"Leonardo Interactive Museum, Via dei Servi 66/R, Florence","ok":"2026-11","src":"https://ticket.florence.it/en/leonardo-museum/"},
-      {"name":{"en":"Palazzo Strozzi","th":"พาลัซโซสโตรซซี"},"kind":"museum","area":{"en":"Piazza Strozzi","th":"ปิอัซซาสโตรซซี"},"what":{"en":"Palace of exhibitions, with a Family Kit (a bag of games and insights) and tours and workshops for families.","th":"พระราชวังจัดนิทรรศการ มี Family Kit (ถุงเกมและสิ่งที่น่าสนใจ) และทัวร์กับเวิร์กช็อปสำหรับครอบครัว"},"why":{"en":"The page says its exhibitions are often accompanied by activities designed for families, from age 3.","th":"หน้าเว็บบอกว่านิทรรศการมักมีกิจกรรมออกแบบสำหรับครอบครัว ตั้งแต่อายุ 3 ปี"},"ages":[0,2,2,1],"hrs":1.5,"io":"in","pram":"part","price":{"en":"Check the price","th":"เช็กราคาก่อนไป"},"book":"rec","q":"Palazzo Strozzi, Piazza Strozzi, Florence","ok":"2026-11","src":"https://www.viaggiapiccoli.com/en/museums-for-kids-in-florence/"}
+      {"name":{"en":"Palazzo Strozzi","th":"พาลัซโซสโตรซซี"},"kind":"museum","area":{"en":"Piazza Strozzi","th":"ปิอัซซาสโตรซซี"},"what":{"en":"Palace of exhibitions, with a Family Kit (a bag of games and insights) and tours and workshops for families.","th":"พระราชวังจัดนิทรรศการ มี Family Kit (ถุงเกมและสิ่งที่น่าสนใจ) และทัวร์กับเวิร์กช็อปสำหรับครอบครัว"},"why":{"en":"The page says its exhibitions are often accompanied by activities designed for families, from age 3.","th":"หน้าเว็บบอกว่านิทรรศการมักมีกิจกรรมออกแบบสำหรับครอบครัว ตั้งแต่อายุ 3 ปี"},"ages":[0,2,2,1],"hrs":1.5,"io":"in","pram":"part","price":{"en":"Check the price","th":"เช็กราคาก่อนไป"},"book":"rec","q":"Palazzo Strozzi, Piazza Strozzi, Florence","ok":"2026-11","src":"https://www.viaggiapiccoli.com/en/museums-for-kids-in-florence/"},
+        {
+          "local": "Antica Giostra Toscana",
+          "ages": [
+            2,
+            2,
+            2,
+            1
+          ],
+          "hrs": 0.5,
+          "io": "out",
+          "pram": "yes",
+          "price": {
+            "th": "เช็กราคาก่อนไป",
+            "en": "Check the price"
+          },
+          "book": "none",
+          "src": "https://www.wanderluststorytellers.com/things-to-do-in-florence-with-kids/",
+          "name": {
+            "th": "ม้าหมุนปิอัซซาเดลลาเรปุบบลิกา",
+            "en": "Piazza della Repubblica carousel"
+          },
+          "kind": "play",
+          "area": {
+            "th": "ฟลอเรนซ์",
+            "en": "Florence"
+          },
+          "what": {
+            "th": "ม้าหมุนโบราณในจัตุรัสชื่อดังที่มีคาเฟ่รอบ ๆ",
+            "en": "An old carousel on a famous square lined with cafés"
+          },
+          "why": {
+            "th": "เด็ก ๆ ขี่ม้าหมุน ผู้ใหญ่นั่งดื่มกาแฟใกล้ ๆ",
+            "en": "Children ride while the grown-ups have a coffee"
+          },
+          "q": "Antica Giostra Toscana, Piazza della Repubblica, Florence",
+          "ok": "2026-11"
+        },
+        {
+          "local": "Museo di San Marco",
+          "ages": [
+            0,
+            1,
+            2,
+            2
+          ],
+          "hrs": 1,
+          "io": "in",
+          "pram": "part",
+          "price": {
+            "th": "เช็กราคาก่อนไป",
+            "en": "Check the price"
+          },
+          "book": "none",
+          "src": "https://www.wanderluststorytellers.com/things-to-do-in-florence-with-kids/",
+          "name": {
+            "th": "พิพิธภัณฑ์ซานมาร์โก",
+            "en": "San Marco Museum"
+          },
+          "kind": "culture",
+          "area": {
+            "th": "ปิอัซซาซานมาร์โก ฟลอเรนซ์",
+            "en": "Piazza San Marco, Florence"
+          },
+          "what": {
+            "th": "ระเบียงคดที่ตกแต่งด้วยภาพวาด งานแกะสลัก และจิตรกรรมฝาผนัง",
+            "en": "A cloister decorated with paintings, carvings and frescoes"
+          },
+          "why": {
+            "th": "เด็ก ๆ ได้ตามหาภาพวาดและงานแกะสลัก",
+            "en": "Children can look for the paintings and carvings"
+          },
+          "q": "Museo di San Marco, Piazza San Marco 3, Florence",
+          "ok": "2026-11"
+        },
+        {
+          "local": "Museo di Storia Naturale del Mediterraneo",
+          "ages": [
+            1,
+            2,
+            2,
+            2
+          ],
+          "hrs": 1.5,
+          "io": "in",
+          "pram": "part",
+          "price": {
+            "th": "เช็กราคาก่อนไป",
+            "en": "Check the price"
+          },
+          "book": "none",
+          "src": "https://dreamyouritaly.com/blog/2025/06/05/tuscany-with-kids-30-attractions-especially-for-families/",
+          "name": {
+            "th": "พิพิธภัณฑ์ประวัติศาสตร์ธรรมชาติเมดิเตอร์เรเนียน",
+            "en": "Mediterranean Natural History Museum"
+          },
+          "kind": "museum",
+          "area": {
+            "th": "วิลลาเฮนเดอร์สัน ลิวอร์โน",
+            "en": "Villa Henderson, Livorno"
+          },
+          "what": {
+            "th": "พิพิธภัณฑ์ประวัติศาสตร์ธรรมชาติในวิลล่าเก่าแก่ที่ลิวอร์โน",
+            "en": "A natural history museum in a historic villa in Livorno"
+          },
+          "why": {
+            "th": "พฤกษศาสตร์ สัตววิทยา และโบราณคดีสำหรับครอบครัว",
+            "en": "Botany, zoology and archaeology for families"
+          },
+          "tip": {
+            "th": "ปิดวันจันทร์",
+            "en": "Closed on Mondays"
+          },
+          "q": "Museo di Storia Naturale del Mediterraneo, Livorno",
+          "ok": "2026-11"
+        },
+        {
+          "local": "",
+          "ages": [
+            0,
+            1,
+            2,
+            2
+          ],
+          "hrs": 1.5,
+          "io": "in",
+          "pram": "no",
+          "price": {
+            "th": "เช็กราคาก่อนไป",
+            "en": "Check the price"
+          },
+          "book": "none",
+          "src": "https://dreamyouritaly.com/blog/2025/06/05/tuscany-with-kids-30-attractions-especially-for-families/",
+          "name": {
+            "th": "ถ้ำกร็อตตาเดลเวนโต",
+            "en": "Grotta del Vento"
+          },
+          "kind": "nature",
+          "area": {
+            "th": "ทัสคานี",
+            "en": "Tuscany"
+          },
+          "what": {
+            "th": "ถ้ำที่มีหินย้อย หินงอก น้ำตกและทะเลสาบใต้ดิน",
+            "en": "A cave system with stalactites, stalagmites, underground waterfalls and lakes"
+          },
+          "why": {
+            "th": "หลายถ้ำเปิดให้ชมและปลอดภัยสำหรับเด็ก",
+            "en": "Many of the caves are open and safe for children"
+          },
+          "tip": {
+            "th": "เปิดทุกวัน 10:00–13:00 และ 14:00–18:00",
+            "en": "Open daily 10:00 to 13:00 and 14:00 to 18:00"
+          },
+          "q": "Grotta del Vento, Tuscany",
+          "ok": "2026-11"
+        },
+        {
+          "local": "",
+          "ages": [
+            1,
+            2,
+            2,
+            2
+          ],
+          "hrs": 5,
+          "io": "out",
+          "pram": "part",
+          "price": {
+            "th": "เช็กราคาก่อนไป",
+            "en": "Check the price"
+          },
+          "book": "none",
+          "src": "https://dreamyouritaly.com/blog/2025/06/05/tuscany-with-kids-30-attractions-especially-for-families/",
+          "name": {
+            "th": "สวนสนุกคาวัลลีโนมัตโต",
+            "en": "Cavallino Matto"
+          },
+          "kind": "themepark",
+          "area": {
+            "th": "มารีนาดีคัสตาญเญโตการ์ดุชชี",
+            "en": "Marina di Castagneto Carducci"
+          },
+          "what": {
+            "th": "สวนสนุกในป่าสนใกล้ทะเล มีโชว์และโรงหนัง 4 มิติ",
+            "en": "An amusement park in a pine wood near the beach, with shows and a 4D cinema"
+          },
+          "why": {
+            "th": "เครื่องเล่นสำหรับเด็ก 15 อย่าง และสำหรับครอบครัว 10 อย่าง",
+            "en": "Fifteen rides for children and ten for families"
+          },
+          "tip": {
+            "th": "เปิดทุกวัน 10:30–18:30",
+            "en": "Open every day from 10:30 AM to 6:30 PM"
+          },
+          "q": "CavallinoMatto, Marina di Castagneto Carducci",
+          "ok": "2026-11"
+        },
+        {
+          "local": "Parco Archeominerario di San Silvestro",
+          "ages": [
+            1,
+            2,
+            2,
+            2
+          ],
+          "hrs": 3,
+          "io": "both",
+          "pram": "part",
+          "price": {
+            "th": "เช็กราคาก่อนไป",
+            "en": "Check the price"
+          },
+          "book": "none",
+          "src": "https://dreamyouritaly.com/blog/2025/06/05/tuscany-with-kids-30-attractions-especially-for-families/",
+          "name": {
+            "th": "อุทยานเหมืองโบราณซานซิลเวสโตร",
+            "en": "San Silvestro mining park"
+          },
+          "kind": "culture",
+          "area": {
+            "th": "โปปูโลเนีย อ่าวบาราตตี",
+            "en": "Populonia, Baratti Bay"
+          },
+          "what": {
+            "th": "เหมืองทองแดง ตะกั่ว และเงินโบราณ มีรถไฟสีเหลืองวิ่งผ่านอุโมงค์",
+            "en": "Old copper, lead and silver mines, with a yellow train through a tunnel"
+          },
+          "why": {
+            "th": "เด็ก ๆ ชอบเหมืองและรถไฟสีเหลือง",
+            "en": "Children love the mines and the yellow train"
+          },
+          "q": "Parco Archeominerario di San Silvestro",
+          "ok": "2026-11"
+        },
+        {
+          "local": "Archeodromo di Poggibonsi",
+          "ages": [
+            1,
+            2,
+            2,
+            2
+          ],
+          "hrs": 2,
+          "io": "out",
+          "pram": "part",
+          "price": {
+            "th": "เช็กราคาก่อนไป",
+            "en": "Check the price"
+          },
+          "book": "none",
+          "src": "https://dreamyouritaly.com/blog/2025/06/05/tuscany-with-kids-30-attractions-especially-for-families/",
+          "name": {
+            "th": "หมู่บ้านโบราณโปจจีบอนซี",
+            "en": "Poggibonsi Archaeodrome"
+          },
+          "kind": "museum",
+          "area": {
+            "th": "โปจจีบอนซี",
+            "en": "Poggibonsi"
+          },
+          "what": {
+            "th": "พิพิธภัณฑ์กลางแจ้งที่สร้างหมู่บ้านศตวรรษที่ 9 ขึ้นใหม่ขนาดจริง",
+            "en": "An open-air museum that rebuilds a 9th-century village at full size"
+          },
+          "why": {
+            "th": "หน้าเว็บบอกว่าเด็ก ๆ จะชอบมาก",
+            "en": "The page says children will love it"
+          },
+          "tip": {
+            "th": "เปิดชมทั้งกลางวันและกลางคืน",
+            "en": "Visits by day and at night"
+          },
+          "q": "Poggibonsi Archaeodrome, Poggibonsi",
+          "ok": "2026-11"
+        }
     ]
     },
     {
