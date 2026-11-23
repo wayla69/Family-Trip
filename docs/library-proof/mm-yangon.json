@@ -1,0 +1,31 @@
+{
+  "town": "mm-yangon",
+  "kind": "eats",
+  "checked": "2026-11",
+  "rule": "A row gets ok only from a current listing, its own site or recent reviews with nothing saying closed (docs/EATS.md). A row is taken out when a search could not find the place at all or the sources disagree; a place found but not freshly confirmed stays without ok.",
+  "scope": "the 3 rows without ok; rows already carrying ok were not re-checked",
+  "how": "Google Maps opened in headless Chromium (2026-11-23), limited view without a reviews tab, so no review date could be read; searched in English and, for Taiwan, in Chinese (the row's zh)",
+  "confirmed": [
+    {
+      "name": "Kyaw Swa Restaurant",
+      "src": "https://www.google.com/maps/search/Kyaw+Swa+Restaurant+Bago",
+      "page_name": "Kyaw Swa Restaurant ကျော်စွာ စားသောက်ဆိုင်",
+      "evidence": "No 445-446, Yangon-Mandalay Highway, Oaktha Myothit, Bago · 8F28+RF · 'Open · Closes 9 PM'",
+      "ok": "2026-11"
+    },
+    {
+      "name": "Shwe Pu Zun",
+      "src": "https://www.google.com/maps/search/Shwe+Pu+Zun+Yangon",
+      "page_name": "Shwe Pu Zun Cafeteria & Bakery House",
+      "evidence": "No.246,248, Anawrahta Rd (list result) · 'Open · Closes 6 PM'",
+      "ok": "2026-11"
+    }
+  ],
+  "kept_without_ok": [],
+  "removed": [
+    {
+      "name": "Padonmar Restaurant",
+      "reason": "Maps: 'Padonmar', Burmese restaurant, No.105/107 Kha-Yae-Bin Road, Dagon · 'Permanently closed' (the town keeps 8 rows)"
+    }
+  ]
+}

@@ -1,0 +1,47 @@
+{
+  "town": "mm-bagan",
+  "kind": "eats",
+  "checked": "2026-11",
+  "rule": "A row gets ok only from a current listing, its own site or recent reviews with nothing saying closed (docs/EATS.md). A row is taken out when a search could not find the place at all or the sources disagree; a place found but not freshly confirmed stays without ok.",
+  "scope": "the 7 rows without ok; rows already carrying ok were not re-checked",
+  "how": "Google Maps opened in headless Chromium (2026-11-23), limited view without a reviews tab, so no review date could be read; searched in English and, for Taiwan, in Chinese (the row's zh)",
+  "confirmed": [
+    {
+      "name": "The Moon (Be Kind to Animals)",
+      "src": "https://www.google.com/maps/search/The+Moon+Vegetarian+Restaurant+Bagan",
+      "page_name": "The Moon Vegetarian Restaurant လဝန်း သက်သတ်လွတ်စားသောက်ဆိုင်",
+      "evidence": "5VF9+723, Taungbi (Old Bagan) · 'Open · Closes 10 PM' (its second branch 'The Moon (2) Be Kind To Animals', 4VH6+PR2, is 'Permanently closed'; q updated)",
+      "ok": "2026-11"
+    },
+    {
+      "name": "Pancake Kingdom",
+      "src": "https://www.google.com/maps/search/Pancake+Kingdom+Nyaungshwe",
+      "page_name": "Inle Pancake Kingdom",
+      "evidence": "MW6G+2MX, Nyaungshwe · 'Open · Closes 9 PM' (q updated)",
+      "ok": "2026-11"
+    }
+  ],
+  "kept_without_ok": [
+    {
+      "name": "Weather Spoon's Bagan",
+      "evidence": "Maps: 'Weather Spoon's Restaurant and Bar', Yar kin thar street, Nyaung-U · 5VVX+GM · 'Temporarily closed' — would be removed, but the town is at the minimum (9 rows: 5 restaurants, 2 quick bites, 2 cafés, which eats:lint requires), so it stays without ok"
+    },
+    {
+      "name": "7 Sisters",
+      "evidence": "Maps: '7 Sisters Restaurant', 79 Nweni St, New Bagan · 4VM6+96 · 'Temporarily closed' — would be removed, kept only for the town's minimum (see above)"
+    },
+    {
+      "name": "Sin Yaw Restaurant",
+      "evidence": "Maps: 'Sin Yaw Restaurant စင်ရော်', Nyaungshwe · MW6J+GQ · 'Permanently closed' — would be removed, kept only because any removal breaks the town's minimum (5 restaurants / 2 quick bites / 2 cafés); needs a replacement row first"
+    },
+    {
+      "name": "Black Bamboo",
+      "evidence": "Maps: 'Black Bamboo', 5WV2+922, Nyaung-U · 'Temporarily closed' — would be removed, kept only for the town's minimum (2 cafés required)"
+    },
+    {
+      "name": "Golden Myanmar",
+      "evidence": "Maps found only 'Golden Myanmar 2 Restaurant ရွှေမြန်မာ ၂', 5VF9+62M, Taungbi · 'Open · Closes 8 PM' — a numbered branch, not shown to be the row's place near Tharabar Gate"
+    }
+  ],
+  "removed": []
+}
