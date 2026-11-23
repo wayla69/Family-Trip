@@ -1,0 +1,16 @@
+{
+  "town": "mn-ulaanbaatar",
+  "kind": "eats",
+  "checked": "2026-11",
+  "rule": "A row gets ok only from a current listing, its own site or recent reviews with nothing saying closed (docs/EATS.md). A row is taken out when a search could not find the place at all or the sources disagree; a place found but not freshly confirmed stays without ok.",
+  "scope": "the 1 row without ok; the rows already confirmed were not checked again",
+  "how": "Google Maps opened in headless Chromium (2026-11-23), limited view without a reviews tab, so no review date could be read; a place with current hours and no closed notice counts as a current listing",
+  "confirmed": [],
+  "kept_without_ok": [],
+  "removed": [
+    {
+      "name": "BD's Mongolian Grill",
+      "reason": "Google Maps could not find it ('BD's Mongolian Grill, Seoul Street' showed only Seoul Street itself; 'BD's Mongolian Barbeque Ulaanbaatar' listed other grills, several permanently closed); the franchise's own release placed the Ulaanbaatar restaurant at T-31 Baga Toiruu, where Maps shows 'khaan nomads', Бага тойруу 31 — 'Permanently closed'"
+    }
+  ]
+}

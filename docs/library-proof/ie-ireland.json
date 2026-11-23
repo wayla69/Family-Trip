@@ -1,0 +1,17 @@
+{
+  "town": "ie-ireland",
+  "kind": "eats",
+  "checked": "2026-11",
+  "rule": "A row gets ok only from a current listing, its own site or recent reviews with nothing saying closed (docs/EATS.md). A row is taken out when a search could not find the place at all or the sources disagree; a place found but not freshly confirmed stays without ok.",
+  "scope": "the 1 row without ok; the rows already confirmed were not checked again",
+  "how": "Google Maps opened in headless Chromium (2026-11-23), limited view without a reviews tab, so no review date could be read; a place with current hours and no closed notice counts as a current listing",
+  "confirmed": [],
+  "kept_without_ok": [],
+  "removed": [
+    {
+      "name": "Queen of Tarts",
+      "src": "https://www.google.com/maps/place/Queen+of+Tarts+Dame+Street/@53.3441382,-6.2677022,17z",
+      "reason": "Google Maps: 'Queen of Tarts Dame Street', 5 Cork Hill, Dame St, Dublin 2 (8PVJ+MW) — 'Permanently closed'; the Cow's Lane address the row names shows 'il Valentino Bakery & Cafe' (8PVJ+PC), also 'Permanently closed'; 'Queen of Tarts Dublin' alone: Maps can't find it"
+    }
+  ]
+}
