@@ -358,7 +358,48 @@
       {"name":{"en":"Insa-dong Culture Street","th":"ถนนวัฒนธรรมอินซาดง"},"kind":"culture","area":{"en":"Insa-dong","th":"อินซา-ดง"},"what":{"en":"Street of crafts, tea shops and quirky street snacks.","th":"ถนนงานฝีมือ ร้านชา และของว่างแปลกๆ"},"why":{"en":"Dragon's beard candy and other quirky snacks, the page says.","th":"หน้าเว็บบอกว่ามีลูกอมหนวดมังกรและของว่างแปลกอื่นๆ"},"ages":[1,2,2,2],"hrs":1.5,"io":"out","pram":"part","price":{"en":"Check the price","th":"เช็กราคาก่อนไป"},"book":"none","q":"Insa-dong Culture Street, Insa-dong, Seoul","ok":"2026-11","src":"https://www.famileetravel.com/things-to-do-in-seoul-with-kids-south-korea/"},
       {"name":{"en":"Ihwa-dong Mural Village","th":"หมู่บ้านภาพวาดอีฮวา"},"local":"이화동 벽화마을","kind":"views","area":{"en":"Ihwa-dong","th":"อีฮวา-ดง"},"what":{"en":"Hillside neighbourhood covered in colourful murals and art installations.","th":"ย่านบนเนินที่มีภาพวาดกำแพงสีสันสดใสและงานศิลปะติดตั้ง"},"why":{"en":"Murals and art to photograph, the page says.","th":"หน้าเว็บบอกว่ามีภาพวาดและงานศิลปะให้ถ่ายรูป"},"tip":{"en":"Expect some steep climbs.","th":"เตรียมใจไว้ว่ามีทางชันบ้าง"},"ages":[1,2,2,2],"hrs":1.5,"io":"out","pram":"no","price":{"en":"Check the price","th":"เช็กราคาก่อนไป"},"book":"none","q":"Ihwa-dong Mural Village, Seoul","ok":"2026-11","src":"https://www.famileetravel.com/things-to-do-in-seoul-with-kids-south-korea/"},
       {"name":{"en":"Yongsan Family Park","th":"สวนครอบครัวยงซาน"},"local":"용산가족공원","kind":"park","area":{"en":"Yongsan","th":"ยงซาน"},"what":{"en":"Green space with ponds, picnic areas and walking trails.","th":"พื้นที่สีเขียวมีบ่อ บริเวณปิกนิก และเส้นทางเดิน"},"why":{"en":"A calm break in the middle of the city, the page says.","th":"หน้าเว็บเรียกว่าเป็นที่พักสงบกลางเมือง"},"ages":[1,2,2,2],"hrs":1.5,"io":"out","pram":"part","price":{"en":"Check the price","th":"เช็กราคาก่อนไป"},"book":"none","q":"Yongsan Family Park, Yongsan, Seoul","ok":"2026-11","src":"https://www.famileetravel.com/things-to-do-in-seoul-with-kids-south-korea/"},
-      {"name":{"en":"Pororo Park Lotte Mart Max Geumcheon","th":"โพโรโระพาร์ก ล็อตเต้มาร์ตแม็กซ์ กึมช็อน"},"local":"뽀로로파크 롯데마트 맥스 금천점","kind":"play","area":{"en":"Lotte Mart Max, Dusan-ro, Geumcheon-gu","th":"ล็อตเต้มาร์ตแม็กซ์ ถนนดูซัน เขตกึมช็อน"},"what":{"en":"An indoor Pororo play park with a big trampoline and a Pororo sing-along show","th":"สวนเล่นในร่มธีมโพโรโระ มีแทรมโพลีนใหญ่ และโชว์ร้องเพลงกับโพโรโระ"},"why":{"en":"Made for children from one to four who know the little penguin","th":"ทำมาสำหรับเด็ก 1–4 ขวบที่รู้จักเพนกวินตัวน้อย"},"tip":{"en":"Inside the supermarket building, easy by car; check which days it opens","th":"อยู่ในอาคารซูเปอร์มาร์เก็ต ขับรถไปสะดวก เช็กวันเปิดก่อนไป"},"ages":[2,2,1,0],"hrs":2,"io":"in","pram":"yes","price":{"en":"Check the price","th":"เช็กราคาก่อนไป"},"book":"none","q":"Pororo Park, Lotte Mart Max Geumcheon, 71 Dusan-ro, Geumcheon-gu, Seoul","ok":"2026-11","src":"https://mom-mom.net/en/travel/places/64085cd3c7e515221d07bf02"}
+      {"name":{"en":"Pororo Park Lotte Mart Max Geumcheon","th":"โพโรโระพาร์ก ล็อตเต้มาร์ตแม็กซ์ กึมช็อน"},"local":"뽀로로파크 롯데마트 맥스 금천점","kind":"play","area":{"en":"Lotte Mart Max, Dusan-ro, Geumcheon-gu","th":"ล็อตเต้มาร์ตแม็กซ์ ถนนดูซัน เขตกึมช็อน"},"what":{"en":"An indoor Pororo play park with a big trampoline and a Pororo sing-along show","th":"สวนเล่นในร่มธีมโพโรโระ มีแทรมโพลีนใหญ่ และโชว์ร้องเพลงกับโพโรโระ"},"why":{"en":"Made for children from one to four who know the little penguin","th":"ทำมาสำหรับเด็ก 1–4 ขวบที่รู้จักเพนกวินตัวน้อย"},"tip":{"en":"Inside the supermarket building, easy by car; check which days it opens","th":"อยู่ในอาคารซูเปอร์มาร์เก็ต ขับรถไปสะดวก เช็กวันเปิดก่อนไป"},"ages":[2,2,1,0],"hrs":2,"io":"in","pram":"yes","price":{"en":"Check the price","th":"เช็กราคาก่อนไป"},"book":"none","q":"Pororo Park, Lotte Mart Max Geumcheon, 71 Dusan-ro, Geumcheon-gu, Seoul","ok":"2026-11","src":"https://mom-mom.net/en/travel/places/64085cd3c7e515221d07bf02"},
+        {
+          "local": "북서울꿈의숲 청운답원",
+          "ages": [
+            0,
+            2,
+            2,
+            0
+          ],
+          "hrs": 2,
+          "io": "out",
+          "pram": "part",
+          "price": {
+            "th": "เด็ก 4–9 ขวบ 5,000 วอน ผู้ปกครองฟรี",
+            "en": "₩5,000 a child (4–9), adults free"
+          },
+          "book": "req",
+          "src": "https://mediahub.seoul.go.kr/archives/2017910",
+          "name": {
+            "th": "คิดส์คาเฟ่ของโซล ในดรีมฟอเรสต์",
+            "en": "Seoul kids' café, Dream Forest (Cheongun Dapwon)"
+          },
+          "kind": "play",
+          "area": {
+            "th": "ดรีมฟอเรสต์ คังบุก โซล",
+            "en": "Bukseoul Dream Forest, Gangbuk-gu, Seoul"
+          },
+          "what": {
+            "th": "คิดส์คาเฟ่กลางแจ้งของเมืองบนสนามหญ้าดรีมฟอเรสต์ เล่นได้ 2 ชั่วโมง",
+            "en": "An outdoor public kids' café on the lawn of Dream Forest; two hours' play"
+          },
+          "why": {
+            "th": "เล่นเสร็จเดินเล่นในป่าต่อได้",
+            "en": "Then a walk in the forest"
+          },
+          "tip": {
+            "th": "ต้องจองล่วงหน้า แสดงการจองเมื่อมาถึง",
+            "en": "Book ahead; the booking is checked on arrival"
+          },
+          "q": "북서울꿈의숲",
+          "ok": "2026-11"
+        }
     ]
     },
     {

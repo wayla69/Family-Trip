@@ -529,3 +529,6 @@ batch-19 of docs/library-briefs. +2: Cappuccino, TomYumBar. Proof in `docs/libra
 
 ### Yangon, 23 Nov 2026
 batch-29 of docs/library-briefs. +2: Sharky's, Chatrium Hotel Royal Lake. Proof in `docs/library-proof/mm-yangon.json`.
+
+### Seoul, 24 Nov 2026
+batch-39 of docs/library-briefs (round 2). +3: Jeongwon Urban Garden, Cheonggiwa Town (Gildong Sageori), Casa de Tacos (Songridan-gil). Proof in `docs/library-proof/kr-seoul.json`.

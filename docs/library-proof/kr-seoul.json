@@ -1,0 +1,52 @@
+{
+  "town": "kr-seoul",
+  "kind": "eats + sights",
+  "checked": "2026-11-23",
+  "rule": "library-check.cjs, then the Google Maps Reviews tab sorted by newest: ok only when not marked closed, with a review from the last six months, and the map's name matching the page's.",
+  "agents": "one Haiku agent; 7 rows from mom-mom.net (Aug 2025–Jul 2026) and Seoul Media Hub (Apr 2026) passed library-check.cjs, 4 went in",
+  "added": [
+    {
+      "name": "Jeongwon Urban Garden",
+      "page_name": "Jeongwon Restaurant Urban Garden",
+      "src": "https://mom-mom.net/en/travel/places/6893244dff7c47aaaa555a96",
+      "date": "2025-08",
+      "map": "Google Maps 'Urban Garden 정원레스토랑 어반가든', 2,591 reviews, newest shown '2 days ago'"
+    },
+    {
+      "name": "Cheonggiwa Town (Gildong Sageori)",
+      "page_name": "Cheonggiwa Town Gildong Sageori Branch",
+      "src": "https://mom-mom.net/en/travel/places/69bbae1eb9d379c13d90a837",
+      "date": "2026-03",
+      "map": "Google Maps '청기와타운 길동사거리점', 28 reviews, newest shown '5 months ago'"
+    },
+    {
+      "name": "Casa de Tacos (Songridan-gil)",
+      "page_name": "Casa de Taco Songridan-gil Branch",
+      "src": "https://mom-mom.net/en/travel/places/69ce04411628e93aad55eec3",
+      "date": "2026-04",
+      "map": "Google Maps 'Casa De Tacos 카사데타코 송리단길점', 11 reviews, newest shown '3 weeks ago'"
+    },
+    {
+      "name": "Seoul kids' café, Dream Forest (Cheongun Dapwon)",
+      "page_name": "북서울꿈의숲 청운답원",
+      "src": "https://mediahub.seoul.go.kr/archives/2017910",
+      "date": "2026-04",
+      "map": "Google Maps the park 'Dream Forest 북서울 꿈의숲', 4,795 reviews, newest shown '14 days ago' (the kids' café has no entry of its own; Seoul city's page of Apr 2026 lists it)"
+    }
+  ],
+  "left_out": [
+    {
+      "name": "Flubber (Yangjaecheon)",
+      "why": "2 reviews, the newest 8 months old"
+    },
+    {
+      "name": "Ondrin (The Hyundai Seoul)",
+      "why": "no reviews on the map"
+    },
+    {
+      "name": "Hwangnam",
+      "why": "the map finds only the building"
+    }
+  ],
+  "estimates": "Ages and visit hours are placeholders; prices and opening notes are the pages' own."
+}
