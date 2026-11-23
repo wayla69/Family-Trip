@@ -529,3 +529,6 @@ batch-19 of docs/library-briefs. +2: Cappuccino, TomYumBar. Proof in `docs/libra
 
 ### Yangon, 23 Nov 2026
 batch-29 of docs/library-briefs. +2: Sharky's, Chatrium Hotel Royal Lake. Proof in `docs/library-proof/mm-yangon.json`.
+
+### Korat, 23 Nov 2026
+batch-33 of docs/library-briefs (round 2). +9: Nub Pochana, Larb Somphit, Soy Jeck Pochana, Khrua Suwimon, Pa Plueang, Khanom Jeen Yai Pao, Ko Kia, Kin Dee, Khanom Oshin. Proof in `docs/library-proof/th-korat.json`.

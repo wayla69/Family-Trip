@@ -2595,6 +2595,129 @@
           "q": "Jim Thompson Farm, Pak Thong Chai, Nakhon Ratchasima",
           "ok": "2026-11",
           "src": "https://nz.trip.com/moments/detail/pak-thong-chai-1447250-129482446"
+        },
+        {
+          "local": "",
+          "ages": [
+            1,
+            2,
+            2,
+            2
+          ],
+          "hrs": 1,
+          "io": "out",
+          "pram": "part",
+          "price": {
+            "th": "เช็กราคาก่อนไป",
+            "en": "Check the price"
+          },
+          "book": "none",
+          "src": "https://travel.trueid.net/detail/WgV9Lj45W68Q",
+          "name": {
+            "th": "สะพานไม้ 100 ปี",
+            "en": "100-year wooden bridge"
+          },
+          "kind": "nature",
+          "area": {
+            "th": "บ้านโคกกระชาย นครราชสีมา",
+            "en": "Ban Khok Krachai, Khon Buri, Nakhon Ratchasima"
+          },
+          "what": {
+            "th": "สะพานไม้พาดผ่านทุ่งข้าวเขียวขจีกว่าร้อยไร่",
+            "en": "A wooden bridge across more than a hundred rai of green rice fields"
+          },
+          "why": {
+            "th": "เดินเล่นกลางทุ่งนา ถ่ายรูปสวย",
+            "en": "A long walk over the fields, good for photos"
+          },
+          "tip": {
+            "th": "เปิด 05:00–19:00 จุดชมพระอาทิตย์ตก",
+            "en": "Open 05:00–19:00; a sunset spot"
+          },
+          "q": "สะพานไม้ 100 ปี, โคกกระชาย, นครราชสีมา",
+          "ok": "2026-11"
+        },
+        {
+          "local": "",
+          "ages": [
+            1,
+            1,
+            1,
+            1
+          ],
+          "hrs": 0.5,
+          "io": "both",
+          "pram": "part",
+          "price": {
+            "th": "เช็กราคาก่อนไป",
+            "en": "Check the price"
+          },
+          "book": "none",
+          "src": "https://travel.trueid.net/detail/WgV9Lj45W68Q",
+          "name": {
+            "th": "วัดพระนารายณ์มหาราช",
+            "en": "Wat Phra Narai Maharat"
+          },
+          "kind": "culture",
+          "area": {
+            "th": "ในเมือง นครราชสีมา",
+            "en": "Nai Mueang, Nakhon Ratchasima"
+          },
+          "what": {
+            "th": "วัดกลางเมือง",
+            "en": "A temple in the town centre"
+          },
+          "why": {
+            "th": "แวะได้ไม่นานกลางเมือง",
+            "en": "A short stop in the middle of town"
+          },
+          "tip": {
+            "th": "เปิด 08:00–16:00",
+            "en": "Open 08:00–16:00"
+          },
+          "q": "วัดพระนารายณ์มหาราช, นครราชสีมา",
+          "ok": "2026-11"
+        },
+        {
+          "local": "",
+          "ages": [
+            0,
+            1,
+            2,
+            2
+          ],
+          "hrs": 2,
+          "io": "out",
+          "pram": "no",
+          "price": {
+            "th": "เช็กราคาก่อนไป",
+            "en": "Check the price"
+          },
+          "book": "none",
+          "src": "https://travel.trueid.net/detail/WgV9Lj45W68Q",
+          "name": {
+            "th": "น้ำตกม่านฟ้า",
+            "en": "Man Fa waterfall"
+          },
+          "kind": "nature",
+          "area": {
+            "th": "อุทยานแห่งชาติทับลาน วังน้ำเขียว",
+            "en": "Thap Lan National Park, Wang Nam Khiao"
+          },
+          "what": {
+            "th": "น้ำตกในอุทยานแห่งชาติทับลาน",
+            "en": "A waterfall in Thap Lan National Park"
+          },
+          "why": {
+            "th": "น้ำตกกลางป่า",
+            "en": "A forest waterfall"
+          },
+          "tip": {
+            "th": "เปิด 08:00–18:00",
+            "en": "Open 08:00–18:00"
+          },
+          "q": "น้ำตกม่านฟ้า, วังน้ำเขียว, นครราชสีมา",
+          "ok": "2026-11"
         }
       ]
     },
