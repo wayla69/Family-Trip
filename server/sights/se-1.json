@@ -281,7 +281,159 @@
       {"name":{"en":"Kampementsbadet","th":"แคมเปเมนต์สบาเดต"},"kind":"beach","area":{"en":"Gärdet","th":"แกร์เดต"},"what":{"en":"A swimming spot on Gärdet where children can splash about in summer.","th":"จุดว่ายน้ำบนแกร์เดตที่เด็กเล่นน้ำได้ในฤดูร้อน"},"why":{"en":"Named by the page as one of three guaranteed favourites for a swim.","th":"หน้าเว็บจัดไว้เป็นหนึ่งในสามจุดว่ายน้ำที่รับประกันว่าชอบ"},"ages":[1,2,2,1],"hrs":3,"io":"out","pram":"part","price":{"en":"Check the price","th":"เช็กราคาก่อนไป"},"book":"none","q":"Kampementsbadet, Gärdet, Stockholm","ok":"2026-11","src":"https://www.timeout.com/stockholm/kids/best-things-to-do-in-stockholm-with-kids"},
       {"name":{"en":"Smedsuddsbadet","th":"สเมดสุดส์บาเดต"},"kind":"beach","area":{"en":"Kungsholmen","th":"คุงโฮล์มเมน"},"what":{"en":"A swimming spot on Kungsholmen, for a full day by the water with a picnic.","th":"จุดว่ายน้ำบนคุงโฮล์มเมน สำหรับวันเต็มริมน้ำพร้อมปิกนิก"},"why":{"en":"Named by the page as one of three guaranteed favourites for a swim.","th":"หน้าเว็บจัดไว้เป็นหนึ่งในสามจุดว่ายน้ำที่รับประกันว่าชอบ"},"ages":[1,2,2,1],"hrs":3,"io":"out","pram":"part","price":{"en":"Check the price","th":"เช็กราคาก่อนไป"},"book":"none","q":"Smedsuddsbadet, Kungsholmen, Stockholm","ok":"2026-11","src":"https://www.timeout.com/stockholm/kids/best-things-to-do-in-stockholm-with-kids"},
       {"name":{"en":"Flatenbadet","th":"ฟลาเทนบาเดต"},"kind":"beach","area":{"en":"Skarpnäck","th":"สการ์พเนค"},"what":{"en":"A lake beach in southern Stockholm with several jetties, a diving tower and an accessible ramp.","th":"ชายหาดทะเลสาบทางใต้ของสตอกโฮล์ม มีท่าเรือหลายท่า หอกระโดดน้ำ และทางลาดสำหรับทุกคน"},"why":{"en":"Nice walking paths through untouched nature lead around the lake.","th":"มีทางเดินเท้าสวยในธรรมชาติที่ยังไม่ถูกแตะต้องรอบทะเลสาบ"},"ages":[1,2,2,2],"hrs":3,"io":"out","pram":"part","price":{"en":"Check the price","th":"เช็กราคาก่อนไป"},"book":"none","q":"Flatenbadet, Flatenvägen 200, Skarpnäck, Stockholm","ok":"2026-11","src":"https://www.visitstockholm.com/guides/stockholm-for-kids"},
-      {"name":{"en":"Ersta Minigolf","th":"เออสตา มินิกอล์ฟ"},"kind":"play","area":{"en":"Varvsbranten, Folkungagatan 147","th":"วาร์วสบรันเทน ฟอลค์ุงกากาตัน 147"},"what":{"en":"Minigolf course with historical buildings in the background.","th":"สนามมินิกอล์ฟที่มีอาคารประวัติศาสตร์เป็นฉากหลัง"},"why":{"en":"A little game outdoors for the whole family.","th":"เกมเล็กๆ กลางแจ้งสำหรับทั้งครอบครัว"},"tip":{"en":"Only open May through August.","th":"เปิดเฉพาะเดือนพฤษภาคมถึงสิงหาคม"},"ages":[2,2,2,1],"hrs":1,"io":"out","pram":"part","price":{"en":"Check the price","th":"เช็กราคาก่อนไป"},"book":"none","q":"Ersta Minigolf, Folkungagatan 147, Stockholm","ok":"2026-11","src":"https://www.visitstockholm.com/guides/stockholm-for-kids"}
+      {"name":{"en":"Ersta Minigolf","th":"เออสตา มินิกอล์ฟ"},"kind":"play","area":{"en":"Varvsbranten, Folkungagatan 147","th":"วาร์วสบรันเทน ฟอลค์ุงกากาตัน 147"},"what":{"en":"Minigolf course with historical buildings in the background.","th":"สนามมินิกอล์ฟที่มีอาคารประวัติศาสตร์เป็นฉากหลัง"},"why":{"en":"A little game outdoors for the whole family.","th":"เกมเล็กๆ กลางแจ้งสำหรับทั้งครอบครัว"},"tip":{"en":"Only open May through August.","th":"เปิดเฉพาะเดือนพฤษภาคมถึงสิงหาคม"},"ages":[2,2,2,1],"hrs":1,"io":"out","pram":"part","price":{"en":"Check the price","th":"เช็กราคาก่อนไป"},"book":"none","q":"Ersta Minigolf, Folkungagatan 147, Stockholm","ok":"2026-11","src":"https://www.visitstockholm.com/guides/stockholm-for-kids"},
+        {
+          "local": "",
+          "ages": [
+            2,
+            2,
+            2,
+            1
+          ],
+          "hrs": 1,
+          "io": "out",
+          "pram": "yes",
+          "price": {
+            "th": "ฟรี",
+            "en": "Free"
+          },
+          "book": "none",
+          "src": "https://www.timeout.com/stockholm/kids/best-things-to-do-in-stockholm-with-kids",
+          "name": {
+            "th": "สวนวาซาปาร์เกน",
+            "en": "Vasaparken"
+          },
+          "kind": "play",
+          "area": {
+            "th": "ใจกลาง สตอกโฮล์ม",
+            "en": "central, Stockholm"
+          },
+          "what": {
+            "th": "สวนกลางเมือง มีสนามเด็กเล่น ทางขับรถเด็ก และรถเก่า",
+            "en": "A central park with a playground, a driving track and an old car"
+          },
+          "why": {
+            "th": "ทางขับรถและรถย้อนยุคเป็นที่ชื่นชอบของเด็ก ๆ",
+            "en": "The driving track and the retro car are favourites"
+          },
+          "q": "Vasaparken, Stockholm",
+          "ok": "2026-11"
+        },
+        {
+          "local": "",
+          "ages": [
+            2,
+            2,
+            2,
+            1
+          ],
+          "hrs": 1,
+          "io": "out",
+          "pram": "yes",
+          "price": {
+            "th": "ฟรี",
+            "en": "Free"
+          },
+          "book": "none",
+          "src": "https://www.timeout.com/stockholm/kids/best-things-to-do-in-stockholm-with-kids",
+          "name": {
+            "th": "สวนนอร์ราสตาชุนส์ปาร์เกน",
+            "en": "Norra Stationsparken"
+          },
+          "kind": "play",
+          "area": {
+            "th": "ใจกลาง สตอกโฮล์ม",
+            "en": "central, Stockholm"
+          },
+          "what": {
+            "th": "สนามเด็กเล่นที่หน้าเว็บแนะนำว่าคนน้อยกว่า",
+            "en": "A playground the page suggests as a quieter choice"
+          },
+          "why": {
+            "th": "มีที่เล่นโดยไม่ต้องต่อคิวบ่อทราย",
+            "en": "Room to play without queuing for the sandpit"
+          },
+          "q": "Norra Stationsparken, Stockholm",
+          "ok": "2026-11"
+        },
+        {
+          "local": "Polismuseet",
+          "ages": [
+            1,
+            2,
+            2,
+            2
+          ],
+          "hrs": 1.5,
+          "io": "in",
+          "pram": "part",
+          "price": {
+            "th": "เช็กราคาก่อนไป",
+            "en": "Check the price"
+          },
+          "book": "none",
+          "src": "https://www.visitstockholm.com/o/the-police-museum/",
+          "name": {
+            "th": "พิพิธภัณฑ์ตำรวจ",
+            "en": "Police Museum"
+          },
+          "kind": "museumkid",
+          "area": {
+            "th": "ถนนมูเซอีเวเกน สตอกโฮล์ม",
+            "en": "Museivägen, Stockholm"
+          },
+          "what": {
+            "th": "พิพิธภัณฑ์ที่มีนิทรรศการเด็ก และรถตำรวจให้เล่น",
+            "en": "A museum with a children's exhibition and a police car to play in"
+          },
+          "why": {
+            "th": "ลองใส่เครื่องแบบและไขคดี",
+            "en": "Try on uniforms and solve a case"
+          },
+          "q": "Polismuseet, Museivägen 7, Stockholm",
+          "ok": "2026-11"
+        },
+        {
+          "local": "",
+          "ages": [
+            2,
+            2,
+            2,
+            0
+          ],
+          "hrs": 2,
+          "io": "in",
+          "pram": "part",
+          "price": {
+            "th": "เช็กราคาก่อนไป",
+            "en": "Check the price"
+          },
+          "book": "none",
+          "src": "https://www.leoslekland.se/en/our-playcenters/stockholm",
+          "name": {
+            "th": "ลีโอส์เลคลันด์ คุงเงนส์คูร์วา",
+            "en": "Leo's Lekland Kungens Kurva"
+          },
+          "kind": "play",
+          "area": {
+            "th": "คุงเงนส์คูร์วา",
+            "en": "Kungens Kurva"
+          },
+          "what": {
+            "th": "ศูนย์เล่นในร่ม มีโซนสำหรับเด็กเล็กที่สุด",
+            "en": "An indoor play centre with areas for the smallest children"
+          },
+          "why": {
+            "th": "เล่นในร่มเมื่ออากาศหนาว",
+            "en": "Indoor play when it is cold"
+          },
+          "tip": {
+            "th": "เวลาเปิดที่ระบุ 10:00–19:00",
+            "en": "Listed hours 10:00 to 19:00"
+          },
+          "q": "Leo's Lekland, Diagonalvägen 10, Kungens Kurva",
+          "ok": "2026-11"
+        }
     ]
     }
   ]

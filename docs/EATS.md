@@ -237,3 +237,27 @@ Kee, Sun Hang Yuen, MD Cafe) and four family places from Cathay Pacific's 2026 c
 MeokBang BBQ Kidzone, Tree Café, Yakiniku Tabeyo). Left out: Transformers: The Ark (closed in Hong Kong, Feb 2025), Smoke and Barrel
 (moved, the new address not confirmed), Baumhaus (nothing current), Pizza Express (no one branch). In the app the Hong Kong book's own
 28 places and the Macau book part's 188 sit beside this list (`syncBooks`, src `book`).
+
+### Copenhagen, 23 Nov 2026
+batch-12 of docs/library-briefs. +4 from the Cofoco group’s family page (children’s menu or a half dish at half price): Scarpetta (Islands Brygge, Rantzausgade), Donna, Les Trois Cochons. Proof in `docs/library-proof/dk-copenhagen.json`.
+
+### Tallinn, 23 Nov 2026
+batch-12 of docs/library-briefs. +9 from Visit Estonia and easyfind.ee (2026): Nero, Lore Bistroo, City Grill House, NOP, Talleke ja Pullike, Pann&Kook, Gourmet Coffee, Boheem, Vapiano (Hobujaama). Proof in `docs/library-proof/ee-tallinn.json`.
+
+### Helsinki, 23 Nov 2026
+batch-13 of docs/library-briefs. +4: The Social (Clarion Helsinki and Mestari), Toscanini, Linnankellari, from Strawberry’s restaurant guide. Proof in `docs/library-proof/fi-helsinki.json`.
+
+### Reykjavík, 23 Nov 2026
+batch-17 of docs/library-briefs. +8: Kaffi Laugalækur, The Laundromat Café, the cat café, Grandi Mathöll, Kaffi Flóra, Iðnó, 101 Reykjavik Street Food, Arna. Proof in `docs/library-proof/is-reykjavik.json`.
+
+### Tromsø, 23 Nov 2026
+batch-21 of docs/library-briefs. +1: Pastafabrikken. Proof in `docs/library-proof/no-tromso.json`.
+
+### Bergen, 23 Nov 2026
+batch-21 of docs/library-briefs. +1: Peppes Pizza (Ole Bulls plass). Proof in `docs/library-proof/no-bergen.json`.
+
+### Lapland, 23 Nov 2026
+batch-22 of docs/library-briefs. +2 in Rovaniemi: Restaurant Gallis, Piparina. Proof in `docs/library-proof/p-lapland.json`.
+
+### Stockholm, 23 Nov 2026
+batch-23 of docs/library-briefs. +3: Junibacken restaurant, Haga Bottega, Boketto. Proof in `docs/library-proof/se-stockholm.json`.

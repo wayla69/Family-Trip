@@ -277,7 +277,48 @@
       {"name":{"en":"Traffic Playground","th":"สนามเด็กเล่นจราจร"},"kind":"play","area":{"en":"Fælledparken","th":"เฟลเลดพาร์เกน"},"what":{"en":"A playground with traffic lights, road signs and bike lanes where children learn to ride safely","th":"สนามเด็กเล่นที่มีไฟจราจร ป้ายถนน และเลนจักรยาน ให้เด็กฝึกขี่จักรยานอย่างปลอดภัย"},"why":{"en":"Kids learn to bike here; bikes (balance and pedal) and helmets for kids under 130 cm are lent for free","th":"เด็กฝึกขี่จักรยานที่นี่ มีจักรยานทรงตัวและแพดัลให้ยืม และหมวกกันน็อกสำหรับเด็กที่สูงไม่ถึง 130 ซม. ให้ยืมฟรี"},"ages":[0,2,2,1],"hrs":2,"io":"out","pram":"part","price":{"en":"Check the price","th":"เช็กราคาก่อนไป"},"book":"none","q":"Traffic Playground, Fælledparken, Copenhagen","ok":"2026-11","src":"https://feedingthefamily.substack.com/p/copenhagen-with-kids-guide"},
       {"name":{"en":"Fælledparken","th":"เฟลเลดพาร์เกน"},"kind":"park","area":{"en":"City centre","th":"ใจกลางเมือง"},"what":{"en":"The largest park in the city centre, with lakes, several playgrounds, a skate park and bike paths","th":"สวนที่ใหญ่ที่สุดในใจกลางเมือง มีทะเลสาบ สนามเด็กเล่นหลายแห่ง สเก็ตพาร์ค และทางจักรยาน"},"why":{"en":"You can jog around the lake, take the kids to different playgrounds, or rent bikes during the week","th":"วิ่งรอบทะเลสาบ พาเด็กไปสนามเด็กเล่นต่างๆ หรือเช่าจักรยานในวันธรรมดาได้"},"ages":[1,2,2,2],"hrs":2,"io":"out","pram":"yes","price":{"en":"Check the price","th":"เช็กราคาก่อนไป"},"book":"none","q":"Fælledparken, Copenhagen","ok":"2026-11","src":"https://kidsareatrip.com/best-sights-copenhagen-travel-kids/"},
       {"name":{"en":"Ørstedsparken","th":"ออร์สเตดพาร์เกน"},"kind":"play","area":{"en":"near Torvehallerne","th":"ใกล้ตลาดอาหารทอร์เวเฮลเลอรเน"},"what":{"en":"A park with a fun playground, a short walk from the Torvehallerne food hall","th":"สวนที่มีสนามเด็กเล่นสนุก เดินไม่ไกลจากตลาดอาหารทอร์เวเฮลเลอรเน"},"why":{"en":"A nice stroll for parents while the kids nap, with a fun playground","th":"เดินเล่นสบายๆ ให้พ่อแม่ขณะเด็กนอนงีบ พร้อมสนามเด็กเล่นที่สนุก"},"ages":[1,2,2,1],"hrs":1,"io":"out","pram":"part","price":{"en":"Check the price","th":"เช็กราคาก่อนไป"},"book":"none","q":"Ørstedsparken, Copenhagen","ok":"2026-11","src":"https://feedingthefamily.substack.com/p/copenhagen-with-kids-guide"},
-      {"name":{"en":"Nørrebroparken playground","th":"สนามเด็กเล่นนีอบรอพาร์เกน"},"kind":"play","area":{"en":"Jægersborggade","th":"เยเกอร์สบอร์กกาเดอ"},"what":{"en":"A playground at one end of the Jægersborggade street, beside the Assistens cemetery","th":"สนามเด็กเล่นปลายถนนเยเกอร์สบอร์กกาเดอ ข้างสุสานอาซิสเทนส์"},"why":{"en":"The guide puts it on the walk along a street of boutiques and cafés","th":"คู่มือวางไว้บนเส้นทางเดินเลียบถนนร้านบูติกและคาเฟ่"},"ages":[1,2,2,1],"hrs":1,"io":"out","pram":"yes","price":{"en":"Check the price","th":"เช็กราคาก่อนไป"},"book":"none","q":"Nørrebroparken, Copenhagen","ok":"2026-11","src":"https://feedingthefamily.substack.com/p/copenhagen-with-kids-guide"}
+      {"name":{"en":"Nørrebroparken playground","th":"สนามเด็กเล่นนีอบรอพาร์เกน"},"kind":"play","area":{"en":"Jægersborggade","th":"เยเกอร์สบอร์กกาเดอ"},"what":{"en":"A playground at one end of the Jægersborggade street, beside the Assistens cemetery","th":"สนามเด็กเล่นปลายถนนเยเกอร์สบอร์กกาเดอ ข้างสุสานอาซิสเทนส์"},"why":{"en":"The guide puts it on the walk along a street of boutiques and cafés","th":"คู่มือวางไว้บนเส้นทางเดินเลียบถนนร้านบูติกและคาเฟ่"},"ages":[1,2,2,1],"hrs":1,"io":"out","pram":"yes","price":{"en":"Check the price","th":"เช็กราคาก่อนไป"},"book":"none","q":"Nørrebroparken, Copenhagen","ok":"2026-11","src":"https://feedingthefamily.substack.com/p/copenhagen-with-kids-guide"},
+        {
+          "local": "Rundetårn",
+          "ages": [
+            1,
+            1,
+            1,
+            1
+          ],
+          "hrs": 1,
+          "io": "in",
+          "pram": "yes",
+          "price": {
+            "th": "เช็กราคาก่อนไป",
+            "en": "Check the price"
+          },
+          "book": "none",
+          "src": "https://kidsareatrip.com/?p=1370",
+          "name": {
+            "th": "หอกลมรุนเดทอร์น",
+            "en": "Round Tower"
+          },
+          "kind": "views",
+          "area": {
+            "th": "ถนนเคิบมาเกอร์กาเดอ ใจกลางเมือง",
+            "en": "Købmagergade, city centre"
+          },
+          "what": {
+            "th": "หอดูดาวที่ยังใช้งานเก่าแก่ที่สุดในยุโรป ขึ้นทางลาดวนกว้าง",
+            "en": "Europe’s oldest working observatory, reached by a wide spiral ramp"
+          },
+          "why": {
+            "th": "เด็กชอบแอบซ่อนตามโค้งของทางลาด",
+            "en": "Children love hiding round every bend of the ramp"
+          },
+          "tip": {
+            "th": "ไม่มีลิฟต์ แต่เข็นรถเข็นขึ้นทางลาดได้",
+            "en": "No lift, but a pram can go up the ramp"
+          },
+          "q": "Rundetårn, Købmagergade 52A, København",
+          "ok": "2026-11"
+        }
     ]
     }
   ]
