@@ -272,6 +272,203 @@
           "q": "Kiasma, Mannerheiminaukio 2, Helsinki",
           "ok": "2026-11",
           "src": "https://kiasma.fi/en/visit/tickets-and-prices/"
+        },
+        {
+          "local": "Nukketeatteri Sampo",
+          "ages": [
+            1,
+            2,
+            1,
+            0
+          ],
+          "hrs": 1,
+          "io": "in",
+          "pram": "part",
+          "price": {
+            "th": "≈ €9–20",
+            "en": "≈ €9–20"
+          },
+          "book": "rec",
+          "src": "https://www.timeout.com/helsinki/kids/things-to-do-with-kids-helsinki",
+          "name": {
+            "th": "โรงละครหุ่นซัมโป",
+            "en": "Puppet Theatre Sampo"
+          },
+          "kind": "show",
+          "area": {
+            "th": "เอร็อตตายา",
+            "en": "Erottaja"
+          },
+          "what": {
+            "th": "โรงละครหุ่นสำหรับเด็ก บอกช่วงวัยชัดเจน ตั้งแต่ทารก",
+            "en": "A children’s puppet theatre with clear age guidance, from babies up"
+          },
+          "why": {
+            "th": "เสียงไม่ดังเกินไป เนื้อหาอ่อนโยน ไปได้แม้เด็กเล็กมาก",
+            "en": "Never too loud and gentle in content, fine even for the very small"
+          },
+          "tip": {
+            "th": "การแสดงเป็นภาษาฟินแลนด์ จอดรถเข็นที่ลานด้านใน",
+            "en": "Shows in Finnish; pram parking in the courtyard"
+          },
+          "q": "Puppet Theatre Sampo, Erottajankatu 7, Helsinki",
+          "ok": "2026-11"
+        },
+        {
+          "local": "Talvipuutarha",
+          "ages": [
+            1,
+            1,
+            1,
+            1
+          ],
+          "hrs": 1,
+          "io": "in",
+          "pram": "no",
+          "price": {
+            "th": "ฟรี",
+            "en": "Free"
+          },
+          "book": "none",
+          "src": "https://www.timeout.com/helsinki/kids/things-to-do-with-kids-helsinki",
+          "name": {
+            "th": "สวนฤดูหนาวเฮลซิงกิ",
+            "en": "Helsinki Winter Garden"
+          },
+          "kind": "nature",
+          "area": {
+            "th": "ริมอ่าวเตอเลินลาห์ตี",
+            "en": "By Töölönlahti bay"
+          },
+          "what": {
+            "th": "เรือนกระจกจากทศวรรษ 1890 มีห้องปาล์ม ห้องกระบองเพชร และบ่อปลาคาร์ป",
+            "en": "An 1890s glasshouse with a palm room, a cactus room and a koi pond"
+          },
+          "why": {
+            "th": "ป่าเล็กๆ กลางเมือง มีระเบียงให้ขึ้นไปดู",
+            "en": "A mini jungle with a balcony to climb to"
+          },
+          "tip": {
+            "th": "ปิดวันศุกร์ ต้องจอดรถเข็นไว้ข้างนอก",
+            "en": "Closed on Fridays; prams stay outside"
+          },
+          "q": "Helsinki Winter Garden, Hammarskjöldintie 1 A, Helsinki",
+          "ok": "2026-11"
+        },
+        {
+          "local": "",
+          "ages": [
+            2,
+            2,
+            1,
+            0
+          ],
+          "hrs": 2,
+          "io": "in",
+          "pram": "part",
+          "price": {
+            "th": "เช็กราคาก่อนไป",
+            "en": "Check the price"
+          },
+          "book": "none",
+          "src": "https://www.timeout.com/helsinki/kids/things-to-do-with-kids-helsinki",
+          "name": {
+            "th": "ถ้ำเล่นไลก์กิลัวลา",
+            "en": "Leikkiluola"
+          },
+          "kind": "play",
+          "area": {
+            "th": "ฮากานิเอมี",
+            "en": "Hakaniemi"
+          },
+          "what": {
+            "th": "สนามเด็กเล่นในร่มในหลุมหลบภัยเก่า มีสไลเดอร์และบ้านลม",
+            "en": "An indoor playground in a former civil-defence shelter, with slides and bouncy castles"
+          },
+          "why": {
+            "th": "ที่เล่นอุ่นๆ เมื่อสนามเด็กเล่นข้างนอกเป็นน้ำแข็ง",
+            "en": "A warm place to play when the playgrounds freeze"
+          },
+          "q": "Leikkiluola, Miina Sillanpään katu 2, Helsinki",
+          "ok": "2026-11"
+        },
+        {
+          "local": "",
+          "ages": [
+            1,
+            1,
+            1,
+            1
+          ],
+          "hrs": 1,
+          "io": "out",
+          "pram": "part",
+          "price": {
+            "th": "เช็กราคาก่อนไป",
+            "en": "Check the price"
+          },
+          "book": "none",
+          "src": "https://www.strawberryhotels.com/blog/finland/family-activities-helsinki/",
+          "name": {
+            "th": "ชิงช้าสวรรค์สกายวีล",
+            "en": "SkyWheel Helsinki"
+          },
+          "kind": "ride",
+          "area": {
+            "th": "ท่าเรือคาตายาโนกกา",
+            "en": "Katajanokka harbour"
+          },
+          "what": {
+            "th": "นั่งกระเช้าชิงช้าสวรรค์สั้นๆ ชมท่าเรือและเกาะ",
+            "en": "A short ride in a cabin over the harbour and islands"
+          },
+          "why": {
+            "th": "เด็กได้หาจุดสังเกตจากข้างบน",
+            "en": "Children spot the landmarks from above"
+          },
+          "q": "SkyWheel Helsinki, Katajanokanlaituri 2, Helsinki",
+          "ok": "2026-11"
+        },
+        {
+          "local": "Raitioliikennemuseo",
+          "ages": [
+            1,
+            2,
+            2,
+            1
+          ],
+          "hrs": 1,
+          "io": "in",
+          "pram": "part",
+          "price": {
+            "th": "ฟรี",
+            "en": "Free"
+          },
+          "book": "none",
+          "src": "https://www.timeout.com/helsinki/kids/things-to-do-with-kids-helsinki",
+          "name": {
+            "th": "พิพิธภัณฑ์รถรางเฮลซิงกิ",
+            "en": "Helsinki Tram Museum"
+          },
+          "kind": "museumkid",
+          "area": {
+            "th": "เตอเลอ",
+            "en": "Töölö"
+          },
+          "what": {
+            "th": "รถรางเก่าในโรงจอดเก่า ได้ลองนั่งที่คนขับ",
+            "en": "Historic trams in an old depot, with the driver’s seat to try"
+          },
+          "why": {
+            "th": "ได้ขึ้นไปบนรถรางจริง",
+            "en": "Real trams to climb into"
+          },
+          "tip": {
+            "th": "อังคาร–อาทิตย์ 11–17 น. กลับใจกลางเมืองด้วยรถราง 2",
+            "en": "Tuesday to Sunday 11–17; tram 2 back to the centre"
+          },
+          "q": "Helsinki Tram Museum, Töölönkatu 51 A, Helsinki",
+          "ok": "2026-11"
         }
       ]
     },
