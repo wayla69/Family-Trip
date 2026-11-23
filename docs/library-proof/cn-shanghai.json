@@ -1,0 +1,30 @@
+{
+  "town": "cn-shanghai",
+  "kind": "eats",
+  "checked": "2026-11",
+  "rule": "A row gets ok only from a current listing, its own site or recent reviews with nothing saying closed (docs/EATS.md). A row is taken out when a search could not find the place at all or the sources disagree; a place found but not freshly confirmed stays without ok.",
+  "scope": "the 3 rows without ok; nothing else in the town was re-checked",
+  "how": "Google Maps opened in headless Chromium (2026-11-23), limited view without a reviews tab, so no review date could be read; each row searched with its Chinese name (zh) and/or its English name and the town. Maps' coverage of mainland China is thin: many listings carry no hours at all. A list result's hours line ('Open · Closes 10 PM', or 'Open now', which Maps shows only when it holds the place's hours) counted as a current listing. Where Maps could not settle a row, one web search (snippets only, pages not opened) was made for it.",
+  "confirmed": [
+    {
+      "name": "Harbin Food Factory",
+      "src": "Google Maps search (headless Chromium, 2026-11-23)",
+      "page_name": "Shanghai Harbin Foodstuff Factory",
+      "evidence": "list for '哈尔滨食品厂 淮海中路 上海': bakery, 615 Huaihai Rd (M), 'Open · Closes 10 PM' (the row says No. 603, the same block)",
+      "ok": "2026-11"
+    }
+  ],
+  "kept_without_ok": [
+    {
+      "name": "Lillian Bakery",
+      "src": "Google Maps search (headless Chromium, 2026-11-23)",
+      "evidence": "place page 'Lillian Cake Shop 莉莲蛋挞', Nanjing Rd (W) 2-68号新世界城B1层, 6FMF+XF Huangpu — no hours shown, so nothing current"
+    },
+    {
+      "name": "Lokal by Wagas (Hubindao)",
+      "src": "Google Maps search (headless Chromium, 2026-11-23)",
+      "evidence": "place page 'Lokal By Wagas', 150 Hubin Rd, Huangpu, 6FCH+6J — no hours shown"
+    }
+  ],
+  "removed": []
+}

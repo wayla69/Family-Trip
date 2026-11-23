@@ -40,11 +40,64 @@
     "Xi Yang Yang (added from a 2025-10 guide; no ok month until a current listing confirms it)",
     "Pei Jie Lao Huoguo (no ok month; the only branch in sources is Hongya Cave, the Jiefangbei address is unconfirmed)",
     "Cygnet Hot Pot (Hongyadong) (no ok month; the Hongyadong branch is from a single guide)",
-    "Bayi Road Food Street (no ok month; a street, not one restaurant)",
-    "Hao You Lai Suan La Fen (no ok month; hours and address come from listings of mixed dates)",
-    "Shancheng Xiao Tangyuan (no ok month; the address is from one guide)",
     "Chen Changyin Mahua (no ok month; the brand is in Ciqikou, the shop row is not confirmed)",
     "Jiaotong Teahouse (no ok month)"
   ],
-  "removed_rule": "Taken out because the row stayed in doubt after a search (docs/EATS.md: a row left in doubt is taken out), not because the place is proved closed."
+  "removed_rule": "Taken out because the row stayed in doubt after a search (docs/EATS.md: a row left in doubt is taken out), not because the place is proved closed.",
+  "passes": [
+    {
+      "checked": "2026-11",
+      "scope": "the 7 rows without ok; nothing else in the town was re-checked",
+      "how": "Google Maps opened in headless Chromium (2026-11-23), limited view without a reviews tab, so no review date could be read; each row searched with its Chinese name (zh) and/or its English name and the town. Maps' coverage of mainland China is thin: many listings carry no hours at all. A list result's hours line ('Open · Closes 10 PM', or 'Open now', which Maps shows only when it holds the place's hours) counted as a current listing. Where Maps could not settle a row, one web search (snippets only, pages not opened) was made for it.",
+      "confirmed": [
+        {
+          "name": "Cygnet Hot Pot (Hongyadong)",
+          "src": "Google Maps search (headless Chromium, 2026-11-23)",
+          "page_name": "重庆小天鹅",
+          "evidence": "list for '小天鹅火锅 洪崖洞 重庆': 嘉滨路88号洪崖洞风景区4楼, 'Closes soon · 2 PM · Reopens 5 PM'",
+          "ok": "2026-11"
+        },
+        {
+          "name": "Bayi Road Food Street",
+          "src": "Google Maps search (headless Chromium, 2026-11-23)",
+          "page_name": "Chongqing Haochi Street 重庆好吃街",
+          "evidence": "the street's own listing (HH4G+9X9, Bayi Rd) has no hours, but shops at that place do: '好又来酸辣粉 · 解放碑好吃街 · Open now', 'Mountain City Xiaotangyuan · 234 Bayi Rd · Open now'",
+          "ok": "2026-11"
+        },
+        {
+          "name": "Hao You Lai Suan La Fen",
+          "src": "Google Maps search (headless Chromium, 2026-11-23)",
+          "page_name": "好又来酸辣粉",
+          "evidence": "list for '好又来酸辣粉 重庆': 好又来酸辣粉, 餐馆 · 解放碑好吃街, 'Open now'",
+          "ok": "2026-11"
+        },
+        {
+          "name": "Shancheng Xiao Tangyuan",
+          "src": "Google Maps search (headless Chromium, 2026-11-23)",
+          "page_name": "Mountain City Xiaotangyuan",
+          "evidence": "list for '山城小汤圆 重庆': 234 Bayi Rd, 'Open now'",
+          "ok": "2026-11"
+        }
+      ],
+      "kept_without_ok": [
+        {
+          "name": "Pei Jie Lao Huoguo",
+          "src": "Google Maps search (headless Chromium, 2026-11-23)",
+          "evidence": "place page '珮姐老火锅', HH3F+M3 Yuzhong (教场口, Jiefangbei) — no hours on the listing (only a visitor's note in the address field)"
+        },
+        {
+          "name": "Xi Yang Yang",
+          "src": "Google Maps search (headless Chromium, 2026-11-23); web search (2026-11-23, snippets only)",
+          "evidence": "no listing at Park 108 (108 Zourong Rd); Maps' only '喜洋洋餐馆' is at 79 Zhongshansi Rd, Daxigou (HG7X+P5), about 2.5 km away, 'Closes soon · 2 PM · Reopens 5:30 PM' — not shown to be the same place. A web search found only the 2025-10 Cathay Pacific guide again"
+        },
+        {
+          "name": "Chen Changyin Mahua",
+          "src": "Google Maps search (headless Chromium, 2026-11-23)",
+          "evidence": "list '陈昌银麻花', 磁器口正街黄桷坪一巷 — no hours; '陈麻花' 磁器口牌坊口左边第一家 'Open now' is only a similar name"
+        }
+      ],
+      "removed": [],
+      "label": "Google Maps pass, 2026-11-23"
+    }
+  ]
 }
