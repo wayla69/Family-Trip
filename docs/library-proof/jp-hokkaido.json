@@ -1,0 +1,83 @@
+{
+  "town": "jp-hokkaido",
+  "kind": "eats + sights",
+  "checked": "2026-11-23",
+  "rule": "library-check.cjs, then the Google Maps Reviews tab sorted by newest: ok only when not marked closed, with a review from the last six months, and the map's name matching the page's.",
+  "agents": "one Haiku agent; 19 rows from the official Visit Hokkaido page and studio-palette.com, 10 passed library-check.cjs, 9 went in",
+  "added": [
+    {
+      "name": "Funkawan Bay Panorama Park",
+      "page_name": "Funkawan Bay Panorama Park",
+      "src": "https://www.visit-hokkaido.jp/en/feature/child",
+      "date": "official",
+      "map": "Google Maps 2,639 reviews, newest shown '6 days ago'"
+    },
+    {
+      "name": "Kamuinomori Park",
+      "page_name": "Kamuinomori Park",
+      "src": "https://www.visit-hokkaido.jp/en/feature/child",
+      "date": "official",
+      "map": "Google Maps 'Kamui no Mori Park', 946 reviews, newest shown '3 days ago'"
+    },
+    {
+      "name": "Okhotsk Drift Ice Park",
+      "page_name": "Okhotsk Sea Ice Park",
+      "src": "https://www.visit-hokkaido.jp/en/feature/child",
+      "date": "official",
+      "map": "Google Maps 529 reviews, newest shown '19 days ago'"
+    },
+    {
+      "name": "Yumenomori Park Visitor Center",
+      "page_name": "Yumenomori Park Visitor Center",
+      "src": "https://www.visit-hokkaido.jp/en/feature/child",
+      "date": "official",
+      "map": "Google Maps 54 reviews, newest shown '20 days ago'"
+    },
+    {
+      "name": "Hakodate Kids Plaza",
+      "page_name": "Hakodate Kids Plaza",
+      "src": "https://www.visit-hokkaido.jp/en/feature/child",
+      "date": "official",
+      "map": "Google Maps 177 reviews, newest shown '3 months ago'"
+    },
+    {
+      "name": "Hakodate Miraikan",
+      "page_name": "Hakodate Miraikan",
+      "src": "https://www.visit-hokkaido.jp/en/feature/child",
+      "date": "official",
+      "map": "Google Maps 552 reviews, newest shown '3 months ago'"
+    },
+    {
+      "name": "Kenbuchi Picture Book Museum",
+      "page_name": "Kenbuchi Town Picture Book Museum",
+      "src": "https://www.visit-hokkaido.jp/en/feature/child",
+      "date": "official",
+      "map": "Google Maps 134 reviews, newest shown '10 days ago'"
+    },
+    {
+      "name": "Ashoro Museum of Paleontology",
+      "page_name": "Ashoro Museum of Paleontology",
+      "src": "https://www.visit-hokkaido.jp/en/feature/child",
+      "date": "official",
+      "map": "Google Maps 614 reviews, newest shown '16 days ago'"
+    },
+    {
+      "name": "Miyama Toge Art Park",
+      "page_name": "Miyama Toge Art Park",
+      "src": "https://www.visit-hokkaido.jp/en/feature/child",
+      "date": "official",
+      "map": "Google Maps 114 reviews, newest shown '3 months ago'"
+    }
+  ],
+  "left_out": [
+    {
+      "name": "Sahoro Resort Bear Mountain",
+      "why": "temporarily closed on the map"
+    },
+    {
+      "name": "nine rows from studio-palette.com",
+      "why": "no page date library-check.cjs can read"
+    }
+  ],
+  "estimates": "Ages and visit hours are placeholders; prices and opening notes are the pages' own."
+}

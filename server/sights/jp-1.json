@@ -1854,6 +1854,339 @@
           "q": "Otaru Music Box Museum, Otaru, Hokkaido",
           "ok": "2026-11",
           "src": "https://www.gltjp.com/en/article/item/20985/"
+        },
+        {
+          "local": "噴火湾パノラマパーク",
+          "ages": [
+            2,
+            2,
+            2,
+            1
+          ],
+          "hrs": 2,
+          "io": "both",
+          "pram": "part",
+          "price": {
+            "th": "เช็กราคาก่อนไป",
+            "en": "Check the price"
+          },
+          "book": "none",
+          "src": "https://www.visit-hokkaido.jp/en/feature/child",
+          "name": {
+            "th": "สวนพาโนรามาอ่าวฟุงกะ",
+            "en": "Funkawan Bay Panorama Park"
+          },
+          "kind": "park",
+          "area": {
+            "th": "ยาคุโมะ ฮอกไกโด",
+            "en": "Yakumo, Hokkaido"
+          },
+          "what": {
+            "th": "สวนบนเนินมองอ่าวฟุงกะ มีสนามหญ้ากว้างและเครื่องเล่น",
+            "en": "A hillside park over Funka Bay with a big lawn and play equipment"
+          },
+          "why": {
+            "th": "มีสนามเด็กเล่นในร่มขนาดใหญ่สำหรับวันฝนตก",
+            "en": "A large indoor playground for rainy days"
+          },
+          "q": "噴火湾パノラマパーク, 八雲",
+          "ok": "2026-11"
+        },
+        {
+          "local": "カムイの杜公園",
+          "ages": [
+            2,
+            2,
+            2,
+            1
+          ],
+          "hrs": 2,
+          "io": "both",
+          "pram": "part",
+          "price": {
+            "th": "เช็กราคาก่อนไป",
+            "en": "Check the price"
+          },
+          "book": "none",
+          "src": "https://www.visit-hokkaido.jp/en/feature/child",
+          "name": {
+            "th": "สวนคามุยโนะโมริ",
+            "en": "Kamuinomori Park"
+          },
+          "kind": "park",
+          "area": {
+            "th": "อาซาฮิกาวะ ฮอกไกโด",
+            "en": "Asahikawa, Hokkaido"
+          },
+          "what": {
+            "th": "สวนมีสนามเด็กเล่น ห้องเล่นไม้ในร่ม ลานเล่นน้ำ และที่ตั้งแคมป์",
+            "en": "A park with playgrounds, wooden indoor play, a water playground and a campground"
+          },
+          "why": {
+            "th": "เครื่องเล่นทุกวัย มีงานฝีมือและกิจกรรม",
+            "en": "Play equipment for all ages, plus crafts and events"
+          },
+          "q": "カムイの杜公園, 旭川",
+          "ok": "2026-11"
+        },
+        {
+          "local": "北海道立オホーツク流氷公園",
+          "ages": [
+            2,
+            2,
+            2,
+            1
+          ],
+          "hrs": 2,
+          "io": "both",
+          "pram": "part",
+          "price": {
+            "th": "เช็กราคาก่อนไป",
+            "en": "Check the price"
+          },
+          "book": "none",
+          "src": "https://www.visit-hokkaido.jp/en/feature/child",
+          "name": {
+            "th": "สวนน้ำแข็งลอยโอค็อตสค์",
+            "en": "Okhotsk Drift Ice Park"
+          },
+          "kind": "park",
+          "area": {
+            "th": "มมเบ็ตสึ ฮอกไกโด",
+            "en": "Mombetsu, Hokkaido"
+          },
+          "what": {
+            "th": "สวนกว้างใหญ่ มีห้องเล่นในร่ม",
+            "en": "A vast park with an indoor playroom"
+          },
+          "why": {
+            "th": "สไลเดอร์คลื่น เครื่องปีนยักษ์ และเนินกระโดด",
+            "en": "A wave slide, a giant jungle gym and a jumping mound"
+          },
+          "q": "北海道立オホーツク流氷公園, 紋別",
+          "ok": "2026-11"
+        },
+        {
+          "local": "ゆめの森公園 ビジターセンター",
+          "ages": [
+            2,
+            2,
+            2,
+            1
+          ],
+          "hrs": 2,
+          "io": "in",
+          "pram": "yes",
+          "price": {
+            "th": "เช็กราคาก่อนไป",
+            "en": "Check the price"
+          },
+          "book": "none",
+          "src": "https://www.visit-hokkaido.jp/en/feature/child",
+          "name": {
+            "th": "ศูนย์บริการสวนยูเมโนะโมริ",
+            "en": "Yumenomori Park Visitor Center"
+          },
+          "kind": "play",
+          "area": {
+            "th": "นากาชิเบ็ตสึ ฮอกไกโด",
+            "en": "Nakashibetsu, Hokkaido"
+          },
+          "what": {
+            "th": "อาคารรูปไข่เต็มไปด้วยเครื่องเล่น",
+            "en": "An egg-shaped visitor centre full of play equipment"
+          },
+          "why": {
+            "th": "สไลเดอร์ แทรมโพลีน ผนังปีน และสามล้อ",
+            "en": "Slides, trampolines, bouldering and tricycles"
+          },
+          "q": "ゆめの森公園 ビジターセンター, 中標津",
+          "ok": "2026-11"
+        },
+        {
+          "local": "はこだてキッズプラザ",
+          "ages": [
+            2,
+            2,
+            2,
+            1
+          ],
+          "hrs": 2,
+          "io": "in",
+          "pram": "yes",
+          "price": {
+            "th": "เช็กราคาก่อนไป",
+            "en": "Check the price"
+          },
+          "book": "none",
+          "src": "https://www.visit-hokkaido.jp/en/feature/child",
+          "name": {
+            "th": "ฮาโกดาเตะ คิดส์พลาซ่า",
+            "en": "Hakodate Kids Plaza"
+          },
+          "kind": "play",
+          "area": {
+            "th": "คิราริส ฮาโกดาเตะ หน้าสถานี ฮอกไกโด",
+            "en": "Kiraris Hakodate, by Hakodate Station, Hokkaido"
+          },
+          "what": {
+            "th": "ที่เล่นในร่มทุกฤดู มีตัวต่อและหนังสือภาพ",
+            "en": "An all-weather indoor play space with blocks and picture books"
+          },
+          "why": {
+            "th": "เหมาะกับวันฝนตกหรืออากาศหนาว",
+            "en": "Good on a rainy or cold day"
+          },
+          "q": "はこだてキッズプラザ",
+          "ok": "2026-11"
+        },
+        {
+          "local": "はこだてみらい館",
+          "ages": [
+            2,
+            2,
+            2,
+            1
+          ],
+          "hrs": 2,
+          "io": "in",
+          "pram": "yes",
+          "price": {
+            "th": "เช็กราคาก่อนไป",
+            "en": "Check the price"
+          },
+          "book": "none",
+          "src": "https://www.visit-hokkaido.jp/en/feature/child",
+          "name": {
+            "th": "ฮาโกดาเตะ มิไรคัง",
+            "en": "Hakodate Miraikan"
+          },
+          "kind": "museumkid",
+          "area": {
+            "th": "ฮาโกดาเตะ ฮอกไกโด",
+            "en": "Hakodate, Hokkaido"
+          },
+          "what": {
+            "th": "ศูนย์วิทยาศาสตร์มีจอ LED ยักษ์และเกมขยับตัว",
+            "en": "A science centre with a huge LED wall and body-moving games"
+          },
+          "why": {
+            "th": "พ่อแม่ลูกได้ลองวิทยาศาสตร์ด้วยกัน",
+            "en": "Parents and children try science together"
+          },
+          "q": "はこだてみらい館",
+          "ok": "2026-11"
+        },
+        {
+          "local": "剣淵町 絵本の館",
+          "ages": [
+            2,
+            2,
+            1,
+            0
+          ],
+          "hrs": 1,
+          "io": "in",
+          "pram": "part",
+          "price": {
+            "th": "เช็กราคาก่อนไป",
+            "en": "Check the price"
+          },
+          "book": "none",
+          "src": "https://www.visit-hokkaido.jp/en/feature/child",
+          "name": {
+            "th": "พิพิธภัณฑ์หนังสือภาพเค็นบุจิ",
+            "en": "Kenbuchi Picture Book Museum"
+          },
+          "kind": "museumkid",
+          "area": {
+            "th": "เค็นบุจิ ฮอกไกโด",
+            "en": "Kenbuchi, Hokkaido"
+          },
+          "what": {
+            "th": "ห้องสมุดหนังสือภาพและหอศิลป์ ถอดรองเท้าเข้า",
+            "en": "A picture-book library and art museum, shoes off"
+          },
+          "why": {
+            "th": "หนังสือภาพ บ้านจำลอง และที่นั่งหรือนอนอ่าน",
+            "en": "Picture books, a play house and places to sit or lie down"
+          },
+          "q": "剣淵町 絵本の館",
+          "ok": "2026-11"
+        },
+        {
+          "local": "足寄動物化石博物館",
+          "ages": [
+            0,
+            1,
+            2,
+            2
+          ],
+          "hrs": 1.5,
+          "io": "in",
+          "pram": "part",
+          "price": {
+            "th": "เช็กราคาก่อนไป",
+            "en": "Check the price"
+          },
+          "book": "none",
+          "src": "https://www.visit-hokkaido.jp/en/feature/child",
+          "name": {
+            "th": "พิพิธภัณฑ์ฟอสซิลอาโชโระ",
+            "en": "Ashoro Museum of Paleontology"
+          },
+          "kind": "museum",
+          "area": {
+            "th": "อาโชโระ ฮอกไกโด",
+            "en": "Ashoro, Hokkaido"
+          },
+          "what": {
+            "th": "ฟอสซิลสัตว์เลี้ยงลูกด้วยนมในทะเลอายุ 25 ล้านปี",
+            "en": "Fossils of 25-million-year-old marine mammals"
+          },
+          "why": {
+            "th": "ให้เด็กขุดหาฟอสซิลจริง",
+            "en": "A mini dig where children find real fossils"
+          },
+          "q": "足寄動物化石博物館",
+          "ok": "2026-11"
+        },
+        {
+          "local": "深山峠アートパーク",
+          "ages": [
+            0,
+            2,
+            2,
+            2
+          ],
+          "hrs": 1,
+          "io": "in",
+          "pram": "part",
+          "price": {
+            "th": "เช็กราคาก่อนไป",
+            "en": "Check the price"
+          },
+          "book": "none",
+          "src": "https://www.visit-hokkaido.jp/en/feature/child",
+          "name": {
+            "th": "สวนศิลปะมิยามะโทเงะ",
+            "en": "Miyama Toge Art Park"
+          },
+          "kind": "museum",
+          "area": {
+            "th": "คามิฟูราโนะ ฮอกไกโด",
+            "en": "Kamifurano, Hokkaido"
+          },
+          "what": {
+            "th": "พิพิธภัณฑ์ภาพลวงตาที่ภาพแบนดูเป็นสามมิติ",
+            "en": "A trick-art museum where flat pictures look 3D"
+          },
+          "why": {
+            "th": "ถ่ายรูปภาพลวงตาสนุกทั้งผู้ใหญ่และเด็ก",
+            "en": "Trick photos adults and children both enjoy"
+          },
+          "q": "深山峠アートパーク, 上富良野",
+          "ok": "2026-11"
         }
       ]
     },
