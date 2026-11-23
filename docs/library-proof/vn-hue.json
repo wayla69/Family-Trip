@@ -1,0 +1,19 @@
+{
+  "town": "vn-hue",
+  "kind": "eats",
+  "checked": "2026-11",
+  "rule": "A row gets ok only from a current listing, its own site or recent reviews with nothing saying closed (docs/EATS.md). A row is taken out when a search could not find the place at all or the sources disagree; a place found but not freshly confirmed stays without ok.",
+  "scope": "the 1 row without ok; the town holds 28 rows after this pass",
+  "how": "Google Maps opened in headless Chromium (2026-11-23), limited view without a reviews tab, so no review date could be read; searched in English and in the local language, each verdict from the place page or the result list shown",
+  "confirmed": [
+    {
+      "name": "Hàng Me Mẹ",
+      "src": "https://www.google.com/maps/place/Original+Hàng+Me",
+      "page_name": "Original Hàng Me / Hàng Me Mẹ",
+      "evidence": "Google Maps (2026-11-23): dumpling restaurant, 3.9★, 29 Nguyễn Công Trứ, Thuận Hóa, Huế (FHCW+MH) — the south bank, a few hundred metres from the row's Võ Thị Sáu street; 'Open · Closes 10 PM'; nothing says closed. The search for '16 Võ Thị Sáu' lands on this listing, so the query now names its street",
+      "ok": "2026-11"
+    }
+  ],
+  "kept_without_ok": [],
+  "removed": []
+}

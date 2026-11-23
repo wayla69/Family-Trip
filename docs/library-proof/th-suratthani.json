@@ -1,0 +1,21 @@
+{
+  "town": "th-suratthani",
+  "kind": "eats",
+  "checked": "2026-11",
+  "rule": "A row gets ok only from a current listing, its own site or recent reviews with nothing saying closed (docs/EATS.md). A row is taken out when a search could not find the place at all or the sources disagree; a place found but not freshly confirmed stays without ok.",
+  "scope": "the 2 rows without ok; the town holds 14 rows after this pass",
+  "how": "Google Maps opened in headless Chromium (2026-11-23), limited view without a reviews tab, so no review date could be read; searched in English and in the local language, each verdict from the place page or the result list shown",
+  "confirmed": [],
+  "kept_without_ok": [
+    {
+      "name": "Central Surat Thani food court",
+      "evidence": "Google Maps (2026-11-23): Central Surat Thani (88 Wat Pradu) open to 9 PM; its 'Food Park' food court listing (4852+WR4, 'Located in: Central Surat Thani', 3.6★) has no hours ('Add hours'), so the food court itself is not confirmed"
+    }
+  ],
+  "removed": [
+    {
+      "name": "Alive Cafe",
+      "reason": "Google Maps (2026-11-23): 'อะไลฟ์ คาเฟ่ สุราษฎร์ธานี', 'Alive Cafe Surat Thani' and 'Alive Cafe and Restaurant Mueang Surat Thani' list other cafés only (A3Cafe, TooDay Cafe, Alert Cafe', Yield, Doz Coffee Lab …); no place of this name found"
+    }
+  ]
+}
