@@ -280,6 +280,47 @@
           "q": "Pansodan Jetty, Yangon",
           "ok": "2026-11",
           "src": "https://elevenmyanmar.com/node/310819"
+        },
+        {
+          "local": "",
+          "ages": [
+            1,
+            2,
+            2,
+            2
+          ],
+          "hrs": 1.5,
+          "io": "out",
+          "pram": "part",
+          "price": {
+            "th": "10,000 จั๊ต",
+            "en": "MMK 10,000"
+          },
+          "book": "none",
+          "src": "https://blog.onevasco.com/travel-with-kids/myanmar",
+          "name": {
+            "th": "เจดีย์ชเวดากอง",
+            "en": "Shwedagon Pagoda"
+          },
+          "kind": "culture",
+          "area": {
+            "th": "ย่างกุ้ง",
+            "en": "Yangon"
+          },
+          "what": {
+            "th": "เจดีย์ทองใหญ่ที่มองเห็นได้ทั่วเมือง สวยตอนพระอาทิตย์ตก",
+            "en": "The huge golden stupa seen from all over the city, lovely at sunset"
+          },
+          "why": {
+            "th": "ดูผู้คนจุดเทียนและถวายดอกไม้ตอนเย็นที่อากาศเย็นลง",
+            "en": "Watch people light candles and offer flowers in the cool evening"
+          },
+          "tip": {
+            "th": "แต่งกายสุภาพ ถอดรองเท้า ไปตอนเย็นอากาศเย็นกว่า",
+            "en": "Dress modestly and take off shoes; go in the cooler evening"
+          },
+          "q": "Shwedagon Pagoda, Yangon",
+          "ok": "2026-11"
         }
       ]
     }
