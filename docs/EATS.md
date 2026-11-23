@@ -276,3 +276,17 @@ batch-04 of docs/library-briefs. +1: Tavolata (Cebu). Out: three chains with no 
 
 ### Ulaanbaatar, 23 Nov 2026
 batch-30 of docs/library-briefs. +3: Altan Gadas, Arak Yak House, Mongolian's Restaurant (Shangri-La Mall). Proof in `docs/library-proof/mn-ulaanbaatar.json`.
+### Golden Triangle, 23 Nov 2026
+batch-17 of docs/library-briefs. +2: Anokhi Café, 1135 AD. Proof in `docs/library-proof/in-golden.json`.
+
+### Tashkent, 23 Nov 2026
+batch-25 of docs/library-briefs. +6: Ribambelle, Benedict, Gōsht, Yuzhanin, Tanuki, JUNE. Proof in `docs/library-proof/uz-tashkent.json`.
+
+### Sri Lanka's hills, 23 Nov 2026
+batch-29 of docs/library-briefs. +1: Honey Pot Restaurant (Kandy). Proof in `docs/library-proof/lk-hills.json`.
+
+### Samarkand & Bukhara, 23 Nov 2026
+batch-32 of docs/library-briefs. +7: Sangizar, Jasmin, The Mohon (Samarkand); Lalizar, Zargaron, Palmira, Zolotaya Bukhara (Bukhara). Proof in `docs/library-proof/uz-samarkand.json`.
+
+### Kathmandu, 23 Nov 2026
+batch-30 of docs/library-briefs. +3: Jimbu Thakali by Capital Grill, Alice Restaurant, Kaiser Café. Proof in `docs/library-proof/np-kathmandu.json`.

@@ -123,3 +123,11 @@ nightlife, and religious sites that ask visitors to keep away.
 - **23 Nov 2026, Labuan Bajo and Komodo** (docs/library-briefs batch-04): +1 (Pink Beach). The agent found little else with a dated page; Senja Eatery failed for having no page date. Proof in `docs/library-proof/id-komodo.json`.
 - **23 Nov 2026, Siem Reap** (docs/library-briefs batch-04): +5 (Neak Poan, Banteay Srei, Phnom Bakheng, Ta Nei, ArtBox). Out: Asia Plaza play zone (no review in three years). Proof in `docs/library-proof/kh-siemreap.json`.
 - **23 Nov 2026, Bohol and Cebu** (docs/library-briefs batch-04): +1 (PlayMaze, Parkmall). Proof in `docs/library-proof/ph-bohol.json`.
+- **23 Nov 2026, Golden Triangle** (docs/library-briefs batch-17): +9 (Playhouse by Essex Farms, the Anokhi museum, Nahargarh, Galtaji, Jawahar Circle, Jungle Doodle, Sur Sarovar, Dolphin Water Park, Wildlife SOS elephants). Proof in `docs/library-proof/in-golden.json`.
+- **23 Nov 2026, Almaty** (docs/library-briefs batch-19): +2 (Panfilov Park, the Ascension Cathedral). Proof in `docs/library-proof/kz-almaty.json`.
+- **23 Nov 2026, Tashkent** (docs/library-briefs batch-25): +3 (the telecommunication museum, Independence Square, the Hazrati Imam complex). Proof in `docs/library-proof/uz-tashkent.json`.
+- **23 Nov 2026, Bhutan** (docs/library-briefs batch-26): +1 (the Tiger's Nest hike). Proof in `docs/library-proof/bt-paro.json`.
+- **23 Nov 2026, Sri Lanka's hills** (docs/library-briefs batch-29): +5 (Little Adam's Peak, Ravana Falls, Dambulla, Pidurangala, Horton Plains). Proof in `docs/library-proof/lk-hills.json`.
+- **23 Nov 2026, Samarkand & Bukhara** (docs/library-briefs batch-32): +3 (Samanid Park, the Silk Road Samarkand fountain, the Eternal City). Proof in `docs/library-proof/uz-samarkand.json`.
+- **23 Nov 2026, the Maldives** (docs/library-briefs batch-30): +1 (the Malé fish market). Proof in `docs/library-proof/mv-atolls.json`.
+- **23 Nov 2026, Kathmandu** (docs/library-briefs batch-30): +2 (Durbar Square, Pottery Square in Bhaktapur). Proof in `docs/library-proof/np-kathmandu.json`.
