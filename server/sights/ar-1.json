@@ -266,6 +266,154 @@
           "book": "req",
           "q": "MIJU Museo de la Imaginación y el Juego, Av. de los Italianos 851, Puerto Madero, Buenos Aires",
           "src": "https://buenosaires.gob.ar/cultura/museos/museo-de-la-imaginacion-y-el-juego"
+        },
+        {
+          "local": "",
+          "ages": [
+            1,
+            1,
+            1,
+            1
+          ],
+          "hrs": 2,
+          "io": "out",
+          "pram": "part",
+          "price": {
+            "th": "ฟรี",
+            "en": "Free"
+          },
+          "book": "none",
+          "src": "https://www.timeout.com/es/buenos-aires/lugares-gratis-chicos-ninos-imperdibles",
+          "name": {
+            "th": "สวนแซงต์โตรเปซ",
+            "en": "Parque Saint Tropez"
+          },
+          "kind": "park",
+          "area": {
+            "th": "ริมแม่น้ำ คอสตาเนรานอร์เต เบลกราโน",
+            "en": "Costanera Norte, Belgrano"
+          },
+          "what": {
+            "th": "สวนริมแม่น้ำ มีทางจักรยาน ลานสเก็ต ทางเดิน และสนามหญ้า",
+            "en": "A riverside park with bike and skate tracks, paths and open lawns"
+          },
+          "why": {
+            "th": "เครื่องบินจากสนามบินในเมืองบินผ่านต่ำๆ ให้ดู",
+            "en": "Planes from the city airport fly low overhead"
+          },
+          "q": "Saint Tropez Park, Costanera Norte, Buenos Aires",
+          "ok": "2026-11"
+        },
+        {
+          "local": "",
+          "ages": [
+            1,
+            1,
+            1,
+            1
+          ],
+          "hrs": 2,
+          "io": "out",
+          "pram": "part",
+          "price": {
+            "th": "เช็กราคาก่อนไป",
+            "en": "Check the price"
+          },
+          "book": "none",
+          "src": "https://turismo.buenosaires.gob.ar/en/article/activities-kids",
+          "name": {
+            "th": "สวนเด็ก ปาร์เกเดลอสนิญโญส",
+            "en": "Parque de los Niños"
+          },
+          "kind": "park",
+          "area": {
+            "th": "นุญเญซ ริมแม่น้ำ",
+            "en": "Núñez, by the river"
+          },
+          "what": {
+            "th": "สวนริมแม่น้ำที่ทำมาสำหรับเด็ก มีกิจกรรมวัฒนธรรมและกีฬา",
+            "en": "A riverside park made for children, with cultural and sports activities"
+          },
+          "why": {
+            "th": "สร้างมาเพื่อเด็กโดยเฉพาะ",
+            "en": "Built for children"
+          },
+          "q": "Parque de los Niños, Núñez, Buenos Aires",
+          "ok": "2026-11"
+        },
+        {
+          "local": "",
+          "ages": [
+            1,
+            1,
+            1,
+            1
+          ],
+          "hrs": 2,
+          "io": "out",
+          "pram": "part",
+          "price": {
+            "th": "ฟรี",
+            "en": "Free"
+          },
+          "book": "none",
+          "src": "https://turismo.buenosaires.gob.ar/en/article/activities-kids",
+          "name": {
+            "th": "ทางเดินการ์ตูน ปาเซโอเดลาอิสโตรีเอตา",
+            "en": "Comic Strip Walk (Paseo de la Historieta)"
+          },
+          "kind": "oldtown",
+          "area": {
+            "th": "มอนเซร์รัต ซานเตลโม และปวยร์โตมาเดโร",
+            "en": "Monserrat, San Telmo and Puerto Madero"
+          },
+          "what": {
+            "th": "เส้นทางรูปปั้นตัวการ์ตูนดังของอาร์เจนตินา",
+            "en": "A trail of statues of Argentina’s comic-strip characters"
+          },
+          "why": {
+            "th": "เด็กๆ นับว่าหาตัวการ์ตูนเจอกี่ตัว",
+            "en": "Children count how many characters they can find"
+          },
+          "q": "Paseo de la Historieta, San Telmo, Buenos Aires",
+          "ok": "2026-11"
+        },
+        {
+          "local": "Museo Participativo de Ciencias",
+          "ages": [
+            1,
+            1,
+            1,
+            1
+          ],
+          "hrs": 2,
+          "io": "in",
+          "pram": "part",
+          "price": {
+            "th": "เช็กราคาก่อนไป",
+            "en": "Check the price"
+          },
+          "book": "none",
+          "src": "https://turismo.buenosaires.gob.ar/en/article/activities-kids",
+          "name": {
+            "th": "พิพิธภัณฑ์วิทยาศาสตร์ให้ลองเล่น",
+            "en": "Participative Science Museum"
+          },
+          "kind": "museumkid",
+          "area": {
+            "th": "ศูนย์วัฒนธรรมเรโคเลตา",
+            "en": "Recoleta cultural centre"
+          },
+          "what": {
+            "th": "พิพิธภัณฑ์วิทยาศาสตร์ที่ได้ลองเอง ไฟฟ้า ฟิสิกส์ เคมี ศิลปะ และดนตรี",
+            "en": "A hands-on science museum: electricity, physics, chemistry, art and music"
+          },
+          "why": {
+            "th": "กติกาคือ \"ห้ามไม่จับ\" เด็กได้ลองทุกอย่าง",
+            "en": "Its rule is \"touching allowed\", so children try everything"
+          },
+          "q": "Museo Participativo de Ciencias, Recoleta, Buenos Aires",
+          "ok": "2026-11"
         }
       ]
     },
