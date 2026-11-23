@@ -1417,6 +1417,8 @@ function askBlock(t, i) {
 <div class="chips">${ex.map((x) => `<button class="chip" data-a="ask" ${dv} data-v="${esc(x)}">${esc(x)}</button>`).join('')}</div>
 <div class="call calm askans" id="askans"${a && (a.text || a.html) ? '' : ' hidden'}>${a ? a.html || esc(a.text) : ''}</div></section>`;
 }
+// a navigate button on Today: a pastel card with its picture, opening Maps
+const quickA = (href, pic, g, label) => `<a class="qlink pz" style="--g1:${g}" href="${esc(href)}" target="_blank" rel="noopener"><span class="qkpic"><img src="${pic}" alt="" draggable="false"></span><span class="qtx"><b>${label}</b><small>${L('เปิดในแผนที่', 'Open in Maps')}</small></span></a>`;
 function viewToday(t, j, full) {
   ensureWx(t);   // the live forecast arrives in the background and re-renders once (see core.js)
   const i = j !== undefined && j >= 0 && j < t.days.length ? j : todayIdx(t), d = t.days[i], dn = dayNow(t), until = daysUntil(t), pl = d.plan || {};
@@ -1424,7 +1426,8 @@ function viewToday(t, j, full) {
   // before the trip (owner's review, Nov 2026: this page ran 3,500 px months ahead): the countdown with the two things to do now,
   // the day's timeline, the rest of the day under one line, the bag closed, the kids' mission waiting for the trip
   const pre = dn < 0 && until > 0;   // `full` no longer changes the page: it is the same page with every detail open
-  const banner = dn < 0 && until > 0 ? `<div class="call info${pre ? ' pre' : ''}"><b>${L(`อีก ${until} วันออกเดินทาง`, `${until} days to go`)}</b> <span class="cdsub">${L(`นี่คือแผนวันที่ ${i + 1} จากคู่มือ`, `This is the plan for day ${i + 1}`)}</span></div>`
+  // the countdown and the two navigate buttons wear the menu's pastel cards with a painted picture (owner, Nov 2026: "ปรับ UI")
+  const banner = dn < 0 && until > 0 ? `<div class="call info pre pz cdcard" style="--g1:${PG.orange}"><span class="cdpic"><img src="${HUB_PIC.today}" alt="" draggable="false"></span><div class="cdtx"><small class="cdk">${L('ออกเดินทางในอีก', 'Off we go in')}</small><b><span class="cdn">${until}</span> ${L('วัน', until === 1 ? 'day' : 'days')}</b><span class="cdsub">${L(`นี่คือแผนวันที่ ${i + 1} จากคู่มือ`, `This is the plan for day ${i + 1}`)}</span></div></div>`
     : dn < 0 && until <= 0 ? `<div class="call calm">${L('จบทริปแล้ว — เปิดสมุดความทรงจำได้เลย', 'The trip is over — open the memory book')}</div>` : '';
   const mission = ((t.passport || {}).days || [])[i], nop = `<div class="empty">${L('วันนี้ไม่มีแผนในคู่มือ', 'No plan in the manual for this day')}</div>`;
   return `<div class="daystrip" role="tablist">${strip}</div>
@@ -1432,7 +1435,7 @@ function viewToday(t, j, full) {
 </div></article>
 ${nextCard(t, i)}${changedLine(t, i)}${checkLine(t, i)}${dayFacts(d)}
 ${banner}
-<div class="row quick">${pl.route ? extA(pl.route, ic('route') + ' ' + L('เส้นทางวันนี้', "Today's route"), 'qlink') : ''}${pl.stay ? extA(mapsUrl(pl.stay.q || pl.stay.addr), ic('stays') + ' ' + L('ไปที่พัก', 'To the stay'), 'qlink') : ''}</div>
+<div class="row quick">${pl.route ? quickA(pl.route, HUB_PIC.plan, PG.blue, L('เส้นทางวันนี้', "Today's route")) : ''}${pl.stay ? quickA(mapsUrl(pl.stay.q || pl.stay.addr), HUB_PIC.stays, PG.teal, L('ไปที่พัก', 'To the stay')) : ''}</div>
 ${((g) => (g ? `${g[0]}${dn >= 0 ? budgetLine(t) : ''}${isEditor() && (dn >= 0 || until > 0) ? remindLine(t) : ''}${bagBlock(t, i)}${g[1]}` : `${dn >= 0 ? budgetLine(t) : ''}${isEditor() && (dn >= 0 || until > 0) ? remindLine(t) : ''}${bagBlock(t, i)}${nop}`))(dayGlance(t, i, pre, true, full))}
 ${!pre && mission && (mission.facts || []).length ? `<div class="part kidm">${L('ภารกิจของเด็กๆ วันนี้', "The kids' mission today")}</div><div class="call pick mission"><b>${esc(T(mission.title))}</b><ul class="tips">${mission.facts.map((f) => `<li>${esc(T(f))}</li>`).join('')}</ul></div>` : ''}
 ${changeBlock(t, i)}${nextBlock(t, i)}${askBlock(t, i)}`;
