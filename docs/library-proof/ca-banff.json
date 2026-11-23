@@ -1,0 +1,25 @@
+{
+  "town": "ca-banff",
+  "kind": "eats",
+  "checked": "2026-11",
+  "rule": "A row gets ok only from a current listing, its own site or recent reviews with nothing saying closed (docs/EATS.md). A row is taken out when a search could not find the place at all or the sources disagree; a place found but not freshly confirmed stays without ok.",
+  "scope": "the 2 rows without ok; the rows that already carried ok were not re-checked in this pass",
+  "how": "Google Maps opened in headless Chromium (2026-11-23), limited view without a reviews tab, so no review date could be read; each row's own map query first, then the name with the town, a list result opened when needed; a hotel's own site or one web search only where Maps could not settle it.",
+  "confirmed": [
+    {
+      "name": "Laggan's Mountain Bakery & Delicatessen",
+      "src": "Google Maps",
+      "page_name": "Laggan's",
+      "evidence": "\"Laggan's\", Bakery, 101 Village Rd Bldg B, Floor 1 · Samson Mall, CRGC+45 Lake Louise; \"Closed · Opens 7 AM Mon\"",
+      "ok": "2026-11"
+    }
+  ],
+  "kept_without_ok": [],
+  "removed": [
+    {
+      "name": "Lake Louise Railway Station & Restaurant",
+      "src": "Google Maps",
+      "reason": "\"Lake Louise Railway Station & Restaurant\", 200 Sentinel Rd, CRH6+MR Lake Louise: \"Temporarily closed\"."
+    }
+  ]
+}

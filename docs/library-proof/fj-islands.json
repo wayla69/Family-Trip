@@ -1,0 +1,23 @@
+{
+  "town": "fj-islands",
+  "kind": "eats",
+  "checked": "2026-11",
+  "rule": "A row gets ok only from a current listing, its own site or recent reviews with nothing saying closed (docs/EATS.md). A row is taken out when a search could not find the place at all or the sources disagree; a place found but not freshly confirmed stays without ok.",
+  "scope": "the 2 rows without ok; the rows that already carried ok were not re-checked in this pass",
+  "how": "Google Maps opened in headless Chromium (2026-11-23), limited view without a reviews tab, so no review date could be read; each row's own map query first, then the name with the town, a list result opened when needed; a hotel's own site or one web search only where Maps could not settle it.",
+  "confirmed": [],
+  "kept_without_ok": [
+    {
+      "name": "Tappoo City Food Court",
+      "src": "Google Maps",
+      "evidence": "\"TappooCity Suva\" mall, Thomson & Usher St, shows \"Closes soon · 6 PM\"; the only food-court listing found (\"Pure Green - Tappoo City Food Court Suva\") is one stall and \"Permanently closed\". No listing of the food court itself with hours."
+    }
+  ],
+  "removed": [
+    {
+      "name": "Taste Fiji Kitchen",
+      "src": "Google Maps",
+      "reason": "\"Taste Fiji\", Cawa Rd, Nadi: \"Permanently closed\"."
+    }
+  ]
+}

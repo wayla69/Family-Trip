@@ -10,19 +10,63 @@
       "page_name": "สองผัวเมีย : SongPhuaMia Cafe & Bar (Husband & Wife) เชียงคาน",
       "evidence": "menu updatedTime 2026-04-24, a review dated 2025-11-01, closed:false",
       "ok": "2026-11"
+    },
+    {
+      "name": "Buppa Kaffe",
+      "src": "https://www.google.com/maps/place/บับภา+คาฟเฟ่+Buppa+Kaffe/@17.8958229,101.6551899,17z",
+      "page_name": "บับภา คาฟเฟ่ Buppa Kaffe",
+      "evidence": "Google Maps (2026-11-23): coffee shop, 4.7★, VMW4+73W, Chai Kong, Chiang Khan — by the Mekong, as the row says; 'Open · Closes 7 PM', phone listed; nothing says closed. Map query now uses its Maps name",
+      "ok": "2026-11"
+    },
+    {
+      "name": "Kaeng Khut Khu coconut candy shops",
+      "src": "https://www.google.com/maps/search/มะพร้าวแก้ว+แก่งคุดคู้",
+      "page_name": "ร้านติ๊กมะพร้าวแก้ว",
+      "evidence": "Google Maps (2026-11-23): ร้านติ๊กมะพร้าวแก้ว, 4.6★, on Kaeng Khut Khu Road, 'Open · Closes 7 PM', phone listed; a second maphrao kaeo shop at Kaeng Khut Khu (มา-เลย แก่งคุดคู้ /มะพร้าวแก้ว, 5.0★) is listed too; nothing says closed. Map query now names the first shop",
+      "ok": "2026-11"
     }
   ],
   "kept_without_ok": [
-    {"name": "Rabiang Rim Khong", "src": "https://www.wongnai.com/restaurants/159160zz-ระเบียงริมโขง", "evidence": "listing exists, closed:false, but lastUpdatedTime 2025-05-27 and the newest review 2024-11-04; too old to confirm it is open now"},
-    {"name": "Buppa Kaffe", "evidence": "a Trip.com guide lists it (wooden house café by the Mekong, Chai Kong, Chiang Khan); undated, no current listing found"},
-    {"name": "Kaeng Khut Khu coconut candy shops", "evidence": "coconut candy shops with related names found on Wongnai and mybest; the Kaeng Khut Khu location is not confirmed"}
+    {
+      "name": "Rabiang Rim Khong",
+      "src": "https://www.wongnai.com/restaurants/159160zz-ระเบียงริมโขง",
+      "evidence": "listing exists, closed:false, but lastUpdatedTime 2025-05-27 and the newest review 2024-11-04; too old to confirm it is open now; Google Maps (2026-11-23) finds 'Mekong Balcony Restaurant / ร้านอาหารระเบียงโขง เชียงคาน' at 4 Chai Kong, open to 10 PM, but its name (ระเบียงโขง) is not the row's (ระเบียงริมโขง) and nothing ties the two, so it is not confirmed"
+    }
   ],
   "removed": [
-    {"name": "Luk Lao", "reason": "one web search (snippets only, pages not opened) found no place of this name in Chiang Khan"},
-    {"name": "Khao Pun Nam Jaew Pa Bua Wan", "reason": "one web search (snippets only, pages not opened) found no place of this name"},
-    {"name": "Krua Nid", "reason": "one web search (snippets only, pages not opened) found no place of this name in Mueang Loei"},
-    {"name": "Soi Sao Khao Piak Sen", "reason": "one web search (snippets only, pages not opened) found no khao piak sen shop on a Soi Sao"},
-    {"name": "Loei Night Market", "reason": "one web search (snippets only, pages not opened) found no listing of a Loei night bazaar"},
-    {"name": "Chiang Khan Morning Market", "reason": "one web search (snippets only, pages not opened) found no listing of the morning market"}
+    {
+      "name": "Luk Lao",
+      "reason": "one web search (snippets only, pages not opened) found no place of this name in Chiang Khan"
+    },
+    {
+      "name": "Khao Pun Nam Jaew Pa Bua Wan",
+      "reason": "one web search (snippets only, pages not opened) found no place of this name"
+    },
+    {
+      "name": "Krua Nid",
+      "reason": "one web search (snippets only, pages not opened) found no place of this name in Mueang Loei"
+    },
+    {
+      "name": "Soi Sao Khao Piak Sen",
+      "reason": "one web search (snippets only, pages not opened) found no khao piak sen shop on a Soi Sao"
+    },
+    {
+      "name": "Loei Night Market",
+      "reason": "one web search (snippets only, pages not opened) found no listing of a Loei night bazaar"
+    },
+    {
+      "name": "Chiang Khan Morning Market",
+      "reason": "one web search (snippets only, pages not opened) found no listing of the morning market"
+    }
+  ],
+  "passes": [
+    {
+      "at": "2026-11",
+      "how": "web search, Wongnai pages"
+    },
+    {
+      "at": "2026-11-23",
+      "how": "Google Maps in headless Chromium (limited view, no reviews tab, so no review dates)"
+    }
   ]
 }

@@ -1,0 +1,30 @@
+{
+  "town": "cn-zhangjiajie",
+  "kind": "eats",
+  "checked": "2026-11",
+  "rule": "A row gets ok only from a current listing, its own site or recent reviews with nothing saying closed (docs/EATS.md). A row is taken out when a search could not find the place at all or the sources disagree; a place found but not freshly confirmed stays without ok.",
+  "scope": "the 3 rows without ok; nothing else in the town was re-checked",
+  "how": "Google Maps opened in headless Chromium (2026-11-23), limited view without a reviews tab, so no review date could be read; each row searched with its Chinese name (zh) and/or its English name and the town. Maps' coverage of mainland China is thin: many listings carry no hours at all. A list result's hours line ('Open · Closes 10 PM', or 'Open now', which Maps shows only when it holds the place's hours) counted as a current listing. Where Maps could not settle a row, one web search (snippets only, pages not opened) was made for it.",
+  "confirmed": [
+    {
+      "name": "McDonald's Tianzi Mountain",
+      "src": "Google Maps search (headless Chromium, 2026-11-23)",
+      "page_name": "麦当劳天子山贺龙公园店",
+      "evidence": "list for '麦当劳 天子山 张家界': 麦当劳天子山贺龙公园店, 'Open now'",
+      "ok": "2026-11"
+    }
+  ],
+  "kept_without_ok": [
+    {
+      "name": "Hu Shifu Sanxiaguo",
+      "src": "Google Maps search (headless Chromium, 2026-11-23)",
+      "evidence": "place page 'Hushifu Sanxiaguo 胡师傅三下锅', 4FM9+G6W Ziwu Rd, Yongding — no hours shown"
+    },
+    {
+      "name": "Zhunaoke Cold Noodles",
+      "src": "Google Maps search (headless Chromium, 2026-11-23)",
+      "evidence": "'Zhunao Keliangmian', 4FFP+9GG Nanzheng St — no hours shown"
+    }
+  ],
+  "removed": []
+}
