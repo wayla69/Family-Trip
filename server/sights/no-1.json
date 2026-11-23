@@ -554,6 +554,80 @@
           "q": "Tromsø Klatresenter, Tromsø",
           "ok": "2026-11",
           "src": "https://tromsoklatresenter.no/priser"
+        },
+        {
+          "local": "Tromsø bibliotek",
+          "ages": [
+            2,
+            2,
+            2,
+            1
+          ],
+          "hrs": 1,
+          "io": "in",
+          "pram": "yes",
+          "price": {
+            "th": "ฟรี",
+            "en": "Free"
+          },
+          "book": "none",
+          "src": "https://www.thenextguide.com/itineraries/tromso/tromso-with-kids-2-winter-days-family-friendly-march",
+          "name": {
+            "th": "ห้องสมุดเมืองทรอมเซอ",
+            "en": "Tromsø City Library"
+          },
+          "kind": "play",
+          "area": {
+            "th": "ถนนกรึนเนกาตา ทรอมเซอ",
+            "en": "Grønnegata, Tromsø"
+          },
+          "what": {
+            "th": "ห้องสมุดเป็นมิตรกับเด็ก มีมุมเด็กสว่างสดใส",
+            "en": "A child-friendly library with a bright children's section"
+          },
+          "why": {
+            "th": "ที่ในร่มเงียบสงบไว้อุ่นร่างกาย",
+            "en": "A calm indoor place to warm up"
+          },
+          "q": "Tromsø City Library, Grønnegata 94, Tromsø",
+          "ok": "2026-11"
+        },
+        {
+          "local": "Ishavskatedralen",
+          "ages": [
+            1,
+            1,
+            2,
+            2
+          ],
+          "hrs": 0.5,
+          "io": "in",
+          "pram": "part",
+          "price": {
+            "th": "เช็กราคาก่อนไป",
+            "en": "Check the price"
+          },
+          "book": "none",
+          "src": "https://www.thenextguide.com/itineraries/tromso/tromso-with-kids-2-winter-days-family-friendly-march",
+          "name": {
+            "th": "มหาวิหารอาร์กติก",
+            "en": "Arctic Cathedral"
+          },
+          "kind": "culture",
+          "area": {
+            "th": "ทรอมส์ดาเลิน",
+            "en": "Tromsdalen"
+          },
+          "what": {
+            "th": "โบสถ์สัญลักษณ์ของทรอมเซอ ใช้เวลาชม 30–45 นาที",
+            "en": "Tromsø's landmark church, a 30 to 45 minute visit"
+          },
+          "why": {
+            "th": "ภายในสงบ และเดินไม่มาก",
+            "en": "A calm inside and little walking"
+          },
+          "q": "Arctic Cathedral, Hans Nilsens veg 41, Tromsdalen",
+          "ok": "2026-11"
         }
       ]
     }
