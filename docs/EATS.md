@@ -290,3 +290,26 @@ batch-32 of docs/library-briefs. +7: Sangizar, Jasmin, The Mohon (Samarkand); La
 
 ### Kathmandu, 23 Nov 2026
 batch-30 of docs/library-briefs. +3: Jimbu Thakali by Capital Grill, Alice Restaurant, Kaiser Café. Proof in `docs/library-proof/np-kathmandu.json`.
+### Abu Dhabi, 23 Nov 2026
+batch-06 of docs/library-briefs. +2: Sidekicks (cartoon characters, children’s dishes), Crust (family Friday brunch). Out: six restaurants whose only source was restaurantsforkings.com. Proof in `docs/library-proof/ae-abudhabi.json`.
+
+### Tbilisi and Kazbegi, 23 Nov 2026
+batch-15 of docs/library-briefs. +5: Daphna, Lolita, Sakhachapure N1 (Galleria), Café Leila, and the Dariali monastery café. Proof in `docs/library-proof/ge-tbilisi.json`.
+
+### Fes, Chefchaouen & Meknes, 23 Nov 2026
+batch-20 of docs/library-briefs. +4 in Chefchaouen: The Morisco Terrace, Assaada, Restaurant Hamsa, Bilmos Cafe. Proof in `docs/library-proof/ma-fes.json`.
+
+### Marrakech, 23 Nov 2026
+batch-20 of docs/library-briefs. +1: Beldi Fusion Kitchen Guéliz. Proof in `docs/library-proof/ma-marrakech.json`.
+
+### Cape Town, 23 Nov 2026
+batch-26 of docs/library-briefs. +5: Café Roux and The Foodbarn (Noordhoek), Dunes and Massimo's (Hout Bay), Good Thyme Café (Bellville). Proof in `docs/library-proof/za-capetown.json`.
+
+### Luxor, 23 Nov 2026
+batch-27 of docs/library-briefs. +9: Snobs, Pizza Roma.It, Wannas Art Café, El Hussein, The Lantern Room, El-Kababgy, Nile Valley, Ottoman Hall (Al Moudira), Silk Road (Hilton). Proof in `docs/library-proof/eg-luxor.json`.
+
+### Nairobi, 23 Nov 2026
+batch-29 of docs/library-briefs. +9: Pili (GTC Mall), Hunger's Nest, Bao Box, Bwibo, Zen Garden, Golden Star, Under the Swahili Tree, Red Ginger, Tamambo (Tatu City). Proof in `docs/library-proof/ke-mara.json`.
+
+### Kruger, 23 Nov 2026
+batch-32 of docs/library-briefs. +8 rest-camp restaurants: Mugg & Bean (Lower Sabie), Tindlovu (Letaba, Berg-en-Dal), Mopani, Pretoriuskop, Wimpy (Pretoriuskop), Punda Maria, Shingwedzi. Proof in `docs/library-proof/za-kruger.json`.

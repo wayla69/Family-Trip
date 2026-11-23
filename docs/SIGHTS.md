@@ -131,3 +131,14 @@ nightlife, and religious sites that ask visitors to keep away.
 - **23 Nov 2026, Samarkand & Bukhara** (docs/library-briefs batch-32): +3 (Samanid Park, the Silk Road Samarkand fountain, the Eternal City). Proof in `docs/library-proof/uz-samarkand.json`.
 - **23 Nov 2026, the Maldives** (docs/library-briefs batch-30): +1 (the Malé fish market). Proof in `docs/library-proof/mv-atolls.json`.
 - **23 Nov 2026, Kathmandu** (docs/library-briefs batch-30): +2 (Durbar Square, Pottery Square in Bhaktapur). Proof in `docs/library-proof/np-kathmandu.json`.
+- **23 Nov 2026, Abu Dhabi** (docs/library-briefs batch-06): +7 (Natural History Museum, Zayed National Museum, teamLab Phenomena, The National Aquarium, Orange Wheels, Air Maniax, Mission: Play!). Proof in `docs/library-proof/ae-abudhabi.json`.
+- **23 Nov 2026, Cairo and Giza** (docs/library-briefs batch-12): +9 from edarabia.com (KidZoo, KidZania, Blue Lotus Farm, Fagnoon, Sitara Theatre, ClubLiko, Billy Beez, Magic Galaxy, Swiss Club). No places to eat: the only list read machine-written. Proof in `docs/library-proof/eg-cairo.json`.
+- **23 Nov 2026, Tbilisi and Kazbegi** (docs/library-briefs batch-15): +8 (Gergeti Trinity, the Leghvtakhevi waterfall, the Bridge of Peace, Sioni, the Sno stone heads, Zakagori, Dariali monastery, Ioane Natlismcemeli). Proof in `docs/library-proof/ge-tbilisi.json`.
+- **23 Nov 2026, Fes, Chefchaouen & Meknes** (docs/library-briefs batch-20): +3 (the Spanish Mosque viewpoint, Bab Mansour, the Moulay Ismail mausoleum). Proof in `docs/library-proof/ma-fes.json`.
+- **23 Nov 2026, Marrakech** (docs/library-briefs batch-20): +1 (Ouzoud Falls). Proof in `docs/library-proof/ma-marrakech.json`.
+- **23 Nov 2026, Cappadocia** (docs/library-briefs batch-23): +4 (Paşabağ, Rose Valley, the doll museum in Mustafapaşa, the Three Beauties). Proof in `docs/library-proof/tr-cappadocia.json`.
+- **23 Nov 2026, Pamukkale** (docs/library-briefs batch-24): +2 (Pamukkale Natural Park, Çamlık Park in Denizli). Proof in `docs/library-proof/tr-pamukkale.json`.
+- **23 Nov 2026, Cape Town** (docs/library-briefs batch-26): +3 (Paradise Park, Battery Park, the Constantia Uitsig bike park). Proof in `docs/library-proof/za-capetown.json`.
+- **23 Nov 2026, Luxor** (docs/library-briefs batch-27): +3 (the Corniche, the Temple of Khnum at Esna, the Tombs of the Nobles). Proof in `docs/library-proof/eg-luxor.json`.
+- **23 Nov 2026, Nairobi** (docs/library-briefs batch-29): +5 (Ngong Hills, Uhuru Gardens, the Railway Museum, Michuki Memorial Park, City Park). Proof in `docs/library-proof/ke-mara.json`.
+- **23 Nov 2026, Kruger** (docs/library-briefs batch-32): +1 (Lower Sabie Rest Camp). Proof in `docs/library-proof/za-kruger.json`.

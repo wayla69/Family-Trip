@@ -258,6 +258,203 @@
           "book": "none",
           "q": "Nairobi Gallery, Kenyatta Avenue, Nairobi",
           "src": "https://museums.or.ke/wp-content/uploads/2026/04/Revision-of-NMK-admission-fees-2026-Website.pdf"
+        },
+        {
+          "local": "",
+          "ages": [
+            0,
+            1,
+            2,
+            2
+          ],
+          "hrs": 4,
+          "io": "out",
+          "pram": "no",
+          "price": {
+            "th": "เช็กราคาก่อนไป",
+            "en": "Check the price"
+          },
+          "book": "none",
+          "src": "https://tamarind.co.ke/our-blog/post/best-family-outing-destinations-nairobi",
+          "name": {
+            "th": "เนินเขางอง",
+            "en": "Ngong Hills"
+          },
+          "kind": "nature",
+          "area": {
+            "th": "ทางตะวันตกเฉียงใต้ของไนโรบี",
+            "en": "Southwest of Nairobi"
+          },
+          "what": {
+            "th": "เส้นทางเดินเขาวิวหุบเขาริฟต์",
+            "en": "Hiking trails with views of the Rift Valley"
+          },
+          "why": {
+            "th": "มีซิปไลน์ ทางจักรยาน และยิงธนู",
+            "en": "Zip lines, cycling paths and archery"
+          },
+          "tip": {
+            "th": "ไปเช้าตรู่หรือบ่ายแก่ ๆ อากาศเย็นกว่า",
+            "en": "Go early morning or late afternoon, when it is cooler"
+          },
+          "q": "Ngong Hills, Kenya",
+          "ok": "2026-11"
+        },
+        {
+          "local": "",
+          "ages": [
+            2,
+            2,
+            2,
+            2
+          ],
+          "hrs": 2,
+          "io": "out",
+          "pram": "yes",
+          "price": {
+            "th": "เช็กราคาก่อนไป",
+            "en": "Check the price"
+          },
+          "book": "none",
+          "src": "https://tamarind.co.ke/our-blog/post/best-family-outing-destinations-nairobi",
+          "name": {
+            "th": "สวนอูฮูรู",
+            "en": "Uhuru Gardens"
+          },
+          "kind": "park",
+          "area": {
+            "th": "ไนโรบี",
+            "en": "Nairobi"
+          },
+          "what": {
+            "th": "อุทยานอนุสรณ์แห่งชาติกว้างใหญ่ ทั้งประวัติศาสตร์และพักผ่อน",
+            "en": "A big national monument park with history and recreation"
+          },
+          "why": {
+            "th": "ลานเล่นใหญ่ มีม้าหมุน ชิงช้าสวรรค์ และปราสาทเป่าลม",
+            "en": "A big play area with merry-go-rounds, a Ferris wheel and bouncy castles"
+          },
+          "tip": {
+            "th": "เช้าตรู่ถึงราว 11:00 คนน้อยที่สุด",
+            "en": "Early morning until about 11:00 is quietest"
+          },
+          "q": "Uhuru Gardens, Nairobi",
+          "ok": "2026-11"
+        },
+        {
+          "local": "",
+          "ages": [
+            1,
+            2,
+            2,
+            2
+          ],
+          "hrs": 1.5,
+          "io": "both",
+          "pram": "part",
+          "price": {
+            "th": "เช็กราคาก่อนไป",
+            "en": "Check the price"
+          },
+          "book": "none",
+          "src": "https://tamarind.co.ke/our-blog/post/best-family-outing-destinations-nairobi",
+          "name": {
+            "th": "พิพิธภัณฑ์รถไฟไนโรบี",
+            "en": "Nairobi Railway Museum"
+          },
+          "kind": "museumkid",
+          "area": {
+            "th": "ไนโรบี",
+            "en": "Nairobi"
+          },
+          "what": {
+            "th": "หัวรถจักรเก่าและสิ่งของเล่าเรื่องรถไฟของเคนยา",
+            "en": "Old locomotives and railway objects telling Kenya's railway story"
+          },
+          "why": {
+            "th": "มีไกด์เล่าเรื่องรถไฟ",
+            "en": "A guide shares the trains' stories"
+          },
+          "tip": {
+            "th": "8:00–11:00 คนน้อยที่สุด",
+            "en": "8:00 to 11:00 is quietest"
+          },
+          "q": "Kenya Railway Museum, Station Road, Nairobi",
+          "ok": "2026-11"
+        },
+        {
+          "local": "",
+          "ages": [
+            2,
+            2,
+            2,
+            2
+          ],
+          "hrs": 1,
+          "io": "out",
+          "pram": "yes",
+          "price": {
+            "th": "เช็กราคาก่อนไป",
+            "en": "Check the price"
+          },
+          "book": "none",
+          "src": "https://k24.digital/lifestyle/travel-and-leisure/10-free-places-to-visit-with-children-in-nairobi-during-the-august-school-holidays/amp",
+          "name": {
+            "th": "สวนอนุสรณ์จอห์น มิชูกิ",
+            "en": "John Michuki Memorial Park"
+          },
+          "kind": "park",
+          "area": {
+            "th": "ระหว่างใจกลางเมืองกับอัปเปอร์ฮิลล์",
+            "en": "Between the centre and Upper Hill"
+          },
+          "what": {
+            "th": "พื้นที่สีเขียวเงียบสงบ มีทางเดิน สนามหญ้า และที่นั่งร่ม",
+            "en": "A quiet green space with walking paths, lawns and shade"
+          },
+          "why": {
+            "th": "เดินชมธรรมชาติ ดูนก และเล่นเกมง่าย ๆ",
+            "en": "Nature walks, bird watching and simple games"
+          },
+          "q": "John Michuki Memorial Park, Nairobi",
+          "ok": "2026-11"
+        },
+        {
+          "local": "",
+          "ages": [
+            1,
+            2,
+            2,
+            2
+          ],
+          "hrs": 1.5,
+          "io": "out",
+          "pram": "part",
+          "price": {
+            "th": "ฟรี",
+            "en": "Free"
+          },
+          "book": "none",
+          "src": "https://k24.digital/lifestyle/travel-and-leisure/10-free-places-to-visit-with-children-in-nairobi-during-the-august-school-holidays/amp",
+          "name": {
+            "th": "สวนซิตีพาร์ก",
+            "en": "City Park"
+          },
+          "kind": "park",
+          "area": {
+            "th": "ไนโรบี",
+            "en": "Nairobi"
+          },
+          "what": {
+            "th": "พื้นที่สีเขียวกว้างกับป่าธรรมชาติ",
+            "en": "Open green space with natural woodland"
+          },
+          "why": {
+            "th": "เหมาะกับเด็กที่ชอบสำรวจกลางแจ้ง",
+            "en": "For children who like exploring outdoors"
+          },
+          "q": "City Park, Nairobi",
+          "ok": "2026-11"
         }
       ]
     }

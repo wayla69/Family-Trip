@@ -1,17 +1,44 @@
 {
   "town": "tr-cappadocia",
-  "kind": "eats",
-  "checked": "2026-11",
-  "rule": "A row gets ok only from a current listing, its own site or recent reviews with nothing saying closed (docs/EATS.md). A row is taken out when a search could not find the place at all or the sources disagree; a place found but not freshly confirmed stays without ok.",
-  "scope": "the 1 row without ok; the rows already confirmed were not checked again",
-  "how": "Google Maps opened in headless Chromium (2026-11-23), limited view without a reviews tab, so no review date could be read; a place with current hours and no closed notice counts as a current listing",
-  "confirmed": [],
-  "kept_without_ok": [],
-  "removed": [
+  "kind": "eats + sights",
+  "checked": "2026-11-23",
+  "rule": "library-check.cjs, then the Google Maps Reviews tab sorted by newest: ok only when not marked closed, with a review from the last six months, and the map's name matching the page's.",
+  "agents": "one Haiku agent; 5 rows from Chasing the Donkey (2026) and Cappadocia4u (2025) passed library-check.cjs, 4 went in; no dated page named a new place to eat",
+  "added": [
     {
-      "name": "Köy Evi",
-      "src": "https://www.google.com/maps/place/K%C3%B6y+Evi/@38.641075,34.8315378,17z",
-      "reason": "Google Maps: 'Köy Evi', Gaferli mh Aydın Kırağı Sk. no:40, Göreme (JRRJ+CJ) — 'Permanently closed'"
+      "name": "Paşabağ",
+      "page_name": "Pasabag",
+      "src": "https://chasingthedonkey.com/family-vacation-in-cappadocia-with-kids",
+      "date": "2026-01",
+      "map": "Google Maps 'Paşabağ Vadisi', Çavuşin, 2,331 reviews, newest '23 hours ago'"
+    },
+    {
+      "name": "Rose Valley",
+      "page_name": "Rose Valley",
+      "src": "https://chasingthedonkey.com/family-vacation-in-cappadocia-with-kids",
+      "date": "2026-01",
+      "map": "Google Maps Gül vadisi, Göreme, 2,046 reviews, newest 'last week'"
+    },
+    {
+      "name": "Cappadocia Art & History Museum (dolls)",
+      "page_name": "Cappadocia Museum of Art and History – Doll Museum",
+      "src": "https://cappadocia4u.com/cappadocia-for-families-kids",
+      "date": "2025-09",
+      "map": "Google Maps 'Cappadocia Art & History Museum', Mustafapaşa, 348 reviews, newest '3 days ago'"
+    },
+    {
+      "name": "The Three Beauties",
+      "page_name": "The Three Beauties – Urgup",
+      "src": "https://cappadocia4u.com/cappadocia-for-families-kids",
+      "date": "2025-09",
+      "map": "Google Maps 'Three Beauties', 16,681 reviews, newest '4 hours ago'"
     }
-  ]
+  ],
+  "left_out": [
+    {
+      "name": "Fun Gondola ride on Kızılırmak Red River",
+      "why": "boat rides sold by operators"
+    }
+  ],
+  "estimates": "Ages and visit hours are placeholders; prices and opening notes are the pages' own."
 }
