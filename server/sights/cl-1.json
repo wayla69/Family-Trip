@@ -175,6 +175,154 @@
           "q": "Chuquicamata, Calama, Chile",
           "ok": "2026-11",
           "src": "https://www.nomades.com/en/blog/how-to-visit-chuquicamata-one-of-the-world-largest-open-pit-mines/"
+        },
+        {
+          "local": "Valle de Marte",
+          "ages": [
+            0,
+            0,
+            1,
+            2
+          ],
+          "hrs": 2,
+          "io": "out",
+          "pram": "no",
+          "price": {
+            "th": "เช็กราคาก่อนไป",
+            "en": "Check the price"
+          },
+          "book": "none",
+          "src": "https://sanpedroatacama.com/en/is-it-a-good-idea-to-travel-to-san-pedro-de-atacama-with-kids/",
+          "name": {
+            "th": "หุบเขาดาวอังคาร",
+            "en": "Mars Valley"
+          },
+          "kind": "nature",
+          "area": {
+            "th": "ซันเปโดรเดอาตากามา",
+            "en": "San Pedro de Atacama"
+          },
+          "what": {
+            "th": "เนินทรายที่เล่นแซนด์บอร์ดไถลลงมาได้",
+            "en": "Dunes where you can slide down on a sandboard"
+          },
+          "why": {
+            "th": "หน้าเว็บบอกว่าแซนด์บอร์ดที่นี่สนุกที่สุดอย่างหนึ่งสำหรับเด็ก 7–8 ขวบขึ้นไป",
+            "en": "The page calls sandboarding here one of the most exciting things for children aged 7–8 and up"
+          },
+          "q": "Mars Valley, San Pedro de Atacama",
+          "ok": "2026-11"
+        },
+        {
+          "local": "Mirador de Kari",
+          "ages": [
+            1,
+            2,
+            2,
+            2
+          ],
+          "hrs": 1,
+          "io": "out",
+          "pram": "part",
+          "price": {
+            "th": "เช็กราคาก่อนไป",
+            "en": "Check the price"
+          },
+          "book": "none",
+          "src": "https://sanpedroatacama.com/en/destination/what-to-visit/valleys-and-viewpoints/",
+          "name": {
+            "th": "จุดชมวิวคารี",
+            "en": "Kari viewpoint (Piedra del Coyote)"
+          },
+          "kind": "views",
+          "area": {
+            "th": "ซันเปโดรเดอาตากามา",
+            "en": "San Pedro de Atacama"
+          },
+          "what": {
+            "th": "จุดชมวิวสูง 2,550 เมตร รู้จักกันในชื่อหินโคโยตี",
+            "en": "A viewpoint at 2,550 metres, known as the Coyote Stone"
+          },
+          "why": {
+            "th": "หนึ่งในภาพโปสการ์ดที่ขึ้นชื่อที่สุดของซันเปโดร",
+            "en": "One of San Pedro's best-known postcards"
+          },
+          "q": "Mirador de Kari, Piedra del Coyote, San Pedro de Atacama",
+          "ok": "2026-11"
+        },
+        {
+          "local": "Valle del Arcoíris",
+          "ages": [
+            1,
+            2,
+            2,
+            2
+          ],
+          "hrs": 3,
+          "io": "out",
+          "pram": "part",
+          "price": {
+            "th": "เช็กราคาก่อนไป",
+            "en": "Check the price"
+          },
+          "book": "none",
+          "src": "https://sanpedroatacama.com/en/destination/what-to-visit/valleys-and-viewpoints/",
+          "name": {
+            "th": "หุบเขาสายรุ้ง",
+            "en": "Rainbow Valley"
+          },
+          "kind": "nature",
+          "area": {
+            "th": "ริโอกรันเด ห่างซันเปโดรราว 90 กม.",
+            "en": "Río Grande, about 90 km from San Pedro"
+          },
+          "what": {
+            "th": "หุบเขาที่พื้นดินมีสีสดจากแร่ธาตุผสมกัน",
+            "en": "A valley of brightly coloured ground from mixed minerals"
+          },
+          "why": {
+            "th": "พื้นดินสีเขียว แดง ขาว เหลือง และเทา",
+            "en": "Greens, reds, whites, yellows and greys in the ground"
+          },
+          "q": "Valle del Arcoiris, San Pedro de Atacama",
+          "ok": "2026-11"
+        },
+        {
+          "local": "Lagunas Escondidas de Baltinache",
+          "ages": [
+            0,
+            1,
+            2,
+            2
+          ],
+          "hrs": 3,
+          "io": "out",
+          "pram": "part",
+          "price": {
+            "th": "เช็กราคาก่อนไป",
+            "en": "Check the price"
+          },
+          "book": "none",
+          "src": "https://sanpedroatacama.com/en/destination/what-to-visit/lagoons-and-thermal-baths/",
+          "name": {
+            "th": "ลากูนซ่อนเร้นบัลตินาเช",
+            "en": "Baltinache hidden lagoons"
+          },
+          "kind": "nature",
+          "area": {
+            "th": "บัลตินาเช",
+            "en": "Baltinache"
+          },
+          "what": {
+            "th": "ลากูนสีฟ้าครามจากภูเขาไฟกลางทะเลทราย หล่อเลี้ยงด้วยน้ำใต้ดิน",
+            "en": "Turquoise lagoons of volcanic origin in the desert, fed by groundwater"
+          },
+          "why": {
+            "th": "น้ำสีฟ้าครามกลางทะเลทราย",
+            "en": "Turquoise water in the middle of the desert"
+          },
+          "q": "Lagunas Escondidas de Baltinache",
+          "ok": "2026-11"
         }
       ]
     },
