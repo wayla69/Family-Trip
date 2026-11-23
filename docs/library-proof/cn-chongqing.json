@@ -1,103 +1,31 @@
 {
   "town": "cn-chongqing",
-  "kind": "eats",
+  "kind": "eats + sights",
+  "checked": "2026-11-23",
+  "rule": "library-check.cjs, then the Google Maps Reviews tab sorted by newest: ok only when not marked closed, with a review from the last six months, and the map's name matching the page's.",
+  "agents": "one Haiku agent; 4 rows from one Trip.com traveller's guide (Sept 2026) passed library-check.cjs, 1 went in",
   "added": [
     {
-      "name": "Xi Yang Yang",
-      "area": "LG21, Park 108 Shopping Center, 108 Zourong Road, Yuzhong District",
-      "src": "https://www.cathaypacific.com/cx/en_GB/inspiration/dining/best-restaurants-chongqing.html",
-      "date": "2025-10-16 (the page's own creation date, discoveryCreationDate)",
-      "quote": "This local institution has captivated food lovers for years with its signature steamed pork ribs with millet.",
-      "address_on_page": "LG21, Park 108 Shopping Center, 108 Zourong Road, Yuzhong District",
-      "price": "not printed on the page, so Check the price",
-      "checker": "name, quote and address are on the page; the checker does not read discoveryCreationDate, so it reports 'page date none'. The date was checked by hand. The page is a guide from 2025-10, which does not show the place is open now.",
-      "ok": "not set: no current listing, own site or recent review was found (searched in English and Chinese, 2026-11), so the row stays unconfirmed like the others"
+      "name": "Uncle Biao Tea Restaurant",
+      "page_name": "Uncle Biao Tea Restaurant",
+      "src": "https://ph.trip.com/moments/poi-lu-zu-temple-56805091",
+      "date": "2026-09",
+      "map": "Google Maps Baidu Maps '表叔Uncle·港式茶餐厅(解放碑店)', 重庆市渝中区大同路93号, 155 reviews, newest 2026-10-08"
     }
   ],
-  "removed": [
+  "left_out": [
     {
-      "name": "Qin Ma Hot Pot",
-      "reason": "in one web search (snippets only, pages not opened) the sources disagree on the area (Jiefangbei vs Longxi); no current Jiefangbei address found"
+      "name": "Dengdeng noodles",
+      "why": "a chain with two branches (十八梯邓凳面); the page names none"
     },
     {
-      "name": "Dezhuang Hot Pot",
-      "reason": "one web search (snippets only, pages not opened) found no Nanping branch; the only branch found is in Nan'an"
+      "name": "Luzumiao Old Street",
+      "why": "a whole street"
     },
     {
-      "name": "Shun Feng 123",
-      "reason": "one web search (snippets only, pages not opened) found no Jiefangbei branch; the only branch found is in Guanyinqiao"
-    },
-    {
-      "name": "Tao Ran Ju",
-      "reason": "one web search (snippets only, pages not opened) found no Nanbin Road branch; the only address found is on Zourong Road"
-    },
-    {
-      "name": "Lao Sichuan",
-      "reason": "one web search (snippets only, pages not opened) found nothing matching a 1930s Bayi Road beef restaurant"
+      "name": "Xiangzhao Buffet",
+      "why": "a hotel buffet the page only mentions in passing"
     }
   ],
-  "still_unverified_in_town": [
-    "Xi Yang Yang (added from a 2025-10 guide; no ok month until a current listing confirms it)",
-    "Pei Jie Lao Huoguo (no ok month; the only branch in sources is Hongya Cave, the Jiefangbei address is unconfirmed)",
-    "Cygnet Hot Pot (Hongyadong) (no ok month; the Hongyadong branch is from a single guide)",
-    "Chen Changyin Mahua (no ok month; the brand is in Ciqikou, the shop row is not confirmed)",
-    "Jiaotong Teahouse (no ok month)"
-  ],
-  "removed_rule": "Taken out because the row stayed in doubt after a search (docs/EATS.md: a row left in doubt is taken out), not because the place is proved closed.",
-  "passes": [
-    {
-      "checked": "2026-11",
-      "scope": "the 7 rows without ok; nothing else in the town was re-checked",
-      "how": "Google Maps opened in headless Chromium (2026-11-23), limited view without a reviews tab, so no review date could be read; each row searched with its Chinese name (zh) and/or its English name and the town. Maps' coverage of mainland China is thin: many listings carry no hours at all. A list result's hours line ('Open · Closes 10 PM', or 'Open now', which Maps shows only when it holds the place's hours) counted as a current listing. Where Maps could not settle a row, one web search (snippets only, pages not opened) was made for it.",
-      "confirmed": [
-        {
-          "name": "Cygnet Hot Pot (Hongyadong)",
-          "src": "Google Maps search (headless Chromium, 2026-11-23)",
-          "page_name": "重庆小天鹅",
-          "evidence": "list for '小天鹅火锅 洪崖洞 重庆': 嘉滨路88号洪崖洞风景区4楼, 'Closes soon · 2 PM · Reopens 5 PM'",
-          "ok": "2026-11"
-        },
-        {
-          "name": "Bayi Road Food Street",
-          "src": "Google Maps search (headless Chromium, 2026-11-23)",
-          "page_name": "Chongqing Haochi Street 重庆好吃街",
-          "evidence": "the street's own listing (HH4G+9X9, Bayi Rd) has no hours, but shops at that place do: '好又来酸辣粉 · 解放碑好吃街 · Open now', 'Mountain City Xiaotangyuan · 234 Bayi Rd · Open now'",
-          "ok": "2026-11"
-        },
-        {
-          "name": "Hao You Lai Suan La Fen",
-          "src": "Google Maps search (headless Chromium, 2026-11-23)",
-          "page_name": "好又来酸辣粉",
-          "evidence": "list for '好又来酸辣粉 重庆': 好又来酸辣粉, 餐馆 · 解放碑好吃街, 'Open now'",
-          "ok": "2026-11"
-        },
-        {
-          "name": "Shancheng Xiao Tangyuan",
-          "src": "Google Maps search (headless Chromium, 2026-11-23)",
-          "page_name": "Mountain City Xiaotangyuan",
-          "evidence": "list for '山城小汤圆 重庆': 234 Bayi Rd, 'Open now'",
-          "ok": "2026-11"
-        }
-      ],
-      "kept_without_ok": [
-        {
-          "name": "Pei Jie Lao Huoguo",
-          "src": "Google Maps search (headless Chromium, 2026-11-23)",
-          "evidence": "place page '珮姐老火锅', HH3F+M3 Yuzhong (教场口, Jiefangbei) — no hours on the listing (only a visitor's note in the address field)"
-        },
-        {
-          "name": "Xi Yang Yang",
-          "src": "Google Maps search (headless Chromium, 2026-11-23); web search (2026-11-23, snippets only)",
-          "evidence": "no listing at Park 108 (108 Zourong Rd); Maps' only '喜洋洋餐馆' is at 79 Zhongshansi Rd, Daxigou (HG7X+P5), about 2.5 km away, 'Closes soon · 2 PM · Reopens 5:30 PM' — not shown to be the same place. A web search found only the 2025-10 Cathay Pacific guide again"
-        },
-        {
-          "name": "Chen Changyin Mahua",
-          "src": "Google Maps search (headless Chromium, 2026-11-23)",
-          "evidence": "list '陈昌银麻花', 磁器口正街黄桷坪一巷 — no hours; '陈麻花' 磁器口牌坊口左边第一家 'Open now' is only a similar name"
-        }
-      ],
-      "removed": [],
-      "label": "Google Maps pass, 2026-11-23"
-    }
-  ]
+  "estimates": "Ages and visit hours are placeholders; prices and opening notes are the pages' own."
 }

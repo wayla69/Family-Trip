@@ -529,3 +529,6 @@ batch-19 of docs/library-briefs. +2: Cappuccino, TomYumBar. Proof in `docs/libra
 
 ### Yangon, 23 Nov 2026
 batch-29 of docs/library-briefs. +2: Sharky's, Chatrium Hotel Royal Lake. Proof in `docs/library-proof/mm-yangon.json`.
+
+### Chongqing, 23 Nov 2026
+batch-33 of docs/library-briefs (round 2). +1: Uncle Biao (Hong Kong tea restaurant by Luzumiao), checked on Baidu Maps. Proof in `docs/library-proof/cn-chongqing.json`.
