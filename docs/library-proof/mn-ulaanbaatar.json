@@ -1,16 +1,41 @@
 {
   "town": "mn-ulaanbaatar",
-  "kind": "eats",
-  "checked": "2026-11",
-  "rule": "A row gets ok only from a current listing, its own site or recent reviews with nothing saying closed (docs/EATS.md). A row is taken out when a search could not find the place at all or the sources disagree; a place found but not freshly confirmed stays without ok.",
-  "scope": "the 1 row without ok; the rows already confirmed were not checked again",
-  "how": "Google Maps opened in headless Chromium (2026-11-23), limited view without a reviews tab, so no review date could be read; a place with current hours and no closed notice counts as a current listing",
-  "confirmed": [],
-  "kept_without_ok": [],
-  "removed": [
+  "kind": "eats + sights",
+  "checked": "2026-11-23",
+  "rule": "library-check.cjs, then the Google Maps Reviews tab sorted by newest: ok only when not marked closed, with a review from the last six months, and the map's name matching the page's.",
+  "agents": "one Haiku agent; 7 rows from Meanwhile in Mongolia (2025–2026) and Indagare (2026) passed library-check.cjs, 3 went in",
+  "added": [
     {
-      "name": "BD's Mongolian Grill",
-      "reason": "Google Maps could not find it ('BD's Mongolian Grill, Seoul Street' showed only Seoul Street itself; 'BD's Mongolian Barbeque Ulaanbaatar' listed other grills, several permanently closed); the franchise's own release placed the Ulaanbaatar restaurant at T-31 Baga Toiruu, where Maps shows 'khaan nomads', Бага тойруу 31 — 'Permanently closed'"
+      "name": "Altan Gadas Restaurant",
+      "page_name": "Altan Gadas Restaurant",
+      "src": "https://meanwhileinmongolia.com/mongolian-food-ulaanbaatar/",
+      "date": "2026-05",
+      "map": "Google Maps 'Altangadas Restaurant', 215 reviews, newest '3 days ago'"
+    },
+    {
+      "name": "Arak Yak House",
+      "page_name": "Arak Yak House",
+      "src": "https://meanwhileinmongolia.com/mongolian-food-ulaanbaatar/",
+      "date": "2026-05",
+      "map": "Google Maps 'ARA YAK house', 21 reviews, newest '3 weeks ago'"
+    },
+    {
+      "name": "Mongolian's Restaurant (Shangri-La Mall)",
+      "page_name": "Mongolian’s Restaurant",
+      "src": "https://indagare.com/restaurant/mongolians-restaurant-shangri-la-mall",
+      "date": "2026-07",
+      "map": "Google Maps 'Mongolian’s Restaurant, Shangri-La Mall', 541 reviews, newest '1 day ago'"
     }
-  ]
+  ],
+  "left_out": [
+    {
+      "name": "Ulaanbaatar Zoo and Aquarium, Central Museum of Mongolian Dinosaurs, Tsagaan Lavai Ensemble",
+      "why": "the map shows other places for these names"
+    },
+    {
+      "name": "Mongol Culture Park",
+      "why": "horse racing and mounted archery shows (animal performances)"
+    }
+  ],
+  "estimates": "Ages and visit hours are placeholders; prices and opening notes are the pages' own."
 }
