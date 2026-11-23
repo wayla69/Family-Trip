@@ -164,6 +164,7 @@ details.fold[open]>summary{margin-bottom:8px}.planblk.fold .dayplan{margin-top:4
    the eat page's navigate buttons and inline map links (which keep their place in the text through negative margins) */
 main .chip,main .btn.small,main .mini,main .seg button,main .linkbtn,.stayc .go,.eatday a.go,.eatday button.go,.remind .btn{min-height:44px}
 main .chip{padding:8px 14px}main .mini{padding:8px 10px}
+main .mini{min-width:44px}a.maplink{min-width:44px;text-align:center}
 .eatday a.go.sq{min-width:44px;display:inline-grid;place-items:center}
 a.maplink{display:inline-block;padding:10px 0;margin:-10px 0}
 .bag summary{min-height:44px;display:flex;align-items:center;gap:8px}
