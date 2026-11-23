@@ -915,7 +915,8 @@ function snapAsideHtml(date) {
 }
 // which day and set-aside folds are open on the days page, so a redraw (a photo brought back) leaves them as they were
 if (typeof document !== 'undefined') document.addEventListener('toggle', (e) => {
-  const d = e.target; if (!snapS || !d.dataset || !d.dataset.fold) return;
+  // a toggle fires after the fact: one from a page already redrawn away (the trip just made) must not seed the next trip's folds
+  const d = e.target; if (!snapS || !d.dataset || !d.dataset.fold || !d.isConnected) return;
   if (!snapS.folds) snapS.folds = new Set([...document.querySelectorAll('details[data-fold][open]')].map((x) => x.dataset.fold));
   if (d.open) snapS.folds.add(d.dataset.fold); else snapS.folds.delete(d.dataset.fold);
 }, true);
