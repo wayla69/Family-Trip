@@ -51,6 +51,12 @@ const ppOpen = async (page, kid, tid, key) => { await page.goto(`${BASE}/#/passp
 const ppEdit = async (page, on) => { const b = page.locator('.ppedit'); if (await b.count() && (await b.getAttribute('aria-pressed')) !== String(on)) { await b.click(); await page.waitForSelector(`.ppedit[aria-pressed="${on}"]`); } };
 const boxOf = async (page, sel) => { for (let k = 0; k < 30; k++) { const b = await page.locator(sel).first().boundingBox().catch(() => null); if (b) return b; await page.waitForTimeout(100); } throw new Error('no box: ' + sel); };
 const apiState = (page) => page.evaluate(async () => (await fetch('/api/b/state')).json());
+// a tap is drawn at once and sent later by the phone's queue: wait (≤ 8 s) until the server holds what the test expects
+const apiStateWhen = async (page, fn, ms = 8000) => {
+  const end = Date.now() + ms; let st;
+  do { st = await apiState(page); if (fn(st)) return st; await page.waitForTimeout(200); } while (Date.now() < end);
+  return st;
+};
 const T = 'hk-macau-2026';
 
 // ---------- editor on a phone ----------
@@ -2020,9 +2026,12 @@ const T = 'hk-macau-2026';
   ok(await s.page.locator('.printset .agek .tpo').count() === 3 && await s.page.locator('.agek .tpo[data-age="little"][data-v="auto"][aria-pressed="true"] .psfit').count() === 1 && await s.page.locator('.printset .psi').count() === 3, 'book page: one card for the printed book — three age styles with the app\'s icons, the one that fits the youngest child chosen by default');
   await s.page.click('.agek .tpo[data-age="big"]'); await s.page.waitForSelector('.agek .tpo[data-age="big"][aria-pressed="true"]');
   await s.page.goto(`${BASE}/#/print/hk-macau-2026`); await s.page.waitForSelector('.kbook');
+  const ageRow = (st) => st.entries.find((e) => e.id === 'hk-macau-2026.bookage.all');
+  const ageBig = ageRow(await apiStateWhen(s.page, (st) => (ageRow(st) || {}).text === 'big'));
   ok(await s.page.locator('.kbook.age-big').count() === 1 && await s.page.locator('.pg.mypage .myact.journal .wlines i').count() >= 14
-    && (await apiState(s.page)).entries.some((e) => e.id === 'hk-macau-2026.bookage.all' && e.kind === 'bookage' && e.text === 'big' && e.day === null), 'printed book: "big kids" chosen → the journal pages with writing lines; one trip-wide entry');
+    && !!ageBig && ageBig.kind === 'bookage' && ageBig.text === 'big' && ageBig.day === null, `printed book: "big kids" chosen → the journal pages with writing lines; one trip-wide entry (server: ${JSON.stringify(ageBig && { kind: ageBig.kind, text: ageBig.text, day: ageBig.day })})`);
   await s.page.goto(`${BASE}/#/t/hk-macau-2026/book`); await s.page.waitForSelector('.agepick'); await s.page.click('.agek .tpo[data-v="auto"]'); await s.page.waitForSelector('.agek .tpo[data-age="little"][aria-pressed="true"]');
+  await apiStateWhen(s.page, (st) => (ageRow(st) || {}).text === 'auto');   // later checks read the book as the server holds it
   await s.page.goto(`${BASE}/#/print/hk-macau-2026`); await s.page.waitForSelector('.kbook');
   await s.page.screenshot({ path: path.join(OUT, 'wide-13-memory-book.png'), fullPage: true });
   await s.shot('10-book-wide');
