@@ -688,7 +688,44 @@
           "src": "https://baotanglichsuquocgia.vn/en/Articles/3197/ticket-price"
         },
       {"name":{"en":"Vietnam Military History Museum","th":"พิพิธภัณฑ์ประวัติศาสตร์การทหารเวียดนาม"},"local":"Bảo tàng Lịch sử Quân sự Việt Nam","kind":"museum","area":{"en":"Thang Long Boulevard, Nam Tu Liem","th":"ถนนทังลอง เขตนามตือเลียม"},"what":{"en":"A large new museum with a four-storey hall and an outdoor yard of planes, tanks and boats","th":"พิพิธภัณฑ์ใหม่ขนาดใหญ่ อาคาร 4 ชั้น และลานกลางแจ้งที่มีเครื่องบิน รถถัง และเรือ"},"why":{"en":"Children like the real planes and tanks out in the yard","th":"เด็กๆ ชอบเครื่องบินและรถถังของจริงที่ลานด้านนอก"},"tip":{"en":"Out of the centre; go by taxi and allow about two hours","th":"อยู่นอกตัวเมือง นั่งแท็กซี่ไป เผื่อเวลาราว 2 ชั่วโมง"},"ages":[0,1,2,2],"hrs":2,"io":"both","pram":"part","price":{"en":"Check the price","th":"เช็กราคาก่อนไป"},"book":"none","q":"Vietnam Military History Museum, Thang Long Boulevard, Hanoi","ok":"2026-11","src":"https://www.vietnamairlines.com/en/useful-information/travel-guide/vietnam-military-history-museum"},
-      {"name":{"en":"Vietnam National Museum of Nature","th":"พิพิธภัณฑ์ธรรมชาติแห่งชาติเวียดนาม"},"local":"Bảo tàng Thiên nhiên Việt Nam","kind":"museum","area":{"en":"Nghia Do, Cau Giay","th":"เหงียโด เขตเกิ่วยาย"},"what":{"en":"A natural-history museum with dinosaur models and thousands of animal specimens","th":"พิพิธภัณฑ์ธรรมชาติ มีหุ่นไดโนเสาร์และตัวอย่างสัตว์หลายพันชิ้น"},"why":{"en":"Dinosaur robots and fossil-replica crafts for children","th":"มีหุ่นไดโนเสาร์ขยับได้ และกิจกรรมทำฟอสซิลจำลองสำหรับเด็ก"},"tip":{"en":"Indoors, good for a rainy day; allow about two hours","th":"อยู่ในร่ม เหมาะกับวันฝนตก เผื่อเวลาราว 2 ชั่วโมง"},"ages":[1,2,2,2],"hrs":2,"io":"in","pram":"part","price":{"en":"Check the price","th":"เช็กราคาก่อนไป"},"book":"none","q":"Vietnam National Museum of Nature, Nghia Do, Cau Giay, Hanoi","ok":"2026-11","src":"https://vietnamnet.vn/en/natural-history-museums-pulling-in-huge-crowds-2499409.html"}
+      {"name":{"en":"Vietnam National Museum of Nature","th":"พิพิธภัณฑ์ธรรมชาติแห่งชาติเวียดนาม"},"local":"Bảo tàng Thiên nhiên Việt Nam","kind":"museum","area":{"en":"Nghia Do, Cau Giay","th":"เหงียโด เขตเกิ่วยาย"},"what":{"en":"A natural-history museum with dinosaur models and thousands of animal specimens","th":"พิพิธภัณฑ์ธรรมชาติ มีหุ่นไดโนเสาร์และตัวอย่างสัตว์หลายพันชิ้น"},"why":{"en":"Dinosaur robots and fossil-replica crafts for children","th":"มีหุ่นไดโนเสาร์ขยับได้ และกิจกรรมทำฟอสซิลจำลองสำหรับเด็ก"},"tip":{"en":"Indoors, good for a rainy day; allow about two hours","th":"อยู่ในร่ม เหมาะกับวันฝนตก เผื่อเวลาราว 2 ชั่วโมง"},"ages":[1,2,2,2],"hrs":2,"io":"in","pram":"part","price":{"en":"Check the price","th":"เช็กราคาก่อนไป"},"book":"none","q":"Vietnam National Museum of Nature, Nghia Do, Cau Giay, Hanoi","ok":"2026-11","src":"https://vietnamnet.vn/en/natural-history-museums-pulling-in-huge-crowds-2499409.html"},
+        {
+          "local": "Cung Thiếu nhi Hà Nội",
+          "ages": [
+            1,
+            1,
+            1,
+            1
+          ],
+          "hrs": 2,
+          "io": "both",
+          "pram": "part",
+          "price": {
+            "th": "เช็กราคาก่อนไป",
+            "en": "Check the price"
+          },
+          "book": "none",
+          "src": "https://www.vietnam.vn/en/san-choi-hap-dan-cho-thieu-nhi-thu-do",
+          "name": {
+            "th": "วังเด็กฮานอย",
+            "en": "Hanoi Children's Palace"
+          },
+          "kind": "play",
+          "area": {
+            "th": "ฮานอย",
+            "en": "Hanoi"
+          },
+          "what": {
+            "th": "วังเด็กของเมือง มีคลาสกีฬา ดนตรี และหุ่นยนต์ และสระว่ายน้ำ",
+            "en": "The city's children's palace: classes in sport, music and robotics, and a swimming pool"
+          },
+          "why": {
+            "th": "ที่ให้เด็กได้เล่น สำรวจ และลองสิ่งใหม่",
+            "en": "A place for children to play, explore and try new things"
+          },
+          "q": "Cung Thiếu nhi Hà Nội",
+          "ok": "2026-11"
+        }
       ]
     }
   ]
