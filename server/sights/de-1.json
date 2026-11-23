@@ -2014,6 +2014,154 @@
           "q": "Waldwelt Skywalk Allgäu, Oberschwenden 25, Scheidegg",
           "ok": "2026-11",
           "src": "https://www.waldwelt-allgaeu.de/wp-content/uploads/2026/02/Waldwelt-Skywalk-Allgaeu_Sommerflyer-2026.pdf"
+        },
+        {
+          "local": "",
+          "ages": [
+            1,
+            1,
+            1,
+            1
+          ],
+          "hrs": 3,
+          "io": "out",
+          "pram": "part",
+          "price": {
+            "th": "เช็กราคาก่อนไป",
+            "en": "Check the price"
+          },
+          "book": "none",
+          "src": "https://fuessen.de/en/family",
+          "name": {
+            "th": "สนามหญ้าริมทะเลสาบไวเซนเซ",
+            "en": "Weißensee lakeside lawn"
+          },
+          "kind": "beach",
+          "area": {
+            "th": "โอเบอร์เคียร์ช ทะเลสาบไวเซนเซ ฟุสเซิน",
+            "en": "Oberkirch, Weißensee, Füssen"
+          },
+          "what": {
+            "th": "ชายหาดริมทะเลสาบไวเซนเซ",
+            "en": "A lake beach at Weißensee"
+          },
+          "why": {
+            "th": "หน้าครอบครัวของเมืองบอกว่าเหมาะกับเด็กเล็ก",
+            "en": "The town's family page calls it ideal for small children"
+          },
+          "q": "Liegewiese Weißensee, Pfrontener Str., Füssen",
+          "ok": "2026-11"
+        },
+        {
+          "local": "",
+          "ages": [
+            0,
+            1,
+            1,
+            1
+          ],
+          "hrs": 2,
+          "io": "both",
+          "pram": "no",
+          "price": {
+            "th": "เช็กราคาก่อนไป",
+            "en": "Check the price"
+          },
+          "book": "none",
+          "src": "https://fuessen.de/en/family",
+          "name": {
+            "th": "สวนไต่เชือกสูงฟุสเซิน",
+            "en": "Füssen high ropes course"
+          },
+          "kind": "play",
+          "area": {
+            "th": "ฟุสเซินเอาต์เล็ตเซ็นเตอร์ ฟุสเซิน",
+            "en": "Füssen Outlet Center, Füssen"
+          },
+          "what": {
+            "th": "สวนไต่เชือกสูง ทั้งในร่มและกลางแจ้ง",
+            "en": "A high ropes course for climbing, indoors and out"
+          },
+          "why": {
+            "th": "ที่ให้เด็ก ๆ ปีนป่าย",
+            "en": "A place for children to climb"
+          },
+          "q": "Hochseilgarten Füssen, Schäfflerstraße 19b, Füssen",
+          "ok": "2026-11"
+        },
+        {
+          "local": "",
+          "ages": [
+            0,
+            1,
+            1,
+            1
+          ],
+          "hrs": 2,
+          "io": "out",
+          "pram": "part",
+          "price": {
+            "th": "เช็กราคาก่อนไป",
+            "en": "Check the price"
+          },
+          "book": "none",
+          "src": "https://fuessen.de/en/family",
+          "name": {
+            "th": "ลานสเก็ตและจักรยานฟุสเซิน",
+            "en": "Füssen skate and bike park"
+          },
+          "kind": "play",
+          "area": {
+            "th": "ชเวเดนเวก ฟุสเซิน",
+            "en": "Schwedenweg, Füssen"
+          },
+          "what": {
+            "th": "ลานสเก็ตและจักรยาน",
+            "en": "A skate and bike park"
+          },
+          "why": {
+            "th": "มีสนามเด็กเล่นอยู่ติดกัน",
+            "en": "A playground right next to it"
+          },
+          "q": "Skate- und Bikepark Füssen, Schwedenweg 2, Füssen",
+          "ok": "2026-11"
+        },
+        {
+          "local": "",
+          "ages": [
+            1,
+            1,
+            1,
+            1
+          ],
+          "hrs": 1,
+          "io": "out",
+          "pram": "no",
+          "price": {
+            "th": "เช็กราคาก่อนไป",
+            "en": "Check the price"
+          },
+          "book": "none",
+          "src": "https://fuessen.de/en/family",
+          "name": {
+            "th": "ซากปราสาทฮ็อพเฟิน",
+            "en": "Hopfen castle ruins"
+          },
+          "kind": "nature",
+          "area": {
+            "th": "ฮ็อพเฟินอัมเซ ฟุสเซิน",
+            "en": "Hopfen am See, Füssen"
+          },
+          "what": {
+            "th": "เดินราว 20 นาทีจากลานจอดรถวิลเซอร์ไปซากปราสาท",
+            "en": "A walk of about 20 minutes from the Vilser car park to the castle ruins"
+          },
+          "why": {
+            "th": "เมืองจัดให้เป็นหนึ่งในเส้นทางเดินกับเด็ก",
+            "en": "The town lists it among its walks with children"
+          },
+          "q": "Burgruine Hopfen am See, Füssen",
+          "ok": "2026-11"
         }
       ]
     }
