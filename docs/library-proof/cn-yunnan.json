@@ -1,145 +1,199 @@
 {
   "town": "cn-yunnan",
-  "kind": "eats + sights",
-  "checked": "2026-11-23",
-  "rule": "A new row needs a page dated 2025–2026 that names it and carries a copied sentence (scripts/library-check.cjs), then a Baidu Maps check: ok only when the map shows the place at the page's address, not closed, with a review from the last six months. Prices marked 'Baidu Maps' are the map's spend per person; where the page and the map disagree, 'Check the price'.",
-  "agents": "four Haiku agents, five web searches each; 43 rows offered, 16 passed library-check.cjs, 10 went in",
-  "added": [
+  "rounds": [
     {
-      "name": "Lao Dian Shanzhai",
-      "src": "https://www.sohu.com/a/986384204_121106902",
-      "date": "2026-02",
-      "map": "Baidu lists the 春城路店 branch among 8; the Jinbi branch's newest reviews 2026-10-22"
+      "town": "cn-yunnan",
+      "kind": "eats",
+      "checked": "2026-11",
+      "rule": "A row gets ok only from a current listing, its own site or recent reviews with nothing saying closed (docs/EATS.md). A row is taken out when a search could not find the place at all or the sources disagree; a place found but not freshly confirmed stays without ok.",
+      "scope": "the 6 rows without ok; nothing else in the town was re-checked",
+      "how": "Google Maps opened in headless Chromium (2026-11-23), limited view without a reviews tab, so no review date could be read; each row searched with its Chinese name (zh) and/or its English name and the town. Maps' coverage of mainland China is thin: many listings carry no hours at all. A list result's hours line ('Open · Closes 10 PM', or 'Open now', which Maps shows only when it holds the place's hours) counted as a current listing. Where Maps could not settle a row, one web search (snippets only, pages not opened) was made for it.",
+      "confirmed": [
+        {
+          "name": "Shiping Huiguan",
+          "src": "Google Maps search (headless Chromium, 2026-11-23)",
+          "page_name": "石屏会馆",
+          "evidence": "list for '石屏会馆 昆明': Chinese restaurant, 'Open now'; place page Wuhua District, 2PV2+VX (beside Shiping Assembly Hall parking, 中和巷, Cuihu S Rd)",
+          "ok": "2026-11"
+        },
+        {
+          "name": "Zai Hui Shou",
+          "src": "Google Maps search (headless Chromium, 2026-11-23)",
+          "page_name": "再回首凉鸡米线",
+          "evidence": "list for '再回首凉鸡米线 大理': 面馆 · 人民路198号, 'Open now'",
+          "ok": "2026-11"
+        },
+        {
+          "name": "Bakery 88",
+          "src": "Google Maps search (headless Chromium, 2026-11-23)",
+          "page_name": "The Bakery No.88 88号西点店",
+          "evidence": "list 'The Bakery No.88', bakery, 'Open now'; place page M5V5+5Q Dali (the old town)",
+          "ok": "2026-11"
+        }
+      ],
+      "kept_without_ok": [
+        {
+          "name": "Lao Fangzi",
+          "src": "Google Maps search (headless Chromium, 2026-11-23); web search (2026-11-23, snippets only)",
+          "evidence": "no listing named 老房子 on Guanghua St; '一颗印昆明老房子', 2PR4+4X9 Dongfeng W Rd (about 200 m away) has no hours. A web search found an old page placing 一颗印昆明老房子 near 靖星市场 — not current"
+        },
+        {
+          "name": "Amayi Naxi Snacks",
+          "src": "Google Maps search (headless Chromium, 2026-11-23)",
+          "evidence": "place page '阿妈意纳西饮食院', V6FP+456 Gucheng, Lijiang — no hours shown"
+        },
+        {
+          "name": "Zhongyi Market",
+          "src": "Google Maps search (headless Chromium, 2026-11-23)",
+          "evidence": "place page 'Ancient City Zhongyi Market 忠义市场', 长水路, Lijiang — no hours shown"
+        }
+      ],
+      "removed": []
     },
     {
-      "name": "Dashanqing Yun Xiaoguan",
-      "src": "https://www.sohu.com/a/986384204_121106902",
-      "date": "2026-02",
-      "map": "Baidu 大山情·云小馆(东风广场明通巷店), 明通巷41号, ¥57, newest 2026-10-05"
-    },
-    {
-      "name": "Ershiliu Jiaren",
-      "src": "https://www.sohu.com/a/986384204_121106902",
-      "date": "2026-02",
-      "map": "Baidu 二十六家人(会展滇池小镇店), ¥61, newest 2026-10-06"
-    },
-    {
-      "name": "Nanzhao Dong Xiaopang",
-      "src": "https://k.sina.cn/article_7880068409_1d5b04d3906801ivyi.html",
-      "date": "2026-10",
-      "map": "Baidu 南诏董小胖(总店), 绿玉路, ¥48, newest 2026-10-21"
-    },
-    {
-      "name": "Jixiang Hong",
-      "src": "https://k.sina.cn/article_7880068409_1d5b04d3906801ivyi.html",
-      "date": "2026-10",
-      "map": "Baidu 吉祥红(双廊店), newest 2026-11-05; the page's ¥51 and the map's ¥90 disagree, so no price"
-    },
-    {
-      "name": "Jinhua Xiao Amei",
-      "src": "https://k.sina.cn/article_7880068409_1d5b04d3906801ivyi.html",
-      "date": "2026-10",
-      "map": "Baidu 金花小阿妹·白族手工菜, 福安巷56号, newest 2026-11-10; the page's ¥40 and the map's ¥89 disagree, so no price"
-    },
-    {
-      "name": "Lan Yunnan Bistro",
-      "src": "https://www.sohu.com/a/1046490983_122895039",
-      "date": "2026-07",
-      "map": "Baidu Lan岚·云南菜·bistro, 束河街道蔷薇大道, ¥96, newest 2026-10-28"
-    },
-    {
-      "name": "Sunac Kunming Sea World",
-      "src": "https://travel.sina.cn/2026-07-10/detail-inihhkum8436060.d.html",
-      "date": "2026-07",
-      "map": "Baidu 昆明融创海世界, 碧鸡路2999-1号, newest 2026-11-14"
-    },
-    {
-      "name": "Erhai Park",
-      "src": "https://www.chinahighlights.com/dali/free-things-to-do.htm",
-      "date": "2025-11",
-      "map": "Baidu 洱海公园, 洱河南路1号, newest 2026-11-08"
-    },
-    {
-      "name": "Xizhou Old Town",
-      "src": "https://www.chinahighlights.com/dali/attraction/houses-of-bai-people-in-xizhou.htm",
-      "date": "2025-11",
-      "map": "Baidu 喜洲古镇, newest 2026-11-16"
-    }
-  ],
-  "left_out": [
-    {
-      "name": "Yunnan Wild Animal Park, Guandu Old Town",
-      "why": "their source is kunmingtravel.github.io, a generic machine-made 'travel blog' (same family as the refused xiantravel.github.io)"
-    },
-    {
-      "name": "Yunxueli, Shuhe branch",
-      "why": "Baidu lists five Yunxueli branches, none in Shuhe"
-    },
-    {
-      "name": "Zhoucheng Village",
-      "why": "Baidu shows only a bare village point with no reviews"
-    },
-    {
-      "name": "Shaping Market",
-      "why": "not found on Baidu Maps"
-    },
-    {
-      "name": "Morning Market in Xizhou Town",
-      "why": "part of Xizhou Old Town's row"
-    },
-    {
-      "name": "27 more rows",
-      "why": "failed library-check.cjs (pages the script cannot date or read: maigoo, tw.trip.com listings, 163.com)"
-    }
-  ],
-  "estimates": "Ages ([1,1,1,1]) and visit hours are not printed on these pages; the format requires them, so they are neutral placeholders for the owner to review.",
-  "recheck_of_older_rows": {
-    "town": "cn-yunnan",
-    "kind": "eats",
-    "checked": "2026-11",
-    "rule": "A row gets ok only from a current listing, its own site or recent reviews with nothing saying closed (docs/EATS.md). A row is taken out when a search could not find the place at all or the sources disagree; a place found but not freshly confirmed stays without ok.",
-    "scope": "the 6 rows without ok; nothing else in the town was re-checked",
-    "how": "Google Maps opened in headless Chromium (2026-11-23), limited view without a reviews tab, so no review date could be read; each row searched with its Chinese name (zh) and/or its English name and the town. Maps' coverage of mainland China is thin: many listings carry no hours at all. A list result's hours line ('Open · Closes 10 PM', or 'Open now', which Maps shows only when it holds the place's hours) counted as a current listing. Where Maps could not settle a row, one web search (snippets only, pages not opened) was made for it.",
-    "confirmed": [
-      {
-        "name": "Shiping Huiguan",
-        "src": "Google Maps search (headless Chromium, 2026-11-23)",
-        "page_name": "石屏会馆",
-        "evidence": "list for '石屏会馆 昆明': Chinese restaurant, 'Open now'; place page Wuhua District, 2PV2+VX (beside Shiping Assembly Hall parking, 中和巷, Cuihu S Rd)",
-        "ok": "2026-11"
-      },
-      {
-        "name": "Zai Hui Shou",
-        "src": "Google Maps search (headless Chromium, 2026-11-23)",
-        "page_name": "再回首凉鸡米线",
-        "evidence": "list for '再回首凉鸡米线 大理': 面馆 · 人民路198号, 'Open now'",
-        "ok": "2026-11"
-      },
-      {
-        "name": "Bakery 88",
-        "src": "Google Maps search (headless Chromium, 2026-11-23)",
-        "page_name": "The Bakery No.88 88号西点店",
-        "evidence": "list 'The Bakery No.88', bakery, 'Open now'; place page M5V5+5Q Dali (the old town)",
-        "ok": "2026-11"
+      "town": "cn-yunnan",
+      "kind": "eats + sights",
+      "checked": "2026-11-23",
+      "rule": "A new row needs a page dated 2025–2026 that names it and carries a copied sentence (scripts/library-check.cjs), then a Baidu Maps check: ok only when the map shows the place at the page's address, not closed, with a review from the last six months. Prices marked 'Baidu Maps' are the map's spend per person; where the page and the map disagree, 'Check the price'.",
+      "agents": "four Haiku agents, five web searches each; 43 rows offered, 16 passed library-check.cjs, 10 went in",
+      "added": [
+        {
+          "name": "Lao Dian Shanzhai",
+          "src": "https://www.sohu.com/a/986384204_121106902",
+          "date": "2026-02",
+          "map": "Baidu lists the 春城路店 branch among 8; the Jinbi branch's newest reviews 2026-10-22"
+        },
+        {
+          "name": "Dashanqing Yun Xiaoguan",
+          "src": "https://www.sohu.com/a/986384204_121106902",
+          "date": "2026-02",
+          "map": "Baidu 大山情·云小馆(东风广场明通巷店), 明通巷41号, ¥57, newest 2026-10-05"
+        },
+        {
+          "name": "Ershiliu Jiaren",
+          "src": "https://www.sohu.com/a/986384204_121106902",
+          "date": "2026-02",
+          "map": "Baidu 二十六家人(会展滇池小镇店), ¥61, newest 2026-10-06"
+        },
+        {
+          "name": "Nanzhao Dong Xiaopang",
+          "src": "https://k.sina.cn/article_7880068409_1d5b04d3906801ivyi.html",
+          "date": "2026-10",
+          "map": "Baidu 南诏董小胖(总店), 绿玉路, ¥48, newest 2026-10-21"
+        },
+        {
+          "name": "Jixiang Hong",
+          "src": "https://k.sina.cn/article_7880068409_1d5b04d3906801ivyi.html",
+          "date": "2026-10",
+          "map": "Baidu 吉祥红(双廊店), newest 2026-11-05; the page's ¥51 and the map's ¥90 disagree, so no price"
+        },
+        {
+          "name": "Jinhua Xiao Amei",
+          "src": "https://k.sina.cn/article_7880068409_1d5b04d3906801ivyi.html",
+          "date": "2026-10",
+          "map": "Baidu 金花小阿妹·白族手工菜, 福安巷56号, newest 2026-11-10; the page's ¥40 and the map's ¥89 disagree, so no price"
+        },
+        {
+          "name": "Lan Yunnan Bistro",
+          "src": "https://www.sohu.com/a/1046490983_122895039",
+          "date": "2026-07",
+          "map": "Baidu Lan岚·云南菜·bistro, 束河街道蔷薇大道, ¥96, newest 2026-10-28"
+        },
+        {
+          "name": "Sunac Kunming Sea World",
+          "src": "https://travel.sina.cn/2026-07-10/detail-inihhkum8436060.d.html",
+          "date": "2026-07",
+          "map": "Baidu 昆明融创海世界, 碧鸡路2999-1号, newest 2026-11-14"
+        },
+        {
+          "name": "Erhai Park",
+          "src": "https://www.chinahighlights.com/dali/free-things-to-do.htm",
+          "date": "2025-11",
+          "map": "Baidu 洱海公园, 洱河南路1号, newest 2026-11-08"
+        },
+        {
+          "name": "Xizhou Old Town",
+          "src": "https://www.chinahighlights.com/dali/attraction/houses-of-bai-people-in-xizhou.htm",
+          "date": "2025-11",
+          "map": "Baidu 喜洲古镇, newest 2026-11-16"
+        }
+      ],
+      "left_out": [
+        {
+          "name": "Yunnan Wild Animal Park, Guandu Old Town",
+          "why": "their source is kunmingtravel.github.io, a generic machine-made 'travel blog' (same family as the refused xiantravel.github.io)"
+        },
+        {
+          "name": "Yunxueli, Shuhe branch",
+          "why": "Baidu lists five Yunxueli branches, none in Shuhe"
+        },
+        {
+          "name": "Zhoucheng Village",
+          "why": "Baidu shows only a bare village point with no reviews"
+        },
+        {
+          "name": "Shaping Market",
+          "why": "not found on Baidu Maps"
+        },
+        {
+          "name": "Morning Market in Xizhou Town",
+          "why": "part of Xizhou Old Town's row"
+        },
+        {
+          "name": "27 more rows",
+          "why": "failed library-check.cjs (pages the script cannot date or read: maigoo, tw.trip.com listings, 163.com)"
+        }
+      ],
+      "estimates": "Ages ([1,1,1,1]) and visit hours are not printed on these pages; the format requires them, so they are neutral placeholders for the owner to review.",
+      "recheck_of_older_rows": {
+        "town": "cn-yunnan",
+        "kind": "eats",
+        "checked": "2026-11",
+        "rule": "A row gets ok only from a current listing, its own site or recent reviews with nothing saying closed (docs/EATS.md). A row is taken out when a search could not find the place at all or the sources disagree; a place found but not freshly confirmed stays without ok.",
+        "scope": "the 6 rows without ok; nothing else in the town was re-checked",
+        "how": "Google Maps opened in headless Chromium (2026-11-23), limited view without a reviews tab, so no review date could be read; each row searched with its Chinese name (zh) and/or its English name and the town. Maps' coverage of mainland China is thin: many listings carry no hours at all. A list result's hours line ('Open · Closes 10 PM', or 'Open now', which Maps shows only when it holds the place's hours) counted as a current listing. Where Maps could not settle a row, one web search (snippets only, pages not opened) was made for it.",
+        "confirmed": [
+          {
+            "name": "Shiping Huiguan",
+            "src": "Google Maps search (headless Chromium, 2026-11-23)",
+            "page_name": "石屏会馆",
+            "evidence": "list for '石屏会馆 昆明': Chinese restaurant, 'Open now'; place page Wuhua District, 2PV2+VX (beside Shiping Assembly Hall parking, 中和巷, Cuihu S Rd)",
+            "ok": "2026-11"
+          },
+          {
+            "name": "Zai Hui Shou",
+            "src": "Google Maps search (headless Chromium, 2026-11-23)",
+            "page_name": "再回首凉鸡米线",
+            "evidence": "list for '再回首凉鸡米线 大理': 面馆 · 人民路198号, 'Open now'",
+            "ok": "2026-11"
+          },
+          {
+            "name": "Bakery 88",
+            "src": "Google Maps search (headless Chromium, 2026-11-23)",
+            "page_name": "The Bakery No.88 88号西点店",
+            "evidence": "list 'The Bakery No.88', bakery, 'Open now'; place page M5V5+5Q Dali (the old town)",
+            "ok": "2026-11"
+          }
+        ],
+        "kept_without_ok": [
+          {
+            "name": "Lao Fangzi",
+            "src": "Google Maps search (headless Chromium, 2026-11-23); web search (2026-11-23, snippets only)",
+            "evidence": "no listing named 老房子 on Guanghua St; '一颗印昆明老房子', 2PR4+4X9 Dongfeng W Rd (about 200 m away) has no hours. A web search found an old page placing 一颗印昆明老房子 near 靖星市场 — not current"
+          },
+          {
+            "name": "Amayi Naxi Snacks",
+            "src": "Google Maps search (headless Chromium, 2026-11-23)",
+            "evidence": "place page '阿妈意纳西饮食院', V6FP+456 Gucheng, Lijiang — no hours shown"
+          },
+          {
+            "name": "Zhongyi Market",
+            "src": "Google Maps search (headless Chromium, 2026-11-23)",
+            "evidence": "place page 'Ancient City Zhongyi Market 忠义市场', 长水路, Lijiang — no hours shown"
+          }
+        ],
+        "removed": []
       }
-    ],
-    "kept_without_ok": [
-      {
-        "name": "Lao Fangzi",
-        "src": "Google Maps search (headless Chromium, 2026-11-23); web search (2026-11-23, snippets only)",
-        "evidence": "no listing named 老房子 on Guanghua St; '一颗印昆明老房子', 2PR4+4X9 Dongfeng W Rd (about 200 m away) has no hours. A web search found an old page placing 一颗印昆明老房子 near 靖星市场 — not current"
-      },
-      {
-        "name": "Amayi Naxi Snacks",
-        "src": "Google Maps search (headless Chromium, 2026-11-23)",
-        "evidence": "place page '阿妈意纳西饮食院', V6FP+456 Gucheng, Lijiang — no hours shown"
-      },
-      {
-        "name": "Zhongyi Market",
-        "src": "Google Maps search (headless Chromium, 2026-11-23)",
-        "evidence": "place page 'Ancient City Zhongyi Market 忠义市场', 长水路, Lijiang — no hours shown"
-      }
-    ],
-    "removed": []
-  }
+    }
+  ]
 }

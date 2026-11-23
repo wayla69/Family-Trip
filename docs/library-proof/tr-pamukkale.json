@@ -1,30 +1,52 @@
 {
   "town": "tr-pamukkale",
-  "kind": "eats + sights",
-  "checked": "2026-11-23",
-  "rule": "library-check.cjs, then the Google Maps Reviews tab sorted by newest: ok only when not marked closed, with a review from the last six months, and the map's name matching the page's.",
-  "agents": "one Haiku agent; 3 rows from Wandering Wagars (2026) and Go Türkiye passed library-check.cjs, 2 went in",
-  "added": [
+  "rounds": [
     {
-      "name": "Pamukkale Natural Park",
-      "page_name": "Pamukkale Natural Park",
-      "src": "https://goturkiye.com/pamukkale/see",
-      "date": "2026-04",
-      "map": "Google Maps Menderes Cd., 670 reviews, newest '20 hours ago'"
+      "town": "tr-pamukkale",
+      "kind": "eats",
+      "checked": "2026-11",
+      "rule": "A row gets ok only from a current listing, its own site or recent reviews with nothing saying closed (docs/EATS.md). A row is taken out when a search could not find the place at all or the sources disagree; a place found but not freshly confirmed stays without ok.",
+      "scope": "the 1 row without ok; the rows already confirmed were not checked again",
+      "how": "Google Maps opened in headless Chromium (2026-11-23), limited view without a reviews tab, so no review date could be read; a place with current hours and no closed notice counts as a current listing",
+      "confirmed": [],
+      "kept_without_ok": [
+        {
+          "name": "Antique Pool Cafeteria",
+          "src": "https://www.google.com/maps/place/Cleopatra+Antique+Pools/@37.9259844,29.1256262,17z",
+          "evidence": "Google Maps lists the pool itself ('Cleopatra Antique Pools', thermal baths, located in Hierapolis, W4GG+97, 'Closed · Opens 9 AM', site muze.gov.tr) but no listing of the food counters around it; searching 'Antique Pool cafe Pamukkale Hierapolis' found none"
+        }
+      ],
+      "removed": []
     },
     {
-      "name": "Çamlık Park",
-      "page_name": "Çamlık Park",
-      "src": "https://goturkiye.com/pamukkale/see",
-      "date": "2026-04",
-      "map": "Google Maps 'Denizli Metropolitan Municipality Çamlık Park', 6,500 reviews, newest '3 hours ago'"
+      "town": "tr-pamukkale",
+      "kind": "eats + sights",
+      "checked": "2026-11-23",
+      "rule": "library-check.cjs, then the Google Maps Reviews tab sorted by newest: ok only when not marked closed, with a review from the last six months, and the map's name matching the page's.",
+      "agents": "one Haiku agent; 3 rows from Wandering Wagars (2026) and Go Türkiye passed library-check.cjs, 2 went in",
+      "added": [
+        {
+          "name": "Pamukkale Natural Park",
+          "page_name": "Pamukkale Natural Park",
+          "src": "https://goturkiye.com/pamukkale/see",
+          "date": "2026-04",
+          "map": "Google Maps Menderes Cd., 670 reviews, newest '20 hours ago'"
+        },
+        {
+          "name": "Çamlık Park",
+          "page_name": "Çamlık Park",
+          "src": "https://goturkiye.com/pamukkale/see",
+          "date": "2026-04",
+          "map": "Google Maps 'Denizli Metropolitan Municipality Çamlık Park', 6,500 reviews, newest '3 hours ago'"
+        }
+      ],
+      "left_out": [
+        {
+          "name": "White House Restaurant and Cafe",
+          "why": "the map search finds only a holiday flat of that name"
+        }
+      ],
+      "estimates": "Ages and visit hours are placeholders; prices and opening notes are the pages' own."
     }
-  ],
-  "left_out": [
-    {
-      "name": "White House Restaurant and Cafe",
-      "why": "the map search finds only a holiday flat of that name"
-    }
-  ],
-  "estimates": "Ages and visit hours are placeholders; prices and opening notes are the pages' own."
+  ]
 }

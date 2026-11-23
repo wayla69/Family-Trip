@@ -1,157 +1,187 @@
 {
   "town": "ca-banff",
-  "kind": "eats + sights",
-  "checked": "2026-11-23",
-  "rule": "library-check.cjs, then the Google Maps Reviews tab sorted by newest: ok only when not marked closed, with a review from the last six months, and the map's name matching the page's.",
-  "agents": "one Haiku agent (run twice); 23 rows passed library-check.cjs, 19 went in",
-  "added": [
+  "rounds": [
     {
-      "name": "Harvest Café",
-      "page_name": "Harvest Café",
-      "src": "https://beautifulcanmore.com/best-family-friendly-restaurants-canmore/",
-      "date": "2025-09",
-      "map": "Google Maps open, newest review within six months"
+      "town": "ca-banff",
+      "kind": "eats",
+      "checked": "2026-11",
+      "rule": "A row gets ok only from a current listing, its own site or recent reviews with nothing saying closed (docs/EATS.md). A row is taken out when a search could not find the place at all or the sources disagree; a place found but not freshly confirmed stays without ok.",
+      "scope": "the 2 rows without ok; the rows that already carried ok were not re-checked in this pass",
+      "how": "Google Maps opened in headless Chromium (2026-11-23), limited view without a reviews tab, so no review date could be read; each row's own map query first, then the name with the town, a list result opened when needed; a hotel's own site or one web search only where Maps could not settle it.",
+      "confirmed": [
+        {
+          "name": "Laggan's Mountain Bakery & Delicatessen",
+          "src": "Google Maps",
+          "page_name": "Laggan's",
+          "evidence": "\"Laggan's\", Bakery, 101 Village Rd Bldg B, Floor 1 · Samson Mall, CRGC+45 Lake Louise; \"Closed · Opens 7 AM Mon\"",
+          "ok": "2026-11"
+        }
+      ],
+      "kept_without_ok": [],
+      "removed": [
+        {
+          "name": "Lake Louise Railway Station & Restaurant",
+          "src": "Google Maps",
+          "reason": "\"Lake Louise Railway Station & Restaurant\", 200 Sentinel Rd, CRH6+MR Lake Louise: \"Temporarily closed\"."
+        }
+      ]
     },
     {
-      "name": "Rocket Pie Pizza",
-      "page_name": "Rocket Pie Pizza",
-      "src": "https://beautifulcanmore.com/best-family-friendly-restaurants-canmore/",
-      "date": "2025-09",
-      "map": "Google Maps open, newest review within six months"
-    },
-    {
-      "name": "Canmore Gaucho Brazilian BBQ",
-      "page_name": "Canmore Gaucho Brazilian BBQ",
-      "src": "https://beautifulcanmore.com/best-family-friendly-restaurants-canmore/",
-      "date": "2025-09",
-      "map": "Google Maps open, newest review within six months"
-    },
-    {
-      "name": "Dingsway Ramen and Sushi",
-      "page_name": "Dingsway Ramen and Sushi",
-      "src": "https://beautifulcanmore.com/best-family-friendly-restaurants-canmore/",
-      "date": "2025-09",
-      "map": "Google Maps open, newest review within six months"
-    },
-    {
-      "name": "Red Rock Pizza Company",
-      "page_name": "Red Rock Pizza Company",
-      "src": "https://wetraveledhappy.com/kid-friendly-restaurants-in-canmore/",
-      "date": "2025-10",
-      "map": "Google Maps open, newest review within six months"
-    },
-    {
-      "name": "Marra’s Way Sushi",
-      "page_name": "Marra’s Way Sushi",
-      "src": "https://wetraveledhappy.com/kid-friendly-restaurants-in-canmore/",
-      "date": "2025-10",
-      "map": "Google Maps open, newest review within six months"
-    },
-    {
-      "name": "Canadian Pizza Unlimited (Canmore)",
-      "page_name": "Canadian Pizza Unlimited",
-      "src": "https://wetraveledhappy.com/kid-friendly-restaurants-in-canmore/",
-      "date": "2025-10",
-      "map": "Google Maps 'Canadian Pizza Unlimited - Canmore', 1,256 reviews, newest '2 days ago'"
-    },
-    {
-      "name": "Tooloulou's",
-      "page_name": "Tooloulou's",
-      "src": "https://banffbound.com/blog/banff-family-restaurants/",
-      "date": "2025-10",
-      "map": "Google Maps 'Tooloulous', 3,346 reviews, newest '6 days ago'"
-    },
-    {
-      "name": "Magpie & Stump",
-      "page_name": "Magpie & Stump",
-      "src": "https://banffbound.com/blog/banff-family-restaurants/",
-      "date": "2025-10",
-      "map": "Google Maps 'Magpie & Stump Mexican Restaurant + Bar', 3,680 reviews, newest '2 days ago'"
-    },
-    {
-      "name": "Sundance Canyon",
-      "page_name": "Sundance Canyon",
-      "src": "https://www.travelbanffcanada.com/banff-with-kids/",
-      "date": "2026-03",
-      "map": "Google Maps 21 reviews, newest '2 months ago'"
-    },
-    {
-      "name": "Peyto Lake",
-      "page_name": "Peyto Lake",
-      "src": "https://www.travelbanffcanada.com/banff-with-kids/",
-      "date": "2026-03",
-      "map": "Google Maps 1,629 reviews, newest '6 days ago'"
-    },
-    {
-      "name": "Silverton Falls",
-      "page_name": "Silverton Falls",
-      "src": "https://www.travelbanffcanada.com/banff-with-kids/",
-      "date": "2026-03",
-      "map": "Google Maps 256 reviews, newest 'last week'"
-    },
-    {
-      "name": "Bow River Loop, Canmore",
-      "page_name": "Bow River Loop Trail",
-      "src": "https://www.travelbanffcanada.com/banff-with-kids/",
-      "date": "2026-03",
-      "map": "Google Maps 56 reviews, newest 'last month'"
-    },
-    {
-      "name": "West Canmore Park playground",
-      "page_name": "West Canmore Park playground",
-      "src": "https://www.travelbanffcanada.com/banff-with-kids/",
-      "date": "2026-03",
-      "map": "Google Maps 'West Canmore Park Playground', 20 reviews, newest 'last week'"
-    },
-    {
-      "name": "Heart Creek trail",
-      "page_name": "Heart Creek trail",
-      "src": "https://www.travelbanffcanada.com/banff-with-kids/",
-      "date": "2026-03",
-      "map": "Google Maps 'Heart Creek Trail Head', 746 reviews, newest '2 days ago'"
-    },
-    {
-      "name": "Lake Agnes Tea House",
-      "page_name": "Lake Agnes Tea House",
-      "src": "https://www.travelbanffcanada.com/banff-with-kids/",
-      "date": "2026-03",
-      "map": "Google Maps 1,859 reviews, newest '3 weeks ago'"
-    },
-    {
-      "name": "Consolation Lakes",
-      "page_name": "Consolation Lakes",
-      "src": "https://www.travelbanffcanada.com/banff-with-kids/",
-      "date": "2026-03",
-      "map": "Google Maps 54 reviews, newest '2 months ago'"
-    },
-    {
-      "name": "Policeman’s Creek boardwalk",
-      "page_name": "Policeman’s Creek boardwalk",
-      "src": "https://playcanmore.com/things-to-do-canmore-with-kids/",
-      "date": "2026-07",
-      "map": "Google Maps 505 reviews, newest '2 days ago'"
-    },
-    {
-      "name": "Yamnuska Wolfdog Sanctuary",
-      "page_name": "Yamnuska Wolfdog Sanctuary",
-      "src": "https://playcanmore.com/things-to-do-canmore-with-kids/",
-      "date": "2026-07",
-      "map": "Google Maps 3,462 reviews, newest '12 hours ago'"
+      "town": "ca-banff",
+      "kind": "eats + sights",
+      "checked": "2026-11-23",
+      "rule": "library-check.cjs, then the Google Maps Reviews tab sorted by newest: ok only when not marked closed, with a review from the last six months, and the map's name matching the page's.",
+      "agents": "one Haiku agent (run twice); 23 rows passed library-check.cjs, 19 went in",
+      "added": [
+        {
+          "name": "Harvest Café",
+          "page_name": "Harvest Café",
+          "src": "https://beautifulcanmore.com/best-family-friendly-restaurants-canmore/",
+          "date": "2025-09",
+          "map": "Google Maps open, newest review within six months"
+        },
+        {
+          "name": "Rocket Pie Pizza",
+          "page_name": "Rocket Pie Pizza",
+          "src": "https://beautifulcanmore.com/best-family-friendly-restaurants-canmore/",
+          "date": "2025-09",
+          "map": "Google Maps open, newest review within six months"
+        },
+        {
+          "name": "Canmore Gaucho Brazilian BBQ",
+          "page_name": "Canmore Gaucho Brazilian BBQ",
+          "src": "https://beautifulcanmore.com/best-family-friendly-restaurants-canmore/",
+          "date": "2025-09",
+          "map": "Google Maps open, newest review within six months"
+        },
+        {
+          "name": "Dingsway Ramen and Sushi",
+          "page_name": "Dingsway Ramen and Sushi",
+          "src": "https://beautifulcanmore.com/best-family-friendly-restaurants-canmore/",
+          "date": "2025-09",
+          "map": "Google Maps open, newest review within six months"
+        },
+        {
+          "name": "Red Rock Pizza Company",
+          "page_name": "Red Rock Pizza Company",
+          "src": "https://wetraveledhappy.com/kid-friendly-restaurants-in-canmore/",
+          "date": "2025-10",
+          "map": "Google Maps open, newest review within six months"
+        },
+        {
+          "name": "Marra’s Way Sushi",
+          "page_name": "Marra’s Way Sushi",
+          "src": "https://wetraveledhappy.com/kid-friendly-restaurants-in-canmore/",
+          "date": "2025-10",
+          "map": "Google Maps open, newest review within six months"
+        },
+        {
+          "name": "Canadian Pizza Unlimited (Canmore)",
+          "page_name": "Canadian Pizza Unlimited",
+          "src": "https://wetraveledhappy.com/kid-friendly-restaurants-in-canmore/",
+          "date": "2025-10",
+          "map": "Google Maps 'Canadian Pizza Unlimited - Canmore', 1,256 reviews, newest '2 days ago'"
+        },
+        {
+          "name": "Tooloulou's",
+          "page_name": "Tooloulou's",
+          "src": "https://banffbound.com/blog/banff-family-restaurants/",
+          "date": "2025-10",
+          "map": "Google Maps 'Tooloulous', 3,346 reviews, newest '6 days ago'"
+        },
+        {
+          "name": "Magpie & Stump",
+          "page_name": "Magpie & Stump",
+          "src": "https://banffbound.com/blog/banff-family-restaurants/",
+          "date": "2025-10",
+          "map": "Google Maps 'Magpie & Stump Mexican Restaurant + Bar', 3,680 reviews, newest '2 days ago'"
+        },
+        {
+          "name": "Sundance Canyon",
+          "page_name": "Sundance Canyon",
+          "src": "https://www.travelbanffcanada.com/banff-with-kids/",
+          "date": "2026-03",
+          "map": "Google Maps 21 reviews, newest '2 months ago'"
+        },
+        {
+          "name": "Peyto Lake",
+          "page_name": "Peyto Lake",
+          "src": "https://www.travelbanffcanada.com/banff-with-kids/",
+          "date": "2026-03",
+          "map": "Google Maps 1,629 reviews, newest '6 days ago'"
+        },
+        {
+          "name": "Silverton Falls",
+          "page_name": "Silverton Falls",
+          "src": "https://www.travelbanffcanada.com/banff-with-kids/",
+          "date": "2026-03",
+          "map": "Google Maps 256 reviews, newest 'last week'"
+        },
+        {
+          "name": "Bow River Loop, Canmore",
+          "page_name": "Bow River Loop Trail",
+          "src": "https://www.travelbanffcanada.com/banff-with-kids/",
+          "date": "2026-03",
+          "map": "Google Maps 56 reviews, newest 'last month'"
+        },
+        {
+          "name": "West Canmore Park playground",
+          "page_name": "West Canmore Park playground",
+          "src": "https://www.travelbanffcanada.com/banff-with-kids/",
+          "date": "2026-03",
+          "map": "Google Maps 'West Canmore Park Playground', 20 reviews, newest 'last week'"
+        },
+        {
+          "name": "Heart Creek trail",
+          "page_name": "Heart Creek trail",
+          "src": "https://www.travelbanffcanada.com/banff-with-kids/",
+          "date": "2026-03",
+          "map": "Google Maps 'Heart Creek Trail Head', 746 reviews, newest '2 days ago'"
+        },
+        {
+          "name": "Lake Agnes Tea House",
+          "page_name": "Lake Agnes Tea House",
+          "src": "https://www.travelbanffcanada.com/banff-with-kids/",
+          "date": "2026-03",
+          "map": "Google Maps 1,859 reviews, newest '3 weeks ago'"
+        },
+        {
+          "name": "Consolation Lakes",
+          "page_name": "Consolation Lakes",
+          "src": "https://www.travelbanffcanada.com/banff-with-kids/",
+          "date": "2026-03",
+          "map": "Google Maps 54 reviews, newest '2 months ago'"
+        },
+        {
+          "name": "Policeman’s Creek boardwalk",
+          "page_name": "Policeman’s Creek boardwalk",
+          "src": "https://playcanmore.com/things-to-do-canmore-with-kids/",
+          "date": "2026-07",
+          "map": "Google Maps 505 reviews, newest '2 days ago'"
+        },
+        {
+          "name": "Yamnuska Wolfdog Sanctuary",
+          "page_name": "Yamnuska Wolfdog Sanctuary",
+          "src": "https://playcanmore.com/things-to-do-canmore-with-kids/",
+          "date": "2026-07",
+          "map": "Google Maps 3,462 reviews, newest '12 hours ago'"
+        }
+      ],
+      "left_out": [
+        {
+          "name": "Das Schnitzelhaus",
+          "why": "the map's newest review (sorted by newest) is 10 months old"
+        },
+        {
+          "name": "Old School Bus Ice Cream",
+          "why": "the map's only 'Old School Ice Cream Bus' is in Arizona, not at 10th Street in Canmore"
+        },
+        {
+          "name": "Larch Valley",
+          "why": "the map only knows the trail as Sentinel Pass, so the name does not match the page"
+        }
+      ],
+      "estimates": "Ages and visit hours are placeholders; prices and opening notes are the pages' own."
     }
-  ],
-  "left_out": [
-    {
-      "name": "Das Schnitzelhaus",
-      "why": "the map's newest review (sorted by newest) is 10 months old"
-    },
-    {
-      "name": "Old School Bus Ice Cream",
-      "why": "the map's only 'Old School Ice Cream Bus' is in Arizona, not at 10th Street in Canmore"
-    },
-    {
-      "name": "Larch Valley",
-      "why": "the map only knows the trail as Sentinel Pass, so the name does not match the page"
-    }
-  ],
-  "estimates": "Ages and visit hours are placeholders; prices and opening notes are the pages' own."
+  ]
 }

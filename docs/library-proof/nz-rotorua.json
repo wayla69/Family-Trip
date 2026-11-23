@@ -1,102 +1,124 @@
 {
   "town": "nz-rotorua",
-  "kind": "eats + sights",
-  "checked": "2026-11-23",
-  "rule": "library-check.cjs, then the Google Maps Reviews tab sorted by newest: ok only when not marked closed, with a review from the last six months, and the map's name matching the page's.",
-  "agents": "one Haiku agent; 13 rows offered, 13 passed library-check.cjs, 13 went in",
-  "added": [
+  "rounds": [
     {
-      "name": "Black Label Barbecue",
-      "page_name": "Black Label Barbecue",
-      "src": "https://www.rotoruanz.com/eat-drink/family-friendly",
-      "date": "official",
-      "map": "Google Maps 889 reviews, newest '7 hours ago'"
+      "town": "nz-rotorua",
+      "kind": "eats",
+      "checked": "2026-11",
+      "rule": "A row gets ok only from a current listing, its own site or recent reviews with nothing saying closed (docs/EATS.md). A row is taken out when a search could not find the place at all or the sources disagree; a place found but not freshly confirmed stays without ok.",
+      "scope": "the 1 rows without ok; the rows that already carried ok were not re-checked in this pass",
+      "how": "Google Maps opened in headless Chromium (2026-11-23), limited view without a reviews tab, so no review date could be read; each row's own map query first, then the name with the town, a list result opened when needed; a hotel's own site or one web search only where Maps could not settle it.",
+      "confirmed": [],
+      "kept_without_ok": [
+        {
+          "name": "Waitomo General Store",
+          "src": "Google Maps + waitomocaves.com",
+          "evidence": "The row's address (15 Waitomo Village Rd) opens \"Twelve Table Bar & Eatery Waitomo\" on Maps, and \"Waitomo General Store\" itself is not found; but Waitomo Caves' own food page (waitomocaves.com/food-and-drink) still lists \"The General Store\" beside Twelve Tables, with no address or hours. Exists on one page, nothing current confirms it."
+        }
+      ],
+      "removed": []
     },
     {
-      "name": "Charlie’s Café at Chipmunks Playland",
-      "page_name": "Charlie's Café at Chipmunks Playland",
-      "src": "https://www.rotoruanz.com/eat-drink/cafes/chipmunks-playland-cafe-motion-entertainment",
-      "date": "official",
-      "map": "Google Maps 'Chipmunks Playland & Café Rotorua', 158 reviews, newest 'a month ago'"
-    },
-    {
-      "name": "Lone Star Rotorua",
-      "page_name": "Lone Star Rotorua",
-      "src": "https://www.rotoruanz.com/eat-drink/family-friendly",
-      "date": "official",
-      "map": "Google Maps 1,477 reviews, newest '1 day ago'"
-    },
-    {
-      "name": "River’s Catch",
-      "page_name": "River’s Catch",
-      "src": "https://www.rotoruanz.com/eat-drink/family-friendly",
-      "date": "official",
-      "map": "Google Maps 698 reviews, newest '2 days ago'"
-    },
-    {
-      "name": "Scope Rotorua",
-      "page_name": "Scope Rotorua",
-      "src": "https://www.rotoruanz.com/eat-drink/family-friendly",
-      "date": "official",
-      "map": "Google Maps 'Scope Cafe Rotorua', 1,354 reviews, newest '6 hours ago'"
-    },
-    {
-      "name": "Lake Tikitapu (the Blue Lake)",
-      "page_name": "Lake Tikitapu (the Blue Lake)",
-      "src": "https://www.nomadasaurus.com/things-to-do-in-rotorua-new-zealand/",
-      "date": "2026-01",
-      "map": "Google Maps 286 reviews, newest 'a month ago'"
-    },
-    {
-      "name": "Taupō DeBretts Hot Pools",
-      "page_name": "Taupō DeBretts Spa Resort",
-      "src": "https://www.lovetaupo.com/en/plan/recommended-itineraries/7-days-of-family-fun-in-taupo/",
-      "date": "official",
-      "map": "Google Maps 2,504 reviews, newest 'a week ago'"
-    },
-    {
-      "name": "Huka Honey Hive",
-      "page_name": "Huka Honey Hive",
-      "src": "https://www.lovetaupo.com/en/plan/recommended-itineraries/7-days-of-family-fun-in-taupo/",
-      "date": "official",
-      "map": "Google Maps 2,944 reviews, newest '2 days ago'"
-    },
-    {
-      "name": "AC Baths",
-      "page_name": "AC Baths",
-      "src": "https://www.lovetaupo.com/en/plan/recommended-itineraries/7-days-of-family-fun-in-taupo/",
-      "date": "official",
-      "map": "Google Maps 'AC Baths & Thermal Hot Pools', 1,066 reviews, newest 'a week ago'"
-    },
-    {
-      "name": "Taupō Museum and Art Gallery",
-      "page_name": "Taupō Museum and Art Gallery",
-      "src": "https://www.lovetaupo.com/en/plan/recommended-itineraries/7-days-of-family-fun-in-taupo/",
-      "date": "official",
-      "map": "Google Maps 310 reviews, newest '1 day ago'"
-    },
-    {
-      "name": "Mind Junction",
-      "page_name": "Mind Junction",
-      "src": "https://www.lovetaupo.com/en/plan/recommended-itineraries/7-days-of-family-fun-in-taupo/",
-      "date": "official",
-      "map": "Google Maps 'Mind Junction Activity Park', 466 reviews, newest 'a month ago'"
-    },
-    {
-      "name": "Aratiatia Rapids",
-      "page_name": "Aratiatia Dam",
-      "src": "https://www.lovetaupo.com/en/plan/recommended-itineraries/7-days-of-family-fun-in-taupo/",
-      "date": "official",
-      "map": "Google Maps 'Aratiatia Rapids', 1,986 reviews, newest '22 hours ago'"
-    },
-    {
-      "name": "Starlight Cinema",
-      "page_name": "Starlight Cinema",
-      "src": "https://www.lovetaupo.com/en/plan/recommended-itineraries/7-days-of-family-fun-in-taupo/",
-      "date": "official",
-      "map": "Google Maps 655 reviews, newest '1 day ago'"
+      "town": "nz-rotorua",
+      "kind": "eats + sights",
+      "checked": "2026-11-23",
+      "rule": "library-check.cjs, then the Google Maps Reviews tab sorted by newest: ok only when not marked closed, with a review from the last six months, and the map's name matching the page's.",
+      "agents": "one Haiku agent; 13 rows offered, 13 passed library-check.cjs, 13 went in",
+      "added": [
+        {
+          "name": "Black Label Barbecue",
+          "page_name": "Black Label Barbecue",
+          "src": "https://www.rotoruanz.com/eat-drink/family-friendly",
+          "date": "official",
+          "map": "Google Maps 889 reviews, newest '7 hours ago'"
+        },
+        {
+          "name": "Charlie’s Café at Chipmunks Playland",
+          "page_name": "Charlie's Café at Chipmunks Playland",
+          "src": "https://www.rotoruanz.com/eat-drink/cafes/chipmunks-playland-cafe-motion-entertainment",
+          "date": "official",
+          "map": "Google Maps 'Chipmunks Playland & Café Rotorua', 158 reviews, newest 'a month ago'"
+        },
+        {
+          "name": "Lone Star Rotorua",
+          "page_name": "Lone Star Rotorua",
+          "src": "https://www.rotoruanz.com/eat-drink/family-friendly",
+          "date": "official",
+          "map": "Google Maps 1,477 reviews, newest '1 day ago'"
+        },
+        {
+          "name": "River’s Catch",
+          "page_name": "River’s Catch",
+          "src": "https://www.rotoruanz.com/eat-drink/family-friendly",
+          "date": "official",
+          "map": "Google Maps 698 reviews, newest '2 days ago'"
+        },
+        {
+          "name": "Scope Rotorua",
+          "page_name": "Scope Rotorua",
+          "src": "https://www.rotoruanz.com/eat-drink/family-friendly",
+          "date": "official",
+          "map": "Google Maps 'Scope Cafe Rotorua', 1,354 reviews, newest '6 hours ago'"
+        },
+        {
+          "name": "Lake Tikitapu (the Blue Lake)",
+          "page_name": "Lake Tikitapu (the Blue Lake)",
+          "src": "https://www.nomadasaurus.com/things-to-do-in-rotorua-new-zealand/",
+          "date": "2026-01",
+          "map": "Google Maps 286 reviews, newest 'a month ago'"
+        },
+        {
+          "name": "Taupō DeBretts Hot Pools",
+          "page_name": "Taupō DeBretts Spa Resort",
+          "src": "https://www.lovetaupo.com/en/plan/recommended-itineraries/7-days-of-family-fun-in-taupo/",
+          "date": "official",
+          "map": "Google Maps 2,504 reviews, newest 'a week ago'"
+        },
+        {
+          "name": "Huka Honey Hive",
+          "page_name": "Huka Honey Hive",
+          "src": "https://www.lovetaupo.com/en/plan/recommended-itineraries/7-days-of-family-fun-in-taupo/",
+          "date": "official",
+          "map": "Google Maps 2,944 reviews, newest '2 days ago'"
+        },
+        {
+          "name": "AC Baths",
+          "page_name": "AC Baths",
+          "src": "https://www.lovetaupo.com/en/plan/recommended-itineraries/7-days-of-family-fun-in-taupo/",
+          "date": "official",
+          "map": "Google Maps 'AC Baths & Thermal Hot Pools', 1,066 reviews, newest 'a week ago'"
+        },
+        {
+          "name": "Taupō Museum and Art Gallery",
+          "page_name": "Taupō Museum and Art Gallery",
+          "src": "https://www.lovetaupo.com/en/plan/recommended-itineraries/7-days-of-family-fun-in-taupo/",
+          "date": "official",
+          "map": "Google Maps 310 reviews, newest '1 day ago'"
+        },
+        {
+          "name": "Mind Junction",
+          "page_name": "Mind Junction",
+          "src": "https://www.lovetaupo.com/en/plan/recommended-itineraries/7-days-of-family-fun-in-taupo/",
+          "date": "official",
+          "map": "Google Maps 'Mind Junction Activity Park', 466 reviews, newest 'a month ago'"
+        },
+        {
+          "name": "Aratiatia Rapids",
+          "page_name": "Aratiatia Dam",
+          "src": "https://www.lovetaupo.com/en/plan/recommended-itineraries/7-days-of-family-fun-in-taupo/",
+          "date": "official",
+          "map": "Google Maps 'Aratiatia Rapids', 1,986 reviews, newest '22 hours ago'"
+        },
+        {
+          "name": "Starlight Cinema",
+          "page_name": "Starlight Cinema",
+          "src": "https://www.lovetaupo.com/en/plan/recommended-itineraries/7-days-of-family-fun-in-taupo/",
+          "date": "official",
+          "map": "Google Maps 655 reviews, newest '1 day ago'"
+        }
+      ],
+      "left_out": [],
+      "estimates": "Ages and visit hours are placeholders; prices and opening notes are the pages' own."
     }
-  ],
-  "left_out": [],
-  "estimates": "Ages and visit hours are placeholders; prices and opening notes are the pages' own."
+  ]
 }

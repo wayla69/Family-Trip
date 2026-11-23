@@ -1,91 +1,203 @@
 {
   "town": "at-salzburg",
-  "kind": "eats + sights",
-  "checked": "2026-11-23",
-  "rule": "library-check.cjs, then the Google Maps Reviews tab sorted by newest: ok only when not marked closed, with a review from the last six months, and the map's name matching the page's.",
-  "agents": "one Haiku agent; 15 rows offered, 12 from usable pages passed library-check.cjs, 9 went in",
-  "added": [
+  "rounds": [
     {
-      "name": "Gasthof Die Pflegerbrücke",
-      "page_name": "Gasthof Die Pflegerbrücke",
-      "src": "https://www.salzburg.info/de/reiseinfos/salzburg-a-z/gasthof-die-pflegerbruecke_az_4005",
-      "date": "official",
-      "map": "Google Maps 'Gasthof The Pflegerbrücke', 1,668 reviews, newest '11 hours ago'"
+      "town": "at-salzburg",
+      "kind": "places to eat",
+      "rows_in_library": "added in 5b6767a",
+      "checker": "scripts/library-check.cjs, run before merge: 9 pass, 0 fail",
+      "rows": [
+        {
+          "name": "IMLAUER Brasserie Mirabell",
+          "area": "Mirabellplatz 8",
+          "src": "https://imlauer.com/brasserie-mirabell/",
+          "date": "official",
+          "quote": "Die IMLAUER Brasserie Mirabell befindet sich am Mirabellplatz 8, mitten in Salzburg.",
+          "checker": {
+            "pass": true,
+            "fails": []
+          }
+        },
+        {
+          "name": "Braurestaurant IMLAUER",
+          "area": "Rainerstraße 14",
+          "src": "https://imlauer.com/braurestaurant-imlauer/",
+          "date": "official",
+          "quote": "Unser Braurestaurant IMLAUER hat täglich von 11:00 – 23:00 Uhr geöffnet.",
+          "checker": {
+            "pass": true,
+            "fails": []
+          }
+        },
+        {
+          "name": "Café Glockenspiel",
+          "area": "Mozartplatz, Salzburger Altstadt",
+          "src": "https://felleis-knittelfelder.at/cafe-glockenspiel/",
+          "date": "official",
+          "quote": "An einem der schönsten Plätze der Welt, dem Mozartplatz in der Salzburger Altstadt, liegt das Café Glockenspiel.",
+          "checker": {
+            "pass": true,
+            "fails": []
+          }
+        },
+        {
+          "name": "Pan e Vin",
+          "area": "Gstättengasse 1",
+          "src": "https://panevin.at/",
+          "date": "2026-11",
+          "quote": "machen einen Besuch im PAN E VIN zu einem unvergesslichen Erlebnis.",
+          "checker": {
+            "pass": true,
+            "fails": []
+          }
+        },
+        {
+          "name": "Steinterrasse",
+          "area": "Giselakai 3-5",
+          "src": "https://steinterrasse.com",
+          "date": "2026-07",
+          "quote": "Die Steinterrasse begleitet euch durch den Tag – mit direktem Blick über die Altstadt und einer Küche, die Casual Culinary auf den Teller bringt: kreativ, modern und simpel.",
+          "checker": {
+            "pass": true,
+            "fails": []
+          }
+        },
+        {
+          "name": "Humboldt",
+          "area": "Gstättengasse 4",
+          "src": "https://www.humboldtstubn.at/",
+          "date": "2026-11",
+          "quote": "HUMBOLDT – BIO RESTAURANT & BAR IN DER SALZBURGER ALTSTADT",
+          "checker": {
+            "pass": true,
+            "fails": []
+          }
+        },
+        {
+          "name": "Metzgersteig",
+          "area": "Alter Markt, Altstadt",
+          "src": "https://www.metzgersteig.at/",
+          "date": "2025-12",
+          "quote": "Metzgersteig mit großem Gastgarten am Alten Markt",
+          "checker": {
+            "pass": true,
+            "fails": []
+          }
+        },
+        {
+          "name": "Kaffeeothek",
+          "area": "Getreidegasse 3",
+          "src": "https://www.kaffeeothek.at/",
+          "date": "2026-11",
+          "quote": "Kaffeeothek | Kaffeespezialitäten für Kaffeeenthusiasten",
+          "checker": {
+            "pass": true,
+            "fails": []
+          }
+        },
+        {
+          "name": "Kuglhof",
+          "area": "Kugelhofstraße 13",
+          "src": "https://www.kuglhof.at/",
+          "date": "official",
+          "quote": "Im Kuglhof gibt’s immer Frisches aus der Backstube.",
+          "checker": {
+            "pass": true,
+            "fails": []
+          }
+        }
+      ]
     },
     {
-      "name": "Panoramarestaurant zur Festung Hohensalzburg",
-      "page_name": "Panoramarestaurant zur Festung Hohensalzburg",
-      "src": "https://www.Salzburg.info/en/salzburg/family/child-friendly-restaurants",
-      "date": "official",
-      "map": "Google Maps 1,495 reviews, newest '6 days ago'"
-    },
-    {
-      "name": "The Keep – Healthy Eating",
-      "page_name": "The Keep – Healthy Eating",
-      "src": "https://www.Salzburg.info/en/salzburg/family/child-friendly-restaurants",
-      "date": "official",
-      "map": "Google Maps 'The keep garden kitchen e.U.', 619 reviews, newest '15 hours ago'"
-    },
-    {
-      "name": "Restaurant Wolferl",
-      "page_name": "Restaurant Wolferl im JUFA Hotel Salzburg City",
-      "src": "https://www.Salzburg.info/en/salzburg/family/child-friendly-restaurants",
-      "date": "official",
-      "map": "Google Maps 33 reviews, newest '2 months ago'"
-    },
-    {
-      "name": "The Bakery by Didi Maier",
-      "page_name": "The Bakery by Didi Maier",
-      "src": "https://www.Salzburg.info/en/salzburg/family/child-friendly-restaurants",
-      "date": "official",
-      "map": "Google Maps 1,460 reviews, newest '1 day ago'"
-    },
-    {
-      "name": "DomQuartier",
-      "page_name": "DomQuartier",
-      "src": "https://tourismattractions.net/austria/salzburg-family-activities-kids",
-      "date": "2026-03",
-      "map": "Google Maps 'DomQuartier Salzburg', 1,250 reviews, newest '4 days ago'"
-    },
-    {
-      "name": "Lehener Park",
-      "page_name": "Lehener Park",
-      "src": "https://www.salzburg24.at/news/salzburg/stadt/spielplatz-test-in-der-stadt-salzburg-kinder-und-eltern-fuehlen-sich-im-sueden-am-wohlsten-art-331780",
-      "date": "2026-07",
-      "map": "Google Maps 6 reviews, newest '2 months ago'"
-    },
-    {
-      "name": "Volksgarten playground",
-      "page_name": "Spielplatz im Volksgarten",
-      "src": "https://www.salzburg.info/de/reiseinfos/salzburg-a-z/spielplaetze_az_13858",
-      "date": "official",
-      "map": "Google Maps 'Spielplatz Volksgarten', 6 reviews, newest '2 months ago'"
-    },
-    {
-      "name": "Hellbrunn playground",
-      "page_name": "Spielplatz in Hellbrunn",
-      "src": "https://www.salzburg.info/de/reiseinfos/salzburg-a-z/spielplaetze_az_13858",
-      "date": "official",
-      "map": "Google Maps 'Spielplatz' in the Hellbrunn park, 12 reviews, newest '2 months ago'"
+      "town": "at-salzburg",
+      "kind": "eats + sights",
+      "checked": "2026-11-23",
+      "rule": "library-check.cjs, then the Google Maps Reviews tab sorted by newest: ok only when not marked closed, with a review from the last six months, and the map's name matching the page's.",
+      "agents": "one Haiku agent; 15 rows offered, 12 from usable pages passed library-check.cjs, 9 went in",
+      "added": [
+        {
+          "name": "Gasthof Die Pflegerbrücke",
+          "page_name": "Gasthof Die Pflegerbrücke",
+          "src": "https://www.salzburg.info/de/reiseinfos/salzburg-a-z/gasthof-die-pflegerbruecke_az_4005",
+          "date": "official",
+          "map": "Google Maps 'Gasthof The Pflegerbrücke', 1,668 reviews, newest '11 hours ago'"
+        },
+        {
+          "name": "Panoramarestaurant zur Festung Hohensalzburg",
+          "page_name": "Panoramarestaurant zur Festung Hohensalzburg",
+          "src": "https://www.Salzburg.info/en/salzburg/family/child-friendly-restaurants",
+          "date": "official",
+          "map": "Google Maps 1,495 reviews, newest '6 days ago'"
+        },
+        {
+          "name": "The Keep – Healthy Eating",
+          "page_name": "The Keep – Healthy Eating",
+          "src": "https://www.Salzburg.info/en/salzburg/family/child-friendly-restaurants",
+          "date": "official",
+          "map": "Google Maps 'The keep garden kitchen e.U.', 619 reviews, newest '15 hours ago'"
+        },
+        {
+          "name": "Restaurant Wolferl",
+          "page_name": "Restaurant Wolferl im JUFA Hotel Salzburg City",
+          "src": "https://www.Salzburg.info/en/salzburg/family/child-friendly-restaurants",
+          "date": "official",
+          "map": "Google Maps 33 reviews, newest '2 months ago'"
+        },
+        {
+          "name": "The Bakery by Didi Maier",
+          "page_name": "The Bakery by Didi Maier",
+          "src": "https://www.Salzburg.info/en/salzburg/family/child-friendly-restaurants",
+          "date": "official",
+          "map": "Google Maps 1,460 reviews, newest '1 day ago'"
+        },
+        {
+          "name": "DomQuartier",
+          "page_name": "DomQuartier",
+          "src": "https://tourismattractions.net/austria/salzburg-family-activities-kids",
+          "date": "2026-03",
+          "map": "Google Maps 'DomQuartier Salzburg', 1,250 reviews, newest '4 days ago'"
+        },
+        {
+          "name": "Lehener Park",
+          "page_name": "Lehener Park",
+          "src": "https://www.salzburg24.at/news/salzburg/stadt/spielplatz-test-in-der-stadt-salzburg-kinder-und-eltern-fuehlen-sich-im-sueden-am-wohlsten-art-331780",
+          "date": "2026-07",
+          "map": "Google Maps 6 reviews, newest '2 months ago'"
+        },
+        {
+          "name": "Volksgarten playground",
+          "page_name": "Spielplatz im Volksgarten",
+          "src": "https://www.salzburg.info/de/reiseinfos/salzburg-a-z/spielplaetze_az_13858",
+          "date": "official",
+          "map": "Google Maps 'Spielplatz Volksgarten', 6 reviews, newest '2 months ago'"
+        },
+        {
+          "name": "Hellbrunn playground",
+          "page_name": "Spielplatz in Hellbrunn",
+          "src": "https://www.salzburg.info/de/reiseinfos/salzburg-a-z/spielplaetze_az_13858",
+          "date": "official",
+          "map": "Google Maps 'Spielplatz' in the Hellbrunn park, 12 reviews, newest '2 months ago'"
+        }
+      ],
+      "left_out": [
+        {
+          "name": "rows from restaurantsforkings.com",
+          "why": "a machine-written ranking site the brief refuses"
+        },
+        {
+          "name": "Mozart Residence",
+          "why": "the page puts it on Getreidegasse with the child violin, which is the Birthplace; the row could not be matched to one place"
+        },
+        {
+          "name": "Spielpark Frohnburgweg",
+          "why": "the map's place there is named 'Spielplatz Süd'"
+        },
+        {
+          "name": "Spielplatz Müllner Schanze",
+          "why": "the map's newest review is a year old"
+        }
+      ],
+      "estimates": "Ages and visit hours are placeholders; prices and opening notes are the pages' own."
     }
-  ],
-  "left_out": [
-    {
-      "name": "rows from restaurantsforkings.com",
-      "why": "a machine-written ranking site the brief refuses"
-    },
-    {
-      "name": "Mozart Residence",
-      "why": "the page puts it on Getreidegasse with the child violin, which is the Birthplace; the row could not be matched to one place"
-    },
-    {
-      "name": "Spielpark Frohnburgweg",
-      "why": "the map's place there is named 'Spielplatz Süd'"
-    },
-    {
-      "name": "Spielplatz Müllner Schanze",
-      "why": "the map's newest review is a year old"
-    }
-  ],
-  "estimates": "Ages and visit hours are placeholders; prices and opening notes are the pages' own."
+  ]
 }

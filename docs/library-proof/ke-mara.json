@@ -1,109 +1,175 @@
 {
   "town": "ke-mara",
-  "kind": "eats + sights",
-  "checked": "2026-11-23",
-  "rule": "library-check.cjs, then the Google Maps Reviews tab sorted by newest: ok only when not marked closed, with a review from the last six months, and the map's name matching the page's.",
-  "agents": "one Haiku agent; 14 rows from Tamarind Group's blog (2026) and K24 Digital (2026) passed library-check.cjs, all went in",
-  "added": [
+  "rounds": [
     {
-      "name": "Pili Restaurant (GTC Mall)",
-      "page_name": "Pili Restaurant",
-      "src": "https://tamarind.co.ke/our-blog/post/child-friendly-restaurants-nairobi",
-      "date": "2026-06",
-      "map": "Google Maps 'Pili Restaurant GTC MALL', 2,637 reviews, newest '2 days ago'"
+      "town": "ke-mara",
+      "kind": "eats",
+      "checked": "2026-11",
+      "rule": "A row gets ok only from a current listing, its own site or recent reviews with nothing saying closed (docs/EATS.md). A row is taken out when a search could not find the place at all or the sources disagree; a place found but not freshly confirmed stays without ok.",
+      "scope": "the 7 rows without ok; the rows that already carried ok were not re-checked in this pass",
+      "how": "Google Maps opened in headless Chromium (2026-11-23), limited view without a reviews tab, so no review date could be read; each row's own map query first, then the name with the town, a list result opened when needed; a hotel's own site or one web search only where Maps could not settle it.",
+      "confirmed": [
+        {
+          "name": "Talisman",
+          "src": "Google Maps",
+          "page_name": "Talisman Restaurant",
+          "evidence": "\"Talisman Restaurant\", Ngong Rd, MPG3+QG Nairobi (Karen); \"Closed · Opens 11 AM Tue\"; thetalismanrestaurant.com",
+          "ok": "2026-11"
+        },
+        {
+          "name": "Mama Oliech",
+          "src": "Google Maps",
+          "page_name": "Mama Oliech Restaurant",
+          "evidence": "\"Mama Oliech Restaurant\", African restaurant, Marcus Garvey Rd, PQ4R+9G Nairobi; \"Open 24 hours\"",
+          "ok": "2026-11"
+        },
+        {
+          "name": "Habesha",
+          "src": "Google Maps",
+          "page_name": "Habesha Ethiopian Restaurant",
+          "evidence": "\"Habesha Ethiopian Restaurant\", Argwings Kodhek Rd, PQ5H+2V Nairobi; \"Closed · Opens 9 AM\"; habesharestaurant.co.ke",
+          "ok": "2026-11"
+        },
+        {
+          "name": "Open House",
+          "src": "Google Maps",
+          "page_name": "Open House Restaurant Ltd",
+          "evidence": "The row's query and \"Open House Westlands\" found nothing; a web search placed it at Gallant Mall, Parklands Road, and Maps then shows \"Open House Restaurant Ltd\", Indian restaurant, Gallant mall, Parklands Road, PRP5+FP Nairobi; \"Closed · Opens 12 PM\"; openhouserestaurant.co.ke. q now names Gallant Mall.",
+          "ok": "2026-11",
+          "q_changed_to": "Open House Restaurant, Gallant Mall, Parklands Road, Nairobi"
+        },
+        {
+          "name": "Java House",
+          "src": "Google Maps",
+          "page_name": "Java House - Mama Ngina St",
+          "evidence": "\"Java House - Mama Ngina St\", Transnational Plaza, Mama Ngina St, PR7F+M6 Nairobi; \"Open · Closes 10 PM\"",
+          "ok": "2026-11"
+        },
+        {
+          "name": "Artcaffé",
+          "src": "Google Maps",
+          "page_name": "Artcaffé Restaurant Mwanzi Road",
+          "evidence": "\"Artcaffé Restaurant Mwanzi Road\", Westgate Mall, Mwanzi Rd, PRR3+XC Nairobi; \"Open · Closes 12 AM\"; owner post Sep 29, 2026",
+          "ok": "2026-11"
+        }
+      ],
+      "kept_without_ok": [
+        {
+          "name": "Sarit Centre Food Court",
+          "src": "Google Maps",
+          "evidence": "\"Sarit\" mall (Lower Kabete Rd) shows \"Open 24 hours\" and single outlets (TastiGo Grill, The Daily Café & Bistro, Falafel house) have hours, but no listing of the food court itself."
+        }
+      ],
+      "removed": []
     },
     {
-      "name": "Hunger's Nest",
-      "page_name": "Hunger’s Nest Family",
-      "src": "https://tamarind.co.ke/our-blog/post/child-friendly-restaurants-nairobi",
-      "date": "2026-06",
-      "map": "Google Maps 'Hunger's Nest', Valley View Office Park, 442 reviews, newest '2 days ago'"
-    },
-    {
-      "name": "Bao Box",
-      "page_name": "Bao Box",
-      "src": "https://tamarind.co.ke/our-blog/post/child-friendly-restaurants-nairobi",
-      "date": "2026-06",
-      "map": "Google Maps 5,238 reviews, newest '17 hours ago'"
-    },
-    {
-      "name": "Bwibo Restaurant",
-      "page_name": "Bwibo Restaurant",
-      "src": "https://tamarind.co.ke/our-blog/post/child-friendly-restaurants-nairobi",
-      "date": "2026-06",
-      "map": "Google Maps 'BWIBO RESTAURANT', Unicity Mall, 909 reviews, newest '2 weeks ago'"
-    },
-    {
-      "name": "Zen Garden",
-      "page_name": "Zen Garden",
-      "src": "https://tamarind.co.ke/our-blog/post/child-friendly-restaurants-nairobi",
-      "date": "2026-06",
-      "map": "Google Maps 4,442 reviews, newest '2 days ago'"
-    },
-    {
-      "name": "Golden Star Restaurant",
-      "page_name": "Golden Star Restaurant",
-      "src": "https://tamarind.co.ke/our-blog/post/child-friendly-restaurants-nairobi",
-      "date": "2026-06",
-      "map": "Google Maps Banda St, 298 reviews, newest '2 weeks ago'"
-    },
-    {
-      "name": "Under the Swahili Tree",
-      "page_name": "Under The Swahili Tree",
-      "src": "https://tamarind.co.ke/our-blog/post/child-friendly-restaurants-nairobi",
-      "date": "2026-06",
-      "map": "Google Maps 40A Marula Ln, 324 reviews, newest '2 months ago'"
-    },
-    {
-      "name": "Red Ginger",
-      "page_name": "Red Ginger",
-      "src": "https://tamarind.co.ke/our-blog/post/child-friendly-restaurants-nairobi",
-      "date": "2026-06",
-      "map": "Google Maps 4,114 reviews, newest '22 hours ago'"
-    },
-    {
-      "name": "Tamambo (Tatu City)",
-      "page_name": "Tamambo Tatu City",
-      "src": "https://tamarind.co.ke/our-blog/post/child-friendly-restaurants-nairobi",
-      "date": "2026-06",
-      "map": "Google Maps 108 reviews, newest '2 days ago'"
-    },
-    {
-      "name": "Ngong Hills",
-      "page_name": "Ngong Hills",
-      "src": "https://tamarind.co.ke/our-blog/post/best-family-outing-destinations-nairobi",
-      "date": "2026-06",
-      "map": "Google Maps 1,033 reviews, newest '14 hours ago'"
-    },
-    {
-      "name": "Uhuru Gardens",
-      "page_name": "Uhuru Gardens",
-      "src": "https://tamarind.co.ke/our-blog/post/best-family-outing-destinations-nairobi",
-      "date": "2026-06",
-      "map": "Google Maps 4,179 reviews, newest '18 hours ago'"
-    },
-    {
-      "name": "Nairobi Railway Museum",
-      "page_name": "Nairobi Railway Museum",
-      "src": "https://tamarind.co.ke/our-blog/post/best-family-outing-destinations-nairobi",
-      "date": "2026-06",
-      "map": "Google Maps 'Kenya Railway Museum', 1,546 reviews, newest '20 hours ago'"
-    },
-    {
-      "name": "John Michuki Memorial Park",
-      "page_name": "Michuki Memorial Park",
-      "src": "https://k24.digital/lifestyle/travel-and-leisure/10-free-places-to-visit-with-children-in-nairobi-during-the-august-school-holidays/amp",
-      "date": "2026-07",
-      "map": "Google Maps 'John Michuki Memorial Park', 340 reviews, newest '2 weeks ago'"
-    },
-    {
-      "name": "City Park",
-      "page_name": "City Park",
-      "src": "https://k24.digital/lifestyle/travel-and-leisure/10-free-places-to-visit-with-children-in-nairobi-during-the-august-school-holidays/amp",
-      "date": "2026-07",
-      "map": "Google Maps 1,947 reviews, newest '2 days ago'"
+      "town": "ke-mara",
+      "kind": "eats + sights",
+      "checked": "2026-11-23",
+      "rule": "library-check.cjs, then the Google Maps Reviews tab sorted by newest: ok only when not marked closed, with a review from the last six months, and the map's name matching the page's.",
+      "agents": "one Haiku agent; 14 rows from Tamarind Group's blog (2026) and K24 Digital (2026) passed library-check.cjs, all went in",
+      "added": [
+        {
+          "name": "Pili Restaurant (GTC Mall)",
+          "page_name": "Pili Restaurant",
+          "src": "https://tamarind.co.ke/our-blog/post/child-friendly-restaurants-nairobi",
+          "date": "2026-06",
+          "map": "Google Maps 'Pili Restaurant GTC MALL', 2,637 reviews, newest '2 days ago'"
+        },
+        {
+          "name": "Hunger's Nest",
+          "page_name": "Hunger’s Nest Family",
+          "src": "https://tamarind.co.ke/our-blog/post/child-friendly-restaurants-nairobi",
+          "date": "2026-06",
+          "map": "Google Maps 'Hunger's Nest', Valley View Office Park, 442 reviews, newest '2 days ago'"
+        },
+        {
+          "name": "Bao Box",
+          "page_name": "Bao Box",
+          "src": "https://tamarind.co.ke/our-blog/post/child-friendly-restaurants-nairobi",
+          "date": "2026-06",
+          "map": "Google Maps 5,238 reviews, newest '17 hours ago'"
+        },
+        {
+          "name": "Bwibo Restaurant",
+          "page_name": "Bwibo Restaurant",
+          "src": "https://tamarind.co.ke/our-blog/post/child-friendly-restaurants-nairobi",
+          "date": "2026-06",
+          "map": "Google Maps 'BWIBO RESTAURANT', Unicity Mall, 909 reviews, newest '2 weeks ago'"
+        },
+        {
+          "name": "Zen Garden",
+          "page_name": "Zen Garden",
+          "src": "https://tamarind.co.ke/our-blog/post/child-friendly-restaurants-nairobi",
+          "date": "2026-06",
+          "map": "Google Maps 4,442 reviews, newest '2 days ago'"
+        },
+        {
+          "name": "Golden Star Restaurant",
+          "page_name": "Golden Star Restaurant",
+          "src": "https://tamarind.co.ke/our-blog/post/child-friendly-restaurants-nairobi",
+          "date": "2026-06",
+          "map": "Google Maps Banda St, 298 reviews, newest '2 weeks ago'"
+        },
+        {
+          "name": "Under the Swahili Tree",
+          "page_name": "Under The Swahili Tree",
+          "src": "https://tamarind.co.ke/our-blog/post/child-friendly-restaurants-nairobi",
+          "date": "2026-06",
+          "map": "Google Maps 40A Marula Ln, 324 reviews, newest '2 months ago'"
+        },
+        {
+          "name": "Red Ginger",
+          "page_name": "Red Ginger",
+          "src": "https://tamarind.co.ke/our-blog/post/child-friendly-restaurants-nairobi",
+          "date": "2026-06",
+          "map": "Google Maps 4,114 reviews, newest '22 hours ago'"
+        },
+        {
+          "name": "Tamambo (Tatu City)",
+          "page_name": "Tamambo Tatu City",
+          "src": "https://tamarind.co.ke/our-blog/post/child-friendly-restaurants-nairobi",
+          "date": "2026-06",
+          "map": "Google Maps 108 reviews, newest '2 days ago'"
+        },
+        {
+          "name": "Ngong Hills",
+          "page_name": "Ngong Hills",
+          "src": "https://tamarind.co.ke/our-blog/post/best-family-outing-destinations-nairobi",
+          "date": "2026-06",
+          "map": "Google Maps 1,033 reviews, newest '14 hours ago'"
+        },
+        {
+          "name": "Uhuru Gardens",
+          "page_name": "Uhuru Gardens",
+          "src": "https://tamarind.co.ke/our-blog/post/best-family-outing-destinations-nairobi",
+          "date": "2026-06",
+          "map": "Google Maps 4,179 reviews, newest '18 hours ago'"
+        },
+        {
+          "name": "Nairobi Railway Museum",
+          "page_name": "Nairobi Railway Museum",
+          "src": "https://tamarind.co.ke/our-blog/post/best-family-outing-destinations-nairobi",
+          "date": "2026-06",
+          "map": "Google Maps 'Kenya Railway Museum', 1,546 reviews, newest '20 hours ago'"
+        },
+        {
+          "name": "John Michuki Memorial Park",
+          "page_name": "Michuki Memorial Park",
+          "src": "https://k24.digital/lifestyle/travel-and-leisure/10-free-places-to-visit-with-children-in-nairobi-during-the-august-school-holidays/amp",
+          "date": "2026-07",
+          "map": "Google Maps 'John Michuki Memorial Park', 340 reviews, newest '2 weeks ago'"
+        },
+        {
+          "name": "City Park",
+          "page_name": "City Park",
+          "src": "https://k24.digital/lifestyle/travel-and-leisure/10-free-places-to-visit-with-children-in-nairobi-during-the-august-school-holidays/amp",
+          "date": "2026-07",
+          "map": "Google Maps 1,947 reviews, newest '2 days ago'"
+        }
+      ],
+      "left_out": [],
+      "estimates": "Ages and visit hours are placeholders; prices and opening notes are the pages' own."
     }
-  ],
-  "left_out": [],
-  "estimates": "Ages and visit hours are placeholders; prices and opening notes are the pages' own."
+  ]
 }

@@ -1,51 +1,82 @@
 {
   "town": "np-kathmandu",
-  "kind": "eats + sights",
-  "checked": "2026-11-23",
-  "rule": "library-check.cjs, then the Google Maps Reviews tab sorted by newest: ok only when not marked closed, with a review from the last six months, and the map's name matching the page's.",
-  "agents": "one Haiku agent; 6 rows from Full Time Explorer (2025) and Travelynn Family (2026) passed library-check.cjs, 5 went in",
-  "added": [
+  "rounds": [
     {
-      "name": "Jimbu Thakali by Capital Grill",
-      "page_name": "Jimbu Thakali by Capital Grill",
-      "src": "https://fulltimeexplorer.com/best-family-restaurants-in-kathmandu/",
-      "date": "2025-12",
-      "map": "Google Maps 'Jimbu Thakali by Capital Grill, Tangal', 7,382 reviews, newest '2 hours ago'"
+      "town": "np-kathmandu",
+      "kind": "eats",
+      "checked": "2026-11",
+      "rule": "A row gets ok only from a current listing, its own site or recent reviews with nothing saying closed (docs/EATS.md). A row is taken out when a search could not find the place at all or the sources disagree; a place found but not freshly confirmed stays without ok.",
+      "scope": "the 2 rows without ok; the rows already confirmed were not checked again",
+      "how": "Google Maps opened in headless Chromium (2026-11-23), limited view without a reviews tab, so no review date could be read; a place with current hours and no closed notice counts as a current listing",
+      "confirmed": [
+        {
+          "name": "Pokhara Thakali Kitchen",
+          "src": "https://www.google.com/maps/place/Pokhara+Thakali+Kitchen/@28.2059132,83.9614626,17z",
+          "page_name": "Pokhara Thakali Kitchen",
+          "evidence": "Google Maps: Nepalese restaurant, 4.0★, Gauri Marg, Pokhara (6X46+9H8, Lakeside), 'Opens soon · 11 AM', phone listed; nothing says closed",
+          "ok": "2026-11"
+        },
+        {
+          "name": "Honacha",
+          "src": "https://www.google.com/maps/place/Honacha/@27.67364,85.3202781,17z",
+          "page_name": "Honacha",
+          "evidence": "Google Maps: restaurant, 4.1★, Lalitpur (M8FF+FW, by Patan Durbar Square), 'Closed · Opens 1 PM Sun', bookable ('Find a table'), site honacha.com.np; nothing says closed (the next opening shown was Sunday)",
+          "ok": "2026-11"
+        }
+      ],
+      "kept_without_ok": [],
+      "removed": []
     },
     {
-      "name": "Alice Restaurant",
-      "page_name": "Alice Restaurant",
-      "src": "https://fulltimeexplorer.com/best-family-restaurants-in-kathmandu/",
-      "date": "2025-12",
-      "map": "Google Maps Gairidhara Rd, 2,823 reviews, newest '1 day ago'"
-    },
-    {
-      "name": "Kaiser Café",
-      "page_name": "Kaiser Café",
-      "src": "https://travelynnfamily.com/kathmandu-with-kids/",
-      "date": "2026-11",
-      "map": "Google Maps 416 reviews, newest 'last week'"
-    },
-    {
-      "name": "Kathmandu Durbar Square",
-      "page_name": "Kathmandu Durbar Square",
-      "src": "https://travelynnfamily.com/kathmandu-with-kids/",
-      "date": "2026-11",
-      "map": "Google Maps 'จัตุรัสกาฐมาณฑุดูร์บาร์', 40,967 reviews, newest '1 hour ago'"
-    },
-    {
-      "name": "Pottery Square",
-      "page_name": "Potters Square",
-      "src": "https://travelynnfamily.com/kathmandu-with-kids/",
-      "date": "2026-11",
-      "map": "Google Maps 'Pottery Square कुम्हः त्वः', 172 reviews, newest '15 hours ago'"
+      "town": "np-kathmandu",
+      "kind": "eats + sights",
+      "checked": "2026-11-23",
+      "rule": "library-check.cjs, then the Google Maps Reviews tab sorted by newest: ok only when not marked closed, with a review from the last six months, and the map's name matching the page's.",
+      "agents": "one Haiku agent; 6 rows from Full Time Explorer (2025) and Travelynn Family (2026) passed library-check.cjs, 5 went in",
+      "added": [
+        {
+          "name": "Jimbu Thakali by Capital Grill",
+          "page_name": "Jimbu Thakali by Capital Grill",
+          "src": "https://fulltimeexplorer.com/best-family-restaurants-in-kathmandu/",
+          "date": "2025-12",
+          "map": "Google Maps 'Jimbu Thakali by Capital Grill, Tangal', 7,382 reviews, newest '2 hours ago'"
+        },
+        {
+          "name": "Alice Restaurant",
+          "page_name": "Alice Restaurant",
+          "src": "https://fulltimeexplorer.com/best-family-restaurants-in-kathmandu/",
+          "date": "2025-12",
+          "map": "Google Maps Gairidhara Rd, 2,823 reviews, newest '1 day ago'"
+        },
+        {
+          "name": "Kaiser Café",
+          "page_name": "Kaiser Café",
+          "src": "https://travelynnfamily.com/kathmandu-with-kids/",
+          "date": "2026-11",
+          "map": "Google Maps 416 reviews, newest 'last week'"
+        },
+        {
+          "name": "Kathmandu Durbar Square",
+          "page_name": "Kathmandu Durbar Square",
+          "src": "https://travelynnfamily.com/kathmandu-with-kids/",
+          "date": "2026-11",
+          "map": "Google Maps 'จัตุรัสกาฐมาณฑุดูร์บาร์', 40,967 reviews, newest '1 hour ago'"
+        },
+        {
+          "name": "Pottery Square",
+          "page_name": "Potters Square",
+          "src": "https://travelynnfamily.com/kathmandu-with-kids/",
+          "date": "2026-11",
+          "map": "Google Maps 'Pottery Square कुम्हः त्वः', 172 reviews, newest '15 hours ago'"
+        }
+      ],
+      "left_out": [
+        {
+          "name": "Rumi's Bistro",
+          "why": "newest Google Maps review eight months old"
+        }
+      ],
+      "estimates": "Ages and visit hours are placeholders; prices and opening notes are the pages' own."
     }
-  ],
-  "left_out": [
-    {
-      "name": "Rumi's Bistro",
-      "why": "newest Google Maps review eight months old"
-    }
-  ],
-  "estimates": "Ages and visit hours are placeholders; prices and opening notes are the pages' own."
+  ]
 }

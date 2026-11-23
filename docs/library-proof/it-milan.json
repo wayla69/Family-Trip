@@ -1,119 +1,143 @@
 {
   "town": "it-milan",
-  "kind": "eats + sights",
-  "checked": "2026-11-23",
-  "rule": "library-check.cjs, then the Google Maps Reviews tab sorted by newest: ok only when not marked closed, with a review from the last six months, and the map's name matching the page's.",
-  "agents": "one Haiku agent; 17 of 18 rows from Viaggiapiccoli (2025–2026) and Milanofree (2026) passed library-check.cjs, 13 went in",
-  "added": [
+  "rounds": [
     {
-      "name": "Belle Epoque",
-      "page_name": "Belle Epoque",
-      "src": "https://www.viaggiapiccoli.com/ristoranti-per-bambini-milano/",
-      "date": "2025-05",
-      "map": "Google Maps 'Belle epoque', Via Varè 23, 287 reviews, a review from 'last month'"
+      "town": "it-milan",
+      "kind": "eats",
+      "checked": "2026-11",
+      "rule": "A row gets ok only from a current listing, its own site or recent reviews with nothing saying closed (docs/EATS.md). A row is taken out when a search could not find the place at all or the sources disagree; a place found but not freshly confirmed stays without ok.",
+      "scope": "the 1 row without ok; the rows already confirmed were not checked again",
+      "how": "Google Maps opened in headless Chromium (2026-11-23), limited view without a reviews tab, so no review date could be read; a place with current hours and no closed notice counts as a current listing",
+      "confirmed": [
+        {
+          "name": "Gino Sorbillo Lievito Madre al Duomo",
+          "src": "https://www.google.com/maps/place/Gino+Sorbillo/@45.4648801,9.1956446,17z",
+          "page_name": "Gino Sorbillo",
+          "evidence": "Google Maps: pizza restaurant, 4.1★, Largo Corsia dei Servi 11, 20122 Milano (F57W+X7, by the Duomo), 'Closed · Opens 12 PM', site sorbillo.it; nothing says closed",
+          "ok": "2026-11"
+        }
+      ],
+      "kept_without_ok": [],
+      "removed": []
     },
     {
-      "name": "Trattoria Bertamè",
-      "page_name": "Trattoria Bertamè",
-      "src": "https://www.viaggiapiccoli.com/ristoranti-per-bambini-milano/",
-      "date": "2025-05",
-      "map": "Google Maps Via Lomonaco 13b, 2,050 reviews, newest '21 hours ago'"
-    },
-    {
-      "name": "Consorzio Stoppani",
-      "page_name": "Consorzio Stoppani",
-      "src": "https://www.viaggiapiccoli.com/ristoranti-per-bambini-milano/",
-      "date": "2025-05",
-      "map": "Google Maps 2,665 reviews, newest '3 hours ago'"
-    },
-    {
-      "name": "Mamusca",
-      "page_name": "Mamusca",
-      "src": "https://www.viaggiapiccoli.com/ristoranti-per-bambini-milano/",
-      "date": "2025-05",
-      "map": "Google Maps 429 reviews, newest '1 day ago'"
-    },
-    {
-      "name": "California Bakery (CityLife)",
-      "page_name": "California Bakery",
-      "src": "https://www.viaggiapiccoli.com/ristoranti-per-bambini-milano/",
-      "date": "2025-05",
-      "map": "Google Maps CityLife, 3,014 reviews, newest 'last week'"
-    },
-    {
-      "name": "Giolina",
-      "page_name": "Giolina",
-      "src": "https://www.viaggiapiccoli.com/ristoranti-per-bambini-milano/",
-      "date": "2025-05",
-      "map": "Google Maps Via Bellotti 6, 2,018 reviews, newest '1 day ago'"
-    },
-    {
-      "name": "MIC Ramen (Porta Romana)",
-      "page_name": "Mic Ramen",
-      "src": "https://www.viaggiapiccoli.com/ristoranti-per-bambini-milano/",
-      "date": "2025-05",
-      "map": "Google Maps 'MIC Ramen Milano Porta Romana', Viale Monte Nero 62, 2,809 reviews, newest '17 hours ago'"
-    },
-    {
-      "name": "Benvenuto Family Restaurant",
-      "page_name": "Benvenuto Family Restaurant",
-      "src": "https://www.milanofree.it/milano/bambini/ristoranti-a-milano-con-sala-giochi-per-bambini.html",
-      "date": "2026-08",
-      "map": "Google Maps 'Benvenuto Family Restaurant - Milano', Via Wittgens 6/b, 832 reviews, newest '1 day ago'"
-    },
-    {
-      "name": "Pinacoteca di Brera",
-      "page_name": "Pinacoteca di Brera",
-      "src": "https://www.viaggiapiccoli.com/milano-con-bambini-cosa-vedere/",
-      "date": "2025-10",
-      "map": "Google Maps 35,914 reviews, newest '13 hours ago'"
-    },
-    {
-      "name": "La Scala Theatre Museum",
-      "page_name": "Museo del Teatro alla Scala",
-      "src": "https://www.viaggiapiccoli.com/milano-con-bambini-cosa-vedere/",
-      "date": "2025-10",
-      "map": "Google Maps 'Teatro alla Scala Museum', 2,908 reviews, newest '18 hours ago'"
-    },
-    {
-      "name": "Library of Trees park (BAM)",
-      "page_name": "Biblioteca degli Alberi (BAM)",
-      "src": "https://www.viaggiapiccoli.com/milano-con-bambini-cosa-vedere/",
-      "date": "2025-10",
-      "map": "Google Maps 'BAM - Biblioteca degli Alberi Milano', 6,340 reviews, newest '1 day ago'"
-    },
-    {
-      "name": "Museum of Senses",
-      "page_name": "Museum of Senses",
-      "src": "https://www.viaggiapiccoli.com/milano-con-bambini-cosa-vedere/",
-      "date": "2025-10",
-      "map": "Google Maps 'Museum of Senses Milano', 2,433 reviews, newest '5 hours ago'"
-    },
-    {
-      "name": "Bagni Misteriosi",
-      "page_name": "Bagni Misteriosi",
-      "src": "https://www.viaggiapiccoli.com/milano-con-bambini-cosa-vedere/",
-      "date": "2025-10",
-      "map": "Google Maps 4,350 reviews, newest '1 day ago'"
+      "town": "it-milan",
+      "kind": "eats + sights",
+      "checked": "2026-11-23",
+      "rule": "library-check.cjs, then the Google Maps Reviews tab sorted by newest: ok only when not marked closed, with a review from the last six months, and the map's name matching the page's.",
+      "agents": "one Haiku agent; 17 of 18 rows from Viaggiapiccoli (2025–2026) and Milanofree (2026) passed library-check.cjs, 13 went in",
+      "added": [
+        {
+          "name": "Belle Epoque",
+          "page_name": "Belle Epoque",
+          "src": "https://www.viaggiapiccoli.com/ristoranti-per-bambini-milano/",
+          "date": "2025-05",
+          "map": "Google Maps 'Belle epoque', Via Varè 23, 287 reviews, a review from 'last month'"
+        },
+        {
+          "name": "Trattoria Bertamè",
+          "page_name": "Trattoria Bertamè",
+          "src": "https://www.viaggiapiccoli.com/ristoranti-per-bambini-milano/",
+          "date": "2025-05",
+          "map": "Google Maps Via Lomonaco 13b, 2,050 reviews, newest '21 hours ago'"
+        },
+        {
+          "name": "Consorzio Stoppani",
+          "page_name": "Consorzio Stoppani",
+          "src": "https://www.viaggiapiccoli.com/ristoranti-per-bambini-milano/",
+          "date": "2025-05",
+          "map": "Google Maps 2,665 reviews, newest '3 hours ago'"
+        },
+        {
+          "name": "Mamusca",
+          "page_name": "Mamusca",
+          "src": "https://www.viaggiapiccoli.com/ristoranti-per-bambini-milano/",
+          "date": "2025-05",
+          "map": "Google Maps 429 reviews, newest '1 day ago'"
+        },
+        {
+          "name": "California Bakery (CityLife)",
+          "page_name": "California Bakery",
+          "src": "https://www.viaggiapiccoli.com/ristoranti-per-bambini-milano/",
+          "date": "2025-05",
+          "map": "Google Maps CityLife, 3,014 reviews, newest 'last week'"
+        },
+        {
+          "name": "Giolina",
+          "page_name": "Giolina",
+          "src": "https://www.viaggiapiccoli.com/ristoranti-per-bambini-milano/",
+          "date": "2025-05",
+          "map": "Google Maps Via Bellotti 6, 2,018 reviews, newest '1 day ago'"
+        },
+        {
+          "name": "MIC Ramen (Porta Romana)",
+          "page_name": "Mic Ramen",
+          "src": "https://www.viaggiapiccoli.com/ristoranti-per-bambini-milano/",
+          "date": "2025-05",
+          "map": "Google Maps 'MIC Ramen Milano Porta Romana', Viale Monte Nero 62, 2,809 reviews, newest '17 hours ago'"
+        },
+        {
+          "name": "Benvenuto Family Restaurant",
+          "page_name": "Benvenuto Family Restaurant",
+          "src": "https://www.milanofree.it/milano/bambini/ristoranti-a-milano-con-sala-giochi-per-bambini.html",
+          "date": "2026-08",
+          "map": "Google Maps 'Benvenuto Family Restaurant - Milano', Via Wittgens 6/b, 832 reviews, newest '1 day ago'"
+        },
+        {
+          "name": "Pinacoteca di Brera",
+          "page_name": "Pinacoteca di Brera",
+          "src": "https://www.viaggiapiccoli.com/milano-con-bambini-cosa-vedere/",
+          "date": "2025-10",
+          "map": "Google Maps 35,914 reviews, newest '13 hours ago'"
+        },
+        {
+          "name": "La Scala Theatre Museum",
+          "page_name": "Museo del Teatro alla Scala",
+          "src": "https://www.viaggiapiccoli.com/milano-con-bambini-cosa-vedere/",
+          "date": "2025-10",
+          "map": "Google Maps 'Teatro alla Scala Museum', 2,908 reviews, newest '18 hours ago'"
+        },
+        {
+          "name": "Library of Trees park (BAM)",
+          "page_name": "Biblioteca degli Alberi (BAM)",
+          "src": "https://www.viaggiapiccoli.com/milano-con-bambini-cosa-vedere/",
+          "date": "2025-10",
+          "map": "Google Maps 'BAM - Biblioteca degli Alberi Milano', 6,340 reviews, newest '1 day ago'"
+        },
+        {
+          "name": "Museum of Senses",
+          "page_name": "Museum of Senses",
+          "src": "https://www.viaggiapiccoli.com/milano-con-bambini-cosa-vedere/",
+          "date": "2025-10",
+          "map": "Google Maps 'Museum of Senses Milano', 2,433 reviews, newest '5 hours ago'"
+        },
+        {
+          "name": "Bagni Misteriosi",
+          "page_name": "Bagni Misteriosi",
+          "src": "https://www.viaggiapiccoli.com/milano-con-bambini-cosa-vedere/",
+          "date": "2025-10",
+          "map": "Google Maps 4,350 reviews, newest '1 day ago'"
+        }
+      ],
+      "left_out": [
+        {
+          "name": "Museo Leonardo3",
+          "why": "already in the library"
+        },
+        {
+          "name": "Grani&Braci",
+          "why": "newest Google Maps review three years old"
+        },
+        {
+          "name": "Navigli",
+          "why": "a whole canal district"
+        },
+        {
+          "name": "Via Paolo Sarpi",
+          "why": "a whole street (Chinatown)"
+        }
+      ],
+      "estimates": "Ages and visit hours are placeholders; prices and opening notes are the pages' own."
     }
-  ],
-  "left_out": [
-    {
-      "name": "Museo Leonardo3",
-      "why": "already in the library"
-    },
-    {
-      "name": "Grani&Braci",
-      "why": "newest Google Maps review three years old"
-    },
-    {
-      "name": "Navigli",
-      "why": "a whole canal district"
-    },
-    {
-      "name": "Via Paolo Sarpi",
-      "why": "a whole street (Chinatown)"
-    }
-  ],
-  "estimates": "Ages and visit hours are placeholders; prices and opening notes are the pages' own."
+  ]
 }
