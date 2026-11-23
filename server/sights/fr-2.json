@@ -524,6 +524,191 @@
           "q": "Place Bellecour, Lyon",
           "ok": "2026-11",
           "src": "https://ryo.co/fr/articles/france/lyon/lyon-enfants/"
+        },
+        {
+          "local": "",
+          "ages": [
+            1,
+            1,
+            1,
+            1
+          ],
+          "hrs": 1,
+          "io": "in",
+          "pram": "part",
+          "price": {
+            "th": "เช็กราคาก่อนไป",
+            "en": "Check the price"
+          },
+          "book": "none",
+          "src": "https://en.visiterlyon.com/discover/lyon-the-way-you-like-it/as-a-family/10-must-do-activities-with-kids-in-lyon",
+          "name": {
+            "th": "บ้านช่างทอไหมกานูต์",
+            "en": "Maison des Canuts"
+          },
+          "kind": "museumkid",
+          "area": {
+            "th": "ครัวรูส",
+            "en": "Croix-Rousse"
+          },
+          "what": {
+            "th": "บ้านทอไหมที่สาธิตการทำงานของช่างทอไหมลียง",
+            "en": "A silk-weaving house where Lyon’s silk workers are shown at work"
+          },
+          "why": {
+            "th": "ได้ดูกี่ทอไหมทำงาน และลองดึงเส้นไหมจากรังไหม",
+            "en": "A silk loom in action, and a cocoon to unwind"
+          },
+          "q": "La Maison des Canuts, 10 Rue d’Ivry, Lyon",
+          "ok": "2026-11"
+        },
+        {
+          "local": "",
+          "ages": [
+            1,
+            1,
+            1,
+            1
+          ],
+          "hrs": 1,
+          "io": "in",
+          "pram": "part",
+          "price": {
+            "th": "เช็กราคาก่อนไป",
+            "en": "Check the price"
+          },
+          "book": "none",
+          "src": "https://en.visiterlyon.com/discover/lyon-the-way-you-like-it/as-a-family/10-must-do-activities-with-kids-in-lyon",
+          "name": {
+            "th": "ซัวรีวีวองต์",
+            "en": "Soierie Vivante"
+          },
+          "kind": "culture",
+          "area": {
+            "th": "ครัวรูส",
+            "en": "Croix-Rousse"
+          },
+          "what": {
+            "th": "กี่ทอไหมที่ยังใช้งานและการสาธิตทอผ้า",
+            "en": "Working silk looms and weaving demonstrations"
+          },
+          "why": {
+            "th": "ได้ยินเสียงกี่ทอผ้าทำงาน",
+            "en": "The clatter of the looms running"
+          },
+          "q": "Soierie Vivante, 21 Rue Richan, Lyon",
+          "ok": "2026-11"
+        },
+        {
+          "local": "",
+          "ages": [
+            0,
+            1,
+            2,
+            2
+          ],
+          "hrs": 1,
+          "io": "in",
+          "pram": "part",
+          "price": {
+            "th": "เช็กราคาก่อนไป",
+            "en": "Check the price"
+          },
+          "book": "none",
+          "src": "https://en.visiterlyon.com/discover/lyon-the-way-you-like-it/as-a-family/10-must-do-activities-with-kids-in-lyon",
+          "name": {
+            "th": "พิพิธภัณฑ์ภาพลวงตาลียง",
+            "en": "Museum of Illusions Lyon"
+          },
+          "kind": "museumkid",
+          "area": {
+            "th": "กรองโอแตลดิเยอ",
+            "en": "Grand Hôtel-Dieu"
+          },
+          "what": {
+            "th": "โฮโลแกรม กล้องคาไลโดสโคป ปริศนาภาพ และกระจกบิดเบี้ยว",
+            "en": "Holograms, kaleidoscopes, puzzles and distorting mirrors"
+          },
+          "why": {
+            "th": "ภาพลวงตาสำหรับเด็ก 4 ขวบขึ้นไป",
+            "en": "Illusions for ages 4 and up"
+          },
+          "q": "Museum of Illusions Lyon, 1 Rue Bellecordière, Lyon",
+          "ok": "2026-11"
+        },
+        {
+          "local": "",
+          "ages": [
+            0,
+            1,
+            2,
+            2
+          ],
+          "hrs": 2,
+          "io": "in",
+          "pram": "part",
+          "price": {
+            "th": "เช็กราคาก่อนไป",
+            "en": "Check the price"
+          },
+          "book": "none",
+          "src": "https://en.visiterlyon.com/out-and-about/culture-and-leisure/activities-and-relaxation/indoor-activities/game-in-lyon",
+          "name": {
+            "th": "เกมอินลียง",
+            "en": "GAME IN Lyon"
+          },
+          "kind": "play",
+          "area": {
+            "th": "ท่าอองเดร ลาซาญ เขต 1",
+            "en": "Quai André Lassagne, 1st"
+          },
+          "what": {
+            "th": "ที่เล่นแนวอาร์เคด มีวิดีโอเกมขนาดเท่าคนจริง",
+            "en": "An arcade-style place with life-size video games"
+          },
+          "why": {
+            "th": "กิจกรรมสนุกที่ทุกวัยเล่นได้",
+            "en": "A lively activity open to all ages"
+          },
+          "q": "GAME IN Lyon, 14 Quai André Lassagne, Lyon",
+          "ok": "2026-11"
+        },
+        {
+          "local": "",
+          "ages": [
+            2,
+            1,
+            1,
+            0
+          ],
+          "hrs": 1,
+          "io": "in",
+          "pram": "part",
+          "price": {
+            "th": "เช็กราคาก่อนไป",
+            "en": "Check the price"
+          },
+          "book": "req",
+          "src": "https://en.visiterlyon.com/discover/lyon-the-way-you-like-it/as-a-family/enjoying-lyon-with-a-baby-our-favourite-spots",
+          "name": {
+            "th": "นาเตสปา",
+            "en": "Natespa"
+          },
+          "kind": "play",
+          "area": {
+            "th": "เขต 8",
+            "en": "8th arrondissement"
+          },
+          "what": {
+            "th": "ศูนย์กีฬาและว่ายน้ำสำหรับเด็กและผู้ใหญ่",
+            "en": "A water and sports centre for children and adults"
+          },
+          "why": {
+            "th": "มีคลาสสำหรับทารกตั้งแต่หกเดือน",
+            "en": "Sessions for babies from six months"
+          },
+          "q": "Natespa, Avenue Rockefeller, Lyon",
+          "ok": "2026-11"
         }
       ]
     },
