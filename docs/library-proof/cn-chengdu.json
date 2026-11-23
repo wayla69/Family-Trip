@@ -1,0 +1,27 @@
+{
+  "town": "cn-chengdu",
+  "kind": "eats",
+  "checked": "2026-11",
+  "rule": "A row gets ok only from a current listing, its own site or recent reviews with nothing saying closed (docs/EATS.md). A row is taken out when a search could not find the place at all or the sources disagree; a place found but not freshly confirmed stays without ok.",
+  "scope": "the 3 rows without ok; nothing else in the town was re-checked",
+  "how": "Google Maps opened in headless Chromium (2026-11-23), limited view without a reviews tab, so no review date could be read; each row searched with its Chinese name (zh) and/or its English name and the town. Maps' coverage of mainland China is thin: many listings carry no hours at all. A list result's hours line ('Open · Closes 10 PM', or 'Open now', which Maps shows only when it holds the place's hours) counted as a current listing. Where Maps could not settle a row, one web search (snippets only, pages not opened) was made for it.",
+  "confirmed": [],
+  "kept_without_ok": [
+    {
+      "name": "Wenshu Monastery Vegetarian Restaurant",
+      "src": "Google Maps search (headless Chromium, 2026-11-23); web search (2026-11-23, snippets only)",
+      "evidence": "place page '文殊院素斋', 15 Wenshuyuan St, M3FF+H6 Qingyang — no hours shown. A web search found HappyCow (hours 10:30–19:30, undated page, reviews to 2025-11) and 2026 Sina articles about the temple's vegetarian buffet — aggregator pieces, not a current listing"
+    },
+    {
+      "name": "Nuorilang Restaurant",
+      "src": "Google Maps search (headless Chromium, 2026-11-23); web search (2026-11-23, snippets only)",
+      "evidence": "place page 'Nuorilang Restaurant 诺日朗餐厅', 九寨沟景区 — no hours shown. A web search found only a 2026 aggregator guide (citiesinsider) naming the Nuorilang visitor centre buffet"
+    },
+    {
+      "name": "Gongting Pastry Shop",
+      "src": "Google Maps search (headless Chromium, 2026-11-23)",
+      "evidence": "list result 'Gongting Cake', bakery, 酱园公所街56号 (the row's street) — no hours shown"
+    }
+  ],
+  "removed": []
+}

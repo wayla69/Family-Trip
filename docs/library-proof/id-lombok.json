@@ -1,0 +1,26 @@
+{
+  "town": "id-lombok",
+  "kind": "eats",
+  "checked": "2026-11",
+  "rule": "A row gets ok only from a current listing, its own site or recent reviews with nothing saying closed (docs/EATS.md). A row is taken out when a search could not find the place at all or the sources disagree; a place found but not freshly confirmed stays without ok.",
+  "scope": "the 2 rows without ok; rows already carrying ok were not re-checked",
+  "how": "Google Maps opened in headless Chromium (2026-11-23), limited view without a reviews tab, so no review date could be read; searched in English and, for Taiwan, in Chinese (the row's zh)",
+  "confirmed": [
+    {
+      "name": "Square Restaurant",
+      "src": "https://www.google.com/maps/search/Square+Restaurant+Senggigi+Lombok",
+      "page_name": "Square Restaurant & Lounge",
+      "evidence": "KM.8, Jl. Raya Senggigi, Senggigi Square No.10 Blok B · G23X+4H · 'Closed · Opens 2 PM'",
+      "ok": "2026-11"
+    },
+    {
+      "name": "Gili Gelato",
+      "src": "https://www.google.com/maps/search/Gili+Gelato+Gili+Trawangan",
+      "page_name": "gili gelato",
+      "evidence": "Ice cream shop, Jl. Pantai Gili Trawangan (list result) · 'Open · Closes 11 PM'",
+      "ok": "2026-11"
+    }
+  ],
+  "kept_without_ok": [],
+  "removed": []
+}

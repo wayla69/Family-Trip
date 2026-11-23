@@ -1,0 +1,19 @@
+{
+  "town": "cn-beijing",
+  "kind": "eats",
+  "checked": "2026-11",
+  "rule": "A row gets ok only from a current listing, its own site or recent reviews with nothing saying closed (docs/EATS.md). A row is taken out when a search could not find the place at all or the sources disagree; a place found but not freshly confirmed stays without ok.",
+  "scope": "the 1 rows without ok; nothing else in the town was re-checked",
+  "how": "Google Maps opened in headless Chromium (2026-11-23), limited view without a reviews tab, so no review date could be read; each row searched with its Chinese name (zh) and/or its English name and the town. Maps' coverage of mainland China is thin: many listings carry no hours at all. A list result's hours line ('Open · Closes 10 PM', or 'Open now', which Maps shows only when it holds the place's hours) counted as a current listing. Where Maps could not settle a row, one web search (snippets only, pages not opened) was made for it.",
+  "confirmed": [
+    {
+      "name": "Donglaishun (Wangfujing)",
+      "src": "Google Maps search (headless Chromium, 2026-11-23)",
+      "page_name": "东来顺饭庄 / Donglaishun",
+      "evidence": "list for '东来顺饭庄 王府井店 北京': 东来顺饭庄, 153 Wangfujing Ave, 'Open · Closes 2:30 PM · Reopens 5 PM'; Donglaishun hot pot, 198 Wangfujing Ave, 'Open · Closes 10 PM'",
+      "ok": "2026-11"
+    }
+  ],
+  "kept_without_ok": [],
+  "removed": []
+}

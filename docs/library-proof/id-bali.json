@@ -1,0 +1,17 @@
+{
+  "town": "id-bali",
+  "kind": "eats",
+  "checked": "2026-11",
+  "rule": "A row gets ok only from a current listing, its own site or recent reviews with nothing saying closed (docs/EATS.md). A row is taken out when a search could not find the place at all or the sources disagree; a place found but not freshly confirmed stays without ok.",
+  "scope": "the 1 rows without ok; rows already carrying ok were not re-checked",
+  "how": "Google Maps opened in headless Chromium (2026-11-23), limited view without a reviews tab, so no review date could be read; searched in English and, for Taiwan, in Chinese (the row's zh)",
+  "confirmed": [],
+  "kept_without_ok": [
+    {
+      "name": "Eat & Eat Beachwalk",
+      "src": "https://vymaps.com/ID/Eat-Eat-1747403/",
+      "evidence": "Maps did not find it ('Eat & Eat Beachwalk Kuta Bali', 'Eat & Eat Beachwalk', 'Eat Eat Food Market Beachwalk Kuta' list only other Beachwalk places; the food court Maps shows there is 'Pasarame', Food court, 'Open · Closes 11 PM' — possibly a rename, not proven); a web search found only an undated directory page (vymaps, 3rd floor B14, eatneatfoodmarket.com)"
+    }
+  ],
+  "removed": []
+}

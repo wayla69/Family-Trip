@@ -1,0 +1,16 @@
+{
+  "town": "kh-siemreap",
+  "kind": "eats",
+  "checked": "2026-11",
+  "rule": "A row gets ok only from a current listing, its own site or recent reviews with nothing saying closed (docs/EATS.md). A row is taken out when a search could not find the place at all or the sources disagree; a place found but not freshly confirmed stays without ok.",
+  "scope": "the 1 row without ok; the town holds 32 rows after this pass",
+  "how": "Google Maps opened in headless Chromium (2026-11-23), limited view without a reviews tab, so no review date could be read; searched in English and in the local language, each verdict from the place page or the result list shown",
+  "confirmed": [],
+  "kept_without_ok": [
+    {
+      "name": "Brown Coffee",
+      "evidence": "Google Maps (2026-11-23): searches 'Brown Coffee Pokambor Avenue Siem Reap' and '… riverside' list only BROWN Roastery | Siem Reap (National Road No. 6, Ta Phul Village, 'Open · Closes 9 PM') and BROWN Coffee | Treeline (Street 23 corner Achar Sva, Wat Bo Rd, 'Open · Closes 9 PM'); no branch on Pokambor Avenue, the one the row names — the chain is open but the row's branch is not confirmed"
+    }
+  ],
+  "removed": []
+}

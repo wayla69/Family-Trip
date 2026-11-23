@@ -1,0 +1,47 @@
+{
+  "town": "tw-hualien",
+  "kind": "eats",
+  "checked": "2026-11",
+  "rule": "A row gets ok only from a current listing, its own site or recent reviews with nothing saying closed (docs/EATS.md). A row is taken out when a search could not find the place at all or the sources disagree; a place found but not freshly confirmed stays without ok.",
+  "scope": "the 5 rows without ok; rows already carrying ok were not re-checked",
+  "how": "Google Maps opened in headless Chromium (2026-11-23), limited view without a reviews tab, so no review date could be read; searched in English and, for Taiwan, in Chinese (the row's zh)",
+  "confirmed": [
+    {
+      "name": "Hai Pu Oyster Omelette",
+      "src": "https://www.google.com/maps/search/海埔蚵仔煎+花蓮",
+      "page_name": "海埔蚵仔煎",
+      "evidence": "No. 8, Minguo Rd, Hualien City · XJG2+GR · 'Closed · Opens 4:30 PM' (Minguo Rd, not Ziqiang Rd, a few hundred metres apart in the city centre; q updated)",
+      "ok": "2026-11"
+    },
+    {
+      "name": "Jiang Tai Tai Beef Noodles",
+      "src": "https://www.google.com/maps/search/江太太牛肉麵+花蓮",
+      "page_name": "江太太牛肉麵店（蔣經國先生曾𦲷臨本店）",
+      "evidence": "No. 128, Zhongzheng Rd, Hualien City · XHCW+5V · 'Closed · Opens 11 AM Tue'",
+      "ok": "2026-11"
+    },
+    {
+      "name": "Salt Lick Smokehouse",
+      "src": "https://www.google.com/maps/search/火車頭烤肉屋+花蓮",
+      "page_name": "Salt Lick Smokehouse & Grill 火車頭烤肉屋",
+      "evidence": "No. 151, Zhongshan Rd, Hualien City · XJG6+92 · 'Open · Closes 2:30 PM · Reopens 5 PM'",
+      "ok": "2026-11"
+    },
+    {
+      "name": "Dageeli Tribe Restaurant",
+      "src": "https://www.google.com/maps/search/達基力部落屋+秀林",
+      "page_name": "Dajili Tribal House - Mama Tian Restaurant 達基力部落屋",
+      "evidence": "No. 96, Chongde, Xiulin Township · 5J5X+5X · 'Open · Closes 3 PM'; owner post 'Nov 10, 2026'",
+      "ok": "2026-11"
+    },
+    {
+      "name": "Jiaxing Ice Fruit Store",
+      "src": "https://www.google.com/maps/search/佳興冰果室+新城",
+      "page_name": "佳興冰菓店",
+      "evidence": "No. 22, Bo'ai Rd (Xincheng) · 'Open · Closes 5 PM'",
+      "ok": "2026-11"
+    }
+  ],
+  "kept_without_ok": [],
+  "removed": []
+}
