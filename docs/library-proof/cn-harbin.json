@@ -1,0 +1,57 @@
+{
+  "town": "cn-harbin",
+  "kind": "eats",
+  "checked": "2026-11",
+  "rule": "A row gets ok only from a current listing, its own site or recent reviews with nothing saying closed (docs/EATS.md). A row is taken out when a search could not find the place at all or the sources disagree; a place found but not freshly confirmed stays without ok.",
+  "scope": "the 7 rows without ok; nothing else in the town was re-checked",
+  "how": "Google Maps opened in headless Chromium (2026-11-23), limited view without a reviews tab, so no review date could be read; each row searched with its Chinese name (zh) and/or its English name and the town. Maps' coverage of mainland China is thin: many listings carry no hours at all. A list result's hours line ('Open · Closes 10 PM', or 'Open now', which Maps shows only when it holds the place's hours) counted as a current listing. Where Maps could not settle a row, one web search (snippets only, pages not opened) was made for it.",
+  "confirmed": [
+    {
+      "name": "Zhang Bao Pu",
+      "src": "Google Maps search (headless Chromium, 2026-11-23)",
+      "page_name": "Zhangbaopu / 张包铺",
+      "evidence": "list for '张包铺 道外 哈尔滨': 'Zhangbaopu', 南勋街与二道街交口, 'Open now'; '张包铺', 张包铺胡同（北头道街与二道街之间）, 'Open · Closes 9 PM' — both in the Daowai old quarter",
+      "ok": "2026-11"
+    },
+    {
+      "name": "Lao Du Yi Chu",
+      "src": "Google Maps search (headless Chromium, 2026-11-23)",
+      "page_name": "老都一处",
+      "evidence": "list for '老都一处 哈尔滨': 413 Jingyu St (Daoli), 'Open · Closes 9 PM'",
+      "ok": "2026-11"
+    },
+    {
+      "name": "Qiulin Food Store",
+      "src": "Google Maps search (headless Chromium, 2026-11-23)",
+      "page_name": "Qiulin Company",
+      "evidence": "list for '秋林公司 哈尔滨': 319 Dongda St (the row's address), 'Open now'",
+      "ok": "2026-11"
+    },
+    {
+      "name": "Russia Coffee & Food",
+      "src": "Google Maps search (headless Chromium, 2026-11-23)",
+      "page_name": "露西亚",
+      "evidence": "list for '露西亚咖啡西餐厅 哈尔滨': 57 W Toudao St (the row's address), 'Open · Closes 9 PM'",
+      "ok": "2026-11"
+    }
+  ],
+  "kept_without_ok": [
+    {
+      "name": "Lao Chu Jia",
+      "src": "Google Maps search (headless Chromium, 2026-11-23); web search (2026-11-23, snippets only)",
+      "evidence": "no Sandao St branch on Maps: Laochujia 318 Youyi Rd 'Open · Closes 9 PM', Wenzheng St 'Open · Closes 9 PM', W Qidao St 55 (no hours); a web search also names Youyi Rd 318 as the main shop and found no 三道街 branch — the row's branch is not confirmed"
+    },
+    {
+      "name": "Lao Ding Feng",
+      "src": "Google Maps search (headless Chromium, 2026-11-23)",
+      "evidence": "'Laodingfeng', 118 Zhongyang Ave — no hours shown"
+    }
+  ],
+  "removed": [
+    {
+      "name": "Portman Western Restaurant",
+      "src": "Google Maps search (headless Chromium, 2026-11-23); web search (2026-11-23, snippets only)",
+      "reason": "the row names a Guogeli Street branch (Nangang); Maps lists Boteman Western Restaurant at 53 W Qidao St, Daoli ('Open · Closes 9 PM') and 12 Xida St, and a web search (Qunar, Lonely Planet, China Daily) puts it in Daoli off Central Street — no Guogeli Street branch, another district than the row says"
+    }
+  ]
+}

@@ -1,0 +1,19 @@
+{
+  "town": "kr-jeju",
+  "kind": "eats",
+  "checked": "2026-11",
+  "rule": "A row gets ok only from a current listing, its own site or recent reviews with nothing saying closed (docs/EATS.md). A row is taken out when a search could not find the place at all or the sources disagree; a place found but not freshly confirmed stays without ok.",
+  "scope": "the 1 row without ok; the town holds 24 rows after this pass",
+  "how": "Google Maps opened in headless Chromium (2026-11-23), limited view without a reviews tab, so no review date could be read; searched in English and in the local language, each verdict from the place page or the result list shown",
+  "confirmed": [
+    {
+      "name": "Deokseongwon",
+      "src": "https://www.google.com/maps/place/Deogseong-Won",
+      "page_name": "Deogseong-Won / 덕성원",
+      "evidence": "Google Maps (2026-11-23): Chinese restaurant, 3.8★, 4 Taepyeong-ro 401beon-gil, Seogwipo-si; 'Open · Closes 9 PM', phone +82 64-762-2402, table booking on redtable.global; nothing says closed",
+      "ok": "2026-11"
+    }
+  ],
+  "kept_without_ok": [],
+  "removed": []
+}

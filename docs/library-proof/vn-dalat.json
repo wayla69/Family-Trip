@@ -1,0 +1,26 @@
+{
+  "town": "vn-dalat",
+  "kind": "eats",
+  "checked": "2026-11",
+  "rule": "A row gets ok only from a current listing, its own site or recent reviews with nothing saying closed (docs/EATS.md). A row is taken out when a search could not find the place at all or the sources disagree; a place found but not freshly confirmed stays without ok.",
+  "scope": "the 2 rows without ok; the town holds 19 rows after this pass",
+  "how": "Google Maps opened in headless Chromium (2026-11-23), limited view without a reviews tab, so no review date could be read; searched in English and in the local language, each verdict from the place page or the result list shown",
+  "confirmed": [
+    {
+      "name": "Thủy Tạ",
+      "src": "https://www.google.com/maps/place/Thuy+Ta+Restaurant",
+      "page_name": "Thuy Ta Restaurant / Nhà Hàng Thủy Tạ",
+      "evidence": "Google Maps (2026-11-23): restaurant, 4.2★, 2 Đ. Trần Quốc Toản, Xuân Hương - Đà Lạt ('This calm eatery offers Vietnamese food & coffee, plus lakeside views'); 'Open · Closes 10 PM', dalattourist.com.vn; nothing says closed",
+      "ok": "2026-11"
+    },
+    {
+      "name": "Sữa Đậu Nành Hoa Sữa",
+      "src": "https://www.google.com/maps/place/Quán+Hoa+Sữa",
+      "page_name": "Quán Hoa Sữa",
+      "evidence": "Google Maps (2026-11-23): dessert shop, 4.2★, 3F Đường Tăng Bạt Hổ, Xuân Hương - Đà Lạt (WCVP+F4); 'Open · Closes 11:30 PM', phone listed; nothing says closed",
+      "ok": "2026-11"
+    }
+  ],
+  "kept_without_ok": [],
+  "removed": []
+}

@@ -1,0 +1,16 @@
+{
+  "town": "uz-tashkent",
+  "kind": "eats",
+  "checked": "2026-11",
+  "rule": "A row gets ok only from a current listing, its own site or recent reviews with nothing saying closed (docs/EATS.md). A row is taken out when a search could not find the place at all or the sources disagree; a place found but not freshly confirmed stays without ok.",
+  "scope": "the 1 row without ok; the rows already confirmed were not checked again",
+  "how": "Google Maps opened in headless Chromium (2026-11-23), limited view without a reviews tab, so no review date could be read; a place with current hours and no closed notice counts as a current listing",
+  "confirmed": [],
+  "kept_without_ok": [
+    {
+      "name": "Milliy Taomlar (National Food)",
+      "evidence": "Google Maps lists many open places called Milliy Taomlar in Tashkent (e.g. 879P+RCC 'Open · Closes 8 PM'; Abdulla Kaxxar 30a; Shota Rustaveli 12), but none could be tied to the one opposite the Circus that the row names; travel guides (Spotted by Locals, Yandex's food guide) describe it opposite the Circus with no date"
+    }
+  ],
+  "removed": []
+}

@@ -1,0 +1,19 @@
+{
+  "town": "th-krabi",
+  "kind": "eats",
+  "checked": "2026-11",
+  "rule": "A row gets ok only from a current listing, its own site or recent reviews with nothing saying closed (docs/EATS.md). A row is taken out when a search could not find the place at all or the sources disagree; a place found but not freshly confirmed stays without ok.",
+  "scope": "the 1 row without ok; the town holds 16 rows after this pass",
+  "how": "Google Maps opened in headless Chromium (2026-11-23), limited view without a reviews tab, so no review date could be read; searched in English and in the local language, each verdict from the place page or the result list shown",
+  "confirmed": [
+    {
+      "name": "Pee Pee Bakery",
+      "src": "https://www.google.com/maps/place/Phi+Phi+Bakery",
+      "page_name": "Phi Phi Bakery",
+      "evidence": "Google Maps (2026-11-23): restaurant, 4.3★, 125 70 Moo 7, Ao Nang (PQRF+29 — the plus code is on Phi Phi Don, which belongs to Ao Nang subdistrict); 'Open · Closes 10 PM', Facebook linked; nothing says closed. 'Pee Pee Bakery' itself is not found on Maps; Fodor's and Wanderlog (web search) give the bakery as 'Phi Phi Bakery (also spelt Pee Pee Bakery)', 97 Moo 7 on Tonsai's main street, opened 1989",
+      "ok": "2026-11"
+    }
+  ],
+  "kept_without_ok": [],
+  "removed": []
+}

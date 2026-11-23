@@ -1,0 +1,25 @@
+{
+  "town": "be-bruges",
+  "kind": "eats",
+  "checked": "2026-11",
+  "rule": "A row gets ok only from a current listing, its own site or recent reviews with nothing saying closed (docs/EATS.md). A row is taken out when a search could not find the place at all or the sources disagree; a place found but not freshly confirmed stays without ok.",
+  "scope": "the 2 rows without ok; the rows already confirmed were not checked again",
+  "how": "Google Maps opened in headless Chromium (2026-11-23), limited view without a reviews tab, so no review date could be read; a place with current hours and no closed notice counts as a current listing",
+  "confirmed": [
+    {
+      "name": "Breydel De Coninc",
+      "src": "https://www.google.com/maps/place/Restaurant+Breydel+De+Coninc/@51.2084958,3.2261354,17z",
+      "page_name": "Restaurant Breydel De Coninc",
+      "evidence": "Google Maps: restaurant, 4.1★, Breidelstraat 24, 8000 Brugge (665G+9F), 'Closed · Opens 12 PM', bookable on TheFork, site restaurant-breydel.be; nothing says closed",
+      "ok": "2026-11"
+    }
+  ],
+  "kept_without_ok": [],
+  "removed": [
+    {
+      "name": "Chez Vincent",
+      "src": "https://www.google.com/maps/place/Chez+Vincent/@51.2060254,3.2216752,17z",
+      "reason": "Google Maps: 'Chez Vincent', Sint-Salvatorskerkhof 1, 8000 Brugge (664C+CM) — 'Permanently closed'"
+    }
+  ]
+}

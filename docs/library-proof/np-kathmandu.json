@@ -1,0 +1,26 @@
+{
+  "town": "np-kathmandu",
+  "kind": "eats",
+  "checked": "2026-11",
+  "rule": "A row gets ok only from a current listing, its own site or recent reviews with nothing saying closed (docs/EATS.md). A row is taken out when a search could not find the place at all or the sources disagree; a place found but not freshly confirmed stays without ok.",
+  "scope": "the 2 rows without ok; the rows already confirmed were not checked again",
+  "how": "Google Maps opened in headless Chromium (2026-11-23), limited view without a reviews tab, so no review date could be read; a place with current hours and no closed notice counts as a current listing",
+  "confirmed": [
+    {
+      "name": "Pokhara Thakali Kitchen",
+      "src": "https://www.google.com/maps/place/Pokhara+Thakali+Kitchen/@28.2059132,83.9614626,17z",
+      "page_name": "Pokhara Thakali Kitchen",
+      "evidence": "Google Maps: Nepalese restaurant, 4.0★, Gauri Marg, Pokhara (6X46+9H8, Lakeside), 'Opens soon · 11 AM', phone listed; nothing says closed",
+      "ok": "2026-11"
+    },
+    {
+      "name": "Honacha",
+      "src": "https://www.google.com/maps/place/Honacha/@27.67364,85.3202781,17z",
+      "page_name": "Honacha",
+      "evidence": "Google Maps: restaurant, 4.1★, Lalitpur (M8FF+FW, by Patan Durbar Square), 'Closed · Opens 1 PM Sun', bookable ('Find a table'), site honacha.com.np; nothing says closed (the next opening shown was Sunday)",
+      "ok": "2026-11"
+    }
+  ],
+  "kept_without_ok": [],
+  "removed": []
+}
