@@ -1,0 +1,38 @@
+{
+  "town": "th-ubon",
+  "kind": "eats",
+  "checked": "2026-11",
+  "rule": "A row gets ok only from a current listing, its own site or recent reviews with nothing saying closed (docs/EATS.md). A row is taken out when a search could not find the place at all or the sources disagree; a place found but not freshly confirmed stays without ok.",
+  "scope": "the 4 rows without ok; the town holds 15 rows after this pass",
+  "how": "Google Maps opened in headless Chromium (2026-11-23), limited view without a reviews tab, so no review date could be read; searched in English and in the local language, each verdict from the place page or the result list shown",
+  "confirmed": [
+    {
+      "name": "Sam Chai Kai Yang",
+      "src": "https://www.google.com/maps/place/Samchai+Kitchen+(Samchai+Grilled+Chicken)",
+      "page_name": "Samchai Kitchen (Samchai Grilled Chicken) / ครัวสามชัย ( สามชัยไก่ย่าง )",
+      "evidence": "Google Maps (2026-11-23): restaurant, 4.2★, 282/1 Phalochai Rd (6RMQ+HJ); 'Open · Closes 4:30 PM', samchai-group.com; nothing says closed",
+      "ok": "2026-11"
+    },
+    {
+      "name": "Ubon Night Market",
+      "src": "https://www.google.com/maps/place/Thung+Sri+Muang+Night+Market",
+      "page_name": "Thung Sri Muang Night Market",
+      "evidence": "Google Maps (2026-11-23): night market, 4.3★, 6VH5+3F3, Khuanthani Rd; 'Closed · Opens 4:30 PM' (today); its stalls are listed as 'โต้รุ่งราชบุตร (ทุ่งศรีเมือง)' on Ratchabut Rd with today's hours (ปากหม้อญวน ป้าน้อย opens 5:30 PM, ต้นตามสั่ง opens 3:30 PM)",
+      "ok": "2026-11"
+    },
+    {
+      "name": "Central Ubon food court",
+      "src": "https://www.google.com/maps/place/Central+Food+Park+เซ็นทรัลอุบล",
+      "page_name": "Central Food Park เซ็นทรัลอุบล",
+      "evidence": "Google Maps (2026-11-23): the food court's own listing, 4.5★, 6RQF+G74, Chaeramae, 'Located in: Central Ubon'; 'Open · Closes 5 PM'; nothing says closed",
+      "ok": "2026-11"
+    }
+  ],
+  "kept_without_ok": [],
+  "removed": [
+    {
+      "name": "Thung Si Mueang Walking Street",
+      "reason": "Google Maps (2026-11-23): 'Thung Si Muang Walking Street / ถนนคนเดินทุ่งศรีเมือง', 6VH5+3GR, Srinarong — 'Permanently closed'"
+    }
+  ]
+}

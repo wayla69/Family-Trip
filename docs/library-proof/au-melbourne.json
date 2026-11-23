@@ -1,0 +1,19 @@
+{
+  "town": "au-melbourne",
+  "kind": "eats",
+  "checked": "2026-11",
+  "rule": "A row gets ok only from a current listing, its own site or recent reviews with nothing saying closed (docs/EATS.md). A row is taken out when a search could not find the place at all or the sources disagree; a place found but not freshly confirmed stays without ok.",
+  "scope": "the 1 rows without ok; the rows that already carried ok were not re-checked in this pass",
+  "how": "Google Maps opened in headless Chromium (2026-11-23), limited view without a reviews tab, so no review date could be read; each row's own map query first, then the name with the town, a list result opened when needed; a hotel's own site or one web search only where Maps could not settle it.",
+  "confirmed": [
+    {
+      "name": "The Bottle of Milk",
+      "src": "Google Maps",
+      "page_name": "The Bottle of Milk",
+      "evidence": "\"The Bottle of Milk\", 52 Mountjoy Parade, FX6G+Q2 Lorne VIC; \"Closed · Opens 7:30 AM Tue\"",
+      "ok": "2026-11"
+    }
+  ],
+  "kept_without_ok": [],
+  "removed": []
+}

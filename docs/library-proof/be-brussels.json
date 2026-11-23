@@ -1,0 +1,26 @@
+{
+  "town": "be-brussels",
+  "kind": "eats",
+  "checked": "2026-11",
+  "rule": "A row gets ok only from a current listing, its own site or recent reviews with nothing saying closed (docs/EATS.md). A row is taken out when a search could not find the place at all or the sources disagree; a place found but not freshly confirmed stays without ok.",
+  "scope": "the 2 rows without ok; the rows already confirmed were not checked again",
+  "how": "Google Maps opened in headless Chromium (2026-11-23), limited view without a reviews tab, so no review date could be read; a place with current hours and no closed notice counts as a current listing",
+  "confirmed": [
+    {
+      "name": "Fritland",
+      "src": "https://www.google.com/maps/place/Fritland/@50.8474174,4.3506551,17z",
+      "page_name": "Fritland",
+      "evidence": "Google Maps: frituur, 4.0★, Rue Henri Maus 49, 1000 Bruxelles (R9W2+X7), 'Closed · Opens 11 AM', site fritlandbrussels.be; nothing says closed",
+      "ok": "2026-11"
+    },
+    {
+      "name": "Gaston",
+      "src": "https://www.google.com/maps/place/Gaston/@50.8533145,4.3465976,17z",
+      "page_name": "Gaston",
+      "evidence": "Google Maps: ice cream shop, 4.5★, Quai aux Briques 86, 1000 Bruxelles (V83W+8J), 'Closed · Opens 11 AM', site glaciergaston.be; nothing says closed",
+      "ok": "2026-11"
+    }
+  ],
+  "kept_without_ok": [],
+  "removed": []
+}

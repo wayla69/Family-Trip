@@ -3,39 +3,58 @@
   "kind": "eats",
   "checked": "2026-11",
   "rule": "A row gets ok only from a current listing, its own site or recent reviews with nothing saying closed (docs/EATS.md). A row is taken out when a search could not find the place at all or the sources disagree; a place found but not freshly confirmed stays without ok.",
-  "confirmed": [],
-  "kept_without_ok": [
+  "confirmed": [
     {
       "name": "The Tamajun Restaurant",
-      "src": "https://www.wongnai.com/restaurants/25892Xo-ท่ามาจัน",
-      "evidence": "Wongnai listing 'ท่ามาจัน (Tamajun Seaside Cuisine & Cafe)', closed:false; newest review 2025-06-11, menu updated 2025-03-20 — too old to confirm it is open now"
+      "src": "https://www.google.com/maps/place/Tha+Machan+food/@12.6121269,102.109356,17z",
+      "page_name": "Tha Machan food / ร้านอาหารท่ามาจัน",
+      "evidence": "Google Maps (2026-11-23): restaurant, 4.2★, J467+VG5, Wat Mai — on the waterfront by the Tamajun Hotel and Luang Rajamaitri inn; 'Open · Closes 10 PM'; nothing says closed. With the Wongnai listing (closed:false, a review in June 2025) this is a current listing. Map query now uses its Maps name",
+      "ok": "2026-11"
     },
     {
       "name": "Jae Eid Tom Yam Seafood Noodles",
-      "evidence": "described in travel articles (Posttoday, LINE Today) as a long-running mantis-shrimp noodle shop; no current listing with a date found"
+      "src": "https://www.google.com/maps/place/Je+Eed+Seafood+Noodles+Chantaburi+Old+Town/@12.6079472,102.1167528,17z",
+      "page_name": "Je Eed Seafood Noodles Chantaburi Old Town / เจ๊อี๊ด ริมน้ำ",
+      "evidence": "Google Maps (2026-11-23): noodle shop, 3.9★, 44 Sukhaphiban Rd, Wat Mai (J458+5P), the waterfront street; 'Open · Closes 4 PM', phone listed; nothing says closed. Map query now names the street and number",
+      "ok": "2026-11"
     },
     {
       "name": "Nam Phu Market",
-      "evidence": "a TrueID guide describes the municipal market behind the fountain roundabout with morning and evening hours; undated"
-    },
+      "src": "https://www.google.com/maps/place/Namphu+Market/@12.6090383,102.1117632,17z",
+      "page_name": "Namphu Market / ตลาดน้ำพุ",
+      "evidence": "Google Maps (2026-11-23): market, 4.3★, Sri Roung Muaeng Rd, Wat Mai (J456+JP6); 'Open · Closes 9 PM'; food stalls listed inside with today's hours (sticky rice, fish-maw kuay jap); nothing says closed",
+      "ok": "2026-11"
+    }
+  ],
+  "kept_without_ok": [
     {
       "name": "Robinson Chanthaburi food court",
-      "evidence": "the mall exists (a Robinson Chanthaburi promotion ran Mar–Apr 2025); the food court itself is not confirmed"
+      "evidence": "the mall exists (a Robinson Chanthaburi promotion ran Mar–Apr 2025); the food court itself is not confirmed Google Maps (2026-11-23): Robinson Chanthaburi (Maharaj Rd) open to 9 PM with KFC, Oishi Ramen and Starbucks inside, but no listing of its food court."
     },
     {
       "name": "Central Chanthaburi food court",
-      "evidence": "the mall opened 26 May 2022 with restaurants; the food court itself is not confirmed"
+      "evidence": "the mall opened 26 May 2022 with restaurants; the food court itself is not confirmed Google Maps (2026-11-23): Central Chanthaburi (Trirat Rd) open to 9 PM; a 'Food center central' (H4XF+8RX, open to 9 PM) has no reviews and does not say it is the mall's food court, so not confirmed."
     },
     {
       "name": "Baan Luang Rajamaitri cafe",
       "src": "https://www.wongnai.com/restaurants/289036AH-บ้านหลวงราชไมตรี",
-      "evidence": "Wongnai listing not marked closed, but its newest data is from 2019; a Bangkok Biznews article mentions coffee and fried bread at the house, but its date could not be told apart from the site's header date"
+      "evidence": "Wongnai listing not marked closed, but its newest data is from 2019; a Bangkok Biznews article mentions coffee and fried bread at the house, but its date could not be told apart from the site's header date Google Maps (2026-11-23): the inn (252 Sukhaphiban Rd) takes bookings for 26–27 Nov, but its own site (copyright 2013) names no café, only breakfast for guests; the café itself is not confirmed."
     }
   ],
   "removed": [
     {
       "name": "Suthee Khao Khluk Phrik Kluea",
       "reason": "one web search (snippets only, pages not opened) found no place of this name at Kung Wiman beach; khao khluk phrik kluea is sold at Nam Phu Market, not confirmed here"
+    }
+  ],
+  "passes": [
+    {
+      "at": "2026-11",
+      "how": "web search, Wongnai pages"
+    },
+    {
+      "at": "2026-11-23",
+      "how": "Google Maps in headless Chromium (limited view, no reviews tab, so no review dates) and the inn's own site"
     }
   ]
 }

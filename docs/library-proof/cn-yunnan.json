@@ -1,0 +1,49 @@
+{
+  "town": "cn-yunnan",
+  "kind": "eats",
+  "checked": "2026-11",
+  "rule": "A row gets ok only from a current listing, its own site or recent reviews with nothing saying closed (docs/EATS.md). A row is taken out when a search could not find the place at all or the sources disagree; a place found but not freshly confirmed stays without ok.",
+  "scope": "the 6 rows without ok; nothing else in the town was re-checked",
+  "how": "Google Maps opened in headless Chromium (2026-11-23), limited view without a reviews tab, so no review date could be read; each row searched with its Chinese name (zh) and/or its English name and the town. Maps' coverage of mainland China is thin: many listings carry no hours at all. A list result's hours line ('Open · Closes 10 PM', or 'Open now', which Maps shows only when it holds the place's hours) counted as a current listing. Where Maps could not settle a row, one web search (snippets only, pages not opened) was made for it.",
+  "confirmed": [
+    {
+      "name": "Shiping Huiguan",
+      "src": "Google Maps search (headless Chromium, 2026-11-23)",
+      "page_name": "石屏会馆",
+      "evidence": "list for '石屏会馆 昆明': Chinese restaurant, 'Open now'; place page Wuhua District, 2PV2+VX (beside Shiping Assembly Hall parking, 中和巷, Cuihu S Rd)",
+      "ok": "2026-11"
+    },
+    {
+      "name": "Zai Hui Shou",
+      "src": "Google Maps search (headless Chromium, 2026-11-23)",
+      "page_name": "再回首凉鸡米线",
+      "evidence": "list for '再回首凉鸡米线 大理': 面馆 · 人民路198号, 'Open now'",
+      "ok": "2026-11"
+    },
+    {
+      "name": "Bakery 88",
+      "src": "Google Maps search (headless Chromium, 2026-11-23)",
+      "page_name": "The Bakery No.88 88号西点店",
+      "evidence": "list 'The Bakery No.88', bakery, 'Open now'; place page M5V5+5Q Dali (the old town)",
+      "ok": "2026-11"
+    }
+  ],
+  "kept_without_ok": [
+    {
+      "name": "Lao Fangzi",
+      "src": "Google Maps search (headless Chromium, 2026-11-23); web search (2026-11-23, snippets only)",
+      "evidence": "no listing named 老房子 on Guanghua St; '一颗印昆明老房子', 2PR4+4X9 Dongfeng W Rd (about 200 m away) has no hours. A web search found an old page placing 一颗印昆明老房子 near 靖星市场 — not current"
+    },
+    {
+      "name": "Amayi Naxi Snacks",
+      "src": "Google Maps search (headless Chromium, 2026-11-23)",
+      "evidence": "place page '阿妈意纳西饮食院', V6FP+456 Gucheng, Lijiang — no hours shown"
+    },
+    {
+      "name": "Zhongyi Market",
+      "src": "Google Maps search (headless Chromium, 2026-11-23)",
+      "evidence": "place page 'Ancient City Zhongyi Market 忠义市场', 长水路, Lijiang — no hours shown"
+    }
+  ],
+  "removed": []
+}

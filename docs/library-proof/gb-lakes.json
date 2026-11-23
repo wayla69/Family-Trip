@@ -1,0 +1,19 @@
+{
+  "town": "gb-lakes",
+  "kind": "eats",
+  "checked": "2026-11",
+  "rule": "A row gets ok only from a current listing, its own site or recent reviews with nothing saying closed (docs/EATS.md). A row is taken out when a search could not find the place at all or the sources disagree; a place found but not freshly confirmed stays without ok.",
+  "scope": "the 1 row without ok; the rows already confirmed were not checked again",
+  "how": "Google Maps opened in headless Chromium (2026-11-23), limited view without a reviews tab, so no review date could be read; a place with current hours and no closed notice counts as a current listing",
+  "confirmed": [
+    {
+      "name": "The Old Keswickian",
+      "src": "https://www.google.com/maps/place/Old+Keswickian+Fish+%26+Chips+Restaurant/@54.6004253,-3.1367556,17z",
+      "page_name": "Old Keswickian Fish & Chips Restaurant",
+      "evidence": "Google Maps: fish and chips takeaway, 4.2★ (1,627), 5-7 Market Square, Keswick CA12 5BD (JV27+57), 'Closed · Opens 11 AM', site oldkeswickian.co.uk; nothing says closed. The map query found the address, not the shop; it now names the shop as Maps does",
+      "ok": "2026-11"
+    }
+  ],
+  "kept_without_ok": [],
+  "removed": []
+}

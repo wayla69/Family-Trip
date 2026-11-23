@@ -1,0 +1,42 @@
+{
+  "town": "th-korat",
+  "kind": "eats",
+  "checked": "2026-11",
+  "rule": "A row gets ok only from a current listing, its own site or recent reviews with nothing saying closed (docs/EATS.md). A row is taken out when a search could not find the place at all or the sources disagree; a place found but not freshly confirmed stays without ok.",
+  "scope": "the 5 rows without ok; the town holds 12 rows after this pass",
+  "how": "Google Maps opened in headless Chromium (2026-11-23), limited view without a reviews tab, so no review date could be read; searched in English and in the local language, each verdict from the place page or the result list shown",
+  "confirmed": [
+    {
+      "name": "Pier 21 Terminal 21 Korat",
+      "src": "https://www.google.com/maps/place/pier21+Food+Center+-+Terminal21+Korat",
+      "page_name": "pier21 Food Center - Terminal21 Korat",
+      "evidence": "Google Maps (2026-11-23): food court, 4.3★, X3JR+G2G, Nai Mueang, 'Located in: Terminal21 Korat'; 'Open · Closes 9 PM'; nothing says closed",
+      "ok": "2026-11"
+    },
+    {
+      "name": "Khanom Chin Ban Pradok",
+      "page_name": "ครูเอก ขนมจีนประโดก and others",
+      "evidence": "Google Maps (2026-11-23): a row of khanom chin shops at Pradok, Muen Wai: 'ครูเอก ขนมจีนประโดก' (264 Moo 4, 'Open · Closes 5 PM'), 'ร้านขนมจีน หม่อดิ๋น' (39/2 Muen Wai, 'Open · Closes 6 PM'), 'ขนมจีนประโดก ร้านต้นมะละกอ' (X3XX+CF5, 'Open · Closes 4:30 PM'), 'Khanom Jeen Kru Yot Shop, Pradok' ('Open · Closes 4 PM'). The row's English query was not tried alone; the Thai query lists the shops",
+      "ok": "2026-11"
+    },
+    {
+      "name": "Chao Sua",
+      "src": "https://www.google.com/maps/place/บริษัท+เจ้าสัว+ฟู้ดส์",
+      "page_name": "บริษัท เจ้าสัว ฟู้ดส์ อินดัสทรี จำกัด (มหาชน) สำนักงานใหญ่ - ศูนย์ของฝากเจ้าสัว",
+      "evidence": "Google Maps (2026-11-23): shop, 4.3★, 99 Moo 9 Mittraphap Rd, Suranari (W2V4+CV); 'Open · Closes 7 PM', chaosua.com; a noodle shop at this place 'Open · Closes 4 PM'; nothing says closed",
+      "ok": "2026-11"
+    }
+  ],
+  "kept_without_ok": [
+    {
+      "name": "Baiteiy Restaurant",
+      "evidence": "Google Maps (2026-11-23): 'ร้านใบเตย โดยนางรวีวรรณ อ่อนสอาด', 246 Chom Suda Sadej Rd, Phimai (6F8W+H5), listed as a store with a phone but no hours ('Add hours'); another 'Bai Toei Restaurant' on highway 206 is 'Permanently closed'. The Chom Suda Sadej shop exists, nothing current confirms the restaurant"
+    }
+  ],
+  "removed": [
+    {
+      "name": "Kai Yang Wang Fa",
+      "reason": "Google Maps (2026-11-23): 'ไก่ย่างวังฟ้า', '… นครราชสีมา' and 'Kai Yang Wang Fa Nakhon Ratchasima' find only 'Wang Feungfah / ร้านอาหารวังเฟื่องฟ้า' (P6VF+R3R, Tha Yiam, Chok Chai District — another restaurant some 30 km from the city) or the city itself; no grilled-chicken shop of this name in Korat"
+    }
+  ]
+}

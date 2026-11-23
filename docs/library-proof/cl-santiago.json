@@ -1,0 +1,40 @@
+{
+  "town": "cl-santiago",
+  "kind": "eats",
+  "checked": "2026-11",
+  "rule": "A row gets ok only from a current listing, its own site or recent reviews with nothing saying closed (docs/EATS.md). A row is taken out when a search could not find the place at all or the sources disagree; a place found but not freshly confirmed stays without ok.",
+  "scope": "the 4 rows without ok; the rows that already carried ok were not re-checked in this pass",
+  "how": "Google Maps opened in headless Chromium (2026-11-23), limited view without a reviews tab, so no review date could be read; each row's own map query first, then the name with the town, a list result opened when needed; a hotel's own site or one web search only where Maps could not settle it.",
+  "confirmed": [
+    {
+      "name": "Donde Augusto",
+      "src": "Google Maps",
+      "page_name": "Donde Augusto",
+      "evidence": "\"Donde Augusto\", San Pablo 967, Floor 1 · Santiago Central Market, H88X+9F; \"Closed · Opens 9 AM\"",
+      "ok": "2026-11"
+    },
+    {
+      "name": "Casino Social J. Cruz",
+      "src": "Google Maps",
+      "page_name": "Restaurante J Cruz M",
+      "evidence": "\"Restaurante J Cruz M\", Condell 1466, X93H+M3 Valparaíso; \"Closed · Opens 11 AM\"; jcruz.cl",
+      "ok": "2026-11"
+    },
+    {
+      "name": "Tierra de Fuego",
+      "src": "Google Maps",
+      "page_name": "Tierra de Fuego",
+      "evidence": "\"Tierra de Fuego\", Chilean restaurant, Acapulco Beach - 8 Nte. 65, XCPV+8H Viña del Mar; \"Closed · Opens 12:30 PM\"; tierradefuego.cl. Av. San Martín 199 (the row's query) is the Viña del Mar casino about a kilometre away, so q now names 8 Norte 65.",
+      "ok": "2026-11",
+      "q_changed_to": "Tierra de Fuego, 8 Norte 65, Viña del Mar"
+    }
+  ],
+  "kept_without_ok": [],
+  "removed": [
+    {
+      "name": "Bravissimo",
+      "src": "Google Maps",
+      "reason": "\"Bravissimo\", Av. Providencia 1406, H9CJ+RG Santiago: \"Permanently closed\"."
+    }
+  ]
+}

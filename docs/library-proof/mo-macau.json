@@ -1,0 +1,16 @@
+{
+  "town": "mo-macau",
+  "kind": "eats",
+  "checked": "2026-11",
+  "rule": "A row gets ok only from a current listing, its own site or recent reviews with nothing saying closed (docs/EATS.md). A row is taken out when a search could not find the place at all or the sources disagree; a place found but not freshly confirmed stays without ok.",
+  "scope": "the 1 row without ok; the town holds 21 rows after this pass",
+  "how": "Google Maps opened in headless Chromium (2026-11-23), limited view without a reviews tab, so no review date could be read; searched in English and in the local language, each verdict from the place page or the result list shown",
+  "confirmed": [],
+  "kept_without_ok": [],
+  "removed": [
+    {
+      "name": "Tou Tou Koi",
+      "reason": "Google Maps (2026-11-23): 'Tou Tou Koi Restaurante 陶陶居海鲜酒家', 12 Tv. do Mastro (5GVQ+W4) — 'Temporarily closed'; the other listing 'Tou Tou Koi 陶陶居海鮮酒家', Edificio I Chan Kok, R. de Pequim (5GVQ+V3) — 'Permanently closed'"
+    }
+  ]
+}
