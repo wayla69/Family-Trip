@@ -795,6 +795,199 @@
           "q": "Boston Common, 139 Tremont Street, Boston",
           "ok": "2026-11",
           "src": "https://www.boston.gov/parks/boston-common"
+        },
+        {
+          "local": "",
+          "ages": [
+            1,
+            2,
+            2,
+            1
+          ],
+          "hrs": 2,
+          "io": "in",
+          "pram": "part",
+          "price": {
+            "th": "เช็กราคาก่อนไป",
+            "en": "Check the price"
+          },
+          "book": "rec",
+          "src": "https://www.timeout.com/boston/things-to-do/things-to-do-with-kids-in-boston",
+          "name": {
+            "th": "เลโก้ดิสคัฟเวอรีเซ็นเตอร์ บอสตัน",
+            "en": "LEGO Discovery Center Boston"
+          },
+          "kind": "play",
+          "area": {
+            "th": "แอสเซมบลีโรว์ ซอมเมอร์วิลล์",
+            "en": "Assembly Row, Somerville"
+          },
+          "what": {
+            "th": "ศูนย์เลโก้ที่มียีราฟเลโก้ยักษ์อยู่หน้าทางเข้า",
+            "en": "A LEGO centre marked by a giant LEGO giraffe"
+          },
+          "why": {
+            "th": "ต่อเลโก้อิสระและร่วมกิจกรรม",
+            "en": "Free building and activities"
+          },
+          "q": "LEGO Discovery Center Boston, Assembly Row, Somerville",
+          "ok": "2026-11"
+        },
+        {
+          "local": "",
+          "ages": [
+            2,
+            2,
+            2,
+            2
+          ],
+          "hrs": 2,
+          "io": "out",
+          "pram": "part",
+          "price": {
+            "th": "ฟรี",
+            "en": "Free"
+          },
+          "book": "none",
+          "src": "https://www.timeout.com/boston/things-to-do/things-to-do-with-kids-in-boston",
+          "name": {
+            "th": "เกาะคาสเซิลและป้อมอินดีเพนเดนซ์",
+            "en": "Castle Island and Fort Independence"
+          },
+          "kind": "park",
+          "area": {
+            "th": "เซาท์บอสตัน บอสตัน",
+            "en": "South Boston, Boston"
+          },
+          "what": {
+            "th": "สวนริมทะเล 22 เอเคอร์ รอบป้อมจากทศวรรษ 1850",
+            "en": "A 22-acre shoreline park around an 1850s fort"
+          },
+          "why": {
+            "th": "มีเนินหญ้า สนามเด็กเล่น และหาดให้ขุดทราย",
+            "en": "Grassy hills, a playground and a beach to dig in"
+          },
+          "tip": {
+            "th": "ชมป้อมฟรีวันเสาร์และอาทิตย์ 12:00–15:30",
+            "en": "The fort can be toured free on Saturdays and Sundays, noon–3:30pm"
+          },
+          "q": "Fort Independence, Castle Island, South Boston",
+          "ok": "2026-11"
+        },
+        {
+          "local": "",
+          "ages": [
+            2,
+            2,
+            2,
+            2
+          ],
+          "hrs": 1,
+          "io": "out",
+          "pram": "yes",
+          "price": {
+            "th": "ฟรี",
+            "en": "Free"
+          },
+          "book": "none",
+          "src": "https://www.timeout.com/boston/things-to-do/things-to-do-with-kids-in-boston",
+          "name": {
+            "th": "สวนโรสเคนเนดีกรีนเวย์",
+            "en": "Rose Kennedy Greenway"
+          },
+          "kind": "park",
+          "area": {
+            "th": "ใจกลางเมือง บอสตัน",
+            "en": "Downtown, Boston"
+          },
+          "what": {
+            "th": "สวนยาว 1.5 ไมล์ บนแนวทางด่วนยกระดับเดิม",
+            "en": "A 1.5-mile park where an elevated highway once ran"
+          },
+          "why": {
+            "th": "พื้นที่สีเขียวสำหรับครอบครัวกลางเมือง",
+            "en": "Green space for families in the middle of the city"
+          },
+          "q": "Rose Kennedy Greenway, Boston",
+          "ok": "2026-11"
+        },
+        {
+          "local": "",
+          "ages": [
+            0,
+            1,
+            2,
+            2
+          ],
+          "hrs": 0.5,
+          "io": "in",
+          "pram": "part",
+          "price": {
+            "th": "เช็กราคาก่อนไป",
+            "en": "Check the price"
+          },
+          "book": "none",
+          "src": "https://www.timeout.com/boston/things-to-do/things-to-do-with-kids-in-boston",
+          "name": {
+            "th": "แมปพาเรียม",
+            "en": "The Mapparium"
+          },
+          "kind": "museum",
+          "area": {
+            "th": "คริสเตียนไซแอนซ์พลาซา บอสตัน",
+            "en": "Christian Science Plaza, Boston"
+          },
+          "what": {
+            "th": "ลูกโลกที่เดินเข้าไปได้ใหญ่ที่สุดในโลก ข้ามด้วยสะพานกระจก",
+            "en": "The world's largest walk-in globe, crossed on a glass bridge"
+          },
+          "why": {
+            "th": "เด็ก ๆ ชอบเสียงก้องแปลก ๆ ข้างใน",
+            "en": "Children love the strange echoes inside"
+          },
+          "q": "Mapparium, 200 Massachusetts Ave, Boston",
+          "ok": "2026-11"
+        },
+        {
+          "local": "",
+          "ages": [
+            2,
+            2,
+            2,
+            1
+          ],
+          "hrs": 2.5,
+          "io": "out",
+          "pram": "yes",
+          "price": {
+            "th": "เช็กราคาก่อนไป",
+            "en": "Check the price"
+          },
+          "book": "none",
+          "src": "https://www.timeout.com/boston/things-to-do/things-to-do-with-kids-in-boston",
+          "name": {
+            "th": "สวนสัตว์สโตน",
+            "en": "Stone Zoo"
+          },
+          "kind": "zoo",
+          "area": {
+            "th": "สโตนแฮม",
+            "en": "Stoneham"
+          },
+          "what": {
+            "th": "สวนสัตว์อายุกว่าร้อยปีบนพื้นที่ 26 เอเคอร์",
+            "en": "A century-old zoo on 26 acres"
+          },
+          "why": {
+            "th": "ทางเดินร่มรื่น มีสัตว์ตั้งแต่จิ้งจอกอาร์กติกถึงวัวซีบู",
+            "en": "Shady paths and animals from arctic fox to zebu"
+          },
+          "tip": {
+            "th": "อย่าพลาดมุมนกฟลามิงโก",
+            "en": "Look for the flamingo cove"
+          },
+          "q": "Stone Zoo, 149 Pond St, Stoneham",
+          "ok": "2026-11"
         }
       ]
     },
