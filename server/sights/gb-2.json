@@ -1055,6 +1055,203 @@
           "q": "Flamingo Land, Kirby Misperton",
           "ok": "2026-11",
           "src": "https://www.flamingoland.co.uk/?p=12611"
+        },
+        {
+          "local": "",
+          "ages": [
+            2,
+            2,
+            2,
+            1
+          ],
+          "hrs": 3,
+          "io": "both",
+          "pram": "part",
+          "price": {
+            "th": "เช็กราคาก่อนไป",
+            "en": "Check the price"
+          },
+          "book": "none",
+          "src": "https://little-vikings.co.uk/rainy-days-york",
+          "name": {
+            "th": "เดอะเว็บ แอดเวนเจอร์พาร์ก",
+            "en": "The Web Adventure Park"
+          },
+          "kind": "play",
+          "area": {
+            "th": "ถนนวิกกินตัน ยอร์ก",
+            "en": "Wigginton Road, York"
+          },
+          "what": {
+            "th": "ที่เล่นแบบนุ่ม มีโครงปีนใหญ่ หมู่บ้านเล่น เครื่องเล่นสวนสนุก และสัตว์",
+            "en": "Soft play with a huge climbing frame, a play village, fair rides and animals"
+          },
+          "why": {
+            "th": "มีโซนทารก และเส้นทางนินจาสำหรับเด็กโต",
+            "en": "A baby zone, and a ninja course for older children"
+          },
+          "tip": {
+            "th": "เครื่องเล่นกลางแจ้งขึ้นกับสภาพอากาศ",
+            "en": "The outdoor rides depend on the weather"
+          },
+          "q": "The Web Adventure Park, Wigginton Road, York",
+          "ok": "2026-11"
+        },
+        {
+          "local": "",
+          "ages": [
+            0,
+            1,
+            2,
+            2
+          ],
+          "hrs": 1,
+          "io": "in",
+          "pram": "part",
+          "price": {
+            "th": "เช็กราคาก่อนไป",
+            "en": "Check the price"
+          },
+          "book": "rec",
+          "src": "https://little-vikings.co.uk/rainy-days-york",
+          "name": {
+            "th": "มินิกอล์ฟพ่อมดโฮลอินวันด์",
+            "en": "The Hole in Wand"
+          },
+          "kind": "play",
+          "area": {
+            "th": "ศูนย์คอปเปอร์เกต ยอร์ก",
+            "en": "Coppergate Centre, York"
+          },
+          "what": {
+            "th": "มินิกอล์ฟในร่มธีมพ่อมด",
+            "en": "Wizard-themed indoor minigolf"
+          },
+          "why": {
+            "th": "อยู่ในร่ม ระยะพอดี เหมาะกับเด็กโต",
+            "en": "Indoors and a good length; best for older children"
+          },
+          "tip": {
+            "th": "จองล่วงหน้า",
+            "en": "Book ahead"
+          },
+          "q": "The Hole In Wand, 14-16 Coppergate Walk, York",
+          "ok": "2026-11"
+        },
+        {
+          "local": "",
+          "ages": [
+            1,
+            2,
+            2,
+            2
+          ],
+          "hrs": 2,
+          "io": "in",
+          "pram": "part",
+          "price": {
+            "th": "เช็กราคาก่อนไป",
+            "en": "Check the price"
+          },
+          "book": "none",
+          "src": "https://little-vikings.co.uk/rainy-days-york",
+          "name": {
+            "th": "สตูดิโอเพนต์เซรามิกเรนโบว์ส",
+            "en": "Rainbows Ceramics"
+          },
+          "kind": "culture",
+          "area": {
+            "th": "บูธัม ยอร์ก",
+            "en": "Bootham, York"
+          },
+          "what": {
+            "th": "สตูดิโอเพนต์เซรามิกเอง มีเครื่องดื่ม",
+            "en": "A paint-your-own pottery studio with drinks"
+          },
+          "why": {
+            "th": "ผ่อนคลายในวันฝนตก",
+            "en": "Relaxing on a rainy day"
+          },
+          "q": "Rainbows Ceramics, 15-17 Bootham, York",
+          "ok": "2026-11"
+        },
+        {
+          "local": "",
+          "ages": [
+            1,
+            1,
+            2,
+            2
+          ],
+          "hrs": 2,
+          "io": "in",
+          "pram": "part",
+          "price": {
+            "th": "เช็กราคาก่อนไป",
+            "en": "Check the price"
+          },
+          "book": "none",
+          "src": "https://little-vikings.co.uk/rainy-days-york",
+          "name": {
+            "th": "มหาวิหารยอร์ก",
+            "en": "York Minster"
+          },
+          "kind": "culture",
+          "area": {
+            "th": "ดีนเกต ยอร์ก",
+            "en": "Deangate, York"
+          },
+          "what": {
+            "th": "มหาวิหารใหญ่ มีเส้นทางสำหรับเด็ก เป้นักสำรวจให้ยืม และพิพิธภัณฑ์ใต้ดิน",
+            "en": "The great minster, with children’s trails, explorer backpacks and the Undercroft museum"
+          },
+          "why": {
+            "th": "มีกิจกรรมให้ลงมือ และรูปสัตว์แกะสลักให้ตามหา",
+            "en": "Hands-on activities and carved creatures to find"
+          },
+          "tip": {
+            "th": "อายุต่ำกว่า 17 ปีเข้าฟรี",
+            "en": "Under-17s free"
+          },
+          "q": "York Minster, Deangate, York",
+          "ok": "2026-11"
+        },
+        {
+          "local": "",
+          "ages": [
+            0,
+            1,
+            2,
+            2
+          ],
+          "hrs": 2,
+          "io": "in",
+          "pram": "part",
+          "price": {
+            "th": "เช็กราคาก่อนไป",
+            "en": "Check the price"
+          },
+          "book": "none",
+          "src": "https://little-vikings.co.uk/rainy-days-york",
+          "name": {
+            "th": "ฮอลลีวูดโบว์ล มังส์ครอส",
+            "en": "Hollywood Bowl (Monks Cross)"
+          },
+          "kind": "play",
+          "area": {
+            "th": "มังส์ครอส ยอร์ก",
+            "en": "Monks Cross, York"
+          },
+          "what": {
+            "th": "โบว์ลิ่ง มีตู้เกมและร้านอาหารสไตล์อเมริกัน",
+            "en": "Tenpin bowling with arcade games and a diner"
+          },
+          "why": {
+            "th": "มีกิจกรรมให้ทุกคนในครอบครัว",
+            "en": "Something for everyone in the family"
+          },
+          "q": "Hollywood Bowl York, Kathryn Avenue, Monks Cross, York",
+          "ok": "2026-11"
         }
       ]
     }
