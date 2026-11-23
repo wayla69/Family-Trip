@@ -1,0 +1,24 @@
+{
+  "town": "th-sukhothai",
+  "kind": "eats",
+  "checked": "2026-11",
+  "rule": "A row gets ok only from a current listing, its own site or recent reviews with nothing saying closed (docs/EATS.md). A row is taken out when a search could not find the place at all or the sources disagree; a place found but not freshly confirmed stays without ok.",
+  "scope": "the two rows without ok; the twenty rows already confirmed were not checked again",
+  "how": "Google Maps opened in headless Chromium (2026-11-23), limited view without a reviews tab, so no review date could be read; a place with current hours and no closed notice counts as a current listing",
+  "confirmed": [
+    {
+      "name": "Ko Heng",
+      "src": "https://www.google.com/maps/place/Ko+Heng+Restaurant/@17.3153393,99.831103,17z",
+      "page_name": "Ko Heng Restaurant / โกเฮง ร้านอาหาร",
+      "evidence": "Google Maps: restaurant, 4.0★, 144/1 Na Mueang Alley, Mueang Sawankhalok (8R8J+4C), the town the row names; 'Open · Closes 9 PM', phone listed; nothing says closed",
+      "ok": "2026-11"
+    }
+  ],
+  "kept_without_ok": [],
+  "removed": [
+    {
+      "name": "Kang Sak Restaurant",
+      "reason": "Google Maps searches for ร้านอาหารแก่งสัก ศรีสัชนาลัย, แก่งสัก สุโขทัย and Kaeng Sak restaurant Si Satchanalai found no restaurant of that name (only the historical park, the national park, waterfalls and other restaurants), and one web search found none either"
+    }
+  ]
+}
