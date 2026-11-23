@@ -5669,6 +5669,43 @@
           "book": "none",
           "q": "Na Muen Si woven cloth centre, Trang",
           "src": "https://www.thaiholidayguide.com/attraction/na-muen-si-woven-cloth/"
+        },
+        {
+          "local": "",
+          "ages": [
+            1,
+            1,
+            1,
+            1
+          ],
+          "hrs": 0.5,
+          "io": "both",
+          "pram": "part",
+          "price": {
+            "th": "เช็กราคาก่อนไป",
+            "en": "Check the price"
+          },
+          "book": "none",
+          "src": "https://www.wongnai.com/listings/attractions-trang",
+          "name": {
+            "th": "ศาลเจ้าท่ามก๋งเยี่ย",
+            "en": "Tam Kong Yia shrine"
+          },
+          "kind": "culture",
+          "area": {
+            "th": "ตัวเมืองตรัง",
+            "en": "Trang town"
+          },
+          "what": {
+            "th": "ศาลเจ้าจีนที่คนมาขอพรและเสี่ยงเซียมซี",
+            "en": "A Chinese shrine where people pray for luck and draw fortune sticks"
+          },
+          "why": {
+            "th": "ลองเสี่ยงเซียมซี",
+            "en": "Drawing a fortune stick"
+          },
+          "q": "ศาลเจ้าท่ามก๋งเยี่ย (ยุวเทพ), ตรัง",
+          "ok": "2026-11"
         }
       ]
     },
