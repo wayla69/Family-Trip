@@ -1332,6 +1332,437 @@
           "q": "Lincoln Memorial, 2 Lincoln Memorial Cir NW, Washington DC",
           "ok": "2026-11",
           "src": "https://www.nps.gov/places/000/lincoln-memorial-reflecting-pool.htm"
+        },
+        {
+          "local": "",
+          "ages": [
+            2,
+            2,
+            2,
+            2
+          ],
+          "hrs": 1.5,
+          "io": "in",
+          "pram": "yes",
+          "price": {
+            "th": "เช็กราคาก่อนไป",
+            "en": "Check the price"
+          },
+          "book": "none",
+          "src": "https://mommypoppins.com/washington-dc-kids/best-of-lists/things-to-do-in-dc-that-everyone-will-love-from-toddlers-to-teens",
+          "name": {
+            "th": "พิพิธภัณฑ์ชนพื้นเมืองอเมริกันแห่งชาติ",
+            "en": "National Museum of the American Indian"
+          },
+          "kind": "museumkid",
+          "area": {
+            "th": "เนชันแนลมอลล์ วอชิงตัน ดี.ซี.",
+            "en": "National Mall, Washington DC"
+          },
+          "what": {
+            "th": "พิพิธภัณฑ์ที่มีศูนย์กิจกรรม imagiNATIONS",
+            "en": "A museum with the imagiNATIONS activity centre"
+          },
+          "why": {
+            "th": "กิจกรรมลงมือเล่นที่เด็กเล็กและเด็กโตชอบ",
+            "en": "Hands-on activities toddlers and children love"
+          },
+          "q": "National Museum of the American Indian, Washington DC",
+          "ok": "2026-11"
+        },
+        {
+          "local": "",
+          "ages": [
+            2,
+            2,
+            2,
+            2
+          ],
+          "hrs": 1.5,
+          "io": "out",
+          "pram": "yes",
+          "price": {
+            "th": "เช็กราคาก่อนไป",
+            "en": "Check the price"
+          },
+          "book": "none",
+          "src": "https://www.lonelyplanet.com/articles/washington-dc-with-kids",
+          "name": {
+            "th": "สวนเดอะยาร์ดส์",
+            "en": "The Yards Park"
+          },
+          "kind": "park",
+          "area": {
+            "th": "แคปิตอลริเวอร์ฟรอนต์ วอชิงตัน ดี.ซี.",
+            "en": "Capitol Riverfront, Washington DC"
+          },
+          "what": {
+            "th": "สวนริมแม่น้ำ มีสระเล่นน้ำ และน้ำพุเปิดไฟตอนกลางคืน",
+            "en": "A riverside park with a splash pool and lit fountains at night"
+          },
+          "why": {
+            "th": "สระเล่นน้ำใหญ่ตอนกลางวัน",
+            "en": "A big splash pool by day"
+          },
+          "q": "The Yards Park, 355 Water St SE, Washington DC",
+          "ok": "2026-11"
+        },
+        {
+          "local": "Washington Canal Park",
+          "ages": [
+            2,
+            2,
+            2,
+            1
+          ],
+          "hrs": 1,
+          "io": "out",
+          "pram": "yes",
+          "price": {
+            "th": "เช็กราคาก่อนไป",
+            "en": "Check the price"
+          },
+          "book": "none",
+          "src": "https://www.lonelyplanet.com/articles/washington-dc-with-kids",
+          "name": {
+            "th": "น้ำพุสวนแคนัลพาร์ก",
+            "en": "Canal Park fountains"
+          },
+          "kind": "park",
+          "area": {
+            "th": "แคปิตอลริเวอร์ฟรอนต์ วอชิงตัน ดี.ซี.",
+            "en": "Capitol Riverfront, Washington DC"
+          },
+          "what": {
+            "th": "น้ำพุและสระเล่นน้ำ มีหินให้เดินข้าม",
+            "en": "Fountains and splash pools with stepping stones"
+          },
+          "why": {
+            "th": "มีน้ำให้เล่นเยอะ",
+            "en": "Lots of water to play in"
+          },
+          "q": "Washington Canal Park, 200 M St SE, Washington DC",
+          "ok": "2026-11"
+        },
+        {
+          "local": "",
+          "ages": [
+            0,
+            2,
+            2,
+            2
+          ],
+          "hrs": 1.5,
+          "io": "in",
+          "pram": "part",
+          "price": {
+            "th": "เช็กราคาก่อนไป",
+            "en": "Check the price"
+          },
+          "book": "rec",
+          "src": "https://washington.org/visit-dc/kid-friendly-museums-hands-attractions",
+          "name": {
+            "th": "พิพิธภัณฑ์อาคารแห่งชาติ",
+            "en": "National Building Museum"
+          },
+          "kind": "museumkid",
+          "area": {
+            "th": "วอชิงตัน ดี.ซี.",
+            "en": "Washington DC"
+          },
+          "what": {
+            "th": "สถาปัตยกรรมและการออกแบบ มีเล่านิทานและกิจกรรม STEAM",
+            "en": "Architecture and design, with story times and STEAM challenges"
+          },
+          "why": {
+            "th": "เหมาะที่สุดกับเด็ก 3–12 ปี",
+            "en": "Best for ages 3 to 12"
+          },
+          "tip": {
+            "th": "เข้าฟรี แต่นิทรรศการต้องใช้ตั๋ว",
+            "en": "Entry is free, but exhibits need tickets"
+          },
+          "q": "National Building Museum, 401 F St NW, Washington DC",
+          "ok": "2026-11"
+        },
+        {
+          "local": "",
+          "ages": [
+            0,
+            1,
+            2,
+            2
+          ],
+          "hrs": 1,
+          "io": "in",
+          "pram": "part",
+          "price": {
+            "th": "เช็กราคาก่อนไป",
+            "en": "Check the price"
+          },
+          "book": "none",
+          "src": "https://washington.org/visit-dc/kid-friendly-museums-hands-attractions",
+          "name": {
+            "th": "ห้องสมุดเชกสเปียร์โฟลเจอร์",
+            "en": "Folger Shakespeare Library"
+          },
+          "kind": "museum",
+          "area": {
+            "th": "วอชิงตัน ดี.ซี.",
+            "en": "Washington DC"
+          },
+          "what": {
+            "th": "ห้องจัดแสดงลงมือเล่น และเส้นทางตามหาสำหรับแต่ละวัย",
+            "en": "Hands-on galleries and trails for different ages"
+          },
+          "why": {
+            "th": "ถือแว่นขยายแล้วตามหาเบาะแส",
+            "en": "Take a magnifying glass and follow the clues"
+          },
+          "q": "Folger Shakespeare Library, 201 East Capitol St SE, Washington DC",
+          "ok": "2026-11"
+        },
+        {
+          "local": "",
+          "ages": [
+            0,
+            1,
+            2,
+            2
+          ],
+          "hrs": 1.5,
+          "io": "in",
+          "pram": "part",
+          "price": {
+            "th": "เช็กราคาก่อนไป",
+            "en": "Check the price"
+          },
+          "book": "rec",
+          "src": "https://washington.org/visit-dc/kid-friendly-museums-hands-attractions",
+          "name": {
+            "th": "แพลเน็ตเวิร์ด",
+            "en": "Planet Word"
+          },
+          "kind": "museum",
+          "area": {
+            "th": "วอชิงตัน ดี.ซี.",
+            "en": "Washington DC"
+          },
+          "what": {
+            "th": "พิพิธภัณฑ์ภาษาที่สั่งงานด้วยเสียง ตั้งแต่กล่าวสุนทรพจน์ถึงร้องคาราโอเกะ",
+            "en": "A voice-activated museum of language, from speeches to karaoke"
+          },
+          "why": {
+            "th": "เด็กเล็กเล่นได้ถ้ามีผู้ใหญ่ช่วย",
+            "en": "Younger children can join in with a little help"
+          },
+          "tip": {
+            "th": "จองตั๋วฟรีล่วงหน้าได้",
+            "en": "Free tickets can be reserved ahead"
+          },
+          "q": "Planet Word, 925 13th St NW, Washington DC",
+          "ok": "2026-11"
+        },
+        {
+          "local": "",
+          "ages": [
+            0,
+            0,
+            1,
+            2
+          ],
+          "hrs": 2,
+          "io": "in",
+          "pram": "part",
+          "price": {
+            "th": "เช็กราคาก่อนไป",
+            "en": "Check the price"
+          },
+          "book": "rec",
+          "src": "https://washington.org/visit-dc/kid-friendly-museums-hands-attractions",
+          "name": {
+            "th": "พิพิธภัณฑ์สายลับนานาชาติ",
+            "en": "International Spy Museum"
+          },
+          "kind": "museum",
+          "area": {
+            "th": "ลองฟองพลาซา วอชิงตัน ดี.ซี.",
+            "en": "L'Enfant Plaza, Washington DC"
+          },
+          "what": {
+            "th": "ประวัติศาสตร์สายลับ มีจุดเล่นโต้ตอบและภารกิจลับ",
+            "en": "Spy history, with interactive kiosks and an undercover mission"
+          },
+          "why": {
+            "th": "แนะนำสำหรับอายุ 9 ปีขึ้นไป",
+            "en": "Recommended for ages 9 and up"
+          },
+          "tip": {
+            "th": "จองตั๋วออนไลน์ล่วงหน้า",
+            "en": "Book tickets online ahead"
+          },
+          "q": "International Spy Museum, 700 L'Enfant Plaza SW, Washington DC",
+          "ok": "2026-11"
+        },
+        {
+          "local": "",
+          "ages": [
+            0,
+            1,
+            2,
+            2
+          ],
+          "hrs": 1,
+          "io": "in",
+          "pram": "part",
+          "price": {
+            "th": "เช็กราคาก่อนไป",
+            "en": "Check the price"
+          },
+          "book": "none",
+          "src": "https://washington.org/visit-dc/kid-friendly-museums-hands-attractions",
+          "name": {
+            "th": "เดอะฟิลลิปส์คอลเลกชัน",
+            "en": "The Phillips Collection"
+          },
+          "kind": "museum",
+          "area": {
+            "th": "วอชิงตัน ดี.ซี.",
+            "en": "Washington DC"
+          },
+          "what": {
+            "th": "พิพิธภัณฑ์ศิลปะสมัยใหม่แห่งแรกของอเมริกา มีแผ่นระบายสีและเกมล่าสมบัติ",
+            "en": "America's first museum of modern art, with colouring sheets and treasure hunts"
+          },
+          "why": {
+            "th": "เด็กอายุไม่เกิน 18 ปีได้สำรวจพิพิธภัณฑ์",
+            "en": "Children 18 and under explore the museum"
+          },
+          "q": "The Phillips Collection, 1600 21st St NW, Washington DC",
+          "ok": "2026-11"
+        },
+        {
+          "local": "",
+          "ages": [
+            0,
+            1,
+            2,
+            2
+          ],
+          "hrs": 2,
+          "io": "in",
+          "pram": "part",
+          "price": {
+            "th": "เช็กราคาก่อนไป",
+            "en": "Check the price"
+          },
+          "book": "rec",
+          "src": "https://washington.org/visit-dc/kid-friendly-museums-hands-attractions",
+          "name": {
+            "th": "พิพิธภัณฑ์คัมภีร์ไบเบิล",
+            "en": "Museum of the Bible"
+          },
+          "kind": "museum",
+          "area": {
+            "th": "วอชิงตัน ดี.ซี.",
+            "en": "Washington DC"
+          },
+          "what": {
+            "th": "พิพิธภัณฑ์แบบมีส่วนร่วม มีโซนเด็ก Courageous Pages",
+            "en": "An interactive museum with a children's area, Courageous Pages"
+          },
+          "why": {
+            "th": "มีเกมสำหรับเด็กในโซนของตัวเอง",
+            "en": "Games for children in their own area"
+          },
+          "tip": {
+            "th": "ซื้อตั๋วทางเว็บไซต์พิพิธภัณฑ์",
+            "en": "Tickets on the museum's website"
+          },
+          "q": "Museum of the Bible, 400 4th St SW, Washington DC",
+          "ok": "2026-11"
+        },
+        {
+          "local": "",
+          "ages": [
+            0,
+            1,
+            2,
+            2
+          ],
+          "hrs": 1.5,
+          "io": "in",
+          "pram": "part",
+          "price": {
+            "th": "เช็กราคาก่อนไป",
+            "en": "Check the price"
+          },
+          "book": "rec",
+          "src": "https://washington.org/visit-dc/kid-friendly-museums-hands-attractions",
+          "name": {
+            "th": "พิพิธภัณฑ์โอในคฤหาสน์",
+            "en": "O Museum in the Mansion"
+          },
+          "kind": "museum",
+          "area": {
+            "th": "วอชิงตัน ดี.ซี.",
+            "en": "Washington DC"
+          },
+          "what": {
+            "th": "คฤหาสน์ที่มีห้องธีมต่าง ๆ และประตูลับ",
+            "en": "A mansion of themed rooms and secret doors"
+          },
+          "why": {
+            "th": "ตามหาทางลับ",
+            "en": "Hunt for hidden passages"
+          },
+          "tip": {
+            "th": "ผู้ใหญ่ควรพร้อมพาเด็กเดิน",
+            "en": "Adults should be ready to guide the children"
+          },
+          "q": "O Museum in The Mansion, 2020 O St NW, Washington DC",
+          "ok": "2026-11"
+        },
+        {
+          "local": "",
+          "ages": [
+            0,
+            1,
+            2,
+            2
+          ],
+          "hrs": 1,
+          "io": "in",
+          "pram": "part",
+          "price": {
+            "th": "เช็กราคาก่อนไป",
+            "en": "Check the price"
+          },
+          "book": "none",
+          "src": "https://washington.org/visit-dc/kid-friendly-museums-hands-attractions",
+          "name": {
+            "th": "พิพิธภัณฑ์ศิลปินหญิงแห่งชาติ",
+            "en": "National Museum of Women in the Arts"
+          },
+          "kind": "museum",
+          "area": {
+            "th": "วอชิงตัน ดี.ซี.",
+            "en": "Washington DC"
+          },
+          "what": {
+            "th": "พิพิธภัณฑ์ผลงานศิลปินหญิง",
+            "en": "A museum of women artists"
+          },
+          "why": {
+            "th": "อายุต่ำกว่า 21 ปีเข้าฟรี มีกิจกรรมศิลปะครอบครัวในวันเปิดฟรี",
+            "en": "Free under 21, with family art-making on Free Community Days"
+          },
+          "tip": {
+            "th": "วันเปิดฟรีคือวันอาทิตย์แรกและวันพุธที่สองของเดือน",
+            "en": "Free Community Days are the first Sunday and second Wednesday of each month"
+          },
+          "q": "National Museum of Women in the Arts, 1250 New York Ave NW, Washington DC",
+          "ok": "2026-11"
         }
       ]
     },
