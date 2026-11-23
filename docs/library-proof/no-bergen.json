@@ -1,0 +1,38 @@
+{
+  "town": "no-bergen",
+  "kind": "eats + sights",
+  "checked": "2026-11-23",
+  "rule": "library-check.cjs, then the Google Maps Reviews tab sorted by newest: ok only when not marked closed, with a review from the last six months, and the map's name matching the page's.",
+  "agents": "one Haiku agent; 4 of 5 rows from Visit Bergen passed library-check.cjs, 2 went in",
+  "added": [
+    {
+      "name": "Peppes Pizza (Ole Bulls plass)",
+      "page_name": "Peppes Pizza",
+      "src": "https://en.visitbergen.com/food-and-drink/peppes-pizza-p1495393",
+      "date": "official",
+      "map": "Google Maps 'Peppes Pizza - Ole Bulls Plass', Olav Kyrres gate 11, 2,357 reviews, newest '2 days ago'"
+    },
+    {
+      "name": "Rush trampoline park",
+      "page_name": "Rush Trampoline Park Bergen",
+      "src": "https://en.visitbergen.com/ideas-and-inspiration/top-10-lists/family-friendly-activities",
+      "date": "official",
+      "map": "Google Maps 'Rush trampolinepark, avdeling Bergen', 1,137 reviews, newest '3 weeks ago'"
+    }
+  ],
+  "left_out": [
+    {
+      "name": "Vestkanten Waterworld",
+      "why": "already in the library as Vannkanten Waterworld"
+    },
+    {
+      "name": "ParkN Play",
+      "why": "a games bar, over-20s after 19:00"
+    },
+    {
+      "name": "Troll Museum",
+      "why": "already in the library"
+    }
+  ],
+  "estimates": "Ages and visit hours are placeholders; prices and opening notes are the pages' own."
+}
