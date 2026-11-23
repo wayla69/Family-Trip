@@ -2402,7 +2402,126 @@
       {"name":{"en":"Parco Navagero","th":"สวนนาวาเกโร"},"kind":"park","area":{"en":"Murano","th":"มูราโน"},"what":{"en":"A tiny enclosed park on Murano with padded ground, green space and a picnic area with tables","th":"สวนเล็กที่มีรั้วล้อมบนมูราโน มีพื้นนุ่ม พื้นที่สีเขียว และบริเวณปิกนิกพร้อมโต๊ะ"},"why":{"en":"Good for toddlers and small children: enclosed, padded and not right on the water","th":"เหมาะกับเด็กเตาะแตะและเด็กเล็ก ล้อมรั้ว พื้นนุ่ม และไม่อยู่ติดน้ำ"},"ages":[2,2,0,0],"hrs":1,"io":"out","pram":"part","price":{"en":"Check the price","th":"เช็กราคาก่อนไป"},"book":"none","q":"Parco Navagero, Murano, Venice","ok":"2026-11","src":"https://mominitaly.com/venice-italy-playgrounds/"},
       {"name":{"en":"Giardini Napoleonici Playground","th":"สนามเด็กเล่นสวนนาโปเลโอนิซี"},"kind":"play","area":{"en":"Giardini","th":"สวน"},"what":{"en":"Two playgrounds in the shade, one for older children and one for smaller ones, in a park with paths for bikes and scooters","th":"สนามเด็กเล่นสองแห่งในร่มเงา แห่งหนึ่งสำหรับเด็กโต อีกแห่งสำหรับเด็กเล็ก ในสวนที่มีทางจักรยานและสกู๊ตเตอร์"},"why":{"en":"Swings, climbing structures and a see-saw, with shady benches away from the water","th":"มีชิงช้า โครงปีน และกระดานหก มีม้านั่งร่มเงาห่างจากน้ำ"},"ages":[2,2,2,1],"hrs":1,"io":"out","pram":"part","price":{"en":"Check the price","th":"เช็กราคาก่อนไป"},"book":"none","q":"Giardini Napoleonici playground, Venice","ok":"2026-11","src":"https://mominitaly.com/venice-italy-playgrounds/"},
       {"name":{"en":"Sacca Fisola playground","th":"สนามเด็กเล่นซักกา ฟิโซลา"},"kind":"play","area":{"en":"Giudecca","th":"จูเดกกา"},"what":{"en":"A shaded playground on Giudecca with benches, set away from the water","th":"สนามเด็กเล่นร่มเงาบนจูเดกกาที่มีม้านั่ง ตั้งห่างจากน้ำ"},"why":{"en":"Swings and a play structure, and it is away from the water","th":"มีชิงช้าและโครงเล่น และอยู่ห่างจากน้ำ"},"ages":[2,2,2,1],"hrs":1,"io":"out","pram":"part","price":{"en":"Check the price","th":"เช็กราคาก่อนไป"},"book":"none","q":"Sacca Fisola playground, Giudecca, Venice","ok":"2026-11","src":"https://mominitaly.com/venice-italy-playgrounds/"},
-      {"name":{"en":"Parco Ca' Bianca playground","th":"สนามเด็กเล่นปาร์โก ca' บีอังกา"},"kind":"play","area":{"en":"Lido","th":"ลิโด"},"what":{"en":"One of the playgrounds on the Lido, where children can play between swims and rides along the beach","th":"สนามเด็กเล่นแห่งหนึ่งบนลิโด ที่เด็กเล่นได้ระหว่างการว่ายน้ำและการขี่จักรยานตามชายหาด"},"why":{"en":"A break from the beach and the bikes for little ones","th":"ช่วงพักจากชายหาดและจักรยานสำหรับเด็กเล็ก"},"ages":[2,2,2,1],"hrs":1,"io":"out","pram":"part","price":{"en":"Check the price","th":"เช็กราคาก่อนไป"},"book":"none","q":"Parco Ca' Bianca, Lido di Venezia","ok":"2026-11","src":"https://mominitaly.com/venice-italy-playgrounds/"}
+      {"name":{"en":"Parco Ca' Bianca playground","th":"สนามเด็กเล่นปาร์โก ca' บีอังกา"},"kind":"play","area":{"en":"Lido","th":"ลิโด"},"what":{"en":"One of the playgrounds on the Lido, where children can play between swims and rides along the beach","th":"สนามเด็กเล่นแห่งหนึ่งบนลิโด ที่เด็กเล่นได้ระหว่างการว่ายน้ำและการขี่จักรยานตามชายหาด"},"why":{"en":"A break from the beach and the bikes for little ones","th":"ช่วงพักจากชายหาดและจักรยานสำหรับเด็กเล็ก"},"ages":[2,2,2,1],"hrs":1,"io":"out","pram":"part","price":{"en":"Check the price","th":"เช็กราคาก่อนไป"},"book":"none","q":"Parco Ca' Bianca, Lido di Venezia","ok":"2026-11","src":"https://mominitaly.com/venice-italy-playgrounds/"},
+        {
+          "local": "",
+          "ages": [
+            1,
+            2,
+            2,
+            2
+          ],
+          "hrs": 0.5,
+          "io": "out",
+          "pram": "part",
+          "price": {
+            "th": "ฟรี",
+            "en": "Free"
+          },
+          "book": "none",
+          "src": "https://www.viaggiapiccoli.com/?p=91012",
+          "name": {
+            "th": "อู่เรือกอนโดลาซานโตรวาโซ",
+            "en": "Squero di San Trovaso"
+          },
+          "kind": "culture",
+          "area": {
+            "th": "ดอร์โซดูโร เวนิส",
+            "en": "Dorsoduro, Venice"
+          },
+          "what": {
+            "th": "หนึ่งในอู่เรือแห่งสุดท้ายที่ยังต่อและซ่อมเรือกอนโดลา",
+            "en": "One of the last boatyards where gondolas are still built and repaired"
+          },
+          "why": {
+            "th": "เด็ก ๆ ดูช่างทำงานจากฝั่งตรงข้ามคลองได้",
+            "en": "Children watch the craftsmen from across the canal"
+          },
+          "tip": {
+            "th": "ทัวร์นำชมราว 30 นาที ต้องจองทางอีเมล",
+            "en": "Guided tours last about 30 minutes and need booking by email"
+          },
+          "q": "Squero di San Trovaso, Dorsoduro 1097, Venice",
+          "ok": "2026-11"
+        },
+        {
+          "local": "Giardini della Biennale",
+          "ages": [
+            2,
+            2,
+            2,
+            1
+          ],
+          "hrs": 1,
+          "io": "out",
+          "pram": "yes",
+          "price": {
+            "th": "ฟรี",
+            "en": "Free"
+          },
+          "book": "none",
+          "src": "https://www.viaggiapiccoli.com/?p=91012",
+          "name": {
+            "th": "สวนบีเอนนาเล",
+            "en": "Biennale Gardens"
+          },
+          "kind": "park",
+          "area": {
+            "th": "กัสเตลโล เวนิส",
+            "en": "Castello, Venice"
+          },
+          "what": {
+            "th": "สวนของงานบีเอนนาเล มีสนามเด็กเล่นอยู่ข้างใน",
+            "en": "The Biennale gardens, with a play area inside"
+          },
+          "why": {
+            "th": "มีสไลเดอร์ ชิงช้า และอื่น ๆ",
+            "en": "Slides, swings and more"
+          },
+          "tip": {
+            "th": "ทัวร์ครอบครัวทุกวันอาทิตย์ 15:00",
+            "en": "Family guided tours on Sundays at 3 PM"
+          },
+          "q": "Giardini della Biennale, Venice",
+          "ok": "2026-11"
+        },
+        {
+          "local": "Museo Storico Navale",
+          "ages": [
+            1,
+            2,
+            2,
+            2
+          ],
+          "hrs": 1.5,
+          "io": "in",
+          "pram": "part",
+          "price": {
+            "th": "เช็กราคาก่อนไป",
+            "en": "Check the price"
+          },
+          "book": "none",
+          "src": "https://www.nomadotravel.app/en/guides/venice-with-kids",
+          "name": {
+            "th": "พิพิธภัณฑ์ประวัติศาสตร์กองทัพเรือ",
+            "en": "Naval History Museum"
+          },
+          "kind": "museum",
+          "area": {
+            "th": "กัสเตลโล เวนิส",
+            "en": "Castello, Venice"
+          },
+          "what": {
+            "th": "โมเดลเรือ อาวุธ และสิ่งของจากประวัติศาสตร์ทางทะเลของเวนิส",
+            "en": "Ship models, weapons and objects from Venice's life at sea"
+          },
+          "why": {
+            "th": "มีอาคารเรือฝั่งตรงข้ามคลองสำหรับเด็กที่ชอบเรือ",
+            "en": "A boat pavilion across the canal for children who love boats"
+          },
+          "q": "Museo Storico Navale di Venezia, Riva San Biasio 2148, Venice",
+          "ok": "2026-11"
+        }
     ]
     }
   ]
