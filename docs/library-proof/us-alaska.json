@@ -6,12 +6,22 @@
   "scope": "the 1 rows without ok; the rows that already carried ok were not re-checked in this pass",
   "how": "Google Maps opened in headless Chromium (2026-11-23), limited view without a reviews tab, so no review date could be read; each row's own map query first, then the name with the town, a list result opened when needed; a hotel's own site or one web search only where Maps could not settle it.",
   "confirmed": [],
-  "kept_without_ok": [
+  "kept_without_ok": [],
+  "removed": [
     {
       "name": "Tracy's King Crab Shack",
       "src": "Google Maps",
-      "evidence": "\"Tracy's King Crab Shack-Main\", 432 S Franklin St, 7HWX+R6 Downtown Juneau: \"Temporarily closed\" (likely the winter break of a summer walk-up shack). By the rule it would be taken out, but the town would then hold only one quick bite (eats:lint wants 2), so it stays, without ok."
+      "reason": "\"Tracy's King Crab Shack-Main\", 432 S Franklin St, 7HWX+R6 Downtown Juneau: \"Temporarily closed\". Removed once a replacement quick bite in Juneau was confirmed (Pel'meni, below), so the town keeps 2 quick bites."
     }
   ],
-  "removed": []
+  "added": [
+    {
+      "name": "Pel'meni",
+      "kind": 1,
+      "src": "Google Maps; Roadfood; Anchorage Daily News (2023)",
+      "page_name": "Pel'meni",
+      "evidence": "Google Maps 2026-11-23: \"Pel'meni\", 4.6, Russian restaurant, 2 Marine Way, Juneau, AK 99801 (Located in: Historic Merchants Wharf), plus code 7HXV+Q3 Downtown Juneau, \"Open · Closes 1:30 AM\", no closed notice; rating count not shown in the limited view. Not in server/eats before. Menu (beef or potato dumplings, butter, sour cream) and small room with few tables from Roadfood and reviews; price: Roadfood's $ tier and the Anchorage branch's $8 a plate (ADN 2023, same menu as Juneau), so the range ≈ $8–12 is from those. Its own site pelmeni-juneau.shop now shows a domain for sale, so it was not used. Roadfood says cash only (not put in the row).",
+      "ok": "2026-11"
+    }
+  ]
 }
