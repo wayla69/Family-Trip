@@ -237,3 +237,6 @@ Kee, Sun Hang Yuen, MD Cafe) and four family places from Cathay Pacific's 2026 c
 MeokBang BBQ Kidzone, Tree Café, Yakiniku Tabeyo). Left out: Transformers: The Ark (closed in Hong Kong, Feb 2025), Smoke and Barrel
 (moved, the new address not confirmed), Baumhaus (nothing current), Pizza Express (no one branch). In the app the Hong Kong book's own
 28 places and the Macau book part's 188 sit beside this list (`syncBooks`, src `book`).
+
+### Phú Quốc, 23 Nov 2026
+batch-02 of docs/library-briefs. +5: Clubhouse at Premier Residences (a pizza class for children), Paradiso, Huong Bien, Hủ Tiếu Mực Tư Hường, Mai Hương Beachfront. Out: one name the map gives to another restaurant. Proof in `docs/library-proof/vn-phuquoc.json`.
