@@ -266,6 +266,154 @@
           "book": "req",
           "q": "MIJU Museo de la Imaginación y el Juego, Av. de los Italianos 851, Puerto Madero, Buenos Aires",
           "src": "https://buenosaires.gob.ar/cultura/museos/museo-de-la-imaginacion-y-el-juego"
+        },
+        {
+          "local": "",
+          "ages": [
+            1,
+            1,
+            1,
+            1
+          ],
+          "hrs": 2,
+          "io": "out",
+          "pram": "part",
+          "price": {
+            "th": "ฟรี",
+            "en": "Free"
+          },
+          "book": "none",
+          "src": "https://www.timeout.com/es/buenos-aires/lugares-gratis-chicos-ninos-imperdibles",
+          "name": {
+            "th": "สวนแซงต์โตรเปซ",
+            "en": "Parque Saint Tropez"
+          },
+          "kind": "park",
+          "area": {
+            "th": "ริมแม่น้ำ คอสตาเนรานอร์เต เบลกราโน",
+            "en": "Costanera Norte, Belgrano"
+          },
+          "what": {
+            "th": "สวนริมแม่น้ำ มีทางจักรยาน ลานสเก็ต ทางเดิน และสนามหญ้า",
+            "en": "A riverside park with bike and skate tracks, paths and open lawns"
+          },
+          "why": {
+            "th": "เครื่องบินจากสนามบินในเมืองบินผ่านต่ำๆ ให้ดู",
+            "en": "Planes from the city airport fly low overhead"
+          },
+          "q": "Saint Tropez Park, Costanera Norte, Buenos Aires",
+          "ok": "2026-11"
+        },
+        {
+          "local": "",
+          "ages": [
+            1,
+            1,
+            1,
+            1
+          ],
+          "hrs": 2,
+          "io": "out",
+          "pram": "part",
+          "price": {
+            "th": "เช็กราคาก่อนไป",
+            "en": "Check the price"
+          },
+          "book": "none",
+          "src": "https://turismo.buenosaires.gob.ar/en/article/activities-kids",
+          "name": {
+            "th": "สวนเด็ก ปาร์เกเดลอสนิญโญส",
+            "en": "Parque de los Niños"
+          },
+          "kind": "park",
+          "area": {
+            "th": "นุญเญซ ริมแม่น้ำ",
+            "en": "Núñez, by the river"
+          },
+          "what": {
+            "th": "สวนริมแม่น้ำที่ทำมาสำหรับเด็ก มีกิจกรรมวัฒนธรรมและกีฬา",
+            "en": "A riverside park made for children, with cultural and sports activities"
+          },
+          "why": {
+            "th": "สร้างมาเพื่อเด็กโดยเฉพาะ",
+            "en": "Built for children"
+          },
+          "q": "Parque de los Niños, Núñez, Buenos Aires",
+          "ok": "2026-11"
+        },
+        {
+          "local": "",
+          "ages": [
+            1,
+            1,
+            1,
+            1
+          ],
+          "hrs": 2,
+          "io": "out",
+          "pram": "part",
+          "price": {
+            "th": "ฟรี",
+            "en": "Free"
+          },
+          "book": "none",
+          "src": "https://turismo.buenosaires.gob.ar/en/article/activities-kids",
+          "name": {
+            "th": "ทางเดินการ์ตูน ปาเซโอเดลาอิสโตรีเอตา",
+            "en": "Comic Strip Walk (Paseo de la Historieta)"
+          },
+          "kind": "oldtown",
+          "area": {
+            "th": "มอนเซร์รัต ซานเตลโม และปวยร์โตมาเดโร",
+            "en": "Monserrat, San Telmo and Puerto Madero"
+          },
+          "what": {
+            "th": "เส้นทางรูปปั้นตัวการ์ตูนดังของอาร์เจนตินา",
+            "en": "A trail of statues of Argentina’s comic-strip characters"
+          },
+          "why": {
+            "th": "เด็กๆ นับว่าหาตัวการ์ตูนเจอกี่ตัว",
+            "en": "Children count how many characters they can find"
+          },
+          "q": "Paseo de la Historieta, San Telmo, Buenos Aires",
+          "ok": "2026-11"
+        },
+        {
+          "local": "Museo Participativo de Ciencias",
+          "ages": [
+            1,
+            1,
+            1,
+            1
+          ],
+          "hrs": 2,
+          "io": "in",
+          "pram": "part",
+          "price": {
+            "th": "เช็กราคาก่อนไป",
+            "en": "Check the price"
+          },
+          "book": "none",
+          "src": "https://turismo.buenosaires.gob.ar/en/article/activities-kids",
+          "name": {
+            "th": "พิพิธภัณฑ์วิทยาศาสตร์ให้ลองเล่น",
+            "en": "Participative Science Museum"
+          },
+          "kind": "museumkid",
+          "area": {
+            "th": "ศูนย์วัฒนธรรมเรโคเลตา",
+            "en": "Recoleta cultural centre"
+          },
+          "what": {
+            "th": "พิพิธภัณฑ์วิทยาศาสตร์ที่ได้ลองเอง ไฟฟ้า ฟิสิกส์ เคมี ศิลปะ และดนตรี",
+            "en": "A hands-on science museum: electricity, physics, chemistry, art and music"
+          },
+          "why": {
+            "th": "กติกาคือ \"ห้ามไม่จับ\" เด็กได้ลองทุกอย่าง",
+            "en": "Its rule is \"touching allowed\", so children try everything"
+          },
+          "q": "Museo Participativo de Ciencias, Recoleta, Buenos Aires",
+          "ok": "2026-11"
         }
       ]
     },
@@ -540,6 +688,191 @@
           "book": "rec",
           "q": "Parque Nahuelito, Ruta 77 km 24.5, Circuito Chico, Bariloche",
           "src": "https://www.rionegro.com.ar/?p=4657204"
+        },
+        {
+          "local": "",
+          "ages": [
+            0,
+            1,
+            2,
+            2
+          ],
+          "hrs": 1.5,
+          "io": "in",
+          "pram": "part",
+          "price": {
+            "th": "เช็กราคาก่อนไป",
+            "en": "Check the price"
+          },
+          "book": "none",
+          "src": "https://elchalten.com/v4/en/frequently-asked-questions-about-visit-el-chalten.php",
+          "name": {
+            "th": "เซนโตรอันดีโน เอลชัลเตน",
+            "en": "Centro Andino El Chaltén"
+          },
+          "kind": "play",
+          "area": {
+            "th": "เอลชัลเตน",
+            "en": "El Chaltén"
+          },
+          "what": {
+            "th": "ผนังปีนเขาในร่มในหมู่บ้าน",
+            "en": "An indoor climbing wall in the village"
+          },
+          "why": {
+            "th": "ที่ปีนเขาในร่มสำหรับวันฝนตก",
+            "en": "Somewhere to climb indoors on a rainy day"
+          },
+          "q": "Centro Andino El Chaltén, Las Loicas 700, El Chaltén",
+          "ok": "2026-11"
+        },
+        {
+          "local": "",
+          "ages": [
+            2,
+            2,
+            2,
+            2
+          ],
+          "hrs": 1.5,
+          "io": "out",
+          "pram": "part",
+          "price": {
+            "th": "ฟรี",
+            "en": "Free"
+          },
+          "book": "none",
+          "src": "https://elchalten.com/v4/en/frequently-asked-questions-about-visit-el-chalten.php",
+          "name": {
+            "th": "น้ำตกชอร์ริโยเดลซัลโต",
+            "en": "Chorrillo del Salto"
+          },
+          "kind": "nature",
+          "area": {
+            "th": "เอลชัลเตน",
+            "en": "El Chaltén"
+          },
+          "what": {
+            "th": "เส้นทางสั้น ๆ ไปน้ำตกใกล้เอลชัลเตน",
+            "en": "A short trail to a waterfall near El Chaltén"
+          },
+          "why": {
+            "th": "หมู่บ้านแนะนำว่าเหมาะกับเด็กก่อนวัยเรียน",
+            "en": "The village names it as ideal for preschoolers"
+          },
+          "q": "Chorrillo del Salto, El Chaltén",
+          "ok": "2026-11"
+        },
+        {
+          "local": "",
+          "ages": [
+            1,
+            2,
+            2,
+            2
+          ],
+          "hrs": 3,
+          "io": "both",
+          "pram": "part",
+          "price": {
+            "th": "เช็กราคาก่อนไป",
+            "en": "Check the price"
+          },
+          "book": "none",
+          "src": "https://solsalute.com/blog/argentina-with-kids",
+          "name": {
+            "th": "เขาเซร์โรออตโต",
+            "en": "Cerro Otto"
+          },
+          "kind": "views",
+          "area": {
+            "th": "บารีโลเช",
+            "en": "Bariloche"
+          },
+          "what": {
+            "th": "เนินเขาเหนือบารีโลเช ขึ้นกระเช้าไป",
+            "en": "A hill above Bariloche, up by cable car"
+          },
+          "why": {
+            "th": "มีเกมสำหรับเด็ก อย่างเขาวงกต",
+            "en": "Games for children, like mazes"
+          },
+          "q": "Teleférico Cerro Otto, Bariloche",
+          "ok": "2026-11"
+        },
+        {
+          "local": "",
+          "ages": [
+            1,
+            2,
+            2,
+            2
+          ],
+          "hrs": 1.5,
+          "io": "out",
+          "pram": "part",
+          "price": {
+            "th": "เช็กราคาก่อนไป",
+            "en": "Check the price"
+          },
+          "book": "none",
+          "src": "https://solsalute.com/blog/argentina-with-kids",
+          "name": {
+            "th": "เขาเซร์โรกัมปานาริโอ",
+            "en": "Cerro Campanario"
+          },
+          "kind": "views",
+          "area": {
+            "th": "บารีโลเช",
+            "en": "Bariloche"
+          },
+          "what": {
+            "th": "นั่งกระเช้าขึ้นยอดเขากัมปานาริโอ",
+            "en": "A chairlift ride to the top of Cerro Campanario"
+          },
+          "why": {
+            "th": "วิวกว้างไกล และมีช็อกโกแลตร้อนกับเค้กที่คาเฟ่บนยอด",
+            "en": "Wide views, and hot chocolate and cake at the café"
+          },
+          "q": "Cerro Campanario, Bariloche",
+          "ok": "2026-11"
+        },
+        {
+          "local": "",
+          "ages": [
+            0,
+            0,
+            1,
+            2
+          ],
+          "hrs": 6,
+          "io": "out",
+          "pram": "no",
+          "price": {
+            "th": "เช็กราคาก่อนไป",
+            "en": "Check the price"
+          },
+          "book": "none",
+          "src": "https://solsalute.com/blog/argentina-with-kids",
+          "name": {
+            "th": "ที่พักบนเขาเรฟูจิโอเฟรย์",
+            "en": "Refugio Frey"
+          },
+          "kind": "nature",
+          "area": {
+            "th": "เซร์โรกาเตดรัล บารีโลเช",
+            "en": "Cerro Catedral, Bariloche"
+          },
+          "what": {
+            "th": "กระท่อมบนเขาที่ไปถึงด้วยการเดินป่า",
+            "en": "A mountain hut reached on a hiking trail"
+          },
+          "why": {
+            "th": "หนึ่งในเส้นทางเดินป่ายอดนิยมรอบบารีโลเช",
+            "en": "One of the popular hikes around Bariloche"
+          },
+          "q": "Refugio Frey, Cerro Catedral, Bariloche",
+          "ok": "2026-11"
         }
       ]
     }
