@@ -1,38 +1,59 @@
 {
   "town": "th-kohchang",
-  "kind": "eats",
-  "checked": "2026-11",
-  "rule": "A row gets ok only from a current listing, its own site or recent reviews with nothing saying closed (docs/EATS.md). A row is taken out when a search could not find the place at all or the sources disagree; a place found but not freshly confirmed stays without ok.",
-  "scope": "the four rows without ok; the fourteen rows already confirmed were not checked again",
-  "how": "Google Maps opened in headless Chromium (2026-11-23), limited view without a reviews tab, so no review date could be read; a place with current hours and no closed notice counts as a current listing. Then a web search for the two not settled",
-  "confirmed": [
+  "kind": "eats + sights",
+  "checked": "2026-11-23",
+  "rule": "library-check.cjs, then the Google Maps Reviews tab sorted by newest: ok only when not marked closed, with a review from the last six months, and the map's name matching the page's.",
+  "agents": "one Haiku agent; 8 rows from TrueID Travel (Mar 2025) passed library-check.cjs, 5 went in",
+  "added": [
     {
-      "name": "Namchok",
-      "src": "https://www.google.com/maps/place/Num+Chok,+Thai+Seafood+Restaurant/@12.2456212,102.5153358,17z",
-      "page_name": "Num Chok, Thai Seafood Restaurant / สวนอาหารนำโชค",
-      "evidence": "Google Maps: seafood restaurant, 4.2★, Bang Phra, Mueang Trat (6GW8+64) — in Trat town, as the row says; 'Open · Closes 9:30 PM', a Facebook page and phone listed; nothing says closed. Map query now uses its Maps name",
-      "ok": "2026-11"
+      "name": "Chao Pho Koh Chang shrine",
+      "page_name": "ศาลเจ้าพ่อเกาะช้าง",
+      "src": "https://travel.trueid.net/detail/DY70G86E7gP",
+      "date": "2025-03",
+      "map": "Google Maps 279 reviews, newest shown '29 days ago'"
     },
     {
-      "name": "Papa’s Deli",
-      "src": "https://www.google.com/maps/search/Papa's+Deli+Kai+Bae+Koh+Chang",
-      "page_name": "Papa -Deli&Bakery-",
-      "evidence": "Google Maps: bakery, 4.0★, 27HR+4XM — Kai Bae, as the row says; 'Open · Closes 5 PM'; nothing says closed. Map query now uses its Maps name",
-      "ok": "2026-11"
+      "name": "Wat Salak Phet",
+      "page_name": "วัดสลักเพชร",
+      "src": "https://travel.trueid.net/detail/DY70G86E7gP",
+      "date": "2025-03",
+      "map": "Google Maps 796 reviews, newest shown '1 day ago'"
+    },
+    {
+      "name": "Lonely Beach (Hat Tha Nam)",
+      "page_name": "หาดท่าน้ำ",
+      "src": "https://travel.trueid.net/detail/DY70G86E7gP",
+      "date": "2025-03",
+      "map": "Google Maps 888 reviews, newest shown '2 months ago'"
+    },
+    {
+      "name": "Hat San Chao, Koh Rang Yai",
+      "page_name": "หาดศาลเจ้า",
+      "src": "https://travel.trueid.net/detail/DY70G86E7gP",
+      "date": "2025-03",
+      "map": "Google Maps 305 reviews, newest shown '10 days ago'"
+    },
+    {
+      "name": "Khlong Nonsi waterfall",
+      "page_name": "น้ำตกคลองนนทรี",
+      "src": "https://travel.trueid.net/detail/DY70G86E7gP",
+      "date": "2025-03",
+      "map": "Google Maps 408 reviews, newest shown '7 days ago'"
     }
   ],
-  "kept_without_ok": [
+  "left_out": [
     {
-      "name": "Nong Bua Seafood",
-      "src": "https://www.wongnai.com/restaurants/13190bO-หนองบัวซีฟู้ด/reviews",
-      "evidence": "Wongnai has the White Sand beach shop (once เกี๊ยวหนองบัวซีฟู้ด, now two branches); Google Maps finds only 'Nong Bua Seafood Klong Prao / หนองบัวซีฟู้ด สาขาคลองพร้าว' (377P+QG, open to 10 PM), the other branch, not the White Sand one the row describes. Nothing current confirms the White Sand shop"
+      "name": "Koh Chang lighthouse, Bang Bao",
+      "why": "no map entry of its own (only the pier, already in)"
+    },
+    {
+      "name": "Mu Koh Rang (the island group)",
+      "why": "a whole area; its reviews shown are years old"
+    },
+    {
+      "name": "Ao Bai Lan",
+      "why": "the map shows only a resort"
     }
   ],
-  "removed": [
-    {
-      "name": "Barrio Bonito",
-      "src": "https://www.google.com/maps/place/El+Barrio/@12.0289281,102.2927386,17z",
-      "reason": "renamed: a Koh Chang guide (iamkohchang.com) says 'El Barrio ( formerly Barrio Bonito )', and Google Maps lists El Barrio (Mexican, 27HV+H3, Kai Bae, in Garden Resort) as 'Temporarily closed' with no hours"
-    }
-  ]
+  "estimates": "Ages and visit hours are placeholders; prices and opening notes are the pages' own."
 }

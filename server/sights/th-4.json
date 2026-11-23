@@ -2311,6 +2311,195 @@
           "q": "Ban Suan Cooking School, Klong Prao, Koh Chang",
           "ok": "2026-11",
           "src": "https://explorekohchang.com/koh-chang/things-to-do-in-koh-chang/thai-cooking-schools/"
+        },
+        {
+          "local": "",
+          "ages": [
+            1,
+            1,
+            1,
+            1
+          ],
+          "hrs": 0.5,
+          "io": "out",
+          "pram": "part",
+          "price": {
+            "th": "เช็กราคาก่อนไป",
+            "en": "Check the price"
+          },
+          "book": "none",
+          "src": "https://travel.trueid.net/detail/DY70G86E7gP",
+          "name": {
+            "th": "ศาลเจ้าพ่อเกาะช้าง",
+            "en": "Chao Pho Koh Chang shrine"
+          },
+          "kind": "culture",
+          "area": {
+            "th": "เกาะช้าง เกาะช้าง",
+            "en": "Koh Chang, Koh Chang"
+          },
+          "what": {
+            "th": "ศาลเจ้าที่ชาวเกาะนับถือมานาน",
+            "en": "A shrine the islanders have long revered"
+          },
+          "why": {
+            "th": "เรื่องเล่าเก่าแก่เกี่ยวกับการเดินเรือ",
+            "en": "An old story of sea voyages"
+          },
+          "q": "ศาลเจ้าพ่อเกาะช้าง",
+          "ok": "2026-11"
+        },
+        {
+          "local": "",
+          "ages": [
+            1,
+            2,
+            2,
+            1
+          ],
+          "hrs": 1,
+          "io": "out",
+          "pram": "part",
+          "price": {
+            "th": "เช็กราคาก่อนไป",
+            "en": "Check the price"
+          },
+          "book": "none",
+          "src": "https://travel.trueid.net/detail/DY70G86E7gP",
+          "name": {
+            "th": "วัดสลักเพชร",
+            "en": "Wat Salak Phet"
+          },
+          "kind": "culture",
+          "area": {
+            "th": "สลักเพชร เกาะช้าง",
+            "en": "Salak Phet, Koh Chang"
+          },
+          "what": {
+            "th": "วัดที่มีรูปปั้นเทวดาและสัตว์ป่าหิมพานต์รายล้อม",
+            "en": "A temple ringed by statues of gods and Himmapan creatures"
+          },
+          "why": {
+            "th": "รูปปั้นสัตว์ในตำนาน มีป้ายเล่าเรื่องแต่ละตัว",
+            "en": "Statues of mythical creatures, each with a sign telling its story"
+          },
+          "q": "วัดสลักเพชร, เกาะช้าง",
+          "ok": "2026-11"
+        },
+        {
+          "local": "",
+          "ages": [
+            1,
+            2,
+            2,
+            2
+          ],
+          "hrs": 2,
+          "io": "out",
+          "pram": "part",
+          "price": {
+            "th": "เช็กราคาก่อนไป",
+            "en": "Check the price"
+          },
+          "book": "none",
+          "src": "https://travel.trueid.net/detail/DY70G86E7gP",
+          "name": {
+            "th": "หาดท่าน้ำ",
+            "en": "Lonely Beach (Hat Tha Nam)"
+          },
+          "kind": "beach",
+          "area": {
+            "th": "ฝั่งตะวันตก เกาะช้าง",
+            "en": "West coast, Koh Chang"
+          },
+          "what": {
+            "th": "หาดทรายขาวยาว น้ำใส",
+            "en": "A long white-sand beach with clear water"
+          },
+          "why": {
+            "th": "เงียบ ไม่พลุกพล่าน เล่นน้ำได้",
+            "en": "Quiet, good for paddling"
+          },
+          "q": "หาดท่าน้ำ, เกาะช้าง",
+          "ok": "2026-11"
+        },
+        {
+          "local": "",
+          "ages": [
+            1,
+            2,
+            2,
+            2
+          ],
+          "hrs": 3,
+          "io": "out",
+          "pram": "no",
+          "price": {
+            "th": "เช็กราคาก่อนไป",
+            "en": "Check the price"
+          },
+          "book": "rec",
+          "src": "https://travel.trueid.net/detail/DY70G86E7gP",
+          "name": {
+            "th": "หาดศาลเจ้า เกาะรังใหญ่",
+            "en": "Hat San Chao, Koh Rang Yai"
+          },
+          "kind": "beach",
+          "area": {
+            "th": "เกาะรังใหญ่ อุทยานแห่งชาติหมู่เกาะช้าง",
+            "en": "Koh Rang Yai, Mu Ko Chang National Park"
+          },
+          "what": {
+            "th": "หาดกว้าง ทรายขาวละเอียด น้ำใส บนเกาะรังใหญ่",
+            "en": "A wide beach of fine white sand and clear water on Koh Rang Yai"
+          },
+          "why": {
+            "th": "น้ำตื้นสงบ เล่นน้ำได้",
+            "en": "Calm shallows to play in"
+          },
+          "tip": {
+            "th": "เปิดทั้งวัน",
+            "en": "Open all day"
+          },
+          "q": "หาดศาลเจ้า, เกาะรังใหญ่",
+          "ok": "2026-11"
+        },
+        {
+          "local": "",
+          "ages": [
+            0,
+            1,
+            2,
+            2
+          ],
+          "hrs": 1.5,
+          "io": "out",
+          "pram": "no",
+          "price": {
+            "th": "เช็กราคาก่อนไป",
+            "en": "Check the price"
+          },
+          "book": "none",
+          "src": "https://travel.trueid.net/detail/DY70G86E7gP",
+          "name": {
+            "th": "น้ำตกคลองนนทรี",
+            "en": "Khlong Nonsi waterfall"
+          },
+          "kind": "nature",
+          "area": {
+            "th": "ทางเหนือ เกาะช้าง",
+            "en": "North, Koh Chang"
+          },
+          "what": {
+            "th": "น้ำตกเล็ก ๆ เดินผ่านสวนผลไม้ของชาวบ้าน",
+            "en": "A small waterfall reached on foot through fruit orchards"
+          },
+          "why": {
+            "th": "เดินผ่านสวนไปน้ำตกที่เงียบสงบ",
+            "en": "A walk through orchards to a quiet waterfall"
+          },
+          "q": "น้ำตกคลองนนทรี, เกาะช้าง",
+          "ok": "2026-11"
         }
       ]
     },
