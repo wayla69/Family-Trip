@@ -148,6 +148,125 @@
           "q": "Inpawkhone, Inle Lake",
           "ok": "2026-11",
           "src": "https://wander-lush.org/lotus-fabric-myanmar-inle-lake-weaving/"
+        },
+        {
+          "local": "Nga Phe Kyaung",
+          "ages": [
+            1,
+            2,
+            2,
+            2
+          ],
+          "hrs": 0.5,
+          "io": "in",
+          "pram": "part",
+          "price": {
+            "th": "เช็กราคาก่อนไป",
+            "en": "Check the price"
+          },
+          "book": "none",
+          "src": "https://www.homejourney.sg/blog/inle-lake-boat-tour-complete-guide-homejourney",
+          "name": {
+            "th": "วัดงาเพ่เชง (วัดแมวกระโดด)",
+            "en": "Nga Phe Kyaung (the jumping cat monastery)"
+          },
+          "kind": "culture",
+          "area": {
+            "th": "ทะเลสาบอินเล",
+            "en": "Inle Lake"
+          },
+          "what": {
+            "th": "วัดไม้สักบนเสาในทะเลสาบ เป็นจุดแวะของเรือนำเที่ยวทั่วไป",
+            "en": "A teak monastery on stilts in the lake, a stop on the usual boat trip"
+          },
+          "why": {
+            "th": "ขึ้นชื่อเรื่องแมว แม้ตอนนี้จะเหลือน้อยลง",
+            "en": "Famous for its cats, though fewer now"
+          },
+          "q": "Nga Phe Kyaung, Inle Lake",
+          "ok": "2026-11"
+        },
+        {
+          "local": "",
+          "ages": [
+            1,
+            1,
+            2,
+            2
+          ],
+          "hrs": 0.5,
+          "io": "in",
+          "pram": "part",
+          "price": {
+            "th": "เช็กราคาก่อนไป",
+            "en": "Check the price"
+          },
+          "book": "none",
+          "src": "https://www.homejourney.sg/blog/inle-lake-boat-tour-complete-guide-homejourney",
+          "name": {
+            "th": "วัดพองดออู",
+            "en": "Phaung Daw Oo Pagoda"
+          },
+          "kind": "culture",
+          "area": {
+            "th": "ทะเลสาบอินเล",
+            "en": "Inle Lake"
+          },
+          "what": {
+            "th": "วัดศักดิ์สิทธิ์ที่สุดของทะเลสาบ มีพระพุทธรูปปิดทอง 4 องค์",
+            "en": "The lake's holiest temple, with four gold-covered Buddha images"
+          },
+          "why": {
+            "th": "จุดแวะตอนเช้าของเรือนำเที่ยว",
+            "en": "A morning stop on the boat trip"
+          },
+          "tip": {
+            "th": "ห้ามถ่ายรูปข้างใน",
+            "en": "No photos inside"
+          },
+          "q": "Phaung Daw Oo Pagoda, Inle Lake",
+          "ok": "2026-11"
+        },
+        {
+          "local": "",
+          "ages": [
+            0,
+            1,
+            2,
+            2
+          ],
+          "hrs": 1,
+          "io": "out",
+          "pram": "no",
+          "price": {
+            "th": "เช็กราคาก่อนไป",
+            "en": "Check the price"
+          },
+          "book": "none",
+          "src": "https://www.earthtrekkers.com/cycling-bagan-temples/",
+          "name": {
+            "th": "เจดีย์ชเวซานดอ",
+            "en": "Shwesandaw Pagoda"
+          },
+          "kind": "views",
+          "area": {
+            "th": "พุกามเก่า",
+            "en": "Old Bagan"
+          },
+          "what": {
+            "th": "เจดีย์ในพุกามสำหรับชมพระอาทิตย์ตก",
+            "en": "A Bagan pagoda for watching the sunset"
+          },
+          "why": {
+            "th": "วิวพระอาทิตย์ตกเหนือทุ่งเจดีย์",
+            "en": "The sunset view over the plain of temples"
+          },
+          "tip": {
+            "th": "คนเยอะตอนพระอาทิตย์ตก แต่คุ้มค่า",
+            "en": "Crowded at sunset, but worth it"
+          },
+          "q": "Shwesandaw Pagoda, Old Bagan",
+          "ok": "2026-11"
         }
       ]
     },
