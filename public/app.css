@@ -4103,7 +4103,7 @@ details.more>summary{border-radius:16px}
 /* a painted picture on a dark pastel tile floats like in light mode — no plate (UI review, Nov 2026) */
 @media (prefers-color-scheme:dark){:root:not([data-theme=light]) .hubgrid.tl-pastel .tile .e.pic{background:none}}:root[data-theme=dark] .hubgrid.tl-pastel .tile .e.pic{background:none}
 /* kid mode on a phone (UI review, Nov 2026): the paper and the picture leave room for their "keep it" / "all done" button above the kid bar */
-.kidwrap .drawpad canvas{width:min(100%,calc(max(200px,min(60vh,100dvh - 520px)) * var(--ar,1.3333)))}
+.kidwrap .drawwrap:not(.full) .drawpad canvas{width:min(100%,calc(max(200px,min(60vh,100dvh - 520px)) * var(--ar,1.3333)))}
 .kidwrap .colourpad{max-height:max(220px,min(56vh,100dvh - 470px));margin-inline:auto}.kidwrap .colourpad svg{max-height:max(200px,min(52vh,100dvh - 490px))}
 .hoff ~ .impnote{display:none}   /* the import page with the helper off: no notes about a job that cannot run */
 /* Today before the trip (owner, Nov 2026: "ปรับ UI"): the countdown and the navigate buttons as the menu's pastel cards with their pictures; the short · full switch a tinted track */
