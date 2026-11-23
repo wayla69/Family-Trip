@@ -258,6 +258,392 @@
           "q": "Grassi Lakes Trailhead, Canmore",
           "ok": "2026-11",
           "src": "https://www.albertaparks.ca/parks/kananaskis/kananaskis-country/advisories-public-safety/trail-reports/canmore-and-area/grassi-lakes-interpretive"
+        },
+        {
+          "local": "",
+          "ages": [
+            1,
+            1,
+            1,
+            1
+          ],
+          "hrs": 3,
+          "io": "out",
+          "pram": "no",
+          "price": {
+            "th": "เช็กราคาก่อนไป",
+            "en": "Check the price"
+          },
+          "book": "none",
+          "src": "https://www.travelbanffcanada.com/banff-with-kids/",
+          "name": {
+            "th": "หุบเขาซันแดนซ์",
+            "en": "Sundance Canyon"
+          },
+          "kind": "nature",
+          "area": {
+            "th": "เริ่มจากเคฟแอนด์เบซิน แบนฟ์",
+            "en": "From Cave and Basin, Banff"
+          },
+          "what": {
+            "th": "ทางลาดยางปั่นจักรยานหรือเดินไปเส้นทางหุบเขาสั้นๆ และน้ำตก",
+            "en": "A paved trail by bike or on foot to a short canyon walk and a waterfall"
+          },
+          "why": {
+            "th": "ปั่นจักรยานกับเด็กได้ บางช่วงเด็กเล็กต้องช่วย",
+            "en": "A child-friendly bike ride, though some bits need a hand for younger ones"
+          },
+          "tip": {
+            "th": "ล็อกจักรยานไว้ที่ปากทาง แล้วเดินวง 1.6 กม.",
+            "en": "Lock the bikes at the trailhead and walk the 1.6 km loop"
+          },
+          "q": "Sundance Canyon, Banff",
+          "ok": "2026-11"
+        },
+        {
+          "local": "",
+          "ages": [
+            1,
+            1,
+            1,
+            1
+          ],
+          "hrs": 1,
+          "io": "out",
+          "pram": "part",
+          "price": {
+            "th": "เช็กราคาก่อนไป",
+            "en": "Check the price"
+          },
+          "book": "none",
+          "src": "https://www.travelbanffcanada.com/banff-with-kids/",
+          "name": {
+            "th": "ทะเลสาบเพย์โต",
+            "en": "Peyto Lake"
+          },
+          "kind": "views",
+          "area": {
+            "th": "ถนนไอซ์ฟิลด์สปาร์กเวย์",
+            "en": "Icefields Parkway"
+          },
+          "what": {
+            "th": "ทะเลสาบน้ำแข็งสีเทอร์ควอยซ์ บนทางขับขึ้นเหนือจากเลกหลุยส์",
+            "en": "A turquoise glacier lake on the drive north from Lake Louise"
+          },
+          "why": {
+            "th": "จุดแวะพักกับเด็กบนทางขับรถชมวิวยาวๆ",
+            "en": "A good stop with children on the long scenic drive"
+          },
+          "q": "Peyto Lake, Icefields Parkway",
+          "ok": "2026-11"
+        },
+        {
+          "local": "",
+          "ages": [
+            1,
+            1,
+            1,
+            1
+          ],
+          "hrs": 1,
+          "io": "out",
+          "pram": "no",
+          "price": {
+            "th": "เช็กราคาก่อนไป",
+            "en": "Check the price"
+          },
+          "book": "none",
+          "src": "https://www.travelbanffcanada.com/banff-with-kids/",
+          "name": {
+            "th": "น้ำตกซิลเวอร์ตัน",
+            "en": "Silverton Falls"
+          },
+          "kind": "nature",
+          "area": {
+            "th": "ถนนโบว์แวลลีย์ปาร์กเวย์ ใกล้จอห์นสตันแคนยอน",
+            "en": "Bow Valley Parkway, near Johnston Canyon"
+          },
+          "what": {
+            "th": "เดิน 1 กม. ผ่านป่าไปน้ำตกสามชั้น",
+            "en": "A 1 km walk through forest to a three-tiered waterfall"
+          },
+          "why": {
+            "th": "แวะต่อจากจอห์นสตันแคนยอนได้ สั้นและง่าย",
+            "en": "A short, easy add-on to Johnston Canyon"
+          },
+          "q": "Silverton Falls, Banff",
+          "ok": "2026-11"
+        },
+        {
+          "local": "",
+          "ages": [
+            1,
+            1,
+            1,
+            1
+          ],
+          "hrs": 1,
+          "io": "out",
+          "pram": "part",
+          "price": {
+            "th": "ฟรี",
+            "en": "Free"
+          },
+          "book": "none",
+          "src": "https://www.travelbanffcanada.com/banff-with-kids/",
+          "name": {
+            "th": "ทางเดินวงแม่น้ำโบว์ แคนมอร์",
+            "en": "Bow River Loop, Canmore"
+          },
+          "kind": "nature",
+          "area": {
+            "th": "สวนริเวอร์ไซด์ แคนมอร์",
+            "en": "Riverside Park, Canmore"
+          },
+          "what": {
+            "th": "ทางเดินวง 2 กม. ข้ามสะพานเอนจิน เห็นภูเขารันเดิล ยอดฮาหลิง และทรีซิสเตอร์ส",
+            "en": "A 2 km loop over the Engine Bridge with views of Mount Rundle, Ha Ling Peak and the Three Sisters"
+          },
+          "why": {
+            "th": "เดินง่าย วิวภูเขา มีสนามเด็กเล่นระหว่างทาง",
+            "en": "An easy walk with mountain views and a playground on the way"
+          },
+          "tip": {
+            "th": "เดินตามทางเลยถนนบริดจ์ไปถึงสนามเด็กเล่นเวสต์แคนมอร์พาร์ก",
+            "en": "Stay on the path past Bridge Road to reach West Canmore Park playground"
+          },
+          "q": "Bow River Loop Trail, Canmore",
+          "ok": "2026-11"
+        },
+        {
+          "local": "",
+          "ages": [
+            1,
+            1,
+            1,
+            1
+          ],
+          "hrs": 1,
+          "io": "out",
+          "pram": "part",
+          "price": {
+            "th": "ฟรี",
+            "en": "Free"
+          },
+          "book": "none",
+          "src": "https://www.travelbanffcanada.com/banff-with-kids/",
+          "name": {
+            "th": "สนามเด็กเล่นเวสต์แคนมอร์พาร์ก",
+            "en": "West Canmore Park playground"
+          },
+          "kind": "play",
+          "area": {
+            "th": "สวนเวสต์แคนมอร์",
+            "en": "West Canmore Park"
+          },
+          "what": {
+            "th": "สนามเด็กเล่นริมทางเดินแม่น้ำโบว์ เห็นวิวภูเขา",
+            "en": "A playground by the Bow River path, with mountain views"
+          },
+          "why": {
+            "th": "เด็กเล่นไป พ่อแม่ชมวิวไป",
+            "en": "Children play while the parents enjoy the view"
+          },
+          "q": "West Canmore Park Playground, Canmore",
+          "ok": "2026-11"
+        },
+        {
+          "local": "",
+          "ages": [
+            1,
+            1,
+            1,
+            1
+          ],
+          "hrs": 2,
+          "io": "out",
+          "pram": "no",
+          "price": {
+            "th": "เช็กราคาก่อนไป",
+            "en": "Check the price"
+          },
+          "book": "none",
+          "src": "https://www.travelbanffcanada.com/banff-with-kids/",
+          "name": {
+            "th": "เส้นทางลำธารฮาร์ตครีก",
+            "en": "Heart Creek trail"
+          },
+          "kind": "nature",
+          "area": {
+            "th": "คานานาสกิส ห่างแคนมอร์ 17 กม.",
+            "en": "Kananaskis Country, 17 km from Canmore"
+          },
+          "what": {
+            "th": "เส้นทางเลียบลำธารเข้าหุบเขา มีต้นสนและก้อนหินใหญ่",
+            "en": "A gentle creek trail into a mountain canyon with evergreens and boulders"
+          },
+          "why": {
+            "th": "มีสะพานไม้เล็กๆ ให้ข้ามหลายรอบ",
+            "en": "Little wooden bridges to cross again and again"
+          },
+          "q": "Heart Creek Trail Head, Lac des Arcs",
+          "ok": "2026-11"
+        },
+        {
+          "local": "",
+          "ages": [
+            0,
+            0,
+            1,
+            1
+          ],
+          "hrs": 4,
+          "io": "out",
+          "pram": "no",
+          "price": {
+            "th": "เช็กราคาก่อนไป",
+            "en": "Check the price"
+          },
+          "book": "none",
+          "src": "https://www.travelbanffcanada.com/banff-with-kids/",
+          "name": {
+            "th": "โรงน้ำชาทะเลสาบแอกเนส",
+            "en": "Lake Agnes Tea House"
+          },
+          "kind": "nature",
+          "area": {
+            "th": "เลกหลุยส์",
+            "en": "Lake Louise"
+          },
+          "what": {
+            "th": "เดินไปกลับ 6.8 กม. จากเลกหลุยส์ไปโรงน้ำชาริมทะเลสาบแอกเนส",
+            "en": "A 6.8 km out-and-back hike from Lake Louise to a teahouse by Lake Agnes"
+          },
+          "why": {
+            "th": "อยู่ในรายการสิ่งที่ดีที่สุดที่ทำกับเด็กได้ที่เลกหลุยส์",
+            "en": "On the page’s list of the best things to do at Lake Louise with children"
+          },
+          "q": "Lake Agnes Tea House, Lake Louise",
+          "ok": "2026-11"
+        },
+        {
+          "local": "",
+          "ages": [
+            1,
+            1,
+            1,
+            1
+          ],
+          "hrs": 3,
+          "io": "out",
+          "pram": "no",
+          "price": {
+            "th": "เช็กราคาก่อนไป",
+            "en": "Check the price"
+          },
+          "book": "req",
+          "src": "https://www.travelbanffcanada.com/banff-with-kids/",
+          "name": {
+            "th": "ทะเลสาบคอนโซเลชัน",
+            "en": "Consolation Lakes"
+          },
+          "kind": "nature",
+          "area": {
+            "th": "ทะเลสาบโมเรน",
+            "en": "Moraine Lake"
+          },
+          "what": {
+            "th": "เดินป่าครอบครัวจากโมเรนเลกไปทะเลสาบสองแห่ง มีจุดปิกนิกบนก้อนหิน",
+            "en": "A family hike from Moraine Lake to two lakes, with a picnic spot on the rocks"
+          },
+          "why": {
+            "th": "หนีคนแน่นที่โมเรนเลกได้",
+            "en": "A way to get away from the crowds at Moraine Lake"
+          },
+          "tip": {
+            "th": "ถนนไปโมเรนเลกห้ามรถส่วนตัว ต้องจองรถรับส่ง",
+            "en": "Moraine Lake Road is closed to private cars, so book a shuttle"
+          },
+          "q": "Consolation Lakes, Banff National Park",
+          "ok": "2026-11"
+        },
+        {
+          "local": "",
+          "ages": [
+            1,
+            1,
+            1,
+            1
+          ],
+          "hrs": 1,
+          "io": "out",
+          "pram": "yes",
+          "price": {
+            "th": "ฟรี",
+            "en": "Free"
+          },
+          "book": "none",
+          "src": "https://playcanmore.com/things-to-do-canmore-with-kids/",
+          "name": {
+            "th": "ทางเดินไม้โพลิสแมนส์ครีก",
+            "en": "Policeman’s Creek boardwalk"
+          },
+          "kind": "nature",
+          "area": {
+            "th": "แคนมอร์",
+            "en": "Canmore"
+          },
+          "what": {
+            "th": "ทางเดินไม้ราบในเมือง น้ำสีเทอร์ควอยซ์และภูเขาตลอดทาง",
+            "en": "A flat boardwalk in town with turquoise water and mountains all the way"
+          },
+          "why": {
+            "th": "ราบ เข็นรถเข็นได้ เดินง่ายทุกคน",
+            "en": "Flat and pram-friendly, an easy walk for everyone"
+          },
+          "q": "Policeman's Creek Boardwalk, Canmore",
+          "ok": "2026-11"
+        },
+        {
+          "local": "",
+          "ages": [
+            1,
+            1,
+            1,
+            1
+          ],
+          "hrs": 2,
+          "io": "out",
+          "pram": "part",
+          "price": {
+            "th": "เช็กราคาก่อนไป",
+            "en": "Check the price"
+          },
+          "book": "req",
+          "src": "https://playcanmore.com/things-to-do-canmore-with-kids/",
+          "name": {
+            "th": "ศูนย์พักพิงหมาป่าลูกผสมยัมนัสกา",
+            "en": "Yamnuska Wolfdog Sanctuary"
+          },
+          "kind": "zoo",
+          "area": {
+            "th": "นอกเมืองแคนมอร์",
+            "en": "Just outside Canmore"
+          },
+          "what": {
+            "th": "ศูนย์พักพิงที่ครอบครัวเดินดูหมาป่าลูกผสมที่ช่วยมา มีทัวร์นำเที่ยวหรือเดินเอง",
+            "en": "A sanctuary where families walk among rescued wolfdogs on guided or self-guided tours"
+          },
+          "why": {
+            "th": "หน้าเว็บบอกว่าเป็นจุดแวะที่ครอบครัวจำได้ไม่ลืม",
+            "en": "The page calls it a really memorable stop for families"
+          },
+          "tip": {
+            "th": "จองล่วงหน้า",
+            "en": "Book ahead"
+          },
+          "q": "Yamnuska Wolfdog Sanctuary",
+          "ok": "2026-11"
         }
       ]
     },
