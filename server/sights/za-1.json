@@ -553,6 +553,43 @@
           "q": "God's Window, Panorama Route, Mpumalanga",
           "ok": "2026-11",
           "src": "https://www.timeout.com/south-africa/things-to-do/the-best-things-to-do-in-the-lowveld"
+        },
+        {
+          "local": "",
+          "ages": [
+            2,
+            2,
+            2,
+            2
+          ],
+          "hrs": 1.5,
+          "io": "both",
+          "pram": "part",
+          "price": {
+            "th": "เช็กราคาก่อนไป",
+            "en": "Check the price"
+          },
+          "book": "none",
+          "src": "https://www.krugerpark.co.za/Kruger_Park_Travel_Advisory-travel/taking-children-to-kruger-park.html",
+          "name": {
+            "th": "แคมป์โลเวอร์ซาบี",
+            "en": "Lower Sabie Rest Camp"
+          },
+          "kind": "nature",
+          "area": {
+            "th": "อุทยานแห่งชาติครูเกอร์",
+            "en": "Kruger National Park"
+          },
+          "what": {
+            "th": "แคมป์พักริมแม่น้ำซาบี ในเขตซาฟารีที่เหมาะกับเด็ก",
+            "en": "A rest camp on the Sabie River in a child-friendly safari area"
+          },
+          "why": {
+            "th": "จุดแวะกินข้าวกลางวันและเข้าห้องน้ำที่ดีระหว่างขับรถเที่ยว",
+            "en": "A good lunch and toilet stop on a self-drive"
+          },
+          "q": "Lower Sabie Rest Camp, Kruger",
+          "ok": "2026-11"
         }
       ]
     }
