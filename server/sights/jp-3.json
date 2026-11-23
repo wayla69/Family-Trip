@@ -290,6 +290,88 @@
           "q": "Forest Adventure HAKONE, 749-1 Chanohanakan, Yumoto, Hakone",
           "ok": "2026-11",
           "src": "https://www.magical-trip.com/media/top-10-family-friendly-activities-in-hakone-a-comprehensive-guide-for-2025/"
+        },
+        {
+          "local": "箱根神社",
+          "ages": [
+            1,
+            2,
+            2,
+            2
+          ],
+          "hrs": 1,
+          "io": "out",
+          "pram": "part",
+          "price": {
+            "th": "ฟรี",
+            "en": "Free"
+          },
+          "book": "none",
+          "src": "https://www.magical-trip.com/media/hakone-shrine-explore-the-historic-lakeside-sanctuary-with-iconic-torii-gate-and-scenic-views/",
+          "name": {
+            "th": "ศาลเจ้าฮาโกเนะ",
+            "en": "Hakone Shrine"
+          },
+          "kind": "culture",
+          "area": {
+            "th": "โมโตฮาโกเนะ ทะเลสาบอาชิ ฮาโกเนะ",
+            "en": "Motohakone, Lake Ashi, Hakone"
+          },
+          "what": {
+            "th": "ศาลเจ้าริมทะเลสาบอาชิ มีโทริอิสีแดงตั้งอยู่ในน้ำ",
+            "en": "A shrine on Lake Ashi with its red torii standing in the water"
+          },
+          "why": {
+            "th": "เข้าชมฟรี เดินใต้ต้นสนซีดาร์เก่าแก่",
+            "en": "Free to visit, with a walk under old cedars"
+          },
+          "tip": {
+            "th": "ไปเช้าตรู่คนน้อยกว่า ห้องสมบัติเสียค่าเข้า",
+            "en": "Go early in the morning, when it is quieter; the treasure house is paid"
+          },
+          "q": "Hakone Shrine, 80-1 Motohakone, Hakone",
+          "ok": "2026-11"
+        },
+        {
+          "local": "箱根 花紋",
+          "ages": [
+            1,
+            2,
+            2,
+            1
+          ],
+          "hrs": 6.5,
+          "io": "both",
+          "pram": "part",
+          "price": {
+            "th": "เช็กราคาก่อนไป",
+            "en": "Check the price"
+          },
+          "book": "rec",
+          "src": "https://www.magical-trip.com/media/top-10-family-friendly-activities-in-hakone-a-comprehensive-guide-for-2025/",
+          "name": {
+            "th": "แพ็กเกจรายวันฮาโกเนะคามง",
+            "en": "Hakone Kamon day plan"
+          },
+          "kind": "onsen",
+          "area": {
+            "th": "ยุโมโตะ ฮาโกเนะ",
+            "en": "Yumoto, Hakone"
+          },
+          "what": {
+            "th": "แพ็กเกจรายวันของเรียวกัง มีบ่อน้ำร้อน 10 แบบและมื้อกลางวันในห้องส่วนตัว",
+            "en": "A ryokan day plan with ten kinds of bath and lunch in a private room"
+          },
+          "why": {
+            "th": "มีห้องส่วนตัวให้พักกับลูกเล็ก",
+            "en": "A private room to rest in with small children"
+          },
+          "tip": {
+            "th": "แพ็กเกจรายวันเวลา 10:30–17:00",
+            "en": "The day plan runs 10:30–17:00"
+          },
+          "q": "Hakone Kamon, 435 Yumoto, Hakone",
+          "ok": "2026-11"
         }
       ]
     },
