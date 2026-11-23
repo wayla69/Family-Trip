@@ -2146,6 +2146,88 @@
           "q": "Flamingo Wildlife Habitat, 3555 S Las Vegas Blvd, Las Vegas",
           "ok": "2026-11",
           "src": "https://travelnevada.com/animals-aquariums/flamingo-wildlife-habitat-2/"
+        },
+        {
+          "local": "",
+          "ages": [
+            2,
+            2,
+            2,
+            2
+          ],
+          "hrs": 2,
+          "io": "out",
+          "pram": "yes",
+          "price": {
+            "th": "เช็กราคาก่อนไป",
+            "en": "Check the price"
+          },
+          "book": "none",
+          "src": "https://www.endlesstravelplans.com/destinations/grand-canyon/grand-canyon-south-rim-family-guide",
+          "name": {
+            "th": "เส้นทางริมหน้าผา",
+            "en": "Rim Trail"
+          },
+          "kind": "views",
+          "area": {
+            "th": "ขอบด้านใต้ แกรนด์แคนยอน",
+            "en": "South Rim, Grand Canyon"
+          },
+          "what": {
+            "th": "ทางเดินลาดยางริมหุบเขาจากแมเทอร์พอยต์ถึงหมู่บ้านแกรนด์แคนยอน",
+            "en": "A paved path along the canyon edge from Mather Point to Grand Canyon Village"
+          },
+          "why": {
+            "th": "เข็นรถเข็นเด็กได้สบาย และนั่งรถรับส่งฟรีกลับได้",
+            "en": "Pushchairs roll easily, and the free shuttle brings you back"
+          },
+          "tip": {
+            "th": "เดินจนเด็กเหนื่อยแล้วนั่งรถรับส่งกลับ",
+            "en": "Walk until the children are done, then take the shuttle back"
+          },
+          "q": "Rim Trail, Grand Canyon Village, AZ",
+          "ok": "2026-11"
+        },
+        {
+          "local": "",
+          "ages": [
+            0,
+            1,
+            2,
+            2
+          ],
+          "hrs": 1.5,
+          "io": "out",
+          "pram": "no",
+          "price": {
+            "th": "เช็กราคาก่อนไป",
+            "en": "Check the price"
+          },
+          "book": "none",
+          "src": "https://www.endlesstravelplans.com/destinations/grand-canyon/grand-canyon-south-rim-family-guide",
+          "name": {
+            "th": "เส้นทางไบรต์แองเจิล",
+            "en": "Bright Angel Trail"
+          },
+          "kind": "nature",
+          "area": {
+            "th": "ขอบด้านใต้ แกรนด์แคนยอน",
+            "en": "South Rim, Grand Canyon"
+          },
+          "what": {
+            "th": "เส้นทางยอดนิยมลงไปใต้ขอบหุบ เดินไม่ไกลแล้วกลับ",
+            "en": "A popular trail below the rim; walk a short way and turn back"
+          },
+          "why": {
+            "th": "อุโมงค์แรกอยู่ใกล้จุดเริ่ม ได้สัมผัสหุบเขาแบบสั้น ๆ",
+            "en": "The first tunnel is close to the top: a taste of the canyon"
+          },
+          "tip": {
+            "th": "ขาขึ้นใช้เวลาราวสองเท่าของขาลง",
+            "en": "The climb back up takes about twice as long as the walk down"
+          },
+          "q": "Bright Angel Trailhead, Grand Canyon Village, AZ",
+          "ok": "2026-11"
         }
       ]
     }
