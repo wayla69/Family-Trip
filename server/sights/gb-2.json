@@ -275,6 +275,388 @@
           "q": "Pittville Park, Cheltenham",
           "ok": "2026-11",
           "src": "https://cheltenham.gov.uk/communities-and-leisure/parks-and-open-spaces/sports-and-play-facilities/"
+        },
+        {
+          "local": "",
+          "ages": [
+            0,
+            1,
+            2,
+            2
+          ],
+          "hrs": 1,
+          "io": "out",
+          "pram": "part",
+          "price": {
+            "th": "เช็กราคาก่อนไป",
+            "en": "Check the price"
+          },
+          "book": "none",
+          "src": "https://www.theoldnewinn.co.uk/news/family-days-out-in-the-cotswolds",
+          "name": {
+            "th": "เขาวงกตแมลงปอ",
+            "en": "The Dragonfly Maze"
+          },
+          "kind": "park",
+          "area": {
+            "th": "เบอร์ตันออนเดอะวอเตอร์",
+            "en": "Bourton-on-the-Water"
+          },
+          "what": {
+            "th": "เขาวงกตต้นยู มีปริศนาพาไปหาแมลงปอทองที่ซ่อนอยู่",
+            "en": "A yew hedge maze with clues to a hidden golden dragonfly"
+          },
+          "why": {
+            "th": "สนุกสำหรับเด็ก 6 ขวบขึ้นไป",
+            "en": "Great fun for children of 6 and up"
+          },
+          "tip": {
+            "th": "ใช้เวลา 20–30 นาที",
+            "en": "Takes 20–30 minutes"
+          },
+          "q": "The Dragonfly Maze, Bourton-on-the-Water",
+          "ok": "2026-11"
+        },
+        {
+          "local": "",
+          "ages": [
+            1,
+            1,
+            1,
+            1
+          ],
+          "hrs": 2,
+          "io": "out",
+          "pram": "part",
+          "price": {
+            "th": "เช็กราคาก่อนไป",
+            "en": "Check the price"
+          },
+          "book": "none",
+          "src": "https://www.theoldnewinn.co.uk/news/family-days-out-in-the-cotswolds",
+          "name": {
+            "th": "ทุ่งลาเวนเดอร์คอตส์โวลด์ส",
+            "en": "Cotswold Lavender"
+          },
+          "kind": "nature",
+          "area": {
+            "th": "สโนว์ชิลล์",
+            "en": "Snowshill"
+          },
+          "what": {
+            "th": "ฟาร์มลาเวนเดอร์ เที่ยวสบายๆ ได้ใช้ประสาทสัมผัส ทุกวัย",
+            "en": "A lavender farm, a calm and sensory outing for all ages"
+          },
+          "why": {
+            "th": "เด็กวิ่งเล่นระหว่างแถวลาเวนเดอร์ได้",
+            "en": "Children run between the rows"
+          },
+          "tip": {
+            "th": "เปิดช่วงปลาย มิ.ย.–ต้น ส.ค. เท่านั้น",
+            "en": "Late June to early August only"
+          },
+          "q": "Cotswold Lavender, Hill Barn Farm, Snowshill",
+          "ok": "2026-11"
+        },
+        {
+          "local": "",
+          "ages": [
+            1,
+            1,
+            1,
+            1
+          ],
+          "hrs": 3,
+          "io": "both",
+          "pram": "part",
+          "price": {
+            "th": "เช็กราคาก่อนไป",
+            "en": "Check the price"
+          },
+          "book": "none",
+          "src": "https://www.soglos.com/hot-list/family/best-things-to-do-with-kids-in-the-cotswolds/25456/",
+          "name": {
+            "th": "ปราสาทและสวนซูดลีย์",
+            "en": "Sudeley Castle and Gardens"
+          },
+          "kind": "culture",
+          "area": {
+            "th": "วินช์คอมบ์",
+            "en": "Winchcombe"
+          },
+          "what": {
+            "th": "ปราสาทยุคทิวดอร์ มีสวน ซากปรักหักพัง และรูปปั้นสัตว์ขนาดเท่าจริง",
+            "en": "A Tudor castle with gardens, ruins and life-size animal sculptures"
+          },
+          "why": {
+            "th": "มีสนามเด็กเล่นผจญภัย ป้อม และเส้นทางวิบาก",
+            "en": "An adventure playground with a fort and an obstacle course"
+          },
+          "q": "Sudeley Castle, Winchcombe",
+          "ok": "2026-11"
+        },
+        {
+          "local": "",
+          "ages": [
+            1,
+            1,
+            1,
+            1
+          ],
+          "hrs": 3,
+          "io": "out",
+          "pram": "yes",
+          "price": {
+            "th": "เช็กราคาก่อนไป",
+            "en": "Check the price"
+          },
+          "book": "none",
+          "src": "https://www.soglos.com/hot-list/family/best-things-to-do-with-kids-in-the-cotswolds/25456/",
+          "name": {
+            "th": "สวนรุกขชาติแห่งชาติเวสตันเบิร์ต",
+            "en": "Westonbirt, The National Arboretum"
+          },
+          "kind": "nature",
+          "area": {
+            "th": "ใกล้เท็ตเบอรี",
+            "en": "Near Tetbury"
+          },
+          "what": {
+            "th": "สวนรุกขชาติ 600 เอเคอร์ มีเส้นทางเดินและกิจกรรมครอบครัวทั้งปี",
+            "en": "A 600-acre arboretum with trails and family activities through the year"
+          },
+          "why": {
+            "th": "มีทางเดินบนยอดไม้สูง 13 ม. และรูปปั้นกรัฟฟาโลให้ตามหา",
+            "en": "A treetop walkway 13 m up, and Gruffalo sculptures to find"
+          },
+          "q": "Westonbirt The National Arboretum, Tetbury",
+          "ok": "2026-11"
+        },
+        {
+          "local": "",
+          "ages": [
+            1,
+            1,
+            1,
+            1
+          ],
+          "hrs": 2,
+          "io": "out",
+          "pram": "part",
+          "price": {
+            "th": "เช็กราคาก่อนไป",
+            "en": "Check the price"
+          },
+          "book": "none",
+          "src": "https://www.soglos.com/hot-list/family/best-things-to-do-with-kids-in-the-cotswolds/25456/",
+          "name": {
+            "th": "สวนโรโกโกเพนส์วิก",
+            "en": "Painswick Rococo Garden"
+          },
+          "kind": "park",
+          "area": {
+            "th": "เพนส์วิก",
+            "en": "Painswick"
+          },
+          "what": {
+            "th": "สวนโรโกโกที่สมบูรณ์แห่งเดียวในอังกฤษ เต็มไปด้วยอาคารประดับแปลกตา",
+            "en": "The UK’s only complete rococo garden, full of follies"
+          },
+          "why": {
+            "th": "มีที่เล่นไม้ เขาวงกต และทางเดินในป่า",
+            "en": "A wooden play area, a maze and woodland trails"
+          },
+          "q": "Painswick Rococo Garden, Gloucester Road, Painswick",
+          "ok": "2026-11"
+        },
+        {
+          "local": "",
+          "ages": [
+            2,
+            2,
+            1,
+            2
+          ],
+          "hrs": 1,
+          "io": "out",
+          "pram": "part",
+          "price": {
+            "th": "เช็กราคาก่อนไป",
+            "en": "Check the price"
+          },
+          "book": "req",
+          "src": "https://www.soglos.com/hot-list/family/best-things-to-do-with-kids-in-the-cotswolds/25456/",
+          "name": {
+            "th": "ฟาร์มอัลปากาคอตส์โวลด์ส",
+            "en": "Cotswold Alpacas"
+          },
+          "kind": "farm",
+          "area": {
+            "th": "คาวลีย์",
+            "en": "Cowley"
+          },
+          "what": {
+            "th": "ได้เจออัลปากา และเดินนำอัลปากาผ่านหมู่บ้านคาวลีย์",
+            "en": "Alpacas to meet, and guided walks through Cowley"
+          },
+          "why": {
+            "th": "มีกิจกรรมทักทายสำหรับเด็กต่ำกว่า 5 ขวบ เด็ก 10 ขวบขึ้นไปจูงอัลปากาเดินได้",
+            "en": "Meet-and-greets for under-fives; from 10 children can lead an alpaca"
+          },
+          "q": "Cotswold Alpacas, The Dutch Barn, Cowley, Cheltenham",
+          "ok": "2026-11"
+        },
+        {
+          "local": "",
+          "ages": [
+            2,
+            2,
+            1,
+            0
+          ],
+          "hrs": 2,
+          "io": "in",
+          "pram": "part",
+          "price": {
+            "th": "เช็กราคาก่อนไป",
+            "en": "Check the price"
+          },
+          "book": "none",
+          "src": "https://www.staycotswold.com/ten-family-friendly-things-to-do-in-the-cotswolds/",
+          "name": {
+            "th": "โฮคัสโพคัสเพลย์",
+            "en": "Hocus Pocus Play"
+          },
+          "kind": "play",
+          "area": {
+            "th": "แฟร์ฟอร์ด",
+            "en": "Fairford"
+          },
+          "what": {
+            "th": "ที่เล่นแบบนุ่มธีมเวทมนตร์ มีป่ามหัศจรรย์ นิทาน และเวิร์กช็อป",
+            "en": "A magical soft-play with enchanted forests, stories and workshops"
+          },
+          "why": {
+            "th": "ป่ามหัศจรรย์และการเล่านิทาน มีคาเฟ่ขายของว่าง",
+            "en": "Enchanted forests and storytelling, with a café for treats"
+          },
+          "q": "Hocus Pocus Play, Whelford Road, Fairford",
+          "ok": "2026-11"
+        },
+        {
+          "local": "",
+          "ages": [
+            1,
+            2,
+            2,
+            2
+          ],
+          "hrs": 2,
+          "io": "in",
+          "pram": "part",
+          "price": {
+            "th": "เช็กราคาก่อนไป",
+            "en": "Check the price"
+          },
+          "book": "none",
+          "src": "https://www.staycotswold.com/ten-family-friendly-things-to-do-in-the-cotswolds/",
+          "name": {
+            "th": "ร้านเพนต์เซรามิกเพนต์อิตยัวร์เซลฟ์",
+            "en": "Paint It Yourself Pottery"
+          },
+          "kind": "culture",
+          "area": {
+            "th": "ถนนวินช์คอมบ์ เชลต์แนม",
+            "en": "Winchcombe Street, Cheltenham"
+          },
+          "what": {
+            "th": "สตูดิโอเพนต์เซรามิกสำหรับวันฝนตก",
+            "en": "A pottery-painting studio for a rainy day"
+          },
+          "why": {
+            "th": "ได้ทำงานศิลปะกับเด็ก มีชุดอุปกรณ์ให้กลับไปทำต่อ",
+            "en": "Creative time with little ones; kits to take home too"
+          },
+          "tip": {
+            "th": "เปิดทุกวัน",
+            "en": "Open seven days a week"
+          },
+          "q": "Paint It Yourself Pottery Co, 76 Winchcombe Street, Cheltenham",
+          "ok": "2026-11"
+        },
+        {
+          "local": "",
+          "ages": [
+            0,
+            1,
+            2,
+            2
+          ],
+          "hrs": 2,
+          "io": "out",
+          "pram": "part",
+          "price": {
+            "th": "เช็กราคาก่อนไป",
+            "en": "Check the price"
+          },
+          "book": "none",
+          "src": "https://www.staycotswold.com/ten-family-friendly-things-to-do-in-the-cotswolds/",
+          "name": {
+            "th": "เส้นทางเชือกต่ำ ฟาร์พีก",
+            "en": "Low ropes at Far Peak"
+          },
+          "kind": "play",
+          "area": {
+            "th": "นอร์ธลีช",
+            "en": "Northleach"
+          },
+          "what": {
+            "th": "เส้นทางเชือกระดับต่ำ มีคาเฟ่ในที่",
+            "en": "A low ropes course with a café on site"
+          },
+          "why": {
+            "th": "แบบเชือกสูงในขนาดเด็ก เล่นได้ครึ่งวัน",
+            "en": "A child-sized version of a high ropes park, for half a day"
+          },
+          "q": "Far Peak, Northleach",
+          "ok": "2026-11"
+        },
+        {
+          "local": "",
+          "ages": [
+            1,
+            1,
+            1,
+            1
+          ],
+          "hrs": 3,
+          "io": "in",
+          "pram": "part",
+          "price": {
+            "th": "เช็กราคาก่อนไป",
+            "en": "Check the price"
+          },
+          "book": "none",
+          "src": "https://www.soglos.com/hot-list/family/best-things-to-do-with-kids-in-the-cotswolds/25456/",
+          "name": {
+            "th": "รถไฟไอน้ำกลอสเตอร์เชอร์ วอร์ริกเชอร์",
+            "en": "Gloucestershire Warwickshire Steam Railway"
+          },
+          "kind": "ride",
+          "area": {
+            "th": "วินช์คอมบ์ บรอดเวย์ และสนามม้าเชลต์แนม",
+            "en": "Winchcombe, Broadway and Cheltenham Racecourse"
+          },
+          "what": {
+            "th": "รถไฟไอน้ำมรดกวิ่งผ่านชนบทคอตส์โวลด์ส",
+            "en": "A heritage steam railway through the Cotswold countryside"
+          },
+          "why": {
+            "th": "ขึ้นลงตามสถานีได้ มีขบวนพิเศษช่วงคริสต์มาส",
+            "en": "Hop on and off at the stations; special Christmas trains"
+          },
+          "q": "Gloucestershire Warwickshire Steam Railway, Winchcombe Station",
+          "ok": "2026-11"
         }
       ]
     },
