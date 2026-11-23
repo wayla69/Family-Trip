@@ -1,19 +1,45 @@
 {
   "town": "au-cairns",
-  "kind": "eats",
-  "checked": "2026-11",
-  "rule": "A row gets ok only from a current listing, its own site or recent reviews with nothing saying closed (docs/EATS.md). A row is taken out when a search could not find the place at all or the sources disagree; a place found but not freshly confirmed stays without ok.",
-  "scope": "the 1 rows without ok; the rows that already carried ok were not re-checked in this pass",
-  "how": "Google Maps opened in headless Chromium (2026-11-23), limited view without a reviews tab, so no review date could be read; each row's own map query first, then the name with the town, a list result opened when needed; a hotel's own site or one web search only where Maps could not settle it.",
-  "confirmed": [
+  "kind": "eats + sights",
+  "checked": "2026-11-23",
+  "rule": "library-check.cjs, then the Google Maps Reviews tab sorted by newest: ok only when not marked closed, with a review from the last six months, and the map's name matching the page's.",
+  "agents": "two Haiku agents (the first found nothing it could read); 14 rows offered, 5 passed library-check.cjs, 3 went in",
+  "added": [
     {
-      "name": "Daintree Ice Cream Company",
-      "src": "Google Maps",
-      "page_name": "Daintree Ice Cream Company",
-      "evidence": "\"Daintree Ice Cream Company\", 1819 Cape Tribulation Rd, QCP3+GR Diwan QLD; \"Open · Closes 5 PM\"",
-      "ok": "2026-11"
+      "name": "Wharf One Cafe",
+      "page_name": "Wharf One Cafe",
+      "src": "https://novotel.accor.com/a/en/great-escape-magazine/food-and-beverage/breakfast-cairns.html",
+      "date": "2025-11",
+      "map": "Google Maps 'Wharf ONE Cafe', 1,237 reviews, newest '4 days ago'"
+    },
+    {
+      "name": "Crystal Cascades",
+      "page_name": "Crystal Cascades",
+      "src": "https://hideshotel.com.au/family-friendly-cairns/",
+      "date": "2026-03",
+      "map": "Google Maps 1,978 reviews, newest '18 hours ago'"
+    },
+    {
+      "name": "Skyrail Rainforest Cableway",
+      "page_name": "Skyrail Rainforest Cableway",
+      "src": "https://www.outandaboutwithkids.com.au/things-to-do-cairns/",
+      "date": "2025-11",
+      "map": "Google Maps 11,025 reviews, newest '3 hours ago'"
     }
   ],
-  "kept_without_ok": [],
-  "removed": []
+  "left_out": [
+    {
+      "name": "Caffeind",
+      "why": "the page spells it 'Caffeind', the map 'Caffiend'; and the page says nothing about children"
+    },
+    {
+      "name": "Sunlover Reef Cruise",
+      "why": "a day tour sold by an operator, not a place"
+    },
+    {
+      "name": "9 Port Douglas rows",
+      "why": "their page (visitportdouglasdaintree.com) is dated 2019"
+    }
+  ],
+  "estimates": "Ages and visit hours are placeholders except where the page gives an age range (Planet Chill 3+, Rainbow City 0–8)."
 }
