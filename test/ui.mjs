@@ -2952,6 +2952,19 @@ const T = 'hk-macau-2026';
     await page.click('.kidgift'); await page.waitForSelector('.giftbox'); await page.click('.giftbox'); await page.waitForSelector('.giftopen .gstk img', { timeout: 5000 });
     await page.waitForFunction(() => queue.length === 0, null, { timeout: 15000 });
     await page.click('.kidbar button[data-v="#/kid/mimi"]'); await page.waitForSelector('.kidtiles'); }
+  // the countdown doors close again the same way (owner, Nov 2026: "ทำปุ่มปิดประตูทั้งหมดด้วย"): two taps on the book's menu, every child
+  { await page.evaluate(() => { const t = trip('hk-macau-2026'); for (const [n, k] of [[1, 'mimi'], [1, 'mika'], [2, 'mimi']]) putEntry(t, { day: null, kind: 'tick', child: k, first_key: `cd.${n}`, text: '' }, `${t.id}.tick.cd.${n}.${k}`);
+      ls('kidmode', null); location.hash = '#/t/hk-macau-2026'; render(); });
+    // the opened doors reach the server first: their sync redraws the menu, and a redraw between the two taps is a fresh, unarmed button
+    await page.waitForFunction(() => queue.length === 0, null, { timeout: 15000 }); await page.evaluate(() => refresh && refresh()); await page.waitForTimeout(600);
+    await page.waitForSelector('.doorline [data-a="doorreset"]');
+    const said = await page.textContent('.doorline');
+    await page.click('.doorline [data-a="doorreset"]'); await page.click('.doorline [data-a="doorreset"]');
+    await page.waitForFunction(() => !S.entries.some((e) => /^cd\./.test(e.first_key || '')), null, { timeout: 5000 }).catch(() => {});
+    await page.waitForFunction(() => queue.length === 0, null, { timeout: 15000 });
+    const left = (await apiState(page)).entries.filter((e) => /^cd\./.test(e.first_key || '')).length;
+    ok(left === 0 && /\d/.test(said) && await page.locator('.doorline').count() === 0, `countdown doors: the parents close every door again from the book's menu, two taps (${left} left · "${said.replace(/\s+/g, ' ').trim()}")`);
+    await page.evaluate(() => { ls('kidmode', 'mimi'); location.hash = '#/kid/mimi'; }); await page.waitForSelector('.kidtiles'); }
   // nowhere to get stuck (owner, Nov 2026: item 5 of the follow-ups): a locked tick in the passport says what to do, the lock says to hold
   { const toastIs = async (re) => page.waitForFunction((src) => [...document.querySelectorAll('.toast')].some((x) => new RegExp(src, 'i').test(x.textContent)), re.source, { timeout: 3000 }).then(() => true, () => false);
     await page.goto(`${BASE}/#/kid/mimi/pass/missions`); await page.waitForSelector('.mission.today .tick[aria-disabled="true"]');

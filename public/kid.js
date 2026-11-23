@@ -1511,6 +1511,15 @@ function giftLine(t) {
   const kids = [...new Set(opened.map((e) => e.child))].map((k) => kidName(k)).filter(Boolean);
   return `<section class="questline giftline"><div class="part pickh">${L('กล่องเซอร์ไพรส์', 'The surprise boxes')}</div><ul><li><span class="gface">${kuImg('surprise')}</span><span>${esc(L(`${kids.join(' และ ')} เปิดไปแล้ว ${opened.length} กล่อง`, `${kids.join(' and ')} opened ${opened.length} box${opened.length > 1 ? 'es' : ''}`))}</span><button type="button" class="mini" data-a="giftreset" data-t="${esc(t.id)}">${L('ปิดกล่องใหม่ทั้งหมด', 'Close them all again')}</button></li></ul></section>`;
 }
+// the countdown doors again (owner, Nov 2026: "ทำปุ่มปิดประตูทั้งหมดด้วย"): beside the boxes, for the parents, once a door of this book
+// has been opened — two taps close every door again for every child (the stars stay, as with the boxes)
+function doorLine(t) {
+  if (!isEditor()) return '';
+  const opened = entriesOf(t.id).filter((e) => e.kind === 'tick' && /^cd\.\d+$/.test(e.first_key || ''));
+  if (!opened.length) return '';
+  const kids = [...new Set(opened.map((e) => e.child))].map((k) => kidName(k)).filter(Boolean);
+  return `<section class="questline giftline doorline"><div class="part pickh">${L('ประตูนับถอยหลัง', 'The countdown doors')}</div><ul><li><span class="gface">${kuImg('t-door')}</span><span>${esc(L(`${kids.join(' และ ')} เปิดไปแล้ว ${opened.length} บาน`, `${kids.join(' and ')} opened ${opened.length} door${opened.length > 1 ? 's' : ''}`))}</span><button type="button" class="mini" data-a="doorreset" data-t="${esc(t.id)}">${L('ปิดประตูทั้งหมด', 'Close every door')}</button></li></ul></section>`;
+}
 // the road from the first town again (a test run, a fresh start): this book's missions and chests of that child go, with the easing kept on this device
 function questWipe(t, kid) {
   entriesOf(t.id).filter((e) => e.kind === 'tick' && e.child === kid && /^quest\./.test(e.first_key || '')).forEach((e) => delEntry(e.id));
@@ -1539,6 +1548,12 @@ Object.assign(A, {
     if (!armed(b, L('แตะอีกครั้ง กล่องเซอร์ไพรส์ของทุกคนจะปิดใหม่', 'Tap again — every child’s boxes close again'))) return;
     entriesOf(t.id).filter((e) => e.kind === 'tick' && /^gift\.d\d+$/.test(e.first_key || '')).forEach((e) => delEntry(e.id));
     toast(L('ปิดกล่องเซอร์ไพรส์ใหม่แล้ว เปิดได้อีกรอบ', 'The surprise boxes are closed — ready to open again')); safeRender();
+  },
+  doorreset(b) {   // every countdown door of the book closed again, for every child (the stars stay)
+    const t = trip(b.dataset.t); if (!t || !isEditor()) return;
+    if (!armed(b, L('แตะอีกครั้ง ประตูของทุกคนจะปิดใหม่', 'Tap again — every child’s doors close again'))) return;
+    entriesOf(t.id).filter((e) => e.kind === 'tick' && /^cd\.\d+$/.test(e.first_key || '')).forEach((e) => delEntry(e.id));
+    toast(L('ปิดประตูทั้งหมดแล้ว เปิดได้อีกรอบ', 'Every door is closed — ready to open again')); safeRender();
   },
   questreset(b) {   // a grown-up starts a child's road again: the missions and chests of this book go, the stars and stickers of other things stay
     const t = trip(b.dataset.t), kid = b.dataset.k; if (!t || !isEditor()) return;
