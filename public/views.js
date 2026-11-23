@@ -21,6 +21,17 @@ function curTrip() {
   return ts.find((t) => t.date_from > today) || ts[ts.length - 1];
 }
 
+// Thai has no spaces between words, and the browser's dictionary cuts names it does not know in the middle ("เมาน์ตแอ / นนัน", owner's review, Nov 2026).
+// In headings each run of Thai between spaces becomes an inline-block: it moves to the next line whole, and wraps inside only when wider than the line.
+function thKeep(root) {
+  root.querySelectorAll('h1,h2,h3,h4,h5,.tt,summary').forEach((el) => {
+    const w = document.createTreeWalker(el, NodeFilter.SHOW_TEXT), nodes = [];
+    while (w.nextNode()) { const n = w.currentNode; if (/[\u0E00-\u0E7F]/.test(n.data) && !(n.parentNode.classList && n.parentNode.classList.contains('thw'))) nodes.push(n); }
+    nodes.forEach((n) => { const f = document.createDocumentFragment();
+      n.data.split(/(\s+)/).forEach((x) => { if (!x) return; if (!/[\u0E00-\u0E7F]/.test(x)) { f.append(x); return; } const sp = document.createElement('span'); sp.className = 'thw'; sp.textContent = x; f.append(sp); });
+      n.replaceWith(f); });
+  });
+}
 function render() {
   const app = $('#app');
   if (!S) { app.innerHTML = route().parts[0] === 'privacy' ? `<main class="wrap">${viewPrivacy()}</main>` : route().parts[0] === 'help' ? `<main class="wrap">${viewHelp()}</main>` : loginView(); document.documentElement.style.cssText = ''; return; }
@@ -67,7 +78,7 @@ function render() {
     document.documentElement.style.cssText = themeStyle(t); document.documentElement.lang = lang;
     document.body.classList.toggle('serif', t.theme.display === 'serif'); document.body.classList.add('printbook');
     document.title = `${T(t.title)} · ${L('สมุดความทรงจำ', 'Memory book')}`;
-    app.innerHTML = viewPrint(t);
+    app.innerHTML = viewPrint(t); thKeep(app);
     if (typeof hydrateColours === 'function') hydrateColours(app);
     return;
   }
@@ -143,7 +154,7 @@ function render() {
   const key = p.slice(0, 3).join('/') + (p.includes('full') ? '/full/' + (p[4] || '') : ''), enter = key !== lastView; lastView = key;   // animate only when the page changes, not on every save
   app.innerHTML = topBar(t, p) + `<main class="wrap${enter ? ' enter' : ''}">${offline ? `<div class="notice">${L('ไม่มีเน็ต — บันทึกได้ตามปกติ จะส่งเองเมื่อเน็ตกลับมา', 'Offline — showing the last saved copy. You can keep recording; it uploads when you are back online.')}${S.syncedAt ? ` <small>· ${L('ข้อมูลล่าสุดเมื่อ', 'last synced')} ${esc(new Date(S.syncedAt).toLocaleString(LOC(), { day: 'numeric', month: 'short', hour: '2-digit', minute: '2-digit' }))}</small>` : ''}</div>` : ''}${html}</main>` + tabBar(t, p);
   if (p[0] === 't' && p[2] === 'search' && enter) setTimeout(() => { const q = $('#bookq'); if (q) q.focus(); }, 60);   // a search page opens ready to type
-  renderProgress(); packBoxes(app); if (typeof hydrateMap === 'function') hydrateMap(app);   // the passport map walks the kids to a tapped day
+  thKeep(app); renderProgress(); packBoxes(app); if (typeof hydrateMap === 'function') hydrateMap(app);   // the passport map walks the kids to a tapped day
   // the photo picker is one input outside #app, so a render while the picker is open cannot replace it and drop the chosen photos
   const fp = document.getElementById('fpick'), host = app.querySelector('[data-fpick]'); if (fp && host) { fp.dataset.t = host.dataset.t; fp.dataset.d = host.dataset.d; }   // (the place a "where was it?" chip set stays: a background redraw while the phone's gallery is open must not drop it)
   if (typeof hydrateColours === 'function') hydrateColours(app);   // kid.js loads after this file
@@ -533,8 +544,8 @@ function viewHealth() {
   // the copy and the alerts (server/alerts.js): when the last nightly copy was made and whether its restore drill passed, the disk, what was told lately
   const al = HEALTH.alerts, bk = al && al.backup, whenD = (ms) => new Date(ms).toLocaleString(LOC(), { day: 'numeric', month: 'short', hour: '2-digit', minute: '2-digit' });
   const watch = !al ? '' : `<section class="pcard hcard" style="--g1:${PG.purple}"><h3 class="pch"><span class="pcpic">${hubIc('offline')}</span><span>${L('สำเนาและการแจ้งเตือน', 'Copies and alerts')}</span></h3><ul class="hwatch">
-<li>${bk && bk.at ? `${bk.ok === false ? '⚠️' : '✓'} ${L('สำเนาล่าสุด', 'Last copy')} ${esc(whenD(bk.at))}${bk.drill === 'ok' ? ` · ${L('ซ้อมกู้ผ่าน', 'restore drill passed')}` : bk.drill === 'failed' ? ` · ⚠️ ${L('ซ้อมกู้ไม่ผ่าน', 'restore drill failed')}` : ''}${bk.ok === false && bk.tried ? ` · ⚠️ ${L('ครั้งล่าสุดล้มเหลว', 'the last try failed')} ${esc(whenD(bk.tried))}` : ''}` : L('ยังไม่มีรายงานจากการทำสำเนา (ตั้งค่า workflow Backup บน GitHub)', 'No report from the copies yet (the Backup workflow on GitHub)')}</li>
-${al.disk ? `<li>${al.disk.free / al.disk.total < 0.15 ? '⚠️' : '✓'} ${L('ที่ว่างบนเซิร์ฟเวอร์', 'Free on the server')} ${bytesTxt(al.disk.free)} ${L('จาก', 'of')} ${bytesTxt(al.disk.total)}</li>` : ''}
+<li>${bk && bk.at ? `${bk.ok === false ? '⚠️' : '✓'} ${L('สำเนาล่าสุด', 'Last copy')} ${esc(whenD(bk.at))}${bk.drill === 'ok' ? ` · ${L('ซ้อมกู้ผ่าน', 'restore drill passed')}` : bk.drill === 'failed' ? ` · ⚠️ ${L('ซ้อมกู้ไม่ผ่าน', 'restore drill failed')}` : ''}${bk.ok === false && bk.tried ? ` · ⚠️ ${L('ครั้งล่าสุดล้มเหลว', 'the last try failed')} ${esc(whenD(bk.tried))}` : ''}` : L('ยังไม่มีสำเนาอัตโนมัติ ถามคนดูแลแอปให้ช่วยเปิด', 'No automatic copies yet — ask whoever looks after the app to switch them on')}</li>
+${al.disk ? `<li>${al.disk.free / al.disk.total < 0.15 ? '⚠️' : '✓'} ${L('ที่ว่างของแอป', 'Room left for the app')} ${bytesTxt(al.disk.free)} ${L('จาก', 'of')} ${bytesTxt(al.disk.total)}</li>` : ''}
 <li>${L('แจ้งเตือนเข้ามือถือพ่อแม่เมื่อ: มือถือรายงานปัญหาถี่ · ที่เก็บใกล้เต็ม · สำเนาหรือการซ้อมกู้ล้มเหลว', 'The parents’ phones are told when: phones report many problems · storage is nearly full · a copy or its restore drill fails')}</li>
 ${(al.log || []).slice(0, 5).map((x) => `<li class="muted small">🔔 ${esc(whenD(x.at))} · ${esc(x.en)}</li>`).join('')}</ul></section>`;
   // month by month: the room and the helper (server/errors.js costs) — money only where the owner set prices
@@ -542,7 +553,7 @@ ${(al.log || []).slice(0, 5).map((x) => `<li class="muted small">🔔 ${esc(when
   const costs = !cs ? '' : `<section class="pcard hcard" style="--g1:${PG.gold}"><h3 class="pch"><span class="pcpic">${hubIc('money')}</span><span>${L('รายเดือน', 'Month by month')}</span></h3>${!cm.length ? `<p class="muted">${L('ยังไม่มีข้อมูล', 'Nothing yet')}</p>` : `<table class="hcost"><thead><tr><th>${L('เดือน', 'Month')}</th><th>${L('พื้นที่', 'Room')}</th><th>${L('ผู้ช่วย', 'Helper')}</th>${cs.priced.ai || cs.priced.store || cs.priced.server ? `<th>${L('ประมาณ', 'About')}</th>` : ''}</tr></thead><tbody>
 ${cm.map((m) => { const tot = [m.usdAi, m.usdStore, m.usdServer].filter((x) => x != null), sum = tot.length ? tot.reduce((a, b) => a + b, 0) : null;
     return `<tr><td>${esc(new Date(m.month + '-01T00:00:00').toLocaleDateString(LOC(), { month: 'short', year: '2-digit' }))}</td><td><span class="hbarm" style="--w:${Math.max(3, Math.round((m.stored / maxGb) * 100))}%"></span>${bytesTxt(m.stored || 1)}${m.added ? ` <small>+${bytesTxt(m.added)}</small>` : ''}</td><td>${m.calls ? L(`${m.calls} ครั้ง`, `${m.calls} ×`) : '—'}</td>${cs.priced.ai || cs.priced.store || cs.priced.server ? `<td>${esc(usd(sum))}</td>` : ''}</tr>`; }).join('')}</tbody></table>`}
-<p class="muted small">${cs.priced.ai || cs.priced.store || cs.priced.server ? L('เงินประมาณจากราคาที่ตั้งไว้ในเซิร์ฟเวอร์ ยอดจริงดูในบัญชี Railway และผู้ให้บริการผู้ช่วย', 'Money estimated from the prices set on the server — the real bills are in the Railway and helper accounts') : L('ตั้งราคาในเซิร์ฟเวอร์ได้ ถ้าอยากเห็นเงินประมาณ (ยอดจริงอยู่ในบัญชี Railway และผู้ให้บริการผู้ช่วย)', 'Set prices on the server to see money estimates (the real bills are in the Railway and helper accounts)')}</p></section>`;
+<p class="muted small">${cs.priced.ai || cs.priced.store || cs.priced.server ? L('เงินเป็นตัวเลขประมาณ ยอดจริงดูที่ใบแจ้งค่าบริการ', 'Money is an estimate — the real amounts are on the bills') : L('ยังไม่ได้ตั้งราคา จึงยังไม่มีเงินประมาณ', 'No prices are set, so there is no money estimate')}</p></section>`;
   return `${pageHead('room', PG.teal, L('แอปเป็นอย่างไรบ้าง', 'How the app is doing'), L('พื้นที่และปัญหาบนมือถือ', 'Room and phone problems'), L('รูปและคลิปใช้ที่ไปเท่าไร สำเนาล่าสุด และมีอะไรสะดุดบนมือถือเครื่องไหนไหม', 'How much room the photos and clips take, the last copy, and anything that broke on a phone'))}
 <section class="pcard hcard" style="--g1:${PG.teal}"><h3 class="pch"><span class="pcpic">${hubIc('room')}</span><span>${L('พื้นที่ที่เล่มใช้', 'Room the books take')}</span></h3>${room}</section>
 ${watch}${costs}
@@ -555,11 +566,11 @@ function healthServer() {
   const v = HEALTH.server; if (!v) return '';
   const when = (ms) => new Date(ms).toLocaleString(LOC(), { day: 'numeric', month: 'short', hour: '2-digit', minute: '2-digit' });
   const ev = v.events || [];
-  const body = !ev.length ? `<p class="hok">✓ ${L('30 วันนี้เซิร์ฟเวอร์ไม่มีคำขอที่ล้มเหลวหรือช้าผิดปกติ', 'No failed or unusually slow requests on the server in 30 days')}</p>`
+  const body = !ev.length ? `<p class="hok">✓ ${L('30 วันนี้แอปทำงานปกติ ไม่มีอะไรล้มเหลวหรือช้าผิดปกติ', 'The app ran normally for 30 days — nothing failed or ran unusually slow')}</p>`
     : `<ul class="herrs">${ev.map((x) => `<li class="sv-${x.kind}"><b>${x.kind === 'error' ? `⚠️ ${x.status}` : `🐢 ${(x.ms_max / 1000).toFixed(1)} ${L('วิ', 's')}`} · <code>${esc(x.route)}</code></b>${x.msg ? `<small>${esc(x.msg)}</small>` : ''}<small>${x.n > 1 ? L(`${x.n} ครั้ง · `, `${x.n} times · `) : ''}${L('ล่าสุด', 'last')} ${esc(when(x.last_at))}</small></li>`).join('')}</ul>
 <div class="row"><button class="btn ghost small" data-a="healthsrvclear">${L('ล้างรายการ', 'Clear the list')}</button></div>`;
-  return `<section class="pcard hcard" style="--g1:${PG.purple}"><h3 class="pch"><span class="pcpic">${hubIc('settings')}</span><span>${L('ปัญหาบนเซิร์ฟเวอร์', 'Problems on the server')}</span></h3>
-<p class="muted small">${L(`คำขอที่เซิร์ฟเวอร์ตอบผิดพลาด หรือใช้เวลาเกิน ${Math.round(v.slowMs / 1000)} วินาที นับตามชนิดคำขอ เก็บไว้ 30 วัน — ไม่มีชื่อ ข้อความ หรือรหัสของสิ่งใด`, `Requests the server failed, or that took over ${Math.round(v.slowMs / 1000)} s, counted by kind — kept 30 days; no names, no text, no ids`)}</p>${body}</section>`;
+  return `<section class="pcard hcard" style="--g1:${PG.purple}"><h3 class="pch"><span class="pcpic">${hubIc('settings')}</span><span>${L('ปัญหาฝั่งแอป', 'Problems in the app')}</span></h3>
+<p class="muted small">${L(`สิ่งที่แอปทำไม่สำเร็จ หรือช้าเกิน ${Math.round(v.slowMs / 1000)} วินาที เก็บไว้ 30 วัน ไม่มีชื่อ ข้อความ หรือรหัสของสิ่งใด`, `What the app failed to do, or what took over ${Math.round(v.slowMs / 1000)} s — kept 30 days; no names, no text, no ids`)}</p>${body}</section>`;
 }
 // files in the storage that no row names any more (server/orphans.js): an upload cut off half-way, a delete that failed —
 // counted here, and taken away with two taps (only what is older than two days and in the photo folders)
@@ -1468,7 +1479,7 @@ function infoBlocks(t) {
     return `<ul class="cpts">${ls.map((y) => `<li>${cellLine(y)}</li>`).join('')}</ul>`; };
   const tbl = (cols, rows, cls) => `<div class="tblwrap"><table class="prices ${cls || ''}">${cols ? `<thead><tr>${cols.map((c) => `<th>${esc(T(c))}</th>`).join('')}</tr></thead>` : ''}<tbody>${rows.map((r) => { const v = r.map(cellS);
     if (v.length > 1 && v.slice(1).every(noVal)) return `<tr class="grp"><th colspan="${v.length}">${esc(v[0])}</th></tr>`;   // a heading row ("Fantasyland — first")
-    return `<tr>${v.map((x, k) => (k === 0 ? `<td class="nm">${/^\d{1,2}$/.test(x) && cols && cols[0] ? `${esc(hLbl(cols[0]))} ${esc(x)}` : esc(x)}</td>` : noVal(x) ? '<td class="nv"></td>' : `<td${x.length <= 14 ? ' class="s"' : ''}${cols && cols[k] ? ` data-h="${esc(hLbl(cols[k]))}"` : ''}>${cellHtml(x)}</td>`)).join('')}</tr>`; }).join('')}</tbody></table></div>`;   // phones stack each row into a card, every value labelled by its column (app.css)
+    return `<tr>${v.map((x, k) => (k === 0 ? `<td class="nm">${/^\d{1,2}$/.test(x) && cols && cols[0] ? `${esc(hLbl(cols[0]))} ${esc(x)}` : esc(x)}</td>` : noVal(x) ? '<td class="nv"></td>' : `<td${x.length <= 14 ? ' class="s"' : ''}${cols && cols[k] ? ` data-h="${esc(hLbl(cols[k]))}"` : ''}><div class="tdv">${cellHtml(x)}</div></td>`)).join('')}</tr>`; }).join('')}</tbody></table></div>`;   // phones stack each row into a card, every value labelled by its column (app.css); .tdv keeps a cell's text and its time pills one grid item
   // a to-do table (when · task · action, or what · for · when/how) as cards: the date as a chip, the task bold, the action as short points
   const steps = (cols, rows) => { const c = (cols || []).map((x) => (x.en || T(x)).toLowerCase()), w = c[0] === 'when' ? [0, 1, 2] : [1, 0, 2];
     if ((cols || []).length !== 3) return tbl(cols, rows);
@@ -2870,6 +2881,8 @@ function impPassport(d) {
   return `<section class="imppp"><div class="imppc" style="--g1:${esc(g[0])};--g2:${esc(g[g.length - 1])}"><span class="e">${esc(c.emoji || '🛂')}</span><b>${L('พาสปอร์ต <br>นักผจญภัย', 'Adventure <br>passport')}</b><small>${esc(T(d.title) || d.slug)}</small></div>
 <div class="imppl"><h4>${L('พาสปอร์ตของเด็กๆ ในเล่มนี้', "The children's passport in this book")}</h4><ul>${rows.map(([, pic, t1, t2]) => `<li><img src="/art/kidui/${pic}.webp" alt="" loading="lazy"><span><b>${t1}</b><small>${t2}</small></span></li>`).join('')}</ul></div></section>`;
 }
+// a helper page while the helper is off (UI review, Nov 2026): one friendly card with another way to make a book, never a form that ends in a greyed button
+const helperOff = () => '<div class="hoff">' + emptyCard({ theme: { children: children() } }, L('ผู้ช่วยยังไม่ได้เปิดใช้', 'The helper is not switched on'), L('ทำเล่มจากรูปในเครื่อง หรือเริ่มเล่มเปล่าจากชั้นหนังสือได้เลย พอเปิดผู้ช่วยแล้วหน้านี้ใช้ได้ทันที', 'Make a book from your photos, or start an empty one from the shelf. This page works as soon as the helper is on.'), ['#/snap', L('ทำเล่มจากรูป', 'A book from photos')]) + '</div>';
 function viewImport() {
   if (imp.list === null) { imp.list = 'loading'; impRefresh(); }
   const j = imp.job || { status: 'idle' }, running = j.status === 'running', on = !!S.features.story;
@@ -2920,10 +2933,10 @@ ${warns.length || todo ? `<details class="impwarn"><summary>⚠️ ${L('ข้�
 ${imp.err ? `<div class="err" style="color:var(--accent2)">${esc(imp.err)}</div>` : ''}
 </div>`;
   return `<div class="part">${L('เล่มใหม่', 'New book')}</div>
-${running ? jobCard : `<section class="hero imphero"><div><div class="kicker">${L('จากคู่มือทริป สู่สมุดความทรงจำ', 'From the trip manual to a memory book')}</div><h2>${L('ทำเล่มใหม่จาก PDF', 'A new book from a PDF')}</h2>
+${running ? jobCard : !on ? '' : `<section class="hero imphero"><div><div class="kicker">${L('จากคู่มือทริป สู่สมุดความทรงจำ', 'From the trip manual to a memory book')}</div><h2>${L('ทำเล่มใหม่จาก PDF', 'A new book from a PDF')}</h2>
 <p class="kids">${L(`ส่งคู่มือทริปมา แล้วผู้ช่วยจะเขียนเล่มให้ครบ: แผนรายวัน คู่มือพกพา ร้านอาหาร และหน้าของ${esc(kidsNames() || 'เด็กๆ')} สองภาษา`, `Send the trip manual and the helper writes the whole book: day plans, pocket guide, places to eat, and ${kidsNames() ? esc(kidsNames()) + "'s" : "the kids'"} pages in both languages.`)}</p></div>${castHtml(kidArtSlugs())}</section>`}
-${!on ? `<div class="notice">${L('ผู้ช่วยยังไม่ได้เปิดใช้สำหรับครอบครัวนี้ — ให้ผู้ดูแลแอปเปิดก่อน จึงจะใช้หน้านี้ได้', 'Set ANTHROPIC_API_KEY on the server to use this page')}</div>` : ''}
-${running ? `<p class="impnote">${L('ส่งได้ทีละเล่ม รอเล่มนี้เสร็จก่อนนะ', 'One book at a time — wait for this one to finish')}</p>` : `<div class="impmain">${form}${how}</div>`}
+${!on && !running ? helperOff() : ''}
+${running ? `<p class="impnote">${L('ส่งได้ทีละเล่ม รอเล่มนี้เสร็จก่อนนะ', 'One book at a time — wait for this one to finish')}</p>` : on ? `<div class="impmain">${form}${how}</div>` : ''}
 ${!running ? jobCard : ''}
 ${list.length ? `<h2 class="h3 imph3">${L('ร่างที่รอขึ้นชั้น', 'Drafts waiting for the shelf')}</h2>${list.map(draftCard).join('')}` : ''}
 <p class="impnote">🔒 ${L('ไฟล์ PDF ถูกอ่านแล้วลบทันทีบนเซิร์ฟเวอร์ · บรรทัดที่มีเลขจอง ตั๋ว หนังสือเดินทาง วันเกิด หรือยอดเงินบาท ถูกตัดออกก่อนส่งให้ผู้ช่วย · รูปใน PDF ไม่ถูกส่ง · เล่มถูกตรวจอีกครั้งก่อนเก็บ', 'The PDF is read and deleted on the server at once · lines with booking numbers, e-tickets, passports, birthdays or baht amounts are removed before anything reaches the helper · images are never sent · the book is scanned again before it is kept')}<br>${L('เล่มที่นำเข้ายังไม่มีภาพวาดประจำวัน ใช้สีของเล่มและไกด์กีกี้กับรูไปก่อน', 'An imported book has no drawings of its own yet: its colours and the guides Kiki and Roo stand in.')}</p>`;
@@ -3223,6 +3236,7 @@ function viewPlanner(qs) {
   if (pln.info === null) { pln.info = 'loading'; api('GET', '/api/b/planner').then((r) => { pln.info = r; safeRender(); }, () => { pln.info = { on: false, left: 0, max: 0 }; safeRender(); }); }
   if (pln.plans === null) { pln.plans = []; api('GET', '/api/b/planner/plans').then((r) => { pln.plans = r.plans || []; planAdopt(); safeRender(); }, () => {}); }
   const a = pln.a, info = pln.info && typeof pln.info === 'object' ? pln.info : null, on = info ? info.on : !!S.features.story;
+  if (!on && info) return `${pageHead('famap', PG.purple, L('เล่มใหม่', 'New book'), L('วางแผนกับผู้ช่วย', 'Plan with the helper'), '')}${helperOff()}`;
   if (!Array.isArray(a.likes)) a.likes = []; if (!Array.isArray(a.needs)) a.needs = [];
   const rt = pln.route, form = !rt || pln.open;
   const f = (k, th, en, ph, type = 'text', max = 200) => `<label class="vgl">${L(th, en)}<input class="field" id="pl${k}" data-pl="${k}" type="${type}" maxlength="${max}" value="${esc(a[k] == null ? '' : a[k])}"${ph ? ` placeholder="${esc(ph)}"` : ''}${k === 'dest' ? ' autocomplete="off"' : ''}></label>`;
