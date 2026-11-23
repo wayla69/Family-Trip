@@ -1,0 +1,51 @@
+{
+  "town": "eg-luxor",
+  "kind": "eats",
+  "checked": "2026-11",
+  "rule": "A row gets ok only from a current listing, its own site or recent reviews with nothing saying closed (docs/EATS.md). A row is taken out when a search could not find the place at all or the sources disagree; a place found but not freshly confirmed stays without ok.",
+  "scope": "the 6 rows without ok; the rows that already carried ok were not re-checked in this pass",
+  "how": "Google Maps opened in headless Chromium (2026-11-23), limited view without a reviews tab, so no review date could be read; each row's own map query first, then the name with the town, a list result opened when needed; a hotel's own site or one web search only where Maps could not settle it.",
+  "confirmed": [
+    {
+      "name": "A Taste of India",
+      "src": "Google Maps",
+      "page_name": "A Taste of India",
+      "evidence": "\"A Taste of India\", Indian restaurant, MJQM+CP9, El-Mahdi, Gazirat Al Awameyah, Luxor; \"Closed · Opens 11 AM\"",
+      "ok": "2026-11"
+    },
+    {
+      "name": "Snack Time",
+      "src": "Google Maps",
+      "page_name": "Snack Time",
+      "evidence": "\"Snack Time / سناك تايم\", Egyptian restaurant, Mabad Al Oksor st, MJXR+C4 Luxor (by the station area, beside Bondok at MJXR+CHG Al Mahata); \"Closed · Opens 8 AM\"",
+      "ok": "2026-11"
+    },
+    {
+      "name": "McDonald's Luxor",
+      "src": "Google Maps",
+      "page_name": "McDonald's Luxor",
+      "evidence": "\"McDonald's Luxor / ماكدونالدز\", Luxor Temples Road, Mabad Al Oksor, MJXR+92 Luxor; \"Open · Closes 2 AM\". The row's query only gave a list, so q now names the street Maps shows.",
+      "ok": "2026-11",
+      "q_changed_to": "McDonald's Luxor, Luxor Temples Road, Luxor, Egypt"
+    }
+  ],
+  "kept_without_ok": [
+    {
+      "name": "Marsam Restaurant",
+      "src": "Google Maps + marsamhotelluxor.com",
+      "evidence": "Maps finds \"Marsam Hotel\", PJF4+JH Al Qarnah (West Bank), but shows \"Contact this property for rates and availability\" — not bookable on Maps. Its own site (marsamhotelluxor.com) says \"Our garden restaurant is famous for it's special atmosphere…\". The hotel rule needs both, so no ok."
+    },
+    {
+      "name": "Koshari Elzaeem",
+      "src": "Google Maps",
+      "evidence": "Maps finds \"El Zaeem Restaurant / الزعيم 1\", Koshari restaurant, شارع يوسف حسن، المساكن الشعبية, PJ2V+HJ Luxor City, \"Closed · Opens 8 AM\" — a branch of the name on another street, not the Midan Hagag one the row names; the Arabic search lists other koshari shops of the name in Esna and El Tod."
+    }
+  ],
+  "removed": [
+    {
+      "name": "Wenkie's German Ice Cream & Iced Coffee Parlour",
+      "src": "Google Maps",
+      "reason": "\"فينك أيس كريم إيطالى Wenkie`s Luxor\", MJJH+JGR Gazirat Al Awameyah, Luxor: \"Permanently closed\"."
+    }
+  ]
+}
