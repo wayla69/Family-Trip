@@ -260,6 +260,437 @@
           "q": "Plage d'Albigny, Annecy",
           "ok": "2026-11",
           "src": "https://ryo.co/fr/articles/france/annecy/annecy-enfants/"
+        },
+        {
+          "local": "",
+          "ages": [
+            1,
+            2,
+            2,
+            1
+          ],
+          "hrs": 3,
+          "io": "out",
+          "pram": "part",
+          "price": {
+            "th": "≈ €9 ผู้ใหญ่ · €6 อายุ 4–15 ปี",
+            "en": "≈ €9 a grown-up · €6 ages 4–15"
+          },
+          "book": "none",
+          "src": "https://www.tourisme-haute-savoie.com/actualites-de-haute-savoie/ouverture-2026-parc-de-merlet/",
+          "name": {
+            "th": "อุทยานสัตว์เมอร์เลต์",
+            "en": "Parc de Merlet"
+          },
+          "kind": "zoo",
+          "area": {
+            "th": "เลซูช หุบเขาชาโมนี",
+            "en": "Les Houches, Chamonix valley"
+          },
+          "what": {
+            "th": "อุทยานสัตว์บนภูเขา สัตว์อัลไพน์เดินอิสระ",
+            "en": "A wildlife park on the mountain where alpine animals roam freely"
+          },
+          "why": {
+            "th": "ได้เห็นแพะภูเขา ชามัว มาร์มอต และกวางใกล้ๆ",
+            "en": "Ibex, chamois, marmots and deer close up"
+          },
+          "tip": {
+            "th": "ฤดูกาล 2026 พ.ค.–ก.ย. ปิดวันจันทร์ใน พ.ค. มิ.ย. และ ก.ย. ช่วงไฮซีซันมีรถรับส่งฟรีจากเลซูช",
+            "en": "2026 season May to September, closed Mondays in May, June and September; free shuttle from Les Houches in high season"
+          },
+          "q": "Parc de Merlet, 2495 Chemin de Merlet, Les Houches",
+          "ok": "2026-11"
+        },
+        {
+          "local": "Base de Loisirs des Chavants",
+          "ages": [
+            1,
+            1,
+            1,
+            1
+          ],
+          "hrs": 2,
+          "io": "out",
+          "pram": "yes",
+          "price": {
+            "th": "ฟรี",
+            "en": "Free"
+          },
+          "book": "none",
+          "src": "https://en.chamonix.com/a-voir-a-faire/loisirs-et-famille",
+          "name": {
+            "th": "สวนพักผ่อนทะเลสาบชาวอง",
+            "en": "Lac des Chavants leisure park"
+          },
+          "kind": "park",
+          "area": {
+            "th": "เลซูช",
+            "en": "Les Houches"
+          },
+          "what": {
+            "th": "สวนพักผ่อนรอบทะเลสาบ มีทางเดินเล่นริมน้ำง่ายๆ",
+            "en": "A leisure park round a lake with an easy walk by the water"
+          },
+          "why": {
+            "th": "มีที่เล่นสำหรับเด็กเล็กและวิวเทือกเขาแอลป์",
+            "en": "Play areas for little legs and an alpine view"
+          },
+          "q": "Base de Loisirs des Chavants, Les Houches",
+          "ok": "2026-11"
+        },
+        {
+          "local": "",
+          "ages": [
+            1,
+            1,
+            1,
+            1
+          ],
+          "hrs": 2,
+          "io": "out",
+          "pram": "yes",
+          "price": {
+            "th": "ฟรี",
+            "en": "Free"
+          },
+          "book": "none",
+          "src": "https://ryo.co/fr/articles/france/annecy/annecy-enfants/",
+          "name": {
+            "th": "สวนชาร์ลส์ บอสซง",
+            "en": "Parc Charles Bosson"
+          },
+          "kind": "park",
+          "area": {
+            "th": "ถนนอัลบินยี อานซี",
+            "en": "Avenue d’Albigny, Annecy"
+          },
+          "what": {
+            "th": "สวนริมทะเลสาบเงียบๆ ห่างจากใจกลางเมือง มีที่เล่น",
+            "en": "A quiet lakeside park away from the centre, with play areas"
+          },
+          "why": {
+            "th": "สงบกว่าสวนยุโรปช่วงคนแน่น",
+            "en": "Calmer than the Jardins de l’Europe when it is crowded"
+          },
+          "q": "Parc Charles Bosson, Annecy",
+          "ok": "2026-11"
+        },
+        {
+          "local": "",
+          "ages": [
+            1,
+            1,
+            1,
+            1
+          ],
+          "hrs": 2,
+          "io": "out",
+          "pram": "part",
+          "price": {
+            "th": "เช็กราคาก่อนไป",
+            "en": "Check the price"
+          },
+          "book": "none",
+          "src": "https://ryo.co/fr/articles/france/annecy/annecy-enfants/",
+          "name": {
+            "th": "หาดลาบรุน",
+            "en": "Plage de la Brune"
+          },
+          "kind": "beach",
+          "area": {
+            "th": "แวรีเยดูลัก",
+            "en": "Veyrier-du-Lac"
+          },
+          "what": {
+            "th": "หาดทะเลสาบที่น้ำตื้นไปไกล",
+            "en": "A lake beach with shallow water far out"
+          },
+          "why": {
+            "th": "ลงน้ำค่อยๆ ลึก เหมาะกับเด็กเล็กที่ยืนในน้ำลึกไม่ได้",
+            "en": "A gentle entry for little ones who cannot yet stand in deep water"
+          },
+          "tip": {
+            "th": "มีไลฟ์การ์ดช่วงฤดูกาล",
+            "en": "Lifeguards in season"
+          },
+          "q": "Plage de la Brune, Veyrier-du-Lac",
+          "ok": "2026-11"
+        },
+        {
+          "local": "Plage municipale de Talloires",
+          "ages": [
+            1,
+            1,
+            1,
+            1
+          ],
+          "hrs": 2,
+          "io": "out",
+          "pram": "part",
+          "price": {
+            "th": "เช็กราคาก่อนไป",
+            "en": "Check the price"
+          },
+          "book": "none",
+          "src": "https://ryo.co/fr/articles/france/annecy/annecy-enfants/",
+          "name": {
+            "th": "หาดตาลลัวร์",
+            "en": "Talloires beach"
+          },
+          "kind": "beach",
+          "area": {
+            "th": "ทะเลสาบอานซี",
+            "en": "Lake Annecy"
+          },
+          "what": {
+            "th": "หาดของเมือง เห็นปราสาทดูแอง มีโป๊ะให้กระโดดลงน้ำ",
+            "en": "The town beach with a view of Duingt castle and a pontoon to jump from"
+          },
+          "why": {
+            "th": "มีสระเด็กเล็กพร้อมคนดูแล",
+            "en": "A supervised pool for the little ones"
+          },
+          "q": "Plage municipale de Talloires, Talloires-Montmin",
+          "ok": "2026-11"
+        },
+        {
+          "local": "",
+          "ages": [
+            1,
+            1,
+            1,
+            1
+          ],
+          "hrs": 2,
+          "io": "out",
+          "pram": "part",
+          "price": {
+            "th": "ฟรี",
+            "en": "Free"
+          },
+          "book": "none",
+          "src": "https://ryo.co/fr/articles/france/annecy/annecy-enfants/",
+          "name": {
+            "th": "เขตอนุรักษ์ปลายทะเลสาบ",
+            "en": "Bout du Lac nature reserve"
+          },
+          "kind": "nature",
+          "area": {
+            "th": "ปลายด้านใต้ทะเลสาบอานซี",
+            "en": "South end of Lake Annecy"
+          },
+          "what": {
+            "th": "ทางเดินไม้ราบผ่านดงกก มีป้ายเล่าเรื่องสัตว์",
+            "en": "A flat boardwalk through the reeds with panels on the wildlife"
+          },
+          "why": {
+            "th": "ทางราบ มีสัตว์ให้ตามหา",
+            "en": "Flat, with wildlife to look for"
+          },
+          "tip": {
+            "th": "รถเข็นแบบล้อใหญ่เข็นได้เกือบทั้งเส้นทาง",
+            "en": "Most of it works with an all-terrain pram"
+          },
+          "q": "Réserve naturelle du Bout du Lac d’Annecy, Doussard",
+          "ok": "2026-11"
+        },
+        {
+          "local": "",
+          "ages": [
+            1,
+            1,
+            1,
+            1
+          ],
+          "hrs": 3,
+          "io": "out",
+          "pram": "part",
+          "price": {
+            "th": "เช็กราคาก่อนไป",
+            "en": "Check the price"
+          },
+          "book": "none",
+          "src": "https://ryo.co/fr/articles/france/annecy/annecy-enfants/",
+          "name": {
+            "th": "ที่ราบสูงเลอเซมโนซ์",
+            "en": "Le Semnoz"
+          },
+          "kind": "views",
+          "area": {
+            "th": "เหนือเมืองอานซี",
+            "en": "Above Annecy"
+          },
+          "what": {
+            "th": "ทุ่งหญ้าบนภูเขามีวัว และวิวรอบทิศถึงมงบล็อง",
+            "en": "Alpine pastures with cows and a 360° view to Mont Blanc"
+          },
+          "why": {
+            "th": "มีลูจหน้าร้อน เด็ก 4–5 ขวบขึ้นไปเล่นกับผู้ใหญ่ได้",
+            "en": "A summer luge from age 4 or 5 with a grown-up"
+          },
+          "tip": {
+            "th": "ขับรถจากอานซีราว 20 นาที",
+            "en": "About 20 minutes by car from Annecy"
+          },
+          "q": "Station du Semnoz, Viuz-la-Chiésaz",
+          "ok": "2026-11"
+        },
+        {
+          "local": "",
+          "ages": [
+            2,
+            2,
+            1,
+            0
+          ],
+          "hrs": 1,
+          "io": "out",
+          "pram": "part",
+          "price": {
+            "th": "เช็กราคาก่อนไป",
+            "en": "Check the price"
+          },
+          "book": "none",
+          "src": "https://ryo.co/fr/articles/france/annecy/annecy-enfants/",
+          "name": {
+            "th": "สวนสัตว์ลากรองด์ฌาน",
+            "en": "Parc animalier de la Grande Jeanne"
+          },
+          "kind": "farm",
+          "area": {
+            "th": "ถนนเซมโนซ์ อานซี",
+            "en": "Route du Semnoz, Annecy"
+          },
+          "what": {
+            "th": "สวนสัตว์เล็กๆ มีแพะ ลา และสัตว์ปีกเดินกึ่งอิสระ",
+            "en": "A small animal park with goats, donkeys and poultry roaming semi-free"
+          },
+          "why": {
+            "th": "เที่ยวสั้นๆ ราคาไม่แพง เหมาะกับเด็กต่ำกว่าหกขวบ",
+            "en": "A short, cheap outing for children under six"
+          },
+          "q": "Parc Animalier de la Grande Jeanne, 14 Route du Semnoz, Annecy",
+          "ok": "2026-11"
+        },
+        {
+          "local": "",
+          "ages": [
+            1,
+            1,
+            1,
+            1
+          ],
+          "hrs": 2,
+          "io": "in",
+          "pram": "part",
+          "price": {
+            "th": "เช็กราคาก่อนไป",
+            "en": "Check the price"
+          },
+          "book": "none",
+          "src": "https://ryo.co/fr/articles/france/annecy/annecy-enfants/",
+          "name": {
+            "th": "ศูนย์วิทยาศาสตร์ลาตูร์บีน",
+            "en": "La Turbine sciences"
+          },
+          "kind": "museumkid",
+          "area": {
+            "th": "กรองเฌฟรีเย อานซี",
+            "en": "Cran-Gevrier, Annecy"
+          },
+          "what": {
+            "th": "ศูนย์วิทยาศาสตร์มีการทดลองให้ลองเองเรื่องฟิสิกส์ พลังงาน และดาราศาสตร์",
+            "en": "A science centre with hands-on experiments on physics, energy and astronomy"
+          },
+          "why": {
+            "th": "การทดลองที่ทำมาให้เด็กลองเอง",
+            "en": "Experiments made for children’s hands"
+          },
+          "tip": {
+            "th": "เหมาะกับวันฝนตก",
+            "en": "A good rainy-day choice"
+          },
+          "q": "La Turbine sciences, Rue Chorus, Annecy",
+          "ok": "2026-11"
+        },
+        {
+          "local": "",
+          "ages": [
+            1,
+            1,
+            1,
+            1
+          ],
+          "hrs": 2,
+          "io": "in",
+          "pram": "part",
+          "price": {
+            "th": "เช็กราคาก่อนไป",
+            "en": "Check the price"
+          },
+          "book": "none",
+          "src": "https://ryo.co/fr/articles/france/annecy/annecy-enfants/",
+          "name": {
+            "th": "โรงหนังเลเนอมูร์",
+            "en": "Cinéma Les Nemours"
+          },
+          "kind": "show",
+          "area": {
+            "th": "เมืองเก่า อานซี",
+            "en": "Old town, Annecy"
+          },
+          "what": {
+            "th": "โรงภาพยนตร์ในเมืองเก่า",
+            "en": "A cinema in the old town"
+          },
+          "why": {
+            "th": "ปกติมีหนังเด็กวันพุธและสุดสัปดาห์",
+            "en": "Children’s films usually on Wednesdays and weekends"
+          },
+          "q": "Cinéma Les Nemours, 2 Place Sainte-Claire, Annecy",
+          "ok": "2026-11"
+        },
+        {
+          "local": "",
+          "ages": [
+            0,
+            1,
+            2,
+            2
+          ],
+          "hrs": 3,
+          "io": "out",
+          "pram": "part",
+          "price": {
+            "th": "เช็กราคาก่อนไป",
+            "en": "Check the price"
+          },
+          "book": "rec",
+          "src": "https://ryo.co/fr/articles/france/annecy/annecy-enfants/",
+          "name": {
+            "th": "อาโครอาวองตูร์ ตาลลัวร์",
+            "en": "Acro’Aventures Talloires"
+          },
+          "kind": "play",
+          "area": {
+            "th": "ทะเลสาบอานซี",
+            "en": "Lake Annecy"
+          },
+          "what": {
+            "th": "เส้นทางบนต้นไม้ มีซิปไลน์และสะพานลิง",
+            "en": "A tree-top course with zip lines and monkey bridges"
+          },
+          "why": {
+            "th": "เส้นทางต่ำสุดเริ่มเล่นได้ตั้งแต่ 3 ขวบ",
+            "en": "The lowest courses start at age 3"
+          },
+          "tip": {
+            "th": "จองล่วงหน้าช่วง ก.ค.–ส.ค.",
+            "en": "Book ahead in July and August"
+          },
+          "q": "Acro’Aventures, Route Forestière, Talloires",
+          "ok": "2026-11"
         }
       ]
     },
