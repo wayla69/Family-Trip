@@ -1,0 +1,63 @@
+{
+  "town": "es-seville",
+  "kind": "eats + sights",
+  "checked": "2026-11-23",
+  "rule": "library-check.cjs, then the Google Maps Reviews tab sorted by newest: ok only when not marked closed, with a review from the last six months, and the map's name matching the page's.",
+  "agents": "one Haiku agent; 14 rows from Devour Tours, Granada Direct, Rough Guides and Cicerone, 7 passed library-check.cjs, 5 went in",
+  "added": [
+    {
+      "name": "La Escaloná",
+      "page_name": "La Escaloná",
+      "src": "https://devourtours.com/blog/kid-friendly-spanish-food-in-seville/",
+      "date": "2025-12",
+      "map": "Google Maps Plaza de la Alfalfa 12, 4,944 reviews, newest '14 hours ago'"
+    },
+    {
+      "name": "Arte y Sabor",
+      "page_name": "Arte y Sabor",
+      "src": "https://devourtours.com/blog/kid-friendly-spanish-food-in-seville/",
+      "date": "2025-12",
+      "map": "Google Maps Alameda de Hércules 85, 2,813 reviews, newest '13 hours ago'"
+    },
+    {
+      "name": "Seville Cathedral and the Giralda",
+      "page_name": "Seville Cathedral",
+      "src": "https://www.roughguides.com/spain/seville-with-kids/",
+      "date": "2025-08",
+      "map": "Google Maps 'Catedral de Sevilla', 61,310 reviews, newest '10 hours ago'"
+    },
+    {
+      "name": "CajaGranada museum (Memoria de Andalucía)",
+      "page_name": "Caja Granada Museum",
+      "src": "https://www.ciceronegranada.com/en/blog/family-holiday-granada/",
+      "date": "2025-11",
+      "map": "Google Maps 'CajaGRANADA Cultural Center' (the museum's building), 478 reviews, newest '4 days ago'"
+    },
+    {
+      "name": "Botanical Garden of the University of Granada",
+      "page_name": "Granada’s Botanical Garden",
+      "src": "https://www.ciceronegranada.com/en/blog/family-holiday-granada/",
+      "date": "2025-11",
+      "map": "Google Maps 'Botanical Garden of the University of Granada', 1,189 reviews, newest 'last week'"
+    }
+  ],
+  "left_out": [
+    {
+      "name": "Mamafante y Papaposa",
+      "why": "the map's newest review is 7 years old"
+    },
+    {
+      "name": "four restaurants in Huétor Vega and Vegas del Genil",
+      "why": "outside Granada, and their quotes failed library-check.cjs"
+    },
+    {
+      "name": "Zambra (flamenco cave show)",
+      "why": "an evening adult show, not for small children"
+    },
+    {
+      "name": "Kiosko Bar Príncipe, Vinería San Telmo, Mercado de la Encarnación",
+      "why": "library-check.cjs: name and quote not on the page"
+    }
+  ],
+  "estimates": "Ages and visit hours are placeholders; prices and opening notes are the pages' own."
+}

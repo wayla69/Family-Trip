@@ -459,3 +459,44 @@ batch-27 of docs/library-briefs. +1: Restaurant Pivoňka. Proof in `docs/library
 
 ### Rothenburg ob der Tauber, 23 Nov 2026
 batch-27 of docs/library-briefs. +1: Eiscafé Pizzeria Italia. Proof in `docs/library-proof/de-rothenburg.json`.
+### Madrid, 23 Nov 2026
+batch-12 of docs/library-briefs. +9 from esmadrid.com’s eating out with children: Rubaiyat, La Excéntrica, New York Burger (Recoletos), Filandón, Restaurante San Francisco (El Pardo), Home Burger Bar, Kilómetros de Pizza, Can Pizza, Storyland. Proof in `docs/library-proof/es-madrid.json`.
+
+### Seville and Granada, 23 Nov 2026
+batch-13 of docs/library-briefs. +2 in Seville: La Escaloná, Arte y Sabor. Proof in `docs/library-proof/es-seville.json`.
+
+### Santorini, 23 Nov 2026
+batch-16 of docs/library-briefs. +4: Cava Alta (Pyrgos), Oia Gefsis, Mes Amis, Anemomilos. Proof in `docs/library-proof/gr-santorini.json`.
+
+### Athens, 23 Nov 2026
+batch-16 of docs/library-briefs. +11 (Ama Lachei, Karavitis, Colibri, To Steki tou Ilia, Smile, Piu Verde, Bella Vespa, Kosta, Hoocut, To Avgo tou Kokora, the Acropolis Museum restaurant). Proof in `docs/library-proof/gr-athens.json`.
+
+### Dubrovnik, 23 Nov 2026
+batch-16 of docs/library-briefs. +2: Moby Dick, Bistro Glorijet. Proof in `docs/library-proof/hr-dubrovnik.json`.
+
+### Amalfi Coast, 23 Nov 2026
+batch-17 of docs/library-briefs. +11: Il Fornillo, Capricci, Maria Grazia, Acquapazza, Baccofurore, Al Convento, Pescheria CICA, La Frittura del Golfo, I Due Fratelli, Pasticceria Russo, Il Mulino. Proof in `docs/library-proof/it-amalfi.json`.
+
+### Cinque Terre, 23 Nov 2026
+batch-18 of docs/library-briefs. +2 in Vernazza: Fritto e Pizza da Sandro, Pizzeria Fratelli Basso. Proof in `docs/library-proof/it-cinqueterre.json`.
+
+### Dolomites, 23 Nov 2026
+batch-18 of docs/library-briefs. +6: Caffè Val d'Anna, Rifugio Averau, Ristorante Bullaccia, Pitschlmann, Sarè, Gelateria Eccetera. Proof in `docs/library-proof/it-dolomites.json`.
+
+### Florence, 23 Nov 2026
+batch-18 of docs/library-briefs. +10: L'Ortone, Trattoria 13 Gobbi, Santarosa Bistrot, Salumeria Verdi, Gelateria La Carraia, Berberè, Trattoria del Carmine, Tamerò, Ditta Artigianale (Via dei Neri), Gelateria della Passera. Proof in `docs/library-proof/it-florence.json`.
+
+### Milan, 23 Nov 2026
+batch-18 of docs/library-briefs. +8: Belle Epoque, Trattoria Bertamè, Consorzio Stoppani, Mamusca, California Bakery (CityLife), Giolina, MIC Ramen (Porta Romana), Benvenuto Family Restaurant. Proof in `docs/library-proof/it-milan.json`.
+
+### Sicily, 23 Nov 2026
+batch-19 of docs/library-briefs. +7 in Palermo: Vecchia Trattoria da Totò, Osteria Ballarò, Tondo, Grano Granis, I Segreti del Chiostro, Ciccio Adelfio, Cappadonia. Proof in `docs/library-proof/it-sicily.json`.
+
+### Venice, 23 Nov 2026
+batch-19 of docs/library-briefs. +8: Trattoria al Gazzettino, Rio Novo, Fried Land, 1000 Gourmet, Al Profeta, Osteria Alla Bifora, Rosticceria Gislon, Osteria Bancogiro. Proof in `docs/library-proof/it-venice.json`.
+
+### Lisbon & Sintra, 23 Nov 2026
+batch-22 of docs/library-briefs. +8: Bonkers, Epic Sana and Sheraton brunches, Luzzo, Ground Burger, Green House, Mr. Zombie, Plataforma. Proof in `docs/library-proof/pt-lisbon.json`.
+
+### Plitvice, 23 Nov 2026
+batch-28 of docs/library-briefs. +1: the Camping Plitvice restaurant. Proof in `docs/library-proof/hr-plitvice.json`.
