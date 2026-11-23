@@ -534,7 +534,159 @@
       {"name":{"en":"Cinquantenaire Park","th":"สวนซองก์กองแตแนร์"},"kind":"park","area":{"en":"Cinquantenaire Park","th":"สวนซองก์กองแตแนร์"},"what":{"en":"A park with two playgrounds, one with a big sandpit and a dragon.","th":"สวนที่มีสนามเด็กเล่นสองแห่ง แห่งหนึ่งมีบ่อทรายใหญ่และมังกร"},"why":{"en":"A massive sandpit with a dragon for imaginative play, and a smaller playground with wood chips.","th":"บ่อทรายใหญ่พร้อมมังกรให้เล่นจินตนาการ และสนามเล็กที่ปูด้วยไม้ชิป"},"ages":[1,2,2,1],"hrs":2,"io":"out","pram":"part","price":{"en":"Check the price","th":"เช็กราคาก่อนไป"},"book":"none","q":"Cinquantenaire Park, Brussels","ok":"2026-11","src":"https://worldwildschooling.com/brussels-with-kids-best-things-to-do-where-to-stay/"},
       {"name":{"en":"St. Catherine Playground","th":"สนามเด็กเล่นเซนต์แคเธอรีน"},"kind":"play","area":{"en":"next to St. Catherine","th":"ข้างเซนต์แคเธอรีน"},"what":{"en":"A small playground beside St. Catherine, near cafés and restaurants.","th":"สนามเด็กเล่นเล็กข้างเซนต์แคเธอรีน ใกล้คาเฟ่และร้านอาหาร"},"why":{"en":"Easy to combine with lunch, as cafés, restaurants and an ice-cream shop are close by.","th":"รวมกับมื้อกลางวันได้ง่าย เพราะคาเฟ่ ร้านอาหาร และร้านไอศกรีมอยู่ใกล้"},"ages":[2,2,1,0],"hrs":1,"io":"out","pram":"part","price":{"en":"Check the price","th":"เช็กราคาก่อนไป"},"book":"none","q":"St. Catherine Playground, Brussels","ok":"2026-11","src":"https://worldwildschooling.com/brussels-with-kids-best-things-to-do-where-to-stay/"},
       {"name":{"en":"Mont des Arts","th":"มงต์เดส์อาร์"},"kind":"views","area":{"en":"Mont des Arts","th":"มงต์เดส์อาร์"},"what":{"en":"A hill with a café that has views over the city, with indoor and outdoor seating.","th":"เนินที่มีคาเฟ่วิวเมือง มีที่นั่งทั้งในและนอกอาคาร"},"why":{"en":"Families with children have space to move outdoors and play, for a relaxed outing.","th":"ครอบครัวมีที่ให้เด็กเคลื่อนไหวและเล่นกลางแจ้ง ไปเที่ยวสบายๆ"},"tip":{"en":"There are stairs, so this spot might be tricky for a toddler.","th":"มีบันได อาจลำบากสำหรับเด็กวัยเตาะแตะ"},"ages":[1,2,2,2],"hrs":1.5,"io":"out","pram":"part","price":{"en":"Check the price","th":"เช็กราคาก่อนไป"},"book":"none","q":"Mont des Arts, Brussels","ok":"2026-11","src":"https://worldwildschooling.com/brussels-with-kids-best-things-to-do-where-to-stay/"},
-      {"name":{"en":"Roodebeek small playground","th":"สนามเด็กเล่นเล็กรูเดอเบก"},"kind":"park","area":{"en":"next to Roodebeek Park","th":"ข้างสวนรูเดอเบก"},"what":{"en":"A small playground with a fenced toddler area and a mini zoo with farm animals, next to Roodebeek Park.","th":"สนามเด็กเล่นเล็กมีพื้นที่รั้วสำหรับเด็กวัยเตาะแตะ และสวนสัตว์ขนาดย่อมที่มีสัตว์ฟาร์ม ข้างสวนรูเดอเบก"},"why":{"en":"A fenced area for toddlers, and farm animals such as a donkey, a pony and goats to see.","th":"พื้นที่มีรั้วสำหรับเด็กเล็ก และมีสัตว์ฟาร์ม เช่น ลา ม้าพอนี และแพะให้ดู"},"ages":[2,2,1,0],"hrs":1,"io":"out","pram":"part","price":{"en":"Check the price","th":"เช็กราคาก่อนไป"},"book":"none","q":"Roodebeek small playground, Roodebeek Park, Brussels","ok":"2026-11","src":"https://worldwildschooling.com/best-kids-friendly-cafes-in-brussels-and-around-map/"}
+      {"name":{"en":"Roodebeek small playground","th":"สนามเด็กเล่นเล็กรูเดอเบก"},"kind":"park","area":{"en":"next to Roodebeek Park","th":"ข้างสวนรูเดอเบก"},"what":{"en":"A small playground with a fenced toddler area and a mini zoo with farm animals, next to Roodebeek Park.","th":"สนามเด็กเล่นเล็กมีพื้นที่รั้วสำหรับเด็กวัยเตาะแตะ และสวนสัตว์ขนาดย่อมที่มีสัตว์ฟาร์ม ข้างสวนรูเดอเบก"},"why":{"en":"A fenced area for toddlers, and farm animals such as a donkey, a pony and goats to see.","th":"พื้นที่มีรั้วสำหรับเด็กเล็ก และมีสัตว์ฟาร์ม เช่น ลา ม้าพอนี และแพะให้ดู"},"ages":[2,2,1,0],"hrs":1,"io":"out","pram":"part","price":{"en":"Check the price","th":"เช็กราคาก่อนไป"},"book":"none","q":"Roodebeek small playground, Roodebeek Park, Brussels","ok":"2026-11","src":"https://worldwildschooling.com/best-kids-friendly-cafes-in-brussels-and-around-map/"},
+        {
+          "local": "",
+          "ages": [
+            1,
+            1,
+            0,
+            0
+          ],
+          "hrs": 2,
+          "io": "in",
+          "pram": "part",
+          "price": {
+            "th": "เช็กราคาก่อนไป",
+            "en": "Check the price"
+          },
+          "book": "none",
+          "src": "https://en.insidebrussels.be/V2/bruxelles/super-a-bruxelles-enfin-une-aire-de-jeux-ou-enfants-et-parents-trouvent-leur-place/?amp=1",
+          "name": {
+            "th": "ซูแปร์",
+            "en": "SUPER"
+          },
+          "kind": "play",
+          "area": {
+            "th": "การ์มาริตีม ตูร์เอแท็กซี",
+            "en": "Gare Maritime, Tour & Taxis"
+          },
+          "what": {
+            "th": "ที่เล่นในร่มสำหรับเด็ก 1–6 ขวบ ข้างฟู้ดคอร์ตตูร์เอแท็กซี",
+            "en": "An indoor play area for children aged 1 to 6, next to the Tour & Taxis food court"
+          },
+          "why": {
+            "th": "บรรยากาศสงบ ของเล่นไม้ ทำมาสำหรับเด็กเล็ก พ่อแม่ได้พักด้วย",
+            "en": "Calm, wooden and made for toddlers, while the parents take a breather"
+          },
+          "tip": {
+            "th": "เปิดวันพุธ เสาร์อาทิตย์ และวันหยุด 10:00–18:00 ผู้ใหญ่และเด็กต่ำกว่า 1 ขวบเข้าฟรี",
+            "en": "Open Wednesdays, weekends and holidays, 10:00–18:00; free for grown-ups and babies under 1"
+          },
+          "q": "SUPER, Gare Maritime, Tour & Taxis, Brussels",
+          "ok": "2026-11"
+        },
+        {
+          "local": "",
+          "ages": [
+            1,
+            1,
+            1,
+            1
+          ],
+          "hrs": 2,
+          "io": "in",
+          "pram": "part",
+          "price": {
+            "th": "เช็กราคาก่อนไป",
+            "en": "Check the price"
+          },
+          "book": "none",
+          "src": "https://bruxellessecrete.com/en/what-to-do-when-it-rains/",
+          "name": {
+            "th": "วอม เวิลด์ออฟมายด์",
+            "en": "WOM (World of Mind)"
+          },
+          "kind": "museum",
+          "area": {
+            "th": "ตูร์เอแท็กซี",
+            "en": "Tour & Taxis"
+          },
+          "what": {
+            "th": "พิพิธภัณฑ์ภาพลวงตาและฉากที่หลอกประสาทสัมผัส",
+            "en": "A museum of optical illusions and sets that play with your senses"
+          },
+          "why": {
+            "th": "แต่ละชิ้นน่าทึ่งกว่าชิ้นก่อน",
+            "en": "Each installation is more surprising than the last"
+          },
+          "q": "WOM World of Mind, Tour & Taxis, Brussels",
+          "ok": "2026-11"
+        },
+        {
+          "local": "",
+          "ages": [
+            1,
+            1,
+            1,
+            1
+          ],
+          "hrs": 2,
+          "io": "in",
+          "pram": "part",
+          "price": {
+            "th": "เช็กราคาก่อนไป",
+            "en": "Check the price"
+          },
+          "book": "rec",
+          "src": "https://bruxellessecrete.com/en/what-to-do-when-it-rains/",
+          "name": {
+            "th": "เลโก้ดิสคัฟเวอรีเซ็นเตอร์",
+            "en": "LEGO Discovery Centre"
+          },
+          "kind": "play",
+          "area": {
+            "th": "ด็อกส์บรูกเซล ถนนลองแบร์มง",
+            "en": "Docks Bruxsel, Boulevard Lambermont"
+          },
+          "what": {
+            "th": "ศูนย์เลโก้ เด็กต่อรถหรือจรวด เข้าเวิร์กช็อป และดูหนัง 4 มิติ",
+            "en": "A LEGO centre where children build cars or rockets, join workshops and watch a 4D film"
+          },
+          "why": {
+            "th": "มีหลายธีมให้ต่อ เล่นได้ทั้งครอบครัว",
+            "en": "Several themes to build, for the whole family"
+          },
+          "q": "LEGO Discovery Centre, Boulevard Lambermont 1, Brussels",
+          "ok": "2026-11"
+        },
+        {
+          "local": "",
+          "ages": [
+            0,
+            0,
+            1,
+            1
+          ],
+          "hrs": 2,
+          "io": "in",
+          "pram": "part",
+          "price": {
+            "th": "เช็กราคาก่อนไป",
+            "en": "Check the price"
+          },
+          "book": "none",
+          "src": "https://bruxellessecrete.com/en/what-to-do-when-it-rains/",
+          "name": {
+            "th": "โคเอซีโอ",
+            "en": "Koezio"
+          },
+          "kind": "play",
+          "area": {
+            "th": "ด็อกส์บรูกเซล ถนนลองแบร์มง",
+            "en": "Docks Bruxsel, Boulevard Lambermont"
+          },
+          "what": {
+            "th": "สวนสนุกในร่ม มีภารกิจใช้แรงและใช้สมอง คาราโอเกะ และมินิกอล์ฟ",
+            "en": "An indoor park of physical and mind challenges, karaoke and mini-golf"
+          },
+          "why": {
+            "th": "อยู่ในร่มทั้งหมด มีร้านอาหารสำหรับผู้ใหญ่",
+            "en": "All indoors, with a restaurant for the grown-ups"
+          },
+          "q": "Koezio, Boulevard Lambermont 1, Brussels",
+          "ok": "2026-11"
+        }
     ]
     }
   ]

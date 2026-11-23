@@ -237,3 +237,6 @@ Kee, Sun Hang Yuen, MD Cafe) and four family places from Cathay Pacific's 2026 c
 MeokBang BBQ Kidzone, Tree Café, Yakiniku Tabeyo). Left out: Transformers: The Ark (closed in Hong Kong, Feb 2025), Smoke and Barrel
 (moved, the new address not confirmed), Baumhaus (nothing current), Pizza Express (no one branch). In the app the Hong Kong book's own
 28 places and the Macau book part's 188 sit beside this list (`syncBooks`, src `book`).
+
+### Brussels, 23 Nov 2026
+batch-08 of docs/library-briefs. +4: Le Fox, Lloyd Coffee Eatery Louise (glass-walled kids’ room), Cōcina Châtelain (under-10s eat free), Brasserie du Miroir. Proof in `docs/library-proof/be-brussels.json`.
