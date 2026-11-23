@@ -1039,6 +1039,80 @@
           "book": "none",
           "q": "Sinpaş Aquamall, Gültepe, Merkezefendi, Denizli",
           "src": "https://yolcu360.com/blog/denizli-gezilecek-yerler/"
+        },
+        {
+          "local": "Pamukkale Tabiat Parkı",
+          "ages": [
+            2,
+            2,
+            2,
+            2
+          ],
+          "hrs": 1.5,
+          "io": "out",
+          "pram": "yes",
+          "price": {
+            "th": "เช็กราคาก่อนไป",
+            "en": "Check the price"
+          },
+          "book": "none",
+          "src": "https://goturkiye.com/pamukkale/see",
+          "name": {
+            "th": "สวนธรรมชาติปามุกกาเล",
+            "en": "Pamukkale Natural Park"
+          },
+          "kind": "park",
+          "area": {
+            "th": "ทางเข้าปามุกกาเล",
+            "en": "Entrance to Pamukkale"
+          },
+          "what": {
+            "th": "สนามหญ้าเขียว คาเฟ่ และบ่อน้ำจากน้ำพุร้อน",
+            "en": "Green lawns, a café and a pond fed by warm spring water"
+          },
+          "why": {
+            "th": "มีเรือถีบในบ่อ มีปลาและห่าน",
+            "en": "Paddle boats on the pond, with fish and geese"
+          },
+          "q": "Pamukkale Natural Park, Menderes Cd., Pamukkale",
+          "ok": "2026-11"
+        },
+        {
+          "local": "",
+          "ages": [
+            2,
+            2,
+            2,
+            2
+          ],
+          "hrs": 3,
+          "io": "out",
+          "pram": "yes",
+          "price": {
+            "th": "เช็กราคาก่อนไป",
+            "en": "Check the price"
+          },
+          "book": "none",
+          "src": "https://goturkiye.com/pamukkale/see",
+          "name": {
+            "th": "สวนชัมลึก",
+            "en": "Çamlık Park"
+          },
+          "kind": "park",
+          "area": {
+            "th": "ห่างใจกลางเดนิซลี 3 กม.",
+            "en": "3 km from central Denizli"
+          },
+          "what": {
+            "th": "สวนป่าสน 30 เฮกตาร์ มีทางเดิน บ่อน้ำ สวนสัตว์เล็ก ๆ และที่ปิกนิก",
+            "en": "A 30-hectare pine-forest park with paths, ponds, a small zoo and picnic spots"
+          },
+          "why": {
+            "th": "มีสวนสัตว์ บ่อน้ำ และที่ปิกนิกสำหรับวันกลางแจ้ง",
+            "en": "A zoo, ponds and picnics for a day outdoors"
+          },
+          "q": "Çamlık Park, Denizli",
+          "ok": "2026-11"
         }
       ]
     }
