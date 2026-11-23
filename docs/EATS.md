@@ -529,3 +529,6 @@ batch-19 of docs/library-briefs. +2: Cappuccino, TomYumBar. Proof in `docs/libra
 
 ### Yangon, 23 Nov 2026
 batch-29 of docs/library-briefs. +2: Sharky's, Chatrium Hotel Royal Lake. Proof in `docs/library-proof/mm-yangon.json`.
+
+### Phuket, 23 Nov 2026
+batch-37 of docs/library-briefs (round 2). +5 from Time Out Phuket: Millionaire Burgers (Surin), OOO Burger, PAN Burger, Treasure Burger, Rosmarino Rawai. Proof in `docs/library-proof/th-phuket.json`.

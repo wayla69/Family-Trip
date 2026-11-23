@@ -514,6 +514,129 @@
           "q": "Rawai Park, Rawai, Phuket",
           "ok": "2026-11",
           "src": "https://phuket101.net/things-to-do-in-phuket-with-kids"
+        },
+        {
+          "local": "",
+          "ages": [
+            0,
+            0,
+            2,
+            2
+          ],
+          "hrs": 3,
+          "io": "out",
+          "pram": "no",
+          "price": {
+            "th": "เช็กราคาก่อนไป",
+            "en": "Check the price"
+          },
+          "book": "rec",
+          "src": "https://www.timeout.com/phuket/things-to-do/the-best-things-to-do-with-kids-in-phuket",
+          "name": {
+            "th": "หนุมานเวิลด์",
+            "en": "Hanuman World"
+          },
+          "kind": "nature",
+          "area": {
+            "th": "วิชิต ภูเก็ต",
+            "en": "Wichit, Phuket"
+          },
+          "what": {
+            "th": "สวนซิปไลน์บนยอดไม้ มีสะพานลอยฟ้าและทางเดิน",
+            "en": "A treetop zipline park with sky bridges and walkways"
+          },
+          "why": {
+            "th": "เด็กที่สูงถึงเกณฑ์ได้โหนตัวผ่านยอดไม้",
+            "en": "Children who meet the height rule fly through the trees"
+          },
+          "tip": {
+            "th": "เปิดทุกวัน 08:00–18:00",
+            "en": "Open daily 08:00–18:00"
+          },
+          "q": "Hanuman World, Phuket",
+          "ok": "2026-11"
+        },
+        {
+          "local": "",
+          "ages": [
+            0,
+            0,
+            2,
+            2
+          ],
+          "hrs": 1.5,
+          "io": "in",
+          "pram": "part",
+          "price": {
+            "th": "เช็กราคาก่อนไป",
+            "en": "Check the price"
+          },
+          "book": "none",
+          "src": "https://www.timeout.com/phuket/things-to-do/the-best-things-to-do-with-kids-in-phuket",
+          "name": {
+            "th": "แบทเทิลฟิลด์ ภูเก็ต เลเซอร์แท็ก",
+            "en": "Battlefield Phuket Laser Tag"
+          },
+          "kind": "play",
+          "area": {
+            "th": "ศรีสุนทร ถลาง ภูเก็ต",
+            "en": "Si Sunthon, Thalang, Phuket"
+          },
+          "what": {
+            "th": "สนามเลเซอร์แท็กในร่มสำหรับครอบครัว",
+            "en": "Indoor laser-tag arenas for families"
+          },
+          "why": {
+            "th": "เด็กโต วัยรุ่น และพ่อแม่เล่นด้วยกันได้",
+            "en": "Older children, teenagers and parents can all play"
+          },
+          "tip": {
+            "th": "เปิดทุกวัน 08:00–22:00 มักมีงานวันเกิด เช็กก่อนไป",
+            "en": "Open daily 08:00–22:00; a birthday-party spot, so check first"
+          },
+          "q": "Battlefield Phuket Laser Tag",
+          "ok": "2026-11"
+        },
+        {
+          "local": "",
+          "ages": [
+            2,
+            2,
+            1,
+            0
+          ],
+          "hrs": 2,
+          "io": "in",
+          "pram": "yes",
+          "price": {
+            "th": "เช็กราคาก่อนไป",
+            "en": "Check the price"
+          },
+          "book": "none",
+          "src": "https://www.timeout.com/phuket/things-to-do/the-best-things-to-do-with-kids-in-phuket",
+          "name": {
+            "th": "แอดเวนเจอร์ วิลเลจ ฉลอง",
+            "en": "Adventure Village Chalong"
+          },
+          "kind": "play",
+          "area": {
+            "th": "ฉลอง ภูเก็ต",
+            "en": "Chalong, Phuket"
+          },
+          "what": {
+            "th": "ศูนย์เล่นในร่มขนาดใหญ่ มีเครื่องปีนป่ายและแทรมโพลีน",
+            "en": "A big indoor play centre with climbing frames and trampolines"
+          },
+          "why": {
+            "th": "แวะแป๊บเดียวกลายเป็นทั้งบ่ายสำหรับเด็กเล็ก",
+            "en": "A quick visit turns into an afternoon for little ones"
+          },
+          "tip": {
+            "th": "เปิดทุกวัน 10:00–20:00 ย้ายมาอยู่ที่ฉลองแล้ว",
+            "en": "Open daily 10:00–20:00; it moved to Chalong"
+          },
+          "q": "Adventure Village Chalong, Phuket",
+          "ok": "2026-11"
         }
       ]
     },

@@ -1,0 +1,72 @@
+{
+  "town": "th-phuket",
+  "kind": "eats + sights",
+  "checked": "2026-11-23",
+  "rule": "library-check.cjs, then the Google Maps Reviews tab sorted by newest: ok only when not marked closed, with a review from the last six months, and the map's name matching the page's.",
+  "agents": "one Haiku agent; 9 rows from three Time Out Phuket guides (Jun, Jul and Nov 2026) passed library-check.cjs, 8 went in",
+  "added": [
+    {
+      "name": "Millionaire Burgers (Surin)",
+      "page_name": "Millionaire Burgers",
+      "src": "https://www.timeout.com/phuket/restaurants/the-best-burger-restaurants-in-phuket",
+      "date": "2026-06",
+      "map": "Google Maps 'Millionaire Burgers - Surin', 106 Surin Beach, 412 reviews"
+    },
+    {
+      "name": "OOO Burger",
+      "page_name": "OOO Burger",
+      "src": "https://www.timeout.com/phuket/restaurants/the-best-burger-restaurants-in-phuket",
+      "date": "2026-06",
+      "map": "Google Maps 'OOO Burger Phuket', 445 reviews, newest shown '9 days ago'"
+    },
+    {
+      "name": "PAN Burger",
+      "page_name": "Pan Burger",
+      "src": "https://www.timeout.com/phuket/restaurants/the-best-burger-restaurants-in-phuket",
+      "date": "2026-06",
+      "map": "Google Maps 'PAN Burger Phuket', 446 reviews, newest shown '10 days ago'"
+    },
+    {
+      "name": "Treasure Burger",
+      "page_name": "Treasure Burger",
+      "src": "https://www.timeout.com/phuket/restaurants/the-best-burger-restaurants-in-phuket",
+      "date": "2026-06",
+      "map": "Google Maps 'Treasure Burger Phuket', 801 reviews, newest shown '2 days ago'"
+    },
+    {
+      "name": "Rosmarino Rawai",
+      "page_name": "Rosmarino Rawai",
+      "src": "https://www.timeout.com/phuket/restaurants/best-restaurants-in-phuket",
+      "date": "2026-11",
+      "map": "Google Maps 'Rosmarino Restaurant - Rawai', 90 reviews, newest shown '5 days ago'"
+    },
+    {
+      "name": "Hanuman World",
+      "page_name": "Hanuman World",
+      "src": "https://www.timeout.com/phuket/things-to-do/the-best-things-to-do-with-kids-in-phuket",
+      "date": "2026-07",
+      "map": "Google Maps 10,313 reviews, newest shown '1 day ago'"
+    },
+    {
+      "name": "Battlefield Phuket Laser Tag",
+      "page_name": "Battlefield Phuket Laser Tag",
+      "src": "https://www.timeout.com/phuket/things-to-do/the-best-things-to-do-with-kids-in-phuket",
+      "date": "2026-07",
+      "map": "Google Maps 66 reviews, newest shown '4 days ago'"
+    },
+    {
+      "name": "Adventure Village Chalong",
+      "page_name": "Adventure Village",
+      "src": "https://www.timeout.com/phuket/things-to-do/the-best-things-to-do-with-kids-in-phuket",
+      "date": "2026-07",
+      "map": "Google Maps 'Adventure Village Chalong', 124 reviews, newest shown 'last month'"
+    }
+  ],
+  "left_out": [
+    {
+      "name": "Suay Cherngtalay",
+      "why": "fine dining (฿2,000+ a head), nothing about families on the page"
+    }
+  ],
+  "estimates": "Ages and visit hours are placeholders; prices and opening notes are the pages' own."
+}
