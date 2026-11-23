@@ -303,6 +303,355 @@
           "q": "Al Zohriya Garden, Al Burg Street, Zamalek, Cairo",
           "ok": "2026-11",
           "src": "https://enterpriseam.com/egypt/2025/09/19/your-guide-to-greater-cairos-green-spaces/"
+        },
+        {
+          "local": "",
+          "ages": [
+            2,
+            2,
+            1,
+            0
+          ],
+          "hrs": 3,
+          "io": "out",
+          "pram": "part",
+          "price": {
+            "th": "≈ EGP 100 ต่อคน",
+            "en": "≈ EGP 100 a person"
+          },
+          "book": "none",
+          "src": "https://www.edarabia.com/things-to-do-cairo-with-kids/",
+          "name": {
+            "th": "คิดซู",
+            "en": "KidZoo"
+          },
+          "kind": "farm",
+          "area": {
+            "th": "โอบูร์ซิตี",
+            "en": "Obour City"
+          },
+          "what": {
+            "th": "สวนสัตว์ฟาร์มเล็กๆ ที่เด็กได้ใกล้ชิดและให้อาหารแพะ วัว และแกะ",
+            "en": "A small farm zoo where children meet and feed goats, cows and sheep"
+          },
+          "why": {
+            "th": "ค่าเข้ารวมทำขนมปัง ระบายสีกำแพง และเพนต์เครื่องปั้นดินเผา",
+            "en": "Bread baking, wall colouring and pottery painting are in the entry fee"
+          },
+          "tip": {
+            "th": "พกหมวกและครีมกันแดด",
+            "en": "Bring hats and sunscreen"
+          },
+          "q": "KidZoo, Obour City, Cairo",
+          "ok": "2026-11"
+        },
+        {
+          "local": "",
+          "ages": [
+            0,
+            1,
+            2,
+            1
+          ],
+          "hrs": 4,
+          "io": "in",
+          "pram": "part",
+          "price": {
+            "th": "เช็กราคาก่อนไป",
+            "en": "Check the price"
+          },
+          "book": "none",
+          "src": "https://www.edarabia.com/things-to-do-cairo-with-kids/",
+          "name": {
+            "th": "คิดซาเนีย ไคโร",
+            "en": "KidZania Cairo"
+          },
+          "kind": "play",
+          "area": {
+            "th": "ไคโรเฟสติวัลซิตี นิวไคโร",
+            "en": "Cairo Festival City, New Cairo"
+          },
+          "what": {
+            "th": "เมืองจำลองให้เด็กลองทำอาชีพผู้ใหญ่",
+            "en": "A miniature city where children try grown-up jobs"
+          },
+          "why": {
+            "th": "มีชุดตามอาชีพ และเปิดบัญชีเก็บค่าจ้างได้",
+            "en": "Uniforms for each job and a bank account for their salary"
+          },
+          "q": "KidZania Cairo, Cairo Festival City, New Cairo",
+          "ok": "2026-11"
+        },
+        {
+          "local": "",
+          "ages": [
+            1,
+            2,
+            2,
+            1
+          ],
+          "hrs": 4,
+          "io": "out",
+          "pram": "part",
+          "price": {
+            "th": "≈ EGP 100 ต่อคน",
+            "en": "≈ EGP 100 a person"
+          },
+          "book": "none",
+          "src": "https://www.edarabia.com/things-to-do-cairo-with-kids/",
+          "name": {
+            "th": "ฟาร์มบลูโลตัส",
+            "en": "Blue Lotus Farm"
+          },
+          "kind": "farm",
+          "area": {
+            "th": "ซักกอรา กีซา",
+            "en": "Saqqara, Giza"
+          },
+          "what": {
+            "th": "เกสต์เฮาส์ฟาร์ม มีบ่อบัวสีน้ำเงิน และอาหารทำเองจากผลผลิตในฟาร์ม",
+            "en": "A farm guesthouse with blue lotus ponds and home-cooked meals from the farm"
+          },
+          "why": {
+            "th": "เด็กเล่นกับสัตว์ได้หลายชั่วโมง",
+            "en": "Children spend hours with the animals"
+          },
+          "tip": {
+            "th": "เด็กต่ำกว่า 5 ขวบเข้าฟรี",
+            "en": "Under-fives free"
+          },
+          "q": "Blue Lotus Guesthouse, Saqqara, Giza",
+          "ok": "2026-11"
+        },
+        {
+          "local": "",
+          "ages": [
+            1,
+            2,
+            2,
+            1
+          ],
+          "hrs": 4,
+          "io": "out",
+          "pram": "part",
+          "price": {
+            "th": "เช็กราคาก่อนไป",
+            "en": "Check the price"
+          },
+          "book": "none",
+          "src": "https://www.edarabia.com/things-to-do-cairo-with-kids/",
+          "name": {
+            "th": "ฟักนูน อาร์ตสคูล",
+            "en": "Fagnoon Art School"
+          },
+          "kind": "farm",
+          "area": {
+            "th": "ถนนซักกอรา กีซา",
+            "en": "Saqqara road, Giza"
+          },
+          "what": {
+            "th": "ฟาร์มกิจกรรมศิลปะ ปั้นดิน เครื่องปั้นดินเผา ระบายสี บ่อโคลน และเปลญวน",
+            "en": "A farm of art activities: clay, pottery, painting, a mud lake and hammocks"
+          },
+          "why": {
+            "th": "เด็กวิ่งเล่นเลอะโคลนได้ และปิกนิกใต้ต้นไม้",
+            "en": "Children run about and get muddy; a picnic under the trees"
+          },
+          "tip": {
+            "th": "เตรียมเสื้อผ้าสำรอง",
+            "en": "Pack a spare set of clothes"
+          },
+          "q": "Fagnoon Art School, Saqqara Road, Giza",
+          "ok": "2026-11"
+        },
+        {
+          "local": "",
+          "ages": [
+            1,
+            1,
+            1,
+            1
+          ],
+          "hrs": 1,
+          "io": "in",
+          "pram": "part",
+          "price": {
+            "th": "เช็กราคาก่อนไป",
+            "en": "Check the price"
+          },
+          "book": "none",
+          "src": "https://www.edarabia.com/things-to-do-cairo-with-kids/",
+          "name": {
+            "th": "โรงละครซิตารา",
+            "en": "Sitara Theatre"
+          },
+          "kind": "show",
+          "area": {
+            "th": "ห้างปอร์โตไคโร นิวไคโร",
+            "en": "Porto Cairo mall, New Cairo"
+          },
+          "what": {
+            "th": "โรงละครที่มีการแสดงโต้ตอบและเวิร์กช็อปสำหรับเด็ก",
+            "en": "A theatre with interactive shows and workshops for children"
+          },
+          "why": {
+            "th": "การแสดงสบายๆ สำหรับวันที่เด็กอยากนั่งดู",
+            "en": "A calm show for days when children want to sit and watch"
+          },
+          "q": "Sitara Theatre, Porto Cairo Mall, New Cairo",
+          "ok": "2026-11"
+        },
+        {
+          "local": "",
+          "ages": [
+            2,
+            2,
+            1,
+            0
+          ],
+          "hrs": 4,
+          "io": "in",
+          "pram": "part",
+          "price": {
+            "th": "≈ EGP 160",
+            "en": "≈ EGP 160"
+          },
+          "book": "none",
+          "src": "https://www.edarabia.com/things-to-do-cairo-with-kids/",
+          "name": {
+            "th": "คลับลิโค",
+            "en": "ClubLiko"
+          },
+          "kind": "play",
+          "area": {
+            "th": "คอมพาวด์อัลการ์มา 6th of October",
+            "en": "Al Karma compound, 6th of October"
+          },
+          "what": {
+            "th": "ที่เล่นในร่มและกลางแจ้งสามชั้น มีหมู่บ้านจำลองและห้องเลโก้",
+            "en": "A three-storey indoor and outdoor play place with a pretend village and a Lego room"
+          },
+          "why": {
+            "th": "เด็ก 1–8 ขวบเล่นได้ทั้งวัน มีหุ่นมือและกิจกรรมทำอาหาร",
+            "en": "Children of 1 to 8 play all day, with puppet shows and cooking time"
+          },
+          "tip": {
+            "th": "มีห้องรับรองให้พ่อแม่นั่งรอ",
+            "en": "A lounge for parents to wait in"
+          },
+          "q": "Clubliko, Al Karma 3 Compound, 6th of October",
+          "ok": "2026-11"
+        },
+        {
+          "local": "",
+          "ages": [
+            0,
+            2,
+            2,
+            1
+          ],
+          "hrs": 2,
+          "io": "in",
+          "pram": "part",
+          "price": {
+            "th": "เช็กราคาก่อนไป",
+            "en": "Check the price"
+          },
+          "book": "none",
+          "src": "https://www.edarabia.com/things-to-do-cairo-with-kids/",
+          "name": {
+            "th": "บิลลีบีซ มอลล์ออฟอาราเบีย",
+            "en": "Billy Beez (Mall of Arabia)"
+          },
+          "kind": "play",
+          "area": {
+            "th": "มอลล์ออฟอาราเบีย 6th of October",
+            "en": "Mall of Arabia, 6th of October"
+          },
+          "what": {
+            "th": "ที่เล่นในร่ม มีสไลเดอร์และแทรมโพลีน",
+            "en": "An indoor play area with slides and trampolines"
+          },
+          "why": {
+            "th": "ลื่นไถลและกระโดดสำหรับเด็ก 3–12 ปี",
+            "en": "Sliding and jumping for children of 3 to 12"
+          },
+          "q": "Billy Beez, Mall of Arabia, Giza",
+          "ok": "2026-11"
+        },
+        {
+          "local": "",
+          "ages": [
+            0,
+            1,
+            2,
+            2
+          ],
+          "hrs": 2,
+          "io": "in",
+          "pram": "part",
+          "price": {
+            "th": "เช็กราคาก่อนไป",
+            "en": "Check the price"
+          },
+          "book": "none",
+          "src": "https://www.edarabia.com/things-to-do-cairo-with-kids/",
+          "name": {
+            "th": "เมจิกแกแล็กซี ซิตีสตาร์ส",
+            "en": "Magic Galaxy (City Stars)"
+          },
+          "kind": "play",
+          "area": {
+            "th": "ห้างซิตีสตาร์ส นัสร์ซิตี",
+            "en": "City Stars mall, Nasr City"
+          },
+          "what": {
+            "th": "ศูนย์สวนสนุกในร่ม มีรถไฟเหาะ รถบั๊มพ์ และเกม",
+            "en": "An indoor amusement centre with a roller coaster, bumper cars and video games"
+          },
+          "why": {
+            "th": "เปิดทุกวัน หนีร้อนช่วงบ่ายได้",
+            "en": "Open every day, an indoor choice for a hot afternoon"
+          },
+          "q": "Magic Galaxy, City Stars, Nasr City",
+          "ok": "2026-11"
+        },
+        {
+          "local": "",
+          "ages": [
+            1,
+            1,
+            1,
+            1
+          ],
+          "hrs": 3,
+          "io": "out",
+          "pram": "part",
+          "price": {
+            "th": "≈ EGP 20",
+            "en": "≈ EGP 20"
+          },
+          "book": "none",
+          "src": "https://www.edarabia.com/things-to-do-cairo-with-kids/",
+          "name": {
+            "th": "สวิสคลับ ไคโร",
+            "en": "Swiss Club Cairo"
+          },
+          "kind": "park",
+          "area": {
+            "th": "อิมบาบา",
+            "en": "Imbaba"
+          },
+          "what": {
+            "th": "คลับที่มีสวนเขียวขจี สนามเด็กเล่นใหญ่ และที่ปั่นจักรยาน",
+            "en": "A club with lush gardens, a big playground and room for cycling"
+          },
+          "why": {
+            "th": "เที่ยวสุดสัปดาห์สบายๆ เด็กปั่นจักรยานรอบสวน",
+            "en": "A relaxed weekend outing; children cycle round the grounds"
+          },
+          "q": "Swiss Club, Villa Pax, Imbaba, Giza",
+          "ok": "2026-11"
         }
       ]
     },
