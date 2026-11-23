@@ -1,0 +1,25 @@
+{
+  "town": "th-maehongson",
+  "kind": "eats",
+  "checked": "2026-11",
+  "rule": "A row gets ok only from a current listing, its own site or recent reviews with nothing saying closed (docs/EATS.md). A row is taken out when a search could not find the place at all or the sources disagree; a place found but not freshly confirmed stays without ok.",
+  "scope": "the two rows without ok; the twenty-three rows already confirmed were not checked again",
+  "how": "Google Maps opened in headless Chromium (2026-11-23), limited view without a reviews tab, so no review date could be read",
+  "confirmed": [
+    {
+      "name": "Riverhouse Restaurant",
+      "src": "https://www.google.com/maps/place/The+Teak+House+(Riverhouse+Hotel)/@18.1616604,97.9247394,17z",
+      "page_name": "The Teak House (Riverhouse Hotel) / ริเวอร์เฮ้าส์โฮเท็ล (บ้านไม้)",
+      "evidence": "Google Maps: 3-star hotel, 4.1★, 77 Langpanich Rd, Ban Kat, Mae Sariang (5W6H+MM) — the road and town the row names; described 'Informal hotel with dining & a pool', with rooms on sale for 26–27 Nov 2026 through Agoda and Booking.com; nothing says closed. The ok rests on the hotel being open and listed with dining; the restaurant has no listing of its own. Map query now names the hotel and its number",
+      "ok": "2026-11"
+    }
+  ],
+  "kept_without_ok": [],
+  "removed": [
+    {
+      "name": "Pa Sri Bua",
+      "src": "https://www.google.com/maps/place/Pa+Si+Bua/@19.3014478,97.9676184,17z",
+      "reason": "Google Maps lists Pa Si Bua / ร้านป้าศรีบัว on Singha-nat Barm Rung Rd, Pang Mu (8X29+H2H) — the road the row names — as 'Permanently closed'"
+    }
+  ]
+}
