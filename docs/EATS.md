@@ -529,3 +529,6 @@ batch-19 of docs/library-briefs. +2: Cappuccino, TomYumBar. Proof in `docs/libra
 
 ### Yangon, 23 Nov 2026
 batch-29 of docs/library-briefs. +2: Sharky's, Chatrium Hotel Royal Lake. Proof in `docs/library-proof/mm-yangon.json`.
+
+### Jeju, 24 Nov 2026
+batch-40 of docs/library-briefs (round 2). +7: Myeonjumak, Samsin Halmang Bapsang, Dullegil (Jungmun), Jeju Hanmyeonga, Gozip Dol Wooluck (Hamdeok), Jeju Dodori Meat Noodles, Gwangyuk. Proof in `docs/library-proof/kr-jeju.json`.

@@ -1,19 +1,126 @@
 {
   "town": "kr-jeju",
-  "kind": "eats",
-  "checked": "2026-11",
-  "rule": "A row gets ok only from a current listing, its own site or recent reviews with nothing saying closed (docs/EATS.md). A row is taken out when a search could not find the place at all or the sources disagree; a place found but not freshly confirmed stays without ok.",
-  "scope": "the 1 row without ok; the town holds 24 rows after this pass",
-  "how": "Google Maps opened in headless Chromium (2026-11-23), limited view without a reviews tab, so no review date could be read; searched in English and in the local language, each verdict from the place page or the result list shown",
-  "confirmed": [
+  "kind": "eats + sights",
+  "checked": "2026-11-23",
+  "rule": "library-check.cjs, then the Google Maps Reviews tab sorted by newest: ok only when not marked closed, with a review from the last six months, and the map's name matching the page's.",
+  "agents": "one Haiku agent; 20 rows from Jeju tourism and family travel pages (Apr–Nov 2026) passed library-check.cjs, 14 went in",
+  "added": [
     {
-      "name": "Deokseongwon",
-      "src": "https://www.google.com/maps/place/Deogseong-Won",
-      "page_name": "Deogseong-Won / 덕성원",
-      "evidence": "Google Maps (2026-11-23): Chinese restaurant, 3.8★, 4 Taepyeong-ro 401beon-gil, Seogwipo-si; 'Open · Closes 9 PM', phone +82 64-762-2402, table booking on redtable.global; nothing says closed",
-      "ok": "2026-11"
+      "name": "Myeonjumak (Jeju Main)",
+      "page_name": "Myeonjumak Jeju Main Branch",
+      "src": "https://mom-mom.net/en/travel/places/65fbf89116e6494c21e65b98",
+      "date": "2026-05",
+      "map": "Google Maps '면주막 제주본점', 566 reviews, newest shown '2 days ago'"
+    },
+    {
+      "name": "Samsin Halmang Bapsang",
+      "page_name": "Samsin Halmang Bapsang",
+      "src": "https://mom-mom.net/en/travel/places/69520307669da585e5e73028",
+      "date": "2026-09",
+      "map": "Google Maps '삼신할망밥상', 115 reviews, newest shown '8 days ago'"
+    },
+    {
+      "name": "Dullegil (Jungmun Main)",
+      "page_name": "Dullegil Seogwipo Jungmun Main Branch",
+      "src": "https://mom-mom.net/en/travel/places/670df7b9820b1c3517d720c3",
+      "date": "2026-09",
+      "map": "Google Maps 'Dullegil 둘레길', 159 reviews, newest shown '2 days ago'"
+    },
+    {
+      "name": "Jeju Hanmyeonga",
+      "page_name": "Jeju Hanmyeonga",
+      "src": "https://mom-mom.net/en/travel/places/65d84e2146c0add936f9573a",
+      "date": "2026-09",
+      "map": "Google Maps '제주한면가', 344 reviews, newest shown '14 days ago'"
+    },
+    {
+      "name": "Gozip Dol Wooluck (Hamdeok)",
+      "page_name": "Gozip Dolureok Jeju Hamdeok Branch",
+      "src": "https://mom-mom.net/en/travel/places/6670e3a19081a5f147ae468b",
+      "date": "2026-11",
+      "map": "Google Maps '고집돌우럭 함덕점', 3,588 reviews, newest shown '4 days ago'"
+    },
+    {
+      "name": "Jeju Dodori Meat Noodles",
+      "page_name": "Jeju Dodori Meat Noodles",
+      "src": "https://mom-mom.net/en/travel/places/694500f64109ca8f1af1c761",
+      "date": "2026-09",
+      "map": "Google Maps '제주 도도리고기국수', 375 reviews, newest shown 'last month'"
+    },
+    {
+      "name": "Gwangyuk",
+      "page_name": "Gwangyuk",
+      "src": "https://mom-mom.net/en/travel/places/6a22630eee9cbcb3925d1ce3",
+      "date": "2026-09",
+      "map": "Google Maps '광육', 25 reviews, newest shown '9 days ago'"
+    },
+    {
+      "name": "Maze Land",
+      "page_name": "Maze Land",
+      "src": "https://blog.trazy.com/family-friendly-places-to-visit-in-jeju/",
+      "date": "2026-04",
+      "map": "Google Maps '메이즈랜드', 3,342 reviews, newest shown '15 days ago'"
+    },
+    {
+      "name": "Figure Museum Jeju",
+      "page_name": "Figure Museum",
+      "src": "https://blog.trazy.com/family-friendly-places-to-visit-in-jeju/",
+      "date": "2026-04",
+      "map": "Google Maps '피규어뮤지엄 제주', 3,084 reviews, newest shown '6 days ago'"
+    },
+    {
+      "name": "Fairy and Woodcutter Theme Park",
+      "page_name": "Fairy and Woodsman Theme Park",
+      "src": "https://blog.trazy.com/family-friendly-places-to-visit-in-jeju/",
+      "date": "2026-04",
+      "map": "Google Maps '선녀와 나무꾼 테마공원', 3,466 reviews, newest shown '20 days ago'"
+    },
+    {
+      "name": "Yeomiji Botanical Garden",
+      "page_name": "Yeomiji Botanical Garden",
+      "src": "https://blog.trazy.com/family-friendly-places-to-visit-in-jeju/",
+      "date": "2026-04",
+      "map": "Google Maps '여미지식물원', 3,667 reviews, newest shown '5 days ago'"
+    },
+    {
+      "name": "Hueree Nature Life Park",
+      "page_name": "Hueree Natural Park",
+      "src": "https://blog.trazy.com/family-friendly-places-to-visit-in-jeju/",
+      "date": "2026-04",
+      "map": "Google Maps '휴애리 자연생활공원', 5,704 reviews, newest shown '3 days ago'"
+    },
+    {
+      "name": "Jeju Water World",
+      "page_name": "Jeju Water World",
+      "src": "https://blog.trazy.com/family-friendly-places-to-visit-in-jeju/",
+      "date": "2026-04",
+      "map": "Google Maps '워터월드 제주', 522 reviews, newest shown '3 days ago'"
+    },
+    {
+      "name": "Jeju Tangerine Kart",
+      "page_name": "Jeju Tangerine Kart",
+      "src": "https://blog.trazy.com/family-friendly-places-to-visit-in-jeju/",
+      "date": "2026-04",
+      "map": "Google Maps '감귤카트', 199 reviews, newest shown '3 days ago'"
     }
   ],
-  "kept_without_ok": [],
-  "removed": []
+  "left_out": [
+    {
+      "name": "Suni Table, Danso",
+      "why": "no review from the last six months on the map"
+    },
+    {
+      "name": "Sheep Farm (Aewol)",
+      "why": "a sheepdog herding show; not found under the page's name"
+    },
+    {
+      "name": "Alive Museum (Jungmun)",
+      "why": "the map shows it renamed K-Island Jeju"
+    },
+    {
+      "name": "Tayo Kids Cafe (Yongdam), Kongsuni Kids Cafe",
+      "why": "newest reviews two years old or more"
+    }
+  ],
+  "estimates": "Ages and visit hours are placeholders; prices and opening notes are the pages' own."
 }
