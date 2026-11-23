@@ -1,31 +1,119 @@
 {
   "town": "ge-tbilisi",
-  "kind": "eats",
-  "checked": "2026-11",
-  "rule": "A row gets ok only from a current listing, its own site or recent reviews with nothing saying closed (docs/EATS.md). A row is taken out when a search could not find the place at all or the sources disagree; a place found but not freshly confirmed stays without ok.",
-  "scope": "the 3 rows without ok; the rows already confirmed were not checked again",
-  "how": "Google Maps opened in headless Chromium (2026-11-23), limited view without a reviews tab, so no review date could be read; a place with current hours and no closed notice counts as a current listing",
-  "confirmed": [
+  "kind": "eats + sights",
+  "checked": "2026-11-23",
+  "rule": "library-check.cjs, then the Google Maps Reviews tab sorted by newest: ok only when not marked closed, with a review from the last six months, and the map's name matching the page's.",
+  "agents": "one Haiku agent; 16 rows from madloba.info (2026) and Wander-Lush (Sept 2026) passed library-check.cjs, 13 went in",
+  "added": [
     {
-      "name": "Machakhela",
-      "src": "https://www.google.com/maps/place/Machakhela/@41.6897456,44.8088643,17z",
-      "page_name": "Machakhela",
-      "evidence": "Google Maps: Georgian restaurant, 3.7★, 23 Ovanes Tumaniani St, Tbilisi (MRQ5+VG, by Meidan in the old town), 'Open 24 hours', ordering on Wolt; nothing says closed. The map query now names the street Maps shows",
-      "ok": "2026-11"
+      "name": "Cafe Daphna",
+      "page_name": "Daphna",
+      "src": "https://madloba.info/en/reviews/where-to-eat/restorany/family-friendly-restaurants-in-tbilisi-with-child-friendly-amenities/",
+      "date": "2026-09",
+      "map": "Google Maps 'Cafe Daphna Tbilisi', 29 George Atoneli, 5,338 reviews, newest '15 hours ago'"
     },
     {
-      "name": "Dezerter Bazaar",
-      "src": "https://www.google.com/maps/place/Dezerter+Bazaar/@41.7213493,44.7941502,17z",
-      "page_name": "Dezerter Bazaar",
-      "evidence": "Google Maps: produce market, 4.1★, 5 Abastumani St, Tbilisi (PQCV+GM), 'Open · Closes 7 PM'; nothing says closed",
-      "ok": "2026-11"
-    }
-  ],
-  "kept_without_ok": [
+      "name": "Lolita",
+      "page_name": "Lolita",
+      "src": "https://madloba.info/en/reviews/where-to-eat/restorany/family-friendly-restaurants-in-tbilisi-with-child-friendly-amenities/",
+      "date": "2026-09",
+      "map": "Google Maps 7 Tamar Chovelidze, 4,307 reviews, newest '3 days ago'"
+    },
     {
-      "name": "Entrée",
-      "evidence": "Google Maps lists many open Entrée cafés in Tbilisi (e.g. 12 Amaghleba St 'Open · Closes 10 PM', 19 Mikheil Zandukeli St, 4 Mitropan Laghidze St), but none at Shota Rustaveli Avenue 20, the branch the row names; searching 'Entrée Shota Rustaveli Avenue Tbilisi' showed no Rustaveli branch"
+      "name": "Sakhachapure N1 (Galleria Tbilisi)",
+      "page_name": "Sakhachapure №1 (Galleria Tbilisi)",
+      "src": "https://madloba.info/en/reviews/where-to-eat/restorany/family-friendly-restaurants-in-tbilisi-with-child-friendly-amenities/",
+      "date": "2026-09",
+      "map": "Google Maps 'Sakhachapure N1', Galleria Tbilisi, 1,976 reviews, newest '21 hours ago'"
+    },
+    {
+      "name": "Café Leila",
+      "page_name": "Café Leila",
+      "src": "https://madloba.info/en/reviews/where-to-eat/restorany/family-friendly-restaurants-in-tbilisi-with-child-friendly-amenities/",
+      "date": "2026-09",
+      "map": "Google Maps 18 Shavteli, 1,575 reviews, newest '3 days ago'"
+    },
+    {
+      "name": "Cafe Monastery (Dariali)",
+      "page_name": "Cafe Monastery",
+      "src": "https://wander-lush.org/visit-kazbegi-georgia-travel-guide-tips/",
+      "date": "2026-09",
+      "map": "Google Maps the Dariali Monastery Complex (its café listed beside it), 1,284 reviews, newest '18 hours ago'"
+    },
+    {
+      "name": "Gergeti Trinity Church",
+      "page_name": "Gergeti Trinity Church",
+      "src": "https://wander-lush.org/visit-kazbegi-georgia-travel-guide-tips/",
+      "date": "2026-09",
+      "map": "Google Maps 10,691 reviews, newest '13 hours ago'"
+    },
+    {
+      "name": "Leghvtakhevi waterfall",
+      "page_name": "Legvtakhevi",
+      "src": "https://madloba.info/en/blog/excursions-around-georgia/tbilisi-family-3-days",
+      "date": "2026-09",
+      "map": "Google Maps 'Leghvtakhevi Waterfall', 1,836 reviews, newest '11 hours ago'"
+    },
+    {
+      "name": "Bridge of Peace",
+      "page_name": "Bridge of Peace",
+      "src": "https://madloba.info/en/blog/excursions-around-georgia/tbilisi-family-3-days",
+      "date": "2026-09",
+      "map": "Google Maps 19,007 reviews, newest '4 hours ago'"
+    },
+    {
+      "name": "Sioni Basilica",
+      "page_name": "Sioni Basilica",
+      "src": "https://wander-lush.org/visit-kazbegi-georgia-travel-guide-tips/",
+      "date": "2026-09",
+      "map": "Google Maps 77 reviews, newest '2 weeks ago'"
+    },
+    {
+      "name": "Giant stone heads of Sno",
+      "page_name": "Sno village Giant Stone Heads",
+      "src": "https://wander-lush.org/visit-kazbegi-georgia-travel-guide-tips/",
+      "date": "2026-09",
+      "map": "Google Maps 'Gigantic Sculptures by Merab Phiranishvili', 684 reviews, newest '3 days ago'"
+    },
+    {
+      "name": "Zakagori Fortress",
+      "page_name": "Zakagori Fortress",
+      "src": "https://wander-lush.org/visit-kazbegi-georgia-travel-guide-tips/",
+      "date": "2026-09",
+      "map": "Google Maps 294 reviews, newest 'last week'"
+    },
+    {
+      "name": "Dariali Monastery",
+      "page_name": "Dariali Monastery Complex",
+      "src": "https://wander-lush.org/visit-kazbegi-georgia-travel-guide-tips/",
+      "date": "2026-09",
+      "map": "Google Maps 1,284 reviews, newest '18 hours ago'"
+    },
+    {
+      "name": "Ioane Natlismcemeli monastery",
+      "page_name": "Ioane Natlismcemeli",
+      "src": "https://wander-lush.org/visit-kazbegi-georgia-travel-guide-tips/",
+      "date": "2026-09",
+      "map": "Google Maps 233 reviews, newest 'last week'"
     }
   ],
-  "removed": []
+  "left_out": [
+    {
+      "name": "Manano",
+      "why": "the map check did not load its page, so it was left out"
+    },
+    {
+      "name": "Bombora Park",
+      "why": "the map's match is a quad-bike tour, not the amusement park"
+    },
+    {
+      "name": "Juta Valley",
+      "why": "a village and hike, not one place"
+    },
+    {
+      "name": "Kazbegi Museum",
+      "why": "temporarily closed"
+    }
+  ],
+  "estimates": "Ages and visit hours are placeholders; prices and opening notes are the pages' own."
 }
