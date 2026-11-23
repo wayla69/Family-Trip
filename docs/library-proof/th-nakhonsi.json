@@ -1,0 +1,39 @@
+{
+  "town": "th-nakhonsi",
+  "kind": "eats",
+  "checked": "2026-11",
+  "rule": "A row gets ok only from a current listing, its own site or recent reviews with nothing saying closed (docs/EATS.md). A row is taken out when a search could not find the place at all or the sources disagree; a place found but not freshly confirmed stays without ok.",
+  "scope": "the six rows without ok; the eight rows already confirmed were not checked again",
+  "confirmed": [],
+  "kept_without_ok": [
+    {
+      "name": "Central Nakhon Si food court",
+      "evidence": "two web searches found shops listed at Central Nakhon Si Thammarat on Wongnai (KOI Thé, OWL CHA) and a Tops notice, but no listing of the food court itself"
+    }
+  ],
+  "removed": [
+    {
+      "name": "Ruean Phak Kut",
+      "src": "https://www.wongnai.com/restaurants/20153jQ",
+      "reason": "the Wongnai listing (เรือนผักกูด รีสอร์ท แอนด์ เรสเตอรอง, closed:false) puts it at 23/1 Moo 14, Nakhon–Chandi road, km 27 — not in town as the row said; the newest review is from 2021-04"
+    },
+    {
+      "name": "Wang Derm",
+      "src": "https://12go.asia/en/thailand/nakhon-si-thammarat/food",
+      "reason": "the only source (undated) describes a cheap lunchtime curry-and-rice shop on Ratchadamnoen Road (dishes ≈ ฿30–70), not the roomy Thai and seafood restaurant the row described; sources disagree"
+    },
+    {
+      "name": "Hao Coffee",
+      "reason": "two web searches (Thai and English) found no coffee shop of this name in Nakhon Si Thammarat"
+    },
+    {
+      "name": "Suwalee",
+      "reason": "two web searches found no tea shop of this name near the railway station"
+    },
+    {
+      "name": "Likor Baan Tham Khanom",
+      "src": "https://www.wongnai.com/restaurants/1928126sy",
+      "reason": "the only match is Wongnai's ลิกอร์-พระธาตุฯ at 552 Ratchadamnoen Road, opposite Wat Phra Mahathat — not at Kukuton as the row said; its newest review is from 2023-08; nothing confirms it is the same bakery"
+    }
+  ]
+}
