@@ -1,0 +1,109 @@
+{
+  "town": "sk-bratislava",
+  "kind": "eats + sights",
+  "checked": "2026-11-23",
+  "rule": "library-check.cjs, then the Google Maps Reviews tab sorted by newest: ok only when not marked closed, with a review from the last six months, and the map's name matching the page's.",
+  "agents": "one Haiku agent; 16 rows from Kids Are A Trip (2025–2026), Reis Koe (2025), Visit Bratislava (2026) and GoPass (2026) passed library-check.cjs, 11 went in",
+  "added": [
+    {
+      "name": "Gatto Matto Panská",
+      "page_name": "Gatto Matto Panská",
+      "src": "https://kidsareatrip.com/best-things-to-do-in-bratislava-with-kids/",
+      "date": "2025-05",
+      "map": "Google Maps Panská 17, 5,430 reviews, newest '4 hours ago'"
+    },
+    {
+      "name": "Berg",
+      "page_name": "Berg",
+      "src": "https://kidsareatrip.com/best-things-to-do-in-bratislava-with-kids/",
+      "date": "2025-05",
+      "map": "Google Maps 'BERG restaurant', Petržalka, 1,466 reviews, newest 'last week'"
+    },
+    {
+      "name": "Mezcalli Bratislava",
+      "page_name": "Mezcalli Bratislava",
+      "src": "https://kidsareatrip.com/best-things-to-do-in-bratislava-with-kids/",
+      "date": "2025-05",
+      "map": "Google Maps Námestie SNP 1, 1,614 reviews, newest '4 days ago'"
+    },
+    {
+      "name": "Urban Bistro",
+      "page_name": "Urban Bistro",
+      "src": "https://www.reiskoe.nl/en/bratislava-with-kids/",
+      "date": "2025-06",
+      "map": "Google Maps Michalská 5, 2,825 reviews, newest '21 hours ago'"
+    },
+    {
+      "name": "Blue Church",
+      "page_name": "Blue Church (St. Elizabeth’s)",
+      "src": "https://kidsareatrip.com/best-things-to-do-in-bratislava-with-kids/",
+      "date": "2025-05",
+      "map": "Google Maps 'The Blue Church - Church of St. Elizabeth', 14,321 reviews, newest '1 hour ago'"
+    },
+    {
+      "name": "St Martin's Cathedral",
+      "page_name": "St. Martin's Cathedral",
+      "src": "https://www.reiskoe.nl/en/bratislava-with-kids/",
+      "date": "2025-06",
+      "map": "Google Maps 9,159 reviews, newest '14 hours ago'"
+    },
+    {
+      "name": "Aurelium science centre",
+      "page_name": "Aurelium Science Adventure Center",
+      "src": "https://www.visitbratislava.com/news/aurelium-science-adventure-center/",
+      "date": "2026-05",
+      "map": "Google Maps 'Centrum vedy CVTI SR', Bojnická 3 (the page's address), 475 reviews, newest '21 hours ago'"
+    },
+    {
+      "name": "Tatras Tower",
+      "page_name": "Tatras Tower",
+      "src": "https://blog.gopass.travel/en/suggested-trips-with-kids-in-the-high-tatras/",
+      "date": "2026-05",
+      "map": "Google Maps 2,020 reviews, newest '1 day ago'"
+    },
+    {
+      "name": "Skalnaté Pleso",
+      "page_name": "Skalnaté Pleso",
+      "src": "https://blog.gopass.travel/en/suggested-trips-with-kids-in-the-high-tatras/",
+      "date": "2026-05",
+      "map": "Google Maps 959 reviews, newest 'last week'"
+    },
+    {
+      "name": "Hrebienok",
+      "page_name": "Hrebienok",
+      "src": "https://blog.gopass.travel/en/suggested-trips-with-kids-in-the-high-tatras/",
+      "date": "2026-05",
+      "map": "Google Maps 'Vysoké Tatry - Hrebienok', 20,649 reviews, newest '2 hours ago'"
+    },
+    {
+      "name": "Belianska Cave",
+      "page_name": "Belianska Cave",
+      "src": "https://blog.gopass.travel/en/suggested-trips-with-kids-in-the-high-tatras/",
+      "date": "2026-05",
+      "map": "Google Maps 9,669 reviews, newest '1 day ago'"
+    }
+  ],
+  "left_out": [
+    {
+      "name": "Espresso Bar Mondieu",
+      "why": "a café chain, the page names no branch"
+    },
+    {
+      "name": "Mirror Maze and Kids' Park at UFO",
+      "why": "the map shows only the UFO restaurant"
+    },
+    {
+      "name": "City Theatre of Opera and Ballet",
+      "why": "the map shows a theatre of another name"
+    },
+    {
+      "name": "Tatrabob",
+      "why": "the map shows only a plain \"Bobsled\""
+    },
+    {
+      "name": "Tatranská divočina",
+      "why": "several places, not one"
+    }
+  ],
+  "estimates": "Ages and visit hours are placeholders; prices and opening notes are the pages' own."
+}
