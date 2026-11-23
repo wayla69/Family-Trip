@@ -1,27 +1,83 @@
 {
   "town": "us-alaska",
-  "kind": "eats",
-  "checked": "2026-11",
-  "rule": "A row gets ok only from a current listing, its own site or recent reviews with nothing saying closed (docs/EATS.md). A row is taken out when a search could not find the place at all or the sources disagree; a place found but not freshly confirmed stays without ok.",
-  "scope": "the 1 rows without ok; the rows that already carried ok were not re-checked in this pass",
-  "how": "Google Maps opened in headless Chromium (2026-11-23), limited view without a reviews tab, so no review date could be read; each row's own map query first, then the name with the town, a list result opened when needed; a hotel's own site or one web search only where Maps could not settle it.",
-  "confirmed": [],
-  "kept_without_ok": [],
-  "removed": [
-    {
-      "name": "Tracy's King Crab Shack",
-      "src": "Google Maps",
-      "reason": "\"Tracy's King Crab Shack-Main\", 432 S Franklin St, 7HWX+R6 Downtown Juneau: \"Temporarily closed\". Removed once a replacement quick bite in Juneau was confirmed (Pel'meni, below), so the town keeps 2 quick bites."
-    }
-  ],
+  "kind": "eats + sights",
+  "checked": "2026-11-23",
+  "rule": "library-check.cjs, then the Google Maps Reviews tab sorted by newest: ok only when not marked closed, with a review from the last six months, and the map's name matching the page's.",
+  "agents": "one Haiku agent; 16 rows from Mommy Poppins (2025) and tourismattractions.net passed library-check.cjs, 9 went in",
   "added": [
     {
-      "name": "Pel'meni",
-      "kind": 1,
-      "src": "Google Maps; Roadfood; Anchorage Daily News (2023)",
-      "page_name": "Pel'meni",
-      "evidence": "Google Maps 2026-11-23: \"Pel'meni\", 4.6, Russian restaurant, 2 Marine Way, Juneau, AK 99801 (Located in: Historic Merchants Wharf), plus code 7HXV+Q3 Downtown Juneau, \"Open · Closes 1:30 AM\", no closed notice; rating count not shown in the limited view. Not in server/eats before. Menu (beef or potato dumplings, butter, sour cream) and small room with few tables from Roadfood and reviews; price: Roadfood's $ tier and the Anchorage branch's $8 a plate (ADN 2023, same menu as Juneau), so the range ≈ $8–12 is from those. Its own site pelmeni-juneau.shop now shows a domain for sale, so it was not used. Roadfood says cash only (not put in the row).",
-      "ok": "2026-11"
+      "name": "Simon & Seafort's Saloon & Grill",
+      "page_name": "Simon and Seafort's",
+      "src": "https://mommypoppins.com/anywhere-kids/family-travel/best-things-to-do-anchorage-alaska-kids-itinerary",
+      "date": "2025-09",
+      "map": "Google Maps 'Simon & Seafort's Saloon & Grill', 420 L St, 4,063 reviews, newest '1 day ago'"
+    },
+    {
+      "name": "Golden Donuts",
+      "page_name": "Golden Donuts",
+      "src": "https://mommypoppins.com/anywhere-kids/family-travel/best-things-to-do-anchorage-alaska-kids-itinerary",
+      "date": "2025-09",
+      "map": "Google Maps 2213 E Tudor Rd, 1,189 reviews, newest 'last week'"
+    },
+    {
+      "name": "Dino's Donuts",
+      "page_name": "Dino's Donuts",
+      "src": "https://mommypoppins.com/anywhere-kids/family-travel/best-things-to-do-anchorage-alaska-kids-itinerary",
+      "date": "2025-09",
+      "map": "Google Maps 929 E 81st Ave, 565 reviews, newest '4 days ago'"
+    },
+    {
+      "name": "Alaska Aviation Museum",
+      "page_name": "Alaska Aviation Museum",
+      "src": "https://mommypoppins.com/anywhere-kids/family-travel/best-things-to-do-anchorage-alaska-kids-itinerary",
+      "date": "2025-09",
+      "map": "Google Maps 4721 Aircraft Dr, 488 reviews, newest '3 days ago'"
+    },
+    {
+      "name": "Alaska Museum of Science and Nature",
+      "page_name": "Alaska Museum of Science and Nature",
+      "src": "https://mommypoppins.com/anywhere-kids/family-travel/best-things-to-do-anchorage-alaska-kids-itinerary",
+      "date": "2025-09",
+      "map": "Google Maps 201 N Bragaw St, 291 reviews, newest '2 weeks ago'"
+    },
+    {
+      "name": "Z.J. Loussac Library",
+      "page_name": "Z.J. Loussac Library",
+      "src": "https://mommypoppins.com/anywhere-kids/family-travel/best-things-to-do-anchorage-alaska-kids-itinerary",
+      "date": "2025-09",
+      "map": "Google Maps 'Anchorage Public Library (Z.J. Loussac Library)', 3600 Denali St, 355 reviews, newest '1 day ago'"
+    },
+    {
+      "name": "Indian Valley Mine",
+      "page_name": "Indian Mining Valley",
+      "src": "https://mommypoppins.com/anywhere-kids/family-travel/best-things-to-do-anchorage-alaska-kids-itinerary",
+      "date": "2025-09",
+      "map": "Google Maps 'Indian Valley Mine & Gifts', 27301 Seward Hwy, 439 reviews, newest 'last month'"
+    },
+    {
+      "name": "Kincaid Park beach",
+      "page_name": "Kincaid Beach",
+      "src": "https://mommypoppins.com/anywhere-kids/family-travel/best-things-to-do-anchorage-alaska-kids-itinerary",
+      "date": "2025-09",
+      "map": "Google Maps 'Kincaid Park', 9401 Raspberry Rd, 2,739 reviews, newest 'last week'"
+    },
+    {
+      "name": "Eklutna Lake",
+      "page_name": "Eklutna Lake",
+      "src": "https://mommypoppins.com/anywhere-kids/family-travel/best-things-to-do-anchorage-alaska-kids-itinerary",
+      "date": "2025-09",
+      "map": "Google Maps 210 reviews, newest 'last month'"
     }
-  ]
+  ],
+  "left_out": [
+    {
+      "name": "49th State Brewing",
+      "why": "a brewery"
+    },
+    {
+      "name": "six Juneau rows",
+      "why": "their source (tourismattractions.net) is machine-written"
+    }
+  ],
+  "estimates": "Ages and visit hours are placeholders; prices and opening notes are the pages' own."
 }

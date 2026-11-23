@@ -265,6 +265,117 @@
           "book": "rec",
           "q": "Planetário do Rio, Rua Vice-Governador Rubens Berardo 100, Gávea, Rio de Janeiro",
           "src": "https://carioca.rio/servicos/visitacao-ao-museu-do-universo-no-planetario-da-gavea/"
+        },
+        {
+          "local": "Parque Natural Municipal da Catacumba",
+          "ages": [
+            0,
+            1,
+            1,
+            1
+          ],
+          "hrs": 2,
+          "io": "out",
+          "pram": "no",
+          "price": {
+            "th": "เช็กราคาก่อนไป",
+            "en": "Check the price"
+          },
+          "book": "none",
+          "src": "https://catracalivre.com.br/viagem-livre/3-trilhas-tranquilas-para-fazer-no-rio-de-janeiro-inclusive-com-criancas/",
+          "name": {
+            "th": "สวนธรรมชาติกาตากุมบา",
+            "en": "Catacumba Park"
+          },
+          "kind": "nature",
+          "area": {
+            "th": "ลากัว",
+            "en": "Lagoa"
+          },
+          "what": {
+            "th": "ทางเดินขึ้นเนิน มีงานศิลปะตลอดทาง ข้างบนเห็นวิวทะเลสาบและภูเขา",
+            "en": "A hill trail with works of art along the path and a view of the lagoon and mountains at the top"
+          },
+          "why": {
+            "th": "เด็กชอบเดินขึ้นเพราะมีงานศิลปะระหว่างทาง และทางมีป้ายบอกชัด",
+            "en": "Children enjoy the climb because of the art on the way, and the trail is well signed"
+          },
+          "q": "Parque Natural Municipal da Catacumba, Rio de Janeiro",
+          "ok": "2026-11"
+        },
+        {
+          "local": "Parque do Bebê da Praça Afonso Pena",
+          "ages": [
+            1,
+            0,
+            0,
+            0
+          ],
+          "hrs": 1,
+          "io": "out",
+          "pram": "part",
+          "price": {
+            "th": "ฟรี",
+            "en": "Free"
+          },
+          "book": "none",
+          "src": "https://diariodorio.com/rio-de-janeiro/2026/11/12/tijuca-ganha-primeiro-parque-do-bebe-do-rio-com-brinquedos-para-criancas-de-ate-3-anos.html",
+          "name": {
+            "th": "สวนเด็กเล็ก ลานอาฟอนโซเปนา",
+            "en": "Baby park, Praça Afonso Pena"
+          },
+          "kind": "play",
+          "area": {
+            "th": "ชิจูกา",
+            "en": "Tijuca"
+          },
+          "what": {
+            "th": "สวนสำหรับเด็กเล็ก มีคานทรงตัว ตอไม้ บ้านหลังเล็ก และท่อลอด สำหรับเด็กไม่เกิน 3 ขวบ",
+            "en": "A baby park with a balance beam, tree stumps, a little house and pipes, for children up to three"
+          },
+          "why": {
+            "th": "เครื่องเล่นแบ่งตามวัย ทำมาให้เด็กเล็กฝึกทรงตัวและเคลื่อนไหว",
+            "en": "The equipment is split by age, made for babies to practise balance and moving"
+          },
+          "q": "Praça Afonso Pena, Tijuca, Rio de Janeiro",
+          "ok": "2026-11"
+        },
+        {
+          "local": "Baixo Bebê",
+          "ages": [
+            1,
+            1,
+            0,
+            0
+          ],
+          "hrs": 2,
+          "io": "out",
+          "pram": "part",
+          "price": {
+            "th": "เช็กราคาก่อนไป",
+            "en": "Check the price"
+          },
+          "book": "none",
+          "src": "https://diariodorio.com/baixo-bebe-leblon-reinaugura-no-domingo/",
+          "name": {
+            "th": "ไบโชเบเบ หาดเลบลอง",
+            "en": "Baixo Bebê, Leblon"
+          },
+          "kind": "beach",
+          "area": {
+            "th": "หาดเลบลอง",
+            "en": "Leblon beach"
+          },
+          "what": {
+            "th": "พื้นที่ริมหาดสำหรับเด็กเล็ก มีห้องเปลี่ยนผ้าอ้อม ที่จอดรถเข็น เก้าอี้ และร่ม",
+            "en": "A beach space for babies and small children with a changing room, buggy parking, chairs and parasols"
+          },
+          "why": {
+            "th": "เด็กระบายสีผนังกระเบื้องได้ ห้องเปลี่ยนผ้าอ้อมมีผ้าอ้อมและทิชชูเปียก",
+            "en": "Children colour the tiled wall, and the changing room has nappies and wipes"
+          },
+          "q": "Baixo Bebê, Leblon, Rio de Janeiro",
+          "ok": "2026-11"
         }
       ]
     }

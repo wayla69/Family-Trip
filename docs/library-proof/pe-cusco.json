@@ -1,19 +1,101 @@
 {
   "town": "pe-cusco",
-  "kind": "eats",
-  "checked": "2026-11",
-  "rule": "A row gets ok only from a current listing, its own site or recent reviews with nothing saying closed (docs/EATS.md). A row is taken out when a search could not find the place at all or the sources disagree; a place found but not freshly confirmed stays without ok.",
-  "scope": "the 1 rows without ok; the rows that already carried ok were not re-checked in this pass",
-  "how": "Google Maps opened in headless Chromium (2026-11-23), limited view without a reviews tab, so no review date could be read; each row's own map query first, then the name with the town, a list result opened when needed; a hotel's own site or one web search only where Maps could not settle it.",
-  "confirmed": [
+  "kind": "eats + sights",
+  "checked": "2026-11-23",
+  "rule": "library-check.cjs, then the Google Maps Reviews tab sorted by newest: ok only when not marked closed, with a review from the last six months, and the map's name matching the page's.",
+  "agents": "one Haiku agent; 14 rows from Pirwa's and Green Point's own menus, Travel Venture Four (2025), Guru Explorers (2025) and Peru Explorer (2026) passed library-check.cjs, 11 went in",
+  "added": [
     {
-      "name": "Horno Colonial San Francisco",
-      "src": "Google Maps",
-      "page_name": "Horno San Francisco",
-      "evidence": "\"Horno San Francisco\", Bakery, Mariscal Castilla 572, H5H2+M3 Pisac; \"Closed · Opens 8 AM\"",
-      "ok": "2026-11"
+      "name": "Pirwa Restaurant",
+      "page_name": "Pirwa Restaurant",
+      "src": "https://www.pirwarestaurantcusco.com/en/menu/kids-menu-13/",
+      "date": "official",
+      "map": "Google Maps 'Pirwa Restaurant Cusco', Plaza San Francisco 168, 368 reviews, newest '2 days ago'"
+    },
+    {
+      "name": "Green Point",
+      "page_name": "Green Point",
+      "src": "https://greenpointcusco.com/menu-options/main-dish-kids.html",
+      "date": "official",
+      "map": "Google Maps 'Green Point Restaurant', Carmen Bajo 235, 4,308 reviews, newest '12 hours ago'"
+    },
+    {
+      "name": "L'Atelier Café Concept",
+      "page_name": "L’Atelier Café",
+      "src": "https://travelventurefour.com/cusco-with-kids-guide/",
+      "date": "2025-12",
+      "map": "Google Maps 'L'atelier Café Concept', Atoqsayk'uchi 605 A, 696 reviews, newest '4 days ago'"
+    },
+    {
+      "name": "Cappuccino Cusco Cafe",
+      "page_name": "Cappuccino Café",
+      "src": "https://travelventurefour.com/cusco-with-kids-guide/",
+      "date": "2025-12",
+      "map": "Google Maps 'Cappuccino Cusco Cafe', Portal de Comercio 141, 951 reviews, newest '3 days ago'"
+    },
+    {
+      "name": "Inka Museum",
+      "page_name": "Inka Museum",
+      "src": "https://guruexplorers.com/en/blog/cusco-with-family/",
+      "date": "2025-05",
+      "map": "Google Maps Cuesta del Almirante 103, 2,100 reviews, newest '15 hours ago'"
+    },
+    {
+      "name": "Regional Historical Museum of Cusco",
+      "page_name": "Regional Historical Museum of Cusco",
+      "src": "https://guruexplorers.com/en/blog/cusco-with-family/",
+      "date": "2025-05",
+      "map": "Google Maps Calle Garcilaso, 1,614 reviews, newest '20 hours ago'"
+    },
+    {
+      "name": "Museo de Arte Precolombino (MAP)",
+      "page_name": "Museo de Arte Pre-Colombino (MAP)",
+      "src": "https://travelventurefour.com/cusco-with-kids-guide/",
+      "date": "2025-12",
+      "map": "Google Maps 'Museo de Arte Precolombino Larco', Nazarenas 231, 1,172 reviews, newest '13 hours ago'"
+    },
+    {
+      "name": "Center for Traditional Textiles of Cusco",
+      "page_name": "Centro de Textiles Tradicionales del Cusco (CTTC)",
+      "src": "https://travelventurefour.com/cusco-with-kids-guide/",
+      "date": "2025-12",
+      "map": "Google Maps 'Traditional Textile Center of Cusco', Av. El Sol 603, 547 reviews, newest '2 months ago'"
+    },
+    {
+      "name": "Qorikancha",
+      "page_name": "Qorikancha Temple and Museum",
+      "src": "https://www.peru-explorer.com/cusco-visiting-with-kids-2026-complete-family-guide.htm",
+      "date": "2026-04",
+      "map": "Google Maps 'Qorikancha', Santo Domingo s/n, 20,824 reviews, newest '2 weeks ago'"
+    },
+    {
+      "name": "Plaza Regocijo",
+      "page_name": "Plaza Regocijo",
+      "src": "https://www.peru-explorer.com/cusco-visiting-with-kids-2026-complete-family-guide.htm",
+      "date": "2026-04",
+      "map": "Google Maps 2,362 reviews, newest 'last month'"
+    },
+    {
+      "name": "Plaza San Blas",
+      "page_name": "Plazoleta San Blas",
+      "src": "https://travelventurefour.com/cusco-with-kids-guide/",
+      "date": "2025-12",
+      "map": "Google Maps 'Plaza San Blas', Cuesta de San Blas, 3,272 reviews, newest shown '2 months ago'"
     }
   ],
-  "kept_without_ok": [],
-  "removed": []
+  "left_out": [
+    {
+      "name": "Coca Museum",
+      "why": "permanently closed on the map"
+    },
+    {
+      "name": "Parque de la Familia",
+      "why": "two parks of that name on the map, neither clearly the one the page means"
+    },
+    {
+      "name": "Chinchero",
+      "why": "a village"
+    }
+  ],
+  "estimates": "Ages and visit hours are placeholders; prices and opening notes are the pages' own."
 }

@@ -262,6 +262,252 @@
           "q": "Mercado 28, Centro, Cancún",
           "ok": "2026-11",
           "src": "https://gocity.com/en/cancun/things-to-do/best-markets-in-cancun"
+        },
+        {
+          "local": "",
+          "ages": [
+            1,
+            2,
+            2,
+            2
+          ],
+          "hrs": 2,
+          "io": "out",
+          "pram": "part",
+          "price": {
+            "th": "ฟรี",
+            "en": "Free"
+          },
+          "book": "none",
+          "src": "https://www.lonelyplanet.com/articles/cancun-with-kids",
+          "name": {
+            "th": "หาดเอร์โมซากาเลตา",
+            "en": "Playa Hermosa Caleta"
+          },
+          "kind": "beach",
+          "area": {
+            "th": "อิสลามูเฮเรส",
+            "en": "Isla Mujeres"
+          },
+          "what": {
+            "th": "อ่าวน้ำใสข้างหาดทรายขาวของเกาะ มีปลาตัวเล็กให้ดู",
+            "en": "A clear inlet beside the island's white beach, with small fish to watch"
+          },
+          "why": {
+            "th": "มีปลาเล็ก ๆ ให้ดูใกล้หาด",
+            "en": "Small fish to watch close to the beach"
+          },
+          "tip": {
+            "th": "นั่งเรือเฟอร์รีไปอิสลามูเฮเรส แล้วเดินต่ออีกนิด",
+            "en": "Take the ferry to Isla Mujeres, then a short walk"
+          },
+          "q": "Hermosa Caleta, Isla Mujeres",
+          "ok": "2026-11"
+        },
+        {
+          "local": "",
+          "ages": [
+            2,
+            2,
+            2,
+            1
+          ],
+          "hrs": 2,
+          "io": "out",
+          "pram": "yes",
+          "price": {
+            "th": "ฟรี",
+            "en": "Free"
+          },
+          "book": "none",
+          "src": "https://www.anadventurousworld.com/things-to-do-in-merida-with-kids/",
+          "name": {
+            "th": "สวนกรันปาร์เกลาปลันชา",
+            "en": "Gran Parque La Plancha"
+          },
+          "kind": "park",
+          "area": {
+            "th": "ใจกลางเมริดา",
+            "en": "Central Mérida"
+          },
+          "what": {
+            "th": "สวนสาธารณะในเมือง มีน้ำพุให้เล่นน้ำ และสนามเด็กเล่นทรายขนาดใหญ่",
+            "en": "A city park with splash fountains and a giant sand playground"
+          },
+          "why": {
+            "th": "น้ำพุเต้นตามเพลง เล่นได้ในวันร้อน",
+            "en": "The fountains dance to music, good on a hot day"
+          },
+          "tip": {
+            "th": "เปิดทุกวัน 7:00–23:00 เตรียมชุดว่ายน้ำ ผ้าเช็ดตัว และเสื้อผ้าสำรอง",
+            "en": "Open every day 7am to 11pm; bring swimwear, a towel and a change of clothes"
+          },
+          "q": "Gran Parque La Plancha, Mérida",
+          "ok": "2026-11"
+        },
+        {
+          "local": "",
+          "ages": [
+            0,
+            1,
+            2,
+            2
+          ],
+          "hrs": 1,
+          "io": "in",
+          "pram": "part",
+          "price": {
+            "th": "≈ 100 เปโซ (นักท่องเที่ยวต่างชาติ)",
+            "en": "≈ 100 pesos (international visitors)"
+          },
+          "book": "none",
+          "src": "https://www.anadventurousworld.com/things-to-do-in-merida-with-kids/",
+          "name": {
+            "th": "พิพิธภัณฑ์แสง",
+            "en": "Museo de la Luz"
+          },
+          "kind": "museumkid",
+          "area": {
+            "th": "สวนกรันปาร์เกลาปลันชา เมริดา",
+            "en": "Gran Parque La Plancha, Mérida"
+          },
+          "what": {
+            "th": "พิพิธภัณฑ์วิทยาศาสตร์เรื่องแสงและสี มีของให้ลองเล่น",
+            "en": "A science museum about light and colour, with hands-on displays"
+          },
+          "why": {
+            "th": "เหมาะกับเด็กที่ชอบกดปุ่มและดูว่าสิ่งต่าง ๆ ทำงานอย่างไร",
+            "en": "Great for children who like pressing buttons"
+          },
+          "tip": {
+            "th": "เปิดอังคาร–อาทิตย์ 9:00–13:00 และ 16:00–20:00 วันอังคารเข้าฟรี",
+            "en": "Tuesday to Sunday 9am–1pm and 4pm–8pm; free on Tuesdays"
+          },
+          "q": "Museo de la Luz Mérida UNAM, Mérida",
+          "ok": "2026-11"
+        },
+        {
+          "local": "",
+          "ages": [
+            0,
+            1,
+            2,
+            2
+          ],
+          "hrs": 1.5,
+          "io": "in",
+          "pram": "part",
+          "price": {
+            "th": "≈ 200 เปโซ",
+            "en": "≈ 200 pesos"
+          },
+          "book": "none",
+          "src": "https://www.anadventurousworld.com/things-to-do-in-merida-with-kids/",
+          "name": {
+            "th": "พระราชวังดนตรี",
+            "en": "Palacio de la Música"
+          },
+          "kind": "museumkid",
+          "area": {
+            "th": "เมริดา",
+            "en": "Mérida"
+          },
+          "what": {
+            "th": "พิพิธภัณฑ์ดนตรีเม็กซิกันแบบลงมือเล่น มีจุดฟังเพลงและเครื่องดนตรี",
+            "en": "A hands-on museum of Mexican music, with listening stations and instruments"
+          },
+          "why": {
+            "th": "ลูก ๆ ของผู้เขียนชอบเสียงและปุ่มกดมาก",
+            "en": "The writer's children loved the sounds and buttons"
+          },
+          "tip": {
+            "th": "เปิดพุธ–อาทิตย์ 10:00–17:00",
+            "en": "Wednesday to Sunday, 10am to 5pm"
+          },
+          "q": "Palacio de la Música, Calle 58, Mérida",
+          "ok": "2026-11"
+        },
+        {
+          "local": "",
+          "ages": [
+            0,
+            1,
+            2,
+            2
+          ],
+          "hrs": 3,
+          "io": "out",
+          "pram": "no",
+          "price": {
+            "th": "เช็กราคาก่อนไป",
+            "en": "Check the price"
+          },
+          "book": "none",
+          "src": "https://www.anadventurousworld.com/things-to-do-in-merida-with-kids/",
+          "name": {
+            "th": "อุชมัล",
+            "en": "Uxmal"
+          },
+          "kind": "culture",
+          "area": {
+            "th": "ห่างเมริดาราว 1 ชั่วโมง",
+            "en": "About an hour from Mérida"
+          },
+          "what": {
+            "th": "หนึ่งในแหล่งโบราณสถานมายาที่น่าทึ่งที่สุดของภูมิภาค",
+            "en": "One of the most impressive Maya sites in the region"
+          },
+          "why": {
+            "th": "คนน้อยกว่าชีเชนอิตซา จึงพาเด็กไปง่ายกว่า",
+            "en": "Quieter than Chichén Itzá, so easier with children"
+          },
+          "tip": {
+            "th": "ไปกลับในวันเดียว หน้าเว็บเตือนว่าร้อนถึง 36 องศา",
+            "en": "A day trip; the page warns of heat up to 36 degrees"
+          },
+          "q": "Uxmal Archaeological Zone, Yucatán",
+          "ok": "2026-11"
+        },
+        {
+          "local": "La Peni",
+          "ages": [
+            1,
+            2,
+            2,
+            2
+          ],
+          "hrs": 1,
+          "io": "out",
+          "pram": "part",
+          "price": {
+            "th": "เช็กราคาก่อนไป",
+            "en": "Check the price"
+          },
+          "book": "none",
+          "src": "https://www.anadventurousworld.com/things-to-do-in-merida-with-kids/",
+          "name": {
+            "th": "การแสดงแสงลาเปนี",
+            "en": "La Peni light show"
+          },
+          "kind": "show",
+          "area": {
+            "th": "ปาร์เกเดลาปาซ เมริดา",
+            "en": "Parque de la Paz, Mérida"
+          },
+          "what": {
+            "th": "การแสดงภาพเคลื่อนไหวฉายบนอาคารคุกเก่า",
+            "en": "Animated shows projected onto the old prison"
+          },
+          "why": {
+            "th": "มักมีอะไรให้เด็กเล่นแบบมีส่วนร่วม",
+            "en": "Usually something interactive for children to play with"
+          },
+          "tip": {
+            "th": "แสดงพฤหัสบดี–อาทิตย์ ถ้าฝนตกอาจงดแสดง",
+            "en": "Thursday to Sunday; cancelled if it rains"
+          },
+          "q": "Parque de la Paz, Mérida",
+          "ok": "2026-11"
         }
       ]
     }

@@ -327,3 +327,50 @@ batch-06 of docs/library-briefs. +5 from the Rotorua tourism site’s family-fri
 
 ### Fiji, 23 Nov 2026
 batch-28 of docs/library-briefs. +6: Isa Lei, The Curry House, Zigzag Cafe, The Coffee Hub, Sentai Seafood (Nadi), Mamacita (Denarau). Proof in `docs/library-proof/fj-islands.json`.
+### Buenos Aires, 23 Nov 2026
+batch-07 of docs/library-briefs. +2 restaurants with supervised play areas (Aida, Ragazzi) from Time Out Buenos Aires. Proof in `docs/library-proof/ar-buenosaires.json`.
+
+### Toronto, 23 Nov 2026
+batch-08 of docs/library-briefs. +11 from Toronto Tourism’s family restaurant list (Cluny, Café Diplomatico, Mamma Martino’s, Descendant, Grazie, The Rec Room, Pinocchio Play Café, Lady Marmalade, Emma’s, Maha’s, Rol San); per-person ranges are the page’s. Proof in `docs/library-proof/ca-toronto.json`.
+
+### Banff, 23 Nov 2026
+batch-08 of docs/library-briefs. +9 in Canmore and Banff (Harvest Café, Rocket Pie, Canmore Gaucho, Dingsway, Red Rock Pizza, Marra’s Way, Canadian Pizza Unlimited, Tooloulou’s, Magpie & Stump). Proof in `docs/library-proof/ca-banff.json`.
+
+### Vancouver, 23 Nov 2026
+batch-09 of docs/library-briefs. +4 from Time Out’s kid-friendly list: Nook (Kitsilano), Sophie’s Cosmic Cafe, Via Tevere (Victoria Drive), Burgoo (Main Street). Fable Diner left out: closed for good. Proof in `docs/library-proof/ca-vancouver.json`.
+
+### Santiago and Valparaíso, 23 Nov 2026
+batch-10 of docs/library-briefs. +10 from The Clinic’s 2026 route of restaurants for children (Gino Lautaro, La Argentina, Neko-San, DeCalle, Parigó, Dipsy’s Backyard, El Portal, Café Estación, Oiso, Casa Regina). Proof in `docs/library-proof/cl-santiago.json`.
+
+### Yucatán, 23 Nov 2026
+batch-21 of docs/library-briefs. +2: Porfirio's Cancún, Porfirio's Mérida. Proof in `docs/library-proof/mx-yucatan.json`.
+
+### Boston, 23 Nov 2026
+batch-24 of docs/library-briefs. +5: Alamo Drafthouse (Seaport), Little Cocoa Bean Co., Life Alive (Cambridge), The Friendly Toast (Back Bay), American Flatbread at Sacco's (Somerville). Proof in `docs/library-proof/us-boston.json`.
+
+### Chicago, 23 Nov 2026
+batch-24 of docs/library-briefs. +6: Little Goat Diner, Parson's Chicken & Fish, Beatrix, Sterling Food Hall, Eleven City Diner, The Original Rainbow Cone (Navy Pier). Proof in `docs/library-proof/us-chicago.json`.
+
+### Washington DC, 23 Nov 2026
+batch-24 of docs/library-briefs. +12: Silver Diner, The Roost, Florida Avenue Grill, Kura Sushi, 2 Amys, Comet Ping Pong, Medium Rare, Open City, Unconventional Diner, bartaco, Hard Rock Cafe, Baked by Yael. Proof in `docs/library-proof/us-dc.json`.
+
+### Hawaii (Oahu), 23 Nov 2026
+batch-25 of docs/library-briefs. +4: Kahuku Farms, Liliha Bakery (International Market Place), Monkeypod Kitchen (Waikiki), Makahiki (Aulani). Proof in `docs/library-proof/us-hawaii.json`.
+
+### Seattle, 23 Nov 2026
+batch-25 of docs/library-briefs. +4: Young's Restaurant, Outsider BBQ, Stoneburner, Paseo (SoDo). Proof in `docs/library-proof/us-seattle.json`.
+
+### Las Vegas & the Grand Canyon, 23 Nov 2026
+batch-25 of docs/library-briefs. +3 in Las Vegas: RPM Italian, Summer House (Durango), Wicked Spoon. Proof in `docs/library-proof/us-southwest.json`.
+
+### Atacama, 23 Nov 2026
+batch-27 of docs/library-briefs. +3 in San Pedro: Jardín Meraki, Rincón de Solor, Pulpería Atacama. Proof in `docs/library-proof/cl-atacama.json`.
+
+### Yellowstone, 23 Nov 2026
+batch-31 of docs/library-briefs. +6: Lake Deli, Lake Lodge Cafeteria, Mammoth Terrace Grill, Bear Paw Deli, Geyser Grill, Grant Village Dining Room. Proof in `docs/library-proof/p-yellowstone.json`.
+
+### Alaska, 23 Nov 2026
+batch-31 of docs/library-briefs. +3 in Anchorage: Simon & Seafort's, Golden Donuts, Dino's Donuts. Proof in `docs/library-proof/us-alaska.json`.
+
+### Cusco, 23 Nov 2026
+batch-31 of docs/library-briefs. +4: Pirwa, Green Point, L'Atelier Café Concept, Cappuccino Cusco Cafe. Proof in `docs/library-proof/pe-cusco.json`.

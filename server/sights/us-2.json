@@ -258,6 +258,43 @@
           "q": "Museum of the Yellowstone, West Yellowstone, Montana",
           "ok": "2026-11",
           "src": "https://museumoftheyellowstone.org/tickets-hours"
+        },
+        {
+          "local": "",
+          "ages": [
+            1,
+            2,
+            2,
+            2
+          ],
+          "hrs": 0.5,
+          "io": "in",
+          "pram": "part",
+          "price": {
+            "th": "เช็กราคาก่อนไป",
+            "en": "Check the price"
+          },
+          "book": "none",
+          "src": "https://fullsuitcase.com/best-things-yellowstone-kids/",
+          "name": {
+            "th": "โอลด์เฟธฟูลอินน์",
+            "en": "Old Faithful Inn"
+          },
+          "kind": "culture",
+          "area": {
+            "th": "โอลด์เฟธฟูล เยลโลว์สโตน",
+            "en": "Old Faithful, Yellowstone"
+          },
+          "what": {
+            "th": "โรงแรมไม้เก่าแก่ ภายในงดงามให้เดินชม",
+            "en": "The historic wooden inn with a grand interior to walk through"
+          },
+          "why": {
+            "th": "เด็ก ๆ ชอบปีนบันไดไม้",
+            "en": "Children love climbing the wooden stairs"
+          },
+          "q": "Old Faithful Inn, Yellowstone",
+          "ok": "2026-11"
         }
       ]
     },
@@ -535,6 +572,248 @@
           "q": "Anchorage Market and Festival, 3rd Avenue, Anchorage, Alaska",
           "ok": "2026-11",
           "src": "https://festivalnet.com/94898/Anchorage-Alaska/Marketplace-Expos/Anchorage-Weekend-Downtown-Market"
+        },
+        {
+          "local": "",
+          "ages": [
+            1,
+            2,
+            2,
+            2
+          ],
+          "hrs": 2,
+          "io": "in",
+          "pram": "yes",
+          "price": {
+            "th": "เช็กราคาก่อนไป",
+            "en": "Check the price"
+          },
+          "book": "none",
+          "src": "https://mommypoppins.com/anywhere-kids/family-travel/best-things-to-do-anchorage-alaska-kids-itinerary",
+          "name": {
+            "th": "พิพิธภัณฑ์การบินอะแลสกา",
+            "en": "Alaska Aviation Museum"
+          },
+          "kind": "museum",
+          "area": {
+            "th": "แองเคอเรจ",
+            "en": "Anchorage"
+          },
+          "what": {
+            "th": "เครื่องบินรุ่นเก่าและเครื่องบินทะเล มีหอบังคับการบินริมน้ำ",
+            "en": "Vintage planes and float planes, with a working flight tower by the water"
+          },
+          "why": {
+            "th": "มีมุมของเล่นและเครื่องบินเล็กให้เด็กเล่น",
+            "en": "A small area with toys and small planes for children"
+          },
+          "tip": {
+            "th": "เครื่องจำลองการบินเสียค่าเล่นเล็กน้อย",
+            "en": "The flight simulator costs a small fee"
+          },
+          "q": "Alaska Aviation Museum, 4721 Aircraft Dr, Anchorage",
+          "ok": "2026-11"
+        },
+        {
+          "local": "",
+          "ages": [
+            1,
+            2,
+            2,
+            2
+          ],
+          "hrs": 2,
+          "io": "in",
+          "pram": "yes",
+          "price": {
+            "th": "เช็กราคาก่อนไป",
+            "en": "Check the price"
+          },
+          "book": "none",
+          "src": "https://mommypoppins.com/anywhere-kids/family-travel/best-things-to-do-anchorage-alaska-kids-itinerary",
+          "name": {
+            "th": "พิพิธภัณฑ์วิทยาศาสตร์และธรรมชาติอะแลสกา",
+            "en": "Alaska Museum of Science and Nature"
+          },
+          "kind": "museumkid",
+          "area": {
+            "th": "แองเคอเรจ",
+            "en": "Anchorage"
+          },
+          "what": {
+            "th": "ไดโนเสาร์ สัตว์ยุคน้ำแข็ง ฟอสซิล นก และสัตว์ทะเล",
+            "en": "Dinosaurs, Ice Age animals, fossils, birds and sea life"
+          },
+          "why": {
+            "th": "ที่หลบฝนหรืออากาศหนาว",
+            "en": "A place to get out of the rain or the cold"
+          },
+          "tip": {
+            "th": "เปิดเฉพาะวันพฤหัสบดีถึงวันเสาร์",
+            "en": "Open Thursday to Saturday only"
+          },
+          "q": "Alaska Museum of Science and Nature, 201 N Bragaw St, Anchorage",
+          "ok": "2026-11"
+        },
+        {
+          "local": "",
+          "ages": [
+            2,
+            2,
+            2,
+            1
+          ],
+          "hrs": 1.5,
+          "io": "in",
+          "pram": "yes",
+          "price": {
+            "th": "เช็กราคาก่อนไป",
+            "en": "Check the price"
+          },
+          "book": "none",
+          "src": "https://mommypoppins.com/anywhere-kids/family-travel/best-things-to-do-anchorage-alaska-kids-itinerary",
+          "name": {
+            "th": "ห้องสมุดซี.เจ. ลูแซก",
+            "en": "Z.J. Loussac Library"
+          },
+          "kind": "play",
+          "area": {
+            "th": "แองเคอเรจ",
+            "en": "Anchorage"
+          },
+          "what": {
+            "th": "ชั้นเด็กมีเกมล่าสมบัติ งานฝีมือ และมุมเล่นสำหรับเด็กเล็ก",
+            "en": "A children's floor with scavenger hunts, crafts and a play area for babies and toddlers"
+          },
+          "why": {
+            "th": "เล่น ทำงานฝีมือ และเกมในร่ม",
+            "en": "Indoor play, crafts and games"
+          },
+          "tip": {
+            "th": "มีสนามเด็กเล่นใหญ่ที่มุมลานจอดรถ",
+            "en": "A large playground sits in the far corner of the car park"
+          },
+          "q": "Z.J. Loussac Library, 3600 Denali St, Anchorage",
+          "ok": "2026-11"
+        },
+        {
+          "local": "",
+          "ages": [
+            1,
+            2,
+            2,
+            1
+          ],
+          "hrs": 2,
+          "io": "out",
+          "pram": "part",
+          "price": {
+            "th": "เช็กราคาก่อนไป",
+            "en": "Check the price"
+          },
+          "book": "none",
+          "src": "https://mommypoppins.com/anywhere-kids/family-travel/best-things-to-do-anchorage-alaska-kids-itinerary",
+          "name": {
+            "th": "เหมืองอินเดียนแวลลีย์",
+            "en": "Indian Valley Mine"
+          },
+          "kind": "farm",
+          "area": {
+            "th": "อินเดียน ทางหลวงซูเวิร์ด",
+            "en": "Indian, Seward Highway"
+          },
+          "what": {
+            "th": "เหมืองเก่าให้ร่อนทอง มีเป็ดและไก่งวงอยู่ใกล้ ๆ",
+            "en": "A historic mine where you pan for gold, with ducks and turkeys nearby"
+          },
+          "why": {
+            "th": "ทุกคนได้ทองกลับบ้าน",
+            "en": "Everyone goes home with gold"
+          },
+          "q": "Indian Valley Mine, 27301 Seward Hwy, Indian, AK",
+          "ok": "2026-11"
+        },
+        {
+          "local": "",
+          "ages": [
+            1,
+            2,
+            2,
+            2
+          ],
+          "hrs": 1,
+          "io": "out",
+          "pram": "part",
+          "price": {
+            "th": "เช็กราคาก่อนไป",
+            "en": "Check the price"
+          },
+          "book": "none",
+          "src": "https://mommypoppins.com/anywhere-kids/family-travel/best-things-to-do-anchorage-alaska-kids-itinerary",
+          "name": {
+            "th": "ชายหาดคินเคดพาร์ก",
+            "en": "Kincaid Park beach"
+          },
+          "kind": "beach",
+          "area": {
+            "th": "แองเคอเรจ",
+            "en": "Anchorage"
+          },
+          "what": {
+            "th": "ชายหาดที่มีทะเลด้านหนึ่งและหน้าผาอีกด้าน",
+            "en": "A beach with the sea on one side and bluffs on the other"
+          },
+          "why": {
+            "th": "ถ้าคนไม่เยอะ อาจเห็นมูสเดินผ่าน",
+            "en": "Moose may stroll past when it is quiet"
+          },
+          "tip": {
+            "th": "มีทรายดูด อย่าเข้าใกล้น้ำ",
+            "en": "There is quicksand: keep away from the water"
+          },
+          "q": "Kincaid Park, 9401 Raspberry Rd, Anchorage",
+          "ok": "2026-11"
+        },
+        {
+          "local": "",
+          "ages": [
+            1,
+            2,
+            2,
+            2
+          ],
+          "hrs": 2,
+          "io": "out",
+          "pram": "part",
+          "price": {
+            "th": "เช็กราคาก่อนไป",
+            "en": "Check the price"
+          },
+          "book": "none",
+          "src": "https://mommypoppins.com/anywhere-kids/family-travel/best-things-to-do-anchorage-alaska-kids-itinerary",
+          "name": {
+            "th": "ทะเลสาบเอคลุตนา",
+            "en": "Eklutna Lake"
+          },
+          "kind": "nature",
+          "area": {
+            "th": "อุทยานแห่งรัฐชูกาช ใกล้แองเคอเรจ",
+            "en": "Chugach State Park, near Anchorage"
+          },
+          "what": {
+            "th": "ทะเลสาบวิวภูเขา มีทางเดินสำหรับทุกวัย",
+            "en": "A lake with mountain views and walks for all ages"
+          },
+          "why": {
+            "th": "เด็กเล็กเดินริมทะเลสาบ เด็กโตเดินขึ้นจุดชมวิวแรก",
+            "en": "Little ones walk by the lake, older ones hike to the first lookout"
+          },
+          "tip": {
+            "th": "จุดชมวิวแรกสวยไม่แพ้จุดที่สูงกว่า",
+            "en": "The first lookout is as pretty as the higher ones"
+          },
+          "q": "Eklutna Lake, Chugach State Park",
+          "ok": "2026-11"
         }
       ]
     },
@@ -795,6 +1074,199 @@
           "q": "Boston Common, 139 Tremont Street, Boston",
           "ok": "2026-11",
           "src": "https://www.boston.gov/parks/boston-common"
+        },
+        {
+          "local": "",
+          "ages": [
+            1,
+            2,
+            2,
+            1
+          ],
+          "hrs": 2,
+          "io": "in",
+          "pram": "part",
+          "price": {
+            "th": "เช็กราคาก่อนไป",
+            "en": "Check the price"
+          },
+          "book": "rec",
+          "src": "https://www.timeout.com/boston/things-to-do/things-to-do-with-kids-in-boston",
+          "name": {
+            "th": "เลโก้ดิสคัฟเวอรีเซ็นเตอร์ บอสตัน",
+            "en": "LEGO Discovery Center Boston"
+          },
+          "kind": "play",
+          "area": {
+            "th": "แอสเซมบลีโรว์ ซอมเมอร์วิลล์",
+            "en": "Assembly Row, Somerville"
+          },
+          "what": {
+            "th": "ศูนย์เลโก้ที่มียีราฟเลโก้ยักษ์อยู่หน้าทางเข้า",
+            "en": "A LEGO centre marked by a giant LEGO giraffe"
+          },
+          "why": {
+            "th": "ต่อเลโก้อิสระและร่วมกิจกรรม",
+            "en": "Free building and activities"
+          },
+          "q": "LEGO Discovery Center Boston, Assembly Row, Somerville",
+          "ok": "2026-11"
+        },
+        {
+          "local": "",
+          "ages": [
+            2,
+            2,
+            2,
+            2
+          ],
+          "hrs": 2,
+          "io": "out",
+          "pram": "part",
+          "price": {
+            "th": "ฟรี",
+            "en": "Free"
+          },
+          "book": "none",
+          "src": "https://www.timeout.com/boston/things-to-do/things-to-do-with-kids-in-boston",
+          "name": {
+            "th": "เกาะคาสเซิลและป้อมอินดีเพนเดนซ์",
+            "en": "Castle Island and Fort Independence"
+          },
+          "kind": "park",
+          "area": {
+            "th": "เซาท์บอสตัน บอสตัน",
+            "en": "South Boston, Boston"
+          },
+          "what": {
+            "th": "สวนริมทะเล 22 เอเคอร์ รอบป้อมจากทศวรรษ 1850",
+            "en": "A 22-acre shoreline park around an 1850s fort"
+          },
+          "why": {
+            "th": "มีเนินหญ้า สนามเด็กเล่น และหาดให้ขุดทราย",
+            "en": "Grassy hills, a playground and a beach to dig in"
+          },
+          "tip": {
+            "th": "ชมป้อมฟรีวันเสาร์และอาทิตย์ 12:00–15:30",
+            "en": "The fort can be toured free on Saturdays and Sundays, noon–3:30pm"
+          },
+          "q": "Fort Independence, Castle Island, South Boston",
+          "ok": "2026-11"
+        },
+        {
+          "local": "",
+          "ages": [
+            2,
+            2,
+            2,
+            2
+          ],
+          "hrs": 1,
+          "io": "out",
+          "pram": "yes",
+          "price": {
+            "th": "ฟรี",
+            "en": "Free"
+          },
+          "book": "none",
+          "src": "https://www.timeout.com/boston/things-to-do/things-to-do-with-kids-in-boston",
+          "name": {
+            "th": "สวนโรสเคนเนดีกรีนเวย์",
+            "en": "Rose Kennedy Greenway"
+          },
+          "kind": "park",
+          "area": {
+            "th": "ใจกลางเมือง บอสตัน",
+            "en": "Downtown, Boston"
+          },
+          "what": {
+            "th": "สวนยาว 1.5 ไมล์ บนแนวทางด่วนยกระดับเดิม",
+            "en": "A 1.5-mile park where an elevated highway once ran"
+          },
+          "why": {
+            "th": "พื้นที่สีเขียวสำหรับครอบครัวกลางเมือง",
+            "en": "Green space for families in the middle of the city"
+          },
+          "q": "Rose Kennedy Greenway, Boston",
+          "ok": "2026-11"
+        },
+        {
+          "local": "",
+          "ages": [
+            0,
+            1,
+            2,
+            2
+          ],
+          "hrs": 0.5,
+          "io": "in",
+          "pram": "part",
+          "price": {
+            "th": "เช็กราคาก่อนไป",
+            "en": "Check the price"
+          },
+          "book": "none",
+          "src": "https://www.timeout.com/boston/things-to-do/things-to-do-with-kids-in-boston",
+          "name": {
+            "th": "แมปพาเรียม",
+            "en": "The Mapparium"
+          },
+          "kind": "museum",
+          "area": {
+            "th": "คริสเตียนไซแอนซ์พลาซา บอสตัน",
+            "en": "Christian Science Plaza, Boston"
+          },
+          "what": {
+            "th": "ลูกโลกที่เดินเข้าไปได้ใหญ่ที่สุดในโลก ข้ามด้วยสะพานกระจก",
+            "en": "The world's largest walk-in globe, crossed on a glass bridge"
+          },
+          "why": {
+            "th": "เด็ก ๆ ชอบเสียงก้องแปลก ๆ ข้างใน",
+            "en": "Children love the strange echoes inside"
+          },
+          "q": "Mapparium, 200 Massachusetts Ave, Boston",
+          "ok": "2026-11"
+        },
+        {
+          "local": "",
+          "ages": [
+            2,
+            2,
+            2,
+            1
+          ],
+          "hrs": 2.5,
+          "io": "out",
+          "pram": "yes",
+          "price": {
+            "th": "เช็กราคาก่อนไป",
+            "en": "Check the price"
+          },
+          "book": "none",
+          "src": "https://www.timeout.com/boston/things-to-do/things-to-do-with-kids-in-boston",
+          "name": {
+            "th": "สวนสัตว์สโตน",
+            "en": "Stone Zoo"
+          },
+          "kind": "zoo",
+          "area": {
+            "th": "สโตนแฮม",
+            "en": "Stoneham"
+          },
+          "what": {
+            "th": "สวนสัตว์อายุกว่าร้อยปีบนพื้นที่ 26 เอเคอร์",
+            "en": "A century-old zoo on 26 acres"
+          },
+          "why": {
+            "th": "ทางเดินร่มรื่น มีสัตว์ตั้งแต่จิ้งจอกอาร์กติกถึงวัวซีบู",
+            "en": "Shady paths and animals from arctic fox to zebu"
+          },
+          "tip": {
+            "th": "อย่าพลาดมุมนกฟลามิงโก",
+            "en": "Look for the flamingo cove"
+          },
+          "q": "Stone Zoo, 149 Pond St, Stoneham",
+          "ok": "2026-11"
         }
       ]
     },
@@ -1072,6 +1544,195 @@
           "q": "Brookfield Zoo Chicago, 8400 W 31st St, Brookfield, Illinois",
           "ok": "2026-11",
           "src": "https://brookfieldzoo.org/Visit"
+        },
+        {
+          "local": "",
+          "ages": [
+            0,
+            2,
+            2,
+            1
+          ],
+          "hrs": 1.5,
+          "io": "in",
+          "pram": "part",
+          "price": {
+            "th": "เช็กราคาก่อนไป",
+            "en": "Check the price"
+          },
+          "book": "none",
+          "src": "https://www.choosechicago.com/articles/families/30-kid-friendly-things-to-do-in-chicago/",
+          "name": {
+            "th": "พิพิธภัณฑ์เด็กบรอนซ์วิลล์",
+            "en": "Bronzeville Children's Museum"
+          },
+          "kind": "museumkid",
+          "area": {
+            "th": "เซาท์ชอร์ ชิคาโก",
+            "en": "South Shore, Chicago"
+          },
+          "what": {
+            "th": "พิพิธภัณฑ์เด็กเรื่องประวัติศาสตร์ชาวแอฟริกันอเมริกัน",
+            "en": "A children's museum about African American history"
+          },
+          "why": {
+            "th": "ลงมือเล่นวิทยาศาสตร์และศิลปะ สำหรับเด็ก 4–9 ขวบ",
+            "en": "Hands-on science and art for ages 4 to 9"
+          },
+          "q": "Bronzeville Children's Museum, 9301 S Stony Island Ave, Chicago",
+          "ok": "2026-11"
+        },
+        {
+          "local": "",
+          "ages": [
+            1,
+            2,
+            2,
+            2
+          ],
+          "hrs": 1.5,
+          "io": "in",
+          "pram": "part",
+          "price": {
+            "th": "เช็กราคาก่อนไป",
+            "en": "Check the price"
+          },
+          "book": "rec",
+          "src": "https://www.choosechicago.com/articles/families/30-kid-friendly-things-to-do-in-chicago/",
+          "name": {
+            "th": "คัลเลอร์แฟกทอรี ชิคาโก",
+            "en": "Color Factory Chicago"
+          },
+          "kind": "culture",
+          "area": {
+            "th": "อาคารวิลลิส ชิคาโก",
+            "en": "Willis Tower, Chicago"
+          },
+          "what": {
+            "th": "นิทรรศการศิลปะเรื่องสีแบบมีส่วนร่วม",
+            "en": "An interactive art experience of colour"
+          },
+          "why": {
+            "th": "ห้องสีสดใสที่ทำร่วมกับศิลปินท้องถิ่น",
+            "en": "Bright rooms made with local artists"
+          },
+          "q": "Color Factory Chicago, 233 S Wacker Dr, Chicago",
+          "ok": "2026-11"
+        },
+        {
+          "local": "",
+          "ages": [
+            1,
+            2,
+            2,
+            2
+          ],
+          "hrs": 1.5,
+          "io": "in",
+          "pram": "part",
+          "price": {
+            "th": "เช็กราคาก่อนไป",
+            "en": "Check the price"
+          },
+          "book": "rec",
+          "src": "https://www.choosechicago.com/articles/families/30-kid-friendly-things-to-do-in-chicago/",
+          "name": {
+            "th": "สกายเด็ก ชิคาโก",
+            "en": "Skydeck Chicago"
+          },
+          "kind": "views",
+          "area": {
+            "th": "อาคารวิลลิส ชิคาโก",
+            "en": "Willis Tower, Chicago"
+          },
+          "what": {
+            "th": "วิวเมืองและทะเลสาบจากยอดอาคารวิลลิส",
+            "en": "Views of the city and the lake from the top of Willis Tower"
+          },
+          "why": {
+            "th": "มีพิพิธภัณฑ์เล็ก ๆ แล้วก้าวออกไปบนกล่องกระจกเดอะเลดจ์",
+            "en": "A small museum, then a step out onto The Ledge"
+          },
+          "q": "Skydeck Chicago, 233 S Wacker Dr, Chicago",
+          "ok": "2026-11"
+        },
+        {
+          "local": "",
+          "ages": [
+            0,
+            1,
+            2,
+            2
+          ],
+          "hrs": 1,
+          "io": "in",
+          "pram": "part",
+          "price": {
+            "th": "เช็กราคาก่อนไป",
+            "en": "Check the price"
+          },
+          "book": "none",
+          "src": "https://www.choosechicago.com/articles/families/30-kid-friendly-things-to-do-in-chicago/",
+          "name": {
+            "th": "พิพิธภัณฑ์นักเขียนอเมริกัน",
+            "en": "American Writers Museum"
+          },
+          "kind": "museum",
+          "area": {
+            "th": "ถนนมิชิแกน ชิคาโก",
+            "en": "Michigan Avenue, Chicago"
+          },
+          "what": {
+            "th": "พิพิธภัณฑ์เรื่องการเล่าเรื่อง มีของให้ลงมือเล่น",
+            "en": "A museum of storytelling with hands-on exhibits"
+          },
+          "why": {
+            "th": "มีห้องวรรณกรรมเด็กให้เล่นกับคำ",
+            "en": "A children's literature gallery for playing with words"
+          },
+          "q": "American Writers Museum, 180 N Michigan Ave, Chicago",
+          "ok": "2026-11"
+        },
+        {
+          "local": "",
+          "ages": [
+            1,
+            2,
+            2,
+            2
+          ],
+          "hrs": 1.5,
+          "io": "out",
+          "pram": "part",
+          "price": {
+            "th": "เช็กราคาก่อนไป",
+            "en": "Check the price"
+          },
+          "book": "none",
+          "src": "https://www.choosechicago.com/articles/families/30-kid-friendly-things-to-do-in-chicago/",
+          "name": {
+            "th": "เพียร์พาร์ก",
+            "en": "Pier Park"
+          },
+          "kind": "ride",
+          "area": {
+            "th": "เนวีเพียร์ ชิคาโก",
+            "en": "Navy Pier, Chicago"
+          },
+          "what": {
+            "th": "เครื่องเล่นคลาสสิกและเขาวงกตบ้านกระจก",
+            "en": "Classic rides and a funhouse maze"
+          },
+          "why": {
+            "th": "เครื่องเล่นสำหรับเด็กบนท่าเรือ",
+            "en": "Rides for children on the pier"
+          },
+          "tip": {
+            "th": "คืนหน้าร้อนมีพลุริมน้ำ ดูได้ไม่ต้องซื้อตั๋ว",
+            "en": "On summer nights the fireworks over the water need no ticket"
+          },
+          "q": "Pier Park, Navy Pier, Chicago",
+          "ok": "2026-11"
         }
       ]
     },
@@ -1332,6 +1993,437 @@
           "q": "Lincoln Memorial, 2 Lincoln Memorial Cir NW, Washington DC",
           "ok": "2026-11",
           "src": "https://www.nps.gov/places/000/lincoln-memorial-reflecting-pool.htm"
+        },
+        {
+          "local": "",
+          "ages": [
+            2,
+            2,
+            2,
+            2
+          ],
+          "hrs": 1.5,
+          "io": "in",
+          "pram": "yes",
+          "price": {
+            "th": "เช็กราคาก่อนไป",
+            "en": "Check the price"
+          },
+          "book": "none",
+          "src": "https://mommypoppins.com/washington-dc-kids/best-of-lists/things-to-do-in-dc-that-everyone-will-love-from-toddlers-to-teens",
+          "name": {
+            "th": "พิพิธภัณฑ์ชนพื้นเมืองอเมริกันแห่งชาติ",
+            "en": "National Museum of the American Indian"
+          },
+          "kind": "museumkid",
+          "area": {
+            "th": "เนชันแนลมอลล์ วอชิงตัน ดี.ซี.",
+            "en": "National Mall, Washington DC"
+          },
+          "what": {
+            "th": "พิพิธภัณฑ์ที่มีศูนย์กิจกรรม imagiNATIONS",
+            "en": "A museum with the imagiNATIONS activity centre"
+          },
+          "why": {
+            "th": "กิจกรรมลงมือเล่นที่เด็กเล็กและเด็กโตชอบ",
+            "en": "Hands-on activities toddlers and children love"
+          },
+          "q": "National Museum of the American Indian, Washington DC",
+          "ok": "2026-11"
+        },
+        {
+          "local": "",
+          "ages": [
+            2,
+            2,
+            2,
+            2
+          ],
+          "hrs": 1.5,
+          "io": "out",
+          "pram": "yes",
+          "price": {
+            "th": "เช็กราคาก่อนไป",
+            "en": "Check the price"
+          },
+          "book": "none",
+          "src": "https://www.lonelyplanet.com/articles/washington-dc-with-kids",
+          "name": {
+            "th": "สวนเดอะยาร์ดส์",
+            "en": "The Yards Park"
+          },
+          "kind": "park",
+          "area": {
+            "th": "แคปิตอลริเวอร์ฟรอนต์ วอชิงตัน ดี.ซี.",
+            "en": "Capitol Riverfront, Washington DC"
+          },
+          "what": {
+            "th": "สวนริมแม่น้ำ มีสระเล่นน้ำ และน้ำพุเปิดไฟตอนกลางคืน",
+            "en": "A riverside park with a splash pool and lit fountains at night"
+          },
+          "why": {
+            "th": "สระเล่นน้ำใหญ่ตอนกลางวัน",
+            "en": "A big splash pool by day"
+          },
+          "q": "The Yards Park, 355 Water St SE, Washington DC",
+          "ok": "2026-11"
+        },
+        {
+          "local": "Washington Canal Park",
+          "ages": [
+            2,
+            2,
+            2,
+            1
+          ],
+          "hrs": 1,
+          "io": "out",
+          "pram": "yes",
+          "price": {
+            "th": "เช็กราคาก่อนไป",
+            "en": "Check the price"
+          },
+          "book": "none",
+          "src": "https://www.lonelyplanet.com/articles/washington-dc-with-kids",
+          "name": {
+            "th": "น้ำพุสวนแคนัลพาร์ก",
+            "en": "Canal Park fountains"
+          },
+          "kind": "park",
+          "area": {
+            "th": "แคปิตอลริเวอร์ฟรอนต์ วอชิงตัน ดี.ซี.",
+            "en": "Capitol Riverfront, Washington DC"
+          },
+          "what": {
+            "th": "น้ำพุและสระเล่นน้ำ มีหินให้เดินข้าม",
+            "en": "Fountains and splash pools with stepping stones"
+          },
+          "why": {
+            "th": "มีน้ำให้เล่นเยอะ",
+            "en": "Lots of water to play in"
+          },
+          "q": "Washington Canal Park, 200 M St SE, Washington DC",
+          "ok": "2026-11"
+        },
+        {
+          "local": "",
+          "ages": [
+            0,
+            2,
+            2,
+            2
+          ],
+          "hrs": 1.5,
+          "io": "in",
+          "pram": "part",
+          "price": {
+            "th": "เช็กราคาก่อนไป",
+            "en": "Check the price"
+          },
+          "book": "rec",
+          "src": "https://washington.org/visit-dc/kid-friendly-museums-hands-attractions",
+          "name": {
+            "th": "พิพิธภัณฑ์อาคารแห่งชาติ",
+            "en": "National Building Museum"
+          },
+          "kind": "museumkid",
+          "area": {
+            "th": "วอชิงตัน ดี.ซี.",
+            "en": "Washington DC"
+          },
+          "what": {
+            "th": "สถาปัตยกรรมและการออกแบบ มีเล่านิทานและกิจกรรม STEAM",
+            "en": "Architecture and design, with story times and STEAM challenges"
+          },
+          "why": {
+            "th": "เหมาะที่สุดกับเด็ก 3–12 ปี",
+            "en": "Best for ages 3 to 12"
+          },
+          "tip": {
+            "th": "เข้าฟรี แต่นิทรรศการต้องใช้ตั๋ว",
+            "en": "Entry is free, but exhibits need tickets"
+          },
+          "q": "National Building Museum, 401 F St NW, Washington DC",
+          "ok": "2026-11"
+        },
+        {
+          "local": "",
+          "ages": [
+            0,
+            1,
+            2,
+            2
+          ],
+          "hrs": 1,
+          "io": "in",
+          "pram": "part",
+          "price": {
+            "th": "เช็กราคาก่อนไป",
+            "en": "Check the price"
+          },
+          "book": "none",
+          "src": "https://washington.org/visit-dc/kid-friendly-museums-hands-attractions",
+          "name": {
+            "th": "ห้องสมุดเชกสเปียร์โฟลเจอร์",
+            "en": "Folger Shakespeare Library"
+          },
+          "kind": "museum",
+          "area": {
+            "th": "วอชิงตัน ดี.ซี.",
+            "en": "Washington DC"
+          },
+          "what": {
+            "th": "ห้องจัดแสดงลงมือเล่น และเส้นทางตามหาสำหรับแต่ละวัย",
+            "en": "Hands-on galleries and trails for different ages"
+          },
+          "why": {
+            "th": "ถือแว่นขยายแล้วตามหาเบาะแส",
+            "en": "Take a magnifying glass and follow the clues"
+          },
+          "q": "Folger Shakespeare Library, 201 East Capitol St SE, Washington DC",
+          "ok": "2026-11"
+        },
+        {
+          "local": "",
+          "ages": [
+            0,
+            1,
+            2,
+            2
+          ],
+          "hrs": 1.5,
+          "io": "in",
+          "pram": "part",
+          "price": {
+            "th": "เช็กราคาก่อนไป",
+            "en": "Check the price"
+          },
+          "book": "rec",
+          "src": "https://washington.org/visit-dc/kid-friendly-museums-hands-attractions",
+          "name": {
+            "th": "แพลเน็ตเวิร์ด",
+            "en": "Planet Word"
+          },
+          "kind": "museum",
+          "area": {
+            "th": "วอชิงตัน ดี.ซี.",
+            "en": "Washington DC"
+          },
+          "what": {
+            "th": "พิพิธภัณฑ์ภาษาที่สั่งงานด้วยเสียง ตั้งแต่กล่าวสุนทรพจน์ถึงร้องคาราโอเกะ",
+            "en": "A voice-activated museum of language, from speeches to karaoke"
+          },
+          "why": {
+            "th": "เด็กเล็กเล่นได้ถ้ามีผู้ใหญ่ช่วย",
+            "en": "Younger children can join in with a little help"
+          },
+          "tip": {
+            "th": "จองตั๋วฟรีล่วงหน้าได้",
+            "en": "Free tickets can be reserved ahead"
+          },
+          "q": "Planet Word, 925 13th St NW, Washington DC",
+          "ok": "2026-11"
+        },
+        {
+          "local": "",
+          "ages": [
+            0,
+            0,
+            1,
+            2
+          ],
+          "hrs": 2,
+          "io": "in",
+          "pram": "part",
+          "price": {
+            "th": "เช็กราคาก่อนไป",
+            "en": "Check the price"
+          },
+          "book": "rec",
+          "src": "https://washington.org/visit-dc/kid-friendly-museums-hands-attractions",
+          "name": {
+            "th": "พิพิธภัณฑ์สายลับนานาชาติ",
+            "en": "International Spy Museum"
+          },
+          "kind": "museum",
+          "area": {
+            "th": "ลองฟองพลาซา วอชิงตัน ดี.ซี.",
+            "en": "L'Enfant Plaza, Washington DC"
+          },
+          "what": {
+            "th": "ประวัติศาสตร์สายลับ มีจุดเล่นโต้ตอบและภารกิจลับ",
+            "en": "Spy history, with interactive kiosks and an undercover mission"
+          },
+          "why": {
+            "th": "แนะนำสำหรับอายุ 9 ปีขึ้นไป",
+            "en": "Recommended for ages 9 and up"
+          },
+          "tip": {
+            "th": "จองตั๋วออนไลน์ล่วงหน้า",
+            "en": "Book tickets online ahead"
+          },
+          "q": "International Spy Museum, 700 L'Enfant Plaza SW, Washington DC",
+          "ok": "2026-11"
+        },
+        {
+          "local": "",
+          "ages": [
+            0,
+            1,
+            2,
+            2
+          ],
+          "hrs": 1,
+          "io": "in",
+          "pram": "part",
+          "price": {
+            "th": "เช็กราคาก่อนไป",
+            "en": "Check the price"
+          },
+          "book": "none",
+          "src": "https://washington.org/visit-dc/kid-friendly-museums-hands-attractions",
+          "name": {
+            "th": "เดอะฟิลลิปส์คอลเลกชัน",
+            "en": "The Phillips Collection"
+          },
+          "kind": "museum",
+          "area": {
+            "th": "วอชิงตัน ดี.ซี.",
+            "en": "Washington DC"
+          },
+          "what": {
+            "th": "พิพิธภัณฑ์ศิลปะสมัยใหม่แห่งแรกของอเมริกา มีแผ่นระบายสีและเกมล่าสมบัติ",
+            "en": "America's first museum of modern art, with colouring sheets and treasure hunts"
+          },
+          "why": {
+            "th": "เด็กอายุไม่เกิน 18 ปีได้สำรวจพิพิธภัณฑ์",
+            "en": "Children 18 and under explore the museum"
+          },
+          "q": "The Phillips Collection, 1600 21st St NW, Washington DC",
+          "ok": "2026-11"
+        },
+        {
+          "local": "",
+          "ages": [
+            0,
+            1,
+            2,
+            2
+          ],
+          "hrs": 2,
+          "io": "in",
+          "pram": "part",
+          "price": {
+            "th": "เช็กราคาก่อนไป",
+            "en": "Check the price"
+          },
+          "book": "rec",
+          "src": "https://washington.org/visit-dc/kid-friendly-museums-hands-attractions",
+          "name": {
+            "th": "พิพิธภัณฑ์คัมภีร์ไบเบิล",
+            "en": "Museum of the Bible"
+          },
+          "kind": "museum",
+          "area": {
+            "th": "วอชิงตัน ดี.ซี.",
+            "en": "Washington DC"
+          },
+          "what": {
+            "th": "พิพิธภัณฑ์แบบมีส่วนร่วม มีโซนเด็ก Courageous Pages",
+            "en": "An interactive museum with a children's area, Courageous Pages"
+          },
+          "why": {
+            "th": "มีเกมสำหรับเด็กในโซนของตัวเอง",
+            "en": "Games for children in their own area"
+          },
+          "tip": {
+            "th": "ซื้อตั๋วทางเว็บไซต์พิพิธภัณฑ์",
+            "en": "Tickets on the museum's website"
+          },
+          "q": "Museum of the Bible, 400 4th St SW, Washington DC",
+          "ok": "2026-11"
+        },
+        {
+          "local": "",
+          "ages": [
+            0,
+            1,
+            2,
+            2
+          ],
+          "hrs": 1.5,
+          "io": "in",
+          "pram": "part",
+          "price": {
+            "th": "เช็กราคาก่อนไป",
+            "en": "Check the price"
+          },
+          "book": "rec",
+          "src": "https://washington.org/visit-dc/kid-friendly-museums-hands-attractions",
+          "name": {
+            "th": "พิพิธภัณฑ์โอในคฤหาสน์",
+            "en": "O Museum in the Mansion"
+          },
+          "kind": "museum",
+          "area": {
+            "th": "วอชิงตัน ดี.ซี.",
+            "en": "Washington DC"
+          },
+          "what": {
+            "th": "คฤหาสน์ที่มีห้องธีมต่าง ๆ และประตูลับ",
+            "en": "A mansion of themed rooms and secret doors"
+          },
+          "why": {
+            "th": "ตามหาทางลับ",
+            "en": "Hunt for hidden passages"
+          },
+          "tip": {
+            "th": "ผู้ใหญ่ควรพร้อมพาเด็กเดิน",
+            "en": "Adults should be ready to guide the children"
+          },
+          "q": "O Museum in The Mansion, 2020 O St NW, Washington DC",
+          "ok": "2026-11"
+        },
+        {
+          "local": "",
+          "ages": [
+            0,
+            1,
+            2,
+            2
+          ],
+          "hrs": 1,
+          "io": "in",
+          "pram": "part",
+          "price": {
+            "th": "เช็กราคาก่อนไป",
+            "en": "Check the price"
+          },
+          "book": "none",
+          "src": "https://washington.org/visit-dc/kid-friendly-museums-hands-attractions",
+          "name": {
+            "th": "พิพิธภัณฑ์ศิลปินหญิงแห่งชาติ",
+            "en": "National Museum of Women in the Arts"
+          },
+          "kind": "museum",
+          "area": {
+            "th": "วอชิงตัน ดี.ซี.",
+            "en": "Washington DC"
+          },
+          "what": {
+            "th": "พิพิธภัณฑ์ผลงานศิลปินหญิง",
+            "en": "A museum of women artists"
+          },
+          "why": {
+            "th": "อายุต่ำกว่า 21 ปีเข้าฟรี มีกิจกรรมศิลปะครอบครัวในวันเปิดฟรี",
+            "en": "Free under 21, with family art-making on Free Community Days"
+          },
+          "tip": {
+            "th": "วันเปิดฟรีคือวันอาทิตย์แรกและวันพุธที่สองของเดือน",
+            "en": "Free Community Days are the first Sunday and second Wednesday of each month"
+          },
+          "q": "National Museum of Women in the Arts, 1250 New York Ave NW, Washington DC",
+          "ok": "2026-11"
         }
       ]
     },
@@ -1626,6 +2718,445 @@
           "q": "Lydgate Beach Park, Wailua, Kauai",
           "ok": "2026-11",
           "src": "https://www.kauai.gov/Press-Releases/Lydgate-Beach-Park-and-Kamalani-Playground-to-reopen-April-25-2024"
+        },
+        {
+          "local": "",
+          "ages": [
+            1,
+            2,
+            2,
+            2
+          ],
+          "hrs": 2.5,
+          "io": "out",
+          "pram": "yes",
+          "price": {
+            "th": "เช็กราคาก่อนไป",
+            "en": "Check the price"
+          },
+          "book": "none",
+          "src": "https://ryo.co/en/articles/united-states/los-angeles/things-do-honolulu-kids/",
+          "name": {
+            "th": "หุบเขาไวเมอา",
+            "en": "Waimea Valley"
+          },
+          "kind": "nature",
+          "area": {
+            "th": "นอร์ทชอร์ โออาฮู",
+            "en": "North Shore, Oahu"
+          },
+          "what": {
+            "th": "สวนพฤกษศาสตร์มีทางเดินลาดยางง่าย ๆ ไปถึงน้ำตก",
+            "en": "A botanical garden with an easy paved trail to a waterfall"
+          },
+          "why": {
+            "th": "ว่ายน้ำใต้น้ำตกโดยมีไลฟ์การ์ดดูแล",
+            "en": "Swim under the waterfall with lifeguards watching"
+          },
+          "tip": {
+            "th": "เปิดอังคาร–อาทิตย์ 9:00–16:00 (ปิดวันจันทร์ในเดือน ม.ค. ก.พ. ต.ค. พ.ย.)",
+            "en": "Open Tuesday–Sunday 9am–4pm (closed Mondays in Jan, Feb, Oct, Nov)"
+          },
+          "q": "Waimea Valley, 59-864 Kamehameha Hwy, Haleiwa",
+          "ok": "2026-11"
+        },
+        {
+          "local": "",
+          "ages": [
+            0,
+            0,
+            1,
+            2
+          ],
+          "hrs": 2.5,
+          "io": "both",
+          "pram": "part",
+          "price": {
+            "th": "เช็กราคาก่อนไป",
+            "en": "Check the price"
+          },
+          "book": "req",
+          "src": "https://ryo.co/en/articles/united-states/los-angeles/things-do-honolulu-kids/",
+          "name": {
+            "th": "อนุสรณ์สถานแห่งชาติเพิร์ลฮาร์เบอร์",
+            "en": "Pearl Harbor National Memorial"
+          },
+          "kind": "museum",
+          "area": {
+            "th": "เพิร์ลฮาร์เบอร์ โฮโนลูลู",
+            "en": "Pearl Harbor, Honolulu"
+          },
+          "what": {
+            "th": "อนุสรณ์เรือยูเอสเอสแอริโซนาและห้องจัดแสดง",
+            "en": "The USS Arizona Memorial and museum galleries"
+          },
+          "why": {
+            "th": "สิ่งของ แผนที่ และเสียงของผู้รอดชีวิตเล่าเรื่องราว",
+            "en": "Objects, maps and survivors' voices tell the story"
+          },
+          "tip": {
+            "th": "จองตั๋วตามรอบเวลาทางออนไลน์ ส่วนใหญ่เปิดจองล่วงหน้า 56 วัน",
+            "en": "Book a timed ticket online; most open 56 days ahead"
+          },
+          "q": "Pearl Harbor National Memorial, Honolulu",
+          "ok": "2026-11"
+        },
+        {
+          "local": "",
+          "ages": [
+            2,
+            2,
+            2,
+            2
+          ],
+          "hrs": 1,
+          "io": "out",
+          "pram": "part",
+          "price": {
+            "th": "เช็กราคาก่อนไป",
+            "en": "Check the price"
+          },
+          "book": "none",
+          "src": "https://hawaiitravelwithkids.com/best-things-to-do-on-oahu-with-kids",
+          "name": {
+            "th": "วัดเบียวโดอิน",
+            "en": "Byodo-In Temple"
+          },
+          "kind": "culture",
+          "area": {
+            "th": "คาเนโอเฮ โออาฮูฝั่งรับลม",
+            "en": "Kaneohe, windward Oahu"
+          },
+          "what": {
+            "th": "วัดจำลองจากวัดญี่ปุ่นอายุ 950 ปี ใต้แนวภูเขา",
+            "en": "A copy of a 950-year-old Japanese temple below the mountains"
+          },
+          "why": {
+            "th": "ตีระฆัง ให้อาหารปลาคาร์ป และมองหานกยูง",
+            "en": "Ring the bell, feed the koi and spot peacocks"
+          },
+          "tip": {
+            "th": "มีค่าเข้าเล็กน้อย",
+            "en": "A small entry fee"
+          },
+          "q": "Byodo-In Temple, 47-200 Kahekili Hwy, Kaneohe",
+          "ok": "2026-11"
+        },
+        {
+          "local": "",
+          "ages": [
+            2,
+            2,
+            2,
+            2
+          ],
+          "hrs": 3,
+          "io": "out",
+          "pram": "part",
+          "price": {
+            "th": "ฟรี",
+            "en": "Free"
+          },
+          "book": "none",
+          "src": "https://ryo.co/en/articles/united-states/los-angeles/things-do-honolulu-kids/",
+          "name": {
+            "th": "หาดไคลัว",
+            "en": "Kailua Beach Park"
+          },
+          "kind": "beach",
+          "area": {
+            "th": "ไคลัว",
+            "en": "Kailua"
+          },
+          "what": {
+            "th": "หาดคลื่นสงบ มีห้องน้ำและฝักบัว",
+            "en": "A calm beach with toilets and showers"
+          },
+          "why": {
+            "th": "คลื่นสงบกว่าไวกีกี พื้นลาดค่อย ๆ เหมาะกับเด็กเล็ก",
+            "en": "Calmer than most of Waikiki, sloping gently for young swimmers"
+          },
+          "q": "Kailua Beach Park, 526 Kawailoa Rd, Kailua",
+          "ok": "2026-11"
+        },
+        {
+          "local": "",
+          "ages": [
+            2,
+            2,
+            2,
+            2
+          ],
+          "hrs": 3,
+          "io": "out",
+          "pram": "part",
+          "price": {
+            "th": "เช็กราคาก่อนไป",
+            "en": "Check the price"
+          },
+          "book": "none",
+          "src": "https://ryo.co/en/articles/united-states/los-angeles/things-do-honolulu-kids/",
+          "name": {
+            "th": "ลากูนโคโอลินา",
+            "en": "Ko Olina lagoons"
+          },
+          "kind": "beach",
+          "area": {
+            "th": "โคโอลินา คาโปเลย",
+            "en": "Ko Olina, Kapolei"
+          },
+          "what": {
+            "th": "อ่าวว่ายน้ำที่สร้างขึ้นหลังแนวกันคลื่นหิน",
+            "en": "Man-made swimming coves behind rock breakwaters"
+          },
+          "why": {
+            "th": "น้ำสงบและค่อย ๆ ลึก",
+            "en": "Calm water that deepens slowly"
+          },
+          "tip": {
+            "th": "ที่จอดรถเต็มเร็ว วันหยุดมักเต็มก่อน 9–10 โมง",
+            "en": "Parking fills early, often by 9 or 10am at weekends"
+          },
+          "q": "Ko Olina Lagoon 1, Kapolei",
+          "ok": "2026-11"
+        },
+        {
+          "local": "",
+          "ages": [
+            2,
+            2,
+            2,
+            2
+          ],
+          "hrs": 2,
+          "io": "out",
+          "pram": "yes",
+          "price": {
+            "th": "ฟรี",
+            "en": "Free"
+          },
+          "book": "none",
+          "src": "https://ryo.co/en/articles/united-states/los-angeles/things-do-honolulu-kids/",
+          "name": {
+            "th": "สวนชายหาดอาลาโมอานา",
+            "en": "Ala Moana Beach Park"
+          },
+          "kind": "park",
+          "area": {
+            "th": "อาลาโมอานา โฮโนลูลู",
+            "en": "Ala Moana, Honolulu"
+          },
+          "what": {
+            "th": "สวนริมหาด 100 เอเคอร์ มีลากูนกำบังคลื่น",
+            "en": "A 100-acre beach park with its own sheltered lagoon"
+          },
+          "why": {
+            "th": "ลากูนสงบ สนามเด็กเล่น และสนามหญ้าร่มรื่น",
+            "en": "A calm lagoon, a playground and shady lawns"
+          },
+          "q": "Ala Moana Regional Park, 1201 Ala Moana Blvd, Honolulu",
+          "ok": "2026-11"
+        },
+        {
+          "local": "",
+          "ages": [
+            2,
+            2,
+            2,
+            1
+          ],
+          "hrs": 2,
+          "io": "out",
+          "pram": "part",
+          "price": {
+            "th": "ฟรี",
+            "en": "Free"
+          },
+          "book": "none",
+          "src": "https://ryo.co/en/articles/united-states/los-angeles/things-do-honolulu-kids/",
+          "name": {
+            "th": "หาดคูฮิโอ",
+            "en": "Kuhio Beach"
+          },
+          "kind": "beach",
+          "area": {
+            "th": "ไวกีกี โฮโนลูลู",
+            "en": "Waikiki, Honolulu"
+          },
+          "what": {
+            "th": "แอ่งน้ำตื้นกำบังคลื่นที่ขอบไวกีกี",
+            "en": "A sheltered wading pool at the edge of Waikiki"
+          },
+          "why": {
+            "th": "น้ำตื้นสงบ เหมาะให้เด็กเล็กลองลงทะเลครั้งแรก",
+            "en": "Gentle, shallow water for a toddler's first sea"
+          },
+          "q": "Kuhio Beach, Kalākaua Ave, Honolulu",
+          "ok": "2026-11"
+        },
+        {
+          "local": "",
+          "ages": [
+            1,
+            2,
+            2,
+            2
+          ],
+          "hrs": 2,
+          "io": "out",
+          "pram": "part",
+          "price": {
+            "th": "เช็กราคาก่อนไป",
+            "en": "Check the price"
+          },
+          "book": "none",
+          "src": "https://ryo.co/en/articles/united-states/los-angeles/things-do-honolulu-kids/",
+          "name": {
+            "th": "ตลาดนัดอโลฮาสเตเดียม",
+            "en": "Aloha Stadium Swap Meet"
+          },
+          "kind": "market",
+          "area": {
+            "th": "ฮาลาวา โฮโนลูลู",
+            "en": "Halawa, Honolulu"
+          },
+          "what": {
+            "th": "ตลาดกลางแจ้งขายเสื้อผ้า ผลผลิต และของที่ระลึก",
+            "en": "An outdoor market of clothes, produce and souvenirs"
+          },
+          "why": {
+            "th": "มีน้ำแข็งไสและมาลาซาดาให้เด็กกินระหว่างเดิน",
+            "en": "Shave ice and malasadas keep children walking"
+          },
+          "tip": {
+            "th": "เปิดเช้าวันพุธ เสาร์ และอาทิตย์",
+            "en": "Wednesday, Saturday and Sunday mornings"
+          },
+          "q": "Aloha Stadium Swap Meet, 99-500 Salt Lake Blvd, Honolulu",
+          "ok": "2026-11"
+        },
+        {
+          "local": "",
+          "ages": [
+            2,
+            2,
+            2,
+            2
+          ],
+          "hrs": 1,
+          "io": "out",
+          "pram": "part",
+          "price": {
+            "th": "ฟรี",
+            "en": "Free"
+          },
+          "book": "none",
+          "src": "https://hawaiitravelwithkids.com/best-things-to-do-on-oahu-with-kids",
+          "name": {
+            "th": "หาดลาเนียเคอา (หาดเต่า)",
+            "en": "Laniakea Beach (turtle beach)"
+          },
+          "kind": "nature",
+          "area": {
+            "th": "นอร์ทชอร์ โออาฮู",
+            "en": "North Shore, Oahu"
+          },
+          "what": {
+            "th": "หาดที่เต่าทะเลสีเขียวขึ้นมานอนบนทราย",
+            "en": "A beach where green sea turtles rest on the sand"
+          },
+          "why": {
+            "th": "ดูเต่า และเล่นโยนบอลบนสนามหญ้า",
+            "en": "Watch the turtles, and play catch on the grass"
+          },
+          "tip": {
+            "th": "ไปเช้าตรู่หรือบ่ายแก่ ๆ อยู่ห่างเต่าอย่างน้อย 10 ฟุต",
+            "en": "Go early morning or late afternoon; keep at least 10 feet from the turtles"
+          },
+          "q": "Laniakea Beach, Haleiwa",
+          "ok": "2026-11"
+        },
+        {
+          "local": "",
+          "ages": [
+            0,
+            1,
+            2,
+            2
+          ],
+          "hrs": 2,
+          "io": "out",
+          "pram": "no",
+          "price": {
+            "th": "เช็กราคาก่อนไป",
+            "en": "Check the price"
+          },
+          "book": "none",
+          "src": "https://ryo.co/en/articles/united-states/los-angeles/things-do-honolulu-kids/",
+          "name": {
+            "th": "เส้นทางน้ำตกมาโนอา",
+            "en": "Mānoa Falls Trail"
+          },
+          "kind": "nature",
+          "area": {
+            "th": "มาโนอา โฮโนลูลู",
+            "en": "Mānoa, Honolulu"
+          },
+          "what": {
+            "th": "เส้นทางเดินป่าฝนไปถึงน้ำตก",
+            "en": "A rainforest trail to a waterfall"
+          },
+          "why": {
+            "th": "เดินป่าฝนจริง ๆ พร้อมน้ำตกตอนจบสำหรับเด็กโต",
+            "en": "A real rainforest walk with a big finish for older children"
+          },
+          "tip": {
+            "th": "ใส่รองเท้าที่เหมาะ ทางอาจเป็นโคลน",
+            "en": "Wear proper shoes; the trail can be muddy"
+          },
+          "q": "Mānoa Falls Trail, Honolulu",
+          "ok": "2026-11"
+        },
+        {
+          "local": "",
+          "ages": [
+            0,
+            1,
+            1,
+            2
+          ],
+          "hrs": 1.5,
+          "io": "in",
+          "pram": "part",
+          "price": {
+            "th": "เช็กราคาก่อนไป",
+            "en": "Check the price"
+          },
+          "book": "rec",
+          "src": "https://ryo.co/en/articles/united-states/los-angeles/things-do-honolulu-kids/",
+          "name": {
+            "th": "พระราชวังอิโอลานี",
+            "en": "ʻIolani Palace"
+          },
+          "kind": "culture",
+          "area": {
+            "th": "ใจกลางเมือง โฮโนลูลู",
+            "en": "Downtown, Honolulu"
+          },
+          "what": {
+            "th": "พระราชวังแห่งเดียวในสหรัฐฯ พร้อมเฟอร์นิเจอร์ของเดิม",
+            "en": "The only royal palace in the United States, with its original furniture"
+          },
+          "why": {
+            "th": "ทัวร์นำชมเหมาะกับเด็กโต",
+            "en": "Guided tours suit older children"
+          },
+          "tip": {
+            "th": "เด็กอายุไม่เกิน 4 ขวบร่วมทัวร์เสียงได้ในเป้อุ้มหรือรถเข็นของวัง",
+            "en": "Under-fives can join the audio tour in a carrier or a palace pushchair"
+          },
+          "q": "Iolani Palace, 364 S King St, Honolulu",
+          "ok": "2026-11"
         }
       ]
     },
@@ -1886,6 +3417,191 @@
           "q": "Seattle Center Armory, 305 Harrison St, Seattle",
           "ok": "2026-11",
           "src": "https://www.seattlecenter.com/explore/attractions/armory"
+        },
+        {
+          "local": "",
+          "ages": [
+            0,
+            1,
+            2,
+            2
+          ],
+          "hrs": 1.5,
+          "io": "in",
+          "pram": "part",
+          "price": {
+            "th": "เช็กราคาก่อนไป",
+            "en": "Check the price"
+          },
+          "book": "none",
+          "src": "https://visitseattle.org/seattle-localist/play/inside-out/",
+          "name": {
+            "th": "พิพิธภัณฑ์พินบอลซีแอตเทิล",
+            "en": "Seattle Pinball Museum"
+          },
+          "kind": "museum",
+          "area": {
+            "th": "ไชนาทาวน์ ซีแอตเทิล",
+            "en": "Chinatown-International District, Seattle"
+          },
+          "what": {
+            "th": "เครื่องพินบอลรุ่นเก่าที่เล่นได้",
+            "en": "Old pinball machines you can play"
+          },
+          "why": {
+            "th": "ได้ลงมือเล่นเครื่องวินเทจ",
+            "en": "Hands-on play on vintage machines"
+          },
+          "q": "Seattle Pinball Museum, 508 Maynard Ave S, Seattle",
+          "ok": "2026-11"
+        },
+        {
+          "local": "",
+          "ages": [
+            2,
+            2,
+            2,
+            2
+          ],
+          "hrs": 2,
+          "io": "out",
+          "pram": "part",
+          "price": {
+            "th": "ฟรี",
+            "en": "Free"
+          },
+          "book": "none",
+          "src": "https://visitseattle.org/things-to-do/families/seattles-top-10-family-friendly-activities/",
+          "name": {
+            "th": "สวนโกลเดนการ์เดนส์",
+            "en": "Golden Gardens Park"
+          },
+          "kind": "beach",
+          "area": {
+            "th": "บัลลาร์ด ซีแอตเทิล",
+            "en": "Ballard, Seattle"
+          },
+          "what": {
+            "th": "หาดริมพิวเจตซาวด์",
+            "en": "A beach on Puget Sound"
+          },
+          "why": {
+            "th": "หาดในเมืองเหมาะกับหาดอกไม้ทะเล หอยเม่น และปลาดาว",
+            "en": "City beaches are good for finding anemones, sea urchins and starfish"
+          },
+          "q": "Golden Gardens Park, 8498 Seaview Pl NW, Seattle",
+          "ok": "2026-11"
+        },
+        {
+          "local": "",
+          "ages": [
+            0,
+            2,
+            2,
+            2
+          ],
+          "hrs": 1.5,
+          "io": "in",
+          "pram": "part",
+          "price": {
+            "th": "เช็กราคาก่อนไป",
+            "en": "Check the price"
+          },
+          "book": "rec",
+          "src": "https://visitseattle.org/seattle-localist/play/inside-out/",
+          "name": {
+            "th": "โรงละครเด็กซีแอตเทิล",
+            "en": "Seattle Children's Theatre"
+          },
+          "kind": "show",
+          "area": {
+            "th": "ซีแอตเทิลเซ็นเตอร์ ซีแอตเทิล",
+            "en": "Seattle Center, Seattle"
+          },
+          "what": {
+            "th": "โรงละครที่แสดงสำหรับเด็กและเยาวชน",
+            "en": "A theatre of shows for children and young audiences"
+          },
+          "why": {
+            "th": "การแสดงที่หน้าเว็บบอกว่าน่าติดตามมาก",
+            "en": "Shows the page calls very engaging"
+          },
+          "q": "Seattle Children's Theatre, 201 Thomas St, Seattle",
+          "ok": "2026-11"
+        },
+        {
+          "local": "",
+          "ages": [
+            2,
+            2,
+            2,
+            2
+          ],
+          "hrs": 2,
+          "io": "out",
+          "pram": "yes",
+          "price": {
+            "th": "ฟรี",
+            "en": "Free"
+          },
+          "book": "none",
+          "src": "https://visitseattle.org/things-to-do/families/seattles-top-10-family-friendly-activities/",
+          "name": {
+            "th": "หาดอัลไค",
+            "en": "Alki Beach"
+          },
+          "kind": "beach",
+          "area": {
+            "th": "เวสต์ซีแอตเทิล ซีแอตเทิล",
+            "en": "West Seattle, Seattle"
+          },
+          "what": {
+            "th": "หาดในเวสต์ซีแอตเทิลสำหรับปั่นจักรยานริมน้ำ",
+            "en": "A West Seattle beach for bike rides along the water"
+          },
+          "why": {
+            "th": "มีที่ปั่นจักรยานและแอ่งน้ำทะเลให้สำรวจ",
+            "en": "Room for bikes and rock pools to explore"
+          },
+          "q": "Alki Beach Park, 2665 Alki Ave SW, Seattle",
+          "ok": "2026-11"
+        },
+        {
+          "local": "",
+          "ages": [
+            0,
+            1,
+            1,
+            2
+          ],
+          "hrs": 1.5,
+          "io": "in",
+          "pram": "part",
+          "price": {
+            "th": "เช็กราคาก่อนไป",
+            "en": "Check the price"
+          },
+          "book": "none",
+          "src": "https://visitseattle.org/things-to-do/families/seattles-top-10-family-friendly-activities/",
+          "name": {
+            "th": "พิพิธภัณฑ์วิงลุค",
+            "en": "Wing Luke Museum"
+          },
+          "kind": "museum",
+          "area": {
+            "th": "ไชนาทาวน์ ซีแอตเทิล",
+            "en": "Chinatown-International District, Seattle"
+          },
+          "what": {
+            "th": "ประวัติศาสตร์ชาวเอเชียอเมริกัน ชาวฮาวาย และชาวเกาะแปซิฟิก ผ่านภาพและสิ่งของ",
+            "en": "Asian American, Native Hawaiian and Pacific Islander history in photos and objects"
+          },
+          "why": {
+            "th": "มีภาพและสิ่งของให้ดูด้วยกัน",
+            "en": "Photos and objects to look at together"
+          },
+          "q": "Wing Luke Museum, 719 S King St, Seattle",
+          "ok": "2026-11"
         }
       ]
     },
@@ -2146,6 +3862,88 @@
           "q": "Flamingo Wildlife Habitat, 3555 S Las Vegas Blvd, Las Vegas",
           "ok": "2026-11",
           "src": "https://travelnevada.com/animals-aquariums/flamingo-wildlife-habitat-2/"
+        },
+        {
+          "local": "",
+          "ages": [
+            2,
+            2,
+            2,
+            2
+          ],
+          "hrs": 2,
+          "io": "out",
+          "pram": "yes",
+          "price": {
+            "th": "เช็กราคาก่อนไป",
+            "en": "Check the price"
+          },
+          "book": "none",
+          "src": "https://www.endlesstravelplans.com/destinations/grand-canyon/grand-canyon-south-rim-family-guide",
+          "name": {
+            "th": "เส้นทางริมหน้าผา",
+            "en": "Rim Trail"
+          },
+          "kind": "views",
+          "area": {
+            "th": "ขอบด้านใต้ แกรนด์แคนยอน",
+            "en": "South Rim, Grand Canyon"
+          },
+          "what": {
+            "th": "ทางเดินลาดยางริมหุบเขาจากแมเทอร์พอยต์ถึงหมู่บ้านแกรนด์แคนยอน",
+            "en": "A paved path along the canyon edge from Mather Point to Grand Canyon Village"
+          },
+          "why": {
+            "th": "เข็นรถเข็นเด็กได้สบาย และนั่งรถรับส่งฟรีกลับได้",
+            "en": "Pushchairs roll easily, and the free shuttle brings you back"
+          },
+          "tip": {
+            "th": "เดินจนเด็กเหนื่อยแล้วนั่งรถรับส่งกลับ",
+            "en": "Walk until the children are done, then take the shuttle back"
+          },
+          "q": "Rim Trail, Grand Canyon Village, AZ",
+          "ok": "2026-11"
+        },
+        {
+          "local": "",
+          "ages": [
+            0,
+            1,
+            2,
+            2
+          ],
+          "hrs": 1.5,
+          "io": "out",
+          "pram": "no",
+          "price": {
+            "th": "เช็กราคาก่อนไป",
+            "en": "Check the price"
+          },
+          "book": "none",
+          "src": "https://www.endlesstravelplans.com/destinations/grand-canyon/grand-canyon-south-rim-family-guide",
+          "name": {
+            "th": "เส้นทางไบรต์แองเจิล",
+            "en": "Bright Angel Trail"
+          },
+          "kind": "nature",
+          "area": {
+            "th": "ขอบด้านใต้ แกรนด์แคนยอน",
+            "en": "South Rim, Grand Canyon"
+          },
+          "what": {
+            "th": "เส้นทางยอดนิยมลงไปใต้ขอบหุบ เดินไม่ไกลแล้วกลับ",
+            "en": "A popular trail below the rim; walk a short way and turn back"
+          },
+          "why": {
+            "th": "อุโมงค์แรกอยู่ใกล้จุดเริ่ม ได้สัมผัสหุบเขาแบบสั้น ๆ",
+            "en": "The first tunnel is close to the top: a taste of the canyon"
+          },
+          "tip": {
+            "th": "ขาขึ้นใช้เวลาราวสองเท่าของขาลง",
+            "en": "The climb back up takes about twice as long as the walk down"
+          },
+          "q": "Bright Angel Trailhead, Grand Canyon Village, AZ",
+          "ok": "2026-11"
         }
       ]
     }

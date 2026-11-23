@@ -1,0 +1,65 @@
+{
+  "town": "p-yellowstone",
+  "kind": "eats + sights",
+  "checked": "2026-11-23",
+  "rule": "library-check.cjs, then the Google Maps Reviews tab sorted by newest: ok only when not marked closed, with a review from the last six months, and the map's name matching the page's.",
+  "agents": "one Haiku agent; 8 rows from Yellowstone National Park Lodges' own pages (2026) and Full Suitcase (2026) passed library-check.cjs, 7 went in",
+  "added": [
+    {
+      "name": "Lake Deli",
+      "page_name": "Lake Deli",
+      "src": "https://www.yellowstonenationalparklodges.com/restaurant/lake-deli/",
+      "date": "2026-10",
+      "map": "Google Maps 'Lake Yellowstone Hotel Deli', 13 reviews, newest '2 months ago'"
+    },
+    {
+      "name": "Lake Lodge Cafeteria",
+      "page_name": "Lake Lodge Cafeteria",
+      "src": "https://www.yellowstonenationalparklodges.com/restaurant/lake-lodge-cafeteria/",
+      "date": "2026-10",
+      "map": "Google Maps 'Lake Lodge Cabins', 459 Lake Village Rd (the cafeteria is in the lodge), 1,089 reviews, newest '2 weeks ago'"
+    },
+    {
+      "name": "Mammoth Terrace Grill",
+      "page_name": "Mammoth Terrace Grill",
+      "src": "https://www.yellowstonenationalparklodges.com/restaurant/mammoth-terrace-grill/",
+      "date": "2026-10",
+      "map": "Google Maps 'Terrace Grill', 305B Grand Loop Rd, 417 reviews, newest '2 weeks ago'"
+    },
+    {
+      "name": "Bear Paw Deli",
+      "page_name": "Bear Paw & Deli",
+      "src": "https://www.yellowstonenationalparklodges.com/restaurant/old-faithful-inn-bear-paw-deli/",
+      "date": "2026-10",
+      "map": "Google Maps 'Old Faithful Inn Bear Paw Deli', 57 reviews, newest 'last month'"
+    },
+    {
+      "name": "Geyser Grill (Snow Lodge)",
+      "page_name": "Old Faithful Snow Lodge Geyser Grill",
+      "src": "https://www.yellowstonenationalparklodges.com/restaurant/old-faithful-snow-lodge-geyser-grill/",
+      "date": "2026-11",
+      "map": "Google Maps 418 reviews, newest 'last month'"
+    },
+    {
+      "name": "Grant Village Dining Room",
+      "page_name": "Grant Village Dining Room",
+      "src": "https://www.yellowstonenationalparklodges.com/restaurant/grant-village-dining-room/",
+      "date": "2026-10",
+      "map": "Google Maps 666 reviews, newest 'last week'"
+    },
+    {
+      "name": "Old Faithful Inn",
+      "page_name": "Old Faithful Inn",
+      "src": "https://fullsuitcase.com/best-things-yellowstone-kids/",
+      "date": "2026-02",
+      "map": "Google Maps 3,182 reviews, newest '6 days ago'"
+    }
+  ],
+  "left_out": [
+    {
+      "name": "Falls Cafe at Canyon Lodge Eatery",
+      "why": "the map shows only the Canyon Eatery, already in the library"
+    }
+  ],
+  "estimates": "Ages and visit hours are placeholders; prices and opening notes are the pages' own."
+}
