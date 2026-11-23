@@ -549,6 +549,47 @@
           "q": "Hang Tuah Fire Station, Jalan Hang Tuah, Pudu, Kuala Lumpur",
           "ok": "2026-11",
           "src": "https://www.parentonthejob.com/kl-fire-station-visit-hang-tuah/"
+        },
+        {
+          "local": "",
+          "ages": [
+            0,
+            1,
+            2,
+            2
+          ],
+          "hrs": 3,
+          "io": "in",
+          "pram": "part",
+          "price": {
+            "th": "เช็กราคาก่อนไป",
+            "en": "Check the price"
+          },
+          "book": "rec",
+          "src": "https://www.redbus.my/travel-guide/?p=468",
+          "name": {
+            "th": "คิดซาเนีย กัวลาลัมเปอร์",
+            "en": "KidZania Kuala Lumpur"
+          },
+          "kind": "museumkid",
+          "area": {
+            "th": "เคิร์ฟเอ็นเอ็กซ์ มูเทียราดามันซารา เปอตาลิงจายา",
+            "en": "Curve NX, Mutiara Damansara, Petaling Jaya"
+          },
+          "what": {
+            "th": "เมืองจำลองในร่มขนาดเด็ก มีอาชีพให้ลองกว่า 60 อย่าง",
+            "en": "An indoor town at children's size with over 60 jobs to try"
+          },
+          "why": {
+            "th": "เด็กได้ลองทำงานแบบผู้ใหญ่",
+            "en": "Children try grown-up jobs"
+          },
+          "tip": {
+            "th": "สำหรับอายุ 4–17 ปี",
+            "en": "For ages 4 to 17"
+          },
+          "q": "KidZania Kuala Lumpur, Curve NX, Mutiara Damansara, Petaling Jaya",
+          "ok": "2026-11"
         }
       ]
     }
