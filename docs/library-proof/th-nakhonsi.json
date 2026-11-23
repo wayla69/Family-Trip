@@ -4,36 +4,48 @@
   "checked": "2026-11",
   "rule": "A row gets ok only from a current listing, its own site or recent reviews with nothing saying closed (docs/EATS.md). A row is taken out when a search could not find the place at all or the sources disagree; a place found but not freshly confirmed stays without ok.",
   "scope": "the six rows without ok; the eight rows already confirmed were not checked again",
-  "confirmed": [],
-  "kept_without_ok": [
+  "passes": [
+    {"at": "2026-11-23", "how": "web search, Wongnai pages (PR #384)"},
+    {"at": "2026-11-23", "how": "Google Maps opened in headless Chromium, one place at a time. Maps showed a limited view (status, address, hours, phone, rating), without its reviews tab, so no review date could be read; a place with today's hours and no closed notice counts as a current listing"}
+  ],
+  "confirmed": [
     {
       "name": "Central Nakhon Si food court",
-      "evidence": "two web searches found shops listed at Central Nakhon Si Thammarat on Wongnai (KOI Thé, OWL CHA) and a Tops notice, but no listing of the food court itself"
+      "src": "https://www.google.com/maps/place/FOOD+PARK+@+Central+Plaza+Nakorn+Sri+Thammarach/@8.3807435,99.9695285,17z",
+      "page_name": "FOOD PARK @ Central Plaza Nakorn Sri Thammarach / ฟู้ดปาร์ค @ เซ็นทรัลพลาซ่า นครศรีธรรมราช",
+      "evidence": "Google Maps: food court, 3.9★, 9XJ9+7RR, Na San, Phra Phrom, 'Located in: Central Nakhon Si', 'Open · Closes 7:30 PM'; nothing says closed. The map query now names it FOOD PARK.",
+      "ok": "2026-11"
+    },
+    {
+      "name": "Hao Coffee",
+      "src": "https://www.google.com/maps/place/Hao+Coffee/@8.4646301,99.8923849,13z",
+      "page_name": "Hao Coffee",
+      "evidence": "Google Maps: coffee shop, 4.6★, FX77+VQ5, Pak Phun — the Kukuton cluster (Kopi Q-Coo Ton Shop is FX77+MMV); 'Open · Closes 6 PM'; nothing says closed. #384 took it out because two web searches missed it; Maps finds it at Kukuton, where the row says.",
+      "ok": "2026-11"
+    },
+    {
+      "name": "Likor Baan Tham Khanom",
+      "src": "https://www.google.com/maps/search/ลิกอร์คิวคูตอน",
+      "page_name": "ร้านเบเกอรี่ ลิกอร์คิวคูตอน / ลิกอร์คิวคูตอน นครโบราณ ( เบเกอรี่ )",
+      "evidence": "Google Maps: 4.3★, FX77+RRV, Pak Phun (Kukuton), 'Open · Closes 5 PM', a reserve-a-table button; nothing says closed. Same phone as the Hao Coffee listing, which links ligorhomebakery.com (the site answered 503). #384 found only the Ratchadamnoen Road branch; this is the Kukuton one the row describes. Map query changed to its Maps name.",
+      "ok": "2026-11"
     }
   ],
+  "kept_without_ok": [],
   "removed": [
     {
       "name": "Ruean Phak Kut",
       "src": "https://www.wongnai.com/restaurants/20153jQ",
-      "reason": "the Wongnai listing (เรือนผักกูด รีสอร์ท แอนด์ เรสเตอรอง, closed:false) puts it at 23/1 Moo 14, Nakhon–Chandi road, km 27 — not in town as the row said; the newest review is from 2021-04"
+      "reason": "the Wongnai listing (เรือนผักกูด รีสอร์ท แอนด์ เรสเตอรอง, closed:false) puts it at 23/1 Moo 14, Nakhon–Chandi road, km 27 — not in town as the row said; the newest review is from 2021-04. Google Maps' only เรือนผักกูด is at Chang Klang (9M2P+6J), about 35 km from town, no reviews visible — the same disagreement"
     },
     {
       "name": "Wang Derm",
       "src": "https://12go.asia/en/thailand/nakhon-si-thammarat/food",
-      "reason": "the only source (undated) describes a cheap lunchtime curry-and-rice shop on Ratchadamnoen Road (dishes ≈ ฿30–70), not the roomy Thai and seafood restaurant the row described; sources disagree"
-    },
-    {
-      "name": "Hao Coffee",
-      "reason": "two web searches (Thai and English) found no coffee shop of this name in Nakhon Si Thammarat"
+      "reason": "the only source (undated) describes a cheap lunchtime curry-and-rice shop on Ratchadamnoen Road (dishes ≈ ฿30–70), not the roomy Thai and seafood restaurant the row described; sources disagree. Google Maps' ครัววังเดิม is in Samut Sakhon (G9G4+GR Phanthai Norasing); no Wang Derm restaurant in Nakhon Si"
     },
     {
       "name": "Suwalee",
-      "reason": "two web searches found no tea shop of this name near the railway station"
-    },
-    {
-      "name": "Likor Baan Tham Khanom",
-      "src": "https://www.wongnai.com/restaurants/1928126sy",
-      "reason": "the only match is Wongnai's ลิกอร์-พระธาตุฯ at 552 Ratchadamnoen Road, opposite Wat Phra Mahathat — not at Kukuton as the row said; its newest review is from 2023-08; nothing confirms it is the same bakery"
+      "reason": "two web searches found no tea shop of this name near the railway station. Google Maps has only สุวลีย์, a 'restaurant' at 1763 Chamroen Withi Road, Tha Wang (CXR6+G5, open, closes 6 PM) — nothing says it is the two-generation tea shop of the row, so it stays out"
     }
   ]
 }
