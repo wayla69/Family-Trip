@@ -3536,6 +3536,125 @@
           "q": "Wat Si Khun Muang, Chiang Khan, Loei",
           "ok": "2026-11",
           "src": "https://www.bucketlistly.blog/posts/chiang-khan-best-things-to-do"
+        },
+        {
+          "local": "",
+          "ages": [
+            1,
+            2,
+            2,
+            2
+          ],
+          "hrs": 1.5,
+          "io": "both",
+          "pram": "part",
+          "price": {
+            "th": "เช็กราคาก่อนไป",
+            "en": "Check the price"
+          },
+          "book": "none",
+          "src": "https://www.wongnai.com/listings/chiangkhan-attraction",
+          "name": {
+            "th": "หมู่บ้านวัฒนธรรมไทดำ",
+            "en": "Tai Dam culture village"
+          },
+          "kind": "culture",
+          "area": {
+            "th": "บ้านนาป่าหนาด เชียงคาน",
+            "en": "Ban Na Pa Nat, Chiang Khan"
+          },
+          "what": {
+            "th": "หมู่บ้านวัฒนธรรมและชุมชนไทดำ",
+            "en": "A Tai Dam culture village and community"
+          },
+          "why": {
+            "th": "วิถีชีวิตชาวไทดำ",
+            "en": "The Tai Dam way of life"
+          },
+          "tip": {
+            "th": "เปิด 09:00–21:00 ทุกวัน ตามข้อมูลในหน้า",
+            "en": "Open 09:00–21:00 every day, the listing says"
+          },
+          "q": "ศูนย์วัฒนธรรมไทดำ บ้านนาป่าหนาด, เชียงคาน, เลย",
+          "ok": "2026-11"
+        },
+        {
+          "local": "",
+          "ages": [
+            1,
+            1,
+            1,
+            1
+          ],
+          "hrs": 1,
+          "io": "out",
+          "pram": "part",
+          "price": {
+            "th": "เช็กราคาก่อนไป",
+            "en": "Check the price"
+          },
+          "book": "none",
+          "src": "https://www.wongnai.com/listings/chiangkhan-attraction",
+          "name": {
+            "th": "วัดพระพุทธบาทภูควายเงิน",
+            "en": "Wat Phra Phutthabat Phu Khwai Ngoen"
+          },
+          "kind": "culture",
+          "area": {
+            "th": "ทางหลวง 211 เชียงคาน",
+            "en": "Highway 211, Chiang Khan"
+          },
+          "what": {
+            "th": "วัดริมทางหลวง 211 ใกล้เชียงคาน",
+            "en": "A temple on Highway 211 near Chiang Khan"
+          },
+          "why": {
+            "th": "แวะวัดที่เงียบสงบ",
+            "en": "A quiet temple stop"
+          },
+          "q": "วัดพระพุทธบาทภูควายเงิน, เชียงคาน, เลย",
+          "ok": "2026-11"
+        },
+        {
+          "local": "",
+          "ages": [
+            1,
+            1,
+            1,
+            1
+          ],
+          "hrs": 1,
+          "io": "out",
+          "pram": "part",
+          "price": {
+            "th": "เช็กราคาก่อนไป",
+            "en": "Check the price"
+          },
+          "book": "none",
+          "src": "https://www.wongnai.com/listings/chiangkhan-attraction",
+          "name": {
+            "th": "พระใหญ่ภูคกงิ้ว",
+            "en": "Phu Khok Ngio big Buddha"
+          },
+          "kind": "culture",
+          "area": {
+            "th": "ทางหลวง 2195 ปากตม เชียงคาน",
+            "en": "Highway 2195, Pak Tom, Chiang Khan"
+          },
+          "what": {
+            "th": "พระพุทธรูปองค์ใหญ่ ห่างเชียงคานราว 20 กม. ทางไปท่าลี่",
+            "en": "A large Buddha statue about 20 km from Chiang Khan towards Tha Li"
+          },
+          "why": {
+            "th": "พระองค์ใหญ่บนเนินเขา",
+            "en": "A big statue on a hill"
+          },
+          "tip": {
+            "th": "เปิด 06:00–18:00 ทุกวัน ตามข้อมูลในหน้า",
+            "en": "Open 06:00–18:00 every day, the listing says"
+          },
+          "q": "พระใหญ่ภูคกงิ้ว, ปากตม, เชียงคาน",
+          "ok": "2026-11"
         }
       ]
     },
