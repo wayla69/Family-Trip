@@ -1377,7 +1377,208 @@
       {"name":{"en":"Museo d’Arte e Scienza di Milano","th":"พิพิธภัณฑ์ศิลปะและวิทยาศาสตร์แห่งมิลาน"},"kind":"museum","area":{"en":"Castello Sforzesco","th":"คาสเตลโลสฟอร์เซสโก"},"what":{"en":"A museum of art and science with a learning route on how to recognise authenticity in art and antiques.","th":"พิพิธภัณฑ์ศิลปะและวิทยาศาสตร์ มีเส้นทางเรียนรู้วิธีแยกของแท้ในงานศิลปะและของเก่า"},"why":{"en":"Guided visits can be booked, and free visits come with multilingual panels.","th":"จองทัวร์นำชมได้ และการเข้าชมฟรีมีป้ายหลายภาษา"},"ages":[0,1,2,2],"hrs":2,"io":"in","pram":"part","price":{"en":"Check the price","th":"เช็กราคาก่อนไป"},"book":"rec","q":"Museo d'Arte e Scienza di Milano, Milan","ok":"2026-11","src":"https://www.familygo.eu/vacanze-con-bambini/eventi/milano/milano-eventi-per-bambini/"},
       {"name":{"en":"Leonardo3 Museum","th":"พิพิธภัณฑ์เลโอนาร์โด3"},"kind":"museum","area":{"en":"Piazza della Scala","th":"ปิอัซซาเดลลาสกาลา"},"what":{"en":"Rebuilt machines and restored paintings from Leonardo da Vinci, in the heart of the city.","th":"เครื่องจักรสร้างใหม่และภาพวาดที่บูรณะของเลโอนาร์โด ดา วินชี ใจกลางเมือง"},"why":{"en":"Family activities such as a flight-themed visit for children from six up.","th":"มีกิจกรรมครอบครัว เช่น การเยี่ยมชมธีมการบินสำหรับเด็กตั้งแต่หกขวบ"},"ages":[0,0,1,2],"hrs":1.5,"io":"in","pram":"part","price":{"en":"Check the price","th":"เช็กราคาก่อนไป"},"book":"rec","q":"Leonardo3 Museum, Milan","ok":"2026-11","src":"https://www.familygo.eu/vacanze-con-bambini/eventi/milano/milano-eventi-per-bambini/"},
       {"name":{"en":"MUSEO BAGATTI VALSECCHI","th":"พิพิธภัณฑ์บากัตติ วัลเซกกี"},"kind":"museum","area":{"en":"Montenapoleone","th":"มอนเตนาโปเลโอเน"},"what":{"en":"A historic house museum, one of the most important and best-kept house museums in Europe.","th":"พิพิธภัณฑ์บ้านประวัติศาสตร์ ที่เป็นหนึ่งในพิพิธภัณฑ์บ้านที่สำคัญและดูแลดีที่สุดในยุโรป"},"why":{"en":"Workshops and treasure hunts for children run at weekends.","th":"มีเวิร์กช็อปและการล่าสมบัติสำหรับเด็กในวันหยุดสุดสัปดาห์"},"ages":[0,1,2,2],"hrs":1.5,"io":"in","pram":"part","price":{"en":"Check the price","th":"เช็กราคาก่อนไป"},"book":"rec","q":"Museo Bagatti Valsecchi, Milan","ok":"2026-11","src":"https://www.familygo.eu/vacanze-con-bambini/eventi/milano/milano-eventi-per-bambini/"},
-      {"name":{"en":"Brera Botanical Garden","th":"สวนพฤกษศาสตร์เบรรา"},"kind":"nature","area":{"en":"Via Brera 28","th":"ถนนเวีย เบรรา 28"},"what":{"en":"The botanical garden of the University of Milan, with guided tours and educational activities.","th":"สวนพฤกษศาสตร์ของมหาวิทยาลัยมิลาน มีทัวร์นำชมและกิจกรรมเพื่อการศึกษา"},"why":{"en":"Guided tours from kindergarten age up, including observation games in the garden for 7 to 13 year olds.","th":"มีทัวร์นำชมตั้งแต่อายุอนุบาลขึ้นไป รวมถึงเกมสังเกตในสวนสำหรับอายุ 7–13 ปี"},"ages":[0,1,2,2],"hrs":1.5,"io":"out","pram":"part","price":{"en":"Check the price","th":"เช็กราคาก่อนไป"},"book":"req","q":"Brera Botanical Garden, Via Brera 28, Milan","ok":"2026-11","src":"https://ortibotanici.unimi.it/?p=2602"}
+      {"name":{"en":"Brera Botanical Garden","th":"สวนพฤกษศาสตร์เบรรา"},"kind":"nature","area":{"en":"Via Brera 28","th":"ถนนเวีย เบรรา 28"},"what":{"en":"The botanical garden of the University of Milan, with guided tours and educational activities.","th":"สวนพฤกษศาสตร์ของมหาวิทยาลัยมิลาน มีทัวร์นำชมและกิจกรรมเพื่อการศึกษา"},"why":{"en":"Guided tours from kindergarten age up, including observation games in the garden for 7 to 13 year olds.","th":"มีทัวร์นำชมตั้งแต่อายุอนุบาลขึ้นไป รวมถึงเกมสังเกตในสวนสำหรับอายุ 7–13 ปี"},"ages":[0,1,2,2],"hrs":1.5,"io":"out","pram":"part","price":{"en":"Check the price","th":"เช็กราคาก่อนไป"},"book":"req","q":"Brera Botanical Garden, Via Brera 28, Milan","ok":"2026-11","src":"https://ortibotanici.unimi.it/?p=2602"},
+        {
+          "local": "",
+          "ages": [
+            0,
+            1,
+            2,
+            2
+          ],
+          "hrs": 1.5,
+          "io": "in",
+          "pram": "part",
+          "price": {
+            "th": "เช็กราคาก่อนไป",
+            "en": "Check the price"
+          },
+          "book": "none",
+          "src": "https://www.viaggiapiccoli.com/milano-con-bambini-cosa-vedere/",
+          "name": {
+            "th": "หอศิลป์ปินาโกเตกาดีเบรรา",
+            "en": "Pinacoteca di Brera"
+          },
+          "kind": "museum",
+          "area": {
+            "th": "เบรรา มิลาน",
+            "en": "Brera, Milan"
+          },
+          "what": {
+            "th": "หอศิลป์ใหญ่ ห้องสว่าง มีภาพวาดชื่อดัง",
+            "en": "A large art museum with bright rooms and famous paintings"
+          },
+          "why": {
+            "th": "มีชุดวาดรูปฟรี หรือกระเป๋า \"วาลีจาดีปีเอรา\" ที่เปลี่ยนการชมเป็นเกมล่าสมบัติ",
+            "en": "A free drawing kit, or the \"Valigia di Piera\" bag that turns the visit into a treasure hunt"
+          },
+          "tip": {
+            "th": "รับกระเป๋าฟรีที่จุดขายตั๋ว เผื่อเวลาอย่างน้อย 1 ชั่วโมง แล้วไปสวนพฤกษศาสตร์ฟรีต่อได้",
+            "en": "Pick up the bag free at the ticket desk and allow at least an hour; the free botanical garden is good after"
+          },
+          "q": "Pinacoteca di Brera, Milan",
+          "ok": "2026-11"
+        },
+        {
+          "local": "Museo Teatrale alla Scala",
+          "ages": [
+            0,
+            1,
+            1,
+            2
+          ],
+          "hrs": 1,
+          "io": "in",
+          "pram": "part",
+          "price": {
+            "th": "เช็กราคาก่อนไป",
+            "en": "Check the price"
+          },
+          "book": "none",
+          "src": "https://www.viaggiapiccoli.com/milano-con-bambini-cosa-vedere/",
+          "name": {
+            "th": "พิพิธภัณฑ์โรงละครลาสกาลา",
+            "en": "La Scala Theatre Museum"
+          },
+          "kind": "museum",
+          "area": {
+            "th": "ปิอัซซาเดลลาสกาลา มิลาน",
+            "en": "Piazza della Scala, Milan"
+          },
+          "what": {
+            "th": "เครื่องดนตรี โปสเตอร์ ชุดโอเปรา และฉากละคร",
+            "en": "Instruments, posters, opera costumes and stage sets"
+          },
+          "why": {
+            "th": "เด็ก ๆ มองลงไปยังโรงละครที่เปิดไฟจากช่องที่นั่งชั้นบนได้",
+            "en": "Children can look down from a box at the lit auditorium"
+          },
+          "tip": {
+            "th": "อยู่ข้างพิพิธภัณฑ์เลโอนาร์โด3 ไปต่อกันได้",
+            "en": "Next to the Leonardo3 museum, so the two fit one visit"
+          },
+          "q": "Teatro alla Scala Museum, Largo Antonio Ghiringhelli 1, Milan",
+          "ok": "2026-11"
+        },
+        {
+          "local": "Biblioteca degli Alberi",
+          "ages": [
+            2,
+            2,
+            2,
+            2
+          ],
+          "hrs": 1,
+          "io": "out",
+          "pram": "yes",
+          "price": {
+            "th": "ฟรี",
+            "en": "Free"
+          },
+          "book": "none",
+          "src": "https://www.viaggiapiccoli.com/milano-con-bambini-cosa-vedere/",
+          "name": {
+            "th": "สวนห้องสมุดต้นไม้ BAM",
+            "en": "Library of Trees park (BAM)"
+          },
+          "kind": "park",
+          "area": {
+            "th": "ปอร์ตานูโอวา มิลาน",
+            "en": "Porta Nuova, Milan"
+          },
+          "what": {
+            "th": "สวนสาธารณะใหญ่กลางเมือง มีทางเดิน สนามหญ้า และงานจัดแสดงพืช",
+            "en": "A large city park with paths, lawns and plant installations"
+          },
+          "why": {
+            "th": "มีที่ให้วิ่งเล่นบนสนามหญ้า",
+            "en": "Room to run and play on the lawns"
+          },
+          "tip": {
+            "th": "เหมาะกับปิกนิกระหว่างเที่ยว",
+            "en": "Good for a picnic between visits"
+          },
+          "q": "BAM - Biblioteca degli Alberi Milano",
+          "ok": "2026-11"
+        },
+        {
+          "local": "",
+          "ages": [
+            1,
+            2,
+            2,
+            2
+          ],
+          "hrs": 1,
+          "io": "in",
+          "pram": "part",
+          "price": {
+            "th": "เช็กราคาก่อนไป",
+            "en": "Check the price"
+          },
+          "book": "req",
+          "src": "https://www.viaggiapiccoli.com/milano-con-bambini-cosa-vedere/",
+          "name": {
+            "th": "พิพิธภัณฑ์ประสาทสัมผัส",
+            "en": "Museum of Senses"
+          },
+          "kind": "museumkid",
+          "area": {
+            "th": "ถนนมอนเตกรัปปา มิลาน",
+            "en": "Viale Monte Grappa, Milan"
+          },
+          "what": {
+            "th": "เส้นทางภาพลวงตาและห้องสัมผัสหลายรูปแบบ",
+            "en": "A route of optical illusions and multisensory rooms"
+          },
+          "why": {
+            "th": "ภาพลวงตาให้ลองเล่นที่เด็ก ๆ สงสัยและสนุก",
+            "en": "Hands-on illusions children find curious"
+          },
+          "tip": {
+            "th": "เข้าตามรอบเวลา ต้องจองล่วงหน้า",
+            "en": "Entry by time slot; book ahead"
+          },
+          "q": "Museum of Senses Milano, Viale Monte Grappa, Milan",
+          "ok": "2026-11"
+        },
+        {
+          "local": "",
+          "ages": [
+            1,
+            2,
+            2,
+            2
+          ],
+          "hrs": 2,
+          "io": "out",
+          "pram": "part",
+          "price": {
+            "th": "เช็กราคาก่อนไป",
+            "en": "Check the price"
+          },
+          "book": "none",
+          "src": "https://www.viaggiapiccoli.com/milano-con-bambini-cosa-vedere/",
+          "name": {
+            "th": "สระว่ายน้ำบัญญีมิสเตรีโอซี",
+            "en": "Bagni Misteriosi"
+          },
+          "kind": "play",
+          "area": {
+            "th": "มิลาน",
+            "en": "Milan"
+          },
+          "what": {
+            "th": "สระว่ายน้ำกลางแจ้งในอาคารเก่าแก่ มีกิจกรรมครอบครัว",
+            "en": "Open-air pools in a historic building, with family events"
+          },
+          "why": {
+            "th": "สระกลางแจ้งในเมืองสำหรับบ่ายหน้าร้อน",
+            "en": "An outdoor pool in the city for a summer afternoon"
+          },
+          "q": "Bagni Misteriosi, Milan",
+          "ok": "2026-11"
+        }
     ]
     },
     {
