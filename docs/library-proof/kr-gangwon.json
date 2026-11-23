@@ -1,0 +1,19 @@
+{
+  "town": "kr-gangwon",
+  "kind": "eats",
+  "checked": "2026-11",
+  "rule": "A row gets ok only from a current listing, its own site or recent reviews with nothing saying closed (docs/EATS.md). A row is taken out when a search could not find the place at all or the sources disagree; a place found but not freshly confirmed stays without ok.",
+  "scope": "the 1 row without ok; the town holds 23 rows after this pass",
+  "how": "Google Maps opened in headless Chromium (2026-11-23), limited view without a reviews tab, so no review date could be read; searched in English and in the local language, each verdict from the place page or the result list shown",
+  "confirmed": [
+    {
+      "name": "Hwangtae Hoegwan",
+      "src": "https://www.google.com/maps/place/Hwangtae+Hoegwan+(Dried+Pollack+Restaurant)",
+      "page_name": "Hwangtae Hoegwan (Dried Pollack Restaurant) / 황태회관",
+      "evidence": "Google Maps (2026-11-23): restaurant, 3.6★, 19 Nunmaeul-gil, Daegwallyeong-myeon, Pyeongchang-gun (MP95+WW); 'Open · Closes 10 PM'; nothing says closed",
+      "ok": "2026-11"
+    }
+  ],
+  "kept_without_ok": [],
+  "removed": []
+}
