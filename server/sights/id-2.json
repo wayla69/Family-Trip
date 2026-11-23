@@ -174,6 +174,43 @@
           "q": "Cunca Wulang, Mbeliling, Manggarai Barat, Flores",
           "ok": "2026-11",
           "src": "https://komodotravelguide.blogspot.com/2025/07/cunca-wulang-waterfall-jungle-trekking.html"
+        },
+        {
+          "local": "",
+          "name": {
+            "th": "หาดสีชมพู",
+            "en": "Pink Beach"
+          },
+          "kind": "beach",
+          "area": {
+            "th": "อุทยานแห่งชาติโคโมโด ไปทางเรือ",
+            "en": "Komodo National Park, by boat"
+          },
+          "what": {
+            "th": "ชายหาดทรายขาวนุ่มที่มีสีชมพูอ่อนๆ หาดูยาก",
+            "en": "A beach of soft white sand with a rare pink tint"
+          },
+          "why": {
+            "th": "เหมาะกับการว่ายน้ำ เล่นทราย และดำน้ำตื้นกับเด็ก",
+            "en": "Good for swimming, playing and snorkelling with children"
+          },
+          "ages": [
+            1,
+            1,
+            1,
+            1
+          ],
+          "hrs": 2,
+          "io": "out",
+          "pram": "no",
+          "price": {
+            "th": "เช็กราคาก่อนไป",
+            "en": "Check the price"
+          },
+          "book": "none",
+          "q": "Pink Beach, Komodo National Park",
+          "src": "https://www.komodoluxury.com/blog/things-to-do-in-komodo-with-kids/",
+          "ok": "2026-11"
         }
       ]
     },
