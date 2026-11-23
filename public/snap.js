@@ -444,7 +444,7 @@ function snapWallMs(at, off, zone) {
   const first = guess - offAt(guess); return guess - offAt(first);
 }
 let snapGeoP = null;
-function snapGeo() { if (!snapGeoP) snapGeoP = api('GET', '/api/b/geo').catch(() => { snapGeoP = null; return { places: [], countries: [] }; }); return snapGeoP; }
+function snapGeo() { if (!snapGeoP) snapGeoP = apiKeep('/api/b/geo').catch(() => { snapGeoP = null; return { places: [], countries: [] }; }); return snapGeoP; }
 const snapShort = (n) => ({ th: String(n.th || n.en || '').split(/\s+และ/)[0].trim(), en: String(n.en || n.th || '').split(/ and | & /)[0].trim() });
 // a position → the nearest library city within reach (60 km at home in Thailand, 80 km abroad), or null — the position itself is not kept
 function snapPlace(ll, geo) {

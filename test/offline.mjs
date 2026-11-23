@@ -68,6 +68,13 @@ try {
     const words = there ? (await page.textContent('main')).trim().length : 0;
     ok(there && words > 80, `no server: #/t/${T}/${r} opens with its content (${words} chars)`);
   }
+  // storing the book also kept what Today and SOS read from the libraries (warmOffline → apiKeep / careFetch): the places to eat near
+  // tonight's bed, the rainy-day list and the help near the bed open with no server (a phone that stored the book at home never opened them online)
+  await page.goto(`${BASE}/#/t/${T}/today/1`);
+  const libs = await page.waitForFunction(() => eatBed.list && eatBed.list.length && sightRain.list && sightRain.list.length && [eatBed.list.length, sightRain.list.length], null, { timeout: 10000 }).then((h) => h.jsonValue(), () => null);
+  ok(!!libs, `no server: Today's places near the bed and rainy-day list come from the phone (${libs})`);
+  await page.goto(`${BASE}/#/t/${T}/sos`);
+  ok(await page.waitForSelector('#carelib:not([hidden]) .cown, #carelib:not([hidden]) li, #carelib:not([hidden]) details', { timeout: 8000 }).then(() => true, () => false), 'no server: the help near the bed opens from the phone');
   await page.goto(`${BASE}/#/passport/mimi/${T}`);
   ok(await page.waitForSelector('.pp .advc', { timeout: 8000 }).then(() => true, () => false), 'no server: the adventure passport opens');
   const art = await page.evaluate(() => Promise.all([...document.querySelectorAll('img')].slice(0, 6).map((i) => (i.complete ? i.naturalWidth : new Promise((r) => { i.onload = () => r(i.naturalWidth); i.onerror = () => r(0); })))));
