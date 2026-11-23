@@ -336,6 +336,125 @@
           "q": "MK Ultra Artists Pottery Studio, 16/41 Moo 4, Bo Put, Koh Samui",
           "ok": "2026-11",
           "src": "https://www.thethaiger.com/news/samui/top-5-kid-friendly-experiences-on-koh-samui"
+        },
+        {
+          "local": "",
+          "ages": [
+            0,
+            1,
+            2,
+            2
+          ],
+          "hrs": 4,
+          "io": "out",
+          "pram": "no",
+          "price": {
+            "th": "เช็กราคาก่อนไป",
+            "en": "Check the price"
+          },
+          "book": "rec",
+          "src": "https://fouraroundtheworld.com/things-to-do-in-koh-samui-with-kids/",
+          "name": {
+            "th": "เกาะแตน",
+            "en": "Koh Tan"
+          },
+          "kind": "nature",
+          "area": {
+            "th": "นอกชายฝั่งใต้ของเกาะสมุย",
+            "en": "Off the south coast of Koh Samui"
+          },
+          "what": {
+            "th": "ดำน้ำตื้นรอบเกาะแตน ทัวร์ครึ่งวัน",
+            "en": "Snorkelling off Koh Tan on a half-day tour"
+          },
+          "why": {
+            "th": "คู่มือบอกว่าเหมาะกับเกือบทุกวัย",
+            "en": "Suitable for most ages, the guide says"
+          },
+          "tip": {
+            "th": "เช็กราคาและที่ว่างก่อนไป",
+            "en": "Check prices and availability before you go"
+          },
+          "q": "เกาะแตน, สมุย",
+          "ok": "2026-11"
+        },
+        {
+          "local": "",
+          "ages": [
+            0,
+            1,
+            2,
+            2
+          ],
+          "hrs": 1.5,
+          "io": "out",
+          "pram": "no",
+          "price": {
+            "th": "เช็กราคาก่อนไป",
+            "en": "Check the price"
+          },
+          "book": "none",
+          "src": "https://fouraroundtheworld.com/things-to-do-in-koh-samui-with-kids/",
+          "name": {
+            "th": "ละไมวิวพ้อยท์",
+            "en": "Lamai Viewpoint"
+          },
+          "kind": "views",
+          "area": {
+            "th": "ละไม เกาะสมุย",
+            "en": "Lamai, Koh Samui"
+          },
+          "what": {
+            "th": "จุดชมวิวขึ้นด้วยกระเช้า ลงด้วยซิปไลน์",
+            "en": "A viewpoint reached by cable car, with a zipline back down"
+          },
+          "why": {
+            "th": "ชมวิว นั่งกระเช้า และโหนซิปไลน์",
+            "en": "Views, a cable car ride and a zipline"
+          },
+          "tip": {
+            "th": "เช็กราคาและที่ว่างก่อนไป",
+            "en": "Check prices and availability before you go"
+          },
+          "q": "ละไมวิวพ้อยท์ - หินหัวใจ, สมุย",
+          "ok": "2026-11"
+        },
+        {
+          "local": "",
+          "ages": [
+            0,
+            2,
+            2,
+            2
+          ],
+          "hrs": 1.5,
+          "io": "out",
+          "pram": "part",
+          "price": {
+            "th": "เช็กราคาก่อนไป",
+            "en": "Check the price"
+          },
+          "book": "none",
+          "src": "https://fouraroundtheworld.com/things-to-do-in-koh-samui-with-kids/",
+          "name": {
+            "th": "สมุย ฟุตบอลกอล์ฟ",
+            "en": "Samui Football Golf"
+          },
+          "kind": "play",
+          "area": {
+            "th": "เกาะสมุย เกาะสมุย",
+            "en": "Koh Samui, Koh Samui"
+          },
+          "what": {
+            "th": "กอล์ฟ 18 หลุม เล่นด้วยลูกฟุตบอล",
+            "en": "Eighteen holes played with a football"
+          },
+          "why": {
+            "th": "เกมที่เล่นได้ทั้งครอบครัว",
+            "en": "A game for the whole family"
+          },
+          "q": "Samui Football Golf",
+          "ok": "2026-11"
         }
       ]
     }

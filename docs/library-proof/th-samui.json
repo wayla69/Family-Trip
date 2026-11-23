@@ -1,19 +1,53 @@
 {
   "town": "th-samui",
-  "kind": "eats",
-  "checked": "2026-11",
-  "rule": "A row gets ok only from a current listing, its own site or recent reviews with nothing saying closed (docs/EATS.md). A row is taken out when a search could not find the place at all or the sources disagree; a place found but not freshly confirmed stays without ok.",
-  "scope": "the 1 row without ok; the town holds 21 rows after this pass",
-  "how": "Google Maps opened in headless Chromium (2026-11-23), limited view without a reviews tab, so no review date could be read; searched in English and in the local language, each verdict from the place page or the result list shown",
-  "confirmed": [
+  "kind": "eats + sights",
+  "checked": "2026-11-23",
+  "rule": "library-check.cjs, then the Google Maps Reviews tab sorted by newest: ok only when not marked closed, with a review from the last six months, and the map's name matching the page's.",
+  "agents": "one Haiku agent; 12 rows from AirAsia (Aug 2026), Pickyourtrail (Mar 2026), Four Around the World (Apr 2026) and Wongnai, 9 passed library-check.cjs, 3 went in",
+  "added": [
     {
-      "name": "Zest Coffee Lounge",
-      "src": "https://www.google.com/maps/place/Zest+Bakery+Sairee",
-      "page_name": "Zest Bakery Sairee",
-      "evidence": "Google Maps (2026-11-23): breakfast restaurant, 4.7★, 9/9 Moo 1, Sairee, Koh Tao (3RXH+JQ); 'Open · Closes 5 PM', phone listed; nothing says closed. Zest's other shop ('Zest', Mae Haad, 3RMG+J3) is open too; the Sairee one is the row's",
-      "ok": "2026-11"
+      "name": "Koh Tan",
+      "page_name": "Koh Tan",
+      "src": "https://fouraroundtheworld.com/things-to-do-in-koh-samui-with-kids/",
+      "date": "2026-04",
+      "map": "Google Maps 'เกาะ แตน', 134 reviews, newest shown '4 months ago'"
+    },
+    {
+      "name": "Lamai Viewpoint",
+      "page_name": "Lamai Viewpoint",
+      "src": "https://fouraroundtheworld.com/things-to-do-in-koh-samui-with-kids/",
+      "date": "2026-04",
+      "map": "Google Maps 'ละไมวิวพ้อยท์ - หินหัวใจ', 1,928 reviews, newest shown '4 months ago'"
+    },
+    {
+      "name": "Samui Football Golf",
+      "page_name": "Football Golf",
+      "src": "https://fouraroundtheworld.com/things-to-do-in-koh-samui-with-kids/",
+      "date": "2026-04",
+      "map": "Google Maps 'Samui Football Golf', 1,457 reviews, newest shown '8 days ago'"
     }
   ],
-  "kept_without_ok": [],
-  "removed": []
+  "left_out": [
+    {
+      "name": "Samui Aquarium and Tiger Zoo",
+      "why": "permanently closed on the map"
+    },
+    {
+      "name": "Splash Island, Pink Elephant Water Park, the Monkey Bay Aquapark",
+      "why": "the map shows a resort or a different water park"
+    },
+    {
+      "name": "Coco Splash",
+      "why": "22 reviews, newest 6 months old"
+    },
+    {
+      "name": "Butterfly Garden",
+      "why": "no open map entry"
+    },
+    {
+      "name": "three places to eat",
+      "why": "their Wongnai list is from 2019"
+    }
+  ],
+  "estimates": "Ages and visit hours are placeholders; prices and opening notes are the pages' own."
 }
