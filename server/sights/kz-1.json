@@ -291,6 +291,80 @@
           "q": "Butakovka Waterfall trail, Butakovka Gorge, Almaty",
           "ok": "2026-11",
           "src": "https://nta.visitalmaty.kz/ru/guides/almaty-with-kids"
+        },
+        {
+          "local": "Парк имени 28 гвардейцев-панфиловцев",
+          "ages": [
+            2,
+            2,
+            2,
+            2
+          ],
+          "hrs": 1,
+          "io": "out",
+          "pram": "yes",
+          "price": {
+            "th": "ฟรี",
+            "en": "Free"
+          },
+          "book": "none",
+          "src": "https://www.reiskoe.nl/en/almaty-with-kids/",
+          "name": {
+            "th": "สวน 28 ทหารพันฟีลอฟ",
+            "en": "Park of the 28 Panfilov Guardsmen"
+          },
+          "kind": "park",
+          "area": {
+            "th": "ใจกลางอัลมาตี",
+            "en": "Central Almaty"
+          },
+          "what": {
+            "th": "สวนกลางเมืองรอบมหาวิหารแอสเซนชัน มีจักรยานเด็กให้เช่า",
+            "en": "A central park around the Ascension Cathedral, with bikes for children to hire"
+          },
+          "why": {
+            "th": "หน้าเว็บบอกว่าเป็นลานที่เหมาะกับการพาเด็กเล็กมาเล่นสักชั่วโมง",
+            "en": "The page calls it a great square for an hour with young children"
+          },
+          "q": "28 Panfilov Guardsmen Park, Almaty",
+          "ok": "2026-11"
+        },
+        {
+          "local": "Вознесенский кафедральный собор",
+          "ages": [
+            1,
+            1,
+            2,
+            2
+          ],
+          "hrs": 0.5,
+          "io": "in",
+          "pram": "part",
+          "price": {
+            "th": "เช็กราคาก่อนไป",
+            "en": "Check the price"
+          },
+          "book": "none",
+          "src": "https://www.reiskoe.nl/en/almaty-with-kids/",
+          "name": {
+            "th": "มหาวิหารแอสเซนชัน",
+            "en": "Ascension Cathedral"
+          },
+          "kind": "culture",
+          "area": {
+            "th": "สวนพันฟีลอฟ อัลมาตี",
+            "en": "Panfilov Park, Almaty"
+          },
+          "what": {
+            "th": "สถานที่สำคัญที่รู้จักที่สุดของเมือง ในสวนกลางเมือง",
+            "en": "The city's best-known landmark, in the central park"
+          },
+          "why": {
+            "th": "หน้าเว็บบอกว่าสวยทั้งภายนอกและภายใน",
+            "en": "The page says it looks beautiful inside and out"
+          },
+          "q": "Ascension Cathedral, Gogol St 40, Almaty",
+          "ok": "2026-11"
         }
       ]
     },

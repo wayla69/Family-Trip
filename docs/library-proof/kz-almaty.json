@@ -1,17 +1,30 @@
 {
   "town": "kz-almaty",
-  "kind": "eats",
-  "checked": "2026-11",
-  "rule": "A row gets ok only from a current listing, its own site or recent reviews with nothing saying closed (docs/EATS.md). A row is taken out when a search could not find the place at all or the sources disagree; a place found but not freshly confirmed stays without ok.",
-  "scope": "the 1 row without ok; the rows already confirmed were not checked again",
-  "how": "Google Maps opened in headless Chromium (2026-11-23), limited view without a reviews tab, so no review date could be read; a place with current hours and no closed notice counts as a current listing",
-  "confirmed": [],
-  "kept_without_ok": [
+  "kind": "eats + sights",
+  "checked": "2026-11-23",
+  "rule": "library-check.cjs, then the Google Maps Reviews tab sorted by newest: ok only when not marked closed, with a review from the last six months, and the map's name matching the page's.",
+  "agents": "one Haiku agent; 2 of 3 rows from Reis Koe (2025) passed library-check.cjs, both went in; no place to eat had a page with facts",
+  "added": [
     {
-      "name": "La Skala",
-      "src": "https://www.google.com/maps/place/La+Skala/@43.1178041,77.0772109,15z",
-      "evidence": "Google Maps lists 'La Skala', 4.5★, at Shymbulak (439W+43H, Almaty) but as a bar with no hours ('Add hours'), so nothing current confirms it is open"
+      "name": "Park of the 28 Panfilov Guardsmen",
+      "page_name": "Park of the 28 Guardsmen",
+      "src": "https://www.reiskoe.nl/en/almaty-with-kids/",
+      "date": "2025-07",
+      "map": "Google Maps '28 Panfilov Guardsmen Park', 14,420 reviews, newest '2 hours ago'"
+    },
+    {
+      "name": "Ascension Cathedral",
+      "page_name": "Ascension Cathedral",
+      "src": "https://www.reiskoe.nl/en/almaty-with-kids/",
+      "date": "2025-07",
+      "map": "Google Maps Gogol St 40, 7,129 reviews, newest '5 hours ago'"
     }
   ],
-  "removed": []
+  "left_out": [
+    {
+      "name": "My Kids (Atakent Mall)",
+      "why": "failed library-check.cjs (quote not found)"
+    }
+  ],
+  "estimates": "Ages and visit hours are placeholders; prices and opening notes are the pages' own."
 }
