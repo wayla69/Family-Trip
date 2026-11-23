@@ -343,6 +343,117 @@
           "q": "Noordhoek Common, Avondrust Circle, Noordhoek, Cape Town",
           "ok": "2026-11",
           "src": "https://www.capetownetc.com/things-to-do-cape-town/family-kids/school-holiday-outings-cape-town-kids/"
+        },
+        {
+          "local": "",
+          "ages": [
+            2,
+            2,
+            2,
+            1
+          ],
+          "hrs": 1.5,
+          "io": "out",
+          "pram": "part",
+          "price": {
+            "th": "ฟรี",
+            "en": "Free"
+          },
+          "book": "none",
+          "src": "https://www.timeout.com/cape-town/things-to-do/the-best-summer-activities-for-kids-in-cape-town",
+          "name": {
+            "th": "สวนพาราไดซ์",
+            "en": "Paradise Park"
+          },
+          "kind": "park",
+          "area": {
+            "th": "นิวแลนด์ส เคปทาวน์",
+            "en": "Newlands, Cape Town"
+          },
+          "what": {
+            "th": "สวนร่มรื่น มีสนามเด็กเล่นและริมแม่น้ำลีสเบกตื้น ๆ",
+            "en": "A leafy park with playgrounds and the shallow edges of the Liesbeek River"
+          },
+          "why": {
+            "th": "บ้านต้นไม้ใหญ่ที่สุดของเคปทาวน์ มีบันได สะพาน ชิงช้า และสไลเดอร์",
+            "en": "Cape Town's biggest treehouse, with ladders, bridges, swings and slides"
+          },
+          "q": "Paradise Park, Newlands, Cape Town",
+          "ok": "2026-11"
+        },
+        {
+          "local": "",
+          "ages": [
+            2,
+            2,
+            2,
+            1
+          ],
+          "hrs": 1,
+          "io": "out",
+          "pram": "yes",
+          "price": {
+            "th": "ฟรี",
+            "en": "Free"
+          },
+          "book": "none",
+          "src": "https://www.timeout.com/cape-town/things-to-do/the-best-summer-activities-for-kids-in-cape-town",
+          "name": {
+            "th": "สวนแบตเตอรี",
+            "en": "Battery Park"
+          },
+          "kind": "play",
+          "area": {
+            "th": "วีแอนด์เอวอเตอร์ฟรอนต์",
+            "en": "V&A Waterfront"
+          },
+          "what": {
+            "th": "สนามเด็กเล่นในเมืองริมท่าเรือ ใกล้ลานสเกต",
+            "en": "A city playground at the waterfront, with a skate park nearby"
+          },
+          "why": {
+            "th": "มีโครงปีนป่าย ชิงช้า ม้าโยก และทางสกู๊ตเตอร์",
+            "en": "Climbing frames, swings, rocking horses and scooter paths"
+          },
+          "q": "Battery Park, V&A Waterfront, Cape Town",
+          "ok": "2026-11"
+        },
+        {
+          "local": "",
+          "ages": [
+            1,
+            2,
+            2,
+            2
+          ],
+          "hrs": 2,
+          "io": "out",
+          "pram": "part",
+          "price": {
+            "th": "เช็กราคาก่อนไป",
+            "en": "Check the price"
+          },
+          "book": "none",
+          "src": "https://www.timeout.com/cape-town/things-to-do/the-best-summer-activities-for-kids-in-cape-town",
+          "name": {
+            "th": "ลานจักรยานคอนสแตนเทียไอต์ซิก",
+            "en": "The Bike Park at Constantia Uitsig"
+          },
+          "kind": "play",
+          "area": {
+            "th": "คอนสแตนเทีย",
+            "en": "Constantia"
+          },
+          "what": {
+            "th": "ลานจักรยานมีทางโค้ง ทางลง ลานหิน และเนินกระโดด",
+            "en": "A bike park with berms, drops, rock gardens and jumps"
+          },
+          "why": {
+            "th": "ตั้งแต่จักรยานขาไถถึงคนปั่นเก่ง",
+            "en": "For everyone from balance bikes to confident riders"
+          },
+          "q": "The Bike Park at Constantia Uitsig, Constantia",
+          "ok": "2026-11"
         }
       ]
     },
