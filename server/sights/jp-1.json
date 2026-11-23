@@ -1426,7 +1426,204 @@
       {"name":{"en":"Kyoto Museum of Crafts and Design","th":"พิพิธภัณฑ์งานฝีมือและการออกแบบเกียวโต"},"kind":"museumkid","area":{"en":"Okazaki","th":"โอคาซากิ"},"what":{"en":"All 74 official traditional crafts of Kyoto in one basement hall, with the raw materials behind incense and dyeing to handle.","th":"งานหัตถกรรมดั้งเดิม 74 ชนิดที่ได้รับการรับรองของเกียวโต รวมอยู่ในห้องใต้ดินเดียว มีวัตถุดิบของธูปและการย้อมให้จับได้"},"why":{"en":"Visitors can smell the woods and ring the metal orin bells, the page says.","th":"หน้าเว็บบอกว่าผู้เยี่ยมชมดมกลิ่นไม้และตีระฆังโลหะออริน (orin) ได้"},"tip":{"en":"A drop-in craft session every afternoon, 14:00 to 15:00.","th":"มีกิจกรรมงานฝีมือแบบไม่ต้องจองทุกบ่าย 14:00–15:00 น."},"ages":[0,1,2,2],"hrs":2,"io":"in","pram":"part","price":{"en":"¥500","th":"¥500"},"book":"none","q":"Kyoto Museum of Crafts and Design, Okazaki, Kyoto","ok":"2026-11","src":"https://japanforkids.jp/places/kyoto-museum-of-crafts-and-design/"},
       {"name":{"en":"VS Park AEON Mall Kyoto","th":"วีเอสพาร์ค อีออนมอลล์เกียวโต"},"kind":"play","area":{"en":"Hachijo side of Kyoto Station","th":"ฝั่งฮาจิโจของสถานีเกียวโต"},"what":{"en":"An indoor variety-show sports park with more than two dozen physical activities.","th":"สวนกีฬาในร่มแบบวาไรตี้โชว์ มีกิจกรรมกายภาพกว่าสองโหล"},"why":{"en":"An easy, energetic rainy-day plan right by the station, the page says.","th":"หน้าเว็บบอกว่าเป็นแผนวันฝนตกที่ง่ายและสนุก อยู่ติดสถานี"},"tip":{"en":"Open 10:00 to 21:00, last entry 20:00.","th":"เปิด 10:00–21:00 น. เข้าได้ล่าสุด 20:00 น."},"ages":[0,0,1,2],"hrs":2,"io":"in","pram":"no","price":{"en":"Check the price","th":"เช็กราคาก่อนไป"},"book":"none","q":"VS Park AEON Mall Kyoto, Kyoto Station, Kyoto","ok":"2026-11","src":"https://japanforkids.jp/places/vs-park-aeon-mall-kyoto/"},
       {"name":{"en":"GEAR","th":"เกียร์"},"kind":"show","area":{"en":"Kawaramachi-Sanjo","th":"คาวารามาจิ-ซันโจ"},"what":{"en":"A wordless, 90-minute stage show in a 72-seat room on the third floor of the 1928 Building.","th":"การแสดงบนเวทีไม่มีคำพูด ยาว 90 นาที ในห้องที่นั่ง 72 ที่นั่ง ชั้นสามของอาคาร 1928"},"why":{"en":"A wordless story, so no language is needed, the page says.","th":"เป็นเรื่องราวที่ไม่มีคำพูด จึงไม่ต้องใช้ภาษา ตามหน้าเว็บ"},"tip":{"en":"Be in your seat five minutes before the start; latecomers can be held up to 15 minutes.","th":"อยู่ที่นั่งก่อนเริ่มห้านาที ผู้มาสายอาจถูกกันไว้ได้ถึง 15 นาที"},"ages":[0,1,2,2],"hrs":1.5,"io":"in","pram":"no","price":{"en":"¥1,800 for children (Premium)","th":"¥1,800 เด็ก (พรีเมียม)"},"book":"rec","q":"GEAR, Kawaramachi-Sanjo, Kyoto","ok":"2026-11","src":"https://japanforkids.jp/places/gear-non-verbal-theatre/"},
-      {"name":{"en":"Round1 Kyoto Kawaramachi","th":"ราวด์วัน เกียวโต คาวารามาจิ"},"kind":"play","area":{"en":"Kawaramachi","th":"คาวารามาจิ"},"what":{"en":"A large indoor amusement complex with bowling, a big arcade and karaoke.","th":"ศูนย์บันเทิงในร่มขนาดใหญ่ มีโบว์ลิ่ง อาร์เคดใหญ่ และคาราโอเกะ"},"why":{"en":"Stroller, nursing room and diaper change on site, and walk-in is fine, the page says.","th":"หน้าเว็บบอกว่ามีรถเข็นเด็ก ห้องให้นม และที่เปลี่ยนผ้าอ้อมในพื้นที่ และเดินเข้าได้โดยไม่ต้องจอง"},"ages":[0,1,2,2],"hrs":3,"io":"in","pram":"yes","price":{"en":"Check the price","th":"เช็กราคาก่อนไป"},"book":"none","q":"Round1 Kyoto Kawaramachi, Kawaramachi, Kyoto","ok":"2026-11","src":"https://japanforkids.jp/places/round1-kyoto-kawaramachi/"}
+      {"name":{"en":"Round1 Kyoto Kawaramachi","th":"ราวด์วัน เกียวโต คาวารามาจิ"},"kind":"play","area":{"en":"Kawaramachi","th":"คาวารามาจิ"},"what":{"en":"A large indoor amusement complex with bowling, a big arcade and karaoke.","th":"ศูนย์บันเทิงในร่มขนาดใหญ่ มีโบว์ลิ่ง อาร์เคดใหญ่ และคาราโอเกะ"},"why":{"en":"Stroller, nursing room and diaper change on site, and walk-in is fine, the page says.","th":"หน้าเว็บบอกว่ามีรถเข็นเด็ก ห้องให้นม และที่เปลี่ยนผ้าอ้อมในพื้นที่ และเดินเข้าได้โดยไม่ต้องจอง"},"ages":[0,1,2,2],"hrs":3,"io":"in","pram":"yes","price":{"en":"Check the price","th":"เช็กราคาก่อนไป"},"book":"none","q":"Round1 Kyoto Kawaramachi, Kawaramachi, Kyoto","ok":"2026-11","src":"https://japanforkids.jp/places/round1-kyoto-kawaramachi/"},
+        {
+          "local": "",
+          "ages": [
+            1,
+            2,
+            2,
+            1
+          ],
+          "hrs": 1,
+          "io": "in",
+          "pram": "part",
+          "price": {
+            "th": "เช็กราคาก่อนไป",
+            "en": "Check the price"
+          },
+          "book": "rec",
+          "src": "https://kyoto.travel/en/travel-inspiration/attractions-for-kids/",
+          "name": {
+            "th": "อาริฮานะ เกียวโต",
+            "en": "AriHana Kyoto"
+          },
+          "kind": "culture",
+          "area": {
+            "th": "ฮิงาชิยามะ ใกล้วัดคิโยมิซุ",
+            "en": "Higashiyama, near Kiyomizu-dera"
+          },
+          "what": {
+            "th": "บ้านอายุ 90 ปี ให้เล่นเกมญี่ปุ่นโบราณ",
+            "en": "A 90-year-old house where you play traditional Japanese games"
+          },
+          "why": {
+            "th": "เคนดามะ พับกระดาษ ลูกข่าง และลองสวมกิโมโน",
+            "en": "Kendama, origami and spinning tops, and simple kimono to try on"
+          },
+          "q": "AriHana Kyoto",
+          "ok": "2026-11"
+        },
+        {
+          "local": "奈良公園",
+          "ages": [
+            1,
+            2,
+            2,
+            2
+          ],
+          "hrs": 3,
+          "io": "out",
+          "pram": "part",
+          "price": {
+            "th": "ฟรี",
+            "en": "Free"
+          },
+          "book": "none",
+          "src": "https://tinytotintokyo.com/nara-with-kids",
+          "name": {
+            "th": "สวนนารา",
+            "en": "Nara Park"
+          },
+          "kind": "park",
+          "area": {
+            "th": "นารา",
+            "en": "Nara"
+          },
+          "what": {
+            "th": "สวนใหญ่มีกวางเดินอิสระ ซื้อขนมให้กวางกินได้",
+            "en": "A big park where sika deer roam and you can buy crackers to feed them"
+          },
+          "why": {
+            "th": "กวางโค้งตอบเพื่อขอขนม",
+            "en": "The deer bow back for a cracker"
+          },
+          "tip": {
+            "th": "วันธรรมดาคนน้อยกว่าเสาร์อาทิตย์มาก",
+            "en": "Weekdays are far quieter than weekends"
+          },
+          "q": "奈良公園",
+          "ok": "2026-11"
+        },
+        {
+          "local": "南円堂",
+          "ages": [
+            1,
+            1,
+            1,
+            1
+          ],
+          "hrs": 0.5,
+          "io": "out",
+          "pram": "part",
+          "price": {
+            "th": "เช็กราคาก่อนไป",
+            "en": "Check the price"
+          },
+          "book": "none",
+          "src": "https://tinytotintokyo.com/nara-with-kids",
+          "name": {
+            "th": "นันเอ็นโด (วัดโคฟุคุจิ)",
+            "en": "Nanen-do (Kofuku-ji)"
+          },
+          "kind": "culture",
+          "area": {
+            "th": "นารา",
+            "en": "Nara"
+          },
+          "what": {
+            "th": "หอวัดที่ผู้มาเยือนถวายเหรียญและอธิษฐาน",
+            "en": "A temple hall where visitors offer coins and pray"
+          },
+          "why": {
+            "th": "เด็ก ๆ สนุกกับการถวายเหรียญ",
+            "en": "Children enjoy making an offering"
+          },
+          "tip": {
+            "th": "ถ้ามีรถเข็น เข้าทางถนนซันโจ ไม่ใช่บันไดจากสระซารุซาวะ",
+            "en": "With a pram, come in from Sanjo-dori, not the stairs from Sarusawa Pond"
+          },
+          "q": "南円堂 興福寺",
+          "ok": "2026-11"
+        },
+        {
+          "local": "若草山",
+          "ages": [
+            0,
+            1,
+            2,
+            2
+          ],
+          "hrs": 2,
+          "io": "out",
+          "pram": "no",
+          "price": {
+            "th": "เช็กราคาก่อนไป",
+            "en": "Check the price"
+          },
+          "book": "none",
+          "src": "https://tinytotintokyo.com/nara-with-kids",
+          "name": {
+            "th": "ภูเขาวากากุสะ",
+            "en": "Mount Wakakusa"
+          },
+          "kind": "nature",
+          "area": {
+            "th": "นารา",
+            "en": "Nara"
+          },
+          "what": {
+            "th": "เนินหญ้ามีกวาง เดินขึ้นยอดแรกได้",
+            "en": "A grassy hill with deer and a walk to the first peak"
+          },
+          "why": {
+            "th": "มีกวางบนเนินเขา",
+            "en": "Deer on the hillside"
+          },
+          "tip": {
+            "th": "ขึ้นทางประตูใต้ ลงทางประตูเหนือ",
+            "en": "Up through the South Gate, down through the North Gate"
+          },
+          "q": "若草山, 奈良",
+          "ok": "2026-11"
+        },
+        {
+          "local": "亀屋良長",
+          "ages": [
+            0,
+            1,
+            2,
+            2
+          ],
+          "hrs": 1,
+          "io": "in",
+          "pram": "part",
+          "price": {
+            "th": "3,300 เยน (รวมภาษี)",
+            "en": "¥3,300 (tax included)"
+          },
+          "book": "req",
+          "src": "https://haveagood-holiday.com/en/articles/kameya-yoshinaga-kyoto-wagashi-workshop-golden-week",
+          "name": {
+            "th": "เวิร์กช็อปขนมญี่ปุ่นคาเมยะ โยชินากะ",
+            "en": "Kameya Yoshinaga wagashi workshop"
+          },
+          "kind": "culture",
+          "area": {
+            "th": "ชิโจ-โฮริกาวะ เกียวโต",
+            "en": "Shijo-Horikawa, Kyoto"
+          },
+          "what": {
+            "th": "ร้านขนมอายุ 220 ปี เปิดคลาสให้ทำขนมเกียวโตสด",
+            "en": "A 220-year-old confectioner's class where you make fresh Kyoto sweets"
+          },
+          "why": {
+            "th": "ต้อนรับเด็ก สอนทีละขั้น มีชาเขียวให้",
+            "en": "Children are welcome, with step-by-step help; matcha included"
+          },
+          "q": "亀屋良長 本店, 京都",
+          "ok": "2026-11"
+        }
     ]
     },
     {
