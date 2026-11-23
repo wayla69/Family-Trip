@@ -1886,6 +1886,191 @@
           "q": "Seattle Center Armory, 305 Harrison St, Seattle",
           "ok": "2026-11",
           "src": "https://www.seattlecenter.com/explore/attractions/armory"
+        },
+        {
+          "local": "",
+          "ages": [
+            0,
+            1,
+            2,
+            2
+          ],
+          "hrs": 1.5,
+          "io": "in",
+          "pram": "part",
+          "price": {
+            "th": "เช็กราคาก่อนไป",
+            "en": "Check the price"
+          },
+          "book": "none",
+          "src": "https://visitseattle.org/seattle-localist/play/inside-out/",
+          "name": {
+            "th": "พิพิธภัณฑ์พินบอลซีแอตเทิล",
+            "en": "Seattle Pinball Museum"
+          },
+          "kind": "museum",
+          "area": {
+            "th": "ไชนาทาวน์ ซีแอตเทิล",
+            "en": "Chinatown-International District, Seattle"
+          },
+          "what": {
+            "th": "เครื่องพินบอลรุ่นเก่าที่เล่นได้",
+            "en": "Old pinball machines you can play"
+          },
+          "why": {
+            "th": "ได้ลงมือเล่นเครื่องวินเทจ",
+            "en": "Hands-on play on vintage machines"
+          },
+          "q": "Seattle Pinball Museum, 508 Maynard Ave S, Seattle",
+          "ok": "2026-11"
+        },
+        {
+          "local": "",
+          "ages": [
+            2,
+            2,
+            2,
+            2
+          ],
+          "hrs": 2,
+          "io": "out",
+          "pram": "part",
+          "price": {
+            "th": "ฟรี",
+            "en": "Free"
+          },
+          "book": "none",
+          "src": "https://visitseattle.org/things-to-do/families/seattles-top-10-family-friendly-activities/",
+          "name": {
+            "th": "สวนโกลเดนการ์เดนส์",
+            "en": "Golden Gardens Park"
+          },
+          "kind": "beach",
+          "area": {
+            "th": "บัลลาร์ด ซีแอตเทิล",
+            "en": "Ballard, Seattle"
+          },
+          "what": {
+            "th": "หาดริมพิวเจตซาวด์",
+            "en": "A beach on Puget Sound"
+          },
+          "why": {
+            "th": "หาดในเมืองเหมาะกับหาดอกไม้ทะเล หอยเม่น และปลาดาว",
+            "en": "City beaches are good for finding anemones, sea urchins and starfish"
+          },
+          "q": "Golden Gardens Park, 8498 Seaview Pl NW, Seattle",
+          "ok": "2026-11"
+        },
+        {
+          "local": "",
+          "ages": [
+            0,
+            2,
+            2,
+            2
+          ],
+          "hrs": 1.5,
+          "io": "in",
+          "pram": "part",
+          "price": {
+            "th": "เช็กราคาก่อนไป",
+            "en": "Check the price"
+          },
+          "book": "rec",
+          "src": "https://visitseattle.org/seattle-localist/play/inside-out/",
+          "name": {
+            "th": "โรงละครเด็กซีแอตเทิล",
+            "en": "Seattle Children's Theatre"
+          },
+          "kind": "show",
+          "area": {
+            "th": "ซีแอตเทิลเซ็นเตอร์ ซีแอตเทิล",
+            "en": "Seattle Center, Seattle"
+          },
+          "what": {
+            "th": "โรงละครที่แสดงสำหรับเด็กและเยาวชน",
+            "en": "A theatre of shows for children and young audiences"
+          },
+          "why": {
+            "th": "การแสดงที่หน้าเว็บบอกว่าน่าติดตามมาก",
+            "en": "Shows the page calls very engaging"
+          },
+          "q": "Seattle Children's Theatre, 201 Thomas St, Seattle",
+          "ok": "2026-11"
+        },
+        {
+          "local": "",
+          "ages": [
+            2,
+            2,
+            2,
+            2
+          ],
+          "hrs": 2,
+          "io": "out",
+          "pram": "yes",
+          "price": {
+            "th": "ฟรี",
+            "en": "Free"
+          },
+          "book": "none",
+          "src": "https://visitseattle.org/things-to-do/families/seattles-top-10-family-friendly-activities/",
+          "name": {
+            "th": "หาดอัลไค",
+            "en": "Alki Beach"
+          },
+          "kind": "beach",
+          "area": {
+            "th": "เวสต์ซีแอตเทิล ซีแอตเทิล",
+            "en": "West Seattle, Seattle"
+          },
+          "what": {
+            "th": "หาดในเวสต์ซีแอตเทิลสำหรับปั่นจักรยานริมน้ำ",
+            "en": "A West Seattle beach for bike rides along the water"
+          },
+          "why": {
+            "th": "มีที่ปั่นจักรยานและแอ่งน้ำทะเลให้สำรวจ",
+            "en": "Room for bikes and rock pools to explore"
+          },
+          "q": "Alki Beach Park, 2665 Alki Ave SW, Seattle",
+          "ok": "2026-11"
+        },
+        {
+          "local": "",
+          "ages": [
+            0,
+            1,
+            1,
+            2
+          ],
+          "hrs": 1.5,
+          "io": "in",
+          "pram": "part",
+          "price": {
+            "th": "เช็กราคาก่อนไป",
+            "en": "Check the price"
+          },
+          "book": "none",
+          "src": "https://visitseattle.org/things-to-do/families/seattles-top-10-family-friendly-activities/",
+          "name": {
+            "th": "พิพิธภัณฑ์วิงลุค",
+            "en": "Wing Luke Museum"
+          },
+          "kind": "museum",
+          "area": {
+            "th": "ไชนาทาวน์ ซีแอตเทิล",
+            "en": "Chinatown-International District, Seattle"
+          },
+          "what": {
+            "th": "ประวัติศาสตร์ชาวเอเชียอเมริกัน ชาวฮาวาย และชาวเกาะแปซิฟิก ผ่านภาพและสิ่งของ",
+            "en": "Asian American, Native Hawaiian and Pacific Islander history in photos and objects"
+          },
+          "why": {
+            "th": "มีภาพและสิ่งของให้ดูด้วยกัน",
+            "en": "Photos and objects to look at together"
+          },
+          "q": "Wing Luke Museum, 719 S King St, Seattle",
+          "ok": "2026-11"
         }
       ]
     },
