@@ -544,6 +544,158 @@
           "q": "Oia, Santorini",
           "ok": "2026-11",
           "src": "https://discovercyclades.gr/blog/santorini-with-kids"
+        },
+        {
+          "local": "",
+          "ages": [
+            1,
+            1,
+            1,
+            1
+          ],
+          "hrs": 2,
+          "io": "out",
+          "pram": "no",
+          "price": {
+            "th": "ฟรี",
+            "en": "Free"
+          },
+          "book": "none",
+          "src": "https://www.wildjunket.com/santorini-with-kids-guide-santorini-family-vacation/",
+          "name": {
+            "th": "หาดแดง",
+            "en": "Red Beach"
+          },
+          "kind": "beach",
+          "area": {
+            "th": "อาโครติรี",
+            "en": "Akrotiri"
+          },
+          "what": {
+            "th": "หาดกรวดใต้หน้าผาสีแดงสูงที่ปลายเกาะ",
+            "en": "Pebbly sand under tall red cliffs at the island’s tip"
+          },
+          "why": {
+            "th": "หน้าผาแดงและกรวดให้สำรวจ",
+            "en": "Red cliffs and pebbles to explore"
+          },
+          "q": "Red Beach, Akrotiri, Santorini",
+          "ok": "2026-11"
+        },
+        {
+          "local": "",
+          "ages": [
+            1,
+            1,
+            1,
+            1
+          ],
+          "hrs": 2,
+          "io": "out",
+          "pram": "no",
+          "price": {
+            "th": "ฟรี",
+            "en": "Free"
+          },
+          "book": "none",
+          "src": "https://www.wildjunket.com/santorini-with-kids-guide-santorini-family-vacation/",
+          "name": {
+            "th": "หาดขาว",
+            "en": "White Beach"
+          },
+          "kind": "beach",
+          "area": {
+            "th": "อาโครติรี",
+            "en": "Akrotiri"
+          },
+          "what": {
+            "th": "อ่าวเล็กๆ กรวดสีขาวใต้หน้าผาขาว",
+            "en": "A small cove of white pebbles under white cliffs"
+          },
+          "why": {
+            "th": "มีร่มเงาจากหน้าผา",
+            "en": "Some shade from the cliffs"
+          },
+          "q": "White Beach, Akrotiri, Santorini",
+          "ok": "2026-11"
+        },
+        {
+          "local": "",
+          "ages": [
+            1,
+            1,
+            1,
+            1
+          ],
+          "hrs": 2,
+          "io": "out",
+          "pram": "part",
+          "price": {
+            "th": "เช็กราคาก่อนไป",
+            "en": "Check the price"
+          },
+          "book": "none",
+          "src": "https://blog.jet2.com/family-guide-to-santorini",
+          "name": {
+            "th": "โรงหนังกลางแจ้งคามารี",
+            "en": "Kamari Open Air Cinema"
+          },
+          "kind": "show",
+          "area": {
+            "th": "คามารี",
+            "en": "Kamari"
+          },
+          "what": {
+            "th": "โรงหนังกลางแจ้ง มีเครื่องดื่มและของว่าง",
+            "en": "An open-air cinema with drinks and snacks"
+          },
+          "why": {
+            "th": "ดูหนังใต้ดวงดาว",
+            "en": "Films under the stars"
+          },
+          "tip": {
+            "th": "ประตูเปิด 20:30 เปิดเฉพาะหน้าร้อน",
+            "en": "Doors open at 20:30; summer only"
+          },
+          "q": "Kamari Open Air Cinema, Kamari",
+          "ok": "2026-11"
+        },
+        {
+          "local": "",
+          "ages": [
+            2,
+            2,
+            1,
+            1
+          ],
+          "hrs": 2,
+          "io": "out",
+          "pram": "part",
+          "price": {
+            "th": "ฟรี",
+            "en": "Free"
+          },
+          "book": "none",
+          "src": "https://blog.jet2.com/family-guide-to-santorini",
+          "name": {
+            "th": "หาดโมโนลิทอส",
+            "en": "Monolithos Beach"
+          },
+          "kind": "beach",
+          "area": {
+            "th": "โมโนลิทอส ชายฝั่งตะวันออก",
+            "en": "Monolithos, east coast"
+          },
+          "what": {
+            "th": "หาดทรายดำน้ำตื้น มีที่เล่นและสนามฟุตบอล",
+            "en": "A black-sand beach with shallow water, a play area and a football pitch"
+          },
+          "why": {
+            "th": "น้ำตื้นและมีที่เล่นสำหรับเด็กเล็ก",
+            "en": "Shallow water and a play area for small children"
+          },
+          "q": "Monolithos Beach, Santorini",
+          "ok": "2026-11"
         }
       ]
     }
