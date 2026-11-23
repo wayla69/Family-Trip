@@ -30,3 +30,24 @@ batch-29.md: ke-mara, lk-hills, mm-bagan, mm-yangon
 batch-30.md: mn-gobi, mn-ulaanbaatar, mv-atolls, np-kathmandu
 batch-31.md: p-neuschwanstein, p-yellowstone, pe-cusco, us-alaska
 batch-32.md: uz-samarkand, za-kruger
+batch-33.md: th-korat, cn-chongqing, th-rayong, th-loei
+batch-34.md: cn-harbin, cn-guilin, th-nan, jp-hakone
+batch-35.md: th-lampang, th-ayutthaya, th-khonkaen, th-kohchang
+batch-36.md: th-lipe, th-nakhonsi, th-hatyai, th-trang
+batch-37.md: jp-hiroshima, th-ubon, th-suratthani, kr-gyeongju
+batch-38.md: jp-nikko, jp-nagasaki, th-pattaya, th-sukhothai
+batch-39.md: th-chiangmai, th-krabi, th-samui, th-chanthaburi
+batch-40.md: vn-saigon, jp-yokohama, th-khaoyai, jp-nagano
+batch-41.md: th-udon, jp-kumamoto, jp-takayama, th-khaokho
+batch-42.md: kr-gangwon, tw-hualien, jp-kanazawa, kr-jeju
+batch-43.md: kr-jeonju, tw-central, th-maehongson, tr-istanbul
+batch-44.md: p-orlando, mo-macau, kr-suwon, us-newyork
+batch-45.md: vn-danang, cn-chengdu, jp-hokkaido, jp-tohoku
+batch-46.md: es-barcelona, tw-south, tw-taipei, us-california
+batch-47.md: th-huahin, my-kualalumpur, jp-fukuoka, id-bali
+batch-48.md: jp-okinawa, vn-hanoi, cn-beijing, th-phuket
+batch-49.md: kr-busan, th-bangkok, sg-singapore, jp-kyoto
+batch-50.md: cn-shanghai, kr-seoul, fr-paris, jp-tokyo
+batch-51.md: jp-osaka, de-berlin, nl-amsterdam, it-rome
+batch-52.md: gb-london, hk-hongkong, ae-dubai, au-melbourne
+batch-53.md: au-sydney
