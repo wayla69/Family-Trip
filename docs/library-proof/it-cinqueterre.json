@@ -1,17 +1,54 @@
 {
   "town": "it-cinqueterre",
-  "kind": "eats",
-  "checked": "2026-11",
-  "rule": "A row gets ok only from a current listing, its own site or recent reviews with nothing saying closed (docs/EATS.md). A row is taken out when a search could not find the place at all or the sources disagree; a place found but not freshly confirmed stays without ok.",
-  "scope": "the 1 row without ok; the rows already confirmed were not checked again",
-  "how": "Google Maps opened in headless Chromium (2026-11-23), limited view without a reviews tab, so no review date could be read; a place with current hours and no closed notice counts as a current listing",
-  "confirmed": [],
-  "kept_without_ok": [],
-  "removed": [
+  "rounds": [
     {
-      "name": "Batti Batti Focacceria",
-      "src": "https://www.google.com/maps/place/Batti+Batti'+Focacceria/@44.1348043,9.6830729,17z",
-      "reason": "Google Maps: 'Batti Batti' Focacceria', Via Visconti 3, 19018 Vernazza (4MMM+W6), located in Hotel Gianni Franzi — 'Temporarily closed'"
+      "town": "it-cinqueterre",
+      "kind": "eats",
+      "checked": "2026-11",
+      "rule": "A row gets ok only from a current listing, its own site or recent reviews with nothing saying closed (docs/EATS.md). A row is taken out when a search could not find the place at all or the sources disagree; a place found but not freshly confirmed stays without ok.",
+      "scope": "the 1 row without ok; the rows already confirmed were not checked again",
+      "how": "Google Maps opened in headless Chromium (2026-11-23), limited view without a reviews tab, so no review date could be read; a place with current hours and no closed notice counts as a current listing",
+      "confirmed": [],
+      "kept_without_ok": [],
+      "removed": [
+        {
+          "name": "Batti Batti Focacceria",
+          "src": "https://www.google.com/maps/place/Batti+Batti'+Focacceria/@44.1348043,9.6830729,17z",
+          "reason": "Google Maps: 'Batti Batti' Focacceria', Via Visconti 3, 19018 Vernazza (4MMM+W6), located in Hotel Gianni Franzi — 'Temporarily closed'"
+        }
+      ]
+    },
+    {
+      "town": "it-cinqueterre",
+      "kind": "eats + sights",
+      "checked": "2026-11-23",
+      "rule": "library-check.cjs, then the Google Maps Reviews tab sorted by newest: ok only when not marked closed, with a review from the last six months, and the map's name matching the page's.",
+      "agents": "one Haiku agent; 3 rows from Mom in Italy (Mar 2025) passed library-check.cjs, all went in; most other pages were blocked or undated",
+      "added": [
+        {
+          "name": "Fritto e Pizza da Sandro",
+          "page_name": "Fritto e Pizza da Sandro",
+          "src": "https://mominitaly.com/vernazza-with-kids/",
+          "date": "2025-03",
+          "map": "Google Maps 'Fritto e pizza da Sandro', Via Roma 60, 464 reviews, newest '1 day ago'"
+        },
+        {
+          "name": "Pizzeria Fratelli Basso",
+          "page_name": "Pizzeria Fratelli Basso",
+          "src": "https://mominitaly.com/vernazza-with-kids/",
+          "date": "2025-03",
+          "map": "Google Maps Via Roma 1, 273 reviews, newest '3 days ago'"
+        },
+        {
+          "name": "Vernazza harbour beach",
+          "page_name": "Harbor Beach",
+          "src": "https://mominitaly.com/vernazza-with-kids/",
+          "date": "2025-03",
+          "map": "Google Maps 'Vernazza Beach', 423 reviews, newest '2 weeks ago'"
+        }
+      ],
+      "left_out": [],
+      "estimates": "Ages and visit hours are placeholders; prices and opening notes are the pages' own."
     }
   ]
 }

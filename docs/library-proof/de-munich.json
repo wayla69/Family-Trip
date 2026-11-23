@@ -1,0 +1,101 @@
+{
+  "town": "de-munich",
+  "kind": "eats + sights",
+  "checked": "2026-11-23",
+  "rule": "library-check.cjs, then the Google Maps Reviews tab sorted by newest: ok only when not marked closed, with a review from the last six months, and the map's name matching the page's.",
+  "agents": "one Haiku agent; 11 rows from in-muenchen.de (Nov 2026), The Local and the pool operator passed library-check.cjs, 11 went in",
+  "added": [
+    {
+      "name": "Kindercafé Zuckertag",
+      "page_name": "Kindercafé Zuckertag",
+      "src": "https://www.in-muenchen.de/?p=748140",
+      "date": "2026-11",
+      "map": "Google Maps 'Zuckertag', Ehrengutstraße 10, 67 reviews, newest '4 weeks ago'"
+    },
+    {
+      "name": "Mini Moment Kids Café",
+      "page_name": "Mini Moment Café im Westend",
+      "src": "https://www.in-muenchen.de/?p=748140",
+      "date": "2026-11",
+      "map": "Google Maps 'Mini Moment Kids Café', 152 reviews, newest '1 day ago'"
+    },
+    {
+      "name": "Kleine Sportgeister",
+      "page_name": "Kleine Sportgeister Turncafé",
+      "src": "https://www.in-muenchen.de/?p=748140",
+      "date": "2026-11",
+      "map": "Google Maps 'Kleine Sportgeister', 215 reviews, newest 'last week'"
+    },
+    {
+      "name": "Café Glückskind",
+      "page_name": "Café Glückskind",
+      "src": "https://www.in-muenchen.de/?p=748140",
+      "date": "2026-11",
+      "map": "Google Maps 562 reviews, newest 'last week'"
+    },
+    {
+      "name": "Café Pfefferminza",
+      "page_name": "Café Pfefferminza",
+      "src": "https://www.in-muenchen.de/?p=748140",
+      "date": "2026-11",
+      "map": "Google Maps 167 reviews, newest 'last week'"
+    },
+    {
+      "name": "Mama’s Kindercafé",
+      "page_name": "Mama’s Kindercafé",
+      "src": "https://www.in-muenchen.de/?p=748140",
+      "date": "2026-11",
+      "map": "Google Maps 'Mama's Kindercafe/ Turn & Tanz', 127 reviews, newest 'last week'"
+    },
+    {
+      "name": "Hans im Glück (Isartor)",
+      "page_name": "Hans im Glück",
+      "src": "https://www.in-muenchen.de/?p=748140",
+      "date": "2026-11",
+      "map": "Google Maps Isartorplatz 8, 4,474 reviews, newest '10 hours ago'"
+    },
+    {
+      "name": "La Sophia",
+      "page_name": "La Sophia",
+      "src": "https://www.in-muenchen.de/?p=748140",
+      "date": "2026-11",
+      "map": "Google Maps 1,282 reviews, newest '15 hours ago'"
+    },
+    {
+      "name": "Frau im Mond (Deutsches Museum)",
+      "page_name": "Frau im Mond",
+      "src": "https://www.thelocal.de/20250115/six-things-to-do-on-a-rainy-day-in-munich",
+      "date": "2025-01",
+      "map": "Google Maps 'Frau im Mond - Dachterrasse', Deutsches Museum, 878 reviews, newest '14 hours ago'"
+    },
+    {
+      "name": "Alte Pinakothek",
+      "page_name": "Alte Pinakothek",
+      "src": "https://www.thelocal.de/20250115/six-things-to-do-on-a-rainy-day-in-munich",
+      "date": "2025-01",
+      "map": "Google Maps 13,730 reviews, newest '14 hours ago'"
+    },
+    {
+      "name": "Müller’sches Volksbad",
+      "page_name": "Müller’sches Volksbad",
+      "src": "https://www.swm.de/privatkunden/m-baeder/sauna/volksbad.html",
+      "date": "official",
+      "map": "Google Maps 'Müller’sches Volksbad (Hallenbad)', 2,284 reviews, newest '3 days ago'"
+    }
+  ],
+  "left_out": [
+    {
+      "name": "muenchen.de family restaurant list",
+      "why": "dated 2022"
+    },
+    {
+      "name": "children’s farms Ramersdorf and Neuaubing",
+      "why": "ages 6+ only"
+    },
+    {
+      "name": "CityWave, Spiel-Gaudi",
+      "why": "outside Munich"
+    }
+  ],
+  "estimates": "Ages and visit hours are placeholders; prices and opening notes are the pages' own."
+}

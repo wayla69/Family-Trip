@@ -1,26 +1,82 @@
 {
   "town": "us-southwest",
-  "kind": "eats",
-  "checked": "2026-11",
-  "rule": "A row gets ok only from a current listing, its own site or recent reviews with nothing saying closed (docs/EATS.md). A row is taken out when a search could not find the place at all or the sources disagree; a place found but not freshly confirmed stays without ok.",
-  "scope": "the 2 rows without ok; the rows that already carried ok were not re-checked in this pass",
-  "how": "Google Maps opened in headless Chromium (2026-11-23), limited view without a reviews tab, so no review date could be read; each row's own map query first, then the name with the town, a list result opened when needed; a hotel's own site or one web search only where Maps could not settle it.",
-  "confirmed": [
+  "rounds": [
     {
-      "name": "In-N-Out Burger",
-      "src": "Google Maps",
-      "page_name": "In-N-Out Burger",
-      "evidence": "\"In-N-Out Burger\", 3545 S Las Vegas Blvd Ste L24, 4R8J+X2 Las Vegas; \"Open · Closes 1 AM\"",
-      "ok": "2026-11"
+      "town": "us-southwest",
+      "kind": "eats",
+      "checked": "2026-11",
+      "rule": "A row gets ok only from a current listing, its own site or recent reviews with nothing saying closed (docs/EATS.md). A row is taken out when a search could not find the place at all or the sources disagree; a place found but not freshly confirmed stays without ok.",
+      "scope": "the 2 rows without ok; the rows that already carried ok were not re-checked in this pass",
+      "how": "Google Maps opened in headless Chromium (2026-11-23), limited view without a reviews tab, so no review date could be read; each row's own map query first, then the name with the town, a list result opened when needed; a hotel's own site or one web search only where Maps could not settle it.",
+      "confirmed": [
+        {
+          "name": "In-N-Out Burger",
+          "src": "Google Maps",
+          "page_name": "In-N-Out Burger",
+          "evidence": "\"In-N-Out Burger\", 3545 S Las Vegas Blvd Ste L24, 4R8J+X2 Las Vegas; \"Open · Closes 1 AM\"",
+          "ok": "2026-11"
+        },
+        {
+          "name": "Hershey's Chocolate World",
+          "src": "Google Maps",
+          "page_name": "Hershey's Chocolate World",
+          "evidence": "\"Hershey's Chocolate World\", 3790 S Las Vegas Blvd, Floor 1 · New York-New York Hotel & Casino, 4R2G+PH; \"Open · Closes 1 AM\"",
+          "ok": "2026-11"
+        }
+      ],
+      "kept_without_ok": [],
+      "removed": []
     },
     {
-      "name": "Hershey's Chocolate World",
-      "src": "Google Maps",
-      "page_name": "Hershey's Chocolate World",
-      "evidence": "\"Hershey's Chocolate World\", 3790 S Las Vegas Blvd, Floor 1 · New York-New York Hotel & Casino, 4R2G+PH; \"Open · Closes 1 AM\"",
-      "ok": "2026-11"
+      "town": "us-southwest",
+      "kind": "eats + sights",
+      "checked": "2026-11-23",
+      "rule": "library-check.cjs, then the Google Maps Reviews tab sorted by newest: ok only when not marked closed, with a review from the last six months, and the map's name matching the page's.",
+      "agents": "one Haiku agent; 6 of 11 rows from Lettuce (2026), Vegas Always (2026), Endless Travel Plans (2026) and More Than Just Parks (2026) passed library-check.cjs, 5 went in",
+      "added": [
+        {
+          "name": "RPM Italian (Forum Shops)",
+          "page_name": "RPM Italian",
+          "src": "https://www.lettuce.com/blog/kid-friendly-restaurants-in-las-vegas/",
+          "date": "2026-08",
+          "map": "Google Maps 'RPM Italian Las Vegas', 6,402 reviews, newest '7 hours ago'"
+        },
+        {
+          "name": "Summer House (Durango)",
+          "page_name": "Summer House",
+          "src": "https://www.lettuce.com/blog/kid-friendly-restaurants-in-las-vegas/",
+          "date": "2026-08",
+          "map": "Google Maps 6915 S Durango Dr, 1,867 reviews, newest '11 hours ago'"
+        },
+        {
+          "name": "Wicked Spoon",
+          "page_name": "Wicked Spoon",
+          "src": "https://www.vegasalways.com/best-breakfast-buffet-in-las-vegas/",
+          "date": "2026-05",
+          "map": "Google Maps The Chelsea Tower, The Cosmopolitan, 7,197 reviews, newest '1 day ago'"
+        },
+        {
+          "name": "Rim Trail",
+          "page_name": "Rim Trail",
+          "src": "https://www.endlesstravelplans.com/destinations/grand-canyon/grand-canyon-south-rim-family-guide",
+          "date": "2026-02",
+          "map": "Google Maps 'South Rim Trail', 1,732 reviews, newest '4 days ago'"
+        },
+        {
+          "name": "Bright Angel Trail",
+          "page_name": "Bright Angel Trail",
+          "src": "https://www.endlesstravelplans.com/destinations/grand-canyon/grand-canyon-south-rim-family-guide",
+          "date": "2026-02",
+          "map": "Google Maps 111 reviews, newest '3 weeks ago'"
+        }
+      ],
+      "left_out": [
+        {
+          "name": "Junior Ranger program",
+          "why": "a programme, not a place"
+        }
+      ],
+      "estimates": "Ages and visit hours are placeholders; prices and opening notes are the pages' own."
     }
-  ],
-  "kept_without_ok": [],
-  "removed": []
+  ]
 }

@@ -1,0 +1,102 @@
+{
+  "town": "p-disney-paris",
+  "kind": "eats + sights",
+  "checked": "2026-11-23",
+  "rule": "library-check.cjs, then the Google Maps Reviews tab sorted by newest: ok only when not marked closed, with a review from the last six months, and the map's name matching the page's.",
+  "agents": "one Haiku agent; 13 rows from Sortir à Paris (2026), Parrot World's own site and Visit Paris Region passed library-check.cjs, all went in",
+  "added": [
+    {
+      "name": "Market House Deli",
+      "page_name": "Market House Deli",
+      "src": "https://www.sortiraparis.com/en/where-to-eat-in-paris/restaurant/guides/350521-disneyland-paris-restaurants-our-top-picks",
+      "date": "2026-08",
+      "map": "Google Maps 845 reviews, newest '3 weeks ago'"
+    },
+    {
+      "name": "Last Chance Café",
+      "page_name": "Last Chance Café",
+      "src": "https://www.sortiraparis.com/en/where-to-eat-in-paris/restaurant/guides/350521-disneyland-paris-restaurants-our-top-picks",
+      "date": "2026-08",
+      "map": "Google Maps 417 reviews, newest 'last week'"
+    },
+    {
+      "name": "Casa de Coco",
+      "page_name": "Casa de Coco",
+      "src": "https://www.sortiraparis.com/en/where-to-eat-in-paris/restaurant/guides/350521-disneyland-paris-restaurants-our-top-picks",
+      "date": "2026-08",
+      "map": "Google Maps 'Casa de Coco – Restaurante de Familia', 3,041 reviews, newest 'last week'"
+    },
+    {
+      "name": "Cowboy Cookout Barbecue",
+      "page_name": "Cowboy Cookout Barbecue",
+      "src": "https://www.sortiraparis.com/en/where-to-eat-in-paris/restaurant/guides/350521-disneyland-paris-restaurants-our-top-picks",
+      "date": "2026-08",
+      "map": "Google Maps 3,456 reviews, newest '3 days ago'"
+    },
+    {
+      "name": "Café de la Brousse",
+      "page_name": "Café de la Brousse",
+      "src": "https://www.sortiraparis.com/en/where-to-eat-in-paris/restaurant/guides/350521-disneyland-paris-restaurants-our-top-picks",
+      "date": "2026-08",
+      "map": "Google Maps 'Café De La Brousse', 82 reviews, newest '4 months ago'"
+    },
+    {
+      "name": "Hakuna Matata Restaurant",
+      "page_name": "Hakuna Matata Restaurant",
+      "src": "https://www.sortiraparis.com/en/where-to-eat-in-paris/restaurant/guides/350521-disneyland-paris-restaurants-our-top-picks",
+      "date": "2026-08",
+      "map": "Google Maps 'Restaurant Hakuna Matata', 3,338 reviews, newest '2 days ago'"
+    },
+    {
+      "name": "The Old Mill",
+      "page_name": "The Old Mill",
+      "src": "https://www.sortiraparis.com/en/where-to-eat-in-paris/restaurant/guides/350521-disneyland-paris-restaurants-our-top-picks",
+      "date": "2026-08",
+      "map": "Google Maps 300 reviews, newest 'last month'"
+    },
+    {
+      "name": "Pizzeria Bella Notte",
+      "page_name": "Pizzeria Bella Notte",
+      "src": "https://www.sortiraparis.com/en/where-to-eat-in-paris/restaurant/guides/350521-disneyland-paris-restaurants-our-top-picks",
+      "date": "2026-08",
+      "map": "Google Maps 5,043 reviews, newest '1 day ago'"
+    },
+    {
+      "name": "Toad Hall Restaurant",
+      "page_name": "Toad Hall Restaurant",
+      "src": "https://www.sortiraparis.com/en/where-to-eat-in-paris/restaurant/guides/350521-disneyland-paris-restaurants-our-top-picks",
+      "date": "2026-08",
+      "map": "Google Maps 657 reviews, newest 'last week'"
+    },
+    {
+      "name": "Café Luminosity",
+      "page_name": "Café Luminosity",
+      "src": "https://www.sortiraparis.com/en/where-to-eat-in-paris/restaurant/guides/350521-disneyland-paris-restaurants-our-top-picks",
+      "date": "2026-08",
+      "map": "Google Maps Adventure Way, 17 reviews, newest 'last month'"
+    },
+    {
+      "name": "Parrot World",
+      "page_name": "Parrot World",
+      "src": "https://www.parrotworld.fr/en/guide/things-to-do-near-disneyland-paris",
+      "date": "official",
+      "map": "Google Maps 'Parrot World - Le parc animalier immersif', 6,528 reviews, newest '1 day ago'"
+    },
+    {
+      "name": "Imagi Park",
+      "page_name": "Imagi Park",
+      "src": "https://www.parrotworld.fr/en/guide/things-to-do-near-disneyland-paris",
+      "date": "official",
+      "map": "Google Maps Serris, 168 reviews, newest '4 days ago'"
+    },
+    {
+      "name": "PanoraMagique balloon",
+      "page_name": "Ballon PanoraMagique",
+      "src": "https://www.visitparisregion.com/en/inspiration/itineraries/disneyland-paris-and-surrounding-area",
+      "date": "official",
+      "map": "Google Maps 'PanoraMagique', 198 reviews, newest '2 weeks ago'"
+    }
+  ],
+  "left_out": [],
+  "estimates": "Ages and visit hours are placeholders; prices and opening notes are the pages' own."
+}

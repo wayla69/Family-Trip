@@ -258,6 +258,392 @@
           "q": "Grassi Lakes Trailhead, Canmore",
           "ok": "2026-11",
           "src": "https://www.albertaparks.ca/parks/kananaskis/kananaskis-country/advisories-public-safety/trail-reports/canmore-and-area/grassi-lakes-interpretive"
+        },
+        {
+          "local": "",
+          "ages": [
+            1,
+            1,
+            1,
+            1
+          ],
+          "hrs": 3,
+          "io": "out",
+          "pram": "no",
+          "price": {
+            "th": "เช็กราคาก่อนไป",
+            "en": "Check the price"
+          },
+          "book": "none",
+          "src": "https://www.travelbanffcanada.com/banff-with-kids/",
+          "name": {
+            "th": "หุบเขาซันแดนซ์",
+            "en": "Sundance Canyon"
+          },
+          "kind": "nature",
+          "area": {
+            "th": "เริ่มจากเคฟแอนด์เบซิน แบนฟ์",
+            "en": "From Cave and Basin, Banff"
+          },
+          "what": {
+            "th": "ทางลาดยางปั่นจักรยานหรือเดินไปเส้นทางหุบเขาสั้นๆ และน้ำตก",
+            "en": "A paved trail by bike or on foot to a short canyon walk and a waterfall"
+          },
+          "why": {
+            "th": "ปั่นจักรยานกับเด็กได้ บางช่วงเด็กเล็กต้องช่วย",
+            "en": "A child-friendly bike ride, though some bits need a hand for younger ones"
+          },
+          "tip": {
+            "th": "ล็อกจักรยานไว้ที่ปากทาง แล้วเดินวง 1.6 กม.",
+            "en": "Lock the bikes at the trailhead and walk the 1.6 km loop"
+          },
+          "q": "Sundance Canyon, Banff",
+          "ok": "2026-11"
+        },
+        {
+          "local": "",
+          "ages": [
+            1,
+            1,
+            1,
+            1
+          ],
+          "hrs": 1,
+          "io": "out",
+          "pram": "part",
+          "price": {
+            "th": "เช็กราคาก่อนไป",
+            "en": "Check the price"
+          },
+          "book": "none",
+          "src": "https://www.travelbanffcanada.com/banff-with-kids/",
+          "name": {
+            "th": "ทะเลสาบเพย์โต",
+            "en": "Peyto Lake"
+          },
+          "kind": "views",
+          "area": {
+            "th": "ถนนไอซ์ฟิลด์สปาร์กเวย์",
+            "en": "Icefields Parkway"
+          },
+          "what": {
+            "th": "ทะเลสาบน้ำแข็งสีเทอร์ควอยซ์ บนทางขับขึ้นเหนือจากเลกหลุยส์",
+            "en": "A turquoise glacier lake on the drive north from Lake Louise"
+          },
+          "why": {
+            "th": "จุดแวะพักกับเด็กบนทางขับรถชมวิวยาวๆ",
+            "en": "A good stop with children on the long scenic drive"
+          },
+          "q": "Peyto Lake, Icefields Parkway",
+          "ok": "2026-11"
+        },
+        {
+          "local": "",
+          "ages": [
+            1,
+            1,
+            1,
+            1
+          ],
+          "hrs": 1,
+          "io": "out",
+          "pram": "no",
+          "price": {
+            "th": "เช็กราคาก่อนไป",
+            "en": "Check the price"
+          },
+          "book": "none",
+          "src": "https://www.travelbanffcanada.com/banff-with-kids/",
+          "name": {
+            "th": "น้ำตกซิลเวอร์ตัน",
+            "en": "Silverton Falls"
+          },
+          "kind": "nature",
+          "area": {
+            "th": "ถนนโบว์แวลลีย์ปาร์กเวย์ ใกล้จอห์นสตันแคนยอน",
+            "en": "Bow Valley Parkway, near Johnston Canyon"
+          },
+          "what": {
+            "th": "เดิน 1 กม. ผ่านป่าไปน้ำตกสามชั้น",
+            "en": "A 1 km walk through forest to a three-tiered waterfall"
+          },
+          "why": {
+            "th": "แวะต่อจากจอห์นสตันแคนยอนได้ สั้นและง่าย",
+            "en": "A short, easy add-on to Johnston Canyon"
+          },
+          "q": "Silverton Falls, Banff",
+          "ok": "2026-11"
+        },
+        {
+          "local": "",
+          "ages": [
+            1,
+            1,
+            1,
+            1
+          ],
+          "hrs": 1,
+          "io": "out",
+          "pram": "part",
+          "price": {
+            "th": "ฟรี",
+            "en": "Free"
+          },
+          "book": "none",
+          "src": "https://www.travelbanffcanada.com/banff-with-kids/",
+          "name": {
+            "th": "ทางเดินวงแม่น้ำโบว์ แคนมอร์",
+            "en": "Bow River Loop, Canmore"
+          },
+          "kind": "nature",
+          "area": {
+            "th": "สวนริเวอร์ไซด์ แคนมอร์",
+            "en": "Riverside Park, Canmore"
+          },
+          "what": {
+            "th": "ทางเดินวง 2 กม. ข้ามสะพานเอนจิน เห็นภูเขารันเดิล ยอดฮาหลิง และทรีซิสเตอร์ส",
+            "en": "A 2 km loop over the Engine Bridge with views of Mount Rundle, Ha Ling Peak and the Three Sisters"
+          },
+          "why": {
+            "th": "เดินง่าย วิวภูเขา มีสนามเด็กเล่นระหว่างทาง",
+            "en": "An easy walk with mountain views and a playground on the way"
+          },
+          "tip": {
+            "th": "เดินตามทางเลยถนนบริดจ์ไปถึงสนามเด็กเล่นเวสต์แคนมอร์พาร์ก",
+            "en": "Stay on the path past Bridge Road to reach West Canmore Park playground"
+          },
+          "q": "Bow River Loop Trail, Canmore",
+          "ok": "2026-11"
+        },
+        {
+          "local": "",
+          "ages": [
+            1,
+            1,
+            1,
+            1
+          ],
+          "hrs": 1,
+          "io": "out",
+          "pram": "part",
+          "price": {
+            "th": "ฟรี",
+            "en": "Free"
+          },
+          "book": "none",
+          "src": "https://www.travelbanffcanada.com/banff-with-kids/",
+          "name": {
+            "th": "สนามเด็กเล่นเวสต์แคนมอร์พาร์ก",
+            "en": "West Canmore Park playground"
+          },
+          "kind": "play",
+          "area": {
+            "th": "สวนเวสต์แคนมอร์",
+            "en": "West Canmore Park"
+          },
+          "what": {
+            "th": "สนามเด็กเล่นริมทางเดินแม่น้ำโบว์ เห็นวิวภูเขา",
+            "en": "A playground by the Bow River path, with mountain views"
+          },
+          "why": {
+            "th": "เด็กเล่นไป พ่อแม่ชมวิวไป",
+            "en": "Children play while the parents enjoy the view"
+          },
+          "q": "West Canmore Park Playground, Canmore",
+          "ok": "2026-11"
+        },
+        {
+          "local": "",
+          "ages": [
+            1,
+            1,
+            1,
+            1
+          ],
+          "hrs": 2,
+          "io": "out",
+          "pram": "no",
+          "price": {
+            "th": "เช็กราคาก่อนไป",
+            "en": "Check the price"
+          },
+          "book": "none",
+          "src": "https://www.travelbanffcanada.com/banff-with-kids/",
+          "name": {
+            "th": "เส้นทางลำธารฮาร์ตครีก",
+            "en": "Heart Creek trail"
+          },
+          "kind": "nature",
+          "area": {
+            "th": "คานานาสกิส ห่างแคนมอร์ 17 กม.",
+            "en": "Kananaskis Country, 17 km from Canmore"
+          },
+          "what": {
+            "th": "เส้นทางเลียบลำธารเข้าหุบเขา มีต้นสนและก้อนหินใหญ่",
+            "en": "A gentle creek trail into a mountain canyon with evergreens and boulders"
+          },
+          "why": {
+            "th": "มีสะพานไม้เล็กๆ ให้ข้ามหลายรอบ",
+            "en": "Little wooden bridges to cross again and again"
+          },
+          "q": "Heart Creek Trail Head, Lac des Arcs",
+          "ok": "2026-11"
+        },
+        {
+          "local": "",
+          "ages": [
+            0,
+            0,
+            1,
+            1
+          ],
+          "hrs": 4,
+          "io": "out",
+          "pram": "no",
+          "price": {
+            "th": "เช็กราคาก่อนไป",
+            "en": "Check the price"
+          },
+          "book": "none",
+          "src": "https://www.travelbanffcanada.com/banff-with-kids/",
+          "name": {
+            "th": "โรงน้ำชาทะเลสาบแอกเนส",
+            "en": "Lake Agnes Tea House"
+          },
+          "kind": "nature",
+          "area": {
+            "th": "เลกหลุยส์",
+            "en": "Lake Louise"
+          },
+          "what": {
+            "th": "เดินไปกลับ 6.8 กม. จากเลกหลุยส์ไปโรงน้ำชาริมทะเลสาบแอกเนส",
+            "en": "A 6.8 km out-and-back hike from Lake Louise to a teahouse by Lake Agnes"
+          },
+          "why": {
+            "th": "อยู่ในรายการสิ่งที่ดีที่สุดที่ทำกับเด็กได้ที่เลกหลุยส์",
+            "en": "On the page’s list of the best things to do at Lake Louise with children"
+          },
+          "q": "Lake Agnes Tea House, Lake Louise",
+          "ok": "2026-11"
+        },
+        {
+          "local": "",
+          "ages": [
+            1,
+            1,
+            1,
+            1
+          ],
+          "hrs": 3,
+          "io": "out",
+          "pram": "no",
+          "price": {
+            "th": "เช็กราคาก่อนไป",
+            "en": "Check the price"
+          },
+          "book": "req",
+          "src": "https://www.travelbanffcanada.com/banff-with-kids/",
+          "name": {
+            "th": "ทะเลสาบคอนโซเลชัน",
+            "en": "Consolation Lakes"
+          },
+          "kind": "nature",
+          "area": {
+            "th": "ทะเลสาบโมเรน",
+            "en": "Moraine Lake"
+          },
+          "what": {
+            "th": "เดินป่าครอบครัวจากโมเรนเลกไปทะเลสาบสองแห่ง มีจุดปิกนิกบนก้อนหิน",
+            "en": "A family hike from Moraine Lake to two lakes, with a picnic spot on the rocks"
+          },
+          "why": {
+            "th": "หนีคนแน่นที่โมเรนเลกได้",
+            "en": "A way to get away from the crowds at Moraine Lake"
+          },
+          "tip": {
+            "th": "ถนนไปโมเรนเลกห้ามรถส่วนตัว ต้องจองรถรับส่ง",
+            "en": "Moraine Lake Road is closed to private cars, so book a shuttle"
+          },
+          "q": "Consolation Lakes, Banff National Park",
+          "ok": "2026-11"
+        },
+        {
+          "local": "",
+          "ages": [
+            1,
+            1,
+            1,
+            1
+          ],
+          "hrs": 1,
+          "io": "out",
+          "pram": "yes",
+          "price": {
+            "th": "ฟรี",
+            "en": "Free"
+          },
+          "book": "none",
+          "src": "https://playcanmore.com/things-to-do-canmore-with-kids/",
+          "name": {
+            "th": "ทางเดินไม้โพลิสแมนส์ครีก",
+            "en": "Policeman’s Creek boardwalk"
+          },
+          "kind": "nature",
+          "area": {
+            "th": "แคนมอร์",
+            "en": "Canmore"
+          },
+          "what": {
+            "th": "ทางเดินไม้ราบในเมือง น้ำสีเทอร์ควอยซ์และภูเขาตลอดทาง",
+            "en": "A flat boardwalk in town with turquoise water and mountains all the way"
+          },
+          "why": {
+            "th": "ราบ เข็นรถเข็นได้ เดินง่ายทุกคน",
+            "en": "Flat and pram-friendly, an easy walk for everyone"
+          },
+          "q": "Policeman's Creek Boardwalk, Canmore",
+          "ok": "2026-11"
+        },
+        {
+          "local": "",
+          "ages": [
+            1,
+            1,
+            1,
+            1
+          ],
+          "hrs": 2,
+          "io": "out",
+          "pram": "part",
+          "price": {
+            "th": "เช็กราคาก่อนไป",
+            "en": "Check the price"
+          },
+          "book": "req",
+          "src": "https://playcanmore.com/things-to-do-canmore-with-kids/",
+          "name": {
+            "th": "ศูนย์พักพิงหมาป่าลูกผสมยัมนัสกา",
+            "en": "Yamnuska Wolfdog Sanctuary"
+          },
+          "kind": "zoo",
+          "area": {
+            "th": "นอกเมืองแคนมอร์",
+            "en": "Just outside Canmore"
+          },
+          "what": {
+            "th": "ศูนย์พักพิงที่ครอบครัวเดินดูหมาป่าลูกผสมที่ช่วยมา มีทัวร์นำเที่ยวหรือเดินเอง",
+            "en": "A sanctuary where families walk among rescued wolfdogs on guided or self-guided tours"
+          },
+          "why": {
+            "th": "หน้าเว็บบอกว่าเป็นจุดแวะที่ครอบครัวจำได้ไม่ลืม",
+            "en": "The page calls it a really memorable stop for families"
+          },
+          "tip": {
+            "th": "จองล่วงหน้า",
+            "en": "Book ahead"
+          },
+          "q": "Yamnuska Wolfdog Sanctuary",
+          "ok": "2026-11"
         }
       ]
     },
@@ -535,6 +921,195 @@
           "q": "Niagara Takes Flight, Niagara Falls, Ontario",
           "ok": "2026-11",
           "src": "https://tourstoniagarafalls.com/attraction/niagara-takes-flight/"
+        },
+        {
+          "local": "",
+          "ages": [
+            1,
+            1,
+            1,
+            1
+          ],
+          "hrs": 1,
+          "io": "in",
+          "pram": "part",
+          "price": {
+            "th": "ฟรี",
+            "en": "Free"
+          },
+          "book": "none",
+          "src": "https://www.torontotourism.org/toronto-with-toddlers/",
+          "name": {
+            "th": "ห้องสมุดโทรอนโตเรเฟอเรนซ์",
+            "en": "Toronto Reference Library"
+          },
+          "kind": "play",
+          "area": {
+            "th": "ยองก์และบลัวร์",
+            "en": "Yonge and Bloor"
+          },
+          "what": {
+            "th": "ห้องสมุดประชาชน มีห้องสมุดเด็ก มุมอ่านหนังสือ และเครื่องเล่นในร่มสำหรับเด็กเล็ก",
+            "en": "A public library with a children’s library, reading nooks and indoor toddler play structures"
+          },
+          "why": {
+            "th": "มีเครื่องเล่นและจิ๊กซอว์สำหรับเด็กเล็ก ใช้ได้ดีวันหนาวหรือฝนตก",
+            "en": "Toddler play structures and puzzles for a cold or rainy day"
+          },
+          "q": "Toronto Reference Library, 789 Yonge St, Toronto",
+          "ok": "2026-11"
+        },
+        {
+          "local": "",
+          "ages": [
+            1,
+            1,
+            1,
+            1
+          ],
+          "hrs": 2,
+          "io": "in",
+          "pram": "part",
+          "price": {
+            "th": "≈ C$14 ผู้ใหญ่ · C$7 เด็ก 5 ขวบขึ้นไป · ต่ำกว่า 5 ขวบฟรี",
+            "en": "≈ C$14 a grown-up · C$7 children 5+ · under 5 free"
+          },
+          "book": "none",
+          "src": "https://www.torontotourism.org/toronto-with-toddlers/",
+          "name": {
+            "th": "พิพิธภัณฑ์รองเท้าบาตา",
+            "en": "Bata Shoe Museum"
+          },
+          "kind": "museumkid",
+          "area": {
+            "th": "ถนนบลัวร์ตะวันตก",
+            "en": "Bloor Street West"
+          },
+          "what": {
+            "th": "พิพิธภัณฑ์รองเท้า มีโซนให้เด็กเล็กลองสวมรองเท้าจากหลายวัฒนธรรม",
+            "en": "A shoe museum with a zone where toddlers try on shoes from different cultures"
+          },
+          "why": {
+            "th": "เด็กเล็กได้ลองสวมรองเท้าเอง",
+            "en": "Hands-on shoe-trying for toddlers"
+          },
+          "q": "Bata Shoe Museum, 327 Bloor St W, Toronto",
+          "ok": "2026-11"
+        },
+        {
+          "local": "",
+          "ages": [
+            1,
+            1,
+            1,
+            1
+          ],
+          "hrs": 2,
+          "io": "out",
+          "pram": "part",
+          "price": {
+            "th": "เช็กราคาก่อนไป",
+            "en": "Check the price"
+          },
+          "book": "none",
+          "src": "https://www.torontotourism.org/toronto-with-toddlers/",
+          "name": {
+            "th": "หาดเชอร์รี",
+            "en": "Cherry Beach"
+          },
+          "kind": "beach",
+          "area": {
+            "th": "ริมทะเลสาบโทรอนโต",
+            "en": "Toronto waterfront"
+          },
+          "what": {
+            "th": "หาดทราย มีสนามเด็กเล่นและน้ำทะเลสาบตื้น",
+            "en": "A sandy beach with a playground and shallow lake water"
+          },
+          "why": {
+            "th": "ทรายนุ่ม มีสนามเด็กเล่น และน้ำตื้นสำหรับเด็กเล็ก",
+            "en": "Soft sand, a playground and shallow water for toddlers"
+          },
+          "tip": {
+            "th": "อยู่กับเด็กเล็กตลอดเวลาที่ลงน้ำ",
+            "en": "Stay with toddlers in the water"
+          },
+          "q": "Cherry Beach, Toronto",
+          "ok": "2026-11"
+        },
+        {
+          "local": "",
+          "ages": [
+            1,
+            1,
+            1,
+            1
+          ],
+          "hrs": 2,
+          "io": "both",
+          "pram": "part",
+          "price": {
+            "th": "≈ C$20 ผู้ใหญ่ · C$10 เด็ก · ต่ำกว่า 5 ขวบฟรี",
+            "en": "≈ C$20 a grown-up · C$10 children · under 5 free"
+          },
+          "book": "none",
+          "src": "https://www.torontotourism.org/toronto-with-toddlers/",
+          "name": {
+            "th": "พิพิธภัณฑ์อากาข่าน",
+            "en": "Aga Khan Museum"
+          },
+          "kind": "culture",
+          "area": {
+            "th": "ดอนมิลส์ ถนนวินฟอร์ด",
+            "en": "Don Mills, Wynford Drive"
+          },
+          "what": {
+            "th": "พิพิธภัณฑ์ศิลปะอิสลาม มีเวิร์กช็อปครอบครัววันอาทิตย์และสวนสระน้ำ",
+            "en": "A museum of Islamic arts with Sunday family workshops and pool gardens"
+          },
+          "why": {
+            "th": "เวิร์กช็อปครอบครัวฟรีวันอาทิตย์ และสวนสระน้ำเข็นรถเข็นเดินเล่นได้",
+            "en": "Free family workshops on Sundays, and the pool gardens make a good pram walk"
+          },
+          "q": "Aga Khan Museum, 77 Wynford Dr, Toronto",
+          "ok": "2026-11"
+        },
+        {
+          "local": "",
+          "ages": [
+            1,
+            1,
+            1,
+            1
+          ],
+          "hrs": 2,
+          "io": "out",
+          "pram": "yes",
+          "price": {
+            "th": "เช็กราคาก่อนไป",
+            "en": "Check the price"
+          },
+          "book": "none",
+          "src": "https://www.torontotourism.org/toronto-with-toddlers/",
+          "name": {
+            "th": "สวนเอ็ดเวิร์ดส์",
+            "en": "Edwards Gardens"
+          },
+          "kind": "nature",
+          "area": {
+            "th": "ถนนลอว์เรนซ์ตะวันออก",
+            "en": "Lawrence Avenue East"
+          },
+          "what": {
+            "th": "สวนจัดแต่งขนาด 16 เฮกตาร์ มีทางเดินและลำธารเล็กกับสะพาน",
+            "en": "A 16-hectare formal garden with paths and a gentle creek with bridges"
+          },
+          "why": {
+            "th": "ทางเดินเข็นรถเข็นได้ และมีสะพานข้ามลำธาร",
+            "en": "Pram-friendly paths and bridges over the creek"
+          },
+          "q": "Edwards Gardens, 777 Lawrence Ave E, Toronto",
+          "ok": "2026-11"
         }
       ]
     },
@@ -812,6 +1387,408 @@
           "q": "Vancouver Maritime Museum, 1905 Ogden Avenue, Vancouver",
           "ok": "2026-11",
           "src": "https://vanmaritime.com/visit/"
+        },
+        {
+          "local": "",
+          "ages": [
+            0,
+            1,
+            2,
+            2
+          ],
+          "hrs": 1,
+          "io": "in",
+          "pram": "part",
+          "price": {
+            "th": "เช็กราคาก่อนไป",
+            "en": "Check the price"
+          },
+          "book": "none",
+          "src": "https://www.vancouvertourism.org/?p=178",
+          "name": {
+            "th": "ฟลายโอเวอร์แคนาดา",
+            "en": "FlyOver Canada"
+          },
+          "kind": "ride",
+          "area": {
+            "th": "แคนาดาเพลซ",
+            "en": "Canada Place"
+          },
+          "what": {
+            "th": "เครื่องเล่นจำลองการบินชมภูมิประเทศแคนาดา",
+            "en": "A flight-simulator ride over Canadian landscapes"
+          },
+          "why": {
+            "th": "เด็ก 4–7 ขวบชอบความรู้สึกเหมือนได้บิน",
+            "en": "Children of 4 to 7 love the feeling of flying"
+          },
+          "tip": {
+            "th": "เช็กกฎความสูงและอายุของผู้เล่นในเว็บก่อนไป",
+            "en": "Check the rider rules on its site before you go"
+          },
+          "q": "FlyOver Canada, 999 Canada Pl, Vancouver",
+          "ok": "2026-11"
+        },
+        {
+          "local": "",
+          "ages": [
+            2,
+            2,
+            1,
+            0
+          ],
+          "hrs": 2,
+          "io": "out",
+          "pram": "part",
+          "price": {
+            "th": "เช็กราคาก่อนไป",
+            "en": "Check the price"
+          },
+          "book": "none",
+          "src": "https://www.vancouvertourism.org/?p=178",
+          "name": {
+            "th": "ฟาร์มเมเปิลวูด",
+            "en": "Maplewood Farm"
+          },
+          "kind": "farm",
+          "area": {
+            "th": "นอร์ทแวนคูเวอร์",
+            "en": "North Vancouver"
+          },
+          "what": {
+            "th": "ฟาร์มให้ลูบสัตว์ มีแพะ กระต่าย และไก่",
+            "en": "A petting farm with goats, rabbits and chickens"
+          },
+          "why": {
+            "th": "เด็กเล็กได้ใกล้ชิดและให้อาหารสัตว์ เด็กถึงราว 7 ขวบก็ยังชอบ",
+            "en": "Little ones meet and feed the animals, still a hit up to about seven"
+          },
+          "tip": {
+            "th": "เปิดทุกวัน 10:00–16:00",
+            "en": "Open daily 10:00–16:00"
+          },
+          "q": "Maplewood Farm, 405 Seymour River Pl, North Vancouver",
+          "ok": "2026-11"
+        },
+        {
+          "local": "",
+          "ages": [
+            1,
+            1,
+            1,
+            1
+          ],
+          "hrs": 2,
+          "io": "out",
+          "pram": "part",
+          "price": {
+            "th": "≈ C$7.93 ผู้ใหญ่ ยังไม่รวมภาษี · อายุ 0–4 ปีฟรี",
+            "en": "≈ C$7.93 a grown-up before tax · ages 0–4 free"
+          },
+          "book": "none",
+          "src": "https://www.vancouvertourism.org/?p=178",
+          "name": {
+            "th": "สระน้ำอุ่นหาดเซคันด์บีช",
+            "en": "Second Beach Pool"
+          },
+          "kind": "beach",
+          "area": {
+            "th": "สวนสแตนลีย์",
+            "en": "Stanley Park"
+          },
+          "what": {
+            "th": "สระน้ำอุ่นกลางแจ้งข้างหาดทรายเซคันด์บีชในสวนสแตนลีย์",
+            "en": "A heated outdoor pool beside sandy Second Beach in Stanley Park"
+          },
+          "why": {
+            "th": "เด็กเล็กเล่นน้ำอุ่น มีไลฟ์การ์ดดูแล อยู่ติดหาด",
+            "en": "Small children splash in warm water with lifeguards by the beach"
+          },
+          "tip": {
+            "th": "เปิดเฉพาะหน้าร้อน ฤดูกาล 2026 คือ 16 พ.ค.–7 ก.ย.",
+            "en": "Summer only: the 2026 season ran 16 May to 7 September"
+          },
+          "q": "Second Beach Pool, Stanley Park, Vancouver",
+          "ok": "2026-11"
+        },
+        {
+          "local": "",
+          "ages": [
+            1,
+            1,
+            1,
+            1
+          ],
+          "hrs": 1,
+          "io": "out",
+          "pram": "part",
+          "price": {
+            "th": "ฟรี",
+            "en": "Free"
+          },
+          "book": "none",
+          "src": "https://www.vancouvertourism.org/?p=178",
+          "name": {
+            "th": "เสาโทเท็ม บร็อกตันพอยต์",
+            "en": "Totem poles, Brockton Point"
+          },
+          "kind": "culture",
+          "area": {
+            "th": "บร็อกตันพอยต์ สวนสแตนลีย์",
+            "en": "Brockton Point, Stanley Park"
+          },
+          "what": {
+            "th": "เสาโทเท็มแกะสลักที่บร็อกตันพอยต์ แวะง่ายระหว่างเดินริมกำแพงทะเล",
+            "en": "Carved totem poles at Brockton Point, an easy stop on a seawall walk"
+          },
+          "why": {
+            "th": "เด็กได้ดูเสาแกะสลักระหว่างเดินทางราบ",
+            "en": "Children see the carved poles on a flat walk"
+          },
+          "q": "Totem Poles, Brockton Point, Stanley Park, Vancouver",
+          "ok": "2026-11"
+        },
+        {
+          "local": "",
+          "ages": [
+            1,
+            1,
+            1,
+            1
+          ],
+          "hrs": 1,
+          "io": "out",
+          "pram": "yes",
+          "price": {
+            "th": "ฟรี",
+            "en": "Free"
+          },
+          "book": "none",
+          "src": "https://www.vancouvertourism.org/?p=178",
+          "name": {
+            "th": "ทางเดินรอบลอสต์ลากูน",
+            "en": "Lost Lagoon loop"
+          },
+          "kind": "nature",
+          "area": {
+            "th": "สวนสแตนลีย์",
+            "en": "Stanley Park"
+          },
+          "what": {
+            "th": "ทางเดินราบรอบลอสต์ลากูน ระหว่างทางมีบ้านธรรมชาติ",
+            "en": "A flat loop round Lost Lagoon with a nature house on the way"
+          },
+          "why": {
+            "th": "ราบ เข็นรถเข็นง่าย มีหงส์และนกกระสาให้ดู",
+            "en": "Flat and easy with a pram, with swans and herons to watch"
+          },
+          "q": "Lost Lagoon, Stanley Park, Vancouver",
+          "ok": "2026-11"
+        },
+        {
+          "local": "",
+          "ages": [
+            1,
+            2,
+            2,
+            1
+          ],
+          "hrs": 2,
+          "io": "in",
+          "pram": "part",
+          "price": {
+            "th": "เช็กราคาก่อนไป",
+            "en": "Check the price"
+          },
+          "book": "none",
+          "src": "https://www.vancouvertourism.org/?p=178",
+          "name": {
+            "th": "โกบานานาส์ นอร์ทแวนคูเวอร์",
+            "en": "Go Bananas (North Vancouver)"
+          },
+          "kind": "play",
+          "area": {
+            "th": "ถนนมารีนไดรฟ์ นอร์ทแวนคูเวอร์",
+            "en": "Marine Drive, North Vancouver"
+          },
+          "what": {
+            "th": "สนามเด็กเล่นในร่มสำหรับบ่ายวันฝนตก",
+            "en": "An indoor playground for wet afternoons"
+          },
+          "why": {
+            "th": "เด็กได้ปีนป่ายเล่นให้หมดแรง",
+            "en": "Children burn off energy on the play frames"
+          },
+          "tip": {
+            "th": "เหมาะกับเด็ก 1–12 ขวบ",
+            "en": "Best for ages 1–12"
+          },
+          "q": "Go Bananas, 935 Marine Dr, North Vancouver",
+          "ok": "2026-11"
+        },
+        {
+          "local": "",
+          "ages": [
+            1,
+            1,
+            1,
+            1
+          ],
+          "hrs": 1,
+          "io": "in",
+          "pram": "part",
+          "price": {
+            "th": "ฟรี",
+            "en": "Free"
+          },
+          "book": "none",
+          "src": "https://www.vancouvertourism.org/?p=178",
+          "name": {
+            "th": "ห้องสมุดกลางแวนคูเวอร์",
+            "en": "Vancouver Central Library"
+          },
+          "kind": "culture",
+          "area": {
+            "th": "ดาวน์ทาวน์",
+            "en": "Downtown"
+          },
+          "what": {
+            "th": "ห้องสมุดกลางเมือง มีห้องสมุดเด็กใหญ่อยู่ชั้นล่าง",
+            "en": "The downtown library with a big children’s library on the lower level"
+          },
+          "why": {
+            "th": "มีเล่านิทานและห้องสมุดเด็กให้พัก เข้าฟรี",
+            "en": "Story times and a children’s library for a break, free to visit"
+          },
+          "tip": {
+            "th": "สวนบนดาดฟ้าเปิดตามฤดูกาล",
+            "en": "The rooftop garden is seasonal"
+          },
+          "q": "Vancouver Public Library Central Library, 350 W Georgia St, Vancouver",
+          "ok": "2026-11"
+        },
+        {
+          "local": "",
+          "ages": [
+            1,
+            1,
+            1,
+            1
+          ],
+          "hrs": 2,
+          "io": "out",
+          "pram": "part",
+          "price": {
+            "th": "เช็กราคาก่อนไป",
+            "en": "Check the price"
+          },
+          "book": "none",
+          "src": "https://www.vancouvertourism.org/?p=178",
+          "name": {
+            "th": "หาดคิทซิลาโน",
+            "en": "Kitsilano Beach"
+          },
+          "kind": "beach",
+          "area": {
+            "th": "คิทซิลาโน",
+            "en": "Kitsilano"
+          },
+          "what": {
+            "th": "หาดในเมือง มีวอลเลย์บอลและสระน้ำเค็มอุ่นขนาดใหญ่",
+            "en": "A city beach with volleyball and a big heated saltwater pool"
+          },
+          "why": {
+            "th": "เด็กว่ายน้ำในสระน้ำเค็มอุ่นและเล่นทราย",
+            "en": "Children swim in the heated saltwater pool and play in the sand"
+          },
+          "tip": {
+            "th": "สระเปิดฤดูกาล 2026 คือ 17 มิ.ย.–13 ก.ย.",
+            "en": "The pool’s 2026 season ran 17 June to 13 September"
+          },
+          "q": "Kitsilano Beach, Vancouver",
+          "ok": "2026-11"
+        },
+        {
+          "local": "",
+          "ages": [
+            1,
+            1,
+            1,
+            1
+          ],
+          "hrs": 2,
+          "io": "out",
+          "pram": "part",
+          "price": {
+            "th": "ฟรี",
+            "en": "Free"
+          },
+          "book": "none",
+          "src": "https://www.vancouvertourism.org/?p=178",
+          "name": {
+            "th": "หาดอิงลิชเบย์",
+            "en": "English Bay Beach"
+          },
+          "kind": "beach",
+          "area": {
+            "th": "เวสต์เอนด์ ดาวน์ทาวน์",
+            "en": "West End, downtown"
+          },
+          "what": {
+            "th": "หาดกลางเมือง มีไลฟ์การ์ด วอลเลย์บอล และรูปปั้นอินุกชุก",
+            "en": "The downtown beach with lifeguards, volleyball and the Inukshuk"
+          },
+          "why": {
+            "th": "มีไลฟ์การ์ด และมีทรายให้เล่น",
+            "en": "Lifeguards on duty and sand to play in"
+          },
+          "tip": {
+            "th": "เดินจากโรงแรมส่วนใหญ่ในดาวน์ทาวน์ได้",
+            "en": "Walkable from most downtown hotels"
+          },
+          "q": "English Bay Beach, Vancouver",
+          "ok": "2026-11"
+        },
+        {
+          "local": "",
+          "ages": [
+            1,
+            1,
+            1,
+            1
+          ],
+          "hrs": 2,
+          "io": "out",
+          "pram": "part",
+          "price": {
+            "th": "ฟรี",
+            "en": "Free"
+          },
+          "book": "none",
+          "src": "https://www.vancouvertourism.org/?p=178",
+          "name": {
+            "th": "หาดสแปนิชแบงก์ส",
+            "en": "Spanish Banks"
+          },
+          "kind": "beach",
+          "area": {
+            "th": "พอยต์เกรย์",
+            "en": "Point Grey"
+          },
+          "what": {
+            "th": "หาดเลนกว้างใหญ่ให้เดินสำรวจตอนน้ำลง",
+            "en": "Huge tidal flats to explore at low tide"
+          },
+          "why": {
+            "th": "เด็กถือถังเดินสำรวจหาดตอนน้ำลง",
+            "en": "Children explore the flats with buckets at low tide"
+          },
+          "tip": {
+            "th": "เช็กตารางน้ำขึ้นลง และอย่าให้เด็กคลาดสายตา",
+            "en": "Check the tide table and keep the children in sight"
+          },
+          "q": "Spanish Banks Beach, Vancouver",
+          "ok": "2026-11"
         }
       ]
     }

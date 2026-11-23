@@ -1,19 +1,61 @@
 {
   "town": "at-hallstatt",
-  "kind": "eats",
-  "checked": "2026-11",
-  "rule": "A row gets ok only from a current listing, its own site or recent reviews with nothing saying closed (docs/EATS.md). A row is taken out when a search could not find the place at all or the sources disagree; a place found but not freshly confirmed stays without ok.",
-  "scope": "the 1 row without ok; the rows already confirmed were not checked again",
-  "how": "Google Maps opened in headless Chromium (2026-11-23), limited view without a reviews tab, so no review date could be read; a place with current hours and no closed notice counts as a current listing",
-  "confirmed": [
+  "rounds": [
     {
-      "name": "Rudolfsturm",
-      "src": "https://www.google.com/maps/place/Rudolfsturm/@47.5611321,13.6431646,17z",
-      "page_name": "Rudolfsturm (Restaurant Rudolfsturm)",
-      "evidence": "Google Maps: restaurant, 3.9★, Salzberg 1, 4830 Hallstatt (HJ6V+F7), located in Salzwelten Hallstatt — the salt mine, as the row says; 'Closed · Opens 10 AM', phone listed; nothing says closed",
-      "ok": "2026-11"
+      "town": "at-hallstatt",
+      "kind": "eats",
+      "checked": "2026-11",
+      "rule": "A row gets ok only from a current listing, its own site or recent reviews with nothing saying closed (docs/EATS.md). A row is taken out when a search could not find the place at all or the sources disagree; a place found but not freshly confirmed stays without ok.",
+      "scope": "the 1 row without ok; the rows already confirmed were not checked again",
+      "how": "Google Maps opened in headless Chromium (2026-11-23), limited view without a reviews tab, so no review date could be read; a place with current hours and no closed notice counts as a current listing",
+      "confirmed": [
+        {
+          "name": "Rudolfsturm",
+          "src": "https://www.google.com/maps/place/Rudolfsturm/@47.5611321,13.6431646,17z",
+          "page_name": "Rudolfsturm (Restaurant Rudolfsturm)",
+          "evidence": "Google Maps: restaurant, 3.9★, Salzberg 1, 4830 Hallstatt (HJ6V+F7), located in Salzwelten Hallstatt — the salt mine, as the row says; 'Closed · Opens 10 AM', phone listed; nothing says closed",
+          "ok": "2026-11"
+        }
+      ],
+      "kept_without_ok": [],
+      "removed": []
+    },
+    {
+      "town": "at-hallstatt",
+      "kind": "eats + sights",
+      "checked": "2026-11-23",
+      "rule": "library-check.cjs, then the Google Maps Reviews tab sorted by newest: ok only when not marked closed, with a review from the last six months, and the map's name matching the page's.",
+      "agents": "one Haiku agent; 4 of 9 rows from Pick Your Trail (2025), Dachstein Salzkammergut and Hallstatt's own site passed library-check.cjs, 3 went in",
+      "added": [
+        {
+          "name": "Marktbeisl Zur Ruth",
+          "page_name": "Marktbeisl Zur Ruth",
+          "src": "https://pickyourtrail.com/blog/restaurants-in-hallstatt",
+          "date": "2025-01",
+          "map": "Google Maps Marktplatz 59, 356 reviews, newest 'last month'"
+        },
+        {
+          "name": "Pizzeria Kegelbahn",
+          "page_name": "Pizzeria Kegelbahn",
+          "src": "https://pickyourtrail.com/blog/restaurants-in-hallstatt",
+          "date": "2025-01",
+          "map": "Google Maps Obertraun 178, 2,670 reviews, newest '1 day ago'"
+        },
+        {
+          "name": "Waldbachstrub waterfall",
+          "page_name": "Waldbachstrub waterfall",
+          "src": "https://www.hallstatt.net/about-hallstatt/active-summer-holiday/wanderzeit-en-US/neue-content-holder-en-us/hiking-in-hallstatt/hiking-to-the-waldbachstrub-waterfall-in-hallstatt/",
+          "date": "official",
+          "map": "Google Maps 'Waldbachstrub wasserfall', Echerntalweg, 323 reviews, newest '2 weeks ago'"
+        }
+      ],
+      "left_out": [
+        {
+          "name": "Schöne Aussicht round walk",
+          "why": "the map finds only another viewpoint (Aussichtsbrücke) with old reviews"
+        }
+      ],
+      "estimates": "Ages and visit hours are placeholders; prices and opening notes are the pages' own."
     }
-  ],
-  "kept_without_ok": [],
-  "removed": []
+  ]
 }

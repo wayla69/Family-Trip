@@ -1,19 +1,69 @@
 {
   "town": "br-rio",
-  "kind": "eats",
-  "checked": "2026-11",
-  "rule": "A row gets ok only from a current listing, its own site or recent reviews with nothing saying closed (docs/EATS.md). A row is taken out when a search could not find the place at all or the sources disagree; a place found but not freshly confirmed stays without ok.",
-  "scope": "the 1 rows without ok; the rows that already carried ok were not re-checked in this pass",
-  "how": "Google Maps opened in headless Chromium (2026-11-23), limited view without a reviews tab, so no review date could be read; each row's own map query first, then the name with the town, a list result opened when needed; a hotel's own site or one web search only where Maps could not settle it.",
-  "confirmed": [
+  "rounds": [
     {
-      "name": "Cervantes",
-      "src": "Google Maps",
-      "page_name": "Restaurante Cervantes",
-      "evidence": "\"Restaurante Cervantes\", Av. Prado Júnior, 335 - Lj B - Copacabana, 2RQF+2J; \"Open · Closes 5 AM · Reopens 12 PM\"",
-      "ok": "2026-11"
+      "town": "br-rio",
+      "kind": "eats",
+      "checked": "2026-11",
+      "rule": "A row gets ok only from a current listing, its own site or recent reviews with nothing saying closed (docs/EATS.md). A row is taken out when a search could not find the place at all or the sources disagree; a place found but not freshly confirmed stays without ok.",
+      "scope": "the 1 rows without ok; the rows that already carried ok were not re-checked in this pass",
+      "how": "Google Maps opened in headless Chromium (2026-11-23), limited view without a reviews tab, so no review date could be read; each row's own map query first, then the name with the town, a list result opened when needed; a hotel's own site or one web search only where Maps could not settle it.",
+      "confirmed": [
+        {
+          "name": "Cervantes",
+          "src": "Google Maps",
+          "page_name": "Restaurante Cervantes",
+          "evidence": "\"Restaurante Cervantes\", Av. Prado Júnior, 335 - Lj B - Copacabana, 2RQF+2J; \"Open · Closes 5 AM · Reopens 12 PM\"",
+          "ok": "2026-11"
+        }
+      ],
+      "kept_without_ok": [],
+      "removed": []
+    },
+    {
+      "town": "br-rio",
+      "kind": "eats + sights",
+      "checked": "2026-11-23",
+      "rule": "library-check.cjs, then the Google Maps Reviews tab sorted by newest: ok only when not marked closed, with a review from the last six months, and the map's name matching the page's.",
+      "agents": "one Haiku agent; 8 rows passed library-check.cjs, 3 went in",
+      "added": [
+        {
+          "name": "Catacumba Park",
+          "page_name": "Parque Natural Municipal da Catacumba",
+          "src": "https://catracalivre.com.br/viagem-livre/3-trilhas-tranquilas-para-fazer-no-rio-de-janeiro-inclusive-com-criancas/",
+          "date": "2025-05",
+          "map": "Google Maps open, newest review within six months"
+        },
+        {
+          "name": "Baby park, Praça Afonso Pena",
+          "page_name": "Parque do Bebê da Praça Afonso Pena",
+          "src": "https://diariodorio.com/rio-de-janeiro/2026/11/12/tijuca-ganha-primeiro-parque-do-bebe-do-rio-com-brinquedos-para-criancas-de-ate-3-anos.html",
+          "date": "2026-11",
+          "map": "Google Maps Praça Afonso Pena, newest review within six months"
+        },
+        {
+          "name": "Baixo Bebê, Leblon",
+          "page_name": "Baixo Bebê",
+          "src": "https://diariodorio.com/baixo-bebe-leblon-reinaugura-no-domingo/",
+          "date": "2026-08",
+          "map": "Google Maps open, newest review within six months"
+        }
+      ],
+      "left_out": [
+        {
+          "name": "rows from restaurantsforkings.com",
+          "why": "a machine-written ranking site the brief refuses"
+        },
+        {
+          "name": "Cortés Asador",
+          "why": "library-check.cjs: quote not on page"
+        },
+        {
+          "name": "Roxy, Artisani Pizza Bar, Tutto Nhoque, Yunwei",
+          "why": "their kids’ dishes were for Children’s Day or Rio Restaurant Week 2026 only, both over"
+        }
+      ],
+      "estimates": "Ages and visit hours are placeholders; prices and opening notes are the pages' own."
     }
-  ],
-  "kept_without_ok": [],
-  "removed": []
+  ]
 }

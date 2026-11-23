@@ -275,6 +275,265 @@
           "q": "Al Bateen Beach, Al Bateen, Abu Dhabi",
           "ok": "2026-11",
           "src": "https://visitabudhabi.ae/en/plan-your-trip/article-hub/best-things-to-do-with-kids-in-abu-dhabi"
+        },
+        {
+          "local": "",
+          "ages": [
+            1,
+            1,
+            1,
+            1
+          ],
+          "hrs": 3,
+          "io": "in",
+          "pram": "yes",
+          "price": {
+            "th": "≈ AED 70 ต่อผู้ใหญ่ · ต่ำกว่า 18 ปีฟรี",
+            "en": "≈ AED 70 a grown-up · under 18 free"
+          },
+          "book": "none",
+          "src": "https://whatson.ae/2026/03/family-friendly-things-to-do-in-abu-dhabi-this-eid-al-fitr/",
+          "name": {
+            "th": "พิพิธภัณฑ์ประวัติศาสตร์ธรรมชาติอาบูดาบี",
+            "en": "Natural History Museum Abu Dhabi"
+          },
+          "kind": "museumkid",
+          "area": {
+            "th": "ย่านวัฒนธรรมซาดิยาต",
+            "en": "Saadiyat Cultural District"
+          },
+          "what": {
+            "th": "พิพิธภัณฑ์ธรรมชาติวิทยา มีไดโนเสาร์และเรื่องราวของโลกตามกาลเวลา",
+            "en": "A natural history museum with dinosaurs and the story of the Earth through time"
+          },
+          "why": {
+            "th": "มีมุมให้ลองจับและช่วงเล่านิทานสำหรับเด็กเล็ก",
+            "en": "Hands-on corners and story sessions for little ones"
+          },
+          "q": "Natural History Museum Abu Dhabi, Saadiyat",
+          "ok": "2026-11"
+        },
+        {
+          "local": "",
+          "ages": [
+            1,
+            1,
+            1,
+            1
+          ],
+          "hrs": 2,
+          "io": "in",
+          "pram": "yes",
+          "price": {
+            "th": "≈ AED 70",
+            "en": "≈ AED 70"
+          },
+          "book": "none",
+          "src": "https://whatson.ae/2026/03/family-friendly-things-to-do-in-abu-dhabi-this-eid-al-fitr/",
+          "name": {
+            "th": "พิพิธภัณฑ์แห่งชาติซายิด",
+            "en": "Zayed National Museum"
+          },
+          "kind": "museum",
+          "area": {
+            "th": "ย่านวัฒนธรรมซาดิยาต",
+            "en": "Saadiyat Cultural District"
+          },
+          "what": {
+            "th": "พิพิธภัณฑ์แห่งชาติที่เล่าเรื่องราวของสหรัฐอาหรับเอมิเรตส์",
+            "en": "The national museum telling the story of the UAE"
+          },
+          "why": {
+            "th": "มีส่วนโต้ตอบที่เด็กสนุกได้",
+            "en": "Interactive enough for children"
+          },
+          "q": "Zayed National Museum, Saadiyat",
+          "ok": "2026-11"
+        },
+        {
+          "local": "",
+          "ages": [
+            1,
+            1,
+            1,
+            1
+          ],
+          "hrs": 2,
+          "io": "in",
+          "pram": "part",
+          "price": {
+            "th": "≈ AED 150 ขึ้นไป",
+            "en": "≈ AED 150 and up"
+          },
+          "book": "rec",
+          "src": "https://whatson.ae/2026/03/family-friendly-things-to-do-in-abu-dhabi-this-eid-al-fitr/",
+          "name": {
+            "th": "ทีมแล็บ ฟีโนมีนา อาบูดาบี",
+            "en": "teamLab Phenomena Abu Dhabi"
+          },
+          "kind": "museum",
+          "area": {
+            "th": "ย่านวัฒนธรรมซาดิยาต",
+            "en": "Saadiyat Cultural District"
+          },
+          "what": {
+            "th": "พื้นที่ศิลปะที่ห้องต่างๆ เปลี่ยนไปตามที่เราเดินผ่าน",
+            "en": "An immersive art space whose rooms change as you move through them"
+          },
+          "why": {
+            "th": "เด็กวิ่ง ไล่ตามลวดลาย และเล่นกับห้องได้เหมือนเกม",
+            "en": "Children run, follow patterns and play with the space like a game"
+          },
+          "q": "teamLab Phenomena, Saadiyat",
+          "ok": "2026-11"
+        },
+        {
+          "local": "",
+          "ages": [
+            1,
+            1,
+            1,
+            1
+          ],
+          "hrs": 2,
+          "io": "in",
+          "pram": "yes",
+          "price": {
+            "th": "≈ AED 110 · ต่ำกว่า 3 ขวบฟรี",
+            "en": "≈ AED 110 · under 3 free"
+          },
+          "book": "none",
+          "src": "https://whatson.ae/2026/03/family-friendly-things-to-do-in-abu-dhabi-this-eid-al-fitr/",
+          "name": {
+            "th": "อควาเรียมแห่งชาติ",
+            "en": "The National Aquarium"
+          },
+          "kind": "aquarium",
+          "area": {
+            "th": "อัลกานา",
+            "en": "Al Qana"
+          },
+          "what": {
+            "th": "อควาเรียมมีอุโมงค์เต็มไปด้วยฉลามและกระเบน และสวนผีเสื้อ",
+            "en": "An aquarium with tunnels full of sharks and rays, and butterfly gardens"
+          },
+          "why": {
+            "th": "เที่ยวในร่มแบบสบายๆ เหมาะกับเด็กเล็กที่ชอบดูช้าๆ",
+            "en": "A calm indoor outing, good for younger children who like to take their time"
+          },
+          "q": "The National Aquarium Abu Dhabi, Al Qana",
+          "ok": "2026-11"
+        },
+        {
+          "local": "",
+          "ages": [
+            1,
+            1,
+            1,
+            1
+          ],
+          "hrs": 2,
+          "io": "in",
+          "pram": "part",
+          "price": {
+            "th": "เช็กราคาก่อนไป",
+            "en": "Check the price"
+          },
+          "book": "none",
+          "src": "https://kidzapp.com/abu-dhabi-kids-week-2026-the-ultimate-family-fun-guide",
+          "name": {
+            "th": "ออเรนจ์วีลส์",
+            "en": "Orange Wheels"
+          },
+          "kind": "play",
+          "area": {
+            "th": "รีมมอลล์",
+            "en": "Reem Mall"
+          },
+          "what": {
+            "th": "ศูนย์เด็กเล่นในร่มสีสดใสสำหรับเด็กเล็ก",
+            "en": "A bright indoor play centre for younger children"
+          },
+          "why": {
+            "th": "จัดวางดี เด็กเล็กเล่นได้นาน",
+            "en": "Thoughtfully laid out to hold little ones’ attention"
+          },
+          "q": "Orange Wheels, Reem Mall, Abu Dhabi",
+          "ok": "2026-11"
+        },
+        {
+          "local": "",
+          "ages": [
+            0,
+            1,
+            1,
+            1
+          ],
+          "hrs": 2,
+          "io": "in",
+          "pram": "no",
+          "price": {
+            "th": "เช็กราคาก่อนไป",
+            "en": "Check the price"
+          },
+          "book": "none",
+          "src": "https://kidzapp.com/abu-dhabi-kids-week-2026-the-ultimate-family-fun-guide",
+          "name": {
+            "th": "แอร์มาเนียกซ์",
+            "en": "Air Maniax"
+          },
+          "kind": "play",
+          "area": {
+            "th": "ยาสมอลล์",
+            "en": "Yas Mall"
+          },
+          "what": {
+            "th": "แทรมโพลีน กำแพงปีน ด่านอุปสรรค และบ่อโฟม ในร่ม",
+            "en": "Indoor trampolines, climbing walls, obstacle courses and foam pits"
+          },
+          "why": {
+            "th": "สำหรับเด็กโตที่อยากปล่อยพลัง",
+            "en": "For older children who need to burn off energy"
+          },
+          "q": "Air Maniax, Yas Mall",
+          "ok": "2026-11"
+        },
+        {
+          "local": "",
+          "ages": [
+            1,
+            1,
+            1,
+            1
+          ],
+          "hrs": 2,
+          "io": "in",
+          "pram": "part",
+          "price": {
+            "th": "เช็กราคาก่อนไป",
+            "en": "Check the price"
+          },
+          "book": "none",
+          "src": "https://kidzapp.com/abu-dhabi-kids-week-2026-the-ultimate-family-fun-guide",
+          "name": {
+            "th": "มิชชันเพลย์ บายแมทเทล",
+            "en": "Mission: Play! by Mattel"
+          },
+          "kind": "play",
+          "area": {
+            "th": "เดอะแกลเลอเรีย เกาะอัลมารียาห์",
+            "en": "The Galleria, Al Maryah Island"
+          },
+          "what": {
+            "th": "ที่เล่นในร่มกับตัวละครของแมทเทลและโซนโต้ตอบ",
+            "en": "An indoor play space with Mattel characters and interactive zones"
+          },
+          "why": {
+            "th": "เด็กต่างวัยเล่นด้วยกันได้",
+            "en": "Children of different ages can play at once"
+          },
+          "q": "Mission Play! by Mattel, The Galleria, Al Maryah Island",
+          "ok": "2026-11"
         }
       ]
     }

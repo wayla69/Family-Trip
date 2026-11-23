@@ -1,0 +1,72 @@
+{
+  "town": "mx-yucatan",
+  "kind": "eats + sights",
+  "checked": "2026-11-23",
+  "rule": "library-check.cjs, then the Google Maps Reviews tab sorted by newest: ok only when not marked closed, with a review from the last six months, and the map's name matching the page's.",
+  "agents": "one Haiku agent; 9 rows from Lonely Planet (2026), An Adventurous World (2026) and Porfirio's own site passed library-check.cjs, 8 went in",
+  "added": [
+    {
+      "name": "Porfirio's Cancún",
+      "page_name": "Porfirio’s Cancún",
+      "src": "https://porfirios.com.mx/en/porfiritos-unique-experiences-for-the-little-ones-now-in-merida/",
+      "date": "official",
+      "map": "Google Maps 'Porfirio's Cancún | Restaurante de comida mexicana', Blvd. Kukulcan km 14.2, 5,642 reviews, newest '7 hours ago'"
+    },
+    {
+      "name": "Porfirio's Mérida",
+      "page_name": "Porfirio’s Mérida",
+      "src": "https://porfirios.com.mx/en/porfiritos-unique-experiences-for-the-little-ones-now-in-merida/",
+      "date": "official",
+      "map": "Google Maps Paseo de Montejo, 2,789 reviews, newest '1 day ago'"
+    },
+    {
+      "name": "Playa Hermosa Caleta",
+      "page_name": "Playa Hermosa Caleta",
+      "src": "https://www.lonelyplanet.com/articles/cancun-with-kids",
+      "date": "2026-01",
+      "map": "Google Maps 'Hermosa Caleta', 150 reviews, newest '3 months ago'"
+    },
+    {
+      "name": "Gran Parque La Plancha",
+      "page_name": "Gran Parque la Plancha",
+      "src": "https://www.anadventurousworld.com/things-to-do-in-merida-with-kids/",
+      "date": "2026-04",
+      "map": "Google Maps 3,659 reviews, newest '7 hours ago'"
+    },
+    {
+      "name": "Museo de la Luz",
+      "page_name": "Museo de la Luz",
+      "src": "https://www.anadventurousworld.com/things-to-do-in-merida-with-kids/",
+      "date": "2026-04",
+      "map": "Google Maps 'Museo de la Luz Mérida UNAM', 1,029 reviews, newest '1 day ago'"
+    },
+    {
+      "name": "Palacio de la Música",
+      "page_name": "Palacio de la Música",
+      "src": "https://www.anadventurousworld.com/things-to-do-in-merida-with-kids/",
+      "date": "2026-04",
+      "map": "Google Maps 3,841 reviews, newest '19 hours ago'"
+    },
+    {
+      "name": "Uxmal",
+      "page_name": "Uxmal",
+      "src": "https://www.anadventurousworld.com/things-to-do-in-merida-with-kids/",
+      "date": "2026-04",
+      "map": "Google Maps 'Uxmal Archaeological Zone', 22,012 reviews, newest '6 hours ago'"
+    },
+    {
+      "name": "La Peni light show",
+      "page_name": "La Peni",
+      "src": "https://www.anadventurousworld.com/things-to-do-in-merida-with-kids/",
+      "date": "2026-04",
+      "map": "Google Maps 'Parque de la Paz' (where the show is projected), 7,457 reviews, newest '3 days ago'"
+    }
+  ],
+  "left_out": [
+    {
+      "name": "La Plancha playground",
+      "why": "the same park as Gran Parque La Plancha"
+    }
+  ],
+  "estimates": "Ages and visit hours are placeholders; prices and opening notes are the pages' own."
+}

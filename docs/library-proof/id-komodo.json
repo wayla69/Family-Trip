@@ -1,17 +1,44 @@
 {
   "town": "id-komodo",
-  "kind": "eats",
-  "checked": "2026-11",
-  "rule": "A row gets ok only from a current listing, its own site or recent reviews with nothing saying closed (docs/EATS.md). A row is taken out when a search could not find the place at all or the sources disagree; a place found but not freshly confirmed stays without ok.",
-  "scope": "the 1 rows without ok; rows already carrying ok were not re-checked",
-  "how": "Google Maps opened in headless Chromium (2026-11-23), limited view without a reviews tab, so no review date could be read; searched in English and, for Taiwan, in Chinese (the row's zh)",
-  "confirmed": [],
-  "kept_without_ok": [
+  "rounds": [
     {
-      "name": "Cafe in Hit",
-      "src": "https://uk.trip.com/travel-guide/foods/Labuan%20Bajo-56431-restaurant/CAFE.IN.HIT%20Coffee%20Shop-19737206",
-      "evidence": "Maps did not find it ('Cafe in Hit Labuan Bajo', 'CAFE.IN.HIT Coffee Shop Labuan Bajo' land on CARPENTER CAFE AND ROASTERY, Jl. Soekarno Hatta, another name); a web search found a Trip.com page 'CAFE.IN.HIT Coffee Shop', Jl. Soekarno Hatta, 06:00–22:00, and a Lonely Planet entry, both undated"
+      "town": "id-komodo",
+      "kind": "eats",
+      "checked": "2026-11",
+      "rule": "A row gets ok only from a current listing, its own site or recent reviews with nothing saying closed (docs/EATS.md). A row is taken out when a search could not find the place at all or the sources disagree; a place found but not freshly confirmed stays without ok.",
+      "scope": "the 1 rows without ok; rows already carrying ok were not re-checked",
+      "how": "Google Maps opened in headless Chromium (2026-11-23), limited view without a reviews tab, so no review date could be read; searched in English and, for Taiwan, in Chinese (the row's zh)",
+      "confirmed": [],
+      "kept_without_ok": [
+        {
+          "name": "Cafe in Hit",
+          "src": "https://uk.trip.com/travel-guide/foods/Labuan%20Bajo-56431-restaurant/CAFE.IN.HIT%20Coffee%20Shop-19737206",
+          "evidence": "Maps did not find it ('Cafe in Hit Labuan Bajo', 'CAFE.IN.HIT Coffee Shop Labuan Bajo' land on CARPENTER CAFE AND ROASTERY, Jl. Soekarno Hatta, another name); a web search found a Trip.com page 'CAFE.IN.HIT Coffee Shop', Jl. Soekarno Hatta, 06:00–22:00, and a Lonely Planet entry, both undated"
+        }
+      ],
+      "removed": []
+    },
+    {
+      "town": "id-komodo",
+      "kind": "eats + sights",
+      "checked": "2026-11-23",
+      "rule": "library-check.cjs, then the Google Maps Reviews tab sorted by newest: ok only when not marked closed, with a review from the last six months, and the map's name matching the page's.",
+      "agents": "one Haiku agent; 2 rows offered, 1 passed library-check.cjs, 1 went in",
+      "added": [
+        {
+          "name": "Pink Beach",
+          "src": "https://www.komodoluxury.com/blog/things-to-do-in-komodo-with-kids/",
+          "date": "2025-08",
+          "map": "Google Maps 1,729 reviews, newest '2 days ago'"
+        }
+      ],
+      "left_out": [
+        {
+          "name": "Senja Eatery",
+          "why": "the only page with it has no date of its own (library-check: page date none)"
+        }
+      ],
+      "estimates": "Ages ([1,1,1,1]) and visit hours are placeholders; no page printed them."
     }
-  ],
-  "removed": []
+  ]
 }

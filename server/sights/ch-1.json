@@ -298,6 +298,125 @@
           "q": "Spielplatz Inseli, Inseliquai, Luzern",
           "ok": "2026-11",
           "src": "https://luzern.com/en/poi/playground-inseli-lucerne"
+        },
+        {
+          "local": "Hallenbad Allmend",
+          "ages": [
+            1,
+            2,
+            2,
+            2
+          ],
+          "hrs": 2,
+          "io": "in",
+          "pram": "part",
+          "price": {
+            "th": "เช็กราคาก่อนไป",
+            "en": "Check the price"
+          },
+          "book": "none",
+          "src": "https://holidaystoswitzerland.com/11-rainy-day-activities-in-lucerne/",
+          "name": {
+            "th": "สระว่ายน้ำในร่มอัลเมนด์",
+            "en": "Allmend indoor pool"
+          },
+          "kind": "play",
+          "area": {
+            "th": "อัลเมนด์ ลูเซิร์น",
+            "en": "Allmend, Lucerne"
+          },
+          "what": {
+            "th": "สระว่ายน้ำในร่มห้าสระ มีสระเด็กเล็กและสระผจญภัย",
+            "en": "An indoor pool with five pools, including a paddling pool and an adventure pool"
+          },
+          "why": {
+            "th": "มีสระเด็กเล็กและสระผจญภัย เล่นได้ทุกสภาพอากาศ",
+            "en": "A paddling pool and an adventure pool, whatever the weather"
+          },
+          "q": "Hallenbad Allmend, Zihlmattweg 46, Luzern",
+          "ok": "2026-11"
+        },
+        {
+          "local": "",
+          "ages": [
+            1,
+            1,
+            1,
+            1
+          ],
+          "hrs": 2,
+          "io": "in",
+          "pram": "part",
+          "price": {
+            "th": "≈ CHF 11 เพิ่มสำหรับแต่งช็อกโกแลตแท่ง",
+            "en": "≈ CHF 11 extra to decorate a bar"
+          },
+          "book": "none",
+          "src": "https://holidaystoswitzerland.com/11-rainy-day-activities-in-lucerne/",
+          "name": {
+            "th": "ช็อกโกเวลต์ เอชบัค",
+            "en": "Aeschbach ChocoWelt"
+          },
+          "kind": "museum",
+          "area": {
+            "th": "รูต ใกล้ลูเซิร์น",
+            "en": "Root, near Lucerne"
+          },
+          "what": {
+            "th": "นิทรรศการช็อกโกแลตเดินชมเองในโรงงานช็อกโกแลต ตั้งแต่เมล็ดโกโก้จนเป็นแท่ง",
+            "en": "A self-guided chocolate exhibition at a chocolate maker, from cocoa bean to bar"
+          },
+          "why": {
+            "th": "มีจุดให้ลองเล่น และเด็กแต่งช็อกโกแลตแท่ง 200 กรัมของตัวเองได้",
+            "en": "Interactive displays, and children decorate their own 200 g bar"
+          },
+          "tip": {
+            "th": "นั่งรถไฟ 11 นาทีจากลูเซิร์นไปสถานีรูต D4 ติดโรงงาน",
+            "en": "11 minutes by train from Lucerne to Root D4, beside the factory"
+          },
+          "q": "Aeschbach Chocolatier, ChocoDromo 1, Root",
+          "ok": "2026-11"
+        },
+        {
+          "local": "Sammlung Rosengart",
+          "ages": [
+            0,
+            0,
+            1,
+            1
+          ],
+          "hrs": 1,
+          "io": "in",
+          "pram": "part",
+          "price": {
+            "th": "เช็กราคาก่อนไป",
+            "en": "Check the price"
+          },
+          "book": "none",
+          "src": "https://holidaystoswitzerland.com/11-rainy-day-activities-in-lucerne/",
+          "name": {
+            "th": "พิพิธภัณฑ์โรเซนการ์ต",
+            "en": "Rosengart Collection"
+          },
+          "kind": "museum",
+          "area": {
+            "th": "ถนนพิลาทุส ลูเซิร์น",
+            "en": "Pilatusstrasse, Lucerne"
+          },
+          "what": {
+            "th": "คอลเล็กชันส่วนตัวที่มีผลงานของปีกัสโซ พอล เคล และศิลปินอิมเพรสชันนิสม์ ในอาคารธนาคารเก่า",
+            "en": "A private collection with works by Picasso, Paul Klee and the Impressionists, in a former bank"
+          },
+          "why": {
+            "th": "มีทัวร์นำชมสำหรับเด็กและครอบครัว",
+            "en": "Guided tours for children and families"
+          },
+          "tip": {
+            "th": "ทัวร์เด็กมีเฉพาะบางวัน",
+            "en": "Children’s tours on selected dates only"
+          },
+          "q": "Sammlung Rosengart, Pilatusstrasse 10, Luzern",
+          "ok": "2026-11"
         }
       ]
     }

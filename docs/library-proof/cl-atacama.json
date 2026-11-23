@@ -1,0 +1,65 @@
+{
+  "town": "cl-atacama",
+  "kind": "eats + sights",
+  "checked": "2026-11-23",
+  "rule": "library-check.cjs, then the Google Maps Reviews tab sorted by newest: ok only when not marked closed, with a review from the last six months, and the map's name matching the page's.",
+  "agents": "one Haiku agent; 8 rows from San Pedro de Atacama's tourism portal (2025–2026) passed library-check.cjs, 7 went in",
+  "added": [
+    {
+      "name": "Jardín Meraki",
+      "page_name": "Jardín Meraki",
+      "src": "https://sanpedroatacama.com/en/where-to-eat/",
+      "date": "2026-02",
+      "map": "Google Maps 'Jardin Meraki', Calama 419, 964 reviews, newest '1 day ago'"
+    },
+    {
+      "name": "Rincón de Solor",
+      "page_name": "Rincón de Solor",
+      "src": "https://sanpedroatacama.com/en/where-to-eat/",
+      "date": "2026-02",
+      "map": "Google Maps 'Restaurant y Centro de Eventos Rincón de Solor', 90 reviews, newest '4 days ago'"
+    },
+    {
+      "name": "Pulpería Atacama",
+      "page_name": "Pulpería Atacama",
+      "src": "https://sanpedroatacama.com/en/where-to-eat/",
+      "date": "2026-02",
+      "map": "Google Maps 'Pulperia Atacama', Toconao 568, 328 reviews, newest 'last week'"
+    },
+    {
+      "name": "Mars Valley",
+      "page_name": "Sandboarding in Mars Valley",
+      "src": "https://sanpedroatacama.com/en/is-it-a-good-idea-to-travel-to-san-pedro-de-atacama-with-kids/",
+      "date": "2025-08",
+      "map": "Google Maps 'Mars Valley / Death Valley', 1,416 reviews, newest '19 hours ago'"
+    },
+    {
+      "name": "Kari viewpoint (Piedra del Coyote)",
+      "page_name": "Kari Viewpoint",
+      "src": "https://sanpedroatacama.com/en/destination/what-to-visit/valleys-and-viewpoints/",
+      "date": "2026-02",
+      "map": "Google Maps 'Mirador de Kari - Piedra del Coyote', 3,727 reviews, newest '2 weeks ago'"
+    },
+    {
+      "name": "Rainbow Valley",
+      "page_name": "Rainbow Valley",
+      "src": "https://sanpedroatacama.com/en/destination/what-to-visit/valleys-and-viewpoints/",
+      "date": "2026-02",
+      "map": "Google Maps 'Valle del Arcoiris', 1,761 reviews, newest '1 day ago'"
+    },
+    {
+      "name": "Baltinache hidden lagoons",
+      "page_name": "Hidden Lagoons Baltinache",
+      "src": "https://sanpedroatacama.com/en/destination/what-to-visit/lagoons-and-thermal-baths/",
+      "date": "2026-02",
+      "map": "Google Maps 'Lagunas Escondidas de Baltinache', 2,125 reviews, newest '14 hours ago'"
+    }
+  ],
+  "left_out": [
+    {
+      "name": "Lickanantai Viewpoint",
+      "why": "the map search finds the Kari viewpoint instead"
+    }
+  ],
+  "estimates": "Ages and visit hours are placeholders; prices and opening notes are the pages' own."
+}

@@ -1,0 +1,25 @@
+{
+  "town": "hr-plitvice",
+  "kind": "eats + sights",
+  "checked": "2026-11-23",
+  "rule": "library-check.cjs, then the Google Maps Reviews tab sorted by newest: ok only when not marked closed, with a review from the last six months, and the map's name matching the page's.",
+  "agents": "one Haiku agent; 2 rows from Family Can Travel (2026) and Camping Plitvice's own site passed library-check.cjs, both went in",
+  "added": [
+    {
+      "name": "Camping Plitvice restaurant",
+      "page_name": "Restoran i Pool Bar",
+      "src": "https://campingplitvice.hr/restoran/",
+      "date": "official",
+      "map": "Google Maps 'Camping Plitvice' (the restaurant is in the camp), Smoljanac 67, 2,076 reviews, newest 'last week'"
+    },
+    {
+      "name": "The Great Waterfall",
+      "page_name": "Veliki Slap",
+      "src": "https://www.familycantravel.com/plitvice-lakes-croatia-with-kids/",
+      "date": "2026-09",
+      "map": "Google Maps 'Great Waterfall', 2,103 reviews, newest '4 days ago'"
+    }
+  ],
+  "left_out": [],
+  "estimates": "Ages and visit hours are placeholders; prices and opening notes are the pages' own."
+}

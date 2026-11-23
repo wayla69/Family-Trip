@@ -237,3 +237,289 @@ Kee, Sun Hang Yuen, MD Cafe) and four family places from Cathay Pacific's 2026 c
 MeokBang BBQ Kidzone, Tree Café, Yakiniku Tabeyo). Left out: Transformers: The Ark (closed in Hong Kong, Feb 2025), Smoke and Barrel
 (moved, the new address not confirmed), Baumhaus (nothing current), Pizza Express (no one branch). In the app the Hong Kong book's own
 28 places and the Macau book part's 188 sit beside this list (`syncBooks`, src `book`).
+
+### Chengdu, 23 Nov 2026
+One town a PR. Four agents, `library-check.cjs`, then a map check for every row: `ok` only when the map shows the place at the page's address, not closed, with a review from the last six months. Google Maps knows little of mainland China, so Chinese towns are checked on Baidu Maps (Amap asks for a Chinese phone number to sign in). +10 Chengdu: Chunyang Guan, Chongqing Blanket Noodles, Dan Dumplings, He Dumplings, Zha Zha Noodles, Zhang Laowu Liangfen, Xiao Ming Tang, He Ji Egg Cakes, Nanchong Taste, Mi Xun Teahouse. Out: two rows from restaurantsforkings.com, four cafés no map could place at the page's address. Proof in `docs/library-proof/cn-chengdu.json`.
+
+### Xi’an, 23 Nov 2026
+batch-01 of docs/library-briefs. Four agents, `library-check.cjs`, then Baidu Maps for every row (`ok` only at the page's address, not closed, a review from the last six months; a price marked "Baidu Maps" is the map's spend per person). +3: Haidilao Wanhecheng (its children's dining area for ages 3–12), Ruixiangyuan roujiamo, Li Weiyi meatball soup. Out: two rows from a machine-made GitHub blog, twelve shops whose guide page the checker could not read. Proof in `docs/library-proof/cn-xian.json`.
+
+### Yunnan, 23 Nov 2026
+batch-01 of docs/library-briefs, checked on Baidu Maps like Xi’an. +7: Lao Dian Shanzhai, Dashanqing Yun Xiaoguan, Ershiliu Jiaren (Kunming); Nanzhao Dong Xiaopang, Jixiang Hong, Jinhua Xiao Amei (Dali); Lan Yunnan Bistro (Lijiang). Out: Yunxueli (no Shuhe branch on the map). Proof in `docs/library-proof/cn-yunnan.json`.
+
+### Đà Lạt, 23 Nov 2026
+batch-01 of docs/library-briefs. Agents, `library-check.cjs`, then the Google Maps Reviews tab for every row (`ok` only when not marked closed and with a review from the last six months). +2: Rừng Thông Mơ Farm & Bistro, Léguda. Out: thirteen bánh căn and noodle shops whose list pages carry no date. Proof in `docs/library-proof/vn-dalat.json`.
+
+### Huế, 23 Nov 2026
+batch-02 of docs/library-briefs, checked on Google Maps like Đà Lạt. +1: Tịnh Gia Viên. Out: eleven bún bò shops from an undated list, Hồng Mai (the map's shop sells bánh khoái), O Xáo (not on the map), Ông Táo (no recent reviews). Proof in `docs/library-proof/vn-hue.json`.
+
+### Phú Quốc, 23 Nov 2026
+batch-02 of docs/library-briefs. +5: Clubhouse at Premier Residences (a pizza class for children), Paradiso, Huong Bien, Hủ Tiếu Mực Tư Hường, Mai Hương Beachfront. Out: one name the map gives to another restaurant. Proof in `docs/library-proof/vn-phuquoc.json`.
+
+### Kota Kinabalu (Borneo), 23 Nov 2026
+batch-02 of docs/library-briefs. +7: three children's cafés with play areas (Tiny Palm, Little Dino, Bear Factory), Happy Place, Alu-Alu Kitchen, Tana Borneo (a slide in the dining room), Todak hawker centre. Out: two cafés with no recent reviews. Proof in `docs/library-proof/my-borneo.json`.
+
+### Yogyakarta, 23 Nov 2026
+batch-03 of docs/library-briefs. +9 restaurants with something for children (a playground, a pool, fish to feed, a stream): De Tropen, Ciblon, Champa, Isvara Riverside, Mang Engking (Soragan), Nanamia (south), Otadan, Watoe Gadjah, The Westlake. Out: Joglo Resodinomo (the map's place is elsewhere). Proof in `docs/library-proof/id-yogyakarta.json`.
+
+### Penang, 23 Nov 2026
+batch-03 of docs/library-briefs. +10: Cocoon+ Kids Cafe and 1.618 Roastery Andaman (play areas), Manaf Nasi Ayam (on the beach), Fu Er Dai, Red Garden, Urai Thai Kitchen, and four food courts (The Jetty, Long Beach, Esplanade, Gurney Food Hall). Proof in `docs/library-proof/my-penang.json`.
+
+### Lombok and the Gilis, 23 Nov 2026
+batch-03 of docs/library-briefs. +10: in Kuta, The Well and Anchor Café (play areas), Skatepark Tribe (skate lessons for children), Bara (a pool), Munchies, Ashtari; on Gili Trawangan, Warung Wajan, Limo, Coffee Corner, Gili Teak. Proof in `docs/library-proof/id-lombok.json`.
+
+### Luang Prabang, 23 Nov 2026
+batch-04 of docs/library-briefs. +3: L'Elephant, BOUANG Asian Eatery, SACKy @ Blue Lagoon. Out: Wat Xieng Thong (no page date). Proof in `docs/library-proof/la-luangprabang.json`.
+
+### Bohol and Cebu, 23 Nov 2026
+batch-04 of docs/library-briefs. +1: Tavolata (Cebu). Out: three chains with no branch named, one name the map gives differently. Proof in `docs/library-proof/ph-bohol.json`.
+
+### Ulaanbaatar, 23 Nov 2026
+batch-30 of docs/library-briefs. +3: Altan Gadas, Arak Yak House, Mongolian's Restaurant (Shangri-La Mall). Proof in `docs/library-proof/mn-ulaanbaatar.json`.
+### Golden Triangle, 23 Nov 2026
+batch-17 of docs/library-briefs. +2: Anokhi Café, 1135 AD. Proof in `docs/library-proof/in-golden.json`.
+
+### Tashkent, 23 Nov 2026
+batch-25 of docs/library-briefs. +6: Ribambelle, Benedict, Gōsht, Yuzhanin, Tanuki, JUNE. Proof in `docs/library-proof/uz-tashkent.json`.
+
+### Sri Lanka's hills, 23 Nov 2026
+batch-29 of docs/library-briefs. +1: Honey Pot Restaurant (Kandy). Proof in `docs/library-proof/lk-hills.json`.
+
+### Samarkand & Bukhara, 23 Nov 2026
+batch-32 of docs/library-briefs. +7: Sangizar, Jasmin, The Mohon (Samarkand); Lalizar, Zargaron, Palmira, Zolotaya Bukhara (Bukhara). Proof in `docs/library-proof/uz-samarkand.json`.
+
+### Kathmandu, 23 Nov 2026
+batch-30 of docs/library-briefs. +3: Jimbu Thakali by Capital Grill, Alice Restaurant, Kaiser Café. Proof in `docs/library-proof/np-kathmandu.json`.
+### Abu Dhabi, 23 Nov 2026
+batch-06 of docs/library-briefs. +2: Sidekicks (cartoon characters, children’s dishes), Crust (family Friday brunch). Out: six restaurants whose only source was restaurantsforkings.com. Proof in `docs/library-proof/ae-abudhabi.json`.
+
+### Tbilisi and Kazbegi, 23 Nov 2026
+batch-15 of docs/library-briefs. +5: Daphna, Lolita, Sakhachapure N1 (Galleria), Café Leila, and the Dariali monastery café. Proof in `docs/library-proof/ge-tbilisi.json`.
+
+### Fes, Chefchaouen & Meknes, 23 Nov 2026
+batch-20 of docs/library-briefs. +4 in Chefchaouen: The Morisco Terrace, Assaada, Restaurant Hamsa, Bilmos Cafe. Proof in `docs/library-proof/ma-fes.json`.
+
+### Marrakech, 23 Nov 2026
+batch-20 of docs/library-briefs. +1: Beldi Fusion Kitchen Guéliz. Proof in `docs/library-proof/ma-marrakech.json`.
+
+### Cape Town, 23 Nov 2026
+batch-26 of docs/library-briefs. +5: Café Roux and The Foodbarn (Noordhoek), Dunes and Massimo's (Hout Bay), Good Thyme Café (Bellville). Proof in `docs/library-proof/za-capetown.json`.
+
+### Luxor, 23 Nov 2026
+batch-27 of docs/library-briefs. +9: Snobs, Pizza Roma.It, Wannas Art Café, El Hussein, The Lantern Room, El-Kababgy, Nile Valley, Ottoman Hall (Al Moudira), Silk Road (Hilton). Proof in `docs/library-proof/eg-luxor.json`.
+
+### Nairobi, 23 Nov 2026
+batch-29 of docs/library-briefs. +9: Pili (GTC Mall), Hunger's Nest, Bao Box, Bwibo, Zen Garden, Golden Star, Under the Swahili Tree, Red Ginger, Tamambo (Tatu City). Proof in `docs/library-proof/ke-mara.json`.
+
+### Kruger, 23 Nov 2026
+batch-32 of docs/library-briefs. +8 rest-camp restaurants: Mugg & Bean (Lower Sabie), Tindlovu (Letaba, Berg-en-Dal), Mopani, Pretoriuskop, Wimpy (Pretoriuskop), Punda Maria, Shingwedzi. Proof in `docs/library-proof/za-kruger.json`.
+### Gold Coast and Brisbane, 23 Nov 2026
+batch-05 of docs/library-briefs. +7 cafés and restaurants with something for children (a playroom, a playground in view, a sandpit, a gated play area): Merlina’s, FunnyBone Coffee, Café 63, Pasture & Co, Dune Cafe, Gathering Co, Stones Throw. Out: one name the map puts in Brisbane, one it does not know, one with no recent review. Proof in `docs/library-proof/au-goldcoast.json`.
+
+### Cairns, 23 Nov 2026
+batch-05 of docs/library-briefs. +1: Wharf One Cafe (kids’ menu, prams and high chairs). Proof in `docs/library-proof/au-cairns.json`.
+
+### Auckland, 23 Nov 2026
+batch-06 of docs/library-briefs. +9 restaurants and cafés with something for children (bento boxes, a play area, a playground next door, a sushi train): MASU, BODA, The Heke, Sugar at Chelsea Bay, K10 Newmarket, Azabu Mission Bay, Baduzzi, Huddle Cafe, Cornwall Park Cafe. Proof in `docs/library-proof/nz-auckland.json`.
+
+### Rotorua and Taupō, 23 Nov 2026
+batch-06 of docs/library-briefs. +5 from the Rotorua tourism site’s family-friendly list: Black Label Barbecue, Charlie’s Café at Chipmunks Playland, Lone Star, River’s Catch, Scope. Proof in `docs/library-proof/nz-rotorua.json`.
+
+### Fiji, 23 Nov 2026
+batch-28 of docs/library-briefs. +6: Isa Lei, The Curry House, Zigzag Cafe, The Coffee Hub, Sentai Seafood (Nadi), Mamacita (Denarau). Proof in `docs/library-proof/fj-islands.json`.
+### Buenos Aires, 23 Nov 2026
+batch-07 of docs/library-briefs. +2 restaurants with supervised play areas (Aida, Ragazzi) from Time Out Buenos Aires. Proof in `docs/library-proof/ar-buenosaires.json`.
+
+### Toronto, 23 Nov 2026
+batch-08 of docs/library-briefs. +11 from Toronto Tourism’s family restaurant list (Cluny, Café Diplomatico, Mamma Martino’s, Descendant, Grazie, The Rec Room, Pinocchio Play Café, Lady Marmalade, Emma’s, Maha’s, Rol San); per-person ranges are the page’s. Proof in `docs/library-proof/ca-toronto.json`.
+
+### Banff, 23 Nov 2026
+batch-08 of docs/library-briefs. +9 in Canmore and Banff (Harvest Café, Rocket Pie, Canmore Gaucho, Dingsway, Red Rock Pizza, Marra’s Way, Canadian Pizza Unlimited, Tooloulou’s, Magpie & Stump). Proof in `docs/library-proof/ca-banff.json`.
+
+### Vancouver, 23 Nov 2026
+batch-09 of docs/library-briefs. +4 from Time Out’s kid-friendly list: Nook (Kitsilano), Sophie’s Cosmic Cafe, Via Tevere (Victoria Drive), Burgoo (Main Street). Fable Diner left out: closed for good. Proof in `docs/library-proof/ca-vancouver.json`.
+
+### Santiago and Valparaíso, 23 Nov 2026
+batch-10 of docs/library-briefs. +10 from The Clinic’s 2026 route of restaurants for children (Gino Lautaro, La Argentina, Neko-San, DeCalle, Parigó, Dipsy’s Backyard, El Portal, Café Estación, Oiso, Casa Regina). Proof in `docs/library-proof/cl-santiago.json`.
+
+### Yucatán, 23 Nov 2026
+batch-21 of docs/library-briefs. +2: Porfirio's Cancún, Porfirio's Mérida. Proof in `docs/library-proof/mx-yucatan.json`.
+
+### Boston, 23 Nov 2026
+batch-24 of docs/library-briefs. +5: Alamo Drafthouse (Seaport), Little Cocoa Bean Co., Life Alive (Cambridge), The Friendly Toast (Back Bay), American Flatbread at Sacco's (Somerville). Proof in `docs/library-proof/us-boston.json`.
+
+### Chicago, 23 Nov 2026
+batch-24 of docs/library-briefs. +6: Little Goat Diner, Parson's Chicken & Fish, Beatrix, Sterling Food Hall, Eleven City Diner, The Original Rainbow Cone (Navy Pier). Proof in `docs/library-proof/us-chicago.json`.
+
+### Washington DC, 23 Nov 2026
+batch-24 of docs/library-briefs. +12: Silver Diner, The Roost, Florida Avenue Grill, Kura Sushi, 2 Amys, Comet Ping Pong, Medium Rare, Open City, Unconventional Diner, bartaco, Hard Rock Cafe, Baked by Yael. Proof in `docs/library-proof/us-dc.json`.
+
+### Hawaii (Oahu), 23 Nov 2026
+batch-25 of docs/library-briefs. +4: Kahuku Farms, Liliha Bakery (International Market Place), Monkeypod Kitchen (Waikiki), Makahiki (Aulani). Proof in `docs/library-proof/us-hawaii.json`.
+
+### Seattle, 23 Nov 2026
+batch-25 of docs/library-briefs. +4: Young's Restaurant, Outsider BBQ, Stoneburner, Paseo (SoDo). Proof in `docs/library-proof/us-seattle.json`.
+
+### Las Vegas & the Grand Canyon, 23 Nov 2026
+batch-25 of docs/library-briefs. +3 in Las Vegas: RPM Italian, Summer House (Durango), Wicked Spoon. Proof in `docs/library-proof/us-southwest.json`.
+
+### Atacama, 23 Nov 2026
+batch-27 of docs/library-briefs. +3 in San Pedro: Jardín Meraki, Rincón de Solor, Pulpería Atacama. Proof in `docs/library-proof/cl-atacama.json`.
+
+### Yellowstone, 23 Nov 2026
+batch-31 of docs/library-briefs. +6: Lake Deli, Lake Lodge Cafeteria, Mammoth Terrace Grill, Bear Paw Deli, Geyser Grill, Grant Village Dining Room. Proof in `docs/library-proof/p-yellowstone.json`.
+
+### Alaska, 23 Nov 2026
+batch-31 of docs/library-briefs. +3 in Anchorage: Simon & Seafort's, Golden Donuts, Dino's Donuts. Proof in `docs/library-proof/us-alaska.json`.
+
+### Cusco, 23 Nov 2026
+batch-31 of docs/library-briefs. +4: Pirwa, Green Point, L'Atelier Café Concept, Cappuccino Cusco Cafe. Proof in `docs/library-proof/pe-cusco.json`.
+### Bruges, 23 Nov 2026
+batch-07 of docs/library-briefs. +1: Jacobin (kids’ menu 5–12, mild sauces; Fooding Kids 2026). Out: two names the map does not know at their streets. Proof in `docs/library-proof/be-bruges.json`.
+
+### Brussels, 23 Nov 2026
+batch-08 of docs/library-briefs. +4: Le Fox, Lloyd Coffee Eatery Louise (glass-walled kids’ room), Cōcina Châtelain (under-10s eat free), Brasserie du Miroir. Proof in `docs/library-proof/be-brussels.json`.
+
+### Lyon, 23 Nov 2026
+batch-13 of docs/library-briefs. +5 from Lyon Tourism’s family pages: Mama Shelter, Zucca (Sunday kids’ club), Yakapiocher, Bouillon Baratte, La Commune. Proof in `docs/library-proof/fr-lyon.json`.
+
+### Chamonix and Annecy, 23 Nov 2026
+batch-13 of docs/library-briefs. +1: L’Aquarama at Angon (children’s menu, high chair). No dated page named a new Chamonix restaurant. Proof in `docs/library-proof/fr-alps.json`.
+
+### Strasbourg and Colmar, 23 Nov 2026
+batch-14 of docs/library-briefs. +3: Lucas & Chris and Caveau Saint-Jean (Colmar), Le Colbert (Strasbourg, children’s menu). Proof in `docs/library-proof/fr-strasbourg.json`.
+
+### Nice and the Riviera, 23 Nov 2026
+batch-14 of docs/library-briefs. +4 from Nice Côte d’Azur tourism’s family-labelled restaurants: Lou Balico, La Verrière, Brasserie Le Gioffredo, Lu Fran Calin. The family guide PDF could not be checked by the script. Proof in `docs/library-proof/fr-nice.json`.
+
+### Provence, 23 Nov 2026
+batch-14 of docs/library-briefs. +5: Chez Mamie, Kouk, Le 26, Au Jardin des Carmes (Avignon) and Côté Arènes (Arles); prices from the pages. Proof in `docs/library-proof/fr-provence.json`.
+
+### York, 23 Nov 2026
+batch-15 of docs/library-briefs. +8 from Little Vikings’ places to eat: Ambiente Tapas, SPARK:York, Brew & Brownie, Partisan, Trinacria, The Pig & Pastry, Robinsons, Rowntree Park Reading Café. Proof in `docs/library-proof/gb-york.json`.
+
+### Edinburgh, 23 Nov 2026
+batch-15 of docs/library-briefs. +11 (Chop House, Civerinos Stockbridge, two Pizza Express branches, Montpeliers, Loudons New Waverley, Franco Manca Stockbridge, Dishoom, Mamma Roma, The Edinburgh Larder, Chaskaa). Proof in `docs/library-proof/gb-edinburgh.json`.
+
+### The Lake District, 23 Nov 2026
+batch-15 of docs/library-briefs. +7 from Lake District Kids: Boardwalk Bar & Grill, Villa Positano, YHA Ambleside café, Cuckoo Brow Inn, The Kellbank, Boot Inn, Woolpack Inn (the inns for their play areas and kids’ menus). Proof in `docs/library-proof/gb-lakes.json`.
+
+### Ireland, 23 Nov 2026
+batch-17 of docs/library-briefs. +10: The Bad Ass Cafe, Carluccio's, Wagamama Dundrum, Brother Hubbard, The Fumbally, Overends Kitchen, Saba (Dublin); Blackrock Cottage, Freddy's, Aniar (Galway). Proof in `docs/library-proof/ie-ireland.json`.
+
+### Disneyland Paris, 23 Nov 2026
+batch-21 of docs/library-briefs. +10 in the parks: Market House Deli, Last Chance Café, Casa de Coco, Cowboy Cookout Barbecue, Café de la Brousse, Hakuna Matata, The Old Mill, Pizzeria Bella Notte, Toad Hall, Café Luminosity. Proof in `docs/library-proof/p-disney-paris.json`.
+
+### Mont-Saint-Michel, 23 Nov 2026
+batch-28 of docs/library-briefs. +5: Le Grillon and Restaurant Eugénie (Pontorson), Saint James Café (Beauvoir), Le Café de la Baie (Vains), Le Logis Sainte-Catherine (on the Mont). Proof in `docs/library-proof/fr-montstmichel.json`.
+### Vienna, 23 Nov 2026
+batch-07 of docs/library-briefs. +6 family cafés and restaurants with play corners (Falter’s 2025–2026 lists): Baomi, Family & Friends, Kinderspiel, Sieben Zwerge, Melman’s, Dschungel Café. Proof in `docs/library-proof/at-vienna.json`.
+
+### Salzburg, 23 Nov 2026
+batch-07 of docs/library-briefs. +5 from the tourism site’s child-friendly list: Gasthof Die Pflegerbrücke (playground, play room), the fortress panorama restaurant, The Keep, Restaurant Wolferl, The Bakery by Didi Maier. Proof in `docs/library-proof/at-salzburg.json`.
+
+### Geneva and Lake Léman, 23 Nov 2026
+batch-09 of docs/library-briefs. +7 from Geneva Tourism’s family restaurants and Lausanne Tourism: La Storia, Inglewood (Eaux-Vives), Molino (Molard), The Hamburger Foundation (Pâquis), Café du MEG, Un R de Famille, Auberge du Chalet des Enfants. Proof in `docs/library-proof/ch-geneva.json`.
+
+### Lucerne, 23 Nov 2026
+batch-09 of docs/library-briefs. +1: Wirtschaft Trumpf-Buur, Ebikon (playground and minigolf). Few dated lists exist for Lucerne. Proof in `docs/library-proof/ch-lucerne.json`.
+
+### Prague, 23 Nov 2026
+batch-10 of docs/library-briefs. +9 from prague.eu and family guides: Výtopna (train-delivered food), Food Lab, Bruxx, Kulaťák, Občanská plovárna, Kolkovna Olympia, Miminoo, Vozovna Stromovka, Café Truhlárna. Proof in `docs/library-proof/cz-prague.json`.
+
+### Zurich, 23 Nov 2026
+batch-10 of docs/library-briefs. +5 from Zurich Tourism’s child-friendly list and the ELCH family centre: Kafi für Dich, Brasserie Freilager, Die Waid, Alter Tobelhof, Kafi Plus (Oerlikon). Proof in `docs/library-proof/ch-zurich.json`.
+
+### Munich, 23 Nov 2026
+batch-11 of docs/library-briefs. +9, mostly kids’ cafés from in-muenchen.de (Nov 2026): Zuckertag, Mini Moment, Kleine Sportgeister, Glückskind, Pfefferminza, Mama’s Kindercafé, Hans im Glück (Isartor), La Sophia, Frau im Mond. Entry prices from the page. Proof in `docs/library-proof/de-munich.json`.
+
+### Hamburg, 23 Nov 2026
+batch-11 of docs/library-briefs. +1: Alsterdorfer Kesselhaus (children’s menu, play room) from hamburg.de. The Kindaling restaurant pages carry no date. Proof in `docs/library-proof/de-hamburg.json`.
+
+### Heidelberg and the Black Forest, 23 Nov 2026
+batch-11 of docs/library-briefs. +1: Die Bergstation on the Schauinsland. Seven Heidelberg restaurants left out: their page gives an address only. Proof in `docs/library-proof/de-heidelberg.json`.
+
+### Budapest, 23 Nov 2026
+batch-16 of docs/library-briefs. +3: Riso (terrace playground), Cafe Brunch Bazilika, Brunch Bistro. Proof in `docs/library-proof/hu-budapest.json`.
+
+### Kraków, 23 Nov 2026
+batch-22 of docs/library-briefs. +9: Biała Róża, Kogel Mogel, Cafe Oranżeria, Farina, Amarylis, Szara Gęś w Kuchni, Orangery, ORZO, Pół na Pół. Proof in `docs/library-proof/pl-krakow.json`.
+
+### Bled, Ljubljana & Postojna, 23 Nov 2026
+batch-23 of docs/library-briefs. +1: Garden Restaurant (Bled). Proof in `docs/library-proof/si-bled.json`.
+
+### Bratislava & the High Tatras, 23 Nov 2026
+batch-23 of docs/library-briefs. +4 in Bratislava: Gatto Matto Panská, Berg, Mezcalli, Urban Bistro. Proof in `docs/library-proof/sk-bratislava.json`.
+
+### Hallstatt, 23 Nov 2026
+batch-26 of docs/library-briefs. +2: Marktbeisl Zur Ruth, Pizzeria Kegelbahn (Obertraun). Proof in `docs/library-proof/at-hallstatt.json`.
+
+### Český Krumlov, 23 Nov 2026
+batch-27 of docs/library-briefs. +1: Restaurant Pivoňka. Proof in `docs/library-proof/cz-krumlov.json`.
+
+### Rothenburg ob der Tauber, 23 Nov 2026
+batch-27 of docs/library-briefs. +1: Eiscafé Pizzeria Italia. Proof in `docs/library-proof/de-rothenburg.json`.
+### Madrid, 23 Nov 2026
+batch-12 of docs/library-briefs. +9 from esmadrid.com’s eating out with children: Rubaiyat, La Excéntrica, New York Burger (Recoletos), Filandón, Restaurante San Francisco (El Pardo), Home Burger Bar, Kilómetros de Pizza, Can Pizza, Storyland. Proof in `docs/library-proof/es-madrid.json`.
+
+### Seville and Granada, 23 Nov 2026
+batch-13 of docs/library-briefs. +2 in Seville: La Escaloná, Arte y Sabor. Proof in `docs/library-proof/es-seville.json`.
+
+### Santorini, 23 Nov 2026
+batch-16 of docs/library-briefs. +4: Cava Alta (Pyrgos), Oia Gefsis, Mes Amis, Anemomilos. Proof in `docs/library-proof/gr-santorini.json`.
+
+### Athens, 23 Nov 2026
+batch-16 of docs/library-briefs. +11 (Ama Lachei, Karavitis, Colibri, To Steki tou Ilia, Smile, Piu Verde, Bella Vespa, Kosta, Hoocut, To Avgo tou Kokora, the Acropolis Museum restaurant). Proof in `docs/library-proof/gr-athens.json`.
+
+### Dubrovnik, 23 Nov 2026
+batch-16 of docs/library-briefs. +2: Moby Dick, Bistro Glorijet. Proof in `docs/library-proof/hr-dubrovnik.json`.
+
+### Amalfi Coast, 23 Nov 2026
+batch-17 of docs/library-briefs. +11: Il Fornillo, Capricci, Maria Grazia, Acquapazza, Baccofurore, Al Convento, Pescheria CICA, La Frittura del Golfo, I Due Fratelli, Pasticceria Russo, Il Mulino. Proof in `docs/library-proof/it-amalfi.json`.
+
+### Cinque Terre, 23 Nov 2026
+batch-18 of docs/library-briefs. +2 in Vernazza: Fritto e Pizza da Sandro, Pizzeria Fratelli Basso. Proof in `docs/library-proof/it-cinqueterre.json`.
+
+### Dolomites, 23 Nov 2026
+batch-18 of docs/library-briefs. +6: Caffè Val d'Anna, Rifugio Averau, Ristorante Bullaccia, Pitschlmann, Sarè, Gelateria Eccetera. Proof in `docs/library-proof/it-dolomites.json`.
+
+### Florence, 23 Nov 2026
+batch-18 of docs/library-briefs. +10: L'Ortone, Trattoria 13 Gobbi, Santarosa Bistrot, Salumeria Verdi, Gelateria La Carraia, Berberè, Trattoria del Carmine, Tamerò, Ditta Artigianale (Via dei Neri), Gelateria della Passera. Proof in `docs/library-proof/it-florence.json`.
+
+### Milan, 23 Nov 2026
+batch-18 of docs/library-briefs. +8: Belle Epoque, Trattoria Bertamè, Consorzio Stoppani, Mamusca, California Bakery (CityLife), Giolina, MIC Ramen (Porta Romana), Benvenuto Family Restaurant. Proof in `docs/library-proof/it-milan.json`.
+
+### Sicily, 23 Nov 2026
+batch-19 of docs/library-briefs. +7 in Palermo: Vecchia Trattoria da Totò, Osteria Ballarò, Tondo, Grano Granis, I Segreti del Chiostro, Ciccio Adelfio, Cappadonia. Proof in `docs/library-proof/it-sicily.json`.
+
+### Venice, 23 Nov 2026
+batch-19 of docs/library-briefs. +8: Trattoria al Gazzettino, Rio Novo, Fried Land, 1000 Gourmet, Al Profeta, Osteria Alla Bifora, Rosticceria Gislon, Osteria Bancogiro. Proof in `docs/library-proof/it-venice.json`.
+
+### Lisbon & Sintra, 23 Nov 2026
+batch-22 of docs/library-briefs. +8: Bonkers, Epic Sana and Sheraton brunches, Luzzo, Ground Burger, Green House, Mr. Zombie, Plataforma. Proof in `docs/library-proof/pt-lisbon.json`.
+
+### Plitvice, 23 Nov 2026
+batch-28 of docs/library-briefs. +1: the Camping Plitvice restaurant. Proof in `docs/library-proof/hr-plitvice.json`.
+### Copenhagen, 23 Nov 2026
+batch-12 of docs/library-briefs. +4 from the Cofoco group’s family page (children’s menu or a half dish at half price): Scarpetta (Islands Brygge, Rantzausgade), Donna, Les Trois Cochons. Proof in `docs/library-proof/dk-copenhagen.json`.
+
+### Tallinn, 23 Nov 2026
+batch-12 of docs/library-briefs. +9 from Visit Estonia and easyfind.ee (2026): Nero, Lore Bistroo, City Grill House, NOP, Talleke ja Pullike, Pann&Kook, Gourmet Coffee, Boheem, Vapiano (Hobujaama). Proof in `docs/library-proof/ee-tallinn.json`.
+
+### Helsinki, 23 Nov 2026
+batch-13 of docs/library-briefs. +4: The Social (Clarion Helsinki and Mestari), Toscanini, Linnankellari, from Strawberry’s restaurant guide. Proof in `docs/library-proof/fi-helsinki.json`.
+
+### Reykjavík, 23 Nov 2026
+batch-17 of docs/library-briefs. +8: Kaffi Laugalækur, The Laundromat Café, the cat café, Grandi Mathöll, Kaffi Flóra, Iðnó, 101 Reykjavik Street Food, Arna. Proof in `docs/library-proof/is-reykjavik.json`.
+
+### Tromsø, 23 Nov 2026
+batch-21 of docs/library-briefs. +1: Pastafabrikken. Proof in `docs/library-proof/no-tromso.json`.
+
+### Bergen, 23 Nov 2026
+batch-21 of docs/library-briefs. +1: Peppes Pizza (Ole Bulls plass). Proof in `docs/library-proof/no-bergen.json`.
+
+### Lapland, 23 Nov 2026
+batch-22 of docs/library-briefs. +2 in Rovaniemi: Restaurant Gallis, Piparina. Proof in `docs/library-proof/p-lapland.json`.
+
+### Stockholm, 23 Nov 2026
+batch-23 of docs/library-briefs. +3: Junibacken restaurant, Haga Bottega, Boketto. Proof in `docs/library-proof/se-stockholm.json`.

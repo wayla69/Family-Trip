@@ -1,19 +1,90 @@
 {
   "town": "vn-hue",
-  "kind": "eats",
-  "checked": "2026-11",
-  "rule": "A row gets ok only from a current listing, its own site or recent reviews with nothing saying closed (docs/EATS.md). A row is taken out when a search could not find the place at all or the sources disagree; a place found but not freshly confirmed stays without ok.",
-  "scope": "the 1 row without ok; the town holds 28 rows after this pass",
-  "how": "Google Maps opened in headless Chromium (2026-11-23), limited view without a reviews tab, so no review date could be read; searched in English and in the local language, each verdict from the place page or the result list shown",
-  "confirmed": [
+  "rounds": [
     {
-      "name": "Hàng Me Mẹ",
-      "src": "https://www.google.com/maps/place/Original+Hàng+Me",
-      "page_name": "Original Hàng Me / Hàng Me Mẹ",
-      "evidence": "Google Maps (2026-11-23): dumpling restaurant, 3.9★, 29 Nguyễn Công Trứ, Thuận Hóa, Huế (FHCW+MH) — the south bank, a few hundred metres from the row's Võ Thị Sáu street; 'Open · Closes 10 PM'; nothing says closed. The search for '16 Võ Thị Sáu' lands on this listing, so the query now names its street",
-      "ok": "2026-11"
+      "town": "vn-hue",
+      "kind": "eats",
+      "checked": "2026-11",
+      "rule": "A row gets ok only from a current listing, its own site or recent reviews with nothing saying closed (docs/EATS.md). A row is taken out when a search could not find the place at all or the sources disagree; a place found but not freshly confirmed stays without ok.",
+      "scope": "the 1 row without ok; the town holds 28 rows after this pass",
+      "how": "Google Maps opened in headless Chromium (2026-11-23), limited view without a reviews tab, so no review date could be read; searched in English and in the local language, each verdict from the place page or the result list shown",
+      "confirmed": [
+        {
+          "name": "Hàng Me Mẹ",
+          "src": "https://www.google.com/maps/place/Original+Hàng+Me",
+          "page_name": "Original Hàng Me / Hàng Me Mẹ",
+          "evidence": "Google Maps (2026-11-23): dumpling restaurant, 3.9★, 29 Nguyễn Công Trứ, Thuận Hóa, Huế (FHCW+MH) — the south bank, a few hundred metres from the row's Võ Thị Sáu street; 'Open · Closes 10 PM'; nothing says closed. The search for '16 Võ Thị Sáu' lands on this listing, so the query now names its street",
+          "ok": "2026-11"
+        }
+      ],
+      "kept_without_ok": [],
+      "removed": []
+    },
+    {
+      "town": "vn-hue",
+      "kind": "eats + sights",
+      "checked": "2026-11-23",
+      "rule": "library-check.cjs, then the Google Maps Reviews tab (map pinned on Huế): ok only when not marked closed and with a review from the last six months.",
+      "agents": "two Haiku agents; 21 rows offered, 10 passed library-check.cjs, 5 went in",
+      "added": [
+        {
+          "name": "Tinh Gia Vien",
+          "src": "https://www.vietnamtourism.com/en/hue-food-scene-bun-bo-hue-and-the-imperial-dishes-worth-seeking-out",
+          "date": "2026-09",
+          "map": "Google Maps 'Tinh Gia Vien Restaurant', 289 reviews, newest 'a month ago'"
+        },
+        {
+          "name": "Thủy Xuân Incense Village",
+          "src": "https://www.vietnamtourism.com/en/incense-village-hue-thuy-xuan-how-to-visit-what-to-expect",
+          "date": "2026-10",
+          "map": "Google Maps 1,298 reviews, newest '3 weeks ago'"
+        },
+        {
+          "name": "Tân Cảnh Dương Beach",
+          "src": "https://vietnamnet.vn/en/uncrowded-hue-beach-surprises-family-with-clear-water-white-sand-2539066.html",
+          "date": "2026-07",
+          "map": "Google Maps 80 reviews, newest '4 weeks ago'"
+        },
+        {
+          "name": "Tam Giang Lagoon",
+          "src": "https://vietnam.travel/places-to-go/central-vietnam/hue",
+          "date": "official",
+          "map": "Google Maps 489 reviews, newest 'a month ago'"
+        },
+        {
+          "name": "Thanh Tiên Paper Flower Village",
+          "src": "https://vietnam.travel/places-to-go/central-vietnam/hue",
+          "date": "official",
+          "map": "Google Maps 'Hoa Giấy Thanh Tiên', 63 reviews, newest 'a month ago'"
+        }
+      ],
+      "left_out": [
+        {
+          "name": "11 bún bò Huế shops (VinWonders list)",
+          "why": "the page carries no date the checker can read"
+        },
+        {
+          "name": "Bún Bò Huế Hồng Mai",
+          "why": "the map's Hồng Mai on that street is a bánh khoái shop, not the bún bò the page names"
+        },
+        {
+          "name": "Bún Bò Huế O Xáo",
+          "why": "not found on Google Maps"
+        },
+        {
+          "name": "Ông Táo",
+          "why": "the map's newest reviews are three years old or more"
+        },
+        {
+          "name": "Phú Cam conical hat village",
+          "why": "one review on the map, no date"
+        },
+        {
+          "name": "Lập An Lagoon",
+          "why": "part of Lăng Cô, already in the library"
+        }
+      ],
+      "estimates": "Ages and visit hours for the lagoon and the paper-flower village are placeholders; the other two take the page's own words."
     }
-  ],
-  "kept_without_ok": [],
-  "removed": []
+  ]
 }

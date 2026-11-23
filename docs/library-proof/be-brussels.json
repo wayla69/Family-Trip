@@ -1,26 +1,107 @@
 {
   "town": "be-brussels",
-  "kind": "eats",
-  "checked": "2026-11",
-  "rule": "A row gets ok only from a current listing, its own site or recent reviews with nothing saying closed (docs/EATS.md). A row is taken out when a search could not find the place at all or the sources disagree; a place found but not freshly confirmed stays without ok.",
-  "scope": "the 2 rows without ok; the rows already confirmed were not checked again",
-  "how": "Google Maps opened in headless Chromium (2026-11-23), limited view without a reviews tab, so no review date could be read; a place with current hours and no closed notice counts as a current listing",
-  "confirmed": [
+  "rounds": [
     {
-      "name": "Fritland",
-      "src": "https://www.google.com/maps/place/Fritland/@50.8474174,4.3506551,17z",
-      "page_name": "Fritland",
-      "evidence": "Google Maps: frituur, 4.0★, Rue Henri Maus 49, 1000 Bruxelles (R9W2+X7), 'Closed · Opens 11 AM', site fritlandbrussels.be; nothing says closed",
-      "ok": "2026-11"
+      "town": "be-brussels",
+      "kind": "eats",
+      "checked": "2026-11",
+      "rule": "A row gets ok only from a current listing, its own site or recent reviews with nothing saying closed (docs/EATS.md). A row is taken out when a search could not find the place at all or the sources disagree; a place found but not freshly confirmed stays without ok.",
+      "scope": "the 2 rows without ok; the rows already confirmed were not checked again",
+      "how": "Google Maps opened in headless Chromium (2026-11-23), limited view without a reviews tab, so no review date could be read; a place with current hours and no closed notice counts as a current listing",
+      "confirmed": [
+        {
+          "name": "Fritland",
+          "src": "https://www.google.com/maps/place/Fritland/@50.8474174,4.3506551,17z",
+          "page_name": "Fritland",
+          "evidence": "Google Maps: frituur, 4.0★, Rue Henri Maus 49, 1000 Bruxelles (R9W2+X7), 'Closed · Opens 11 AM', site fritlandbrussels.be; nothing says closed",
+          "ok": "2026-11"
+        },
+        {
+          "name": "Gaston",
+          "src": "https://www.google.com/maps/place/Gaston/@50.8533145,4.3465976,17z",
+          "page_name": "Gaston",
+          "evidence": "Google Maps: ice cream shop, 4.5★, Quai aux Briques 86, 1000 Bruxelles (V83W+8J), 'Closed · Opens 11 AM', site glaciergaston.be; nothing says closed",
+          "ok": "2026-11"
+        }
+      ],
+      "kept_without_ok": [],
+      "removed": []
     },
     {
-      "name": "Gaston",
-      "src": "https://www.google.com/maps/place/Gaston/@50.8533145,4.3465976,17z",
-      "page_name": "Gaston",
-      "evidence": "Google Maps: ice cream shop, 4.5★, Quai aux Briques 86, 1000 Bruxelles (V83W+8J), 'Closed · Opens 11 AM', site glaciergaston.be; nothing says closed",
-      "ok": "2026-11"
+      "town": "be-brussels",
+      "kind": "eats + sights",
+      "checked": "2026-11-23",
+      "rule": "library-check.cjs, then the Google Maps Reviews tab sorted by newest: ok only when not marked closed, with a review from the last six months, and the map's name matching the page's.",
+      "agents": "one Haiku agent; rows from elle.be, parismatch.be, insidebrussels.be and bruxellessecrete.com passed library-check.cjs, 8 went in",
+      "added": [
+        {
+          "name": "Le Fox",
+          "page_name": "Le Fox",
+          "src": "https://www.elle.be/fr/272561-restos-kids-friendly-a-tester-en-famille.html",
+          "date": "2025-08",
+          "map": "Google Maps open, newest review within six months"
+        },
+        {
+          "name": "Lloyd Coffee Eatery Louise",
+          "page_name": "Lloyd Coffee Eatery Louise",
+          "src": "https://www.elle.be/fr/272561-restos-kids-friendly-a-tester-en-famille.html",
+          "date": "2025-08",
+          "map": "Google Maps open, newest review within six months"
+        },
+        {
+          "name": "Cōcina Châtelain",
+          "page_name": "Cōcina Châtelain",
+          "src": "https://www.parismatch.be/lifestyle/food/2026/03/25/bon-plan-pour-les-familles-ce-restaurant-bruxellois-repense-son-fonctionnement-et-cela-fera-plaisir-au-portefeuille-des-parents-4F6OQ5J3FZGOZB4P3C7CXZNJ3A/",
+          "date": "2026-03",
+          "map": "Google Maps open, newest review within six months"
+        },
+        {
+          "name": "Brasserie du Miroir",
+          "page_name": "Brasserie du Miroir",
+          "src": "https://www.parismatch.be/lifestyle/food/2026/08/01/situee-sur-une-place-animee-de-bruxelles-cette-brasserie-a-la-terrasse-immense-ne-sert-que-du-fait-maison-J3UGIXWTCBFM5GM7VFPPAJBHIM/",
+          "date": "2026-08",
+          "map": "Google Maps open, newest review within six months"
+        },
+        {
+          "name": "SUPER",
+          "page_name": "SUPER",
+          "src": "https://en.insidebrussels.be/V2/bruxelles/super-a-bruxelles-enfin-une-aire-de-jeux-ou-enfants-et-parents-trouvent-leur-place/?amp=1",
+          "date": "2026-04",
+          "map": "Google Maps open, newest review within six months"
+        },
+        {
+          "name": "WOM (World of Mind)",
+          "page_name": "WOM",
+          "src": "https://bruxellessecrete.com/en/what-to-do-when-it-rains/",
+          "date": "2026-05",
+          "map": "Google Maps open, newest review within six months"
+        },
+        {
+          "name": "LEGO Discovery Centre",
+          "page_name": "The Lego Discovery Center",
+          "src": "https://bruxellessecrete.com/en/what-to-do-when-it-rains/",
+          "date": "2026-05",
+          "map": "Google Maps open, newest review within six months"
+        },
+        {
+          "name": "Koezio",
+          "page_name": "Koezio",
+          "src": "https://bruxellessecrete.com/en/what-to-do-when-it-rains/",
+          "date": "2026-05",
+          "map": "Google Maps open, newest review within six months"
+        }
+      ],
+      "left_out": [
+        {
+          "name": "rows from restaurantsforkings.com",
+          "why": "a machine-written ranking site the brief refuses"
+        },
+        {
+          "name": "Stardust Park",
+          "why": "the map marks it permanently closed, although a 2026 article still lists it"
+        }
+      ],
+      "estimates": "Ages and visit hours are placeholders; prices and opening notes are the pages' own."
     }
-  ],
-  "kept_without_ok": [],
-  "removed": []
+  ]
 }

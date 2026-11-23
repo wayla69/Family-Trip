@@ -258,6 +258,449 @@
           "q": "Brienz Rothorn Bahn, Brienz",
           "ok": "2026-11",
           "src": "https://www.brienzersee.ch/en/experiences/poi/brienz-rothorn-railway"
+        },
+        {
+          "local": "Giessbachfälle",
+          "ages": [
+            1,
+            1,
+            1,
+            1
+          ],
+          "hrs": 3,
+          "io": "out",
+          "pram": "no",
+          "price": {
+            "th": "ฟรี (ตัวน้ำตกและทางเดิน)",
+            "en": "Free (the falls and the path)"
+          },
+          "book": "none",
+          "src": "https://www.travel-interlaken.ch/en/attractions/",
+          "name": {
+            "th": "น้ำตกกีสบัค",
+            "en": "Giessbach Falls"
+          },
+          "kind": "nature",
+          "area": {
+            "th": "ทะเลสาบบรีนซ์",
+            "en": "Lake Brienz"
+          },
+          "what": {
+            "th": "น้ำตก 14 ชั้น สูงราว 500 ม. ไหลลงทะเลสาบบรีนซ์ มีทางเดินลอดหลังน้ำตก ไปทางเรือ แล้วต่อรถรางไต่เขาหรือเดิน",
+            "en": "Fourteen cascades falling some 500 m into Lake Brienz, with a path behind the falls; by boat, then funicular or on foot"
+          },
+          "why": {
+            "th": "มีทางเดินลอดไปหลังน้ำตก",
+            "en": "A path that goes behind the waterfall"
+          },
+          "q": "Giessbach Waterfalls, Brienz",
+          "ok": "2026-11"
+        },
+        {
+          "local": "",
+          "ages": [
+            1,
+            1,
+            1,
+            1
+          ],
+          "hrs": 1,
+          "io": "out",
+          "pram": "yes",
+          "price": {
+            "th": "ฟรี",
+            "en": "Free"
+          },
+          "book": "none",
+          "src": "https://www.travel-interlaken.ch/en/attractions/",
+          "name": {
+            "th": "โฮเฮอมัตเทอ",
+            "en": "Höhematte"
+          },
+          "kind": "park",
+          "area": {
+            "th": "ระหว่างสถานีอินเทอร์ลาเคนออสต์กับเวสต์",
+            "en": "Between Interlaken Ost and West"
+          },
+          "what": {
+            "th": "ทุ่งหญ้า 14 เฮกตาร์กลางเมือง มองเห็นยอดจุงเฟรา",
+            "en": "A 14-hectare meadow in the middle of town with the Jungfrau in view"
+          },
+          "why": {
+            "th": "เดินสั้นๆ ฟรี และได้ดูพาราไกลเดอร์ร่อนลงจอด",
+            "en": "A short, free walk, and the paragliders land here"
+          },
+          "q": "Höhematte Park, Interlaken",
+          "ok": "2026-11"
+        },
+        {
+          "local": "Naturpark Blausee",
+          "ages": [
+            1,
+            1,
+            1,
+            1
+          ],
+          "hrs": 2,
+          "io": "out",
+          "pram": "part",
+          "price": {
+            "th": "≈ CHF 8 วันธรรมดา · CHF 10 เสาร์อาทิตย์",
+            "en": "≈ CHF 8 weekdays · CHF 10 weekends"
+          },
+          "book": "none",
+          "src": "https://www.travel-interlaken.ch/en/attractions/",
+          "name": {
+            "th": "ทะเลสาบบลาวเซ",
+            "en": "Blausee"
+          },
+          "kind": "nature",
+          "area": {
+            "th": "หุบเขาคันเดอร์",
+            "en": "Kander valley"
+          },
+          "what": {
+            "th": "ทะเลสาบภูเขาเล็กๆ น้ำใสมาก อยู่ในอุทยานที่มีรั้วรอบ และมีฟาร์มปลาเทราต์",
+            "en": "A small, very clear mountain lake in a fenced nature park with a trout farm"
+          },
+          "why": {
+            "th": "น้ำใสจนเห็นซุงใต้น้ำเหมือนลอยอยู่",
+            "en": "Water so clear the tree trunks seem to float"
+          },
+          "tip": {
+            "th": "ใช้เวลาราวสองชั่วโมง เปิดทุกวันตั้งแต่ 09:00 ตลอดปี",
+            "en": "Two hours is enough; open daily from 09:00 all year"
+          },
+          "q": "Naturpark Blausee, Blausee",
+          "ok": "2026-11"
+        },
+        {
+          "local": "Schloss Spiez",
+          "ages": [
+            1,
+            1,
+            1,
+            1
+          ],
+          "hrs": 2,
+          "io": "both",
+          "pram": "part",
+          "price": {
+            "th": "≈ CHF 12 (พิพิธภัณฑ์ในปราสาท)",
+            "en": "≈ CHF 12 (the castle museum)"
+          },
+          "book": "none",
+          "src": "https://www.travel-interlaken.ch/en/attractions/",
+          "name": {
+            "th": "ปราสาทชปีซ",
+            "en": "Spiez Castle"
+          },
+          "kind": "culture",
+          "area": {
+            "th": "อ่าวชปีซ ทะเลสาบทูน",
+            "en": "Bay of Spiez, Lake Thun"
+          },
+          "what": {
+            "th": "หอคอย คฤหาสน์ โบสถ์โรมาเนสก์ และสวน บนแหลมยื่นลงอ่าว",
+            "en": "A keep, manor house, Romanesque church and park on a spit of land in the bay"
+          },
+          "why": {
+            "th": "สวนรอบปราสาทเปิดตลอดปีและเข้าฟรี",
+            "en": "The castle park is open all year and free"
+          },
+          "tip": {
+            "th": "พิพิธภัณฑ์และคาเฟ่เปิด 1 พ.ค.–31 ต.ค.",
+            "en": "Museum and café open 1 May to 31 October"
+          },
+          "q": "Schloss Spiez, Spiez",
+          "ok": "2026-11"
+        },
+        {
+          "local": "Schloss Oberhofen",
+          "ages": [
+            1,
+            1,
+            1,
+            1
+          ],
+          "hrs": 2,
+          "io": "both",
+          "pram": "part",
+          "price": {
+            "th": "≈ CHF 15",
+            "en": "≈ CHF 15"
+          },
+          "book": "none",
+          "src": "https://www.travel-interlaken.ch/en/attractions/",
+          "name": {
+            "th": "ปราสาทโอเบอร์โฮเฟิน",
+            "en": "Oberhofen Castle"
+          },
+          "kind": "culture",
+          "area": {
+            "th": "ทะเลสาบทูน",
+            "en": "Lake Thun"
+          },
+          "what": {
+            "th": "ปราสาทที่หอคอยตั้งอยู่ในทะเลสาบ",
+            "en": "A castle whose keep stands in the lake"
+          },
+          "why": {
+            "th": "ปราสาทกลางน้ำ ไปได้แม้วันฝนตก",
+            "en": "A castle in the water, and a rainy-day choice"
+          },
+          "tip": {
+            "th": "เปิดฤดูกาล พ.ค.–ต.ค.",
+            "en": "Season May to October"
+          },
+          "q": "Schloss Oberhofen, Oberhofen am Thunersee",
+          "ok": "2026-11"
+        },
+        {
+          "local": "Panoramabrücke Sigriswil",
+          "ages": [
+            1,
+            1,
+            1,
+            1
+          ],
+          "hrs": 1,
+          "io": "out",
+          "pram": "yes",
+          "price": {
+            "th": "≈ CHF 8 ตั๋ววัน",
+            "en": "≈ CHF 8 day ticket"
+          },
+          "book": "none",
+          "src": "https://www.travel-interlaken.ch/en/attractions/",
+          "name": {
+            "th": "สะพานพาโนรามาซิกริสวิล",
+            "en": "Sigriswil Panorama Bridge"
+          },
+          "kind": "views",
+          "area": {
+            "th": "ซิกริสวิล ทะเลสาบทูน",
+            "en": "Sigriswil, Lake Thun"
+          },
+          "what": {
+            "th": "สะพานแขวนยาว 340 ม. ข้ามหุบเขากูมี",
+            "en": "A 340 m suspension bridge over the Gumi gorge"
+          },
+          "why": {
+            "th": "ผู้ดูแลบอกว่ารถเข็นเด็กและวีลแชร์ข้ามได้",
+            "en": "The operator says prams and wheelchairs can cross"
+          },
+          "tip": {
+            "th": "ข้ามสะพานใช้เวลาราว 15 นาที",
+            "en": "A quarter of an hour to cross"
+          },
+          "q": "Panoramabrücke Sigriswil",
+          "ok": "2026-11"
+        },
+        {
+          "local": "",
+          "ages": [
+            1,
+            1,
+            1,
+            1
+          ],
+          "hrs": 3,
+          "io": "out",
+          "pram": "part",
+          "price": {
+            "th": "≈ CHF 16 ไปกลับจากเมือร์เริน",
+            "en": "≈ CHF 16 return from Mürren"
+          },
+          "book": "none",
+          "src": "https://www.travel-interlaken.ch/en/attractions/",
+          "name": {
+            "th": "อัลเมนด์ฮูเบิล",
+            "en": "Allmendhubel"
+          },
+          "kind": "play",
+          "area": {
+            "th": "เหนือหมู่บ้านเมือร์เริน",
+            "en": "Above Mürren"
+          },
+          "what": {
+            "th": "เนินเขาครอบครัวเหนือเมือร์เริน ขึ้นรถรางไต่เขาสี่นาที",
+            "en": "A family hill above Mürren, four minutes up by funicular"
+          },
+          "why": {
+            "th": "ข้างบนมีสนามเด็กเล่น ทางเดินชมดอกไม้ และร้านอาหารวิวพาโนรามา",
+            "en": "A playground, a flower trail and a panorama restaurant at the top"
+          },
+          "tip": {
+            "th": "รถรางไต่เขาปิด 19 ต.ค.–11 ธ.ค. 2026",
+            "en": "The funicular is closed 19 October to 11 December 2026"
+          },
+          "q": "Allmendhubel, Mürren",
+          "ok": "2026-11"
+        },
+        {
+          "local": "",
+          "ages": [
+            1,
+            1,
+            1,
+            1
+          ],
+          "hrs": 4,
+          "io": "out",
+          "pram": "part",
+          "price": {
+            "th": "≈ CHF 40 กระเช้าไปกลับ (หน้าร้อน 2026)",
+            "en": "≈ CHF 40 return gondola (summer 2026)"
+          },
+          "book": "none",
+          "src": "https://www.travel-interlaken.ch/en/attractions/",
+          "name": {
+            "th": "ทะเลสาบเออชีเนิน",
+            "en": "Oeschinensee"
+          },
+          "kind": "nature",
+          "area": {
+            "th": "คันเดอร์ชเตก",
+            "en": "Kandersteg"
+          },
+          "what": {
+            "th": "ทะเลสาบสีเทอร์ควอยซ์ใต้ยอดบลูเอมลิสอัลป์ ช่วงสุดท้ายจากกระเช้าเดินราว 30 นาที",
+            "en": "A turquoise lake under the Blüemlisalp; the last 30 minutes from the gondola are on foot"
+          },
+          "why": {
+            "th": "เดินไปทะเลสาบภูเขาสีเทอร์ควอยซ์",
+            "en": "A walk to a turquoise mountain lake"
+          },
+          "tip": {
+            "th": "ห้ามจักรยานและจักรยานไฟฟ้าบนทางเดิน",
+            "en": "No bikes or e-bikes on the path"
+          },
+          "q": "Oeschinensee, Kandersteg",
+          "ok": "2026-11"
+        },
+        {
+          "local": "Gletscherschlucht Grindelwald",
+          "ages": [
+            1,
+            1,
+            1,
+            1
+          ],
+          "hrs": 2,
+          "io": "out",
+          "pram": "no",
+          "price": {
+            "th": "≈ CHF 21",
+            "en": "≈ CHF 21"
+          },
+          "book": "none",
+          "src": "https://www.travel-interlaken.ch/en/attractions/",
+          "name": {
+            "th": "หุบเขาธารน้ำแข็งกรินเดลวัลด์",
+            "en": "Grindelwald Glacier Gorge"
+          },
+          "kind": "nature",
+          "area": {
+            "th": "กรินเดลวัลด์",
+            "en": "Grindelwald"
+          },
+          "what": {
+            "th": "หุบผาที่ธารน้ำแข็งกัดเซาะ ผนังสูง 300 ม. ทางเดินลึกราว 1 กม. และตาข่ายเหนือแม่น้ำ",
+            "en": "A gorge cut by a glacier, with 300 m walls, a walkway about a kilometre in and a net over the river"
+          },
+          "why": {
+            "th": "มีทางเดินและอุโมงค์ผ่านหุบผา",
+            "en": "Walkways and tunnels through the gorge"
+          },
+          "tip": {
+            "th": "ใช้เวลา 1–2 ชั่วโมง",
+            "en": "A visit of 1 to 2 hours"
+          },
+          "q": "Glacier Canyon Grindelwald, Gletscherschlucht 1, Grindelwald",
+          "ok": "2026-11"
+        },
+        {
+          "local": "Reichenbachfall",
+          "ages": [
+            1,
+            1,
+            1,
+            1
+          ],
+          "hrs": 2,
+          "io": "out",
+          "pram": "part",
+          "price": {
+            "th": "≈ CHF 10 เที่ยวเดียวจากวิลลิเกิน",
+            "en": "≈ CHF 10 one way from Willigen"
+          },
+          "book": "none",
+          "src": "https://www.travel-interlaken.ch/en/attractions/",
+          "name": {
+            "th": "น้ำตกไรเคินบัค",
+            "en": "Reichenbach Falls"
+          },
+          "kind": "nature",
+          "area": {
+            "th": "ไมริงเงิน",
+            "en": "Meiringen"
+          },
+          "what": {
+            "th": "น้ำตกเหนือไมริงเงิน มีรถรางไต่เขาปี 1899 ขึ้นไปถึงยอด",
+            "en": "A waterfall above Meiringen with an 1899 funicular to the top"
+          },
+          "why": {
+            "th": "นั่งรถรางไต่เขาเก่าแก่ขึ้นไปราว 7 นาที",
+            "en": "A seven-minute ride up in the old funicular"
+          },
+          "tip": {
+            "th": "รถรางไต่เขาเปิดเฉพาะ พ.ค.–ต.ค.",
+            "en": "The funicular runs May to October only"
+          },
+          "q": "Reichenbachfall, Meiringen",
+          "ok": "2026-11"
+        },
+        {
+          "local": "",
+          "ages": [
+            1,
+            1,
+            1,
+            1
+          ],
+          "hrs": 4,
+          "io": "out",
+          "pram": "part",
+          "price": {
+            "th": "≈ CHF 64 ไปกลับจากมือเลอเนิน",
+            "en": "≈ CHF 64 return from Mülenen"
+          },
+          "book": "none",
+          "src": "https://www.travel-interlaken.ch/en/attractions/",
+          "name": {
+            "th": "ยอดเขานีเซิน",
+            "en": "Niesen"
+          },
+          "kind": "views",
+          "area": {
+            "th": "มือเลอเนิน ทะเลสาบทูน",
+            "en": "Mülenen, Lake Thun"
+          },
+          "what": {
+            "th": "ยอดเขารูปพีระมิดเหนือทะเลสาบทูน ขึ้นรถรางไต่เขาจากมือเลอเนิน",
+            "en": "A pyramid-shaped peak above Lake Thun, up by funicular from Mülenen"
+          },
+          "why": {
+            "th": "เที่ยวได้ครึ่งวันถึงทั้งวัน มองลงไปเห็นทะเลสาบ",
+            "en": "A half or full day out with the lake below"
+          },
+          "tip": {
+            "th": "เปิด เม.ย.–พ.ย. ปิดหน้าหนาว",
+            "en": "Open April to November, closed in winter"
+          },
+          "q": "Niesen Kulm",
+          "ok": "2026-11"
         }
       ]
     }

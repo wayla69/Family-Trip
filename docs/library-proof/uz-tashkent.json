@@ -1,16 +1,112 @@
 {
   "town": "uz-tashkent",
-  "kind": "eats",
-  "checked": "2026-11",
-  "rule": "A row gets ok only from a current listing, its own site or recent reviews with nothing saying closed (docs/EATS.md). A row is taken out when a search could not find the place at all or the sources disagree; a place found but not freshly confirmed stays without ok.",
-  "scope": "the 1 row without ok; the rows already confirmed were not checked again",
-  "how": "Google Maps opened in headless Chromium (2026-11-23), limited view without a reviews tab, so no review date could be read; a place with current hours and no closed notice counts as a current listing",
-  "confirmed": [],
-  "kept_without_ok": [
+  "rounds": [
     {
-      "name": "Milliy Taomlar (National Food)",
-      "evidence": "Google Maps lists many open places called Milliy Taomlar in Tashkent (e.g. 879P+RCC 'Open · Closes 8 PM'; Abdulla Kaxxar 30a; Shota Rustaveli 12), but none could be tied to the one opposite the Circus that the row names; travel guides (Spotted by Locals, Yandex's food guide) describe it opposite the Circus with no date"
+      "town": "uz-tashkent",
+      "kind": "eats",
+      "checked": "2026-11",
+      "rule": "A row gets ok only from a current listing, its own site or recent reviews with nothing saying closed (docs/EATS.md). A row is taken out when a search could not find the place at all or the sources disagree; a place found but not freshly confirmed stays without ok.",
+      "scope": "the 1 row without ok; the rows already confirmed were not checked again",
+      "how": "Google Maps opened in headless Chromium (2026-11-23), limited view without a reviews tab, so no review date could be read; a place with current hours and no closed notice counts as a current listing",
+      "confirmed": [],
+      "kept_without_ok": [
+        {
+          "name": "Milliy Taomlar (National Food)",
+          "evidence": "Google Maps lists many open places called Milliy Taomlar in Tashkent (e.g. 879P+RCC 'Open · Closes 8 PM'; Abdulla Kaxxar 30a; Shota Rustaveli 12), but none could be tied to the one opposite the Circus that the row names; travel guides (Spotted by Locals, Yandex's food guide) describe it opposite the Circus with no date"
+        }
+      ],
+      "removed": []
+    },
+    {
+      "town": "uz-tashkent",
+      "kind": "eats + sights",
+      "checked": "2026-11-23",
+      "rule": "library-check.cjs, then the Google Maps Reviews tab sorted by newest: ok only when not marked closed, with a review from the last six months, and the map's name matching the page's.",
+      "agents": "one Haiku agent; 13 of 14 rows from Yandex Eda (2025) and Outlook Traveller (2025) passed library-check.cjs, 9 went in",
+      "added": [
+        {
+          "name": "Ribambelle (Tashkent City Mall)",
+          "page_name": "Ribambelle",
+          "src": "https://openkitchen.eda.yandex/article/places/guides/only-the-best-for-kids-10-restaurants-with-amazing-play-zones",
+          "date": "2025-05",
+          "map": "Google Maps City Mall, Botir Zokirov 7, 266 reviews, newest '2 hours ago'"
+        },
+        {
+          "name": "Benedict",
+          "page_name": "Benedict",
+          "src": "https://openkitchen.eda.yandex/article/places/guides/only-the-best-for-kids-10-restaurants-with-amazing-play-zones",
+          "date": "2025-05",
+          "map": "Google Maps Nukus 31/2, 198 reviews, newest 'last week'"
+        },
+        {
+          "name": "Gōsht (Mirobod)",
+          "page_name": "Gōsht",
+          "src": "https://openkitchen.eda.yandex/article/places/guides/only-the-best-for-kids-10-restaurants-with-amazing-play-zones",
+          "date": "2025-05",
+          "map": "Google Maps 'GŌSHT', Mirobod 21, 615 reviews, newest '2 weeks ago'"
+        },
+        {
+          "name": "Yuzhanin",
+          "page_name": "Yuzhanin",
+          "src": "https://openkitchen.eda.yandex/article/places/guides/only-the-best-for-kids-10-restaurants-with-amazing-play-zones",
+          "date": "2025-05",
+          "map": "Google Maps Turkiston 12a, 787 reviews, newest '8 hours ago'"
+        },
+        {
+          "name": "Tanuki (Tashkent City Mall)",
+          "page_name": "Tanuki",
+          "src": "https://openkitchen.eda.yandex/article/places/guides/only-the-best-for-kids-10-restaurants-with-amazing-play-zones",
+          "date": "2025-05",
+          "map": "Google Maps City Mall, Batir Zakirov 7, 267 reviews, newest '2 days ago'"
+        },
+        {
+          "name": "JUNE",
+          "page_name": "JUNE",
+          "src": "https://openkitchen.eda.yandex/article/places/guides/only-the-best-for-kids-10-restaurants-with-amazing-play-zones",
+          "date": "2025-05",
+          "map": "Google Maps 'JUNE — Городское кафе в Ташкенте', Oloy Bozori 64, 48 reviews, newest 'last week'"
+        },
+        {
+          "name": "Museum of Telecommunication History",
+          "page_name": "Tashkent Museum of Communication History",
+          "src": "https://www.outlooktraveller.com/destinations/international/budget-friendly-uzbekistan-6-free-must-do-experiences-in-tashkent-for-families",
+          "date": "2025-09",
+          "map": "Google Maps 'Museum of Telecommunication History of Uzbekistan', 105 reviews, newest '2 weeks ago'"
+        },
+        {
+          "name": "Independence Square",
+          "page_name": "Independence Square (Mustakillik Square)",
+          "src": "https://www.outlooktraveller.com/destinations/international/budget-friendly-uzbekistan-6-free-must-do-experiences-in-tashkent-for-families",
+          "date": "2025-09",
+          "map": "Google Maps 'Mustaqillik Maydoni', 320 reviews, newest '3 weeks ago'"
+        },
+        {
+          "name": "Hazrati Imam complex",
+          "page_name": "Hazrati Imam Complex",
+          "src": "https://www.outlooktraveller.com/destinations/international/budget-friendly-uzbekistan-6-free-must-do-experiences-in-tashkent-for-families",
+          "date": "2025-09",
+          "map": "Google Maps 4,046 reviews, newest '20 hours ago'"
+        }
+      ],
+      "left_out": [
+        {
+          "name": "Zinaida",
+          "why": "newest Google Maps review eleven months old"
+        },
+        {
+          "name": "Cucucina",
+          "why": "the map has it at another address than the page"
+        },
+        {
+          "name": "CZN Burak Gurme",
+          "why": "the map shows a differently named place"
+        },
+        {
+          "name": "Broadway Alley (Sayilgoh Street)",
+          "why": "a whole street"
+        }
+      ],
+      "estimates": "Ages and visit hours are placeholders; prices and opening notes are the pages' own."
     }
-  ],
-  "removed": []
+  ]
 }

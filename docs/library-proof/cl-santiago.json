@@ -1,40 +1,205 @@
 {
   "town": "cl-santiago",
-  "kind": "eats",
-  "checked": "2026-11",
-  "rule": "A row gets ok only from a current listing, its own site or recent reviews with nothing saying closed (docs/EATS.md). A row is taken out when a search could not find the place at all or the sources disagree; a place found but not freshly confirmed stays without ok.",
-  "scope": "the 4 rows without ok; the rows that already carried ok were not re-checked in this pass",
-  "how": "Google Maps opened in headless Chromium (2026-11-23), limited view without a reviews tab, so no review date could be read; each row's own map query first, then the name with the town, a list result opened when needed; a hotel's own site or one web search only where Maps could not settle it.",
-  "confirmed": [
+  "rounds": [
     {
-      "name": "Donde Augusto",
-      "src": "Google Maps",
-      "page_name": "Donde Augusto",
-      "evidence": "\"Donde Augusto\", San Pablo 967, Floor 1 · Santiago Central Market, H88X+9F; \"Closed · Opens 9 AM\"",
-      "ok": "2026-11"
+      "town": "cl-santiago",
+      "kind": "eats",
+      "checked": "2026-11",
+      "rule": "A row gets ok only from a current listing, its own site or recent reviews with nothing saying closed (docs/EATS.md). A row is taken out when a search could not find the place at all or the sources disagree; a place found but not freshly confirmed stays without ok.",
+      "scope": "the 4 rows without ok; the rows that already carried ok were not re-checked in this pass",
+      "how": "Google Maps opened in headless Chromium (2026-11-23), limited view without a reviews tab, so no review date could be read; each row's own map query first, then the name with the town, a list result opened when needed; a hotel's own site or one web search only where Maps could not settle it.",
+      "confirmed": [
+        {
+          "name": "Donde Augusto",
+          "src": "Google Maps",
+          "page_name": "Donde Augusto",
+          "evidence": "\"Donde Augusto\", San Pablo 967, Floor 1 · Santiago Central Market, H88X+9F; \"Closed · Opens 9 AM\"",
+          "ok": "2026-11"
+        },
+        {
+          "name": "Casino Social J. Cruz",
+          "src": "Google Maps",
+          "page_name": "Restaurante J Cruz M",
+          "evidence": "\"Restaurante J Cruz M\", Condell 1466, X93H+M3 Valparaíso; \"Closed · Opens 11 AM\"; jcruz.cl",
+          "ok": "2026-11"
+        },
+        {
+          "name": "Tierra de Fuego",
+          "src": "Google Maps",
+          "page_name": "Tierra de Fuego",
+          "evidence": "\"Tierra de Fuego\", Chilean restaurant, Acapulco Beach - 8 Nte. 65, XCPV+8H Viña del Mar; \"Closed · Opens 12:30 PM\"; tierradefuego.cl. Av. San Martín 199 (the row's query) is the Viña del Mar casino about a kilometre away, so q now names 8 Norte 65.",
+          "ok": "2026-11",
+          "q_changed_to": "Tierra de Fuego, 8 Norte 65, Viña del Mar"
+        }
+      ],
+      "kept_without_ok": [],
+      "removed": [
+        {
+          "name": "Bravissimo",
+          "src": "Google Maps",
+          "reason": "\"Bravissimo\", Av. Providencia 1406, H9CJ+RG Santiago: \"Permanently closed\"."
+        }
+      ]
     },
     {
-      "name": "Casino Social J. Cruz",
-      "src": "Google Maps",
-      "page_name": "Restaurante J Cruz M",
-      "evidence": "\"Restaurante J Cruz M\", Condell 1466, X93H+M3 Valparaíso; \"Closed · Opens 11 AM\"; jcruz.cl",
-      "ok": "2026-11"
-    },
-    {
-      "name": "Tierra de Fuego",
-      "src": "Google Maps",
-      "page_name": "Tierra de Fuego",
-      "evidence": "\"Tierra de Fuego\", Chilean restaurant, Acapulco Beach - 8 Nte. 65, XCPV+8H Viña del Mar; \"Closed · Opens 12:30 PM\"; tierradefuego.cl. Av. San Martín 199 (the row's query) is the Viña del Mar casino about a kilometre away, so q now names 8 Norte 65.",
-      "ok": "2026-11",
-      "q_changed_to": "Tierra de Fuego, 8 Norte 65, Viña del Mar"
-    }
-  ],
-  "kept_without_ok": [],
-  "removed": [
-    {
-      "name": "Bravissimo",
-      "src": "Google Maps",
-      "reason": "\"Bravissimo\", Av. Providencia 1406, H9CJ+RG Santiago: \"Permanently closed\"."
+      "town": "cl-santiago",
+      "kind": "eats + sights",
+      "checked": "2026-11-23",
+      "rule": "library-check.cjs, then the Google Maps Reviews tab sorted by newest: ok only when not marked closed, with a review from the last six months, and the map's name matching the page's.",
+      "agents": "one Haiku agent; 20 rows from chile.travel, El Dínamo and The Clinic passed library-check.cjs, 20 went in",
+      "added": [
+        {
+          "name": "Gino Lautaro",
+          "page_name": "Gino Lautaro",
+          "src": "https://www.theclinic.cl/2026/06/26/la-ruta-para-comer-con-ninos-desde-pastas-a-pizzas-hamburguesas-y-fuentes-de-soda-en-estas-vacaciones-invernales/",
+          "date": "2026-06",
+          "map": "Google Maps Av. Italia 846, 534 reviews, newest '1 day ago'"
+        },
+        {
+          "name": "La Argentina (Barrio Italia)",
+          "page_name": "La Argentina",
+          "src": "https://www.theclinic.cl/2026/06/26/la-ruta-para-comer-con-ninos-desde-pastas-a-pizzas-hamburguesas-y-fuentes-de-soda-en-estas-vacaciones-invernales/",
+          "date": "2026-06",
+          "map": "Google Maps 'La Argentina Pizzería - Barrio Italia', 9,457 reviews, newest '8 hours ago'"
+        },
+        {
+          "name": "Neko-San",
+          "page_name": "Neko – San",
+          "src": "https://www.theclinic.cl/2026/06/26/la-ruta-para-comer-con-ninos-desde-pastas-a-pizzas-hamburguesas-y-fuentes-de-soda-en-estas-vacaciones-invernales/",
+          "date": "2026-06",
+          "map": "Google Maps 'Neko-San', Triana 857, 82 reviews, newest '2 days ago'"
+        },
+        {
+          "name": "DeCalle",
+          "page_name": "De Calle",
+          "src": "https://www.theclinic.cl/2026/06/26/la-ruta-para-comer-con-ninos-desde-pastas-a-pizzas-hamburguesas-y-fuentes-de-soda-en-estas-vacaciones-invernales/",
+          "date": "2026-06",
+          "map": "Google Maps 'DeCalle', 1,225 reviews, newest '4 days ago'"
+        },
+        {
+          "name": "Parigó",
+          "page_name": "Parigó",
+          "src": "https://www.theclinic.cl/2026/06/26/la-ruta-para-comer-con-ninos-desde-pastas-a-pizzas-hamburguesas-y-fuentes-de-soda-en-estas-vacaciones-invernales/",
+          "date": "2026-06",
+          "map": "Google Maps 212 reviews, newest '12 hours ago'"
+        },
+        {
+          "name": "Dipsy’s Backyard",
+          "page_name": "Dipsy’s Backyard",
+          "src": "https://www.theclinic.cl/2026/06/26/la-ruta-para-comer-con-ninos-desde-pastas-a-pizzas-hamburguesas-y-fuentes-de-soda-en-estas-vacaciones-invernales/",
+          "date": "2026-06",
+          "map": "Google Maps 1,230 reviews, newest '1 day ago'"
+        },
+        {
+          "name": "El Portal Exbahamondes",
+          "page_name": "El Portal",
+          "src": "https://www.theclinic.cl/2026/06/26/la-ruta-para-comer-con-ninos-desde-pastas-a-pizzas-hamburguesas-y-fuentes-de-soda-en-estas-vacaciones-invernales/",
+          "date": "2026-06",
+          "map": "Google Maps 'El Portal Exbahamondes', Plaza de Armas 946, 3,628 reviews, newest '1 day ago'"
+        },
+        {
+          "name": "Café Estación",
+          "page_name": "Café Estación",
+          "src": "https://www.theclinic.cl/2026/06/26/la-ruta-para-comer-con-ninos-desde-pastas-a-pizzas-hamburguesas-y-fuentes-de-soda-en-estas-vacaciones-invernales/",
+          "date": "2026-06",
+          "map": "Google Maps 476 reviews, newest 'last week'"
+        },
+        {
+          "name": "Oiso",
+          "page_name": "Oiso",
+          "src": "https://www.theclinic.cl/2026/06/26/la-ruta-para-comer-con-ninos-desde-pastas-a-pizzas-hamburguesas-y-fuentes-de-soda-en-estas-vacaciones-invernales/",
+          "date": "2026-06",
+          "map": "Google Maps 'Oiso - Comida Coreana', 1,024 reviews, newest '1 day ago'"
+        },
+        {
+          "name": "Casa Regina",
+          "page_name": "Casa Regina Taco y Comedor",
+          "src": "https://www.theclinic.cl/2026/06/26/la-ruta-para-comer-con-ninos-desde-pastas-a-pizzas-hamburguesas-y-fuentes-de-soda-en-estas-vacaciones-invernales/",
+          "date": "2026-06",
+          "map": "Google Maps 'Casa Regina', Libertad 419, 23 reviews, newest '3 months ago'"
+        },
+        {
+          "name": "Fantasilandia",
+          "page_name": "Fantasilandia",
+          "src": "https://chile.travel/blog/5-actividades-familiares-para-tu-visita-a-santiago-museos-y-parques/",
+          "date": "2025-11",
+          "map": "Google Maps 55,087 reviews, newest '4 hours ago'"
+        },
+        {
+          "name": "Parque Araucano",
+          "page_name": "Parque Araucano",
+          "src": "https://chile.travel/blog/5-actividades-familiares-para-tu-visita-a-santiago-museos-y-parques/",
+          "date": "2025-11",
+          "map": "Google Maps 'Araucano Park', 40,432 reviews, newest '7 hours ago'"
+        },
+        {
+          "name": "Parque Bicentenario, Vitacura",
+          "page_name": "Parque Bicentenario de Vitacura",
+          "src": "https://www.eldinamo.cl/entretencion/panoramas/2026/08/05/dia-del-nino-2026-en-santiago-diez-entretenidos-panoramas-para-celebrar-en-familia/",
+          "date": "2026-08",
+          "map": "Google Maps 'Bicentennial Park', 55,672 reviews, newest '6 hours ago'"
+        },
+        {
+          "name": "KidZania Santiago",
+          "page_name": "KidZania Santiago",
+          "src": "https://www.eldinamo.cl/entretencion/panoramas/2026/08/05/dia-del-nino-2026-en-santiago-diez-entretenidos-panoramas-para-celebrar-en-familia/",
+          "date": "2026-08",
+          "map": "Google Maps 2,215 reviews, newest '18 hours ago'"
+        },
+        {
+          "name": "Biblioteca de Santiago",
+          "page_name": "Biblioteca de Santiago",
+          "src": "https://www.eldinamo.cl/entretencion/panoramas/2026/08/05/dia-del-nino-2026-en-santiago-diez-entretenidos-panoramas-para-celebrar-en-familia/",
+          "date": "2026-08",
+          "map": "Google Maps 'Santiago Library', 1,063 reviews, newest '14 hours ago'"
+        },
+        {
+          "name": "Ascensor Concepción",
+          "page_name": "Ascensor Concepción",
+          "src": "https://chile.travel/?p=72489",
+          "date": "2026-01",
+          "map": "Google Maps 'Concepción Funicular', 1,428 reviews, newest '5 hours ago'"
+        },
+        {
+          "name": "Ascensor Artillería",
+          "page_name": "Ascensor Artillería",
+          "src": "https://chile.travel/?p=72489",
+          "date": "2026-01",
+          "map": "Google Maps 'Ascensor Artilleria', 33 reviews, newest '2 months ago'"
+        },
+        {
+          "name": "Paseo 21 de Mayo",
+          "page_name": "Paseo 21 de Mayo",
+          "src": "https://chile.travel/?p=72489",
+          "date": "2026-01",
+          "map": "Google Maps 4,218 reviews, newest '6 hours ago'"
+        },
+        {
+          "name": "National Maritime Museum",
+          "page_name": "Museo Marítimo Nacional",
+          "src": "https://chile.travel/?p=72489",
+          "date": "2026-01",
+          "map": "Google Maps 'National Maritime Museum', 3,574 reviews, newest '2 days ago'"
+        },
+        {
+          "name": "Mercado Puerto",
+          "page_name": "Mercado Puerto",
+          "src": "https://chile.travel/?p=72489",
+          "date": "2026-01",
+          "map": "Google Maps Cochrane 117, 27 reviews, newest '3 days ago'"
+        }
+      ],
+      "left_out": [
+        {
+          "name": "Glück, Serpentina, Cocó Café",
+          "why": "La Tercera pages from 2017–2021"
+        },
+        {
+          "name": "La Moneda, GAM",
+          "why": "quotes on the page unusable"
+        }
+      ],
+      "estimates": "Ages and visit hours are placeholders; prices and opening notes are the pages' own."
     }
   ]
 }

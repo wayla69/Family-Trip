@@ -262,6 +262,269 @@
           "q": "Cristo Blanco, Cusco",
           "ok": "2026-11",
           "src": "https://www.theonlyperuguide.com/peru-guide/cusco/highlights/cristo-blanco-2/"
+        },
+        {
+          "local": "",
+          "ages": [
+            1,
+            2,
+            2,
+            2
+          ],
+          "hrs": 1.5,
+          "io": "in",
+          "pram": "part",
+          "price": {
+            "th": "เช็กราคาก่อนไป",
+            "en": "Check the price"
+          },
+          "book": "none",
+          "src": "https://guruexplorers.com/en/blog/cusco-with-family/",
+          "name": {
+            "th": "พิพิธภัณฑ์อินคา",
+            "en": "Inka Museum"
+          },
+          "kind": "museum",
+          "area": {
+            "th": "คุสโก",
+            "en": "Cusco"
+          },
+          "what": {
+            "th": "พิพิธภัณฑ์ประวัติศาสตร์อินคาโบราณ",
+            "en": "A museum of ancient Inca history"
+          },
+          "why": {
+            "th": "นิทรรศการเรื่องอินคาโบราณ",
+            "en": "Exhibits about ancient Inca history"
+          },
+          "q": "Inka Museum, Cuesta del Almirante 103, Cusco",
+          "ok": "2026-11"
+        },
+        {
+          "local": "",
+          "ages": [
+            1,
+            2,
+            2,
+            2
+          ],
+          "hrs": 1.5,
+          "io": "in",
+          "pram": "part",
+          "price": {
+            "th": "เช็กราคาก่อนไป",
+            "en": "Check the price"
+          },
+          "book": "none",
+          "src": "https://guruexplorers.com/en/blog/cusco-with-family/",
+          "name": {
+            "th": "พิพิธภัณฑ์ประวัติศาสตร์ภูมิภาคคุสโก",
+            "en": "Regional Historical Museum of Cusco"
+          },
+          "kind": "museum",
+          "area": {
+            "th": "ถนนการ์ซิลาโซ คุสโก",
+            "en": "Calle Garcilaso, Cusco"
+          },
+          "what": {
+            "th": "พิพิธภัณฑ์ประวัติศาสตร์ของภูมิภาค",
+            "en": "A regional history museum"
+          },
+          "why": {
+            "th": "เครื่องปั้นดินเผาอินคาและฟอสซิลโบราณ",
+            "en": "Inca ceramics and ancient fossils"
+          },
+          "q": "Regional Historical Museum of Cusco, Calle Garcilaso, Cusco",
+          "ok": "2026-11"
+        },
+        {
+          "local": "",
+          "ages": [
+            0,
+            1,
+            2,
+            2
+          ],
+          "hrs": 1.5,
+          "io": "in",
+          "pram": "yes",
+          "price": {
+            "th": "เช็กราคาก่อนไป",
+            "en": "Check the price"
+          },
+          "book": "none",
+          "src": "https://travelventurefour.com/cusco-with-kids-guide/",
+          "name": {
+            "th": "พิพิธภัณฑ์ศิลปะก่อนยุคโคลัมบัส (MAP)",
+            "en": "Museo de Arte Precolombino (MAP)"
+          },
+          "kind": "museum",
+          "area": {
+            "th": "นาซาเรนัส คุสโก",
+            "en": "Nazarenas, Cusco"
+          },
+          "what": {
+            "th": "พิพิธภัณฑ์ศิลปะก่อนยุคโคลัมบัสที่ทันสมัยและจัดแสดงอย่างดี",
+            "en": "A modern, well-curated museum of pre-Columbian art"
+          },
+          "why": {
+            "th": "เด็กโตที่ชอบโบราณวัตถุหรือประวัติศาสตร์จะชอบ",
+            "en": "Older children who love artefacts or history enjoy it"
+          },
+          "q": "Museo de Arte Precolombino, Nazarenas 231, Cusco",
+          "ok": "2026-11"
+        },
+        {
+          "local": "",
+          "ages": [
+            1,
+            2,
+            2,
+            2
+          ],
+          "hrs": 1,
+          "io": "in",
+          "pram": "yes",
+          "price": {
+            "th": "เช็กราคาก่อนไป",
+            "en": "Check the price"
+          },
+          "book": "none",
+          "src": "https://travelventurefour.com/cusco-with-kids-guide/",
+          "name": {
+            "th": "ศูนย์สิ่งทอพื้นเมืองคุสโก",
+            "en": "Center for Traditional Textiles of Cusco"
+          },
+          "kind": "culture",
+          "area": {
+            "th": "ถนนเอลโซล คุสโก",
+            "en": "Avenida El Sol, Cusco"
+          },
+          "what": {
+            "th": "ช่างทอสาธิตการปั่นด้าย ย้อมสี และทอผ้าด้วยมือ",
+            "en": "Weavers show how fabrics are spun, dyed and woven by hand"
+          },
+          "why": {
+            "th": "ดูการสาธิตจริงและสีย้อมจากพืชและแมลง",
+            "en": "Live demonstrations and dyes made from plants and insects"
+          },
+          "q": "Traditional Textile Center of Cusco, Av. El Sol 603, Cusco",
+          "ok": "2026-11"
+        },
+        {
+          "local": "",
+          "ages": [
+            0,
+            1,
+            2,
+            2
+          ],
+          "hrs": 1,
+          "io": "both",
+          "pram": "part",
+          "price": {
+            "th": "ผู้ใหญ่ S/15",
+            "en": "S/15 an adult"
+          },
+          "book": "none",
+          "src": "https://www.peru-explorer.com/cusco-visiting-with-kids-2026-complete-family-guide.htm",
+          "name": {
+            "th": "กอริกันชา",
+            "en": "Qorikancha"
+          },
+          "kind": "culture",
+          "area": {
+            "th": "ซานโตโดมิงโก คุสโก",
+            "en": "Santo Domingo, Cusco"
+          },
+          "what": {
+            "th": "วิหารพระอาทิตย์ของอินคา มีโบสถ์ยุคอาณานิคมสร้างทับอยู่",
+            "en": "The Inca Temple of the Sun, with a colonial church built over it"
+          },
+          "why": {
+            "th": "เด็กอายุ 8 ขวบขึ้นไปสนุกกับการดูงานหินอินคาเทียบกับอาคารยุคอาณานิคม",
+            "en": "Children of 8 and up enjoy the Inca stonework beside the colonial building"
+          },
+          "tip": {
+            "th": "พื้นเรียบ อยู่กลางเมือง ใช้เวลา 45–60 นาทีก็พอ",
+            "en": "Flat and central, 45–60 minutes is enough"
+          },
+          "q": "Qorikancha, Santo Domingo, Cusco",
+          "ok": "2026-11"
+        },
+        {
+          "local": "",
+          "ages": [
+            1,
+            1,
+            1,
+            0
+          ],
+          "hrs": 0.5,
+          "io": "out",
+          "pram": "yes",
+          "price": {
+            "th": "เช็กราคาก่อนไป",
+            "en": "Check the price"
+          },
+          "book": "none",
+          "src": "https://www.peru-explorer.com/cusco-visiting-with-kids-2026-complete-family-guide.htm",
+          "name": {
+            "th": "พลาซาเรโกซิโฮ",
+            "en": "Plaza Regocijo"
+          },
+          "kind": "park",
+          "area": {
+            "th": "ใกล้พลาซาเดอาร์มัส คุสโก",
+            "en": "near the Plaza de Armas, Cusco"
+          },
+          "what": {
+            "th": "จัตุรัสเล็ก ๆ มีม้านั่ง ห่างพลาซาเดอาร์มัส 2 นาที",
+            "en": "A small plaza with benches, two minutes from the Plaza de Armas"
+          },
+          "why": {
+            "th": "มีที่โล่งและนกพิราบ เด็กเล็กชอบ",
+            "en": "Open space and pigeons, a toddler favourite"
+          },
+          "q": "Plaza Regocijo, Cusco",
+          "ok": "2026-11"
+        },
+        {
+          "local": "",
+          "ages": [
+            1,
+            2,
+            2,
+            1
+          ],
+          "hrs": 0.5,
+          "io": "out",
+          "pram": "no",
+          "price": {
+            "th": "เช็กราคาก่อนไป",
+            "en": "Check the price"
+          },
+          "book": "none",
+          "src": "https://travelventurefour.com/cusco-with-kids-guide/",
+          "name": {
+            "th": "พลาซาซานบลาส",
+            "en": "Plaza San Blas"
+          },
+          "kind": "park",
+          "area": {
+            "th": "ซานบลาส คุสโก",
+            "en": "San Blas, Cusco"
+          },
+          "what": {
+            "th": "จัตุรัสเล็ก ๆ บนเนินซานบลาส ศิลปินมาตั้งแผง",
+            "en": "A small square at the top of San Blas where artists set up stalls"
+          },
+          "why": {
+            "th": "เด็ก ๆ วิ่งเล่นได้ระหว่างที่พ่อแม่พักเหนื่อย",
+            "en": "Children run about while you catch your breath"
+          },
+          "q": "Plaza San Blas, Cuesta de San Blas, Cusco",
+          "ok": "2026-11"
         }
       ]
     }

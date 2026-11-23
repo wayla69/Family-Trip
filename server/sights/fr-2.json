@@ -260,6 +260,437 @@
           "q": "Plage d'Albigny, Annecy",
           "ok": "2026-11",
           "src": "https://ryo.co/fr/articles/france/annecy/annecy-enfants/"
+        },
+        {
+          "local": "",
+          "ages": [
+            1,
+            2,
+            2,
+            1
+          ],
+          "hrs": 3,
+          "io": "out",
+          "pram": "part",
+          "price": {
+            "th": "≈ €9 ผู้ใหญ่ · €6 อายุ 4–15 ปี",
+            "en": "≈ €9 a grown-up · €6 ages 4–15"
+          },
+          "book": "none",
+          "src": "https://www.tourisme-haute-savoie.com/actualites-de-haute-savoie/ouverture-2026-parc-de-merlet/",
+          "name": {
+            "th": "อุทยานสัตว์เมอร์เลต์",
+            "en": "Parc de Merlet"
+          },
+          "kind": "zoo",
+          "area": {
+            "th": "เลซูช หุบเขาชาโมนี",
+            "en": "Les Houches, Chamonix valley"
+          },
+          "what": {
+            "th": "อุทยานสัตว์บนภูเขา สัตว์อัลไพน์เดินอิสระ",
+            "en": "A wildlife park on the mountain where alpine animals roam freely"
+          },
+          "why": {
+            "th": "ได้เห็นแพะภูเขา ชามัว มาร์มอต และกวางใกล้ๆ",
+            "en": "Ibex, chamois, marmots and deer close up"
+          },
+          "tip": {
+            "th": "ฤดูกาล 2026 พ.ค.–ก.ย. ปิดวันจันทร์ใน พ.ค. มิ.ย. และ ก.ย. ช่วงไฮซีซันมีรถรับส่งฟรีจากเลซูช",
+            "en": "2026 season May to September, closed Mondays in May, June and September; free shuttle from Les Houches in high season"
+          },
+          "q": "Parc de Merlet, 2495 Chemin de Merlet, Les Houches",
+          "ok": "2026-11"
+        },
+        {
+          "local": "Base de Loisirs des Chavants",
+          "ages": [
+            1,
+            1,
+            1,
+            1
+          ],
+          "hrs": 2,
+          "io": "out",
+          "pram": "yes",
+          "price": {
+            "th": "ฟรี",
+            "en": "Free"
+          },
+          "book": "none",
+          "src": "https://en.chamonix.com/a-voir-a-faire/loisirs-et-famille",
+          "name": {
+            "th": "สวนพักผ่อนทะเลสาบชาวอง",
+            "en": "Lac des Chavants leisure park"
+          },
+          "kind": "park",
+          "area": {
+            "th": "เลซูช",
+            "en": "Les Houches"
+          },
+          "what": {
+            "th": "สวนพักผ่อนรอบทะเลสาบ มีทางเดินเล่นริมน้ำง่ายๆ",
+            "en": "A leisure park round a lake with an easy walk by the water"
+          },
+          "why": {
+            "th": "มีที่เล่นสำหรับเด็กเล็กและวิวเทือกเขาแอลป์",
+            "en": "Play areas for little legs and an alpine view"
+          },
+          "q": "Base de Loisirs des Chavants, Les Houches",
+          "ok": "2026-11"
+        },
+        {
+          "local": "",
+          "ages": [
+            1,
+            1,
+            1,
+            1
+          ],
+          "hrs": 2,
+          "io": "out",
+          "pram": "yes",
+          "price": {
+            "th": "ฟรี",
+            "en": "Free"
+          },
+          "book": "none",
+          "src": "https://ryo.co/fr/articles/france/annecy/annecy-enfants/",
+          "name": {
+            "th": "สวนชาร์ลส์ บอสซง",
+            "en": "Parc Charles Bosson"
+          },
+          "kind": "park",
+          "area": {
+            "th": "ถนนอัลบินยี อานซี",
+            "en": "Avenue d’Albigny, Annecy"
+          },
+          "what": {
+            "th": "สวนริมทะเลสาบเงียบๆ ห่างจากใจกลางเมือง มีที่เล่น",
+            "en": "A quiet lakeside park away from the centre, with play areas"
+          },
+          "why": {
+            "th": "สงบกว่าสวนยุโรปช่วงคนแน่น",
+            "en": "Calmer than the Jardins de l’Europe when it is crowded"
+          },
+          "q": "Parc Charles Bosson, Annecy",
+          "ok": "2026-11"
+        },
+        {
+          "local": "",
+          "ages": [
+            1,
+            1,
+            1,
+            1
+          ],
+          "hrs": 2,
+          "io": "out",
+          "pram": "part",
+          "price": {
+            "th": "เช็กราคาก่อนไป",
+            "en": "Check the price"
+          },
+          "book": "none",
+          "src": "https://ryo.co/fr/articles/france/annecy/annecy-enfants/",
+          "name": {
+            "th": "หาดลาบรุน",
+            "en": "Plage de la Brune"
+          },
+          "kind": "beach",
+          "area": {
+            "th": "แวรีเยดูลัก",
+            "en": "Veyrier-du-Lac"
+          },
+          "what": {
+            "th": "หาดทะเลสาบที่น้ำตื้นไปไกล",
+            "en": "A lake beach with shallow water far out"
+          },
+          "why": {
+            "th": "ลงน้ำค่อยๆ ลึก เหมาะกับเด็กเล็กที่ยืนในน้ำลึกไม่ได้",
+            "en": "A gentle entry for little ones who cannot yet stand in deep water"
+          },
+          "tip": {
+            "th": "มีไลฟ์การ์ดช่วงฤดูกาล",
+            "en": "Lifeguards in season"
+          },
+          "q": "Plage de la Brune, Veyrier-du-Lac",
+          "ok": "2026-11"
+        },
+        {
+          "local": "Plage municipale de Talloires",
+          "ages": [
+            1,
+            1,
+            1,
+            1
+          ],
+          "hrs": 2,
+          "io": "out",
+          "pram": "part",
+          "price": {
+            "th": "เช็กราคาก่อนไป",
+            "en": "Check the price"
+          },
+          "book": "none",
+          "src": "https://ryo.co/fr/articles/france/annecy/annecy-enfants/",
+          "name": {
+            "th": "หาดตาลลัวร์",
+            "en": "Talloires beach"
+          },
+          "kind": "beach",
+          "area": {
+            "th": "ทะเลสาบอานซี",
+            "en": "Lake Annecy"
+          },
+          "what": {
+            "th": "หาดของเมือง เห็นปราสาทดูแอง มีโป๊ะให้กระโดดลงน้ำ",
+            "en": "The town beach with a view of Duingt castle and a pontoon to jump from"
+          },
+          "why": {
+            "th": "มีสระเด็กเล็กพร้อมคนดูแล",
+            "en": "A supervised pool for the little ones"
+          },
+          "q": "Plage municipale de Talloires, Talloires-Montmin",
+          "ok": "2026-11"
+        },
+        {
+          "local": "",
+          "ages": [
+            1,
+            1,
+            1,
+            1
+          ],
+          "hrs": 2,
+          "io": "out",
+          "pram": "part",
+          "price": {
+            "th": "ฟรี",
+            "en": "Free"
+          },
+          "book": "none",
+          "src": "https://ryo.co/fr/articles/france/annecy/annecy-enfants/",
+          "name": {
+            "th": "เขตอนุรักษ์ปลายทะเลสาบ",
+            "en": "Bout du Lac nature reserve"
+          },
+          "kind": "nature",
+          "area": {
+            "th": "ปลายด้านใต้ทะเลสาบอานซี",
+            "en": "South end of Lake Annecy"
+          },
+          "what": {
+            "th": "ทางเดินไม้ราบผ่านดงกก มีป้ายเล่าเรื่องสัตว์",
+            "en": "A flat boardwalk through the reeds with panels on the wildlife"
+          },
+          "why": {
+            "th": "ทางราบ มีสัตว์ให้ตามหา",
+            "en": "Flat, with wildlife to look for"
+          },
+          "tip": {
+            "th": "รถเข็นแบบล้อใหญ่เข็นได้เกือบทั้งเส้นทาง",
+            "en": "Most of it works with an all-terrain pram"
+          },
+          "q": "Réserve naturelle du Bout du Lac d’Annecy, Doussard",
+          "ok": "2026-11"
+        },
+        {
+          "local": "",
+          "ages": [
+            1,
+            1,
+            1,
+            1
+          ],
+          "hrs": 3,
+          "io": "out",
+          "pram": "part",
+          "price": {
+            "th": "เช็กราคาก่อนไป",
+            "en": "Check the price"
+          },
+          "book": "none",
+          "src": "https://ryo.co/fr/articles/france/annecy/annecy-enfants/",
+          "name": {
+            "th": "ที่ราบสูงเลอเซมโนซ์",
+            "en": "Le Semnoz"
+          },
+          "kind": "views",
+          "area": {
+            "th": "เหนือเมืองอานซี",
+            "en": "Above Annecy"
+          },
+          "what": {
+            "th": "ทุ่งหญ้าบนภูเขามีวัว และวิวรอบทิศถึงมงบล็อง",
+            "en": "Alpine pastures with cows and a 360° view to Mont Blanc"
+          },
+          "why": {
+            "th": "มีลูจหน้าร้อน เด็ก 4–5 ขวบขึ้นไปเล่นกับผู้ใหญ่ได้",
+            "en": "A summer luge from age 4 or 5 with a grown-up"
+          },
+          "tip": {
+            "th": "ขับรถจากอานซีราว 20 นาที",
+            "en": "About 20 minutes by car from Annecy"
+          },
+          "q": "Station du Semnoz, Viuz-la-Chiésaz",
+          "ok": "2026-11"
+        },
+        {
+          "local": "",
+          "ages": [
+            2,
+            2,
+            1,
+            0
+          ],
+          "hrs": 1,
+          "io": "out",
+          "pram": "part",
+          "price": {
+            "th": "เช็กราคาก่อนไป",
+            "en": "Check the price"
+          },
+          "book": "none",
+          "src": "https://ryo.co/fr/articles/france/annecy/annecy-enfants/",
+          "name": {
+            "th": "สวนสัตว์ลากรองด์ฌาน",
+            "en": "Parc animalier de la Grande Jeanne"
+          },
+          "kind": "farm",
+          "area": {
+            "th": "ถนนเซมโนซ์ อานซี",
+            "en": "Route du Semnoz, Annecy"
+          },
+          "what": {
+            "th": "สวนสัตว์เล็กๆ มีแพะ ลา และสัตว์ปีกเดินกึ่งอิสระ",
+            "en": "A small animal park with goats, donkeys and poultry roaming semi-free"
+          },
+          "why": {
+            "th": "เที่ยวสั้นๆ ราคาไม่แพง เหมาะกับเด็กต่ำกว่าหกขวบ",
+            "en": "A short, cheap outing for children under six"
+          },
+          "q": "Parc Animalier de la Grande Jeanne, 14 Route du Semnoz, Annecy",
+          "ok": "2026-11"
+        },
+        {
+          "local": "",
+          "ages": [
+            1,
+            1,
+            1,
+            1
+          ],
+          "hrs": 2,
+          "io": "in",
+          "pram": "part",
+          "price": {
+            "th": "เช็กราคาก่อนไป",
+            "en": "Check the price"
+          },
+          "book": "none",
+          "src": "https://ryo.co/fr/articles/france/annecy/annecy-enfants/",
+          "name": {
+            "th": "ศูนย์วิทยาศาสตร์ลาตูร์บีน",
+            "en": "La Turbine sciences"
+          },
+          "kind": "museumkid",
+          "area": {
+            "th": "กรองเฌฟรีเย อานซี",
+            "en": "Cran-Gevrier, Annecy"
+          },
+          "what": {
+            "th": "ศูนย์วิทยาศาสตร์มีการทดลองให้ลองเองเรื่องฟิสิกส์ พลังงาน และดาราศาสตร์",
+            "en": "A science centre with hands-on experiments on physics, energy and astronomy"
+          },
+          "why": {
+            "th": "การทดลองที่ทำมาให้เด็กลองเอง",
+            "en": "Experiments made for children’s hands"
+          },
+          "tip": {
+            "th": "เหมาะกับวันฝนตก",
+            "en": "A good rainy-day choice"
+          },
+          "q": "La Turbine sciences, Rue Chorus, Annecy",
+          "ok": "2026-11"
+        },
+        {
+          "local": "",
+          "ages": [
+            1,
+            1,
+            1,
+            1
+          ],
+          "hrs": 2,
+          "io": "in",
+          "pram": "part",
+          "price": {
+            "th": "เช็กราคาก่อนไป",
+            "en": "Check the price"
+          },
+          "book": "none",
+          "src": "https://ryo.co/fr/articles/france/annecy/annecy-enfants/",
+          "name": {
+            "th": "โรงหนังเลเนอมูร์",
+            "en": "Cinéma Les Nemours"
+          },
+          "kind": "show",
+          "area": {
+            "th": "เมืองเก่า อานซี",
+            "en": "Old town, Annecy"
+          },
+          "what": {
+            "th": "โรงภาพยนตร์ในเมืองเก่า",
+            "en": "A cinema in the old town"
+          },
+          "why": {
+            "th": "ปกติมีหนังเด็กวันพุธและสุดสัปดาห์",
+            "en": "Children’s films usually on Wednesdays and weekends"
+          },
+          "q": "Cinéma Les Nemours, 2 Place Sainte-Claire, Annecy",
+          "ok": "2026-11"
+        },
+        {
+          "local": "",
+          "ages": [
+            0,
+            1,
+            2,
+            2
+          ],
+          "hrs": 3,
+          "io": "out",
+          "pram": "part",
+          "price": {
+            "th": "เช็กราคาก่อนไป",
+            "en": "Check the price"
+          },
+          "book": "rec",
+          "src": "https://ryo.co/fr/articles/france/annecy/annecy-enfants/",
+          "name": {
+            "th": "อาโครอาวองตูร์ ตาลลัวร์",
+            "en": "Acro’Aventures Talloires"
+          },
+          "kind": "play",
+          "area": {
+            "th": "ทะเลสาบอานซี",
+            "en": "Lake Annecy"
+          },
+          "what": {
+            "th": "เส้นทางบนต้นไม้ มีซิปไลน์และสะพานลิง",
+            "en": "A tree-top course with zip lines and monkey bridges"
+          },
+          "why": {
+            "th": "เส้นทางต่ำสุดเริ่มเล่นได้ตั้งแต่ 3 ขวบ",
+            "en": "The lowest courses start at age 3"
+          },
+          "tip": {
+            "th": "จองล่วงหน้าช่วง ก.ค.–ส.ค.",
+            "en": "Book ahead in July and August"
+          },
+          "q": "Acro’Aventures, Route Forestière, Talloires",
+          "ok": "2026-11"
         }
       ]
     },
@@ -524,6 +955,191 @@
           "q": "Place Bellecour, Lyon",
           "ok": "2026-11",
           "src": "https://ryo.co/fr/articles/france/lyon/lyon-enfants/"
+        },
+        {
+          "local": "",
+          "ages": [
+            1,
+            1,
+            1,
+            1
+          ],
+          "hrs": 1,
+          "io": "in",
+          "pram": "part",
+          "price": {
+            "th": "เช็กราคาก่อนไป",
+            "en": "Check the price"
+          },
+          "book": "none",
+          "src": "https://en.visiterlyon.com/discover/lyon-the-way-you-like-it/as-a-family/10-must-do-activities-with-kids-in-lyon",
+          "name": {
+            "th": "บ้านช่างทอไหมกานูต์",
+            "en": "Maison des Canuts"
+          },
+          "kind": "museumkid",
+          "area": {
+            "th": "ครัวรูส",
+            "en": "Croix-Rousse"
+          },
+          "what": {
+            "th": "บ้านทอไหมที่สาธิตการทำงานของช่างทอไหมลียง",
+            "en": "A silk-weaving house where Lyon’s silk workers are shown at work"
+          },
+          "why": {
+            "th": "ได้ดูกี่ทอไหมทำงาน และลองดึงเส้นไหมจากรังไหม",
+            "en": "A silk loom in action, and a cocoon to unwind"
+          },
+          "q": "La Maison des Canuts, 10 Rue d’Ivry, Lyon",
+          "ok": "2026-11"
+        },
+        {
+          "local": "",
+          "ages": [
+            1,
+            1,
+            1,
+            1
+          ],
+          "hrs": 1,
+          "io": "in",
+          "pram": "part",
+          "price": {
+            "th": "เช็กราคาก่อนไป",
+            "en": "Check the price"
+          },
+          "book": "none",
+          "src": "https://en.visiterlyon.com/discover/lyon-the-way-you-like-it/as-a-family/10-must-do-activities-with-kids-in-lyon",
+          "name": {
+            "th": "ซัวรีวีวองต์",
+            "en": "Soierie Vivante"
+          },
+          "kind": "culture",
+          "area": {
+            "th": "ครัวรูส",
+            "en": "Croix-Rousse"
+          },
+          "what": {
+            "th": "กี่ทอไหมที่ยังใช้งานและการสาธิตทอผ้า",
+            "en": "Working silk looms and weaving demonstrations"
+          },
+          "why": {
+            "th": "ได้ยินเสียงกี่ทอผ้าทำงาน",
+            "en": "The clatter of the looms running"
+          },
+          "q": "Soierie Vivante, 21 Rue Richan, Lyon",
+          "ok": "2026-11"
+        },
+        {
+          "local": "",
+          "ages": [
+            0,
+            1,
+            2,
+            2
+          ],
+          "hrs": 1,
+          "io": "in",
+          "pram": "part",
+          "price": {
+            "th": "เช็กราคาก่อนไป",
+            "en": "Check the price"
+          },
+          "book": "none",
+          "src": "https://en.visiterlyon.com/discover/lyon-the-way-you-like-it/as-a-family/10-must-do-activities-with-kids-in-lyon",
+          "name": {
+            "th": "พิพิธภัณฑ์ภาพลวงตาลียง",
+            "en": "Museum of Illusions Lyon"
+          },
+          "kind": "museumkid",
+          "area": {
+            "th": "กรองโอแตลดิเยอ",
+            "en": "Grand Hôtel-Dieu"
+          },
+          "what": {
+            "th": "โฮโลแกรม กล้องคาไลโดสโคป ปริศนาภาพ และกระจกบิดเบี้ยว",
+            "en": "Holograms, kaleidoscopes, puzzles and distorting mirrors"
+          },
+          "why": {
+            "th": "ภาพลวงตาสำหรับเด็ก 4 ขวบขึ้นไป",
+            "en": "Illusions for ages 4 and up"
+          },
+          "q": "Museum of Illusions Lyon, 1 Rue Bellecordière, Lyon",
+          "ok": "2026-11"
+        },
+        {
+          "local": "",
+          "ages": [
+            0,
+            1,
+            2,
+            2
+          ],
+          "hrs": 2,
+          "io": "in",
+          "pram": "part",
+          "price": {
+            "th": "เช็กราคาก่อนไป",
+            "en": "Check the price"
+          },
+          "book": "none",
+          "src": "https://en.visiterlyon.com/out-and-about/culture-and-leisure/activities-and-relaxation/indoor-activities/game-in-lyon",
+          "name": {
+            "th": "เกมอินลียง",
+            "en": "GAME IN Lyon"
+          },
+          "kind": "play",
+          "area": {
+            "th": "ท่าอองเดร ลาซาญ เขต 1",
+            "en": "Quai André Lassagne, 1st"
+          },
+          "what": {
+            "th": "ที่เล่นแนวอาร์เคด มีวิดีโอเกมขนาดเท่าคนจริง",
+            "en": "An arcade-style place with life-size video games"
+          },
+          "why": {
+            "th": "กิจกรรมสนุกที่ทุกวัยเล่นได้",
+            "en": "A lively activity open to all ages"
+          },
+          "q": "GAME IN Lyon, 14 Quai André Lassagne, Lyon",
+          "ok": "2026-11"
+        },
+        {
+          "local": "",
+          "ages": [
+            2,
+            1,
+            1,
+            0
+          ],
+          "hrs": 1,
+          "io": "in",
+          "pram": "part",
+          "price": {
+            "th": "เช็กราคาก่อนไป",
+            "en": "Check the price"
+          },
+          "book": "req",
+          "src": "https://en.visiterlyon.com/discover/lyon-the-way-you-like-it/as-a-family/enjoying-lyon-with-a-baby-our-favourite-spots",
+          "name": {
+            "th": "นาเตสปา",
+            "en": "Natespa"
+          },
+          "kind": "play",
+          "area": {
+            "th": "เขต 8",
+            "en": "8th arrondissement"
+          },
+          "what": {
+            "th": "ศูนย์กีฬาและว่ายน้ำสำหรับเด็กและผู้ใหญ่",
+            "en": "A water and sports centre for children and adults"
+          },
+          "why": {
+            "th": "มีคลาสสำหรับทารกตั้งแต่หกเดือน",
+            "en": "Sessions for babies from six months"
+          },
+          "q": "Natespa, Avenue Rockefeller, Lyon",
+          "ok": "2026-11"
         }
       ]
     },
@@ -788,6 +1404,47 @@
           "q": "Musée historique, Mont-Saint-Michel",
           "ok": "2026-11",
           "src": "https://www.ot-montsaintmichel.com/en/patrimoine-culturel/musee-historique/"
+        },
+        {
+          "local": "",
+          "ages": [
+            0,
+            1,
+            2,
+            2
+          ],
+          "hrs": 0.5,
+          "io": "in",
+          "pram": "part",
+          "price": {
+            "th": "ผู้ใหญ่ ≈ 9 € (ราคาเต็ม)",
+            "en": "≈ 9 € adult (full rate)"
+          },
+          "book": "none",
+          "src": "https://www.ot-montsaintmichel.com/en/patrimoine-culturel/archeoscope/",
+          "name": {
+            "th": "อาร์เคโอสโคป",
+            "en": "Archéoscope"
+          },
+          "kind": "show",
+          "area": {
+            "th": "ถนนกร็องด์รู มงแซ็งมีแชล",
+            "en": "Grande Rue, Le Mont-Saint-Michel"
+          },
+          "what": {
+            "th": "การแสดงแบบสื่อผสมเล่าประวัติและตำนานของมง",
+            "en": "An immersive show of the Mont's history and legend"
+          },
+          "why": {
+            "th": "หน้าเว็บบอกว่าเป็นโชว์มหัศจรรย์ที่ประวัติศาสตร์พบตำนาน",
+            "en": "The page calls it a magical show where history meets legend"
+          },
+          "tip": {
+            "th": "วันและเวลาเปิดดูได้ที่หน้าเว็บสำนักงานท่องเที่ยว",
+            "en": "Opening dates and hours are on the tourist office page"
+          },
+          "q": "Archéoscope, Grande Rue, Le Mont-Saint-Michel",
+          "ok": "2026-11"
         }
       ]
     },
@@ -1326,6 +1983,466 @@
           "q": "Marché provençal, L'Isle-sur-la-Sorgue",
           "ok": "2026-11",
           "src": "https://provence-alpes-cotedazur.com/que-faire/sortir/toutes-les-sorties/marche-provencal-de-lisle-sur-la-sorgue-l-isle-sur-la-sorgue-fr-2851198/"
+        },
+        {
+          "local": "Pont Saint-Bénezet",
+          "ages": [
+            1,
+            1,
+            1,
+            1
+          ],
+          "hrs": 1,
+          "io": "out",
+          "pram": "part",
+          "price": {
+            "th": "เช็กราคาก่อนไป",
+            "en": "Check the price"
+          },
+          "book": "none",
+          "src": "https://avignon-tourisme.com/en/prepare-your-stay/avignon-with-the-family/",
+          "name": {
+            "th": "สะพานอาวีญง",
+            "en": "Pont d’Avignon"
+          },
+          "kind": "views",
+          "area": {
+            "th": "อาวีญง",
+            "en": "Avignon"
+          },
+          "what": {
+            "th": "สะพานครึ่งท่อนชื่อดังข้ามแม่น้ำโรน เที่ยวได้เร็วและง่าย",
+            "en": "The famous half-bridge over the Rhône, quick and easy to visit"
+          },
+          "why": {
+            "th": "เด็กเดินได้อิสระ เห็นวิวแม่น้ำโล่ง",
+            "en": "Children wander freely with an open view of the river"
+          },
+          "tip": {
+            "th": "ใช้เวลาไม่นาน แทรกในแผนได้ง่าย",
+            "en": "A short visit, easy to fit in"
+          },
+          "q": "Pont Saint-Bénézet, Boulevard du Rhône, Avignon",
+          "ok": "2026-11"
+        },
+        {
+          "local": "",
+          "ages": [
+            1,
+            1,
+            1,
+            1
+          ],
+          "hrs": 2,
+          "io": "out",
+          "pram": "yes",
+          "price": {
+            "th": "ฟรี",
+            "en": "Free"
+          },
+          "book": "none",
+          "src": "https://avignon-tourisme.com/en/prepare-your-stay/avignon-with-the-family/",
+          "name": {
+            "th": "สวนรอเชเดดอม",
+            "en": "Rocher des Doms garden"
+          },
+          "kind": "park",
+          "area": {
+            "th": "อาวีญง",
+            "en": "Avignon"
+          },
+          "what": {
+            "th": "สวนร่มรื่น กว้าง และมีวิวพาโนรามา",
+            "en": "A shady garden with space and a panoramic view"
+          },
+          "why": {
+            "th": "ที่พักผ่อนขณะเด็กเล่น",
+            "en": "A place to rest while the children play"
+          },
+          "q": "Jardin des Doms, Avignon",
+          "ok": "2026-11"
+        },
+        {
+          "local": "",
+          "ages": [
+            1,
+            1,
+            1,
+            1
+          ],
+          "hrs": 2,
+          "io": "out",
+          "pram": "part",
+          "price": {
+            "th": "ฟรี",
+            "en": "Free"
+          },
+          "book": "none",
+          "src": "https://avignon-tourisme.com/en/prepare-your-stay/avignon-with-the-family/",
+          "name": {
+            "th": "เกาะบาร์เตอลาส",
+            "en": "Île de la Barthelasse"
+          },
+          "kind": "park",
+          "area": {
+            "th": "ฝั่งตรงข้ามแม่น้ำโรนจากอาวีญง",
+            "en": "Across the Rhône from Avignon"
+          },
+          "what": {
+            "th": "เกาะสำหรับปั่นจักรยาน ปิกนิก และเดินเล่น ใกล้ใจกลางเมือง",
+            "en": "An island for cycling, picnics and walks, minutes from the centre"
+          },
+          "why": {
+            "th": "ได้พักสูดอากาศระหว่างเที่ยว",
+            "en": "Fresh air between the sights"
+          },
+          "tip": {
+            "th": "มีเรือรับส่งฟรีจากท่าเดอลาลีญ",
+            "en": "A free shuttle boat crosses from the Quai de la Ligne"
+          },
+          "q": "Île de la Barthelasse, Avignon",
+          "ok": "2026-11"
+        },
+        {
+          "local": "",
+          "ages": [
+            0,
+            1,
+            1,
+            2
+          ],
+          "hrs": 2,
+          "io": "in",
+          "pram": "part",
+          "price": {
+            "th": "เช็กราคาก่อนไป",
+            "en": "Check the price"
+          },
+          "book": "none",
+          "src": "https://www.lonelyplanet.com/articles/top-things-to-do-in-arles",
+          "name": {
+            "th": "พิพิธภัณฑ์อาร์ลโบราณ",
+            "en": "Musée départemental Arles antique"
+          },
+          "kind": "museum",
+          "area": {
+            "th": "อาร์ล",
+            "en": "Arles"
+          },
+          "what": {
+            "th": "ประวัติศาสตร์โบราณของอาร์ล มีโมเสกงดงาม",
+            "en": "Arles’s ancient history, with fine mosaics"
+          },
+          "why": {
+            "th": "มีโมเสกและโบราณวัตถุย้อนถึงยุคก่อนประวัติศาสตร์",
+            "en": "Mosaics and finds back to prehistory"
+          },
+          "tip": {
+            "th": "ปิดวันพุธ เข้าฟรีวันอาทิตย์แรกของเดือน",
+            "en": "Closed Wednesdays; free on the first Sunday of the month"
+          },
+          "q": "Musée départemental Arles antique, Presqu’île du Cirque Romain, Arles",
+          "ok": "2026-11"
+        },
+        {
+          "local": "",
+          "ages": [
+            0,
+            0,
+            1,
+            2
+          ],
+          "hrs": 1,
+          "io": "in",
+          "pram": "part",
+          "price": {
+            "th": "เช็กราคาก่อนไป",
+            "en": "Check the price"
+          },
+          "book": "none",
+          "src": "https://www.lonelyplanet.com/articles/top-things-to-do-in-arles",
+          "name": {
+            "th": "มูลนิธิวินเซนต์ แวน โก๊ะ อาร์ล",
+            "en": "Fondation Vincent van Gogh Arles"
+          },
+          "kind": "museum",
+          "area": {
+            "th": "อาร์ล",
+            "en": "Arles"
+          },
+          "what": {
+            "th": "หอศิลป์ตามรอยแวน โก๊ะ มีจุดชมวิวคืนแห่งดวงดาว",
+            "en": "An art space on Van Gogh’s trail, with a Starry Night viewpoint"
+          },
+          "why": {
+            "th": "เปิดทุกวัน มีจุดชมวิวคืนแห่งดวงดาว",
+            "en": "Open every day, with the Starry Night viewpoint"
+          },
+          "tip": {
+            "th": "เปิดทุกวัน 10:00–18:00",
+            "en": "Daily 10:00–18:00"
+          },
+          "q": "Fondation Vincent van Gogh Arles, 35 Rue du Docteur Fanton, Arles",
+          "ok": "2026-11"
+        },
+        {
+          "local": "Théâtre antique d’Arles",
+          "ages": [
+            1,
+            1,
+            1,
+            1
+          ],
+          "hrs": 1,
+          "io": "out",
+          "pram": "part",
+          "price": {
+            "th": "เช็กราคาก่อนไป",
+            "en": "Check the price"
+          },
+          "book": "none",
+          "src": "https://www.lonelyplanet.com/articles/top-things-to-do-in-arles",
+          "name": {
+            "th": "โรงละครโรมันอาร์ล",
+            "en": "Roman Theatre of Arles"
+          },
+          "kind": "culture",
+          "area": {
+            "th": "อาร์ล",
+            "en": "Arles"
+          },
+          "what": {
+            "th": "โรงละครโรมันจากศตวรรษที่ 1 ก่อนคริสตกาล ยังใช้จัดการแสดงหน้าร้อน",
+            "en": "A 1st-century BC Roman theatre still used for summer shows"
+          },
+          "why": {
+            "th": "ได้เดินชมเวทีโรมันจริง",
+            "en": "A real Roman stage to walk round"
+          },
+          "q": "Théâtre antique d’Arles, Rue du Cloître, Arles",
+          "ok": "2026-11"
+        },
+        {
+          "local": "",
+          "ages": [
+            0,
+            1,
+            2,
+            2
+          ],
+          "hrs": 1,
+          "io": "in",
+          "pram": "no",
+          "price": {
+            "th": "เช็กราคาก่อนไป",
+            "en": "Check the price"
+          },
+          "book": "none",
+          "src": "https://www.lonelyplanet.com/articles/top-things-to-do-in-arles",
+          "name": {
+            "th": "ห้องใต้ดินคริปโตปอร์ติก อาร์ล",
+            "en": "Cryptoportiques of Arles"
+          },
+          "kind": "oldtown",
+          "area": {
+            "th": "ใต้ลานฟอรัม อาร์ล",
+            "en": "Under the Place du Forum, Arles"
+          },
+          "what": {
+            "th": "ระเบียงใต้ดินสมัยโรมันใต้ลานฟอรัมเก่า ลงบันไดไป",
+            "en": "Underground Roman galleries below the old forum, down a flight of stairs"
+          },
+          "why": {
+            "th": "เดินลงไปผ่านประวัติศาสตร์ 2,000 ปี",
+            "en": "A walk down through 2,000 years of history"
+          },
+          "q": "Cryptoportiques d’Arles, Place de la République, Arles",
+          "ok": "2026-11"
+        },
+        {
+          "local": "",
+          "ages": [
+            1,
+            1,
+            1,
+            1
+          ],
+          "hrs": 1,
+          "io": "in",
+          "pram": "part",
+          "price": {
+            "th": "เช็กราคาก่อนไป",
+            "en": "Check the price"
+          },
+          "book": "none",
+          "src": "https://www.hotel-bb.com/en/guide/activities-aix-en-provence-family",
+          "name": {
+            "th": "พิพิธภัณฑ์ขนมกาลิซง รัวเรอเน",
+            "en": "Calisson museum (Roy René)"
+          },
+          "kind": "museumkid",
+          "area": {
+            "th": "แอ็กซ็องพรอวองซ์",
+            "en": "Aix-en-Provence"
+          },
+          "what": {
+            "th": "โรงงานขนมกาลิซง แสดงเครื่องมือเก่า วัตถุดิบ และทุกขั้นตอนการทำ",
+            "en": "A calisson factory showing old tools, ingredients and every step of the Aix sweet"
+          },
+          "why": {
+            "th": "วันธรรมดาเด็กได้ดูช่างทำขนมทำงาน",
+            "en": "Children watch the confectioners at work on weekdays"
+          },
+          "q": "Musée du Calisson Roy René, 5380 Route d’Avignon, Aix-en-Provence",
+          "ok": "2026-11"
+        },
+        {
+          "local": "Atelier de Cézanne",
+          "ages": [
+            0,
+            0,
+            1,
+            2
+          ],
+          "hrs": 1,
+          "io": "in",
+          "pram": "part",
+          "price": {
+            "th": "เช็กราคาก่อนไป",
+            "en": "Check the price"
+          },
+          "book": "none",
+          "src": "https://www.hotel-bb.com/en/guide/activities-aix-en-provence-family",
+          "name": {
+            "th": "สตูดิโอเซซาน",
+            "en": "Cézanne’s studio"
+          },
+          "kind": "culture",
+          "area": {
+            "th": "แอ็กซ็องพรอวองซ์",
+            "en": "Aix-en-Provence"
+          },
+          "what": {
+            "th": "สตูดิโอของเซซานที่เก็บไว้เหมือนเดิม มีสี พู่กัน และผ้าใบของเขา",
+            "en": "Cézanne’s studio kept as it was, with his paints, brushes and canvases"
+          },
+          "why": {
+            "th": "ที่เที่ยวเงียบสงบ แสงสวย",
+            "en": "A quiet, luminous place to visit"
+          },
+          "q": "Atelier de Cézanne, 9 Avenue Paul Cézanne, Aix-en-Provence",
+          "ok": "2026-11"
+        },
+        {
+          "local": "",
+          "ages": [
+            1,
+            1,
+            1,
+            1
+          ],
+          "hrs": 3,
+          "io": "out",
+          "pram": "part",
+          "price": {
+            "th": "เช็กราคาก่อนไป",
+            "en": "Check the price"
+          },
+          "book": "none",
+          "src": "https://www.hotel-bb.com/en/guide/activities-aix-en-provence-family",
+          "name": {
+            "th": "ทะเลสาบเปรอลล์",
+            "en": "Lac de Peyrolles"
+          },
+          "kind": "park",
+          "area": {
+            "th": "เปรอลล์ออง‑พรอวองซ์ แอ็กซ์",
+            "en": "Peyrolles-en-Provence, Pays d’Aix"
+          },
+          "what": {
+            "th": "บ่อหินเก่าที่กลายเป็นทะเลสาบ มีร้านอาหารว่าง โต๊ะปิกนิก และสนามเด็กเล่น",
+            "en": "An old quarry turned lake, with a snack bar, picnic tables and playgrounds"
+          },
+          "why": {
+            "th": "มีสนามเด็กเล่น หน้าร้อนมีคนดูแลการว่ายน้ำ",
+            "en": "Playgrounds, and supervised swimming in summer"
+          },
+          "q": "Lac de Peyrolles, Chemin de Plantain, Peyrolles-en-Provence",
+          "ok": "2026-11"
+        },
+        {
+          "local": "",
+          "ages": [
+            2,
+            2,
+            2,
+            1
+          ],
+          "hrs": 3,
+          "io": "in",
+          "pram": "part",
+          "price": {
+            "th": "เช็กราคาก่อนไป",
+            "en": "Check the price"
+          },
+          "book": "none",
+          "src": "https://www.marseille-tourisme.com/en/offers/gulli-park-aix-en-provence-en-3789761/",
+          "name": {
+            "th": "กุลลีปาร์ก แอ็กซ์",
+            "en": "Gulli Parc Aix-en-Provence"
+          },
+          "kind": "play",
+          "area": {
+            "th": "เลมิลล์ แอ็กซ์",
+            "en": "Les Milles, Aix-en-Provence"
+          },
+          "what": {
+            "th": "ศูนย์เล่นในร่มกว่า 2,300 ตร.ม. สำหรับเด็ก 1–12 ปี",
+            "en": "A covered play centre of over 2,300 m² for children of 1 to 12"
+          },
+          "why": {
+            "th": "มีโกคาร์ตเด็กและไซต์ก่อสร้างเลโก้",
+            "en": "A mini kart track and a Lego building site"
+          },
+          "q": "Gulli Parc Aix-en-Provence, 240 Rue des Frères Perret, Aix-en-Provence",
+          "ok": "2026-11"
+        },
+        {
+          "local": "",
+          "ages": [
+            2,
+            2,
+            1,
+            0
+          ],
+          "hrs": 2,
+          "io": "in",
+          "pram": "part",
+          "price": {
+            "th": "เช็กราคาก่อนไป",
+            "en": "Check the price"
+          },
+          "book": "none",
+          "src": "https://www.marseille-tourisme.com/en/offers/palomano-aix-en-provence-en-6251493/",
+          "name": {
+            "th": "ปาโลมาโน แอ็กซ์",
+            "en": "Palomano Aix-en-Provence"
+          },
+          "kind": "play",
+          "area": {
+            "th": "แอ็กซ็องพรอวองซ์",
+            "en": "Aix-en-Provence"
+          },
+          "what": {
+            "th": "สวนเล่นในร่มแบบสวมบทบาทขนาดเด็ก มีร้านอาหาร ตลาด สถานีดับเพลิง และเครื่องบิน",
+            "en": "An indoor play park of child-height role-play: a restaurant, a market, a fire station, a plane"
+          },
+          "why": {
+            "th": "เด็ก 0–10 ปีเล่นอิสระกับพ่อแม่",
+            "en": "Free play for children of 0 to 10 with their parents"
+          },
+          "q": "Palomano, 45 Boulevard Aristide Briand, Aix-en-Provence",
+          "ok": "2026-11"
         }
       ]
     },
@@ -1629,6 +2746,318 @@
           "q": "Plateforme de la cathédrale, Place de la Cathédrale, Strasbourg",
           "ok": "2026-11",
           "src": "https://www.oeuvre-notre-dame.org/cathedrale-de-strasbourg/visiter-cathedrale"
+        },
+        {
+          "local": "Musée du Jouet",
+          "ages": [
+            1,
+            1,
+            1,
+            1
+          ],
+          "hrs": 1,
+          "io": "in",
+          "pram": "part",
+          "price": {
+            "th": "เช็กราคาก่อนไป",
+            "en": "Check the price"
+          },
+          "book": "none",
+          "src": "https://kidsareatrip.com/colmar-with-kids/",
+          "name": {
+            "th": "พิพิธภัณฑ์ของเล่น กอลมาร์",
+            "en": "Toy Museum, Colmar"
+          },
+          "kind": "museumkid",
+          "area": {
+            "th": "กอลมาร์",
+            "en": "Colmar"
+          },
+          "what": {
+            "th": "ของเล่นสะสมย้อนไปถึงศตวรรษที่ 19 มีรถไฟจำลองขนาดใหญ่",
+            "en": "A toy collection back to the 19th century, with a big model railway"
+          },
+          "why": {
+            "th": "มีนิทรรศการให้ลองเล่นและรถไฟจำลองวิ่งรอบภูมิทัศน์จิ๋ว",
+            "en": "Hands-on displays and a model train running round a landscape"
+          },
+          "tip": {
+            "th": "เหมาะกับบ่ายวันฝนตก",
+            "en": "Good for a rainy afternoon"
+          },
+          "q": "Musée du Jouet, 40 Rue Vauban, Colmar",
+          "ok": "2026-11"
+        },
+        {
+          "local": "Petit Train Touristique de Colmar",
+          "ages": [
+            1,
+            1,
+            1,
+            1
+          ],
+          "hrs": 1,
+          "io": "out",
+          "pram": "part",
+          "price": {
+            "th": "เช็กราคาก่อนไป",
+            "en": "Check the price"
+          },
+          "book": "none",
+          "src": "https://kidsareatrip.com/colmar-with-kids/",
+          "name": {
+            "th": "รถไฟเล็กชมเมืองกอลมาร์",
+            "en": "Colmar little train"
+          },
+          "kind": "ride",
+          "area": {
+            "th": "กอลมาร์",
+            "en": "Colmar"
+          },
+          "what": {
+            "th": "รถไฟเล็กพาชมจุดเด่นของเมืองราว 40 นาที",
+            "en": "A little tourist train taking about 40 minutes round the sights"
+          },
+          "why": {
+            "th": "เด็กชอบนั่งรถไฟเล็กรอบเมือง",
+            "en": "Children love going round town on the little train"
+          },
+          "tip": {
+            "th": "มีสองเส้นทาง สีเขียวในเมืองเก่า สีเหลืองในเมืองใหม่",
+            "en": "Two routes: green in the old town, yellow in the newer part"
+          },
+          "q": "Petit Train Touristique de Colmar, 3 Rue Kléber, Colmar",
+          "ok": "2026-11"
+        },
+        {
+          "local": "",
+          "ages": [
+            1,
+            1,
+            1,
+            1
+          ],
+          "hrs": 2,
+          "io": "in",
+          "pram": "part",
+          "price": {
+            "th": "เช็กราคาก่อนไป",
+            "en": "Check the price"
+          },
+          "book": "rec",
+          "src": "https://kidsareatrip.com/colmar-with-kids/",
+          "name": {
+            "th": "โชโกสตอรี กอลมาร์",
+            "en": "Choco-Story Colmar"
+          },
+          "kind": "museumkid",
+          "area": {
+            "th": "กอลมาร์",
+            "en": "Colmar"
+          },
+          "what": {
+            "th": "พิพิธภัณฑ์ช็อกโกแลต มีเกมและเวิร์กช็อปทำช็อกโกแลตแท่งเอง",
+            "en": "A chocolate museum with games and a workshop to make your own bar"
+          },
+          "why": {
+            "th": "มีเกมให้ลองเล่นเยอะ",
+            "en": "Lots of interactive games"
+          },
+          "tip": {
+            "th": "จองเวิร์กช็อปล่วงหน้า",
+            "en": "Book the workshop ahead"
+          },
+          "q": "Choco-Story Colmar, 12 Place de la Cathédrale, Colmar",
+          "ok": "2026-11"
+        },
+        {
+          "local": "",
+          "ages": [
+            1,
+            1,
+            1,
+            1
+          ],
+          "hrs": 3,
+          "io": "out",
+          "pram": "part",
+          "price": {
+            "th": "เช็กราคาก่อนไป",
+            "en": "Check the price"
+          },
+          "book": "none",
+          "src": "https://kidsareatrip.com/colmar-with-kids/",
+          "name": {
+            "th": "ฐานกีฬาทางน้ำกอลมาร์-อูสเซน",
+            "en": "Base Nautique Colmar-Houssen"
+          },
+          "kind": "beach",
+          "area": {
+            "th": "อูสเซน นั่งรถบัสจากกอลมาร์",
+            "en": "Houssen, by bus from Colmar"
+          },
+          "what": {
+            "th": "ทะเลสาบมีหาดทราย ที่ว่ายน้ำปลอดภัย และเรือแคนูกับซัปบอร์ดให้เช่า",
+            "en": "A lake with a sandy beach, a safe swimming area and paddleboards and canoes for hire"
+          },
+          "why": {
+            "th": "มีโซนน้ำตื้นให้เล่น ฉากหลังเป็นเทือกเขาโวจ",
+            "en": "A shallow splash zone with the Vosges behind"
+          },
+          "tip": {
+            "th": "พกครีมกันแดดและผ้าเช็ดตัว",
+            "en": "Bring sunscreen and towels"
+          },
+          "q": "Base Nautique Colmar Houssen, 37 Rue Denis Papin, Colmar",
+          "ok": "2026-11"
+        },
+        {
+          "local": "",
+          "ages": [
+            1,
+            1,
+            1,
+            1
+          ],
+          "hrs": 2,
+          "io": "out",
+          "pram": "yes",
+          "price": {
+            "th": "ฟรี",
+            "en": "Free"
+          },
+          "book": "none",
+          "src": "https://tourisme-colmar.com/en/visit/tips-and-suggestions/children-families/parks-with-playground/F235012729_parc-du-champ-de-mars-colmar",
+          "name": {
+            "th": "สวนชองเดอมาร์ส",
+            "en": "Parc du Champ-de-Mars"
+          },
+          "kind": "park",
+          "area": {
+            "th": "ใจกลางกอลมาร์",
+            "en": "Centre of Colmar"
+          },
+          "what": {
+            "th": "สวนใหญ่ที่สุดใจกลางเมือง ใต้ต้นลินเดน 193 ต้น มีรูปปั้นของบาร์ทอลดีสองตัว",
+            "en": "The biggest park in the centre, under 193 lime trees, with two Bartholdi statues"
+          },
+          "why": {
+            "th": "อยู่ในรายชื่อสวนที่มีสนามเด็กเล่นของสำนักงานท่องเที่ยว",
+            "en": "On the tourist office’s list of parks with a playground"
+          },
+          "q": "Parc du Champ-de-Mars, Avenue de la République, Colmar",
+          "ok": "2026-11"
+        },
+        {
+          "local": "",
+          "ages": [
+            2,
+            2,
+            1,
+            0
+          ],
+          "hrs": 1,
+          "io": "out",
+          "pram": "yes",
+          "price": {
+            "th": "ฟรี",
+            "en": "Free"
+          },
+          "book": "none",
+          "src": "https://tourisme-colmar.com/en/visit/tips-and-suggestions/children-families/parks-with-playground/F235012732_parc-mequillet-colmar",
+          "name": {
+            "th": "สวนเมกียเย",
+            "en": "Jardin Méquillet"
+          },
+          "kind": "park",
+          "area": {
+            "th": "กอลมาร์",
+            "en": "Colmar"
+          },
+          "what": {
+            "th": "สวนที่มีรั้วรอบ มีเครื่องเล่นธีมละครสัตว์",
+            "en": "A fully enclosed garden with games on a circus theme"
+          },
+          "why": {
+            "th": "ทำมาสำหรับครอบครัวที่มีเด็ก มีรั้วรอบปลอดภัย",
+            "en": "Made for families with children, safely fenced"
+          },
+          "q": "Jardin Méquillet, Rue Camille Schlumberger, Colmar",
+          "ok": "2026-11"
+        },
+        {
+          "local": "",
+          "ages": [
+            2,
+            2,
+            1,
+            0
+          ],
+          "hrs": 1,
+          "io": "out",
+          "pram": "part",
+          "price": {
+            "th": "ฟรี",
+            "en": "Free"
+          },
+          "book": "none",
+          "src": "https://tourisme-colmar.com/en/visit/tips-and-suggestions/children-families/parks-with-playground/F235012731_parc-saint-francois-xavier-colmar",
+          "name": {
+            "th": "สวนแซ็งฟรองซัวกซาวีเย",
+            "en": "Parc Saint-François-Xavier"
+          },
+          "kind": "park",
+          "area": {
+            "th": "กอลมาร์",
+            "en": "Colmar"
+          },
+          "what": {
+            "th": "สวนเล็กร่มรื่น มีสนามเด็กเล่นและบ้านอาลซัสเก่า",
+            "en": "A small shaded garden with a playground and an old Alsatian house"
+          },
+          "why": {
+            "th": "สนามเด็กเล่นใต้ต้นไม้ใหญ่",
+            "en": "A playground under big old trees"
+          },
+          "q": "Parc Saint François-Xavier, Rue de Rueil, Colmar",
+          "ok": "2026-11"
+        },
+        {
+          "local": "Musée Alsacien",
+          "ages": [
+            0,
+            1,
+            1,
+            2
+          ],
+          "hrs": 1,
+          "io": "in",
+          "pram": "part",
+          "price": {
+            "th": "เช็กราคาก่อนไป",
+            "en": "Check the price"
+          },
+          "book": "none",
+          "src": "https://kidsareatrip.com/things-to-do-in-strasbourg-with-kids/",
+          "name": {
+            "th": "พิพิธภัณฑ์อาลซัส",
+            "en": "Alsatian Museum"
+          },
+          "kind": "museum",
+          "area": {
+            "th": "ท่าแซ็งนีกอลา สตราสบูร์ก",
+            "en": "Quai Saint-Nicolas, Strasbourg"
+          },
+          "what": {
+            "th": "ศิลปะ ประเพณี และชีวิตชนบทอาลซัส ในบ้านโครงไม้สองหลัง",
+            "en": "Alsatian art, folklore and country life in two half-timbered houses"
+          },
+          "why": {
+            "th": "ตัวบ้านโครงไม้ก็เป็นส่วนหนึ่งของการเที่ยวชม",
+            "en": "The half-timbered houses are part of the visit"
+          },
+          "q": "Musée Alsacien, 23 Quai Saint-Nicolas, Strasbourg",
+          "ok": "2026-11"
         }
       ]
     },
@@ -1908,6 +3337,125 @@
           "q": "Aqua Mundo, Villages Nature Paris, Bailly-Romainvilliers",
           "ok": "2026-11",
           "src": "https://www.centerparcs.fr/fr-fr/france/fp_VN_vacances-domaine-villages-nature-paris/billets-journee"
+        },
+        {
+          "local": "",
+          "ages": [
+            1,
+            2,
+            2,
+            2
+          ],
+          "hrs": 3,
+          "io": "both",
+          "pram": "part",
+          "price": {
+            "th": "เช็กราคาก่อนไป",
+            "en": "Check the price"
+          },
+          "book": "rec",
+          "src": "https://www.parrotworld.fr/en/guide/things-to-do-near-disneyland-paris",
+          "name": {
+            "th": "แพร์รอตเวิลด์",
+            "en": "Parrot World"
+          },
+          "kind": "zoo",
+          "area": {
+            "th": "เครซีลาชาแปล ห่างไป 20 นาที",
+            "en": "Crécy-la-Chapelle, 20 minutes away"
+          },
+          "what": {
+            "th": "กรงนกขนาดใหญ่ให้เดินชม มีนกแก้ว มาคอว์ ฟลามิงโก และนกกระสาบินอิสระ",
+            "en": "A walk-through aviary with free-flying parrots, macaws, flamingos and herons"
+          },
+          "why": {
+            "th": "นกบินอยู่รอบตัว เปลี่ยนบรรยากาศจากสวนสนุก",
+            "en": "Birds fly around you, a change from the theme parks"
+          },
+          "tip": {
+            "th": "วันและเวลาเปิดเปลี่ยนตามฤดูกาล เช็กก่อนไป",
+            "en": "Opening days and hours change by season: check before you go"
+          },
+          "q": "Parrot World, Route de Guérard, Crécy-la-Chapelle",
+          "ok": "2026-11"
+        },
+        {
+          "local": "",
+          "ages": [
+            0,
+            2,
+            2,
+            2
+          ],
+          "hrs": 2,
+          "io": "in",
+          "pram": "part",
+          "price": {
+            "th": "เช็กราคาก่อนไป",
+            "en": "Check the price"
+          },
+          "book": "rec",
+          "src": "https://www.parrotworld.fr/en/guide/things-to-do-near-disneyland-paris",
+          "name": {
+            "th": "อิมาจีพาร์ก",
+            "en": "Imagi Park"
+          },
+          "kind": "play",
+          "area": {
+            "th": "แซร์ริส ข้างดิสนีย์แลนด์ปารีส",
+            "en": "Serris, next to Disneyland Paris"
+          },
+          "what": {
+            "th": "โกคาร์ต โบว์ลิ่ง เลเซอร์แท็ก และสวนแทรมโพลีนในอาคารเดียว",
+            "en": "Go-karts, bowling, laser tag and a trampoline park under one roof"
+          },
+          "why": {
+            "th": "สวนแทรมโพลีนเหมาะกับเด็กตั้งแต่ 3 ขวบ ดีสำหรับวันฝนตก",
+            "en": "The trampoline park suits children from age 3; good on a rainy day"
+          },
+          "q": "Imagi Park, 1 Rue de l'Hymne à la Joie, Serris",
+          "ok": "2026-11"
+        },
+        {
+          "local": "",
+          "ages": [
+            1,
+            2,
+            2,
+            2
+          ],
+          "hrs": 0.5,
+          "io": "out",
+          "pram": "part",
+          "price": {
+            "th": "เช็กราคาก่อนไป",
+            "en": "Check the price"
+          },
+          "book": "none",
+          "src": "https://www.visitparisregion.com/en/inspiration/itineraries/disneyland-paris-and-surrounding-area",
+          "name": {
+            "th": "บอลลูนพาโนรามาจิก",
+            "en": "PanoraMagique balloon"
+          },
+          "kind": "views",
+          "area": {
+            "th": "ดิสนีย์วิลเลจ",
+            "en": "Disney Village"
+          },
+          "what": {
+            "th": "บอลลูนผูกเชือกที่ลอยขึ้นเหนือดิสนีย์วิลเลจ",
+            "en": "A tethered balloon that rises above Disney Village"
+          },
+          "why": {
+            "th": "นั่งสั้น ๆ ง่าย ๆ ได้ทั้งครอบครัว",
+            "en": "A short, easy ride for the whole family"
+          },
+          "tip": {
+            "th": "ดูสภาพอากาศและคิวก่อน",
+            "en": "Check the weather and the queue first"
+          },
+          "q": "PanoraMagique, Disney Village, Chessy",
+          "ok": "2026-11"
         }
       ]
     }

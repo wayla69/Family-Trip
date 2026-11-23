@@ -1,0 +1,66 @@
+{
+  "town": "si-bled",
+  "kind": "eats + sights",
+  "checked": "2026-11-23",
+  "rule": "library-check.cjs, then the Google Maps Reviews tab sorted by newest: ok only when not marked closed, with a review from the last six months, and the map's name matching the page's.",
+  "agents": "one Haiku agent; 10 of 11 rows from Ljubljana.info (2026), Visit Ljubljana, Bled's and Postojna Cave Park's own sites passed library-check.cjs, 6 went in",
+  "added": [
+    {
+      "name": "Garden Restaurant",
+      "page_name": "Garden Restaurant",
+      "src": "https://www.bled.si/en/what-to-see-do/cuisine/catering-facilities/2024040810535439/garden-restaurant",
+      "date": "official",
+      "map": "Google Maps Cesta Gorenjskega odreda 16, 147 reviews, newest 'last month'"
+    },
+    {
+      "name": "Atlantis water park",
+      "page_name": "Atlantis",
+      "src": "https://www.ljubljana.info/?p=4246",
+      "date": "2026-11",
+      "map": "Google Maps 'Vodno mesto Atlantis', 1,904 reviews, newest '2 days ago'"
+    },
+    {
+      "name": "Tivoli Park",
+      "page_name": "Tivoli Park",
+      "src": "https://www.ljubljana.info/?p=4246",
+      "date": "2026-11",
+      "map": "Google Maps 17,582 reviews, newest '15 hours ago'"
+    },
+    {
+      "name": "Postojna Vivarium",
+      "page_name": "Vivarium",
+      "src": "https://www.postojnska-jama.eu/en/information/other-postojna-cave-park-attractions/",
+      "date": "official",
+      "map": "Google Maps 'Vivarij- Vivarium', Jamska cesta 29, 295 reviews, newest '2 days ago'"
+    },
+    {
+      "name": "Expo Cave Karst",
+      "page_name": "Expo Cave Karst",
+      "src": "https://www.postojnska-jama.eu/en/information/other-postojna-cave-park-attractions/",
+      "date": "official",
+      "map": "Google Maps 'Expo Jama Kras', 78 reviews, newest '2 weeks ago'"
+    },
+    {
+      "name": "Black Cave and Pivka Cave",
+      "page_name": "Black Cave and Pivka Cave",
+      "src": "https://www.postojnska-jama.eu/en/information/other-postojna-cave-park-attractions/",
+      "date": "official",
+      "map": "Google Maps 'Črna jama', Veliki Otok, 62 reviews, newest '2 months ago'"
+    }
+  ],
+  "left_out": [
+    {
+      "name": "Kinodvor Cinema, City Playground – Mala ulica",
+      "why": "no reviews read on Google Maps, twice"
+    },
+    {
+      "name": "The House of Children and Arts",
+      "why": "newest review seven months old, and another address"
+    },
+    {
+      "name": "Ljubljanica River Boat Ride",
+      "why": "boat rides sold by operators"
+    }
+  ],
+  "estimates": "Ages and visit hours are placeholders; prices and opening notes are the pages' own."
+}

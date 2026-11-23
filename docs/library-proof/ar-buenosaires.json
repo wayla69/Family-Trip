@@ -1,0 +1,70 @@
+{
+  "town": "ar-buenosaires",
+  "kind": "eats + sights",
+  "checked": "2026-11-23",
+  "rule": "library-check.cjs, then the Google Maps Reviews tab sorted by newest: ok only when not marked closed, with a review from the last six months, and the map's name matching the page's.",
+  "agents": "one Haiku agent; 18 rows offered, 15 from usable pages, 8 passed library-check.cjs, 6 went in",
+  "added": [
+    {
+      "name": "Aida Restaurante & Café",
+      "page_name": "Aida",
+      "src": "https://www.timeout.com/es/buenos-aires/mejores-restaurantes-chicos-ninos",
+      "date": "2025-07",
+      "map": "Google Maps 'Aida Restaurante & Café', 892 reviews, newest '13 hours ago'"
+    },
+    {
+      "name": "Ragazzi",
+      "page_name": "Ragazzi",
+      "src": "https://www.timeout.com/es/buenos-aires/mejores-restaurantes-chicos-ninos",
+      "date": "2025-07",
+      "map": "Google Maps 4,527 reviews, newest '10 hours ago'"
+    },
+    {
+      "name": "Parque Saint Tropez",
+      "page_name": "Parque Saint Tropez",
+      "src": "https://www.timeout.com/es/buenos-aires/lugares-gratis-chicos-ninos-imperdibles",
+      "date": "2026-07",
+      "map": "Google Maps 'Saint Tropez Park', 733 reviews, newest '15 hours ago'"
+    },
+    {
+      "name": "Parque de los Niños",
+      "page_name": "Parque de los Niños",
+      "src": "https://turismo.buenosaires.gob.ar/en/article/activities-kids",
+      "date": "official",
+      "map": "Google Maps 44,822 reviews, newest '3 hours ago'"
+    },
+    {
+      "name": "Comic Strip Walk (Paseo de la Historieta)",
+      "page_name": "Comic Strip Walk",
+      "src": "https://turismo.buenosaires.gob.ar/en/article/activities-kids",
+      "date": "official",
+      "map": "Google Maps one of its statues 'Clemente - Paseo de la Historieta', 522 reviews, newest '3 days ago'"
+    },
+    {
+      "name": "Participative Science Museum",
+      "page_name": "Participative Science Museum",
+      "src": "https://turismo.buenosaires.gob.ar/en/article/activities-kids",
+      "date": "official",
+      "map": "Google Maps 'Participatory Science Museum', 5,998 reviews, newest '19 hours ago'"
+    }
+  ],
+  "left_out": [
+    {
+      "name": "rows from restaurantsforkings.com",
+      "why": "a machine-written ranking site the brief refuses"
+    },
+    {
+      "name": "Museo del Humor",
+      "why": "the map's newest review is three years old"
+    },
+    {
+      "name": "Museo del Juguete",
+      "why": "in San Isidro, outside the city"
+    },
+    {
+      "name": "El Torreón, Centro Cultural Coreano, Centro Cultural 25 de Mayo, Fragata Sarmiento, Museo Quinquela Martín, MAMBA, Lago Lugano",
+      "why": "library-check.cjs: quote not on page"
+    }
+  ],
+  "estimates": "Ages and visit hours are placeholders; prices and opening notes are the pages' own."
+}

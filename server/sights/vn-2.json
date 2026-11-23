@@ -730,6 +730,265 @@
           "q": "Ham Ninh fishing village pier, Ham Ninh, Phu Quoc",
           "ok": "2026-11",
           "src": "https://www.saigonlocaltour.com/?p=18515"
+        },
+        {
+          "local": "Bảo tàng Cội Nguồn",
+          "ages": [
+            1,
+            1,
+            1,
+            1
+          ],
+          "pram": "part",
+          "price": {
+            "th": "เช็กราคาก่อนไป",
+            "en": "Check the price"
+          },
+          "book": "none",
+          "name": {
+            "th": "พิพิธภัณฑ์ก๋อยเงวิน",
+            "en": "Cội Nguồn Museum"
+          },
+          "kind": "museum",
+          "area": {
+            "th": "เซืองด่ง",
+            "en": "Dương Đông"
+          },
+          "what": {
+            "th": "พิพิธภัณฑ์เอกชน มีของเกือบ 5,000 ชิ้นเกี่ยวกับประวัติและวัฒนธรรมของเกาะ",
+            "en": "A private museum of nearly 5,000 objects on the island’s history and culture"
+          },
+          "why": {
+            "th": "ที่เที่ยวในร่มสำหรับวันฝนตก",
+            "en": "An indoor stop for a rainy day"
+          },
+          "hrs": 1.5,
+          "io": "in",
+          "q": "Coi Nguon Museum, Dương Đông, Phú Quốc",
+          "src": "https://blog.premierresidencesphuquoc.com/things-to-do-in-phu-quoc-when-it-rains/",
+          "ok": "2026-11"
+        },
+        {
+          "local": "Ngọc Hiền Pearl",
+          "ages": [
+            1,
+            1,
+            1,
+            1
+          ],
+          "pram": "part",
+          "price": {
+            "th": "เช็กราคาก่อนไป",
+            "en": "Check the price"
+          },
+          "book": "none",
+          "name": {
+            "th": "ฟาร์มไข่มุกหง็อกเหียน",
+            "en": "Ngọc Hiền Pearl Farm"
+          },
+          "kind": "culture",
+          "area": {
+            "th": "ทางใต้ของเซืองด่ง",
+            "en": "South of Dương Đông"
+          },
+          "what": {
+            "th": "ฟาร์มไข่มุกในร่ม แสดงขั้นตอนเลี้ยงหอยจนได้ไข่มุก",
+            "en": "An indoor pearl farm that shows how pearls are grown, from oyster to pearl"
+          },
+          "why": {
+            "th": "เด็กๆ ได้เห็นว่าไข่มุกเกิดในหอยอย่างไร",
+            "en": "Children see how a pearl grows inside an oyster"
+          },
+          "hrs": 1,
+          "io": "in",
+          "q": "Ngoc Hien Pearl Farm, Phú Quốc",
+          "src": "https://blog.premierresidencesphuquoc.com/things-to-do-in-phu-quoc-when-it-rains/",
+          "ok": "2026-11"
+        },
+        {
+          "local": "Vườn quốc gia Phú Quốc",
+          "ages": [
+            1,
+            1,
+            1,
+            1
+          ],
+          "pram": "part",
+          "price": {
+            "th": "เช็กราคาก่อนไป",
+            "en": "Check the price"
+          },
+          "book": "none",
+          "name": {
+            "th": "อุทยานแห่งชาติฟูก๊วก",
+            "en": "Phú Quốc National Park"
+          },
+          "kind": "nature",
+          "area": {
+            "th": "ทางเหนือของเกาะ",
+            "en": "North of the island"
+          },
+          "what": {
+            "th": "เขตสงวนชีวมณฑลของยูเนสโก ป่าดั้งเดิมและสัตว์ป่า",
+            "en": "A UNESCO biosphere reserve of old forest and wildlife"
+          },
+          "why": {
+            "th": "เดินป่าดูต้นไม้และสัตว์",
+            "en": "Forest walks with plants and animals to spot"
+          },
+          "hrs": 2,
+          "io": "out",
+          "q": "Phu Quoc National Park, Phú Quốc",
+          "src": "https://blog.premierresidencesphuquoc.com/things-to-do-in-phu-quoc-with-kids",
+          "ok": "2026-11"
+        },
+        {
+          "local": "Khu du lịch Suối Tranh",
+          "ages": [
+            1,
+            1,
+            1,
+            1
+          ],
+          "pram": "part",
+          "price": {
+            "th": "เช็กราคาก่อนไป",
+            "en": "Check the price"
+          },
+          "book": "none",
+          "name": {
+            "th": "น้ำตกซวยจาญ",
+            "en": "Suối Tranh Waterfall"
+          },
+          "kind": "nature",
+          "area": {
+            "th": "กลางเกาะ ทางตะวันออกของเซืองด่ง",
+            "en": "Middle of the island, east of Dương Đông"
+          },
+          "what": {
+            "th": "น้ำตกเล็กสูงราว 4 เมตร มีทางเดินในป่าและจุดปิกนิก",
+            "en": "A small waterfall about four metres high, with forest trails and picnic spots"
+          },
+          "why": {
+            "th": "ทางเดินสั้นๆ จุดปิกนิก และถ้ำเล็กให้สำรวจ",
+            "en": "Short trails, picnic spots and little caves to explore"
+          },
+          "hrs": 1.5,
+          "io": "out",
+          "q": "Khu du lịch Suối Tranh, Phú Quốc",
+          "src": "https://blog.premierresidencesphuquoc.com/things-to-do-in-phu-quoc-with-kids",
+          "ok": "2026-11"
+        },
+        {
+          "local": "Bãi Ông Lang",
+          "ages": [
+            1,
+            1,
+            1,
+            1
+          ],
+          "pram": "part",
+          "price": {
+            "th": "เช็กราคาก่อนไป",
+            "en": "Check the price"
+          },
+          "book": "none",
+          "name": {
+            "th": "หาดอ๋งลาง",
+            "en": "Ông Lang Beach"
+          },
+          "kind": "beach",
+          "area": {
+            "th": "ฝั่งตะวันตก ทางเหนือของเซืองด่ง",
+            "en": "West coast, north of Dương Đông"
+          },
+          "what": {
+            "th": "หาดเล็กเงียบสงบ ท่ามกลางต้นไม้และรีสอร์ตเล็กๆ",
+            "en": "A smaller, quieter beach among trees and small resorts"
+          },
+          "why": {
+            "th": "สงบและเงียบกว่าหาดยาว",
+            "en": "Calm and quieter than Long Beach"
+          },
+          "hrs": 2,
+          "io": "out",
+          "q": "Ông Lang beach, Phú Quốc",
+          "src": "https://localvietnam.com/phu-quoc/phu-quoc-with-kids/",
+          "ok": "2026-11"
+        },
+        {
+          "local": "Bãi Dài",
+          "ages": [
+            1,
+            1,
+            1,
+            1
+          ],
+          "pram": "part",
+          "price": {
+            "th": "เช็กราคาก่อนไป",
+            "en": "Check the price"
+          },
+          "book": "none",
+          "name": {
+            "th": "หาดบ่ายหย่าย",
+            "en": "Bãi Dài Beach"
+          },
+          "kind": "beach",
+          "area": {
+            "th": "ทางตะวันตกเฉียงเหนือของเกาะ",
+            "en": "North-west of the island"
+          },
+          "what": {
+            "th": "หาดรีสอร์ตทางเหนือ มีรีสอร์ตใหญ่ สระว่ายน้ำ และร้านอาหาร",
+            "en": "The northern resort beach, with large beachfront resorts, pools and restaurants"
+          },
+          "why": {
+            "th": "รีสอร์ตแถวนี้หลายแห่งมีคิดส์คลับและกิจกรรม",
+            "en": "Many resorts here have kids’ clubs and activities"
+          },
+          "hrs": 2,
+          "io": "out",
+          "q": "Bãi Dài, Phú Quốc",
+          "src": "https://localvietnam.com/phu-quoc/phu-quoc-with-kids/",
+          "ok": "2026-11"
+        },
+        {
+          "local": "Bãi Khem",
+          "ages": [
+            1,
+            1,
+            1,
+            1
+          ],
+          "pram": "part",
+          "price": {
+            "th": "เช็กราคาก่อนไป",
+            "en": "Check the price"
+          },
+          "book": "none",
+          "name": {
+            "th": "หาดเคม",
+            "en": "Khem Beach"
+          },
+          "kind": "beach",
+          "area": {
+            "th": "ทางตะวันออกเฉียงใต้ของเกาะ",
+            "en": "South-east of the island"
+          },
+          "what": {
+            "th": "อ่าวโค้ง ทรายขาว น้ำสงบ",
+            "en": "A curved bay of light sand and calm water"
+          },
+          "why": {
+            "th": "น้ำสงบ เหมาะกับการว่ายน้ำ",
+            "en": "Calm water that is good for swimming"
+          },
+          "hrs": 2,
+          "io": "out",
+          "q": "Khem Beach, Phú Quốc",
+          "src": "https://localvietnam.com/phu-quoc/phu-quoc-with-kids/",
+          "ok": "2026-11"
         }
       ]
     }

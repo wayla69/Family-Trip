@@ -1,48 +1,99 @@
 {
   "town": "ar-patagonia",
-  "kind": "eats",
-  "checked": "2026-11",
-  "rule": "A row gets ok only from a current listing, its own site or recent reviews with nothing saying closed (docs/EATS.md). A row is taken out when a search could not find the place at all or the sources disagree; a place found but not freshly confirmed stays without ok.",
-  "scope": "the 5 rows without ok; the rows that already carried ok were not re-checked in this pass",
-  "how": "Google Maps opened in headless Chromium (2026-11-23), limited view without a reviews tab, so no review date could be read; each row's own map query first, then the name with the town, a list result opened when needed; a hotel's own site or one web search only where Maps could not settle it.",
-  "confirmed": [
+  "rounds": [
     {
-      "name": "La Fonda del Tío",
-      "src": "Google Maps",
-      "page_name": "La Fonda del Tío",
-      "evidence": "\"La Fonda del Tío\", Mitre 1130, VP74+XG San Carlos de Bariloche; \"Closed · Opens 12 PM\"; lafondadeltio.com.ar",
-      "ok": "2026-11"
+      "town": "ar-patagonia",
+      "kind": "eats",
+      "checked": "2026-11",
+      "rule": "A row gets ok only from a current listing, its own site or recent reviews with nothing saying closed (docs/EATS.md). A row is taken out when a search could not find the place at all or the sources disagree; a place found but not freshly confirmed stays without ok.",
+      "scope": "the 5 rows without ok; the rows that already carried ok were not re-checked in this pass",
+      "how": "Google Maps opened in headless Chromium (2026-11-23), limited view without a reviews tab, so no review date could be read; each row's own map query first, then the name with the town, a list result opened when needed; a hotel's own site or one web search only where Maps could not settle it.",
+      "confirmed": [
+        {
+          "name": "La Fonda del Tío",
+          "src": "Google Maps",
+          "page_name": "La Fonda del Tío",
+          "evidence": "\"La Fonda del Tío\", Mitre 1130, VP74+XG San Carlos de Bariloche; \"Closed · Opens 12 PM\"; lafondadeltio.com.ar",
+          "ok": "2026-11"
+        },
+        {
+          "name": "Bodegón Fueguino",
+          "src": "Google Maps",
+          "page_name": "Bodegón Fueguino",
+          "evidence": "\"Bodegón Fueguino\", Av. San Martín 859, 5MRR+X2 Ushuaia; \"Closed · Opens 12 PM Tue\"",
+          "ok": "2026-11"
+        },
+        {
+          "name": "Viva la Pepa",
+          "src": "Google Maps",
+          "page_name": "Viva la Pepa",
+          "evidence": "\"Viva la Pepa\", Creperie, Amado 833, MP6Q+JM El Calafate; \"Closed · Opens 10 AM\"; owner post \"Abrimos todos los días de 10 a 22\"",
+          "ok": "2026-11"
+        },
+        {
+          "name": "Helados Jauja",
+          "src": "Google Maps",
+          "page_name": "Helados Jauja",
+          "evidence": "\"Helados Jauja\", Ice cream shop, Francisco Pascasio Moreno 49, VM8R+38 San Carlos de Bariloche; \"Closed · Opens 10:30 AM\"; jauja.com.ar. The row's query gave a two-branch list, so q now names the street Maps shows.",
+          "ok": "2026-11",
+          "q_changed_to": "Helados Jauja, Francisco Pascasio Moreno 49, San Carlos de Bariloche"
+        },
+        {
+          "name": "La Waflería",
+          "src": "Google Maps",
+          "page_name": "La Waflería",
+          "evidence": "\"La Waflería\", Av. San Martín 640 Local 1, M4F5+X7 El Chaltén; \"Closed · Opens 7:30 AM\"",
+          "ok": "2026-11"
+        }
+      ],
+      "kept_without_ok": [],
+      "removed": []
     },
     {
-      "name": "Bodegón Fueguino",
-      "src": "Google Maps",
-      "page_name": "Bodegón Fueguino",
-      "evidence": "\"Bodegón Fueguino\", Av. San Martín 859, 5MRR+X2 Ushuaia; \"Closed · Opens 12 PM Tue\"",
-      "ok": "2026-11"
-    },
-    {
-      "name": "Viva la Pepa",
-      "src": "Google Maps",
-      "page_name": "Viva la Pepa",
-      "evidence": "\"Viva la Pepa\", Creperie, Amado 833, MP6Q+JM El Calafate; \"Closed · Opens 10 AM\"; owner post \"Abrimos todos los días de 10 a 22\"",
-      "ok": "2026-11"
-    },
-    {
-      "name": "Helados Jauja",
-      "src": "Google Maps",
-      "page_name": "Helados Jauja",
-      "evidence": "\"Helados Jauja\", Ice cream shop, Francisco Pascasio Moreno 49, VM8R+38 San Carlos de Bariloche; \"Closed · Opens 10:30 AM\"; jauja.com.ar. The row's query gave a two-branch list, so q now names the street Maps shows.",
-      "ok": "2026-11",
-      "q_changed_to": "Helados Jauja, Francisco Pascasio Moreno 49, San Carlos de Bariloche"
-    },
-    {
-      "name": "La Waflería",
-      "src": "Google Maps",
-      "page_name": "La Waflería",
-      "evidence": "\"La Waflería\", Av. San Martín 640 Local 1, M4F5+X7 El Chaltén; \"Closed · Opens 7:30 AM\"",
-      "ok": "2026-11"
+      "town": "ar-patagonia",
+      "kind": "eats + sights",
+      "checked": "2026-11-23",
+      "rule": "library-check.cjs, then the Google Maps Reviews tab sorted by newest: ok only when not marked closed, with a review from the last six months, and the map's name matching the page's.",
+      "agents": "one Haiku agent; 5 rows from El Chaltén's own site and Sol Salute (2025) passed library-check.cjs, all went in; no dated page named a place to eat",
+      "added": [
+        {
+          "name": "Centro Andino El Chaltén",
+          "page_name": "Centro Andino El Chaltén",
+          "src": "https://elchalten.com/v4/en/frequently-asked-questions-about-visit-el-chalten.php",
+          "date": "2026-11",
+          "map": "Google Maps Las Loicas 700, 79 reviews, newest '11 hours ago'"
+        },
+        {
+          "name": "Chorrillo del Salto",
+          "page_name": "Chorrillo del Salto",
+          "src": "https://elchalten.com/v4/en/frequently-asked-questions-about-visit-el-chalten.php",
+          "date": "2026-11",
+          "map": "Google Maps 6,531 reviews, newest '17 hours ago'"
+        },
+        {
+          "name": "Cerro Otto",
+          "page_name": "Cerro Otto",
+          "src": "https://solsalute.com/blog/argentina-with-kids",
+          "date": "2025-05",
+          "map": "Google Maps 'Teleférico Cerro Otto', 25,849 reviews, newest '1 day ago'"
+        },
+        {
+          "name": "Cerro Campanario",
+          "page_name": "Cerro Campanario",
+          "src": "https://solsalute.com/blog/argentina-with-kids",
+          "date": "2025-05",
+          "map": "Google Maps 1,698 reviews, newest '14 hours ago'"
+        },
+        {
+          "name": "Refugio Frey",
+          "page_name": "Refugio Frey",
+          "src": "https://solsalute.com/blog/argentina-with-kids",
+          "date": "2025-05",
+          "map": "Google Maps Cerro Catedral, 1,586 reviews, newest 'last week'"
+        }
+      ],
+      "left_out": [],
+      "estimates": "Ages and visit hours are placeholders; prices and opening notes are the pages' own."
     }
-  ],
-  "kept_without_ok": [],
-  "removed": []
+  ]
 }

@@ -275,6 +275,388 @@
           "q": "Pittville Park, Cheltenham",
           "ok": "2026-11",
           "src": "https://cheltenham.gov.uk/communities-and-leisure/parks-and-open-spaces/sports-and-play-facilities/"
+        },
+        {
+          "local": "",
+          "ages": [
+            0,
+            1,
+            2,
+            2
+          ],
+          "hrs": 1,
+          "io": "out",
+          "pram": "part",
+          "price": {
+            "th": "เช็กราคาก่อนไป",
+            "en": "Check the price"
+          },
+          "book": "none",
+          "src": "https://www.theoldnewinn.co.uk/news/family-days-out-in-the-cotswolds",
+          "name": {
+            "th": "เขาวงกตแมลงปอ",
+            "en": "The Dragonfly Maze"
+          },
+          "kind": "park",
+          "area": {
+            "th": "เบอร์ตันออนเดอะวอเตอร์",
+            "en": "Bourton-on-the-Water"
+          },
+          "what": {
+            "th": "เขาวงกตต้นยู มีปริศนาพาไปหาแมลงปอทองที่ซ่อนอยู่",
+            "en": "A yew hedge maze with clues to a hidden golden dragonfly"
+          },
+          "why": {
+            "th": "สนุกสำหรับเด็ก 6 ขวบขึ้นไป",
+            "en": "Great fun for children of 6 and up"
+          },
+          "tip": {
+            "th": "ใช้เวลา 20–30 นาที",
+            "en": "Takes 20–30 minutes"
+          },
+          "q": "The Dragonfly Maze, Bourton-on-the-Water",
+          "ok": "2026-11"
+        },
+        {
+          "local": "",
+          "ages": [
+            1,
+            1,
+            1,
+            1
+          ],
+          "hrs": 2,
+          "io": "out",
+          "pram": "part",
+          "price": {
+            "th": "เช็กราคาก่อนไป",
+            "en": "Check the price"
+          },
+          "book": "none",
+          "src": "https://www.theoldnewinn.co.uk/news/family-days-out-in-the-cotswolds",
+          "name": {
+            "th": "ทุ่งลาเวนเดอร์คอตส์โวลด์ส",
+            "en": "Cotswold Lavender"
+          },
+          "kind": "nature",
+          "area": {
+            "th": "สโนว์ชิลล์",
+            "en": "Snowshill"
+          },
+          "what": {
+            "th": "ฟาร์มลาเวนเดอร์ เที่ยวสบายๆ ได้ใช้ประสาทสัมผัส ทุกวัย",
+            "en": "A lavender farm, a calm and sensory outing for all ages"
+          },
+          "why": {
+            "th": "เด็กวิ่งเล่นระหว่างแถวลาเวนเดอร์ได้",
+            "en": "Children run between the rows"
+          },
+          "tip": {
+            "th": "เปิดช่วงปลาย มิ.ย.–ต้น ส.ค. เท่านั้น",
+            "en": "Late June to early August only"
+          },
+          "q": "Cotswold Lavender, Hill Barn Farm, Snowshill",
+          "ok": "2026-11"
+        },
+        {
+          "local": "",
+          "ages": [
+            1,
+            1,
+            1,
+            1
+          ],
+          "hrs": 3,
+          "io": "both",
+          "pram": "part",
+          "price": {
+            "th": "เช็กราคาก่อนไป",
+            "en": "Check the price"
+          },
+          "book": "none",
+          "src": "https://www.soglos.com/hot-list/family/best-things-to-do-with-kids-in-the-cotswolds/25456/",
+          "name": {
+            "th": "ปราสาทและสวนซูดลีย์",
+            "en": "Sudeley Castle and Gardens"
+          },
+          "kind": "culture",
+          "area": {
+            "th": "วินช์คอมบ์",
+            "en": "Winchcombe"
+          },
+          "what": {
+            "th": "ปราสาทยุคทิวดอร์ มีสวน ซากปรักหักพัง และรูปปั้นสัตว์ขนาดเท่าจริง",
+            "en": "A Tudor castle with gardens, ruins and life-size animal sculptures"
+          },
+          "why": {
+            "th": "มีสนามเด็กเล่นผจญภัย ป้อม และเส้นทางวิบาก",
+            "en": "An adventure playground with a fort and an obstacle course"
+          },
+          "q": "Sudeley Castle, Winchcombe",
+          "ok": "2026-11"
+        },
+        {
+          "local": "",
+          "ages": [
+            1,
+            1,
+            1,
+            1
+          ],
+          "hrs": 3,
+          "io": "out",
+          "pram": "yes",
+          "price": {
+            "th": "เช็กราคาก่อนไป",
+            "en": "Check the price"
+          },
+          "book": "none",
+          "src": "https://www.soglos.com/hot-list/family/best-things-to-do-with-kids-in-the-cotswolds/25456/",
+          "name": {
+            "th": "สวนรุกขชาติแห่งชาติเวสตันเบิร์ต",
+            "en": "Westonbirt, The National Arboretum"
+          },
+          "kind": "nature",
+          "area": {
+            "th": "ใกล้เท็ตเบอรี",
+            "en": "Near Tetbury"
+          },
+          "what": {
+            "th": "สวนรุกขชาติ 600 เอเคอร์ มีเส้นทางเดินและกิจกรรมครอบครัวทั้งปี",
+            "en": "A 600-acre arboretum with trails and family activities through the year"
+          },
+          "why": {
+            "th": "มีทางเดินบนยอดไม้สูง 13 ม. และรูปปั้นกรัฟฟาโลให้ตามหา",
+            "en": "A treetop walkway 13 m up, and Gruffalo sculptures to find"
+          },
+          "q": "Westonbirt The National Arboretum, Tetbury",
+          "ok": "2026-11"
+        },
+        {
+          "local": "",
+          "ages": [
+            1,
+            1,
+            1,
+            1
+          ],
+          "hrs": 2,
+          "io": "out",
+          "pram": "part",
+          "price": {
+            "th": "เช็กราคาก่อนไป",
+            "en": "Check the price"
+          },
+          "book": "none",
+          "src": "https://www.soglos.com/hot-list/family/best-things-to-do-with-kids-in-the-cotswolds/25456/",
+          "name": {
+            "th": "สวนโรโกโกเพนส์วิก",
+            "en": "Painswick Rococo Garden"
+          },
+          "kind": "park",
+          "area": {
+            "th": "เพนส์วิก",
+            "en": "Painswick"
+          },
+          "what": {
+            "th": "สวนโรโกโกที่สมบูรณ์แห่งเดียวในอังกฤษ เต็มไปด้วยอาคารประดับแปลกตา",
+            "en": "The UK’s only complete rococo garden, full of follies"
+          },
+          "why": {
+            "th": "มีที่เล่นไม้ เขาวงกต และทางเดินในป่า",
+            "en": "A wooden play area, a maze and woodland trails"
+          },
+          "q": "Painswick Rococo Garden, Gloucester Road, Painswick",
+          "ok": "2026-11"
+        },
+        {
+          "local": "",
+          "ages": [
+            2,
+            2,
+            1,
+            2
+          ],
+          "hrs": 1,
+          "io": "out",
+          "pram": "part",
+          "price": {
+            "th": "เช็กราคาก่อนไป",
+            "en": "Check the price"
+          },
+          "book": "req",
+          "src": "https://www.soglos.com/hot-list/family/best-things-to-do-with-kids-in-the-cotswolds/25456/",
+          "name": {
+            "th": "ฟาร์มอัลปากาคอตส์โวลด์ส",
+            "en": "Cotswold Alpacas"
+          },
+          "kind": "farm",
+          "area": {
+            "th": "คาวลีย์",
+            "en": "Cowley"
+          },
+          "what": {
+            "th": "ได้เจออัลปากา และเดินนำอัลปากาผ่านหมู่บ้านคาวลีย์",
+            "en": "Alpacas to meet, and guided walks through Cowley"
+          },
+          "why": {
+            "th": "มีกิจกรรมทักทายสำหรับเด็กต่ำกว่า 5 ขวบ เด็ก 10 ขวบขึ้นไปจูงอัลปากาเดินได้",
+            "en": "Meet-and-greets for under-fives; from 10 children can lead an alpaca"
+          },
+          "q": "Cotswold Alpacas, The Dutch Barn, Cowley, Cheltenham",
+          "ok": "2026-11"
+        },
+        {
+          "local": "",
+          "ages": [
+            2,
+            2,
+            1,
+            0
+          ],
+          "hrs": 2,
+          "io": "in",
+          "pram": "part",
+          "price": {
+            "th": "เช็กราคาก่อนไป",
+            "en": "Check the price"
+          },
+          "book": "none",
+          "src": "https://www.staycotswold.com/ten-family-friendly-things-to-do-in-the-cotswolds/",
+          "name": {
+            "th": "โฮคัสโพคัสเพลย์",
+            "en": "Hocus Pocus Play"
+          },
+          "kind": "play",
+          "area": {
+            "th": "แฟร์ฟอร์ด",
+            "en": "Fairford"
+          },
+          "what": {
+            "th": "ที่เล่นแบบนุ่มธีมเวทมนตร์ มีป่ามหัศจรรย์ นิทาน และเวิร์กช็อป",
+            "en": "A magical soft-play with enchanted forests, stories and workshops"
+          },
+          "why": {
+            "th": "ป่ามหัศจรรย์และการเล่านิทาน มีคาเฟ่ขายของว่าง",
+            "en": "Enchanted forests and storytelling, with a café for treats"
+          },
+          "q": "Hocus Pocus Play, Whelford Road, Fairford",
+          "ok": "2026-11"
+        },
+        {
+          "local": "",
+          "ages": [
+            1,
+            2,
+            2,
+            2
+          ],
+          "hrs": 2,
+          "io": "in",
+          "pram": "part",
+          "price": {
+            "th": "เช็กราคาก่อนไป",
+            "en": "Check the price"
+          },
+          "book": "none",
+          "src": "https://www.staycotswold.com/ten-family-friendly-things-to-do-in-the-cotswolds/",
+          "name": {
+            "th": "ร้านเพนต์เซรามิกเพนต์อิตยัวร์เซลฟ์",
+            "en": "Paint It Yourself Pottery"
+          },
+          "kind": "culture",
+          "area": {
+            "th": "ถนนวินช์คอมบ์ เชลต์แนม",
+            "en": "Winchcombe Street, Cheltenham"
+          },
+          "what": {
+            "th": "สตูดิโอเพนต์เซรามิกสำหรับวันฝนตก",
+            "en": "A pottery-painting studio for a rainy day"
+          },
+          "why": {
+            "th": "ได้ทำงานศิลปะกับเด็ก มีชุดอุปกรณ์ให้กลับไปทำต่อ",
+            "en": "Creative time with little ones; kits to take home too"
+          },
+          "tip": {
+            "th": "เปิดทุกวัน",
+            "en": "Open seven days a week"
+          },
+          "q": "Paint It Yourself Pottery Co, 76 Winchcombe Street, Cheltenham",
+          "ok": "2026-11"
+        },
+        {
+          "local": "",
+          "ages": [
+            0,
+            1,
+            2,
+            2
+          ],
+          "hrs": 2,
+          "io": "out",
+          "pram": "part",
+          "price": {
+            "th": "เช็กราคาก่อนไป",
+            "en": "Check the price"
+          },
+          "book": "none",
+          "src": "https://www.staycotswold.com/ten-family-friendly-things-to-do-in-the-cotswolds/",
+          "name": {
+            "th": "เส้นทางเชือกต่ำ ฟาร์พีก",
+            "en": "Low ropes at Far Peak"
+          },
+          "kind": "play",
+          "area": {
+            "th": "นอร์ธลีช",
+            "en": "Northleach"
+          },
+          "what": {
+            "th": "เส้นทางเชือกระดับต่ำ มีคาเฟ่ในที่",
+            "en": "A low ropes course with a café on site"
+          },
+          "why": {
+            "th": "แบบเชือกสูงในขนาดเด็ก เล่นได้ครึ่งวัน",
+            "en": "A child-sized version of a high ropes park, for half a day"
+          },
+          "q": "Far Peak, Northleach",
+          "ok": "2026-11"
+        },
+        {
+          "local": "",
+          "ages": [
+            1,
+            1,
+            1,
+            1
+          ],
+          "hrs": 3,
+          "io": "in",
+          "pram": "part",
+          "price": {
+            "th": "เช็กราคาก่อนไป",
+            "en": "Check the price"
+          },
+          "book": "none",
+          "src": "https://www.soglos.com/hot-list/family/best-things-to-do-with-kids-in-the-cotswolds/25456/",
+          "name": {
+            "th": "รถไฟไอน้ำกลอสเตอร์เชอร์ วอร์ริกเชอร์",
+            "en": "Gloucestershire Warwickshire Steam Railway"
+          },
+          "kind": "ride",
+          "area": {
+            "th": "วินช์คอมบ์ บรอดเวย์ และสนามม้าเชลต์แนม",
+            "en": "Winchcombe, Broadway and Cheltenham Racecourse"
+          },
+          "what": {
+            "th": "รถไฟไอน้ำมรดกวิ่งผ่านชนบทคอตส์โวลด์ส",
+            "en": "A heritage steam railway through the Cotswold countryside"
+          },
+          "why": {
+            "th": "ขึ้นลงตามสถานีได้ มีขบวนพิเศษช่วงคริสต์มาส",
+            "en": "Hop on and off at the stations; special Christmas trains"
+          },
+          "q": "Gloucestershire Warwickshire Steam Railway, Winchcombe Station",
+          "ok": "2026-11"
         }
       ]
     },
@@ -535,6 +917,470 @@
           "q": "Holyrood Park, Edinburgh",
           "ok": "2026-11",
           "src": "https://travelforkids.com/Funtodo/Scotland/edinburgh-city/edinburgh-arthurs-seat-holyrood-park.htm"
+        },
+        {
+          "local": "",
+          "ages": [
+            1,
+            1,
+            1,
+            1
+          ],
+          "hrs": 1,
+          "io": "out",
+          "pram": "part",
+          "price": {
+            "th": "≈ £7.50 (ขึ้นอนุสาวรีย์)",
+            "en": "≈ £7.50 (the monument)"
+          },
+          "book": "none",
+          "src": "https://everythingedinburgh.com/edinburgh-with-kids/",
+          "name": {
+            "th": "เนินคาลตันและอนุสาวรีย์เนลสัน",
+            "en": "Calton Hill and the Nelson Monument"
+          },
+          "kind": "views",
+          "area": {
+            "th": "เนินคาลตัน",
+            "en": "Calton Hill"
+          },
+          "what": {
+            "th": "ขึ้นอนุสาวรีย์ไปดูลูกบอลบอกเวลาตกลงพร้อมเสียงปืนบ่ายโมง",
+            "en": "Climb the monument to see the time ball drop as the one o’clock gun fires"
+          },
+          "why": {
+            "th": "ขึ้นจากวอเตอร์ลูเพลสไม่ไกล ขาเล็กๆ ไหว",
+            "en": "A short climb from Waterloo Place, fine for little legs"
+          },
+          "tip": {
+            "th": "อนุสาวรีย์เปิดทุกวัน 10:00–15:30",
+            "en": "Monument open daily 10:00–15:30"
+          },
+          "q": "Nelson Monument, 32 Calton Hill, Edinburgh",
+          "ok": "2026-11"
+        },
+        {
+          "local": "",
+          "ages": [
+            0,
+            1,
+            2,
+            2
+          ],
+          "hrs": 2,
+          "io": "in",
+          "pram": "part",
+          "price": {
+            "th": "≈ £22 ผู้ใหญ่ · £11 อายุ 5–17 ปี",
+            "en": "≈ £22 a grown-up · £11 ages 5–17"
+          },
+          "book": "none",
+          "src": "https://everythingedinburgh.com/edinburgh-with-kids/",
+          "name": {
+            "th": "พระราชวังโฮลีรูดเฮาส์",
+            "en": "Palace of Holyroodhouse"
+          },
+          "kind": "culture",
+          "area": {
+            "th": "ปลายถนนรอยัลไมล์",
+            "en": "Foot of the Royal Mile"
+          },
+          "what": {
+            "th": "ที่ประทับทางการของกษัตริย์ในสกอตแลนด์ มีซากแอบบีย์และสวน",
+            "en": "The King’s official residence in Scotland, with the abbey ruins and garden"
+          },
+          "why": {
+            "th": "มีคู่มือมัลติมีเดียให้ครอบครัวเดินชม",
+            "en": "A multimedia guide for families to explore with"
+          },
+          "q": "Palace of Holyroodhouse, Canongate, Edinburgh",
+          "ok": "2026-11"
+        },
+        {
+          "local": "",
+          "ages": [
+            0,
+            1,
+            2,
+            2
+          ],
+          "hrs": 2,
+          "io": "both",
+          "pram": "part",
+          "price": {
+            "th": "≈ £7.50 ผู้ใหญ่ (ออนไลน์) · £4.50 อายุ 7–15 ปี",
+            "en": "≈ £7.50 a grown-up online · £4.50 ages 7–15"
+          },
+          "book": "none",
+          "src": "https://everythingedinburgh.com/edinburgh-with-kids/",
+          "name": {
+            "th": "ปราสาทเครกมิลลาร์",
+            "en": "Craigmillar Castle"
+          },
+          "kind": "culture",
+          "area": {
+            "th": "ตะวันออกเฉียงใต้ของเอดินบะระ",
+            "en": "South-east Edinburgh"
+          },
+          "what": {
+            "th": "หอปราสาทเก่าแก่ที่สุดแห่งหนึ่งของสกอตแลนด์ มีห้องโถงใหญ่และคุกให้ตามหา",
+            "en": "One of Scotland’s oldest tower houses, with a great hall and a prison to find"
+          },
+          "why": {
+            "th": "เงียบกว่าปราสาทเอดินบะระ และเห็นวิวเมือง",
+            "en": "Quieter than Edinburgh Castle, with views over the city"
+          },
+          "tip": {
+            "th": "เม.ย.–ก.ย. 9:30–17:00 ต.ค.–มี.ค. 10:00–16:00",
+            "en": "9:30–17:00 April–September, 10:00–16:00 October–March"
+          },
+          "q": "Craigmillar Castle, Craigmillar Castle Road, Edinburgh",
+          "ok": "2026-11"
+        },
+        {
+          "local": "",
+          "ages": [
+            0,
+            1,
+            2,
+            2
+          ],
+          "hrs": 2,
+          "io": "in",
+          "pram": "part",
+          "price": {
+            "th": "≈ £12 ตั้งแต่ 5 ขวบ",
+            "en": "≈ £12 from age 5"
+          },
+          "book": "none",
+          "src": "https://everythingedinburgh.com/edinburgh-with-kids/",
+          "name": {
+            "th": "ลานสเก็ตเมอร์เรย์ฟิลด์",
+            "en": "Murrayfield Ice Arena"
+          },
+          "kind": "play",
+          "area": {
+            "th": "เมอร์เรย์ฟิลด์",
+            "en": "Murrayfield"
+          },
+          "what": {
+            "th": "ลานสเก็ตสาธารณะทุกวัน มีรองเท้าให้เช่า",
+            "en": "Public skating every day, with skate hire"
+          },
+          "why": {
+            "th": "เด็กต่ำกว่า 5 ขวบเล่นฟรี",
+            "en": "Under-fives skate free"
+          },
+          "q": "Murrayfield Ice Arena, 13 Riversdale Crescent, Edinburgh",
+          "ok": "2026-11"
+        },
+        {
+          "local": "",
+          "ages": [
+            0,
+            1,
+            2,
+            2
+          ],
+          "hrs": 2,
+          "io": "in",
+          "pram": "part",
+          "price": {
+            "th": "เช็กราคาก่อนไป",
+            "en": "Check the price"
+          },
+          "book": "rec",
+          "src": "https://everythingedinburgh.com/edinburgh-with-kids/",
+          "name": {
+            "th": "เอเลียนร็อก",
+            "en": "Alien Rock"
+          },
+          "kind": "play",
+          "area": {
+            "th": "นิวเฮเวน",
+            "en": "Newhaven"
+          },
+          "what": {
+            "th": "ศูนย์ปีนผาในร่ม มีเส้นทางถึง 200 เส้น",
+            "en": "An indoor climbing centre with up to 200 routes"
+          },
+          "why": {
+            "th": "มีคลับเด็กและคลาสทดลอง",
+            "en": "A kids’ club and taster sessions"
+          },
+          "q": "Alien Rock, 8 Pier Place, Edinburgh",
+          "ok": "2026-11"
+        },
+        {
+          "local": "",
+          "ages": [
+            1,
+            2,
+            2,
+            2
+          ],
+          "hrs": 2,
+          "io": "in",
+          "pram": "part",
+          "price": {
+            "th": "เช็กราคาก่อนไป",
+            "en": "Check the price"
+          },
+          "book": "none",
+          "src": "https://everythingedinburgh.com/edinburgh-with-kids/",
+          "name": {
+            "th": "แกรวิตีแอ็กทีฟ เอดินบะระ",
+            "en": "Gravity Active Edinburgh"
+          },
+          "kind": "play",
+          "area": {
+            "th": "ฟาวน์เทนพาร์ก",
+            "en": "Fountain Park"
+          },
+          "what": {
+            "th": "สวนแทรมโพลีน รอบ 60, 90 และ 120 นาที",
+            "en": "A trampoline park with 60-, 90- and 120-minute sessions"
+          },
+          "why": {
+            "th": "มีรอบพิเศษสำหรับเด็กเล็ก",
+            "en": "Special sessions for toddlers"
+          },
+          "q": "Gravity Active Edinburgh, Fountain Park, 130 Dundee Street, Edinburgh",
+          "ok": "2026-11"
+        },
+        {
+          "local": "",
+          "ages": [
+            0,
+            1,
+            1,
+            2
+          ],
+          "hrs": 1,
+          "io": "in",
+          "pram": "part",
+          "price": {
+            "th": "ฟรี",
+            "en": "Free"
+          },
+          "book": "none",
+          "src": "https://www.edinburghtourism.org/rainy-day-kids-edinburgh/",
+          "name": {
+            "th": "หอศิลป์แห่งชาติสกอตแลนด์",
+            "en": "Scottish National Gallery"
+          },
+          "kind": "museum",
+          "area": {
+            "th": "เดอะเมานด์",
+            "en": "The Mound"
+          },
+          "what": {
+            "th": "หอศิลป์แห่งชาติบนเดอะเมานด์ เข้าฟรี",
+            "en": "The national art gallery on the Mound, free to enter"
+          },
+          "why": {
+            "th": "มีเวิร์กช็อปครอบครัวฟรีวันอาทิตย์ช่วงเปิดเทอม",
+            "en": "Free Sunday family workshops in term time"
+          },
+          "q": "Scottish National Gallery, The Mound, Edinburgh",
+          "ok": "2026-11"
+        },
+        {
+          "local": "",
+          "ages": [
+            1,
+            1,
+            1,
+            1
+          ],
+          "hrs": 1,
+          "io": "in",
+          "pram": "part",
+          "price": {
+            "th": "เช็กราคาก่อนไป",
+            "en": "Check the price"
+          },
+          "book": "req",
+          "src": "https://www.edinburghtourism.org/rainy-day-kids-edinburgh/",
+          "name": {
+            "th": "เดอะช็อกโกลาทาเรียม",
+            "en": "The Chocolatarium"
+          },
+          "kind": "museumkid",
+          "area": {
+            "th": "ถนนแครนสตัน ข้างรอยัลไมล์",
+            "en": "Cranston Street, off the Royal Mile"
+          },
+          "what": {
+            "th": "ทัวร์ทำช็อกโกแลต",
+            "en": "A chocolate-making tour"
+          },
+          "why": {
+            "th": "เด็กได้ทำช็อกโกแลตแท่งของตัวเองกลับบ้าน",
+            "en": "Children make their own bar to take home"
+          },
+          "tip": {
+            "th": "จองตั๋วตามรอบออนไลน์",
+            "en": "Book timed tickets online"
+          },
+          "q": "The Chocolatarium, 3-5 Cranston Street, Edinburgh",
+          "ok": "2026-11"
+        },
+        {
+          "local": "",
+          "ages": [
+            1,
+            2,
+            2,
+            2
+          ],
+          "hrs": 2,
+          "io": "in",
+          "pram": "part",
+          "price": {
+            "th": "≈ £7.99",
+            "en": "≈ £7.99"
+          },
+          "book": "req",
+          "src": "https://www.edinburghtourism.org/rainy-day-kids-edinburgh/",
+          "name": {
+            "th": "สระว่ายน้ำรอยัลคอมมอนเวลท์",
+            "en": "Royal Commonwealth Pool"
+          },
+          "kind": "play",
+          "area": {
+            "th": "ถนนดัลคีธ",
+            "en": "Dalkeith Road"
+          },
+          "what": {
+            "th": "สระ 50 ม. มีสระกระโดด สระฝึก และที่เล่นนุ่มแคลมเบอร์ส",
+            "en": "A 50 m pool with a diving pool, a teaching pool and Clambers soft play"
+          },
+          "why": {
+            "th": "ว่ายน้ำครอบครัวและที่เล่นนุ่มในที่เดียว",
+            "en": "Family fun swims and soft play under one roof"
+          },
+          "tip": {
+            "th": "รอบว่ายน้ำครอบครัวต้องจองก่อน",
+            "en": "Family fun swims must be booked"
+          },
+          "q": "Royal Commonwealth Pool, 21 Dalkeith Road, Edinburgh",
+          "ok": "2026-11"
+        },
+        {
+          "local": "",
+          "ages": [
+            2,
+            2,
+            1,
+            0
+          ],
+          "hrs": 2,
+          "io": "in",
+          "pram": "part",
+          "price": {
+            "th": "เช็กราคาก่อนไป",
+            "en": "Check the price"
+          },
+          "book": "none",
+          "src": "https://www.edinburghtourism.org/rainy-day-kids-edinburgh/",
+          "name": {
+            "th": "ไทม์ทวิสเตอร์ส",
+            "en": "TimeTwisters"
+          },
+          "kind": "play",
+          "area": {
+            "th": "ไซต์ฮิลล์",
+            "en": "Sighthill"
+          },
+          "what": {
+            "th": "ที่เล่นนุ่มธีมอียิปต์โบราณ มีโครงปีน สไลเดอร์ และบ่อบอล",
+            "en": "An Ancient Egypt-themed soft play with frames, slides and ball pits"
+          },
+          "why": {
+            "th": "มีโซนแยกสำหรับทารกและเด็กเล็ก",
+            "en": "A separate baby and toddler area"
+          },
+          "q": "Timetwisters Play Centre, Bankhead Drive, Edinburgh",
+          "ok": "2026-11"
+        },
+        {
+          "local": "",
+          "ages": [
+            2,
+            2,
+            1,
+            0
+          ],
+          "hrs": 2,
+          "io": "in",
+          "pram": "part",
+          "price": {
+            "th": "เช็กราคาก่อนไป",
+            "en": "Check the price"
+          },
+          "book": "none",
+          "src": "https://www.edinburghtourism.org/rainy-day-kids-edinburgh/",
+          "name": {
+            "th": "วันเดอร์เวิลด์",
+            "en": "Wonder World Soft Play"
+          },
+          "kind": "play",
+          "area": {
+            "th": "ถนนอีสเตอร์ ลีธ",
+            "en": "Easter Road, Leith"
+          },
+          "what": {
+            "th": "ที่เล่นนุ่ม มีบ่อบอล รางโกคาร์ต สไลเดอร์ดิ่ง และสนามฟุตบอล",
+            "en": "Soft play with ball pools, a go-kart track, a drop slide and a football pitch"
+          },
+          "why": {
+            "th": "ที่โปรดของครอบครัวฝั่งเหนือของเมือง",
+            "en": "A favourite for north Edinburgh families"
+          },
+          "q": "Wonder World Soft Play, 377 Easter Road, Edinburgh",
+          "ok": "2026-11"
+        },
+        {
+          "local": "",
+          "ages": [
+            2,
+            2,
+            0,
+            0
+          ],
+          "hrs": 2,
+          "io": "in",
+          "pram": "part",
+          "price": {
+            "th": "เช็กราคาก่อนไป",
+            "en": "Check the price"
+          },
+          "book": "none",
+          "src": "https://www.edinburghtourism.org/rainy-day-kids-edinburgh/",
+          "name": {
+            "th": "ทัมเบิลส์ พอร์โตเบลโล",
+            "en": "Tumbles, Portobello"
+          },
+          "kind": "play",
+          "area": {
+            "th": "พอร์โตเบลโล",
+            "en": "Portobello"
+          },
+          "what": {
+            "th": "ที่เล่นนุ่มแนวยิมนาสติก แบ่งสามโซนตามวัย",
+            "en": "Gymnastics-style soft play in three age zones"
+          },
+          "why": {
+            "th": "เหมาะมากกับเด็กต่ำกว่า 2 ขวบ",
+            "en": "Especially good for under-twos"
+          },
+          "tip": {
+            "th": "ไปต่อเดินเล่นหาดพอร์โตเบลโลได้",
+            "en": "Pair with a walk on Portobello beach"
+          },
+          "q": "Tumbles at Portobello, 20 Westbank Street, Edinburgh",
+          "ok": "2026-11"
         }
       ]
     },
@@ -795,6 +1641,466 @@
           "q": "Tarn Hows, Coniston",
           "ok": "2026-11",
           "src": "https://www.nationaltrust.org.uk/place-pages/4554/pages/opening-times-calendar"
+        },
+        {
+          "local": "",
+          "ages": [
+            1,
+            1,
+            1,
+            1
+          ],
+          "hrs": 2,
+          "io": "both",
+          "pram": "part",
+          "price": {
+            "th": "เช็กราคาก่อนไป",
+            "en": "Check the price"
+          },
+          "book": "none",
+          "src": "https://lakedistrictkids.co.uk/things-to-do/",
+          "name": {
+            "th": "ปราสาทเรย์",
+            "en": "Wray Castle"
+          },
+          "kind": "culture",
+          "area": {
+            "th": "ฝั่งตะวันตกทะเลสาบวินเดอร์เมียร์",
+            "en": "Windermere west shore"
+          },
+          "what": {
+            "th": "ปราสาทแบบกอทิกยุควิกตอเรีย มีป่าและทางเดินริมทะเลสาบ",
+            "en": "A Victorian mock-Gothic castle with woods and lakeshore paths"
+          },
+          "why": {
+            "th": "มีบริเวณให้สำรวจและกิจกรรมตามฤดูกาล",
+            "en": "Grounds to explore and seasonal activities"
+          },
+          "tip": {
+            "th": "มาทางเรือจะได้อารมณ์ผจญภัยยิ่งขึ้น",
+            "en": "Arrive by boat for extra adventure"
+          },
+          "q": "Wray Castle, Low Wray, Ambleside",
+          "ok": "2026-11"
+        },
+        {
+          "local": "",
+          "ages": [
+            1,
+            2,
+            2,
+            1
+          ],
+          "hrs": 3,
+          "io": "out",
+          "pram": "part",
+          "price": {
+            "th": "เช็กราคาก่อนไป",
+            "en": "Check the price"
+          },
+          "book": "none",
+          "src": "https://lakedistrictkids.co.uk/things-to-do/",
+          "name": {
+            "th": "ปราสาทและสวนโลว์เธอร์",
+            "en": "Lowther Castle and Gardens"
+          },
+          "kind": "play",
+          "area": {
+            "th": "โลว์เธอร์ ใกล้เพนริธ",
+            "en": "Lowther, near Penrith"
+          },
+          "what": {
+            "th": "ซากปราสาทและสวน มีสนามเด็กเล่นผจญภัยลอสต์คาสเซิล",
+            "en": "Castle ruins and gardens with the Lost Castle adventure playground"
+          },
+          "why": {
+            "th": "สนามเด็กเล่นใหญ่ มีหอคอย สไลเดอร์ และซิปไลน์",
+            "en": "A huge playground of towers, slides and zip wires"
+          },
+          "q": "Lowther Castle & Gardens, Lowther, Penrith",
+          "ok": "2026-11"
+        },
+        {
+          "local": "",
+          "ages": [
+            1,
+            1,
+            1,
+            1
+          ],
+          "hrs": 2,
+          "io": "both",
+          "pram": "part",
+          "price": {
+            "th": "เช็กราคาก่อนไป",
+            "en": "Check the price"
+          },
+          "book": "none",
+          "src": "https://lakedistrictkids.co.uk/things-to-do/",
+          "name": {
+            "th": "อัลลันแบงก์",
+            "en": "Allan Bank"
+          },
+          "kind": "culture",
+          "area": {
+            "th": "แกรสเมียร์",
+            "en": "Grasmere"
+          },
+          "what": {
+            "th": "บ้านเก่าของเวิร์ดสเวิร์ธเหนือแกรสเมียร์",
+            "en": "Wordsworth’s former home above Grasmere, now a National Trust house"
+          },
+          "why": {
+            "th": "มีเป้นักสำรวจให้ยืม และกระรอกแดงให้ตามหา",
+            "en": "Explorer backpacks and red squirrels to look for"
+          },
+          "q": "Allan Bank, Grasmere",
+          "ok": "2026-11"
+        },
+        {
+          "local": "",
+          "ages": [
+            2,
+            2,
+            2,
+            1
+          ],
+          "hrs": 3,
+          "io": "out",
+          "pram": "part",
+          "price": {
+            "th": "เช็กราคาก่อนไป",
+            "en": "Check the price"
+          },
+          "book": "none",
+          "src": "https://lakedistrictkids.co.uk/keswick/",
+          "name": {
+            "th": "สวนสัตว์ป่าเลคดิสตริกต์",
+            "en": "Lake District Wildlife Park"
+          },
+          "kind": "zoo",
+          "area": {
+            "th": "บาสเซนธ์เวต ทางเหนือของเคสวิก",
+            "en": "Bassenthwaite, north of Keswick"
+          },
+          "what": {
+            "th": "สัตว์กว่า 100 ชนิด ตั้งแต่แพนด้าแดง ลีเมอร์ ถึงนกล่าเหยื่อ",
+            "en": "Over 100 species, from red pandas and lemurs to birds of prey"
+          },
+          "why": {
+            "th": "ขนาดกำลังดีสำหรับเด็กเล็ก",
+            "en": "A manageable size for younger children"
+          },
+          "q": "Lake District Wildlife Park, Bassenthwaite, Keswick",
+          "ok": "2026-11"
+        },
+        {
+          "local": "",
+          "ages": [
+            1,
+            1,
+            1,
+            1
+          ],
+          "hrs": 2,
+          "io": "out",
+          "pram": "part",
+          "price": {
+            "th": "เช็กราคาก่อนไป",
+            "en": "Check the price"
+          },
+          "book": "req",
+          "src": "https://lakedistrictkids.co.uk/things-to-do/",
+          "name": {
+            "th": "อัลปากาลี เอเวอร์อาฟเตอร์",
+            "en": "Alpacaly Ever After"
+          },
+          "kind": "farm",
+          "area": {
+            "th": "เคสวิก",
+            "en": "Keswick"
+          },
+          "what": {
+            "th": "อัลปากาและลามะที่ช่วยมา ให้ทักทาย ให้อาหาร และจูงเดิน",
+            "en": "Rescued alpacas and llamas to meet, feed and walk"
+          },
+          "why": {
+            "th": "เด็กต่ำกว่า 10 ขวบเข้าร่วมได้ โดยมีผู้ใหญ่จูงอัลปากา",
+            "en": "Under-10s can join, with a grown-up leading the alpaca"
+          },
+          "q": "Alpacaly Ever After, Keswick",
+          "ok": "2026-11"
+        },
+        {
+          "local": "",
+          "ages": [
+            1,
+            1,
+            1,
+            1
+          ],
+          "hrs": 2,
+          "io": "out",
+          "pram": "part",
+          "price": {
+            "th": "เช็กราคาก่อนไป",
+            "en": "Check the price"
+          },
+          "book": "req",
+          "src": "https://lakedistrictkids.co.uk/things-to-do/",
+          "name": {
+            "th": "เดินจูงอัลปากาวอสต์วอเตอร์",
+            "en": "Wastwater Alpaca Trekking"
+          },
+          "kind": "farm",
+          "area": {
+            "th": "วอสเดลเฮด",
+            "en": "Wasdale Head"
+          },
+          "what": {
+            "th": "เดินจูงอัลปากาใต้เทือกเขาวอสเดล",
+            "en": "Alpaca walks below the Wasdale fells"
+          },
+          "why": {
+            "th": "การผจญภัยของครอบครัวที่เด็กจำได้นาน",
+            "en": "A family adventure children remember"
+          },
+          "q": "Wastwater Alpaca Trekking, Wasdale Head Hall Farm",
+          "ok": "2026-11"
+        },
+        {
+          "local": "",
+          "ages": [
+            1,
+            1,
+            1,
+            1
+          ],
+          "hrs": 1,
+          "io": "out",
+          "pram": "part",
+          "price": {
+            "th": "เช็กราคาก่อนไป",
+            "en": "Check the price"
+          },
+          "book": "none",
+          "src": "https://lakedistrictkids.co.uk/things-to-do/",
+          "name": {
+            "th": "เรือไอน้ำกอนโดลา",
+            "en": "Steam Yacht Gondola"
+          },
+          "kind": "ride",
+          "area": {
+            "th": "ทะเลสาบโคนิสตัน",
+            "en": "Coniston Water"
+          },
+          "what": {
+            "th": "เรือยอตไอน้ำยุควิกตอเรียปี 1859 ล่องพร้อมบรรยาย",
+            "en": "A restored Victorian steam yacht from 1859 on cruises with commentary"
+          },
+          "why": {
+            "th": "สนุกกับการนั่งเรือพลังไอน้ำ",
+            "en": "The fun of a steam-powered boat"
+          },
+          "tip": {
+            "th": "มีเที่ยวเดียวระยะสั้นด้วย",
+            "en": "Shorter one-way sailings too"
+          },
+          "q": "Steam Yacht Gondola, Coniston Pier, Coniston",
+          "ok": "2026-11"
+        },
+        {
+          "local": "",
+          "ages": [
+            1,
+            1,
+            1,
+            1
+          ],
+          "hrs": 2,
+          "io": "in",
+          "pram": "part",
+          "price": {
+            "th": "เช็กราคาก่อนไป",
+            "en": "Check the price"
+          },
+          "book": "none",
+          "src": "https://lakedistrictkids.co.uk/things-to-do/",
+          "name": {
+            "th": "รถไฟไอน้ำเลคไซด์และฮาเวอร์ธเวต",
+            "en": "Lakeside and Haverthwaite Railway"
+          },
+          "kind": "ride",
+          "area": {
+            "th": "ปลายด้านใต้ทะเลสาบวินเดอร์เมียร์",
+            "en": "South end of Windermere"
+          },
+          "what": {
+            "th": "รถไฟไอน้ำมรดกระหว่างฮาเวอร์ธเวตกับเลคไซด์",
+            "en": "A heritage steam railway between Haverthwaite and Lakeside"
+          },
+          "why": {
+            "th": "เส้นทางสั้น เหมาะกับเด็กเล็ก",
+            "en": "A short route, good for younger children"
+          },
+          "tip": {
+            "th": "ต่อกับเรือล่องทะเลสาบวินเดอร์เมียร์ได้",
+            "en": "Combine with a Windermere lake cruise"
+          },
+          "q": "Lakeside and Haverthwaite Railway, Haverthwaite Station",
+          "ok": "2026-11"
+        },
+        {
+          "local": "",
+          "ages": [
+            1,
+            1,
+            1,
+            1
+          ],
+          "hrs": 1,
+          "io": "in",
+          "pram": "part",
+          "price": {
+            "th": "เช็กราคาก่อนไป",
+            "en": "Check the price"
+          },
+          "book": "none",
+          "src": "https://lakedistrictkids.co.uk/things-to-do/",
+          "name": {
+            "th": "พัซลิงเพลส",
+            "en": "Puzzling Place"
+          },
+          "kind": "museumkid",
+          "area": {
+            "th": "เคสวิก",
+            "en": "Keswick"
+          },
+          "what": {
+            "th": "ภาพลวงตา โฮโลแกรม และห้องที่เหมือนไร้แรงโน้มถ่วง",
+            "en": "Optical illusions, holograms and rooms that seem to defy gravity"
+          },
+          "why": {
+            "th": "ได้ถ่ายรูปท่าที่เป็นไปไม่ได้",
+            "en": "Impossible photos to pose for"
+          },
+          "q": "Puzzling Place, Museum Square, Keswick",
+          "ok": "2026-11"
+        },
+        {
+          "local": "",
+          "ages": [
+            1,
+            1,
+            1,
+            1
+          ],
+          "hrs": 1,
+          "io": "in",
+          "pram": "part",
+          "price": {
+            "th": "เช็กราคาก่อนไป",
+            "en": "Check the price"
+          },
+          "book": "none",
+          "src": "https://lakedistrictkids.co.uk/keswick/",
+          "name": {
+            "th": "พิพิธภัณฑ์ดินสอเดอร์เวนต์",
+            "en": "Derwent Pencil Museum"
+          },
+          "kind": "museumkid",
+          "area": {
+            "th": "เคสวิก",
+            "en": "Keswick"
+          },
+          "what": {
+            "th": "เรื่องราวดินสอเลคแลนด์ มีดินสอสีแท่งใหญ่ที่สุดแห่งหนึ่งของโลก",
+            "en": "The story of Lakeland pencils, with one of the world’s largest coloured pencils"
+          },
+          "why": {
+            "th": "เหมาะกับวันฝนตก",
+            "en": "A good rainy-day choice"
+          },
+          "q": "Derwent Pencil Museum, Southey Works, Keswick",
+          "ok": "2026-11"
+        },
+        {
+          "local": "",
+          "ages": [
+            1,
+            2,
+            2,
+            2
+          ],
+          "hrs": 2,
+          "io": "in",
+          "pram": "part",
+          "price": {
+            "th": "เช็กราคาก่อนไป",
+            "en": "Check the price"
+          },
+          "book": "none",
+          "src": "https://lakedistrictkids.co.uk/keswick/",
+          "name": {
+            "th": "คองแอดเวนเจอร์",
+            "en": "Kong Adventure"
+          },
+          "kind": "play",
+          "area": {
+            "th": "เคสวิก",
+            "en": "Keswick"
+          },
+          "what": {
+            "th": "กำแพงปีนในร่ม ถ้ำจำลอง ภารกิจเชือก และที่เล่นนุ่ม",
+            "en": "Indoor climbing walls, caving, rope challenges and soft play"
+          },
+          "why": {
+            "th": "ทางเลือกวันฝนตก ใกล้พัซลิงเพลส",
+            "en": "A rainy-day option close to the Puzzling Place"
+          },
+          "q": "Kong Adventure, Heads Road, Keswick",
+          "ok": "2026-11"
+        },
+        {
+          "local": "",
+          "ages": [
+            1,
+            1,
+            1,
+            1
+          ],
+          "hrs": 2,
+          "io": "out",
+          "pram": "part",
+          "price": {
+            "th": "ฟรี",
+            "en": "Free"
+          },
+          "book": "none",
+          "src": "https://lakedistrictkids.co.uk/bowness-on-windermere/",
+          "name": {
+            "th": "มิลเลอร์กราวด์",
+            "en": "Millerground"
+          },
+          "kind": "park",
+          "area": {
+            "th": "ทางเหนือของโบว์เนส วินเดอร์เมียร์",
+            "en": "North of Bowness, Windermere"
+          },
+          "what": {
+            "th": "สวนริมทะเลสาบ มีสนามเด็กเล่น ท่าเรือเล็ก และหาดหิน",
+            "en": "A lakeside park with a playground, jetties and a stony beach"
+          },
+          "why": {
+            "th": "เล่นปาหินแฉลบน้ำและปิกนิกริมทะเลสาบ",
+            "en": "Skimming stones and a picnic by the lake"
+          },
+          "tip": {
+            "th": "จอดรถที่เรย์ริกเมโดว์ ห้องน้ำเปิดช่วงหน้าร้อน",
+            "en": "Park at Rayrigg Meadow; toilets open in summer"
+          },
+          "q": "Millerground, Windermere",
+          "ok": "2026-11"
         }
       ]
     },
@@ -1055,6 +2361,203 @@
           "q": "Flamingo Land, Kirby Misperton",
           "ok": "2026-11",
           "src": "https://www.flamingoland.co.uk/?p=12611"
+        },
+        {
+          "local": "",
+          "ages": [
+            2,
+            2,
+            2,
+            1
+          ],
+          "hrs": 3,
+          "io": "both",
+          "pram": "part",
+          "price": {
+            "th": "เช็กราคาก่อนไป",
+            "en": "Check the price"
+          },
+          "book": "none",
+          "src": "https://little-vikings.co.uk/rainy-days-york",
+          "name": {
+            "th": "เดอะเว็บ แอดเวนเจอร์พาร์ก",
+            "en": "The Web Adventure Park"
+          },
+          "kind": "play",
+          "area": {
+            "th": "ถนนวิกกินตัน ยอร์ก",
+            "en": "Wigginton Road, York"
+          },
+          "what": {
+            "th": "ที่เล่นแบบนุ่ม มีโครงปีนใหญ่ หมู่บ้านเล่น เครื่องเล่นสวนสนุก และสัตว์",
+            "en": "Soft play with a huge climbing frame, a play village, fair rides and animals"
+          },
+          "why": {
+            "th": "มีโซนทารก และเส้นทางนินจาสำหรับเด็กโต",
+            "en": "A baby zone, and a ninja course for older children"
+          },
+          "tip": {
+            "th": "เครื่องเล่นกลางแจ้งขึ้นกับสภาพอากาศ",
+            "en": "The outdoor rides depend on the weather"
+          },
+          "q": "The Web Adventure Park, Wigginton Road, York",
+          "ok": "2026-11"
+        },
+        {
+          "local": "",
+          "ages": [
+            0,
+            1,
+            2,
+            2
+          ],
+          "hrs": 1,
+          "io": "in",
+          "pram": "part",
+          "price": {
+            "th": "เช็กราคาก่อนไป",
+            "en": "Check the price"
+          },
+          "book": "rec",
+          "src": "https://little-vikings.co.uk/rainy-days-york",
+          "name": {
+            "th": "มินิกอล์ฟพ่อมดโฮลอินวันด์",
+            "en": "The Hole in Wand"
+          },
+          "kind": "play",
+          "area": {
+            "th": "ศูนย์คอปเปอร์เกต ยอร์ก",
+            "en": "Coppergate Centre, York"
+          },
+          "what": {
+            "th": "มินิกอล์ฟในร่มธีมพ่อมด",
+            "en": "Wizard-themed indoor minigolf"
+          },
+          "why": {
+            "th": "อยู่ในร่ม ระยะพอดี เหมาะกับเด็กโต",
+            "en": "Indoors and a good length; best for older children"
+          },
+          "tip": {
+            "th": "จองล่วงหน้า",
+            "en": "Book ahead"
+          },
+          "q": "The Hole In Wand, 14-16 Coppergate Walk, York",
+          "ok": "2026-11"
+        },
+        {
+          "local": "",
+          "ages": [
+            1,
+            2,
+            2,
+            2
+          ],
+          "hrs": 2,
+          "io": "in",
+          "pram": "part",
+          "price": {
+            "th": "เช็กราคาก่อนไป",
+            "en": "Check the price"
+          },
+          "book": "none",
+          "src": "https://little-vikings.co.uk/rainy-days-york",
+          "name": {
+            "th": "สตูดิโอเพนต์เซรามิกเรนโบว์ส",
+            "en": "Rainbows Ceramics"
+          },
+          "kind": "culture",
+          "area": {
+            "th": "บูธัม ยอร์ก",
+            "en": "Bootham, York"
+          },
+          "what": {
+            "th": "สตูดิโอเพนต์เซรามิกเอง มีเครื่องดื่ม",
+            "en": "A paint-your-own pottery studio with drinks"
+          },
+          "why": {
+            "th": "ผ่อนคลายในวันฝนตก",
+            "en": "Relaxing on a rainy day"
+          },
+          "q": "Rainbows Ceramics, 15-17 Bootham, York",
+          "ok": "2026-11"
+        },
+        {
+          "local": "",
+          "ages": [
+            1,
+            1,
+            2,
+            2
+          ],
+          "hrs": 2,
+          "io": "in",
+          "pram": "part",
+          "price": {
+            "th": "เช็กราคาก่อนไป",
+            "en": "Check the price"
+          },
+          "book": "none",
+          "src": "https://little-vikings.co.uk/rainy-days-york",
+          "name": {
+            "th": "มหาวิหารยอร์ก",
+            "en": "York Minster"
+          },
+          "kind": "culture",
+          "area": {
+            "th": "ดีนเกต ยอร์ก",
+            "en": "Deangate, York"
+          },
+          "what": {
+            "th": "มหาวิหารใหญ่ มีเส้นทางสำหรับเด็ก เป้นักสำรวจให้ยืม และพิพิธภัณฑ์ใต้ดิน",
+            "en": "The great minster, with children’s trails, explorer backpacks and the Undercroft museum"
+          },
+          "why": {
+            "th": "มีกิจกรรมให้ลงมือ และรูปสัตว์แกะสลักให้ตามหา",
+            "en": "Hands-on activities and carved creatures to find"
+          },
+          "tip": {
+            "th": "อายุต่ำกว่า 17 ปีเข้าฟรี",
+            "en": "Under-17s free"
+          },
+          "q": "York Minster, Deangate, York",
+          "ok": "2026-11"
+        },
+        {
+          "local": "",
+          "ages": [
+            0,
+            1,
+            2,
+            2
+          ],
+          "hrs": 2,
+          "io": "in",
+          "pram": "part",
+          "price": {
+            "th": "เช็กราคาก่อนไป",
+            "en": "Check the price"
+          },
+          "book": "none",
+          "src": "https://little-vikings.co.uk/rainy-days-york",
+          "name": {
+            "th": "ฮอลลีวูดโบว์ล มังส์ครอส",
+            "en": "Hollywood Bowl (Monks Cross)"
+          },
+          "kind": "play",
+          "area": {
+            "th": "มังส์ครอส ยอร์ก",
+            "en": "Monks Cross, York"
+          },
+          "what": {
+            "th": "โบว์ลิ่ง มีตู้เกมและร้านอาหารสไตล์อเมริกัน",
+            "en": "Tenpin bowling with arcade games and a diner"
+          },
+          "why": {
+            "th": "มีกิจกรรมให้ทุกคนในครอบครัว",
+            "en": "Something for everyone in the family"
+          },
+          "q": "Hollywood Bowl York, Kathryn Avenue, Monks Cross, York",
+          "ok": "2026-11"
         }
       ]
     }
