@@ -264,7 +264,44 @@
       {"name":{"en":"Balicasag Marine Sanctuary","th":"เขตอนุรักษ์ทางทะเลบาลิคาซาก"},"kind":"nature","area":{"en":"Balicasag Island","th":"เกาะบาลิคาซาก"},"what":{"en":"A marine sanctuary with a shallow coral garden, a wall drop-off and a sea turtle sanctuary, good for snorkelling and diving.","th":"เขตอนุรักษ์ทางทะเลมีสวนปะการังตื้น จุดดิ่งลงเป็นกำแพง และแหล่งเต่าทะเล เหมาะกับการดำน้ำตื้นและสคูบา"},"why":{"en":"Green and hawksbill turtles are often spotted there, as the page says.","th":"หน้าเว็บบอกว่ามักเจอเต่าทะเลเขียวและเต่ากระ"},"ages":[0,1,2,2],"hrs":3,"io":"out","pram":"no","price":{"en":"Check the price","th":"เช็กราคาก่อนไป"},"book":"none","q":"Balicasag Marine Sanctuary, Balicasag Island, Bohol","ok":"2026-11","src":"https://www.roughguides.com/philippines/things-to-do-bohol/"},
       {"name":{"en":"Bohol Man-made Forest","th":"ป่าปลูกโบโฮล"},"kind":"nature","area":{"en":"Loboc","th":"โลบอก"},"what":{"en":"A reforested hillside of mahogany trees, planted from the late 1940s, on Loay Interior Road.","th":"เนินเขาป่าปลูกต้นมะฮอกกานี ปลูกตั้งแต่ปลายทศวรรษ 1940 บนถนนลอย อินเทอร์ริเออร์"},"why":{"en":"A shady stop to stretch legs between sights, as most tours include it.","th":"จุดพักร่มรื่นให้ยืดขาระหว่างที่เที่ยว ทัวร์ส่วนใหญ่แวะ"},"ages":[1,2,2,2],"hrs":1,"io":"out","pram":"part","price":{"en":"Check the price","th":"เช็กราคาก่อนไป"},"book":"none","q":"Bohol Man-made Forest, Loay Interior Road, Loboc, Bohol","ok":"2026-11","src":"https://www.ivankhristravels.com/bohol-travel-guide/"},
       {"name":{"en":"Blood Compact Shrine","th":"ศาลเลือดสาบาน (Blood Compact Shrine)"},"kind":"culture","area":{"en":"Barangay Bool, Tagbilaran City","th":"บารังไกย์บูล เมืองตักบิลารัน"},"what":{"en":"A shrine and monument in Barangay Bool, Tagbilaran City, a short stop on a countryside day.","th":"ศาลและอนุสาวรีย์ในบารังไกย์บูล เมืองตักบิลารัน แวะสั้นๆ ระหว่างวันที่เที่ยวชนบท"},"why":{"en":"A quick stop to learn a little Bohol history with the children.","th":"แวะเรียนรู้ประวัติศาสตร์โบโฮลเล็กน้อยกับเด็กๆ"},"ages":[1,2,2,1],"hrs":1,"io":"out","pram":"yes","price":{"en":"Check the price","th":"เช็กราคาก่อนไป"},"book":"none","q":"Blood Compact Shrine, Barangay Bool, Tagbilaran City, Bohol","ok":"2026-11","src":"https://www.ivankhristravels.com/bohol-travel-guide/"},
-      {"name":{"en":"Bohol Beach Club","th":"โบโฮลบีชคลับ"},"kind":"beach","area":{"en":"Bo. Bolod, Panglao","th":"โบโลด พานกลาโอ"},"what":{"en":"A resort beach with fine white sand, gardens, sunbathing benches and swimming pools; day visitors pay an admission.","th":"หาดรีสอร์ตทรายขาวละเอียด มีสวน ม้านั่งอาบแดด และสระว่ายน้ำ นักท่องเที่ยวรายวันจ่ายค่าเข้า"},"why":{"en":"Swimming pools are available for children who prefer them to the sea.","th":"มีสระว่ายน้ำให้เด็กที่ไม่ชอบทะเลได้เลือก"},"tip":{"en":"Wear aqua shoes: there is a rocky stretch with broken corals near the shore.","th":"สวมรองเท้าน้ำ มีโขดหินและปะการังหักใกล้ฝั่ง"},"ages":[1,2,2,2],"hrs":4,"io":"both","pram":"part","price":{"en":"Php600 per head (Php450 is consumable)","th":"Php600 ต่อหัว (Php450 เป็นค่าใช้จ่ายที่ใช้ได้)"},"book":"none","q":"Bohol Beach Club, Bo. Bolod, Panglao, Bohol","ok":"2026-11","src":"https://www.ivankhristravels.com/bohol-travel-guide/"}
+      {"name":{"en":"Bohol Beach Club","th":"โบโฮลบีชคลับ"},"kind":"beach","area":{"en":"Bo. Bolod, Panglao","th":"โบโลด พานกลาโอ"},"what":{"en":"A resort beach with fine white sand, gardens, sunbathing benches and swimming pools; day visitors pay an admission.","th":"หาดรีสอร์ตทรายขาวละเอียด มีสวน ม้านั่งอาบแดด และสระว่ายน้ำ นักท่องเที่ยวรายวันจ่ายค่าเข้า"},"why":{"en":"Swimming pools are available for children who prefer them to the sea.","th":"มีสระว่ายน้ำให้เด็กที่ไม่ชอบทะเลได้เลือก"},"tip":{"en":"Wear aqua shoes: there is a rocky stretch with broken corals near the shore.","th":"สวมรองเท้าน้ำ มีโขดหินและปะการังหักใกล้ฝั่ง"},"ages":[1,2,2,2],"hrs":4,"io":"both","pram":"part","price":{"en":"Php600 per head (Php450 is consumable)","th":"Php600 ต่อหัว (Php450 เป็นค่าใช้จ่ายที่ใช้ได้)"},"book":"none","q":"Bohol Beach Club, Bo. Bolod, Panglao, Bohol","ok":"2026-11","src":"https://www.ivankhristravels.com/bohol-travel-guide/"},
+        {
+          "local": "",
+          "name": {
+            "th": "เพลย์เมซ",
+            "en": "PlayMaze"
+          },
+          "kind": "play",
+          "area": {
+            "th": "ปาร์กมอลล์ มันดาเว เซบู",
+            "en": "Parkmall, Mandaue, Cebu"
+          },
+          "what": {
+            "th": "สนามเด็กเล่นในร่มขนาดใหญ่ มีมุมขนมและที่นั่งสำหรับพ่อแม่",
+            "en": "A big indoor playground with a snack bar and seats for parents"
+          },
+          "why": {
+            "th": "เด็กได้ปล่อยพลัง แล้วแวะกินขนม",
+            "en": "Children burn off energy, then have a snack"
+          },
+          "ages": [
+            1,
+            1,
+            1,
+            1
+          ],
+          "hrs": 2,
+          "io": "in",
+          "pram": "part",
+          "price": {
+            "th": "เช็กราคาก่อนไป",
+            "en": "Check the price"
+          },
+          "book": "none",
+          "q": "Playmaze, Parkmall, Cebu",
+          "src": "https://3d-universal.com/en/blogs/dining-with-kids-in-cebu-family-friendly-restaurants.html",
+          "ok": "2026-11"
+        }
     ]
     },
     {

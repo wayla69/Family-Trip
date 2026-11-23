@@ -1,0 +1,32 @@
+{
+  "town": "ph-bohol",
+  "kind": "eats + sights",
+  "checked": "2026-11-23",
+  "rule": "library-check.cjs, then the Google Maps Reviews tab sorted by newest: ok only when not marked closed, with a review from the last six months, and the map's name matching the page's.",
+  "agents": "one Haiku agent; 6 rows offered, 6 passed library-check.cjs, 2 went in",
+  "added": [
+    {
+      "name": "Tavolata by Abaca",
+      "src": "https://3d-universal.com/en/blogs/dining-with-kids-in-cebu-family-friendly-restaurants.html",
+      "date": "2025-07",
+      "map": "Google Maps 'Tavolata® Design Center of Cebu', 423 reviews, newest 'a week ago'"
+    },
+    {
+      "name": "PlayMaze",
+      "src": "https://3d-universal.com/en/blogs/dining-with-kids-in-cebu-family-friendly-restaurants.html",
+      "date": "2025-07",
+      "map": "Google Maps 'Playmaze', 17 reviews, newest '4 months ago'"
+    }
+  ],
+  "left_out": [
+    {
+      "name": "Jollibee, Shakey’s Pizza, Golden Cowrie",
+      "why": "chains: the page names no single branch"
+    },
+    {
+      "name": "La Vie Parisienne",
+      "why": "the map's match is named 'La Parisienne Cebu'"
+    }
+  ],
+  "estimates": "Ages ([1,1,1,1]) and visit hours are placeholders; no page printed them."
+}
