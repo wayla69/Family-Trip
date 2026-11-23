@@ -273,6 +273,445 @@
           "q": "Sentiero dei Limoni, Maiori",
           "ok": "2026-11",
           "src": "https://www.viaggiapiccoli.com/costiera-amalfitana-con-bambini/"
+        },
+        {
+          "local": "Museo Archeologico Romano",
+          "ages": [
+            0,
+            1,
+            2,
+            2
+          ],
+          "hrs": 0.5,
+          "io": "in",
+          "pram": "no",
+          "price": {
+            "th": "เช็กราคาก่อนไป",
+            "en": "Check the price"
+          },
+          "book": "rec",
+          "src": "https://www.viaggiapiccoli.com/en/positano-italy-with-kids/",
+          "name": {
+            "th": "พิพิธภัณฑ์โบราณคดีโรมัน MAR",
+            "en": "MAR Roman Archaeological Museum"
+          },
+          "kind": "museumkid",
+          "area": {
+            "th": "ใต้โบสถ์ โพซิตาโน",
+            "en": "Under the church, Positano"
+          },
+          "what": {
+            "th": "วิลล่าโรมันที่ถูกภูเขาไฟวิสุเวียสฝังในปี ค.ศ. 79 ชมภาพจิตรกรรมฝาผนังจากทางเดินยกสูง",
+            "en": "A Roman villa buried by Vesuvius in AD 79, with frescoes seen from a raised walkway"
+          },
+          "why": {
+            "th": "ชมเร็ว ราว 30 นาที มีภาพจำลองและแสงไฟช่วยให้เข้าใจ",
+            "en": "A quick visit, about 30 minutes, with reconstructions and lighting"
+          },
+          "tip": {
+            "th": "รับคนได้จำกัด จองไว้ก่อนหรือเช็กเวลาเปิดก่อนไป",
+            "en": "Space is limited: book ahead or check the opening hours"
+          },
+          "q": "MAR Positano, Santa Maria Assunta, Positano",
+          "ok": "2026-11"
+        },
+        {
+          "local": "Spiaggia di Fornillo",
+          "ages": [
+            1,
+            2,
+            2,
+            1
+          ],
+          "hrs": 4,
+          "io": "out",
+          "pram": "no",
+          "price": {
+            "th": "เช็กราคาก่อนไป",
+            "en": "Check the price"
+          },
+          "book": "none",
+          "src": "https://www.viaggiapiccoli.com/en/positano-italy-with-kids/",
+          "name": {
+            "th": "หาดฟอร์นิลโล",
+            "en": "Fornillo beach"
+          },
+          "kind": "beach",
+          "area": {
+            "th": "โพซิตาโน เดินจากท่าเรือ 10 นาที",
+            "en": "Positano, 10 minutes' walk from the pier"
+          },
+          "what": {
+            "th": "อ่าวกรวดเล็ก ๆ ที่กำบังลม ไปได้ด้วยการเดินเลียบชายฝั่งหรือนั่งเรือเล็ก",
+            "en": "A small sheltered pebble bay, on foot along a coastal path or by small boat"
+          },
+          "why": {
+            "th": "คนน้อยกว่าหาดหลัก และเป็นหาดที่ครอบครัวชอบ",
+            "en": "Quieter than the main beach and a family favourite"
+          },
+          "tip": {
+            "th": "เป็นหาดกรวด ไม่ใช่ทราย ใส่รองเท้าลุยน้ำ",
+            "en": "Pebbles, not sand: bring water shoes"
+          },
+          "q": "Fornillo Beach, Positano",
+          "ok": "2026-11"
+        },
+        {
+          "local": "Spiaggia di Arienzo",
+          "ages": [
+            0,
+            0,
+            1,
+            2
+          ],
+          "hrs": 3,
+          "io": "out",
+          "pram": "no",
+          "price": {
+            "th": "เช็กราคาก่อนไป",
+            "en": "Check the price"
+          },
+          "book": "none",
+          "src": "https://www.viaggiapiccoli.com/en/positano-italy-with-kids/",
+          "name": {
+            "th": "หาดอารีเอนโซ",
+            "en": "Arienzo beach"
+          },
+          "kind": "beach",
+          "area": {
+            "th": "ใต้โพซิตาโน",
+            "en": "Below Positano"
+          },
+          "what": {
+            "th": "หาดที่ต้องลงบันไดกว่า 250 ขั้น หรือนั่งเรือเล็กของบีชคลับ",
+            "en": "A beach reached by more than 250 steps or by the beach clubs' small boats"
+          },
+          "why": {
+            "th": "ทะเลสวยมาก เหมาะกับเด็กโตที่เดินไหว",
+            "en": "Spectacular sea, for older children who don't mind walking"
+          },
+          "tip": {
+            "th": "บันไดไม่เหมาะกับรถเข็นเด็กหรือเด็กเล็กมาก",
+            "en": "The steps are not for prams or very young children"
+          },
+          "q": "Arienzo Beach, Positano",
+          "ok": "2026-11"
+        },
+        {
+          "local": "Chiesa di Santa Maria Assunta",
+          "ages": [
+            1,
+            2,
+            2,
+            2
+          ],
+          "hrs": 0.5,
+          "io": "in",
+          "pram": "part",
+          "price": {
+            "th": "ฟรี",
+            "en": "Free"
+          },
+          "book": "none",
+          "src": "https://www.viaggiapiccoli.com/en/positano-italy-with-kids/",
+          "name": {
+            "th": "โบสถ์ซานตามาเรียอัสซุนตา",
+            "en": "Santa Maria Assunta church"
+          },
+          "kind": "culture",
+          "area": {
+            "th": "หลังหาดหลัก โพซิตาโน",
+            "en": "Behind the main beach, Positano"
+          },
+          "what": {
+            "th": "โบสถ์โดมกระเบื้องหลากสี มีรูปเคารพพระแม่มารีดำแบบไบแซนไทน์",
+            "en": "A church with a colourful tiled dome and a Byzantine Black Madonna icon"
+          },
+          "why": {
+            "th": "เด็ก ๆ เห็นโดมกระเบื้องได้ทันที ข้างในเย็นและเงียบ",
+            "en": "Children spot the tiled dome at once; inside is cool and quiet"
+          },
+          "q": "Chiesa di Santa Maria Assunta, Positano",
+          "ok": "2026-11"
+        },
+        {
+          "local": "",
+          "ages": [
+            1,
+            2,
+            2,
+            2
+          ],
+          "hrs": 2,
+          "io": "out",
+          "pram": "part",
+          "price": {
+            "th": "เช็กราคาก่อนไป",
+            "en": "Check the price"
+          },
+          "book": "none",
+          "src": "https://www.viaggiapiccoli.com/?p=90418",
+          "name": {
+            "th": "มารีนากรันเด",
+            "en": "Marina Grande"
+          },
+          "kind": "beach",
+          "area": {
+            "th": "หมู่บ้านชาวประมงเก่าของซอร์เรนโต",
+            "en": "Sorrento's old fishing village"
+          },
+          "what": {
+            "th": "หมู่บ้านชาวประมงบ้านสีสดและเรือ มีหาดเล็ก ๆ",
+            "en": "A fishing village of colourful houses and boats with a small beach"
+          },
+          "why": {
+            "th": "กินมื้อกลางวันริมน้ำแล้วลงเล่นน้ำ",
+            "en": "Lunch on the waterfront and a swim"
+          },
+          "tip": {
+            "th": "ขากลับต้องเดินขึ้นเนิน",
+            "en": "The way back up is a climb"
+          },
+          "q": "Marina Grande, Sorrento",
+          "ok": "2026-11"
+        },
+        {
+          "local": "",
+          "ages": [
+            2,
+            2,
+            2,
+            1
+          ],
+          "hrs": 1.5,
+          "io": "out",
+          "pram": "yes",
+          "price": {
+            "th": "เช็กราคาก่อนไป",
+            "en": "Check the price"
+          },
+          "book": "none",
+          "src": "https://www.viaggiapiccoli.com/?p=90418",
+          "name": {
+            "th": "สวนวิลลาฟิโอเรนติโน",
+            "en": "Villa Fiorentino park"
+          },
+          "kind": "park",
+          "area": {
+            "th": "คอร์โซอิตาเลีย ซอร์เรนโต",
+            "en": "Corso Italia, Sorrento"
+          },
+          "what": {
+            "th": "วิลล่าเก่าแก่ที่มีสวนกว้าง สนามเด็กเล่น และสวนส้ม",
+            "en": "A historic villa with a large garden, a playground and an orange grove"
+          },
+          "why": {
+            "th": "หน้าเว็บบอกว่าสนามเด็กเล่นกว้าง ร่มรื่น และปลอดภัย",
+            "en": "The page says the playground is large, shaded and safe"
+          },
+          "q": "Villa Fiorentino, Corso Italia, Sorrento",
+          "ok": "2026-11"
+        },
+        {
+          "local": "",
+          "ages": [
+            1,
+            2,
+            2,
+            2
+          ],
+          "hrs": 1,
+          "io": "out",
+          "pram": "yes",
+          "price": {
+            "th": "ฟรี",
+            "en": "Free"
+          },
+          "book": "none",
+          "src": "https://www.viaggiapiccoli.com/?p=90418",
+          "name": {
+            "th": "วิลลาโคมูนาเล",
+            "en": "Villa Comunale"
+          },
+          "kind": "views",
+          "area": {
+            "th": "เหนือมารีนาปิกโกลา ซอร์เรนโต",
+            "en": "Above Marina Piccola, Sorrento"
+          },
+          "what": {
+            "th": "ระเบียงมองมารีนาปิกโกลาและภูเขาไฟวิสุเวียส วันฟ้าใสเห็นเกาะคาปรี",
+            "en": "A terrace over Marina Piccola and Vesuvius, and Capri on a clear day"
+          },
+          "why": {
+            "th": "กินเจลาโตตอนพระอาทิตย์ตก",
+            "en": "Gelato at sunset"
+          },
+          "tip": {
+            "th": "ลิฟต์ลงไปริมทะเลเริ่มที่นี่",
+            "en": "The lift down to the sea starts here"
+          },
+          "q": "Villa Comunale, Sorrento",
+          "ok": "2026-11"
+        },
+        {
+          "local": "",
+          "ages": [
+            0,
+            0,
+            2,
+            2
+          ],
+          "hrs": 3,
+          "io": "out",
+          "pram": "no",
+          "price": {
+            "th": "เช็กราคาก่อนไป",
+            "en": "Check the price"
+          },
+          "book": "none",
+          "src": "https://www.viaggiapiccoli.com/?p=90418",
+          "name": {
+            "th": "บัญญีเดลลาเรจีนาโจวันนา",
+            "en": "Bagni della Regina Giovanna"
+          },
+          "kind": "beach",
+          "area": {
+            "th": "ชายฝั่งซอร์เรนโต",
+            "en": "Sorrento coast"
+          },
+          "what": {
+            "th": "สระน้ำธรรมชาติกลางหน้าผาและซากวิลล่าโรมัน",
+            "en": "A natural pool among cliffs and the remains of a Roman villa"
+          },
+          "why": {
+            "th": "เหมาะกับเด็กโต หรือเดินเล่นตอนพระอาทิตย์ตก",
+            "en": "Better with older children, or as a sunset walk"
+          },
+          "tip": {
+            "th": "ทางเดินและทางลงทะเลไม่เหมาะกับเด็กเล็กหรือรถเข็นเด็ก",
+            "en": "The path and the way into the sea are not for small children or prams"
+          },
+          "q": "Bagni Regina Giovanna, Sorrento",
+          "ok": "2026-11"
+        },
+        {
+          "local": "Museo della Ceramica di Villa Guariglia",
+          "ages": [
+            1,
+            2,
+            2,
+            2
+          ],
+          "hrs": 1,
+          "io": "in",
+          "pram": "part",
+          "price": {
+            "th": "ฟรี",
+            "en": "Free"
+          },
+          "book": "none",
+          "src": "https://www.viaggiapiccoli.com/en/amalfi-coast-with-kids/",
+          "name": {
+            "th": "พิพิธภัณฑ์เครื่องเคลือบ วิลลากวาริลยา",
+            "en": "Ceramics Museum, Villa Guariglia"
+          },
+          "kind": "museumkid",
+          "area": {
+            "th": "ไรโต วีเอตรีซุลมาเร",
+            "en": "Raito, Vietri sul Mare"
+          },
+          "what": {
+            "th": "เครื่องเคลือบตกแต่งและของใช้ในชีวิตประจำวัน",
+            "en": "Decorative ceramics and everyday objects"
+          },
+          "why": {
+            "th": "ไปคู่กับร้านเครื่องเคลือบของวีเอตรีได้ดี",
+            "en": "Goes well with Vietri's ceramic workshops"
+          },
+          "tip": {
+            "th": "เปิดวันอังคารถึงวันอาทิตย์ 9:00–15:00",
+            "en": "Open Tuesday to Sunday, 9:00 to 15:00"
+          },
+          "q": "Museo della Ceramica, Villa Guariglia, Raito, Vietri sul Mare",
+          "ok": "2026-11"
+        },
+        {
+          "local": "Duomo di Sant'Andrea",
+          "ages": [
+            1,
+            2,
+            2,
+            2
+          ],
+          "hrs": 1,
+          "io": "in",
+          "pram": "no",
+          "price": {
+            "th": "เช็กราคาก่อนไป",
+            "en": "Check the price"
+          },
+          "book": "none",
+          "src": "https://www.viaggiapiccoli.com/en/amalfi-coast-with-kids/",
+          "name": {
+            "th": "มหาวิหารอมาลฟี",
+            "en": "Amalfi Cathedral"
+          },
+          "kind": "culture",
+          "area": {
+            "th": "อมาลฟี",
+            "en": "Amalfi"
+          },
+          "what": {
+            "th": "มหาวิหารของอมาลฟีบนบันไดที่ถ่ายรูปสวย",
+            "en": "Amalfi's cathedral above a photogenic staircase"
+          },
+          "why": {
+            "th": "หน้าเว็บบอกว่าบันไดถ่ายรูปสวย",
+            "en": "The page calls the staircase photogenic"
+          },
+          "tip": {
+            "th": "คนเยอะมาก โดยเฉพาะหน้าร้อน",
+            "en": "Very crowded, especially in summer"
+          },
+          "q": "Duomo di Sant'Andrea, Amalfi",
+          "ok": "2026-11"
+        },
+        {
+          "local": "",
+          "ages": [
+            0,
+            1,
+            2,
+            2
+          ],
+          "hrs": 2,
+          "io": "out",
+          "pram": "no",
+          "price": {
+            "th": "ฟรี",
+            "en": "Free"
+          },
+          "book": "none",
+          "src": "https://www.viaggiapiccoli.com/en/amalfi-coast-with-kids/",
+          "name": {
+            "th": "หุบเขาวัลเลเดลเลแฟร์รีเอเร",
+            "en": "Valle delle Ferriere"
+          },
+          "kind": "nature",
+          "area": {
+            "th": "อมาลฟี",
+            "en": "Amalfi"
+          },
+          "what": {
+            "th": "หุบเขาเหนืออมาลฟี ไปได้ด้วยการเดินป่าง่าย ๆ",
+            "en": "A valley above Amalfi on an easy hike"
+          },
+          "why": {
+            "th": "เย็นสบาย เขียวขจี และมีลำธารเต็มไปหมด",
+            "en": "Cool, green and full of streams"
+          },
+          "q": "Valle delle Ferriere, Amalfi",
+          "ok": "2026-11"
         }
       ]
     },
