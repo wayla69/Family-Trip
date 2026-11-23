@@ -275,6 +275,47 @@
           "q": "Sabah Tea Garden, Jalan Ranau-Sandakan, Ranau",
           "ok": "2026-11",
           "src": "https://sabahtourism.com/destination/sabah-tea-garden/"
+        },
+        {
+          "local": "Masjid Bandaraya Kota Kinabalu",
+          "name": {
+            "th": "มัสยิดประจำเมืองโกตากินาบาลู",
+            "en": "Kota Kinabalu City Mosque"
+          },
+          "kind": "culture",
+          "area": {
+            "th": "ลิกัส ทางเหนือของตัวเมือง",
+            "en": "Likas, just north of the centre"
+          },
+          "what": {
+            "th": "มัสยิดสวยริมทะเลสาบ อยู่ทางเหนือของเมือง",
+            "en": "A beautiful mosque by a lake, just north of the city"
+          },
+          "why": {
+            "th": "นักท่องเที่ยวเข้าชมได้นอกเวลาละหมาด",
+            "en": "Visitors may go inside outside prayer times"
+          },
+          "tip": {
+            "th": "ปิดให้ชมในเวลาละหมาด หลีกเลี่ยงวันศุกร์ แต่งกายปิดแขนขา",
+            "en": "Closed to visitors at prayer times; avoid Fridays; cover arms and legs"
+          },
+          "ages": [
+            1,
+            1,
+            1,
+            1
+          ],
+          "hrs": 1,
+          "io": "both",
+          "pram": "part",
+          "price": {
+            "th": "เช็กราคาก่อนไป",
+            "en": "Check the price"
+          },
+          "book": "none",
+          "q": "Masjid Bandaraya Kota Kinabalu, Likas",
+          "src": "https://travelynnfamily.com/kota-kinabalu-with-kids/",
+          "ok": "2026-11"
         }
       ]
     },
