@@ -884,6 +884,170 @@
           "q": "Tran Phu Beach, Nha Trang",
           "ok": "2026-11",
           "src": "https://www.vietnamtourism.com/en/nha-trang-things-to-do-beyond-the-beach"
+        },
+        {
+          "local": "Thủy cung Trí Nguyên",
+          "name": {
+            "th": "อควาเรียมจีเหงียน",
+            "en": "Trí Nguyên Aquarium"
+          },
+          "kind": "aquarium",
+          "area": {
+            "th": "เกาะฮòนเหมียว นั่งเรือจากท่าเกิ่วด๊าราว 10 นาที",
+            "en": "Hòn Miễu island, about 10 minutes by boat from Cầu Đá port"
+          },
+          "what": {
+            "th": "อควาเรียมในอาคารรูปเรือ มีตู้ปลาใหญ่ใต้ดาดฟ้าและบ่อปลาใต้ร่มไม้",
+            "en": "An aquarium in a ship-shaped building, with big fish tanks below deck and a fish pond under the trees"
+          },
+          "why": {
+            "th": "เด็กๆ สนุก ในตู้มีสัตว์ทะเลหลายร้อยชนิด",
+            "en": "A fun stop for children, with hundreds of sea creatures in the tanks"
+          },
+          "tip": {
+            "th": "เรือออกจากท่าเกิ่วด๊า",
+            "en": "Boats leave from Cầu Đá port"
+          },
+          "ages": [
+            1,
+            1,
+            1,
+            1
+          ],
+          "hrs": 2,
+          "io": "both",
+          "pram": "part",
+          "price": {
+            "th": "≈ 130,000 ดอง ต่อผู้ใหญ่",
+            "en": "≈ 130,000 VND an adult"
+          },
+          "book": "none",
+          "q": "Hồ cá Trí Nguyên, Hòn Miễu, Nha Trang",
+          "src": "https://mia.vn/cam-nang-du-lich/lac-vao-thuy-cung-tri-nguyen-nha-trang-thu-nho-giua-thanh-pho-bien-599",
+          "ok": "2026-11"
+        },
+        {
+          "local": "Hòn Mun",
+          "name": {
+            "th": "เกาะฮòนมุน",
+            "en": "Hòn Mun Island"
+          },
+          "kind": "nature",
+          "area": {
+            "th": "ทางใต้ของอ่าวญาจาง นั่งเรือจากท่าเกิ่วด๊า",
+            "en": "South of Nha Trang Bay, by boat from Cầu Đá port"
+          },
+          "what": {
+            "th": "เขตอนุรักษ์ทางทะเลแห่งแรกของเวียดนาม มีหน้าผาสีดำและแนวปะการังให้ดำน้ำตื้น",
+            "en": "Vietnam’s first marine reserve, with black cliffs and reefs to snorkel"
+          },
+          "why": {
+            "th": "มีเรือท้องกระจกสำหรับเด็กเล็กที่ไม่อยากเปียก คนว่ายน้ำไม่เป็นใส่เสื้อชูชีพดำน้ำตื้นได้",
+            "en": "Glass-bottom boats for small children who want to stay dry; non-swimmers can snorkel in a life jacket"
+          },
+          "tip": {
+            "th": "ชายฝั่งเป็นหิน ใส่รองเท้าลุยน้ำ บนเกาะไม่มีร้านอาหาร",
+            "en": "Rocky shore, so bring water shoes; no restaurant on the island"
+          },
+          "ages": [
+            1,
+            1,
+            1,
+            1
+          ],
+          "hrs": 3,
+          "io": "out",
+          "pram": "no",
+          "price": {
+            "th": "ค่าเข้า ผู้ใหญ่ 22,000 ดอง เด็ก 11,000 ดอง",
+            "en": "22,000 VND an adult, 11,000 VND a child (entry)"
+          },
+          "book": "rec",
+          "q": "Hon Mun, Nha Trang",
+          "src": "https://localvietnam.com/khanh-hoa/nha-trang/hon-mun-island/",
+          "ok": "2026-11"
+        },
+        {
+          "local": "Chùa Long Sơn",
+          "name": {
+            "th": "วัดลองเซิน",
+            "en": "Long Sơn Pagoda"
+          },
+          "kind": "views",
+          "area": {
+            "th": "เนินตรายถวี ใจกลางเมือง",
+            "en": "Trại Thủy hill, city centre"
+          },
+          "what": {
+            "th": "วัดบนเนินเขา มีพระพุทธรูปสีขาวองค์ใหญ่บนยอด มองเห็นวิวญาจาง",
+            "en": "A hillside pagoda with a big white Buddha at the top and views over Nha Trang"
+          },
+          "why": {
+            "th": "บันไดผ่านพระนอนและหอระฆัง และมีถนนด้านขวาขึ้นไปใกล้ยอด",
+            "en": "Steps past a reclining Buddha and a bell tower, and a road on the right side to near the top"
+          },
+          "tip": {
+            "th": "แต่งกายปิดไหล่และเข่า ถอดรองเท้าก่อนเข้า ไปเช้าหรือบ่ายแก่ๆ จะเย็นกว่า",
+            "en": "Cover shoulders and knees and take shoes off inside; early morning or late afternoon is cooler"
+          },
+          "ages": [
+            1,
+            1,
+            1,
+            1
+          ],
+          "hrs": 1,
+          "io": "out",
+          "pram": "part",
+          "price": {
+            "th": "ฟรี",
+            "en": "Free"
+          },
+          "book": "none",
+          "q": "Long Son Pagoda, Nha Trang",
+          "src": "https://localvietnam.com/khanh-hoa/nha-trang/long-son-pagoda/",
+          "ok": "2026-11"
+        },
+        {
+          "local": "Thiền viện Trúc Lâm Phụng Thủy Sơn",
+          "name": {
+            "th": "วัดเซนจุ๊กเลิมฟุ่งถวีเซิน",
+            "en": "Trúc Lâm Phụng Thủy Sơn Zen Monastery"
+          },
+          "kind": "culture",
+          "area": {
+            "th": "เขาชินคุก ห่างญาจางไปทางตะวันตกเฉียงใต้ราว 10 กม.",
+            "en": "Chín Khúc mountain, about 10 km south-west of Nha Trang"
+          },
+          "what": {
+            "th": "วัดเซนแห่งใหม่บนยอดเขา มีสถูปทองสูงและวิวทั่วอ่าว",
+            "en": "A new Zen temple on a mountain top with a tall golden stupa and views over the bay"
+          },
+          "why": {
+            "th": "เห็นวิวชายฝั่งและเกาะทั้งหมดโดยไม่ต้องนั่งเรือหรือกระเช้า",
+            "en": "Views over the whole coast and the islands without a boat or cable car"
+          },
+          "tip": {
+            "th": "เพิ่งเปิดปลายปี 2025 เวลาเปิดอาจเปลี่ยน แต่งกายปิดไหล่และเข่า พกน้ำและของว่างไปเอง",
+            "en": "Opened in late 2025, so hours may still change; cover shoulders and knees; bring water and snacks"
+          },
+          "ages": [
+            1,
+            1,
+            1,
+            1
+          ],
+          "hrs": 2,
+          "io": "out",
+          "pram": "no",
+          "price": {
+            "th": "เช็กราคาก่อนไป",
+            "en": "Check the price"
+          },
+          "book": "none",
+          "q": "Trúc Lâm Phụng Thuỳ Sơn, Nha Trang",
+          "src": "https://localvietnam.com/khanh-hoa/nha-trang/truc-lam-phung-thuy-son/",
+          "ok": "2026-11"
         }
       ]
     }
