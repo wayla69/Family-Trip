@@ -2453,8 +2453,8 @@ const T = 'hk-macau-2026';
     && await page.locator('.backsum').count() === 0 && /\/prep$/.test(await page.getAttribute('header.top .ibtn', 'href')) && await s.noHScroll(), 'a glance card opens that topic alone: its title the heading, every detail open, no switch and nothing to unfold, ‹ › to the topics beside it; the top bar\'s back goes to the summary');
   { await page.goto(`${BASE}/#/t/${T}/prep/full/2`); await page.waitForSelector('.tp.one .tphead');
     const r = await page.evaluate(() => { const tr = document.querySelector('.tp.one .prices tbody tr'), td = tr.querySelector('td[data-h]'), b = td.getBoundingClientRect(), h = getComputedStyle(td, '::before');
-      return { head: !!document.querySelector('.tp.one .tphead .phpic img'), card: getComputedStyle(tr).display, borderTop: parseFloat(getComputedStyle(tr).borderTopWidth), labelBlock: h.display, w: Math.round(b.width) }; });
-    ok(r.head && r.card === 'grid' && r.borderTop >= 3 && r.labelBlock === 'block' && await s.noHScroll(), `get-ready topic page: a band with the topic's picture, each row of a table a card with its labels above the words (${JSON.stringify(r)})`); }
+      return { head: !!document.querySelector('.tp.one .tphead .phpic img'), card: getComputedStyle(tr).display, fill: getComputedStyle(tr).backgroundColor !== 'rgba(0, 0, 0, 0)', labelBlock: h.display, w: Math.round(b.width) }; });
+    ok(r.head && r.card === 'grid' && r.fill && r.labelBlock === 'block' && await s.noHScroll(), `get-ready topic page: a band with the topic's picture, each row of a table a card with its labels above the words (${JSON.stringify(r)})`); }
   { await page.goto(`${BASE}/#/t/${T}/prep`); await page.waitForSelector('.glg');
     ok(await page.locator('.glg').count() === 2 && await page.locator('.glg').nth(1).locator('.glc .gday').count() >= 5 && await page.locator('.glg').first().locator('.gday').count() === 0, 'HK get-ready summary: the whole-trip topics first, the chapters for one day under their own heading with the day as a chip');
     await page.goto(`${BASE}/#/t/${T}/prep/full/0`); await page.waitForSelector('.tp.one .steps');
@@ -2488,8 +2488,8 @@ const T = 'hk-macau-2026';
     ok(!!ift, `an if-then page among the emergency topics (${sosLinks.join(' ')})`);
     for (const [r, sel] of [[`${T}/learn/full/0`, '.tp.one .gcard'], [`${T}/learn/full/1`, '.tp.one details.sub'], [ift, '.tp.one .ifts details.ifold'], ['big-hop-2027/prep/full/7', '.tp.one .pg1>.call.info']]) {
       await page.goto(`${BASE}/#/t/${r}`); await page.waitForSelector(sel, { state: 'attached' });
-      const c = await page.$$eval(sel, (es) => es.map((e) => ({ top: parseFloat(getComputedStyle(e).borderTopWidth), r: parseFloat(getComputedStyle(e).borderTopLeftRadius), kf: [...e.querySelectorAll('b.kf')].every((b) => getComputedStyle(b).display === 'inline') })));
-      ok(c.length && c.every((x) => x.top >= 3 && x.r >= 12 && x.kf), `${r}: every ${sel.split(' ').pop()} a card with a coloured top edge, bold times inside their sentence (${JSON.stringify(c.slice(0, 3))})`); }
+      const c = await page.$$eval(sel, (es) => es.map((e) => ({ fill: getComputedStyle(e).backgroundColor !== 'rgba(0, 0, 0, 0)', r: parseFloat(getComputedStyle(e).borderTopLeftRadius), kf: [...e.querySelectorAll('b.kf')].every((b) => getComputedStyle(b).display === 'inline') })));
+      ok(c.length && c.every((x) => x.fill && x.r >= 12 && x.kf), `${r}: every ${sel.split(' ').pop()} a card with a soft fill of its colour (no top stripe, UI review Nov 2026), bold times inside their sentence (${JSON.stringify(c.slice(0, 3))})`); }
     await page.goto(`${BASE}/#/t/${T}`); await page.waitForSelector('.hubgrid .tile.today small');
     await page.evaluate(() => document.querySelectorAll('.hubgrid').forEach((g) => { g.className = g.className.replace(/tl-\w+/, 'tl-pastel'); }));   // the colourful look, whatever an earlier step chose
     const c = await page.evaluate(`(${CONTRAST})(document.querySelectorAll('.hubgrid .tile small'), (e) => { const g = document.createElement('i'); g.style.backgroundColor = getComputedStyle(e.closest('.tile')).borderTopColor; document.body.appendChild(g); return g; })`);
