@@ -4181,3 +4181,11 @@ summary.chvadd>.chvt{flex:1;min-width:0}
 .ppbook .stars button[aria-pressed=false]{color:#D5DAE1;text-shadow:none}
 @media (prefers-color-scheme:dark){:root:not([data-theme=light]) .ppbook .stars button[aria-pressed=false]{color:#4A5468}}:root[data-theme=dark] .ppbook .stars button[aria-pressed=false]{color:#4A5468}
 .tdv.zh{font-size:22px;line-height:1.35;letter-spacing:.02em}
+/* the kid home's day circles (owner, Nov 2026: "ตรงกลมๆเบียดไปไหม" — the chosen day's ring touched the screen edge and its neighbour): room on both sides,
+   a white gap inside the ring, the row centred when it fits (auto margins: never clipped at the start like justify-content:center), smaller circles on a phone */
+.kidwrap .kiddays{gap:14px;padding:14px 18px;scroll-padding-inline:18px}
+.kidwrap .kiddays>button:first-child{margin-left:auto}.kidwrap .kiddays>button:last-child{margin-right:auto}
+.kidwrap .kiddays button[aria-pressed=true]:not(:first-child){margin-left:6px}.kidwrap .kiddays button[aria-pressed=true]:not(:last-child){margin-right:6px}
+.kidwrap .kiddays button[aria-pressed=true] .art{transform:scale(1.1);box-shadow:0 0 0 3px #fff,0 0 0 6px var(--accent)}
+@media (max-width:440px){.kidwrap .kiddays{gap:12px;padding-inline:14px;scroll-padding-inline:14px}.kidwrap .kiddays .art,.kidwrap.home .kiddays .art{width:46px;height:46px}}
+.kidwrap .kiddays{-webkit-mask-image:linear-gradient(90deg,#000 calc(100% - 16px),transparent);mask-image:linear-gradient(90deg,#000 calc(100% - 16px),transparent)}   /* the fade only in the row's own padding: a row that fits is never dimmed */
