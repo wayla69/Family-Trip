@@ -480,8 +480,8 @@
           "io": "out",
           "pram": "part",
           "price": {
-            "th": "ฟรี",
-            "en": "Free"
+            "th": "เช็กราคาก่อนไป",
+            "en": "Check the price"
           },
           "book": "none",
           "src": "https://www.anadventurousworld.com/things-to-do-in-merida-with-kids/",
