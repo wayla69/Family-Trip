@@ -165,6 +165,211 @@
           "q": "Hakgala Botanic Gardens, Badulla Road, Nuwara Eliya",
           "ok": "2026-11",
           "src": "https://en.botanicgardens.gov.lk/?p=1546"
+        },
+        {
+          "local": "",
+          "ages": [
+            0,
+            1,
+            2,
+            2
+          ],
+          "hrs": 2,
+          "io": "out",
+          "pram": "no",
+          "price": {
+            "th": "เช็กราคาก่อนไป",
+            "en": "Check the price"
+          },
+          "book": "none",
+          "src": "https://flashpackingfamily.com/things-to-do-ella-sri-lanka/",
+          "name": {
+            "th": "เขาลิตเติลแอดัมส์พีก",
+            "en": "Little Adam's Peak"
+          },
+          "kind": "views",
+          "area": {
+            "th": "เอลลา",
+            "en": "Ella"
+          },
+          "what": {
+            "th": "เดินขึ้นเขาสั้น ๆ วิวไร่ชาจากยอด",
+            "en": "A short climb with tea-garden views from the top"
+          },
+          "why": {
+            "th": "ลูก ๆ ของผู้เขียนชอบวิวและภูมิใจที่ขึ้นถึง",
+            "en": "The writer's children loved the view and felt proud"
+          },
+          "tip": {
+            "th": "พกน้ำ ทางลาดยางเกือบตลอด ช่วงท้ายต้องปีนนิดหน่อย",
+            "en": "Take water; paved most of the way, with a short scramble at the end"
+          },
+          "q": "Little Adam's Peak Trailhead, Ella",
+          "ok": "2026-11"
+        },
+        {
+          "local": "",
+          "ages": [
+            1,
+            2,
+            2,
+            2
+          ],
+          "hrs": 0.5,
+          "io": "out",
+          "pram": "part",
+          "price": {
+            "th": "ฟรี",
+            "en": "Free"
+          },
+          "book": "none",
+          "src": "https://flashpackingfamily.com/things-to-do-ella-sri-lanka/",
+          "name": {
+            "th": "น้ำตกราวณะ",
+            "en": "Ravana Falls"
+          },
+          "kind": "nature",
+          "area": {
+            "th": "ห่างเอลลาไปทางใต้ 5 กม.",
+            "en": "5 km south of Ella"
+          },
+          "what": {
+            "th": "น้ำตกกว้างสามชั้น มีแอ่งหิน",
+            "en": "Wide three-tiered falls with rock pools"
+          },
+          "why": {
+            "th": "แวะสั้น ๆ มีแผงขายขนมริมถนน",
+            "en": "A quick stop with snack stalls by the road"
+          },
+          "tip": {
+            "th": "ระวังลิงใกล้จุดชมวิว",
+            "en": "Watch for monkeys near the viewing platform"
+          },
+          "q": "Ravana waterfall, Ella–Wellawaya Road",
+          "ok": "2026-11"
+        },
+        {
+          "local": "",
+          "ages": [
+            0,
+            1,
+            2,
+            2
+          ],
+          "hrs": 1.5,
+          "io": "both",
+          "pram": "no",
+          "price": {
+            "th": "ผู้ใหญ่ 1,500 LKR ($8.50)",
+            "en": "1500 LKR per adult ($8.50 USD)"
+          },
+          "book": "none",
+          "src": "https://awaywiththesteiners.com/sigiriya-with-kids/amp/",
+          "name": {
+            "th": "วัดถ้ำดัมบุลลา",
+            "en": "Dambulla Cave Temple"
+          },
+          "kind": "culture",
+          "area": {
+            "th": "ดัมบุลลา",
+            "en": "Dambulla"
+          },
+          "what": {
+            "th": "วัดในถ้ำสูงจากที่ราบ 160 ม. มีพระพุทธรูปทองคำอยู่ด้านล่าง",
+            "en": "Cave temples 160 m above the plains, with a golden Buddha below"
+          },
+          "why": {
+            "th": "การเดินขึ้นบันไดเหมาะกับเด็กทุกวัย",
+            "en": "The walk up the steps suits children of all ages"
+          },
+          "tip": {
+            "th": "แต่งกายปิดเข่าและไหล่ ถอดรองเท้า เปิด 7:00–19:00",
+            "en": "Cover knees and shoulders and take off shoes; open 7 am to 7 pm"
+          },
+          "q": "Dambulla Cave Temple, Dambulla",
+          "ok": "2026-11"
+        },
+        {
+          "local": "",
+          "ages": [
+            0,
+            0,
+            1,
+            2
+          ],
+          "hrs": 2,
+          "io": "out",
+          "pram": "no",
+          "price": {
+            "th": "ผู้ใหญ่ $3",
+            "en": "$3 USD per adult"
+          },
+          "book": "none",
+          "src": "https://awaywiththesteiners.com/sigiriya-with-kids/amp/",
+          "name": {
+            "th": "หินปิดุรังคลา",
+            "en": "Pidurangala Rock"
+          },
+          "kind": "views",
+          "area": {
+            "th": "ใกล้สีคิริยา",
+            "en": "Near Sigiriya"
+          },
+          "what": {
+            "th": "เดินขึ้นหินที่ขึ้นชื่อเรื่องวิวพระอาทิตย์ขึ้นเหนือสีคิริยา",
+            "en": "A climb known for sunrise views over Sigiriya Rock"
+          },
+          "why": {
+            "th": "ครึ่งแรกเป็นบันไดและทางเดินง่าย ๆ",
+            "en": "The first half is easy steps and path"
+          },
+          "tip": {
+            "th": "พกไฟฉายสำหรับเดินขึ้นตอนมืดก่อนพระอาทิตย์ขึ้น เปิด 5:00–18:00",
+            "en": "Bring a torch for the dark walk up before sunrise; open 5 am to 6 pm"
+          },
+          "q": "Pidurangala Royal Cave Temple, Sigiriya",
+          "ok": "2026-11"
+        },
+        {
+          "local": "",
+          "ages": [
+            0,
+            1,
+            2,
+            2
+          ],
+          "hrs": 5,
+          "io": "out",
+          "pram": "part",
+          "price": {
+            "th": "เช็กราคาก่อนไป",
+            "en": "Check the price"
+          },
+          "book": "none",
+          "src": "https://flashpackingfamily.com/things-to-do-ella-sri-lanka/",
+          "name": {
+            "th": "อุทยานแห่งชาติฮอร์ตันเพลนส์",
+            "en": "Horton Plains National Park"
+          },
+          "kind": "nature",
+          "area": {
+            "th": "ไปกลับในวันเดียวจากเอลลา",
+            "en": "A day trip from Ella"
+          },
+          "what": {
+            "th": "อุทยานแห่งชาติที่หน้าเว็บแนะนำให้ไปกลับจากเอลลา",
+            "en": "A national park the page suggests as a day trip from Ella"
+          },
+          "why": {
+            "th": "อุทยานสวยสำหรับเที่ยวหนึ่งวัน",
+            "en": "A beautiful park for a day out"
+          },
+          "tip": {
+            "th": "หน้าเว็บไม่ระบุเวลา เช็กก่อนไป",
+            "en": "The page gives no hours: check before you go"
+          },
+          "q": "Horton Plains National Park",
+          "ok": "2026-11"
         }
       ]
     }

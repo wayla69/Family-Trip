@@ -164,6 +164,80 @@
           "q": "Shivapuri Nagarjun National Park, Budhanilkantha, Kathmandu",
           "ok": "2026-11",
           "src": "https://www.bestheritagetour.com/blog/entrance-fees-and-travel-tips-in-nepal"
+        },
+        {
+          "local": "",
+          "ages": [
+            1,
+            2,
+            2,
+            2
+          ],
+          "hrs": 1.5,
+          "io": "out",
+          "pram": "part",
+          "price": {
+            "th": "1,000 รูปี",
+            "en": "1000 Rupees"
+          },
+          "book": "none",
+          "src": "https://travelynnfamily.com/kathmandu-with-kids/",
+          "name": {
+            "th": "จัตุรัสกาฐมาณฑุดูร์บาร์",
+            "en": "Kathmandu Durbar Square"
+          },
+          "kind": "culture",
+          "area": {
+            "th": "กาฐมาณฑุ",
+            "en": "Kathmandu"
+          },
+          "what": {
+            "th": "จัตุรัสหลวงที่มีวัดและพระราชวัง บางส่วนสร้างใหม่หลังแผ่นดินไหวปี 2015",
+            "en": "A royal square of temples and palaces, partly rebuilt after the 2015 earthquake"
+          },
+          "why": {
+            "th": "จัตุรัสหลวงที่ไปง่ายที่สุดจากในเมือง",
+            "en": "The easiest of the valley's royal squares to reach from the city"
+          },
+          "q": "Kathmandu Durbar Square, Basantapur, Kathmandu",
+          "ok": "2026-11"
+        },
+        {
+          "local": "",
+          "ages": [
+            2,
+            2,
+            2,
+            2
+          ],
+          "hrs": 0.5,
+          "io": "out",
+          "pram": "part",
+          "price": {
+            "th": "เช็กราคาก่อนไป",
+            "en": "Check the price"
+          },
+          "book": "none",
+          "src": "https://travelynnfamily.com/kathmandu-with-kids/",
+          "name": {
+            "th": "จัตุรัสช่างปั้นหม้อ",
+            "en": "Pottery Square"
+          },
+          "kind": "culture",
+          "area": {
+            "th": "ภักตปุระ",
+            "en": "Bhaktapur"
+          },
+          "what": {
+            "th": "จัตุรัสที่ช่างปั้นหม้อทำงานให้ดู",
+            "en": "A square where potters work in front of visitors"
+          },
+          "why": {
+            "th": "เด็ก ๆ ได้ดูช่างปั้นหม้อทำงาน",
+            "en": "Children watch the potters at work"
+          },
+          "q": "Pottery Square, Bhaktapur",
+          "ok": "2026-11"
         }
       ]
     }

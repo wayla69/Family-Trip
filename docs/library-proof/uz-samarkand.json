@@ -1,17 +1,90 @@
 {
   "town": "uz-samarkand",
-  "kind": "eats",
-  "checked": "2026-11",
-  "rule": "A row gets ok only from a current listing, its own site or recent reviews with nothing saying closed (docs/EATS.md). A row is taken out when a search could not find the place at all or the sources disagree; a place found but not freshly confirmed stays without ok.",
-  "scope": "the 1 row without ok; the rows already confirmed were not checked again",
-  "how": "Google Maps opened in headless Chromium (2026-11-23), limited view without a reviews tab, so no review date could be read; a place with current hours and no closed notice counts as a current listing",
-  "confirmed": [],
-  "kept_without_ok": [],
-  "removed": [
+  "kind": "eats + sights",
+  "checked": "2026-11-23",
+  "rule": "library-check.cjs, then the Google Maps Reviews tab sorted by newest: ok only when not marked closed, with a review from the last six months, and the map's name matching the page's.",
+  "agents": "one Haiku agent; 12 rows from We Project (2026), Lonely Planet (2025) and Silk Road Samarkand's own site passed library-check.cjs, 10 went in",
+  "added": [
     {
-      "name": "Cafe Wishbone",
-      "src": "https://www.google.com/maps/place/Wishbone/@39.7755712,64.4170984,17z",
-      "reason": "Google Maps: 'Wishbone', Tim Abdullah Khan, Khakikat Str., Bukhara (QCG8+6RH), located in Tim Abdulla Khan — 'Permanently closed'"
+      "name": "Sangizar",
+      "page_name": "Sangizar",
+      "src": "https://weproject.media/en/articles/detail/10-family-friendly-restaurants-in-samarkand-and-bukhara/",
+      "date": "2026-09",
+      "map": "Google Maps 'SANGIZAR', 235 reviews, newest '6 days ago'"
+    },
+    {
+      "name": "Jasmin",
+      "page_name": "Jasmin",
+      "src": "https://weproject.media/en/articles/detail/10-family-friendly-restaurants-in-samarkand-and-bukhara/",
+      "date": "2026-09",
+      "map": "Google Maps 73 reviews, newest '6 days ago'"
+    },
+    {
+      "name": "The Mohon",
+      "page_name": "The Mohon",
+      "src": "https://weproject.media/en/articles/detail/10-family-friendly-restaurants-in-samarkand-and-bukhara/",
+      "date": "2026-09",
+      "map": "Google Maps 352 reviews, newest '2 weeks ago'"
+    },
+    {
+      "name": "Lalizar",
+      "page_name": "Lalizar",
+      "src": "https://weproject.media/en/articles/detail/10-family-friendly-restaurants-in-samarkand-and-bukhara/",
+      "date": "2026-09",
+      "map": "Google Maps Naqshband 140, 29 reviews, newest '7 hours ago'"
+    },
+    {
+      "name": "Zargaron",
+      "page_name": "Zargaron",
+      "src": "https://weproject.media/en/articles/detail/10-family-friendly-restaurants-in-samarkand-and-bukhara/",
+      "date": "2026-09",
+      "map": "Google Maps Haqiqat 3, 38 reviews, newest '4 weeks ago'"
+    },
+    {
+      "name": "Palmira",
+      "page_name": "Palmira",
+      "src": "https://weproject.media/en/articles/detail/10-family-friendly-restaurants-in-samarkand-and-bukhara/",
+      "date": "2026-09",
+      "map": "Google Maps 'Ресторан \"Palmira\"', Naqshband 162, 29 reviews, newest '3 months ago'"
+    },
+    {
+      "name": "Zolotaya Bukhara",
+      "page_name": "Zolotaya Bukhara",
+      "src": "https://weproject.media/en/articles/detail/10-family-friendly-restaurants-in-samarkand-and-bukhara/",
+      "date": "2026-09",
+      "map": "Google Maps 'Zolotaya Buhara', 1,192 reviews, newest '2 days ago'"
+    },
+    {
+      "name": "Samanid Park",
+      "page_name": "Samani Park",
+      "src": "https://www.lonelyplanet.com/articles/uzbekistan-with-kids",
+      "date": "2025-11",
+      "map": "Google Maps 'Samonids Recreation Park', 459 reviews, newest '1 day ago'"
+    },
+    {
+      "name": "Silk Road Samarkand musical fountain",
+      "page_name": "Musical Fountain",
+      "src": "https://www.silkroad-samarkand.com/recreation/muzykalnyy-fontan-feeriya-vody-sveta-i-muzyki/",
+      "date": "official",
+      "map": "Google Maps 'Musical fountain Silk Road Samarkand', 231 reviews, newest '3 weeks ago'"
+    },
+    {
+      "name": "The Eternal City",
+      "page_name": "Eternal City",
+      "src": "https://www.silkroad-samarkand.com/resort/eternal-city/",
+      "date": "official",
+      "map": "Google Maps 'The Eternal City', 754 reviews, newest '2 hours ago'"
     }
-  ]
+  ],
+  "left_out": [
+    {
+      "name": "Zo`r Taom",
+      "why": "the map finds one in Gazalkent, outside the area, with a 6-month-old review"
+    },
+    {
+      "name": "Steak House (Bukhara)",
+      "why": "the map shows another restaurant"
+    }
+  ],
+  "estimates": "Ages and visit hours are placeholders; prices and opening notes are the pages' own."
 }
