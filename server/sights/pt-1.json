@@ -282,7 +282,167 @@
       {"name":{"en":"Quake - Lisbon Earthquake Museum","th":"ควิค พิพิธภัณฑ์แผ่นดินไหวลิสบอน"},"kind":"museum","area":{"en":"Rua Cais da Alfândega Velha, 39","th":"รัวกาอิส ดา อัลฟันเดกา เวลยา 39"},"what":{"en":"Immersive museum on the science of earthquakes and the 1755 earthquake that shaped the city.","th":"พิพิธภัณฑ์แบบดื่มด่ำเรื่องวิทยาศาสตร์แผ่นดินไหวและแผ่นดินไหวปี 1755 ที่หล่อหลอมเมือง"},"why":{"en":"The page says it explains why the streets of Baixa look the way they do, so the city outside makes sense.","th":"หน้าเว็บอธิบายว่าทำไมถนนในบาอิชาจึงเป็นแบบนั้น ทำให้เมืองด้านนอกเข้าใจได้"},"ages":[0,1,2,2],"hrs":1,"io":"in","pram":"part","price":{"en":"Check the price","th":"เช็กราคาก่อนไป"},"book":"rec","q":"Quake Lisbon Earthquake Museum, Rua Cais da Alfândega Velha, Lisbon","ok":"2026-11","src":"https://lisbonquake.com/en-GB/blog/things-to-do-in-lisbon-for-families"},
       {"name":{"en":"LX Factory","th":"แอลเอ็กซ์แฟกทอรี"},"kind":"market","area":{"en":"Alcântara","th":"อัลคันตารา"},"what":{"en":"Repurposed industrial complex with bars, restaurants, shops and a market on Sundays.","th":"อาคารอุตสาหกรรมที่ดัดแปลงใหม่ มีบาร์ ร้านอาหาร ร้านค้า และตลาดวันอาทิตย์"},"why":{"en":"Street food and open space; the page says children can eat well there.","th":"สตรีทฟู้ดและพื้นที่โล่ง หน้าเว็บบอกว่าเด็กกินได้ดีที่นั่น"},"tip":{"en":"A market on Sundays; busiest at weekends and in the evenings (per the page)","th":"ตลาดวันอาทิตย์ ยุ่งสุดในวันหยุดและช่วงเย็น ตามหน้าเว็บ"},"ages":[1,2,2,2],"hrs":2,"io":"both","pram":"part","price":{"en":"Check the price","th":"เช็กราคาก่อนไป"},"book":"none","q":"LX Factory, Alcântara, Lisbon","ok":"2026-11","src":"https://lisbonquake.com/en-GB/blog/things-to-do-in-lisbon-for-families"},
       {"name":{"en":"Tram 28","th":"รถราง 28"},"kind":"ride","area":{"en":"Alfama, Baixa and Chiado","th":"อัลฟามา บาอิชา และชีอาดู"},"what":{"en":"Historic yellow tram through the old quarters of Alfama, Baixa and Chiado.","th":"รถรางสีเหลืองประวัติศาสตร์ผ่านย่านเก่าอัลฟามา บาอิชา และชีอาดู"},"why":{"en":"The page says it is the highlight of the morning for many families.","th":"หน้าเว็บบอกว่าเป็นช่วงเช้าที่ดีที่สุดของครอบครัวหลายครอบครัว"},"tip":{"en":"Seats fill quickly; arrive early (per the page)","th":"ที่นั่งเต็มเร็ว มาถึงแต่เช้า ตามหน้าเว็บ"},"ages":[1,2,2,2],"hrs":0.5,"io":"out","pram":"no","price":{"en":"Check the price","th":"เช็กราคาก่อนไป"},"book":"none","q":"Tram 28, Alfama, Lisbon","ok":"2026-11","src":"https://lisbonquake.com/en-GB/blog/things-to-do-in-lisbon-for-families"},
-      {"name":{"en":"Jardim da Estrela","th":"สวนเอสเตลา"},"kind":"park","area":{"en":"Estrela","th":"เอสเตลา"},"what":{"en":"Park near the Estrela Basilica with a duck pond, a playground and shaded benches.","th":"สวนใกล้มหาวิหารเอสเตลา มีบ่อเป็ด สนามเด็กเล่น และม้านั่งใต้ร่มเงา"},"why":{"en":"A playground and a duck pond for a midday break, per the page.","th":"สนามเด็กเล่นและบ่อเป็ดสำหรับพักเที่ยง ตามหน้าเว็บ"},"ages":[1,2,2,2],"hrs":1,"io":"out","pram":"part","price":{"en":"Check the price","th":"เช็กราคาก่อนไป"},"book":"none","q":"Jardim da Estrela, Estrela, Lisbon","ok":"2026-11","src":"https://www.nomadotravel.app/en/guides/lisbon-with-kids"}
+      {"name":{"en":"Jardim da Estrela","th":"สวนเอสเตลา"},"kind":"park","area":{"en":"Estrela","th":"เอสเตลา"},"what":{"en":"Park near the Estrela Basilica with a duck pond, a playground and shaded benches.","th":"สวนใกล้มหาวิหารเอสเตลา มีบ่อเป็ด สนามเด็กเล่น และม้านั่งใต้ร่มเงา"},"why":{"en":"A playground and a duck pond for a midday break, per the page.","th":"สนามเด็กเล่นและบ่อเป็ดสำหรับพักเที่ยง ตามหน้าเว็บ"},"ages":[1,2,2,2],"hrs":1,"io":"out","pram":"part","price":{"en":"Check the price","th":"เช็กราคาก่อนไป"},"book":"none","q":"Jardim da Estrela, Estrela, Lisbon","ok":"2026-11","src":"https://www.nomadotravel.app/en/guides/lisbon-with-kids"},
+        {
+          "local": "Parque Recreativo do Alto da Serafina",
+          "ages": [
+            2,
+            2,
+            2,
+            1
+          ],
+          "hrs": 2,
+          "io": "out",
+          "pram": "yes",
+          "price": {
+            "th": "เช็กราคาก่อนไป",
+            "en": "Check the price"
+          },
+          "book": "none",
+          "src": "https://www.timeout.pt/lisboa/pt/miudos/os-melhores-parques-infantis-em-lisboa",
+          "name": {
+            "th": "สวนอัลตูดาเซราฟีนา",
+            "en": "Alto da Serafina park"
+          },
+          "kind": "park",
+          "area": {
+            "th": "ถนนเซราฟีนา ลิสบอน",
+            "en": "Estrada da Serafina, Lisbon"
+          },
+          "what": {
+            "th": "สวนกว้าง มีที่ปิกนิก โซนเล่นสำหรับเด็กต่ำกว่า 5 ขวบและ 6–12 ขวบ และวิวเมือง",
+            "en": "A big park with picnic spots, play areas for under-fives and 6–12s, and a city view"
+          },
+          "why": {
+            "th": "มีถนนจำลองให้หัดปั่นจักรยานและสกู๊ตเตอร์",
+            "en": "A small traffic course for learning to ride bikes and scooters"
+          },
+          "tip": {
+            "th": "เปิดทุกวัน 09:00–20:00 (1 เม.ย.–30 ก.ย.) และ 09:00–18:00 (1 ต.ค.–31 มี.ค.)",
+            "en": "Open daily 09.00–20.00 from 1 April to 30 September; 09.00–18.00 from 1 October to 31 March"
+          },
+          "q": "Parque Recreativo do Alto da Serafina, Lisbon",
+          "ok": "2026-11"
+        },
+        {
+          "local": "",
+          "ages": [
+            0,
+            1,
+            2,
+            2
+          ],
+          "hrs": 1.5,
+          "io": "in",
+          "pram": "part",
+          "price": {
+            "th": "เช็กราคาก่อนไป",
+            "en": "Check the price"
+          },
+          "book": "none",
+          "src": "https://www.timeout.pt/lisboa/pt/miudos/coisas-fazer-criancas-inverno-chuva-lisboa",
+          "name": {
+            "th": "โบว์ลิงซิตี",
+            "en": "Bowling City"
+          },
+          "kind": "play",
+          "area": {
+            "th": "ศูนย์การค้าโคลอมโบ ลิสบอน",
+            "en": "Colombo shopping centre, Lisbon"
+          },
+          "what": {
+            "th": "โบว์ลิงในร่ม 12 เลน",
+            "en": "An indoor bowling centre with twelve lanes"
+          },
+          "why": {
+            "th": "สนุกในร่มสำหรับวันฝนตก",
+            "en": "Indoor fun for a rainy day"
+          },
+          "tip": {
+            "th": "โซนเกมสำหรับอายุ 16 ปีขึ้นไป พาเด็กเล่นแค่เลนโบว์ลิง",
+            "en": "The arcade zone is for over-16s; stay at the lanes with children"
+          },
+          "q": "Bowling City Colombo, Av. Lusíada, Lisbon",
+          "ok": "2026-11"
+        },
+        {
+          "local": "",
+          "ages": [
+            1,
+            2,
+            2,
+            2
+          ],
+          "hrs": 3,
+          "io": "out",
+          "pram": "part",
+          "price": {
+            "th": "ฟรี",
+            "en": "Free"
+          },
+          "book": "none",
+          "src": "https://www.familycantravel.com/sintra-with-kids/",
+          "name": {
+            "th": "หาดปรายาดัชมาซัช",
+            "en": "Praia das Maçãs"
+          },
+          "kind": "beach",
+          "area": {
+            "th": "ซินตรา",
+            "en": "Sintra"
+          },
+          "what": {
+            "th": "หาดแอตแลนติกแคบแต่ลึก มีทางเดินขึ้นหน้าผา",
+            "en": "A narrow, deep Atlantic beach with a path up to the cliffs"
+          },
+          "why": {
+            "th": "หน้าเว็บบอกว่าเหมาะกับครอบครัวมาก",
+            "en": "The page calls it very family-friendly"
+          },
+          "tip": {
+            "th": "คลื่นแอตแลนติกแรงมาก ให้เด็กเล่นบนหาดทราย",
+            "en": "The Atlantic waves can be very strong: keep children on the sand"
+          },
+          "q": "Praia das Maçãs, Colares, Sintra",
+          "ok": "2026-11"
+        },
+        {
+          "local": "Castelo dos Mouros",
+          "ages": [
+            0,
+            1,
+            2,
+            2
+          ],
+          "hrs": 2,
+          "io": "out",
+          "pram": "no",
+          "price": {
+            "th": "เช็กราคาก่อนไป",
+            "en": "Check the price"
+          },
+          "book": "none",
+          "src": "https://www.familycantravel.com/sintra-with-kids/",
+          "name": {
+            "th": "ปราสาทมัวร์",
+            "en": "Moorish Castle"
+          },
+          "kind": "views",
+          "area": {
+            "th": "ซินตรา",
+            "en": "Sintra"
+          },
+          "what": {
+            "th": "ปราสาทยุคกลางบนเขาเหนือซินตรา เดินขึ้นไป",
+            "en": "A medieval castle in the hills above Sintra, reached on foot"
+          },
+          "why": {
+            "th": "การเดินขึ้นเขาก็เป็นส่วนหนึ่งของความสนุก",
+            "en": "The walk up is part of the fun"
+          },
+          "q": "Castelo dos Mouros, Sintra",
+          "ok": "2026-11"
+        }
     ]
     },
     {
