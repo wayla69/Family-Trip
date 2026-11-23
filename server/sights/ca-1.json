@@ -535,6 +535,195 @@
           "q": "Niagara Takes Flight, Niagara Falls, Ontario",
           "ok": "2026-11",
           "src": "https://tourstoniagarafalls.com/attraction/niagara-takes-flight/"
+        },
+        {
+          "local": "",
+          "ages": [
+            1,
+            1,
+            1,
+            1
+          ],
+          "hrs": 1,
+          "io": "in",
+          "pram": "part",
+          "price": {
+            "th": "ฟรี",
+            "en": "Free"
+          },
+          "book": "none",
+          "src": "https://www.torontotourism.org/toronto-with-toddlers/",
+          "name": {
+            "th": "ห้องสมุดโทรอนโตเรเฟอเรนซ์",
+            "en": "Toronto Reference Library"
+          },
+          "kind": "play",
+          "area": {
+            "th": "ยองก์และบลัวร์",
+            "en": "Yonge and Bloor"
+          },
+          "what": {
+            "th": "ห้องสมุดประชาชน มีห้องสมุดเด็ก มุมอ่านหนังสือ และเครื่องเล่นในร่มสำหรับเด็กเล็ก",
+            "en": "A public library with a children’s library, reading nooks and indoor toddler play structures"
+          },
+          "why": {
+            "th": "มีเครื่องเล่นและจิ๊กซอว์สำหรับเด็กเล็ก ใช้ได้ดีวันหนาวหรือฝนตก",
+            "en": "Toddler play structures and puzzles for a cold or rainy day"
+          },
+          "q": "Toronto Reference Library, 789 Yonge St, Toronto",
+          "ok": "2026-11"
+        },
+        {
+          "local": "",
+          "ages": [
+            1,
+            1,
+            1,
+            1
+          ],
+          "hrs": 2,
+          "io": "in",
+          "pram": "part",
+          "price": {
+            "th": "≈ C$14 ผู้ใหญ่ · C$7 เด็ก 5 ขวบขึ้นไป · ต่ำกว่า 5 ขวบฟรี",
+            "en": "≈ C$14 a grown-up · C$7 children 5+ · under 5 free"
+          },
+          "book": "none",
+          "src": "https://www.torontotourism.org/toronto-with-toddlers/",
+          "name": {
+            "th": "พิพิธภัณฑ์รองเท้าบาตา",
+            "en": "Bata Shoe Museum"
+          },
+          "kind": "museumkid",
+          "area": {
+            "th": "ถนนบลัวร์ตะวันตก",
+            "en": "Bloor Street West"
+          },
+          "what": {
+            "th": "พิพิธภัณฑ์รองเท้า มีโซนให้เด็กเล็กลองสวมรองเท้าจากหลายวัฒนธรรม",
+            "en": "A shoe museum with a zone where toddlers try on shoes from different cultures"
+          },
+          "why": {
+            "th": "เด็กเล็กได้ลองสวมรองเท้าเอง",
+            "en": "Hands-on shoe-trying for toddlers"
+          },
+          "q": "Bata Shoe Museum, 327 Bloor St W, Toronto",
+          "ok": "2026-11"
+        },
+        {
+          "local": "",
+          "ages": [
+            1,
+            1,
+            1,
+            1
+          ],
+          "hrs": 2,
+          "io": "out",
+          "pram": "part",
+          "price": {
+            "th": "เช็กราคาก่อนไป",
+            "en": "Check the price"
+          },
+          "book": "none",
+          "src": "https://www.torontotourism.org/toronto-with-toddlers/",
+          "name": {
+            "th": "หาดเชอร์รี",
+            "en": "Cherry Beach"
+          },
+          "kind": "beach",
+          "area": {
+            "th": "ริมทะเลสาบโทรอนโต",
+            "en": "Toronto waterfront"
+          },
+          "what": {
+            "th": "หาดทราย มีสนามเด็กเล่นและน้ำทะเลสาบตื้น",
+            "en": "A sandy beach with a playground and shallow lake water"
+          },
+          "why": {
+            "th": "ทรายนุ่ม มีสนามเด็กเล่น และน้ำตื้นสำหรับเด็กเล็ก",
+            "en": "Soft sand, a playground and shallow water for toddlers"
+          },
+          "tip": {
+            "th": "อยู่กับเด็กเล็กตลอดเวลาที่ลงน้ำ",
+            "en": "Stay with toddlers in the water"
+          },
+          "q": "Cherry Beach, Toronto",
+          "ok": "2026-11"
+        },
+        {
+          "local": "",
+          "ages": [
+            1,
+            1,
+            1,
+            1
+          ],
+          "hrs": 2,
+          "io": "both",
+          "pram": "part",
+          "price": {
+            "th": "≈ C$20 ผู้ใหญ่ · C$10 เด็ก · ต่ำกว่า 5 ขวบฟรี",
+            "en": "≈ C$20 a grown-up · C$10 children · under 5 free"
+          },
+          "book": "none",
+          "src": "https://www.torontotourism.org/toronto-with-toddlers/",
+          "name": {
+            "th": "พิพิธภัณฑ์อากาข่าน",
+            "en": "Aga Khan Museum"
+          },
+          "kind": "culture",
+          "area": {
+            "th": "ดอนมิลส์ ถนนวินฟอร์ด",
+            "en": "Don Mills, Wynford Drive"
+          },
+          "what": {
+            "th": "พิพิธภัณฑ์ศิลปะอิสลาม มีเวิร์กช็อปครอบครัววันอาทิตย์และสวนสระน้ำ",
+            "en": "A museum of Islamic arts with Sunday family workshops and pool gardens"
+          },
+          "why": {
+            "th": "เวิร์กช็อปครอบครัวฟรีวันอาทิตย์ และสวนสระน้ำเข็นรถเข็นเดินเล่นได้",
+            "en": "Free family workshops on Sundays, and the pool gardens make a good pram walk"
+          },
+          "q": "Aga Khan Museum, 77 Wynford Dr, Toronto",
+          "ok": "2026-11"
+        },
+        {
+          "local": "",
+          "ages": [
+            1,
+            1,
+            1,
+            1
+          ],
+          "hrs": 2,
+          "io": "out",
+          "pram": "yes",
+          "price": {
+            "th": "เช็กราคาก่อนไป",
+            "en": "Check the price"
+          },
+          "book": "none",
+          "src": "https://www.torontotourism.org/toronto-with-toddlers/",
+          "name": {
+            "th": "สวนเอ็ดเวิร์ดส์",
+            "en": "Edwards Gardens"
+          },
+          "kind": "nature",
+          "area": {
+            "th": "ถนนลอว์เรนซ์ตะวันออก",
+            "en": "Lawrence Avenue East"
+          },
+          "what": {
+            "th": "สวนจัดแต่งขนาด 16 เฮกตาร์ มีทางเดินและลำธารเล็กกับสะพาน",
+            "en": "A 16-hectare formal garden with paths and a gentle creek with bridges"
+          },
+          "why": {
+            "th": "ทางเดินเข็นรถเข็นได้ และมีสะพานข้ามลำธาร",
+            "en": "Pram-friendly paths and bridges over the creek"
+          },
+          "q": "Edwards Gardens, 777 Lawrence Ave E, Toronto",
+          "ok": "2026-11"
         }
       ]
     },
