@@ -812,6 +812,408 @@
           "q": "Vancouver Maritime Museum, 1905 Ogden Avenue, Vancouver",
           "ok": "2026-11",
           "src": "https://vanmaritime.com/visit/"
+        },
+        {
+          "local": "",
+          "ages": [
+            0,
+            1,
+            2,
+            2
+          ],
+          "hrs": 1,
+          "io": "in",
+          "pram": "part",
+          "price": {
+            "th": "เช็กราคาก่อนไป",
+            "en": "Check the price"
+          },
+          "book": "none",
+          "src": "https://www.vancouvertourism.org/?p=178",
+          "name": {
+            "th": "ฟลายโอเวอร์แคนาดา",
+            "en": "FlyOver Canada"
+          },
+          "kind": "ride",
+          "area": {
+            "th": "แคนาดาเพลซ",
+            "en": "Canada Place"
+          },
+          "what": {
+            "th": "เครื่องเล่นจำลองการบินชมภูมิประเทศแคนาดา",
+            "en": "A flight-simulator ride over Canadian landscapes"
+          },
+          "why": {
+            "th": "เด็ก 4–7 ขวบชอบความรู้สึกเหมือนได้บิน",
+            "en": "Children of 4 to 7 love the feeling of flying"
+          },
+          "tip": {
+            "th": "เช็กกฎความสูงและอายุของผู้เล่นในเว็บก่อนไป",
+            "en": "Check the rider rules on its site before you go"
+          },
+          "q": "FlyOver Canada, 999 Canada Pl, Vancouver",
+          "ok": "2026-11"
+        },
+        {
+          "local": "",
+          "ages": [
+            2,
+            2,
+            1,
+            0
+          ],
+          "hrs": 2,
+          "io": "out",
+          "pram": "part",
+          "price": {
+            "th": "เช็กราคาก่อนไป",
+            "en": "Check the price"
+          },
+          "book": "none",
+          "src": "https://www.vancouvertourism.org/?p=178",
+          "name": {
+            "th": "ฟาร์มเมเปิลวูด",
+            "en": "Maplewood Farm"
+          },
+          "kind": "farm",
+          "area": {
+            "th": "นอร์ทแวนคูเวอร์",
+            "en": "North Vancouver"
+          },
+          "what": {
+            "th": "ฟาร์มให้ลูบสัตว์ มีแพะ กระต่าย และไก่",
+            "en": "A petting farm with goats, rabbits and chickens"
+          },
+          "why": {
+            "th": "เด็กเล็กได้ใกล้ชิดและให้อาหารสัตว์ เด็กถึงราว 7 ขวบก็ยังชอบ",
+            "en": "Little ones meet and feed the animals, still a hit up to about seven"
+          },
+          "tip": {
+            "th": "เปิดทุกวัน 10:00–16:00",
+            "en": "Open daily 10:00–16:00"
+          },
+          "q": "Maplewood Farm, 405 Seymour River Pl, North Vancouver",
+          "ok": "2026-11"
+        },
+        {
+          "local": "",
+          "ages": [
+            1,
+            1,
+            1,
+            1
+          ],
+          "hrs": 2,
+          "io": "out",
+          "pram": "part",
+          "price": {
+            "th": "≈ C$7.93 ผู้ใหญ่ ยังไม่รวมภาษี · อายุ 0–4 ปีฟรี",
+            "en": "≈ C$7.93 a grown-up before tax · ages 0–4 free"
+          },
+          "book": "none",
+          "src": "https://www.vancouvertourism.org/?p=178",
+          "name": {
+            "th": "สระน้ำอุ่นหาดเซคันด์บีช",
+            "en": "Second Beach Pool"
+          },
+          "kind": "beach",
+          "area": {
+            "th": "สวนสแตนลีย์",
+            "en": "Stanley Park"
+          },
+          "what": {
+            "th": "สระน้ำอุ่นกลางแจ้งข้างหาดทรายเซคันด์บีชในสวนสแตนลีย์",
+            "en": "A heated outdoor pool beside sandy Second Beach in Stanley Park"
+          },
+          "why": {
+            "th": "เด็กเล็กเล่นน้ำอุ่น มีไลฟ์การ์ดดูแล อยู่ติดหาด",
+            "en": "Small children splash in warm water with lifeguards by the beach"
+          },
+          "tip": {
+            "th": "เปิดเฉพาะหน้าร้อน ฤดูกาล 2026 คือ 16 พ.ค.–7 ก.ย.",
+            "en": "Summer only: the 2026 season ran 16 May to 7 September"
+          },
+          "q": "Second Beach Pool, Stanley Park, Vancouver",
+          "ok": "2026-11"
+        },
+        {
+          "local": "",
+          "ages": [
+            1,
+            1,
+            1,
+            1
+          ],
+          "hrs": 1,
+          "io": "out",
+          "pram": "part",
+          "price": {
+            "th": "ฟรี",
+            "en": "Free"
+          },
+          "book": "none",
+          "src": "https://www.vancouvertourism.org/?p=178",
+          "name": {
+            "th": "เสาโทเท็ม บร็อกตันพอยต์",
+            "en": "Totem poles, Brockton Point"
+          },
+          "kind": "culture",
+          "area": {
+            "th": "บร็อกตันพอยต์ สวนสแตนลีย์",
+            "en": "Brockton Point, Stanley Park"
+          },
+          "what": {
+            "th": "เสาโทเท็มแกะสลักที่บร็อกตันพอยต์ แวะง่ายระหว่างเดินริมกำแพงทะเล",
+            "en": "Carved totem poles at Brockton Point, an easy stop on a seawall walk"
+          },
+          "why": {
+            "th": "เด็กได้ดูเสาแกะสลักระหว่างเดินทางราบ",
+            "en": "Children see the carved poles on a flat walk"
+          },
+          "q": "Totem Poles, Brockton Point, Stanley Park, Vancouver",
+          "ok": "2026-11"
+        },
+        {
+          "local": "",
+          "ages": [
+            1,
+            1,
+            1,
+            1
+          ],
+          "hrs": 1,
+          "io": "out",
+          "pram": "yes",
+          "price": {
+            "th": "ฟรี",
+            "en": "Free"
+          },
+          "book": "none",
+          "src": "https://www.vancouvertourism.org/?p=178",
+          "name": {
+            "th": "ทางเดินรอบลอสต์ลากูน",
+            "en": "Lost Lagoon loop"
+          },
+          "kind": "nature",
+          "area": {
+            "th": "สวนสแตนลีย์",
+            "en": "Stanley Park"
+          },
+          "what": {
+            "th": "ทางเดินราบรอบลอสต์ลากูน ระหว่างทางมีบ้านธรรมชาติ",
+            "en": "A flat loop round Lost Lagoon with a nature house on the way"
+          },
+          "why": {
+            "th": "ราบ เข็นรถเข็นง่าย มีหงส์และนกกระสาให้ดู",
+            "en": "Flat and easy with a pram, with swans and herons to watch"
+          },
+          "q": "Lost Lagoon, Stanley Park, Vancouver",
+          "ok": "2026-11"
+        },
+        {
+          "local": "",
+          "ages": [
+            1,
+            2,
+            2,
+            1
+          ],
+          "hrs": 2,
+          "io": "in",
+          "pram": "part",
+          "price": {
+            "th": "เช็กราคาก่อนไป",
+            "en": "Check the price"
+          },
+          "book": "none",
+          "src": "https://www.vancouvertourism.org/?p=178",
+          "name": {
+            "th": "โกบานานาส์ นอร์ทแวนคูเวอร์",
+            "en": "Go Bananas (North Vancouver)"
+          },
+          "kind": "play",
+          "area": {
+            "th": "ถนนมารีนไดรฟ์ นอร์ทแวนคูเวอร์",
+            "en": "Marine Drive, North Vancouver"
+          },
+          "what": {
+            "th": "สนามเด็กเล่นในร่มสำหรับบ่ายวันฝนตก",
+            "en": "An indoor playground for wet afternoons"
+          },
+          "why": {
+            "th": "เด็กได้ปีนป่ายเล่นให้หมดแรง",
+            "en": "Children burn off energy on the play frames"
+          },
+          "tip": {
+            "th": "เหมาะกับเด็ก 1–12 ขวบ",
+            "en": "Best for ages 1–12"
+          },
+          "q": "Go Bananas, 935 Marine Dr, North Vancouver",
+          "ok": "2026-11"
+        },
+        {
+          "local": "",
+          "ages": [
+            1,
+            1,
+            1,
+            1
+          ],
+          "hrs": 1,
+          "io": "in",
+          "pram": "part",
+          "price": {
+            "th": "ฟรี",
+            "en": "Free"
+          },
+          "book": "none",
+          "src": "https://www.vancouvertourism.org/?p=178",
+          "name": {
+            "th": "ห้องสมุดกลางแวนคูเวอร์",
+            "en": "Vancouver Central Library"
+          },
+          "kind": "culture",
+          "area": {
+            "th": "ดาวน์ทาวน์",
+            "en": "Downtown"
+          },
+          "what": {
+            "th": "ห้องสมุดกลางเมือง มีห้องสมุดเด็กใหญ่อยู่ชั้นล่าง",
+            "en": "The downtown library with a big children’s library on the lower level"
+          },
+          "why": {
+            "th": "มีเล่านิทานและห้องสมุดเด็กให้พัก เข้าฟรี",
+            "en": "Story times and a children’s library for a break, free to visit"
+          },
+          "tip": {
+            "th": "สวนบนดาดฟ้าเปิดตามฤดูกาล",
+            "en": "The rooftop garden is seasonal"
+          },
+          "q": "Vancouver Public Library Central Library, 350 W Georgia St, Vancouver",
+          "ok": "2026-11"
+        },
+        {
+          "local": "",
+          "ages": [
+            1,
+            1,
+            1,
+            1
+          ],
+          "hrs": 2,
+          "io": "out",
+          "pram": "part",
+          "price": {
+            "th": "เช็กราคาก่อนไป",
+            "en": "Check the price"
+          },
+          "book": "none",
+          "src": "https://www.vancouvertourism.org/?p=178",
+          "name": {
+            "th": "หาดคิทซิลาโน",
+            "en": "Kitsilano Beach"
+          },
+          "kind": "beach",
+          "area": {
+            "th": "คิทซิลาโน",
+            "en": "Kitsilano"
+          },
+          "what": {
+            "th": "หาดในเมือง มีวอลเลย์บอลและสระน้ำเค็มอุ่นขนาดใหญ่",
+            "en": "A city beach with volleyball and a big heated saltwater pool"
+          },
+          "why": {
+            "th": "เด็กว่ายน้ำในสระน้ำเค็มอุ่นและเล่นทราย",
+            "en": "Children swim in the heated saltwater pool and play in the sand"
+          },
+          "tip": {
+            "th": "สระเปิดฤดูกาล 2026 คือ 17 มิ.ย.–13 ก.ย.",
+            "en": "The pool’s 2026 season ran 17 June to 13 September"
+          },
+          "q": "Kitsilano Beach, Vancouver",
+          "ok": "2026-11"
+        },
+        {
+          "local": "",
+          "ages": [
+            1,
+            1,
+            1,
+            1
+          ],
+          "hrs": 2,
+          "io": "out",
+          "pram": "part",
+          "price": {
+            "th": "ฟรี",
+            "en": "Free"
+          },
+          "book": "none",
+          "src": "https://www.vancouvertourism.org/?p=178",
+          "name": {
+            "th": "หาดอิงลิชเบย์",
+            "en": "English Bay Beach"
+          },
+          "kind": "beach",
+          "area": {
+            "th": "เวสต์เอนด์ ดาวน์ทาวน์",
+            "en": "West End, downtown"
+          },
+          "what": {
+            "th": "หาดกลางเมือง มีไลฟ์การ์ด วอลเลย์บอล และรูปปั้นอินุกชุก",
+            "en": "The downtown beach with lifeguards, volleyball and the Inukshuk"
+          },
+          "why": {
+            "th": "มีไลฟ์การ์ด และมีทรายให้เล่น",
+            "en": "Lifeguards on duty and sand to play in"
+          },
+          "tip": {
+            "th": "เดินจากโรงแรมส่วนใหญ่ในดาวน์ทาวน์ได้",
+            "en": "Walkable from most downtown hotels"
+          },
+          "q": "English Bay Beach, Vancouver",
+          "ok": "2026-11"
+        },
+        {
+          "local": "",
+          "ages": [
+            1,
+            1,
+            1,
+            1
+          ],
+          "hrs": 2,
+          "io": "out",
+          "pram": "part",
+          "price": {
+            "th": "ฟรี",
+            "en": "Free"
+          },
+          "book": "none",
+          "src": "https://www.vancouvertourism.org/?p=178",
+          "name": {
+            "th": "หาดสแปนิชแบงก์ส",
+            "en": "Spanish Banks"
+          },
+          "kind": "beach",
+          "area": {
+            "th": "พอยต์เกรย์",
+            "en": "Point Grey"
+          },
+          "what": {
+            "th": "หาดเลนกว้างใหญ่ให้เดินสำรวจตอนน้ำลง",
+            "en": "Huge tidal flats to explore at low tide"
+          },
+          "why": {
+            "th": "เด็กถือถังเดินสำรวจหาดตอนน้ำลง",
+            "en": "Children explore the flats with buckets at low tide"
+          },
+          "tip": {
+            "th": "เช็กตารางน้ำขึ้นลง และอย่าให้เด็กคลาดสายตา",
+            "en": "Check the tide table and keep the children in sight"
+          },
+          "q": "Spanish Banks Beach, Vancouver",
+          "ok": "2026-11"
         }
       ]
     }
