@@ -1,0 +1,31 @@
+{
+  "town": "ge-tbilisi",
+  "kind": "eats",
+  "checked": "2026-11",
+  "rule": "A row gets ok only from a current listing, its own site or recent reviews with nothing saying closed (docs/EATS.md). A row is taken out when a search could not find the place at all or the sources disagree; a place found but not freshly confirmed stays without ok.",
+  "scope": "the 3 rows without ok; the rows already confirmed were not checked again",
+  "how": "Google Maps opened in headless Chromium (2026-11-23), limited view without a reviews tab, so no review date could be read; a place with current hours and no closed notice counts as a current listing",
+  "confirmed": [
+    {
+      "name": "Machakhela",
+      "src": "https://www.google.com/maps/place/Machakhela/@41.6897456,44.8088643,17z",
+      "page_name": "Machakhela",
+      "evidence": "Google Maps: Georgian restaurant, 3.7★, 23 Ovanes Tumaniani St, Tbilisi (MRQ5+VG, by Meidan in the old town), 'Open 24 hours', ordering on Wolt; nothing says closed. The map query now names the street Maps shows",
+      "ok": "2026-11"
+    },
+    {
+      "name": "Dezerter Bazaar",
+      "src": "https://www.google.com/maps/place/Dezerter+Bazaar/@41.7213493,44.7941502,17z",
+      "page_name": "Dezerter Bazaar",
+      "evidence": "Google Maps: produce market, 4.1★, 5 Abastumani St, Tbilisi (PQCV+GM), 'Open · Closes 7 PM'; nothing says closed",
+      "ok": "2026-11"
+    }
+  ],
+  "kept_without_ok": [
+    {
+      "name": "Entrée",
+      "evidence": "Google Maps lists many open Entrée cafés in Tbilisi (e.g. 12 Amaghleba St 'Open · Closes 10 PM', 19 Mikheil Zandukeli St, 4 Mitropan Laghidze St), but none at Shota Rustaveli Avenue 20, the branch the row names; searching 'Entrée Shota Rustaveli Avenue Tbilisi' showed no Rustaveli branch"
+    }
+  ],
+  "removed": []
+}

@@ -1,0 +1,28 @@
+{
+  "town": "ae-abudhabi",
+  "kind": "eats",
+  "checked": "2026-11",
+  "rule": "A row gets ok only from a current listing, its own site or recent reviews with nothing saying closed (docs/EATS.md). A row is taken out when a search could not find the place at all or the sources disagree; a place found but not freshly confirmed stays without ok.",
+  "scope": "the 3 rows without ok; the rows that already carried ok were not re-checked in this pass",
+  "how": "Google Maps opened in headless Chromium (2026-11-23), limited view without a reviews tab, so no review date could be read; each row's own map query first, then the name with the town, a list result opened when needed; a hotel's own site or one web search only where Maps could not settle it.",
+  "confirmed": [],
+  "kept_without_ok": [
+    {
+      "name": "Al Ain Mall Food Court",
+      "src": "Google Maps",
+      "evidence": "Mall of Al Ain (Othman Bin Affan St) is open with hours and its food-court stalls (KFC \"at Food Court\", Jollibee \"Level 2, Food Court\", Shawarmary \"Food court, second floor\") have hours, but no listing of the food court itself — the mall being open is not enough."
+    }
+  ],
+  "removed": [
+    {
+      "name": "Lebanese Flower",
+      "src": "Google Maps",
+      "reason": "Searching the local name زهرة لبنان الخالدية opens \"Zahrat Lebnan - Al Khalidya\", 58 Al Qahirah St, F9G3+H5 Abu Dhabi: \"Permanently closed\". The English query only lists other branches/businesses (Zahrat Lebnan - Defence St, Lebanon Flower Bakery)."
+    },
+    {
+      "name": "Café Arabia",
+      "src": "Google Maps",
+      "reason": "\"Cafe Arabia كافيه أربيا\", Villa No. 637, 15th Street, opposite Al Mushrif Children's Park, F94H+8M Abu Dhabi: \"Temporarily closed\"."
+    }
+  ]
+}

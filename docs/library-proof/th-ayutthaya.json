@@ -1,0 +1,19 @@
+{
+  "town": "th-ayutthaya",
+  "kind": "eats",
+  "checked": "2026-11",
+  "rule": "A row gets ok only from a current listing, its own site or recent reviews with nothing saying closed (docs/EATS.md). A row is taken out when a search could not find the place at all or the sources disagree; a place found but not freshly confirmed stays without ok.",
+  "scope": "the 1 row without ok; the town holds 14 rows after this pass",
+  "how": "Google Maps opened in headless Chromium (2026-11-23), limited view without a reviews tab, so no review date could be read; searched in English and in the local language, each verdict from the place page or the result list shown",
+  "confirmed": [
+    {
+      "name": "Bang Lan Night Market",
+      "src": "https://www.google.com/maps/place/Ong+Gaan+Tolasap+Night+Market",
+      "page_name": "Ong Gaan Tolasap Night Market / ตลาดบางเอียน หน้าองค์การโทรศัพท์ อยุธยา",
+      "evidence": "Google Maps (2026-11-23): night market, 4.5★, 9H49+6Q3, Bang Ian Rd, Tha Wasukri; 'Closed · Opens 4 PM' (daily — opens today, a Monday); nothing says closed. The row's query opened 'Ayutthaya Night Market' (9H48+X66, opens Fri only), so it now names the daily market in front of the telephone office; a Wongnai shop page places a stall in 'the night market in front of the telephone office' on Bang Ian Road",
+      "ok": "2026-11"
+    }
+  ],
+  "kept_without_ok": [],
+  "removed": []
+}

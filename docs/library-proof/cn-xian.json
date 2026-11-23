@@ -1,0 +1,57 @@
+{
+  "town": "cn-xian",
+  "kind": "eats",
+  "checked": "2026-11",
+  "rule": "A row gets ok only from a current listing, its own site or recent reviews with nothing saying closed (docs/EATS.md). A row is taken out when a search could not find the place at all or the sources disagree; a place found but not freshly confirmed stays without ok.",
+  "scope": "the 7 rows without ok; nothing else in the town was re-checked",
+  "how": "Google Maps opened in headless Chromium (2026-11-23), limited view without a reviews tab, so no review date could be read; each row searched with its Chinese name (zh) and/or its English name and the town. Maps' coverage of mainland China is thin: many listings carry no hours at all. A list result's hours line ('Open · Closes 10 PM', or 'Open now', which Maps shows only when it holds the place's hours) counted as a current listing. Where Maps could not settle a row, one web search (snippets only, pages not opened) was made for it.",
+  "confirmed": [
+    {
+      "name": "Zui Chang'an",
+      "src": "Google Maps search (headless Chromium, 2026-11-23)",
+      "page_name": "醉长安",
+      "evidence": "list for '醉长安 南门 西安': 醉长安, 书院门56号 (inside the South Gate), 'Open now'",
+      "ok": "2026-11"
+    },
+    {
+      "name": "Lao Mi Jia Paomo",
+      "src": "Google Maps search (headless Chromium, 2026-11-23)",
+      "page_name": "Laomijia Dayu Cruded Pancake in Soup",
+      "evidence": "list for '老米家大雨泡馍 西羊市 西安': 127 Xiyangshi, 'Open now'",
+      "ok": "2026-11"
+    },
+    {
+      "name": "Wei Jia Liangpi",
+      "src": "Google Maps search (headless Chromium, 2026-11-23)",
+      "page_name": "Weijia Cold Noodle",
+      "evidence": "list for '魏家凉皮 钟楼 西安': 3 Nanda St (by the Bell Tower), 'Open · Closes 10 PM'",
+      "ok": "2026-11"
+    },
+    {
+      "name": "De Mao Gong",
+      "src": "Google Maps search (headless Chromium, 2026-11-23)",
+      "page_name": "德懋恭",
+      "evidence": "list for '德懋恭 西安': store, 'Open now'; place page Lianhu District, 钟楼商圈",
+      "ok": "2026-11"
+    }
+  ],
+  "kept_without_ok": [
+    {
+      "name": "First Noodle Under the Sun",
+      "src": "Google Maps search (headless Chromium, 2026-11-23); web search (2026-11-23, snippets only)",
+      "evidence": "the Dayanta listing 'Tianxia No.1 Noodles Dayanta S. Plz', 6X88+F84 A9, has no hours; the branches with hours (6XW8+X34 Yanta N Rd; 含光路) are not the one the row names. A web search found only older travel pages"
+    },
+    {
+      "name": "Miqi Bakery",
+      "src": "Google Maps search (headless Chromium, 2026-11-23)",
+      "evidence": "'米旗奶糕钟楼专卖', 619 Dongda St — no hours; the Maky branch with 'Open now' is on E Bangzishi St, not the Bell Tower one"
+    }
+  ],
+  "removed": [
+    {
+      "name": "Chang'an Da Pai Dang",
+      "src": "Google Maps search (headless Chromium, 2026-11-23); web search (2026-11-23, snippets only)",
+      "reason": "no Bell Tower branch: Maps lists 长安大牌档 at 小寨赛格国际购物中心6楼 ('Open now', Yanta District), Chang'an Snack Booth at 4WXW+J42 Zaohe Rd and one at 长乐西路166号 (Xincheng); a web search names Xiaozhai SEG and Dayuecheng (Dayanta) branches and 'found no 钟楼店' — the row's place is in another district than the sources"
+    }
+  ]
+}

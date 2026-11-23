@@ -1,0 +1,17 @@
+{
+  "town": "th-lipe",
+  "kind": "eats",
+  "checked": "2026-11",
+  "rule": "A row gets ok only from a current listing, its own site or recent reviews with nothing saying closed (docs/EATS.md). A row is taken out when a search could not find the place at all or the sources disagree; a place found but not freshly confirmed stays without ok.",
+  "scope": "the one row without ok; the sixteen rows already confirmed were not checked again",
+  "how": "Google Maps opened in headless Chromium (2026-11-23), limited view without a reviews tab; then one web search and the Trip.com page",
+  "confirmed": [],
+  "kept_without_ok": [
+    {
+      "name": "Rak Lay Seafood",
+      "src": "https://www.google.com/maps/place/รักษ์เล+ซีฟู้เกาะหลีเป๊ะ/@6.4885554,99.3049258,17z",
+      "evidence": "the place exists: Google Maps lists รักษ์เล ซีฟู้เกาะหลีเป๊ะ (3.3★, F8Q3+CXF, Koh Lipe, by Walking Street) and Trip.com lists Rak-Lay Restaurant on Walking Street; neither says closed. But the Maps listing has no opening hours ('Add hours') and no photos, Trip.com shows no hours and 'No comments yet', and the dated source found is a 2015 blog — nothing current shows it is open now"
+    }
+  ],
+  "removed": []
+}

@@ -1,0 +1,26 @@
+{
+  "town": "tw-south",
+  "kind": "eats",
+  "checked": "2026-11",
+  "rule": "A row gets ok only from a current listing, its own site or recent reviews with nothing saying closed (docs/EATS.md). A row is taken out when a search could not find the place at all or the sources disagree; a place found but not freshly confirmed stays without ok.",
+  "scope": "the 2 rows without ok; rows already carrying ok were not re-checked",
+  "how": "Google Maps opened in headless Chromium (2026-11-23), limited view without a reviews tab, so no review date could be read; searched in English and, for Taiwan, in Chinese (the row's zh)",
+  "confirmed": [
+    {
+      "name": "Hai Zhi Bing",
+      "src": "https://www.google.com/maps/search/渡船頭海之冰+高雄",
+      "page_name": "Ferry-head Bing 渡船頭海之冰",
+      "evidence": "No. 76, Binhai 1st Rd, Gushan District, Kaohsiung · J79C+XC · 'Closed · Opens 11 AM Tue'",
+      "ok": "2026-11"
+    },
+    {
+      "name": "Wu Pao Chun Bakery",
+      "src": "https://www.google.com/maps/search/吳寶春麥方店+高雄",
+      "page_name": "Wu Pao Chun Bakery",
+      "evidence": "Siwei 3rd Rd, Kaohsiung (list result) · 'Open · Closes 8 PM'",
+      "ok": "2026-11"
+    }
+  ],
+  "kept_without_ok": [],
+  "removed": []
+}

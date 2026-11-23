@@ -1684,19 +1684,33 @@ function careOrder(t, c) {
   c.days.forEach(add); (c.extra || []).forEach(add);
   return ids;
 }
+// the towns of the book's beds and their help-and-play rows, kept in ls('care_<trip>') for no signal; true when stored
+async function careFetch(t) {
+  const g = await snapGeo();
+  const pid = (d) => { const ll = d && d.plan && d.plan.stay && d.plan.stay.ll; return Array.isArray(ll) && ll.length === 2 ? (snapPlace(ll, g) || {}).id || '' : ''; };
+  const days = t.days.map(pid), extra = (((t.theme || {}).snap || {}).places || []).filter((x) => typeof x === 'string'), ids = [...new Set([...days, ...extra].filter(Boolean))];
+  if (!ids.length) return false;
+  const r = await api('GET', `/api/b/care?ids=${encodeURIComponent(ids.slice(0, 20).join(','))}`);
+  const names = {}; ids.forEach((id) => { const p = (g.places || []).find((x) => x.id === id); if (p) names[id] = snapShort(p.name); });
+  ls('care_' + t.id, { days, extra, names, rows: (r && r.places) || {} });
+  return true;
+}
+// storing a book for no signal also asks what Today and SOS read from the libraries: the help near each bed (careFetch) and, for the
+// parents, each bed town's places to eat and indoor places (the same URLs bedEats / rainSights ask, kept by apiKeep)
+async function warmOffline(t) {
+  const g = await snapGeo(); await careFetch(t).catch(() => {});
+  if (!isEditor()) return;
+  const towns = new Map();
+  t.days.forEach((d) => { const ll = d && d.plan && d.plan.stay && d.plan.stay.ll; const town = Array.isArray(ll) && ll.length === 2 && snapPlace(ll, g); if (town) towns.set(town.id || town.en, town); });
+  for (const town of towns.values()) {
+    const q = encodeURIComponent(JSON.stringify([[town.en, town.th]]));
+    await Promise.all([apiKeep(`/api/b/eatlib?for=${q}`), apiKeep(`/api/b/sights?for=${q}`)]);
+  }
+}
 function careBlock(t) {
   if (careAsk !== t.id) {
     careAsk = t.id;
-    snapGeo().then((g) => {
-      const pid = (d) => { const ll = d && d.plan && d.plan.stay && d.plan.stay.ll; return Array.isArray(ll) && ll.length === 2 ? (snapPlace(ll, g) || {}).id || '' : ''; };
-      const days = t.days.map(pid), extra = (((t.theme || {}).snap || {}).places || []).filter((x) => typeof x === 'string'), ids = [...new Set([...days, ...extra].filter(Boolean))];
-      if (!ids.length) return;
-      api('GET', `/api/b/care?ids=${encodeURIComponent(ids.slice(0, 20).join(','))}`).then((r) => {
-        const names = {}; ids.forEach((id) => { const p = (g.places || []).find((x) => x.id === id); if (p) names[id] = snapShort(p.name); });
-        ls('care_' + t.id, { days, extra, names, rows: (r && r.places) || {} });
-        const box = document.getElementById('carelib'); if (box && careAsk === t.id) box.outerHTML = careBlock(t);
-      }, () => {});
-    });
+    careFetch(t).then((ok) => { const box = document.getElementById('carelib'); if (ok && box && careAsk === t.id) box.outerHTML = careBlock(t); }, () => {});
   }
   const c = ls('care_' + t.id), towns = c && c.rows ? careOrder(t, c) : [];
   if (!towns.length) return '<section class="blk carelib noprint" id="carelib" hidden></section>';
@@ -3371,7 +3385,7 @@ function bedEats(t, i, fbox) {
       const town = snapPlace(ll, geo); if (eatBed.key !== key) return;
       if (!town) { eatBed.list = []; return; }
       eatBed.town = town;
-      api('GET', `/api/b/eatlib?for=${encodeURIComponent(JSON.stringify([[town.en, town.th]]))}`).then((r) => {
+      apiKeep(`/api/b/eatlib?for=${encodeURIComponent(JSON.stringify([[town.en, town.th]]))}`).then((r) => {
         if (eatBed.key !== key) return; eatBed.list = ((r.for || [])[0] || {}).places || [];
         // filled in place, never by drawing the page again: a late redraw would close the folds the parent has opened
         const slot = document.querySelector(`section.bedslot[data-k="${CSS.escape(key)}"]`), html = eatBed.fbox && bedEats(t, i, eatBed.fbox);
@@ -3536,7 +3550,7 @@ function rainSights(t, i, fbox) {
       const town = snapPlace(ll, geo); if (sightRain.key !== key) return;
       if (!town) { sightRain.list = []; return; }
       sightRain.town = town;
-      api('GET', `/api/b/sights?for=${encodeURIComponent(JSON.stringify([[town.en, town.th]]))}`).then((r) => {
+      apiKeep(`/api/b/sights?for=${encodeURIComponent(JSON.stringify([[town.en, town.th]]))}`).then((r) => {
         if (sightRain.key !== key) return; sightRain.list = (((r.for || [])[0] || {}).sights || []).filter((x) => (x.io === 'in' || x.io === 'both') && x.fit > 0);
         const din = document.getElementById('dchin'); if (din && din.hidden) { const tmp = document.createElement('div'); tmp.innerHTML = dchIndoor(t, i); const nb = tmp.firstElementChild; if (nb && !nb.hidden) din.replaceWith(nb); }
         const slot = document.querySelector(`section.rainslot[data-k="${CSS.escape(key)}"]`), html = sightRain.fbox && rainSights(t, i, sightRain.fbox);

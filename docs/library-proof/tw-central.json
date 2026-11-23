@@ -1,0 +1,40 @@
+{
+  "town": "tw-central",
+  "kind": "eats",
+  "checked": "2026-11",
+  "rule": "A row gets ok only from a current listing, its own site or recent reviews with nothing saying closed (docs/EATS.md). A row is taken out when a search could not find the place at all or the sources disagree; a place found but not freshly confirmed stays without ok.",
+  "scope": "the 4 rows without ok; rows already carrying ok were not re-checked",
+  "how": "Google Maps opened in headless Chromium (2026-11-23), limited view without a reviews tab, so no review date could be read; searched in English and, for Taiwan, in Chinese (the row's zh)",
+  "confirmed": [
+    {
+      "name": "Full House Resort Restaurant",
+      "src": "https://www.google.com/maps/search/富豪群渡假民宿+日月潭",
+      "page_name": "Full House Resort Fruit Cuisine 日月潭富豪群渡假民宿",
+      "evidence": "3-star hotel at Ita Thao, bookable on Maps ('Available Sat, Nov 28 - Sun, Nov 29 for NT$3,495'); the listing's own name says 'Fruit Cuisine' (its restaurant)",
+      "ok": "2026-11"
+    },
+    {
+      "name": "Fountain Chicken Rice",
+      "src": "https://www.google.com/maps/search/噴水雞肉飯+總店+中山路325號+嘉義",
+      "page_name": "嘉義噴水雞肉飯中山店",
+      "evidence": "No. 325, Zhongshan Rd, West District, Chiayi City · FCHX+WM · 'Open · Closes 9 PM' (the original shop at the fountain; Maps names it 中山店, so q now uses that name)",
+      "ok": "2026-11"
+    },
+    {
+      "name": "Fenqihu Hotel Lunch Box",
+      "src": "https://www.google.com/maps/search/奮起湖大飯店",
+      "page_name": "Fenchihu Hotel 奮起湖大飯店-奮起湖便當創始店",
+      "evidence": "178-1 Zhonghe Village, Zhuqi Township, Chiayi County · GM4W+46 · 2-star hotel bookable on Maps (official site NT$2,100); the listing's name says it is the founding Fenqihu lunch-box shop",
+      "ok": "2026-11"
+    },
+    {
+      "name": "Yu Jen Jai",
+      "src": "https://www.google.com/maps/search/玉珍齋+鹿港",
+      "page_name": "YuZhenZhai Lukang Main Store",
+      "evidence": "No. 168, Minzu Rd, Lukang · 'Open · Closes 9 PM'",
+      "ok": "2026-11"
+    }
+  ],
+  "kept_without_ok": [],
+  "removed": []
+}

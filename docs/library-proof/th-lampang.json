@@ -1,0 +1,42 @@
+{
+  "town": "th-lampang",
+  "kind": "eats",
+  "checked": "2026-11",
+  "rule": "A row gets ok only from a current listing, its own site or recent reviews with nothing saying closed (docs/EATS.md). A row is taken out when a search could not find the place at all or the sources disagree; a place found but not freshly confirmed stays without ok.",
+  "scope": "the five rows without ok; the twelve rows already confirmed were not checked again",
+  "how": "Google Maps opened in headless Chromium (2026-11-23), limited view without a reviews tab, so no review date could be read; a place with current hours and no closed notice counts as a current listing",
+  "confirmed": [
+    {
+      "name": "Khanom Chin Pa Bun Si",
+      "src": "https://www.google.com/maps/place/Kanom+Jeen+Pa+Boon+Sri/@18.2925654,99.5007766,17z",
+      "page_name": "Kanom Jeen Pa Boon Sri / ขนมจีนป้าบุญศรี",
+      "evidence": "Google Maps: noodle shop, 4.4★, 2 Talad Gao Rd, Hua Wiang (7GV2+28) — Kad Kong Ta's road, as the row says; 'Open · Closes 3 PM', phone listed; nothing says closed",
+      "ok": "2026-11"
+    },
+    {
+      "name": "Cha Bar Cafe Mae Moh",
+      "src": "https://www.google.com/maps/place/CHA+BAR+Cafe'+Mae+Moh/@18.2756409,99.6492688,17z",
+      "page_name": "CHA BAR Cafe' Mae Moh",
+      "evidence": "Google Maps: coffee shop, 4.9★, 570/4 Moo 8, Mae Mo, inside the agricultural co-operative's grounds (7JGX+7P); 'Open · Closes 3:30 PM', a Facebook page and phone listed; nothing says closed",
+      "ok": "2026-11"
+    }
+  ],
+  "kept_without_ok": [
+    {
+      "name": "Central Lampang food court",
+      "src": "https://www.google.com/maps/place/Food+Park/@18.2823982,99.4910888,17z",
+      "evidence": "the mall is open (Central Lampang, 319 Lampang–Ngao Superhighway, 'Open · Closes 9 PM') and Maps lists 'Food Park' (Thai restaurant, 4.7★, 7FJW+X7R, located in Robinson Lampang) inside it, but the Food Park listing shows no hours, so the food court itself is not confirmed. The map query named Highway 1; it now names Food Park and the superhighway"
+    }
+  ],
+  "removed": [
+    {
+      "name": "Huen Chom Wang",
+      "reason": "Google Maps searches for เฮือนชมวัง ลำปาง, Huen Chom Wang Lampang and ร้านอาหารเฮือนชมวัง found no restaurant of that name (only other places by the Wang river), and one web search found none either"
+    },
+    {
+      "name": "Khao Taen Thawee Phan",
+      "src": "https://www.google.com/maps/place/ข้าวแต๋นทวีพรรณ/@18.1429591,99.3662359,17z",
+      "reason": "Google Maps' only ข้าวแต๋นทวีพรรณ is a food maker at 81 Moo 2, Ban Song Khwae Tai, Na Kaeo, Ko Kha District (49V8+5F), about 20 km from Lampang town — not in town as the row said; the location disagrees, so it is taken out, as misplaced rows were in Nakhon Si (#384)"
+    }
+  ]
+}

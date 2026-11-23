@@ -1,0 +1,19 @@
+{
+  "town": "ae-dubai",
+  "kind": "eats",
+  "checked": "2026-11",
+  "rule": "A row gets ok only from a current listing, its own site or recent reviews with nothing saying closed (docs/EATS.md). A row is taken out when a search could not find the place at all or the sources disagree; a place found but not freshly confirmed stays without ok.",
+  "scope": "the 1 rows without ok; the rows that already carried ok were not re-checked in this pass",
+  "how": "Google Maps opened in headless Chromium (2026-11-23), limited view without a reviews tab, so no review date could be read; each row's own map query first, then the name with the town, a list result opened when needed; a hotel's own site or one web search only where Maps could not settle it.",
+  "confirmed": [
+    {
+      "name": "Home Bakery",
+      "src": "Google Maps",
+      "page_name": "Home Bakery",
+      "evidence": "Home Bakery / هوم بيكري, Bakery, Galleria Mall - Al Wasl Rd - Jumeira First, Floor G, 6743+RP Dubai; \"Open · Closes 12 AM\"; owner post 5 days ago",
+      "ok": "2026-11"
+    }
+  ],
+  "kept_without_ok": [],
+  "removed": []
+}

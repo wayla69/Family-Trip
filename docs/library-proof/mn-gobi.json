@@ -1,0 +1,34 @@
+{
+  "town": "mn-gobi",
+  "kind": "eats",
+  "checked": "2026-11",
+  "rule": "A row gets ok only from a current listing, its own site or recent reviews with nothing saying closed (docs/EATS.md). A row is taken out when a search could not find the place at all or the sources disagree; a place found but not freshly confirmed stays without ok.",
+  "scope": "the 4 rows without ok; the rows already confirmed were not checked again",
+  "how": "Google Maps opened in headless Chromium (2026-11-23), limited view without a reviews tab, so no review date could be read; a place with current hours and no closed notice counts as a current listing",
+  "confirmed": [
+    {
+      "name": "Coffee by Khot Ail",
+      "src": "https://www.google.com/maps/place/KHOT+AIL+Restaurant+%26+Coffee+shop/@43.5725339,104.430469,17z",
+      "page_name": "KHOT AIL Restaurant & Coffee shop",
+      "evidence": "Google Maps: food court, 3.9★, Dalanzadgad, Ömnögovi (HCFJ+25), 'Open · Closes 10 PM', phone listed; nothing says closed. Found by its Mongolian name (Хот айл); the map query now names it as Maps does",
+      "ok": "2026-11"
+    }
+  ],
+  "kept_without_ok": [
+    {
+      "name": "Gobi Nomad Lodge",
+      "src": "https://www.google.com/maps/place/Gobi+Nomad+Lodge/@43.720388,104.0583209,17z",
+      "evidence": "Google Maps: 'Gobi Nomad Lodge', lodging, 4.3★, Ömnögovi (P3C5+584), but no prices ('Contact this property for rates and availability') and no source seen for its restaurant"
+    },
+    {
+      "name": "Gobi Tour Camp",
+      "src": "https://www.google.com/maps/place/Gobi+Tour+Tourist+camp/@44.1224071,103.7292194,17z",
+      "evidence": "Google Maps: 'Gobi Tour Tourist camp', campground, 3.9★, Ömnögovi (4PCH+XM5, by Bayanzag), with no hours and no prices"
+    },
+    {
+      "name": "Dalanzadgad Market",
+      "evidence": "Google Maps: 'Dalanzadgad market' found only a shop inside it ('Korean mart Dalanzadgad', 3r bag 33-r bair Dalanzadgad Market — 'Permanently closed'); searching 'Даланзадгад зах' listed several markets in town with hours (e.g. ORNAGE, 'Open · Closes 10 PM') but none that is clearly the town market the row names"
+    }
+  ],
+  "removed": []
+}
