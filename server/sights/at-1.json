@@ -815,7 +815,192 @@
       {"name":{"en":"Gloriette","th":"กลอริเอตต์"},"kind":"views","area":{"en":"Schönbrunn Palace gardens","th":"สวนพระราชวังเชินบรุนน์"},"what":{"en":"Neoclassical colonnade at the top of Schönbrunn's formal gardens, reached by a gentle climb.","th":"ซุ้มเสาคลาสสิกบนยอดสวนทางการของพระราชวังเชินบรุนน์ เดินขึ้นไม่ชัน"},"why":{"en":"Sweeping views over the palace and city; the café inside is good for cake after the walk.","th":"วิวกว้างเหนือพระราชวังและเมือง คาเฟ่ข้างในดีสำหรับกินเค้กหลังเดิน"},"tip":{"en":"Free to walk up.","th":"ขึ้นไปเดินได้ฟรี"},"ages":[1,2,2,2],"hrs":1.5,"io":"out","pram":"part","price":{"en":"Free to walk up","th":"ขึ้นไปเดินได้ฟรี"},"book":"none","q":"Gloriette, Schönbrunn Palace, Vienna","ok":"2026-11","src":"https://www.nomadotravel.app/en/guides/vienna-with-kids"},
       {"name":{"en":"Hundertwasser Museum","th":"พิพิธภัณฑ์ฮุนเดิร์ทวาสเซอร์"},"kind":"museum","area":{"en":"Near the Hundertwasserhaus","th":"ใกล้บ้านฮุนเดิร์ทวาสเซอร์"},"what":{"en":"Museum of Hundertwasser's work in an irregular building a few minutes' walk from the Hundertwasserhaus.","th":"พิพิธภัณฑ์ผลงานของฮุนเดิร์ทวาสเซอร์ในอาคารไม่สม่ำเสมอ เดินไม่กี่นาทีจากบ้านฮุนเดิร์ทวาสเซอร์"},"why":{"en":"His bold, nature-inspired art appeals to children, and the building itself is an attraction.","th":"ศิลปะที่กล้าและได้แรงบันดาลใจจากธรรมชาติดึงดูดเด็ก และตัวอาคารก็เป็นสถานที่ท่องเที่ยว"},"ages":[0,1,2,2],"hrs":1,"io":"in","pram":"part","price":{"en":"free for under-18s","th":"ฟรีสำหรับอายุต่ำกว่า 18 ปี"},"book":"none","q":"Hundertwasser Museum, Vienna","ok":"2026-11","src":"https://www.nomadotravel.app/en/guides/vienna-with-kids"},
       {"name":{"en":"MuseumsQuartier","th":"มิวเซียมส์ควอร์เทียร์"},"kind":"play","area":{"en":"MuseumsQuartier","th":"มูเซียมส์ควอร์เทียร์"},"what":{"en":"Courtyard complex with giant outdoor loungers where families picnic between museum visits.","th":"ลานรวมอาคารที่มีเก้าอี้พักผ่อนกลางแจ้งขนาดยักษ์ ครอบครัวปิกนิกระหว่างเที่ยวพิพิธภัณฑ์"},"why":{"en":"The ZOOM children's museum inside is purpose-built for under-14s.","th":"พิพิธภัณฑ์เด็กซูมอยู่ภายใน ออกแบบสำหรับเด็กอายุต่ำกว่า 14 ปี"},"ages":[1,2,2,1],"hrs":1.5,"io":"both","pram":"yes","price":{"en":"Check the price","th":"เช็กราคาก่อนไป"},"book":"none","q":"MuseumsQuartier, Vienna","ok":"2026-11","src":"https://www.nomadotravel.app/en/guides/vienna-with-kids"},
-      {"name":{"en":"Palmenhaus","th":"เรือนกระจกปาล์ม (ปาล์มเฮาส์)"},"kind":"nature","area":{"en":"Schönbrunn gardens","th":"สวนเชินบรุนน์"},"what":{"en":"19th-century iron-and-glass greenhouse with towering tropical plants and a popular café.","th":"เรือนกระจกเหล็กและกระจกศตวรรษที่ 19 มีพืชเขตร้อนสูงใหญ่และคาเฟ่ยอดนิยม"},"why":{"en":"Delights kids on any weather day; a 15-minute visit that fits into a palace visit.","th":"ทำให้เด็กเพลิดเพลินในวันอากาศไม่ดี เยี่ยมชมได้ 15 นาทีระหว่างเที่ยวพระราชวัง"},"ages":[1,2,2,2],"hrs":0.5,"io":"in","pram":"yes","price":{"en":"Check the price","th":"เช็กราคาก่อนไป"},"book":"none","q":"Palmenhaus, Schönbrunn gardens, Vienna","ok":"2026-11","src":"https://www.nomadotravel.app/en/guides/vienna-with-kids"}
+      {"name":{"en":"Palmenhaus","th":"เรือนกระจกปาล์ม (ปาล์มเฮาส์)"},"kind":"nature","area":{"en":"Schönbrunn gardens","th":"สวนเชินบรุนน์"},"what":{"en":"19th-century iron-and-glass greenhouse with towering tropical plants and a popular café.","th":"เรือนกระจกเหล็กและกระจกศตวรรษที่ 19 มีพืชเขตร้อนสูงใหญ่และคาเฟ่ยอดนิยม"},"why":{"en":"Delights kids on any weather day; a 15-minute visit that fits into a palace visit.","th":"ทำให้เด็กเพลิดเพลินในวันอากาศไม่ดี เยี่ยมชมได้ 15 นาทีระหว่างเที่ยวพระราชวัง"},"ages":[1,2,2,2],"hrs":0.5,"io":"in","pram":"yes","price":{"en":"Check the price","th":"เช็กราคาก่อนไป"},"book":"none","q":"Palmenhaus, Schönbrunn gardens, Vienna","ok":"2026-11","src":"https://www.nomadotravel.app/en/guides/vienna-with-kids"},
+        {
+          "local": "",
+          "ages": [
+            1,
+            1,
+            1,
+            1
+          ],
+          "hrs": 2,
+          "io": "in",
+          "pram": "part",
+          "price": {
+            "th": "เช็กราคาก่อนไป",
+            "en": "Check the price"
+          },
+          "book": "none",
+          "src": "https://www.falter.at/lokalfuehrer/die-besten-lokale-mit-indoor-spielplatz",
+          "name": {
+            "th": "เลโอส์ รุมเพิลคิสเทอ",
+            "en": "Leos Rumpelkiste"
+          },
+          "kind": "play",
+          "area": {
+            "th": "เลโอโพลด์ชตัดท์ เขต 2",
+            "en": "Leopoldstadt (2nd district)"
+          },
+          "what": {
+            "th": "ที่เล่นในร่มพร้อมบิสโทร",
+            "en": "An indoor play area with a bistro"
+          },
+          "why": {
+            "th": "เล่นในร่มได้ในวันฝนตก",
+            "en": "Indoor play for a rainy day"
+          },
+          "q": "Rumpelkiste, Blumauergasse 1a, Wien",
+          "ok": "2026-11"
+        },
+        {
+          "local": "",
+          "ages": [
+            1,
+            1,
+            1,
+            1
+          ],
+          "hrs": 2,
+          "io": "out",
+          "pram": "part",
+          "price": {
+            "th": "ฟรี",
+            "en": "Free"
+          },
+          "book": "none",
+          "src": "https://kidsareatrip.com/top-5-family-friendly-things-to-do-in-vienna-austria/",
+          "name": {
+            "th": "สวนเอาการ์เทิน",
+            "en": "Augarten"
+          },
+          "kind": "park",
+          "area": {
+            "th": "เลโอโพลด์ชตัดท์ เขต 2",
+            "en": "Leopoldstadt (2nd district)"
+          },
+          "what": {
+            "th": "สวนใหญ่ มีสนามเด็กเล่นห้าแห่งและโรงงานเครื่องลายคราม",
+            "en": "A large park with five play areas and the porcelain manufactory"
+          },
+          "why": {
+            "th": "สนามเด็กเล่นห้าแห่ง มีชิงช้า สไลเดอร์ และโครงปีน",
+            "en": "Five playgrounds with swings, slides and climbing frames"
+          },
+          "q": "Augarten, Wien",
+          "ok": "2026-11"
+        },
+        {
+          "local": "Stephansdom",
+          "ages": [
+            1,
+            1,
+            1,
+            1
+          ],
+          "hrs": 1,
+          "io": "in",
+          "pram": "part",
+          "price": {
+            "th": "เข้าชมฟรี",
+            "en": "Free to enter"
+          },
+          "book": "none",
+          "src": "https://kidsareatrip.com/top-5-family-friendly-things-to-do-in-vienna-austria/",
+          "name": {
+            "th": "มหาวิหารเซนต์สตีเฟน",
+            "en": "St. Stephen’s Cathedral"
+          },
+          "kind": "culture",
+          "area": {
+            "th": "จัตุรัสสเตฟาน",
+            "en": "Stephansplatz"
+          },
+          "what": {
+            "th": "มหาวิหารกอทิกกลางเมือง มีทัวร์สุสานใต้ดินและหอคอย",
+            "en": "The Gothic cathedral in the city centre, with tours of the catacombs and towers"
+          },
+          "why": {
+            "th": "กระเบื้องหลากสีบนหลังคาเรียงเป็นตราประจำเมือง",
+            "en": "The roof’s coloured tiles make the city’s coat of arms"
+          },
+          "q": "Stephansdom, Stephansplatz, Wien",
+          "ok": "2026-11"
+        },
+        {
+          "local": "",
+          "ages": [
+            1,
+            1,
+            1,
+            1
+          ],
+          "hrs": 2,
+          "io": "in",
+          "pram": "part",
+          "price": {
+            "th": "เช็กราคาก่อนไป",
+            "en": "Check the price"
+          },
+          "book": "none",
+          "src": "https://www.nomadotravel.app/en/guides/vienna-with-kids",
+          "name": {
+            "th": "พิพิธภัณฑ์ประวัติศาสตร์ศิลปะ",
+            "en": "Kunsthistorisches Museum"
+          },
+          "kind": "museum",
+          "area": {
+            "th": "จัตุรัสมาเรียเทเรเซีย",
+            "en": "Maria-Theresien-Platz"
+          },
+          "what": {
+            "th": "พิพิธภัณฑ์ศิลปะใหญ่ที่เด็กตามหาของน่าทึ่งในคอลเลกชัน",
+            "en": "A great art museum where children hunt for wonders in the collection"
+          },
+          "why": {
+            "th": "อายุต่ำกว่า 19 ปีเข้าฟรี",
+            "en": "Free under 19"
+          },
+          "q": "Kunsthistorisches Museum, Wien",
+          "ok": "2026-11"
+        },
+        {
+          "local": "",
+          "ages": [
+            1,
+            1,
+            1,
+            1
+          ],
+          "hrs": 2,
+          "io": "in",
+          "pram": "part",
+          "price": {
+            "th": "เช็กราคาก่อนไป",
+            "en": "Check the price"
+          },
+          "book": "none",
+          "src": "https://www.dschungel-cafe.at/de",
+          "name": {
+            "th": "โรงละครเด็กดชุงเงิลเวียน",
+            "en": "Dschungel Wien"
+          },
+          "kind": "show",
+          "area": {
+            "th": "มิวเซียมควอเทียร์",
+            "en": "MuseumsQuartier"
+          },
+          "what": {
+            "th": "โรงละครสำหรับเด็กและเยาวชน",
+            "en": "A theatre for children and young people"
+          },
+          "why": {
+            "th": "ละครที่ทำมาสำหรับเด็ก มีคาเฟ่ในโถง",
+            "en": "Theatre made for children, with a café in the foyer"
+          },
+          "q": "Dschungel Wien Theaterhaus, MuseumsQuartier",
+          "ok": "2026-11"
+        }
     ]
     }
   ]
