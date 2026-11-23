@@ -1534,6 +1534,84 @@
           "q": "Ao Thalane, north of Ao Nang, Krabi",
           "ok": "2026-11",
           "src": "https://www.nomadotravel.app/en/guides/krabi-with-kids"
+        },
+        {
+          "local": "",
+          "ages": [
+            0,
+            0,
+            1,
+            2
+          ],
+          "hrs": 3.5,
+          "io": "out",
+          "pram": "no",
+          "price": {
+            "th": "เช็กราคาก่อนไป",
+            "en": "Check the price"
+          },
+          "book": "none",
+          "src": "https://www.thrillophilia.com/places-to-visit-in-krabi-with-family",
+          "name": {
+            "th": "เขาหงอนนาค",
+            "en": "Dragon's Crest (Khao Ngon Nak)"
+          },
+          "kind": "nature",
+          "area": {
+            "th": "หนองทะเล กระบี่",
+            "en": "Nong Thale, Krabi"
+          },
+          "what": {
+            "th": "เส้นทางเดินป่ามีป้ายบอก ผ่านน้ำตกเล็ก ๆ ถึงยอดเขาเห็นวิวทะเลและป่า",
+            "en": "A marked hike past mini waterfalls to a summit view over sea and forest"
+          },
+          "why": {
+            "th": "เหมาะกับเด็กโตและวัยรุ่น",
+            "en": "For older children and teenagers"
+          },
+          "tip": {
+            "th": "ไปกลับ 3–4 ชั่วโมง",
+            "en": "A 3–4 hour round trip"
+          },
+          "q": "เขาหงอนนาค, กระบี่",
+          "ok": "2026-11"
+        },
+        {
+          "local": "",
+          "ages": [
+            2,
+            2,
+            2,
+            1
+          ],
+          "hrs": 2,
+          "io": "in",
+          "pram": "yes",
+          "price": {
+            "th": "เช็กราคาก่อนไป",
+            "en": "Check the price"
+          },
+          "book": "none",
+          "src": "https://travel.trueid.net/detail/14l3mAWlKjvQ",
+          "name": {
+            "th": "ฮาร์เบอร์แลนด์ เซ็นทรัล กระบี่",
+            "en": "HarborLand Central Krabi"
+          },
+          "kind": "play",
+          "area": {
+            "th": "เซ็นทรัล กระบี่ กระบี่",
+            "en": "Central Krabi, Krabi"
+          },
+          "what": {
+            "th": "สวนสนุกในร่ม แบ่งโซนตามวัย ตั้งแต่ 5 เดือนถึง 15 ปี",
+            "en": "Indoor play zones by age, from 5 months to 15 years"
+          },
+          "why": {
+            "th": "เล่นในร่มวันฝนตก มีเมืองจำลองและสไลเดอร์",
+            "en": "Indoors for a rainy day, with a role-play town and a tower slide"
+          },
+          "q": "HarborLand Central Krabi",
+          "ok": "2026-11"
         }
       ]
     }

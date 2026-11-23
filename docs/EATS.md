@@ -529,3 +529,6 @@ batch-19 of docs/library-briefs. +2: Cappuccino, TomYumBar. Proof in `docs/libra
 
 ### Yangon, 23 Nov 2026
 batch-29 of docs/library-briefs. +2: Sharky's, Chatrium Hotel Royal Lake. Proof in `docs/library-proof/mm-yangon.json`.
+
+### Krabi, 24 Nov 2026
+batch-38 of docs/library-briefs (round 2). +10: Ton Ma Yom, Gecko Cabane, Chalita Cafe, Burger Bung, Ruanthip (Khlong Son), Baan Ma-Ying, Baan Tha Ley Cafe, Makan, Sprucy Cafe, Cha-Lom. Proof in `docs/library-proof/th-krabi.json`.
