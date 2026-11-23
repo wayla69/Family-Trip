@@ -273,6 +273,236 @@
           "q": "Gruž Market, Gruž, Dubrovnik",
           "ok": "2026-11",
           "src": "https://absolute-croatia.com/dubrovnik/shopping/gruz-market"
+        },
+        {
+          "local": "",
+          "ages": [
+            1,
+            1,
+            1,
+            1
+          ],
+          "hrs": 1,
+          "io": "in",
+          "pram": "part",
+          "price": {
+            "th": "ฟรี",
+            "en": "Free"
+          },
+          "book": "none",
+          "src": "https://kidsareatrip.com/?p=10305",
+          "name": {
+            "th": "มหาวิหารดูบรอฟนิก",
+            "en": "Dubrovnik Cathedral"
+          },
+          "kind": "culture",
+          "area": {
+            "th": "เมืองเก่า ดูบรอฟนิก",
+            "en": "Old Town, Dubrovnik"
+          },
+          "what": {
+            "th": "มหาวิหารบาโรกที่สร้างใหม่หลังแผ่นดินไหว",
+            "en": "A Baroque cathedral rebuilt after an earthquake"
+          },
+          "why": {
+            "th": "มีงานศิลปะทางศาสนาให้ชม",
+            "en": "Religious art to look at inside"
+          },
+          "tip": {
+            "th": "เข้าฟรี ห้องสมบัติเสียค่าเข้าเล็กน้อย",
+            "en": "Free to enter; a small fee for the treasury"
+          },
+          "q": "Cathedral of the Assumption of the Virgin Mary, Dubrovnik",
+          "ok": "2026-11"
+        },
+        {
+          "local": "",
+          "ages": [
+            1,
+            1,
+            1,
+            1
+          ],
+          "hrs": 1,
+          "io": "out",
+          "pram": "part",
+          "price": {
+            "th": "ฟรี",
+            "en": "Free"
+          },
+          "book": "none",
+          "src": "https://kidsareatrip.com/?p=10305",
+          "name": {
+            "th": "หอนาฬิกา",
+            "en": "Clock Tower"
+          },
+          "kind": "views",
+          "area": {
+            "th": "ปลายถนนสตราดุน",
+            "en": "End of the Stradun"
+          },
+          "what": {
+            "th": "หอนาฬิกาที่คนตีระฆังถูกเรียกว่ามนุษย์เขียว",
+            "en": "The clock tower whose bell strikers are called the green men"
+          },
+          "why": {
+            "th": "เสียงระฆังแต่ละครั้งทำให้นกพิราบบินขึ้น",
+            "en": "Each strike sends the pigeons flying"
+          },
+          "q": "Clock Tower of Dubrovnik, Stradun",
+          "ok": "2026-11"
+        },
+        {
+          "local": "",
+          "ages": [
+            1,
+            1,
+            1,
+            1
+          ],
+          "hrs": 1,
+          "io": "out",
+          "pram": "part",
+          "price": {
+            "th": "ฟรี",
+            "en": "Free"
+          },
+          "book": "none",
+          "src": "https://kidsareatrip.com/?p=10305",
+          "name": {
+            "th": "ท่าเรือเก่า",
+            "en": "Old Port"
+          },
+          "kind": "views",
+          "area": {
+            "th": "เมืองเก่า ดูบรอฟนิก",
+            "en": "Old Town, Dubrovnik"
+          },
+          "what": {
+            "th": "ท่าเรือเก่าที่เรือไปเกาะโลครุมออก",
+            "en": "The old port where the ferries to Lokrum leave"
+          },
+          "why": {
+            "th": "ได้ดูเรือเข้าออก",
+            "en": "Boats coming and going"
+          },
+          "q": "Old Port of Dubrovnik",
+          "ok": "2026-11"
+        },
+        {
+          "local": "",
+          "ages": [
+            0,
+            1,
+            1,
+            2
+          ],
+          "hrs": 1,
+          "io": "in",
+          "pram": "part",
+          "price": {
+            "th": "เช็กราคาก่อนไป",
+            "en": "Check the price"
+          },
+          "book": "none",
+          "src": "https://kidsareatrip.com/?p=10305",
+          "name": {
+            "th": "ร้านขายยาเก่า อารามฟรันซิสกัน",
+            "en": "Old Pharmacy, Franciscan Monastery"
+          },
+          "kind": "museum",
+          "area": {
+            "th": "ด้านในประตูปีเล",
+            "en": "Inside Pile Gate"
+          },
+          "what": {
+            "th": "ร้านขายยาที่เปิดตั้งแต่ปี 1317 เก่าแก่ที่สุดแห่งหนึ่งของยุโรป",
+            "en": "A pharmacy running since 1317, one of Europe’s oldest"
+          },
+          "why": {
+            "th": "ร้านเดียวกันมาเจ็ดศตวรรษ",
+            "en": "Seven centuries of the same shop"
+          },
+          "q": "Franciscan Church and Monastery, Placa 2, Dubrovnik",
+          "ok": "2026-11"
+        },
+        {
+          "local": "",
+          "ages": [
+            1,
+            1,
+            1,
+            1
+          ],
+          "hrs": 1,
+          "io": "out",
+          "pram": "no",
+          "price": {
+            "th": "เช็กราคาก่อนไป",
+            "en": "Check the price"
+          },
+          "book": "none",
+          "src": "https://kidsareatrip.com/?p=10305",
+          "name": {
+            "th": "ป้อมมินเชตา",
+            "en": "Minčeta Tower"
+          },
+          "kind": "views",
+          "area": {
+            "th": "กำแพงเมือง ใกล้ประตูปีเล",
+            "en": "City walls, near Pile Gate"
+          },
+          "what": {
+            "th": "จุดสูงสุดของกำแพงเมือง",
+            "en": "The highest point of the walls"
+          },
+          "why": {
+            "th": "เห็นวิวทะเล หลังคาแดง และตรอกเก่า",
+            "en": "Views of the sea, the red roofs and the old lanes"
+          },
+          "q": "Tvrđava Minčeta, Dubrovnik",
+          "ok": "2026-11"
+        },
+        {
+          "local": "",
+          "ages": [
+            2,
+            2,
+            2,
+            1
+          ],
+          "hrs": 3,
+          "io": "out",
+          "pram": "part",
+          "price": {
+            "th": "เช็กราคาก่อนไป",
+            "en": "Check the price"
+          },
+          "book": "none",
+          "src": "https://www.my-travelmonkey.com/dubrovnik-with-kids/",
+          "name": {
+            "th": "หาดโคปาคาบานา",
+            "en": "Copacabana Beach"
+          },
+          "kind": "beach",
+          "area": {
+            "th": "บาบินคุก",
+            "en": "Babin Kuk"
+          },
+          "what": {
+            "th": "หาดมีคาเฟ่ ร้านอาหาร และห้องน้ำสะอาด",
+            "en": "A beach with cafés, restaurants and clean toilets"
+          },
+          "why": {
+            "th": "น้ำตื้นให้เด็กเล่น",
+            "en": "Shallow water for paddling"
+          },
+          "tip": {
+            "th": "เป็นหาดกรวด ใส่รองเท้าลุยน้ำ",
+            "en": "Pebbly: bring beach shoes"
+          },
+          "q": "Copacabana Beach, Dubrovnik",
+          "ok": "2026-11"
         }
       ]
     },
@@ -418,6 +648,47 @@
           "q": "Barać Caves, Rakovica, Croatia",
           "ok": "2026-11",
           "src": "https://www.lika-destination.hr/nature-protected-area/tourism/155/barac-caves"
+        },
+        {
+          "local": "Veliki slap",
+          "ages": [
+            1,
+            2,
+            2,
+            2
+          ],
+          "hrs": 2,
+          "io": "out",
+          "pram": "no",
+          "price": {
+            "th": "เช็กราคาก่อนไป",
+            "en": "Check the price"
+          },
+          "book": "none",
+          "src": "https://www.familycantravel.com/plitvice-lakes-croatia-with-kids/",
+          "name": {
+            "th": "น้ำตกใหญ่ปลิตวิเซ",
+            "en": "The Great Waterfall"
+          },
+          "kind": "nature",
+          "area": {
+            "th": "อุทยานทะเลสาบปลิตวิเซ ใกล้ทางเข้า 1",
+            "en": "Plitvice Lakes, near Entrance 1"
+          },
+          "what": {
+            "th": "น้ำตกใหญ่ของอุทยาน ไปถึงด้วยทางเดินไม้",
+            "en": "The park's great waterfall, reached on the boardwalks"
+          },
+          "why": {
+            "th": "ลูก ๆ ของครอบครัวผู้เขียนชอบช่วงนี้ของเส้นทางมาก",
+            "en": "The family's children loved this part of the walk"
+          },
+          "tip": {
+            "th": "คนเยอะมาก ไปเช้าหรือแวะที่นี่ก่อน และอุ้มเด็กเล็กใส่เป้ใกล้น้ำตก",
+            "en": "Very busy: go early or first, and carry small children in a carrier near the falls"
+          },
+          "q": "Veliki slap, Plitvice Lakes National Park",
+          "ok": "2026-11"
         }
       ]
     }

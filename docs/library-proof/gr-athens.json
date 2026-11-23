@@ -1,0 +1,168 @@
+{
+  "town": "gr-athens",
+  "kind": "eats + sights",
+  "checked": "2026-11-23",
+  "rule": "library-check.cjs, then the Google Maps Reviews tab sorted by newest: ok only when not marked closed, with a review from the last six months, and the map's name matching the page's.",
+  "agents": "one Haiku agent; 24 rows from Athens Tourism (2026) and travel.gr (Jan 2026) passed library-check.cjs, 20 went in",
+  "added": [
+    {
+      "name": "Ama Lachei stis Nefelis",
+      "page_name": "Ama Lachei stis Nefelis",
+      "src": "https://www.athenstourism.org/family-friendly-restaurants-athens-kids/",
+      "date": "2026-09",
+      "map": "Google Maps 'Ama Lachei', 8,203 reviews, newest '15 hours ago'"
+    },
+    {
+      "name": "Karavitis",
+      "page_name": "Karavitis",
+      "src": "https://www.athenstourism.org/family-friendly-restaurants-athens-kids/",
+      "date": "2026-09",
+      "map": "Google Maps 2,081 reviews, newest '15 hours ago'"
+    },
+    {
+      "name": "Colibri",
+      "page_name": "Colibri",
+      "src": "https://www.athenstourism.org/family-friendly-restaurants-athens-kids/",
+      "date": "2026-09",
+      "map": "Google Maps 2,711 reviews, newest '3 days ago'"
+    },
+    {
+      "name": "To Steki tou Ilia",
+      "page_name": "To Steki tou Ilia",
+      "src": "https://www.athenstourism.org/family-friendly-restaurants-athens-kids/",
+      "date": "2026-09",
+      "map": "Google Maps 1,707 reviews, newest '20 hours ago'"
+    },
+    {
+      "name": "Smile Restaurant",
+      "page_name": "Smile Restaurant",
+      "src": "https://www.athenstourism.org/family-friendly-restaurants-athens-kids/",
+      "date": "2026-09",
+      "map": "Google Maps 3,246 reviews, newest '2 days ago'"
+    },
+    {
+      "name": "Piu Verde",
+      "page_name": "Piu Verde",
+      "src": "https://www.athenstourism.org/family-friendly-restaurants-athens-kids/",
+      "date": "2026-09",
+      "map": "Google Maps 20,471 reviews, newest '15 hours ago'"
+    },
+    {
+      "name": "Bella Vespa",
+      "page_name": "Bella Vespa",
+      "src": "https://www.athenstourism.org/family-friendly-restaurants-athens-kids/",
+      "date": "2026-09",
+      "map": "Google Maps 2,385 reviews, newest '1 day ago'"
+    },
+    {
+      "name": "Kosta souvlaki",
+      "page_name": "Kosta",
+      "src": "https://www.athenstourism.org/family-friendly-restaurants-athens-kids/",
+      "date": "2026-09",
+      "map": "Google Maps 5,150 reviews, newest '1 hour ago'"
+    },
+    {
+      "name": "Hoocut",
+      "page_name": "Hoocut",
+      "src": "https://www.athenstourism.org/family-friendly-restaurants-athens-kids/",
+      "date": "2026-09",
+      "map": "Google Maps 4,828 reviews, newest '18 hours ago'"
+    },
+    {
+      "name": "To Avgo tou Kokora",
+      "page_name": "To Avgo tou Kokora",
+      "src": "https://www.athenstourism.org/family-friendly-restaurants-athens-kids/",
+      "date": "2026-09",
+      "map": "Google Maps 2,582 reviews, newest '14 hours ago'"
+    },
+    {
+      "name": "Acropolis Museum Café and Restaurant",
+      "page_name": "Acropolis Museum café and restaurant",
+      "src": "https://www.athenstourism.org/family-friendly-restaurants-athens-kids/",
+      "date": "2026-09",
+      "map": "Google Maps 'Acropolis Museum Cafe and Restaurant', 5,106 reviews, newest '12 hours ago'"
+    },
+    {
+      "name": "Diomedes Botanical Garden",
+      "page_name": "Diomedes Botanical Garden",
+      "src": "https://www.travel.gr/en/best-of-en/best-activities-for-kids-in-athens-2026/",
+      "date": "2026-01",
+      "map": "Google Maps 'Diomidous Botanical Garden', 8,977 reviews, newest '15 hours ago'"
+    },
+    {
+      "name": "Athens Happy Train",
+      "page_name": "Athens Happy Train",
+      "src": "https://www.travel.gr/en/best-of-en/best-activities-for-kids-in-athens-2026/",
+      "date": "2026-01",
+      "map": "Google Maps 230 reviews, newest '4 months ago'"
+    },
+    {
+      "name": "Battleship Averof museum",
+      "page_name": "Floating Naval Museum",
+      "src": "https://www.travel.gr/en/best-of-en/best-activities-for-kids-in-athens-2026/",
+      "date": "2026-01",
+      "map": "Google Maps 'Georgios Averof Battleship Museum', 3,795 reviews, newest '2 hours ago'"
+    },
+    {
+      "name": "Benaki Toy Museum",
+      "page_name": "Benaki Toy Museum",
+      "src": "https://www.travel.gr/en/best-of-en/best-activities-for-kids-in-athens-2026/",
+      "date": "2026-01",
+      "map": "Google Maps 649 reviews, newest '16 hours ago'"
+    },
+    {
+      "name": "Museum of Cycladic Art",
+      "page_name": "Cycladic Art Museum",
+      "src": "https://www.travel.gr/en/best-of-en/best-activities-for-kids-in-athens-2026/",
+      "date": "2026-01",
+      "map": "Google Maps 'Museum of Cycladic Art', 5,156 reviews, newest '13 hours ago'"
+    },
+    {
+      "name": "Akti tou Iliou beach",
+      "page_name": "Akti tou Iliou (Alimos)",
+      "src": "https://www.athenstourism.org/family-beaches-near-athens-kids/",
+      "date": "2026-07",
+      "map": "Google Maps 'Akti Iliou', 660 reviews, newest 'last month'"
+    },
+    {
+      "name": "Voula Beach",
+      "page_name": "Voula A Beach (Akti Voulas)",
+      "src": "https://www.athenstourism.org/family-beaches-near-athens-kids/",
+      "date": "2026-07",
+      "map": "Google Maps 'Voula Beach', 1,505 reviews, newest '1 day ago'"
+    },
+    {
+      "name": "Flisvos Marina",
+      "page_name": "Flisvos Marina",
+      "src": "https://www.athenstourism.org/family-friendly-restaurants-athens-kids/",
+      "date": "2026-09",
+      "map": "Google Maps 28,572 reviews, newest '4 hours ago'"
+    },
+    {
+      "name": "Zappeion",
+      "page_name": "Zappeio",
+      "src": "https://www.travel.gr/en/best-of-en/best-activities-for-kids-in-athens-2026/",
+      "date": "2026-01",
+      "map": "Google Maps 'Zappeion', 9,316 reviews, newest '11 hours ago'"
+    }
+  ],
+  "left_out": [
+    {
+      "name": "To Vrasto",
+      "why": "the map check could not read its reviews"
+    },
+    {
+      "name": "Anafiotika",
+      "why": "a whole neighbourhood"
+    },
+    {
+      "name": "Six Thresholds Playground",
+      "why": "the map's place there has another name"
+    },
+    {
+      "name": "The Wall",
+      "why": "in Pallini, outside the city"
+    }
+  ],
+  "estimates": "Ages and visit hours are placeholders; prices and opening notes are the pages' own."
+}
