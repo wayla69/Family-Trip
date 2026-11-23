@@ -26,8 +26,8 @@ function curTrip() {
 function thKeep(root) {
   root.querySelectorAll('h1,h2,h3,h4,h5,.tt,summary').forEach((el) => {
     const w = document.createTreeWalker(el, NodeFilter.SHOW_TEXT), nodes = [];
-    while (w.nextNode()) { const n = w.currentNode; if (/[\u0E00-\u0E7F]/.test(n.data) && !(n.parentNode.classList && n.parentNode.classList.contains('thw'))) nodes.push(n); }
-    nodes.forEach((n) => { const f = document.createDocumentFragment();
+    while (w.nextNode()) { const n = w.currentNode; if (/[\u0E00-\u0E7F]/.test(n.data) && !(n.parentNode.classList && (n.parentNode.classList.contains('thw') || n.parentNode.classList.contains('thl')))) nodes.push(n); }
+    nodes.forEach((n) => { const f = document.createElement('span'); f.className = 'thl';   // one item in a flex heading, however many words
       n.data.split(/(\s+)/).forEach((x) => { if (!x) return; if (!/[\u0E00-\u0E7F]/.test(x)) { f.append(x); return; } const sp = document.createElement('span'); sp.className = 'thw'; sp.textContent = x; f.append(sp); });
       n.replaceWith(f); });
   });
