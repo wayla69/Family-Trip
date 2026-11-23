@@ -2941,29 +2941,36 @@ const T = 'hk-macau-2026';
       out.castle = [spotSrc('🏰', { en: 'A sandcastle' }), spotSrc('🏰', { en: 'Point at the castle' }), spotSrc('⛪', { en: 'A church' })];
       return out; });
     ok(r.n > 40 && !r.miss.length && !r.bad.length && r.castle[0].endsWith('sandcastle.webp') && r.castle[1].endsWith('fairytale.webp') && !r.castle[2], `every thing to find has a picture, read by its name where an emoji means two things (${r.n} · ${r.miss.slice(0, 5).join(', ')} · ${r.bad.join(' ')} · ${r.castle.join(' ')})`); }
-  // the parents close the boxes again for every child from the book's menu (owner: "ช่วยเคลียร์ surprise ให้ก่อนรอบนึงครับของสองคนเลย"), two taps
-  { await page.evaluate(() => { ls('kidmode', null); location.hash = '#/t/hk-macau-2026'; }); await page.waitForSelector('.giftline [data-a="giftreset"]');
-    await page.click('.giftline [data-a="giftreset"]'); await page.click('.giftline [data-a="giftreset"]');
+  // the fresh-start card (owner, Nov 2026: "รวมปุ่มล้างของเด็กไว้ที่เดียว"): one card on the book's menu, a row a kind of play with its count,
+  // only what is ticked goes, for every child, two taps — the boxes first, then the doors (other rows unticked so the rest of the run keeps its play)
+  const freshClear = async (key) => {
+    await page.waitForSelector(`.freshline input[data-fr="${key}"]`);
+    await page.$$eval('.freshline input[data-fr]', (xs, k) => xs.forEach((x) => { x.checked = x.dataset.fr === k; }), key);
+    await page.click('.freshline [data-a="freshgo"]'); await page.click('.freshline [data-a="freshgo"]'); };
+  { await page.evaluate(() => { ls('kidmode', null); location.hash = '#/t/hk-macau-2026'; });
+    await page.waitForFunction(() => queue.length === 0, null, { timeout: 15000 }); await page.evaluate(() => refresh && refresh()); await page.waitForTimeout(600);
+    const rowsSeen = await page.$$eval('.freshline input[data-fr]', (xs) => xs.map((x) => x.dataset.fr + (x.checked ? '+' : '-')));
+    await freshClear('gift');
     await page.waitForFunction(() => !S.entries.some((e) => /^gift\.d/.test(e.first_key || '')), null, { timeout: 5000 }).catch(() => {});
     await page.waitForFunction(() => queue.length === 0, null, { timeout: 15000 });
     const left = (await apiState(page)).entries.filter((e) => /^gift\.d/.test(e.first_key || '')).length;
+    const others = (await apiState(page)).entries.filter((e) => /^quest\./.test(e.first_key || '')).length;
     await page.evaluate(() => { ls('kidmode', 'mimi'); location.hash = '#/kid/mimi'; }); await page.waitForSelector('.kidtiles');
-    ok(left === 0 && await page.locator('.giftline').count() === 0 && await page.locator('.kidgift').count() === 1, `surprise box: the parents close every box again, the morning box is back (${left} left)`);
+    ok(left === 0 && await page.locator('.kidgift').count() === 1 && rowsSeen.includes('gift+') && !rowsSeen.some((r) => r.startsWith('pp+')),
+      `fresh start: the parents close every surprise box again, the morning box is back, a trip day leaves the passport unticked (${left} left · ${rowsSeen.join(' ')} · quest kept ${others})`);
     await page.click('.kidgift'); await page.waitForSelector('.giftbox'); await page.click('.giftbox'); await page.waitForSelector('.giftopen .gstk img', { timeout: 5000 });
     await page.waitForFunction(() => queue.length === 0, null, { timeout: 15000 });
     await page.click('.kidbar button[data-v="#/kid/mimi"]'); await page.waitForSelector('.kidtiles'); }
-  // the countdown doors close again the same way (owner, Nov 2026: "ทำปุ่มปิดประตูทั้งหมดด้วย"): two taps on the book's menu, every child
   { await page.evaluate(() => { const t = trip('hk-macau-2026'); for (const [n, k] of [[1, 'mimi'], [1, 'mika'], [2, 'mimi']]) putEntry(t, { day: null, kind: 'tick', child: k, first_key: `cd.${n}`, text: '' }, `${t.id}.tick.cd.${n}.${k}`);
       ls('kidmode', null); location.hash = '#/t/hk-macau-2026'; render(); });
     // the opened doors reach the server first: their sync redraws the menu, and a redraw between the two taps is a fresh, unarmed button
     await page.waitForFunction(() => queue.length === 0, null, { timeout: 15000 }); await page.evaluate(() => refresh && refresh()); await page.waitForTimeout(600);
-    await page.waitForSelector('.doorline [data-a="doorreset"]');
-    const said = await page.textContent('.doorline');
-    await page.click('.doorline [data-a="doorreset"]'); await page.click('.doorline [data-a="doorreset"]');
+    const said = await page.textContent('.freshline');
+    await freshClear('cd');
     await page.waitForFunction(() => !S.entries.some((e) => /^cd\./.test(e.first_key || '')), null, { timeout: 5000 }).catch(() => {});
     await page.waitForFunction(() => queue.length === 0, null, { timeout: 15000 });
     const left = (await apiState(page)).entries.filter((e) => /^cd\./.test(e.first_key || '')).length;
-    ok(left === 0 && /\d/.test(said) && await page.locator('.doorline').count() === 0, `countdown doors: the parents close every door again from the book's menu, two taps (${left} left · "${said.replace(/\s+/g, ' ').trim()}")`);
+    ok(left === 0 && /\d/.test(said) && await page.locator('.freshline input[data-fr="cd"]').count() === 0, `fresh start: every countdown door closes again, two taps (${left} left · "${said.replace(/\s+/g, ' ').trim().slice(0, 160)}")`);
     await page.evaluate(() => { ls('kidmode', 'mimi'); location.hash = '#/kid/mimi'; }); await page.waitForSelector('.kidtiles'); }
   // nowhere to get stuck (owner, Nov 2026: item 5 of the follow-ups): a locked tick in the passport says what to do, the lock says to hold
   { const toastIs = async (re) => page.waitForFunction((src) => [...document.querySelectorAll('.toast')].some((x) => new RegExp(src, 'i').test(x.textContent)), re.source, { timeout: 3000 }).then(() => true, () => false);

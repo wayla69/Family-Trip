@@ -1502,23 +1502,31 @@ function questLine(t) {
   }).filter(Boolean);
   return rows.length ? `<section class="questline"><div class="part pickh">${L('แผนที่ผจญภัยของเด็กๆ', 'The kids’ adventure map')}</div><ul>${rows.join('')}</ul></section>` : '';
 }
-// the surprise boxes again (owner, Nov 2026: "ช่วยเคลียร์ surprise ให้ก่อนรอบนึงครับของสองคนเลย"): on the book's menu, for the parents, once a
-// box of this book has been opened — two taps close every box of the book again for every child, so the morning opens a full box
-function giftLine(t) {
+// start again before the trip, in one place (owner, Nov 2026: the boxes, the doors, the levels and the road were each reset on their own;
+// "รวมปุ่มล้างของเด็กไว้ที่เดียว"): one card on the book's menu, for the parents — a row a kind of play with how much there is, ticked
+// as wanted, then two taps. The book's part goes for every child (synced); the stars, friends and levels live on each phone, so they
+// go on this phone only. The passport's ticks and stamps are ticked to start with only before the trip: after it they are memories.
+const FRESH = [
+  ['gift', 'surprise', 'กล่องเซอร์ไพรส์ที่เปิดแล้ว', 'Opened surprise boxes', (k) => /^gift\.d\d+$/.test(k)],
+  ['cd', 't-door', 'ประตูนับถอยหลังที่เปิดแล้ว', 'Opened countdown doors', (k) => /^cd\.\d+$/.test(k)],
+  ['quest', 'quest/chest', 'เส้นทางผจญภัย', 'The adventure map', (k) => /^quest\./.test(k)],
+  ['pp', 't-medal', 'ตรา ภารกิจ และสติกเกอร์ในพาสปอร์ต', 'Stamps, missions and stickers in the passport', (k) => /^(spot|little|stamp|wild|been)\./.test(k)],
+];
+const freshOf = (t, key) => { const f = FRESH.find((x) => x[0] === key)[4]; return entriesOf(t.id).filter((e) => (e.kind === 'tick' && f(e.first_key || '')) || (key === 'pp' && e.kind === 'field' && e.first_key === 'stickers')); };
+const freshKids = (t) => { const k = ((t.theme && t.theme.children) || []).map((c) => c.slug).filter(Boolean); return k.length ? k : children().map((c) => c.slug); };
+const freshPhone = (t) => freshKids(t).reduce((n, kid) => n + (+ls('stars_' + kid) || 0) + Object.keys(ls('lv_' + kid) || {}).length, 0);
+function freshLine(t) {
   if (!isEditor()) return '';
-  const opened = entriesOf(t.id).filter((e) => e.kind === 'tick' && /^gift\.d\d+$/.test(e.first_key || ''));
-  if (!opened.length) return '';
-  const kids = [...new Set(opened.map((e) => e.child))].map((k) => kidName(k)).filter(Boolean);
-  return `<section class="questline giftline"><div class="part pickh">${L('กล่องเซอร์ไพรส์', 'The surprise boxes')}</div><ul><li><span class="gface">${kuImg('surprise')}</span><span>${esc(L(`${kids.join(' และ ')} เปิดไปแล้ว ${opened.length} กล่อง`, `${kids.join(' and ')} opened ${opened.length} box${opened.length > 1 ? 'es' : ''}`))}</span><button type="button" class="mini" data-a="giftreset" data-t="${esc(t.id)}">${L('ปิดกล่องใหม่ทั้งหมด', 'Close them all again')}</button></li></ul></section>`;
-}
-// the countdown doors again (owner, Nov 2026: "ทำปุ่มปิดประตูทั้งหมดด้วย"): beside the boxes, for the parents, once a door of this book
-// has been opened — two taps close every door again for every child (the stars stay, as with the boxes)
-function doorLine(t) {
-  if (!isEditor()) return '';
-  const opened = entriesOf(t.id).filter((e) => e.kind === 'tick' && /^cd\.\d+$/.test(e.first_key || ''));
-  if (!opened.length) return '';
-  const kids = [...new Set(opened.map((e) => e.child))].map((k) => kidName(k)).filter(Boolean);
-  return `<section class="questline giftline doorline"><div class="part pickh">${L('ประตูนับถอยหลัง', 'The countdown doors')}</div><ul><li><span class="gface">${kuImg('t-door')}</span><span>${esc(L(`${kids.join(' และ ')} เปิดไปแล้ว ${opened.length} บาน`, `${kids.join(' and ')} opened ${opened.length} door${opened.length > 1 ? 's' : ''}`))}</span><button type="button" class="mini" data-a="doorreset" data-t="${esc(t.id)}">${L('ปิดประตูทั้งหมด', 'Close every door')}</button></li></ul></section>`;
+  const pre = dayNow(t) < 0 && !tripOver(t);
+  const rows = FRESH.map(([k, pic, th, en]) => [k, pic, th, en, freshOf(t, k).length]).filter((r) => r[4]);
+  const phone = freshPhone(t);
+  if (!rows.length && !phone) return '';
+  const img = (pic) => (pic.includes('/') ? `<img class="ku" src="/art/${pic}.webp" alt="">` : kuImg(pic));
+  const row = (k, pic, label, n, on) => `<label class="ckrow frrow"><input type="checkbox" data-fr="${k}"${on ? ' checked' : ''}><span class="gface">${img(pic)}</span><span>${esc(label)}${n ? ` <span class="label">${esc(L(`${n} รายการ`, `${n}`))}</span>` : ''}</span></label>`;
+  return `<section class="giftline freshline"><div class="part pickh">${pre ? L('เริ่มใหม่ก่อนเดินทาง', 'A fresh start before the trip') : L('ล้างของเล่นของเด็กๆ', 'Clear the kids’ play')}</div>
+<p class="label">${L('เลือกสิ่งที่จะล้าง ของทุกคนในเล่มนี้ · ความทรงจำ รูป และคำพูดไม่หายไปไหน', 'Pick what to clear, for every child in this book · memories, photos and words stay')}</p>
+<div class="frrows">${rows.map(([k, pic, th, en, n]) => row(k, pic, L(th, en), n, k !== 'pp' || pre)).join('')}${phone ? row('phone', 'quest/star', L('ดาว เพื่อนในโถ และด่านเกม (เฉพาะเครื่องนี้)', 'Stars, jar friends and game levels (this phone only)'), 0, pre) : ''}</div>
+<div class="row end"><button type="button" class="mini" data-a="freshgo" data-t="${esc(t.id)}">${L('ล้างที่เลือก', 'Clear what’s ticked')}</button></div></section>`;
 }
 // the road from the first town again (a test run, a fresh start): this book's missions and chests of that child go, with the easing kept on this device
 function questWipe(t, kid) {
@@ -1543,17 +1551,18 @@ document.addEventListener('pointerdown', (e) => {
   qresT = 0;
 }, true));
 Object.assign(A, {
-  giftreset(b) {   // every surprise box of the book closed again, for every child (the stickers they gave go with them; stars stay)
-    const t = trip(b.dataset.t); if (!t || !isEditor()) return;
-    if (!armed(b, L('แตะอีกครั้ง กล่องเซอร์ไพรส์ของทุกคนจะปิดใหม่', 'Tap again — every child’s boxes close again'))) return;
-    entriesOf(t.id).filter((e) => e.kind === 'tick' && /^gift\.d\d+$/.test(e.first_key || '')).forEach((e) => delEntry(e.id));
-    toast(L('ปิดกล่องเซอร์ไพรส์ใหม่แล้ว เปิดได้อีกรอบ', 'The surprise boxes are closed — ready to open again')); safeRender();
-  },
-  doorreset(b) {   // every countdown door of the book closed again, for every child (the stars stay)
-    const t = trip(b.dataset.t); if (!t || !isEditor()) return;
-    if (!armed(b, L('แตะอีกครั้ง ประตูของทุกคนจะปิดใหม่', 'Tap again — every child’s doors close again'))) return;
-    entriesOf(t.id).filter((e) => e.kind === 'tick' && /^cd\.\d+$/.test(e.first_key || '')).forEach((e) => delEntry(e.id));
-    toast(L('ปิดประตูทั้งหมดแล้ว เปิดได้อีกรอบ', 'Every door is closed — ready to open again')); safeRender();
+  freshgo(b) {   // the fresh-start card: what is ticked goes, for every child of the book (the phone's part on this phone only)
+    const t = trip(b.dataset.t), box = b.closest('.freshline'); if (!t || !isEditor() || !box) return;
+    const keys = [...box.querySelectorAll('input[data-fr]:checked')].map((x) => x.dataset.fr);
+    if (!keys.length) { toast(L('ติ๊กสิ่งที่จะล้างก่อน', 'Tick what to clear first')); return; }
+    if (!armed(b, L('แตะอีกครั้งเพื่อล้าง', 'Tap again to clear'))) return;
+    for (const k of keys.filter((x) => x !== 'phone')) freshOf(t, k).forEach((e) => delEntry(e.id));
+    for (const kid of freshKids(t)) {
+      if (keys.includes('quest')) { [...questMem].filter((id) => id.startsWith(`${t.id}.tick.quest.`)).forEach((id) => questMem.delete(id)); const ease = ls('qease_' + kid) || {}; Object.keys(ease).filter((x) => x.startsWith(t.id + '.')).forEach((x) => delete ease[x]); ls('qease_' + kid, ease); }
+      if (keys.includes('phone')) ['stars_', 'pets_', 'lv_', 'match_'].forEach((p) => ls(p + kid, null));
+    }
+    if (keys.includes('quest')) { questOpen = null; questNew = null; }
+    toast(L('ล้างแล้ว เด็กๆ เริ่มใหม่ได้เลย', 'Cleared — a fresh start for the kids')); safeRender();
   },
   questreset(b) {   // a grown-up starts a child's road again: the missions and chests of this book go, the stars and stickers of other things stay
     const t = trip(b.dataset.t), kid = b.dataset.k; if (!t || !isEditor()) return;
