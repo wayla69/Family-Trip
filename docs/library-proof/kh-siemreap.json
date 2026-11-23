@@ -1,0 +1,54 @@
+{
+  "town": "kh-siemreap",
+  "kind": "eats + sights",
+  "checked": "2026-11-23",
+  "rule": "library-check.cjs, then the Google Maps Reviews tab sorted by newest: ok only when not marked closed, with a review from the last six months, and the map's name matching the page's.",
+  "agents": "one Haiku agent; 7 rows offered, 6 passed library-check.cjs, 5 went in",
+  "added": [
+    {
+      "name": "Neak Poan Temple",
+      "src": "https://www.familycantravel.com/siem-reap-with-kids/",
+      "date": "2026-09",
+      "map": "Google Maps 2,540 reviews, newest '2 hours ago'"
+    },
+    {
+      "name": "Banteay Srei Temple",
+      "src": "https://www.familycantravel.com/siem-reap-with-kids/",
+      "date": "2026-09",
+      "map": "Google Maps 2,158 reviews, newest '16 hours ago'"
+    },
+    {
+      "name": "Phnom Bakheng Temple",
+      "src": "https://www.familycantravel.com/siem-reap-with-kids/",
+      "date": "2026-09",
+      "map": "Google Maps 4,427 reviews, newest '7 hours ago'"
+    },
+    {
+      "name": "Ta Nei Temple",
+      "src": "https://www.familycantravel.com/siem-reap-with-kids/",
+      "date": "2026-09",
+      "map": "Google Maps 369 reviews, newest '14 hours ago'"
+    },
+    {
+      "name": "ArtBox Siem Reap",
+      "src": "https://wyldfamilytravel.com/?p=34099",
+      "date": "2025-03",
+      "map": "Google Maps 'ArtBox', 660 reviews, newest 'a week ago'"
+    }
+  ],
+  "left_out": [
+    {
+      "name": "Pre Rup Temple",
+      "why": "library-check: name not on the page as written"
+    },
+    {
+      "name": "Asia Plaza Play Zone",
+      "why": "the map's 'Asia Plaza Playground' has 26 reviews, the newest three years old"
+    },
+    {
+      "name": "places to eat",
+      "why": "the agent found no dated page naming restaurants not already in the app"
+    }
+  ],
+  "estimates": "Ages ([1,1,1,1]) and visit hours are placeholders; no page printed them."
+}
