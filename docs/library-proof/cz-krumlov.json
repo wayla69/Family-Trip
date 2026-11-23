@@ -6,12 +6,22 @@
   "scope": "the 1 row without ok; the rows already confirmed were not checked again",
   "how": "Google Maps opened in headless Chromium (2026-11-23), limited view without a reviews tab, so no review date could be read; a place with current hours and no closed notice counts as a current listing",
   "confirmed": [],
-  "kept_without_ok": [
+  "kept_without_ok": [],
+  "removed": [
     {
       "name": "Deli 99",
       "src": "https://www.google.com/maps/place/DELI99+Caf%C3%A9+Waffle/@48.8147302,14.3170487,17z",
-      "evidence": "Google Maps: 'DELI99 Café Waffle', Latrán 106, Český Krumlov (R878+VR) — 'Permanently closed'. It would be removed, but the town would then have one quick bite where eats:lint asks for two, so it stays without ok until a replacement quick bite is added"
+      "reason": "Google Maps: 'DELI99 Café Waffle', Latrán 106, Český Krumlov (R878+VR) — 'Permanently closed'. Removed once a replacement quick bite (Bistro Topinka) was added"
     }
   ],
-  "removed": []
+  "added": [
+    {
+      "name": "Bistro Topinka",
+      "kind": 1,
+      "src": "https://www.google.com/maps/place/Bistro+TOPINKA/@48.8100252,14.3146855,17z",
+      "page_name": "Bistro TOPINKA",
+      "evidence": "Google Maps (2026-11-23): 'Bistro TOPINKA', 4.5, Bistro, Rooseveltova 33, 381 01 Český Krumlov 1-Horní Brána (R869+2M) — 'Closed · Opens 9 AM', no closed notice; rating count not shown in the limited view. City guide ckrumlov.info/en/gastronomy-527-bistro-topinka: 'Breakfast, brunch, lunch menu, original toasts, own desserts, natural wines, homemade lemonades', 'family equipped (families welcome)', outdoor seating. kudyznudy.cz: toasts on craft bread with roast duck, salmon, eggs. visitceskykrumlov.cz: soups, salads, homemade desserts. Price: intravel.net 'moderate price range of 200 - 300 CZK per person' (no menu prices found)",
+      "ok": "2026-11"
+    }
+  ]
 }

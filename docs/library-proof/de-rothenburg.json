@@ -6,11 +6,21 @@
   "scope": "the 1 row without ok; the rows already confirmed were not checked again",
   "how": "Google Maps opened in headless Chromium (2026-11-23), limited view without a reviews tab, so no review date could be read; a place with current hours and no closed notice counts as a current listing",
   "confirmed": [],
-  "kept_without_ok": [
+  "kept_without_ok": [],
+  "removed": [
     {
       "name": "Albig's Quick Restaurant",
-      "evidence": "Google Maps could not find it: searching 'Albig's Quick Restaurant, Hafengasse 3' and 'Albig's Rothenburg ob der Tauber' listed Quickylicious (Hafengasse 16), Ivy's Deli and Tobingo Döner (Hafengasse 2), and no Albig's; a web search found no listing either. It would be removed, but the town would then have one quick bite where eats:lint asks for two, so it stays without ok until a replacement quick bite is added"
+      "reason": "Google Maps could not find it ('Albig's Quick Restaurant, Hafengasse 3' and 'Albig's Rothenburg ob der Tauber' listed other places, no Albig's); a web search found no listing either. Removed once a replacement quick bite (Tobingo Döner) was added"
     }
   ],
-  "removed": []
+  "added": [
+    {
+      "name": "Tobingo Döner",
+      "kind": 1,
+      "src": "https://www.google.com/maps/place/Tobingo+D%C3%B6ner/@49.3769027,10.1707625,16z",
+      "page_name": "Tobingo Döner",
+      "evidence": "Google Maps (2026-11-23): 'Tobingo Döner', 4.8, Fast food restaurant, Hafengasse 2, 91541 Rothenburg ob der Tauber — 'Closed · Opens 10:30 AM', no closed notice, own site tobingodoener.de and ordering on lieferando.de; rating count not shown in the limited view. Menu on speisekarte.de (updated 25.11.2024): Pommes €3.00/3.50, Nuggets Menü (9, with chips and a drink) €10.50, Döner €4.90, Falafel Box €5.90, Döner Teller €12.50 — the price range is taken from it. No children's menu; the nuggets-and-chips meal is what the row names",
+      "ok": "2026-11"
+    }
+  ]
 }
