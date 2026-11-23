@@ -1739,6 +1739,154 @@
           "q": "Alt-Rothenburger Handwerkerhaus, Alter Stadtgraben 26, Rothenburg ob der Tauber",
           "ok": "2026-11",
           "src": "https://www.rothenburg.de/entdecken/museen/alt-rothenburger-handwerkerhaus"
+        },
+        {
+          "local": "",
+          "ages": [
+            0,
+            1,
+            2,
+            2
+          ],
+          "hrs": 0.5,
+          "io": "out",
+          "pram": "no",
+          "price": {
+            "th": "คนละ 2 ยูโร",
+            "en": "2 euros per person"
+          },
+          "book": "none",
+          "src": "https://www.mkewithkids.com/?p=127022",
+          "name": {
+            "th": "หอเรอเดอร์",
+            "en": "Röderturm"
+          },
+          "kind": "views",
+          "area": {
+            "th": "ถนนเรอเดอร์กัสเซอ",
+            "en": "Rödergasse"
+          },
+          "what": {
+            "th": "หอคอยกำแพงเมืองจากศตวรรษที่ 13 วิวหลังคาบ้าน",
+            "en": "A 13th-century tower of the town walls with a view over the rooftops"
+          },
+          "why": {
+            "th": "มีตราประทับให้สะสมบนยอด",
+            "en": "Stamps to collect at the top"
+          },
+          "q": "Röderturm, Rödergasse 38, Rothenburg ob der Tauber",
+          "ok": "2026-11"
+        },
+        {
+          "local": "Topplerschlösschen",
+          "ages": [
+            1,
+            2,
+            2,
+            2
+          ],
+          "hrs": 1,
+          "io": "out",
+          "pram": "part",
+          "price": {
+            "th": "เช็กราคาก่อนไป",
+            "en": "Check the price"
+          },
+          "book": "none",
+          "src": "https://www.mkewithkids.com/?p=127022",
+          "name": {
+            "th": "ปราสาทท็อปเลอร์",
+            "en": "Toppler Castle"
+          },
+          "kind": "views",
+          "area": {
+            "th": "หุบเขาเทาเบอร์ ใต้ตัวเมือง",
+            "en": "Tauber valley, below the town"
+          },
+          "what": {
+            "th": "ปราสาทน้ำเล็ก ๆ กลางทุ่งเขียว เดินออกนอกกำแพงเมือง",
+            "en": "A small water castle among green fields, a walk outside the walls"
+          },
+          "why": {
+            "th": "หอคอยเหมือนในเทพนิยาย ถ่ายรูปครอบครัวสวย",
+            "en": "A fairy-tale tower for family photos"
+          },
+          "q": "Toppler Castle, Taubertalweg 98, Rothenburg ob der Tauber",
+          "ok": "2026-11"
+        },
+        {
+          "local": "Spielplatz Hornburgweg",
+          "ages": [
+            2,
+            2,
+            2,
+            1
+          ],
+          "hrs": 0.5,
+          "io": "out",
+          "pram": "part",
+          "price": {
+            "th": "ฟรี",
+            "en": "Free"
+          },
+          "book": "none",
+          "src": "https://www.familienurlaub-info.com/sommer/deutschland/rothenburg-ob-der-tauber/",
+          "name": {
+            "th": "สนามเด็กเล่นฮอร์นบวร์กเว็ก",
+            "en": "Hornburgweg playground"
+          },
+          "kind": "play",
+          "area": {
+            "th": "โรเทนบวร์ก",
+            "en": "Rothenburg ob der Tauber"
+          },
+          "what": {
+            "th": "สนามเด็กเล่นระหว่างทางเดินรอบเมือง",
+            "en": "A playground on the walk round the town"
+          },
+          "why": {
+            "th": "ที่ให้เด็กเล็กวิ่งเล่น",
+            "en": "Room for small children to run"
+          },
+          "q": "Spielplatz Hornburgweg, Rothenburg ob der Tauber",
+          "ok": "2026-11"
+        },
+        {
+          "local": "Doppelbrücke",
+          "ages": [
+            1,
+            2,
+            2,
+            2
+          ],
+          "hrs": 1,
+          "io": "out",
+          "pram": "part",
+          "price": {
+            "th": "ฟรี",
+            "en": "Free"
+          },
+          "book": "none",
+          "src": "https://www.familienurlaub-info.com/sommer/deutschland/rothenburg-ob-der-tauber/",
+          "name": {
+            "th": "สะพานคู่",
+            "en": "Double Bridge"
+          },
+          "kind": "views",
+          "area": {
+            "th": "หุบเขาเทาเบอร์ ใต้ตัวเมือง",
+            "en": "Tauber valley, below the town"
+          },
+          "what": {
+            "th": "สะพานคู่ในหุบเขาใต้ตัวเมือง",
+            "en": "A double bridge in the valley below the town"
+          },
+          "why": {
+            "th": "วิวมองขึ้นไปเห็นกำแพงและหอคอย",
+            "en": "A view up to the walls and towers"
+          },
+          "q": "Doppelbrücke, Taubertalweg, Rothenburg ob der Tauber",
+          "ok": "2026-11"
         }
       ]
     },
