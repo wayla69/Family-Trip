@@ -764,6 +764,248 @@
           "q": "Lichao Aviation Museum (立巢航空博物馆), Global Center, Chengdu",
           "ok": "2026-11",
           "src": "https://m.sohu.com/a/974823859_122396634"
+        },
+        {
+          "local": "",
+          "name": {
+            "th": "ภูเขาชิงเฉิง",
+            "en": "Mount Qingcheng"
+          },
+          "kind": "nature",
+          "area": {
+            "th": "ตูเจียงเยี่ยน ห่างจากเฉิงตูราว 1.5 ชม.",
+            "en": "Dujiangyan, about 1.5 h from Chengdu"
+          },
+          "what": {
+            "th": "ภูเขาเต๋าแบ่งสองฝั่ง ฝั่งหน้ามีวัดและโบราณสถาน ฝั่งหลังเป็นธรรมชาติและทางเดิน",
+            "en": "A Taoist mountain in two parts: the Front Mountain for its temples and old sites, the Back Mountain for scenery and walks"
+          },
+          "why": {
+            "th": "ถ้านั่งกระเช้า เส้นทางวนฝั่งหลังที่ผ่านน้ำตกและลำธารก็เหมาะกับเด็กและผู้สูงอายุ",
+            "en": "With the cable car, the Back Mountain loop past waterfalls and streams suits children and grandparents too"
+          },
+          "tip": {
+            "th": "ไปฤดูใบไม้ผลิหรือใบไม้ร่วงดีที่สุด วันหยุดคิวกระเช้าขาลงยาวราว 16:30",
+            "en": "Spring and autumn are best; on weekends the downhill cable car queue is long around 4:30 pm"
+          },
+          "ages": [
+            1,
+            2,
+            2,
+            2
+          ],
+          "hrs": 5,
+          "io": "out",
+          "pram": "part",
+          "price": {
+            "en": "Check the price",
+            "th": "เช็กราคาก่อนไป"
+          },
+          "book": "none",
+          "q": "Mount Qingcheng (青城山), Dujiangyan, Chengdu",
+          "src": "https://www.chinahighlights.com/chengdu/attraction/qingcheng-mountain.htm",
+          "ok": "2026-11"
+        },
+        {
+          "local": "成都武侯祠博物馆",
+          "name": {
+            "th": "ศาลเจ้าอู่โหว",
+            "en": "Wuhou Shrine"
+          },
+          "kind": "culture",
+          "area": {
+            "th": "ถนนอู่โหวฉือ เขตอู่โหว",
+            "en": "Wuhouci Avenue, Wuhou District"
+          },
+          "what": {
+            "th": "ลานบ้านเงียบๆ ร่มไผ่กลางเมือง รำลึกวีรบุรุษยุคสามก๊ก",
+            "en": "Quiet bamboo courtyards in the city centre honouring the heroes of the Three Kingdoms"
+          },
+          "why": {
+            "th": "ได้เล่าเรื่องวีรบุรุษสามก๊กกันทั้งครอบครัว ห่างจากความวุ่นวายของเมือง",
+            "en": "Stories of the Three Kingdoms heroes to share as a family, away from the city noise"
+          },
+          "ages": [
+            1,
+            1,
+            2,
+            2
+          ],
+          "hrs": 1.5,
+          "io": "out",
+          "pram": "part",
+          "price": {
+            "en": "Check the price",
+            "th": "เช็กราคาก่อนไป"
+          },
+          "book": "none",
+          "q": "成都武侯祠博物馆, 武侯祠大街231号, 成都",
+          "src": "https://www.womensweekly.com.sg/parenting/things-to-do-chengdu-kids",
+          "ok": "2026-11"
+        },
+        {
+          "local": "交子公园",
+          "name": {
+            "th": "สวนเจียวจื่อ",
+            "en": "Jiaozi Park"
+          },
+          "kind": "park",
+          "area": {
+            "th": "ย่านไฟแนนเชียลซิตี้ เขตไฮเทค",
+            "en": "Financial City, High-Tech Zone"
+          },
+          "what": {
+            "th": "สวนที่มองเห็นตึกแฝด มีสนามเด็กเล่นทันสมัย ฟิตเนสกลางแจ้ง และทางเดินเท้า",
+            "en": "A park with views of the Twin Towers, a modern playground, an outdoor gym and a walkway"
+          },
+          "why": {
+            "th": "สนามเด็กเล่นทันสมัยให้เด็กวิ่งเล่น",
+            "en": "A modern playground for children to run off energy"
+          },
+          "tip": {
+            "th": "มาช่วงหัวค่ำ แล้วไปดูโชว์ไฟบนตึกแฝด ซึ่งเปิดถึง 22:30",
+            "en": "Come in the early evening, then see the towers’ light show, which runs until 10:30 pm"
+          },
+          "ages": [
+            2,
+            2,
+            2,
+            2
+          ],
+          "hrs": 1.5,
+          "io": "out",
+          "pram": "part",
+          "price": {
+            "en": "Check the price",
+            "th": "เช็กราคาก่อนไป"
+          },
+          "book": "none",
+          "q": "交子公园, 天府大道北段, 高新区, 成都",
+          "src": "https://www.babagoeschina.com/chengdu-with-kids/",
+          "ok": "2026-11"
+        },
+        {
+          "local": "超级奈尔宝·儿童乐园",
+          "name": {
+            "th": "ซูเปอร์ นีโอไบโอ",
+            "en": "Super Neobio"
+          },
+          "kind": "play",
+          "area": {
+            "th": "ห้างโกลบอลเซ็นเตอร์ ถนนเทียนฝู่เหนือ",
+            "en": "Global Center, Tianfu Avenue North"
+          },
+          "what": {
+            "th": "เมืองจำลองอาชีพ เด็กๆ ผลัดกันเป็นนักดับเพลิง นักสำรวจขั้วโลก และทหาร",
+            "en": "A role-play city where children take turns at jobs such as firefighter, Arctic explorer and soldier"
+          },
+          "why": {
+            "th": "หลังเล่นแต่ละบท พี่เลี้ยงอธิบายสิ่งที่ได้เรียนรู้ เช่น ความปลอดภัยจากไฟ การทำงานเป็นทีม หรือการดูแลธรรมชาติ",
+            "en": "After each role-play the staff explain the lesson, such as fire safety, teamwork or caring for nature"
+          },
+          "tip": {
+            "th": "ทำอาชีพครบได้คูปองแลกกิจกรรมเพิ่ม เช่น เกม VR หรือทำไอศกรีม",
+            "en": "Finished jobs earn vouchers for extras such as VR games or ice-cream making"
+          },
+          "ages": [
+            1,
+            2,
+            2,
+            1
+          ],
+          "hrs": 2.5,
+          "io": "in",
+          "pram": "part",
+          "price": {
+            "en": "Check the price",
+            "th": "เช็กราคาก่อนไป"
+          },
+          "book": "none",
+          "q": "超级奈尔宝 环球中心 S1馆, 天府大道北段1700号, 成都",
+          "src": "https://www.littledayout.com/chengdu-global-center-playgrounds-china-travel/",
+          "ok": "2026-11"
+        },
+        {
+          "local": "成都科幻馆",
+          "name": {
+            "th": "พิพิธภัณฑ์นิยายวิทยาศาสตร์เฉิงตู",
+            "en": "Chengdu Science Fiction Museum"
+          },
+          "kind": "museum",
+          "area": {
+            "th": "ริมทะเลสาบจิงหรง เขตผีตู",
+            "en": "Jingrong Lake, Pidu District"
+          },
+          "what": {
+            "th": "พิพิธภัณฑ์ริมทะเลสาบ ตัวอาคารเป็นรูปดาวคล้ายกลุ่มเมฆ เหมือนได้ท่องอวกาศ",
+            "en": "A museum on the lake built of cloud-like star shapes, like a journey through space"
+          },
+          "why": {
+            "th": "อาคารเหมือนดาวลอยอยู่บนน้ำ เหมาะกับเด็กที่ชอบอวกาศ",
+            "en": "A building that looks like stars floating on the water, for children who love space"
+          },
+          "tip": {
+            "th": "ปิดวันจันทร์",
+            "en": "Closed on Mondays"
+          },
+          "ages": [
+            0,
+            1,
+            2,
+            2
+          ],
+          "hrs": 2,
+          "io": "in",
+          "pram": "part",
+          "price": {
+            "en": "Check the price",
+            "th": "เช็กราคาก่อนไป"
+          },
+          "book": "rec",
+          "q": "成都科幻馆, 科幻大道596号, 郫都区, 成都",
+          "src": "https://view.inews.qq.com/a/20260807A0FPP300",
+          "ok": "2026-11"
+        },
+        {
+          "local": "成都芯智慧音乐博物馆",
+          "name": {
+            "th": "พิพิธภัณฑ์ดนตรีซินจื้อฮุ่ยเฉิงตู",
+            "en": "Chengdu Xin Zhihui Music Museum"
+          },
+          "kind": "museum",
+          "area": {
+            "th": "ถนนกั๋วซิน เขตซวงหลิว",
+            "en": "Guoxin Avenue, Shuangliu District"
+          },
+          "what": {
+            "th": "พิพิธภัณฑ์ดนตรีเกือบ 8,000 ตร.ม. มีเปียโนโบราณและเครื่องดนตรีเก่าจากทั่วโลกกว่า 300 ชิ้น",
+            "en": "A music museum of nearly 8,000 m² with over 300 antique pianos and other old instruments from around the world"
+          },
+          "why": {
+            "th": "ได้เห็นเครื่องดนตรีจากหลายประเทศใกล้ๆ",
+            "en": "Instruments from many countries to see up close"
+          },
+          "tip": {
+            "th": "ปิดวันจันทร์",
+            "en": "Closed on Mondays"
+          },
+          "ages": [
+            0,
+            1,
+            2,
+            2
+          ],
+          "hrs": 1.5,
+          "io": "in",
+          "pram": "part",
+          "price": {
+            "en": "Check the price",
+            "th": "เช็กราคาก่อนไป"
+          },
+          "book": "none",
+          "q": "成都芯智慧音乐博物馆, 国芯大道399号, 双流区, 成都",
+          "src": "https://view.inews.qq.com/a/20260807A0FPP300",
+          "ok": "2026-11"
         }
       ]
     },

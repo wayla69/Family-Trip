@@ -237,3 +237,6 @@ Kee, Sun Hang Yuen, MD Cafe) and four family places from Cathay Pacific's 2026 c
 MeokBang BBQ Kidzone, Tree Café, Yakiniku Tabeyo). Left out: Transformers: The Ark (closed in Hong Kong, Feb 2025), Smoke and Barrel
 (moved, the new address not confirmed), Baumhaus (nothing current), Pizza Express (no one branch). In the app the Hong Kong book's own
 28 places and the Macau book part's 188 sit beside this list (`syncBooks`, src `book`).
+
+### Chengdu, 23 Nov 2026
+One town a PR. Four agents, `library-check.cjs`, then a map check for every row: `ok` only when the map shows the place at the page's address, not closed, with a review from the last six months. Google Maps knows little of mainland China, so Chinese towns are checked on Baidu Maps (Amap asks for a Chinese phone number to sign in). +10 Chengdu: Chunyang Guan, Chongqing Blanket Noodles, Dan Dumplings, He Dumplings, Zha Zha Noodles, Zhang Laowu Liangfen, Xiao Ming Tang, He Ji Egg Cakes, Nanchong Taste, Mi Xun Teahouse. Out: two rows from restaurantsforkings.com, four cafés no map could place at the page's address. Proof in `docs/library-proof/cn-chengdu.json`.
