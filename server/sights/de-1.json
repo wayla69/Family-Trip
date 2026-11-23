@@ -892,6 +892,384 @@
           "q": "Altonaer Museum, Museumstraße, Hamburg",
           "ok": "2026-11",
           "src": "https://www.hamburg-tourism.de/sehen-erleben/veranstaltungen/veranstaltungsorte/altonaer-museum/"
+        },
+        {
+          "local": "",
+          "ages": [
+            0,
+            1,
+            2,
+            2
+          ],
+          "hrs": 2,
+          "io": "in",
+          "pram": "part",
+          "price": {
+            "th": "เช็กราคาก่อนไป",
+            "en": "Check the price"
+          },
+          "book": "none",
+          "src": "https://www.hamburg.de/freizeit/kinder/geheimtipps-314580",
+          "name": {
+            "th": "อูร์บาเนโอ ศูนย์สถาปัตยกรรมเยาวชน",
+            "en": "Urbaneo – young architecture centre"
+          },
+          "kind": "museumkid",
+          "area": {
+            "th": "ฮาเฟินซิตี",
+            "en": "HafenCity"
+          },
+          "what": {
+            "th": "ศูนย์ที่เด็กได้ลองสร้างและวางผังเมือง มีเวิร์กช็อปและจุด VR",
+            "en": "A hands-on centre where children build and plan a city, with workshops and a VR station"
+          },
+          "why": {
+            "th": "เด็กได้ลองสร้างและวางผังเมืองเอง",
+            "en": "Children try building and city planning themselves"
+          },
+          "q": "Urbaneo, Am Strandkai 7, Hamburg",
+          "ok": "2026-11"
+        },
+        {
+          "local": "",
+          "ages": [
+            2,
+            2,
+            1,
+            0
+          ],
+          "hrs": 3,
+          "io": "in",
+          "pram": "part",
+          "price": {
+            "th": "เช็กราคาก่อนไป",
+            "en": "Check the price"
+          },
+          "book": "none",
+          "src": "https://www.hamburg.de/freizeit/kinder/geheimtipps-314580",
+          "name": {
+            "th": "โรงนาเล่นสนุกแห่งนิทาน",
+            "en": "SpielScheune der Geschichten"
+          },
+          "kind": "play",
+          "area": {
+            "th": "นอยอัลเลอร์เมอเฮอ แบร์เกดอร์ฟ",
+            "en": "Neuallermöhe, Bergedorf"
+          },
+          "what": {
+            "th": "โรงนาเล่นในร่มริมคลอง มีเรือให้ปีน ยานพาหนะของเล่น และบ่อบอล",
+            "en": "An indoor play barn by a canal, with a climbing boat, vehicles and a ball pit"
+          },
+          "why": {
+            "th": "เล่นได้ทุกสภาพอากาศ มีบ่อบอลและตัวต่อยักษ์",
+            "en": "Play in any weather, with a ball pit and giant bricks"
+          },
+          "tip": {
+            "th": "อากาศดีมีเรือแคนูให้เช่า",
+            "en": "Canoes for hire in good weather"
+          },
+          "q": "SpielScheune der Geschichten, Marie-Henning-Weg 1, Hamburg",
+          "ok": "2026-11"
+        },
+        {
+          "local": "",
+          "ages": [
+            1,
+            1,
+            1,
+            1
+          ],
+          "hrs": 2,
+          "io": "out",
+          "pram": "part",
+          "price": {
+            "th": "เช็กราคาก่อนไป",
+            "en": "Check the price"
+          },
+          "book": "none",
+          "src": "https://www.hamburg.de/freizeit/kinder/geheimtipps-314580",
+          "name": {
+            "th": "เนินพลังงานเกออร์กสแวร์เดอร์",
+            "en": "Energieberg Georgswerder"
+          },
+          "kind": "views",
+          "area": {
+            "th": "วิลเฮล์มสบวร์ก",
+            "en": "Wilhelmsburg"
+          },
+          "what": {
+            "th": "อดีตหลุมฝังขยะที่กลายเป็นเนินชมวิว มีทางเดินวงแหวนและนิทรรศการ",
+            "en": "A former landfill turned viewing hill, with a ring walk and an exhibition"
+          },
+          "why": {
+            "th": "เดินขึ้นไปชมวิว และได้เรียนรู้เรื่องขยะและพลังงาน",
+            "en": "A walk up for the view, and things to learn about waste and energy"
+          },
+          "tip": {
+            "th": "ฤดูกาลปิดวันที่ 31 ต.ค. ทุกปี",
+            "en": "The season ends on 31 October each year"
+          },
+          "q": "Energieberg Georgswerder, Fiskalische Straße 2, Hamburg",
+          "ok": "2026-11"
+        },
+        {
+          "local": "",
+          "ages": [
+            2,
+            2,
+            1,
+            1
+          ],
+          "hrs": 2,
+          "io": "out",
+          "pram": "part",
+          "price": {
+            "th": "ฟรี",
+            "en": "Free"
+          },
+          "book": "none",
+          "src": "https://www.hamburg.de/freizeit/ausfluege/mit-kindern-317078",
+          "name": {
+            "th": "สวนสัตว์ป่าเคลอเฟินชเตน",
+            "en": "Wildgehege Klövensteen"
+          },
+          "kind": "zoo",
+          "area": {
+            "th": "ป่าเคลอเฟินชเตน ริสเซิน",
+            "en": "Klövensteen forest, Rissen"
+          },
+          "what": {
+            "th": "คอกสัตว์ในป่า มีเฟอร์เรต นก กวาง และแกะภูเขา",
+            "en": "An enclosure in the forest with ferrets, birds, fallow and red deer and mouflon"
+          },
+          "why": {
+            "th": "ได้ดูสัตว์ในป่าใกล้เมือง",
+            "en": "Animals to watch in a forest close to the city"
+          },
+          "q": "Wildgehege Klövensteen, Sandmoorweg 150, Hamburg",
+          "ok": "2026-11"
+        },
+        {
+          "local": "",
+          "ages": [
+            1,
+            1,
+            1,
+            1
+          ],
+          "hrs": 2,
+          "io": "both",
+          "pram": "part",
+          "price": {
+            "th": "เช็กราคาก่อนไป",
+            "en": "Check the price"
+          },
+          "book": "none",
+          "src": "https://www.hamburg.de/freizeit/ausfluege/mit-kindern-317078",
+          "name": {
+            "th": "เกาะประปาเคาเทอโฮเฟอ",
+            "en": "Wasserkunst Elbinsel Kaltehofe"
+          },
+          "kind": "nature",
+          "area": {
+            "th": "โรเทินบวร์กซอร์ท",
+            "en": "Rothenburgsort"
+          },
+          "what": {
+            "th": "เกาะโรงกรองน้ำเก่าบนแม่น้ำเอลเบอ กลายเป็นสวนธรรมชาติพร้อมพิพิธภัณฑ์",
+            "en": "A former waterworks island on the Elbe, now a nature park with a museum"
+          },
+          "why": {
+            "th": "มีทางเดินศึกษาธรรมชาติและพิพิธภัณฑ์เรื่องโรงกรองน้ำ",
+            "en": "A nature trail and a museum about the waterworks"
+          },
+          "q": "Wasserkunst Elbinsel Kaltehofe, Kaltehofe-Hauptdeich 6, Hamburg",
+          "ok": "2026-11"
+        },
+        {
+          "local": "",
+          "ages": [
+            2,
+            2,
+            1,
+            0
+          ],
+          "hrs": 2,
+          "io": "out",
+          "pram": "part",
+          "price": {
+            "th": "เช็กราคาก่อนไป",
+            "en": "Check the price"
+          },
+          "book": "none",
+          "src": "https://www.hamburg.de/freizeit/ausfluege/mit-kindern-317078",
+          "name": {
+            "th": "ฟาร์มกูทคาร์ลส์เฮอเออ",
+            "en": "Gut Karlshöhe"
+          },
+          "kind": "farm",
+          "area": {
+            "th": "บรามเฟลด์ วันด์สเบก",
+            "en": "Bramfeld, Wandsbek"
+          },
+          "what": {
+            "th": "ศูนย์สิ่งแวดล้อม มีแพะ สวนผลไม้ สวนดอกไม้ และทางเดินสำรวจ",
+            "en": "An environmental centre with goats, orchards, flower gardens and a discovery trail"
+          },
+          "why": {
+            "th": "ได้ดูแพะ แกะ และผึ้ง",
+            "en": "Goats, sheep and bees to see"
+          },
+          "q": "Gut Karlshöhe, Hamburg",
+          "ok": "2026-11"
+        },
+        {
+          "local": "KLICK Kindermuseum",
+          "ages": [
+            1,
+            2,
+            2,
+            0
+          ],
+          "hrs": 2,
+          "io": "in",
+          "pram": "part",
+          "price": {
+            "th": "เช็กราคาก่อนไป",
+            "en": "Check the price"
+          },
+          "book": "none",
+          "src": "https://www.hamburg.de/freizeit/kinder/geheimtipps-314580",
+          "name": {
+            "th": "พิพิธภัณฑ์เด็กคลิก",
+            "en": "KLICK Children’s Museum"
+          },
+          "kind": "museumkid",
+          "area": {
+            "th": "ออสดอร์ฟ",
+            "en": "Osdorf"
+          },
+          "what": {
+            "th": "พิพิธภัณฑ์เด็กที่ได้จับ สำรวจ และลองทำ มีนิทรรศการหมุนเวียน",
+            "en": "A children’s museum to touch, explore and try things, with changing exhibitions"
+          },
+          "why": {
+            "th": "นิทรรศการที่ลงมือได้สำหรับทั้งครอบครัว",
+            "en": "Hands-on exhibitions for the whole family"
+          },
+          "q": "KLICK Kindermuseum, Brandstücken 43, Hamburg",
+          "ok": "2026-11"
+        },
+        {
+          "local": "",
+          "ages": [
+            0,
+            0,
+            1,
+            2
+          ],
+          "hrs": 2,
+          "io": "in",
+          "pram": "part",
+          "price": {
+            "th": "เช็กราคาก่อนไป",
+            "en": "Check the price"
+          },
+          "book": "none",
+          "src": "https://www.hamburg.de/freizeit/kinder/geheimtipps-314580",
+          "name": {
+            "th": "เมืองก็อบลิน",
+            "en": "Goblinstadt"
+          },
+          "kind": "play",
+          "area": {
+            "th": "วันด์สเบก",
+            "en": "Wandsbek"
+          },
+          "what": {
+            "th": "เขาวงกตเล่นบทบาทในร่ม มีทางมืดและห้องลับในโลกแฟนตาซี",
+            "en": "An indoor role-play maze with dark passages and hidden rooms in a fantasy world"
+          },
+          "why": {
+            "th": "มีปริศนาให้ไขในโลกแห่งตำนาน",
+            "en": "Puzzles to solve in a world of legends"
+          },
+          "q": "Goblinstadt, Wendemuthstraße 25, Hamburg",
+          "ok": "2026-11"
+        },
+        {
+          "local": "",
+          "ages": [
+            0,
+            1,
+            2,
+            2
+          ],
+          "hrs": 2,
+          "io": "both",
+          "pram": "no",
+          "price": {
+            "th": "เช็กราคาก่อนไป",
+            "en": "Check the price"
+          },
+          "book": "none",
+          "src": "https://www.hamburg.de/freizeit/kinder/geheimtipps-314580",
+          "name": {
+            "th": "เรือแคปซานดิเอโก",
+            "en": "Cap San Diego"
+          },
+          "kind": "museum",
+          "area": {
+            "th": "สะพานอือเบอร์เซ ท่าเรือ",
+            "en": "Überseebrücke, harbour"
+          },
+          "what": {
+            "th": "เรือสินค้าพิพิธภัณฑ์ลำใหญ่ที่สุดที่ยังแล่นได้",
+            "en": "The largest museum cargo ship still able to sail"
+          },
+          "why": {
+            "th": "เด็กเดินสำรวจห้องบังคับเรือ ห้องเครื่อง และห้องวิทยุเอง",
+            "en": "Children explore the bridge, engine room and radio room themselves"
+          },
+          "q": "Cap San Diego, Überseebrücke, Hamburg",
+          "ok": "2026-11"
+        },
+        {
+          "local": "Museum der Natur Hamburg – Zoologie",
+          "ages": [
+            1,
+            1,
+            1,
+            1
+          ],
+          "hrs": 1,
+          "io": "in",
+          "pram": "part",
+          "price": {
+            "th": "เช็กราคาก่อนไป",
+            "en": "Check the price"
+          },
+          "book": "none",
+          "src": "https://www.hamburg.de/freizeit/kinder/geheimtipps-314580",
+          "name": {
+            "th": "พิพิธภัณฑ์ธรรมชาติ ส่วนสัตววิทยา",
+            "en": "Museum of Nature – Zoology"
+          },
+          "kind": "museumkid",
+          "area": {
+            "th": "ถนนบุนเดิส อายม์สบึทเทิล",
+            "en": "Bundesstraße, Eimsbüttel"
+          },
+          "what": {
+            "th": "พิพิธภัณฑ์สัตววิทยาที่ได้เดินท่ามกลางโครงกระดูกไดโนเสาร์ตัวใหญ่",
+            "en": "A zoology museum where you walk among big dinosaur skeletons"
+          },
+          "why": {
+            "th": "ได้เดินชมโครงกระดูกไดโนเสาร์",
+            "en": "Dinosaur skeletons to walk among"
+          },
+          "q": "Museum der Natur Hamburg, Bundesstraße 52, Hamburg",
+          "ok": "2026-11"
         }
       ]
     },
