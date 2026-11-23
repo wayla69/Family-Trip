@@ -632,6 +632,80 @@
           "q": "Kölner Dom, Domkloster 4, Köln",
           "ok": "2026-11",
           "src": "https://www.koelner-dom.de/besuchen/turmbesteigung"
+        },
+        {
+          "local": "",
+          "ages": [
+            1,
+            2,
+            2,
+            1
+          ],
+          "hrs": 3,
+          "io": "in",
+          "pram": "part",
+          "price": {
+            "th": "เช็กราคาก่อนไป",
+            "en": "Check the price"
+          },
+          "book": "none",
+          "src": "https://www.koeln.de/koeln/freizeit/kinder/tolle-indoor-spielplaetze-in-koeln-und-umgebung_1138507.html",
+          "name": {
+            "th": "ซิลลีบิลลี",
+            "en": "Silly Billy"
+          },
+          "kind": "play",
+          "area": {
+            "th": "ลินเดินทาล ฝั่งตะวันตกของโคโลญ",
+            "en": "Lindenthal (west Cologne)"
+          },
+          "what": {
+            "th": "สวนเล่นในร่มราว 2,500 ตร.ม. มีแทรมโพลีน เส้นทางปีน สนามฟุตบอล และร้านอาหาร",
+            "en": "An indoor play park of about 2,500 m² with trampolines, climbing courses, a football arena and a restaurant"
+          },
+          "why": {
+            "th": "เครื่องเล่นเยอะใต้หลังคาเดียว ไปได้วันฝนตก",
+            "en": "Lots of play under one roof on a wet day"
+          },
+          "q": "Silly Billy, Ottostraße 14, Köln",
+          "ok": "2026-11"
+        },
+        {
+          "local": "",
+          "ages": [
+            0,
+            1,
+            2,
+            2
+          ],
+          "hrs": 2,
+          "io": "in",
+          "pram": "part",
+          "price": {
+            "th": "เช็กราคาก่อนไป",
+            "en": "Check the price"
+          },
+          "book": "none",
+          "src": "https://www.koeln.de/koeln/freizeit/kinder/tolle-indoor-spielplaetze-in-koeln-und-umgebung_1138507.html",
+          "name": {
+            "th": "จัมป์เฮาส์ โคโลญ",
+            "en": "JUMP House Cologne"
+          },
+          "kind": "play",
+          "area": {
+            "th": "เอเรินเฟลด์",
+            "en": "Ehrenfeld"
+          },
+          "what": {
+            "th": "สวนแทรมโพลีนในร่ม มีแทรมโพลีนกว่า 50 ตัวและโซนแอ็กชันเก้าโซน",
+            "en": "An indoor trampoline park with over 50 trampolines and nine action areas"
+          },
+          "why": {
+            "th": "สำหรับเด็กโตที่อยากใช้พลัง",
+            "en": "For older children who want to burn off energy"
+          },
+          "q": "JUMP House Cologne, Köhlstraße 10, Köln",
+          "ok": "2026-11"
         }
       ]
     },

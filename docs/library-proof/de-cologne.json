@@ -1,0 +1,38 @@
+{
+  "town": "de-cologne",
+  "kind": "eats + sights",
+  "checked": "2026-11-23",
+  "rule": "library-check.cjs, then the Google Maps Reviews tab sorted by newest: ok only when not marked closed, with a review from the last six months, and the map's name matching the page's.",
+  "agents": "one Haiku agent; 6 rows from koeln.de (Apr 2026) passed library-check.cjs, 2 went in",
+  "added": [
+    {
+      "name": "Silly Billy",
+      "page_name": "Silly Billy",
+      "src": "https://www.koeln.de/koeln/freizeit/kinder/tolle-indoor-spielplaetze-in-koeln-und-umgebung_1138507.html",
+      "date": "2026-04",
+      "map": "Google Maps 'Silly Billy indoor play park', Ottostraße 14, Lindenthal, 1,150 reviews, newest '17 hours ago'"
+    },
+    {
+      "name": "JUMP House Cologne",
+      "page_name": "Jump House Trampolinpark",
+      "src": "https://www.koeln.de/koeln/freizeit/kinder/tolle-indoor-spielplaetze-in-koeln-und-umgebung_1138507.html",
+      "date": "2026-04",
+      "map": "Google Maps 'JUMP House Cologne', Köhlstraße 10, 4,955 reviews, newest '12 hours ago'"
+    }
+  ],
+  "left_out": [
+    {
+      "name": "Pippolino",
+      "why": "the map has it in Kerpen-Sindorf, outside Cologne"
+    },
+    {
+      "name": "SPRUNG.RAUM, Leo’s Abenteuerpark, Krewelshof",
+      "why": "in Troisdorf, Pulheim and Lohmar, outside the city"
+    },
+    {
+      "name": "places to eat",
+      "why": "no dated page naming restaurants was found (Mit Vergnügen pages carry no date)"
+    }
+  ],
+  "estimates": "Ages and visit hours are placeholders; prices and opening notes are the pages' own."
+}
