@@ -650,7 +650,340 @@
       {"name":{"en":"Parque del Oeste","th":"สวนปาร์เกเดลโอเอสเต"},"kind":"park","area":{"en":"western side of Madrid","th":"ฝั่งตะวันตกของมาดริด"},"what":{"en":"A serene park on the western side of Madrid with playgrounds and city views, best at sunset.","th":"สวนเงียบสงบฝั่งตะวันตกของมาดริด มีสนามเด็กเล่นและวิวเมือง ดีที่สุดตอนพระอาทิตย์ตก"},"why":{"en":"Playgrounds and views, with room to run and a calm place to sit.","th":"สนามเด็กเล่นและวิว มีที่ให้วิ่งและที่นั่งสงบ"},"tip":{"en":"Best at sunset for the views, per the page.","th":"ดีที่สุดตอนพระอาทิตย์ตกเพื่อชมวิว ตามหน้าเว็บ"},"ages":[1,2,2,1],"hrs":2,"io":"out","pram":"part","price":{"en":"Free","th":"ฟรี"},"book":"none","q":"Parque del Oeste, Madrid","ok":"2026-11","src":"https://tourismattractions.net/spain/madrid-parks-for-families"},
       {"name":{"en":"Parque Juan Carlos I","th":"สวนฮวนการ์ลอสที่ 1"},"kind":"park","area":{"en":"Feria de Madrid metro station, Line 8","th":"สถานีเฟเรียเดมาดริด สายสีแดง 8"},"what":{"en":"A large, modern park with a uniquely designed layout, reached by metro Line 8.","th":"สวนขนาดใหญ่ทันสมัย มีผังที่ออกแบบเฉพาะ เดินทางด้วยรถไฟใต้ดินสาย 8"},"why":{"en":"Modern play areas for all ages, the page says.","th":"หน้าเว็บบอกว่ามีพื้นที่เล่นทันสมัยสำหรับทุกวัย"},"tip":{"en":"Reached by metro Line 8, Feria de Madrid station, per the page.","th":"เดินทางด้วยรถไฟใต้ดินสาย 8 สถานีเฟเรียเดมาดริด ตามหน้าเว็บ"},"ages":[2,2,2,1],"hrs":3,"io":"out","pram":"yes","price":{"en":"Check the price","th":"เช็กราคาก่อนไป"},"book":"none","q":"Parque Juan Carlos I, Feria de Madrid, Madrid","ok":"2026-11","src":"https://tourismattractions.net/spain/madrid-parks-for-families"},
       {"name":{"en":"Madrid Río Park","th":"มาดริดริโอพาร์ค"},"kind":"park","area":{"en":"along the Manzanares River","th":"ตามแม่น้ำมันซาเนอาเรส"},"what":{"en":"A linear park along the Manzanares River with many innovative playgrounds, cycling and walking paths.","th":"สวนเชิงเส้นตามแม่น้ำมันซาเนอาเรส มีสนามเด็กเล่นแปลกใหม่หลายแห่ง ทางจักรยานและทางเดิน"},"why":{"en":"The page calls it one of the best choices for toddlers and very young children.","th":"หน้าเว็บเรียกว่าเป็นหนึ่งในตัวเลือกที่ดีที่สุดสำหรับเด็กวัยเตาะแตะและเด็กเล็กมาก"},"ages":[2,2,2,1],"hrs":2,"io":"out","pram":"yes","price":{"en":"Check the price","th":"เช็กราคาก่อนไป"},"book":"none","q":"Madrid Río Park, along the Manzanares River, Madrid","ok":"2026-11","src":"https://tourismattractions.net/spain/madrid-parks-for-families"},
-      {"name":{"en":"Plaza de España","th":"พลาซาเดเอสปาญา"},"kind":"play","area":{"en":"Plaza de España","th":"พลาซาเดเอสปาญา"},"what":{"en":"A children's play area with giant slides in the Plaza de España.","th":"พื้นที่เล่นสำหรับเด็กพร้อมสไลด์ยักษ์ในพลาซาเดเอสปาญา"},"why":{"en":"Giant slides for the children to whizz down, per the page.","th":"สไลด์ยักษ์ให้เด็กไถลลงมา ตามหน้าเว็บ"},"ages":[2,2,1,0],"hrs":1,"io":"out","pram":"yes","price":{"en":"Check the price","th":"เช็กราคาก่อนไป"},"book":"none","q":"Plaza de España, Madrid","ok":"2026-11","src":"https://www.esmadrid.com/en/ultimate-family-guide-30-things-do-kids"}
+      {"name":{"en":"Plaza de España","th":"พลาซาเดเอสปาญา"},"kind":"play","area":{"en":"Plaza de España","th":"พลาซาเดเอสปาญา"},"what":{"en":"A children's play area with giant slides in the Plaza de España.","th":"พื้นที่เล่นสำหรับเด็กพร้อมสไลด์ยักษ์ในพลาซาเดเอสปาญา"},"why":{"en":"Giant slides for the children to whizz down, per the page.","th":"สไลด์ยักษ์ให้เด็กไถลลงมา ตามหน้าเว็บ"},"ages":[2,2,1,0],"hrs":1,"io":"out","pram":"yes","price":{"en":"Check the price","th":"เช็กราคาก่อนไป"},"book":"none","q":"Plaza de España, Madrid","ok":"2026-11","src":"https://www.esmadrid.com/en/ultimate-family-guide-30-things-do-kids"},
+        {
+          "local": "",
+          "ages": [
+            1,
+            1,
+            1,
+            1
+          ],
+          "hrs": 1,
+          "io": "in",
+          "pram": "part",
+          "price": {
+            "th": "เช็กราคาก่อนไป",
+            "en": "Check the price"
+          },
+          "book": "none",
+          "src": "https://www.esmadrid.com/en/ultimate-family-guide-30-things-do-kids",
+          "name": {
+            "th": "พิพิธภัณฑ์ภาพลวงตา",
+            "en": "Museum of Illusions"
+          },
+          "kind": "museumkid",
+          "area": {
+            "th": "เซนโตร ใจกลางเมือง",
+            "en": "Centro"
+          },
+          "what": {
+            "th": "พิพิธภัณฑ์ภาพลวงตา มีห้องให้เล่น",
+            "en": "A museum of optical illusions with interactive rooms"
+          },
+          "why": {
+            "th": "ภาพลวงตาที่ทึ่งทั้งเด็กและผู้ใหญ่",
+            "en": "Illusions that amaze children and adults alike"
+          },
+          "q": "Museo de las Ilusiones, Calle del Doctor Cortezo 8, Madrid",
+          "ok": "2026-11"
+        },
+        {
+          "local": "Museo de la Luz",
+          "ages": [
+            1,
+            1,
+            1,
+            1
+          ],
+          "hrs": 1,
+          "io": "in",
+          "pram": "part",
+          "price": {
+            "th": "เช็กราคาก่อนไป",
+            "en": "Check the price"
+          },
+          "book": "none",
+          "src": "https://www.esmadrid.com/en/ultimate-family-guide-30-things-do-kids",
+          "name": {
+            "th": "พิพิธภัณฑ์แสง",
+            "en": "Museum of Light"
+          },
+          "kind": "museumkid",
+          "area": {
+            "th": "เซนโตร ใจกลางเมือง",
+            "en": "Centro"
+          },
+          "what": {
+            "th": "พิพิธภัณฑ์ที่ใช้แสงเป็นสื่อเดียว",
+            "en": "A museum that uses light as its only medium"
+          },
+          "why": {
+            "th": "ห้องแสงที่ได้เข้าไปอยู่และลองเล่น",
+            "en": "Immersive, interactive rooms of light"
+          },
+          "q": "Museo de la Luz, Calle de Segovia 2, Madrid",
+          "ok": "2026-11"
+        },
+        {
+          "local": "OXO Museo del Videojuego",
+          "ages": [
+            0,
+            1,
+            2,
+            2
+          ],
+          "hrs": 2,
+          "io": "in",
+          "pram": "part",
+          "price": {
+            "th": "เช็กราคาก่อนไป",
+            "en": "Check the price"
+          },
+          "book": "none",
+          "src": "https://www.esmadrid.com/en/ultimate-family-guide-30-things-do-kids",
+          "name": {
+            "th": "พิพิธภัณฑ์วิดีโอเกม OXO",
+            "en": "OXO Video Game Museum"
+          },
+          "kind": "museum",
+          "area": {
+            "th": "เซนโตร ใจกลางเมือง",
+            "en": "Centro"
+          },
+          "what": {
+            "th": "พิพิธภัณฑ์วิดีโอเกมที่ได้เล่นเครื่องเกมรุ่นดัง",
+            "en": "A video-game museum where you play classic consoles"
+          },
+          "why": {
+            "th": "ได้เล่นเครื่องเกมเก่าและเห็นว่าเกมเปลี่ยนไปอย่างไร",
+            "en": "Play the old consoles and see how games changed"
+          },
+          "q": "OXO Museo del Videojuego, Calle del Postigo de San Martín 8, Madrid",
+          "ok": "2026-11"
+        },
+        {
+          "local": "",
+          "ages": [
+            1,
+            1,
+            1,
+            1
+          ],
+          "hrs": 1,
+          "io": "in",
+          "pram": "part",
+          "price": {
+            "th": "เช็กราคาก่อนไป",
+            "en": "Check the price"
+          },
+          "book": "none",
+          "src": "https://www.esmadrid.com/en/ultimate-family-guide-30-things-do-kids",
+          "name": {
+            "th": "พิพิธภัณฑ์ขนมหวานสวีตสเปซ",
+            "en": "Sweet Space Museum"
+          },
+          "kind": "museumkid",
+          "area": {
+            "th": "ซาลามังกา",
+            "en": "Salamanca"
+          },
+          "what": {
+            "th": "พิพิธภัณฑ์ธีมขนมหวาน",
+            "en": "A museum themed round sweets"
+          },
+          "why": {
+            "th": "สำหรับคนชอบของหวาน",
+            "en": "For anyone with a sweet tooth"
+          },
+          "q": "Sweet Space Museum, Calle de Serrano 61, Madrid",
+          "ok": "2026-11"
+        },
+        {
+          "local": "",
+          "ages": [
+            1,
+            1,
+            1,
+            1
+          ],
+          "hrs": 1,
+          "io": "in",
+          "pram": "part",
+          "price": {
+            "th": "เช็กราคาก่อนไป",
+            "en": "Check the price"
+          },
+          "book": "none",
+          "src": "https://www.esmadrid.com/en/ultimate-family-guide-30-things-do-kids",
+          "name": {
+            "th": "อิโคโน มาดริด",
+            "en": "IKONO Madrid"
+          },
+          "kind": "museumkid",
+          "area": {
+            "th": "เซนโตร ใจกลางเมือง",
+            "en": "Centro"
+          },
+          "what": {
+            "th": "ห้องศิลปะให้ลองเล่น 12 ห้อง เต็มไปด้วยความแปลกใจ",
+            "en": "Twelve interactive rooms of art and surprises"
+          },
+          "why": {
+            "th": "ห้องที่ทำมาให้เล่นและถ่ายรูป",
+            "en": "Rooms made for playing and photos"
+          },
+          "q": "IKONO Madrid, Calle de Sánchez Bustillo 7, Madrid",
+          "ok": "2026-11"
+        },
+        {
+          "local": "Museo Naval",
+          "ages": [
+            0,
+            1,
+            2,
+            2
+          ],
+          "hrs": 2,
+          "io": "in",
+          "pram": "part",
+          "price": {
+            "th": "เช็กราคาก่อนไป",
+            "en": "Check the price"
+          },
+          "book": "none",
+          "src": "https://www.esmadrid.com/en/ultimate-family-guide-30-things-do-kids",
+          "name": {
+            "th": "พิพิธภัณฑ์กองทัพเรือ",
+            "en": "Naval Museum"
+          },
+          "kind": "museum",
+          "area": {
+            "th": "ถนนปาเซโอเดลปราโด",
+            "en": "Paseo del Prado"
+          },
+          "what": {
+            "th": "พิพิธภัณฑ์ประวัติศาสตร์ทางทะเล",
+            "en": "A museum of maritime history"
+          },
+          "why": {
+            "th": "มีเรือและแบบจำลองเรือหลายยุค",
+            "en": "Ships and models from centuries at sea"
+          },
+          "q": "Museo Naval, Paseo del Prado 3, Madrid",
+          "ok": "2026-11"
+        },
+        {
+          "local": "Museo Arqueológico Nacional",
+          "ages": [
+            0,
+            1,
+            1,
+            2
+          ],
+          "hrs": 2,
+          "io": "in",
+          "pram": "part",
+          "price": {
+            "th": "เช็กราคาก่อนไป",
+            "en": "Check the price"
+          },
+          "book": "none",
+          "src": "https://www.esmadrid.com/en/ultimate-family-guide-30-things-do-kids",
+          "name": {
+            "th": "พิพิธภัณฑ์โบราณคดีแห่งชาติ",
+            "en": "National Archaeological Museum"
+          },
+          "kind": "museum",
+          "area": {
+            "th": "ซาลามังกา",
+            "en": "Salamanca"
+          },
+          "what": {
+            "th": "ประวัติศาสตร์หนึ่งหมื่นปี มีรูปปั้นสตรีแห่งเอลเช",
+            "en": "Ten thousand years of history, with the Lady of Elche"
+          },
+          "why": {
+            "th": "มีสมบัติและโบราณวัตถุให้ตามหา",
+            "en": "Treasures and ancient objects to look for"
+          },
+          "q": "Museo Arqueológico Nacional, Calle de Serrano 13, Madrid",
+          "ok": "2026-11"
+        },
+        {
+          "local": "",
+          "ages": [
+            0,
+            1,
+            2,
+            2
+          ],
+          "hrs": 2,
+          "io": "in",
+          "pram": "part",
+          "price": {
+            "th": "เช็กราคาก่อนไป",
+            "en": "Check the price"
+          },
+          "book": "none",
+          "src": "https://www.esmadrid.com/en/ultimate-family-guide-30-things-do-kids",
+          "name": {
+            "th": "เลเจนด์ส บ้านแห่งฟุตบอล",
+            "en": "Legends: The Home of Football"
+          },
+          "kind": "museum",
+          "area": {
+            "th": "ถนนการ์เรราเดซานเฆโรนิโม",
+            "en": "Carrera de San Jerónimo"
+          },
+          "what": {
+            "th": "พิพิธภัณฑ์ฟุตบอล มีนิทรรศการให้ลองเล่น",
+            "en": "A football museum with interactive displays"
+          },
+          "why": {
+            "th": "เหมาะกับเด็กที่รักฟุตบอล",
+            "en": "Made for young football fans"
+          },
+          "q": "Legends The Home of Football, Carrera de San Jerónimo 2, Madrid",
+          "ok": "2026-11"
+        },
+        {
+          "local": "",
+          "ages": [
+            1,
+            1,
+            1,
+            1
+          ],
+          "hrs": 1,
+          "io": "in",
+          "pram": "part",
+          "price": {
+            "th": "เช็กราคาก่อนไป",
+            "en": "Check the price"
+          },
+          "book": "none",
+          "src": "https://www.esmadrid.com/en/ultimate-family-guide-30-things-do-kids",
+          "name": {
+            "th": "หอชมวิวฟาโรเดมองโกลอา",
+            "en": "Faro de Moncloa"
+          },
+          "kind": "views",
+          "area": {
+            "th": "มองโกลอา",
+            "en": "Moncloa"
+          },
+          "what": {
+            "th": "หอสูง 110 ม. มีจุดชมวิวทั่วเมือง",
+            "en": "A 110 m tower with a viewing deck over the city"
+          },
+          "why": {
+            "th": "เห็นวิวมาดริดทั้งเมืองจากข้างบน",
+            "en": "Views over all of Madrid from the top"
+          },
+          "q": "Faro de Moncloa, Avenida de la Memoria 2, Madrid",
+          "ok": "2026-11"
+        }
     ]
     },
     {

@@ -1,0 +1,158 @@
+{
+  "town": "es-madrid",
+  "kind": "eats + sights",
+  "checked": "2026-11-23",
+  "rule": "library-check.cjs, then the Google Maps Reviews tab sorted by newest: ok only when not marked closed, with a review from the last six months, and the map's name matching the page's.",
+  "agents": "one Haiku agent; 24 rows from esmadrid.com (official, and the Jan 2026 family guide), 22 passed library-check.cjs, 18 went in",
+  "added": [
+    {
+      "name": "Rubaiyat Madrid",
+      "page_name": "Rubaiyat",
+      "src": "https://www.esmadrid.com/en/restaurants-eat-out-children-madrid",
+      "date": "official",
+      "map": "Google Maps 'Rubaiyat Madrid', Juan Ramón Jiménez 37 (off the Castellana), 3,305 reviews, newest '1 day ago'"
+    },
+    {
+      "name": "La Excéntrica",
+      "page_name": "La excéntrica",
+      "src": "https://www.esmadrid.com/en/restaurants-eat-out-children-madrid",
+      "date": "official",
+      "map": "Google Maps 1,035 reviews, newest '16 hours ago'"
+    },
+    {
+      "name": "New York Burger (Recoletos)",
+      "page_name": "New York Burger",
+      "src": "https://www.esmadrid.com/en/restaurants-eat-out-children-madrid",
+      "date": "official",
+      "map": "Google Maps Recoletos 4, 9,377 reviews, newest '9 hours ago'"
+    },
+    {
+      "name": "Filandón",
+      "page_name": "Filandón",
+      "src": "https://www.esmadrid.com/en/restaurants-eat-out-children-madrid",
+      "date": "official",
+      "map": "Google Maps 'Restaurante Filandón', 11,965 reviews, newest '1 hour ago'"
+    },
+    {
+      "name": "Restaurante San Francisco (El Pardo)",
+      "page_name": "San Francisco Restaurant",
+      "src": "https://www.esmadrid.com/en/restaurants-eat-out-children-madrid",
+      "date": "official",
+      "map": "Google Maps 'Restaurante San Francisco', 3,153 reviews, newest '1 day ago'"
+    },
+    {
+      "name": "Home Burger Bar (Silva)",
+      "page_name": "Home Burger Bar",
+      "src": "https://www.esmadrid.com/en/restaurants-eat-out-children-madrid",
+      "date": "official",
+      "map": "Google Maps Calle de Silva 25, 2,302 reviews, newest '1 day ago'"
+    },
+    {
+      "name": "Kilómetros de Pizza (Bernabéu)",
+      "page_name": "Kilómetros de pizza",
+      "src": "https://www.esmadrid.com/en/restaurants-eat-out-children-madrid",
+      "date": "official",
+      "map": "Google Maps 'Kilómetros de Pizza (Bernabéu)', 6,343 reviews, newest '22 hours ago'"
+    },
+    {
+      "name": "Can Pizza (Chamberí)",
+      "page_name": "Can Pizza Chamberí",
+      "src": "https://www.esmadrid.com/en/restaurants-eat-out-children-madrid",
+      "date": "official",
+      "map": "Google Maps Santa Engracia 43, 1,048 reviews, newest '7 hours ago'"
+    },
+    {
+      "name": "Storyland",
+      "page_name": "Storyland",
+      "src": "https://www.esmadrid.com/en/restaurants-eat-out-children-madrid",
+      "date": "official",
+      "map": "Google Maps 'Storyland By Lola', Cava Alta 12, 4,100 reviews, newest '6 hours ago'"
+    },
+    {
+      "name": "Museum of Illusions",
+      "page_name": "Museum of Illusions",
+      "src": "https://www.esmadrid.com/en/ultimate-family-guide-30-things-do-kids",
+      "date": "2026-01",
+      "map": "Google Maps 'Museum of Illusions Madrid', 24,051 reviews, newest '12 hours ago'"
+    },
+    {
+      "name": "Museum of Light",
+      "page_name": "Museum of Light",
+      "src": "https://www.esmadrid.com/en/ultimate-family-guide-30-things-do-kids",
+      "date": "2026-01",
+      "map": "Google Maps 'Museo de la Luz Madrid', 1,167 reviews, newest '15 hours ago'"
+    },
+    {
+      "name": "OXO Video Game Museum",
+      "page_name": "OXO Museo del Videojuego",
+      "src": "https://www.esmadrid.com/en/ultimate-family-guide-30-things-do-kids",
+      "date": "2026-01",
+      "map": "Google Maps 2,033 reviews, newest 'last week'"
+    },
+    {
+      "name": "Sweet Space Museum",
+      "page_name": "Sweet Space Museum",
+      "src": "https://www.esmadrid.com/en/ultimate-family-guide-30-things-do-kids",
+      "date": "2026-01",
+      "map": "Google Maps 10,876 reviews, newest '16 hours ago'"
+    },
+    {
+      "name": "IKONO Madrid",
+      "page_name": "IKONO",
+      "src": "https://www.esmadrid.com/en/ultimate-family-guide-30-things-do-kids",
+      "date": "2026-01",
+      "map": "Google Maps 'IKONO Madrid', 12,081 reviews, newest '17 hours ago'"
+    },
+    {
+      "name": "Naval Museum",
+      "page_name": "Naval Museum",
+      "src": "https://www.esmadrid.com/en/ultimate-family-guide-30-things-do-kids",
+      "date": "2026-01",
+      "map": "Google Maps 12,410 reviews, newest '18 hours ago'"
+    },
+    {
+      "name": "National Archaeological Museum",
+      "page_name": "National Archaeological Museum",
+      "src": "https://www.esmadrid.com/en/ultimate-family-guide-30-things-do-kids",
+      "date": "2026-01",
+      "map": "Google Maps 'National Museum of Archaeology', 29,152 reviews, newest '10 hours ago'"
+    },
+    {
+      "name": "Legends: The Home of Football",
+      "page_name": "Legends: The Home of Football",
+      "src": "https://www.esmadrid.com/en/ultimate-family-guide-30-things-do-kids",
+      "date": "2026-01",
+      "map": "Google Maps 6,357 reviews, newest '1 day ago'"
+    },
+    {
+      "name": "Faro de Moncloa",
+      "page_name": "Faro de Moncloa",
+      "src": "https://www.esmadrid.com/en/ultimate-family-guide-30-things-do-kids",
+      "date": "2026-01",
+      "map": "Google Maps 'Moncloa's Lighthouse', 4,428 reviews, newest '11 hours ago'"
+    }
+  ],
+  "left_out": [
+    {
+      "name": "Madrid Río, Plaza de España",
+      "why": "already in the library"
+    },
+    {
+      "name": "Robot Museum",
+      "why": "the map puts it in Alcorcón, outside the city"
+    },
+    {
+      "name": "La Cantina de Sputnik",
+      "why": "several branches on the map; the page’s one could not be told apart"
+    },
+    {
+      "name": "Costello Río",
+      "why": "no such place on the map at Plaza del General Maroto"
+    },
+    {
+      "name": "La Morenilla",
+      "why": "the map's place is in Malasaña, not the page's Calle de Caracas"
+    }
+  ],
+  "estimates": "Ages and visit hours are placeholders; prices and opening notes are the pages' own."
+}
