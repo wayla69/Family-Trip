@@ -559,7 +559,163 @@
       {"name":{"en":"Imperial City","th":"นครจักรพรรดิเว้"},"kind":"culture","area":{"en":"Hue Citadel","th":"ป้อมเว้"},"what":{"en":"The historic imperial district of Hue, with its own ticket.","th":"ย่านพระราชวังของเว้ มีประตู พระราชวัง และลาน ให้เดินชม"},"why":{"en":"Palaces, gates and courtyards to walk through.","th":"พระราชวัง ประตู และลานให้เดินชม ซื้อตั๋วของตัวเอง"},"tip":{"en":"Carry water; the courtyards are open to the sun.","th":"พกน้ำไปด้วย ลานหลายแห่งโดนแดดแรง"},"ages":[1,2,2,2],"hrs":3,"io":"out","pram":"part","price":{"en":"VND 200,000 adult, VND 40,000 child (ages 7 to 12), younger children free","th":"200,000 VND ผู้ใหญ่ · 40,000 VND เด็ก 7–12 ปี · เด็กเล็กกว่าฟรี"},"book":"none","q":"Imperial City, Hue Citadel, Hue","ok":"2026-11","src":"https://visithue.org/imperial-city/"},
       {"name":{"en":"Thien Mu Pagoda","th":"วัดเทียนมู่"},"kind":"culture","area":{"en":"on the Perfume River","th":"ริมแม่น้ำหอม"},"what":{"en":"A Buddhist site on the Perfume River whose tower has 7 storeys.","th":"วัดพุทธริมแม่น้ำหอม มีหอคอยเจ็ดชั้น"},"why":{"en":"A temple tower and river views; the page says a visit takes about 30 to 45 minutes.","th":"หอคอยวัดและวิวแม่น้ำ หน้าเว็บบอกว่าใช้เวลาราว 30–45 นาที"},"tip":{"en":"Cover your shoulders and knees, and take your shoes off before the main hall.","th":"คลุมไหล่และเข่า และถอดรองเท้าก่อนเข้าโถงหลัก"},"ages":[1,2,2,2],"hrs":0.75,"io":"out","pram":"part","price":{"en":"Free entry, with voluntary donations","th":"ฟรี ยินดีรับบริจาค"},"book":"none","q":"Thien Mu Pagoda, Perfume River, Hue","ok":"2026-11","src":"https://visithue.org/things-to-do/"},
       {"name":{"en":"Perfume River boat trip to Thien Mu Pagoda","th":"เรือแม่น้ำหอมไปวัดเทียนมู่"},"kind":"views","area":{"en":"Toa Kham pier, 49 Le Loi","th":"ท่าเรือเตี๊ยกคัม 49 ถนนเลอ ลอย"},"what":{"en":"A boat from the Toa Kham pier to Thien Mu and back, with time to see the pagoda on your own.","th":"เรือจากท่าเตี๊ยกคัมไปและกลับจากวัดเทียนมู่ มีเวลาดูวัดตามลำพัง"},"why":{"en":"A way onto the river, with time at the pagoda, the page says.","th":"เป็นทางขึ้นแม่น้ำ และมีเวลาอยู่ที่วัด ตามหน้าเว็บ"},"tip":{"en":"Food and drinks are extra; there is no guide.","th":"อาหารและเครื่องดื่มคิดเพิ่ม ไม่มีไกด์"},"ages":[1,2,2,2],"hrs":3,"io":"out","pram":"no","price":{"en":"from $14","th":"จาก $14"},"book":"rec","q":"Toa Kham pier, 49 Le Loi, Hue","ok":"2026-11","src":"https://visithue.org/things-to-do/"},
-      {"name":{"en":"The garden houses of Kim Long","th":"บ้านสวนคิมลอง"},"kind":"oldtown","area":{"en":"Kim Long","th":"คิมลอง"},"what":{"en":"Historic garden houses, some charging admission and some private homes you can visit.","th":"บ้านสวนเก่าที่มีประวัติ บางแห่งเก็บค่าเข้า บางแห่งเป็นบ้านส่วนตัวที่เข้าชมได้"},"why":{"en":"A quiet stop between the big sights, the page says.","th":"จุดพักเงียบๆ ระหว่างสถานที่สำคัญ ตามหน้าเว็บ"},"tip":{"en":"There are no common opening hours; ask at the gate.","th":"ไม่มีเวลาเปิดปิดรวมกัน ให้ถามที่ประตู"},"ages":[1,2,2,1],"hrs":1,"io":"out","pram":"part","price":{"en":"Check the price","th":"เช็กราคาก่อนไป"},"book":"none","q":"Garden houses of Kim Long, Hue","ok":"2026-11","src":"https://visithue.org/things-to-do/"}
+      {"name":{"en":"The garden houses of Kim Long","th":"บ้านสวนคิมลอง"},"kind":"oldtown","area":{"en":"Kim Long","th":"คิมลอง"},"what":{"en":"Historic garden houses, some charging admission and some private homes you can visit.","th":"บ้านสวนเก่าที่มีประวัติ บางแห่งเก็บค่าเข้า บางแห่งเป็นบ้านส่วนตัวที่เข้าชมได้"},"why":{"en":"A quiet stop between the big sights, the page says.","th":"จุดพักเงียบๆ ระหว่างสถานที่สำคัญ ตามหน้าเว็บ"},"tip":{"en":"There are no common opening hours; ask at the gate.","th":"ไม่มีเวลาเปิดปิดรวมกัน ให้ถามที่ประตู"},"ages":[1,2,2,1],"hrs":1,"io":"out","pram":"part","price":{"en":"Check the price","th":"เช็กราคาก่อนไป"},"book":"none","q":"Garden houses of Kim Long, Hue","ok":"2026-11","src":"https://visithue.org/things-to-do/"},
+        {
+          "local": "Làng hương Thủy Xuân",
+          "name": {
+            "th": "หมู่บ้านธูปถวีซวน",
+            "en": "Thủy Xuân Incense Village"
+          },
+          "kind": "culture",
+          "area": {
+            "th": "ห่างตัวเมืองราว 7 กม. ทางตะวันตกเฉียงใต้ ใกล้สุสานตึดึ๊ก",
+            "en": "About 7 km south-west of the centre, near Tự Đức’s tomb"
+          },
+          "what": {
+            "th": "โรงทำธูปของครอบครัว ตากธูปเป็นรูปพัดหลากสี",
+            "en": "Family workshops where incense sticks dry in colourful fans"
+          },
+          "why": {
+            "th": "มีกิจกรรมทำธูปให้ครอบครัวลองทำ ใช้เวลา 30–45 นาที",
+            "en": "A hands-on incense session for families takes 30 to 45 minutes"
+          },
+          "tip": {
+            "th": "ไปช่วงมีนาคม–สิงหาคมดีที่สุด ให้เด็กอยู่ห่างควันและธูปที่จุดอยู่",
+            "en": "Best from March to August; keep children away from smoke and lit sticks"
+          },
+          "ages": [
+            1,
+            2,
+            2,
+            2
+          ],
+          "hrs": 1,
+          "io": "both",
+          "pram": "part",
+          "price": {
+            "th": "≈ 50,000–100,000 ดอง ต่อการลองทำ",
+            "en": "≈ 50,000–100,000 VND for a hands-on session"
+          },
+          "book": "none",
+          "q": "Thuy Xuan Incense-making Village, Huế",
+          "src": "https://www.vietnamtourism.com/en/incense-village-hue-thuy-xuan-how-to-visit-what-to-expect",
+          "ok": "2026-11"
+        },
+        {
+          "local": "Bãi biển Tân Cảnh Dương",
+          "name": {
+            "th": "หาดเติ่นแก๋งเซือง",
+            "en": "Tân Cảnh Dương Beach"
+          },
+          "kind": "beach",
+          "area": {
+            "th": "จันเมย์–หล่างโก ห่างเว้ไปทางใต้ราว 60 กม.",
+            "en": "Chân Mây–Lăng Cô, about 60 km south of Huế"
+          },
+          "what": {
+            "th": "หาดทรายขาวเงียบสงบ น้ำใส มีต้นไม้ให้ร่ม",
+            "en": "A quiet white-sand beach with clear water and trees for shade"
+          },
+          "why": {
+            "th": "หาดกว้าง ลาดเอียงน้อย คลื่นสงบ มีที่ให้เด็กเล่นและเก็บเปลือกหอย",
+            "en": "Wide, gently sloping sand and calm waves, with room to play and collect shells"
+          },
+          "tip": {
+            "th": "แทบไม่มีร้านหรือสิ่งอำนวยความสะดวก พกอาหารและน้ำไปเอง",
+            "en": "Few cafés or facilities, so bring food and water"
+          },
+          "ages": [
+            1,
+            2,
+            2,
+            2
+          ],
+          "hrs": 4,
+          "io": "out",
+          "pram": "part",
+          "price": {
+            "th": "เช็กราคาก่อนไป",
+            "en": "Check the price"
+          },
+          "book": "none",
+          "q": "Bãi biển Tân Cảnh Dương, Lộc Vĩnh, Huế",
+          "src": "https://vietnamnet.vn/en/uncrowded-hue-beach-surprises-family-with-clear-water-white-sand-2539066.html",
+          "ok": "2026-11"
+        },
+        {
+          "local": "Phá Tam Giang",
+          "name": {
+            "th": "ทะเลสาบน้ำกร่อยตามซาง",
+            "en": "Tam Giang Lagoon"
+          },
+          "kind": "nature",
+          "area": {
+            "th": "ทางตะวันออกเฉียงเหนือของเว้",
+            "en": "North-east of Huế"
+          },
+          "what": {
+            "th": "ทะเลสาบน้ำกร่อยกว้างใหญ่ ล่องเรือชมได้",
+            "en": "A large lagoon to explore by boat"
+          },
+          "why": {
+            "th": "ล่องเรือผ่านกระชังปลาและวิถีชีวิตบนน้ำ",
+            "en": "A boat trip past fish farms and life on the water"
+          },
+          "ages": [
+            1,
+            1,
+            1,
+            1
+          ],
+          "hrs": 2,
+          "io": "out",
+          "pram": "no",
+          "price": {
+            "th": "เช็กราคาก่อนไป",
+            "en": "Check the price"
+          },
+          "book": "none",
+          "q": "Tam Giang Lagoon, Huế",
+          "src": "https://vietnam.travel/places-to-go/central-vietnam/hue",
+          "ok": "2026-11"
+        },
+        {
+          "local": "Làng hoa giấy Thanh Tiên",
+          "name": {
+            "th": "หมู่บ้านดอกไม้กระดาษแทงเตียน",
+            "en": "Thanh Tiên Paper Flower Village"
+          },
+          "kind": "culture",
+          "area": {
+            "th": "ทางเหนือของเว้",
+            "en": "North of Huế"
+          },
+          "what": {
+            "th": "หมู่บ้านหัตถกรรมที่ผู้มาเยือนได้ทำดอกไม้กระดาษเอง",
+            "en": "A craft village where visitors make their own paper flower"
+          },
+          "why": {
+            "th": "งานฝีมือง่ายๆ ที่เด็กทำแล้วเก็บกลับบ้านได้",
+            "en": "A simple craft children can make and take home"
+          },
+          "ages": [
+            1,
+            1,
+            1,
+            1
+          ],
+          "hrs": 1.5,
+          "io": "both",
+          "pram": "part",
+          "price": {
+            "th": "เช็กราคาก่อนไป",
+            "en": "Check the price"
+          },
+          "book": "none",
+          "q": "Hoa Giấy Thanh Tiên, Phú Vang, Huế",
+          "src": "https://vietnam.travel/places-to-go/central-vietnam/hue",
+          "ok": "2026-11"
+        }
     ]
     },
     {
