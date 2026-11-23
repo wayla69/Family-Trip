@@ -1,0 +1,25 @@
+{
+  "town": "lk-hills",
+  "kind": "eats",
+  "checked": "2026-11",
+  "rule": "A row gets ok only from a current listing, its own site or recent reviews with nothing saying closed (docs/EATS.md). A row is taken out when a search could not find the place at all or the sources disagree; a place found but not freshly confirmed stays without ok.",
+  "scope": "the 2 rows without ok; the rows already confirmed were not checked again",
+  "how": "Google Maps opened in headless Chromium (2026-11-23), limited view without a reviews tab, so no review date could be read; a place with current hours and no closed notice counts as a current listing",
+  "confirmed": [
+    {
+      "name": "Hela Bojun Hala",
+      "src": "https://www.google.com/maps/place/Hela+Bojun+Hala+-+Gannoruwa/@7.2727724,80.6030309,17z",
+      "page_name": "Hela Bojun Hala - Gannoruwa",
+      "evidence": "Google Maps: health food restaurant, 4.4★, Gannoruwa Road (7JF3+462), located in the Gannoruwa Agricultural Complex near Peradeniya, 'Open · Closes 7 PM'; nothing says closed",
+      "ok": "2026-11"
+    }
+  ],
+  "kept_without_ok": [
+    {
+      "name": "Sharon Inn",
+      "src": "https://www.google.com/maps/place/Sharon+Inn/@7.2872307,80.6420901,17z",
+      "evidence": "Google Maps: 'Sharon Inn', 3-star hotel, 4.2★, on the hillside above Kandy, but no prices ('Contact this property for rates and availability'), and nothing current shows its dinner buffet"
+    }
+  ],
+  "removed": []
+}

@@ -1,0 +1,16 @@
+{
+  "town": "de-rothenburg",
+  "kind": "eats",
+  "checked": "2026-11",
+  "rule": "A row gets ok only from a current listing, its own site or recent reviews with nothing saying closed (docs/EATS.md). A row is taken out when a search could not find the place at all or the sources disagree; a place found but not freshly confirmed stays without ok.",
+  "scope": "the 1 row without ok; the rows already confirmed were not checked again",
+  "how": "Google Maps opened in headless Chromium (2026-11-23), limited view without a reviews tab, so no review date could be read; a place with current hours and no closed notice counts as a current listing",
+  "confirmed": [],
+  "kept_without_ok": [
+    {
+      "name": "Albig's Quick Restaurant",
+      "evidence": "Google Maps could not find it: searching 'Albig's Quick Restaurant, Hafengasse 3' and 'Albig's Rothenburg ob der Tauber' listed Quickylicious (Hafengasse 16), Ivy's Deli and Tobingo Döner (Hafengasse 2), and no Albig's; a web search found no listing either. It would be removed, but the town would then have one quick bite where eats:lint asks for two, so it stays without ok until a replacement quick bite is added"
+    }
+  ],
+  "removed": []
+}

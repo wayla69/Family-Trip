@@ -1,0 +1,17 @@
+{
+  "town": "cz-krumlov",
+  "kind": "eats",
+  "checked": "2026-11",
+  "rule": "A row gets ok only from a current listing, its own site or recent reviews with nothing saying closed (docs/EATS.md). A row is taken out when a search could not find the place at all or the sources disagree; a place found but not freshly confirmed stays without ok.",
+  "scope": "the 1 row without ok; the rows already confirmed were not checked again",
+  "how": "Google Maps opened in headless Chromium (2026-11-23), limited view without a reviews tab, so no review date could be read; a place with current hours and no closed notice counts as a current listing",
+  "confirmed": [],
+  "kept_without_ok": [
+    {
+      "name": "Deli 99",
+      "src": "https://www.google.com/maps/place/DELI99+Caf%C3%A9+Waffle/@48.8147302,14.3170487,17z",
+      "evidence": "Google Maps: 'DELI99 Café Waffle', Latrán 106, Český Krumlov (R878+VR) — 'Permanently closed'. It would be removed, but the town would then have one quick bite where eats:lint asks for two, so it stays without ok until a replacement quick bite is added"
+    }
+  ],
+  "removed": []
+}

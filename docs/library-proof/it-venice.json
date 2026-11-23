@@ -1,0 +1,19 @@
+{
+  "town": "it-venice",
+  "kind": "eats",
+  "checked": "2026-11",
+  "rule": "A row gets ok only from a current listing, its own site or recent reviews with nothing saying closed (docs/EATS.md). A row is taken out when a search could not find the place at all or the sources disagree; a place found but not freshly confirmed stays without ok.",
+  "scope": "the 1 row without ok; the rows already confirmed were not checked again",
+  "how": "Google Maps opened in headless Chromium (2026-11-23), limited view without a reviews tab, so no review date could be read; a place with current hours and no closed notice counts as a current listing",
+  "confirmed": [
+    {
+      "name": "Dal Moro's Fresh Pasta To Go",
+      "src": "https://www.google.com/maps/place/Dal+Moro's/@45.4361702,12.3397907,17z",
+      "page_name": "Dal Moro's",
+      "evidence": "Google Maps: fast food restaurant, 4.6★, Calle de la Casseleria, 30122 Venezia (C8PQ+FW), 'Closed · Opens 12 PM', phone listed, an owner's post; nothing says closed",
+      "ok": "2026-11"
+    }
+  ],
+  "kept_without_ok": [],
+  "removed": []
+}
