@@ -1,19 +1,104 @@
 {
   "town": "pl-krakow",
-  "kind": "eats",
-  "checked": "2026-11",
-  "rule": "A row gets ok only from a current listing, its own site or recent reviews with nothing saying closed (docs/EATS.md). A row is taken out when a search could not find the place at all or the sources disagree; a place found but not freshly confirmed stays without ok.",
-  "scope": "the 1 row without ok; the rows already confirmed were not checked again",
-  "how": "Google Maps opened in headless Chromium (2026-11-23), limited view without a reviews tab, so no review date could be read; a place with current hours and no closed notice counts as a current listing",
-  "confirmed": [
+  "kind": "eats + sights",
+  "checked": "2026-11-23",
+  "rule": "library-check.cjs, then the Google Maps Reviews tab sorted by newest: ok only when not marked closed, with a review from the last six months, and the map's name matching the page's.",
+  "agents": "one Haiku agent; 14 rows from Hopsa (2025), House of Attractions (2026) and Hello Cracow (2026) passed library-check.cjs, 12 went in",
+  "added": [
     {
-      "name": "Nowa Prowincja",
-      "src": "https://www.google.com/maps/place/Nowa+Prowincja/@50.0604714,19.9360545,17z",
-      "page_name": "Nowa Prowincja",
-      "evidence": "Google Maps: cafe, 4.6★, Bracka 3–5, 31-005 Kraków (3W6P+5C), 'Closed · Opens 8 AM', phone listed; nothing says closed",
-      "ok": "2026-11"
+      "name": "Biała Róża",
+      "page_name": "Biała Róża",
+      "src": "https://hopsa.io/en/blog/post/7-best-luxury-restaurants-friendlier-for-children-in-cracow",
+      "date": "2025-06",
+      "map": "Google Maps Floriana Straszewskiego 16, 1,614 reviews, newest '4 hours ago'"
+    },
+    {
+      "name": "Kogel Mogel",
+      "page_name": "Kogel Mogel",
+      "src": "https://hopsa.io/en/blog/post/7-best-luxury-restaurants-friendlier-for-children-in-cracow",
+      "date": "2025-06",
+      "map": "Google Maps Sienna 12, 3,933 reviews, newest '13 hours ago'"
+    },
+    {
+      "name": "Cafe Oranżeria",
+      "page_name": "Cafe Oranżeria",
+      "src": "https://hopsa.io/en/blog/post/7-best-luxury-restaurants-friendlier-for-children-in-cracow",
+      "date": "2025-06",
+      "map": "Google Maps 'Oranżeria', plac Kossaka 1, 1,067 reviews, newest '14 hours ago'"
+    },
+    {
+      "name": "Farina",
+      "page_name": "Farina",
+      "src": "https://hopsa.io/en/blog/post/7-best-luxury-restaurants-friendlier-for-children-in-cracow",
+      "date": "2025-06",
+      "map": "Google Maps 'Farina Restaurant', św. Marka 16, 1,757 reviews, newest '16 hours ago'"
+    },
+    {
+      "name": "Amarylis Restaurant",
+      "page_name": "Amarylis Restaurant",
+      "src": "https://hopsa.io/en/blog/post/7-best-luxury-restaurants-friendlier-for-children-in-cracow",
+      "date": "2025-06",
+      "map": "Google Maps Józefa Dietla 60, 733 reviews, newest '2 weeks ago'"
+    },
+    {
+      "name": "Szara Gęś w Kuchni",
+      "page_name": "Szara Gęś w Kuchni",
+      "src": "https://hopsa.io/en/blog/post/7-best-luxury-restaurants-friendlier-for-children-in-cracow",
+      "date": "2025-06",
+      "map": "Google Maps 'Szara Gęś w Kuchni Restaurant', Rynek Główny 17, 2,867 reviews, newest '18 hours ago'"
+    },
+    {
+      "name": "Orangery",
+      "page_name": "Orangery",
+      "src": "https://houseofattractions.club/en/the-best-childrens-restaurants-in-cracow/",
+      "date": "2025-04",
+      "map": "Google Maps 'Oranżeria Faustyny 14', 287 reviews, newest '3 weeks ago'"
+    },
+    {
+      "name": "ORZO",
+      "page_name": "ORZO",
+      "src": "https://houseofattractions.club/en/the-best-childrens-restaurants-in-cracow/",
+      "date": "2025-04",
+      "map": "Google Maps 'ORZO Arancia Zabłocie', Lipowa 4A, 10,502 reviews, newest '16 hours ago'"
+    },
+    {
+      "name": "Pół na Pół",
+      "page_name": "Pół na Pół",
+      "src": "https://houseofattractions.club/en/the-best-childrens-restaurants-in-cracow/",
+      "date": "2025-04",
+      "map": "Google Maps 'Restauracja Pół na Pół', Kosocicka 105A, 4,794 reviews, newest '3 hours ago'"
+    },
+    {
+      "name": "GOjump! indoor playground",
+      "page_name": "GOjump!",
+      "src": "https://www.hellocracow.com/krakow-with-kids-a-practical-guide",
+      "date": "2026-01",
+      "map": "Google Maps 'GoJump', Sikorki 23, 15,316 reviews, newest '14 hours ago'"
+    },
+    {
+      "name": "Kraków Pinball Museum",
+      "page_name": "Krakow Pinball Museum",
+      "src": "https://www.hellocracow.com/krakow-with-kids-a-practical-guide",
+      "date": "2026-01",
+      "map": "Google Maps Stradomska 15, 3,527 reviews, newest '2 days ago'"
+    },
+    {
+      "name": "House of Attractions",
+      "page_name": "House of Attractions",
+      "src": "https://houseofattractions.club/en/the-best-childrens-restaurants-in-cracow/",
+      "date": "2026-11",
+      "map": "Google Maps Grodzka 2, 10,902 reviews, newest '1 hour ago'"
     }
   ],
-  "kept_without_ok": [],
-  "removed": []
+  "left_out": [
+    {
+      "name": "Albertina Restaurant & Wine",
+      "why": "newest Google Maps review seven months old"
+    },
+    {
+      "name": "Grande Appetito",
+      "why": "Google Maps shows an Indian restaurant at its address"
+    }
+  ],
+  "estimates": "Ages and visit hours are placeholders; prices and opening notes are the pages' own."
 }

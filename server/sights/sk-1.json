@@ -264,6 +264,273 @@
           "book": "none",
           "q": "Primate's Palace, Primaciálne námestie 1, Bratislava",
           "src": "https://bratislava.sk/en/city-of-bratislava/transparent-city/city-property/primates-palace/visit-us"
+        },
+        {
+          "local": "Kostol svätej Alžbety",
+          "ages": [
+            2,
+            2,
+            2,
+            2
+          ],
+          "hrs": 0.5,
+          "io": "both",
+          "pram": "part",
+          "price": {
+            "th": "ฟรี",
+            "en": "Free"
+          },
+          "book": "none",
+          "src": "https://kidsareatrip.com/best-things-to-do-in-bratislava-with-kids/",
+          "name": {
+            "th": "โบสถ์สีฟ้า",
+            "en": "Blue Church"
+          },
+          "kind": "culture",
+          "area": {
+            "th": "ถนนเบซรูโชวา บราติสลาวา",
+            "en": "Bezručova, Bratislava"
+          },
+          "what": {
+            "th": "โบสถ์อาร์นูโวสีฟ้าพาสเทลหลังเล็ก",
+            "en": "A small pastel-blue Art Nouveau church"
+          },
+          "why": {
+            "th": "หน้าตาเหมือนหลุดมาจากหนังดิสนีย์ แวะชมได้เร็ว",
+            "en": "Looks like something out of a Disney film; a quick stop"
+          },
+          "q": "The Blue Church, Bezručova 2, Bratislava",
+          "ok": "2026-11"
+        },
+        {
+          "local": "Dóm svätého Martina",
+          "ages": [
+            1,
+            1,
+            2,
+            2
+          ],
+          "hrs": 0.5,
+          "io": "in",
+          "pram": "part",
+          "price": {
+            "th": "ฟรี",
+            "en": "Free"
+          },
+          "book": "none",
+          "src": "https://www.reiskoe.nl/en/bratislava-with-kids/",
+          "name": {
+            "th": "มหาวิหารเซนต์มาร์ติน",
+            "en": "St Martin's Cathedral"
+          },
+          "kind": "culture",
+          "area": {
+            "th": "ใต้ปราสาท บราติสลาวา",
+            "en": "below the castle, Bratislava"
+          },
+          "what": {
+            "th": "โบสถ์ที่มีชื่อเสียงที่สุดแห่งหนึ่งของบราติสลาวา สร้างใหม่แบบกอทิก",
+            "en": "One of Bratislava's best-known churches, rebuilt in Gothic style"
+          },
+          "why": {
+            "th": "ยอดแหลมและซุ้มโค้งชี้ให้เด็กดูได้ง่าย",
+            "en": "The spire and arches are easy to show children"
+          },
+          "tip": {
+            "th": "เข้าฟรี แต่งกายปิดไหล่ ใส่กางเกงหรือกระโปรงยาว",
+            "en": "Free; cover shoulders, with long trousers or skirts"
+          },
+          "q": "St. Martin's Cathedral, Rudnayovo námestie 1, Bratislava",
+          "ok": "2026-11"
+        },
+        {
+          "local": "Centrum vedy Aurelium",
+          "ages": [
+            0,
+            1,
+            2,
+            2
+          ],
+          "hrs": 2,
+          "io": "in",
+          "pram": "part",
+          "price": {
+            "th": "เช็กราคาก่อนไป",
+            "en": "Check the price"
+          },
+          "book": "none",
+          "src": "https://www.visitbratislava.com/news/aurelium-science-adventure-center/",
+          "name": {
+            "th": "ศูนย์วิทยาศาสตร์ออเรเลียม",
+            "en": "Aurelium science centre"
+          },
+          "kind": "museumkid",
+          "area": {
+            "th": "โนเวเมสโต บราติสลาวา",
+            "en": "Nové Mesto, Bratislava"
+          },
+          "what": {
+            "th": "ศูนย์วิทยาศาสตร์ลงมือเล่น 7 โซน ตั้งแต่กลศาสตร์ถึงคณิตศาสตร์",
+            "en": "A hands-on science centre with seven zones, from mechanics to maths"
+          },
+          "why": {
+            "th": "ได้ดึง หมุน และทดลอง ดีสำหรับวันฝนตก",
+            "en": "Pull, spin and test the exhibits; good on a rainy day"
+          },
+          "tip": {
+            "th": "เปิดอังคาร–เสาร์ 09:00–16:00 ปิดอาทิตย์และจันทร์ เผื่อเวลาราว 2 ชั่วโมง",
+            "en": "Open Tue–Sat 09:00–16:00, closed Sunday and Monday; allow about two hours"
+          },
+          "q": "Centrum vedy CVTI SR, Bojnická 3, Bratislava",
+          "ok": "2026-11"
+        },
+        {
+          "local": "",
+          "ages": [
+            0,
+            1,
+            2,
+            2
+          ],
+          "hrs": 1.5,
+          "io": "out",
+          "pram": "part",
+          "price": {
+            "th": "เช็กราคาก่อนไป",
+            "en": "Check the price"
+          },
+          "book": "none",
+          "src": "https://blog.gopass.travel/en/suggested-trips-with-kids-in-the-high-tatras/",
+          "name": {
+            "th": "หอชมวิวทาทราส",
+            "en": "Tatras Tower"
+          },
+          "kind": "views",
+          "area": {
+            "th": "ชตรบสเกเปลโซ",
+            "en": "Štrbské Pleso"
+          },
+          "what": {
+            "th": "หอชมวิวเทือกเขาทาทราสูง",
+            "en": "A viewing tower over the High Tatras"
+          },
+          "why": {
+            "th": "มีตาข่ายแขวนและทางเดินพื้นกระจก",
+            "en": "A hanging net and a glass-floored walkway"
+          },
+          "q": "Tatras Tower, Štrbské Pleso",
+          "ok": "2026-11"
+        },
+        {
+          "local": "",
+          "ages": [
+            1,
+            2,
+            2,
+            2
+          ],
+          "hrs": 3,
+          "io": "out",
+          "pram": "part",
+          "price": {
+            "th": "เช็กราคาก่อนไป",
+            "en": "Check the price"
+          },
+          "book": "none",
+          "src": "https://blog.gopass.travel/en/suggested-trips-with-kids-in-the-high-tatras/",
+          "name": {
+            "th": "สกัลนาเตเปลโซ",
+            "en": "Skalnaté Pleso"
+          },
+          "kind": "views",
+          "area": {
+            "th": "ขึ้นกระเช้าจากทาทรันสกาลอมนีตซา",
+            "en": "Cable car from Tatranská Lomnica"
+          },
+          "what": {
+            "th": "สถานีบนภูเขามีวิวและทะเลสาบ ขึ้นกระเช้าไป",
+            "en": "A mountain station with views and a lake, reached by cable car"
+          },
+          "why": {
+            "th": "เที่ยวภูเขาได้โดยไม่ต้องเดินป่าหนัก",
+            "en": "A mountain day out without a hard hike"
+          },
+          "q": "Skalnaté Pleso, Vysoké Tatry",
+          "ok": "2026-11"
+        },
+        {
+          "local": "",
+          "ages": [
+            2,
+            2,
+            2,
+            2
+          ],
+          "hrs": 3,
+          "io": "out",
+          "pram": "yes",
+          "price": {
+            "th": "เช็กราคาก่อนไป",
+            "en": "Check the price"
+          },
+          "book": "none",
+          "src": "https://blog.gopass.travel/en/suggested-trips-with-kids-in-the-high-tatras/",
+          "name": {
+            "th": "เฮรบีเอนอก",
+            "en": "Hrebienok"
+          },
+          "kind": "nature",
+          "area": {
+            "th": "สตารีสโมโกเวตซ์",
+            "en": "Starý Smokovec"
+          },
+          "what": {
+            "th": "เส้นทางง่ายจากสตารีสโมโกเวตซ์ ขึ้นรถรางไต่เขาหรือเดิน",
+            "en": "An easy route from Starý Smokovec, by funicular or on foot"
+          },
+          "why": {
+            "th": "รถเข็นเด็กไปได้ และรถรางพาขึ้นเนิน",
+            "en": "Suits pushchairs, and the funicular takes the hill for you"
+          },
+          "q": "Hrebienok, Vysoké Tatry",
+          "ok": "2026-11"
+        },
+        {
+          "local": "Belianska jaskyňa",
+          "ages": [
+            0,
+            1,
+            2,
+            2
+          ],
+          "hrs": 1.5,
+          "io": "in",
+          "pram": "no",
+          "price": {
+            "th": "เช็กราคาก่อนไป",
+            "en": "Check the price"
+          },
+          "book": "none",
+          "src": "https://blog.gopass.travel/en/suggested-trips-with-kids-in-the-high-tatras/",
+          "name": {
+            "th": "ถ้ำเบลียนสกา",
+            "en": "Belianska Cave"
+          },
+          "kind": "nature",
+          "area": {
+            "th": "ทาทรันสกาโคตลีนา",
+            "en": "Tatranská Kotlina"
+          },
+          "what": {
+            "th": "ถ้ำในเทือกเขาทาทราสูง",
+            "en": "A cave in the High Tatras"
+          },
+          "why": {
+            "th": "เหมาะสำหรับวันที่อากาศไม่ดี",
+            "en": "A good choice when the weather is bad"
+          },
+          "q": "Belianska jaskyňa, Tatranská Kotlina",
+          "ok": "2026-11"
         }
       ]
     }

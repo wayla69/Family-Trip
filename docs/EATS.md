@@ -237,3 +237,51 @@ Kee, Sun Hang Yuen, MD Cafe) and four family places from Cathay Pacific's 2026 c
 MeokBang BBQ Kidzone, Tree Café, Yakiniku Tabeyo). Left out: Transformers: The Ark (closed in Hong Kong, Feb 2025), Smoke and Barrel
 (moved, the new address not confirmed), Baumhaus (nothing current), Pizza Express (no one branch). In the app the Hong Kong book's own
 28 places and the Macau book part's 188 sit beside this list (`syncBooks`, src `book`).
+
+### Vienna, 23 Nov 2026
+batch-07 of docs/library-briefs. +6 family cafés and restaurants with play corners (Falter’s 2025–2026 lists): Baomi, Family & Friends, Kinderspiel, Sieben Zwerge, Melman’s, Dschungel Café. Proof in `docs/library-proof/at-vienna.json`.
+
+### Salzburg, 23 Nov 2026
+batch-07 of docs/library-briefs. +5 from the tourism site’s child-friendly list: Gasthof Die Pflegerbrücke (playground, play room), the fortress panorama restaurant, The Keep, Restaurant Wolferl, The Bakery by Didi Maier. Proof in `docs/library-proof/at-salzburg.json`.
+
+### Geneva and Lake Léman, 23 Nov 2026
+batch-09 of docs/library-briefs. +7 from Geneva Tourism’s family restaurants and Lausanne Tourism: La Storia, Inglewood (Eaux-Vives), Molino (Molard), The Hamburger Foundation (Pâquis), Café du MEG, Un R de Famille, Auberge du Chalet des Enfants. Proof in `docs/library-proof/ch-geneva.json`.
+
+### Lucerne, 23 Nov 2026
+batch-09 of docs/library-briefs. +1: Wirtschaft Trumpf-Buur, Ebikon (playground and minigolf). Few dated lists exist for Lucerne. Proof in `docs/library-proof/ch-lucerne.json`.
+
+### Prague, 23 Nov 2026
+batch-10 of docs/library-briefs. +9 from prague.eu and family guides: Výtopna (train-delivered food), Food Lab, Bruxx, Kulaťák, Občanská plovárna, Kolkovna Olympia, Miminoo, Vozovna Stromovka, Café Truhlárna. Proof in `docs/library-proof/cz-prague.json`.
+
+### Zurich, 23 Nov 2026
+batch-10 of docs/library-briefs. +5 from Zurich Tourism’s child-friendly list and the ELCH family centre: Kafi für Dich, Brasserie Freilager, Die Waid, Alter Tobelhof, Kafi Plus (Oerlikon). Proof in `docs/library-proof/ch-zurich.json`.
+
+### Munich, 23 Nov 2026
+batch-11 of docs/library-briefs. +9, mostly kids’ cafés from in-muenchen.de (Nov 2026): Zuckertag, Mini Moment, Kleine Sportgeister, Glückskind, Pfefferminza, Mama’s Kindercafé, Hans im Glück (Isartor), La Sophia, Frau im Mond. Entry prices from the page. Proof in `docs/library-proof/de-munich.json`.
+
+### Hamburg, 23 Nov 2026
+batch-11 of docs/library-briefs. +1: Alsterdorfer Kesselhaus (children’s menu, play room) from hamburg.de. The Kindaling restaurant pages carry no date. Proof in `docs/library-proof/de-hamburg.json`.
+
+### Heidelberg and the Black Forest, 23 Nov 2026
+batch-11 of docs/library-briefs. +1: Die Bergstation on the Schauinsland. Seven Heidelberg restaurants left out: their page gives an address only. Proof in `docs/library-proof/de-heidelberg.json`.
+
+### Budapest, 23 Nov 2026
+batch-16 of docs/library-briefs. +3: Riso (terrace playground), Cafe Brunch Bazilika, Brunch Bistro. Proof in `docs/library-proof/hu-budapest.json`.
+
+### Kraków, 23 Nov 2026
+batch-22 of docs/library-briefs. +9: Biała Róża, Kogel Mogel, Cafe Oranżeria, Farina, Amarylis, Szara Gęś w Kuchni, Orangery, ORZO, Pół na Pół. Proof in `docs/library-proof/pl-krakow.json`.
+
+### Bled, Ljubljana & Postojna, 23 Nov 2026
+batch-23 of docs/library-briefs. +1: Garden Restaurant (Bled). Proof in `docs/library-proof/si-bled.json`.
+
+### Bratislava & the High Tatras, 23 Nov 2026
+batch-23 of docs/library-briefs. +4 in Bratislava: Gatto Matto Panská, Berg, Mezcalli, Urban Bistro. Proof in `docs/library-proof/sk-bratislava.json`.
+
+### Hallstatt, 23 Nov 2026
+batch-26 of docs/library-briefs. +2: Marktbeisl Zur Ruth, Pizzeria Kegelbahn (Obertraun). Proof in `docs/library-proof/at-hallstatt.json`.
+
+### Český Krumlov, 23 Nov 2026
+batch-27 of docs/library-briefs. +1: Restaurant Pivoňka. Proof in `docs/library-proof/cz-krumlov.json`.
+
+### Rothenburg ob der Tauber, 23 Nov 2026
+batch-27 of docs/library-briefs. +1: Eiscafé Pizzeria Italia. Proof in `docs/library-proof/de-rothenburg.json`.
