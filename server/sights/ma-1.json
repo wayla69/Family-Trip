@@ -269,6 +269,125 @@
           "book": "none",
           "q": "Merenid Tombs, Fes, Morocco",
           "src": "https://thirdeyetraveller.com/merenid-tombs-in-fes-best-viewpoint/"
+        },
+        {
+          "local": "Bouzafer Mosque",
+          "ages": [
+            0,
+            1,
+            2,
+            2
+          ],
+          "hrs": 1,
+          "io": "out",
+          "pram": "no",
+          "price": {
+            "th": "ฟรี",
+            "en": "Free"
+          },
+          "book": "none",
+          "src": "https://www.sharingthewander.com/chefchaouen-with-kids/",
+          "name": {
+            "th": "จุดชมวิวมัสยิดสเปน",
+            "en": "Spanish Mosque viewpoint"
+          },
+          "kind": "views",
+          "area": {
+            "th": "เหนือเมดินา เชฟชาอูน",
+            "en": "Above the medina, Chefchaouen"
+          },
+          "what": {
+            "th": "จุดชมวิว ขึ้นบันไดจากแม่น้ำ มองลงไปเห็นเมืองสีฟ้า",
+            "en": "A viewpoint up the steps from the river, looking down over the blue town"
+          },
+          "why": {
+            "th": "นั่งบนกำแพงแล้วมองลงไปยังเมือง",
+            "en": "Sit on the wall and look down over the town"
+          },
+          "tip": {
+            "th": "คนนิยมไปตอนพระอาทิตย์ตก เข้าไปในมัสยิดไม่ได้",
+            "en": "Popular at sunset; you cannot go inside the mosque"
+          },
+          "q": "Bouzafer Mosque, Chefchaouen",
+          "ok": "2026-11"
+        },
+        {
+          "local": "Bab el-Mansour",
+          "ages": [
+            1,
+            2,
+            2,
+            2
+          ],
+          "hrs": 0.5,
+          "io": "out",
+          "pram": "part",
+          "price": {
+            "th": "ฟรี",
+            "en": "Free"
+          },
+          "book": "none",
+          "src": "https://www.timetravelturtle.com/things-in-meknes-morocco/",
+          "name": {
+            "th": "ประตูบับมันซูร์",
+            "en": "Bab Mansour"
+          },
+          "kind": "culture",
+          "area": {
+            "th": "จัตุรัสเอลเฮดิม เม็กเนส",
+            "en": "Place el-Hedim, Meknes"
+          },
+          "what": {
+            "th": "หนึ่งในประตูใหญ่สู่เมืองเก่าผ่านกำแพงเมือง",
+            "en": "One of the huge gates into the old city through its walls"
+          },
+          "why": {
+            "th": "จุดถ่ายรูปเด่น หน้าจัตุรัสที่คึกคัก",
+            "en": "A strong photo stop on a lively square"
+          },
+          "q": "Bab el-Mansour, Meknes",
+          "ok": "2026-11"
+        },
+        {
+          "local": "",
+          "ages": [
+            0,
+            1,
+            1,
+            2
+          ],
+          "hrs": 0.5,
+          "io": "in",
+          "pram": "part",
+          "price": {
+            "th": "ไม่มีค่าเข้า",
+            "en": "No entrance fee"
+          },
+          "book": "none",
+          "src": "https://www.timetravelturtle.com/things-in-meknes-morocco/",
+          "name": {
+            "th": "สุสานมูเลย์อิสมาอิล",
+            "en": "Mausoleum of Moulay Ismail"
+          },
+          "kind": "culture",
+          "area": {
+            "th": "ใกล้ประตูบับมันซูร์ เม็กเนส",
+            "en": "Near Bab Mansour, Meknes"
+          },
+          "what": {
+            "th": "สุสานของมูเลย์อิสมาอิลที่ตกแต่งงดงาม",
+            "en": "The lavishly decorated mausoleum of Moulay Ismail"
+          },
+          "why": {
+            "th": "ถอดรองเท้าแล้วเดินชมห้องด้านใน",
+            "en": "Walk round the inner rooms once your shoes are off"
+          },
+          "tip": {
+            "th": "เปิดจันทร์–ศุกร์ 9:00–18:30 ถอดรองเท้าก่อนเข้า",
+            "en": "Open Monday to Friday 9:00 to 18:30; take off your shoes"
+          },
+          "q": "Mausoleum of Moulay Ismail, Meknes",
+          "ok": "2026-11"
         }
       ]
     },
