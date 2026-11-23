@@ -1,31 +1,73 @@
 {
   "town": "mm-yangon",
-  "kind": "eats",
-  "checked": "2026-11",
-  "rule": "A row gets ok only from a current listing, its own site or recent reviews with nothing saying closed (docs/EATS.md). A row is taken out when a search could not find the place at all or the sources disagree; a place found but not freshly confirmed stays without ok.",
-  "scope": "the 3 rows without ok; rows already carrying ok were not re-checked",
-  "how": "Google Maps opened in headless Chromium (2026-11-23), limited view without a reviews tab, so no review date could be read; searched in English and, for Taiwan, in Chinese (the row's zh)",
-  "confirmed": [
+  "rounds": [
     {
-      "name": "Kyaw Swa Restaurant",
-      "src": "https://www.google.com/maps/search/Kyaw+Swa+Restaurant+Bago",
-      "page_name": "Kyaw Swa Restaurant ကျော်စွာ စားသောက်ဆိုင်",
-      "evidence": "No 445-446, Yangon-Mandalay Highway, Oaktha Myothit, Bago · 8F28+RF · 'Open · Closes 9 PM'",
-      "ok": "2026-11"
+      "town": "mm-yangon",
+      "kind": "eats",
+      "checked": "2026-11",
+      "rule": "A row gets ok only from a current listing, its own site or recent reviews with nothing saying closed (docs/EATS.md). A row is taken out when a search could not find the place at all or the sources disagree; a place found but not freshly confirmed stays without ok.",
+      "scope": "the 3 rows without ok; rows already carrying ok were not re-checked",
+      "how": "Google Maps opened in headless Chromium (2026-11-23), limited view without a reviews tab, so no review date could be read; searched in English and, for Taiwan, in Chinese (the row's zh)",
+      "confirmed": [
+        {
+          "name": "Kyaw Swa Restaurant",
+          "src": "https://www.google.com/maps/search/Kyaw+Swa+Restaurant+Bago",
+          "page_name": "Kyaw Swa Restaurant ကျော်စွာ စားသောက်ဆိုင်",
+          "evidence": "No 445-446, Yangon-Mandalay Highway, Oaktha Myothit, Bago · 8F28+RF · 'Open · Closes 9 PM'",
+          "ok": "2026-11"
+        },
+        {
+          "name": "Shwe Pu Zun",
+          "src": "https://www.google.com/maps/search/Shwe+Pu+Zun+Yangon",
+          "page_name": "Shwe Pu Zun Cafeteria & Bakery House",
+          "evidence": "No.246,248, Anawrahta Rd (list result) · 'Open · Closes 6 PM'",
+          "ok": "2026-11"
+        }
+      ],
+      "kept_without_ok": [],
+      "removed": [
+        {
+          "name": "Padonmar Restaurant",
+          "reason": "Maps: 'Padonmar', Burmese restaurant, No.105/107 Kha-Yae-Bin Road, Dagon · 'Permanently closed' (the town keeps 8 rows)"
+        }
+      ]
     },
     {
-      "name": "Shwe Pu Zun",
-      "src": "https://www.google.com/maps/search/Shwe+Pu+Zun+Yangon",
-      "page_name": "Shwe Pu Zun Cafeteria & Bakery House",
-      "evidence": "No.246,248, Anawrahta Rd (list result) · 'Open · Closes 6 PM'",
-      "ok": "2026-11"
-    }
-  ],
-  "kept_without_ok": [],
-  "removed": [
-    {
-      "name": "Padonmar Restaurant",
-      "reason": "Maps: 'Padonmar', Burmese restaurant, No.105/107 Kha-Yae-Bin Road, Dagon · 'Permanently closed' (the town keeps 8 rows)"
+      "town": "mm-yangon",
+      "kind": "eats + sights",
+      "checked": "2026-11-23",
+      "rule": "library-check.cjs, then the Google Maps Reviews tab sorted by newest: ok only when not marked closed, with a review from the last six months, and the map's name matching the page's.",
+      "agents": "one Haiku agent; 4 rows from OneVasco (2026) passed library-check.cjs, 3 went in",
+      "added": [
+        {
+          "name": "Sharky's",
+          "page_name": "Sharkys",
+          "src": "https://blog.onevasco.com/travel-with-kids/myanmar",
+          "date": "2026-02",
+          "map": "Google Maps 'SHARKY'S', 39 reviews, newest 'last month'"
+        },
+        {
+          "name": "Chatrium Hotel Royal Lake Yangon",
+          "page_name": "Chatrium Hotel Royal Lake Yangon",
+          "src": "https://blog.onevasco.com/travel-with-kids/myanmar",
+          "date": "2026-02",
+          "map": "Google Maps 'Chatrium Yangon Royal Lake', 2,866 reviews, newest '2 hours ago'"
+        },
+        {
+          "name": "Shwedagon Pagoda",
+          "page_name": "Shwedagon Pagoda",
+          "src": "https://blog.onevasco.com/travel-with-kids/myanmar",
+          "date": "2026-02",
+          "map": "Google Maps 'เจดีย์ชเวดากอง', 20,771 reviews, newest '5 hours ago'"
+        }
+      ],
+      "left_out": [
+        {
+          "name": "Nang Htike",
+          "why": "the map shows \"Nan Htike Shan Noodles\", likely the Shan noodle shop already in the library"
+        }
+      ],
+      "estimates": "Ages and visit hours are placeholders; prices and opening notes are the pages' own."
     }
   ]
 }
