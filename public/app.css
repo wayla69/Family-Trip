@@ -4193,3 +4193,6 @@ summary.chvadd>.chvt{flex:1;min-width:0}
    and the chosen day is ringed, not enlarged */
 @media (max-width:440px){.kidwrap .kiddays{gap:clamp(12px,4vw,20px);padding-inline:12px;scroll-padding-inline:12px}.kidwrap .kiddays .art,.kidwrap.home .kiddays .art{width:44px;height:44px}}
 .kidwrap .kiddays button[aria-pressed=true] .art{transform:none}
+/* a short trip's days all fit on a phone (owner's Samsung at a bigger display size, ~375 px wide, Nov 2026: the sixth circle was cut at the edge):
+   the circle's size is worked out from the screen width and the number of days (--n from kid.js), between 36 and 44 px; a long trip still scrolls */
+@media (max-width:440px){.kidwrap .kiddays{--g:clamp(12px,4vw,20px);--ks:clamp(36px,calc((100vw - 62px - (var(--n,6) - 1) * var(--g)) / var(--n,6)),44px);gap:var(--g)}.kidwrap .kiddays .art,.kidwrap.home .kiddays .art{width:var(--ks);height:var(--ks)}}
