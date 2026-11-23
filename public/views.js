@@ -988,7 +988,7 @@ function viewHub(t) {
   const pick = isEditor() ? `<section class="tilepick"><div class="part pickh">${L('สีของเมนู', 'Menu colours')}</div><div class="tpk" role="group" aria-label="${L('สีของเมนู', 'Menu colours')}">${[['pastel', 'สีสัน', 'Colourful'], ['accent', 'สีเล่ม', 'Book colour'], ['plain', 'เรียบ', 'Plain']].map(([k, th, en]) => `<button type="button" class="tpo tpo-${k}" data-a="tiles" data-v="${k}" aria-pressed="${tl === ` tl-${k}`}"><span class="sw" aria-hidden="true"><i></i><i></i><i></i></span><b>${L(th, en)}</b><span class="ck" aria-hidden="true">✓</span></button>`).join('')}</div></section>` : '';
   return `<section class="hubhead">${stampHtml(t, true)}<div class="grow"><div class="kicker">${esc(t.theme.kicker || '')}</div><h1>${esc(T(t.title).split(' · ')[0])}</h1><p class="line">${esc(fmtRange(t))}${ages ? ' · ' + ages : ''}</p></div></section>
 <a class="hubsearch" href="#/t/${esc(t.id)}/search">${ic('search')}<span><b>${L('ค้นหาทั้งเล่ม', 'Search the whole book')}</b><small>${L('หมอ · ยา · แท็กซี่ · ห้องน้ำ · เด็กหลง', 'doctor · pharmacy · taxi · toilet · lost child')}</small></span></a>
-${hero ? `<div class="hubgrid lead${tl}">${hero}</div>` : ''}${offWarn ? offRow : ''}${groups}<div class="hubrows">${offWarn ? '' : offRow}${shelfRow}</div>${typeof questLine === 'function' ? questLine(t) + giftLine(t) : ''}${pick}${artCard(t)}${isEditor() && t.source && t.source !== 'seed' ? `<div class="row end tripdel"><button type="button" class="mini" data-a="tripdel" data-t="${esc(t.id)}">${L('ลบเล่มนี้', 'Delete this book')}</button></div>` : ''}`;
+${hero ? `<div class="hubgrid lead${tl}">${hero}</div>` : ''}${offWarn ? offRow : ''}${groups}<div class="hubrows">${offWarn ? '' : offRow}${shelfRow}</div>${typeof questLine === 'function' ? questLine(t) + giftLine(t) + doorLine(t) : ''}${pick}${artCard(t)}${isEditor() && t.source && t.source !== 'seed' ? `<div class="row end tripdel"><button type="button" class="mini" data-a="tripdel" data-t="${esc(t.id)}">${L('ลบเล่มนี้', 'Delete this book')}</button></div>` : ''}`;
 }
 /* ---------- search the whole book ----------
    One index per book, both languages (a Thai phone finds "taxi", an English one finds "แท็กซี่"): the pocket-guide sections (stays, emergency,
@@ -2698,7 +2698,8 @@ const HELP = [
   ['before', 'today', PG.teal, ['ก่อนเดินทาง', 'Before you go'], 'parents', [
     ['หน้า “เตรียมตัว” มีรายการของที่ต้องจัด เอกสารที่ต้องพร้อม และวีซ่า ติ๊กได้ในเครื่อง', 'The “Get ready” page has the packing list, the papers to have ready and the visa — tick them on your phone'],
     ['กด “เก็บเล่มไว้ในเครื่อง” ก่อนบิน แล้วจะเปิดได้แม้ไม่มีเน็ต', 'Tap “Keep this book on the phone” before the flight, so it opens with no signal'],
-    ['เด็กๆ เปิดประตูนับวันถอยหลังได้วันละบาน และช่วยจัดกระเป๋าในโหมดเด็ก', 'The children open one countdown door a day and help pack in kid mode']]],
+    ['เด็กๆ เปิดประตูนับวันถอยหลังได้วันละบาน และช่วยจัดกระเป๋าในโหมดเด็ก', 'The children open one countdown door a day and help pack in kid mode'],
+    ['ประตูหรือกล่องเซอร์ไพรส์ที่เปิดไปแล้ว ปิดใหม่ได้จากเมนูของเล่ม: ปิดประตูทั้งหมด / ปิดกล่องใหม่ทั้งหมด (แตะสองครั้ง)', 'Doors or surprise boxes already opened close again from the book’s menu: Close every door / Close them all again (two taps)']]],
   ['today', 'today', PG.blue, ['ระหว่างทริป: หน้าวันนี้', 'On the trip: Today'], 'all', [
     ['แอปเปิดที่หน้าวันนี้เอง บนสุดบอกว่าต่อไปทำอะไร แตะขั้นตอนเพื่อดูรายละเอียด', 'The app opens on Today by itself; the top says what is next — tap a step for its details'],
     ['ปุ่มหมุดข้างชื่อสถานที่เปิดแผนที่นำทาง', 'The pin beside a place’s name opens directions in Maps'],
