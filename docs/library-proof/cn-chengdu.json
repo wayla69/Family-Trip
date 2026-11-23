@@ -1,27 +1,235 @@
 {
   "town": "cn-chengdu",
-  "kind": "eats",
-  "checked": "2026-11",
-  "rule": "A row gets ok only from a current listing, its own site or recent reviews with nothing saying closed (docs/EATS.md). A row is taken out when a search could not find the place at all or the sources disagree; a place found but not freshly confirmed stays without ok.",
-  "scope": "the 3 rows without ok; nothing else in the town was re-checked",
-  "how": "Google Maps opened in headless Chromium (2026-11-23), limited view without a reviews tab, so no review date could be read; each row searched with its Chinese name (zh) and/or its English name and the town. Maps' coverage of mainland China is thin: many listings carry no hours at all. A list result's hours line ('Open · Closes 10 PM', or 'Open now', which Maps shows only when it holds the place's hours) counted as a current listing. Where Maps could not settle a row, one web search (snippets only, pages not opened) was made for it.",
-  "confirmed": [],
-  "kept_without_ok": [
+  "kind": "eats + sights",
+  "checked": "2026-11-23",
+  "rule": "A new row needs a page dated 2025–2026 that names it and carries a copied sentence (scripts/library-check.cjs), then a map check: ok only when the map shows the place at that address, not closed, with a review dated within the last six months. Google Maps barely covers mainland China, so each place was checked on Baidu Maps (map.baidu.com, no sign-in; Amap asks for a Chinese phone number to sign in, so it was not used). A place no map could find at the page's address was left out.",
+  "agents": "four Haiku agents (sit-down restaurants · quick bites and cafés · children and rainy days · landmarks), five web searches each; 44 rows offered, 39 passed library-check.cjs, 16 went in",
+  "added": [
     {
-      "name": "Wenshu Monastery Vegetarian Restaurant",
-      "src": "Google Maps search (headless Chromium, 2026-11-23); web search (2026-11-23, snippets only)",
-      "evidence": "place page '文殊院素斋', 15 Wenshuyuan St, M3FF+H6 Qingyang — no hours shown. A web search found HappyCow (hours 10:30–19:30, undated page, reviews to 2025-11) and 2026 Sina articles about the temple's vegetarian buffet — aggregator pieces, not a current listing"
+      "name": "Chunyang Guan",
+      "kind": "eat",
+      "src": "https://snoutandseek.com/chengdu-city-walk-the-truly-delicious-small-eateries-around-kuanzhai-alley/",
+      "date": "2026-06",
+      "quote": "Fish fragrant pork rib noodles is their famous dish and loved by many locals and tourists.",
+      "map": "Baidu Maps 纯阳馆鱼香排骨面(吉祥街店), 吉祥街8号附2号, 250 reviews, newest 2026-10-17; Google Maps also open, a review a month ago"
     },
     {
-      "name": "Nuorilang Restaurant",
-      "src": "Google Maps search (headless Chromium, 2026-11-23); web search (2026-11-23, snippets only)",
-      "evidence": "place page 'Nuorilang Restaurant 诺日朗餐厅', 九寨沟景区 — no hours shown. A web search found only a 2026 aggregator guide (citiesinsider) naming the Nuorilang visitor centre buffet"
+      "name": "Chongqing Blanket Noodles",
+      "kind": "eat",
+      "src": "https://snoutandseek.com/chengdu-city-walk-the-truly-delicious-small-eateries-around-kuanzhai-alley/",
+      "date": "2026-06",
+      "quote": "Blanket noodles are very different from ordinary Chinese noodles.",
+      "map": "Baidu Maps 重庆铺盖面(四道街店), 长顺下街119号, newest reviews 2026-10-11 (not on Google Maps)"
     },
     {
-      "name": "Gongting Pastry Shop",
-      "src": "Google Maps search (headless Chromium, 2026-11-23)",
-      "evidence": "list result 'Gongting Cake', bakery, 酱园公所街56号 (the row's street) — no hours shown"
+      "name": "Dan Dumplings",
+      "kind": "eat",
+      "src": "https://snoutandseek.com/chengdu-city-walk-the-truly-delicious-small-eateries-around-kuanzhai-alley/",
+      "date": "2026-06",
+      "quote": "I particularly recommend the non-spicy dipping sauce.",
+      "map": "Baidu Maps 但水饺, 过街楼街46号之附4-5室, newest reviews 2026-09-20 and 2026-09-03"
+    },
+    {
+      "name": "He Dumplings",
+      "kind": "eat",
+      "src": "https://snoutandseek.com/chengdu-city-walk-the-truly-delicious-small-eateries-around-kuanzhai-alley/",
+      "date": "2026-06",
+      "quote": "Even the non-spicy version is excellent.",
+      "map": "Baidu Maps 贺水饺, 焦家巷13号附1号, newest reviews 2026-10-24 and 2026-09-24 (rating 2.3 of 5)"
+    },
+    {
+      "name": "Zha Zha Noodles",
+      "kind": "eat",
+      "src": "https://snoutandseek.com/chengdu-city-walk-the-truly-delicious-small-eateries-around-kuanzhai-alley/",
+      "date": "2026-06",
+      "quote": "The restaurant on Changshun Lower Street has been operating for over twenty years.",
+      "map": "Baidu Maps 查渣面(宽窄巷子长顺店), 长顺下街65号附3号, newest reviews 2026-11-11 and 2026-10-12"
+    },
+    {
+      "name": "Zhang Laowu Liangfen",
+      "kind": "eat",
+      "src": "https://snoutandseek.com/chengdu-city-walk-the-truly-delicious-small-eateries-around-kuanzhai-alley/",
+      "date": "2026-06",
+      "quote": "Zhang Laowu Liangfen is an excellent choice.",
+      "map": "Baidu Maps 张老五凉粉店(槐树街店), 槐树街33-附1号, newest reviews 2026-09-25"
+    },
+    {
+      "name": "Xiao Ming Tang Dandan Noodles",
+      "kind": "eat",
+      "src": "https://chengdutrip.com/chengdu-family-food-guide-5-kid-friendly-sichuan-restaurants-that-are-not-spicy/",
+      "date": "2026-01",
+      "quote": "The shop is small but efficient; waiting time is usually under 10 minutes.",
+      "map": "Baidu Maps 小名堂担担甜水面(东城根上街店), 东城根上街13号, newest reviews 2026-09-23 and 2026-09-15"
+    },
+    {
+      "name": "He Ji Egg Cakes",
+      "kind": "eat",
+      "src": "https://chengdutrip.com/chengdu-family-food-guide-5-kid-friendly-sichuan-restaurants-that-are-not-spicy/",
+      "date": "2026-01",
+      "quote": "The cakes are crispy outside, soft inside, and easy for kids to hold.",
+      "map": "Baidu Maps 贺记蛋烘糕(文庙西街店), 文庙西街1号附8号, newest reviews 2026-10-27, 2026-10-26 (Google Maps newest a year old)"
+    },
+    {
+      "name": "Nanchong Taste",
+      "kind": "eat",
+      "src": "https://urbanchinatravelogue.com/chengdu-street-food-heritage-snacks/",
+      "date": "2026-03",
+      "quote": "As local as it gets.",
+      "map": "Baidu Maps 南充味道·正宗川北凉粉顺庆米粉, 洗面桥街19号, newest reviews 2026-10-30 and 2026-10-11"
+    },
+    {
+      "name": "Mi Xun Teahouse",
+      "kind": "eat",
+      "src": "https://sg.trip.com/guide/food/what-to-eat-in-chengdu.html",
+      "date": "2026-10",
+      "quote": "Soft guzheng music floated through the bamboo-lined space",
+      "map": "Baidu Maps 谧寻茶室(成都居舍店), 笔帖式街81号, newest reviews 2026-10-18; Google Maps a review two weeks ago"
+    },
+    {
+      "name": "Mount Qingcheng",
+      "kind": "sight",
+      "src": "https://www.chinahighlights.com/chengdu/attraction/qingcheng-mountain.htm",
+      "date": "2025-12",
+      "quote": "Mount Qingcheng is divided into two areas: the Front Mountain for cultural sites, and the Back Mountain for natural scenery.",
+      "map": "Google Maps Qingcheng Shan, reviews two and three months ago"
+    },
+    {
+      "name": "Wuhou Shrine",
+      "kind": "sight",
+      "src": "https://www.womensweekly.com.sg/parenting/things-to-do-chengdu-kids",
+      "date": "2025-02",
+      "quote": "Wuhou Shrine is a peaceful retreat where nature, culture, and storytelling come together in the heart of Chengdu.",
+      "map": "Baidu Maps 成都武侯祠博物馆, 武侯祠大街231号, newest reviews 2026-11-04; Google Maps 1,131 reviews"
+    },
+    {
+      "name": "Jiaozi Park",
+      "kind": "sight",
+      "src": "https://www.babagoeschina.com/chengdu-with-kids/",
+      "date": "2026-04",
+      "quote": "Jiaozi Park with views of the Twin Towers",
+      "map": "Baidu Maps 交子公园, newest reviews 2026-11-03 (a review's '闭馆' is a museum nearby closed on Mondays, not the park)"
+    },
+    {
+      "name": "Super Neobio",
+      "kind": "sight",
+      "src": "https://www.littledayout.com/chengdu-global-center-playgrounds-china-travel/",
+      "date": "2026-02",
+      "quote": "This role-play city allowed children to rotate through different occupations",
+      "map": "Baidu Maps 超级奈尔宝·儿童乐园(全球旗舰·环球中心店), newest reviews 2026-10-08"
+    },
+    {
+      "name": "Chengdu Science Fiction Museum",
+      "kind": "sight",
+      "src": "https://view.inews.qq.com/a/20260807A0FPP300",
+      "date": "2026-08",
+      "quote": "成都科幻馆漂浮在菁蓉湖畔",
+      "map": "Baidu Maps 成都科幻馆, 科幻大道596号, open Tuesday to Sunday, newest reviews 2026-11-10 (rating 2.0 of 5)"
+    },
+    {
+      "name": "Chengdu Xin Zhihui Music Museum",
+      "kind": "sight",
+      "src": "https://view.inews.qq.com/a/20260807A0FPP300",
+      "date": "2026-08",
+      "quote": "成都芯智慧音乐博物馆占地",
+      "map": "Baidu Maps 成都芯智慧音乐博物馆, 国芯大道399号, open Tuesday to Sunday, newest reviews 2026-09-30"
     }
   ],
-  "removed": []
+  "left_out": [
+    {
+      "name": "Paradise Island Water Park (天堂岛海洋乐园)",
+      "why": "Baidu Maps marks it 暂停开放 (temporarily closed)"
+    },
+    {
+      "name": "Grandma's Home, Lao Chengdu noodles",
+      "why": "only source restaurantsforkings.com, refused by docs/LIBRARY-AGENTS.md"
+    },
+    {
+      "name": "Box 82 Secret Dumplings, Azules Gelato, The Sense",
+      "why": "no map found the place"
+    },
+    {
+      "name": "Lan's Patisserie",
+      "why": "Baidu's LANLIZI PATISSERIE is at another address (Tianfu 2nd Street), not Taikoo Li"
+    },
+    {
+      "name": "Yun Coffee",
+      "why": "Google Maps lists 云也咖啡 at 35 Renhou Street with no review; Baidu's 云也咖啡 is elsewhere"
+    },
+    {
+      "name": "Miracle Desert, Fairy Forest, Cave Discovery (Global Center)",
+      "why": "neither map lists them"
+    },
+    {
+      "name": "Neobio Family Center",
+      "why": "same hall as Super Neobio; one row"
+    },
+    {
+      "name": "Kids Winshare Plus (文轩儿童主题书店)",
+      "why": "Baidu lists it with no review — not confirmed"
+    },
+    {
+      "name": "meland club, Pupurrazi Reptile Museum",
+      "why": "no map listing at the page's address"
+    },
+    {
+      "name": "Star Legend",
+      "why": "Baidu has other branches, none at Tianfu Joy City as the page says"
+    },
+    {
+      "name": "Sunac Water and Snow World",
+      "why": "the page's name and address did not match one listing (融创雪乐园 / 热雪奇迹)"
+    },
+    {
+      "name": "Fangsuo Commune Bookstore",
+      "why": "open (Baidu, reviews 2026-10-28) but the page only names it beside Taikoo Li — no facts to write a row"
+    },
+    {
+      "name": "Taikoo Li, Chunxi Road, Chengdu Financial Center Twin Towers",
+      "why": "a mall, a shopping street, an office tower (the towers' light show is the Jiaozi Park tip)"
+    },
+    {
+      "name": "Peppa Pig Restaurant",
+      "why": "a restaurant, not a thing to do"
+    },
+    {
+      "name": "Quanzhen Temple, Wudongtian & Tianshi Cave",
+      "why": "parts of Mount Qingcheng, which has its own row"
+    },
+    {
+      "name": "Qingyang Gongyuan Morning Market",
+      "why": "an informal market with one source; not checked on a map"
+    },
+    {
+      "name": "Cuiying Lake, Shufeng Yayun opera, Shuangliu butterfly museum",
+      "why": "failed library-check.cjs (quote not on page / page undated)"
+    }
+  ],
+  "estimates": "The things-to-do format requires ages, hours, indoors and pram for every row. They are read from each page's description where it says so; otherwise they are the reviewer's estimate. No price, opening hour or age band was written that a page did not show, except the Monday closings, which Baidu Maps lists.",
+  "recheck_of_older_rows": {
+    "town": "cn-chengdu",
+    "kind": "eats",
+    "checked": "2026-11",
+    "rule": "A row gets ok only from a current listing, its own site or recent reviews with nothing saying closed (docs/EATS.md). A row is taken out when a search could not find the place at all or the sources disagree; a place found but not freshly confirmed stays without ok.",
+    "scope": "the 3 rows without ok; nothing else in the town was re-checked",
+    "how": "Google Maps opened in headless Chromium (2026-11-23), limited view without a reviews tab, so no review date could be read; each row searched with its Chinese name (zh) and/or its English name and the town. Maps' coverage of mainland China is thin: many listings carry no hours at all. A list result's hours line ('Open · Closes 10 PM', or 'Open now', which Maps shows only when it holds the place's hours) counted as a current listing. Where Maps could not settle a row, one web search (snippets only, pages not opened) was made for it.",
+    "confirmed": [],
+    "kept_without_ok": [
+      {
+        "name": "Wenshu Monastery Vegetarian Restaurant",
+        "src": "Google Maps search (headless Chromium, 2026-11-23); web search (2026-11-23, snippets only)",
+        "evidence": "place page '文殊院素斋', 15 Wenshuyuan St, M3FF+H6 Qingyang — no hours shown. A web search found HappyCow (hours 10:30–19:30, undated page, reviews to 2025-11) and 2026 Sina articles about the temple's vegetarian buffet — aggregator pieces, not a current listing"
+      },
+      {
+        "name": "Nuorilang Restaurant",
+        "src": "Google Maps search (headless Chromium, 2026-11-23); web search (2026-11-23, snippets only)",
+        "evidence": "place page 'Nuorilang Restaurant 诺日朗餐厅', 九寨沟景区 — no hours shown. A web search found only a 2026 aggregator guide (citiesinsider) naming the Nuorilang visitor centre buffet"
+      },
+      {
+        "name": "Gongting Pastry Shop",
+        "src": "Google Maps search (headless Chromium, 2026-11-23)",
+        "evidence": "list result 'Gongting Cake', bakery, 酱园公所街56号 (the row's street) — no hours shown"
+      }
+    ],
+    "removed": []
+  }
 }

@@ -1,66 +1,32 @@
 {
   "town": "ph-bohol",
-  "kind": "eats",
-  "checked": "2026-11",
-  "rule": "A row gets ok only from a current listing, its own site or recent reviews with nothing saying closed (docs/EATS.md). A row is taken out when a search could not find the place at all or the sources disagree; a place found but not freshly confirmed stays without ok.",
-  "scope": "the 8 rows without ok; rows already carrying ok were not re-checked",
-  "how": "Google Maps opened in headless Chromium (2026-11-23), limited view without a reviews tab, so no review date could be read; searched in English and, for Taiwan, in Chinese (the row's zh)",
-  "confirmed": [
+  "kind": "eats + sights",
+  "checked": "2026-11-23",
+  "rule": "library-check.cjs, then the Google Maps Reviews tab sorted by newest: ok only when not marked closed, with a review from the last six months, and the map's name matching the page's.",
+  "agents": "one Haiku agent; 6 rows offered, 6 passed library-check.cjs, 2 went in",
+  "added": [
     {
-      "name": "Giuseppe Pizzeria & Sicilian Roast",
-      "src": "https://www.google.com/maps/search/Giuseppe+Pizzeria+Panglao+Bohol",
-      "page_name": "Giuseppe Pizzeria & Sicilian Roast Bohol",
-      "evidence": "Fonacier Circumferential Road, Tawala, Panglao · HQ5F+5X · 'Open · Closes 10 PM'",
-      "ok": "2026-11"
+      "name": "Tavolata by Abaca",
+      "src": "https://3d-universal.com/en/blogs/dining-with-kids-in-cebu-family-friendly-restaurants.html",
+      "date": "2025-07",
+      "map": "Google Maps 'Tavolata® Design Center of Cebu', 423 reviews, newest 'a week ago'"
     },
     {
-      "name": "Rico's Lechon",
-      "src": "https://www.google.com/maps/search/Rico's+Lechon+Axis+Entertainment+Avenue+Cebu",
-      "page_name": "Rico's Lechon",
-      "evidence": "N Escario St, Cebu City (list result beside Axis Mall at Vibo Place, 40 N Escario St) · 'Open · Closes 9 PM'",
-      "ok": "2026-11"
-    },
-    {
-      "name": "Cafe Laguna",
-      "src": "https://www.google.com/maps/search/Cafe+Laguna+Ayala+Center+Cebu",
-      "page_name": "Café Laguna",
-      "evidence": "Level 1, South Entrance, Ayala Center Cebu · 'Open · Closes 9 PM' (q updated; 'Laguna Garden Café' at The Terraces is another restaurant)",
-      "ok": "2026-11"
-    },
-    {
-      "name": "Larsian sa Fuente",
-      "src": "https://www.google.com/maps/search/Larsian+sa+Fuente+Cebu",
-      "page_name": "Larsian Bbq (fuente osmeña)",
-      "evidence": "Doña Luisa Bldg, in Sugbo Sentro - Fuente Osmeña, Cebu City · 8V5R+QP · 'Open · Closes 3 AM'",
-      "ok": "2026-11"
-    },
-    {
-      "name": "Sugbo Mercado",
-      "src": "https://www.google.com/maps/search/Sugbo+Mercado+IT+Park+Cebu",
-      "page_name": "Sugbo Mercado",
-      "evidence": "Cebu IT Park, Jose Maria del Mar Ave · 8WJ5+FG · night market 'Closed · Opens 4 PM'",
-      "ok": "2026-11"
-    },
-    {
-      "name": "Jojie's Painitang Bol-anon",
-      "src": "https://www.google.com/maps/search/Jojie's+Painitang+Bol-anon+Tagbilaran",
-      "page_name": "Jojie’s Painitang Bol-anon",
-      "evidence": "Lower Ground 05-06, Island City Mall, Rajah Sikatuna Ave, Tagbilaran · 'Open · Closes 9 PM' (q updated to the mall)",
-      "ok": "2026-11"
-    },
-    {
-      "name": "Abaca Baking Company",
-      "src": "https://www.google.com/maps/search/Abaca+Baking+Company+Crossroads+Banilad+Cebu",
-      "page_name": "Abaca Baking Company® (Restaurant) - Crossroads",
-      "evidence": "Crossroads, Banilad Rd, Cebu City · 8WH5+6W · 'Open · Closes 8 PM'",
-      "ok": "2026-11"
+      "name": "PlayMaze",
+      "src": "https://3d-universal.com/en/blogs/dining-with-kids-in-cebu-family-friendly-restaurants.html",
+      "date": "2025-07",
+      "map": "Google Maps 'Playmaze', 17 reviews, newest '4 months ago'"
     }
   ],
-  "kept_without_ok": [],
-  "removed": [
+  "left_out": [
     {
-      "name": "Zubuchon",
-      "reason": "Maps: 'Zubuchon', One Mango Mall, General Maxilom Ave, Cebu City · 8V6W+4H · 'Permanently closed'"
+      "name": "Jollibee, Shakey’s Pizza, Golden Cowrie",
+      "why": "chains: the page names no single branch"
+    },
+    {
+      "name": "La Vie Parisienne",
+      "why": "the map's match is named 'La Parisienne Cebu'"
     }
-  ]
+  ],
+  "estimates": "Ages ([1,1,1,1]) and visit hours are placeholders; no page printed them."
 }

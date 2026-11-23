@@ -1,26 +1,104 @@
 {
   "town": "id-lombok",
-  "kind": "eats",
-  "checked": "2026-11",
-  "rule": "A row gets ok only from a current listing, its own site or recent reviews with nothing saying closed (docs/EATS.md). A row is taken out when a search could not find the place at all or the sources disagree; a place found but not freshly confirmed stays without ok.",
-  "scope": "the 2 rows without ok; rows already carrying ok were not re-checked",
-  "how": "Google Maps opened in headless Chromium (2026-11-23), limited view without a reviews tab, so no review date could be read; searched in English and, for Taiwan, in Chinese (the row's zh)",
-  "confirmed": [
+  "kind": "eats + sights",
+  "checked": "2026-11-23",
+  "rule": "library-check.cjs, then the Google Maps Reviews tab sorted by newest: ok only when not marked closed, with a review from the last six months, and the map's name matching the page's.",
+  "agents": "one Haiku agent; 20 rows offered, 20 passed library-check.cjs, 12 went in",
+  "added": [
     {
-      "name": "Square Restaurant",
-      "src": "https://www.google.com/maps/search/Square+Restaurant+Senggigi+Lombok",
-      "page_name": "Square Restaurant & Lounge",
-      "evidence": "KM.8, Jl. Raya Senggigi, Senggigi Square No.10 Blok B · G23X+4H · 'Closed · Opens 2 PM'",
-      "ok": "2026-11"
+      "name": "The Well",
+      "src": "https://www.girlgonecoconuts.com/asia-travel/restaurants-kuta-lombok",
+      "date": "2026-07",
+      "map": "Google Maps 'The Well Kuta Lombok', 798 reviews, newest '3 weeks ago'"
     },
     {
-      "name": "Gili Gelato",
-      "src": "https://www.google.com/maps/search/Gili+Gelato+Gili+Trawangan",
-      "page_name": "gili gelato",
-      "evidence": "Ice cream shop, Jl. Pantai Gili Trawangan (list result) · 'Open · Closes 11 PM'",
-      "ok": "2026-11"
+      "name": "Anchor Cafe",
+      "src": "https://www.vagababy.id/post/top-family-friendly-restaurant-in-lombok",
+      "date": "2025-07",
+      "map": "Google Maps 'Anchor Café', 168 reviews, newest '5 days ago'"
+    },
+    {
+      "name": "Skatepark Tribe",
+      "src": "https://www.reiskoe.nl/en/lombok-with-kids/",
+      "date": "2025-11",
+      "map": "Google Maps 'Tribe Surf City - Skatepark and Restaurant', 454 reviews, newest '2 hours ago'"
+    },
+    {
+      "name": "Bara",
+      "src": "https://www.reiskoe.nl/en/lombok-with-kids/",
+      "date": "2025-11",
+      "map": "Google Maps 'BARA', 1,672 reviews, newest '3 days ago'"
+    },
+    {
+      "name": "Munchies",
+      "src": "https://www.girlgonecoconuts.com/asia-travel/restaurants-kuta-lombok",
+      "date": "2026-07",
+      "map": "Google Maps 'MUNCHIES', 848 reviews, newest '1 day ago'"
+    },
+    {
+      "name": "Ashtari",
+      "src": "https://www.girlgonecoconuts.com/asia-travel/restaurants-kuta-lombok",
+      "date": "2026-07",
+      "map": "Google Maps 'Ashtari | Slow Food Restaurant Lombok', 972 reviews, newest '17 hours ago'"
+    },
+    {
+      "name": "Warung Wajan",
+      "src": "https://www.thegilis.com/gili-trawangan/restaurants/",
+      "date": "2026-07",
+      "map": "Google Maps 'WAJAN Warung Jaman Now', 1,000 reviews, newest '2 days ago'"
+    },
+    {
+      "name": "Limo Warung",
+      "src": "https://www.thegilis.com/gili-trawangan/restaurants/",
+      "date": "2026-07",
+      "map": "Google Maps 'Limo', 225 reviews, newest '6 days ago'"
+    },
+    {
+      "name": "Coffee Corner",
+      "src": "https://www.thegilis.com/gili-trawangan/restaurants/",
+      "date": "2026-07",
+      "map": "Google Maps 130 reviews, newest 'a week ago'"
+    },
+    {
+      "name": "Gili Teak",
+      "src": "https://www.thegilis.com/gili-trawangan/restaurants/",
+      "date": "2026-07",
+      "map": "Google Maps 'Gili Teak Resort', 2,207 reviews, newest '3 days ago'"
+    },
+    {
+      "name": "Gili Nanggu",
+      "src": "https://www.reiskoe.nl/en/lombok-with-kids/",
+      "date": "2025-11",
+      "map": "Google Maps 'Pulau Gilinanggu', 317 reviews, newest '4 days ago'"
+    },
+    {
+      "name": "YIN Jewellery",
+      "src": "https://www.thegilis.com/gili-trawangan/families/",
+      "date": "2026-07",
+      "map": "Google Maps 'Yin Jewelry for the Soul - Silver Making Class', 93 reviews, newest '4 weeks ago'"
     }
   ],
-  "kept_without_ok": [],
-  "removed": []
+  "left_out": [
+    {
+      "name": "Strawberry Park",
+      "why": "the map has no place by that name; the nearest is a differently named strawberry farm in Sembalun"
+    },
+    {
+      "name": "Benang Stokel, Mayung Putek, Jukut, Tiu Tedja",
+      "why": "the page only lists their names in one sentence; nothing to write what or why from"
+    },
+    {
+      "name": "Mataram Mall",
+      "why": "a whole shopping mall, not a place for children of its own"
+    },
+    {
+      "name": "Senaru",
+      "why": "a village, the page only says the volcano can be seen from it"
+    },
+    {
+      "name": "Gili Trawangan",
+      "why": "a whole island, not one place"
+    }
+  ],
+  "estimates": "Ages ([1,1,1,1]) and visit hours are placeholders, except YIN Jewellery's ages (the page says about ten and up) and Gili Nanggu's day trip."
 }

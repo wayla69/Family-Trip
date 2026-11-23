@@ -237,3 +237,42 @@ Kee, Sun Hang Yuen, MD Cafe) and four family places from Cathay Pacific's 2026 c
 MeokBang BBQ Kidzone, Tree Café, Yakiniku Tabeyo). Left out: Transformers: The Ark (closed in Hong Kong, Feb 2025), Smoke and Barrel
 (moved, the new address not confirmed), Baumhaus (nothing current), Pizza Express (no one branch). In the app the Hong Kong book's own
 28 places and the Macau book part's 188 sit beside this list (`syncBooks`, src `book`).
+
+### Chengdu, 23 Nov 2026
+One town a PR. Four agents, `library-check.cjs`, then a map check for every row: `ok` only when the map shows the place at the page's address, not closed, with a review from the last six months. Google Maps knows little of mainland China, so Chinese towns are checked on Baidu Maps (Amap asks for a Chinese phone number to sign in). +10 Chengdu: Chunyang Guan, Chongqing Blanket Noodles, Dan Dumplings, He Dumplings, Zha Zha Noodles, Zhang Laowu Liangfen, Xiao Ming Tang, He Ji Egg Cakes, Nanchong Taste, Mi Xun Teahouse. Out: two rows from restaurantsforkings.com, four cafés no map could place at the page's address. Proof in `docs/library-proof/cn-chengdu.json`.
+
+### Xi’an, 23 Nov 2026
+batch-01 of docs/library-briefs. Four agents, `library-check.cjs`, then Baidu Maps for every row (`ok` only at the page's address, not closed, a review from the last six months; a price marked "Baidu Maps" is the map's spend per person). +3: Haidilao Wanhecheng (its children's dining area for ages 3–12), Ruixiangyuan roujiamo, Li Weiyi meatball soup. Out: two rows from a machine-made GitHub blog, twelve shops whose guide page the checker could not read. Proof in `docs/library-proof/cn-xian.json`.
+
+### Yunnan, 23 Nov 2026
+batch-01 of docs/library-briefs, checked on Baidu Maps like Xi’an. +7: Lao Dian Shanzhai, Dashanqing Yun Xiaoguan, Ershiliu Jiaren (Kunming); Nanzhao Dong Xiaopang, Jixiang Hong, Jinhua Xiao Amei (Dali); Lan Yunnan Bistro (Lijiang). Out: Yunxueli (no Shuhe branch on the map). Proof in `docs/library-proof/cn-yunnan.json`.
+
+### Đà Lạt, 23 Nov 2026
+batch-01 of docs/library-briefs. Agents, `library-check.cjs`, then the Google Maps Reviews tab for every row (`ok` only when not marked closed and with a review from the last six months). +2: Rừng Thông Mơ Farm & Bistro, Léguda. Out: thirteen bánh căn and noodle shops whose list pages carry no date. Proof in `docs/library-proof/vn-dalat.json`.
+
+### Huế, 23 Nov 2026
+batch-02 of docs/library-briefs, checked on Google Maps like Đà Lạt. +1: Tịnh Gia Viên. Out: eleven bún bò shops from an undated list, Hồng Mai (the map's shop sells bánh khoái), O Xáo (not on the map), Ông Táo (no recent reviews). Proof in `docs/library-proof/vn-hue.json`.
+
+### Phú Quốc, 23 Nov 2026
+batch-02 of docs/library-briefs. +5: Clubhouse at Premier Residences (a pizza class for children), Paradiso, Huong Bien, Hủ Tiếu Mực Tư Hường, Mai Hương Beachfront. Out: one name the map gives to another restaurant. Proof in `docs/library-proof/vn-phuquoc.json`.
+
+### Kota Kinabalu (Borneo), 23 Nov 2026
+batch-02 of docs/library-briefs. +7: three children's cafés with play areas (Tiny Palm, Little Dino, Bear Factory), Happy Place, Alu-Alu Kitchen, Tana Borneo (a slide in the dining room), Todak hawker centre. Out: two cafés with no recent reviews. Proof in `docs/library-proof/my-borneo.json`.
+
+### Yogyakarta, 23 Nov 2026
+batch-03 of docs/library-briefs. +9 restaurants with something for children (a playground, a pool, fish to feed, a stream): De Tropen, Ciblon, Champa, Isvara Riverside, Mang Engking (Soragan), Nanamia (south), Otadan, Watoe Gadjah, The Westlake. Out: Joglo Resodinomo (the map's place is elsewhere). Proof in `docs/library-proof/id-yogyakarta.json`.
+
+### Penang, 23 Nov 2026
+batch-03 of docs/library-briefs. +10: Cocoon+ Kids Cafe and 1.618 Roastery Andaman (play areas), Manaf Nasi Ayam (on the beach), Fu Er Dai, Red Garden, Urai Thai Kitchen, and four food courts (The Jetty, Long Beach, Esplanade, Gurney Food Hall). Proof in `docs/library-proof/my-penang.json`.
+
+### Lombok and the Gilis, 23 Nov 2026
+batch-03 of docs/library-briefs. +10: in Kuta, The Well and Anchor Café (play areas), Skatepark Tribe (skate lessons for children), Bara (a pool), Munchies, Ashtari; on Gili Trawangan, Warung Wajan, Limo, Coffee Corner, Gili Teak. Proof in `docs/library-proof/id-lombok.json`.
+
+### Luang Prabang, 23 Nov 2026
+batch-04 of docs/library-briefs. +3: L'Elephant, BOUANG Asian Eatery, SACKy @ Blue Lagoon. Out: Wat Xieng Thong (no page date). Proof in `docs/library-proof/la-luangprabang.json`.
+
+### Bohol and Cebu, 23 Nov 2026
+batch-04 of docs/library-briefs. +1: Tavolata (Cebu). Out: three chains with no branch named, one name the map gives differently. Proof in `docs/library-proof/ph-bohol.json`.
+
+### Ulaanbaatar, 23 Nov 2026
+batch-30 of docs/library-briefs. +3: Altan Gadas, Arak Yak House, Mongolian's Restaurant (Shangri-La Mall). Proof in `docs/library-proof/mn-ulaanbaatar.json`.
