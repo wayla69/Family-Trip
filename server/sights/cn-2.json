@@ -1703,7 +1703,311 @@
       {"name":{"en":"Xi'an Museum","th":"พิพิธภัณฑ์ซีอาน"},"kind":"museum","area":{"en":"next to the Small Wild Goose Pagoda","th":"ติดกับเจดีย์ห่านป่าเล็ก"},"what":{"en":"A smaller museum of city history, next to the Small Wild Goose Pagoda.","th":"พิพิธภัณฑ์ประวัติศาสตร์เมืองขนาดเล็ก ติดกับเจดีย์ห่านป่าเล็ก"},"why":{"en":"Smaller and far less crowded than the Shaanxi History Museum, the page says.","th":"เล็กกว่าและคนน้อยกว่าพิพิธภัณฑ์ประวัติศาสตร์ส่านซี ตามหน้าเว็บ"},"tip":{"en":"Reservation required; it goes well with the Small Wild Goose Pagoda for a half-day.","th":"ต้องจองล่วงหน้า เที่ยวคู่กับเจดีย์ห่านป่าเล็กได้ครึ่งวัน"},"ages":[0,1,2,2],"hrs":2,"io":"in","pram":"part","price":{"en":"Free entry","th":"ฟรีเข้าชม"},"book":"req","q":"Xi'an Museum, Small Wild Goose Pagoda, Xi'an","ok":"2026-11","src":"https://www.babagoeschina.com/xian-things-to-do/"},
       {"name":{"en":"Small Wild Goose Pagoda","th":"เจดีย์ห่านป่าเล็ก"},"kind":"culture","area":{"en":"a much quieter park, next to the Xi'an Museum","th":"สวนที่เงียบกว่ามาก ติดพิพิธภัณฑ์ซีอาน"},"what":{"en":"A pagoda built in 707 that has survived earthquakes which changed its shape.","th":"เจดีย์สร้างปี ค.ศ. 707 ที่ผ่านแผ่นดินไหวมาหลายครั้ง รูปทรงเปลี่ยนไปบ้าง"},"why":{"en":"A quiet park, good with the Xi'an Museum for a half-day combo, the page says.","th":"สวนเงียบ ดูคู่กับพิพิธภัณฑ์ซีอานได้ครึ่งวัน ตามหน้าเว็บ"},"ages":[1,2,2,2],"hrs":1,"io":"out","pram":"yes","price":{"en":"Free","th":"ฟรี"},"book":"none","q":"Small Wild Goose Pagoda, Xi'an","ok":"2026-11","src":"https://www.babagoeschina.com/xian-things-to-do/"},
       {"name":{"en":"Qujiang Ocean World","th":"ควนเจียงโอเชียนเวิลด์"},"kind":"aquarium","area":{"en":"Qujiang District","th":"เขตฉวี่เจียง"},"what":{"en":"A large aquarium and marine theme park with tropical fish, sharks, turtles and penguins.","th":"อควาเรียมและสวนสนุกทางทะเลขนาดใหญ่ มีปลาเขตร้อน ฉลาม เต่า และเพนกวิน"},"why":{"en":"A glass underwater tunnel gives a 360-degree view of sharks and rays, a change from historical sites.","th":"อุโมงค์ใต้น้ำกระจกให้มองฉลามและกระเบนได้รอบ 360 องศา ต่างจากสถานที่ประวัติศาสตร์"},"ages":[1,2,2,2],"hrs":3,"io":"in","pram":"yes","price":{"en":"Check the price","th":"เช็กราคาก่อนไป"},"book":"none","q":"Qujiang Ocean World, Qujiang District, Xi'an","ok":"2026-11","src":"https://www.reiskoe.nl/en/xian-with-kids/"},
-      {"name":{"en":"Stele Forest (Beilin Museum)","th":"ป่าศิลาจารึก (พิพิธภัณฑ์เป่ยหลิน)"},"kind":"museum","area":{"en":"Inside the old city walls","th":"ในกำแพงเมืองเก่า"},"what":{"en":"More than 11,000 ancient stone tablets and steles, the oldest over 2,000 years old.","th":"ศิลาจารึกและแผ่นหินโบราณกว่า 11,000 ชิ้น บางชิ้นเก่ากว่า 2,000 ปี"},"why":{"en":"The largest collection of ancient stone tablets in China, the page says.","th":"เป็นคอลเลกชันแผ่นหินโบราณที่ใหญ่ที่สุดในจีน ตามหน้าเว็บ"},"ages":[0,1,2,2],"hrs":1.5,"io":"in","pram":"part","price":{"en":"Check the price","th":"เช็กราคาก่อนไป"},"book":"none","q":"Stele Forest (Beilin Museum), Xi'an","ok":"2026-11","src":"https://www.babagoeschina.com/xian-things-to-do/"}
+      {"name":{"en":"Stele Forest (Beilin Museum)","th":"ป่าศิลาจารึก (พิพิธภัณฑ์เป่ยหลิน)"},"kind":"museum","area":{"en":"Inside the old city walls","th":"ในกำแพงเมืองเก่า"},"what":{"en":"More than 11,000 ancient stone tablets and steles, the oldest over 2,000 years old.","th":"ศิลาจารึกและแผ่นหินโบราณกว่า 11,000 ชิ้น บางชิ้นเก่ากว่า 2,000 ปี"},"why":{"en":"The largest collection of ancient stone tablets in China, the page says.","th":"เป็นคอลเลกชันแผ่นหินโบราณที่ใหญ่ที่สุดในจีน ตามหน้าเว็บ"},"ages":[0,1,2,2],"hrs":1.5,"io":"in","pram":"part","price":{"en":"Check the price","th":"เช็กราคาก่อนไป"},"book":"none","q":"Stele Forest (Beilin Museum), Xi'an","ok":"2026-11","src":"https://www.babagoeschina.com/xian-things-to-do/"},
+        {
+          "local": "陕西科技馆",
+          "name": {
+            "th": "พิพิธภัณฑ์วิทยาศาสตร์และเทคโนโลยีส่านซี",
+            "en": "Shaanxi Science and Technology Museum"
+          },
+          "kind": "museumkid",
+          "area": {
+            "th": "ถนนตงซิน เขตซินเฉิง",
+            "en": "Dongxin Street, Xincheng District"
+          },
+          "what": {
+            "th": "พิพิธภัณฑ์วิทยาศาสตร์ มีห้องนิทรรศการวิทยาศาสตร์แบบลงมือทำ",
+            "en": "A science museum with permanent hands-on science galleries"
+          },
+          "why": {
+            "th": "ที่ให้ครอบครัวเรียนรู้วิทยาศาสตร์ด้วยกันแบบลงมือเล่น",
+            "en": "An interactive place for families to learn science together"
+          },
+          "tip": {
+            "th": "เปิดวันพุธถึงอาทิตย์",
+            "en": "Open Wednesday to Sunday"
+          },
+          "ages": [
+            1,
+            1,
+            1,
+            1
+          ],
+          "hrs": 2,
+          "io": "in",
+          "pram": "part",
+          "price": {
+            "th": "เช็กราคาก่อนไป",
+            "en": "Check the price"
+          },
+          "book": "none",
+          "q": "陕西科技馆, 东新街252号, 新城区, 西安",
+          "src": "https://m.sohu.com/a/992992811_121106869/",
+          "ok": "2026-11"
+        },
+        {
+          "local": "西安美术馆",
+          "name": {
+            "th": "พิพิธภัณฑ์ศิลปะซีอาน",
+            "en": "Xi’an Art Museum"
+          },
+          "kind": "museum",
+          "area": {
+            "th": "ลานเจินกวน ต้าถังปู้เย่เฉิง เขตเยี่ยนถ่า",
+            "en": "Zhenguan Square, Datang Everbright City, Yanta District"
+          },
+          "what": {
+            "th": "พิพิธภัณฑ์ศิลปะขนาดใหญ่ที่ลานเจินกวน ต้าถังปู้เย่เฉิง จัดนิทรรศการและแลกเปลี่ยนศิลปะ",
+            "en": "A large art museum on Zhenguan Square at Datang Everbright City, for art shows and exchanges"
+          },
+          "why": {
+            "th": "แวะในร่มติดต้าถังปู้เย่เฉิง เหมาะวันฝนตก",
+            "en": "An indoor stop next to Datang Everbright City for a rainy day"
+          },
+          "tip": {
+            "th": "จองล่วงหน้า เปิดถึงค่ำ ปิดวันจันทร์",
+            "en": "Book ahead; open late into the evening, closed on Mondays"
+          },
+          "ages": [
+            1,
+            1,
+            1,
+            1
+          ],
+          "hrs": 1.5,
+          "io": "in",
+          "pram": "part",
+          "price": {
+            "th": "เช็กราคาก่อนไป",
+            "en": "Check the price"
+          },
+          "book": "req",
+          "q": "西安美术馆, 雁南一路与雁塔南路交叉口, 雁塔区, 西安",
+          "src": "https://gs.ctrip.com/html5/you/sight/7/121293.html",
+          "ok": "2026-11"
+        },
+        {
+          "local": "汉景帝阳陵博物院",
+          "name": {
+            "th": "พิพิธภัณฑ์สุสานฮั่นหยางหลิง",
+            "en": "Han Yangling Museum"
+          },
+          "kind": "museumkid",
+          "area": {
+            "th": "ถนนสนามบิน เขตเว่ยเฉิง เสียนหยาง (ห่างตัวเมืองราว 20 กม.)",
+            "en": "Airport Road, Weicheng District, Xianyang (about 20 km from the city)"
+          },
+          "what": {
+            "th": "พิพิธภัณฑ์บนสุสานยุคฮั่นตะวันตก มองลงไปเห็นหลุมขุดค้น",
+            "en": "A museum over a Western Han tomb site, where you look down into the excavated pits"
+          },
+          "why": {
+            "th": "นอกจากชมของโบราณ เด็กๆ ได้ลองขุดค้นจำลอง",
+            "en": "Besides the finds, children can try a pretend archaeological dig"
+          },
+          "ages": [
+            1,
+            1,
+            1,
+            1
+          ],
+          "hrs": 2,
+          "io": "in",
+          "pram": "part",
+          "price": {
+            "th": "เช็กราคาก่อนไป",
+            "en": "Check the price"
+          },
+          "book": "none",
+          "q": "汉景帝阳陵博物院, 机场路东段, 渭城区, 咸阳",
+          "src": "https://www.163.com/dy/article/K4BCK5JU05568R6X.html",
+          "ok": "2026-11"
+        },
+        {
+          "local": "长安十二时辰主题街区",
+          "name": {
+            "th": "ถนนธีมฉางอันสิบสองชั่วยาม",
+            "en": "Chang’an Twelve Hours Theme Street"
+          },
+          "kind": "show",
+          "area": {
+            "th": "ห้างม่านตี้ ถนนเยี่ยนหนานหนึ่ง ชวีเจียง",
+            "en": "Mandi Plaza, Yannan 1st Road, Qujiang"
+          },
+          "what": {
+            "th": "ถนนจำลองสมัยถังในร่ม มีตัวละครแต่งชุดพูดคุยกับผู้ชม และโชว์ละครเล็ก",
+            "en": "An indoor Tang-style street with costumed characters who talk with visitors and small theatre shows"
+          },
+          "why": {
+            "th": "เด็กๆ ใส่ชุดฮั่นฝูย้อนเวลาไปสมัยถังได้",
+            "en": "Children can wear hanfu and step back into the Tang dynasty"
+          },
+          "ages": [
+            1,
+            1,
+            1,
+            1
+          ],
+          "hrs": 2,
+          "io": "in",
+          "pram": "part",
+          "price": {
+            "th": "เช็กราคาก่อนไป",
+            "en": "Check the price"
+          },
+          "book": "none",
+          "q": "长安十二时辰主题街区, 雁南一路9号, 西安",
+          "src": "https://m.sohu.com/a/1021069170_122673000",
+          "ok": "2026-11"
+        },
+        {
+          "local": "哇塞快乐星球",
+          "name": {
+            "th": "หวาซ่าย แฮปปี้แพลเน็ต",
+            "en": "Wasai Happy Planet"
+          },
+          "kind": "museumkid",
+          "area": {
+            "th": "ถนนเว่ยหยาง เขตเว่ยหยาง",
+            "en": "Weiyang Road, Weiyang District"
+          },
+          "what": {
+            "th": "ห้องเทคโนโลยีภาพเสมือนสำหรับเด็ก มีห้องใต้ทะเลและโรงหนัง VR",
+            "en": "A children’s mixed-reality hall with an undersea room and a VR cinema"
+          },
+          "why": {
+            "th": "เด็กๆ สวมแว่นแล้วได้เจอเต่าทะเลและปะการังรอบตัว",
+            "en": "Children put on glasses and meet a sea turtle and coral in the room around them"
+          },
+          "ages": [
+            1,
+            1,
+            1,
+            1
+          ],
+          "hrs": 1.5,
+          "io": "in",
+          "pram": "part",
+          "price": {
+            "th": "เช็กราคาก่อนไป",
+            "en": "Check the price"
+          },
+          "book": "none",
+          "q": "哇塞快乐星球, 未央路145号, 未央区, 西安",
+          "src": "https://m.sohu.com/a/1021069170_122673000",
+          "ok": "2026-11"
+        },
+        {
+          "local": "华夏文旅西安度假区",
+          "name": {
+            "th": "รีสอร์ตหัวเซี่ยเหวินหลวี่ซีอาน",
+            "en": "Huaxia Wenlv Xi’an Resort"
+          },
+          "kind": "themepark",
+          "area": {
+            "th": "ถนนหัวเหวิน เขตป้าเฉียว",
+            "en": "Huawen Road, Baqiao District"
+          },
+          "what": {
+            "th": "รีสอร์ตวัฒนธรรม มีโชว์ สวนทะเล และสวนน้ำ",
+            "en": "A culture resort with a live show, an ocean park and a water park"
+          },
+          "why": {
+            "th": "สวนทะเลมีอุโมงค์กระจกให้ดูสัตว์ทะเล",
+            "en": "The ocean park has a glass tunnel to watch sea animals"
+          },
+          "ages": [
+            1,
+            1,
+            1,
+            1
+          ],
+          "hrs": 4,
+          "io": "both",
+          "pram": "part",
+          "price": {
+            "th": "เช็กราคาก่อนไป",
+            "en": "Check the price"
+          },
+          "book": "none",
+          "q": "华夏文旅西安度假区, 华文路1518号, 灞桥区, 西安",
+          "src": "https://m.sohu.com/a/1021069170_122673000",
+          "ok": "2026-11"
+        },
+        {
+          "local": "杜邑遗址公园",
+          "name": {
+            "th": "สวนโบราณสถานตู้อี้",
+            "en": "Duyi Ruins Park"
+          },
+          "kind": "park",
+          "area": {
+            "th": "ชวีเจียง เขตเยี่ยนถ่า",
+            "en": "Qujiang, Yanta District"
+          },
+          "what": {
+            "th": "สนามหญ้ากว้างใหญ่บนโบราณสถาน พ่อแม่เรียกว่า \"ทุ่งหญ้าน้อย\"",
+            "en": "Huge open lawns on an old site, called a “little grassland” by parents"
+          },
+          "why": {
+            "th": "มีที่ให้เล่นว่าว กางเต็นท์ วิ่งเล่นได้เต็มที่ จอดรถง่าย",
+            "en": "Room to fly kites, pitch a tent and run freely, with easy parking"
+          },
+          "ages": [
+            1,
+            1,
+            1,
+            1
+          ],
+          "hrs": 2,
+          "io": "out",
+          "pram": "part",
+          "price": {
+            "th": "ฟรี",
+            "en": "Free"
+          },
+          "book": "none",
+          "q": "杜邑遗址公园, 踏青路与登高路口, 雁塔区, 西安",
+          "src": "https://m.sohu.com/a/1021069170_122673000",
+          "ok": "2026-11"
+        },
+        {
+          "local": "西安浐灞国家湿地公园",
+          "name": {
+            "th": "สวนพื้นที่ชุ่มน้ำแห่งชาติฉ่านป้า",
+            "en": "Chanba National Wetland Park"
+          },
+          "kind": "nature",
+          "area": {
+            "th": "เขตนิเวศฉ่านป้า",
+            "en": "Chanba Ecological District"
+          },
+          "what": {
+            "th": "สวนพื้นที่ชุ่มน้ำขนาดใหญ่ มีทางเดินไม้สำหรับดูนก",
+            "en": "A large wetland park with a bird-watching boardwalk"
+          },
+          "why": {
+            "th": "วันหยุดมักมีกิจกรรมธรรมชาติฟรี เดินดูนก ให้อาหารปลาและเป็ด",
+            "en": "Free nature activities on many weekends; walk the bird boardwalk and feed the fish and ducks"
+          },
+          "ages": [
+            1,
+            1,
+            1,
+            1
+          ],
+          "hrs": 2,
+          "io": "out",
+          "pram": "part",
+          "price": {
+            "th": "ฟรี",
+            "en": "Free"
+          },
+          "book": "none",
+          "q": "西安浐灞国家湿地公园, 启源三路1号, 西安",
+          "src": "https://m.sohu.com/a/1021069170_122673000",
+          "ok": "2026-11"
+        }
     ]
     },
     {
