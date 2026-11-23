@@ -2910,6 +2910,359 @@
           "q": "Wat Prathat Doi Prachan, Lampang",
           "ok": "2026-11",
           "src": "https://www.ktc.co.th/article/travel-stories/thailand/th/attractions-lampang"
+        },
+        {
+          "local": "",
+          "ages": [
+            1,
+            1,
+            1,
+            1
+          ],
+          "hrs": 1,
+          "io": "both",
+          "pram": "part",
+          "price": {
+            "th": "เช็กราคาก่อนไป",
+            "en": "Check the price"
+          },
+          "book": "none",
+          "src": "https://www.grab.com/th/blog/%E0%B8%97%E0%B8%B5%E0%B9%88%E0%B9%80%E0%B8%97%E0%B8%B5%E0%B9%88%E0%B8%A2%E0%B8%A7%E0%B8%A5%E0%B8%B3%E0%B8%9B%E0%B8%B2%E0%B8%87/",
+          "name": {
+            "th": "วัดพระเจดีย์ซาวหลัง",
+            "en": "Wat Phra Chedi Sao Lang"
+          },
+          "kind": "culture",
+          "area": {
+            "th": "ต้นธงชัย ลำปาง",
+            "en": "Ton Thong Chai, Lampang"
+          },
+          "what": {
+            "th": "วัดที่มีเจดีย์ยี่สิบองค์ในลานเดียว",
+            "en": "A temple with twenty pagodas in one courtyard"
+          },
+          "why": {
+            "th": "พระพุทธรูปทองคำที่ชาวบ้านพบในนา จัดแสดงในพิพิธภัณฑ์วัด",
+            "en": "A pure-gold Buddha found in a rice field, in the temple museum"
+          },
+          "tip": {
+            "th": "เปิดทุกวัน 07:00–17:00",
+            "en": "Open daily 07:00–17:00"
+          },
+          "q": "วัดพระเจดีย์ซาวหลังพระอารามหลวง, ลำปาง",
+          "ok": "2026-11"
+        },
+        {
+          "local": "",
+          "ages": [
+            2,
+            2,
+            2,
+            1
+          ],
+          "hrs": 0.5,
+          "io": "both",
+          "pram": "part",
+          "price": {
+            "th": "เช็กราคาก่อนไป",
+            "en": "Check the price"
+          },
+          "book": "none",
+          "src": "https://www.grab.com/th/blog/%E0%B8%97%E0%B8%B5%E0%B9%88%E0%B9%80%E0%B8%97%E0%B8%B5%E0%B9%88%E0%B8%A2%E0%B8%A7%E0%B8%A5%E0%B8%B3%E0%B8%9B%E0%B8%B2%E0%B8%87/",
+          "name": {
+            "th": "สถานีรถไฟนครลำปาง",
+            "en": "Nakhon Lampang railway station"
+          },
+          "kind": "views",
+          "area": {
+            "th": "สบตุ๋ย ลำปาง",
+            "en": "Sop Tui, Lampang"
+          },
+          "what": {
+            "th": "สถานีรถไฟไม้สักแบบล้านนาผสมยุโรป ยังใช้งานทุกวัน",
+            "en": "A teak station in Lanna and European style, still in daily use"
+          },
+          "why": {
+            "th": "จุดถ่ายรูป และนั่งรถไฟมาลำปางได้",
+            "en": "A photo stop, and a train ride is a way to reach Lampang"
+          },
+          "q": "สถานีรถไฟนครลำปาง",
+          "ok": "2026-11"
+        },
+        {
+          "local": "",
+          "ages": [
+            1,
+            1,
+            1,
+            1
+          ],
+          "hrs": 0.5,
+          "io": "out",
+          "pram": "part",
+          "price": {
+            "th": "ฟรี",
+            "en": "Free"
+          },
+          "book": "none",
+          "src": "https://www.grab.com/th/blog/%E0%B8%97%E0%B8%B5%E0%B9%88%E0%B9%80%E0%B8%97%E0%B8%B5%E0%B9%88%E0%B8%A2%E0%B8%A7%E0%B8%A5%E0%B8%B3%E0%B8%9B%E0%B8%B2%E0%B8%87/",
+          "name": {
+            "th": "สะพานรัษฎาภิเศก",
+            "en": "Ratsadaphisek Bridge"
+          },
+          "kind": "views",
+          "area": {
+            "th": "หัวเวียง ลำปาง",
+            "en": "Hua Wiang, Lampang"
+          },
+          "what": {
+            "th": "สะพานข้ามแม่น้ำวังที่ผ่านสงครามโลกทั้งสองครั้ง",
+            "en": "A bridge over the Wang river that survived both world wars"
+          },
+          "why": {
+            "th": "ราวสะพานมีรูปไก่ขาว เปิดไฟตอนกลางคืน",
+            "en": "White-rooster railings, lit up at night"
+          },
+          "tip": {
+            "th": "เปิดตลอดเวลา",
+            "en": "Open all the time"
+          },
+          "q": "สะพานรัษฎาภิเศก, ลำปาง",
+          "ok": "2026-11"
+        },
+        {
+          "local": "",
+          "ages": [
+            2,
+            2,
+            2,
+            1
+          ],
+          "hrs": 1.5,
+          "io": "out",
+          "pram": "part",
+          "price": {
+            "th": "เช็กราคาก่อนไป",
+            "en": "Check the price"
+          },
+          "book": "none",
+          "src": "https://www.grab.com/th/blog/%E0%B8%97%E0%B8%B5%E0%B9%88%E0%B9%80%E0%B8%97%E0%B8%B5%E0%B9%88%E0%B8%A2%E0%B8%A7%E0%B8%A5%E0%B8%B3%E0%B8%9B%E0%B8%B2%E0%B8%87/",
+          "name": {
+            "th": "ไร่ห่มฟ้า",
+            "en": "Rai Hom Fa"
+          },
+          "kind": "farm",
+          "area": {
+            "th": "แจ้ห่ม ลำปาง",
+            "en": "Chae Hom, Lampang"
+          },
+          "what": {
+            "th": "ไร่ที่มีแปลงดอกไม้ หุ่นไล่กาตัวใหญ่ หอชมวิว และทางปั่นจักรยาน",
+            "en": "A farm with flower beds, giant scarecrows, a viewing tower and cycle paths"
+          },
+          "why": {
+            "th": "ดอกไม้ หุ่นไล่กา และปั่นจักรยาน",
+            "en": "Flowers, scarecrows and bikes for the children"
+          },
+          "q": "ไร่ห่มฟ้า, แจ้ห่ม, ลำปาง",
+          "ok": "2026-11"
+        },
+        {
+          "local": "",
+          "ages": [
+            0,
+            1,
+            2,
+            2
+          ],
+          "hrs": 3,
+          "io": "out",
+          "pram": "no",
+          "price": {
+            "th": "เช็กราคาก่อนไป",
+            "en": "Check the price"
+          },
+          "book": "none",
+          "src": "https://www.grab.com/th/blog/%E0%B8%97%E0%B8%B5%E0%B9%88%E0%B9%80%E0%B8%97%E0%B8%B5%E0%B9%88%E0%B8%A2%E0%B8%A7%E0%B8%A5%E0%B8%B3%E0%B8%9B%E0%B8%B2%E0%B8%87/",
+          "name": {
+            "th": "อุทยานแห่งชาติดอยขุนตาล",
+            "en": "Doi Khun Tan National Park"
+          },
+          "kind": "nature",
+          "area": {
+            "th": "รอยต่อลำปาง–ลำพูน",
+            "en": "Lampang–Lamphun border"
+          },
+          "what": {
+            "th": "อุทยานบนอุโมงค์รถไฟขุนตาน",
+            "en": "A park above the long Khun Tan railway tunnel"
+          },
+          "why": {
+            "th": "เดินป่าสน มักมากันด้วยรถไฟ",
+            "en": "A trail through pine forest, often reached by train"
+          },
+          "q": "อุทยานแห่งชาติดอยขุนตาล",
+          "ok": "2026-11"
+        },
+        {
+          "local": "",
+          "ages": [
+            1,
+            1,
+            2,
+            1
+          ],
+          "hrs": 1,
+          "io": "out",
+          "pram": "part",
+          "price": {
+            "th": "เช็กราคาก่อนไป",
+            "en": "Check the price"
+          },
+          "book": "none",
+          "src": "https://www.grab.com/th/blog/%E0%B8%97%E0%B8%B5%E0%B9%88%E0%B9%80%E0%B8%97%E0%B8%B5%E0%B9%88%E0%B8%A2%E0%B8%A7%E0%B8%A5%E0%B8%B3%E0%B8%9B%E0%B8%B2%E0%B8%87/",
+          "name": {
+            "th": "วัดอักโขชัยคีรี",
+            "en": "Wat Akkho Chai Khiri"
+          },
+          "kind": "culture",
+          "area": {
+            "th": "แจ้ห่ม ลำปาง",
+            "en": "Chae Hom, Lampang"
+          },
+          "what": {
+            "th": "วัดบนเขาที่เงาเจดีย์กลับหัว",
+            "en": "A hilltop temple where the pagoda's shadow falls upside down"
+          },
+          "why": {
+            "th": "ตามหาเงาเจดีย์กลับหัว",
+            "en": "The upside-down shadow to look for"
+          },
+          "tip": {
+            "th": "เปิดทุกวัน 07:00–17:00",
+            "en": "Open daily 07:00–17:00"
+          },
+          "q": "วัดอักโขชัยคีรี, แจ้ห่ม",
+          "ok": "2026-11"
+        },
+        {
+          "local": "",
+          "ages": [
+            1,
+            1,
+            2,
+            1
+          ],
+          "hrs": 1,
+          "io": "out",
+          "pram": "part",
+          "price": {
+            "th": "เช็กราคาก่อนไป",
+            "en": "Check the price"
+          },
+          "book": "none",
+          "src": "https://www.grab.com/th/blog/%E0%B8%97%E0%B8%B5%E0%B9%88%E0%B9%80%E0%B8%97%E0%B8%B5%E0%B9%88%E0%B8%A2%E0%B8%A7%E0%B8%A5%E0%B8%B3%E0%B8%9B%E0%B8%B2%E0%B8%87/",
+          "name": {
+            "th": "วัดม่อนพระยาแช่",
+            "en": "Wat Mon Phraya Chae"
+          },
+          "kind": "park",
+          "area": {
+            "th": "พิชัย ลำปาง",
+            "en": "Phichai, Lampang"
+          },
+          "what": {
+            "th": "วัดบนเนินเขาและวนอุทยาน มีจุดชมวิว",
+            "en": "A hill temple and forest park with a view"
+          },
+          "why": {
+            "th": "ทำบุญและชมวิวได้ในที่เดียว",
+            "en": "Merit-making and a view in one place"
+          },
+          "tip": {
+            "th": "เปิดทุกวัน 06:00–18:00",
+            "en": "Open daily 06:00–18:00"
+          },
+          "q": "วัดม่อนพระยาแช่, ลำปาง",
+          "ok": "2026-11"
+        },
+        {
+          "local": "",
+          "ages": [
+            1,
+            1,
+            1,
+            1
+          ],
+          "hrs": 0.5,
+          "io": "out",
+          "pram": "part",
+          "price": {
+            "th": "เช็กราคาก่อนไป",
+            "en": "Check the price"
+          },
+          "book": "none",
+          "src": "https://www.grab.com/th/blog/%E0%B8%97%E0%B8%B5%E0%B9%88%E0%B9%80%E0%B8%97%E0%B8%B5%E0%B9%88%E0%B8%A2%E0%B8%A7%E0%B8%A5%E0%B8%B3%E0%B8%9B%E0%B8%B2%E0%B8%87/",
+          "name": {
+            "th": "กาดทุ่งเกวียน",
+            "en": "Kad Thung Kwian market"
+          },
+          "kind": "market",
+          "area": {
+            "th": "ริมถนนลำปาง–เชียงใหม่",
+            "en": "Lampang–Chiang Mai road"
+          },
+          "what": {
+            "th": "ตลาดริมทางขายอาหารเหนือและของฝาก",
+            "en": "A roadside market of northern food and local gifts"
+          },
+          "why": {
+            "th": "แวะระหว่างทางไปเชียงใหม่",
+            "en": "A stop on the road to Chiang Mai"
+          },
+          "q": "กาดทุ่งเกวียน, ลำปาง",
+          "ok": "2026-11"
+        },
+        {
+          "local": "",
+          "ages": [
+            0,
+            1,
+            1,
+            2
+          ],
+          "hrs": 2,
+          "io": "out",
+          "pram": "no",
+          "price": {
+            "th": "เช็กราคาก่อนไป",
+            "en": "Check the price"
+          },
+          "book": "none",
+          "src": "https://www.grab.com/th/blog/%E0%B8%97%E0%B8%B5%E0%B9%88%E0%B9%80%E0%B8%97%E0%B8%B5%E0%B9%88%E0%B8%A2%E0%B8%A7%E0%B8%A5%E0%B8%B3%E0%B8%9B%E0%B8%B2%E0%B8%87/",
+          "name": {
+            "th": "เจดีย์ลอยฟ้า วัดพุทธบาทสุทธาวาส",
+            "en": "Floating pagodas, Wat Phutthabat Sutthawat"
+          },
+          "kind": "views",
+          "area": {
+            "th": "แจ้ห่ม ลำปาง",
+            "en": "Chae Hom, Lampang"
+          },
+          "what": {
+            "th": "เจดีย์สีขาวองค์เล็กบนยอดเขา",
+            "en": "Small white pagodas on a hilltop"
+          },
+          "why": {
+            "th": "สวยตั้งแต่แรกเห็น",
+            "en": "A striking sight from the first view"
+          },
+          "tip": {
+            "th": "มีรถรับส่งขึ้นเขา แล้วเดินขึ้นบันได",
+            "en": "A shuttle goes up the hill, then stairs"
+          },
+          "q": "วัดพุทธบาทสุทธาวาส, แจ้ห่ม",
+          "ok": "2026-11"
         }
       ]
     },

@@ -529,3 +529,6 @@ batch-19 of docs/library-briefs. +2: Cappuccino, TomYumBar. Proof in `docs/libra
 
 ### Yangon, 23 Nov 2026
 batch-29 of docs/library-briefs. +2: Sharky's, Chatrium Hotel Royal Lake. Proof in `docs/library-proof/mm-yangon.json`.
+
+### Lampang, 23 Nov 2026
+batch-35 of docs/library-briefs (round 2). +7 from Wongnai's must-try list: Khao Soi Pa Boon, Khao Soi Super, Dab Daeng noodles, Rad Na Super, Thip Chang chicken rice, The Pappa, Sai Ua Pao Tao Luang. Proof in `docs/library-proof/th-lampang.json`.
