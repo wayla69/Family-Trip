@@ -529,3 +529,6 @@ batch-19 of docs/library-briefs. +2: Cappuccino, TomYumBar. Proof in `docs/libra
 
 ### Yangon, 23 Nov 2026
 batch-29 of docs/library-briefs. +2: Sharky's, Chatrium Hotel Royal Lake. Proof in `docs/library-proof/mm-yangon.json`.
+
+### Bangkok, 23 Nov 2026
+batch-37 of docs/library-briefs (round 2). +5 from Grab's family-restaurant list: Krua Dok Mai Khao, Kin Lom Chom Saphan, Krua Krung Thep, Krua Nai Baan, Rong Si Phochana (Lang Suan). Proof in `docs/library-proof/th-bangkok.json`.

@@ -1,0 +1,80 @@
+{
+  "town": "th-bangkok",
+  "kind": "eats + sights",
+  "checked": "2026-11-23",
+  "rule": "library-check.cjs, then the Google Maps Reviews tab sorted by newest: ok only when not marked closed, with a review from the last six months, and the map's name matching the page's.",
+  "agents": "one Haiku agent; 13 rows from Grab (Aug 2025), Edarabia (Nov 2026) and Boy Eats World (Oct 2026) passed library-check.cjs, 8 went in",
+  "added": [
+    {
+      "name": "Krua Dok Mai Khao",
+      "page_name": "ครัวดอกไม้ขาว",
+      "src": "https://www.grab.com/th/food-blog/%E0%B8%A3%E0%B9%89%E0%B8%B2%E0%B8%99%E0%B8%AD%E0%B8%B2%E0%B8%AB%E0%B8%B2%E0%B8%A3%E0%B8%84%E0%B8%A3%E0%B8%AD%E0%B8%9A%E0%B8%84%E0%B8%A3%E0%B8%B1%E0%B8%A7/",
+      "date": "2025-07",
+      "map": "Google Maps 678 ถ. บำรุงเมือง, 4,732 reviews (search card, open)"
+    },
+    {
+      "name": "Kin Lom Chom Saphan",
+      "page_name": "กินลมชมสะพาน",
+      "src": "https://www.grab.com/th/food-blog/%E0%B8%A3%E0%B9%89%E0%B8%B2%E0%B8%99%E0%B8%AD%E0%B8%B2%E0%B8%AB%E0%B8%B2%E0%B8%A3%E0%B8%84%E0%B8%A3%E0%B8%AD%E0%B8%9A%E0%B8%84%E0%B8%A3%E0%B8%B1%E0%B8%A7/",
+      "date": "2025-07",
+      "map": "Google Maps 9,052 reviews, newest shown '1 day ago'"
+    },
+    {
+      "name": "Krua Krung Thep",
+      "page_name": "ครัวกรุงเทพ",
+      "src": "https://www.grab.com/th/food-blog/%E0%B8%A3%E0%B9%89%E0%B8%B2%E0%B8%99%E0%B8%AD%E0%B8%B2%E0%B8%AB%E0%B8%B2%E0%B8%A3%E0%B8%84%E0%B8%A3%E0%B8%AD%E0%B8%9A%E0%B8%84%E0%B8%A3%E0%B8%B1%E0%B8%A7/",
+      "date": "2025-07",
+      "map": "Google Maps 1,615 reviews, newest shown '29 days ago'"
+    },
+    {
+      "name": "Krua Nai Baan",
+      "page_name": "ครัวในบ้าน",
+      "src": "https://www.grab.com/th/food-blog/%E0%B8%A3%E0%B9%89%E0%B8%B2%E0%B8%99%E0%B8%AD%E0%B8%B2%E0%B8%AB%E0%B8%B2%E0%B8%A3%E0%B8%84%E0%B8%A3%E0%B8%AD%E0%B8%9A%E0%B8%84%E0%B8%A3%E0%B8%B1%E0%B8%A7/",
+      "date": "2025-07",
+      "map": "Google Maps ซ.หลังสวน, 1,095 reviews (search card, open)"
+    },
+    {
+      "name": "Rong Si Phochana (Lang Suan)",
+      "page_name": "โรงสีโภชนา หลังสวน",
+      "src": "https://www.grab.com/th/food-blog/%E0%B8%A3%E0%B9%89%E0%B8%B2%E0%B8%99%E0%B8%AD%E0%B8%B2%E0%B8%AB%E0%B8%B2%E0%B8%A3%E0%B8%84%E0%B8%A3%E0%B8%AD%E0%B8%9A%E0%B8%84%E0%B8%A3%E0%B8%B1%E0%B8%A7/",
+      "date": "2025-07",
+      "map": "Google Maps 1,913 reviews, newest shown '2 days ago'"
+    },
+    {
+      "name": "Tooney Museum",
+      "page_name": "Tooney Museum",
+      "src": "https://www.edarabia.com/?p=261102",
+      "date": "2026-11",
+      "map": "Google Maps 'พิพิธภัณฑ์ของเล่น ตูนนี่ ประเทศไทย', 416 reviews, newest shown '5 months ago'"
+    },
+    {
+      "name": "Madame Tussauds Bangkok",
+      "page_name": "Madame Tussauds Wax Museum",
+      "src": "https://www.edarabia.com/?p=261102",
+      "date": "2026-11",
+      "map": "Google Maps 9,392 reviews, newest shown '2 days ago'"
+    },
+    {
+      "name": "Fantasia Lagoon",
+      "page_name": "Fantasia Lagoon Water Park",
+      "src": "https://www.edarabia.com/?p=261102",
+      "date": "2026-11",
+      "map": "Google Maps 'Fantasia Lagoon', 275 ถ. เพชรเกษม, 962 reviews (search card, open)"
+    }
+  ],
+  "left_out": [
+    {
+      "name": "KidZania Bangkok",
+      "why": "closed since 2021, though a 2026 guide still lists it"
+    },
+    {
+      "name": "Alpaca View",
+      "why": "permanently closed on the map"
+    },
+    {
+      "name": "Kalpapruek, Luk Kai Thong, On the Table",
+      "why": "chains with several branches; the page names none"
+    }
+  ],
+  "estimates": "Ages and visit hours are placeholders; prices and opening notes are the pages' own."
+}

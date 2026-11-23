@@ -666,6 +666,117 @@
           "q": "Bangkok Butterfly Garden and Insectarium, Chatuchak, Bangkok",
           "ok": "2026-11",
           "src": "https://www.thatbangkoklife.com/bangkok-butterfly-garden-insectarium/"
+        },
+        {
+          "local": "",
+          "ages": [
+            1,
+            2,
+            2,
+            1
+          ],
+          "hrs": 1.5,
+          "io": "in",
+          "pram": "yes",
+          "price": {
+            "th": "≈ 3–5 ดอลลาร์",
+            "en": "≈ $3–5"
+          },
+          "book": "none",
+          "src": "https://www.edarabia.com/?p=261102",
+          "name": {
+            "th": "พิพิธภัณฑ์ของเล่นตูนนี่",
+            "en": "Tooney Museum"
+          },
+          "kind": "museumkid",
+          "area": {
+            "th": "ซอยศรีสมาน กรุงเทพฯ",
+            "en": "Soi Si Saman, Bangkok"
+          },
+          "what": {
+            "th": "พิพิธภัณฑ์ของเล่นเก่าและใหม่",
+            "en": "A toy museum of antique and modern toys"
+          },
+          "why": {
+            "th": "เด็ก ๆ ตื่นตากับของเล่น",
+            "en": "Children stare in awe at the toys"
+          },
+          "q": "พิพิธภัณฑ์ของเล่น ตูนนี่ ประเทศไทย",
+          "ok": "2026-11"
+        },
+        {
+          "local": "",
+          "ages": [
+            0,
+            1,
+            2,
+            2
+          ],
+          "hrs": 1.5,
+          "io": "in",
+          "pram": "yes",
+          "price": {
+            "th": "≈ 17 ดอลลาร์",
+            "en": "≈ $17"
+          },
+          "book": "none",
+          "src": "https://www.edarabia.com/?p=261102",
+          "name": {
+            "th": "มาดามทุสโซ กรุงเทพ",
+            "en": "Madame Tussauds Bangkok"
+          },
+          "kind": "museum",
+          "area": {
+            "th": "สยามดิสคัฟเวอรี่ กรุงเทพฯ",
+            "en": "Siam Discovery, Bangkok"
+          },
+          "what": {
+            "th": "หุ่นขี้ผึ้งคนดังให้ถ่ายรูปด้วย",
+            "en": "Wax figures of famous people to pose with"
+          },
+          "why": {
+            "th": "สนุกกับการถ่ายรูปกับคนดังที่ชอบ",
+            "en": "Fun posing with favourite stars"
+          },
+          "q": "พิพิธภัณฑ์มาดามทุสโซ กรุงเทพ",
+          "ok": "2026-11"
+        },
+        {
+          "local": "",
+          "ages": [
+            1,
+            2,
+            2,
+            1
+          ],
+          "hrs": 3,
+          "io": "out",
+          "pram": "part",
+          "price": {
+            "th": "≈ 4–10 ดอลลาร์",
+            "en": "≈ $4–10"
+          },
+          "book": "none",
+          "src": "https://www.edarabia.com/?p=261102",
+          "name": {
+            "th": "แฟนตาเซีย ลากูน",
+            "en": "Fantasia Lagoon"
+          },
+          "kind": "play",
+          "area": {
+            "th": "ถนนเพชรเกษม กรุงเทพฯ",
+            "en": "Phetkasem Road, Bangkok"
+          },
+          "what": {
+            "th": "สวนน้ำในห้าง มีแม่น้ำจำลองและโซนเรือโจรสลัดสำหรับเด็ก",
+            "en": "A water park in a mall, with a lazy river and a pirate cove for children"
+          },
+          "why": {
+            "th": "สไลเดอร์ให้เด็ก แม่น้ำจำลองให้พ่อแม่",
+            "en": "Slides for children, a lazy river for parents"
+          },
+          "q": "Fantasia Lagoon, ถนนเพชรเกษม, กรุงเทพฯ",
+          "ok": "2026-11"
         }
       ]
     },
