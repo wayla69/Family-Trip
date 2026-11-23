@@ -263,6 +263,117 @@
           "q": "Castle Bear Moat, Zámek, Český Krumlov",
           "ok": "2026-11",
           "src": "https://www.ckrumlov.info/en/cesky-krumlov-with-kids/"
+        },
+        {
+          "local": "",
+          "ages": [
+            0,
+            1,
+            2,
+            2
+          ],
+          "hrs": 1,
+          "io": "in",
+          "pram": "part",
+          "price": {
+            "th": "เช็กราคาก่อนไป",
+            "en": "Check the price"
+          },
+          "book": "none",
+          "src": "https://www.ckrumlov.info/en/sights-and-culture-437-film-legends-museum/",
+          "name": {
+            "th": "พิพิธภัณฑ์ตำนานภาพยนตร์",
+            "en": "Film Legends Experience Museum"
+          },
+          "kind": "museumkid",
+          "area": {
+            "th": "เชสกีครุมลอฟ",
+            "en": "Český Krumlov"
+          },
+          "what": {
+            "th": "ภาพยนตร์ การ์ตูน ของสะสม และฮีโร่แอ็กชัน",
+            "en": "Films, comics, collectibles and action heroes"
+          },
+          "why": {
+            "th": "ได้เห็นดาราจอเงินใกล้ ๆ",
+            "en": "Stars of the big screen to see up close"
+          },
+          "q": "Film Legends Experience Museum, Český Krumlov",
+          "ok": "2026-11"
+        },
+        {
+          "local": "",
+          "ages": [
+            0,
+            1,
+            2,
+            2
+          ],
+          "hrs": 1,
+          "io": "in",
+          "pram": "part",
+          "price": {
+            "th": "เช็กราคาก่อนไป",
+            "en": "Check the price"
+          },
+          "book": "none",
+          "src": "https://www.ckrumlov.info/en/sights-and-culture-64-wax-museum/",
+          "name": {
+            "th": "พิพิธภัณฑ์หุ่นขี้ผึ้ง",
+            "en": "Wax Museum"
+          },
+          "kind": "museum",
+          "area": {
+            "th": "ถนนกายอฟสกา เชสกีครุมลอฟ",
+            "en": "Kájovská, Český Krumlov"
+          },
+          "what": {
+            "th": "หุ่นขี้ผึ้งคนดังและโบฮีเมียใต้ มีเมืองใต้ดินยุคกลาง",
+            "en": "Wax figures of famous people and South Bohemia, with a medieval cellar town"
+          },
+          "why": {
+            "th": "แสงและเสียงทำให้ห้องใต้ดินเหมือนตลาดศตวรรษที่ 15",
+            "en": "Light and sound make the cellar feel like a 15th-century market"
+          },
+          "q": "Wax Museum, Kájovská 68, Český Krumlov",
+          "ok": "2026-11"
+        },
+        {
+          "local": "",
+          "ages": [
+            0,
+            1,
+            2,
+            2
+          ],
+          "hrs": 1,
+          "io": "in",
+          "pram": "part",
+          "price": {
+            "th": "เช็กราคาก่อนไป",
+            "en": "Check the price"
+          },
+          "book": "none",
+          "src": "https://www.ckrumlov.info/en/sights-and-culture-66-moldavite-museum/",
+          "name": {
+            "th": "พิพิธภัณฑ์มอลดาไวต์",
+            "en": "Moldavite Museum"
+          },
+          "kind": "museumkid",
+          "area": {
+            "th": "ถนนปันสกา เชสกีครุมลอฟ",
+            "en": "Panská, Český Krumlov"
+          },
+          "what": {
+            "th": "นิทรรศการแบบลงมือเล่น เรื่องหินมอลดาไวต์ที่เกิดจากอุกกาบาตเมื่อ 15 ล้านปีก่อน",
+            "en": "An interactive exhibition on how moldavite formed from a meteorite 15 million years ago"
+          },
+          "why": {
+            "th": "โยนอุกกาบาตใส่ลูกโลกแล้วดูว่าเกิดอะไรขึ้น",
+            "en": "Throw a meteorite at a globe and see what happens"
+          },
+          "q": "Moldavite Museum, Panská 19, Český Krumlov",
+          "ok": "2026-11"
         }
       ]
     },
