@@ -1,0 +1,110 @@
+{
+  "town": "kr-busan",
+  "kind": "eats + sights",
+  "checked": "2026-11-23",
+  "rule": "library-check.cjs, then the Google Maps Reviews tab sorted by newest: ok only when not marked closed, with a review from the last six months, and the map's name matching the page's.",
+  "agents": "one Haiku agent; 21 rows from mom-mom.net, Visit Busan and family travel blogs (Feb 2025–Oct 2026), 18 passed library-check.cjs, 10 went in",
+  "added": [
+    {
+      "name": "Shabussam Jumeoni (Osiria)",
+      "page_name": "Shabussam Jumeoni Busan Osiria Branch",
+      "src": "https://mom-mom.net/en/travel/places/65dbef8b2fd27d17773464e4",
+      "date": "2026-05",
+      "map": "Google Maps 141 reviews, newest shown 'last month'"
+    },
+    {
+      "name": "Daepae Market (Daeyeon)",
+      "page_name": "Daepae Market Busan Daeyeon Branch",
+      "src": "https://mom-mom.net/en/travel/places/6a2bd39a8bdc6701d24a4bcc",
+      "date": "2026-06",
+      "map": "Google Maps 75 reviews, newest shown '20 days ago'"
+    },
+    {
+      "name": "Gwangan Jeil Dwaeji Gukbap",
+      "page_name": "Gwangan Jeil Dwaeji Gukbap Gwangan Main Branch",
+      "src": "https://mom-mom.net/en/travel/places/69c9e84764b191f1fded764f",
+      "date": "2026-03",
+      "map": "Google Maps 332 reviews, newest shown '4 days ago'"
+    },
+    {
+      "name": "Mad for Garlic (Lotte Busan Main)",
+      "page_name": "Mad for Garlic Lotte Busan Main Branch",
+      "src": "https://mom-mom.net/en/travel/places/69d865bd2381dc67487cd161",
+      "date": "2026-04",
+      "map": "Google Maps 529 reviews, newest shown '2 days ago'"
+    },
+    {
+      "name": "Old Mug",
+      "page_name": "Old Mug",
+      "src": "https://mom-mom.net/en/travel/places/67a964f430defef2e9178537",
+      "date": "2025-02",
+      "map": "Google Maps 567 reviews, newest shown '10 days ago'"
+    },
+    {
+      "name": "Miffy Café Busan",
+      "page_name": "The Miffy Café",
+      "src": "https://southkoreahallyu.com/busan-with-kids-things-to-do/",
+      "date": "2026-06",
+      "map": "Google Maps 1,454 reviews, newest shown '1 day ago'"
+    },
+    {
+      "name": "Brick Campus",
+      "page_name": "Brick Campus",
+      "src": "https://southkoreahallyu.com/busan-with-kids-things-to-do/",
+      "date": "2026-06",
+      "map": "Google Maps 172 reviews, newest shown '1 day ago'"
+    },
+    {
+      "name": "Amnam Park",
+      "page_name": "Amnam Park",
+      "src": "https://southkoreahallyu.com/busan-with-kids-things-to-do/",
+      "date": "2026-06",
+      "map": "Google Maps 617 reviews, newest shown '8 days ago'"
+    },
+    {
+      "name": "Sajik Baseball Stadium",
+      "page_name": "Sajik Stadium",
+      "src": "https://southkoreahallyu.com/busan-with-kids-things-to-do/",
+      "date": "2026-06",
+      "map": "Google Maps 4,459 reviews, newest shown '15 days ago'"
+    },
+    {
+      "name": "Wonder Space (Myeongji)",
+      "page_name": "원더스페이스 부산명지점",
+      "src": "https://mom-mom.net/travel/places/635f6d83e69cfb073a6cdd34",
+      "date": "2025-02",
+      "map": "Google Maps '원더스페이스 부산명지점', 15 reviews, newest shown '23 days ago'"
+    }
+  ],
+  "left_out": [
+    {
+      "name": "Monyeo Jubang, Ilsamyuk Meat House, Gwanganri Daegyo Milmyeon, Shinsegae Zooraji",
+      "why": "no review from the last six months on the map"
+    },
+    {
+      "name": "Hyeonpung Dak Kalguksu (Myeongji)",
+      "why": "the map shows only a closed branch in Seomyeon"
+    },
+    {
+      "name": "Trick Eye Museum Busan",
+      "why": "permanently closed on the map"
+    },
+    {
+      "name": "부산시청 들락날락",
+      "why": "the map shows a staff cafeteria"
+    },
+    {
+      "name": "Busan Creative Convergence Education Center, Museum of Contemporary Art Busan",
+      "why": "temporarily closed on the map"
+    },
+    {
+      "name": "HBAF",
+      "why": "a shop"
+    },
+    {
+      "name": "Geongang Bapsang (Connect Hyundai)",
+      "why": "failed library-check.cjs"
+    }
+  ],
+  "estimates": "Ages and visit hours are placeholders; prices and opening notes are the pages' own."
+}

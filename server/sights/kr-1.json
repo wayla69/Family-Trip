@@ -724,7 +724,159 @@
       {"name":{"en":"Cheongsapo Daritdol Observatory","th":"ชองซาโพ ดาริทโดล ออบเซอร์วาทอรี"},"kind":"views","area":{"en":"Haeundae Beach, reached by the Beach Train from Haeundae Blue Line Park","th":"หาดแฮอุนแด ขึ้นรถไฟชายหาดจากแฮอุนแดบลูไลน์พาร์ค"},"what":{"en":"A glass walkway that curves over the ocean, 20 metres up from the sea.","th":"ทางเดินกระจกโค้งเหนือทะเล สูง 20 เมตรจากผิวน้ำ"},"why":{"en":"The page says it is a unique walk over the water, easy to reach from Haeundae Beach.","th":"หน้าเว็บบอกว่าเป็นทางเดินเหนือน้ำที่แปลกและเข้าถึงง่ายจากหาดแฮอุนแด"},"ages":[1,2,2,2],"hrs":1,"io":"out","pram":"part","price":{"en":"Check the price","th":"เช็กราคาก่อนไป"},"book":"none","q":"Cheongsapo Daritdol Observatory, Haeundae, Busan","ok":"2026-11","src":"https://southkoreahallyu.com/busan-with-kids-things-to-do/"},
       {"name":{"en":"Songdo Yonggung Suspension Bridge","th":"สะพานแขวนยงกุงซงโด"},"kind":"views","area":{"en":"Songdo, close to the Songdo Cable Car arrival point","th":"ซงโด ใกล้จุดลงกระเช้าซงโด"},"what":{"en":"A 120 metre metal suspension bridge over the sea that leads to the deserted Dongseok Island.","th":"สะพานโลหะแขวนยาว 120 เมตรเหนือทะเล นำไปสู่เกาะดงซอกที่เงียบ"},"why":{"en":"The page says families can wander around the island, and the bridge does not sway.","th":"หน้าเว็บบอกว่าครอบครัวเดินเล่นบนเกาะได้ และสะพานไม่แกว่ง"},"ages":[1,2,2,2],"hrs":1,"io":"out","pram":"part","price":{"en":"Check the price","th":"เช็กราคาก่อนไป"},"book":"none","q":"Songdo Yonggung Suspension Bridge, Songdo, Busan","ok":"2026-11","src":"https://southkoreahallyu.com/busan-with-kids-things-to-do/"},
       {"name":{"en":"Dadaepo Sunset Fountain of Dreams","th":"น้ำพุแห่งความฝันแดแดโพตอนพระอาทิตย์ตก"},"kind":"show","area":{"en":"Dadaepo Beach","th":"หาดแดแดโพ"},"what":{"en":"A musical fountain with LED lights, close to Dadaepo Beach.","th":"น้ำพุดนตรีมีไฟ LED อยู่ใกล้หาดแดแดโพ"},"why":{"en":"The page says kids love splashing in the fountains, and the beach is a 60 second walk away.","th":"หน้าเว็บบอกว่าเด็กชอบวิ่งเล่นน้ำพุ และหาดอยู่ห่างแค่ 60 วินาทีเดิน"},"tip":{"en":"usually runs from April to October","th":"มักเปิดตั้งแต่เมษายนถึงตุลาคม"},"ages":[2,2,2,1],"hrs":1,"io":"out","pram":"part","price":{"en":"Check the price","th":"เช็กราคาก่อนไป"},"book":"none","q":"Dadaepo Sunset Fountain of Dreams, Dadaepo Beach, Busan","ok":"2026-11","src":"https://southkoreahallyu.com/busan-with-kids-things-to-do/"},
-      {"name":{"en":"Danubi Train at Busan Taejongdae Park","th":"รถไฟดานูบีที่สวนแทจงแด"},"kind":"ride","area":{"en":"Taejongdae, at the south end of Yeongdo Island","th":"แทจงแด ปลายใต้ของเกาะยองโด"},"what":{"en":"A brightly coloured hop-on hop-off train that goes around Taejongdae Park.","th":"รถไฟสีสดใสขึ้นลงได้ วิ่งรอบสวนแทจงแด"},"why":{"en":"The page calls it the best and most fun way to get around Taejongdae with kids.","th":"หน้าเว็บเรียกว่าเป็นวิธีเที่ยวแทจงแดที่สนุกและดีที่สุดกับเด็ก"},"tip":{"en":"departs every 20 minutes or so","th":"ออกทุกราว 20 นาที"},"ages":[2,2,2,1],"hrs":2,"io":"out","pram":"part","price":{"en":"Check the price","th":"เช็กราคาก่อนไป"},"book":"none","q":"Taejongdae Park, Yeongdo, Busan","ok":"2026-11","src":"https://southkoreahallyu.com/busan-with-kids-things-to-do/"}
+      {"name":{"en":"Danubi Train at Busan Taejongdae Park","th":"รถไฟดานูบีที่สวนแทจงแด"},"kind":"ride","area":{"en":"Taejongdae, at the south end of Yeongdo Island","th":"แทจงแด ปลายใต้ของเกาะยองโด"},"what":{"en":"A brightly coloured hop-on hop-off train that goes around Taejongdae Park.","th":"รถไฟสีสดใสขึ้นลงได้ วิ่งรอบสวนแทจงแด"},"why":{"en":"The page calls it the best and most fun way to get around Taejongdae with kids.","th":"หน้าเว็บเรียกว่าเป็นวิธีเที่ยวแทจงแดที่สนุกและดีที่สุดกับเด็ก"},"tip":{"en":"departs every 20 minutes or so","th":"ออกทุกราว 20 นาที"},"ages":[2,2,2,1],"hrs":2,"io":"out","pram":"part","price":{"en":"Check the price","th":"เช็กราคาก่อนไป"},"book":"none","q":"Taejongdae Park, Yeongdo, Busan","ok":"2026-11","src":"https://southkoreahallyu.com/busan-with-kids-things-to-do/"},
+        {
+          "local": "브릭캠퍼스",
+          "ages": [
+            1,
+            2,
+            2,
+            1
+          ],
+          "hrs": 2,
+          "io": "both",
+          "pram": "part",
+          "price": {
+            "th": "ปกติผู้ใหญ่ 15,000 วอน เด็กคิดเพิ่ม",
+            "en": "Usually ₩15,000 an adult, children extra"
+          },
+          "book": "none",
+          "src": "https://southkoreahallyu.com/busan-with-kids-things-to-do/",
+          "name": {
+            "th": "บริกแคมปัส",
+            "en": "Brick Campus"
+          },
+          "kind": "museumkid",
+          "area": {
+            "th": "คีจัง ฝั่งตะวันออกของปูซาน ปูซาน",
+            "en": "Gijang, east Busan, Busan"
+          },
+          "what": {
+            "th": "สวนตัวต่อ มีงานศิลปะและภาพลวงตาที่ต่อจากตัวต่อ",
+            "en": "A brick-toy park of art and illusions built from bricks"
+          },
+          "why": {
+            "th": "งานศิลปะตัวต่อและภาพลวงตาให้เด็กดู",
+            "en": "Brick art and illusions for children to look at"
+          },
+          "q": "브릭캠퍼스 부산",
+          "ok": "2026-11"
+        },
+        {
+          "local": "암남공원",
+          "ages": [
+            2,
+            2,
+            2,
+            1
+          ],
+          "hrs": 1,
+          "io": "out",
+          "pram": "yes",
+          "price": {
+            "th": "ฟรี",
+            "en": "Free"
+          },
+          "book": "none",
+          "src": "https://southkoreahallyu.com/busan-with-kids-things-to-do/",
+          "name": {
+            "th": "สวนอัมนัม",
+            "en": "Amnam Park"
+          },
+          "kind": "park",
+          "area": {
+            "th": "อัมนัม ซอกู ปูซาน",
+            "en": "Amnam, Seo-gu, Busan"
+          },
+          "what": {
+            "th": "สวนที่มีหุ่นไดโนเสาร์ตัวใหญ่ส่งเสียงคำราม",
+            "en": "A park with big dinosaur models that roar"
+          },
+          "why": {
+            "th": "ไดโนเสาร์คำราม อยู่ใกล้ปลายทางกระเช้าซงโด",
+            "en": "Roaring dinosaurs, near the Songdo cable car's far end"
+          },
+          "q": "암남공원",
+          "ok": "2026-11"
+        },
+        {
+          "local": "사직야구장",
+          "ages": [
+            0,
+            1,
+            2,
+            2
+          ],
+          "hrs": 3,
+          "io": "out",
+          "pram": "no",
+          "price": {
+            "th": "เช็กราคาก่อนไป",
+            "en": "Check the price"
+          },
+          "book": "none",
+          "src": "https://southkoreahallyu.com/busan-with-kids-things-to-do/",
+          "name": {
+            "th": "สนามเบสบอลซาจิก",
+            "en": "Sajik Baseball Stadium"
+          },
+          "kind": "show",
+          "area": {
+            "th": "ซาจิก ทงแนกู ปูซาน",
+            "en": "Sajik, Dongnae-gu, Busan"
+          },
+          "what": {
+            "th": "สนามเหย้าของทีมเบสบอลล็อตเต้ไจแอนต์ส",
+            "en": "Home ground of the Lotte Giants baseball team"
+          },
+          "why": {
+            "th": "ดูเบสบอล มีเสื้อเด็กและไม้เบสบอลจิ๋วขาย",
+            "en": "A baseball game, with kids' T-shirts and mini bats on sale"
+          },
+          "tip": {
+            "th": "ปกติแข่งช่วงเมษายนถึงกันยายน",
+            "en": "Games usually run April to September"
+          },
+          "q": "사직야구장",
+          "ok": "2026-11"
+        },
+        {
+          "local": "원더스페이스 부산명지점",
+          "ages": [
+            2,
+            2,
+            1,
+            0
+          ],
+          "hrs": 2,
+          "io": "in",
+          "pram": "yes",
+          "price": {
+            "th": "เช็กราคาก่อนไป",
+            "en": "Check the price"
+          },
+          "book": "none",
+          "src": "https://mom-mom.net/travel/places/635f6d83e69cfb073a6cdd34",
+          "name": {
+            "th": "วันเดอร์สเปซ สาขามยองจี",
+            "en": "Wonder Space (Myeongji)"
+          },
+          "kind": "play",
+          "area": {
+            "th": "มยองจี คังซอกู ปูซาน",
+            "en": "Myeongji, Gangseo-gu, Busan"
+          },
+          "what": {
+            "th": "คิดส์คาเฟ่ในร่มขนาดใหญ่ ชั้น 3 ถึง 6 ของอาคารจอดรถ",
+            "en": "A large indoor kids' café on the 3rd to 6th floors of a parking tower"
+          },
+          "why": {
+            "th": "มีของเล่นเยอะ และเกมหยอดเหรียญ",
+            "en": "Lots to play with, and coin games"
+          },
+          "q": "원더스페이스 부산명지점",
+          "ok": "2026-11"
+        }
     ]
     }
   ]
