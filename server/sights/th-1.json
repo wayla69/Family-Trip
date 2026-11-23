@@ -1081,6 +1081,121 @@
           "q": "Ban Dam Museum, Nang Lae, Mueang Chiang Rai",
           "ok": "2026-11",
           "src": "https://www.thaiholidayguide.com/attraction/baan-dam-black-house/"
+        },
+        {
+          "local": "",
+          "ages": [
+            1,
+            1,
+            2,
+            2
+          ],
+          "hrs": 1.5,
+          "io": "out",
+          "pram": "part",
+          "price": {
+            "th": "เช็กราคาก่อนไป",
+            "en": "Check the price"
+          },
+          "book": "none",
+          "src": "https://outandaboutwithkids.com.au/northern-thailand-family-holiday/",
+          "name": {
+            "th": "วัดร่องขุ่น",
+            "en": "Wat Rong Khun (the White Temple)"
+          },
+          "kind": "culture",
+          "area": {
+            "th": "เชียงราย",
+            "en": "Chiang Rai"
+          },
+          "what": {
+            "th": "วัดสีขาวทั้งหลังผลงานของอาจารย์เฉลิมชัย โฆษิตพิพัฒน์",
+            "en": "An all-white temple by the artist Chalermchai Kositpipat"
+          },
+          "why": {
+            "th": "ขาวทั้งหลัง สื่อถึงความบริสุทธิ์ของพระพุทธเจ้า",
+            "en": "White all over, for the purity of the Buddha"
+          },
+          "q": "วัดร่องขุ่น, เชียงราย",
+          "ok": "2026-11"
+        },
+        {
+          "local": "",
+          "ages": [
+            0,
+            2,
+            2,
+            1
+          ],
+          "hrs": 2,
+          "io": "both",
+          "pram": "part",
+          "price": {
+            "th": "เช็กราคาก่อนไป",
+            "en": "Check the price"
+          },
+          "book": "none",
+          "src": "https://outandaboutwithkids.com.au/northern-thailand-family-holiday/",
+          "name": {
+            "th": "สวนกระดาษมูลช้าง POOPOOPAPER",
+            "en": "Elephant POOPOOPAPER Park"
+          },
+          "kind": "culture",
+          "area": {
+            "th": "แม่ริม เชียงใหม่",
+            "en": "Mae Rim, Chiang Mai"
+          },
+          "what": {
+            "th": "ทำกระดาษจากมูลช้าง ให้เด็กตกแต่งแล้วนำกลับบ้าน",
+            "en": "Paper made from elephant dung, which children decorate and take home"
+          },
+          "why": {
+            "th": "เด็ก ๆ สนุกทุกขั้นตอน ตั้งแต่เส้นใยจนถึงเยื่อกระดาษ",
+            "en": "Children love every step, from the fibres to the pulp"
+          },
+          "q": "Elephant POOPOOPAPER Park Chiang Mai",
+          "ok": "2026-11"
+        },
+        {
+          "local": "",
+          "ages": [
+            0,
+            1,
+            1,
+            2
+          ],
+          "hrs": 2,
+          "io": "both",
+          "pram": "part",
+          "price": {
+            "th": "คนไทย 100 บาท ต่างชาติ 200 บาท",
+            "en": "Thais ฿100, foreigners ฿200"
+          },
+          "book": "none",
+          "src": "https://www.thaiholidayguide.com/attraction/mae-fah-luang-art-and-cultural-park/",
+          "name": {
+            "th": "อุทยานศิลปวัฒนธรรมแม่ฟ้าหลวง",
+            "en": "Mae Fah Luang Art and Cultural Park"
+          },
+          "kind": "museum",
+          "area": {
+            "th": "รอบเวียง เชียงราย",
+            "en": "Rop Wiang, Chiang Rai"
+          },
+          "what": {
+            "th": "คอลเลกชันศิลปะล้านนาหลักของเชียงราย ในอาคารไม้สัก",
+            "en": "Chiang Rai's main collection of Lanna art, in teak pavilions"
+          },
+          "why": {
+            "th": "สนามหญ้าและร่มไม้ระหว่างอาคาร",
+            "en": "Lawns and shade trees between the pavilions"
+          },
+          "tip": {
+            "th": "ปิดวันจันทร์ เปิดอังคาร–อาทิตย์ 10:00–18:00",
+            "en": "Closed Mondays; open Tuesday–Sunday 10:00–18:00"
+          },
+          "q": "อุทยานศิลปวัฒนธรรมแม่ฟ้าหลวง, เชียงราย",
+          "ok": "2026-11"
         }
       ]
     }
