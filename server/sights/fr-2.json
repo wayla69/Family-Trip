@@ -1908,6 +1908,125 @@
           "q": "Aqua Mundo, Villages Nature Paris, Bailly-Romainvilliers",
           "ok": "2026-11",
           "src": "https://www.centerparcs.fr/fr-fr/france/fp_VN_vacances-domaine-villages-nature-paris/billets-journee"
+        },
+        {
+          "local": "",
+          "ages": [
+            1,
+            2,
+            2,
+            2
+          ],
+          "hrs": 3,
+          "io": "both",
+          "pram": "part",
+          "price": {
+            "th": "เช็กราคาก่อนไป",
+            "en": "Check the price"
+          },
+          "book": "rec",
+          "src": "https://www.parrotworld.fr/en/guide/things-to-do-near-disneyland-paris",
+          "name": {
+            "th": "แพร์รอตเวิลด์",
+            "en": "Parrot World"
+          },
+          "kind": "zoo",
+          "area": {
+            "th": "เครซีลาชาแปล ห่างไป 20 นาที",
+            "en": "Crécy-la-Chapelle, 20 minutes away"
+          },
+          "what": {
+            "th": "กรงนกขนาดใหญ่ให้เดินชม มีนกแก้ว มาคอว์ ฟลามิงโก และนกกระสาบินอิสระ",
+            "en": "A walk-through aviary with free-flying parrots, macaws, flamingos and herons"
+          },
+          "why": {
+            "th": "นกบินอยู่รอบตัว เปลี่ยนบรรยากาศจากสวนสนุก",
+            "en": "Birds fly around you, a change from the theme parks"
+          },
+          "tip": {
+            "th": "วันและเวลาเปิดเปลี่ยนตามฤดูกาล เช็กก่อนไป",
+            "en": "Opening days and hours change by season: check before you go"
+          },
+          "q": "Parrot World, Route de Guérard, Crécy-la-Chapelle",
+          "ok": "2026-11"
+        },
+        {
+          "local": "",
+          "ages": [
+            0,
+            2,
+            2,
+            2
+          ],
+          "hrs": 2,
+          "io": "in",
+          "pram": "part",
+          "price": {
+            "th": "เช็กราคาก่อนไป",
+            "en": "Check the price"
+          },
+          "book": "rec",
+          "src": "https://www.parrotworld.fr/en/guide/things-to-do-near-disneyland-paris",
+          "name": {
+            "th": "อิมาจีพาร์ก",
+            "en": "Imagi Park"
+          },
+          "kind": "play",
+          "area": {
+            "th": "แซร์ริส ข้างดิสนีย์แลนด์ปารีส",
+            "en": "Serris, next to Disneyland Paris"
+          },
+          "what": {
+            "th": "โกคาร์ต โบว์ลิ่ง เลเซอร์แท็ก และสวนแทรมโพลีนในอาคารเดียว",
+            "en": "Go-karts, bowling, laser tag and a trampoline park under one roof"
+          },
+          "why": {
+            "th": "สวนแทรมโพลีนเหมาะกับเด็กตั้งแต่ 3 ขวบ ดีสำหรับวันฝนตก",
+            "en": "The trampoline park suits children from age 3; good on a rainy day"
+          },
+          "q": "Imagi Park, 1 Rue de l'Hymne à la Joie, Serris",
+          "ok": "2026-11"
+        },
+        {
+          "local": "",
+          "ages": [
+            1,
+            2,
+            2,
+            2
+          ],
+          "hrs": 0.5,
+          "io": "out",
+          "pram": "part",
+          "price": {
+            "th": "เช็กราคาก่อนไป",
+            "en": "Check the price"
+          },
+          "book": "none",
+          "src": "https://www.visitparisregion.com/en/inspiration/itineraries/disneyland-paris-and-surrounding-area",
+          "name": {
+            "th": "บอลลูนพาโนรามาจิก",
+            "en": "PanoraMagique balloon"
+          },
+          "kind": "views",
+          "area": {
+            "th": "ดิสนีย์วิลเลจ",
+            "en": "Disney Village"
+          },
+          "what": {
+            "th": "บอลลูนผูกเชือกที่ลอยขึ้นเหนือดิสนีย์วิลเลจ",
+            "en": "A tethered balloon that rises above Disney Village"
+          },
+          "why": {
+            "th": "นั่งสั้น ๆ ง่าย ๆ ได้ทั้งครอบครัว",
+            "en": "A short, easy ride for the whole family"
+          },
+          "tip": {
+            "th": "ดูสภาพอากาศและคิวก่อน",
+            "en": "Check the weather and the queue first"
+          },
+          "q": "PanoraMagique, Disney Village, Chessy",
+          "ok": "2026-11"
         }
       ]
     }
