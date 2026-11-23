@@ -2121,6 +2121,347 @@
           "q": "La Rocca di Cefalù, Cefalù",
           "ok": "2026-11",
           "src": "https://www.nomadotravel.app/it/attractions/la-rocca-cefalu"
+        },
+        {
+          "local": "Parco della Salute Livia Morello",
+          "ages": [
+            2,
+            2,
+            2,
+            1
+          ],
+          "hrs": 1.5,
+          "io": "out",
+          "pram": "yes",
+          "price": {
+            "th": "ฟรี",
+            "en": "Free"
+          },
+          "book": "none",
+          "src": "https://mominitaly.com/visiting-palermo-with-kids/",
+          "name": {
+            "th": "สนามเด็กเล่นปาร์โกเดลลาซาลูเต",
+            "en": "Parco della Salute playground"
+          },
+          "kind": "play",
+          "area": {
+            "th": "โฟโรอิตาลีโก ข้างประตูปอร์ตาเฟลีเช ปาแลร์โม",
+            "en": "Foro Italico, by Porta Felice, Palermo"
+          },
+          "what": {
+            "th": "สนามเด็กเล่นใหญ่ริมทะเล มีชิงช้า โครงปีนป่าย และคานทรงตัว",
+            "en": "A big seaside playground with swings, climbing frames and balance beams"
+          },
+          "why": {
+            "th": "กว้างมาก เด็กเยอะ มีสนามฟุตบอลเล็ก ๆ",
+            "en": "Huge and full of children, with a small football pitch"
+          },
+          "tip": {
+            "th": "ร่มเงาน้อย และไม่มีรั้วกั้นระหว่างสนามเด็กเล่นกับน้ำ",
+            "en": "Little shade, and no fence between the playground and the water"
+          },
+          "q": "Parco della Salute, Foro Italico Umberto I, Palermo",
+          "ok": "2026-11"
+        },
+        {
+          "local": "",
+          "ages": [
+            0,
+            1,
+            2,
+            2
+          ],
+          "hrs": 3,
+          "io": "out",
+          "pram": "no",
+          "price": {
+            "th": "ฟรี",
+            "en": "Free"
+          },
+          "book": "none",
+          "src": "https://mominitaly.com/visiting-palermo-with-kids/",
+          "name": {
+            "th": "เขามอนเตเปลเลกรีโน",
+            "en": "Monte Pellegrino"
+          },
+          "kind": "nature",
+          "area": {
+            "th": "ปาแลร์โม",
+            "en": "Palermo"
+          },
+          "what": {
+            "th": "เดินขึ้นยอดเขาชมวิวเมืองและอ่าวทั้งสองฝั่ง",
+            "en": "A hike to the top for views over the city and both bays"
+          },
+          "why": {
+            "th": "มีกิ้งก่า นก และแมลงให้มองหา",
+            "en": "Lizards, birds and insects to spot"
+          },
+          "tip": {
+            "th": "รถเข็นเด็กไปไม่ได้ ไม่มีร่ม เลี่ยงวันที่อากาศร้อน",
+            "en": "Not for prams and no shade; avoid a hot day"
+          },
+          "q": "Monte Pellegrino, Palermo",
+          "ok": "2026-11"
+        },
+        {
+          "local": "Fontana Pretoria",
+          "ages": [
+            2,
+            2,
+            2,
+            2
+          ],
+          "hrs": 0.5,
+          "io": "out",
+          "pram": "yes",
+          "price": {
+            "th": "ฟรี",
+            "en": "Free"
+          },
+          "book": "none",
+          "src": "https://mominitaly.com/visiting-palermo-with-kids/",
+          "name": {
+            "th": "น้ำพุเปรโตเรีย",
+            "en": "Pretoria Fountain"
+          },
+          "kind": "culture",
+          "area": {
+            "th": "ปิอัซซาเปรโตเรีย ปาแลร์โม",
+            "en": "Piazza Pretoria, Palermo"
+          },
+          "what": {
+            "th": "น้ำพุประดับเต็มจัตุรัส มีรูปปั้นสัตว์เต็มไปหมด",
+            "en": "An ornate fountain filling the square, covered in creatures"
+          },
+          "why": {
+            "th": "เด็ก ๆ สนุกกับการหาสัตว์ตัวโปรด",
+            "en": "Children love finding their favourite animal"
+          },
+          "q": "Fontana Pretoria, Piazza Pretoria, Palermo",
+          "ok": "2026-11"
+        },
+        {
+          "local": "",
+          "ages": [
+            1,
+            2,
+            2,
+            2
+          ],
+          "hrs": 0.5,
+          "io": "in",
+          "pram": "part",
+          "price": {
+            "th": "เช็กราคาก่อนไป",
+            "en": "Check the price"
+          },
+          "book": "none",
+          "src": "https://mominitaly.com/visiting-palermo-with-kids/",
+          "name": {
+            "th": "โบสถ์น้อยซานลอเรนโซ",
+            "en": "Oratorio di San Lorenzo"
+          },
+          "kind": "culture",
+          "area": {
+            "th": "ปาแลร์โม",
+            "en": "Palermo"
+          },
+          "what": {
+            "th": "โบสถ์น้อยที่มีรูปปั้นปูนบนผนัง รวมถึงยูนิคอร์น",
+            "en": "An oratory with stucco figures on the walls, including a unicorn"
+          },
+          "why": {
+            "th": "เด็ก ๆ ตามหายูนิคอร์นและเทวดาน้อย",
+            "en": "Children look for the unicorn and the cherubs"
+          },
+          "q": "Oratorio di San Lorenzo, Via Immacolatella 5, Palermo",
+          "ok": "2026-11"
+        },
+        {
+          "local": "",
+          "ages": [
+            2,
+            2,
+            2,
+            2
+          ],
+          "hrs": 1,
+          "io": "out",
+          "pram": "yes",
+          "price": {
+            "th": "ฟรี",
+            "en": "Free"
+          },
+          "book": "none",
+          "src": "https://mominitaly.com/visiting-palermo-with-kids/",
+          "name": {
+            "th": "โฟโรอิตาลีโก",
+            "en": "Foro Italico"
+          },
+          "kind": "park",
+          "area": {
+            "th": "ริมทะเลปาแลร์โม",
+            "en": "Palermo seafront"
+          },
+          "what": {
+            "th": "ทางเดินริมทะเล มีม้านั่งเซรามิกสีสดใส",
+            "en": "A seafront promenade with colourful ceramic benches"
+          },
+          "why": {
+            "th": "มีสนามหญ้าให้วิ่งเล่น และเด็ก ๆ เล่นว่าว",
+            "en": "Room to run on the grass and children flying kites"
+          },
+          "q": "Foro Italico, Palermo",
+          "ok": "2026-11"
+        },
+        {
+          "local": "",
+          "ages": [
+            2,
+            2,
+            2,
+            2
+          ],
+          "hrs": 0.5,
+          "io": "both",
+          "pram": "part",
+          "price": {
+            "th": "เช็กราคาก่อนไป",
+            "en": "Check the price"
+          },
+          "book": "none",
+          "src": "https://mominitaly.com/visiting-palermo-with-kids/",
+          "name": {
+            "th": "โบสถ์ซานตามาเรียเดลโลสปาซีโม",
+            "en": "Santa Maria dello Spasimo"
+          },
+          "kind": "culture",
+          "area": {
+            "th": "ถนนเดลโลสปาซีโม ปาแลร์โม",
+            "en": "Via dello Spasimo, Palermo"
+          },
+          "what": {
+            "th": "โบสถ์ไร้หลังคา ข้างภาพจิตรกรรมบนถนน",
+            "en": "A church with no roof, beside the street's murals"
+          },
+          "why": {
+            "th": "มีห้องน้ำฟรี และสนามเด็กเล่นที่ปิอัซซามาโจเนใกล้ ๆ",
+            "en": "Free toilets, and a playground in nearby Piazza Magione"
+          },
+          "q": "Santa Maria dello Spasimo, Via dello Spasimo 15, Palermo",
+          "ok": "2026-11"
+        },
+        {
+          "local": "",
+          "ages": [
+            2,
+            2,
+            2,
+            2
+          ],
+          "hrs": 0.5,
+          "io": "out",
+          "pram": "yes",
+          "price": {
+            "th": "ฟรี",
+            "en": "Free"
+          },
+          "book": "none",
+          "src": "https://www.lonelyplanet.com/articles/sicily-with-kids",
+          "name": {
+            "th": "ปิอัซซา IX อาปรีเล",
+            "en": "Piazza IX Aprile"
+          },
+          "kind": "oldtown",
+          "area": {
+            "th": "ตาออร์มีนา",
+            "en": "Taormina"
+          },
+          "what": {
+            "th": "จัตุรัสปลอดรถ พื้นลายตารางหมากรุก มีระเบียงคาเฟ่",
+            "en": "A car-free square with a checkerboard floor and café terraces"
+          },
+          "why": {
+            "th": "เด็กเล็กวิ่งเล่นได้",
+            "en": "Toddlers can run about safely"
+          },
+          "q": "Piazza IX Aprile, Taormina",
+          "ok": "2026-11"
+        },
+        {
+          "local": "",
+          "ages": [
+            2,
+            2,
+            2,
+            2
+          ],
+          "hrs": 1,
+          "io": "out",
+          "pram": "yes",
+          "price": {
+            "th": "ฟรี",
+            "en": "Free"
+          },
+          "book": "none",
+          "src": "https://www.lonelyplanet.com/articles/sicily-with-kids",
+          "name": {
+            "th": "สวนวิลลาโคมูนาเล ตาออร์มีนา",
+            "en": "Villa Comunale di Taormina"
+          },
+          "kind": "park",
+          "area": {
+            "th": "ตาออร์มีนา",
+            "en": "Taormina"
+          },
+          "what": {
+            "th": "สวนสงบ วิวภูเขาไฟเอตนาและชายฝั่งทะเลไอโอเนียน",
+            "en": "Peaceful gardens with views of Etna and the Ionian coast"
+          },
+          "why": {
+            "th": "ที่พักผ่อนระหว่างที่ลูกเล็กหลับ",
+            "en": "Somewhere to relax while the baby sleeps"
+          },
+          "q": "Villa Comunale di Taormina, Via Bagnoli Croci, Taormina",
+          "ok": "2026-11"
+        },
+        {
+          "local": "Figli d'Arte Cuticchio",
+          "ages": [
+            1,
+            2,
+            2,
+            2
+          ],
+          "hrs": 1,
+          "io": "in",
+          "pram": "part",
+          "price": {
+            "th": "เช็กราคาก่อนไป",
+            "en": "Check the price"
+          },
+          "book": "rec",
+          "src": "https://www.lonelyplanet.com/articles/sicily-with-kids",
+          "name": {
+            "th": "โรงละครหุ่นกุติกคีโอ",
+            "en": "Cuticchio puppet theatre"
+          },
+          "kind": "show",
+          "area": {
+            "th": "ปาแลร์โม",
+            "en": "Palermo"
+          },
+          "what": {
+            "th": "การแสดงหุ่นกระบอก พร้อมทัวร์โรงงานทำหุ่นฝั่งตรงข้าม",
+            "en": "A puppet show, with a tour of the puppet workshop across the street"
+          },
+          "why": {
+            "th": "หุ่นยังทำด้วยมือในโรงงาน",
+            "en": "The puppets are still made by hand in the workshop"
+          },
+          "q": "Figli d'Arte Cuticchio, Via Bara all'Olivella 95, Palermo",
+          "ok": "2026-11"
         }
       ]
     },
