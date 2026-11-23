@@ -94,6 +94,43 @@
           "q": "Hulhumalé Central Park, Hulhumalé",
           "ok": "2026-11",
           "src": "https://www.hdc.mv/?p=23426"
+        },
+        {
+          "local": "",
+          "ages": [
+            1,
+            2,
+            2,
+            2
+          ],
+          "hrs": 0.5,
+          "io": "both",
+          "pram": "part",
+          "price": {
+            "th": "ฟรี",
+            "en": "Free"
+          },
+          "book": "none",
+          "src": "https://maldivestour.guide/articles/things-to-do-in-maldives-for-family.html",
+          "name": {
+            "th": "ตลาดปลามาเล",
+            "en": "Malé Fish Market"
+          },
+          "kind": "market",
+          "area": {
+            "th": "มาเล",
+            "en": "Malé"
+          },
+          "what": {
+            "th": "ตลาดปลา ใกล้ตลาดผักผลไม้และร้านของที่ระลึก",
+            "en": "The fish market, with fruit and vegetable markets and shops nearby"
+          },
+          "why": {
+            "th": "คึกคักน่าตื่นเต้นสำหรับเด็ก ได้เห็นปลาสด ๆ ขึ้นจากเรือ",
+            "en": "Busy and fascinating for children, with fresh catches coming in"
+          },
+          "q": "Fish Market, Ibrahim Hassan Didi Magu, Malé",
+          "ok": "2026-11"
         }
       ]
     }
