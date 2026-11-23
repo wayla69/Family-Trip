@@ -34,20 +34,20 @@ batch-33.md: th-korat, cn-chongqing, th-rayong, th-loei
 batch-34.md: cn-harbin, cn-guilin, th-nan, jp-hakone
 batch-35.md: th-lampang, th-ayutthaya, th-khonkaen, th-kohchang
 batch-36.md: th-lipe, th-nakhonsi, th-hatyai, th-trang
-batch-37.md: jp-hiroshima, th-ubon, th-suratthani, kr-gyeongju
-batch-38.md: jp-nikko, jp-nagasaki, th-pattaya, th-sukhothai
-batch-39.md: th-chiangmai, th-krabi, th-samui, th-chanthaburi
-batch-40.md: vn-saigon, jp-yokohama, th-khaoyai, jp-nagano
-batch-41.md: th-udon, jp-kumamoto, jp-takayama, th-khaokho
-batch-42.md: kr-gangwon, tw-hualien, jp-kanazawa, kr-jeju
-batch-43.md: kr-jeonju, tw-central, th-maehongson, tr-istanbul
-batch-44.md: p-orlando, mo-macau, kr-suwon, us-newyork
-batch-45.md: vn-danang, cn-chengdu, jp-hokkaido, jp-tohoku
-batch-46.md: es-barcelona, tw-south, tw-taipei, us-california
-batch-47.md: th-huahin, my-kualalumpur, jp-fukuoka, id-bali
-batch-48.md: jp-okinawa, vn-hanoi, cn-beijing, th-phuket
-batch-49.md: kr-busan, th-bangkok, sg-singapore, jp-kyoto
-batch-50.md: cn-shanghai, kr-seoul, fr-paris, jp-tokyo
-batch-51.md: jp-osaka, de-berlin, nl-amsterdam, it-rome
-batch-52.md: gb-london, hk-hongkong, ae-dubai, au-melbourne
-batch-53.md: au-sydney
+batch-37.md: th-chiangmai, th-bangkok, th-phuket, th-pattaya
+batch-38.md: th-krabi, th-samui, th-huahin, jp-tokyo
+batch-39.md: jp-osaka, jp-kyoto, jp-hokkaido, kr-seoul
+batch-40.md: kr-busan, kr-jeju, tw-taipei, hk-hongkong
+batch-41.md: mo-macau, sg-singapore, my-kualalumpur, vn-hanoi
+batch-42.md: vn-saigon, vn-danang, cn-shanghai, cn-beijing
+batch-43.md: cn-chengdu, jp-fukuoka, jp-okinawa, id-bali
+batch-44.md: gb-london, fr-paris, au-sydney, au-melbourne
+batch-45.md: ae-dubai, us-newyork, us-california, p-orlando
+batch-46.md: it-rome, es-barcelona, nl-amsterdam, de-berlin
+batch-47.md: tr-istanbul, jp-yokohama, jp-kanazawa, jp-hiroshima
+batch-48.md: jp-nagasaki, jp-nikko, jp-nagano, jp-kumamoto
+batch-49.md: jp-takayama, jp-tohoku, kr-gyeongju, kr-gangwon
+batch-50.md: kr-jeonju, kr-suwon, tw-hualien, tw-central
+batch-51.md: tw-south, th-khaoyai, th-sukhothai, th-chanthaburi
+batch-52.md: th-ubon, th-suratthani, th-udon, th-khaokho
+batch-53.md: th-maehongson
