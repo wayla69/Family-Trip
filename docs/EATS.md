@@ -523,3 +523,6 @@ batch-22 of docs/library-briefs. +2 in Rovaniemi: Restaurant Gallis, Piparina. P
 
 ### Stockholm, 23 Nov 2026
 batch-23 of docs/library-briefs. +3: Junibacken restaurant, Haga Bottega, Boketto. Proof in `docs/library-proof/se-stockholm.json`.
+
+### Astana, 23 Nov 2026
+batch-19 of docs/library-briefs. +2: Cappuccino, TomYumBar. Proof in `docs/library-proof/kz-astana.json`.
