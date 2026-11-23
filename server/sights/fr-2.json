@@ -1326,6 +1326,466 @@
           "q": "Marché provençal, L'Isle-sur-la-Sorgue",
           "ok": "2026-11",
           "src": "https://provence-alpes-cotedazur.com/que-faire/sortir/toutes-les-sorties/marche-provencal-de-lisle-sur-la-sorgue-l-isle-sur-la-sorgue-fr-2851198/"
+        },
+        {
+          "local": "Pont Saint-Bénezet",
+          "ages": [
+            1,
+            1,
+            1,
+            1
+          ],
+          "hrs": 1,
+          "io": "out",
+          "pram": "part",
+          "price": {
+            "th": "เช็กราคาก่อนไป",
+            "en": "Check the price"
+          },
+          "book": "none",
+          "src": "https://avignon-tourisme.com/en/prepare-your-stay/avignon-with-the-family/",
+          "name": {
+            "th": "สะพานอาวีญง",
+            "en": "Pont d’Avignon"
+          },
+          "kind": "views",
+          "area": {
+            "th": "อาวีญง",
+            "en": "Avignon"
+          },
+          "what": {
+            "th": "สะพานครึ่งท่อนชื่อดังข้ามแม่น้ำโรน เที่ยวได้เร็วและง่าย",
+            "en": "The famous half-bridge over the Rhône, quick and easy to visit"
+          },
+          "why": {
+            "th": "เด็กเดินได้อิสระ เห็นวิวแม่น้ำโล่ง",
+            "en": "Children wander freely with an open view of the river"
+          },
+          "tip": {
+            "th": "ใช้เวลาไม่นาน แทรกในแผนได้ง่าย",
+            "en": "A short visit, easy to fit in"
+          },
+          "q": "Pont Saint-Bénézet, Boulevard du Rhône, Avignon",
+          "ok": "2026-11"
+        },
+        {
+          "local": "",
+          "ages": [
+            1,
+            1,
+            1,
+            1
+          ],
+          "hrs": 2,
+          "io": "out",
+          "pram": "yes",
+          "price": {
+            "th": "ฟรี",
+            "en": "Free"
+          },
+          "book": "none",
+          "src": "https://avignon-tourisme.com/en/prepare-your-stay/avignon-with-the-family/",
+          "name": {
+            "th": "สวนรอเชเดดอม",
+            "en": "Rocher des Doms garden"
+          },
+          "kind": "park",
+          "area": {
+            "th": "อาวีญง",
+            "en": "Avignon"
+          },
+          "what": {
+            "th": "สวนร่มรื่น กว้าง และมีวิวพาโนรามา",
+            "en": "A shady garden with space and a panoramic view"
+          },
+          "why": {
+            "th": "ที่พักผ่อนขณะเด็กเล่น",
+            "en": "A place to rest while the children play"
+          },
+          "q": "Jardin des Doms, Avignon",
+          "ok": "2026-11"
+        },
+        {
+          "local": "",
+          "ages": [
+            1,
+            1,
+            1,
+            1
+          ],
+          "hrs": 2,
+          "io": "out",
+          "pram": "part",
+          "price": {
+            "th": "ฟรี",
+            "en": "Free"
+          },
+          "book": "none",
+          "src": "https://avignon-tourisme.com/en/prepare-your-stay/avignon-with-the-family/",
+          "name": {
+            "th": "เกาะบาร์เตอลาส",
+            "en": "Île de la Barthelasse"
+          },
+          "kind": "park",
+          "area": {
+            "th": "ฝั่งตรงข้ามแม่น้ำโรนจากอาวีญง",
+            "en": "Across the Rhône from Avignon"
+          },
+          "what": {
+            "th": "เกาะสำหรับปั่นจักรยาน ปิกนิก และเดินเล่น ใกล้ใจกลางเมือง",
+            "en": "An island for cycling, picnics and walks, minutes from the centre"
+          },
+          "why": {
+            "th": "ได้พักสูดอากาศระหว่างเที่ยว",
+            "en": "Fresh air between the sights"
+          },
+          "tip": {
+            "th": "มีเรือรับส่งฟรีจากท่าเดอลาลีญ",
+            "en": "A free shuttle boat crosses from the Quai de la Ligne"
+          },
+          "q": "Île de la Barthelasse, Avignon",
+          "ok": "2026-11"
+        },
+        {
+          "local": "",
+          "ages": [
+            0,
+            1,
+            1,
+            2
+          ],
+          "hrs": 2,
+          "io": "in",
+          "pram": "part",
+          "price": {
+            "th": "เช็กราคาก่อนไป",
+            "en": "Check the price"
+          },
+          "book": "none",
+          "src": "https://www.lonelyplanet.com/articles/top-things-to-do-in-arles",
+          "name": {
+            "th": "พิพิธภัณฑ์อาร์ลโบราณ",
+            "en": "Musée départemental Arles antique"
+          },
+          "kind": "museum",
+          "area": {
+            "th": "อาร์ล",
+            "en": "Arles"
+          },
+          "what": {
+            "th": "ประวัติศาสตร์โบราณของอาร์ล มีโมเสกงดงาม",
+            "en": "Arles’s ancient history, with fine mosaics"
+          },
+          "why": {
+            "th": "มีโมเสกและโบราณวัตถุย้อนถึงยุคก่อนประวัติศาสตร์",
+            "en": "Mosaics and finds back to prehistory"
+          },
+          "tip": {
+            "th": "ปิดวันพุธ เข้าฟรีวันอาทิตย์แรกของเดือน",
+            "en": "Closed Wednesdays; free on the first Sunday of the month"
+          },
+          "q": "Musée départemental Arles antique, Presqu’île du Cirque Romain, Arles",
+          "ok": "2026-11"
+        },
+        {
+          "local": "",
+          "ages": [
+            0,
+            0,
+            1,
+            2
+          ],
+          "hrs": 1,
+          "io": "in",
+          "pram": "part",
+          "price": {
+            "th": "เช็กราคาก่อนไป",
+            "en": "Check the price"
+          },
+          "book": "none",
+          "src": "https://www.lonelyplanet.com/articles/top-things-to-do-in-arles",
+          "name": {
+            "th": "มูลนิธิวินเซนต์ แวน โก๊ะ อาร์ล",
+            "en": "Fondation Vincent van Gogh Arles"
+          },
+          "kind": "museum",
+          "area": {
+            "th": "อาร์ล",
+            "en": "Arles"
+          },
+          "what": {
+            "th": "หอศิลป์ตามรอยแวน โก๊ะ มีจุดชมวิวคืนแห่งดวงดาว",
+            "en": "An art space on Van Gogh’s trail, with a Starry Night viewpoint"
+          },
+          "why": {
+            "th": "เปิดทุกวัน มีจุดชมวิวคืนแห่งดวงดาว",
+            "en": "Open every day, with the Starry Night viewpoint"
+          },
+          "tip": {
+            "th": "เปิดทุกวัน 10:00–18:00",
+            "en": "Daily 10:00–18:00"
+          },
+          "q": "Fondation Vincent van Gogh Arles, 35 Rue du Docteur Fanton, Arles",
+          "ok": "2026-11"
+        },
+        {
+          "local": "Théâtre antique d’Arles",
+          "ages": [
+            1,
+            1,
+            1,
+            1
+          ],
+          "hrs": 1,
+          "io": "out",
+          "pram": "part",
+          "price": {
+            "th": "เช็กราคาก่อนไป",
+            "en": "Check the price"
+          },
+          "book": "none",
+          "src": "https://www.lonelyplanet.com/articles/top-things-to-do-in-arles",
+          "name": {
+            "th": "โรงละครโรมันอาร์ล",
+            "en": "Roman Theatre of Arles"
+          },
+          "kind": "culture",
+          "area": {
+            "th": "อาร์ล",
+            "en": "Arles"
+          },
+          "what": {
+            "th": "โรงละครโรมันจากศตวรรษที่ 1 ก่อนคริสตกาล ยังใช้จัดการแสดงหน้าร้อน",
+            "en": "A 1st-century BC Roman theatre still used for summer shows"
+          },
+          "why": {
+            "th": "ได้เดินชมเวทีโรมันจริง",
+            "en": "A real Roman stage to walk round"
+          },
+          "q": "Théâtre antique d’Arles, Rue du Cloître, Arles",
+          "ok": "2026-11"
+        },
+        {
+          "local": "",
+          "ages": [
+            0,
+            1,
+            2,
+            2
+          ],
+          "hrs": 1,
+          "io": "in",
+          "pram": "no",
+          "price": {
+            "th": "เช็กราคาก่อนไป",
+            "en": "Check the price"
+          },
+          "book": "none",
+          "src": "https://www.lonelyplanet.com/articles/top-things-to-do-in-arles",
+          "name": {
+            "th": "ห้องใต้ดินคริปโตปอร์ติก อาร์ล",
+            "en": "Cryptoportiques of Arles"
+          },
+          "kind": "oldtown",
+          "area": {
+            "th": "ใต้ลานฟอรัม อาร์ล",
+            "en": "Under the Place du Forum, Arles"
+          },
+          "what": {
+            "th": "ระเบียงใต้ดินสมัยโรมันใต้ลานฟอรัมเก่า ลงบันไดไป",
+            "en": "Underground Roman galleries below the old forum, down a flight of stairs"
+          },
+          "why": {
+            "th": "เดินลงไปผ่านประวัติศาสตร์ 2,000 ปี",
+            "en": "A walk down through 2,000 years of history"
+          },
+          "q": "Cryptoportiques d’Arles, Place de la République, Arles",
+          "ok": "2026-11"
+        },
+        {
+          "local": "",
+          "ages": [
+            1,
+            1,
+            1,
+            1
+          ],
+          "hrs": 1,
+          "io": "in",
+          "pram": "part",
+          "price": {
+            "th": "เช็กราคาก่อนไป",
+            "en": "Check the price"
+          },
+          "book": "none",
+          "src": "https://www.hotel-bb.com/en/guide/activities-aix-en-provence-family",
+          "name": {
+            "th": "พิพิธภัณฑ์ขนมกาลิซง รัวเรอเน",
+            "en": "Calisson museum (Roy René)"
+          },
+          "kind": "museumkid",
+          "area": {
+            "th": "แอ็กซ็องพรอวองซ์",
+            "en": "Aix-en-Provence"
+          },
+          "what": {
+            "th": "โรงงานขนมกาลิซง แสดงเครื่องมือเก่า วัตถุดิบ และทุกขั้นตอนการทำ",
+            "en": "A calisson factory showing old tools, ingredients and every step of the Aix sweet"
+          },
+          "why": {
+            "th": "วันธรรมดาเด็กได้ดูช่างทำขนมทำงาน",
+            "en": "Children watch the confectioners at work on weekdays"
+          },
+          "q": "Musée du Calisson Roy René, 5380 Route d’Avignon, Aix-en-Provence",
+          "ok": "2026-11"
+        },
+        {
+          "local": "Atelier de Cézanne",
+          "ages": [
+            0,
+            0,
+            1,
+            2
+          ],
+          "hrs": 1,
+          "io": "in",
+          "pram": "part",
+          "price": {
+            "th": "เช็กราคาก่อนไป",
+            "en": "Check the price"
+          },
+          "book": "none",
+          "src": "https://www.hotel-bb.com/en/guide/activities-aix-en-provence-family",
+          "name": {
+            "th": "สตูดิโอเซซาน",
+            "en": "Cézanne’s studio"
+          },
+          "kind": "culture",
+          "area": {
+            "th": "แอ็กซ็องพรอวองซ์",
+            "en": "Aix-en-Provence"
+          },
+          "what": {
+            "th": "สตูดิโอของเซซานที่เก็บไว้เหมือนเดิม มีสี พู่กัน และผ้าใบของเขา",
+            "en": "Cézanne’s studio kept as it was, with his paints, brushes and canvases"
+          },
+          "why": {
+            "th": "ที่เที่ยวเงียบสงบ แสงสวย",
+            "en": "A quiet, luminous place to visit"
+          },
+          "q": "Atelier de Cézanne, 9 Avenue Paul Cézanne, Aix-en-Provence",
+          "ok": "2026-11"
+        },
+        {
+          "local": "",
+          "ages": [
+            1,
+            1,
+            1,
+            1
+          ],
+          "hrs": 3,
+          "io": "out",
+          "pram": "part",
+          "price": {
+            "th": "เช็กราคาก่อนไป",
+            "en": "Check the price"
+          },
+          "book": "none",
+          "src": "https://www.hotel-bb.com/en/guide/activities-aix-en-provence-family",
+          "name": {
+            "th": "ทะเลสาบเปรอลล์",
+            "en": "Lac de Peyrolles"
+          },
+          "kind": "park",
+          "area": {
+            "th": "เปรอลล์ออง‑พรอวองซ์ แอ็กซ์",
+            "en": "Peyrolles-en-Provence, Pays d’Aix"
+          },
+          "what": {
+            "th": "บ่อหินเก่าที่กลายเป็นทะเลสาบ มีร้านอาหารว่าง โต๊ะปิกนิก และสนามเด็กเล่น",
+            "en": "An old quarry turned lake, with a snack bar, picnic tables and playgrounds"
+          },
+          "why": {
+            "th": "มีสนามเด็กเล่น หน้าร้อนมีคนดูแลการว่ายน้ำ",
+            "en": "Playgrounds, and supervised swimming in summer"
+          },
+          "q": "Lac de Peyrolles, Chemin de Plantain, Peyrolles-en-Provence",
+          "ok": "2026-11"
+        },
+        {
+          "local": "",
+          "ages": [
+            2,
+            2,
+            2,
+            1
+          ],
+          "hrs": 3,
+          "io": "in",
+          "pram": "part",
+          "price": {
+            "th": "เช็กราคาก่อนไป",
+            "en": "Check the price"
+          },
+          "book": "none",
+          "src": "https://www.marseille-tourisme.com/en/offers/gulli-park-aix-en-provence-en-3789761/",
+          "name": {
+            "th": "กุลลีปาร์ก แอ็กซ์",
+            "en": "Gulli Parc Aix-en-Provence"
+          },
+          "kind": "play",
+          "area": {
+            "th": "เลมิลล์ แอ็กซ์",
+            "en": "Les Milles, Aix-en-Provence"
+          },
+          "what": {
+            "th": "ศูนย์เล่นในร่มกว่า 2,300 ตร.ม. สำหรับเด็ก 1–12 ปี",
+            "en": "A covered play centre of over 2,300 m² for children of 1 to 12"
+          },
+          "why": {
+            "th": "มีโกคาร์ตเด็กและไซต์ก่อสร้างเลโก้",
+            "en": "A mini kart track and a Lego building site"
+          },
+          "q": "Gulli Parc Aix-en-Provence, 240 Rue des Frères Perret, Aix-en-Provence",
+          "ok": "2026-11"
+        },
+        {
+          "local": "",
+          "ages": [
+            2,
+            2,
+            1,
+            0
+          ],
+          "hrs": 2,
+          "io": "in",
+          "pram": "part",
+          "price": {
+            "th": "เช็กราคาก่อนไป",
+            "en": "Check the price"
+          },
+          "book": "none",
+          "src": "https://www.marseille-tourisme.com/en/offers/palomano-aix-en-provence-en-6251493/",
+          "name": {
+            "th": "ปาโลมาโน แอ็กซ์",
+            "en": "Palomano Aix-en-Provence"
+          },
+          "kind": "play",
+          "area": {
+            "th": "แอ็กซ็องพรอวองซ์",
+            "en": "Aix-en-Provence"
+          },
+          "what": {
+            "th": "สวนเล่นในร่มแบบสวมบทบาทขนาดเด็ก มีร้านอาหาร ตลาด สถานีดับเพลิง และเครื่องบิน",
+            "en": "An indoor play park of child-height role-play: a restaurant, a market, a fire station, a plane"
+          },
+          "why": {
+            "th": "เด็ก 0–10 ปีเล่นอิสระกับพ่อแม่",
+            "en": "Free play for children of 0 to 10 with their parents"
+          },
+          "q": "Palomano, 45 Boulevard Aristide Briand, Aix-en-Provence",
+          "ok": "2026-11"
         }
       ]
     },
