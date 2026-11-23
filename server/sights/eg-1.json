@@ -572,6 +572,129 @@
           "book": "none",
           "q": "Mummification Museum, Corniche, Luxor",
           "src": "https://egymonuments.gov.eg/en/museums/mummification-museum"
+        },
+        {
+          "local": "Corniche el-Nile",
+          "ages": [
+            2,
+            2,
+            2,
+            2
+          ],
+          "hrs": 1,
+          "io": "out",
+          "pram": "yes",
+          "price": {
+            "th": "ฟรี",
+            "en": "Free"
+          },
+          "book": "none",
+          "src": "https://exploreluxor.org/free-things-to-do/",
+          "name": {
+            "th": "ทางเดินริมแม่น้ำไนล์ลักซอร์",
+            "en": "Luxor Corniche"
+          },
+          "kind": "views",
+          "area": {
+            "th": "ฝั่งตะวันออก ลักซอร์",
+            "en": "East Bank, Luxor"
+          },
+          "what": {
+            "th": "ทางเดินริมแม่น้ำ วิวเนินเขาฝั่งตะวันตก",
+            "en": "The riverside walk with the West Bank hills across the water"
+          },
+          "why": {
+            "th": "ครอบครัวท้องถิ่นออกมาเดินตอนเย็น มีข้าวโพดย่างและชา",
+            "en": "Local families out in the evening, with roasted corn and tea"
+          },
+          "tip": {
+            "th": "เริ่มใกล้โรงแรมวินเทอร์พาเลซ ราว 30 นาทีก่อนพระอาทิตย์ตก",
+            "en": "Start near the Winter Palace Hotel about 30 minutes before sunset"
+          },
+          "q": "Luxor Nile Corniche, Luxor",
+          "ok": "2026-11"
+        },
+        {
+          "local": "",
+          "ages": [
+            0,
+            1,
+            2,
+            2
+          ],
+          "hrs": 1,
+          "io": "out",
+          "pram": "part",
+          "price": {
+            "th": "เช็กราคาก่อนไป",
+            "en": "Check the price"
+          },
+          "book": "none",
+          "src": "https://exploreluxor.org/temple-of-khnum/",
+          "name": {
+            "th": "วิหารคนุม",
+            "en": "Temple of Khnum"
+          },
+          "kind": "culture",
+          "area": {
+            "th": "เอสนา ห่างลักซอร์ไปทางใต้ราว 55 กม.",
+            "en": "Esna, about 55 km south of Luxor"
+          },
+          "what": {
+            "th": "วิหารที่เสาหินทาสีได้รับการทำความสะอาดในการบูรณะ 6 ปี",
+            "en": "A temple whose painted columns were cleaned in a six-year restoration"
+          },
+          "why": {
+            "th": "เสาสีน้ำเงิน แดง และเหลืองเต็มไปด้วยอักษรภาพ",
+            "en": "A forest of blue, red and yellow columns with hieroglyphs"
+          },
+          "tip": {
+            "th": "เปิด 8:00 มาเช้าอากาศเย็นและคนน้อย",
+            "en": "Opens at 8:00 AM; come early for cooler air and fewer people"
+          },
+          "q": "Temple of Khnum, Esna",
+          "ok": "2026-11"
+        },
+        {
+          "local": "",
+          "ages": [
+            0,
+            1,
+            2,
+            2
+          ],
+          "hrs": 1.5,
+          "io": "both",
+          "pram": "no",
+          "price": {
+            "th": "เช็กราคาก่อนไป",
+            "en": "Check the price"
+          },
+          "book": "none",
+          "src": "https://exploreluxor.org/tombs-of-the-nobles/",
+          "name": {
+            "th": "สุสานขุนนาง",
+            "en": "Tombs of the Nobles"
+          },
+          "kind": "culture",
+          "area": {
+            "th": "ฝั่งตะวันตก ลักซอร์",
+            "en": "West Bank, Luxor"
+          },
+          "what": {
+            "th": "สุสานข้าราชการกว่า 400 แห่ง ผนังภาพวาดยังสดใส",
+            "en": "Over 400 tombs of officials with bright painted walls"
+          },
+          "why": {
+            "th": "ภาพงานเลี้ยง ดนตรี เด็กเล่น และการทำนา",
+            "en": "Scenes of banquets, music, children playing and farming"
+          },
+          "tip": {
+            "th": "กรุ๊ปทัวร์ส่วนใหญ่ไม่มา จึงมักเงียบ",
+            "en": "Most tour groups skip it, so it is often quiet"
+          },
+          "q": "Tombs of the Nobles, Al Qarna, Luxor",
+          "ok": "2026-11"
         }
       ]
     }
