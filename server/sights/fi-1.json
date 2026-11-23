@@ -541,6 +541,228 @@
           "book": "none",
           "q": "Korundi House of Culture, Lapinkävijäntie 2, Rovaniemi",
           "src": "https://korundi.fi/en/korundi/korundi-house-of-culture/tickets"
+        },
+        {
+          "local": "",
+          "ages": [
+            0,
+            1,
+            2,
+            2
+          ],
+          "hrs": 2,
+          "io": "out",
+          "pram": "no",
+          "price": {
+            "th": "เช็กราคาก่อนไป",
+            "en": "Check the price"
+          },
+          "book": "rec",
+          "src": "https://www.visitrovaniemi.fi/rovaniemi-with-kids/",
+          "name": {
+            "th": "สวนผจญภัยฮุยมา",
+            "en": "Huima adventure park"
+          },
+          "kind": "play",
+          "area": {
+            "th": "โอนาสวารา โรวาเนียมิ",
+            "en": "Ounasvaara, Rovaniemi"
+          },
+          "what": {
+            "th": "สวนผจญภัยบนต้นไม้ 10 เส้นทาง สูงถึง 7 เมตร",
+            "en": "A treetop park with ten courses, up to seven metres off the ground"
+          },
+          "why": {
+            "th": "มีเชือก คาน สะพาน และตาข่ายระหว่างต้นไม้",
+            "en": "Ropes, beams, bridges and nets between living trees"
+          },
+          "q": "Adventure Park Huima, Hiihtomajantie 4, Rovaniemi",
+          "ok": "2026-11"
+        },
+        {
+          "local": "",
+          "ages": [
+            2,
+            2,
+            2,
+            1
+          ],
+          "hrs": 1,
+          "io": "out",
+          "pram": "part",
+          "price": {
+            "th": "ฟรี",
+            "en": "Free"
+          },
+          "book": "none",
+          "src": "https://www.visitrovaniemi.fi/rovaniemi-with-kids/",
+          "name": {
+            "th": "สนามเด็กเล่นแองกรีเบิร์ดส์",
+            "en": "Angry Birds playground"
+          },
+          "kind": "play",
+          "area": {
+            "th": "ใจกลางโรวาเนียมิ ริมแม่น้ำ",
+            "en": "Rovaniemi centre, by the river"
+          },
+          "what": {
+            "th": "สนามเด็กเล่นกลางแจ้ง มีทางเดินเชือกและสไลเดอร์ เข้าฟรี",
+            "en": "An open-air playground with rope walks and slides; free entry"
+          },
+          "why": {
+            "th": "สนุกได้ตั้งแต่เด็กเล็กถึงคุณตาคุณยาย",
+            "en": "Fun for toddlers and grandparents alike"
+          },
+          "q": "Angry Birds Playground, Valtakatu 4, Rovaniemi",
+          "ok": "2026-11"
+        },
+        {
+          "local": "",
+          "ages": [
+            0,
+            1,
+            2,
+            2
+          ],
+          "hrs": 2,
+          "io": "out",
+          "pram": "part",
+          "price": {
+            "th": "เช็กราคาก่อนไป",
+            "en": "Check the price"
+          },
+          "book": "none",
+          "src": "https://www.visitrovaniemi.fi/rovaniemi-with-kids/",
+          "name": {
+            "th": "สวนน้ำลอยน้ำรอยสเก",
+            "en": "Roiske floating water park"
+          },
+          "kind": "play",
+          "area": {
+            "th": "โรวาเนียมิ",
+            "en": "Rovaniemi"
+          },
+          "what": {
+            "th": "สวนน้ำลอยน้ำ มีด่านแบบนินจา เช่าเรือและบอร์ด และมีซาวน่า",
+            "en": "A floating water park with a ninja-style course, boat and board hire, and a sauna"
+          },
+          "why": {
+            "th": "ด่านนินจาสนุกได้ทั้งครอบครัว",
+            "en": "The ninja-style course is fun for the whole family"
+          },
+          "q": "Roiske Water Activities Centre, Rovaniemi",
+          "ok": "2026-11"
+        },
+        {
+          "local": "",
+          "ages": [
+            0,
+            1,
+            2,
+            2
+          ],
+          "hrs": 3,
+          "io": "both",
+          "pram": "no",
+          "price": {
+            "th": "เช็กราคาก่อนไป",
+            "en": "Check the price"
+          },
+          "book": "rec",
+          "src": "https://www.visitrovaniemi.fi/rovaniemi-with-kids/",
+          "name": {
+            "th": "เหมืองอเมทิสต์ลัมปิวารา",
+            "en": "Lampivaara amethyst mine"
+          },
+          "kind": "nature",
+          "area": {
+            "th": "อุทยานแห่งชาติปิฮา-ลูออสโต ลูออสโต",
+            "en": "Pyhä-Luosto national park, Luosto"
+          },
+          "what": {
+            "th": "เหมืองอัญมณีบนยอดเขา หน้าเว็บบอกว่าอเมทิสต์มีอายุ 2,000 ล้านปี",
+            "en": "A gem mine on a hilltop, with amethyst the page says is 2,000 million years old"
+          },
+          "why": {
+            "th": "มีทัวร์นำชมเหมืองช่วงหน้าหนาว",
+            "en": "A guided tour of the mine in winter"
+          },
+          "q": "Lampivaara Amethyst Mine, Luosto",
+          "ok": "2026-11"
+        },
+        {
+          "local": "Santasport",
+          "ages": [
+            1,
+            2,
+            2,
+            2
+          ],
+          "hrs": 2,
+          "io": "in",
+          "pram": "part",
+          "price": {
+            "th": "เช็กราคาก่อนไป",
+            "en": "Check the price"
+          },
+          "book": "none",
+          "src": "https://www.visitrovaniemi.fi/rovaniemi-with-kids/",
+          "name": {
+            "th": "สระว่ายน้ำซานตาสปอร์ต",
+            "en": "Santasport pools"
+          },
+          "kind": "play",
+          "area": {
+            "th": "โรวาเนียมิ",
+            "en": "Rovaniemi"
+          },
+          "what": {
+            "th": "สระว่ายน้ำของซานตาสปอร์ต ทั้งเรียนว่ายและว่ายเล่น",
+            "en": "Santasport's pools, for lessons and fun swimming"
+          },
+          "why": {
+            "th": "ว่ายเล่นกับครอบครัวได้ ไม่ได้มีไว้แข่งอย่างเดียว",
+            "en": "Good for a family swim, not only for racers"
+          },
+          "q": "Santasport, Hiihtomajantie 2, Rovaniemi",
+          "ok": "2026-11"
+        },
+        {
+          "local": "",
+          "ages": [
+            1,
+            2,
+            2,
+            2
+          ],
+          "hrs": 1.5,
+          "io": "out",
+          "pram": "part",
+          "price": {
+            "th": "เช็กราคาก่อนไป",
+            "en": "Check the price"
+          },
+          "book": "rec",
+          "src": "https://www.visitrovaniemi.fi/rovaniemi-with-kids/",
+          "name": {
+            "th": "ป่าลับซานตาคลอส ยูลุกกา",
+            "en": "Santa Claus Secret Forest – Joulukka"
+          },
+          "kind": "culture",
+          "area": {
+            "th": "หมู่บ้านซานตาคลอส โรวาเนียมิ",
+            "en": "Santa Claus Village, Rovaniemi"
+          },
+          "what": {
+            "th": "สถานที่คริสต์มาสที่ไปชมแบบส่วนตัวหรือกลุ่มเล็ก",
+            "en": "A Christmas place to visit privately or in a small group"
+          },
+          "why": {
+            "th": "บรรยากาศคริสต์มาสโดยไม่ต้องเบียดคน",
+            "en": "Christmas magic without the crowds"
+          },
+          "q": "Santa Claus Secret Forest Joulukka, Rovaniemi",
+          "ok": "2026-11"
         }
       ]
     }
