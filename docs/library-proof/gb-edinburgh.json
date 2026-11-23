@@ -1,0 +1,185 @@
+{
+  "town": "gb-edinburgh",
+  "kind": "eats + sights",
+  "checked": "2026-11-23",
+  "rule": "library-check.cjs, then the Google Maps Reviews tab sorted by newest: ok only when not marked closed, with a review from the last six months, and the map's name matching the page's.",
+  "agents": "one Haiku agent; 24 rows from Nursery & School Guide, Sharp Scot, Edinburgh Tourism and Everything Edinburgh (2025–26) passed library-check.cjs, 23 went in",
+  "added": [
+    {
+      "name": "Chop House (Market Street)",
+      "page_name": "Chop House",
+      "src": "https://www.nurseryandschoolguide.co.uk/post/top-10-places-to-eat-in-edinburgh-with-kids",
+      "date": "2026-01",
+      "map": "Google Maps Arch 15 East Market St, 1,163 reviews, newest '6 days ago'"
+    },
+    {
+      "name": "Civerinos (Stockbridge)",
+      "page_name": "Civerinos Stockbridge",
+      "src": "https://www.nurseryandschoolguide.co.uk/post/top-10-places-to-eat-in-edinburgh-with-kids",
+      "date": "2026-01",
+      "map": "Google Maps 48 Raeburn Place, 498 reviews, newest '12 hours ago'"
+    },
+    {
+      "name": "Pizza Express (North Bridge)",
+      "page_name": "Pizza Express North Bridge",
+      "src": "https://www.nurseryandschoolguide.co.uk/post/top-10-places-to-eat-in-edinburgh-with-kids",
+      "date": "2026-01",
+      "map": "Google Maps 23 North Bridge, 1,642 reviews, newest '1 day ago'"
+    },
+    {
+      "name": "Pizza Express (Queensferry Street)",
+      "page_name": "Pizza Express Queensferry Street",
+      "src": "https://www.nurseryandschoolguide.co.uk/post/top-10-places-to-eat-in-edinburgh-with-kids",
+      "date": "2026-01",
+      "map": "Google Maps 32 Queensferry St, 1,006 reviews, newest '20 hours ago'"
+    },
+    {
+      "name": "Montpeliers (Bruntsfield)",
+      "page_name": "Montpelliers, Bruntsfield",
+      "src": "https://www.nurseryandschoolguide.co.uk/post/top-10-places-to-eat-in-edinburgh-with-kids",
+      "date": "2026-01",
+      "map": "Google Maps 'Montpeliers Bruntsfield', 1,726 reviews, newest '1 day ago'"
+    },
+    {
+      "name": "Loudons (New Waverley)",
+      "page_name": "Loudons New Waverley",
+      "src": "https://www.nurseryandschoolguide.co.uk/post/top-10-places-to-eat-in-edinburgh-with-kids",
+      "date": "2026-01",
+      "map": "Google Maps 867 reviews, newest '22 hours ago'"
+    },
+    {
+      "name": "Franco Manca (Stockbridge)",
+      "page_name": "Franca Manca Stockbridge",
+      "src": "https://www.nurseryandschoolguide.co.uk/post/top-10-places-to-eat-in-edinburgh-with-kids",
+      "date": "2026-01",
+      "map": "Google Maps 'Franco Manca Edinburgh - Stockbridge' (the page writes 'Franca'), 1,263 reviews, newest '12 hours ago'"
+    },
+    {
+      "name": "Dishoom (Edinburgh)",
+      "page_name": "Dishoom",
+      "src": "https://www.sharpscot.co.uk/must-try-family-restaurants-edinburgh/",
+      "date": "2025-12",
+      "map": "Google Maps 'Dishoom Edinburgh', 21,773 reviews, newest '12 hours ago'"
+    },
+    {
+      "name": "Mamma Roma",
+      "page_name": "Mamma Roma",
+      "src": "https://www.sharpscot.co.uk/must-try-family-restaurants-edinburgh/",
+      "date": "2025-12",
+      "map": "Google Maps 3,027 reviews, newest '18 hours ago'"
+    },
+    {
+      "name": "The Edinburgh Larder",
+      "page_name": "The Edinburgh Larder",
+      "src": "https://www.sharpscot.co.uk/must-try-family-restaurants-edinburgh/",
+      "date": "2025-12",
+      "map": "Google Maps 'The Edinburgh Larder - Blackfriars Street', 4,548 reviews, newest '10 hours ago'"
+    },
+    {
+      "name": "Chaskaa",
+      "page_name": "Chaskaa Indian Restaurant",
+      "src": "https://www.sharpscot.co.uk/must-try-family-restaurants-edinburgh/",
+      "date": "2025-12",
+      "map": "Google Maps 1,892 reviews, newest '11 hours ago'"
+    },
+    {
+      "name": "Calton Hill and the Nelson Monument",
+      "page_name": "Calton Hill & the Nelson Monument",
+      "src": "https://everythingedinburgh.com/edinburgh-with-kids/",
+      "date": "2026-10",
+      "map": "Google Maps 'Nelson Monument', 2,309 reviews, newest '6 days ago'"
+    },
+    {
+      "name": "Palace of Holyroodhouse",
+      "page_name": "Palace of Holyroodhouse",
+      "src": "https://everythingedinburgh.com/edinburgh-with-kids/",
+      "date": "2026-10",
+      "map": "Google Maps 23,824 reviews, newest '3 hours ago'"
+    },
+    {
+      "name": "Craigmillar Castle",
+      "page_name": "Craigmillar Castle",
+      "src": "https://everythingedinburgh.com/edinburgh-with-kids/",
+      "date": "2026-10",
+      "map": "Google Maps 3,237 reviews, newest '4 hours ago'"
+    },
+    {
+      "name": "Murrayfield Ice Arena",
+      "page_name": "Murrayfield Ice Arena",
+      "src": "https://everythingedinburgh.com/edinburgh-with-kids/",
+      "date": "2026-10",
+      "map": "Google Maps 906 reviews, newest '17 hours ago'"
+    },
+    {
+      "name": "Alien Rock",
+      "page_name": "Alien Rock",
+      "src": "https://everythingedinburgh.com/edinburgh-with-kids/",
+      "date": "2026-10",
+      "map": "Google Maps 8 Pier Place, 392 reviews, newest 'last month'"
+    },
+    {
+      "name": "Gravity Active Edinburgh",
+      "page_name": "Gravity Active Edinburgh",
+      "src": "https://everythingedinburgh.com/edinburgh-with-kids/",
+      "date": "2026-10",
+      "map": "Google Maps 706 reviews, newest '1 day ago'"
+    },
+    {
+      "name": "Scottish National Gallery",
+      "page_name": "Scottish National Gallery",
+      "src": "https://www.edinburghtourism.org/rainy-day-kids-edinburgh/",
+      "date": "2026-07",
+      "map": "Google Maps 17,692 reviews, newest '7 hours ago'"
+    },
+    {
+      "name": "The Chocolatarium",
+      "page_name": "The Chocolatarium",
+      "src": "https://www.edinburghtourism.org/rainy-day-kids-edinburgh/",
+      "date": "2026-07",
+      "map": "Google Maps 3,273 reviews, newest '21 hours ago'"
+    },
+    {
+      "name": "Royal Commonwealth Pool",
+      "page_name": "Royal Commonwealth Pool",
+      "src": "https://www.edinburghtourism.org/rainy-day-kids-edinburgh/",
+      "date": "2026-07",
+      "map": "Google Maps 2,657 reviews, newest '1 day ago'"
+    },
+    {
+      "name": "TimeTwisters",
+      "page_name": "TimeTwisters",
+      "src": "https://www.edinburghtourism.org/rainy-day-kids-edinburgh/",
+      "date": "2026-07",
+      "map": "Google Maps 'Timetwisters Play Centre', 605 reviews, newest '2 days ago'"
+    },
+    {
+      "name": "Wonder World Soft Play",
+      "page_name": "Wonder World Soft Play",
+      "src": "https://www.edinburghtourism.org/rainy-day-kids-edinburgh/",
+      "date": "2026-07",
+      "map": "Google Maps 1,719 reviews, newest '5 days ago'"
+    },
+    {
+      "name": "Tumbles, Portobello",
+      "page_name": "Tumbles soft play and gymnastics",
+      "src": "https://www.edinburghtourism.org/rainy-day-kids-edinburgh/",
+      "date": "2026-07",
+      "map": "Google Maps 'Tumbles at Portobello', 628 reviews, newest '21 hours ago'"
+    }
+  ],
+  "left_out": [
+    {
+      "name": "Pantry (Merchiston Place)",
+      "why": "the map's newest review is 9 months old"
+    },
+    {
+      "name": "Ryze Trampoline Park, Little Farmers Playbarn",
+      "why": "outside Edinburgh"
+    },
+    {
+      "name": "Howies Waterloo Place, Scran & Scallie",
+      "why": "same brands as rows already in"
+    }
+  ],
+  "estimates": "Ages and visit hours are placeholders; prices and opening notes are the pages' own."
+}

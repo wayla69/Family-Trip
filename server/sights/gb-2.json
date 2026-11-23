@@ -535,6 +535,470 @@
           "q": "Holyrood Park, Edinburgh",
           "ok": "2026-11",
           "src": "https://travelforkids.com/Funtodo/Scotland/edinburgh-city/edinburgh-arthurs-seat-holyrood-park.htm"
+        },
+        {
+          "local": "",
+          "ages": [
+            1,
+            1,
+            1,
+            1
+          ],
+          "hrs": 1,
+          "io": "out",
+          "pram": "part",
+          "price": {
+            "th": "≈ £7.50 (ขึ้นอนุสาวรีย์)",
+            "en": "≈ £7.50 (the monument)"
+          },
+          "book": "none",
+          "src": "https://everythingedinburgh.com/edinburgh-with-kids/",
+          "name": {
+            "th": "เนินคาลตันและอนุสาวรีย์เนลสัน",
+            "en": "Calton Hill and the Nelson Monument"
+          },
+          "kind": "views",
+          "area": {
+            "th": "เนินคาลตัน",
+            "en": "Calton Hill"
+          },
+          "what": {
+            "th": "ขึ้นอนุสาวรีย์ไปดูลูกบอลบอกเวลาตกลงพร้อมเสียงปืนบ่ายโมง",
+            "en": "Climb the monument to see the time ball drop as the one o’clock gun fires"
+          },
+          "why": {
+            "th": "ขึ้นจากวอเตอร์ลูเพลสไม่ไกล ขาเล็กๆ ไหว",
+            "en": "A short climb from Waterloo Place, fine for little legs"
+          },
+          "tip": {
+            "th": "อนุสาวรีย์เปิดทุกวัน 10:00–15:30",
+            "en": "Monument open daily 10:00–15:30"
+          },
+          "q": "Nelson Monument, 32 Calton Hill, Edinburgh",
+          "ok": "2026-11"
+        },
+        {
+          "local": "",
+          "ages": [
+            0,
+            1,
+            2,
+            2
+          ],
+          "hrs": 2,
+          "io": "in",
+          "pram": "part",
+          "price": {
+            "th": "≈ £22 ผู้ใหญ่ · £11 อายุ 5–17 ปี",
+            "en": "≈ £22 a grown-up · £11 ages 5–17"
+          },
+          "book": "none",
+          "src": "https://everythingedinburgh.com/edinburgh-with-kids/",
+          "name": {
+            "th": "พระราชวังโฮลีรูดเฮาส์",
+            "en": "Palace of Holyroodhouse"
+          },
+          "kind": "culture",
+          "area": {
+            "th": "ปลายถนนรอยัลไมล์",
+            "en": "Foot of the Royal Mile"
+          },
+          "what": {
+            "th": "ที่ประทับทางการของกษัตริย์ในสกอตแลนด์ มีซากแอบบีย์และสวน",
+            "en": "The King’s official residence in Scotland, with the abbey ruins and garden"
+          },
+          "why": {
+            "th": "มีคู่มือมัลติมีเดียให้ครอบครัวเดินชม",
+            "en": "A multimedia guide for families to explore with"
+          },
+          "q": "Palace of Holyroodhouse, Canongate, Edinburgh",
+          "ok": "2026-11"
+        },
+        {
+          "local": "",
+          "ages": [
+            0,
+            1,
+            2,
+            2
+          ],
+          "hrs": 2,
+          "io": "both",
+          "pram": "part",
+          "price": {
+            "th": "≈ £7.50 ผู้ใหญ่ (ออนไลน์) · £4.50 อายุ 7–15 ปี",
+            "en": "≈ £7.50 a grown-up online · £4.50 ages 7–15"
+          },
+          "book": "none",
+          "src": "https://everythingedinburgh.com/edinburgh-with-kids/",
+          "name": {
+            "th": "ปราสาทเครกมิลลาร์",
+            "en": "Craigmillar Castle"
+          },
+          "kind": "culture",
+          "area": {
+            "th": "ตะวันออกเฉียงใต้ของเอดินบะระ",
+            "en": "South-east Edinburgh"
+          },
+          "what": {
+            "th": "หอปราสาทเก่าแก่ที่สุดแห่งหนึ่งของสกอตแลนด์ มีห้องโถงใหญ่และคุกให้ตามหา",
+            "en": "One of Scotland’s oldest tower houses, with a great hall and a prison to find"
+          },
+          "why": {
+            "th": "เงียบกว่าปราสาทเอดินบะระ และเห็นวิวเมือง",
+            "en": "Quieter than Edinburgh Castle, with views over the city"
+          },
+          "tip": {
+            "th": "เม.ย.–ก.ย. 9:30–17:00 ต.ค.–มี.ค. 10:00–16:00",
+            "en": "9:30–17:00 April–September, 10:00–16:00 October–March"
+          },
+          "q": "Craigmillar Castle, Craigmillar Castle Road, Edinburgh",
+          "ok": "2026-11"
+        },
+        {
+          "local": "",
+          "ages": [
+            0,
+            1,
+            2,
+            2
+          ],
+          "hrs": 2,
+          "io": "in",
+          "pram": "part",
+          "price": {
+            "th": "≈ £12 ตั้งแต่ 5 ขวบ",
+            "en": "≈ £12 from age 5"
+          },
+          "book": "none",
+          "src": "https://everythingedinburgh.com/edinburgh-with-kids/",
+          "name": {
+            "th": "ลานสเก็ตเมอร์เรย์ฟิลด์",
+            "en": "Murrayfield Ice Arena"
+          },
+          "kind": "play",
+          "area": {
+            "th": "เมอร์เรย์ฟิลด์",
+            "en": "Murrayfield"
+          },
+          "what": {
+            "th": "ลานสเก็ตสาธารณะทุกวัน มีรองเท้าให้เช่า",
+            "en": "Public skating every day, with skate hire"
+          },
+          "why": {
+            "th": "เด็กต่ำกว่า 5 ขวบเล่นฟรี",
+            "en": "Under-fives skate free"
+          },
+          "q": "Murrayfield Ice Arena, 13 Riversdale Crescent, Edinburgh",
+          "ok": "2026-11"
+        },
+        {
+          "local": "",
+          "ages": [
+            0,
+            1,
+            2,
+            2
+          ],
+          "hrs": 2,
+          "io": "in",
+          "pram": "part",
+          "price": {
+            "th": "เช็กราคาก่อนไป",
+            "en": "Check the price"
+          },
+          "book": "rec",
+          "src": "https://everythingedinburgh.com/edinburgh-with-kids/",
+          "name": {
+            "th": "เอเลียนร็อก",
+            "en": "Alien Rock"
+          },
+          "kind": "play",
+          "area": {
+            "th": "นิวเฮเวน",
+            "en": "Newhaven"
+          },
+          "what": {
+            "th": "ศูนย์ปีนผาในร่ม มีเส้นทางถึง 200 เส้น",
+            "en": "An indoor climbing centre with up to 200 routes"
+          },
+          "why": {
+            "th": "มีคลับเด็กและคลาสทดลอง",
+            "en": "A kids’ club and taster sessions"
+          },
+          "q": "Alien Rock, 8 Pier Place, Edinburgh",
+          "ok": "2026-11"
+        },
+        {
+          "local": "",
+          "ages": [
+            1,
+            2,
+            2,
+            2
+          ],
+          "hrs": 2,
+          "io": "in",
+          "pram": "part",
+          "price": {
+            "th": "เช็กราคาก่อนไป",
+            "en": "Check the price"
+          },
+          "book": "none",
+          "src": "https://everythingedinburgh.com/edinburgh-with-kids/",
+          "name": {
+            "th": "แกรวิตีแอ็กทีฟ เอดินบะระ",
+            "en": "Gravity Active Edinburgh"
+          },
+          "kind": "play",
+          "area": {
+            "th": "ฟาวน์เทนพาร์ก",
+            "en": "Fountain Park"
+          },
+          "what": {
+            "th": "สวนแทรมโพลีน รอบ 60, 90 และ 120 นาที",
+            "en": "A trampoline park with 60-, 90- and 120-minute sessions"
+          },
+          "why": {
+            "th": "มีรอบพิเศษสำหรับเด็กเล็ก",
+            "en": "Special sessions for toddlers"
+          },
+          "q": "Gravity Active Edinburgh, Fountain Park, 130 Dundee Street, Edinburgh",
+          "ok": "2026-11"
+        },
+        {
+          "local": "",
+          "ages": [
+            0,
+            1,
+            1,
+            2
+          ],
+          "hrs": 1,
+          "io": "in",
+          "pram": "part",
+          "price": {
+            "th": "ฟรี",
+            "en": "Free"
+          },
+          "book": "none",
+          "src": "https://www.edinburghtourism.org/rainy-day-kids-edinburgh/",
+          "name": {
+            "th": "หอศิลป์แห่งชาติสกอตแลนด์",
+            "en": "Scottish National Gallery"
+          },
+          "kind": "museum",
+          "area": {
+            "th": "เดอะเมานด์",
+            "en": "The Mound"
+          },
+          "what": {
+            "th": "หอศิลป์แห่งชาติบนเดอะเมานด์ เข้าฟรี",
+            "en": "The national art gallery on the Mound, free to enter"
+          },
+          "why": {
+            "th": "มีเวิร์กช็อปครอบครัวฟรีวันอาทิตย์ช่วงเปิดเทอม",
+            "en": "Free Sunday family workshops in term time"
+          },
+          "q": "Scottish National Gallery, The Mound, Edinburgh",
+          "ok": "2026-11"
+        },
+        {
+          "local": "",
+          "ages": [
+            1,
+            1,
+            1,
+            1
+          ],
+          "hrs": 1,
+          "io": "in",
+          "pram": "part",
+          "price": {
+            "th": "เช็กราคาก่อนไป",
+            "en": "Check the price"
+          },
+          "book": "req",
+          "src": "https://www.edinburghtourism.org/rainy-day-kids-edinburgh/",
+          "name": {
+            "th": "เดอะช็อกโกลาทาเรียม",
+            "en": "The Chocolatarium"
+          },
+          "kind": "museumkid",
+          "area": {
+            "th": "ถนนแครนสตัน ข้างรอยัลไมล์",
+            "en": "Cranston Street, off the Royal Mile"
+          },
+          "what": {
+            "th": "ทัวร์ทำช็อกโกแลต",
+            "en": "A chocolate-making tour"
+          },
+          "why": {
+            "th": "เด็กได้ทำช็อกโกแลตแท่งของตัวเองกลับบ้าน",
+            "en": "Children make their own bar to take home"
+          },
+          "tip": {
+            "th": "จองตั๋วตามรอบออนไลน์",
+            "en": "Book timed tickets online"
+          },
+          "q": "The Chocolatarium, 3-5 Cranston Street, Edinburgh",
+          "ok": "2026-11"
+        },
+        {
+          "local": "",
+          "ages": [
+            1,
+            2,
+            2,
+            2
+          ],
+          "hrs": 2,
+          "io": "in",
+          "pram": "part",
+          "price": {
+            "th": "≈ £7.99",
+            "en": "≈ £7.99"
+          },
+          "book": "req",
+          "src": "https://www.edinburghtourism.org/rainy-day-kids-edinburgh/",
+          "name": {
+            "th": "สระว่ายน้ำรอยัลคอมมอนเวลท์",
+            "en": "Royal Commonwealth Pool"
+          },
+          "kind": "play",
+          "area": {
+            "th": "ถนนดัลคีธ",
+            "en": "Dalkeith Road"
+          },
+          "what": {
+            "th": "สระ 50 ม. มีสระกระโดด สระฝึก และที่เล่นนุ่มแคลมเบอร์ส",
+            "en": "A 50 m pool with a diving pool, a teaching pool and Clambers soft play"
+          },
+          "why": {
+            "th": "ว่ายน้ำครอบครัวและที่เล่นนุ่มในที่เดียว",
+            "en": "Family fun swims and soft play under one roof"
+          },
+          "tip": {
+            "th": "รอบว่ายน้ำครอบครัวต้องจองก่อน",
+            "en": "Family fun swims must be booked"
+          },
+          "q": "Royal Commonwealth Pool, 21 Dalkeith Road, Edinburgh",
+          "ok": "2026-11"
+        },
+        {
+          "local": "",
+          "ages": [
+            2,
+            2,
+            1,
+            0
+          ],
+          "hrs": 2,
+          "io": "in",
+          "pram": "part",
+          "price": {
+            "th": "เช็กราคาก่อนไป",
+            "en": "Check the price"
+          },
+          "book": "none",
+          "src": "https://www.edinburghtourism.org/rainy-day-kids-edinburgh/",
+          "name": {
+            "th": "ไทม์ทวิสเตอร์ส",
+            "en": "TimeTwisters"
+          },
+          "kind": "play",
+          "area": {
+            "th": "ไซต์ฮิลล์",
+            "en": "Sighthill"
+          },
+          "what": {
+            "th": "ที่เล่นนุ่มธีมอียิปต์โบราณ มีโครงปีน สไลเดอร์ และบ่อบอล",
+            "en": "An Ancient Egypt-themed soft play with frames, slides and ball pits"
+          },
+          "why": {
+            "th": "มีโซนแยกสำหรับทารกและเด็กเล็ก",
+            "en": "A separate baby and toddler area"
+          },
+          "q": "Timetwisters Play Centre, Bankhead Drive, Edinburgh",
+          "ok": "2026-11"
+        },
+        {
+          "local": "",
+          "ages": [
+            2,
+            2,
+            1,
+            0
+          ],
+          "hrs": 2,
+          "io": "in",
+          "pram": "part",
+          "price": {
+            "th": "เช็กราคาก่อนไป",
+            "en": "Check the price"
+          },
+          "book": "none",
+          "src": "https://www.edinburghtourism.org/rainy-day-kids-edinburgh/",
+          "name": {
+            "th": "วันเดอร์เวิลด์",
+            "en": "Wonder World Soft Play"
+          },
+          "kind": "play",
+          "area": {
+            "th": "ถนนอีสเตอร์ ลีธ",
+            "en": "Easter Road, Leith"
+          },
+          "what": {
+            "th": "ที่เล่นนุ่ม มีบ่อบอล รางโกคาร์ต สไลเดอร์ดิ่ง และสนามฟุตบอล",
+            "en": "Soft play with ball pools, a go-kart track, a drop slide and a football pitch"
+          },
+          "why": {
+            "th": "ที่โปรดของครอบครัวฝั่งเหนือของเมือง",
+            "en": "A favourite for north Edinburgh families"
+          },
+          "q": "Wonder World Soft Play, 377 Easter Road, Edinburgh",
+          "ok": "2026-11"
+        },
+        {
+          "local": "",
+          "ages": [
+            2,
+            2,
+            0,
+            0
+          ],
+          "hrs": 2,
+          "io": "in",
+          "pram": "part",
+          "price": {
+            "th": "เช็กราคาก่อนไป",
+            "en": "Check the price"
+          },
+          "book": "none",
+          "src": "https://www.edinburghtourism.org/rainy-day-kids-edinburgh/",
+          "name": {
+            "th": "ทัมเบิลส์ พอร์โตเบลโล",
+            "en": "Tumbles, Portobello"
+          },
+          "kind": "play",
+          "area": {
+            "th": "พอร์โตเบลโล",
+            "en": "Portobello"
+          },
+          "what": {
+            "th": "ที่เล่นนุ่มแนวยิมนาสติก แบ่งสามโซนตามวัย",
+            "en": "Gymnastics-style soft play in three age zones"
+          },
+          "why": {
+            "th": "เหมาะมากกับเด็กต่ำกว่า 2 ขวบ",
+            "en": "Especially good for under-twos"
+          },
+          "tip": {
+            "th": "ไปต่อเดินเล่นหาดพอร์โตเบลโลได้",
+            "en": "Pair with a walk on Portobello beach"
+          },
+          "q": "Tumbles at Portobello, 20 Westbank Street, Edinburgh",
+          "ok": "2026-11"
         }
       ]
     },
