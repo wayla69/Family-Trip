@@ -555,6 +555,84 @@
           "q": "Jardim Botânico do Porto, Rua do Campo Alegre 1191, Porto",
           "ok": "2026-11",
           "src": "https://visitporto.travel/en-GB/poi/5cd04b49f979e0000169b570"
+        },
+        {
+          "local": "",
+          "ages": [
+            1,
+            2,
+            2,
+            2
+          ],
+          "hrs": 3,
+          "io": "out",
+          "pram": "part",
+          "price": {
+            "th": "เช็กราคาก่อนไป",
+            "en": "Check the price"
+          },
+          "book": "none",
+          "src": "https://familytraveller.com/holiday-destinations/europe/portugal/8-things-to-do-in-porto-with-family/",
+          "name": {
+            "th": "สระน้ำทะเลปิชินาดัชมาเรช",
+            "en": "Piscina das Marés"
+          },
+          "kind": "beach",
+          "area": {
+            "th": "เลซาดาปัลไมรา ใกล้ปอร์โต",
+            "en": "Leça da Palmeira, by Porto"
+          },
+          "what": {
+            "th": "สระน้ำทะเลในโขดหินริมมหาสมุทร มีสระแยกสำหรับผู้ใหญ่",
+            "en": "Sea pools in the rocks by the ocean, with a separate pool for adults"
+          },
+          "why": {
+            "th": "เด็ก ๆ เล่นน้ำในสระที่ให้ความรู้สึกเหมือนทะเล",
+            "en": "Children splash in pools that feel like the ocean"
+          },
+          "tip": {
+            "th": "เปิดช่วงหน้าร้อนและต้นใบไม้ร่วง",
+            "en": "Open in summer and early autumn"
+          },
+          "q": "Piscina das Marés, Av. da Liberdade, Leça da Palmeira",
+          "ok": "2026-11"
+        },
+        {
+          "local": "",
+          "ages": [
+            1,
+            2,
+            2,
+            2
+          ],
+          "hrs": 2,
+          "io": "in",
+          "pram": "part",
+          "price": {
+            "th": "เช็กราคาก่อนไป",
+            "en": "Check the price"
+          },
+          "book": "rec",
+          "src": "https://familytraveller.com/holiday-destinations/europe/portugal/8-things-to-do-in-porto-with-family/",
+          "name": {
+            "th": "เวิลด์ออฟดิสคัฟเวอรีส์",
+            "en": "World of Discoveries"
+          },
+          "kind": "museumkid",
+          "area": {
+            "th": "มีรากายา ปอร์โต",
+            "en": "Miragaia, Porto"
+          },
+          "what": {
+            "th": "พิพิธภัณฑ์และสวนสนุกเรื่องยุคแห่งการค้นพบ นั่งเรือผ่านฉากขนาดเท่าจริง",
+            "en": "A museum and theme park about the Age of Discovery, with a boat ride past life-size scenes"
+          },
+          "why": {
+            "th": "เด็ก ๆ ได้รู้ว่ากะลาสีกินอะไรและใช้ปืนใหญ่แบบไหน",
+            "en": "Children learn what sailors ate and the cannons they used"
+          },
+          "q": "World of Discoveries, Rua de Miragaia 106, Porto",
+          "ok": "2026-11"
         }
       ]
     }
