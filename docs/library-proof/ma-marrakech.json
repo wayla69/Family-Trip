@@ -1,0 +1,17 @@
+{
+  "town": "ma-marrakech",
+  "kind": "eats",
+  "checked": "2026-11",
+  "rule": "A row gets ok only from a current listing, its own site or recent reviews with nothing saying closed (docs/EATS.md). A row is taken out when a search could not find the place at all or the sources disagree; a place found but not freshly confirmed stays without ok.",
+  "scope": "the 1 rows without ok; the rows that already carried ok were not re-checked in this pass",
+  "how": "Google Maps opened in headless Chromium (2026-11-23), limited view without a reviews tab, so no review date could be read; each row's own map query first, then the name with the town, a list result opened when needed; a hotel's own site or one web search only where Maps could not settle it.",
+  "confirmed": [],
+  "kept_without_ok": [
+    {
+      "name": "Kasbah Bab Ourika",
+      "src": "Google Maps + web search",
+      "evidence": "Maps: \"Kasbah Bab Ourika / قصبة باب أوريكا\", 5-star hotel, Ourika, but \"Contact this property for rates and availability\" — not bookable on Maps; web pages (Audley, Hotel Guru) say it serves lunch and dinner but are undated. The hotel rule is not met."
+    }
+  ],
+  "removed": []
+}

@@ -1,0 +1,19 @@
+{
+  "town": "pe-cusco",
+  "kind": "eats",
+  "checked": "2026-11",
+  "rule": "A row gets ok only from a current listing, its own site or recent reviews with nothing saying closed (docs/EATS.md). A row is taken out when a search could not find the place at all or the sources disagree; a place found but not freshly confirmed stays without ok.",
+  "scope": "the 1 rows without ok; the rows that already carried ok were not re-checked in this pass",
+  "how": "Google Maps opened in headless Chromium (2026-11-23), limited view without a reviews tab, so no review date could be read; each row's own map query first, then the name with the town, a list result opened when needed; a hotel's own site or one web search only where Maps could not settle it.",
+  "confirmed": [
+    {
+      "name": "Horno Colonial San Francisco",
+      "src": "Google Maps",
+      "page_name": "Horno San Francisco",
+      "evidence": "\"Horno San Francisco\", Bakery, Mariscal Castilla 572, H5H2+M3 Pisac; \"Closed · Opens 8 AM\"",
+      "ok": "2026-11"
+    }
+  ],
+  "kept_without_ok": [],
+  "removed": []
+}

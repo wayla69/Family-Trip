@@ -1,0 +1,61 @@
+{
+  "town": "ke-mara",
+  "kind": "eats",
+  "checked": "2026-11",
+  "rule": "A row gets ok only from a current listing, its own site or recent reviews with nothing saying closed (docs/EATS.md). A row is taken out when a search could not find the place at all or the sources disagree; a place found but not freshly confirmed stays without ok.",
+  "scope": "the 7 rows without ok; the rows that already carried ok were not re-checked in this pass",
+  "how": "Google Maps opened in headless Chromium (2026-11-23), limited view without a reviews tab, so no review date could be read; each row's own map query first, then the name with the town, a list result opened when needed; a hotel's own site or one web search only where Maps could not settle it.",
+  "confirmed": [
+    {
+      "name": "Talisman",
+      "src": "Google Maps",
+      "page_name": "Talisman Restaurant",
+      "evidence": "\"Talisman Restaurant\", Ngong Rd, MPG3+QG Nairobi (Karen); \"Closed · Opens 11 AM Tue\"; thetalismanrestaurant.com",
+      "ok": "2026-11"
+    },
+    {
+      "name": "Mama Oliech",
+      "src": "Google Maps",
+      "page_name": "Mama Oliech Restaurant",
+      "evidence": "\"Mama Oliech Restaurant\", African restaurant, Marcus Garvey Rd, PQ4R+9G Nairobi; \"Open 24 hours\"",
+      "ok": "2026-11"
+    },
+    {
+      "name": "Habesha",
+      "src": "Google Maps",
+      "page_name": "Habesha Ethiopian Restaurant",
+      "evidence": "\"Habesha Ethiopian Restaurant\", Argwings Kodhek Rd, PQ5H+2V Nairobi; \"Closed · Opens 9 AM\"; habesharestaurant.co.ke",
+      "ok": "2026-11"
+    },
+    {
+      "name": "Open House",
+      "src": "Google Maps",
+      "page_name": "Open House Restaurant Ltd",
+      "evidence": "The row's query and \"Open House Westlands\" found nothing; a web search placed it at Gallant Mall, Parklands Road, and Maps then shows \"Open House Restaurant Ltd\", Indian restaurant, Gallant mall, Parklands Road, PRP5+FP Nairobi; \"Closed · Opens 12 PM\"; openhouserestaurant.co.ke. q now names Gallant Mall.",
+      "ok": "2026-11",
+      "q_changed_to": "Open House Restaurant, Gallant Mall, Parklands Road, Nairobi"
+    },
+    {
+      "name": "Java House",
+      "src": "Google Maps",
+      "page_name": "Java House - Mama Ngina St",
+      "evidence": "\"Java House - Mama Ngina St\", Transnational Plaza, Mama Ngina St, PR7F+M6 Nairobi; \"Open · Closes 10 PM\"",
+      "ok": "2026-11"
+    },
+    {
+      "name": "Artcaffé",
+      "src": "Google Maps",
+      "page_name": "Artcaffé Restaurant Mwanzi Road",
+      "evidence": "\"Artcaffé Restaurant Mwanzi Road\", Westgate Mall, Mwanzi Rd, PRR3+XC Nairobi; \"Open · Closes 12 AM\"; owner post Sep 29, 2026",
+      "ok": "2026-11"
+    }
+  ],
+  "kept_without_ok": [
+    {
+      "name": "Sarit Centre Food Court",
+      "src": "Google Maps",
+      "evidence": "\"Sarit\" mall (Lower Kabete Rd) shows \"Open 24 hours\" and single outlets (TastiGo Grill, The Daily Café & Bistro, Falafel house) have hours, but no listing of the food court itself."
+    }
+  ],
+  "removed": []
+}
