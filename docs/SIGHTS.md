@@ -215,3 +215,11 @@ nightlife, and religious sites that ask visitors to keep away.
 - **23 Nov 2026, Lisbon & Sintra** (docs/library-briefs batch-22): +4 (Alto da Serafina park, Bowling City, Praia das Maçãs, the Moorish Castle). Proof in `docs/library-proof/pt-lisbon.json`.
 - **23 Nov 2026, Porto** (docs/library-briefs batch-22): +2 (Piscina das Marés, World of Discoveries). Proof in `docs/library-proof/pt-porto.json`.
 - **23 Nov 2026, Plitvice** (docs/library-briefs batch-28): +1 (the Great Waterfall). Proof in `docs/library-proof/hr-plitvice.json`.
+- **23 Nov 2026, Copenhagen** (docs/library-briefs batch-12): +1 (Rundetårn). Proof in `docs/library-proof/dk-copenhagen.json`.
+- **23 Nov 2026, Tallinn** (docs/library-briefs batch-12): +8 (Pirita Beach, the City Museum, Lohesaba, St Olaf’s tower, St Catherine’s Passage, Kohtuotsa, Pirita Convent, the Telliskivi flea market). Proof in `docs/library-proof/ee-tallinn.json`.
+- **23 Nov 2026, Helsinki** (docs/library-briefs batch-13): +5 (Puppet Theatre Sampo, the Winter Garden, Leikkiluola, SkyWheel, the Tram Museum). Proof in `docs/library-proof/fi-helsinki.json`.
+- **23 Nov 2026, Reykjavík** (docs/library-briefs batch-17): +10 (Hljóðhimnar in Harpa, the botanic garden, Viðey, Volcano Express, Tjörnin, Hljómskálagarður, Öskjuhlíð, Árbæjarlaug, the Secret Lagoon, Fontana). Proof in `docs/library-proof/is-reykjavik.json`.
+- **23 Nov 2026, Tromsø** (docs/library-briefs batch-21): +2 (the city library, the Arctic Cathedral). Proof in `docs/library-proof/no-tromso.json`.
+- **23 Nov 2026, Bergen** (docs/library-briefs batch-21): +1 (Rush trampoline park). Proof in `docs/library-proof/no-bergen.json`.
+- **23 Nov 2026, Lapland** (docs/library-briefs batch-22): +6 (Huima, the Angry Birds playground, Roiske, the Lampivaara amethyst mine, Santasport pools, Joulukka). Proof in `docs/library-proof/p-lapland.json`.
+- **23 Nov 2026, Stockholm** (docs/library-briefs batch-23): +4 (Vasaparken, Norra Stationsparken, the Police Museum, Leo's Lekland Kungens Kurva). Proof in `docs/library-proof/se-stockholm.json`.

@@ -500,3 +500,26 @@ batch-22 of docs/library-briefs. +8: Bonkers, Epic Sana and Sheraton brunches, L
 
 ### Plitvice, 23 Nov 2026
 batch-28 of docs/library-briefs. +1: the Camping Plitvice restaurant. Proof in `docs/library-proof/hr-plitvice.json`.
+### Copenhagen, 23 Nov 2026
+batch-12 of docs/library-briefs. +4 from the Cofoco group’s family page (children’s menu or a half dish at half price): Scarpetta (Islands Brygge, Rantzausgade), Donna, Les Trois Cochons. Proof in `docs/library-proof/dk-copenhagen.json`.
+
+### Tallinn, 23 Nov 2026
+batch-12 of docs/library-briefs. +9 from Visit Estonia and easyfind.ee (2026): Nero, Lore Bistroo, City Grill House, NOP, Talleke ja Pullike, Pann&Kook, Gourmet Coffee, Boheem, Vapiano (Hobujaama). Proof in `docs/library-proof/ee-tallinn.json`.
+
+### Helsinki, 23 Nov 2026
+batch-13 of docs/library-briefs. +4: The Social (Clarion Helsinki and Mestari), Toscanini, Linnankellari, from Strawberry’s restaurant guide. Proof in `docs/library-proof/fi-helsinki.json`.
+
+### Reykjavík, 23 Nov 2026
+batch-17 of docs/library-briefs. +8: Kaffi Laugalækur, The Laundromat Café, the cat café, Grandi Mathöll, Kaffi Flóra, Iðnó, 101 Reykjavik Street Food, Arna. Proof in `docs/library-proof/is-reykjavik.json`.
+
+### Tromsø, 23 Nov 2026
+batch-21 of docs/library-briefs. +1: Pastafabrikken. Proof in `docs/library-proof/no-tromso.json`.
+
+### Bergen, 23 Nov 2026
+batch-21 of docs/library-briefs. +1: Peppes Pizza (Ole Bulls plass). Proof in `docs/library-proof/no-bergen.json`.
+
+### Lapland, 23 Nov 2026
+batch-22 of docs/library-briefs. +2 in Rovaniemi: Restaurant Gallis, Piparina. Proof in `docs/library-proof/p-lapland.json`.
+
+### Stockholm, 23 Nov 2026
+batch-23 of docs/library-briefs. +3: Junibacken restaurant, Haga Bottega, Boketto. Proof in `docs/library-proof/se-stockholm.json`.

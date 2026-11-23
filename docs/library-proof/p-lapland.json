@@ -1,0 +1,92 @@
+{
+  "town": "p-lapland",
+  "kind": "eats + sights",
+  "checked": "2026-11-23",
+  "rule": "library-check.cjs, then the Google Maps Reviews tab sorted by newest: ok only when not marked closed, with a review from the last six months, and the map's name matching the page's.",
+  "agents": "one Haiku agent; 15 rows from Visit Rovaniemi (2025–2026), Megan Starr (2026), SantaPark, Santa Claus Village (2026) and Lapland North passed library-check.cjs, 8 went in",
+  "added": [
+    {
+      "name": "Restaurant Gallis",
+      "page_name": "Restaurant Gallis",
+      "src": "https://www.meganstarr.com/?p=94488",
+      "date": "2026-09",
+      "map": "Google Maps Tähtikuja 16, 133 reviews, newest '1 day ago'"
+    },
+    {
+      "name": "Piparina",
+      "page_name": "Piparina's restaurant",
+      "src": "https://santaclausvillage.info/restaurants/piparinas-restaurant/",
+      "date": "2026-11",
+      "map": "Google Maps 'Piparina Day Cabins & Dining', Joulumaantie 8, 393 reviews, newest '18 hours ago'"
+    },
+    {
+      "name": "Huima adventure park",
+      "page_name": "Arctic Adventure Park Huima",
+      "src": "https://www.visitrovaniemi.fi/rovaniemi-with-kids/",
+      "date": "2025-09",
+      "map": "Google Maps 'Adventure Park Huima', 20 reviews, newest '4 months ago'"
+    },
+    {
+      "name": "Angry Birds playground",
+      "page_name": "Angry Birds Activity Park",
+      "src": "https://www.visitrovaniemi.fi/rovaniemi-with-kids/",
+      "date": "2025-09",
+      "map": "Google Maps 'Angry Birds Playground', Valtakatu 4, 2,115 reviews, newest '1 day ago'"
+    },
+    {
+      "name": "Roiske floating water park",
+      "page_name": "Roiske",
+      "src": "https://www.visitrovaniemi.fi/rovaniemi-with-kids/",
+      "date": "2025-09",
+      "map": "Google Maps 'Roiske Water Activities Centre', 161 reviews, newest 'last week'"
+    },
+    {
+      "name": "Lampivaara amethyst mine",
+      "page_name": "Lampivaara Amethyst Mine",
+      "src": "https://www.visitrovaniemi.fi/rovaniemi-with-kids/",
+      "date": "2025-09",
+      "map": "Google Maps 480 reviews, newest '1 day ago'"
+    },
+    {
+      "name": "Santasport pools",
+      "page_name": "Santasport pool area",
+      "src": "https://www.visitrovaniemi.fi/rovaniemi-with-kids/",
+      "date": "2025-09",
+      "map": "Google Maps 'Santasport', 2,032 reviews, newest '1 day ago'"
+    },
+    {
+      "name": "Santa Claus Secret Forest – Joulukka",
+      "page_name": "Santa Claus Secret Forest - Joulukka",
+      "src": "https://www.visitrovaniemi.fi/rovaniemi-with-kids/",
+      "date": "2025-09",
+      "map": "Google Maps 128 reviews, newest '14 hours ago'"
+    }
+  ],
+  "left_out": [
+    {
+      "name": "Café Ensilumi",
+      "why": "newest Google Maps review eight months old"
+    },
+    {
+      "name": "Santamus, Kota Café",
+      "why": "the map shows another place for the name or address"
+    },
+    {
+      "name": "Arctic Circle Snowmobile Park",
+      "why": "listed on the map as a tour operator"
+    },
+    {
+      "name": "Ounasvaara Sled Track",
+      "why": "the map shows only the ski resort"
+    },
+    {
+      "name": "Santasport Bowling",
+      "why": "the same building as the pools row"
+    },
+    {
+      "name": "Tankavaara Gold Village",
+      "why": "its only source was a tour listing"
+    }
+  ],
+  "estimates": "Ages and visit hours are placeholders; prices and opening notes are the pages' own."
+}
