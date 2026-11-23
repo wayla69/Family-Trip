@@ -788,6 +788,47 @@
           "q": "Musée historique, Mont-Saint-Michel",
           "ok": "2026-11",
           "src": "https://www.ot-montsaintmichel.com/en/patrimoine-culturel/musee-historique/"
+        },
+        {
+          "local": "",
+          "ages": [
+            0,
+            1,
+            2,
+            2
+          ],
+          "hrs": 0.5,
+          "io": "in",
+          "pram": "part",
+          "price": {
+            "th": "ผู้ใหญ่ ≈ 9 € (ราคาเต็ม)",
+            "en": "≈ 9 € adult (full rate)"
+          },
+          "book": "none",
+          "src": "https://www.ot-montsaintmichel.com/en/patrimoine-culturel/archeoscope/",
+          "name": {
+            "th": "อาร์เคโอสโคป",
+            "en": "Archéoscope"
+          },
+          "kind": "show",
+          "area": {
+            "th": "ถนนกร็องด์รู มงแซ็งมีแชล",
+            "en": "Grande Rue, Le Mont-Saint-Michel"
+          },
+          "what": {
+            "th": "การแสดงแบบสื่อผสมเล่าประวัติและตำนานของมง",
+            "en": "An immersive show of the Mont's history and legend"
+          },
+          "why": {
+            "th": "หน้าเว็บบอกว่าเป็นโชว์มหัศจรรย์ที่ประวัติศาสตร์พบตำนาน",
+            "en": "The page calls it a magical show where history meets legend"
+          },
+          "tip": {
+            "th": "วันและเวลาเปิดดูได้ที่หน้าเว็บสำนักงานท่องเที่ยว",
+            "en": "Opening dates and hours are on the tourist office page"
+          },
+          "q": "Archéoscope, Grande Rue, Le Mont-Saint-Michel",
+          "ok": "2026-11"
         }
       ]
     },
