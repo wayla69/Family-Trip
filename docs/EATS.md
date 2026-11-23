@@ -529,3 +529,6 @@ batch-19 of docs/library-briefs. +2: Cappuccino, TomYumBar. Proof in `docs/libra
 
 ### Yangon, 23 Nov 2026
 batch-29 of docs/library-briefs. +2: Sharky's, Chatrium Hotel Royal Lake. Proof in `docs/library-proof/mm-yangon.json`.
+
+### Singapore, 24 Nov 2026
+batch-41 of docs/library-briefs (round 2). +6: Small Batch and Park Side (Botanic Gardens), Food Republic (313@Somerset), Wildseed Café (The Garage), Gyukatsu Kyoto Katsugyu (Parkway Parade), Papi's Tacos (Jalan Besar). Proof in `docs/library-proof/sg-singapore.json`.
