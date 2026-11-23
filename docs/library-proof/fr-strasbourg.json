@@ -1,0 +1,101 @@
+{
+  "town": "fr-strasbourg",
+  "kind": "eats + sights",
+  "checked": "2026-11-23",
+  "rule": "library-check.cjs, then the Google Maps Reviews tab sorted by newest: ok only when not marked closed, with a review from the last six months, and the map's name matching the page's.",
+  "agents": "one Haiku agent; 15 rows from kidsareatrip (Jan 2026), the Colmar tourist office and Gault&Millau passed library-check.cjs, 11 went in",
+  "added": [
+    {
+      "name": "Lucas & Chris",
+      "page_name": "Lucas & Chris Restaurant",
+      "src": "https://kidsareatrip.com/colmar-with-kids/",
+      "date": "2026-01",
+      "map": "Google Maps 4 Rue Saint-Guidon, 992 reviews, newest '12 hours ago'"
+    },
+    {
+      "name": "Caveau Saint-Jean",
+      "page_name": "Caveau St-Jean",
+      "src": "https://kidsareatrip.com/colmar-with-kids/",
+      "date": "2026-01",
+      "map": "Google Maps 'Caveau Saint Jean', 47 Grand Rue, 1,292 reviews, newest '4 days ago'"
+    },
+    {
+      "name": "Le Colbert",
+      "page_name": "Le Colbert",
+      "src": "https://fr.gaultmillau.com/fr/restaurants/le-colbert-restaurant",
+      "date": "2026-04",
+      "map": "Google Maps 'Restaurant Colbert', 127 Route de Mittelhausbergen, 1,108 reviews, newest '19 hours ago'"
+    },
+    {
+      "name": "Toy Museum, Colmar",
+      "page_name": "Musee du Jouet",
+      "src": "https://kidsareatrip.com/colmar-with-kids/",
+      "date": "2026-01",
+      "map": "Google Maps 'Musée du Jouet', 3,991 reviews, newest '1 day ago'"
+    },
+    {
+      "name": "Colmar little train",
+      "page_name": "Le Petit Train",
+      "src": "https://kidsareatrip.com/colmar-with-kids/",
+      "date": "2026-01",
+      "map": "Google Maps 'Petit Train Touristique de Colmar (vert)', 4,185 reviews, newest '22 hours ago'"
+    },
+    {
+      "name": "Choco-Story Colmar",
+      "page_name": "Choco-story Colmar",
+      "src": "https://kidsareatrip.com/colmar-with-kids/",
+      "date": "2026-01",
+      "map": "Google Maps 'Choco Story Colmar', 1,906 reviews, newest '14 hours ago'"
+    },
+    {
+      "name": "Base Nautique Colmar-Houssen",
+      "page_name": "Base Nautique Colmar-Hussein",
+      "src": "https://kidsareatrip.com/colmar-with-kids/",
+      "date": "2026-01",
+      "map": "Google Maps 'Base Nautique Colmar Houssen', 1,890 reviews, newest 'last month'"
+    },
+    {
+      "name": "Parc du Champ-de-Mars",
+      "page_name": "Parc du Champ de Mars",
+      "src": "https://tourisme-colmar.com/en/visit/tips-and-suggestions/children-families/parks-with-playground/F235012729_parc-du-champ-de-mars-colmar",
+      "date": "official",
+      "map": "Google Maps 'Parc du Champ-de-Mars', 7,438 reviews, newest '12 hours ago'"
+    },
+    {
+      "name": "Jardin Méquillet",
+      "page_name": "Parc Méquillet",
+      "src": "https://tourisme-colmar.com/en/visit/tips-and-suggestions/children-families/parks-with-playground/F235012732_parc-mequillet-colmar",
+      "date": "official",
+      "map": "Google Maps 'Jardin Méquillet', 359 reviews, newest '1 day ago'"
+    },
+    {
+      "name": "Parc Saint-François-Xavier",
+      "page_name": "Parc Saint-François-Xavier",
+      "src": "https://tourisme-colmar.com/en/visit/tips-and-suggestions/children-families/parks-with-playground/F235012731_parc-saint-francois-xavier-colmar",
+      "date": "official",
+      "map": "Google Maps 216 reviews, newest 'last month'"
+    },
+    {
+      "name": "Alsatian Museum",
+      "page_name": "Alsatian Museum",
+      "src": "https://kidsareatrip.com/things-to-do-in-strasbourg-with-kids/",
+      "date": "2026-01",
+      "map": "Google Maps 2,940 reviews, newest 'last month'"
+    }
+  ],
+  "left_out": [
+    {
+      "name": "Le Petit Bidon",
+      "why": "the map has no place of that name in Colmar"
+    },
+    {
+      "name": "Parc de Loisirs de Colmar",
+      "why": "the map's indoor play place there has another name (Okidok)"
+    },
+    {
+      "name": "Run to the Light (escape room), European Parliament",
+      "why": "for teenagers, not small children"
+    }
+  ],
+  "estimates": "Ages and visit hours are placeholders; prices and opening notes are the pages' own."
+}

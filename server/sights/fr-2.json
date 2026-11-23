@@ -1629,6 +1629,318 @@
           "q": "Plateforme de la cathédrale, Place de la Cathédrale, Strasbourg",
           "ok": "2026-11",
           "src": "https://www.oeuvre-notre-dame.org/cathedrale-de-strasbourg/visiter-cathedrale"
+        },
+        {
+          "local": "Musée du Jouet",
+          "ages": [
+            1,
+            1,
+            1,
+            1
+          ],
+          "hrs": 1,
+          "io": "in",
+          "pram": "part",
+          "price": {
+            "th": "เช็กราคาก่อนไป",
+            "en": "Check the price"
+          },
+          "book": "none",
+          "src": "https://kidsareatrip.com/colmar-with-kids/",
+          "name": {
+            "th": "พิพิธภัณฑ์ของเล่น กอลมาร์",
+            "en": "Toy Museum, Colmar"
+          },
+          "kind": "museumkid",
+          "area": {
+            "th": "กอลมาร์",
+            "en": "Colmar"
+          },
+          "what": {
+            "th": "ของเล่นสะสมย้อนไปถึงศตวรรษที่ 19 มีรถไฟจำลองขนาดใหญ่",
+            "en": "A toy collection back to the 19th century, with a big model railway"
+          },
+          "why": {
+            "th": "มีนิทรรศการให้ลองเล่นและรถไฟจำลองวิ่งรอบภูมิทัศน์จิ๋ว",
+            "en": "Hands-on displays and a model train running round a landscape"
+          },
+          "tip": {
+            "th": "เหมาะกับบ่ายวันฝนตก",
+            "en": "Good for a rainy afternoon"
+          },
+          "q": "Musée du Jouet, 40 Rue Vauban, Colmar",
+          "ok": "2026-11"
+        },
+        {
+          "local": "Petit Train Touristique de Colmar",
+          "ages": [
+            1,
+            1,
+            1,
+            1
+          ],
+          "hrs": 1,
+          "io": "out",
+          "pram": "part",
+          "price": {
+            "th": "เช็กราคาก่อนไป",
+            "en": "Check the price"
+          },
+          "book": "none",
+          "src": "https://kidsareatrip.com/colmar-with-kids/",
+          "name": {
+            "th": "รถไฟเล็กชมเมืองกอลมาร์",
+            "en": "Colmar little train"
+          },
+          "kind": "ride",
+          "area": {
+            "th": "กอลมาร์",
+            "en": "Colmar"
+          },
+          "what": {
+            "th": "รถไฟเล็กพาชมจุดเด่นของเมืองราว 40 นาที",
+            "en": "A little tourist train taking about 40 minutes round the sights"
+          },
+          "why": {
+            "th": "เด็กชอบนั่งรถไฟเล็กรอบเมือง",
+            "en": "Children love going round town on the little train"
+          },
+          "tip": {
+            "th": "มีสองเส้นทาง สีเขียวในเมืองเก่า สีเหลืองในเมืองใหม่",
+            "en": "Two routes: green in the old town, yellow in the newer part"
+          },
+          "q": "Petit Train Touristique de Colmar, 3 Rue Kléber, Colmar",
+          "ok": "2026-11"
+        },
+        {
+          "local": "",
+          "ages": [
+            1,
+            1,
+            1,
+            1
+          ],
+          "hrs": 2,
+          "io": "in",
+          "pram": "part",
+          "price": {
+            "th": "เช็กราคาก่อนไป",
+            "en": "Check the price"
+          },
+          "book": "rec",
+          "src": "https://kidsareatrip.com/colmar-with-kids/",
+          "name": {
+            "th": "โชโกสตอรี กอลมาร์",
+            "en": "Choco-Story Colmar"
+          },
+          "kind": "museumkid",
+          "area": {
+            "th": "กอลมาร์",
+            "en": "Colmar"
+          },
+          "what": {
+            "th": "พิพิธภัณฑ์ช็อกโกแลต มีเกมและเวิร์กช็อปทำช็อกโกแลตแท่งเอง",
+            "en": "A chocolate museum with games and a workshop to make your own bar"
+          },
+          "why": {
+            "th": "มีเกมให้ลองเล่นเยอะ",
+            "en": "Lots of interactive games"
+          },
+          "tip": {
+            "th": "จองเวิร์กช็อปล่วงหน้า",
+            "en": "Book the workshop ahead"
+          },
+          "q": "Choco-Story Colmar, 12 Place de la Cathédrale, Colmar",
+          "ok": "2026-11"
+        },
+        {
+          "local": "",
+          "ages": [
+            1,
+            1,
+            1,
+            1
+          ],
+          "hrs": 3,
+          "io": "out",
+          "pram": "part",
+          "price": {
+            "th": "เช็กราคาก่อนไป",
+            "en": "Check the price"
+          },
+          "book": "none",
+          "src": "https://kidsareatrip.com/colmar-with-kids/",
+          "name": {
+            "th": "ฐานกีฬาทางน้ำกอลมาร์-อูสเซน",
+            "en": "Base Nautique Colmar-Houssen"
+          },
+          "kind": "beach",
+          "area": {
+            "th": "อูสเซน นั่งรถบัสจากกอลมาร์",
+            "en": "Houssen, by bus from Colmar"
+          },
+          "what": {
+            "th": "ทะเลสาบมีหาดทราย ที่ว่ายน้ำปลอดภัย และเรือแคนูกับซัปบอร์ดให้เช่า",
+            "en": "A lake with a sandy beach, a safe swimming area and paddleboards and canoes for hire"
+          },
+          "why": {
+            "th": "มีโซนน้ำตื้นให้เล่น ฉากหลังเป็นเทือกเขาโวจ",
+            "en": "A shallow splash zone with the Vosges behind"
+          },
+          "tip": {
+            "th": "พกครีมกันแดดและผ้าเช็ดตัว",
+            "en": "Bring sunscreen and towels"
+          },
+          "q": "Base Nautique Colmar Houssen, 37 Rue Denis Papin, Colmar",
+          "ok": "2026-11"
+        },
+        {
+          "local": "",
+          "ages": [
+            1,
+            1,
+            1,
+            1
+          ],
+          "hrs": 2,
+          "io": "out",
+          "pram": "yes",
+          "price": {
+            "th": "ฟรี",
+            "en": "Free"
+          },
+          "book": "none",
+          "src": "https://tourisme-colmar.com/en/visit/tips-and-suggestions/children-families/parks-with-playground/F235012729_parc-du-champ-de-mars-colmar",
+          "name": {
+            "th": "สวนชองเดอมาร์ส",
+            "en": "Parc du Champ-de-Mars"
+          },
+          "kind": "park",
+          "area": {
+            "th": "ใจกลางกอลมาร์",
+            "en": "Centre of Colmar"
+          },
+          "what": {
+            "th": "สวนใหญ่ที่สุดใจกลางเมือง ใต้ต้นลินเดน 193 ต้น มีรูปปั้นของบาร์ทอลดีสองตัว",
+            "en": "The biggest park in the centre, under 193 lime trees, with two Bartholdi statues"
+          },
+          "why": {
+            "th": "อยู่ในรายชื่อสวนที่มีสนามเด็กเล่นของสำนักงานท่องเที่ยว",
+            "en": "On the tourist office’s list of parks with a playground"
+          },
+          "q": "Parc du Champ-de-Mars, Avenue de la République, Colmar",
+          "ok": "2026-11"
+        },
+        {
+          "local": "",
+          "ages": [
+            2,
+            2,
+            1,
+            0
+          ],
+          "hrs": 1,
+          "io": "out",
+          "pram": "yes",
+          "price": {
+            "th": "ฟรี",
+            "en": "Free"
+          },
+          "book": "none",
+          "src": "https://tourisme-colmar.com/en/visit/tips-and-suggestions/children-families/parks-with-playground/F235012732_parc-mequillet-colmar",
+          "name": {
+            "th": "สวนเมกียเย",
+            "en": "Jardin Méquillet"
+          },
+          "kind": "park",
+          "area": {
+            "th": "กอลมาร์",
+            "en": "Colmar"
+          },
+          "what": {
+            "th": "สวนที่มีรั้วรอบ มีเครื่องเล่นธีมละครสัตว์",
+            "en": "A fully enclosed garden with games on a circus theme"
+          },
+          "why": {
+            "th": "ทำมาสำหรับครอบครัวที่มีเด็ก มีรั้วรอบปลอดภัย",
+            "en": "Made for families with children, safely fenced"
+          },
+          "q": "Jardin Méquillet, Rue Camille Schlumberger, Colmar",
+          "ok": "2026-11"
+        },
+        {
+          "local": "",
+          "ages": [
+            2,
+            2,
+            1,
+            0
+          ],
+          "hrs": 1,
+          "io": "out",
+          "pram": "part",
+          "price": {
+            "th": "ฟรี",
+            "en": "Free"
+          },
+          "book": "none",
+          "src": "https://tourisme-colmar.com/en/visit/tips-and-suggestions/children-families/parks-with-playground/F235012731_parc-saint-francois-xavier-colmar",
+          "name": {
+            "th": "สวนแซ็งฟรองซัวกซาวีเย",
+            "en": "Parc Saint-François-Xavier"
+          },
+          "kind": "park",
+          "area": {
+            "th": "กอลมาร์",
+            "en": "Colmar"
+          },
+          "what": {
+            "th": "สวนเล็กร่มรื่น มีสนามเด็กเล่นและบ้านอาลซัสเก่า",
+            "en": "A small shaded garden with a playground and an old Alsatian house"
+          },
+          "why": {
+            "th": "สนามเด็กเล่นใต้ต้นไม้ใหญ่",
+            "en": "A playground under big old trees"
+          },
+          "q": "Parc Saint François-Xavier, Rue de Rueil, Colmar",
+          "ok": "2026-11"
+        },
+        {
+          "local": "Musée Alsacien",
+          "ages": [
+            0,
+            1,
+            1,
+            2
+          ],
+          "hrs": 1,
+          "io": "in",
+          "pram": "part",
+          "price": {
+            "th": "เช็กราคาก่อนไป",
+            "en": "Check the price"
+          },
+          "book": "none",
+          "src": "https://kidsareatrip.com/things-to-do-in-strasbourg-with-kids/",
+          "name": {
+            "th": "พิพิธภัณฑ์อาลซัส",
+            "en": "Alsatian Museum"
+          },
+          "kind": "museum",
+          "area": {
+            "th": "ท่าแซ็งนีกอลา สตราสบูร์ก",
+            "en": "Quai Saint-Nicolas, Strasbourg"
+          },
+          "what": {
+            "th": "ศิลปะ ประเพณี และชีวิตชนบทอาลซัส ในบ้านโครงไม้สองหลัง",
+            "en": "Alsatian art, folklore and country life in two half-timbered houses"
+          },
+          "why": {
+            "th": "ตัวบ้านโครงไม้ก็เป็นส่วนหนึ่งของการเที่ยวชม",
+            "en": "The half-timbered houses are part of the visit"
+          },
+          "q": "Musée Alsacien, 23 Quai Saint-Nicolas, Strasbourg",
+          "ok": "2026-11"
         }
       ]
     },
