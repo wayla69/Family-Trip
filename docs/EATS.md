@@ -529,3 +529,6 @@ batch-19 of docs/library-briefs. +2: Cappuccino, TomYumBar. Proof in `docs/libra
 
 ### Yangon, 23 Nov 2026
 batch-29 of docs/library-briefs. +2: Sharky's, Chatrium Hotel Royal Lake. Proof in `docs/library-proof/mm-yangon.json`.
+
+### Khon Kaen, 23 Nov 2026
+batch-35 of docs/library-briefs (round 2). +4: 11AM cafe and space, Murmur Baker, Chujai, Huean Kham Nang. Proof in `docs/library-proof/th-khonkaen.json`.

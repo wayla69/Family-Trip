@@ -2007,6 +2007,371 @@
           "q": "Pha Nok Khao, Chum Phae, Khon Kaen",
           "ok": "2026-11",
           "src": "https://www.thaiholidayguide.com/attraction/pha-nok-khao-the-cliff-of-owl/"
+        },
+        {
+          "local": "",
+          "ages": [
+            1,
+            2,
+            2,
+            1
+          ],
+          "hrs": 2,
+          "io": "in",
+          "pram": "yes",
+          "price": {
+            "th": "เช็กราคาก่อนไป",
+            "en": "Check the price"
+          },
+          "book": "none",
+          "src": "https://travel.trueid.net/detail/awmMRQYWzjVw",
+          "name": {
+            "th": "ฮาร์เบอร์แลนด์ เซ็นทรัล ขอนแก่น",
+            "en": "HarborLand Central Khon Kaen"
+          },
+          "kind": "play",
+          "area": {
+            "th": "เซ็นทรัล ขอนแก่น ชั้น 5 ขอนแก่น",
+            "en": "Central Khon Kaen, 5th floor, Khon Kaen"
+          },
+          "what": {
+            "th": "โลกของเล่นในร่ม มีสไลเดอร์ เลเซอร์เมซ เล่นทราย และเมืองจำลอง",
+            "en": "An indoor play world with a drop slide, a laser maze, sand play and a pretend town"
+          },
+          "why": {
+            "th": "เมืองจำลองให้เล่นเป็นอาชีพต่าง ๆ แปดอาชีพ",
+            "en": "A pretend town of eight jobs"
+          },
+          "q": "HarborLand Central Khonkaen",
+          "ok": "2026-11"
+        },
+        {
+          "local": "",
+          "ages": [
+            2,
+            2,
+            2,
+            1
+          ],
+          "hrs": 2,
+          "io": "both",
+          "pram": "part",
+          "price": {
+            "th": "≈ 150 บาท",
+            "en": "≈ ฿150"
+          },
+          "book": "none",
+          "src": "https://www.ktc.co.th/article/travel-guide/thailand/khon-kaen-enjoyed",
+          "name": {
+            "th": "ขอนแก่น เอ็กโซติก เพ็ทส์",
+            "en": "Khonkaen Exotic Pets"
+          },
+          "kind": "zoo",
+          "area": {
+            "th": "ซอยนวลหง ศิลา ขอนแก่น",
+            "en": "Soi Nuan Hong, Sila, Khon Kaen"
+          },
+          "what": {
+            "th": "สัตว์เลี้ยงแปลกและการแสดงน้ำพุ",
+            "en": "Exotic pets and a fountain show"
+          },
+          "why": {
+            "th": "มีสัตว์และโชว์น้ำพุให้เด็กดู",
+            "en": "Animals and a fountain show for the children"
+          },
+          "tip": {
+            "th": "เปิด 11:00–18:00",
+            "en": "Open 11:00–18:00"
+          },
+          "q": "Khonkaen Exotic Pets, ขอนแก่น",
+          "ok": "2026-11"
+        },
+        {
+          "local": "",
+          "ages": [
+            1,
+            1,
+            1,
+            1
+          ],
+          "hrs": 1.5,
+          "io": "both",
+          "pram": "part",
+          "price": {
+            "th": "เช็กราคาก่อนไป",
+            "en": "Check the price"
+          },
+          "book": "none",
+          "src": "https://www.ktc.co.th/article/travel-guide/thailand/khon-kaen-enjoyed",
+          "name": {
+            "th": "โคลัมโบ คราฟ วิลเลจ",
+            "en": "Columbo Craft Village"
+          },
+          "kind": "culture",
+          "area": {
+            "th": "ศิลา ขอนแก่น",
+            "en": "Sila, Khon Kaen"
+          },
+          "what": {
+            "th": "หมู่บ้านงานฝีมือ มีร้านแยกกันหลายร้าน",
+            "en": "A craft village of separate shops"
+          },
+          "why": {
+            "th": "เดินดูร้านงานฝีมือ",
+            "en": "Craft shops to browse"
+          },
+          "tip": {
+            "th": "แต่ละร้านมีเวลาเปิดของตัวเอง",
+            "en": "Each shop keeps its own hours"
+          },
+          "q": "โคลัมโบ คราฟ วิลเลจ, ขอนแก่น",
+          "ok": "2026-11"
+        },
+        {
+          "local": "",
+          "ages": [
+            0,
+            1,
+            2,
+            2
+          ],
+          "hrs": 3,
+          "io": "out",
+          "pram": "no",
+          "price": {
+            "th": "คนไทย ผู้ใหญ่ 20 บาท เด็ก 10 บาท ต่างชาติ 100 / 50 บาท",
+            "en": "Thai adults ฿20, children ฿10; foreigners ฿100 / ฿50"
+          },
+          "book": "none",
+          "src": "https://www.ktc.co.th/article/travel-guide/thailand/khon-kaen-enjoyed",
+          "name": {
+            "th": "อุทยานแห่งชาติภูเก้า-ภูพานคำ",
+            "en": "Phu Kao–Phu Phan Kham National Park"
+          },
+          "kind": "nature",
+          "area": {
+            "th": "อุบลรัตน์ ขอนแก่น / หนองบัวลำภู",
+            "en": "Ubolratana, Khon Kaen / Nong Bua Lamphu"
+          },
+          "what": {
+            "th": "ป่าและภูเขาของสองจังหวัด",
+            "en": "Forest and mountain shared by two provinces"
+          },
+          "why": {
+            "th": "เดินป่าและภูเขา",
+            "en": "Forest and mountain walks"
+          },
+          "tip": {
+            "th": "เปิด 08:30–16:30",
+            "en": "Open 08:30–16:30"
+          },
+          "q": "อุทยานแห่งชาติภูเก้า-ภูพานคำ",
+          "ok": "2026-11"
+        },
+        {
+          "local": "",
+          "ages": [
+            1,
+            1,
+            2,
+            2
+          ],
+          "hrs": 1.5,
+          "io": "out",
+          "pram": "no",
+          "price": {
+            "th": "เช็กราคาก่อนไป",
+            "en": "Check the price"
+          },
+          "book": "none",
+          "src": "https://travel.trueid.net/detail/oe7zQQkxMRRq",
+          "name": {
+            "th": "บลูลากูน ภูผาม่าน",
+            "en": "Blue Lagoon, Phu Pha Man"
+          },
+          "kind": "nature",
+          "area": {
+            "th": "บ้านสองคอน ภูผาม่าน ขอนแก่น",
+            "en": "Ban Song Khon, Phu Pha Man, Khon Kaen"
+          },
+          "what": {
+            "th": "แอ่งน้ำสีมรกตกลางภูผาม่าน",
+            "en": "An emerald pool in the Phu Pha Man hills"
+          },
+          "why": {
+            "th": "แอ่งน้ำสีมรกตท่ามกลางภูเขา",
+            "en": "An emerald pool among the hills"
+          },
+          "tip": {
+            "th": "เปิด 06:00–19:00",
+            "en": "Open 06:00–19:00"
+          },
+          "q": "Blue Lagoon ภูผาม่าน",
+          "ok": "2026-11"
+        },
+        {
+          "local": "",
+          "ages": [
+            1,
+            1,
+            1,
+            1
+          ],
+          "hrs": 1,
+          "io": "both",
+          "pram": "part",
+          "price": {
+            "th": "ฟรี",
+            "en": "Free"
+          },
+          "book": "none",
+          "src": "https://www.ktc.co.th/article/travel-guide/thailand/khon-kaen-enjoyed",
+          "name": {
+            "th": "วัดทุ่งเศรษฐี",
+            "en": "Wat Thung Setthi"
+          },
+          "kind": "culture",
+          "area": {
+            "th": "พระลับ ขอนแก่น",
+            "en": "Phra Lap, Khon Kaen"
+          },
+          "what": {
+            "th": "วัดที่มีมหาเจดีย์ประดับงดงาม",
+            "en": "A temple with a large jewelled stupa"
+          },
+          "why": {
+            "th": "เข้าฟรี เปิดทุกวัน",
+            "en": "Free and open every day"
+          },
+          "tip": {
+            "th": "เปิด 07:00–19:00",
+            "en": "Open 07:00–19:00"
+          },
+          "q": "วัดทุ่งเศรษฐี, ขอนแก่น",
+          "ok": "2026-11"
+        },
+        {
+          "local": "",
+          "ages": [
+            1,
+            1,
+            1,
+            1
+          ],
+          "hrs": 0.5,
+          "io": "out",
+          "pram": "part",
+          "price": {
+            "th": "ฟรี",
+            "en": "Free"
+          },
+          "book": "none",
+          "src": "https://www.ktc.co.th/article/travel-guide/thailand/khon-kaen-enjoyed",
+          "name": {
+            "th": "พระธาตุขามแก่น",
+            "en": "Phra That Kham Kaen"
+          },
+          "kind": "culture",
+          "area": {
+            "th": "วัดเจติยภูมิ น้ำพอง",
+            "en": "Wat Chetiyaphum, Nam Phong"
+          },
+          "what": {
+            "th": "พระธาตุที่มาของชื่อเมืองขอนแก่น",
+            "en": "The stupa that gave Khon Kaen its name"
+          },
+          "why": {
+            "th": "เข้าชมฟรี",
+            "en": "Free to visit"
+          },
+          "tip": {
+            "th": "เปิด 07:00–17:00",
+            "en": "Open 07:00–17:00"
+          },
+          "q": "พระธาตุขามแก่น, น้ำพอง",
+          "ok": "2026-11"
+        },
+        {
+          "local": "",
+          "ages": [
+            0,
+            1,
+            2,
+            2
+          ],
+          "hrs": 1.5,
+          "io": "out",
+          "pram": "no",
+          "price": {
+            "th": "เช็กราคาก่อนไป",
+            "en": "Check the price"
+          },
+          "book": "none",
+          "src": "https://www.ktc.co.th/article/travel-guide/thailand/khon-kaen-enjoyed",
+          "name": {
+            "th": "น้ำตกบ๋าหลวง",
+            "en": "Ba Luang waterfall"
+          },
+          "kind": "nature",
+          "area": {
+            "th": "ห้วยยาง กระนวน",
+            "en": "Huai Yang, Kranuan"
+          },
+          "what": {
+            "th": "น้ำตกในวนอุทยาน",
+            "en": "A waterfall in a forest park"
+          },
+          "why": {
+            "th": "น้ำตกกลางป่า",
+            "en": "A forest waterfall"
+          },
+          "tip": {
+            "th": "เปิด 08:00–16:00",
+            "en": "Open 08:00–16:00"
+          },
+          "q": "วนอุทยานน้ำตกบ๋าหลวง, กระนวน",
+          "ok": "2026-11"
+        },
+        {
+          "local": "",
+          "ages": [
+            0,
+            1,
+            2,
+            2
+          ],
+          "hrs": 2,
+          "io": "out",
+          "pram": "no",
+          "price": {
+            "th": "เช็กราคาก่อนไป",
+            "en": "Check the price"
+          },
+          "book": "none",
+          "src": "https://travel.trueid.net/detail/oe7zQQkxMRRq",
+          "name": {
+            "th": "อุทยานแห่งชาติน้ำพอง",
+            "en": "Nam Phong National Park"
+          },
+          "kind": "nature",
+          "area": {
+            "th": "บ้านผือ หนองเรือ",
+            "en": "Ban Phue, Nong Ruea"
+          },
+          "what": {
+            "th": "อุทยานแห่งชาติที่มีจุดชมวิวสูง",
+            "en": "A national park with high viewpoints"
+          },
+          "why": {
+            "th": "จุดชมวิวบนที่สูง",
+            "en": "High viewpoints"
+          },
+          "tip": {
+            "th": "เปิด 08:00–17:00",
+            "en": "Open 08:00–17:00"
+          },
+          "q": "อุทยานแห่งชาติน้ำพอง",
+          "ok": "2026-11"
         }
       ]
     },
