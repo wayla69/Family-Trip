@@ -25,6 +25,13 @@
       "src": "https://fouraroundtheworld.com/things-to-do-in-koh-samui-with-kids/",
       "date": "2026-04",
       "map": "Google Maps 'Samui Football Golf', 1,457 reviews, newest shown '8 days ago'"
+    },
+    {
+      "name": "Treehouse Silent Beach",
+      "page_name": "Treehouse Silent Beach Restaurant",
+      "src": "https://www.ktc.co.th/en/article/dining/restaurant/restuarant-cafe-samui",
+      "date": "2026-01",
+      "map": "Google Maps 'Treehouse Silent Beach' (Koh Samui), newest review shown 2 hours ago"
     }
   ],
   "left_out": [
@@ -47,7 +54,24 @@
     {
       "name": "three places to eat",
       "why": "their Wongnai list is from 2019"
+    },
+    {
+      "name": "Marigold Samui",
+      "why": "the map shows it closed for good"
+    },
+    {
+      "name": "Krua Savoey, Cafe De Pier X",
+      "why": "nothing about children on the page"
+    },
+    {
+      "name": "Minigolf at Wat Phu Khao Noi",
+      "why": "the map finds only another minigolf in Ban Tai"
     }
   ],
-  "estimates": "Ages and visit hours are placeholders; prices and opening notes are the pages' own."
+  "estimates": "Ages and visit hours are placeholders; prices and opening notes are the pages' own.",
+  "round3": {
+    "checked": "2026-11-24",
+    "agents": "one Haiku agent; 5 rows from KTC (Jan 2026) and a Koh Phangan family blog (Sep 2025), all passed library-check.cjs, 1 went in",
+    "rule": "library-check.cjs, then the Google Maps Reviews tab sorted by newest: ok only when not marked closed, with a review from the last six months, and the map's name matching the page's."
+  }
 }
