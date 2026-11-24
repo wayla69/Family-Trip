@@ -3159,6 +3159,47 @@
           },
           "q": "Iolani Palace, 364 S King St, Honolulu",
           "ok": "2026-11"
+        },
+        {
+          "local": "",
+          "ages": [
+            1,
+            1,
+            1,
+            1
+          ],
+          "hrs": 2,
+          "io": "out",
+          "pram": "part",
+          "price": {
+            "th": "เช็กราคาก่อนไป",
+            "en": "Check the price"
+          },
+          "book": "none",
+          "src": "https://www.surfinggoatdairy.com/",
+          "name": {
+            "th": "ฟาร์มแพะเซิร์ฟฟิงโกต",
+            "en": "Surfing Goat Dairy"
+          },
+          "kind": "farm",
+          "area": {
+            "th": "ถนนโอมาโอปิโอ คูลา เมาอิ",
+            "en": "Omaopio Road, Kula, Maui"
+          },
+          "what": {
+            "th": "ฟาร์มแพะบนเชิงเขาฮาเลอาคาลา มีทัวร์ทุกวันและชีสนมแพะ",
+            "en": "A goat farm on the slopes of Haleakalā with daily tours and goat cheese"
+          },
+          "why": {
+            "th": "ได้ดูแพะในทัวร์ฟาร์ม",
+            "en": "Goats to see on a farm tour"
+          },
+          "tip": {
+            "th": "เช็กรอบทัวร์รายวันในเว็บไซต์ก่อนไป",
+            "en": "Check the daily tour times on its site"
+          },
+          "q": "Surfing Goat Dairy, 3651 Omaopio Rd, Kula",
+          "ok": "2026-11"
         }
       ]
     },
