@@ -529,3 +529,5 @@ batch-19 of docs/library-briefs. +2: Cappuccino, TomYumBar. Proof in `docs/libra
 
 ### Yangon, 23 Nov 2026
 batch-29 of docs/library-briefs. +2: Sharky's, Chatrium Hotel Royal Lake. Proof in `docs/library-proof/mm-yangon.json`.
+
+- **24 Nov 2026, Siem Reap** (docs/library-briefs batch-59, round 3): +1 (Le Petit Chef, Park Hyatt). Proof in `docs/library-proof/kh-siemreap.json`.
