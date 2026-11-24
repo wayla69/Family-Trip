@@ -1,47 +1,26 @@
 {
   "town": "fr-nice",
   "kind": "eats + sights",
-  "checked": "2026-11-23",
+  "checked": "2026-11-24",
   "rule": "library-check.cjs, then the Google Maps Reviews tab sorted by newest: ok only when not marked closed, with a review from the last six months, and the map's name matching the page's.",
-  "agents": "one Haiku agent; 23 rows from Nice Côte d’Azur tourism pages (Mar 2026) and its PDF guide, 4 passed library-check.cjs, 4 went in",
+  "agents": "one Haiku agent; 2 rows from the Nice Côte d'Azur tourist office (Mar 2026), both passed library-check.cjs, 1 went in",
   "added": [
     {
-      "name": "Lou Balico",
-      "page_name": "Lou Balico",
-      "src": "https://www.explorenicecotedazur.com/en/restaurant/restaurant-lou-balico/",
+      "name": "Casa Nissa",
+      "page_name": "Restaurant Casa Nissa",
+      "src": "https://www.explorenicecotedazur.com/en/restaurant/restaurant-casa-nissa/",
       "date": "2026-03",
-      "map": "Google Maps 20 Avenue Saint-Jean-Baptiste, 1,314 reviews, newest '16 hours ago'"
-    },
-    {
-      "name": "La Verrière (Hôtel Monsigny)",
-      "page_name": "La Verrière",
-      "src": "https://www.explorenicecotedazur.com/en/restaurant/restaurant-la-verriere/",
-      "date": "2026-03",
-      "map": "Google Maps 'Restaurant La Verrière Nice', 17 Avenue Malausséna, 168 reviews, newest '3 weeks ago'"
-    },
-    {
-      "name": "Brasserie Le Gioffredo",
-      "page_name": "Brasserie Le Gioffredo",
-      "src": "https://www.explorenicecotedazur.com/en/restaurant/brasserie-le-gioffredo/",
-      "date": "2026-03",
-      "map": "Google Maps 'Brasserie Gioffredo', 56 Rue Gioffredo, 405 reviews, newest '5 days ago'"
-    },
-    {
-      "name": "Lu Fran Calin",
-      "page_name": "Restaurant Lu Fran Calin",
-      "src": "https://www.explorenicecotedazur.com/en/info/restaurant-lu-fran-calin-en",
-      "date": "2026-03",
-      "map": "Google Maps 'LU FRAN CALIN', 5 Rue Francis Gallo, 1,299 reviews, newest '1 day ago'"
+      "map": "Google Maps 'Casa Nissa' (55 Rue Gioffredo), newest review shown 3 days ago"
     }
   ],
   "left_out": [
     {
-      "name": "18 rows from the Nice Family Guide 2026/27 (PDF)",
-      "why": "library-check.cjs could not read the PDF: no page date, names not found"
+      "name": "Musée National du Sport",
+      "why": "the page gives no district"
     },
     {
-      "name": "Plage Bocca Mar",
-      "why": "library-check.cjs: quote not on page"
+      "name": "Hippopotamus",
+      "why": "no address on the page"
     }
   ],
   "estimates": "Ages and visit hours are placeholders; prices and opening notes are the pages' own."
