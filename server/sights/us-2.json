@@ -2426,6 +2426,43 @@
           },
           "q": "National Museum of Women in the Arts, 1250 New York Ave NW, Washington DC",
           "ok": "2026-11"
+        },
+        {
+          "local": "",
+          "ages": [
+            1,
+            1,
+            1,
+            1
+          ],
+          "hrs": 2,
+          "io": "in",
+          "pram": "part",
+          "price": {
+            "th": "≈ $19.95 ต่อคน",
+            "en": "≈ $19.95 a person"
+          },
+          "book": "rec",
+          "src": "https://nationalchildrensmuseum.org/visit",
+          "name": {
+            "th": "พิพิธภัณฑ์เด็กแห่งชาติ",
+            "en": "National Children's Museum"
+          },
+          "kind": "museumkid",
+          "area": {
+            "th": "ถนนเพนซิลเวเนีย ดาวน์ทาวน์ วอชิงตันดีซี",
+            "en": "Pennsylvania Avenue, Downtown, Washington DC"
+          },
+          "what": {
+            "th": "พิพิธภัณฑ์ในร่มเรื่องวิทยาศาสตร์และศิลปะแบบเล่น มีโซนเด็กเล็ก",
+            "en": "An indoor museum of science and art play, with a toddler space"
+          },
+          "why": {
+            "th": "มีโซนเด็กเล็กและห้องให้นม",
+            "en": "A toddler space and a nursing room"
+          },
+          "q": "National Children's Museum, 1300 Pennsylvania Ave NW, Washington DC",
+          "ok": "2026-11"
         }
       ]
     },
