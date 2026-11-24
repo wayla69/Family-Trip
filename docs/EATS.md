@@ -531,3 +531,5 @@ batch-19 of docs/library-briefs. +2: Cappuccino, TomYumBar. Proof in `docs/libra
 batch-29 of docs/library-briefs. +2: Sharky's, Chatrium Hotel Royal Lake. Proof in `docs/library-proof/mm-yangon.json`.
 
 - **24 Nov 2026, Suwon** (docs/library-briefs batch-50): +1 (Four Seasons Kitchen Gwanggyo). Proof in `docs/library-proof/kr-suwon.json`.
+
+- **24 Nov 2026, Suwon, Kakao Map pass**: +4 (Bbok Sikdang (Gwanggyo, Haenggung), Hanchon Seolleongtang, Myeongnyun Jinsa Galbi), rows Google Maps could not confirm. Proof in `docs/library-proof/kr-suwon.json`.
