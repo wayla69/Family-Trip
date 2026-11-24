@@ -529,3 +529,5 @@ batch-19 of docs/library-briefs. +2: Cappuccino, TomYumBar. Proof in `docs/libra
 
 ### Yangon, 23 Nov 2026
 batch-29 of docs/library-briefs. +2: Sharky's, Chatrium Hotel Royal Lake. Proof in `docs/library-proof/mm-yangon.json`.
+
+- **24 Nov 2026, Yogyakarta** (docs/library-briefs batch-72, round 3): +3 (Krasan, Little Goo, Padiku). Proof in `docs/library-proof/id-yogyakarta.json`.
