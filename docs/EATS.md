@@ -529,3 +529,5 @@ batch-19 of docs/library-briefs. +2: Cappuccino, TomYumBar. Proof in `docs/libra
 
 ### Yangon, 23 Nov 2026
 batch-29 of docs/library-briefs. +2: Sharky's, Chatrium Hotel Royal Lake. Proof in `docs/library-proof/mm-yangon.json`.
+
+- **24 Nov 2026, Dubrovnik** (docs/library-briefs batch-86, round 3): +4 (Paradise Garden and Kaluma in Hvar; Sunset Beach café and Prekala in Lapad). Proof in `docs/library-proof/hr-dubrovnik.json`.
