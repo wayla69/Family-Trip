@@ -1193,6 +1193,43 @@
           },
           "q": "Dschungel Wien Theaterhaus, MuseumsQuartier",
           "ok": "2026-11"
+        },
+        {
+          "local": "",
+          "ages": [
+            1,
+            1,
+            1,
+            1
+          ],
+          "hrs": 2,
+          "io": "in",
+          "pram": "part",
+          "price": {
+            "th": "เช็กราคาก่อนไป",
+            "en": "Check the price"
+          },
+          "book": "none",
+          "src": "https://monkipark.at",
+          "name": {
+            "th": "มังกี้พาร์ก มิลเลนเนียมซิตี",
+            "en": "Monki Park (Millennium City)"
+          },
+          "kind": "play",
+          "area": {
+            "th": "มิลเลนเนียมซิตี บริกิทเทเนา (เขต 20)",
+            "en": "Millennium City, Brigittenau (20th district)"
+          },
+          "what": {
+            "th": "สวนเด็กเล่นในร่ม มีเส้นทางเชือกสูงและโซนเล่น",
+            "en": "An indoor family play park with a high-ropes course and play areas"
+          },
+          "why": {
+            "th": "ปีนป่ายและเล่นได้ เด็กตั้งแต่ 8 ขวบอยู่ได้โดยไม่ต้องมีผู้ปกครอง",
+            "en": "Climbing and play; from eight, children may stay without parents"
+          },
+          "q": "Monki Park, Millennium City, Wien",
+          "ok": "2026-11"
         }
     ]
     }
