@@ -1393,6 +1393,80 @@
           "q": "Trúc Lâm Phụng Thuỳ Sơn, Nha Trang",
           "src": "https://localvietnam.com/khanh-hoa/nha-trang/truc-lam-phung-thuy-son/",
           "ok": "2026-11"
+        },
+        {
+          "local": "",
+          "ages": [
+            1,
+            1,
+            1,
+            1
+          ],
+          "hrs": 2,
+          "io": "both",
+          "pram": "part",
+          "price": {
+            "th": "เช็กราคาก่อนไป",
+            "en": "Check the price"
+          },
+          "book": "none",
+          "src": "https://seayoutravel.vn/en/nha-trang-family-friendly-activities/",
+          "name": {
+            "th": "หมู่บ้านหัตถกรรมเจื่องเซิน",
+            "en": "Truong Son Craft Village"
+          },
+          "kind": "culture",
+          "area": {
+            "th": "ถนนเจื่องเซิน วิญเงวียน ญาจาง",
+            "en": "8 Truong Son Street, Vinh Nguyen, Nha Trang"
+          },
+          "what": {
+            "th": "ศูนย์หัตถกรรมที่เด็กได้ดูงานฝีมือดั้งเดิม",
+            "en": "A craft centre where children see traditional handicrafts"
+          },
+          "why": {
+            "th": "ได้เรียนรู้ประวัติศาสตร์จาม งานหัตถกรรม และสัตว์ทะเล",
+            "en": "A place to learn about Cham history, handicrafts and marine life"
+          },
+          "q": "Truong Son Craft Village, 8 Truong Son, Nha Trang",
+          "ok": "2026-11"
+        },
+        {
+          "local": "",
+          "ages": [
+            1,
+            1,
+            1,
+            1
+          ],
+          "hrs": 2,
+          "io": "out",
+          "pram": "part",
+          "price": {
+            "th": "เข้าชม 150,000 ดอง (ผู้ใหญ่) / 100,000 ดอง (เด็ก)",
+            "en": "Sightseeing 150,000 VND (adult) / 100,000 VND (child)"
+          },
+          "book": "none",
+          "src": "https://seayoutravel.vn/en/nha-trang-family-friendly-activities/",
+          "name": {
+            "th": "บ่อโคลนร้อยไข่ ญาจาง",
+            "en": "100 Eggs Mud Bath"
+          },
+          "kind": "water",
+          "area": {
+            "th": "ถนนเงวียนเติ๊ตแถ่ง ฟุ้กจุง",
+            "en": "Nguyen Tat Thanh Boulevard, Phuoc Trung"
+          },
+          "what": {
+            "th": "บ่อน้ำแร่ร้อนและอ่างโคลนรูปไข่ในสวนเขียว",
+            "en": "Hot mineral pools and egg-shaped mud baths in a green garden"
+          },
+          "why": {
+            "th": "หน้าเว็บบอกว่าเหมาะทั้งผู้สูงอายุและเด็ก",
+            "en": "The page says it suits older people and children alike"
+          },
+          "q": "100 Eggs Mud Bath, Nguyen Tat Thanh, Nha Trang",
+          "ok": "2026-11"
         }
       ]
     }
