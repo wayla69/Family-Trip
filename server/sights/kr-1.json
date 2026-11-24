@@ -399,6 +399,158 @@
           },
           "q": "북서울꿈의숲",
           "ok": "2026-11"
+        },
+        {
+          "local": "서울상상나라",
+          "ages": [
+            1,
+            1,
+            1,
+            1
+          ],
+          "hrs": 2,
+          "io": "in",
+          "pram": "part",
+          "price": {
+            "th": "เช็กราคาก่อนไป",
+            "en": "Check the price"
+          },
+          "book": "none",
+          "src": "https://mediahub.seoul.go.kr/archives/2016748",
+          "name": {
+            "th": "พิพิธภัณฑ์เด็กโซลซังซังนารา",
+            "en": "Seoul Children's Museum (Seoul Sangsang Nara)"
+          },
+          "kind": "museumkid",
+          "area": {
+            "th": "ในสวนเด็กโซล ควังจิน โซล",
+            "en": "Children's Grand Park, Gwangjin-gu, Seoul"
+          },
+          "what": {
+            "th": "พิพิธภัณฑ์เด็กในสวนเด็กโซล มีชั้นเล่นวิทยาศาสตร์เรื่องน้ำ",
+            "en": "A children's museum inside Seoul Children's Grand Park, with a water-science play floor"
+          },
+          "why": {
+            "th": "เด็กได้วาดรูปด้วยปืนฉีดน้ำและดูเรือลอยตามกระแสน้ำ",
+            "en": "Children draw with water guns and watch boats float with the current"
+          },
+          "tip": {
+            "th": "เอาเสื้อผ้าสำรองและผ้าเช็ดตัวไปสำหรับโซนเล่นน้ำ",
+            "en": "Bring spare clothes and a towel for the water play"
+          },
+          "q": "서울상상나라, 능동로 216, 서울",
+          "ok": "2026-11"
+        },
+        {
+          "local": "서울형키즈카페 구로구천왕근린공원점",
+          "ages": [
+            1,
+            1,
+            1,
+            1
+          ],
+          "hrs": 2,
+          "io": "in",
+          "pram": "part",
+          "price": {
+            "th": "เช็กราคาก่อนไป",
+            "en": "Check the price"
+          },
+          "book": "none",
+          "src": "https://mediahub.seoul.go.kr/archives/2020010",
+          "name": {
+            "th": "คิดส์คาเฟ่ของเมืองโซล สวนช็อนวัง",
+            "en": "Seoul Kids Café (Cheonwang Park)"
+          },
+          "kind": "play",
+          "area": {
+            "th": "สวนช็อนวัง คูโร โซล",
+            "en": "Cheonwang Neighbourhood Park, Guro-gu, Seoul"
+          },
+          "what": {
+            "th": "สนามเด็กเล่นในร่มของเมือง อยู่ในสวน เปิดเดือนพฤศจิกายน 2026",
+            "en": "A city-run indoor playground in a park, opened in November 2026"
+          },
+          "why": {
+            "th": "มีอุโมงค์ตาข่าย ท่อปีนป่าย และห้องให้นม หน้าต่างมองเห็นสวน",
+            "en": "A net tunnel, climbing tubes and a nursing room, with windows onto the park"
+          },
+          "q": "서울형키즈카페 구로구천왕근린공원점, 금오로 878, 서울",
+          "ok": "2026-11"
+        },
+        {
+          "local": "한강플플",
+          "ages": [
+            1,
+            1,
+            1,
+            1
+          ],
+          "hrs": 2,
+          "io": "in",
+          "pram": "part",
+          "price": {
+            "th": "เช็กราคาก่อนไป",
+            "en": "Check the price"
+          },
+          "book": "none",
+          "src": "https://mediahub.seoul.go.kr/archives/2017985",
+          "name": {
+            "th": "ฮันกังพึลพึล ตึกซ็อม",
+            "en": "Hangang PlePle (Ttukseom)"
+          },
+          "kind": "play",
+          "area": {
+            "th": "สวนแม่น้ำฮันตึกซ็อม ควังจิน โซล",
+            "en": "Ttukseom Hangang Park, Gwangjin-gu, Seoul"
+          },
+          "what": {
+            "th": "คิดส์คาเฟ่ของเมืองริมแม่น้ำฮัน ในสวนตึกซ็อม",
+            "en": "A city kids' café by the Han River in Ttukseom Hangang Park"
+          },
+          "why": {
+            "th": "วิวแม่น้ำกว้าง ใกล้ทางเดินและสนามหญ้าปิกนิกของสวน",
+            "en": "Wide river views, close to the park's walks and picnic lawns"
+          },
+          "q": "한강플플, 강변북로 2202, 서울",
+          "ok": "2026-11"
+        },
+        {
+          "local": "서울역사박물관 어린이박물관",
+          "ages": [
+            1,
+            1,
+            1,
+            1
+          ],
+          "hrs": 2,
+          "io": "in",
+          "pram": "part",
+          "price": {
+            "th": "เช็กราคาก่อนไป",
+            "en": "Check the price"
+          },
+          "book": "none",
+          "src": "https://mediahub.seoul.go.kr/archives/2018657",
+          "name": {
+            "th": "พิพิธภัณฑ์เด็ก พิพิธภัณฑ์ประวัติศาสตร์โซล",
+            "en": "Seoul Museum of History Children's Museum"
+          },
+          "kind": "museumkid",
+          "area": {
+            "th": "ถนนแซมุนอัน ชงโน โซล",
+            "en": "Saemunan-ro, Jongno-gu, Seoul"
+          },
+          "what": {
+            "th": "พิพิธภัณฑ์เด็กที่เปิดเดือนมีนาคม 2026 มีเกมภารกิจประวัติศาสตร์เมืองฮันยังเก่า",
+            "en": "A children's museum opened in March 2026, with a history mission game around old Hanyang"
+          },
+          "why": {
+            "th": "เด็กเดินตามตัวการ์ตูนและแตะป้ายเพื่อฟังเรื่องเล่า",
+            "en": "Children follow a character and tag panels for audio stories"
+          },
+          "q": "서울역사박물관, 새문안로 55, 서울",
+          "ok": "2026-11"
         }
     ]
     },
