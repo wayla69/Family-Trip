@@ -1,0 +1,51 @@
+{
+  "town": "jp-hiroshima",
+  "kind": "eats + sights",
+  "checked": "2026-11-24",
+  "rule": "library-check.cjs, then the Google Maps Reviews tab sorted by newest: ok only when not marked closed, with a review from the last six months, and the map's name matching the page's.",
+  "agents": "one Haiku agent; 8 rows from macaroni (May 2026), Nap Camp (Apr 2026) and Mapple (Sep 2025), all passed library-check.cjs, 5 went in",
+  "added": [
+    {
+      "name": "Marina Mario Espresso",
+      "page_name": "マリーナ マリオ エスプレッソ",
+      "src": "https://macaro-ni.jp/176057",
+      "date": "2026-05",
+      "map": "Google Maps 'Marina Mario Espresso', 384 reviews, newest shown 21 days ago"
+    },
+    {
+      "name": "5-Days Children's Cultural Science Museum",
+      "page_name": "５－Ｄａｙｓこども文化科学館",
+      "src": "https://www.mapple.net/original/322000/",
+      "date": "2025-09",
+      "map": "Google Maps '5-Days Children's Cultural Science Museum', 935 reviews, newest shown 5 months ago"
+    },
+    {
+      "name": "Kodomocchi Park Kobe Park",
+      "page_name": "こどもっちパーク こうべパーク",
+      "src": "https://www.nap-camp.com/mag/82216",
+      "date": "2026-04",
+      "map": "Google Maps 'こどもっちパーク こうべパーク', 98 reviews, newest shown a month ago"
+    },
+    {
+      "name": "Bornelund Asobi no Sekai (Gakuen-minami)",
+      "page_name": "あそびのせかい 学園南店",
+      "src": "https://www.nap-camp.com/mag/82216",
+      "date": "2026-04",
+      "map": "Google Maps 'Børnelund Kōbe Gakuen Minami', 216 reviews, newest shown 3 months ago"
+    },
+    {
+      "name": "Bornelund Asobi no Sekai (Marine Pia Kobe)",
+      "page_name": "あそびのせかい 三井アウトレットパーク マリンピア神戸店",
+      "src": "https://www.nap-camp.com/mag/82216",
+      "date": "2026-04",
+      "map": "Google Maps 'ボーネルンドあそびのせかいマリンピア神戸', 14 reviews, newest shown 16 days ago"
+    }
+  ],
+  "left_out": [
+    {
+      "name": "アルヒモリノナカ, ナマステ フジグラン高陽店, 和カフェ プラスロシェ",
+      "why": "no review from the last six months shown on the map"
+    }
+  ],
+  "estimates": "Ages and visit hours are placeholders; prices and opening notes are the pages' own."
+}

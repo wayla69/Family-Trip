@@ -582,6 +582,154 @@
           "q": "Miyajima Aquarium, Miyajima island, Hiroshima",
           "ok": "2026-11",
           "src": "https://tinytotintokyo.com/miyajima-with-kids"
+        },
+        {
+          "local": "５－Ｄａｙｓこども文化科学館",
+          "ages": [
+            1,
+            1,
+            1,
+            1
+          ],
+          "hrs": 2,
+          "io": "in",
+          "pram": "part",
+          "price": {
+            "th": "เช็กราคาก่อนไป",
+            "en": "Check the price"
+          },
+          "book": "none",
+          "src": "https://www.mapple.net/original/322000/",
+          "name": {
+            "th": "พิพิธภัณฑ์วิทยาศาสตร์เด็ก 5-Days",
+            "en": "5-Days Children's Cultural Science Museum"
+          },
+          "kind": "museumkid",
+          "area": {
+            "th": "โมโตมาจิ เขตนากะ ฮิโรชิมะ",
+            "en": "Motomachi, Naka Ward, Hiroshima"
+          },
+          "what": {
+            "th": "พิพิธภัณฑ์เด็กที่ได้สัมผัสวิทยาศาสตร์ผ่านการเล่น",
+            "en": "A children's museum where science is something to play with"
+          },
+          "why": {
+            "th": "วิทยาศาสตร์ให้เด็กลงมือเล่น",
+            "en": "Hands-on science for children"
+          },
+          "q": "5-Days Children's Cultural Science Museum, Motomachi, Naka Ward, Hiroshima",
+          "ok": "2026-11"
+        },
+        {
+          "local": "こどもっちパーク こうべパーク",
+          "ages": [
+            2,
+            2,
+            2,
+            0
+          ],
+          "hrs": 2,
+          "io": "in",
+          "pram": "part",
+          "price": {
+            "th": "เช็กราคาก่อนไป",
+            "en": "Check the price"
+          },
+          "book": "none",
+          "src": "https://www.nap-camp.com/mag/82216",
+          "name": {
+            "th": "สวนเล่นในร่มโคโดม็อตจิ โกเบ",
+            "en": "Kodomocchi Park Kobe Park"
+          },
+          "kind": "play",
+          "area": {
+            "th": "อาคาร HDC โกเบ ชั้น 10 โกเบ",
+            "en": "HDC Kobe 10F, Higashikawasakicho, Kobe"
+          },
+          "what": {
+            "th": "ที่เล่นในร่ม มีสไลเดอร์ใหญ่ บ่อบอล และที่ปีนป่าย",
+            "en": "An indoor play space with a big slide, a ball pool and a climbing frame"
+          },
+          "why": {
+            "th": "สำหรับเด็กแรกเกิดถึงประถม",
+            "en": "For ages 0 to primary school"
+          },
+          "q": "Kodomocchi Park Kobe Park, HDC Kobe 10F, Chuo Ward, Kobe",
+          "ok": "2026-11"
+        },
+        {
+          "local": "あそびのせかい 学園南店",
+          "ages": [
+            2,
+            2,
+            2,
+            1
+          ],
+          "hrs": 2,
+          "io": "in",
+          "pram": "part",
+          "price": {
+            "th": "เช็กราคาก่อนไป",
+            "en": "Check the price"
+          },
+          "book": "none",
+          "src": "https://www.nap-camp.com/mag/82216",
+          "name": {
+            "th": "บอร์เนลุนด์ อาโซบิโนะเซไก (กาคุเอ็นมินามิ)",
+            "en": "Bornelund Asobi no Sekai (Gakuen-minami)"
+          },
+          "kind": "play",
+          "area": {
+            "th": "ไมตะมนนิชิ เขตทารุมิ โกเบ",
+            "en": "Maitamonnishi, Tarumi Ward, Kobe"
+          },
+          "what": {
+            "th": "ที่เล่นในร่มของบอร์เนลุนด์ พร้อมร้านของเล่น",
+            "en": "Bornelund's indoor play space with a toy shop"
+          },
+          "why": {
+            "th": "เครื่องเล่นจากทั่วโลก สำหรับ 6 เดือนถึง 12 ปี",
+            "en": "Play equipment from around the world for 6 months to 12 years"
+          },
+          "q": "Bornelund Kobe Gakuen Minami, Tarumi Ward, Kobe",
+          "ok": "2026-11"
+        },
+        {
+          "local": "あそびのせかい マリンピア神戸店",
+          "ages": [
+            1,
+            1,
+            1,
+            1
+          ],
+          "hrs": 1.5,
+          "io": "both",
+          "pram": "part",
+          "price": {
+            "th": "เช็กราคาก่อนไป",
+            "en": "Check the price"
+          },
+          "book": "none",
+          "src": "https://www.nap-camp.com/mag/82216",
+          "name": {
+            "th": "บอร์เนลุนด์ อาโซบิโนะเซไก (มารีนเปียโกเบ)",
+            "en": "Bornelund Asobi no Sekai (Marine Pia Kobe)"
+          },
+          "kind": "play",
+          "area": {
+            "th": "มิตซุยเอาต์เล็ตพาร์กมารีนเปีย เขตทารุมิ โกเบ",
+            "en": "Mitsui Outlet Park Marine Pia, Tarumi Ward, Kobe"
+          },
+          "what": {
+            "th": "ที่เล่นในร่มและกลางแจ้ง มีแทรมโพลีนและเครื่องเล่นหมุน",
+            "en": "Indoor and outdoor play with a trampoline and spinning rides"
+          },
+          "why": {
+            "th": "มองเห็นสะพานอาคาชิไคเกียว",
+            "en": "The Akashi Kaikyo Bridge in view"
+          },
+          "q": "Bornelund Asobi no Sekai, Mitsui Outlet Park Marine Pia Kobe, Kobe",
+          "ok": "2026-11"
         }
       ]
     },
