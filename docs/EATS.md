@@ -532,3 +532,5 @@ batch-29 of docs/library-briefs. +2: Sharky's, Chatrium Hotel Royal Lake. Proof 
 
 ### Taipei, 24 Nov 2026
 batch-40 of docs/library-briefs (round 2). +3: Mountain and Sea House, Orange Shabu Shabu (Da-an), MoneyJump. Proof in `docs/library-proof/tw-taipei.json`.
+
+- **24 Nov 2026, Taipei** (docs/library-briefs batch-60, round 3): +2 (Elephant Garden, MuMu Land). Proof in `docs/library-proof/tw-taipei.json`.

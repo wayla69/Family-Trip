@@ -67,6 +67,20 @@
       "src": "https://www.nickkembel.com/taipei-with-kids/",
       "date": "2025-11",
       "map": "Google Maps '中正紀念堂', 83,325 reviews, open"
+    },
+    {
+      "name": "Elephant Garden (Neihu)",
+      "page_name": "象園咖啡Elephant Garden",
+      "src": "https://travel.yam.com/article/139927",
+      "date": "2026-04",
+      "map": "Google Maps 'Elephant Garden Neihu', newest review shown 5 days ago"
+    },
+    {
+      "name": "MuMu Land (Wanhua)",
+      "page_name": "遊霂食光 MuMu Land",
+      "src": "https://travel.yam.com/article/139927",
+      "date": "2026-04",
+      "map": "Google Maps '遊霂食光 MuMu Land', newest review shown a month ago"
     }
   ],
   "left_out": [
@@ -85,7 +99,16 @@
     {
       "name": "Wooderful Life",
       "why": "a souvenir shop"
+    },
+    {
+      "name": "Ho'me Kitchen (Neihu)",
+      "why": "newest Google Maps review a year old"
     }
   ],
-  "estimates": "Ages and visit hours are placeholders; prices and opening notes are the pages' own."
+  "estimates": "Ages and visit hours are placeholders; prices and opening notes are the pages' own.",
+  "round3": {
+    "checked": "2026-11-24",
+    "agents": "one Haiku agent; 3 rows from travel.yam.com (Apr 2026), all passed library-check.cjs, 2 went in",
+    "rule": "library-check.cjs, then the Google Maps Reviews tab sorted by newest: ok only when not marked closed, with a review from the last six months, and the map's name matching the page's."
+  }
 }
