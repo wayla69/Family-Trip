@@ -538,6 +538,84 @@
           },
           "q": "Temple of the Sacred Heart of Jesus, Tibidabo, Barcelona",
           "ok": "2026-11"
+        },
+        {
+          "local": "Museu Marítim de Barcelona",
+          "ages": [
+            1,
+            1,
+            1,
+            1
+          ],
+          "hrs": 2,
+          "io": "in",
+          "pram": "part",
+          "price": {
+            "th": "≈ €7 ผู้ใหญ่",
+            "en": "≈ €7 adults"
+          },
+          "book": "none",
+          "src": "https://www.artvisitguide.com/best-museums-for-kids-barcelona/",
+          "name": {
+            "th": "พิพิธภัณฑ์การเดินเรือบาร์เซโลนา",
+            "en": "Maritime Museum of Barcelona"
+          },
+          "kind": "museum",
+          "area": {
+            "th": "ดราซาเนส ปลายถนนรัมบลา บาร์เซโลนา",
+            "en": "Drassanes, end of the Rambla, Barcelona"
+          },
+          "what": {
+            "th": "พิพิธภัณฑ์ในอู่ต่อเรือยุคกลาง มีเรือแกลลีขนาดจริงจากศตวรรษที่ 16",
+            "en": "A museum in the medieval shipyards, with a full-size 16th-century galley"
+          },
+          "why": {
+            "th": "เรือแกลลียาว 60 เมตร เด็ก ๆ ตื่นตา",
+            "en": "The 60-metre galley holds children's attention"
+          },
+          "tip": {
+            "th": "เข้าฟรีวันอาทิตย์ตั้งแต่ 15:00",
+            "en": "Free on Sundays from 15:00"
+          },
+          "q": "Museu Marítim de Barcelona, Drassanes",
+          "ok": "2026-11"
+        },
+        {
+          "local": "",
+          "ages": [
+            1,
+            1,
+            1,
+            1
+          ],
+          "hrs": 2,
+          "io": "in",
+          "pram": "part",
+          "price": {
+            "th": "เช็กราคาก่อนไป",
+            "en": "Check the price"
+          },
+          "book": "rec",
+          "src": "https://fantastixsuper3.com/en/things-to-do-in-barcelona-with-kids",
+          "name": {
+            "th": "ฟันตัสติกซ์เดลซูเปร์ 3",
+            "en": "Fantàstix del Super3"
+          },
+          "kind": "play",
+          "area": {
+            "th": "ถนนโรสเซโย ซากราดาฟามีเลีย บาร์เซโลนา",
+            "en": "Carrer del Rosselló, Sagrada Família, Barcelona"
+          },
+          "what": {
+            "th": "โลกเล่นในร่มสำหรับเด็ก พื้นที่กว่า 2,000 ตร.ม.",
+            "en": "An indoor children's play world of over 2,000 m²"
+          },
+          "why": {
+            "th": "ปลอดภัย อยู่ในร่มทั้งหมด และอยู่กลางเมือง",
+            "en": "Safe, all indoors and central"
+          },
+          "q": "Fantàstix del Super3, Carrer del Rosselló 485, Barcelona",
+          "ok": "2026-11"
         }
     ]
     },

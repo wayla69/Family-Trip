@@ -60,6 +60,48 @@
       "src": "https://www.barcelonatourism.org/2026/05/03/family-activities/",
       "date": "2026-05",
       "map": "Google Maps 'Temple of the Sacred Heart of Jesus', 15,394 reviews, newest shown 3 days ago"
+    },
+    {
+      "name": "La Pepita (Gràcia)",
+      "page_name": "La Pepita",
+      "src": "https://eurovistatrips.com/best-family-friendly-restaurants-barcelona-2026-2/",
+      "date": "2026-05",
+      "map": "Google Maps 'La Pepita' (Gràcia), newest review shown a day ago"
+    },
+    {
+      "name": "Federal Café (Sant Antoni)",
+      "page_name": "Federal Café",
+      "src": "https://eurovistatrips.com/best-family-friendly-restaurants-barcelona-2026-2/",
+      "date": "2026-05",
+      "map": "Google Maps 'Federal Cafè Sant Antoni', newest review shown 2 weeks ago"
+    },
+    {
+      "name": "Yatai (Japanese tapas)",
+      "page_name": "Yatai Tapes Japoneses",
+      "src": "https://www.timeout.es/barcelona/es/comer-y-beber/comer-con-ninos",
+      "date": "2026-10",
+      "map": "Google Maps 'Yatai Barcelona', newest review shown 8 days ago"
+    },
+    {
+      "name": "Time Out Market Barcelona",
+      "page_name": "Time Out Market Barcelona",
+      "src": "https://www.timeout.es/barcelona/es/comer-y-beber/comer-con-ninos",
+      "date": "2026-10",
+      "map": "Google Maps 'Time Out Market Barcelona', newest review shown 2 weeks ago"
+    },
+    {
+      "name": "Maritime Museum of Barcelona",
+      "page_name": "Maritime Museum",
+      "src": "https://www.artvisitguide.com/best-museums-for-kids-barcelona/",
+      "date": "2026-04",
+      "map": "Google Maps 'Barcelona Maritime Museum', newest review shown 2 days ago"
+    },
+    {
+      "name": "Fantàstix del Super3",
+      "page_name": "Fantàstix del Super3",
+      "src": "https://fantastixsuper3.com/en/things-to-do-in-barcelona-with-kids",
+      "date": "2026-04",
+      "map": "Google Maps 'Fantàstix del Super3 | Espai infantil immersiu', 326 reviews, newest shown 6 days ago"
     }
   ],
   "left_out": [
@@ -82,7 +124,20 @@
     {
       "name": "Museum of Automata",
       "why": "inside the Tibidabo amusement park, already in"
+    },
+    {
+      "name": "Can Solé, Els Pescadors",
+      "why": "no district on the page"
+    },
+    {
+      "name": "Big Fun Museum, Turó Parc, Can Batlló",
+      "why": "no dated page opened"
     }
   ],
-  "estimates": "Ages and visit hours are placeholders; prices and opening notes are the pages' own."
+  "estimates": "Ages and visit hours are placeholders; prices and opening notes are the pages' own.",
+  "round3": {
+    "checked": "2026-11-24",
+    "agents": "one Haiku agent; 6 rows from Eurovista (May 2026), Time Out (Oct 2026), Art Visit Guide (Apr 2026) and Fantàstix's own site, all passed library-check.cjs, 6 went in",
+    "rule": "library-check.cjs, then the Google Maps Reviews tab sorted by newest: ok only when not marked closed, with a review from the last six months, and the map's name matching the page's."
+  }
 }

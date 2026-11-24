@@ -531,3 +531,5 @@ batch-19 of docs/library-briefs. +2: Cappuccino, TomYumBar. Proof in `docs/libra
 batch-29 of docs/library-briefs. +2: Sharky's, Chatrium Hotel Royal Lake. Proof in `docs/library-proof/mm-yangon.json`.
 
 - **24 Nov 2026, Barcelona** (docs/library-briefs batch-46): +3 (Pez Vela, El Quim de la Boqueria, La Mar Salada). Proof in `docs/library-proof/es-barcelona.json`.
+
+- **24 Nov 2026, Barcelona** (docs/library-briefs batch-61, round 3): +4 (La Pepita, Federal Café, Yatai, Time Out Market). Proof in `docs/library-proof/es-barcelona.json`.
