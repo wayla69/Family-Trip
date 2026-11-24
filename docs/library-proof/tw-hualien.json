@@ -32,6 +32,34 @@
       "src": "https://bunnyann.tw/hualien-family/",
       "date": "2026-09",
       "map": "Google Maps '大石鼻山步道', 5,425 reviews, newest shown 4 days ago"
+    },
+    {
+      "name": "Starbucks Hualien container shop",
+      "page_name": "花蓮貨櫃星巴克",
+      "src": "https://bunnyann.tw/hualien-indoor/",
+      "date": "2026-09",
+      "map": "Google Maps 'STARBUCKS Huilan Shop' (Nanbin Rd Sec. 1 No. 505), newest review shown 2 weeks ago"
+    },
+    {
+      "name": "Hualien Disaster Prevention Education Centre",
+      "page_name": "花蓮防災教育館",
+      "src": "https://travel.yam.com/article/140317",
+      "date": "2026-07",
+      "map": "Google Maps '花蓮防災教育館' (華西), newest review shown 3 days ago"
+    },
+    {
+      "name": "Chisingtan Katsuo Museum",
+      "page_name": "七星潭柴魚博物館",
+      "src": "https://bunnyann.tw/hualien-indoor/",
+      "date": "2026-09",
+      "map": "Google Maps 'Chisingtan Katsuo Museum' (Qixing St 148), newest review shown 4 hours ago"
+    },
+    {
+      "name": "City Lotus Garden",
+      "page_name": "蓮城蓮花園",
+      "src": "https://bunnyann.tw/hualien-farm2026/",
+      "date": "2026-10",
+      "map": "Google Maps 'City Lotus Garden' (Nanhua 5th St 66), newest review shown 2 days ago"
     }
   ],
   "left_out": [
@@ -46,7 +74,24 @@
     {
       "name": "花蓮又一村",
       "why": "quote not found on the page (library-check.cjs)"
+    },
+    {
+      "name": "玩味蕃樂園",
+      "why": "a shop"
+    },
+    {
+      "name": "原野牧場",
+      "why": "library-check.cjs could not confirm the row"
+    },
+    {
+      "name": "月崖灣親子農場",
+      "why": "page dated 2024"
     }
   ],
-  "estimates": "Ages and visit hours are placeholders; prices and opening notes are the pages' own."
+  "estimates": "Ages and visit hours are placeholders; prices and opening notes are the pages' own.",
+  "round3": {
+    "checked": "2026-11-24",
+    "agents": "one Haiku agent; 6 rows from Bunny Ann (Sep–Oct 2026) and Yam Travel (Jul 2026), 5 passed library-check.cjs, 4 went in",
+    "rule": "library-check.cjs, then the Google Maps Reviews tab sorted by newest: ok only when not marked closed, with a review from the last six months, and the map's name matching the page's."
+  }
 }

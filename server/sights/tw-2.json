@@ -1123,6 +1123,117 @@
           },
           "q": "Dashibi Mountain Trail, Jiqi, Fengbin, Hualien",
           "ok": "2026-11"
+        },
+        {
+          "local": "花蓮防災教育館",
+          "ages": [
+            1,
+            1,
+            1,
+            1
+          ],
+          "hrs": 2,
+          "io": "in",
+          "pram": "part",
+          "price": {
+            "th": "ฟรี",
+            "en": "Free"
+          },
+          "book": "none",
+          "src": "https://travel.yam.com/article/140317",
+          "name": {
+            "th": "ศูนย์เรียนรู้ป้องกันภัยพิบัติฮวาเหลียน",
+            "en": "Hualien Disaster Prevention Education Centre"
+          },
+          "kind": "museumkid",
+          "area": {
+            "th": "ฮวาซี เมืองฮวาเหลียน",
+            "en": "Huaxi, Hualien City"
+          },
+          "what": {
+            "th": "ศูนย์เรียนรู้เข้าฟรี มี 5 โซน ไฟไหม้ ปฐมพยาบาล แผ่นดินไหว ความปลอดภัยทางน้ำ และในบ้าน",
+            "en": "A free centre with five zones: fire, first aid, earthquakes, water safety and the home"
+          },
+          "why": {
+            "th": "มีภารกิจกู้ภัยทางน้ำและภูเขาแบบเกม และบ้านเอียง",
+            "en": "Water-rescue and mountain challenges as games, and a tilted house"
+          },
+          "q": "花蓮防災教育館, 華西127號, 花蓮市",
+          "ok": "2026-11"
+        },
+        {
+          "local": "七星潭柴魚博物館",
+          "ages": [
+            1,
+            1,
+            1,
+            1
+          ],
+          "hrs": 2,
+          "io": "in",
+          "pram": "part",
+          "price": {
+            "th": "ฟรี",
+            "en": "Free"
+          },
+          "book": "none",
+          "src": "https://bunnyann.tw/hualien-indoor/",
+          "name": {
+            "th": "พิพิธภัณฑ์ปลาโอแห้งชีซิงถาน",
+            "en": "Chisingtan Katsuo Museum"
+          },
+          "kind": "museum",
+          "area": {
+            "th": "ถนนชีซิง ซินเฉิง ฮวาเหลียน",
+            "en": "Qixing Street, Xincheng, Hualien"
+          },
+          "what": {
+            "th": "พิพิธภัณฑ์ปลาโอแห้งในร่ม มีห้องเล่าเรื่อง เข้าฟรี",
+            "en": "An indoor dried-bonito museum with a story hall, free to enter"
+          },
+          "why": {
+            "th": "อยู่ในร่ม เข้าฟรี มีห้องน้ำและที่จอดรถ",
+            "en": "Indoors and free, with toilets and parking"
+          },
+          "q": "七星潭柴魚博物館, 七星街148號, 新城鄉",
+          "ok": "2026-11"
+        },
+        {
+          "local": "蓮城蓮花園",
+          "ages": [
+            1,
+            1,
+            1,
+            1
+          ],
+          "hrs": 2,
+          "io": "out",
+          "pram": "part",
+          "price": {
+            "th": "ฟรี",
+            "en": "Free"
+          },
+          "book": "none",
+          "src": "https://bunnyann.tw/hualien-farm2026/",
+          "name": {
+            "th": "สวนบัวเหลียนเฉิง",
+            "en": "City Lotus Garden"
+          },
+          "kind": "nature",
+          "area": {
+            "th": "ถนนหนานฮวา 5 จี๋อาน ฮวาเหลียน",
+            "en": "Nanhua 5th Street, Ji'an, Hualien"
+          },
+          "what": {
+            "th": "สวนบัว เปิด 8:00–18:00 ไม่เก็บค่าเข้า",
+            "en": "A lotus garden open 8:00 to 18:00, no entry fee"
+          },
+          "why": {
+            "th": "สวนเปิดโล่งให้เดินเล่นฟรี",
+            "en": "An open garden to walk through, free"
+          },
+          "q": "蓮城蓮花園, 南華五街66號, 吉安鄉",
+          "ok": "2026-11"
         }
       ]
     },

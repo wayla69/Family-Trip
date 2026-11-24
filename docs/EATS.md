@@ -531,3 +531,5 @@ batch-19 of docs/library-briefs. +2: Cappuccino, TomYumBar. Proof in `docs/libra
 batch-29 of docs/library-briefs. +2: Sharky's, Chatrium Hotel Royal Lake. Proof in `docs/library-proof/mm-yangon.json`.
 
 - **24 Nov 2026, Hualien** (docs/library-briefs batch-50): +1 (Yinglun Western Restaurant). Proof in `docs/library-proof/tw-hualien.json`.
+
+- **24 Nov 2026, Hualien** (docs/library-briefs batch-70, round 3): +1 (the Starbucks container shop). Proof in `docs/library-proof/tw-hualien.json`.
