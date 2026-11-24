@@ -1440,6 +1440,117 @@
           },
           "q": "Wat Phra That Pha Son Kaeo, Khaem Son, Khao Kho",
           "ok": "2026-11"
+        },
+        {
+          "local": "",
+          "ages": [
+            1,
+            1,
+            1,
+            1
+          ],
+          "hrs": 2,
+          "io": "out",
+          "pram": "part",
+          "price": {
+            "th": "เช็กราคาก่อนไป",
+            "en": "Check the price"
+          },
+          "book": "none",
+          "src": "https://traveloka.com/en-th/explore/destination/6-phu-thap-boek-attractions/376103",
+          "name": {
+            "th": "จุดชมวิวไปรษณีย์เขาค้อ",
+            "en": "Khao Kho Post Office viewpoint"
+          },
+          "kind": "views",
+          "area": {
+            "th": "อำเภอเขาค้อ ใกล้เขาตะเคียนโง๊ะ",
+            "en": "Khao Kho, near Khao Takhian Ngo"
+          },
+          "what": {
+            "th": "จุดชมวิวมีตู้ไปรษณีย์สีแดง ส่งโปสการ์ดจากยอดเขาได้",
+            "en": "A viewpoint with a red mailbox where you can send a postcard from the mountain"
+          },
+          "why": {
+            "th": "เด็กๆ ได้ส่งโปสการ์ดจริงกลับบ้าน",
+            "en": "Children post a real postcard home"
+          },
+          "q": "Khao Kho Post Office, Khao Kho, Phetchabun",
+          "ok": "2026-11"
+        },
+        {
+          "local": "",
+          "ages": [
+            1,
+            1,
+            1,
+            1
+          ],
+          "hrs": 2,
+          "io": "out",
+          "pram": "part",
+          "price": {
+            "th": "เช็กราคาก่อนไป",
+            "en": "Check the price"
+          },
+          "book": "none",
+          "src": "https://traveloka.com/en-th/explore/destination/6-phu-thap-boek-attractions/376103",
+          "name": {
+            "th": "น้ำตกศรีดิษฐ์",
+            "en": "Sri Dit Waterfall"
+          },
+          "kind": "nature",
+          "area": {
+            "th": "ตำบลหนองแม่นา อำเภอเขาค้อ",
+            "en": "Nong Mae Na, Khao Kho"
+          },
+          "what": {
+            "th": "น้ำตกน้ำใส ท่ามกลางความเขียวและเสียงนก",
+            "en": "A waterfall with clear water among the green and birdsong"
+          },
+          "why": {
+            "th": "น้ำใสเย็น อยู่ไม่ไกลถนนบนเขา",
+            "en": "Cool, clear water close to the mountain roads"
+          },
+          "q": "Sri Dit Waterfall, Nong Mae Na, Khao Kho",
+          "ok": "2026-11"
+        },
+        {
+          "local": "",
+          "ages": [
+            1,
+            1,
+            1,
+            1
+          ],
+          "hrs": 2,
+          "io": "out",
+          "pram": "part",
+          "price": {
+            "th": "เช็กราคาก่อนไป",
+            "en": "Check the price"
+          },
+          "book": "none",
+          "src": "https://traveloka.com/en-th/explore/destination/6-phu-thap-boek-attractions/376103",
+          "name": {
+            "th": "วัดป่าภูทับเบิก",
+            "en": "Wat Pa Phu Thap Boek"
+          },
+          "kind": "culture",
+          "area": {
+            "th": "ตำบลวังบาล อำเภอหล่มเก่า (ภูทับเบิก)",
+            "en": "Wang Ban, Lom Kao (Phu Thap Boek)"
+          },
+          "what": {
+            "th": "วัดบนยอดเขาที่เงียบสงบ มีหมอกลอยผ่านตอนเช้าตรู่",
+            "en": "A calm mountaintop temple where the mist rolls past in the early morning"
+          },
+          "why": {
+            "th": "ลานกว้างมองเห็นวิวภูเขา",
+            "en": "Open grounds with mountain views"
+          },
+          "q": "Wat Pa Phu Thap Boek, Lom Kao, Phetchabun",
+          "ok": "2026-11"
         }
       ]
     },

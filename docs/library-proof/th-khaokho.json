@@ -25,13 +25,47 @@
       "src": "https://travel.trueid.net/detail/zW0Dx347Qw6W",
       "date": "2025-11",
       "map": "Google Maps 'วัดพระธาตุผาซ่อนแก้ว', 28,242 reviews, newest shown 2 days ago"
+    },
+    {
+      "name": "Khao Kho Post Office viewpoint",
+      "page_name": "Khao Kho Post Office Viewpoint",
+      "src": "https://traveloka.com/en-th/explore/destination/6-phu-thap-boek-attractions/376103",
+      "date": "2026-07",
+      "map": "Google Maps 'Khao Kho Post Office' (Khao Kho), newest review shown 4 days ago"
+    },
+    {
+      "name": "Sri Dit Waterfall",
+      "page_name": "Si Dit Waterfall",
+      "src": "https://traveloka.com/en-th/explore/destination/6-phu-thap-boek-attractions/376103",
+      "date": "2026-07",
+      "map": "Google Maps 'Sri Dit Waterfall' (Nong Mae Na), newest review shown 6 hours ago"
+    },
+    {
+      "name": "Wat Pa Phu Thap Boek",
+      "page_name": "Wat Pa Phu Thap Boek",
+      "src": "https://traveloka.com/en-th/explore/destination/6-phu-thap-boek-attractions/376103",
+      "date": "2026-07",
+      "map": "Google Maps 'Wat Pa Phu Thap Boek' (Wang Ban, Lom Kao), newest review shown a day ago"
     }
   ],
   "left_out": [
     {
       "name": "แก่งบางระจัน",
       "why": "no review from the last six months shown on the map"
+    },
+    {
+      "name": "Ing-Lai Garden View",
+      "why": "not found on the map"
+    },
+    {
+      "name": "Pha Hua Sing",
+      "why": "a cliff viewpoint, not for small children"
     }
   ],
-  "estimates": "Ages and visit hours are placeholders; prices and opening notes are the pages' own."
+  "estimates": "Ages and visit hours are placeholders; prices and opening notes are the pages' own.",
+  "round3": {
+    "checked": "2026-11-24",
+    "agents": "one Haiku agent; 4 rows from Traveloka (Jul 2026), all passed library-check.cjs, 3 went in",
+    "rule": "library-check.cjs, then the Google Maps Reviews tab sorted by newest: ok only when not marked closed, with a review from the last six months, and the map's name matching the page's."
+  }
 }
