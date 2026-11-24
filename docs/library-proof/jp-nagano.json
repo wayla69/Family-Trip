@@ -1,0 +1,66 @@
+{
+  "town": "jp-nagano",
+  "kind": "eats + sights",
+  "checked": "2026-11-24",
+  "rule": "library-check.cjs, then the Google Maps Reviews tab sorted by newest: ok only when not marked closed, with a review from the last six months, and the map's name matching the page's.",
+  "agents": "one Haiku agent; 9 rows from Japan Activity (Jun 2026) and Go Nagano (Dec 2025), all passed library-check.cjs, 6 went in",
+  "added": [
+    {
+      "name": "Soba Asada",
+      "page_name": "Asada",
+      "src": "https://japanactivity.com/best-restaurants-in-matsumoto",
+      "date": "2026-06",
+      "map": "Google Maps 'Soba asada Matsumoto', 509 reviews, newest shown 15 days ago"
+    },
+    {
+      "name": "Soba Club Sasaki",
+      "page_name": "Soba Club Sasaki",
+      "src": "https://japanactivity.com/best-restaurants-in-matsumoto",
+      "date": "2026-06",
+      "map": "Google Maps 'Soba Club Sasaki', 526 reviews, newest shown 5 days ago"
+    },
+    {
+      "name": "Kawasho",
+      "page_name": "Kawasho",
+      "src": "https://japanactivity.com/best-restaurants-in-matsumoto",
+      "date": "2026-06",
+      "map": "Google Maps 'Kawashiyo' (Asama Onsen), 395 reviews, newest shown 9 days ago"
+    },
+    {
+      "name": "Temariya",
+      "page_name": "Temari-ya",
+      "src": "https://japanactivity.com/best-restaurants-in-matsumoto",
+      "date": "2026-06",
+      "map": "Google Maps 'Temariya', 240 reviews, newest shown 16 days ago"
+    },
+    {
+      "name": "Coffee Bigaku Abe",
+      "page_name": "Coffee Bigaku Abe",
+      "src": "https://japanactivity.com/best-restaurants-in-matsumoto",
+      "date": "2026-06",
+      "map": "Google Maps 'คาเฟ่อาเบะ' (Coffee Bigaku Abe), 1,465 reviews, newest shown 9 days ago"
+    },
+    {
+      "name": "Zenkoji Temple",
+      "page_name": "Zenkoji Temple",
+      "src": "https://www.go-nagano.net/en/trip-idea/zenkoji-temple-travel-guide",
+      "date": "2025-12",
+      "map": "Google Maps 'วัดเซ็นโคจิ' (Zenkoji), 27,745 reviews, newest shown 2 days ago"
+    }
+  ],
+  "left_out": [
+    {
+      "name": "Oimo Biyori",
+      "why": "permanently closed on the map"
+    },
+    {
+      "name": "Matsumoto Karaage Center",
+      "why": "not found on the map"
+    },
+    {
+      "name": "Hikariya Higashi",
+      "why": "a formal kaiseki restaurant; the page says nothing about children"
+    }
+  ],
+  "estimates": "Ages and visit hours are placeholders; prices and opening notes are the pages' own."
+}

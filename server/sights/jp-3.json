@@ -1772,6 +1772,43 @@
           "q": "Ishii Miso Brewery, Matsumoto",
           "ok": "2026-11",
           "src": "https://japanactivity.com/matsumoto-with-kids"
+        },
+        {
+          "local": "善光寺",
+          "ages": [
+            1,
+            1,
+            1,
+            1
+          ],
+          "hrs": 1.5,
+          "io": "both",
+          "pram": "part",
+          "price": {
+            "th": "เช็กราคาก่อนไป",
+            "en": "Check the price"
+          },
+          "book": "none",
+          "src": "https://www.go-nagano.net/en/trip-idea/zenkoji-temple-travel-guide",
+          "name": {
+            "th": "วัดเซ็นโคจิ",
+            "en": "Zenkoji Temple"
+          },
+          "kind": "culture",
+          "area": {
+            "th": "โมโตโยชิโจ เมืองนากาโนะ",
+            "en": "Motoyoshi-cho, Nagano City"
+          },
+          "what": {
+            "th": "วัดที่เดินขึ้นไปตามถนนปูหิน ผ่านประตูนิโอมงและซันมง",
+            "en": "A temple reached up a stone-paved street through the Niomon and Sanmon gates"
+          },
+          "why": {
+            "th": "ขึ้นประตูซันมงชมวิวเมืองกว้าง ๆ",
+            "en": "Climb the Sanmon gate for wide views of the city"
+          },
+          "q": "Zenkoji Temple, Motoyoshicho, Nagano",
+          "ok": "2026-11"
         }
       ]
     },
