@@ -872,6 +872,80 @@
           },
           "q": "Královská obora Stromovka, Praha 7",
           "ok": "2026-11"
+        },
+        {
+          "local": "",
+          "ages": [
+            1,
+            1,
+            1,
+            1
+          ],
+          "hrs": 2,
+          "io": "in",
+          "pram": "part",
+          "price": {
+            "th": "เช็กราคาก่อนไป",
+            "en": "Check the price"
+          },
+          "book": "none",
+          "src": "https://kulickario.cz/",
+          "name": {
+            "th": "คูลิชคาริโอ",
+            "en": "Kuličkário"
+          },
+          "kind": "museumkid",
+          "area": {
+            "th": "ถนนครอฟโตวา สมีคอฟ ปราก",
+            "en": "Kroftova, Smíchov, Prague"
+          },
+          "what": {
+            "th": "นิทรรศการแบบลงมือเล่น เต็มไปด้วยรางลูกแก้ว",
+            "en": "An interactive exhibition full of marble runs"
+          },
+          "why": {
+            "th": "สนุกทั้งเด็กและผู้ใหญ่",
+            "en": "Fun for children and adults alike"
+          },
+          "q": "Kuličkário, Kroftova 1, Praha 5",
+          "ok": "2026-11"
+        },
+        {
+          "local": "Dětský ostrov",
+          "ages": [
+            1,
+            1,
+            1,
+            1
+          ],
+          "hrs": 2,
+          "io": "out",
+          "pram": "part",
+          "price": {
+            "th": "ฟรี",
+            "en": "Free"
+          },
+          "book": "none",
+          "src": "https://prague.eu/cs/objevujte/detsky-ostrov/",
+          "name": {
+            "th": "เกาะเด็ก เดตสกีออสตรอฟ",
+            "en": "Children's Island (Dětský ostrov)"
+          },
+          "kind": "park",
+          "area": {
+            "th": "กลางแม่น้ำวัลตาวา ริมเขื่อนยานาเชค สมีคอฟ ปราก",
+            "en": "Vltava, by Janáčkovo nábřeží, Smíchov, Prague"
+          },
+          "what": {
+            "th": "เกาะกลางแม่น้ำวัลตาวา มีลานกีฬาและสนามเด็กเล่น",
+            "en": "An island on the Vltava with sports grounds and playgrounds"
+          },
+          "why": {
+            "th": "มีสนามเด็กเล่นและร้านอาหารทางใต้ของเกาะ",
+            "en": "Playgrounds for children and a restaurant at the south end"
+          },
+          "q": "Dětský ostrov, Praha 5",
+          "ok": "2026-11"
         }
       ]
     }
