@@ -3263,6 +3263,43 @@
           },
           "q": "วัดพุทธบาทสุทธาวาส, แจ้ห่ม",
           "ok": "2026-11"
+        },
+        {
+          "local": "",
+          "ages": [
+            1,
+            1,
+            1,
+            1
+          ],
+          "hrs": 2,
+          "io": "out",
+          "pram": "part",
+          "price": {
+            "th": "ฟรี",
+            "en": "Free"
+          },
+          "book": "none",
+          "src": "https://www.thaiholidayguide.com/attraction/nong-kra-ting-park/",
+          "name": {
+            "th": "สวนสาธารณะหนองกระทิง",
+            "en": "Nong Kra Ting Park"
+          },
+          "kind": "park",
+          "area": {
+            "th": "อำเภอเมืองลำปาง",
+            "en": "Mueang Lampang"
+          },
+          "what": {
+            "th": "สวนสาธารณะใหญ่กลางเมือง เข้าฟรี มีบึงน้ำ ทางเดินราว 600 เมตร และเครื่องออกกำลังกายกลางแจ้ง",
+            "en": "A large free city park with a lake, a 600-metre path and outdoor fitness stations"
+          },
+          "why": {
+            "th": "มีสนามเด็กเล่นและสนามหญ้าร่มรื่นให้นั่งปิกนิก",
+            "en": "A children's playground and shaded lawns for a picnic"
+          },
+          "q": "Nhong Krathing Park, Mueang Lampang",
+          "ok": "2026-11"
         }
       ]
     },

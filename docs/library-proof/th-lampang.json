@@ -116,6 +116,13 @@
       "src": "https://www.grab.com/th/blog/%E0%B8%97%E0%B8%B5%E0%B9%88%E0%B9%80%E0%B8%97%E0%B8%B5%E0%B9%88%E0%B8%A2%E0%B8%A7%E0%B8%A5%E0%B8%B3%E0%B8%9B%E0%B8%B2%E0%B8%87/",
       "date": "2026-10",
       "map": "Google Maps 'วัดพุทธบาทสุทธาวาส', 112 reviews, newest shown 'last month'"
+    },
+    {
+      "name": "Nong Kra Ting Park",
+      "page_name": "Nong Kra Ting Park",
+      "src": "https://www.thaiholidayguide.com/attraction/nong-kra-ting-park/",
+      "date": "2026-07",
+      "map": "Google Maps 'Nhong Krathing Park' (Mueang Lampang), newest review shown 2 days ago"
     }
   ],
   "left_out": [
@@ -138,7 +145,20 @@
     {
       "name": "Por Kuay Jab",
       "why": "quote not on the page"
+    },
+    {
+      "name": "Yayoi (Central Lampang), Home at Lampang",
+      "why": "library-check.cjs could not find the name and quote on the page"
+    },
+    {
+      "name": "Mae Kae Waterfall, Talat Rat market",
+      "why": "the page gave no child detail"
     }
   ],
-  "estimates": "Ages and visit hours are placeholders; prices and opening notes are the pages' own."
+  "estimates": "Ages and visit hours are placeholders; prices and opening notes are the pages' own.",
+  "round3": {
+    "checked": "2026-11-24",
+    "agents": "one Haiku agent; 3 rows from Thai Holiday Guide (Jul 2026) and Wongnai (2025–2026), 1 passed library-check.cjs, 1 went in",
+    "rule": "library-check.cjs, then the Google Maps Reviews tab sorted by newest: ok only when not marked closed, with a review from the last six months, and the map's name matching the page's."
+  }
 }
