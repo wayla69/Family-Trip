@@ -3000,7 +3000,81 @@
       {"name":{"en":"Galleria Borghese","th":"หอศิลป์บอร์เกเซ"},"kind":"museum","area":{"en":"Villa Borghese","th":"วิลลาบอร์เกเซ"},"what":{"en":"Compact museum in Villa Borghese with fun animal sculptures; not interactive, but easy for children to enjoy.","th":"พิพิธภัณฑ์กะทัดรัดในวิลลาบอร์เกเซ มีประติมากรรมสัตว์สนุกๆ ไม่ได้โต้ตอบ แต่เด็กดูได้ง่าย"},"why":{"en":"The page says it is worth a visit at all ages thanks to its compact size.","th":"หน้าเว็บบอกว่าคุ้มค่าทุกวัยเพราะขนาดกะทัดรัด"},"ages":[1,2,2,2],"hrs":1.5,"io":"in","pram":"part","price":{"en":"Check the price","th":"เช็กราคาก่อนไป"},"book":"none","q":"Galleria Borghese, Villa Borghese, Rome","ok":"2026-11","src":"https://mamalovesrome.com/things-to-do-in-rome-with-kids-complete-guide/"},
       {"name":{"en":"Christmas World","th":"คริสต์มาสเวิลด์"},"kind":"themepark","area":{"en":"Villa Borghese","th":"วิลลาบอร์เกเซ"},"what":{"en":"Christmas theme park with food stalls, shows, ice skating and seasonal entertainment.","th":"สวนสนุกธีมคริสต์มาสมีร้านอาหาร โชว์ สเกตน้ำแข็ง และความบันเทิงตามฤดูกาล"},"why":{"en":"The page calls it a fun seasonal attraction for kids, with rides for all ages.","th":"หน้าเว็บเรียกว่าเป็นกิจกรรมตามฤดูกาลที่สนุกสำหรับเด็ก มีเครื่องเล่นทุกวัย"},"tip":{"en":"Seasonal: it comes to Villa Borghese in December.","th":"ตามฤดูกาล มาถึงวิลลาบอร์เกเซในเดือนธันวาคม"},"ages":[1,2,2,1],"hrs":3,"io":"out","pram":"part","price":{"en":"Check the price","th":"เช็กราคาก่อนไป"},"book":"none","q":"Villa Borghese, Rome","ok":"2026-11","src":"https://mamalovesrome.com/things-to-do-in-rome-with-kids-complete-guide/"},
       {"name":{"en":"Trastevere","th":"ทราสเตเวเร"},"kind":"oldtown","area":{"en":"Trastevere","th":"ทราสเตเวเร"},"what":{"en":"Lively old quarter of restaurants, cafés and street performers, liveliest at night.","th":"ย่านเก่าที่คึกคักด้วยร้านอาหาร คาเฟ่ และนักแสดงข้างถนน คึกที่สุดตอนกลางคืน"},"why":{"en":"The page says it stays family-friendly until late thanks to its many restaurants.","th":"หน้าเว็บบอกว่าเป็นมิตรกับครอบครัวจนดึกเพราะมีร้านอาหารมาก"},"tip":{"en":"Most fun after dark, per the page.","th":"สนุกที่สุดตอนพลบค่ำ ตามหน้าเว็บ"},"ages":[1,2,2,2],"hrs":2,"io":"out","pram":"part","price":{"en":"Check the price","th":"เช็กราคาก่อนไป"},"book":"none","q":"Trastevere, Rome","ok":"2026-11","src":"https://mamalovesrome.com/things-to-do-in-rome-with-kids-complete-guide/"},
-      {"name":{"en":"Pincio Terrace","th":"เทอร์เรซปินชิโอ"},"kind":"views","area":{"en":"Near Piazza del Popolo","th":"ใกล้ปิอัซซาเดลโปโปโล"},"what":{"en":"Terrace with a panoramic view over the city, entered near Piazza del Popolo.","th":"เทอร์เรซที่มีวิวพาโนรามาเหนือเมือง เข้าใกล้ปิอัซซาเดลโปโปโล"},"why":{"en":"A wide view over the city as you arrive at Villa Borghese.","th":"วิวกว้างเหนือเมืองตอนที่มาถึงวิลลาบอร์เกเซ"},"ages":[1,2,2,2],"hrs":1,"io":"out","pram":"part","price":{"en":"Check the price","th":"เช็กราคาก่อนไป"},"book":"none","q":"Pincio Terrace, Piazza del Popolo, Rome","ok":"2026-11","src":"https://italywander.com/things-to-do-in-rome-with-kids"}
+      {"name":{"en":"Pincio Terrace","th":"เทอร์เรซปินชิโอ"},"kind":"views","area":{"en":"Near Piazza del Popolo","th":"ใกล้ปิอัซซาเดลโปโปโล"},"what":{"en":"Terrace with a panoramic view over the city, entered near Piazza del Popolo.","th":"เทอร์เรซที่มีวิวพาโนรามาเหนือเมือง เข้าใกล้ปิอัซซาเดลโปโปโล"},"why":{"en":"A wide view over the city as you arrive at Villa Borghese.","th":"วิวกว้างเหนือเมืองตอนที่มาถึงวิลลาบอร์เกเซ"},"ages":[1,2,2,2],"hrs":1,"io":"out","pram":"part","price":{"en":"Check the price","th":"เช็กราคาก่อนไป"},"book":"none","q":"Pincio Terrace, Piazza del Popolo, Rome","ok":"2026-11","src":"https://italywander.com/things-to-do-in-rome-with-kids"},
+        {
+          "local": "",
+          "ages": [
+            1,
+            1,
+            1,
+            1
+          ],
+          "hrs": 1.5,
+          "io": "in",
+          "pram": "part",
+          "price": {
+            "th": "เช็กราคาก่อนไป",
+            "en": "Check the price"
+          },
+          "book": "none",
+          "src": "https://turismoroma.it/it/page/attivit%C3%A0-bambini",
+          "name": {
+            "th": "ท้องฟ้าจำลองโรม",
+            "en": "Planetario di Roma"
+          },
+          "kind": "museum",
+          "area": {
+            "th": "ปิอัซซาโจวันนีอัญเญลลี โรม",
+            "en": "Piazza Giovanni Agnelli, Rome"
+          },
+          "what": {
+            "th": "ท้องฟ้าจำลอง มีโชว์ดวงดาวและอวกาศ",
+            "en": "A planetarium with star and space shows"
+          },
+          "why": {
+            "th": "มีโชว์สำหรับเด็กและครอบครัว",
+            "en": "Shows made for children and families"
+          },
+          "q": "Planetario di Roma, Piazza Giovanni Agnelli 10, Rome",
+          "ok": "2026-11"
+        },
+        {
+          "local": "",
+          "ages": [
+            1,
+            2,
+            2,
+            1
+          ],
+          "hrs": 3,
+          "io": "out",
+          "pram": "part",
+          "price": {
+            "th": "เช็กราคาก่อนไป",
+            "en": "Check the price"
+          },
+          "book": "none",
+          "src": "https://www.turismoroma.it/en/page/things-do-kids-rome",
+          "name": {
+            "th": "สวนสนุกลูเนอร์",
+            "en": "Luneur Park"
+          },
+          "kind": "themepark",
+          "area": {
+            "th": "ถนนเดลเลเทรฟอนตาเน โรม",
+            "en": "Via delle Tre Fontane, Rome"
+          },
+          "what": {
+            "th": "สวนสนุกกลางแจ้ง มีเครื่องเล่นและเกมท่ามกลางต้นไม้",
+            "en": "An outdoor amusement park of rides and games among the trees"
+          },
+          "why": {
+            "th": "มีที่เล่นสำหรับเด็กเล็ก รถขุดขนาดเด็ก และรถไฟเหาะจิ๋ว",
+            "en": "Play areas for little ones, a child-sized digger and a mini roller coaster"
+          },
+          "q": "Luneur Park, Via delle Tre Fontane 100, Rome",
+          "ok": "2026-11"
+        }
     ]
     },
     {
