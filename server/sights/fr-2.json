@@ -3009,6 +3009,43 @@
           },
           "q": "Parc Saint François-Xavier, Rue de Rueil, Colmar",
           "ok": "2026-11"
+        },
+        {
+          "local": "",
+          "ages": [
+            1,
+            1,
+            1,
+            1
+          ],
+          "hrs": 2,
+          "io": "out",
+          "pram": "part",
+          "price": {
+            "th": "ฟรี",
+            "en": "Free"
+          },
+          "book": "none",
+          "src": "https://onivapp.com/blog/sortie-avec-bebe-a-strasbourg",
+          "name": {
+            "th": "สวนซิตาแดล",
+            "en": "Parc de la Citadelle"
+          },
+          "kind": "park",
+          "area": {
+            "th": "ซิตาแดล สตราสบูร์ก",
+            "en": "Citadelle, Strasbourg"
+          },
+          "what": {
+            "th": "สวนในป้อมโวบองเก่า ทางเดินเรียบยาวและม้านั่งใต้ร่มไม้",
+            "en": "A park in the old Vauban fortifications, with long flat paths and shaded benches"
+          },
+          "why": {
+            "th": "ทางเรียบ เข็นรถเข็นเด็กเดินเล่นได้",
+            "en": "Flat paths for a pram walk"
+          },
+          "q": "Parc de la Citadelle, Strasbourg",
+          "ok": "2026-11"
         }
       ]
     },
