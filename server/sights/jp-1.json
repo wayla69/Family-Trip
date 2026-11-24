@@ -2187,6 +2187,154 @@
           },
           "q": "深山峠アートパーク, 上富良野",
           "ok": "2026-11"
+        },
+        {
+          "local": "ファンタジーキッズリゾート 新さっぽろ",
+          "ages": [
+            1,
+            1,
+            1,
+            1
+          ],
+          "hrs": 3,
+          "io": "in",
+          "pram": "part",
+          "price": {
+            "th": "เช็กราคาก่อนไป",
+            "en": "Check the price"
+          },
+          "book": "none",
+          "src": "https://www.asoview.com/note/5458/",
+          "name": {
+            "th": "แฟนตาซีคิดส์รีสอร์ต ชินซัปโปโร",
+            "en": "Fantasy Kids Resort (Shin-Sapporo)"
+          },
+          "kind": "play",
+          "area": {
+            "th": "ซันเปียซซา เขตอัตสึเบ็ตสึ ซัปโปโร",
+            "en": "Sunpiazza, Atsubetsu-ku, Sapporo"
+          },
+          "what": {
+            "th": "สวนเด็กเล่นในร่มขนาดใหญ่ มีโซนนุ่มและบ่อทราย ใกล้สถานีชินซัปโปโร",
+            "en": "A big indoor play park with soft play and a sand pit, by Shin-Sapporo Station"
+          },
+          "why": {
+            "th": "มีโซนแยกสำหรับเด็กต่ำกว่า 3 ขวบ และนำอาหารเข้าได้",
+            "en": "A separate area for under-threes, and you may bring food"
+          },
+          "q": "ファンタジーキッズリゾート 新さっぽろ, サンピアザ, 札幌",
+          "ok": "2026-11"
+        },
+        {
+          "local": "もりもりパーク",
+          "ages": [
+            1,
+            1,
+            1,
+            1
+          ],
+          "hrs": 2,
+          "io": "in",
+          "pram": "part",
+          "price": {
+            "th": "ฟรี",
+            "en": "Free"
+          },
+          "book": "none",
+          "src": "https://www.asoview.com/note/5458/",
+          "name": {
+            "th": "โมริโมริพาร์ก อาซาฮิกาวะ",
+            "en": "Morimori Park (Asahikawa)"
+          },
+          "kind": "play",
+          "area": {
+            "th": "ฟีลอาซาฮิกาวะ ชั้น 6 ใกล้สถานีอาซาฮิกาวะ",
+            "en": "Feel Asahikawa 6F, by Asahikawa Station"
+          },
+          "what": {
+            "th": "สวนเด็กเล่นในร่มทำจากไม้ มีเครื่องปีนป่ายใหญ่และบ่อบอลไม้",
+            "en": "A wooden indoor play park with a big climbing frame and a wooden ball pool"
+          },
+          "why": {
+            "th": "มีมุมสำหรับเด็กเล็ก และเข้าฟรี",
+            "en": "A baby corner, and free to use"
+          },
+          "q": "もりもりパーク, フィール旭川 6F, 旭川",
+          "ok": "2026-11"
+        },
+        {
+          "local": "リトルプラネット イオンモール札幌苗穂",
+          "ages": [
+            1,
+            1,
+            1,
+            1
+          ],
+          "hrs": 2,
+          "io": "in",
+          "pram": "part",
+          "price": {
+            "th": "เช็กราคาก่อนไป",
+            "en": "Check the price"
+          },
+          "book": "none",
+          "src": "https://www.asoview.com/note/5458/",
+          "name": {
+            "th": "ลิตเติลแพลเน็ต อิออนมอลล์ซัปโปโรนาเอโบะ",
+            "en": "Little Planet (Aeon Mall Sapporo Naebo)"
+          },
+          "kind": "play",
+          "area": {
+            "th": "อิออนมอลล์ซัปโปโรนาเอโบะ ซัปโปโร",
+            "en": "Aeon Mall Sapporo Naebo, Sapporo"
+          },
+          "what": {
+            "th": "สวนเล่นดิจิทัล มีเกมโต้ตอบ เช่น เล่นทรายเออาร์",
+            "en": "A digital play park with interactive games like AR sand play"
+          },
+          "why": {
+            "th": "เล่นดิจิทัลแบบลงมือในร่ม ทุกสภาพอากาศ",
+            "en": "Hands-on digital play indoors, whatever the weather"
+          },
+          "q": "リトルプラネット イオンモール札幌苗穂",
+          "ok": "2026-11"
+        },
+        {
+          "local": "南幌町子ども室内遊戯施設はれっぱ",
+          "ages": [
+            1,
+            1,
+            1,
+            1
+          ],
+          "hrs": 2,
+          "io": "in",
+          "pram": "part",
+          "price": {
+            "th": "≈ ¥300 ต่อคน สำหรับคนนอกเมือง",
+            "en": "≈ ¥300 a person for visitors from outside the town"
+          },
+          "book": "none",
+          "src": "https://www.asoview.com/note/5458/",
+          "name": {
+            "th": "ฮาเร็ปปะ ห้องเล่นในร่ม นัมโปโร",
+            "en": "Hareppa indoor play hall (Nanporo)"
+          },
+          "kind": "play",
+          "area": {
+            "th": "เมืองนัมโปโร ใกล้ซัปโปโร",
+            "en": "Nanporo town, near Sapporo"
+          },
+          "what": {
+            "th": "ห้องเล่นในร่มสร้างจากไม้ฮอกไกโด มีโซนเคลื่อนไหวและของเล่นไม้",
+            "en": "An indoor play hall built of Hokkaido wood, with an active area and wooden toys"
+          },
+          "why": {
+            "th": "แยกโซนวิ่งเล่นกับโซนของเล่นไม้เงียบ ๆ มีคาเฟ่ข้าง ๆ",
+            "en": "Separate areas for running about and for quiet wooden toys; a café next door"
+          },
+          "q": "南幌町子ども室内遊戯施設はれっぱ",
+          "ok": "2026-11"
         }
       ]
     },
