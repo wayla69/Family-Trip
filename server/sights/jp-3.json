@@ -3397,6 +3397,228 @@
           "q": "Hasshoku Center, Hachinohe City",
           "ok": "2026-11",
           "src": "https://www.gltjp.com/en/article/item/21422/"
+        },
+        {
+          "local": "八戸公園 こどもの国",
+          "ages": [
+            1,
+            1,
+            1,
+            1
+          ],
+          "hrs": 3,
+          "io": "out",
+          "pram": "part",
+          "price": {
+            "th": "เข้าฟรี เครื่องเล่นจ่ายแยก",
+            "en": "Free entry; rides paid"
+          },
+          "book": "none",
+          "src": "https://www.asoview.com/note/6203/",
+          "name": {
+            "th": "สวนเด็กฮาจิโนเฮะ (โคโดโมะโนะคุนิ)",
+            "en": "Hachinohe Park Children's World"
+          },
+          "kind": "park",
+          "area": {
+            "th": "โทคาอิจิ ฮาจิโนเฮะ อาโอโมริ",
+            "en": "Tokaichi, Hachinohe, Aomori"
+          },
+          "what": {
+            "th": "สวน 37 เฮกตาร์ มีโซนสวนสนุกเด็กและสวนพฤกษศาสตร์",
+            "en": "A 37-hectare park with a children's park zone and a botanical garden"
+          },
+          "why": {
+            "th": "มีชิงช้าสวรรค์และรถไฟเหาะ เข้าฟรี จ่ายเฉพาะเครื่องเล่น",
+            "en": "A Ferris wheel and a roller coaster; entry is free, rides are paid"
+          },
+          "q": "Hachinohe Park Children's World, Tokaichi, Hachinohe, Aomori",
+          "ok": "2026-11"
+        },
+        {
+          "local": "こどもはっち",
+          "ages": [
+            2,
+            2,
+            0,
+            0
+          ],
+          "hrs": 1,
+          "io": "in",
+          "pram": "part",
+          "price": {
+            "th": "ฟรี",
+            "en": "Free"
+          },
+          "book": "none",
+          "src": "https://www.asoview.com/note/6203/",
+          "name": {
+            "th": "โคโดโมะฮัตจิ",
+            "en": "Kodomo Hatch"
+          },
+          "kind": "play",
+          "area": {
+            "th": "พิพิธภัณฑ์ฮัตจิ ฮาจิโนเฮะ",
+            "en": "Hachinohe Portal Museum Hatch, Hachinohe"
+          },
+          "what": {
+            "th": "ห้องเล่นในร่มทำจากไม้ของอาโอโมริ",
+            "en": "A wooden indoor play space built with Aomori timber"
+          },
+          "why": {
+            "th": "มีสไลเดอร์และบ่อของเล่นไม้สำหรับเด็กก่อนวัยเรียน ฟรี เหมาะวันฝนตก",
+            "en": "Slides and a wooden-toy pool for preschool children; free, good on a rainy day"
+          },
+          "q": "Kodomo Hatch, Mikkamachi, Hachinohe, Aomori",
+          "ok": "2026-11"
+        },
+        {
+          "local": "さくらんぼこどもキャンパス CLAAPIN SAGAE",
+          "ages": [
+            1,
+            1,
+            1,
+            1
+          ],
+          "hrs": 2,
+          "io": "in",
+          "pram": "part",
+          "price": {
+            "th": "เช็กราคาก่อนไป",
+            "en": "Check the price"
+          },
+          "book": "none",
+          "src": "https://www.nap-camp.com/mag/83090",
+          "name": {
+            "th": "แคลปปิน ซากาเอะ",
+            "en": "CLAAPIN SAGAE"
+          },
+          "kind": "play",
+          "area": {
+            "th": "จุดพักรถซากาเอะเชอร์รีแลนด์ ยามากาตะ",
+            "en": "Michi-no-Eki Sagae Cherryland, Sagae, Yamagata"
+          },
+          "what": {
+            "th": "ที่เล่นในร่ม มีโครงตาข่ายสูง 10 เมตร อุโมงค์ และผนังปีน",
+            "en": "An indoor play centre with a 10 m net structure, tunnels and bouldering"
+          },
+          "why": {
+            "th": "เด็กได้ขยับทั้งตัวเต็มที่",
+            "en": "Room for children to move their whole body"
+          },
+          "q": "CLAAPIN SAGAE, Yakuwa, Sagae, Yamagata",
+          "ok": "2026-11"
+        },
+        {
+          "local": "シェルターインクルーシブプレイス コパル",
+          "ages": [
+            1,
+            1,
+            1,
+            1
+          ],
+          "hrs": 2,
+          "io": "in",
+          "pram": "part",
+          "price": {
+            "th": "เช็กราคาก่อนไป",
+            "en": "Check the price"
+          },
+          "book": "none",
+          "src": "https://www.nap-camp.com/mag/83090",
+          "name": {
+            "th": "เชลเตอร์อินคลูซิฟเพลส โคปาล",
+            "en": "Shelter Inclusive Place COPAL"
+          },
+          "kind": "play",
+          "area": {
+            "th": "คาตายาจิ เมืองยามากาตะ",
+            "en": "Katayachi, Yamagata city"
+          },
+          "what": {
+            "th": "ที่เล่นในร่มสำหรับเด็กทุกคน มีตาข่ายให้ปีนและยิมเล่นบอล",
+            "en": "An inclusive indoor play place with net play and a gym for ball games"
+          },
+          "why": {
+            "th": "เด็กทุกวัยทุกความสามารถเล่นด้วยกันได้",
+            "en": "Children of every age and ability play together"
+          },
+          "q": "Shelter Inclusive Place Copal, Katayachi, Yamagata",
+          "ok": "2026-11"
+        },
+        {
+          "local": "もりっこぱ～く山形天童店",
+          "ages": [
+            1,
+            1,
+            1,
+            1
+          ],
+          "hrs": 2,
+          "io": "in",
+          "pram": "part",
+          "price": {
+            "th": "เช็กราคาก่อนไป",
+            "en": "Check the price"
+          },
+          "book": "none",
+          "src": "https://www.nap-camp.com/mag/83090",
+          "name": {
+            "th": "โมริกโกะพาร์ก (ยามากาตะ เท็นโด)",
+            "en": "Morikko Park (Yamagata Tendo)"
+          },
+          "kind": "play",
+          "area": {
+            "th": "อันดะโนะโมริ เท็นโด ยามากาตะ",
+            "en": "Anda no Mori, Tendo, Yamagata"
+          },
+          "what": {
+            "th": "ที่เล่นในร่มแบบรายวัน มีบ่อบอล 180 ตร.ม. และซิปไลน์ 8 เมตร",
+            "en": "A day-use indoor play park with a 180 m² ball pool and an 8 m zip line"
+          },
+          "why": {
+            "th": "โซนเด็กเล่นได้อิสระทั้งหมด",
+            "en": "All free play in the kids' area"
+          },
+          "q": "Morikko Park Yamagata Tendo, Tendo, Yamagata",
+          "ok": "2026-11"
+        },
+        {
+          "local": "長井市 遊びと学びの交流施設 くるんと",
+          "ages": [
+            2,
+            2,
+            1,
+            0
+          ],
+          "hrs": 2,
+          "io": "in",
+          "pram": "part",
+          "price": {
+            "th": "เช็กราคาก่อนไป",
+            "en": "Check the price"
+          },
+          "book": "none",
+          "src": "https://www.nap-camp.com/mag/83090",
+          "name": {
+            "th": "คุรุนโตะ",
+            "en": "Kurunto"
+          },
+          "kind": "play",
+          "area": {
+            "th": "โมโตมาจิ นากาอิ ยามากาตะ",
+            "en": "Motomachi, Nagai, Yamagata"
+          },
+          "what": {
+            "th": "ที่เล่นและห้องสมุดในอาคารทรงกลมหลังเดียว",
+            "en": "A play space and library in one round building"
+          },
+          "why": {
+            "th": "บ่อบอลปากวาฬ แทรมโพลีน และโซนเด็กเล็ก 0–2 ขวบ",
+            "en": "A whale-mouth ball pool, trampolines and a baby area for 0–2"
+          },
+          "q": "Kurunto, Motomachi, Nagai, Yamagata",
+          "ok": "2026-11"
         }
       ]
     },
